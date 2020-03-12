@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94996183649
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 17:38:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 237DC18364C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 17:38:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zq2O8Z+u6RqN5q2Qh1jYikTQONJxSiSGlQ67dLGEMtY=; b=n+NX9L88XqNZkW
-	OIvv0SZBDwVWEIU7S0R6084H0evQJ8t65mL5kM6OPgRCwFJFeo4mptE84y7qfPZyZVYybXEBSccKf
-	pIKYtg8d/ghjUImYL2QZLIXMQP7iCZaijpvkMffcjm7jXv0eWSXPqGPHQ1km6FeVSfHl3vrYRtrpR
-	VyERWjICbjoEx+krPZlCvfu7X7yhJfP7kcjnvFIc9/Hlo5mY92S2OPc7r0AsF5DlKdNtmuUm3EicC
-	cRMy59V9UCSDlrvQsETEzM/+cI6g3y0BNfz1/2FHkJ8Q0s6p+mmMtfd6/IAmZPX5NlN5p28CDK2wW
-	oKZhclU20IKoc+o3mTCA==;
+	List-Owner; bh=ciMPgWte1QiYSDwyO/8Gg6rp4ETyLYuXrSOeU8G4L/8=; b=ens+sOR/934RQd
+	wo7HwfH4XGcgn5AyWP8mvPerIlfm3KnIVbMgQQlvzinbQYb73AihyjHdKGqJvRa7lLwyBLpG0xX/6
+	y8Q+rxZ+UISCmKEQy4x3sj0svEUt620PlcuXncxeXPisq7Mh8g0kitVTHkLeCp5OvKDB7ClUDs39v
+	D8XiQzKR2X3JkbYtJi9ZQpzToGhVYGRFfNyqHKv6xTPDtSFSaPeuexQzrf68TPgQqdXm7yZO4PHhA
+	q1JYGFVvm+SlKbIZ7oXZvUqeLVyAt9JB/InIVg/ltBXx5F6byc/s4FZthX68kYFl6tvDYYIdgNOMT
+	kYMYTchvA22gos+mwd3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCQqI-0005QX-7w; Thu, 12 Mar 2020 16:37:54 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jCQqX-0005fw-8a; Thu, 12 Mar 2020 16:38:09 +0000
+Received: from mail-ot1-x329.google.com ([2607:f8b0:4864:20::329])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCQq5-0005PR-3p
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 16:37:42 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x3so5906831wmj.1
+ id 1jCQq9-0005QY-E6
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 16:37:47 +0000
+Received: by mail-ot1-x329.google.com with SMTP id a49so4170528otc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 09:37:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Thu, 12 Mar 2020 09:37:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KLvR3Pv/VwwdNVMVEz53VHzZpwW5bYvxWCFzM4Vnud4=;
- b=CzukxYm//beRotTxT2Qf+ERZzXI1VAI7lJNakQoHciY8x9FJXbvEdagxVxd72auQHD
- L/CVnNVF/F+15+hV+B5JiAc2sJHtwVDSHuj3QqDU+F0hVyNyVMvMcfA/YJUP1LmIr1PU
- usV2f1cx6hiPfVfeHBAMOM+cCR2A+Qr3TE0wM7PGejfxLm9umejsmE4kSK53w7TzBVNO
- y/3ZhQjL1Svvb13zHh2Vksf/Sjj1CXg9zxX34hpnJU2wrAEOMfd+za6Xzz2q3OIr+xts
- Mz8JSJRhjHi6EjqxYIoEo/YsJRQsrn5zIyPn4XRQS49dyqULZw22d1QGB/u4bghsMK2P
- 1vQw==
+ :cc:content-transfer-encoding;
+ bh=MYtEPdrTksnGvDZU5deL4CbY9Pr9ioIV5tkxQ/zHu9E=;
+ b=K9wdZeHL5rkylrZz3QIeSH+2rSRaU/h8JfwlYHPQVkc1YTeX3aYZHzKozu1Uh9dGmW
+ al/g5ZOeGmatS1po/OOiwYPpVnuwgNjRDMnm37LUrARxdr2D7c+UQ8BfOm773vJ38KB4
+ WyJL6FoyqANhVa43OkIu37Qm+iMm4zKxaNoyM1dwCOxiTEHUeCvSpIqJa5SWrNPYI0mG
+ 7FEO4d6rMrB+CWnvO+a1xme3jdmlAWODxkI6xVbkFJ7KojYC/IAy1zx8BHJZZW4NU2XD
+ duN5csFpY+MN/H6Y4wwobhExb+fpRbdG/uyLFsrcm7iHlXNPYNlOPB4/MKHiQ8sgTL20
+ wivg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KLvR3Pv/VwwdNVMVEz53VHzZpwW5bYvxWCFzM4Vnud4=;
- b=UlkMKwJrmAV9c8LGMayDzX85rui5YwKFS1nXhyon0lY8KZqnCpsW4H6U2E9WblsA4E
- wX2k3LBM9hnm4IRh2Biwj08gLRDgD4dz2aO4CPxRsc7J/1JkJE72GXb/qenU6B67CVqu
- zOII1aIf9Fa4TIPWFKHc1H77dIn0203ByvKR3Pxt7oAq/7kKGtEnOOtJfBjkaHXsqRlY
- MotgWD1bLVXLDDMIsRSEX+sAE9ovUyl+BNm3B4aikWgI9y5Dp0CYQip1e34YCxM59WGZ
- 1zWdv0ZgYdO5zcNh1lWOuxZjNZllqWgVDmsnWR3iy8TAdgsSwbyS0UNZaQpXsOGd+TJI
- AvcA==
-X-Gm-Message-State: ANhLgQ3H3EQt7bGbZpTXVK3kQUGaPyCvrLVbFpQmPNXM/l+I+QkUSU9w
- v1AiITwkT17ySWcJAuo4ztMHv+6/VMhiTXKmO9M=
-X-Google-Smtp-Source: ADFU+vujZJQfx4KphaFkawHaVUhWqSnD+Jc07o1eQPnzLq4j7h7Sllg9lla+v7QtoWS4saFzOjAPrMn40v+CV+K24U8=
-X-Received: by 2002:a05:600c:204:: with SMTP id
- 4mr5394271wmi.112.1584031057921; 
- Thu, 12 Mar 2020 09:37:37 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=MYtEPdrTksnGvDZU5deL4CbY9Pr9ioIV5tkxQ/zHu9E=;
+ b=fJ+uOMjEy0e45/iwYP31DHLqdHHVhDZuM6N29eEVec2nCif403Vtd+MUJN88s6faTU
+ 78jQqn752FTu+irKErYitUCox7ofeVVMOHOCJULnae+cEsM2hSPzFt6RCDWx34iUISta
+ CuvXwFLIgDZW8G/ZbqbWQ62ft/9lhWIbEDJK77pc9lESFTV0j/kaLSYWGes4ktP1Gpgj
+ TnBSx45AQZgtEt048rF2K1vOZXa6YULJvr4HudHUlBHfG2TyB3+sSVwcgVpVi84bnvUL
+ FFkyOcRKbCapXTMdxzNaiWEW1+2SoAGI8zwBdiuZNHmI7Qg1268oj4pybNbEpsrDK2Eb
+ 5Qcw==
+X-Gm-Message-State: ANhLgQ3JyevZArhIWF5VU08HlimoZwLkawapYNHe9wD+CPy00LbQ4d+A
+ QPn3lIACv/z/E+Ir75fdbxB7dciRGQeo6JRNmD+nBQ==
+X-Google-Smtp-Source: ADFU+vtZrRh7IowOp5OH0oSfDw8psJiJhEtJqqx6lihfLrI2TL2niHppJIGBv22OqVb3O+3TasH0O7liOBZUKkgfp2I=
+X-Received: by 2002:a9d:7756:: with SMTP id t22mr6718289otl.272.1584031064139; 
+ Thu, 12 Mar 2020 09:37:44 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200306163848.5910-1-mklntf@gmail.com>
- <20200311.230402.1496009558967017193.davem@davemloft.net>
-In-Reply-To: <20200311.230402.1496009558967017193.davem@davemloft.net>
-From: Markus Fuchs <mklntf@gmail.com>
-Date: Thu, 12 Mar 2020 17:37:26 +0100
-Message-ID: <CADv+quf+7Uh+-soXrN7kLnkre3dL6JACwRimN_KsuQ=01C84zw@mail.gmail.com>
-Subject: Re: [PATCH] net: stmmac: platform: Fix misleading interrupt error msg
-To: David Miller <davem@davemloft.net>
+References: <20200310134603.30260-1-robert.foss@linaro.org>
+ <20200310134603.30260-4-robert.foss@linaro.org>
+ <20200310143014.GL1922688@smile.fi.intel.com>
+In-Reply-To: <20200310143014.GL1922688@smile.fi.intel.com>
+From: Robert Foss <robert.foss@linaro.org>
+Date: Thu, 12 Mar 2020 17:37:33 +0100
+Message-ID: <CAG3jFyuSj4NRAPHk0qch4SXg3iS7zss6tbRuC3mBnVL=MsLwVw@mail.gmail.com>
+Subject: Re: [v1 3/3] media: ov8856: Implement sensor module revision
+ identification
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_093741_182078_64D4FBDA 
-X-CRM114-Status: GOOD (  15.09  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20200312_093745_516568_44FFA4CF 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:329 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mklntf[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,93 +94,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jose Abreu <joabreu@synopsys.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, ben.kao@intel.com,
+ linux-mediatek@lists.infradead.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 12 Mar 2020 at 07:04, David Miller <davem@davemloft.net> wrote:
->
-> From: Markus Fuchs <mklntf@gmail.com>
-> Date: Fri,  6 Mar 2020 17:38:48 +0100
->
-> > Not every stmmac based platform makes use of the eth_wake_irq or eth_lpi
-> > interrupts. Use the platform_get_irq_byname_optional variant for these
-> > interrupts, so no error message is displayed, if they can't be found.
-> > Rather print an information to hint something might be wrong to assist
-> > debugging on platforms which use these interrupts.
-> >
-> > Signed-off-by: Markus Fuchs <mklntf@gmail.com>
->
-> What do you mean the error message is misleading right now?
->
-> It isn't printing anything out at the moment in this situation.
-
-Hello,
-
-the error messages are
-[    1.206363] socfpga-dwmac ff700000.ethernet: IRQ eth_wake_irq not found
-[    1.213023] socfpga-dwmac ff700000.ethernet: IRQ eth_lpi not found
-
-I tried to explain this in my original post between the --- lines of the patch.
-Maybe this was wrong, so I repost it.
-
-
-On my cyclone V socfpga platform I get error messages after updating to
-Linux Kernel 5.4.24
-
-Starting kernel ...
-
-Deasserting all peripheral resets
-[    1.206363] socfpga-dwmac ff700000.ethernet: IRQ eth_wake_irq not found
-[    1.213023] socfpga-dwmac ff700000.ethernet: IRQ eth_lpi not found
-
-These interrupts don't matter for my platform and many other stmmac based
-ones, as we can see by grepping for 'macirq'.
-
-socfpga.dtsi:                   interrupt-names = "macirq";
-socfpga.dtsi:                   interrupt-names = "macirq";
-sun7i-a20.dtsi:                 interrupt-names = "macirq";
-spear600.dtsi:                  interrupt-names = "macirq", "eth_wake_irq";
-artpec6.dtsi:                   interrupt-names = "macirq", "eth_lpi";
-rk322x.dtsi:                    interrupt-names = "macirq";
-sun9i-a80.dtsi:                 interrupt-names = "macirq";
-spear1310.dtsi:                 interrupt-names = "macirq";
-spear1310.dtsi:                 interrupt-names = "macirq";
-spear1310.dtsi:                 interrupt-names = "macirq";
-spear1310.dtsi:                 interrupt-names = "macirq";
-stih407-family.dtsi:            interrupt-names = "macirq", "eth_wake_irq";
-stm32f429.dtsi:                 interrupt-names = "macirq";
-sun6i-a31.dtsi:                 interrupt-names = "macirq";
-meson.dtsi:                     interrupt-names = "macirq";
-rk3288.dtsi:                    interrupt-names = "macirq", "eth_wake_irq";
-sun8i-r40.dtsi:                 interrupt-names = "macirq";
-sunxi-h3-h5.dtsi:               interrupt-names = "macirq";
-spear3xx.dtsi:                  interrupt-names = "macirq", "eth_wake_irq";
-lpc18xx.dtsi:                   interrupt-names = "macirq";
-stm32h743.dtsi:                 interrupt-names = "macirq";
-socfpga_arria10.dtsi:           interrupt-names = "macirq";
-socfpga_arria10.dtsi:           interrupt-names = "macirq";
-socfpga_arria10.dtsi:           interrupt-names = "macirq";
-rv1108.dtsi:                    interrupt-names = "macirq", "eth_wake_irq";
-spear13xx.dtsi:                 interrupt-names = "macirq", "eth_wake_irq";
-stm32mp151.dtsi:                interrupt-names = "macirq";
-ox820.dtsi:                     interrupt-names = "macirq", "eth_wake_irq";
-sun8i-a83t.dtsi:                interrupt-names = "macirq";
-
-So, in my opinion, the error messages are missleading. I believe
-the right way to handle this would require more changes though. Some
-kind of configuration information, telling which interrupts are required
-by the platform and than conditionally call platform_get_irq_byname().
-This would print an error message, if something is wrong, on the right
-platforms and nothing at all on the others.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGV5IEFuZHksCgpPbiBUdWUsIDEwIE1hciAyMDIwIGF0IDE1OjMwLCBBbmR5IFNoZXZjaGVua28K
+PGFuZHJpeS5zaGV2Y2hlbmtvQGxpbnV4LmludGVsLmNvbT4gd3JvdGU6Cj4KPiBPbiBUdWUsIE1h
+ciAxMCwgMjAyMCBhdCAwMjo0NjowM1BNICswMTAwLCBSb2JlcnQgRm9zcyB3cm90ZToKPiA+IFF1
+ZXJ5IHRoZSBzZW5zb3IgZm9yIGl0cyBtb2R1bGUgcmV2aXNpb24sIGFuZCBjb21wYXJlIGl0Cj4g
+PiB0byBrbm93biByZXZpc2lvbnMuCj4gPiBDdXJyZW50bHkgb25seSB0aGUgJzFCJyByZXZpc2lv
+biBoYXMgYmVlbiBhZGRlZC4KPgo+IEFyZSB5b3Ugc3VyZSB5b3Ugc2VuZCBsYXRlc3QgdmVyc2lv
+bj8KPgo+IEkgaGF2ZSBhIGTDqWrEhSB2dSB0aGF0IEkgaGF2ZSBzZWVuIHRoaXMgYWxyZWFkeSBh
+bmQgdGhpcyBvbmUgZG9lc24ndCBhZGRyZXNzIGFueQo+IGNvbW1lbnQgZ2l2ZW4uCgpJIHRoaW5r
+IHB1bGxlZCBhIHNlcmllcyBEb25nY2h1biBaaHVzIGVhcmxpZXIgc2VyaWVzIGFwYXJ0IGFuZCB1
+c2VkIHNvbWUgb2YgaXQsCkkgbWF5IGhhdmUgbWlzc2VkIHNvbWUgb2YgdGhlIGZlZWRiYWNrIGdp
+dmVuIHRvIGhpcyB2My4gU29ycnkgYWJvdXQgdGhhdC4KCj4KPiAuLi4KPgo+ID4gKyAgICAgZGV2
+X2luZm8oJmNsaWVudC0+ZGV2LCAiT1Y4ODU2IHJldmlzaW9uICV4ICglcykgYXQgYWRkcmVzcyAw
+eCUwMnhcbiIsCj4gPiArICAgICAgICAgICAgIHZhbCwKPgo+ID4gKyAgICAgICAgICAgICB2YWwg
+PT0gT1Y4ODU2XzFCX01PRFVMRSA/ICIxQiIgOiAidW5rbm93biByZXZpc2lvbiIsCj4KPiBUaGlz
+IGlzIHdlaXJkLiBDYW4geW91IGFkZCBhIGJpdCBtb3JlIGdlbmVyYWwgd2F5IG9mIHNob3dpbmcg
+cmV2aXNpb24/CgpUaGlzIGlzIG1vZGVsZWQgYWZ0ZXIgdGhlIG92NzI1MSBkcml2ZXIsIHNpbmNl
+IHRoYXQgb3V0cHV0IGNhbWUgaW4KaGFuZHkgZHVyaW5nIGJyaW5ndXAuCgogICAgZGV2X2luZm8o
+ZGV2LCAiT1Y3MjUxIHJldmlzaW9uICV4ICglcykgZGV0ZWN0ZWQgYXQgYWRkcmVzcyAweCUwMnhc
+biIsCiAgICAgICAgIGNoaXBfcmV2LAogICAgICAgICBjaGlwX3JldiA9PSAweDQgPyAiMUEgLyAx
+QiIgOgogICAgICAgICBjaGlwX3JldiA9PSAweDUgPyAiMUMgLyAxRCIgOgogICAgICAgICBjaGlw
+X3JldiA9PSAweDYgPyAiMUUiIDoKICAgICAgICAgY2hpcF9yZXYgPT0gMHg3ID8gIjFGIiA6ICJ1
+bmtub3duIiwKICAgICAgICAgY2xpZW50LT5hZGRyKTsKClRvIG1lIHRoaXMgaXMgcHJldHR5IGdl
+bmVyYWwgYXBwcm9hY2gsIGF0IGxlYXN0IHVudGlsIHRoaXMgcmV2aXNpb24KaW5mb3JtYXRpb24g
+aXMgdXNlZCBpbiBvdGhlciBwbGFjZXMuCkknbSBub3QgcXVpdGUgc3VyZSB3aGF0IHlvdSBoYWQg
+aW4gbWluZC4gTWF5YmUgdGhlIGN1cnJlbnQKaW1wbGVtZW50YXRpb24gaXMgYSBsaXR0bGUgYml0
+IGNsdW5reSBpbiB0aGUgY2FzZSBvZiBvdjg4NTYgc2luY2UKdGhlcmUncyBvbmx5IG9uZSByZXZp
+c2lvbiBudW1iZXIga25vd24gY3VycmVudGx5LgoKRWl0aGVyIHdheSwgSSdsbCBoYXBwaWx5IGNo
+YW5nZSBpdC4gQnV0IEkgZG9uJ3QgcXVpdGUga25vdyB3aGF0IHlvdQpoYXZlIGluIG1pbmQuCgo+
+Cj4gPiArICAgICAgICAgICAgIGNsaWVudC0+YWRkcik7Cj4KPiAtLQo+IFdpdGggQmVzdCBSZWdh
+cmRzLAo+IEFuZHkgU2hldmNoZW5rbwo+Cj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
