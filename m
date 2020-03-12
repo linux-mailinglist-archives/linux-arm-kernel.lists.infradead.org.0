@@ -2,54 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EA7183082
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:40:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB16918309A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:48:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EMU09o4PlxtjH9xRibVnPLFMmoHe9e45N/MeD0Ekwys=; b=FHGrfburrOl9HF
-	nABloDjVDiCWqBzuEe0t+73WlalDXnFEJBIldbaz48oS9eGImvddVBUG+k8FTrHBSCWIIgsmOezWR
-	xfixwSlAcTvjVq/6e4IZwhLSOYU1+MF697K0zBAJHNwKv0TFOlbTDcFK2/Ebd3DFy8vGOdrBay4Bi
-	2BplH08cBYy+XqRifqUmRDgJe5Dqzw0g7haJw8I6MnADsDB5Ku6OOqpfAmWtMXBbKtzNYM+Loec6F
-	MBbXySSmtVthbTbqoFehnx67zDY4iV0vGE0eNgHqnQlh+54fqIrkr+/GnUEqpMS0X9x9v36u4cLDF
-	GwVWcviuQ6g8EDWSyunA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kjVWzxG9cmd5YkRsxb0IgIJNoAx4BMmefVXYOxD0esM=; b=O/4GX35WEDLHAzQLZxcNyBNSo
+	marbJeezRgM3Ph6IvxLuI/f+GhGaiXWJ59g8b7T4ijQA/bkdcrEETXl3wwMTAEYp5erml0TtWUiVP
+	j7ouinho+lP4iMcs8gzxfBQkqcOufLYAGZg/dac5bpglGjG7XDPjyfRgB3eVEOe7HtgtXyw9lg9r0
+	J0bbzAwV1po0/eNLzkUgIP6PW0fECXtrFmiLuep5v8E5kYyeGepG5rrSpHKKYu6TFkBrDgUVAY/iB
+	cXe6+OK65IV0eyr0yn2P5w78z/vGAxy6qUKmfet6eTPxXtgZy2x5oP+89w+SJ3ADoQspl/nR7/ERv
+	lmkUaQ1VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCN8L-0003g7-W8; Thu, 12 Mar 2020 12:40:18 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
+	id 1jCNFo-00078E-1G; Thu, 12 Mar 2020 12:48:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCN83-0003dD-2E
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:40:00 +0000
-Received: from gwarestrin.me.apana.org.au ([192.168.0.7]
- helo=gwarestrin.arnor.me.apana.org.au)
- by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
- id 1jCN7p-00023v-0l; Thu, 12 Mar 2020 23:39:46 +1100
-Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
- Thu, 12 Mar 2020 23:39:44 +1100
-Date: Thu, 12 Mar 2020 23:39:44 +1100
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Martin Kaiser <martin@kaiser.cx>
-Subject: Re: [PATCH v2 0/5] imx-rngc - several small fixes
-Message-ID: <20200312123944.GF28885@gondor.apana.org.au>
-References: <20200128110102.11522-1-martin@kaiser.cx>
- <20200305205824.4371-1-martin@kaiser.cx>
+ id 1jCNFc-00077k-J2
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:47:49 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 036222067C;
+ Thu, 12 Mar 2020 12:47:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584017268;
+ bh=nR0E7H/0Y5OKyy4ZCqLlhOjPVkLoNhxXEe9cuXpw5FQ=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=vcFaGuY7YLfhxZ40rPHJ4Jba4QkQm0rOeU5zycy9LuU/yWRb0KBD/Wp8jiWCT2rxM
+ 99QovipUfsv2PfN0MDeg7FHO0vn4QGRfvRUOUoL6gR0y6jrdSlr5oWMhPczWSNRlAt
+ iq7ghwgfBSjERREktDSijpxctvt2owlpNv6fypxY=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jCNFa-00CDNZ-3T; Thu, 12 Mar 2020 12:47:46 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200305205824.4371-1-martin@kaiser.cx>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Thu, 12 Mar 2020 12:47:46 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Amit Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v6 00/18]  (as long a
+In-Reply-To: <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
+ <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
+ <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
+Message-ID: <b5ca043cfaca30435957974d0f58524e@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: amit.kachhap@arm.com, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
+ keescook@chromium.org, ardb@kernel.org, catalin.marinas@arm.com,
+ suzuki.poulose@arm.com, will@kernel.org, ramana.radhakrishnan@arm.com,
+ kristina.martsenko@arm.com, Dave.Martin@arm.com, Vincenzo.Frascino@arm.com,
+ broonie@kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_053959_443454_CDDA6DA9 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200312_054748_674163_2EE52BCA 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,49 +95,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 05, 2020 at 09:58:19PM +0100, Martin Kaiser wrote:
-> This is a set of small fixes for the imx-rngc driver.
-> 
-> I tried to clarify the approach for masking/unmasking the interrupt from
-> the rngc.
-> 
-> The rngc should be set to auto-seed mode, where it creates a new seed
-> when required.
-> 
-> In the probe function, we should check that the rng type is supported by
-> this driver.
-> 
-> Thanks for reviewing the patches,
-> 
->    Martin
-> 
-> changes in v2:
-> - remove the contentious devres patch
-> - add PrasannaKumar's tags
-> 
-> Martin Kaiser (5):
->   hwrng: imx-rngc - fix an error path
->   hwrng: imx-rngc - use automatic seeding
->   hwrng: imx-rngc - (trivial) simplify error prints
->   hwrng: imx-rngc - check the rng type
->   hwrng: imx-rngc - simplify interrupt mask/unmask
-> 
->  drivers/char/hw_random/imx-rngc.c | 85 +++++++++++++++++++++++++------
->  1 file changed, 69 insertions(+), 16 deletions(-)
+Hi Amit,
 
-All applied.  Thanks.
+On 2020-03-12 08:06, Amit Kachhap wrote:
+> Hi James,
+> 
+> On 3/12/20 12:23 PM, Amit Kachhap wrote:
+>> Hi James,
+>> 
+>> On 3/11/20 2:58 PM, James Morse wrote:
+>>> Hi Amit,
+>>> 
+>>> (CC: +Marc)
+>>> 
+>>> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+>>>> This series improves function return address protection for the 
+>>>> arm64 kernel, by
+>>>> compiling the kernel with ARMv8.3 Pointer Authentication 
+>>>> instructions (referred
+>>>> ptrauth hereafter). This should help protect the kernel against 
+>>>> attacks using
+>>>> return-oriented programming.
+>>> 
+>>> (as it looks like there may be another version of this:)
+>>> 
+>>> Am I right in thinking that after your patch 10 changing
+>>> cpu_switch_to(), only the A key is live during kernel execution?
+>> 
+>> Yes
+>> 
+>>> 
+>>> KVM is still save/restoring 4 extra keys around guest-entry/exit. As 
+>>> you
+>>> restore all the keys on return to user-space, is this still 
+>>> necessary?
+>> 
+>> Yes Its a good optimization to skip 4 non-A keys. I was wondering 
+>> whether to do it in this series or send it separately.
+> 
+> I suppose we can only skip non-A keys save/restore for host context. If
+> we skip non-A keys for guest context then guest with old implementation
+> will break. Let me know your opinion.
+
+I don't think you can skip anything as far as the guest is concerned.
+But being able to skip the B keys (which is what I expect you call the
+non-A keys) on the host would certainly be useful.
+
+I assume you have a way to hide them from userspace, though.
+
+Thanks,
+
+         M.
 -- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
