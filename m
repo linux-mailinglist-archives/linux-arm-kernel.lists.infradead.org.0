@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69545182E15
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:45:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E318182E1D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:46:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=36dWLrlesE/kPSWE5SuEknGDiv11And5JcLl6jYjX2o=; b=B6inGXdpiovPfW
-	ahrSnPiDXoR7QT6410WYgEdbheBcgshnml6CZ2jtnKadvcDL9i121vdzpWsyt0wH+SuJfa7MCtkXE
-	EWcP+FS7gSSMq9VnQ12uf4fKKT4WsiU92o/62D6ookz9Ej9C1eGhK+7weXhBySzHie90ytMC/dNy2
-	MlwrF38p0eMVyC4IuHE5Wfdpg8ksry738z991emXdBum/Lwn3/AH4WI0WxZFkpCeNkpMmfo0WTVld
-	0JTDo3gX5zuhrGn6NULFBvMMGJSYKj6hHaw4u0F72tROk4wRERy8kZb5evmAe0phTasE8HtWH70zt
-	fmitDxVfdR7C0hgNQQfQ==;
+	List-Owner; bh=bZruXRKIjVeQSmQZAjlYQhwKnNAmnAkPyySQ/ajA/kE=; b=C3LHsn439Ur1Dh
+	W8MvwI2CJFAvCgfG2uuN+Uo6E8z2o3gF7I06SbZXgWg1JZLK4vDLNBs5I1nFNRKf/aM2kvVXZJhRh
+	FiABGyyakkMWguczcrP11HUtJ5mVu1GZNyQtqipbY2fIIA+gU1GftSmSDHDDH3HqpeiVvhAW9F450
+	XGTqWr7hnNHn0ZZ0n8qbIYsU55+c/dKq75SyA2/tRhW+Ocgrp274T/uoNYbgmT+pBns5iRt5qXTE4
+	YEPXe59g9M+gEMFjtCmHD0FabAoxHeWHx2TqRR3SteS/lWybsiWH1xAkk5oYetYj0Pm2rgQ7menyA
+	wmqpbTXq5gcGb5cyWhsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCLKr-00079a-B6; Thu, 12 Mar 2020 10:45:05 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1jCLLy-0000HW-QE; Thu, 12 Mar 2020 10:46:14 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCLKc-00078k-Cb
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:44:51 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id x82so3325575vsc.12
+ id 1jCLLo-0000Gc-5w
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:46:07 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id c18so3340721vsq.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 03:44:49 -0700 (PDT)
+ Thu, 12 Mar 2020 03:46:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/hsaG6j90s66b5sAhcEsQTY0J6YR55tJXb5H+vXmq9o=;
- b=BDl6Tah1NgNqpJiG8G3CoDYR87HmHLI8xvK8q2kHUqM97kM38Kbl8lKdPiqJyXtojq
- icwj3qLGQWigurDYhIh0KN4bz9wwIQRkyvCBsdJAFirg41OT+I97DTnbYyFxSTeCeCSO
- MpA11ZmGDCF7Zw2hwDOi90PKeLezH5+npfVwNOnfFOrcsmpBJKj60+JoB7FuNekCCkDk
- oi5UMYTExgop+4c7iTeLXM+MpjwiPw2ZWSaP7SZHg2AHyrKxkfuj9B24Ruyu5B9TLsyo
- Tjajj24+NKBaODEvMCnsL6cU67ag2CIGJluubOaHBItFWdvbcrktOnfOB4lzKx/Utg8k
- YqyA==
+ :cc:content-transfer-encoding;
+ bh=N5Ico3C325Jzu9GMlkuRSJ6WG8mBeI+uKqt4Ftv2/+E=;
+ b=CVlRH3u5pxFhJo7LphUB6sCSb5/JtxxkvrApzEyOf8KUqKqlnoom9WTV491prc1koN
+ CK7FhZCokP5SAn70UhOFimOihssB2VkgsjbMlZW9aNRYQN9hQn10LW92gITMTTkwn6or
+ 9erlg489gPljGfK4AOIcJDvUFWSKyTwWBljFMlzLlBvL0IQuHwnpTRESRgWMxnw2GXv8
+ CrhpaiIRf1d4hJ+Fq4C5EPNVpuSuvN7dP6oIWI1Gyic+5FfO4TbOJez8MZ3szLJPUFFa
+ h4mupStGIWHsDWXMVmK8zV2VRV/7afnqQJPDFmUc8J65+xeJmOkPKvumXx34CTPcR4DM
+ 3NYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/hsaG6j90s66b5sAhcEsQTY0J6YR55tJXb5H+vXmq9o=;
- b=E9YyXMyQ6Nw5M4/nbQ8GeAytt+tW4ZVYcnyIkcsLlq+16TqJfy/IMJD20UaCm/l7ZH
- e4NnYVRODTZ+JLmO512UVRYOUElHtNJ4z0LyZcm3MmkMMymxNN9D/xrEl6kiG7yGPzCU
- QjTkbWm1fN+O/ZACOh62BXC64D4JfX94rTNyq9k2BsHEleZVhfBXEF1Kmwc91qkk877V
- XElS1Iar3vcIJQGCHdpokJsuAkywYBYIOIno1GzSoinhYKeS8iGag7Qm3PVsVrfxrVVh
- 8EJ5WZWJx/D8GdCqtw+iWNA/n2vtAfoBYvBVgVopGGaQJ2+/RRZN1FKvP7oBb+6gmP7U
- lLsw==
-X-Gm-Message-State: ANhLgQ0cv5k9heejSGqlOCftbQYD1oLtfQ2B9KMNxnzw0kvx7hrCSh4E
- jlPI9WVInf/wZOf8RnrzGY9TKk2R9F6TT3BSftCK/A==
-X-Google-Smtp-Source: ADFU+vuszdscU3XdZ57aAT25416d0k5sPcfl0mAi5hLjgkEZHNfu0Lp82aNKZ+W0OfmUblZbN51k2qpZO8MHLGW1V6A=
-X-Received: by 2002:a67:cb84:: with SMTP id h4mr4854919vsl.85.1584009889300;
- Thu, 12 Mar 2020 03:44:49 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=N5Ico3C325Jzu9GMlkuRSJ6WG8mBeI+uKqt4Ftv2/+E=;
+ b=Emk4hHfIsOAF0e4TL8ir/7CKMBuCjCp/zohs0lVVHuebGwJGarQ5ikC61nk2w1U/wN
+ 01s3u+oKtyVnLTXFMBnz6bxN2Wqo+8IQyIAXApYd7UThQhzYciD7rrx4K2dIbr3HHwFP
+ 1YU5Vwe1Ex2xCstSJpwOyNX06eNyrt9rniAfaxhOvBBj+A7lXlr8KZZcWS7LqUjDtVRB
+ j2lPSNI9uOaQaWynpT8CO2nfmKieKCWh4FQuQC/PUyabcOm+KGua2xElK6cGSzgLcWIo
+ Vf38yNOt5Q31dmfbn3VL3rSmzNqBK26lfav75ppI2aluNzzTVtjZz+Hie4kyfGjdRogp
+ 6/aQ==
+X-Gm-Message-State: ANhLgQ0c9ksvb9lwzaVO3QwDpa5uwKXAYY4H60whs4ECzHQ0A47eYtSo
+ FfuKNQ/Hs5PlwK7Mgv2EIOSia2N9aea9415nef3V+Q==
+X-Google-Smtp-Source: ADFU+vsgyuIiYgrQcK5GqD6i8p5v5NrSmSlYOaVuy0jz1OpUXHvnWHmyBVSNun22jeADPYYRX9B+IOGkpHggETCQUeE=
+X-Received: by 2002:a67:7f04:: with SMTP id a4mr4891507vsd.57.1584009963273;
+ Thu, 12 Mar 2020 03:46:03 -0700 (PDT)
 MIME-Version: 1.0
-References: <1583377666-13378-1-git-send-email-christianshewitt@gmail.com>
-In-Reply-To: <1583377666-13378-1-git-send-email-christianshewitt@gmail.com>
+References: <20200308214230.15193-1-j.neuschaefer@gmx.net>
+In-Reply-To: <20200308214230.15193-1-j.neuschaefer@gmx.net>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 12 Mar 2020 11:44:37 +0100
-Message-ID: <CACRpkdZgeA-qgWckwAH2_6nqqwkbxfTa0so55mbKJoC1q1O38A@mail.gmail.com>
-Subject: Re: [PATCH v2] pinctrl: meson: add tsin pinctrl for meson gxbb/gxl/gxm
-To: Christian Hewitt <christianshewitt@gmail.com>
+Date: Thu, 12 Mar 2020 11:45:52 +0100
+Message-ID: <CACRpkdZuSvojs6i9QTsL4xUd4Xd_YYiuZBBptMYQCwLSUgJ7Ww@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: pinctrl: at91: Fix a typo ("descibe")
+To: =?UTF-8?Q?Jonathan_Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_034450_491400_E690BAF7 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20200312_034604_225307_05A94FAD 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -69,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,41 +92,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kevin Hilman <khilman@baylibre.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Otto Meier <gf435@gmx.net>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Igor Vavro <afl2001@gmail.com>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 5, 2020 at 4:08 AM Christian Hewitt
-<christianshewitt@gmail.com> wrote:
-
-> From: Igor Vavro <afl2001@gmail.com>
->
-> Add the tsin pinctrl definitions needed for integrated DVB hardware
-> support on Meson GXBB/GXL/GXM boards.
->
-> changes in v2
-> - fix ordering and numbering of uart_c ping flagged by Otto in [1]
->
-> [1] http://lists.infradead.org/pipermail/linux-amlogic/2020-March/015906.html
->
-> Signed-off-by: Igor Vavro <afl2001@gmail.com>
-> [updated commit message]
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-
-Patch applied with Neil's review tag.
-
-Yours,
-Linus Walleij
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCBNYXIgOCwgMjAyMCBhdCAxMDo0MiBQTSBKb25hdGhhbiBOZXVzY2jDpGZlcgo8ai5u
+ZXVzY2hhZWZlckBnbXgubmV0PiB3cm90ZToKCj4gU2lnbmVkLW9mZi1ieTogSm9uYXRoYW4gTmV1
+c2Now6RmZXIgPGoubmV1c2NoYWVmZXJAZ214Lm5ldD4KClBhdGNoIGFwcGxpZWQgd2l0aCBMdWRv
+dmljJ3MgQUNLLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
