@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 978E91828BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 07:05:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E3DA18290F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 07:31:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgr0mjDtk4ZXrnkCgYJNsOkPI8iVzjUoZNxMfJwBX0E=; b=PrUFPejTXNtGSo
-	YGtAcB7s4bSJlP3jOuFfQNx4OjHRqTRRzRS1sqiYsZtBW9dHijDLC/yBJo+mLrUzos6ynvaYNIavo
-	YFrhR8gs+1eUosWvj4tAQphXSewdCTJ/5rCGq/wR6o2dO/x7sgMcYDnfx5EYYC85epLa8nBZZOvwG
-	vD0+g0HxP6AZFCGkIv7HW90U4JCFLfreoh2ZS/X8ZgIp9w11F1kx/ufXkBjoE8/wf2rUaRWm4bQrz
-	WkRHfhBTdRIAWe4sit83ByCYBCSz5G0fL8am7zh0xkdwJs3eLj53iOflM6Y3uc2cnE3dvKQ0oqXUK
-	esgrwvwmOsC++b6d/L/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SxJVlFzoHVwrq9ne5l5cqDDNv+18AZuaEFsUyVfDfZE=; b=Y2qZJ6dAzbowm6pjM9mVOb4j8
+	0JuFw7uGZ0cg8CX1mImdR+2i/uzpzmD0fwU3qNEdHqch1HDCpZNeZr+JrpKAE/itn8kQJDeEnWNFE
+	M1psnrUn3T1UFP8qgsgMnmDkhJFz4BAKwUMYoREDYEfxxVJQO2UX1/3VFsnEaUoNzGhmiU1Aplm34
+	TQ2UA98j+J7dVXvGsZShtMG7GH6nFDIIe3mtIgdu+J0RPgAXwhEI+x7G9JdsbwCXMa868UWd+c45e
+	RBTyLEe6cLGhZKMvwwa8uIdjUvJT5uyZsePunL/zk4XzVdciDPVfveJqwagqFmG6J/rDjQHH0VXYE
+	2+E76WPbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCGyD-00049k-IU; Thu, 12 Mar 2020 06:05:25 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jCHN1-0004w7-Nd; Thu, 12 Mar 2020 06:31:03 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCGy5-000483-GF
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 06:05:18 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 2E28214CD0E6D;
- Wed, 11 Mar 2020 23:05:16 -0700 (PDT)
-Date: Wed, 11 Mar 2020 23:05:15 -0700 (PDT)
-Message-Id: <20200311.230515.1148233734946906259.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net-next] net: stmmac: selftests: Fix L3/L4 Filtering test
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <4e5d8d273498a1c1c6b8f983e5dd7590c6dfd26a.1583760590.git.Jose.Abreu@synopsys.com>
-References: <4e5d8d273498a1c1c6b8f983e5dd7590c6dfd26a.1583760590.git.Jose.Abreu@synopsys.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Wed, 11 Mar 2020 23:05:16 -0700 (PDT)
+ id 1jCHMs-0004uZ-PQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 06:30:56 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 48A521524AFDBEDCB9A7;
+ Thu, 12 Mar 2020 14:30:37 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0; Thu, 12 Mar 2020
+ 14:30:30 +0800
+Subject: Re: [PATCH v5 01/23] irqchip/gic-v3: Use SGIs without active state if
+ offered
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200304203330.4967-1-maz@kernel.org>
+ <20200304203330.4967-2-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <63f6530a-9369-31e6-88d0-5337173495b9@huawei.com>
+Date: Thu, 12 Mar 2020 14:30:28 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
+MIME-Version: 1.0
+In-Reply-To: <20200304203330.4967-2-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_230517_540960_0F164735 
-X-CRM114-Status: UNSURE (   6.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200311_233054_993542_C637CDFA 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,26 +69,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Mon,  9 Mar 2020 14:30:22 +0100
+Hi Marc,
 
-> Since commit 319a1d19471e, stmmac only support basic HW stats type for
-> action. Set this field in the L3/L4 Filtering test so that it correctly
-> setups the filter instead of returning EOPNOTSUPP.
+On 2020/3/5 4:33, Marc Zyngier wrote:
+> To allow the direct injection of SGIs into a guest, the GICv4.1
+> architecture has to sacrifice the Active state so that SGIs look
+> a lot like LPIs (they are injected by the same mechanism).
 > 
-> Fixes: 319a1d19471e ("flow_offload: check for basic action hw stats type")
-> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+> In order not to break existing software, the architecture gives
+> offers guests OSs the choice: SGIs with or without an active
+> state. It is the hypervisors duty to honor the guest's choice.
+> 
+> For this, the architecture offers a discovery bit indicating whether
+> the GIC supports GICv4.1 SGIs (GICD_TYPER2.nASSGIcap), and another
+> bit indicating whether the guest wants Active-less SGIs or not
+> (controlled by GICD_CTLR.nASSGIreq).
 
-Applied, thanks.
+I still can't find the description of these two bits in IHI0069F.
+Are they actually architected and will be available in the future
+version of the spec?  I want to confirm it again since this has a
+great impact on the KVM code, any pointers?
+
+
+Thanks,
+Zenghui
+
 
 _______________________________________________
 linux-arm-kernel mailing list
