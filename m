@@ -2,87 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B11141837B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:35:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A687F1837CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:39:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=52C4fJbBXvYsi0KmXBB05LOwSFGtyHAA0dW4AljP2Hs=; b=qy/VTriOly/4dvccTPAD8EnUj
-	iGLxNTxiz3y9Zy4ED+itox1/jXYANHmk51kuKQaHf7OetbgO7V8HWwpZzbFM69Yyn32JwZkWXLnPu
-	wW22AFb1lTMZfMUJwaTs5T7igvjdRnOYASv68uFQOEgPXS3GaL3gaE5FUBuxN+3D/OF/OJ9aFPpvm
-	AwMrJk2SyjWqQylDoQb5NhSksPWFgZSVWX8ZbL1+SIdfV+Lj4CKJX582ZsfrdjVMDAoQhsVc3nxPg
-	Wevj3wxvLR0R8txwDDxcGCVD7yKVKW6bfc+l2biRFZwWINWic6eMoNUM8C0oAa2rqARBcikiUtT7q
-	eCkPRmELw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=eLt44HKj52vzMQH1+tBGMqm4JanUTOqHInq+MAbZt98=; b=NCC
+	m6NI+N+tvreh6QSIw8HJOJPmgQ63QPPvO33BnUV4xvRhWOKrlQjEr0BPaRUTmpSrPDiFN6SSwQ04o
+	NBT1U4+mwK7nCInjpdNylFA62iMnslaTMtAhMJz2ahCg+3tMf2L5uG4G7IjrReJgbElPy262AcAEm
+	E6Qw21xIKd8VEB5QsN+WSY8lW/NasBWNw8UcN6zQI/Vz/BkIMs8UG/byraFgnCcbtWTCwmnHIZOkx
+	40lLhYwQ5X/GbNbcTHGyI7ZjWZOydfwhCMKhhtWaCHIGrZ7eMKFtldL44XjrhZAXrURxJIpF593sg
+	hVQ+BJ2PeOr/yQTFHAPJCIx9ccOo+mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRjo-0001zT-KI; Thu, 12 Mar 2020 17:35:16 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRja-0001Ho-40
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:35:05 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1584034504; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=JqD3oxXgpm5gEOCIMzEhLs3L1rpyh7voYQV1LqU4Ak4=;
- b=TF21M2fss7zEvWhZdgLTNuedMSD1nd0ACM6vR6fsYC2wyYiTrm1i4K1ikQzSDytxj1efbd+v
- qlP8C9G9p6pAS04hbcQAYGT/0l1ntWNP4Mjn9miDU3Vig6jmMm3jP9UqP68jrvzJ9G4PvUbl
- fUS6m9gNhQcOmQqGZLoi/Gkc08I=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e6a72c1.7f1ae4763ca8-smtp-out-n02;
- Thu, 12 Mar 2020 17:34:57 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 7A9C8C43636; Thu, 12 Mar 2020 17:34:57 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.46.161.159] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id A1C67C433CB;
- Thu, 12 Mar 2020 17:34:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org A1C67C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v2 3/8] scsi: ufs: use an enum for host capabilities
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- jejb@linux.ibm.com
-References: <20200312110908.14895-1-stanley.chu@mediatek.com>
- <20200312110908.14895-4-stanley.chu@mediatek.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <f86de852-6379-fa77-eac0-b4fa3610ed28@codeaurora.org>
-Date: Thu, 12 Mar 2020 10:34:55 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20200312110908.14895-4-stanley.chu@mediatek.com>
-Content-Language: en-US
+	id 1jCRnd-0003Kw-66; Thu, 12 Mar 2020 17:39:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCRnQ-0003J9-Bq; Thu, 12 Mar 2020 17:39:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5BE830E;
+ Thu, 12 Mar 2020 10:38:57 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B6153F6CF;
+ Thu, 12 Mar 2020 10:38:57 -0700 (PDT)
+Date: Thu, 12 Mar 2020 17:38:55 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Applied "spi: dt-bindings: amlogic,
+ meson-gx-spicc: add Amlogic G12A compatible" to the spi tree
+In-Reply-To: <20200312133131.26430-9-narmstrong@baylibre.com>
+Message-Id: <applied-20200312133131.26430-9-narmstrong@baylibre.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103504_286625_6D8B6B01 
-X-CRM114-Status: GOOD (  23.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200312_103900_450174_8C849E15 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,116 +62,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/12/2020 4:09 AM, Stanley Chu wrote:
-> Use an enum to specify the host capabilities instead of #defines inside the
-> structure definition.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> Reviewed-by: Can Guo <cang@codeaurora.org>
-> ---
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
->   drivers/scsi/ufs/ufshcd.h | 65 ++++++++++++++++++++++-----------------
->   1 file changed, 37 insertions(+), 28 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index 5cf79d2319a6..fec004cd8054 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -501,6 +501,43 @@ enum ufshcd_quirks {
->   	UFSHCD_QUIRK_BROKEN_UFS_HCI_VERSION		= 1 << 5,
->   };
->   
-> +enum ufshcd_caps {
-> +	/* Allow dynamic clk gating */
-> +	UFSHCD_CAP_CLK_GATING				= 1 << 0,
-> +
-> +	/* Allow hiberb8 with clk gating */
-> +	UFSHCD_CAP_HIBERN8_WITH_CLK_GATING		= 1 << 1,
-> +
-> +	/* Allow dynamic clk scaling */
-> +	UFSHCD_CAP_CLK_SCALING				= 1 << 2,
-> +
-> +	/* Allow auto bkops to enabled during runtime suspend */
-> +	UFSHCD_CAP_AUTO_BKOPS_SUSPEND			= 1 << 3,
-> +
-> +	/*
-> +	 * This capability allows host controller driver to use the UFS HCI's
-> +	 * interrupt aggregation capability.
-> +	 * CAUTION: Enabling this might reduce overall UFS throughput.
-> +	 */
-> +	UFSHCD_CAP_INTR_AGGR				= 1 << 4,
-> +
-> +	/*
-> +	 * This capability allows the device auto-bkops to be always enabled
-> +	 * except during suspend (both runtime and suspend).
-> +	 * Enabling this capability means that device will always be allowed
-> +	 * to do background operation when it's active but it might degrade
-> +	 * the performance of ongoing read/write operations.
-> +	 */
-> +	UFSHCD_CAP_KEEP_AUTO_BKOPS_ENABLED_EXCEPT_SUSPEND = 1 << 5,
-> +
-> +	/*
-> +	 * This capability allows host controller driver to automatically
-> +	 * enable runtime power management by itself instead of waiting
-> +	 * for userspace to control the power management.
-> +	 */
-> +	UFSHCD_CAP_RPM_AUTOSUSPEND			= 1 << 6,
-> +};
-> +
->   /**
->    * struct ufs_hba - per adapter private structure
->    * @mmio_base: UFSHCI base register address
-> @@ -653,34 +690,6 @@ struct ufs_hba {
->   	struct ufs_clk_gating clk_gating;
->   	/* Control to enable/disable host capabilities */
->   	u32 caps;
-> -	/* Allow dynamic clk gating */
-> -#define UFSHCD_CAP_CLK_GATING	(1 << 0)
-> -	/* Allow hiberb8 with clk gating */
-> -#define UFSHCD_CAP_HIBERN8_WITH_CLK_GATING (1 << 1)
-> -	/* Allow dynamic clk scaling */
-> -#define UFSHCD_CAP_CLK_SCALING	(1 << 2)
-> -	/* Allow auto bkops to enabled during runtime suspend */
-> -#define UFSHCD_CAP_AUTO_BKOPS_SUSPEND (1 << 3)
-> -	/*
-> -	 * This capability allows host controller driver to use the UFS HCI's
-> -	 * interrupt aggregation capability.
-> -	 * CAUTION: Enabling this might reduce overall UFS throughput.
-> -	 */
-> -#define UFSHCD_CAP_INTR_AGGR (1 << 4)
-> -	/*
-> -	 * This capability allows the device auto-bkops to be always enabled
-> -	 * except during suspend (both runtime and suspend).
-> -	 * Enabling this capability means that device will always be allowed
-> -	 * to do background operation when it's active but it might degrade
-> -	 * the performance of ongoing read/write operations.
-> -	 */
-> -#define UFSHCD_CAP_KEEP_AUTO_BKOPS_ENABLED_EXCEPT_SUSPEND (1 << 5)
-> -	/*
-> -	 * This capability allows host controller driver to automatically
-> -	 * enable runtime power management by itself instead of waiting
-> -	 * for userspace to control the power management.
-> -	 */
-> -#define UFSHCD_CAP_RPM_AUTOSUSPEND (1 << 6)
->   
->   	struct devfreq *devfreq;
->   	struct ufs_clk_scaling clk_scaling;
-> 
+The patch
 
+   spi: dt-bindings: amlogic, meson-gx-spicc: add Amlogic G12A compatible
 
+has been applied to the spi tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 9ea7db818d9dcbbde581925b82bbe259e1926e20 Mon Sep 17 00:00:00 2001
+From: Neil Armstrong <narmstrong@baylibre.com>
+Date: Thu, 12 Mar 2020 14:31:30 +0100
+Subject: [PATCH] spi: dt-bindings: amlogic, meson-gx-spicc: add Amlogic G12A
+ compatible
+
+The Amlogic G12A SPICC controllers uses a secondary clock used to feed the
+baud rate generator and the delay control logic.
+
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Link: https://lore.kernel.org/r/20200312133131.26430-9-narmstrong@baylibre.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ .../bindings/spi/amlogic,meson-gx-spicc.yaml  | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml b/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
+index 49b617c98ae7..9147df29022a 100644
+--- a/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
++++ b/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
+@@ -22,6 +22,7 @@ properties:
+     enum:
+       - amlogic,meson-gx-spicc # SPICC controller on Amlogic GX and compatible SoCs
+       - amlogic,meson-axg-spicc # SPICC controller on Amlogic AXG and compatible SoCs
++      - amlogic,meson-g12a-spicc # SPICC controller on Amlogic G12A and compatible SoCs
+ 
+   interrupts:
+     maxItems: 1
+@@ -40,6 +41,27 @@ properties:
+     items:
+       - const: core
+ 
++if:
++  properties:
++    compatible:
++      contains:
++        enum:
++          - amlogic,meson-g12a-spicc
++
++then:
++  properties:
++    clocks:
++      contains:
++        items:
++          - description: controller register bus clock
++          - description: baud rate generator and delay control clock
++
++    clock-names:
++      minItems: 2
++      items:
++        - const: core
++        - const: pclk
++
+ required:
+   - compatible
+   - reg
 -- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
