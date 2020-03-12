@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DFB4183C78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 23:29:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01B8F183C7B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 23:29:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJ1qmKuA+bwiRaHhdGRH2+SghdA1aWItO3GcO2NunMc=; b=pYMthW2ktyzZxY
-	7Ph8lD7CD2gfZfRFRU2eSDl8OwsgB23Vw6Od3fEghaMo6HvI/KszUiFh0KOSVhgb57uEL6i9Iu59a
-	Uxw2AKr9MWurIPwfeLvgpi/NcVlX+ieRpR5Jhw+h/UsT7kAv9tJ6S/nyQO1Cpx5/cXYLGr2ARXOQn
-	GC8dxZHkeBQY8/16/g3MTbxSStRZIPaj4BlCLRvBvHDsCdMb9rz5sOZCLaYE8rXYFd/Lx6uhKX+rB
-	P/gJ43OEuKChJA2rujjyjcqz2Z2zj3xVohgYGQaN+IeGdBkZ+QVy2XJltcvqabR0syc9g6kjxFVD4
-	7EmH58N8PG1sZ9I7Zn/g==;
+	List-Owner; bh=BPN4kHl6DoU/DRGkL2/qP8ODp/PIqcUEexVTWXoMJzo=; b=VFpgiEouhfivYy
+	mJJhAGWiYhUId0PILny72xjBQzYGivCvH7toiquovLDpwUI8QYjRCogBPANLTRXUjPVIbaGD/N81q
+	MKQIHXuABa56WXkKD9yLGPSeQMEUkHUduagxz5fU/5SwLwQG2+Vpqx3M8VCmBN1WV+GNC7CP+HfxJ
+	YXVrZDK7JlFKpYgQ491WWi4eqGGsGLQJyRe9tVzQLxfJVLFBO4d54DD2mIbf/Hf5bUubW6G8PPDis
+	/HCQlSJ3SBNK/NfQfT0ri2WZGUhY0vfDC84fzC9+1xvStI5NS/RjmmkqHD3CuKwG7OViJFploExhq
+	0tWGwLojY50HjS7iUsIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCWJv-0002mW-Ci; Thu, 12 Mar 2020 22:28:51 +0000
+	id 1jCWKa-0003Tz-Ht; Thu, 12 Mar 2020 22:29:32 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCWJm-0002l4-3q
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 22:28:43 +0000
+ id 1jCWJm-0002l6-3s
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 22:28:44 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 422B81A11C4;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B4CDA1A11AF;
  Thu, 12 Mar 2020 23:28:40 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 072211A11C9;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 76B601A11CD;
  Thu, 12 Mar 2020 23:28:40 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 7584D40BCF; Thu, 12 Mar 2020 15:28:39 -0700 (MST)
+ C9D9740A63; Thu, 12 Mar 2020 15:28:39 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: Rasmus Villemoes <linux@rasmusvillemoes.dk>, Timur Tabi <timur@kernel.org>,
  Zhao Qiang <qiang.zhao@nxp.com>
-Subject: [PATCH 2/6] soc: fsl: qe: fix sparse warning for qe_common.c
-Date: Thu, 12 Mar 2020 17:28:23 -0500
-Message-Id: <20200312222827.17409-3-leoyang.li@nxp.com>
+Subject: [PATCH 3/6] soc: fsl: qe: fix sparse warnings for ucc.c
+Date: Thu, 12 Mar 2020 17:28:24 -0500
+Message-Id: <20200312222827.17409-4-leoyang.li@nxp.com>
 X-Mailer: git-send-email 2.25.1.377.g2d2118b
 In-Reply-To: <20200312222827.17409-1-leoyang.li@nxp.com>
 References: <20200312222827.17409-1-leoyang.li@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_152842_308838_07E2BA76 
+X-CRM114-CacheID: sfid-20200312_152842_307431_9F983E56 
 X-CRM114-Status: UNSURE (   8.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
@@ -75,30 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes the following sparse warning:
+Fixes the following sparse warnings:
 
-drivers/soc/fsl/qe/qe_common.c:75:48: warning: incorrect type in argument 2 (different base types)
-drivers/soc/fsl/qe/qe_common.c:75:48:    expected restricted __be32 const [usertype] *addr
-drivers/soc/fsl/qe/qe_common.c:75:48:    got unsigned int *
+drivers/soc/fsl/qe/ucc.c:637:20: warning: incorrect type in assignment (different address spaces)
+drivers/soc/fsl/qe/ucc.c:637:20:    expected struct qe_mux *qe_mux_reg
+drivers/soc/fsl/qe/ucc.c:637:20:    got struct qe_mux [noderef] <asn:2> *
+drivers/soc/fsl/qe/ucc.c:652:9: warning: incorrect type in argument 1 (different address spaces)
+drivers/soc/fsl/qe/ucc.c:652:9:    expected void const volatile [noderef] <asn:2> *addr
+drivers/soc/fsl/qe/ucc.c:652:9:    got restricted __be32 *
+drivers/soc/fsl/qe/ucc.c:652:9: warning: incorrect type in argument 2 (different address spaces)
+drivers/soc/fsl/qe/ucc.c:652:9:    expected void volatile [noderef] <asn:2> *addr
+drivers/soc/fsl/qe/ucc.c:652:9:    got restricted __be32 *
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- drivers/soc/fsl/qe/qe_common.c | 2 +-
+ drivers/soc/fsl/qe/ucc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/soc/fsl/qe/qe_common.c b/drivers/soc/fsl/qe/qe_common.c
-index a81a1a79f1ca..75075591f630 100644
---- a/drivers/soc/fsl/qe/qe_common.c
-+++ b/drivers/soc/fsl/qe/qe_common.c
-@@ -46,7 +46,7 @@ int cpm_muram_init(void)
+diff --git a/drivers/soc/fsl/qe/ucc.c b/drivers/soc/fsl/qe/ucc.c
+index 90157acc5ba6..d6c93970df4d 100644
+--- a/drivers/soc/fsl/qe/ucc.c
++++ b/drivers/soc/fsl/qe/ucc.c
+@@ -632,7 +632,7 @@ int ucc_set_tdm_rxtx_sync(u32 tdm_num, enum qe_clock clock,
  {
- 	struct device_node *np;
- 	struct resource r;
--	u32 zero[OF_MAX_ADDR_CELLS] = {};
-+	__be32 zero[OF_MAX_ADDR_CELLS] = {};
- 	resource_size_t max = 0;
- 	int i = 0;
- 	int ret = 0;
+ 	int source;
+ 	u32 shift;
+-	struct qe_mux *qe_mux_reg;
++	struct qe_mux __iomem *qe_mux_reg;
+ 
+ 	qe_mux_reg = &qe_immr->qmx;
+ 
 -- 
 2.17.1
 
