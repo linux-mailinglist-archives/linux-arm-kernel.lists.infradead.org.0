@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CF421827A3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:11:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE4251827A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:11:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E9nm88MS9BUQVtMSROClwng29AI1ucRrpf7fvsvnOqs=; b=mipkX8APId3Uv4
-	iHX4BAMHH62JnEAq4WqtEcscOsmS8eoRIHSh86uYkX+VYd9y0gfhmJtt3M1sg7OhYI2G4bpeQcPJT
-	tHsfToaUvBsdp5Evn9OWGXN33Pu1SS7t9mk6JRFt1bVHmCQ7NCaDLCJkwKHuZikb3cQHOeQjwLRPK
-	eKm53RUNQ7Jk3ve54MpbiJKq+PGP007959csv7JzUxMCESxDGKmip6cfSglbZKImYYarTNdxGhlQK
-	CMuqWKre5U3+cttvug0Cu5Lffuey/f1QJ+kKqiu9/bYWNSJu55+PMnpFEq9D1SAnF6WniYxUQ6ECl
-	ZHIKAQRh6qKdq9Nzi5eg==;
+	List-Owner; bh=+WsxSsxtxNg8kIi0bh02tl9eTNPY4TB5/ObUyhQrNTQ=; b=j8F9DnhmSHq8TW
+	7+OoHzSPFkELEt0kUG+gjbsxQ9MYijQpjpjm95zLIGCmgVE8XWt7HUHbLt839NsoIB5ntW38He8ri
+	aLlHF+lgUltqXj9ESpyAVWUKL2biBakPW8/eH57GvMpjClvx+ITJmOAiiJZ1vNH3tk8nwQSRdNw0E
+	br6L7pe15y48fM89CQkL20XkfUiOd+DCpjntOUH0XwfxpvzpJU7QAjdJYBcGm2FgJpzRFSX5ZP9Q2
+	FtI0Mi4v+7WHAuruoCbZo8x25l2ZimiIVMTXPSRHN5GcCJ5Haa4NFL3TnT9wbbpUjaUvW+SVGPjEW
+	nl1RPFBr39HvG7PS+umg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCFBj-0003IO-QO; Thu, 12 Mar 2020 04:11:15 +0000
+	id 1jCFCH-0003sp-6A; Thu, 12 Mar 2020 04:11:49 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCFBG-00037X-0B
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 04:10:47 +0000
+ id 1jCFBG-00037Y-04
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 04:10:49 +0000
 Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 999F68A68DD6D196A9F1;
+ by Forcepoint Email with ESMTP id A9DD3C064D0E03BC613E;
  Thu, 12 Mar 2020 12:10:36 +0800 (CST)
 Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
  DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 12 Mar 2020 12:10:26 +0800
+ 14.3.487.0; Thu, 12 Mar 2020 12:10:27 +0800
 From: Zhenyu Ye <yezhenyu2@huawei.com>
 To: <mark.rutland@arm.com>, <catalin.marinas@arm.com>, <will@kernel.org>,
  <aneesh.kumar@linux.ibm.com>, <maz@kernel.org>, <steven.price@arm.com>,
  <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [RFC PATCH v2 1/3] arm64: tlb: use __tlbi_level replace __tlbi in
- Stage-1
-Date: Thu, 12 Mar 2020 12:10:16 +0800
-Message-ID: <20200312041018.1927-2-yezhenyu2@huawei.com>
+Subject: [RFC PATCH v2 2/3] arm64: tlb: use mm_struct.context.flags to
+ indicate TTL value
+Date: Thu, 12 Mar 2020 12:10:17 +0800
+Message-ID: <20200312041018.1927-3-yezhenyu2@huawei.com>
 X-Mailer: git-send-email 2.22.0.windows.1
 In-Reply-To: <20200312041018.1927-1-yezhenyu2@huawei.com>
 References: <20200312041018.1927-1-yezhenyu2@huawei.com>
@@ -44,8 +44,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.220.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_211046_220149_E177C009 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200311_211046_611556_2BE69877 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,77 +75,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARMv8.4-TTL provides the TTL field in tlbi instruction to indicate
-the level of translation table walk holding the leaf entry for the
-address that is being invalidated.
-
-This patch use __tlbi_level replace __tlbi and __tlbi_user in
-Stage-1, and set the default value of level to 0.
+Use Architecture-specific MM context to indicate the level of page
+table walk.  This avoids lots of changes to common-interface.
 
 Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
 ---
- arch/arm64/include/asm/tlbflush.h | 19 ++++++-------------
- 1 file changed, 6 insertions(+), 13 deletions(-)
+ arch/arm64/include/asm/mmu.h      | 11 +++++++++++
+ arch/arm64/include/asm/tlbflush.h |  6 +++---
+ arch/arm64/kernel/process.c       |  2 +-
+ 3 files changed, 15 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+index e4d862420bb4..f86a38ab3632 100644
+--- a/arch/arm64/include/asm/mmu.h
++++ b/arch/arm64/include/asm/mmu.h
+@@ -8,6 +8,10 @@
+ #include <asm/cputype.h>
+ 
+ #define MMCF_AARCH32	0x1	/* mm context flag for AArch32 executables */
++#define S1_PUD_LEVEL	0x10	/* mm context flag for the level of ptw */
++#define S1_PMD_LEVEL	0x20
++#define S1_PTE_LEVEL	0x30
++
+ #define USER_ASID_BIT	48
+ #define USER_ASID_FLAG	(UL(1) << USER_ASID_BIT)
+ #define TTBR_ASID_MASK	(UL(0xffff) << 48)
+@@ -19,6 +23,10 @@
+ typedef struct {
+ 	atomic64_t	id;
+ 	void		*vdso;
++	/*
++	 * flags[3:0]: AArch32 executables
++	 * flags[7:4]: the level of page table walk
++	 */
+ 	unsigned long	flags;
+ } mm_context_t;
+ 
+@@ -29,6 +37,9 @@ typedef struct {
+  */
+ #define ASID(mm)	((mm)->context.id.counter & 0xffff)
+ 
++/* This macro is only used by TLBI TTL */
++#define TLBI_LEVEL(mm)	((mm)->context.flags >> 4 & 0xf)
++
+ extern bool arm64_use_ng_mappings;
+ 
+ static inline bool arm64_kernel_unmapped_at_el0(void)
 diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-index a3f70778a325..dda693f32099 100644
+index dda693f32099..312b9edb281b 100644
 --- a/arch/arm64/include/asm/tlbflush.h
 +++ b/arch/arm64/include/asm/tlbflush.h
-@@ -46,11 +46,6 @@
- 
- #define __tlbi(op, ...)		__TLBI_N(op, ##__VA_ARGS__, 1, 0)
- 
--#define __tlbi_user(op, arg) do {						\
--	if (arm64_kernel_unmapped_at_el0())					\
--		__tlbi(op, (arg) | USER_ASID_FLAG);				\
--} while (0)
--
- /* This macro creates a properly formatted VA operand for the TLBI */
- #define __TLBI_VADDR(addr, asid)				\
- 	({							\
-@@ -87,6 +82,8 @@
- 		}							\
- 									\
- 		__tlbi(op,  arg);					\
-+		if (arm64_kernel_unmapped_at_el0())			\
-+			__tlbi(op, (arg) | USER_ASID_FLAG);		\
- 	} while(0)
- 
- /*
-@@ -179,8 +176,7 @@ static inline void flush_tlb_mm(struct mm_struct *mm)
- 	unsigned long asid = __TLBI_VADDR(0, ASID(mm));
- 
- 	dsb(ishst);
--	__tlbi(aside1is, asid);
--	__tlbi_user(aside1is, asid);
-+	__tlbi_level(aside1is, asid, 0);
- 	dsb(ish);
- }
- 
-@@ -190,8 +186,7 @@ static inline void flush_tlb_page_nosync(struct vm_area_struct *vma,
+@@ -186,7 +186,7 @@ static inline void flush_tlb_page_nosync(struct vm_area_struct *vma,
  	unsigned long addr = __TLBI_VADDR(uaddr, ASID(vma->vm_mm));
  
  	dsb(ishst);
--	__tlbi(vale1is, addr);
--	__tlbi_user(vale1is, addr);
-+	__tlbi_level(vale1is, addr, 0);
+-	__tlbi_level(vale1is, addr, 0);
++	__tlbi_level(vale1is, addr, TLBI_LEVEL(vma->vm_mm));
  }
  
  static inline void flush_tlb_page(struct vm_area_struct *vma,
-@@ -231,11 +226,9 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+@@ -226,9 +226,9 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
  	dsb(ishst);
  	for (addr = start; addr < end; addr += stride) {
  		if (last_level) {
--			__tlbi(vale1is, addr);
--			__tlbi_user(vale1is, addr);
-+			__tlbi_level(vale1is, addr, 0);
+-			__tlbi_level(vale1is, addr, 0);
++			__tlbi_level(vale1is, addr, TLBI_LEVEL(vma->vm_mm));
  		} else {
--			__tlbi(vae1is, addr);
--			__tlbi_user(vae1is, addr);
-+			__tlbi_level(vae1is, addr, 0);
+-			__tlbi_level(vae1is, addr, 0);
++			__tlbi_level(vae1is, addr, TLBI_LEVEL(vma->vm_mm));
  		}
  	}
  	dsb(ish);
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index bbb0f0c145f6..bf835755d9ed 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -562,7 +562,7 @@ unsigned long arch_align_stack(unsigned long sp)
+  */
+ void arch_setup_new_exec(void)
+ {
+-	current->mm->context.flags = is_compat_task() ? MMCF_AARCH32 : 0;
++	current->mm->context.flags |= is_compat_task() ? MMCF_AARCH32 : 0;
+ 
+ 	ptrauth_thread_init_user(current);
+ }
 -- 
 2.19.1
 
