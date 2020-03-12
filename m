@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A822183797
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:31:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1698818378D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:31:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=IfW6ytq+nu/SqVTOX4Tmyisatn48IMahUL6oxrHHBoI=; b=m9k
-	MMWIp+0QVW7nEljDeIFSSDPcCkavHQ7oEcTQbI15a/JLa03+P553i/ILj5AXu+QBxpi+/pdnFpBGA
-	iQ5heV6r0bys4+UdJLPpmZse77jMIuBaiBQPFyW1kDhevBRrlFAxFRQAnC/71odHGaXCW1I7iYbPG
-	1Yl6gtjNlchMxNb1MtFKxTC2W4a+DQXRObsYu2Y1d7+rVFNIiZeuQg+8Fz9vG1qO7Kf7hb/IeJOHV
-	cKHUXXF/iAdXEBvuv7Tu7enxdgE3OAiXCFhYc2w8G/8JcAnqpqdF4CM2tFHPoRWfFpEHWCw6fWwDI
-	JdkD1Au75zowbVIa7x/Y38Uhl6ZMaWA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tscd8+AWYDHqbQAjvHhgrYlak3iQ7h2yqsXlpijG9Ak=; b=ICFh8oVHd8nPWvCqERiVpIcD36
+	/vvjr+W6Wka097TqiGHps2nd/hb974qSx8qItSEZzCSGdBUu+GVcrcBip4IlH9vTZKqnAzrWBiUix
+	+bwu2+wdtGNisYpV8JBxGU/3yNwqYDmq34i2TZACVxo9edUCFzIzvMxWo1QIzWz5xfkGTz+LJccO9
+	q0/HnCtnsH5pR6L5MGEkgs4aa7ImgRXvya1fEvwltkf5m/Jvho0h60N/EwDTnHabmiF9IQzxU39hM
+	kVCmHmUM+VYF7hfOxkVaxCLeQeWZXFlZ3iG7utnPLNYDamyNVJfA2duHucXaddzDT1H8zkAWTHaBp
+	QaHETtcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRfv-00007x-8b; Thu, 12 Mar 2020 17:31:15 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1jCRfe-0008NA-8i; Thu, 12 Mar 2020 17:30:58 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRfU-0008M4-8j; Thu, 12 Mar 2020 17:30:49 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 11so7001944wmo.2;
- Thu, 12 Mar 2020 10:30:46 -0700 (PDT)
+ id 1jCRfT-0008M6-U9; Thu, 12 Mar 2020 17:30:49 +0000
+Received: by mail-wr1-x443.google.com with SMTP id l18so8519195wru.11;
+ Thu, 12 Mar 2020 10:30:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=xSnW9A8X74vMXdw1AZNYRfnq/dFpU0Q61rYWfM27gUE=;
- b=dqZ+cS/Prcg+PDSUIoMKAOEp40uZVlpGw5ZOWddF1Z+/e20AXbLSPQFzeZ7bd+Z4q+
- 4uKT3g1n3TNaUsBmQNyL0iatlr3q3BMU+UCYm1losTAgpsFzjIVGBRlrLH+BCJ0lvz/D
- oW1p+URZaH4dQIOw2PGC3Gmk6LxtBexxtvJAiuqjcQzmxkLbPJp/vSzX+rf0g4fA7rCg
- XOKvY1oZc0waeoUcTIPSLdIwnf+ZvTUJTNkTK/XYTlFrO3wn2oKTzSPMSmQk1pZ3gUe2
- mOwHloguKVYmhmfoshAzANf4zmtWL+5AxDuOC0NE8y/jFyi47KCYNQp0zTLsAnlChnyN
- VWYg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=x3OsNYo4WOFc4e3N45xENkSPMvXkKhjC6Ed5es5ifqc=;
+ b=g6RAegYueXWuES+iYPK9Gx7ix10quTgc1ud5mKsYb3JnooppxE0lL1gjlhqcSCzaQj
+ J/HpKmkgG1HkW6I6eDyzTS7nsc0xqLs9o0Ew4C14V6N+HogqAbYe4OtujhizuUqlpZR5
+ rulWdJPyPze13u9HQ9NENF7fALTj1bdbjZDh92TloU9d78F3K8M1khhOakADPAZEffjL
+ WquoKWFqAFPYlEHDxJp2bOoe38p89iKuifCU82U5+NdiB3jpZFc6lwfRNiWw8pAi3q0v
+ LpnjMSR7EfUQfh8nsNXo+Xg/U2LR+yOVrAVKlQWtk0IuJWsUkKXk8w+1EXbtNOcTURHT
+ hCeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=xSnW9A8X74vMXdw1AZNYRfnq/dFpU0Q61rYWfM27gUE=;
- b=suHgRq0vgTMzgrg4Saiyu+qic1twaAWuMv6W8+B2jFmeCQBIpvNa/YAXmh+UcZ/DsU
- pplV0WFQFS2ou3o9QHcmCm8a3E+crKM8kwdfLpOwmFHvmvhH68h81i/KZT8wuVgd90tU
- p9zKZiHceTGs19zVCUY3KeRSKO91H6x2mhVRGeX0Jfxqure1Zj0kyA4UGqAMXtRySCXy
- 6864yagET3k1OXdL7QXhyfz06MuV9yYunOluDvibbqvWspFSp3Kz9efN+BG7LAorNS1m
- FxeBQHxePsnCc2+5BIHU4qcQT3aNOjq9eCe0Dgzx02HopmF48lYcqsL6wamHXgXCBbKL
- SJeQ==
-X-Gm-Message-State: ANhLgQ3+8G6WxxuoxRdfi86fmLZxQeosIC90TMgrn0u3L22oATz9vOFf
- Fyju9rHP0vU3W4r0v5h8jfU=
-X-Google-Smtp-Source: ADFU+vuVG0oUJL9NNxpSgAnmiNK0aLUEyjsbXdwHcCKQBXDbnFceiU248kw7koVVOEdnC7MW0sy9zQ==
-X-Received: by 2002:a1c:59c6:: with SMTP id n189mr5786802wmb.178.1584034245527; 
- Thu, 12 Mar 2020 10:30:45 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=x3OsNYo4WOFc4e3N45xENkSPMvXkKhjC6Ed5es5ifqc=;
+ b=iEzdArI9D8YGHxHWct+jWqlO9Z5adnbgnFc1ivI1sX63Zjv0H+XTOdGCt/OigG9u/q
+ MhUacyBcXRqFOFB8fQQWrFH6vvLjvumx4yB4dNLuHCC68++33RzDvo/6FRQ9mWt3CglH
+ RD9MTG4zgys4+fdC1X6GRrePHqVRaOayf1Jw8Je1GgT4mIxTBCwoDUyvABvl7NiFqXE1
+ ql854csb/eXHkl1TwJX6xjF6awH06h7anjP59XJmXt1vbdBlabsMjh/1KztJJRiJ2kQA
+ 5uLJylefN6Hvv9exn+z8InjxvqTvP5EvNKaiJi2zhQ38oLriw+fPE7CauwKySXbaQh8o
+ QHrA==
+X-Gm-Message-State: ANhLgQ0FROSYG08mwAF6SRR6OTBiFwwpcMPHWz9rNi66Uxgb8I8sGRAc
+ 4XN7Wx3lo8vywNXoJ6Y/gVE=
+X-Google-Smtp-Source: ADFU+vuaSKw7SYbH880phKppaz4MtvoEjwN3be8Iip/jpwF5n3XHQkpzzWFily55uljws4EM4ziA8A==
+X-Received: by 2002:a5d:6908:: with SMTP id t8mr12459365wru.92.1584034246665; 
+ Thu, 12 Mar 2020 10:30:46 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x24sm13170222wmc.36.2020.03.12.10.30.44
+ by smtp.gmail.com with ESMTPSA id x24sm13170222wmc.36.2020.03.12.10.30.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Mar 2020 10:30:44 -0700 (PDT)
+ Thu, 12 Mar 2020 10:30:46 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: lgirdwood@gmail.com
-Subject: [PATCH v1 1/2] dt-bindings: sound: convert rockchip spdif bindings to
- yaml
-Date: Thu, 12 Mar 2020 18:30:36 +0100
-Message-Id: <20200312173037.21477-1-jbx6244@gmail.com>
+Subject: [PATCH v1 2/2] dt-bindings: sound: rockchip-spdif: add
+ #sound-dai-cells property
+Date: Thu, 12 Mar 2020 18:30:37 +0100
+Message-Id: <20200312173037.21477-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200312173037.21477-1-jbx6244@gmail.com>
+References: <20200312173037.21477-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103048_307427_CF4B045F 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20200312_103047_977019_70FBCCD4 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:333 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -104,178 +108,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files with 'spdif' nodes are manually verified.
-In order to automate this process rockchip-spdif.txt
-has to be converted to yaml.
-
-Also rk3188.dtsi, rk3288.dtsi use an extra fallback string,
-so change this in the documentation.
-
-Changed:
-"rockchip,rk3188-spdif", "rockchip,rk3066-spdif"
-"rockchip,rk3288-spdif", "rockchip,rk3066-spdif"
+'#sound-dai-cells' is required to properly interpret
+the list of DAI specified in the 'sound-dai' property,
+so add them to 'rockchip-spdif.yaml'
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- .../devicetree/bindings/sound/rockchip-spdif.txt   | 45 ----------
- .../devicetree/bindings/sound/rockchip-spdif.yaml  | 96 ++++++++++++++++++++++
- 2 files changed, 96 insertions(+), 45 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.txt
- create mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
+ Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt b/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-deleted file mode 100644
-index ec20c1271..000000000
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-+++ /dev/null
-@@ -1,45 +0,0 @@
--* Rockchip SPDIF transceiver
--
--The S/PDIF audio block is a stereo transceiver that allows the
--processor to receive and transmit digital audio via an coaxial cable or
--a fibre cable.
--
--Required properties:
--
--- compatible: should be one of the following:
--   - "rockchip,rk3066-spdif"
--   - "rockchip,rk3188-spdif"
--   - "rockchip,rk3228-spdif"
--   - "rockchip,rk3288-spdif"
--   - "rockchip,rk3328-spdif"
--   - "rockchip,rk3366-spdif"
--   - "rockchip,rk3368-spdif"
--   - "rockchip,rk3399-spdif"
--- reg: physical base address of the controller and length of memory mapped
--  region.
--- interrupts: should contain the SPDIF interrupt.
--- dmas: DMA specifiers for tx dma. See the DMA client binding,
--  Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: should be "tx"
--- clocks: a list of phandle + clock-specifier pairs, one for each entry
--  in clock-names.
--- clock-names: should contain following:
--   - "hclk": clock for SPDIF controller
--   - "mclk" : clock for SPDIF bus
--
--Required properties on RK3288:
--  - rockchip,grf: the phandle of the syscon node for the general register
--                   file (GRF)
--
--Example for the rk3188 SPDIF controller:
--
--spdif: spdif@1011e000 {
--	compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
--	reg = <0x1011e000 0x2000>;
--	interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
--	dmas = <&dmac1_s 8>;
--	dma-names = "tx";
--	clock-names = "hclk", "mclk";
--	clocks = <&cru HCLK_SPDIF>, <&cru SCLK_SPDIF>;
--	#sound-dai-cells = <0>;
--};
 diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-new file mode 100644
-index 000000000..45c6eea30
---- /dev/null
+index 45c6eea30..39aa0b4f7 100644
+--- a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
 +++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -0,0 +1,96 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/rockchip-spdif.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+@@ -59,6 +59,9 @@ properties:
+       The phandle of the syscon node for the GRF register.
+       Required property on RK3288.
+ 
++  "#sound-dai-cells":
++    const: 0
 +
-+title: Rockchip SPDIF transceiver
-+
-+description:
-+  The S/PDIF audio block is a stereo transceiver that allows the
-+  processor to receive and transmit digital audio via a coaxial or
-+  fibre cable.
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3066-spdif
-+      - const: rockchip,rk3228-spdif
-+      - const: rockchip,rk3328-spdif
-+      - const: rockchip,rk3366-spdif
-+      - const: rockchip,rk3368-spdif
-+      - const: rockchip,rk3399-spdif
-+      - items:
-+          - enum:
-+            - rockchip,rk3188-spdif
-+            - rockchip,rk3288-spdif
-+          - const: rockchip,rk3066-spdif
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: clock for SPDIF bus
-+      - description: clock for SPDIF controller
-+
-+  clock-names:
-+    items:
-+      - const: mclk
-+      - const: hclk
-+
-+  dmas:
-+    items:
-+      - description: TX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: tx
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      The phandle of the syscon node for the GRF register.
-+      Required property on RK3288.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - dmas
-+  - dma-names
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: rockchip,rk3288-spdif
-+
-+then:
-+  required:
-+    - rockchip,grf
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru-common.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    spdif: spdif@1011e000 {
-+      compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
-+      reg = <0x1011e000 0x2000>;
-+      interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_SPDIF>, <&cru HCLK_SPDIF>;
-+      clock-names = "mclk", "hclk";
-+      dmas = <&dmac1_s 8>;
-+      dma-names = "tx";
-+    };
+ required:
+   - compatible
+   - reg
+@@ -67,6 +70,7 @@ required:
+   - clock-names
+   - dmas
+   - dma-names
++  - "#sound-dai-cells"
+ 
+ if:
+   properties:
+@@ -93,4 +97,5 @@ examples:
+       clock-names = "mclk", "hclk";
+       dmas = <&dmac1_s 8>;
+       dma-names = "tx";
++      #sound-dai-cells = <0>;
+     };
 -- 
 2.11.0
 
