@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0469D1834DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:22:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E875F183509
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:34:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VXyFfw6y7TqZrzjLzaAJJ+xxnsqCK1Hdejt+Ht1JhOQ=; b=StXO+Lpg1Ccr3S
-	aljDl+Zz151M9XPvmKMlDiPNaKPlCNFH+08xjO2s+ld/dV42+IpighmnWdTMhP/3Mw526RBcjx2wW
-	+IapufHgVKitgK0ft7ClZxgIbh90wVUpho/G8QtgG5PYtcC1dkuQ7Arf4oSk66cpbvPSa9amQ/koe
-	XPbR17BIp2TDBtW8hATp5N8xMAkuxTSUOE0b17xMW2c6GhSXVh7gYkJ3g56R2ZRuBvrMQRpSYNBwK
-	qvI2s6L912gfyTcOgrpWWicQM0xyUcrzNdUrZnFsAxIW9c4XyN5ITTCkZIGXagkUAlqMNI6ZwVeNV
-	3kCsCRHLXTWzRHQ17SPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+yYsgbV0Hn9XqpIRBrXSk2pjFVjj9JuyIbvnyVDpGA8=; b=nDrGvf+vRgM5T4
+	29sMRhMATW0dNfzlXCwBGGWC23j6KyJISIyRZCPBfvRioKKCEdAHb+14hmMkPi7p+mu2jiCjSdNCO
+	G+i/yAbGurvSy6jJATgojE1DERgDg60dMZzKElFFgzB2FPMIe+0o5ciJRDIhxeInv+oob2eChICdg
+	zLPfjBKsnv0mcmtHcI/qisde/OBRinvF1EiT5430Y8kbR8kbWgWeG6VZOpmCE5V7X5H6FtZARhbUr
+	bHfnvBu+luStml537xaJ1wN8LF80tsXSINxyQ8N+bNndrb14e7UGpD+db2xnoJi/uaxxt1qpsRM1h
+	CFFN8FV8PlgkRQhwn9hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCPfD-0008S1-BB; Thu, 12 Mar 2020 15:22:23 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jCPqy-0004Ip-K9; Thu, 12 Mar 2020 15:34:32 +0000
+Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCPex-0008Qi-F5; Thu, 12 Mar 2020 15:22:08 +0000
-Received: by mail-oi1-f196.google.com with SMTP id i1so5809938oie.8;
- Thu, 12 Mar 2020 08:22:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=a6WnhHW3Np3QbKKjKxFHHPr40yxHHv0stzGtOBzaVLc=;
- b=rIL2nnOmhWFE1kQBeeVYG+6xrnDm3CHOhHmKOH7Eg3OzU0CkAnNMx5TFKo6EmpeP/n
- f2DEOfTDAySNDHF91tqu4Khsu9FIdAFHTATLTrSTIaD736RMtPnLo4KFuw1cWS3M+bPZ
- 0KM4XIrrpQa0ZzVR8uO0aGksxuFsUkcNLEz8ogE9+PETIJ4Ebi8mLODY+NQ1E69xVqqA
- gBYlWGYt3daTCzi7+c2VKMGvWhCp5kkUY1GOY25cN0yJyuHvm/5uXLAPbD2bsUY55i5/
- q9HRxETPjZJmaVtauHxS3dVlIfZqdAN0HRazFLDpbYf4SUpaHu1lz2iv/Wkl+yRomZdZ
- R0JQ==
-X-Gm-Message-State: ANhLgQ0T+kDLMe7EUR//F71aXYSy3tLDCxu33mjeIZ596tn7JKm86qsq
- dlhLKgCa8gD6b6AaXArP2Q==
-X-Google-Smtp-Source: ADFU+vsZYyNPazIaY4y6ozlG69lisQb63cqMqP+Ill41cx5dK6OIRcqAtvQNyW37X+H801eBMb1U7g==
-X-Received: by 2002:a05:6808:b1c:: with SMTP id
- s28mr3046470oij.2.1584026526006; 
- Thu, 12 Mar 2020 08:22:06 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a22sm10865950oto.45.2020.03.12.08.22.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 08:22:05 -0700 (PDT)
-Received: (nullmailer pid 17075 invoked by uid 1000);
- Thu, 12 Mar 2020 15:22:03 -0000
-Date: Thu, 12 Mar 2020 10:22:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Re: [PATCH v12 2/5] dt-bindings: mediatek: Update mmsys binding to
- reflect it is a system controller
-Message-ID: <20200312152203.GA15635@bogus>
-References: <20200311165322.1594233-1-enric.balletbo@collabora.com>
- <20200311165322.1594233-3-enric.balletbo@collabora.com>
+ id 1jCPqo-0004HJ-Og
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 15:34:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
+ s=mail; t=1584027256; h=from:from:sender:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:references; bh=rO4/v/2w+7THJFW0RfxrvZkO1GC67XqmS2u1njvdczg=;
+ b=G9BRTY8YPISlqnByCoxWg+TsHLZoaEV5NQFjH6jGMeBFKUvznHTE4S1mpqgcyXiQ2Sp+Kt
+ 5BMLM8g6eC4m6AS8KbPINAyAb8PBnHweIYE3DRy+3E3uRaoKbTyNRNGoLYUAHeNBiQWVlA
+ xvEyQM7IUScidtPjW9KwkPDL1Hpjudk=
+From: Paul Cercueil <paul@crapouillou.net>
+To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 1/2] dt-bindings: arm/samsung: Add compatible string for the
+ Galaxy S2
+Date: Thu, 12 Mar 2020 16:34:10 +0100
+Message-Id: <20200312153411.13535-1-paul@crapouillou.net>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200311165322.1594233-3-enric.balletbo@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_082207_506380_5D82AA92 
-X-CRM114-Status: GOOD (  11.69  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200312_083422_993341_85DE4B5A 
+X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,53 +68,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
- mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
- Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
- ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
- linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
- linux-arm-kernel@lists.infradead.org, ck.hu@mediatek.com,
- mtk01761 <wendell.lin@mediatek.com>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
- sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
- sboyd@kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- rdunlap@infradead.org, linux-kernel@vger.kernel.org, p.zabel@pengutronix.de,
- matthias.bgg@kernel.org
+Cc: devicetree@vger.kernel.org, Stenkin Evgeniy <stenkinevgeniy@gmail.com>,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 05:53:19PM +0100, Enric Balletbo i Serra wrote:
-> The mmsys system controller is not only a pure clock controller, so
-> update the binding documentation to reflect that apart from providing
-> clocks, it also provides routing and miscellaneous control registers.
-> 
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> ---
-> 
-> Changes in v12: None
-> Changes in v10:
-> - Update the binding documentation for the mmsys system controller.
-> 
-> Changes in v9: None
-> Changes in v8: None
-> Changes in v7: None
-> 
->  .../devicetree/bindings/arm/mediatek/mediatek,mmsys.txt    | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
+Add compatible string for the Samsung Galaxy S2 (i9100 version), which
+is an Exynos 4210 based device.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Paul Cercueil <paul@crapouillou.net>
+---
+ .../devicetree/bindings/arm/samsung/samsung-boards.yaml          | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+index 63acd57c4799..e2b19caac795 100644
+--- a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
++++ b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+@@ -55,6 +55,7 @@ properties:
+               - samsung,smdkv310                # Samsung SMDKV310 eval
+               - samsung,trats                   # Samsung Tizen Reference
+               - samsung,universal_c210          # Samsung C210
++              - samsung,i9100                   # Samsung Galaxy S2
+           - const: samsung,exynos4210
+           - const: samsung,exynos4
+ 
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
