@@ -2,87 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CCD718357C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:52:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30EC1183582
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:53:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60aDLJjjEi6OmzUS66npSVCYACYrBqqvxXbGVCiTC7k=; b=Qsmow6ONtwo7Ry
-	LX4TYRzVFG+G0f/kI23HlAOpTpSLObBZ7Y29Nn63ohIgemhDsWdQUDUiCLjpk9tY5jPkmibX3BBXu
-	m++C20cBb0kPjgx18eD1Wgl2xHiAllLeXdhKHQpq6bSwKXYUZ6ie6NkI2TxCY8BqAY3Ji5RPk6Bkm
-	Aq1+Bbf1SjwiYjzSB+3qm4iAfu7Q/kSg8FUaAtkpIf9lCyJkrwYzBnep+F0ui81jhcTHpdyMVo9p/
-	3E+LGilO1kRqUBRMyP7c6IHUG+zqWShY8J+zunwSnEcrQ8P0tO178z+s4V4Sg+nGBqX1YyIM/bGXD
-	avmE88kcmeK4QDfIceyA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PrRgDnOTW+uYNv9iEqdQlbzU9us3xK0NUhChs4A3t08=; b=Veh8m1ASzjwIs8
+	HQa314Vqy70DiiX+40JGAxmrQbLd3DmWoiiAcnFKCaMnPKsuMvFv7l6arDWcxyRzc0kheNtZTaq9/
+	aftghi3Qolw3To99vOvZNGYD2jNvCm/QVWxhmwM88UIv5nYt5YdZN3/xNvz8hlhhPk2H0Xl2KILa5
+	FAvM7a5JUc2hFL0e2pzcFBmeGnF++mfkBov4PZ5kk9nkd4oYR0qf4MtVXECwd1zcHhFwtu64gWGKe
+	wXOatiS+m9g3S9UQyWHDXL4c5EhQzeUR+EYyDouaErQJtYXeI0aSToIjWhqI12F1qUG3sRD/agdmf
+	HfdczentSDyoYj7Yfktw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCQ8U-0004Il-2P; Thu, 12 Mar 2020 15:52:38 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jCQ9G-0004ee-9W; Thu, 12 Mar 2020 15:53:26 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCQ88-0004I5-PS; Thu, 12 Mar 2020 15:52:17 +0000
-Received: by mail-ot1-f65.google.com with SMTP id a6so6728362otb.10;
- Thu, 12 Mar 2020 08:52:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Wl+QdR69Vmfg4Y3G8/WF9bc0auAAgV6RS3RNdeDTWcg=;
- b=mMfMTtDdVANnKb0wcUiWYeUKxxA8kT7P1a7j/gLdmtTogjHx6F4hOBh1P183LdR0JB
- yDPrawAHUicvYkpVV8vKJxBpN70WHqklB4Tb+0motu/Z4FUNGKj0qz6XDBkzWlKkNO2r
- GA1Ud6G0N2eFv/7vbDJZwYcKr52WLf0pj8wQ6BNdgfczuq3MJm2MvEBSO/Pt93sOUhUx
- AoCAtlPsUd61mtJdlieHrGkeIjFsXFzqf3LARDuexRGkK/cQwstsKNFu4oN9C2PqHD8B
- wTl+cseNzatmjDFH74W6xMqBmbxrbYV/hQZujYv0pFfTViXTHJpve82QoY9USxlVEVL+
- fMIA==
-X-Gm-Message-State: ANhLgQ3kpLPLWxE/SG0BF5jQWWHfiYZXwtsA4swaPSgUsz7SDAx9mSjf
- Jc/cUF+2+CIE2YBGMIq18A==
-X-Google-Smtp-Source: ADFU+vusdGHjK+Rla6N8fdXTit4DXa60u0wiRrENKI95Qqe2qfm2CTfE3YLR4Ovt+vr8qimPICdxsw==
-X-Received: by 2002:a05:6830:11:: with SMTP id
- c17mr6307470otp.292.1584028336121; 
- Thu, 12 Mar 2020 08:52:16 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id h92sm7104952otb.2.2020.03.12.08.52.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 08:52:15 -0700 (PDT)
-Received: (nullmailer pid 27751 invoked by uid 1000);
- Thu, 12 Mar 2020 15:52:14 -0000
-Date: Thu, 12 Mar 2020 10:52:14 -0500
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v1 4/5] dt-bindings: i2c: i2c-rk3x: add description for
- rk3308
-Message-ID: <20200312155214.GA27689@bogus>
-References: <20200305143611.10733-1-jbx6244@gmail.com>
- <20200305143611.10733-4-jbx6244@gmail.com>
+ id 1jCQ96-0004cn-Dr; Thu, 12 Mar 2020 15:53:18 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 362C221081;
+ Thu, 12 Mar 2020 16:53:12 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 1DD28208EC;
+ Thu, 12 Mar 2020 16:53:12 +0100 (CET)
+Subject: Re: [PATCH 4/5] pci: handled return value of platform_get_irq
+ correctly
+To: Bjorn Helgaas <helgaas@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Marc Zyngier
+ <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>
+References: <20200312141102.GA93224@google.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <b145096e-8628-c551-4846-2eb5ce0334f6@free.fr>
+Date: Thu, 12 Mar 2020 16:53:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200305143611.10733-4-jbx6244@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200312141102.GA93224@google.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Mar 12 16:53:12 2020 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_085216_824677_0B895D1A 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200312_085316_620464_34F4F3C0 
+X-CRM114-Status: GOOD (  22.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider [marc.w.gonzalez[at]free.fr]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,27 +69,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Ryder Lee <ryder.lee@mediatek.com>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Aman Sharma <amanharitsh123@gmail.com>, linux-kernel@vger.kernel.org,
+ Mans Rullgard <mans@mansr.com>, linux-mediatek@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu,  5 Mar 2020 15:36:10 +0100, Johan Jonker wrote:
-> The description below is already in use for rk3308.dtsi,
-> but was somehow never added to a document, so add
-> "rockchip,rk3308-i2c", "rockchip,rk3399-i2c"
-> for i2c nodes on a rk3308 platform to i2c-rk3x.yaml.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> 
+On 12/03/2020 15:11, Bjorn Helgaas wrote:
 
-Acked-by: Rob Herring <robh@kernel.org>
+> [+cc another Marc]
+
+Doh! I should indeed have CCed maz and tglx.
+
+> On Thu, Mar 12, 2020 at 10:53:06AM +0100, Marc Gonzalez wrote:
+>
+>> On 11/03/2020 20:19, Aman Sharma wrote:
+>>
+>>> diff --git a/drivers/pci/controller/pcie-tango.c b/drivers/pci/controller/pcie-tango.c
+>>> index 21a208da3f59..18c2c4313eb5 100644
+>>> --- a/drivers/pci/controller/pcie-tango.c
+>>> +++ b/drivers/pci/controller/pcie-tango.c
+>>> @@ -273,9 +273,9 @@ static int tango_pcie_probe(struct platform_device *pdev)
+>>>  		writel_relaxed(0, pcie->base + SMP8759_ENABLE + offset);
+>>>  
+>>>  	virq = platform_get_irq(pdev, 1);
+>>> -	if (virq <= 0) {
+>>> +	if (virq < 0) {
+>>>  		dev_err(dev, "Failed to map IRQ\n");
+>>> -		return -ENXIO;
+>>> +		return virq;
+>>>  	}
+>>>  
+>>>  	irq_dom = irq_domain_create_linear(fwnode, MSI_MAX, &dom_ops, pcie);
+>>
+>> Weee, here we go again :-)
+>>
+>> https://patchwork.kernel.org/patch/11066455/
+>> https://patchwork.kernel.org/patch/10006651/
+>>
+>> Last time around, my understanding was that, going forward,
+>> the best solution was:
+>>
+>> 	virq = platform_get_irq(...)
+>> 	if (virq <= 0)
+>> 		return virq ? : -ENODEV;
+>>
+>> i.e. map 0 to -ENODEV, pass other errors as-is, remove the dev_err
+>>
+>> @Bjorn/Lorenzo did you have a change of heart?
+> 
+> Yes.  In 10006651 (Oct 20, 2017), I thought:
+> 
+>   irq = platform_get_irq(pdev, 0);
+>   if (irq <= 0)
+>     return -ENODEV;
+> 
+> was fine.  In 11066455 (Aug 7, 2019), I said I thought I was wrong and
+> that:
+> 
+>   platform_get_irq() is a generic interface and we have to be able to
+>   interpret return values consistently.  The overwhelming consensus
+>   among platform_get_irq() callers is to treat "irq < 0" as an error,
+>   and I think we should follow suit.
+>   ...
+>   I think the best pattern is:
+> 
+>     irq = platform_get_irq(pdev, i);
+>     if (irq < 0)
+>       return irq;
+> 
+> I still think what I said in 2019 is the right approach.  I do see
+> your comment in 10006651 about this pattern:
+> 
+>   if (virq <= 0)
+>     return virq ? : -ENODEV;
+> 
+> but IMHO it's too complicated for general use.  Admittedly, it's not
+> *very* complicated, but it's a relatively unusual C idiom and I
+> stumble over it every time I see it.
+
+FTR, omitting the middle operand is a GNU extension.
+https://gcc.gnu.org/onlinedocs/gcc/Conditionals.html
+The valid C idiom would be virq ? virq : -ENODEV
+
+> If 0 is a special case I think
+> it should be mapped to a negative error in arch-specific code, which I
+> think is what Linus T suggested in [1].
+
+Lorenzo, being both PCI maintainer and ARM employee should be in a
+good position to change the arch-specific code for arm and arm64?
+
+> I think there's still a large consensus that "irq < 0" is the error
+> case.  In the tree today we have about 1400 callers of
+> platform_get_irq() and platform_get_irq_byname() [2].  Of those,
+> almost 900 check for "irq < 0" [3], while only about 150 check for
+> "irq <= 0" [4] and about 15 use some variant of a "irq ? : -ENODEV"
+> pattern.
+> 
+> The bottom line is that in drivers/pci, I'd like to see either a
+> single style or a compelling argument for why some checks should be
+> "irq < 0" and others should be "irq <= 0".
+> 
+> [1] https://yarchive.net/comp/linux/zero.html
+> [2] $ git grep "=.*platform_get_irq" | wc -l
+>     1422
+> [3] $ git grep -A4 "=.*platform_get_irq" | grep "<\s*0" | wc -l
+>     894
+> [4] $ git grep -A4 "=.*platform_get_irq" | grep "<=\s*0" | wc -l
+>     151
+> [5] $ git grep -A4 "=.*platform_get_irq" | grep "return.*?.*:.*;" | wc -l
+>     15
+
+Interesting stats, thanks.
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
