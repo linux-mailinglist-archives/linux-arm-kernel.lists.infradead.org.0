@@ -2,64 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96B03183051
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:35:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02B1118304F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:34:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=l3L+hBcVgsF0Ifmaq1rpFbAsqV6kk/6fpOw1rIFwh30=; b=MSvVs8aZnOb0e+
-	BuCLsNtxiTLHAbBjGF65k+qgyqRXPB/n0OSQScQ2yUVr4KkPWo7dVZX3Z/koGF2cA+HjrdAxgKwvz
-	qDBtZAf6YighGNPAFNHCnavbCtBqTBGRg+38ktSFwSexWetZRhGT6roFU7JeT7CX+I82Ue7TFquMi
-	zJx9eLH3ubPYxVWOb2dodwrhS06w/7q110IE652OJIUAGzE/n3KPsnhpMtX3UqmmTxbegk/wAG9b0
-	Jk1wQ3v4maQqTbDWG9XVqBRVmudV3feG5lgyX81IzDwB9o5bkBEeSzn19W3Kp3kW8WzmkQFLj2rr4
-	gkfBb61X1VKC4NmMLrQw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=czHUkmoIdGYo/BRopgX/Ag0h6PwnzcGFkAZcOkEOB7I=; b=YbrFHiWy/4Q5pC
+	vaAZZOJjxefXUAOruR9iQNqWwB2E78hUY/gFQ8/flRy0FtidAMG40OdQ4G7fYDzMrPZSePw5r1+oE
+	qZlbTb3LwjIVDvG7dTEqNsB0Rh9EZ36PrjrQa4YgLvQxGz8buTM4+rXu394aaa3OUm+sIK1wwhjib
+	bIs0i9xjN54jBQBZCdO991GDugYsC0eYeXhRmrIobrKKZWoUvwS8lzJQ1t0qw3GDgcy0hqNrmtmVg
+	peZAAAzYN3nxPPlGr07JD9f9EQ9orRukYCREDOigA6jI8Vz2ICZ5ZIEb8hL5Fq+S/aGn9CtsArNrO
+	n7BcWF8kNMZF4KJbuEYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCN3U-0000xq-EP; Thu, 12 Mar 2020 12:35:16 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1jCN34-0000kS-4J; Thu, 12 Mar 2020 12:34:50 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCN39-0000uk-LF
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:34:57 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 12 Mar 2020 05:34:53 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,544,1574150400"; d="scan'208";a="442034201"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga005.fm.intel.com with ESMTP; 12 Mar 2020 05:34:52 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jCN35-000ByG-LA; Thu, 12 Mar 2020 20:34:51 +0800
-Date: Thu, 12 Mar 2020 20:33:51 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Russell King <rmk+kernel@arm.linux.org.uk>
-Subject: [arm:clearfog 9/10] drivers/pci/pci-bridge-emul.c:278:33: sparse:
- sparse: incorrect type in assignment (different base types)
-Message-ID: <202003122049.MO6Ygh4l%lkp@intel.com>
+ id 1jCN2v-0000jl-3I
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:34:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uArEIWDizojf1gfTMVx1qCJUduEJPhHKxNwomQ/vzcc=; b=bxRBBSCrPliEVChheadid/egV
+ 5hQidV2aAqDPPk8Q+WIyDRA8K7d/p4tvDMUrVvU9rrRjUMyN7FM6G6XoDXIFxOCjRCCIA7ROvGYKh
+ S+ul/OBJQCx4kykw0TyI5hOC05w8GkxVhss6KrkUmZeCmJzbCAKYdfBjv3qeWaizqTqsVqti4rLhl
+ iRMdWyecuMT/JH24hvKEqM0xEZs+/bKLomgMFjlfxKAgGlrqvK4xXgol8kEnz8sofW3xNfolo3gDj
+ 9xOHOKpMnVz0ThDJ6FZJ8YRUs1ohapG7qRe5jjNwMsyV0V5wmSBEt+jZ1+mjIJy6UPbUQ4qxuc9fn
+ z0tvbDfxw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:59536)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jCN2o-0001Bp-3W; Thu, 12 Mar 2020 12:34:34 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jCN2m-0006KF-PN; Thu, 12 Mar 2020 12:34:32 +0000
+Date: Thu, 12 Mar 2020 12:34:32 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+Subject: Re: [PATCH v3] ARM: footbridge: replace setup_irq() by request_irq()
+Message-ID: <20200312123432.GZ25745@shell.armlinux.org.uk>
+References: <20200301122131.3902-1-afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20200301122131.3902-1-afzal.mohd.ma@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_053455_767819_9EE8F4A0 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200312_053441_142623_562BDE1B 
+X-CRM114-Status: GOOD (  20.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,85 +86,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
+Cc: Viresh Kumar <viresh.kumar@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git clearfog
-head:   60358028cb7ae864f9ea84eac86804c92f623951
-commit: ba8248ab8ce8c1c3e68d176e608490205d0ee5d0 [9/10] mvebu/clearfog pcie updates
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-174-g094d5a94-dirty
-        git checkout ba8248ab8ce8c1c3e68d176e608490205d0ee5d0
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+On Sun, Mar 01, 2020 at 05:51:31PM +0530, afzal mohammed wrote:
+> request_irq() is preferred over setup_irq(). Invocations of setup_irq()
+> occur after memory allocators are ready.
+> 
+> Per tglx[1], setup_irq() existed in olden days when allocators were not
+> ready by the time early interrupts were initialized.
+> 
+> Hence replace setup_irq() by request_irq().
+> 
+> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+> 
+> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+> ---
+> Hi sub-arch maintainers,
+> 
+> If the patch is okay, please take it thr' your tree.
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+This patch causes a build warning:
 
+arch/arm/mach-footbridge/isa-irq.c:113:15: warning: unused variable 'irq' [-Wunused-variable]
 
-sparse warnings: (new ones prefixed by >>)
+because you introduce a new 'int irq' variable in a sub-block where the
+parent already declares 'irq', causing the parent 'irq' to be unused.
 
->> drivers/pci/pci-bridge-emul.c:278:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le16 [usertype] bridgectrl @@    got e] bridgectrl @@
-   drivers/pci/pci-bridge-emul.c:278:33: sparse:    expected restricted __le16 [usertype] bridgectrl
-   drivers/pci/pci-bridge-emul.c:278:33: sparse:    got int
+Hence, I'm dropping this patch.
 
-vim +278 drivers/pci/pci-bridge-emul.c
+I think you need to look more carefully at the code you are modifying,
+and maybe even build test it.  Cross compilers are available from
+kernel.org.
 
-   263	
-   264	/*
-   265	 * Initialize a pci_bridge_emul structure to represent a fake PCI
-   266	 * bridge configuration space. The caller needs to have initialized
-   267	 * the PCI configuration space with whatever values make sense
-   268	 * (typically at least vendor, device, revision), the ->ops pointer,
-   269	 * and optionally ->data and ->has_pcie.
-   270	 */
-   271	int pci_bridge_emul_init(struct pci_bridge_emul *bridge,
-   272				 unsigned int flags)
-   273	{
-   274		bridge->conf.class_revision |= cpu_to_le32(PCI_CLASS_BRIDGE_PCI << 16);
-   275		bridge->conf.header_type = PCI_HEADER_TYPE_BRIDGE;
-   276		bridge->conf.cache_line_size = 0x10;
-   277		bridge->conf.status = cpu_to_le16(PCI_STATUS_CAP_LIST);
- > 278		bridge->conf.bridgectrl = PCI_BRIDGE_CTL_SERR;
-   279		bridge->pci_regs_behavior = kmemdup(pci_regs_behavior,
-   280						    sizeof(pci_regs_behavior),
-   281						    GFP_KERNEL);
-   282		if (!bridge->pci_regs_behavior)
-   283			return -ENOMEM;
-   284	
-   285		if (bridge->has_pcie) {
-   286			bridge->conf.capabilities_pointer = PCI_CAP_PCIE_START;
-   287			bridge->pcie_conf.cap_id = PCI_CAP_ID_EXP;
-   288			/* Set PCIe v2, root port, slot support */
-   289			bridge->pcie_conf.cap =
-   290				cpu_to_le16(PCI_EXP_TYPE_ROOT_PORT << 4 | 2 |
-   291					    PCI_EXP_FLAGS_SLOT);
-   292			bridge->pcie_cap_regs_behavior =
-   293				kmemdup(pcie_cap_regs_behavior,
-   294					sizeof(pcie_cap_regs_behavior),
-   295					GFP_KERNEL);
-   296			if (!bridge->pcie_cap_regs_behavior) {
-   297				kfree(bridge->pci_regs_behavior);
-   298				return -ENOMEM;
-   299			}
-   300		}
-   301	
-   302		if (flags & PCI_BRIDGE_EMUL_NO_PREFETCHABLE_BAR) {
-   303			bridge->pci_regs_behavior[PCI_PREF_MEMORY_BASE / 4].ro = ~0;
-   304			bridge->pci_regs_behavior[PCI_PREF_MEMORY_BASE / 4].rw = 0;
-   305		}
-   306	
-   307		return 0;
-   308	}
-   309	
+Russell.
 
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> 
+> Regards
+> afzal
+> 
+> v3:
+>  * Split out from series, also create subarch level patch as Thomas
+> 	suggested to take it thr' respective maintainers
+>  * Modify string displayed in case of error as suggested by Thomas
+>  * Re-arrange code as required to improve readability
+>  * Remove irrelevant parts from commit message & improve
+>  
+> v2:
+>  * Replace pr_err("request_irq() on %s failed" by
+>            pr_err("%s: request_irq() failed"
+>  * Commit message massage
+> 
+>  arch/arm/mach-footbridge/dc21285-timer.c | 11 +++--------
+>  arch/arm/mach-footbridge/isa-irq.c       | 10 ++++------
+>  arch/arm/mach-footbridge/isa-timer.c     | 11 +++--------
+>  3 files changed, 10 insertions(+), 22 deletions(-)
+> 
+> diff --git a/arch/arm/mach-footbridge/dc21285-timer.c b/arch/arm/mach-footbridge/dc21285-timer.c
+> index f76212d2dbf1..2908c9ef3c9b 100644
+> --- a/arch/arm/mach-footbridge/dc21285-timer.c
+> +++ b/arch/arm/mach-footbridge/dc21285-timer.c
+> @@ -101,13 +101,6 @@ static irqreturn_t timer1_interrupt(int irq, void *dev_id)
+>  	return IRQ_HANDLED;
+>  }
+>  
+> -static struct irqaction footbridge_timer_irq = {
+> -	.name		= "dc21285_timer1",
+> -	.handler	= timer1_interrupt,
+> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+> -	.dev_id		= &ckevt_dc21285,
+> -};
+> -
+>  /*
+>   * Set up timer interrupt.
+>   */
+> @@ -118,7 +111,9 @@ void __init footbridge_timer_init(void)
+>  
+>  	clocksource_register_hz(&cksrc_dc21285, rate);
+>  
+> -	setup_irq(ce->irq, &footbridge_timer_irq);
+> +	if (request_irq(ce->irq, timer1_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
+> +			"dc21285_timer1", &ckevt_dc21285))
+> +		pr_err("Failed to request irq %d (dc21285_timer1)", ce->irq);
+>  
+>  	ce->cpumask = cpumask_of(smp_processor_id());
+>  	clockevents_config_and_register(ce, rate, 0x4, 0xffffff);
+> diff --git a/arch/arm/mach-footbridge/isa-irq.c b/arch/arm/mach-footbridge/isa-irq.c
+> index 88a553932c33..16c5455199e8 100644
+> --- a/arch/arm/mach-footbridge/isa-irq.c
+> +++ b/arch/arm/mach-footbridge/isa-irq.c
+> @@ -96,11 +96,6 @@ static void isa_irq_handler(struct irq_desc *desc)
+>  	generic_handle_irq(isa_irq);
+>  }
+>  
+> -static struct irqaction irq_cascade = {
+> -	.handler = no_action,
+> -	.name = "cascade",
+> -};
+> -
+>  static struct resource pic1_resource = {
+>  	.name	= "pic1",
+>  	.start	= 0x20,
+> @@ -146,6 +141,8 @@ void __init isa_init_irq(unsigned int host_irq)
+>  	}
+>  
+>  	if (host_irq != (unsigned int)-1) {
+> +		int irq = IRQ_ISA_CASCADE;
+> +
+>  		for (irq = _ISA_IRQ(0); irq < _ISA_IRQ(8); irq++) {
+>  			irq_set_chip_and_handler(irq, &isa_lo_chip,
+>  						 handle_level_irq);
+> @@ -160,7 +157,8 @@ void __init isa_init_irq(unsigned int host_irq)
+>  
+>  		request_resource(&ioport_resource, &pic1_resource);
+>  		request_resource(&ioport_resource, &pic2_resource);
+> -		setup_irq(IRQ_ISA_CASCADE, &irq_cascade);
+> +		if (request_irq(irq, no_action, 0, "cascade", NULL))
+> +			pr_err("Failed to request irq %d (cascade)\n", irq);
+>  
+>  		irq_set_chained_handler(host_irq, isa_irq_handler);
+>  
+> diff --git a/arch/arm/mach-footbridge/isa-timer.c b/arch/arm/mach-footbridge/isa-timer.c
+> index 82f45591fb2c..723e3eae995d 100644
+> --- a/arch/arm/mach-footbridge/isa-timer.c
+> +++ b/arch/arm/mach-footbridge/isa-timer.c
+> @@ -25,17 +25,12 @@ static irqreturn_t pit_timer_interrupt(int irq, void *dev_id)
+>  	return IRQ_HANDLED;
+>  }
+>  
+> -static struct irqaction pit_timer_irq = {
+> -	.name		= "pit",
+> -	.handler	= pit_timer_interrupt,
+> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+> -	.dev_id		= &i8253_clockevent,
+> -};
+> -
+>  void __init isa_timer_init(void)
+>  {
+>  	clocksource_i8253_init();
+>  
+> -	setup_irq(i8253_clockevent.irq, &pit_timer_irq);
+> +	if (request_irq(i8253_clockevent.irq, pit_timer_interrupt,
+> +			IRQF_TIMER | IRQF_IRQPOLL, "pit", &i8253_clockevent))
+> +		pr_err("Failed to request irq %d(pit)\n", i8253_clockevent.irq);
+>  	clockevent_i8253_init(false);
+>  }
+> -- 
+> 2.25.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
