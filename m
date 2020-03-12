@@ -2,119 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D83B4182E08
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:43:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BFA1182DE1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:35:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pzZ5+zwefgMC9/iiFcRvHFhGSA7cr0QF/AmF6jhPf+Y=; b=m78SHwYiGanNTc
-	nRvnBEW9m5E3HSp3o3SY4Sfcnii6CfsZjuLJdi/0piDxRPz6pRE9oojIhIJLflzNproWrpebYlmfA
-	k2kN2KaR6U5/vbhOfTYdD4yPaU8ROMDlmnhEtCKybVuuK5PBEH5unUMx78HzGgMBkWFr8Gp/NQwer
-	vH87/6SnbH2/WaolFcMmpUGuW/aIVP6/aQkz9IMphohA6XdOVjS4cfVTHHmVO2ToES6Y8nkt5dMUd
-	SusnWKGGj78nwhqpDP+95dGKbuG9ONMFu4Cf6lpXgepiPAEngwMF6FAc8zM3l7FMmM9JEHg9Bv8ZA
-	yLANS479vRbxW04pVJ8g==;
+	List-Owner; bh=M5tdYNvmLi2/aV/lEx/pkLtxmcKuMan4r2Egp5y1uXc=; b=igS13LwL5G4cwa
+	rKE/pKt6qPo0Ef6b7VlWzIsEKB7t0PG2tfHX3O2MfdTUnPaGcBJ+c3VhaLXxJVR9H0PH/9FBFN5ip
+	1s0nneWu4BqRQ45R2lnb9wnhdNuAuw7quKKeezG7GLysUlu4X47GrrJOB3gh60bwZVTTfyWOMVGFx
+	ARfpqUHSAZuKetXd9GwqWTberoDREmWoEvOcE5UamnGaILNZIlkIfySLBBts7BO5o4jBbqCgz8h4y
+	XiK2uzzyrFTy6khegA/dyeTsNE1itlKTfGLj8qg3tBdy/pKQosSKAarHCaRETBT+biPmMV1qoRaDV
+	DnaNIyOzga6U7NApzBHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCLJD-0006nl-PP; Thu, 12 Mar 2020 10:43:23 +0000
-Received: from mail-eopbgr70057.outbound.protection.outlook.com ([40.107.7.57]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jCLBP-0004iq-KM; Thu, 12 Mar 2020 10:35:19 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCLJ4-0006nK-Oi
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:43:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fkfieCfh6kv9Xp4uM0D6L+IEKCHazi/edjttLOgbYOrHLiSePQXAaGaD9Aa9HYlxpSl+14y3kMtBOUvjFamEhlYh7LfT7BGKwUP/ayGyB0thkExVJWJtUwYGUHcr2+v7jshxroB3t9BWZajDy+PwZIsRlFr1ELvNyG8NCUuG7/ZjN92ugpJE25s95WMvFUVnwEgPbk8s0ohbfMgzoTrXVIQWRbybFyiIODhooBfmpdReR0R4I3cpwgk0eHRsz/+CsiIiLeTsKvWw8t6towjDUxA9zBVoH7LG2qzAIEHmpEURt+eYngR2PIGqpBa9RYjJrvfVhyOZuLZjI2hdWHNhvA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XitpZMODXlBhzhhdUcIvaO6eQ0Sq0BCK7S0mQufagZY=;
- b=h4pxOm1IvU6wqqFuuquhZOFqI4cphxFKgxZc803Jrx+cefUWaIWQC/87/lsMyxNPFNtogWYmFQzHi3MZE6hvwtiP9nY0kGsaouThbeH7JBbGtXIIR1hT1Klq16X5aZWAoz2t2d+gekiHYwGsIvkDfdsabrLAQc1Xkyz0MqNDLYf+zxGgxQDSFt2m573PO72SIyagIy0ckHafWYSELMCuTIa942otT+ZIIAiUTqku21M9ePm/xjIXlRrgJUCAKtdCzbFjdoWY/TTnS1yYIRJff5hRxfi+MNKeXlKqsfyheD+FJUpkHVk3a9h4s1mSNt0OAJ4tdeCMCrnTXzI6UAosTQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XitpZMODXlBhzhhdUcIvaO6eQ0Sq0BCK7S0mQufagZY=;
- b=g2wAdDm3e89k4diM+BfS5sOzkqJr0OLeahi5t08s2unPh6luDj3JW24sALDdcRTJZ2WV5WidyNfyRtjkUvXVUYoGL/TS+14hbuDlrRqy/HK3n5JNTP/5uPC01oSMvf5iuVYWwGPgk+/9DZhH2q37Og/fDP4dpyPb3pSP0MPIUew=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB7171.eurprd04.prod.outlook.com (10.186.130.205) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.15; Thu, 12 Mar 2020 10:27:27 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.018; Thu, 12 Mar 2020
- 10:27:27 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, leonard.crestez@nxp.com,
- sboyd@kernel.org, abel.vesa@nxp.com
-Subject: [PATCH V2 08/10] clk: imx: add imx8m_clk_hw_composite_bus
-Date: Thu, 12 Mar 2020 18:19:42 +0800
-Message-Id: <1584008384-11578-9-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
-References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
-X-ClientProxiedBy: SG2PR03CA0113.apcprd03.prod.outlook.com
- (2603:1096:4:91::17) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
+ id 1jCLBH-0004iW-Pz
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:35:13 +0000
+Received: by mail-il1-x144.google.com with SMTP id p1so4940565ils.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Mar 2020 03:35:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=d11jKh4nIXxOO14qhhlowcRFY/zdekEryEZGjxCyR4U=;
+ b=dWlD5nySofCuFcC1KqOfJXf0Pm6lXznegz4dEb3SJMlcVi6TNUBD8je8acrRZWM7u6
+ 4YszOga5UvfaxttN2thsNJs3wyA9EB93WgLz/EkoxOj2WIxKOLfENbGt5wG+u9Q5VQT5
+ zYNGkVJo1tGM99CWwAQ827pIAUgzvPM9tF0IGqEZI1G4dSY6VwfbaJfFLEB9p5g1wtbk
+ kQieh2ZvT6ZXAs++6I1aRURG/WlZCJ3J2/8IBVSPNwLd6Y8RWdbQd91cXc7jUv5HaRMS
+ nqpayk0UHPrXjo/+K3xd8gnASiS9z9xLZ2vOb0piFQdLeowUojeYezEGIia3++pn6Gl7
+ ij/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=d11jKh4nIXxOO14qhhlowcRFY/zdekEryEZGjxCyR4U=;
+ b=ApFtHwW9NqGu3RFOqme+ZF6HJc9dssA/HjpqMm1fBSgLafhgpWIwxA5dPevGj0yaXR
+ JPWFAQLEr4rJN7OhBG3//QY8/N7zUhFVordmx3h1xES/DkigG6XbTr9zlmd2UTWf08S5
+ M92SCgjyYJu8s63XsO7t4gn5bap38bHFqvw21uI2wnakenOgk9+2tbd9UU1WHHFlVG6Z
+ +xGFMtT2k12MhXYDSc+5/n8lP9UikqCTEyoa0EEqbPQ1692FsaJKBcFVzj2RiawoB46x
+ XfwXQPZMklNo1yzRWq3DcghrypXJ28ihE4WNbYBswwxLR1U/LlPUHXVyvbIQY/pbTkMK
+ 7yJw==
+X-Gm-Message-State: ANhLgQ35GmnBCLDPUwjOJOlSDJi1vIbMs9nP7O10WAcpzKiWmB8lMYHF
+ JGbjfHctOvdozgcetSoJAs2VLnSU/xjmYTxZQU8=
+X-Google-Smtp-Source: ADFU+vvSRlyq9Zdi/fl/WLdv2Po6WICy6RqRd2FY2vS+d6/LY3eKydss4wYnT9C5FUYvIXP6ufBuZlUYC9tzxOFzjhA=
+X-Received: by 2002:a92:af8c:: with SMTP id v12mr7879184ill.6.1584009309784;
+ Thu, 12 Mar 2020 03:35:09 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SG2PR03CA0113.apcprd03.prod.outlook.com (2603:1096:4:91::17) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2835.7 via Frontend Transport; Thu, 12 Mar 2020 10:27:19 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: ada521f3-d97f-43f5-d811-08d7c66ff53c
-X-MS-TrafficTypeDiagnostic: AM0PR04MB7171:|AM0PR04MB7171:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB7171B30D2B583325B989773188FD0@AM0PR04MB7171.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
-X-Forefront-PRVS: 0340850FCD
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(39860400002)(366004)(376002)(346002)(199004)(478600001)(4326008)(8676002)(5660300002)(956004)(6506007)(7416002)(2616005)(16526019)(6486002)(186003)(2906002)(9686003)(86362001)(6666004)(69590400007)(36756003)(81166006)(26005)(66476007)(8936002)(6512007)(81156014)(66946007)(66556008)(52116002)(316002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB7171;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: bk+gDk5kI3JbMZaUab89EhHwBzRXjRLaRSRdtlW1xQR2mYpMzBwyKhSCR47k0LDQyp9H0cyFPlVR7Rc2ZUGaBIcEF1J7QbX4ww1ht7Icfk4Hw2YkwBw1Efcf0BIy5BeLdhbS39dH/WgiB6SoeRofUGNvlPgnSCdPB24OTyOdqi7OIufN60TpWWDg8yVYOh9ue4rHBKtpgZFibGskzxFaaB/SL/OXh2qxKC5xO17X7x6imiuH4q1SB3Iaib3FATN4oiGbZxUZ+YaMHG7d3O3pgs7X6A6J3yMo4B6gY4jwRLJRZwYyeEFDxSZeY0Inx/kjbmrLu90/h38CabD2CvYfkcCM43NCaQs12HAMDEckmhl1MqUnSkR7IbGvKXQSYLiImmd5v9F66KEvaJkfNUsCl8qDQ5uRuETTt5q5uJrYukCrfUKnYU4+EaVbS1cFFnKHCInRqC9xPO9Ee8sVnbnzSpyl/Xu7xA1uQPcJn63800Pj7f0tLiOXWUnm2ElfmewU
-X-MS-Exchange-AntiSpam-MessageData: WzCOAxSQTWpaaUjXVcOm/AaZORLNACMMUwxFyHipNMFWfwqoAFRz9BkzTkJSv8zQ1e9LHPn8zJrflT6oSsfp0anZrrmFQTJbyiagSZRhDIEQ0tLctTgLmSn7JgytxzsE3Er9+GCvleoCKfeTUTtbgA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ada521f3-d97f-43f5-d811-08d7c66ff53c
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 10:27:27.5967 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1xO5RqXce9sZX5zCbcQyA5B8l4eoUXiDhSQT4+u2uzHSQ5AGplNT7ETkvmtnXIs/Pcj4OYoDm6rugTT+KiI/4g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB7171
+References: <20200310194854.831-1-linux.amoon@gmail.com>
+ <20200310194854.831-6-linux.amoon@gmail.com>
+ <20200311144248.GA4455@kozik-lap>
+In-Reply-To: <20200311144248.GA4455@kozik-lap>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Thu, 12 Mar 2020 16:04:57 +0530
+Message-ID: <CANAwSgQWYdh3awuMCjUvz6EvnwMq9rDOSBn5EkNcA7OfsjoEwA@mail.gmail.com>
+Subject: Re: [PATCHv3 5/5] clk: samsung: exynos542x: Move FSYS subsystem
+ clocks to its sub-CMU
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_034314_808103_55A2D4DA 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200312_033511_875379_FCEF4C92 
+X-CRM114-Status: GOOD (  22.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.57 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [linux.amoon[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,73 +95,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, fugang.duan@nxp.com, ping.bai@nxp.com,
- Anson.Huang@nxp.com, andrew.smirnov@gmail.com, daniel.baluta@nxp.com,
- agx@sigxcpu.org, angus@akkea.ca, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, aford173@gmail.com,
- l.stach@pengutronix.de, festevam@gmail.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, jun.li@nxp.com
+Cc: devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, Felipe Balbi <balbi@kernel.org>,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Hi Krzysztof,
 
-Introduce imx8m_clk_hw_composite_bus api for bus clk root slice usage.
-Because the mux switch sequence issue, we could not reuse Peripheral
-Clock Slice code, need use composite specific mux operation.
+Thanks for your review comments.
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/clk/imx/clk-composite-8m.c | 5 +++++
- drivers/clk/imx/clk.h              | 7 +++++++
- 2 files changed, 12 insertions(+)
+On Wed, 11 Mar 2020 at 20:12, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Tue, Mar 10, 2020 at 07:48:54PM +0000, Anand Moon wrote:
+> > FSYS power domain support usbdrd3, pdma and usb2 power gaiting,
+> > hence move FSYS clk setting to sub-CMU block to support power domain
+> > on/off sequences for device nodes.
+> >
+> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> > ---
+> > New patch in the series
+> > ---
+> >  drivers/clk/samsung/clk-exynos5420.c | 45 +++++++++++++++++++++-------
+> >  1 file changed, 34 insertions(+), 11 deletions(-)
+> >
+> > diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+> > index c9e5a1fb6653..6c4c47dfcdce 100644
+> > --- a/drivers/clk/samsung/clk-exynos5420.c
+> > +++ b/drivers/clk/samsung/clk-exynos5420.c
+> > @@ -859,12 +859,6 @@ static const struct samsung_div_clock exynos5x_div_clks[] __initconst = {
+> >       DIV(0, "dout_maudio0", "mout_maudio0", DIV_MAU, 20, 4),
+> >       DIV(0, "dout_maupcm0", "dout_maudio0", DIV_MAU, 24, 8),
+> >
+> > -     /* USB3.0 */
+> > -     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
+> > -     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
+> > -     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
+> > -     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
+>
+> According to clock diagram these are still in CMU TOP, not FSYS.
+>
+> > -
+> >       /* MMC */
+> >       DIV(0, "dout_mmc0", "mout_mmc0", DIV_FSYS1, 0, 10),
+> >       DIV(0, "dout_mmc1", "mout_mmc1", DIV_FSYS1, 10, 10),
+> > @@ -1031,8 +1025,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+> />
+> >       /* FSYS Block */
+> >       GATE(CLK_TSI, "tsi", "aclk200_fsys", GATE_BUS_FSYS0, 0, 0, 0),
+> > -     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
+> > -     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
+> >       GATE(CLK_UFS, "ufs", "aclk200_fsys2", GATE_BUS_FSYS0, 3, 0, 0),
+> >       GATE(CLK_RTIC, "rtic", "aclk200_fsys", GATE_IP_FSYS, 9, 0, 0),
+> >       GATE(CLK_MMC0, "mmc0", "aclk200_fsys2", GATE_IP_FSYS, 12, 0, 0),
+> > @@ -1040,9 +1032,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+> >       GATE(CLK_MMC2, "mmc2", "aclk200_fsys2", GATE_IP_FSYS, 14, 0, 0),
+> >       GATE(CLK_SROMC, "sromc", "aclk200_fsys2",
+> >                       GATE_IP_FSYS, 17, CLK_IGNORE_UNUSED, 0),
+> > -     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
+> > -     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
+> > -     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
+> >       GATE(CLK_SCLK_UNIPRO, "sclk_unipro", "dout_unipro",
+> >                       SRC_MASK_FSYS, 24, CLK_SET_RATE_PARENT, 0),
+> >
+> > @@ -1258,6 +1247,28 @@ static struct exynos5_subcmu_reg_dump exynos5x_gsc_suspend_regs[] = {
+> >       { DIV2_RATIO0, 0, 0x30 },       /* DIV dout_gscl_blk_300 */
+> >  };
+> >
+> > +/* USB3.0 */
+> > +static const struct samsung_div_clock exynos5x_fsys_div_clks[] __initconst = {
+> > +     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
+> > +     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
+> > +     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
+> > +     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
+> > +};
+> > +
+> > +static const struct samsung_gate_clock exynos5x_fsys_gate_clks[] __initconst = {
+> > +     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
+> > +     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
+> > +     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
+> > +     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
+> > +     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
+> > +};
+> > +
+> > +static struct exynos5_subcmu_reg_dump exynos5x_fsys_suspend_regs[] = {
+> > +     { GATE_IP_FSYS, 0xffffffff, 0xffffffff }, /* FSYS gates */
+>
+> This looks wrong. GATE_IP_FSYS has fields also for FSYS2 clocks which
+> you are not suspending. They do not belong to this CMU.
+>
 
-diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
-index eae02c151ced..ec28643426c2 100644
---- a/drivers/clk/imx/clk-composite-8m.c
-+++ b/drivers/clk/imx/clk-composite-8m.c
-@@ -216,6 +216,11 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 		div->width = PCG_CORE_DIV_WIDTH;
- 		divider_ops = &clk_divider_ops;
- 		mux_ops = &imx8m_clk_composite_mux_ops;
-+	} else if (composite_flags & IMX_COMPOSITE_BUS) {
-+		div->shift = PCG_PREDIV_SHIFT;
-+		div->width = PCG_PREDIV_WIDTH;
-+		divider_ops = &imx8m_clk_composite_divider_ops;
-+		mux_ops = &imx8m_clk_composite_mux_ops;
- 	} else {
- 		div->shift = PCG_PREDIV_SHIFT;
- 		div->width = PCG_PREDIV_WIDTH;
-diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index f074dd8ec42e..d4ea1609bcb7 100644
---- a/drivers/clk/imx/clk.h
-+++ b/drivers/clk/imx/clk.h
-@@ -478,6 +478,7 @@ struct clk_hw *imx_clk_hw_cpu(const char *name, const char *parent_name,
- 		struct clk *step);
- 
- #define IMX_COMPOSITE_CORE	BIT(0)
-+#define IMX_COMPOSITE_BUS	BIT(1)
- 
- struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 					    const char * const *parent_names,
-@@ -486,6 +487,12 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 					    u32 composite_flags,
- 					    unsigned long flags);
- 
-+#define imx8m_clk_hw_composite_bus(name, parent_names, reg)	\
-+	imx8m_clk_hw_composite_flags(name, parent_names, \
-+			ARRAY_SIZE(parent_names), reg, \
-+			IMX_COMPOSITE_BUS, \
-+			CLK_SET_RATE_NO_REPARENT | CLK_OPS_PARENT_ENABLE)
-+
- #define imx8m_clk_hw_composite_core(name, parent_names, reg)	\
- 	imx8m_clk_hw_composite_flags(name, parent_names, \
- 			ARRAY_SIZE(parent_names), reg, \
--- 
-2.16.4
+Ok. I change the from GATE_IP_FSYS to GATE_BUS_FSYS0 in the above
+exynos5x_fsys_gate_clks to make this consistent to used GATE_BUS_FSYS0 for CMU,
+with this change it works as per previously.
 
+> Don't you need to save also parts of GATE_BUS_FSYS0?
+
+GATE_BUS_FSYS0 and GATE_IP_FSYS are already part of list
+of control register which are saved and restored during suspend and resume
+so no point in adding this here, I should drop the GATE_IP_FSYS reg
+dump over here.
+
+>
+> > +     { SRC_TOP3, 0, BIT(24) },                 /* SW_MUX_PCLK_200_FSYS_SEL */
+> > +     { SRC_TOP3, 0, BIT(28) },                 /* SW_MUX_ACLK_200_FSYS_SEL */
+>
+> Name of clocks from the driver please, not from datasheet. Look at other
+> examples.
+>
+
+Ok  I will update this as per the examples.
+
+> Best regards,
+> Krzysztof
+>
+>
+
+-Anand
+
+> > +};
+> > +
+> >  static const struct samsung_gate_clock exynos5x_g3d_gate_clks[] __initconst = {
+> >       GATE(CLK_G3D, "g3d", "mout_user_aclk_g3d", GATE_IP_G3D, 9,
+> >            CLK_SET_RATE_PARENT, 0),
+> > @@ -1376,12 +1387,23 @@ static const struct exynos5_subcmu_info exynos5800_mau_subcmu = {
+> >       .pd_name        = "MAU",
+> >  };
+> >
+> > +static const struct exynos5_subcmu_info exynos5x_fsys_subcmu = {
+> > +     .div_clks       = exynos5x_fsys_div_clks,
+> > +     .nr_div_clks    = ARRAY_SIZE(exynos5x_fsys_div_clks),
+> > +     .gate_clks      = exynos5x_fsys_gate_clks,
+> > +     .nr_gate_clks   = ARRAY_SIZE(exynos5x_fsys_gate_clks),
+> > +     .suspend_regs   = exynos5x_fsys_suspend_regs,
+> > +     .nr_suspend_regs = ARRAY_SIZE(exynos5x_fsys_suspend_regs),
+> > +     .pd_name        = "FSYS",
+> > +};
+> > +
+> >  static const struct exynos5_subcmu_info *exynos5x_subcmus[] = {
+> >       &exynos5x_disp_subcmu,
+> >       &exynos5x_gsc_subcmu,
+> >       &exynos5x_g3d_subcmu,
+> >       &exynos5x_mfc_subcmu,
+> >       &exynos5x_mscl_subcmu,
+> > +     &exynos5x_fsys_subcmu,
+> >  };
+> >
+> >  static const struct exynos5_subcmu_info *exynos5800_subcmus[] = {
+> > @@ -1391,6 +1413,7 @@ static const struct exynos5_subcmu_info *exynos5800_subcmus[] = {
+> >       &exynos5x_mfc_subcmu,
+> >       &exynos5x_mscl_subcmu,
+> >       &exynos5800_mau_subcmu,
+> > +     &exynos5x_fsys_subcmu,
+> >  };
+> >
+> >  static const struct samsung_pll_rate_table exynos5420_pll2550x_24mhz_tbl[] __initconst = {
+> > --
+> > 2.25.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
