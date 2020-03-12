@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4B941828B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 07:04:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 978E91828BB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 07:05:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9wQB70CLsJnPtAvOyZy0kT2kd2Rg7PfbzNf6YSSR2l4=; b=JinL+L2ER7YZC0
-	vk17Pa8gL+hlTWzmbjj2kcm3zaC8pCttTYmsA7db7JYyKPqZxUKQzG3tZOTA09BEksiLXLwdG6Mv0
-	kDD1SytCjr7Ai+OlW3Uk8B/UDEp456pd76/lqZ+kTnzECvy4RwNkLqS4Hdkphw24UJvvRf2/5IP1Z
-	FVXeO0paow2oQ3nH2sKt3Y4keUQhHt5LdZfV/T37YzVQiCNkitO05xgfq4GRqwZ83FVTFAVNmsE0j
-	JjfGfXFyZS1ExHFQvtQvGt/MG38ycaF/aCtFwRtgkNqYw31Cg+3K3IRend1Zy21qXfnNoYZakqXLU
-	EsPcyb7R7S/2Ml/vnhSw==;
+	List-Owner; bh=mgr0mjDtk4ZXrnkCgYJNsOkPI8iVzjUoZNxMfJwBX0E=; b=PrUFPejTXNtGSo
+	YGtAcB7s4bSJlP3jOuFfQNx4OjHRqTRRzRS1sqiYsZtBW9dHijDLC/yBJo+mLrUzos6ynvaYNIavo
+	YFrhR8gs+1eUosWvj4tAQphXSewdCTJ/5rCGq/wR6o2dO/x7sgMcYDnfx5EYYC85epLa8nBZZOvwG
+	vD0+g0HxP6AZFCGkIv7HW90U4JCFLfreoh2ZS/X8ZgIp9w11F1kx/ufXkBjoE8/wf2rUaRWm4bQrz
+	WkRHfhBTdRIAWe4sit83ByCYBCSz5G0fL8am7zh0xkdwJs3eLj53iOflM6Y3uc2cnE3dvKQ0oqXUK
+	esgrwvwmOsC++b6d/L/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCGxA-0002bf-Uq; Thu, 12 Mar 2020 06:04:20 +0000
+	id 1jCGyD-00049k-IU; Thu, 12 Mar 2020 06:05:25 +0000
 Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCGx1-0002b5-C7
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 06:04:13 +0000
+ id 1jCGy5-000483-GF
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 06:05:18 +0000
 Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
  (using TLSv1 with cipher AES256-SHA (256/256 bits))
  (Client did not present a certificate)
  (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id A3A6C14CCCAE8;
- Wed, 11 Mar 2020 23:04:02 -0700 (PDT)
-Date: Wed, 11 Mar 2020 23:04:02 -0700 (PDT)
-Message-Id: <20200311.230402.1496009558967017193.davem@davemloft.net>
-To: mklntf@gmail.com
-Subject: Re: [PATCH] net: stmmac: platform: Fix misleading interrupt error msg
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 2E28214CD0E6D;
+ Wed, 11 Mar 2020 23:05:16 -0700 (PDT)
+Date: Wed, 11 Mar 2020 23:05:15 -0700 (PDT)
+Message-Id: <20200311.230515.1148233734946906259.davem@davemloft.net>
+To: Jose.Abreu@synopsys.com
+Subject: Re: [PATCH net-next] net: stmmac: selftests: Fix L3/L4 Filtering test
 From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200306163848.5910-1-mklntf@gmail.com>
-References: <20200306163848.5910-1-mklntf@gmail.com>
+In-Reply-To: <4e5d8d273498a1c1c6b8f983e5dd7590c6dfd26a.1583760590.git.Jose.Abreu@synopsys.com>
+References: <4e5d8d273498a1c1c6b8f983e5dd7590c6dfd26a.1583760590.git.Jose.Abreu@synopsys.com>
 X-Mailer: Mew version 6.8 on Emacs 26.1
 Mime-Version: 1.0
 X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
  (shards.monkeyblade.net [149.20.54.216]);
- Wed, 11 Mar 2020 23:04:03 -0700 (PDT)
+ Wed, 11 Mar 2020 23:05:16 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_230411_413484_9F7A2314 
-X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-CacheID: sfid-20200311_230517_540960_0F164735 
+X-CRM114-Status: UNSURE (   6.19  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -63,8 +63,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
  peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -72,20 +72,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Fuchs <mklntf@gmail.com>
-Date: Fri,  6 Mar 2020 17:38:48 +0100
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+Date: Mon,  9 Mar 2020 14:30:22 +0100
 
-> Not every stmmac based platform makes use of the eth_wake_irq or eth_lpi
-> interrupts. Use the platform_get_irq_byname_optional variant for these
-> interrupts, so no error message is displayed, if they can't be found.
-> Rather print an information to hint something might be wrong to assist
-> debugging on platforms which use these interrupts.
+> Since commit 319a1d19471e, stmmac only support basic HW stats type for
+> action. Set this field in the L3/L4 Filtering test so that it correctly
+> setups the filter instead of returning EOPNOTSUPP.
 > 
-> Signed-off-by: Markus Fuchs <mklntf@gmail.com>
+> Fixes: 319a1d19471e ("flow_offload: check for basic action hw stats type")
+> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
-What do you mean the error message is misleading right now?
-
-It isn't printing anything out at the moment in this situation.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
