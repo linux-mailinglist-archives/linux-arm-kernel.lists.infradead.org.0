@@ -2,75 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB9521832A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 15:17:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 301831832CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 15:23:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=24QArYMaK4x+9g8b928xeH6w0w0q7pIKGVSi/Jf/HxY=; b=evjwA7twiarTJw
-	RdhlrWv0ggS1H6MNkSXtDvWkfxUlaR/Q1ArMm9JBvle7khiKu3bP8zFKfw0WCLQ8zyvrSn0+A+Fg1
-	wLxcIf/by8RNcN2aEqlNkKqZYJQq3L2SvI3pwdybGStzncamsznMcINhzsKjp4RfSSjpd1ogPYpXB
-	wWvD+qzWZsnoFpmHTNHn0mVmUmXjw4bgtGHBoS+4fQI4ksSFHipJiil1jzLvCkDRnBksJkPf85evJ
-	NkusgTzBgoDMgRnF5iuKGE5ZAHv3YXRMlJ13limUE4NWcwYANNSUyfWXKzF0Xat5KhmKh4SNranI9
-	eg+jOdTTCk+NSp9Ns/gQ==;
+	List-Owner; bh=XT7cmhe5pzVP59yKhfP37ZMF2cerd/E9kiwsfV7Jl5w=; b=OEp5ejE2uM9vzr
+	iaHDQwKCkVfOjDdfYdOMONTOPkGvlXORiOQtRCGrzE7E/xB9KIzmWTlKtgOZMdu/U+2SxzM0R9JZ9
+	P/iHfgR20Dvb3pMsNXSoN/ZJFm/zF2Ql1IqY8dJtQELmBl41qZB3vWTmpu10N9VfP8iyIcGLUVvxN
+	fzyAbvMcUX44J6p6HADz99G5h88obzReyo02nMsblGP0WX2M5SX+ZRzCMnjNtLT7VvWB4wQMCkRFh
+	BI1orpM0iUQLoVWWYIj0tiNU+PrxZdAE8vSTtGMcDVuGnaZOx3ZkwYkgAaCJusLKdbw5dzHOtUfMk
+	HU5FHY9brFlxw/X/uzLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCOeC-0001mC-Dc; Thu, 12 Mar 2020 14:17:16 +0000
-Received: from smtprelay0107.hostedemail.com ([216.40.44.107]
- helo=smtprelay.hostedemail.com)
+	id 1jCOji-0003km-7y; Thu, 12 Mar 2020 14:22:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCOe6-0001lo-8c
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 14:17:11 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay02.hostedemail.com (Postfix) with ESMTP id 51ABE8139;
- Thu, 12 Mar 2020 14:17:08 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
- RULES_HIT:41:355:379:599:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2693:2740:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3871:3872:3874:4321:5007:6119:10004:10400:10450:10455:10848:11232:11658:11914:12297:12740:12760:12895:13069:13161:13229:13311:13357:13439:13869:14040:14096:14097:14659:14721:19904:19999:21080:21611:21627:30005:30012:30041:30054:30060:30070:30090:30091,
- 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
- DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
- LFtime:1, LUA_SUMMARY:none
-X-HE-Tag: music20_5b3c53998c133
-X-Filterd-Recvd-Size: 2957
-Received: from XPS-9350.home (unknown [47.151.143.254])
- (Authenticated sender: joe@perches.com)
- by omf17.hostedemail.com (Postfix) with ESMTPA;
- Thu, 12 Mar 2020 14:17:06 +0000 (UTC)
-Message-ID: <520264e86bcba45ba8cb721ca54b81e56e5df42e.camel@perches.com>
-Subject: Re: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough;
-From: Joe Perches <joe@perches.com>
-To: "Theodore Y. Ts'o" <tytso@mit.edu>
-Date: Thu, 12 Mar 2020 07:15:23 -0700
-In-Reply-To: <20200312134712.GE7159@mit.edu>
-References: <cover.1583896344.git.joe@perches.com>
- <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
- <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
- <891a42ad8d8fd7beca911845108e1ded022ef3f7.camel@perches.com>
- <20200312085606.GA154268@kroah.com>
- <CAK7LNAS98yeCeFZpKgNRRKcFhXSKWQ7Ka4vP90YcY=ufScZRCw@mail.gmail.com>
- <fa07756217b3c033c7e5af495a03ff5655947450.camel@perches.com>
- <20200312134712.GE7159@mit.edu>
-User-Agent: Evolution 3.34.1-2 
+ id 1jCOja-0003kD-Go
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 14:22:51 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 599ED20650;
+ Thu, 12 Mar 2020 14:22:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584022969;
+ bh=1tyFYkYNgWZaP/Fj/CSjoWSlP2yoXwZznqa1gCTEDsk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Cxmt4QTznZbNnbUYifOJ+cTEHY4uVUMapdZ8bTOy2AP5cgfWMJNsKB6Nj6JVACZ6/
+ JpWYLW7VciFOGnKjao0BjHdUpVdP8T5ngEbpLU7osiQfIDV2qZzAsjNshRa8zna9wk
+ Q0kTyNmDaLzDBISffNgwdGxaAd3gm6r4HUzEDafw=
+Date: Thu, 12 Mar 2020 22:22:31 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Leo Li <leoyang.li@nxp.com>
+Subject: Re: [PATCH 07/15] arm64: defconfig: Enable QorIQ cpufreq driver
+Message-ID: <20200312142229.GA1249@dragon>
+References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
+ <1582585690-463-8-git-send-email-leoyang.li@nxp.com>
+ <20200311061220.GB29269@dragon>
+ <VE1PR04MB66873A9B6773FFBF96F37C6B8FFC0@VE1PR04MB6687.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <VE1PR04MB66873A9B6773FFBF96F37C6B8FFC0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_071710_368830_9D0F174F 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200312_072250_583143_FAB9A018 
+X-CRM114-Status: GOOD (  16.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.107 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [216.40.44.107 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,58 +79,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-03-12 at 09:47 -0400, Theodore Y. Ts'o wrote:
-> On Thu, Mar 12, 2020 at 02:37:31AM -0700, Joe Perches wrote:
-> > As I have suggested a few times, better still
-> > would be to have a mechanism for scripted patches
-> > applied possibly as single treewide patch.
+On Wed, Mar 11, 2020 at 06:54:00PM +0000, Leo Li wrote:
+> 
+> 
+> > -----Original Message-----
+> > From: Shawn Guo <shawnguo@kernel.org>
+> > Sent: Wednesday, March 11, 2020 1:12 AM
+> > To: Leo Li <leoyang.li@nxp.com>
+> > Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org
+> > Subject: Re: [PATCH 07/15] arm64: defconfig: Enable QorIQ cpufreq driver
 > > 
-> > Likely applied only at an -rc1.
+> > On Mon, Feb 24, 2020 at 05:08:02PM -0600, Li Yang wrote:
+> > > Enables the generic QorIQ cpufreq driver to support frequency scaling
+> > > for various QorIQ SoCs.  Enabled as built-in as it is a core feature.
+> > >
+> > > Signed-off-by: Li Yang <leoyang.li@nxp.com>
+> > > ---
+> > >  arch/arm64/configs/defconfig | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > >
+> > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > > index e97ef8b944b8..996dc749ea5c 100644
+> > > --- a/arch/arm64/configs/defconfig
+> > > +++ b/arch/arm64/configs/defconfig
+> > > @@ -90,6 +90,7 @@ CONFIG_ARM_QCOM_CPUFREQ_NVMEM=y
+> > >  CONFIG_ARM_QCOM_CPUFREQ_HW=y
+> > >  CONFIG_ARM_RASPBERRYPI_CPUFREQ=m
+> > >  CONFIG_ARM_TEGRA186_CPUFREQ=y
+> > > +CONFIG_QORIQ_CPUFREQ=y
+> > >  CONFIG_ARM_SCPI_PROTOCOL=y
+> > >  CONFIG_RASPBERRYPI_FIRMWARE=y
+> > >  CONFIG_INTEL_STRATIX10_SERVICE=y
+> > > @@ -722,7 +723,6 @@ CONFIG_COMMON_CLK_RK808=y
+> > >  CONFIG_COMMON_CLK_SCPI=y
+> > >  CONFIG_COMMON_CLK_CS2000_CP=y
+> > >  CONFIG_COMMON_CLK_S2MPS11=y
+> > > -CONFIG_CLK_QORIQ=y
 > > 
-> > The stated negatives to a treewide mechanism
-> > have been difficulty to backport to -stable.
+> > Why is this getting removed?
 > 
-> Any time we do a massive, disruptive change to the code base, it's
-> going to cause problems to -stable.  It means that bug fix patches
-> won't necessarily auto-apply, and some will require manual fixups
-> afterwards
+> Newly added QORIQ_CPUFREQ selects CLK_QORIQ, so it is removed by savedefconfig.
 
-That's mostly a tools problem than a real problem.
+Note it in the commit log please.
 
-> Given that this change doesn't really fix any bugs, I'd have to ask
-> the question --- is it *worth* it?  We really need to apply a certain
-> amount of cost/benefit analysis around this.
-> 
-> If it were really important, the thing we could do is to apply a
-> single treewide patch at some point after the merge window.  I'd
-> suggest after -rc2, myself, but reasonable people can differ.  And
-> then, if it were *really* important we could run the same script on
-> the stable kernels.
-> 
-> But for changing "/* fallthrough */" to "fallthrough;"
-> 
-> Does this ***really*** matter?
-
-That depends a bit on whether clang is your
-compiler of choice.
-
-> Why are we tying ourselves up in knots
-> trying to do this all at once?
-
-Discretely or treewide, all at once or done over time,
-the impact problem to backports is the same.
-
-
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
