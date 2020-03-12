@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6606A18317A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:32:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B880E18318B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:32:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=N70UiaaYpZB72SzLXJniblt+sfC4RGfBItkBu6FFKqo=; b=FFc1u43wvOfaVB
-	JJeGrSoFpFeFxOISlbA0P+4Dqsgm9UHn7BPkXTGfSJ2+4sJlM2WFdDldqQVeOI3YmNv4GVDLyQGSP
-	uXCi6y13Ui9aNxosobkPacfVYJ6u9vPs9oRb3FYiKtAk5PVQRLo7vyRt69mR2NiZHD/mHRg1BB051
-	7iojmJQRnOc4RtCOsdujliTnTSMaZq4MGf5hsOxBGvVpeuw/OPuPkQ1BQRNYL+AuhM359LydTzVM5
-	968sqRsGf/ZPvwEOCE9mMVEwv8oZ+d5NoVojYV5sIu4UgsaeynaipZqFKuXXKaixvHj4iWs0w8PME
-	T/emvDJAUV/kfKnFqj6g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z6rExpGD9Bt5n9xwSYpgq/InwZb69OXBak4wQoV63AQ=; b=f2cgD7JZ6kfXV+
+	oPXhBBJAzkfMQqzEfuHh9+A2MNQrymyCfFAq8APjiFECGwonn5jnegJZZk4yEn1RRPVLAN5bMKSxM
+	cDpakaX+lVCC5YhOm+A2xHhx3peTOD0/dkwYY5DE15wH8ch3FrcIPJ8cgqFQg7pP9piNRKk5iO6Mh
+	Ko5+15MCPBVf1ygyuTHpC2HHa7S53uSN43E/wU+MC50HK7QBpAdHDwtk80xQ1mAsLLJ9BTObj1TYT
+	3WXfuAKhZbpkJMDJNTsWdCi7So5NyjSQjolv9Y6GtCtHtbgspK8aY675LcVrT802xHwmbsue33WIS
+	G3HgoJO+DVf1tRwnZ4Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNwN-0003W3-UW; Thu, 12 Mar 2020 13:31:59 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jCNwf-0003nS-VM; Thu, 12 Mar 2020 13:32:17 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNw0-0003Rl-AY
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:31:38 +0000
-Received: by mail-wm1-x343.google.com with SMTP id m3so6329011wmi.0
+ id 1jCNw1-0003Rn-2r
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:31:39 +0000
+Received: by mail-wr1-x442.google.com with SMTP id s5so7513341wrg.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 06:31:35 -0700 (PDT)
+ Thu, 12 Mar 2020 06:31:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=mKsXFRcK8AcNaumHFcbmSoneU4WCI5BNbLya6zWwdso=;
- b=yGpVXdf/zvaZ2oK6Mt2+1GDAOyAcjE2YL1fV8629Sl0fjgJVBfCic1VwugB4VQba3I
- 3QveKXHMnoAegaDY0ROjo174WbRvRCFA5sWlFur932L2a0dceZAXJDFyDaY5+5A+5YQI
- gNC2vQqUjVLeasn5PxXhMAAa7j/16lkRClmD8g5CGiEYmRvidQtzxIKvij4ppKqbZRJ9
- RkonPce8pXKdXw86YvlInePQdX8c1ic7TFrlbZy+1zYerMEU8IIr5GeiLhknxM4jhMEE
- lugULtEYx7q1Bn7ALGTjrbKvlBzUa/kFM7fjsRe4EgyRj6vQWW02NEqOYJiEk3YcI7Oh
- V+PQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=MQB/nJ2X838Fvt+sBkmGr/0pMCoouvYo1EdeUXM4YMQ=;
+ b=BJ0XuBYV3ToSPW3UIl6Isc2lumsrYzXzC9pIKP6HzoLx2m5H8VgaPnkaYEyU3nSSyY
+ 1tLzCAypjVjCczuqqKDKV1kSM0jlkColhbhQeyFQVhbrpWHVd+cqIdpfBucm5Cs8CUNT
+ g2JsfKMI1p2KNINJQGW/uTtMsJczcoyPXXZnlpjb8lmdv/EKBNzm0oLEWDR+wc3cC7Qf
+ DMCctXTjXci5kB54gBeQKBFgYHiFdJuJ8DwI2USTDOz+pcXtLVEBQNuo9vJANXAlIU0c
+ /cnYnC4QN9G/AkoiOE6XME3Ja/GQJj1cvbdw9h8QOh351jbLfIus+wLy4M2iFBemZPwy
+ BIKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=mKsXFRcK8AcNaumHFcbmSoneU4WCI5BNbLya6zWwdso=;
- b=Ww6HlMHRsBgDt/SrPj4bPErG35HSyUFX1//uTHuqCz/QxacvhijmXbxkpk2NczYIX0
- yxTlwTTx4B5bRYBx/ctstKOP/rKjyY56gT4MUEW+Hz70qhARqKGIgrPq06JBvjbtw4V0
- X9Vm581Icg0niZHNlig+8TjZF9X5TuwMSH6sqW2PU+Ck8+Iq3aU+m1kcT1PhOuRwkqse
- v/EvaHRci0E425ez9DxG6kfZ5XtJ7l48Bsv4REC0wmHlK0yZSM40wgFzkptc6vFrd5pC
- EXz+9J1O1HLHJnUXg9aq/WDNuVJ+JxvlY8cvhqOikH38Z2aCe7cWM8/Sy5aY0K+I2BEj
- IIew==
-X-Gm-Message-State: ANhLgQ0zCcUwTlOmXGVdNroDMnK4QZTq5aN/5yL2gTcjmMBQ/+TpPrQb
- cmijuYHy6nvDL+90FeIN2BEDUA==
-X-Google-Smtp-Source: ADFU+vu4/CzgwwWNZw4DY6j6M6oytrcB21iZBNHToT/4H+n6Y97GqaxPnIoWB+xUtDlIT2K+uneEpQ==
-X-Received: by 2002:a1c:c5:: with SMTP id 188mr4903051wma.89.1584019894533;
- Thu, 12 Mar 2020 06:31:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=MQB/nJ2X838Fvt+sBkmGr/0pMCoouvYo1EdeUXM4YMQ=;
+ b=TVS4ERVU4w57gwlvaXSlVMnvNIQwPm6gCAWZYmxIOdlsOgT3ltAQAXzboOu4nx+6uL
+ cYpvOLSvIV4+EF2hlTS6QNHpIujKFQxyY8Hz4C6EMImtnRu4n0pcqRKHK9Pkqhyc6d5F
+ y3Svxpc3flZfgPr5wFdUCVd8je855WCxnddMkjbWqHNITbeZgV6x9SCujnRRqF26W/nR
+ Hq1ULCb+R49q4Zl3hcvDBbdPi+Aqc6UnVmDy6Kd5QvBXrx9D/LdQUbJo/25kn9ycv4bz
+ vFy+6P08zbKB+aaiIhW7smAmbppfUFD2eGLUPw+MaVNRPwSFmQjStDJ9U00osR2hX8su
+ ++xg==
+X-Gm-Message-State: ANhLgQ1qGxHQlrl+E1DJScuU61iKBgphbEdSmmFO1QxHa1FBc8N1nLSi
+ RJOz3AqguUIzFImBw25qrf52jA==
+X-Google-Smtp-Source: ADFU+vttYTaI+DCiNmB1UvQy1EL7nMlpTXWyEiRnY5WHDphDcEObnDSPJFvd3uSrVxGbrKBpFiiYCQ==
+X-Received: by 2002:a5d:6703:: with SMTP id o3mr101991wru.137.1584019895265;
+ Thu, 12 Mar 2020 06:31:35 -0700 (PDT)
 Received: from bender.baylibre.local
  (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m21sm12242885wmi.27.2020.03.12.06.31.33
+ by smtp.gmail.com with ESMTPSA id m21sm12242885wmi.27.2020.03.12.06.31.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 06:31:33 -0700 (PDT)
+ Thu, 12 Mar 2020 06:31:34 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: broonie@kernel.org
-Subject: [PATCH 0/9] spi: meson-spicc: add support for AXG and G12A variants
-Date: Thu, 12 Mar 2020 14:31:22 +0100
-Message-Id: <20200312133131.26430-1-narmstrong@baylibre.com>
+Subject: [PATCH 1/9] spi: meson-spicc: remove unused variables
+Date: Thu, 12 Mar 2020 14:31:23 +0100
+Message-Id: <20200312133131.26430-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200312133131.26430-1-narmstrong@baylibre.com>
+References: <20200312133131.26430-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_063136_368244_3EA2584C 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200312_063137_121476_D49EC11B 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,40 +103,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SPICC controller in Amlogic AXG & G12A is capable of driving the
-CLK/MOSI/SS signal lines through the idle state which avoid the signals
-floating in unexpected state, is capable of using linear clock divider
-to reach a much fine tuned range of clocks, while the old controller only
-uses a power of two clock divider, result at a more coarse clock range and
-finally is capable of running at 80M clock.
+Remove unused variables from spicc data struct.
 
-The SPICC controller in Amlogic G12A takes the source clock from a specific
-clock instead of the bus clock and has a different FIFO size and doesn't
-handle the RX Half interrupt the same way as GXL & AXG variants. Thus
-the burst management is simplified and takes in account a variable FIFO
-size.
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ drivers/spi/spi-meson-spicc.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-Now the controller can support frequencies higher than 30MHz, we need
-the setup the I/O line delays in regard of the SPI clock frequency.
-
-Neil Armstrong (7):
-  spi: meson-spicc: remove unused variables
-  spi: meson-spicc: support max 80MHz clock
-  spi: meson-spicc: add min sclk for each compatible
-  spi: meson-spicc: setup IO line delay
-  spi: meson-spicc: adapt burst handling for G12A support
-  dt-bindings: spi: amlogic,meson-gx-spicc: add Amlogic G12A compatible
-  spi: meson-spicc: add support for Amlogic G12A
-
-Sunny Luo (2):
-  spi: meson-spicc: enhance output enable feature
-  spi: meson-spicc: add a linear clock divider support
-
- .../bindings/spi/amlogic,meson-gx-spicc.yaml  |  22 +
- drivers/spi/Kconfig                           |   1 +
- drivers/spi/spi-meson-spicc.c                 | 496 +++++++++++++-----
- 3 files changed, 392 insertions(+), 127 deletions(-)
-
+diff --git a/drivers/spi/spi-meson-spicc.c b/drivers/spi/spi-meson-spicc.c
+index 7f5680fe2568..8425e5ae1273 100644
+--- a/drivers/spi/spi-meson-spicc.c
++++ b/drivers/spi/spi-meson-spicc.c
+@@ -130,9 +130,7 @@ struct meson_spicc_device {
+ 	u8				*rx_buf;
+ 	unsigned int			bytes_per_word;
+ 	unsigned long			tx_remain;
+-	unsigned long			txb_remain;
+ 	unsigned long			rx_remain;
+-	unsigned long			rxb_remain;
+ 	unsigned long			xfer_remain;
+ 	bool				is_burst_end;
+ 	bool				is_last_burst;
 -- 
 2.22.0
 
