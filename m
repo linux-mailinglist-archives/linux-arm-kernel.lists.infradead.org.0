@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AA2A183197
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:33:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CDD318319B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:33:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4qkchh6gyaD2ThQTEBqo0K5/MFc7Ip4HjCJMBpdpLdE=; b=a/5SEfBJLV7qFc
-	azp+G8QXSPJ0ppR1M/Z/vglsdenJzRh7wvemTGIh5dXvWCVn7bKYqXX5A7F3au22FrVn1UQY8rHIz
-	9GoW7+oSrhF0SmfZW4n6ah7d8rYSDUOgmAJoJIGupcpVV3eZD1mpsaxKcPYC1FZ63emXEU8QDmUFF
-	2r0EaGeqENee1wis1YbAWnbbbfDdvn4fRSLbwddll5yS+jWaeSD0kwfiwqa640P1+HnLB1IJfshyE
-	299YtnEb/Vy4T5ILBzyhdC2D0uraDDzFxEVlX7MlzXgLlqTBhSlufKC+sc6FfwvZ/yiehDaBO6IOc
-	qJgJMp8GeMUnsGrwSscw==;
+	List-Owner; bh=2RHMJ8UQlq5b7xDD3SDWn6N3ySOXDL1VYTZ9C8iVUrg=; b=teGvbo2PX6MHwu
+	ewjG7GuOO0n/6ABsPZFJYfOqTEfncFBZLaxEfn1xXNC0afixPJK+MhMhY9sG+vhEEY62X6r0vhdDS
+	KArgatSy/glNOSydLkVtlomrNVtQ29QlhXleahCn6lxeOYjvxIVAwcjsd9xBuB4UL/fCjtGsXMF1P
+	xbBp7b16gkNVEDHxRQMtjSbIcdPNN8k82Dqk2xL8NSgJUroMHluUzk97a5J7lRgD58R8tEDxGt+uI
+	Qmt0As16ZmxtSQa6IYhvazq6c6VW/3ZC8jCz1bRIeEXB1E5VeC4I9dAtiUx1VdBO8DCVvZkoUt/YS
+	XYvsXNpHqt6VzIl87c7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNxT-0004pt-8u; Thu, 12 Mar 2020 13:33:07 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jCNy2-0005Kg-Rz; Thu, 12 Mar 2020 13:33:42 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNw4-0003TL-VL
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:31:44 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v11so7476386wrm.9
+ id 1jCNw5-0003VE-LI
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:31:46 +0000
+Received: by mail-wm1-x342.google.com with SMTP id e26so6300187wme.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 06:31:40 -0700 (PDT)
+ Thu, 12 Mar 2020 06:31:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qPH/Dy/CjLCenRWLG2Luxl8lE2WdXQS9qh3kQnsN4TQ=;
- b=hUCDqIj0/ip1fGR0w8g9JiTgR3VggFXz6uXZBIuxQFF8RI6pPBFb0oKUQZqohHTRzJ
- EHaOdl7mpyqXAh2wOch+xrBgXcNlimpN9pUcYfJPjcxIWvdkyqbSg9NQI7L5ScEkAZB4
- rMQWh59snVY+t+sBELnc4M5c4DmKQy+T/hQ5cw5ip7/2BS8wARxIRgItz7sfFyakw9vk
- mlBrjYp4ALqFRuMLjLg7MJ0VyZcGPi4hjaD+7P3BdyiA5CPOMY/d5Ix0Gesh38EQ24E6
- X5/Ga0uTigrBvfoDF9cVkNYXejKr5vaVSAdDmf2Fc1HVBFXkq/IRQFrjALiYCP+VQjwE
- a/qA==
+ bh=xtd57ANFwEVXtL9Ksemj5kAkfq1D3BufSA8HrwoNyGM=;
+ b=crid5weIqLsxtB221E29RJHYKJ4O8HbVMdLMr8N6vDiqh1vo6BPFf2nP8ki8C+Hj8F
+ +Eomn9sIwNriAp2P+lvdLmD3bLHQD41BfoRK0DA+NDGzpeqsduE/C8bCF7ddw/du1GCo
+ Bk8QhkCflUQipTosllgUBmooWikSHyWLX41R+o7Y549gWUexa0zGki1FxTzDCyKwB3uX
+ y7oGBx5v2Wj0zm9UF8t6TJ+FIFqG3+lrwSCDLTgST+UV7KPrFhT5JP3zGvgDqWIVdYFL
+ ypuMa+rtMVyG3c+zwI1/YAeJckKDrQpo4SbcYzOoGd4hZELK5JKBcyBH/eGX9YrL5BLP
+ ayfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qPH/Dy/CjLCenRWLG2Luxl8lE2WdXQS9qh3kQnsN4TQ=;
- b=BfTTBa3SHAUI+uU5pRYMIsv1zL3uPOaL40X0Vq6f5LTBgAWsS5SSuTIsW7/kyDS/aF
- /ErbWj+KHXLS/YOHLYR02l9K/l+LrDjUnXdFkyP01+VlBqRewjoMhFrforlEfPL5jCxP
- pabTPlCgoYrt1n0jjJMwhOzCGSddfTeMPI1tkdc+JnVxMXMdFBzoWJTWORDgb89JsdJK
- pBnrhToCKlt5uCzY6mDr6yOtuAbZzl9U1QF++UKjy1FVstlgWf1NG/nmxAKziHaza7aD
- h0f6Kl/FUguaNxO2s7cvRwYd/zI6eNftdXLFJukJmSGWCiYtCkF4Dh61yinGuLvM1zUy
- s/+w==
-X-Gm-Message-State: ANhLgQ0o/jkHLzy9A1yFURx8uXYSBhGAj+fgXxvq8FWvqOE9mtWZixaB
- o/NmZ60NPF8hSTGRhHHTh7NZuA==
-X-Google-Smtp-Source: ADFU+vvDGHCmjJAEW09IY2pn/rC0cuKnx5wPrdhmLydsBiF7dyxe06aMf+3l/75LbVxspehBFH2Fng==
-X-Received: by 2002:adf:e911:: with SMTP id f17mr10602906wrm.87.1584019899241; 
- Thu, 12 Mar 2020 06:31:39 -0700 (PDT)
+ bh=xtd57ANFwEVXtL9Ksemj5kAkfq1D3BufSA8HrwoNyGM=;
+ b=b7BvDcSzzH+ZUgRb3mvjMBEWihpa9fOaDYSy+1nUhynvhCHR2wYlvdD7BaDYVbLDav
+ 2Aa8Dc4RjXK/G8hvGV0fPhU1kp4U7w7ODxNo/I3EJ3QYPEs9zYe4GOqbIYTTw6ySi2IE
+ E4sQISLnLmI+ziq9MIw3BzvELYVf6vOlv5c6WLrbBjxA1eUxSXzlBG/Uj8RkkLnO2K1A
+ 2c7t3ChSBxvUI/xhUoY6YSC95BD9ToakMgXpyXtZI4ThElWGY6BEkPA5f9Mwy7eI2xtt
+ 1jd/2MkGt6RfjsdO45XxkqfopWJoqITEH5A31wUZHP3f8gv1WJ30UbxE2pqFEF9i3o77
+ dXlg==
+X-Gm-Message-State: ANhLgQ24o9nnhawfRVAf6nbjBtul8Ny5tVsW0xuMgJVwcWrOMyq+a57f
+ LJVjLWVgtoe+P4jh1K7uV8G0Qg==
+X-Google-Smtp-Source: ADFU+vv/Bf0cjqi786SLwyoflMdPEUVQYzJUoEEq10USnSQe6YhOpU8nPOsloJnqi5KX9B8MoPtHgg==
+X-Received: by 2002:a1c:4805:: with SMTP id v5mr4776912wma.98.1584019900193;
+ Thu, 12 Mar 2020 06:31:40 -0700 (PDT)
 Received: from bender.baylibre.local
  (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m21sm12242885wmi.27.2020.03.12.06.31.38
+ by smtp.gmail.com with ESMTPSA id m21sm12242885wmi.27.2020.03.12.06.31.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 06:31:38 -0700 (PDT)
+ Thu, 12 Mar 2020 06:31:39 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: broonie@kernel.org
-Subject: [PATCH 5/9] spi: meson-spicc: add min sclk for each compatible
-Date: Thu, 12 Mar 2020 14:31:27 +0100
-Message-Id: <20200312133131.26430-6-narmstrong@baylibre.com>
+Subject: [PATCH 6/9] spi: meson-spicc: setup IO line delay
+Date: Thu, 12 Mar 2020 14:31:28 +0100
+Message-Id: <20200312133131.26430-7-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200312133131.26430-1-narmstrong@baylibre.com>
 References: <20200312133131.26430-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_063141_058612_81E41784 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200312_063141_736960_2E5A23FE 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,50 +102,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The G12A SPICC controller variant takes the source clock from a specific
-clock instead of the bus clock.
-The minimal clock calculus won't work with the G12A support, thus add the
-minimal supported clock for each variant and pass this to the SPI core.
+Now the controller can support frequencies higher than 30MHz, we need
+the setup the I/O line delays in regard of the SPI clock frequency.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/spi/spi-meson-spicc.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/spi/spi-meson-spicc.c | 61 ++++++++++++++++++++++++++++++++++-
+ 1 file changed, 60 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/spi/spi-meson-spicc.c b/drivers/spi/spi-meson-spicc.c
-index 710b4e780daa..b5bd3a897e8f 100644
+index b5bd3a897e8f..4494a791f4a7 100644
 --- a/drivers/spi/spi-meson-spicc.c
 +++ b/drivers/spi/spi-meson-spicc.c
-@@ -132,6 +132,7 @@
+@@ -106,7 +106,21 @@
+ #define SPICC_SWAP_RO		BIT(14) /* RX FIFO Data Swap Read-Only */
+ #define SPICC_SWAP_W1		BIT(15) /* RX FIFO Data Swap Write-Only */
+ #define SPICC_DLYCTL_RO_MASK	GENMASK(20, 15) /* Delay Control Read-Only */
+-#define SPICC_DLYCTL_W1_MASK	GENMASK(21, 16) /* Delay Control Write-Only */
++#define SPICC_MO_DELAY_MASK	GENMASK(17, 16) /* Master Output Delay */
++#define SPICC_MO_NO_DELAY	0
++#define SPICC_MO_DELAY_1_CYCLE	1
++#define SPICC_MO_DELAY_2_CYCLE	2
++#define SPICC_MO_DELAY_3_CYCLE	3
++#define SPICC_MI_DELAY_MASK	GENMASK(19, 18) /* Master Input Delay */
++#define SPICC_MI_NO_DELAY	0
++#define SPICC_MI_DELAY_1_CYCLE	1
++#define SPICC_MI_DELAY_2_CYCLE	2
++#define SPICC_MI_DELAY_3_CYCLE	3
++#define SPICC_MI_CAP_DELAY_MASK	GENMASK(21, 20) /* Master Capture Delay */
++#define SPICC_CAP_AHEAD_2_CYCLE	0
++#define SPICC_CAP_AHEAD_1_CYCLE	1
++#define SPICC_CAP_NO_DELAY	2
++#define SPICC_CAP_DELAY_1_CYCLE	3
+ #define SPICC_FIFORST_RO_MASK	GENMASK(22, 21) /* FIFO Softreset Read-Only */
+ #define SPICC_FIFORST_W1_MASK	GENMASK(23, 22) /* FIFO Softreset Write-Only */
  
- struct meson_spicc_data {
- 	unsigned int			max_speed_hz;
-+	unsigned int			min_speed_hz;
- 	bool				has_oen;
- 	bool				has_enhance_clk_div;
- };
-@@ -685,7 +686,7 @@ static int meson_spicc_probe(struct platform_device *pdev)
- 				     SPI_BPW_MASK(16) |
- 				     SPI_BPW_MASK(8);
- 	master->flags = (SPI_MASTER_MUST_RX | SPI_MASTER_MUST_TX);
--	master->min_speed_hz = rate >> 9;
-+	master->min_speed_hz = spicc->data->min_speed_hz;
- 	master->setup = meson_spicc_setup;
- 	master->cleanup = meson_spicc_cleanup;
- 	master->prepare_message = meson_spicc_prepare_message;
-@@ -736,10 +737,12 @@ static int meson_spicc_remove(struct platform_device *pdev)
+@@ -328,6 +342,49 @@ static irqreturn_t meson_spicc_irq(int irq, void *data)
+ 	return IRQ_HANDLED;
+ }
  
- static const struct meson_spicc_data meson_spicc_gx_data = {
- 	.max_speed_hz		= 30000000,
-+	.min_speed_hz		= 325000,
- };
++static void meson_spicc_auto_io_delay(struct meson_spicc_device *spicc)
++{
++	u32 div, hz;
++	u32 mi_delay, cap_delay;
++	u32 conf;
++
++	if (spicc->data->has_enhance_clk_div) {
++		div = FIELD_GET(SPICC_ENH_DATARATE_MASK,
++				readl_relaxed(spicc->base + SPICC_ENH_CTL0));
++		div++;
++		div <<= 1;
++	} else {
++		div = FIELD_GET(SPICC_DATARATE_MASK,
++				readl_relaxed(spicc->base + SPICC_CONREG));
++		div += 2;
++		div = 1 << div;
++	}
++
++	mi_delay = SPICC_MI_NO_DELAY;
++	cap_delay = SPICC_CAP_AHEAD_2_CYCLE;
++	hz = clk_get_rate(spicc->clk);
++
++	if (hz >= 100000000)
++		cap_delay = SPICC_CAP_DELAY_1_CYCLE;
++	else if (hz >= 80000000)
++		cap_delay = SPICC_CAP_NO_DELAY;
++	else if (hz >= 40000000)
++		cap_delay = SPICC_CAP_AHEAD_1_CYCLE;
++	else if (div >= 16)
++		mi_delay = SPICC_MI_DELAY_3_CYCLE;
++	else if (div >= 8)
++		mi_delay = SPICC_MI_DELAY_2_CYCLE;
++	else if (div >= 6)
++		mi_delay = SPICC_MI_DELAY_1_CYCLE;
++
++	conf = readl_relaxed(spicc->base + SPICC_TESTREG);
++	conf &= ~(SPICC_MO_DELAY_MASK | SPICC_MI_DELAY_MASK
++		  | SPICC_MI_CAP_DELAY_MASK);
++	conf |= FIELD_PREP(SPICC_MI_DELAY_MASK, mi_delay);
++	conf |= FIELD_PREP(SPICC_MI_CAP_DELAY_MASK, cap_delay);
++	writel_relaxed(conf, spicc->base + SPICC_TESTREG);
++}
++
+ static void meson_spicc_setup_xfer(struct meson_spicc_device *spicc,
+ 				   struct spi_transfer *xfer)
+ {
+@@ -346,6 +403,8 @@ static void meson_spicc_setup_xfer(struct meson_spicc_device *spicc,
+ 		writel_relaxed(conf, spicc->base + SPICC_CONREG);
  
- static const struct meson_spicc_data meson_spicc_axg_data = {
- 	.max_speed_hz		= 80000000,
-+	.min_speed_hz		= 325000,
- 	.has_oen		= true,
- 	.has_enhance_clk_div	= true,
- };
+ 	clk_set_rate(spicc->clk, xfer->speed_hz);
++
++	meson_spicc_auto_io_delay(spicc);
+ }
+ 
+ static int meson_spicc_transfer_one(struct spi_master *master,
 -- 
 2.22.0
 
