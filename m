@@ -2,82 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C1C5182C19
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:13:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDEA4182C28
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:16:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IwlpXQ4PIfQedSMYRwB42aR9jJqJy27nIcYDbSPrcMM=; b=kfYt1OpzWpJ+fn
-	UcLJ/79KDN//Rn815NrhOn5qfiDTbi1z5K10DSRIg4rPab46MGGPMBQ/lU6tV9kKBSfOBtf4J7KTZ
-	atpz1in78nX2Cx+kTmz612xA1ohaVzZ8eED2H1lCMnk9Ocu8+9ijR1QMHjcdlAOwFPP7ivcYqQSLl
-	fe6gO0yAjZp5x9T0yFQLBwjjnfoyIBwdvnmKMLBH7OxUZUWOacADthMrJ3ikzL2TfxqzP+Q3mbyI6
-	GfZvXZwciIm16Bd9DnI7WGBsTHucPlNe1DFbjPge7kDhmsNQ6toIcBooM8NJ8807NGClCPuJa9foS
-	y3TPMG0TSqE3M0jn3cwg==;
+	List-Owner; bh=57/RJtUc8Crr1Uh2ef0AwNN4sgKaEj2xjSGnn0P20Gc=; b=dR6uMNTgP2koY/
+	+mTnnuU5T6JmPX1Mi8EovECAYjaJ/Oed4Y1FkT0+UiNU08CHwCSuyXwIzZ0rZ+vOwdaCOF8Hltzvs
+	S1EkTspSI/t7ZPJpzcPTFRWqGTcXlSjKQrC3NqBLXvYmgd1G+l7fl/gvmv/p7mDq0wjjApRGNj98y
+	AFq1wVrXGouydu+0zIDdCDPCqRD/7QfFS4A4Js5jBRhtRIRbqV0KNQd32APUry/w3KsaNOvhSBQw4
+	dkFFw6qHkDNJOWmozqbftB7ntDVgyAA77lRriEtWzMx8/xzCisyMYPLuPVqcSMiAeWQfEErH4mm5O
+	Zv6j3M1jM2B3625kExpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCJtp-0007m6-E8; Thu, 12 Mar 2020 09:13:05 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jCJx4-0000zq-ON; Thu, 12 Mar 2020 09:16:26 +0000
+Received: from mail-am6eur05on2106.outbound.protection.outlook.com
+ ([40.107.22.106] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCJtc-0007kK-BQ; Thu, 12 Mar 2020 09:12:53 +0000
-X-UUID: 30bf4419b2bc4bb69b6220da44afb82f-20200312
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=yL8NfI+SPUqnCNVH9kM0rVoYlWBqzixmb+bWVqM1U2k=; 
- b=Jy5rv8wdT6bKaOc6/Vsz0WLAjSZ+KcBDpqDxlH2VqrSLn3KvdzsGM+T7sGafC318BLk7eahx9g83yX5Gj97kplPidpgAzFAOjb2Tl2yg/lwhgRFTooOTaa8U/emx+5adBfuKXJQ8jg+CAUc7oN7nTIbnDRuS6rOvuIhpV+EMIuY=;
-X-UUID: 30bf4419b2bc4bb69b6220da44afb82f-20200312
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <andrew-sh.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 42117220; Thu, 12 Mar 2020 01:12:48 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Mar 2020 02:12:46 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Mar 2020 17:10:35 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Mar 2020 17:11:56 +0800
-Message-ID: <1584004365.10268.0.camel@mtksdaap41>
-Subject: Re: [v5, PATCH 4/5] cpufreq: mediatek: add opp notification for SVS
- support
-From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Date: Thu, 12 Mar 2020 17:12:45 +0800
-In-Reply-To: <20200311060616.62nh7sfwtjwvrjfr@vireshk-i7>
-References: <1574769046-28449-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1574769046-28449-5-git-send-email-andrew-sh.cheng@mediatek.com>
- <20191127083619.etocnhpyyut3hzwq@vireshk-i7>
- <1575874588.13494.4.camel@mtksdaap41>
- <20191210064319.f4ksrxozp3gv4xry@vireshk-i7>
- <1583827865.4840.1.camel@mtksdaap41>
- <20200311060616.62nh7sfwtjwvrjfr@vireshk-i7>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jCJwt-0000yi-JE
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 09:16:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LDjFOtHEewD7KTvtvzIMWBc/r97FmmkA4tPt/CFcXmHFxuWo8OQRyOIcxzz+k9OsZIWEwpl8WdJh0XEKkEp0yHCaAsXtcdE+BDB2SfrREctcYhI9C1iZymtsTFNv31umL3RtStc59hRRoOsfjNHykapAJ6CcaYTvSUAz5/mx2hXVrOH48P2Gy7Cq2fY5uBXHZZ/hlprSc8o0V9MKLMx6w0hj3QkcHfCi5J/1ZZiTCL5UhlebSCQ+ZP/fiZm9KiNIXOpTFwhbQTrIr/iTTTLnAZ9BBpo66opY50ibamoEkUtOLOR/BQM1/yXFEzf+4vNxTZCE+0Ia0ToqFbBCtscJNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3mjKG86nSUHyARBNohw8DWaNSfMOtckFMucX5tNLCmo=;
+ b=GcgGCONvodE+e/EhkcmMmtyM4zA4CYXghzIBSeIrLeM3XbX/OvuM9g/eynzKtQ5zT6bmYAU5C1b9JhCXxyMv5FOOzcEmfkbDvFTx2FE5G2S2vQO4g1RJ63GDr4/GrcvPAX2R8zA85qN61IQtc9ejjhG+lQE1pgsP9k+VDrMZUAkXggP08c9JJLqS71UGs2j/f12U9sJtcbtQyvl1AHcvRIvzCapDodQ9ICm49fCozBwbkNuECK60ZotJMl1OMIxyg+wo6ADzDwS8XfG6QXMmLBhYWlcUhjRTQlMqHXhy59NB5+RfzeficUdyyU5Kaw/iAd8DDqNW8rDGPcb8f0ZDCA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3mjKG86nSUHyARBNohw8DWaNSfMOtckFMucX5tNLCmo=;
+ b=VGXOSKAkjybK6A1ll3SLiYnSEePdijcJReaNNBLZqENG3S2qajmImithNoV3eXQrULRVHrs42LSwPoxIBfRxjlKVWbnlsGiNplso2LS+lYQcjLQvjisgtS7HKp2rxuljPbnH3Q7MOXkKWQuVu0IpvukKlqHU8lYmxDu3ICn5znc=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=oleksandr.suvorov@toradex.com; 
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
+ VI1PR05MB5053.eurprd05.prod.outlook.com (20.177.50.218) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2793.14; Thu, 12 Mar 2020 09:16:05 +0000
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2]) by VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2%7]) with mapi id 15.20.2793.018; Thu, 12 Mar 2020
+ 09:16:05 +0000
+X-Gm-Message-State: ANhLgQ1gTxLcvx7Kmi652GDuBOlO9hYOq8TUOxhOgVGE+g4A2Sw5MeJn
+ dmXD4Hqlbju9X/+rfVekNgBju6GmyJvd5BiEyf4=
+X-Google-Smtp-Source: ADFU+vvimqeMEQw/EnBW8BRG+fLZ1l/RvtnlUJTfoxQK+b947Kk/iNs61FwWFel/O17ih2qCqVl5wahcIKnRY0k0yGY=
+X-Received: by 2002:a0c:c389:: with SMTP id o9mr6504902qvi.232.1584004560440; 
+ Thu, 12 Mar 2020 02:16:00 -0700 (PDT)
+References: <20200312083830.18011-1-igor.opaniuk@gmail.com>
+ <20200312083830.18011-2-igor.opaniuk@gmail.com>
+In-Reply-To: <20200312083830.18011-2-igor.opaniuk@gmail.com>
+From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Date: Thu, 12 Mar 2020 11:15:49 +0200
+X-Gmail-Original-Message-ID: <CAGgjyvFuR_PhKOZUJFJV1Lrf5SKCF9bc+v8f7RgEY7kHEv7saw@mail.gmail.com>
+Message-ID: <CAGgjyvFuR_PhKOZUJFJV1Lrf5SKCF9bc+v8f7RgEY7kHEv7saw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] arm: dts: imx6: toradex: use
+ SPDX-License-Identifier
+To: Igor Opaniuk <igor.opaniuk@gmail.com>
+X-ClientProxiedBy: MN2PR08CA0001.namprd08.prod.outlook.com
+ (2603:10b6:208:239::6) To VI1PR05MB3279.eurprd05.prod.outlook.com
+ (2603:10a6:802:1c::24)
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from mail-qv1-f46.google.com (209.85.219.46) by
+ MN2PR08CA0001.namprd08.prod.outlook.com (2603:10b6:208:239::6) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2793.17 via Frontend Transport; Thu, 12 Mar 2020 09:16:05 +0000
+Received: by mail-qv1-f46.google.com with SMTP id fc12so2225676qvb.6 for
+ <linux-arm-kernel@lists.infradead.org>; Thu, 12 Mar 2020 02:16:05 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ1gTxLcvx7Kmi652GDuBOlO9hYOq8TUOxhOgVGE+g4A2Sw5MeJn
+ dmXD4Hqlbju9X/+rfVekNgBju6GmyJvd5BiEyf4=
+X-Google-Smtp-Source: ADFU+vvimqeMEQw/EnBW8BRG+fLZ1l/RvtnlUJTfoxQK+b947Kk/iNs61FwWFel/O17ih2qCqVl5wahcIKnRY0k0yGY=
+X-Received: by 2002:a0c:c389:: with SMTP id o9mr6504902qvi.232.1584004560440; 
+ Thu, 12 Mar 2020 02:16:00 -0700 (PDT)
+X-Gmail-Original-Message-ID: <CAGgjyvFuR_PhKOZUJFJV1Lrf5SKCF9bc+v8f7RgEY7kHEv7saw@mail.gmail.com>
+X-Originating-IP: [209.85.219.46]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 468d45b6-52b4-4bc2-b495-08d7c665fdfa
+X-MS-TrafficTypeDiagnostic: VI1PR05MB5053:
+X-Microsoft-Antispam-PRVS: <VI1PR05MB505351DCCA0CC376E2DB35E6F9FD0@VI1PR05MB5053.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 0340850FCD
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(4636009)(136003)(346002)(376002)(366004)(39850400004)(396003)(199004)(186003)(316002)(86362001)(42186006)(26005)(8676002)(44832011)(9686003)(8936002)(81156014)(53546011)(81166006)(66556008)(66946007)(54906003)(5660300002)(66476007)(2906002)(55236004)(52116002)(478600001)(6666004)(30864003)(55446002)(107886003)(6862004)(4326008)(2004002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5053;
+ H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 4GE5anW1mSG8wbkDei/JRuUuY3TXWbuljr/T2KhTnjGkUlFgVFywaUY4y1OiqWjkd1eufA0esBMs67ydLnH9SUPGfCnrBtBI37STtnFNBgfCUBVmWMKOpcoANjgFT1nQcPkjYsJEUgtbBCC6ZxWYPNgfwGyyXo3Jz0wJ3TTUDx5PNx4AhZ3azdPQp2SUbOATi3wA2wkef83sQWoiqUxfFKtIUleRE977egpc0F8ZmIWHCVLvSf2qOiuCUhP4DJAw/Qmexsvjzm2sENbx/3Q/a4EQ4lpDgoD5zizXEuFkAiGTpgd1lfBbObjM3+YgJAjCDI7kcu+SxtwKVsqdNH82UUcwKbDT+BLCZbw7pod6DDPuxxZX+9npSraZsxxuNAoZxEhnj0AymnR52TJzZyAbjJmDql7JIJcini6IaATDuc2t76LVnVLAJJBFlVbV2nNd4VSHhjN9swrehVoeFA1e0IsYhCYzmNqIo+pQmdkc83Y=
+X-MS-Exchange-AntiSpam-MessageData: NwX7jAi2lfLTC3VJtehk3751uHAwxId3mrubW2z+i/+pTSV8UmJk6y+OZ2A12kQGyV+cj8wNZTVKbaCdBMr6GMiPtlC+zmNtDQ2w2lpreCk8k0MC8dy2aF2BQcbBBbBIXI3mzzNfucKql+Za4Kmg+A==
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 468d45b6-52b4-4bc2-b495-08d7c665fdfa
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 09:16:05.3555 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: aDBeTACa8eJv9rjxle277gbBPlm6QJi6439XLZhYD/eqtRVryrJu44vCQ6XQtio62iP9AsC1UTDaAKDJrBjwDBC5J2ugygUUDR5CZEPFXDA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5053
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_021252_401952_B83A15C9 
-X-CRM114-Status: GOOD (  21.69  )
+X-CRM114-CacheID: sfid-20200312_021615_842899_97D593D5 
+X-CRM114-Status: GOOD (  21.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.22.106 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,83 +137,365 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Chanwoo
- Choi <cw00.choi@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Fan Chen =?UTF-8?Q?=28=E9=99=B3=E5=87=A1=29?= <fan.chen@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-03-11 at 11:36 +0530, Viresh Kumar wrote:
-> On 10-03-20, 16:11, andrew-sh.cheng wrote:
-> > On Tue, 2019-12-10 at 14:43 +0800, Viresh Kumar wrote:
-> > > On 09-12-19, 14:56, andrew-sh.cheng wrote:
-> > > > On Wed, 2019-11-27 at 14:06 +0530, Viresh Kumar wrote:
-> > > > > On 26-11-19, 19:50, Andrew-sh.Cheng wrote:
-> > > > > > +		if (!IS_ERR(opp_item))
-> > > > > > +			dev_pm_opp_put(opp_item);
-> > > > > > +		else
-> > > > > > +			freq = 0;
-> > > > > > +
-> > > > > 
-> > > > > What is the purpose of the above code ?
-> > > > When dev_pm_opp_find_freq_ceil() doesn't find matching opp item, freq
-> > > > value won't be set.
-> > > > Set it as 0 for below checking
-> > > > > 
-> > > > > > +		/* case of current opp is disabled */
-> > > > > > +		if (freq == 0 || freq != info->opp_freq) {
-> > > > > > +			// find an enable opp item
-> > > > > > +			freq = 1;
-> > > > > > +			opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev,
-> > > > > > +							     &freq);
-> > > > > > +			if (!IS_ERR(opp_item)) {
-> > > > > > +				dev_pm_opp_put(opp_item);
-> > > > > > +				policy = cpufreq_cpu_get(info->opp_cpu);
-> > > > > > +				if (policy) {
-> > > > > > +					cpufreq_driver_target(policy,
-> > > > > > +						freq / 1000,
-> > > > > > +						CPUFREQ_RELATION_L);
-> > > > > 
-> > > > > Why don't you simply call this instead of all the code in the else
-> > > > > block ?
-> > > > These else code is used to check "current opp item is disabled or not".
-> > > > If not, do nothing.
-> > > > If current opp item is disabled, need to find an not-disabled opp item,
-> > > > and set frequency to it.
-> > > 
-> > > Right. So this notifier helper of yours receive the opp which is getting
-> > > disabled, why don't you compare its frequency directly to see if the current OPP
-> > > is getting disabled ?
-> > Sorry to overlook your question.
-> > This is because when the opp is disabled,
-> > we cannot use dev_pm_opp_get_freq() to get frequency of that opp.
-> > There is a check:
-> > 	if (IS_ERR_OR_NULL(opp) || !opp->available) {
-> 
-> I think we can remove the available check here, as we are jut trying
-> to find frequency of an OPP we already have. Send a patch for that
-> please.
-Got it.
-I will do it at next patch set.
-> 
-> > 		pr_err("%s: Invalid parameters\n", __func__);
-> > 		return 0;
-> > 
-> > > 
-> > 
-> 
+On Thu, Mar 12, 2020 at 10:39 AM Igor Opaniuk <igor.opaniuk@gmail.com> wrote:
+>
+> From: Igor Opaniuk <igor.opaniuk@toradex.com>
+>
+> 1. Replace boiler plate licenses texts with the SPDX license
+> identifiers in Toradex iMX6-based SoM device trees.
+> 2. As X11 is identical to the MIT License, but with an extra sentence
+> that prohibits using the copyright holders' names for advertising or
+> promotional purposes without written permission, use MIT license instead
+> of X11 ('s/X11/MIT/g').
+> 3. Replace "Toradex AG" with "Toradex" in the Copyright notice.
+> 4. Use GPL2.0+ instead of GPL2.0, as it's used now by default for all
+> new DTS files from Toradex.
+>
+> Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
+
+Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+
+> ---
+>
+>  arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts  | 40 +------------------
+>  arch/arm/boot/dts/imx6q-apalis-eval.dts       | 40 +------------------
+>  arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts | 40 +------------------
+>  arch/arm/boot/dts/imx6q-apalis-ixora.dts      | 40 +------------------
+>  arch/arm/boot/dts/imx6qdl-apalis.dtsi         | 40 +------------------
+>  arch/arm/boot/dts/imx6qdl-colibri.dtsi        | 40 +------------------
+>  6 files changed, 12 insertions(+), 228 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> index 84fcc203a2e4..65359aece950 100644
+> --- a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> +++ b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2016 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-eval.dts b/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> index 4665e15b196d..fab83abb6466 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2017 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts b/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> index a3fa04a97d81..1614b1ae501d 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2017 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-ixora.dts b/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> index 5ba49d0f4880..fa9f98dd15ac 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2017 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6qdl-apalis.dtsi b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+> index 1b5bc6b5e806..8382f01affbe 100644
+> --- a/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2017 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  #include <dt-bindings/gpio/gpio.h>
+> diff --git a/arch/arm/boot/dts/imx6qdl-colibri.dtsi b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> index d03dff23863d..6e3c6b4925a7 100644
+> --- a/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> @@ -1,44 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+> - * Copyright 2014-2016 Toradex AG
+> + * Copyright 2014-2020 Toradex
+>   * Copyright 2012 Freescale Semiconductor, Inc.
+>   * Copyright 2011 Linaro Ltd.
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  #include <dt-bindings/gpio/gpio.h>
+> --
+> 2.17.1
+>
+
+
+-- 
+Best regards
+Oleksandr Suvorov
+
+Toradex AG
+Ebenaustrasse 10 | 6048 Horw | Switzerland | T: +41 41 500 48 00
 
 _______________________________________________
 linux-arm-kernel mailing list
