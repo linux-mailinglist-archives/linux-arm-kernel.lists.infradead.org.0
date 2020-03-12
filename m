@@ -2,68 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBAE1182BA2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 09:56:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FB32182BFB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:09:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8bdmLpcHJDeeQq3Kt1sdnKToGI0qAuSD/FCXz3pbE+8=; b=INW3fj2I0aPgGO
-	ZSBh8kxwZzYXGBRHjTPBFpco32zFq5awNfJQ6Rb9W0SpzJyF4FIcvs8ly1mNs1eMlCMG4StVKXKI8
-	2Q6j9r9uuE4P8PTiX0EMjCsde98+8RstvvAtdYgGuOfXhgBi2xj7saJNmJaWZr956oDvGi0bCW3go
-	Q6MlQwy3Od6VAYjqJ7MRuqY96yWcMHhv0h0FwCJuTmT9FWU7HhdmxJonrwwbLKwsCdTsc93I9Bmxt
-	b9c4FU4/iMXP93tdD+OhLVNxHO1bobnCw+jG+WsPsUUvkscrI8eK26MbR8fiCerywzuCjctazzFY2
-	0/z37Wot9YhHH6dUF0fg==;
+	List-Owner; bh=FYT7Xyot+gmcImOkQ2Wy6fk4mp9/L5fUQQ6nfxcOb4M=; b=gkGbOLrm/EfpiS
+	t5e9XbA5bSEQ7kxVTxd4Oihb8HHsw/5VGisPxMcbvaYvopxMENf8COsOZf7jvnxxzotwgw5TOdBQk
+	AR+gfsILf7BmL2REQJXjplwVrL6/b9BM1VycRo+MiJNqJxx9saYYvRvNgHfnGQIDjkoITneJPJZDC
+	XhubNSAojM8b+2uFy71hTrvGy3rPLR3L9Q7QVQ7ZoHeO0gs7h2Bt1RtXanRlYUONHkW7/VVb9yAOM
+	gyoSjxW8nU5N3eoQYvVn3jR+BPCYoGRxHKicJ8N1SjREL0w7+iG6quSdX87eD4+/vtErhR92Yol5z
+	zK3f5rHNmxrEYYJsBkrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCJdZ-0005wI-OC; Thu, 12 Mar 2020 08:56:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCJpv-0003YA-Vl; Thu, 12 Mar 2020 09:09:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCJdR-0005vv-LT
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 08:56:11 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 804AB20578;
- Thu, 12 Mar 2020 08:56:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584003369;
- bh=8QZh21af5Fq8pk6AVSwtgBWIbWoSoo/av/UThU89jgk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sTEfR3h6Df7AETe+7aig03ZmzrrMs3fYM5/vV9O9ydYgT6/GmR43kj99xShU9Dy4y
- hYaKcWsWo9Ni06FAEMg49ds5PlA3w05JlPYen+utH/iySKROYqOBHrnEwv4MvsM7ZU
- yQYjUfOI7rE8qyRSyJxf7hxeaWEjyu1T2x8RL0x8=
-Date: Thu, 12 Mar 2020 09:56:06 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough; 
-Message-ID: <20200312085606.GA154268@kroah.com>
-References: <cover.1583896344.git.joe@perches.com>
- <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
- <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
- <891a42ad8d8fd7beca911845108e1ded022ef3f7.camel@perches.com>
+ id 1jCJpS-0003IJ-5i; Thu, 12 Mar 2020 09:08:35 +0000
+X-UUID: d90b8380b1e94cfa8b001dbac2340833-20200312
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=3TDN1j10xZCmKTt4/HmcFKsBFN2EXb3TUfii04A/U8I=; 
+ b=bCiMW4GDIepzOD3X/35p7AkrDB6cZjG2XF9ZHKl6Ue/a56QUqX0qVhUdlPk+CB2MQB355PMCkXr1eamGony6qPTV6QJZUcRuAKs21wsybRmZZJl+EPVK8lrE/Vs6AF/Xh5Q27iUiyVgJ89UXr9AZA4R7yatEKyxQy7bBTsLCoVg=;
+X-UUID: d90b8380b1e94cfa8b001dbac2340833-20200312
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ran.bi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 218938399; Thu, 12 Mar 2020 01:08:20 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Mar 2020 01:58:17 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs01n2.mediatek.inc
+ (172.21.101.79) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Thu, 12 Mar 2020 16:56:37 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Mar 2020 16:58:06 +0800
+Message-ID: <1584003477.6269.8.camel@mhfsdcap03>
+Subject: Re: [PATCH v10 4/5] rtc: mt6397: Add support for the MediaTek
+ MT6358 RTC
+From: Ran Bi <ran.bi@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>
+Date: Thu, 12 Mar 2020 16:57:57 +0800
+In-Reply-To: <20200312074407.GA3142@dell>
+References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <20200312074407.GA3142@dell>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <891a42ad8d8fd7beca911845108e1ded022ef3f7.camel@perches.com>
+X-TM-SNTS-SMTP: 41489C93ED8253A92B734623EA5AC68DE0AA3C817D3EF1171405B84CD846F7CC2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_015609_724220_ABEDD910 
-X-CRM114-Status: GOOD (  11.20  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200312_020834_233590_154281AD 
+X-CRM114-Status: GOOD (  16.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,36 +88,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <masahiroy@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Josef Friedl <josef.friedl@speed.at>, linux-pm@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, Sebastian
+ Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 07:31:07AM -0700, Joe Perches wrote:
-> On Wed, 2020-03-11 at 14:15 +0900, Masahiro Yamada wrote:
-> > On Wed, Mar 11, 2020 at 2:07 PM Joe Perches <joe@perches.com> wrote:
-> > > Convert the various uses of fallthrough comments to fallthrough;
-> > > 
-> > > Done via script
-> > > Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
-> > > 
-> > > Signed-off-by: Joe Perches <joe@perches.com>
-> > 
-> > Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> > 
-> > 
-> > But, I think the patch subject should be prefixed:
-> > "serial: 8250_uniphier:"
+On Thu, 2020-03-12 at 07:44 +0000, Lee Jones wrote:
+> On Wed, 11 Mar 2020, Hsin-Hsiung Wang wrote:
 > 
-> Yeah thanks, that's difficult to script though.
+> > From: Ran Bi <ran.bi@mediatek.com>
+> > 
+> > This add support for the MediaTek MT6358 RTC. Driver using
+> > compatible data to store different RTC_WRTGR address offset.
+> > This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
+> > driver which only needed by armv7 CPU without ATF.
+> > 
+> > Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> > ---
+> >  drivers/power/reset/mt6323-poweroff.c |  2 +-
+> >  drivers/rtc/rtc-mt6397.c              | 32 ++++++++++++++++++++++++--------
+> >  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
+> >  3 files changed, 33 insertions(+), 10 deletions(-)
+> > 
+
+<...>
+
+> >  
+> >  #define RTC_IRQ_STA            0x0002
+> >  #define RTC_IRQ_STA_AL         BIT(0)
+> > @@ -65,6 +67,10 @@
+> >  #define MTK_RTC_POLL_DELAY_US  10
+> >  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> >  
+> > +struct mtk_rtc_data {
+> > +	u32			wrtgr;
+> > +};
 > 
+> Do you expect to add more properties to this struct?
+> 
+> If not, it seems a bit overkill.
 > 
 
-Kernel development is hard :)
+Yes, we would add more properties here in future patches.
+
+> >  struct mt6397_rtc {
+> >  	struct device           *dev;
+> >  	struct rtc_device       *rtc_dev;
+> > @@ -74,6 +80,7 @@ struct mt6397_rtc {
+> >  	struct regmap           *regmap;
+> >  	int                     irq;
+> >  	u32                     addr_base;
+> > +	const struct mtk_rtc_data *data;
+> 
+> 'data' is a terrible variable name.
+> 
+> Why do you need to store this?
+> 
+> It's one variable which is used once AFAICT.
+> 
+
+I would rename 'data' to 'config'.
+
+This struct will be extended in future patches to achieve more PMIC chip
+compatibility.
+
+> >  };
+> >  
+> >  #endif /* _LINUX_MFD_MT6397_RTC_H_ */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
