@@ -2,94 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB89318274D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 04:10:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 949EF18275A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 04:15:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OzLk0vFC+sp1zSq5mZlaZTCalrTQND7NXuHGAV7bf6g=; b=A074fYg3IrQS7X
-	xUtakQE1a6SQT/iM5tz6Z83+H+y+7nVEqcvLxEY2Duduz0QcHfktU0/EP84hD3r+eMyBaXqGvPFcL
-	7pF7WwIGWOfHv/i8ufPpqTuDe7yYjx5VpPvYLAB8ME9HbZtKDw8Jj7QTx018XuR4CJ0s7eIbEMOCA
-	7mv7UYan2mR9y3Tf2x0VteSCd5T7up9Z3eoQ0OdHbJLBRRDZqy33zp761poOla7oMKTzcmFaJutMV
-	hUL0fZDdQlRmvAI+P1A2vxQk+C/uvlcuddc74LkTdQgx+MU4muiJP9sVbtHF2FgHcqqQ6xBNc981P
-	c5FSIbRRxLSlcpuhyQwQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kgoNvkdW45DDjQlNGJ1hyIvOqgSmpmPNzkVAAnsncic=; b=ZmL
+	/ww9gR63seJctLUIDEuhFcg9LUvIQke3UlhaFPcrXvif5fz6J677UBA2zdFv9VTT/uFWqTG+Il5cd
+	YGsrpRmAwdqcCnqi92Q41qaQwS1WGUJLQCWI4l2/p60pCMLiNC/1TlLIVCBbtrGUyZ+ZFbrLE5mVX
+	OzBwBOt1CkR1Znqnqorr9CE1BQ2KJkYZjHabeR2CpJ5kAydcN6X/r8kIPWLKHX5N6+Znhh0wRCoaA
+	12P8T14daOISstKtcTKSZjjxSGk+h5Uex7fqgw6mxS+Us0SeAp7ff4Q3OneGe3RGS9uJFeXXrNZfC
+	FwLAKIA7XEGMOj0ClPgXHnXrcB2pH5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCEEg-0000Ui-NY; Thu, 12 Mar 2020 03:10:14 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jCEJo-0002eQ-9g; Thu, 12 Mar 2020 03:15:32 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCEEW-0008GK-2u
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 03:10:05 +0000
-Received: by mail-io1-xd42.google.com with SMTP id d8so4153915ion.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 20:10:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7UlCPqaifwtaHRBNM9OlkA92uhGP3P8YtjrPHhM2qXA=;
- b=MymNgzFAjC7botrqgoNNcIOUuAsnEj/YaRhp929DK9qF9NTSCoVLgqQuyUlCuuWbmc
- xTX8qnat5Lhd0dx2+HvITd9I3p8W2oFWYYiLmPSxLhHu9VDmI3IenMvfEFdho/S8vd2I
- yuLM73a7S/wx1yoSfX+QL5qO2LsLHWifPuA0hRfAhHp4rftW0kW6WLVBjS4J0fyOpN3O
- 7r/1++AmSjZryTn2MxF74XgpKzfez6QsJWgBfcCvVchXvT9agRNixKTJPc0eob3a5Q1X
- xoLsGG5eL0WYwn6be71SqmjgQeJZ5NZqTQtoyqlEcSz37jy3pIQVaP16SIN7GWzqFG9X
- 3jyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=7UlCPqaifwtaHRBNM9OlkA92uhGP3P8YtjrPHhM2qXA=;
- b=frXKm9AYOLZe2CKVW1mutEMWHe6nDNtVLDLgsOdFULJCc/tfelt0Cij5gkz3FLzGbY
- vVt/81aKCpxRLGe0uyRDv4EklLqzzInItptwexDQg+BlpRP11TJysTvDlptJlKWKSxKr
- +961JKTXGCMJr8Hz1hH/JsOGsdA42oyXAE22URsusRuRsBpWxINKiQdyaob2SKWO5pFx
- uS+9pR8pOr9qPDKm15VQpPyBGlROmN+7FODkGx+ilHJNYWUbWhAqN2yD1y8acdDVR1/w
- Zb4X1GuRCzDX+oxKN4KZCH8U1tw2navNyWe4CwSrj1n3vi98/KD82yffmn1Dgafq8jvQ
- MVaA==
-X-Gm-Message-State: ANhLgQ1GFtH8CRmDvduw6ZUgO5ioRxMKbJhlUYGO82HHzvWq2kGpQrH0
- 98YmCyyOpmAySSUVJQqtoSY5Kg==
-X-Google-Smtp-Source: ADFU+vs/imBUNrCpmlxjMLXtYVDj0Q3NbjhYgAeR0ptUEQhLsK2b4DLsRH6n4QvzTYidB9g45CZyjQ==
-X-Received: by 2002:a6b:6606:: with SMTP id a6mr5411023ioc.8.1583982602672;
- Wed, 11 Mar 2020 20:10:02 -0700 (PDT)
-Received: from [172.22.22.26] (c-73-185-129-58.hsd1.mn.comcast.net.
- [73.185.129.58])
- by smtp.googlemail.com with ESMTPSA id y18sm12685362ilg.82.2020.03.11.20.10.00
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 20:10:02 -0700 (PDT)
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver (UPDATED)
-To: Dave Taht <dave.taht@gmail.com>
-References: <20200306042831.17827-1-elder@linaro.org>
- <CAA93jw5enz6-h1m=7tGFToK+E+8z3aD80pBef4AYkFrS2u3hHQ@mail.gmail.com>
-From: Alex Elder <elder@linaro.org>
-Message-ID: <e4f436b4-3dd7-970a-9b08-7601fc5428d2@linaro.org>
-Date: Wed, 11 Mar 2020 22:09:56 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <CAA93jw5enz6-h1m=7tGFToK+E+8z3aD80pBef4AYkFrS2u3hHQ@mail.gmail.com>
-Content-Language: en-US
+ id 1jCEJg-0002e5-N0
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 03:15:26 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 03BE8200C9D;
+ Thu, 12 Mar 2020 04:15:16 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E81B6200C96;
+ Thu, 12 Mar 2020 04:15:15 +0100 (CET)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5E1DE203C1;
+ Thu, 12 Mar 2020 04:15:15 +0100 (CET)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>,
+ Dan Carpenter <dan.carpenter@oracle.com>
+Subject: [PATCH] PM / devfreq: Fix handling dev_pm_qos_remove_request result
+Date: Thu, 12 Mar 2020 05:15:11 +0200
+Message-Id: <ea4c8b53f2a045116a5f70e24374ce62c85f0b81.1583982882.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_201004_162774_28B80D26 
-X-CRM114-Status: GOOD (  20.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_201524_890671_7E7D46A2 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,58 +66,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
- Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
- Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
- devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
- Linux Kernel Network Developers <netdev@vger.kernel.org>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Siddharth Gupta <sidgup@codeaurora.org>, Andy Gross <agross@kernel.org>,
- Evan Green <evgreen@google.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-arm-msm@vger.kernel.org,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
- David Miller <davem@davemloft.net>,
- Chaitanya Pratapa <cpratapa@codeaurora.org>
+Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <vireshk@kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
+ Adam Ford <aford173@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/9/20 11:54 AM, Dave Taht wrote:
-> I am happy to see this driver upstream.
-> 
->> Arnd's concern was that the rmnet_data0 network device does not
->> have the benefit of information about the state of the underlying
->> IPA hardware in order to be effective in controlling TX flow.
->> The feared result is over-buffering of TX packets (bufferbloat).
->> I began working on some simple experiments to see whether (or how
->> much) his concern was warranted.  But it turned out that completing
->> these experiments was much more work than had been hoped.
-> 
-> Members of the bufferbloat project *care*, and have tools and testbeds for
-> exploring these issues. It would be good to establish a relationship with
-> the vendor, obtain hardware, and other (technical and financial) support, if
-> possible.
-> 
-> Is there any specific hardware now available (generally or in beta) that
-> can be obtained by us to take a harder look? A contact at linaro or QCA
-> willing discuss options?
+The dev_pm_qos_remove_request function can return 1 if
+"aggregated constraint value has changed" so only negative values should
+be reported as errors.
 
-There exists some hardware that could be used, but at the moment I have
-not ported this code to operate on it.  It is a current effort however,
-and I will be glad to keep you in the loop on progress.  There are a
-couple of target environments we'd like to support but until last week
-the primary goal was inclusion in the upstream tree.
+Fixes: 27dbc542f651 ("PM / devfreq: Use PM QoS for sysfs min/max_freq")
 
-I will follow up with you after the dust settles a little bit with
-this patch series, maybe in a week or so.  In the mean time I'll
-also find out whether there are any other resources (people and/or
-hardware) available.
+Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+---
+ drivers/devfreq/devfreq.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-					-Alex
+diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+index 5c481ad1cfc7..6fecd11dafdd 100644
+--- a/drivers/devfreq/devfreq.c
++++ b/drivers/devfreq/devfreq.c
+@@ -703,17 +703,17 @@ static void devfreq_dev_release(struct device *dev)
+ 		dev_warn(dev->parent,
+ 			"Failed to remove min_freq notifier: %d\n", err);
+ 
+ 	if (dev_pm_qos_request_active(&devfreq->user_max_freq_req)) {
+ 		err = dev_pm_qos_remove_request(&devfreq->user_max_freq_req);
+-		if (err)
++		if (err < 0)
+ 			dev_warn(dev->parent,
+ 				"Failed to remove max_freq request: %d\n", err);
+ 	}
+ 	if (dev_pm_qos_request_active(&devfreq->user_min_freq_req)) {
+ 		err = dev_pm_qos_remove_request(&devfreq->user_min_freq_req);
+-		if (err)
++		if (err < 0)
+ 			dev_warn(dev->parent,
+ 				"Failed to remove min_freq request: %d\n", err);
+ 	}
+ 
+ 	if (devfreq->profile->exit)
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
