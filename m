@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C15C183752
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:23:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4B06183754
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:23:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6SWICPSo6HpXuT76wMh6WOMCwQ/K1AikyH8ECJCtrU8=; b=j0u
-	VhQ/hCh1mCWaDoQUDWJfHoP/JC5nDoPNNE5zALNNNM9LnwyzNdQcVLYFveD+RsJjAwb0OYV1fOJpA
-	hfu5+nMQK29VWYvJ6D1Nw+HhUkIhOtAoYDN6lsg+KCe6SfEfxBpwe0BW4be8IAxlqkr7uImKj2pYv
-	pFuImG8/4hNwYAFu6Ut0I/3byf4waiCoZn/ZXtHjkqqrQ1Hz/j9uDjVxkteHeSeJVJ40MFX0bX/9P
-	bgcU7BOZovrhfUu2i9QmPDtN8Ln7PLcB+9x4B40QgaUj5wa6wyqmdh18oYiqak+zlQbat7AoUWIMB
-	ADkzDOaDk4Uwa/Wq51OC4KUrVacRADQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9u7CnwugU8Jc0WT8vc4cC/rfQx+z9ZHhSQoOiZesb8g=; b=lCc35I8Zh8NHJ8O6nG/1Ol3b4c
+	1vCLTdUEsC7grikpQe+SVDfE+o0r53cgbhdl2/y5DQMNRqv8JUu2FbFVka2OIzEkowpPj/5UWHvmH
+	ELwcX7P5SNYp6KRCXWV/6j5L5UmuKeNdxvq5EFy+e6cC0HTjkM5q5zrfj4imuMQ4ldWfprmUj/emo
+	irUHKe2Fi8trEaP+IJsGbbHEEa6OgGz2LeuPPxQvkt4NgHnxdakOlPvObPf03RD/g3xoWe5HaK/y7
+	ulsonTqF3miV0p8CE01s/Bke+vCDlcs2WfxqDSZwiVaECPUTaBIPB2CTC37qwIu+VqRPvH3uWVD/e
+	MkPvdapA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRY0-0003kn-C5; Thu, 12 Mar 2020 17:23:04 +0000
+	id 1jCRYE-0003yH-5u; Thu, 12 Mar 2020 17:23:18 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRXl-0003je-2V; Thu, 12 Mar 2020 17:22:50 +0000
-Received: by mail-wm1-x342.google.com with SMTP id m3so7264364wmi.0;
- Thu, 12 Mar 2020 10:22:48 -0700 (PDT)
+ id 1jCRXl-0003ji-Nh; Thu, 12 Mar 2020 17:22:51 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n8so6978180wmc.4;
+ Thu, 12 Mar 2020 10:22:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Wy+lE/1lzqrBWgr4qGqulWltQuGidDCwcinzvkx26bY=;
- b=J+5Z+2xKMn1aIC0Uo2VC9f/lb55f3cqFfWZj5j1p0lphY5XIDra1fpkc65qmhCFKGH
- PWYVvNENVeQHN+rQtmr87GkugtvbXMwwNydg0Qsdf6YQnMJlQRwKgC3ksC/LDYm6iVbV
- tqs8r3NS9FDGtv1emvZBbMXBcYjJWE5q/fdFEzYgRjxbIWDvxT64WYyIVnpf+oFv9Hil
- ibu/wC1ULKbyQWjmFxELT7Z3UuIYKv+VAdw5v5dG0YIdU9haHa2rx7MRDMlZg3oJ6Qsu
- nW1NcF7FhtB7L+7XNshghcODee93iH5lj+FVmjHqbCEmSOr3M37pYB1rn+aFKC4zSis7
- ddkg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=AsK4lZiLvTPVWly7O3MtjFY6qfzheagg9cYmbmhqOKY=;
+ b=nPGM5SxvKf5b6JPPp18z82FgPVQEaflZ27VlAmUFrua6iJ5ra4vp4WuhpL6duNYOsG
+ OZt0sJAFBRs34tnwiNPSNAumz2NlmxBfT0ixjWCV/2z39jvzIFlS9gPZ+8q6/PiH/Ul6
+ 3nAyRLPlh8uAz0A1j+GhNlZ7/qAmCoqjsThw+E/n6Uojpo/9jdB4a9L6GObTE6MkBUEW
+ 3DAdfgaFpab/HPQgrWaggLSWUokxN9gnySRkoec8/QxPfJi2zj77pvftmMQu81ycha/i
+ 7T0BVdxox5wLeAhNlP3QboI2CpxdX/VcNcLoSqV9tIR/AHIC9AR2K843AXIXFcihgtMg
+ aSYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Wy+lE/1lzqrBWgr4qGqulWltQuGidDCwcinzvkx26bY=;
- b=f4CeswWs56fkP5Ffru4KmxGO5VLRLeN5oCOEJiU9378nFkAY/78tIrBqISZ/p0YcKP
- 2nSJNpE6UKNkzJoGV805+uF4xK8EQ1zUjZaMwya7J8WQP8p0a1nC4F+/dQCWwnJxVSdc
- qIHgGwe9PBk74cQPH0eUjFa/Da3FN4AjzNY+g4xXy2ueUx3UNC+xmQLefd7bmarTXoNT
- 3wK/2jPKe8dvKVUuqrcqDqI2KrynKSFP3oVcYud9QEk7PGfxd4IhvCgzFuE1cD6OTwnF
- Eyhucqrv8I51cCkwyAvosdMDF3njwoD4B+AmHT6oXfWhX5TV9+XPFFOKKY27JTxGpe2Q
- fiiw==
-X-Gm-Message-State: ANhLgQ09ZFOU+UxLsmGzr+5MXgehhe354ueZKNjbvC+adsfSK/ZipPeh
- PvAg0rr2DbPTxqOvmt4uUY66efaR
-X-Google-Smtp-Source: ADFU+vvfIDpBkUD9w0w0y9O0EdtJTyviZVdZcBsPGD0KGGOBs+1FdKuhcvmu1jQbjlNqHpBDIAFSCA==
-X-Received: by 2002:a7b:cc6a:: with SMTP id n10mr5831317wmj.170.1584033767636; 
- Thu, 12 Mar 2020 10:22:47 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=AsK4lZiLvTPVWly7O3MtjFY6qfzheagg9cYmbmhqOKY=;
+ b=LwqAaMAzd7xMRAfibXtleY04JVAUNMi6IbmFURT4DjAKLrsmHqonQZXxvrnhxMpyr/
+ 6aetz487FEKb6P9rY1rc7XSdmookPhVOlnyC42IdCWeJqop9jer0ptKj9keKI16sLeqa
+ SV41KAm1R64+r67iKYFbxbfO7u7LwSBm98jgfe6VUNqxTpbRV6qAeL7l55smpQ805+fb
+ TOHqauujGOlZq0qXAeJFVmDcoKG52tOZXt9hfMWTQDicVKFnOqEz5rP4vhyJCoB1HB6+
+ MFOMymJRvHQjA3e4NtG+OfZ5Be7JgQoj3w5Bydh8CnPpWrwkQzMRaoUWAMlI0aFvJZke
+ 2fYg==
+X-Gm-Message-State: ANhLgQ18RBNFuCiDLFeBIScLc4UEYyNkkfiCdcR75IoI6t82sNZCl1wG
+ NREwcLR9/q8d/F4E/l60TJQ=
+X-Google-Smtp-Source: ADFU+vsUmojL2gcA4UagPD4gg2rCKhbMtgcVCkmNLqEkRNDJPORZpiblkgYC9vuknxd30gcWUo508w==
+X-Received: by 2002:a1c:de82:: with SMTP id v124mr5711167wmg.70.1584033768625; 
+ Thu, 12 Mar 2020 10:22:48 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id d7sm2064492wrc.25.2020.03.12.10.22.46
+ by smtp.gmail.com with ESMTPSA id d7sm2064492wrc.25.2020.03.12.10.22.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Mar 2020 10:22:47 -0700 (PDT)
+ Thu, 12 Mar 2020 10:22:48 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/2] arm64: dts: rockchip: remove properties from spdif node
- RK3399 Excavator
-Date: Thu, 12 Mar 2020 18:22:39 +0100
-Message-Id: <20200312172240.21362-1-jbx6244@gmail.com>
+Subject: [PATCH 2/2] ARM: dts: rockchip: swap clocks and clock-names values
+ for spdif nodes
+Date: Thu, 12 Mar 2020 18:22:40 +0100
+Message-Id: <20200312172240.21362-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200312172240.21362-1-jbx6244@gmail.com>
+References: <20200312172240.21362-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_102249_117788_E0BA04E3 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200312_102249_767895_59388742 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -103,36 +107,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An expermental test with the command below gives this error:
+Current dts files with 'spdif' nodes are manually verified.
+In order to automate this process rockchip-spdif.txt
+has to be converted to yaml. In the new setup dtbs_check with
+rockchip-spdif.yaml expect clocks and clock-names values
+in the same order. Fix this for some older Rockchip models.
 
-arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dt.yaml:
-spdif@ff870000:
-'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns', 'power-domains'
-do not match any of the regexes: 'pinctrl-[0-9]+'
-
-'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns'
-are not valid properties for 'spdif' nodes, so remove them.
-
-make ARCH=arm64 dtbs_check
+make ARCH=arm dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts | 2 --
- 1 file changed, 2 deletions(-)
+ arch/arm/boot/dts/rk3188.dtsi | 4 ++--
+ arch/arm/boot/dts/rk3288.dtsi | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts b/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
-index b4d8f60b7..73e269a8a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
-@@ -230,7 +230,5 @@
- };
- 
- &spdif {
--	i2c-scl-rising-time-ns = <450>;
--	i2c-scl-falling-time-ns = <15>;
- 	status = "okay";
- };
+diff --git a/arch/arm/boot/dts/rk3188.dtsi b/arch/arm/boot/dts/rk3188.dtsi
+index 24abf214a..2298a8d84 100644
+--- a/arch/arm/boot/dts/rk3188.dtsi
++++ b/arch/arm/boot/dts/rk3188.dtsi
+@@ -182,8 +182,8 @@
+ 		compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
+ 		reg = <0x1011e000 0x2000>;
+ 		#sound-dai-cells = <0>;
+-		clock-names = "hclk", "mclk";
+-		clocks = <&cru HCLK_SPDIF>, <&cru SCLK_SPDIF>;
++		clocks = <&cru SCLK_SPDIF>, <&cru HCLK_SPDIF>;
++		clock-names = "mclk", "hclk";
+ 		dmas = <&dmac1_s 8>;
+ 		dma-names = "tx";
+ 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 485234f6a..07681f1f0 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -944,8 +944,8 @@
+ 		compatible = "rockchip,rk3288-spdif", "rockchip,rk3066-spdif";
+ 		reg = <0x0 0xff8b0000 0x0 0x10000>;
+ 		#sound-dai-cells = <0>;
+-		clock-names = "hclk", "mclk";
+-		clocks = <&cru HCLK_SPDIF8CH>, <&cru SCLK_SPDIF8CH>;
++		clocks = <&cru SCLK_SPDIF8CH>, <&cru HCLK_SPDIF8CH>;
++		clock-names = "mclk", "hclk";
+ 		dmas = <&dmac_bus_s 3>;
+ 		dma-names = "tx";
+ 		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
 -- 
 2.11.0
 
