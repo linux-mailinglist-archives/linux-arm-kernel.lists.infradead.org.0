@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57C0618311F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:22:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 076BA18314A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:25:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kcfSesFZ3GP2G1h5l2ppt5PvdkxH/AWBU98ZORtjizg=; b=YIakFQoxq8pA94OcutyXJjSjC
-	zNTTTmR+VRuVyi77Jersa5MDDPFXmZFPdldG8ifaV6l74hqwZyGJPfMWKuxp3Xj1LvhVai0VFQgYv
-	iplZmypgspdGj7RTfHm5djI4+pPb4OZkVUWUAId/J1RkIac/XNXulOLN1mudOfm1f4zueOKgA4S4j
-	o9x3CYfIj8lDFZlDzKXAusP7EjsglOCzCPwXHSHt+6MMgrQnExopSM9HbL8cpj8XsUC722ZZg+G4Z
-	bQrNe7alIZc8hcv0TkMDFMNuS7M7zKBbTn2+o+uBuv+5+pnD9vbu84uWtQAnyUZfy01StoUuJmGpZ
-	Pl9Sinxgg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=McOUTG0ZSJ7AT92Hum7u3ND1mWO6ZVNBsu6scPgjJso=; b=TFxf1J3ZhboFC8
+	Ge76+IjbjImwzZVFStHH9n38HUBNr9j0x7/0XPPIdZhALKBqUDEu3vaaUOoMfg4DUS8O1z4mFKFmD
+	BrTyZGnlgXooa6O5tShnTbDgNXw9QTgk1oWxFvqzHuDaKknsVoDiT1PpGdJlJqmODOvzIG1XbcW89
+	9KBPT+eeO+EGd6NnrKgfsEwrYHTGgPgIFMZVccHOFeOmNVnnTWmLD5uLHzNEEzupBFn4BtR6ObQhN
+	8ouB7WyyARjKT74QRMnUdA0e0MFzBlOWQlDtrshWcl9iL1RYWJn0HLSW+O+Vtn0TPd4NR5uwYoeWM
+	0NBExnkso21FgDxRXZmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNmx-0004ik-34; Thu, 12 Mar 2020 13:22:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNmk-0004iD-LV
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:22:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5023E30E;
- Thu, 12 Mar 2020 06:22:01 -0700 (PDT)
-Received: from [10.162.16.120] (a075563-lin.blr.arm.com [10.162.16.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BDDA43F534;
- Thu, 12 Mar 2020 06:21:57 -0700 (PDT)
-Subject: Re: [PATCH v6 00/18] (as long a
-To: Marc Zyngier <maz@kernel.org>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
- <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
- <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
- <b5ca043cfaca30435957974d0f58524e@kernel.org>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
-Date: Thu, 12 Mar 2020 18:51:56 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jCNqC-0006km-JT; Thu, 12 Mar 2020 13:25:36 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCNoh-0005Dl-3n; Thu, 12 Mar 2020 13:24:04 +0000
+X-UUID: cea46f2001394ab5b9e389b96316526c-20200312
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=xm/G1sO3I7PlDO358ySrPxlME2LXeXXiVUP6BCRqWHY=; 
+ b=q3LRGMRZNttz4bHsILjWOhiv3NrBp0OFYacdYFpCeKXJw1Ghn+0EFMj6OO0eEHoK9Cq+08f7xig/jaLLU2/xwrnq2hhGoF5i5DcVnjBk3j+qh6cRYwMz8nn1Os2tb0w5JEngKHXP5zKNW66Rv0hdeqm7fAe4bP4VT7CWn8WkjHc=;
+X-UUID: cea46f2001394ab5b9e389b96316526c-20200312
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1859598437; Thu, 12 Mar 2020 05:23:54 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Mar 2020 06:24:02 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Mar 2020 21:22:37 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 12 Mar 2020 21:21:02 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
+Subject: [PATCH v3 0/8] scsi: ufs: some cleanups and make the delay for host
+ enabling customizable
+Date: Thu, 12 Mar 2020 21:23:42 +0800
+Message-ID: <20200312132350.18061-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <b5ca043cfaca30435957974d0f58524e@kernel.org>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_062202_795887_4D327ABB 
-X-CRM114-Status: GOOD (  20.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200312_062403_191941_85E98580 
+X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,62 +87,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
+ andy.teng@mediatek.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, beanhuo@micron.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywKCk9uIDMvMTIvMjAgNjoxNyBQTSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IEhpIEFt
-aXQsCj4gCj4gT24gMjAyMC0wMy0xMiAwODowNiwgQW1pdCBLYWNoaGFwIHdyb3RlOgo+PiBIaSBK
-YW1lcywKPj4KPj4gT24gMy8xMi8yMCAxMjoyMyBQTSwgQW1pdCBLYWNoaGFwIHdyb3RlOgo+Pj4g
-SGkgSmFtZXMsCj4+Pgo+Pj4gT24gMy8xMS8yMCAyOjU4IFBNLCBKYW1lcyBNb3JzZSB3cm90ZToK
-Pj4+PiBIaSBBbWl0LAo+Pj4+Cj4+Pj4gKENDOiArTWFyYykKPj4+Pgo+Pj4+IE9uIDMvNi8yMCA2
-OjM1IEFNLCBBbWl0IERhbmllbCBLYWNoaGFwIHdyb3RlOgo+Pj4+PiBUaGlzIHNlcmllcyBpbXBy
-b3ZlcyBmdW5jdGlvbiByZXR1cm4gYWRkcmVzcyBwcm90ZWN0aW9uIGZvciB0aGUgCj4+Pj4+IGFy
-bTY0IGtlcm5lbCwgYnkKPj4+Pj4gY29tcGlsaW5nIHRoZSBrZXJuZWwgd2l0aCBBUk12OC4zIFBv
-aW50ZXIgQXV0aGVudGljYXRpb24gCj4+Pj4+IGluc3RydWN0aW9ucyAocmVmZXJyZWQKPj4+Pj4g
-cHRyYXV0aCBoZXJlYWZ0ZXIpLiBUaGlzIHNob3VsZCBoZWxwIHByb3RlY3QgdGhlIGtlcm5lbCBh
-Z2FpbnN0IAo+Pj4+PiBhdHRhY2tzIHVzaW5nCj4+Pj4+IHJldHVybi1vcmllbnRlZCBwcm9ncmFt
-bWluZy4KPj4+Pgo+Pj4+IChhcyBpdCBsb29rcyBsaWtlIHRoZXJlIG1heSBiZSBhbm90aGVyIHZl
-cnNpb24gb2YgdGhpczopCj4+Pj4KPj4+PiBBbSBJIHJpZ2h0IGluIHRoaW5raW5nIHRoYXQgYWZ0
-ZXIgeW91ciBwYXRjaCAxMCBjaGFuZ2luZwo+Pj4+IGNwdV9zd2l0Y2hfdG8oKSwgb25seSB0aGUg
-QSBrZXkgaXMgbGl2ZSBkdXJpbmcga2VybmVsIGV4ZWN1dGlvbj8KPj4+Cj4+PiBZZXMKPj4+Cj4+
-Pj4KPj4+PiBLVk0gaXMgc3RpbGwgc2F2ZS9yZXN0b3JpbmcgNCBleHRyYSBrZXlzIGFyb3VuZCBn
-dWVzdC1lbnRyeS9leGl0LiBBcyAKPj4+PiB5b3UKPj4+PiByZXN0b3JlIGFsbCB0aGUga2V5cyBv
-biByZXR1cm4gdG8gdXNlci1zcGFjZSwgaXMgdGhpcyBzdGlsbCBuZWNlc3Nhcnk/Cj4+Pgo+Pj4g
-WWVzIEl0cyBhIGdvb2Qgb3B0aW1pemF0aW9uIHRvIHNraXAgNCBub24tQSBrZXlzLiBJIHdhcyB3
-b25kZXJpbmcgCj4+PiB3aGV0aGVyIHRvIGRvIGl0IGluIHRoaXMgc2VyaWVzIG9yIHNlbmQgaXQg
-c2VwYXJhdGVseS4KPj4KPj4gSSBzdXBwb3NlIHdlIGNhbiBvbmx5IHNraXAgbm9uLUEga2V5cyBz
-YXZlL3Jlc3RvcmUgZm9yIGhvc3QgY29udGV4dC4gSWYKPj4gd2Ugc2tpcCBub24tQSBrZXlzIGZv
-ciBndWVzdCBjb250ZXh0IHRoZW4gZ3Vlc3Qgd2l0aCBvbGQgaW1wbGVtZW50YXRpb24KPj4gd2ls
-bCBicmVhay4gTGV0IG1lIGtub3cgeW91ciBvcGluaW9uLgo+IAo+IEkgZG9uJ3QgdGhpbmsgeW91
-IGNhbiBza2lwIGFueXRoaW5nIGFzIGZhciBhcyB0aGUgZ3Vlc3QgaXMgY29uY2VybmVkLgo+IEJ1
-dCBiZWluZyBhYmxlIHRvIHNraXAgdGhlIEIga2V5cyAod2hpY2ggaXMgd2hhdCBJIGV4cGVjdCB5
-b3UgY2FsbCB0aGUKPiBub24tQSBrZXlzKSBvbiB0aGUgaG9zdCB3b3VsZCBjZXJ0YWlubHkgYmUg
-dXNlZnVsLgoKVGhhbmtzIGZvciB0aGUgY2xhcmlmaWNhdGlvbi4KCj4gCj4gSSBhc3N1bWUgeW91
-IGhhdmUgYSB3YXkgdG8gaGlkZSB0aGVtIGZyb20gdXNlcnNwYWNlLCB0aG91Z2guCgpZb3UgbWVh
-biBoaWRlIGFsbCB0aGUga2V5cyBmcm9tIHVzZXJzcGFjZSBsaWtlIGJlbG93LAoKZGlmZiAtLWdp
-dCBhL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMgYi9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5j
-CmluZGV4IDNlOTA5YjEuLjI5Y2M3NGYgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQva3ZtL3N5c19y
-ZWdzLmMKKysrIGIvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwpAQCAtMTAyMyw3ICsxMDIzLDcg
-QEAgc3RhdGljIGJvb2wgdHJhcF9wdHJhdXRoKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKICBzdGF0
-aWMgdW5zaWduZWQgaW50IHB0cmF1dGhfdmlzaWJpbGl0eShjb25zdCBzdHJ1Y3Qga3ZtX3ZjcHUg
-KnZjcHUsCiAgICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBzdHJ1Y3Qgc3lzX3JlZ19kZXNj
-ICpyZCkKICB7Ci0gICAgICAgcmV0dXJuIHZjcHVfaGFzX3B0cmF1dGgodmNwdSkgPyAwIDogUkVH
-X0hJRERFTl9VU0VSIHwgClJFR19ISURERU5fR1VFU1Q7CisgICAgICAgcmV0dXJuIHZjcHVfaGFz
-X3B0cmF1dGgodmNwdSkgPyBSRUdfSElEREVOX1VTRVIgOiAKUkVHX0hJRERFTl9VU0VSIHwgUkVH
-X0hJRERFTl9HVUVTVDsKICB9CgogICNkZWZpbmUgX19QVFJBVVRIX0tFWShrKQoKSSBkb24ndCBy
-ZW1lbWJlciB3aHkgaXQgd2FzIG5vdCBkb25lIHRoaXMgd2F5IGxhc3QgdGltZS4KCkNoZWVycywK
-QW1pdAoKPiAKPiBUaGFua3MsCj4gCj4gIMKgwqDCoMKgwqDCoMKgIE0uCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+
+This patchset applies some driver cleanups and performance improvement
+in ufs host drivers by making the delay for host enabling customizable
+according to vendors' requirements.
+
+v2 -> v3
+	- Remove /arch/arm64/configs/defconfig chnage because it is for local test only
+
+v1 -> v2
+	- Add patch #1 "scsi: ufs: fix uninitialized tx_lanes in ufshcd_disable_tx_lcc"
+	- Remove struct ufs_init_prefetch in patch #2
+	- Introduce common delay function in patch #4
+	- Replace all delay places by common delay function in ufs-mediatek in patch #5
+	- Use common delay function instead for host enabling delay in patch #6
+	- Add patch #7 "scsi: ufs: make HCE polling more compact to improve initializatoin latency"
+	- In patch #8, customize the delay in ufs_mtk_hce_enable_notify callback instead of ufs_mtk_init (Avri)
+
+Stanley Chu (8):
+  scsi: ufs: fix uninitialized tx_lanes in ufshcd_disable_tx_lcc()
+  scsi: ufs: remove init_prefetch_data in struct ufs_hba
+  scsi: ufs: use an enum for host capabilities
+  scsi: ufs: introduce common delay function
+  scsi: ufs-mediatek: replace all delay places by common delay function
+  scsi: ufs: allow customized delay for host enabling
+  scsi: ufs: make HCE polling more compact to improve initializatoin
+    latency
+  scsi: ufs-mediatek: customize the delay for host enabling
+
+ drivers/scsi/ufs/ufs-mediatek.c | 35 ++++++++-------
+ drivers/scsi/ufs/ufshcd.c       | 47 +++++++++++---------
+ drivers/scsi/ufs/ufshcd.h       | 78 ++++++++++++++++-----------------
+ 3 files changed, 85 insertions(+), 75 deletions(-)
+
+-- 
+2.18.0
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
