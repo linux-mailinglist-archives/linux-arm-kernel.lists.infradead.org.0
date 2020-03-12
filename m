@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33FA2183416
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:06:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0469D1834DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:22:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HHUmAgFTl75S9D5GjKBsyqBS0+ZDVSCFVRH2L9xiQj4=; b=AxOzFOGmpd9S6zDkEza+uqRQM
-	ol/pfH3xK+dK+mBsM0fGgHrw037bCag0yteHfsh6lBEQ1FkjT0j//zosrOo+kzMBRDnhEsTS9s/8l
-	Xsh1Xd2G5WqDSBNdkxFxlDmCHtkjvTJ86LfntqDKtXxijwX16Yx00P+dsRNKbv0vfMhMQuLlgo33X
-	3WTqGllI1X0wLbbjicl1nM3ZhjWI4w6r85BhipKUi5bUHYmCuIxqYqezmXOiV/H//j2dj9w3ZxVdk
-	lj6LwdWtyFlpyNXyuc+V4mg6G0FOttjXMcGqSFsmJZrBUPFiv683IMQ3Za4imFd8YCJcfEnhdhZZC
-	r8K1Yfp0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VXyFfw6y7TqZrzjLzaAJJ+xxnsqCK1Hdejt+Ht1JhOQ=; b=StXO+Lpg1Ccr3S
+	aljDl+Zz151M9XPvmKMlDiPNaKPlCNFH+08xjO2s+ld/dV42+IpighmnWdTMhP/3Mw526RBcjx2wW
+	+IapufHgVKitgK0ft7ClZxgIbh90wVUpho/G8QtgG5PYtcC1dkuQ7Arf4oSk66cpbvPSa9amQ/koe
+	XPbR17BIp2TDBtW8hATp5N8xMAkuxTSUOE0b17xMW2c6GhSXVh7gYkJ3g56R2ZRuBvrMQRpSYNBwK
+	qvI2s6L912gfyTcOgrpWWicQM0xyUcrzNdUrZnFsAxIW9c4XyN5ITTCkZIGXagkUAlqMNI6ZwVeNV
+	3kCsCRHLXTWzRHQ17SPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCPPr-0001x2-4W; Thu, 12 Mar 2020 15:06:31 +0000
-Received: from web0081.zxcs.nl ([2a06:2ec0:1::81])
+	id 1jCPfD-0008S1-BB; Thu, 12 Mar 2020 15:22:23 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCPPj-0001wC-2C
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 15:06:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=pascalroeleven.nl; s=x; h=Message-ID:References:In-Reply-To:Subject:Cc:To:
- From:Date:Content-Transfer-Encoding:Content-Type:MIME-Version:Sender:Reply-To
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=J6aDQGjkdfrS52YkEz3ek5dt906Ty2Nt38vKTDhn80w=; b=hG2lKuGOULLVa42qYNnOMiU+E+
- 1fF6zxRYgwLngJMFHPGArXhjerUxJQ3plKRZCO5TSTnVi+2Q8tQ6C+C6aNn40pyjspW7YwCzKMQpp
- syAzO2hUtLaflC0V1kUwjCmFDeZWQlAgJ7edx0xUiyAyRK6Ve3MXMeFoqm/8SuhsGbjvvflanRDwi
- uJZM+RCzqt5AIQOpws1Wm09byjKK1YZDLkylSTk29ub38ToQxSkCbjKk9IDDgGd0OfMXuFUP4xsVe
- 79E3bHRr3rpcvkxTdxEe+saXneBo447d07pKSoi/9Akj0hMmJk75kVHMFuA+GZIae8997/r68Trkv
- 7nt7VLxQ==;
-Received: from spamrelay.zxcs.nl ([185.104.28.12]:47086
- helo=mail-slave02.zxcs.nl)
- by web0081.zxcs.nl with esmtp (Exim 4.92.3)
- (envelope-from <dev@pascalroeleven.nl>)
- id 1jCPPT-002SyE-RZ; Thu, 12 Mar 2020 16:06:07 +0100
+ id 1jCPex-0008Qi-F5; Thu, 12 Mar 2020 15:22:08 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i1so5809938oie.8;
+ Thu, 12 Mar 2020 08:22:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=a6WnhHW3Np3QbKKjKxFHHPr40yxHHv0stzGtOBzaVLc=;
+ b=rIL2nnOmhWFE1kQBeeVYG+6xrnDm3CHOhHmKOH7Eg3OzU0CkAnNMx5TFKo6EmpeP/n
+ f2DEOfTDAySNDHF91tqu4Khsu9FIdAFHTATLTrSTIaD736RMtPnLo4KFuw1cWS3M+bPZ
+ 0KM4XIrrpQa0ZzVR8uO0aGksxuFsUkcNLEz8ogE9+PETIJ4Ebi8mLODY+NQ1E69xVqqA
+ gBYlWGYt3daTCzi7+c2VKMGvWhCp5kkUY1GOY25cN0yJyuHvm/5uXLAPbD2bsUY55i5/
+ q9HRxETPjZJmaVtauHxS3dVlIfZqdAN0HRazFLDpbYf4SUpaHu1lz2iv/Wkl+yRomZdZ
+ R0JQ==
+X-Gm-Message-State: ANhLgQ0T+kDLMe7EUR//F71aXYSy3tLDCxu33mjeIZ596tn7JKm86qsq
+ dlhLKgCa8gD6b6AaXArP2Q==
+X-Google-Smtp-Source: ADFU+vsZYyNPazIaY4y6ozlG69lisQb63cqMqP+Ill41cx5dK6OIRcqAtvQNyW37X+H801eBMb1U7g==
+X-Received: by 2002:a05:6808:b1c:: with SMTP id
+ s28mr3046470oij.2.1584026526006; 
+ Thu, 12 Mar 2020 08:22:06 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id a22sm10865950oto.45.2020.03.12.08.22.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Mar 2020 08:22:05 -0700 (PDT)
+Received: (nullmailer pid 17075 invoked by uid 1000);
+ Thu, 12 Mar 2020 15:22:03 -0000
+Date: Thu, 12 Mar 2020 10:22:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH v12 2/5] dt-bindings: mediatek: Update mmsys binding to
+ reflect it is a system controller
+Message-ID: <20200312152203.GA15635@bogus>
+References: <20200311165322.1594233-1-enric.balletbo@collabora.com>
+ <20200311165322.1594233-3-enric.balletbo@collabora.com>
 MIME-Version: 1.0
-Date: Thu, 12 Mar 2020 16:06:07 +0100
-From: Pascal Roeleven <dev@pascalroeleven.nl>
-To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: pwm: sun4i: pwm-backlight not working since 5.6-rc1
-In-Reply-To: <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
-References: <6185b5540ca082d887d7d13330c9d938@pascalroeleven.nl>
- <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
-User-Agent: Roundcube Webmail/1.4.2
-Message-ID: <6e995c4c22c4e6c93acb1f491e5aa109@pascalroeleven.nl>
-X-Sender: dev@pascalroeleven.nl
+Content-Disposition: inline
+In-Reply-To: <20200311165322.1594233-3-enric.balletbo@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_080623_251664_ADD16A71 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_082207_506380_5D82AA92 
+X-CRM114-Status: GOOD (  11.69  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,49 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, ck.hu@mediatek.com,
+ mtk01761 <wendell.lin@mediatek.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
+ sboyd@kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ rdunlap@infradead.org, linux-kernel@vger.kernel.org, p.zabel@pengutronix.de,
+ matthias.bgg@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wMy0xMiAxNDoyOSwgVXdlIEtsZWluZS1Lw7ZuaWcgd3JvdGU6Cj4gT24gVGh1LCBN
-YXIgMTIsIDIwMjAgYXQgMDE6MjI6MTNQTSArMDEwMCwgUGFzY2FsIFJvZWxldmVuIHdyb3RlOgo+
-PiBIaSBhbGwsCj4+IAo+PiBJIGFtIHdvcmtpbmcgb24gYWRkaW5nIGFuIG9sZCBBMTAgZGV2aWNl
-IHRvIG1haW5saW5lIGFuZCBub3RpY2VkIGFuIAo+PiBpc3N1ZQo+PiB3aGVuIHRlc3Rpbmcgb24g
-NS41LjggdnMgbWFzdGVyLgo+PiAKPj4gU2luY2UgNS42LXJjMSwgSSBjYW4ndCBjb250cm9sIHRo
-ZSBicmlnaHRuZXNzIG9mIG15IExDRCBiYWNrbGlnaHQgCj4+IGFueW1vcmUuCj4+IFRoZSBiYWNr
-bGlnaHQgc3RheXMgb24gZnVsbCBicmlnaHRuZXNzIGluc3RlYWQuIEkgYW0gY29udHJvbGxpbmcg
-dGhlCj4+IGJyaWdodG5lc3MgdmFsdWUgdmlhIHN5c2ZzIGZvciB0ZXN0aW5nLgo+PiAKPj4gSSBh
-bSBub3Qgc3VyZSBpZiB0aGlzIGlzIGEgZ2VuZXJhbCBwd20tc3VuNGkgaXNzdWUgb3IgaWYgaXQg
-aXMgcmVsYXRlZCAKPj4gdG8KPj4gdGhlIGJhY2tsaWdodC4gSG93ZXZlciBJIG5hcnJvd2VkIGl0
-IGRvd24gdG8gb25lIGNvbW1pdCBmb3IgcHdtLXN1bjRpOgo+PiAKPj4gZmE0ZDgxNzg0NjgxYTI2
-YmNmN2QyYTQzYzZhYzVjZjk5MWVmMjhmNQo+PiAKPj4gSWYgSSB1c2UgcHdtLXN1bjRpLmMgZnJv
-bSA1YjA5MGI0MzBkNzUwOTYxMzA1MDMwMjMyMzE0YjZhY2RiMDEwMmFhIG9uCj4+IG1hc3Rlciwg
-dGhlIGJhY2tsaWdodCB3b3JrcyBmaW5lLiBVbmZvcnR1bmF0ZWx5LCBkdWUgdG8gbXkgbGFjayBv
-ZiAKPj4ga2VybmVsCj4+IGV4cGVyaWVuY2UsIEkgY2FuJ3Qgc2VlIGhvdyB0aGUgY29tbWl0IGFi
-b3ZlIGJyb2tlIGl0Lgo+IAo+IEhtbSwgSSBjYW5ub3Qgc2VlIGhvdyBmYTRkODE3ODQ2ODFhMjZi
-Y2Y3ZDJhNDNjNmFjNWNmOTkxZWYyOGY1IGJyZWFrcwo+IHRoaXMuIExvb2tpbmcgYXQgdGhlIG91
-dHB1dCBvZgo+IAo+IAlnaXQgc2hvdyAtYiBmYTRkODE3ODQ2ODFhMjZiY2Y3ZDJhNDNjNmFjNWNm
-OTkxZWYyOGY1Cj4gCj4gKGkuZS4gaWdub3Jpbmcgd2hpdGVzcGFjZSBjaGFuZ2VzKSBJIGRvbid0
-IHNlZSBob3cgdGhlIGJlaGF2aW91ciB5b3UncmUKPiByZXBvcnRpbmcgY2FuIGJlIGV4cGxhaW5l
-ZC4KPiAKPiBBcmUgeW91IHN1cmUgdGhhdCBmYTRkODE3ODQ2ODFhMjZiY2Y3ZDJhNDNjNmFjNWNm
-OTkxZWYyOGY1IGlzIHRoZSBiYWQKPiBjb21taXQ/Cj4gCj4gQ2FuIHlvdSBpbnN0YWxsIGEgdG9v
-bCB0byBpbnNwZWN0IHJlZ2lzdGVyIHZhbHVlcyBhbmQgY2hlY2sgaG93IHRoZQo+IGFmZmVjdGVk
-IHJlZ2lzdGVycyBjaGFuZ2UgaWYgeW91IHN3aXRjaCBrZXJuZWwgdmVyc2lvbnMgYW5kL29yIHB3
-bQo+IHNldHRpbmdzPwo+IAo+IChlLmcuCj4gCW1lbXRvb2wgbWQgMHgxYzIwZTAwKzB4Ywo+ICkK
-PiAKPiBCZXN0IHJlZ2FyZHMKPiBVd2UKClRoYW5rcyBmb3IgeW91ciByZXNwb25zZS4KClllcyBJ
-IGFtIHN1cmUgdGhhdCBpcyB0aGUgY29tbWl0LiBJZiBJIGFtIG9uIG1hc3RlciwgYW5kIHJlcGxh
-Y2UgCnB3bS1zdW40aS5jIHdpdGggdGhlIG9uZSBmcm9tIDViMDkwYjQzLCBldmVyeXRoaW5nIHdv
-cmtzLiBJZiBJIHRoZW4gCmFwcGx5IGZhNGQ4MTc4LCBpdCBzdG9wcyB3b3JraW5nLgoKQW5kIHN0
-cmFuZ2VseSB0aGUgb3V0cHV0IG9mIHRoZSByZWdpc3RlcnMgaXMgZXhhY3RseSB0aGUgc2FtZSBi
-ZWZvcmUgYW5kIAphZnRlciBmYTRkODE3ODoKCjAxYzIwZTAwOiAwMDAwMDA1MCAwMDEzMDAxNCAw
-MDAwMDAwMCAoZnVsbCBicmlnaHRuZXNzKQowMWMyMGUwMDogMDAwMDAwNTAgMDAxMzAwMDYgMDAw
-MDAwMDAgKG1pbiBicmlnaHRuZXNzKQoKRXZlbiB3aGVuIEknbSBvbiA1YjA5MGI0MyBhbmQgY2hl
-cnJ5LXBpY2sgZmE0ZDgxNzggY2FuIEkgcmVwcm9kdWNlIHRoZSAKaXNzdWUuCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Mar 11, 2020 at 05:53:19PM +0100, Enric Balletbo i Serra wrote:
+> The mmsys system controller is not only a pure clock controller, so
+> update the binding documentation to reflect that apart from providing
+> clocks, it also provides routing and miscellaneous control registers.
+> 
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> ---
+> 
+> Changes in v12: None
+> Changes in v10:
+> - Update the binding documentation for the mmsys system controller.
+> 
+> Changes in v9: None
+> Changes in v8: None
+> Changes in v7: None
+> 
+>  .../devicetree/bindings/arm/mediatek/mediatek,mmsys.txt    | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
