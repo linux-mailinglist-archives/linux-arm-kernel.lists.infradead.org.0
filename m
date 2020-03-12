@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 014C8183695
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 17:51:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4714718372A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:15:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oDRUuIOh5u/bSlTxOcgPjVXi7F4Svx1+WCNFuB7F4Ys=; b=bwF5TTo6I9AHoawBb/Z6HHPxD
-	zDrk9uOmYkMGKvAgGLyQPKb8dyB9U1dRzOCgPGdCNc6VRJDHdT5KEW1uYn88hkPzpfYAv+fFjcNHl
-	uPZlNAtA1Dhru1baiSYrbNX8Lpe3e7syrvGvuK2iWJ9vDFcmjQUsZEibGf8UPGjoq4Vj/qyFUtphy
-	pgJvAsc4sB5CUzKtX9gCMZVH1uz81+WKvIsBgFU0c2T7D0Iz2BD2dVFmm1BhURa0Lmst801+t3MyD
-	p5e9g9bqDIifIofMa10trvhQcAvvwayh2oN+e1mfqXeVN4mEm+lCTJRQkQ0zoKTBuqT7yHF6dNtVe
-	Ll//ktbuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=l2Rkr1+wfpVeuVekl0gQacj8vy9c0/SmSU8NCsxZK2k=; b=dDc
+	oz32bouVqlZbl7vHWv1n6COkqJhXDzff4wJIBO3wr/Q7vGDtKQhLPZBywVp0erB1vUCQz/toXYTZm
+	BGilZJITPUUL+ZKLHu1aaARnjai6jIGYwWho8vZ9385lu962ou62YeKAakU0DtUvaLs8DG2LWxhQK
+	PoSK0XBAx97M3d3pzBpSsDqB0/ab9BfCdH7fxBD/Hwz5P09NItmfnc8fqvK3oenc/Hvh4BrkhUppO
+	AFSpCmRhWGv+0yO7xa4HuSvOP1JuL3HkpfbiQZM9n6UaViJzl+3Z9j9vWYv8Mac7C+PTPA8lZQD0k
+	pOi98bow/nbHJANCf2k5siXPjlnbQAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCR2s-000574-Oe; Thu, 12 Mar 2020 16:50:54 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jCRQT-0006QB-3s; Thu, 12 Mar 2020 17:15:17 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCR2i-00056V-AX
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 16:50:45 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 1A69122FAC;
- Thu, 12 Mar 2020 17:50:41 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1584031841;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=kjJ10yaE4xOITwa0lcGngsQWRZEzeFLVFpTKECi5fjM=;
- b=O1IP2r4NgRR8jB5FfvAbMpoq+5dm1oyxRXXBswapjXuY8YadbpB9YjHm64TjJieI0e66TR
- QyczEjlcMl9E5JR1cfxQCLPfQ6bb4cjq4WB7y2/0sykEI5cAdeOQgqHiXSEnE1Rtx/TKFv
- Ew4c3ToeJGp+bFBbOTxgIAllCSdA4lA=
-MIME-Version: 1.0
-Date: Thu, 12 Mar 2020 17:50:40 +0100
-From: Michael Walle <michael@walle.cc>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, netdev@vger.kernel.org
-Subject: Re: [PATCH 2/2] arm64: dts: ls1028a: disable the felix switch by
- default
-In-Reply-To: <20200312164320.22349-2-michael@walle.cc>
-References: <20200312164320.22349-1-michael@walle.cc>
- <20200312164320.22349-2-michael@walle.cc>
-Message-ID: <5c06000e9ca893cdf431f29618428630@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 1A69122FAC
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
- DBL_PROHIBIT(0.00)[0.0.0.0:email]; RCPT_COUNT_TWELVE(0.00)[13];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- FREEMAIL_CC(0.00)[davemloft.net,gmail.com,lunn.ch,nxp.com,kernel.org];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+ id 1jCRQ5-0006Mx-W9; Thu, 12 Mar 2020 17:14:55 +0000
+Received: by mail-wm1-x341.google.com with SMTP id e26so7211869wme.5;
+ Thu, 12 Mar 2020 10:14:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=/rHi3YAkRAcdMWtqtXDhFmgLSOL8x4zCT7svjD1llso=;
+ b=CZBgUzmx+EEy6Hdu9DInRUBaFiOWh84iUnz4jURnXgTy+86cMmjyL+Xm/IiK5B0HBe
+ mRg9AXxyeAbj6pJKhCGImAXZNQwQYE0+0WpiZ4u841pcqgBHauz7DHWB6rcY64d9niAh
+ fzLFR7ZIA2K5/8mAAROD93RSBqLh2dM0gPW1ekQDJJ6RrLBwIB2qqD3klsEUspWSiurl
+ Ywf3ZObsiUzImDTk30kKZwEhKeGYKFfUFrQW+7c+6DBGCUux0DjKdrBLdjMwcQhsRoSF
+ 9XA8tSdQcF/jcTuGbDafn92DvX8CY2bBMBEebdro2EREy+07YkkBxeSb6zHQV2qUfUbU
+ 9MxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=/rHi3YAkRAcdMWtqtXDhFmgLSOL8x4zCT7svjD1llso=;
+ b=Y4A/5YMcezcLsWtO64nmZVO9/4KknTXemG4n9a2mnW5rbauKlMTTkfVWPK70ydRvDN
+ j5KY5fmn1z6nWPOpb8nXogrRjd61jCgt9LJ4D3w3OObRQ8Zzi7bxdnZzKrtCtIxHzhkG
+ 8K3080dZfndgTKd70faQk6doWVcpJlph0S7CNo48uhcu5mVmeN79MQ4zsbA6iJLZStvc
+ XNo0RkSEQENa/oidRzvottdfF8wI3i4pMFjw1jf2LzeBuJGCrQbuurJ2iFMcxJzVkUFK
+ ui1HACunnYLOQIyC0zW+xZ+mH5xUHByhj9cqgUbEu9fO9kLI8EiD+zZqPIAa4AOY9Z2r
+ lFhQ==
+X-Gm-Message-State: ANhLgQ0GQzmANDw4CYXJMycsgKgW0lM1bhlW8mT8aARNzldaLpuDgt03
+ uPRw6Z0w31FV44p2y9PTEtk=
+X-Google-Smtp-Source: ADFU+vuU7JONushGnh3yAgda3gxF27iAlAIS/lIT8K59ScQnS7AhYwvRjg88gHQjT88rLF0AWIIufQ==
+X-Received: by 2002:a1c:cc06:: with SMTP id h6mr5962352wmb.118.1584033292012; 
+ Thu, 12 Mar 2020 10:14:52 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id v10sm3398832wmh.17.2020.03.12.10.14.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 12 Mar 2020 10:14:51 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/4] ARM: dts: rockchip: remove clock-names property from
+ 'generic-ehci' nodes
+Date: Thu, 12 Mar 2020 18:14:38 +0100
+Message-Id: <20200312171441.21144-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_095044_515288_8FF85182 
-X-CRM114-Status: GOOD (  13.39  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200312_101454_060881_4A61CF65 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,107 +94,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Vladimir Oltean <vladimir.oltean@nxp.com>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-03-12 17:43, schrieb Michael Walle:
-> Disable the felix switch by default and enable it per board which are
-> actually using it.
-> 
-> Signed-off-by: Michael Walle <michael@walle.cc>
+A test with the command below gives for example this error:
 
-I forgot to mention that this patch depends on the following series:
-   
-https://lore.kernel.org/linux-devicetree/20200311074929.19569-1-michael@walle.cc/
+arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30140000:
+'clock-names' does not match any of the regexes: 'pinctrl-[0-9]+'
 
-Sorry,
--michael
+'clock-names' is not a valid property name for usb_host nodes with
+compatible string 'generic-ehci', so remove them.
 
-> ---
->  .../boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts  | 4 ++++
->  .../boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts      | 4 ++++
->  arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts             | 4 ++++
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi                | 3 ++-
->  4 files changed, 14 insertions(+), 1 deletion(-)
-> 
-> diff --git
-> a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> index a83a176cf18a..d4ca12b140b4 100644
-> --- 
-> a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> +++ 
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> @@ -63,6 +63,10 @@
->  	};
->  };
-> 
-> +&mscc_felix {
-> +	status = "okay";
-> +};
-> +
->  &mscc_felix_port0 {
->  	label = "swp0";
->  	managed = "in-band-status";
-> diff --git
-> a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
-> index 0a34ff682027..901b5b161def 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
-> @@ -48,6 +48,10 @@
->  	status = "okay";
->  };
-> 
-> +&mscc_felix {
-> +	status = "okay";
-> +};
-> +
->  &mscc_felix_port0 {
->  	label = "gbe0";
->  	phy-handle = <&phy0>;
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-> index 0d27b5667b8c..8294d364112e 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-> @@ -228,6 +228,10 @@
->  	status = "okay";
->  };
-> 
-> +&mscc_felix {
-> +	status = "okay";
-> +};
-> +
->  &mscc_felix_port0 {
->  	label = "swp0";
->  	managed = "in-band-status";
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index c09279379723..70a10268bb83 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -933,10 +933,11 @@
->  				fsl,extts-fifo;
->  			};
-> 
-> -			ethernet-switch@0,5 {
-> +			mscc_felix: ethernet-switch@0,5 {
->  				reg = <0x000500 0 0 0 0>;
->  				/* IEP INT_B */
->  				interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
-> +				status = "disabled";
-> 
->  				ports {
->  					#address-cells = <1>;
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/generic-ehci.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rk322x.dtsi | 3 ---
+ arch/arm/boot/dts/rk3288.dtsi | 2 --
+ arch/arm/boot/dts/rv1108.dtsi | 1 -
+ 3 files changed, 6 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index a0acf2ef8..6503247e9 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -722,7 +722,6 @@
+ 		reg = <0x30080000 0x20000>;
+ 		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HOST0>, <&u2phy0>;
+-		clock-names = "usbhost", "utmi";
+ 		phys = <&u2phy0_host>;
+ 		phy-names = "usb";
+ 		status = "disabled";
+@@ -744,7 +743,6 @@
+ 		reg = <0x300c0000 0x20000>;
+ 		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HOST1>, <&u2phy1>;
+-		clock-names = "usbhost", "utmi";
+ 		phys = <&u2phy1_otg>;
+ 		phy-names = "usb";
+ 		status = "disabled";
+@@ -768,7 +766,6 @@
+ 		clocks = <&cru HCLK_HOST2>, <&u2phy1>;
+ 		phys = <&u2phy1_host>;
+ 		phy-names = "usb";
+-		clock-names = "usbhost", "utmi";
+ 		status = "disabled";
+ 	};
+ 
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 4745be518..485234f6a 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -601,7 +601,6 @@
+ 		reg = <0x0 0xff500000 0x0 0x100>;
+ 		interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_USBHOST0>;
+-		clock-names = "usbhost";
+ 		phys = <&usbphy1>;
+ 		phy-names = "usb";
+ 		status = "disabled";
+@@ -644,7 +643,6 @@
+ 		reg = <0x0 0xff5c0000 0x0 0x100>;
+ 		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HSIC>;
+-		clock-names = "usbhost";
+ 		status = "disabled";
+ 	};
+ 
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index fda16f976..d33e606be 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -495,7 +495,6 @@
+ 		reg = <0x30140000 0x20000>;
+ 		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_HOST0>, <&u2phy>;
+-		clock-names = "usbhost", "utmi";
+ 		phys = <&u2phy_host>;
+ 		phy-names = "usb";
+ 		status = "disabled";
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
