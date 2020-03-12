@@ -2,94 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE783183159
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:27:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7640B183168
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:30:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TUupyk+mN8h/5WprxhZWtmSj1laLZTJZHdJIF4/i8qo=; b=NtXT7NfXBuuWVn
-	/kkh+xWi6Z1+18FITxycacWIfnlpAPZx+J21Ae+LKckh4YAU76UwY6s074vAotJwyQUlxdnhKHu+O
-	CMS5u7M+tPG2FOKcTcivZQjAftebc5lORtZUeTrWZwJ8cYggKrZvS/NC9jExeE5RxZZjlUCrOjbIV
-	o+RZsZC6KOrrsYrg9vW3lzjXpADx16lzz2U4E7NbJ/3JDwMTMAPje6dV1zOYQG79EFO7XRnTenHDH
-	HX0SfrDSINv6+d5qlymvsCDpuEG6sjDz579n4fkRrQwO4EuvDsXsyVv6NX/eoREGfWH/yZbiFBCHV
-	T5TeQSfz/MUnWSVLOSTg==;
+	List-Owner; bh=uqaLOV402C+6YKUwOSdh7U0k4cu42294t8xe7zclJPI=; b=N0vxITa008sa44
+	L12lijsRgMB8bPnfYXzzervd0Z7y1ht+wJ1Z5cvJ3QyQ038WginLKVVO95jqk5W1fJm5aMdiWzlae
+	Ge7+HxycdsgE6IEqXeqCedpIzrb3MF9jLta0c4EDQQ4PuO9OhHkIQWwaYG5ejMuNhqYD1Pz5vQ5Ml
+	oLHRNsngm+g0NR/wnKm1xtcqUGlodlI4WiekqshkaEFXRM/bIQCOPThcQeMV/u++JpQwGZxgu/2rq
+	eTcI8PVL/Hke/w5FIj02SndVEIZoX3Eqel0Ku13CBDgUhfNpRFU/5KgebEz8/9Q6/bwsD4Jr1BHx+
+	996CJC/dvClP5GIcbqVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNsK-0001Gy-RE; Thu, 12 Mar 2020 13:27:48 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jCNuY-0001lu-CK; Thu, 12 Mar 2020 13:30:06 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNsA-0001Gb-8k
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:27:39 +0000
-Received: by mail-pl1-x643.google.com with SMTP id a23so2682617plm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 06:27:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=JKFqhd+nMSKzAdoK7AjT9pTQERNeETS/59Lgbygkk7g=;
- b=OvlWQc6WNDKyowJH9y7kcTign22MgmP0oeefvShUzlLlMI4OJsS/HVZP5lLVLKdOaX
- PUSTrSA/qK7Ylf81hq66/4wLWraG0Ry8kSqXplcY9boO4EBryXKGH1l2XwYCMnB+heDX
- 5Ks886ykbbEpB1U0DwnksAHNoP2WgQba7UO2ibSAqONwpzRK/YAJtGS1jdpXCF7UvgWh
- 4PIIq+dMMtIyQPpEQRMZ+sLjLuSxEC8l+QyZprGHgFYGb86ECgAb1xV8+Xvsxx73iI3A
- DrsoB5yONwZFvex3s2IZmqYBpbt0VTWJTHYhQdohvi1zVPQ7EC1BNY0bfNsKHWq6Mzvv
- UpcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=JKFqhd+nMSKzAdoK7AjT9pTQERNeETS/59Lgbygkk7g=;
- b=ZVUPIPlzVypURawehjJS4jK2+moqhlsoDKAm8FA3gtrf5EtCLuvGRKS8M2c90HwlWv
- 9hVRNiTxL81lB6ZedRBcqSbysRymllrsk7+Emw/DE1MnvC+KZNZEtZPYlEkRY+d5ny4m
- NJZ/RulkS9th3vQ7cED4irfNg0XwiX8YRXDFcD24t8PiZ3FDIVtCSUOuqhmsqoDCsoWm
- a82UcHijcIDrmZ8pYJD6tRvih7C5kWiFG2hrxZ2jS6SzoWoL0/f89yCDbn1kXv+3ppLh
- 5PN/qtfB66+btIJOYraZr8sp0UyxHNB9JrQIavs+LplFBy63F58oY2eYlQJgNCN/c1/I
- iCFA==
-X-Gm-Message-State: ANhLgQ0RGwEYSRG1vm7EDWtvzdCvl4MvjmS0NpMIYq1fEB4W6NtaNqlq
- JJzFb/OCKzCScYTw0Qiv17nDvKCj
-X-Google-Smtp-Source: ADFU+vv1g/KTsOCtkIcpAhvugu4fcEvtCVm20e2j1kQt3LgV/3Qdfaeon9yFI0blBvlDo9PwSbvnig==
-X-Received: by 2002:a17:90a:ac05:: with SMTP id
- o5mr4331961pjq.143.1584019657326; 
- Thu, 12 Mar 2020 06:27:37 -0700 (PDT)
-Received: from localhost ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id s13sm9204098pjp.1.2020.03.12.06.27.36
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 12 Mar 2020 06:27:36 -0700 (PDT)
-Date: Thu, 12 Mar 2020 18:57:34 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: [PATCH v4] ARM: footbridge: replace setup_irq() by request_irq()
-Message-ID: <20200312132734.GA5294@afzalpc>
-References: <20200301122131.3902-1-afzal.mohd.ma@gmail.com>
- <20200312123432.GZ25745@shell.armlinux.org.uk>
+ id 1jCNuJ-0001l7-E8
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:29:53 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jCNuC-0007Km-DG; Thu, 12 Mar 2020 14:29:44 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jCNuA-0001ji-U0; Thu, 12 Mar 2020 14:29:42 +0100
+Date: Thu, 12 Mar 2020 14:29:42 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Pascal Roeleven <dev@pascalroeleven.nl>
+Subject: Re: pwm: sun4i: pwm-backlight not working since 5.6-rc1
+Message-ID: <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
+References: <6185b5540ca082d887d7d13330c9d938@pascalroeleven.nl>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200312123432.GZ25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <6185b5540ca082d887d7d13330c9d938@pascalroeleven.nl>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_062738_309272_FC7A372D 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_062951_477144_64F6D46C 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,130 +67,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Viresh Kumar <viresh.kumar@linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-request_irq() is preferred over setup_irq(). Invocations of setup_irq()
-occur after memory allocators are ready.
+On Thu, Mar 12, 2020 at 01:22:13PM +0100, Pascal Roeleven wrote:
+> Hi all,
+> =
 
-Per tglx[1], setup_irq() existed in olden days when allocators were not
-ready by the time early interrupts were initialized.
+> I am working on adding an old A10 device to mainline and noticed an issue
+> when testing on 5.5.8 vs master.
+> =
 
-Hence replace setup_irq() by request_irq().
+> Since 5.6-rc1, I can't control the brightness of my LCD backlight anymore.
+> The backlight stays on full brightness instead. I am controlling the
+> brightness value via sysfs for testing.
+> =
 
-[1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+> I am not sure if this is a general pwm-sun4i issue or if it is related to
+> the backlight. However I narrowed it down to one commit for pwm-sun4i:
+> =
 
-Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
----
+> fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5
+> =
 
-v4:
- * Fix build warning in isa-irq.c & ensure no build warnings
-v3:
- * Split out from series, also create subarch level patch as Thomas
-	suggested to take it thr' respective maintainers
- * Modify string displayed in case of error as suggested by Thomas
- * Re-arrange code as required to improve readability
- * Remove irrelevant parts from commit message & improve
- 
-v2:
- * Replace pr_err("request_irq() on %s failed" by
-           pr_err("%s: request_irq() failed"
- * Commit message massage
+> If I use pwm-sun4i.c from 5b090b430d750961305030232314b6acdb0102aa on
+> master, the backlight works fine. Unfortunately, due to my lack of kernel
+> experience, I can't see how the commit above broke it.
 
- arch/arm/mach-footbridge/dc21285-timer.c | 11 +++--------
- arch/arm/mach-footbridge/isa-irq.c       | 10 ++++------
- arch/arm/mach-footbridge/isa-timer.c     | 11 +++--------
- 3 files changed, 10 insertions(+), 22 deletions(-)
+Hmm, I cannot see how fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5 breaks
+this. Looking at the output of
 
-diff --git a/arch/arm/mach-footbridge/dc21285-timer.c b/arch/arm/mach-footbridge/dc21285-timer.c
-index f76212d2dbf1..2908c9ef3c9b 100644
---- a/arch/arm/mach-footbridge/dc21285-timer.c
-+++ b/arch/arm/mach-footbridge/dc21285-timer.c
-@@ -101,13 +101,6 @@ static irqreturn_t timer1_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction footbridge_timer_irq = {
--	.name		= "dc21285_timer1",
--	.handler	= timer1_interrupt,
--	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
--	.dev_id		= &ckevt_dc21285,
--};
--
- /*
-  * Set up timer interrupt.
-  */
-@@ -118,7 +111,9 @@ void __init footbridge_timer_init(void)
- 
- 	clocksource_register_hz(&cksrc_dc21285, rate);
- 
--	setup_irq(ce->irq, &footbridge_timer_irq);
-+	if (request_irq(ce->irq, timer1_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
-+			"dc21285_timer1", &ckevt_dc21285))
-+		pr_err("Failed to request irq %d (dc21285_timer1)", ce->irq);
- 
- 	ce->cpumask = cpumask_of(smp_processor_id());
- 	clockevents_config_and_register(ce, rate, 0x4, 0xffffff);
-diff --git a/arch/arm/mach-footbridge/isa-irq.c b/arch/arm/mach-footbridge/isa-irq.c
-index 88a553932c33..842ddb4121ef 100644
---- a/arch/arm/mach-footbridge/isa-irq.c
-+++ b/arch/arm/mach-footbridge/isa-irq.c
-@@ -96,11 +96,6 @@ static void isa_irq_handler(struct irq_desc *desc)
- 	generic_handle_irq(isa_irq);
- }
- 
--static struct irqaction irq_cascade = {
--	.handler = no_action,
--	.name = "cascade",
--};
--
- static struct resource pic1_resource = {
- 	.name	= "pic1",
- 	.start	= 0x20,
-@@ -160,7 +155,10 @@ void __init isa_init_irq(unsigned int host_irq)
- 
- 		request_resource(&ioport_resource, &pic1_resource);
- 		request_resource(&ioport_resource, &pic2_resource);
--		setup_irq(IRQ_ISA_CASCADE, &irq_cascade);
-+
-+		irq = IRQ_ISA_CASCADE;
-+		if (request_irq(irq, no_action, 0, "cascade", NULL))
-+			pr_err("Failed to request irq %u (cascade)\n", irq);
- 
- 		irq_set_chained_handler(host_irq, isa_irq_handler);
- 
-diff --git a/arch/arm/mach-footbridge/isa-timer.c b/arch/arm/mach-footbridge/isa-timer.c
-index 82f45591fb2c..723e3eae995d 100644
---- a/arch/arm/mach-footbridge/isa-timer.c
-+++ b/arch/arm/mach-footbridge/isa-timer.c
-@@ -25,17 +25,12 @@ static irqreturn_t pit_timer_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction pit_timer_irq = {
--	.name		= "pit",
--	.handler	= pit_timer_interrupt,
--	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
--	.dev_id		= &i8253_clockevent,
--};
--
- void __init isa_timer_init(void)
- {
- 	clocksource_i8253_init();
- 
--	setup_irq(i8253_clockevent.irq, &pit_timer_irq);
-+	if (request_irq(i8253_clockevent.irq, pit_timer_interrupt,
-+			IRQF_TIMER | IRQF_IRQPOLL, "pit", &i8253_clockevent))
-+		pr_err("Failed to request irq %d(pit)\n", i8253_clockevent.irq);
- 	clockevent_i8253_init(false);
- }
--- 
-2.25.1
+	git show -b fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5
 
+(i.e. ignoring whitespace changes) I don't see how the behaviour you're
+reporting can be explained.
+
+Are you sure that fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5 is the bad
+commit?
+
+Can you install a tool to inspect register values and check how the
+affected registers change if you switch kernel versions and/or pwm
+settings?
+
+(e.g.
+	memtool md 0x1c20e00+0xc
+)
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
