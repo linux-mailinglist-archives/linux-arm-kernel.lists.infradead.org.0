@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC6B183759
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:24:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38BF3183763
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:26:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tpMIaP/pScW1ev8yD54tHuYguQ9c7I3zjuDDZGT1DyU=; b=hcHnNapq9DASvIdLI++NpW5mO
-	U2Q9EfKsVwT6lX3Uf0bYOOm4b1sNV3jStgYAb9d92BS5HlNPbIvF/XGnCb/R85xuDKifCCsBQ73pL
-	mTkmGZntm3UnruUtBZF9u1ysHxq/oGDsNXTrL0/z18R5BB7P7Tb8xu5n4XFT+Q+78+weifpWxksYQ
-	RBV5wO+zQk8zWNjrdZKfG1UNuPlELN2M4J0NSSvBSQRG3O4QpwbjzyGYgOr98zlbWXD2SZ1OhBBRC
-	Z6YyQUApuPd6i0UDI15E2gzROtPnSitXNw7sLtiUX05TemVwtK7x7w7zc9Lcd67KIC4qb+Vl8vyYw
-	FKAYSbVIw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b6zDd/aCfud7yHgYRFRLton6d6fcihLsRKOh/bt/Y2I=; b=p2Vlw+BSGTSZdS
+	FmwaYCeJp8z8dVMqcbJHMQ318wA7qko7Pnc08Zd59fPiCH5cWGPw6K7RpOZ7NMEN/CUhkzWRtGVtO
+	JY6gkQY+r/zSpgByB1+4McRGbJGB8aU7s7RGXyksbdF4chITMSgAgD3qaTdKk8hlOxBLvegM1VCzU
+	1iFB/ykExZt7LrlpouQUM5msx+8d6ibuJ7GXLGxJRC3FBd0Lx0fzr0Q8NFU9wagcnlkZcOzKIo7zw
+	aqDgE4zfvT8c3B/NmTOzs4nNAX4xE5PxGGHIA6+nPjOF39fBpQ48T2P3mAwD/3YGWZLkHrCs+ss+t
+	MJ6C4islFGEc2wEAZDMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRYt-0004eB-Ci; Thu, 12 Mar 2020 17:23:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRYg-0004dP-DC
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:23:47 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C6342067C;
- Thu, 12 Mar 2020 17:23:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584033825;
- bh=iqV0woTK+1QbFs1jWfR/8C8FIBB4oluJrGxTmnqVE60=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=gswYtdvMC1EGaa0AsecLAx8y70uxeabXgKreyJqKoprJOJYs1nQk7+t7R1FdYw25q
- Br7LSwcTwvVc7fbBtGBF35dvgBru7G5ce1cwtn5GTM94/11qSKcRsHljB0m6hqeCR2
- T75uS+dsBc59atUIi9qGDfFSezinHb2K8xUT7WRU=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jCRYd-00CHKE-NI; Thu, 12 Mar 2020 17:23:43 +0000
+	id 1jCRb8-0006Jp-C8; Thu, 12 Mar 2020 17:26:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCRb2-0006JS-Rs
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:26:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7D56A30E;
+ Thu, 12 Mar 2020 10:26:10 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C107D3F6CF;
+ Thu, 12 Mar 2020 10:26:08 -0700 (PDT)
+Subject: Re: [PATCH v6 00/18] arm64: return address signing
+To: Marc Zyngier <maz@kernel.org>, Amit Kachhap <amit.kachhap@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
+ <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
+ <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
+ <b5ca043cfaca30435957974d0f58524e@kernel.org>
+ <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
+ <c5889c07a559426798ed508da5755d9e@kernel.org>
+From: James Morse <james.morse@arm.com>
+Message-ID: <bd76de32-12c5-fcbe-25d2-c501f9491bee@arm.com>
+Date: Thu, 12 Mar 2020 17:26:06 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Date: Thu, 12 Mar 2020 17:23:43 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Auger Eric <eric.auger@redhat.com>
-Subject: Re: [PATCH v5 01/23] irqchip/gic-v3: Use SGIs without active state if
- offered
-In-Reply-To: <1fa8ab2f-6766-9dc1-53a6-9cead19a5a7b@redhat.com>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-2-maz@kernel.org>
- <1fa8ab2f-6766-9dc1-53a6-9cead19a5a7b@redhat.com>
-Message-ID: <0f3c1c819a98deb77261e89eefa10e3f@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: eric.auger@redhat.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
- linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com, jason@lakedaemon.net,
- rrichter@marvell.com, tglx@linutronix.de, yuzenghui@huawei.com,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <c5889c07a559426798ed508da5755d9e@kernel.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_102346_465810_E11EFBDD 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200312_102612_989689_F4633DBE 
+X-CRM114-Status: GOOD (  18.56  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +69,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Eric,
+Hi Amit, Marc,
 
-On 2020-03-12 17:16, Auger Eric wrote:
-> Hi Marc,
+On 12/03/2020 15:05, Marc Zyngier wrote:
+> On 2020-03-12 13:21, Amit Kachhap wrote:
+>> On 3/12/20 6:17 PM, Marc Zyngier wrote:
+>>> On 2020-03-12 08:06, Amit Kachhap wrote:
+>>>> On 3/12/20 12:23 PM, Amit Kachhap wrote:
+>>>>> On 3/11/20 2:58 PM, James Morse wrote:
+>>>>>> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+>>>>>>> This series improves function return address protection for the arm64 kernel, by
+>>>>>>> compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
+>>>>>>> ptrauth hereafter). This should help protect the kernel against attacks using
+>>>>>>> return-oriented programming.
+>>>>>>
+>>>>>> (as it looks like there may be another version of this:)
+>>>>>>
+>>>>>> Am I right in thinking that after your patch 10 changing
+>>>>>> cpu_switch_to(), only the A key is live during kernel execution?
+>>>>>
+>>>>> Yes
 
-[...]
+>>>>>> KVM is still save/restoring 4 extra keys around guest-entry/exit. As you
+>>>>>> restore all the keys on return to user-space, is this still necessary?
+>>>>>
+>>>>> Yes Its a good optimization to skip 4 non-A keys. I was wondering whether to do it in
+>>>>> this series or send it separately.
+>>>>
+>>>> I suppose we can only skip non-A keys save/restore for host context. If
+>>>> we skip non-A keys for guest context then guest with old implementation
+>>>> will break. Let me know your opinion.
+>>>
+>>> I don't think you can skip anything as far as the guest is concerned.
+>>> But being able to skip the B keys (which is what I expect you call the
+>>> non-A keys) on the host would certainly be useful.
 
->> diff --git a/include/linux/irqchip/arm-gic-v3.h 
->> b/include/linux/irqchip/arm-gic-v3.h
->> index 83439bfb6c5b..c29a02678a6f 100644
->> --- a/include/linux/irqchip/arm-gic-v3.h
->> +++ b/include/linux/irqchip/arm-gic-v3.h
->> @@ -57,6 +57,7 @@
->>  #define GICD_SPENDSGIR			0x0F20
->> 
->>  #define GICD_CTLR_RWP			(1U << 31)
->> +#define GICD_CTLR_nASSGIreq		(1U << 8)
-> I am not able to find this bit in Arm IHI 0069F (ID022020)
-> same for the bit in GICD_TYPER. Do we still miss part of the spec?
+> But if KVM doesn't save/restore the host's B-keys in the world switch,
+> then you must make sure that no host userspace can make use of them,
+> as they would be the guest's keys.
 
-See my response to Zenghui (TL;DR: this addition to the spec missed the
-cut-off for revision F and will be added in the next round).
+Yes, the arch code entry.S changes cover this with ptrauth_keys_install_user. It restores
+4 keys, and the generic key.
+
+
+We always need to save/restore all the guest keys (as we do today).
+But when ptrauth_restore_state restores the host keys, it only needs to restore the one
+the kernel uses. (possibly using the same macro's so it stays up to date?!)
+
+If we return to user-space, the arch code's entry code does the right thing.
+KVM's user-space peeking at the keys will see the saved values.
+
+
+My original question was more around: do we need to do this now, or can we clean it up in
+a later kernel version?
+
+(and a sanity check that it doesn't lead to a correctness problem)
+
+
 
 Thanks,
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
