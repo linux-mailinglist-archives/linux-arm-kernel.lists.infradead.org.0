@@ -2,82 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 494F1183038
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:29:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96B03183051
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 13:35:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S0FYD87PyXR569SUhAUeghc6QbK5ilof2BaPBAz3xwM=; b=ija7mJyNwgPKXp
-	KJfVK93Ja9FjIvwS0vHuongwZfOudLs+rIaXzIkcp1Y687Jq4Eo+5u7gzeL8xLi2UuKuONzuQ6QFm
-	5rJpbUfieAN38GjLpde5y289AA8Mk2HzoHKHSrXSd+Y/H4rGpVOnjJYX2a1SF7H2Tpki7lJM7fnKW
-	xvt5uF7c2dCRdAwJk8CCl/E04ZYi+OsNcPFnITYS0XR9r8ykhkcJSjc5HPTsohayZPZQ4QfVHO5CO
-	q6dj2R0tiH6Yj6nxWVgyp5+ly7CeV4qWX41ljjwunjKGIqkJhM3DbH4z9qizjUOGp7HmTW5wSFzQ7
-	8JJa9pMCWfasFD6/2k4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=l3L+hBcVgsF0Ifmaq1rpFbAsqV6kk/6fpOw1rIFwh30=; b=MSvVs8aZnOb0e+
+	BuCLsNtxiTLHAbBjGF65k+qgyqRXPB/n0OSQScQ2yUVr4KkPWo7dVZX3Z/koGF2cA+HjrdAxgKwvz
+	qDBtZAf6YighGNPAFNHCnavbCtBqTBGRg+38ktSFwSexWetZRhGT6roFU7JeT7CX+I82Ue7TFquMi
+	zJx9eLH3ubPYxVWOb2dodwrhS06w/7q110IE652OJIUAGzE/n3KPsnhpMtX3UqmmTxbegk/wAG9b0
+	Jk1wQ3v4maQqTbDWG9XVqBRVmudV3feG5lgyX81IzDwB9o5bkBEeSzn19W3Kp3kW8WzmkQFLj2rr4
+	gkfBb61X1VKC4NmMLrQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCMxw-0006NV-At; Thu, 12 Mar 2020 12:29:32 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jCN3U-0000xq-EP; Thu, 12 Mar 2020 12:35:16 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCMxn-0006Mc-NE
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:29:25 +0000
-Received: by mail-ot1-f66.google.com with SMTP id k26so5984216otr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 05:29:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zjFcVOAemnoKsr2cIZIjqhkKv+6KDzTh2mCpNYwVHFw=;
- b=VsU/K+YXyuIQxpGl7TFNz8RtERiGsHZrc36/Y4g8K9XiAupZk+sbxarspZTk7gBwq/
- UHtGqfx/GQ22R2Ijv2SrU8U8nWEoPbID9jk4UUqcWOrFpGKHPDb5aaj1ZnELLU1mvtGR
- nVth/i/8ySbVyvmc9fjWNCCdTm6BuifljMQJBr9i4FEl1/+keLkSD/vn2KteUoG+URER
- KuY8S6TNsHrKArj/Qd0w+AohyUAHIkjmviJRzhJxjMUMS1EnSZBZIWjGh776bh0MW3sW
- ZLp90yviPt56QkFMvKybejcMLNeTg6nLkes98jNy0DuKe+8GBDUAJ9QBqwhGguPVMaFC
- xCRA==
-X-Gm-Message-State: ANhLgQ2DpC9hqNX+SKozJgfTsN0XFWqEaTPJ1cONVKLQ4osy2TTuMeSp
- I9OOF/ZoeSYYkYudwSLTmBhgwsZzBCGX4HFQc24=
-X-Google-Smtp-Source: ADFU+vucH2ks+fpvX4BNhVKQ3S6LjZbVYW6W1MizjhNyTjKcraAwX6o5NYlfrTlM4Dx4g8mOMmj4P3VTBGu0rNdkPKs=
-X-Received: by 2002:a4a:e211:: with SMTP id b17mr3815296oot.79.1584016162158; 
- Thu, 12 Mar 2020 05:29:22 -0700 (PDT)
+ id 1jCN39-0000uk-LF
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 12:34:57 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 12 Mar 2020 05:34:53 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,544,1574150400"; d="scan'208";a="442034201"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga005.fm.intel.com with ESMTP; 12 Mar 2020 05:34:52 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jCN35-000ByG-LA; Thu, 12 Mar 2020 20:34:51 +0800
+Date: Thu, 12 Mar 2020 20:33:51 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Russell King <rmk+kernel@arm.linux.org.uk>
+Subject: [arm:clearfog 9/10] drivers/pci/pci-bridge-emul.c:278:33: sparse:
+ sparse: incorrect type in assignment (different base types)
+Message-ID: <202003122049.MO6Ygh4l%lkp@intel.com>
 MIME-Version: 1.0
-References: <CGME20200225144815eucas1p1229ceb0d017b46cbbe2409639a7c1f83@eucas1p1.samsung.com>
- <20200225144749.19815-1-geert+renesas@glider.be>
- <e249c123-8d00-4aa3-34b8-f82d52428966@samsung.com>
- <20200226174905.GE25745@shell.armlinux.org.uk>
- <CAMuHMdW1ojYyWXZpzgiy8PrZnR2PQ9n3SEDrQ7hFFUg0j-jegg@mail.gmail.com>
- <20200226175723.GF25745@shell.armlinux.org.uk>
- <CAMuHMdV9VyS3kBnhFT-5ry_O-aRafq-8Yor0xxxnjGqNQiSgZw@mail.gmail.com>
- <f30208dc-e74a-cae7-95e6-d99220d9735c@samsung.com>
-In-Reply-To: <f30208dc-e74a-cae7-95e6-d99220d9735c@samsung.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 12 Mar 2020 13:29:11 +0100
-Message-ID: <CAMuHMdV=A-ObmHCsSQgbGCm=QxZ==3vSpFg3OMp-o0Aq=N3w6Q@mail.gmail.com>
-Subject: Re: [PATCH] ARM: boot: Fix ATAGs with appended DTB
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_052923_756342_2FA44C4B 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200312_053455_767819_9EE8F4A0 
+X-CRM114-Status: GOOD (  10.26  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [134.134.136.24 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,69 +71,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- Nicolas Pitre <nico@fluxnic.net>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek,
+tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git clearfog
+head:   60358028cb7ae864f9ea84eac86804c92f623951
+commit: ba8248ab8ce8c1c3e68d176e608490205d0ee5d0 [9/10] mvebu/clearfog pcie updates
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-174-g094d5a94-dirty
+        git checkout ba8248ab8ce8c1c3e68d176e608490205d0ee5d0
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
 
-On Thu, Mar 12, 2020 at 1:23 PM Marek Szyprowski
-<m.szyprowski@samsung.com> wrote:
-> On 26.02.2020 21:48, Geert Uytterhoeven wrote:
-> > On Wed, Feb 26, 2020 at 6:57 PM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> >> On Wed, Feb 26, 2020 at 06:56:06PM +0100, Geert Uytterhoeven wrote:
-> >>> On Wed, Feb 26, 2020 at 6:49 PM Russell King - ARM Linux admin
-> >>> <linux@armlinux.org.uk> wrote:
-> >>>> On Wed, Feb 26, 2020 at 07:35:14AM +0100, Marek Szyprowski wrote:
-> >>>>> On 25.02.2020 15:47, Geert Uytterhoeven wrote:
-> >>>>>> At early boot, register r8 may contain an ATAGs or DTB pointer.
-> >>>>>> When an appended DTB is found, its address is stored in r8, for
-> >>>>>> extraction of the RAM base address later.
-> >>>>>>
-> >>>>>> However, if r8 contained an ATAGs pointer before, that pointer will be
-> >>>>>> lost, and the provided ATAGs is no longer folded into the provided DTB.
-> >>>>>>
-> >>>>>> Fix this by leaving r8 untouched.
-> >>>>>>
-> >>>>>> Fixes: 137e522593918be2 ("ARM: 8960/1: boot: Obtain start of physical memory from DTB")
-> >>>>>> Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> >>>>>> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> >>>> The original commit hasn't been submitted, so it can be fixed before it
-> >>>> hits mainline if you want.  Let me know what you want to do.  Thanks.
-> >>> Fixing the original is fine for me, of course.
-> >>> Thanks!
-> >> Please submit a replacement for 8960/1, thanks.
-> > Done.
->
-> Gentle ping. This fix is still not present in linux-next for over 2 weeks...
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-According to
-https://www.arm.linux.org.uk/developer/patches/viewpatch.php?id=8963
-the fixed version was applied less than one hour ago.
 
-It's now part of arm/for-next.
+sparse warnings: (new ones prefixed by >>)
 
-Gr{oetje,eeting}s,
+>> drivers/pci/pci-bridge-emul.c:278:33: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted __le16 [usertype] bridgectrl @@    got e] bridgectrl @@
+   drivers/pci/pci-bridge-emul.c:278:33: sparse:    expected restricted __le16 [usertype] bridgectrl
+   drivers/pci/pci-bridge-emul.c:278:33: sparse:    got int
 
-                        Geert
+vim +278 drivers/pci/pci-bridge-emul.c
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+   263	
+   264	/*
+   265	 * Initialize a pci_bridge_emul structure to represent a fake PCI
+   266	 * bridge configuration space. The caller needs to have initialized
+   267	 * the PCI configuration space with whatever values make sense
+   268	 * (typically at least vendor, device, revision), the ->ops pointer,
+   269	 * and optionally ->data and ->has_pcie.
+   270	 */
+   271	int pci_bridge_emul_init(struct pci_bridge_emul *bridge,
+   272				 unsigned int flags)
+   273	{
+   274		bridge->conf.class_revision |= cpu_to_le32(PCI_CLASS_BRIDGE_PCI << 16);
+   275		bridge->conf.header_type = PCI_HEADER_TYPE_BRIDGE;
+   276		bridge->conf.cache_line_size = 0x10;
+   277		bridge->conf.status = cpu_to_le16(PCI_STATUS_CAP_LIST);
+ > 278		bridge->conf.bridgectrl = PCI_BRIDGE_CTL_SERR;
+   279		bridge->pci_regs_behavior = kmemdup(pci_regs_behavior,
+   280						    sizeof(pci_regs_behavior),
+   281						    GFP_KERNEL);
+   282		if (!bridge->pci_regs_behavior)
+   283			return -ENOMEM;
+   284	
+   285		if (bridge->has_pcie) {
+   286			bridge->conf.capabilities_pointer = PCI_CAP_PCIE_START;
+   287			bridge->pcie_conf.cap_id = PCI_CAP_ID_EXP;
+   288			/* Set PCIe v2, root port, slot support */
+   289			bridge->pcie_conf.cap =
+   290				cpu_to_le16(PCI_EXP_TYPE_ROOT_PORT << 4 | 2 |
+   291					    PCI_EXP_FLAGS_SLOT);
+   292			bridge->pcie_cap_regs_behavior =
+   293				kmemdup(pcie_cap_regs_behavior,
+   294					sizeof(pcie_cap_regs_behavior),
+   295					GFP_KERNEL);
+   296			if (!bridge->pcie_cap_regs_behavior) {
+   297				kfree(bridge->pci_regs_behavior);
+   298				return -ENOMEM;
+   299			}
+   300		}
+   301	
+   302		if (flags & PCI_BRIDGE_EMUL_NO_PREFETCHABLE_BAR) {
+   303			bridge->pci_regs_behavior[PCI_PREF_MEMORY_BASE / 4].ro = ~0;
+   304			bridge->pci_regs_behavior[PCI_PREF_MEMORY_BASE / 4].rw = 0;
+   305		}
+   306	
+   307		return 0;
+   308	}
+   309	
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
