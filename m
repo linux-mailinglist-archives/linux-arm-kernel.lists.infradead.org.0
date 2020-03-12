@@ -2,65 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C03061826C0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 02:44:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6921826C6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 02:45:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=23VSK7T3/9XuOtXwVq4gfWzvIVjAa7csIypaTh3ew5M=; b=BbeRdcZxMMC3mNQadUYji2MxA
-	whYyH6QRjKrxJ+9vnMDtxGnzwcB9PckYExuQk+wr8LNjQCm6Kkr/+CiuC7n95WBE23sf7ZnD8KHtB
-	HLqQ16LtuXDe0WxgX4ypBpKK00exJtl5RVrUJGUsUtu3clECfmIW9dJU9iLRiY+9IIh2MMl5r2Cz1
-	D6Q2FCvMr8dGGPCYdnt7BUdSo9kgjVgPNoqbr67/ZNahXb1vXpZluGV/rRb1yHKIB7BlBEtfPjMuH
-	TvvEzUP3j7ESTEFKWpXZA+nd/UjjETM55aMphVq6rPOYC9KRhr/zdQ6PP/ya0NpkKhoxAiPk41j6g
-	jvsUCRXKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7HytDn0KoyxqKBArnnHmJbAUdSd6BFm5HWQt26s0Rbg=; b=pJWN3JgMJIrThV
+	dY5ngwOlLTbYg/I5lkdxyw7FodZait0NLJKEZdf7YN3WU0Zil9UfEICxHYGfNdSJZr1/k2jA1zKba
+	O5uWZMfUOrUMsgVYj5PGRLPXiszG29xA8Hw51Y5tMLLUegZhiRTY+PscHqIhxRvhxmy4s+uzCwH3w
+	rXepWbh7mIlhmPynuyMUDCpW0rATnJOHS8I/FwB1/8pvqFB73H9YBuRKR0JgJ9Ze5yLAzS6h86caO
+	sOFZ9sU9jGe6pTajBIJbjdsBPNmVc46w72yyYetHGD+epHy8eVKsjppdO0mOTHkVOEVXLtgH6njW2
+	2ihF1yfXlgujia7Zpi4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCCtk-0004bM-NS; Thu, 12 Mar 2020 01:44:32 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1jCCv2-0006LR-J4; Thu, 12 Mar 2020 01:45:52 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCCtd-0004aq-FC
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 01:44:26 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 11 Mar 2020 18:44:24 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,543,1574150400"; d="scan'208";a="443763768"
-Received: from blu2-mobl3.ccr.corp.intel.com (HELO [10.254.208.137])
- ([10.254.208.137])
- by fmsmga006.fm.intel.com with ESMTP; 11 Mar 2020 18:44:18 -0700
-Subject: Re: [PATCH v2 08/11] iommu/vt-d: Use pci_ats_supported()
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>, bhelgaas@google.com,
- will@kernel.org, robh+dt@kernel.org, joro@8bytes.org, sudeep.holla@arm.com,
- linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org
-References: <20200311124506.208376-1-jean-philippe@linaro.org>
- <20200311124506.208376-9-jean-philippe@linaro.org>
-From: Lu Baolu <baolu.lu@linux.intel.com>
-Message-ID: <7019230c-3c56-e6db-6704-d73f23fa39b5@linux.intel.com>
-Date: Thu, 12 Mar 2020 09:44:16 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jCCut-0006KG-RP
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 01:45:45 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 9DD712E01B64EC9C1957;
+ Thu, 12 Mar 2020 09:45:36 +0800 (CST)
+Received: from [127.0.0.1] (10.173.221.230) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
+ Thu, 12 Mar 2020 09:45:26 +0800
+Subject: Re: [RFC] KVM: arm64: support enabling dirty log graually in small
+ chunks
+To: "Zhoujian (jay)" <jianjay.zhou@huawei.com>, Marc Zyngier <maz@kernel.org>
+References: <20200309085727.1106-1-zhukeqian1@huawei.com>
+ <4b85699ec1d354cc73f5302560231f86@misterjones.org>
+ <64925c8b-af3d-beb5-bc9b-66ef1e47f92d@huawei.com>
+ <a642a79ea9190542a9098e4c9dc5a9f2@kernel.org>
+ <9ddefc54-dd5b-0555-0aaa-00a3a23febcf@huawei.com>
+ <B2D15215269B544CADD246097EACE7474BB64495@DGGEMM528-MBX.china.huawei.com>
+From: zhukeqian <zhukeqian1@huawei.com>
+Message-ID: <3238d495-8c13-4fbb-8e3d-c34e560ec9af@huawei.com>
+Date: Thu, 12 Mar 2020 09:45:25 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-In-Reply-To: <20200311124506.208376-9-jean-philippe@linaro.org>
-Content-Language: en-US
+In-Reply-To: <B2D15215269B544CADD246097EACE7474BB64495@DGGEMM528-MBX.china.huawei.com>
+X-Originating-IP: [10.173.221.230]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_184425_523328_477B4316 
-X-CRM114-Status: GOOD (  16.75  )
+X-CRM114-CacheID: sfid-20200311_184544_062581_E13238CA 
+X-CRM114-Status: GOOD (  14.50  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,60 +70,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, frowand.list@gmail.com,
- corbet@lwn.net, rjw@rjwysocki.net, amurray@thegoodpenguin.co.uk,
- liviu.dudau@arm.com, guohanjun@huawei.com, lenb@kernel.org,
- robin.murphy@arm.com, dwmw2@infradead.org, baolu.lu@linux.intel.com
+Cc: "Huangweidong \(C\)" <weidong.huang@huawei.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ "wangxin \(U\)" <wangxinxin.wang@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean,
+Hi Jay,
 
-On 2020/3/11 20:45, Jean-Philippe Brucker wrote:
-> The pci_ats_supported() function checks if a device supports ATS and is
-> allowed to use it.
+On 2020/3/11 15:34, Zhoujian (jay) wrote:
 > 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> ---
->   drivers/iommu/intel-iommu.c | 9 +++------
->   1 file changed, 3 insertions(+), 6 deletions(-)
 > 
-> diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-> index 6fa6de2b6ad5..17208280ef5c 100644
-> --- a/drivers/iommu/intel-iommu.c
-> +++ b/drivers/iommu/intel-iommu.c
-> @@ -1454,8 +1454,7 @@ static void iommu_enable_dev_iotlb(struct device_domain_info *info)
->   	    !pci_reset_pri(pdev) && !pci_enable_pri(pdev, 32))
->   		info->pri_enabled = 1;
->   #endif
-> -	if (!pdev->untrusted && info->ats_supported &&
-> -	    pci_ats_page_aligned(pdev) &&
-> +	if (info->ats_supported && pci_ats_page_aligned(pdev) &&
->   	    !pci_enable_ats(pdev, VTD_PAGE_SHIFT)) {
->   		info->ats_enabled = 1;
->   		domain_update_iotlb(info->domain);
-> @@ -2611,10 +2610,8 @@ static struct dmar_domain *dmar_insert_one_dev_info(struct intel_iommu *iommu,
->   	if (dev && dev_is_pci(dev)) {
->   		struct pci_dev *pdev = to_pci_dev(info->dev);
->   
-> -		if (!pdev->untrusted &&
-> -		    !pci_ats_disabled() &&
+>> -----Original Message-----
+>> From: zhukeqian
+>> Sent: Wednesday, March 11, 2020 3:20 PM
+>> To: Marc Zyngier <maz@kernel.org>
+>> Cc: kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org;
+>> linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; Zhoujian (jay)
+>> <jianjay.zhou@huawei.com>; Sean Christopherson
+>> <sean.j.christopherson@intel.com>; Paolo Bonzini <pbonzini@redhat.com>;
+>> James Morse <james.morse@arm.com>; Julien Thierry
+>> <julien.thierry.kdev@gmail.com>; Suzuki K Poulose <suzuki.poulose@arm.com>
+>> Subject: Re: [RFC] KVM: arm64: support enabling dirty log graually in small chunks
+>>
+>> Hi Marc,
+>>
+>> On 2020/3/10 21:16, Marc Zyngier wrote:
+>>> On 2020-03-10 08:26, zhukeqian wrote:
+>>>> Hi Marc,
+>>>>
+>>>> On 2020/3/9 19:45, Marc Zyngier wrote:
+>>>>> Kegian,
+>>>
+>>> [...]
+>>>
+>>>>> Is there a userspace counterpart to it?
+>>>>>
+>>>> As this KVM/x86 related changes have not been merged to mainline
+>>>> kernel, some little modification is needed on mainline Qemu.
+>>>
+>>> Could you please point me to these changes?
+>> I made some changes locally listed below.
+>>
+>> However, Qemu can choose to enable KVM_DIRTY_LOG_INITIALLY_SET or not.
+>> Here I made no judgement on dirty_log_manual_caps because I just want to
+>> verify the optimization of this patch.
+>>
+>> diff --git a/accel/kvm/kvm-all.c b/accel/kvm/kvm-all.c index
+>> 439a4efe52..1611f644a4 100644
+>> --- a/accel/kvm/kvm-all.c
+>> +++ b/accel/kvm/kvm-all.c
+>> @@ -2007,14 +2007,16 @@ static int kvm_init(MachineState *ms)
+>>      s->coalesced_pio = s->coalesced_mmio &&
+>>                         kvm_check_extension(s,
+>> KVM_CAP_COALESCED_PIO);
+>>
+>> -    s->manual_dirty_log_protect =
+>> +    uint64_t dirty_log_manual_caps =
+>>          kvm_check_extension(s,
+>> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2);
+>> -    if (s->manual_dirty_log_protect) {
+>> -        ret = kvm_vm_enable_cap(s,
+>> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0, 1);
+>> +    if (dirty_log_manual_caps) {
+>> +        ret = kvm_vm_enable_cap(s,
+>> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0,
+>> +                                dirty_log_manual_caps);
+>>          if (ret) {
+>>              warn_report("Trying to enable
+>> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 "
+>>                          "but failed.  Falling back to the legacy mode. ");
+>> -            s->manual_dirty_log_protect = false;
+>> +        } else {
+>> +            s->manual_dirty_log_protect = true;
+>>          }
+>>      }
+> 
+> FYI: I had submitted a patch to the Qemu community some days ago:
+> https://patchwork.kernel.org/patch/11419191/
+This is very helpful, thanks.
+> 
+>>>
+>>>> As I tested this patch on a 128GB RAM Linux VM with no huge pages,
+>>>> the time of enabling dirty log will decrease obviously.
+>>>
+>>> I'm not sure how realistic that is. Not having huge pages tends to
+>>> lead to pretty bad performance in general...
+>> Sure, this has no effect on guests which are all of huge pages.
+>>
+>> For my understanding, once a guest has normal pages (maybe are initialized at
+>> beginning or dissloved from huge pages), it can benefit from this patch.
+> 
+> Yes, I agree.
+> 
+I will send PATCH v1 soon.
+> 
+> 
+> Regards,
+> Jay Zhou
+> 
+> .
+>
+Thanks,
+Keqian
 
-The pci_ats_disabled() couldn't be replaced by pci_ats_supported(). Even
-pci_ats_supported() returns true, user still can disable it. Or move
-ats_disabled into pci_ats_supported()?
-
-Best regards,
-baolu
-
-> -		    ecap_dev_iotlb_support(iommu->ecap) &&
-> -		    pci_find_ext_capability(pdev, PCI_EXT_CAP_ID_ATS) &&
-> +		if (ecap_dev_iotlb_support(iommu->ecap) &&
-> +		    pci_ats_supported(pdev) &&
->   		    dmar_find_matched_atsr_unit(pdev))
->   			info->ats_supported = 1;
 
 _______________________________________________
 linux-arm-kernel mailing list
