@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA03C1837DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A36C1837DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:40:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=l82qGUso/is3pX0qql+svdxtMh6BtPq/GbZjEmHM9Dc=; b=Hdo
-	qGZfDzm5XZv2YakKCs1zl8w+Fi0Xg0f48UVEQxpWnYH2mgp3vQs44GIP+deErl3V8DcZbIuLTEKC9
-	w2pZmWjBXpH9S2vksM3KziExP1ysZpOEet0e7sfb5RTzWHFTSUFIqtaOdMvMDlZk5EreABWaoGHjw
-	JnTpLb8l4+MC3ngck7jDPJ6WTmlSO+hLtbTrYwLKNEMY+AfIWEyAmLIeI/dKVvGvZ+atJQ/RdWiUi
-	kW4Xp+snN8NXWHc35iJ3gWobZ1wO6OMyFnh9PG2IEG2x4tsAhI+BYfr4bffeYjFaopmHuodHXC+mE
-	IeSYs1xQUpGdjN3WMIO0SMp4s31s+lA==;
+	References:List-Owner; bh=jXpL5ACRmb8gA85Y/5tKcUbNZeCWMEVO1+vuvSSg0jY=; b=gsN
+	q1zfjFXtE7Yj5Cd3Ec7urN2hgdeoQgKY9Uhf4xcNSrD7VIOMQ4rNhv0G3M/KyMQA5btB/UzSA/noz
+	tt/SwGWgEB8Papi8eiJLwPVMzf6yK8J/BD3Eq17vycDSrxhPGAbTLPMg3ELHrnzKcSlnMBZnpfH+Y
+	V+4gkhZ3bL9Q0Ozg52nNTbxvEQLjgq5jPs9OpfXokQ94dCiNnMn2Dy1eHgmWgLIg/JU571ASFnaAj
+	XTjGup3SbsRVcQovHSkEfEsObtAtzTS6LUyM9XaHCle/47aLjiy/PhnZHGQFej7XBxB00kas82mkG
+	t8bOtAOOKmRGWqDna/X+O/dbMQhkRwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRol-0004KJ-DG; Thu, 12 Mar 2020 17:40:23 +0000
+	id 1jCRp1-0005w5-Lp; Thu, 12 Mar 2020 17:40:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRnc-0003UP-1H; Thu, 12 Mar 2020 17:39:13 +0000
+ id 1jCRng-0003ZJ-OR; Thu, 12 Mar 2020 17:39:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1AC03FEC;
- Thu, 12 Mar 2020 10:39:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 79E0530E;
+ Thu, 12 Mar 2020 10:39:15 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 931EE3F6CF;
- Thu, 12 Mar 2020 10:39:10 -0700 (PDT)
-Date: Thu, 12 Mar 2020 17:39:09 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F293F3F6CF;
+ Thu, 12 Mar 2020 10:39:14 -0700 (PDT)
+Date: Thu, 12 Mar 2020 17:39:13 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Applied "spi: meson-spicc: setup IO line delay" to the spi tree
-In-Reply-To: <20200312133131.26430-7-narmstrong@baylibre.com>
-Message-Id: <applied-20200312133131.26430-7-narmstrong@baylibre.com>
+Subject: Applied "spi: meson-spicc: add min sclk for each compatible" to the
+ spi tree
+In-Reply-To: <20200312133131.26430-6-narmstrong@baylibre.com>
+Message-Id: <applied-20200312133131.26430-6-narmstrong@baylibre.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103912_188001_BBB7DFF9 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20200312_103916_955378_85FF1FE0 
+X-CRM114-Status: GOOD (  15.93  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -72,7 +73,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: meson-spicc: setup IO line delay
+   spi: meson-spicc: add min sclk for each compatible
 
 has been applied to the spi tree at
 
@@ -97,107 +98,57 @@ to this mail.
 Thanks,
 Mark
 
-From f27bff479ea3de9ca325d4f8e8c8b49a87d6b0c5 Mon Sep 17 00:00:00 2001
+From 8791068dab979819e01f41736953b9b2e462867b Mon Sep 17 00:00:00 2001
 From: Neil Armstrong <narmstrong@baylibre.com>
-Date: Thu, 12 Mar 2020 14:31:28 +0100
-Subject: [PATCH] spi: meson-spicc: setup IO line delay
+Date: Thu, 12 Mar 2020 14:31:27 +0100
+Subject: [PATCH] spi: meson-spicc: add min sclk for each compatible
 
-Now the controller can support frequencies higher than 30MHz, we need
-the setup the I/O line delays in regard of the SPI clock frequency.
+The G12A SPICC controller variant takes the source clock from a specific
+clock instead of the bus clock.
+The minimal clock calculus won't work with the G12A support, thus add the
+minimal supported clock for each variant and pass this to the SPI core.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Link: https://lore.kernel.org/r/20200312133131.26430-7-narmstrong@baylibre.com
+Link: https://lore.kernel.org/r/20200312133131.26430-6-narmstrong@baylibre.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-meson-spicc.c | 61 ++++++++++++++++++++++++++++++++++-
- 1 file changed, 60 insertions(+), 1 deletion(-)
+ drivers/spi/spi-meson-spicc.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/spi/spi-meson-spicc.c b/drivers/spi/spi-meson-spicc.c
-index b5bd3a897e8f..4494a791f4a7 100644
+index 710b4e780daa..b5bd3a897e8f 100644
 --- a/drivers/spi/spi-meson-spicc.c
 +++ b/drivers/spi/spi-meson-spicc.c
-@@ -106,7 +106,21 @@
- #define SPICC_SWAP_RO		BIT(14) /* RX FIFO Data Swap Read-Only */
- #define SPICC_SWAP_W1		BIT(15) /* RX FIFO Data Swap Write-Only */
- #define SPICC_DLYCTL_RO_MASK	GENMASK(20, 15) /* Delay Control Read-Only */
--#define SPICC_DLYCTL_W1_MASK	GENMASK(21, 16) /* Delay Control Write-Only */
-+#define SPICC_MO_DELAY_MASK	GENMASK(17, 16) /* Master Output Delay */
-+#define SPICC_MO_NO_DELAY	0
-+#define SPICC_MO_DELAY_1_CYCLE	1
-+#define SPICC_MO_DELAY_2_CYCLE	2
-+#define SPICC_MO_DELAY_3_CYCLE	3
-+#define SPICC_MI_DELAY_MASK	GENMASK(19, 18) /* Master Input Delay */
-+#define SPICC_MI_NO_DELAY	0
-+#define SPICC_MI_DELAY_1_CYCLE	1
-+#define SPICC_MI_DELAY_2_CYCLE	2
-+#define SPICC_MI_DELAY_3_CYCLE	3
-+#define SPICC_MI_CAP_DELAY_MASK	GENMASK(21, 20) /* Master Capture Delay */
-+#define SPICC_CAP_AHEAD_2_CYCLE	0
-+#define SPICC_CAP_AHEAD_1_CYCLE	1
-+#define SPICC_CAP_NO_DELAY	2
-+#define SPICC_CAP_DELAY_1_CYCLE	3
- #define SPICC_FIFORST_RO_MASK	GENMASK(22, 21) /* FIFO Softreset Read-Only */
- #define SPICC_FIFORST_W1_MASK	GENMASK(23, 22) /* FIFO Softreset Write-Only */
+@@ -132,6 +132,7 @@
  
-@@ -328,6 +342,49 @@ static irqreturn_t meson_spicc_irq(int irq, void *data)
- 	return IRQ_HANDLED;
- }
+ struct meson_spicc_data {
+ 	unsigned int			max_speed_hz;
++	unsigned int			min_speed_hz;
+ 	bool				has_oen;
+ 	bool				has_enhance_clk_div;
+ };
+@@ -685,7 +686,7 @@ static int meson_spicc_probe(struct platform_device *pdev)
+ 				     SPI_BPW_MASK(16) |
+ 				     SPI_BPW_MASK(8);
+ 	master->flags = (SPI_MASTER_MUST_RX | SPI_MASTER_MUST_TX);
+-	master->min_speed_hz = rate >> 9;
++	master->min_speed_hz = spicc->data->min_speed_hz;
+ 	master->setup = meson_spicc_setup;
+ 	master->cleanup = meson_spicc_cleanup;
+ 	master->prepare_message = meson_spicc_prepare_message;
+@@ -736,10 +737,12 @@ static int meson_spicc_remove(struct platform_device *pdev)
  
-+static void meson_spicc_auto_io_delay(struct meson_spicc_device *spicc)
-+{
-+	u32 div, hz;
-+	u32 mi_delay, cap_delay;
-+	u32 conf;
-+
-+	if (spicc->data->has_enhance_clk_div) {
-+		div = FIELD_GET(SPICC_ENH_DATARATE_MASK,
-+				readl_relaxed(spicc->base + SPICC_ENH_CTL0));
-+		div++;
-+		div <<= 1;
-+	} else {
-+		div = FIELD_GET(SPICC_DATARATE_MASK,
-+				readl_relaxed(spicc->base + SPICC_CONREG));
-+		div += 2;
-+		div = 1 << div;
-+	}
-+
-+	mi_delay = SPICC_MI_NO_DELAY;
-+	cap_delay = SPICC_CAP_AHEAD_2_CYCLE;
-+	hz = clk_get_rate(spicc->clk);
-+
-+	if (hz >= 100000000)
-+		cap_delay = SPICC_CAP_DELAY_1_CYCLE;
-+	else if (hz >= 80000000)
-+		cap_delay = SPICC_CAP_NO_DELAY;
-+	else if (hz >= 40000000)
-+		cap_delay = SPICC_CAP_AHEAD_1_CYCLE;
-+	else if (div >= 16)
-+		mi_delay = SPICC_MI_DELAY_3_CYCLE;
-+	else if (div >= 8)
-+		mi_delay = SPICC_MI_DELAY_2_CYCLE;
-+	else if (div >= 6)
-+		mi_delay = SPICC_MI_DELAY_1_CYCLE;
-+
-+	conf = readl_relaxed(spicc->base + SPICC_TESTREG);
-+	conf &= ~(SPICC_MO_DELAY_MASK | SPICC_MI_DELAY_MASK
-+		  | SPICC_MI_CAP_DELAY_MASK);
-+	conf |= FIELD_PREP(SPICC_MI_DELAY_MASK, mi_delay);
-+	conf |= FIELD_PREP(SPICC_MI_CAP_DELAY_MASK, cap_delay);
-+	writel_relaxed(conf, spicc->base + SPICC_TESTREG);
-+}
-+
- static void meson_spicc_setup_xfer(struct meson_spicc_device *spicc,
- 				   struct spi_transfer *xfer)
- {
-@@ -346,6 +403,8 @@ static void meson_spicc_setup_xfer(struct meson_spicc_device *spicc,
- 		writel_relaxed(conf, spicc->base + SPICC_CONREG);
+ static const struct meson_spicc_data meson_spicc_gx_data = {
+ 	.max_speed_hz		= 30000000,
++	.min_speed_hz		= 325000,
+ };
  
- 	clk_set_rate(spicc->clk, xfer->speed_hz);
-+
-+	meson_spicc_auto_io_delay(spicc);
- }
- 
- static int meson_spicc_transfer_one(struct spi_master *master,
+ static const struct meson_spicc_data meson_spicc_axg_data = {
+ 	.max_speed_hz		= 80000000,
++	.min_speed_hz		= 325000,
+ 	.has_oen		= true,
+ 	.has_enhance_clk_div	= true,
+ };
 -- 
 2.20.1
 
