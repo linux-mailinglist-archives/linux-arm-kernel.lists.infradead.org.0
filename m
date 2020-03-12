@@ -2,150 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C3FA182ED5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 12:18:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2335E182F59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 12:36:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RViaT9bI/xUWMUA8RYw4YJKqB8K4wMOclC8BiLaOnZg=; b=rNnFIecww9GfE2
-	6OgIwNIZHZcle+W/m3/DmwWff99KdCKH0xmi2DNc6GHYnaYMl3L4QeyDYGjB3cc3eKpGcD8/A3g5w
-	oBnbjKxsIdfG8/gpBoESto84x2mr2/sJeM16ngZztIJ87DPAfm/BzqBk3rFfI7IgLwbb8CplAgSZY
-	8t6Kfs1XR6fJoLTW8dpajM6tnlLXT/BA4kzSBgfsnVnp0o5xFEsc95qtV6G9GSH61SPYP96vrIrTA
-	fsHmRctvHm2Y6cFyVQf04ca6hLNa761CTYyiSHAQBBZHyohUFN8+Jq6sA+K4uGuDsN892OMjoEbib
-	UWFlBXx3cwjLZaHwSOVQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0kHKMDwV5Nd1/fpxVxWoKF+rPq2w7oaiqn0MH4kk6+I=; b=DaLTo2A2ttDeOb
+	EVjTwxw7NjXZu8NTWB0P+SYJ3uYnRlOqIFWTAK9ilYV+lJ5xyYg3LiAxn1tiEZj5CdnfHVVg0wUmu
+	+lTgfqxsrLoOtiuojkWJNPKVF0e8/qTVU4lzbuox4Uof80DTboKu8vCSm6H5aLdsTNhwoDi0JRY5T
+	9scQNm4MW8y0Oao4zi6AAdOdy1v37cgYeqsBv3tlX71MTxeIbaFMaB8nfk5pS3GQJVm05hcAuLPKT
+	PmnxiGD7kI0bdFNPvubFMGhTuNn4NEjqMN27tchzl0fVYWjGTLRdz4Cti+BhZfr8n+y2N18YVtKUG
+	6bIo+nZv5uYCsF97XV2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCLrO-0003WY-9x; Thu, 12 Mar 2020 11:18:42 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jCM8f-0003RR-45; Thu, 12 Mar 2020 11:36:33 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCLrG-0003WC-2h
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 11:18:35 +0000
-Received: by mail-wr1-x442.google.com with SMTP id a25so6941776wrd.0
+ id 1jCM8W-0003Qn-Ng
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 11:36:26 +0000
+Received: by mail-ed1-f68.google.com with SMTP id b23so7004375edx.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Mar 2020 04:18:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=PAtBEWkNOh5BdP8Bu8hZOuPZ1rcVZzdy14mW4FwwTe8=;
- b=ON6y0CbPLojWppVHGSbSOLFZ4LD9yOkSdCEWYDNT49XkJetkbU3D26Rfb1cr6A0mIX
- wPLcCxvf3s2fxISRh1lNv5X25Mai1Mc3Zdpa6eSo8iT8YtcZE/NKEygW8j2CauO8PDVr
- E36aMVJms1I8MpwSAXDgidoxiH76EMRBtsZgbhlS8l2d/wgyWAf391k504dF2/RhE6OU
- jBwWk+9a2pNiu7WpxWbfF0zCby5ItIUb/I2esdRGLbsXVEWVE1rx1DUEeNC6+u5glSLQ
- BcgRg8c5YP7XL7lQldlfdt3zMhfbb9UrXrtsJLziJZ3a7tMCRWeeSuyNKEaAnKB59/jD
- b1cg==
+ Thu, 12 Mar 2020 04:36:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=PAtBEWkNOh5BdP8Bu8hZOuPZ1rcVZzdy14mW4FwwTe8=;
- b=gh1BKLJHYhIrmJq49JcRtzp7b9YvPrtJ2KA4OAItUUjBPLY2pHLQs1TdDGBYifSo65
- f5nF2KKKOig9oqc6YlCXY6AO0mJvIZi4mBCp3S2GOjKzHarRTdfCx3T6bCBPsbJkqirR
- cUFNNgwDe7JZSjp/HrWpvepzFQ/X+rJ1cYca7gy64EFZVCVV31VT/p17DdcbtlwzXbjk
- t1m8QKds4OyG+TdJGaaRgd+qzt37duuUAuuEbg6yY6DoixIlsVgi+yu1UFt3B5c2XNtv
- k2gLXBqVpGEGpV06GhvMAYP+04NbjP4bXqnZwOvSLPsTHHxYtTRKCTVxUHcPhwrVUWh3
- rVbw==
-X-Gm-Message-State: ANhLgQ09O4PkhCRTMqU9PSmT/mPaPGF5CBy1xTVLbPeSSiv7rCt2IVeQ
- yzdzmy/bbKrwwtqqY4nNPMexog==
-X-Google-Smtp-Source: ADFU+vvkQkdjVBN1V4mDG2xlvhfCyoT71WrXUgF8B8GgicTA4ZSKEq5oQzAzIKNSXE/a6AqkDIhI4w==
-X-Received: by 2002:adf:ed86:: with SMTP id c6mr11084730wro.53.1584011912176; 
- Thu, 12 Mar 2020 04:18:32 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:3880:fdc2:ef6b:879f?
- ([2a01:e34:ed2f:f020:3880:fdc2:ef6b:879f])
- by smtp.googlemail.com with ESMTPSA id n1sm29876912wrj.77.2020.03.12.04.18.30
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 12 Mar 2020 04:18:31 -0700 (PDT)
-Subject: Re: [PATCH] thermal: imx: Remove unused includes
-To: Anson Huang <Anson.Huang@nxp.com>, rui.zhang@intel.com,
- amit.kucheria@verdurent.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <1583762668-12099-1-git-send-email-Anson.Huang@nxp.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <7f06031d-b4ee-009d-a294-fdde6c95e898@linaro.org>
-Date: Thu, 12 Mar 2020 12:18:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=SU5e8ThZ/jC6l2UHW2mQ5E13HASsfjr4EObVUxdLUKU=;
+ b=fprs1+ZrhpdpjA1QSKPLQ5DVpZXj/g85qo1ibdr6nHluLJAhc/YVU1GFpJMCW0yiIh
+ 6ynFO4Ro0O4z/+LJ0REbFJRWhosIhMcoev141UtsvxKHlSC4knIaqjTbDDVA2HmGtJt2
+ iOkRymIDJ766h/LpTwJbcCNwJLlSs4LVomTXzH6frk+BB8EAIiB1Iee1IW9IZlt/yxbF
+ F5TmMJcUDHDCiyZN47WAdT8egcYHHm46oXChkQfSO+Mdmw/LoWv2wdo6NagxeZigi57X
+ ujupWF7GxxPCU6YLJxSHm10YmD5eJm/368O4aHWANmLG21yB9s/oBdTr9PlIHYhQtX85
+ oZtQ==
+X-Gm-Message-State: ANhLgQ0mdTGd/W7e72kf0QUBzXQ4p+qVgGRhURpHNIDaMtgufM3T8MHn
+ osifL8s/fbk55k2A8+gqO5M=
+X-Google-Smtp-Source: ADFU+vsylhNgZSPB6ysmt4xorqw0nqsEk6Kn+5R8nMgLFy+Xyx8N/GRpEYUw1R9C56oPpL4PPbVHKQ==
+X-Received: by 2002:a50:ec0b:: with SMTP id g11mr7520505edr.80.1584012982435; 
+ Thu, 12 Mar 2020 04:36:22 -0700 (PDT)
+Received: from pi3 ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id v5sm377196edt.43.2020.03.12.04.36.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Mar 2020 04:36:21 -0700 (PDT)
+Date: Thu, 12 Mar 2020 12:36:18 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Anand Moon <linux.amoon@gmail.com>
+Subject: Re: [PATCHv3 5/5] clk: samsung: exynos542x: Move FSYS subsystem
+ clocks to its sub-CMU
+Message-ID: <20200312113618.GA6206@pi3>
+References: <20200310194854.831-1-linux.amoon@gmail.com>
+ <20200310194854.831-6-linux.amoon@gmail.com>
+ <20200311144248.GA4455@kozik-lap>
+ <CANAwSgQWYdh3awuMCjUvz6EvnwMq9rDOSBn5EkNcA7OfsjoEwA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1583762668-12099-1-git-send-email-Anson.Huang@nxp.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CANAwSgQWYdh3awuMCjUvz6EvnwMq9rDOSBn5EkNcA7OfsjoEwA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_041834_131130_773FE333 
-X-CRM114-Status: GOOD (  13.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_043624_776856_B770A81D 
+X-CRM114-Status: GOOD (  24.63  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,37 +90,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, Felipe Balbi <balbi@kernel.org>,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDkvMDMvMjAyMCAxNTowNCwgQW5zb24gSHVhbmcgd3JvdGU6Cj4gUmVtb3ZlIHVudXNlZCBp
-bmNsdWRlcyB0byBzaW1wbGlmeSB0aGUgY29kZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBBbnNvbiBI
-dWFuZyA8QW5zb24uSHVhbmdAbnhwLmNvbT4KCkFwcGxpZWQsIHRoYW5rcwoKPiAtLS0KPiAgZHJp
-dmVycy90aGVybWFsL2lteF90aGVybWFsLmMgfCA3IC0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQs
-IDcgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9pbXhfdGhl
-cm1hbC5jIGIvZHJpdmVycy90aGVybWFsL2lteF90aGVybWFsLmMKPiBpbmRleCBlNzVkZGE1Li5k
-MmZhMzAxIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvdGhlcm1hbC9pbXhfdGhlcm1hbC5jCj4gKysr
-IGIvZHJpdmVycy90aGVybWFsL2lteF90aGVybWFsLmMKPiBAQCAtMywyNCArMywxNyBAQAo+ICAv
-LyBDb3B5cmlnaHQgMjAxMyBGcmVlc2NhbGUgU2VtaWNvbmR1Y3RvciwgSW5jLgo+ICAKPiAgI2lu
-Y2x1ZGUgPGxpbnV4L2Nsay5oPgo+IC0jaW5jbHVkZSA8bGludXgvY3B1Lmg+Cj4gICNpbmNsdWRl
-IDxsaW51eC9jcHVmcmVxLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9jcHVfY29vbGluZy5oPgo+ICAj
-aW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiAtI2luY2x1ZGUgPGxpbnV4L2RldmljZS5oPgo+IC0j
-aW5jbHVkZSA8bGludXgvaW5pdC5oPgo+ICAjaW5jbHVkZSA8bGludXgvaW50ZXJydXB0Lmg+Cj4g
-ICNpbmNsdWRlIDxsaW51eC9pby5oPgo+IC0jaW5jbHVkZSA8bGludXgva2VybmVsLmg+Cj4gICNp
-bmNsdWRlIDxsaW51eC9tZmQvc3lzY29uLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9tb2R1bGUuaD4K
-PiAgI2luY2x1ZGUgPGxpbnV4L29mLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9vZl9kZXZpY2UuaD4K
-PiAtI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ICAjaW5jbHVkZSA8bGludXgv
-cmVnbWFwLmg+Cj4gLSNpbmNsdWRlIDxsaW51eC9zbGFiLmg+Cj4gICNpbmNsdWRlIDxsaW51eC90
-aGVybWFsLmg+Cj4gLSNpbmNsdWRlIDxsaW51eC90eXBlcy5oPgo+ICAjaW5jbHVkZSA8bGludXgv
-bnZtZW0tY29uc3VtZXIuaD4KPiAgCj4gICNkZWZpbmUgUkVHX1NFVAkJMHg0Cj4gCgoKLS0gCiA8
-aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdh
-cmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93d3cuZmFjZWJvb2suY29t
-L3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3aXR0ZXIuY29tLyMhL2xpbmFyb29y
-Zz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcvbGluYXJvLWJsb2cvPiBCbG9nCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Thu, Mar 12, 2020 at 04:04:57PM +0530, Anand Moon wrote:
+> Hi Krzysztof,
+> 
+> Thanks for your review comments.
+> 
+> On Wed, 11 Mar 2020 at 20:12, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> >
+> > On Tue, Mar 10, 2020 at 07:48:54PM +0000, Anand Moon wrote:
+> > > FSYS power domain support usbdrd3, pdma and usb2 power gaiting,
+> > > hence move FSYS clk setting to sub-CMU block to support power domain
+> > > on/off sequences for device nodes.
+> > >
+> > > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> > > ---
+> > > New patch in the series
+> > > ---
+> > >  drivers/clk/samsung/clk-exynos5420.c | 45 +++++++++++++++++++++-------
+> > >  1 file changed, 34 insertions(+), 11 deletions(-)
+> > >
+> > > diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+> > > index c9e5a1fb6653..6c4c47dfcdce 100644
+> > > --- a/drivers/clk/samsung/clk-exynos5420.c
+> > > +++ b/drivers/clk/samsung/clk-exynos5420.c
+> > > @@ -859,12 +859,6 @@ static const struct samsung_div_clock exynos5x_div_clks[] __initconst = {
+> > >       DIV(0, "dout_maudio0", "mout_maudio0", DIV_MAU, 20, 4),
+> > >       DIV(0, "dout_maupcm0", "dout_maudio0", DIV_MAU, 24, 8),
+> > >
+> > > -     /* USB3.0 */
+> > > -     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
+> > > -     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
+> > > -     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
+> > > -     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
+> >
+> > According to clock diagram these are still in CMU TOP, not FSYS.
+> >
+> > > -
+> > >       /* MMC */
+> > >       DIV(0, "dout_mmc0", "mout_mmc0", DIV_FSYS1, 0, 10),
+> > >       DIV(0, "dout_mmc1", "mout_mmc1", DIV_FSYS1, 10, 10),
+> > > @@ -1031,8 +1025,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+> > />
+> > >       /* FSYS Block */
+> > >       GATE(CLK_TSI, "tsi", "aclk200_fsys", GATE_BUS_FSYS0, 0, 0, 0),
+> > > -     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
+> > > -     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
+> > >       GATE(CLK_UFS, "ufs", "aclk200_fsys2", GATE_BUS_FSYS0, 3, 0, 0),
+> > >       GATE(CLK_RTIC, "rtic", "aclk200_fsys", GATE_IP_FSYS, 9, 0, 0),
+> > >       GATE(CLK_MMC0, "mmc0", "aclk200_fsys2", GATE_IP_FSYS, 12, 0, 0),
+> > > @@ -1040,9 +1032,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+> > >       GATE(CLK_MMC2, "mmc2", "aclk200_fsys2", GATE_IP_FSYS, 14, 0, 0),
+> > >       GATE(CLK_SROMC, "sromc", "aclk200_fsys2",
+> > >                       GATE_IP_FSYS, 17, CLK_IGNORE_UNUSED, 0),
+> > > -     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
+> > > -     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
+> > > -     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
+> > >       GATE(CLK_SCLK_UNIPRO, "sclk_unipro", "dout_unipro",
+> > >                       SRC_MASK_FSYS, 24, CLK_SET_RATE_PARENT, 0),
+> > >
+> > > @@ -1258,6 +1247,28 @@ static struct exynos5_subcmu_reg_dump exynos5x_gsc_suspend_regs[] = {
+> > >       { DIV2_RATIO0, 0, 0x30 },       /* DIV dout_gscl_blk_300 */
+> > >  };
+> > >
+> > > +/* USB3.0 */
+> > > +static const struct samsung_div_clock exynos5x_fsys_div_clks[] __initconst = {
+> > > +     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
+> > > +     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
+> > > +     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
+> > > +     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
+> > > +};
+> > > +
+> > > +static const struct samsung_gate_clock exynos5x_fsys_gate_clks[] __initconst = {
+> > > +     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
+> > > +     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
+> > > +     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
+> > > +     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
+> > > +     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
+> > > +};
+> > > +
+> > > +static struct exynos5_subcmu_reg_dump exynos5x_fsys_suspend_regs[] = {
+> > > +     { GATE_IP_FSYS, 0xffffffff, 0xffffffff }, /* FSYS gates */
+> >
+> > This looks wrong. GATE_IP_FSYS has fields also for FSYS2 clocks which
+> > you are not suspending. They do not belong to this CMU.
+> >
+> 
+> Ok. I change the from GATE_IP_FSYS to GATE_BUS_FSYS0 in the above
+> exynos5x_fsys_gate_clks to make this consistent to used GATE_BUS_FSYS0 for CMU,
+> with this change it works as per previously.
+
+Wait, you should set here proper registers with proper mask.
+> 
+> > Don't you need to save also parts of GATE_BUS_FSYS0?
+> 
+> GATE_BUS_FSYS0 and GATE_IP_FSYS are already part of list
+> of control register which are saved and restored during suspend and resume
+> so no point in adding this here, I should drop the GATE_IP_FSYS reg
+> dump over here.
+
+Since registers are used in separate sub CMU devices, each should
+save/restore its part.
+
+Best regards,
+Krzysztof
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
