@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B92C9182C93
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:39:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B891D182C9C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:40:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rbl7MXG0t2atZch/I1toAOeQ2/RUfJ8BLCaCosGQHtw=; b=EiYNXBgwAU4ugO
-	T7VUOYbRmTG50S6UHxRe5hzdCY81piqWikJuRmzdkRgiHVMUvM0Co73tS+0taG3pHwV0JWY/3FMXL
-	hLcSjyc+ij/fYQbCL9XL60noKJxdh3wHYI0O0U7BsgqGG4nFoIQYsC23KGdekXVrpIZcby8vDzhNG
-	+QP+X85lAs6zIrupSN95ZfnUpZyLLSRVQQNLWluNO3LFFVdFIsgKoSnVny1gMAeB2w45AeECj2KHX
-	nap3wsxonhvUQaeGra87SedOJQzOLDQDDcksTL5uTiiIYZ3usUXblwC8Fl0DjD7yiCI2MU10qr116
-	QDX8IQOr6giwWDvYbkzQ==;
+	List-Owner; bh=rbl7MXG0t2atZch/I1toAOeQ2/RUfJ8BLCaCosGQHtw=; b=U5DLEhg7scJVey
+	SFvJdW6gj7/7U6MRj4dUoCEm0f0gGPEZgaOgAwgr4LdgVAQ2vmCaA1/qtbVd8/HfS0N4KMwvxJWDk
+	HiHqGrG2P+Q4RZpRwBJRRi4HgTOZ5oGeuMdH8+gTt8PJTUmtyYEPIGgnvQGR4xqmu7vnxLGOSbzlH
+	z6inWD5dgW7SpWvdmjWhQCPPS423X0Cifr+O7nIr7QzErlRQOG8fIaM/PbANFyCcNPUBEqhxn4jPd
+	PBLdkgLvCcJPMOau7LR04r8vu2sEmxnaHwr3tTTqcc1lUvp/euATX4v4tbVPtvN37kDO3x2aQZJCM
+	jCsllnvYEHzdRjwFbDpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCKIu-0003An-5Z; Thu, 12 Mar 2020 09:39:00 +0000
+	id 1jCKK8-0004To-FY; Thu, 12 Mar 2020 09:40:16 +0000
 Received: from poy.remlab.net ([2001:41d0:2:5a1a::]
  helo=ns207790.ip-94-23-215.eu)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCKIm-0003AI-Uz
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 09:38:54 +0000
+ id 1jCKJv-0003wT-VE
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 09:40:05 +0000
 Received: from basile.remlab.net (ip6-localhost [IPv6:::1])
- by ns207790.ip-94-23-215.eu (Postfix) with ESMTP id 10E535FA9A;
- Thu, 12 Mar 2020 10:38:47 +0100 (CET)
+ by ns207790.ip-94-23-215.eu (Postfix) with ESMTP id 983595FD7F;
+ Thu, 12 Mar 2020 10:40:02 +0100 (CET)
 From: =?UTF-8?q?R=C3=A9mi=20Denis-Courmont?= <remi@remlab.net>
 To: linux-arm-kernel@lists.infradead.org
 Subject: [PATCH] arm64: move kimage_vaddr to .rodata
-Date: Thu, 12 Mar 2020 11:38:46 +0200
-Message-Id: <20200312093846.153235-1-remi@remlab.net>
+Date: Thu, 12 Mar 2020 11:40:02 +0200
+Message-Id: <20200312094002.153302-1-remi@remlab.net>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_023853_140286_1460492F 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20200312_024004_597728_2A90717F 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -56,7 +56,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, linux-kernel@vger.kernel.org
+Cc: suzuki.poulose@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
