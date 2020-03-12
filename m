@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21007182D7A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:27:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDD00182D7B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:27:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P0b/EXgyXkXxOc179siLJ1yrBjXaR16y7/HJRVD0fB0=; b=E7xx3MQFXNtMr4
-	O5CqCB55caDJDktNOgW9GGa0LwnVcvXC36pwbn4XbJLHOZJfsB79LmrNLX05PyfolegeriUIiO3j7
-	wSm634VC8quagn0+mNQrfvoEqwfF0cTyP7koaynYaxp0ZRATF+EEUVsKYQxkjcztYm7jbvdrIBpFP
-	iU9F71UHBOHQC+LGg6K6Adf7Z7H3wPU5wdQ48oHl1ReLJNgnAFqgmNGekeR0Wm07fzGK75B/hQVrj
-	GKd0LmskbXNGMjp+mlmp2Zkx/Bxdy4KxqdOprp9caSXuscoFLYwBGbls80HeD3+T/h8G01p2lk6Ja
-	o7QIKh3WHL9xPpBMATaw==;
+	List-Owner; bh=AtOYpDFpucrqd1UcFK0FWJ4LPpY9E1r7a/zWX18cU7c=; b=fWXHtjhtK/AihH
+	y/gsts227+RwxoZJ3aC6QK1sWgvwzd9ZADmtBeDRzNOqANaPecKxhT2+khlzIZ/QRrgO83DEEcAPU
+	fRwGP46ojkZmcT7usMa3kt0gwiSo7L0XHvLF/kL8i/HzWCQOTG/k1KxHsBTlCrDXkcub6EX6EQ3je
+	yOQPVInnQ5uHk2zAofVbLY/hb+jLathGmHFlMi6VA6BemD2N3Yv7H9wj30/aIVpgoB5G6nCuF6cPi
+	dmtH747nDZd4OV4epWp7ncuBYBjbSNQ6fQ0rgSbMpr0J7so5OuoyAD17smWRohdz2JOqStjMzlGIn
+	K8SNo8YX2dag5i7X2aNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCL3T-0007NP-1n; Thu, 12 Mar 2020 10:27:07 +0000
-Received: from mail-eopbgr60066.outbound.protection.outlook.com ([40.107.6.66]
+	id 1jCL3q-0007k3-09; Thu, 12 Mar 2020 10:27:30 +0000
+Received: from mail-eopbgr60086.outbound.protection.outlook.com ([40.107.6.86]
  helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCL33-0007Ei-Qo
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:26:43 +0000
+ id 1jCL3A-0007Mj-J2
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:26:50 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iMu3DemGo+3eCaqYZX+d5avjwqub4aVTG3LO398+fxn68OYbogUlpSTquq12VscVHzWxdMCnx8HeIiGGQ0YPOfXYIspIpxnIhR8nOvSGl2pBs60JeAm1M4TGXLP6BufbCzo/nlYvENv7sK3g8JArvJZtWp0fGOrUQkqcUyqISjdJbeRKzgxG18W/KCT96epHYF20AeTvosRgC6LMNYxPpp0F2mbrqyp9GKkSngsP3nkbnu8Vq7HuLpa0mKV145OjG9+5Z5ntlytfIL75QxCiojU2iYdj7cRgF2LJQAxep3QofH6a/AzsjK6bJSpUI4oBg7svPe3NhFjdRNVSRz2NiQ==
+ b=Be7Jej0sWiogwxVVLTJD30mY2k8yUPR1EnHgmxR2uw3yo4iY+FLW3ky4semrOesiTXcePovhAOiUxPkTgzXnurpGSFmG+urU9vZYPUyp7rW0idsg+v8TQUBZ5tIKPMH2WeNMAJJhDLlSCk0iuKwFePGMFl3lfzj8yXf+6doqRZHVsZnMeeTTrmfrTBPLQQu2TrmZy0qB6B4DdlQdai4/j0nRlIC8YBYlPYsvOLtxFAj0R7NeJg749zi/yZxNV65XcUAJf4wa9J3QXUxInxmy1dPg92V0jWlKPeJ9dLqV5HZRSErh9GzcVQoYbg3lNRtwWhotZ3Ul4ZtpYyEKREeaXA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XURsQ3ph57qGOEQvOXPJg4UyHgVXsGwV8I+nR5oEFF4=;
- b=MR5+wI4LRLBSGw0CRtwMh72nJSttcILjQeZt3NjEgMQur7thXltFYfKWCuTfcwzEIKXKUDqLFqHHKc2MlMObzj/ubepBkUIFlrSntMbX95h5mN9wGg8OkzHEBrlQ2xmVWatm7PNIrsIUbk3RT2DmXTdch9wU/muxtqGpGADzqpP7QNRByj+uP7R7187v+CDNffuMHaMGGfJi02b+DwaZhhYv3nMtmzePa40p/dkBauAfLez0fP/Pjm1UcGAWWMTNfacGcxwJ1FiVxrc8nXkySJSk1UznXRby7v8CAAMeAyLZjuSOXIs0myFOB/O7LvXFZOV8KwB0sAjXzHFS/ev1Eg==
+ bh=IPM1nbgdwcb8xtaL+MbpVwbLO8aYAEbl3CkZO/v7p+A=;
+ b=PGxMDTGmnH55nls58Hv60fx3kYmXSpAPfnz3Q8BKtOFGZHfKE/HJpn9p5DWtmKhPn0hYKPxSv2ohbvLF7X+hWtRn7hosIJBPwyua4T60JOLKBluIJ0z8ciOpbRM5xcWNDf6rbk6geFwwfeZDcFAw9aW7BLOzHWgdKk0C6LDqr4tMleHQHIoBJvKc2xX+tzSzzAJJHa8FVDJAM91pD66B0ZcDCqDNSa+0mI3NPPUdVn9YA8UV3p/BFRySbdUHIYxuse98hs4M9oPUXpRGEk4RdbhN601e/I/4ucNdg1hotIV2d72hO4t7hBet04EZ4cyF+rtzmQEhAMSDU6mdXJRcQg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XURsQ3ph57qGOEQvOXPJg4UyHgVXsGwV8I+nR5oEFF4=;
- b=biNyjw6yV1iGkbDYQOGxyxR9RSLopyuc7sG4PmjCV2fZS8zgwKUILa+PNWgDU3VKg73UMKNOYI+8eyxZKsV9lomTNqZOgWidKa/leNlpsaVa5PDU3VerCZp819NBmCYeLoNj5xJ+LUAhA6uKb3kOflAaCYdGhZHQ/160cJ3vDMY=
+ bh=IPM1nbgdwcb8xtaL+MbpVwbLO8aYAEbl3CkZO/v7p+A=;
+ b=ezAXEEuOb0T9EfDNlqhdCVe1dOqzj7cmqwB0bTf/iMvnBElVBdeI1qFzUEIlERTtP60bEKd69XMsWnofAVT5/nd7kxzpO2ImqkLMjx7+IfokSBGzWq6hMZvl9Q31meipMAUCIEpK1rJbiefabvkskE1GEwm9S5rteRLXldGc7Zs=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB4195.eurprd04.prod.outlook.com (52.134.92.151) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.14; Thu, 12 Mar 2020 10:26:38 +0000
+ 15.20.2814.14; Thu, 12 Mar 2020 10:26:45 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.018; Thu, 12 Mar 2020
- 10:26:38 +0000
+ 10:26:45 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, leonard.crestez@nxp.com,
  sboyd@kernel.org, abel.vesa@nxp.com
-Subject: [PATCH V2 01/10] arm64: dts: imx8m: assign clocks for A53
-Date: Thu, 12 Mar 2020 18:19:35 +0800
-Message-Id: <1584008384-11578-2-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V2 02/10] clk: imx8m: drop clk_hw_set_parent for A53
+Date: Thu, 12 Mar 2020 18:19:36 +0800
+Message-Id: <1584008384-11578-3-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
 References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
@@ -65,16 +65,16 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.66) by
  SG2PR03CA0113.apcprd03.prod.outlook.com (2603:1096:4:91::17) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2835.7 via Frontend Transport; Thu, 12 Mar 2020 10:26:32 +0000
+ 15.20.2835.7 via Frontend Transport; Thu, 12 Mar 2020 10:26:38 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 4e5d82e7-a4e7-464e-5178-08d7c66fd91a
+X-MS-Office365-Filtering-Correlation-Id: 703d7b1d-f90c-49a4-5e88-08d7c66fdcfa
 X-MS-TrafficTypeDiagnostic: AM0PR04MB4195:|AM0PR04MB4195:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB4195515A1918678FD2E921DD88FD0@AM0PR04MB4195.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB4195AD49576751F8C3F7401F88FD0@AM0PR04MB4195.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2582;
 X-Forefront-PRVS: 0340850FCD
 X-Forefront-Antispam-Report: SFV:NSPM;
  SFS:(10009020)(4636009)(136003)(366004)(39860400002)(346002)(376002)(396003)(199004)(956004)(26005)(6512007)(9686003)(2616005)(86362001)(8676002)(186003)(6506007)(81166006)(8936002)(7416002)(6486002)(478600001)(52116002)(69590400007)(316002)(66946007)(66476007)(16526019)(5660300002)(66556008)(36756003)(81156014)(4326008)(2906002)(32563001);
@@ -85,19 +85,19 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: lyngkK9CiztpZ/rS8ws3479sWtfTuDQ6tHNQU2TDaM3p6wMMdxtw/kfRQRLdbnCzKJyXWTwVbb1L763W3OwP/d/ETDca9q12WCF/SYk501dXEOgqUvI7K+buXPU2MbVbzkEh3GPEdp+1wlCExn6Y0r6HVfrcZmaG4bC9vHWThJZMnlBB5jOAO4KbI9XrglM0O/ofT4KO18ntrB4CiQtHb+9RxYYa3qTbvhV66+99ogkbocwA71R7bDh3qUVEdpL5fTu7TG5balgKf36iuUHuAtrHZeXUnBYEfjX1q8vJCgcnArl8q42+cnxA26+/nvXZyjDVhvIIrpaBgRiU3LoHI0FXFhnP1vzKoW0i5tdgyTs/sp2KHnyVTO/j6QVu9SXD3GFvE7Ts4EQsPxUenYYaL6DLYLGytYvBQsyFhbhJg1TZJGR0qm5XxpaABvyX9VfTtg846HaCtu/G8SS95Z5phBaSfe/x1xWV5xeIJqCZq7UAaJluex4Pf3d4xyAlJWR92MRzcGgRrdwzXZ0U0QMOjQ==
-X-MS-Exchange-AntiSpam-MessageData: oxvVu5/b4zUmh8bXrDhvZXaRw1r0QjvKIBfZKCZLYXXitW/ItmCYcYKDOgpXXgOEsGlnkUXGPqqNsUVIDTCzlfSAY6pcnP6NN+2Yyy5drv48I0xZIOIjoGQidL99NqQtw286iDD959v5YpA/93KDlg==
+X-Microsoft-Antispam-Message-Info: BFia3sLkocidA/IW/oboqiUmtdQF8ag03go2CmlKqpqhUDhJF0+i0nLEcXQXSZSbYlVf+jLCo4RiWfGl3C4YccacJ9ILcaL0BQxLLugfVEiBYmUvvygeq944qnTQc4eeJ3ziiQwvZsGu5X871jicgcwttHjiO6jaEfGBuq1Eff7GoaG8KqtmobY+dpjUBYkgWN/PPnJk0Z8UIOIra14KVS9A3zM/DSphAZe6ZmOLmSrEbQri/2j2ApJbeaaJp02PTUb2dSOMvlM1CIhrSUmXfwPaAJy1oYwfBWHga+4HBI68syiUrGwSQoQu2F83UcNDwATcPqFCrM6TLOXVdi8VK7DB6AaDRyN4RZeUL2Bruo5tERebDa7bn/SDvMjXKJP2C48lso/swvapBeogNiN/9gMFEGP3Iw9HO39Qboh2JQ5bnPN851qdL8TjcanWuNsa+YltSij/chkRq3bWzX6U/EchNXxzgSD6Lvyz3X/eHNJCEXQvspvRaM9iWjtyuhUgpQEKTbXt/bURXTZ80nHZ1A==
+X-MS-Exchange-AntiSpam-MessageData: sivi3Gaoel3t8yKYHGjyz9B1hA1dGb8KFuy6Ja/fqh+R7BK8Er5ZoaChbFxo5eLrl0ecP1UoCHTe2ggGfCGT4a/bnsAT9arG0e3qy01uUx6oGd/JQVlIOGk6JhmsHc5LK/iLH5b+qkdDcCO9CH3KRQ==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4e5d82e7-a4e7-464e-5178-08d7c66fd91a
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 10:26:38.4963 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 703d7b1d-f90c-49a4-5e88-08d7c66fdcfa
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 10:26:44.9668 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: SLd45n4u502SG3p+R0dluUPaIxt+LbGL2g7gxFJyhVBr0wRZG4Cex6CW+1nf6kVAerE+Og8wF1I5B7ZITrDYyA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 7wt+wUVD6gbTz2n8q7U9/2M87Asyb6zeTdr2HqrBxnvV50GnG6vdiJnkGSd55GgBWlZ26snNZSYeiXybo2/ALQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_032641_889090_646EC925 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20200312_032648_677051_13F175EF 
+X-CRM114-Status: UNSURE (   8.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -105,7 +105,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.66 listed in list.dnswl.org]
+ no trust [40.107.6.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -139,126 +139,75 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Assign IMX8M*_CLK_A53_SRC's parent to system pll1 and
-assign IMX8M*_CLK_A53_CORE's parent to arm pll out as what
-is done in drivers/clk/imx/clk-imx8m*.c, then we could remove
-the settings in driver which triggers lockdep warning.
+The parent settings have been moved to dtsi, we no need to
+set parent here. And clk_hw_set_parent will trigger lockdep warning,
+because this api not have prepare_lock.
 
 Reported-by: Leonard Crestez <leonard.crestez@nxp.com>
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 10 +++++++---
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 10 +++++++---
- arch/arm64/boot/dts/freescale/imx8mp.dtsi | 11 ++++++++---
- arch/arm64/boot/dts/freescale/imx8mq.dtsi |  9 +++++++--
- 4 files changed, 29 insertions(+), 11 deletions(-)
+ drivers/clk/imx/clk-imx8mm.c | 3 ---
+ drivers/clk/imx/clk-imx8mn.c | 3 ---
+ drivers/clk/imx/clk-imx8mp.c | 3 ---
+ drivers/clk/imx/clk-imx8mq.c | 3 ---
+ 4 files changed, 12 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 2e5e7c4457db..8d2200224db4 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -471,16 +471,20 @@
- 					 <&clk_ext3>, <&clk_ext4>;
- 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
- 					      "clk_ext3", "clk_ext4";
--				assigned-clocks = <&clk IMX8MM_CLK_NOC>,
-+				assigned-clocks = <&clk IMX8MM_CLK_A53_SRC>,
-+						<&clk IMX8MM_CLK_A53_CORE>,
-+						<&clk IMX8MM_CLK_NOC>,
- 						<&clk IMX8MM_CLK_AUDIO_AHB>,
- 						<&clk IMX8MM_CLK_IPG_AUDIO_ROOT>,
- 						<&clk IMX8MM_SYS_PLL3>,
- 						<&clk IMX8MM_VIDEO_PLL1>,
- 						<&clk IMX8MM_AUDIO_PLL1>,
- 						<&clk IMX8MM_AUDIO_PLL2>;
--				assigned-clock-parents = <&clk IMX8MM_SYS_PLL3_OUT>,
-+				assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_800M>,
-+							 <&clk IMX8MM_ARM_PLL_OUT>,
-+							 <&clk IMX8MM_SYS_PLL3_OUT>,
- 							 <&clk IMX8MM_SYS_PLL1_800M>;
--				assigned-clock-rates = <0>,
-+				assigned-clock-rates = <0>, <0>, <0>,
- 							<400000000>,
- 							<400000000>,
- 							<750000000>,
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index ff9c1ea38130..ad88ba3bf28c 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -380,13 +380,17 @@
- 					 <&clk_ext3>, <&clk_ext4>;
- 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
- 					      "clk_ext3", "clk_ext4";
--				assigned-clocks = <&clk IMX8MN_CLK_NOC>,
-+				assigned-clocks = <&clk IMX8MN_CLK_A53_SRC>,
-+						<&clk IMX8MN_CLK_A53_CORE>,
-+						<&clk IMX8MN_CLK_NOC>,
- 						<&clk IMX8MN_CLK_AUDIO_AHB>,
- 						<&clk IMX8MN_CLK_IPG_AUDIO_ROOT>,
- 						<&clk IMX8MN_SYS_PLL3>;
--				assigned-clock-parents = <&clk IMX8MN_SYS_PLL3_OUT>,
-+				assigned-clock-parents = <&clk IMX8MN_SYS_PLL1_800M>,
-+							 <&clk IMX8MN_ARM_PLL_OUT>,
-+							 <&clk IMX8MN_SYS_PLL3_OUT>,
- 							 <&clk IMX8MN_SYS_PLL1_800M>;
--				assigned-clock-rates = <0>,
-+				assigned-clock-rates = <0>, <0>, <0>,
- 							<400000000>,
- 							<400000000>,
- 							<600000000>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-index d92199bf6635..3a96082e8717 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-@@ -284,7 +284,9 @@
- 					 <&clk_ext3>, <&clk_ext4>;
- 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
- 					      "clk_ext3", "clk_ext4";
--				assigned-clocks = <&clk IMX8MP_CLK_NOC>,
-+				assigned-clocks = <&clk IMX8MP_CLK_A53_SRC>,
-+						  <&clk IMX8MP_CLK_A53_CORE>,
-+						  <&clk IMX8MP_CLK_NOC>,
- 						  <&clk IMX8MP_CLK_NOC_IO>,
- 						  <&clk IMX8MP_CLK_GIC>,
- 						  <&clk IMX8MP_CLK_AUDIO_AHB>,
-@@ -292,12 +294,15 @@
- 						  <&clk IMX8MP_CLK_IPG_AUDIO_ROOT>,
- 						  <&clk IMX8MP_AUDIO_PLL1>,
- 						  <&clk IMX8MP_AUDIO_PLL2>;
--				assigned-clock-parents = <&clk IMX8MP_SYS_PLL2_1000M>,
-+				assigned-clock-parents = <&clk IMX8MP_SYS_PLL1_800M>,
-+							 <&clk IMX8MP_ARM_PLL_OUT>,
-+							 <&clk IMX8MP_SYS_PLL2_1000M>,
- 							 <&clk IMX8MP_SYS_PLL1_800M>,
- 							 <&clk IMX8MP_SYS_PLL2_500M>,
- 							 <&clk IMX8MP_SYS_PLL1_800M>,
- 							 <&clk IMX8MP_SYS_PLL1_800M>;
--				assigned-clock-rates = <1000000000>,
-+				assigned-clock-rates = <0>, <0>,
-+						       <1000000000>,
- 						       <800000000>,
- 						       <500000000>,
- 						       <400000000>,
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 9bbdaf2d6e34..1f3ffc8c8a78 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -594,8 +594,13 @@
- 				clock-names = "ckil", "osc_25m", "osc_27m",
- 				              "clk_ext1", "clk_ext2",
- 				              "clk_ext3", "clk_ext4";
--				assigned-clocks = <&clk IMX8MQ_CLK_NOC>;
--				assigned-clock-rates = <800000000>;
-+				assigned-clocks = <&clk IMX8MQ_CLK_A53_SRC>,
-+						  <&clk IMX8MQ_CLK_A53_CORE>,
-+						  <&clk IMX8MQ_CLK_NOC>;
-+				assigned-clock-rates = <0>, <0>,
-+						       <800000000>;
-+				assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_800M>,
-+							 <&clk IMX8MQ_ARM_PLL_OUT>;
- 			};
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 925670438f23..5435042a06e3 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -614,9 +614,6 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+ 					   hws[IMX8MM_ARM_PLL_OUT]->clk,
+ 					   hws[IMX8MM_CLK_A53_DIV]->clk);
  
- 			src: reset-controller@30390000 {
+-	clk_hw_set_parent(hws[IMX8MM_CLK_A53_SRC], hws[IMX8MM_SYS_PLL1_800M]);
+-	clk_hw_set_parent(hws[IMX8MM_CLK_A53_CORE], hws[IMX8MM_ARM_PLL_OUT]);
+-
+ 	imx_check_clk_hws(hws, IMX8MM_CLK_END);
+ 
+ 	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_hw_data);
+diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
+index 0bc7070235bd..6cac6ca03e12 100644
+--- a/drivers/clk/imx/clk-imx8mn.c
++++ b/drivers/clk/imx/clk-imx8mn.c
+@@ -565,9 +565,6 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
+ 					   hws[IMX8MN_ARM_PLL_OUT]->clk,
+ 					   hws[IMX8MN_CLK_A53_DIV]->clk);
+ 
+-	clk_hw_set_parent(hws[IMX8MN_CLK_A53_SRC], hws[IMX8MN_SYS_PLL1_800M]);
+-	clk_hw_set_parent(hws[IMX8MN_CLK_A53_CORE], hws[IMX8MN_ARM_PLL_OUT]);
+-
+ 	imx_check_clk_hws(hws, IMX8MN_CLK_END);
+ 
+ 	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_hw_data);
+diff --git a/drivers/clk/imx/clk-imx8mp.c b/drivers/clk/imx/clk-imx8mp.c
+index 41469e2cc3de..e05ec56df285 100644
+--- a/drivers/clk/imx/clk-imx8mp.c
++++ b/drivers/clk/imx/clk-imx8mp.c
+@@ -735,9 +735,6 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 					     hws[IMX8MP_ARM_PLL_OUT]->clk,
+ 					     hws[IMX8MP_CLK_A53_DIV]->clk);
+ 
+-	clk_hw_set_parent(hws[IMX8MP_CLK_A53_SRC], hws[IMX8MP_SYS_PLL1_800M]);
+-	clk_hw_set_parent(hws[IMX8MP_CLK_A53_CORE], hws[IMX8MP_ARM_PLL_OUT]);
+-
+ 	imx_check_clk_hws(hws, IMX8MP_CLK_END);
+ 
+ 	of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_hw_data);
+diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+index fdc68db68de5..201c7bbb201f 100644
+--- a/drivers/clk/imx/clk-imx8mq.c
++++ b/drivers/clk/imx/clk-imx8mq.c
+@@ -599,9 +599,6 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+ 					   hws[IMX8MQ_ARM_PLL_OUT]->clk,
+ 					   hws[IMX8MQ_CLK_A53_DIV]->clk);
+ 
+-	clk_hw_set_parent(hws[IMX8MQ_CLK_A53_SRC], hws[IMX8MQ_SYS1_PLL_800M]);
+-	clk_hw_set_parent(hws[IMX8MQ_CLK_A53_CORE], hws[IMX8MQ_ARM_PLL_OUT]);
+-
+ 	imx_check_clk_hws(hws, IMX8MQ_CLK_END);
+ 
+ 	err = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_hw_data);
 -- 
 2.16.4
 
