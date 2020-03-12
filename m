@@ -2,90 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCFF8182870
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:32:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E768A182874
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bzw/9wC9E3IrMhHwEicgEvMdefv4WWylQ1XOLnPxDi4=; b=hWlScdwDbidXT6
-	7YuTG0QxXE4MfzhRmWv8+TALwCOPFeYHLhreJrsOQc9+b91bR8r5ZB2LlornZfpFy5NItAH0spaZj
-	7yi+s4bVD3Z3WhvnmqAzGhzv38bPbctizqHcupxu9A+8BeONK56Z7kIjvBPE9QB5fwMzTYi3rptcv
-	8eJZUXrrHmfRu2k/wLTyKsgni6emS82uycijZgx15IeMUFxyyQdabTgBJWs8b+k9We7pWR2pxQXeT
-	8KHrBassyeS6MDkcyA2YKD2AS6QFMlAfbHTt/BNO9mwfDFrVwqmfQ+L9l+Uvn6vSdsyiPjErQbglu
-	K2etpXd9HJYpJWrS/QEg==;
+	List-Owner; bh=bT7dXyiuRQThGcjnw69w5z4SJGyA6TEV53K84Xz0cT8=; b=ZaUCvlgxihA+Ml
+	7NRNdxdHvEiI7xWewwWdH4txT5ykRybmdNgk/VIu/jofSa/Consq04Z8Mr6Z5GidM5LTF3TXW7XPA
+	QgAMUteW2S9GYfMWxUj2q0M1xTvvGc95TszHAZTIKeVuhbLuakrtCHGisnDdacJDbDPtcoNvohg69
+	JikZpu6pWy5uPN0r/dK/eu7COZMQ7rYZURsjU1SQNe2MwhcrV1y9999bNTQYZcI+myMwffgcwKyqs
+	awhFEakoZTZ8xGphsbrbQYYEhJOfUyX4Dl1unUE/7VPuy9rv33tzVNUwVI4TSytme5xgvcwsxaLeb
+	fl3eG3DHp9HI8HShVXIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCGRp-0008WG-Gw; Thu, 12 Mar 2020 05:31:57 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1jCGV2-0000QD-FP; Thu, 12 Mar 2020 05:35:16 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCGRh-0008VO-CS
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:31:51 +0000
-Received: by mail-ed1-f68.google.com with SMTP id m25so5848255edq.8
+ id 1jCGUk-0000PH-EN
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:35:00 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id u10so2071210pjy.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 22:31:47 -0700 (PDT)
+ Wed, 11 Mar 2020 22:34:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=JaXfJMGNIYn5Lb0+1RqqGDovkXb2uNycogqYDrktXZw=;
+ b=O8dbXebwkbLoCEM9jI9xjgbyFVEfVo3jrzcmqVMh8x1jJJAb823F9E9pGQTyppxEAV
+ C7qPh6kPR5FV2mx/dKUKpY3risPhXv/HfDl29fIK8IAfPgGYcsUgGjsxKTYJ0lsnZu9a
+ hTRXsfJwtsUbhXEL8GXe9VIDOmrYDfq9AX2AWTy5+TsdjaoSKh51bnbxJjdMpjxeEbhH
+ cauhfGWnsMzLX61ZnxFTYAXyWr4tGLDFUYwEbLOOKUphFQfozazGfaKA1ZcUTknapVol
+ /fsY9DHBTA98Kbcr18mfJx6/5iK76QGuq/saDi5NTSjgQA5vwKD5FsWcJi6X86kYmr8u
+ Ulwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+Zc8FmIA0ABnvFYgr2cfqyf8WsoARKD3906NOO9ORho=;
- b=QZz643OBm7pFgf9cglNMC0zf6GsWRunn+hBJiWAYEvW/LscO8Gl9sI80YsnKsz34mT
- W1QMuKpf7UdqupK11/rv7jLsC2X/mQunq5tX8WFTOEFsKOmRW+gQLxGrm3dnE5H83/np
- 6pRpR0n6uwyAStDKjbVqE7HBsTjVwvjW+ZoSa/Bd0TnppvnQtHPpcA4QNBL7QJqR/oJ2
- mHJb/N5HNuNiLMFF/zMy8QRZHGOsPH66avAbSHXe9WmuxhJgyQdfRjIVlB9eQhidE3Ar
- THAOML+fanNJJ9pxMNV9xh2SqWcBAmbObNizvTUU+fzYcOTB//yVVtLbdSCwPtacZFgG
- e4gw==
-X-Gm-Message-State: ANhLgQ06j8hr5UxdQ0sfx/GiAF9IRwqi+zvkJi4GoOZ2GrMac7g6lneB
- XvxEHcy198Evngll88OpRKTrPwwaG7o=
-X-Google-Smtp-Source: ADFU+vtdaYt8k6SqFDrzgItX2qW9zZCLNRfqbfo+JPG1KyysxpPhGhJY/C/4rkLtzyXEP8+7XtFy3w==
-X-Received: by 2002:a17:906:f85a:: with SMTP id
- ks26mr4858500ejb.279.1583991101391; 
- Wed, 11 Mar 2020 22:31:41 -0700 (PDT)
-Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com.
- [209.85.221.42])
- by smtp.gmail.com with ESMTPSA id rv13sm3620387ejb.81.2020.03.11.22.31.40
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 22:31:41 -0700 (PDT)
-Received: by mail-wr1-f42.google.com with SMTP id l18so5723865wru.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 22:31:40 -0700 (PDT)
-X-Received: by 2002:a5d:6208:: with SMTP id y8mr8943772wru.64.1583991100322;
- Wed, 11 Mar 2020 22:31:40 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=JaXfJMGNIYn5Lb0+1RqqGDovkXb2uNycogqYDrktXZw=;
+ b=VXC4FP+tq4h8F40enC/Pk0q3OnavlcSROmb2tTWHuF772vum63VHc1jzN5QWWc/TRz
+ mo/4kigEaNxNZYaWRX9BF1H0x6CWig2Yi26NxkjcKrwy/eRoLxXOaxwq/cA4FIptpmDb
+ e+7kFX8VcRWIHO1LSEf6ir85vSGBozTPTBhHoyKtSqVpndiUpNe2iNgOyhaa2ljO/KSz
+ WjYeSeZVea4RsLyQ2KFhebMOUPaM+v9ShfvLEOAA0ngU7vtYgWxtNfSVnksvvjj7ZqQt
+ hpuASwO+e1wa3y1n74hBp//SLWpUNHLwvTlnlT4sVHtyCVa89i1WBBpEBxldo4AdQ7QF
+ o9Ew==
+X-Gm-Message-State: ANhLgQ3mhMwHaGOvesmtOLsTv0KrJMEeg6xo+wbzBbMPdylud2BzCLGl
+ c/QwYhBmqaQUMfpUxsNj4Ee1ew==
+X-Google-Smtp-Source: ADFU+vukyAXi4UgCCPp98RxD5IJ56W1jVeV8iDXBCB0EKjhVWkWtC0DhgvpF27wFMNHlXjQSSVR4hw==
+X-Received: by 2002:a17:902:be03:: with SMTP id
+ r3mr6402366pls.137.1583991297373; 
+ Wed, 11 Mar 2020 22:34:57 -0700 (PDT)
+Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id j23sm2386311pfi.203.2020.03.11.22.34.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 22:34:56 -0700 (PDT)
+Date: Wed, 11 Mar 2020 22:34:54 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v1 5/6] arm64: dts: sdm845-db845c: Add ov8856 & ov7251 camera
+ nodes
+Message-ID: <20200312053454.GX264362@yoga>
+References: <20200311123501.18202-1-robert.foss@linaro.org>
+ <20200311123501.18202-6-robert.foss@linaro.org>
 MIME-Version: 1.0
-References: <20200124232014.574989-1-jernej.skrabec@siol.net>
- <4206703.LvFx2qVVIh@jernej-laptop>
-In-Reply-To: <4206703.LvFx2qVVIh@jernej-laptop>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu, 12 Mar 2020 13:31:28 +0800
-X-Gmail-Original-Message-ID: <CAGb2v647N4oSf=txbCfc05L6j8_U4bBtfa+XxYX6ZUMmrYbs0Q@mail.gmail.com>
-Message-ID: <CAGb2v647N4oSf=txbCfc05L6j8_U4bBtfa+XxYX6ZUMmrYbs0Q@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 0/8] media: sunxi: Add DE2 rotate driver
-To: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200311123501.18202-6-robert.foss@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_223149_421584_E7C22DF0 
-X-CRM114-Status: GOOD (  17.42  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200311_223458_517632_7A3B43C5 
+X-CRM114-Status: GOOD (  26.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1032 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,139 +100,369 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Stephen Boyd <sboyd@kernel.org>,
- Mike Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Loic Poulain <loic.poulain@linaro.org>, Anson.Huang@nxp.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, agross@kernel.org,
+ maxime@cerno.tech, linux-arm-msm@vger.kernel.org, olof@lixom.net,
+ shawnguo@kernel.org, leonard.crestez@nxp.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBGZWIgMTIsIDIwMjAgYXQgMzoxMyBBTSBKZXJuZWogxaBrcmFiZWMgPGplcm5lai5z
-a3JhYmVjQGdtYWlsLmNvbT4gd3JvdGU6Cj4KPiBEbmUgc29ib3RhLCAyNS4gamFudWFyIDIwMjAg
-b2IgMDA6MjA6MDYgQ0VUIGplIEplcm5laiBTa3JhYmVjIG5hcGlzYWwoYSk6Cj4gPiBTb21lIG9m
-IEFsbHdpbm5lciBTb0NzIGxpa2UgQTgzVCBhbmQgQTY0IFNvQ3MgY29udGFpbiBERTIgcm90YXRl
-IGNvcmUKPiA+IHdoaWNoIGNhbiBmbGlwIGltYWdlIGhvcml6b250YWwgYW5kIHZlcnRpY2FsIGFu
-ZCByb3RhdGUgaXQgaW4gOTAgZGVnLgo+ID4gc3RlcHMuIEl0IHN1cHBvcnQgYSBsb3Qgb2Ygb3V0
-cHV0IGZvcm1hdHMsIGJ1dCBhIGJpdCBsZXNzIGNhcHR1cmUKPiA+IGZvcm1hdHMuIEFsbCBZVVYg
-aW5wdXQgZm9ybWF0cyBnZXQgY29udmVydGVkIHRvIHl1djQyMHAsIHdoaWxlIFJHQgo+ID4gZm9y
-bWF0cyBhcmUgcHJlc2VydmVkLgo+ID4KPiA+IFBhdGNoZXMgMS0yIGZpeCBmZXcgaXNzdWVzIHdp
-dGggREUyIGNsb2Nrcy4KPiA+Cj4gPiBQYXRjaGVzIDMtNCBmaXggcmVnaXN0ZXIgcmFuZ2Ugb2Yg
-REUyIGNsb2NrcyAoaXQgd291bGQgb3ZlcmxhcCB3aXRoCj4gPiByb3RhdGUgZHJpdmVyKQo+ID4K
-PiA+IFBhdGNoZXMgNS04IHByb3ZpZGUgYmluZGluZywgaW1wbGVtZW50IGRyaXZlciBhbmQgYWRk
-IG5vZGVzLgo+ID4KPiA+IHY0bDItY29tcGxpYW5jZSBTSEE6IGVjNTVhOTYxNDg3YjQ0OWJlZGJl
-MDc2NTA2NzRiNDk2NTgxNGNmMDcsIDMyIGJpdHMsCj4gPiAzMi1iaXQgdGltZV90Cj4gPgo+ID4g
-Q29tcGxpYW5jZSB0ZXN0IGZvciBzdW44aS1yb3RhdGUgZGV2aWNlIC9kZXYvdmlkZW8wOgo+ID4K
-PiA+IERyaXZlciBJbmZvOgo+ID4gICAgICAgICBEcml2ZXIgbmFtZSAgICAgIDogc3VuOGktcm90
-YXRlCj4gPiAgICAgICAgIENhcmQgdHlwZSAgICAgICAgOiBzdW44aS1yb3RhdGUKPiA+ICAgICAg
-ICAgQnVzIGluZm8gICAgICAgICA6IHBsYXRmb3JtOnN1bjhpLXJvdGF0ZQo+ID4gICAgICAgICBE
-cml2ZXIgdmVyc2lvbiAgIDogNS41LjAKPiA+ICAgICAgICAgQ2FwYWJpbGl0aWVzICAgICA6IDB4
-ODQyMDgwMDAKPiA+ICAgICAgICAgICAgICAgICBWaWRlbyBNZW1vcnktdG8tTWVtb3J5Cj4gPiAg
-ICAgICAgICAgICAgICAgU3RyZWFtaW5nCj4gPiAgICAgICAgICAgICAgICAgRXh0ZW5kZWQgUGl4
-IEZvcm1hdAo+ID4gICAgICAgICAgICAgICAgIERldmljZSBDYXBhYmlsaXRpZXMKPiA+ICAgICAg
-ICAgRGV2aWNlIENhcHMgICAgICA6IDB4MDQyMDgwMDAKPiA+ICAgICAgICAgICAgICAgICBWaWRl
-byBNZW1vcnktdG8tTWVtb3J5Cj4gPiAgICAgICAgICAgICAgICAgU3RyZWFtaW5nCj4gPiAgICAg
-ICAgICAgICAgICAgRXh0ZW5kZWQgUGl4IEZvcm1hdAo+ID4KPiA+IFJlcXVpcmVkIGlvY3RsczoK
-PiA+ICAgICAgICAgdGVzdCBWSURJT0NfUVVFUllDQVA6IE9LCj4gPgo+ID4gQWxsb3cgZm9yIG11
-bHRpcGxlIG9wZW5zOgo+ID4gICAgICAgICB0ZXN0IHNlY29uZCAvZGV2L3ZpZGVvMCBvcGVuOiBP
-Swo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19RVUVSWUNBUDogT0sKPiA+ICAgICAgICAgdGVzdCBW
-SURJT0NfRy9TX1BSSU9SSVRZOiBPSwo+ID4gICAgICAgICB0ZXN0IGZvciB1bmxpbWl0ZWQgb3Bl
-bnM6IE9LCj4gPgo+ID4gICAgICAgICB0ZXN0IGludmFsaWQgaW9jdGxzOiBPSwo+ID4gRGVidWcg
-aW9jdGxzOgo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19EQkdfRy9TX1JFR0lTVEVSOiBPSyAoTm90
-IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfTE9HX1NUQVRVUzogT0sKPiA+Cj4g
-PiBJbnB1dCBpb2N0bHM6Cj4gPiAgICAgICAgIHRlc3QgVklESU9DX0cvU19UVU5FUi9FTlVNX0ZS
-RVFfQkFORFM6IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19HL1Nf
-RlJFUVVFTkNZOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfU19I
-V19GUkVRX1NFRUs6IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19F
-TlVNQVVESU86IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19HL1Mv
-RU5VTUlOUFVUOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfRy9T
-X0FVRElPOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgSW5wdXRzOiAwIEF1ZGlvIElu
-cHV0czogMCBUdW5lcnM6IDAKPiA+Cj4gPiBPdXRwdXQgaW9jdGxzOgo+ID4gICAgICAgICB0ZXN0
-IFZJRElPQ19HL1NfTU9EVUxBVE9SOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVz
-dCBWSURJT0NfRy9TX0ZSRVFVRU5DWTogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRl
-c3QgVklESU9DX0VOVU1BVURPVVQ6IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4gICAgICAgICB0ZXN0
-IFZJRElPQ19HL1MvRU5VTU9VVFBVVDogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRl
-c3QgVklESU9DX0cvU19BVURPVVQ6IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4gICAgICAgICBPdXRw
-dXRzOiAwIEF1ZGlvIE91dHB1dHM6IDAgTW9kdWxhdG9yczogMAo+ID4KPiA+IElucHV0L091dHB1
-dCBjb25maWd1cmF0aW9uIGlvY3RsczoKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfRU5VTS9HL1Mv
-UVVFUllfU1REOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfRU5V
-TS9HL1MvUVVFUllfRFZfVElNSU5HUzogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRl
-c3QgVklESU9DX0RWX1RJTUlOR1NfQ0FQOiBPSyAoTm90IFN1cHBvcnRlZCkKPiA+ICAgICAgICAg
-dGVzdCBWSURJT0NfRy9TX0VESUQ6IE9LIChOb3QgU3VwcG9ydGVkKQo+ID4KPiA+IENvbnRyb2wg
-aW9jdGxzOgo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19RVUVSWV9FWFRfQ1RSTC9RVUVSWU1FTlU6
-IE9LCj4gPiAgICAgICAgIHRlc3QgVklESU9DX1FVRVJZQ1RSTDogT0sKPiA+ICAgICAgICAgdGVz
-dCBWSURJT0NfRy9TX0NUUkw6IE9LCj4gPiAgICAgICAgIHRlc3QgVklESU9DX0cvUy9UUllfRVhU
-X0NUUkxTOiBPSwo+ID4gICAgICAgICB0ZXN0IFZJRElPQ18oVU4pU1VCU0NSSUJFX0VWRU5UL0RR
-RVZFTlQ6IE9LCj4gPiAgICAgICAgIHRlc3QgVklESU9DX0cvU19KUEVHQ09NUDogT0sgKE5vdCBT
-dXBwb3J0ZWQpCj4gPiAgICAgICAgIFN0YW5kYXJkIENvbnRyb2xzOiA0IFByaXZhdGUgQ29udHJv
-bHM6IDAKPiA+Cj4gPiBGb3JtYXQgaW9jdGxzOgo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19FTlVN
-X0ZNVC9GUkFNRVNJWkVTL0ZSQU1FSU5URVJWQUxTOiBPSwo+ID4gICAgICAgICB0ZXN0IFZJRElP
-Q19HL1NfUEFSTTogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRlc3QgVklESU9DX0df
-RkJVRjogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRlc3QgVklESU9DX0dfRk1UOiBP
-Swo+ID4gICAgICAgICB0ZXN0IFZJRElPQ19UUllfRk1UOiBPSwo+ID4gICAgICAgICB0ZXN0IFZJ
-RElPQ19TX0ZNVDogT0sKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfR19TTElDRURfVkJJX0NBUDog
-T0sgKE5vdCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRlc3QgQ3JvcHBpbmc6IE9LIChOb3QgU3Vw
-cG9ydGVkKQo+ID4gICAgICAgICB0ZXN0IENvbXBvc2luZzogT0sgKE5vdCBTdXBwb3J0ZWQpCj4g
-PiAgICAgICAgIHRlc3QgU2NhbGluZzogT0sgKE5vdCBTdXBwb3J0ZWQpCj4gPgo+ID4gQ29kZWMg
-aW9jdGxzOgo+ID4gICAgICAgICB0ZXN0IFZJRElPQ18oVFJZXylFTkNPREVSX0NNRDogT0sgKE5v
-dCBTdXBwb3J0ZWQpCj4gPiAgICAgICAgIHRlc3QgVklESU9DX0dfRU5DX0lOREVYOiBPSyAoTm90
-IFN1cHBvcnRlZCkKPiA+ICAgICAgICAgdGVzdCBWSURJT0NfKFRSWV8pREVDT0RFUl9DTUQ6IE9L
-IChOb3QgU3VwcG9ydGVkKQo+ID4KPiA+IEJ1ZmZlciBpb2N0bHM6Cj4gPiAgICAgICAgIHRlc3Qg
-VklESU9DX1JFUUJVRlMvQ1JFQVRFX0JVRlMvUVVFUllCVUY6IE9LCj4gPiAgICAgICAgIHRlc3Qg
-VklESU9DX0VYUEJVRjogT0sKPiA+ICAgICAgICAgdGVzdCBSZXF1ZXN0czogT0sgKE5vdCBTdXBw
-b3J0ZWQpCj4gPgo+ID4gVG90YWwgZm9yIHN1bjhpLXJvdGF0ZSBkZXZpY2UgL2Rldi92aWRlbzA6
-IDQ1LCBTdWNjZWVkZWQ6IDQ1LCBGYWlsZWQ6IDAsCj4gPiBXYXJuaW5nczogMAo+ID4KPiA+IEJl
-c3QgcmVnYXJkcywKPiA+IEplcm5lago+ID4KPiA+IEplcm5laiBTa3JhYmVjICg4KToKPiA+ICAg
-Y2xrOiBzdW54aS1uZzogc3VuOGktZGUyOiBTd2FwIEE2NCBhbmQgSDYgZGVmaW5pdGlvbnMKPiA+
-ICAgY2xrOiBzdW54aS1uZzogc3VuOGktZGUyOiBGaXggQTgzVCBjbG9ja3MgYW5kIHJlc2V0Cj4K
-PiBQbGVhc2UgZGlzcmVnYXJkIGFib3ZlIHR3byBwYXRjaGVzLiBJdCB0dXJucyBvdXQgdGhhdCBt
-YW55IG1vcmUgY2hhbmdlcyBhcmUKPiByZXF1aXJlZCB0byBmaXggbWVzcyB3aXRoIHJvdGF0aW9u
-IGNsb2NrcyBhbmQgcmVzZXQuIEkgc2VudCBzZXBhcmF0ZSBwYXRjaAo+IHNlcmllczogaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvcGlwZXJtYWlsL2xpbnV4LWFybS1rZXJuZWwvMjAyMC1GZWJy
-dWFyeS8KPiA3MTAyNDIuaHRtbAo+Cj4gQ29tbWVudHMgb24gdGhlIHJlc3Qgb2YgdGhlIHNlcmll
-cyBhcmUgd2VsY29tZSwgdGhvdWdoLgo+Cj4gQmVzdCByZWdhcmRzLAo+IEplcm5lago+Cj4gPiAg
-IEFSTTogZHRzOiBzdW54aTogRml4IERFMiBjbG9ja3MgcmVnaXN0ZXIgcmFuZ2UKPiA+ICAgYXJt
-NjQ6IGR0czogYWxsd2lubmVyOiBhNjQ6IEZpeCBkaXNwbGF5IGNsb2NrIHJlZ2lzdGVyIHJhbmdl
-Cj4gPiAgIG1lZGlhOiBkdC1iaW5kaW5nczogbWVkaWE6IEFkZCBBbGx3aW5uZXIgQTgzVCBSb3Rh
-dGUgZHJpdmVyCj4gPiAgIG1lZGlhOiBzdW44aTogQWRkIEFsbHdpbm5lciBBODNUIFJvdGF0ZSBk
-cml2ZXIKPiA+ICAgQVJNOiBkdHM6IHN1bjhpOiBhODN0OiBBZGQgZGV2aWNlIG5vZGUgZm9yIHJv
-dGF0aW9uIGNvcmUKPiA+ICAgYXJtNjQ6IGR0czogYWxsd2lubmVyOiBhNjQ6IGFkZCBub2RlIGZv
-ciByb3RhdGlvbiBjb3JlCgpNZXJnZWQgdGhlIERUUyBwYXRjaGVzIGZvciA1LjcuCgpDaGVuWXUK
-Cj4gPiAgLi4uL2FsbHdpbm5lcixzdW44aS1hODN0LWRlMi1yb3RhdGUueWFtbCAgICAgIHwgIDcw
-ICsrCj4gPiAgTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwg
-ICA4ICsKPiA+ICBhcmNoL2FybS9ib290L2R0cy9zdW44aS1hODN0LmR0c2kgICAgICAgICAgICAg
-fCAgMTMgKy0KPiA+ICBhcmNoL2FybS9ib290L2R0cy9zdW44aS1yNDAuZHRzaSAgICAgICAgICAg
-ICAgfCAgIDIgKy0KPiA+ICBhcmNoL2FybS9ib290L2R0cy9zdW44aS12M3MuZHRzaSAgICAgICAg
-ICAgICAgfCAgIDIgKy0KPiA+ICBhcmNoL2FybS9ib290L2R0cy9zdW54aS1oMy1oNS5kdHNpICAg
-ICAgICAgICAgfCAgIDIgKy0KPiA+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41
-MGktYTY0LmR0c2kgfCAgMTQgKy0KPiA+ICBkcml2ZXJzL2Nsay9zdW54aS1uZy9jY3Utc3VuOGkt
-ZGUyLmMgICAgICAgICAgfCAgNDkgKy0KPiA+ICBkcml2ZXJzL21lZGlhL3BsYXRmb3JtL0tjb25m
-aWcgICAgICAgICAgICAgICAgfCAgMTIgKwo+ID4gIGRyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3Vu
-eGkvTWFrZWZpbGUgICAgICAgICB8ICAgMSArCj4gPiAgLi4uL3BsYXRmb3JtL3N1bnhpL3N1bjhp
-LXJvdGF0ZS9NYWtlZmlsZSAgICAgIHwgICAyICsKPiA+ICAuLi4vc3VueGkvc3VuOGktcm90YXRl
-L3N1bjhpLWZvcm1hdHMuYyAgICAgICAgfCAyNzMgKysrKysrCj4gPiAgLi4uL3N1bnhpL3N1bjhp
-LXJvdGF0ZS9zdW44aS1mb3JtYXRzLmggICAgICAgIHwgIDI1ICsKPiA+ICAuLi4vc3VueGkvc3Vu
-OGktcm90YXRlL3N1bjhpLXJvdGF0ZS5jICAgICAgICAgfCA5MjQgKysrKysrKysrKysrKysrKysr
-Cj4gPiAgLi4uL3N1bnhpL3N1bjhpLXJvdGF0ZS9zdW44aS1yb3RhdGUuaCAgICAgICAgIHwgMTM1
-ICsrKwo+ID4gIDE1IGZpbGVzIGNoYW5nZWQsIDE1MTIgaW5zZXJ0aW9ucygrKSwgMjAgZGVsZXRp
-b25zKC0pCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0Cj4gPiBEb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvbWVkaWEvYWxsd2lubmVyLHN1bjhpLWE4M3QtZGUyLXJvdGF0ZS55YW0KPiA+
-IGwgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuOGkt
-cm90YXRlL01ha2VmaWxlCj4gPiBjcmVhdGUgbW9kZSAxMDA2NDQKPiA+IGRyaXZlcnMvbWVkaWEv
-cGxhdGZvcm0vc3VueGkvc3VuOGktcm90YXRlL3N1bjhpLWZvcm1hdHMuYyBjcmVhdGUgbW9kZQo+
-ID4gMTAwNjQ0IGRyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuOGktcm90YXRlL3N1bjhp
-LWZvcm1hdHMuaCBjcmVhdGUKPiA+IG1vZGUgMTAwNjQ0IGRyaXZlcnMvbWVkaWEvcGxhdGZvcm0v
-c3VueGkvc3VuOGktcm90YXRlL3N1bjhpLXJvdGF0ZS5jIGNyZWF0ZQo+ID4gbW9kZSAxMDA2NDQg
-ZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW44aS1yb3RhdGUvc3VuOGktcm90YXRlLmgK
-Pgo+Cj4KPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On Wed 11 Mar 05:35 PDT 2020, Robert Foss wrote:
+
+> Enable the ov8856 main camera and the ov7251 b/w tracking camera
+> used on the Qualcomm RB3 kit.
+> 
+> Currently the camera nodes have not yet been attached to an to a
+> CSI2 endpoint, since no driver currently supports the ISP that the the
+> SDM845/db845c ships with.
+> 
+> Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> ---
+>  arch/arm64/boot/dts/qcom/sdm845-db845c.dts | 239 +++++++++++++++++++++
+>  1 file changed, 239 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> index e8c056d02ace..660550197ce9 100644
+> --- a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> +++ b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> @@ -110,6 +110,53 @@
+>  		// enable-active-high;
+>  	};
+>  
+> +	cam0_dvdd_1v2: reg_cam0_dvdd_1v2 {
+
+cam0_dvdd_1v2: cam0-dvdd-1v2 {
+
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "CAM0_DVDD_1V2";
+> +		regulator-min-microvolt = <1200000>;
+> +		regulator-max-microvolt = <1200000>;
+> +		enable-active-high;
+> +		gpio = <&pm8998_gpio 12 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&cam0_dvdd_1v2_en_default>;
+> +		vin-supply = <&vbat>;
+> +	};
+> +
+> +	cam0_avdd_2v8: reg_cam0_avdd_2v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "CAM0_AVDD_2V8";
+> +		regulator-min-microvolt = <2800000>;
+> +		regulator-max-microvolt = <2800000>;
+> +		enable-active-high;
+> +		gpio = <&pm8998_gpio 10 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&cam0_avdd_2v8_en_default>;
+> +		vin-supply = <&vbat>;
+> +	};
+> +
+> +	/* This regulator is enabled when the VREG_LVS1A_1P8 trace is enabled */
+> +	cam3_avdd_2v8: reg_cam3_avdd_2v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "CAM3_AVDD_2V8";
+> +		regulator-min-microvolt = <2800000>;
+> +		regulator-max-microvolt = <2800000>;
+> +		regulator-always-on;
+> +		vin-supply = <&vbat>;
+> +	};
+> +
+> +	/* This regulator does not really exits, but a 'vddd-supply' is
+> +	 * required for the ov7251 driver, but no 'vddd' regulator is used
+> +	 * in the schematic
+> +	 */
+
+Looking at the driver you should be able to just omit vddd-supply from
+the DT node, in which case the driver will get a dummy regulator and
+should function properly.
+
+Presumably you can then skip defining this dummy regulator as well.
+
+> +	cam3_vddd_1v2: reg_cam3_vddd_1v2 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "CAM3_VDDD_1V2_DUMMY";
+> +		regulator-min-microvolt = <1200000>;
+> +		regulator-max-microvolt = <1200000>;
+> +		regulator-always-on;
+> +		vin-supply = <&vbat>;
+> +	};
+> +
+>  	pcie0_3p3v_dual: vldo-3v3-regulator {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "VLDO_3V3";
+> @@ -406,6 +453,81 @@
+>  };
+>  
+>  &tlmm {
+> +	pcie0_default_state: pcie0-default {
+> +		clkreq {
+> +			pins = "gpio36";
+> +			function = "pci_e0";
+> +			bias-pull-up;
+> +		};
+> +
+> +		reset-n {
+> +			pins = "gpio35";
+> +			function = "gpio";
+> +
+> +			drive-strength = <2>;
+> +			output-low;
+> +			bias-pull-down;
+> +		};
+> +
+> +		wake-n {
+> +			pins = "gpio37";
+> +			function = "gpio";
+> +
+> +			drive-strength = <2>;
+> +			bias-pull-up;
+> +		};
+> +	};
+
+This looks like leftovers from your workspace.
+
+> +
+> +	cam0_default: cam0_default {
+> +		mux_rst {
+
+Please combine *_rst into one "rst" subnode and *_mclk0 into a mclk {}.
+
+> +			function = "gpio";
+> +			pins = "gpio9";
+> +		};
+> +		config_rst {
+> +			pins = "gpio9";
+> +			drive-strength = <16>;
+> +			bias-disable;
+> +		};
+> +
+> +		mux_mclk0 {
+> +			function = "cam_mclk";
+> +			pins = "gpio13";
+> +		};
+> +		config_mclk0 {
+> +			pins = "gpio13";
+> +			drive-strength = <16>;
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	cam3_default: cam3_default {
+
+Ditto.
+
+Also, please check the indentation of this block.
+
+> +			mux_rst {
+> +				function = "gpio";
+> +				pins = "gpio21";
+> +			};
+> +			config_rst {
+> +				pins = "gpio21";
+> +				drive-strength = <16>;
+> +				bias-disable;
+> +			};
+> +
+> +			mux_mclk3 {
+> +				function = "cam_mclk";
+> +				pins = "gpio16";
+> +			};
+> +			config_mclk3 {
+> +				pins = "gpio16";
+> +				drive-strength = <16>;
+> +				bias-disable;
+> +			};
+> +	};
+> +
+> +	lt9611_irq_pin: lt9611-irq {
+> +		pins = "gpio84";
+> +		function = "gpio";
+> +		bias-disable;
+> +	};
+
+This node shouldn't be here either.
+
+> +
+>  	pcie0_pwren_state: pcie0-pwren {
+>  		pins = "gpio90";
+>  		function = "gpio";
+> @@ -612,8 +734,125 @@
+>  		"PM845_GPIO24",
+>  		"OPTION2",
+>  		"PM845_SLB";
+> +
+> +	cam0_dvdd_1v2_en_default: cam0_dvdd_1v2_en_pinctrl {
+
+Use '-' in the node name, and you can drop the _pinctrl suffix, given
+that the name only has to be unique in this parent node.
+
+> +		pins = "gpio12";
+> +		function = "normal";
+> +
+> +		bias-pull-up;
+> +		drive-push-pull;
+> +		qcom,drive-strength = <PMIC_GPIO_STRENGTH_HIGH>;
+> +	};
+> +
+> +	cam0_avdd_2v8_en_default: cam0_avdd_2v8_en_pinctrl {
+> +		pins = "gpio10";
+> +		function = "normal";
+> +
+> +		bias-pull-up;
+> +		drive-push-pull;
+> +		qcom,drive-strength = <PMIC_GPIO_STRENGTH_HIGH>;
+> +	};
+>  };
+>  
+>  &cci {
+>  	status = "ok";
+> +
+> +	i2c-bus@0 {
+
+Please reference this by label instead.
+
+> +		cam0@10 {
+
+camera@10
+
+> +			compatible = "ovti,ov8856";
+> +
+> +			/* The Qualcomm RB3 camera mezzanine schematic lists
+> +			 * 0x20 as I2C address of this device, but the Linux
+> +			 * kernel documentation lists 0x10 I2C address.
+> +			 */
+
+This is a  normal discrepancy in how different people lists
+addresses. Feel free to omit this comment.
+
+> +			reg = <0x10>;
+> +
+> +			// CAM0_RST_N
+> +			reset-gpios = <&tlmm 9 GPIO_ACTIVE_HIGH>;
+> +			pinctrl-names = "default";
+> +			pinctrl-0 = <&cam0_default>;
+> +			gpios = <&tlmm 13 0>,
+> +				<&tlmm 9 0>;
+
+s/0/GPIO_ACTIVE_HIGH/g
+
+> +
+> +			clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
+> +			clock-names = "xvclk";
+> +			clock-frequency = <19200000>;
+> +
+> +
+
+Extra newline.
+
+> +			/* The &vreg_s4a_1p8 trace is powered on as a
+> +			 * part of the TITAN_TOP_GDSC power domain.
+
+Rather vreg_s4a_1p8 is simply always on, unrelated to TITAN_TOP_GDSC.
+The GDSC is likely to control the power to the CCI controller itself
+though.
+
+> +			 * So it is represented by a fixed regulator.
+> +			 *
+> +			 * The 2.8V vdda-supply and 1.2V vddd-supply regulators
+> +			 * both have to be enabled through the power management
+> +			 * gpios.
+> +			 */
+> +			power-domains = <&clock_camcc TITAN_TOP_GDSC>;
+> +
+> +			dovdd-supply = <&vreg_lvs1a_1p8>;
+> +			avdd-supply = <&cam0_avdd_2v8>;
+> +			dvdd-supply = <&cam0_dvdd_1v2>;
+> +
+> +			/* No camera mezzanine by default */
+
+I think it's fine to assume that everyone has their mezzanine mounted on
+their db845c, so feel free to omit this comment and the status below.
+
+(Assuming that not having the camera connected will be handled somewhat
+gracefully)
+
+
+Given though that we're lacking the rest of the camera subsystem it
+might be suitable to status = "disable" this for now.
+
+> +			status = "ok";
+> +
+> +			port {
+> +				ov8856_ep: endpoint {
+> +					clock-lanes = <1>;
+> +					link-frequencies = /bits/ 64
+> +						<360000000 180000000>;
+> +					data-lanes = <1 2 3 4>;
+> +//					remote-endpoint = <&csiphy0_ep>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +
+> +	i2c-bus@1 {
+
+Same comments as for the first bus...
+
+Regards,
+Bjorn
+
+> +		cam3@60 {
+> +			compatible = "ovti,ov7251";
+> +
+> +			// I2C address as per ov7251.txt linux documentation
+> +			reg = <0x60>;
+> +
+> +			// CAM3_RST_N
+> +			enable-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+> +			pinctrl-names = "default";
+> +			pinctrl-0 = <&cam3_default>;
+> +			gpios = <&tlmm 16 0>,
+> +				<&tlmm 21 0>;
+> +
+> +			clocks = <&clock_camcc CAM_CC_MCLK3_CLK>;
+> +			clock-names = "xclk";
+> +			clock-frequency = <24000000>;
+> +
+> +			/* The &vreg_s4a_1p8 trace is powered on as a
+> +			 * part of the TITAN_TOP_GDSC power domain.
+> +			 * So it is represented by a fixed regulator.
+> +			 *
+> +			 * The 2.8V vdda-supply regulator is enabled when the
+> +			 * vreg_s4a_1p8 trace is pulled high.
+> +			 * It too is represented by a fixed regulator.
+> +			 *
+> +			 * No 1.2V vddd-supply regulator is used, a fixed
+> +			 * regulator represents it.
+> +			 */
+> +			power-domains = <&clock_camcc TITAN_TOP_GDSC>;
+> +
+> +			vdddo-supply = <&vreg_lvs1a_1p8>;
+> +			vdda-supply = <&cam3_avdd_2v8>;
+> +			vddd-supply = <&cam3_vddd_1v2>;
+> +
+> +			/* No camera mezzanine by default */
+> +			status = "ok";
+> +
+> +			port {
+> +				ov7251_ep: endpoint {
+> +					clock-lanes = <1>;
+> +					data-lanes = <0 1>;
+> +//					remote-endpoint = <&csiphy3_ep>;
+> +				};
+> +			};
+> +		};
+> +	};
+>  };
+> -- 
+> 2.20.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
