@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB128182D8D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:28:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F2A182D95
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 11:28:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tRWiD5ALFwe5GalOEruz8O6U3sHyMUP1aoMq3fWhyyk=; b=NPZhv3bHRrWd/B
-	xzNWDWtWxC6qfQXf25dJvIsGT70LV4SgGeDK9Nx7BqetYstAsVkjHilB9V3lnHFY51N7M0J0I7bwV
-	C/OuThKTPM/k+SyeRJ2Bn8pKJp1PEDkSGHfHo9AUfk18YnESR+kXPcJ069l3sPFIrZEX8zlRr/rvu
-	R+NQbLg+PLNpSGqqUzj+ozKOhB8Fq3Tr1oI1nilpdFLTeBgPF4Oof7LCt8MIC092n90NWVTN9tn5c
-	5J5lsWTSREO6bGxLoI7e4iSFtDlNXWwpGTMDBX6dBefdt4H3BAmXrzXjQVnIc+qv1KiRC+YWgJUYj
-	IT19EcWU31CwmoWg41wg==;
+	List-Owner; bh=/zjraaKl3NNrmoHn0knTxlr6/ARXQgLjKU2NI+jaSIM=; b=spd63K4PqNpgPU
+	DgJoUTZJB8/4CK6ddLCrcBSkJL7U8u7OcUNwjSvdPOQ4MuIyttBqNnwpNwiI++ffVFfh5iCiQJeU/
+	hqzlWGeIaDE2PKvgFMQzd8GTidBcnvrbr3i/AdsKUaVe11KpVdpDO69Vi5AsSd7vPWE92IlYpjhJf
+	8mLkhP1JDXYeqLs97kNp++Q9D4/0P2jCQp7ZeSOTVeMNKP8B8fiF6odceMd4uJofUBljmwYO5+21I
+	Evy/IgnMPeX1ainVqv1nLPQVtGOWipoVe6B3TDbbh7Vj6JlHlOwfsQb7XxnbH72MRF+b7Y0OU+0gG
+	Kbp8fiucX9pRZ+910yCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCL4L-0008Kk-9j; Thu, 12 Mar 2020 10:28:01 +0000
-Received: from mail-eopbgr60079.outbound.protection.outlook.com ([40.107.6.79]
+	id 1jCL4i-00009p-AQ; Thu, 12 Mar 2020 10:28:24 +0000
+Received: from mail-eopbgr60088.outbound.protection.outlook.com ([40.107.6.88]
  helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCL3L-0007V4-N8
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:27:02 +0000
+ id 1jCL3T-0007eU-TT
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 10:27:12 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=btLWv/ygnPzyb0XMx0ZsPrdgj8UuW+1bMNf2K+oHzdCfSbBZsLb55wlgJ4N/m7k7nZk3ESkt722uuQyjViQ08nSRnx0LQbyy8CKZWFmbQ8lw+gRoKxwE2aVDezLhDAfoSmXECp4yWtAMsM6K7J3Wot7HYbtFxb69YH2p7KofVb6xNkRYKWyqZYCHcDTu9MIQak5akN59AEWh4400gesbsL/ZiRSTAZ7r1UsTMePL9d5Sdss3R2t0fOmSoSqs1yOc+XlA2O/9Eb/0EfZuP+xmZI1OPJBQ2WFcvXwNHtdZqbR+p/y6ihDGor77phbjHPh6hmovkbC9wzNiNOVHUp4y9g==
+ b=X6JeXs16SkczefOp1kOeHqG/OpnXB9TC3+T4k+j5n+aNPO+b0QBBD0MsLD1I7QpGQRZD4Kxmlx4K3bNVR729XM32De+I2obb/X1iJkGQ6+MMY6vdwiydo3oCCLA4nt18+XfZz1oP9hNqVDeIOAUu8fClI+fsZhiKYCWvOADFG3kAaappJxqHJJxZkB+w1rdqwG2ZiWZGai/TLet9ssUxk0yC/v3oKuH+YEP/CItri1JlJnyoSBka8DkzXVSGS+ZVRWRRAES+cgAUxFXEI5GNyzvuCQET5zpWyiDRXgRZ3lkLOXcJb/xxnx9sGA8NnPcb5GWMPNgvUOiu2IaKumnl3A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9HxmGmzMPjDdcdVa4OtZe36wcPfY0iU6dXF19EHCpHw=;
- b=DS5A1h/FywI8AkCaTnV1ybrpjOXmFSmgEbi5tCOPijw74AQtW6wmidnuQUMFsF/aoSgNnD54asOu4Xy9K/pQd7K04raa9KoJ7wseFX7oMkl/TfpPB3RkHmhYtXFSfB5K6cLcDM61tbq6gwcHRuwwjTL2ZNY6h7e6/elmbbr0WS4Da3cOwDYKF+m0mGMuf+9uYttGiLRJrpg9+ufxrKjqZdILzbWNbxRyieV+BxplSarxgICpZLrzeowIhPLYzUmyrrg4ZK1BsvUzgHBJjNTR6xtuzBrQuY43TsccRf9He45BsbzD9qTTK5cEvuSExIoV9UCNRcgeIfWH7VLqvF3myA==
+ bh=YaRT3NfG2XBeOP9eYGpEU06FeJxEBVoA+1XcW6dAIBU=;
+ b=AUG57YIBTtOG+kIfem1aG2Pr6GejWmAjiJBbQLZlLcquSMH8PgtJZNTUidGxkPrjEmU9u3hWUFkkPcVlnLO4b16uWhGQlT8Fk2gdYLWku8lbd8OMkgE+T+wfSga5Lmz4+Y/0tzEEbxCrFsdYFcvPThtffaTcYHulT8vnz3wtSsgkbqcUib2r+szDQcN2X9LbzDqeKN4Kd8hgK0FqaZGQIzCiCevUb4DbpaOkxXCh0sw0OLabwvzNqEKaoB2yZ3Atkvl0QjkdTe9dg/XqCPfFaJY+Hi2EZ8+4XKpvC8Zy0wuU4ei4gDYkcpwb159iU1gZ0tkiARyAig4lwomUoUeqqw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9HxmGmzMPjDdcdVa4OtZe36wcPfY0iU6dXF19EHCpHw=;
- b=UmBsv8OzuEP4TcM8LhNQ2t2cGehavCOIy/wmjb0bR2eHkWSFJdEguVo/fExPaPtRrszjn9+qfhFuE3zH2WKLSNPfq8HzelozVMD1f2IDRTn3b6ck3Ci5a+Q2OFuIPTPCMifx2dWNJR8i62les3+n+c27MU9MJPVIYAMiyEyfXXY=
+ bh=YaRT3NfG2XBeOP9eYGpEU06FeJxEBVoA+1XcW6dAIBU=;
+ b=qctxZUXPK7mCZqjqT6V8Y9Q/6kw0RmOLhZUApiDDfwTB5onuBOpxjSMxm0oJubidqO86KgJNtlZKbQOk/HtMemizQYGLzqV5JdrUiZlZKnjT8WjbGfPtEeiBRa8r8NSOxErAbJv/vIbvd/zuxcX5TOsuOLFm/svzTKsuJVHAUTM=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB4195.eurprd04.prod.outlook.com (52.134.92.151) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.14; Thu, 12 Mar 2020 10:26:58 +0000
+ 15.20.2814.14; Thu, 12 Mar 2020 10:27:04 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.018; Thu, 12 Mar 2020
- 10:26:58 +0000
+ 10:27:04 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, leonard.crestez@nxp.com,
  sboyd@kernel.org, abel.vesa@nxp.com
-Subject: [PATCH V2 04/10] clk: imx8mp: Define gates for pll1/2 fixed dividers
-Date: Thu, 12 Mar 2020 18:19:38 +0800
-Message-Id: <1584008384-11578-5-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V2 05/10] clk: imx8mp: use imx8m_clk_hw_composite_core to
+ simplify code
+Date: Thu, 12 Mar 2020 18:19:39 +0800
+Message-Id: <1584008384-11578-6-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
 References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
@@ -65,16 +66,16 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.66) by
  SG2PR03CA0113.apcprd03.prod.outlook.com (2603:1096:4:91::17) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2835.7 via Frontend Transport; Thu, 12 Mar 2020 10:26:51 +0000
+ 15.20.2835.7 via Frontend Transport; Thu, 12 Mar 2020 10:26:58 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: d6c5198f-4fcc-42ad-735b-08d7c66fe4bc
+X-MS-Office365-Filtering-Correlation-Id: ed5b2cf9-40a4-4b6e-773b-08d7c66fe897
 X-MS-TrafficTypeDiagnostic: AM0PR04MB4195:|AM0PR04MB4195:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB4195D1ABCBDF86DBD2665BDF88FD0@AM0PR04MB4195.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:576;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB4195D5E77E7739574F6F144188FD0@AM0PR04MB4195.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:466;
 X-Forefront-PRVS: 0340850FCD
 X-Forefront-Antispam-Report: SFV:NSPM;
  SFS:(10009020)(4636009)(136003)(366004)(39860400002)(346002)(376002)(396003)(199004)(956004)(26005)(6512007)(9686003)(2616005)(86362001)(8676002)(186003)(6506007)(81166006)(6666004)(8936002)(7416002)(6486002)(478600001)(52116002)(69590400007)(316002)(66946007)(66476007)(16526019)(5660300002)(66556008)(36756003)(81156014)(4326008)(2906002)(32563001);
@@ -85,26 +86,26 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: /v9wVAGfxu4wuBgWfein2vG6SO8weDMNRpywWbILIE6nSt7LzyjjY8h5WUzTNYqJXCXtaWe/lR15/kWBw7WALH9L+s5yKRWSfhh0htsYS+IbInwYPWi4xcDORwzQWp4YfiC6HV5nx0q1/+vbp/Odzflrzzxu8K7dmIfQgGZabXGSioQnrJQzK+lqD7cW5nbAqnGCG4gl/fdmTPR16iJSu8RIdP/+iNYQGgW2CHifIi6ZxpgumjkjjnRJW8MOjOXHvKAtLlCIHgVw7yaZP34AJVYRfPf22nFINaXCi2Qn/QsRAB5OGzTrBcIPTCHmpG8xylkF7V20bP54NNg2785kSLRyJ0XNRT/toUm71gkVRYNSUgpWrAiTgLjX2hKCjv1dCqRJ5FFYUjb8EP8pCXJ8NNzta2pWlAd+ivN5D6W0Hqaipn94jBY7WfUc7rkgeSetHp3mJ7naKi3xejvpO0NX4rEjNazE6EzNpG++52QvuK+/S5+QiOT8btdp33uQX+GhpIt+FbHwdyTV+SjHx1L+mg==
-X-MS-Exchange-AntiSpam-MessageData: ELQNFiQMZgeaMzqu5WJaB3GWHLDDZCqdxa6e+JSM7ujgm6PorTMh3y5OlsVdzpUWKptzZIbkls/kpgU7WTJOUQGWodgLBP6Nk4CFSRu09xiIl+UvZhLUn63zK8g7zYBXfTvExaS3VbzTSOd8JvQ+ww==
+X-Microsoft-Antispam-Message-Info: N/C7k+D/tWsHnDp/65mzyifzJMMEh0OPduL2YAu42Jh7oulyyAAs/CnblvSxcm10UWY69fDPx9ePSXQe/t9WHFZ0TvQExdR/l54zqNvqHM+wu7FEL37VKiDAEaqnQQsomspWe40/TZWGVrPdAcGqVyzHfZCALuHmFG5pWLRzo2dbxzMciGoOnr/7Z6z+bJani2inUc0mmk9GmWn7ps1hAlvVjb3EWjXbkVBOW4kbzVGQnthwhwSdfmpT/w3CB1AUW2luOaCXmTlGT9u4VCQAapB0/jjV7z7KQstms70RKCl/qA6ASlK4AAbIJ7HfJ7xE1nkrYSw55dI7BOaBSHOHpXjuZq2hovMYpAdAiqeP4Fcswe7ZVprkFUIozqoffI5hcCnSw6Ar0WbZsgV8zK9ngABpw8L7MhQGXzw9Mcu649NbOgfTKcKqZx+sktGAK3nzF9MeIyABBleCBxRhDBmnrRvEb8m9uKF7nUqw9JMlvmF427p/y4XSWJbmBMo5XpRcq4W+bMp+fqgWqCZoB1F1Jw==
+X-MS-Exchange-AntiSpam-MessageData: XUvm12bJ8+axsr2f+vVpBWA6tJm0k4aMOlCisHBdx64Nj9uYZ+0PY/XSZzMJcU0VO5jNK0SN1V19IESCV2qSiaK6D/RdFqlCLsYXEmxF84RvjRItZiJcAYyl5YaUHpNiGtpV+hPjwK47maZvKTiQ7w==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d6c5198f-4fcc-42ad-735b-08d7c66fe4bc
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 10:26:57.9888 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ed5b2cf9-40a4-4b6e-773b-08d7c66fe897
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 10:27:04.5752 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: D8iF4b2mFiqf/OsVu8vZNmuCl1EQmxboXSRDXMWWOc6uP23vg02l237Xgl+ooozD3JE688VmonKA2NeSmUd6cA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ds9OZ2WkklEVdqnwVGSwWmCyOrYK9mzzVYVtAnj8GPwngGplOgu+BU6Fu+CXCT0Dz1yjaoL0gz/hwI4BKFWPqg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_032659_845933_57E15648 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20200312_032708_143647_CD88F45F 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.79 listed in list.dnswl.org]
+ no trust [40.107.6.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -138,119 +139,113 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Inspried from
-commit e8688fe8df7d ("clk: imx8mn: Define gates for pll1/2 fixed dividers")
-
-On imx8mp there are 9 fixed-factor dividers for SYS_PLL1 and SYS_PLL2
-each with their own gate. Only one of these gates (the one "dividing" by
-one) is currently defined and it's incorrectly set as the parent of all
-the fixed-factor dividers.
-
-Add the other 8 gates to the clock tree between sys_pll1/2_bypass and
-the fixed dividers.
+Use imx8m_clk_hw_composite_core to simpliy clks that belong to
+core clk slice.
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk-imx8mp.c             | 54 +++++++++++++++++++++-----------
- include/dt-bindings/clock/imx8mp-clock.h | 19 ++++++++++-
- 2 files changed, 54 insertions(+), 19 deletions(-)
+ drivers/clk/imx/clk-imx8mp.c             | 47 +++++++++++---------------------
+ include/dt-bindings/clock/imx8mp-clock.h | 11 +++++++-
+ 2 files changed, 26 insertions(+), 32 deletions(-)
 
 diff --git a/drivers/clk/imx/clk-imx8mp.c b/drivers/clk/imx/clk-imx8mp.c
-index e9ed8a188031..a7613c7355c8 100644
+index a7613c7355c8..998e9e63f831 100644
 --- a/drivers/clk/imx/clk-imx8mp.c
 +++ b/drivers/clk/imx/clk-imx8mp.c
-@@ -504,28 +504,46 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
- 	hws[IMX8MP_GPU_PLL_OUT] = imx_clk_hw_gate("gpu_pll_out", "gpu_pll_bypass", anatop_base + 0x64, 11);
- 	hws[IMX8MP_VPU_PLL_OUT] = imx_clk_hw_gate("vpu_pll_out", "vpu_pll_bypass", anatop_base + 0x74, 11);
- 	hws[IMX8MP_ARM_PLL_OUT] = imx_clk_hw_gate("arm_pll_out", "arm_pll_bypass", anatop_base + 0x84, 11);
--	hws[IMX8MP_SYS_PLL1_OUT] = imx_clk_hw_gate("sys_pll1_out", "sys_pll1_bypass", anatop_base + 0x94, 11);
--	hws[IMX8MP_SYS_PLL2_OUT] = imx_clk_hw_gate("sys_pll2_out", "sys_pll2_bypass", anatop_base + 0x104, 11);
- 	hws[IMX8MP_SYS_PLL3_OUT] = imx_clk_hw_gate("sys_pll3_out", "sys_pll3_bypass", anatop_base + 0x114, 11);
- 
--	hws[IMX8MP_SYS_PLL1_40M] = imx_clk_hw_fixed_factor("sys_pll1_40m", "sys_pll1_out", 1, 20);
--	hws[IMX8MP_SYS_PLL1_80M] = imx_clk_hw_fixed_factor("sys_pll1_80m", "sys_pll1_out", 1, 10);
--	hws[IMX8MP_SYS_PLL1_100M] = imx_clk_hw_fixed_factor("sys_pll1_100m", "sys_pll1_out", 1, 8);
--	hws[IMX8MP_SYS_PLL1_133M] = imx_clk_hw_fixed_factor("sys_pll1_133m", "sys_pll1_out", 1, 6);
--	hws[IMX8MP_SYS_PLL1_160M] = imx_clk_hw_fixed_factor("sys_pll1_160m", "sys_pll1_out", 1, 5);
--	hws[IMX8MP_SYS_PLL1_200M] = imx_clk_hw_fixed_factor("sys_pll1_200m", "sys_pll1_out", 1, 4);
--	hws[IMX8MP_SYS_PLL1_266M] = imx_clk_hw_fixed_factor("sys_pll1_266m", "sys_pll1_out", 1, 3);
--	hws[IMX8MP_SYS_PLL1_400M] = imx_clk_hw_fixed_factor("sys_pll1_400m", "sys_pll1_out", 1, 2);
-+	hws[IMX8MP_SYS_PLL1_40M_CG] = imx_clk_hw_gate("sys_pll1_40m_cg", "sys_pll1_bypass", anatop_base + 0x94, 27);
-+	hws[IMX8MP_SYS_PLL1_80M_CG] = imx_clk_hw_gate("sys_pll1_80m_cg", "sys_pll1_bypass", anatop_base + 0x94, 25);
-+	hws[IMX8MP_SYS_PLL1_100M_CG] = imx_clk_hw_gate("sys_pll1_100m_cg", "sys_pll1_bypass", anatop_base + 0x94, 23);
-+	hws[IMX8MP_SYS_PLL1_133M_CG] = imx_clk_hw_gate("sys_pll1_133m_cg", "sys_pll1_bypass", anatop_base + 0x94, 21);
-+	hws[IMX8MP_SYS_PLL1_160M_CG] = imx_clk_hw_gate("sys_pll1_160m_cg", "sys_pll1_bypass", anatop_base + 0x94, 19);
-+	hws[IMX8MP_SYS_PLL1_200M_CG] = imx_clk_hw_gate("sys_pll1_200m_cg", "sys_pll1_bypass", anatop_base + 0x94, 17);
-+	hws[IMX8MP_SYS_PLL1_266M_CG] = imx_clk_hw_gate("sys_pll1_266m_cg", "sys_pll1_bypass", anatop_base + 0x94, 15);
-+	hws[IMX8MP_SYS_PLL1_400M_CG] = imx_clk_hw_gate("sys_pll1_400m_cg", "sys_pll1_bypass", anatop_base + 0x94, 13);
-+	hws[IMX8MP_SYS_PLL1_OUT] = imx_clk_hw_gate("sys_pll1_out", "sys_pll1_bypass", anatop_base + 0x94, 11);
-+
-+	hws[IMX8MP_SYS_PLL1_40M] = imx_clk_hw_fixed_factor("sys_pll1_40m", "sys_pll1_40m_cg", 1, 20);
-+	hws[IMX8MP_SYS_PLL1_80M] = imx_clk_hw_fixed_factor("sys_pll1_80m", "sys_pll1_80m_cg", 1, 10);
-+	hws[IMX8MP_SYS_PLL1_100M] = imx_clk_hw_fixed_factor("sys_pll1_100m", "sys_pll1_100m_cg", 1, 8);
-+	hws[IMX8MP_SYS_PLL1_133M] = imx_clk_hw_fixed_factor("sys_pll1_133m", "sys_pll1_133m_cg", 1, 6);
-+	hws[IMX8MP_SYS_PLL1_160M] = imx_clk_hw_fixed_factor("sys_pll1_160m", "sys_pll1_160m_cg", 1, 5);
-+	hws[IMX8MP_SYS_PLL1_200M] = imx_clk_hw_fixed_factor("sys_pll1_200m", "sys_pll1_200m_cg", 1, 4);
-+	hws[IMX8MP_SYS_PLL1_266M] = imx_clk_hw_fixed_factor("sys_pll1_266m", "sys_pll1_266m_cg", 1, 3);
-+	hws[IMX8MP_SYS_PLL1_400M] = imx_clk_hw_fixed_factor("sys_pll1_400m", "sys_pll1_400m_cg", 1, 2);
- 	hws[IMX8MP_SYS_PLL1_800M] = imx_clk_hw_fixed_factor("sys_pll1_800m", "sys_pll1_out", 1, 1);
- 
--	hws[IMX8MP_SYS_PLL2_50M] = imx_clk_hw_fixed_factor("sys_pll2_50m", "sys_pll2_out", 1, 20);
--	hws[IMX8MP_SYS_PLL2_100M] = imx_clk_hw_fixed_factor("sys_pll2_100m", "sys_pll2_out", 1, 10);
--	hws[IMX8MP_SYS_PLL2_125M] = imx_clk_hw_fixed_factor("sys_pll2_125m", "sys_pll2_out", 1, 8);
--	hws[IMX8MP_SYS_PLL2_166M] = imx_clk_hw_fixed_factor("sys_pll2_166m", "sys_pll2_out", 1, 6);
--	hws[IMX8MP_SYS_PLL2_200M] = imx_clk_hw_fixed_factor("sys_pll2_200m", "sys_pll2_out", 1, 5);
--	hws[IMX8MP_SYS_PLL2_250M] = imx_clk_hw_fixed_factor("sys_pll2_250m", "sys_pll2_out", 1, 4);
--	hws[IMX8MP_SYS_PLL2_333M] = imx_clk_hw_fixed_factor("sys_pll2_333m", "sys_pll2_out", 1, 3);
--	hws[IMX8MP_SYS_PLL2_500M] = imx_clk_hw_fixed_factor("sys_pll2_500m", "sys_pll2_out", 1, 2);
-+	hws[IMX8MP_SYS_PLL2_50M_CG] = imx_clk_hw_gate("sys_pll2_50m_cg", "sys_pll2_bypass", anatop_base + 0x104, 27);
-+	hws[IMX8MP_SYS_PLL2_100M_CG] = imx_clk_hw_gate("sys_pll2_100m_cg", "sys_pll2_bypass", anatop_base + 0x104, 25);
-+	hws[IMX8MP_SYS_PLL2_125M_CG] = imx_clk_hw_gate("sys_pll2_125m_cg", "sys_pll2_bypass", anatop_base + 0x104, 23);
-+	hws[IMX8MP_SYS_PLL2_166M_CG] = imx_clk_hw_gate("sys_pll2_166m_cg", "sys_pll2_bypass", anatop_base + 0x104, 21);
-+	hws[IMX8MP_SYS_PLL2_200M_CG] = imx_clk_hw_gate("sys_pll2_200m_cg", "sys_pll2_bypass", anatop_base + 0x104, 19);
-+	hws[IMX8MP_SYS_PLL2_250M_CG] = imx_clk_hw_gate("sys_pll2_250m_cg", "sys_pll2_bypass", anatop_base + 0x104, 17);
-+	hws[IMX8MP_SYS_PLL2_333M_CG] = imx_clk_hw_gate("sys_pll2_333m_cg", "sys_pll2_bypass", anatop_base + 0x104, 15);
-+	hws[IMX8MP_SYS_PLL2_500M_CG] = imx_clk_hw_gate("sys_pll2_500m_cg", "sys_pll2_bypass", anatop_base + 0x104, 13);
-+	hws[IMX8MP_SYS_PLL2_OUT] = imx_clk_hw_gate("sys_pll2_out", "sys_pll2_bypass", anatop_base + 0x104, 11);
-+
-+	hws[IMX8MP_SYS_PLL2_50M] = imx_clk_hw_fixed_factor("sys_pll2_50m", "sys_pll2_50m_cg", 1, 20);
-+	hws[IMX8MP_SYS_PLL2_100M] = imx_clk_hw_fixed_factor("sys_pll2_100m", "sys_pll2_100m_cg", 1, 10);
-+	hws[IMX8MP_SYS_PLL2_125M] = imx_clk_hw_fixed_factor("sys_pll2_125m", "sys_pll2_125m_cg", 1, 8);
-+	hws[IMX8MP_SYS_PLL2_166M] = imx_clk_hw_fixed_factor("sys_pll2_166m", "sys_pll2_166m_cg", 1, 6);
-+	hws[IMX8MP_SYS_PLL2_200M] = imx_clk_hw_fixed_factor("sys_pll2_200m", "sys_pll2_200m_cg", 1, 5);
-+	hws[IMX8MP_SYS_PLL2_250M] = imx_clk_hw_fixed_factor("sys_pll2_250m", "sys_pll2_250m_cg", 1, 4);
-+	hws[IMX8MP_SYS_PLL2_333M] = imx_clk_hw_fixed_factor("sys_pll2_333m", "sys_pll2_333m_cg", 1, 3);
-+	hws[IMX8MP_SYS_PLL2_500M] = imx_clk_hw_fixed_factor("sys_pll2_500m", "sys_pll2_500m_cg", 1, 2);
+@@ -546,33 +546,18 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_SYS_PLL2_500M] = imx_clk_hw_fixed_factor("sys_pll2_500m", "sys_pll2_500m_cg", 1, 2);
  	hws[IMX8MP_SYS_PLL2_1000M] = imx_clk_hw_fixed_factor("sys_pll2_1000m", "sys_pll2_out", 1, 1);
  
- 	hws[IMX8MP_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", ccm_base + 0x8000, 24, 3, imx8mp_a53_sels, ARRAY_SIZE(imx8mp_a53_sels));
+-	hws[IMX8MP_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", ccm_base + 0x8000, 24, 3, imx8mp_a53_sels, ARRAY_SIZE(imx8mp_a53_sels));
+-	hws[IMX8MP_CLK_M7_SRC] = imx_clk_hw_mux2("arm_m7_src", ccm_base + 0x8080, 24, 3, imx8mp_m7_sels, ARRAY_SIZE(imx8mp_m7_sels));
+-	hws[IMX8MP_CLK_ML_SRC] = imx_clk_hw_mux2("ml_src", ccm_base + 0x8100, 24, 3, imx8mp_ml_sels, ARRAY_SIZE(imx8mp_ml_sels));
+-	hws[IMX8MP_CLK_GPU3D_CORE_SRC] = imx_clk_hw_mux2("gpu3d_core_src", ccm_base + 0x8180, 24, 3,  imx8mp_gpu3d_core_sels, ARRAY_SIZE(imx8mp_gpu3d_core_sels));
+-	hws[IMX8MP_CLK_GPU3D_SHADER_SRC] = imx_clk_hw_mux2("gpu3d_shader_src", ccm_base + 0x8200, 24, 3, imx8mp_gpu3d_shader_sels, ARRAY_SIZE(imx8mp_gpu3d_shader_sels));
+-	hws[IMX8MP_CLK_GPU2D_SRC] = imx_clk_hw_mux2("gpu2d_src", ccm_base + 0x8280, 24, 3, imx8mp_gpu2d_sels, ARRAY_SIZE(imx8mp_gpu2d_sels));
+-	hws[IMX8MP_CLK_AUDIO_AXI_SRC] = imx_clk_hw_mux2("audio_axi_src", ccm_base + 0x8300, 24, 3, imx8mp_audio_axi_sels, ARRAY_SIZE(imx8mp_audio_axi_sels));
+-	hws[IMX8MP_CLK_HSIO_AXI_SRC] = imx_clk_hw_mux2("hsio_axi_src", ccm_base + 0x8380, 24, 3, imx8mp_hsio_axi_sels, ARRAY_SIZE(imx8mp_hsio_axi_sels));
+-	hws[IMX8MP_CLK_MEDIA_ISP_SRC] = imx_clk_hw_mux2("media_isp_src", ccm_base + 0x8400, 24, 3, imx8mp_media_isp_sels, ARRAY_SIZE(imx8mp_media_isp_sels));
+-	hws[IMX8MP_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg", "arm_a53_src", ccm_base + 0x8000, 28);
+-	hws[IMX8MP_CLK_M4_CG] = imx_clk_hw_gate3("arm_m7_cg", "arm_m7_src", ccm_base + 0x8080, 28);
+-	hws[IMX8MP_CLK_ML_CG] = imx_clk_hw_gate3("ml_cg", "ml_src", ccm_base + 0x8100, 28);
+-	hws[IMX8MP_CLK_GPU3D_CORE_CG] = imx_clk_hw_gate3("gpu3d_core_cg", "gpu3d_core_src", ccm_base + 0x8180, 28);
+-	hws[IMX8MP_CLK_GPU3D_SHADER_CG] = imx_clk_hw_gate3("gpu3d_shader_cg", "gpu3d_shader_src", ccm_base + 0x8200, 28);
+-	hws[IMX8MP_CLK_GPU2D_CG] = imx_clk_hw_gate3("gpu2d_cg", "gpu2d_src", ccm_base + 0x8280, 28);
+-	hws[IMX8MP_CLK_AUDIO_AXI_CG] = imx_clk_hw_gate3("audio_axi_cg", "audio_axi_src", ccm_base + 0x8300, 28);
+-	hws[IMX8MP_CLK_HSIO_AXI_CG] = imx_clk_hw_gate3("hsio_axi_cg", "hsio_axi_src", ccm_base + 0x8380, 28);
+-	hws[IMX8MP_CLK_MEDIA_ISP_CG] = imx_clk_hw_gate3("media_isp_cg", "media_isp_src", ccm_base + 0x8400, 28);
+-	hws[IMX8MP_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div", "arm_a53_cg", ccm_base + 0x8000, 0, 3);
+-	hws[IMX8MP_CLK_M7_DIV] = imx_clk_hw_divider2("arm_m7_div", "arm_m7_cg", ccm_base + 0x8080, 0, 3);
+-	hws[IMX8MP_CLK_ML_DIV] = imx_clk_hw_divider2("ml_div", "ml_cg", ccm_base + 0x8100, 0, 3);
+-	hws[IMX8MP_CLK_GPU3D_CORE_DIV] = imx_clk_hw_divider2("gpu3d_core_div", "gpu3d_core_cg", ccm_base + 0x8180, 0, 3);
+-	hws[IMX8MP_CLK_GPU3D_SHADER_DIV] = imx_clk_hw_divider2("gpu3d_shader_div", "gpu3d_shader_cg", ccm_base + 0x8200, 0, 3);
+-	hws[IMX8MP_CLK_GPU2D_DIV] = imx_clk_hw_divider2("gpu2d_div", "gpu2d_cg", ccm_base + 0x8280, 0, 3);
+-	hws[IMX8MP_CLK_AUDIO_AXI_DIV] = imx_clk_hw_divider2("audio_axi_div", "audio_axi_cg", ccm_base + 0x8300, 0, 3);
+-	hws[IMX8MP_CLK_HSIO_AXI_DIV] = imx_clk_hw_divider2("hsio_axi_div", "hsio_axi_cg", ccm_base + 0x8380, 0, 3);
+-	hws[IMX8MP_CLK_MEDIA_ISP_DIV] = imx_clk_hw_divider2("media_isp_div", "media_isp_cg", ccm_base + 0x8400, 0, 3);
++	hws[IMX8MP_CLK_A53_DIV] = imx8m_clk_hw_composite_core("arm_a53_div", imx8mp_a53_sels, ccm_base + 0x8000);
++	hws[IMX8MP_CLK_A53_SRC] = hws[IMX8MP_CLK_A53_DIV];
++	hws[IMX8MP_CLK_A53_CG] = hws[IMX8MP_CLK_A53_DIV];
++	hws[IMX8MP_CLK_M7_CORE] = imx8m_clk_hw_composite_core("m7_core", imx8mp_m7_sels, ccm_base + 0x8080);
++	hws[IMX8MP_CLK_ML_CORE] = imx8m_clk_hw_composite_core("ml_core", imx8mp_ml_sels, ccm_base + 0x8100);
++	hws[IMX8MP_CLK_GPU3D_CORE] = imx8m_clk_hw_composite_core("gpu3d_core", imx8mp_gpu3d_core_sels, ccm_base + 0x8180);
++	hws[IMX8MP_CLK_GPU3D_SHADER_CORE] = imx8m_clk_hw_composite("gpu3d_shader_core", imx8mp_gpu3d_shader_sels, ccm_base + 0x8200);
++	hws[IMX8MP_CLK_GPU2D_CORE] = imx8m_clk_hw_composite("gpu2d_core", imx8mp_gpu2d_sels, ccm_base + 0x8280);
++	hws[IMX8MP_CLK_AUDIO_AXI] = imx8m_clk_hw_composite("audio_axi", imx8mp_audio_axi_sels, ccm_base + 0x8300);
++	hws[IMX8MP_CLK_AUDIO_AXI_SRC] = hws[IMX8MP_CLK_AUDIO_AXI];
++	hws[IMX8MP_CLK_HSIO_AXI] = imx8m_clk_hw_composite("hsio_axi", imx8mp_hsio_axi_sels, ccm_base + 0x8380);
++	hws[IMX8MP_CLK_MEDIA_ISP] = imx8m_clk_hw_composite("media_isp", imx8mp_media_isp_sels, ccm_base + 0x8400);
+ 
+ 	/* CORE SEL */
+ 	hws[IMX8MP_CLK_A53_CORE] = imx_clk_hw_mux2("arm_a53_core", ccm_base + 0x9880, 24, 1, imx8mp_a53_core_sels, ARRAY_SIZE(imx8mp_a53_core_sels));
+@@ -713,8 +698,8 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_SDMA1_ROOT] = imx_clk_hw_gate4("sdma1_root_clk", "ipg_root", ccm_base + 0x43a0, 0);
+ 	hws[IMX8MP_CLK_ENET_QOS_ROOT] = imx_clk_hw_gate4("enet_qos_root_clk", "sim_enet_root_clk", ccm_base + 0x43b0, 0);
+ 	hws[IMX8MP_CLK_SIM_ENET_ROOT] = imx_clk_hw_gate4("sim_enet_root_clk", "enet_axi", ccm_base + 0x4400, 0);
+-	hws[IMX8MP_CLK_GPU2D_ROOT] = imx_clk_hw_gate4("gpu2d_root_clk", "gpu2d_div", ccm_base + 0x4450, 0);
+-	hws[IMX8MP_CLK_GPU3D_ROOT] = imx_clk_hw_gate4("gpu3d_root_clk", "gpu3d_core_div", ccm_base + 0x4460, 0);
++	hws[IMX8MP_CLK_GPU2D_ROOT] = imx_clk_hw_gate4("gpu2d_root_clk", "gpu2d_core", ccm_base + 0x4450, 0);
++	hws[IMX8MP_CLK_GPU3D_ROOT] = imx_clk_hw_gate4("gpu3d_root_clk", "gpu3d_core", ccm_base + 0x4460, 0);
+ 	hws[IMX8MP_CLK_SNVS_ROOT] = imx_clk_hw_gate4("snvs_root_clk", "ipg_root", ccm_base + 0x4470, 0);
+ 	hws[IMX8MP_CLK_UART1_ROOT] = imx_clk_hw_gate4("uart1_root_clk", "uart1", ccm_base + 0x4490, 0);
+ 	hws[IMX8MP_CLK_UART2_ROOT] = imx_clk_hw_gate4("uart2_root_clk", "uart2", ccm_base + 0x44a0, 0);
+@@ -731,7 +716,7 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_GPU_ROOT] = imx_clk_hw_gate4("gpu_root_clk", "gpu_axi", ccm_base + 0x4570, 0);
+ 	hws[IMX8MP_CLK_VPU_VC8KE_ROOT] = imx_clk_hw_gate4("vpu_vc8ke_root_clk", "vpu_vc8000e", ccm_base + 0x4590, 0);
+ 	hws[IMX8MP_CLK_VPU_G2_ROOT] = imx_clk_hw_gate4("vpu_g2_root_clk", "vpu_g2", ccm_base + 0x45a0, 0);
+-	hws[IMX8MP_CLK_NPU_ROOT] = imx_clk_hw_gate4("npu_root_clk", "ml_div", ccm_base + 0x45b0, 0);
++	hws[IMX8MP_CLK_NPU_ROOT] = imx_clk_hw_gate4("npu_root_clk", "ml_core", ccm_base + 0x45b0, 0);
+ 	hws[IMX8MP_CLK_HSIO_ROOT] = imx_clk_hw_gate4("hsio_root_clk", "ipg_root", ccm_base + 0x45c0, 0);
+ 	hws[IMX8MP_CLK_MEDIA_APB_ROOT] = imx_clk_hw_gate2_shared2("media_apb_root_clk", "media_apb", ccm_base + 0x45d0, 0, &share_count_media);
+ 	hws[IMX8MP_CLK_MEDIA_AXI_ROOT] = imx_clk_hw_gate2_shared2("media_axi_root_clk", "media_axi", ccm_base + 0x45d0, 0, &share_count_media);
+@@ -739,7 +724,7 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_MEDIA_CAM2_PIX_ROOT] = imx_clk_hw_gate2_shared2("media_cam2_pix_root_clk", "media_cam2_pix", ccm_base + 0x45d0, 0, &share_count_media);
+ 	hws[IMX8MP_CLK_MEDIA_DISP1_PIX_ROOT] = imx_clk_hw_gate2_shared2("media_disp1_pix_root_clk", "media_disp1_pix", ccm_base + 0x45d0, 0, &share_count_media);
+ 	hws[IMX8MP_CLK_MEDIA_DISP2_PIX_ROOT] = imx_clk_hw_gate2_shared2("media_disp2_pix_root_clk", "media_disp2_pix", ccm_base + 0x45d0, 0, &share_count_media);
+-	hws[IMX8MP_CLK_MEDIA_ISP_ROOT] = imx_clk_hw_gate2_shared2("media_isp_root_clk", "media_isp_div", ccm_base + 0x45d0, 0, &share_count_media);
++	hws[IMX8MP_CLK_MEDIA_ISP_ROOT] = imx_clk_hw_gate2_shared2("media_isp_root_clk", "media_isp", ccm_base + 0x45d0, 0, &share_count_media);
+ 
+ 	hws[IMX8MP_CLK_USDHC3_ROOT] = imx_clk_hw_gate4("usdhc3_root_clk", "usdhc3", ccm_base + 0x45e0, 0);
+ 	hws[IMX8MP_CLK_HDMI_ROOT] = imx_clk_hw_gate4("hdmi_root_clk", "hdmi_axi", ccm_base + 0x45f0, 0);
 diff --git a/include/dt-bindings/clock/imx8mp-clock.h b/include/dt-bindings/clock/imx8mp-clock.h
-index 47ab082238b4..46c69cd66c62 100644
+index 46c69cd66c62..8430bc4fd182 100644
 --- a/include/dt-bindings/clock/imx8mp-clock.h
 +++ b/include/dt-bindings/clock/imx8mp-clock.h
-@@ -296,6 +296,23 @@
- #define IMX8MP_CLK_ARM				287
- #define IMX8MP_CLK_A53_CORE			288
+@@ -313,6 +313,15 @@
+ #define IMX8MP_SYS_PLL2_333M_CG			303
+ #define IMX8MP_SYS_PLL2_500M_CG			304
  
--#define IMX8MP_CLK_END				289
-+#define IMX8MP_SYS_PLL1_40M_CG			289
-+#define IMX8MP_SYS_PLL1_80M_CG			290
-+#define IMX8MP_SYS_PLL1_100M_CG			291
-+#define IMX8MP_SYS_PLL1_133M_CG			292
-+#define IMX8MP_SYS_PLL1_160M_CG			293
-+#define IMX8MP_SYS_PLL1_200M_CG			294
-+#define IMX8MP_SYS_PLL1_266M_CG			295
-+#define IMX8MP_SYS_PLL1_400M_CG			296
-+#define IMX8MP_SYS_PLL2_50M_CG			297
-+#define IMX8MP_SYS_PLL2_100M_CG			298
-+#define IMX8MP_SYS_PLL2_125M_CG			299
-+#define IMX8MP_SYS_PLL2_166M_CG			300
-+#define IMX8MP_SYS_PLL2_200M_CG			301
-+#define IMX8MP_SYS_PLL2_250M_CG			302
-+#define IMX8MP_SYS_PLL2_333M_CG			303
-+#define IMX8MP_SYS_PLL2_500M_CG			304
+-#define IMX8MP_CLK_END				305
++#define IMX8MP_CLK_M7_CORE			305
++#define IMX8MP_CLK_ML_CORE			306
++#define IMX8MP_CLK_GPU3D_CORE			307
++#define IMX8MP_CLK_GPU3D_SHADER_CORE		308
++#define IMX8MP_CLK_GPU2D_CORE			309
++#define IMX8MP_CLK_AUDIO_AXI			310
++#define IMX8MP_CLK_HSIO_AXI			311
++#define IMX8MP_CLK_MEDIA_ISP			312
 +
-+#define IMX8MP_CLK_END				305
++#define IMX8MP_CLK_END				313
  
  #endif
 -- 
