@@ -2,81 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 912B81829C3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 08:31:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F04B1829CA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 08:32:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oRwf1LDC4mMh2SFc0vDyU/9RvTg3/nTL6VwVzFbzP0A=; b=HqlZN6UnDnIA9I
-	dn+lBkvltt1pbHCggj0cNM3TMmO59ip4Rs1bRsDNn1jgvEZyDkhdai9pKMs1lGebgHcf36zcCBXaM
-	mH71+b+STpd6a0Ki27oaF8ISG1VzzG3QqzjBF6+r6tdDH6xXrW3ejTJmFt6GzbytxwfModAWrY4k5
-	CNmHPmfltFqVkF2pCfQVo9ovpQiklRryCCIbFMRUX2TUwJlcTslpIeZfvtzU9eJW5OvinoOXKUwjn
-	CSwrIi5N2hQm8ley9DpvZOxkRlLaNSnm6368ANDTWq9APimVweGMr//AqiuZj4hdwgEsPmKfgjB+k
-	xu8qDJnoi3Quscefm12w==;
+	List-Owner; bh=GX1COCbLaRsUIMsU6DRRBwiTs0DMORfKDlG/ykqpeXY=; b=msDE02d+IwSPuM
+	NXHOFhqf+hMIJCkcat7w7HFog4Yyd+3LP+9k4sncFXOXoifP/A9zy3YV9Xvn3Loh8IQNuPtvjZZHF
+	h4gkpOEURfC+e6IUwf3j0N5la/kYyZcSTKpMYyIzp78j5c7kq/LbDG0j5EjyEuJCOZ3yPgon1pBBj
+	6fQkCGKyiFl54VgUUBXrVX5luwq7wHP2F5WnG4NxGVoU9mZTsqA1D3D6/u2j+vNIqYGdg46SSX/bV
+	qAosmao8CIPhiYkiarDfb7yhu7YU0OKm+sLzRms3uESLqfLoAHjLvXaNysWJGDA0QGdVP565GFKcq
+	/RHeAbaNMlzpueSsRnnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCIJQ-0001Vh-VQ; Thu, 12 Mar 2020 07:31:24 +0000
-Received: from lb2-smtp-cloud9.xs4all.net ([194.109.24.26])
+	id 1jCIKX-0001ob-9a; Thu, 12 Mar 2020 07:32:33 +0000
+Received: from mail-mw2nam12on2083.outbound.protection.outlook.com
+ ([40.107.244.83] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCIJH-0001VF-BF
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 07:31:17 +0000
-Received: from [192.168.2.10] ([46.9.234.233])
- by smtp-cloud9.xs4all.net with ESMTPA
- id CIJBjX5Kt9Im2CIJFjigM2; Thu, 12 Mar 2020 08:31:13 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1583998273; bh=ckO9wc/0YsnvmvvoxJ4Iuhz855VOuIfWEB/AEfwSExM=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=XE0WGkCN8kCZzEgryF1ANA9vfFSoHWNAWFFcKdjGo+XSEeCM5HkTkp2/xXNL9j/l/
- RALQOOJJe0sE+aPDiY8aXZ879cE3SSt69lSv6tUB3uhA1WS78x7skMEs4g+A68n5fR
- 2Od80X96zj7zODJJQ5ByknTf1jmRWqUSkhyxA1vk8LXNtFUw06DWqs8+KkZsjLXIQh
- ue6cZCF/J15WpxQnNpfnMiXvkgFo1J3CsSmCMephbijiCLf3KQLny9nZYmkJkAdvaS
- mo6/w/TDHsDcgyM4Zx1Hnk0j8GGrDwu+9NbSyw//PbntZAfxxDiAt0TgBCG+/v+vdc
- wFIg8VDGYYlrQ==
-Subject: Re: [PATCH v2 21/22] media: docs: add an uAPI chapter for
- driver-specific stuff
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>
-References: <cover.1583847556.git.mchehab+huawei@kernel.org>
- <eb09422f4292b1462978abc02acf41e7630c698c.1583847557.git.mchehab+huawei@kernel.org>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <7a6dc292-8051-3141-6fef-ca7b86984a10@xs4all.nl>
-Date: Thu, 12 Mar 2020 08:31:09 +0100
+ id 1jCIKN-0001nj-FC
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 07:32:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Yxb0r/bBgrJpqzin2Amp9Byd8aLI7AzMpYri41wm7VaSQlDvow1zqjQxHRjM8Wkd1eEAvn3nvWLHQuGh6gsX9my0Ix/s03iua+XfX7x8KXqYnaXOuilxKB0pAysAhL6cKDAbW8pPd9VjYdl6Q71EG+2AbQOZ25MyG7yLKHroUp1ukNcTsHKCcBEjrKXZFV0YzeXj/aVjS2yobFHGinLHo94lU7Sh++i+5+xBq77UlzPZeyhlFkOuYEcJJ2O/fs88paLq0w/bdB+iL/pOPaC+GBo7dkrOviYdgjpRiczhTpvEyoXlzSp/OcJkXIJUucK2m/uYvfr+bI6kkQfhQMaVkw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ILKe4tO3bnfssvWnx/3cUr+LFaZe92AjLpSYHCCSs5w=;
+ b=liv76c1C4BaIQSSZ8J1KERLOJk2ywBhrKFj9VN3plngsGkTi34jq9eaSKAHvnWPoGGtmKxbkkxCqDjHy5BUxRoLFD57RHkiUGZY+7U96iPjqRcaj9ATG76HrnMsls+VY5npnBiHDDIB4G31/LBIQGUmtPVdaGjkIoeeAnSHG2OTsfdcZq8ztTBxRh0wgaIjYoBIVodqqaVj8entpSL3kZlKApa6PtOyc3WOZE7GuQANbLsQJqvgUj/OFj1/cccjlCBLhLtzGcv5OZlYuKXaSed5HhzDCsBn9trAx+Cq7p3EYIcM/JzaGpLocEIyIWOgOkyYCQ0W5utcNl7LBHnQTow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ILKe4tO3bnfssvWnx/3cUr+LFaZe92AjLpSYHCCSs5w=;
+ b=AwuxN5z7vslCRCVx/pwHv4UxsV1D7vDrVDFxEC1+9cwMm0ZhsZoP0K9ep8TF3BtgNEOILSvrQypExpK+r45Aa0M945khcJsAf7rUdiPHfxF9nE50pXHCuolP5czoffdCNYe9B0/fh5K2q57ejU07FYnP5OZAZyspBgK/1S7PB2E=
+Received: from DM6PR08CA0018.namprd08.prod.outlook.com (2603:10b6:5:80::31) by
+ DM6PR02MB4410.namprd02.prod.outlook.com (2603:10b6:5:1e::12) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2793.17; Thu, 12 Mar 2020 07:32:20 +0000
+Received: from CY1NAM02FT020.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:5:80:cafe::9f) by DM6PR08CA0018.outlook.office365.com
+ (2603:10b6:5:80::31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.16 via Frontend
+ Transport; Thu, 12 Mar 2020 07:32:19 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT020.mail.protection.outlook.com (10.152.75.191) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2814.13
+ via Frontend Transport; Thu, 12 Mar 2020 07:32:19 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jCIKJ-0008Ln-A1; Thu, 12 Mar 2020 00:32:19 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1jCIKE-0003Fh-78; Thu, 12 Mar 2020 00:32:14 -0700
+Received: from [172.30.17.108] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1jCIK4-0003DC-JB; Thu, 12 Mar 2020 00:32:04 -0700
+Subject: Re: [PATCH 1/5] firmware: xilinx: Add ZynqMP firmware ioctl enums for
+ RPU configuration.
+To: Ben Levinsky <ben.levinsky@xilinx.com>, ohad@wizery.com,
+ bjorn.andersson@linaro.org, michal.simek@xilinx.com, jollys@xilinx.com,
+ rajan.vaja@xilinx.com, robh+dt@kernel.org, mark.rutland@arm.com
+References: <1582566751-13118-1-git-send-email-ben.levinsky@xilinx.com>
+ <1582566751-13118-2-git-send-email-ben.levinsky@xilinx.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <4d95f021-c3cc-3238-665d-8d5825c6a123@xilinx.com>
+Date: Thu, 12 Mar 2020 08:32:01 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <eb09422f4292b1462978abc02acf41e7630c698c.1583847557.git.mchehab+huawei@kernel.org>
+In-Reply-To: <1582566751-13118-2-git-send-email-ben.levinsky@xilinx.com>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfPsT7R25rji2KSvoTUFDgjK2likkS8HQkuW9Q6huTlQdskhYF+A1hF1Mir7rt7lWB82zwyPkQcJlIdi5UFrrnYkLSO4Uf/YK4HQChkaPmXVsVUGCu2GQ
- jOLL1Rgx/a3hvlc4l7525YrkR2k/IifKmY7XLR0/oAy8L82k4C0XauHZQsnjfOzdfi1SrnklG7MTy9OpJRgiNL4qRbL1axwyz1E2QupnNvaBo6xmQBSZaCNh
- E2UYz3ZrETcFW3LGTJDPo/mjRQX0OLBdY1PpTEz3fN7lvF/2/BooMliYQxhBs87i0p1WJLL/ujZTAlFtp2rbgRQtrvVylWkCgaBFhx944kGtQwpwO1JSaYOR
- o9PE8D9rJ3LJOT3/iyCjCDX7XiTYkt6yz18tcoIQqzwh4/0LuK9vyyrwgOpVzUMwRjbjMQ4OlO2HGm5a6s2TgXFHFUFpZV96weXChLkEhfaKwqx/57MvNYpR
- mAhoaaXc9X2MRHtl70gACjIdHOE4Em3U81dF8Xi+YhURMmRZazPUQoiDH3nsmHBYDsWU5dYXE/QmTiHqWWhEVOSIe8bUMN8WW4DQDw==
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(136003)(346002)(376002)(396003)(199004)(356004)(426003)(478600001)(9786002)(8676002)(31686004)(36756003)(81166006)(8936002)(4326008)(70586007)(6666004)(81156014)(70206006)(186003)(31696002)(316002)(2616005)(26005)(336012)(5660300002)(44832011)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB4410; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: d8a0345e-4862-4ac9-afde-08d7c6577f6c
+X-MS-TrafficTypeDiagnostic: DM6PR02MB4410:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB44103B4529EEA8FAD9606DC3C6FD0@DM6PR02MB4410.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:525;
+X-Forefront-PRVS: 0340850FCD
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: juEt3ycHiV2q6n/SKCuAIGDPZhhPglb7da2gee+MzGlhTt6drCevMJblJKmkiyLczOCBD8yPCh12e8IPpCyt5dkV+M6a0FAp0yQbBMaWKXXEj0lJ8248fnSrfFqGm4nAeKWLBQC9LPw167XP1bb8IeLJehG29JrFJnMfRS/ngHeTcOXSW0wQmNY0ZFVOvGQUk/3som5T5jLGIQAJneHiOpdCe9u3rT8vytDw+5lZv8ouXzYndqwV5hxjXCpciwlQUPrAZNkx4bwGz+b6z514NmJiGIc6xc8HuJEkn8MawFWg1ED0Iz3IetIRQiJ3qoJlxnCHoO2imB/XpHf87VN1GsDwN5D5+5evhn+xNfHBXTRN/2220OgjArCKcrpLlixyZp5jGW1GBQY/EbxCELfSssO7MZ6vqj/hiDh071uSiUqLkopoLmIG3MvlLzeSDiZy
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 07:32:19.7187 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d8a0345e-4862-4ac9-afde-08d7c6577f6c
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4410
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_003115_548057_8D1A5DB6 
-X-CRM114-Status: GOOD (  22.23  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200312_003223_517434_7E9356DA 
+X-CRM114-Status: GOOD (  15.24  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.26 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.244.83 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [194.109.24.26 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,225 +140,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Ramesh Shanmugasundaram <rashanmu@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/10/20 2:43 PM, Mauro Carvalho Chehab wrote:
-> There are some uAPI stuff that are driver-specific. Add them
-> to the main media uAPI body.
+On 24. 02. 20 18:52, Ben Levinsky wrote:
+> Add ZynqMP firmware ioctl enums for RPU configuration.
 > 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> Signed-off-by: Ben Levinsky <ben.levinsky@xilinx.com>
 > ---
->  Documentation/media/index.rst                              | 2 --
->  .../media/drivers}/cx2341x-uapi.rst                        | 0
->  .../media/drivers}/imx-uapi.rst                            | 0
->  .../v4l-drivers => userspace-api/media/drivers}/index.rst  | 7 +++----
->  .../media/drivers}/max2175.rst                             | 0
->  .../media/drivers}/meye-uapi.rst                           | 0
->  .../media/drivers}/omap3isp-uapi.rst                       | 0
->  .../media/drivers}/uvcvideo.rst                            | 0
->  Documentation/userspace-api/media/index.rst                | 2 ++
->  Documentation/userspace-api/media/v4l/dev-sliced-vbi.rst   | 2 +-
->  Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst  | 2 +-
->  Documentation/userspace-api/media/v4l/pixfmt-reserved.rst  | 2 +-
->  MAINTAINERS                                                | 4 ++--
->  drivers/media/i2c/max2175.c                                | 6 +++---
->  14 files changed, 13 insertions(+), 14 deletions(-)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/cx2341x-uapi.rst (100%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/imx-uapi.rst (100%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/index.rst (97%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/max2175.rst (100%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/meye-uapi.rst (100%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/omap3isp-uapi.rst (100%)
->  rename Documentation/{media/v4l-drivers => userspace-api/media/drivers}/uvcvideo.rst (100%)
+>  drivers/firmware/xilinx/zynqmp.c     |  4 ++++
+>  include/linux/firmware/xlnx-zynqmp.h | 19 +++++++++++++++++++
+>  2 files changed, 23 insertions(+)
 > 
-> diff --git a/Documentation/media/index.rst b/Documentation/media/index.rst
-> index a5cd600e0b04..e93fd88881af 100644
-> --- a/Documentation/media/index.rst
-> +++ b/Documentation/media/index.rst
-> @@ -15,8 +15,6 @@ Linux Media Subsystem Documentation
->     ../userspace-api/media/index
->     ../driver-api/media/index
+> diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+> index ecc339d..20e4574 100644
+> --- a/drivers/firmware/xilinx/zynqmp.c
+> +++ b/drivers/firmware/xilinx/zynqmp.c
+> @@ -512,6 +512,10 @@ static int zynqmp_pm_clock_getparent(u32 clock_id, u32 *parent_id)
+>  static inline int zynqmp_is_valid_ioctl(u32 ioctl_id)
+>  {
+>  	switch (ioctl_id) {
+> +	case IOCTL_GET_RPU_OPER_MODE:
+> +	case IOCTL_SET_RPU_OPER_MODE:
+> +	case IOCTL_RPU_BOOT_ADDR_CONFIG:
+> +	case IOCTL_TCM_COMB_CONFIG:
+>  	case IOCTL_SET_PLL_FRAC_MODE:
+>  	case IOCTL_GET_PLL_FRAC_MODE:
+>  	case IOCTL_SET_PLL_FRAC_DATA:
+> diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
+> index 2cd12eb..b8ca118 100644
+> --- a/include/linux/firmware/xlnx-zynqmp.h
+> +++ b/include/linux/firmware/xlnx-zynqmp.h
+> @@ -100,6 +100,10 @@ enum pm_ret_status {
+>  };
 >  
-> -   v4l-drivers/index
-> -
->  .. only:: html and subproject
+>  enum pm_ioctl_id {
+> +	IOCTL_GET_RPU_OPER_MODE = 0,
+> +	IOCTL_SET_RPU_OPER_MODE,
+> +	IOCTL_RPU_BOOT_ADDR_CONFIG,
+> +	IOCTL_TCM_COMB_CONFIG,
+>  	IOCTL_SET_SD_TAPDELAY = 7,
+>  	IOCTL_SET_PLL_FRAC_MODE,
+>  	IOCTL_GET_PLL_FRAC_MODE,
+> @@ -118,6 +122,21 @@ enum pm_query_id {
+>  	PM_QID_CLOCK_GET_MAX_DIVISOR,
+>  };
 >  
->     Indices
-> diff --git a/Documentation/media/v4l-drivers/cx2341x-uapi.rst b/Documentation/userspace-api/media/drivers/cx2341x-uapi.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/cx2341x-uapi.rst
-> rename to Documentation/userspace-api/media/drivers/cx2341x-uapi.rst
-> diff --git a/Documentation/media/v4l-drivers/imx-uapi.rst b/Documentation/userspace-api/media/drivers/imx-uapi.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/imx-uapi.rst
-> rename to Documentation/userspace-api/media/drivers/imx-uapi.rst
-> diff --git a/Documentation/media/v4l-drivers/index.rst b/Documentation/userspace-api/media/drivers/index.rst
-> similarity index 97%
-> rename from Documentation/media/v4l-drivers/index.rst
-> rename to Documentation/userspace-api/media/drivers/index.rst
-> index ee7faff88a33..05a82f8c0c99 100644
-> --- a/Documentation/media/v4l-drivers/index.rst
-> +++ b/Documentation/userspace-api/media/drivers/index.rst
-> @@ -2,7 +2,7 @@
->  
->  .. include:: <isonum.txt>
->  
-> -.. _v4l-drivers:
-> +.. _v4l-drivers_uapi:
->  
->  ################################################
->  Video4Linux (V4L)  driver-specific documentation
-> @@ -31,10 +31,9 @@ For more details see the file COPYING in the source distribution of Linux.
->  	:maxdepth: 5
->  	:numbered:
->  
-> -	max2175
-> -	uvcvideo
-> -
->  	cx2341x-uapi
->  	imx-uapi
-> +	max2175
->  	meye-uapi
->  	omap3isp-uapi
-> +	uvcvideo
-> diff --git a/Documentation/media/v4l-drivers/max2175.rst b/Documentation/userspace-api/media/drivers/max2175.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/max2175.rst
-> rename to Documentation/userspace-api/media/drivers/max2175.rst
-> diff --git a/Documentation/media/v4l-drivers/meye-uapi.rst b/Documentation/userspace-api/media/drivers/meye-uapi.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/meye-uapi.rst
-> rename to Documentation/userspace-api/media/drivers/meye-uapi.rst
-> diff --git a/Documentation/media/v4l-drivers/omap3isp-uapi.rst b/Documentation/userspace-api/media/drivers/omap3isp-uapi.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/omap3isp-uapi.rst
-> rename to Documentation/userspace-api/media/drivers/omap3isp-uapi.rst
-> diff --git a/Documentation/media/v4l-drivers/uvcvideo.rst b/Documentation/userspace-api/media/drivers/uvcvideo.rst
-> similarity index 100%
-> rename from Documentation/media/v4l-drivers/uvcvideo.rst
-> rename to Documentation/userspace-api/media/drivers/uvcvideo.rst
-> diff --git a/Documentation/userspace-api/media/index.rst b/Documentation/userspace-api/media/index.rst
-> index 614310f82395..bcfdd1a5caa0 100644
-> --- a/Documentation/userspace-api/media/index.rst
-> +++ b/Documentation/userspace-api/media/index.rst
-> @@ -31,3 +31,5 @@ entitled "GNU Free Documentation License".
->      cec/cec-api
->      gen-errors
->      fdl-appendix
+> +enum rpu_oper_mode {
+> +	PM_RPU_MODE_LOCKSTEP,
+> +	PM_RPU_MODE_SPLIT,
+> +};
 > +
-> +    drivers/index
-> diff --git a/Documentation/userspace-api/media/v4l/dev-sliced-vbi.rst b/Documentation/userspace-api/media/v4l/dev-sliced-vbi.rst
-> index 751c6590e774..dd0b6646beb5 100644
-> --- a/Documentation/userspace-api/media/v4l/dev-sliced-vbi.rst
-> +++ b/Documentation/userspace-api/media/v4l/dev-sliced-vbi.rst
-> @@ -438,7 +438,7 @@ MPEG stream.
->  *Historical context*: This format specification originates from a
->  custom, embedded, sliced VBI data format used by the ``ivtv`` driver.
->  This format has already been informally specified in the kernel sources
-> -in the file ``Documentation/media/v4l-drivers/cx2341x-uapi.rst`` . The
-> +in the file ``Documentation/userspace-api/media/drivers/cx2341x-uapi.rst`` . The
->  maximum size of the payload and other aspects of this format are driven
->  by the CX23415 MPEG decoder's capabilities and limitations with respect
->  to extracting, decoding, and displaying sliced VBI data embedded within
-> diff --git a/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst b/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> index f81016c97a0d..9b48338fb783 100644
-> --- a/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> +++ b/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> @@ -116,7 +116,7 @@ enum v4l2_mpeg_stream_vbi_fmt -
->      * - ``V4L2_MPEG_STREAM_VBI_FMT_IVTV``
->        - VBI in private packets, IVTV format (documented in the kernel
->  	sources in the file
-> -	``Documentation/media/v4l-drivers/cx2341x-uapi.rst``)
-> +	``Documentation/userspace-api/media/drivers/cx2341x-uapi.rst``)
-
-This chunk (and several others like this one) does not appear to belong to
-this patch. It looks like they really should be merged with patch 19 instead.
-
-Regards,
-
-	Hans
-
->  
->  
->  
-> diff --git a/Documentation/userspace-api/media/v4l/pixfmt-reserved.rst b/Documentation/userspace-api/media/v4l/pixfmt-reserved.rst
-> index dbdcf6c9f072..59b9e7238f90 100644
-> --- a/Documentation/userspace-api/media/v4l/pixfmt-reserved.rst
-> +++ b/Documentation/userspace-api/media/v4l/pixfmt-reserved.rst
-> @@ -58,7 +58,7 @@ please make a proposal on the linux-media mailing list.
->        - YUV 4:2:0 format used by the IVTV driver.
->  
->  	The format is documented in the kernel sources in the file
-> -	``Documentation/media/v4l-drivers/cx2341x-uapi.rst``
-> +	``Documentation/userspace-api/media/drivers/cx2341x-uapi.rst``
->      * .. _V4L2-PIX-FMT-CPIA1:
->  
->        - ``V4L2_PIX_FMT_CPIA1``
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index cf4fd454e053..a883c2e53b86 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -10135,7 +10135,7 @@ L:	linux-media@vger.kernel.org
->  T:	git git://linuxtv.org/media_tree.git
->  S:	Maintained
->  F:	Documentation/devicetree/bindings/media/i2c/max2175.txt
-> -F:	Documentation/media/v4l-drivers/max2175.rst
-> +F:	Documentation/userspace-api/media/drivers/max2175.rst
->  F:	drivers/media/i2c/max2175*
->  F:	include/uapi/linux/max2175.h
->  
-> @@ -11251,7 +11251,7 @@ F:	kernel/module.c
->  MOTION EYE VAIO PICTUREBOOK CAMERA DRIVER
->  W:	http://popies.net/meye/
->  S:	Orphan
-> -F:	Documentation/media/v4l-drivers/meye*
-> +F:	Documentation/userspace-api/media/drivers/meye*
->  F:	drivers/media/pci/meye/
->  F:	include/uapi/linux/meye.h
->  
-> diff --git a/drivers/media/i2c/max2175.c b/drivers/media/i2c/max2175.c
-> index 506a30e69ced..03b4ed3a61b8 100644
-> --- a/drivers/media/i2c/max2175.c
-> +++ b/drivers/media/i2c/max2175.c
-> @@ -1194,7 +1194,7 @@ static const struct v4l2_ctrl_ops max2175_ctrl_ops = {
->  
->  /*
->   * I2S output enable/disable configuration. This is a private control.
-> - * Refer to Documentation/media/v4l-drivers/max2175.rst for more details.
-> + * Refer to Documentation/userspace-api/media/drivers/max2175.rst for more details.
->   */
->  static const struct v4l2_ctrl_config max2175_i2s_en = {
->  	.ops = &max2175_ctrl_ops,
-> @@ -1210,7 +1210,7 @@ static const struct v4l2_ctrl_config max2175_i2s_en = {
->  
->  /*
->   * HSLS value control LO freq adjacent location configuration.
-> - * Refer to Documentation/media/v4l-drivers/max2175.rst for more details.
-> + * Refer to Documentation/userspace-api/media/drivers/max2175.rst for more details.
->   */
->  static const struct v4l2_ctrl_config max2175_hsls = {
->  	.ops = &max2175_ctrl_ops,
-> @@ -1226,7 +1226,7 @@ static const struct v4l2_ctrl_config max2175_hsls = {
->  /*
->   * Rx modes below are a set of preset configurations that decides the tuner's
->   * sck and sample rate of transmission. They are separate for EU & NA regions.
-> - * Refer to Documentation/media/v4l-drivers/max2175.rst for more details.
-> + * Refer to Documentation/userspace-api/media/drivers/max2175.rst for more details.
->   */
->  static const char * const max2175_ctrl_eu_rx_modes[] = {
->  	[MAX2175_EU_FM_1_2]	= "EU FM 1.2",
+> +enum rpu_boot_mem {
+> +	PM_RPU_BOOTMEM_LOVEC,
+> +	PM_RPU_BOOTMEM_HIVEC,
+> +};
+> +
+> +enum rpu_tcm_comb {
+> +	PM_RPU_TCM_SPLIT,
+> +	PM_RPU_TCM_COMB,
+> +};
+> +
+>  enum zynqmp_pm_reset_action {
+>  	PM_RESET_ACTION_RELEASE,
+>  	PM_RESET_ACTION_ASSERT,
 > 
 
+This is fine.
+
+M
 
 _______________________________________________
 linux-arm-kernel mailing list
