@@ -2,55 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 021A31827A2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:11:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CF421827A3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:11:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LKP38Mry/LV8O+uojmfnCxx4Dyophxni9HQXi3TZaAw=; b=ZqzHDW9S3HmZlP
-	bi4fH9WTmWcQvgGGodzwJssbuiIkNJ5OCkUf6Bx1PBaD5lyPyDrsML7yj6F+Z4+11uaO6GjU+7fmu
-	ZYVNNjcF4Eupw9P/SGIZrpZ/ishRzKmK2CCGRQuEIjns1UTnDgsF2VLyQ0A/V0EjHHUIFgZQa8FjB
-	kJ30EjNg87BkvZml4lnOaCYeyMbKjhS91JkQ/m4JGrb87/u9iRscQggf4desj8dBO07T14JO8RB/E
-	54O8olNGIQNrQpxUXCqxzNyJbxOIrecVUAQlTauFTiI2yzSTZB5vme/g+ewwqZZr6iFnqKRHdiLdm
-	2+94SkQl+ALMfXMhbdww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E9nm88MS9BUQVtMSROClwng29AI1ucRrpf7fvsvnOqs=; b=mipkX8APId3Uv4
+	iHX4BAMHH62JnEAq4WqtEcscOsmS8eoRIHSh86uYkX+VYd9y0gfhmJtt3M1sg7OhYI2G4bpeQcPJT
+	tHsfToaUvBsdp5Evn9OWGXN33Pu1SS7t9mk6JRFt1bVHmCQ7NCaDLCJkwKHuZikb3cQHOeQjwLRPK
+	eKm53RUNQ7Jk3ve54MpbiJKq+PGP007959csv7JzUxMCESxDGKmip6cfSglbZKImYYarTNdxGhlQK
+	CMuqWKre5U3+cttvug0Cu5Lffuey/f1QJ+kKqiu9/bYWNSJu55+PMnpFEq9D1SAnF6WniYxUQ6ECl
+	ZHIKAQRh6qKdq9Nzi5eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCFBP-0003B5-Ld; Thu, 12 Mar 2020 04:10:55 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jCFBj-0003IO-QO; Thu, 12 Mar 2020 04:11:15 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCFBG-00037T-06
+ id 1jCFBG-00037X-0B
  for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 04:10:47 +0000
 Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 86278FECFFDF72F6F915;
- Thu, 12 Mar 2020 12:10:31 +0800 (CST)
+ by Forcepoint Email with ESMTP id 999F68A68DD6D196A9F1;
+ Thu, 12 Mar 2020 12:10:36 +0800 (CST)
 Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
  DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 12 Mar 2020 12:10:25 +0800
+ 14.3.487.0; Thu, 12 Mar 2020 12:10:26 +0800
 From: Zhenyu Ye <yezhenyu2@huawei.com>
 To: <mark.rutland@arm.com>, <catalin.marinas@arm.com>, <will@kernel.org>,
  <aneesh.kumar@linux.ibm.com>, <maz@kernel.org>, <steven.price@arm.com>,
  <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [RFC PATCH v2 0/3] arm64: tlb: add support for TTL field
-Date: Thu, 12 Mar 2020 12:10:15 +0800
-Message-ID: <20200312041018.1927-1-yezhenyu2@huawei.com>
+Subject: [RFC PATCH v2 1/3] arm64: tlb: use __tlbi_level replace __tlbi in
+ Stage-1
+Date: Thu, 12 Mar 2020 12:10:16 +0800
+Message-ID: <20200312041018.1927-2-yezhenyu2@huawei.com>
 X-Mailer: git-send-email 2.22.0.windows.1
+In-Reply-To: <20200312041018.1927-1-yezhenyu2@huawei.com>
+References: <20200312041018.1927-1-yezhenyu2@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.173.220.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_211046_213761_CC1EDACF 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200311_211046_220149_E177C009 
+X-CRM114-Status: GOOD (  10.56  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,26 +77,75 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 ARMv8.4-TTL provides the TTL field in tlbi instruction to indicate
 the level of translation table walk holding the leaf entry for the
-address that is being invalidated. Hardware can use this information
-to determine if there was a risk of splintering.
+address that is being invalidated.
 
-The PATCH v2 is based on Marc's NV series[1].
+This patch use __tlbi_level replace __tlbi and __tlbi_user in
+Stage-1, and set the default value of level to 0.
 
-[1] git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git kvm-arm64/nv-5.6-rc1
-
-
-Zhenyu Ye (3):
-  arm64: tlb: use __tlbi_level replace __tlbi in Stage-1
-  arm64: tlb: use mm_struct.context.flags to indicate TTL value
-  arm64: tlb: add support for TTL in some functions
-
- arch/arm64/include/asm/mmu.h      | 11 +++++++++++
- arch/arm64/include/asm/tlb.h      |  3 +++
+Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+---
  arch/arm64/include/asm/tlbflush.h | 19 ++++++-------------
- arch/arm64/kernel/process.c       |  2 +-
- arch/arm64/mm/hugetlbpage.c       |  2 ++
- 5 files changed, 23 insertions(+), 14 deletions(-)
+ 1 file changed, 6 insertions(+), 13 deletions(-)
 
+diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+index a3f70778a325..dda693f32099 100644
+--- a/arch/arm64/include/asm/tlbflush.h
++++ b/arch/arm64/include/asm/tlbflush.h
+@@ -46,11 +46,6 @@
+ 
+ #define __tlbi(op, ...)		__TLBI_N(op, ##__VA_ARGS__, 1, 0)
+ 
+-#define __tlbi_user(op, arg) do {						\
+-	if (arm64_kernel_unmapped_at_el0())					\
+-		__tlbi(op, (arg) | USER_ASID_FLAG);				\
+-} while (0)
+-
+ /* This macro creates a properly formatted VA operand for the TLBI */
+ #define __TLBI_VADDR(addr, asid)				\
+ 	({							\
+@@ -87,6 +82,8 @@
+ 		}							\
+ 									\
+ 		__tlbi(op,  arg);					\
++		if (arm64_kernel_unmapped_at_el0())			\
++			__tlbi(op, (arg) | USER_ASID_FLAG);		\
+ 	} while(0)
+ 
+ /*
+@@ -179,8 +176,7 @@ static inline void flush_tlb_mm(struct mm_struct *mm)
+ 	unsigned long asid = __TLBI_VADDR(0, ASID(mm));
+ 
+ 	dsb(ishst);
+-	__tlbi(aside1is, asid);
+-	__tlbi_user(aside1is, asid);
++	__tlbi_level(aside1is, asid, 0);
+ 	dsb(ish);
+ }
+ 
+@@ -190,8 +186,7 @@ static inline void flush_tlb_page_nosync(struct vm_area_struct *vma,
+ 	unsigned long addr = __TLBI_VADDR(uaddr, ASID(vma->vm_mm));
+ 
+ 	dsb(ishst);
+-	__tlbi(vale1is, addr);
+-	__tlbi_user(vale1is, addr);
++	__tlbi_level(vale1is, addr, 0);
+ }
+ 
+ static inline void flush_tlb_page(struct vm_area_struct *vma,
+@@ -231,11 +226,9 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 	dsb(ishst);
+ 	for (addr = start; addr < end; addr += stride) {
+ 		if (last_level) {
+-			__tlbi(vale1is, addr);
+-			__tlbi_user(vale1is, addr);
++			__tlbi_level(vale1is, addr, 0);
+ 		} else {
+-			__tlbi(vae1is, addr);
+-			__tlbi_user(vae1is, addr);
++			__tlbi_level(vae1is, addr, 0);
+ 		}
+ 	}
+ 	dsb(ish);
 -- 
 2.19.1
 
