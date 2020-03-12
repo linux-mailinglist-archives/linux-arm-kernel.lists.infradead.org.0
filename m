@@ -2,68 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79BEE182807
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:08:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB7E7182824
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:13:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtcK8M6Z3zgaF6iJBHRvEoUtsXRmIkk4p3W3PlEYKu0=; b=IdUOUg08bbtJLw
-	GdPqgf00I30f/5DKjDSkwWCyIaoN/Q+QGYXS94j+fK7yaPECCYTIGCIIUvgvV7XIMBn3WQ4CDWSmg
-	sJ91k3NqOpQVsRWDSCtLVzFAZndLvR1bfFUPH/EJarNkc4+7ujl3CYKfSnnufharRMLJA2y467uRE
-	+h/6U+5C5zxHVyOl3fXsMW9h42ztsDkDXAsh64A/lQjuFnIW9UJB08wVepgxvHcCSQCKJru8BqAWL
-	Nhz/zKMJHRKD92jHs5s7XKt6CELZcK/s89mVM5n2nKKP0kq1Sz/c1qXDIPZQDh5z9pEJUEoZrkSjR
-	LLWGbxH7yn7IqJSfRNDg==;
+	List-Owner; bh=B2D7tcgcjW0tR341hlRsh528a/+ivSFrNUYgacCcKTE=; b=QIZvRyRsKNlofY
+	hi3Yhq3FG9tn2xtfeXoMiGdq8uPwWnx3LGdxQi7SnNpNV/TYurgTx+rFvPpE9OK/yQaWm04XSyJ3G
+	6RzsKTKAB9DxScsfaTlMMkOu+0BuLBze+U2W59KIEo3O5kiC0cm9TgKD3+77MJdkPcBbZ9VE338jf
+	vllNOkbe/fdki4YG164M2H+AF8lMO5Tr4O/tdu8XQTIAYnlY9ZEV+fSIea4waLgrpeyOUkS3W98pK
+	yDlFb7AK9Htj3LFj6Gypi1QRHL9cDHmpiv7aMTJi2kyfpVcpcdhP/8j4G51ev64KJ35yJ8fRzBAEh
+	R+lj3hXB3cwG1+PJ6x3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCG4h-0006uf-5n; Thu, 12 Mar 2020 05:08:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jCG9K-0000lo-N3; Thu, 12 Mar 2020 05:12:50 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCG4Z-0006uG-3q
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:07:56 +0000
-X-UUID: 98fdcdc0608741739cbbb2d3fa3fe28e-20200311
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=EiH9wliZJ7SlCOgjGr1o9krpwAx0Yhk57Jmk6JMcvtA=; 
- b=WXCgrUwvwPckPJtrgli7CI1U5PziZL60rSUU1If/uRKOocJn2Bf7DiMVvg1bW13c5lC7uTkCP6KBN8KunoFOwNYhV1Mnb0qSB42mvG7PgydgKaDLk6l7YrlSI6ZMLBgFkx1DDTSfkPPFRz16ibhCCTruDcXwWLcaJdzXQN2W9pU=;
-X-UUID: 98fdcdc0608741739cbbb2d3fa3fe28e-20200311
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1255333377; Wed, 11 Mar 2020 21:07:51 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Mar 2020 22:04:19 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Mar 2020 13:02:47 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Mar 2020 13:02:55 +0800
-Message-ID: <1583989425.17522.29.camel@mtksdccf07>
-Subject: Re: [PATCH -next] kasan: fix -Wstringop-overflow warning
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Date: Thu, 12 Mar 2020 13:03:45 +0800
-In-Reply-To: <20200311163800.a264d4ec8f26cca7bb5046fb@linux-foundation.org>
-References: <20200311134244.13016-1-walter-zh.wu@mediatek.com>
- <20200311163800.a264d4ec8f26cca7bb5046fb@linux-foundation.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jCG9D-0000lF-9z
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:12:44 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id u10so2047891pjy.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 22:12:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=S03VflXtfBdU3G7WrgnpyaIH0yNKM177vI6gQVCK4zY=;
+ b=oTsERKMYyFGRUyq9fLk4IDlsMBbdf9Ugjwy//Yc4ZLyHBWyWraHopbb2SAQ9H/Kjiq
+ WEueW4oMctUs0hV8oT6Ykm5ueq+TCVRk+iqos5IhUqWg2Xn+Mt5xGLhN3EyV/XZ7KJLM
+ GMDL3ZgtoEtY5FBYGY5Xl9YWudf9GMmM4wa78DXQRLiqNmBU+9Oj1QlA0LTktJSPLMzX
+ YNs0OjIV/Ml1TJ/OkM+E0sT1XScvaCEFmwAg72ILZehqF0EWmakpbL3DEigBgJusKP/H
+ dKsAaiMTO3oflTA41Q6cRZf4ZGRwMhs9HarpxW6uRqdyveckvXG5pmN1DR3fZmPaXV0U
+ wMeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=S03VflXtfBdU3G7WrgnpyaIH0yNKM177vI6gQVCK4zY=;
+ b=QZjHKBBfNaBVL/hnjUN/h7sGwNHc/JHaAfInNG0EcxpHcfywzziEaKee8rNNnEICdN
+ 0phTSmuTx9J6J0DN97/chLgBgxmlj6T8pWEE8jGQMFXRtFjPde6Tdx+wsLBz8EHMOqNd
+ jZBG2WjzIwuw3Qsi6YD3TCnz7vYFbUgPVliX5TwowqXUU8oa708CBZzdDSui2QY6jJwr
+ tRJ695Nf9ZVhSK3KefTZOlRQFJXZDpy3JzgwI3bL2Iu3fkMybCQIlx/osZq93qRTO2eS
+ PtA08aDiJSmiSSPnY0LN57JiwZF76WbvUyc+dTL5YPbjug+vBTrJNDZED3F0Zjpl2E5B
+ ltTQ==
+X-Gm-Message-State: ANhLgQ2qCevxLfqWVyWMZ8vl+8pbQnj0b973/vhc57j9vhT+AUmBptRy
+ Mx/frZ9hWVvgbN+Gl3IfY/JR+w==
+X-Google-Smtp-Source: ADFU+vsPGt88umNphl69CFdzapIJwZsoW9RFCNSJeyEHKsvUxjW/1HiWdp0tXdhZXPSVHhAx9tsqKA==
+X-Received: by 2002:a17:90a:b111:: with SMTP id
+ z17mr2321714pjq.115.1583989962616; 
+ Wed, 11 Mar 2020 22:12:42 -0700 (PDT)
+Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id n184sm2281274pfn.208.2020.03.11.22.12.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 22:12:41 -0700 (PDT)
+Date: Wed, 11 Mar 2020 22:12:39 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v1 3/6] arm64: dts: sdm845: Add i2c-qcom-cci node
+Message-ID: <20200312051239.GV264362@yoga>
+References: <20200311123501.18202-1-robert.foss@linaro.org>
+ <20200311123501.18202-4-robert.foss@linaro.org>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200311123501.18202-4-robert.foss@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_220755_162809_F6A8DAEC 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20200311_221243_355211_13189FD4 
+X-CRM114-Status: GOOD (  16.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -73,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,69 +99,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org, Qian Cai <cai@lca.pw>,
- linux-arm-kernel@lists.infradead.org,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Loic Poulain <loic.poulain@linaro.org>, Anson.Huang@nxp.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, agross@kernel.org,
+ maxime@cerno.tech, linux-arm-msm@vger.kernel.org, olof@lixom.net,
+ shawnguo@kernel.org, leonard.crestez@nxp.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-03-11 at 16:38 -0700, Andrew Morton wrote:
-> On Wed, 11 Mar 2020 21:42:44 +0800 Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> 
-> > Compiling with gcc-9.2.1 points out below warnings.
-> > 
-> > In function 'memmove',
-> >     inlined from 'kmalloc_memmove_invalid_size' at lib/test_kasan.c:301:2:
-> > include/linux/string.h:441:9: warning: '__builtin_memmove' specified
-> > bound 18446744073709551614 exceeds maximum object size
-> > 9223372036854775807 [-Wstringop-overflow=]
-> > 
-> > Why generate this warnings?
-> > Because our test function deliberately pass a negative number in memmove(),
-> > so we need to make it "volatile" so that compiler doesn't see it.
-> > 
-> > ...
-> >
-> > --- a/lib/test_kasan.c
-> > +++ b/lib/test_kasan.c
-> > @@ -289,6 +289,7 @@ static noinline void __init kmalloc_memmove_invalid_size(void)
-> >  {
-> >  	char *ptr;
-> >  	size_t size = 64;
-> > +	volatile size_t invalid_size = -2;
-> >  
-> >  	pr_info("invalid size in memmove\n");
-> >  	ptr = kmalloc(size, GFP_KERNEL);
-> > @@ -298,7 +299,7 @@ static noinline void __init kmalloc_memmove_invalid_size(void)
-> >  	}
-> >  
-> >  	memset((char *)ptr, 0, 64);
-> > -	memmove((char *)ptr, (char *)ptr + 4, -2);
-> > +	memmove((char *)ptr, (char *)ptr + 4, invalid_size);
-> >  	kfree(ptr);
-> >  }
-> 
-> Huh.  Why does this trick suppress the warning?
-> 
-We read below the document, so we try to verify whether it is work for
-another checking. After we changed the code, It is ok.
+On Wed 11 Mar 05:34 PDT 2020, Robert Foss wrote:
 
-https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Warning-Options.html#Warning-Options
-"They do not occur for variables or elements declared volatile. Because
-these warnings depend on optimization, the exact variables or elements
-for which there are warnings depends on the precise optimization options
-and version of GCC used."
-
-> Do we have any guarantee that this it will contiue to work in future
-> gcc's?
+> The sdm845 SOC ships with a CCI controller, which
+> has two CCI/I2C buses.
 > 
-Sorry, I am not compiler expert, so I can't guarantee gcc will not
-modify the rule, but at least it is work before gcc-9.
+> Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> ---
+>  arch/arm64/boot/dts/qcom/sdm845-db845c.dts |   4 +
+>  arch/arm64/boot/dts/qcom/sdm845.dtsi       | 110 +++++++++++++++++++++
+>  2 files changed, 114 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> index eb77aaa6a819..a6b6837c3d68 100644
+> --- a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> +++ b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+> @@ -583,3 +583,7 @@
+>  		bias-pull-up;
+>  	};
+>  };
+> +
+> +&cci {
+> +	status = "ok";
+> +};
+> diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> index d42302b8889b..b7f5c0b0f6af 100644
+> --- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> @@ -5,6 +5,7 @@
+>   * Copyright (c) 2018, The Linux Foundation. All rights reserved.
+>   */
+>  
+> +#include <dt-bindings/clock/qcom,camcc-sdm845.h>
+>  #include <dt-bindings/clock/qcom,dispcc-sdm845.h>
+>  #include <dt-bindings/clock/qcom,gcc-sdm845.h>
+>  #include <dt-bindings/clock/qcom,gpucc-sdm845.h>
+> @@ -717,6 +718,14 @@
+>  			#power-domain-cells = <1>;
+>  		};
+>  
+> +		clock_camcc: clock-controller@ad00000 {
+> +			compatible = "qcom,sdm845-camcc";
+> +			reg = <0 0xad00000 0 0x10000>;
+
+Please pad address (i.e. the second cell) to 8 digits and maintain sort
+order by address.
+
+> +			#clock-cells = <1>;
+> +			#reset-cells = <1>;
+> +			#power-domain-cells = <1>;
+> +		};
+> +
+>  		qfprom@784000 {
+>  			compatible = "qcom,qfprom";
+>  			reg = <0 0x00784000 0 0x8ff>;
+> @@ -1451,6 +1460,60 @@
+>  			gpio-ranges = <&tlmm 0 0 150>;
+>  			wakeup-parent = <&pdc_intc>;
+>  
+> +			cci0_default: cci0_default {
+
+No _ in the node name (i.e you can do cci0_default: cci0-default).
+
+> +				/* SDA, SCL */
+> +				pinmux {
+
+You no longer need this intermediate node, instead you can write this
+as:
+
+cci0_default: cci0-default {
+	pins = "gpio17", "gpio18";
+	function = "cci_i2c";
+	
+	bias-pull-up;
+	drive-strength = <2>;
+};
+
+Or alternatively if you would like to group things in subnodes, do so by
+pin (to allow different pinconf per pin in a nice way), i.e:
+
+cci0_default: cci0-default {
+	sda {
+		pins = "gpio17";
+		function = "cci_i2c";
+		
+		bias-pull-up;
+		drive-strength = <2>;
+	};
+
+	scl {
+		pins = "gpio18";
+		function = "cci_i2c";
+		
+		bias-pull-up;
+		drive-strength = <2>;
+	};
+};
+
+> +					function = "cci_i2c";
+> +					pins = "gpio17", "gpio18";
+> +				};
+> +				pinconf {
+> +					pins = "gpio17", "gpio18";
+> +					bias-pull-up;
+> +					drive-strength = <2>; /* 2 mA */
+> +				};
+> +			};
+> +
+> +			cci0_sleep: cci0_sleep {
+> +				/* SDA, SCL */
+> +				mux {
+> +					pins = "gpio17", "gpio18";
+> +					function = "cci_i2c";
+> +				};
+> +
+> +				config {
+> +					pins = "gpio17", "gpio18";
+> +					drive-strength = <2>; /* 2 mA */
+> +					bias-pull-down;
+> +				};
+> +			};
+> +
+> +			cci1_default: cci1_default {
+> +				/* SDA, SCL */
+> +				pinmux {
+> +					function = "cci_i2c";
+> +					pins = "gpio19", "gpio20";
+> +				};
+> +				pinconf {
+> +					pins = "gpio19", "gpio20";
+> +					bias-pull-up;
+> +					drive-strength = <2>; /* 2 mA */
+> +				};
+> +			};
+> +
+> +			cci1_sleep: cci1_sleep {
+> +				/* SDA, SCL */
+> +				mux {
+> +					pins = "gpio19", "gpio20";
+> +					function = "cci_i2c";
+> +				};
+> +
+> +				config {
+> +					pins = "gpio19", "gpio20";
+> +					drive-strength = <2>; /* 2 mA */
+> +					bias-pull-down;
+> +				};
+> +			};
+> +
+>  			qspi_clk: qspi-clk {
+>  				pinmux {
+>  					pins = "gpio95";
+> @@ -2608,6 +2671,53 @@
+>  			#reset-cells = <1>;
+>  		};
+>  
+> +		cci: cci@ac4a000 {
+> +			compatible = "qcom,sdm845-cci";
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			reg = <0 0xac4a000 0 0x4000>;
+
+Please pad 0xac4a000 to 8 digits.
+
+> +			interrupts = <GIC_SPI 460 IRQ_TYPE_EDGE_RISING>;
+> +			power-domains = <&clock_camcc TITAN_TOP_GDSC>;
+> +
+> +			clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
+> +				<&clock_camcc CAM_CC_SOC_AHB_CLK>,
+> +				<&clock_camcc CAM_CC_SLOW_AHB_CLK_SRC>,
+> +				<&clock_camcc CAM_CC_CPAS_AHB_CLK>,
+> +				<&clock_camcc CAM_CC_CCI_CLK>,
+> +				<&clock_camcc CAM_CC_CCI_CLK_SRC>;
+> +			clock-names = "camnoc_axi_clk",
+> +				"soc_ahb_clk",
+> +				"slow_ahb_src_clk",
+> +				"cpas_ahb_clk",
+> +				"cci",
+> +				"cci_clk_src";
+
+Please drop the "_clk" suffix from these (iirc, these strings aren't
+significant to the binding anyways).
+
+> +
+> +			assigned-clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
+> +				<&clock_camcc CAM_CC_CCI_CLK>;
+> +			assigned-clock-rates = <80000000>, <37500000>;
+> +
+> +			pinctrl-names = "default", "sleep";
+> +			pinctrl-0 = <&cci0_default &cci1_default>;
+> +			pinctrl-1 = <&cci0_sleep &cci1_sleep>;
+> +
+> +			status = "disabled";
+> +
+> +			i2c-bus@0 {
+
+Please give these labels, to make it easy to reference each bus in the
+board dts and to add children.
+
+Regards,
+Bjorn
+
+> +				reg = <0>;
+> +				clock-frequency = <1000000>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +			};
+> +
+> +			i2c-bus@1 {
+> +				reg = <1>;
+> +				clock-frequency = <1000000>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +			};
+> +		};
+> +
+>  		mdss: mdss@ae00000 {
+>  			compatible = "qcom,sdm845-mdss";
+>  			reg = <0 0x0ae00000 0 0x1000>;
+> -- 
+> 2.20.1
 > 
 
 _______________________________________________
