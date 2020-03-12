@@ -2,82 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0748183412
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:06:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33FA2183416
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 16:06:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EpaSUl72Z1BFZr6xNGYxw6FD8wYOk3K1oAdVQEXFh0c=; b=D0QrgPE6FPXGFNaByJIDsL5/+
-	KbH0gEdtVn6fVCI3dmR7VL4+1AIAp1PujQVsALwI+0rOxftMWrRnF3XfkehQRoa++BuKqAD0SzCaY
-	vYogLZMcdN2OmWpIUBzPeUV0cD+gcP/vBb5T4HGcDjJhknr/jaEX0HOyGLZFo6XxPIbxZUuCPAUY2
-	3BowmgI6LDKlPfhdJ6Eg6HZp37DC78NvFaKlauDF4pGnM/BMeLb0hWp+I4kcYHLBRjNBSmilsAjKE
-	CFbt5Tu3w31JA5bwHd5JAcYo5b95V4zzCfHPVOkKCzWTXih1dHDk1sgMRNzwnFh8KJMZmTG3Pb9mt
-	p87DBj32w==;
+	 bh=HHUmAgFTl75S9D5GjKBsyqBS0+ZDVSCFVRH2L9xiQj4=; b=AxOzFOGmpd9S6zDkEza+uqRQM
+	ol/pfH3xK+dK+mBsM0fGgHrw037bCag0yteHfsh6lBEQ1FkjT0j//zosrOo+kzMBRDnhEsTS9s/8l
+	Xsh1Xd2G5WqDSBNdkxFxlDmCHtkjvTJ86LfntqDKtXxijwX16Yx00P+dsRNKbv0vfMhMQuLlgo33X
+	3WTqGllI1X0wLbbjicl1nM3ZhjWI4w6r85BhipKUi5bUHYmCuIxqYqezmXOiV/H//j2dj9w3ZxVdk
+	lj6LwdWtyFlpyNXyuc+V4mg6G0FOttjXMcGqSFsmJZrBUPFiv683IMQ3Za4imFd8YCJcfEnhdhZZC
+	r8K1Yfp0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCPPG-0001fv-1f; Thu, 12 Mar 2020 15:05:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCPPr-0001x2-4W; Thu, 12 Mar 2020 15:06:31 +0000
+Received: from web0081.zxcs.nl ([2a06:2ec0:1::81])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCPP5-0001fZ-M2
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 15:05:46 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A80AB2067C;
- Thu, 12 Mar 2020 15:05:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584025541;
- bh=8AcCGmwl34p9HgS/EGgx+kPmyH2l+KR7q9FPherSEL0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=CmzSDGy7MntRdiUhHXizcL5qqzTv2vI1ETCcI4mwcnGxK4Rn8PQ0dC5He6955kQBO
- Km8GqsVkCasn25fExvCnNFUG8VeMj/ejVrBhat2K4d5xFgOTyRJsx4v/EitxhVlPsr
- uwaCP2jO0r7YWPZseHZoQmQiNCHljpUgKpBRrDAs=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jCPP1-00CFWM-Kq; Thu, 12 Mar 2020 15:05:39 +0000
+ id 1jCPPj-0001wC-2C
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 15:06:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=pascalroeleven.nl; s=x; h=Message-ID:References:In-Reply-To:Subject:Cc:To:
+ From:Date:Content-Transfer-Encoding:Content-Type:MIME-Version:Sender:Reply-To
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=J6aDQGjkdfrS52YkEz3ek5dt906Ty2Nt38vKTDhn80w=; b=hG2lKuGOULLVa42qYNnOMiU+E+
+ 1fF6zxRYgwLngJMFHPGArXhjerUxJQ3plKRZCO5TSTnVi+2Q8tQ6C+C6aNn40pyjspW7YwCzKMQpp
+ syAzO2hUtLaflC0V1kUwjCmFDeZWQlAgJ7edx0xUiyAyRK6Ve3MXMeFoqm/8SuhsGbjvvflanRDwi
+ uJZM+RCzqt5AIQOpws1Wm09byjKK1YZDLkylSTk29ub38ToQxSkCbjKk9IDDgGd0OfMXuFUP4xsVe
+ 79E3bHRr3rpcvkxTdxEe+saXneBo447d07pKSoi/9Akj0hMmJk75kVHMFuA+GZIae8997/r68Trkv
+ 7nt7VLxQ==;
+Received: from spamrelay.zxcs.nl ([185.104.28.12]:47086
+ helo=mail-slave02.zxcs.nl)
+ by web0081.zxcs.nl with esmtp (Exim 4.92.3)
+ (envelope-from <dev@pascalroeleven.nl>)
+ id 1jCPPT-002SyE-RZ; Thu, 12 Mar 2020 16:06:07 +0100
 MIME-Version: 1.0
-Date: Thu, 12 Mar 2020 15:05:39 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v6 00/18] arm64: return address signing
-In-Reply-To: <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
- <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
- <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
- <b5ca043cfaca30435957974d0f58524e@kernel.org>
- <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
-Message-ID: <c5889c07a559426798ed508da5755d9e@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: amit.kachhap@arm.com, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
- keescook@chromium.org, ardb@kernel.org, catalin.marinas@arm.com,
- suzuki.poulose@arm.com, will@kernel.org, ramana.radhakrishnan@arm.com,
- kristina.martsenko@arm.com, Dave.Martin@arm.com, Vincenzo.Frascino@arm.com,
- broonie@kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Date: Thu, 12 Mar 2020 16:06:07 +0100
+From: Pascal Roeleven <dev@pascalroeleven.nl>
+To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: pwm: sun4i: pwm-backlight not working since 5.6-rc1
+In-Reply-To: <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
+References: <6185b5540ca082d887d7d13330c9d938@pascalroeleven.nl>
+ <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
+User-Agent: Roundcube Webmail/1.4.2
+Message-ID: <6e995c4c22c4e6c93acb1f491e5aa109@pascalroeleven.nl>
+X-Sender: dev@pascalroeleven.nl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_080545_500817_D66A8BF2 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200312_080623_251664_ADD16A71 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,7 +68,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,112 +79,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-pwm@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[Somehow I managed to butcher the subject line. no idea how...]
-
-On 2020-03-12 13:21, Amit Kachhap wrote:
-> Hi Marc,
-> 
-> On 3/12/20 6:17 PM, Marc Zyngier wrote:
->> Hi Amit,
->> 
->> On 2020-03-12 08:06, Amit Kachhap wrote:
->>> Hi James,
->>> 
->>> On 3/12/20 12:23 PM, Amit Kachhap wrote:
->>>> Hi James,
->>>> 
->>>> On 3/11/20 2:58 PM, James Morse wrote:
->>>>> Hi Amit,
->>>>> 
->>>>> (CC: +Marc)
->>>>> 
->>>>> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
->>>>>> This series improves function return address protection for the 
->>>>>> arm64 kernel, by
->>>>>> compiling the kernel with ARMv8.3 Pointer Authentication 
->>>>>> instructions (referred
->>>>>> ptrauth hereafter). This should help protect the kernel against 
->>>>>> attacks using
->>>>>> return-oriented programming.
->>>>> 
->>>>> (as it looks like there may be another version of this:)
->>>>> 
->>>>> Am I right in thinking that after your patch 10 changing
->>>>> cpu_switch_to(), only the A key is live during kernel execution?
->>>> 
->>>> Yes
->>>> 
->>>>> 
->>>>> KVM is still save/restoring 4 extra keys around guest-entry/exit. 
->>>>> As you
->>>>> restore all the keys on return to user-space, is this still 
->>>>> necessary?
->>>> 
->>>> Yes Its a good optimization to skip 4 non-A keys. I was wondering 
->>>> whether to do it in this series or send it separately.
->>> 
->>> I suppose we can only skip non-A keys save/restore for host context. 
->>> If
->>> we skip non-A keys for guest context then guest with old 
->>> implementation
->>> will break. Let me know your opinion.
->> 
->> I don't think you can skip anything as far as the guest is concerned.
->> But being able to skip the B keys (which is what I expect you call the
->> non-A keys) on the host would certainly be useful.
-> 
-> Thanks for the clarification.
-> 
->> 
->> I assume you have a way to hide them from userspace, though.
-> 
-> You mean hide all the keys from userspace like below,
-> 
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index 3e909b1..29cc74f 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -1023,7 +1023,7 @@ static bool trap_ptrauth(struct kvm_vcpu *vcpu,
->  static unsigned int ptrauth_visibility(const struct kvm_vcpu *vcpu,
->                         const struct sys_reg_desc *rd)
->  {
-> -       return vcpu_has_ptrauth(vcpu) ? 0 : REG_HIDDEN_USER | 
-> REG_HIDDEN_GUEST;
-> +       return vcpu_has_ptrauth(vcpu) ? REG_HIDDEN_USER :
-> REG_HIDDEN_USER | REG_HIDDEN_GUEST;
->  }
-> 
->  #define __PTRAUTH_KEY(k)
-> 
-> I don't remember why it was not done this way last time.
-
-No, that's not what I meant. What you're describing is preventing keys
-from being exposed to the VMM controlling the guest, and that'd be
-pretty bad (you need to be able to save/restore them for migration).
-
-But if KVM doesn't save/restore the host's B-keys in the world switch,
-then you must make sure that no host userspace can make use of them,
-as they would be the guest's keys.
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wMy0xMiAxNDoyOSwgVXdlIEtsZWluZS1Lw7ZuaWcgd3JvdGU6Cj4gT24gVGh1LCBN
+YXIgMTIsIDIwMjAgYXQgMDE6MjI6MTNQTSArMDEwMCwgUGFzY2FsIFJvZWxldmVuIHdyb3RlOgo+
+PiBIaSBhbGwsCj4+IAo+PiBJIGFtIHdvcmtpbmcgb24gYWRkaW5nIGFuIG9sZCBBMTAgZGV2aWNl
+IHRvIG1haW5saW5lIGFuZCBub3RpY2VkIGFuIAo+PiBpc3N1ZQo+PiB3aGVuIHRlc3Rpbmcgb24g
+NS41LjggdnMgbWFzdGVyLgo+PiAKPj4gU2luY2UgNS42LXJjMSwgSSBjYW4ndCBjb250cm9sIHRo
+ZSBicmlnaHRuZXNzIG9mIG15IExDRCBiYWNrbGlnaHQgCj4+IGFueW1vcmUuCj4+IFRoZSBiYWNr
+bGlnaHQgc3RheXMgb24gZnVsbCBicmlnaHRuZXNzIGluc3RlYWQuIEkgYW0gY29udHJvbGxpbmcg
+dGhlCj4+IGJyaWdodG5lc3MgdmFsdWUgdmlhIHN5c2ZzIGZvciB0ZXN0aW5nLgo+PiAKPj4gSSBh
+bSBub3Qgc3VyZSBpZiB0aGlzIGlzIGEgZ2VuZXJhbCBwd20tc3VuNGkgaXNzdWUgb3IgaWYgaXQg
+aXMgcmVsYXRlZCAKPj4gdG8KPj4gdGhlIGJhY2tsaWdodC4gSG93ZXZlciBJIG5hcnJvd2VkIGl0
+IGRvd24gdG8gb25lIGNvbW1pdCBmb3IgcHdtLXN1bjRpOgo+PiAKPj4gZmE0ZDgxNzg0NjgxYTI2
+YmNmN2QyYTQzYzZhYzVjZjk5MWVmMjhmNQo+PiAKPj4gSWYgSSB1c2UgcHdtLXN1bjRpLmMgZnJv
+bSA1YjA5MGI0MzBkNzUwOTYxMzA1MDMwMjMyMzE0YjZhY2RiMDEwMmFhIG9uCj4+IG1hc3Rlciwg
+dGhlIGJhY2tsaWdodCB3b3JrcyBmaW5lLiBVbmZvcnR1bmF0ZWx5LCBkdWUgdG8gbXkgbGFjayBv
+ZiAKPj4ga2VybmVsCj4+IGV4cGVyaWVuY2UsIEkgY2FuJ3Qgc2VlIGhvdyB0aGUgY29tbWl0IGFi
+b3ZlIGJyb2tlIGl0Lgo+IAo+IEhtbSwgSSBjYW5ub3Qgc2VlIGhvdyBmYTRkODE3ODQ2ODFhMjZi
+Y2Y3ZDJhNDNjNmFjNWNmOTkxZWYyOGY1IGJyZWFrcwo+IHRoaXMuIExvb2tpbmcgYXQgdGhlIG91
+dHB1dCBvZgo+IAo+IAlnaXQgc2hvdyAtYiBmYTRkODE3ODQ2ODFhMjZiY2Y3ZDJhNDNjNmFjNWNm
+OTkxZWYyOGY1Cj4gCj4gKGkuZS4gaWdub3Jpbmcgd2hpdGVzcGFjZSBjaGFuZ2VzKSBJIGRvbid0
+IHNlZSBob3cgdGhlIGJlaGF2aW91ciB5b3UncmUKPiByZXBvcnRpbmcgY2FuIGJlIGV4cGxhaW5l
+ZC4KPiAKPiBBcmUgeW91IHN1cmUgdGhhdCBmYTRkODE3ODQ2ODFhMjZiY2Y3ZDJhNDNjNmFjNWNm
+OTkxZWYyOGY1IGlzIHRoZSBiYWQKPiBjb21taXQ/Cj4gCj4gQ2FuIHlvdSBpbnN0YWxsIGEgdG9v
+bCB0byBpbnNwZWN0IHJlZ2lzdGVyIHZhbHVlcyBhbmQgY2hlY2sgaG93IHRoZQo+IGFmZmVjdGVk
+IHJlZ2lzdGVycyBjaGFuZ2UgaWYgeW91IHN3aXRjaCBrZXJuZWwgdmVyc2lvbnMgYW5kL29yIHB3
+bQo+IHNldHRpbmdzPwo+IAo+IChlLmcuCj4gCW1lbXRvb2wgbWQgMHgxYzIwZTAwKzB4Ywo+ICkK
+PiAKPiBCZXN0IHJlZ2FyZHMKPiBVd2UKClRoYW5rcyBmb3IgeW91ciByZXNwb25zZS4KClllcyBJ
+IGFtIHN1cmUgdGhhdCBpcyB0aGUgY29tbWl0LiBJZiBJIGFtIG9uIG1hc3RlciwgYW5kIHJlcGxh
+Y2UgCnB3bS1zdW40aS5jIHdpdGggdGhlIG9uZSBmcm9tIDViMDkwYjQzLCBldmVyeXRoaW5nIHdv
+cmtzLiBJZiBJIHRoZW4gCmFwcGx5IGZhNGQ4MTc4LCBpdCBzdG9wcyB3b3JraW5nLgoKQW5kIHN0
+cmFuZ2VseSB0aGUgb3V0cHV0IG9mIHRoZSByZWdpc3RlcnMgaXMgZXhhY3RseSB0aGUgc2FtZSBi
+ZWZvcmUgYW5kIAphZnRlciBmYTRkODE3ODoKCjAxYzIwZTAwOiAwMDAwMDA1MCAwMDEzMDAxNCAw
+MDAwMDAwMCAoZnVsbCBicmlnaHRuZXNzKQowMWMyMGUwMDogMDAwMDAwNTAgMDAxMzAwMDYgMDAw
+MDAwMDAgKG1pbiBicmlnaHRuZXNzKQoKRXZlbiB3aGVuIEknbSBvbiA1YjA5MGI0MyBhbmQgY2hl
+cnJ5LXBpY2sgZmE0ZDgxNzggY2FuIEkgcmVwcm9kdWNlIHRoZSAKaXNzdWUuCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
