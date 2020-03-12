@@ -2,92 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3D5D18379F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:31:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A47791837B6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:34:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sKZzLqcNUoqlytR6FkcisLnedxemVrbnAuWKq2VNO9c=; b=sFoVgIVbFO3Ld+5hMOkW7BI/f
-	Lh0NORkGVz6m/HuSSzjrE9vWbvs3OGhIaCjVR9L8FFYyOyMs8jHBfCtGGn9HSeSUso0A2YCUHSOgc
-	y5CinjlSVwaVhPfTPCkbDHxINhZDmPU5Dp75zecdYctUfBNm3PLgsMMrU/Y65/qgf9MsYQmMpaXOj
-	7wWs6DiRLlBYU7T5iZoFp+HfP0tEePVAJaw2PZA55lkZCA8aOYjS5Isqh2RUh4wPzVBrHEdMll2K4
-	FcOkcjxggNKDzjNNRHxN49dLTla5xORy0/CjE0pGSYvU7cZcxADGfN6PvX/FisxWxmJFEbm3bqSZP
-	ezq08a3fA==;
+	 bh=mlILEb0+yHQByBEzz0lXNCqPLKFonQOLv9Ix7EKSKOU=; b=Oof7bo2HLvTKxD0/5MU+N9UsW
+	6H8T/Xn7EX0/RV+FZ/fYw1hKHASQjU+VPzhO2uz4e4JCEvwOW7rU4QAXddcOATfUijbizgV+SjIcr
+	JFEwe3KSKCVJy7t1eayqqK3not3ZfiFt2FC1GKD1NO2IFLeMFGUYkAIa96VwTo3q8nRQy32elrNg0
+	2stI5xbUNUiQgkBbXIm0x9QZADVF14bHZXtDTjVNYEhXQStum0b0/xG2fngXYTbQ3efUze0DtH4mp
+	/gxgXmINM6GXXg/dRrHj8zk38cEEnR5jwfVLjjE/my34XUlUhN2FUMmlPT31vl+THhiuai/ZL9x74
+	75D+vke8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRgT-0000oi-BM; Thu, 12 Mar 2020 17:31:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCRj1-0001Ja-TW; Thu, 12 Mar 2020 17:34:27 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRgI-0000nV-NK
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:31:41 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3AAF1206B1;
- Thu, 12 Mar 2020 17:31:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584034298;
- bh=n2Pp5AcyDGEum+ApqygaXC11A3ogD+//DnqxMAEod+o=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=N6zT3pYzkxJpncsdAy7gAI+9sua6GeYm6byJ0XGapzdkXB5DET1uSCvM9sgZ8FSTD
- UxUvFzoJIVCFxMwvuvTMyACSryE2cEDxCcswX5C7GcZs2Gw3XVyQjeEEax3LvSTJfq
- y1Lq0cQZuSVgrZRLH5ZH/3Rd6uFNFIcLxeVNy3gg=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jCRgG-00CHUT-JL; Thu, 12 Mar 2020 17:31:36 +0000
+ id 1jCRim-0001Hp-IE
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:34:17 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1584034455; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=Yv5Z2WSkUNGiz0RnTA13WsE0rkZ/Ii3R3mKkEmh3yWY=;
+ b=dcusUA+ku9pMB7Z+tOcyUERIPK+33BH7Wm0pTzezL+FUOiAQ3/QJn+2dkVSjivX3HprD+lZj
+ /pw/f0l3HOx/gM8UrrFkezAN/JyyMGk1iA7xVMFdANjv8IG3thQjcWQkJMLW9Ly1hYIyVc8f
+ HCfS2aocf6njnVAQOcoX4+NLdlE=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e6a727d.7f52d794b2d0-smtp-out-n01;
+ Thu, 12 Mar 2020 17:33:49 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 3D579C433BA; Thu, 12 Mar 2020 17:33:49 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [10.46.161.159] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 68064C433D2;
+ Thu, 12 Mar 2020 17:33:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 68064C433D2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v2 2/8] scsi: ufs: remove init_prefetch_data in struct
+ ufs_hba
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ jejb@linux.ibm.com
+References: <20200312110908.14895-1-stanley.chu@mediatek.com>
+ <20200312110908.14895-3-stanley.chu@mediatek.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <2e958801-81f0-d650-cad3-ada0b04ac972@codeaurora.org>
+Date: Thu, 12 Mar 2020 10:33:45 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Date: Thu, 12 Mar 2020 17:31:36 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v6 00/18] arm64: return address signing
-In-Reply-To: <bd76de32-12c5-fcbe-25d2-c501f9491bee@arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
- <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
- <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
- <b5ca043cfaca30435957974d0f58524e@kernel.org>
- <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
- <c5889c07a559426798ed508da5755d9e@kernel.org>
- <bd76de32-12c5-fcbe-25d2-c501f9491bee@arm.com>
-Message-ID: <87945e6110511caaceeb3f1294b6f88f@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: james.morse@arm.com, amit.kachhap@arm.com,
- linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
- keescook@chromium.org, ardb@kernel.org, catalin.marinas@arm.com,
- suzuki.poulose@arm.com, will@kernel.org, ramana.radhakrishnan@arm.com,
- kristina.martsenko@arm.com, Dave.Martin@arm.com, Vincenzo.Frascino@arm.com,
- broonie@kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200312110908.14895-3-stanley.chu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103138_799807_BC8FB6EA 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200312_103416_004563_55DC409F 
+X-CRM114-Status: GOOD (  19.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,103 +95,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+On 3/12/2020 4:09 AM, Stanley Chu wrote:
+> Struct init_prefetch_data currently is used privately in
+> ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
 
-On 2020-03-12 17:26, James Morse wrote:
-> Hi Amit, Marc,
+Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+>   drivers/scsi/ufs/ufshcd.c | 15 ++++++---------
+>   drivers/scsi/ufs/ufshcd.h | 11 -----------
+>   2 files changed, 6 insertions(+), 20 deletions(-)
 > 
-> On 12/03/2020 15:05, Marc Zyngier wrote:
->> On 2020-03-12 13:21, Amit Kachhap wrote:
->>> On 3/12/20 6:17 PM, Marc Zyngier wrote:
->>>> On 2020-03-12 08:06, Amit Kachhap wrote:
->>>>> On 3/12/20 12:23 PM, Amit Kachhap wrote:
->>>>>> On 3/11/20 2:58 PM, James Morse wrote:
->>>>>>> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
->>>>>>>> This series improves function return address protection for the 
->>>>>>>> arm64 kernel, by
->>>>>>>> compiling the kernel with ARMv8.3 Pointer Authentication 
->>>>>>>> instructions (referred
->>>>>>>> ptrauth hereafter). This should help protect the kernel against 
->>>>>>>> attacks using
->>>>>>>> return-oriented programming.
->>>>>>> 
->>>>>>> (as it looks like there may be another version of this:)
->>>>>>> 
->>>>>>> Am I right in thinking that after your patch 10 changing
->>>>>>> cpu_switch_to(), only the A key is live during kernel execution?
->>>>>> 
->>>>>> Yes
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index 314e808b0d4e..b4988b9ee36c 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -6501,6 +6501,7 @@ static void ufshcd_init_icc_levels(struct ufs_hba *hba)
+>   {
+>   	int ret;
+>   	int buff_len = hba->desc_size.pwr_desc;
+> +	u32 icc_level;
+>   	u8 *desc_buf;
+>   
+>   	desc_buf = kmalloc(buff_len, GFP_KERNEL);
+> @@ -6516,21 +6517,17 @@ static void ufshcd_init_icc_levels(struct ufs_hba *hba)
+>   		goto out;
+>   	}
+>   
+> -	hba->init_prefetch_data.icc_level =
+> -			ufshcd_find_max_sup_active_icc_level(hba,
+> -			desc_buf, buff_len);
+> -	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",
+> -			__func__, hba->init_prefetch_data.icc_level);
+> +	icc_level =
+> +		ufshcd_find_max_sup_active_icc_level(hba, desc_buf, buff_len);
+> +	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",	__func__, icc_level);
+>   
+>   	ret = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_WRITE_ATTR,
+> -		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0,
+> -		&hba->init_prefetch_data.icc_level);
+> +		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0, &icc_level);
+>   
+>   	if (ret)
+>   		dev_err(hba->dev,
+>   			"%s: Failed configuring bActiveICCLevel = %d ret = %d",
+> -			__func__, hba->init_prefetch_data.icc_level , ret);
+> -
+> +			__func__, icc_level, ret);
+>   out:
+>   	kfree(desc_buf);
+>   }
+> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+> index 5c10777154fc..5cf79d2319a6 100644
+> --- a/drivers/scsi/ufs/ufshcd.h
+> +++ b/drivers/scsi/ufs/ufshcd.h
+> @@ -402,15 +402,6 @@ struct ufs_clk_scaling {
+>   	bool is_suspended;
+>   };
+>   
+> -/**
+> - * struct ufs_init_prefetch - contains data that is pre-fetched once during
+> - * initialization
+> - * @icc_level: icc level which was read during initialization
+> - */
+> -struct ufs_init_prefetch {
+> -	u32 icc_level;
+> -};
+> -
+>   #define UFS_ERR_REG_HIST_LENGTH 8
+>   /**
+>    * struct ufs_err_reg_hist - keeps history of errors
+> @@ -541,7 +532,6 @@ enum ufshcd_quirks {
+>    * @intr_mask: Interrupt Mask Bits
+>    * @ee_ctrl_mask: Exception event control mask
+>    * @is_powered: flag to check if HBA is powered
+> - * @init_prefetch_data: data pre-fetched during initialization
+>    * @eh_work: Worker to handle UFS errors that require s/w attention
+>    * @eeh_work: Worker to handle exception events
+>    * @errors: HBA errors
+> @@ -627,7 +617,6 @@ struct ufs_hba {
+>   	u32 intr_mask;
+>   	u16 ee_ctrl_mask;
+>   	bool is_powered;
+> -	struct ufs_init_prefetch init_prefetch_data;
+>   
+>   	/* Work Queues */
+>   	struct work_struct eh_work;
 > 
->>>>>>> KVM is still save/restoring 4 extra keys around guest-entry/exit. 
->>>>>>> As you
->>>>>>> restore all the keys on return to user-space, is this still 
->>>>>>> necessary?
->>>>>> 
->>>>>> Yes Its a good optimization to skip 4 non-A keys. I was wondering 
->>>>>> whether to do it in
->>>>>> this series or send it separately.
->>>>> 
->>>>> I suppose we can only skip non-A keys save/restore for host 
->>>>> context. If
->>>>> we skip non-A keys for guest context then guest with old 
->>>>> implementation
->>>>> will break. Let me know your opinion.
->>>> 
->>>> I don't think you can skip anything as far as the guest is 
->>>> concerned.
->>>> But being able to skip the B keys (which is what I expect you call 
->>>> the
->>>> non-A keys) on the host would certainly be useful.
-> 
->> But if KVM doesn't save/restore the host's B-keys in the world switch,
->> then you must make sure that no host userspace can make use of them,
->> as they would be the guest's keys.
-> 
-> Yes, the arch code entry.S changes cover this with
-> ptrauth_keys_install_user. It restores
-> 4 keys, and the generic key.
-> 
-> 
-> We always need to save/restore all the guest keys (as we do today).
-> But when ptrauth_restore_state restores the host keys, it only needs
-> to restore the one
-> the kernel uses. (possibly using the same macro's so it stays up to 
-> date?!)
-> 
-> If we return to user-space, the arch code's entry code does the right 
-> thing.
-> KVM's user-space peeking at the keys will see the saved values.
-> 
-> 
-> My original question was more around: do we need to do this now, or
-> can we clean it up in
-> a later kernel version?
-> 
-> (and a sanity check that it doesn't lead to a correctness problem)
 
-I think what we have now is sane, and doesn't seem to lead to any
-issue (at least that I can see). We can always optimize this at a
-later point.
 
-Thanks,
-
-        M.
 -- 
-Jazz is not dead. It just smells funny...
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
