@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9B9F1827DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:39:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3685D1827E1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:39:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NexCRdCAwhs/KvBaTzO2XWqKaMDxyrPV1jf8aY0JIyg=; b=WNY
-	g4DZcEQ8OhEV9jM2TaWu0mg8GIc5uuvPP5Ju0ZyeRWfxV2W9ljXw1fLcTSJcAYHiDqXwtcaIfy9OH
-	5GananetdhDXMPcePYlEDKnLUXjRnCgyrqGDSsSzYYt0PXU3Xg4HSxMrNRtNFQsim15momghmffou
-	a5j00GaV5/bN9K5fzULSUMpMV/C5swPvynl84JF1Jbh7FtBQa5KRm1XsylXqu08BSFnja8g6S8BtE
-	ve8pnl1KtrYp90mIfM2n5MnK7QtXkrAxVavVE1+wjU67Z0wwvCnvLkybepH6C+1KKpBUKIJjn8Xk8
-	BzJjZSmYNfh6Nv6YV8TAr+BpOX+9JIA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BV9SI8TklKEWCf+7MUgFTjsN8PHu6Gw9vdw61nS3Fz4=; b=m/DJ6Z1ytTiirOWkE/kM+z6XAH
+	cD5evyThAdNoTVQK4u/MPH+9eEXg4GqpW8/MORBX9Ise0JyR04A3do2yeAHPFiOLLibPqXGMl9+JL
+	YeTGzcvrrCqVm/HGth/JzUV/hDqt0g/Enp7XJ5LtURINcBiOp4MIt8ainhxNk57OX7prhhSj4YM53
+	EJC0gvofV4K1ZbhyQPIQUxzW/Ty8wmmd08ZZdqUyLfekAdOQdSuM3//K/0b2GEKeh64IvKeFXNotL
+	BlNWMyQzHKXJiVMnCEcAT0wyVQ16KRcCYgmBEP8rYXIRl+Lgnjs+voF2XcgFdeYa9f3THsoqApXEv
+	GsjiAhmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCFcp-0003m6-TG; Thu, 12 Mar 2020 04:39:15 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jCFd4-00040O-Aj; Thu, 12 Mar 2020 04:39:30 +0000
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCFcc-0003kv-68; Thu, 12 Mar 2020 04:39:03 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d23so4790845ljg.13;
- Wed, 11 Mar 2020 21:38:58 -0700 (PDT)
+ id 1jCFcd-0003l2-0W; Thu, 12 Mar 2020 04:39:04 +0000
+Received: by mail-lj1-x235.google.com with SMTP id g12so4852792ljj.3;
+ Wed, 11 Mar 2020 21:39:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=BjPdSfl+t8YwAch/qVVID02ShhhB89UbCThPW66gWLQ=;
- b=J3ats9uK0YN0GDUacQWNhZ9Q+7kDlCcWnN2vo0ccfIY/D3nP6F87eOqtg56zTZKdyv
- CIPDgyovCi42xIbwEjbJptkhrFt6J1VIDK0K8sgS4/uyGJnteNpmeleMaQXBP/kLznr2
- NjAXhin+/hMJlRmbULU6cMXlgpXagldRgTBye+Sly4TOUII2c4u2Li3K9LlqxJwceFG6
- JcIAR4YpMPOfMRSY4M10O0dMCwd9Y1ayWRsbdwOY/rx0tlSZepQKKpO3+mwTC09NaC8J
- y716+pTEZsxs26RxQeajI2AO4rO5xD2z2F2kpmE58X655V2354h59GHVVZQ4hGTYLRhv
- 5CrA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=CQ5GKeXvkGqParOGBbk3REWEzXGx6iRtxkKUwPdofu8=;
+ b=PwGzluP0WgYEtjxd6slxjBTCQ2MCXElCaw1aAJM7OdeBX9Y62hglyUeK1LszMY+bD1
+ v7uFtw5T76pg40v3E9xj0x9MZlUalHZGlqKUyw/JbUpi8Z7/7+9OWbWe6GbFZMkFvjxx
+ FUYU2516f9coJD1EzSC46OepIfcp95Ziqde7sxBCCxiwj4lQAfyRiVcb7Cwo5f/ia0gC
+ 7vrmllqUbZEpF81R+ugmFFUwM+Ty4hu4T0wGckJtMOa/2Oc4NgSBFWEIhkjcHoomO9Qf
+ 4iHz2tXzPdjPffg1XuIOilgBTfA7pFtEcaq7KttUX7KuNr/zCOowaAcMyDT5Wwu60TiC
+ B2MA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=BjPdSfl+t8YwAch/qVVID02ShhhB89UbCThPW66gWLQ=;
- b=R3xBT/4dME23qrzLYKIQ9PQeFOXdazPBDqSRbf5rc9PBHlDTXSarWrqYacaN5PjGrz
- X0wHxFG6nOXZfU0NfRnSyukcimWWp10q9KGomLQz9pqQtm18AGgqQxTyK0StY9RcxJkL
- KZSn/9jAqgjFm1pvxm7gf4IxVeEAWbb383BUeD0EPlIVBvDCsK5B3iUedAsh+x7y2a/S
- eGHpDbvyyNmSo19M5ocDq7oEelig24gLua2o3WDZ21oPjlyERFaAwEH1BpnRG8P1Os8T
- FfQu07CAG+CpJEqZbq/Y7KLwQ7ZOUKjEo3qW8ypLgHCLB2/DVI/wqmIglV2L/zGp+Rvh
- WNug==
-X-Gm-Message-State: ANhLgQ2eyebZh5c9BozJWPf38qf/rzpRUWPWKa0QbzpVplf2ST0u5UQC
- HyPgdjnIFVbVpsoMmSx/5PI=
-X-Google-Smtp-Source: ADFU+vu2LZt4dQBS1XvD9C73vqG+rDKvlOnUkwd2xy1BWVo1NQdNEU4cWSfzVugfz8Nv6UzykF9sbA==
-X-Received: by 2002:a2e:9b94:: with SMTP id z20mr3926494lji.147.1583987937218; 
- Wed, 11 Mar 2020 21:38:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=CQ5GKeXvkGqParOGBbk3REWEzXGx6iRtxkKUwPdofu8=;
+ b=E34O0w3WADwmfYKNOR8OauPk0KsIQsKxwv7HJSOS04c76uTvqFZssb7Xb8bqaVPvil
+ TlWr6S3cUmDuXF8j2BZyjdBgfRlQEusCI/amj18Q2Vlghrbf5e6yKx8INCQJoqCdhDKC
+ 2ktgG3dF3khsayvlu6IHKOwMxgXFai6szAt9PxXYKybtWTtPyIemNDm8kho0+SXvZmK9
+ lG291R3pUnNAGMnnKee7RDQ41XGwll/GTkZucEq2MS1Vgh1wswkaNleY4pehOS7WLvLw
+ WrKBDVI/a1IOhyYyU+oJxbVDUtvp/aUvbGNsYpRx/7iqZSyfCWmIkwK+zLf5S1oZsM6p
+ HOKA==
+X-Gm-Message-State: ANhLgQ05/TbggZ7nWCo9LA1MJE1/4U4htMndAfnGhZ0TECk1aIdpuRTI
+ NCes6BNIyicIv23BV3VfgyM=
+X-Google-Smtp-Source: ADFU+vsFSBXwiw010EUlpXZARd0uRs7BApQJI23fC7SCtptQOH7Z11vbSZqTSLxTOovEFUo57s0srA==
+X-Received: by 2002:a2e:9b90:: with SMTP id z16mr4054714lji.254.1583987940236; 
+ Wed, 11 Mar 2020 21:39:00 -0700 (PDT)
 Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id u2sm8872866lfu.3.2020.03.11.21.38.54
+ by smtp.gmail.com with ESMTPSA id u2sm8872866lfu.3.2020.03.11.21.38.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 11 Mar 2020 21:38:56 -0700 (PDT)
+ Wed, 11 Mar 2020 21:38:59 -0700 (PDT)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v7 0/3] arm64: dts: meson: add dts/bindings for SmartLabs
- SML-5442TW
-Date: Thu, 12 Mar 2020 08:38:03 +0400
-Message-Id: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
+Subject: [PATCH v7 1/3] dt-bindings: add vendor prefix for SmartLabs LLC
+Date: Thu, 12 Mar 2020 08:38:04 +0400
+Message-Id: <1583987886-6288-2-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
+References: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_213902_254289_C3841794 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20200311_213903_049278_3F55702F 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -84,6 +85,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:235 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,49 +108,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds new bindings and a device-tree file for the Smartlabs
-SML-5442TW set-top box. The original attempt [1] was 15-months ago but
-nothing has really changed apart from a change to yaml bindings.
+SmartLabs LLC are a professional integrator of Interactive TV solutions
+and IPTV/VOD devices [1].
 
-The QCA9377 BT device does not have bindings and early experiments to add
-them are partially successful but need further work. I have dropped the
-gpio-hog from the device-tree and will submit changes to add BT once the
-supporting bits exist elsewhere in the kernel.
+[1] https://www.smartlabs.tv/en/about/
 
-v7 - update gpio-led nodes
-   - remove gpio-hog for BT enable
-   - add bindings acks from Rob
+Acked-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-v6 - removed audio nodes again
-
-v5 - typo in card name
-
-v4 - typos/corrections from Andreas
-   - convert to yaml bindings
-   - add sound node back
-   - confirmed gpio-hog is necessary
-
-v3 - change to Smartlabs LLC
-   - removed sound node
-
-v2 - removed audio nodes
-   - changes soundcard name to "meson-gx-audio"
-   - added missing uart-has-rtscts;
-
-[1] https://patchwork.kernel.org/cover/10674939/
-
-Christian Hewitt (3):
-  dt-bindings: add vendor prefix for SmartLabs LLC
-  dt-bindings: arm: amlogic: add support for the SmartLabs SML-5442TW
-  arm64: dts: meson: add support for the SmartLabs SML-5442TW
-
- Documentation/devicetree/bindings/arm/amlogic.yaml |   1 +
- .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
- arch/arm64/boot/dts/amlogic/Makefile               |   1 +
- .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 284 +++++++++++++++++++++
- 4 files changed, 288 insertions(+)
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 9e67944..a34ed82 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -901,6 +901,8 @@ patternProperties:
+     description: Sitronix Technology Corporation
+   "^skyworks,.*":
+     description: Skyworks Solutions, Inc.
++  "^smartlabs,.*":
++    description: SmartLabs LLC
+   "^smsc,.*":
+     description: Standard Microsystems Corporation
+   "^snps,.*":
 -- 
 2.7.4
 
