@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88D2A1827E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:40:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A905A1827F4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 05:50:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hmDtSc5f5i01Aodz+TYESAY4i7L62m/l8Dr+k+XATyA=; b=gbipKR2SwCq17GgMJzccX50Fhh
-	nVdljOlgjHZz42lDkFjA+JwcG11RcENjXWlhJGyS1xwm911sDtXJUw0EUoVQClVkhl8DWG0vPzezj
-	6MdCbwmf/8dsdxzJxBxEdyEnj25bl2C5w1CzP+ZjLEN4SoHsuKheiGxNwgNKzJ9bhnYVuDEwRf8SB
-	adKhn4L2boqkI2jQk7G0+hI0gbSM1YQROY91EW4F46Ak1ttB1Ljgi7AQjLEfQf2adiS1ZAnTOarsS
-	e6ZLfc9XLwgRmsNJYM9Hfi7h5Q6MdR+Tc5EVwZNDc6bF4J1VR5wjOl8xWznsB2xUdHTuw+5pbRVil
-	Ps20A7tQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wb6AoK3dFhnbn/Q0FFubJV+MfYl8jEj/ehAWZ3oxI4E=; b=stJEfkzGQaei8Q
+	O/udwVSdDGYqhzdCDHroTIecBEbIcqav7dUVfMJTqdOovQYWrrbLATkd12JZzJ/4oMAaoMznDjF2P
+	rIbYx6Q7B6VEB3qDSGDVjKaEJ18UV5E2f3krDTuAZVE6jAas1uk/eTqGhBie2oM7T3nh2Bk3GCs40
+	MVlP6OIEvy31zIeXlS8ecRi9de7DEYQkmcqGzGOgQ33JZNf2An/HSqU0o3lii64NIAj0Dwu4JxZtr
+	9l1yYZuZLTYnvs8zrZsn6fmNnGsMyYsfSjko3AfgvNyDTkqGGXt62xkXbWLQWlaRHyoYzed/98gb6
+	g66ph3IcMoHOJafOjopA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCFdf-0004kH-9m; Thu, 12 Mar 2020 04:40:07 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jCFnb-0001Ln-Bm; Thu, 12 Mar 2020 04:50:23 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCFci-0003pJ-3H; Thu, 12 Mar 2020 04:39:10 +0000
-Received: by mail-lj1-x242.google.com with SMTP id q19so4805241ljp.9;
- Wed, 11 Mar 2020 21:39:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=yBuGv/QITRC/Igo7HSUN1dH5kTCAjwfuFijzguA/jYw=;
- b=GW/HqYbg9lETiK4yfwbUs4BmicgdKhjRPIqlh5ukEXfbM3X9HCDg3QNNczw+mIOLqD
- PUAEVyTpFnG/S5qwpz3FFD7JfVFurX8pxSKwH+HSlBOrVe6xUMnYVOvBsn7wpWD+xwcw
- cMaCU7mmyKcRq4xOYkiwIUs+gY3AqsG/aHMaU8juMyIiaBJ9wXn5ZS68VMiTQU4APNAw
- T/lKMQKvF15EXz3hq80eCCQqeO4l0xnWn00eiZfGDj+gEWoWL5LrEa2QGJ4rgkXhuDbF
- srN4IRpbzOsswO3RgbjZLmNdxKQrhz0KuzC0RjltrS6VIHRPQ80DGqg7PG/oaNFjgmHF
- KYYQ==
+ id 1jCFnV-0001LH-7O
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 04:50:18 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id y7so2024693pjn.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 21:50:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=9Huysc9k69DOetuyPT37xPzZ+YLOLRqnJ/FtV19WEDc=;
+ b=u05buOnhB2ZaHjx7I2VFVZdDS3meih0mc6WZaP2ubEFIX5IRV5PakdbMoocuP1aMet
+ 136201rU4y6u8Z/BRJWEayhmgq6izg7StoG+xiBHPWeICaxzekOrFwczJDFN37vhaqhG
+ 1kw58XU/mfyf4/4oZnJjk92aE03UU/a077dE71+PFVLVGLx6/iA3tlkGQl5FIdnhviBh
+ 3XsuPkEDF8xtLyCuU6ZrY2qrQhM265xHA2AbYFz8FY43oNPUUHgB4+ccFwqE47xUd2S6
+ W4eYzRJufanpih+BqCLI38xka2OLJnMdlWxDNUS1RZnkjiP6U9kMQyeitCgIeZxffQ0S
+ Klvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=yBuGv/QITRC/Igo7HSUN1dH5kTCAjwfuFijzguA/jYw=;
- b=lZpkhQ7XAZM749+FVlCXikCwrrUu+6zaNmysKGfrbWd4hDJgqQpQIarh7ZvQ1bQFG3
- 9s/K30izCbmXSfhJRFEIURWFhUJt20IvSQ6LxUG/sk+xBYUA/ZgkNsP/QGePtjrkkH+K
- Rq0kjJ5Fdid4c6JJL49xhPuw+Knudj52likns+b+9bAZKzbuOCgRKgeKsMVaXyiDbEa0
- zL/oYHOGlUZi2wGR1h9rnVA5RGxt+BoG3UO4B5cgYTBhtWB/4I4YwRdPG3kpOf0c0cJf
- Vd4pRTKYhfm/31UEigoZS4dbydUPEy2fhNSRNigV8UZyenlSqdx1K/W4wQm0DeOSSNTK
- vGQw==
-X-Gm-Message-State: ANhLgQ0qQTZ6gcF4Lkc0JbI1co182jQxEup/+3aYdxKqko9Of/GSRybK
- P6PHQg6dNWtfJFuR/nyvmnQ=
-X-Google-Smtp-Source: ADFU+vv/avWPuNlcSanWTUq+T5awWfyEHOqBG+6RFcqPYYYY7B7raYyexrvQWxO++h3EWUiwVe2HSg==
-X-Received: by 2002:a05:651c:50a:: with SMTP id
- o10mr4092570ljp.189.1583987946148; 
- Wed, 11 Mar 2020 21:39:06 -0700 (PDT)
-Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id u2sm8872866lfu.3.2020.03.11.21.39.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 11 Mar 2020 21:39:05 -0700 (PDT)
-From: Christian Hewitt <christianshewitt@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v7 3/3] arm64: dts: meson: add support for the SmartLabs
- SML-5442TW
-Date: Thu, 12 Mar 2020 08:38:06 +0400
-Message-Id: <1583987886-6288-4-git-send-email-christianshewitt@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
-References: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=9Huysc9k69DOetuyPT37xPzZ+YLOLRqnJ/FtV19WEDc=;
+ b=avugarp5qFhbBIwnltTOw6KAoEUx34+AafqqXlqRSAYiQ895h6ArexYAY/ZhzGqYfY
+ SssRLPrCFPbLJD6qOEkFwczOmWLT71LBepVEDelCahDBQrjUuLKNziVBvU6EnfC76Jh5
+ FCZtALQjbLaRNlgxT1WK5DxmFzh1Ji+dlV4ScdvFkOiW203ls5H2zzcMAOlIVzm8ODLb
+ WuwDyeBWPxdHphDmwJuzpUsGpR+ZxWoL6Oel5L03kMgAxfeRV1jBN2oFa9Tx4F/210jV
+ tmQbWGJkDlB53KCqJ4lsyQekmAoyzTANTguLQW1pOSfEcOpPVj2uQb4yMqRpuVwsgbXQ
+ I2mQ==
+X-Gm-Message-State: ANhLgQ3aM3BX84xpR7YCS2tizciTehbigxqyBllIRG/KqOaR1m9IuS9t
+ SAiezadl5Q2fDYcrQ1ewwnaIOw==
+X-Google-Smtp-Source: ADFU+vtQv6XCgFYw5CWT4cXp6fyTARSMSkMReQUHbK2N7f/ufSK/IBPreQ4I9vHrUgXhd7/6d78Hww==
+X-Received: by 2002:a17:902:7c0d:: with SMTP id
+ x13mr6162264pll.93.1583988615935; 
+ Wed, 11 Mar 2020 21:50:15 -0700 (PDT)
+Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q12sm52827529pfh.158.2020.03.11.21.50.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 21:50:15 -0700 (PDT)
+Date: Wed, 11 Mar 2020 21:50:12 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v1 1/6] arm64: dts: msm8916: Add i2c-qcom-cci node
+Message-ID: <20200312045012.GT264362@yoga>
+References: <20200311123501.18202-1-robert.foss@linaro.org>
+ <20200311123501.18202-2-robert.foss@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200311123501.18202-2-robert.foss@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_213908_238258_B87B56EC 
-X-CRM114-Status: GOOD (  18.00  )
+X-CRM114-CacheID: sfid-20200311_215017_331230_8C9FE2A4 
+X-CRM114-Status: GOOD (  14.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [christianshewitt[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,335 +99,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christian Hewitt <christianshewitt@gmail.com>,
- =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- =?UTF-8?q?Jer=C3=B4me=20Brunet?= <jbrunet@baylibre.com>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Loic Poulain <loic.poulain@linaro.org>, Anson.Huang@nxp.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, agross@kernel.org,
+ maxime@cerno.tech, linux-arm-msm@vger.kernel.org, olof@lixom.net,
+ shawnguo@kernel.org, leonard.crestez@nxp.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SmartLabs SML-5442TW is broadly similar to the P231 reference design
-but with the following differences:
+On Wed 11 Mar 05:34 PDT 2020, Robert Foss wrote:
 
-- The Yellow and Blue LEDs are available but disabled
-- The Red and Green LEDs are used to signal off/on status
-- uart_AO can be accessed after opening the case; soldered pins exist
-- GPIOX_17 is forced high to enable the QCA9377 module
+> From: Loic Poulain <loic.poulain@linaro.org>
+> 
+> The msm8916 CCI controller provides one CCI/I2C bus.
+> 
+> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
+> Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> ---
+>  arch/arm64/boot/dts/qcom/msm8916.dtsi | 27 +++++++++++++++++++++++++++
+>  1 file changed, 27 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> index 9f31064f2374..afe1d73e5cd3 100644
+> --- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> @@ -1503,6 +1503,33 @@
+>  			};
+>  		};
+>  
+> +		cci@1b0c000 {
 
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
----
- arch/arm64/boot/dts/amlogic/Makefile               |   1 +
- .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 284 +++++++++++++++++++++
- 2 files changed, 285 insertions(+)
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+This deserves a label, so that it's possible to reference it and alter
+the status in the board dts.
 
-diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-index eef0045..6cf8c4a 100644
---- a/arch/arm64/boot/dts/amlogic/Makefile
-+++ b/arch/arm64/boot/dts/amlogic/Makefile
-@@ -27,6 +27,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-phicomm-n1.dtb
-+dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-sml5442tw.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s805x-p241.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-p281.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-tx3-mini.dtb
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-new file mode 100644
-index 0000000..03723b7
---- /dev/null
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-@@ -0,0 +1,284 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2016 Endless Computers, Inc.
-+ * Author: Carlo Caione <carlo@endlessm.com>
-+ * Copyright (c) 2018 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "meson-gxl-s905d.dtsi"
-+
-+/ {
-+	compatible = "smartlabs,sml5442tw", "amlogic,s905d", "amlogic,meson-gxl";
-+	model = "SmartLabs SML-5442TW";
-+
-+	aliases {
-+		serial0 = &uart_AO;
-+		ethernet0 = &ethmac;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0x0 0x0 0x0 0x80000000>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		yellow {
-+			color = <LED_COLOR_ID_YELLOW>;
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&gpio_ao GPIOAO_6 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		blue {
-+			color = <LED_COLOR_ID_BLUE>;
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&gpio GPIODV_28 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		green {
-+			color = <LED_COLOR_ID_GREEN>;
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&gpio_ao GPIOAO_9 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
-+		};
-+
-+		red {
-+			color = <LED_COLOR_ID_RED>;
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&gpio GPIODV_27 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+	};
-+
-+	hdmi_5v: regulator-hdmi-5v {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "HDMI_5V";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+
-+		gpio = <&gpio GPIOH_3 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+		regulator-always-on;
-+	};
-+
-+	vddio_ao18: regulator-vddio_ao18 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDIO_AO18";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	vddio_boot: regulator-vddio_boot {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDIO_BOOT";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	vddao_3v3: regulator-vddao_3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDAO_3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+	vcc_3v3: regulator-vcc_3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VCC_3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+	emmc_pwrseq: emmc-pwrseq {
-+		compatible = "mmc-pwrseq-emmc";
-+		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	wifi32k: wifi32k {
-+		compatible = "pwm-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <32768>;
-+		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
-+	};
-+
-+	sdio_pwrseq: sdio-pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
-+		clocks = <&wifi32k>;
-+		clock-names = "ext_clock";
-+	};
-+
-+	cvbs-connector {
-+		compatible = "composite-video-connector";
-+
-+		port {
-+			cvbs_connector_in: endpoint {
-+				remote-endpoint = <&cvbs_vdac_out>;
-+			};
-+		};
-+	};
-+
-+	hdmi-connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_connector_in: endpoint {
-+				remote-endpoint = <&hdmi_tx_tmds_out>;
-+			};
-+		};
-+	};
-+};
-+
-+&cec_AO {
-+	status = "okay";
-+	pinctrl-0 = <&ao_cec_pins>;
-+	pinctrl-names = "default";
-+	hdmi-phandle = <&hdmi_tx>;
-+};
-+
-+&cvbs_vdac_port {
-+	cvbs_vdac_out: endpoint {
-+		remote-endpoint = <&cvbs_connector_in>;
-+	};
-+};
-+
-+&ethmac {
-+	status = "okay";
-+	phy-mode = "rmii";
-+	phy-handle = <&internal_phy>;
-+};
-+
-+&hdmi_tx {
-+	status = "okay";
-+	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
-+	pinctrl-names = "default";
-+	hdmi-supply = <&hdmi_5v>;
-+};
-+
-+&hdmi_tx_tmds_port {
-+	hdmi_tx_tmds_out: endpoint {
-+		remote-endpoint = <&hdmi_connector_in>;
-+	};
-+};
-+
-+&i2c_A {
-+	status = "okay";
-+	pinctrl-0 = <&i2c_a_pins>;
-+	pinctrl-names = "default";
-+};
-+
-+&internal_phy {
-+	pinctrl-0 = <&eth_link_led_pins>, <&eth_act_led_pins>;
-+	pinctrl-names = "default";
-+};
-+
-+&ir {
-+	status = "okay";
-+	pinctrl-0 = <&remote_input_ao_pins>;
-+	pinctrl-names = "default";
-+};
-+
-+&pwm_ef {
-+	status = "okay";
-+	pinctrl-0 = <&pwm_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&clkc CLKID_FCLK_DIV4>;
-+	clock-names = "clkin0";
-+};
-+
-+&saradc {
-+	status = "okay";
-+	vref-supply = <&vddio_ao18>;
-+};
-+
-+/* Wireless SDIO Module */
-+&sd_emmc_a {
-+	status = "okay";
-+	pinctrl-0 = <&sdio_pins>;
-+	pinctrl-1 = <&sdio_clk_gate_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	max-frequency = <100000000>;
-+
-+	non-removable;
-+	disable-wp;
-+
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+
-+	vmmc-supply = <&vddao_3v3>;
-+	vqmmc-supply = <&vddio_boot>;
-+};
-+
-+/* SD card */
-+&sd_emmc_b {
-+	status = "okay";
-+	pinctrl-0 = <&sdcard_pins>;
-+	pinctrl-1 = <&sdcard_clk_gate_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	max-frequency = <100000000>;
-+	disable-wp;
-+
-+	cd-gpios = <&gpio CARD_6 GPIO_ACTIVE_HIGH>;
-+	cd-inverted;
-+
-+	vmmc-supply = <&vddao_3v3>;
-+	vqmmc-supply = <&vddio_boot>;
-+};
-+
-+/* eMMC */
-+&sd_emmc_c {
-+	status = "okay";
-+	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-1 = <&emmc_clk_gate_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+
-+	bus-width = <8>;
-+	cap-mmc-highspeed;
-+	max-frequency = <100000000>;
-+	non-removable;
-+	disable-wp;
-+	mmc-ddr-1_8v;
-+	mmc-hs200-1_8v;
-+
-+	mmc-pwrseq = <&emmc_pwrseq>;
-+	vmmc-supply = <&vcc_3v3>;
-+	vqmmc-supply = <&vddio_boot>;
-+};
-+
-+/* This is connected to the Bluetooth module: */
-+&uart_A {
-+	status = "okay";
-+	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-+	pinctrl-names = "default";
-+	uart-has-rtscts;
-+};
-+
-+/* This UART is brought out to the debug header */
-+&uart_AO {
-+	status = "okay";
-+	pinctrl-0 = <&uart_ao_a_pins>;
-+	pinctrl-names = "default";
-+};
-+
-+&usb0 {
-+	status = "okay";
-+};
--- 
-2.7.4
+> +			compatible = "qcom,msm8916-cci";
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0x1b0c000 0x1000>;
 
+Please sort nodes my address (and then by name).
+
+Apart from these two nits, this looks good.
+
+Regards,
+Bjorn
+
+> +			interrupts = <GIC_SPI 50 IRQ_TYPE_EDGE_RISING>;
+> +			clocks = <&gcc GCC_CAMSS_TOP_AHB_CLK>,
+> +				<&gcc GCC_CAMSS_CCI_AHB_CLK>,
+> +				<&gcc GCC_CAMSS_CCI_CLK>,
+> +				<&gcc GCC_CAMSS_AHB_CLK>;
+> +			clock-names = "camss_top_ahb", "cci_ahb",
+> +				      "cci", "camss_ahb";
+> +			assigned-clocks = <&gcc GCC_CAMSS_CCI_AHB_CLK>,
+> +					  <&gcc GCC_CAMSS_CCI_CLK>;
+> +			assigned-clock-rates = <80000000>, <19200000>;
+> +			pinctrl-names = "default";
+> +			pinctrl-0 = <&cci0_default>;
+> +			status = "disabled";
+> +
+> +			cci0: i2c-bus@0 {
+> +				reg = <0>;
+> +				clock-frequency = <400000>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +			};
+> +		};
+> +
+>  		camss: camss@1b00000 {
+>  			compatible = "qcom,msm8916-camss";
+>  			reg = <0x1b0ac00 0x200>,
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
