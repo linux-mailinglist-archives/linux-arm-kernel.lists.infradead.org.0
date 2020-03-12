@@ -2,72 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE13F1826CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 02:48:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB89318274D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 04:10:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1XjWMIVpTOhsVgNRZkBK+Myg2GKkoKcsNt697saVeO8=; b=PQFBi/uAAWp5Zu
-	IrgeC4ByeB7zAtlwT/1MMjp9hHNEJp1OWR0T9qRu1fZt0WBVvaSMyaNlWMYTyFz4KnixonsXXRhFf
-	W8gbK9yrmpJ74mYRqB3qGs49g/r1HYEfAPvNbNxBwTHLWW0y1D3R+zeB27zLRErrpBtUkHQxdJZqc
-	sYryo9mnUb5BbcNy7BqWrBmQooPOuENqaJYKta8+JIwJEONmo0DxkCLzZziD/ofYd5sBsxhyJg3hY
-	hbs0qBIq97UZDG3OyxjzdBZ9TB9PghQnTOpPBWiTmhmmhMdz3yGPet6CsRjTzwIdLJkpWN6HX4hO2
-	qGMUChVfFVqpgo/rTYcw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OzLk0vFC+sp1zSq5mZlaZTCalrTQND7NXuHGAV7bf6g=; b=A074fYg3IrQS7X
+	xUtakQE1a6SQT/iM5tz6Z83+H+y+7nVEqcvLxEY2Duduz0QcHfktU0/EP84hD3r+eMyBaXqGvPFcL
+	7pF7WwIGWOfHv/i8ufPpqTuDe7yYjx5VpPvYLAB8ME9HbZtKDw8Jj7QTx018XuR4CJ0s7eIbEMOCA
+	7mv7UYan2mR9y3Tf2x0VteSCd5T7up9Z3eoQ0OdHbJLBRRDZqy33zp761poOla7oMKTzcmFaJutMV
+	hUL0fZDdQlRmvAI+P1A2vxQk+C/uvlcuddc74LkTdQgx+MU4muiJP9sVbtHF2FgHcqqQ6xBNc981P
+	c5FSIbRRxLSlcpuhyQwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCCwz-0006w1-KK; Thu, 12 Mar 2020 01:47:53 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1jCEEg-0000Ui-NY; Thu, 12 Mar 2020 03:10:14 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCCwr-0006ug-LD
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 01:47:47 +0000
-Received: by mail-ua1-x944.google.com with SMTP id o16so1516784uap.6
+ id 1jCEEW-0008GK-2u
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 03:10:05 +0000
+Received: by mail-io1-xd42.google.com with SMTP id d8so4153915ion.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 18:47:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PgMVUPr9CJB662kw0Etj9PzDmEhHdAooW8/c8EV2Xs4=;
- b=JI0NdUuOBJi8irQniAHDZus9gSxHFsPWYFnKXsiqwsOhKAbNzUqHq+VcEDM8T4TnEJ
- OGifAyneQ4sO654BJ/tCMwd7iiHnlmHuV7b42qkExDUAC0x85FWZUcqYT2EqaWfTVQ3c
- PY8jyoS8ygU8ctvk99m1zD0Sk/ux/dUV8qhvA=
+ Wed, 11 Mar 2020 20:10:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=7UlCPqaifwtaHRBNM9OlkA92uhGP3P8YtjrPHhM2qXA=;
+ b=MymNgzFAjC7botrqgoNNcIOUuAsnEj/YaRhp929DK9qF9NTSCoVLgqQuyUlCuuWbmc
+ xTX8qnat5Lhd0dx2+HvITd9I3p8W2oFWYYiLmPSxLhHu9VDmI3IenMvfEFdho/S8vd2I
+ yuLM73a7S/wx1yoSfX+QL5qO2LsLHWifPuA0hRfAhHp4rftW0kW6WLVBjS4J0fyOpN3O
+ 7r/1++AmSjZryTn2MxF74XgpKzfez6QsJWgBfcCvVchXvT9agRNixKTJPc0eob3a5Q1X
+ xoLsGG5eL0WYwn6be71SqmjgQeJZ5NZqTQtoyqlEcSz37jy3pIQVaP16SIN7GWzqFG9X
+ 3jyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PgMVUPr9CJB662kw0Etj9PzDmEhHdAooW8/c8EV2Xs4=;
- b=FvcbR2HYBEegW6ulgdHFVYPtU0odM25PWNvPfPxhOlD3UFg91/YOkqZ0AdN3KqtO+V
- eeLJpZ4SRv6RXoL8hmReIThfWFwTsbA5XGb2O1szfgazoMem9/iU+4iUZXi3eLoJZJvi
- rSm/mITTWro9HFRNOfrHlESj2zsp6MFPcu3VzzhWx+i9bCw5qn21P5MV1oU43EUda6vG
- 5q2vqgHoJcTnYfb9wwv9iMkcPyaDY1ZMt5wBk9m9NFkSPboP58oJBPjWVTYpImvk52LZ
- ikQ3hK3lWzJOfQYMAZmx1n1GVa9cGWDp5bC6V1ep6DivypoBZUesLwKxX902nxntlR8k
- fyzA==
-X-Gm-Message-State: ANhLgQ3piP8AtTOdrJs7OiqagCjbjj23r0+VAQ7wrhk61m6wymFtyqMB
- WGl+iLlF18AyMAwF6872UF2rkEK/psnriMzKRb+dqg==
-X-Google-Smtp-Source: ADFU+vsxe8uIFuMytA3ZTH+Dvv+Qm9+AJ1NhP8oHDjWpECQUTxgXsbkqu31HUYTB81OepoijiVoqI3hoMedJGeKGa20=
-X-Received: by 2002:a9f:32da:: with SMTP id f26mr3606235uac.40.1583977664301; 
- Wed, 11 Mar 2020 18:47:44 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=7UlCPqaifwtaHRBNM9OlkA92uhGP3P8YtjrPHhM2qXA=;
+ b=frXKm9AYOLZe2CKVW1mutEMWHe6nDNtVLDLgsOdFULJCc/tfelt0Cij5gkz3FLzGbY
+ vVt/81aKCpxRLGe0uyRDv4EklLqzzInItptwexDQg+BlpRP11TJysTvDlptJlKWKSxKr
+ +961JKTXGCMJr8Hz1hH/JsOGsdA42oyXAE22URsusRuRsBpWxINKiQdyaob2SKWO5pFx
+ uS+9pR8pOr9qPDKm15VQpPyBGlROmN+7FODkGx+ilHJNYWUbWhAqN2yD1y8acdDVR1/w
+ Zb4X1GuRCzDX+oxKN4KZCH8U1tw2navNyWe4CwSrj1n3vi98/KD82yffmn1Dgafq8jvQ
+ MVaA==
+X-Gm-Message-State: ANhLgQ1GFtH8CRmDvduw6ZUgO5ioRxMKbJhlUYGO82HHzvWq2kGpQrH0
+ 98YmCyyOpmAySSUVJQqtoSY5Kg==
+X-Google-Smtp-Source: ADFU+vs/imBUNrCpmlxjMLXtYVDj0Q3NbjhYgAeR0ptUEQhLsK2b4DLsRH6n4QvzTYidB9g45CZyjQ==
+X-Received: by 2002:a6b:6606:: with SMTP id a6mr5411023ioc.8.1583982602672;
+ Wed, 11 Mar 2020 20:10:02 -0700 (PDT)
+Received: from [172.22.22.26] (c-73-185-129-58.hsd1.mn.comcast.net.
+ [73.185.129.58])
+ by smtp.googlemail.com with ESMTPSA id y18sm12685362ilg.82.2020.03.11.20.10.00
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 11 Mar 2020 20:10:02 -0700 (PDT)
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver (UPDATED)
+To: Dave Taht <dave.taht@gmail.com>
+References: <20200306042831.17827-1-elder@linaro.org>
+ <CAA93jw5enz6-h1m=7tGFToK+E+8z3aD80pBef4AYkFrS2u3hHQ@mail.gmail.com>
+From: Alex Elder <elder@linaro.org>
+Message-ID: <e4f436b4-3dd7-970a-9b08-7601fc5428d2@linaro.org>
+Date: Wed, 11 Mar 2020 22:09:56 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
-In-Reply-To: <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Thu, 12 Mar 2020 09:47:33 +0800
-Message-ID: <CANMq1KDZeBOzVfWF0xjWpcLFDbO9WY7xRvzpGmtfePTOxVZpzg@mail.gmail.com>
-Subject: Re: [PATCH v10 4/5] rtc: mt6397: Add support for the MediaTek MT6358
- RTC
-To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+In-Reply-To: <CAA93jw5enz6-h1m=7tGFToK+E+8z3aD80pBef4AYkFrS2u3hHQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_184745_690890_7A724C31 
-X-CRM114-Status: GOOD (  22.98  )
+X-CRM114-CacheID: sfid-20200311_201004_162774_28B80D26 
+X-CRM114-Status: GOOD (  20.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,171 +101,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Frank Wunderlich <frank-w@public-files.de>,
- Josef Friedl <josef.friedl@speed.at>, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, Richard Fontana <rfontana@redhat.com>,
- Devicetree List <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-rtc@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
+ Linux Kernel Network Developers <netdev@vger.kernel.org>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Siddharth Gupta <sidgup@codeaurora.org>, Andy Gross <agross@kernel.org>,
+ Evan Green <evgreen@google.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 5:17 PM Hsin-Hsiung Wang
-<hsin-hsiung.wang@mediatek.com> wrote:
->
-> From: Ran Bi <ran.bi@mediatek.com>
->
-> This add support for the MediaTek MT6358 RTC. Driver using
-> compatible data to store different RTC_WRTGR address offset.
-> This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
-> driver which only needed by armv7 CPU without ATF.
->
-> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
-> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-> ---
->  drivers/power/reset/mt6323-poweroff.c |  2 +-
->  drivers/rtc/rtc-mt6397.c              | 32 ++++++++++++++++++++++++--------
->  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
->  3 files changed, 33 insertions(+), 10 deletions(-)
->
-> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
-> index 1caf43d..0532803 100644
-> --- a/drivers/power/reset/mt6323-poweroff.c
-> +++ b/drivers/power/reset/mt6323-poweroff.c
-> @@ -30,7 +30,7 @@ static void mt6323_do_pwroff(void)
->         int ret;
->
->         regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
-> -       regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
-> +       regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR_MT6323, 1);
->
->         ret = regmap_read_poll_timeout(pwrc->regmap,
->                                         pwrc->base + RTC_BBPU, val,
-> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
-> index cda238d..7a5a9e2 100644
-> --- a/drivers/rtc/rtc-mt6397.c
-> +++ b/drivers/rtc/rtc-mt6397.c
-> @@ -9,18 +9,38 @@
->  #include <linux/mfd/mt6397/core.h>
->  #include <linux/module.h>
->  #include <linux/mutex.h>
-> +#include <linux/of_device.h>
->  #include <linux/platform_device.h>
->  #include <linux/regmap.h>
->  #include <linux/rtc.h>
->  #include <linux/mfd/mt6397/rtc.h>
->  #include <linux/mod_devicetable.h>
->
-> +static const struct mtk_rtc_data mt6358_rtc_data = {
-> +       .wrtgr = RTC_WRTGR_MT6358,
-> +};
-> +
-> +static const struct mtk_rtc_data mt6397_rtc_data = {
-> +       .wrtgr = RTC_WRTGR_MT6397,
-> +};
-> +
-> +static const struct of_device_id mt6397_rtc_of_match[] = {
-> +       { .compatible = "mediatek,mt6323-rtc",
-> +               .data = (void *)&mt6397_rtc_data, },
-> +       { .compatible = "mediatek,mt6358-rtc",
-> +               .data = (void *)&mt6358_rtc_data, },
-> +       { .compatible = "mediatek,mt6397-rtc",
-> +               .data = (void *)&mt6397_rtc_data, },
-> +       {}
-> +};
-> +MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
-> +
->  static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
->  {
->         int ret;
->         u32 data;
->
-> -       ret = regmap_write(rtc->regmap, rtc->addr_base + RTC_WRTGR, 1);
-> +       ret = regmap_write(rtc->regmap, rtc->addr_base + rtc->data->wrtgr, 1);
->         if (ret < 0)
->                 return ret;
->
-> @@ -269,6 +289,9 @@ static int mtk_rtc_probe(struct platform_device *pdev)
->         res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->         rtc->addr_base = res->start;
->
-> +       rtc->data = (struct mtk_rtc_data *)
-> +                       of_device_get_match_data(&pdev->dev);
+On 3/9/20 11:54 AM, Dave Taht wrote:
+> I am happy to see this driver upstream.
+> 
+>> Arnd's concern was that the rmnet_data0 network device does not
+>> have the benefit of information about the state of the underlying
+>> IPA hardware in order to be effective in controlling TX flow.
+>> The feared result is over-buffering of TX packets (bufferbloat).
+>> I began working on some simple experiments to see whether (or how
+>> much) his concern was warranted.  But it turned out that completing
+>> these experiments was much more work than had been hoped.
+> 
+> Members of the bufferbloat project *care*, and have tools and testbeds for
+> exploring these issues. It would be good to establish a relationship with
+> the vendor, obtain hardware, and other (technical and financial) support, if
+> possible.
+> 
+> Is there any specific hardware now available (generally or in beta) that
+> can be obtained by us to take a harder look? A contact at linaro or QCA
+> willing discuss options?
 
-Sorry for not noticing earlier, the cast is not needed. (also, you
-cast a const pointer into a non-const, which doesn't matter anyway as
-rtc->data is const again, but still...).
+There exists some hardware that could be used, but at the moment I have
+not ported this code to operate on it.  It is a current effort however,
+and I will be glad to keep you in the loop on progress.  There are a
+couple of target environments we'd like to support but until last week
+the primary goal was inclusion in the upstream tree.
 
-> +
->         rtc->irq = platform_get_irq(pdev, 0);
->         if (rtc->irq < 0)
->                 return rtc->irq;
-> @@ -325,13 +348,6 @@ static int mt6397_rtc_resume(struct device *dev)
->  static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_rtc_suspend,
->                         mt6397_rtc_resume);
->
-> -static const struct of_device_id mt6397_rtc_of_match[] = {
-> -       { .compatible = "mediatek,mt6323-rtc", },
-> -       { .compatible = "mediatek,mt6397-rtc", },
-> -       { }
-> -};
-> -MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
-> -
+I will follow up with you after the dust settles a little bit with
+this patch series, maybe in a week or so.  In the mean time I'll
+also find out whether there are any other resources (people and/or
+hardware) available.
 
-Why are you moving the MODULE_DEVICE_TABLE to the top of the file? I
-think you can keep it here with the mt63xx_rtc_data structs?
-
->  static struct platform_driver mtk_rtc_driver = {
->         .driver = {
->                 .name = "mt6397-rtc",
-> diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
-> index 7dfb63b..66534ed 100644
-> --- a/include/linux/mfd/mt6397/rtc.h
-> +++ b/include/linux/mfd/mt6397/rtc.h
-> @@ -18,7 +18,9 @@
->  #define RTC_BBPU_CBUSY         BIT(6)
->  #define RTC_BBPU_KEY            (0x43 << 8)
->
-> -#define RTC_WRTGR              0x003c
-> +#define RTC_WRTGR_MT6358       0x3a
-> +#define RTC_WRTGR_MT6397       0x3c
-> +#define RTC_WRTGR_MT6323       RTC_WRTGR_MT6397
->
->  #define RTC_IRQ_STA            0x0002
->  #define RTC_IRQ_STA_AL         BIT(0)
-> @@ -65,6 +67,10 @@
->  #define MTK_RTC_POLL_DELAY_US  10
->  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
->
-> +struct mtk_rtc_data {
-> +       u32                     wrtgr;
-> +};
-> +
->  struct mt6397_rtc {
->         struct device           *dev;
->         struct rtc_device       *rtc_dev;
-> @@ -74,6 +80,7 @@ struct mt6397_rtc {
->         struct regmap           *regmap;
->         int                     irq;
->         u32                     addr_base;
-> +       const struct mtk_rtc_data *data;
->  };
->
->  #endif /* _LINUX_MFD_MT6397_RTC_H_ */
-> --
-> 2.6.4
+					-Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
