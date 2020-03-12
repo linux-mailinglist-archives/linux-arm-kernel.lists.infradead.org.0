@@ -2,82 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69693182800
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:03:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79BEE182807
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 06:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zG6/2babYBZlfESxB5pgduNB/VzGuguy/6Z1iaV9Hvk=; b=lCxrv0A3P0MWg9
-	9ZqPLUaGbPnyWqvrHX7VK7xWsk6cDl0Cuyh6I7ZFe1aJfCRyPU8XPZjQeZc26flnxvvJPhNZMVo+u
-	iIskWDKynzGjfvGkm90zuEweodmi4bOQmAbdHCE2uvPOm7q5qOYPYvmbIDO1LP1yUh1JTH6xG+Kge
-	x5xtpUlcdLm40kVoX043qBlSNksMTkkqVrioXdg+NT3g6Y/y1w3gUnT7BasGYpV4mugdzKDevGp+D
-	bSCoLYFGeDv7TxVCZYGaZUcnOi9uaQG7xsSrnWyJODPM+nsvIOubsO+ztC59pTJPvfhD2WASjqO1p
-	XkeNQ8yVBoRferuDPryA==;
+	List-Owner; bh=UtcK8M6Z3zgaF6iJBHRvEoUtsXRmIkk4p3W3PlEYKu0=; b=IdUOUg08bbtJLw
+	GdPqgf00I30f/5DKjDSkwWCyIaoN/Q+QGYXS94j+fK7yaPECCYTIGCIIUvgvV7XIMBn3WQ4CDWSmg
+	sJ91k3NqOpQVsRWDSCtLVzFAZndLvR1bfFUPH/EJarNkc4+7ujl3CYKfSnnufharRMLJA2y467uRE
+	+h/6U+5C5zxHVyOl3fXsMW9h42ztsDkDXAsh64A/lQjuFnIW9UJB08wVepgxvHcCSQCKJru8BqAWL
+	Nhz/zKMJHRKD92jHs5s7XKt6CELZcK/s89mVM5n2nKKP0kq1Sz/c1qXDIPZQDh5z9pEJUEoZrkSjR
+	LLWGbxH7yn7IqJSfRNDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCG0A-0005At-3r; Thu, 12 Mar 2020 05:03:22 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jCG4h-0006uf-5n; Thu, 12 Mar 2020 05:08:03 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCG02-0005AS-4M
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:03:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s2so2429265pgv.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 22:03:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=cTgoCb839w9OT0HV/GelOC2bBejqZHZyMGPiFKWTS/E=;
- b=J08u2w/Zf7UGNyiE282O3vgUMkztg53mwZdynLXMMKVUqMuiK2YqTiVvoQDsJgGpv4
- 0otKKtN/SiVW3dyVhymAEtPrXh2MyM2WvOZgvkZx/YveoBLedK3g/xxYgIOO2OYrvhck
- rnj/wqIf37KO131R1ABcBYvng6GCMJ2MJTbjfF/n6aX3HwEYOnJRzufsneI6FT0GyzmU
- Uw3u8GvwHjHeoa+cxn9jmbz1veUatAaqfYKpPSbgN2txE7K7CWRB/5h6C4/N76bf8kML
- 5682MY5ss5c+KqDKdIX/G1rdkV1HwMBEj3hr1gie1T1MuLRm9pkCVmRHKPShzgKD4gJJ
- uBjg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=cTgoCb839w9OT0HV/GelOC2bBejqZHZyMGPiFKWTS/E=;
- b=qdbm700z6r5nvVfSZ874ttqHxBpvtpa+FFV6KRuWwJCrBxAWVqP8aS4e/kU+KTZoxw
- xk2vaPuM0wmXKDR07SYhGxPU5VR8aqIysFtO4I4JNnDMr7g1VVGOmJk1MdboUJ7NmA6v
- H6nyCjPoVyiNeqlXM1sDJjDgbxVZxwmuqM1GZO9gg3jMWYNsQeIIPxBhXmp+i3cVQw9s
- i/9oMPneYkV+6nBI/Qrqh4DZ1S8DkX45BijvTeGxANfxZC75dKgdgb/c0LuHdC7Yr2ep
- a/Gh7ttNvIEFPaeD+of9/2n2bJxZOJ/UPwKyP4EQTvJ6jtQDPAddFdGJAjcsAUiQ2FI+
- Z9MQ==
-X-Gm-Message-State: ANhLgQ33gBXpQqRpngXN5Tixq1YoEncb4F1pIhLuf9ED0+4rAhQ0ZUUp
- YMV7tt3PNDU7PS+Z9qfakVqirQ==
-X-Google-Smtp-Source: ADFU+vs21f/l4jH6Bg1k/SVgcLp8lig2v5uQGw4OkgWvTJTRpScTVWOWhPCZokHdhiZSRONggGreOg==
-X-Received: by 2002:a62:e909:: with SMTP id j9mr6407295pfh.134.1583989392797; 
- Wed, 11 Mar 2020 22:03:12 -0700 (PDT)
-Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id s12sm24253061pgi.38.2020.03.11.22.03.11
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 22:03:12 -0700 (PDT)
-Date: Wed, 11 Mar 2020 22:03:09 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [v1 2/6] arm64: dts: apq8016-sbc: Add CCI/Sensor nodes
-Message-ID: <20200312050309.GU264362@yoga>
-References: <20200311123501.18202-1-robert.foss@linaro.org>
- <20200311123501.18202-3-robert.foss@linaro.org>
+ id 1jCG4Z-0006uG-3q
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 05:07:56 +0000
+X-UUID: 98fdcdc0608741739cbbb2d3fa3fe28e-20200311
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=EiH9wliZJ7SlCOgjGr1o9krpwAx0Yhk57Jmk6JMcvtA=; 
+ b=WXCgrUwvwPckPJtrgli7CI1U5PziZL60rSUU1If/uRKOocJn2Bf7DiMVvg1bW13c5lC7uTkCP6KBN8KunoFOwNYhV1Mnb0qSB42mvG7PgydgKaDLk6l7YrlSI6ZMLBgFkx1DDTSfkPPFRz16ibhCCTruDcXwWLcaJdzXQN2W9pU=;
+X-UUID: 98fdcdc0608741739cbbb2d3fa3fe28e-20200311
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1255333377; Wed, 11 Mar 2020 21:07:51 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Mar 2020 22:04:19 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Mar 2020 13:02:47 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Mar 2020 13:02:55 +0800
+Message-ID: <1583989425.17522.29.camel@mtksdccf07>
+Subject: Re: [PATCH -next] kasan: fix -Wstringop-overflow warning
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Date: Thu, 12 Mar 2020 13:03:45 +0800
+In-Reply-To: <20200311163800.a264d4ec8f26cca7bb5046fb@linux-foundation.org>
+References: <20200311134244.13016-1-walter-zh.wu@mediatek.com>
+ <20200311163800.a264d4ec8f26cca7bb5046fb@linux-foundation.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200311123501.18202-3-robert.foss@linaro.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_220314_199232_6F051493 
-X-CRM114-Status: GOOD (  16.05  )
+X-CRM114-CacheID: sfid-20200311_220755_162809_F6A8DAEC 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,142 +86,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Loic Poulain <loic.poulain@linaro.org>, Anson.Huang@nxp.com,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- marcin.juszkiewicz@linaro.org, dinguyen@kernel.org, agross@kernel.org,
- maxime@cerno.tech, linux-arm-msm@vger.kernel.org, olof@lixom.net,
- shawnguo@kernel.org, leonard.crestez@nxp.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org, Qian Cai <cai@lca.pw>,
+ linux-arm-kernel@lists.infradead.org,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 11 Mar 05:34 PDT 2020, Robert Foss wrote:
-
-> From: Loic Poulain <loic.poulain@linaro.org>
+On Wed, 2020-03-11 at 16:38 -0700, Andrew Morton wrote:
+> On Wed, 11 Mar 2020 21:42:44 +0800 Walter Wu <walter-zh.wu@mediatek.com> wrote:
 > 
-> Add cci device to msm8916.dtsi.
-> Add default 96boards camera node for db410c (apq8016-sbc).
+> > Compiling with gcc-9.2.1 points out below warnings.
+> > 
+> > In function 'memmove',
+> >     inlined from 'kmalloc_memmove_invalid_size' at lib/test_kasan.c:301:2:
+> > include/linux/string.h:441:9: warning: '__builtin_memmove' specified
+> > bound 18446744073709551614 exceeds maximum object size
+> > 9223372036854775807 [-Wstringop-overflow=]
+> > 
+> > Why generate this warnings?
+> > Because our test function deliberately pass a negative number in memmove(),
+> > so we need to make it "volatile" so that compiler doesn't see it.
+> > 
+> > ...
+> >
+> > --- a/lib/test_kasan.c
+> > +++ b/lib/test_kasan.c
+> > @@ -289,6 +289,7 @@ static noinline void __init kmalloc_memmove_invalid_size(void)
+> >  {
+> >  	char *ptr;
+> >  	size_t size = 64;
+> > +	volatile size_t invalid_size = -2;
+> >  
+> >  	pr_info("invalid size in memmove\n");
+> >  	ptr = kmalloc(size, GFP_KERNEL);
+> > @@ -298,7 +299,7 @@ static noinline void __init kmalloc_memmove_invalid_size(void)
+> >  	}
+> >  
+> >  	memset((char *)ptr, 0, 64);
+> > -	memmove((char *)ptr, (char *)ptr + 4, -2);
+> > +	memmove((char *)ptr, (char *)ptr + 4, invalid_size);
+> >  	kfree(ptr);
+> >  }
 > 
-> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
-> Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> ---
->  arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi | 75 +++++++++++++++++++++++
->  1 file changed, 75 insertions(+)
+> Huh.  Why does this trick suppress the warning?
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-> index 037e26b3f8d5..a3e6982f4f93 100644
-> --- a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-> @@ -495,6 +495,81 @@
->  		wcnss@a21b000 {
->  			status = "okay";
->  		};
-> +
-> +		camera_vdddo_1v8: fixedregulator@0 {
+We read below the document, so we try to verify whether it is work for
+another checking. After we changed the code, It is ok.
 
-While "fixedregulator" is a seemingly good name, you're not allows to
-use a unit address on the node if there's no address information in the
-node. So you need to give these nodes a non-generic name.
+https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Warning-Options.html#Warning-Options
+"They do not occur for variables or elements declared volatile. Because
+these warnings depend on optimization, the exact variables or elements
+for which there are warnings depends on the precise optimization options
+and version of GCC used."
 
-
-And please move nodes without a reg (i.e. not on an mmio bus) out of
-/soc, i.e. place it near /chosen.
-
-> +			compatible = "regulator-fixed";
-> +			regulator-name = "camera_vdddo";
-> +			regulator-min-microvolt = <1800000>;
-> +			regulator-max-microvolt = <1800000>;
-> +			regulator-always-on;
-> +		};
-> +
-> +		camera_vdda_2v8: fixedregulator@1 {
-> +			compatible = "regulator-fixed";
-> +			regulator-name = "camera_vdda";
-> +			regulator-min-microvolt = <2800000>;
-> +			regulator-max-microvolt = <2800000>;
-> +			regulator-always-on;
-> +		};
-> +
-> +		camera_vddd_1v5: fixedregulator@2 {
-> +			compatible = "regulator-fixed";
-> +			regulator-name = "camera_vddd";
-> +			regulator-min-microvolt = <1500000>;
-> +			regulator-max-microvolt = <1500000>;
-> +			regulator-always-on;
-> +		};
-> +
-> +		cci@1b0c000 {
-
-Please ensure that cci and camss have labels and reference them by &cci
-and &camss below the / {}, sorted by label name.
-
-> +			status = "ok";
-> +			i2c-bus@0 {
-
-Please reference this by its label as well.
-
-> +				camera_rear@3b {
-> +					compatible = "ovti,ov5640";
-> +					reg = <0x3b>;
-> +
-> +					enable-gpios = <&msmgpio 34 GPIO_ACTIVE_HIGH>;
-> +					reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
-> +					pinctrl-names = "default";
-> +					pinctrl-0 = <&camera_rear_default>;
-> +
-> +					clocks = <&gcc GCC_CAMSS_MCLK0_CLK>;
-> +					clock-names = "xclk";
-> +					clock-frequency = <23880000>;
-> +
-> +					vdddo-supply = <&camera_vdddo_1v8>;
-> +					vdda-supply = <&camera_vdda_2v8>;
-> +					vddd-supply = <&camera_vddd_1v5>;
-> +
-> +					/* No camera mezzanine by default */
-
-This comment gives me the feeling that this node should have been status
-disabled, please confirm.
-
-Regards,
-Bjorn
-
-> +					status = "okay";
-> +
-> +					port {
-> +						ov5640_ep: endpoint {
-> +							clock-lanes = <1>;
-> +							data-lanes = <0 2>;
-> +							remote-endpoint = <&csiphy0_ep>;
-> +						};
-> +					};
-> +				};
-> +			};
-> +		};
-> +
-> +		camss@1b00000 {
-> +			status = "ok";
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +				port@0 {
-> +					reg = <0>;
-> +					csiphy0_ep: endpoint {
-> +						clock-lanes = <1>;
-> +						data-lanes = <0 2>;
-> +						remote-endpoint = <&ov5640_ep>;
-> +						status = "okay";
-> +					};
-> +				};
-> +			};
-> +		};
->  	};
->  
->  	usb2513 {
-> -- 
-> 2.20.1
+> Do we have any guarantee that this it will contiue to work in future
+> gcc's?
+> 
+Sorry, I am not compiler expert, so I can't guarantee gcc will not
+modify the rule, but at least it is work before gcc-9.
 > 
 
 _______________________________________________
