@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A06AA1837E4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:42:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E361183870
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 19:20:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=h/6AeVvs+K8sSU7AT+HaqoDfF0RyuWFHzoElz4gEgGE=; b=ELU
-	zoDWrELAKcP3bbRBXwQDXLDgY/8kMMh4PhudEH4kR6ANgl8lajw62t6AiT7aApKAUvcaqV9dkeLbE
-	CHEIvPf6UGrzle6LX5FeAoJ6EcHFgkTVCm+yiofBjxrEMPFhLOAcOvLpbEa4rmYbv68rj1pwMi8FD
-	PZc/+c5Aih/AE0kEJF6UYaUeE3raYj6UmdcAphswiygPlJWL1McGFZS/FwSSQvTZX0vVgmUxvTvlG
-	4Udi6OsCf2JW5OBXix9psdXucjZxcdkaD+C7LOmRqEcGOXKN8mDXoyjdNIqNkINpWgIl7sfAGvbxN
-	HaZmM47ROCyF28M8VKnNkqtsgMpQBDg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WdjVYXT22TBlMyNKMMHlXq32Xv7VW3/v+GKH93X5J78=; b=NHU
+	ZDsRV4cf12IBgclUXeUXxE3Z7bzEz+Gwz3dQbPfz3X9Z8VNV83JaJPsStO2gd8gWWY0m9CML2Sjku
+	CSJDRkTEJLd0LfabpGLM+R0Xqwizwz0vrkB8l1SC4VzkX4QkHNNXWA47/FGY9wA/tzKFBndQpb0Vy
+	kZrcuxSmk8nQxkUoYmNd2mdWyTQpg8jeWaN5bVCr9KTeERIIB9WullxkmXb1Cs5XertjXrIihNbHU
+	oxyhxLYetIabGPMo0ljEbGUUG0wpr8OETvLkCAgBLDn5M0qihPq57X/F7QLheAiObijVa3MLq2I2e
+	/Ukt+8pKVlEioaRtVj4Au3pN0XpteIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRqE-00077E-KY; Thu, 12 Mar 2020 17:41:54 +0000
+	id 1jCSRK-0003zY-L0; Thu, 12 Mar 2020 18:20:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRnx-0003pe-MH; Thu, 12 Mar 2020 17:39:35 +0000
+ id 1jCSR5-0003yc-JI
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 18:20:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 298F530E;
- Thu, 12 Mar 2020 10:39:33 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A35763F6CF;
- Thu, 12 Mar 2020 10:39:32 -0700 (PDT)
-Date: Thu, 12 Mar 2020 17:39:31 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Applied "spi: meson-spicc: remove unused variables" to the spi tree
-In-Reply-To: <20200312133131.26430-2-narmstrong@baylibre.com>
-Message-Id: <applied-20200312133131.26430-2-narmstrong@baylibre.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 184A130E;
+ Thu, 12 Mar 2020 11:19:58 -0700 (PDT)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC9F43F67D;
+ Thu, 12 Mar 2020 11:19:56 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Alex Williamson <alex.williamson@redhat.com>,
+ Cornelia Huck <cohuck@redhat.com>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Subject: [RFC PATCH] vfio: Ignore -ENODEV when getting MSI cookie
+Date: Thu, 12 Mar 2020 18:19:50 +0000
+Message-Id: <20200312181950.60664-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103933_799447_6ABE93DF 
-X-CRM114-Status: GOOD (  12.31  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200312_111959_686707_366788C6 
+X-CRM114-Status: GOOD (  14.70  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,72 +60,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-spi@vger.kernel.org
+Cc: Eric Auger <eric.auger@redhat.com>, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+When we try to get an MSI cookie for a VFIO device, that can fail if
+CONFIG_IOMMU_DMA is not set. In this case iommu_get_msi_cookie() returns
+-ENODEV, and that should not be fatal.
 
-   spi: meson-spicc: remove unused variables
+Ignore that case and proceed with the initialisation.
 
-has been applied to the spi tree at
+This fixes VFIO with a platform device on the Calxeda Midway (no MSIs).
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From b9dfb20eed5c7dab37d6267a985dbe16df9e4293 Mon Sep 17 00:00:00 2001
-From: Neil Armstrong <narmstrong@baylibre.com>
-Date: Thu, 12 Mar 2020 14:31:23 +0100
-Subject: [PATCH] spi: meson-spicc: remove unused variables
-
-Remove unused variables from spicc data struct.
-
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Link: https://lore.kernel.org/r/20200312133131.26430-2-narmstrong@baylibre.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- drivers/spi/spi-meson-spicc.c | 2 --
- 1 file changed, 2 deletions(-)
+Hi,
 
-diff --git a/drivers/spi/spi-meson-spicc.c b/drivers/spi/spi-meson-spicc.c
-index 7f5680fe2568..8425e5ae1273 100644
---- a/drivers/spi/spi-meson-spicc.c
-+++ b/drivers/spi/spi-meson-spicc.c
-@@ -130,9 +130,7 @@ struct meson_spicc_device {
- 	u8				*rx_buf;
- 	unsigned int			bytes_per_word;
- 	unsigned long			tx_remain;
--	unsigned long			txb_remain;
- 	unsigned long			rx_remain;
--	unsigned long			rxb_remain;
- 	unsigned long			xfer_remain;
- 	bool				is_burst_end;
- 	bool				is_last_burst;
+not sure this is the right fix, or we should rather check if the
+platform doesn't support MSIs at all (which doesn't seem to be easy
+to do).
+Or is this because arm-smmu.c always reserves an IOMMU_RESV_SW_MSI
+region?
+
+Also this seems to be long broken, actually since Eric introduced MSI
+support in 4.10-rc3, but at least since the initialisation order was
+fixed with f6810c15cf9.
+
+Grateful for any insight.
+
+Cheers,
+Andre
+
+ drivers/vfio/vfio_iommu_type1.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
+index a177bf2c6683..467e217ef09a 100644
+--- a/drivers/vfio/vfio_iommu_type1.c
++++ b/drivers/vfio/vfio_iommu_type1.c
+@@ -1786,7 +1786,7 @@ static int vfio_iommu_type1_attach_group(void *iommu_data,
+ 
+ 	if (resv_msi) {
+ 		ret = iommu_get_msi_cookie(domain->domain, resv_msi_base);
+-		if (ret)
++		if (ret && ret != -ENODEV)
+ 			goto out_detach;
+ 	}
+ 
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
