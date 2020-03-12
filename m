@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E0AA183D28
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 00:15:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB0BF183D31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 00:18:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y2LNgPskovRqk/LqN6gBd9CANLOBZcsYbsyWUJQTi0k=; b=NJKw6/bveYlztc
-	U7+t56I63BZqhz81j9zMjJIPGcm5jOoSwjqo7sV/amTsjQv/62Ws12TFstQ3+ZTkGCf9VHOW8CIm7
-	EOltLd00ywDFwIP/NTVytVL65RINTSCTBRBsF8w4uJsTo/bcmN+dx6wcD6ht/R1cNKDiJvt2tw6nl
-	kHrfV4zRlrWrL+H1AH8S2yhVPzObjkovWytMcK9Nim5VXIqtzKZnJptCRP6WFBc8UH+pvJ+tgSrOJ
-	uDD0TE4g8J/anlvSpA2nYzI6llT7eIrRi2h4qRqWKiWiL5nEzBsXLT6+tK1FgOaXuO75Ya0JfDYu1
-	heg+7g1Z1j2jsiK1FNrw==;
+	List-Owner; bh=Tsd8ODeAnOe9Kbc5NSm8fPMBSdPF/Voz/Ogsj8HLJPM=; b=QWleZEgHq6sbSC
+	ZOsb+9KcqCx2zTY7HtFH1ioC1WaAD+Zn3UivC57vCzMyQ17DcXDr2xpE9jun3wdtGOmKtLMKl9Hly
+	wnt+fIDu+a66OcooQ0VCFXzrZxo4BoZIcqwvbgYMNqBQinIaMCPzP97BFQ/hy2iQYYryas44Cry9r
+	wlps9Cn13Ap1jNhKymvdWcTo0zLF1zkXwU0RHQrpbbtSuLq3mqxWAqNOwELb1jLmpUjuHGD+JlrVz
+	mcYzWQq/SQMO8aGw4FSxliRW9/7A42A5Sr98HzphXCoguEDhPOdRk95jaW6G6U/+WHdeUDY1VbawP
+	URH+ASi2YA/sXTGiQ9Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCX2X-0007SY-LD; Thu, 12 Mar 2020 23:14:57 +0000
+	id 1jCX5Z-0000rz-6a; Thu, 12 Mar 2020 23:18:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCX2O-0007S8-R2; Thu, 12 Mar 2020 23:14:50 +0000
+ id 1jCX5N-0000rc-UX; Thu, 12 Mar 2020 23:17:55 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6984B20637;
- Thu, 12 Mar 2020 23:14:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 85E8520637;
+ Thu, 12 Mar 2020 23:17:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584054888;
- bh=9wDFf+oPT1U99O9sM6O9KnkAPcMBEuhgp2SaIbrm4eE=;
+ s=default; t=1584055073;
+ bh=QepFjxAZCdw4rXsCdCvk71ljF1gNrapkk/Ira5TscFM=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=eBjMpPYNRMtMMOO+Je+Uv9X+IIIE/u9hx+i+qeMpUqYR0USWNjiHUCPdOnXJmifhY
- 8CEgsN6jvV0Xl1MU+3wXgqt6Nh6+OKLhkwAiSoR9Zx7XJ6fycaasZgA5tueX31XFWb
- kPu34sZ/q/rBoiU42hawDEleNmQOjM4HUqz/sdWU=
+ b=OrSejX72s2mt+UCjcjs8je8y7xAEnQCUR0GLcQcvO9Y34/g+JnXjtwETDdF+ccoNZ
+ N5eBxqY77EtNebU2RteYBBDHDFUkEMPC9f5cx0FD86iGsJtY95jtrzzHqttpXuh7+J
+ kyU007r5eukTSF+SnR4t1fzcrtBOP6b98stixg10=
 MIME-Version: 1.0
-In-Reply-To: <20200225181654.GA694@bogus>
+In-Reply-To: <1c47c839fda93460994d37b4c851d805a3282d5f.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <9166f3acdc2a64e3f3ca1cd2e283005ee2df37c9.1582533919.git-series.maxime@cerno.tech>
- <20200225181654.GA694@bogus>
-Subject: Re: [PATCH 06/89] dt-bindings: clock: Add a binding for the RPi
- Firmware clocks
+ <1c47c839fda93460994d37b4c851d805a3282d5f.1582533919.git-series.maxime@cerno.tech>
+Subject: Re: [PATCH 09/89] clk: bcm: rpi: Use clk_hw_register for pllb_arm
 From: Stephen Boyd <sboyd@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh@kernel.org>
-Date: Thu, 12 Mar 2020 16:14:47 -0700
-Message-ID: <158405488765.149997.7323586314054590516@swboyd.mtv.corp.google.com>
+To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Date: Thu, 12 Mar 2020 16:17:52 -0700
+Message-ID: <158405507267.149997.9253782069794352377@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_161448_902793_BC0035DD 
-X-CRM114-Status: GOOD (  17.03  )
+X-CRM114-CacheID: sfid-20200312_161754_002859_44F5E374 
+X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,70 +77,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Tim Gover <tim.gover@raspberrypi.com>,
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Phil Elwell <phil@raspberrypi.com>,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Rob Herring (2020-02-25 10:16:54)
-> On Mon, Feb 24, 2020 at 10:06:08AM +0100, Maxime Ripard wrote:
-> > The firmare running on the RPi VideoCore can be used to discover and
-> > change the various clocks running in the BCM2711. Since devices will
-> > need to use them through the DT, let's add a pretty simple binding.
-> > 
-> > Cc: Michael Turquette <mturquette@baylibre.com>
-> > Cc: Stephen Boyd <sboyd@kernel.org>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Cc: linux-clk@vger.kernel.org
-> > Cc: devicetree@vger.kernel.org
-> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > ---
-> >  Documentation/devicetree/bindings/clock/raspberrypi,firmware-clocks.yaml | 39 +++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 39 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/clock/raspberrypi,firmware-clocks.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/clock/raspberrypi,firmware-clocks.yaml b/Documentation/devicetree/bindings/clock/raspberrypi,firmware-clocks.yaml
-> > new file mode 100644
-> > index 000000000000..d37bc311321d
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/clock/raspberrypi,firmware-clocks.yaml
-> > @@ -0,0 +1,39 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/clock/raspberrypi,firmware-clocks.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: RaspberryPi Firmware Clocks Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Maxime Ripard <mripard@kernel.org>
-> > +
-> > +properties:
-> > +  "#clock-cells":
-> > +    const: 1
-> > +
-> > +  compatible:
-> > +    const: raspberrypi,firmware-clocks
-> > +
-> > +  raspberrypi,firmware:
-> > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > +    description: >
-> > +      Phandle to the mailbox node to communicate with the firmware.
-> 
-> Can't this be a child node of the phandle instead? Or just add 
-> '#clock-cells' to the firmware node.
+Quoting Maxime Ripard (2020-02-24 01:06:11)
+> The pllb_arm clock is defined as a fixed factor clock with the pllb clock
+> as a parent. However, all its configuration is entirely static, and thus we
+> don't really need to call clk_hw_register_fixed_factor but can simply call
+> clk_hw_register with a static clk_fixed_factor structure.
 
-Yeah, just add the clock-cells to the firmware node unless that doesn't
-work for some reason?
+Please add () to things like clk_hw_register_fixed_factor() and
+clk_hw_register().
+
+> 
+> Cc: Michael Turquette <mturquette@baylibre.com>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
