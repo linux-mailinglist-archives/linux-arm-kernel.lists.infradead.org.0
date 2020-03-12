@@ -2,127 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5E6B183B5A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 22:32:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA2BA183B70
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 22:35:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cuj+h/MUJ84dHPdQvFB+MeotLkEKGilGf5BLNsxdqNE=; b=NJfJv8uzo27Yr7
-	2276QRfFf7yACdn1oqYzH5go6AvD0LujTR/faAtfc36Ou+uB0l1ih3p78TET7QE6tIqp5IaBZ6yJX
-	8kIVjrwEUiw0kwF2fL4RiX6vKe1kNXE8etPyYBL1NtXlqXHQ+VlaPQ8RuLNvZjgMCdR3R1Qey5EHK
-	hVzH8sePeXTCQ7yAL2myFe5bgqFcGex01pqiJPLABHFEOIJ7Qpfj9BlNhw737KkGGEQbB29Mtld0A
-	w6GGJ3ZfhJB0tKJne76hYPz/D2zBb5RmlC04adudzn3bhZPN0/iojcAbc5c/tT+Mh9BbaG89XUHA9
-	fOrNOaTEb2bmZTdcN+9A==;
+	List-Owner; bh=pnUKnU4aFZYmnsu18X42xgG91yj4OzRR8f31LPQqsyw=; b=tmMQjW71CSEJa9
+	MZ8YZQB1Mwo55uVGDvnrwofcmpJEbmOwW0+R4WM0brQdc/cGKvIMX8DihOmdenw5XJW/EOBp+Px1g
+	SW91di3mhvh8UyW5R29LM2vKnlMC9XqHiwGW+MOElQYaZmMbYkaIY/+EzmKcnFbluKmZ4vXUrKwuW
+	vCRLH2tH7aHpZI8PeS//JKyXmGy8zwEXEciZQ2BYpTU2v0LyNNFkQSL8wdAwoZwgBBPVLwgQr4UNt
+	KZGCYWKDYndBdzt55dJ/WPJYbmn+D3GDw+pL9pFKZeZz8fGDDBnVe1zU0aQqXwzXcmFvfJjKqXy7q
+	DAVAxHk1DYwkF1zh9zqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCVRO-0004qQ-OC; Thu, 12 Mar 2020 21:32:30 +0000
-Received: from mail-eopbgr700050.outbound.protection.outlook.com
- ([40.107.70.50] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1jCVUU-0008LV-RW; Thu, 12 Mar 2020 21:35:42 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCVR4-0004go-IB
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 21:32:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cSLSB6QVmsq/2to+gJj/Awxl8rhLuRvSaf2VgayQXbPVtGaI0X8zXvvfEqnwvyNWC2KJmeQeKUWJVOE8qnkzT6wPDtUzUVr3yUxC+NqZ2nrVvUnR31lOvnn0h33jCRyplKTS2VMG3BbfK1nxUIYHv528LW4ru5Y7EFiD4TTyQ85WYfvToOvo/Z/FvBlJYjufFsHerN6/68iK5+mMR0+ug+uHGPixqNsEytrGkAC7CF7ziZ+dZbJzj8osCV8yFzXQqj8vV1y+WOJpB6P5hY3Wpy4+DFhZvpKLwZ8JEW7h/YYJFGXOsA+Zk61gNsbOrpTZ/A/0UyR3rrJCY9vpz/DfJg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uBHeGX19n9xnM5jqHBWiC1hhg2R7qXvx6xByDvNDHx4=;
- b=NgdQ+Fv37wrTduFqqNO/iDwNP6NWRl+6+0AbuJqrUBP1du9JR73DH4LYRCw/dMvFdNyFTLPqJcq6buBXw9huuKdUr5LqzWimdz01f1Fb0P+Dpl0a6Fr1jxckBcUCBwRZy5aPDpe+bRgynTFowNKq7fXdCrV9IJp9Jzr9kzNWp75R8nxnu+BtuyRPgF5TWg+IEA9It34XSUSygi82J3f3kwWKlCpVmq3Zkg4oIrQXiwsY7XyMeY9OA9ySs3noh+AVWtnCokNZylEGx0gtWmHktfsLMNtWZzzsDo2QPjyMLwFqAUoc2WPuyY3pko6NE2OQH/mrxd32sFuNlw3hDa2bdg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=lixom.net smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uBHeGX19n9xnM5jqHBWiC1hhg2R7qXvx6xByDvNDHx4=;
- b=FY0EDykjBZjV9oA+65FXAdpPsJfJ6fqBqRXSm6v7d4RAUjf31UEKx0kv1U2e417UrBjvHjQU6ygH+unPaEAhh6Rcv4ABGEp2IavhG/kycdDhTzf5jlnI4Gob2EHdQLJMmALz2M66L/IkplclXjNDKApC3yu81ujfzeZXjstLHHg=
-Received: from MN2PR08CA0004.namprd08.prod.outlook.com (2603:10b6:208:239::9)
- by DM6PR02MB7033.namprd02.prod.outlook.com (2603:10b6:5:25d::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.14; Thu, 12 Mar
- 2020 21:32:08 +0000
-Received: from BL2NAM02FT036.eop-nam02.prod.protection.outlook.com
- (2603:10b6:208:239:cafe::4e) by MN2PR08CA0004.outlook.office365.com
- (2603:10b6:208:239::9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.16 via Frontend
- Transport; Thu, 12 Mar 2020 21:32:08 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; lixom.net; dkim=none (message not signed)
- header.d=none;lixom.net; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT036.mail.protection.outlook.com (10.152.77.154) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2814.13
- via Frontend Transport; Thu, 12 Mar 2020 21:32:07 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1jCVR1-0001nD-0j; Thu, 12 Mar 2020 14:32:07 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1jCVQv-0006jp-QH; Thu, 12 Mar 2020 14:32:01 -0700
-Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1jCVQn-0006iZ-14; Thu, 12 Mar 2020 14:31:53 -0700
-From: Jolly Shah <jolly.shah@xilinx.com>
-To: olof@lixom.net, mturquette@baylibre.com, sboyd@kernel.org,
- michal.simek@xilinx.com, arm@kernel.org, linux-clk@vger.kernel.org
-Subject: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction clock check from
- custom type flags
-Date: Thu, 12 Mar 2020 14:31:39 -0700
-Message-Id: <1584048699-24186-3-git-send-email-jolly.shah@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1584048699-24186-1-git-send-email-jolly.shah@xilinx.com>
-References: <1584048699-24186-1-git-send-email-jolly.shah@xilinx.com>
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(39860400002)(376002)(346002)(199004)(356004)(9786002)(54906003)(336012)(36756003)(316002)(426003)(107886003)(186003)(2616005)(4326008)(26005)(81156014)(15650500001)(81166006)(7696005)(5660300002)(6666004)(8936002)(70586007)(8676002)(44832011)(70206006)(478600001)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB7033; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; 
+ id 1jCVUI-0008Km-Cp
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 21:35:33 +0000
+Received: by mail-ed1-x541.google.com with SMTP id ca19so9322908edb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Mar 2020 14:35:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=w1zcQ0pwsk6Sv5HkuPglXPmgpcyE2cmpz+kIS0DS4nw=;
+ b=Ns03hq698c5nJGC7j/6c5N9u3dyz/UKqOCtYtrfKIIrjDDTWfxUyd2jEas6KNqlSmI
+ Ld+BKVByi4vsTqlmcAENsFHkbaraOdhSfotILQOcUREF4Wr8Gvch7+9HK/pW48ygG9N9
+ zP9ub4iFy6Oq+NeRdx1ceKEDkdlpyrLpL5HSY0AnNqDioQDmFwlSC2FFeWVTCSlsGPg9
+ hiLLtO0NsC0jVvy2RP1EaRwB9D4U4lGYVFxmN05EKPV76oRZ4r36Ttk73BzYsg7uy3vC
+ ph8W4hF6XzQSy8FczqEZ8QyVw3G/uExf9L8sYjfjKS8wzdZz224ncurQFa6PKElVa6D1
+ C+hA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=w1zcQ0pwsk6Sv5HkuPglXPmgpcyE2cmpz+kIS0DS4nw=;
+ b=nHrSRGLwb983h7mqB3Of2ytomY36kZRBwAm94T00JIyRLgzQBMuoMadJ82DfkVeV6y
+ kClS5iTPGGKshDva/MLsAHyo6gkUjiT+VCDeYlEBVWj6R2XNefaj4gR5G3uKDJ3HL4go
+ njuNbeVEtbzI3B6UvH8t31mdxFvAKIRO93cZlpnmMtHhgn7M0ltrFeyJAsXj+4bYuD2i
+ a8KtcGYJOkA3AcPDDCy5tkcAYIYutXJWSAC3RPv1YtKZODiHV5499UXUAzdxwWafy1Ii
+ Caeu1sunQdu/P3pBOk0H0ZqcREotrAPPSbk/pW4ogXRXPoA4/eL/1heZx7CACAonfC+N
+ pssQ==
+X-Gm-Message-State: ANhLgQ3+vlKiLcM1vtPxfLk/0TuTWhG/pglsVTJBjw4jO815Qev2hO/I
+ R0ldf90TLguqbG/sLIRafi2D3dPkSSpYD6rbdhs=
+X-Google-Smtp-Source: ADFU+vsiyvjYIkOLbK9gTV05LGSSgyCx7Z0cDMbSZLbMQjbrdyinTU8gUMl1VUDmDLUkNlpuLq769IWuinYNYh/M5kg=
+X-Received: by 2002:a05:6402:1c0c:: with SMTP id
+ ck12mr10249138edb.145.1584048926737; 
+ Thu, 12 Mar 2020 14:35:26 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: bfd8371e-8da9-44e9-4264-08d7c6ccd10b
-X-MS-TrafficTypeDiagnostic: DM6PR02MB7033:
-X-Microsoft-Antispam-PRVS: <DM6PR02MB70333B2BBD4FE1D061CBE0BFB8FD0@DM6PR02MB7033.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
-X-Forefront-PRVS: 0340850FCD
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 8+Mv1G2tLiRIyRtLaTMhxb5yrYad5tBECOSV11T4kGryS/7F/J53q9rkkHQ9zJP2asa2INkw5w6HHj8X8Wuw7VA5iVPtu+/qKTEbl/Pa7ubgEnCxDZI/WhkT8Iuos0dEHunEM2Q7NFMKbdam3nCSfr4ly2HfUtni0atfdJ3UWgA4xYFeL9b2sPegTrdWo49Qy6DiG8ySYsyeUB2BTdiMkQ4kB4vjuaMXpgCmlzA9VYdIhtAULVINOBxmcpYKOIyRd4zdub26Q/G3DndNfxocydbBj/uQZydtW3XNkCIqOERUf7qsVleg1o8oDW2t1IHgETtkU1fxMBH99wT/t9xf+tgbs0gBE935Ms+3GdTlxQ9j3FnK1VEqHCRBC+sTsO70aTFKcdvErLqkDZeQtqgAVnWHBI9QDUDtv8DBNr5QyqpDyo99vHogW8RuRhGOxtYo
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Mar 2020 21:32:07.7257 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bfd8371e-8da9-44e9-4264-08d7c6ccd10b
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB7033
+References: <20200312164320.22349-1-michael@walle.cc>
+In-Reply-To: <20200312164320.22349-1-michael@walle.cc>
+From: Vladimir Oltean <olteanv@gmail.com>
+Date: Thu, 12 Mar 2020 23:35:15 +0200
+Message-ID: <CA+h21hoHMxtxUjHthx2ta9CzQbkF_08Svi7wLU99NqJmoEr36Q@mail.gmail.com>
+Subject: Re: [PATCH 1/2] net: dsa: felix: allow the device to be disabled
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_143210_604281_04FF3202 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200312_143530_693047_5942CFF2 
+X-CRM114-Status: GOOD (  23.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.50 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [olteanv[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -137,63 +93,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
- linux-kernel@vger.kernel.org, rajanv@xilinx.com,
- Jolly Shah <jolly.shah@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Andrew Lunn <andrew@lunn.ch>, netdev <netdev@vger.kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Vladimir Oltean <vladimir.oltean@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tejas Patel <tejas.patel@xilinx.com>
+On Thu, 12 Mar 2020 at 18:44, Michael Walle <michael@walle.cc> wrote:
+>
+> If there is no specific configuration of the felix switch in the device
+> tree, but only the default configuration (ie. given by the SoCs dtsi
+> file), the probe fails because no CPU port has been set. On the other
+> hand you cannot set a default CPU port because that depends on the
+> actual board using the switch.
+>
+> [    2.701300] DSA: tree 0 has no CPU port
+> [    2.705167] mscc_felix 0000:00:00.5: Failed to register DSA switch: -22
+> [    2.711844] mscc_felix: probe of 0000:00:00.5 failed with error -22
+>
+> Thus let the device tree disable this device entirely, like it is also
+> done with the enetc driver of the same SoC.
+>
+> Signed-off-by: Michael Walle <michael@walle.cc>
+> ---
+>  drivers/net/dsa/ocelot/felix.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+>
+> diff --git a/drivers/net/dsa/ocelot/felix.c b/drivers/net/dsa/ocelot/felix.c
+> index 69546383a382..531c7710063f 100644
+> --- a/drivers/net/dsa/ocelot/felix.c
+> +++ b/drivers/net/dsa/ocelot/felix.c
+> @@ -699,6 +699,11 @@ static int felix_pci_probe(struct pci_dev *pdev,
+>         struct felix *felix;
+>         int err;
+>
+> +       if (pdev->dev.of_node && !of_device_is_available(pdev->dev.of_node)) {
+> +               dev_info(&pdev->dev, "device is disabled, skipping\n");
+> +               return -ENODEV;
+> +       }
+> +
 
-Older firmware version sets BIT(13) in clkflag to mark a
-divider as fractional divider. Updated firmware version sets BIT(4)
-in type flags to mark a divider as fractional divider since
-BIT(13) is defined as CLK_DUTY_CYCLE_PARENT in the common clk
-framework flags.
+IMHO since DSA is already dependent on device tree for PHY bindings,
+it would make more sense to move this there:
 
-To support both old and new firmware version, consider BIT(13) from
-clkflag and BIT(4) from type_flag to check if divider is fractional
-or not.
+diff --git a/net/dsa/dsa2.c b/net/dsa/dsa2.c
+index e7c30b472034..f7ca01d93928 100644
+--- a/net/dsa/dsa2.c
++++ b/net/dsa/dsa2.c
+@@ -878,7 +878,7 @@ static int dsa_switch_probe(struct dsa_switch *ds)
+        if (!ds->num_ports)
+                return -EINVAL;
 
-To maintain compatibility BIT(13) of clkflag in firmware will not be
-used in future for any purpose and will be marked as unused.
+-       if (np) {
++       if (np && of_device_is_available(np)) {
+                err = dsa_switch_parse_of(ds, np);
+                if (err)
+                        dsa_switch_release_ports(ds);
 
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
----
- drivers/clk/zynqmp/divider.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+so that we could enforce more uniform behavior across device drivers.
+Then you might want to make felix shut up:
 
-diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-index 8eed715..efe2ed6 100644
---- a/drivers/clk/zynqmp/divider.c
-+++ b/drivers/clk/zynqmp/divider.c
-@@ -25,7 +25,8 @@
- #define to_zynqmp_clk_divider(_hw)		\
- 	container_of(_hw, struct zynqmp_clk_divider, hw)
- 
--#define CLK_FRAC	BIT(13) /* has a fractional parent */
-+#define CLK_FRAC		BIT(13) /* has a fractional parent */
-+#define CUSTOM_FLAG_CLK_FRAC	BIT(0) /* has a fractional parent in custom type flag */
- 
- /**
-  * struct zynqmp_clk_divider - adjustable divider clock
-@@ -307,7 +308,8 @@ struct clk_hw *zynqmp_clk_register_divider(const char *name,
- 	init.num_parents = 1;
- 
- 	/* struct clk_divider assignments */
--	div->is_frac = !!(nodes->flag & CLK_FRAC);
-+	div->is_frac = !!((nodes->flag & CLK_FRAC) |
-+			  (nodes->custom_type_flag & CUSTOM_FLAG_CLK_FRAC));
- 	div->flags = nodes->type_flag;
- 	div->hw.init = &init;
- 	div->clk_id = clk_id;
--- 
-2.7.4
+diff --git a/drivers/net/dsa/ocelot/felix.c b/drivers/net/dsa/ocelot/felix.c
+index 35124ef7e75b..fbd17fa94bff 100644
+--- a/drivers/net/dsa/ocelot/felix.c
++++ b/drivers/net/dsa/ocelot/felix.c
+@@ -712,10 +712,8 @@ static int felix_pci_probe(struct pci_dev *pdev,
+        felix->ds = ds;
 
+        err = dsa_register_switch(ds);
+-       if (err) {
+-               dev_err(&pdev->dev, "Failed to register DSA switch: %d\n", err);
++       if (err)
+                goto err_register_ds;
+-       }
+
+        return 0;
+
+This has the disadvantage of not printing the "nice" "device is
+disabled, skipping" message (useless in my opinion), but the advantage
+of also shutting up on -EPROBE_DEFER.
+
+>         err = pci_enable_device(pdev);
+>         if (err) {
+>                 dev_err(&pdev->dev, "device enable failed\n");
+> --
+> 2.20.1
+>
+
+Thanks,
+-Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
