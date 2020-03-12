@@ -2,82 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53A031826B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 02:42:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C03061826C0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 02:44:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FkQXj3UhZhQ7uqxWhMASOBPnYVP1u5thF+8xTjX29OY=; b=PrzJIDx/+LgB4L
-	swQgzeZTbU/r0VsNsbyO2JEWh9TL0R3emSoDmlDhJ+BQIGisWV/TfheB1vJjCFm2X2Nn6+YcUcr6b
-	/yp+7SA6lMsfo9+3RT996mL+aH6Esh+7+0fRkrlO65QlatuFFDVjvqXFBFQYKVp7n3POzNEuPk0cH
-	e0WKWhHmmWtEi3Mh1YVxxV5r+ebeEqk849gMSZevdPzjUUx7KG8dUHlTY5fMfSitmnXEaaXmPQhtb
-	a29gwxaiRibnWZQe7442bXRZsKpNMJIE7+wOXly0iRx0XAJTlnIEIHl8GR3z0p0NvMHLk6LZB4Ow5
-	SzJO/zA5udedNSdN73Iw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=23VSK7T3/9XuOtXwVq4gfWzvIVjAa7csIypaTh3ew5M=; b=BbeRdcZxMMC3mNQadUYji2MxA
+	whYyH6QRjKrxJ+9vnMDtxGnzwcB9PckYExuQk+wr8LNjQCm6Kkr/+CiuC7n95WBE23sf7ZnD8KHtB
+	HLqQ16LtuXDe0WxgX4ypBpKK00exJtl5RVrUJGUsUtu3clECfmIW9dJU9iLRiY+9IIh2MMl5r2Cz1
+	D6Q2FCvMr8dGGPCYdnt7BUdSo9kgjVgPNoqbr67/ZNahXb1vXpZluGV/rRb1yHKIB7BlBEtfPjMuH
+	TvvEzUP3j7ESTEFKWpXZA+nd/UjjETM55aMphVq6rPOYC9KRhr/zdQ6PP/ya0NpkKhoxAiPk41j6g
+	jvsUCRXKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCCrE-0004Ep-QJ; Thu, 12 Mar 2020 01:41:56 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1jCCtk-0004bM-NS; Thu, 12 Mar 2020 01:44:32 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCCr7-0004Dp-O9
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 01:41:51 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id k188so2674806vsc.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 18:41:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=k+2wQEy+NMnEIDcA6S02pCEqP6eFCuK4Z4/8szPajwc=;
- b=dEXMnPsUOVToOowHXjjb6pViv6j7NYO7alRyodmH88IKDJ9teW/utBZ2GV7iOxO+Zc
- BrLj3iTeeQ+MIS6lFh5vpKzqi+cXFhOJrEjLbZciKYQInENdAVdYCjV2c3wwPVIHA+yu
- Z3R+683VAjC18js16mQ/SEe7KXz99FCSaNuSg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=k+2wQEy+NMnEIDcA6S02pCEqP6eFCuK4Z4/8szPajwc=;
- b=fOFHVcW80geuJGktugHDFb32ZTXu8SszzG0j2JXa6PN5TgC4cePl62tKIVkK1T/mUQ
- c1gsTueV4gaNEgZV7/s9eNzegxF75j3WUpamOJvOgE3AkE0YLvGKKukGz5/m1klMFr6V
- pjSzbNjCEZX2UD6cG8wxc3utUuxM/OS69OgSX5Q5KmfcKoSmnwZ0iAD/Xp4J9nXB/Jf8
- oekz2QkcN0xCIyU56PegF4G9ALX3fcQkO8c4nFbu0ujf7NlCDntYu1jW+KcxQuNCmLWB
- 7seteLdDy2qAxSkXV1FZJK/KWpl4BVuMD0kc+sZ0fRy3BQTWlO2ejmOUJkirZ4ZEkThA
- eJVA==
-X-Gm-Message-State: ANhLgQ3rNYf0T/Z9xOUTTFQ9ZD74yks9Qry/36vm1Irzk7HCBTE85q2x
- YDJdDX2gLMCNPRfhJsrrTjuWQjiRaHPF3vb3fu60nw==
-X-Google-Smtp-Source: ADFU+vtwixbNza+rk01UttXlhW3Uxqa+sfYsUCDCqXXbvWG6vOSRtdS02syicarawHJ6J0EPqdPba2S1Oz1D1r/xpoo=
-X-Received: by 2002:a67:3201:: with SMTP id y1mr4190035vsy.54.1583977308293;
- Wed, 11 Mar 2020 18:41:48 -0700 (PDT)
+ id 1jCCtd-0004aq-FC
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 01:44:26 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 11 Mar 2020 18:44:24 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,543,1574150400"; d="scan'208";a="443763768"
+Received: from blu2-mobl3.ccr.corp.intel.com (HELO [10.254.208.137])
+ ([10.254.208.137])
+ by fmsmga006.fm.intel.com with ESMTP; 11 Mar 2020 18:44:18 -0700
+Subject: Re: [PATCH v2 08/11] iommu/vt-d: Use pci_ats_supported()
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>, bhelgaas@google.com,
+ will@kernel.org, robh+dt@kernel.org, joro@8bytes.org, sudeep.holla@arm.com,
+ linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org
+References: <20200311124506.208376-1-jean-philippe@linaro.org>
+ <20200311124506.208376-9-jean-philippe@linaro.org>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <7019230c-3c56-e6db-6704-d73f23fa39b5@linux.intel.com>
+Date: Thu, 12 Mar 2020 09:44:16 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1583918223-22506-4-git-send-email-hsin-hsiung.wang@mediatek.com>
-In-Reply-To: <1583918223-22506-4-git-send-email-hsin-hsiung.wang@mediatek.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Thu, 12 Mar 2020 09:41:37 +0800
-Message-ID: <CANMq1KBdYPiWDHqSUwu86q3Kj=r0PWCoYcj28v5poNKNsB5U0w@mail.gmail.com>
-Subject: Re: [PATCH v10 3/5] mfd: Add support for the MediaTek MT6358 PMIC
-To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+In-Reply-To: <20200311124506.208376-9-jean-philippe@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_184149_807536_58F807DB 
-X-CRM114-Status: GOOD (  14.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_184425_523328_477B4316 
+X-CRM114-Status: GOOD (  16.75  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,57 +72,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Frank Wunderlich <frank-w@public-files.de>,
- Josef Friedl <josef.friedl@speed.at>, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, Richard Fontana <rfontana@redhat.com>,
- Devicetree List <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-rtc@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, frowand.list@gmail.com,
+ corbet@lwn.net, rjw@rjwysocki.net, amurray@thegoodpenguin.co.uk,
+ liviu.dudau@arm.com, guohanjun@huawei.com, lenb@kernel.org,
+ robin.murphy@arm.com, dwmw2@infradead.org, baolu.lu@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 5:17 PM Hsin-Hsiung Wang
-<hsin-hsiung.wang@mediatek.com> wrote:
->
-> This adds support for the MediaTek MT6358 PMIC. This is a
-> multifunction device with the following sub modules:
->
-> - Regulator
-> - RTC
-> - Codec
-> - Interrupt
->
-> It is interfaced to the host controller using SPI interface
-> by a proprietary hardware called PMIC wrapper or pwrap.
-> MT6358 MFD is a child device of the pwrap.
->
-> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Hi Jean,
 
-Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
-
+On 2020/3/11 20:45, Jean-Philippe Brucker wrote:
+> The pci_ats_supported() function checks if a device supports ATS and is
+> allowed to use it.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->  drivers/mfd/Makefile                 |   2 +-
->  drivers/mfd/mt6358-irq.c             | 236 +++++++++++++++++++++++++++++
->  drivers/mfd/mt6397-core.c            |  55 ++++++-
->  include/linux/mfd/mt6358/core.h      | 158 ++++++++++++++++++++
->  include/linux/mfd/mt6358/registers.h | 282 +++++++++++++++++++++++++++++++++++
->  include/linux/mfd/mt6397/core.h      |   3 +
->  6 files changed, 731 insertions(+), 5 deletions(-)
->  create mode 100644 drivers/mfd/mt6358-irq.c
->  create mode 100644 include/linux/mfd/mt6358/core.h
->  create mode 100644 include/linux/mfd/mt6358/registers.h
+>   drivers/iommu/intel-iommu.c | 9 +++------
+>   1 file changed, 3 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
+> index 6fa6de2b6ad5..17208280ef5c 100644
+> --- a/drivers/iommu/intel-iommu.c
+> +++ b/drivers/iommu/intel-iommu.c
+> @@ -1454,8 +1454,7 @@ static void iommu_enable_dev_iotlb(struct device_domain_info *info)
+>   	    !pci_reset_pri(pdev) && !pci_enable_pri(pdev, 32))
+>   		info->pri_enabled = 1;
+>   #endif
+> -	if (!pdev->untrusted && info->ats_supported &&
+> -	    pci_ats_page_aligned(pdev) &&
+> +	if (info->ats_supported && pci_ats_page_aligned(pdev) &&
+>   	    !pci_enable_ats(pdev, VTD_PAGE_SHIFT)) {
+>   		info->ats_enabled = 1;
+>   		domain_update_iotlb(info->domain);
+> @@ -2611,10 +2610,8 @@ static struct dmar_domain *dmar_insert_one_dev_info(struct intel_iommu *iommu,
+>   	if (dev && dev_is_pci(dev)) {
+>   		struct pci_dev *pdev = to_pci_dev(info->dev);
+>   
+> -		if (!pdev->untrusted &&
+> -		    !pci_ats_disabled() &&
+
+The pci_ats_disabled() couldn't be replaced by pci_ats_supported(). Even
+pci_ats_supported() returns true, user still can disable it. Or move
+ats_disabled into pci_ats_supported()?
+
+Best regards,
+baolu
+
+> -		    ecap_dev_iotlb_support(iommu->ecap) &&
+> -		    pci_find_ext_capability(pdev, PCI_EXT_CAP_ID_ATS) &&
+> +		if (ecap_dev_iotlb_support(iommu->ecap) &&
+> +		    pci_ats_supported(pdev) &&
+>   		    dmar_find_matched_atsr_unit(pdev))
+>   			info->ats_supported = 1;
 
 _______________________________________________
 linux-arm-kernel mailing list
