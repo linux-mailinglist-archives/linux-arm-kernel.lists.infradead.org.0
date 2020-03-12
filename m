@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 455A31831F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:47:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02323183214
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:52:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mNsV95OSHoczD59fCs/+JA8nee8wjy1CbdO8V7RhwXk=; b=lf4ufNRX8/5Iq0
-	o18fBpxCsFeyfKM8Eu5DANy1C5RNwfNntEqoaXTnu0ubusew0C1v3TBtABNhoPlcPm7g0GhRvu4FU
-	A6yolbyePOv+2Y9rIPgBf7SgqbW8soXxOn6cNoMIyECLG/yVhnx9lKmcQQxmLNZn/PBlZrZ+mnxr2
-	jgMLWmqA+JgnNnkDb8U2DJZeeuSjgjNBjMSFZhWIc4id6mWDIDt5RE4Q75t+4IP6N1CUpuAHctYvi
-	7/vq8CPzH06yHm1vbioUKyLW5Af+ca7nBYsWSb94xeSelJKmccHDh4Cm7B5L9Jzd9HKSl7Jv8pk9I
-	d9ZCiKNZ1PRwMwVu+loQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2DXTNmbBn1dDP9Ealhr0sa2gELWmP/zp167C4b1q+2g=; b=XJ12pQ0sogswu/0zBOxwaXg0u
+	Mnxt4JJHdzQ1VLuJZ0uF1giUixdV1FMqbKfwFaf8vGm3QkBrPv/iprzbZzkT3X2YkIpx9hsLJbz4S
+	blfgTDTDZJCvu2t7dBYm9DJ5px7sd8MDeduGGTAK/ogSl+/jy2h4rM7ErXPqovLRT486OyjGDEstB
+	wZZG4DtoZ2NdiO9aI8dNfg314c4COkVrIIhYOXQluN4JxyzPSbAwiRgBAY6ker1L3WheImHjRwsHI
+	hwJPcjllHIye9fudtJ12du8xHRVNtJTDY5etGpsYY2DnFUB7rlQrzUIr1KV8Nu4xx7spZVwrMgS4A
+	F488F+pqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCOBL-0004oE-8Q; Thu, 12 Mar 2020 13:47:27 +0000
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCOBE-0004nd-19
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:47:21 +0000
-Received: from callcc.thunk.org (pool-72-93-95-157.bstnma.fios.verizon.net
- [72.93.95.157]) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 02CDlCBO022469
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 12 Mar 2020 09:47:14 -0400
-Received: by callcc.thunk.org (Postfix, from userid 15806)
- id BD68C420E5E; Thu, 12 Mar 2020 09:47:12 -0400 (EDT)
-Date: Thu, 12 Mar 2020 09:47:12 -0400
-From: "Theodore Y. Ts'o" <tytso@mit.edu>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough; 
-Message-ID: <20200312134712.GE7159@mit.edu>
-References: <cover.1583896344.git.joe@perches.com>
- <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
- <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
- <891a42ad8d8fd7beca911845108e1ded022ef3f7.camel@perches.com>
- <20200312085606.GA154268@kroah.com>
- <CAK7LNAS98yeCeFZpKgNRRKcFhXSKWQ7Ka4vP90YcY=ufScZRCw@mail.gmail.com>
- <fa07756217b3c033c7e5af495a03ff5655947450.camel@perches.com>
+	id 1jCOFv-0006bH-Du; Thu, 12 Mar 2020 13:52:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCOFj-0006aT-Al
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:52:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A810D30E;
+ Thu, 12 Mar 2020 06:51:55 -0700 (PDT)
+Received: from [10.37.12.166] (unknown [10.37.12.166])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A2B83F534;
+ Thu, 12 Mar 2020 06:51:54 -0700 (PDT)
+Subject: Re: [PATCH v4 07/13] firmware: arm_scmi: Add notification dispatch
+ and delivery
+To: Cristian Marussi <cristian.marussi@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <20200304162558.48836-1-cristian.marussi@arm.com>
+ <20200304162558.48836-8-cristian.marussi@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <45d4aee9-57df-6be9-c176-cf0d03940c21@arm.com>
+Date: Thu, 12 Mar 2020 13:51:52 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <fa07756217b3c033c7e5af495a03ff5655947450.camel@perches.com>
+In-Reply-To: <20200304162558.48836-8-cristian.marussi@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_064720_265821_9AAFE2B7 
-X-CRM114-Status: GOOD (  11.28  )
+X-CRM114-CacheID: sfid-20200312_065159_458758_992DB966 
+X-CRM114-Status: GOOD (  19.33  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [18.9.28.11 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [18.9.28.11 listed in wl.mailspike.net]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,47 +66,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Jonathan.Cameron@Huawei.com, james.quinlan@broadcom.com,
+ sudeep.holla@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 12, 2020 at 02:37:31AM -0700, Joe Perches wrote:
-> As I have suggested a few times, better still
-> would be to have a mechanism for scripted patches
-> applied possibly as single treewide patch.
+Hi Cristian,
+
+just one comment below...
+
+On 3/4/20 4:25 PM, Cristian Marussi wrote:
+> Add core SCMI Notifications dispatch and delivery support logic which is
+> able, at first, to dispatch well-known received events from the RX ISR to
+> the dedicated deferred worker, and then, from there, to final deliver the
+> events to the registered users' callbacks.
 > 
-> Likely applied only at an -rc1.
+> Dispatch and delivery is just added here, still not enabled.
 > 
-> The stated negatives to a treewide mechanism
-> have been difficulty to backport to -stable.
+> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> ---
+> V3 --> V4
+> - dispatcher now handles dequeuing of events in chunks (header+payload):
+>    handling of these in_flight events let us remove one unneeded memcpy
+>    on RX interrupt path (scmi_notify)
+> - deferred dispatcher now access their own per-protocol handlers' table
+>    reducing locking contention on the RX path
+> V2 --> V3
+> - exposing wq in sysfs via WQ_SYSFS
+> V1 --> V2
+> - splitted out of V1 patch 04
+> - moved from IDR maps to real HashTables to store event_handlers
+> - simplified delivery logic
+> ---
+>   drivers/firmware/arm_scmi/notify.c | 334 ++++++++++++++++++++++++++++-
+>   drivers/firmware/arm_scmi/notify.h |   9 +
+>   2 files changed, 342 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
 
-Any time we do a massive, disruptive change to the code base, it's
-going to cause problems to -stable.  It means that bug fix patches
-won't necessarily auto-apply, and some will require manual fixups
-afterwards
+[snip]
 
-Given that this change doesn't really fix any bugs, I'd have to ask
-the question --- is it *worth* it?  We really need to apply a certain
-amount of cost/benefit analysis around this.
+> +
+> +/**
+> + * scmi_notify  - Queues a notification for further deferred processing
+> + *
+> + * This is called in interrupt context to queue a received event for
+> + * deferred processing.
+> + *
+> + * @handle: The handle identifying the platform instance from which the
+> + *	    dispatched event is generated
+> + * @proto_id: Protocol ID
+> + * @evt_id: Event ID (msgID)
+> + * @buf: Event Message Payload (without the header)
+> + * @len: Event Message Payload size
+> + * @ts: RX Timestamp in nanoseconds (boottime)
+> + *
+> + * Return: 0 on Success
+> + */
+> +int scmi_notify(const struct scmi_handle *handle, u8 proto_id, u8 evt_id,
+> +		const void *buf, size_t len, u64 ts)
+> +{
+> +	struct scmi_registered_event *r_evt;
+> +	struct scmi_event_header eh;
+> +	struct scmi_notify_instance *ni = handle->notify_priv;
+> +
+> +	/* Ensure atomic value is updated */
+> +	smp_mb__before_atomic();
+> +	if (unlikely(!atomic_read(&ni->enabled)))
+> +		return 0;
+> +
+> +	r_evt = SCMI_GET_REVT(ni, proto_id, evt_id);
+> +	if (unlikely(!r_evt))
+> +		return -EINVAL;
+> +
+> +	if (unlikely(len > r_evt->evt->max_payld_sz)) {
+> +		pr_err("SCMI Notifications: discard badly sized message\n");
+> +		return -EINVAL;
+> +	}
+> +	if (unlikely(kfifo_avail(&r_evt->proto->equeue.kfifo) <
+> +		     sizeof(eh) + len)) {
+> +		pr_warn("SCMI Notifications: queue full dropping proto_id:%d  evt_id:%d  ts:%lld\n",
+> +			proto_id, evt_id, ts);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	eh.timestamp = ts;
+> +	eh.evt_id = evt_id;
+> +	eh.payld_sz = len;
+> +	kfifo_in(&r_evt->proto->equeue.kfifo, &eh, sizeof(eh));
+> +	kfifo_in(&r_evt->proto->equeue.kfifo, buf, len);
+> +	queue_work(r_evt->proto->equeue.wq,
+> +		   &r_evt->proto->equeue.notify_work);
 
-If it were really important, the thing we could do is to apply a
-single treewide patch at some point after the merge window.  I'd
-suggest after -rc2, myself, but reasonable people can differ.  And
-then, if it were *really* important we could run the same script on
-the stable kernels.
+Is it safe to ignore the return value from the queue_work here?
 
-But for changing "/* fallthrough */" to "fallthrough;"
+Regards,
+Lukasz
 
-Does this ***really*** matter?  Why are we tying ourselves up in knots
-trying to do this all at once?
 
-					- Ted
 
 _______________________________________________
 linux-arm-kernel mailing list
