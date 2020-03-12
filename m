@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1698818378D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:31:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3D5D18379F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 18:31:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tscd8+AWYDHqbQAjvHhgrYlak3iQ7h2yqsXlpijG9Ak=; b=ICFh8oVHd8nPWvCqERiVpIcD36
-	/vvjr+W6Wka097TqiGHps2nd/hb974qSx8qItSEZzCSGdBUu+GVcrcBip4IlH9vTZKqnAzrWBiUix
-	+bwu2+wdtGNisYpV8JBxGU/3yNwqYDmq34i2TZACVxo9edUCFzIzvMxWo1QIzWz5xfkGTz+LJccO9
-	q0/HnCtnsH5pR6L5MGEkgs4aa7ImgRXvya1fEvwltkf5m/Jvho0h60N/EwDTnHabmiF9IQzxU39hM
-	kVCmHmUM+VYF7hfOxkVaxCLeQeWZXFlZ3iG7utnPLNYDamyNVJfA2duHucXaddzDT1H8zkAWTHaBp
-	QaHETtcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sKZzLqcNUoqlytR6FkcisLnedxemVrbnAuWKq2VNO9c=; b=sFoVgIVbFO3Ld+5hMOkW7BI/f
+	Lh0NORkGVz6m/HuSSzjrE9vWbvs3OGhIaCjVR9L8FFYyOyMs8jHBfCtGGn9HSeSUso0A2YCUHSOgc
+	y5CinjlSVwaVhPfTPCkbDHxINhZDmPU5Dp75zecdYctUfBNm3PLgsMMrU/Y65/qgf9MsYQmMpaXOj
+	7wWs6DiRLlBYU7T5iZoFp+HfP0tEePVAJaw2PZA55lkZCA8aOYjS5Isqh2RUh4wPzVBrHEdMll2K4
+	FcOkcjxggNKDzjNNRHxN49dLTla5xORy0/CjE0pGSYvU7cZcxADGfN6PvX/FisxWxmJFEbm3bqSZP
+	ezq08a3fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRfe-0008NA-8i; Thu, 12 Mar 2020 17:30:58 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jCRgT-0000oi-BM; Thu, 12 Mar 2020 17:31:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRfT-0008M6-U9; Thu, 12 Mar 2020 17:30:49 +0000
-Received: by mail-wr1-x443.google.com with SMTP id l18so8519195wru.11;
- Thu, 12 Mar 2020 10:30:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=x3OsNYo4WOFc4e3N45xENkSPMvXkKhjC6Ed5es5ifqc=;
- b=g6RAegYueXWuES+iYPK9Gx7ix10quTgc1ud5mKsYb3JnooppxE0lL1gjlhqcSCzaQj
- J/HpKmkgG1HkW6I6eDyzTS7nsc0xqLs9o0Ew4C14V6N+HogqAbYe4OtujhizuUqlpZR5
- rulWdJPyPze13u9HQ9NENF7fALTj1bdbjZDh92TloU9d78F3K8M1khhOakADPAZEffjL
- WquoKWFqAFPYlEHDxJp2bOoe38p89iKuifCU82U5+NdiB3jpZFc6lwfRNiWw8pAi3q0v
- LpnjMSR7EfUQfh8nsNXo+Xg/U2LR+yOVrAVKlQWtk0IuJWsUkKXk8w+1EXbtNOcTURHT
- hCeg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=x3OsNYo4WOFc4e3N45xENkSPMvXkKhjC6Ed5es5ifqc=;
- b=iEzdArI9D8YGHxHWct+jWqlO9Z5adnbgnFc1ivI1sX63Zjv0H+XTOdGCt/OigG9u/q
- MhUacyBcXRqFOFB8fQQWrFH6vvLjvumx4yB4dNLuHCC68++33RzDvo/6FRQ9mWt3CglH
- RD9MTG4zgys4+fdC1X6GRrePHqVRaOayf1Jw8Je1GgT4mIxTBCwoDUyvABvl7NiFqXE1
- ql854csb/eXHkl1TwJX6xjF6awH06h7anjP59XJmXt1vbdBlabsMjh/1KztJJRiJ2kQA
- 5uLJylefN6Hvv9exn+z8InjxvqTvP5EvNKaiJi2zhQ38oLriw+fPE7CauwKySXbaQh8o
- QHrA==
-X-Gm-Message-State: ANhLgQ0FROSYG08mwAF6SRR6OTBiFwwpcMPHWz9rNi66Uxgb8I8sGRAc
- 4XN7Wx3lo8vywNXoJ6Y/gVE=
-X-Google-Smtp-Source: ADFU+vuaSKw7SYbH880phKppaz4MtvoEjwN3be8Iip/jpwF5n3XHQkpzzWFily55uljws4EM4ziA8A==
-X-Received: by 2002:a5d:6908:: with SMTP id t8mr12459365wru.92.1584034246665; 
- Thu, 12 Mar 2020 10:30:46 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x24sm13170222wmc.36.2020.03.12.10.30.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Mar 2020 10:30:46 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: lgirdwood@gmail.com
-Subject: [PATCH v1 2/2] dt-bindings: sound: rockchip-spdif: add
- #sound-dai-cells property
-Date: Thu, 12 Mar 2020 18:30:37 +0100
-Message-Id: <20200312173037.21477-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200312173037.21477-1-jbx6244@gmail.com>
-References: <20200312173037.21477-1-jbx6244@gmail.com>
+ id 1jCRgI-0000nV-NK
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 17:31:41 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3AAF1206B1;
+ Thu, 12 Mar 2020 17:31:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584034298;
+ bh=n2Pp5AcyDGEum+ApqygaXC11A3ogD+//DnqxMAEod+o=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=N6zT3pYzkxJpncsdAy7gAI+9sua6GeYm6byJ0XGapzdkXB5DET1uSCvM9sgZ8FSTD
+ UxUvFzoJIVCFxMwvuvTMyACSryE2cEDxCcswX5C7GcZs2Gw3XVyQjeEEax3LvSTJfq
+ y1Lq0cQZuSVgrZRLH5ZH/3Rd6uFNFIcLxeVNy3gg=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jCRgG-00CHUT-JL; Thu, 12 Mar 2020 17:31:36 +0000
+MIME-Version: 1.0
+Date: Thu, 12 Mar 2020 17:31:36 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH v6 00/18] arm64: return address signing
+In-Reply-To: <bd76de32-12c5-fcbe-25d2-c501f9491bee@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
+ <79a45ce2-a632-9821-986e-1f48cb0121c9@arm.com>
+ <98ad6e44-7aef-9ad2-0398-d5d412d8bb23@arm.com>
+ <b5ca043cfaca30435957974d0f58524e@kernel.org>
+ <7ba381f0-095d-6994-bb6d-12b2665b4a8e@arm.com>
+ <c5889c07a559426798ed508da5755d9e@kernel.org>
+ <bd76de32-12c5-fcbe-25d2-c501f9491bee@arm.com>
+Message-ID: <87945e6110511caaceeb3f1294b6f88f@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: james.morse@arm.com, amit.kachhap@arm.com,
+ linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
+ keescook@chromium.org, ardb@kernel.org, catalin.marinas@arm.com,
+ suzuki.poulose@arm.com, will@kernel.org, ramana.radhakrishnan@arm.com,
+ kristina.martsenko@arm.com, Dave.Martin@arm.com, Vincenzo.Frascino@arm.com,
+ broonie@kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_103047_977019_70FBCCD4 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200312_103138_799807_BC8FB6EA 
+X-CRM114-Status: GOOD (  20.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,56 +99,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-'#sound-dai-cells' is required to properly interpret
-the list of DAI specified in the 'sound-dai' property,
-so add them to 'rockchip-spdif.yaml'
+Hi James,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+On 2020-03-12 17:26, James Morse wrote:
+> Hi Amit, Marc,
+> 
+> On 12/03/2020 15:05, Marc Zyngier wrote:
+>> On 2020-03-12 13:21, Amit Kachhap wrote:
+>>> On 3/12/20 6:17 PM, Marc Zyngier wrote:
+>>>> On 2020-03-12 08:06, Amit Kachhap wrote:
+>>>>> On 3/12/20 12:23 PM, Amit Kachhap wrote:
+>>>>>> On 3/11/20 2:58 PM, James Morse wrote:
+>>>>>>> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+>>>>>>>> This series improves function return address protection for the 
+>>>>>>>> arm64 kernel, by
+>>>>>>>> compiling the kernel with ARMv8.3 Pointer Authentication 
+>>>>>>>> instructions (referred
+>>>>>>>> ptrauth hereafter). This should help protect the kernel against 
+>>>>>>>> attacks using
+>>>>>>>> return-oriented programming.
+>>>>>>> 
+>>>>>>> (as it looks like there may be another version of this:)
+>>>>>>> 
+>>>>>>> Am I right in thinking that after your patch 10 changing
+>>>>>>> cpu_switch_to(), only the A key is live during kernel execution?
+>>>>>> 
+>>>>>> Yes
+> 
+>>>>>>> KVM is still save/restoring 4 extra keys around guest-entry/exit. 
+>>>>>>> As you
+>>>>>>> restore all the keys on return to user-space, is this still 
+>>>>>>> necessary?
+>>>>>> 
+>>>>>> Yes Its a good optimization to skip 4 non-A keys. I was wondering 
+>>>>>> whether to do it in
+>>>>>> this series or send it separately.
+>>>>> 
+>>>>> I suppose we can only skip non-A keys save/restore for host 
+>>>>> context. If
+>>>>> we skip non-A keys for guest context then guest with old 
+>>>>> implementation
+>>>>> will break. Let me know your opinion.
+>>>> 
+>>>> I don't think you can skip anything as far as the guest is 
+>>>> concerned.
+>>>> But being able to skip the B keys (which is what I expect you call 
+>>>> the
+>>>> non-A keys) on the host would certainly be useful.
+> 
+>> But if KVM doesn't save/restore the host's B-keys in the world switch,
+>> then you must make sure that no host userspace can make use of them,
+>> as they would be the guest's keys.
+> 
+> Yes, the arch code entry.S changes cover this with
+> ptrauth_keys_install_user. It restores
+> 4 keys, and the generic key.
+> 
+> 
+> We always need to save/restore all the guest keys (as we do today).
+> But when ptrauth_restore_state restores the host keys, it only needs
+> to restore the one
+> the kernel uses. (possibly using the same macro's so it stays up to 
+> date?!)
+> 
+> If we return to user-space, the arch code's entry code does the right 
+> thing.
+> KVM's user-space peeking at the keys will see the saved values.
+> 
+> 
+> My original question was more around: do we need to do this now, or
+> can we clean it up in
+> a later kernel version?
+> 
+> (and a sanity check that it doesn't lead to a correctness problem)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-index 45c6eea30..39aa0b4f7 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -59,6 +59,9 @@ properties:
-       The phandle of the syscon node for the GRF register.
-       Required property on RK3288.
- 
-+  "#sound-dai-cells":
-+    const: 0
-+
- required:
-   - compatible
-   - reg
-@@ -67,6 +70,7 @@ required:
-   - clock-names
-   - dmas
-   - dma-names
-+  - "#sound-dai-cells"
- 
- if:
-   properties:
-@@ -93,4 +97,5 @@ examples:
-       clock-names = "mclk", "hclk";
-       dmas = <&dmac1_s 8>;
-       dma-names = "tx";
-+      #sound-dai-cells = <0>;
-     };
+I think what we have now is sane, and doesn't seem to lead to any
+issue (at least that I can see). We can always optimize this at a
+later point.
+
+Thanks,
+
+        M.
 -- 
-2.11.0
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
