@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92A7F182CDC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:57:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06AE3182CDD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 10:57:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=o7QnnJ+Uz917S5TcgQjElOWqgZGbdkVdVLwO33MfOEQ=; b=W+H
-	XpL3d2fqURutNI8uOY/RzrOhCBkJ6RuYch1FHBEHw82uCHhMP2f9Q4DpfG+ix9FbdfJdxFjBf9iss
-	k9cjcpTAhR5WE0SCiGgvaMzJUrtgmbGmx7ZcM4Ex4aOIIuzK6Je3wkmWuW7WVaAjrXD4ojrEKKanJ
-	YzokwTkHUdVCRnKSqFFIVYNhZ06lmkhm57P7R0vkJxY+At3a0xsvpKpWUOT/Xy+KLdtOMD5rzUe0P
-	J6nxyDOF+QCRHlg84z1MaGgSl2DtV+NDHzPNWPHNJH75ucYDXMpRus1/4HmtZdtqJU2lWnHCjZRZG
-	TAeFsXvaIaAoRP4M0PpbBMhC8eZ4s2A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Lybm5tTe+bQdvVLDuBY7l1I4LzNJeY2p2GBdZEKsQxc=; b=FkXomGtFIOFsPyuaalPHDmRZ+M
+	HbktnG+LdpD08RIPfF/Fo2x7r5IIGV0TrWJ3LBLR1LeTG3iRdkpzRpAu7eCX3NNGAHHkIZrRaT0ym
+	ZEinKSgqPkkSRv/6wvnkETEnUqmYET38Fhx3miD0YdsmkeVjWN78+FSWvBwKaDVvovG7HvFROV71W
+	gL+vBkDNfxlIp6ytwwgbtsGUQDfGl6nfBdwGYhoxcNG+MeJaRWqdvFvU88g4bWPn/nlxBF2TrW3yS
+	kZ4/43pklwuMRSCCdTCoiAsMjHdI+FE8RYIk+kNDIqaNs+wqQRmgVx01pKo5HzxG1j5A60ooPutZ0
+	c006qNmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCKaI-0003na-Pw; Thu, 12 Mar 2020 09:56:58 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jCKaY-0003xA-3c; Thu, 12 Mar 2020 09:57:14 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCKa8-0003mV-SQ
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 09:56:50 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9D647200DE8;
- Thu, 12 Mar 2020 10:56:47 +0100 (CET)
+ id 1jCKaB-0003mj-1e
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 09:56:52 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 855091A0F32;
+ Thu, 12 Mar 2020 10:56:48 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5FE38200DC5;
- Thu, 12 Mar 2020 10:56:42 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 484341A0A59;
+ Thu, 12 Mar 2020 10:56:43 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C495C402CA;
- Thu, 12 Mar 2020 17:56:35 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B71F1402D5;
+ Thu, 12 Mar 2020 17:56:36 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: dts: imx7: Correct CPU supply name
-Date: Thu, 12 Mar 2020 17:50:12 +0800
-Message-Id: <1584006613-31623-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] ARM: dts: imx7d: Add cpu1 supply
+Date: Thu, 12 Mar 2020 17:50:13 +0800
+Message-Id: <1584006613-31623-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1584006613-31623-1-git-send-email-Anson.Huang@nxp.com>
+References: <1584006613-31623-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_025649_060375_7BEC4D33 
-X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-CacheID: sfid-20200312_025651_223069_0821A967 
+X-CRM114-Status: UNSURE (   8.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -54,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,55 +78,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX7 uses cpufreq-dt driver which requires the CPU supply name to be
-either "cpu0-supply" or "cpu-supply", correct it.
+Each cpu-core is supposed to list its supply separately, add
+supply for cpu1.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx7-tqma7.dtsi    | 2 +-
- arch/arm/boot/dts/imx7d-zii-rmu2.dts | 2 +-
- arch/arm/boot/dts/imx7d-zii-rpu2.dts | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/imx7d-cl-som-imx7.dts | 4 ++++
+ arch/arm/boot/dts/imx7d-colibri.dtsi    | 4 ++++
+ arch/arm/boot/dts/imx7d-nitrogen7.dts   | 4 ++++
+ arch/arm/boot/dts/imx7d-sdb.dts         | 4 ++++
+ arch/arm/boot/dts/imx7d-tqma7.dtsi      | 4 ++++
+ 5 files changed, 20 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx7-tqma7.dtsi b/arch/arm/boot/dts/imx7-tqma7.dtsi
-index 9aaed85..8773344 100644
---- a/arch/arm/boot/dts/imx7-tqma7.dtsi
-+++ b/arch/arm/boot/dts/imx7-tqma7.dtsi
-@@ -16,7 +16,7 @@
+diff --git a/arch/arm/boot/dts/imx7d-cl-som-imx7.dts b/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
+index 89267cd..713483c 100644
+--- a/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
++++ b/arch/arm/boot/dts/imx7d-cl-som-imx7.dts
+@@ -37,6 +37,10 @@
+ 	cpu-supply = <&sw1a_reg>;
  };
  
- &cpu0 {
--	arm-supply = <&sw1a_reg>;
++&cpu1 {
 +	cpu-supply = <&sw1a_reg>;
++};
++
+ &fec1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_enet1>;
+diff --git a/arch/arm/boot/dts/imx7d-colibri.dtsi b/arch/arm/boot/dts/imx7d-colibri.dtsi
+index e2e327f..cae3299 100644
+--- a/arch/arm/boot/dts/imx7d-colibri.dtsi
++++ b/arch/arm/boot/dts/imx7d-colibri.dtsi
+@@ -50,6 +50,10 @@
+ 	};
  };
  
- &i2c1 {
-diff --git a/arch/arm/boot/dts/imx7d-zii-rmu2.dts b/arch/arm/boot/dts/imx7d-zii-rmu2.dts
-index 2b8d6cc..e5e20b0 100644
---- a/arch/arm/boot/dts/imx7d-zii-rmu2.dts
-+++ b/arch/arm/boot/dts/imx7d-zii-rmu2.dts
-@@ -33,7 +33,7 @@
++&cpu1 {
++	cpu-supply = <&reg_DCDC2>;
++};
++
+ &gpmi {
+ 	status = "okay";
+ };
+diff --git a/arch/arm/boot/dts/imx7d-nitrogen7.dts b/arch/arm/boot/dts/imx7d-nitrogen7.dts
+index 6b4acea..e0751e6 100644
+--- a/arch/arm/boot/dts/imx7d-nitrogen7.dts
++++ b/arch/arm/boot/dts/imx7d-nitrogen7.dts
+@@ -121,6 +121,10 @@
+ 	cpu-supply = <&sw1a_reg>;
  };
  
- &cpu0 {
--	arm-supply = <&sw1a_reg>;
++&cpu1 {
 +	cpu-supply = <&sw1a_reg>;
++};
++
+ &fec1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_enet1>;
+diff --git a/arch/arm/boot/dts/imx7d-sdb.dts b/arch/arm/boot/dts/imx7d-sdb.dts
+index 869efbc..17cca8a 100644
+--- a/arch/arm/boot/dts/imx7d-sdb.dts
++++ b/arch/arm/boot/dts/imx7d-sdb.dts
+@@ -162,6 +162,10 @@
+ 	cpu-supply = <&sw1a_reg>;
  };
  
- &ecspi1 {
-diff --git a/arch/arm/boot/dts/imx7d-zii-rpu2.dts b/arch/arm/boot/dts/imx7d-zii-rpu2.dts
-index 39812c9..cbf0dbb 100644
---- a/arch/arm/boot/dts/imx7d-zii-rpu2.dts
-+++ b/arch/arm/boot/dts/imx7d-zii-rpu2.dts
-@@ -182,7 +182,7 @@
- };
- 
- &cpu0 {
--	arm-supply = <&sw1a_reg>;
++&cpu1 {
 +	cpu-supply = <&sw1a_reg>;
- };
++};
++
+ &ecspi3 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_ecspi3>;
+diff --git a/arch/arm/boot/dts/imx7d-tqma7.dtsi b/arch/arm/boot/dts/imx7d-tqma7.dtsi
+index 8ad3048..598aed1 100644
+--- a/arch/arm/boot/dts/imx7d-tqma7.dtsi
++++ b/arch/arm/boot/dts/imx7d-tqma7.dtsi
+@@ -9,3 +9,7 @@
  
- &clks {
+ #include "imx7d.dtsi"
+ #include "imx7-tqma7.dtsi"
++
++&cpu1 {
++	cpu-supply = <&sw1a_reg>;
++};
 -- 
 2.7.4
 
