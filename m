@@ -2,109 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18D08183E47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:07:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A8BE183E4D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:08:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yYLQqmC9fPAqGy+szGEtmV+W+eAAIQl6NWgDkDbkQyc=; b=mRct5ZjIbWviZe
-	DbKnKAkYcrHTvDy8K/jyFL4TC8Cx2K3sqYgq6ni9RwyExlx/GhT1Znx9vXQUpqZ9nsvyX8WB5cxMc
-	ZgUxLxKFtUuqzpyjW+2x2Okw7/WCXyW97H58LjAedyjlCne5p6cCbC8y7WoaSA2/0xwrwGXTonO/3
-	qANKWqYkz2TFBFlzODMxKQWtyeSEFAPTyNH6fAYnde1qRGvGt2GPaHRKtZwr1rTmS2VHYgXrYdW2c
-	z8uJTIgxfJbo1djjR4138g6eUR9l13i3rjORsw7n+PXPTwghesSt+CtzQ7lSMdC/OT6a8JrNzx7x1
-	Qw7sgtnNSYsKM5Ud/GuA==;
+	List-Owner; bh=bfTJDQIc4fVr0/v/g1LYIbgWW8PBagaz51XHkDP5weg=; b=ayEEKObfqJcokA
+	edgLyLBewsJq2TAyxix0mj9O83jvwSthJLDI+TWiN2r4d9fglykGBdyF97VvzUOXk1vcn1RdQEFix
+	QWhoX3jZ2+VCX1g8MoZ5+M5uzY7cIat56rOZFtmMCi/lDbRL94842IP1Z/m8XyWz+4FUjC4tByIHI
+	GBbbWsSGsfbDUckbPj80XH5Wb7nor4kS6KY21fIF4RI6XUZV2ypehVEB+YtMTdcscFhr5YQXdY7GD
+	v2eMJv0wRRsovS2k6t9vjikVBWHMT0TZkcanHZoC6QV87syMl8gTq08hNT22ZWHcTj1eYFqTw8hR8
+	cEUBFGEtgf/0+NUeQ1Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYnI-00034s-46; Fri, 13 Mar 2020 01:07:20 +0000
-Received: from mail-eopbgr140050.outbound.protection.outlook.com
- ([40.107.14.50] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1jCYoB-0003RB-14; Fri, 13 Mar 2020 01:08:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYn7-00034C-Gu
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 01:07:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UOPp6+en2SP3fcX2YeNA6KdNLGOsAuXxVcSBLDqCylZ1SxuSmjAWXwXcD38H1FJ3vgeEyhO5MGItqmztXDzqdUN1hd1PXt9LFFeWidpAy45ddue7EmakiYh1MmS3JxwqWcotkdVt02oiFX/QUMO+X+VCks6nEdERYln9WNGJo/n0+EVWGACrFylp9jzgQmk1/US2N9cFEsi08Q5DGOSo9DDBP2bW9qS5INzvwreT0w1pREFtdxu2QtvN2FF6sGE0QocmN3mptPoIOdfuag1VH/dOt3eppg0XXOOlHwRDp8LtyyLuvqlK1xRe7OtwaANzMsBhDEOW5OaeZZRaAh1teg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y5niwCAsrxLTwgaXbUvUZX5n1KE9z0NUD17qbohRrZ8=;
- b=iFXHaMtpWM7HRWhgYm/K82neL+poSrzFRlcftI6FiUYb6zsXfbVUGnE6EEsJymgthj7zQra3mtROvMr7UMhmwTCXpJHx1ScjvY84y4YzXUDr/SC/Wl/HcVjYqxL7yaVkB7cbQH2jbi6KlI4FFDjpbFniQVsE5l9rRCcUC9LmK+w2acLXAUSFcLm8E2nYUiStf8cTPrFqSThdIoOr8pyxLTJl1EY3UkZ3zsb2EFt1sF4XipMPiTkjf5O+iOLO9BZHR0NEE6D1qCfjJh6hZmkuuu34/cpDe1LfkW2HhdFh13aZET152D8XJz/EpeogaXIf/T4jc1lmCiAA7K2ayFfQSQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y5niwCAsrxLTwgaXbUvUZX5n1KE9z0NUD17qbohRrZ8=;
- b=QRCyIDgEpuMS1YkvWIgHQzAMMwVrBtSfdjEMF+DX/jzcvkYa51avb814SJEXR8QQ6rn3g2o8HRbcNTLY79L8ckp0ml03LLfl/CQv+KlGBXPSSXHvHgy+SA83cc93UMG/zYfWE/hBLnhtQ25uJYHyGCpuAf3OIGjCjR71p/LSV2E=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5986.eurprd04.prod.outlook.com (20.178.116.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.17; Fri, 13 Mar 2020 01:07:05 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
- 01:07:05 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, "jassisinghbrar@gmail.com"
- <jassisinghbrar@gmail.com>, "o.rempel@pengutronix.de"
- <o.rempel@pengutronix.de>
-Subject: RE: [PATCH V6 0/4] mailbox/firmware: imx: support SCU channel type
-Thread-Topic: [PATCH V6 0/4] mailbox/firmware: imx: support SCU channel type
-Thread-Index: AQHV8emRGg+Z0s59ZUi7vGFwjsJP+qhFwwug
-Date: Fri, 13 Mar 2020 01:07:05 +0000
-Message-ID: <AM0PR04MB448123609B2FE8F5ECAF1F4388FA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1583300977-2327-1-git-send-email-peng.fan@nxp.com>
- <VI1PR04MB7023455D0FE9766FFBE1EE5EEEFD0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB7023455D0FE9766FFBE1EE5EEEFD0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: cdbedf90-873d-41d4-03f1-08d7c6ead8c7
-x-ms-traffictypediagnostic: AM0PR04MB5986:|AM0PR04MB5986:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB59862449CF87B73670A2452588FA0@AM0PR04MB5986.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1775;
-x-forefront-prvs: 034119E4F6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(396003)(346002)(366004)(376002)(199004)(8936002)(81156014)(81166006)(66556008)(44832011)(316002)(33656002)(186003)(86362001)(26005)(966005)(66476007)(76116006)(6506007)(53546011)(66446008)(64756008)(7696005)(54906003)(66946007)(110136005)(71200400001)(52536014)(15650500001)(5660300002)(9686003)(478600001)(8676002)(4326008)(55016002)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5986;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 63cYTHs4W7nyoR4T8VXkEcNT2ar2aY6amDo+xbb5CoCAAy3sWMMSz4REz1Rodk90n8uuS1KtsH1JKa6HWt6Pul5ROE6X27rVNXXl7ux9BHM8kgcAsoNDBH0H1WE6qmCAQr3SfQmqip/O5INrkPfh+++WmWpSSY89m/3/XwhPfR/egQbCGrxl2HEASmFBWLE1MFU0IgS9SFHki2z867wzWSF0cvukT6PWab/TgEjsW//r2Nax/d5LUYIcQa0c74Yd5eYz2AOK2lP8id4/UJzgeiBaLpIc8rw/c5x+HbYYehDBAxDvxgoysOYSZUKCXAtmLZFDUPfcZ/3X63x+KxNmBp9hnTiLnKsJ4Eo2Tc0ObOc6edKybAnfvfir/ZvQaU6OPdu4SC20bXcog1rxeKbsMNK6WNqxxuzM1legKALPu3Fr8JJ5aJyZa5WzyO4mVqQ0fL+kuwtYrSKPLMk7c2kn8GdzDZzUkCqhO7zaDbSZ5mlrXmGmc7OGS2O9OVA4iA54yPiqskUBwRWVM5vAPAa3LQ==
-x-ms-exchange-antispam-messagedata: mZ3MFL3+CSaxjVvbk3RDE+XNWgS1E28Jlwf+ppBJ3Rvq9jlukQF2xHkqj1YoEIaBZt+1MlGWDGBGKajEuhF+fiUaVdkymI6UPKDLX/39058pYxo7Y99134U8J+hpsiPhneehhX7drQbMfwfN0E0YdA==
+ id 1jCYo2-0003Qo-RY; Fri, 13 Mar 2020 01:08:08 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 68DC020637;
+ Fri, 13 Mar 2020 01:08:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584061686;
+ bh=huEXu4fEaR36Ih1ki6oSbyO2Ljqw/b2nps3dQae6quM=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=tcCm+pFo0bI3PzNwHW1FNS0Y4pKCzoj7LBVNj6HrlHelXTg7D6IZqc8jxUhJmwh2Z
+ cFo+kCWxnMVnulnTe8GdD1iMtzYLCkSq/hpA+Dwj5UvPHQRbU1NM1RyOgKdu9xH/3H
+ ntfuyLUKfrnARLfjankKgWRjOnCfUozAQ5zUaToI=
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cdbedf90-873d-41d4-03f1-08d7c6ead8c7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 01:07:05.6333 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: XnEjNKtpOtd4hTaUVYDTjfy+SEV458dOCLKBg2FX7WmQ6K5FSgTxLfa9CrBB7CfTFSyN+BjKG4pL2Ya7WoPRmQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5986
+In-Reply-To: <d197ab836d84b89b94ff1927872126767d921e94.1582533919.git-series.maxime@cerno.tech>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <d197ab836d84b89b94ff1927872126767d921e94.1582533919.git-series.maxime@cerno.tech>
+Subject: Re: [PATCH 22/89] clk: bcm: rpi: Discover the firmware clocks
+From: Stephen Boyd <sboyd@kernel.org>
+To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Date: Thu, 12 Mar 2020 18:08:05 -0700
+Message-ID: <158406168552.149997.10601766692457449295@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_180709_630698_5777083B 
-X-CRM114-Status: GOOD (  22.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_180806_938648_A30807E2 
+X-CRM114-Status: GOOD (  15.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.50 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -112,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,120 +76,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
-
-> Subject: Re: [PATCH V6 0/4] mailbox/firmware: imx: support SCU channel
-> type
+Quoting Maxime Ripard (2020-02-24 01:06:24)
+> The firmware has an interface to discover the clocks it exposes.
 > 
-> On 2020-03-04 7:55 AM, Peng Fan wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > V6:
-> >   Add Oleksij's R-b tag
-> >   Patch 3/4, per
-> https://www.kernel.org/doc/Documentation/printk-formats.txt
-> >   should use %zu for printk sizeof
-> >
-> > V5:
-> >   Move imx_mu_dcfg below imx_mu_priv
-> >   Add init hooks to imx_mu_dcfg
-> >   drop __packed __aligned
-> >   Add more debug msg
-> >   code style cleanup
-> >
-> > V4:
-> >   Drop IMX_MU_TYPE_[GENERIC, SCU]
-> >   Pack MU chans init to separate function
-> >   Add separate function for SCU chans init and xlate
-> >   Add santity check to msg hdr.size
-> >   Limit SCU MU chans to 6, TX0/RX0/RXDB[0-3]
-> >
-> > V3:
-> >   Rebase to Shawn's for-next
-> >   Include fsl,imx8-mu-scu compatible
-> >   Per Oleksij's comments, introduce generic tx/rx and added scu mu type
-> >   Check fsl,imx8-mu-scu in firmware driver for fast_ipc
-> >
-> > V2:
-> >   Drop patch 1/3 which added fsl,scu property
-> >   Force to use scu channel type when machine has node compatible
-> "fsl,imx-scu"
-> >   Force imx-scu to use fast_ipc
-> >
-> >   I not found a generic method to make SCFW message generic enough,
-> SCFW
-> >   message is not fixed length including TX and RX. And it use TR0/RR0
-> >   interrupt.
-> >
-> > V1:
-> > Sorry to bind the mailbox/firmware patch together. This is make it to
-> > understand what changed to support using 1 TX and 1 RX channel for
-> > SCFW message.
-> >
-> > Per i.MX8QXP Reference mannual, there are several message using
-> > examples. One of them is:
-> > Passing short messages: Transmit register(s) can be used to pass short
-> > messages from one to four words in length. For example, when a
-> > four-word message is desired, only one of the registers needs to have
-> > its corresponding interrupt enable bit set at the receiver side.
-> >
-> > This patchset is to using this for SCFW message to replace four TX and
-> > four RX method.
-> 
-> Tested-by: Leonard Crestez <leonard.crestez@nxp.com>
-> 
+> Let's use it to discover, register the clocks in the clocks framework and
+> then expose them through the device tree for consumers to use them.
 
-Thanks for the test.
+Everyone's doing it! :)
 
-> My stress tests pass on imx8qxp with this patcheset, however performance is
-> not greatly improved. My guess is that this happens because of too many
-> interrupts.
+> diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
+> index 3f21888a3e3e..bf6a1e2dc099 100644
+> --- a/drivers/clk/bcm/clk-raspberrypi.c
+> +++ b/drivers/clk/bcm/clk-raspberrypi.c
+> @@ -285,6 +285,95 @@ static struct clk_hw *raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+>         return &raspberrypi_clk_pllb_arm.hw;
+>  }
+>  
+> +static long raspberrypi_fw_dumb_round_rate(struct clk_hw *hw,
+> +                                          unsigned long rate,
+> +                                          unsigned long *parent_rate)
+> +{
+> +       return rate;
 
-Might be. Could you share your testcase?
+Can we get a comment here like "The firmware does the rounding but
+doesn't tell us so we have to assume anything goes!"
 
-> 
-> Is there really a reason to enable TIE? Spinning on TE bits without any
-> interrupts should be just plain faster.
+> +}
+> +
+> +static const struct clk_ops raspberrypi_firmware_clk_ops = {
+> +       .is_prepared    = raspberrypi_fw_is_prepared,
+> +       .recalc_rate    = raspberrypi_fw_get_rate,
+> +       .round_rate     = raspberrypi_fw_dumb_round_rate,
+> +       .set_rate       = raspberrypi_fw_set_rate,
+> +};
+> +
+> +static struct clk_hw *raspberrypi_clk_register(struct raspberrypi_clk *rpi,
+> +                                              unsigned int parent,
+> +                                              unsigned int id)
+> +{
+> +       struct raspberrypi_clk_data *data;
+> +       struct clk_init_data init = {};
+> +       int ret;
+> +
+> +       if (id == RPI_FIRMWARE_ARM_CLK_ID) {
+> +               struct clk_hw *hw;
+> +
+> +               hw = raspberrypi_register_pllb(rpi);
+> +               if (IS_ERR(hw)) {
+> +                       dev_err(rpi->dev, "Failed to initialize pllb, %ld\n",
+> +                               PTR_ERR(hw));
+> +                       return hw;
+> +               }
+> +
+> +               hw = raspberrypi_register_pllb_arm(rpi);
+> +               if (IS_ERR(hw))
+> +                       return hw;
+> +
+> +               return hw;
 
-I could try to disable TIE and give a try. If performance improves lot, I could
-change to non TX interrupt.
+Why the double return? Not just
 
-Oleksij, do you agree?
+	return raspberrypi_register_pllb_arm(rpi);
 
-Thanks,
-Peng.
+> +       }
+> +
+> +       data = devm_kzalloc(rpi->dev, sizeof(data), GFP_KERNEL);
+> +       if (!data)
+> +               return ERR_PTR(-ENOMEM);
+> +       data->rpi = rpi;
+> +       data->id = id;
+> +
+> +       init.name = devm_kasprintf(rpi->dev, GFP_KERNEL, "fw-clk-%u", id);
+> +       init.ops = &raspberrypi_firmware_clk_ops;
+> +       init.flags = CLK_GET_RATE_NOCACHE | CLK_IGNORE_UNUSED;
 
-> 
-> >
-> > Peng Fan (4):
-> >    dt-bindings: mailbox: imx-mu: add SCU MU support
-> >    mailbox: imx: restructure code to make easy for new MU
-> >    mailbox: imx: add SCU MU support
-> >    firmware: imx-scu: Support one TX and one RX
-> >
-> >   .../devicetree/bindings/mailbox/fsl,mu.txt         |   2 +
-> >   drivers/firmware/imx/imx-scu.c                     |  54 ++++-
-> >   drivers/mailbox/imx-mailbox.c                      | 267
-> +++++++++++++++++----
-> >   3 files changed, 260 insertions(+), 63 deletions(-)
-> >
-> >
-> > base-commit: 770fbb32d34e5d6298cc2be590c9d2fd6069aa17
-> >
+Why ignore unused? Doesn't seem to support enable/disable anyway so not
+sure this flag adds any value.
 
+> +
+> +       data->hw.init = &init;
+> +
+> +       ret = devm_clk_hw_register(rpi->dev, &data->hw);
+> +       if (ret)
+> +               return ERR_PTR(ret);
+> +
+> +       return &data->hw;
+> +}
+> +
+> +static int raspberrypi_discover_clocks(struct raspberrypi_clk *rpi,
+> +                                      struct clk_hw_onecell_data *data)
+> +{
+> +       struct rpi_firmware_get_clocks_response *clks;
+> +       size_t clks_size = NUM_FW_CLKS * sizeof(*clks);
+> +       int ret;
+> +
+> +       clks = devm_kzalloc(rpi->dev, clks_size, GFP_KERNEL);
+
+Use devm_kcalloc to avoid overflow and indicate it's an array.
+
+> +       if (!clks)
+> +               return -ENOMEM;
+> +
+> +       ret = rpi_firmware_property(rpi->firmware, RPI_FIRMWARE_GET_CLOCKS,
+> +                                   clks, clks_size);
+> +       if (ret)
+> +               return ret;
+> +
+> +       while (clks->id) {
+> +               struct clk_hw *hw;
+> +
+> +               hw = raspberrypi_clk_register(rpi, clks->parent, clks->id);
+> +               if (IS_ERR(hw))
+> +                       return PTR_ERR(hw);
+> +
+> +               data->hws[clks->id] = hw;
+> +               data->num = clks->id + 1;
+> +               clks++;
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+>  static int raspberrypi_clk_probe(struct platform_device *pdev)
+>  {
+>         struct clk_hw_onecell_data *clk_data;
+> diff --git a/include/soc/bcm2835/raspberrypi-firmware.h b/include/soc/bcm2835/raspberrypi-firmware.h
+> index 7800e12ee042..e5b7a41bba6b 100644
+> --- a/include/soc/bcm2835/raspberrypi-firmware.h
+> +++ b/include/soc/bcm2835/raspberrypi-firmware.h
+> @@ -135,6 +135,11 @@ enum rpi_firmware_property_tag {
+>         RPI_FIRMWARE_GET_DMA_CHANNELS =                       0x00060001,
+>  };
+>  
+> +struct rpi_firmware_get_clocks_response {
+> +       __le32  parent;
+> +       __le32  id;
+
+Why double spaced or tabbed out?
+
+> +};
+> +
+>  #if IS_ENABLED(CONFIG_RASPBERRYPI_FIRMWARE)
+>  int rpi_firmware_property(struct rpi_firmware *fw,
 
 _______________________________________________
 linux-arm-kernel mailing list
