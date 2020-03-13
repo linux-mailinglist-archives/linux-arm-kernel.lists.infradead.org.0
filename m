@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D992118507F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 21:45:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECC0B185086
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 21:47:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzSqkoij7SmT+3lvTUY40qGrGBuEH2e7Z0BL58bWH4A=; b=rYLKuJhHAf4b2U
-	Dd1DihfNVYCS2CyKbt+UsZ+c2NRpyj3hrkLibkt+oKuhzrN1rVr3EBfMA/h0A5Llb5sDBFs8tCQjE
-	RrLDSPw5nTzyFRJCRB8R2HkJbRgrHIzPgSMr6YkPk6emtG+wKypGc+xWqtHilnIQ/bh8reIO3IlEf
-	sHyxZqFAUfGdzX5SK+i4nWNfdH+pGK5FS7ITlbJ+1yIOale8v4fAWDjd5SC4Dl3mpAIOhEB6WX5dO
-	2s6kviR31wKxqVm+ZflYKbuRsAm7B5K4Mc166kOKLYST4odOirTdXHGacJaVZ7THCLZW6mkTzG+W2
-	N8hVQgpfsNNuJpHIiRoA==;
+	List-Owner; bh=T6iFhXkuPEQcDCE1vIFyspstPDmUue0gJfe9asaMKm0=; b=B+VUkXT9JArJdH
+	9eDx0dpusRc6hK/ooXvP5GPOXudR/SGtn3IWtwbzGoqN94nkTqsrP6ID9ZmLz9TbOtO4583JmDPYg
+	jfqXXYlNKKRLATe0GmEW4vyiV6Ij7YbX5eD6P52qaooIZPp2/Ao4riWF0tMDJdp9yxUHUrNFQh7oX
+	l/Sn3pMclq1Ofi5Ql10pxFylw3ZRgd3eySxlXNoqWZXPNANpQ5WAP1dgs5ZdGoJVDdsajHJZ/Eaoh
+	9tOygzL3COUJRh/4LDUhm4BKt+Cm0gP6uHjD8Eamh5fhCdjasb+X1VdZ9TxSPqzB8KIPgnCSXj0jt
+	ZhtZrtgdUIEdPKGCLllQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCrBS-00068f-Fc; Fri, 13 Mar 2020 20:45:30 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCrBF-00067e-Qm
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 20:45:19 +0000
-Received: from localhost (87-231-134-186.rev.numericable.fr [87.231.134.186])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id EB12B200004;
- Fri, 13 Mar 2020 20:45:05 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] arm: mach-dove: Mark dove_io_desc as __maybe_unused
-In-Reply-To: <20200306125638.8285-1-vincenzo.frascino@arm.com>
-References: <20200306125638.8285-1-vincenzo.frascino@arm.com>
-Date: Fri, 13 Mar 2020 21:45:04 +0100
-Message-ID: <87mu8kx9v3.fsf@FE-laptop>
+	id 1jCrDO-0006ko-AP; Fri, 13 Mar 2020 20:47:30 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCrDG-0006kQ-RK
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 20:47:24 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id AF93F8087;
+ Fri, 13 Mar 2020 20:48:08 +0000 (UTC)
+Date: Fri, 13 Mar 2020 13:47:19 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: soc@kernel.org
+Subject: Re: [GIT PULL] Fixes for omaps for v5.6-rc cycle
+Message-ID: <20200313204719.GG37466@atomide.com>
+References: <pull-1584131971-332655@atomide.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <pull-1584131971-332655@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_134518_008879_678E69C1 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200313_134722_923742_2C712119 
+X-CRM114-Status: GOOD (  17.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,42 +58,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>, Andrew Lunn <andrew@lunn.ch>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jason Cooper <jason@lakedaemon.net>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-omap@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VmluY2Vuem8gRnJhc2Npbm8gPHZpbmNlbnpvLmZyYXNjaW5vQGFybS5jb20+IHdyaXRlczoKCj4g
-V2l0aG91dCB0aGlzLCB3ZSBnZXQgdGhlIHdhcm5pbmdzIGJlbG93IHdoZW4gQ09ORklHX01NVSBp
-cyBkaXNhYmxlZDoKPgo+IGxpbnV4L2FyY2gvYXJtL21hY2gtZG92ZS9jb21tb24uYzo1MToyNDog
-d2FybmluZzog4oCYZG92ZV9pb19kZXNj4oCZIGRlZmluZWQKPiBidXQgbm90IHVzZWQgWy1XdW51
-c2VkLXZhcmlhYmxlXQo+IHN0YXRpYyBzdHJ1Y3QgbWFwX2Rlc2MgZG92ZV9pb19kZXNjW10gX19p
-bml0ZGF0YSA9IHsKPiAgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+fn5+fgo+Cj4gQ2M6
-IEphc29uIENvb3BlciA8amFzb25AbGFrZWRhZW1vbi5uZXQ+Cj4gQ2M6IEFuZHJldyBMdW5uIDxh
-bmRyZXdAbHVubi5jaD4KPiBDYzogU2ViYXN0aWFuIEhlc3NlbGJhcnRoIDxzZWJhc3RpYW4uaGVz
-c2VsYmFydGhAZ21haWwuY29tPgo+IENjOiBHcmVnb3J5IENsZW1lbnQgPGdyZWdvcnkuY2xlbWVu
-dEBib290bGluLmNvbT4KPiBDYzogUnVzc2VsbCBLaW5nIDxsaW51eEBhcm1saW51eC5vcmcudWs+
-Cj4gU2lnbmVkLW9mZi1ieTogVmluY2Vuem8gRnJhc2Npbm8gPHZpbmNlbnpvLmZyYXNjaW5vQGFy
-bS5jb20+CgpBcHBsaWVkIG9uIG12ZWJ1L2FybQoKVGhhbmtzLAoKR3JlZ29yeQo+IC0tLQo+ICBh
-cmNoL2FybS9tYWNoLWRvdmUvY29tbW9uLmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGlu
-c2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL21hY2gt
-ZG92ZS9jb21tb24uYyBiL2FyY2gvYXJtL21hY2gtZG92ZS9jb21tb24uYwo+IGluZGV4IDAxYjgz
-MGFmY2VhOS4uZGJlOTcwZTM3ODk1IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtL21hY2gtZG92ZS9j
-b21tb24uYwo+ICsrKyBiL2FyY2gvYXJtL21hY2gtZG92ZS9jb21tb24uYwo+IEBAIC00OCw3ICs0
-OCw3IEBACj4gIC8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
-KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKgo+ICAgKiBJL08gQWRkcmVzcyBNYXBwaW5n
-Cj4gICAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
-KioqKioqKioqKioqKioqKioqKioqKioqLwo+IC1zdGF0aWMgc3RydWN0IG1hcF9kZXNjIGRvdmVf
-aW9fZGVzY1tdIF9faW5pdGRhdGEgPSB7Cj4gK3N0YXRpYyBzdHJ1Y3QgbWFwX2Rlc2MgX19tYXli
-ZV91bnVzZWQgZG92ZV9pb19kZXNjW10gX19pbml0ZGF0YSA9IHsKPiAgCXsKPiAgCQkudmlydHVh
-bAk9ICh1bnNpZ25lZCBsb25nKSBET1ZFX1NCX1JFR1NfVklSVF9CQVNFLAo+ICAJCS5wZm4JCT0g
-X19waHlzX3RvX3BmbihET1ZFX1NCX1JFR1NfUEhZU19CQVNFKSwKPiAtLSAKPiAyLjI1LjEKPgoK
-LS0gCkdyZWdvcnkgQ2xlbWVudCwgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVu
-Z2luZWVyaW5nCmh0dHA6Ly9ib290bGluLmNvbQoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+* Tony Lindgren <tony@atomide.com> [200313 20:40]:
+> From: "Tony Lindgren" <tony@atomide.com>
+> 
+> The following changes since commit 51c22d7b40dca8b39a33b2c3b03f13122a2a1af3:
+> 
+>   ARM: OMAP2+: Fix compile if CONFIG_HAVE_ARM_SMCCC is not set (2020-02-26 10:49:25 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/fixes-rc5-signed
+> 
+> for you to fetch changes up to cfb5d65f25959f724081bae8445a0241db606af6:
+> 
+>   ARM: dts: dra7: Add bus_dma_limit for L3 bus (2020-03-13 07:40:55 -0700)
+> 
+> ----------------------------------------------------------------
+> Fixes for omap variants for v5.6-rc cycle
+> 
+> - Add bus_dma_limit for dra7 that fixes a SATA controller issue trying
+>   to do 64-bit DMA on LPAE kernels. We first had this only for SATA, but
+>   decided on the mailings lists that it applies to the whole interconnect
+> 
+> - Add missing quirk handling for lcdc on am335x to fix a suspend/resume
+>   issue. Note that this fix causes a minor merge conflict with patches
+>   pending in Linux next that I've already resolved in my updated
+>   omap-for-v5.7/ti-sysc branch, so I'll send a separate pull request for
+>   that
+> 
+> - Fix a regression for n900 onenand timings that caused onenand to
+>   not work depending on the version of onenand manufacturer
+> 
+> - Fix a regression for dm814x and j5eco for Ethernet that was again
+>   caused by the earlier changes to disable phy delay for RGMII mode
+>   but only recently noticed
+> 
+> ----------------------------------------------------------------
+> Arthur Demchenkov (1):
+>       ARM: dts: N900: fix onenand timings
+> 
+> Roger Quadros (1):
+>       ARM: dts: dra7: Add bus_dma_limit for L3 bus
+> 
+> Tomi Valkeinen (1):
+>       backlight: add led-backlight driver
+> 
+> Tony Lindgren (6):
+>       ARM: dts: droid4: Configure LED backlight for lm3532
+>       Merge branch 'omap-for-v5.6/fixes-rc2' into fixes
+>       Merge branch 'omap-for-v5.6/fixes-rc3' into fixes
+>       ARM: dts: Fix dm814x Ethernet by changing to use rgmii-id mode
+>       bus: ti-sysc: Fix quirk flags for lcdc on am335x
+>       Merge branch 'fix-lcdc-quirk' into fixes
+> 
+>  arch/arm/boot/dts/dm8148-evm.dts                |   4 +-
+>  arch/arm/boot/dts/dm8148-t410.dts               |   4 +-
+>  arch/arm/boot/dts/dra62x-j5eco-evm.dts          |   4 +-
+>  arch/arm/boot/dts/dra7.dtsi                     |   1 +
+>  arch/arm/boot/dts/motorola-mapphone-common.dtsi |  13 +-
+>  arch/arm/boot/dts/omap3-n900.dts                |  44 ++--
+>  arch/arm/configs/omap2plus_defconfig            |   1 +
+>  drivers/bus/ti-sysc.c                           |   3 +-
+>  drivers/video/backlight/Kconfig                 |   7 +
+>  drivers/video/backlight/Makefile                |   1 +
+>  drivers/video/backlight/led_bl.c                | 260 ++++++++++++++++++++++++
+>  11 files changed, 317 insertions(+), 25 deletions(-)
+>  create mode 100644 drivers/video/backlight/led_bl.c
+
+Here the diffstat is off a bit, the led_bl.c changes
+have been already merged in v5.6-rc5.
+
+Regards,
+
+Tony
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
