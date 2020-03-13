@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98D05184F68
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 20:45:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1DA8184F6C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 20:46:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CxwyVDZkADex5d/6JM4cHQU8FAc+laTeI41NzhjouEU=; b=khCSrOUwrt3D0k
-	aTN879dLmA5KR0n+DjhbMdWhOK8WW6I5p2RHcExi8p+lZLMd8MglZXOqneG4kekr/5fFDGbQXTe8E
-	SOR0u7Rd6ppkSNwOU3TMzMixi9iJebOOWXqHxcJiQr2jAOyzIFpY0jmbuhhbLoseGUrb1lNp0PbEk
-	t+nJFNM7AebbQKKin5260DhixN1mLl7XIU8ctgLwqx+Qi0ncwnRMFzf2BhRYclnkcBKaJqOg/D7j5
-	Tlu/cXaaiunXSfy3j7WzkHzYbxYi+OoWucbSgueNF9SqCYUUsC4Ya4VyAeO9OElhLBMoO917uL7TJ
-	kW3Nrp5wtRFVBF8HpTLA==;
+	List-Owner; bh=/PSp2aduK5aknSnvydeWD5QHSG5h1E2KgFP3PogbXMU=; b=AtUic7LtzHu3H+
+	44XL57hsxTehO6Bl9vx027F+N5kiZAmhVnVtdwCVA2PEfLfTCmY7Ezzr/hSOW5qUFdUyCA3+rI+iL
+	nXdguv+xi2nQciOlWNgcnqYyn8JbKByRfWsf2JcZ6pIlkonnMapDNsm4hAs36jX3WGscmWsxEH9xU
+	PT4YxR0g5A6Oc1JcLWlILmY6KOSahWS2GxZYi3utsSUt7T43qlVO2CPruJY2e60SdL5nLN2Cg60GM
+	suacnkpSGOvuEZKKykWf55ilAMhaZ6zLT/B5T50WucpCvA3EECqn3ThNzCsQrQ7ez+HKbCjDVXKm8
+	FMlUE7eQH7aXHKWPtKcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCqFC-0001E8-BH; Fri, 13 Mar 2020 19:45:18 +0000
+	id 1jCqGL-0003N3-9E; Fri, 13 Mar 2020 19:46:29 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCqCl-0008IA-3s; Fri, 13 Mar 2020 19:42:48 +0000
+ id 1jCqCm-0008Ik-OI; Fri, 13 Mar 2020 19:42:51 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Tudor.Ambarus@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -43,17 +43,17 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Bl3TnCDRHyKhFmpXa5JIRd0/oIxMeIJnRUxdzfetprzL2zuCbTUykHgASXc+f/35j8tAbbTFMn
- HdO6EymAMyjjGH0g6LBojDh97SnmOJioIvYlIYk6zkNdBIkThf9WWH25ej/zLY9ECssJZojA2p
- 1W0jFdwduBr7NIQ6nQOyY1qUDEoj0h8ZJj8vUliusypWNPGVPh9w5tKv/Jcd486gH7YW8Zc1ix
- 1WNBtaD8KUnoOTiAQq96nn18GOoWkFYKa8L6aJv9AxcC+saDu9rPopHp5HQsHX59aNIpgDzJKt
- W4E=
+IronPort-SDR: 3J2EBTwUcZRk4Xfz4yfsxl3udMKM3kVISij5RF1LTenWigXeW1/64CWnC3Lno3tefEVuZgiWMo
+ 5eTfdqiV3goK3YCEHpx8K1HFIcB3WRKjQLD/mJBk+lvC2xsc0o71HV98BqsLTz69PnWp35uiA9
+ UWDgFdkGtGz0OH5kPowTnQcX0MdRua4wnotqB8Chdu3pzFFjoEfC45INJKHrSHBwvlTd+6zakO
+ AYrBQCPIwzkASSNrPXeSUyxWeE6QeWN1Xj2j0UBIhBJD7d8c8R0ylNNTg2lraVkoZPZszxosic
+ W/0=
 X-IronPort-AV: E=Sophos;i="5.70,549,1574146800"; 
-   d="scan'208";a="5602886"
+   d="scan'208";a="5602898"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Mar 2020 12:42:42 -0700
+ 13 Mar 2020 12:42:43 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -61,14 +61,14 @@ Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
 Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.10.215.89) by
  email.microchip.com (10.10.87.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Fri, 13 Mar 2020 12:42:36 -0700
+ via Frontend Transport; Fri, 13 Mar 2020 12:42:37 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=D50iT6MRXERkj7at04ishDDRAAJI5xHhR2USdanaa5F8zy1jXZYrci8Q1tcoseH3EU1Nas8IcxeaJ48gZqAc2NMQMg7SSjCEVI9FUZQ8LIwUnTw37+/BFeQKJKkATT7tx2siksBsCJIh5ZEOurkQTRvKHgW67NfmPjJ2J9MDP7Hg5mxuDxicVd+sb5zjuuu52PpA7hAyEU8hjV2a8ucmTKf6mTAkE/2O3g8a4oyKCz9OOKwVe+YKwIHd3wh6kTPO4a+TQPUJbsmpug4Rn+XSqi3kC+uq9CSuh23NCwRp1oziqOCowOyda8ld+Myti7eTi2bjoxdIA/ppp56xeY8q2A==
+ b=kLrAIzJErol7kXoetskL0NZ+xUN35iBrJmKFwfFo078L8DJDtRSYxBRoK9Uh3iTipHeW6WEkCeme8F1TBj3x8HdQrtrAWfaH24LpKV4LVUep4hax3KPlDhQXpoTVuGGYtvwzvyJHZ4Q2TBVzAf7znkF7lrdhN2Yg2pp4EUXAiI5QXN0AX4QzbqcOf0ABH26JO3B5PyEems9MxWCEp4QBw293Gq3NwOVFFn/FHrdpsQJGt4IoaCawU1tiy5al1A/IApx885p4ZIOjsQ/NneqW9yW+sql/xjIwVLDs2UfEjmLMVc0INrsscH+MNrmMydeAAGCEZdMZUwX2vCegktwBxQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yaeVAxlaslJocFf9K68P7baVSySyxqnn9we7cf2o6ZQ=;
- b=HPRAQR4t4wdBq1Xz3o/IjlEKo9sNoXb2N2/RCs7uVaoMx0DD9DMTd8R9g1TOU8QdQh7tzqKb7EOE40gjVxcbcB1G/NEi98P4clVvbUAVk/O38co3Tohgd595PI3hftri10/1g36e1mmQeZ6BwBeZ+wfMwCF0Uudi3J9pm9jJO6E+dyPdX+7J2O/NHlQM7M2Q67bBcBgJZd9Q8qeBAUXjHpmpAx35mtVp0a2Vhb9Erty5Jwd+NilHL4RrBH6UupMbxOB9rRDM7kXG8I8/wqmOD/h/LWaYNARzsFd8/w7wTx/PmhH68ufSjj6kK7/CO3P7NKEOOI1lStsVHwRTMl47dg==
+ bh=nH3q/u1K0gemSjsw4RayWvLkVuTppadMjy3Trdcw4GE=;
+ b=E6OM+iQnzBk+eieeC60sEjuEJEDvRl2PM2on3UtKl3Hd7LbDXDBQnM1w/f2Wkb7QTSDTC+0zxNwYN0H++HAiVAtgj38ovEZzWORxSLPi7NWw9CaFn4ZdLTIqniJJexMCpPShGlBdsfmG6QHhPuQKo1new7U/VktSaCuLs72MziYad8cVSXqbkuzJQ+H4BOxVdjCL+S6t0lKszKSFdMZCOlmHqV218jOk364vq5Wd19G0XxloRxQQkwK/+qf5MswnGqEPEh8F84npGlGpEjdDtD1itvmw4p0Oi5cY/UaiE+a9iSgR3MPNbsfde+8ysJLjZUFY/pgov8Sy17gbGGFSkA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -76,26 +76,25 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yaeVAxlaslJocFf9K68P7baVSySyxqnn9we7cf2o6ZQ=;
- b=Au5PZ8GrZkr6r8/6Vx13ZISSA10B+HYZQ1l3nv6UK+3X9jIL4lLTnA2O4oCu3lo9+JQyMZIaK+GFPIIxEbjAevvEO0YSEPpAo2vIuurb449jZDojvuL3QExwq4708asZmzsmYGGsAoVbJpEdkreYvLUv9zg3cYpG1Vjc8huRyuQ=
+ bh=nH3q/u1K0gemSjsw4RayWvLkVuTppadMjy3Trdcw4GE=;
+ b=KLZPrbSiBTrbQAsakayG7HpzlzwZfsLv2BWD44AwIxfTJmvGiz2HdxsoPsrh2zZXLpB0oeh8MbJnsZfRktCWVajx+6JwpajoExKUuhA/G3G3+voeKYmZW1iQnGYsa9jUz+4VQF3qzIuc1NuE8jQ5OATZ4Xr1yKzTKGKi8qKLvRk=
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
  by MN2PR11MB4399.namprd11.prod.outlook.com (2603:10b6:208:17b::25)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.15; Fri, 13 Mar
- 2020 19:42:35 +0000
+ 2020 19:42:36 +0000
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
- 19:42:35 +0000
+ 19:42:36 +0000
 From: <Tudor.Ambarus@microchip.com>
 To: <bbrezillon@kernel.org>, <vigneshr@ti.com>
-Subject: [PATCH v2 02/25] mtd: spi-nor: Emphasise which is the generic
- set_4byte_addr_mode() method
-Thread-Topic: [PATCH v2 02/25] mtd: spi-nor: Emphasise which is the generic
- set_4byte_addr_mode() method
-Thread-Index: AQHV+W+LEWumuAvqOkiuwTaxjifMiA==
-Date: Fri, 13 Mar 2020 19:42:35 +0000
-Message-ID: <20200313194130.342251-3-tudor.ambarus@microchip.com>
+Subject: [PATCH v2 03/25] mtd: spi-nor: Prepare core / manufacturer code split
+Thread-Topic: [PATCH v2 03/25] mtd: spi-nor: Prepare core / manufacturer code
+ split
+Thread-Index: AQHV+W+LR17gOMNel0mvf/SQfYQ4XA==
+Date: Fri, 13 Mar 2020 19:42:36 +0000
+Message-ID: <20200313194130.342251-4-tudor.ambarus@microchip.com>
 References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
 In-Reply-To: <20200313194130.342251-1-tudor.ambarus@microchip.com>
 Accept-Language: en-US
@@ -104,15 +103,15 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e06158e1-ab47-496b-d022-08d7c786adef
+x-ms-office365-filtering-correlation-id: 67dd7722-afeb-4665-c7a5-08d7c786ae64
 x-ms-traffictypediagnostic: MN2PR11MB4399:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR11MB439924043CC84F569A68E3D4F0FA0@MN2PR11MB4399.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <MN2PR11MB4399DC3E78BAC22530383558F0FA0@MN2PR11MB4399.namprd11.prod.outlook.com>
 x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 034119E4F6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(346002)(136003)(396003)(366004)(39860400002)(199004)(316002)(2616005)(186003)(71200400001)(81156014)(110136005)(26005)(86362001)(107886003)(8936002)(54906003)(6512007)(8676002)(76116006)(91956017)(66946007)(66556008)(66476007)(66446008)(64756008)(81166006)(478600001)(4326008)(5660300002)(1076003)(6506007)(6486002)(36756003)(2906002)(41533002);
+ SFS:(10009020)(376002)(346002)(136003)(396003)(366004)(39860400002)(199004)(316002)(2616005)(186003)(71200400001)(81156014)(110136005)(26005)(86362001)(107886003)(8936002)(30864003)(54906003)(6512007)(8676002)(76116006)(91956017)(66946007)(66556008)(66476007)(66446008)(64756008)(81166006)(478600001)(4326008)(5660300002)(1076003)(6506007)(6486002)(36756003)(2906002);
  DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4399;
  H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
@@ -120,19 +119,19 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: obduPHgYg1SlvF3+rY3k3M75POdIjlwUbSzlJQDzDJCCRYeILB84OsxZMCOVTCJz052/4Mi4PwdXERSTHlpIuv75u5ptq/YPwDoWn+VvGkG9BpaPjjWwTDurH3dIHzX+hZnv7CYYefhWCKHeI5kc1vOj7gvJBgVpjVlOQcz+TZYdOG7u0bJDVg5qjYt0aa6otkWm9Dbip8Uo54/w8tYP9sMe8EbxB1uI/N7M9hkoCyoc1GZzU3qHvMikpPFH9wBZRfvJ49wo3bNaR5SO3iecXQVpeL4OFL2SbtrIZTVY9rciuiztBnFana+/sk7HnUON/NXg9H2KjP4CeAzpYOa8lPV1L6BO3qpLnpHmcQo105fpmaPajg3dexlVekihoHKCbb9oLh7glKEcCvuDX6pNlFHc5X251j4R8jbdHTjKvVb0hqUlx5aOYVb3A43vhTTiisojQdmSWyJ9bBl3tF0cGc0RcA3nJxxZsLKBtyEjtoyrgKB6QUYAD4R7HxcIQ6rz
-x-ms-exchange-antispam-messagedata: hhHS+G/+V36zANLui3r/ysU2e7XUB1x6yVeQBvd2ALUBHuSm1OBd3rOsDciNODftWFwX1TYEdPU2gIVnIeJuYPDiRRq5eCELE5NCTj3kQIysSRz/9tW6nXChXDotMv/jZ6oUW88LyxrbH1wZ+5YjEg==
+x-microsoft-antispam-message-info: CXGbaCvmCUaKEgcJdP3zRryMcy3fFmS6GoOduBtQzPBQqPl03Cs44CXJLxMkccJBBi7L8BnlQjoC4pyPEedLq8kIxSq/EtBeosZ7pyqI4Jm6KeLdZ43LjnhkT8FOD9de5lWyQDhKBRn4j0Lbx5osWpffq+oxex1WaGgv3qMZkLHRqld9iq4H4/FFLLLxty1D5xINuENZ6Ml4grmtC6V6RAg+8VWkzZl4biuKqvi4I5ZcNP+rsd+YRvxNiNwajnfL6ljwDkFy+xrhR9HYHpaj9N0JPxXc1JZbFU7Bt8Fjb/+K3BgjP1AAAvOcloIRX0p1uZoM1IwyOk/g1VW7/Hi4Tc2pJtzWJNjGoGURE9VxggXJMIHJMqOqHc1ScvzGQjtRvHTNCNOreaJqmgCkmw/ti3KzmdIFCjrKvqhX06J1iNhwl2ethu6K/jgNc7q9MxYc
+x-ms-exchange-antispam-messagedata: c4qnZuBzWc0lbJAC4dQUM2ilNas92qNkkzEvwcihtkpOim8rzeM1DhsQe7noJHMOuPwoNmRpLL3vA7WrpmHqGL0IQhu1Jx4JLZSYHnd1+3m2XpabrnvODaMT05lSnwn3pe0xqdhqzF1EG16mNQwzNA==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: e06158e1-ab47-496b-d022-08d7c786adef
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 19:42:35.2575 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 67dd7722-afeb-4665-c7a5-08d7c786ae64
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 19:42:36.0420 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: a+E2yiccm1+a32VP1I8M7ksVHO8+Thp+UUVrftWu/B1zCYdIm+hKVU13fYW1ekefo+rwkUSKA0MCOIjTHuS/XD9CkxnmtfEAKdEmxMFoZ08=
+X-MS-Exchange-CrossTenant-userprincipalname: 76zzrhTXapVGw5io3/yo1AvLUbTr8q+6qIwLWjkAn7bgmDsv7m5lqNvmj+tjqsEX1SpP9cYtXm6CTHrvFBwpCBCuh/l8snVhF38wWTx0dPU=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4399
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_124247_230444_3F517E63 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20200313_124248_861944_EA5F8B91 
+X-CRM114-Status: GOOD (  16.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -163,192 +162,277 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tudor Ambarus <tudor.ambarus@microchip.com>
+From: Boris Brezillon <bbrezillon@kernel.org>
 
-Rename (*set_4byte)() to (*set_4byte_addr_mode)() for a better
-differentiation between the 4 byte address mode and opcodes.
+Move all SPI NOR controller drivers to a controllers/ sub-directory
+so that we only have SPI NOR related source files under
+drivers/mtd/spi-nor/.
 
-Rename macronix_set_4byte() to spi_nor_set_4byte_addr_mode(), it will be
-the only 4 byte address mode method exposed to the manufacturer drivers.
+Rename spi-nor.c into core.c, we are about to split this file in multiple
+source files (one per manufacturer, plus one for the SFDP parsing logic).
 
-Here's how the manufacturers enter and exit the 4 byte address mode:
-- eon, gidadevice, issi, macronix, xmc use EN4B/EX4B
-- micron-st needs WEN. st_micron_set_4byte_addr_mode() will become
-  a private method, as they are the only ones that need WEN before the
-  EN4B/EX4B commands.
-- newer spansion have a 4BAM opcode (this translates to a new, public
-  command). Older spansion  flashes use the BRWR command (legacy in
-  core.c -> spansion_set_4byte_addr_mode())
-- winbond's method is hackish and may be reason for just a flash
-  fixup hook -> private method
-
+Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
 Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+Reviewed-by: Vignesh Raghavendra <vigneshr@ti.com>
 ---
- drivers/mtd/spi-nor/spi-nor.c | 34 ++++++++++++++++++----------------
- include/linux/mtd/spi-nor.h   |  4 ++--
- 2 files changed, 20 insertions(+), 18 deletions(-)
+ drivers/mtd/spi-nor/Kconfig                   | 75 +------------------
+ drivers/mtd/spi-nor/Makefile                  |  9 +--
+ drivers/mtd/spi-nor/controllers/Kconfig       | 75 +++++++++++++++++++
+ drivers/mtd/spi-nor/controllers/Makefile      |  8 ++
+ .../spi-nor/{ => controllers}/aspeed-smc.c    |  0
+ .../{ => controllers}/cadence-quadspi.c       |  0
+ .../mtd/spi-nor/{ => controllers}/hisi-sfc.c  |  0
+ .../spi-nor/{ => controllers}/intel-spi-pci.c |  0
+ .../{ => controllers}/intel-spi-platform.c    |  0
+ .../mtd/spi-nor/{ => controllers}/intel-spi.c |  0
+ .../mtd/spi-nor/{ => controllers}/intel-spi.h |  0
+ .../mtd/spi-nor/{ => controllers}/nxp-spifi.c |  0
+ drivers/mtd/spi-nor/{spi-nor.c => core.c}     |  0
+ 13 files changed, 86 insertions(+), 81 deletions(-)
+ create mode 100644 drivers/mtd/spi-nor/controllers/Kconfig
+ create mode 100644 drivers/mtd/spi-nor/controllers/Makefile
+ rename drivers/mtd/spi-nor/{ => controllers}/aspeed-smc.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/cadence-quadspi.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/hisi-sfc.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-pci.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-platform.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.h (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/nxp-spifi.c (100%)
+ rename drivers/mtd/spi-nor/{spi-nor.c => core.c} (100%)
 
-diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
-index 0b8fac0b0299..8616673ddb7c 100644
---- a/drivers/mtd/spi-nor/spi-nor.c
-+++ b/drivers/mtd/spi-nor/spi-nor.c
-@@ -568,14 +568,14 @@ static int spi_nor_read_cr(struct spi_nor *nor, u8 *cr)
- }
+diff --git a/drivers/mtd/spi-nor/Kconfig b/drivers/mtd/spi-nor/Kconfig
+index 267b9000782e..6e816eafb312 100644
+--- a/drivers/mtd/spi-nor/Kconfig
++++ b/drivers/mtd/spi-nor/Kconfig
+@@ -24,79 +24,6 @@ config MTD_SPI_NOR_USE_4K_SECTORS
+ 	  Please note that some tools/drivers/filesystems may not work with
+ 	  4096 B erase size (e.g. UBIFS requires 15 KiB as a minimum).
  
- /**
-- * macronix_set_4byte() - Set 4-byte address mode for Macronix flashes.
-+ * spi_nor_set_4byte_addr_mode() - Enter/Exit 4-byte address mode.
-  * @nor:	pointer to 'struct spi_nor'.
-  * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-  *		address mode.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
--static int macronix_set_4byte(struct spi_nor *nor, bool enable)
-+static int spi_nor_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
- {
- 	int ret;
+-config SPI_ASPEED_SMC
+-	tristate "Aspeed flash controllers in SPI mode"
+-	depends on ARCH_ASPEED || COMPILE_TEST
+-	depends on HAS_IOMEM && OF
+-	help
+-	  This enables support for the Firmware Memory controller (FMC)
+-	  in the Aspeed AST2500/AST2400 SoCs when attached to SPI NOR chips,
+-	  and support for the SPI flash memory controller (SPI) for
+-	  the host firmware. The implementation only supports SPI NOR.
+-
+-config SPI_CADENCE_QUADSPI
+-	tristate "Cadence Quad SPI controller"
+-	depends on OF && (ARM || ARM64 || COMPILE_TEST)
+-	help
+-	  Enable support for the Cadence Quad SPI Flash controller.
+-
+-	  Cadence QSPI is a specialized controller for connecting an SPI
+-	  Flash over 1/2/4-bit wide bus. Enable this option if you have a
+-	  device with a Cadence QSPI controller and want to access the
+-	  Flash as an MTD device.
+-
+-config SPI_HISI_SFC
+-	tristate "Hisilicon FMC SPI-NOR Flash Controller(SFC)"
+-	depends on ARCH_HISI || COMPILE_TEST
+-	depends on HAS_IOMEM
+-	help
+-	  This enables support for HiSilicon FMC SPI-NOR flash controller.
+-
+-config SPI_NXP_SPIFI
+-	tristate "NXP SPI Flash Interface (SPIFI)"
+-	depends on OF && (ARCH_LPC18XX || COMPILE_TEST)
+-	depends on HAS_IOMEM
+-	help
+-	  Enable support for the NXP LPC SPI Flash Interface controller.
+-
+-	  SPIFI is a specialized controller for connecting serial SPI
+-	  Flash. Enable this option if you have a device with a SPIFI
+-	  controller and want to access the Flash as a mtd device.
+-
+-config SPI_INTEL_SPI
+-	tristate
+-
+-config SPI_INTEL_SPI_PCI
+-	tristate "Intel PCH/PCU SPI flash PCI driver (DANGEROUS)"
+-	depends on X86 && PCI
+-	select SPI_INTEL_SPI
+-	help
+-	  This enables PCI support for the Intel PCH/PCU SPI controller in
+-	  master mode. This controller is present in modern Intel hardware
+-	  and is used to hold BIOS and other persistent settings. Using
+-	  this driver it is possible to upgrade BIOS directly from Linux.
+-
+-	  Say N here unless you know what you are doing. Overwriting the
+-	  SPI flash may render the system unbootable.
+-
+-	  To compile this driver as a module, choose M here: the module
+-	  will be called intel-spi-pci.
+-
+-config SPI_INTEL_SPI_PLATFORM
+-	tristate "Intel PCH/PCU SPI flash platform driver (DANGEROUS)"
+-	depends on X86
+-	select SPI_INTEL_SPI
+-	help
+-	  This enables platform support for the Intel PCH/PCU SPI
+-	  controller in master mode. This controller is present in modern
+-	  Intel hardware and is used to hold BIOS and other persistent
+-	  settings. Using this driver it is possible to upgrade BIOS
+-	  directly from Linux.
+-
+-	  Say N here unless you know what you are doing. Overwriting the
+-	  SPI flash may render the system unbootable.
+-
+-	  To compile this driver as a module, choose M here: the module
+-	  will be called intel-spi-platform.
++source "drivers/mtd/spi-nor/controllers/Kconfig"
  
-@@ -604,14 +604,15 @@ static int macronix_set_4byte(struct spi_nor *nor, bool enable)
- }
- 
- /**
-- * st_micron_set_4byte() - Set 4-byte address mode for ST and Micron flashes.
-+ * st_micron_set_4byte_addr_mode() - Set 4-byte address mode for ST and Micron
-+ * flashes.
-  * @nor:	pointer to 'struct spi_nor'.
-  * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-  *		address mode.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
--static int st_micron_set_4byte(struct spi_nor *nor, bool enable)
-+static int st_micron_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
- {
- 	int ret;
- 
-@@ -619,7 +620,7 @@ static int st_micron_set_4byte(struct spi_nor *nor, bool enable)
- 	if (ret)
- 		return ret;
- 
--	ret = macronix_set_4byte(nor, enable);
-+	ret = spi_nor_set_4byte_addr_mode(nor, enable);
- 	if (ret)
- 		return ret;
- 
-@@ -627,14 +628,15 @@ static int st_micron_set_4byte(struct spi_nor *nor, bool enable)
- }
- 
- /**
-- * spansion_set_4byte() - Set 4-byte address mode for Spansion flashes.
-+ * spansion_set_4byte_addr_mode() - Set 4-byte address mode for Spansion
-+ * flashes.
-  * @nor:	pointer to 'struct spi_nor'.
-  * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-  *		address mode.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
--static int spansion_set_4byte(struct spi_nor *nor, bool enable)
-+static int spansion_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
- {
- 	int ret;
- 
-@@ -692,18 +694,18 @@ static int spi_nor_write_ear(struct spi_nor *nor, u8 ear)
- }
- 
- /**
-- * winbond_set_4byte() - Set 4-byte address mode for Winbond flashes.
-+ * winbond_set_4byte_addr_mode() - Set 4-byte address mode for Winbond flashes.
-  * @nor:	pointer to 'struct spi_nor'.
-  * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-  *		address mode.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
--static int winbond_set_4byte(struct spi_nor *nor, bool enable)
-+static int winbond_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
- {
- 	int ret;
- 
--	ret = macronix_set_4byte(nor, enable);
-+	ret = spi_nor_set_4byte_addr_mode(nor, enable);
- 	if (ret || enable)
- 		return ret;
- 
-@@ -4655,7 +4657,7 @@ static void issi_set_default_init(struct spi_nor *nor)
- static void macronix_set_default_init(struct spi_nor *nor)
- {
- 	nor->params.quad_enable = spi_nor_sr1_bit6_quad_enable;
--	nor->params.set_4byte = macronix_set_4byte;
-+	nor->params.set_4byte_addr_mode = spi_nor_set_4byte_addr_mode;
- }
- 
- static void sst_set_default_init(struct spi_nor *nor)
-@@ -4668,12 +4670,12 @@ static void st_micron_set_default_init(struct spi_nor *nor)
- 	nor->flags |= SNOR_F_HAS_LOCK;
- 	nor->flags &= ~SNOR_F_HAS_16BIT_SR;
- 	nor->params.quad_enable = NULL;
--	nor->params.set_4byte = st_micron_set_4byte;
-+	nor->params.set_4byte_addr_mode = st_micron_set_4byte_addr_mode;
- }
- 
- static void winbond_set_default_init(struct spi_nor *nor)
- {
--	nor->params.set_4byte = winbond_set_4byte;
-+	nor->params.set_4byte_addr_mode = winbond_set_4byte_addr_mode;
- }
- 
- /**
-@@ -4759,7 +4761,7 @@ static void spi_nor_info_init_params(struct spi_nor *nor)
- 
- 	/* Initialize legacy flash parameters and settings. */
- 	params->quad_enable = spi_nor_sr2_bit1_quad_enable;
--	params->set_4byte = spansion_set_4byte;
-+	params->set_4byte_addr_mode = spansion_set_4byte_addr_mode;
- 	params->setup = spi_nor_default_setup;
- 	/* Default to 16-bit Write Status (01h) Command */
- 	nor->flags |= SNOR_F_HAS_16BIT_SR;
-@@ -5011,7 +5013,7 @@ static int spi_nor_init(struct spi_nor *nor)
- 		 */
- 		WARN_ONCE(nor->flags & SNOR_F_BROKEN_RESET,
- 			  "enabling reset hack; may not recover from unexpected reboots\n");
--		nor->params.set_4byte(nor, true);
-+		nor->params.set_4byte_addr_mode(nor, true);
- 	}
- 
- 	return 0;
-@@ -5035,7 +5037,7 @@ void spi_nor_restore(struct spi_nor *nor)
- 	/* restore the addressing mode */
- 	if (nor->addr_width == 4 && !(nor->flags & SNOR_F_4B_OPCODES) &&
- 	    nor->flags & SNOR_F_BROKEN_RESET)
--		nor->params.set_4byte(nor, false);
-+		nor->params.set_4byte_addr_mode(nor, false);
- }
- EXPORT_SYMBOL_GPL(spi_nor_restore);
- 
-diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
-index de90724f62f1..2b9717b0cd62 100644
---- a/include/linux/mtd/spi-nor.h
-+++ b/include/linux/mtd/spi-nor.h
-@@ -520,7 +520,7 @@ struct spi_nor_locking_ops {
-  * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
-  *                      Table.
-  * @quad_enable:	enables SPI NOR quad mode.
-- * @set_4byte:		puts the SPI NOR in 4 byte addressing mode.
-+ * @set_4byte_addr_mode: puts the SPI NOR in 4 byte addressing mode.
-  * @convert_addr:	converts an absolute address into something the flash
-  *                      will understand. Particularly useful when pagesize is
-  *                      not a power-of-2.
-@@ -541,7 +541,7 @@ struct spi_nor_flash_parameter {
- 	struct spi_nor_erase_map        erase_map;
- 
- 	int (*quad_enable)(struct spi_nor *nor);
--	int (*set_4byte)(struct spi_nor *nor, bool enable);
-+	int (*set_4byte_addr_mode)(struct spi_nor *nor, bool enable);
- 	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
- 	int (*setup)(struct spi_nor *nor, const struct spi_nor_hwcaps *hwcaps);
- 
+ endif # MTD_SPI_NOR
+diff --git a/drivers/mtd/spi-nor/Makefile b/drivers/mtd/spi-nor/Makefile
+index 738dfd74cf76..d6fc70ab4a32 100644
+--- a/drivers/mtd/spi-nor/Makefile
++++ b/drivers/mtd/spi-nor/Makefile
+@@ -1,9 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
++
++spi-nor-objs			:= core.o
+ obj-$(CONFIG_MTD_SPI_NOR)	+= spi-nor.o
+-obj-$(CONFIG_SPI_ASPEED_SMC)	+= aspeed-smc.o
+-obj-$(CONFIG_SPI_CADENCE_QUADSPI)	+= cadence-quadspi.o
+-obj-$(CONFIG_SPI_HISI_SFC)	+= hisi-sfc.o
+-obj-$(CONFIG_SPI_NXP_SPIFI)	+= nxp-spifi.o
+-obj-$(CONFIG_SPI_INTEL_SPI)	+= intel-spi.o
+-obj-$(CONFIG_SPI_INTEL_SPI_PCI)	+= intel-spi-pci.o
+-obj-$(CONFIG_SPI_INTEL_SPI_PLATFORM)	+= intel-spi-platform.o
+diff --git a/drivers/mtd/spi-nor/controllers/Kconfig b/drivers/mtd/spi-nor/controllers/Kconfig
+new file mode 100644
+index 000000000000..10b86660b821
+--- /dev/null
++++ b/drivers/mtd/spi-nor/controllers/Kconfig
+@@ -0,0 +1,75 @@
++# SPDX-License-Identifier: GPL-2.0-only
++config SPI_ASPEED_SMC
++	tristate "Aspeed flash controllers in SPI mode"
++	depends on ARCH_ASPEED || COMPILE_TEST
++	depends on HAS_IOMEM && OF
++	help
++	  This enables support for the Firmware Memory controller (FMC)
++	  in the Aspeed AST2500/AST2400 SoCs when attached to SPI NOR chips,
++	  and support for the SPI flash memory controller (SPI) for
++	  the host firmware. The implementation only supports SPI NOR.
++
++config SPI_CADENCE_QUADSPI
++	tristate "Cadence Quad SPI controller"
++	depends on OF && (ARM || ARM64 || COMPILE_TEST)
++	help
++	  Enable support for the Cadence Quad SPI Flash controller.
++
++	  Cadence QSPI is a specialized controller for connecting an SPI
++	  Flash over 1/2/4-bit wide bus. Enable this option if you have a
++	  device with a Cadence QSPI controller and want to access the
++	  Flash as an MTD device.
++
++config SPI_HISI_SFC
++	tristate "Hisilicon FMC SPI-NOR Flash Controller(SFC)"
++	depends on ARCH_HISI || COMPILE_TEST
++	depends on HAS_IOMEM
++	help
++	  This enables support for HiSilicon FMC SPI-NOR flash controller.
++
++config SPI_NXP_SPIFI
++	tristate "NXP SPI Flash Interface (SPIFI)"
++	depends on OF && (ARCH_LPC18XX || COMPILE_TEST)
++	depends on HAS_IOMEM
++	help
++	  Enable support for the NXP LPC SPI Flash Interface controller.
++
++	  SPIFI is a specialized controller for connecting serial SPI
++	  Flash. Enable this option if you have a device with a SPIFI
++	  controller and want to access the Flash as a mtd device.
++
++config SPI_INTEL_SPI
++	tristate
++
++config SPI_INTEL_SPI_PCI
++	tristate "Intel PCH/PCU SPI flash PCI driver (DANGEROUS)"
++	depends on X86 && PCI
++	select SPI_INTEL_SPI
++	help
++	  This enables PCI support for the Intel PCH/PCU SPI controller in
++	  master mode. This controller is present in modern Intel hardware
++	  and is used to hold BIOS and other persistent settings. Using
++	  this driver it is possible to upgrade BIOS directly from Linux.
++
++	  Say N here unless you know what you are doing. Overwriting the
++	  SPI flash may render the system unbootable.
++
++	  To compile this driver as a module, choose M here: the module
++	  will be called intel-spi-pci.
++
++config SPI_INTEL_SPI_PLATFORM
++	tristate "Intel PCH/PCU SPI flash platform driver (DANGEROUS)"
++	depends on X86
++	select SPI_INTEL_SPI
++	help
++	  This enables platform support for the Intel PCH/PCU SPI
++	  controller in master mode. This controller is present in modern
++	  Intel hardware and is used to hold BIOS and other persistent
++	  settings. Using this driver it is possible to upgrade BIOS
++	  directly from Linux.
++
++	  Say N here unless you know what you are doing. Overwriting the
++	  SPI flash may render the system unbootable.
++
++	  To compile this driver as a module, choose M here: the module
++	  will be called intel-spi-platform.
+diff --git a/drivers/mtd/spi-nor/controllers/Makefile b/drivers/mtd/spi-nor/controllers/Makefile
+new file mode 100644
+index 000000000000..46e6fbe586e3
+--- /dev/null
++++ b/drivers/mtd/spi-nor/controllers/Makefile
+@@ -0,0 +1,8 @@
++# SPDX-License-Identifier: GPL-2.0
++obj-$(CONFIG_SPI_ASPEED_SMC)	+= aspeed-smc.o
++obj-$(CONFIG_SPI_CADENCE_QUADSPI)	+= cadence-quadspi.o
++obj-$(CONFIG_SPI_HISI_SFC)	+= hisi-sfc.o
++obj-$(CONFIG_SPI_NXP_SPIFI)	+= nxp-spifi.o
++obj-$(CONFIG_SPI_INTEL_SPI)	+= intel-spi.o
++obj-$(CONFIG_SPI_INTEL_SPI_PCI)	+= intel-spi-pci.o
++obj-$(CONFIG_SPI_INTEL_SPI_PLATFORM)	+= intel-spi-platform.o
+diff --git a/drivers/mtd/spi-nor/aspeed-smc.c b/drivers/mtd/spi-nor/controllers/aspeed-smc.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/aspeed-smc.c
+rename to drivers/mtd/spi-nor/controllers/aspeed-smc.c
+diff --git a/drivers/mtd/spi-nor/cadence-quadspi.c b/drivers/mtd/spi-nor/controllers/cadence-quadspi.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/cadence-quadspi.c
+rename to drivers/mtd/spi-nor/controllers/cadence-quadspi.c
+diff --git a/drivers/mtd/spi-nor/hisi-sfc.c b/drivers/mtd/spi-nor/controllers/hisi-sfc.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/hisi-sfc.c
+rename to drivers/mtd/spi-nor/controllers/hisi-sfc.c
+diff --git a/drivers/mtd/spi-nor/intel-spi-pci.c b/drivers/mtd/spi-nor/controllers/intel-spi-pci.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/intel-spi-pci.c
+rename to drivers/mtd/spi-nor/controllers/intel-spi-pci.c
+diff --git a/drivers/mtd/spi-nor/intel-spi-platform.c b/drivers/mtd/spi-nor/controllers/intel-spi-platform.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/intel-spi-platform.c
+rename to drivers/mtd/spi-nor/controllers/intel-spi-platform.c
+diff --git a/drivers/mtd/spi-nor/intel-spi.c b/drivers/mtd/spi-nor/controllers/intel-spi.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/intel-spi.c
+rename to drivers/mtd/spi-nor/controllers/intel-spi.c
+diff --git a/drivers/mtd/spi-nor/intel-spi.h b/drivers/mtd/spi-nor/controllers/intel-spi.h
+similarity index 100%
+rename from drivers/mtd/spi-nor/intel-spi.h
+rename to drivers/mtd/spi-nor/controllers/intel-spi.h
+diff --git a/drivers/mtd/spi-nor/nxp-spifi.c b/drivers/mtd/spi-nor/controllers/nxp-spifi.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/nxp-spifi.c
+rename to drivers/mtd/spi-nor/controllers/nxp-spifi.c
+diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/core.c
+similarity index 100%
+rename from drivers/mtd/spi-nor/spi-nor.c
+rename to drivers/mtd/spi-nor/core.c
 -- 
 2.23.0
 
