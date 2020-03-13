@@ -2,62 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98E871842BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:35:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6046F18429E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:29:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=emtokZSc/LIxZuA1jCOhDuy79u9ANM6WurWBRMiK7Uo=; b=Iyq
-	7n7+g4E7pXTKsQiObNaakIqLigNuPRRIbmqsy8hmYUKeZCpQZ0+2qTL9M1L/TCJ5IOZGThqY5lv0W
-	7RIHLB881/5VizkA+b3MVFSHbhUzeWAakXTcwdJK8aBfKsx30Ng8VuEpKawXMFNckPF7aRiV1RNAG
-	BXvjMGfQaXytQ0xABzecQ5USorTE8tKbi/Kxd6Iz8nX9lMvWKUqhPCq7oQ5Sf485HMeSDktpStZaM
-	/vpar9Gc1EHwAThGQEdzOMUjbaPbverGLv1Jj/WsnwZ0kMAzYsoijFVhEOTPnMbCm7ajE/w1lE7uq
-	2BTvYVtw4y3FpOLbPvjTvI3f5tyOaNQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wV5QWOldKDcLmdwdMX6Bj5Sjenl3HMeovj2MZMiCTBY=; b=b5WpPe28wvrwGV
+	XKKVkxtX9X3DO3/EcAgNKSn5qR4U750OzxKrVUv9AKDDIPuSIM8QZJOKMqQuh6MYugcJbJYvChf3L
+	/rgo6rWvmQnEBUi/NxNVoJ4IyLKKKZP/YDjhKxGfFvI2F6v4u6yygnWkSS3l2GJ5Fuc4cl0aFnxJW
+	UcRwo98fugz+JSgQ88DVMjeECBEsdU4Qv0w0uEDKf0oO8s+LARTEcM8UsFL9w2pmf1pO/COHRRFB3
+	6ZgWU/9OJ6RvF0/i1evZ0FEAHUvnwzn74UPXOThO3JyA2SS2CPSQZqvXMWTy5sY06PahZxtSSggSS
+	eAaXZcsHp0Ptu6nSg5Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCfml-0001lO-5Q; Fri, 13 Mar 2020 08:35:15 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jCfhW-0007eH-C9; Fri, 13 Mar 2020 08:29:50 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCfmT-0001kZ-Jj
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 08:34:58 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3D4601A134F;
- Fri, 13 Mar 2020 09:34:53 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 85CB91A1343;
- Fri, 13 Mar 2020 09:34:47 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6DDB4402D5;
- Fri, 13 Mar 2020 16:34:40 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] thermal: imx: Calling imx_thermal_unregister_legacy_cooling()
- in .remove
-Date: Fri, 13 Mar 2020 16:28:14 +0800
-Message-Id: <1584088094-24857-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jCfhO-0007Tz-Sj
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 08:29:44 +0000
+Received: by mail-ed1-f66.google.com with SMTP id h62so10820261edd.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Mar 2020 01:29:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=rn0gcyx6GxxQcRaqlCHT4v4uNwnWkXjytoiFfyP58zE=;
+ b=gTzkieU3QdjXoxZTdwyxqkkDQiXwqGi+kauhKqLQlx57mxHDDBirkgTyO7uvafFHfR
+ vedDFZI34SBt48vs0Zt5XyBJtb386RQrj2y0P1BIJExRy+da8t8HfOBnFOZi3R59yrPG
+ 4p25TUJtwRlgzXk2m+5T9Yh9o7H2d1FHHEsUbOK1bp4kDV91hjL9F20IzkUYg3Jx8vwD
+ NqNVFUh/A56gI9ZHkqW9v88jTk8aWcSKv9+dtw/o3YYg8MhmG13Lb70MeOEBvJqCZDOa
+ l0LHXYfUScxBK63Ziqy4G/oauBccZjP0K+44wPy2Z/+l+D7DQYxH5SzrqPeK3XwbdT5B
+ MWLw==
+X-Gm-Message-State: ANhLgQ1O5vi/wINMnk4PibnEhTweSAw0zY+xZK+JvtGzVTesgGc3FIAO
+ U7HKuXAEX99WKb6wf6neVFE=
+X-Google-Smtp-Source: ADFU+vv4w/B2tIP4ZNexQetJ7DqtBBVkc+MfyuEZQrVPiWjDli5bZ4ZKT55RJiuDDBmhlGBoX8nTxA==
+X-Received: by 2002:a17:906:b80f:: with SMTP id
+ dv15mr10653207ejb.28.1584088180143; 
+ Fri, 13 Mar 2020 01:29:40 -0700 (PDT)
+Received: from pi3 ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id n10sm442215edf.3.2020.03.13.01.29.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Mar 2020 01:29:39 -0700 (PDT)
+Date: Fri, 13 Mar 2020 09:29:37 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Paul Cercueil <paul@crapouillou.net>
+Subject: Re: [PATCH 1/2] dt-bindings: arm/samsung: Add compatible string for
+ the Galaxy S2
+Message-ID: <20200313082937.GA7416@pi3>
+References: <20200312153411.13535-1-paul@crapouillou.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200312153411.13535-1-paul@crapouillou.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_013457_788660_333EF40F 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_012942_928060_C55A0CF8 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,41 +88,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-imx_thermal_unregister_legacy_cooling() should be used for handling
-legacy cpufreq cooling cleanups in .remove callback instead of
-calling cpufreq_cooling_unregister() and cpufreq_cpu_put() directly,
-especially for !CONFIG_CPU_FREQ scenario, no operation needed for
-handling legacy cpufreq cooling cleanups at all.
+On Thu, Mar 12, 2020 at 04:34:10PM +0100, Paul Cercueil wrote:
+> Add compatible string for the Samsung Galaxy S2 (i9100 version), which
+> is an Exynos 4210 based device.
+> 
+> Signed-off-by: Paul Cercueil <paul@crapouillou.net>
+> ---
+>  .../devicetree/bindings/arm/samsung/samsung-boards.yaml          | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+> index 63acd57c4799..e2b19caac795 100644
+> --- a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+> +++ b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+> @@ -55,6 +55,7 @@ properties:
+>                - samsung,smdkv310                # Samsung SMDKV310 eval
+>                - samsung,trats                   # Samsung Tizen Reference
+>                - samsung,universal_c210          # Samsung C210
+> +              - samsung,i9100                   # Samsung Galaxy S2
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/thermal/imx_thermal.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+Put it in alphabetical order please so with this change:
+Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index d2fa301..e761c9b 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -865,8 +865,7 @@ static int imx_thermal_remove(struct platform_device *pdev)
- 		clk_disable_unprepare(data->thermal_clk);
- 
- 	thermal_zone_device_unregister(data->tz);
--	cpufreq_cooling_unregister(data->cdev);
--	cpufreq_cpu_put(data->policy);
-+	imx_thermal_unregister_legacy_cooling(data);
- 
- 	return 0;
- }
--- 
-2.7.4
+(Optionally I can take it through samsung-soc tree)
 
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
