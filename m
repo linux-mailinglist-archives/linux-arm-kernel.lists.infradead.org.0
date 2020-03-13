@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ABA7184BD8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:57:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09499184BCD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:56:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90XlZyowWO/Dm9orW805+PrD6N191fGl8CqijmVY3f0=; b=c3Ggy4xv49/qMh
-	01EsKOlt3YlU4J3z3tASap0ZhXx1srpsdYAZ5gZo1kzg8A/FkoDTHODpAd0ex2vaULCaJh7UZ10TZ
-	QesjirXNNR86tozy85JuaAze9xHRMd2rMztJKSJPVOgFC0EJ6/zQng8xorCpSIZ5/0agjV59Am9vl
-	+RPoM6zZClk2WO9UA+C8Xjk11ET2BTIf2jaWQvFEBKgenZPGC/2N7SluuFSUYPaTeXX8nIKR6Xx4o
-	jLLgsznsPUfyMBYgrRqf0BYvrUayDt12I7C0ZDRCfLrAmdMJpbBG5+gBaSATD3VzIVUI2CHROAtxe
-	dupcSRPzybjeafEcMjig==;
+	List-Owner; bh=SjSoqBUT1+osQG/yhUewwRY6lGvDc018Xn/evVGMhW4=; b=NdHqmswq7k5hIP
+	YAqspsd4o2Lgn1oJcrrPAtzAIs1C4/ucnAmpo5yP+exdHK23tAT7tssEcacGGf1kYMvlg/zCKqbhR
+	g0qp2bb6nja2sw5kQvqrR3wACC11mVXQ+AJRBZTK9MmdG1DxLdatm3xR7/X2flsRtTacA9jord5Tp
+	s3Xl/mruW/mZiOgsCAUgZkFfjZiCNzb+NmiXYGFW0k6xibQMiLU8hd5PlRdAQkujFD7+WUpFfGR1x
+	Ych2gvCsNY6xLjjfsMYo9bxFf0DbWnEpRWpqzbuUYY/N3T9VdA07mmomK4CNOceJW9YJR26V7x33k
+	nb+UZrC9u/OEMMUEvIXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmh3-00033D-SE; Fri, 13 Mar 2020 15:57:49 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jCmfI-0001YG-9j; Fri, 13 Mar 2020 15:56:00 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmX1-0000G5-HR; Fri, 13 Mar 2020 15:47:29 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DFlONH062860;
- Fri, 13 Mar 2020 10:47:24 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584114444;
- bh=UD0bXjrzvoCGWeYqV3QjBV7gs1p6+jXhv7ZfFZgw0iA=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=VQ5VJ+zKGoK4Nf+qnOP2b7IA4PY8FaLRFVn1bUBwmB8xYAs2hJv7xB7LJswgXBe0U
- d0dddyicOgGVCiXZHH2+XSteHccxebYBnzMr27JZZoNIffgojQ0VeW9RO7f3dGiOLa
- 5nZKEOaWGVIdG0IetT+liWuYBeHBfH6yImrz20aU=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DFlO3m127402;
- Fri, 13 Mar 2020 10:47:24 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
- Mar 2020 10:47:23 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 13 Mar 2020 10:47:23 -0500
-Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DFkkSM034352;
- Fri, 13 Mar 2020 10:47:20 -0500
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
- <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
- Raghavendra <vigneshr@ti.com>, Mark Brown <broonie@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Ludovic Desroches
- <ludovic.desroches@microchip.com>
-Subject: [PATCH v3 08/12] mtd: spi-nor: use dummy cycle and address width info
- from SFDP
-Date: Fri, 13 Mar 2020 21:16:41 +0530
-Message-ID: <20200313154645.29293-9-p.yadav@ti.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200313154645.29293-1-p.yadav@ti.com>
-References: <20200313154645.29293-1-p.yadav@ti.com>
+ id 1jCmWl-0008V1-1H; Fri, 13 Mar 2020 15:47:19 +0000
+Received: by mail-ot1-x344.google.com with SMTP id j16so10551173otl.1;
+ Fri, 13 Mar 2020 08:47:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
+ b=gAIDs6WqqY4C6m2b5QdZWRTmIT3xf9Ik6Np8m+/Z/J5ikCql9gM3IwFQvuOl178Nzr
+ 3IZ3HkdzXqzSrRImXqzs86OwH+pAqPX8nDIT3mW1Ilmq8XWcuyISAxCtav2E5OxoXkJd
+ a2/19fycsXGRTcGjxcuP0a4HCJbtcxuT8E/3Qd61YjhSuJj8H7bt5BJQisMoSsu6OF3r
+ 8isHVQs3wlSr7wkc0M+N89U79Mnd2s08qw4ocvTBql6Eg+sDcwjF1Pu6TDMJAIo8zT6Y
+ gfs62X7oCtBvDY2WKFVGT1I4sbyDSbi3FtifMvad/OCwI0ELcGXTZnGrLvH6ugFlEC4R
+ c8YA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
+ b=o34bh3vZQnVROatS3y7gmFwFwBmoda1dY1KZLnlzlXPeE4wzsPt024Oaqig2PKeXRe
+ BEr3LThnWMCIDIhYxN6uuZc5wI6uFKr/oUGR4591KtgxPK+p6OKLFBBafgxxROS61KqH
+ qa+p3yPvvA+6AQnFdq7DWj+5VMJH5gmQ1f7S6HrIpycPCoBhn2W8ASGQlKlWcodUIh1l
+ bNzleF8oF3S0E2UB6f5W5JO9n2cr5TaA8FRzFwEITcwuwh9VIM5m2cJukZMm7cnWNlGi
+ sOJRhd/M+m8MNKgv2Ron+8zN71jXPGfxzlGr0nLydKyEt7XJTaX1Efft2188Bp25xxLc
+ +jJQ==
+X-Gm-Message-State: ANhLgQ26V6h09Ozad1rfplNWQSglyxc2ZrHeon8ir5H5mcnDGgCVDrgn
+ 4TBftGf0phqlpCMAqS6ZjCm7DxtdtzvP1x+5Q+U=
+X-Google-Smtp-Source: ADFU+vu760GpCPmD7yZUXlIQeGa3R1i+fs+y1tbGVZM1WMb4f80I+07TGxLiEF8SFrU09Xrxz1LyHjcMcOFDGWeTS2I=
+X-Received: by 2002:a05:6830:20c9:: with SMTP id
+ z9mr11632227otq.44.1584114429233; 
+ Fri, 13 Mar 2020 08:47:09 -0700 (PDT)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Fri, 13 Mar 2020 15:46:42 +0000
+Message-ID: <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
+Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
+ endpoint mode on R-Car SoCs
+To: Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084727_729838_F7F1A2AB 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200313_084711_091172_350E09E3 
+X-CRM114-Status: GOOD (  19.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.csengg[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,63 +93,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-mtd@lists.infradead.org,
- Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
+ linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The xSPI Profile 1.0 table specifies how many dummy cycles and address
-bytes are needed for the Read Status Register command in octal DTR mode.
-Use that information to send the correct Read SR command.
+Hi Bjorn/Kishon,
 
-Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
----
- drivers/mtd/spi-nor/spi-nor.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
+<prabhakar.csengg@gmail.com> wrote:
+>
+> This patch series adds support for PCIe controller on rcar to work in
+> endpoint mode, this also extends the epf framework to handle base region
+> for mapping PCI address locally.
+>
+> Note:
+> The cadence/rockchip/designware endpoint drivers are build tested only.
+>
+> Changes for v5:
+> 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
+>    linux/kernel/git/helgaas/pci.git
+> 2] Fixed review comments reported by Kishon while fetching the matching
+>    window in function pci_epc_get_matching_window()
+> 3] Fixed review comments reported by Bjorn
+>    a] Split patch up first patch so that its easier to review and incremental
+>    b] Fixed typos
+> 4] Included Reviewed tag from Rob for the dt-binding patch
+> 5] Fixed issue reported by Nathan for assigning variable to itself
+>
+> Changes for v4:
+> 1] Fixed dtb_check error reported by Rob
+> 2] Fixed review comments reported by Kishon
+>    a] Dropped pci_epc_find_best_fit_window()
+>    b] Fixed initializing mem ptr in __pci_epc_mem_init()
+>    c] Dropped map_size from pci_epc_mem_window structure
+>
+> Changes for v3:
+> 1] Fixed review comments from Bjorn and Kishon.
+> 3] Converted to DT schema
+>
+> Changes for v2:
+> 1] Fixed review comments from Biju for dt-bindings to include an example
+>    for a tested platform.
+> 2] Fixed review comments from Kishon to extend the features of outbound
+>    regions in epf framework.
+> 3] Added support to parse outbound-ranges in OF.
+>
+> Lad Prabhakar (7):
+>   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+>   PCI: rcar: Move shareable code to a common file
+>   PCI: rcar: Fix calculating mask for PCIEPAMR register
+>   PCI: endpoint: Add support to handle multiple base for mapping
+>     outbound memory
+>   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+>     controller
+>   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
+>   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
+>
+Gentle ping.
 
-diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
-index efa3b01030f5..16d7516f2470 100644
---- a/drivers/mtd/spi-nor/spi-nor.c
-+++ b/drivers/mtd/spi-nor/spi-nor.c
-@@ -578,6 +578,8 @@ static int spi_nor_write_disable(struct spi_nor *nor)
- static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
- {
- 	int ret;
-+	u8 addr_bytes = nor->params.rdsr_addr_nbytes;
-+	u8 dummy = nor->params.rdsr_dummy;
- 
- 	if (nor->spimem) {
- 		struct spi_mem_op op =
-@@ -586,10 +588,21 @@ static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
- 				   SPI_MEM_OP_NO_DUMMY,
- 				   SPI_MEM_OP_DATA_IN(1, sr, 1));
- 
-+		if (spi_nor_protocol_is_dtr(nor->reg_proto)) {
-+			op.addr.nbytes = addr_bytes;
-+			op.addr.val = 0;
-+			op.dummy.nbytes = dummy;
-+		}
-+
-+		spi_nor_spimem_setup_op(nor, &op, nor->reg_proto);
-+
- 		ret = spi_mem_exec_op(nor->spimem, &op);
- 	} else {
--		ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR,
--						    sr, 1);
-+		if (spi_nor_protocol_is_dtr(nor->reg_proto))
-+			ret = -ENOTSUPP;
-+		else
-+			ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR,
-+							    sr, 1);
- 	}
- 
- 	if (ret)
--- 
-2.25.0
+Cheers,
+--Prabhakar Lad
 
+>  .../devicetree/bindings/pci/rcar-pci-ep.yaml       |   76 ++
+>  arch/arm64/configs/defconfig                       |    2 +-
+>  drivers/misc/pci_endpoint_test.c                   |    3 +
+>  drivers/pci/controller/Kconfig                     |   15 +-
+>  drivers/pci/controller/Makefile                    |    3 +-
+>  drivers/pci/controller/cadence/pcie-cadence-ep.c   |    7 +-
+>  drivers/pci/controller/dwc/pcie-designware-ep.c    |   29 +-
+>  drivers/pci/controller/pcie-rcar-ep.c              |  490 ++++++++
+>  drivers/pci/controller/pcie-rcar-host.c            | 1053 +++++++++++++++++
+>  drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
+>  drivers/pci/controller/pcie-rcar.h                 |  129 ++
+>  drivers/pci/controller/pcie-rockchip-ep.c          |    7 +-
+>  drivers/pci/endpoint/pci-epc-mem.c                 |  167 ++-
+>  include/linux/pci-epc.h                            |   39 +-
+>  14 files changed, 1985 insertions(+), 1264 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+>  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+>  create mode 100644 drivers/pci/controller/pcie-rcar.h
+>
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
