@@ -2,59 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC908184D56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:14:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BF5B184D5D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:15:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=agS2LB5bMRzNdf4+aWzzDtE+UhzImUvM6YMOWgTp+Is=; b=PcHTlNJJyYp5w9
-	VG8pjtQinJFvZEacLYesegPldjEAA0G4fwZI56YrrPPLwbBixLkaKmqA+iCojhKviebIp+Lt3qNPj
-	EAgupgPfjjYyo+lgPsseCLRe6+wbcv8uiVKbiAOnBfhDEf4NnJLVirIetN8Cnphwej0MNHscRVqHt
-	ftZKI2ovy1dWCS7XQColr9zV6+oHv7vWIrbGYLHestD8yf9cafsA2+cTmhrec2eIv8hQu4vHLPAq3
-	Q6IeCuIBWN5u2+m3EyUClsj9hCnpTcvNpdondgItZ1+Ub0itVrrUka/L6ouALjyDrT/PgTEG2L6l4
-	bMWJWfvoYYV7z3xaY6Dg==;
+	List-Owner; bh=tW41KYnCLmBzr5TqcXVEiBxGhsxuR+vQoF65QguBETo=; b=gLF8a6ah5tIbrQ
+	ZfMzMooX569/Pht4T3YIf28TtfTc/7OfWShBUbeUErOpqR01fFJ9OlsxMFf121S2AEoy7i/1FdG34
+	WFvDi/lM7Qru9PWXtKqwFUgCgfK3tWxDK6QSN4vu2nqGkaxjeAaPKaEjHQqvj77DF30S5J25YLz52
+	eCS5J56yMMCfV86IsTRHjQpA7ZNOUUF/HNHs2a+IXeKSEEmOLE4obCtY97uoxUrBd3aXlFuUhWe/Q
+	rknMfmC+N/M6zFJ3AR9qifZHn98FvyzXenYNK5EDmRyYkffCoTopOoEf0ddmq/u3sNG0WSw3IydF3
+	aQq2knl1gjXZXMREYhWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCntT-0007dT-7N; Fri, 13 Mar 2020 17:14:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCntM-0007d5-04
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:14:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B27AA31B;
- Fri, 13 Mar 2020 10:14:33 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27E4A3F534;
- Fri, 13 Mar 2020 10:14:33 -0700 (PDT)
-Date: Fri, 13 Mar 2020 17:14:31 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 4/6] arm64: uaccess: Use asm/ccset.h macros in __range_ok
-Message-ID: <20200313171430.GM42546@lakrids.cambridge.arm.com>
-References: <20200311180416.6509-1-richard.henderson@linaro.org>
- <20200311180416.6509-5-richard.henderson@linaro.org>
- <20200313110436.GD42546@lakrids.cambridge.arm.com>
- <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
+	id 1jCnuQ-0000vC-2w; Fri, 13 Mar 2020 17:15:42 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCnuB-0000mh-HL
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:15:29 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a141so11136725wme.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Mar 2020 10:15:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=EiAZ8r1RK4eYPjDEt/gPiQ4hc4RczwbEBzIiaGohL7A=;
+ b=Y6MMbku01pHaOoSgGbj4gF3V6x7FB1fkNAjJ6ru6WyqJeOLaM9BYbK0Ix5GiRzvNyK
+ JIioY1ozgF3HVo4Auv/aymm6AZFpDclDUVmdfoDPF+KPKip5Yk4kG7Hly9cTf+rNIbjt
+ 7MLho2yP/uxhsxbFwElwAMRIDoxKMELy3GerALcpDAGTG2KnGEZ+GqcbM0IjWFUDhr7q
+ rowpPLYZoUSujhlAEl+M2aZSrzgSsZCi5RH5aISnBCWJvXcUUYCU1KjnPZLcSm+y37Rq
+ sstjUD42VHXtFuUYk1V6LrY/wCYZhaFm3tgsnEUbTCcAXDxIK+sON7MnL+fUwV5dhLoH
+ PtxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=EiAZ8r1RK4eYPjDEt/gPiQ4hc4RczwbEBzIiaGohL7A=;
+ b=VbYZZa2AyrfSoi7X5r1gg4dpG6/4Xz6j+AGxBHnGT+wQFUaLB2l98N1RLv0URtUpkz
+ LmbnI6ekphsm6NvImI7ynH8diBFcRWYA2kqzoOaMJ+qiWDzoRmcXfnzE6I/QYr5hJPYH
+ WAH2scS8TNYx18cKNOaCyEwQqvv2Ml/GT5ls/A/kZFXOj5HZMvykBOfJb4UcuiUFPb7m
+ JgHbcyY0IVwwjOl+hsXTI8GNcvTiRr9/NWe40V1nn70ZuBA8auz6yYqOn8rPcHlwtEfL
+ 855qaUSRb78tTbSwh7fV7JQXi8z+YfQjRNTG6/uKokmwhmgGE5WMOkkGwGKRkW1HyrMa
+ LCxg==
+X-Gm-Message-State: ANhLgQ35tE8UrcE/5FZrUKfMaoR64UvLQNu26AJjS8/kzPXd2X2inZeX
+ 8w+cN5WRL4JxAbODdQtN+DXFUA==
+X-Google-Smtp-Source: ADFU+vuhetFMtP2EoDOpiocI9rZpw5aJIjO8D6ESXO0czFCY0ade8WAwSU18BkQ9bFFVg+JYF0INNg==
+X-Received: by 2002:a7b:c414:: with SMTP id k20mr11747450wmi.119.1584119725823; 
+ Fri, 13 Mar 2020 10:15:25 -0700 (PDT)
+Received: from google.com ([2a00:79e0:d:110:d6cc:2030:37c1:9964])
+ by smtp.gmail.com with ESMTPSA id s22sm16474638wmc.16.2020.03.13.10.15.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Mar 2020 10:15:25 -0700 (PDT)
+Date: Fri, 13 Mar 2020 17:15:21 +0000
+From: Quentin Perret <qperret@google.com>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Subject: Re: [PATCH v4 1/4] PM / EM: add devices to Energy Model
+Message-ID: <20200313171521.GA236432@google.com>
+References: <20200309134117.2331-1-lukasz.luba@arm.com>
+ <20200309134117.2331-2-lukasz.luba@arm.com>
+ <20200313100407.GA144499@google.com>
+ <bd1233f4-6e8b-23d1-e5aa-7c904fbd1bb3@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <bd1233f4-6e8b-23d1-e5aa-7c904fbd1bb3@arm.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_101436_083606_B499BA2F 
-X-CRM114-Status: GOOD (  20.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_101527_618069_3CF1C84C 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: -14.0 (--------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-14.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 1.7 FSL_HELO_FAKE          No description available.
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,68 +107,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Henderson <richard.henderson@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
+ linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
+ daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
+ tomeu.vizoso@collabora.com, sboyd@kernel.org, rdunlap@infradead.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 04:51:28PM +0000, Robin Murphy wrote:
-> On 2020-03-13 11:04 am, Mark Rutland wrote:
-> > On Wed, Mar 11, 2020 at 11:04:14AM -0700, Richard Henderson wrote:
-> > > Uses of __range_ok almost always feed a branch.
-> > > This allows the compiler to use flags directly.
-> > 
-> > If we want to give hte compiler the most freedom, the best thing would
-> > be to write this in C. IIUC this code is written in assembly largely for
-> > historical reasons, and the comment above says:
-> > 
-> > | This is equivalent to the following test:
-> > | (u65)addr + (u65)size <= (u65)current->addr_limit + 1
-> > 
-> > ... which e.g. we could write as:
-> > 
-> > 	(__uint128_t)addr + (__uint128_t)size <= (__uint128_t)limit + 1;
-> > 
-> > ... which would be much clearer than the assembly.
-> > 
-> > Is there any pattern like that for which the compiler generates
-> > reasonable looking code, and if not, is that something that could be
-> > improved compiler side?
+On Friday 13 Mar 2020 at 16:49:24 (+0000), Lukasz Luba wrote:
+<snip>
+> Well if someone would add EM to its platform and call this in
+> hotplug, which is used as cooling method, will see a lot of warnings.
+
+Right, but I guess I was arguing that calling this for CPUs, even on
+hotplug, is kinda wrong.
+
+> I would rather avoid stressing people with this kind of warnings.
+> This is under control and nothing really happens even when they
+> do hotplug very often, like LTP stress tests.
 > 
-> Hmm, in fact this:
-> 
-> 	__uint128_t tmp = (__uint128_t)(unsigned long)addr + size;
-> 	return !tmp || tmp - 1 <= limit;
-> 
-> generates code that looks like utter crap in isolation[1], but once inlined
-> actually leads to a modest overall reduction (-0.09%) across the whole of
-> vmlinux according to bloat-o-meter (presumably most of those branches roll
-> up into the overall "if(access_ok())..." control flow for the typical case,
-> and I'm sure size and limit get constant-folded a lot).
+> I agree to add a print there but warning for me is when something
+> is not OK and should be investigated.
+> I would prefer dev_dbg_once() to print thet the EM is not going to be
+> removed. This will also not pollute dmesg in many logs.
 
-Neat.
+Fair enough, a WARN is maybe a bit over the top. A debug message
+should work.
 
-IIUC for a non-zero size the !tmp check can be elided, and for a
-constant size the subtraction can be folded in at compile time, so for a
-{get,put}_user(), the compiler only needs to do the addition and a check
-against limit.
 
-> IIRC at the time there were so many uncertainties flying around that
-> sticking with asm to take compiler unknowns out of the picture felt
-> desirable, but perhaps the time might be nigh to retire my baby after all...
+<snip>
+> So these small changes will be present in v5. I have to wait a few
+> days because there is one change to devfreq_cooling.c queuing and I will
+> send v5 with updated patch 3/4 rebased on top.
 
-I guess we might have thought we'd need to pass the result into some
-masking logic, but I think uaccess_mask_ptr() turned out to be good
-enough in practice.
-
-> I'll investigate a bit further.
-
-Great!
-
-Thanks,
-Mark.
+Sounds good, thanks.
+Quentin
 
 _______________________________________________
 linux-arm-kernel mailing list
