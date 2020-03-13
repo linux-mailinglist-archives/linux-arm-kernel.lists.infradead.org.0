@@ -2,94 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21E721849BB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 15:43:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82A11849F5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 15:51:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=evG3k7+KwfYg1/3WnTwTTbClpDOWYStJtdiTnfHXZR0=; b=Whm9OvFmOoLATn
-	MJKBFDNIAjbmTh183rRVYaLpLWp923uTAgxa1H0fLAJTyP6IbDpON6qr5tb9P1tZouP5ITxOIAjhv
-	s2rW+JY/EpytTZfilepshcrX7NcYX5Ral4pkemhb2PtxMzbUo7B8DDBLYrU6hQQs6XRyRyMZPcvvo
-	ZP9ssdvQFzuJxT36b3vqeUWzPUtpkdZT6uC0B2lRM66yLaFJP6A57xTGOcdSQJA9itBuaP7C/q8Ss
-	qwTLNOWUbXKsggm/nXfQRhCSbPJ/CJfWZrxASpXnCB6q8M7Gcd8wqq+evihJ3nsyRKCFyxU1ObtH9
-	LjFDLlGufcdvFuuz+JBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hjwdL5FNgMyOmVnSJ+VaQYDfcdP09rOuVW2YUGMsVnA=; b=opsIdntoWT0nAgcA0Ebnis5/w
+	JjwX3KQ9r43mhmgLu6FmXmMWhXG9jDr1j2aSwcxUqXhTlW87cNN8B4LQiwdRkCy0iwBpu50J8DiEi
+	HDzVZnsrKJo02dS+y2K7Zl/9DFm4DU6qgbwWPP1AECAj4vsj2JU7ywzORtR/e7cgUz4raSSzZbaew
+	AUyukX4/w+Eg9l+tlCsQk/DBK3iZ5EWrWag/Fc6I3aKZ88kt3rFvuN37X3kO9M+eJ9MdCiZcncG0M
+	LRiwXTp2OGqLyxYBbOvjBRa7n+wSmtx/jGPIgnaVyc9eq/zhP+K/Xeu8QiWIp7PVpZzapDKZDuaK4
+	3W7F1ctEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jClWx-0007dv-LD; Fri, 13 Mar 2020 14:43:19 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jClWl-0007bW-KL
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 14:43:09 +0000
-Received: by mail-pg1-x542.google.com with SMTP id a32so4247341pga.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 07:43:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=SpWWV8Vzt0B/4ORSdBbXWuLXrkvKyLnGYjPx6j+va9s=;
- b=m5LgmXEhwH7qCMpy8AMDQtFnKbFzLNd1lr8HbI+GFBXXqqW/U4D2/KYjmL2jzG7Gkx
- M1tgXjecGU60owDjsMItfb2FLXxIV0w58gQtMcgOUtkpmit0RQOA2R/IHV1yKcKQwhv1
- 2Kl2JDS6eL/Ykw2oMVcgdxPBxDCejryFlWxySlM/eK/yjHzoq+/DYHygSkqCHV6DsSVu
- 3rulJur/sf4uP23ZLtnbmejV+P0cZ3W+hz3WbGfpA0Kghk2bOPYnnPymXChNVon3NHU5
- 9A0JPNXyrG7c6ND4Y7seYi+1uljFG0f6rCPiJhStPjqtVX842n1R0PL6Vq0R7ww9jBwA
- awzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=SpWWV8Vzt0B/4ORSdBbXWuLXrkvKyLnGYjPx6j+va9s=;
- b=ESv+EkTZCZq62NZjO1Pu6C9IOYXIPiYd2RTcr2DrOjpSG2TnPfiDIREErz+6JLDTnZ
- fZwoJyfgOWSJNvmEaflWFqcoBczeUjOZHF2LJIEEt+aws3+0ZDbPea3VBlndGBOrqUm4
- wFLMW32ANfjCkVSaE1DvpX8yVDNViHEAlpCsNM6mSxt1yTOsZQsvRy5YB0yTbRWZQuv9
- W8aU5AE0YNXwFG5Ait8zRjNIXlyweg6svM6JFMjOCkTdTlB7mLrLqUP2ums72tDWw7/O
- t1SEzd/1ypunWOYOq4s4m6yCt067AwYacs6kAh06QI2TQoT9OWrDSxvey/zMeBRngYOL
- ahSw==
-X-Gm-Message-State: ANhLgQ2vyQDYesJCCxJnE3oLvKabRQP9530ZbS5XpE+532gWX0KX7odX
- PDYOUa+BNC6Gupdy8hrwSMs=
-X-Google-Smtp-Source: ADFU+vvCSWa2zU2rVO+1qqNp6WqSxenT9MGNGT5GMXvMz5XxJH9Q1BP281Kw1otg0AVl+FTOOIzmzw==
-X-Received: by 2002:a63:6907:: with SMTP id e7mr13366263pgc.445.1584110586743; 
- Fri, 13 Mar 2020 07:43:06 -0700 (PDT)
-Received: from localhost ([216.24.188.11])
- by smtp.gmail.com with ESMTPSA id f8sm1000121pfq.178.2020.03.13.07.43.04
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 13 Mar 2020 07:43:06 -0700 (PDT)
-From: Dejin Zheng <zhengdejin5@gmail.com>
-To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
- davem@davemloft.net, mcoquelin.stm32@gmail.com, netdev@vger.kernel.org
-Subject: [PATCH net-next] net: stmmac: platform: convert to
- devm_platform_ioremap_resource
-Date: Fri, 13 Mar 2020 22:42:57 +0800
-Message-Id: <20200313144257.9351-1-zhengdejin5@gmail.com>
-X-Mailer: git-send-email 2.25.0
+	id 1jCles-00039w-Ka; Fri, 13 Mar 2020 14:51:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jClek-00039J-Te
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 14:51:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9BC331B;
+ Fri, 13 Mar 2020 07:51:21 -0700 (PDT)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D75D3F67D;
+ Fri, 13 Mar 2020 07:51:20 -0700 (PDT)
+Subject: Re: [PATCH RFC] perf:Add driver for HiSilicon PCIe PMU
+To: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+References: <1584014816-1908-1-git-send-email-liuqi115@huawei.com>
+ <49a04327-b58b-3103-f992-97e8838c41df@arm.com>
+ <20200313141416.00002e89@Huawei.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <314f612d-d6e2-3855-44f1-d6cab756aac9@arm.com>
+Date: Fri, 13 Mar 2020 14:50:55 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200313141416.00002e89@Huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_074307_668273_759E68E8 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200313_075123_045303_AB029643 
+X-CRM114-Status: GOOD (  20.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhengdejin5[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhengdejin5[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,48 +65,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dejin Zheng <zhengdejin5@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, Qi Liu <liuqi115@huawei.com>, linuxarm@huawei.com,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, bhelgaas@google.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify code, which
-contains platform_get_resource and devm_ioremap_resource.
+On 2020-03-13 2:14 pm, Jonathan Cameron wrote:
+> On Fri, 13 Mar 2020 13:23:53 +0000
+> Robin Murphy <robin.murphy@arm.com> wrote:
+> 
+>> On 2020-03-12 12:06 pm, Qi Liu wrote:
+>>> From: Qi liu <liuqi115@huawei.com>
+>>>
+>>> PCIe PMU Root Complex Integrate End Point(IEP) device is
+>>> supported to sample bandwidth, latency, buffer occupation,
+>>> bandwidth utilization etc.
+>>> Each PMU IEP device monitors multiple root ports, and each
+>>> IEP is registered as a pmu in /sys/bus/event_source/devices,
+>>> so users can select the target IEP, and use filter to select
+>>> root port, function and event.
+>>> Filtering options are:
+>>> event:    - select the event.
+>>> subevent: - select the subevent.
+>>> port:     - select target root port.
+>>> func:     - select target EP device under the port.
+>>>
+>>> Example: hisi_pcie_00_14_00/event=0x08,subevent=0x04,   \
+>>> port=0x05,func=0x00/ -I 1000
+>>>
+>>> PMU IEP device is described by its bus, device and function,
+>>> target root port is 0x05 and target EP under it is function
+>>> 0x00. Subevent 0x04 of event 0x08 is sampled.
+>>>
+>>> Note that in this RFC:
+>>> 1. PCIe PMU IEP hardware is still in development.
+>>> 2. Perf common event list is undetermined, and name of these
+>>> events still need to be discussed.
+>>> 3. port filter could only select one port each time.
+>>> 4. There are two possible schemes of pmu registration, one is
+>>> register each root port as a pmu, it is easier for users to
+>>> select target port. The other one is register each IEP as pmu,
+>>> for counters are per IEP, not per root port, the second scheme
+>>> describes hardware PMC much more reasonable, but need to add
+>>> "port" filter option to select port. We use the second one in
+>>> this RFC.
+>>>
+> 
+> Whilst it's great to have detailed feedback, just to make it clear...
+> 
+> This is an RFC for the reasons above.  They include that the hardware
+> is still in development - i.e. we can't test it because they've not finished
+> implementation yet.
 
-Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+That's OK - TBH I'd be more sympathetic if I wasn't still in the middle 
+of developing a massively more complicated PMU driver for hardware that 
+*does* exist, but that I only have sporadic access to one trivial 
+configuration of :)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-index d10ac54bf385..bbc0a2ce24c0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-@@ -645,8 +645,6 @@ EXPORT_SYMBOL_GPL(stmmac_remove_config_dt);
- int stmmac_get_platform_resources(struct platform_device *pdev,
- 				  struct stmmac_resources *stmmac_res)
- {
--	struct resource *res;
--
- 	memset(stmmac_res, 0, sizeof(*stmmac_res));
- 
- 	/* Get IRQ information early to have an ability to ask for deferred
-@@ -674,8 +672,7 @@ int stmmac_get_platform_resources(struct platform_device *pdev,
- 	if (stmmac_res->lpi_irq == -EPROBE_DEFER)
- 		return -EPROBE_DEFER;
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	stmmac_res->addr = devm_ioremap_resource(&pdev->dev, res);
-+	stmmac_res->addr = devm_platform_ioremap_resource(pdev, 0);
- 
- 	return PTR_ERR_OR_ZERO(stmmac_res->addr);
- }
--- 
-2.25.0
+> The intention of posting so early is to get some feedback on the general
+> approach and the specific points in 2,3 and 4 above.
 
+It's probably hard to comment on point 2 until it's nailed down what 
+actual events exist and what the values represent.
+
+For point 3, there's a relatively intuitive way to support the case 
+where all counters are affected by a single global filter - essentially, 
+the first scheduled event 'claims' the global filter settings, then any 
+further events have to have the same settings to be allowed in - we 
+implement this in arm_smmuv3_pmu.c, for one example.
+
+> The key fiddly point with this is that it is a shared PMU across a set
+> of PCIe Root Ports (there are several of these devices on each SoC in
+> the system covering a set of ports each).
+> That makes for a somewhat fiddly interface, hence the RFC.
+The general rule of thumb I've been told is that the granularity of "a 
+PMU" usually wants to be the granularity at which you can start/stop 
+multiple counters atomically (consider when you want to accurately 
+measure a metric which requires relative values of two or more events). 
+In that context, the structure implemented here looks like the right choice.
+
+Robin.
+
+> 
+> Thanks to everyone who has reviewed though as definitely some stuff for liuqi to
+> fix!
+> 
+> Jonathan
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
