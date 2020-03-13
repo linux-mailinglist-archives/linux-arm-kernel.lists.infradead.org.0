@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8735818435E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:11:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00191184362
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:12:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wFndA7hiT2Wv0nzf6UEGc6AyWr54aWCEiy7MKmNAzJc=; b=L/SqZVgfEbN347
-	bpT6ZMIWG/vBCHBImjN48RlputU4lKyOEcB6w98UZqJKqPR/3jRxZ8XuIv2D5SQ69/iciOt64+Ca/
-	KVw8ZPFTz9utEwVYE21/cWJ5JRzQ/PHRDOB9q3yTPVzgCt6puq+wf+dFI9TbDfCSml3lXtJ5paDwJ
-	Il9WWipDXph14Ou/fsgWFEprIlOoEEMaW9XGprvGUnbI2GJeZPImVzEr/2dC4TPgggMaffQ9vOpYP
-	4/KVQLzneqPMwyHSjeKsRImcnRdn0DoC0PjH40S5womVenHrwI5Y9BMaAHi6fpU40AUsiJyWpRlG4
-	k63Ayw3mZxZLa5fqA4bg==;
+	List-Owner; bh=ZpeKbTCzcgrVneomcYP4eHz4aBZ9AvBveeM9yfTa3HI=; b=pegRrndsWrxoiC
+	Ctd6V7UY54j1osooRwqoIRb8yNM0o6SBjAMtj6G6DtpNwTYABlexa3Ju+DosP+TyxypMxLIJU64aa
+	WYXTJzkhXTdw0GrQG1IbLIwlPLzu+ilNcifr34wqucfLlHGlu68G/u4+XviPX6XNAgJEFpuNvorEl
+	nbURx3shlPHuwRLZNpC0zNm+qEWd4VYFxY3bEZrvoGTYMrLNGuGpsqDg1dr57DPnnrnKay6/07oGz
+	MHGJQ7xhg6GuXSCvnll8Ao7sgpO3C44dQobwolE/R77jgLi85iduSrMxdDBkxRHmBebAy2EO9LdAV
+	R+uC5NjHrCtpTHdobm3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgLl-0000fm-LL; Fri, 13 Mar 2020 09:11:25 +0000
+	id 1jCgMN-0001FD-Mo; Fri, 13 Mar 2020 09:12:03 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgHo-0003oR-As
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:07:23 +0000
-Received: by mail-wr1-x442.google.com with SMTP id 6so11053021wre.4
+ id 1jCgHp-0003pR-Nq
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:07:24 +0000
+Received: by mail-wr1-x442.google.com with SMTP id f3so4059346wrw.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 02:07:19 -0700 (PDT)
+ Fri, 13 Mar 2020 02:07:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=noym7N9HZ+0j3iemfyMolfTdAyqS68kNioWo1cBTRwM=;
- b=ehu6PcgPt850KQjzoV4GQagTdcUkLwYwh710xe+NU9v3iKlSKlhiukznVO0+fscCuX
- ScMV50BTelVKnRfFRKF9i6Vqn+RkQNHi1mN91q7nY0c0GYa9PXXbs+WXKLhWFVuew+vu
- BmmzNXNA8BPF9/bpDsmnAjsV7wcjvbQe5l9Gn8oVQYrxWIoI8fouyIhVJLhMr7iH4ubA
- FoLE1KQn+dGzWQPq0mepHbGk8DAZRmrZ9xpg3G8PiOnY/eZAr2u2NVRRzFhETaB8BqA8
- ZK4NEQXE18nuIuTn8tuluoTFL3TfuMX8qP3OUMCxsUjq9/wZWXwGqY5VofbKyzUZ2v8U
- nmeg==
+ bh=2HPMaT81MXCeebofnnf7zx0HVEbfvu9bFZLYLQmZDe4=;
+ b=VeEpgcp6B7SCz97YksAWPlVAixQ9a1T2llnI8xmaAIqQWVuisecj1ExtzzyvhDYKNM
+ zONGsxO4cTO0O891qd52BsaYjV8Tmc7P9OohTp3ZwOgF6r7cNP30MDODqLy7LYxXv+fU
+ 7WXw1rNmICnU4w1n4D6DQehhwBxR1iY5opur9vb4TsE4EDo/6CdWZJC/SAGZouNj+sco
+ pKnfvceozF9c3esMmpUoPEZ1pJd65YVC4NUPxt1AxCX38ntIT/cSckmi5bALe3qluDxI
+ TWRhDZH1lW5Hvh/aOwYr0xFdxxcVXyBIxu2ds74vHim4/9hR/vYZri672YWGRfqKZ1jj
+ WU2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=noym7N9HZ+0j3iemfyMolfTdAyqS68kNioWo1cBTRwM=;
- b=oyik9KCI9DefjXKprbH2fX6+49tKcJ1xoBpz8RL+IEbVhnpCXfHF59gHjqeFqpN/b9
- cLL6/mrynSdiZ7U7FI7t62DPu3F7MgJHS53HtPF9TvBpJOVH+bN41DawBGXAhjUs/Yyo
- khO3TvzaippQWjRFhLMF+OrGPvCkZQN/Zj69w5Zfzr2bHcKmlRFX8Upv0D1BCLw+KEaJ
- TehSloh1ZXQQmJx2o1IvC5rvcXOZSuDte8Uh6T8mGeGbhjX1co5xk7mcDawGcJ48oSaM
- yKkgRZCEAWxJ5L+8SRiV9I0DUOK6RjIZ9tbtmgq5AnBZTwi4vY7WrZTSRQwknLCip28f
- 7UFg==
-X-Gm-Message-State: ANhLgQ1X2qiB7rGpS4udPCVXhVseAVTwFBvVTdKwFnQw0COeDWbFwqti
- hxwHs7iqkIm66IIqtnFnDL3QFQ==
-X-Google-Smtp-Source: ADFU+vvGEUqKOHAbXHeHU9sk0wLV/5ZlhtBmNDC8otoQy0IjrRf1k/8Ec6KWw0KmFvH2+W0feRZgzA==
-X-Received: by 2002:adf:c40e:: with SMTP id v14mr16353044wrf.408.1584090438334; 
- Fri, 13 Mar 2020 02:07:18 -0700 (PDT)
+ bh=2HPMaT81MXCeebofnnf7zx0HVEbfvu9bFZLYLQmZDe4=;
+ b=HMnYazCFt19dubBOVQurhPNTctVhlCvUICx6/7OW6LeDxF04KQLZausm7H1m8UdO4A
+ mwBN1M8Nh5V9WTb4Skyh82mDlMhTJge69c1dd89KZ2LwKcSOMIdnrpMfegVUau2c9T0L
+ siu6F0iBieyVuCmlSy4FzPXe0nYjuTFDfoqVWATIL2kosSTfaPUEcY4EVbSqLmglJM3h
+ NCa3h4gBVSdnFY1iHVf4YTo1CW+8HAc/keCHlCk457OBMH8eMNmt6O7rDoooXz+VcMXr
+ g+28DoPZn51hXkZrtcqILGzXawXSg5Tx9E8AjsX7HodtwuEbTw2VV3/D2C0honELNtXy
+ 5pvw==
+X-Gm-Message-State: ANhLgQ2IkqbYfDDw5MBBlZ9HHQ9Q7PGCEAks/P7wQFmEpXyaNsX6Cuhp
+ C57iDlgQpHc9AHrS8xlyLzG//q4s++YXcw==
+X-Google-Smtp-Source: ADFU+vtCUP2jexc1cRHOBRmdco0djB5phQgI4eSon4Q+TxQ5jXY0QSBxqsTqU+wd5RHjgAaSyI3+6A==
+X-Received: by 2002:adf:9f48:: with SMTP id f8mr16528447wrg.199.1584090439399; 
+ Fri, 13 Mar 2020 02:07:19 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id i1sm61872399wrs.18.2020.03.13.02.07.17
+ by smtp.gmail.com with ESMTPSA id i1sm61872399wrs.18.2020.03.13.02.07.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 02:07:17 -0700 (PDT)
+ Fri, 13 Mar 2020 02:07:18 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 1/4] arm64: dts: meson-g12: split emmc pins to select 4 or 8
- bus width
-Date: Fri, 13 Mar 2020 10:07:10 +0100
-Message-Id: <20200313090713.15147-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/4] arm64: dts: meson-g12: add the SPIFC nodes
+Date: Fri, 13 Mar 2020 10:07:11 +0100
+Message-Id: <20200313090713.15147-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200313090713.15147-1-narmstrong@baylibre.com>
 References: <20200313090713.15147-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_020720_820229_1CA11C3D 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20200313_020721_958292_24E6A0D6 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -101,176 +100,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Khadas VIM3 shares the eMMC pins 4 to 7 with the SPI NOR, in order
-to enable the eMMC and the SPI NOR interface, we need to omit the
-4 last pins from the eMMC pinctrl.
-
-As it was done for the Khadas VIM2, split the eMMC pinctrls in ctrl, data
-and ds pins with either 4bits data or 8bits data, and update the current
-board accordingly.
+Add the controller and pinctrl nodes to enable the SPI Flash Controller
+on the Amlogic G12A and compatible SoCs.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../boot/dts/amlogic/meson-g12-common.dtsi    | 40 ++++++++++++++-----
- .../boot/dts/amlogic/meson-g12a-sei510.dts    |  2 +-
- .../boot/dts/amlogic/meson-g12a-u200.dts      |  2 +-
- .../boot/dts/amlogic/meson-g12a-x96-max.dts   |  2 +-
- .../boot/dts/amlogic/meson-g12b-odroid-n2.dts |  2 +-
- .../boot/dts/amlogic/meson-g12b-ugoos-am6.dts |  2 +-
- .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |  2 +-
- .../boot/dts/amlogic/meson-sm1-sei610.dts     |  2 +-
- 8 files changed, 37 insertions(+), 17 deletions(-)
+ .../boot/dts/amlogic/meson-g12-common.dtsi    | 20 +++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 87b9a47a51b9..d09efb86ec33 100644
+index d09efb86ec33..56a9f8eadf01 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -295,17 +295,9 @@
+@@ -593,6 +593,17 @@
  						};
  					};
  
--					emmc_pins: emmc {
-+					emmc_ctrl_pins: emmc-ctrl {
- 						mux-0 {
--							groups = "emmc_nand_d0",
--								 "emmc_nand_d1",
--								 "emmc_nand_d2",
--								 "emmc_nand_d3",
--								 "emmc_nand_d4",
--								 "emmc_nand_d5",
--								 "emmc_nand_d6",
--								 "emmc_nand_d7",
--								 "emmc_cmd";
-+							groups = "emmc_cmd";
- 							function = "emmc";
- 							bias-pull-up;
- 							drive-strength-microamp = <4000>;
-@@ -319,6 +311,34 @@
- 						};
- 					};
- 
-+					emmc_data_4b_pins: emmc-data-4b {
-+						mux-0 {
-+							groups = "emmc_nand_d0",
-+								 "emmc_nand_d1",
-+								 "emmc_nand_d2",
-+								 "emmc_nand_d3";
-+							function = "emmc";
-+							bias-pull-up;
-+							drive-strength-microamp = <4000>;
++					nor_pins: nor {
++						mux {
++							groups = "nor_d",
++							       "nor_q",
++							       "nor_c",
++							       "nor_cs";
++							function = "nor";
++							bias-disable;
 +						};
 +					};
 +
-+					emmc_data_8b_pins: emmc-data-8b {
-+						mux-0 {
-+							groups = "emmc_nand_d0",
-+								 "emmc_nand_d1",
-+								 "emmc_nand_d2",
-+								 "emmc_nand_d3",
-+								 "emmc_nand_d4",
-+								 "emmc_nand_d5",
-+								 "emmc_nand_d6",
-+								 "emmc_nand_d7";
-+							function = "emmc";
-+							bias-pull-up;
-+							drive-strength-microamp = <4000>;
-+						};
-+					};
-+
- 					emmc_ds_pins: emmc-ds {
+ 					pdm_din0_a_pins: pdm-din0-a {
  						mux {
- 							groups = "emmc_nand_ds";
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-index 168f460e11fa..b00d0468c753 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-@@ -472,7 +472,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
+ 							groups = "pdm_din0_a";
+@@ -2071,6 +2082,15 @@
+ 				amlogic,channel-interrupts = <64 65 66 67 68 69 70 71>;
+ 			};
  
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts
-index 2a324f0136e3..a26bfe72550f 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts
-@@ -271,7 +271,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-index 4f2596d82989..1b07c8c06eac 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-@@ -443,7 +443,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-index 8830d3844885..b59ae1a297f2 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-@@ -435,7 +435,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
-index ccd0bced01e8..325e448eb09c 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
-@@ -485,7 +485,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index 90815fa25ec6..b6f22a0bd318 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -312,7 +312,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-index a8bb3fa9fec9..71cc730a4913 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-@@ -518,7 +518,7 @@
- /* eMMC */
- &sd_emmc_c {
- 	status = "okay";
--	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-0 = <&emmc_ctrl_pins>, <&emmc_data_8b_pins>, <&emmc_ds_pins>;
- 	pinctrl-1 = <&emmc_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 
++			spifc: spi@14000 {
++				compatible = "amlogic,meson-gxbb-spifc";
++				status = "disabled";
++				reg = <0x0 0x14000 0x0 0x80>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				clocks = <&clkc CLKID_CLK81>;
++			};
++
+ 			pwm_ef: pwm@19000 {
+ 				compatible = "amlogic,meson-g12a-ee-pwm";
+ 				reg = <0x0 0x19000 0x0 0x20>;
 -- 
 2.22.0
 
