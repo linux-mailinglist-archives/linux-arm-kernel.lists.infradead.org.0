@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6046F18429E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:29:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A7421842D3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:41:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wV5QWOldKDcLmdwdMX6Bj5Sjenl3HMeovj2MZMiCTBY=; b=b5WpPe28wvrwGV
-	XKKVkxtX9X3DO3/EcAgNKSn5qR4U750OzxKrVUv9AKDDIPuSIM8QZJOKMqQuh6MYugcJbJYvChf3L
-	/rgo6rWvmQnEBUi/NxNVoJ4IyLKKKZP/YDjhKxGfFvI2F6v4u6yygnWkSS3l2GJ5Fuc4cl0aFnxJW
-	UcRwo98fugz+JSgQ88DVMjeECBEsdU4Qv0w0uEDKf0oO8s+LARTEcM8UsFL9w2pmf1pO/COHRRFB3
-	6ZgWU/9OJ6RvF0/i1evZ0FEAHUvnwzn74UPXOThO3JyA2SS2CPSQZqvXMWTy5sY06PahZxtSSggSS
-	eAaXZcsHp0Ptu6nSg5Uw==;
+	List-Owner; bh=5TepTIdXzwsHDxxwKVH3G+TlsWIFy2uuxa09ZeWW4Vw=; b=XV5nn0KvAFfTr7
+	b0T+uTmkR41ZD2FU/kwQWz/FYzvVHP3e225qb6/pRsYm2rcbQk/hlZFLFlB9p4cYdQhlGiMManPvK
+	Mq2fhoe6kicXru1pA+gyT3EfbSuHMz3W2sv3wkes1Qocni1xFkVd5E5AIdZtXIkKak2Zpee7dy6WG
+	x20jYJ0d8VFHPXHOXeFnf9rsX7jq/J01c7zM5ny7L95holT0ctl/tHds9syXKY4Z2JBHNEGPi/SOA
+	sx1OI+CueYpsA5opZtgnBlVnIBkpSgKnt5dIJ3brouSSRxXCKPqyxnNWi4a/pRK+E+KeI+5yRNUtx
+	ajqBeWG0SfDYsA/wVVFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCfhW-0007eH-C9; Fri, 13 Mar 2020 08:29:50 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1jCfsl-0006wf-3G; Fri, 13 Mar 2020 08:41:27 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCfhO-0007Tz-Sj
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 08:29:44 +0000
-Received: by mail-ed1-f66.google.com with SMTP id h62so10820261edd.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 01:29:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=rn0gcyx6GxxQcRaqlCHT4v4uNwnWkXjytoiFfyP58zE=;
- b=gTzkieU3QdjXoxZTdwyxqkkDQiXwqGi+kauhKqLQlx57mxHDDBirkgTyO7uvafFHfR
- vedDFZI34SBt48vs0Zt5XyBJtb386RQrj2y0P1BIJExRy+da8t8HfOBnFOZi3R59yrPG
- 4p25TUJtwRlgzXk2m+5T9Yh9o7H2d1FHHEsUbOK1bp4kDV91hjL9F20IzkUYg3Jx8vwD
- NqNVFUh/A56gI9ZHkqW9v88jTk8aWcSKv9+dtw/o3YYg8MhmG13Lb70MeOEBvJqCZDOa
- l0LHXYfUScxBK63Ziqy4G/oauBccZjP0K+44wPy2Z/+l+D7DQYxH5SzrqPeK3XwbdT5B
- MWLw==
-X-Gm-Message-State: ANhLgQ1O5vi/wINMnk4PibnEhTweSAw0zY+xZK+JvtGzVTesgGc3FIAO
- U7HKuXAEX99WKb6wf6neVFE=
-X-Google-Smtp-Source: ADFU+vv4w/B2tIP4ZNexQetJ7DqtBBVkc+MfyuEZQrVPiWjDli5bZ4ZKT55RJiuDDBmhlGBoX8nTxA==
-X-Received: by 2002:a17:906:b80f:: with SMTP id
- dv15mr10653207ejb.28.1584088180143; 
- Fri, 13 Mar 2020 01:29:40 -0700 (PDT)
-Received: from pi3 ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id n10sm442215edf.3.2020.03.13.01.29.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 01:29:39 -0700 (PDT)
-Date: Fri, 13 Mar 2020 09:29:37 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Paul Cercueil <paul@crapouillou.net>
-Subject: Re: [PATCH 1/2] dt-bindings: arm/samsung: Add compatible string for
- the Galaxy S2
-Message-ID: <20200313082937.GA7416@pi3>
-References: <20200312153411.13535-1-paul@crapouillou.net>
+ id 1jCfsc-0006wD-Bq; Fri, 13 Mar 2020 08:41:19 +0000
+X-UUID: 8c8c2c915a5e4c7595b7e9d8f8761ed0-20200313
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=uadq0m8B7fzPLQ9yivfxpszXKt2Y0MnLJJvhYfcT86c=; 
+ b=H6f3tWTGxFfR+wQJ6LtLwLQolZigY1Fi9BcX6RfgwjCoCzkoFBql6frtlez8xKsOwEQuc5qq+045ajUjgNRiNf2dHBIvS3yAlRArWrMrcNNe247a11IE9VUfuhWGY5/0y268bg/mUJnZr26zvFigCDJISH4wivP2UG3qJgfIyGE=;
+X-UUID: 8c8c2c915a5e4c7595b7e9d8f8761ed0-20200313
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ran.bi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 135607428; Fri, 13 Mar 2020 00:41:13 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Mar 2020 01:31:11 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs05n2.mediatek.inc
+ (172.21.101.140) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 13 Mar 2020 16:30:04 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 13 Mar 2020 16:31:01 +0800
+Message-ID: <1584088256.16960.9.camel@mhfsdcap03>
+Subject: Re: [PATCH v10 4/5] rtc: mt6397: Add support for the MediaTek
+ MT6358 RTC
+From: Ran Bi <ran.bi@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>
+Date: Fri, 13 Mar 2020 16:30:56 +0800
+In-Reply-To: <20200313072230.GC3142@dell>
+References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <20200312074407.GA3142@dell> <1584003477.6269.8.camel@mhfsdcap03>
+ <20200313072230.GC3142@dell>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200312153411.13535-1-paul@crapouillou.net>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_012942_928060_C55A0CF8 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200313_014118_415752_C3B9A484 
+X-CRM114-Status: GOOD (  21.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,42 +86,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Josef Friedl <josef.friedl@speed.at>, linux-pm@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, Sebastian
+ Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 12, 2020 at 04:34:10PM +0100, Paul Cercueil wrote:
-> Add compatible string for the Samsung Galaxy S2 (i9100 version), which
-> is an Exynos 4210 based device.
+On Fri, 2020-03-13 at 07:22 +0000, Lee Jones wrote:
+> On Thu, 12 Mar 2020, Ran Bi wrote:
 > 
-> Signed-off-by: Paul Cercueil <paul@crapouillou.net>
-> ---
->  .../devicetree/bindings/arm/samsung/samsung-boards.yaml          | 1 +
->  1 file changed, 1 insertion(+)
+> > On Thu, 2020-03-12 at 07:44 +0000, Lee Jones wrote:
+> > > On Wed, 11 Mar 2020, Hsin-Hsiung Wang wrote:
+> > > 
+> > > > From: Ran Bi <ran.bi@mediatek.com>
+> > > > 
+> > > > This add support for the MediaTek MT6358 RTC. Driver using
+> > > > compatible data to store different RTC_WRTGR address offset.
+> > > > This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
+> > > > driver which only needed by armv7 CPU without ATF.
+> > > > 
+> > > > Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> > > > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> > > > ---
+> > > >  drivers/power/reset/mt6323-poweroff.c |  2 +-
+> > > >  drivers/rtc/rtc-mt6397.c              | 32 ++++++++++++++++++++++++--------
+> > > >  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
+> > > >  3 files changed, 33 insertions(+), 10 deletions(-)
+> > > > 
+> > 
+> > <...>
+> > 
+> > > >  
+> > > >  #define RTC_IRQ_STA            0x0002
+> > > >  #define RTC_IRQ_STA_AL         BIT(0)
+> > > > @@ -65,6 +67,10 @@
+> > > >  #define MTK_RTC_POLL_DELAY_US  10
+> > > >  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> > > >  
+> > > > +struct mtk_rtc_data {
+> > > > +	u32			wrtgr;
+> > > > +};
+> > > 
+> > > Do you expect to add more properties to this struct?
+> > > 
+> > > If not, it seems a bit overkill.
+> > > 
+> > 
+> > Yes, we would add more properties here in future patches.
+> > 
+> > > >  struct mt6397_rtc {
+> > > >  	struct device           *dev;
+> > > >  	struct rtc_device       *rtc_dev;
+> > > > @@ -74,6 +80,7 @@ struct mt6397_rtc {
+> > > >  	struct regmap           *regmap;
+> > > >  	int                     irq;
+> > > >  	u32                     addr_base;
+> > > > +	const struct mtk_rtc_data *data;
+> > > 
+> > > 'data' is a terrible variable name.
+> > > 
+> > > Why do you need to store this?
+> > > 
+> > > It's one variable which is used once AFAICT.
+> > 
+> > I would rename 'data' to 'config'.
+> > 
+> > This struct will be extended in future patches to achieve more PMIC chip
+> > compatibility.
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-> index 63acd57c4799..e2b19caac795 100644
-> --- a/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-> +++ b/Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
-> @@ -55,6 +55,7 @@ properties:
->                - samsung,smdkv310                # Samsung SMDKV310 eval
->                - samsung,trats                   # Samsung Tizen Reference
->                - samsung,universal_c210          # Samsung C210
-> +              - samsung,i9100                   # Samsung Galaxy S2
+> On closer inspection, it looks like wrtgr (also not a great name for a
+> variable by the way) is a register address.  Is that correct?
+> Initially I thought it was a model number, which would have been a
+> suitable candidate for entry into OF .data.
+> 
+> However, describing register addresses in OF .data does not sound like
+> good practice.  It is usually used to identify a platform in the cases
+> where platforms cannot be otherwise dynamically interrogated for model
+> number via a register read.
+> 
+> Describing register maps via 'config' data is a slippery slope.
+> 
 
-Put it in alphabetical order please so with this change:
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+wrtgr is a special register called "write trigger" which could apply RTC
+register change after write 1 to this register. I suppose I could rename
+it to "trigger".
 
-(Optionally I can take it through samsung-soc tree)
-
-Best regards,
-Krzysztof
-
+Most RTC register offset was same between 6397 and 6358 PMIC chip except
+this trigger register. So I would like to store this difference into OF
+data. Otherwise, I need a long if-else condition based on model number
+or register read.
+ 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
