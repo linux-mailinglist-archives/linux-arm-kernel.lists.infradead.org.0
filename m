@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 642181843C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:35:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34AEF1843EC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:37:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5/tQdyz5YBtdiW20tZKzssIQ/t874XJE7asf+P1iKRI=; b=tj8W/aoeAmhwYi
-	HZBmaesJ642Wl55x6HUm7lyn4zw4RrZG8L+q/1XPZpG5UVmBwFYoKwTlCVuSdlff9+LYf84jTLmsZ
-	JmYuJyMGB0Yaib6K8Sbuo3JMWp9pfhJl8syfKNDhiy/LVqasVrtE8lq3QSQHmAtFNnWynPwWRPi24
-	cxmgHEl9G4Lm9NpgpQ5h9/zyGfCOyDb/Qur/2LNgo4RMkLOtLBWsoux1+1NC0aas/Yabn/jRDfWst
-	7LQXsPe5Y3FRqzCLkCZtksKFqnfgplsLjyADqXlCqgW/Qa9a8SQktPYagRRhfegagYPt5/QtoT6BJ
-	rD4STRVfOrLl7B7BV2OQ==;
+	List-Owner; bh=jFLKpuVLBgReGbnHsGiG2uXtGCi9UKYvs+f8qP/E8Yc=; b=DKaDSxVwRrRKCl
+	Gx/GId1jlHB9eNmUcvJaDFD9hvMO1NibmnL5d0YDmejxPteCR2QdWdJMq3Mp1EgpSjVTDUxIVgabk
+	CXQZLRri3ZSZ43mXTpOcyxr1mW5MK+fw/GBmB8h5RwfnDyQUIn9e4dKQZsQsyslCePCk5DVHf2HHq
+	VKMH7pL8y1n2coMIidX9+gUbjBGxvuQfGHqLQe2AHmCbvxVXeoX9N2d6p2OflcYhxDrSmIFAwWfVP
+	NTGDuEV5JcHmpJUl69km4x4aEfRwMZ55j3bQaOgG/nUXjUog7IV7VHve6Y0ywJP0MDIANdH9qMcVB
+	4KQlcaA0aJ6nyr9gKUig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgiW-0005m6-Fw; Fri, 13 Mar 2020 09:34:56 +0000
+	id 1jCglJ-0001Cl-5z; Fri, 13 Mar 2020 09:37:49 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgiD-0005h4-K1; Fri, 13 Mar 2020 09:34:38 +0000
-X-UUID: 6f02d6fc103a46d98ba1b29c9b6b4047-20200313
+ id 1jCgiN-0005r7-EU; Fri, 13 Mar 2020 09:34:49 +0000
+X-UUID: 718684f2242d4e8e8e1802407fa11e4c-20200313
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=WTsszqZt97hYyVRz3sqpNSZe5TNKlzAwiyT5E3FLPW0=; 
- b=C7i07kzSvfsLoETFfzz/K8RE+SxJdP96BJ053b2B7w9hZQX6HQez7u6ZkHJ5Ak+uKufob910jzqgn4aHkKdpoLHoyKVhnUqlyIp8LCxtTgwgqw3TasSSsT78Ay8Ns7mQmWPAN4IroUqqpSwKAO6+x3dYUYkXYVF8wwmT8sgUMf8=;
-X-UUID: 6f02d6fc103a46d98ba1b29c9b6b4047-20200313
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=kO25H1emR15qgYn4QcDNUz+M/XfUisv1uNSv5VIntVQ=; 
+ b=Rl9TX/KqHYemnhZ1SlDZsBxwtt1WpG7RecyAwzgYR5R7zCEhtUultOyGd6QbqyodhGZTEdu1gcXW2D8Onyw0ihNP7st+dE0gcuaVppZELHpPGYGJycKZFagiNPKxVJdApIUg81tvWWoW0LRMS6BVcLCmF0XLCnMYfUNiEClJusI=;
+X-UUID: 718684f2242d4e8e8e1802407fa11e4c-20200313
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <henryc.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 272696542; Fri, 13 Mar 2020 01:34:32 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 323266914; Fri, 13 Mar 2020 01:34:44 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Mar 2020 02:34:41 -0700
+ 15.0.1395.4; Fri, 13 Mar 2020 02:34:54 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Mar 2020 17:33:33 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Mar 2020 17:32:56 +0800
 Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 13 Mar 2020 17:33:41 +0800
@@ -47,19 +47,18 @@ To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Viresh Kumar
  <vireshk@kernel.org>, Stephen Boyd <swboyd@chromium.org>, Ryan Case
  <ryandcase@chromium.org>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH V4 04/13] arm64: dts: mt8183: add performance state support of
- scpsys
-Date: Fri, 13 Mar 2020 17:34:17 +0800
-Message-ID: <1584092066-24425-5-git-send-email-henryc.chen@mediatek.com>
+Subject: [PATCH V4 05/13] soc: mediatek: add header for mediatek SIP interface
+Date: Fri, 13 Mar 2020 17:34:18 +0800
+Message-ID: <1584092066-24425-6-git-send-email-henryc.chen@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
 References: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: D023FFB3E18CAA474D3E3468F12CDD7C97DD3C90292E266EFC763F850B5EE36A2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_023437_673007_F466BD6F 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200313_023447_604477_FFDAEF36 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,52 +100,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for performance state of scpsys on mt8183 platform
+Add a header to collect SIPs and add one SIP call to initialize power
+management hardware for the SIP interface defined to access the SPM
+handling vcore voltage and ddr rate changes on mt8183 (and most likely
+later socs).
 
 Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ include/soc/mediatek/mtk_sip.h | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+ create mode 100644 include/soc/mediatek/mtk_sip.h
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 433c62e..7bf20ca 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -11,6 +11,7 @@
- #include <dt-bindings/power/mt8183-power.h>
- #include <dt-bindings/reset-controller/mt8183-resets.h>
- #include "mt8183-pinfunc.h"
-+#include <dt-bindings/soc/mtk,dvfsrc.h>
- 
- / {
- 	compatible = "mediatek,mt8183";
-@@ -310,6 +311,26 @@
- 				      "vpu-3", "vpu-4", "vpu-5";
- 			infracfg = <&infracfg>;
- 			smi_comm = <&smi_common>;
-+			operating-points-v2 = <&dvfsrc_opp_table>;
-+			dvfsrc_opp_table: opp-table {
-+				compatible = "operating-points-v2-level";
+diff --git a/include/soc/mediatek/mtk_sip.h b/include/soc/mediatek/mtk_sip.h
+new file mode 100644
+index 0000000..945fc72
+--- /dev/null
++++ b/include/soc/mediatek/mtk_sip.h
+@@ -0,0 +1,17 @@
++/* SPDX-License-Identifier: GPL-2.0
++ *
++ * Copyright (c) 2018 MediaTek Inc.
++ */
++#ifndef __SOC_MTK_SIP_H
++#define __SOC_MTK_SIP_H
 +
-+				dvfsrc_vol_min: opp1 {
-+					opp,level = <MT8183_DVFSRC_LEVEL_1>;
-+				};
++#ifdef CONFIG_ARM64
++#define MTK_SIP_SMC_AARCH_BIT		0x40000000
++#else
++#define MTK_SIP_SMC_AARCH_BIT		0x00000000
++#endif
 +
-+				dvfsrc_freq_medium: opp2 {
-+					opp,level = <MT8183_DVFSRC_LEVEL_2>;
-+				};
++#define MTK_SIP_SPM			(0x82000506 | MTK_SIP_SMC_AARCH_BIT)
++#define MTK_SIP_SPM_DVFSRC_INIT		0x00
 +
-+				dvfsrc_freq_max: opp3 {
-+					opp,level = <MT8183_DVFSRC_LEVEL_3>;
-+				};
-+
-+				dvfsrc_vol_max: opp4 {
-+					opp,level = <MT8183_DVFSRC_LEVEL_4>;
-+				};
-+			};
- 		};
- 
- 		apmixedsys: syscon@1000c000 {
++#endif
 -- 
 1.9.1
 _______________________________________________
