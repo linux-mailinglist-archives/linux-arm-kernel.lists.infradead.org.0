@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 507B8184D51
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:12:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC908184D56
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:14:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HltQwe0/8gb0r9ZpIvwY0U5//O7opXJX8SmOt6z4jYI=; b=tPAgquu4rzBHewTgZv8T1pmaj
-	IoaCMsNkcE1g4oguzOIOmrHuJbjTm4dsSXuclqZ+urZIK3HiZfBvmingyVpg85xS9+IOYBpEdtcqT
-	Kw7oNLQxIwfmFuoynOGMQZbnGNyRagfwoJ+tvUUf55rZm0PXJrLT30O+bZCYv/PgoA0CeLLVuyW3L
-	PZ/DDLVMdSLqoKNGgnhy/don4zo3ClLi/qrPLciC7TDDo94tGiDlu86th7sQu/LaHVHr6jSCmhSMf
-	yNE0Inclx8N8Rf7mppQVuei/1/rt1/f3eO15oOdKd7ajaCkU9jJ8KKSkbVX6hlXWJb98xZ9wjQYbd
-	4PLk+BiiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=agS2LB5bMRzNdf4+aWzzDtE+UhzImUvM6YMOWgTp+Is=; b=PcHTlNJJyYp5w9
+	VG8pjtQinJFvZEacLYesegPldjEAA0G4fwZI56YrrPPLwbBixLkaKmqA+iCojhKviebIp+Lt3qNPj
+	EAgupgPfjjYyo+lgPsseCLRe6+wbcv8uiVKbiAOnBfhDEf4NnJLVirIetN8Cnphwej0MNHscRVqHt
+	ftZKI2ovy1dWCS7XQColr9zV6+oHv7vWIrbGYLHestD8yf9cafsA2+cTmhrec2eIv8hQu4vHLPAq3
+	Q6IeCuIBWN5u2+m3EyUClsj9hCnpTcvNpdondgItZ1+Ub0itVrrUka/L6ouALjyDrT/PgTEG2L6l4
+	bMWJWfvoYYV7z3xaY6Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnqz-0007EN-Jg; Fri, 13 Mar 2020 17:12:09 +0000
+	id 1jCntT-0007dT-7N; Fri, 13 Mar 2020 17:14:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCnqp-0007DJ-AN; Fri, 13 Mar 2020 17:12:00 +0000
+ id 1jCntM-0007d5-04
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:14:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5810B31B;
- Fri, 13 Mar 2020 10:11:58 -0700 (PDT)
-Received: from [10.37.12.40] (unknown [10.37.12.40])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F1D6B3F534;
- Fri, 13 Mar 2020 10:11:47 -0700 (PDT)
-Subject: Re: [PATCH v4 2/4] OPP: change parameter to device pointer in
- dev_pm_opp_of_register_em()
-To: Quentin Perret <qperret@google.com>
-References: <20200309134117.2331-1-lukasz.luba@arm.com>
- <20200309134117.2331-3-lukasz.luba@arm.com>
- <20200313101524.GA150397@google.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <3ac8ebf8-9db0-d168-8b80-f7f5ba345f86@arm.com>
-Date: Fri, 13 Mar 2020 17:11:45 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B27AA31B;
+ Fri, 13 Mar 2020 10:14:33 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27E4A3F534;
+ Fri, 13 Mar 2020 10:14:33 -0700 (PDT)
+Date: Fri, 13 Mar 2020 17:14:31 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 4/6] arm64: uaccess: Use asm/ccset.h macros in __range_ok
+Message-ID: <20200313171430.GM42546@lakrids.cambridge.arm.com>
+References: <20200311180416.6509-1-richard.henderson@linaro.org>
+ <20200311180416.6509-5-richard.henderson@linaro.org>
+ <20200313110436.GD42546@lakrids.cambridge.arm.com>
+ <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200313101524.GA150397@google.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_101159_399270_B3596300 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20200313_101436_083606_B499BA2F 
+X-CRM114-Status: GOOD (  20.23  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,89 +66,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
- steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
- linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
- daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
- tomeu.vizoso@collabora.com, sboyd@kernel.org, rdunlap@infradead.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- shawnguo@kernel.org
+Cc: Richard Henderson <richard.henderson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 3/13/20 10:15 AM, Quentin Perret wrote:
-> On Monday 09 Mar 2020 at 13:41:15 (+0000), Lukasz Luba wrote:
->> diff --git a/drivers/cpufreq/cpufreq-dt.c b/drivers/cpufreq/cpufreq-dt.c
->> index d2b5f062a07b..676b56424886 100644
->> --- a/drivers/cpufreq/cpufreq-dt.c
->> +++ b/drivers/cpufreq/cpufreq-dt.c
->> @@ -275,7 +275,9 @@ static int cpufreq_init(struct cpufreq_policy *policy)
->>   	policy->cpuinfo.transition_latency = transition_latency;
->>   	policy->dvfs_possible_from_any_cpu = true;
->>   
->> -	dev_pm_opp_of_register_em(policy->cpus);
->> +	ret = dev_pm_opp_of_register_em(cpu_dev, policy->cpus);
->> +	if (ret)
->> +		dev_dbg(cpu_dev, "Couldn't register Energy Model %d\n", ret);
->>   
->>   	return 0;
+On Fri, Mar 13, 2020 at 04:51:28PM +0000, Robin Murphy wrote:
+> On 2020-03-13 11:04 am, Mark Rutland wrote:
+> > On Wed, Mar 11, 2020 at 11:04:14AM -0700, Richard Henderson wrote:
+> > > Uses of __range_ok almost always feed a branch.
+> > > This allows the compiler to use flags directly.
+> > 
+> > If we want to give hte compiler the most freedom, the best thing would
+> > be to write this in C. IIUC this code is written in assembly largely for
+> > historical reasons, and the comment above says:
+> > 
+> > | This is equivalent to the following test:
+> > | (u65)addr + (u65)size <= (u65)current->addr_limit + 1
+> > 
+> > ... which e.g. we could write as:
+> > 
+> > 	(__uint128_t)addr + (__uint128_t)size <= (__uint128_t)limit + 1;
+> > 
+> > ... which would be much clearer than the assembly.
+> > 
+> > Is there any pattern like that for which the compiler generates
+> > reasonable looking code, and if not, is that something that could be
+> > improved compiler side?
 > 
-> Ah, that answers my comment on patch 01. You're adding the error
-> messages here.
+> Hmm, in fact this:
 > 
-> Isn't this more boilerplate for the drivers ? All they do is print the
-> same debug message. Maybe just move it inside dev_pm_opp_of_register_em
-> directly ?
+> 	__uint128_t tmp = (__uint128_t)(unsigned long)addr + size;
+> 	return !tmp || tmp - 1 <= limit;
 > 
+> generates code that looks like utter crap in isolation[1], but once inlined
+> actually leads to a modest overall reduction (-0.09%) across the whole of
+> vmlinux according to bloat-o-meter (presumably most of those branches roll
+> up into the overall "if(access_ok())..." control flow for the typical case,
+> and I'm sure size and limit get constant-folded a lot).
 
-Agree. I could add a 'fail' label in dev_pm_opp_of_register_em
-something like:
+Neat.
 
---------------------------------->8----------------
-dev_pm_opp_of_register_em
-...
-	nr_opp = dev_pm_opp_get_opp_count(dev);
-	if (nr_opp <= 0) {
-		ret = -EINVAL;
-		goto fail;
-	}
+IIUC for a non-zero size the !tmp check can be elided, and for a
+constant size the subtraction can be folded in at compile time, so for a
+{get,put}_user(), the compiler only needs to do the addition and a check
+against limit.
 
-...
-	ret = em_register_perf_domain()
-	if (ret)
-		goto fail;
+> IIRC at the time there were so many uncertainties flying around that
+> sticking with asm to take compiler unknowns out of the picture felt
+> desirable, but perhaps the time might be nigh to retire my baby after all...
 
-	return 0;
+I guess we might have thought we'd need to pass the result into some
+masking logic, but I think uaccess_mask_ptr() turned out to be good
+enough in practice.
 
-fail:
-	dev_dbg(cpu_dev, "Couldn't register Energy Model %d\n", ret);
-	return ret
-------------------------8<-----------------
+> I'll investigate a bit further.
 
-Makes more sense, agree, thank you for your suggestion.
+Great!
 
-I will remove this
-   if (ret)
-	dev_dbg(cpu_dev, "Couldn't register Energy Model %d\n", ret);
-from the cpufreq drivers.
-
-
-Regards,
-Lukasz
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
