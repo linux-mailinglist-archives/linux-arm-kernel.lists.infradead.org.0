@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F1AF184BB2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:51:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ADE2184BAA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:50:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8NSqsZ2wAEKsNNn3+6h4N+JNLR4FzEulF6bd0SwCLY=; b=J9czCORUtFggrI
-	kwTgzVRHpGY3wqCwuFm5jTbJtLbYweI0zrwhIE3drivEkImFerUAMhfd2xopYrMijAbRaGVptRuzT
-	okxa3+OciVfg8MTHXRzq2R4rUMQhx8OPabLeGCPidfK93C3nuqU1Phi+O2eVPXJSIYOHmsVbJBlgE
-	UJjKg8NH2+2HbEWmi4ZAaLa9CQHoIaV4x17ZMZW2rGp890xQYnw+mFGxW+/tzqUoKsffRan2c0Ush
-	AmZfaeX1kBJa7nUep1HGgkhzX7C8xSYaNapnvkEJN5ioc1zrrhds24UnKZfv1rxd9JIVqZTwcnuXe
-	/Dvo+TzTzugRM/lj3OwQ==;
+	List-Owner; bh=FE4hkdKyFIBEc382gCMZZEJiZ9KKkqaOiBNHezV4Kt4=; b=fqGxvoPbdoNF0t
+	TEhG+rQ703oD17GFQPV7bJ9gxbZiP9UlIXsKP3NVEsEFDDaTsHRR0ys1zTxooSHJOYWZvI+4bVgul
+	6EU8VPTgpAkgnucprIW9osulWi5wkT7hjaq39awdfSiRg3nixmexrAtW2n+evPCLUSXtR7fjXNdM/
+	K7KU+mG+08YACGvNDkz2SPsuyNI5dkQS1omNzIDf1Oe2YC5SaE70G7BQc1IjaZZBY31cQje5rXtUg
+	g7umlrKMEU+eHI1TmUvJjfUHIW7jz18Fqo/ZheC429INkEcMtoYIw6qlbK4+tNXskrvaef4dan0oF
+	wEH9VbITwjIMnubKI5vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmaW-0004XK-LM; Fri, 13 Mar 2020 15:51:04 +0000
+	id 1jCmaE-0004Ke-Pc; Fri, 13 Mar 2020 15:50:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmUm-0005rm-G9
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:45:11 +0000
+ id 1jCmUp-0006BC-7t
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:45:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF7571063;
- Fri, 13 Mar 2020 08:45:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23C70FEC;
+ Fri, 13 Mar 2020 08:45:10 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE3123F67D;
- Fri, 13 Mar 2020 08:45:03 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 119473F67D;
+ Fri, 13 Mar 2020 08:45:06 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v3 19/26] arm64: vdso: Include common headers in the vdso
+Subject: [PATCH v3 20/26] arm64: vdso32: Include common headers in the vdso
  library
-Date: Fri, 13 Mar 2020 15:43:38 +0000
-Message-Id: <20200313154345.56760-20-vincenzo.frascino@arm.com>
+Date: Fri, 13 Mar 2020 15:43:39 +0000
+Message-Id: <20200313154345.56760-21-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084508_705424_08834056 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20200313_084511_492744_298FE85C 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -87,41 +87,43 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Refactor the vdso implementation to include common headers.
+Refactor the vdso32 implementation to include common headers.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/vdso/gettimeofday.h | 1 -
- arch/arm64/kernel/vdso/vgettimeofday.c     | 2 --
- 2 files changed, 3 deletions(-)
+ arch/arm64/include/asm/vdso/compat_gettimeofday.h | 2 +-
+ arch/arm64/kernel/vdso32/vgettimeofday.c          | 3 ---
+ 2 files changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
-index 5a534432aa5d..afba6ba332f8 100644
---- a/arch/arm64/include/asm/vdso/gettimeofday.h
-+++ b/arch/arm64/include/asm/vdso/gettimeofday.h
-@@ -8,7 +8,6 @@
+diff --git a/arch/arm64/include/asm/vdso/compat_gettimeofday.h b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+index 81b0c394f1d8..8d8d1c006a68 100644
+--- a/arch/arm64/include/asm/vdso/compat_gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
+@@ -8,7 +8,7 @@
  #ifndef __ASSEMBLY__
  
  #include <asm/unistd.h>
 -#include <uapi/linux/time.h>
++#include <asm/errno.h>
  
- #define VDSO_HAS_CLOCK_GETRES		1
+ #include <asm/vdso/compat_barrier.h>
  
-diff --git a/arch/arm64/kernel/vdso/vgettimeofday.c b/arch/arm64/kernel/vdso/vgettimeofday.c
-index 747635501a14..4236cf34d7d9 100644
---- a/arch/arm64/kernel/vdso/vgettimeofday.c
-+++ b/arch/arm64/kernel/vdso/vgettimeofday.c
-@@ -5,8 +5,6 @@
+diff --git a/arch/arm64/kernel/vdso32/vgettimeofday.c b/arch/arm64/kernel/vdso32/vgettimeofday.c
+index 54fc1c2ce93f..9366ceb635a1 100644
+--- a/arch/arm64/kernel/vdso32/vgettimeofday.c
++++ b/arch/arm64/kernel/vdso32/vgettimeofday.c
+@@ -5,9 +5,6 @@
   * Copyright (C) 2018 ARM Limited
   *
   */
 -#include <linux/time.h>
 -#include <linux/types.h>
- 
- int __kernel_clock_gettime(clockid_t clock,
- 			   struct __kernel_timespec *ts)
+-
+ int __vdso_clock_gettime(clockid_t clock,
+ 			 struct old_timespec32 *ts)
+ {
 -- 
 2.25.1
 
