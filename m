@@ -2,58 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 622F41840B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 06:55:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E1F01840C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 07:05:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HcZH1SB4uJe/5ziy3Hl5SbJN64F5TAv5rxjdeeNQtk0=; b=VxN
-	G+LVtUWIULqhbJvinKUZkshhHZVySNDJjYyQq6CvDwzx6vN11ETziBw1MzUYgd1PKSJ9N27mHmLrm
-	vgOlRdOKWV6vpoKMEPGzgAGO03PfuJaxyRsaJ3nw4YUyg0fZ0emqeGowjqhWRre+5w+4smJLLF3CK
-	/mo5BE1R1ybau30Q9VBC1jPq0Jh9pwlpWO9jdE3Byor3nQFLIvExhA6KnQ4oBCSM/HIzGp1n+JKub
-	D1AzNE85OmnPe3V/kPKK/fpTiSyvwLHHqpE13yL3f2KTSglekr2XcthzDQ8SeGttfnqupCZdxa98X
-	XKq7yZgUqa9fPr3C93RzPvA+WpPvQ/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eko+e6+zeE04uKaTuirMTD36iCKpQ4FkZ3RLtXMKS6o=; b=q9CQrC8mdgIQ/n
+	C6ZDsUCnomiy+S1S9h+yORxVAjm+p+zWrMSO4x5nXSs/YltLjVkrLD4nnZyO71Bxx1hsOkRrMIJmh
+	rdekbwSQsr23M5dILXHFqy1wEyYrzLpTP9xlDnbMWaLoBph/BbPUjQOavYlNGVDXsR7rwutMj4Jdt
+	y1imU/JD2n3CVWpWWP0Jp9grbGe585cc0WjQBEwjI2rNXVNGr2SzT8nXv772Ak2rKL6SLK0xmW+29
+	ybHEbeKoJIz2p5aZnBNLIUARwvZc/FsDf1UVinx08kD/grZ6r/PvJ9BTj/6coEcNABRN7yw3JnVnO
+	5ymn/REHNm3cuKkAocow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCdHt-00075h-At; Fri, 13 Mar 2020 05:55:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCdS2-0003dW-P4; Fri, 13 Mar 2020 06:05:42 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCdHg-0006gu-Uq
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 05:55:02 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5BD292073E;
- Fri, 13 Mar 2020 05:55:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584078900;
- bh=mD1fvFnDL51onkpDO3+q+SixBRGtDzKQiE9eV34WbDw=;
- h=Date:From:List-Id:To:Cc:Subject:From;
- b=jLqzJaek8xvMjZOBkvXLyItABlGlXx+nVIWOApOLCUER6+WH9XeD1Je6m5kwdeVTy
- cODpm++LhO8MjuIZQvTnkc0VvyrTZzi4zAwDv5F4C6iirzhEU01B1l+8UHvHgCWnu2
- HHeqyWxzlHiHhNuoNBrisoIqZY+NJLQCvI7jDqOQ=
-Received: by wens.tw (Postfix, from userid 1000)
- id DAD205FCA3; Fri, 13 Mar 2020 13:54:59 +0800 (CST)
-Date: Fri, 13 Mar 2020 13:54:59 +0800
-From: Chen-Yu Tsai <wens@kernel.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL 3/3] Allwinner Device Tree Changes for 5.7
-Message-ID: <20200313055459.GA19820@wens.csie.org>
+ id 1jCdRZ-0003RP-Nb; Fri, 13 Mar 2020 06:05:15 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02D64RVG082531;
+ Fri, 13 Mar 2020 01:04:27 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584079467;
+ bh=vV1m4ipHbEcjDNG4CCj7hTEXa79TbXMFs2L4A48lc2U=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=mfUBslo5TSJh2eSnf7KSk/FglJiy/UUACwvkd1PZehbMiBP+SOdDjllPmHp1iD5tP
+ GciZb4L06sqC+4DD9ETAwsh/vQ10LqQz588dN6F0swFU3xbxfi8ndvonzVAj61Z26w
+ fkZcaWe52pGoASlkjY9TtE9yyO6oFiQWQY8cAI6s=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02D64RHi005130
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 13 Mar 2020 01:04:27 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
+ Mar 2020 01:04:27 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 13 Mar 2020 01:04:27 -0500
+Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02D64Gxu117651;
+ Fri, 13 Mar 2020 01:04:18 -0500
+Subject: Re: [PATCH 01/23] mtd: spi-nor: Stop prefixing generic functions with
+ a manufacturer name
+To: <Tudor.Ambarus@microchip.com>, <bbrezillon@kernel.org>,
+ <linux-mtd@lists.infradead.org>
+References: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
+ <20200302180730.1886678-2-tudor.ambarus@microchip.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <91394111-cbd6-c24e-485d-88fcd6825dc7@ti.com>
+Date: Fri, 13 Mar 2020 11:34:55 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200302180730.1886678-2-tudor.ambarus@microchip.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_225501_038684_A5A52EE4 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200312_230513_876115_1601132B 
+X-CRM114-Status: GOOD (  15.73  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,209 +93,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1917957486899901250=="
+Cc: kstewart@linuxfoundation.org, alexandre.belloni@bootlin.com,
+ linux-aspeed@lists.ozlabs.org, thor.thayer@linux.intel.com,
+ jethro@fortanix.com, rfontana@redhat.com, miquel.raynal@bootlin.com,
+ opensource@jilayne.com, richard@nod.at, michal.simek@xilinx.com,
+ Ludovic.Desroches@microchip.com, joel@jms.id.au, nishkadg.linux@gmail.com,
+ john.garry@huawei.com, vz@mleia.com, alexander.sverdlin@nokia.com,
+ matthias.bgg@gmail.com, tglx@linutronix.de, swboyd@chromium.org,
+ mika.westerberg@linux.intel.com, allison@lohutok.net,
+ linux-arm-kernel@lists.infradead.org, andrew@aj.id.au,
+ linux-kernel@vger.kernel.org, dinguyen@kernel.org, michael@walle.cc,
+ ludovic.barre@st.com, linux-mediatek@lists.infradead.org, info@metux.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1917957486899901250==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gKMricLos+KVdGMg"
-Content-Disposition: inline
+
+On 02/03/20 11:37 pm, Tudor.Ambarus@microchip.com wrote:
+> From: Boris Brezillon <bbrezillon@kernel.org>
+> 
+> Replace the manufacturer prefix by something describing more precisely
+> what those functions do.
+> 
+> Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
+> [tudor.ambarus@microchip.com: prepend spi_nor_ to all modified methods.]
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> ---
+>  drivers/mtd/spi-nor/spi-nor.c | 88 ++++++++++++++++++-----------------
+>  1 file changed, 45 insertions(+), 43 deletions(-)
+> 
+> diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
+> index caf0c109cca0..b15e262765e1 100644
+> --- a/drivers/mtd/spi-nor/spi-nor.c
+> +++ b/drivers/mtd/spi-nor/spi-nor.c
+> @@ -568,14 +568,15 @@ static int spi_nor_read_cr(struct spi_nor *nor, u8 *cr)
+>  }
+>  
+>  /**
+> - * macronix_set_4byte() - Set 4-byte address mode for Macronix flashes.
+> + * spi_nor_en4_ex4_set_4byte() - Enter/Exit 4-byte mode for Macronix like
+> + * flashes.
+>   * @nor:	pointer to 'struct spi_nor'.
+>   * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
+>   *		address mode.
+>   *
+>   * Return: 0 on success, -errno otherwise.
+>   */
+> -static int macronix_set_4byte(struct spi_nor *nor, bool enable)
+> +static int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable)
 
 
---gKMricLos+KVdGMg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Sounds a bit weird, how about simplifying this to:
 
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+	spi_nor_set_4byte_addr_mode()
 
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+Or if you want to be specific:
 
-are available in the Git repository at:
+	spi_nor_en_ex_4byte_addr_mode()
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git tags/sunxi-dt-for-5.7
-
-for you to fetch changes up to 048cdfceebb762ccbec7a11e1f1fb1c170c1e669:
-
-  arm64: dts: allwinner: a64: add node for rotation core (2020-03-12 00:27:24 +0800)
-
-----------------------------------------------------------------
-Allwinner Device Tree Changes for v5.7
-
-A fairly large set of changes for v5.7, including some new devices.
-
-SoC specific changes:
-
-  - SPI on H6 SoC enabled
-  - Thermal sensor on R40 SoC enabled
-  - Deinterlace core hardware on A64 SoC enabled
-  - Redundant assigned-clocks properties removed
-    - required clock rates are now enforced by drivers
-  - LVDS panel support on A20 SoC enabled
-  - PMU compatible fixed for H5 and H6 SoCs
-  - Thermal trip points added for A83T and H5 SoCs
-  - (Image) Rotation core hardware on A83T and A64 SoCs enabled
-
-Device specific changes:
-
-  - Pine64 PineTab and PinePhone added
-  - Various cleanups and improvements for Pine64 PineBook
-  - GPIO pin bank regulator supplies added for A64-OlinXino
-  - eMMC enabled on Orange Pi 3
-  - PocketBook Touch Lux 3 added
-  - Linutronix Testbox v2 added
-  - Ethernet enabled on Orange Pi One Plus
-  - HDMI enabled on H6-based Orange Pi boards
-
-----------------------------------------------------------------
-Andre Przywara (3):
-      arm64: dts: sun50i: H6: Add SPI controllers nodes and pinmuxes
-      arm64: dts: allwinner: h6: Pine H64: Add SPI flash node
-      dt-bindings: spi: sunxi: Document new compatible strings
-
-Andrey Lebedev (1):
-      ARM: dts: sun7i: Add LVDS panel support on A20
-
-Bastian Germann (2):
-      dt-bindings: arm: sunxi: Add Linutronix Testbox
-      ARM: dts: sun7i: Add Linutronix Testbox v2 board
-
-Emmanuel Vadot (1):
-      arm64: dts: allwinner: a64: Add gpio bank supply for A64-Olinuxino
-
-Icenowy Zheng (3):
-      dt-bindings: arm: sunxi: add binding for PineTab tablet
-      arm64: dts: allwinner: a64: add support for PineTab
-      arm64: allwinner: a64: enable LCD-related hardware for Pinebook
-
-Jernej Skrabec (10):
-      dt-bindings: interconnect: sunxi: Add A64 MBUS compatible
-      arm64: dts: allwinner: a64: Add MBUS controller node
-      media: dt-bindings: media: Add Allwinner A64 deinterlace compatible
-      arm64: dts: allwinner: a64: Add deinterlace core node
-      arm64: dts: allwinner: h6: orangepi-3: Add eMMC node
-      arm64: dts: allwinner: h6: Move ext. oscillator to board DTs
-      ARM: dts: sunxi: Fix DE2 clocks register range
-      arm64: dts: allwinner: a64: Fix display clock register range
-      ARM: dts: sun8i: a83t: Add device node for rotation core
-      arm64: dts: allwinner: a64: add node for rotation core
-
-Mans Rullgard (1):
-      ARM: dts: sunxi: h3/h5: add r_pwm node
-
-Marcus Cooper (2):
-      arm64: dts: allwinner: h6: orangepi-one-plus: Enable ethernet
-      arm64: dts: allwinner: h6: orangepi: Enable HDMI
-
-Maxime Ripard (4):
-      ARM: dts: sunxi: Remove redundant assigned-clocks
-      ARM: dts: sunxi: Remove redundant assigned-clocks
-      arm64: dts: allwinner: h5: Fix PMU compatible
-      arm64: dts: allwinner: h6: Fix PMU compatible
-
-Ondrej Jirman (9):
-      dt-bindings: arm: sunxi: Add PocketBook Touch Lux 3
-      ARM: dts: sun5i: Add PocketBook Touch Lux 3 support
-      arm64: dts: sun50i-h5-orange-pi-pc2: Add CPUX voltage regulator
-      ARM: dts: sun8i-a83t-tbs-a711: Drop superfluous dr_mode
-      ARM: dts: sun8i-h3: Add thermal trip points/cooling maps
-      ARM: dts: sun8i-a83t: Add thermal trip points/cooling maps
-      arm64: dts: sun50i-a64: Add i2c2 pins
-      dt-bindings: arm: sunxi: Add PinePhone 1.0 and 1.1 bindings
-      arm64: dts: allwinner: Add initial support for Pine64 PinePhone
-
-Samuel Holland (9):
-      arm64: dts: allwinner: Enable button wakeup on Orange Pi PC2
-      arm64: dts: allwinner: pinebook: Remove unused vcc3v3 regulator
-      arm64: dts: allwinner: pinebook: Sort device tree nodes
-      arm64: dts: allwinner: pinebook: Make simplefb more consistent
-      arm64: dts: allwinner: pinebook: Document MMC0 CD pin name
-      arm64: dts: allwinner: pinebook: Add GPIO port regulators
-      arm64: dts: allwinner: pinebook: Fix backlight regulator
-      arm64: dts: allwinner: pinebook: Fix 5v0 boost regulator
-      arm64: dts: allwinner: pinebook: Remove unused AXP803 regulators
-
-Yangtao Li (1):
-      ARM: dts: sun8i-r40: Add thermal sensor and thermal zones
-
- Documentation/devicetree/bindings/arm/sunxi.yaml   |  26 ++
- .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml        |   1 +
- .../media/allwinner,sun8i-h3-deinterlace.yaml      |   6 +-
- .../bindings/spi/allwinner,sun6i-a31-spi.yaml      |  11 +-
- arch/arm/boot/dts/Makefile                         |   2 +
- .../boot/dts/sun5i-a13-pocketbook-touch-lux-3.dts  | 257 ++++++++++++
- arch/arm/boot/dts/sun5i.dtsi                       |   3 -
- arch/arm/boot/dts/sun6i-a31.dtsi                   |  12 -
- .../boot/dts/sun7i-a20-linutronix-testbox-v2.dts   |  47 +++
- arch/arm/boot/dts/sun7i-a20.dtsi                   |  25 +-
- arch/arm/boot/dts/sun8i-a23-a33.dtsi               |   3 -
- arch/arm/boot/dts/sun8i-a33.dtsi                   |   2 -
- arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts          |   1 -
- arch/arm/boot/dts/sun8i-a83t.dtsi                  |  73 +++-
- arch/arm/boot/dts/sun8i-h3.dtsi                    |  25 ++
- arch/arm/boot/dts/sun8i-r40.dtsi                   |  30 +-
- arch/arm/boot/dts/sun8i-v3s.dtsi                   |   2 +-
- arch/arm/boot/dts/sunxi-h3-h5.dtsi                 |  17 +-
- arch/arm64/boot/dts/allwinner/Makefile             |   3 +
- .../boot/dts/allwinner/sun50i-a64-olinuxino.dts    |  17 +
- .../boot/dts/allwinner/sun50i-a64-pinebook.dts     | 170 +++++---
- .../dts/allwinner/sun50i-a64-pinephone-1.0.dts     |  11 +
- .../dts/allwinner/sun50i-a64-pinephone-1.1.dts     |  11 +
- .../boot/dts/allwinner/sun50i-a64-pinephone.dtsi   | 379 +++++++++++++++++
- .../boot/dts/allwinner/sun50i-a64-pinetab.dts      | 460 +++++++++++++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi      |  44 +-
- .../boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts  |  21 +
- arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi       |   3 +-
- .../boot/dts/allwinner/sun50i-h6-beelink-gs1.dts   |  11 +
- .../boot/dts/allwinner/sun50i-h6-orangepi-3.dts    |  20 +
- .../dts/allwinner/sun50i-h6-orangepi-one-plus.dts  |  33 ++
- .../boot/dts/allwinner/sun50i-h6-orangepi.dtsi     |  37 ++
- .../boot/dts/allwinner/sun50i-h6-pine-h64.dts      |  30 ++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi       |  66 ++-
- 34 files changed, 1747 insertions(+), 112 deletions(-)
- create mode 100644 arch/arm/boot/dts/sun5i-a13-pocketbook-touch-lux-3.dts
- create mode 100644 arch/arm/boot/dts/sun7i-a20-linutronix-testbox-v2.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
-
---gKMricLos+KVdGMg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE2nN1m/hhnkhOWjtHOJpUIZwPJDAFAl5rIDMACgkQOJpUIZwP
-JDBSnxAAvBCSsQyoXxC5vFSfESERCzvH+2/ydaIry/NQA/KHNxkY3VDggpkX05Ft
-RUWGf//JoDJ0mpybM+GcHjKNssNKWlEsMYrquRZ5xsmsWLN904wtYFLMvee0NuRy
-0cVhI5zxp99fa6KH3WEDnSSbzt7wQivtJ6LcX2+w+BBPoVrRkNQ4MfoJ3WLpFowj
-iyvvoDA2KlH2zr/x5hi5XzT0o4HbgvPor4PNaRu409mLpJFVtgBVw/y13EIu8FJh
-PgyFVRFqPpxJmRmF8vUgDJFXjQd30NIntxGqBg5rf4N0TWEg2hzm5VEOrQSx4P8c
-+bLyIoWQLSOvZ9kUEnIHYjfmKDxlxP7H473MxbK8phMbk+SkRsc+wUMI2aJ9ckNh
-+W3JhifQw12YZZIlbzMgGnLgcxzCZ0/Ee3YW8hJ2+oX/COF+DMbBTKCEC2NklWIl
-dG/WhwwYSy1x5c/Lqo9M8vPz9MNmJEZ66xPAclFWNfSchvr62Sva1rFPkHyxsecr
-MnTaNHAQ6iTm6VpARREFTksUYW3nbRghFVwlRWn3ZHcANpRR2mmMou9IGKMYTtM0
-mBASX6716OTTAesZtQdQkr4KSoV5sYax2lVRwsuAvaNB0AtJ+Jt7vhUHWZ3EsPdk
-Q42/MVekM1ff9s2x4+XulIq/SfOvc1Eh7ayGDHfUKnhRDHgEEhk=
-=xdGs
------END PGP SIGNATURE-----
-
---gKMricLos+KVdGMg--
+>  {
+>  	int ret;
+>  
+> @@ -604,14 +605,15 @@ static int macronix_set_4byte(struct spi_nor *nor, bool enable)
+>  }
+>  
+>  /**
+> - * st_micron_set_4byte() - Set 4-byte address mode for ST and Micron flashes.
+> + * spi_nor_en4_ex4_wen_set_4byte() - Set 4-byte address mode for ST and Micron
+> + * flashes.
+>   * @nor:	pointer to 'struct spi_nor'.
+>   * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
+>   *		address mode.
+>   *
+>   * Return: 0 on success, -errno otherwise.
+>   */
+> -static int st_micron_set_4byte(struct spi_nor *nor, bool enable)
+> +static int spi_nor_en4_ex4_wen_set_4byte(struct spi_nor *nor, bool enable)
 
 
---===============1917957486899901250==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Unrelated to this patch itself, but can we just have one set_4byte
+variant that uses WREN and drop the other one?
+I expect sending WREN should be harmless even for cmds that don't expect
+one.
+
+Rest looks good to me.
+
+Reviewed-by: Vignesh Raghavendra <vigneshr@ti.com>
+
+-- 
+Regards
+Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1917957486899901250==--
-
