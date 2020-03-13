@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA19E184E3F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:58:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87C30184E40
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:58:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NyLfu19dLgK/fKjFxHXU1mwMMpMdQFOVJpL/dOow6oc=; b=pWhar1uJguSiU2
-	O4X+BWbKIaDt/YtBQFZ3pzUDjc1lgo81QOYfrYfPMAts5gjB1dgbK6Kmx+4f/+X7dJa21CNeGkvhj
-	lX4GBjlUE+VNKejYvUdho33KZtzKhwtbHF4QtYKTmL6EaESWltAZ8fDNTw/2hGg5hb3im4PGrNzl0
-	frRfQjFjKgMS9a8FsHkRY9u44k2DoSKp9F3OBZlLdWUal3h1hZmcLBljiC0XlGUTOwiz+y8uevh7p
-	9lbcVnz6axHMdxhwWZxb4vhmh7j4b1ydB6TEygbCVyk7lvG/rpM0WXA2MaEHkFfeTGAVcW2hE2WvN
-	tO84FpedrpuxkPzm3Kqw==;
+	List-Owner; bh=nrZioBjrO2YWiNzFnhV9nCnkYdGYf9h/PauqqNOiZAU=; b=HfVzN1gwSH7a6E
+	GSe1v4IE1b678AhGzJmWF1vDcI2WMpPl89ljleX5K6BGGBZ/EH3jItQx1RqVj/wVeEo1rYXY1X8eN
+	RQBYHR5dXGMfikixC+OlPYA/FuKUQlx/rQTuTQyLi5PuKmXSSGWoklIBTh7KtAZf0dQ8ma7CrVXdu
+	bhmsxTYioJUn6ZQNWgXtdHBu+t010XdgoIbBlXeXbZ0gWiLBN9ju7oMSMLsAZ8nzWNzopKDOSl8jA
+	/DV+09BIVlaVScL+k0iKRkMOQkp6EeASVlRHwuB5haX4sAtvkN9/vU6qXOAXw6WNKDK2YwZC8wApO
+	0mIY5jBzs/jlg8OufdyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCoZs-0002NJ-PY; Fri, 13 Mar 2020 17:58:32 +0000
+	id 1jCoa8-0002bQ-T6; Fri, 13 Mar 2020 17:58:48 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCoXw-0000rQ-Ly
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:56:34 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DHuUFH001038;
- Fri, 13 Mar 2020 12:56:30 -0500
+ id 1jCoY5-0000yJ-BG
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:56:42 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DHucv1001108;
+ Fri, 13 Mar 2020 12:56:38 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584122190;
- bh=7kAZPkW2zkK8WQa0s6tWSn3wI6eYVbYeeQFroc6aG9s=;
+ s=ti-com-17Q1; t=1584122198;
+ bh=/Dw8KFsaIkFkfgLKZhRV5MXpefmC30Xga+RKXA8psqw=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=PFSz59Xuo66eo1eCcL2K340R2OH57M/u/KPemHfUufB5H/55sUQcKJaPCVaXkUsMB
- IRgC8WeR5tk/UpWo4OL1hlP1iuZjL0BaDMkfoZj1lCU0659TmasngGKCH4JDEm9RNt
- wWPpakVUnb7IdF0wkcp4cv+iG6BVRFOvW2Xf+Npc=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02DHuTsc098843
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 13 Mar 2020 12:56:30 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ b=ke/ZcVzjLNANCq1l6dgVZ9hVLo1SDlq5XkDXHHp5TFFAKBNsrt2xHhMMJU5PpU18Y
+ 0iX/zIOJE6e1EYwCnXQbXoSc25FFF+Mdi5Ucg4tNJ47EAa4Wa95VsgNR2BAH74Gj3I
+ r2Y5LQFGqya4zS4A5TUtEK6qqtX/E5daDr3mBLWE=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DHubxK047580;
+ Fri, 13 Mar 2020 12:56:38 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
- Mar 2020 12:56:29 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2020 12:56:37 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 13 Mar 2020 12:56:29 -0500
+ Frontend Transport; Fri, 13 Mar 2020 12:56:37 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DHuSio074747;
- Fri, 13 Mar 2020 12:56:29 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DHua2m028293;
+ Fri, 13 Mar 2020 12:56:36 -0500
 From: Grygorii Strashko <grygorii.strashko@ti.com>
 To: Rob Herring <robh+dt@kernel.org>, Tero Kristo <t-kristo@ti.com>, "David S
  . Miller" <davem@davemloft.net>, netdev <netdev@vger.kernel.org>, Roger
  Quadros <rogerq@ti.com>, <devicetree@vger.kernel.org>, Jakub Kicinski
  <kuba@kernel.org>
-Subject: [PATCH net-next v3 09/10] arm64: dts: ti: k3-j721e-common-proc-board:
- add mcu cpsw nuss pinmux and phy defs
-Date: Fri, 13 Mar 2020 19:55:10 +0200
-Message-ID: <20200313175511.2155-10-grygorii.strashko@ti.com>
+Subject: [PATCH net-next v3 10/10] arm64: defconfig: ti: k3: enable dma and
+ networking
+Date: Fri, 13 Mar 2020 19:55:11 +0200
+Message-ID: <20200313175511.2155-11-grygorii.strashko@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200313175511.2155-1-grygorii.strashko@ti.com>
 References: <20200313175511.2155-1-grygorii.strashko@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_105632_848627_2D6F2ADA 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20200313_105641_517215_83EDE415 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -102,82 +102,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The TI J721E EVM base board has TI DP83867 PHY connected to external CPSW
-NUSS Port 1 in rgmii-rxid mode.
-
-Hence, add pinmux and Ethernet PHY configuration for TI j721e SoC MCU
-Gigabit Ethernet two ports Switch subsystem (CPSW NUSS).
+Enable TI K3 AM654x/J721E DMA and networking options.
 
 Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- .../dts/ti/k3-j721e-common-proc-board.dts     | 43 +++++++++++++++++++
- 1 file changed, 43 insertions(+)
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-index 7a5c3d4adadd..98e5e17e3ff7 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-@@ -8,6 +8,7 @@
- #include "k3-j721e-som-p0.dtsi"
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
-+#include <dt-bindings/net/ti-dp83867.h>
- 
- / {
- 	chosen {
-@@ -128,6 +129,30 @@
- 			J721E_WKUP_IOPAD(0x38, PIN_INPUT, 0) /* (A23) MCU_OSPI1_LBCLKO */
- 		>;
- 	};
-+
-+	mcu_cpsw_pins_default: mcu_cpsw_pins_default {
-+		pinctrl-single,pins = <
-+			J721E_WKUP_IOPAD(0x0058, PIN_OUTPUT, 0) /* MCU_RGMII1_TX_CTL */
-+			J721E_WKUP_IOPAD(0x005c, PIN_INPUT, 0) /* MCU_RGMII1_RX_CTL */
-+			J721E_WKUP_IOPAD(0x0060, PIN_OUTPUT, 0) /* MCU_RGMII1_TD3 */
-+			J721E_WKUP_IOPAD(0x0064, PIN_OUTPUT, 0) /* MCU_RGMII1_TD2 */
-+			J721E_WKUP_IOPAD(0x0068, PIN_OUTPUT, 0) /* MCU_RGMII1_TD1 */
-+			J721E_WKUP_IOPAD(0x006c, PIN_OUTPUT, 0) /* MCU_RGMII1_TD0 */
-+			J721E_WKUP_IOPAD(0x0078, PIN_INPUT, 0) /* MCU_RGMII1_RD3 */
-+			J721E_WKUP_IOPAD(0x007c, PIN_INPUT, 0) /* MCU_RGMII1_RD2 */
-+			J721E_WKUP_IOPAD(0x0080, PIN_INPUT, 0) /* MCU_RGMII1_RD1 */
-+			J721E_WKUP_IOPAD(0x0084, PIN_INPUT, 0) /* MCU_RGMII1_RD0 */
-+			J721E_WKUP_IOPAD(0x0070, PIN_INPUT, 0) /* MCU_RGMII1_TXC */
-+			J721E_WKUP_IOPAD(0x0074, PIN_INPUT, 0) /* MCU_RGMII1_RXC */
-+		>;
-+	};
-+
-+	mcu_mdio_pins_default: mcu_mdio1_pins_default {
-+		pinctrl-single,pins = <
-+			J721E_WKUP_IOPAD(0x008c, PIN_OUTPUT, 0) /* MCU_MDIO0_MDC */
-+			J721E_WKUP_IOPAD(0x0088, PIN_INPUT, 0) /* MCU_MDIO0_MDIO */
-+		>;
-+	};
- };
- 
- &wkup_uart0 {
-@@ -429,3 +454,21 @@
- 		#gpio-cells = <2>;
- 	};
- };
-+
-+&mcu_cpsw {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mcu_cpsw_pins_default &mcu_mdio_pins_default>;
-+};
-+
-+&davinci_mdio {
-+	phy0: ethernet-phy@0 {
-+		reg = <0>;
-+		ti,rx-internal-delay = <DP83867_RGMIIDCTL_2_00_NS>;
-+		ti,fifo-depth = <DP83867_PHYCR_FIFO_DEPTH_4_B_NIB>;
-+	};
-+};
-+
-+&cpsw_port1 {
-+	phy-mode = "rgmii-rxid";
-+	phy-handle = <&phy0>;
-+};
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 4db223dbc549..13cd865d7d4b 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -283,6 +283,7 @@ CONFIG_SMSC911X=y
+ CONFIG_SNI_AVE=y
+ CONFIG_SNI_NETSEC=y
+ CONFIG_STMMAC_ETH=m
++CONFIG_TI_K3_AM65_CPSW_NUSS=y
+ CONFIG_MDIO_BUS_MUX_MMIOREG=y
+ CONFIG_MARVELL_PHY=m
+ CONFIG_MARVELL_10G_PHY=m
+@@ -698,6 +699,8 @@ CONFIG_QCOM_HIDMA_MGMT=y
+ CONFIG_QCOM_HIDMA=y
+ CONFIG_RCAR_DMAC=y
+ CONFIG_RENESAS_USB_DMAC=m
++CONFIG_TI_K3_UDMA=y
++CONFIG_TI_K3_UDMA_GLUE_LAYER=y
+ CONFIG_VFIO=y
+ CONFIG_VFIO_PCI=y
+ CONFIG_VIRTIO_PCI=y
 -- 
 2.17.1
 
