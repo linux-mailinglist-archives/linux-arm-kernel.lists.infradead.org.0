@@ -2,81 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3745C184454
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 11:06:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D836184451
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 11:05:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BA5iYsSHR7q7iDMp9u6xjvSVabHMyyFPZhxVNv2MfEE=; b=eNq4e/XY+OfcpH
-	7uxiHkd8Q0x4webHayncCFl6vs/r8Ec8T1RgCGOvEs4XH8BYEMwTqUg5aymoFQaHkSWSVmMWD3Fmj
-	5t/8C+6AVAh7CtQF/aFWvXDgWtRiAzPoiKCv5dif3KSy6OD8DLZZYsYbT6awA8zW6aj1rJx9aVUeR
-	jYkXk0HrQepdMzXCNhj0AkjprGeAqEJbBzwwNQqa8Vk0oCsU7cw94QWr3vH19eAdLqfWBIenszCEz
-	N7g8YzkyPYo1FuRgVgyRSnMxwHLnCqrTCeU3vM6HsLRm6TvHMnTdcZyQd4Vkzmhn0dyYQNhKqfjWs
-	mkpIX1G8Q4AowbSY8dpw==;
+	List-Owner; bh=rXyARwd0BUVbptEMczl9VTpoK6ZRFutZZvPlFcXS9Ug=; b=IZfGMupg9njTds
+	OkC2vJqS90tTW/n5M92TQytTBSzZunI2kh8ym7d0xQZomdoqFA+ruWsFm6qYyXcj7lnvDsW3PKoVN
+	X5QFBotHcjBRKo7ndhAISebL4HwQqaSeYtjPB1mfTY1fnKAE21bwhjCycX4JCrz6SR59leyjiyYzm
+	3eu7Gc5TGnhNUsKw82thvG9T50QQpiCPs+ICnGrcxI+cyB8SlqfcLe93POU8ZROcW6t96vUQ1mngm
+	n8KtvQ85t8embeFOyp37273IV/cIpROncQQjzDn87OKnrFhYLQn4aIgQHsRarWqsmZ5Yd9MeAFq5j
+	HcOPOYzCku2C1L6nZDvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jChCW-0007ld-7M; Fri, 13 Mar 2020 10:05:56 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jChCE-0007YR-VU; Fri, 13 Mar 2020 10:05:39 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jChC3-0007S8-Ht
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 10:05:28 +0000
-Received: by mail-wm1-x344.google.com with SMTP id t13so3217797wmi.3
+ id 1jChBy-0007Ix-C4
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 10:05:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b2so5046512wrj.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 03:05:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=7A08Rj8P2xGcyK9AB5G4W7ODgf9lGGlI82SYTmkYv3s=;
- b=D/DpgEg7QQzJfqKNUl5khuQLcYUbGC22joQsDqsWmXaZ8s2qUjOKDJikJzae8B1z2L
- K+ARroJwkcNl1XwIYeePVG0Hy/f0ro8Zh1qyLoIudtv3k22kPtv0edlXLXIRgsnao4Vo
- F2wPorPZxp5iQEHNFFeemtS6QxDWkHyzQB1vgur+6a9lgN8/hixZvM9g+QVBUzjY/fVm
- sw+tfKPeDpoof9TtodfR4XapiwS6kZDSTvzxbdGAjnFSeAU2Z0jhFWUyf1/SJX/feta5
- hoei5nJCk0K4h42a9KchmMflcxOQ5vdIvDyff1Xdaf0Xan0euJAoqfyMVuOGx9eMeia/
- /mBg==
+ Fri, 13 Mar 2020 03:05:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=DkgtdvOLhPq5sUtjHRHCpYAFEd/88KxYCJ5Q/7OZdAA=;
+ b=WL8rtzOewU/9s+K0tvQpcOMXbr6z8K1b/4xg47mX7DzD3tGkqmlitudW6dcgGxCTUy
+ ZnhpdCWiUyndV3kwVLwm4Kz9Y1OafWLeQQiRN9Ja3dy85aJ3z2Fwl+xp3bCkdryfSF4x
+ EeZT+N7l9jLcATyhvvHXnq2+ggmZ4axNP8ELE8a5MrgQ0/h8zkmE+SDyru4TbGb+dlKl
+ wE5mVpwdcjsn1PwQd7Ft03lUgseGNgXRaKYBNTIdaMVrLI8FuXLpZRiEa/NsJaaOZuob
+ 0Z4A10T7fdFLYy82VZu/Ld6XKr/AEabGd3ymvJgaiGCAUPA9VL/qJUVbEIiFc5tPB0aA
+ bxiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=7A08Rj8P2xGcyK9AB5G4W7ODgf9lGGlI82SYTmkYv3s=;
- b=THIT/TdnxX5grzeI+UqRAia7t6ojTFfrPjaEUQO3GShZHFPOoZlLgJDJMsnPTgBC45
- 0g9o8ELQXLiRiOtDrsfAp1Qdlz/TffLUqi4+lyiWgVjAy5Q7zNcP6XA/MtqTkVSRQUTR
- vM+4vWCppRgEhQhtf5TkuUyNyGmOpEtWQzK6sHwJx0ipUhTNMPuE7tcrCEJAmy0BRdk7
- fWT1+yuiubtGFdbN2rQ1VxsYhRjwu9v/D9irMAT5nz+213a3Uhe21Qf/Cgjy1uWE0hMw
- LQbxLvvHt/c37otrPkWXU6CCnwvYsmXsMl5OJyOiA6IWyraURYy6fC2ECU63DKt+Q/rL
- 3k4A==
-X-Gm-Message-State: ANhLgQ2NWwVlE7FmrO+6BitR/48PUpkefkPm2k9UuY5bt3iUOL4KiluU
- DK1bdAC+A5JK5LEJ76Rb1BrpiluDFtV9eibh6vepZA==
-X-Google-Smtp-Source: ADFU+vu0PpaCkNgoXeULQRHRdjU6VS+GANZ8PsV6W1M39IY8FgdOGV7zlfz6j1KcE0519wldZVdh6IhYJ76cnzKqPV0=
-X-Received: by 2002:a05:600c:2244:: with SMTP id
- a4mr9578436wmm.147.1584093925714; 
- Fri, 13 Mar 2020 03:05:25 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=DkgtdvOLhPq5sUtjHRHCpYAFEd/88KxYCJ5Q/7OZdAA=;
+ b=XHpU/ph4DuFaV72FboA5k+yLNCN9vfeJcoM0XMRGXj3JWwygZabSZffJZ0O1DivzjE
+ Tforux7A8dlXhcPV0P/wk7eGW0GJpQ+tP5j5ly6irVn4kY/Y/jvOX1svolse4BWoWFIp
+ riSq8kH9dAYNK+v04IYKl8gABaQ5i1o2Kurt+9/hicNDHvGh2RvhVdCLEAPZow5tXRnP
+ SgHBSrZZ6YD5JFDW2y1PZ+FFSDiJxzbNwAPjpakwUvNvmOWj2XrlKIIdduYTPzFxFA5x
+ u/xl4j8VWxTF+nGXiq5H8ZFu8z3pbHT/qK7Bm2PZxsCDB5Vrf4vvC/UYSOTelC3XVz6F
+ ghnw==
+X-Gm-Message-State: ANhLgQ3OiLV9F/XcPW60a0W+Nv1d67rXbAjEJKFq+YXzBX1ujM/hV6ar
+ uV9wpJcZQnz9DdWb7kfod9M28g==
+X-Google-Smtp-Source: ADFU+vuTRDG0n/eB58imQFTmEl0YspJzXhA4oFvRnCi/L172+s9nTOf1O8dWmim1NZPCcDnu+tPD+g==
+X-Received: by 2002:a5d:5545:: with SMTP id g5mr965179wrw.290.1584093920811;
+ Fri, 13 Mar 2020 03:05:20 -0700 (PDT)
+Received: from google.com ([2a00:79e0:d:110:d6cc:2030:37c1:9964])
+ by smtp.gmail.com with ESMTPSA id x13sm16642987wmj.5.2020.03.13.03.05.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Mar 2020 03:05:20 -0700 (PDT)
+Date: Fri, 13 Mar 2020 10:05:16 +0000
+From: Quentin Perret <qperret@google.com>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Subject: Re: [PATCH v4 1/4] PM / EM: add devices to Energy Model
+Message-ID: <20200313100516.GB144499@google.com>
+References: <20200309134117.2331-1-lukasz.luba@arm.com>
+ <20200309134117.2331-2-lukasz.luba@arm.com>
+ <20200313100407.GA144499@google.com>
 MIME-Version: 1.0
-References: <20200313090104.20750-1-digetx@gmail.com>
-In-Reply-To: <20200313090104.20750-1-digetx@gmail.com>
-From: Nicolas Chauvet <kwizart@gmail.com>
-Date: Fri, 13 Mar 2020 11:05:14 +0100
-Message-ID: <CABr+WTka7KirNLT=ZptxxZ+L-ZoNKfKwL7RrjZR=ksZh0MAPwg@mail.gmail.com>
-Subject: Re: [PATCH v1] ARM: tegra: Correct PL310 Auxiliary Control Register
- initialization
-To: Dmitry Osipenko <digetx@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200313100407.GA144499@google.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_030527_620113_47FBA7E6 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_030522_464213_D7B1C85F 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -14.0 (--------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-14.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 1.7 FSL_HELO_FAKE          No description available.
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [kwizart[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,6 +94,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,29 +107,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
- Jonathan Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
+ linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
+ daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
+ tomeu.vizoso@collabora.com, sboyd@kernel.org, rdunlap@infradead.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgdmVuLiAxMyBtYXJzIDIwMjAgw6AgMTA6MDIsIERtaXRyeSBPc2lwZW5rbyA8ZGlnZXR4QGdt
-YWlsLmNvbT4gYSDDqWNyaXQgOgo+Cj4gVGhlIFBMMzEwIEF1eGlsaWFyeSBDb250cm9sIFJlZ2lz
-dGVyIHNob3VsZG4ndCBoYXZlIHRoZSAiRnVsbCBsaW5lIG9mCj4gemVybyIgb3B0aW1pemF0aW9u
-IGJpdCBiZWluZyBzZXQgYmVmb3JlIEwyIGNhY2hlIGlzIGVuYWJsZWQuIFRoZSBMMlgwCj4gZHJp
-dmVyIHRha2VzIGNhcmUgb2YgZW5hYmxpbmcgdGhlIG9wdGltaXphdGlvbiBieSBpdHNlbGYuCj4K
-PiBUaGlzIHBhdGNoIGZpeGVzIGEgbm9pc3kgZXJyb3IgbWVzc2FnZSBvbiBUZWdyYTIwIGFuZCBU
-ZWdyYTMwIHRlbGxpbmcKPiB0aGF0IGNhY2hlIG9wdGltaXphdGlvbiBpcyBlcnJvbmVvdXNseSBl
-bmFibGVkIHdpdGhvdXQgZW5hYmxpbmcgaXQgZm9yCj4gdGhlIENQVToKPgo+ICAgICAgICAgTDJD
-LTMxMDogZW5hYmxpbmcgZnVsbCBsaW5lIG9mIHplcm9zIGJ1dCBub3QgZW5hYmxlZCBpbiBDb3J0
-ZXgtQTkKPgo+IENjOiA8c3RhYmxlQHZnZXIua2VybmVsLm9yZz4KPiBTaWduZWQtb2ZmLWJ5OiBE
-bWl0cnkgT3NpcGVua28gPGRpZ2V0eEBnbWFpbC5jb20+ClRlc3RlZC1ieTogTmljb2xhcyBDaGF1
-dmV0IDxrd2l6YXJ0QGdtYWlsLmNvbT4KClRoaXMgd2FzIHRlc3RlZCBvbiBwYXowMCAodGVncmEy
-MCkuCkFsc28gdGVzdGVkIHRoYXQgc3VzcGVuZCBzdGlsbCB3b3Jrcy4KClRoYW5rcyBmb3IgZml4
-aW5nIHRoaXMgbG9uZyBzdGFuZGluZyBpc3N1ZSEKCi0tIAotCgpOaWNvbGFzIChrd2l6YXJ0KQoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Friday 13 Mar 2020 at 10:04:07 (+0000), Quentin Perret wrote:
+> Not easy to figure out which device has a problem with this. I'm
+> guessing you went that way since this is called before ida_simple_get() ?
+> Could that be refactored to make the error message more useful ?
+
+Bah, forget that one :)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
