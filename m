@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4794C183EB9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:39:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FE1A183F1F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 03:28:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:To:MIME-Version:From:
+	Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=F4//RSOoGudPTjuaU8m5axA/j0j3EVbi02Zy1XYkLRc=; b=E+jd+BaZ9+kPItKsFVo5GIi3p
-	KOo6gpApSC8zLF/C7HGza9dRhSur/tdXzwzUWV3VRrYJDWOu0Fhm+bU5jeW2tlfXf0DBzrQ+BtQG6
-	5C7FpRrmsopZrkAnfalfRL0IggGePy234WVPJAINtWmNE6FVHpJF/UIoTkOdj2/gvgcbONDia7IEo
-	RwzXoYntr3JpEaQopDOOleL2jmz0TYh9L7jB1Qysj+4LShCPDow2u27cbDo98c0+Gh+yNSsgjFbeS
-	LhCnkp8MT/P5UwZUSgogqdic5yldgMjUKd8/19qddtmFL5XxbHIZlVw4NsRIOB85N4/nVkGLlDVGK
-	E3pQn77+A==;
+	 bh=HL3WXkMGwX6lpG1jHRo+tIUXwH0BMmSL80nBqo3el5c=; b=KRY3woNDw1dW4phGk6zJASDMA
+	FGHsiYGgLMj1nc0XZ2vmJ0Qa0FYR6EYllgygnVXjAVeUXxHr46vf1Bcg7Ooqpsw4ZdtqEVcEgqOiK
+	zZ5Uoy95ooDH4qtFp0CVXvshRzzk1NL7jlBY30SHx3VXsC/Cs5UIeBRYYgnoJ1lgKxf4tD6jQ5a+6
+	SCo7B+sLvYo99D9c/pAFphYY0+CXHjQ/O4MRQSMw5a6p5E6+Eiv6KS5fFxgFueQAnXsszMEEIZfEX
+	iTXFIsv4K/I/StuR0pfapwZY+pDe1c0Z5G7R1IcVDICfOe40H3o9tOM9hc56Z/LdJfC6G0ce1tMHK
+	XiSQURmWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCZIZ-0008Gi-Iu; Fri, 13 Mar 2020 01:39:39 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCZIP-0008FW-OU
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 01:39:31 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id F35E4EF00CE69FBB0358;
- Fri, 13 Mar 2020 09:39:17 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.487.0; Fri, 13 Mar 2020
- 09:39:10 +0800
-Subject: Re: [PATCH v5 01/23] irqchip/gic-v3: Use SGIs without active state if
- offered
-To: Marc Zyngier <maz@kernel.org>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-2-maz@kernel.org>
- <63f6530a-9369-31e6-88d0-5337173495b9@huawei.com>
- <51b2c74fdbcca049cc01be6d78c7c693@kernel.org>
- <1bff1835ba7d6e22edb836d38cf16a14@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <3e20f3c3-0312-bd29-dcfc-2afee764ef19@huawei.com>
-Date: Fri, 13 Mar 2020 09:39:08 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+	id 1jCa3E-0000ec-O8; Fri, 13 Mar 2020 02:27:52 +0000
+Received: from mail.cn.fujitsu.com ([183.91.158.132] helo=heian.cn.fujitsu.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCa35-0000dE-Nu
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 02:27:45 +0000
+X-IronPort-AV: E=Sophos;i="5.70,546,1574092800"; d="scan'208";a="86248074"
+Received: from unknown (HELO cn.fujitsu.com) ([10.167.33.5])
+ by heian.cn.fujitsu.com with ESMTP; 13 Mar 2020 10:27:29 +0800
+Received: from G08CNEXMBPEKD06.g08.fujitsu.local (unknown [10.167.33.206])
+ by cn.fujitsu.com (Postfix) with ESMTP id 71797406AB15;
+ Fri, 13 Mar 2020 10:17:26 +0800 (CST)
+Received: from [10.167.220.69] (10.167.220.69) by
+ G08CNEXMBPEKD06.g08.fujitsu.local (10.167.33.206) with Microsoft SMTP Server
+ (TLS) id 15.0.1395.4; Fri, 13 Mar 2020 10:27:24 +0800
+Message-ID: <5E6AEF8B.4090905@cn.fujitsu.com>
+Date: Fri, 13 Mar 2020 10:27:23 +0800
+From: Xiao Yang <yangx.jy@cn.fujitsu.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.2; zh-CN;
+ rv:1.9.2.18) Gecko/20110616 Thunderbird/3.1.11
 MIME-Version: 1.0
-In-Reply-To: <1bff1835ba7d6e22edb836d38cf16a14@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+To: Torsten Duwe <duwe@suse.de>, Torsten Duwe <duwe@lst.de>
+Subject: Re: Current status about arm64 livepatch support
+References: <5E5F5647.3040705@cn.fujitsu.com>
+In-Reply-To: <5E5F5647.3040705@cn.fujitsu.com>
+X-Originating-IP: [10.167.220.69]
+X-ClientProxiedBy: G08CNEXCHPEKD04.g08.fujitsu.local (10.167.33.200) To
+ G08CNEXMBPEKD06.g08.fujitsu.local (10.167.33.206)
+X-yoursite-MailScanner-ID: 71797406AB15.A8823
+X-yoursite-MailScanner: Found to be clean
+X-yoursite-MailScanner-From: yangx.jy@cn.fujitsu.com
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_183929_956237_2997AAE1 
-X-CRM114-Status: GOOD (  14.79  )
+X-CRM114-CacheID: sfid-20200312_192743_944529_4C1F4F05 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [183.91.158.132 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,51 +72,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org, Eric
- Auger <eric.auger@redhat.com>, Robert
- Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>, Julien
- Thierry <julien.thierry.kdev@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywKCk9uIDIwMjAvMy8xMiAyMDowNSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIDIw
-MjAtMDMtMTIgMDk6MjgsIE1hcmMgWnluZ2llciB3cm90ZToKPj4gSGkgWmVuZ2h1aSwKPj4KPj4g
-T24gMjAyMC0wMy0xMiAwNjozMCwgWmVuZ2h1aSBZdSB3cm90ZToKPj4+IEhpIE1hcmMsCj4+Pgo+
-Pj4gT24gMjAyMC8zLzUgNDozMywgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4+IFRvIGFsbG93IHRo
-ZSBkaXJlY3QgaW5qZWN0aW9uIG9mIFNHSXMgaW50byBhIGd1ZXN0LCB0aGUgR0lDdjQuMQo+Pj4+
-IGFyY2hpdGVjdHVyZSBoYXMgdG8gc2FjcmlmaWNlIHRoZSBBY3RpdmUgc3RhdGUgc28gdGhhdCBT
-R0lzIGxvb2sKPj4+PiBhIGxvdCBsaWtlIExQSXMgKHRoZXkgYXJlIGluamVjdGVkIGJ5IHRoZSBz
-YW1lIG1lY2hhbmlzbSkuCj4+Pj4KPj4+PiBJbiBvcmRlciBub3QgdG8gYnJlYWsgZXhpc3Rpbmcg
-c29mdHdhcmUsIHRoZSBhcmNoaXRlY3R1cmUgZ2l2ZXMKPj4+PiBvZmZlcnMgZ3Vlc3RzIE9TcyB0
-aGUgY2hvaWNlOiBTR0lzIHdpdGggb3Igd2l0aG91dCBhbiBhY3RpdmUKPj4+PiBzdGF0ZS4gSXQg
-aXMgdGhlIGh5cGVydmlzb3JzIGR1dHkgdG8gaG9ub3IgdGhlIGd1ZXN0J3MgY2hvaWNlLgo+Pj4+
-Cj4+Pj4gRm9yIHRoaXMsIHRoZSBhcmNoaXRlY3R1cmUgb2ZmZXJzIGEgZGlzY292ZXJ5IGJpdCBp
-bmRpY2F0aW5nIHdoZXRoZXIKPj4+PiB0aGUgR0lDIHN1cHBvcnRzIEdJQ3Y0LjEgU0dJcyAoR0lD
-RF9UWVBFUjIubkFTU0dJY2FwKSwgYW5kIGFub3RoZXIKPj4+PiBiaXQgaW5kaWNhdGluZyB3aGV0
-aGVyIHRoZSBndWVzdCB3YW50cyBBY3RpdmUtbGVzcyBTR0lzIG9yIG5vdAo+Pj4+IChjb250cm9s
-bGVkIGJ5IEdJQ0RfQ1RMUi5uQVNTR0lyZXEpLgo+Pj4KPj4+IEkgc3RpbGwgY2FuJ3QgZmluZCB0
-aGUgZGVzY3JpcHRpb24gb2YgdGhlc2UgdHdvIGJpdHMgaW4gSUhJMDA2OUYuCj4+PiBBcmUgdGhl
-eSBhY3R1YWxseSBhcmNoaXRlY3RlZCBhbmQgd2lsbCBiZSBhdmFpbGFibGUgaW4gdGhlIGZ1dHVy
-ZQo+Pj4gdmVyc2lvbiBvZiB0aGUgc3BlYz/CoCBJIHdhbnQgdG8gY29uZmlybSBpdCBhZ2FpbiBz
-aW5jZSB0aGlzIGhhcyBhCj4+PiBncmVhdCBpbXBhY3Qgb24gdGhlIEtWTSBjb2RlLCBhbnkgcG9p
-bnRlcnM/Cj4+Cj4+IERhbW4uIFRoZSBiaXRzICphcmUqIGluIHRoZSBlbmdpbmVlcmluZyBzcGVj
-IHZlcnNpb24gMTkgKHVuZm9ydHVuYXRlbHkKPj4gbm90IGEgcHVibGljIGRvY3VtZW50LCBidXQg
-SSBiZWxpZXZlIHlvdSBzaG91bGQgaGF2ZSBhY2Nlc3MgdG8gaXQpLgo+Pgo+PiBJZiB0aGUgYml0
-cyBoYXZlIGVmZmVjdGl2ZWx5IGJlZW4gcmVtb3ZlZCBmcm9tIHRoZSBzcGVjLCBJJ2xsIGRyb3Ag
-dGhlCj4+IEdJQ3Y0LjEgY29kZSBmcm9tIHRoZSA1LjcgcXVldWUgdW50aWwgd2UgZmluZCBhIHdh
-eSB0byBhY2hpZXZlIHRoZSBzYW1lCj4+IGxldmVsIG9mIHN1cHBvcnQuCj4+Cj4+IEkndmUgZW1h
-aWxlZCBwZW9wbGUgaW5zaWRlIEFSTSB0byBmaW5kIG91dC4KPiAKPiBJJ3ZlIG5vdyBoYWQgd3Jp
-dHRlbiBjb25maXJtYXRpb24gdGhhdCB0aGUgYml0cyBhcmUgc3RpbGwgdGhlcmUuCj4gCj4gSXQg
-aXMganVzdCB0aGF0IHRoZSBjdXJyZW50IHJldmlzaW9uIG9mIHRoZSBkb2N1bWVudGF0aW9uIHdh
-cyBjdXQgKmJlZm9yZSoKPiB0aGV5IG1hZGUgaXQgaW50byB0aGUgYXJjaGl0ZWN0dXJlICh0aGVy
-ZSBzZWVtIHRvIGJlIGEgNiBtb250aCBkZWxheSAKPiBiZXR3ZWVuCj4gdGhlIGFyY2hpdGVjdHVy
-ZSBiZWluZyBzYW1wbGVkIGFuZCB0aGUgZG9jdW1lbnRhdGlvbiBiZWluZyByZWxlYXNlZCkuCgpJ
-IHNlZS4gVGhhbmtzIGZvciB0aGUgY29uZmlybWF0aW9uIQoKClplbmdodWkKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+
+Ping.
+
+Best Regards,
+Xiao Yang
+
+On 2020/3/4 15:18, Xiao Yang wrote:
+> Hi Torsten,
+>
+> Sorry to bother you.
+>
+> I focus on arm64 livepatch support recently and saw that you have tried
+> to implement it by:
+> -------------------------------------------------------------------------------
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609126.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609124.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609125.html
+> -------------------------------------------------------------------------------
+>
+> This patch set seems to be blocked because of some issues, but your
+> another patch set inlcuding the first one "arm64: implement ftrace with
+> regs" has been merged into upstream kernel:
+> -------------------------------------------------------------------------------
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631104.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631107.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631105.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631106.html
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631114.html
+> --------------------------------------------------------------------------------
+>
+> Could you tell me current status about arm64 livepatch support?
+> For example:
+> 1) Are you(or someone) still working on arm64 livepatch support?
+> 2) Are there some unresolved problems about arm64 livepatch support?
+>     What are they?
+> 3) Will you send a newer version for arm64 livepatch support recently?
+>
+> I look forward to your reply. :-)
+>
+> Best Regards,
+> Xiao Yang
+>
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> .
+>
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
