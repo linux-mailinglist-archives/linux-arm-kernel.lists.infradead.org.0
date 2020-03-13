@@ -2,51 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D49FF185074
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 21:42:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14C2185078
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 21:42:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TBgE3cebRARdD/IBPyI+/GfF6bB4pHZBCWEp6xiIUsE=; b=AoTX5b1LRFBLeG
-	4BdSaGcYiA1FqoeL6PE33e04vmLLCuqhtOoiaMk1a58zWurECByTjp8ALr1Q/E3598kCBGuAUK9Ms
-	p0xQ4KOHjUrTliMLVcOQYi37rFWjb1RZI6mDnBeDyfyf/rSDNWo5k+fWfyfbkF0VM3saegpE59F67
-	aDB4mNWPq8XqUALg6jrgIqXbv+bW8GF1Pzw37qWqwSio794BS1k9wx/MKdB+6sfmRHDoTr3G/G71f
-	4y3aJKZB/VjLd4CGwVl3MFf6AUjnd+vWRr2MIZ5TTBt7yMow1ZNlXdCR3uRp0cC7TA49HiV26IsQG
-	dNxnMhUOE1/e4ZLFpJRQ==;
+	List-Owner; bh=YxiB71odsqyqAT5yuHW/2kGCe7VNobkruahXyhFTKL0=; b=f8oqFnu/Y4fe1s
+	2eyTgVlxSmzG3fMNFMN11FUcwCp3qabbte4p/nd38yUw0+dkh5Az6eTvdWEHPxmMjGcWl4E3BPaKr
+	uySqfV0Mh8zxsGN1lwIjjJd6MAl3I+sojlaZzwZuywNRmKkRE/TY8FEhimgA/8qVq/dXOj0auYCke
+	O9L38EG6L0ZbCDHZFV/RS/i8o0jpXyhtku3tFBzB9PRrjg5hFTn5pMAKHnR/Q4WPORKaE3lwkPmel
+	SY1oOqmZaYbHRfsfGAWIK0qk9vAPG8C/PD4i15I1odqm9XKhrHNlkk2TJqTs/TXmIGOVjkJhz8jOy
+	KYSKzE3kZGB+uRbpFTmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCr8K-0004BN-D6; Fri, 13 Mar 2020 20:42:16 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCr8B-0004AU-Cb
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 20:42:09 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 71EB88087;
- Fri, 13 Mar 2020 20:42:53 +0000 (UTC)
-Date: Fri, 13 Mar 2020 13:42:04 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: Re: [GIT PULL] ti-sysc fix for v5.6
-Message-ID: <20200313204204.GF37466@atomide.com>
-References: <pull-1584132028-918607@atomide.com>
+	id 1jCr8t-0004ST-Le; Fri, 13 Mar 2020 20:42:51 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCr8g-0004Re-GE
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 20:42:40 +0000
+X-Originating-IP: 87.231.134.186
+Received: from localhost (87-231-134-186.rev.numericable.fr [87.231.134.186])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 7B93A240007;
+ Fri, 13 Mar 2020 20:42:36 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Amit Kucheria <amit.kucheria@linaro.org>, linux-kernel@vger.kernel.org,
+ Andrew Lunn <andrew@lunn.ch>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Subject: Re: [PATCH v1 4/4] arm64: dts: marvell: Fix cpu compatible for
+ AP807-quad
+In-Reply-To: <2f56a89b8f88583b60446050efc523a781556e3a.1583445235.git.amit.kucheria@linaro.org>
+References: <cover.1583445235.git.amit.kucheria@linaro.org>
+ <2f56a89b8f88583b60446050efc523a781556e3a.1583445235.git.amit.kucheria@linaro.org>
+Date: Fri, 13 Mar 2020 21:42:36 +0100
+Message-ID: <87pndgx9z7.fsf@FE-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <pull-1584132028-918607@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_134207_474512_EBE5357B 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200313_134238_809935_CEC99AFD 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,48 +68,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap@vger.kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Tony Lindgren <tony@atomide.com> [200313 20:41]:
-> From: "Tony Lindgren" <tony@atomide.com>
-> 
-> The following changes since commit b2745d92bb015cc4454d4195c4ce6e2852db397e:
-> 
->   bus: ti-sysc: Add support for PRUSS SYSC type (2020-03-04 07:54:57 -0800)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.7/ti-sysc-fix-signed
-> 
-> for you to fetch changes up to aef067e8e95d856bc09557a91e740b2d6a81a6ae:
-> 
->   Merge branch 'fix-lcdc-quirk' into omap-for-v5.7/ti-sysc (2020-03-10 09:06:02 -0700)
-> 
-> ----------------------------------------------------------------
-> Fix for ti-sysc suspend/resume issue on am335x for v5.7 merge window
-> 
-> Just merge in a ti-sysc fix for am335x lcdc suspend/resume issue, and
-> resolve merge conflict.
+Hi Amit,
 
-Oops sorry this one is for v5.7 merge window, not for v5.6 like the
-subject says.
+> make -k ARCH=arm64 dtbs_check shows the following errors. Fix them by
+> removing the "arm,armv8" compatible.
+>
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long CHECK
+> arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dt.yaml
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9130-db.dt.yaml:
+> cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+>
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9131-db.dt.yaml:
+> cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+>
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@0: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@0: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@1: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@1: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@100: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@100: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@101: compatible: Additional items are not allowed ('arm,armv8' was
+> unexpected)
+> /home/amit/work/builds/build-check/arch/arm64/boot/dts/marvell/cn9132-db.dt.yaml:
+> cpu@101: compatible: ['arm,cortex-a72', 'arm,armv8'] is too long
+>
+> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
 
-Regards,
 
-Tony
+Applied on mvebu/dt64
 
-> ----------------------------------------------------------------
-> Tony Lindgren (2):
->       bus: ti-sysc: Fix quirk flags for lcdc on am335x
->       Merge branch 'fix-lcdc-quirk' into omap-for-v5.7/ti-sysc
-> 
->  drivers/bus/ti-sysc.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+Thanks,
+
+Gregory
+
+> ---
+>  arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+>
+> diff --git a/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi b/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
+> index 840466e143b47..68782f161f122 100644
+> --- a/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
+> +++ b/arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi
+> @@ -17,7 +17,7 @@
+>  
+>  		cpu0: cpu@0 {
+>  			device_type = "cpu";
+> -			compatible = "arm,cortex-a72", "arm,armv8";
+> +			compatible = "arm,cortex-a72";
+>  			reg = <0x000>;
+>  			enable-method = "psci";
+>  			#cooling-cells = <2>;
+> @@ -32,7 +32,7 @@
+>  		};
+>  		cpu1: cpu@1 {
+>  			device_type = "cpu";
+> -			compatible = "arm,cortex-a72", "arm,armv8";
+> +			compatible = "arm,cortex-a72";
+>  			reg = <0x001>;
+>  			enable-method = "psci";
+>  			#cooling-cells = <2>;
+> @@ -47,7 +47,7 @@
+>  		};
+>  		cpu2: cpu@100 {
+>  			device_type = "cpu";
+> -			compatible = "arm,cortex-a72", "arm,armv8";
+> +			compatible = "arm,cortex-a72";
+>  			reg = <0x100>;
+>  			enable-method = "psci";
+>  			#cooling-cells = <2>;
+> @@ -62,7 +62,7 @@
+>  		};
+>  		cpu3: cpu@101 {
+>  			device_type = "cpu";
+> -			compatible = "arm,cortex-a72", "arm,armv8";
+> +			compatible = "arm,cortex-a72";
+>  			reg = <0x101>;
+>  			enable-method = "psci";
+>  			#cooling-cells = <2>;
+> -- 
+> 2.20.1
+>
+
+-- 
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
