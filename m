@@ -2,49 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC0B185086
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 21:47:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B32471850A0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 22:06:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T6iFhXkuPEQcDCE1vIFyspstPDmUue0gJfe9asaMKm0=; b=B+VUkXT9JArJdH
-	9eDx0dpusRc6hK/ooXvP5GPOXudR/SGtn3IWtwbzGoqN94nkTqsrP6ID9ZmLz9TbOtO4583JmDPYg
-	jfqXXYlNKKRLATe0GmEW4vyiV6Ij7YbX5eD6P52qaooIZPp2/Ao4riWF0tMDJdp9yxUHUrNFQh7oX
-	l/Sn3pMclq1Ofi5Ql10pxFylw3ZRgd3eySxlXNoqWZXPNANpQ5WAP1dgs5ZdGoJVDdsajHJZ/Eaoh
-	9tOygzL3COUJRh/4LDUhm4BKt+Cm0gP6uHjD8Eamh5fhCdjasb+X1VdZ9TxSPqzB8KIPgnCSXj0jt
-	ZhtZrtgdUIEdPKGCLllQ==;
+	List-Owner; bh=TSBLPpngQzLW/g8+c+/OLeWKd9cVhSdj8Rd1K9Dkht0=; b=RvJgk6qd+f/V5a
+	t/oBkXvNJ9vdcf2qUZmouYHw4/ru+RlVg6QPaKAadJ+vDecTGmdDUvxIuZSn26cJCNJLWFABeLSDm
+	oOZTV/hnDw4tqjIgBhvqTxluNLI68Z+ycAJ/dmbfYT5qDtc+ATg2mVsIAPocQ8tJNn3RIAf9HqWvT
+	Zga71mLHEUaIF5/BI4awuiUKZfqFL2vvWEhocI8k4VXSs6zLxLfUbtBtlzBFCQf9k35PbyxxxKYu0
+	t4H9rscJ6D5a5cn4f7dSd+/93VULlR/sCMVDjz38835aJvzPQAEbNM+NGOJ9g7uCG7YX1J7ckONKJ
+	mYV01nI8Mn8OlR09LpSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCrDO-0006ko-AP; Fri, 13 Mar 2020 20:47:30 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCrDG-0006kQ-RK
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 20:47:24 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id AF93F8087;
- Fri, 13 Mar 2020 20:48:08 +0000 (UTC)
-Date: Fri, 13 Mar 2020 13:47:19 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: Re: [GIT PULL] Fixes for omaps for v5.6-rc cycle
-Message-ID: <20200313204719.GG37466@atomide.com>
-References: <pull-1584131971-332655@atomide.com>
+	id 1jCrVZ-0004tf-D5; Fri, 13 Mar 2020 21:06:17 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCrVQ-0004su-KC; Fri, 13 Mar 2020 21:06:10 +0000
+Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
+ helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1jCrVH-0003IC-Bk; Fri, 13 Mar 2020 22:05:59 +0100
+Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
+ id 7674A100C8D; Fri, 13 Mar 2020 22:05:58 +0100 (CET)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Bjorn Helgaas <helgaas@kernel.org>, Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH 4/5] pci: handled return value of platform_get_irq
+ correctly
+In-Reply-To: <20200312141102.GA93224@google.com>
+References: <20200312141102.GA93224@google.com>
+Date: Fri, 13 Mar 2020 22:05:58 +0100
+Message-ID: <871rpwhsnd.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <pull-1584131971-332655@atomide.com>
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_134722_923742_2C712119 
-X-CRM114-Status: GOOD (  17.89  )
+X-CRM114-CacheID: sfid-20200313_140608_807509_73D30780 
+X-CRM114-Status: GOOD (  13.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -58,86 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap@vger.kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Ryder Lee <ryder.lee@mediatek.com>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Aman Sharma <amanharitsh123@gmail.com>, linux-kernel@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-mediatek@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, Marc Zyngier <maz@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Mans Rullgard <mans@mansr.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Tony Lindgren <tony@atomide.com> [200313 20:40]:
-> From: "Tony Lindgren" <tony@atomide.com>
-> 
-> The following changes since commit 51c22d7b40dca8b39a33b2c3b03f13122a2a1af3:
-> 
->   ARM: OMAP2+: Fix compile if CONFIG_HAVE_ARM_SMCCC is not set (2020-02-26 10:49:25 -0800)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.6/fixes-rc5-signed
-> 
-> for you to fetch changes up to cfb5d65f25959f724081bae8445a0241db606af6:
-> 
->   ARM: dts: dra7: Add bus_dma_limit for L3 bus (2020-03-13 07:40:55 -0700)
-> 
-> ----------------------------------------------------------------
-> Fixes for omap variants for v5.6-rc cycle
-> 
-> - Add bus_dma_limit for dra7 that fixes a SATA controller issue trying
->   to do 64-bit DMA on LPAE kernels. We first had this only for SATA, but
->   decided on the mailings lists that it applies to the whole interconnect
-> 
-> - Add missing quirk handling for lcdc on am335x to fix a suspend/resume
->   issue. Note that this fix causes a minor merge conflict with patches
->   pending in Linux next that I've already resolved in my updated
->   omap-for-v5.7/ti-sysc branch, so I'll send a separate pull request for
->   that
-> 
-> - Fix a regression for n900 onenand timings that caused onenand to
->   not work depending on the version of onenand manufacturer
-> 
-> - Fix a regression for dm814x and j5eco for Ethernet that was again
->   caused by the earlier changes to disable phy delay for RGMII mode
->   but only recently noticed
-> 
-> ----------------------------------------------------------------
-> Arthur Demchenkov (1):
->       ARM: dts: N900: fix onenand timings
-> 
-> Roger Quadros (1):
->       ARM: dts: dra7: Add bus_dma_limit for L3 bus
-> 
-> Tomi Valkeinen (1):
->       backlight: add led-backlight driver
-> 
-> Tony Lindgren (6):
->       ARM: dts: droid4: Configure LED backlight for lm3532
->       Merge branch 'omap-for-v5.6/fixes-rc2' into fixes
->       Merge branch 'omap-for-v5.6/fixes-rc3' into fixes
->       ARM: dts: Fix dm814x Ethernet by changing to use rgmii-id mode
->       bus: ti-sysc: Fix quirk flags for lcdc on am335x
->       Merge branch 'fix-lcdc-quirk' into fixes
-> 
->  arch/arm/boot/dts/dm8148-evm.dts                |   4 +-
->  arch/arm/boot/dts/dm8148-t410.dts               |   4 +-
->  arch/arm/boot/dts/dra62x-j5eco-evm.dts          |   4 +-
->  arch/arm/boot/dts/dra7.dtsi                     |   1 +
->  arch/arm/boot/dts/motorola-mapphone-common.dtsi |  13 +-
->  arch/arm/boot/dts/omap3-n900.dts                |  44 ++--
->  arch/arm/configs/omap2plus_defconfig            |   1 +
->  drivers/bus/ti-sysc.c                           |   3 +-
->  drivers/video/backlight/Kconfig                 |   7 +
->  drivers/video/backlight/Makefile                |   1 +
->  drivers/video/backlight/led_bl.c                | 260 ++++++++++++++++++++++++
->  11 files changed, 317 insertions(+), 25 deletions(-)
->  create mode 100644 drivers/video/backlight/led_bl.c
+Bjorn,
 
-Here the diffstat is off a bit, the led_bl.c changes
-have been already merged in v5.6-rc5.
+Bjorn Helgaas <helgaas@kernel.org> writes:
+> On Thu, Mar 12, 2020 at 10:53:06AM +0100, Marc Gonzalez wrote:
+>> Last time around, my understanding was that, going forward,
+>> the best solution was:
+>> 
+>> 	virq = platform_get_irq(...)
+>> 	if (virq <= 0)
+>> 		return virq ? : -ENODEV;
+>> 
+>> i.e. map 0 to -ENODEV, pass other errors as-is, remove the dev_err
+>> 
+>> @Bjorn/Lorenzo did you have a change of heart?
+>
+> Yes.  In 10006651 (Oct 20, 2017), I thought:
+>
+>   irq = platform_get_irq(pdev, 0);
+>   if (irq <= 0)
+>     return -ENODEV;
+>
+> was fine.  In 11066455 (Aug 7, 2019), I said I thought I was wrong and
+> that:
+>
+>   platform_get_irq() is a generic interface and we have to be able to
+>   interpret return values consistently.  The overwhelming consensus
+>   among platform_get_irq() callers is to treat "irq < 0" as an error,
+>   and I think we should follow suit.
+>   ...
+>   I think the best pattern is:
+>
+>     irq = platform_get_irq(pdev, i);
+>     if (irq < 0)
+>       return irq;
 
-Regards,
+Careful. 0 is not a valid interrupt.
 
-Tony
+Thanks,
+
+        tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
