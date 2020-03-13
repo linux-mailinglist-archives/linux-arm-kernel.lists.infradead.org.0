@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 796EE184FCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 20:59:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 533C2184FCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 20:59:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TNnl0WspuYUQg7177/Ud5aSGSq5be7J3I5D72IWETzc=; b=gYAw50A3gWGnPu
-	zj/F01OnBdDKfnBFyPmiXTW8l6FV+xojb+tnBIOQfBgmlB6ijT0LTzJE856XSX6fvJQqqki0s6PnO
-	Da6+zO5XD7to0tQd7+uH3F4pnHcH1D/9ktG828/3GzZllZDkkMvmQNgr+kDN9wyTKQ+tPCl5a3jTT
-	TMb/qN5B7Q8KtU543wZFex6zyTBgLA6yBUabXShhSnf1X0hEcT57oTCJfpJflzkERFY4Z6OIekf13
-	yWCal0ZWkbCmDHwT/RQBQDtPYSR25r+3FB54yXSIf1efeLih7McK+VdxO9ePxkGbS89xuY5vx88Hb
-	w28EbDlysmtSOEHLNoQQ==;
+	List-Owner; bh=ia8q6yFtArAPkHsRRRRBFZE1hWyV2mp4KpDiBzd5zgk=; b=RnmbJPHNdTt/0N
+	J3a9XOkZ/0AIMJtUnWObW0Tt2Z2Ax91Ai+Ag0hpAn0A5ENxP1nJZ2HOQDF8goY7wvpYwQTxYhRpfU
+	QuTBGw+tOOBRrAo09BzB0Yo2G7i7ZRPVf/e1TwZxpqZnWfg1yDi3x5RIkQvhVrZAOS3UkHyY+6Cex
+	nPsamjsSA/lM94mM1yACu7fJN87WTMeNqzbebM1QrlGA1i9U5wPmZrkDMzVjmq5XdMg6Fd5alMqWJ
+	/Blb4OfsX/G3dHwBR3yauBVJuasvx7jHJtCRjNU24fHGExnv3YA0drffvlGxDwcR/LsZrS0I18IjV
+	e1ml89b31mkhSRYItzcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCqSo-0008KN-9F; Fri, 13 Mar 2020 19:59:22 +0000
+	id 1jCqSb-00084U-FU; Fri, 13 Mar 2020 19:59:09 +0000
 Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCqD8-0008S7-VA; Fri, 13 Mar 2020 19:43:14 +0000
+ id 1jCqD9-0008RC-Ka; Fri, 13 Mar 2020 19:43:14 +0000
 Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Tudor.Ambarus@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -43,31 +43,31 @@ Authentication-Results: esa4.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: ikV568Wu5C5+uH4yDKbIVJVP1wfduuVhk4vKthKvZRSFMXtaPhnisYcodSeeRHs/1s82imWTV0
- TMHUbddzyfNlBASQDNaY7K93L+iw5jCLx4MZiLQ7yyMcV8VDYvuZn22swDDQrQ4HNfvFpU65n/
- pdfKiWjpvROzM/UUxBZH0mW1PocSBmtzjOj4smSGVRSxg6I9PVdrqqYERez8N4I/P6R/kmvp57
- A+LtuEqj+qa44POIqKg8RrCjgiBD9dhSwNiL/8WqVM6MyOL1NB/opzZ8uGRpEl1yt1JTJU+wvw
- 7N0=
-X-IronPort-AV: E=Sophos;i="5.70,549,1574146800"; d="scan'208";a="67134846"
+IronPort-SDR: IrofOWlzOsaSIDRfshECHZJeoNLkqlvJCXhL5XgSMNFp76gboqht1z04LNI9ZfeefcYexQYL6T
+ At3dY+B+ja8V4zCiDrV0PmedRBmFK5rDHG9bR0CSmrIHckvv347f3tL6ubZnACjeOWgw/TAMWp
+ w6ZrNY+Nv/oNeWrxnlVDfSvcQatA+ZJleP5hiAhUQT5XQGSKhYTvCddw3fDJpEjIb0a9BGjbv3
+ 5YcFbtAnz1mejfnlOHylGCZus83JFEi1s+g/TKeO3OuZ5k0Zfpoy9W/7M+8nU+LwooOhJk6t1f
+ VsI=
+X-IronPort-AV: E=Sophos;i="5.70,549,1574146800"; d="scan'208";a="67134848"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
  13 Mar 2020 12:43:00 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 13 Mar 2020 12:42:55 -0700
+ 15.1.1713.5; Fri, 13 Mar 2020 12:42:56 -0700
 Received: from NAM04-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Fri, 13 Mar 2020 12:42:55 -0700
+ via Frontend Transport; Fri, 13 Mar 2020 12:42:56 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nAPVTnqa2yaWm6CIXKDLBAvBPGNE2XdwCDQIQ4Oorb4c1nUwAn8Joqwqim/0ongpNgA0zL/eSYnEvnhVQQi4hYNwuqnr8kV+9tZaCpKFoOgIjupPq/u7Z5NTPFUAigWd8roza6KGj2S0OkUFeI3wHnZvDAAxu3i0djv7iRCyE3s+bZQIEJJk/qOZb7gZs/PCpqstrahg6b+8vsTumVMGnJJYtl/ilgK+wz3uTOQ7vpvN4gteR27FVzCF2heR9edXdhcgIKFKeNRlikrLF/UROgjLcQG8WvFr2M/uWeiu2sG9tBFYNml4W50AfjxNxudPBKYzDzJdqvdfd7JvEEmulg==
+ b=UUrvJnr8DOTJzgijnYdHNmCsgyq8Kg9JzOheZbchHFl2PJGzdtbMwaN9QpmdQV+hdHDJXIaH3ZOhfEjFPqMwJEF2PO7JXEdlgojYS5qLslNQfYJfeha98QWfJDw2rMhrPICxsO+sUuG3DREkyy0fumQ+AAcOF3ZSHsJy5wYj+UNuCTWDCF+w9oHq7NNXh52TbARS2ZLpWu+Vscahbw/a5aNbNQtYtj2sarQYPIOfk7ddxE92NaXLK+HWPaOePcF1i9rQVWbqgJ7LDTAGdG1YTNUe6guBFjYBoDz2cwtr+jgqyUDycWro/X1iDWMhVrQbV4pIirDY0m1XDZdfcqOtmw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zN20v7wnZ7h0QsT1JbC6Idp5ab+12siBYc9gBzlhkSo=;
- b=OvNAwLANFSfN/CRHYzIJEA4TvTGl5uZBQr4nl/vO24yIsPfViTxpmJuuNF30vYkKzrEuG4SLVYdbpIfr1ldlzxpC5klL/y/Yc+FJjDgiOfQ1mDJfpTEl0x0ivtWwZeqHMzscxjq3yZ3HjicFGOe03wu0xKS+bK2BzIUCVnvJSApZS0QDcfd/1fcb9bDVLsx2SgMolMktrZ+jgsQ94opN8ndYuZij+4cpYvPUiGO/cPqKPHqQ9tYMaW/bSXM2LDyoSjEBIUQ2uCIOSgaAO4qS8KynFgVXZ+rMzUXFkkK2FT6NnFMJ+bS5zxb/LUsuwLzDoGHMcInU/1OleMLyG01TSg==
+ bh=TgJHRZcBZQXvhgZhMj0Mm6Yhl2JLd+i3FrvEHUdkDB4=;
+ b=lNFYP0cPHatkLeXt2FYeMJh1P8KgIldzKfsR/cHr78tWuIG6UKUyBGc2Ass4JHPfZQo6Vkj7SJ9dvDGs2UzmLQx5WaY8dJrQZx4uARWmoy5XiZLKVoMImg+S8FI0wFQZcsH1ydXBoYCztrULa1OINPXwYjby7WO2U/PegyQDHMSlYk3hZMllEhPj3Q7b9yw0SWq0bpmRlUNmVyb2Hhl/amP7n578F/+y30eOcSu3tWwg5fZispoOueMgF/h/thw7E71HUQqLMeUNjSAnDBEHR/4AB3CRJg+U4W+z98NrTWoJwmHh8ZAFCRCALei0M9dF4CxcJqEUVx2gbVZefpFWug==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -75,24 +75,24 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zN20v7wnZ7h0QsT1JbC6Idp5ab+12siBYc9gBzlhkSo=;
- b=ohDzMPDiywbPC25SVrg4gUoXvtRRC8OFNH4KZofqQSml+wjrW+K/sjDDIiEx99uC6PuUf3amIuZS28SveUr8kUoDsBYweY4KYWg6eoFsVFop1E+o43zLgQZHmUs8tDJknkt+gNw/6dFhkyOlN5qJCvhoJ7V6ccYTKcL3+diV/P4=
+ bh=TgJHRZcBZQXvhgZhMj0Mm6Yhl2JLd+i3FrvEHUdkDB4=;
+ b=FGmc8HB6gQTczzRT9HxPGbWBtsyrDS4Utv2ZJYSR/ZhfWeaLrHO2Nn7w923N9THEJdJ5dnNP+T0P220ymBRV48gjNo/M5Rka3jTQlDz00abLLTYxg4BJzIjX4u7TIahzLmXfcrTwQTGPaO0TmyyB+0H6K6PO2s08wTVMfOZ5JAA=
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
  by BYASPR01MB10.namprd11.prod.outlook.com (2603:10b6:a02:92::33) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.13; Fri, 13 Mar
- 2020 19:42:54 +0000
+ 2020 19:42:55 +0000
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
- 19:42:54 +0000
+ 19:42:55 +0000
 From: <Tudor.Ambarus@microchip.com>
 To: <bbrezillon@kernel.org>, <vigneshr@ti.com>
-Subject: [PATCH v2 19/25] mtd: spi-nor: Move Winbond bits out of core.c
-Thread-Topic: [PATCH v2 19/25] mtd: spi-nor: Move Winbond bits out of core.c
-Thread-Index: AQHV+W+TiBF52BMdQ0+uE6txgkBmbw==
-Date: Fri, 13 Mar 2020 19:42:48 +0000
-Message-ID: <20200313194130.342251-20-tudor.ambarus@microchip.com>
+Subject: [PATCH v2 20/25] mtd: spi-nor: Move Catalyst bits out of core.c
+Thread-Topic: [PATCH v2 20/25] mtd: spi-nor: Move Catalyst bits out of core.c
+Thread-Index: AQHV+W+TibuTUj6RC0Cux+sAiSLtdg==
+Date: Fri, 13 Mar 2020 19:42:49 +0000
+Message-ID: <20200313194130.342251-21-tudor.ambarus@microchip.com>
 References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
 In-Reply-To: <20200313194130.342251-1-tudor.ambarus@microchip.com>
 Accept-Language: en-US
@@ -101,15 +101,15 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f89e10d4-51a9-498b-2dd2-08d7c786b97a
+x-ms-office365-filtering-correlation-id: 7543e0d7-017d-4823-ee4f-08d7c786b9db
 x-ms-traffictypediagnostic: BYASPR01MB10:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYASPR01MB10FD03F87D7BAD1EEE76E2F0FA0@BYASPR01MB10.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <BYASPR01MB107BFCAAEFF793FA27CFEDF0FA0@BYASPR01MB10.namprd11.prod.outlook.com>
 x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
 x-forefront-prvs: 034119E4F6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(39860400002)(396003)(366004)(376002)(199004)(478600001)(54906003)(107886003)(6512007)(110136005)(26005)(186003)(6486002)(4326008)(2616005)(316002)(71200400001)(6666004)(6506007)(86362001)(36756003)(8676002)(5660300002)(2906002)(30864003)(66476007)(66446008)(66556008)(76116006)(64756008)(91956017)(66946007)(1076003)(81166006)(81156014)(8936002);
+ SFS:(10009020)(136003)(346002)(39860400002)(396003)(366004)(376002)(199004)(478600001)(54906003)(107886003)(6512007)(110136005)(26005)(186003)(6486002)(4326008)(2616005)(316002)(71200400001)(6666004)(6506007)(86362001)(36756003)(8676002)(5660300002)(2906002)(66476007)(66446008)(66556008)(76116006)(64756008)(91956017)(66946007)(1076003)(81166006)(81156014)(8936002);
  DIR:OUT; SFP:1101; SCL:1; SRVR:BYASPR01MB10;
  H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
@@ -117,19 +117,19 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: o5znUFsSoNXYi5KpyZEGB9cw/WkwEbIJFqh9qtXEQNQw0Js62wurwf0E+ET3QaZHKK23FLKw6evoG1t4ikh1tGyOKTrQHZ6kANEJLx9cFmjErmH3a9LLtJ3KHeAHJVe1xl0be7OG3hIzN/Z3KqocM5iuEb+OjY9BTqAohjyBs53XmFiNLx1hf+nJIg594BI1XUk7ziA2Y3usOcZxORNQwzMRl7zQN6virY2TDFJJTlXB91sX9cXgLPGnJVHnOQ2+p24C7L3CgW28dY+pSsIJQJlHR07K9X2fGxGpuSZNkt9W7GWB31w+0Y/vDd9NVa+10ADZDcvGP2e64IpuDicTyQlmpFjifRJO6hoB1jTWBAEa5hGNEI10Ux608OY1x9le9M/AUGmK6+lh5AszgWnhc7/iBJi2DmCtUGYzKD5AD0VGzRtL3xM8hIJPB8VbSvmi
-x-ms-exchange-antispam-messagedata: Yq8QQW1CP6hKsGTnrCmru6Iq1kKo+eeLTIsCGRlbuVLp4djcnHUECptPkeJV0RviQp50q4zPWTbrnP8UnBNpGwYJ/hHcyriXszb1UwvcXrte/JxaVaR2BR4lTEOtduGNda9Eh9zs+DnLrfoHHwpy0w==
+x-microsoft-antispam-message-info: 28l6OwPh4vwtYcWuS9ISZB4cZF/F2c+2U6dqa12t6qBPLqKpX72R0JkyHddYHuCY2YoosT5izdWNCGtmIamdBD23q4/bNGfcezUD2RUkRl5yTkccz68U6zd9kk1w3X0X1JQCaKMHtiDtkvsnuDPz1tfJ24s9iVpjFR2CI0sR5WlZxA2Wt5ato7NixcOkXKMxF+A5A4ympOmW5ZhI4pxUZCp6I5gD3Dr2xOcXG1gFYsFwJ533UIPz73xW704fzsMEwZYIXY5+ulUlmTUANfk6daKkDJYGkMRzWtM98n4bM/4r8dH6/QrSzRQnIJXhQHLjAghyFlHNXS6vn/JnO9J+zsAtCfjzKfa/kukrVNqNC0yQICFiHr4qtd2+oF1qpc1TPs86IgJ7JKJEd0D+Hasq5b2ihdhX3DTZ+OSjumXOBJjmee1xOMjlM2bnVKzjfssN
+x-ms-exchange-antispam-messagedata: lhTnRDbgsCgYcNCbNaNNyFL2BgShQ55WRn48rzM9HGc+nzRvgr3rC8VYKwVW3iFzC8yYzt1qHjMF87u4VO1f4ichlEG6zOz7oDqwFrBD4H3REw1kqi9Ll1aFKnD6wxR51iwTPiAh2/hvuYX2qzaMvA==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: f89e10d4-51a9-498b-2dd2-08d7c786b97a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 19:42:48.6527 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7543e0d7-017d-4823-ee4f-08d7c786b9db
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 19:42:49.3113 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /yqTCU5TLgtw93By3aPzu2oBMQlE5Zg4nZfdK05LcXfWijhWloHT9fd1xcd2h3lqjYJKBUSQolZMAJWHzD4joffHlhaQj485wBO/41hfRYM=
+X-MS-Exchange-CrossTenant-userprincipalname: DGNhqdb1NOqOnEMnUhqkk/SCwfKaBU4H+7cxBPHLT+w7LA3BumuzYhPcW9919ImQiJMvAdXqO6fY02PP2oVC3AdtAfixAsz7E2kgaOUA15Q=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYASPR01MB10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_124311_138822_028DF45D 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20200313_124311_866260_A3F95AC5 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -162,201 +162,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Boris Brezillon <bbrezillon@kernel.org>
 
-Create a SPI NOR manufacturer driver for Winbond chips, and move the
-Winbond definitions outside of core.c.
+Create a SPI NOR manufacturer driver for Catalyst chips, and move the
+Catalyst definitions outside of core.c.
 
 Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
 Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 ---
- drivers/mtd/spi-nor/Makefile  |   1 +
- drivers/mtd/spi-nor/core.c    | 115 +---------------------------------
- drivers/mtd/spi-nor/core.h    |   1 +
- drivers/mtd/spi-nor/winbond.c | 112 +++++++++++++++++++++++++++++++++
- 4 files changed, 115 insertions(+), 114 deletions(-)
- create mode 100644 drivers/mtd/spi-nor/winbond.c
+ drivers/mtd/spi-nor/Makefile   |  1 +
+ drivers/mtd/spi-nor/catalyst.c | 29 +++++++++++++++++++++++++++++
+ drivers/mtd/spi-nor/core.c     |  8 +-------
+ drivers/mtd/spi-nor/core.h     |  1 +
+ 4 files changed, 32 insertions(+), 7 deletions(-)
+ create mode 100644 drivers/mtd/spi-nor/catalyst.c
 
 diff --git a/drivers/mtd/spi-nor/Makefile b/drivers/mtd/spi-nor/Makefile
-index ef7afc654a15..33b6f834a14f 100644
+index 33b6f834a14f..cd8d95b727c9 100644
 --- a/drivers/mtd/spi-nor/Makefile
 +++ b/drivers/mtd/spi-nor/Makefile
-@@ -13,4 +13,5 @@ spi-nor-objs			+= macronix.o
- spi-nor-objs			+= micron-st.o
- spi-nor-objs			+= spansion.o
- spi-nor-objs			+= sst.o
-+spi-nor-objs			+= winbond.o
- obj-$(CONFIG_MTD_SPI_NOR)	+= spi-nor.o
-diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
-index c81eac6e9731..c89d3000c46e 100644
---- a/drivers/mtd/spi-nor/core.c
-+++ b/drivers/mtd/spi-nor/core.c
-@@ -465,38 +465,6 @@ int spi_nor_write_ear(struct spi_nor *nor, u8 ear)
- 	return ret;
- }
+@@ -2,6 +2,7 @@
  
--/**
-- * winbond_set_4byte_addr_mode() - Set 4-byte address mode for Winbond flashes.
-- * @nor:	pointer to 'struct spi_nor'.
-- * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-- *		address mode.
-- *
-- * Return: 0 on success, -errno otherwise.
-- */
--static int winbond_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
--{
--	int ret;
--
--	ret = spi_nor_set_4byte_addr_mode(nor, enable);
--	if (ret || enable)
--		return ret;
--
--	/*
--	 * On Winbond W25Q256FV, leaving 4byte mode causes the Extended Address
--	 * Register to be set to 1, so all 3-byte-address reads come from the
--	 * second 16M. We must clear the register to enable normal behavior.
--	 */
--	ret = spi_nor_write_enable(nor);
--	if (ret)
--		return ret;
--
--	ret = spi_nor_write_ear(nor, 0);
--	if (ret)
--		return ret;
--
--	return spi_nor_write_disable(nor);
--}
--
- /**
-  * spi_nor_xread_sr() - Read the Status Register on S3AN flashes.
-  * @nor:	pointer to 'struct spi_nor'.
-@@ -1995,73 +1963,6 @@ int spi_nor_sr2_bit7_quad_enable(struct spi_nor *nor)
-  * old entries may be missing 4K flag.
-  */
- static const struct flash_info spi_nor_ids[] = {
--	/* Winbond -- w25x "blocks" are 64K, "sectors" are 4KiB */
--	{ "w25x05", INFO(0xef3010, 0, 64 * 1024,  1,  SECT_4K) },
--	{ "w25x10", INFO(0xef3011, 0, 64 * 1024,  2,  SECT_4K) },
--	{ "w25x20", INFO(0xef3012, 0, 64 * 1024,  4,  SECT_4K) },
--	{ "w25x40", INFO(0xef3013, 0, 64 * 1024,  8,  SECT_4K) },
--	{ "w25x80", INFO(0xef3014, 0, 64 * 1024,  16, SECT_4K) },
--	{ "w25x16", INFO(0xef3015, 0, 64 * 1024,  32, SECT_4K) },
--	{
--		"w25q16dw", INFO(0xef6015, 0, 64 * 1024,  32,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{ "w25x32", INFO(0xef3016, 0, 64 * 1024,  64, SECT_4K) },
--	{
--		"w25q16jv-im/jm", INFO(0xef7015, 0, 64 * 1024,  32,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{ "w25q20cl", INFO(0xef4012, 0, 64 * 1024,  4, SECT_4K) },
--	{ "w25q20bw", INFO(0xef5012, 0, 64 * 1024,  4, SECT_4K) },
--	{ "w25q20ew", INFO(0xef6012, 0, 64 * 1024,  4, SECT_4K) },
--	{ "w25q32", INFO(0xef4016, 0, 64 * 1024,  64, SECT_4K) },
--	{
--		"w25q32dw", INFO(0xef6016, 0, 64 * 1024,  64,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{
--		"w25q32jv", INFO(0xef7016, 0, 64 * 1024,  64,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{
--		"w25q32jwm", INFO(0xef8016, 0, 64 * 1024,  64,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{ "w25x64", INFO(0xef3017, 0, 64 * 1024, 128, SECT_4K) },
--	{ "w25q64", INFO(0xef4017, 0, 64 * 1024, 128, SECT_4K) },
--	{
--		"w25q64dw", INFO(0xef6017, 0, 64 * 1024, 128,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{
--		"w25q128fw", INFO(0xef6018, 0, 64 * 1024, 256,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{
--		"w25q128jv", INFO(0xef7018, 0, 64 * 1024, 256,
--			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
--	},
--	{ "w25q80", INFO(0xef5014, 0, 64 * 1024,  16, SECT_4K) },
--	{ "w25q80bl", INFO(0xef4014, 0, 64 * 1024,  16, SECT_4K) },
--	{ "w25q128", INFO(0xef4018, 0, 64 * 1024, 256, SECT_4K) },
--	{ "w25q256", INFO(0xef4019, 0, 64 * 1024, 512,
--			  SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
--			  SPI_NOR_4B_OPCODES) },
--	{ "w25q256jvm", INFO(0xef7019, 0, 64 * 1024, 512,
--			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
--	{ "w25q256jw", INFO(0xef6019, 0, 64 * 1024, 512,
--			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
--	{ "w25m512jv", INFO(0xef7119, 0, 64 * 1024, 1024,
--			SECT_4K | SPI_NOR_QUAD_READ | SPI_NOR_DUAL_READ) },
--
- 	/* Catalyst / On Semiconductor -- non-JEDEC */
- 	{ "cat25c11", CAT25_INFO(  16, 8, 16, 1, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
- 	{ "cat25c03", CAT25_INFO(  32, 8, 16, 2, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
-@@ -2096,6 +1997,7 @@ static const struct spi_nor_manufacturer *manufacturers[] = {
- 	&spi_nor_st,
- 	&spi_nor_spansion,
- 	&spi_nor_sst,
-+	&spi_nor_winbond,
- };
- 
- static const struct flash_info *
-@@ -2789,11 +2691,6 @@ static int spi_nor_setup(struct spi_nor *nor,
- 	return nor->params.setup(nor, hwcaps);
- }
- 
--static void winbond_set_default_init(struct spi_nor *nor)
--{
--	nor->params.set_4byte_addr_mode = winbond_set_4byte_addr_mode;
--}
--
- /**
-  * spi_nor_manufacturer_init_params() - Initialize the flash's parameters and
-  * settings based on MFR register and ->default_init() hook.
-@@ -2801,16 +2698,6 @@ static void winbond_set_default_init(struct spi_nor *nor)
-  */
- static void spi_nor_manufacturer_init_params(struct spi_nor *nor)
- {
--	/* Init flash parameters based on MFR */
--	switch (JEDEC_MFR(nor->info)) {
--	case SNOR_MFR_WINBOND:
--		winbond_set_default_init(nor);
--		break;
--
--	default:
--		break;
--	}
--
- 	if (nor->manufacturer && nor->manufacturer->fixups &&
- 	    nor->manufacturer->fixups->default_init)
- 		nor->manufacturer->fixups->default_init(nor);
-diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
-index e49a2200a90d..fa65fbb6e0d2 100644
---- a/drivers/mtd/spi-nor/core.h
-+++ b/drivers/mtd/spi-nor/core.h
-@@ -180,6 +180,7 @@ extern const struct spi_nor_manufacturer spi_nor_micron;
- extern const struct spi_nor_manufacturer spi_nor_st;
- extern const struct spi_nor_manufacturer spi_nor_spansion;
- extern const struct spi_nor_manufacturer spi_nor_sst;
-+extern const struct spi_nor_manufacturer spi_nor_winbond;
- 
- int spi_nor_write_enable(struct spi_nor *nor);
- int spi_nor_write_disable(struct spi_nor *nor);
-diff --git a/drivers/mtd/spi-nor/winbond.c b/drivers/mtd/spi-nor/winbond.c
+ spi-nor-objs			:= core.o sfdp.o
+ spi-nor-objs			+= atmel.o
++spi-nor-objs			+= catalyst.o
+ spi-nor-objs			+= eon.o
+ spi-nor-objs			+= esmt.o
+ spi-nor-objs			+= everspin.o
+diff --git a/drivers/mtd/spi-nor/catalyst.c b/drivers/mtd/spi-nor/catalyst.c
 new file mode 100644
-index 000000000000..3f8c568091d3
+index 000000000000..011b83e99e95
 --- /dev/null
-+++ b/drivers/mtd/spi-nor/winbond.c
-@@ -0,0 +1,112 @@
++++ b/drivers/mtd/spi-nor/catalyst.c
+@@ -0,0 +1,29 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (C) 2005, Intec Automation Inc.
@@ -367,108 +203,63 @@ index 000000000000..3f8c568091d3
 +
 +#include "core.h"
 +
-+static const struct flash_info winbond_parts[] = {
-+	/* Winbond -- w25x "blocks" are 64K, "sectors" are 4KiB */
-+	{ "w25x05", INFO(0xef3010, 0, 64 * 1024,  1,  SECT_4K) },
-+	{ "w25x10", INFO(0xef3011, 0, 64 * 1024,  2,  SECT_4K) },
-+	{ "w25x20", INFO(0xef3012, 0, 64 * 1024,  4,  SECT_4K) },
-+	{ "w25x40", INFO(0xef3013, 0, 64 * 1024,  8,  SECT_4K) },
-+	{ "w25x80", INFO(0xef3014, 0, 64 * 1024,  16, SECT_4K) },
-+	{ "w25x16", INFO(0xef3015, 0, 64 * 1024,  32, SECT_4K) },
-+	{ "w25q16dw", INFO(0xef6015, 0, 64 * 1024,  32,
-+			   SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			   SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25x32", INFO(0xef3016, 0, 64 * 1024,  64, SECT_4K) },
-+	{ "w25q16jv-im/jm", INFO(0xef7015, 0, 64 * 1024,  32,
-+				 SECT_4K | SPI_NOR_DUAL_READ |
-+				 SPI_NOR_QUAD_READ | SPI_NOR_HAS_LOCK |
-+				 SPI_NOR_HAS_TB) },
-+	{ "w25q20cl", INFO(0xef4012, 0, 64 * 1024,  4, SECT_4K) },
-+	{ "w25q20bw", INFO(0xef5012, 0, 64 * 1024,  4, SECT_4K) },
-+	{ "w25q20ew", INFO(0xef6012, 0, 64 * 1024,  4, SECT_4K) },
-+	{ "w25q32", INFO(0xef4016, 0, 64 * 1024,  64, SECT_4K) },
-+	{ "w25q32dw", INFO(0xef6016, 0, 64 * 1024,  64,
-+			   SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			   SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25q32jv", INFO(0xef7016, 0, 64 * 1024,  64,
-+			   SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			   SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
-+	},
-+	{ "w25q32jwm", INFO(0xef8016, 0, 64 * 1024,  64,
-+			    SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			    SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25x64", INFO(0xef3017, 0, 64 * 1024, 128, SECT_4K) },
-+	{ "w25q64", INFO(0xef4017, 0, 64 * 1024, 128, SECT_4K) },
-+	{ "w25q64dw", INFO(0xef6017, 0, 64 * 1024, 128,
-+			   SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			   SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25q128fw", INFO(0xef6018, 0, 64 * 1024, 256,
-+			    SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			    SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25q128jv", INFO(0xef7018, 0, 64 * 1024, 256,
-+			    SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			    SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB) },
-+	{ "w25q80", INFO(0xef5014, 0, 64 * 1024,  16, SECT_4K) },
-+	{ "w25q80bl", INFO(0xef4014, 0, 64 * 1024,  16, SECT_4K) },
-+	{ "w25q128", INFO(0xef4018, 0, 64 * 1024, 256, SECT_4K) },
-+	{ "w25q256", INFO(0xef4019, 0, 64 * 1024, 512,
-+			  SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-+			  SPI_NOR_4B_OPCODES) },
-+	{ "w25q256jvm", INFO(0xef7019, 0, 64 * 1024, 512,
-+			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
-+	{ "w25q256jw", INFO(0xef6019, 0, 64 * 1024, 512,
-+			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
-+	{ "w25m512jv", INFO(0xef7119, 0, 64 * 1024, 1024,
-+			    SECT_4K | SPI_NOR_QUAD_READ | SPI_NOR_DUAL_READ) },
++static const struct flash_info catalyst_parts[] = {
++	/* Catalyst / On Semiconductor -- non-JEDEC */
++	{ "cat25c11", CAT25_INFO(16, 8, 16, 1,
++				 SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
++	{ "cat25c03", CAT25_INFO(32, 8, 16, 2,
++				 SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
++	{ "cat25c09", CAT25_INFO(128, 8, 32, 2,
++				 SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
++	{ "cat25c17", CAT25_INFO(256, 8, 32, 2,
++				 SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
++	{ "cat25128", CAT25_INFO(2048, 8, 64, 2,
++				 SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
 +};
 +
-+/**
-+ * winbond_set_4byte_addr_mode() - Set 4-byte address mode for Winbond flashes.
-+ * @nor:	pointer to 'struct spi_nor'.
-+ * @enable:	true to enter the 4-byte address mode, false to exit the 4-byte
-+ *		address mode.
-+ *
-+ * Return: 0 on success, -errno otherwise.
-+ */
-+static int winbond_set_4byte_addr_mode(struct spi_nor *nor, bool enable)
-+{
-+	int ret;
-+
-+	ret = spi_nor_set_4byte_addr_mode(nor, enable);
-+	if (ret || enable)
-+		return ret;
-+
-+	/*
-+	 * On Winbond W25Q256FV, leaving 4byte mode causes the Extended Address
-+	 * Register to be set to 1, so all 3-byte-address reads come from the
-+	 * second 16M. We must clear the register to enable normal behavior.
-+	 */
-+	ret = spi_nor_write_enable(nor);
-+	if (ret)
-+		return ret;
-+
-+	ret = spi_nor_write_ear(nor, 0);
-+	if (ret)
-+		return ret;
-+
-+	return spi_nor_write_disable(nor);
-+}
-+
-+static void winbond_default_init(struct spi_nor *nor)
-+{
-+	nor->params.set_4byte_addr_mode = winbond_set_4byte_addr_mode;
-+}
-+
-+static const struct spi_nor_fixups winbond_fixups = {
-+	.default_init = winbond_default_init,
++const struct spi_nor_manufacturer spi_nor_catalyst = {
++	.name = "catalyst",
++	.parts = catalyst_parts,
++	.nparts = ARRAY_SIZE(catalyst_parts),
 +};
-+
-+const struct spi_nor_manufacturer spi_nor_winbond = {
-+	.name = "winbond",
-+	.parts = winbond_parts,
-+	.nparts = ARRAY_SIZE(winbond_parts),
-+	.fixups = &winbond_fixups,
-+};
+diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
+index c89d3000c46e..99da7d8e9097 100644
+--- a/drivers/mtd/spi-nor/core.c
++++ b/drivers/mtd/spi-nor/core.c
+@@ -1963,13 +1963,6 @@ int spi_nor_sr2_bit7_quad_enable(struct spi_nor *nor)
+  * old entries may be missing 4K flag.
+  */
+ static const struct flash_info spi_nor_ids[] = {
+-	/* Catalyst / On Semiconductor -- non-JEDEC */
+-	{ "cat25c11", CAT25_INFO(  16, 8, 16, 1, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
+-	{ "cat25c03", CAT25_INFO(  32, 8, 16, 2, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
+-	{ "cat25c09", CAT25_INFO( 128, 8, 32, 2, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
+-	{ "cat25c17", CAT25_INFO( 256, 8, 32, 2, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
+-	{ "cat25128", CAT25_INFO(2048, 8, 64, 2, SPI_NOR_NO_ERASE | SPI_NOR_NO_FR) },
+-
+ 	/* Xilinx S3AN Internal Flash */
+ 	{ "3S50AN", S3AN_INFO(0x1f2200, 64, 264) },
+ 	{ "3S200AN", S3AN_INFO(0x1f2400, 256, 264) },
+@@ -1985,6 +1978,7 @@ static const struct flash_info spi_nor_ids[] = {
+ 
+ static const struct spi_nor_manufacturer *manufacturers[] = {
+ 	&spi_nor_atmel,
++	&spi_nor_catalyst,
+ 	&spi_nor_eon,
+ 	&spi_nor_esmt,
+ 	&spi_nor_everspin,
+diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
+index fa65fbb6e0d2..aaa2a460a159 100644
+--- a/drivers/mtd/spi-nor/core.h
++++ b/drivers/mtd/spi-nor/core.h
+@@ -168,6 +168,7 @@ struct spi_nor_manufacturer {
+ 
+ /* Manufacturer drivers. */
+ extern const struct spi_nor_manufacturer spi_nor_atmel;
++extern const struct spi_nor_manufacturer spi_nor_catalyst;
+ extern const struct spi_nor_manufacturer spi_nor_eon;
+ extern const struct spi_nor_manufacturer spi_nor_esmt;
+ extern const struct spi_nor_manufacturer spi_nor_everspin;
 -- 
 2.23.0
 
