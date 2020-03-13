@@ -2,118 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC7861841F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 08:58:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D321F184229
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:02:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hta/OsU2wZlLy1VZTAebpbVQO0I4vpUF1Kz5JTmONPE=; b=hpxb70gJpEUiYZ
-	/IGl7VXcunl1w9bBZDYtP9Y3taOKi8DL77CmhOpQOYmwxVwOlKbeJiagWrgb2F0lRR4NyanV5sUVH
-	EDjIgfmgHzrkLowuuovFPuhOjPnfcvokjEhptqSXt/DRiov/Xrtzg9f/eJw/D9Ya/BnhoXoamQUHQ
-	fawz95CK56agOJk9DBDyrzPsOTgHahkyCgJtUzEF4KGZBxx7zxrTGG7Rn/bF0XWC/s0HhacaNGE06
-	Qm+F9EFPxbMMUoc2/PTBXgFWugCq0cBCgXiR9O7h5ggf3byTWAFhKKzofoXWtXkqRtng+M2NUYPH5
-	hwk3tCCcbnzZ2BkBBxgA==;
+	List-Owner; bh=5nS3A9F2r4CKx3XNGxpg9ybdbPQ+JYQHTKLMXddC13k=; b=iZ4wTvkKMEC2hE
+	T3wQHM2gkIO4n+HRZzQUZhfXMvvOJazp4HRoh8TCeERbhnoxVhydfmjIdW9/5Yp96q73xnBwBz5ZG
+	Fhlzc7gLjo8B3aBrNf6d8xVCkmhtyTFSbU2j5Rxi9hpciKnrzuX0JZhGJ0YhNHIi8ZUiKWDPfQGJ4
+	+TcUsNUrsxLaACFBblWavEjcOMlbXcmz3WWt9FcFkPVTgaK/lFQE+Az7zW6pWnP6UpQWnTyq8mAK9
+	OIAjiH9gp77uJZh7ZwnwNcw2Mt7NPC4/G0wOwu/01nQT5vhb2qvtx43azg9Tr52yaL5ZtIZIL1Hmk
+	9dWGP52rgDbh6wtFLciQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCfD9-000390-Qx; Fri, 13 Mar 2020 07:58:27 +0000
-Received: from mail-eopbgr10062.outbound.protection.outlook.com ([40.107.1.62]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1jCfGw-0005tO-RG; Fri, 13 Mar 2020 08:02:22 +0000
+Received: from mail-eopbgr1400090.outbound.protection.outlook.com
+ ([40.107.140.90] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCfD0-00037e-6d
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 07:58:19 +0000
+ id 1jCfGm-0005sT-UL
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 08:02:14 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WYiyKx0qTyOZfFDMKJkmAeGCbL6MWRKhIY1xmjqMgORx1p/H6bkhJNTfCoy6wnND8wGXN4X5UdHPVFTSKFFUUum6KYqJt8n/9kLbYGZ7a4vBOCOINae2sPyXAF7COd80P0+2zGKkDTzLpnm8GtS2rcSpIzbQZeH8BmW1bNs/xUwqHSJHxGA+SkprpXfts0M7xVQe/GSU5loyugTU2hj+efs7S8E4vHSyQjT/ypgrEnaGL0H9AupYp6UbcYLq3Kwws5A8Le5at8JwufjKp1JH93A+NpElRUByxXJvBHa9DWiGL0kJyNxRBjmXGsRopVou+WRuGNv4RsGejmCWU9ynPA==
+ b=GDgIAkwYgZN3k2yo8r2LO5wDn/jEK0gVvOintNc+hLiSw5GkFaoT80GDvRyJlWGyWNPowfitKig2MiiWIzFT5QiBcPkME7OuCMbgpnxLW5Puhqi9yJ4Xpvdrt/GFSxSW38/5zvwRxzRgI+5wVQJ+3HCp4dAsmTj9ypIBSh99/BvfrppZY8EE/nZ5IcUShhk5MWWQTkzTlgbOBtT2c4VTHFafQMdsKzCyZWH3THHBiRLE4kWq9tarAmGV2qPcbHIXaHTCTCai4EYsiZsa56AN9eTIBst5plBJmE5lxI+2eEeHlSxpZrzXuoKVq1cCfD9uZbCbyhqSFwoEEBcXTxK20Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0bfKLPsIoHaf2VUXcYPigbNobdml3pQLe0VzlKaZvMo=;
- b=n1N7c8PlpWrV5t+qaN5DzdJuYmIuJNGXfXDe1wYSAiRutr03BEioX9It2+DojvFL3oCjKX0M6A9sFelB54M/KikJPZ2pk0OPlle8IGCJEj20Zq6bBTHzQLsBIe+rQRDr8htSLR8N5eQ4xTB+ISi4+xfGlmCpzeQIa4sWvcLmEo7VLYiwRcpHt6lJuygjJ+oEe7y26dtF3+lF/hgcdgKLHY+ZyOt6RL3y/5ge5jfkZkuRvDAcOSyMhRrTfDEwIvkY+QNNz2+BvmLbJbJLAPC5KEIvAHz4B7ym7Gk9dDZB3aLmgAlVfafuf85Y/KoWpqb+jfnjkJrgUGlQcDM1Mp4Cow==
+ bh=SGC+YQ1cGl513boYqKKNwTKXD3SHCT91/ImlBTTYeOU=;
+ b=Th4+FLI1WRiCAmOT0TMWN29Vl+HwKbvzGIbG+N8mNQkJwvc7XRCrMp/gyV6/NazUauG79wmfNqYRg2zG1UfY5bjH5rvdiPwyS7qpmIywOCb3D2Fd3xniMECFNuzAzvlquYCvGsQiEvbRTwGE+3BM1wFPA/UX9WTIIpjrtF6yqJqJ0q66oNeNs6CNvAYNBOE7RpYb//y4mByyppuNcSTY1ZdjfrJJPJHUin7DVNwndkyK57rIWqcJiXwUXpzrmHemQ+l4ALuO/tI5uT/+KwFQ5xUWPR6l9i0DYo2p2SR01GfuQ638iFWcqwlF2qLTSeIUjf/xOMaztQUXnSyH+IkYAA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0bfKLPsIoHaf2VUXcYPigbNobdml3pQLe0VzlKaZvMo=;
- b=YXib8MAz1ck6ixm0fJOJhTtBcX/AFcswml4GAe88X2l5uIsqYFw8JFL9Gn1fJQqRoACIdzDOkNRFgASu4fJYHNr1WgkVjm1GBqBFL+tcJR4W0RUoFWq7deTN/4d1mMU7F2nwEpPgJvgQqPRzdNcWCRNTt8WPZzsS0L6PRrn7AaU=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5521.eurprd04.prod.outlook.com (20.178.112.143) with Microsoft SMTP
+ bh=SGC+YQ1cGl513boYqKKNwTKXD3SHCT91/ImlBTTYeOU=;
+ b=bWVIs5/8H3LQKgmkiQCwdaYLBfCwov/uWvh3oI+RCuP72mcpKAVoxmVsdKz4ufBQ57/MhAg3rnpONy+H8OSdQFe2G12GvQDD0qtQJ+XEaYYVrPv8S8z4EXBc4NMrgZEjIRN43YgFDwIXwr7QiOvltrOXsM/lJmcRKXdhQ3O+eRo=
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
+ OSBPR01MB3030.jpnprd01.prod.outlook.com (52.134.252.140) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.16; Fri, 13 Mar 2020 07:58:14 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
- 07:58:14 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Abel Vesa <abel.vesa@nxp.com>, Rob Herring <robh@kernel.org>, Shawn Guo
- <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam
- <fabio.estevam@nxp.com>, Mike Turquette <mturquette@baylibre.com>, Stephen
- Boyd <sboyd@kernel.org>, Lee Jones <lee.jones@linaro.org>, Anson Huang
- <anson.huang@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>, Jacky Bai
- <ping.bai@nxp.com>
-Subject: RE: [RFC 06/11] clk: imx: Add helpers for passing the device as
- argument
-Thread-Topic: [RFC 06/11] clk: imx: Add helpers for passing the device as
- argument
-Thread-Index: AQHV8TqqG8jg875rt0+/0iqjNCvp+qhGN6/w
-Date: Fri, 13 Mar 2020 07:58:14 +0000
-Message-ID: <AM0PR04MB44816071F2A24C60A7DFC73188FA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1583226206-19758-1-git-send-email-abel.vesa@nxp.com>
- <1583226206-19758-7-git-send-email-abel.vesa@nxp.com>
-In-Reply-To: <1583226206-19758-7-git-send-email-abel.vesa@nxp.com>
-Accept-Language: en-US
+ 15.20.2793.17; Fri, 13 Mar 2020 08:02:08 +0000
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::6df0:eb47:a259:b94b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::6df0:eb47:a259:b94b%7]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
+ 08:02:08 +0000
+From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: RE: [PATCH v2 2/3] media: i2c: ov5645: Switch to assigned-clock-rates
+Thread-Topic: [PATCH v2 2/3] media: i2c: ov5645: Switch to assigned-clock-rates
+Thread-Index: AQHV+LMHriTg1O9fLki5YHCWHclgDahFfJwAgAABE5CAABWjgIAAldMw
+Date: Fri, 13 Mar 2020 08:02:08 +0000
+Message-ID: <OSBPR01MB35902AAC382503C40DEF929BAAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+References: <1584047552-20166-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1584047552-20166-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdUgMHjU_ZANzJbxQji6K7Pdc-jD4C7JatQc-OtN=jJt_w@mail.gmail.com>
+ <OSBPR01MB3590906C6121D1DFFF4ABF0DAAFD0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+ <20200312230253.GB30932@pendragon.ideasonboard.com>
+In-Reply-To: <20200312230253.GB30932@pendragon.ideasonboard.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
+ smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
+x-originating-ip: [193.141.220.21]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ec0ac09b-d05d-4747-5133-08d7c7244882
-x-ms-traffictypediagnostic: AM0PR04MB5521:|AM0PR04MB5521:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB55211A6CE2F590697103ED5488FA0@AM0PR04MB5521.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-ms-office365-filtering-correlation-id: a83edc62-e307-419b-2e97-08d7c724d410
+x-ms-traffictypediagnostic: OSBPR01MB3030:
+x-microsoft-antispam-prvs: <OSBPR01MB303015D3EC32A7729D085277AAFA0@OSBPR01MB3030.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 034119E4F6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(376002)(366004)(346002)(396003)(39860400002)(199004)(6506007)(66946007)(6636002)(33656002)(9686003)(76116006)(64756008)(66556008)(52536014)(7696005)(66476007)(81166006)(8936002)(55016002)(81156014)(110136005)(316002)(478600001)(8676002)(44832011)(54906003)(66446008)(5660300002)(71200400001)(4326008)(26005)(7416002)(2906002)(86362001)(186003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5521;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
+ SFS:(10019020)(4636009)(39860400002)(136003)(396003)(376002)(366004)(346002)(199004)(186003)(54906003)(81156014)(81166006)(52536014)(8676002)(86362001)(6506007)(8936002)(4326008)(316002)(76116006)(9686003)(53546011)(26005)(478600001)(33656002)(5660300002)(7696005)(64756008)(2906002)(66946007)(66556008)(55016002)(66476007)(66446008)(71200400001)(7416002)(6916009);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB3030;
+ H:OSBPR01MB3590.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; 
+received-spf: None (protection.outlook.com: bp.renesas.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Ue4T7VXezXxJ/AjJh/7zE5AmHDVDRFoElRxHQ0VK214XonYyxBqqMtKySmhszLDnqpFeLJwpjv8P7jPs+Mu6gLfWl0+VTwMLXenzteWBPEhNegOScwzf9TfyowEuILtb7mKZc70D3qC07SzrgG1HI4OHEQxo0Oo0YgVCaKKiFh7LZWiBciNPeg8WMdEdmE6ex2Fd6f/k4eZjFE1fNliXBS2Z9ZOl4fQQJYHc9EDygdwP7fdp0UwT+pDslWk0WOxfAXI5GxodGT9ejyy4Facv2gM8Yyo2NQNLdrMCgGjMC+puHr5KMdxUICNwbbr5EfBZRLJNXTIQHrLo2UsoPagmcinjiGBWerhSfh9Pbji8Wf09ttDBxKjro9WalNN7BmIDnLLLDaPVcKl1ncwkPNtS0cXFGuL88GB96IaHpBVScQoX2dQKp969UVaWXYN0O1xRwvlfiB5101LG2jSZ7qVrMr7rZY0w0/ZJOnh7VGZlXVcv0qoWDFJ1QcSfHCvNDNHl
-x-ms-exchange-antispam-messagedata: fzTrsAawOE5xF23sYByPm1RZl4kmZpan4Ei5p/2OP2Zcq3xaYfeUehn8tFItmhP7fj8FYQ1bPyKF/8ZkfVdWBZPhetoUJbSF+IGQcSgpoGD6Gr8NeC7cqpfiH62/qNmojv7TedDYL60KLU0eew03ZA==
+x-microsoft-antispam-message-info: ncvwFHQ5TQSRUaroFJON4z6cKvqNTenY7XTuorh6WA3p8W7GzQ9ZkJHewufZ3wjcJzqDKfhkLP36C7oz7YymU+Ihh49JgwtQaUJl5XLfqtEeSlpMzgOnH6clGeNCW2PMnttY0Ll19W6skOtNRfZO5BMg3QxY4cAgqlben6bFMfoHMyXcSdvh1sPI/2xoFFv3Fsu6NbDzMaiQRRV5dVPVN67Wrl0IFjTYaw9/rvMrb9kWhCe0p+t/EXvJ38BmgnWGv9PZf6Dkql5l7MU0NpedPmMg+e40bKsqVZCmu8tTR5ZC7yJfjelPJImlxx+Oho+BRU3Vij7HNv30SE/PSoCzZW9CcIt2sDRG4mUTtVE/yIPkMd7ERIX9xK5Arj35PL+SmEO/bK58CQqPVl8+2eF+0eccn6RtBVxYxm7mh6dn1HGmG/5v4TGzRfgdnWD/b6tC
+x-ms-exchange-antispam-messagedata: qboE3iUMMH77kFz6r/WJhjlGlE2t2WKFbwtumd7qn+OSgzCkbuBIhrFYCrQ97z/zdZgLke6kfIyEvuqmm76lIMmrmnP0bxRmngLuIqBNw2lN/P6KnHI6bLYs6PugZlE+cbsznYuH70l9dPLRkIkD0w==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec0ac09b-d05d-4747-5133-08d7c7244882
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 07:58:14.3725 (UTC)
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a83edc62-e307-419b-2e97-08d7c724d410
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 08:02:08.5385 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4Y6/ABk4TyzYwPs5N/yvmToGf19oW+obJZIk9kNiahfB4aig97zR22iMnxk5p6N5SRT3ik1mzLvHMN1hz4JulQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5521
+X-MS-Exchange-CrossTenant-userprincipalname: nxvYeIKEhjNZ+4FKeHQldQpO8syyHEQiBhIHVdWHWVMttoJXXRkMZZs26w/6Jvg6+TaR4U0psbQbLvMrI22Pf6nNJ4U18QVM2G7Y6TMvmhaI5m9SH9ffgTUZzLLpbRaL
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB3030
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_005818_244843_83265B5F 
-X-CRM114-Status: GOOD (  14.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_010213_049273_936F8116 
+X-CRM114-Status: GOOD (  29.07  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.62 listed in list.dnswl.org]
+ no trust [40.107.140.90 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -128,95 +121,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS" <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: [RFC 06/11] clk: imx: Add helpers for passing the device as argument
-> 
-> All the imx clocks that need to be registered by the audiomix need to pass on
-> the device so that the runtime PM support could work properly.
-> 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+Hi Laurent,
 
-Reviewed-by: Peng Fan <peng.fan@nxp.com>
+Thank you for the review.
 
-> ---
->  drivers/clk/imx/clk.h | 29 +++++++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h index
-> cb28f06..42960a9 100644
-> --- a/drivers/clk/imx/clk.h
-> +++ b/drivers/clk/imx/clk.h
-> @@ -321,6 +321,13 @@ static inline struct clk_hw *imx_clk_hw_gate(const
-> char *name, const char *paren
->  				    shift, 0, &imx_ccm_lock);
->  }
-> 
-> +static inline struct clk_hw *imx_dev_clk_hw_gate(struct device *dev, const
-> char *name,
-> +						const char *parent, void __iomem *reg, u8 shift)
-> {
-> +	return clk_hw_register_gate(dev, name, parent, CLK_SET_RATE_PARENT,
-> reg,
-> +				    shift, 0, &imx_ccm_lock);
-> +}
-> +
->  static inline struct clk_hw *imx_clk_hw_gate_dis(const char *name, const
-> char *parent,
->  		void __iomem *reg, u8 shift)
->  {
-> @@ -422,6 +429,15 @@ static inline struct clk_hw *imx_clk_hw_mux(const
-> char *name, void __iomem *reg,
->  			width, 0, &imx_ccm_lock);
->  }
-> 
-> +static inline struct clk_hw *imx_dev_clk_hw_mux(struct device *dev, const
-> char *name,
-> +                        void __iomem *reg, u8 shift, u8 width,
-> +                        const char * const *parents, int num_parents)
-> {
-> +        return clk_hw_register_mux(dev, name, parents, num_parents,
-> +                        CLK_SET_RATE_NO_REPARENT |
-> CLK_SET_PARENT_GATE,
-> +                        reg, shift, width, 0, &imx_ccm_lock); }
-> +
->  static inline struct clk *imx_clk_mux2(const char *name, void __iomem
-> *reg,
->  			u8 shift, u8 width, const char * const *parents,
->  			int num_parents)
-> @@ -484,6 +500,19 @@ static inline struct clk_hw
-> *imx_clk_hw_mux_flags(const char *name,
->  				   reg, shift, width, 0, &imx_ccm_lock);  }
-> 
-> +static inline struct clk_hw *imx_dev_clk_hw_mux_flags(struct device *dev,
-> +						  const char *name,
-> +						  void __iomem *reg, u8 shift,
-> +						  u8 width,
-> +						  const char * const *parents,
-> +						  int num_parents,
-> +						  unsigned long flags)
-> +{
-> +	return clk_hw_register_mux(dev, name, parents, num_parents,
-> +				   flags | CLK_SET_RATE_NO_REPARENT,
-> +				   reg, shift, width, 0, &imx_ccm_lock); }
-> +
->  struct clk_hw *imx_clk_hw_cpu(const char *name, const char
-> *parent_name,
->  		struct clk *div, struct clk *mux, struct clk *pll,
->  		struct clk *step);
+> -----Original Message-----
+> From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Sent: 12 March 2020 23:03
+> To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Cc: Geert Uytterhoeven <geert@linux-m68k.org>; Mauro Carvalho Chehab
+> <mchehab@kernel.org>; Shawn Guo <shawnguo@kernel.org>; Sascha
+> Hauer <s.hauer@pengutronix.de>; Pengutronix Kernel Team
+> <kernel@pengutronix.de>; Rob Herring <robh+dt@kernel.org>; Mark
+> Rutland <mark.rutland@arm.com>; Sakari Ailus
+> <sakari.ailus@linux.intel.com>; NXP Linux Team <linux-imx@nxp.com>;
+> Magnus Damm <magnus.damm@gmail.com>; Ezequiel Garcia
+> <ezequiel@collabora.com>; open list:OPEN FIRMWARE AND FLATTENED
+> DEVICE TREE BINDINGS <devicetree@vger.kernel.org>; Linux Kernel Mailing
+> List <linux-kernel@vger.kernel.org>; Linux-Renesas <linux-renesas-
+> soc@vger.kernel.org>; Fabio Estevam <festevam@gmail.com>; Linux ARM
+> <linux-arm-kernel@lists.infradead.org>; Linux Media Mailing List <linux-
+> media@vger.kernel.org>
+> Subject: Re: [PATCH v2 2/3] media: i2c: ov5645: Switch to assigned-clock-
+> rates
+>
+> Hi Prabhakar,
+>
+> On Thu, Mar 12, 2020 at 09:52:38PM +0000, Prabhakar Mahadev Lad wrote:
+> > On 12 March 2020 21:42, Geert Uytterhoeven wrote:
+> > > On Thu, Mar 12, 2020 at 10:13 PM Lad Prabhakar wrote:
+> > > > This patch switches to assigned-clock-rates for specifying the clock rate.
+> > > > The clk-conf.c internally handles setting the clock rate when
+> > > > assigned-clock-rates is passed.
+> > > >
+> > > > The driver now sets the clock frequency only if the deprecated
+> > > > property clock-frequency is defined instead assigned-clock-rates,
+> > > > this is to avoid breakage with existing DT binaries.
+> > > >
+> > > > Signed-off-by: Lad Prabhakar
+> > > > <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > >
+> > > Thanks for your patch!
+> > >
+> > > > --- a/drivers/media/i2c/ov5645.c
+> > > > +++ b/drivers/media/i2c/ov5645.c
+> > > > @@ -1055,6 +1055,7 @@ static int ov5645_probe(struct i2c_client
+> *client)
+> > > >         struct device_node *endpoint;
+> > > >         struct ov5645 *ov5645;
+> > > >         u8 chip_id_high, chip_id_low;
+> > > > +       bool set_clk = false;
+> > > >         unsigned int i;
+> > > >         u32 xclk_freq;
+> > > >         int ret;
+> > > > @@ -1094,10 +1095,17 @@ static int ov5645_probe(struct i2c_client
+> > > *client)
+> > > >                 return PTR_ERR(ov5645->xclk);
+> > > >         }
+> > > >
+> > > > -       ret = of_property_read_u32(dev->of_node, "clock-frequency",
+> > > &xclk_freq);
+> > > > +       ret = of_property_read_u32(dev->of_node, "assigned-clock-
+> rates",
+> > > > +                                  &xclk_freq);
+> > > >         if (ret) {
+> > >
+> > > I think you can just leave out the above check...
+> > >
+> > > > -               dev_err(dev, "could not get xclk frequency\n");
+> > > > -               return ret;
+> > > > +               /* check if deprecated property clock-frequency is defined */
+> > > > +               ret = of_property_read_u32(dev->of_node, "clock-
+> frequency",
+> > > > +                                          &xclk_freq);
+> > > > +               if (ret) {
+> > >
+> > > ... and ignore the absence of the deprecated property.
+> > >
+> > > > +                       dev_err(dev, "could not get xclk frequency\n");
+> > > > +                       return ret;
+> > > > +               }
+> > > > +               set_clk = true;
+> > >
+> > > I.e. just
+> > >
+> > >         /* check if deprecated property clock-frequency is defined */
+> > >         xclk_freq = 0;
+> > >         of_property_read_u32(dev->of_node, "clock-frequency",
+> &xclk_freq);
+> > >         if (xclk_freq) {
+> > >                 ret = clk_set_rate(ov5645->xclk, xclk_freq);
+> > >                 if (ret) {
+> > >                         dev_err(dev, "could not set xclk frequency\n");
+> > >                         return ret;
+> > >                 }
+> > >         } else {
+> > >                 xclk_freq = clk_get_rate(ov5645->xclk, xclk_freq);
+> > >         }
+> > >
+> > I did think about it initially, but realized the clk_get_rate may vary
+> > platform to platform for example in G2E clk_get_rate() returns a
+> > frequency of 24242424 with assigned-clock-rates set to  24000000 and
+> > probe would fail due to a check for external clock must be 24MHz, with 1%
+> tolerance.
+>
+> Then you need to handle the tolerance in this driver :-)
+>
+Sure I will increase the tolerance here.
+
+Cheers,
+--Prabhakar
+
+> > > >         }
+> > > >
+> > > >         /* external clock must be 24MHz, allow 1% tolerance */ @@
+> > > > -1107,10 +1115,12 @@ static int ov5645_probe(struct i2c_client *client)
+> > > >                 return -EINVAL;
+> > > >         }
+> > > >
+> > > > -       ret = clk_set_rate(ov5645->xclk, xclk_freq);
+> > > > -       if (ret) {
+> > > > -               dev_err(dev, "could not set xclk frequency\n");
+> > > > -               return ret;
+> > > > +       if (set_clk) {
+> > > > +               ret = clk_set_rate(ov5645->xclk, xclk_freq);
+> > > > +               if (ret) {
+> > > > +                       dev_err(dev, "could not set xclk frequency\n");
+> > > > +                       return ret;
+> > > > +               }
+> > > >
+> > > >         }
+> > > >
+> > > >         for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
+>
 > --
-> 2.7.4
+> Regards,
+>
+> Laurent Pinchart
 
 
+Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
