@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1FBC184340
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:07:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF801184345
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:07:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=h7zZJ5PK1ktP8sTHmsxdwTaItlsmVIwgUUoKntI9UOk=; b=EAJV2R//bEM3AL6+tBDkhtFx5C
-	dHeZYzNFEJlnSIZe2EuKVoz5Uf3sRrFcHplpR2AoZthR4EfWw33yJpdOUKbR7+9vvyZa0vtLuPXt1
-	3nr7ZoFrK9SOuCO+pw14db/7X4KlNpvD1/t/V3R+ZkdynZjtjqJ+coawPUbxG+owmU4HiM8E44i3j
-	iYufDOJPxVUKchsxwnllo7MHSG/alnhfSxFeot0u17FEKcbM4I3KIHI+GKNtsunRbodX8LCy/bnLd
-	GomLKhoLCbastPf+kymnkqhRn4drt+ekhRB3LWtgwE6Zig87WU46tA4xy1UeErDtkf8LQ5qWJg0Bt
-	W/Hd6lLw==;
+	bh=I+LHGNQ84sY0xE5DzjR3AI6vMFj6YwzZPGNSJ0CIacY=; b=U3/DswKRzjTg2LoH03wq/heitN
+	QdvO+IK4ZwDzsVxdRJpSIqilhsuRuyruuUnrPgjhphLI4IWJxSX0iL3TRXOHHMxTnG60VIM/ke6Jk
+	79nKjMemQazh2I8VqSeiSIfoVMu0f/0jAT5T2HcCxcDvUYWFEzVCIYZ0jAk1/WP1vU2LSRJtnawGa
+	q0pYgJ1oxgPZMP3xDlLFkqAR9gZ52Ih3C9IWfpZhyk5JOnEb+9bhTrk/+TjsKS964syH48A8IQeZk
+	NrKsCoOZMgNcGXiZNU/N/ak2EfS43EzqucY2bjf9GOKE0uqP+ljAqZXmCQ1Jd8sLfqCllK2T/Ju91
+	DQ2JrbWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgHl-0003bP-CQ; Fri, 13 Mar 2020 09:07:17 +0000
+	id 1jCgIA-0003pF-Ng; Fri, 13 Mar 2020 09:07:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgGJ-0002M4-Nw
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:05:50 +0000
+ id 1jCgGN-0002P1-M5
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:05:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C4021045;
- Fri, 13 Mar 2020 02:05:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2D60FEC;
+ Fri, 13 Mar 2020 02:05:50 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C76173F67D;
- Fri, 13 Mar 2020 02:05:42 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0A63B3F67D;
+ Fri, 13 Mar 2020 02:05:46 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v7 05/17] arm64: ptrauth: Add bootup/runtime flags for
- __cpu_setup
-Date: Fri, 13 Mar 2020 14:34:52 +0530
-Message-Id: <1584090304-18043-6-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v7 06/17] arm64: cpufeature: Move cpu capability helpers
+ inside C file
+Date: Fri, 13 Mar 2020 14:34:53 +0530
+Message-Id: <1584090304-18043-7-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 References: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_020547_896036_8B94E0EF 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20200313_020551_800375_2955CD40 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,149 +79,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch allows __cpu_setup to be invoked with one of these flags,
-ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_SECONDARY or ARM64_CPU_RUNTIME.
-This is required as some cpufeatures need different handling during
-different scenarios.
+These helpers are used only by functions inside cpufeature.c and
+hence makes sense to be moved from cpufeature.h to cpufeature.c as
+they are not expected to be used globally.
 
-The input parameter in x0 is preserved till the end to be used inside
-this function.
+This change helps in reducing the header file size as well as to add
+future cpu capability types without confusion. Only a cpu capability
+type macro is sufficient to expose those capabilities globally.
 
-There should be no functional change with this patch and is useful
-for the subsequent ptrauth patch which utilizes it. Some upcoming
-arm cpufeatures can also utilize these flags.
-
-Suggested-by: James Morse <james.morse@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Reviewed-by: James Morse <james.morse@arm.com>
 Reviewed-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
-Changes since v6:
- - Added more description as asked by Vincenzo.
+ arch/arm64/include/asm/cpufeature.h | 12 ------------
+ arch/arm64/kernel/cpufeature.c      | 13 +++++++++++++
+ 2 files changed, 13 insertions(+), 12 deletions(-)
 
- arch/arm64/include/asm/smp.h |  8 ++++++++
- arch/arm64/kernel/head.S     |  2 ++
- arch/arm64/kernel/sleep.S    |  2 ++
- arch/arm64/mm/proc.S         | 26 +++++++++++++++-----------
- 4 files changed, 27 insertions(+), 11 deletions(-)
-
-diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
-index a0c8a0b..79bc5742 100644
---- a/arch/arm64/include/asm/smp.h
-+++ b/arch/arm64/include/asm/smp.h
-@@ -23,6 +23,14 @@
- #define CPU_STUCK_REASON_52_BIT_VA	(UL(1) << CPU_STUCK_REASON_SHIFT)
- #define CPU_STUCK_REASON_NO_GRAN	(UL(2) << CPU_STUCK_REASON_SHIFT)
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index 0fd1feb..ae9673a 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -340,18 +340,6 @@ static inline int cpucap_default_scope(const struct arm64_cpu_capabilities *cap)
+ 	return cap->type & ARM64_CPUCAP_SCOPE_MASK;
+ }
  
-+/* Possible options for __cpu_setup */
-+/* Option to setup primary cpu */
-+#define ARM64_CPU_BOOT_PRIMARY		(1)
-+/* Option to setup secondary cpus */
-+#define ARM64_CPU_BOOT_SECONDARY	(2)
-+/* Option to setup cpus for different cpu run time services */
-+#define ARM64_CPU_RUNTIME		(3)
+-static inline bool
+-cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
+-{
+-	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
+-}
+-
+-static inline bool
+-cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
+-{
+-	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
+-}
+-
+ /*
+  * Generic helper for handling capabilties with multiple (match,enable) pairs
+  * of call backs, sharing the same capability bit.
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 01f50f0..04ecf1c 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1363,6 +1363,19 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
+ }
+ #endif
+ 
++/* Internal helper functions to match cpu capability type */
++static bool
++cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
++{
++	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
++}
 +
- #ifndef __ASSEMBLY__
- 
- #include <asm/percpu.h>
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 989b194..797573f 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -118,6 +118,7 @@ ENTRY(stext)
- 	 * On return, the CPU will be ready for the MMU to be turned on and
- 	 * the TCR will have been set.
- 	 */
-+	mov	x0, #ARM64_CPU_BOOT_PRIMARY
- 	bl	__cpu_setup			// initialise processor
- 	b	__primary_switch
- ENDPROC(stext)
-@@ -712,6 +713,7 @@ secondary_startup:
- 	 * Common entry point for secondary CPUs.
- 	 */
- 	bl	__cpu_secondary_check52bitva
-+	mov	x0, #ARM64_CPU_BOOT_SECONDARY
- 	bl	__cpu_setup			// initialise processor
- 	adrp	x1, swapper_pg_dir
- 	bl	__enable_mmu
-diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
-index f5b04dd..7b2f2e6 100644
---- a/arch/arm64/kernel/sleep.S
-+++ b/arch/arm64/kernel/sleep.S
-@@ -3,6 +3,7 @@
- #include <linux/linkage.h>
- #include <asm/asm-offsets.h>
- #include <asm/assembler.h>
-+#include <asm/smp.h>
- 
- 	.text
- /*
-@@ -99,6 +100,7 @@ ENDPROC(__cpu_suspend_enter)
- 	.pushsection ".idmap.text", "awx"
- ENTRY(cpu_resume)
- 	bl	el2_setup		// if in EL2 drop to EL1 cleanly
-+	mov	x0, #ARM64_CPU_RUNTIME
- 	bl	__cpu_setup
- 	/* enable the MMU early - so we can access sleep_save_stash by va */
- 	adrp	x1, swapper_pg_dir
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index aafed69..ea0db17 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -408,31 +408,31 @@ SYM_FUNC_END(idmap_kpti_install_ng_mappings)
- /*
-  *	__cpu_setup
-  *
-- *	Initialise the processor for turning the MMU on.  Return in x0 the
-- *	value of the SCTLR_EL1 register.
-+ *	Initialise the processor for turning the MMU on.
-+ *
-+ * Input:
-+ *	x0 with a flag ARM64_CPU_BOOT_PRIMARY/ARM64_CPU_BOOT_SECONDARY/ARM64_CPU_RUNTIME.
-+ * Output:
-+ *	Return in x0 the value of the SCTLR_EL1 register.
-  */
- 	.pushsection ".idmap.text", "awx"
- SYM_FUNC_START(__cpu_setup)
- 	tlbi	vmalle1				// Invalidate local TLB
- 	dsb	nsh
- 
--	mov	x0, #3 << 20
--	msr	cpacr_el1, x0			// Enable FP/ASIMD
--	mov	x0, #1 << 12			// Reset mdscr_el1 and disable
--	msr	mdscr_el1, x0			// access to the DCC from EL0
-+	mov	x1, #3 << 20
-+	msr	cpacr_el1, x1			// Enable FP/ASIMD
-+	mov	x1, #1 << 12			// Reset mdscr_el1 and disable
-+	msr	mdscr_el1, x1			// access to the DCC from EL0
- 	isb					// Unmask debug exceptions now,
- 	enable_dbg				// since this is per-cpu
--	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
-+	reset_pmuserenr_el0 x1			// Disable PMU access from EL0
- 	/*
- 	 * Memory region attributes
- 	 */
- 	mov_q	x5, MAIR_EL1_SET
- 	msr	mair_el1, x5
- 	/*
--	 * Prepare SCTLR
--	 */
--	mov_q	x0, SCTLR_EL1_SET
--	/*
- 	 * Set/prepare TCR and TTBR. We use 512GB (39-bit) address range for
- 	 * both user and kernel.
- 	 */
-@@ -468,5 +468,9 @@ SYM_FUNC_START(__cpu_setup)
- 1:
- #endif	/* CONFIG_ARM64_HW_AFDBM */
- 	msr	tcr_el1, x10
-+	/*
-+	 * Prepare SCTLR
-+	 */
-+	mov_q	x0, SCTLR_EL1_SET
- 	ret					// return to head.S
- SYM_FUNC_END(__cpu_setup)
++static bool
++cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
++{
++	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
++}
++
+ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		.desc = "GIC system register CPU interface",
 -- 
 2.7.4
 
