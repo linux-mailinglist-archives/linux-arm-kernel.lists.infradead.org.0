@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 357FD184B75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:47:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A380A184B7D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:47:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nYv0JED0/sqASiJbVfbTfYl7gUxwK5V24T9RgvZ4CzM=; b=EzFfVYc4WxBBpZ
-	QaiRJAqGe0JdOXI8OgRmW3OAWzUI85PZ49Z2zhSczdyFeLbVJXTDzjKIrfhaYRvMrE56X05VMmpN5
-	UkINRezc0C40g2d7hMIvTvlm8bKX/3yYVpRnonh8OaTJ8W5TZYjMxFx2sj/TY7G4lhnooEJ2dRu7A
-	lXUiAkz0xNFTwOiggJufi+AwKuwlI2K0/YHagN5P6rsa5I3VIv1j9ovRougp1FgEl9W7v01ug8Ntd
-	Yl1N0xNkghSmCKagVEYfv5yV5vO197XI4c5Moxe6C8CSRknDbBvr7f+VPVWxnVQGRIimCiTpEODpZ
-	YnOQm6OGNKMM0PEqnWQQ==;
+	List-Owner; bh=8wLwksh2QPfRoOBjDCkUuFSMS/3V8pX6SfChuajeZBk=; b=aMiOg3j5Kn90hG
+	yWjQo/eYFOid5/0GVOcC4TbhXoDftE+MynQsBArJvhSE+cWlEq9s7OVUYNFyhLIn7YbnqL8RMj0yE
+	mvn3fKU2XrqhuTCIRHrhoYKfEwli8jApTze97CRiKlsxtXuwkvt72yogIWhPHlqfY0kX9e8gZxXB5
+	YmWgjlQ1kFPN/q5WrzfmSHvWGSfstZPX5AMRJckAEgobrgNq6AlF+vXz/DZRAsbBb99HrPFiZVpW3
+	oPv5MSQq/FkS2i/9wRvOiTx1zx3b/lO5KZ1pVVM9/VRixSr18H+2daYGUhR9/jhxJ6VLEx4SFHf74
+	oMxUvnDvomu55j5RBR+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmWT-00082S-GJ; Fri, 13 Mar 2020 15:46:53 +0000
+	id 1jCmWp-0008FD-Dh; Fri, 13 Mar 2020 15:47:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmU5-0004wH-Bj
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:44:26 +0000
+ id 1jCmU8-0004zN-Ir
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:44:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B837231B;
- Fri, 13 Mar 2020 08:44:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B477FEC;
+ Fri, 13 Mar 2020 08:44:28 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A70553F67D;
- Fri, 13 Mar 2020 08:44:21 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE5CE3F67D;
+ Fri, 13 Mar 2020 08:44:24 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v3 06/26] arm64: Introduce asm/vdso/clocksource.h
-Date: Fri, 13 Mar 2020 15:43:25 +0000
-Message-Id: <20200313154345.56760-7-vincenzo.frascino@arm.com>
+Subject: [PATCH v3 07/26] mips: Introduce asm/vdso/clocksource.h
+Date: Fri, 13 Mar 2020 15:43:26 +0000
+Message-Id: <20200313154345.56760-8-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084425_476384_8456B3AD 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20200313_084428_680064_F648C7D6 
+X-CRM114-Status: GOOD (  12.80  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,11 +68,11 @@ Cc: Mark Rutland <Mark.Rutland@arm.com>,
  Nick Desaulniers <ndesaulniers@google.com>,
  Dmitry Safonov <0x7f454c46@gmail.com>, Kees Cook <keescook@chromium.org>,
  Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Russell King <linux@armlinux.org.uk>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Burton <paulburton@kernel.org>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Peter Collingbourne <pcc@google.com>, Andrei Vagin <avagin@openvz.org>
@@ -92,42 +92,43 @@ functions that are suitable for vDSO inclusion.
 This header will be required by a future patch that will generalize
 vdso/clocksource.h.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
+Cc: Paul Burton <paulburton@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/clocksource.h      | 3 +--
- arch/arm64/include/asm/vdso/clocksource.h | 8 ++++++++
- 2 files changed, 9 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm64/include/asm/vdso/clocksource.h
+ arch/mips/include/asm/clocksource.h      | 4 +---
+ arch/mips/include/asm/vdso/clocksource.h | 9 +++++++++
+ 2 files changed, 10 insertions(+), 3 deletions(-)
+ create mode 100644 arch/mips/include/asm/vdso/clocksource.h
 
-diff --git a/arch/arm64/include/asm/clocksource.h b/arch/arm64/include/asm/clocksource.h
-index eb82e9d95c5d..482185566b0c 100644
---- a/arch/arm64/include/asm/clocksource.h
-+++ b/arch/arm64/include/asm/clocksource.h
-@@ -2,7 +2,6 @@
- #ifndef _ASM_CLOCKSOURCE_H
- #define _ASM_CLOCKSOURCE_H
+diff --git a/arch/mips/include/asm/clocksource.h b/arch/mips/include/asm/clocksource.h
+index de659cae0d4e..2f1ebbea3d72 100644
+--- a/arch/mips/include/asm/clocksource.h
++++ b/arch/mips/include/asm/clocksource.h
+@@ -6,8 +6,6 @@
+ #ifndef __ASM_CLOCKSOURCE_H
+ #define __ASM_CLOCKSOURCE_H
  
 -#define VDSO_ARCH_CLOCKMODES	\
--	VDSO_CLOCKMODE_ARCHTIMER
+-	VDSO_CLOCKMODE_R4K,	\
+-	VDSO_CLOCKMODE_GIC
 +#include <asm/vdso/clocksource.h>
  
- #endif
-diff --git a/arch/arm64/include/asm/vdso/clocksource.h b/arch/arm64/include/asm/vdso/clocksource.h
+ #endif /* __ASM_CLOCKSOURCE_H */
+diff --git a/arch/mips/include/asm/vdso/clocksource.h b/arch/mips/include/asm/vdso/clocksource.h
 new file mode 100644
-index 000000000000..df6ea65c1dec
+index 000000000000..510e1671d898
 --- /dev/null
-+++ b/arch/arm64/include/asm/vdso/clocksource.h
-@@ -0,0 +1,8 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
++++ b/arch/mips/include/asm/vdso/clocksource.h
+@@ -0,0 +1,9 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
 +#ifndef __ASM_VDSOCLOCKSOURCE_H
 +#define __ASM_VDSOCLOCKSOURCE_H
 +
 +#define VDSO_ARCH_CLOCKMODES	\
-+	VDSO_CLOCKMODE_ARCHTIMER
++	VDSO_CLOCKMODE_R4K,	\
++	VDSO_CLOCKMODE_GIC
 +
-+#endif
++#endif /* __ASM_VDSOCLOCKSOURCE_H */
 -- 
 2.25.1
 
