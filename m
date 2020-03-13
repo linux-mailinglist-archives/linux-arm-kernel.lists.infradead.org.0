@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F480183E18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 01:59:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00513183E1A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:00:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DSUcusy+UDWbeIxBNPRR/J+hEV6Q7vnyzmc01sSRZY8=; b=ZsY+qV4B3zYyksDNg/eYLqn8XT
-	9znbkVJnyUl3zkoU7P8Et7fkWfVVHKO9EoHZES8Ia5rBXVBLEQ5rNUV56DRl90T+AR4JHIzr1OqoR
-	JgVWwLrxDZwWhvivdzAuUkCWBjxNaKD0jQtOsdL+zjPfq8ki6MQ6X3WYUtTOy8ufqHxwVfMY2dIqH
-	PT1vUXw3ggI7rEbDlsj+KvUThUxjTHvGs8qtItVjDuqgHMn3Y8AljdKeMV7rBflpo3KCKAsPTEBqT
-	RaaKHOv8v97YuVuN0YAnlX5tThns+ZiPE473Ol1emjJoeSBUmKg0A9iZjQ4HoriPn5nv6rzCn8TrN
-	wXbq63eg==;
+	bh=h7vtRH+haRxDWcSTq04sLawEG9UenMjYj4csGch/zMI=; b=YuxU6TI9we/M9tGe5IzHxDcvMK
+	4Vom86oQfblJ0dvKY9eX8TJKpbZ7qsRxwMeTzVF92frsdAh7Hxd+Dl9xsalryMPlhw61bvz5JvmDU
+	stb/9x+pqlkqBSXlRRFX8FHUgvsRuezPuxhZBIFr2bnguhjxAIdlxDusUiF4T59HPHq72f4U2DpYj
+	rlq1fEOrTDxdfcJYW0pM+ekbBiYGPJH2JfK8WMbIQZASN3A2xDF0+rlTOjnOm2xA2Q244+s1D77Qf
+	/qdW63IUYACTWjWnuJT7LOBGj6eEL9YBw5kO8i7MY12uBpsVIFVYo1x1F43uiizBQ0hR1lzgfoMNG
+	uxM0URUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYfb-0004gq-2X; Fri, 13 Mar 2020 00:59:23 +0000
+	id 1jCYg8-0005C9-At; Fri, 13 Mar 2020 00:59:56 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYer-0004CD-0Q
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:38 +0000
+ id 1jCYes-0004Cz-O2
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:40 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:35 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 17EDB603AB;
- Fri, 13 Mar 2020 09:58:36 +0900 (JST)
+ by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:37 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 11939603AB;
+ Fri, 13 Mar 2020 09:58:38 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 13 Mar 2020 09:58:36 +0900
+ Fri, 13 Mar 2020 09:58:38 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 64B7E1A01BB;
- Fri, 13 Mar 2020 09:58:35 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 74BFA1A01BB;
+ Fri, 13 Mar 2020 09:58:36 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 02/10] arm64: dts: uniphier: Add XDMAC node
-Date: Fri, 13 Mar 2020 09:58:08 +0900
-Message-Id: <1584061096-23686-3-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 03/10] ARM: dts: uniphier: Add USB3 controller nodes for Pro5
+Date: Fri, 13 Mar 2020 09:58:09 +0900
+Message-Id: <1584061096-23686-4-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_175837_171406_1045D629 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20200312_175839_136723_B4FDE30A 
+X-CRM114-Status: GOOD (  12.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,73 +76,175 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add external DMA controller support implemented in UniPhier SoCs.
-This supports for LD11, LD20 and PXs3.
+Add USB3 controller nodes for Pro5 SoC and the boards.
+
+Pro5 SoC has 2 controllers. USB0 includes 1 SS-PHY and 1 HS-PHY, and USB1
+includes 1 SS-PHY and 2 HS-PHY.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 8 ++++++++
- arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 8 ++++++++
- arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 8 ++++++++
- 3 files changed, 24 insertions(+)
+ arch/arm/boot/dts/uniphier-pro5.dtsi | 148 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 148 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-index 5b18bda..5aeb3cc 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-@@ -566,6 +566,14 @@
+diff --git a/arch/arm/boot/dts/uniphier-pro5.dtsi b/arch/arm/boot/dts/uniphier-pro5.dtsi
+index ecab061..fe8d306 100644
+--- a/arch/arm/boot/dts/uniphier-pro5.dtsi
++++ b/arch/arm/boot/dts/uniphier-pro5.dtsi
+@@ -461,6 +461,154 @@
  			};
  		};
  
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
++		usb0: usb@65a00000 {
++			compatible = "socionext,uniphier-dwc3", "snps,dwc3";
++			status = "disabled";
++			reg = <0x65a00000 0xcd00>;
++			interrupt-names = "host";
++			interrupts = <0 134 4>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&pinctrl_usb0>;
++			clock-names = "ref", "bus_early", "suspend";
++			clocks = <&sys_clk 12>, <&sys_clk 12>, <&sys_clk 12>;
++			resets = <&usb0_rst 15>;
++			phys = <&usb0_hsphy0>, <&usb0_ssphy0>;
++			dr_mode = "host";
 +		};
 +
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-ld11-aidet";
- 			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-index f2dc5f6..c2868d8 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-@@ -664,6 +664,14 @@
- 			};
- 		};
- 
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
++		usb-glue@65b00000 {
++			compatible = "socionext,uniphier-pro5-dwc3-glue",
++				     "simple-mfd";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0 0x65b00000 0x400>;
++
++			usb0_rst: reset@0 {
++				compatible = "socionext,uniphier-pro5-usb3-reset";
++				reg = <0x0 0x4>;
++				#reset-cells = <1>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 14>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 14>;
++			};
++
++			usb0_vbus0: regulator@100 {
++				compatible = "socionext,uniphier-pro5-usb3-regulator";
++				reg = <0x100 0x10>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 14>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 14>;
++			};
++
++			usb0_hsphy0: hs-phy@280 {
++				compatible = "socionext,uniphier-pro5-usb3-hsphy";
++				reg = <0x280 0x10>;
++				#phy-cells = <0>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 14>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 14>;
++				vbus-supply = <&usb0_vbus0>;
++			};
++
++			usb0_ssphy0: ss-phy@380 {
++				compatible = "socionext,uniphier-pro5-usb3-ssphy";
++				reg = <0x380 0x10>;
++				#phy-cells = <0>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 14>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 14>;
++				vbus-supply = <&usb0_vbus0>;
++			};
 +		};
 +
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-ld20-aidet";
- 			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-index 73e7e12..ffe57c6 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-@@ -462,6 +462,14 @@
- 			};
- 		};
- 
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
++		usb1: usb@65c00000 {
++			compatible = "socionext,uniphier-dwc3", "snps,dwc3";
++			status = "disabled";
++			reg = <0x65c00000 0xcd00>;
++			interrupt-names = "host";
++			interrupts = <0 137 4>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&pinctrl_usb1>, <&pinctrl_usb2>;
++			clock-names = "ref", "bus_early", "suspend";
++			clocks = <&sys_clk 12>, <&sys_clk 12>, <&sys_clk 12>;
++			resets = <&usb1_rst 15>;
++			phys = <&usb1_hsphy0>, <&usb1_hsphy1>, <&usb1_ssphy0>;
++			dr_mode = "host";
 +		};
 +
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-pxs3-aidet";
- 			reg = <0x5fc20000 0x200>;
++		usb-glue@65d00000 {
++			compatible = "socionext,uniphier-pro5-dwc3-glue",
++				     "simple-mfd";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0 0x65d00000 0x400>;
++
++			usb1_rst: reset@0 {
++				compatible = "socionext,uniphier-pro5-usb3-reset";
++				reg = <0x0 0x4>;
++				#reset-cells = <1>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++			};
++
++			usb1_vbus0: regulator@100 {
++				compatible = "socionext,uniphier-pro5-usb3-regulator";
++				reg = <0x100 0x10>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++			};
++
++			usb1_vbus1: regulator@110 {
++				compatible = "socionext,uniphier-pro5-usb3-regulator";
++				reg = <0x110 0x10>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++			};
++
++			usb1_hsphy0: hs-phy@280 {
++				compatible = "socionext,uniphier-pro5-usb3-hsphy";
++				reg = <0x280 0x10>;
++				#phy-cells = <0>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++				vbus-supply = <&usb1_vbus0>;
++			};
++
++			usb1_hsphy1: hs-phy@290 {
++				compatible = "socionext,uniphier-pro5-usb3-hsphy";
++				reg = <0x290 0x10>;
++				#phy-cells = <0>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++				vbus-supply = <&usb1_vbus1>;
++			};
++
++			usb1_ssphy0: ss-phy@380 {
++				compatible = "socionext,uniphier-pro5-usb3-ssphy";
++				reg = <0x380 0x10>;
++				#phy-cells = <0>;
++				clock-names = "gio", "link";
++				clocks = <&sys_clk 12>, <&sys_clk 15>;
++				reset-names = "gio", "link";
++				resets = <&sys_rst 12>, <&sys_rst 15>;
++				vbus-supply = <&usb1_vbus0>;
++			};
++		};
++
+ 		nand: nand@68000000 {
+ 			compatible = "socionext,uniphier-denali-nand-v5b";
+ 			status = "disabled";
 -- 
 2.7.4
 
