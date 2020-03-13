@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B7D3184D28
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:01:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15BCF184D29
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:01:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PSkWI5vg3wiNIk/JmdrR8U38Pgq/Qj/VJ0idwV1OcAk=; b=F9SqftsRllXJEq
-	r5S5Yx8tl7xWh1tzEeg/+uKe4RrxFZiaffQuyJvREuGhCi2+qFdPYt9ISrYtFUwPjKUHbBgp6ErUG
-	IXxPXy+clJCLSQoWul2A0I4ESRh0WfvXOoQoECc2rKFHCVz7kUN7RXtOUEx5cvbwi3WunOH6LwsZm
-	uWsKHlm8jmRmW5KuLYAh9VEwk3T24djgR9niDckzYKi87MqQfLLl+Iuypo5fOmxCJcMn9R1FX39JG
-	1KADyMlKA2seATOzzQRFof7uts/ktZfqE873LYz5odUJNt8QhYhJh6JFw/L2rgGtbNAIN8X/uZjZ1
-	CekV+rqYlQPtQodkQh3g==;
+	List-Owner; bh=PyzSP+Au7RTTja9L5VU7dpx0ctDWyw0tr0SflJ8vexw=; b=WrSxImP8zj0N41
+	+YvDoT3M47E+BxK2eif2lHFg3un5tTY74qX3euof2r+WL3pL78aimhEN/rYKVNjjA4MQdJtvVMcqY
+	qu1wjgXts7PkU3jQiEJNjp3E/NoHhgOEAtquWfezR52oM6muxReHQLtu2qQqzoAN0DapZrH0sBoRL
+	BHvyP+y2fdt9cHIPj/d17VCthfSQq2ow2om/64o68GUOwSCVra4FhVhJws8QJVd7HzUxfjOAUNGQx
+	Iiiq8wGnXttIs6IGBciaqZ0b1DN8WsoENiSTY3XGuaqbidGlP9cErPOk886O345rGIasOEIMUzjh4
+	17P06LnKkfQ4Lk0WlRVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCngM-0002rs-OR; Fri, 13 Mar 2020 17:01:10 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1jCngc-00036X-0T; Fri, 13 Mar 2020 17:01:26 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCneQ-0008Qf-VX
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:59:13 +0000
-Received: by mail-wr1-x432.google.com with SMTP id d5so12685521wrc.2
+ id 1jCneS-0008SQ-J1
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:59:15 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l18so12961176wru.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 09:59:10 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=y7E/7I3UwnoYO4kboIxPPunVUq6lzAu3iTHHuSklZrw=;
- b=hg9jxfVBhWx9OFfJIBsDeZGL8xTFUmDYN4ffVvtSmy1Xq/kAZqoWXPIoiTtUgChgee
- 2qPUhSCrZAtIcbZehU5jH4TZojxHtisu9hS7qVs6LK8c5GOapg7QPRc4NIvTRGPnDIoh
- u0W6zSGv3De1+qjxPUkABOfvFd/K4JcOnvYnLOpIFmuGKSo+7tsd7l7OdDlHA0upmG8H
- BDmzlVz5LNlgrNWaI9a/Qg6m2bV54IVUm3U5Ly6GeNDe+djG936PhDqjWnIYaP9u+IsJ
- 4O3LbRDJVMy5/DvG76ihrEkg1KHIwnuU1PdEgoQXKa3NTkAs1gBdehfWiUwmE4WFC1s7
- FadQ==
+ bh=jvqohnMij0I2CBTDF5YLXeAgLpbv445ozkjXuVEGaTQ=;
+ b=fw4nUGDdM7Jea/euj+WFkdeMcd478PgA6JePiH8KX8hdXt1AtKCGlBAy2D+dcjlt1D
+ kl1/ZbnB8xDoLggyDGOzeqEZ/M2Xl7LZuqL8GyW6YDz/GhM1UnbkspSPvv09h5ZC5Boe
+ nMt9kVz9H/ioWrcB2rPou+7T5z4BncrxktYpx+YJq2kLYJ7G1d28g2/+/EOxGk/MDMe/
+ FsfJVgCwjP8ljRQiwTRLp5iuOFyqC/UmraUKrOvQDEL/R20BG8CFQ9sCekSv4ex5k/9Y
+ ExGCHJmrhQjYI/1URjJFvv3TveQ3Yhq3SVV8Skpn4tdassaBFmcdSOnw5ygm9i6LJaQt
+ X1Ag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=y7E/7I3UwnoYO4kboIxPPunVUq6lzAu3iTHHuSklZrw=;
- b=bWHNNB/4O1evL6uCcZWYo7mSjFn1iGoLANYNGEq0TnvlMWdEhIfCTXB0PlrIMkZ29f
- tFmPlgY6iFZ2uNhvFcPnEQM+xB85HM3ufyyWkVdAMDPa/1zdBs8yV0NuJr8T+iI5ovhH
- kW3+wumWzCHf0pTRlFmLlwebxsHeOamf68LrM1Sl+JRMAF3uTFx4JET4Nrw8hjAXJBYg
- Y5ZawX01AN4U2BqQnYV8YfCTo6aE0XGszFpxgtn5FG/OlSegD/qxNrJlz+LiQlD7jfwY
- SUA/OtD301Yeg4YzNWSfnkGLNMu0meVkvLjdFuftVulME6i1IBI8rkKY6vMKEpxGyy61
- Bjfg==
-X-Gm-Message-State: ANhLgQ2Zw69IfCF2uEof3C7BkCP6mviLgWItXjSHpEgdhpM88E8dofwc
- 7DmmqOmKMafOHkKS8vTZRg8=
-X-Google-Smtp-Source: ADFU+vssbO4TufJR7WDKRLhsy6jm8DZzzwhkYunqFuhHpdXgYbkPqO4pibw89cfm5vrGAhM2E2R4Sw==
-X-Received: by 2002:adf:ec88:: with SMTP id z8mr3131265wrn.61.1584118749224;
- Fri, 13 Mar 2020 09:59:09 -0700 (PDT)
+ bh=jvqohnMij0I2CBTDF5YLXeAgLpbv445ozkjXuVEGaTQ=;
+ b=EKf3FDzHM+vQ+dhYmSssxRDtyOoKWB53sW7fwZqa5BigxgObpGFhfYSe9+f7aWljFl
+ m34ANFFopTFDa1VfwiB33Ve+4UEDlmotBKNzH81owRKcBVzMI78GiLqVRxWnpxGnGfhw
+ kE1GRfybtF0jmkPkoZ+xahtEhiDXVtgO7DmRjC/VnN7RlNV7EC4pBihGqe9mr3lQlZRQ
+ 6cwf/26ntf2lanjHvhA32FGvMzwx1Pl141kQPTVNXsA5+yLHuWoSd8HGlwwHacyfGDo8
+ dsnNqV7BN74D7d7NCWj9gYBScaTdQzYcSLmMMZYmB0JPxnL24zdHp7hkwRmnWqPyQNZc
+ 59eg==
+X-Gm-Message-State: ANhLgQ10jfg80QUpBk1ijUwvR7bJjEeSmDMlByyN7FKQ7bPl+P3y1udR
+ aR0CTYzDUe8p3ARAXPrt4zAGHQep
+X-Google-Smtp-Source: ADFU+vtLcomxxRNE6ZfG88AZ1ylBxIg3ZrOocA9bP65sr7EsMPJksN7bDWkcyZzoKlyFARffhYOE0Q==
+X-Received: by 2002:adf:ef44:: with SMTP id c4mr18318790wrp.404.1584118750894; 
+ Fri, 13 Mar 2020 09:59:10 -0700 (PDT)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id s13sm28875891wrw.29.2020.03.13.09.59.08
+ by smtp.gmail.com with ESMTPSA id t124sm18104873wmg.13.2020.03.13.09.59.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 09:59:08 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:10 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 08/10] arm64: tegra: Device tree changes for v5.7-rc1
-Date: Fri, 13 Mar 2020 17:58:46 +0100
-Message-Id: <20200313165848.2915133-8-thierry.reding@gmail.com>
+Subject: [GIT PULL 09/10] cpuidle: tegra: Changes for v5.7-rc1
+Date: Fri, 13 Mar 2020 17:58:47 +0100
+Message-Id: <20200313165848.2915133-9-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200313165848.2915133-1-thierry.reding@gmail.com>
 References: <20200313165848.2915133-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095911_170100_CBAA5009 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20200313_095912_852891_4158B350 
+X-CRM114-Status: GOOD (  14.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:432 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,89 +114,75 @@ The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-arm64-dt
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-cpuidle
 
-for you to fetch changes up to 84eaaf7500036f292f5563b39a983c492d5b12ae:
+for you to fetch changes up to 382ac8e22b90e6334d373da03c17b319458b258e:
 
-  arm64: tegra: Add support for PCIe endpoint mode in P2972-0000 platform (2020-03-12 12:14:31 +0100)
+  cpuidle: tegra: Disable CC6 state if LP2 unavailable (2020-03-13 11:32:01 +0100)
+
+This set of changes was acked by Daniel Lezcano and the preference is to
+take this through the ARM SoC tree because it has a dependency on one of
+the other branches (tegra-for-5.7-arm-core) that also goes through the
+ARM SoC tree.
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-arm64: tegra: Device tree changes for v5.7-rc1
+cpuidle: tegra: Changes for v5.7-rc1
 
-These changes add support for the XUSB pad controller, as well as the
-XUSB controller on Tegra194. Furthermore, USB device mode is supported
-across Tegra210 and Tegra186 boards. PCIe endpoint mode support is added
-for the Jetson AGX Xavier platform.
-
-Various minor fixes eliminate warnings on boot related to missing power
-supplies for some devices.
+These changes unify CPU idle support for Tegra20, Tegra30 and Tegra114.
 
 ----------------------------------------------------------------
-JC Kuo (2):
-      arm64: tegra: Add XUSB and pad controller on Tegra194
-      arm64: tegra: Enable XUSB host in P2972-0000 board
+Dmitry Osipenko (15):
+      ARM: tegra: Compile sleep-tegra20/30.S unconditionally
+      ARM: tegra: Add tegra_pm_park_secondary_cpu()
+      ARM: tegra: Remove pen-locking from cpuidle-tegra20
+      ARM: tegra: Change tegra_set_cpu_in_lp2() type to void
+      ARM: tegra: Propagate error from tegra_idle_lp2_last()
+      ARM: tegra: Expose PM functions required for new cpuidle driver
+      ARM: tegra: Rename some of the newly exposed PM functions
+      ARM: tegra: Make outer_disable() open-coded
+      ARM: tegra: cpuidle: Handle case where secondary CPU hangs on entering LP2
+      ARM: tegra: cpuidle: Make abort_flag atomic
+      ARM: tegra: cpuidle: Remove unnecessary memory barrier
+      cpuidle: Refactor and move out NVIDIA Tegra20 driver into drivers/cpuidle
+      cpuidle: tegra: Squash Tegra30 driver into the common driver
+      cpuidle: tegra: Squash Tegra114 driver into the common driver
+      cpuidle: tegra: Disable CC6 state if LP2 unavailable
 
-Jon Hunter (5):
-      arm64: tegra: Fix Tegra194 PCIe compatible string
-      arm64: tegra: Enable I2C controller for EEPROM
-      arm64: tegra: Add EEPROM supplies
-      arm64: tegra: Fix Tegra186 SOR supply
-      arm64: tegra: Populate LP8557 backlight regulator
+Thierry Reding (1):
+      Merge branch 'for-5.7/arm/core' into for-5.7/cpuidle
 
-Nagarjuna Kristam (8):
-      arm64: tegra: Update OTG port entries for Jetson TX1
-      arm64: tegra: Update OTG port entries for Jetson TX2
-      arm64: tegra: Add XUDC node for Tegra210
-      arm64: tegra: Enable XUDC on Jetson TX1
-      arm64: tegra: Add XUDC node for Tegra186
-      arm64: tegra: Enable XUDC node on Jetson TX2
-      arm64: tegra: Update OTG port entries for Jetson Nano
-      arm64: tegra: Enable XUDC node on Jetson Nano
-
-Sowjanya Komatineni (6):
-      dt-bindings: clock: tegra: Add IDs for OSC clocks
-      dt-bindings: tegra: Convert Tegra PMC bindings to YAML
-      dt-bindings: soc: tegra-pmc: Add Tegra PMC clock bindings
-      dt-bindings: soc: tegra-pmc: Add ID for Tegra PMC 32 kHz blink clock
-      arm64: tegra: Add clock-cells property to Tegra PMC node
-      arm64: tegra: smaug: Change clk_out_2 provider to PMC
-
-Thierry Reding (2):
-      Merge branch 'for-5.7/dt-bindings' into for-5.7/arm64/dt
-      arm64: tegra: Add ethernet alias on Jetson TX1
-
-Vidya Sagar (2):
-      arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
-      arm64: tegra: Add support for PCIe endpoint mode in P2972-0000 platform
-
- .../bindings/arm/tegra/nvidia,tegra20-pmc.txt      | 300 -----------------
- .../bindings/arm/tegra/nvidia,tegra20-pmc.yaml     | 354 +++++++++++++++++++++
- .../bindings/pci/nvidia,tegra194-pcie.txt          |   2 +-
- arch/arm64/boot/dts/nvidia/tegra132.dtsi           |   4 +-
- arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts |  26 +-
- arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi     |   1 +
- arch/arm64/boot/dts/nvidia/tegra186.dtsi           |  19 ++
- arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi     |  36 ++-
- arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts |  81 +++++
- arch/arm64/boot/dts/nvidia/tegra194.dtsi           | 250 ++++++++++++++-
- arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi     |   3 +
- arch/arm64/boot/dts/nvidia/tegra210-p2371-2180.dts |   2 +
- arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi     |  45 ++-
- arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts |  24 +-
- arch/arm64/boot/dts/nvidia/tegra210-smaug.dts      |   2 +-
- arch/arm64/boot/dts/nvidia/tegra210.dtsi           |  25 +-
- include/dt-bindings/clock/tegra114-car.h           |   4 +-
- include/dt-bindings/clock/tegra124-car-common.h    |   4 +-
- include/dt-bindings/clock/tegra210-car.h           |   4 +-
- include/dt-bindings/clock/tegra30-car.h            |   4 +-
- include/dt-bindings/soc/tegra-pmc.h                |  16 +
- 21 files changed, 883 insertions(+), 323 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.txt
- create mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.yaml
- create mode 100644 include/dt-bindings/soc/tegra-pmc.h
+ arch/arm/mach-tegra/Makefile                     |  19 +-
+ arch/arm/mach-tegra/cpuidle-tegra114.c           |  89 -----
+ arch/arm/mach-tegra/cpuidle-tegra20.c            | 212 ------------
+ arch/arm/mach-tegra/cpuidle-tegra30.c            | 132 --------
+ arch/arm/mach-tegra/cpuidle.c                    |  50 ---
+ arch/arm/mach-tegra/cpuidle.h                    |  21 --
+ arch/arm/mach-tegra/irq.c                        |   3 +-
+ arch/arm/mach-tegra/pm.c                         |  54 ++--
+ arch/arm/mach-tegra/pm.h                         |   4 -
+ arch/arm/mach-tegra/reset-handler.S              |  11 -
+ arch/arm/mach-tegra/reset.h                      |   9 +-
+ arch/arm/mach-tegra/sleep-tegra20.S              | 170 ----------
+ arch/arm/mach-tegra/sleep-tegra30.S              |   6 +-
+ arch/arm/mach-tegra/sleep.h                      |  15 -
+ arch/arm/mach-tegra/tegra.c                      |   7 +-
+ drivers/cpuidle/Kconfig.arm                      |   8 +
+ drivers/cpuidle/Makefile                         |   1 +
+ drivers/cpuidle/cpuidle-tegra.c                  | 392 +++++++++++++++++++++++
+ include/soc/tegra/cpuidle.h                      |   2 +-
+ {arch/arm/mach-tegra => include/soc/tegra}/irq.h |   8 +-
+ include/soc/tegra/pm.h                           |  31 ++
+ 21 files changed, 483 insertions(+), 761 deletions(-)
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra114.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra20.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra30.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle.h
+ create mode 100644 drivers/cpuidle/cpuidle-tegra.c
+ rename {arch/arm/mach-tegra => include/soc/tegra}/irq.h (59%)
 
 _______________________________________________
 linux-arm-kernel mailing list
