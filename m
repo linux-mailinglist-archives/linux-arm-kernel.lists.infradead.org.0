@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87C30184E40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:58:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6587A184EC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 19:39:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nrZioBjrO2YWiNzFnhV9nCnkYdGYf9h/PauqqNOiZAU=; b=HfVzN1gwSH7a6E
-	GSe1v4IE1b678AhGzJmWF1vDcI2WMpPl89ljleX5K6BGGBZ/EH3jItQx1RqVj/wVeEo1rYXY1X8eN
-	RQBYHR5dXGMfikixC+OlPYA/FuKUQlx/rQTuTQyLi5PuKmXSSGWoklIBTh7KtAZf0dQ8ma7CrVXdu
-	bhmsxTYioJUn6ZQNWgXtdHBu+t010XdgoIbBlXeXbZ0gWiLBN9ju7oMSMLsAZ8nzWNzopKDOSl8jA
-	/DV+09BIVlaVScL+k0iKRkMOQkp6EeASVlRHwuB5haX4sAtvkN9/vU6qXOAXw6WNKDK2YwZC8wApO
-	0mIY5jBzs/jlg8OufdyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NXa1PJ7dMbJDnqG+Jx45gYTKCEb84pDfV8GNY0f7b+Y=; b=jVgFP+GDyfvCDfvRc6f4apUAN
+	pIudU4RsB1ya5z5LuBum09XR7W5gQllo1ZaFotPAd9PZQWHDSTE5bNSh8jxsDbu6ukD7in63RZvEx
+	xS4UUvYN9gfOUzJAfJKIrxfXEzy/hztDNa+C2aUka7OEr5oYheWXRzgFzCKOCQ+WPWu2gEi/GcHvs
+	KxHqz+uZ1akzQCQ6misqDsk+BW6LrueOCpgp7wxkagXK+pE9ccUG0fQo6Jf52syz2hGTVEnIYz81n
+	q0weHoCKcKib0Ejj/yhE/HLwzX2Bn4pzHg+L/bjEUHZmx/Q0PUE6DKFrU1Jyo8SjMVoKTNr+LYuvR
+	4ZXCi8Gtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCoa8-0002bQ-T6; Fri, 13 Mar 2020 17:58:48 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jCpD6-0000eq-QR; Fri, 13 Mar 2020 18:39:04 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCoY5-0000yJ-BG
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:56:42 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DHucv1001108;
- Fri, 13 Mar 2020 12:56:38 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584122198;
- bh=/Dw8KFsaIkFkfgLKZhRV5MXpefmC30Xga+RKXA8psqw=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=ke/ZcVzjLNANCq1l6dgVZ9hVLo1SDlq5XkDXHHp5TFFAKBNsrt2xHhMMJU5PpU18Y
- 0iX/zIOJE6e1EYwCnXQbXoSc25FFF+Mdi5Ucg4tNJ47EAa4Wa95VsgNR2BAH74Gj3I
- r2Y5LQFGqya4zS4A5TUtEK6qqtX/E5daDr3mBLWE=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DHubxK047580;
- Fri, 13 Mar 2020 12:56:38 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
- Mar 2020 12:56:37 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 13 Mar 2020 12:56:37 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DHua2m028293;
- Fri, 13 Mar 2020 12:56:36 -0500
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-To: Rob Herring <robh+dt@kernel.org>, Tero Kristo <t-kristo@ti.com>, "David S
- . Miller" <davem@davemloft.net>, netdev <netdev@vger.kernel.org>, Roger
- Quadros <rogerq@ti.com>, <devicetree@vger.kernel.org>, Jakub Kicinski
- <kuba@kernel.org>
-Subject: [PATCH net-next v3 10/10] arm64: defconfig: ti: k3: enable dma and
- networking
-Date: Fri, 13 Mar 2020 19:55:11 +0200
-Message-ID: <20200313175511.2155-11-grygorii.strashko@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200313175511.2155-1-grygorii.strashko@ti.com>
-References: <20200313175511.2155-1-grygorii.strashko@ti.com>
+ id 1jCpCz-0000dk-50; Fri, 13 Mar 2020 18:38:58 +0000
+Received: by mail-io1-xd43.google.com with SMTP id h8so10532412iob.2;
+ Fri, 13 Mar 2020 11:38:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=cUuLSwZPrJiRgANKoLpU4cPUGPy0b1zzEtLmRHixawM=;
+ b=pdQfPVjVSSOD59vLUiszT2k4KPe/kCBMeiZthSOeCrEeeOkRG8ORIuJ1tYwaFCwj7u
+ mXd5jKvuHQ/shmhWkwEj9Fk0eZaWbfn+DzvqSmOOog5LZr/U6DbKJEEj+3Y/IiOHpmvS
+ RtKijyA3OxrinDMGSFixNsJjU5MTktY8LhoUPjYhNpsRBEWp/IOgqdm0054pahtufaBK
+ A8+jD31s69s+r8vC8XtTkqdjQEYSRmUdF0dP2tZeMxQ7dfB6ha/rWpsmmPCsneTN2ABc
+ sP6XarxcnXmSWfkKOoqav5la81uCFB1uFNpM+B09YTSNR5M9LwVh2Nkvf6Lxw7vODIRr
+ UNcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=cUuLSwZPrJiRgANKoLpU4cPUGPy0b1zzEtLmRHixawM=;
+ b=KPc9JCN7VMnh0b/dekIDXblpPK6ira4dQ6Xo7r5ah8uHRVlbg3v5l/qTDLLtkDe7Ta
+ 2Joha7Wu16Vm2uuD2vzVbVEKV67W4mf7Xmz2TOXD1+6e4Ke5IYEEQRFlWEP++7HOfJdy
+ cLnv+OHJHUlc8fuU0ZoVQMtusmibnEnLa0sKNM3C8ueYP9sAjMrgSxMJF67MTX84bwVL
+ 1GBxljdcHxbt1PamMrKDzeq4XpG1Jcyco+wr2qmf5jzm20PYJ0xHCPp93pYqVmydrJLG
+ sOU3PtpkmNJy/7DhdRd1MM6xvd4HyfMAtUD6Dp+mU31BEz2flSkpJdBbMazN6Fz9Sw9E
+ ACRw==
+X-Gm-Message-State: ANhLgQ0XprQqIFnS2eSu3SdmM+LNFCaJE3IMj3kBo0fsy7hAS3Ifq53h
+ n06BABKQ90zPXxiz87vGzPA=
+X-Google-Smtp-Source: ADFU+vtdsZ5CoLT8VEqVJq5gzOg+u0Z6Cy0SMBjXfTDYMAWxmxvUIJQyio7XZupCGfrbMwfmlLrgyA==
+X-Received: by 2002:a02:5489:: with SMTP id
+ t131mr14297947jaa.134.1584124735873; 
+ Fri, 13 Mar 2020 11:38:55 -0700 (PDT)
+Received: from [10.30.196.58] ([204.77.163.55])
+ by smtp.gmail.com with ESMTPSA id i82sm9783468ilf.32.2020.03.13.11.38.54
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 13 Mar 2020 11:38:54 -0700 (PDT)
+From: Joshua Watt <jpewhacker@gmail.com>
+X-Google-Original-From: Joshua Watt <JPEWhacker@gmail.com>
+Subject: Re: [PATCH] ARM: dts: rockchip: Keep rk3288-tinker SD card IO powered
+ during reboot
+To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20200219204224.34154-1-JPEWhacker@gmail.com>
+Message-ID: <ed50e114-5efd-edcc-a287-3cacc4a28161@gmail.com>
+Date: Fri, 13 Mar 2020 13:38:53 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20200219204224.34154-1-JPEWhacker@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_105641_517215_83EDE415 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200313_113857_194177_CB3FFE51 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jpewhacker[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +89,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,46 +103,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Grygorii Strashko <grygorii.strashko@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Murali Karicheri <m-karicheri2@ti.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable TI K3 AM654x/J721E DMA and networking options.
 
-Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
----
- arch/arm64/configs/defconfig | 3 +++
- 1 file changed, 3 insertions(+)
+On 2/19/20 2:42 PM, Joshua Watt wrote:
+> IO voltage regulator for the SD card must be kept on all the time,
+> otherwise when the board reboots the SD card can't be read by the
+> bootloader.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 4db223dbc549..13cd865d7d4b 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -283,6 +283,7 @@ CONFIG_SMSC911X=y
- CONFIG_SNI_AVE=y
- CONFIG_SNI_NETSEC=y
- CONFIG_STMMAC_ETH=m
-+CONFIG_TI_K3_AM65_CPSW_NUSS=y
- CONFIG_MDIO_BUS_MUX_MMIOREG=y
- CONFIG_MARVELL_PHY=m
- CONFIG_MARVELL_10G_PHY=m
-@@ -698,6 +699,8 @@ CONFIG_QCOM_HIDMA_MGMT=y
- CONFIG_QCOM_HIDMA=y
- CONFIG_RCAR_DMAC=y
- CONFIG_RENESAS_USB_DMAC=m
-+CONFIG_TI_K3_UDMA=y
-+CONFIG_TI_K3_UDMA_GLUE_LAYER=y
- CONFIG_VFIO=y
- CONFIG_VFIO_PCI=y
- CONFIG_VIRTIO_PCI=y
--- 
-2.17.1
+Ping?
 
+>
+> Signed-off-by: Joshua Watt <JPEWhacker@gmail.com>
+> ---
+>   arch/arm/boot/dts/rk3288-tinker.dtsi | 1 +
+>   1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> index 312582c1bd37..acfaa12ec239 100644
+> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> @@ -276,6 +276,7 @@
+>   			};
+>   
+>   			vccio_sd: LDO_REG5 {
+> +				regulator-always-on;
+>   				regulator-boot-on;
+>   				regulator-min-microvolt = <1800000>;
+>   				regulator-max-microvolt = <3300000>;
 
 _______________________________________________
 linux-arm-kernel mailing list
