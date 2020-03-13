@@ -2,99 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1B5618468D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:11:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811A11846B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:19:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8gWjBpauhrk3mW3k6OJmJ5oCi4JFtbW4m+uqL21JtaQ=; b=Scs9i090YaSOXa
-	TfR3qk3bjC6WEiwGrxVeME1hasfZNBpwIH/8ldsiGtJUIZRUuyaCx3Mh8aoLGGkogLhEO0vOACtSk
-	+EW5e2xKyHUa5DJCYD6DDR+BATN6E04QhXP49qiQcjjuA7d2cxRY3Wx5npXvcjQZtd4h4FKB10kMv
-	s55vdzCdxIqgk0WYCyArXVC+WfMeEryirWnt52+kdP/4aMc2Kx4XzAv20STGxQbxDsYZ9OH4lx8KA
-	L1X9msJX0JW3d+bFw8lN4J8i6gjL5TKq2BdLBPiZTcLvvp/IGkq8qm6uB4WBh0HfIpNEFzIOXhexE
-	TtqPf4m4mXgwaMqDuciw==;
+	List-Owner; bh=JPT/CNNPUYNkqQEkWlEc291OHVERtJ4uCul6hIOE6nw=; b=agAwO1z3lLuWwt
+	7ll3SLzU9i9BHwjCp4pbmGmAgtFNjgbbeVplZkk8Fj24BQlfjSYj9QblNYW2XkESyZPksjloPnj8C
+	TMalG8N78g+DgqijEDUoS6AsCIP5oWQ10HdmJelQoQAnVEv26/ZyM+CM2dKoFTXtqLjW/QGiif/dC
+	88VZHIUpe2tSJ/7YKgP3ID2PU2tMhjagIUuu6ahoD7APrEDbdaTzjkqtY0nqxbRsvfH4XPQc++u3P
+	82zggWSoz74wmtiNS7RpcYVT4bmX4Pmtz1+/aUO/IhAthjC7UQ//rYPSiTLpvp1LHPb5XerLaWnuQ
+	QYL6gd/9tyH+TiAEY70w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCjAP-0005fM-Bo; Fri, 13 Mar 2020 12:11:53 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jCjHS-0008Qk-6e; Fri, 13 Mar 2020 12:19:10 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCjAD-0005f3-QR
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:11:43 +0000
-Received: by mail-pg1-x544.google.com with SMTP id a32so4049992pga.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 05:11:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=6pLOYM/wMftQVvIWBklYCx0bBHtmwvN52ahcTq9SXzM=;
- b=QtVBy8T48g1pj7JzZyGaclO9dhcLzRY7Xi2RHei3fL1mJZ+FRUjNj62H2cAzhlasXt
- wA8lEpV8VITfq7KWRV/4pyQjsmiPTeqRywQSa+ZpipY4/js79ZWsF8Cgto2ZBejyQi1w
- WkOmNEeQ2JI2EqL7IRxuEOVx8dQBwXpBspAOIWGRe1ab4GiDcfWbLbfkhdY2Fgveg5LX
- rfCLk6qz2ixcK3mhqh5XfMG2rXCAryb2xtluJO14lVHUFb6mFKgRPQmy4R82Yz3GRwlh
- hK5uSrxVOLuc/++mh9H2l4VFlK9i1McjApEz9khl9TYxEkuun1wNcTOrDqFlcJQ8TK6v
- KxJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6pLOYM/wMftQVvIWBklYCx0bBHtmwvN52ahcTq9SXzM=;
- b=bErorF8PBNP/fm6xi2G8DIClkO41KXDnVujTvLe0OjeBtdsmPYDzUuuyDsUuNNuVqe
- MTGSGUGMRUteadTHDVM+PYM7bCS4I7G/o2Ht/6NaynnYR4HoHB+oByugc/GURQRDr8Vh
- 0/eEHepV1Xzt7FQSBOKht4Q9lEfAHNu3maM8DZLgRSxlHLlpWVkwfetmd/i+jki/3uqB
- 1gNPCftXw9X1XQHKpMW7dGTDoPFhdnOGHw9HjytUN2E7aQiRsSMOAHFhxJhr3hdHMq1o
- lMGViilKJiMr3/xcMxazpNrXRwbZGsj6ZKGh7jdvSkEf77XNERZV704/bIMw33PSD0kA
- WVzg==
-X-Gm-Message-State: ANhLgQ26ujy/hgw4pGPQuOMA4TKz+kLNZTxTi8AGAhn63cmmrO9cTQ1L
- 6e9MgBjZ6W5FxRQrg248RLCG1qNX
-X-Google-Smtp-Source: ADFU+vuI3AZc29TPjoDNG9AKhYUD8KrpBf3iaqjAYWCzJytkiNPe7Uk51hL1KEI1JJXwEXqdDXFnOA==
-X-Received: by 2002:a63:e053:: with SMTP id n19mr13222973pgj.64.1584101501300; 
- Fri, 13 Mar 2020 05:11:41 -0700 (PDT)
-Received: from localhost ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id nl7sm2991587pjb.36.2020.03.13.05.11.40
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 13 Mar 2020 05:11:40 -0700 (PDT)
-Date: Fri, 13 Mar 2020 17:41:38 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: Re: [PATCH v4] MIPS: Replace setup_irq() by request_irq()
-Message-ID: <20200313121138.GA5985@afzalpc>
-References: <20200304203144.GA4323@alpha.franken.de>
- <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
- <20200311053126.GA48442@ubuntu-m2-xlarge-x86>
- <20200311090308.GA5060@afzalpc>
- <20200311104217.GA10615@alpha.franken.de>
- <20200311131210.GA5115@afzalpc>
- <20200311160307.GA15464@alpha.franken.de>
- <20200311163249.GA4984@afzalpc>
+ id 1jCjHI-0008QN-RE
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:19:02 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 9F473634C87;
+ Fri, 13 Mar 2020 14:17:46 +0200 (EET)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1jCjG6-0001id-U9; Fri, 13 Mar 2020 14:17:46 +0200
+Date: Fri, 13 Mar 2020 14:17:46 +0200
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v2 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200313121746.GC5730@valkosipuli.retiisi.org.uk>
+References: <20200313110350.10864-1-robert.foss@linaro.org>
+ <20200313110350.10864-3-robert.foss@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200311163249.GA4984@afzalpc>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <20200313110350.10864-3-robert.foss@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_051141_883229_D8BEBE68 
-X-CRM114-Status: GOOD (  11.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_051901_243665_B881DB7D 
+X-CRM114-Status: GOOD (  25.23  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,48 +67,268 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Paul Burton <paulburton@kernel.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, Jiaxun Yang <jiaxun.yang@flygoat.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
- Huacai Chen <chenhc@lemote.com>, Nathan Chancellor <natechancellor@gmail.com>,
- Keguang Zhang <keguang.zhang@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thomas,
+Hi Robert,
 
-On Wed, Mar 11, 2020 at 10:02:49PM +0530, afzal mohammed wrote:
-> On Wed, Mar 11, 2020 at 05:03:07PM +0100, Thomas Bogendoerfer wrote:
+On Fri, Mar 13, 2020 at 12:03:49PM +0100, Robert Foss wrote:
+> Add devicetree match table, and enable ov8856_probe()
+> to initialize power, clocks and reset pins.
+> 
+> Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> ---
+> 
+> - Changes since v1:
+>   * Fabio: Change n_shutdown_gpio name to reset_gpio
+>   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
+>   * Fabio: Remove empty line
+>   * Fabio: Remove real error from devm_gpiod_get() failures
+>   * Andy & Sakari: Make XVCLK optional since to not break ACPI
+>   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
+>   * Sakari: Use XVCLK rate as provided by DT
+> 
+>  drivers/media/i2c/ov8856.c | 109 ++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 107 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
+> index 8655842af275..db61eed223e8 100644
+> --- a/drivers/media/i2c/ov8856.c
+> +++ b/drivers/media/i2c/ov8856.c
+> @@ -3,10 +3,13 @@
+>  
+>  #include <asm/unaligned.h>
+>  #include <linux/acpi.h>
+> +#include <linux/clk.h>
+>  #include <linux/delay.h>
+> +#include <linux/gpio/consumer.h>
+>  #include <linux/i2c.h>
+>  #include <linux/module.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/regulator/consumer.h>
+>  #include <media/v4l2-ctrls.h>
+>  #include <media/v4l2-device.h>
+>  #include <media/v4l2-fwnode.h>
+> @@ -19,6 +22,8 @@
+>  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
+>  #define OV8856_SCLK			144000000ULL
+>  #define OV8856_MCLK			19200000
+> +#define OV8856_XVCLK_19_2		19200000
 
-> > case ? I guess using handler as dev_id does a better job here.
+Please use a single macro to refer to 19,2 MHz clock.
 
-> > And before doing that, lets clean up some of the IRQF_SHARED usage first.
-> > All sni IRQF_SHARED can go away, the interrupt lines are exclusive there. 
-> > 
-> > loongson2ef/lemote-2f/irq.c: looks like the only user of
-> > LOONGSON_NORTH_BRIDGE_IRQ, so IRQF_SHARED could go as well.
-> > Could someone confirm that ?
-> > 
-> > All other need to stay, IMHO.
+> +#define OV8856_XVCLK_24			24000000
 
-i am thinking of sending a new patch, with,
+This doesn't seem to be needed 
 
-1) IRQF_SHARED removed from sni/{a20r.c,pcit.c,rm200.c}
-2) IRQF_SHARED kept in,
-        kernel/cevt-r4k.c
-        dec/setup.c
-        pmcs-msp71xx/msp-time.c
-        loongson2ef/lemote-2f/irq.c
-    and use handler as dev_id in those
+>  #define OV8856_DATA_LANES		4
+>  #define OV8856_RGB_DEPTH		10
+>  
+> @@ -64,6 +69,12 @@
+>  
+>  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
+>  
+> +static const char * const ov8856_supply_names[] = {
+> +	"dovdd",	/* Digital I/O power */
+> +	"avdd",		/* Analog power */
+> +	"dvdd",		/* Digital core power */
+> +};
+> +
+>  enum {
+>  	OV8856_LINK_FREQ_720MBPS,
+>  	OV8856_LINK_FREQ_360MBPS,
+> @@ -566,6 +577,10 @@ struct ov8856 {
+>  	struct media_pad pad;
+>  	struct v4l2_ctrl_handler ctrl_handler;
+>  
+> +	struct clk		*xvclk;
+> +	struct gpio_desc	*reset_gpio;
+> +	struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
+> +
+>  	/* V4L2 Controls */
+>  	struct v4l2_ctrl *link_freq;
+>  	struct v4l2_ctrl *pixel_rate;
+> @@ -908,6 +923,46 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
+>  	return ret;
+>  }
+>  
+> +static int __ov8856_power_on(struct ov8856 *ov8856)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(ov8856->xvclk);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "failed to enable xvclk\n");
+> +		return ret;
+> +	}
+> +
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_HIGH);
+> +
+> +	ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
+> +				    ov8856->supplies);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "failed to enable regulators\n");
+> +		goto disable_clk;
+> +	}
+> +
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_LOW);
+> +
+> +	usleep_range(1500, 1800);
 
-Let me know if you have any other thoughts.
+I think you could omit the delay on ACPI based systems. Or just bail out
+early in that case.
 
-Regards
-afzal
+> +
+> +	return 0;
+> +
+> +disable_clk:
+
+How about the GPIO here?
+
+> +	clk_disable_unprepare(ov8856->xvclk);
+> +
+> +	return ret;
+> +}
+> +
+> +static void __ov8856_power_off(struct ov8856 *ov8856)
+> +{
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_HIGH);
+> +	regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
+> +			       ov8856->supplies);
+> +	clk_disable_unprepare(ov8856->xvclk);
+> +}
+
+You'll need to call the two in the driver's suspend and resume functions.
+
+> +
+>  static int __maybe_unused ov8856_suspend(struct device *dev)
+>  {
+>  	struct i2c_client *client = to_i2c_client(dev);
+> @@ -1175,7 +1230,7 @@ static int ov8856_remove(struct i2c_client *client)
+>  static int ov8856_probe(struct i2c_client *client)
+>  {
+>  	struct ov8856 *ov8856;
+> -	int ret;
+> +	int i, ret;
+
+unsigned int?
+
+>  
+>  	ret = ov8856_check_hwcfg(&client->dev);
+>  	if (ret) {
+> @@ -1189,10 +1244,50 @@ static int ov8856_probe(struct i2c_client *client)
+>  		return -ENOMEM;
+>  
+>  	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
+> +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
+> +	if (PTR_ERR(ov8856->xvclk) == -ENOENT) {
+> +		dev_info(&client->dev, "xvclk clock not defined, continuing...\n");
+
+How about dev_dbg()?
+
+> +		ov8856->xvclk = NULL;
+> +	} else if (IS_ERR(ov8856->xvclk)) {
+> +		dev_err(&client->dev, "could not get xvclk clock (%ld)\n",
+> +			PTR_ERR(ov8856->xvclk));
+> +		return PTR_ERR(ov8856->xvclk);
+> +	}
+> +
+> +	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_24);
+
+This should either come from platform data, or perhaps it'd be even better
+to get the clock rate and use assigned-clock-rates. I guess that's
+preferred nowadays.
+
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "failed to set xvclk rate (24MHz)\n");
+> +		return ret;
+> +	}
+> +
+> +	ov8856->reset_gpio = devm_gpiod_get(&client->dev, "reset",
+> +					       GPIOD_OUT_HIGH);
+
+Indentation.
+
+What if no gpio is defined?
+
+> +	if (IS_ERR(ov8856->reset_gpio)) {
+> +		dev_err(&client->dev, "failed to get reset-gpios\n");
+> +		return PTR_ERR(ov8856->reset_gpio);
+> +	}
+> +
+> +	for (i = 0; i < ARRAY_SIZE(ov8856_supply_names); i++)
+> +		ov8856->supplies[i].supply = ov8856_supply_names[i];
+> +
+> +	ret = devm_regulator_bulk_get(&client->dev,
+> +				      ARRAY_SIZE(ov8856_supply_names),
+> +				      ov8856->supplies);
+
+What happens if there are no regulators?
+
+> +	if (ret) {
+> +		dev_warn(&client->dev, "failed to get regulators\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = __ov8856_power_on(ov8856);
+> +	if (ret) {
+> +		dev_warn(&client->dev, "failed to power on\n");
+> +		return ret;
+> +	}
+> +
+>  	ret = ov8856_identify_module(ov8856);
+>  	if (ret) {
+>  		dev_err(&client->dev, "failed to find sensor: %d", ret);
+> -		return ret;
+> +		goto probe_power_off;
+>  	}
+>  
+>  	mutex_init(&ov8856->mutex);
+> @@ -1238,6 +1333,9 @@ static int ov8856_probe(struct i2c_client *client)
+>  	v4l2_ctrl_handler_free(ov8856->sd.ctrl_handler);
+>  	mutex_destroy(&ov8856->mutex);
+>  
+> +probe_power_off:
+> +	__ov8856_power_off(ov8856);
+> +
+
+Also remember to power off the device in remove().
+
+>  	return ret;
+>  }
+>  
+> @@ -1254,11 +1352,18 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
+>  MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
+>  #endif
+>  
+> +static const struct of_device_id ov8856_of_match[] = {
+> +	{ .compatible = "ovti,ov8856" },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, ov8856_of_match);
+> +
+>  static struct i2c_driver ov8856_i2c_driver = {
+>  	.driver = {
+>  		.name = "ov8856",
+>  		.pm = &ov8856_pm_ops,
+>  		.acpi_match_table = ACPI_PTR(ov8856_acpi_ids),
+> +		.of_match_table = ov8856_of_match,
+>  	},
+>  	.probe_new = ov8856_probe,
+>  	.remove = ov8856_remove,
+
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
