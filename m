@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75288184B8F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:47:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06717184B98
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:48:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uBs1hiJaGG5Yu3dljxplfHS3kASfJj/2ZSfsqLxVXOY=; b=SnlnV80Tgyovr+
-	BkOuBI/UTAgJmTU0Y+bxOQEbo2bBjeSZrte7sdFjxpVYtHaOgnahTctm7PwlFzwtplrDg91edZmSx
-	uIwmkKnqglJgXG/p90dZYdlLlQEUXz1YR0aNrLbommAwAJCS1EfqUmkJSTcBzv85UXOpv0on0inYz
-	qNmidfZZxTeEVPwo6s2zcwYKsCVP5wk3Pq0ZidpDVNKQHYbs4Y+xaX3wcJ3BHIEVsBMICH35opOW/
-	zW9vO8ypuKHqHaE5IJXwhC48NQWg7TL0i/9DcvQXF97ZBM+oz7q9d6RvC8/iv5+82YjZC1RboofdT
-	7+ka4INNf49fl8NGAHfQ==;
+	List-Owner; bh=Cp/d8H8RR2Y6nwPC07TOlwfXaQUoEBAQCyNyz+1+RBk=; b=eF7w8MZiV+87kP
+	YknriFKFmahqiczOrfxR6v3dgssvUz9ooYaSKXhEOF8wo/aclIi57lre53L1podJQQp+ZeMmb0Xuk
+	4R0cgbPCkhsETv5Iv86FQzIW0lmbaSBC1UttRJsl+sayCstvPHl9rFrIaAESkHY3tPFLrqWM7jB7Y
+	7439dz1JLDZjD7sKQ6gDHYkUpP2qc3MyzKjDrOkGDbixr7SjH5ASGxSlOCJJQXJPp0aoL7ibJDa08
+	fC7T+zpvET7PKRCW6jF1+eoizFQ6NRJ0EcS6uZ1db0sgEX9gpqLyw0TkSvAUgIOFpJdgnjmsG/r03
+	OQGS/TjC1OT3s7ireGQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmXD-000097-6u; Fri, 13 Mar 2020 15:47:39 +0000
+	id 1jCmXY-0000Qd-Df; Fri, 13 Mar 2020 15:48:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmUD-00053o-82
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:44:34 +0000
+ id 1jCmUE-00055S-Pf
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:44:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B9DD1045;
- Fri, 13 Mar 2020 08:44:31 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6982831B;
+ Fri, 13 Mar 2020 08:44:34 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 421D93F67D;
- Fri, 13 Mar 2020 08:44:28 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 71A853F67D;
+ Fri, 13 Mar 2020 08:44:31 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v3 08/26] linux/clocksource.h: Extract common header for vDSO
-Date: Fri, 13 Mar 2020 15:43:27 +0000
-Message-Id: <20200313154345.56760-9-vincenzo.frascino@arm.com>
+Subject: [PATCH v3 09/26] linux/math64.h: Extract common header for vDSO
+Date: Fri, 13 Mar 2020 15:43:28 +0000
+Message-Id: <20200313154345.56760-10-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084433_342698_A4A7F520 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20200313_084434_917567_AAC2E3F0 
+X-CRM114-Status: GOOD (  16.23  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,67 +85,84 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split clocksource.h into linux and common headers to make the latter
-suitable for inclusion in the vDSO library.
+Split math64.h into linux and common headers to make the latter suitable
+for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/linux/clocksource.h | 11 +----------
- include/vdso/clocksource.h  | 23 +++++++++++++++++++++++
- 2 files changed, 24 insertions(+), 10 deletions(-)
- create mode 100644 include/vdso/clocksource.h
+ include/linux/math64.h | 20 +-------------------
+ include/vdso/math64.h  | 24 ++++++++++++++++++++++++
+ 2 files changed, 25 insertions(+), 19 deletions(-)
+ create mode 100644 include/vdso/math64.h
 
-diff --git a/include/linux/clocksource.h b/include/linux/clocksource.h
-index 02e3282719bd..86d143db6523 100644
---- a/include/linux/clocksource.h
-+++ b/include/linux/clocksource.h
-@@ -28,16 +28,7 @@ struct module;
- #include <asm/clocksource.h>
- #endif
+diff --git a/include/linux/math64.h b/include/linux/math64.h
+index 65bef21cdddb..11a267413e8e 100644
+--- a/include/linux/math64.h
++++ b/include/linux/math64.h
+@@ -3,6 +3,7 @@
+ #define _LINUX_MATH64_H
  
--enum vdso_clock_mode {
--	VDSO_CLOCKMODE_NONE,
--#ifdef CONFIG_GENERIC_GETTIMEOFDAY
--	VDSO_ARCH_CLOCKMODES,
--#endif
--	VDSO_CLOCKMODE_MAX,
+ #include <linux/types.h>
++#include <vdso/math64.h>
+ #include <asm/div64.h>
+ 
+ #if BITS_PER_LONG == 64
+@@ -142,25 +143,6 @@ static inline s64 div_s64(s64 dividend, s32 divisor)
+ 
+ u32 iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder);
+ 
+-static __always_inline u32
+-__iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder)
+-{
+-	u32 ret = 0;
 -
--	/* Indicator for time namespace VDSO */
--	VDSO_CLOCKMODE_TIMENS = INT_MAX
--};
-+#include <vdso/clocksource.h>
- 
- /**
-  * struct clocksource - hardware abstraction for a free running counter
-diff --git a/include/vdso/clocksource.h b/include/vdso/clocksource.h
+-	while (dividend >= divisor) {
+-		/* The following asm() prevents the compiler from
+-		   optimising this loop into a modulo operation.  */
+-		asm("" : "+rm"(dividend));
+-
+-		dividend -= divisor;
+-		ret++;
+-	}
+-
+-	*remainder = dividend;
+-
+-	return ret;
+-}
+-
+ #ifndef mul_u32_u32
+ /*
+  * Many a GCC version messes this up and generates a 64x64 mult :-(
+diff --git a/include/vdso/math64.h b/include/vdso/math64.h
 new file mode 100644
-index 000000000000..ab58330e4e5d
+index 000000000000..7da703ee5561
 --- /dev/null
-+++ b/include/vdso/clocksource.h
-@@ -0,0 +1,23 @@
++++ b/include/vdso/math64.h
+@@ -0,0 +1,24 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __VDSO_CLOCKSOURCE_H
-+#define __VDSO_CLOCKSOURCE_H
++#ifndef __VDSO_MATH64_H
++#define __VDSO_MATH64_H
 +
-+#include <vdso/limits.h>
++static __always_inline u32
++__iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder)
++{
++	u32 ret = 0;
 +
-+#if defined(CONFIG_ARCH_CLOCKSOURCE_DATA) || \
-+	defined(CONFIG_GENERIC_GETTIMEOFDAY)
-+#include <asm/vdso/clocksource.h>
-+#endif /* CONFIG_ARCH_CLOCKSOURCE_DATA || CONFIG_GENERIC_GETTIMEOFDAY */
++	while (dividend >= divisor) {
++		/* The following asm() prevents the compiler from
++		   optimising this loop into a modulo operation.  */
++		asm("" : "+rm"(dividend));
 +
-+enum vdso_clock_mode {
-+	VDSO_CLOCKMODE_NONE,
-+#ifdef CONFIG_GENERIC_GETTIMEOFDAY
-+	VDSO_ARCH_CLOCKMODES,
-+#endif
-+	VDSO_CLOCKMODE_MAX,
++		dividend -= divisor;
++		ret++;
++	}
 +
-+	/* Indicator for time namespace VDSO */
-+	VDSO_CLOCKMODE_TIMENS = INT_MAX
-+};
++	*remainder = dividend;
 +
-+#endif /* __VDSO_CLOCKSOURCE_H */
++	return ret;
++}
++
++#endif /* __VDSO_MATH64_H */
 -- 
 2.25.1
 
