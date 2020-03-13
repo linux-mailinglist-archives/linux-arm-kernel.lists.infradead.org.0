@@ -2,145 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CADA81842ED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 09:52:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8293618430B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:00:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=972mVd77LUh4Eb6bfmXSgiL+BjZMv5jfJmLY7I3phlw=; b=LECeb4fw4NqXuIRAYqKGnafp9R
-	t9CZEwfE5FXY0qNFLUnvnnP/YvAvLtohvJlQghiN27cOgPnIzKGDVhdEcPu77AutG+MPG5NRh01q7
-	OMVfdM6RRj+8gVipC1/0oEvV1oQ2UJeda1cXe9Ele4hs+rKhK3r76IxuZ6EMbw4OULBsJ6y8BoWZO
-	ljB6M9S1R3CV0/2qWKVV47NK6L2/gHuClczOeh1EQZ7HJz8rXYx9E07fOcuEd+0JoENNlGAncdUYq
-	fxzZ73RbxYDKQlqj+0AoAxOftFKML+A+uvXcKzfq9X1p8Ccj4A8GF5t4jUo2RZWIBOZQdoDYmsWW3
-	5m7lwIhw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s7apcEdyi+FZyXK9TdnI/TTos2QUHf7mB17rIgboRAM=; b=M77suluhAnszWJ
+	q3F5TpsfkJVMajo+L7ScN61ecE/4gHI63duWNHtVHF/sn5Nkp5cSpZWPEl/aF+4DD2CHigErZcub7
+	22uM7mzgwNO6G7Hdhi3kQU6VumyORoraDvILvZ+H2y2/y5BrX7DZFXCWNQ28xDjOmX+kHwYxnjAO3
+	M24UMHTPLk4RkklbsENItAdzlb22eFzTiviE3GLAmFWIAzRZ+zu54o8i+0W9Ch2pTUmVaZINiSMRb
+	1Ah0B+2wsRINhwkvB50iklSKkce8Fntara6fqqLm7QyV3cMP8LLsZw7sDJMoFCVYDwN1rUzanHvAP
+	Q9DPUXaYWwwd/yNlmHyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCg30-0002BH-RK; Fri, 13 Mar 2020 08:52:02 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jCgB8-0006Ct-51; Fri, 13 Mar 2020 09:00:26 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCg2s-0002Ao-33
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 08:51:56 +0000
-Received: by mail-wr1-x443.google.com with SMTP id f3so4003509wrw.7
+ id 1jCgAy-0006BX-TA
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:00:19 +0000
+Received: by mail-ed1-f67.google.com with SMTP id a24so10975251edy.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 01:51:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:references:from:autocrypt:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=EWYG1dlA3o+BCAdpzqWE58EUsZ5e8plVqEzlRwtDADs=;
- b=U87BsqosBpPeIyL4yEzGp5yjmZZNYyLtt6VqGTxC6fMuVh8vM5dMbXM8rJagiuOtIB
- BoaRIhmYYzG0XCPwKNmV3iRiHlOdIIQGBPP7VRzyieFFqYW+DHWJgui2IKbptJac/tIn
- FWFuPeeoDkZa8feGtT1R/uaBN/F2Gtmt8kMZ3KYgc5URxzZzRqMuLRhwA5bGY2t0WQ3h
- gpsP6+bwdbNsEEBCpaPqKjJyH9Xri95V1coJmjEnt02r47DGm1P0E6db7KRndDXaUqkf
- CH8L1uxbd4ZtdH/3OQfjK3dv0cu2yirPZ22ZbN6xlFkv7h6V484KjpUwhKcvktjI9j1H
- +QAg==
+ Fri, 13 Mar 2020 02:00:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=EWYG1dlA3o+BCAdpzqWE58EUsZ5e8plVqEzlRwtDADs=;
- b=DqnAfdCuXHzZmdNdUmG/dDd6t03TC9X/RYn9XNvrnMQwKfpHohvcGkISP55Cfkg17z
- fFTNvAau4R/xQTIwWTGBtN7W73BsLbo9OEroED8kkeWsqJKRjBc5Dcm5o8+X8R5dxuOZ
- YG3AgcSqyiDZjM7n+vp5plIC21Wqh4Q7h+x76TrGIZRe80RQxzC+DX+Ea4vPFsGrUUb7
- gYPcSpasK0DbyAw2xUZmAsFk6Mnr8RmdwsI3tzlFAL3PZh0Ik142WQn9cwStuwX0xy38
- 5BEbwsp8cA7oFyRWldSx+mFJUWOKGtM6HS3A6k6GtLdHU38E+3G32hEWE1TrKTt9ZzTc
- EmhA==
-X-Gm-Message-State: ANhLgQ2070d0DbUTtlXwsUx1hgsirEoXRVl/qEFXs/pfBcwtwI32EJhw
- AA7CVScCZVrqHM9Wokx13Bn/1bgmj7WJYw==
-X-Google-Smtp-Source: ADFU+vsDsbp6+FoZneNwAhw4NEO9OKWGeJqwqljql481igljqykhzfAeu4kOUaNRfaSlS1Tk0VPPJA==
-X-Received: by 2002:adf:9cd1:: with SMTP id h17mr10831583wre.416.1584089510985; 
- Fri, 13 Mar 2020 01:51:50 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
- ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id f17sm57444431wrm.3.2020.03.13.01.51.50
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 13 Mar 2020 01:51:50 -0700 (PDT)
-Subject: Re: [PATCH v7 3/3] arm64: dts: meson: add support for the SmartLabs
- SML-5442TW
-To: linux-arm-kernel@lists.infradead.org
-References: <1583987886-6288-1-git-send-email-christianshewitt@gmail.com>
- <1583987886-6288-4-git-send-email-christianshewitt@gmail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <c47277f2-9fd8-1a73-dfd7-5f9bb48fa34b@baylibre.com>
-Date: Fri, 13 Mar 2020 09:51:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=QpUfdW4JMUyp0vSz7Oo/hO5E5wuyfssoZCP6uil0gHw=;
+ b=tQ2sfyF43IhewBvmaYObB9V6YkFYF7r/CahEjEutr37LCsjJ9yNu84dPIHVS5yb5ac
+ Ff3pkqGnpqF7yxfYDD3hmCRWJB4kN4kDGVYO9RVRGsIT33mDUm6mr06/a7iSeG+/PB8E
+ oMV75jS7738MPKkJFxsb+xWYQe98IQjKh6vpU3aSUl62dKufBMjqxRoF959CFhM/hdi/
+ Gk/RhdQ/qwfRjN2kHr2uR/p9PWcxmmXL/BjTNMszFV5OpBkhDOrivlZM1Lvdx7pSQFsF
+ 8ucF1gUmgycHvHsgoHoA4swFPFTTuLMS4De9ab+DSnHvBo0y/Pk4IDyk2vFSsaPezoYB
+ FAqA==
+X-Gm-Message-State: ANhLgQ2lYP24ogaRAvhGBTTgEwwi4AMNhgvNKLqgVNb7ajgC53biTh/J
+ LJNdegSlgOBbuTgVR7xXRNc=
+X-Google-Smtp-Source: ADFU+vt8w28ua0O0vJPH5gGqi/81mmTwujJ9yi8DHmU5PawZmoq4IrVg7/qbNbRwx5WzyeVncpLAWQ==
+X-Received: by 2002:aa7:d2c1:: with SMTP id k1mr12561722edr.29.1584090014096; 
+ Fri, 13 Mar 2020 02:00:14 -0700 (PDT)
+Received: from pi3 ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id h4sm2131064ejl.25.2020.03.13.02.00.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Mar 2020 02:00:13 -0700 (PDT)
+Date: Fri, 13 Mar 2020 10:00:11 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Paul Cercueil <paul@crapouillou.net>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH 2/2] ARM: DTS: Add devicetree file for the Galaxy S2
+Message-ID: <20200313090011.GB7416@pi3>
+References: <20200312153411.13535-1-paul@crapouillou.net>
+ <20200312153411.13535-2-paul@crapouillou.net>
 MIME-Version: 1.0
-In-Reply-To: <1583987886-6288-4-git-send-email-christianshewitt@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200312153411.13535-2-paul@crapouillou.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_015154_284185_1C28F542 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200313_020016_941542_3C95609B 
+X-CRM114-Status: GOOD (  23.52  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,332 +88,773 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/03/2020 05:38, Christian Hewitt wrote:
-> The SmartLabs SML-5442TW is broadly similar to the P231 reference design
-> but with the following differences:
+On Thu, Mar 12, 2020 at 04:34:11PM +0100, Paul Cercueil wrote:
+> From: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
 > 
-> - The Yellow and Blue LEDs are available but disabled
-> - The Red and Green LEDs are used to signal off/on status
-> - uart_AO can be accessed after opening the case; soldered pins exist
-> - GPIOX_17 is forced high to enable the QCA9377 module
+> Add devicetree file for the Exynos 4210 based Galaxy S2 (i9100 version).
+
+Thanks for the patch!
+
+It is an GT-I9100.
+
++Cc Marek (I have few questions further)
+
+
 > 
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+> Signed-off-by: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
+> Signed-off-by: Paul Cercueil <paul@crapouillou.net>
 > ---
->  arch/arm64/boot/dts/amlogic/Makefile               |   1 +
->  .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 284 +++++++++++++++++++++
->  2 files changed, 285 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+>  arch/arm/boot/dts/Makefile             |   1 +
+>  arch/arm/boot/dts/exynos4210-i9100.dts | 816 +++++++++++++++++++++++++
+>  2 files changed, 817 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/exynos4210-i9100.dts
 > 
-> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-> index eef0045..6cf8c4a 100644
-> --- a/arch/arm64/boot/dts/amlogic/Makefile
-> +++ b/arch/arm64/boot/dts/amlogic/Makefile
-> @@ -27,6 +27,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-phicomm-n1.dtb
-> +dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-sml5442tw.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s805x-p241.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-p281.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-tx3-mini.dtb
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index d6546d2676b9..522436d30690 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -181,6 +181,7 @@ dtb-$(CONFIG_ARCH_EXYNOS3) += \
+>  	exynos3250-monk.dtb \
+>  	exynos3250-rinato.dtb
+>  dtb-$(CONFIG_ARCH_EXYNOS4) += \
+> +	exynos4210-i9100.dtb \
+>  	exynos4210-origen.dtb \
+>  	exynos4210-smdkv310.dtb \
+>  	exynos4210-trats.dtb \
+> diff --git a/arch/arm/boot/dts/exynos4210-i9100.dts b/arch/arm/boot/dts/exynos4210-i9100.dts
 > new file mode 100644
-> index 0000000..03723b7
+> index 000000000000..c218e34959be
 > --- /dev/null
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-> @@ -0,0 +1,284 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +++ b/arch/arm/boot/dts/exynos4210-i9100.dts
+> @@ -0,0 +1,816 @@
+> +// SPDX-License-Identifier: GPL-2.0
 > +/*
-> + * Copyright (c) 2016 Endless Computers, Inc.
-> + * Author: Carlo Caione <carlo@endlessm.com>
-> + * Copyright (c) 2018 BayLibre, SAS
-> + * Author: Neil Armstrong <narmstrong@baylibre.com>
+> + * Samsung's Exynos4210 based Galaxy S2 (i9100 version) device tree
+
+Ditto
+
+> + *
+> + * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+> + *		http://www.samsung.com
+> + * Copyright (c) 2020 Stenkin Evgeniy <stenkinevgeniy@gmail.com>
+> + * Copyright (c) 2020 Paul Cercueil <paul@crapouillou.net>
+> + *
+> + * Device tree source file for Samsung's Galaxy S2 smartphone (i9100 version),
+> + * which is based on Samsung's Exynos4210 SoC.
+
+Duplicated description, you mentioned it before.
+
 > + */
 > +
 > +/dts-v1/;
+> +#include "exynos4210.dtsi"
+> +#include "exynos4412-ppmu-common.dtsi"
 > +
-> +#include "meson-gxl-s905d.dtsi"
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/linux-event-codes.h>
 > +
 > +/ {
-> +	compatible = "smartlabs,sml5442tw", "amlogic,s905d", "amlogic,meson-gxl";
-> +	model = "SmartLabs SML-5442TW";
+> +	model = "Samsung Galaxy S2 (i9100)";
+
+GT-I9100
+
+> +	compatible = "samsung,i9100", "samsung,exynos4210", "samsung,exynos4";
+
+I think it shares a lot with Trats board...
+
+Marek, how similar these
+designs are? Maybe it is worth to split some parts and make common part?
+
 > +
-> +	aliases {
-> +		serial0 = &uart_AO;
-> +		ethernet0 = &ethmac;
-> +	};
 > +
-> +	chosen {
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +
-> +	memory@0 {
+> +	memory@40000000 {
 > +		device_type = "memory";
-> +		reg = <0x0 0x0 0x0 0x80000000>;
+> +		reg = <0x40000000 0x40000000>;
 > +	};
 > +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +
-> +		yellow {
-> +			color = <LED_COLOR_ID_YELLOW>;
-> +			function = LED_FUNCTION_STATUS;
-> +			gpios = <&gpio_ao GPIOAO_6 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +
-> +		blue {
-> +			color = <LED_COLOR_ID_BLUE>;
-> +			function = LED_FUNCTION_STATUS;
-> +			gpios = <&gpio GPIODV_28 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +
-> +		green {
-> +			color = <LED_COLOR_ID_GREEN>;
-> +			function = LED_FUNCTION_STATUS;
-> +			gpios = <&gpio_ao GPIOAO_9 GPIO_ACTIVE_HIGH>;
-> +			default-state = "on";
-> +		};
-> +
-> +		red {
-> +			color = <LED_COLOR_ID_RED>;
-> +			function = LED_FUNCTION_STATUS;
-> +			gpios = <&gpio GPIODV_27 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +	};
-> +
-> +	hdmi_5v: regulator-hdmi-5v {
+
+You do not have a chosen node, at least for stdout serial selection.
+Probably you should have one... bootargs I guess could come from
+bootloader.
+
+
+> +	vemmc_reg: regulator-0 {
 > +		compatible = "regulator-fixed";
-> +
-> +		regulator-name = "HDMI_5V";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +
-> +		gpio = <&gpio GPIOH_3 GPIO_ACTIVE_HIGH>;
+> +		regulator-name = "VMEM_VDD_2.8V";
+> +		regulator-min-microvolt = <2800000>;
+> +		regulator-max-microvolt = <2800000>;
+> +		gpio = <&gpk0 2 GPIO_ACTIVE_HIGH>;
 > +		enable-active-high;
+
+This looks like a stub/fake regulator. Probably it shoould be replaced
+with proper regulator coming from PMIC (few seems to be missing there).
+
+I don't have the schematics so I cannot judge... I see Trats has the
+same.
+
+Marek, mayybe you know, is it really a separate regulator?
+
+> +	};
+> +
+> +	tsp_reg: regulator-1 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "TSP_FIXED_VOLTAGES";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		gpio = <&gpl0 3 GPIO_ACTIVE_HIGH>;
+> +		startup-delay-us = <70000>;
+> +		enable-active-high;
+> +		regulator-boot-on;
 > +		regulator-always-on;
+
+always-on and boot-on should not be needed. You have a consumer for this
+regulator.
+
 > +	};
 > +
-> +	vddio_ao18: regulator-vddio_ao18 {
+> +	cam_af_28v_reg: regulator-3 {
 > +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDIO_AO18";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
+> +		regulator-name = "8M_AF_2.8V_EN";
+> +		regulator-min-microvolt = <2800000>;
+> +		regulator-max-microvolt = <2800000>;
+> +		gpio = <&gpk1 1 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
 > +	};
 > +
-> +	vddio_boot: regulator-vddio_boot {
+> +	cam_io_en_reg: regulator-4 {
 > +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDIO_BOOT";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
+> +		regulator-name = "CAM_IO_EN";
+> +		regulator-min-microvolt = <2800000>;
+> +		regulator-max-microvolt = <2800000>;
+> +		gpio = <&gpe2 1 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
 > +	};
 > +
-> +	vddao_3v3: regulator-vddao_3v3 {
+> +	cam_io_12v_reg: regulator-5 {
 > +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDAO_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
+> +		regulator-name = "8M_1.2V_EN";
+> +		regulator-min-microvolt = <1200000>;
+> +		regulator-max-microvolt = <1200000>;
+> +		gpio = <&gpe2 5 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
 > +	};
 > +
-> +	vcc_3v3: regulator-vcc_3v3 {
+> +	vt_core_15v_reg: regulator-6 {
 > +		compatible = "regulator-fixed";
-> +		regulator-name = "VCC_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
+> +		regulator-name = "VT_CORE_1.5V";
+> +		regulator-min-microvolt = <1500000>;
+> +		regulator-max-microvolt = <1500000>;
+> +		gpio = <&gpe2 2 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
 > +	};
 > +
-> +	emmc_pwrseq: emmc-pwrseq {
-> +		compatible = "mmc-pwrseq-emmc";
-> +		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		vol-down {
+> +			gpios = <&gpx2 1 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_VOLUMEDOWN>;
+> +			label = "volume down";
+> +			debounce-interval = <10>;
+> +		};
+> +
+> +		vol-up {
+> +			gpios = <&gpx2 0 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_VOLUMEUP>;
+> +			label = "volume up";
+> +			debounce-interval = <10>;
+> +		};
+> +
+> +		power {
+> +			gpios = <&gpx2 7 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_POWER>;
+> +			label = "power";
+> +			debounce-interval = <10>;
+> +			wakeup-source;
+> +		};
+> +
+> +		ok {
+> +			gpios = <&gpx3 5 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_OK>;
+> +			label = "ok";
+> +			debounce-interval = <10>;
+> +		};
 > +	};
 > +
-> +	wifi32k: wifi32k {
-> +		compatible = "pwm-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <32768>;
-> +		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
-> +	};
-> +
-> +	sdio_pwrseq: sdio-pwrseq {
+> +	wlan_pwrseq: sdhci3-pwrseq {
 > +		compatible = "mmc-pwrseq-simple";
-> +		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
-> +		clocks = <&wifi32k>;
-> +		clock-names = "ext_clock";
+> +		reset-gpios = <&gpl1 2 GPIO_ACTIVE_LOW>;
 > +	};
 > +
-> +	cvbs-connector {
-> +		compatible = "composite-video-connector";
+> +	i2c_max17042_fuel: i2c-gpio-3 {
+
+i2c-gpio-3 -> i2c-gpio
+
+> +		compatible = "i2c-gpio";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
 > +
-> +		port {
-> +			cvbs_connector_in: endpoint {
-> +				remote-endpoint = <&cvbs_vdac_out>;
+> +		sda-gpios = <&gpy4 0 GPIO_ACTIVE_HIGH>;
+> +		scl-gpios = <&gpy4 1 GPIO_ACTIVE_HIGH>;
+> +		i2c-gpio,delay-us = <5>;
+> +
+> +		battery@36 {
+> +			compatible = "maxim,max17042";
+> +
+> +			interrupt-parent = <&gpx2>;
+> +			interrupts = <3 2>;
+
+s/2/IRQ_TYPE_EDGE_FALLING/
+
+> +
+> +			pinctrl-0 = <&max17042_fuel_irq>;
+> +			pinctrl-names = "default";
+> +
+> +			reg = <0x36>;
+> +			maxim,over-heat-temp = <700>;
+> +			maxim,over-volt = <4500>;
+> +
+
+Remove empty line.
+
+> +		};
+> +	};
+> +
+> +	spi-lcd {
+> +		compatible = "spi-gpio";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		num-chipselects = <1>;
+> +		cs-gpios = <&gpy4 3 GPIO_ACTIVE_HIGH>;
+> +		sck-gpios = <&gpy3 1 GPIO_ACTIVE_HIGH>;
+> +		mosi-gpios = <&gpy3 3 GPIO_ACTIVE_HIGH>;
+> +
+> +		lcd@0 {
+> +			compatible = "samsung,ld9040";
+> +			reg = <0>;
+> +
+> +			spi-max-frequency = <1200000>;
+> +			spi-cpol;
+> +			spi-cpha;
+> +
+> +			vdd3-supply = <&vmipi_reg>;
+> +			vci-supply = <&vcclcd_reg>;
+> +
+> +			reset-gpios = <&gpy4 5 GPIO_ACTIVE_HIGH>;
+> +			power-on-delay = <10>;
+> +			reset-delay = <10>;
+> +
+> +			panel-width-mm = <90>;
+> +			panel-height-mm = <154>;
+> +
+> +			display-timings {
+> +				timing {
+> +					clock-frequency = <23492370>;
+> +					hactive = <480>;
+> +					vactive = <800>;
+> +					hback-porch = <16>;
+> +					hfront-porch = <16>;
+> +					vback-porch = <2>;
+> +					vfront-porch = <28>;
+> +					hsync-len = <2>;
+> +					vsync-len = <1>;
+> +					hsync-active = <0>;
+> +					vsync-active = <0>;
+> +					de-active = <0>;
+> +					pixelclk-active = <0>;
+> +				};
+> +			};
+> +
+> +			port {
+> +				lcd_ep: endpoint {
+> +					remote-endpoint = <&fimd_dpi_ep>;
+> +				};
 > +			};
 > +		};
 > +	};
 > +
-> +	hdmi-connector {
-> +		compatible = "hdmi-connector";
-> +		type = "a";
+> +	fixed-rate-clocks {
+> +		xxti {
+> +			compatible = "samsung,clock-xxti";
+> +			clock-frequency = <0>;
+> +		};
 > +
-> +		port {
-> +			hdmi_connector_in: endpoint {
-> +				remote-endpoint = <&hdmi_tx_tmds_out>;
+> +		xusbxti {
+> +			compatible = "samsung,clock-xusbxti";
+> +			clock-frequency = <24000000>;
+> +		};
+> +	};
+> +
+> +	thermal-zones {
+> +		cpu_thermal: cpu-thermal {
+> +			cooling-maps {
+> +				map0 {
+> +					/* Corresponds to 800MHz */
+> +					cooling-device = <&cpu0 2 2>;
+> +				};
+> +				map1 {
+> +					/* Corresponds to 200MHz */
+> +					cooling-device = <&cpu0 4 4>;
+> +				};
 > +			};
 > +		};
 > +	};
+> +
 > +};
 > +
-> +&cec_AO {
+> +&camera {
 > +	status = "okay";
-> +	pinctrl-0 = <&ao_cec_pins>;
-> +	pinctrl-names = "default";
-> +	hdmi-phandle = <&hdmi_tx>;
 > +};
 > +
-> +&cvbs_vdac_port {
-> +	cvbs_vdac_out: endpoint {
-> +		remote-endpoint = <&cvbs_connector_in>;
-> +	};
+> +&cpu0 {
+> +	cpu0-supply = <&varm_breg>;
 > +};
 > +
-> +&ethmac {
+> +&exynos_usbphy {
 > +	status = "okay";
-> +	phy-mode = "rmii";
-> +	phy-handle = <&internal_phy>;
+> +
+> +	vbus-supply = <&safe1_sreg>;
 > +};
 > +
-> +&hdmi_tx {
+> +&fimc_0 {
 > +	status = "okay";
-> +	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
-> +	pinctrl-names = "default";
-> +	hdmi-supply = <&hdmi_5v>;
+> +
+> +	assigned-clocks = <&clock CLK_MOUT_FIMC0>, <&clock CLK_SCLK_FIMC0>;
+> +	assigned-clock-parents = <&clock CLK_SCLK_MPLL>;
+> +	assigned-clock-rates = <0>, <160000000>;
 > +};
 > +
-> +&hdmi_tx_tmds_port {
-> +	hdmi_tx_tmds_out: endpoint {
-> +		remote-endpoint = <&hdmi_connector_in>;
-> +	};
-> +};
-> +
-> +&i2c_A {
+> +&fimc_1 {
 > +	status = "okay";
-> +	pinctrl-0 = <&i2c_a_pins>;
-> +	pinctrl-names = "default";
+> +
+> +	assigned-clocks = <&clock CLK_MOUT_FIMC1>, <&clock CLK_SCLK_FIMC1>;
+> +	assigned-clock-parents = <&clock CLK_SCLK_MPLL>;
+> +	assigned-clock-rates = <0>, <160000000>;
 > +};
 > +
-> +&internal_phy {
-> +	pinctrl-0 = <&eth_link_led_pins>, <&eth_act_led_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&ir {
+> +&fimc_2 {
 > +	status = "okay";
-> +	pinctrl-0 = <&remote_input_ao_pins>;
-> +	pinctrl-names = "default";
+> +
+> +	assigned-clocks = <&clock CLK_MOUT_FIMC2>, <&clock CLK_SCLK_FIMC2>;
+> +	assigned-clock-parents = <&clock CLK_SCLK_MPLL>;
+> +	assigned-clock-rates = <0>, <160000000>;
 > +};
 > +
-> +&pwm_ef {
+> +&fimc_3 {
 > +	status = "okay";
-> +	pinctrl-0 = <&pwm_e_pins>;
-> +	pinctrl-names = "default";
-> +	clocks = <&clkc CLKID_FCLK_DIV4>;
-> +	clock-names = "clkin0";
+> +
+> +	assigned-clocks = <&clock CLK_MOUT_FIMC3>, <&clock CLK_SCLK_FIMC3>;
+> +	assigned-clock-parents = <&clock CLK_SCLK_MPLL>;
+> +	assigned-clock-rates = <0>, <160000000>;
 > +};
 > +
-> +&saradc {
+> +&fimd {
 > +	status = "okay";
-> +	vref-supply = <&vddio_ao18>;
-> +};
-> +
-> +/* Wireless SDIO Module */
-> +&sd_emmc_a {
-> +	status = "okay";
-> +	pinctrl-0 = <&sdio_pins>;
-> +	pinctrl-1 = <&sdio_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
 > +	#address-cells = <1>;
 > +	#size-cells = <0>;
 > +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	max-frequency = <100000000>;
+> +	samsung,invert-vden;
+> +	samsung,invert-vclk;
 > +
-> +	non-removable;
-> +	disable-wp;
+> +	pinctrl-0 = <&lcd_clk>, <&lcd_data24>;
+> +	pinctrl-names = "default";
 > +
-> +	mmc-pwrseq = <&sdio_pwrseq>;
+> +	port@3 {
+> +		reg = <3>;
 > +
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
+> +		fimd_dpi_ep: endpoint {
+> +			remote-endpoint = <&lcd_ep>;
+> +		};
+> +	};
 > +};
 > +
-> +/* SD card */
-> +&sd_emmc_b {
+> +&hsotg {
 > +	status = "okay";
-> +	pinctrl-0 = <&sdcard_pins>;
-> +	pinctrl-1 = <&sdcard_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
 > +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	max-frequency = <100000000>;
-> +	disable-wp;
-> +
-> +	cd-gpios = <&gpio CARD_6 GPIO_ACTIVE_HIGH>;
-> +	cd-inverted;
-> +
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
+> +	dr_mode = "otg";
+> +	vusb_d-supply = <&vusb_reg>;
+> +	vusb_a-supply = <&vusbdac_reg>;
 > +};
 > +
-> +/* eMMC */
-> +&sd_emmc_c {
+> +&ehci {
+
+Order the phandle/nodes in alphabetical order, please. So:
+
+&ehci ...
+&hsoth ...
+&i2c ...
+
+etc.
+
 > +	status = "okay";
-> +	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-> +	pinctrl-1 = <&emmc_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
+> +
+> +	port@0 {
+> +		status = "okay";
+> +	};
+> +
+> +	port@1 {
+> +		status = "okay";
+> +	};
+> +
+> +	port@2 {
+> +		status = "okay";
+> +	};
+> +};
+> +
+
+Double empty line.
+
+> +
+> +&i2c_3 {
+> +	status = "okay";
+> +
+> +	samsung,i2c-sda-delay = <100>;
+> +	samsung,i2c-slave-addr = <0x10>;
+> +	samsung,i2c-max-bus-freq = <100000>;
+> +
+> +	pinctrl-0 = <&i2c3_bus>;
+> +	pinctrl-names = "default";
+> +
+> +	mxt224-touchscreen@4a {
+> +		compatible = "atmel,maxtouch";
+> +		reg = <0x4a>;
+> +
+> +		interrupt-parent = <&gpx0>;
+> +		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
+> +
+> +		avdd-supply = <&tsp_reg>;
+> +		vdd-supply = <&tsp_reg>;
+> +	};
+> +};
+> +
+> +&i2c_7 {
+> +	status = "okay";
+> +
+> +	samsung,i2c-sda-delay = <100>;
+> +	samsung,i2c-slave-addr = <0x10>;
+> +	samsung,i2c-max-bus-freq = <400000>;
+> +
+> +	pinctrl-0 = <&i2c7_bus>;
+> +	pinctrl-names = "default";
+> +
+> +	ak8975@c {
+> +		compatible = "asahi-kasei,ak8975";
+> +		reg = <0x0c>;
+> +
+> +		gpios = <&gpx2 2 GPIO_ACTIVE_HIGH>;
+> +	};
+> +};
+> +
+> +
+> +&i2c_5 {
+> +	status = "okay";
+> +
+> +	samsung,i2c-sda-delay = <100>;
+> +	samsung,i2c-slave-addr = <0x10>;
+> +	samsung,i2c-max-bus-freq = <100000>;
+> +
+> +	pinctrl-0 = <&i2c5_bus>;
+> +	pinctrl-names = "default";
+> +
+> +	max8997_pmic@66 {
+> +		compatible = "maxim,max8997-pmic";
+> +		reg = <0x66>;
+> +
+> +		interrupts-extended = <&gpx0 7 0>, <&gpx2 3 2>;
+> +		interrupt-parent = <&gpx0>;
+> +		interrupts = <7 IRQ_TYPE_NONE>;
+> +
+> +		otg_en-gpios = <&gpx3 3 0>;
+> +		usb_sel-gpios = <&gpl0 6 0>;
+> +
+> +		max8997,pmic-buck1-uses-gpio-dvs;
+> +		max8997,pmic-buck2-uses-gpio-dvs;
+> +		max8997,pmic-buck5-uses-gpio-dvs;
+> +
+> +		max8997,pmic-ignore-gpiodvs-side-effect;
+> +		max8997,pmic-buck125-default-dvs-idx = <0>;
+> +
+> +		max8997,pmic-buck125-dvs-gpios = <&gpx0 5 GPIO_ACTIVE_HIGH>,
+> +						 <&gpx0 6 GPIO_ACTIVE_HIGH>,
+> +						 <&gpl0 0 GPIO_ACTIVE_HIGH>;
+> +
+> +		max8997,pmic-buck1-dvs-voltage = <1350000>, <1300000>,
+> +						 <1250000>, <1200000>,
+> +						 <1150000>, <1100000>,
+> +						 <1000000>, <950000>;
+> +
+> +		max8997,pmic-buck2-dvs-voltage = <1100000>, <1000000>,
+> +						 <950000>,  <900000>,
+> +						 <1100000>, <1000000>,
+> +						 <950000>,  <900000>;
+> +
+> +		max8997,pmic-buck5-dvs-voltage = <1200000>, <1200000>,
+> +						 <1200000>, <1200000>,
+> +						 <1200000>, <1200000>,
+> +						 <1200000>, <1200000>;
+> +
+> +		pinctrl-0 = <&max8997_irq>, <&otg_gp>, <&usb_sel>;
+> +		pinctrl-names = "default";
+> +
+> +		regulators {
+> +			vadc_reg: LDO1 {
+> +				regulator-name = "VADC_3.3V_C210";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +
+> +			};
+
+Add empty line.
+
+> +			valive_reg: LDO2 {
+> +				regulator-name = "VALIVE_1.1V_C210";
+> +				regulator-min-microvolt = <1100000>;
+> +				regulator-max-microvolt = <1100000>;
+> +				regulator-always-on;
+> +
+> +			};
+> +
+> +			vusb_reg: LDO3 {
+> +				regulator-name = "VUSB_1.1V_C210";
+> +				regulator-min-microvolt = <1100000>;
+> +				regulator-max-microvolt = <1100000>;
+> +			};
+> +
+> +			vmipi_reg: LDO4 {
+> +				regulator-name = "VMIPI_1.8V";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vhsic_reg: LDO5 {
+> +				regulator-name = "VHSIC_1.2V";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <1200000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vpda_reg: LDO6 {
+> +				regulator-name = "VCC_1.8V_PDA";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vcam_reg: LDO7 {
+> +				regulator-name = "CAM_ISP_1.8V";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +			};
+> +
+> +			vusbdac_reg: LDO8 {
+> +				regulator-name = "VUSB+VDAC_3.3V_C210";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +			};
+> +
+> +			vccpda_reg: LDO9 {
+> +				regulator-name = "VCC_2.8V_PDA";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vtouch_reg: LDO11 {
+> +				regulator-name = "TOUCH_2.8V";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vpll_reg: LDO10 {
+> +				regulator-name = "VPLL_1.1V";
+> +				regulator-min-microvolt = <1100000>;
+> +				regulator-max-microvolt = <1100000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vtcam_reg: LDO12 {
+> +				regulator-name = "VT_CAM_1.8V";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +			};
+> +
+> +			vcclcd_reg: LDO13 {
+> +				regulator-name = "VCC_3.0V_LCD";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3000000>;
+> +			};
+> +
+> +			vmotor_reg: LDO14 {
+> +				regulator-name = "VCC_2.8V_MOTOR";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +			};
+> +
+> +			vled_reg: LDO15 {
+> +				regulator-name = "LED_A_2.8V";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +			};
+> +
+> +			camsensor_reg: LDO16 {
+> +				regulator-name = "CAM_SENSOR_IO_1.8V";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +			};
+> +
+> +			vtf_reg: LDO17 {
+> +				regulator-name = "VTF_2.8V";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +			};
+> +
+> +			vtouchled_reg: LDO18 {
+> +				regulator-name = "TOUCH_LED_3.3V";
+> +				regulator-min-microvolt = <2500000>;
+> +				regulator-max-microvolt = <3300000>;
+> +			};
+> +
+> +			vddq_reg: LDO21 {
+> +				regulator-name = "VDDQ_M1M2_1.2V";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <1200000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			varm_breg: BUCK1 {
+> +				//regulator-name = "VARM_1.2V_C210";
+> +				regulator-name = "vdd_arm";
+> +				regulator-min-microvolt = <65000>;
+> +				regulator-max-microvolt = <2225000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vint_breg: BUCK2 {
+> +				regulator-name = "VINT_1.1V_C210";
+> +				regulator-min-microvolt = <65000>;
+> +				regulator-max-microvolt = <2225000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vg3d_breg: BUCK3 {
+> +				regulator-name = "G3D_1.1V";
+> +				regulator-min-microvolt = <900000>;
+> +				regulator-max-microvolt = <1200000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			camisp_breg: BUCK4 {
+> +				regulator-name = "CAM_ISP_CORE_1.2V";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <1200000>;
+> +			};
+> +
+> +			vmem_breg: BUCK5 {
+> +				regulator-name = "VMEM_1.2V";
+> +				regulator-min-microvolt = <1200000>;
+> +				regulator-max-microvolt = <1200000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			vccsub_breg: BUCK7 {
+> +				regulator-name = "VCC_SUB_2.0V";
+> +				regulator-min-microvolt = <2000000>;
+> +				regulator-max-microvolt = <2000000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			safe1_sreg: ESAFEOUT1 {
+> +				regulator-name = "SAFEOUT1";
+> +			};
+> +
+> +			safe2_sreg: ESAFEOUT2 {
+> +				regulator-name = "SAFEOUT2";
+> +				regulator-boot-on;
+> +			};
+> +
+> +			charger_reg: CHARGER {
+> +				regulator-name = "CHARGER";
+> +				regulator-min-microamp = <60000>;
+> +				regulator-max-microamp = <2580000>;
+> +				regulator-always-on;
+> +			};
+> +
+> +			chargercv_reg: CHARGER_CV {
+> +				regulator-name = "CHARGER_CV";
+> +				regulator-min-microvolt = <3800000>;
+> +				regulator-max-microvolt = <4100000>;
+> +				regulator-always-on;
+> +			};
+> +
+
+Empty line, not needed.
+
+> +		};
+> +
+
+Empty line, not needed.
+
+> +	};
+> +};
+> +
+> +
+
+Empty line, not needed. Please fix them in all places.
+
+> +&gpu {
+> +	status = "okay";
+> +
+> +	mali-supply = <&vg3d_breg>;
+> +	regulator-microvolt-offset = <50000>;
+> +	regulator-microsecs-delay = <50>;
+> +};
+> +
+
+and more...
+
+> +
+> +&sdhci_0 {
+> +	status = "okay";
 > +
 > +	bus-width = <8>;
-> +	cap-mmc-highspeed;
-> +	max-frequency = <100000000>;
 > +	non-removable;
-> +	disable-wp;
-> +	mmc-ddr-1_8v;
-> +	mmc-hs200-1_8v;
+> +	vmmc-supply = <&vemmc_reg>;
 > +
-> +	mmc-pwrseq = <&emmc_pwrseq>;
-> +	vmmc-supply = <&vcc_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
-> +};
-> +
-> +/* This is connected to the Bluetooth module: */
-> +&uart_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-> +	pinctrl-names = "default";
-> +	uart-has-rtscts;
-> +};
-> +
-> +/* This UART is brought out to the debug header */
-> +&uart_AO {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_ao_a_pins>;
+> +	pinctrl-0 = <&sd0_clk>, <&sd0_cmd>, <&sd0_bus8>;
 > +	pinctrl-names = "default";
 > +};
 > +
-> +&usb0 {
+> +&sdhci_2 {
 > +	status = "okay";
+> +
+> +	bus-width = <4>;
+> +	cd-gpios = <&gpx3 4 GPIO_ACTIVE_LOW>;
+> +	vmmc-supply = <&vtf_reg>;
+> +
+> +	pinctrl-0 = <&sd2_clk>, <&sd2_cmd>, <&sd2_bus4>;
+> +	pinctrl-names = "default";
 > +};
-> 
+> +
+> +&ehci {
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Duplicated.
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
