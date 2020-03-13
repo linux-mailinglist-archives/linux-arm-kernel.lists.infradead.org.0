@@ -2,68 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA35184CFD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:52:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08918184D1E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:59:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v5VY06+tg5UusZmJZD+ZEsK7i5jLPvFSrHNZGtPU2OI=; b=rMOVXFlrC1te7ORqt32fOZM+G
-	nMalX7F1RIN59g2SeoXMxCQk8Kbr0vLqdQyHEWRJpFjdRd2hzojlpfLfHR9Bl3vrFZWU+pLXodccP
-	BlRERpMuOz4HfMWFU4bOUh9mzgHsr6PhlPeRPEncRUX41uJcVedETNv5NCoZnN2jHZ7DHeL9v9501
-	toovdR3j/Hzv6e6cl3+5dVM5Dp9CaHH1+9/0Qs5/T6djOEChik6F8kHJ0T552zR3SREqVbeHEJLUV
-	AdnLcXLNocZpzHr3/VP4VvQSLLylOVvmPR7F2kal6hl0uHqGepJSH/HLugw/x5own/HKiOMm25fL8
-	HYHtDPApQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xM4GQHfzXoCmwn4wVD8ygwgDMwBEIFzTlRDTF0G16eQ=; b=gplWIi6preONes
+	7byosH8fMImVPdD249toiK5rYOqGC+n6te92ZCx8EDRBeP2IkialSV8qTmDy3hg3qrRyGphYdT2GE
+	I1QqUK1kkYAEPstKWAzbw6YaU7Mjmsz7Xhw8F2q1q0WqzWF9jhQJxnnhg8Vpzc5yUYAMEncvh1oT8
+	3dyivwe7N9dxyrUL08Wysd10T8ZqSkp9fltFkywHRiIOnokNbQpYDeRQ7WIPPuQBdIsrDKKfJUThT
+	zkSij3KyxPWx5mddORpWaGRKI1zRCBH2lg0JxX2jF8cBfEzD5N50+kG0Ac75lG2ti4O57gtO8roNE
+	+ZBTdX5IXm7K5dq4Rn9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnXe-0006We-MB; Fri, 13 Mar 2020 16:52:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCnXU-0006Vz-Om; Fri, 13 Mar 2020 16:52:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5818631B;
- Fri, 13 Mar 2020 09:52:00 -0700 (PDT)
-Received: from [10.37.12.40] (unknown [10.37.12.40])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 019813F534;
- Fri, 13 Mar 2020 09:51:49 -0700 (PDT)
-Subject: Re: [PATCH v4 4/4] drm/panfrost: Register devfreq cooling and attempt
- to add Energy Model
-To: Steven Price <steven.price@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>
-References: <20200309134117.2331-1-lukasz.luba@arm.com>
- <20200309134117.2331-5-lukasz.luba@arm.com>
- <9747ca5c-ba4c-521f-11c1-45ee6a5018e3@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <c7453e1e-cb23-8e2a-d209-c618da9ffbbd@arm.com>
-Date: Fri, 13 Mar 2020 16:51:48 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jCneT-0008Hk-EL; Fri, 13 Mar 2020 16:59:13 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCneD-0008H5-M9
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:58:59 +0000
+Received: by mail-wr1-x435.google.com with SMTP id f3so6019092wrw.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Mar 2020 09:58:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SasAQUXkfroYsOYpPXJJCL2Y1hUNoc4M6M8VYYK0keI=;
+ b=gWa1uZa2BFVfX9rodYZOIjCoKFUb9fp5qZkMsAaV4QGa08HvkgVLCO6cBXU1UsJKgN
+ sV/Bdg7GpHYHtaMnNnODPUFgJmZ7Uy8N6PfaMMIRteWIn4HWlwM1oxyw9SCk3ZmlLSP3
+ am9eD7ZDyTiber1Jf0OSh7XlciTCxnQ8LXNTWVnSC8sJCiB4T0Z7Xm85zygVIgrTM0hw
+ Mfd4KkK0E79rQIFFKNGcNljHjHyTKgjFdJdAEF9kHXSnji1B6T4JY6epYQn0B8nioCs3
+ gLMSV0bsFlv9ZU+SXcRPbx0ylFCA3dvS8QPz5yeHnu0lfuBk7a8l7YxaF4M2okqLv6HM
+ JKDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SasAQUXkfroYsOYpPXJJCL2Y1hUNoc4M6M8VYYK0keI=;
+ b=sETZrPgUc2Oud+hWy/AE7cxMp5XEC8PJ1BQF8yBitz0NmYFoR8yuP01xE04e86tv5E
+ HRZgFFYK2qc7BGTrMY5o9SBS6/vxtfhp79pWQ/PQBM9FirMIrEYTb8R5j0kQZ7FBmcLb
+ yVdkvwD7rQ4pWUVCV1p4Ryfk5AIdDWD+ncMmR4SyURFv/OfcWKxMHj+j5j/FVcF/swcV
+ vsLNlmEo08aiIlrt+Cmj8DB7ORTvapiYVgYqHzPa+j5HgjYv2NHMpy4t1ZuC6fynp1wZ
+ d9g8mYVxKQ6iO7RwpG8LyNGWhehABcmBFhUtj/X98Di4UIkd/4877Gt2coHKjrhB8qqL
+ 8z7A==
+X-Gm-Message-State: ANhLgQ2+7Zox3/r7crwIVf3REXvUYSM9H0UPl/wMlUI9Mna0d9481gjc
+ 4fb5SEiRe/2LJfG7SyBF17A=
+X-Google-Smtp-Source: ADFU+vucg0CqsQ16ZoemjPuQ4xlKbLeo4LxUNxUVpcATUZFISeJiloFJIyIvK7pkhBWDbxKUy6WPqQ==
+X-Received: by 2002:a5d:4683:: with SMTP id u3mr19615631wrq.251.1584118735140; 
+ Fri, 13 Mar 2020 09:58:55 -0700 (PDT)
+Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
+ by smtp.gmail.com with ESMTPSA id v8sm77801355wrw.2.2020.03.13.09.58.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Mar 2020 09:58:54 -0700 (PDT)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [GIT PULL 01/10] dt-bindings: Changes for v5.7-rc1
+Date: Fri, 13 Mar 2020 17:58:39 +0100
+Message-Id: <20200313165848.2915133-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <9747ca5c-ba4c-521f-11c1-45ee6a5018e3@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095201_778297_5DECCE1B 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_095857_728114_5DCB8741 
+X-CRM114-Status: GOOD (  11.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:435 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,67 +97,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "nm@ti.com" <nm@ti.com>, "juri.lelli@redhat.com" <juri.lelli@redhat.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- Liviu Dudau <Liviu.Dudau@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "bsegall@google.com" <bsegall@google.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- Morten Rasmussen <Morten.Rasmussen@arm.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- "khilman@kernel.org" <khilman@kernel.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- Javi Merino Cacho <Javi.MerinoCacho@arm.com>,
- "cw00.choi@samsung.com" <cw00.choi@samsung.com>,
- "mingo@redhat.com" <mingo@redhat.com>, "mgorman@suse.de" <mgorman@suse.de>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "alyssa.rosenzweig@collabora.com" <alyssa.rosenzweig@collabora.com>,
- =?UTF-8?Q?=c3=98rjan_Eide?= <Orjan.Eide@arm.com>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>,
- "b.zolnierkie@samsung.com" <b.zolnierkie@samsung.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "rostedt@goodmis.org" <rostedt@goodmis.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Dietmar Eggemann <Dietmar.Eggemann@arm.com>,
- "airlied@linux.ie" <airlied@linux.ie>,
- "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
- "qperret@google.com" <qperret@google.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "rdunlap@infradead.org" <rdunlap@infradead.org>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "agross@kernel.org" <agross@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Sudeep Holla <Sudeep.Holla@arm.com>,
- "patrick.bellasi@matbug.net" <patrick.bellasi@matbug.net>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>
+Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi ARM SoC maintainers,
 
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
-On 3/9/20 2:15 PM, Steven Price wrote:
-> On 09/03/2020 13:41, Lukasz Luba wrote:
->> Register devfreq cooling device and attempt to register Energy Model. This
->> will add the devfreq device to the Energy Model framework. It will create
->> a dedicated and unified data structures used i.e. in thermal framework.
->> The last NULL parameter indicates that the power model is simplified and
->> created based on DT 'dynamic-power-coefficient', voltage and frequency.
->>
->> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
-> 
-> LGTM!
-> 
-> Reviewed-by: Steven Price <steven.price@arm.com>
+  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
 
-Thank you Steven. I will collect it for v5.
+are available in the Git repository at:
 
-Regards,
-Lukasz
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-dt-bindings
+
+for you to fetch changes up to eba512375e6bc297c674353841523feba03cf712:
+
+  dt-bindings: usb: Add NVIDIA Tegra XUSB device mode controller binding (2020-03-13 09:15:11 +0100)
+
+Thanks,
+Thierry
+
+----------------------------------------------------------------
+dt-bindings: Changes for v5.7-rc1
+
+New IDs are added for clocks that are controlled by the PMC. This
+replaces older IDs that were erroneously provided by the clock and reset
+controller.
+
+This also adds device tree bindings for XUSB pad controller support on
+Tegra194 as well as USB role switching on NVIDIA Tegra SoCs.
+
+----------------------------------------------------------------
+JC Kuo (1):
+      dt-bindings: phy: tegra: Add Tegra194 support
+
+Nagarjuna Kristam (2):
+      dt-bindings: phy: tegra-xusb: Add usb-role-switch
+      dt-bindings: usb: Add NVIDIA Tegra XUSB device mode controller binding
+
+Sowjanya Komatineni (4):
+      dt-bindings: clock: tegra: Add IDs for OSC clocks
+      dt-bindings: tegra: Convert Tegra PMC bindings to YAML
+      dt-bindings: soc: tegra-pmc: Add Tegra PMC clock bindings
+      dt-bindings: soc: tegra-pmc: Add ID for Tegra PMC 32 kHz blink clock
+
+ .../bindings/arm/tegra/nvidia,tegra20-pmc.txt      | 300 -----------------
+ .../bindings/arm/tegra/nvidia,tegra20-pmc.yaml     | 354 +++++++++++++++++++++
+ .../bindings/phy/nvidia,tegra124-xusb-padctl.txt   |  24 ++
+ .../devicetree/bindings/usb/nvidia,tegra-xudc.yaml | 190 +++++++++++
+ include/dt-bindings/clock/tegra114-car.h           |   4 +-
+ include/dt-bindings/clock/tegra124-car-common.h    |   4 +-
+ include/dt-bindings/clock/tegra210-car.h           |   4 +-
+ include/dt-bindings/clock/tegra30-car.h            |   4 +-
+ include/dt-bindings/soc/tegra-pmc.h                |  16 +
+ 9 files changed, 596 insertions(+), 304 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.yaml
+ create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
+ create mode 100644 include/dt-bindings/soc/tegra-pmc.h
 
 _______________________________________________
 linux-arm-kernel mailing list
