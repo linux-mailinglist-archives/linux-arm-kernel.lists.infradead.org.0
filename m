@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B8C9184BA8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:50:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F1AF184BB2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:51:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nw0KNMiL689f1f58DBiXPoZ4Ihw+Ota1tfai0GoamxE=; b=VY5C/uEve9nqAH
-	pbNrYPqBrDEQ8ZIK6L4vlXX/DJY9EVmgBIxlhc8mnaDyL7ztZZJmcyc49Gs2ybAdd34tWcQe2wiJ7
-	Jy/vOwwgIh+qt6Sj7JGuZ6Ph/OJBip7xtXDzRpLdoYtSIeBsMyouxHqDWhB185iq9EdtH1W3cwCMX
-	vGUu8hxNSo+31NH2qSl1lkY2wwBnU29VvnXb1uQwWL5V1AmLDDGtOcyiGndXSjK9UeY2HeMy3A7SU
-	hUpJAVRw2dTEu4m8mhZVWhfZ1BujBvApXhoddGyV5LFZ3yAD9ZxdY31riBhicjWiTaz1mETkRnfqe
-	tYQ3GhOoGqC7nyrhKydg==;
+	List-Owner; bh=H8NSqsZ2wAEKsNNn3+6h4N+JNLR4FzEulF6bd0SwCLY=; b=J9czCORUtFggrI
+	kwTgzVRHpGY3wqCwuFm5jTbJtLbYweI0zrwhIE3drivEkImFerUAMhfd2xopYrMijAbRaGVptRuzT
+	okxa3+OciVfg8MTHXRzq2R4rUMQhx8OPabLeGCPidfK93C3nuqU1Phi+O2eVPXJSIYOHmsVbJBlgE
+	UJjKg8NH2+2HbEWmi4ZAaLa9CQHoIaV4x17ZMZW2rGp890xQYnw+mFGxW+/tzqUoKsffRan2c0Ush
+	AmZfaeX1kBJa7nUep1HGgkhzX7C8xSYaNapnvkEJN5ioc1zrrhds24UnKZfv1rxd9JIVqZTwcnuXe
+	/Dvo+TzTzugRM/lj3OwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCma0-00041h-1X; Fri, 13 Mar 2020 15:50:32 +0000
+	id 1jCmaW-0004XK-LM; Fri, 13 Mar 2020 15:51:04 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmUi-0005Wm-Ao
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:45:07 +0000
+ id 1jCmUm-0005rm-G9
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:45:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8764C31B;
- Fri, 13 Mar 2020 08:45:03 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF7571063;
+ Fri, 13 Mar 2020 08:45:06 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73A0E3F67D;
- Fri, 13 Mar 2020 08:45:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE3123F67D;
+ Fri, 13 Mar 2020 08:45:03 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
-Date: Fri, 13 Mar 2020 15:43:37 +0000
-Message-Id: <20200313154345.56760-19-vincenzo.frascino@arm.com>
+Subject: [PATCH v3 19/26] arm64: vdso: Include common headers in the vdso
+ library
+Date: Fri, 13 Mar 2020 15:43:38 +0000
+Message-Id: <20200313154345.56760-20-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084504_648316_5EA9EA5F 
-X-CRM114-Status: GOOD (  14.79  )
+X-CRM114-CacheID: sfid-20200313_084508_705424_08834056 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -86,96 +87,41 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Introduce asm/vdso/processor.h to contain all the arm64 specific
-functions that are suitable for vDSO inclusion.
+Refactor the vdso implementation to include common headers.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/processor.h      | 16 ++-----------
- arch/arm64/include/asm/vdso/processor.h | 31 +++++++++++++++++++++++++
- 2 files changed, 33 insertions(+), 14 deletions(-)
- create mode 100644 arch/arm64/include/asm/vdso/processor.h
+ arch/arm64/include/asm/vdso/gettimeofday.h | 1 -
+ arch/arm64/kernel/vdso/vgettimeofday.c     | 2 --
+ 2 files changed, 3 deletions(-)
 
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index 5ba63204d078..89ba2c5be504 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -28,6 +28,8 @@
- #include <linux/string.h>
- #include <linux/thread_info.h>
+diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
+index 5a534432aa5d..afba6ba332f8 100644
+--- a/arch/arm64/include/asm/vdso/gettimeofday.h
++++ b/arch/arm64/include/asm/vdso/gettimeofday.h
+@@ -8,7 +8,6 @@
+ #ifndef __ASSEMBLY__
  
-+#include <vdso/processor.h>
-+
- #include <asm/alternative.h>
- #include <asm/cpufeature.h>
- #include <asm/hw_breakpoint.h>
-@@ -47,15 +49,6 @@
- #define TASK_SIZE_64		(UL(1) << vabits_actual)
+ #include <asm/unistd.h>
+-#include <uapi/linux/time.h>
  
- #ifdef CONFIG_COMPAT
--#if defined(CONFIG_ARM64_64K_PAGES) && defined(CONFIG_KUSER_HELPERS)
--/*
-- * With CONFIG_ARM64_64K_PAGES enabled, the last page is occupied
-- * by the compat vectors page.
-- */
--#define TASK_SIZE_32		UL(0x100000000)
--#else
--#define TASK_SIZE_32		(UL(0x100000000) - PAGE_SIZE)
--#endif /* CONFIG_ARM64_64K_PAGES */
- #define TASK_SIZE		(test_thread_flag(TIF_32BIT) ? \
- 				TASK_SIZE_32 : TASK_SIZE_64)
- #define TASK_SIZE_OF(tsk)	(test_tsk_thread_flag(tsk, TIF_32BIT) ? \
-@@ -256,11 +249,6 @@ extern void release_thread(struct task_struct *);
+ #define VDSO_HAS_CLOCK_GETRES		1
  
- unsigned long get_wchan(struct task_struct *p);
+diff --git a/arch/arm64/kernel/vdso/vgettimeofday.c b/arch/arm64/kernel/vdso/vgettimeofday.c
+index 747635501a14..4236cf34d7d9 100644
+--- a/arch/arm64/kernel/vdso/vgettimeofday.c
++++ b/arch/arm64/kernel/vdso/vgettimeofday.c
+@@ -5,8 +5,6 @@
+  * Copyright (C) 2018 ARM Limited
+  *
+  */
+-#include <linux/time.h>
+-#include <linux/types.h>
  
--static inline void cpu_relax(void)
--{
--	asm volatile("yield" ::: "memory");
--}
--
- /* Thread switching */
- extern struct task_struct *cpu_switch_to(struct task_struct *prev,
- 					 struct task_struct *next);
-diff --git a/arch/arm64/include/asm/vdso/processor.h b/arch/arm64/include/asm/vdso/processor.h
-new file mode 100644
-index 000000000000..fb4883212a2d
---- /dev/null
-+++ b/arch/arm64/include/asm/vdso/processor.h
-@@ -0,0 +1,31 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (C) 2020 ARM Ltd.
-+ */
-+#ifndef __ASM_VDSO_PROCESSOR_H
-+#define __ASM_VDSO_PROCESSOR_H
-+
-+#ifndef __ASSEMBLY__
-+
-+#include <asm/page-def.h>
-+
-+#ifdef CONFIG_COMPAT
-+#if defined(CONFIG_ARM64_64K_PAGES) && defined(CONFIG_KUSER_HELPERS)
-+/*
-+ * With CONFIG_ARM64_64K_PAGES enabled, the last page is occupied
-+ * by the compat vectors page.
-+ */
-+#define TASK_SIZE_32		UL(0x100000000)
-+#else
-+#define TASK_SIZE_32		(UL(0x100000000) - PAGE_SIZE)
-+#endif /* CONFIG_ARM64_64K_PAGES */
-+#endif /* CONFIG_COMPAT */
-+
-+static inline void cpu_relax(void)
-+{
-+	asm volatile("yield" ::: "memory");
-+}
-+
-+#endif /* __ASSEMBLY__ */
-+
-+#endif /* __ASM_VDSO_PROCESSOR_H */
+ int __kernel_clock_gettime(clockid_t clock,
+ 			   struct __kernel_timespec *ts)
 -- 
 2.25.1
 
