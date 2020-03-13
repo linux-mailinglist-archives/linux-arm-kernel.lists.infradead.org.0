@@ -2,57 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8991184DED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:49:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E7C0184DF9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:50:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n1spNdDWY/niUwhdf+2dBGe+Uflnb+axgtVXvgzF3fw=; b=eziCaxyxGe4j00
-	NLaeKndAIyk4Ihl4j/Tu562z1jKQ6VdyNPfxbN83L5L7E9ndTXcy+Y1e7jfF0PVihujT2SwTmC4mS
-	zB+xIaiOuLLCMBzcn7EniNTCkEmqsMwk1igCyfoODHtIBg+gdFELOaxd8jbQB/G9MWK2LHZq6tAiM
-	EZd0AUQNTaskqAAh2IZAHkw4ftAE3+JTikbbhE6WoSLd2wEZrOVNsQFq3Iau1V7yDhJbvur0XGVVj
-	MamOIIDJ8zbB6gbYEvOAqo7CikOd2fK24eFToWYlebycizElnMtOJL8IHmFEAYekOmfSaJTBYIz25
-	RfNwKJ7ULzfXBU0AwzGA==;
+	List-Owner; bh=pb3+mNCxz4E7tBYe+H/WpJyIq61Ot1pcfFb2mBSbODg=; b=tqPmPrNik6OiGi
+	itz+Iz1XDMUzjiac9DZIGVqXkVxAtFwwihGrNsSql27hDMURLT+c+ie/YwEXq/JBoy2PJw5NrOasG
+	uuJKGmjsXOo7VDs4YsfhFF3lbXz7iKffUGPWcM1yl9JyjyniF2ewvxVMOf8sdYyjgjwEuq/Dz/m8Q
+	33L5Qn5T3Pc0BkiksA5KYTWYOkVTSn1s3kJ/80j3TZzFCA+PS7P3prBffGc1P0IUj/ORP4bFXKW64
+	K4XuHUZtm9uUU2JqLKfsrXjV+Bh1LX6JFk/huvBqm3RTEXXKDguBRckGmci8QVJkuIILt3fqnT4Ho
+	mMpIxlh87RlZq1YDpK5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCoRF-0004fR-6p; Fri, 13 Mar 2020 17:49:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCoR8-0004f6-E0
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:49:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4BADC31B;
- Fri, 13 Mar 2020 10:49:29 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B64713F534;
- Fri, 13 Mar 2020 10:49:28 -0700 (PDT)
-Date: Fri, 13 Mar 2020 17:49:23 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Takashi Iwai <tiwai@suse.de>
-Subject: Re: [PATCH] perf: arm-ccn: Use scnprintf() for avoiding potential
- buffer overflow
-Message-ID: <20200313174922.GA54224@lakrids.cambridge.arm.com>
-References: <20200311090555.20232-1-tiwai@suse.de>
+	id 1jCoST-0006EK-Ap; Fri, 13 Mar 2020 17:50:53 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCoSK-0006Dv-P2
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 17:50:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=nD3n3nGUFD/pHjTY+G4h6EltxeSMd4aqjlspJlueiZc=; b=QJPcmg8lwKnxZTlFKNf/f5oRY0
+ ZB6Bj4phk1s6tqn+pF/fHgaG7taE/juW1XktSjXb9BMmKv61juAkTfewq+0jTfoAnwbX0uNQGtPfb
+ Cni5bgQakDp2+otFPqayeIHCRN+OvezG4g887Rco3YXXiYfpyLoGaQlgwyhq67H8+ja8=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jCoSE-0007Gl-Ew; Fri, 13 Mar 2020 18:50:38 +0100
+Date: Fri, 13 Mar 2020 18:50:38 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Oleksij Rempel <o.rempel@pengutronix.de>
+Subject: Re: [PATCH v3 2/2] ARM: dts: imx6q-marsboard: properly define rgmii
+ PHY
+Message-ID: <20200313175038.GA27841@lunn.ch>
+References: <20200313102534.5438-1-o.rempel@pengutronix.de>
+ <20200313102534.5438-3-o.rempel@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200311090555.20232-1-tiwai@suse.de>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20200313102534.5438-3-o.rempel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_104930_512455_B3FF751C 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_105044_815153_BB4B89A7 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,94 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, netdev@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 10:05:55AM +0100, Takashi Iwai wrote:
-> Since snprintf() returns the would-be-output size instead of the
-> actual output size, the succeeding calls may go beyond the given
-> buffer limit.  Fix it by replacing with scnprintf().
-
-The buffer limit is PAGE_SIZE bytes here, so I don't think that we can
-practically go beyond the buffer limit in this code where we only print
-tens of chacters into the buffer. On any system this runs on, PAGE_SIZE
-is at least 4096.
-
-I'm happy to make this change as it's generally the right thing to do,
-but I do want the commit message to be very clear that this is a
-cleanup, and not a fix for a bug in practice.
-
-Can you please either reword the commit message to that effect, or if
-this can occur in practice, explain how?
-
-Thanks,
-Mark.
-
+On Fri, Mar 13, 2020 at 11:25:34AM +0100, Oleksij Rempel wrote:
+> The Atheros AR8035 PHY can be autodetected but can't use interrupt
+> support provided on this board. Define MDIO bus and the PHY node to make
+> it work properly.
 > 
-> Signed-off-by: Takashi Iwai <tiwai@suse.de>
-> ---
->  drivers/perf/arm-ccn.c | 18 +++++++++---------
->  1 file changed, 9 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/perf/arm-ccn.c b/drivers/perf/arm-ccn.c
-> index fea354d6fb29..cee579d428e7 100644
-> --- a/drivers/perf/arm-ccn.c
-> +++ b/drivers/perf/arm-ccn.c
-> @@ -330,13 +330,13 @@ static ssize_t arm_ccn_pmu_event_show(struct device *dev,
->  
->  	res = snprintf(buf, PAGE_SIZE, "type=0x%x", event->type);
->  	if (event->event)
-> -		res += snprintf(buf + res, PAGE_SIZE - res, ",event=0x%x",
-> +		res += scnprintf(buf + res, PAGE_SIZE - res, ",event=0x%x",
->  				event->event);
->  	if (event->def)
-> -		res += snprintf(buf + res, PAGE_SIZE - res, ",%s",
-> +		res += scnprintf(buf + res, PAGE_SIZE - res, ",%s",
->  				event->def);
->  	if (event->mask)
-> -		res += snprintf(buf + res, PAGE_SIZE - res, ",mask=0x%x",
-> +		res += scnprintf(buf + res, PAGE_SIZE - res, ",mask=0x%x",
->  				event->mask);
->  
->  	/* Arguments required by an event */
-> @@ -344,25 +344,25 @@ static ssize_t arm_ccn_pmu_event_show(struct device *dev,
->  	case CCN_TYPE_CYCLES:
->  		break;
->  	case CCN_TYPE_XP:
-> -		res += snprintf(buf + res, PAGE_SIZE - res,
-> +		res += scnprintf(buf + res, PAGE_SIZE - res,
->  				",xp=?,vc=?");
->  		if (event->event == CCN_EVENT_WATCHPOINT)
-> -			res += snprintf(buf + res, PAGE_SIZE - res,
-> +			res += scnprintf(buf + res, PAGE_SIZE - res,
->  					",port=?,dir=?,cmp_l=?,cmp_h=?,mask=?");
->  		else
-> -			res += snprintf(buf + res, PAGE_SIZE - res,
-> +			res += scnprintf(buf + res, PAGE_SIZE - res,
->  					",bus=?");
->  
->  		break;
->  	case CCN_TYPE_MN:
-> -		res += snprintf(buf + res, PAGE_SIZE - res, ",node=%d", ccn->mn_id);
-> +		res += scnprintf(buf + res, PAGE_SIZE - res, ",node=%d", ccn->mn_id);
->  		break;
->  	default:
-> -		res += snprintf(buf + res, PAGE_SIZE - res, ",node=?");
-> +		res += scnprintf(buf + res, PAGE_SIZE - res, ",node=?");
->  		break;
->  	}
->  
-> -	res += snprintf(buf + res, PAGE_SIZE - res, "\n");
-> +	res += scnprintf(buf + res, PAGE_SIZE - res, "\n");
->  
->  	return res;
->  }
-> -- 
-> 2.16.4
-> 
+> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
