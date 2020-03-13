@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9628184350
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:10:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90EBF184351
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:10:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5KCrEu9E/2zSqnnY7VEMjIpFUaVVIiXxexmr+dRocTc=; b=T2HlvebkFkGQGwfufRBIGzDVCw
-	HdtamualaspOZQlO7UC7n7gfAU1fzIMVYt2FCiSmb7zyfRJasYuXM0c/xyfmuVaK14hd2BnZvPyfv
-	wPgIlwaqvasswzffh4br1ukf9PiOllnhPMeyVPVPDnuDptXralSlcjOHR1ZPLUPlTh5RSX/j16lxj
-	qYsAt4pDqdjzqLBTqw0+D8lDDxPwA5s5LEEF3jcvv0zWWKHKBK1lYxBpTbPoFkKqDEVo7VIrLWZ/C
-	byfqTEQCCLuAdTDvha6FyD69JcwcACQ7NrIcBN0WqJM52xvR9zPnoFNgFP2T0ch9cp25BpowRdIlT
-	SZe5EBwQ==;
+	bh=icU9sFhBaMjotBlTn/dcn9YU5xwOpAi2ukCOhKrkwQo=; b=DJk1Wx5OiXIy/IHm6/jWnMuPQ9
+	X+LAcvsAtY1uaQ23EvkLIbkPZ3zzah8RqXQPd3hlK5+IyExHWVej0K+3rbTgKhNIVzZ6y/ue5U5fl
+	3lddSdfCoeObr3pNmbuwBtwWbH+Xt4nGRNspipIrYHVZcCzpCpog72UcGmCCs7sY2dIFJeUggOWto
+	+zHPaX34tly9lQX+RbXQKC4zSsZlCCBp0WHexXue8Ktagrqu6brjaOMM+C9EcU9/aXg34mydBAXzx
+	J9z2Uq8uX18AgeFfurQg/jpuQj0Ie+T9Lvsq8GYEDbWUoZh0DNRrglCXGIBsJNc9tHBgS8lm2Ak+2
+	boR9sODA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgKI-0006MS-1a; Fri, 13 Mar 2020 09:09:54 +0000
+	id 1jCgKg-0006cp-9J; Fri, 13 Mar 2020 09:10:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgGv-0002x8-Vz
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:06:28 +0000
+ id 1jCgH0-00031M-8w
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 09:06:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A0999FEC;
- Fri, 13 Mar 2020 02:06:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FAC4FEC;
+ Fri, 13 Mar 2020 02:06:29 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D93FF3F67D;
- Fri, 13 Mar 2020 02:06:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 201993F67D;
+ Fri, 13 Mar 2020 02:06:24 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v7 14/17] arm64: suspend: restore the kernel ptrauth keys
-Date: Fri, 13 Mar 2020 14:35:01 +0530
-Message-Id: <1584090304-18043-15-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v7 15/17] kconfig: Add support for 'as-option'
+Date: Fri, 13 Mar 2020 14:35:02 +0530
+Message-Id: <1584090304-18043-16-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 References: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_020626_169974_7757A1D2 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20200313_020630_374439_0BF34064 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -64,13 +64,14 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kbuild@vger.kernel.org,
  Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
  Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
  Amit Daniel Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
  Ard Biesheuvel <ardb@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -78,93 +79,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch restores the kernel keys from current task during cpu resume
-after the mmu is turned on and ptrauth is enabled.
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-A flag is added in macro ptrauth_keys_install_kernel to check if isb
-instruction needs to be executed.
+Currently kconfig does not have a feature that allows to detect if the
+used assembler supports a specific compilation option.
 
-Reviewed-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
+Introduce 'as-option' to serve this purpose in the context of Kconfig:
+
+        config X
+                def_bool $(as-option,...)
+
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+Cc: linux-kbuild@vger.kernel.org
+Acked-by: Masahiro Yamada <masahiroy@kernel.org>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
- arch/arm64/include/asm/asm_pointer_auth.h | 6 ++++--
- arch/arm64/kernel/entry.S                 | 4 ++--
- arch/arm64/mm/proc.S                      | 2 ++
- 3 files changed, 8 insertions(+), 4 deletions(-)
+ scripts/Kconfig.include | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
-index d3f4aee..ce2a848 100644
---- a/arch/arm64/include/asm/asm_pointer_auth.h
-+++ b/arch/arm64/include/asm/asm_pointer_auth.h
-@@ -39,14 +39,16 @@ alternative_if ARM64_HAS_GENERIC_AUTH
- alternative_else_nop_endif
- 	.endm
+diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+index 85334dc..a1c1925 100644
+--- a/scripts/Kconfig.include
++++ b/scripts/Kconfig.include
+@@ -31,6 +31,12 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -S -x c /dev/null -o /de
+ # Return y if the linker supports <flag>, n otherwise
+ ld-option = $(success,$(LD) -v $(1))
  
--	.macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
-+	.macro ptrauth_keys_install_kernel tsk, sync, tmp1, tmp2, tmp3
- alternative_if ARM64_HAS_ADDRESS_AUTH
- 	mov	\tmp1, #THREAD_KEYS_KERNEL
- 	add	\tmp1, \tsk, \tmp1
- 	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KERNEL_KEY_APIA]
- 	msr_s	SYS_APIAKEYLO_EL1, \tmp2
- 	msr_s	SYS_APIAKEYHI_EL1, \tmp3
-+	.if     \sync == 1
- 	isb
-+	.endif
- alternative_else_nop_endif
- 	.endm
- 
-@@ -55,7 +57,7 @@ alternative_else_nop_endif
- 	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
- 	.endm
- 
--	.macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
-+	.macro ptrauth_keys_install_kernel tsk, sync, tmp1, tmp2, tmp3
- 	.endm
- 
- #endif /* CONFIG_ARM64_PTR_AUTH */
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 3dad2d0..6273d7b 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -178,7 +178,7 @@ alternative_cb_end
- 
- 	apply_ssbd 1, x22, x23
- 
--	ptrauth_keys_install_kernel tsk, x20, x22, x23
-+	ptrauth_keys_install_kernel tsk, 1, x20, x22, x23
- 	.else
- 	add	x21, sp, #S_FRAME_SIZE
- 	get_current_task tsk
-@@ -900,7 +900,7 @@ ENTRY(cpu_switch_to)
- 	ldr	lr, [x8]
- 	mov	sp, x9
- 	msr	sp_el0, x1
--	ptrauth_keys_install_kernel x1, x8, x9, x10
-+	ptrauth_keys_install_kernel x1, 1, x8, x9, x10
- 	ret
- ENDPROC(cpu_switch_to)
- NOKPROBE(cpu_switch_to)
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index 5a11a89..4450dc8 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -11,6 +11,7 @@
- #include <linux/linkage.h>
- #include <asm/assembler.h>
- #include <asm/asm-offsets.h>
-+#include <asm/asm_pointer_auth.h>
- #include <asm/hwcap.h>
- #include <asm/pgtable.h>
- #include <asm/pgtable-hwdef.h>
-@@ -137,6 +138,7 @@ alternative_if ARM64_HAS_RAS_EXTN
- 	msr_s	SYS_DISR_EL1, xzr
- alternative_else_nop_endif
- 
-+	ptrauth_keys_install_kernel x14, 0, x1, x2, x3
- 	isb
- 	ret
- SYM_FUNC_END(cpu_do_resume)
++# $(as-option,<flag>)
++# /dev/zero is used as output instead of /dev/null as some assembler cribs when
++# both input and output are same. Also both of them have same write behaviour so
++# can be easily substituted.
++as-option = $(success, $(CC) $(CLANG_FLAGS) $(1) -c -x assembler /dev/null -o /dev/zero)
++
+ # $(as-instr,<instr>)
+ # Return y if the assembler supports <instr>, n otherwise
+ as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
 -- 
 2.7.4
 
