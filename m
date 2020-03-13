@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24E0E183E64
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:11:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B37BD183E75
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:12:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xAfdmCK/rkXPZXy+szW2MYGW5h24rC8IVmoQhcDfnhA=; b=QR0+SHbE08xQbs
-	hfQvLEt+dDKYcnQ6kyTVorbMcWKgEKOBu3nsONsbQAGcecs1oM8WveTTr+0yQgr/lSoTLivFpXNbn
-	burJ9eVOwI3fqBdxo1TsA8/NOYbDEekFJe3HRQ8V9er+49H/VrskKWMx+WTYRKF1N2nz744ztwiTF
-	hzF6d6L+4A9M0QyemR2lxzOjrwabAH1wdzfGuSUE/zNeKhQT77M0gJwp1lpwhSYfhbL/XEm21hHZR
-	8sbn0gZBNZAH2Ppf2deldYLhAhRgdWczH4jc6etakmoc+DZUQBgWcP48F03HteCEOW26GWooMfnmx
-	TXRvwliqy479faGrrFBg==;
+	List-Owner; bh=hbKVs5s+TGgGT5OMxOkeDApJMFcyiuVe3+5Kub8Ib8M=; b=bQnmQfLYyJwBty
+	3VUeEJO3EQVMkwovdA/8elPcgmhDQfNfON13RDtwiQIU6MDoVA/nnmRf8yHzhm70mt7CGAPhKc/vP
+	I8Bb5+gMASWYQCWJXGJnGwD0GlZfTOCdwJD5gtbDpjzjkCn0kSy2P1Fw1utKrCgZ7e/sTXSX6ycLc
+	18RIVDY8btwFexzin7MW1az7mSnlZqFXIRrhPp5WVogMz3x8sijzqAXWRBE1s61AhJ+l368lYHLKY
+	wdMf6FSZtcUsQ6uwsSSRw11ULUdBsbUlHJG+S0B0jpxSgO4S7PXgVnUCxEh/ZJi/BREnwcwFTXeUQ
+	Hwr5jPerqqD87zMd8pWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYrc-0006AQ-Lf; Fri, 13 Mar 2020 01:11:48 +0000
+	id 1jCYry-0006WO-Nc; Fri, 13 Mar 2020 01:12:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYrU-00069h-Ev; Fri, 13 Mar 2020 01:11:41 +0000
+ id 1jCYri-0006Q3-LY; Fri, 13 Mar 2020 01:11:55 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 134B9206EB;
- Fri, 13 Mar 2020 01:11:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3FB56206EB;
+ Fri, 13 Mar 2020 01:11:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584061900;
- bh=IVJisS2GXrsxrK9O9HPwtS0E/pajmPEpiboizL+NXBk=;
+ s=default; t=1584061914;
+ bh=h4bPyPm/Sm9lF/OmxTJ07z1JAhtZcaucXFkueOwMQYs=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=Yyd3MsF7QPgOVGGT/yNCY9vzU56TCnh7wEzl/aelJHdYI/NE8WNuOdQmAyh5sPB3O
- 6YFk69qvOs6vVxKqaggWyf2G1033dkXPkrtP2JXyGV93b5q9BuQqOKJJ4gebKVUJ7j
- 3UlUQwnLGlCtjLY6+JejUCpMGE2V/Yo/2VhMaj+Q=
+ b=L8gWd01GOJPLWBVOF2VUOqULsENOZVKgTTlgP2cq0rv9AN0rHPu+bxidHlYK1d6C1
+ j+cNuzFZInccS5X8889e7tsruGdB4ychm5pD8yNYJm5D5BXpjfiG86rJtFkmB+EwVt
+ lessXmkSmrbMv01nOr02JpXVmh/oOC4RLs8du0eI=
 MIME-Version: 1.0
-In-Reply-To: <adc5810f9ed6400940f36be6e0a3a7255c557687.1582533919.git-series.maxime@cerno.tech>
+In-Reply-To: <1779dd1489125be571fb3c2ee3e04c32f9875420.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <adc5810f9ed6400940f36be6e0a3a7255c557687.1582533919.git-series.maxime@cerno.tech>
-Subject: Re: [PATCH 15/89] clk: bcm: rpi: Create a data structure for the
- clocks
+ <1779dd1489125be571fb3c2ee3e04c32f9875420.1582533919.git-series.maxime@cerno.tech>
+Subject: Re: [PATCH 14/89] clk: bcm: rpi: Make sure the clkdev lookup is
+ removed
 From: Stephen Boyd <sboyd@kernel.org>
 To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Date: Thu, 12 Mar 2020 18:11:39 -0700
-Message-ID: <158406189924.149997.7523053804639833250@swboyd.mtv.corp.google.com>
+Date: Thu, 12 Mar 2020 18:11:53 -0700
+Message-ID: <158406191350.149997.7619291875265095634@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_181140_518823_264CE374 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20200312_181154_726513_AE1FCDFF 
+X-CRM114-Status: UNSURE (   6.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -90,13 +90,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Maxime Ripard (2020-02-24 01:06:17)
-> So far the driver has really only been providing a single clock, and stored
-> both the data associated to that clock in particular with the data
-> associated to the "controller".
+Quoting Maxime Ripard (2020-02-24 01:06:16)
+> The clkdev lookup created for the cpufreq device is never removed if
+> there's an issue later in probe or at module removal time.
 > 
-> Since we will change that in the future, let's decouple the clock data from
-> the provider data.
+> Let's convert to the managed variant of the clk_hw_register_clkdev function
+> to make sure it happens.
 > 
 > Cc: Michael Turquette <mturquette@baylibre.com>
 > Cc: Stephen Boyd <sboyd@kernel.org>
