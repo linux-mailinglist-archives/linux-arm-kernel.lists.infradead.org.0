@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 852411846BE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:21:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 217F01846C4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:23:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Fs2Kbznxd5ccAlYHpB+T6qPMEK/Qs2K6+gtx67V69g=; b=lGtbMTOEWkaR/Q
-	PSvf2iE1+RbHMSHt+PcJEd+LBb5qaisoWsHefBRLN2Ijbck1Akd+PwzElAYtBT2gX4yYrwPxpHrUV
-	XB/fKjQT8lKme0FPb0RhK5e2voTY21EvADq40ODVHH0ykkBnc5KxhTh2AYqlmE6Nd9aGRXqV6Ugbf
-	+U3cI1eMDVTjklpXEIHExBNUnvxL3uAw7mNtxpYFGtbMSz5pvz0f0J8AcKhxnHz7/jvZGrGPAB6DQ
-	PHu18at4hKdqsHwl6JdKP8tb7marLDEHtFmFZIVKd0RVux7WP9tVNVWZ3he8cFhkxvTcy54tdHS1c
-	BMJgKVpNsj4AUELBPLNg==;
+	List-Owner; bh=6984Mtc3RsxBGZUK4tlX1N9yOABtXwz2EzatbgdL2Vs=; b=ELw/MG9I12152y
+	jZ1xS2EdDfCe8n/pU3abE825CbMLPfwiKsoSE2yob5Uf2aqXOk/vh/sDjCLG0s4c9lGfjpMJQzkGx
+	4Ccs0S/SPiNzlYbGneuynDu1dTcHfNy5EgsVda29P79k1aPDC6S6ay5/VlXCDYst0FJsdqu3xzD+7
+	veZ0NoNhSSf6Bw9Od0eOIJt43wdkLkfOF7yn22jrIQHisHLOJVEsHltvRk6Iacj0X/+CjjenIy/WN
+	kTlZF3yjGlNWkbN4XiAHOkGeWcK078dnZXXASP6fWdElfueT52Vfc7YjNumkzU+nZN2InyR5tv8wo
+	zYApbHavlPvVtDimTXlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCjJG-0001of-Vv; Fri, 13 Mar 2020 12:21:03 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCjJ8-0001nR-QU
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:20:56 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 6E41A634C87;
- Fri, 13 Mar 2020 14:19:49 +0200 (EET)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1jCjI5-0001il-Np; Fri, 13 Mar 2020 14:19:49 +0200
-Date: Fri, 13 Mar 2020 14:19:49 +0200
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [v2 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200313121949.GD5730@valkosipuli.retiisi.org.uk>
-References: <20200313110350.10864-1-robert.foss@linaro.org>
- <20200313110350.10864-2-robert.foss@linaro.org>
+	id 1jCjLA-0002KR-Pz; Fri, 13 Mar 2020 12:23:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCjKy-0002JU-W9
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:22:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 229FA30E;
+ Fri, 13 Mar 2020 05:22:48 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D4143F534;
+ Fri, 13 Mar 2020 05:22:47 -0700 (PDT)
+Date: Fri, 13 Mar 2020 12:22:45 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Xiao Yang <yangx.jy@cn.fujitsu.com>
+Subject: Re: Current status about arm64 livepatch support
+Message-ID: <20200313122244.GI42546@lakrids.cambridge.arm.com>
+References: <5E5F5647.3040705@cn.fujitsu.com> <5E6AEF8B.4090905@cn.fujitsu.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200313110350.10864-2-robert.foss@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <5E6AEF8B.4090905@cn.fujitsu.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_052055_221650_401DA9C8 
-X-CRM114-Status: GOOD (  21.03  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200313_052249_074323_32F0A240 
+X-CRM114-Status: GOOD (  14.63  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,215 +63,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Torsten Duwe <duwe@suse.de>, Mark Brown <broonie@kernel.org>,
+ Torsten Duwe <duwe@lst.de>, Julien Thierry <jthierry@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
+On Fri, Mar 13, 2020 at 10:27:23AM +0800, Xiao Yang wrote:
+> Hi,
+> 
+> Ping.
+> 
+> Best Regards,
+> Xiao Yang
+> 
+> On 2020/3/4 15:18, Xiao Yang wrote:
+> > Hi Torsten,
+> > 
+> > Sorry to bother you.
+> > 
+> > I focus on arm64 livepatch support recently and saw that you have tried
+> > to implement it by:
+> > -------------------------------------------------------------------------------
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609126.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609124.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609125.html
+> > -------------------------------------------------------------------------------
+> > 
+> > This patch set seems to be blocked because of some issues, but your
+> > another patch set inlcuding the first one "arm64: implement ftrace with
+> > regs" has been merged into upstream kernel:
+> > -------------------------------------------------------------------------------
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631104.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631107.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631105.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631106.html
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631114.html
+> > --------------------------------------------------------------------------------
+> > 
+> > Could you tell me current status about arm64 livepatch support?
+> > For example:
+> > 1) Are you(or someone) still working on arm64 livepatch support?
+> > 2) Are there some unresolved problems about arm64 livepatch support?
+> >     What are they?
+> > 3) Will you send a newer version for arm64 livepatch support recently?
 
-On Fri, Mar 13, 2020 at 12:03:48PM +0100, Robert Foss wrote:
-> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> 
-> This patch adds documentation of device tree in YAML schema for the
-> OV8856 CMOS image sensor.
-> 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> ---
-> 
-> - Changes since v4:
->   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
->   * Add clock-lanes property to example
->   * robher: Fix syntax error in devicetree example
-> 
-> - Changes since v3:
->   * robher: Fix syntax error
->   * robher: Removed maxItems
->   * Fixes yaml 'make dt-binding-check' errors
-> 
-> - Changes since v2:
->   Fixes comments from from Andy, Tomasz, Sakari, Rob.
->   * Convert text documentation to YAML schema.
-> 
-> - Changes since v1:
->   Fixes comments from Sakari, Tomasz
->   * Add clock-frequency and link-frequencies in DT
-> 
->  .../devicetree/bindings/media/i2c/ov8856.yaml | 133 ++++++++++++++++++
->  MAINTAINERS                                   |   1 +
->  2 files changed, 134 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yaml b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> new file mode 100644
-> index 000000000000..f5cb9add9277
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> @@ -0,0 +1,133 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (c) 2019 MediaTek Inc.
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
-> +
-> +maintainers:
-> +  - Ben Kao <ben.kao@intel.com>
+1) I beleive a few people are working on portions of this.
 
-Is Ben aware of this?
+2) I believe that some work is necessary.
 
-> +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> +
-> +description: |-
-> +  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapixel, CMOS
-> +  image sensor that delivers 3264x2448 at 30fps. It provides full-frame,
-> +  sub-sampled, and windowed 10-bit MIPI images in various formats via the
-> +  Serial Camera Control Bus (SCCB) interface. This chip is programmable
-> +  through I2C and two-wire SCCB. The sensor output is available via CSI-2
-> +  serial data output (up to 4-lane).
-> +
-> +properties:
-> +  compatible:
-> +    const: ovti,ov8856
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    description:
-> +      Input clock for the sensor.
-> +    items:
-> +      - const: xvclk
-> +
-> +  clock-frequency:
-> +    description:
-> +      Frequency of the xvclk clock in Hertz.
-> +
-> +  dovdd-supply:
-> +    description:
-> +      Definition of the regulator used as interface power supply.
-> +
-> +  avdd-supply:
-> +    description:
-> +      Definition of the regulator used as analog power supply.
-> +
-> +  dvdd-supply:
-> +    description:
-> +      Definition of the regulator used as digital power supply.
-> +
-> +  reset-gpios:
-> +    description:
-> +      The phandle and specifier for the GPIO that controls sensor reset.
-> +      This corresponds to the hardware pin XSHUTDOWN which is physically
-> +      active low.
-> +
-> +  port:
-> +    type: object
-> +    additionalProperties: false
-> +    description:
-> +      A node containing input and output port nodes with endpoint definitions
-> +      as documented in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> +
-> +    properties:
-> +      endpoint:
-> +        type: object
-> +
-> +        properties:
-> +          clock-lanes:
-> +            maxItems: 1
-> +
-> +          data-lanes:
-> +            maxItems: 1
-> +
-> +          remote-endpoint: true
-> +
-> +        required:
-> +          - clock-lanes
+   Julien Thierry has done some work on objtool, which is necessary to
+   check ensure that sequences (including assembly functions) manipulate
+   the stack, and calls/returns as we expect. Mark Brown has been
+   converting our assembly to use modern annotations which objtool
+   consumes when checking this.
 
-Do you need the clock-lanes property, i.e. does the device support lane
-reordering? If not, it should be removed.
+   There might be additional assembly work necessary for this, depending
+   on any deecisions we make for objtool.
 
-> +          - data-lanes
-> +          - remote-endpoint
-> +
-> +    required:
-> +      - endpoint
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - clock-frequency
-> +  - dovdd-supply
-> +  - avdd-supply
-> +  - dvdd-supply
-> +  - reset-gpios
-> +  - port
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +    #include <dt-bindings/clock/qcom,camcc-sdm845.h>
-> +
-> +    ov8856: camera-sensor@10 {
-> +        compatible = "ovti,ov8856";
-> +        reg = <0x10>;
-> +        reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
-> +        pinctrl-names = "default";
-> +        pinctrl-0 = <&clk_24m_cam>;
-> +
-> +        clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
-> +        clock-names = "xvclk";
-> +        clock-frequency = <19200000>;
-> +
-> +        avdd-supply = <&mt6358_vcama2_reg>;
-> +        dvdd-supply = <&mt6358_vcamd_reg>;
-> +        dovdd-supply = <&mt6358_vcamio_reg>;
-> +
-> +        port {
-> +            wcam_out: endpoint {
-> +                remote-endpoint = <&mipi_in_wcam>;
-> +                clock-lanes = <0>;
-> +                data-lanes = <1 2 3 4>;
-> +                link-frequencies = /bits/ 64 <360000000 180000000>;
-> +            };
-> +        };
-> +    };
-> +
-> +...
-> \ No newline at end of file
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index a6fbdf354d34..0f99e863978a 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -12355,6 +12355,7 @@ L:	linux-media@vger.kernel.org
->  T:	git git://linuxtv.org/media_tree.git
->  S:	Maintained
->  F:	drivers/media/i2c/ov8856.c
-> +F:	Documentation/devicetree/bindings/media/i2c/ov8856.yaml
->  
->  OMNIVISION OV9650 SENSOR DRIVER
->  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
+   For reliable stack tracing we may need to rework some assemvly and/or
+   rework the stack tracing code. That will likely depend on the objtool
+   bits.
 
--- 
-Regards,
-
-Sakari Ailus
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
