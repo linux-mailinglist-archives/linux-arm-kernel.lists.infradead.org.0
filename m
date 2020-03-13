@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E78971843E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:37:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABBEB1843DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 10:36:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FmqGtFpjrH3BvgVkSwTp7m0AaV2CPLVqRqxdVG4UZO8=; b=JpwCu3rkQabZQ2
-	pfewd7rAm3FoM7q3b+QzvCwiBJzKbKEE4hOffBMZvyI4nZsv4MGeQM/+02F3eKXLNFK2ZYlLkv3Y0
-	XocUmS3WL3fqPWcRH5VZVbhZ8cWJxFSTME557y/Y63MthwRIBoupixqZWnFWVsZU6jf7c0UgvwZOM
-	KS0nAJpdn70U9kSp2xrP5avLWTpTVsrGacUtXoO0+u3VTdkiQ4iocs5jphNc+ZSuXXqg1WLS+d2jM
-	aAyeLLFIz6jTfD3LrEJxxAd857fYy4QU0SZUR88+IFNl4cTl2ub9lNke7Ih6sLADXiPWlrB224iY3
-	9X62jES0qKeB7LzaJoEg==;
+	List-Owner; bh=bcKE4dkWziTJ2v93r4nZNqnabYlO88SUp8fhwZalpPs=; b=E3IVkq2ocNRldJ
+	oa76i0QggLE9HcHZzNcsWFfXI+8VUAcjali9PCqg1mCtLQUcKpg5z6zjzTbzzTsN6F4hdtm1tnMGf
+	7blGh5c+GwpdCDNH5SRoTHuS1VW+eUww+yq3xaKp+ueg7T0kUbRX9Nnbi5VznX16n56lyLmObwQKd
+	qNMjyMjOLjgKEnQ4KjcA5pI6m+wLQ5egJnudcZIwvza0lb/MlsE8HWzZRXEtxq4FRmvMeSBfbvZ64
+	kC/QBd64ZfMc1KPGKVAqlWS9wMV+WDdAXnlOuGBjPdhq+6OgTe4xih+gc596Haw0C53JMhmzU7dsV
+	lOUJNZQ2bn4mlyfSvI0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgkm-0000iy-Co; Fri, 13 Mar 2020 09:37:16 +0000
+	id 1jCgjb-0007xM-FL; Fri, 13 Mar 2020 09:36:03 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgiH-0005hG-R5; Fri, 13 Mar 2020 09:34:43 +0000
-X-UUID: bed0b56741e144c6b40fe0c054f459ff-20200313
+ id 1jCgiE-0005hG-BX; Fri, 13 Mar 2020 09:34:40 +0000
+X-UUID: 11617e8bcef8404c803f09ddd13c197f-20200313
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=urwiCCeBhATqzkJKTdVUJzgoPbW2D5JW1FSyfotRgVM=; 
- b=uvxBs7lAu6oHMWijecZKItrWEiljxY+KDttBfgVcDneCcAFpwW8dq3c567NawLlQBqgKW1Y0KPs/0ow7MbEp0tuYJWz9aqmDMlhQ1G8bdzUGYFXYCOiaJQsnZxt0q/A7Zq+Oir6i3h/uhsPUnr7559T7Kk8UTUjKXSu7D7yfgsg=;
-X-UUID: bed0b56741e144c6b40fe0c054f459ff-20200313
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=C2PWodz3tfyBIHdMG1iwzdeDsm+xbRlWsBEle44812Y=; 
+ b=SY3TsIPNvy5AmYI+MsHWu6TD+mCLlSBG4+7Hd2cYpoWcEzbmuz41WE9Vu47B8cPDbMj10RIQtj5wKVK2cleKff4rRTF3Yn/TJAXB1UaxNplK4VtSBstUPIgNFghscCHSqyPWf2PsJlVCT70ondxniDISR1hiKLMKUe7qcVNFuiQ=;
+X-UUID: 11617e8bcef8404c803f09ddd13c197f-20200313
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <henryc.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1490100700; Fri, 13 Mar 2020 01:34:38 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Mar 2020 02:34:36 -0700
+ with ESMTP id 1642439546; Fri, 13 Mar 2020 01:34:31 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Mar 2020 02:35:05 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Mar 2020 17:31:39 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Mar 2020 17:33:30 +0800
 Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 13 Mar 2020 17:33:40 +0800
@@ -47,18 +47,18 @@ To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Viresh Kumar
  <vireshk@kernel.org>, Stephen Boyd <swboyd@chromium.org>, Ryan Case
  <ryandcase@chromium.org>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH V4 01/13] dt-bindings: soc: Add dvfsrc driver bindings
-Date: Fri, 13 Mar 2020 17:34:14 +0800
-Message-ID: <1584092066-24425-2-git-send-email-henryc.chen@mediatek.com>
+Subject: [PATCH V4 02/13] dt-bindings: soc: Add opp table on scpsys bindings
+Date: Fri, 13 Mar 2020 17:34:15 +0800
+Message-ID: <1584092066-24425-3-git-send-email-henryc.chen@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
 References: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A439D69B1AF57BF434D94321C469FB946C56643CA4E7071159E60B523D3951662000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_023441_895018_03678F09 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20200313_023438_395184_A60382E8 
+X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,66 +100,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document the binding for enabling dvfsrc on MediaTek SoC.
+Add opp table on scpsys dt-bindings for Mediatek SoC.
 
 Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/soc/mediatek/dvfsrc.txt    | 23 ++++++++++++++++++++++
- include/dt-bindings/soc/mtk,dvfsrc.h               | 14 +++++++++++++
- 2 files changed, 37 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
- create mode 100644 include/dt-bindings/soc/mtk,dvfsrc.h
+ .../devicetree/bindings/soc/mediatek/scpsys.txt    | 42 ++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt b/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
-new file mode 100644
-index 0000000..7f43499
---- /dev/null
-+++ b/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
-@@ -0,0 +1,23 @@
-+MediaTek DVFSRC
+diff --git a/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt b/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
+index 1baaa6f..d22f11d 100644
+--- a/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
++++ b/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
+@@ -70,6 +70,10 @@ Optional properties:
+ - mfg_2d-supply: Power supply for the mfg_2d power domain
+ - mfg-supply: Power supply for the mfg power domain
+ 
++- operating-points-v2: Phandle to the OPP table for the Power domain.
++	Refer to Documentation/devicetree/bindings/power/power_domain.txt
++	and Documentation/devicetree/bindings/opp/opp.txt for more details
 +
-+The Dynamic Voltage and Frequency Scaling Resource Collector (DVFSRC) is a
-+HW module which is used to collect all the requests from both software and
-+hardware and turn into the decision of minimum operating voltage and minimum
-+DRAM frequency to fulfill those requests.
+ Example:
+ 
+ 	scpsys: scpsys@10006000 {
+@@ -82,6 +86,27 @@ Example:
+ 			 <&topckgen CLK_TOP_VENC_SEL>,
+ 			 <&topckgen CLK_TOP_VENC_LT_SEL>;
+ 		clock-names = "mfg", "mm", "venc", "venc_lt";
++		operating-points-v2 = <&dvfsrc_opp_table>;
 +
-+Required Properties:
-+- compatible: Should be one of the following
-+	- "mediatek,mt8183-dvfsrc": For MT8183 SoC
-+- reg: Address range of the DVFSRC unit
-+- clock-names: Must include the following entries:
-+	"dvfsrc": DVFSRC module clock
-+- clocks: Must contain an entry for each entry in clock-names.
++		dvfsrc_opp_table: opp-table {
++			compatible = "operating-points-v2-level";
 +
-+Example:
++			dvfsrc_vol_min: opp1 {
++				opp,level = <MT8183_DVFSRC_LEVEL_1>;
++			};
 +
-+	dvfsrc@10012000 {
-+		compatible = "mediatek,mt8183-dvfsrc";
-+		reg = <0 0x10012000 0 0x1000>;
-+		clocks = <&infracfg CLK_INFRA_DVFSRC>;
-+		clock-names = "dvfsrc";
++			dvfsrc_freq_medium: opp2 {
++				opp,level = <MT8183_DVFSRC_LEVEL_2>;
++			};
++
++			dvfsrc_freq_max: opp3 {
++				opp,level = <MT8183_DVFSRC_LEVEL_3>;
++			};
++
++			dvfsrc_vol_max: opp4 {
++				opp,level = <MT8183_DVFSRC_LEVEL_4>;
++			};
++		};
+ 	};
+ 
+ Example consumer:
+@@ -89,4 +114,21 @@ Example consumer:
+ 	afe: mt8173-afe-pcm@11220000 {
+ 		compatible = "mediatek,mt8173-afe-pcm";
+ 		power-domains = <&scpsys MT8173_POWER_DOMAIN_AUDIO>;
++		operating-points-v2 = <&aud_opp_table>;
 +	};
-diff --git a/include/dt-bindings/soc/mtk,dvfsrc.h b/include/dt-bindings/soc/mtk,dvfsrc.h
-new file mode 100644
-index 0000000..a522488
---- /dev/null
-+++ b/include/dt-bindings/soc/mtk,dvfsrc.h
-@@ -0,0 +1,14 @@
-+/* SPDX-License-Identifier: GPL-2.0
-+ *
-+ * Copyright (c) 2018 MediaTek Inc.
-+ */
 +
-+#ifndef _DT_BINDINGS_POWER_MTK_DVFSRC_H
-+#define _DT_BINDINGS_POWER_MTK_DVFSRC_H
-+
-+#define MT8183_DVFSRC_LEVEL_1	1
-+#define MT8183_DVFSRC_LEVEL_2	2
-+#define MT8183_DVFSRC_LEVEL_3	3
-+#define MT8183_DVFSRC_LEVEL_4	4
-+
-+#endif /* _DT_BINDINGS_POWER_MTK_DVFSRC_H */
++	aud_opp_table: aud-opp-table {
++		compatible = "operating-points-v2";
++		opp1 {
++			opp-hz = /bits/ 64 <793000000>;
++			required-opps = <&dvfsrc_vol_min>;
++		};
++		opp2 {
++			opp-hz = /bits/ 64 <910000000>;
++			required-opps = <&dvfsrc_vol_max>;
++		};
++		opp3 {
++			opp-hz = /bits/ 64 <1014000000>;
++			required-opps = <&dvfsrc_vol_max>;
++		};
+ 	};
 -- 
 1.9.1
 _______________________________________________
