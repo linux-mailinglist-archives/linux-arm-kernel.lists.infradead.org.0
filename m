@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72D6F184BC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:54:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D4D3184BC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:55:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uICs5OF4raCGqMCduDRF82/ioDpwPxqvL4azZODxHkk=; b=fziNppa2Nk9C/B
-	1DnZeY29xpX6f+u++G+3WoYqXt+qp9AFuwHqhoDWBHywx8CGuOCIkn111X+BlDdkv8a28VzhrAPG9
-	mhELSw/LHbAZQzwZSCEuUAT2PZVvvQgyWM6xaaw4fPMdfKD3R9mkvu+AcKRn8C2YxDTPmo9NXI44V
-	UhJSEyfdJwcabvtA7+Z41lET0ysn8xwgCA7oHSl1zVahbM9z787AmQ5yO86vH6HyZ1Zb9Z9AldK6r
-	dN8+2btzSro+yc7+9l/AubDl9juO7WQ4Nn2G6c6zQTZq9w5YNVQRNfykOO3/pbsK9001itUeXcPuv
-	kFUNDPvNOD/itw7RwYJQ==;
+	List-Owner; bh=WjDZXAj1iBgFu38uPtFIR7GsUPcoBudx47ftpPBFrPY=; b=lPlSm1JE1WAwPU
+	GMPQ0IqnGy1zJHXHdWn+2GziG+G6gDGPxkILcTrLysG9MPYm+lOEybXMSQkR+IuNdgsSWcx/XlmC0
+	m719eKp49gg68lT8nsu99brRTrDPicpZB/pUde94kvSnVNIiCSmupYlzhw/dRWe/Mbg2ogbVGk5Pl
+	K182ah/zki00PcwEoqqG/tcmKlIDbPKuwWYcoXjrEhzLQ/6ydS7YS+DSf0CGKXcrVoPUW8OoTKv1r
+	xuhYKh5Vddlhsj9eTwpQ5Gtk9N+V6v4SuqcDQ5K/tDGmOtRGkqphYESS0FXPcrLxGZ3stSl3xu4vO
+	WL+Ae5L2/z5W3oTXDyHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmdV-0007IV-Gg; Fri, 13 Mar 2020 15:54:09 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jCmel-00017R-Dy; Fri, 13 Mar 2020 15:55:27 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmWf-0008Q3-3r; Fri, 13 Mar 2020 15:47:11 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DFkxmX061727;
- Fri, 13 Mar 2020 10:46:59 -0500
+ id 1jCmWi-0008TZ-EN; Fri, 13 Mar 2020 15:47:15 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DFl31q101748;
+ Fri, 13 Mar 2020 10:47:03 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584114419;
- bh=UhAG0/4iSjuMUuigRDZlf5dFQbmSluLyCCpQMKeb6Jg=;
+ s=ti-com-17Q1; t=1584114423;
+ bh=ih8EylxDxHqz4oxMaem59i/w5Viy9ZWii8xoQ7cZajI=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Nbgv68aY0m78gK+qQ99gmIZi+F1Y6IEwGsQKyuzMc61nesheeqaFMDITJz+tWYFXi
- ikvEHhVVI+QVQwj/vgpTI5voKrtNw9Q82ES2vg7qVrb+J/bX/2W1GgJhDDDr911ucA
- f291c8EGs9lRgClPDwjUnTqLuHf8D4FZwL7uDxxc=
-Received: from DFLE110.ent.ti.com (dfle110.ent.ti.com [10.64.6.31])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02DFkxto012943
+ b=lUJfmMKNXDnFom/JXvt7IcSo4wYECOTlnpxgciHpE2uqpr7isLLMBbC+phEjhrljK
+ rq+CemuiT+x8Bp/GUIBpCEW7gkQ2NljRJRn3VJHLyzmHRj1fFZ41HDABcNf2MNFrOD
+ BqRNVzKlH7VbDI0cr4B3YD6GHndgQseAGOOlrjlU=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02DFl3GV090171
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 13 Mar 2020 10:46:59 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 13 Mar 2020 10:47:03 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
- Mar 2020 10:46:59 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2020 10:47:03 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 13 Mar 2020 10:46:59 -0500
+ Frontend Transport; Fri, 13 Mar 2020 10:47:03 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DFkkSG034352;
- Fri, 13 Mar 2020 10:46:55 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DFkkSH034352;
+ Fri, 13 Mar 2020 10:46:59 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
@@ -55,25 +55,24 @@ To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
  <alexandre.belloni@bootlin.com>, Ludovic Desroches
  <ludovic.desroches@microchip.com>
-Subject: [PATCH v3 02/12] spi: atmel-quadspi: reject DTR ops
-Date: Fri, 13 Mar 2020 21:16:35 +0530
-Message-ID: <20200313154645.29293-3-p.yadav@ti.com>
+Subject: [PATCH v3 03/12] spi: spi-mem: allow specifying a command's extension
+Date: Fri, 13 Mar 2020 21:16:36 +0530
+Message-ID: <20200313154645.29293-4-p.yadav@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200313154645.29293-1-p.yadav@ti.com>
 References: <20200313154645.29293-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084705_603281_CB85CD93 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200313_084708_591375_6F0F2C96 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,31 +102,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Double Transfer Rate (DTR) ops are added in spi-mem. But this controller
-doesn't support DTR transactions. Since we don't use the default
-supports_op(), which rejects all DTR ops, do that explicitly in our
-supports_op().
+In xSPI mode, flashes expect 2-byte opcodes. The second byte is called
+the "command extension". There can be 3 types of extensions in xSPI:
+repeat, invert, and hex. When the extension type is "repeat", the same
+opcode is sent twice. When it is "invert", the second byte is the
+inverse of the opcode. When it is "hex" an additional opcode byte based
+is sent with the command whose value can be anything.
+
+So, make opcode a 16-bit value and add a 'nbytes', similar to how
+multiple address widths are handled.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/spi/atmel-quadspi.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ include/linux/spi/spi-mem.h | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/spi/atmel-quadspi.c b/drivers/spi/atmel-quadspi.c
-index 13def7f78b9e..91c1515ea72a 100644
---- a/drivers/spi/atmel-quadspi.c
-+++ b/drivers/spi/atmel-quadspi.c
-@@ -210,6 +210,10 @@ static bool atmel_qspi_supports_op(struct spi_mem *mem,
- 		op->dummy.nbytes == 0)
- 		return false;
+diff --git a/include/linux/spi/spi-mem.h b/include/linux/spi/spi-mem.h
+index e3dcb956bf61..731bb64c6ba6 100644
+--- a/include/linux/spi/spi-mem.h
++++ b/include/linux/spi/spi-mem.h
+@@ -69,6 +69,8 @@ enum spi_mem_data_dir {
  
-+	/* DTR ops not supported. */
-+	if (op->cmd.dtr || op->addr.dtr || op->dummy.dtr || op->data.dtr)
-+		return false;
-+
- 	return true;
- }
+ /**
+  * struct spi_mem_op - describes a SPI memory operation
++ * @cmd.nbytes: number of opcode bytes (only 1 or 2 are valid). The opcode is
++ *		sent MSB-first.
+  * @cmd.buswidth: number of IO lines used to transmit the command
+  * @cmd.opcode: operation opcode
+  * @cmd.dtr: whether the command opcode should be sent in DTR mode or not
+@@ -94,9 +96,10 @@ enum spi_mem_data_dir {
+  */
+ struct spi_mem_op {
+ 	struct {
++		u8 nbytes;
+ 		u8 buswidth;
+ 		u8 dtr : 1;
+-		u8 opcode;
++		u16 opcode;
+ 	} cmd;
  
+ 	struct {
 -- 
 2.25.0
 
