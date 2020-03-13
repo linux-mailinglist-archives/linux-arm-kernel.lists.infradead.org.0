@@ -2,58 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EE14184A05
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 15:54:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0567184A27
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:03:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YqBqv3DY2JRQpsxh70rPl1AINgb4ZYopBR6JMM3plDs=; b=POU
-	xEo5WgiPOdenQ1cIAynSniOBWblzyBlgvS2Q/MqGIeR7SVG9xRGuHz0Lvy27Tvwn+3iDyFtrY37t0
-	VNvgzb9xc3rN5gpU8R/34z0irKktwZiEfBzftckzrV+Flzx7ycB1DLXC9M72CvUjGR61Wqxm+HgW8
-	wwpaJmTNr/vRja5DnoswvJDgE6dHSgKX368I4CLxRU9DewlczEj6yjrScXwsi0X28GjNpTFtBSIcH
-	6CI6jwMJ7IbZn4pJIQGgqRouHExnHyj9t2XEcxw6uQyl6nZhnhoDCtwJb2txGtqLUBBoUssw6OsVE
-	aMYceloSH2ywf2eljdvM5eOqTtrRWzw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=waDRQs09B8mQcoLp04sHgs179GzTCjUVal56dKDu2Zg=; b=Ni4gwqdGHwcyKi
+	0lQGXtFnKlsdtCV1GZDeUYo026cCXmXYL1SBs6dhqCPaMOlHepjgvvaIiyYdYbrnrD1iZ4iZo43F9
+	Mm6r743cZQ7+bXixNAeS01SM1T0mP1x2jwPS+S5c8I6lUsbbF73e9z8jno0PDNtskzA/d2zKXF8Yx
+	u8/rXDCfGstINS6ds1zmJ0Wf8QDL990tfEdVubP6heSTv5O5rjsuloLFZ5k9JqU1HuKcHCmzO1++1
+	+UA2sk7ErKZkaHGU+X/LHIiO0PcuqVVUladqHAtk18SwdpS0kSQoNMAVeoTijMtt4mI41cy41T0XT
+	FlcDEmXJCoBHE63l6rtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCli0-0003Z7-ET; Fri, 13 Mar 2020 14:54:44 +0000
-Received: from m176115.mail.qiye.163.com ([59.111.176.115])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jClhr-0003Y0-6J
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 14:54:37 +0000
-Received: from localhost.localdomain (unknown [58.251.74.227])
- by m176115.mail.qiye.163.com (Hmail) with ESMTPA id 975B066499B;
- Fri, 13 Mar 2020 22:54:19 +0800 (CST)
-From: Zheng Wei <wei.zheng@vivo.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Hanjun Guo <guohanjun@huawei.com>, Enrico Weigelt <info@metux.net>,
- Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Zheng Wei <wei.zheng@vivo.com>, Thomas Gleixner <tglx@linutronix.de>,
- Yunfeng Ye <yeyunfeng@huawei.com>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: add blank after 'if'
-Date: Fri, 13 Mar 2020 22:54:02 +0800
-Message-Id: <20200313145403.6395-1-wei.zheng@vivo.com>
-X-Mailer: git-send-email 2.17.1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VCTktCQkJMSE1MQ05DQllXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6ME06SQw5Lzg0MDArFipCUVY4
- SjcwCh9VSlVKTkNPSkpKSU1LSkJKVTMWGhIXVQweElUBEx4VHDsNEg0UVRgUFkVZV1kSC1lBWU5D
- VUlOSlVMT1VJSUxZV1kIAVlBSUpPSjcG
-X-HM-Tid: 0a70d46391c29373kuws975b066499b
+	id 1jClqC-0007Qs-VF; Fri, 13 Mar 2020 15:03:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jClq5-0007Q8-MH
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 15:03:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DC3331B;
+ Fri, 13 Mar 2020 08:03:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7A1893F67D; Fri, 13 Mar 2020 08:03:02 -0700 (PDT)
+Date: Fri, 13 Mar 2020 15:03:00 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Alexander Potapenko <glider@google.com>
+Subject: Re: [PATCH] arm64: define __alloc_zeroed_user_highpage
+Message-ID: <20200313150300.GD3857972@arrakis.emea.arm.com>
+References: <20200312155920.50067-1-glider@google.com>
+ <20200312164922.GC21120@lakrids.cambridge.arm.com>
+ <CAG_fn=VfRW6Gi-a9WCMwoK1-Nc+i+NFLN3ZyhFAUzr-K3LeaZQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAG_fn=VfRW6Gi-a9WCMwoK1-Nc+i+NFLN3ZyhFAUzr-K3LeaZQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_075435_392119_01961516 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200313_080305_771867_4BA4C4DE 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.115 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,37 +63,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@vivo.com, wenhu.wang@vivo.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Will Deacon <will.deacon@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add blank after 'if' for armv8_deprecated_init()
-to make it comply with kernel coding style.
+On Thu, Mar 12, 2020 at 08:59:28PM +0100, Alexander Potapenko wrote:
+> On Thu, Mar 12, 2020 at 5:49 PM Mark Rutland <mark.rutland@arm.com> wrote:
+> >
+> > On Thu, Mar 12, 2020 at 04:59:20PM +0100, glider@google.com wrote:
+> > > When running the kernel with init_on_alloc=1, calling the default
+> > > implementation of __alloc_zeroed_user_highpage() from include/linux/highmem.h
+> > > leads to double-initialization of the allocated page (first by the page
+> > > allocator, then by clear_user_page().
+> > > Calling alloc_page_vma() with __GFP_ZERO, similarly to e.g. x86, seems
+> > > to be enough to ensure the user page is zeroed only once.
+> >
+> > Just to check, is there a functional ussue beyond the redundant zeroing,
+> > or is this jsut a performance issue?
+> 
+> This is just a performance issue that only manifests when running the
+> kernel with init_on_alloc=1.
+> 
+> > On architectures with real highmem, does GFP_HIGHUSER prevent the
+> > allocator from zeroing the page in this case, or is the architecture
+> > prevented from allocating from highmem?
+> 
+> I was hoping one of ARM maintainers can answer this question. My
+> understanding was that __GFP_ZERO should be sufficient, but there's
+> probably something I'm missing.
 
-Signed-off-by: Zheng Wei <wei.zheng@vivo.com>
----
- arch/arm64/kernel/armv8_deprecated.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On architectures with aliasing D-cache (whether it's VIVT or aliasing
+VIPT), clear_user_highpage() ensures that the correct alias, as seen by
+the user, is cleared (see the arm32 v6_clear_user_highpage_aliasing() as
+an example). The clear_highpage() call as done by page_alloc.c does not
+have the user address information, so it can only clear the kernel
+alias.
 
-diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
-index 7832b3216370..4cc581af2d96 100644
---- a/arch/arm64/kernel/armv8_deprecated.c
-+++ b/arch/arm64/kernel/armv8_deprecated.c
-@@ -630,7 +630,7 @@ static int __init armv8_deprecated_init(void)
- 		register_insn_emulation(&cp15_barrier_ops);
- 
- 	if (IS_ENABLED(CONFIG_SETEND_EMULATION)) {
--		if(system_supports_mixed_endian_el0())
-+		if (system_supports_mixed_endian_el0())
- 			register_insn_emulation(&setend_ops);
- 		else
- 			pr_info("setend instruction emulation is not supported on this system\n");
+On arm64 we don't have such issue, so we can optimise this case as per
+your patch. We may change this function later with MTE if we allow tags
+other than 0 on the first allocation of anonymous pages.
+
 -- 
-2.17.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
