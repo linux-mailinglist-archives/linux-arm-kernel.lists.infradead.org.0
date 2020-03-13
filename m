@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 811A11846B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:19:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 852411846BE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:21:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPT/CNNPUYNkqQEkWlEc291OHVERtJ4uCul6hIOE6nw=; b=agAwO1z3lLuWwt
-	7ll3SLzU9i9BHwjCp4pbmGmAgtFNjgbbeVplZkk8Fj24BQlfjSYj9QblNYW2XkESyZPksjloPnj8C
-	TMalG8N78g+DgqijEDUoS6AsCIP5oWQ10HdmJelQoQAnVEv26/ZyM+CM2dKoFTXtqLjW/QGiif/dC
-	88VZHIUpe2tSJ/7YKgP3ID2PU2tMhjagIUuu6ahoD7APrEDbdaTzjkqtY0nqxbRsvfH4XPQc++u3P
-	82zggWSoz74wmtiNS7RpcYVT4bmX4Pmtz1+/aUO/IhAthjC7UQ//rYPSiTLpvp1LHPb5XerLaWnuQ
-	QYL6gd/9tyH+TiAEY70w==;
+	List-Owner; bh=2Fs2Kbznxd5ccAlYHpB+T6qPMEK/Qs2K6+gtx67V69g=; b=lGtbMTOEWkaR/Q
+	PSvf2iE1+RbHMSHt+PcJEd+LBb5qaisoWsHefBRLN2Ijbck1Akd+PwzElAYtBT2gX4yYrwPxpHrUV
+	XB/fKjQT8lKme0FPb0RhK5e2voTY21EvADq40ODVHH0ykkBnc5KxhTh2AYqlmE6Nd9aGRXqV6Ugbf
+	+U3cI1eMDVTjklpXEIHExBNUnvxL3uAw7mNtxpYFGtbMSz5pvz0f0J8AcKhxnHz7/jvZGrGPAB6DQ
+	PHu18at4hKdqsHwl6JdKP8tb7marLDEHtFmFZIVKd0RVux7WP9tVNVWZ3he8cFhkxvTcy54tdHS1c
+	BMJgKVpNsj4AUELBPLNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCjHS-0008Qk-6e; Fri, 13 Mar 2020 12:19:10 +0000
+	id 1jCjJG-0001of-Vv; Fri, 13 Mar 2020 12:21:03 +0000
 Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCjHI-0008QN-RE
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:19:02 +0000
+ id 1jCjJ8-0001nR-QU
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:20:56 +0000
 Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
  [IPv6:2a01:4f9:c010:4572::80:2])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
  SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 9F473634C87;
- Fri, 13 Mar 2020 14:17:46 +0200 (EET)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 6E41A634C87;
+ Fri, 13 Mar 2020 14:19:49 +0200 (EET)
 Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
  (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1jCjG6-0001id-U9; Fri, 13 Mar 2020 14:17:46 +0200
-Date: Fri, 13 Mar 2020 14:17:46 +0200
+ id 1jCjI5-0001il-Np; Fri, 13 Mar 2020 14:19:49 +0200
+Date: Fri, 13 Mar 2020 14:19:49 +0200
 From: Sakari Ailus <sakari.ailus@iki.fi>
 To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [v2 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200313121746.GC5730@valkosipuli.retiisi.org.uk>
+Subject: Re: [v2 1/3] media: dt-bindings: ov8856: Document YAML bindings
+Message-ID: <20200313121949.GD5730@valkosipuli.retiisi.org.uk>
 References: <20200313110350.10864-1-robert.foss@linaro.org>
- <20200313110350.10864-3-robert.foss@linaro.org>
+ <20200313110350.10864-2-robert.foss@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200313110350.10864-3-robert.foss@linaro.org>
+In-Reply-To: <20200313110350.10864-2-robert.foss@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_051901_243665_B881DB7D 
-X-CRM114-Status: GOOD (  25.23  )
+X-CRM114-CacheID: sfid-20200313_052055_221650_401DA9C8 
+X-CRM114-Status: GOOD (  21.03  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -79,251 +79,198 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Robert,
 
-On Fri, Mar 13, 2020 at 12:03:49PM +0100, Robert Foss wrote:
-> Add devicetree match table, and enable ov8856_probe()
-> to initialize power, clocks and reset pins.
+On Fri, Mar 13, 2020 at 12:03:48PM +0100, Robert Foss wrote:
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 > 
+> This patch adds documentation of device tree in YAML schema for the
+> OV8856 CMOS image sensor.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
 > Signed-off-by: Robert Foss <robert.foss@linaro.org>
 > ---
 > 
+> - Changes since v4:
+>   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
+>   * Add clock-lanes property to example
+>   * robher: Fix syntax error in devicetree example
+> 
+> - Changes since v3:
+>   * robher: Fix syntax error
+>   * robher: Removed maxItems
+>   * Fixes yaml 'make dt-binding-check' errors
+> 
+> - Changes since v2:
+>   Fixes comments from from Andy, Tomasz, Sakari, Rob.
+>   * Convert text documentation to YAML schema.
+> 
 > - Changes since v1:
->   * Fabio: Change n_shutdown_gpio name to reset_gpio
->   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
->   * Fabio: Remove empty line
->   * Fabio: Remove real error from devm_gpiod_get() failures
->   * Andy & Sakari: Make XVCLK optional since to not break ACPI
->   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
->   * Sakari: Use XVCLK rate as provided by DT
+>   Fixes comments from Sakari, Tomasz
+>   * Add clock-frequency and link-frequencies in DT
 > 
->  drivers/media/i2c/ov8856.c | 109 ++++++++++++++++++++++++++++++++++++-
->  1 file changed, 107 insertions(+), 2 deletions(-)
+>  .../devicetree/bindings/media/i2c/ov8856.yaml | 133 ++++++++++++++++++
+>  MAINTAINERS                                   |   1 +
+>  2 files changed, 134 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
 > 
-> diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-> index 8655842af275..db61eed223e8 100644
-> --- a/drivers/media/i2c/ov8856.c
-> +++ b/drivers/media/i2c/ov8856.c
-> @@ -3,10 +3,13 @@
+> diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yaml b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+> new file mode 100644
+> index 000000000000..f5cb9add9277
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+> @@ -0,0 +1,133 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright (c) 2019 MediaTek Inc.
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
+> +
+> +maintainers:
+> +  - Ben Kao <ben.kao@intel.com>
+
+Is Ben aware of this?
+
+> +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
+> +
+> +description: |-
+> +  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapixel, CMOS
+> +  image sensor that delivers 3264x2448 at 30fps. It provides full-frame,
+> +  sub-sampled, and windowed 10-bit MIPI images in various formats via the
+> +  Serial Camera Control Bus (SCCB) interface. This chip is programmable
+> +  through I2C and two-wire SCCB. The sensor output is available via CSI-2
+> +  serial data output (up to 4-lane).
+> +
+> +properties:
+> +  compatible:
+> +    const: ovti,ov8856
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    description:
+> +      Input clock for the sensor.
+> +    items:
+> +      - const: xvclk
+> +
+> +  clock-frequency:
+> +    description:
+> +      Frequency of the xvclk clock in Hertz.
+> +
+> +  dovdd-supply:
+> +    description:
+> +      Definition of the regulator used as interface power supply.
+> +
+> +  avdd-supply:
+> +    description:
+> +      Definition of the regulator used as analog power supply.
+> +
+> +  dvdd-supply:
+> +    description:
+> +      Definition of the regulator used as digital power supply.
+> +
+> +  reset-gpios:
+> +    description:
+> +      The phandle and specifier for the GPIO that controls sensor reset.
+> +      This corresponds to the hardware pin XSHUTDOWN which is physically
+> +      active low.
+> +
+> +  port:
+> +    type: object
+> +    additionalProperties: false
+> +    description:
+> +      A node containing input and output port nodes with endpoint definitions
+> +      as documented in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt
+> +
+> +    properties:
+> +      endpoint:
+> +        type: object
+> +
+> +        properties:
+> +          clock-lanes:
+> +            maxItems: 1
+> +
+> +          data-lanes:
+> +            maxItems: 1
+> +
+> +          remote-endpoint: true
+> +
+> +        required:
+> +          - clock-lanes
+
+Do you need the clock-lanes property, i.e. does the device support lane
+reordering? If not, it should be removed.
+
+> +          - data-lanes
+> +          - remote-endpoint
+> +
+> +    required:
+> +      - endpoint
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - clock-frequency
+> +  - dovdd-supply
+> +  - avdd-supply
+> +  - dvdd-supply
+> +  - reset-gpios
+> +  - port
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/gpio/gpio.h>
+> +    #include <dt-bindings/clock/qcom,camcc-sdm845.h>
+> +
+> +    ov8856: camera-sensor@10 {
+> +        compatible = "ovti,ov8856";
+> +        reg = <0x10>;
+> +        reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
+> +        pinctrl-names = "default";
+> +        pinctrl-0 = <&clk_24m_cam>;
+> +
+> +        clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
+> +        clock-names = "xvclk";
+> +        clock-frequency = <19200000>;
+> +
+> +        avdd-supply = <&mt6358_vcama2_reg>;
+> +        dvdd-supply = <&mt6358_vcamd_reg>;
+> +        dovdd-supply = <&mt6358_vcamio_reg>;
+> +
+> +        port {
+> +            wcam_out: endpoint {
+> +                remote-endpoint = <&mipi_in_wcam>;
+> +                clock-lanes = <0>;
+> +                data-lanes = <1 2 3 4>;
+> +                link-frequencies = /bits/ 64 <360000000 180000000>;
+> +            };
+> +        };
+> +    };
+> +
+> +...
+> \ No newline at end of file
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index a6fbdf354d34..0f99e863978a 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -12355,6 +12355,7 @@ L:	linux-media@vger.kernel.org
+>  T:	git git://linuxtv.org/media_tree.git
+>  S:	Maintained
+>  F:	drivers/media/i2c/ov8856.c
+> +F:	Documentation/devicetree/bindings/media/i2c/ov8856.yaml
 >  
->  #include <asm/unaligned.h>
->  #include <linux/acpi.h>
-> +#include <linux/clk.h>
->  #include <linux/delay.h>
-> +#include <linux/gpio/consumer.h>
->  #include <linux/i2c.h>
->  #include <linux/module.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/regulator/consumer.h>
->  #include <media/v4l2-ctrls.h>
->  #include <media/v4l2-device.h>
->  #include <media/v4l2-fwnode.h>
-> @@ -19,6 +22,8 @@
->  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
->  #define OV8856_SCLK			144000000ULL
->  #define OV8856_MCLK			19200000
-> +#define OV8856_XVCLK_19_2		19200000
-
-Please use a single macro to refer to 19,2 MHz clock.
-
-> +#define OV8856_XVCLK_24			24000000
-
-This doesn't seem to be needed 
-
->  #define OV8856_DATA_LANES		4
->  #define OV8856_RGB_DEPTH		10
->  
-> @@ -64,6 +69,12 @@
->  
->  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
->  
-> +static const char * const ov8856_supply_names[] = {
-> +	"dovdd",	/* Digital I/O power */
-> +	"avdd",		/* Analog power */
-> +	"dvdd",		/* Digital core power */
-> +};
-> +
->  enum {
->  	OV8856_LINK_FREQ_720MBPS,
->  	OV8856_LINK_FREQ_360MBPS,
-> @@ -566,6 +577,10 @@ struct ov8856 {
->  	struct media_pad pad;
->  	struct v4l2_ctrl_handler ctrl_handler;
->  
-> +	struct clk		*xvclk;
-> +	struct gpio_desc	*reset_gpio;
-> +	struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
-> +
->  	/* V4L2 Controls */
->  	struct v4l2_ctrl *link_freq;
->  	struct v4l2_ctrl *pixel_rate;
-> @@ -908,6 +923,46 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
->  	return ret;
->  }
->  
-> +static int __ov8856_power_on(struct ov8856 *ov8856)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(ov8856->xvclk);
-> +	if (ret < 0) {
-> +		dev_err(&client->dev, "failed to enable xvclk\n");
-> +		return ret;
-> +	}
-> +
-> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_HIGH);
-> +
-> +	ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
-> +				    ov8856->supplies);
-> +	if (ret < 0) {
-> +		dev_err(&client->dev, "failed to enable regulators\n");
-> +		goto disable_clk;
-> +	}
-> +
-> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_LOW);
-> +
-> +	usleep_range(1500, 1800);
-
-I think you could omit the delay on ACPI based systems. Or just bail out
-early in that case.
-
-> +
-> +	return 0;
-> +
-> +disable_clk:
-
-How about the GPIO here?
-
-> +	clk_disable_unprepare(ov8856->xvclk);
-> +
-> +	return ret;
-> +}
-> +
-> +static void __ov8856_power_off(struct ov8856 *ov8856)
-> +{
-> +	gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_HIGH);
-> +	regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
-> +			       ov8856->supplies);
-> +	clk_disable_unprepare(ov8856->xvclk);
-> +}
-
-You'll need to call the two in the driver's suspend and resume functions.
-
-> +
->  static int __maybe_unused ov8856_suspend(struct device *dev)
->  {
->  	struct i2c_client *client = to_i2c_client(dev);
-> @@ -1175,7 +1230,7 @@ static int ov8856_remove(struct i2c_client *client)
->  static int ov8856_probe(struct i2c_client *client)
->  {
->  	struct ov8856 *ov8856;
-> -	int ret;
-> +	int i, ret;
-
-unsigned int?
-
->  
->  	ret = ov8856_check_hwcfg(&client->dev);
->  	if (ret) {
-> @@ -1189,10 +1244,50 @@ static int ov8856_probe(struct i2c_client *client)
->  		return -ENOMEM;
->  
->  	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-> +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-> +	if (PTR_ERR(ov8856->xvclk) == -ENOENT) {
-> +		dev_info(&client->dev, "xvclk clock not defined, continuing...\n");
-
-How about dev_dbg()?
-
-> +		ov8856->xvclk = NULL;
-> +	} else if (IS_ERR(ov8856->xvclk)) {
-> +		dev_err(&client->dev, "could not get xvclk clock (%ld)\n",
-> +			PTR_ERR(ov8856->xvclk));
-> +		return PTR_ERR(ov8856->xvclk);
-> +	}
-> +
-> +	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_24);
-
-This should either come from platform data, or perhaps it'd be even better
-to get the clock rate and use assigned-clock-rates. I guess that's
-preferred nowadays.
-
-> +	if (ret < 0) {
-> +		dev_err(&client->dev, "failed to set xvclk rate (24MHz)\n");
-> +		return ret;
-> +	}
-> +
-> +	ov8856->reset_gpio = devm_gpiod_get(&client->dev, "reset",
-> +					       GPIOD_OUT_HIGH);
-
-Indentation.
-
-What if no gpio is defined?
-
-> +	if (IS_ERR(ov8856->reset_gpio)) {
-> +		dev_err(&client->dev, "failed to get reset-gpios\n");
-> +		return PTR_ERR(ov8856->reset_gpio);
-> +	}
-> +
-> +	for (i = 0; i < ARRAY_SIZE(ov8856_supply_names); i++)
-> +		ov8856->supplies[i].supply = ov8856_supply_names[i];
-> +
-> +	ret = devm_regulator_bulk_get(&client->dev,
-> +				      ARRAY_SIZE(ov8856_supply_names),
-> +				      ov8856->supplies);
-
-What happens if there are no regulators?
-
-> +	if (ret) {
-> +		dev_warn(&client->dev, "failed to get regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = __ov8856_power_on(ov8856);
-> +	if (ret) {
-> +		dev_warn(&client->dev, "failed to power on\n");
-> +		return ret;
-> +	}
-> +
->  	ret = ov8856_identify_module(ov8856);
->  	if (ret) {
->  		dev_err(&client->dev, "failed to find sensor: %d", ret);
-> -		return ret;
-> +		goto probe_power_off;
->  	}
->  
->  	mutex_init(&ov8856->mutex);
-> @@ -1238,6 +1333,9 @@ static int ov8856_probe(struct i2c_client *client)
->  	v4l2_ctrl_handler_free(ov8856->sd.ctrl_handler);
->  	mutex_destroy(&ov8856->mutex);
->  
-> +probe_power_off:
-> +	__ov8856_power_off(ov8856);
-> +
-
-Also remember to power off the device in remove().
-
->  	return ret;
->  }
->  
-> @@ -1254,11 +1352,18 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
->  MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
->  #endif
->  
-> +static const struct of_device_id ov8856_of_match[] = {
-> +	{ .compatible = "ovti,ov8856" },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, ov8856_of_match);
-> +
->  static struct i2c_driver ov8856_i2c_driver = {
->  	.driver = {
->  		.name = "ov8856",
->  		.pm = &ov8856_pm_ops,
->  		.acpi_match_table = ACPI_PTR(ov8856_acpi_ids),
-> +		.of_match_table = ov8856_of_match,
->  	},
->  	.probe_new = ov8856_probe,
->  	.remove = ov8856_remove,
+>  OMNIVISION OV9650 SENSOR DRIVER
+>  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
 
 -- 
 Regards,
