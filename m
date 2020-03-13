@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C8F3184809
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 14:26:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E315018480D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 14:27:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QyGf6GgkpFoOaK1x7ul9RpjN/7xAV7IS72nxwCvWJdM=; b=MYQz3LAf1sBEgB19FIW5Ov1NM
-	B1/9zptq3ZE4RrwG58yYSjkhADCl7Dx7DWTedDmSpCQISPAXFUhpAPtN3xKkChaAvSw8Wp7DJiKeo
-	xfBlNkfv0t8D7OR5/1LoSSifu9GfyhzjkAUNuogWaTp0n9s/EmmFnExg5UHB8igY7dI+Do5e0PwwR
-	XTVFohP+INCHnewgFP88nJc8Q7m6MJ3kLRlWbnfJHQPHFP4tK+XtkD22eMciilRBx8V1gMuVLgYRS
-	urGzvSjSLnHK/eGUuqiXE1pjx79VIzTcqkwkWMdlo56vhLFxxbCooXTOsVPBa8DhVEPyy6/K5zx4c
-	A2Y91SMFg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BI0k/PVelV8n3hTBsGtR6laI8tJdlGF1JULGBQk9ih0=; b=dPp
+	Fqqfow/AV2QPPI1EnQEPHZmWABAuyPUlECxkvqBwS6BXlZDY4LRerP0MMPfSK2cm+L30FCJzwBwuK
+	nOsyLexFvL4lfWJRPQ61W1oyXMox+wyKaFKv81wvUY6Ng23wnIWQrB/tTNDLDJQsUk7AoDzNQl2p8
+	leIdmUSsiEY125/LME2cHFXnajXjiwTOB55ikcjm1W16C3893/r8hUDPRrhQ2KxJkyxVi1CgvOvvm
+	zoFEI5QbwzSu3qhxVKDrVndILPLUCLmUh0CZRY+d1tDm6ezTYV+Cq6SCaLxHie10abxv47jgdJgRl
+	kJemGRq2nKVfI+tqKrzroJNDh/yerAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCkKy-0007oZ-Ak; Fri, 13 Mar 2020 13:26:52 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jCkLD-00081w-2F; Fri, 13 Mar 2020 13:27:07 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCkKl-0007oA-Gr
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 13:26:42 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02DDNQfp026519; Fri, 13 Mar 2020 14:26:34 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : references
- : from : message-id : date : mime-version : in-reply-to : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=MiS/taC8So8EgjWNAwucGO9VM7ZZlVzG70mkM5pYJpE=;
- b=spfw+RC7iVY3pH1Zc2bxHY7DIhn9dsegfmdsy0MInvl5YCjqT0lsYNjIBtyqe1/Ua1C1
- py5JSfE1tBtg3OqRhcJ5YYz7cFzrSAB9AW+An4wE8MU+Y/7EkFWFmdWEXvjJ3LgYSqEh
- pxne4Td8EORVkDIBCITKw7viEiwovcxKOrdVsyDDD2YBaOopqvUdFRvOwAZBduPUj5xQ
- v19nxTXWn2BYdCdsye0veZ5Rx+haIk48p3t2u6CH/0HAJg773uPPx4s/RHFP1s1KV5p4
- /L/NkzZFwoEsp9ed9iHnjC10oXFQZh28fkbnD0C+Bm3F3fwJ/qFRY0jyuf0W0PQemw3I lw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yqt8190f4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 13 Mar 2020 14:26:34 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C912F10002A;
- Fri, 13 Mar 2020 14:26:33 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 978E82A9047;
- Fri, 13 Mar 2020 14:26:33 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 13 Mar
- 2020 14:26:32 +0100
-Subject: Re: [PATCH 0/3] Update SDMMC nodes on STM32MP1 boards
-To: Yann Gautier <yann.gautier@st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200304080956.7699-1-yann.gautier@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <6d4fb1e7-f134-1f92-242d-93054a334139@st.com>
-Date: Fri, 13 Mar 2020 14:26:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200304080956.7699-1-yann.gautier@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-13_05:2020-03-12,
- 2020-03-13 signatures=0
+ id 1jCkL1-0007z0-2t; Fri, 13 Mar 2020 13:26:56 +0000
+Received: by mail-wr1-x443.google.com with SMTP id a25so12112779wrd.0;
+ Fri, 13 Mar 2020 06:26:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=hGTtD4LLU6z8nLYoqJKtaVgPwNbnoGTn8gZTvLe4N9c=;
+ b=U2Uo01NM91NeBSJVW7uzYrj/clfD2+uDJn2m4bO9PQGnqG9CONH5kjfrKGbB9kawLl
+ UosbWPOXW/QVxzhxAX5JADqAQcJnZkZFXWyT8hJN7kZRM3hAivHdpHaYS5dwB013jV9a
+ nhFTaA+p6bTYIcgeLrgYQEfK5iHcY9GXnAvWveEnRMlxrJPzD4GAFqPT0wdBipKkxWSF
+ 8PUAG1CpXxlydZs0yZlAwx8gG6zdOtjmL688rc+4Iqhx+Sp5g0TAmvGJmHemf2t4DPXK
+ TlOy5e89BbW+pwPRdA7DhYiZ07Z2DCTZhbuetN9ETxY8CuUqAYwTKz+LA4/G9tTKIH3I
+ YNGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=hGTtD4LLU6z8nLYoqJKtaVgPwNbnoGTn8gZTvLe4N9c=;
+ b=OCGdojHP18KCznQjXWOJwxGg8UoHnZF9clKX+sOWpipwcsHolfqwsgpFVVG5L5/4mV
+ GsDOn+TIs/NPn8jSP5GRShlkrIBAKKxcm1F93j51GnkxLAkYhK8gcxnroKW58ZzSmbXF
+ SltE9b8uJxLekJVTL8b24RVn/0yqiZEZKAv9EPog2TZXQqXr/EIVVvn3hWW5iaZmmomg
+ GFPsU+lO2KN1Hz60cWDl1hdyGnffwVAHW069w+Jl5CEmoD7EmX5NiSYq4J8htjMIBBH9
+ kvhylVb/l200VbXKgYgmdKxlXA27WB9K4LCuOiHtbfDrQDry7pxcNbsJ8uO9ufZ7ScPV
+ pVZw==
+X-Gm-Message-State: ANhLgQ0G6k+Qy6XQJrs37G2acwtj7xyl3Ts2aHMrFO/RyUquiVR6mEdF
+ YEUnMZAI+/WQI3Fj6pX7PmXNJgV0
+X-Google-Smtp-Source: ADFU+vv9CSAECvZnYj48mBzZNjuL7qHzUdi9abc7khFeX05zaTMSUwv7MmoseyxxldsKLgNVD8282g==
+X-Received: by 2002:a5d:65c5:: with SMTP id e5mr17438260wrw.161.1584106013666; 
+ Fri, 13 Mar 2020 06:26:53 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id w67sm12994428wmb.41.2020.03.13.06.26.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 13 Mar 2020 06:26:53 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] ARM: dts: rockchip: remove clock-frequency from saradc node
+ rv1108
+Date: Fri, 13 Mar 2020 14:26:46 +0100
+Message-Id: <20200313132646.10317-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_062641_119585_DC03B65F 
-X-CRM114-Status: GOOD (  15.88  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200313_062655_144555_5BD69AB7 
+X-CRM114-Status: GOOD (  11.03  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,37 +94,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yann
+An experimental test with the command below gives these errors:
 
-On 3/4/20 9:09 AM, Yann Gautier wrote:
-> This patchset updates the sdmmc nodes for STM32MP1.
-> For SD cards nodes, the cd-gpio property is used instead of broken-cd,
-> and the disable-wp property is added.
-> The last patch corrects the vqmmc regulator for eMMC on ED1/EV1 boards.
-> 
-> Yann Gautier (3):
->    ARM:dts: stm32: add cd-gpios properties for SD-cards on STM32MP1
->      boards
->    ARM: dts: stm32: add disable-wp property for SD-card on STM32MP1
->      boards
->    ARM: dts: stm32: use correct vqmmc regu for eMMC on stm32mp1 ED1/EV1
->      boards
-> 
->   arch/arm/boot/dts/stm32mp157a-avenger96.dts | 3 ++-
->   arch/arm/boot/dts/stm32mp157c-ed1.dts       | 5 +++--
->   arch/arm/boot/dts/stm32mp15xx-dkx.dtsi      | 3 ++-
->   3 files changed, 7 insertions(+), 4 deletions(-)
-> 
+arch/arm/boot/dts/rv1108-elgin-r1.dt.yaml: adc@1038c000:
+'clock-frequency'
+does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm/boot/dts/rv1108-evb.dt.yaml: adc@1038c000:
+'clock-frequency'
+does not match any of the regexes: 'pinctrl-[0-9]+'
 
-Series applied on stm32-next.
+'clock-frequency' is not a valid property for a saradc node,
+so remove it.
 
-Regards
-Alex
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/iio/adc/
+rockchip-saradc.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rv1108.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index 153868c62..f9cfe2c80 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -366,7 +366,6 @@
+ 		reg = <0x1038c000 0x100>;
+ 		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+ 		#io-channel-cells = <1>;
+-		clock-frequency = <1000000>;
+ 		clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
+ 		clock-names = "saradc", "apb_pclk";
+ 		status = "disabled";
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
