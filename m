@@ -2,150 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CC15184960
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 15:31:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B22818496E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 15:34:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l+XzLppVD+5jDEEslwfns+rEkNuAA9V+kclScps59Dg=; b=q9iDJmC6XVlaUj
-	NAJrKOwBo+hg0KSzc0ASnKbFf+UhjDIXxn8c5a2ibzRddr2RxA9DKHPDT5lMUUOZJYHT2HpnhT3Z9
-	Q77acHIcVXlwm6dhCRNMyNa0zLskJnyMlBkqoiP7o5SZUXE4VqEqijQW8Bu1tT+AkSda1RrhCLkD/
-	sHPO2j8HvuB7MpighuOl7nTbe7pXfoTLEMuFlX24aTwBuM9OUDvzerMIFBALlVTAwlZY4bOSyNWRm
-	lcQM8l3I0xw9oKKJegtnkvnYEDL7NgqqYSyHpyEeS5E/N+sdlJ1JaXXtC1ZHCfgYHAxdCdbVvP1rx
-	a0DXMes3UXhMWEGpRvcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Sxmnwku5HXhyp/XhyoS7AYR4IkBHIQDFrLwTDz6sfqU=; b=fDwz6KT/rtqhDE6C1tN4s/tSo
+	XwCEGD6d0deg5mJju2fnpq/g74WEnH1Cj+DZyxDB9eVb8cJnBY0G5hAdCVeUmDnILKMZ/Vvcm1teK
+	yP1wmK4EtTmAFh5psSRca2sczii+pbqSGMpQY+fNIY+hIVjYTHVJNRssemhSornS0gGydY0AmXMS/
+	zBzl+MgQKdFXF2Xg4UPPwfsvoGvz67HVmkiCovGYSXc8zcturFAGSDqHXIMePFFtGZSub30shlf76
+	sifOaOebLoqmyhgfJH9BFjyk790x2tIrR3VMOzg9vSWhzrD/+V+lpe3XZVQCsjnx8kItrZF3qY0R+
+	wyZI9Xfsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jClLV-0001RB-88; Fri, 13 Mar 2020 14:31:29 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1jClNp-0002Yb-DW; Fri, 13 Mar 2020 14:33:53 +0000
+Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jClKu-0001CK-H5; Fri, 13 Mar 2020 14:30:55 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: yAVKD0RHxYIxeHBd/FF67CpYk8ckseS6yr5t+zpm/9AszjNc48KWJX9vURlv2VIQmf1Jm33exX
- UToRR85o8Iwo2MmolNOte6dGORnUKoAjJJMzn05kHdz+1qpMMJN8zgjoLBhmdu+GZPjYrUl7l1
- uULpgG5WBZfPv+jC6f49n85eb9HD3d/nUqsOmOkoYMlbh1gimMWbld8ZgUDz4Zvlj7TfiGlK+I
- fK8O3znb19qKQIFCIkTJrVIa3n5+PSCm5FaubDClM5EO5hwxPdqJlID2J/g31C4+a7wt5J053m
- aSI=
-X-IronPort-AV: E=Sophos;i="5.70,548,1574146800"; 
-   d="scan'208";a="5563306"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Mar 2020 07:30:50 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 13 Mar 2020 07:30:44 -0700
-Received: from NAM11-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Fri, 13 Mar 2020 07:30:44 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ri3Is3Qxu0K9V4sEIWMMRjWyFZR5ZrT7vr7wOWfIlyNPVfEAId2lAIHc71BijnMxWWpF3JTLrK/QqLdnvqRhTlQPqFvN/5CYuqDfZQQrRmnO1LDmVRH5IV9MBK4ZLiNjSCvuCZFJlWJAv+WH2oh1bRrDTCyp+u0jNviuGHCoet1wbJ5fFCij05/yTHG5wbAtGR6Ja88sxJaHairFlxA5dM59pTFfZpLZg9EPDNAtuEo5REG6NhG46Kag9eZHTsE3vdaVj3xRKUIrDon0GBi4BMBQJZD7CKoTPmDK8HIN77Y1ZNuN8q14GJzY/Onzj8nnskVnVIkctimy5aCUCQoagw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t0WkAc6atkij4tyHTbIHCyNENEOmL/waY7NTITYZdM4=;
- b=g/r3FxpS8LnXS5VAXaWcnAujoCAAD6EqzDRwUKdOabUodSszcbkCwXgigSWo1qD8ipAyzGjYUzYFITe+p4FC38IFO54MNdl3T3Ipq0/1j72kLqdIqoPGnyAkeZSHc0jHYuhEjXJ891H7p8KZv9gw1NQilrxkqHivxOdUN9PwS+6a7QsuQca6IoBaq3bzp9aqsZyFUVQ34EpYk2Jxp0q56KEa2G+PJUfduG4m2BMpDTFrHR4r/cV1GHefc/Vy1AmYvFCERQASOf2DWcz6fm8cfvbRbzLJpd6FjBQKrghHzEigsgTnHF2p1rLuQ0p/mo90QBqG2eAl1RCS7CoVh8663g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t0WkAc6atkij4tyHTbIHCyNENEOmL/waY7NTITYZdM4=;
- b=M1YZi7NnjqdVsx653wtZunMBSvnfaVWUC1kBxjzE938a2qrfdYuNGi8ESmY3aTt8EqBAAhBtJHPCKN3Q5JXVBJ7RnGlMmhgGzn+2c4BtmUuAbXrjUOj75LUhcQZf5ADxE5aXVg3I1ojagUA4ibRwD9Eq3lZ6/6ttpdi64mNh9Qo=
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
- by MN2PR11MB4479.namprd11.prod.outlook.com (2603:10b6:208:17b::32)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.14; Fri, 13 Mar
- 2020 14:30:48 +0000
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2793.018; Fri, 13 Mar 2020
- 14:30:48 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <boris.brezillon@collabora.com>
-Subject: Re: [PATCH 01/23] mtd: spi-nor: Stop prefixing generic functions with
- a manufacturer name
-Thread-Topic: [PATCH 01/23] mtd: spi-nor: Stop prefixing generic functions
- with a manufacturer name
-Thread-Index: AQHV+UP9aMq9KhVwKUKrK+Ih7RO/bw==
-Date: Fri, 13 Mar 2020 14:30:48 +0000
-Message-ID: <2838624.3XVpXx8FI0@192.168.1.3>
-References: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
- <91394111-cbd6-c24e-485d-88fcd6825dc7@ti.com>
- <20200313103007.7d7ea6af@collabora.com>
-In-Reply-To: <20200313103007.7d7ea6af@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: db6fa0dc-92f6-4766-d806-08d7c75b1fc6
-x-ms-traffictypediagnostic: MN2PR11MB4479:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR11MB447905CF96D59ED7D35C1FDEF0FA0@MN2PR11MB4479.namprd11.prod.outlook.com>
-x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:2043;
-x-forefront-prvs: 034119E4F6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(136003)(376002)(346002)(366004)(396003)(199004)(5660300002)(8936002)(66946007)(14286002)(81166006)(66556008)(64756008)(66446008)(76116006)(66476007)(8676002)(91956017)(81156014)(86362001)(478600001)(316002)(6506007)(2906002)(4326008)(54906003)(26005)(7416002)(6512007)(7406005)(186003)(9686003)(6486002)(53546011)(6916009)(71200400001)(39026012)(41533002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4479;
- H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 5cTbzBh8KNl15tYvD5g+srdVVg7SkZ8nhPts6Hmxwr4hOsLDKXzoOl+oC14H0k2gLsWTjOF4wBy9VpkKhzdI4HF8m0nnlph6p/Zc3lN2TRqfVxNGL2bvz3TSKSMougyqJS39isywPLQOmyv7Fy1LFnCy22jYaRCi/Hd4El40KbDfuC/VKFRe/AUqv6E+o1zqC+qpITvN0hsFaEY5lZXjvVAExXyVPix7AC3v7zST0Jcqymch4qf/Tzh473BCL099P9V7EqWiAvB9Lb4fSTSk2Vax0uJiHWnctPkr1t3nGmlKfrsCxrzWOY7KU7d8oG4gTjDnCJc0Rtc7c+/OrB43rohaAJRIRAnx4T7mwnUmkMPsLvQVYt+2bCjvwu7AlxVSjeiJgLJn5XkcehbuhxCdrjzqVu6gxNycwG9DL5y0WAkJgeqYVTcmzoYEi+9f20SEU2aDIzCiBXqoZENOLzGdxd9UGofNof/TIts72/9k69Dtmmiq0X46tw4sb01X5+JUmS72MTjnct2/6meP0gV6Sw==
-x-ms-exchange-antispam-messagedata: jtjUzHtXu6mLeil1fzNzi/K3zXi0Qba96XohPba9BR8FHNNrTW8iNWh0oh0OdLHQADtLuoleB+CGQW8k1NlO0q8m4NBf09/6a5S+vEF+DnW3Gv9m+oZqzsGPi7qqx5tFAFzZho9rfuX28hW7lnULzQ==
-Content-ID: <91F0FF6E328E9140903FE1F0A48236EE@namprd11.prod.outlook.com>
+ id 1jClNe-0002Xu-Au
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 14:33:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
+ s=mail; t=1584110020; h=from:from:sender:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=wSuvYRs2+kOMRbKVk2MsXJmEnZAEsDSj7YJQdXCqPZs=;
+ b=fnypYpamxOOB89qg+eCvr7e75TOyNH8acica++zrm6NppStlFNseotqOLofhdyaJmOagQg
+ hCnkct/RcXmi7syCZBSzBFDWZ8N36gRbi2rUpT6Fmr+BVLw9IuL2uUqcJkfzKIgPvww0lV
+ XlJm62VLkdtBOngtE+pFkvsLKBItXqI=
+Date: Fri, 13 Mar 2020 15:33:34 +0100
+From: Paul Cercueil <paul@crapouillou.net>
+Subject: Re: [PATCH 2/2] ARM: DTS: Add devicetree file for the Galaxy S2
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Message-Id: <1584110014.3.1@crapouillou.net>
+In-Reply-To: <20200313090011.GB7416@pi3>
+References: <20200312153411.13535-1-paul@crapouillou.net>
+ <20200312153411.13535-2-paul@crapouillou.net> <20200313090011.GB7416@pi3>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: db6fa0dc-92f6-4766-d806-08d7c75b1fc6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2020 14:30:48.2942 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: LEdOmCKOS8d00DQAyeBUWphQz9/LLW/XAQqdI4KzbbV7l+keMh3oj3kPJ6LqckQM1u3hfxJ6BX8L6YGtj7GM4enHmf8tpV5jr9l02H/JmNM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4479
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_073052_647427_5962015F 
-X-CRM114-Status: GOOD (  19.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_073342_768650_7C046FF6 
+X-CRM114-Status: GOOD (  21.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -160,118 +70,860 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, alexandre.belloni@bootlin.com,
- vigneshr@ti.com, linux-aspeed@lists.ozlabs.org, thor.thayer@linux.intel.com,
- jethro@fortanix.com, rfontana@redhat.com, linux-mtd@lists.infradead.org,
- miquel.raynal@bootlin.com, opensource@jilayne.com, richard@nod.at,
- allison@lohutok.net, michal.simek@xilinx.com, Ludovic.Desroches@microchip.com,
- joel@jms.id.au, nishkadg.linux@gmail.com, john.garry@huawei.com, vz@mleia.com,
- alexander.sverdlin@nokia.com, matthias.bgg@gmail.com, tglx@linutronix.de,
- swboyd@chromium.org, mika.westerberg@linux.intel.com, ludovic.barre@st.com,
- linux-arm-kernel@lists.infradead.org, bbrezillon@kernel.org, andrew@aj.id.au,
- linux-kernel@vger.kernel.org, dinguyen@kernel.org, michael@walle.cc,
- linux-mediatek@lists.infradead.org, info@metux.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Friday, March 13, 2020 11:30:07 AM EET Boris Brezillon wrote:
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the
-> content is safe
-> 
-> On Fri, 13 Mar 2020 11:34:55 +0530
-> 
-> Vignesh Raghavendra <vigneshr@ti.com> wrote:
-> > On 02/03/20 11:37 pm, Tudor.Ambarus@microchip.com wrote:
-> > > From: Boris Brezillon <bbrezillon@kernel.org>
-> > > 
-> > > Replace the manufacturer prefix by something describing more precisely
-> > > what those functions do.
-> > > 
-> > > Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
-> > > [tudor.ambarus@microchip.com: prepend spi_nor_ to all modified methods.]
-> > > Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
-> > > ---
-> > > 
-> > >  drivers/mtd/spi-nor/spi-nor.c | 88 ++++++++++++++++++-----------------
-> > >  1 file changed, 45 insertions(+), 43 deletions(-)
-> > > 
-> > > diff --git a/drivers/mtd/spi-nor/spi-nor.c
-> > > b/drivers/mtd/spi-nor/spi-nor.c
-> > > index caf0c109cca0..b15e262765e1 100644
-> > > --- a/drivers/mtd/spi-nor/spi-nor.c
-> > > +++ b/drivers/mtd/spi-nor/spi-nor.c
-> > > @@ -568,14 +568,15 @@ static int spi_nor_read_cr(struct spi_nor *nor, u8
-> > > *cr)> > 
-> > >  }
-> > >  
-> > >  /**
-> > > 
-> > > - * macronix_set_4byte() - Set 4-byte address mode for Macronix flashes.
-> > > + * spi_nor_en4_ex4_set_4byte() - Enter/Exit 4-byte mode for Macronix
-> > > like
-> > > + * flashes.
-> > > 
-> > >   * @nor:   pointer to 'struct spi_nor'.
-> > >   * @enable:        true to enter the 4-byte address mode, false to exit
-> > >   the 4-byte *         address mode.
-> > >   *
-> > >   * Return: 0 on success, -errno otherwise.
-> > >   */
-> > > 
-> > > -static int macronix_set_4byte(struct spi_nor *nor, bool enable)
-> > > +static int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable)
-> > 
-> > Sounds a bit weird, how about simplifying this to:
-> >       spi_nor_set_4byte_addr_mode()
-> > 
-> > Or if you want to be specific:
-> >       spi_nor_en_ex_4byte_addr_mode()
-> 
-> You're right. Maybe we can simplify things by having a single function
-> that does optional steps based on new flags
-> 
-> SPI_NOR_EN_EX_4B_NEEDS_WEN
-> SPI_NOR_CLEAR_EAR_ON_4B_EXIT
-> 
-> This should probably be done in a separate patch though, so ack on the
-> spi_nor_en_ex_4byte_addr_mode() rename, assuming we also change the
-> bool argument name to enter.
+Hi Krzysztof,
 
-A single big function will be ugly to handle because of the 
-spansion_set_4byte() -> it uses a different opcode.
 
-I like the nor->params>set_4byte hook.
+Le ven., mars 13, 2020 at 10:00, Krzysztof Kozlowski <krzk@kernel.org> =
 
-I think that spi_nor_en4_ex4_set_4byte() can be renamed to spi_nor_set_4byte() 
-and be the only set_4byte() method exposed to manufacturers. 
-spansion_set_4byte() will be static in core.c and the rest will be private in 
-the manufacturer drivers.
+a =E9crit :
+> On Thu, Mar 12, 2020 at 04:34:11PM +0100, Paul Cercueil wrote:
+>>  From: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
+>> =
 
-Here's how the manufacturers enter and exit the 4 byte mode:
--> eon, gidadevice, issi, macronix, xmc use EN4B/EX4B
--> micron-st needs WEN -> private method as they are the only ones that 
-require this
--> newer spansion have a 4BAM opcode (new, public command), older spansion 
-flashes use BRWR (legacy in core.c, spansion_set_4byte())
--> winbond set_4byte method is hackish and may be reason for just a flash 
-fixup hook -> private method
+>>  Add devicetree file for the Exynos 4210 based Galaxy S2 (i9100 =
 
-Let me know if you agree with this, so I can respin later today or tomorrow.
+>> version).
+> =
 
-cut
+> Thanks for the patch!
+> =
 
-> 
-> > I expect sending WREN should be harmless even for cmds that don't expect
-> > one.
+> It is an GT-I9100.
+> =
 
-The commands may be ok, but the flash can be corrupted. The WEL bit is NOT 
-reset after the completion of the EN4B command on macronix flashes, so the 
-gates are opened for some inadvertent commands that may corrupt the memory.
+> +Cc Marek (I have few questions further)
+> =
+
+> =
+
+>> =
+
+>>  Signed-off-by: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
+>>  Signed-off-by: Paul Cercueil <paul@crapouillou.net>
+>>  ---
+>>   arch/arm/boot/dts/Makefile             |   1 +
+>>   arch/arm/boot/dts/exynos4210-i9100.dts | 816 =
+
+>> +++++++++++++++++++++++++
+>>   2 files changed, 817 insertions(+)
+>>   create mode 100644 arch/arm/boot/dts/exynos4210-i9100.dts
+>> =
+
+>>  diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+>>  index d6546d2676b9..522436d30690 100644
+>>  --- a/arch/arm/boot/dts/Makefile
+>>  +++ b/arch/arm/boot/dts/Makefile
+>>  @@ -181,6 +181,7 @@ dtb-$(CONFIG_ARCH_EXYNOS3) +=3D \
+>>   	exynos3250-monk.dtb \
+>>   	exynos3250-rinato.dtb
+>>   dtb-$(CONFIG_ARCH_EXYNOS4) +=3D \
+>>  +	exynos4210-i9100.dtb \
+>>   	exynos4210-origen.dtb \
+>>   	exynos4210-smdkv310.dtb \
+>>   	exynos4210-trats.dtb \
+>>  diff --git a/arch/arm/boot/dts/exynos4210-i9100.dts =
+
+>> b/arch/arm/boot/dts/exynos4210-i9100.dts
+>>  new file mode 100644
+>>  index 000000000000..c218e34959be
+>>  --- /dev/null
+>>  +++ b/arch/arm/boot/dts/exynos4210-i9100.dts
+>>  @@ -0,0 +1,816 @@
+>>  +// SPDX-License-Identifier: GPL-2.0
+>>  +/*
+>>  + * Samsung's Exynos4210 based Galaxy S2 (i9100 version) device tree
+> =
+
+> Ditto
+> =
+
+>>  + *
+>>  + * Copyright (c) 2012 Samsung Electronics Co., Ltd.
+>>  + *		http://www.samsung.com
+>>  + * Copyright (c) 2020 Stenkin Evgeniy <stenkinevgeniy@gmail.com>
+>>  + * Copyright (c) 2020 Paul Cercueil <paul@crapouillou.net>
+>>  + *
+>>  + * Device tree source file for Samsung's Galaxy S2 smartphone =
+
+>> (i9100 version),
+>>  + * which is based on Samsung's Exynos4210 SoC.
+> =
+
+> Duplicated description, you mentioned it before.
+> =
+
+>>  + */
+>>  +
+>>  +/dts-v1/;
+>>  +#include "exynos4210.dtsi"
+>>  +#include "exynos4412-ppmu-common.dtsi"
+>>  +
+>>  +#include <dt-bindings/gpio/gpio.h>
+>>  +#include <dt-bindings/input/linux-event-codes.h>
+>>  +
+>>  +/ {
+>>  +	model =3D "Samsung Galaxy S2 (i9100)";
+> =
+
+> GT-I9100
+> =
+
+>>  +	compatible =3D "samsung,i9100", "samsung,exynos4210", =
+
+>> "samsung,exynos4";
+> =
+
+> I think it shares a lot with Trats board...
+> =
+
+> Marek, how similar these
+> designs are? Maybe it is worth to split some parts and make common =
+
+> part?
+
+I can try to do it, but it'll be only by comparing the devicetree files.
+
+>>  +
+>>  +
+>>  +	memory@40000000 {
+>>  +		device_type =3D "memory";
+>>  +		reg =3D <0x40000000 0x40000000>;
+>>  +	};
+>>  +
+> =
+
+> You do not have a chosen node, at least for stdout serial selection.
+> Probably you should have one... bootargs I guess could come from
+> bootloader.
+
+Problem is, I have no idea which UART is available via the USB jig :)
+
+>>  +	vemmc_reg: regulator-0 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "VMEM_VDD_2.8V";
+>>  +		regulator-min-microvolt =3D <2800000>;
+>>  +		regulator-max-microvolt =3D <2800000>;
+>>  +		gpio =3D <&gpk0 2 GPIO_ACTIVE_HIGH>;
+>>  +		enable-active-high;
+> =
+
+> This looks like a stub/fake regulator. Probably it shoould be replaced
+> with proper regulator coming from PMIC (few seems to be missing =
+
+> there).
+> =
+
+> I don't have the schematics so I cannot judge... I see Trats has the
+> same.
+> =
+
+> Marek, mayybe you know, is it really a separate regulator?
+> =
+
+>>  +	};
+>>  +
+>>  +	tsp_reg: regulator-1 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "TSP_FIXED_VOLTAGES";
+>>  +		regulator-min-microvolt =3D <3300000>;
+>>  +		regulator-max-microvolt =3D <3300000>;
+>>  +		gpio =3D <&gpl0 3 GPIO_ACTIVE_HIGH>;
+>>  +		startup-delay-us =3D <70000>;
+>>  +		enable-active-high;
+>>  +		regulator-boot-on;
+>>  +		regulator-always-on;
+> =
+
+> always-on and boot-on should not be needed. You have a consumer for =
+
+> this
+> regulator.
+> =
+
+>>  +	};
+>>  +
+>>  +	cam_af_28v_reg: regulator-3 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "8M_AF_2.8V_EN";
+>>  +		regulator-min-microvolt =3D <2800000>;
+>>  +		regulator-max-microvolt =3D <2800000>;
+>>  +		gpio =3D <&gpk1 1 GPIO_ACTIVE_HIGH>;
+>>  +		enable-active-high;
+>>  +	};
+>>  +
+>>  +	cam_io_en_reg: regulator-4 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "CAM_IO_EN";
+>>  +		regulator-min-microvolt =3D <2800000>;
+>>  +		regulator-max-microvolt =3D <2800000>;
+>>  +		gpio =3D <&gpe2 1 GPIO_ACTIVE_HIGH>;
+>>  +		enable-active-high;
+>>  +	};
+>>  +
+>>  +	cam_io_12v_reg: regulator-5 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "8M_1.2V_EN";
+>>  +		regulator-min-microvolt =3D <1200000>;
+>>  +		regulator-max-microvolt =3D <1200000>;
+>>  +		gpio =3D <&gpe2 5 GPIO_ACTIVE_HIGH>;
+>>  +		enable-active-high;
+>>  +	};
+>>  +
+>>  +	vt_core_15v_reg: regulator-6 {
+>>  +		compatible =3D "regulator-fixed";
+>>  +		regulator-name =3D "VT_CORE_1.5V";
+>>  +		regulator-min-microvolt =3D <1500000>;
+>>  +		regulator-max-microvolt =3D <1500000>;
+>>  +		gpio =3D <&gpe2 2 GPIO_ACTIVE_HIGH>;
+>>  +		enable-active-high;
+>>  +	};
+>>  +
+>>  +	gpio-keys {
+>>  +		compatible =3D "gpio-keys";
+>>  +
+>>  +		vol-down {
+>>  +			gpios =3D <&gpx2 1 GPIO_ACTIVE_LOW>;
+>>  +			linux,code =3D <KEY_VOLUMEDOWN>;
+>>  +			label =3D "volume down";
+>>  +			debounce-interval =3D <10>;
+>>  +		};
+>>  +
+>>  +		vol-up {
+>>  +			gpios =3D <&gpx2 0 GPIO_ACTIVE_LOW>;
+>>  +			linux,code =3D <KEY_VOLUMEUP>;
+>>  +			label =3D "volume up";
+>>  +			debounce-interval =3D <10>;
+>>  +		};
+>>  +
+>>  +		power {
+>>  +			gpios =3D <&gpx2 7 GPIO_ACTIVE_LOW>;
+>>  +			linux,code =3D <KEY_POWER>;
+>>  +			label =3D "power";
+>>  +			debounce-interval =3D <10>;
+>>  +			wakeup-source;
+>>  +		};
+>>  +
+>>  +		ok {
+>>  +			gpios =3D <&gpx3 5 GPIO_ACTIVE_LOW>;
+>>  +			linux,code =3D <KEY_OK>;
+>>  +			label =3D "ok";
+>>  +			debounce-interval =3D <10>;
+>>  +		};
+>>  +	};
+>>  +
+>>  +	wlan_pwrseq: sdhci3-pwrseq {
+>>  +		compatible =3D "mmc-pwrseq-simple";
+>>  +		reset-gpios =3D <&gpl1 2 GPIO_ACTIVE_LOW>;
+>>  +	};
+>>  +
+>>  +	i2c_max17042_fuel: i2c-gpio-3 {
+> =
+
+> i2c-gpio-3 -> i2c-gpio
+> =
+
+>>  +		compatible =3D "i2c-gpio";
+>>  +		#address-cells =3D <1>;
+>>  +		#size-cells =3D <0>;
+>>  +
+>>  +		sda-gpios =3D <&gpy4 0 GPIO_ACTIVE_HIGH>;
+>>  +		scl-gpios =3D <&gpy4 1 GPIO_ACTIVE_HIGH>;
+>>  +		i2c-gpio,delay-us =3D <5>;
+>>  +
+>>  +		battery@36 {
+>>  +			compatible =3D "maxim,max17042";
+>>  +
+>>  +			interrupt-parent =3D <&gpx2>;
+>>  +			interrupts =3D <3 2>;
+> =
+
+> s/2/IRQ_TYPE_EDGE_FALLING/
+> =
+
+>>  +
+>>  +			pinctrl-0 =3D <&max17042_fuel_irq>;
+>>  +			pinctrl-names =3D "default";
+>>  +
+>>  +			reg =3D <0x36>;
+>>  +			maxim,over-heat-temp =3D <700>;
+>>  +			maxim,over-volt =3D <4500>;
+>>  +
+> =
+
+> Remove empty line.
+> =
+
+>>  +		};
+>>  +	};
+>>  +
+>>  +	spi-lcd {
+>>  +		compatible =3D "spi-gpio";
+>>  +		#address-cells =3D <1>;
+>>  +		#size-cells =3D <0>;
+>>  +
+>>  +		num-chipselects =3D <1>;
+>>  +		cs-gpios =3D <&gpy4 3 GPIO_ACTIVE_HIGH>;
+>>  +		sck-gpios =3D <&gpy3 1 GPIO_ACTIVE_HIGH>;
+>>  +		mosi-gpios =3D <&gpy3 3 GPIO_ACTIVE_HIGH>;
+>>  +
+>>  +		lcd@0 {
+>>  +			compatible =3D "samsung,ld9040";
+>>  +			reg =3D <0>;
+>>  +
+>>  +			spi-max-frequency =3D <1200000>;
+>>  +			spi-cpol;
+>>  +			spi-cpha;
+>>  +
+>>  +			vdd3-supply =3D <&vmipi_reg>;
+>>  +			vci-supply =3D <&vcclcd_reg>;
+>>  +
+>>  +			reset-gpios =3D <&gpy4 5 GPIO_ACTIVE_HIGH>;
+>>  +			power-on-delay =3D <10>;
+>>  +			reset-delay =3D <10>;
+>>  +
+>>  +			panel-width-mm =3D <90>;
+>>  +			panel-height-mm =3D <154>;
+>>  +
+>>  +			display-timings {
+>>  +				timing {
+>>  +					clock-frequency =3D <23492370>;
+>>  +					hactive =3D <480>;
+>>  +					vactive =3D <800>;
+>>  +					hback-porch =3D <16>;
+>>  +					hfront-porch =3D <16>;
+>>  +					vback-porch =3D <2>;
+>>  +					vfront-porch =3D <28>;
+>>  +					hsync-len =3D <2>;
+>>  +					vsync-len =3D <1>;
+>>  +					hsync-active =3D <0>;
+>>  +					vsync-active =3D <0>;
+>>  +					de-active =3D <0>;
+>>  +					pixelclk-active =3D <0>;
+>>  +				};
+>>  +			};
+>>  +
+>>  +			port {
+>>  +				lcd_ep: endpoint {
+>>  +					remote-endpoint =3D <&fimd_dpi_ep>;
+>>  +				};
+>>  +			};
+>>  +		};
+>>  +	};
+>>  +
+>>  +	fixed-rate-clocks {
+>>  +		xxti {
+>>  +			compatible =3D "samsung,clock-xxti";
+>>  +			clock-frequency =3D <0>;
+>>  +		};
+>>  +
+>>  +		xusbxti {
+>>  +			compatible =3D "samsung,clock-xusbxti";
+>>  +			clock-frequency =3D <24000000>;
+>>  +		};
+>>  +	};
+>>  +
+>>  +	thermal-zones {
+>>  +		cpu_thermal: cpu-thermal {
+>>  +			cooling-maps {
+>>  +				map0 {
+>>  +					/* Corresponds to 800MHz */
+>>  +					cooling-device =3D <&cpu0 2 2>;
+>>  +				};
+>>  +				map1 {
+>>  +					/* Corresponds to 200MHz */
+>>  +					cooling-device =3D <&cpu0 4 4>;
+>>  +				};
+>>  +			};
+>>  +		};
+>>  +	};
+>>  +
+>>  +};
+>>  +
+>>  +&camera {
+>>  +	status =3D "okay";
+>>  +};
+>>  +
+>>  +&cpu0 {
+>>  +	cpu0-supply =3D <&varm_breg>;
+>>  +};
+>>  +
+>>  +&exynos_usbphy {
+>>  +	status =3D "okay";
+>>  +
+>>  +	vbus-supply =3D <&safe1_sreg>;
+>>  +};
+>>  +
+>>  +&fimc_0 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC0>, <&clock =
+
+>> CLK_SCLK_FIMC0>;
+>>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
+>>  +	assigned-clock-rates =3D <0>, <160000000>;
+>>  +};
+>>  +
+>>  +&fimc_1 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC1>, <&clock =
+
+>> CLK_SCLK_FIMC1>;
+>>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
+>>  +	assigned-clock-rates =3D <0>, <160000000>;
+>>  +};
+>>  +
+>>  +&fimc_2 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC2>, <&clock =
+
+>> CLK_SCLK_FIMC2>;
+>>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
+>>  +	assigned-clock-rates =3D <0>, <160000000>;
+>>  +};
+>>  +
+>>  +&fimc_3 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC3>, <&clock =
+
+>> CLK_SCLK_FIMC3>;
+>>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
+>>  +	assigned-clock-rates =3D <0>, <160000000>;
+>>  +};
+>>  +
+>>  +&fimd {
+>>  +	status =3D "okay";
+>>  +	#address-cells =3D <1>;
+>>  +	#size-cells =3D <0>;
+>>  +
+>>  +	samsung,invert-vden;
+>>  +	samsung,invert-vclk;
+>>  +
+>>  +	pinctrl-0 =3D <&lcd_clk>, <&lcd_data24>;
+>>  +	pinctrl-names =3D "default";
+>>  +
+>>  +	port@3 {
+>>  +		reg =3D <3>;
+>>  +
+>>  +		fimd_dpi_ep: endpoint {
+>>  +			remote-endpoint =3D <&lcd_ep>;
+>>  +		};
+>>  +	};
+>>  +};
+>>  +
+>>  +&hsotg {
+>>  +	status =3D "okay";
+>>  +
+>>  +	dr_mode =3D "otg";
+>>  +	vusb_d-supply =3D <&vusb_reg>;
+>>  +	vusb_a-supply =3D <&vusbdac_reg>;
+>>  +};
+>>  +
+>>  +&ehci {
+> =
+
+> Order the phandle/nodes in alphabetical order, please. So:
+> =
+
+> &ehci ...
+> &hsoth ...
+> &i2c ...
+> =
+
+> etc.
+> =
+
+>>  +	status =3D "okay";
+>>  +
+>>  +	port@0 {
+>>  +		status =3D "okay";
+>>  +	};
+>>  +
+>>  +	port@1 {
+>>  +		status =3D "okay";
+>>  +	};
+>>  +
+>>  +	port@2 {
+>>  +		status =3D "okay";
+>>  +	};
+>>  +};
+>>  +
+> =
+
+> Double empty line.
+> =
+
+>>  +
+>>  +&i2c_3 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	samsung,i2c-sda-delay =3D <100>;
+>>  +	samsung,i2c-slave-addr =3D <0x10>;
+>>  +	samsung,i2c-max-bus-freq =3D <100000>;
+>>  +
+>>  +	pinctrl-0 =3D <&i2c3_bus>;
+>>  +	pinctrl-names =3D "default";
+>>  +
+>>  +	mxt224-touchscreen@4a {
+>>  +		compatible =3D "atmel,maxtouch";
+>>  +		reg =3D <0x4a>;
+>>  +
+>>  +		interrupt-parent =3D <&gpx0>;
+>>  +		interrupts =3D <4 IRQ_TYPE_EDGE_FALLING>;
+>>  +
+>>  +		avdd-supply =3D <&tsp_reg>;
+>>  +		vdd-supply =3D <&tsp_reg>;
+>>  +	};
+>>  +};
+>>  +
+>>  +&i2c_7 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	samsung,i2c-sda-delay =3D <100>;
+>>  +	samsung,i2c-slave-addr =3D <0x10>;
+>>  +	samsung,i2c-max-bus-freq =3D <400000>;
+>>  +
+>>  +	pinctrl-0 =3D <&i2c7_bus>;
+>>  +	pinctrl-names =3D "default";
+>>  +
+>>  +	ak8975@c {
+>>  +		compatible =3D "asahi-kasei,ak8975";
+>>  +		reg =3D <0x0c>;
+>>  +
+>>  +		gpios =3D <&gpx2 2 GPIO_ACTIVE_HIGH>;
+>>  +	};
+>>  +};
+>>  +
+>>  +
+>>  +&i2c_5 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	samsung,i2c-sda-delay =3D <100>;
+>>  +	samsung,i2c-slave-addr =3D <0x10>;
+>>  +	samsung,i2c-max-bus-freq =3D <100000>;
+>>  +
+>>  +	pinctrl-0 =3D <&i2c5_bus>;
+>>  +	pinctrl-names =3D "default";
+>>  +
+>>  +	max8997_pmic@66 {
+>>  +		compatible =3D "maxim,max8997-pmic";
+>>  +		reg =3D <0x66>;
+>>  +
+>>  +		interrupts-extended =3D <&gpx0 7 0>, <&gpx2 3 2>;
+>>  +		interrupt-parent =3D <&gpx0>;
+>>  +		interrupts =3D <7 IRQ_TYPE_NONE>;
+>>  +
+>>  +		otg_en-gpios =3D <&gpx3 3 0>;
+>>  +		usb_sel-gpios =3D <&gpl0 6 0>;
+>>  +
+>>  +		max8997,pmic-buck1-uses-gpio-dvs;
+>>  +		max8997,pmic-buck2-uses-gpio-dvs;
+>>  +		max8997,pmic-buck5-uses-gpio-dvs;
+>>  +
+>>  +		max8997,pmic-ignore-gpiodvs-side-effect;
+>>  +		max8997,pmic-buck125-default-dvs-idx =3D <0>;
+>>  +
+>>  +		max8997,pmic-buck125-dvs-gpios =3D <&gpx0 5 GPIO_ACTIVE_HIGH>,
+>>  +						 <&gpx0 6 GPIO_ACTIVE_HIGH>,
+>>  +						 <&gpl0 0 GPIO_ACTIVE_HIGH>;
+>>  +
+>>  +		max8997,pmic-buck1-dvs-voltage =3D <1350000>, <1300000>,
+>>  +						 <1250000>, <1200000>,
+>>  +						 <1150000>, <1100000>,
+>>  +						 <1000000>, <950000>;
+>>  +
+>>  +		max8997,pmic-buck2-dvs-voltage =3D <1100000>, <1000000>,
+>>  +						 <950000>,  <900000>,
+>>  +						 <1100000>, <1000000>,
+>>  +						 <950000>,  <900000>;
+>>  +
+>>  +		max8997,pmic-buck5-dvs-voltage =3D <1200000>, <1200000>,
+>>  +						 <1200000>, <1200000>,
+>>  +						 <1200000>, <1200000>,
+>>  +						 <1200000>, <1200000>;
+>>  +
+>>  +		pinctrl-0 =3D <&max8997_irq>, <&otg_gp>, <&usb_sel>;
+>>  +		pinctrl-names =3D "default";
+>>  +
+>>  +		regulators {
+>>  +			vadc_reg: LDO1 {
+>>  +				regulator-name =3D "VADC_3.3V_C210";
+>>  +				regulator-min-microvolt =3D <3300000>;
+>>  +				regulator-max-microvolt =3D <3300000>;
+>>  +				regulator-always-on;
+>>  +
+>>  +			};
+> =
+
+> Add empty line.
+> =
+
+>>  +			valive_reg: LDO2 {
+>>  +				regulator-name =3D "VALIVE_1.1V_C210";
+>>  +				regulator-min-microvolt =3D <1100000>;
+>>  +				regulator-max-microvolt =3D <1100000>;
+>>  +				regulator-always-on;
+>>  +
+>>  +			};
+>>  +
+>>  +			vusb_reg: LDO3 {
+>>  +				regulator-name =3D "VUSB_1.1V_C210";
+>>  +				regulator-min-microvolt =3D <1100000>;
+>>  +				regulator-max-microvolt =3D <1100000>;
+>>  +			};
+>>  +
+>>  +			vmipi_reg: LDO4 {
+>>  +				regulator-name =3D "VMIPI_1.8V";
+>>  +				regulator-min-microvolt =3D <1800000>;
+>>  +				regulator-max-microvolt =3D <1800000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vhsic_reg: LDO5 {
+>>  +				regulator-name =3D "VHSIC_1.2V";
+>>  +				regulator-min-microvolt =3D <1200000>;
+>>  +				regulator-max-microvolt =3D <1200000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vpda_reg: LDO6 {
+>>  +				regulator-name =3D "VCC_1.8V_PDA";
+>>  +				regulator-min-microvolt =3D <1800000>;
+>>  +				regulator-max-microvolt =3D <1800000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vcam_reg: LDO7 {
+>>  +				regulator-name =3D "CAM_ISP_1.8V";
+>>  +				regulator-min-microvolt =3D <1800000>;
+>>  +				regulator-max-microvolt =3D <1800000>;
+>>  +			};
+>>  +
+>>  +			vusbdac_reg: LDO8 {
+>>  +				regulator-name =3D "VUSB+VDAC_3.3V_C210";
+>>  +				regulator-min-microvolt =3D <3300000>;
+>>  +				regulator-max-microvolt =3D <3300000>;
+>>  +			};
+>>  +
+>>  +			vccpda_reg: LDO9 {
+>>  +				regulator-name =3D "VCC_2.8V_PDA";
+>>  +				regulator-min-microvolt =3D <2800000>;
+>>  +				regulator-max-microvolt =3D <2800000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vtouch_reg: LDO11 {
+>>  +				regulator-name =3D "TOUCH_2.8V";
+>>  +				regulator-min-microvolt =3D <2800000>;
+>>  +				regulator-max-microvolt =3D <2800000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vpll_reg: LDO10 {
+>>  +				regulator-name =3D "VPLL_1.1V";
+>>  +				regulator-min-microvolt =3D <1100000>;
+>>  +				regulator-max-microvolt =3D <1100000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vtcam_reg: LDO12 {
+>>  +				regulator-name =3D "VT_CAM_1.8V";
+>>  +				regulator-min-microvolt =3D <1800000>;
+>>  +				regulator-max-microvolt =3D <1800000>;
+>>  +			};
+>>  +
+>>  +			vcclcd_reg: LDO13 {
+>>  +				regulator-name =3D "VCC_3.0V_LCD";
+>>  +				regulator-min-microvolt =3D <3000000>;
+>>  +				regulator-max-microvolt =3D <3000000>;
+>>  +			};
+>>  +
+>>  +			vmotor_reg: LDO14 {
+>>  +				regulator-name =3D "VCC_2.8V_MOTOR";
+>>  +				regulator-min-microvolt =3D <2800000>;
+>>  +				regulator-max-microvolt =3D <2800000>;
+>>  +			};
+>>  +
+>>  +			vled_reg: LDO15 {
+>>  +				regulator-name =3D "LED_A_2.8V";
+>>  +				regulator-min-microvolt =3D <2800000>;
+>>  +				regulator-max-microvolt =3D <2800000>;
+>>  +			};
+>>  +
+>>  +			camsensor_reg: LDO16 {
+>>  +				regulator-name =3D "CAM_SENSOR_IO_1.8V";
+>>  +				regulator-min-microvolt =3D <1800000>;
+>>  +				regulator-max-microvolt =3D <1800000>;
+>>  +			};
+>>  +
+>>  +			vtf_reg: LDO17 {
+>>  +				regulator-name =3D "VTF_2.8V";
+>>  +				regulator-min-microvolt =3D <2800000>;
+>>  +				regulator-max-microvolt =3D <2800000>;
+>>  +			};
+>>  +
+>>  +			vtouchled_reg: LDO18 {
+>>  +				regulator-name =3D "TOUCH_LED_3.3V";
+>>  +				regulator-min-microvolt =3D <2500000>;
+>>  +				regulator-max-microvolt =3D <3300000>;
+>>  +			};
+>>  +
+>>  +			vddq_reg: LDO21 {
+>>  +				regulator-name =3D "VDDQ_M1M2_1.2V";
+>>  +				regulator-min-microvolt =3D <1200000>;
+>>  +				regulator-max-microvolt =3D <1200000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			varm_breg: BUCK1 {
+>>  +				//regulator-name =3D "VARM_1.2V_C210";
+>>  +				regulator-name =3D "vdd_arm";
+>>  +				regulator-min-microvolt =3D <65000>;
+>>  +				regulator-max-microvolt =3D <2225000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vint_breg: BUCK2 {
+>>  +				regulator-name =3D "VINT_1.1V_C210";
+>>  +				regulator-min-microvolt =3D <65000>;
+>>  +				regulator-max-microvolt =3D <2225000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vg3d_breg: BUCK3 {
+>>  +				regulator-name =3D "G3D_1.1V";
+>>  +				regulator-min-microvolt =3D <900000>;
+>>  +				regulator-max-microvolt =3D <1200000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			camisp_breg: BUCK4 {
+>>  +				regulator-name =3D "CAM_ISP_CORE_1.2V";
+>>  +				regulator-min-microvolt =3D <1200000>;
+>>  +				regulator-max-microvolt =3D <1200000>;
+>>  +			};
+>>  +
+>>  +			vmem_breg: BUCK5 {
+>>  +				regulator-name =3D "VMEM_1.2V";
+>>  +				regulator-min-microvolt =3D <1200000>;
+>>  +				regulator-max-microvolt =3D <1200000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			vccsub_breg: BUCK7 {
+>>  +				regulator-name =3D "VCC_SUB_2.0V";
+>>  +				regulator-min-microvolt =3D <2000000>;
+>>  +				regulator-max-microvolt =3D <2000000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			safe1_sreg: ESAFEOUT1 {
+>>  +				regulator-name =3D "SAFEOUT1";
+>>  +			};
+>>  +
+>>  +			safe2_sreg: ESAFEOUT2 {
+>>  +				regulator-name =3D "SAFEOUT2";
+>>  +				regulator-boot-on;
+>>  +			};
+>>  +
+>>  +			charger_reg: CHARGER {
+>>  +				regulator-name =3D "CHARGER";
+>>  +				regulator-min-microamp =3D <60000>;
+>>  +				regulator-max-microamp =3D <2580000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+>>  +			chargercv_reg: CHARGER_CV {
+>>  +				regulator-name =3D "CHARGER_CV";
+>>  +				regulator-min-microvolt =3D <3800000>;
+>>  +				regulator-max-microvolt =3D <4100000>;
+>>  +				regulator-always-on;
+>>  +			};
+>>  +
+> =
+
+> Empty line, not needed.
+> =
+
+>>  +		};
+>>  +
+> =
+
+> Empty line, not needed.
+> =
+
+>>  +	};
+>>  +};
+>>  +
+>>  +
+> =
+
+> Empty line, not needed. Please fix them in all places.
+> =
+
+>>  +&gpu {
+>>  +	status =3D "okay";
+>>  +
+>>  +	mali-supply =3D <&vg3d_breg>;
+>>  +	regulator-microvolt-offset =3D <50000>;
+>>  +	regulator-microsecs-delay =3D <50>;
+>>  +};
+>>  +
+> =
+
+> and more...
+> =
+
+>>  +
+>>  +&sdhci_0 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	bus-width =3D <8>;
+>>  +	non-removable;
+>>  +	vmmc-supply =3D <&vemmc_reg>;
+>>  +
+>>  +	pinctrl-0 =3D <&sd0_clk>, <&sd0_cmd>, <&sd0_bus8>;
+>>  +	pinctrl-names =3D "default";
+>>  +};
+>>  +
+>>  +&sdhci_2 {
+>>  +	status =3D "okay";
+>>  +
+>>  +	bus-width =3D <4>;
+>>  +	cd-gpios =3D <&gpx3 4 GPIO_ACTIVE_LOW>;
+>>  +	vmmc-supply =3D <&vtf_reg>;
+>>  +
+>>  +	pinctrl-0 =3D <&sd2_clk>, <&sd2_cmd>, <&sd2_bus4>;
+>>  +	pinctrl-names =3D "default";
+>>  +};
+>>  +
+>>  +&ehci {
+> =
+
+> Duplicated.
+> =
+
+> Best regards,
+> Krzysztof
+
+For all other comments: ACK, will fix this mess in V2.
 
 Cheers,
-ta
+-Paul
+
+
 
 
 _______________________________________________
