@@ -2,50 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D651184CFA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:51:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CA35184CFD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:52:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v/QlgF5IzrA0FNThpSPmqRPexRwR/VyjQ2wROOurltk=; b=O+uqvPYPq4k2RZeH4byce5VxS
-	jxzmqCR46itnAFceQdXb6gx+W++91p26UaWXT5YfYhhf/h7zvsrTSiy5VDd6gTrg4Arc0BIAO4KxO
-	laB2BaOyQsTB5nG7oxQCKK1Nee3OyotKC5YtRcO2IcsEl+3TxtLJ2+5nzgBZiLBHZz/PhlNPcYv8M
-	wjlmo92upVlbxtXGvqrBNHSn9EfvPwsjXcTy9AxNSP8NpyTT+ogms1uQ31P0Ko/B1R745JHB407xE
-	ypCtvqLLa3tOLR8Zi94CUvFKwpKMNKm6ViWBn5Gqrwq0ekuFusqEslWsv4yckKbCFSumwn0rVnt0z
-	VKr5c+FfQ==;
+	 bh=v5VY06+tg5UusZmJZD+ZEsK7i5jLPvFSrHNZGtPU2OI=; b=rMOVXFlrC1te7ORqt32fOZM+G
+	nMalX7F1RIN59g2SeoXMxCQk8Kbr0vLqdQyHEWRJpFjdRd2hzojlpfLfHR9Bl3vrFZWU+pLXodccP
+	BlRERpMuOz4HfMWFU4bOUh9mzgHsr6PhlPeRPEncRUX41uJcVedETNv5NCoZnN2jHZ7DHeL9v9501
+	toovdR3j/Hzv6e6cl3+5dVM5Dp9CaHH1+9/0Qs5/T6djOEChik6F8kHJ0T552zR3SREqVbeHEJLUV
+	AdnLcXLNocZpzHr3/VP4VvQSLLylOVvmPR7F2kal6hl0uHqGepJSH/HLugw/x5own/HKiOMm25fL8
+	HYHtDPApQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnX8-0006H0-JF; Fri, 13 Mar 2020 16:51:38 +0000
+	id 1jCnXe-0006We-MB; Fri, 13 Mar 2020 16:52:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCnWz-0006GX-RN
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:51:31 +0000
+ id 1jCnXU-0006Vz-Om; Fri, 13 Mar 2020 16:52:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EDB031B;
- Fri, 13 Mar 2020 09:51:27 -0700 (PDT)
-Received: from [10.57.50.73] (unknown [10.57.50.73])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A5CF3F534;
- Fri, 13 Mar 2020 09:51:25 -0700 (PDT)
-Subject: Re: [PATCH 4/6] arm64: uaccess: Use asm/ccset.h macros in __range_ok
-To: Mark Rutland <mark.rutland@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>
-References: <20200311180416.6509-1-richard.henderson@linaro.org>
- <20200311180416.6509-5-richard.henderson@linaro.org>
- <20200313110436.GD42546@lakrids.cambridge.arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
-Date: Fri, 13 Mar 2020 16:51:28 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5818631B;
+ Fri, 13 Mar 2020 09:52:00 -0700 (PDT)
+Received: from [10.37.12.40] (unknown [10.37.12.40])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 019813F534;
+ Fri, 13 Mar 2020 09:51:49 -0700 (PDT)
+Subject: Re: [PATCH v4 4/4] drm/panfrost: Register devfreq cooling and attempt
+ to add Energy Model
+To: Steven Price <steven.price@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>
+References: <20200309134117.2331-1-lukasz.luba@arm.com>
+ <20200309134117.2331-5-lukasz.luba@arm.com>
+ <9747ca5c-ba4c-521f-11c1-45ee6a5018e3@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <c7453e1e-cb23-8e2a-d209-c618da9ffbbd@arm.com>
+Date: Fri, 13 Mar 2020 16:51:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200313110436.GD42546@lakrids.cambridge.arm.com>
-Content-Language: en-GB
+In-Reply-To: <9747ca5c-ba4c-521f-11c1-45ee6a5018e3@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095129_929289_92BD19DA 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20200313_095201_778297_5DECCE1B 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,71 +75,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: "nm@ti.com" <nm@ti.com>, "juri.lelli@redhat.com" <juri.lelli@redhat.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ Liviu Dudau <Liviu.Dudau@arm.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "bsegall@google.com" <bsegall@google.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ Morten Rasmussen <Morten.Rasmussen@arm.com>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ "khilman@kernel.org" <khilman@kernel.org>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ Javi Merino Cacho <Javi.MerinoCacho@arm.com>,
+ "cw00.choi@samsung.com" <cw00.choi@samsung.com>,
+ "mingo@redhat.com" <mingo@redhat.com>, "mgorman@suse.de" <mgorman@suse.de>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "alyssa.rosenzweig@collabora.com" <alyssa.rosenzweig@collabora.com>,
+ =?UTF-8?Q?=c3=98rjan_Eide?= <Orjan.Eide@arm.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>,
+ "b.zolnierkie@samsung.com" <b.zolnierkie@samsung.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ Dietmar Eggemann <Dietmar.Eggemann@arm.com>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
+ "qperret@google.com" <qperret@google.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "rdunlap@infradead.org" <rdunlap@infradead.org>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "agross@kernel.org" <agross@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Sudeep Holla <Sudeep.Holla@arm.com>,
+ "patrick.bellasi@matbug.net" <patrick.bellasi@matbug.net>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-13 11:04 am, Mark Rutland wrote:
-> On Wed, Mar 11, 2020 at 11:04:14AM -0700, Richard Henderson wrote:
->> Uses of __range_ok almost always feed a branch.
->> This allows the compiler to use flags directly.
+
+
+On 3/9/20 2:15 PM, Steven Price wrote:
+> On 09/03/2020 13:41, Lukasz Luba wrote:
+>> Register devfreq cooling device and attempt to register Energy Model. This
+>> will add the devfreq device to the Energy Model framework. It will create
+>> a dedicated and unified data structures used i.e. in thermal framework.
+>> The last NULL parameter indicates that the power model is simplified and
+>> created based on DT 'dynamic-power-coefficient', voltage and frequency.
+>>
+>> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
 > 
-> If we want to give hte compiler the most freedom, the best thing would
-> be to write this in C. IIUC this code is written in assembly largely for
-> historical reasons, and the comment above says:
+> LGTM!
 > 
-> | This is equivalent to the following test:
-> | (u65)addr + (u65)size <= (u65)current->addr_limit + 1
-> 
-> ... which e.g. we could write as:
-> 
-> 	(__uint128_t)addr + (__uint128_t)size <= (__uint128_t)limit + 1;
-> 
-> ... which would be much clearer than the assembly.
-> 
-> Is there any pattern like that for which the compiler generates
-> reasonable looking code, and if not, is that something that could be
-> improved compiler side?
+> Reviewed-by: Steven Price <steven.price@arm.com>
 
-Hmm, in fact this:
+Thank you Steven. I will collect it for v5.
 
-	__uint128_t tmp = (__uint128_t)(unsigned long)addr + size;
-	return !tmp || tmp - 1 <= limit;
-
-generates code that looks like utter crap in isolation[1], but once 
-inlined actually leads to a modest overall reduction (-0.09%) across the 
-whole of vmlinux according to bloat-o-meter (presumably most of those 
-branches roll up into the overall "if(access_ok())..." control flow for 
-the typical case, and I'm sure size and limit get constant-folded a lot).
-
-IIRC at the time there were so many uncertainties flying around that 
-sticking with asm to take compiler unknowns out of the picture felt 
-desirable, but perhaps the time might be nigh to retire my baby after 
-all... I'll investigate a bit further.
-
-Robin.
-
-
-[1]:
-0000000000000000 <range_ok>:
-    0:   ab010000        adds    x0, x0, x1
-    4:   9a9f37e3        cset    x3, cs  // cs = hs, nlast
-    8:   aa030001        orr     x1, x0, x3
-    c:   b4000161        cbz     x1, 38 <range_ok+0x38>
-   10:   f1000401        subs    x1, x0, #0x1
-   14:   d2800020        mov     x0, #0x1                        // #1
-   18:   da1f0063        sbc     x3, x3, xzr
-   1c:   b4000063        cbz     x3, 28 <range_ok+0x28>
-   20:   d2800000        mov     x0, #0x0                        // #0
-   24:   d65f03c0        ret
-   28:   eb02003f        cmp     x1, x2
-   2c:   54ffffc9        b.ls    24 <range_ok+0x24>  // b.plast
-   30:   d2800000        mov     x0, #0x0                        // #0
-   34:   17fffffc        b       24 <range_ok+0x24>
-   38:   d2800020        mov     x0, #0x1                        // #1
-   3c:   d65f03c0        ret
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
