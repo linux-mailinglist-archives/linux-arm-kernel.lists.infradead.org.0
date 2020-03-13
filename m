@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3EFC183E2C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:01:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A926D183E32
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:02:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZsEsRWmawHQnxqa+Ysmx6K+Ap2B0dskKbhqP5/Pb5PQ=; b=SD4BZRxAluiYmUop2AoOkineI4
-	o44TAFEdDu1QwCkDOtMpMieqbeuPjD5sxny0kzBYFFgVuw4SXXSAN3MFBsDsaEf1SC0B+psPZuW4o
-	5dlbmXg04BIuK8PSBAApNzHGI2FeHNAwy9N02Nj37kee0MLfdYz6fn25r/blF0H8YjH5ihWOSQy5X
-	7eSN3c2/Hw04JVSHgIgphu0h8OZhfVCEry1H0uuBG+gEttlutf5vPCI+Telb4BjCv4d/QCysPuNVf
-	KP69mn0QN6pxod/OT5HcL9GQSFp7H0j11N2tgOytAh1L5px5JKChNVFJqhezHM0UYo5VC2mKxdZNe
-	z279FwqA==;
+	bh=nzXwAjty14gPsSX7lNomj9KMV0p/lVQeiBYkSVEHCQY=; b=Qodq7eZx3syieXxx58puO31G1B
+	vkCXxJgOtNz7q2VJOMV6f5zS+M7jarYmtkUZgf5iBbho66zIIjUEaPz3hcoTaIYWO+uRw5em5FKzn
+	FHLzz+tIPZSYyqJqj7NF4601kD1xYgbeHnl1Cs0HBMpI0gwna78s1onk9neVg18dT74sGTSJ6g+cp
+	loL7oDxmH/0a5RNk44HzlZjPXkFGBF6BvnbwCvme8EBMYtUfSk9B6tnn3BzIiTTGAKUTf8ChMH8hC
+	Iu8SBBj++ByZolt8zTOjGBmDrYWKAOsFy2Fu0qYYhNL2uFQTA1PoTwL7tvBz/eN11FltfRkgELUFw
+	cV3Y6peQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYhv-0008FH-Kd; Fri, 13 Mar 2020 01:01:47 +0000
+	id 1jCYiI-00008I-Bi; Fri, 13 Mar 2020 01:02:10 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYex-0004FL-52
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:44 +0000
+ id 1jCYex-0004Cz-U8
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:45 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:42 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id B2C12603AB;
- Fri, 13 Mar 2020 09:58:42 +0900 (JST)
+ by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:43 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 873CA603AB;
+ Fri, 13 Mar 2020 09:58:43 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 13 Mar 2020 09:58:42 +0900
+ Fri, 13 Mar 2020 09:58:43 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 223041A01BB;
+ by kinkan.css.socionext.com (Postfix) with ESMTP id EB6E41A01BB;
  Fri, 13 Mar 2020 09:58:42 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 09/10] arm64: dts: uniphier: Set SCSSI clock and reset IDs for
- each channel
-Date: Fri, 13 Mar 2020 09:58:15 +0900
-Message-Id: <1584061096-23686-10-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 10/10] arm64: dts: uniphier: Stabilize Ethernet RGMII mode of
+ LD20 global and PXs3 ref board
+Date: Fri, 13 Mar 2020 09:58:16 +0900
+Message-Id: <1584061096-23686-11-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_175843_355759_C5BAE4B4 
-X-CRM114-Status: GOOD (  14.11  )
+X-CRM114-CacheID: sfid-20200312_175844_139546_467F4B9A 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,84 +77,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently common clock and reset IDs were used, however, each clock and
-reset ID should be used for each channel.
+The RGMII PHY needs to change drive-strength properties of the Ethernet
+Tx pins to stabilize the PHY.
 
-Fixes: 925c5c32f31d ("arm64: dts: uniphier: add SPI node for LD20, LD11 and PXs3")
+The devicetree for LD20 global board specifies RMII PHY in the ethernet
+node as default, however, there is also another board that has RGMII PHY.
+The devicetree for the board doesn't exist, so the users should change
+the ethernet properties by outside way.
+
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi |  4 ++--
- arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 12 ++++++------
- arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi |  4 ++--
- 3 files changed, 10 insertions(+), 10 deletions(-)
+ arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts | 13 +++++++++++++
+ arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts    | 16 ++++++++++++++++
+ 2 files changed, 29 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-index 5aeb3cc..cd6e159 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-@@ -143,8 +143,8 @@
- 			interrupts = <0 216 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi1>;
--			clocks = <&peri_clk 11>;
--			resets = <&peri_rst 11>;
-+			clocks = <&peri_clk 12>;
-+			resets = <&peri_rst 12>;
- 		};
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts b/arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts
+index 2c00008..89b133f 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts
++++ b/arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts
+@@ -146,6 +146,19 @@
+ 	};
+ };
  
- 		serial0: serial@54006800 {
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-index c2868d8..794c0d2 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-@@ -248,8 +248,8 @@
- 			interrupts = <0 216 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi1>;
--			clocks = <&peri_clk 11>;
--			resets = <&peri_rst 11>;
-+			clocks = <&peri_clk 12>;
-+			resets = <&peri_rst 12>;
- 		};
- 
- 		spi2: spi@54006200 {
-@@ -259,8 +259,8 @@
- 			interrupts = <0 229 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi2>;
--			clocks = <&peri_clk 11>;
--			resets = <&peri_rst 11>;
-+			clocks = <&peri_clk 13>;
-+			resets = <&peri_rst 13>;
- 		};
- 
- 		spi3: spi@54006300 {
-@@ -270,8 +270,8 @@
- 			interrupts = <0 230 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi3>;
--			clocks = <&peri_clk 11>;
--			resets = <&peri_rst 11>;
-+			clocks = <&peri_clk 14>;
-+			resets = <&peri_rst 14>;
- 		};
- 
- 		serial0: serial@54006800 {
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-index 0d4283c..a365fc4 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-@@ -207,8 +207,8 @@
- 			interrupts = <0 216 4>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_spi1>;
--			clocks = <&peri_clk 11>;
--			resets = <&peri_rst 11>;
-+			clocks = <&peri_clk 12>;
-+			resets = <&peri_rst 12>;
- 		};
- 
- 		serial0: serial@54006800 {
++&pinctrl_ether_rgmii {
++	tx {
++		pins = "RGMII_TXD0", "RGMII_TXD1", "RGMII_TXD2",
++		       "RGMII_TXD3", "RGMII_TXCTL";
++		drive-strength = <12>;
++	};
++
++	txclk {
++		pins = "RGMII_TXCLK";
++		drive-strength = <9>;
++	};
++};
++
+ &usb {
+ 	status = "okay";
+ };
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts b/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
+index fcab6d1..d74a6c6 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
++++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
+@@ -132,3 +132,19 @@
+ 		reg = <0>;
+ 	};
+ };
++
++&pinctrl_ether_rgmii {
++	tx {
++		pins = "RGMII0_TXCLK", "RGMII0_TXD0", "RGMII0_TXD1",
++		       "RGMII0_TXD2", "RGMII0_TXD3", "RGMII0_TXCTL";
++		drive-strength = <9>;
++	};
++};
++
++&pinctrl_ether1_rgmii {
++	tx {
++		pins = "RGMII1_TXCLK", "RGMII1_TXD0", "RGMII1_TXD1",
++		       "RGMII1_TXD2", "RGMII1_TXD3", "RGMII1_TXCTL";
++		drive-strength = <9>;
++	};
++};
 -- 
 2.7.4
 
