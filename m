@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09499184BCD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:56:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 804C9184BDE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 16:59:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SjSoqBUT1+osQG/yhUewwRY6lGvDc018Xn/evVGMhW4=; b=NdHqmswq7k5hIP
-	YAqspsd4o2Lgn1oJcrrPAtzAIs1C4/ucnAmpo5yP+exdHK23tAT7tssEcacGGf1kYMvlg/zCKqbhR
-	g0qp2bb6nja2sw5kQvqrR3wACC11mVXQ+AJRBZTK9MmdG1DxLdatm3xR7/X2flsRtTacA9jord5Tp
-	s3Xl/mruW/mZiOgsCAUgZkFfjZiCNzb+NmiXYGFW0k6xibQMiLU8hd5PlRdAQkujFD7+WUpFfGR1x
-	Ych2gvCsNY6xLjjfsMYo9bxFf0DbWnEpRWpqzbuUYY/N3T9VdA07mmomK4CNOceJW9YJR26V7x33k
-	nb+UZrC9u/OEMMUEvIXA==;
+	List-Owner; bh=dpnvvA6sIBwhtFex/df3h9Q+rGXBCkK1e/KP/OodsyM=; b=hJ7sltePXaoY8E
+	M9N0ueUi7Dt95wI/1bDH6eIc6Au7OEdKUSCp/tK9hmVrLnxcnnXepE1xRToyBw/1qqvtufZ1hufdG
+	gij97rt01wEtpjce8nbOMv34P+9vgFJ7RfCHxITuUm92hDjv22mE3PpgRZKnyctox4u90f4dByMXx
+	eJ8I3AUZggC/V6FqBViZXaBu3BjxaI3OiSb84Kb2pnprARuK/fFMVkHo2rw+d5GIrKMd7W3hIi3t6
+	UaYsBSVuxvPEKFEMm1giOt0ABtdslxOG0ZjW9i3rOAGIBBRFAlezHAAXBFyCSlfww9gFMJu1IomGD
+	ATKP9I56vDPgEuycDhqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmfI-0001YG-9j; Fri, 13 Mar 2020 15:56:00 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jCmiL-0004Mw-Hx; Fri, 13 Mar 2020 15:59:09 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmWl-0008V1-1H; Fri, 13 Mar 2020 15:47:19 +0000
-Received: by mail-ot1-x344.google.com with SMTP id j16so10551173otl.1;
- Fri, 13 Mar 2020 08:47:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
- b=gAIDs6WqqY4C6m2b5QdZWRTmIT3xf9Ik6Np8m+/Z/J5ikCql9gM3IwFQvuOl178Nzr
- 3IZ3HkdzXqzSrRImXqzs86OwH+pAqPX8nDIT3mW1Ilmq8XWcuyISAxCtav2E5OxoXkJd
- a2/19fycsXGRTcGjxcuP0a4HCJbtcxuT8E/3Qd61YjhSuJj8H7bt5BJQisMoSsu6OF3r
- 8isHVQs3wlSr7wkc0M+N89U79Mnd2s08qw4ocvTBql6Eg+sDcwjF1Pu6TDMJAIo8zT6Y
- gfs62X7oCtBvDY2WKFVGT1I4sbyDSbi3FtifMvad/OCwI0ELcGXTZnGrLvH6ugFlEC4R
- c8YA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
- b=o34bh3vZQnVROatS3y7gmFwFwBmoda1dY1KZLnlzlXPeE4wzsPt024Oaqig2PKeXRe
- BEr3LThnWMCIDIhYxN6uuZc5wI6uFKr/oUGR4591KtgxPK+p6OKLFBBafgxxROS61KqH
- qa+p3yPvvA+6AQnFdq7DWj+5VMJH5gmQ1f7S6HrIpycPCoBhn2W8ASGQlKlWcodUIh1l
- bNzleF8oF3S0E2UB6f5W5JO9n2cr5TaA8FRzFwEITcwuwh9VIM5m2cJukZMm7cnWNlGi
- sOJRhd/M+m8MNKgv2Ron+8zN71jXPGfxzlGr0nLydKyEt7XJTaX1Efft2188Bp25xxLc
- +jJQ==
-X-Gm-Message-State: ANhLgQ26V6h09Ozad1rfplNWQSglyxc2ZrHeon8ir5H5mcnDGgCVDrgn
- 4TBftGf0phqlpCMAqS6ZjCm7DxtdtzvP1x+5Q+U=
-X-Google-Smtp-Source: ADFU+vu760GpCPmD7yZUXlIQeGa3R1i+fs+y1tbGVZM1WMb4f80I+07TGxLiEF8SFrU09Xrxz1LyHjcMcOFDGWeTS2I=
-X-Received: by 2002:a05:6830:20c9:: with SMTP id
- z9mr11632227otq.44.1584114429233; 
- Fri, 13 Mar 2020 08:47:09 -0700 (PDT)
+ id 1jCmX5-0000Im-OZ; Fri, 13 Mar 2020 15:47:33 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02DFlSwc111344;
+ Fri, 13 Mar 2020 10:47:28 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584114448;
+ bh=gDJ5RliIP25FZjm+6Odmd+Qk278xQ7CJ+hSrzysKQug=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=xw438WV3HSYVSd89T6RPoP1IA+A/r2TmSFhNLg7FYO6W5PaX89k9qkOprXb2efiqn
+ FQHyRh6M+qwxPhLCMzEZiawqmGzMk1vBZGRRSG/YoGWHlAENPGIzN2UG290qOszrc6
+ 26JdS/EVsPyPg58FoJx4tgWpv1WAVs8vs5JtAskU=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02DFlS8H048844
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 13 Mar 2020 10:47:28 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
+ Mar 2020 10:47:28 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 13 Mar 2020 10:47:28 -0500
+Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02DFkkSN034352;
+ Fri, 13 Mar 2020 10:47:24 -0500
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
+ Raghavendra <vigneshr@ti.com>, Mark Brown <broonie@kernel.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, Ludovic Desroches
+ <ludovic.desroches@microchip.com>
+Subject: [PATCH v3 09/12] mtd: spi-nor: enable octal DTR mode when possible
+Date: Fri, 13 Mar 2020 21:16:42 +0530
+Message-ID: <20200313154645.29293-10-p.yadav@ti.com>
+X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200313154645.29293-1-p.yadav@ti.com>
+References: <20200313154645.29293-1-p.yadav@ti.com>
 MIME-Version: 1.0
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Fri, 13 Mar 2020 15:46:42 +0000
-Message-ID: <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
- endpoint mode on R-Car SoCs
-To: Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084711_091172_350E09E3 
-X-CRM114-Status: GOOD (  19.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_084731_944449_D674AD22 
+X-CRM114-Status: GOOD (  13.73  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,107 +94,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+Cc: Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn/Kishon,
+Allow flashes to specify a hook to enable octal DTR mode. Use this hook
+whenever possible to get optimal transfer speeds.
 
-On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
-<prabhakar.csengg@gmail.com> wrote:
->
-> This patch series adds support for PCIe controller on rcar to work in
-> endpoint mode, this also extends the epf framework to handle base region
-> for mapping PCI address locally.
->
-> Note:
-> The cadence/rockchip/designware endpoint drivers are build tested only.
->
-> Changes for v5:
-> 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
->    linux/kernel/git/helgaas/pci.git
-> 2] Fixed review comments reported by Kishon while fetching the matching
->    window in function pci_epc_get_matching_window()
-> 3] Fixed review comments reported by Bjorn
->    a] Split patch up first patch so that its easier to review and incremental
->    b] Fixed typos
-> 4] Included Reviewed tag from Rob for the dt-binding patch
-> 5] Fixed issue reported by Nathan for assigning variable to itself
->
-> Changes for v4:
-> 1] Fixed dtb_check error reported by Rob
-> 2] Fixed review comments reported by Kishon
->    a] Dropped pci_epc_find_best_fit_window()
->    b] Fixed initializing mem ptr in __pci_epc_mem_init()
->    c] Dropped map_size from pci_epc_mem_window structure
->
-> Changes for v3:
-> 1] Fixed review comments from Bjorn and Kishon.
-> 3] Converted to DT schema
->
-> Changes for v2:
-> 1] Fixed review comments from Biju for dt-bindings to include an example
->    for a tested platform.
-> 2] Fixed review comments from Kishon to extend the features of outbound
->    regions in epf framework.
-> 3] Added support to parse outbound-ranges in OF.
->
-> Lad Prabhakar (7):
->   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
->   PCI: rcar: Move shareable code to a common file
->   PCI: rcar: Fix calculating mask for PCIEPAMR register
->   PCI: endpoint: Add support to handle multiple base for mapping
->     outbound memory
->   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
->     controller
->   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
->   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
->
-Gentle ping.
+Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+---
+ drivers/mtd/spi-nor/spi-nor.c | 35 +++++++++++++++++++++++++++++++++++
+ include/linux/mtd/spi-nor.h   |  2 ++
+ 2 files changed, 37 insertions(+)
 
-Cheers,
---Prabhakar Lad
+diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
+index 16d7516f2470..5e225d1b29f7 100644
+--- a/drivers/mtd/spi-nor/spi-nor.c
++++ b/drivers/mtd/spi-nor/spi-nor.c
+@@ -5232,6 +5232,35 @@ static void spi_nor_init_params(struct spi_nor *nor)
+ 	spi_nor_late_init_params(nor);
+ }
+ 
++/** spi_nor_octal_dtr_enable() - enable Octal DTR I/O if needed
++ * @nor:                 pointer to a 'struct spi_nor'
++ * @enable:              whether to enable or disable Octal DTR
++ *
++ * Return: 0 on success, -errno otherwise.
++ */
++static int spi_nor_octal_dtr_enable(struct spi_nor *nor, bool enable)
++{
++	int ret;
++
++	if (!nor->params.octal_dtr_enable)
++		return 0;
++
++	if (!(spi_nor_get_protocol_width(nor->read_proto) == 8 ||
++	      spi_nor_get_protocol_width(nor->write_proto) == 8))
++		return 0;
++
++	ret = nor->params.octal_dtr_enable(nor, enable);
++	if (ret)
++		return ret;
++
++	if (enable)
++		nor->reg_proto = SNOR_PROTO_8_8_8_DTR;
++	else
++		nor->reg_proto = SNOR_PROTO_1_1_1;
++
++	return 0;
++}
++
+ /**
+  * spi_nor_quad_enable() - enable Quad I/O if needed.
+  * @nor:                pointer to a 'struct spi_nor'
+@@ -5271,6 +5300,12 @@ static int spi_nor_init(struct spi_nor *nor)
+ {
+ 	int err;
+ 
++	err = spi_nor_octal_dtr_enable(nor, true);
++	if (err) {
++		dev_dbg(nor->dev, "octal mode not supported\n");
++		return err;
++	}
++
+ 	err = spi_nor_quad_enable(nor);
+ 	if (err) {
+ 		dev_dbg(nor->dev, "quad mode not supported\n");
+diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
+index f1db613e0320..923bd34ced84 100644
+--- a/include/linux/mtd/spi-nor.h
++++ b/include/linux/mtd/spi-nor.h
+@@ -544,6 +544,7 @@ struct spi_nor_locking_ops {
+  *                      higher index in the array, the higher priority.
+  * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
+  *                      Table.
++ * @octal_dtr_enable:	enables SPI NOR octal DTR mode.
+  * @quad_enable:	enables SPI NOR quad mode.
+  * @set_4byte:		puts the SPI NOR in 4 byte addressing mode.
+  * @convert_addr:	converts an absolute address into something the flash
+@@ -567,6 +568,7 @@ struct spi_nor_flash_parameter {
+ 
+ 	struct spi_nor_erase_map        erase_map;
+ 
++	int (*octal_dtr_enable)(struct spi_nor *nor, bool enable);
+ 	int (*quad_enable)(struct spi_nor *nor);
+ 	int (*set_4byte)(struct spi_nor *nor, bool enable);
+ 	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
+-- 
+2.25.0
 
->  .../devicetree/bindings/pci/rcar-pci-ep.yaml       |   76 ++
->  arch/arm64/configs/defconfig                       |    2 +-
->  drivers/misc/pci_endpoint_test.c                   |    3 +
->  drivers/pci/controller/Kconfig                     |   15 +-
->  drivers/pci/controller/Makefile                    |    3 +-
->  drivers/pci/controller/cadence/pcie-cadence-ep.c   |    7 +-
->  drivers/pci/controller/dwc/pcie-designware-ep.c    |   29 +-
->  drivers/pci/controller/pcie-rcar-ep.c              |  490 ++++++++
->  drivers/pci/controller/pcie-rcar-host.c            | 1053 +++++++++++++++++
->  drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
->  drivers/pci/controller/pcie-rcar.h                 |  129 ++
->  drivers/pci/controller/pcie-rockchip-ep.c          |    7 +-
->  drivers/pci/endpoint/pci-epc-mem.c                 |  167 ++-
->  include/linux/pci-epc.h                            |   39 +-
->  14 files changed, 1985 insertions(+), 1264 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
->  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
->  create mode 100644 drivers/pci/controller/pcie-rcar.h
->
-> --
-> 2.7.4
->
 
 _______________________________________________
 linux-arm-kernel mailing list
