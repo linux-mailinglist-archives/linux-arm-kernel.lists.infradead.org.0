@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C161D184D21
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:00:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06C21184D22
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:00:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PytbFHPwm2F/6KyavFuegJEIgdIQk71p+iCCRI4x5KQ=; b=qaKGa3RwQkfgiB
-	wTUXGfZJEu1HceryegE4XznAO5Ypzd1yi/O+HF7DfATNY9AjIHj2FM3GZra+pDAgrDY+HJuLnmmvX
-	E+Dq2XFe0TF3dbJvBe6DbGJs+hH0m16GuSbQGCnPEBLw8RhNiIMoqys22FXQuozndtgw1t1eXGJlc
-	Wt6GM13Kv7SYyv6phRswcIxUi13pgfFAPeZzPMbOUGDrR8AFHHwB3p1alVS6m+CSyDQHBL3McRsAr
-	X0PumY5WHyk1aiAPr8Z/GnYuj8UrSezjCeP3QgM8Up2nsFW4GQrGuXpkOQikRiog/luPOymZ3UzVA
-	myKnNGKuxyPGt8Ue3ZWQ==;
+	List-Owner; bh=dzU6LDcSNh2NxTovqgoMJVEEwuSegmekMnE1sDscDTc=; b=JcDvnM4A7L9PD8
+	2flVAHpefdW5314/mUx6zZpetPeTWhHEEGuvEliD8iDRXQl0N0p/vfRH2v4l68BfKPVlfWEJuV4v9
+	ZX6SSpAPic5SQ/AkZmVRN5ZW21smQVdeXEukDYxBDlXE/Ijk4bAzFyeDsGX3lNkn5cgNwvK2cODdZ
+	hcqnuDKMItF7ApUd2dL/3gcEwNF2emzxDJlQ+jrTiDnB0krx1Z5eF1rhs2rnU5CqHmCD/gygx344w
+	Vfai8zNcRMLowkOQMahXhB8d5FD4zmXI3SjfJZ40MO9X8XrGiBlmz20UUwgGGsFv3CA+BJmYwQ2CH
+	X4H17PiybA0aOqUM8rnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnf6-0000Tu-SO; Fri, 13 Mar 2020 16:59:52 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jCnfQ-0000lm-PK; Fri, 13 Mar 2020 17:00:12 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCneH-0008Hi-6u
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:59:04 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b2so6776944wrj.10
+ id 1jCneJ-0008J2-EC
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:59:05 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a5so10776024wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 09:59:00 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=u2Z5UcmV8/VofLHm97f5YbQrhljIP7Kqx9/wdHClbo8=;
- b=shqhanNgu6CUiTgvC+fvofwKds2aVa+PN19WE7YVRO19OdXXPLw11iLUCyIKLn7itd
- PiimYJXj2aD8ItxRT9DOHBprZeBQdfSBW6s8Plb2vddcEiKrRCHfXusAKyBQKaz4S72P
- 8TRl+vcBCuejzM+joA5ukgGmRL4aIvGEdyMlRbw5PAhnyKD/b2NzBG4n+r8xpxcuP/7g
- a8R++LDuJjMF3+qqeh/433eu5RZfTvv0OrZDxgGRXsiaabzgNgoreU/VTkaRGOB/TFOF
- RW9G8rOj63kLO1HmNcYCJj2OI88jsNdhyPcHTvzAmi/oGbZdkyykrurwnFRWxknIcujE
- bcDA==
+ bh=HxGHGn3tB3D32yQFzRW5y1d93PxBfuWUMuBxygRtPfk=;
+ b=DZgIf698xz8f0XnKqu6AcP8/cziZ1JZP9pk2104IYEMLfMwy6VYOP6TTa3X8HCJ8y2
+ +SU6wxMpF4y0n29PUO2qrdsamzcyF0xwTl4OVziSnekDyADApTHjDxGLBDo2LY91P1TJ
+ mCkjk4adkWs7LVOGHo7+CRSnRj22WGsOfiGJ9Zr5N5ic/o/IxvmMnLZZlfDO9SsJ8sHq
+ xmHds67eHQwgOFUlOXHq4m8sRq+TkXTSkeZ+ivZsYcakpT0ykGz7v7nYSgNbBLywvWRL
+ 9TU4Ag1Ib6PhK5yWS0wP/knRoMS8sCY1LS2xMA+rCOzny6wI0iQI9J5vehSo0kDEOQ0C
+ 8NIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=u2Z5UcmV8/VofLHm97f5YbQrhljIP7Kqx9/wdHClbo8=;
- b=gvAL8l9Mdb33hjYeRg6LDVgLun5VaI41sEKPqO6mrybmAJjMAnwZNv6bg+cuy3oImu
- 9g9tzYsDfzRvqBXA5Jv7cuU5aGLuBHwSPivX1j1EPuZUEtSjz3BBib8bwaPJuiYgmmQY
- O9z0lYVoGkjRjcREF17sHjuM/R+/hjvG7nxYwxqHDx3VLaADzygUpC1S+kbBx5EIqqNL
- vc5fKrNa7VEtUaKdbIeZAkH6IqDmD7Z4roKllKchHIumms+zmY3TZxQDGe0PugSnJtpa
- hyPJ5tW2GLPPILH8uvoxROxyw/30hjCfY1+m4xQxX8du5LR0gy5LDFR+ftta6LFsNLMx
- vmpA==
-X-Gm-Message-State: ANhLgQ1MuPNMCX3smms+HBZW1F/mZKoOHKFwfLFYS01BPCTqFzXJKqbm
- RUF/4B7bAsvkyfXr56Wutaou4dAK
-X-Google-Smtp-Source: ADFU+vuH7CkP7rWK/tMMl7um+/dktR/3uTHUtNvgvBKom1Y+98hD6NSEKua1SljTWsm5xTR7l2vPog==
-X-Received: by 2002:adf:a555:: with SMTP id j21mr19040106wrb.409.1584118739503; 
- Fri, 13 Mar 2020 09:58:59 -0700 (PDT)
+ bh=HxGHGn3tB3D32yQFzRW5y1d93PxBfuWUMuBxygRtPfk=;
+ b=FnqgRrsiYBL/T9qyxVR2R7h+BRqh1mtS+kyoTMnweHbuGBZr0kuXutGZ4oNfOFedRD
+ h2BSovUZBGiaNzPnVc95JeZ1KdP2JBU38EeNT2+VEsFQLuC7VUIyxeDAwEaew6Jq+Kn/
+ CTLPTdMYnAKBDnTqypL4Lk6SmecK45BbM5/G+LvF3mg+vUzwMw8h9T1nM+tOkd/FXH0N
+ LycQBLNzzyMkFKwlGUp8nMHjBWZ4JPrFWBexOw9qKCu4WySeqFGbXMurE1ewzhYgMmvE
+ TrumzyNtUQCWiRZZvC+eRfUd7iGNz4ojXPERjuOhupygNTUqYUKXx4B64zwzetKBsf6R
+ Pjjg==
+X-Gm-Message-State: ANhLgQ3CC55mTKdL2OMM9xgmnevcns2/DuNhRba9pef+/6hxwYYrwRbT
+ 3ZVCuL7U7vh+wxV6Iz6uRYY=
+X-Google-Smtp-Source: ADFU+vv/jM3n8wXmOoGLCXeZk5i1ZbIXfRterX7TTOiOMv26DvmAtXr2nFT+UjIUAho1xA9ot0YeJA==
+X-Received: by 2002:a1c:e442:: with SMTP id b63mr12050983wmh.174.1584118741447; 
+ Fri, 13 Mar 2020 09:59:01 -0700 (PDT)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id s28sm4995825wrb.42.2020.03.13.09.58.58
+ by smtp.gmail.com with ESMTPSA id l7sm9001198wrw.33.2020.03.13.09.59.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 09:58:58 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:00 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 03/10] soc/tegra: Changes for v5.7-rc1
-Date: Fri, 13 Mar 2020 17:58:41 +0100
-Message-Id: <20200313165848.2915133-3-thierry.reding@gmail.com>
+Subject: [GIT PULL 04/10] memory: tegra: Changes for v5.7-rc1
+Date: Fri, 13 Mar 2020 17:58:42 +0100
+Message-Id: <20200313165848.2915133-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200313165848.2915133-1-thierry.reding@gmail.com>
 References: <20200313165848.2915133-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095902_658362_3BA27EC3 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20200313_095903_570211_FA8A72D0 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,61 +115,31 @@ The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-soc
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-memory
 
-for you to fetch changes up to 4825f5354ef2e3f6bce61d0ed652a23daf379f8e:
+for you to fetch changes up to 141267bffd1dc19a76e4d50e3e4829f85a806875:
 
-  soc/tegra: pmc: Cleanup whitespace usage (2020-03-13 10:53:10 +0100)
+  memory: tegra: Correct debugfs clk rate-range on Tegra124 (2020-03-11 15:24:16 +0100)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-soc/tegra: Changes for v5.7-rc1
+memory: tegra: Changes for v5.7-rc1
 
-These changes implement various clocks that are controlled by the PMC
-and add support for configuring the voltage level of some pins (needed
-for example to support high-speed modes on the SD/MMC interfaces).
+These patches contain fixes for EMC scaling debugfs support on Tegra20,
+Tegra30 and Tegra124.
 
 ----------------------------------------------------------------
-JC Kuo (1):
-      dt-bindings: phy: tegra: Add Tegra194 support
+Dmitry Osipenko (3):
+      memory: tegra: Correct debugfs clk rate-range on Tegra20
+      memory: tegra: Correct debugfs clk rate-range on Tegra30
+      memory: tegra: Correct debugfs clk rate-range on Tegra124
 
-Nagarjuna Kristam (2):
-      dt-bindings: phy: tegra-xusb: Add usb-role-switch
-      dt-bindings: usb: Add NVIDIA Tegra XUSB device mode controller binding
-
-Sowjanya Komatineni (6):
-      dt-bindings: clock: tegra: Add IDs for OSC clocks
-      dt-bindings: tegra: Convert Tegra PMC bindings to YAML
-      dt-bindings: soc: tegra-pmc: Add Tegra PMC clock bindings
-      dt-bindings: soc: tegra-pmc: Add ID for Tegra PMC 32 kHz blink clock
-      soc/tegra: Add Tegra PMC clocks registration into PMC driver
-      soc/tegra: Add support for 32 kHz blink clock
-
-Thierry Reding (2):
-      Merge branch 'for-5.7/dt-bindings' into for-5.7/soc
-      soc/tegra: pmc: Cleanup whitespace usage
-
-Venkat Reddy Talla (1):
-      soc/tegra: pmc: Add pins for Tegra194
-
- .../bindings/arm/tegra/nvidia,tegra20-pmc.txt      | 300 ---------
- .../bindings/arm/tegra/nvidia,tegra20-pmc.yaml     | 354 +++++++++++
- .../bindings/phy/nvidia,tegra124-xusb-padctl.txt   |  24 +
- .../devicetree/bindings/usb/nvidia,tegra-xudc.yaml | 190 ++++++
- drivers/soc/tegra/pmc.c                            | 688 ++++++++++++++++-----
- include/dt-bindings/clock/tegra114-car.h           |   4 +-
- include/dt-bindings/clock/tegra124-car-common.h    |   4 +-
- include/dt-bindings/clock/tegra210-car.h           |   4 +-
- include/dt-bindings/clock/tegra30-car.h            |   4 +-
- include/dt-bindings/soc/tegra-pmc.h                |  16 +
- include/soc/tegra/pmc.h                            |   3 +-
- 11 files changed, 1125 insertions(+), 466 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.txt
- create mode 100644 Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.yaml
- create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
- create mode 100644 include/dt-bindings/soc/tegra-pmc.h
+ drivers/memory/tegra/tegra124-emc.c | 5 +++++
+ drivers/memory/tegra/tegra20-emc.c  | 5 +++++
+ drivers/memory/tegra/tegra30-emc.c  | 5 +++++
+ 3 files changed, 15 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
