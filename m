@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 217F01846C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:23:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04BB71846DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 13:28:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6984Mtc3RsxBGZUK4tlX1N9yOABtXwz2EzatbgdL2Vs=; b=ELw/MG9I12152y
-	jZ1xS2EdDfCe8n/pU3abE825CbMLPfwiKsoSE2yob5Uf2aqXOk/vh/sDjCLG0s4c9lGfjpMJQzkGx
-	4Ccs0S/SPiNzlYbGneuynDu1dTcHfNy5EgsVda29P79k1aPDC6S6ay5/VlXCDYst0FJsdqu3xzD+7
-	veZ0NoNhSSf6Bw9Od0eOIJt43wdkLkfOF7yn22jrIQHisHLOJVEsHltvRk6Iacj0X/+CjjenIy/WN
-	kTlZF3yjGlNWkbN4XiAHOkGeWcK078dnZXXASP6fWdElfueT52Vfc7YjNumkzU+nZN2InyR5tv8wo
-	zYApbHavlPvVtDimTXlg==;
+	List-Owner; bh=+U5cad+o26sA9tYslIefjjBJ4No3dOTaYC8FBtSV7Tc=; b=cPca5X3xkIxffV
+	39Sq4enC3Ea/D/vS/wf6k5rlxOvmgXzUllb/Aa9G8WHH5oLD5fuiB40/Ylwt9IAUF4BpX4uAcFaaT
+	OK1DWpPymgmikm8oKc2mllOSHcPtxRQEgTNi3NXckXSoFeTCaK41wyrOYm6+E8GmKf/I5+Om8usyn
+	61iKkG22GpZRRIV7fGJi9rMdXwmcsgsnGMFiPkleshI5KkSUHzqsFYSuBQ6Cco7JgBcmSJafIh+7X
+	w/2YK78pDMxb1RRZKXTl7fhCnL/AboRn058VbdzUZcC1WBo69oMuKClSVjJPNbJ3M04gVwwqn0Kh2
+	c2ozKgz8P7y01NeYyIPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCjLA-0002KR-Pz; Fri, 13 Mar 2020 12:23:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCjKy-0002JU-W9
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:22:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 229FA30E;
- Fri, 13 Mar 2020 05:22:48 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D4143F534;
- Fri, 13 Mar 2020 05:22:47 -0700 (PDT)
-Date: Fri, 13 Mar 2020 12:22:45 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Xiao Yang <yangx.jy@cn.fujitsu.com>
-Subject: Re: Current status about arm64 livepatch support
-Message-ID: <20200313122244.GI42546@lakrids.cambridge.arm.com>
-References: <5E5F5647.3040705@cn.fujitsu.com> <5E6AEF8B.4090905@cn.fujitsu.com>
+	id 1jCjQK-0004SV-Fg; Fri, 13 Mar 2020 12:28:20 +0000
+Received: from mga04.intel.com ([192.55.52.120])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCjQA-0004RB-Ol
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 12:28:11 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 13 Mar 2020 05:28:06 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,548,1574150400"; d="scan'208";a="290013497"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by FMSMGA003.fm.intel.com with ESMTP; 13 Mar 2020 05:28:04 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jCjQ6-009G8T-69; Fri, 13 Mar 2020 14:28:06 +0200
+Date: Fri, 13 Mar 2020 14:28:06 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v2 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200313122806.GT1922688@smile.fi.intel.com>
+References: <20200313110350.10864-1-robert.foss@linaro.org>
+ <20200313110350.10864-3-robert.foss@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5E6AEF8B.4090905@cn.fujitsu.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20200313110350.10864-3-robert.foss@linaro.org>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_052249_074323_32F0A240 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20200313_052810_816479_2C4364BA 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,72 +70,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Torsten Duwe <duwe@suse.de>, Mark Brown <broonie@kernel.org>,
- Torsten Duwe <duwe@lst.de>, Julien Thierry <jthierry@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 10:27:23AM +0800, Xiao Yang wrote:
-> Hi,
-> 
-> Ping.
-> 
-> Best Regards,
-> Xiao Yang
-> 
-> On 2020/3/4 15:18, Xiao Yang wrote:
-> > Hi Torsten,
-> > 
-> > Sorry to bother you.
-> > 
-> > I focus on arm64 livepatch support recently and saw that you have tried
-> > to implement it by:
-> > -------------------------------------------------------------------------------
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609126.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609124.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2018-October/609125.html
-> > -------------------------------------------------------------------------------
-> > 
-> > This patch set seems to be blocked because of some issues, but your
-> > another patch set inlcuding the first one "arm64: implement ftrace with
-> > regs" has been merged into upstream kernel:
-> > -------------------------------------------------------------------------------
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631104.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631107.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631105.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631106.html
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631114.html
-> > --------------------------------------------------------------------------------
-> > 
-> > Could you tell me current status about arm64 livepatch support?
-> > For example:
-> > 1) Are you(or someone) still working on arm64 livepatch support?
-> > 2) Are there some unresolved problems about arm64 livepatch support?
-> >     What are they?
-> > 3) Will you send a newer version for arm64 livepatch support recently?
+On Fri, Mar 13, 2020 at 12:03:49PM +0100, Robert Foss wrote:
+> Add devicetree match table, and enable ov8856_probe()
+> to initialize power, clocks and reset pins.
 
-1) I beleive a few people are working on portions of this.
+Thanks for an update.
+My comments below.
 
-2) I believe that some work is necessary.
+...
 
-   Julien Thierry has done some work on objtool, which is necessary to
-   check ensure that sequences (including assembly functions) manipulate
-   the stack, and calls/returns as we expect. Mark Brown has been
-   converting our assembly to use modern annotations which objtool
-   consumes when checking this.
+> +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
 
-   There might be additional assembly work necessary for this, depending
-   on any deecisions we make for objtool.
+In many frameworks we have '_optional' variants of API. Please use it instead
+of open coded approach.
 
-   For reliable stack tracing we may need to rework some assemvly and/or
-   rework the stack tracing code. That will likely depend on the objtool
-   bits.
+> +	if (PTR_ERR(ov8856->xvclk) == -ENOENT) {
+> +		dev_info(&client->dev, "xvclk clock not defined, continuing...\n");
+> +		ov8856->xvclk = NULL;
+> +	} else if (IS_ERR(ov8856->xvclk)) {
+> +		dev_err(&client->dev, "could not get xvclk clock (%ld)\n",
+> +			PTR_ERR(ov8856->xvclk));
+> +		return PTR_ERR(ov8856->xvclk);
+> +	}
+> +
+> +	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_24);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "failed to set xvclk rate (24MHz)\n");
+> +		return ret;
+> +	}
+> +
 
-Thanks,
-Mark.
+> +	ov8856->reset_gpio = devm_gpiod_get(&client->dev, "reset",
+> +					       GPIOD_OUT_HIGH);
+
+Same here.
+
+> +	if (IS_ERR(ov8856->reset_gpio)) {
+> +		dev_err(&client->dev, "failed to get reset-gpios\n");
+> +		return PTR_ERR(ov8856->reset_gpio);
+> +	}
+> +
+> +	for (i = 0; i < ARRAY_SIZE(ov8856_supply_names); i++)
+> +		ov8856->supplies[i].supply = ov8856_supply_names[i];
+> +
+
+> +	ret = devm_regulator_bulk_get(&client->dev,
+> +				      ARRAY_SIZE(ov8856_supply_names),
+> +				      ov8856->supplies);
+
+Luckily regulator framework will create dummy ones if there is none found.
+
+> +	if (ret) {
+> +		dev_warn(&client->dev, "failed to get regulators\n");
+> +		return ret;
+> +	}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
