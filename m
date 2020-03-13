@@ -2,70 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C051A183E8F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:13:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4794C183EB9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:39:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=upR29HoGN1gWvIojGb7XgOWlr6FHGv2nmO6xp6WuoTc=; b=HMTJq40yQgmNlL
-	WpcSklxzuHntvs8bxEvZq2F6wRJmcSJANlTUPxMbtSQqASkaLklJ2uzsj3wsl6a+avnvhnyWMisk+
-	NokwOO9SKP3WN34rIEtiMdzsSDTCN9obg7Nu/dwZ8Mi3uJ+szMRSmGyQAgMH9Gat+Bol7uGkEGbLS
-	4VysbQ6Pg4hkhJPNurbQG5HP86lGL8+77GRWTNhmGFrKwjKsaVu7dES00oDNRcXcQBIadOUgQWNyx
-	aEfM6B/eF5uTJ+jw1DoPtMWCaNn9fJ3oKSIJTsivpWGOjqdD25CmEqd+WeW+GtUvwwlp1CC4/bgIS
-	OeEcWCUuudhtq/C0Dmxw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=F4//RSOoGudPTjuaU8m5axA/j0j3EVbi02Zy1XYkLRc=; b=E+jd+BaZ9+kPItKsFVo5GIi3p
+	KOo6gpApSC8zLF/C7HGza9dRhSur/tdXzwzUWV3VRrYJDWOu0Fhm+bU5jeW2tlfXf0DBzrQ+BtQG6
+	5C7FpRrmsopZrkAnfalfRL0IggGePy234WVPJAINtWmNE6FVHpJF/UIoTkOdj2/gvgcbONDia7IEo
+	RwzXoYntr3JpEaQopDOOleL2jmz0TYh9L7jB1Qysj+4LShCPDow2u27cbDo98c0+Gh+yNSsgjFbeS
+	LhCnkp8MT/P5UwZUSgogqdic5yldgMjUKd8/19qddtmFL5XxbHIZlVw4NsRIOB85N4/nVkGLlDVGK
+	E3pQn77+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYsy-0007O4-9I; Fri, 13 Mar 2020 01:13:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCZIZ-0008Gi-Iu; Fri, 13 Mar 2020 01:39:39 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYsq-0007Na-AJ; Fri, 13 Mar 2020 01:13:05 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0BBB206F7;
- Fri, 13 Mar 2020 01:13:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584061984;
- bh=sjbzlgfG0M7ByXrwtWMDuZpQMY36kbz6RtWjf+35/zI=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=H73OiFfbJkL88iOLWy+qaYjJnj5qgy2HDbcFzNn7+eMPehRXfXkSBPIOqD0QmUgmg
- vhbjAX1uG4e8Phx083IA3MG/vdEsdMdU/IJYg4Lzi6ZQMuYIXEb6lKGccD2IIKl7BF
- MEBn1A3m9aqyplMPnJft1RvVSDHYeWVcceFwaWpI=
+ id 1jCZIP-0008FW-OU
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 01:39:31 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id F35E4EF00CE69FBB0358;
+ Fri, 13 Mar 2020 09:39:17 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS403-HUB.china.huawei.com
+ (10.3.19.203) with Microsoft SMTP Server id 14.3.487.0; Fri, 13 Mar 2020
+ 09:39:10 +0800
+Subject: Re: [PATCH v5 01/23] irqchip/gic-v3: Use SGIs without active state if
+ offered
+To: Marc Zyngier <maz@kernel.org>
+References: <20200304203330.4967-1-maz@kernel.org>
+ <20200304203330.4967-2-maz@kernel.org>
+ <63f6530a-9369-31e6-88d0-5337173495b9@huawei.com>
+ <51b2c74fdbcca049cc01be6d78c7c693@kernel.org>
+ <1bff1835ba7d6e22edb836d38cf16a14@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <3e20f3c3-0312-bd29-dcfc-2afee764ef19@huawei.com>
+Date: Fri, 13 Mar 2020 09:39:08 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <703e21467f23f63acdac0e078b58040c39b852bf.1582533919.git-series.maxime@cerno.tech>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <703e21467f23f63acdac0e078b58040c39b852bf.1582533919.git-series.maxime@cerno.tech>
-Subject: Re: [PATCH 12/89] clk: bcm: rpi: Remove pllb_arm_lookup global pointer
-From: Stephen Boyd <sboyd@kernel.org>
-To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Date: Thu, 12 Mar 2020 18:13:03 -0700
-Message-ID: <158406198314.149997.6304400870182426373@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+In-Reply-To: <1bff1835ba7d6e22edb836d38cf16a14@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_181304_371805_3DA1BF2D 
-X-CRM114-Status: UNSURE (   6.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200312_183929_956237_2997AAE1 
+X-CRM114-Status: GOOD (  14.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,34 +70,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org, Eric
+ Auger <eric.auger@redhat.com>, Robert
+ Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>, Julien
+ Thierry <julien.thierry.kdev@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Maxime Ripard (2020-02-24 01:06:14)
-> The pllb_arm_lookup pointer in the struct raspberrypi_clk is not used for
-> anything but to store the returned pointer to clkdev_hw_create, and is not
-> used anywhere else in the driver.
-> 
-> Let's remove that global pointer from the structure.
-> 
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
-
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyYywKCk9uIDIwMjAvMy8xMiAyMDowNSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIDIw
+MjAtMDMtMTIgMDk6MjgsIE1hcmMgWnluZ2llciB3cm90ZToKPj4gSGkgWmVuZ2h1aSwKPj4KPj4g
+T24gMjAyMC0wMy0xMiAwNjozMCwgWmVuZ2h1aSBZdSB3cm90ZToKPj4+IEhpIE1hcmMsCj4+Pgo+
+Pj4gT24gMjAyMC8zLzUgNDozMywgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4+IFRvIGFsbG93IHRo
+ZSBkaXJlY3QgaW5qZWN0aW9uIG9mIFNHSXMgaW50byBhIGd1ZXN0LCB0aGUgR0lDdjQuMQo+Pj4+
+IGFyY2hpdGVjdHVyZSBoYXMgdG8gc2FjcmlmaWNlIHRoZSBBY3RpdmUgc3RhdGUgc28gdGhhdCBT
+R0lzIGxvb2sKPj4+PiBhIGxvdCBsaWtlIExQSXMgKHRoZXkgYXJlIGluamVjdGVkIGJ5IHRoZSBz
+YW1lIG1lY2hhbmlzbSkuCj4+Pj4KPj4+PiBJbiBvcmRlciBub3QgdG8gYnJlYWsgZXhpc3Rpbmcg
+c29mdHdhcmUsIHRoZSBhcmNoaXRlY3R1cmUgZ2l2ZXMKPj4+PiBvZmZlcnMgZ3Vlc3RzIE9TcyB0
+aGUgY2hvaWNlOiBTR0lzIHdpdGggb3Igd2l0aG91dCBhbiBhY3RpdmUKPj4+PiBzdGF0ZS4gSXQg
+aXMgdGhlIGh5cGVydmlzb3JzIGR1dHkgdG8gaG9ub3IgdGhlIGd1ZXN0J3MgY2hvaWNlLgo+Pj4+
+Cj4+Pj4gRm9yIHRoaXMsIHRoZSBhcmNoaXRlY3R1cmUgb2ZmZXJzIGEgZGlzY292ZXJ5IGJpdCBp
+bmRpY2F0aW5nIHdoZXRoZXIKPj4+PiB0aGUgR0lDIHN1cHBvcnRzIEdJQ3Y0LjEgU0dJcyAoR0lD
+RF9UWVBFUjIubkFTU0dJY2FwKSwgYW5kIGFub3RoZXIKPj4+PiBiaXQgaW5kaWNhdGluZyB3aGV0
+aGVyIHRoZSBndWVzdCB3YW50cyBBY3RpdmUtbGVzcyBTR0lzIG9yIG5vdAo+Pj4+IChjb250cm9s
+bGVkIGJ5IEdJQ0RfQ1RMUi5uQVNTR0lyZXEpLgo+Pj4KPj4+IEkgc3RpbGwgY2FuJ3QgZmluZCB0
+aGUgZGVzY3JpcHRpb24gb2YgdGhlc2UgdHdvIGJpdHMgaW4gSUhJMDA2OUYuCj4+PiBBcmUgdGhl
+eSBhY3R1YWxseSBhcmNoaXRlY3RlZCBhbmQgd2lsbCBiZSBhdmFpbGFibGUgaW4gdGhlIGZ1dHVy
+ZQo+Pj4gdmVyc2lvbiBvZiB0aGUgc3BlYz/CoCBJIHdhbnQgdG8gY29uZmlybSBpdCBhZ2FpbiBz
+aW5jZSB0aGlzIGhhcyBhCj4+PiBncmVhdCBpbXBhY3Qgb24gdGhlIEtWTSBjb2RlLCBhbnkgcG9p
+bnRlcnM/Cj4+Cj4+IERhbW4uIFRoZSBiaXRzICphcmUqIGluIHRoZSBlbmdpbmVlcmluZyBzcGVj
+IHZlcnNpb24gMTkgKHVuZm9ydHVuYXRlbHkKPj4gbm90IGEgcHVibGljIGRvY3VtZW50LCBidXQg
+SSBiZWxpZXZlIHlvdSBzaG91bGQgaGF2ZSBhY2Nlc3MgdG8gaXQpLgo+Pgo+PiBJZiB0aGUgYml0
+cyBoYXZlIGVmZmVjdGl2ZWx5IGJlZW4gcmVtb3ZlZCBmcm9tIHRoZSBzcGVjLCBJJ2xsIGRyb3Ag
+dGhlCj4+IEdJQ3Y0LjEgY29kZSBmcm9tIHRoZSA1LjcgcXVldWUgdW50aWwgd2UgZmluZCBhIHdh
+eSB0byBhY2hpZXZlIHRoZSBzYW1lCj4+IGxldmVsIG9mIHN1cHBvcnQuCj4+Cj4+IEkndmUgZW1h
+aWxlZCBwZW9wbGUgaW5zaWRlIEFSTSB0byBmaW5kIG91dC4KPiAKPiBJJ3ZlIG5vdyBoYWQgd3Jp
+dHRlbiBjb25maXJtYXRpb24gdGhhdCB0aGUgYml0cyBhcmUgc3RpbGwgdGhlcmUuCj4gCj4gSXQg
+aXMganVzdCB0aGF0IHRoZSBjdXJyZW50IHJldmlzaW9uIG9mIHRoZSBkb2N1bWVudGF0aW9uIHdh
+cyBjdXQgKmJlZm9yZSoKPiB0aGV5IG1hZGUgaXQgaW50byB0aGUgYXJjaGl0ZWN0dXJlICh0aGVy
+ZSBzZWVtIHRvIGJlIGEgNiBtb250aCBkZWxheSAKPiBiZXR3ZWVuCj4gdGhlIGFyY2hpdGVjdHVy
+ZSBiZWluZyBzYW1wbGVkIGFuZCB0aGUgZG9jdW1lbnRhdGlvbiBiZWluZyByZWxlYXNlZCkuCgpJ
+IHNlZS4gVGhhbmtzIGZvciB0aGUgY29uZmlybWF0aW9uIQoKClplbmdodWkKCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
