@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CE3E183E34
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:03:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BBB4183E35
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 02:03:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PH9qsQbZXE/VSIEW8E0+dsnmzYZ9PtyDQBx7RtuPyc4=; b=RMub8w84+y89zC
-	Rdc73ClC63Mj9VVL6fLp1VVTFxRmZyyWTLgqeLbHL7zCpEiHTliG33lLjxRHdDK0/Oo19JXCO8XBm
-	bC7qBf/nrMrkdQhjEdr889U2a43/e4YV+LCNIg2DxdwPWRimRpxfmwdunJr9lcxHUIz5BJ4Z5Dn/M
-	9ExDrLPQTt/nnI4X39rbI8mX6Mo+wrekiTpkq378Y871Ef/G0ogtXHQGk8CgOwbPSXGCpXHM849Te
-	dkRyWlF4p163gzZmCF1YPdDhIQSYCK5FdYYpQbLmmL33KN39qO4RXE9wgHBExpSoxS5JOpf6Rjt1H
-	WnVy2gy8FKw8smVEFJ/w==;
+	List-Owner; bh=NWdavwrnoWoaWhAhvz1VGXLaKh+uGqAFcK3Z8kHm0N4=; b=uSG8Amtx4eXqt/
+	uVYB5kbdZUaTUhJPuPcfqHlonAoQBD5h6lfl7CXaJJ2utYa/PyHXL86jHHCrXENV5KzdCKBJCcVAu
+	0zHZSyLDiS2nDJDkGxl/xWCtTnCAUL38p4wiZ6vyGpJ1DWl4Ta0U0AkX2g8HrnKG1W4Ei3qLtSU+R
+	H8KzD41sTT3tNshHh1I5tTvZiAq8gUQgYyX/vPGLCOjpitPP/U1A08Ia9GpZ4G9BYFWXW2dmOwBWr
+	ZtRthmkGVtwOwwROEhHsS852s1076y9+7p34/sfHaUo2bCzJ2y6M2KoNBbk8cXBo5e/fD0Uxndr4t
+	HqnQ3CVgZ4xV5Zqo20cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYjL-00013R-9g; Fri, 13 Mar 2020 01:03:15 +0000
+	id 1jCYjX-0001LI-Do; Fri, 13 Mar 2020 01:03:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYhz-00009S-66; Fri, 13 Mar 2020 01:01:52 +0000
+ id 1jCYi7-0000Hs-FD; Fri, 13 Mar 2020 01:02:00 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 54B3220637;
- Fri, 13 Mar 2020 01:01:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 92B54206EB;
+ Fri, 13 Mar 2020 01:01:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584061310;
- bh=x5AeLJyWyoIGFX+5Aa87kt9hQBBmnyGXbQ3/T3AqMkQ=;
+ s=default; t=1584061318;
+ bh=4Mb1/ZjU5Y5Lyt/H0AGgn+Vo8yCzq8TNH/LS6T+ozbw=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=W9pRQZvOYY6JUPfum0Gaehu89VEbg3YArAi7o1G9YMddG1IH8VX4dSmBjuQz0WpDi
- MFHtvxjrx/LmGY9yOgvy2Nc+JfNT48HMz2UEZ725Ql2oWw2oOeGqGCekvIqILo+O/J
- 07nTyLQzg7Tx/jiayemVhFKQGpPmXxGjUYbdH6aA=
+ b=Fq9UtREVlN2Xoe570gYbnJzmN6eqzaIXzngUH2AD1doDUatpiGh+Cp50SJfwDM5Wi
+ kmHq4sT7QkTBoyga6B+9wztjnGtkDlzt8BSmQ4ovOm/Zli9u1mZ2afSuPOS9gZKYUR
+ cQfCHQvr5qVbEcDDSbp6WeUy3ic+MlKih78Jank8=
 MIME-Version: 1.0
-In-Reply-To: <6a1fc860262ecec585cbe8ff268318a0783f3296.1582533919.git-series.maxime@cerno.tech>
+In-Reply-To: <f38e173f73f9c9c06291d96d095f5a42002720c9.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <6a1fc860262ecec585cbe8ff268318a0783f3296.1582533919.git-series.maxime@cerno.tech>
-Subject: Re: [PATCH 20/89] clk: bcm: rpi: Make the PLLB registration function
- return a clk_hw
+ <f38e173f73f9c9c06291d96d095f5a42002720c9.1582533919.git-series.maxime@cerno.tech>
+Subject: Re: [PATCH 21/89] clk: bcm: rpi: Add DT provider for the clocks
 From: Stephen Boyd <sboyd@kernel.org>
 To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Date: Thu, 12 Mar 2020 18:01:49 -0700
-Message-ID: <158406130956.149997.16470857788374770112@swboyd.mtv.corp.google.com>
+Date: Thu, 12 Mar 2020 18:01:57 -0700
+Message-ID: <158406131784.149997.17413643401851348290@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_180151_263160_FB916F77 
-X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-CacheID: sfid-20200312_180159_632278_571487EB 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -90,16 +89,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Maxime Ripard (2020-02-24 01:06:22)
-> The raspberrypi_register_pllb has been returning an integer so far to
-> notify whether the functions has exited successfully or not.
-> 
-> However, the OF provider functions in the clock framework require access to
-> the clk_hw structure so that we can expose those clocks to device tree
-> consumers.
-> 
-> Since we'll want that for the future clocks, let's return a clk_hw pointer
-> instead of the return code.
+Quoting Maxime Ripard (2020-02-24 01:06:23)
+> For the upcoming registration of the clocks provided by the firmware, make
+> sure it's exposed to the device tree providers.
 > 
 > Cc: Michael Turquette <mturquette@baylibre.com>
 > Cc: Stephen Boyd <sboyd@kernel.org>
