@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15BCF184D29
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:01:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76A3E184D2A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 18:02:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyzSP+Au7RTTja9L5VU7dpx0ctDWyw0tr0SflJ8vexw=; b=WrSxImP8zj0N41
-	+YvDoT3M47E+BxK2eif2lHFg3un5tTY74qX3euof2r+WL3pL78aimhEN/rYKVNjjA4MQdJtvVMcqY
-	qu1wjgXts7PkU3jQiEJNjp3E/NoHhgOEAtquWfezR52oM6muxReHQLtu2qQqzoAN0DapZrH0sBoRL
-	BHvyP+y2fdt9cHIPj/d17VCthfSQq2ow2om/64o68GUOwSCVra4FhVhJws8QJVd7HzUxfjOAUNGQx
-	Iiiq8wGnXttIs6IGBciaqZ0b1DN8WsoENiSTY3XGuaqbidGlP9cErPOk886O345rGIasOEIMUzjh4
-	17P06LnKkfQ4Lk0WlRVA==;
+	List-Owner; bh=zPya5tJ5sjAB6/dyttXyRgcQJp1VVoxcaBieiprEdT0=; b=rnhP4aMUQ8yiPK
+	Gr+pK03AZFnvEbIF1vr7xd5POPcudKch27NDXtLQLfvmdvbssXqIPw7/zIsDj8oaBB4vUfzJtfp2D
+	M+h1fZydCN+WW/hM3HUt3G29vZbCTnZoIuWG2pK51G7FZCwPsRn8NNmupQl9fK0lCn5L7UZAVMa62
+	NGBmkmG36EviVL0cfNIA/UTSQ4pci8FrZl1afQkcYqDJ9tpTI1KRE3jiA2gg/s96D0pzgrR+lh0YK
+	4JsVIEOyqNU3cZlJpFEE7UZo34T3CD6rKblTal7ygTZszs1R0l9zHsStk23wTOWlvx+MJEfShqucb
+	yRJMwhKAIPcRRt8MdmXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCngc-00036X-0T; Fri, 13 Mar 2020 17:01:26 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jCnh3-0003ej-0y; Fri, 13 Mar 2020 17:01:53 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCneS-0008SQ-J1
+ id 1jCneT-0008U2-R4
  for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:59:15 +0000
-Received: by mail-wr1-x441.google.com with SMTP id l18so12961176wru.11
+Received: by mail-wr1-x444.google.com with SMTP id x11so8269162wrv.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Mar 2020 09:59:12 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jvqohnMij0I2CBTDF5YLXeAgLpbv445ozkjXuVEGaTQ=;
- b=fw4nUGDdM7Jea/euj+WFkdeMcd478PgA6JePiH8KX8hdXt1AtKCGlBAy2D+dcjlt1D
- kl1/ZbnB8xDoLggyDGOzeqEZ/M2Xl7LZuqL8GyW6YDz/GhM1UnbkspSPvv09h5ZC5Boe
- nMt9kVz9H/ioWrcB2rPou+7T5z4BncrxktYpx+YJq2kLYJ7G1d28g2/+/EOxGk/MDMe/
- FsfJVgCwjP8ljRQiwTRLp5iuOFyqC/UmraUKrOvQDEL/R20BG8CFQ9sCekSv4ex5k/9Y
- ExGCHJmrhQjYI/1URjJFvv3TveQ3Yhq3SVV8Skpn4tdassaBFmcdSOnw5ygm9i6LJaQt
- X1Ag==
+ bh=GkSp53UqxGMezb98No71xXKz4FloCnxhdFK1fZRjBd8=;
+ b=bq7JoO/XL/9E3wNqSP/iDNW7nPnI/h2Snjc+Q5S6MUMrKp2PKhjoQlXdYBtkFw8hJI
+ BIe7F1U3egDJQxnSisgIVqxh5SK/awvgeeS9/Byk6bm2+dhaMml1bQbs+gCXWOfh7vbi
+ LGik2/w2JmqwwpDCmjFlbuJHCpv4/p+XImoQYhaH09/WCxlpDqgk3YZog8jferWAazFt
+ pzu+LDaFbjZn2yC9KRJj/q0NmNprEPVJWExR0YdPolcm20++kv1+67Kc6W9KnnLbiPvf
+ XSf7aPE0LSSQ7dUbkgFHsNeqjVaTDE5JqdbfTA3GfI753mKzha2qfOwPOcDZqHptCZIt
+ aFuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jvqohnMij0I2CBTDF5YLXeAgLpbv445ozkjXuVEGaTQ=;
- b=EKf3FDzHM+vQ+dhYmSssxRDtyOoKWB53sW7fwZqa5BigxgObpGFhfYSe9+f7aWljFl
- m34ANFFopTFDa1VfwiB33Ve+4UEDlmotBKNzH81owRKcBVzMI78GiLqVRxWnpxGnGfhw
- kE1GRfybtF0jmkPkoZ+xahtEhiDXVtgO7DmRjC/VnN7RlNV7EC4pBihGqe9mr3lQlZRQ
- 6cwf/26ntf2lanjHvhA32FGvMzwx1Pl141kQPTVNXsA5+yLHuWoSd8HGlwwHacyfGDo8
- dsnNqV7BN74D7d7NCWj9gYBScaTdQzYcSLmMMZYmB0JPxnL24zdHp7hkwRmnWqPyQNZc
- 59eg==
-X-Gm-Message-State: ANhLgQ10jfg80QUpBk1ijUwvR7bJjEeSmDMlByyN7FKQ7bPl+P3y1udR
- aR0CTYzDUe8p3ARAXPrt4zAGHQep
-X-Google-Smtp-Source: ADFU+vtLcomxxRNE6ZfG88AZ1ylBxIg3ZrOocA9bP65sr7EsMPJksN7bDWkcyZzoKlyFARffhYOE0Q==
-X-Received: by 2002:adf:ef44:: with SMTP id c4mr18318790wrp.404.1584118750894; 
- Fri, 13 Mar 2020 09:59:10 -0700 (PDT)
+ bh=GkSp53UqxGMezb98No71xXKz4FloCnxhdFK1fZRjBd8=;
+ b=fTKr70X4pwiaO1CdJUUiLf13YYYT29ycnL8ZHk11BO0blBWrJkk2GOme5Hbx2rfAKi
+ wwrAZTzgVuK7+ntae2JDvxJcdA+HR6lmeWYqa+lXmR8quU3NjgPGzIdfCxtCj12vSGmO
+ CvLYc58T2OzHM91zvkmEGTYKnNNAlWUql7v99+3LanUhOY3QkVto3yOg/oRUrjvv4z2P
+ IrRfiutept3+7j7JR5mJMMzDgQsTQiAX9YcpXsm4nbjZEIZnci/41Z1bu6/7PUmfpRAv
+ LC9SMBUOLi8GWyKs9Z6m2KVa02Th+Wed780SqfWOIEmiuK8imeLvwzpCF0Thl/DtTyHE
+ idbw==
+X-Gm-Message-State: ANhLgQ2fyWJhW29K4tnOPBr4gpTJatUJ8mOMNGONfEmW/2A/DiagsDwh
+ 5/bEoK83F06oiyRBA6dbaeWpPffR
+X-Google-Smtp-Source: ADFU+vvD3V+yfjmMIN67TowA6OWpsOR4dkiJKy19dn7YAj+wM7wURdDPFxgQlMh3kK9rVMHUP1VpJg==
+X-Received: by 2002:adf:fa0e:: with SMTP id m14mr3210545wrr.80.1584118752608; 
+ Fri, 13 Mar 2020 09:59:12 -0700 (PDT)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id t124sm18104873wmg.13.2020.03.13.09.59.09
+ by smtp.gmail.com with ESMTPSA id e1sm69648524wrx.90.2020.03.13.09.59.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 09:59:10 -0700 (PDT)
+ Fri, 13 Mar 2020 09:59:11 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 09/10] cpuidle: tegra: Changes for v5.7-rc1
-Date: Fri, 13 Mar 2020 17:58:47 +0100
-Message-Id: <20200313165848.2915133-9-thierry.reding@gmail.com>
+Subject: [GIT PULL 10/10] phy: tegra: Changes for v5.7-rc1
+Date: Fri, 13 Mar 2020 17:58:48 +0100
+Message-Id: <20200313165848.2915133-10-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200313165848.2915133-1-thierry.reding@gmail.com>
 References: <20200313165848.2915133-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095912_852891_4158B350 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20200313_095913_890696_A67D36E5 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,75 +114,49 @@ The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-cpuidle
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-phy
 
-for you to fetch changes up to 382ac8e22b90e6334d373da03c17b319458b258e:
+for you to fetch changes up to 04c929223d1db6ad4ba8e4c23122e1052f670c2e:
 
-  cpuidle: tegra: Disable CC6 state if LP2 unavailable (2020-03-13 11:32:01 +0100)
+  phy: tegra: xusb: Don't warn on probe defer (2020-03-13 09:17:50 +0100)
 
-This set of changes was acked by Daniel Lezcano and the preference is to
-take this through the ARM SoC tree because it has a dependency on one of
-the other branches (tegra-for-5.7-arm-core) that also goes through the
-ARM SoC tree.
+This is a dependency for the USB changes that are also part of this
+series of pull requests, so it was deemed easier to take this all
+through the ARM SoC tree. The patches have all been acked by Kishon.
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-cpuidle: tegra: Changes for v5.7-rc1
+phy: tegra: Changes for v5.7-rc1
 
-These changes unify CPU idle support for Tegra20, Tegra30 and Tegra114.
+This set of patches adds role switching support for the XUSB pad
+controller, which will be used by USB host and device drivers to
+switch between peripheral and host modes.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (15):
-      ARM: tegra: Compile sleep-tegra20/30.S unconditionally
-      ARM: tegra: Add tegra_pm_park_secondary_cpu()
-      ARM: tegra: Remove pen-locking from cpuidle-tegra20
-      ARM: tegra: Change tegra_set_cpu_in_lp2() type to void
-      ARM: tegra: Propagate error from tegra_idle_lp2_last()
-      ARM: tegra: Expose PM functions required for new cpuidle driver
-      ARM: tegra: Rename some of the newly exposed PM functions
-      ARM: tegra: Make outer_disable() open-coded
-      ARM: tegra: cpuidle: Handle case where secondary CPU hangs on entering LP2
-      ARM: tegra: cpuidle: Make abort_flag atomic
-      ARM: tegra: cpuidle: Remove unnecessary memory barrier
-      cpuidle: Refactor and move out NVIDIA Tegra20 driver into drivers/cpuidle
-      cpuidle: tegra: Squash Tegra30 driver into the common driver
-      cpuidle: tegra: Squash Tegra114 driver into the common driver
-      cpuidle: tegra: Disable CC6 state if LP2 unavailable
+JC Kuo (2):
+      phy: tegra: xusb: Protect Tegra186 soc with config
+      phy: tegra: xusb: Add Tegra194 support
 
-Thierry Reding (1):
-      Merge branch 'for-5.7/arm/core' into for-5.7/cpuidle
+Jon Hunter (1):
+      phy: tegra: xusb: Don't warn on probe defer
 
- arch/arm/mach-tegra/Makefile                     |  19 +-
- arch/arm/mach-tegra/cpuidle-tegra114.c           |  89 -----
- arch/arm/mach-tegra/cpuidle-tegra20.c            | 212 ------------
- arch/arm/mach-tegra/cpuidle-tegra30.c            | 132 --------
- arch/arm/mach-tegra/cpuidle.c                    |  50 ---
- arch/arm/mach-tegra/cpuidle.h                    |  21 --
- arch/arm/mach-tegra/irq.c                        |   3 +-
- arch/arm/mach-tegra/pm.c                         |  54 ++--
- arch/arm/mach-tegra/pm.h                         |   4 -
- arch/arm/mach-tegra/reset-handler.S              |  11 -
- arch/arm/mach-tegra/reset.h                      |   9 +-
- arch/arm/mach-tegra/sleep-tegra20.S              | 170 ----------
- arch/arm/mach-tegra/sleep-tegra30.S              |   6 +-
- arch/arm/mach-tegra/sleep.h                      |  15 -
- arch/arm/mach-tegra/tegra.c                      |   7 +-
- drivers/cpuidle/Kconfig.arm                      |   8 +
- drivers/cpuidle/Makefile                         |   1 +
- drivers/cpuidle/cpuidle-tegra.c                  | 392 +++++++++++++++++++++++
- include/soc/tegra/cpuidle.h                      |   2 +-
- {arch/arm/mach-tegra => include/soc/tegra}/irq.h |   8 +-
- include/soc/tegra/pm.h                           |  31 ++
- 21 files changed, 483 insertions(+), 761 deletions(-)
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra114.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra20.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra30.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle.h
- create mode 100644 drivers/cpuidle/cpuidle-tegra.c
- rename {arch/arm/mach-tegra => include/soc/tegra}/irq.h (59%)
+Nagarjuna Kristam (5):
+      phy: tegra: xusb: Add usb-role-switch support
+      phy: tegra: xusb: Add usb-phy support
+      phy: tegra: xusb: Add support to get companion USB 3 port
+      phy: tegra: xusb: Add set_mode support for USB 2 phy on Tegra210
+      phy: tegra: xusb: Add set_mode support for UTMI phy on Tegra186
+
+ drivers/phy/tegra/Kconfig         |   1 +
+ drivers/phy/tegra/Makefile        |   1 +
+ drivers/phy/tegra/xusb-tegra186.c | 261 +++++++++++++++++++++++++++++---------
+ drivers/phy/tegra/xusb-tegra210.c | 131 +++++++++++++++----
+ drivers/phy/tegra/xusb.c          | 189 +++++++++++++++++++++++++++
+ drivers/phy/tegra/xusb.h          |  10 ++
+ include/linux/phy/tegra/xusb.h    |   2 +
+ 7 files changed, 511 insertions(+), 84 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
