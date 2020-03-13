@@ -2,54 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53931184471
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 11:09:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98931184477
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 11:10:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=74WBDkH3LJL3u0nqaxdCuo7lScETxUiFXAkY/Eqb+9Y=; b=uC4JoAbzgKEZs3
-	Ml/yI/WYttzsXEjWUIJWKdPaY8JNVoKFy4s1FzH9iLV1Snit+FNWZn8pO9yUXB3MAhqR5dn1PO99f
-	RTpszbcq/OwRiwSbCRHd4oGurOD5vB8ttHUpiB5FSqgkFY+w3fzI+HcUuXlNyuud8EoSrzxmg0azk
-	oaOjFTDomWTclqljDY8B/qQ6+z1LXHaXoJt3V63kOVu0o9V+bn/Gzb6PWaYMyoio5yceKQgxek3GC
-	p9UZyjyfCg1eId1FzfDJmxxa5CL2YKMYG4Syc3aMRfUZu+wBCOF21bKR2bz52s4ie8C7HxmoxJTcZ
-	jHB/5ekVPl9mgLSnrFPA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y7XU/sivoBCiKFymuLQhxxgmtH239Ett0P7HbTyVvw4=; b=qENThl7QZKkMsG
+	mMwJPa59cUcGatRCadCYA4YngdApFDrgs/Bdjcs+5+J41RIvWPFIjZsIUiURNt6zdu7ICyHoAp9wW
+	Pkq+fiwdx08R44F4yjlOYVHmE6cJyySnrQe2l6p14elP/UPhYl6CvSGp4C8DNDhdVobHN0CXG/YSo
+	jStV7357IqnKbkzaR+jMIpaqt7aQRu5msEcWZsJV+ZLr8bttfjRSJDkpJaAYkx9Y1aQrrvcZ4dByo
+	hzSMba2D0YtpUTvvGb4Lm02b3aqZzq6uKxDmMtaFHZ4kZi2IfBXSoQUN38vkYk6TcqPinpErzpM44
+	Pw0WpAvFqgjdOVccP6yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jChFr-0008Te-SV; Fri, 13 Mar 2020 10:09:23 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jChGN-0000Hn-H4; Fri, 13 Mar 2020 10:09:55 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jChFk-0008T9-84
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 10:09:17 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.pengutronix.de.)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1jChFh-0004VN-0q; Fri, 13 Mar 2020 11:09:13 +0100
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] soc: imx: gpc: fix power up sequencing
-Date: Fri, 13 Mar 2020 11:09:12 +0100
-Message-Id: <20200313100912.24699-1-l.stach@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
+ id 1jChGE-0000Gn-Qw
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 10:09:48 +0000
+Received: from mail-qv1-f47.google.com ([209.85.219.47]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1McXs5-1jkeQz2O9F-00d0A7 for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 13 Mar 2020 11:09:40 +0100
+Received: by mail-qv1-f47.google.com with SMTP id r15so4250199qve.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Mar 2020 03:09:40 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ17sBMlDYjAtQabslhGuMMqxDs24VglhNz+GFledhEJEYRB198M
+ NL9HUOfXQn1l9HToC5dPScC8NQtc2M6GDlGSPqA=
+X-Google-Smtp-Source: ADFU+vt+dplEfE+ba1F4rk6ReC6fOrvYlwWx8VR6mDemNP62902HsNZ8v7xXfhRh1qV8DDzdMc9fSjwZ+1FAfpkb8Yk=
+X-Received: by 2002:a0c:f647:: with SMTP id s7mr11509624qvm.4.1584094179347;
+ Fri, 13 Mar 2020 03:09:39 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <1584070036-26447-1-git-send-email-peng.fan@nxp.com>
+ <1584070036-26447-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1584070036-26447-2-git-send-email-peng.fan@nxp.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 13 Mar 2020 11:09:23 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a1T5+9XioY5qW4Eoxbanp65cS+ffLie+erANw4ywUEAGA@mail.gmail.com>
+Message-ID: <CAK8P3a1T5+9XioY5qW4Eoxbanp65cS+ffLie+erANw4ywUEAGA@mail.gmail.com>
+Subject: Re: [PATCH 1/3] pinctrl: freescale: drop the dependency on ARM64 for
+ i.MX8M
+To: Peng Fan <peng.fan@nxp.com>
+X-Provags-ID: V03:K1:6KuKPur7/dqhoxmtHbQDQ5PPgSSGdg9+iTcElqdJSxb2NLZvq75
+ C5BCzIy+dDoLQ0ng4eOo+M/o4o+jI/GKNxk+mGZtB03sGlR/zPrH0Vt2zTdy/ZJofUf74hw
+ CerzJujUYX9FDUtDSCgTfQ5U5Er2ByEtndwgbcHWZDCIbPhDV1Si/GoQQEAF5XjXV4Ht19c
+ WjEfJRhLzppLK9V5m83Og==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vTgCOQhdbZ4=:FOmdsoNpN7ozBCG8EWalTs
+ AyCNkAy6aMAoFcQxJLsJ2NgDwwCy5G592lPbOr+k7e4YWYzaDe9SRrVxki0eQjU5NAnZAzZGj
+ q4lczQOzHRNlcjECv92GYJNehswzUdjTyE1gHcqtH6GGDhwQBB50Eh6NdPP1AH9vDVT1iPmoK
+ 5Md2KA94+9hlQhrImNZ5Lk4+laN+kYchQcVuUhsnTt1yqY2TR/ATCtttIDwQbyQOIQ/0T3WeK
+ 5NUM1CG7M7SmCecaXKf3DbBJj90573OPzwlzcSKopZsAmrXKJkX6fvaQAZF0D1oL97vXYnabt
+ M4hE+WxOlNPgj5sr3gcF9DAO2Bhn6jrJXpt0k2QehPmYPmu9GyA68kCoTvZPyC63LYRlQ8ZiQ
+ gd2erXIHRgYv5Akr5wQ0nqKbH3v3s4Cqx0rkgzrdnpS6R8VBEgWZPG2MDn8EdcLGfSvcPzZjQ
+ lmlmADbFRGeMeuo915ab2bCkWlDFugtQdph0AEwfNDKF+mGxHJQBo+VKPoFLHEIeuXHg5yAK3
+ JOqPE8ZJOhirDMdaroZmwwJog03ZzfSMFP8z5ysKZwoIJ7AMg/bi1AWR5+P/INFxcgDiGLW9L
+ EB5x5fogO55im3cnX0fSAWrJnZENk4PK/bdWqFO0UhPbcX9gzC+sGA00BqO5vwCP2vR6JnVPK
+ 2r2Enhzc9Y9O2mShM93CZ4xR6Jg3GzkONq+dLChqy1yG2n3UMUuuVwUBSX4fFBy6sVenwnkOY
+ JVTJh8Y3NIbC5CAMN0FEbv2jRvecCNdBJS95rg7dmt78P4dlz3DISzFOjDENNdiA9rmpHuyQl
+ VK3ig1rTkSe0Vz6FxuOlhZgEamwvOgZS/ABw7orHrGSrnN9lpQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_030916_288653_7F7DD048 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200313_030947_165254_F290BBB5 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,81 +88,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
- patchwork-lst@pengutronix.de
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Stefan Agner <stefan@agner.ch>, linux-clk <linux-clk@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we wait only until the PGC inverts the isolation setting
-before disabling the peripheral clocks. This doesn't ensure that the
-reset is properly propagated through the peripheral devices in the
-power domain.
+On Fri, Mar 13, 2020 at 4:34 AM <peng.fan@nxp.com> wrote:
+>
+> From: Peng Fan <peng.fan@nxp.com>
+>
+> Moving to support aarch32 mode on aarch64 hardware, need to drop
+> the dependency on ARM64 to make the driver could be selected for
+> ARM32.
+>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Wait until the PGC signals that the power up request is done and
-wait a bit for resets to propagate before disabling the clocks.
-
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
----
- drivers/soc/imx/gpc.c | 24 +++++++++++++-----------
- 1 file changed, 13 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/soc/imx/gpc.c b/drivers/soc/imx/gpc.c
-index 98b9d9a902ae..90a8b2c0676f 100644
---- a/drivers/soc/imx/gpc.c
-+++ b/drivers/soc/imx/gpc.c
-@@ -87,8 +87,8 @@ static int imx6_pm_domain_power_off(struct generic_pm_domain *genpd)
- static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
- {
- 	struct imx_pm_domain *pd = to_imx_pm_domain(genpd);
--	int i, ret, sw, sw2iso;
--	u32 val;
-+	int i, ret;
-+	u32 val, req;
- 
- 	if (pd->supply) {
- 		ret = regulator_enable(pd->supply);
-@@ -107,17 +107,18 @@ static int imx6_pm_domain_power_on(struct generic_pm_domain *genpd)
- 	regmap_update_bits(pd->regmap, pd->reg_offs + GPC_PGC_CTRL_OFFS,
- 			   0x1, 0x1);
- 
--	/* Read ISO and ISO2SW power up delays */
--	regmap_read(pd->regmap, pd->reg_offs + GPC_PGC_PUPSCR_OFFS, &val);
--	sw = val & 0x3f;
--	sw2iso = (val >> 8) & 0x3f;
--
- 	/* Request GPC to power up domain */
--	val = BIT(pd->cntr_pdn_bit + 1);
--	regmap_update_bits(pd->regmap, GPC_CNTR, val, val);
-+	req = BIT(pd->cntr_pdn_bit + 1);
-+	regmap_update_bits(pd->regmap, GPC_CNTR, req, req);
- 
--	/* Wait ISO + ISO2SW IPG clock cycles */
--	udelay(DIV_ROUND_UP(sw + sw2iso, pd->ipg_rate_mhz));
-+	/* Wait for the PGC to handle the request */
-+	ret = regmap_read_poll_timeout(pd->regmap, GPC_CNTR, val, !(val & req),
-+				       1, 50);
-+	if (ret)
-+		pr_err("powerup request on domain %s timed out\n", genpd->name);
-+
-+	/* Wait for reset to propagate through peripherals */
-+	usleep_range(5, 10);
- 
- 	/* Disable reset clocks for all devices in the domain */
- 	for (i = 0; i < pd->num_clks; i++)
-@@ -343,6 +344,7 @@ static const struct regmap_config imx_gpc_regmap_config = {
- 	.rd_table = &access_table,
- 	.wr_table = &access_table,
- 	.max_register = 0x2ac,
-+	.fast_io = true,
- };
- 
- static struct generic_pm_domain *imx_gpc_onecell_domains[] = {
--- 
-2.20.1
-
+Acked-by: Arnd Bergmann <arnd@arndb.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
