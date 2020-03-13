@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80110183E14
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 01:59:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F480183E18
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 01:59:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=89vbIBplUInv/zECNH45rWKN0quuZGA1Aj/s447DZD0=; b=plhMAZhhLs3L0uo7Arp8JJdj4x
-	SgiGeGRKb8pXh2dq5Ur9P/9R18Io9m0Ig237R6WM1gPIUTwIFODIAchD10GIoDs4Tc81NpwhPYjnL
-	rL204HmMOqLUmUrANKHQE5054U+/2SYp7nDf+DJY6WWejpKFS9XYNMlqlwYU2BGlnhyMiqOhy+Hcf
-	i7ftPX+iHSqyvQv34R7ieVJLMQtjS6eQA7ixhT1kRcUpdyjNrFR7DfNXFYFnSEkl0xDRUK/KluXHK
-	ECRyAZhV+CcVLUCfN0XSdwD20GtxxQUvEfsuXq1L/pKhYfXAoTFSvGkZ6PRvIMf/zbsKoC34nNRPV
-	KhlP/rPw==;
+	bh=DSUcusy+UDWbeIxBNPRR/J+hEV6Q7vnyzmc01sSRZY8=; b=ZsY+qV4B3zYyksDNg/eYLqn8XT
+	9znbkVJnyUl3zkoU7P8Et7fkWfVVHKO9EoHZES8Ia5rBXVBLEQ5rNUV56DRl90T+AR4JHIzr1OqoR
+	JgVWwLrxDZwWhvivdzAuUkCWBjxNaKD0jQtOsdL+zjPfq8ki6MQ6X3WYUtTOy8ufqHxwVfMY2dIqH
+	PT1vUXw3ggI7rEbDlsj+KvUThUxjTHvGs8qtItVjDuqgHMn3Y8AljdKeMV7rBflpo3KCKAsPTEBqT
+	RaaKHOv8v97YuVuN0YAnlX5tThns+ZiPE473Ol1emjJoeSBUmKg0A9iZjQ4HoriPn5nv6rzCn8TrN
+	wXbq63eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCYf1-0004DC-Ef; Fri, 13 Mar 2020 00:58:47 +0000
+	id 1jCYfb-0004gq-2X; Fri, 13 Mar 2020 00:59:23 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCYeq-0004Bk-1l
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:37 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:34 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 6D17318020C;
- Fri, 13 Mar 2020 09:58:34 +0900 (JST)
+ id 1jCYer-0004CD-0Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 00:58:38 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 13 Mar 2020 09:58:35 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 17EDB603AB;
+ Fri, 13 Mar 2020 09:58:36 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 13 Mar 2020 09:58:34 +0900
+ Fri, 13 Mar 2020 09:58:36 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 1A6371A01BB;
- Fri, 13 Mar 2020 09:58:34 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 64B7E1A01BB;
+ Fri, 13 Mar 2020 09:58:35 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 01/10] ARM: dts: uniphier: Add XDMAC node
-Date: Fri, 13 Mar 2020 09:58:07 +0900
-Message-Id: <1584061096-23686-2-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 02/10] arm64: dts: uniphier: Add XDMAC node
+Date: Fri, 13 Mar 2020 09:58:08 +0900
+Message-Id: <1584061096-23686-3-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_175836_205420_7EADA6C3 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20200312_175837_171406_1045D629 
+X-CRM114-Status: GOOD (  13.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,20 +77,20 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Add external DMA controller support implemented in UniPhier SoCs.
-This supports for Pro4, Pro5 and PXs2.
+This supports for LD11, LD20 and PXs3.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- arch/arm/boot/dts/uniphier-pro4.dtsi | 8 ++++++++
- arch/arm/boot/dts/uniphier-pro5.dtsi | 8 ++++++++
- arch/arm/boot/dts/uniphier-pxs2.dtsi | 8 ++++++++
+ arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 8 ++++++++
+ arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 8 ++++++++
+ arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 8 ++++++++
  3 files changed, 24 insertions(+)
 
-diff --git a/arch/arm/boot/dts/uniphier-pro4.dtsi b/arch/arm/boot/dts/uniphier-pro4.dtsi
-index 2ec04d7..a1bfe0f 100644
---- a/arch/arm/boot/dts/uniphier-pro4.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pro4.dtsi
-@@ -426,6 +426,14 @@
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
+index 5b18bda..5aeb3cc 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
+@@ -566,6 +566,14 @@
  			};
  		};
  
@@ -103,13 +103,13 @@ index 2ec04d7..a1bfe0f 100644
 +		};
 +
  		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-pro4-aidet";
+ 			compatible = "socionext,uniphier-ld11-aidet";
  			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm/boot/dts/uniphier-pro5.dtsi b/arch/arm/boot/dts/uniphier-pro5.dtsi
-index ea3961f..ecab061 100644
---- a/arch/arm/boot/dts/uniphier-pro5.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pro5.dtsi
-@@ -408,6 +408,14 @@
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
+index f2dc5f6..c2868d8 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
+@@ -664,6 +664,14 @@
  			};
  		};
  
@@ -122,13 +122,13 @@ index ea3961f..ecab061 100644
 +		};
 +
  		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-pro5-aidet";
+ 			compatible = "socionext,uniphier-ld20-aidet";
  			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm/boot/dts/uniphier-pxs2.dtsi b/arch/arm/boot/dts/uniphier-pxs2.dtsi
-index 13b0d4a..6e60154 100644
---- a/arch/arm/boot/dts/uniphier-pxs2.dtsi
-+++ b/arch/arm/boot/dts/uniphier-pxs2.dtsi
-@@ -508,6 +508,14 @@
+diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
+index 73e7e12..ffe57c6 100644
+--- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
++++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
+@@ -462,6 +462,14 @@
  			};
  		};
  
@@ -141,7 +141,7 @@ index 13b0d4a..6e60154 100644
 +		};
 +
  		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-pxs2-aidet";
+ 			compatible = "socionext,uniphier-pxs3-aidet";
  			reg = <0x5fc20000 0x200>;
 -- 
 2.7.4
