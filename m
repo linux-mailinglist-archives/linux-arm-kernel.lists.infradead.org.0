@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0726184CF1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:49:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D651184CFA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Mar 2020 17:51:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sM1XS7TxhOz4IVGFcXfY9JDLF2yNNg0fxQHFgewdmGQ=; b=hEqIYaxikb3k3gcSveMWCc/bN
-	cEohxUyyXAHEelOKD09d5RjMcvJMRX7jmrJ08tTLEcX23OLEWq+P0W/3ZnZAqPmSQ7nGDM6ez3dX2
-	eUfhApuMpoabrRtLSbIBMS8J2KN/Mf8KX13CrNKvOPkjs+BxoVjyD7o+33/i6ntJ8K37dmQW0FZsK
-	QkdlDbZaZZxMZAmVtpX1bPX7V3p+9rd8JB3UsZkhFtVli/KbJeNr5f/I3DbZqw1BUHyi6Iv0ngZRK
-	J3bkb8AmrF7OIGeRO0tjNAF8jtmF7VRdks1L/FtmlzX2VqayvjKo5x9EFclRUPzGKDeGruAm5hO/s
-	cNMveFszg==;
+	 bh=v/QlgF5IzrA0FNThpSPmqRPexRwR/VyjQ2wROOurltk=; b=O+uqvPYPq4k2RZeH4byce5VxS
+	jxzmqCR46itnAFceQdXb6gx+W++91p26UaWXT5YfYhhf/h7zvsrTSiy5VDd6gTrg4Arc0BIAO4KxO
+	laB2BaOyQsTB5nG7oxQCKK1Nee3OyotKC5YtRcO2IcsEl+3TxtLJ2+5nzgBZiLBHZz/PhlNPcYv8M
+	wjlmo92upVlbxtXGvqrBNHSn9EfvPwsjXcTy9AxNSP8NpyTT+ogms1uQ31P0Ko/B1R745JHB407xE
+	ypCtvqLLa3tOLR8Zi94CUvFKwpKMNKm6ViWBn5Gqrwq0ekuFusqEslWsv4yckKbCFSumwn0rVnt0z
+	VKr5c+FfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnVR-0004Ur-UJ; Fri, 13 Mar 2020 16:49:53 +0000
+	id 1jCnX8-0006H0-JF; Fri, 13 Mar 2020 16:51:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCnVD-0004Tp-1k; Fri, 13 Mar 2020 16:49:40 +0000
+ id 1jCnWz-0006GX-RN
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Mar 2020 16:51:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 79D8A31B;
- Fri, 13 Mar 2020 09:49:36 -0700 (PDT)
-Received: from [10.37.12.40] (unknown [10.37.12.40])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 393343F534;
- Fri, 13 Mar 2020 09:49:26 -0700 (PDT)
-Subject: Re: [PATCH v4 1/4] PM / EM: add devices to Energy Model
-To: Quentin Perret <qperret@google.com>
-References: <20200309134117.2331-1-lukasz.luba@arm.com>
- <20200309134117.2331-2-lukasz.luba@arm.com>
- <20200313100407.GA144499@google.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <bd1233f4-6e8b-23d1-e5aa-7c904fbd1bb3@arm.com>
-Date: Fri, 13 Mar 2020 16:49:24 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EDB031B;
+ Fri, 13 Mar 2020 09:51:27 -0700 (PDT)
+Received: from [10.57.50.73] (unknown [10.57.50.73])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A5CF3F534;
+ Fri, 13 Mar 2020 09:51:25 -0700 (PDT)
+Subject: Re: [PATCH 4/6] arm64: uaccess: Use asm/ccset.h macros in __range_ok
+To: Mark Rutland <mark.rutland@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>
+References: <20200311180416.6509-1-richard.henderson@linaro.org>
+ <20200311180416.6509-5-richard.henderson@linaro.org>
+ <20200313110436.GD42546@lakrids.cambridge.arm.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <1f7f8e9d-7b2f-c33c-8c2e-0f30f59fa493@arm.com>
+Date: Fri, 13 Mar 2020 16:51:28 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200313100407.GA144499@google.com>
-Content-Language: en-US
+In-Reply-To: <20200313110436.GD42546@lakrids.cambridge.arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_094939_138095_0F57236C 
-X-CRM114-Status: GOOD (  28.80  )
+X-CRM114-CacheID: sfid-20200313_095129_929289_92BD19DA 
+X-CRM114-Status: GOOD (  16.80  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,257 +66,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
- steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
- linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
- daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie, javi.merino@arm.com,
- tomeu.vizoso@collabora.com, sboyd@kernel.org, rdunlap@infradead.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- shawnguo@kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Quentin,
-
-On 3/13/20 10:04 AM, Quentin Perret wrote:
-> Hi Lukasz,
+On 2020-03-13 11:04 am, Mark Rutland wrote:
+> On Wed, Mar 11, 2020 at 11:04:14AM -0700, Richard Henderson wrote:
+>> Uses of __range_ok almost always feed a branch.
+>> This allows the compiler to use flags directly.
 > 
-> On Monday 09 Mar 2020 at 13:41:14 (+0000), Lukasz Luba wrote:
-> <snip>
->> diff --git a/drivers/opp/of.c b/drivers/opp/of.c
->> index 9cd8f0adacae..0efd6cf6d023 100644
->> --- a/drivers/opp/of.c
->> +++ b/drivers/opp/of.c
->> @@ -1047,9 +1047,8 @@ EXPORT_SYMBOL_GPL(dev_pm_opp_get_of_node);
->>    * calculation failed because of missing parameters, 0 otherwise.
->>    */
->>   static int __maybe_unused _get_cpu_power(unsigned long *mW, unsigned long *kHz,
->> -					 int cpu)
->> +					 struct device *cpu_dev)
->>   {
->> -	struct device *cpu_dev;
->>   	struct dev_pm_opp *opp;
->>   	struct device_node *np;
->>   	unsigned long mV, Hz;
->> @@ -1057,10 +1056,6 @@ static int __maybe_unused _get_cpu_power(unsigned long *mW, unsigned long *kHz,
->>   	u64 tmp;
->>   	int ret;
->>   
->> -	cpu_dev = get_cpu_device(cpu);
->> -	if (!cpu_dev)
->> -		return -ENODEV;
->> -
->>   	np = of_node_get(cpu_dev->of_node);
->>   	if (!np)
->>   		return -EINVAL;
->> @@ -1128,6 +1123,6 @@ void dev_pm_opp_of_register_em(struct cpumask *cpus)
->>   	if (ret || !cap)
->>   		return;
->>   
->> -	em_register_perf_domain(cpus, nr_opp, &em_cb);
->> +	em_register_perf_domain(cpu_dev, nr_opp, &em_cb, cpus);
+> If we want to give hte compiler the most freedom, the best thing would
+> be to write this in C. IIUC this code is written in assembly largely for
+> historical reasons, and the comment above says:
 > 
-> Any reason for not checking the return value here ? You added a nice
-> check in scmi_get_cpu_power(), perhaps do the same thing here ?
-
-I have tried to avoid changing the function to 'return int' in this
-patch. It is changed in the 2/4 where it gets the proper return.
-
-The 2/4 patch touches a few drivers which use the function
-dev_pm_opp_of_register_em(), mainly the new arguments, but also the
-return type in one patch (for consistency). It would need some ACKs
-from maintainers making sure to sync their trees with that patch
-(to avoid getting merge conflicts at some late stages).
-
+> | This is equivalent to the following test:
+> | (u65)addr + (u65)size <= (u65)current->addr_limit + 1
 > 
->>   }
->>   EXPORT_SYMBOL_GPL(dev_pm_opp_of_register_em);
->> diff --git a/drivers/thermal/cpufreq_cooling.c b/drivers/thermal/cpufreq_cooling.c
->> index fe83d7a210d4..fcf2dab1b3b8 100644
->> --- a/drivers/thermal/cpufreq_cooling.c
->> +++ b/drivers/thermal/cpufreq_cooling.c
->> @@ -333,18 +333,18 @@ static inline bool em_is_sane(struct cpufreq_cooling_device *cpufreq_cdev,
->>   		return false;
->>   
->>   	policy = cpufreq_cdev->policy;
->> -	if (!cpumask_equal(policy->related_cpus, to_cpumask(em->cpus))) {
->> +	if (!cpumask_equal(policy->related_cpus, em_span_cpus(em))) {
->>   		pr_err("The span of pd %*pbl is misaligned with cpufreq policy %*pbl\n",
->> -			cpumask_pr_args(to_cpumask(em->cpus)),
->> +			cpumask_pr_args(em_span_cpus(em)),
->>   			cpumask_pr_args(policy->related_cpus));
->>   		return false;
->>   	}
->>   
->>   	nr_levels = cpufreq_cdev->max_level + 1;
->> -	if (em->nr_cap_states != nr_levels) {
->> +	if (em->nr_perf_states != nr_levels) {
->>   		pr_err("The number of cap states in pd %*pbl (%u) doesn't match the number of cooling levels (%u)\n",
+> ... which e.g. we could write as:
 > 
-> s/cap states/performance states
-
-missed it, thanks
-
+> 	(__uint128_t)addr + (__uint128_t)size <= (__uint128_t)limit + 1;
 > 
->> -			cpumask_pr_args(to_cpumask(em->cpus)),
->> -			em->nr_cap_states, nr_levels);
->> +			cpumask_pr_args(em_span_cpus(em)),
->> +			em->nr_perf_states, nr_levels);
->>   		return false;
->>   	}
+> ... which would be much clearer than the assembly.
 > 
-> <snip>
->> +static int em_create_perf_table(struct device *dev, struct em_perf_domain *pd,
->> +				int nr_states, struct em_data_callback *cb)
->>   {
->>   	unsigned long opp_eff, prev_opp_eff = ULONG_MAX;
->>   	unsigned long power, freq, prev_freq = 0;
->> -	int i, ret, cpu = cpumask_first(span);
->> -	struct em_cap_state *table;
->> -	struct em_perf_domain *pd;
->> +	struct em_perf_state *table;
->> +	int i, ret;
->>   	u64 fmax;
->>   
->> -	if (!cb->active_power)
->> -		return NULL;
->> -
->> -	pd = kzalloc(sizeof(*pd) + cpumask_size(), GFP_KERNEL);
->> -	if (!pd)
->> -		return NULL;
->> -
->>   	table = kcalloc(nr_states, sizeof(*table), GFP_KERNEL);
->>   	if (!table)
->> -		goto free_pd;
->> +		return -ENOMEM;
->>   
->> -	/* Build the list of capacity states for this performance domain */
->> +	/* Build the list of performance states for this performance domain */
->>   	for (i = 0, freq = 0; i < nr_states; i++, freq++) {
->>   		/*
->>   		 * active_power() is a driver callback which ceils 'freq' to
->> -		 * lowest capacity state of 'cpu' above 'freq' and updates
->> +		 * lowest performance state of 'dev' above 'freq' and updates
->>   		 * 'power' and 'freq' accordingly.
->>   		 */
->> -		ret = cb->active_power(&power, &freq, cpu);
->> +		ret = cb->active_power(&power, &freq, dev);
->>   		if (ret) {
->> -			pr_err("pd%d: invalid cap. state: %d\n", cpu, ret);
->> +			dev_err(dev, "EM: invalid perf. state: %d\n",
->> +				ret);
-> 
-> Not easy to figure out which device has a problem with this. I'm
-> guessing you went that way since this is called before ida_simple_get() ?
+> Is there any pattern like that for which the compiler generates
+> reasonable looking code, and if not, is that something that could be
+> improved compiler side?
 
-Yes we now have pd0, for cpu0, but pd1 for i.e. cpu4
+Hmm, in fact this:
 
-> Could that be refactored to make the error message more useful ?
+	__uint128_t tmp = (__uint128_t)(unsigned long)addr + size;
+	return !tmp || tmp - 1 <= limit;
 
-So I have changed this in all palaces for consistency, not worrying
-about the 'pdID'. I thought getting ID earlier an then making cleanup
-code just for debug print purpose is probably not helping much in
-hunting the real problem if it occur, but cleaner code is better to
-maintain.
+generates code that looks like utter crap in isolation[1], but once 
+inlined actually leads to a modest overall reduction (-0.09%) across the 
+whole of vmlinux according to bloat-o-meter (presumably most of those 
+branches roll up into the overall "if(access_ok())..." control flow for 
+the typical case, and I'm sure size and limit get constant-folded a lot).
 
-We would have consistent information for which cpu device it occurred,
-all the logs look the same:
+IIRC at the time there were so many uncertainties flying around that 
+sticking with asm to take compiler unknowns out of the picture felt 
+desirable, but perhaps the time might be nigh to retire my baby after 
+all... I'll investigate a bit further.
 
-[    5.391193] cpu cpu0: EM: hertz/watts ratio non-monotonically 
-decreasing: em_perf_state 11 >= em_perf_state10
-[    5.394230] cpu cpu0: EM: created perf domain pd0
-
-and this one would look like:
-
-[    5.391193] cpu cpu0: EM: invalid perf. state: -22
+Robin.
 
 
-> 
->>   			goto free_cs_table;
->>   		}
-> 
-> <snip>
->> +/**
->> + * em_unregister_perf_domain() - Unregister Energy Model (EM) for the device
->> + * @dev		: Device for which the EM is registered
->> + *
->> + * Try to unregister the EM for the specified device (it checks current
->> + * reference counter). The EM for CPUs will not be freed.
->> + */
->> +void em_unregister_perf_domain(struct device *dev)
->> +{
->> +	struct em_device *em_dev, *tmp;
->> +
->> +	if (IS_ERR_OR_NULL(dev))
->> +		return;
->> +
->> +	/* We don't support freeing CPU structures in hotplug */
->> +	if (_is_cpu_device(dev))
->> +		return;
-> 
-> Can we WARN() here ?
-
-Well if someone would add EM to its platform and call this in
-hotplug, which is used as cooling method, will see a lot of warnings.
-I would rather avoid stressing people with this kind of warnings.
-This is under control and nothing really happens even when they
-do hotplug very often, like LTP stress tests.
-
-I agree to add a print there but warning for me is when something
-is not OK and should be investigated.
-I would prefer dev_dbg_once() to print thet the EM is not going to be
-removed. This will also not pollute dmesg in many logs.
-
-> 
->> +
->> +	mutex_lock(&em_pd_mutex);
->> +
->> +	if (list_empty(&em_pd_dev_list)) {
->> +		mutex_unlock(&em_pd_mutex);
->> +		return;
->> +	}
->> +
->> +	list_for_each_entry_safe(em_dev, tmp, &em_pd_dev_list, em_dev_list) {
->> +		if (em_dev->dev == dev) {
->> +			kref_put(&em_dev->kref, _em_release);
->> +			break;
->> +		}
->> +	}
->> +
->> +	mutex_unlock(&em_pd_mutex);
->> +}
->> +EXPORT_SYMBOL_GPL(em_unregister_perf_domain);
-> 
-> Otherwise this looks pretty good to me. So, with these small nits
-> addressed:
-> 
->    Acked-by: Quentin Perret <qperret@google.com>
-
-Thank you for the ACK.
-
-> 
-> Thanks!
-> Quentin
-> 
-
-So these small changes will be present in v5. I have to wait a few
-days because there is one change to devfreq_cooling.c queuing and I will
-send v5 with updated patch 3/4 rebased on top.
-
-Regards,
-Lukasz
+[1]:
+0000000000000000 <range_ok>:
+    0:   ab010000        adds    x0, x0, x1
+    4:   9a9f37e3        cset    x3, cs  // cs = hs, nlast
+    8:   aa030001        orr     x1, x0, x3
+    c:   b4000161        cbz     x1, 38 <range_ok+0x38>
+   10:   f1000401        subs    x1, x0, #0x1
+   14:   d2800020        mov     x0, #0x1                        // #1
+   18:   da1f0063        sbc     x3, x3, xzr
+   1c:   b4000063        cbz     x3, 28 <range_ok+0x28>
+   20:   d2800000        mov     x0, #0x0                        // #0
+   24:   d65f03c0        ret
+   28:   eb02003f        cmp     x1, x2
+   2c:   54ffffc9        b.ls    24 <range_ok+0x24>  // b.plast
+   30:   d2800000        mov     x0, #0x0                        // #0
+   34:   17fffffc        b       24 <range_ok+0x24>
+   38:   d2800020        mov     x0, #0x1                        // #1
+   3c:   d65f03c0        ret
 
 _______________________________________________
 linux-arm-kernel mailing list
