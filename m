@@ -2,54 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BF5F185664
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:45:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3281185666
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:45:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wPwZx4ZUcZLWE7uESn8J77+Gu3FXMFcWi3VNZdZkDok=; b=lD8TrfCrUC4bmI
-	MnG+rVtmb2NwZ3GqE41/ka4A+gi3fn3eDttbn9SgwFMzdmmje+LDaj+WKxrIsd606S/mB5xuJ2m5I
-	GylGUpt0f6ptUZg6Kau7Fw/J7pDq+KauPzDgQbz2votD1UuZP8Esg/rbi+mVZA4VrkCajZTBuCW8Z
-	a7BUj4HDFiO+jNTs8MaaFFNEDqr0vqVJiI8niHEyXK+aH1In5JoYDP9FB2OxTqZzQZQL+lGytzk+h
-	6+mwL6wuU5JtDD3qywcuRxaU15Wy/jQpY+MEk+T+uiNM2H/Gui4Y0t5sc+fUMtODUq/fRZyQZV90U
-	YfGewBgIuTj95H9jGYhQ==;
+	List-Owner; bh=8U65BpzNFaFYqw1CiKHHC0qcCm/lOXcvPhpcazBZGCM=; b=FpreGMgcQwq/sc
+	Ol4/FvrX+Lp10oJDQejoRwVh3abgO1hjWzyk+4AHV4njWar5FBUtY9Q3XQCtO1MgMNERBZc1GuMhD
+	9gelCvTm0G755cZ8oeE3ECOQF6exLK7sTloey/JMsxIigTHhRbZqkIxkn93O9F2fpIoZAdZZ2DOBt
+	+1I2aDGCya1gNseJRliK0Ww7d9V6+rPHZruTC34YoJIogjkWggydpzgN+HmOsVbMzmHs5FavhKJtu
+	0i6QnS/KNhwfYRu9n4cWGMedrLoVWv2DGnsk2si7t5/LOZCO+ZEwIkiUwUgNpwWw6HCj0MxPb1V5n
+	5Mfg5pEDph6lyMZRYPQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDEaj-00037O-8c; Sat, 14 Mar 2020 21:45:09 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDEZG-0001oo-U0
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:40 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 79A438385;
- Sat, 14 Mar 2020 21:44:22 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH 7/7] ARM: omap2plus_defconfig: Update for moved and dropped
- options
-Date: Sat, 14 Mar 2020 14:43:28 -0700
-Message-Id: <20200314214328.13342-7-tony@atomide.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200314214328.13342-1-tony@atomide.com>
-References: <20200314214328.13342-1-tony@atomide.com>
+	id 1jDEat-0003NA-34; Sat, 14 Mar 2020 21:45:19 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDEZY-00020l-Ea
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:44:00 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jDEZQ-0002vd-NZ; Sat, 14 Mar 2020 22:43:48 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jDEZP-0005Xp-Oz; Sat, 14 Mar 2020 22:43:47 +0100
+Date: Sat, 14 Mar 2020 22:43:47 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] pwm: meson: Fix confusing indentation
+Message-ID: <20200314214347.dun6ith5zamaa3m6@pengutronix.de>
+References: <20200314113524.23031-1-krzk@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200314113524.23031-1-krzk@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_144339_018679_5EE94F37 
-X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-CacheID: sfid-20200314_144356_524140_8051E311 
+X-CRM114-Status: UNSURE (   7.37  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,73 +68,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, kernel@pengutronix.de,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Looks like CONFIG_MTD_M25P80 no longer exists and the others just
-move around the existing options. This makes it easier to create
-patches against omap2plus_defconfig.
+On Sat, Mar 14, 2020 at 12:35:24PM +0100, Krzysztof Kozlowski wrote:
+> Fix indentation of return block.  Smatch warning:
+>     drivers/pwm/pwm-meson.c:139 meson_pwm_request() warn: inconsistent in=
+denting
+> =
 
-Signed-off-by: Tony Lindgren <tony@atomide.com>
----
- arch/arm/configs/omap2plus_defconfig | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
---- a/arch/arm/configs/omap2plus_defconfig
-+++ b/arch/arm/configs/omap2plus_defconfig
-@@ -142,7 +142,6 @@ CONFIG_MTD_CFI=y
- CONFIG_MTD_CFI_INTELEXT=y
- CONFIG_MTD_PHYSMAP=y
- CONFIG_MTD_PHYSMAP_OF=y
--CONFIG_MTD_M25P80=m
- CONFIG_MTD_ONENAND=y
- CONFIG_MTD_ONENAND_VERIFY_WRITE=y
- CONFIG_MTD_ONENAND_OMAP2=y
-@@ -191,10 +190,10 @@ CONFIG_TI_CPSW_SWITCHDEV=y
- CONFIG_TI_CPTS=y
- # CONFIG_NET_VENDOR_VIA is not set
- # CONFIG_NET_VENDOR_WIZNET is not set
--CONFIG_AT803X_PHY=y
- CONFIG_DP83848_PHY=y
- CONFIG_DP83867_PHY=y
- CONFIG_MICREL_PHY=y
-+CONFIG_AT803X_PHY=y
- CONFIG_SMSC_PHY=y
- CONFIG_PPP=m
- CONFIG_PPP_BSDCOMP=m
-@@ -363,13 +362,13 @@ CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
- CONFIG_DRM_OMAP_PANEL_DSI_CM=m
- CONFIG_DRM_TILCDC=m
- CONFIG_DRM_PANEL_SIMPLE=m
--CONFIG_DRM_TI_TFP410=m
- CONFIG_DRM_PANEL_LG_LB035Q02=m
- CONFIG_DRM_PANEL_NEC_NL8048HL11=m
- CONFIG_DRM_PANEL_SHARP_LS037V7DW01=m
- CONFIG_DRM_PANEL_SONY_ACX565AKM=m
- CONFIG_DRM_PANEL_TPO_TD028TTEC1=m
- CONFIG_DRM_PANEL_TPO_TD043MTEA1=m
-+CONFIG_DRM_TI_TFP410=m
- CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_MODE_HELPERS=y
-@@ -563,10 +562,10 @@ CONFIG_FONTS=y
- CONFIG_FONT_8x8=y
- CONFIG_FONT_8x16=y
- CONFIG_PRINTK_TIME=y
-+# CONFIG_DEBUG_BUGVERBOSE is not set
- CONFIG_DEBUG_INFO=y
- CONFIG_DEBUG_INFO_SPLIT=y
- CONFIG_DEBUG_INFO_DWARF4=y
- CONFIG_MAGIC_SYSRQ=y
- CONFIG_DEBUG_FS=y
- CONFIG_SCHEDSTATS=y
--# CONFIG_DEBUG_BUGVERBOSE is not set
--- 
-2.25.1
+This exists since commit 211ed630753d ("pwm: Add support for Meson PWM
+Controller") in 2016. Added Neil to Cc:.
+
+Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+Thanks
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
