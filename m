@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C27C185663
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:45:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3212918565F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:44:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lYxYV0RhX79jTqnI7ZXO+iBnbw89q/nXBZwxIk4eJRQ=; b=hV/RmzMJujrocq
-	Wj6+sBrQz7Aj+RAEySfEQCsCymJ+0yrO9ElBJOT7HPSS1aZRsMeZcjI4CVx/kn++8Tj5oWy6g8lKa
-	xsYMHOleTkRo9BYb3b+05mivwmZjswCuJdBGMsk/lSg0fdyhVvGeWnl9zpSSjg+p0T2rCPXZvUtEq
-	hLlba8IPmOEVlbzFM0J5B6vxBXH4nehD5TwBT7sLzWA3LJEpkCUiJbgXLCDFEYVpxaV3ncJU8DMeR
-	2ChXw2Q4eCDwXNTwKeFhdqqs7/oQId3/nw9zbydDlzXuaKrEa1B0pqH7erjZ8EgmlaOyGC4nYRyiY
-	Vc0GWig09d2j7jNH5PDg==;
+	List-Owner; bh=GjKN37ylK6228cZkL65ApszR5rlBDxIRyI9RWdT1XNY=; b=emGzuUIRrgmQoH
+	bSxwE/vpsv2xOUxDcw4cGBuob37IE9KHWEf8qpAnwCS9dpsoKmuo8FsxRMKkOFucWDMoY38u7eleJ
+	iHDdFpabycEehzpRO+g9C77VqCNM6HwcPzm+szbh9chuNclW5oeKUjaYOX9dfX7Shgj8Ae4ychGel
+	mNUedi1FKsbOu0EXL88Fq0KENPmX5LDoK1w5MBhNOW4MxaMQxgLWcYiz+ffiOXUkn3XIrlO+vvFq4
+	jd+e7vmieJi2LP1iMxHPkfldWrpskgRRbVDWHkxcTQq5VLzBnA8HSGa/nyEl84yY9MP8Sg52Bd4Dy
+	ZT6l8owu/xI3fCvbGWlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDEaZ-0002tc-Ay; Sat, 14 Mar 2020 21:44:59 +0000
+	id 1jDEa0-0002Ej-75; Sat, 14 Mar 2020 21:44:24 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDEZG-0001ng-LM
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:40 +0000
+ id 1jDEZF-0001ne-Dj
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:39 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 1C50B8196;
+ by muru.com (Postfix) with ESMTP id C84168202;
  Sat, 14 Mar 2020 21:44:19 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 2/7] ARM: omap2plus_defconfig: Enable simple-pm-bus
-Date: Sat, 14 Mar 2020 14:43:23 -0700
-Message-Id: <20200314214328.13342-2-tony@atomide.com>
+Subject: [PATCH 3/7] ARM: omap2plus_defconfig: Enable zram as loadable modules
+Date: Sat, 14 Mar 2020 14:43:24 -0700
+Message-Id: <20200314214328.13342-3-tony@atomide.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200314214328.13342-1-tony@atomide.com>
 References: <20200314214328.13342-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_144338_742731_DD248FC3 
-X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-CacheID: sfid-20200314_144337_499244_ED4A5B01 
+X-CRM114-Status: UNSURE (   5.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -65,25 +65,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We can use simple-pm-bus instead of simple-bus, let's enable it to allow
-configuring it in dts files for using things like genpd.
+Enable zram as loadable modules. This allows mounting some part of
+memory as swap on low memory devices.
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/configs/omap2plus_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/configs/omap2plus_defconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
 --- a/arch/arm/configs/omap2plus_defconfig
 +++ b/arch/arm/configs/omap2plus_defconfig
-@@ -130,6 +130,7 @@ CONFIG_PCI_EPF_TEST=m
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
- CONFIG_OMAP_OCP2SCP=y
-+CONFIG_SIMPLE_PM_BUS=y
- CONFIG_CONNECTOR=m
- CONFIG_MTD=y
- CONFIG_MTD_CMDLINE_PARTS=y
+@@ -78,6 +78,8 @@ CONFIG_MODULE_SRCVERSION_ALL=y
+ CONFIG_PARTITION_ADVANCED=y
+ CONFIG_BINFMT_MISC=y
+ CONFIG_CMA=y
++CONFIG_ZSMALLOC=m
++CONFIG_PGTABLE_MAPPING=y
+ CONFIG_NET=y
+ CONFIG_PACKET=y
+ CONFIG_UNIX=y
+@@ -150,6 +152,8 @@ CONFIG_MTD_NAND_OMAP2=y
+ CONFIG_MTD_NAND_OMAP_BCH=y
+ CONFIG_MTD_SPI_NOR=m
+ CONFIG_MTD_UBI=y
++CONFIG_ZRAM=m
++CONFIG_ZRAM_WRITEBACK=y
+ CONFIG_BLK_DEV_LOOP=y
+ CONFIG_BLK_DEV_RAM=y
+ CONFIG_BLK_DEV_RAM_SIZE=16384
 -- 
 2.25.1
 
