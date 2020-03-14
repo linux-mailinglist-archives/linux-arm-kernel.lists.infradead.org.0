@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C23185622
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 18:41:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14C3F185629
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 19:20:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IK4cMVK+yAfLkbu/SuNX9zcWlVDrs9N3evPk+EQAYjA=; b=ANOv86YtHIZUUP
-	gSxiMW5fozRASyOj+Ft6UauNlg3uchNCtEL5BeB5aHkwD3wRGVSX0HnNK8TAgW/UOHLBIe5Tt5Xd+
-	Dkq3txcaz+pf8YVO5WYwth6M04rX/Z+KbfV3Ux+KYAgwJ6oxGTeNH8g39nWHZF9m80PmNYZM1e1de
-	DkLDM/d60pqTJJ2kjNjiVhgyQsyuVbQwEginzZsHxMjUAIRYGCSsFtWilgD5cY1SnW8CWe9LZhO1o
-	a/4cmDSZEWZ4fm5CjATR3l4y0/eO6mJos9B08LDffd2mgo+ZY28BCQQ+4xuMlyttWybFWRbgbcjje
-	o1MNBgbzzyT2OipeZMLg==;
+	List-Owner; bh=nJ7JEJDRA45DrU+O4F9kvBy29G2cHn57zp7RRunsfB4=; b=UsohXnTxriM8R6
+	ebdF7dstW8Jy5JKqYDzF3XfSwsoYLLhnRbqkkjQyG9rdCFqm2XK3xKsgiybjk0L8fgM25//ZG/FCg
+	Pj8eDiWlsSCSMcFjlLR317prHjSqQkR0Snv7UVova9x1/e199jCQWjz5O1Y2wz+eZvyD4I4U6WlNA
+	ImSFPBuuc9k70BcdvAPSeHxDLPbew+xSa6HsBEkP0cqXYtEGoN0flPTBmhMWpCvQOoHz9mTDxqH8B
+	HnyoY7O4v/m0/zh9w31jnZpIiDKlUwIYAn/4UPe2skG8b57X0Og0V9x8vnuRmD0glyO9KxK5wnmms
+	4DKb7QsmS6llBkKGQx+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDAmy-0005JZ-UQ; Sat, 14 Mar 2020 17:41:32 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1jDBOa-0001LY-5C; Sat, 14 Mar 2020 18:20:24 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDAmp-0005Iz-Sl
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 17:41:25 +0000
-Received: by mail-ed1-f68.google.com with SMTP id ca19so16319948edb.13
+ id 1jDBOR-0001L5-LP
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 18:20:18 +0000
+Received: by mail-ed1-f65.google.com with SMTP id dc19so16438121edb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 14 Mar 2020 10:41:18 -0700 (PDT)
+ Sat, 14 Mar 2020 11:20:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WgOverYYA4jA/93Ai/jb2egs1mkI7q35yYWNe0ct6c0=;
- b=NyJDplCGywykRQYkPC68inm0uuy/UPXoFk3ihl7UDQYdMGJs6YgYu84P47roti7oCF
- Pq42L/KDYDdyjgNkevANThPRe6qrbcrkCXTJOVV+Umrxwbv6F1pvtnj1eAxQXKQiuoU1
- 1ZgYl9zgKWcLgVDpedqNtFik6w8icNYqayIM3xo+c8wjCQcaR8d4NDVU/ulQrektqg+C
- MOT9YOb8ybLoLAH3KT8YpMbqw1FD4E3hKdz/xed82qX10cBVfRmaoW3gzkqC5HfybB8t
- hVTTSWsPZSbqcNfZ2eVGc1j6lix9Ns39lJ2ND1vnpuwfK6XcrmxFn82qYaXor7xnkCdf
- Krgg==
-X-Gm-Message-State: ANhLgQ1Qd/qHkTCnNv1DS4nWlu1bhKCtQNtrUxK0CAMAdXt/Jh2L+/DN
- ktjtCPVFDTcGW4TpVOV2QwM=
-X-Google-Smtp-Source: ADFU+vvSO2GNlUjV6/Zp2Fz+b2P92ILGU9eEpunxkHK5UxSTsOblN74/X/UafCVORzRhQox9oPDiUQ==
-X-Received: by 2002:a17:906:ece7:: with SMTP id
- qt7mr7281553ejb.216.1584207677447; 
- Sat, 14 Mar 2020 10:41:17 -0700 (PDT)
+ bh=IGvteHNkCAAe9RzBu1B2j4q+4lEY8L8k3NmOvCcX8OE=;
+ b=OlEJtfJWq3daAGQ7EOm2oboEonjvwF6eCBxqytI9uzMPp8StclgviGOj09F6VxKu5x
+ FTaseuRtnEnmTTtD7uJeDgqLGQrdlKerEaLkNFnQT76gBbEowBP19MvEIgNXhl+1DA92
+ Pf2SeZQQFEMaAPblY5EciQ+hr+K8p7qK3Vnuo0OFl2ZR+/+p1LtqPBL8lbw11XFRxuFN
+ k95/ua8tLbdHmKTuWTUXjMz2Is/8emZAk/4Wl8k04SU2NS0g2VjGChZm0xSmWIKMHsoh
+ tu2zEf8e0Xs8wBcgCorAkt8CqnLfKZoiBpPhfaC1GE/ec/OqPen7N+ZOJjcqQz2Emg2x
+ MLOQ==
+X-Gm-Message-State: ANhLgQ2IZKc7mC0S9v3C0Osn7CEnZyfz74cCJs2UAZ7n/QlLoqLLbj3T
+ hBKAjiHiU9pWN2/JREpoHuE=
+X-Google-Smtp-Source: ADFU+vvqta4B+r9p/W0zTELooOA9Cc7fWz4UD77LqxM6UYcl+Sd+u1u4HEDyOkSEfBTCw7OTPTESnQ==
+X-Received: by 2002:a50:d657:: with SMTP id c23mr19074934edj.18.1584210014117; 
+ Sat, 14 Mar 2020 11:20:14 -0700 (PDT)
 Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id ba5sm89515edb.89.2020.03.14.10.41.15
+ by smtp.googlemail.com with ESMTPSA id n6sm2172656ejy.23.2020.03.14.11.20.12
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 14 Mar 2020 10:41:16 -0700 (PDT)
-Date: Sat, 14 Mar 2020 18:41:13 +0100
+ Sat, 14 Mar 2020 11:20:13 -0700 (PDT)
+Date: Sat, 14 Mar 2020 19:20:10 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCHv3 5/5] clk: samsung: exynos542x: Move FSYS subsystem
- clocks to its sub-CMU
-Message-ID: <20200314174113.GA17580@kozik-lap>
+Subject: Re: [PATCHv3 2/5] ARM: dts: exynos: Add missing usbdrd3 suspend clk
+Message-ID: <20200314182010.GB17580@kozik-lap>
 References: <20200310194854.831-1-linux.amoon@gmail.com>
- <20200310194854.831-6-linux.amoon@gmail.com>
- <20200311144248.GA4455@kozik-lap>
- <CANAwSgQWYdh3awuMCjUvz6EvnwMq9rDOSBn5EkNcA7OfsjoEwA@mail.gmail.com>
- <20200312113618.GA6206@pi3>
- <CANAwSgQOLRAW8zTBfPgBxXkJ8AaXyjGXc8+eQ9PUowOo5zDP6A@mail.gmail.com>
- <CANAwSgRfwr47DhehdvjhcJJ91r3XWXmQVgb6Mk+kPjPVz5uhzw@mail.gmail.com>
+ <20200310194854.831-3-linux.amoon@gmail.com>
+ <CANAwSgR4fJK0uVANv-x-=iSL_hAKD8kvazACUsY9Meu5xonuqQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CANAwSgRfwr47DhehdvjhcJJ91r3XWXmQVgb6Mk+kPjPVz5uhzw@mail.gmail.com>
+In-Reply-To: <CANAwSgR4fJK0uVANv-x-=iSL_hAKD8kvazACUsY9Meu5xonuqQ@mail.gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_104123_932607_E3F2F184 
-X-CRM114-Status: GOOD (  28.04  )
+X-CRM114-CacheID: sfid-20200314_112015_704211_6CDEE5C9 
+X-CRM114-Status: GOOD (  18.18  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
+ no trust [209.85.208.65 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [k.kozlowski.k[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -111,129 +105,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 12, 2020 at 07:38:30PM +0530, Anand Moon wrote:
+On Sat, Mar 14, 2020 at 07:02:33PM +0530, Anand Moon wrote:
 > Hi Krzysztof,
 > 
-> On Thu, 12 Mar 2020 at 18:24, Anand Moon <linux.amoon@gmail.com> wrote:
+> On Wed, 11 Mar 2020 at 01:19, Anand Moon <linux.amoon@gmail.com> wrote:
 > >
-> > Hi Krzysztof,
+> > Add new compatible strings for USBDRD3 for adding missing
+> > suspend clk, exynos5422 usbdrd3 support two clk USBD300 and
+> > SCLK_USBD300, so add missing suspemd_clk for Exynos542x DWC3 nodes.
 > >
-> > On Thu, 12 Mar 2020 at 17:06, Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > >
-> > > On Thu, Mar 12, 2020 at 04:04:57PM +0530, Anand Moon wrote:
-> > > > Hi Krzysztof,
-> > > >
-> > > > Thanks for your review comments.
-> > > >
-> > > > On Wed, 11 Mar 2020 at 20:12, Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > > > >
-> > > > > On Tue, Mar 10, 2020 at 07:48:54PM +0000, Anand Moon wrote:
-> > > > > > FSYS power domain support usbdrd3, pdma and usb2 power gaiting,
-> > > > > > hence move FSYS clk setting to sub-CMU block to support power domain
-> > > > > > on/off sequences for device nodes.
-> > > > > >
-> > > > > > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> > > > > > ---
-> > > > > > New patch in the series
-> > > > > > ---
-> > > > > >  drivers/clk/samsung/clk-exynos5420.c | 45 +++++++++++++++++++++-------
-> > > > > >  1 file changed, 34 insertions(+), 11 deletions(-)
-> > > > > >
-> > > > > > diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
-> > > > > > index c9e5a1fb6653..6c4c47dfcdce 100644
-> > > > > > --- a/drivers/clk/samsung/clk-exynos5420.c
-> > > > > > +++ b/drivers/clk/samsung/clk-exynos5420.c
-> > > > > > @@ -859,12 +859,6 @@ static const struct samsung_div_clock exynos5x_div_clks[] __initconst = {
-> > > > > >       DIV(0, "dout_maudio0", "mout_maudio0", DIV_MAU, 20, 4),
-> > > > > >       DIV(0, "dout_maupcm0", "dout_maudio0", DIV_MAU, 24, 8),
-> > > > > >
-> > > > > > -     /* USB3.0 */
-> > > > > > -     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
-> > > > > > -     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
-> > > > > > -     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
-> > > > > > -     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
-> > > > >
-> > > > > According to clock diagram these are still in CMU TOP, not FSYS.
-> > > > >
-> > > > > > -
-> > > > > >       /* MMC */
-> > > > > >       DIV(0, "dout_mmc0", "mout_mmc0", DIV_FSYS1, 0, 10),
-> > > > > >       DIV(0, "dout_mmc1", "mout_mmc1", DIV_FSYS1, 10, 10),
-> > > > > > @@ -1031,8 +1025,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
-> > > > > />
-> > > > > >       /* FSYS Block */
-> > > > > >       GATE(CLK_TSI, "tsi", "aclk200_fsys", GATE_BUS_FSYS0, 0, 0, 0),
-> > > > > > -     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
-> > > > > > -     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
-> > > > > >       GATE(CLK_UFS, "ufs", "aclk200_fsys2", GATE_BUS_FSYS0, 3, 0, 0),
-> > > > > >       GATE(CLK_RTIC, "rtic", "aclk200_fsys", GATE_IP_FSYS, 9, 0, 0),
-> > > > > >       GATE(CLK_MMC0, "mmc0", "aclk200_fsys2", GATE_IP_FSYS, 12, 0, 0),
-> > > > > > @@ -1040,9 +1032,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
-> > > > > >       GATE(CLK_MMC2, "mmc2", "aclk200_fsys2", GATE_IP_FSYS, 14, 0, 0),
-> > > > > >       GATE(CLK_SROMC, "sromc", "aclk200_fsys2",
-> > > > > >                       GATE_IP_FSYS, 17, CLK_IGNORE_UNUSED, 0),
-> > > > > > -     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
-> > > > > > -     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
-> > > > > > -     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
-> > > > > >       GATE(CLK_SCLK_UNIPRO, "sclk_unipro", "dout_unipro",
-> > > > > >                       SRC_MASK_FSYS, 24, CLK_SET_RATE_PARENT, 0),
-> > > > > >
-> > > > > > @@ -1258,6 +1247,28 @@ static struct exynos5_subcmu_reg_dump exynos5x_gsc_suspend_regs[] = {
-> > > > > >       { DIV2_RATIO0, 0, 0x30 },       /* DIV dout_gscl_blk_300 */
-> > > > > >  };
-> > > > > >
-> > > > > > +/* USB3.0 */
-> > > > > > +static const struct samsung_div_clock exynos5x_fsys_div_clks[] __initconst = {
-> > > > > > +     DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
-> > > > > > +     DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
-> > > > > > +     DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
-> > > > > > +     DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
-> > > > > > +};
-> > > > > > +
-> > > > > > +static const struct samsung_gate_clock exynos5x_fsys_gate_clks[] __initconst = {
-> > > > > > +     GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
-> > > > > > +     GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
-> > > > > > +     GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
-> > > > > > +     GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
-> > > > > > +     GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
-> > > > > > +};
-> > > > > > +
-> > > > > > +static struct exynos5_subcmu_reg_dump exynos5x_fsys_suspend_regs[] = {
-> > > > > > +     { GATE_IP_FSYS, 0xffffffff, 0xffffffff }, /* FSYS gates */
-> > > > >
-> > > > > This looks wrong. GATE_IP_FSYS has fields also for FSYS2 clocks which
-> > > > > you are not suspending. They do not belong to this CMU.
-> > > > >
-> > > >
-> > > > Ok. I change the from GATE_IP_FSYS to GATE_BUS_FSYS0 in the above
-> > > > exynos5x_fsys_gate_clks to make this consistent to used GATE_BUS_FSYS0 for CMU,
-> > > > with this change it works as per previously.
-> > >
-> > > Wait, you should set here proper registers with proper mask.
-> >
-> > Yes I will set the proper mask for each as per the Exynos 5422 User Manual.
-> >
-> > Here is what I feel
-> > CLK_GATE_BUS_FSYS0 controls the PHY clock
-> > CLK_GATE_IP_FSYS controls the IP clock.
-> >
+> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 > 
-> Sorry I cannot register both CLK_GATE_BUS_FSYS0 and CLK_GATE_IP_FSYS
-> to aclk200_fsys, so I got some error like below.
+> My assumption based on the FSYS clock source diagram below was bit wrong.
+> [0] https://imgur.com/gallery/zAiBoyh
 > 
-> [    0.922693] samsung_clk_register_gate: failed to register clock usbh20
-> [    0.922857] samsung_clk_register_gate: failed to register clock usbd300
-> [    0.923000] samsung_clk_register_gate: failed to register clock usbd301
+> And again re-looking into the driver source code, it turn out their
+> are *6 clock*
+> Here is the correct mapping as per the Exynos5420 clock driver.
 > 
-> > So both these field should be part of this FSYS CMU.
+> USB-(phy@12100000)
+> |___________________CLK_SCLK_USBD300
+> |___________________CLK_SCLK_USBPHY300
+> 
+> USB-(phy@12500000)
+> |___________________CLK_SCLK_USBD301
+> |___________________CLK_SCLK_USBPHY301
+> 
+> USB-(dwc3@12000000)
+> |___________________CLK_USBD300
+> USB-(dwc3@12400000)
+> |___________________CLK_USBD301
+> 
+> Note: As per Exynos 5422 user manual, There are some more USB CLK
+> configuration missing in GATE_IP_FSYS. So we could enable another dwc3 clk,
+> If needed I would like too add this missing clk code and enable this
+> clk for dwc3 driver.
+> 
+> For some reason we already use CLK_USBD300 and CLK_USBD301
+> for PHY nodes, which lead to this confusion. So we need to update PHY clock
+> CLK_USBD300 with CLK_SCLK_USBD300 and clock CLK_USBD301 with CLK_SCLK_USBD301.
+> 
+> Please share your thought on linking PHY nodes above and add new DWC3 clock
+> and enable this clock.
 
-I am not sure if I understand your problem. I mentioned that you need
-to put proper registers with proper masks into the
-exynos5_subcmu_reg_dump. I don't know what have you changed to produce
-such error logs.
+The real clock topology of Exynos5422 is not properly reflected in the
+kernel. However cleaning this up is quite big task.
+
 
 Best regards,
 Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
