@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F3AA18548C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 04:48:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D22281854C5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 06:22:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CrmHD+o0WkTLAI9mQCbD+Ii/A9NScaNZrtnbGe0ro1M=; b=knPQFWUFR1z2pGG4OupBa9f2X2
-	E+9UHJpCaiSq5YL2Q2qZTeAT65dsmiUdyX0cSNr/mUAsgAvSRLYovHYiEKGdI3vPltVmE7A7yab0b
-	x5rZIWaFdxtQzFMLok/PeFNfrevK9ljj+5yxD4Tgd8j22yHqpcEt5323i0UhwigfwvplUdxRadZNP
-	Y2V7eX/Anj2qcjwvHnc+DzseNshMlVm0zj6fLcyYNr9o5wQgHyh2RAChRjGOvXzaANLVDMhZ8Iqox
-	ue05+4JFAuRXohpJxDAFhA6877hUMoZBJ53BFwxaJhfBEdnrR050r6KcRLezGG8mdalcgeVMYmWN2
-	xaXrzVAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Jw0478JJgoPhq8NgkGW00ToZVEa6ru6zUfHg1ukQQGI=; b=dMaetlrlUMXY5sI2se8pBtcVo
+	ZiXDkthPbp78OzD4M3tpHfSvOXEtZJ8fIpZU3sz8g6qZ84F/DGWFCreBUCAjTocdX7VHnWcbmBAVP
+	qd2kjtQlUohS7SA1bnLzhVgZb087bAH2tAZcM083miZyAiv/u0dj2fRzLioYM3AQSxvdQDl36xAst
+	ZLIqM2dMFwpiNbuEXDpQB991K5bMfddqCrw1xwK7hqkiqcOy5OlKJuVPox1ALUi3T/qaShnSs+Fum
+	fYCEJ6q0Zbmd+yLhTkQGwIXZTUXGVj13XYW2f3ADTeFKpSAGOIKYqaid+PIca9O5sd0EO/+Nwu7zj
+	CKGJTjzRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCxmn-0007qb-Ny; Sat, 14 Mar 2020 03:48:29 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCxjN-0003mk-Fz
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 03:44:59 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3EE671A1952;
- Sat, 14 Mar 2020 04:44:56 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 786F91A16FC;
- Sat, 14 Mar 2020 04:44:46 +0100 (CET)
-Received: from titan.ap.freescale.net (titan.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id ECD8F40307;
- Sat, 14 Mar 2020 11:44:34 +0800 (SGT)
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: Zhiqiang.Hou@nxp.com, Minghuan.Lian@nxp.com, mingkai.hu@nxp.com,
- bhelgaas@google.com, robh+dt@kernel.org, shawnguo@kernel.org,
- leoyang.li@nxp.com, kishon@ti.com, lorenzo.pieralisi@arm.com,
- roy.zang@nxp.com, amurray@thegoodpenguin.co.uk, jingoohan1@gmail.com,
- gustavo.pimentel@synopsys.com, andrew.murray@arm.com,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v6 11/11] misc: pci_endpoint_test: Add LS1088a in
- pci_device_id table
-Date: Sat, 14 Mar 2020 11:30:38 +0800
-Message-Id: <20200314033038.24844-12-xiaowei.bao@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20200314033038.24844-1-xiaowei.bao@nxp.com>
-References: <20200314033038.24844-1-xiaowei.bao@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1jCzFh-0003D0-1W; Sat, 14 Mar 2020 05:22:25 +0000
+Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jCzFW-0003Cc-TR
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 05:22:17 +0000
+Received: from [10.20.42.124] (unknown [10.20.42.124])
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9Dxv97PaWxePFwaAA--.13S3;
+ Sat, 14 Mar 2020 13:21:20 +0800 (CST)
+Subject: Re: [PATCH v4] MIPS: Replace setup_irq() by request_irq()
+To: afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
+References: <20200304203144.GA4323@alpha.franken.de>
+ <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
+ <20200313164751.GA30134@roeck-us.net> <20200314010744.GA5494@afzalpc>
+From: maobibo <maobibo@loongson.cn>
+Message-ID: <0b41aa60-9869-ab62-4c8e-cbf7c62cdb7e@loongson.cn>
+Date: Sat, 14 Mar 2020 13:21:19 +0800
+User-Agent: Mozilla/5.0 (X11; Linux mips64; rv:45.0) Gecko/20100101
+ Thunderbird/45.4.0
+MIME-Version: 1.0
+In-Reply-To: <20200314010744.GA5494@afzalpc>
+X-CM-TRANSID: AQAAf9Dxv97PaWxePFwaAA--.13S3
+X-Coremail-Antispam: 1UD129KBjvdXoW7Jw17Zr1rCr4UZrWDXrW8JFb_yoWxZFcEgF
+ WFkwsF9r4qq3yDJF48tw1rXr42q348Ww1xJr15KFsFva45X34fGa9Ykas3W3W5XFWUA3WD
+ Ww1a9r93ZryavjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUbVkYjsxI4VW3JwAYFVCjjxCrM7AC8VAFwI0_Xr0_Wr1l1xkIjI8I
+ 6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+ 8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVWUJVWUCwA2z4x0Y4vE2Ix0
+ cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r4j6F4UM28EF7xvwVC2z2
+ 80aVCY1x0267AKxVW8Jr0_Cr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI
+ 64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJVW8Jw
+ Am72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IY64vIr41lFIxGxcIEc7CjxVA2Y2ka0xkIwI1l
+ c7I2V7IY0VAS07AlzVAYIcxG8wCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJV
+ W8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF
+ 1VAFwI0_GFv_WrylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6x
+ IIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6rW3Jr0E3s1lIxAI
+ cVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcSsGvfC2Kf
+ nxnUUI43ZEXa7IU8D3ktUUUUU==
+X-CM-SenderInfo: xpdruxter6z05rqj20fqof0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_204457_709694_C39D8127 
-X-CRM114-Status: UNSURE (   6.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200313_222215_396798_0526AE68 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,55 +78,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Paul Burton <paulburton@kernel.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>,
+ "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
+ Huacai Chen <chenhc@lemote.com>, Nathan Chancellor <natechancellor@gmail.com>,
+ Keguang Zhang <keguang.zhang@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add LS1088a in pci_device_id table so that pci-epf-test can be used
-for testing PCIe EP in LS1088a.
+yeap, this supplementary patch fixes the issue, and it works for my on 
+my loongson64 RS780 machine.
 
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
----
-v2:
- - No change.
-v3:
- - No change.
-v4:
- - Use a maco to define the LS1088a device ID.
-v5:
- - No change.
-v6:
- - No change.
- 
- drivers/misc/pci_endpoint_test.c | 2 ++
- 1 file changed, 2 insertions(+)
+regards
+bibo, mao
 
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index a5e3170..72d694f 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -65,6 +65,7 @@
- #define PCI_ENDPOINT_TEST_IRQ_NUMBER		0x28
- 
- #define PCI_DEVICE_ID_TI_AM654			0xb00c
-+#define PCI_DEVICE_ID_LS1088A			0x80c0
- 
- #define is_am654_pci_dev(pdev)		\
- 		((pdev)->device == PCI_DEVICE_ID_TI_AM654)
-@@ -793,6 +794,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA74x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA72x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, 0x81c0) },
-+	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, PCI_DEVICE_ID_LS1088A) },
- 	{ PCI_DEVICE_DATA(SYNOPSYS, EDDA, NULL) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
--- 
-2.9.5
+On 03/14/2020 09:07 AM, afzal mohammed wrote:
+> [ + Nathan ]
+>
+> Hi Guenter,
+>
+> On Fri, Mar 13, 2020 at 09:47:51AM -0700, Guenter Roeck wrote:
+>
+>> This patch causes all my mips qemu emulations to hang during boot. This affects
+>> all mips, mips64, mipsel, and mipsel64 emulations.
+>
+> Can you please apply,
+>
+> https://lkml.kernel.org/r/20200311152751.GA5044@afzalpc,
+>
+> on top of this patch & see if it fixes the issue. Else please let me
+> know the qemu command line you are using.
+>
+> Nathan reported a similar issue, above fix fixes that issue.
+>
+> Regards
+> afzal
+>
 
 
 _______________________________________________
