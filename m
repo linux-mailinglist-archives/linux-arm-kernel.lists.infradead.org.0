@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F33711853CE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 02:17:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B2CF1853F5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 03:15:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FRBZBFMQ0K4Y7SF9uBkn6A/t7Y4ji6uZRCalePSA7kw=; b=TMNT68w7+b319R
-	LjEQNlhivk6JfqREzXGhx6KzF1aHZm8FCyDf9V4+vxqtHh6pMZ6osRZ5CLYaV6gIuktvEgaDy2Nyd
-	F/9GkmTc5iQm0CbDYOJ2O8yZGmzpwne69WPNio62CHweRpm3vzdilyegiFFLTi3yHWnwZHnrxpqIU
-	+WVaYpUpI8rLeWGjekWnSatiBt5eUj54dSo7RPZugQnp9YGS/2mj0ohqIcYecEmyJM1BDEsYa2bbu
-	dtb2eASt0CNnPbysfUoaTCL768hKjw+Hum31+ht1mbOzHHaetCzOkC6w9AMkjELPQjA6cyN+QWGfc
-	GYQiC0ztD8H5zRWZY5jA==;
+	List-Owner; bh=8O1ZZkd/uqQwW2mmWZ+KJGrD7ehHHqAmCwxiV+5IGE0=; b=EYF6aoLlhH7wTc
+	8mFNzzC4EwXT2njsTwufpr8kL+g58BQp9bpmvQ2MkkDEocVCGQrvWZ+eC3ACs78K4Gh5t8/98u7WM
+	tpNCV9z5ZdKam2HYa/+ymmTHzbvIQTKWpGQ6Se7WdecAGqMUxNPZBkJmo/MoLQIb7evd8ceMYGqP2
+	iNqNKqO6GBQpqooGXSlWFlfXPrG9M68jMizJQrCm4iYJa3EZuw6MxOemPAdCJ/UM6Gl5E4oKH0fl5
+	dhc8QIXtURpEq+qPolvNxqglibxAoIhpUDHi4qK7jpemcn+MaUNguzMYbfmb3nD+AJlW+Nj1naA6u
+	iAzA02zbavbo71134GdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCvQu-00083W-PU; Sat, 14 Mar 2020 01:17:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jCwKd-0001AO-N6; Sat, 14 Mar 2020 02:15:19 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCvQi-00082s-QP
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 01:17:35 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A13DC2074A;
- Sat, 14 Mar 2020 01:17:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584148651;
- bh=+OILuvouBCX8uMF/DlchLPyrx1JavU6/eR/UOXvuv8c=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=R7xvdtknuSkmlj0jrBNdhaBIycSQ2z7QKYLKtuKhx4O87Qcm/sNM8vE+OeWqk5IlB
- Zz74RpD+G7TgqxXlffwyX6UUf506YN4U+yRzn0iS+3a8CELbDkU83dsKnanJHrok9c
- fZimPWbrxN9BfUoGqhYBr+IUC3iseze8NpNOD/YQ=
+ id 1jCwKV-0000kw-R8
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 02:15:14 +0000
+Received: from mail-vk1-f182.google.com (mail-vk1-f182.google.com
+ [209.85.221.182]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id 02E2EkuD018931
+ for <linux-arm-kernel@lists.infradead.org>; Sat, 14 Mar 2020 11:14:47 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com 02E2EkuD018931
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1584152087;
+ bh=340svhN800T2tL7lQwgD39Edrp37kk1kfHafjXxduD4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=OeHxhrJxxWF2ikFgA5ueTvT4IzvtJjv+S+NYU6w1tHxL5CwOqlT2liFzwo/dSjB3A
+ orswaNdSbrHzoNchczjj4HqUACPKIgqnIkwkv8b9prePjhy7vPQXGUHNdklr865Lfc
+ aTtfIb/QrvfOMN/4uk+F+FKwXZLXdov9QgsGdP0mivBkhhfAE80WdqOm7fpPPDkkan
+ SPfDNSe2tMEDS/P8fVB2VN6kZ7n8WLkI1cimwIAgn8Q7b58ZF/3k7m7/uo0taLMKGy
+ Htwah58zs8H62PXaXglXaRnsyG+hufdITHM2jDwWutBtW+tUkibZGW/MpGBLysflXE
+ UaIMOXi8WEtfw==
+X-Nifty-SrcIP: [209.85.221.182]
+Received: by mail-vk1-f182.google.com with SMTP id m131so1564082vkh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Mar 2020 19:14:47 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ0+yqlmd34SepGfbdA/W+YwOHhKK0AYuD0SU9DlW2GmlKikkeTj
+ Q+tZl6LKImEaGmlU2c3fSikgHM14MDolvapfiWY=
+X-Google-Smtp-Source: ADFU+vsTXrIehdH+8pQ7jb2b+XNZrUl+uiqcXs30gckO7t4OrY3ahwS7gVeukdvd00gtPleg1Li7o6ITtpPCTHoRftI=
+X-Received: by 2002:a1f:900c:: with SMTP id s12mr11189857vkd.96.1584152085998; 
+ Fri, 13 Mar 2020 19:14:45 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1d569e023b6cb7b8d0da8d1bcccd92e97fe436c8.1583896348.git.joe@perches.com>
-References: <cover.1583896344.git.joe@perches.com>
- <1d569e023b6cb7b8d0da8d1bcccd92e97fe436c8.1583896348.git.joe@perches.com>
-Subject: Re: [PATCH -next 010/491] ARM/SAMSUNG EXYNOS ARM ARCHITECTURES: Use
- fallthrough; 
-From: Stephen Boyd <sboyd@kernel.org>
-To: Chanwoo Choi <cw00.choi@samsung.com>, Joe Perches <joe@perches.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Tomasz Figa <tomasz.figa@gmail.com>
-Date: Fri, 13 Mar 2020 18:17:30 -0700
-Message-ID: <158414865091.164562.17682025008359421835@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+References: <1584061096-23686-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1584061096-23686-2-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <1584061096-23686-2-git-send-email-hayashi.kunihiko@socionext.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Sat, 14 Mar 2020 11:14:09 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASCOhZ5BMWWCA1zKep-sXra1pBBTxjsDp816k8Ph1m1Pw@mail.gmail.com>
+Message-ID: <CAK7LNASCOhZ5BMWWCA1zKep-sXra1pBBTxjsDp816k8Ph1m1Pw@mail.gmail.com>
+Subject: Re: [PATCH 01/10] ARM: dts: uniphier: Add XDMAC node
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_181733_821237_2B775CC6 
-X-CRM114-Status: UNSURE (   7.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200313_191512_115718_7F2ECE68 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.82 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,29 +83,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Joe Perches (2020-03-10 21:51:24)
-> Convert the various uses of fallthrough comments to fallthrough;
-> 
-> Done via script
-> Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
-> 
+On Fri, Mar 13, 2020 at 9:58 AM Kunihiko Hayashi
+<hayashi.kunihiko@socionext.com> wrote:
+>
+> Add external DMA controller support implemented in UniPhier SoCs.
+> This supports for Pro4, Pro5 and PXs2.
+>
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  arch/arm/boot/dts/uniphier-pro4.dtsi | 8 ++++++++
+>  arch/arm/boot/dts/uniphier-pro5.dtsi | 8 ++++++++
+>  arch/arm/boot/dts/uniphier-pxs2.dtsi | 8 ++++++++
+>  3 files changed, 24 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/uniphier-pro4.dtsi b/arch/arm/boot/dts/uniphier-pro4.dtsi
+> index 2ec04d7..a1bfe0f 100644
+> --- a/arch/arm/boot/dts/uniphier-pro4.dtsi
+> +++ b/arch/arm/boot/dts/uniphier-pro4.dtsi
+> @@ -426,6 +426,14 @@
+>                         };
+>                 };
+>
+> +               xdmac: dma-controller@5fc10000 {
+> +                       compatible = "socionext,uniphier-xdmac";
+> +                       reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
 
-This link doesn't work for me. It leads to a redirect for 
 
-https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe@perches.com/
 
->  drivers/clk/samsung/clk-s3c2443.c | 2 +-
+This is odd.
+<0x5fc20000 0x800> causes reg overwrap with
+aidet@5fc20000 below.
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+
+
+> +                       interrupts = <0 188 4>;
+> +                       dma-channels = <16>;
+> +                       #dma-cells = <2>;
+> +               };
+> +
+>                 aidet: aidet@5fc20000 {
+>                         compatible = "socionext,uniphier-pro4-aidet";
+>                         reg = <0x5fc20000 0x200>;
+> diff --git a/arch/arm/boot/dts/uniphier-pro5.dtsi b/arch/arm/boot/dts/uniphier-pro5.dtsi
+> index ea3961f..ecab061 100644
+> --- a/arch/arm/boot/dts/uniphier-pro5.dtsi
+> +++ b/arch/arm/boot/dts/uniphier-pro5.dtsi
+> @@ -408,6 +408,14 @@
+>                         };
+>                 };
+>
+> +               xdmac: dma-controller@5fc10000 {
+> +                       compatible = "socionext,uniphier-xdmac";
+> +                       reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
+> +                       interrupts = <0 188 4>;
+> +                       dma-channels = <16>;
+> +                       #dma-cells = <2>;
+> +               };
+> +
+>                 aidet: aidet@5fc20000 {
+>                         compatible = "socionext,uniphier-pro5-aidet";
+>                         reg = <0x5fc20000 0x200>;
+> diff --git a/arch/arm/boot/dts/uniphier-pxs2.dtsi b/arch/arm/boot/dts/uniphier-pxs2.dtsi
+> index 13b0d4a..6e60154 100644
+> --- a/arch/arm/boot/dts/uniphier-pxs2.dtsi
+> +++ b/arch/arm/boot/dts/uniphier-pxs2.dtsi
+> @@ -508,6 +508,14 @@
+>                         };
+>                 };
+>
+> +               xdmac: dma-controller@5fc10000 {
+> +                       compatible = "socionext,uniphier-xdmac";
+> +                       reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
+> +                       interrupts = <0 188 4>;
+> +                       dma-channels = <16>;
+> +                       #dma-cells = <2>;
+> +               };
+> +
+>                 aidet: aidet@5fc20000 {
+>                         compatible = "socionext,uniphier-pxs2-aidet";
+>                         reg = <0x5fc20000 0x200>;
+> --
+> 2.7.4
+>
+
+
+--
+Best Regards
+
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
