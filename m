@@ -2,61 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5551F18551A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 09:00:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5580618551D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 09:04:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
+	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QrvOaSc0Xt77GSfrLK5opCa0kOHFzbI2byAMz6vJTa8=; b=CsTwgrjDfCodnN
-	jW48bxzcVmlPElqU45h9KwIJA+fs5IMJEBqVuseF7JEIdmoboLx8lLY3Ek/qqKDDxpjM/uLJP3Hyq
-	iiw4wXtM4L01N4/XbV36bMcL2zVrazM9uOYnOADY8xCCkfStadCZX/fRV5Yw2mL37f+bVGCaDaZ2x
-	qCwVI3QQfnZABqx5/5yPqqxe/OoHyKBlMSVdwsbwPu4ecd3kigad2llJw/E7R3hAGqaGxoWLScFZP
-	kfpWRMC/lAD7FINh8D3gEKfnxk6xcLfUonF3fJydZRrIxbIIVKEWCzraqIhKCfXrqWxenJluQL8dk
-	mmVn1dxM/6zGt/PF64QA==;
+	List-Owner; bh=zy6JzKGbgYWsQcsqa77VutGTpPWo3jD4uBJbuQ+YDCs=; b=cMfMoh4MdfPVbI
+	PSmLG8qyUGSoHnHXZUnGMaYpydZLtHjEK5znmsFIZUHMMlh6NL8L7jlV4WrL1BgaV9MwmAOfSqSxL
+	IK1D5LztyJwu8gEwzgOwSIeauShI7Z0UlGaIy/oigdzbCjnf8KXmQtyM+eibqFOXywHxPzZh5FaWC
+	BJyENq83urr0p0iqqyXDUfdkVZ3DXGgYIZM6CkQe0eYGBWzjZwHPofIFQi/gSU83WQGB8v8bEnrTT
+	8g4/TRYinKZQP0X6VPwAp2cum8+Yn1VY8BkbvX93qmjfaDaKD5XPod+8vG1ZMn9qeM9WgeVYBrMD0
+	vkZOIJaRwFAzNiwu7VOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jD1iR-00019z-EF; Sat, 14 Mar 2020 08:00:15 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1jD1mf-0001yZ-6g; Sat, 14 Mar 2020 08:04:37 +0000
+Received: from dodo.xh.is ([144.202.88.237])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jD1iH-0000Oy-4p
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 08:00:07 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 56B208040D;
- Sat, 14 Mar 2020 09:00:02 +0100 (CET)
-Date: Sat, 14 Mar 2020 09:00:00 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH 3/5] drm: panel: add Xingbangda XBD599 panel
-Message-ID: <20200314080000.GE5783@ravnborg.org>
+ id 1jD1mU-0001y3-NN
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 08:04:28 +0000
+Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id b1dcfc95
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Sat, 14 Mar 2020 01:04:11 -0700 (PDT)
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id 65C8E4C6DF;
+ Sat, 14 Mar 2020 08:04:04 +0000 (UTC)
+Date: Sat, 14 Mar 2020 16:02:35 +0800
+In-Reply-To: <20200314080000.GE5783@ravnborg.org>
 References: <20200311163329.221840-1-icenowy@aosc.io>
  <20200311163329.221840-4-icenowy@aosc.io>
+ <20200314080000.GE5783@ravnborg.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200311163329.221840-4-icenowy@aosc.io>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=XpTUx2N9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
- a=Ndn_4ZrgrvPCaig-JTAA:9 a=CjuIK1q_8ugA:10 a=pHzHmUro8NiASowvMSCR:22
- a=nt3jZW36AmriUCFCBwmW:22
+Subject: Re: [PATCH 3/5] drm: panel: add Xingbangda XBD599 panel
+To: Sam Ravnborg <sam@ravnborg.org>
+From: Icenowy Zheng <icenowy@aosc.io>
+Message-ID: <6AE386BC-BBC9-491F-82F0-CA32EAFE44DF@aosc.io>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aosc.io; s=dkim;
+ t=1584173048;
+ h=from:subject:date:message-id:to:cc:mime-version:content-type:content-transfer-encoding:in-reply-to:references;
+ bh=38sFWW+aHC6JMRaoefvDlRb1dSMgPBO2UZrmIX95ZWI=;
+ b=SeNOiKHI1bapdzvD05FKpRf4yC/lBwA267xSphQG+JAAdV8jMervqiPlyx8nZZyMf2pHsf
+ PO2h1CHPw9tYlZy5IRIHH+mXhoeXX+WTJoC+V5Gzg6EriFMIS9YvZ/2fFuHv6cjySF9u+h
+ 3Jl0hNf9UdXkUHS9pIiOzF3NbbG54n0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_010005_558031_47CEB20C 
-X-CRM114-Status: GOOD (  25.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200314_010426_821708_D7B4747B 
+X-CRM114-Status: GOOD (  21.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [144.202.88.237 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,438 +82,243 @@ Cc: Ondrej Jirman <megous@megous.com>, devicetree@vger.kernel.org,
  dri-devel@lists.freedesktop.org, Rob Herring <robh+dt@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
  Maxime Ripard <mripard@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Icenowy
-
-A few details in the following.
-
-	Sam
-
-On Thu, Mar 12, 2020 at 12:33:27AM +0800, Icenowy Zheng wrote:
-> Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI IPS LCD panel made by
-> Xingbangda, which is used on PinePhone final assembled phones.
-> 
-> Add support for it.
-> 
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> ---
->  drivers/gpu/drm/panel/Kconfig                 |   9 +
->  drivers/gpu/drm/panel/Makefile                |   1 +
->  .../gpu/drm/panel/panel-xingbangda-xbd599.c   | 367 ++++++++++++++++++
->  3 files changed, 377 insertions(+)
->  create mode 100644 drivers/gpu/drm/panel/panel-xingbangda-xbd599.c
-> 
-> +++ b/drivers/gpu/drm/panel/panel-xingbangda-xbd599.c
-> @@ -0,0 +1,367 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Xingbangda XBD599 MIPI-DSI panel driver
-> + *
-> + * Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.io>
-2020?
-
-> + *
-> + * Based on panel-rocktech-jh057n00900.c, which is:
-> + *   Copyright (C) Purism SPC 2019
-> + */
-> +
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/delay.h>
-> +#include <linux/mod_devicetable.h>
-> +#include <linux/module.h>
-> +#include <linux/of_device.h>
-> +#include <linux/regulator/consumer.h>
-Sort alphabetically.
-
-> +
-> +#include <drm/drm_mipi_dsi.h>
-> +#include <drm/drm_modes.h>
-> +#include <drm/drm_panel.h>
-> +#include <drm/drm_print.h>
-> +
-> +#define DRV_NAME "panel-xingbangda-xbd599"
-No reason for this indirection, it is only used once
-
-> +
-> +/* Manufacturer specific Commands send via DSI */
-> +#define ST7703_CMD_ALL_PIXEL_OFF 0x22
-> +#define ST7703_CMD_ALL_PIXEL_ON	 0x23
-> +#define ST7703_CMD_SETDISP	 0xB2
-> +#define ST7703_CMD_SETRGBIF	 0xB3
-> +#define ST7703_CMD_SETCYC	 0xB4
-> +#define ST7703_CMD_SETBGP	 0xB5
-> +#define ST7703_CMD_SETVCOM	 0xB6
-> +#define ST7703_CMD_SETOTP	 0xB7
-> +#define ST7703_CMD_SETPOWER_EXT	 0xB8
-> +#define ST7703_CMD_SETEXTC	 0xB9
-> +#define ST7703_CMD_SETMIPI	 0xBA
-> +#define ST7703_CMD_SETVDC	 0xBC
-> +#define ST7703_CMD_SETSCR	 0xC0
-> +#define ST7703_CMD_SETPOWER	 0xC1
-> +#define ST7703_CMD_UNK_C6	 0xC6
-> +#define ST7703_CMD_SETPANEL	 0xCC
-> +#define ST7703_CMD_SETGAMMA	 0xE0
-> +#define ST7703_CMD_SETEQ	 0xE3
-> +#define ST7703_CMD_SETGIP1	 0xE9
-> +#define ST7703_CMD_SETGIP2	 0xEA
-> +
-> +static const char * const regulator_names[] = {
-> +	"iovcc",
-> +	"vcc",
-> +};
-> +
-> +struct xbd599 {
-> +	struct device *dev;
-> +	struct drm_panel panel;
-> +	struct gpio_desc *reset_gpio;
-> +	struct regulator_bulk_data supplies[ARRAY_SIZE(regulator_names)];
-> +	bool prepared;
-> +};
-> +
-> +static inline struct xbd599 *panel_to_xbd599(struct drm_panel *panel)
-> +{
-> +	return container_of(panel, struct xbd599, panel);
-> +}
-> +
-> +#define dsi_dcs_write_seq(dsi, cmd, seq...) do {			\
-> +		static const u8 d[] = { seq };				\
-> +		int ret;						\
-> +		ret = mipi_dsi_dcs_write(dsi, cmd, d, ARRAY_SIZE(d));	\
-> +		if (ret < 0)						\
-> +			return ret;					\
-> +	} while (0)
-> +
-> +static int xbd599_init_sequence(struct xbd599 *ctx)
-> +{
-> +	struct mipi_dsi_device *dsi = to_mipi_dsi_device(ctx->dev);
-> +	struct device *dev = ctx->dev;
-> +	int ret;
-> +
-> +	/*
-> +	 * Init sequence was supplied by the panel vendor.
-> +	 */
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETEXTC,
-> +			  0xF1, 0x12, 0x83);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETMIPI,
-> +			  0x33, 0x81, 0x05, 0xF9, 0x0E, 0x0E, 0x20, 0x00,
-> +			  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x44, 0x25,
-> +			  0x00, 0x91, 0x0a, 0x00, 0x00, 0x02, 0x4F, 0x11,
-> +			  0x00, 0x00, 0x37);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETPOWER_EXT,
-> +			  0x25, 0x22, 0x20, 0x03);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETRGBIF,
-> +			  0x10, 0x10, 0x05, 0x05, 0x03, 0xFF, 0x00, 0x00,
-> +			  0x00, 0x00);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETSCR,
-> +			  0x73, 0x73, 0x50, 0x50, 0x00, 0xC0, 0x08, 0x70,
-> +			  0x00);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETVDC, 0x4E);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETPANEL, 0x0B);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETCYC, 0x80);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETDISP, 0xF0, 0x12, 0xF0);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETEQ,
-> +			  0x00, 0x00, 0x0B, 0x0B, 0x10, 0x10, 0x00, 0x00,
-> +			  0x00, 0x00, 0xFF, 0x00, 0xC0, 0x10);
-> +	dsi_dcs_write_seq(dsi, 0xC6, 0x01, 0x00, 0xFF, 0xFF, 0x00);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETPOWER,
-> +			  0x74, 0x00, 0x32, 0x32, 0x77, 0xF1, 0xFF, 0xFF,
-> +			  0xCC, 0xCC, 0x77, 0x77);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETBGP, 0x07, 0x07);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETVCOM, 0x2C, 0x2C);
-> +	dsi_dcs_write_seq(dsi, 0xBF, 0x02, 0x11, 0x00);
-> +
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETGIP1,
-> +			  0x82, 0x10, 0x06, 0x05, 0xA2, 0x0A, 0xA5, 0x12,
-> +			  0x31, 0x23, 0x37, 0x83, 0x04, 0xBC, 0x27, 0x38,
-> +			  0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00,
-> +			  0x03, 0x00, 0x00, 0x00, 0x75, 0x75, 0x31, 0x88,
-> +			  0x88, 0x88, 0x88, 0x88, 0x88, 0x13, 0x88, 0x64,
-> +			  0x64, 0x20, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88,
-> +			  0x02, 0x88, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +			  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETGIP2,
-> +			  0x02, 0x21, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +			  0x00, 0x00, 0x00, 0x00, 0x02, 0x46, 0x02, 0x88,
-> +			  0x88, 0x88, 0x88, 0x88, 0x88, 0x64, 0x88, 0x13,
-> +			  0x57, 0x13, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88,
-> +			  0x75, 0x88, 0x23, 0x14, 0x00, 0x00, 0x02, 0x00,
-> +			  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +			  0x00, 0x00, 0x00 ,0x00, 0x00, 0x00, 0x03, 0x0A,
-> +			  0xA5, 0x00, 0x00, 0x00, 0x00);
-> +	dsi_dcs_write_seq(dsi, ST7703_CMD_SETGAMMA,
-> +			  0x00, 0x09, 0x0D, 0x23, 0x27, 0x3C, 0x41, 0x35,
-> +			  0x07, 0x0D, 0x0E, 0x12, 0x13, 0x10, 0x12, 0x12,
-> +			  0x18, 0x00, 0x09, 0x0D, 0x23, 0x27, 0x3C, 0x41,
-> +			  0x35, 0x07, 0x0D, 0x0E, 0x12, 0x13, 0x10, 0x12,
-> +			  0x12, 0x18);
-> +	msleep(20);
-> +
-> +	ret = mipi_dsi_dcs_exit_sleep_mode(dsi);
-> +	if (ret < 0) {
-> +		DRM_DEV_ERROR(dev, "Failed to exit sleep mode\n");
-> +		return ret;
-> +	}
-> +	msleep(250);
-> +
-> +	ret = mipi_dsi_dcs_set_display_on(dsi);
-> +	if (ret)
-> +		return ret;
-> +	msleep(50);
-> +
-> +	DRM_DEV_DEBUG_DRIVER(dev, "Panel init sequence done\n");
-> +	return 0;
-> +}
-> +
-> +static int xbd599_disable(struct drm_panel *panel)
-> +{
-> +	struct xbd599 *ctx = panel_to_xbd599(panel);
-> +	struct mipi_dsi_device *dsi = to_mipi_dsi_device(ctx->dev);
-> +
-> +	return mipi_dsi_dcs_set_display_off(dsi);
-> +}
-The following is the same for many panels but anyway.
-
-The init order for a display is
-
-    prepare
-    enable
-
-    # Display is now fully operational
-
-    disable
-    unprepare
-
-    # display is now off and turned off (no power)
-
-So when reading panel drivers my personal preference is to read the
-functions in that order - this makes it easier to follow the sequence.
-
-Thats just my personal opinion - so feel free to ignore.
-
-> +
-> +static int xbd599_unprepare(struct drm_panel *panel)
-> +{
-> +	struct xbd599 *ctx = panel_to_xbd599(panel);
-> +
-> +	if (!ctx->prepared)
-> +		return 0;
-> +
-> +	regulator_bulk_disable(ARRAY_SIZE(ctx->supplies), ctx->supplies);
-> +	ctx->prepared = false;
-> +
-> +	return 0;
-> +}
-Maybe activate reset before power is turned off.
-So when power is turned on again later the panel is kept in reset.
-
-This would also make this a closer mirror of what is done in prepare()
-
-> +
-> +static int xbd599_enable(struct drm_panel *panel)
-> +{
-> +	struct xbd599 *ctx = panel_to_xbd599(panel);
-> +	int ret;
-> +
-> +	ret = xbd599_init_sequence(ctx);
-> +	if (ret < 0) {
-> +		DRM_DEV_ERROR(ctx->dev, "Panel init sequence failed: %d\n",
-> +			      ret);
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int xbd599_prepare(struct drm_panel *panel)
-> +{
-> +	struct xbd599 *ctx = panel_to_xbd599(panel);
-> +	int ret;
-> +
-> +	if (ctx->prepared)
-> +		return 0;
-> +
-> +	ret = regulator_bulk_enable(ARRAY_SIZE(ctx->supplies), ctx->supplies);
-> +	if (ret)
-> +		return ret;
-> +
-> +	DRM_DEV_DEBUG_DRIVER(ctx->dev, "Resetting the panel\n");
-> +	gpiod_set_value_cansleep(ctx->reset_gpio, 1);
-> +	usleep_range(20, 40);
-> +	gpiod_set_value_cansleep(ctx->reset_gpio, 0);
-> +	msleep(20);
-> +
-> +	ctx->prepared = true;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct drm_display_mode xbd599_default_mode = {
-> +	.hdisplay    = 720,
-> +	.hsync_start = 720 + 40,
-> +	.hsync_end   = 720 + 40 + 40,
-> +	.htotal	     = 720 + 40 + 40 + 40,
-> +	.vdisplay    = 1440,
-> +	.vsync_start = 1440 + 18,
-> +	.vsync_end   = 1440 + 18 + 10,
-> +	.vtotal	     = 1440 + 18 + 10 + 17,
-> +	.vrefresh    = 60,
-> +	.clock	     = 69000,
-> +	.flags	     = DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
-> +
-> +	.width_mm    = 68,
-> +	.height_mm   = 136,
-> +	.type        = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED,
-> +};
-> +
-> +static int xbd599_get_modes(struct drm_panel *panel,
-> +			    struct drm_connector *connector)
-> +{
-> +	struct xbd599 *ctx = panel_to_xbd599(panel);
-> +	struct drm_display_mode *mode;
-> +
-> +	mode = drm_mode_duplicate(connector->dev, &xbd599_default_mode);
-> +	if (!mode) {
-> +		DRM_DEV_ERROR(ctx->dev, "Failed to add mode\n");
-> +		return -ENOMEM;
-> +	}
-> +
-> +	drm_mode_set_name(mode);
-> +
-> +	mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
-> +	connector->display_info.width_mm = mode->width_mm;
-> +	connector->display_info.height_mm = mode->height_mm;
-> +	drm_mode_probed_add(connector, mode);
-> +
-> +	return 1;
-> +}
-> +
-> +static const struct drm_panel_funcs xbd599_drm_funcs = {
-> +	.disable   = xbd599_disable,
-> +	.unprepare = xbd599_unprepare,
-> +	.enable    = xbd599_enable,
-> +	.prepare   = xbd599_prepare,
-> +	.get_modes = xbd599_get_modes,
-> +};
-> +
-> +static int xbd599_probe(struct mipi_dsi_device *dsi)
-> +{
-> +	struct device *dev = &dsi->dev;
-> +	struct xbd599 *ctx;
-> +	int i, ret;
-> +
-> +	ctx = devm_kzalloc(dev, sizeof(*ctx), GFP_KERNEL);
-> +	if (!ctx)
-> +		return -ENOMEM;
-> +
-> +	for (i = 0; i < ARRAY_SIZE(ctx->supplies); i++)
-> +		ctx->supplies[i].supply = regulator_names[i];
-> +
-> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ctx->supplies),
-> +				      ctx->supplies);
-> +	if (ret < 0) {
-> +		DRM_DEV_ERROR(&dsi->dev, "cannot get regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	ctx->reset_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
-> +	if (IS_ERR(ctx->reset_gpio)) {
-> +		DRM_DEV_ERROR(dev, "cannot get reset gpio\n");
-> +		return PTR_ERR(ctx->reset_gpio);
-> +	}
-> +
-> +	mipi_dsi_set_drvdata(dsi, ctx);
-> +
-> +	ctx->dev = dev;
-> +
-> +	dsi->lanes = 4;
-> +	dsi->format = MIPI_DSI_FMT_RGB888;
-> +	dsi->mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
-> +
-> +	drm_panel_init(&ctx->panel, &dsi->dev, &xbd599_drm_funcs,
-> +		       DRM_MODE_CONNECTOR_DSI);
-> +
-> +	ret = drm_panel_of_backlight(&ctx->panel);
-> +	if (ret)
-> +		return ret;
-> +
-> +	drm_panel_add(&ctx->panel);
-> +
-> +	ret = mipi_dsi_attach(dsi);
-> +	if (ret < 0) {
-> +		DRM_DEV_ERROR(dev, "mipi_dsi_attach failed. Is host ready?\n");
-> +		drm_panel_remove(&ctx->panel);
-> +		return ret;
-> +	}
-> +
-> +	DRM_DEV_INFO(dev, "%ux%u@%u %ubpp dsi %udl - ready\n",
-> +		     xbd599_default_mode.hdisplay,
-> +		     xbd599_default_mode.vdisplay,
-> +		     xbd599_default_mode.vrefresh,
-> +		     mipi_dsi_pixel_format_to_bpp(dsi->format), dsi->lanes);
-> +
-> +	return 0;
-> +}
-> +
-> +static void xbd599_shutdown(struct mipi_dsi_device *dsi)
-> +{
-> +	struct xbd599 *ctx = mipi_dsi_get_drvdata(dsi);
-> +	int ret;
-> +
-> +	ret = xbd599_unprepare(&ctx->panel);
-
-Use drm_panel_unprepare().
-There may be, or may come functionality in drm_panel that is required.
-
-> +	if (ret < 0)
-> +		DRM_DEV_ERROR(&dsi->dev, "Failed to unprepare panel: %d\n",
-> +			      ret);
-> +}
-> +
-> +static int xbd599_remove(struct mipi_dsi_device *dsi)
-> +{
-> +	struct xbd599 *ctx = mipi_dsi_get_drvdata(dsi);
-> +	int ret;
-> +
-> +	xbd599_shutdown(dsi);
-> +
-> +	ret = mipi_dsi_detach(dsi);
-> +	if (ret < 0)
-> +		DRM_DEV_ERROR(&dsi->dev, "Failed to detach from DSI host: %d\n",
-> +			      ret);
-> +
-> +	drm_panel_remove(&ctx->panel);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id xbd599_of_match[] = {
-> +	{ .compatible = "xingbangda,xbd599", },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, xbd599_of_match);
-> +
-> +static struct mipi_dsi_driver xbd599_driver = {
-> +	.probe	= xbd599_probe,
-> +	.remove = xbd599_remove,
-> +	.shutdown = xbd599_shutdown,
-> +	.driver = {
-> +		.name = DRV_NAME,
-> +		.of_match_table = xbd599_of_match,
-> +	},
-> +};
-> +module_mipi_dsi_driver(xbd599_driver);
-> +
-> +MODULE_AUTHOR("Icenowy Zheng <icenowy@aosc.io>");
-> +MODULE_DESCRIPTION("DRM driver for Xingbangda XBD599 MIPI DSI panel");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.24.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgrkuo4gMjAyMOW5tDPmnIgxNOaXpSBHTVQrMDg6MDAg5LiL5Y2INDowMDowMCwgU2FtIFJhdm5i
+b3JnIDxzYW1AcmF2bmJvcmcub3JnPiDlhpnliLA6Cj5IaSBJY2Vub3d5Cj4KPkEgZmV3IGRldGFp
+bHMgaW4gdGhlIGZvbGxvd2luZy4KPgo+CVNhbQo+Cj5PbiBUaHUsIE1hciAxMiwgMjAyMCBhdCAx
+MjozMzoyN0FNICswODAwLCBJY2Vub3d5IFpoZW5nIHdyb3RlOgo+PiBYaW5nYmFuZ2RhIFhCRDU5
+OSBpcyBhIDUuOTkiIDcyMHgxNDQwIE1JUEktRFNJIElQUyBMQ0QgcGFuZWwgbWFkZSBieQo+PiBY
+aW5nYmFuZ2RhLCB3aGljaCBpcyB1c2VkIG9uIFBpbmVQaG9uZSBmaW5hbCBhc3NlbWJsZWQgcGhv
+bmVzLgo+PiAKPj4gQWRkIHN1cHBvcnQgZm9yIGl0Lgo+PiAKPj4gU2lnbmVkLW9mZi1ieTogSWNl
+bm93eSBaaGVuZyA8aWNlbm93eUBhb3NjLmlvPgo+PiAtLS0KPj4gIGRyaXZlcnMvZ3B1L2RybS9w
+YW5lbC9LY29uZmlnICAgICAgICAgICAgICAgICB8ICAgOSArCj4+ICBkcml2ZXJzL2dwdS9kcm0v
+cGFuZWwvTWFrZWZpbGUgICAgICAgICAgICAgICAgfCAgIDEgKwo+PiAgLi4uL2dwdS9kcm0vcGFu
+ZWwvcGFuZWwteGluZ2JhbmdkYS14YmQ1OTkuYyAgIHwgMzY3Cj4rKysrKysrKysrKysrKysrKysK
+Pj4gIDMgZmlsZXMgY2hhbmdlZCwgMzc3IGluc2VydGlvbnMoKykKPj4gIGNyZWF0ZSBtb2RlIDEw
+MDY0NCBkcml2ZXJzL2dwdS9kcm0vcGFuZWwvcGFuZWwteGluZ2JhbmdkYS14YmQ1OTkuYwo+PiAK
+Pj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL3BhbmVsL3BhbmVsLXhpbmdiYW5nZGEteGJkNTk5LmMK
+Pj4gQEAgLTAsMCArMSwzNjcgQEAKPj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwt
+Mi4wCj4+ICsvKgo+PiArICogWGluZ2JhbmdkYSBYQkQ1OTkgTUlQSS1EU0kgcGFuZWwgZHJpdmVy
+Cj4+ICsgKgo+PiArICogQ29weXJpZ2h0IChDKSAyMDE5IEljZW5vd3kgWmhlbmcgPGljZW5vd3lA
+YW9zYy5pbz4KPjIwMjA/CgpUaGUgd29yayBzdGFydGVkIGF0IE1pZCAyMDE5LgoKSXMgMjAxOS0y
+MDIwIG9rYXk/Cgo+Cj4+ICsgKgo+PiArICogQmFzZWQgb24gcGFuZWwtcm9ja3RlY2gtamgwNTdu
+MDA5MDAuYywgd2hpY2ggaXM6Cj4+ICsgKiAgIENvcHlyaWdodCAoQykgUHVyaXNtIFNQQyAyMDE5
+Cj4+ICsgKi8KPj4gKwo+PiArI2luY2x1ZGUgPGxpbnV4L2dwaW8vY29uc3VtZXIuaD4KPj4gKyNp
+bmNsdWRlIDxsaW51eC9kZWxheS5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L21vZF9kZXZpY2V0YWJs
+ZS5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L29m
+X2RldmljZS5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L3JlZ3VsYXRvci9jb25zdW1lci5oPgo+U29y
+dCBhbHBoYWJldGljYWxseS4KPgo+PiArCj4+ICsjaW5jbHVkZSA8ZHJtL2RybV9taXBpX2RzaS5o
+Pgo+PiArI2luY2x1ZGUgPGRybS9kcm1fbW9kZXMuaD4KPj4gKyNpbmNsdWRlIDxkcm0vZHJtX3Bh
+bmVsLmg+Cj4+ICsjaW5jbHVkZSA8ZHJtL2RybV9wcmludC5oPgo+PiArCj4+ICsjZGVmaW5lIERS
+Vl9OQU1FICJwYW5lbC14aW5nYmFuZ2RhLXhiZDU5OSIKPk5vIHJlYXNvbiBmb3IgdGhpcyBpbmRp
+cmVjdGlvbiwgaXQgaXMgb25seSB1c2VkIG9uY2UKPgo+PiArCj4+ICsvKiBNYW51ZmFjdHVyZXIg
+c3BlY2lmaWMgQ29tbWFuZHMgc2VuZCB2aWEgRFNJICovCj4+ICsjZGVmaW5lIFNUNzcwM19DTURf
+QUxMX1BJWEVMX09GRiAweDIyCj4+ICsjZGVmaW5lIFNUNzcwM19DTURfQUxMX1BJWEVMX09OCSAw
+eDIzCj4+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VURElTUAkgMHhCMgo+PiArI2RlZmluZSBTVDc3
+MDNfQ01EX1NFVFJHQklGCSAweEIzCj4+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VUQ1lDCSAweEI0
+Cj4+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VUQkdQCSAweEI1Cj4+ICsjZGVmaW5lIFNUNzcwM19D
+TURfU0VUVkNPTQkgMHhCNgo+PiArI2RlZmluZSBTVDc3MDNfQ01EX1NFVE9UUAkgMHhCNwo+PiAr
+I2RlZmluZSBTVDc3MDNfQ01EX1NFVFBPV0VSX0VYVAkgMHhCOAo+PiArI2RlZmluZSBTVDc3MDNf
+Q01EX1NFVEVYVEMJIDB4QjkKPj4gKyNkZWZpbmUgU1Q3NzAzX0NNRF9TRVRNSVBJCSAweEJBCj4+
+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VUVkRDCSAweEJDCj4+ICsjZGVmaW5lIFNUNzcwM19DTURf
+U0VUU0NSCSAweEMwCj4+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VUUE9XRVIJIDB4QzEKPj4gKyNk
+ZWZpbmUgU1Q3NzAzX0NNRF9VTktfQzYJIDB4QzYKPj4gKyNkZWZpbmUgU1Q3NzAzX0NNRF9TRVRQ
+QU5FTAkgMHhDQwo+PiArI2RlZmluZSBTVDc3MDNfQ01EX1NFVEdBTU1BCSAweEUwCj4+ICsjZGVm
+aW5lIFNUNzcwM19DTURfU0VURVEJIDB4RTMKPj4gKyNkZWZpbmUgU1Q3NzAzX0NNRF9TRVRHSVAx
+CSAweEU5Cj4+ICsjZGVmaW5lIFNUNzcwM19DTURfU0VUR0lQMgkgMHhFQQo+PiArCj4+ICtzdGF0
+aWMgY29uc3QgY2hhciAqIGNvbnN0IHJlZ3VsYXRvcl9uYW1lc1tdID0gewo+PiArCSJpb3ZjYyIs
+Cj4+ICsJInZjYyIsCj4+ICt9Owo+PiArCj4+ICtzdHJ1Y3QgeGJkNTk5IHsKPj4gKwlzdHJ1Y3Qg
+ZGV2aWNlICpkZXY7Cj4+ICsJc3RydWN0IGRybV9wYW5lbCBwYW5lbDsKPj4gKwlzdHJ1Y3QgZ3Bp
+b19kZXNjICpyZXNldF9ncGlvOwo+PiArCXN0cnVjdCByZWd1bGF0b3JfYnVsa19kYXRhIHN1cHBs
+aWVzW0FSUkFZX1NJWkUocmVndWxhdG9yX25hbWVzKV07Cj4+ICsJYm9vbCBwcmVwYXJlZDsKPj4g
+K307Cj4+ICsKPj4gK3N0YXRpYyBpbmxpbmUgc3RydWN0IHhiZDU5OSAqcGFuZWxfdG9feGJkNTk5
+KHN0cnVjdCBkcm1fcGFuZWwKPipwYW5lbCkKPj4gK3sKPj4gKwlyZXR1cm4gY29udGFpbmVyX29m
+KHBhbmVsLCBzdHJ1Y3QgeGJkNTk5LCBwYW5lbCk7Cj4+ICt9Cj4+ICsKPj4gKyNkZWZpbmUgZHNp
+X2Rjc193cml0ZV9zZXEoZHNpLCBjbWQsIHNlcS4uLikgZG8gewkJCVwKPj4gKwkJc3RhdGljIGNv
+bnN0IHU4IGRbXSA9IHsgc2VxIH07CQkJCVwKPj4gKwkJaW50IHJldDsJCQkJCQlcCj4+ICsJCXJl
+dCA9IG1pcGlfZHNpX2Rjc193cml0ZShkc2ksIGNtZCwgZCwgQVJSQVlfU0laRShkKSk7CVwKPj4g
+KwkJaWYgKHJldCA8IDApCQkJCQkJXAo+PiArCQkJcmV0dXJuIHJldDsJCQkJCVwKPj4gKwl9IHdo
+aWxlICgwKQo+PiArCj4+ICtzdGF0aWMgaW50IHhiZDU5OV9pbml0X3NlcXVlbmNlKHN0cnVjdCB4
+YmQ1OTkgKmN0eCkKPj4gK3sKPj4gKwlzdHJ1Y3QgbWlwaV9kc2lfZGV2aWNlICpkc2kgPSB0b19t
+aXBpX2RzaV9kZXZpY2UoY3R4LT5kZXYpOwo+PiArCXN0cnVjdCBkZXZpY2UgKmRldiA9IGN0eC0+
+ZGV2Owo+PiArCWludCByZXQ7Cj4+ICsKPj4gKwkvKgo+PiArCSAqIEluaXQgc2VxdWVuY2Ugd2Fz
+IHN1cHBsaWVkIGJ5IHRoZSBwYW5lbCB2ZW5kb3IuCj4+ICsJICovCj4+ICsJZHNpX2Rjc193cml0
+ZV9zZXEoZHNpLCBTVDc3MDNfQ01EX1NFVEVYVEMsCj4+ICsJCQkgIDB4RjEsIDB4MTIsIDB4ODMp
+Owo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAzX0NNRF9TRVRNSVBJLAo+PiArCQkJ
+ICAweDMzLCAweDgxLCAweDA1LCAweEY5LCAweDBFLCAweDBFLCAweDIwLCAweDAwLAo+PiArCQkJ
+ICAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDQ0LCAweDI1LAo+PiArCQkJ
+ICAweDAwLCAweDkxLCAweDBhLCAweDAwLCAweDAwLCAweDAyLCAweDRGLCAweDExLAo+PiArCQkJ
+ICAweDAwLCAweDAwLCAweDM3KTsKPj4gKwlkc2lfZGNzX3dyaXRlX3NlcShkc2ksIFNUNzcwM19D
+TURfU0VUUE9XRVJfRVhULAo+PiArCQkJICAweDI1LCAweDIyLCAweDIwLCAweDAzKTsKPj4gKwlk
+c2lfZGNzX3dyaXRlX3NlcShkc2ksIFNUNzcwM19DTURfU0VUUkdCSUYsCj4+ICsJCQkgIDB4MTAs
+IDB4MTAsIDB4MDUsIDB4MDUsIDB4MDMsIDB4RkYsIDB4MDAsIDB4MDAsCj4+ICsJCQkgIDB4MDAs
+IDB4MDApOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAzX0NNRF9TRVRTQ1IsCj4+
+ICsJCQkgIDB4NzMsIDB4NzMsIDB4NTAsIDB4NTAsIDB4MDAsIDB4QzAsIDB4MDgsIDB4NzAsCj4+
+ICsJCQkgIDB4MDApOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAzX0NNRF9TRVRW
+REMsIDB4NEUpOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAzX0NNRF9TRVRQQU5F
+TCwgMHgwQik7Cj4+ICsJZHNpX2Rjc193cml0ZV9zZXEoZHNpLCBTVDc3MDNfQ01EX1NFVENZQywg
+MHg4MCk7Cj4+ICsJZHNpX2Rjc193cml0ZV9zZXEoZHNpLCBTVDc3MDNfQ01EX1NFVERJU1AsIDB4
+RjAsIDB4MTIsIDB4RjApOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAzX0NNRF9T
+RVRFUSwKPj4gKwkJCSAgMHgwMCwgMHgwMCwgMHgwQiwgMHgwQiwgMHgxMCwgMHgxMCwgMHgwMCwg
+MHgwMCwKPj4gKwkJCSAgMHgwMCwgMHgwMCwgMHhGRiwgMHgwMCwgMHhDMCwgMHgxMCk7Cj4+ICsJ
+ZHNpX2Rjc193cml0ZV9zZXEoZHNpLCAweEM2LCAweDAxLCAweDAwLCAweEZGLCAweEZGLCAweDAw
+KTsKPj4gKwlkc2lfZGNzX3dyaXRlX3NlcShkc2ksIFNUNzcwM19DTURfU0VUUE9XRVIsCj4+ICsJ
+CQkgIDB4NzQsIDB4MDAsIDB4MzIsIDB4MzIsIDB4NzcsIDB4RjEsIDB4RkYsIDB4RkYsCj4+ICsJ
+CQkgIDB4Q0MsIDB4Q0MsIDB4NzcsIDB4NzcpOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwg
+U1Q3NzAzX0NNRF9TRVRCR1AsIDB4MDcsIDB4MDcpOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRz
+aSwgU1Q3NzAzX0NNRF9TRVRWQ09NLCAweDJDLCAweDJDKTsKPj4gKwlkc2lfZGNzX3dyaXRlX3Nl
+cShkc2ksIDB4QkYsIDB4MDIsIDB4MTEsIDB4MDApOwo+PiArCj4+ICsJZHNpX2Rjc193cml0ZV9z
+ZXEoZHNpLCBTVDc3MDNfQ01EX1NFVEdJUDEsCj4+ICsJCQkgIDB4ODIsIDB4MTAsIDB4MDYsIDB4
+MDUsIDB4QTIsIDB4MEEsIDB4QTUsIDB4MTIsCj4+ICsJCQkgIDB4MzEsIDB4MjMsIDB4MzcsIDB4
+ODMsIDB4MDQsIDB4QkMsIDB4MjcsIDB4MzgsCj4+ICsJCQkgIDB4MEMsIDB4MDAsIDB4MDMsIDB4
+MDAsIDB4MDAsIDB4MDAsIDB4MEMsIDB4MDAsCj4+ICsJCQkgIDB4MDMsIDB4MDAsIDB4MDAsIDB4
+MDAsIDB4NzUsIDB4NzUsIDB4MzEsIDB4ODgsCj4+ICsJCQkgIDB4ODgsIDB4ODgsIDB4ODgsIDB4
+ODgsIDB4ODgsIDB4MTMsIDB4ODgsIDB4NjQsCj4+ICsJCQkgIDB4NjQsIDB4MjAsIDB4ODgsIDB4
+ODgsIDB4ODgsIDB4ODgsIDB4ODgsIDB4ODgsCj4+ICsJCQkgIDB4MDIsIDB4ODgsIDB4MDAsIDB4
+MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsCj4+ICsJCQkgIDB4MDAsIDB4MDAsIDB4MDAsIDB4
+MDAsIDB4MDAsIDB4MDAsIDB4MDApOwo+PiArCWRzaV9kY3Nfd3JpdGVfc2VxKGRzaSwgU1Q3NzAz
+X0NNRF9TRVRHSVAyLAo+PiArCQkJICAweDAyLCAweDIxLCAweDAwLCAweDAwLCAweDAwLCAweDAw
+LCAweDAwLCAweDAwLAo+PiArCQkJICAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDAyLCAweDQ2
+LCAweDAyLCAweDg4LAo+PiArCQkJICAweDg4LCAweDg4LCAweDg4LCAweDg4LCAweDg4LCAweDY0
+LCAweDg4LCAweDEzLAo+PiArCQkJICAweDU3LCAweDEzLCAweDg4LCAweDg4LCAweDg4LCAweDg4
+LCAweDg4LCAweDg4LAo+PiArCQkJICAweDc1LCAweDg4LCAweDIzLCAweDE0LCAweDAwLCAweDAw
+LCAweDAyLCAweDAwLAo+PiArCQkJICAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDAwLCAweDAw
+LCAweDAwLCAweDAwLAo+PiArCQkJICAweDAwLCAweDAwLCAweDAwICwweDAwLCAweDAwLCAweDAw
+LCAweDAzLCAweDBBLAo+PiArCQkJICAweEE1LCAweDAwLCAweDAwLCAweDAwLCAweDAwKTsKPj4g
+Kwlkc2lfZGNzX3dyaXRlX3NlcShkc2ksIFNUNzcwM19DTURfU0VUR0FNTUEsCj4+ICsJCQkgIDB4
+MDAsIDB4MDksIDB4MEQsIDB4MjMsIDB4MjcsIDB4M0MsIDB4NDEsIDB4MzUsCj4+ICsJCQkgIDB4
+MDcsIDB4MEQsIDB4MEUsIDB4MTIsIDB4MTMsIDB4MTAsIDB4MTIsIDB4MTIsCj4+ICsJCQkgIDB4
+MTgsIDB4MDAsIDB4MDksIDB4MEQsIDB4MjMsIDB4MjcsIDB4M0MsIDB4NDEsCj4+ICsJCQkgIDB4
+MzUsIDB4MDcsIDB4MEQsIDB4MEUsIDB4MTIsIDB4MTMsIDB4MTAsIDB4MTIsCj4+ICsJCQkgIDB4
+MTIsIDB4MTgpOwo+PiArCW1zbGVlcCgyMCk7Cj4+ICsKPj4gKwlyZXQgPSBtaXBpX2RzaV9kY3Nf
+ZXhpdF9zbGVlcF9tb2RlKGRzaSk7Cj4+ICsJaWYgKHJldCA8IDApIHsKPj4gKwkJRFJNX0RFVl9F
+UlJPUihkZXYsICJGYWlsZWQgdG8gZXhpdCBzbGVlcCBtb2RlXG4iKTsKPj4gKwkJcmV0dXJuIHJl
+dDsKPj4gKwl9Cj4+ICsJbXNsZWVwKDI1MCk7Cj4+ICsKPj4gKwlyZXQgPSBtaXBpX2RzaV9kY3Nf
+c2V0X2Rpc3BsYXlfb24oZHNpKTsKPj4gKwlpZiAocmV0KQo+PiArCQlyZXR1cm4gcmV0Owo+PiAr
+CW1zbGVlcCg1MCk7Cj4+ICsKPj4gKwlEUk1fREVWX0RFQlVHX0RSSVZFUihkZXYsICJQYW5lbCBp
+bml0IHNlcXVlbmNlIGRvbmVcbiIpOwo+PiArCXJldHVybiAwOwo+PiArfQo+PiArCj4+ICtzdGF0
+aWMgaW50IHhiZDU5OV9kaXNhYmxlKHN0cnVjdCBkcm1fcGFuZWwgKnBhbmVsKQo+PiArewo+PiAr
+CXN0cnVjdCB4YmQ1OTkgKmN0eCA9IHBhbmVsX3RvX3hiZDU5OShwYW5lbCk7Cj4+ICsJc3RydWN0
+IG1pcGlfZHNpX2RldmljZSAqZHNpID0gdG9fbWlwaV9kc2lfZGV2aWNlKGN0eC0+ZGV2KTsKPj4g
+Kwo+PiArCXJldHVybiBtaXBpX2RzaV9kY3Nfc2V0X2Rpc3BsYXlfb2ZmKGRzaSk7Cj4+ICt9Cj5U
+aGUgZm9sbG93aW5nIGlzIHRoZSBzYW1lIGZvciBtYW55IHBhbmVscyBidXQgYW55d2F5Lgo+Cj5U
+aGUgaW5pdCBvcmRlciBmb3IgYSBkaXNwbGF5IGlzCj4KPiAgICBwcmVwYXJlCj4gICAgZW5hYmxl
+Cj4KPiAgICAjIERpc3BsYXkgaXMgbm93IGZ1bGx5IG9wZXJhdGlvbmFsCj4KPiAgICBkaXNhYmxl
+Cj4gICAgdW5wcmVwYXJlCj4KPiAgICAjIGRpc3BsYXkgaXMgbm93IG9mZiBhbmQgdHVybmVkIG9m
+ZiAobm8gcG93ZXIpCj4KPlNvIHdoZW4gcmVhZGluZyBwYW5lbCBkcml2ZXJzIG15IHBlcnNvbmFs
+IHByZWZlcmVuY2UgaXMgdG8gcmVhZCB0aGUKPmZ1bmN0aW9ucyBpbiB0aGF0IG9yZGVyIC0gdGhp
+cyBtYWtlcyBpdCBlYXNpZXIgdG8gZm9sbG93IHRoZSBzZXF1ZW5jZS4KPgo+VGhhdHMganVzdCBt
+eSBwZXJzb25hbCBvcGluaW9uIC0gc28gZmVlbCBmcmVlIHRvIGlnbm9yZS4KPgo+PiArCj4+ICtz
+dGF0aWMgaW50IHhiZDU5OV91bnByZXBhcmUoc3RydWN0IGRybV9wYW5lbCAqcGFuZWwpCj4+ICt7
+Cj4+ICsJc3RydWN0IHhiZDU5OSAqY3R4ID0gcGFuZWxfdG9feGJkNTk5KHBhbmVsKTsKPj4gKwo+
+PiArCWlmICghY3R4LT5wcmVwYXJlZCkKPj4gKwkJcmV0dXJuIDA7Cj4+ICsKPj4gKwlyZWd1bGF0
+b3JfYnVsa19kaXNhYmxlKEFSUkFZX1NJWkUoY3R4LT5zdXBwbGllcyksIGN0eC0+c3VwcGxpZXMp
+Owo+PiArCWN0eC0+cHJlcGFyZWQgPSBmYWxzZTsKPj4gKwo+PiArCXJldHVybiAwOwo+PiArfQo+
+TWF5YmUgYWN0aXZhdGUgcmVzZXQgYmVmb3JlIHBvd2VyIGlzIHR1cm5lZCBvZmYuCj5TbyB3aGVu
+IHBvd2VyIGlzIHR1cm5lZCBvbiBhZ2FpbiBsYXRlciB0aGUgcGFuZWwgaXMga2VwdCBpbiByZXNl
+dC4KPgo+VGhpcyB3b3VsZCBhbHNvIG1ha2UgdGhpcyBhIGNsb3NlciBtaXJyb3Igb2Ygd2hhdCBp
+cyBkb25lIGluIHByZXBhcmUoKQo+Cj4+ICsKPj4gK3N0YXRpYyBpbnQgeGJkNTk5X2VuYWJsZShz
+dHJ1Y3QgZHJtX3BhbmVsICpwYW5lbCkKPj4gK3sKPj4gKwlzdHJ1Y3QgeGJkNTk5ICpjdHggPSBw
+YW5lbF90b194YmQ1OTkocGFuZWwpOwo+PiArCWludCByZXQ7Cj4+ICsKPj4gKwlyZXQgPSB4YmQ1
+OTlfaW5pdF9zZXF1ZW5jZShjdHgpOwo+PiArCWlmIChyZXQgPCAwKSB7Cj4+ICsJCURSTV9ERVZf
+RVJST1IoY3R4LT5kZXYsICJQYW5lbCBpbml0IHNlcXVlbmNlIGZhaWxlZDogJWRcbiIsCj4+ICsJ
+CQkgICAgICByZXQpOwo+PiArCQlyZXR1cm4gcmV0Owo+PiArCX0KPj4gKwo+PiArCXJldHVybiAw
+Owo+PiArfQo+PiArCj4+ICtzdGF0aWMgaW50IHhiZDU5OV9wcmVwYXJlKHN0cnVjdCBkcm1fcGFu
+ZWwgKnBhbmVsKQo+PiArewo+PiArCXN0cnVjdCB4YmQ1OTkgKmN0eCA9IHBhbmVsX3RvX3hiZDU5
+OShwYW5lbCk7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiArCWlmIChjdHgtPnByZXBhcmVkKQo+PiAr
+CQlyZXR1cm4gMDsKPj4gKwo+PiArCXJldCA9IHJlZ3VsYXRvcl9idWxrX2VuYWJsZShBUlJBWV9T
+SVpFKGN0eC0+c3VwcGxpZXMpLAo+Y3R4LT5zdXBwbGllcyk7Cj4+ICsJaWYgKHJldCkKPj4gKwkJ
+cmV0dXJuIHJldDsKPj4gKwo+PiArCURSTV9ERVZfREVCVUdfRFJJVkVSKGN0eC0+ZGV2LCAiUmVz
+ZXR0aW5nIHRoZSBwYW5lbFxuIik7Cj4+ICsJZ3Bpb2Rfc2V0X3ZhbHVlX2NhbnNsZWVwKGN0eC0+
+cmVzZXRfZ3BpbywgMSk7Cj4+ICsJdXNsZWVwX3JhbmdlKDIwLCA0MCk7Cj4+ICsJZ3Bpb2Rfc2V0
+X3ZhbHVlX2NhbnNsZWVwKGN0eC0+cmVzZXRfZ3BpbywgMCk7Cj4+ICsJbXNsZWVwKDIwKTsKPj4g
+Kwo+PiArCWN0eC0+cHJlcGFyZWQgPSB0cnVlOwo+PiArCj4+ICsJcmV0dXJuIDA7Cj4+ICt9Cj4+
+ICsKPj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSB4YmQ1OTlfZGVmYXVs
+dF9tb2RlID0gewo+PiArCS5oZGlzcGxheSAgICA9IDcyMCwKPj4gKwkuaHN5bmNfc3RhcnQgPSA3
+MjAgKyA0MCwKPj4gKwkuaHN5bmNfZW5kICAgPSA3MjAgKyA0MCArIDQwLAo+PiArCS5odG90YWwJ
+ICAgICA9IDcyMCArIDQwICsgNDAgKyA0MCwKPj4gKwkudmRpc3BsYXkgICAgPSAxNDQwLAo+PiAr
+CS52c3luY19zdGFydCA9IDE0NDAgKyAxOCwKPj4gKwkudnN5bmNfZW5kICAgPSAxNDQwICsgMTgg
+KyAxMCwKPj4gKwkudnRvdGFsCSAgICAgPSAxNDQwICsgMTggKyAxMCArIDE3LAo+PiArCS52cmVm
+cmVzaCAgICA9IDYwLAo+PiArCS5jbG9jawkgICAgID0gNjkwMDAsCj4+ICsJLmZsYWdzCSAgICAg
+PSBEUk1fTU9ERV9GTEFHX05IU1lOQyB8IERSTV9NT0RFX0ZMQUdfTlZTWU5DLAo+PiArCj4+ICsJ
+LndpZHRoX21tICAgID0gNjgsCj4+ICsJLmhlaWdodF9tbSAgID0gMTM2LAo+PiArCS50eXBlICAg
+ICAgICA9IERSTV9NT0RFX1RZUEVfRFJJVkVSIHwgRFJNX01PREVfVFlQRV9QUkVGRVJSRUQsCj4+
+ICt9Owo+PiArCj4+ICtzdGF0aWMgaW50IHhiZDU5OV9nZXRfbW9kZXMoc3RydWN0IGRybV9wYW5l
+bCAqcGFuZWwsCj4+ICsJCQkgICAgc3RydWN0IGRybV9jb25uZWN0b3IgKmNvbm5lY3RvcikKPj4g
+K3sKPj4gKwlzdHJ1Y3QgeGJkNTk5ICpjdHggPSBwYW5lbF90b194YmQ1OTkocGFuZWwpOwo+PiAr
+CXN0cnVjdCBkcm1fZGlzcGxheV9tb2RlICptb2RlOwo+PiArCj4+ICsJbW9kZSA9IGRybV9tb2Rl
+X2R1cGxpY2F0ZShjb25uZWN0b3ItPmRldiwgJnhiZDU5OV9kZWZhdWx0X21vZGUpOwo+PiArCWlm
+ICghbW9kZSkgewo+PiArCQlEUk1fREVWX0VSUk9SKGN0eC0+ZGV2LCAiRmFpbGVkIHRvIGFkZCBt
+b2RlXG4iKTsKPj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4+ICsJfQo+PiArCj4+ICsJZHJtX21vZGVf
+c2V0X25hbWUobW9kZSk7Cj4+ICsKPj4gKwltb2RlLT50eXBlID0gRFJNX01PREVfVFlQRV9EUklW
+RVIgfCBEUk1fTU9ERV9UWVBFX1BSRUZFUlJFRDsKPj4gKwljb25uZWN0b3ItPmRpc3BsYXlfaW5m
+by53aWR0aF9tbSA9IG1vZGUtPndpZHRoX21tOwo+PiArCWNvbm5lY3Rvci0+ZGlzcGxheV9pbmZv
+LmhlaWdodF9tbSA9IG1vZGUtPmhlaWdodF9tbTsKPj4gKwlkcm1fbW9kZV9wcm9iZWRfYWRkKGNv
+bm5lY3RvciwgbW9kZSk7Cj4+ICsKPj4gKwlyZXR1cm4gMTsKPj4gK30KPj4gKwo+PiArc3RhdGlj
+IGNvbnN0IHN0cnVjdCBkcm1fcGFuZWxfZnVuY3MgeGJkNTk5X2RybV9mdW5jcyA9IHsKPj4gKwku
+ZGlzYWJsZSAgID0geGJkNTk5X2Rpc2FibGUsCj4+ICsJLnVucHJlcGFyZSA9IHhiZDU5OV91bnBy
+ZXBhcmUsCj4+ICsJLmVuYWJsZSAgICA9IHhiZDU5OV9lbmFibGUsCj4+ICsJLnByZXBhcmUgICA9
+IHhiZDU5OV9wcmVwYXJlLAo+PiArCS5nZXRfbW9kZXMgPSB4YmQ1OTlfZ2V0X21vZGVzLAo+PiAr
+fTsKPj4gKwo+PiArc3RhdGljIGludCB4YmQ1OTlfcHJvYmUoc3RydWN0IG1pcGlfZHNpX2Rldmlj
+ZSAqZHNpKQo+PiArewo+PiArCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZkc2ktPmRldjsKPj4gKwlz
+dHJ1Y3QgeGJkNTk5ICpjdHg7Cj4+ICsJaW50IGksIHJldDsKPj4gKwo+PiArCWN0eCA9IGRldm1f
+a3phbGxvYyhkZXYsIHNpemVvZigqY3R4KSwgR0ZQX0tFUk5FTCk7Cj4+ICsJaWYgKCFjdHgpCj4+
+ICsJCXJldHVybiAtRU5PTUVNOwo+PiArCj4+ICsJZm9yIChpID0gMDsgaSA8IEFSUkFZX1NJWkUo
+Y3R4LT5zdXBwbGllcyk7IGkrKykKPj4gKwkJY3R4LT5zdXBwbGllc1tpXS5zdXBwbHkgPSByZWd1
+bGF0b3JfbmFtZXNbaV07Cj4+ICsKPj4gKwlyZXQgPSBkZXZtX3JlZ3VsYXRvcl9idWxrX2dldChk
+ZXYsIEFSUkFZX1NJWkUoY3R4LT5zdXBwbGllcyksCj4+ICsJCQkJICAgICAgY3R4LT5zdXBwbGll
+cyk7Cj4+ICsJaWYgKHJldCA8IDApIHsKPj4gKwkJRFJNX0RFVl9FUlJPUigmZHNpLT5kZXYsICJj
+YW5ub3QgZ2V0IHJlZ3VsYXRvcnNcbiIpOwo+PiArCQlyZXR1cm4gcmV0Owo+PiArCX0KPj4gKwo+
+PiArCWN0eC0+cmVzZXRfZ3BpbyA9IGRldm1fZ3Bpb2RfZ2V0KGRldiwgInJlc2V0IiwgR1BJT0Rf
+T1VUX0xPVyk7Cj4+ICsJaWYgKElTX0VSUihjdHgtPnJlc2V0X2dwaW8pKSB7Cj4+ICsJCURSTV9E
+RVZfRVJST1IoZGV2LCAiY2Fubm90IGdldCByZXNldCBncGlvXG4iKTsKPj4gKwkJcmV0dXJuIFBU
+Ul9FUlIoY3R4LT5yZXNldF9ncGlvKTsKPj4gKwl9Cj4+ICsKPj4gKwltaXBpX2RzaV9zZXRfZHJ2
+ZGF0YShkc2ksIGN0eCk7Cj4+ICsKPj4gKwljdHgtPmRldiA9IGRldjsKPj4gKwo+PiArCWRzaS0+
+bGFuZXMgPSA0Owo+PiArCWRzaS0+Zm9ybWF0ID0gTUlQSV9EU0lfRk1UX1JHQjg4ODsKPj4gKwlk
+c2ktPm1vZGVfZmxhZ3MgPSBNSVBJX0RTSV9NT0RFX1ZJREVPIHwKPk1JUElfRFNJX01PREVfVklE
+RU9fU1lOQ19QVUxTRTsKPj4gKwo+PiArCWRybV9wYW5lbF9pbml0KCZjdHgtPnBhbmVsLCAmZHNp
+LT5kZXYsICZ4YmQ1OTlfZHJtX2Z1bmNzLAo+PiArCQkgICAgICAgRFJNX01PREVfQ09OTkVDVE9S
+X0RTSSk7Cj4+ICsKPj4gKwlyZXQgPSBkcm1fcGFuZWxfb2ZfYmFja2xpZ2h0KCZjdHgtPnBhbmVs
+KTsKPj4gKwlpZiAocmV0KQo+PiArCQlyZXR1cm4gcmV0Owo+PiArCj4+ICsJZHJtX3BhbmVsX2Fk
+ZCgmY3R4LT5wYW5lbCk7Cj4+ICsKPj4gKwlyZXQgPSBtaXBpX2RzaV9hdHRhY2goZHNpKTsKPj4g
+KwlpZiAocmV0IDwgMCkgewo+PiArCQlEUk1fREVWX0VSUk9SKGRldiwgIm1pcGlfZHNpX2F0dGFj
+aCBmYWlsZWQuIElzIGhvc3QgcmVhZHk/XG4iKTsKPj4gKwkJZHJtX3BhbmVsX3JlbW92ZSgmY3R4
+LT5wYW5lbCk7Cj4+ICsJCXJldHVybiByZXQ7Cj4+ICsJfQo+PiArCj4+ICsJRFJNX0RFVl9JTkZP
+KGRldiwgIiV1eCV1QCV1ICV1YnBwIGRzaSAldWRsIC0gcmVhZHlcbiIsCj4+ICsJCSAgICAgeGJk
+NTk5X2RlZmF1bHRfbW9kZS5oZGlzcGxheSwKPj4gKwkJICAgICB4YmQ1OTlfZGVmYXVsdF9tb2Rl
+LnZkaXNwbGF5LAo+PiArCQkgICAgIHhiZDU5OV9kZWZhdWx0X21vZGUudnJlZnJlc2gsCj4+ICsJ
+CSAgICAgbWlwaV9kc2lfcGl4ZWxfZm9ybWF0X3RvX2JwcChkc2ktPmZvcm1hdCksIGRzaS0+bGFu
+ZXMpOwo+PiArCj4+ICsJcmV0dXJuIDA7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyB2b2lkIHhiZDU5
+OV9zaHV0ZG93bihzdHJ1Y3QgbWlwaV9kc2lfZGV2aWNlICpkc2kpCj4+ICt7Cj4+ICsJc3RydWN0
+IHhiZDU5OSAqY3R4ID0gbWlwaV9kc2lfZ2V0X2RydmRhdGEoZHNpKTsKPj4gKwlpbnQgcmV0Owo+
+PiArCj4+ICsJcmV0ID0geGJkNTk5X3VucHJlcGFyZSgmY3R4LT5wYW5lbCk7Cj4KPlVzZSBkcm1f
+cGFuZWxfdW5wcmVwYXJlKCkuCj5UaGVyZSBtYXkgYmUsIG9yIG1heSBjb21lIGZ1bmN0aW9uYWxp
+dHkgaW4gZHJtX3BhbmVsIHRoYXQgaXMgcmVxdWlyZWQuCj4KPj4gKwlpZiAocmV0IDwgMCkKPj4g
+KwkJRFJNX0RFVl9FUlJPUigmZHNpLT5kZXYsICJGYWlsZWQgdG8gdW5wcmVwYXJlIHBhbmVsOiAl
+ZFxuIiwKPj4gKwkJCSAgICAgIHJldCk7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyBpbnQgeGJkNTk5
+X3JlbW92ZShzdHJ1Y3QgbWlwaV9kc2lfZGV2aWNlICpkc2kpCj4+ICt7Cj4+ICsJc3RydWN0IHhi
+ZDU5OSAqY3R4ID0gbWlwaV9kc2lfZ2V0X2RydmRhdGEoZHNpKTsKPj4gKwlpbnQgcmV0Owo+PiAr
+Cj4+ICsJeGJkNTk5X3NodXRkb3duKGRzaSk7Cj4+ICsKPj4gKwlyZXQgPSBtaXBpX2RzaV9kZXRh
+Y2goZHNpKTsKPj4gKwlpZiAocmV0IDwgMCkKPj4gKwkJRFJNX0RFVl9FUlJPUigmZHNpLT5kZXYs
+ICJGYWlsZWQgdG8gZGV0YWNoIGZyb20gRFNJIGhvc3Q6ICVkXG4iLAo+PiArCQkJICAgICAgcmV0
+KTsKPj4gKwo+PiArCWRybV9wYW5lbF9yZW1vdmUoJmN0eC0+cGFuZWwpOwo+PiArCj4+ICsJcmV0
+dXJuIDA7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIHhi
+ZDU5OV9vZl9tYXRjaFtdID0gewo+PiArCXsgLmNvbXBhdGlibGUgPSAieGluZ2JhbmdkYSx4YmQ1
+OTkiLCB9LAo+PiArCXsgLyogc2VudGluZWwgKi8gfQo+PiArfTsKPj4gK01PRFVMRV9ERVZJQ0Vf
+VEFCTEUob2YsIHhiZDU5OV9vZl9tYXRjaCk7Cj4+ICsKPj4gK3N0YXRpYyBzdHJ1Y3QgbWlwaV9k
+c2lfZHJpdmVyIHhiZDU5OV9kcml2ZXIgPSB7Cj4+ICsJLnByb2JlCT0geGJkNTk5X3Byb2JlLAo+
+PiArCS5yZW1vdmUgPSB4YmQ1OTlfcmVtb3ZlLAo+PiArCS5zaHV0ZG93biA9IHhiZDU5OV9zaHV0
+ZG93biwKPj4gKwkuZHJpdmVyID0gewo+PiArCQkubmFtZSA9IERSVl9OQU1FLAo+PiArCQkub2Zf
+bWF0Y2hfdGFibGUgPSB4YmQ1OTlfb2ZfbWF0Y2gsCj4+ICsJfSwKPj4gK307Cj4+ICttb2R1bGVf
+bWlwaV9kc2lfZHJpdmVyKHhiZDU5OV9kcml2ZXIpOwo+PiArCj4+ICtNT0RVTEVfQVVUSE9SKCJJ
+Y2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+Iik7Cj4+ICtNT0RVTEVfREVTQ1JJUFRJT04o
+IkRSTSBkcml2ZXIgZm9yIFhpbmdiYW5nZGEgWEJENTk5IE1JUEkgRFNJCj5wYW5lbCIpOwo+PiAr
+TU9EVUxFX0xJQ0VOU0UoIkdQTCB2MiIpOwo+PiAtLSAKPj4gMi4yNC4xCgotLSAK5L2/55SoIEst
+OSBNYWlsIOWPkemAgeiHquaIkeeahEFuZHJvaWTorr7lpIfjgIIKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
