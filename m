@@ -2,47 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BC3C185591
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 12:05:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71CAA185595
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 12:07:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kpmQ4VKd4ldFzb8dtXweB8dt6j0faSQ3jmMXtXadnhQ=; b=FIoJWn0oJPTP11
-	fzd3wJzpiLQHv4kK2dkr1oVHWFY0Gzkks9muVOaXcLxCogo3CMPvLKlsqdlR9SpDwPBRbLLoCDBJ4
-	IxRkOGCNQCrTDaw7KIHKnu0mmt9fjOg+3GkweowOySfB3uOaVdRMJQPQqhYTDQirvJExsSZHSDqnE
-	/wEV0T0LSIWL9a4/BhLaYcNa4mkLwKjZuC1zDEQJOK0hMlgxEfwCKhl8Ug37+D6wBz53EweviD1SU
-	1Wzd1rYbsscaN0zbFHDiyw+xyQUf9eTDvqwBy+s3BqjFaWj6Wr1ewlbZ5vxqhLJJHw4Zu+VrEPuOZ
-	XwVrwMlqe5F1ZVBVslnA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9+Cqsou2AW5aBT06eNB8c7kr+GLLZyuqgMYOV9mWHEQ=; b=WQv
+	GDL4/T9caYezHkzAmMtJGNz1te5s8Isct0C/NN4CrRYBST9GBt1nkbkKpwwQyw84z5x/KA5pZEqhc
+	f2c4h7x7KBtWx7Mc9BSp7Wz4IxF7xuPG28FpF95FiuhdGaZwOOfEbA2oJncBYvU1foIROEyCYNFQS
+	47HqwuyoE7sWVAMkzprpwoINO+kgYb93VfoRUSz+JulVlm+gxIl00Q9w+2/gvN8ZyzVRgqSvz0BUo
+	rFPIk+/fCsgWb9xOrq4zKE93b7dTXZvN3MOHlnPL2Scc/MEtTYNFLA7gpXYYatC3/SMj9WzZhGSAB
+	hKqFhP+vOx/OILNXnisKLsuC1WopOKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jD4bl-0003EF-BD; Sat, 14 Mar 2020 11:05:33 +0000
-Received: from cloudserver094114.home.pl ([79.96.170.134])
+	id 1jD4df-0003Zj-Oq; Sat, 14 Mar 2020 11:07:31 +0000
+Received: from m176115.mail.qiye.163.com ([59.111.176.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jD4bd-0003Dl-Lh
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 11:05:27 +0000
-Received: from 185.80.35.16 (185.80.35.16) (HELO kreacher.localnet)
- by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.341)
- id 18c27b0219204e13; Sat, 14 Mar 2020 12:05:13 +0100
-From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v3 1/2] PM / Domains: Allow no domain-idle-states DT
- property in genpd when parsing
-Date: Sat, 14 Mar 2020 12:05:13 +0100
-Message-ID: <2266717.MI9MQu89M6@kreacher>
-In-Reply-To: <20200310104023.4018-1-ulf.hansson@linaro.org>
-References: <20200310104023.4018-1-ulf.hansson@linaro.org>
-MIME-Version: 1.0
+ id 1jD4dW-0003ZF-0d
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 11:07:24 +0000
+Received: from localhost.localdomain (unknown [58.251.74.226])
+ by m176115.mail.qiye.163.com (Hmail) with ESMTPA id BBF91663E8C;
+ Sat, 14 Mar 2020 19:07:13 +0800 (CST)
+From: Zheng Wei <wei.zheng@vivo.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Brian King <brking@us.ibm.com>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hanjun Guo <guohanjun@huawei.com>, Allison Randal <allison@lohutok.net>,
+ Enrico Weigelt <info@metux.net>, Yunfeng Ye <yeyunfeng@huawei.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org
+Subject: [PATCH] scsi/ipr: fix wrong __VA_ARGS__ usage
+Date: Sat, 14 Mar 2020 19:07:03 +0800
+Message-Id: <20200314110705.121122-1-wei.zheng@vivo.com>
+X-Mailer: git-send-email 2.17.1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZTlVJTUhLS0tLSkpPT09LQllXWShZQU
+ hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MhQ6ORw6PDgzQzBDHkMVD0IZ
+ Oh8wCwhVSlVKTkNPSkNPS0hPT09CVTMWGhIXVQweElUBEx4VHDsNEg0UVRgUFkVZV1kSC1lBWU5D
+ VUlOSlVMT1VJSU1ZV1kIAVlBSU1KSDcG
+X-HM-Tid: 0a70d8ba042f9373kuwsbbf91663e8c
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_040525_872675_F1D98C39 
-X-CRM114-Status: GOOD (  14.15  )
+X-CRM114-CacheID: sfid-20200314_040722_216889_776DBBCB 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [59.111.176.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -56,59 +70,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- stable@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: kernel@vivo.com, wenhu.wang@vivo.com, Zheng Wei <wei.zheng@vivo.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tuesday, March 10, 2020 11:40:23 AM CET Ulf Hansson wrote:
-> Commit 2c361684803e ("PM / Domains: Don't treat zero found compatible idle
-> states as an error"), moved of_genpd_parse_idle_states() towards allowing
-> none compatible idle state to be found for the device node, rather than
-> returning an error code.
-> 
-> However, it didn't consider that the "domain-idle-states" DT property may
-> be missing as it's optional, which makes of_count_phandle_with_args() to
-> return -ENOENT. Let's fix this to make the behaviour consistent.
-> 
-> Reported-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> Fixes: 2c361684803e ("PM / Domains: Don't treat zero found compatible idle states as an error")
-> Cc: <stable@vger.kernel.org>
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> ---
-> 
-> Changes in v3:
-> 	- Resending with reviewed-tags added.
-> 
-> ---
->  drivers/base/power/domain.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/base/power/domain.c b/drivers/base/power/domain.c
-> index 959d6d5eb000..0a01df608849 100644
-> --- a/drivers/base/power/domain.c
-> +++ b/drivers/base/power/domain.c
-> @@ -2653,7 +2653,7 @@ static int genpd_iterate_idle_states(struct device_node *dn,
->  
->  	ret = of_count_phandle_with_args(dn, "domain-idle-states", NULL);
->  	if (ret <= 0)
-> -		return ret;
-> +		return ret == -ENOENT ? 0 : ret;
->  
->  	/* Loop over the phandles until all the requested entry is found */
->  	of_for_each_phandle(&it, ret, dn, "domain-idle-states", NULL, 0) {
-> 
+ipr_hcam_err uses __VA_ARGS__ without "##" prefix, 
+it causes a build error when there is no variable arguments.
 
-Applied as 5.7 material along with the [2/2], thanks!
+Signed-off-by: Zheng Wei <wei.zheng@vivo.com>
+---
+ drivers/scsi/ipr.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-
+diff --git a/drivers/scsi/ipr.h b/drivers/scsi/ipr.h
+index b97aa9ac2ffe..de3401972354 100644
+--- a/drivers/scsi/ipr.h
++++ b/drivers/scsi/ipr.h
+@@ -1813,14 +1813,14 @@ struct ipr_ucode_image_header {
+ 					hostrcb->hcam.u.error64.fd_res_path, \
+ 					hostrcb->rp_buffer,		\
+ 					sizeof(hostrcb->rp_buffer)),	\
+-				__VA_ARGS__);				\
++				##__VA_ARGS__);				\
+ 		} else {						\
+ 			ipr_ra_err((hostrcb)->ioa_cfg,			\
+ 				(hostrcb)->hcam.u.error.fd_res_addr,	\
+-				fmt, __VA_ARGS__);			\
++				fmt, ##__VA_ARGS__);			\
+ 		}							\
+ 	} else {							\
+-		dev_err(&(hostrcb)->ioa_cfg->pdev->dev, fmt, __VA_ARGS__); \
++		dev_err(&(hostrcb)->ioa_cfg->pdev->dev, fmt, ##__VA_ARGS__); \
+ 	}								\
+ }
+ 
+-- 
+2.17.1
 
 
 _______________________________________________
