@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0094A1855F1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 16:38:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BA5D1855F2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 16:38:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UOfsiA6kPTXJwZirLYWimBl7jdAeV7XF/jj1RkcQmEM=; b=gdPH+J0YXT2Fwe
-	ffmZf4qrXXq3hKyaxBi3ngqnkwOw6aa5xzwu0PmTsFW+1g9PZ/hPfoosJVIY+R77DG5AL9PrcznP5
-	iMM2MsbpT9Q0ANoMLShlfsRFotsGmx7SJqT0PDUkndMXCAbziigNK8H6fo65V+DfRbhN+bp4grjph
-	5JdYZ9SSfLfRJgaNCw3+1i3jy58Wmra/r0b37HurxBIR8PClyGVZfvAyX++rIjdK704KlLluFQl6H
-	xeq14t0alDi07Dj+p5s1e/IdCPIMaEFGMKkLjmyyY6Oa5AQnIqh6Qsphq1DFqovIj9LZmGmslQnfF
-	QCj3QW+kITZySaNgEeIw==;
+	List-Owner; bh=oDbZL+V2LqAS5OUV0bP2TWEn3fmCAhfXv+GvpSUIbew=; b=baVSGRcWZh8EUW
+	BF94p0YstultRfiWgU9EqlWhW/0irR0VPdihyFuhoutzYft0g0JMdHS+HzKDnKuoB9WJ85i1XPlh0
+	XjSfD+/HgH3oqhFwJajIEQ+hPBr33YCTrXj/o736KNhP9S6jL/XVo6R9pvV1+SYE2i42bDnq8bw/Y
+	dp8Kg7LAQ7so/msyTK3wdFdsdyiijBKILB8ORIak4onuatdMEQlg2e0xUWJE713Iuh0FppF/F6vsr
+	wBhax89+cl6CYJ3qNxT22WcV9xHvnnb0/jZxQLapVcIqkFP7US465tYKrRHnGbvWJa4QVu89rklsv
+	EddxDOMkbSHgApihDfaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jD8ro-0007Nx-VT; Sat, 14 Mar 2020 15:38:24 +0000
+	id 1jD8s5-0007kV-He; Sat, 14 Mar 2020 15:38:41 +0000
 Received: from mail-mw2nam10on2100.outbound.protection.outlook.com
  ([40.107.94.100] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jD8pg-0005lv-Pt
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 15:36:14 +0000
+ id 1jD8pj-0005lv-4f
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 15:36:18 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cojJv3p/eR1ANc5gSYB1my+VEV/vInaL85afCoHVcqPA5HAncSFCBjeC3aQXu0A+iCiYgde1EcBCq+PXQ6w91lrHQ3v49Asd/vW5ZLPGoKXZ5ZfZmNgh4YeO9bDwtl1cXvsDCcL9Pp8l5M1h0AhywOr43GIlr2BUrgXFr91hUWcWaTLew19jzB+YPHIe9u3BalPl3oyK23cmjQshAP0+MsJJ/uLQKnykWOljdNZmteatGGrd11aoQ9yjsEhMzRyJ5+BYH5AMDuO5u9fJKJKV/+UDvmVHfcf4xzFDxBGfR87Q+P3CC5E+S2+1tQmENPe9Z48+A/ZjuGli+ypQ92DKig==
+ b=GupV7cE44Q6XCYtRH1CRqGmAZJeKH+Boo6JBM2aCYgOdRD0qxz83131HKTkkxWQpnKVqSwJzjm4384Gk0c+wBqaWyD1X1ozFedlaXHybOjiYoklBlJOIVH3KnPVMxtuMuHBPYAszOsdnMn+p9NngfO+flIefoiygn7QUacZOuho4hhaDd9BNxDWPZSg5b7wBQKS9RAcYgUDhL2fZv0PZ9w9ufC1OjqH8ssSmaflNYx7tN4t9iUpwmrfpWkMsR1UQTUtvTtF+PRc0qydRVeOK59maTMZWcZrjVMVUwp7/t0xFDIp147UWMbf3do+2UQueMlVf8pcnUk5a1fTNAiKR6A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lnmV7RNIdWV2USjZcsgo2mBK+tzYMj8qzsEyTKRcY2I=;
- b=j6xmT8W3bv1Hem40NOedh33mhXuIzei45vy5DnhsA0dJ785Cu9Ldev8n+kD+Oa2xhJZ5eK22XPfFJbqKyH0/dfYbjjURyxZoGfsIGCgnTRHPFmij9Tb4bi6VDBKiKVzHUKeRgvntiGq41RhuxJdC7b2QnUkS9JOCM/l5Ok6C0lK3iN/Y+n7sNrohIfQrCcSD9QatiRCFbS/379EJBSaWBI+PBVOoZ46bbMW66r7SFkZkAlkjnVY9UAS9cQfZH12hosipJfyv+FOCfybsGt+FExPTVQEi/tbZWJWHnf14/6jjlP0C8aS+Y+c05O1MCWWuMMAJVn158E/Hke4DkFOZng==
+ bh=mI2g93bs0EJBL5NI/4tVGZ1opEWhoTs3mBeo+EAQeQI=;
+ b=K566kEjZ5aGLWXEUpfgMJI2D2PglNnOtlkIaPm2xtqxoMcoZmHtn41NyrhgI9NsOAecc0yvOKr7YqCi0SnXd/T2GmPdmlwg5snXmY+6xNZMam0QbulOyQJJaxN/NKU85/gZu/mWu70RgAFV7HtkfULfwztdfzv6envuPRYZ27rhXTYh7/HgWECu8fHiB6+qLmFJ9rU5evppRIlmrvELLewGyK+O5ENp4I66/qXSgpDiroXuw/JCbNu03FIqW7/3IR+auXp76n7FGszNdR9sNP/39+yIRE/Pf87JfiwsGX/rtI3Suvo7W3hDtqjnrO885W6VP6lmfY3kFWJgxm8DzOA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microsoft.com; dmarc=pass action=none
  header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lnmV7RNIdWV2USjZcsgo2mBK+tzYMj8qzsEyTKRcY2I=;
- b=M6RYQ184Qs+iE8y4mil0q+mpFM6T8wby56frsdwITcFLPPAMZgLZrdXOTkknyeUAjVZBEh55FWrmUf7p8SpkpofFc2531c+53P5xEUzv7htxGVSHS9kBE4ObVfahegVpojRvCrb6Vaw3EpRmuZLfXnrXLeASUAhRPrQ+pnGKs+s=
+ bh=mI2g93bs0EJBL5NI/4tVGZ1opEWhoTs3mBeo+EAQeQI=;
+ b=gXm6Gtm4ISDyJ4OHcuVp47bPVrYQnzBnhnuvqBDerXqoDXwlexuHMUR50pWkdGJndSiwKXvuWHXnnM32/FDRiwVcoD5URPTa7hEKx4BJ6G4r5BBo81SOnLqhVDefGu1Zp/i+axq4E1GYTqcv9h71+b+m62GHT1RTuCHL5D0ZoR8=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=mikelley@microsoft.com; 
 Received: from SN6PR2101MB0927.namprd21.prod.outlook.com (2603:10b6:805:a::18)
  by SN6PR2101MB1632.namprd21.prod.outlook.com (2603:10b6:805:53::25)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.4; Sat, 14 Mar
- 2020 15:36:08 +0000
+ 2020 15:36:10 +0000
 Received: from SN6PR2101MB0927.namprd21.prod.outlook.com
  ([fe80::a819:6437:1733:17b3]) by SN6PR2101MB0927.namprd21.prod.outlook.com
  ([fe80::a819:6437:1733:17b3%9]) with mapi id 15.20.2835.008; Sat, 14 Mar 2020
- 15:36:08 +0000
+ 15:36:10 +0000
 From: Michael Kelley <mikelley@microsoft.com>
 To: will@kernel.org, ardb@kernel.org, arnd@arndb.de, catalin.marinas@arm.com,
  mark.rutland@arm.com, maz@kernel.org, linux-arm-kernel@lists.infradead.org,
@@ -58,10 +58,9 @@ To: will@kernel.org, ardb@kernel.org, arnd@arndb.de, catalin.marinas@arm.com,
  linux-arch@vger.kernel.org, olaf@aepfle.de, apw@canonical.com,
  vkuznets@redhat.com, jasowang@redhat.com, marcelo.cerri@canonical.com,
  kys@microsoft.com
-Subject: [PATCH v6 05/10] arm64: hyperv: Add interrupt handlers for VMbus and
- stimer
-Date: Sat, 14 Mar 2020 08:35:14 -0700
-Message-Id: <1584200119-18594-6-git-send-email-mikelley@microsoft.com>
+Subject: [PATCH v6 06/10] arm64: hyperv: Add kexec and panic handlers
+Date: Sat, 14 Mar 2020 08:35:15 -0700
+Message-Id: <1584200119-18594-7-git-send-email-mikelley@microsoft.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
 References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
@@ -73,17 +72,17 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from mhkkerneltest.corp.microsoft.com (131.107.159.247) by
  MWHPR22CA0047.namprd22.prod.outlook.com (2603:10b6:300:69::33) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.18 via Frontend Transport; Sat, 14 Mar 2020 15:36:07 +0000
+ 15.20.2814.18 via Frontend Transport; Sat, 14 Mar 2020 15:36:08 +0000
 X-Mailer: git-send-email 1.8.3.1
 X-Originating-IP: [131.107.159.247]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 8c1db6e2-a6d5-483c-94f5-08d7c82d6a79
+X-MS-Office365-Filtering-Correlation-Id: 5bc55ea7-d86c-44ea-e03d-08d7c82d6b5d
 X-MS-TrafficTypeDiagnostic: SN6PR2101MB1632:|SN6PR2101MB1632:|SN6PR2101MB1632:
 X-MS-Exchange-Transport-Forked: True
 X-LD-Processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-X-Microsoft-Antispam-PRVS: <SN6PR2101MB1632D8FCD9721C8BF4C46D8FD7FB0@SN6PR2101MB1632.namprd21.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Microsoft-Antispam-PRVS: <SN6PR2101MB16329F6537CD030137E1CFE0D7FB0@SN6PR2101MB1632.namprd21.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
 X-Forefront-PRVS: 034215E98F
 X-Forefront-Antispam-Report: SFV:NSPM;
  SFS:(10019020)(4636009)(136003)(366004)(39860400002)(346002)(376002)(396003)(199004)(10290500003)(478600001)(2906002)(6486002)(36756003)(8936002)(66946007)(26005)(86362001)(2616005)(16526019)(186003)(956004)(66556008)(6636002)(66476007)(4326008)(7416002)(316002)(81166006)(8676002)(81156014)(52116002)(7696005)(6666004)(5660300002)(921003)(1121003);
@@ -94,19 +93,19 @@ Received-SPF: None (protection.outlook.com: microsoft.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: aoFXnvcDiFaFyVwZQSQIlyuSQSTa7+7p7MlAp2HghkvnbIw7f6GV65YI7ohg8/VdZ7fK/ElMR8M6Xe2pbjzH1Drvo7YqNU3WYzBHHyAW9kGmcrZpk7BoDBBzH/no+BXoZ8yumxie3fgX8Q3bdauxqbNQVLIR9AWXpV6QShXnRwT8vJQreth7IuuMverjQa4WFs9DAWkpF+KWHfLjrQqUXiw3fXSiCeRlMaZA46zQ1HI8IsBBmnD2/5Ug8UhHdWC8OqDUtCu4j3oyEY+vao8evu45fRFSvZolk8rlnS8vUBsujD1LtTdcSqdy/ZUkiY6YaSDz0btlTflmD0n76KEHk06p2mXXRpdcM9tN9wFU0ebRhJ1mnFUtd555v1TZQp3Yw/AD+23CNE1oybljM4fpfHhI11b+HQRpGxcxqGT6EIPckJ6VNpzT/61hHRQRiVAtWQFmMFSw9J2a2ygnLDPqAOi1ZYJRrHp4Gl+vt9yc59m85WsWMvauLgrVij4QflzL
-X-MS-Exchange-AntiSpam-MessageData: wuB6xx4jInRHd1pTkyLDxLhdDoOnRuur4OBCFBdWwqYNV1sFN80XzXfzGR9ZRdTeLG/wCMjX0gH7E6iA6g41K2FA6uUGDZYnzEmTrg7+0w5LDM5Q4YOa54sD4ECA64TKuk1Hvh2RcU5jrLMD0hTqbg==
+X-Microsoft-Antispam-Message-Info: 31j413vFbttxrXeHZSZIwLS1zTJ8CMRqWeIebYMJqpg6SLmIfBf8yeYGZLWhwMmsuDcvp/6s/LLcbewpXAjRKBi+jBwRSzYefq4clJuLqED1QeNTutU1vukfJTF5W0+cEgI4TNKVHAowxkNqfIzdxzuXGjYuBK1DhqlonSGCuuZo8DB/FMd59YS1FXCzI85sptREoS1QIktV6u2YGo6zjTDulBr54WemnexlW1nAyY2aql71QIhW0Vx9UV9IE1yZQbpcpgJO1xwVtKoduh6yySziLkp80xZXNZSrWiCHgUBv+D+jNRCEKehrzDrvZmGpAcqfCHKiI8M+s5myw4rz1okg/xp620zT9uu1EDZ9po5x1mFpHDALmriHa1XlOJW42jlw38CqXlDT8fByr43Z9KdJqBMgAgmp/1nb7TQO0cFqvDYd40lyiwtiWLp6q1rX1WIkafjGfPblNANhg+SLeBhJv2SMLh16sQ9idVeI14RFxHvbfJXuAHCMe8mpD+Os
+X-MS-Exchange-AntiSpam-MessageData: FX+ozvb70ObrmKn/ItO4NYPeBv3suvNKjQ/7l/ZmusXQr4evaw9BqNfhkxn7hEaEVNweW2cFAbyUcCACCtUzS2cC9TOOVqWYPlzY8SpPaqyoNBP7Y8uHVbh78JW2BLZjmLMqFAGZHHuuXBr+cj9CHw==
 X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8c1db6e2-a6d5-483c-94f5-08d7c82d6a79
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Mar 2020 15:36:08.3569 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5bc55ea7-d86c-44ea-e03d-08d7c82d6b5d
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Mar 2020 15:36:09.8531 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 72f988bf-86f1-41af-91ab-2d7cd011db47
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: sOq98IYyJLYDe8gN18irsZ/Zo+wEk0U5INplR5ZqDEf8JS0oGVxmWPWM4zte9ujpt/rI5TY6mTL4+N9OyCwjuQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: hmwZBAw1Otpve2dD2AqtbuvFxa4QxNWeIjbFQ5ZG4EJRtmz/JkIhZ9QZBV0gZaV60BKagd9r/dGxaYXCoZEUtw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR2101MB1632
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_083613_046766_9AD75EB7 
-X-CRM114-Status: GOOD (  15.71  )
+X-CRM114-CacheID: sfid-20200314_083615_230168_494A68F8 
+X-CRM114-Status: GOOD (  13.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -142,175 +141,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add ARM64-specific code to set up and handle the interrupts
-generated by Hyper-V for VMbus messages and for stimer expiration.
-
-This code is architecture dependent and is mostly driven by
-architecture independent code in the VMbus driver and the
-Hyper-V timer clocksource driver.
+Add functions to set up and remove kexec and panic
+handlers, and to inform Hyper-V about a guest panic.
+These functions are called from architecture independent
+code in the VMbus driver.
 
 This code is built only when CONFIG_HYPERV is enabled.
 
 Signed-off-by: Michael Kelley <mikelley@microsoft.com>
 ---
- arch/arm64/hyperv/Makefile   |   2 +-
- arch/arm64/hyperv/mshyperv.c | 139 +++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 140 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/hyperv/mshyperv.c
+ arch/arm64/hyperv/hv_core.c  | 61 ++++++++++++++++++++++++++++++++++++++++++++
+ arch/arm64/hyperv/mshyperv.c | 26 +++++++++++++++++++
+ 2 files changed, 87 insertions(+)
 
-diff --git a/arch/arm64/hyperv/Makefile b/arch/arm64/hyperv/Makefile
-index 1697d30..87c31c0 100644
---- a/arch/arm64/hyperv/Makefile
-+++ b/arch/arm64/hyperv/Makefile
-@@ -1,2 +1,2 @@
- # SPDX-License-Identifier: GPL-2.0
--obj-y		:= hv_core.o
-+obj-y		:= hv_core.o mshyperv.o
-diff --git a/arch/arm64/hyperv/mshyperv.c b/arch/arm64/hyperv/mshyperv.c
-new file mode 100644
-index 0000000..ae6ece6
---- /dev/null
-+++ b/arch/arm64/hyperv/mshyperv.c
-@@ -0,0 +1,139 @@
-+// SPDX-License-Identifier: GPL-2.0
+diff --git a/arch/arm64/hyperv/hv_core.c b/arch/arm64/hyperv/hv_core.c
+index 4aa6b8f..8d6de9f 100644
+--- a/arch/arm64/hyperv/hv_core.c
++++ b/arch/arm64/hyperv/hv_core.c
+@@ -199,3 +199,64 @@ void hv_get_vpreg_128(u32 msr, struct hv_get_vp_register_output *res)
+ 	kfree(output);
+ }
+ EXPORT_SYMBOL_GPL(hv_get_vpreg_128);
++
++void hyperv_report_panic(struct pt_regs *regs, long err)
++{
++	static bool panic_reported;
++	u64 guest_id;
++
++	/*
++	 * We prefer to report panic on 'die' chain as we have proper
++	 * registers to report, but if we miss it (e.g. on BUG()) we need
++	 * to report it on 'panic'.
++	 */
++	if (panic_reported)
++		return;
++	panic_reported = true;
++
++	guest_id = hv_get_vpreg(HV_REGISTER_GUEST_OSID);
++
++	/*
++	 * Hyper-V provides the ability to store only 5 values.
++	 * Pick the passed in error value, the guest_id, and the PC.
++	 * The first two general registers are added arbitrarily.
++	 */
++	hv_set_vpreg(HV_REGISTER_CRASH_P0, err);
++	hv_set_vpreg(HV_REGISTER_CRASH_P1, guest_id);
++	hv_set_vpreg(HV_REGISTER_CRASH_P2, regs->pc);
++	hv_set_vpreg(HV_REGISTER_CRASH_P3, regs->regs[0]);
++	hv_set_vpreg(HV_REGISTER_CRASH_P4, regs->regs[1]);
++
++	/*
++	 * Let Hyper-V know there is crash data available
++	 */
++	hv_set_vpreg(HV_REGISTER_CRASH_CTL, HV_CRASH_CTL_CRASH_NOTIFY);
++}
++EXPORT_SYMBOL_GPL(hyperv_report_panic);
 +
 +/*
-+ * Core routines for interacting with Microsoft's Hyper-V hypervisor,
-+ * including setting up VMbus and STIMER interrupts, and handling
-+ * crashes and kexecs. These interactions are through a set of
-+ * static "handler" variables set by the architecture independent
-+ * VMbus and STIMER drivers.
-+ *
-+ * Copyright (C) 2019, Microsoft, Inc.
-+ *
-+ * Author : Michael Kelley <mikelley@microsoft.com>
++ * hyperv_report_panic_msg - report panic message to Hyper-V
++ * @pa: physical address of the panic page containing the message
++ * @size: size of the message in the page
 + */
-+
-+#include <linux/types.h>
-+#include <linux/export.h>
-+#include <linux/interrupt.h>
-+#include <linux/kexec.h>
-+#include <linux/acpi.h>
-+#include <linux/ptrace.h>
-+#include <asm/hyperv-tlfs.h>
-+#include <asm/mshyperv.h>
-+
-+static void (*vmbus_handler)(void);
-+static void (*hv_stimer0_handler)(void);
-+
-+static int vmbus_irq;
-+static long __percpu *vmbus_evt;
-+static long __percpu *stimer0_evt;
-+
-+irqreturn_t hyperv_vector_handler(int irq, void *dev_id)
++void hyperv_report_panic_msg(phys_addr_t pa, size_t size)
 +{
-+	vmbus_handler();
-+	return IRQ_HANDLED;
-+}
++	/*
++	 * P3 to contain the physical address of the panic page & P4 to
++	 * contain the size of the panic data in that page. Rest of the
++	 * registers are no-op when the NOTIFY_MSG flag is set.
++	 */
++	hv_set_vpreg(HV_REGISTER_CRASH_P0, 0);
++	hv_set_vpreg(HV_REGISTER_CRASH_P1, 0);
++	hv_set_vpreg(HV_REGISTER_CRASH_P2, 0);
++	hv_set_vpreg(HV_REGISTER_CRASH_P3, pa);
++	hv_set_vpreg(HV_REGISTER_CRASH_P4, size);
 +
-+/* Must be done just once */
-+void hv_setup_vmbus_irq(void (*handler)(void))
++	/*
++	 * Let Hyper-V know there is crash data available along with
++	 * the panic message.
++	 */
++	hv_set_vpreg(HV_REGISTER_CRASH_CTL,
++	       (HV_CRASH_CTL_CRASH_NOTIFY | HV_CRASH_CTL_CRASH_NOTIFY_MSG));
++}
++EXPORT_SYMBOL_GPL(hyperv_report_panic_msg);
+diff --git a/arch/arm64/hyperv/mshyperv.c b/arch/arm64/hyperv/mshyperv.c
+index ae6ece6..c58940d 100644
+--- a/arch/arm64/hyperv/mshyperv.c
++++ b/arch/arm64/hyperv/mshyperv.c
+@@ -23,6 +23,8 @@
+ 
+ static void (*vmbus_handler)(void);
+ static void (*hv_stimer0_handler)(void);
++static void (*hv_kexec_handler)(void);
++static void (*hv_crash_handler)(struct pt_regs *regs);
+ 
+ static int vmbus_irq;
+ static long __percpu *vmbus_evt;
+@@ -137,3 +139,27 @@ void hv_remove_stimer0_irq(int irq)
+ 	}
+ }
+ EXPORT_SYMBOL_GPL(hv_remove_stimer0_irq);
++
++void hv_setup_kexec_handler(void (*handler)(void))
 +{
-+	int result;
-+
-+	vmbus_handler = handler;
-+	vmbus_irq = acpi_register_gsi(NULL, HYPERVISOR_CALLBACK_VECTOR,
-+				 ACPI_LEVEL_SENSITIVE, ACPI_ACTIVE_HIGH);
-+	if (vmbus_irq <= 0) {
-+		pr_err("Can't register Hyper-V VMBus GSI. Error %d",
-+			vmbus_irq);
-+		vmbus_irq = 0;
-+		return;
-+	}
-+	vmbus_evt = alloc_percpu(long);
-+	result = request_percpu_irq(vmbus_irq, hyperv_vector_handler,
-+			"Hyper-V VMbus", vmbus_evt);
-+	if (result) {
-+		pr_err("Can't request Hyper-V VMBus IRQ %d. Error %d",
-+			vmbus_irq, result);
-+		free_percpu(vmbus_evt);
-+		acpi_unregister_gsi(vmbus_irq);
-+		vmbus_irq = 0;
-+	}
++	hv_kexec_handler = handler;
 +}
-+EXPORT_SYMBOL_GPL(hv_setup_vmbus_irq);
++EXPORT_SYMBOL_GPL(hv_setup_kexec_handler);
 +
-+/* Must be done just once */
-+void hv_remove_vmbus_irq(void)
++void hv_remove_kexec_handler(void)
 +{
-+	if (vmbus_irq) {
-+		free_percpu_irq(vmbus_irq, vmbus_evt);
-+		free_percpu(vmbus_evt);
-+		acpi_unregister_gsi(vmbus_irq);
-+	}
++	hv_kexec_handler = NULL;
 +}
-+EXPORT_SYMBOL_GPL(hv_remove_vmbus_irq);
++EXPORT_SYMBOL_GPL(hv_remove_kexec_handler);
 +
-+/* Must be done by each CPU */
-+void hv_enable_vmbus_irq(void)
++void hv_setup_crash_handler(void (*handler)(struct pt_regs *regs))
 +{
-+	enable_percpu_irq(vmbus_irq, 0);
++	hv_crash_handler = handler;
 +}
-+EXPORT_SYMBOL_GPL(hv_enable_vmbus_irq);
++EXPORT_SYMBOL_GPL(hv_setup_crash_handler);
 +
-+/* Must be done by each CPU */
-+void hv_disable_vmbus_irq(void)
++void hv_remove_crash_handler(void)
 +{
-+	disable_percpu_irq(vmbus_irq);
++	hv_crash_handler = NULL;
 +}
-+EXPORT_SYMBOL_GPL(hv_disable_vmbus_irq);
-+
-+/* Routines to do per-architecture handling of STIMER0 when in Direct Mode */
-+
-+static irqreturn_t hv_stimer0_vector_handler(int irq, void *dev_id)
-+{
-+	if (hv_stimer0_handler)
-+		hv_stimer0_handler();
-+	return IRQ_HANDLED;
-+}
-+
-+int hv_setup_stimer0_irq(int *irq, int *vector, void (*handler)(void))
-+{
-+	int localirq;
-+	int result;
-+
-+	localirq = acpi_register_gsi(NULL, HV_STIMER0_IRQNR,
-+			ACPI_LEVEL_SENSITIVE, ACPI_ACTIVE_HIGH);
-+	if (localirq <= 0) {
-+		pr_err("Can't register Hyper-V stimer0 GSI. Error %d",
-+			localirq);
-+		*irq = 0;
-+		return -1;
-+	}
-+	stimer0_evt = alloc_percpu(long);
-+	result = request_percpu_irq(localirq, hv_stimer0_vector_handler,
-+					 "Hyper-V stimer0", stimer0_evt);
-+	if (result) {
-+		pr_err("Can't request Hyper-V stimer0 IRQ %d. Error %d",
-+			localirq, result);
-+		free_percpu(stimer0_evt);
-+		acpi_unregister_gsi(localirq);
-+		*irq = 0;
-+		return -1;
-+	}
-+
-+	hv_stimer0_handler = handler;
-+	*vector = HV_STIMER0_IRQNR;
-+	*irq = localirq;
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(hv_setup_stimer0_irq);
-+
-+void hv_remove_stimer0_irq(int irq)
-+{
-+	hv_stimer0_handler = NULL;
-+	if (irq) {
-+		free_percpu_irq(irq, stimer0_evt);
-+		free_percpu(stimer0_evt);
-+		acpi_unregister_gsi(irq);
-+	}
-+}
-+EXPORT_SYMBOL_GPL(hv_remove_stimer0_irq);
++EXPORT_SYMBOL_GPL(hv_remove_crash_handler);
 -- 
 1.8.3.1
 
