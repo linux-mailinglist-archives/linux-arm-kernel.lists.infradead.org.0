@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EF7518543B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 04:17:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C43C1185434
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 04:16:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2kQ8SIdnbvJFBS+0dDrRoGDnBYW0hB4IPJ9kRqPQVEk=; b=K6knjBh+IsauPT
-	lrZrcyigTH26c8TvzWhdTQrrkn8Hj6Y7XsXKhNGtYp2G+iLT1EIJabzQy7+JisC5z3v9AIwuVQg2D
-	25raZZcpte7haKBQMqc1qdZlydDrDxHKEYUh/7VNkvsIkm3AC5uCFsaVE/EC+lEuKi3oterde2zi9
-	soONva9sHEQ5iHQCLzLuGFfOBxDeRxU1Qzn3cvN3WXoNA1EZkY0SIhTiEbzV5l75SeH9jywCMjwH2
-	DrT699VFYqF2fVc/e1sBbhVNh3eN/Dd/LYexhEE7Lis2N9Z2fluvgnu51nyXrHlyR177vSFZ+JDf/
-	fuWaf5U8iyjcVsn2SWYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zdkKumsNN4Wxab5I+hcdpuNLcK+51y2AOUth6UKN1rk=; b=mfjp5Gva3gkULA
+	QI8/5xGHiaE+N7Zc1oyXVfFuBDcH5+03Dll69ti6AWr0gckqqOOgJG0VUjwNqrs17R4vRbrN896C5
+	zqhPDW5UMFzHxRAVbbGyzAAdjbeVmcoqrB0+wrBQvKEbsRjOapHbCuhwLmrskIgXDGRe1KSMF/MEW
+	PBkbCg5wBtL10eZTH9fAWf8M9VFLXArI4vhc4e0d7uhwCAZ/Oo2WeEuvuGBPq2PBpLGLRG0NcboLQ
+	Q5e2GsUifnSNcdNS/ep6aizPjAFfVJ1S3yyjpIMzcaV4d3vgBpAOqJZDpLewT2opvB0jvzogINfm/
+	DJf1hK4f4ZYPofc9X+JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCxIp-0004Er-Qd; Sat, 14 Mar 2020 03:17:31 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jCxHq-0003Q8-7h; Sat, 14 Mar 2020 03:16:30 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCxHn-0003Qx-Qj; Sat, 14 Mar 2020 03:16:29 +0000
-X-UUID: 626e0e8715134193b429d73bff648e1b-20200313
+ id 1jCxHh-0003N3-DS; Sat, 14 Mar 2020 03:16:23 +0000
+X-UUID: a1ccd5291c2e4738ac5212da98f99550-20200313
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=Cp6nxJDmK0by+hyxNgFAHL/aGR7OEaDHIQICFVZiGaQ=; 
- b=NAxn80v6BI852R+Ii3cMKJ4RmIW4wwZ7+AUJp1okdJU2yE0ObCm/sAOpLsOSDTn7QedDBuYmtJ6JEkKfR48I7dLIDbp0wANVIiVqTpGidlqhBxILbRnHpiS8de/jCm9cyyz9dAbeDdsk/1zCEG1mnnhpBml8xHJGpFecpZaZSRs=;
-X-UUID: 626e0e8715134193b429d73bff648e1b-20200313
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=YAtFprbEne3aSZz7JwyfciYW/D36KWtz75LLZ+igOYI=; 
+ b=rYS25dAToOayfxUq0sLY2CN0nKiha5fkPu8HSgbMA2H7NMO4Rra0pKQxYveFC+LKbEVusJ/fmp7OOV8niL0zwKjrxowm9dQycBVqrcNTPb6YqfDEvqxpl4dyqBwbH5WCdCpjCK8bvYMqEad9y6NJ8gkoa3zLly5bwCFBXawvD0Y=;
+X-UUID: a1ccd5291c2e4738ac5212da98f99550-20200313
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1198304115; Fri, 13 Mar 2020 19:16:18 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Mar 2020 20:16:29 -0700
+ with ESMTP id 2021369532; Fri, 13 Mar 2020 19:16:11 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Mar 2020 20:16:08 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 14 Mar 2020 11:15:31 +0800
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 14 Mar 2020 11:13:49 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Sat, 14 Mar 2020 11:15:58 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v1 0/2] scsi: ufs: add error recovery for suspend and resume
- in ufs-mediatek
-Date: Sat, 14 Mar 2020 11:15:58 +0800
-Message-ID: <20200314031600.10616-1-stanley.chu@mediatek.com>
+Subject: [PATCH v1 1/2] scsi: ufs: export ufshcd_link_recovery for vendor's
+ error recovery
+Date: Sat, 14 Mar 2020 11:15:59 +0800
+Message-ID: <20200314031600.10616-2-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200314031600.10616-1-stanley.chu@mediatek.com>
+References: <20200314031600.10616-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5C892599D836B07E4273D5D50073766BC77ACDA29FAE6827C18AF61F3F5B7CE52000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_201627_884268_7A2D5B0E 
-X-CRM114-Status: UNSURE (   5.87  )
+X-CRM114-CacheID: sfid-20200313_201621_459493_50C8143D 
+X-CRM114-Status: UNSURE (   7.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -97,19 +100,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+export ufshcd_link_recovery to allow vendors to recover failed link
+in vendor's callbacks.
 
-This patchset adds error recovery flow for suspend and resume in ufs-mediatek driver.
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+---
+ drivers/scsi/ufs/ufshcd.c | 3 ++-
+ drivers/scsi/ufs/ufshcd.h | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 
-Stanley Chu (2):
-  scsi: ufs: export ufshcd_link_recovery for vendor's error recovery
-  scsi: ufs-mediatek: add error recovery for suspend and resume
-
- drivers/scsi/ufs/ufs-mediatek.c | 12 ++++++++++--
- drivers/scsi/ufs/ufshcd.c       |  3 ++-
- drivers/scsi/ufs/ufshcd.h       |  1 +
- 3 files changed, 13 insertions(+), 3 deletions(-)
-
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index cd33d07c56cf..ca9b6898648a 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -3812,7 +3812,7 @@ static int ufshcd_uic_change_pwr_mode(struct ufs_hba *hba, u8 mode)
+ 	return ret;
+ }
+ 
+-static int ufshcd_link_recovery(struct ufs_hba *hba)
++int ufshcd_link_recovery(struct ufs_hba *hba)
+ {
+ 	int ret;
+ 	unsigned long flags;
+@@ -3839,6 +3839,7 @@ static int ufshcd_link_recovery(struct ufs_hba *hba)
+ 
+ 	return ret;
+ }
++EXPORT_SYMBOL_GPL(ufshcd_link_recovery);
+ 
+ static int __ufshcd_uic_hibern8_enter(struct ufs_hba *hba)
+ {
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index 269ddb92bb55..e701960f8669 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -779,6 +779,7 @@ int ufshcd_alloc_host(struct device *, struct ufs_hba **);
+ void ufshcd_dealloc_host(struct ufs_hba *);
+ int ufshcd_hba_enable(struct ufs_hba *hba);
+ int ufshcd_init(struct ufs_hba * , void __iomem * , unsigned int);
++int ufshcd_link_recovery(struct ufs_hba *hba);
+ int ufshcd_make_hba_operational(struct ufs_hba *hba);
+ void ufshcd_remove(struct ufs_hba *);
+ int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
 -- 
 2.18.0
 _______________________________________________
