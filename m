@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3212918565F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:44:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 547AC18565E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:44:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GjKN37ylK6228cZkL65ApszR5rlBDxIRyI9RWdT1XNY=; b=emGzuUIRrgmQoH
-	bSxwE/vpsv2xOUxDcw4cGBuob37IE9KHWEf8qpAnwCS9dpsoKmuo8FsxRMKkOFucWDMoY38u7eleJ
-	iHDdFpabycEehzpRO+g9C77VqCNM6HwcPzm+szbh9chuNclW5oeKUjaYOX9dfX7Shgj8Ae4ychGel
-	mNUedi1FKsbOu0EXL88Fq0KENPmX5LDoK1w5MBhNOW4MxaMQxgLWcYiz+ffiOXUkn3XIrlO+vvFq4
-	jd+e7vmieJi2LP1iMxHPkfldWrpskgRRbVDWHkxcTQq5VLzBnA8HSGa/nyEl84yY9MP8Sg52Bd4Dy
-	ZT6l8owu/xI3fCvbGWlw==;
+	List-Owner; bh=jQ2f/DAQ+XEX8LHSxNKOtB/0Af4HwMwOutaPaiLK14Y=; b=MlpKamzCEEdS6i
+	6r9SC3vdbmyPYXc5Xtwv2EhAKpn4ZrKzXvqCbtNE8SEeuw9YVBUiblPyM/6f5foaRdbwZbip9irPn
+	s2p9atyAr7ytWqW5rNHZkxyxDqY/MOIUCzRbt4mOQRzxlqPuNYcTDhaLYaxb9bRxpQcq4BhbIFlBs
+	P6qOh4sfPG/bf8VP2lxvpipdRaUb+EM1WkSKvJXvUNaeSDXTkqcM0+aSYPUuUtFzbJz8LtgIkpirD
+	ailQ9MGnVe8kxm97xVrmuTKydso/L/FgOyoK/00c+B/ZqthYC3S5A/ITAS1sf4Xb5oQFoXd/cGNT6
+	Pt1ULwoSv1qHfmf1/Xxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDEa0-0002Ej-75; Sat, 14 Mar 2020 21:44:24 +0000
+	id 1jDEZm-0001wn-UN; Sat, 14 Mar 2020 21:44:10 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDEZF-0001ne-Dj
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:39 +0000
+ id 1jDEZF-0001nf-B8
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:38 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id C84168202;
- Sat, 14 Mar 2020 21:44:19 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 7439D8211;
+ Sat, 14 Mar 2020 21:44:20 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 3/7] ARM: omap2plus_defconfig: Enable zram as loadable modules
-Date: Sat, 14 Mar 2020 14:43:24 -0700
-Message-Id: <20200314214328.13342-3-tony@atomide.com>
+Subject: [PATCH 4/7] ARM: omap2plus_defconfig: Enable more droid4 devices as
+ loadable modules
+Date: Sat, 14 Mar 2020 14:43:25 -0700
+Message-Id: <20200314214328.13342-4-tony@atomide.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200314214328.13342-1-tony@atomide.com>
 References: <20200314214328.13342-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_144337_499244_ED4A5B01 
-X-CRM114-Status: UNSURE (   5.50  )
+X-CRM114-CacheID: sfid-20200314_144337_424743_E95EDCC9 
+X-CRM114-Status: UNSURE (   6.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,35 +66,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable zram as loadable modules. This allows mounting some part of
-memory as swap on low memory devices.
+Enable more droid4 devices as loadable modules:
+
+- We have an isl29028 proximity sensor
+
+- Battery has an EEPROM that can be read with w1_ds250x
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/configs/omap2plus_defconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm/configs/omap2plus_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
 --- a/arch/arm/configs/omap2plus_defconfig
 +++ b/arch/arm/configs/omap2plus_defconfig
-@@ -78,6 +78,8 @@ CONFIG_MODULE_SRCVERSION_ALL=y
- CONFIG_PARTITION_ADVANCED=y
- CONFIG_BINFMT_MISC=y
- CONFIG_CMA=y
-+CONFIG_ZSMALLOC=m
-+CONFIG_PGTABLE_MAPPING=y
- CONFIG_NET=y
- CONFIG_PACKET=y
- CONFIG_UNIX=y
-@@ -150,6 +152,8 @@ CONFIG_MTD_NAND_OMAP2=y
- CONFIG_MTD_NAND_OMAP_BCH=y
- CONFIG_MTD_SPI_NOR=m
- CONFIG_MTD_UBI=y
-+CONFIG_ZRAM=m
-+CONFIG_ZRAM_WRITEBACK=y
- CONFIG_BLK_DEV_LOOP=y
- CONFIG_BLK_DEV_RAM=y
- CONFIG_BLK_DEV_RAM_SIZE=16384
+@@ -283,6 +283,7 @@ CONFIG_GPIO_PALMAS=y
+ CONFIG_GPIO_TWL4030=y
+ CONFIG_W1=m
+ CONFIG_HDQ_MASTER_OMAP=m
++CONFIG_W1_SLAVE_DS250X=m
+ CONFIG_POWER_AVS=y
+ CONFIG_POWER_RESET=y
+ CONFIG_POWER_RESET_GPIO=y
+@@ -504,6 +505,7 @@ CONFIG_IIO_SW_TRIGGER=m
+ CONFIG_IIO_ST_ACCEL_3AXIS=m
+ CONFIG_CPCAP_ADC=m
+ CONFIG_TI_AM335X_ADC=m
++CONFIG_SENSORS_ISL29028=m
+ CONFIG_BMP280=m
+ CONFIG_PWM=y
+ CONFIG_PWM_OMAP_DMTIMER=m
 -- 
 2.25.1
 
