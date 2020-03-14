@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35F44185481
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 04:46:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B58E185482
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 04:47:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rwxPVCudh4SDBUIyE5QJx2NsriA5DmkurJmhJIl13vI=; b=boULTPKbk1TU29+QHmukH9abjr
-	CY0mCVgpRH4DGzEdm3KfEqcdeBFSI64uwZeXlUZiuOCxanys8C2uJ6kWbsc+NH7VtJ6Ikv6Y/r5op
-	DchJqE79eocmVojLFLalKPHujqD/UcmVt2WikhTCG1QphtwCkS496x245Qy4vfWwUlNLiSltBjqDb
-	T6oEceTTWyO8URyr5u0N5mfXlAZqK07wlX4GYwHZGt/pAPZrpNLDAYpyi/irWemWEWqi3C7jBDb6m
-	tpAk4fDKN3EjLWv2W2rGxWlAmcsQKXfBDsglxbfRUqNP4xiHoy0nbvOiLkMi9wl0AOH7zjhBoEb0t
-	SMTm1+Xg==;
+	bh=4RIKJX4fDFeNSX35mSQg9c/hb5+X9vXiYi0gJc2NAeY=; b=tHWnk1W5hYY05Y5y/MUq/unFq+
+	5znuJ1eWYJNPxLd6FPeusnr/WhRgA68sbb+4zbAxwgApj7SeZPQGRfTXJVNYgLdiX/e0dK6vHCZ2S
+	E/jgrZQtS+Y7QjAP40YZAp+4TabYwf+FPOqPgCazcZbYRhCX9FJK7LjQmB90XoEhQNLdxf54JjUeY
+	JV2WdJ7dEB4j11wcqa8ayFT8kJPwVdoPV4UYyW+comBNFSQjgN5XGa8OGU9pCMzsOuNO+ndEWgPz7
+	CL01cDVHH6j5f96mLnFw0zV7W72Ybv0t2Dga9pzBNDGC820KWahjCj0CSh9BV2YrQXfJkiILX2do7
+	1E7+Wdfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCxl9-0006IT-I2; Sat, 14 Mar 2020 03:46:47 +0000
+	id 1jCxlM-0006Xz-GY; Sat, 14 Mar 2020 03:47:00 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCxjC-0003ce-RI
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 03:44:48 +0000
+ id 1jCxjE-0003eZ-VF
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 03:44:50 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D3971A1983;
- Sat, 14 Mar 2020 04:44:45 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AC8F51A1973;
+ Sat, 14 Mar 2020 04:44:47 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 974B61A1952;
- Sat, 14 Mar 2020 04:44:35 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E6FFF1A194B;
+ Sat, 14 Mar 2020 04:44:37 +0100 (CET)
 Received: from titan.ap.freescale.net (titan.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1974A402F3;
- Sat, 14 Mar 2020 11:44:24 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E4131402A5;
+ Sat, 14 Mar 2020 11:44:25 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: Zhiqiang.Hou@nxp.com, Minghuan.Lian@nxp.com, mingkai.hu@nxp.com,
  bhelgaas@google.com, robh+dt@kernel.org, shawnguo@kernel.org,
@@ -43,17 +43,16 @@ To: Zhiqiang.Hou@nxp.com, Minghuan.Lian@nxp.com, mingkai.hu@nxp.com,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v6 05/11] dt-bindings: pci: layerscape-pci: Add compatible
- strings for ls1088a and ls2088a
-Date: Sat, 14 Mar 2020 11:30:32 +0800
-Message-Id: <20200314033038.24844-6-xiaowei.bao@nxp.com>
+Subject: [PATCH v6 06/11] PCI: layerscape: Fix some format issue of the code
+Date: Sat, 14 Mar 2020 11:30:33 +0800
+Message-Id: <20200314033038.24844-7-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20200314033038.24844-1-xiaowei.bao@nxp.com>
 References: <20200314033038.24844-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_204447_043385_6B99482E 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20200313_204449_151367_D4290332 
+X-CRM114-Status: UNSURE (   7.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -82,38 +81,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible strings for ls1088a and ls2088a.
+Fix some format issue of the code in EP driver.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 ---
 v2:
  - No change.
 v3:
- - Use one valid combination of compatible strings.
+ - No change.
 v4:
- - Add the comma between the two compatible.
+ - No change.
 v5:
  - No change.
 v6:
  - No change.
 
- Documentation/devicetree/bindings/pci/layerscape-pci.txt | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/pci/controller/dwc/pci-layerscape-ep.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/layerscape-pci.txt b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-index 99a386e..daa99f7 100644
---- a/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-@@ -24,6 +24,8 @@ Required properties:
-         "fsl,ls1028a-pcie"
-   EP mode:
- 	"fsl,ls1046a-pcie-ep", "fsl,ls-pcie-ep"
-+	"fsl,ls1088a-pcie-ep", "fsl,ls-pcie-ep"
-+	"fsl,ls2088a-pcie-ep", "fsl,ls-pcie-ep"
- - reg: base addresses and lengths of the PCIe controller register blocks.
- - interrupts: A list of interrupt outputs of the controller. Must contain an
-   entry for each entry in the interrupt-names property.
+diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+index 0d151ce..0691d9a 100644
+--- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
++++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+@@ -63,7 +63,7 @@ static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
+ }
+ 
+ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+-				  enum pci_epc_irq_type type, u16 interrupt_num)
++				enum pci_epc_irq_type type, u16 interrupt_num)
+ {
+ 	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+ 
+@@ -87,7 +87,7 @@ static const struct dw_pcie_ep_ops pcie_ep_ops = {
+ };
+ 
+ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+-					struct platform_device *pdev)
++				 struct platform_device *pdev)
+ {
+ 	struct dw_pcie *pci = pcie->pci;
+ 	struct device *dev = pci->dev;
 -- 
 2.9.5
 
