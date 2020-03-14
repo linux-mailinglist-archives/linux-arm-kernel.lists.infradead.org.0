@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 547AC18565E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:44:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFCF918565D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:43:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jQ2f/DAQ+XEX8LHSxNKOtB/0Af4HwMwOutaPaiLK14Y=; b=MlpKamzCEEdS6i
-	6r9SC3vdbmyPYXc5Xtwv2EhAKpn4ZrKzXvqCbtNE8SEeuw9YVBUiblPyM/6f5foaRdbwZbip9irPn
-	s2p9atyAr7ytWqW5rNHZkxyxDqY/MOIUCzRbt4mOQRzxlqPuNYcTDhaLYaxb9bRxpQcq4BhbIFlBs
-	P6qOh4sfPG/bf8VP2lxvpipdRaUb+EM1WkSKvJXvUNaeSDXTkqcM0+aSYPUuUtFzbJz8LtgIkpirD
-	ailQ9MGnVe8kxm97xVrmuTKydso/L/FgOyoK/00c+B/ZqthYC3S5A/ITAS1sf4Xb5oQFoXd/cGNT6
-	Pt1ULwoSv1qHfmf1/Xxw==;
+	List-Owner; bh=R/3LbICgnJgs4AxVxM7xQwvuJQ6XPbFghRRG8+DniWk=; b=Qzmfs5KK5Dy/br
+	e7a4SlKcN+nIP5VWwTT6ekwcHBcuLBSZTcfnIM/zLX+Wxds9K9yb9vNePhzUDflkrbA25IpVX/D0A
+	MSmRgqTISMITjOKiIaUqTxm9xZaAT8sfk+YBCaJXsIzUBmmaTewBlNos7g4mrClZ0RTYDFTHaX93x
+	adFKTGbjftEx1WzrHXjYDw1U4f/IQDJAEb1vFpOD6kRu90Y70Bu7DjeYeyDvDhVfZkC6rO3Di8Uqy
+	99VC5rEybw+E6Sdif2oFMwL1vCmoll43qr8O7pZwuCxOiKM3o28rpyCbp7SpdGJQXxkvJxzAZYrr9
+	uI/j3d9L76Jc6w3kl64Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDEZm-0001wn-UN; Sat, 14 Mar 2020 21:44:10 +0000
+	id 1jDEZO-0001pF-V1; Sat, 14 Mar 2020 21:43:46 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDEZF-0001nf-B8
+ id 1jDEZF-0001ni-Dc
  for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:43:38 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 7439D8211;
- Sat, 14 Mar 2020 21:44:20 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 2C709827D;
+ Sat, 14 Mar 2020 21:44:21 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 4/7] ARM: omap2plus_defconfig: Enable more droid4 devices as
- loadable modules
-Date: Sat, 14 Mar 2020 14:43:25 -0700
-Message-Id: <20200314214328.13342-4-tony@atomide.com>
+Subject: [PATCH 5/7] ARM: omap2plus_defconfig: Enable McPDM optional PMIC
+ clock as modules
+Date: Sat, 14 Mar 2020 14:43:26 -0700
+Message-Id: <20200314214328.13342-5-tony@atomide.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200314214328.13342-1-tony@atomide.com>
 References: <20200314214328.13342-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_144337_424743_E95EDCC9 
-X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-CacheID: sfid-20200314_144337_498326_F7A6A7E8 
+X-CRM114-Status: UNSURE (   6.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -66,11 +66,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable more droid4 devices as loadable modules:
-
-- We have an isl29028 proximity sensor
-
-- Battery has an EEPROM that can be read with w1_ds250x
+The McPDM module is only usable on hardware where it's module clock
+is wired to the PMIC. Let's enable the optional PMIC module clocks
+for this so boards can use McPDM.
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
@@ -80,22 +78,15 @@ Signed-off-by: Tony Lindgren <tony@atomide.com>
 diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
 --- a/arch/arm/configs/omap2plus_defconfig
 +++ b/arch/arm/configs/omap2plus_defconfig
-@@ -283,6 +283,7 @@ CONFIG_GPIO_PALMAS=y
- CONFIG_GPIO_TWL4030=y
- CONFIG_W1=m
- CONFIG_HDQ_MASTER_OMAP=m
-+CONFIG_W1_SLAVE_DS250X=m
- CONFIG_POWER_AVS=y
- CONFIG_POWER_RESET=y
- CONFIG_POWER_RESET_GPIO=y
-@@ -504,6 +505,7 @@ CONFIG_IIO_SW_TRIGGER=m
- CONFIG_IIO_ST_ACCEL_3AXIS=m
- CONFIG_CPCAP_ADC=m
- CONFIG_TI_AM335X_ADC=m
-+CONFIG_SENSORS_ISL29028=m
- CONFIG_BMP280=m
- CONFIG_PWM=y
- CONFIG_PWM_OMAP_DMTIMER=m
+@@ -488,6 +488,8 @@ CONFIG_RTC_DRV_PALMAS=m
+ CONFIG_RTC_DRV_OMAP=m
+ CONFIG_RTC_DRV_CPCAP=m
+ CONFIG_DMADEVICES=y
++CONFIG_CLK_TWL6040=m
++CONFIG_COMMON_CLK_PALMAS=m
+ CONFIG_OMAP_IOMMU=y
+ CONFIG_REMOTEPROC=y
+ CONFIG_OMAP_REMOTEPROC=m
 -- 
 2.25.1
 
