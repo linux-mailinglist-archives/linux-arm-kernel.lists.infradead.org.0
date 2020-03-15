@@ -2,56 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CD5B185BD7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 11:05:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 449A2185C12
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 11:55:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ZFKCeWrSoAMJlUwW6BFlmPYTzxsv6To0LmyYFJWN7M=; b=Jhlq+Ac3E5C9JP
-	/Bem2xZoGxr0Ixx5mVDoxSp3btXbnWO7rxNer+Mw9fg7XHMtTRiZuPa4hpBKsFC/1IG2xSb0ql8MV
-	n5PWylFIdhXWPnnMv8Rfo44VqwWPba3nVvjv3GamaiKJupqc/hh4naVSAK9o1mGsPAa2dC14vAOGP
-	SqOHEh2Al+g4z7GOU2HFesji/i8JSmYUUZcf2oNho2enQGlARJZZUrIM58C+t7GgeRbLL7wnFU3M3
-	bK3Pws0b8hKeB2zeU5wLnRtkYjRKcdO6JQj/MjIcTgt8mfJzXIxVxh6eTR3cm68u9VoHmnaaUVS4N
-	lgEMuWfWvz8nNVCq8JXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MYm02ysnpI5FhzmuoxtQivuP1jV/zP8WixEC2gFT0EA=; b=npEnx4S8MkNY/i
+	k8sfYqGCS7nCxq//nWDjmDZfVLD4lHp0tdGP1kMG94WLQysCz21NCcG5t3bBMeXvGfl+EDbmjcQkI
+	2UOcx0kRQP2r3djuKNoGtgU/C95or5PUcyBCzaq2jojS99f8+5HRwqnE9sT+AdhMTtKI7GhGAMnuS
+	bfUNSGNU4eQY0DXSTGyPieX2hC/14UGflLZSusZvjlKScYksaEtkNZecU4wwQs9cpDLPnaF41L5UW
+	0zdfPL95iswQ+rGEVq5B8xo6yBCShLhaFdNkQWtO/nh9D7U+qrYQT8ozTFAyds2mSJ6g492uOqGY1
+	wrEeqqtlcQSExE+U2CYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDQ8q-0000cQ-Sf; Sun, 15 Mar 2020 10:05:08 +0000
-Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
+	id 1jDQvU-0008Hk-S6; Sun, 15 Mar 2020 10:55:24 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDQ8U-0000W5-EE
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 10:04:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
- s=mail; t=1584266662; h=from:from:sender:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=8K4at98VmVZ/sFGzndyiaIeGeVtmYp4j33U5NwycmlE=;
- b=XXxWrlPvXOPw8dW7Zjt0Mj2VJjdLgy7L/rL79sPujQA4p3Kw5LOsk6GmefWjmi6Y/W7EaQ
- AS4rdhpXZo6VXsaaiDQKlpFNrWS44lsEacQ6DjKK1nY6W73CA4tzAKm7iu1ckJl2MU6vNF
- 5KrkOENWf1EGUI4ieLRvp5VxTfQtlvU=
-From: Paul Cercueil <paul@crapouillou.net>
-To: Nick Dyer <nick@shmanahar.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 2/2] input: atmel_mxt_ts: Add support for optional regulator
-Date: Sun, 15 Mar 2020 11:04:16 +0100
-Message-Id: <20200315100416.14151-2-paul@crapouillou.net>
-In-Reply-To: <20200315100416.14151-1-paul@crapouillou.net>
-References: <20200315100416.14151-1-paul@crapouillou.net>
+ id 1jDQvN-0008H6-Tl
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 10:55:19 +0000
+Received: by mail-pl1-x644.google.com with SMTP id a23so6529294plm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 15 Mar 2020 03:55:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=qIYlGm4yxuJWPGZE9jBq7SClwzl5SsZAe4AqIxxnJxw=;
+ b=Ytc0lS9YIYTtXj0J3ndnY9qI6fhM69eKrhKeJ5hWX7SeOO/4qrOucPykSm86CZNO8A
+ s/cwNwQwBvzidl9CI6IhyG44/yBrU+4+zrHEI7pMeo8jauUmWDcdGSe8oPOqm60mngsh
+ IjaJvwxItnBtcLy7FjbinFyXmDxPa0hsdOOMGBuGw1NXGBey3CvcBlOWREWvIDBlKFM4
+ pmc3VmBp9GHVODEGzIibmrVO83GA4HTOczijkd1We60WzCZSB4ufS30e9uZ9elP2uPdy
+ F/11X6sogex+WjgabQT3H+1L767Pk8EzB003F5exqaqQIOCLNWzjBfMZy/XjkwdJ9sfd
+ KIbw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=qIYlGm4yxuJWPGZE9jBq7SClwzl5SsZAe4AqIxxnJxw=;
+ b=IafwAvTfwlLu9cbvTzdNnuqOz20XZc7PjVZq7yCv3mvj2HAwQV3Qy4N2I3dpJWNnDs
+ oNp7zOtGi+nIjUWTbyscBuudOGE/uN4B9sBYDGXmBQzw4w6+nDZ5CZbbCtwvM70fkmeO
+ ObaKQrSgBJ3qE6UZ3VblwsvZ1jCjnlRpntAiRVFZxSPlZFevo6fm2VoZxQJ4mwVU0IQj
+ ncemBkVIZEJpEz/3vnVgVJyYEmzbkBJbNGb24hHq6AkMQdeweFaTiZfDJOi8vF3Frex9
+ w9p0ZML5L1XYLECl9K/d1aFonOooYlPX9G0bAY0XqsTqtfFLiguzSO/63cM9bf7BWbRs
+ d9aQ==
+X-Gm-Message-State: ANhLgQ0FEbBupUEHqFR5aZUWVh94ApGTJ0fmIsK0ZSgg8c9Q/IN9mMoj
+ pNYq5Hn6JsZqwePn9CjWqzI=
+X-Google-Smtp-Source: ADFU+vvvi9/IwQKAHenUTXb90ToqvygF+HzJRijet4tByzTJotX9aoip3MjS9Alg2JwZYozZzCUysA==
+X-Received: by 2002:a17:90a:9a90:: with SMTP id
+ e16mr19401817pjp.164.1584269715129; 
+ Sun, 15 Mar 2020 03:55:15 -0700 (PDT)
+Received: from nishad ([106.51.232.103])
+ by smtp.gmail.com with ESMTPSA id j17sm18311949pfr.176.2020.03.15.03.55.11
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 15 Mar 2020 03:55:14 -0700 (PDT)
+Date: Sun, 15 Mar 2020 16:25:07 +0530
+From: Nishad Kamdar <nishadkamdar@gmail.com>
+To: Peter Chen <Peter.Chen@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Joe Perches <joe@perches.com>
+Subject: [PATCH] USB: chipidea: Use the correct style for SPDX License
+ Identifier
+Message-ID: <20200315105503.GA4440@nishad>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_030446_685311_85966F11 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200315_035517_986716_CC1A9EE9 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [nishadkamdar[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -70,95 +104,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Cercueil <paul@crapouillou.net>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-input@vger.kernel.org
+Cc: linux-usb@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for an optional "vdd" regulator, as some platforms require a
-regulator to be enabled for the touchscreen to be enabled.
+This patch corrects the SPDX License Identifier style in
+header files related to ChipIdea Highspeed Dual Role Controller.
+For C header files Documentation/process/license-rules.rst
+mandates C-like comments (opposed to C source files where
+C++ style should be used).
 
-Signed-off-by: Paul Cercueil <paul@crapouillou.net>
+Changes made by using a script provided by Joe Perches here:
+https://lkml.org/lkml/2019/2/7/46.
+
+Suggested-by: Joe Perches <joe@perches.com>
+Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
 ---
- drivers/input/touchscreen/atmel_mxt_ts.c | 25 +++++++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ drivers/usb/chipidea/bits.h        | 2 +-
+ drivers/usb/chipidea/ci.h          | 2 +-
+ drivers/usb/chipidea/ci_hdrc_imx.h | 2 +-
+ drivers/usb/chipidea/otg.h         | 2 +-
+ drivers/usb/chipidea/otg_fsm.h     | 2 +-
+ drivers/usb/chipidea/udc.h         | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/input/touchscreen/atmel_mxt_ts.c b/drivers/input/touchscreen/atmel_mxt_ts.c
-index ae60442efda0..b3511dad475a 100644
---- a/drivers/input/touchscreen/atmel_mxt_ts.c
-+++ b/drivers/input/touchscreen/atmel_mxt_ts.c
-@@ -22,6 +22,7 @@
- #include <linux/interrupt.h>
- #include <linux/of.h>
- #include <linux/property.h>
-+#include <linux/regulator/consumer.h>
- #include <linux/slab.h>
- #include <linux/gpio/consumer.h>
- #include <asm/unaligned.h>
-@@ -308,6 +309,7 @@ struct mxt_data {
- 	struct t7_config t7_cfg;
- 	struct mxt_dbg dbg;
- 	struct gpio_desc *reset_gpio;
-+	struct regulator *vdd;
- 
- 	/* Cached parameters from object table */
- 	u16 T5_address;
-@@ -3103,6 +3105,22 @@ static int mxt_probe(struct i2c_client *client, const struct i2c_device_id *id)
- 
- 	disable_irq(client->irq);
- 
-+	data->vdd = devm_regulator_get_optional(&client->dev, "vdd");
-+	if (IS_ERR(data->vdd)) {
-+		error = PTR_ERR(data->vdd);
-+		dev_err(&client->dev, "Failed to get regulator: %d\n", error);
-+		return error;
-+	}
-+
-+	if (data->vdd) {
-+		error = regulator_enable(data->vdd);
-+		if (error) {
-+			dev_err(&client->dev,
-+				"Failed to enable regulator: %d\n", error);
-+			return error;
-+		}
-+	}
-+
- 	if (data->reset_gpio) {
- 		msleep(MXT_RESET_GPIO_TIME);
- 		gpiod_set_value(data->reset_gpio, 1);
-@@ -3111,7 +3129,7 @@ static int mxt_probe(struct i2c_client *client, const struct i2c_device_id *id)
- 
- 	error = mxt_initialize(data);
- 	if (error)
--		return error;
-+		goto err_disable_regulator;
- 
- 	error = sysfs_create_group(&client->dev.kobj, &mxt_attr_group);
- 	if (error) {
-@@ -3125,6 +3143,9 @@ static int mxt_probe(struct i2c_client *client, const struct i2c_device_id *id)
- err_free_object:
- 	mxt_free_input_device(data);
- 	mxt_free_object_table(data);
-+err_disable_regulator:
-+	if (data->vdd)
-+		regulator_disable(data->vdd);
- 	return error;
- }
- 
-@@ -3136,6 +3157,8 @@ static int mxt_remove(struct i2c_client *client)
- 	sysfs_remove_group(&client->dev.kobj, &mxt_attr_group);
- 	mxt_free_input_device(data);
- 	mxt_free_object_table(data);
-+	if (data->vdd)
-+		regulator_disable(data->vdd);
- 
- 	return 0;
- }
+diff --git a/drivers/usb/chipidea/bits.h b/drivers/usb/chipidea/bits.h
+index 98da99510be7..b1540ce93264 100644
+--- a/drivers/usb/chipidea/bits.h
++++ b/drivers/usb/chipidea/bits.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * bits.h - register bits of the ChipIdea USB IP core
+  *
+diff --git a/drivers/usb/chipidea/ci.h b/drivers/usb/chipidea/ci.h
+index d49d5e1235d0..644ecaef17ee 100644
+--- a/drivers/usb/chipidea/ci.h
++++ b/drivers/usb/chipidea/ci.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * ci.h - common structures, functions, and macros of the ChipIdea driver
+  *
+diff --git a/drivers/usb/chipidea/ci_hdrc_imx.h b/drivers/usb/chipidea/ci_hdrc_imx.h
+index de2aac9a2868..c2051aeba13f 100644
+--- a/drivers/usb/chipidea/ci_hdrc_imx.h
++++ b/drivers/usb/chipidea/ci_hdrc_imx.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0+
++/* SPDX-License-Identifier: GPL-2.0+ */
+ /*
+  * Copyright 2012 Freescale Semiconductor, Inc.
+  */
+diff --git a/drivers/usb/chipidea/otg.h b/drivers/usb/chipidea/otg.h
+index 4f8b8179ec96..5e7a6e571dd2 100644
+--- a/drivers/usb/chipidea/otg.h
++++ b/drivers/usb/chipidea/otg.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * Copyright (C) 2013-2014 Freescale Semiconductor, Inc.
+  *
+diff --git a/drivers/usb/chipidea/otg_fsm.h b/drivers/usb/chipidea/otg_fsm.h
+index 2b49d29bf2fb..1f5c5ae0e71e 100644
+--- a/drivers/usb/chipidea/otg_fsm.h
++++ b/drivers/usb/chipidea/otg_fsm.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * Copyright (C) 2014 Freescale Semiconductor, Inc.
+  *
+diff --git a/drivers/usb/chipidea/udc.h b/drivers/usb/chipidea/udc.h
+index e023735d94b7..ebb11b625bb8 100644
+--- a/drivers/usb/chipidea/udc.h
++++ b/drivers/usb/chipidea/udc.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * udc.h - ChipIdea UDC structures
+  *
 -- 
-2.25.1
+2.17.1
 
 
 _______________________________________________
