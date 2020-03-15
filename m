@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0685185F6F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 20:17:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8FB0185F71
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 20:18:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=/19IOnfZ63p+HgdAfXWIpQfoJ4S979k85YOHndNEgBw=; b=L8Hh3Aua/dePt2m6S8LjnWqgvF
-	DPROH+GrDTkT8hWdIHFRMEjKPeDNfgn4pLQa5SooNXed0MbIs4Eb4xOPl3AG4H1mw5M/sFvgnTMQl
-	PrWaPv5ZzWBTFLYTSTl70jmNcbky8+fMjfndggB4C30p4RzCUbxOusXca6uhWNPoqxAfO+Iq2epwb
-	2ZRh0LVMAM5eNMDXMCageMNI0SXlzmtPKYH83E1jZceC1VDF6QQcoGstiB0CqZpuXnSzPhpu4hKv1
-	BQIOab3E+xKvwQEflAfATwRnfeFnUa89OC01EgdEo2XwsbTbbcV+2Tld+XsPcKfpCPN1ZQheEo0Uw
-	ikLJw4kg==;
+	bh=5SCAVeJC3oOgJxjaFyBbNLsluTOxn/bFYTNTKhEHjOA=; b=txR1lJHWTKT5pURKzyk7yiCUQW
+	OcgqCBDpl5++81MEYL3yU8Qzs3ak+FuOZTAI7zLeXbpx1WP7jhVGwRpjSMukzotfjhxu24NyvApvH
+	nXuWW33+HnqAzXADg1ivVCTQcTrc3V22w6G7iaf9GX2hXYiv6UqNArLyVxZA/zF3OKw9JblcN+m/u
+	KtK9y0ji9gnd1PGRXKQthUlwNZbCDx7sXz1xUAkAU/j1D6aR8VpgictwZaxc8l+AfNDEpw9gyAY7v
+	3R+SvBFM3kpEyDCuGCPRmVhn93gHc8RFv3WIICvDl7FM3wSLtEqkK1nTLMbPe7bCv4MGJg2S8iBdO
+	Y9ueQTkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDYlg-0004fO-EE; Sun, 15 Mar 2020 19:17:48 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jDYlr-0004v3-N4; Sun, 15 Mar 2020 19:17:59 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDYkf-00040K-Fk
+ id 1jDYkh-00041b-9K
  for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 19:16:50 +0000
-Received: by mail-pl1-x642.google.com with SMTP id ay11so6906188plb.0
+Received: by mail-pl1-x644.google.com with SMTP id t14so6886002plr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Mar 2020 12:16:45 -0700 (PDT)
+ Sun, 15 Mar 2020 12:16:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=eovzZ3kqQ8LWP7qRD6GFAmQY5h+MQlshBlGVHRZ0WS4=;
- b=RRcNDYRssy/5F/i6fSsXIrzZIurGe7f0t/4Mw66MPPKQffthBAgpxwOksDd9+dfgaQ
- he1hqnwJw8pX6Ae2IXDZ5BqhMoAP75d2X6iQ7XcyCaaxX69+gWFGmBOB0iZeLA0UVMrw
- hiFXCEsTh5j3aQv5+oe4hbvVchgdBGB3bKSFAQN5Da5ytD5w3yciM18yjVivsQfnPRUd
- 5Jlu8e4+48mHQUELnWlqVAVetxjKJ1J4pDHPgZQVE9XnBtKeAZ5lQjNlgMBAEFQaNZlM
- Dh5dvjE7eY+FJm9nhWYEe8pkYfHmvZB9mR2zl3De3Tn72c0ffbcD0+cI/o/MG8MxMe8c
- djdA==
+ bh=HxxSTtrSU1OUBJi+Btc1qI+H62ceRlYBsDcUYNsAgNo=;
+ b=ZyuiwfM+wsd2yK61TSSDV+f3USkgmEfbIMsJUYYfIVC8c3KUfxDklNV+sc5xGoI92Q
+ aYJwJvwcwg7CX3P3cb28svAtzHXPL2Riv93ogQLpl19sQ1YJwt2YFv+UdRsmGn7ScnAK
+ fF4djxEVIjoezFqgKUev9mCl3WSKcKZqOWcCRIdwLaGdUFtj0OqTLEU+I8HNmQ3ryMTb
+ L1dvly+3xZS5sl6Qd8u38FcbsYmY9eMsbc74lTj6EunNXiof4OJDrLudwGNytTHsLSEu
+ Xc4yT6pzYO3qBqobjN12+P4/DS112wgehF1bvbOn3k0TR0wVhWZ4BBDc0on/dmFvY793
+ dGqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=eovzZ3kqQ8LWP7qRD6GFAmQY5h+MQlshBlGVHRZ0WS4=;
- b=Hyb73FOIdvVq7lvhP/njDDPqN1IJ5n1/T8YY+U+rM8sCaNyAW80rCuH1nfn1VFpG1C
- 1uwOQmm+nCYPDLrMGdvhXeHt92z8/FoDBlRMWoKk0ooz4/lAb4QNokFqC8KO8NugQzQA
- novVEqVw6+bB89sW4lE0B8Opq7sNVHBEMIFCZqaqUAte+zcvXbG/qHWez55m4YPtXoQL
- BCBflrpduAOqfFe17KaSWx+P5B9vQffUGv7JGkIMiZVDeD24mj6QCgShZgsB9xbE9gf+
- OeCw5GERRgUmBkP5c+2BQKiMPnXmXRyRRgY8Vq1vldIhZ8ct/dA3zQ/d5DjUmXbdsmsk
- HbNg==
-X-Gm-Message-State: ANhLgQ1ZGN/N8ZhF5a2I7bpm0bW50wwfwqhDwiex8FdbdV10gajgm8n2
- N6h7trd++RDybNYSGRayXWQ=
-X-Google-Smtp-Source: ADFU+vtGG84O3T3lRIFGnx5viv8DsI8lcGdsQ6bREhmqtjVIuQIaYeJAZgzlqOUyH0BhSNIlodiyAQ==
-X-Received: by 2002:a17:902:7c02:: with SMTP id
- x2mr5325875pll.30.1584299804620; 
- Sun, 15 Mar 2020 12:16:44 -0700 (PDT)
+ bh=HxxSTtrSU1OUBJi+Btc1qI+H62ceRlYBsDcUYNsAgNo=;
+ b=H6mX0v49E8uaFL1qw2zA5aJ2jxbUbSM3I7vJmN1+G/3oYwffz6djLXj5UH618NAlr8
+ EeJu4/Axuirc68sFWFQfwOJ5bP1Q6PJly27UNNgRPUzpFkARAosMMzYx0RYzWndyKEo8
+ q/qa4lvLRms3m9FhiD6jkrfwupzEA+7uPDsiKusmPSBWgM7qFUq2mySrXSvMTcFe15OD
+ JxlHzECpYEnQzTO5DsPM+hkmL5VZL6S+9KAfT0KUwOVs52DkjB9QCqC7CbRyKs91Zgxa
+ T3adeRvG7KpWFTK1pmiJFk6D2Pv5pUnrMcFHzrklPE5zFr2+ExcTXDewLK1at6HLg9Nu
+ fxrQ==
+X-Gm-Message-State: ANhLgQ219S3CygPtYFWr9PS9P/McZjil+KmZes0hmJmTlBiEHRjHV1QP
+ LlTEVyIYdfsxAxYh2WOzOnG/BXlNLXM=
+X-Google-Smtp-Source: ADFU+vvkL4f9mQwxQwHT+G9COHjk//vx+BspxGwPvXJqnCfl+rVs7Od8EQCDULapoatPXSq7AKaI6Q==
+X-Received: by 2002:a17:90b:3109:: with SMTP id
+ gc9mr7409912pjb.186.1584299806362; 
+ Sun, 15 Mar 2020 12:16:46 -0700 (PDT)
 Received: from taoren-ubuntu-R90MNF91.thefacebook.com
  (c-24-4-25-55.hsd1.ca.comcast.net. [24.4.25.55])
- by smtp.gmail.com with ESMTPSA id 13sm61431882pgo.13.2020.03.15.12.16.42
+ by smtp.gmail.com with ESMTPSA id 13sm61431882pgo.13.2020.03.15.12.16.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 Mar 2020 12:16:44 -0700 (PDT)
+ Sun, 15 Mar 2020 12:16:45 -0700 (PDT)
 From: rentao.bupt@gmail.com
 To: Felipe Balbi <balbi@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -70,23 +70,23 @@ To: Felipe Balbi <balbi@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: [PATCH v2 3/6] usb: gadget: aspeed: allow to set usb strings in
- device tree
-Date: Sun, 15 Mar 2020 12:16:29 -0700
-Message-Id: <20200315191632.12536-4-rentao.bupt@gmail.com>
+Subject: [PATCH v2 4/6] usb: gadget: aspeed: allow to set device IDs in device
+ tree
+Date: Sun, 15 Mar 2020 12:16:30 -0700
+Message-Id: <20200315191632.12536-5-rentao.bupt@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200315191632.12536-1-rentao.bupt@gmail.com>
 References: <20200315191632.12536-1-rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_121645_554531_68F2FA9D 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20200315_121647_368308_2485F4B0 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rentao.bupt[at]gmail.com]
@@ -119,97 +119,57 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tao Ren <rentao.bupt@gmail.com>
 
-If "vhub,string-descriptor" device tree property is defined, the driver
-will load string descriptors from device tree; otherwise, the default
-string descriptors will be used.
+The patch overrides idVendor, idProduct and bcdDevice fields in vhub
+Device Descriptor if according device tree properties are defined.
 
 Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 ---
- No change in v2:
-   - the patch is added into the series since v2.
+ Changes in v2:
+   - update per-vhub device descriptor instance instead of the global
+     default descriptor.
 
- drivers/usb/gadget/udc/aspeed-vhub/hub.c | 58 +++++++++++++++++++++++-
- 1 file changed, 57 insertions(+), 1 deletion(-)
+ drivers/usb/gadget/udc/aspeed-vhub/hub.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/drivers/usb/gadget/udc/aspeed-vhub/hub.c b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-index 35edf37553f0..421631d86a17 100644
+index 421631d86a17..13fba91aad6a 100644
 --- a/drivers/usb/gadget/udc/aspeed-vhub/hub.c
 +++ b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-@@ -941,9 +941,61 @@ static int ast_vhub_str_alloc_add(struct ast_vhub *vhub,
- 	return 0;
+@@ -887,6 +887,26 @@ void ast_vhub_hub_reset(struct ast_vhub *vhub)
+ 	writel(0, vhub->regs + AST_VHUB_EP1_STS_CHG);
  }
  
-+static const struct {
-+	const char *name;
-+	u8 id;
-+} str_id_map[] = {
-+	{"manufacturer",	AST_VHUB_STR_MANUF},
-+	{"product",		AST_VHUB_STR_PRODUCT},
-+	{"serial-number",	AST_VHUB_STR_SERIAL},
-+	{},
-+};
-+
-+static int ast_vhub_of_parse_str_desc(struct ast_vhub *vhub,
-+				      const struct device_node *desc_np)
++static void ast_vhub_of_parse_dev_desc(struct ast_vhub *vhub,
++				       const struct device_node *vhub_np)
 +{
-+	u32 langid;
-+	int ret = 0;
-+	int i, offset;
-+	const char *str;
-+	struct device_node *child;
-+	struct usb_string str_array[AST_VHUB_STR_INDEX_MAX];
-+	struct usb_gadget_strings lang_str = {
-+		.strings = (struct usb_string *)str_array,
-+	};
++	u16 id;
++	u32 data;
 +
-+	for_each_child_of_node(desc_np, child) {
-+		if (of_property_read_u32(child, "reg", &langid))
-+			continue; /* no language identifier specified */
-+
-+		if (!usb_validate_langid(langid))
-+			continue; /* invalid language identifier */
-+
-+		lang_str.language = langid;
-+		for (i = offset = 0; str_id_map[i].name; i++) {
-+			str = of_get_property(child, str_id_map[i].name, NULL);
-+			if (str) {
-+				str_array[offset].s = str;
-+				str_array[offset].id = str_id_map[i].id;
-+				offset++;
-+			}
-+		}
-+		str_array[offset].id = 0;
-+		str_array[offset].s = NULL;
-+
-+		ret = ast_vhub_str_alloc_add(vhub, &lang_str);
-+		if (ret)
-+			break;
++	if (!of_property_read_u32(vhub_np, "vhub-vendor-id", &data)) {
++		id = (u16)data;
++		vhub->vhub_dev_desc.idVendor = cpu_to_le16(id);
 +	}
-+
-+	return ret;
++	if (!of_property_read_u32(vhub_np, "vhub-product-id", &data)) {
++		id = (u16)data;
++		vhub->vhub_dev_desc.idProduct = cpu_to_le16(id);
++	}
++	if (!of_property_read_u32(vhub_np, "vhub-device-revision", &data)) {
++		id = (u16)data;
++		vhub->vhub_dev_desc.bcdDevice = cpu_to_le16(id);
++	}
 +}
 +
- static int ast_vhub_init_desc(struct ast_vhub *vhub)
+ static struct usb_gadget_string_container*
+ ast_vhub_str_container_alloc(struct ast_vhub *vhub)
  {
- 	int ret;
-+	struct device_node *desc_np;
-+	const struct device_node *vhub_np = vhub->pdev->dev.of_node;
- 
+@@ -1000,6 +1020,7 @@ static int ast_vhub_init_desc(struct ast_vhub *vhub)
  	/* Initialize vhub Device Descriptor. */
  	memcpy(&vhub->vhub_dev_desc, &ast_vhub_dev_desc,
-@@ -960,7 +1012,11 @@ static int ast_vhub_init_desc(struct ast_vhub *vhub)
+ 		sizeof(vhub->vhub_dev_desc));
++	ast_vhub_of_parse_dev_desc(vhub, vhub_np);
  
- 	/* Initialize vhub String Descriptors. */
- 	INIT_LIST_HEAD(&vhub->vhub_str_desc);
--	ret = ast_vhub_str_alloc_add(vhub, &ast_vhub_strings);
-+	desc_np = of_get_child_by_name(vhub_np, "vhub-strings");
-+	if (desc_np)
-+		ret = ast_vhub_of_parse_str_desc(vhub, desc_np);
-+	else
-+		ret = ast_vhub_str_alloc_add(vhub, &ast_vhub_strings);
- 
- 	return ret;
- }
+ 	/* Initialize vhub Configuration Descriptor. */
+ 	memcpy(&vhub->vhub_conf_desc, &ast_vhub_conf_desc,
 -- 
 2.17.1
 
