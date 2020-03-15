@@ -2,57 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98F19185BAD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:51:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AD12185BB1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:52:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lDPHUCmkpNitjjbyvapfw72f+zGBROSxeMyU4/TlwNY=; b=Gk77HolsuBL6v2
-	ha/e2Qkc+fkBgHn7pEqWM5E4e4PlBLb1mDcS0f5r0waJHwRmSUnS7zxzWoT8hSF8T60kyK2AhAP2y
-	FPz7/+/Npn7EqLqCFK1WoSjoT/MFLcIzBesr3ZqdZJ/Wg39zmqDc3IYt99ZHFW50lUPtZFQPdxtw7
-	5qUfoty6QaPGq8QrLdmZmu2sKJD/Z7zKNukzDaLq6W2bn/ttOEE45zw1t2lxwBK/jZR8t5whdXZqP
-	qyKyiuJu6BI2o/9yP90TV4reqUvavxHiO09lRNQhInUJTQvi7TLEvY76lubIf7WSCVF0H+3Dm7z5B
-	yhNAAWoPzreGCdHr/iaQ==;
+	List-Owner; bh=WuMwEwG9OFukpLWK+dTB600AVBO+znzjpQzim7yYO/Y=; b=pj3SrtEHLow4r9
+	HIdUNoB0KeCm8Rfma51ouh5UQT3oEGB1pDXeVbBL+bWPeyd+j7oylY2HHi9bK1wQTpzVhRcOuQ4lW
+	H27LtUSbJCKU+3P8MyZW5I1sA0GbwFp/zEAfJH1pUx9RbcsTJr+s4NIDHHfIQoQrXJ2vllJbOBo+B
+	pmYueaH34+6k08bYS2wvkIR+jn54AsHo49P8WHVpy+wHy25mj6fdAWp3ihv0KJmRzoPcAgDplvZEf
+	Ky3U2EC5tHYoWE/MBAPeMvdN6HPhwnt+oxLLovwQuX36VD+bDAfUFRBXx193WPUO9g5DS9Bi6A6R/
+	EoIxMno0oUFJvtjp8xYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDPvj-0004G6-AL; Sun, 15 Mar 2020 09:51:35 +0000
-Received: from www1102.sakura.ne.jp ([219.94.129.142])
+	id 1jDPwi-0004ZB-CC; Sun, 15 Mar 2020 09:52:36 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDPvW-0004F4-PH; Sun, 15 Mar 2020 09:51:24 +0000
-Received: from fsav302.sakura.ne.jp (fsav302.sakura.ne.jp [153.120.85.133])
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 02F9pKNh006446;
- Sun, 15 Mar 2020 18:51:20 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Received: from www1102.sakura.ne.jp (219.94.129.142)
- by fsav302.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav302.sakura.ne.jp);
- Sun, 15 Mar 2020 18:51:19 +0900 (JST)
-X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav302.sakura.ne.jp)
-Received: from localhost.localdomain (121.252.232.153.ap.dti.ne.jp
- [153.232.252.121]) (authenticated bits=0)
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 02F9pHI8006433
- (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
- Sun, 15 Mar 2020 18:51:19 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
-Subject: [PATCH] ARM: dts: rockchip: use DMA channels for UARTs for RK3288
-Date: Sun, 15 Mar 2020 18:51:15 +0900
-Message-Id: <20200315095115.10106-1-katsuhiro@katsuster.net>
-X-Mailer: git-send-email 2.25.1
+ id 1jDPwb-0004Y6-7g
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 09:52:31 +0000
+X-Originating-IP: 87.231.134.186
+Received: from localhost (87-231-134-186.rev.numericable.fr [87.231.134.186])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 6573720008;
+ Sun, 15 Mar 2020 09:52:15 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
+ <arm@kernel.org>, soc@kernel.org
+Subject: [GIT PULL] ARM: mvebu: dt64 for v5.7 (#1)
+Date: Sun, 15 Mar 2020 10:52:13 +0100
+Message-ID: <87h7yqx7w2.fsf@FE-laptop>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_025123_051862_9DF21F93 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200315_025229_406925_91B1DFC5 
+X-CRM114-Status: GOOD (  10.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,67 +58,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch enables to use DMAC for all UARTs that are connected to
-dmac_peri core for Rochchip RK3288.
+Hi,
 
-Only uart2 is connected different DMAC (dmac_bus_s) so keep current
-settings on this patch.
+Here is the first pull request for dt64 for mvebu for v5.7.
 
-Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
----
- arch/arm/boot/dts/rk3288.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+Gregory
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 8bcb4a51682e..e9f8a44f5f2a 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -420,6 +420,8 @@ uart0: serial@ff180000 {
- 		reg-io-width = <4>;
- 		clocks = <&cru SCLK_UART0>, <&cru PCLK_UART0>;
- 		clock-names = "baudclk", "apb_pclk";
-+		dmas = <&dmac_peri 1>, <&dmac_peri 2>;
-+		dma-names = "tx", "rx";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&uart0_xfer>;
- 		status = "disabled";
-@@ -433,6 +435,8 @@ uart1: serial@ff190000 {
- 		reg-io-width = <4>;
- 		clocks = <&cru SCLK_UART1>, <&cru PCLK_UART1>;
- 		clock-names = "baudclk", "apb_pclk";
-+		dmas = <&dmac_peri 3>, <&dmac_peri 4>;
-+		dma-names = "tx", "rx";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&uart1_xfer>;
- 		status = "disabled";
-@@ -459,6 +463,8 @@ uart3: serial@ff1b0000 {
- 		reg-io-width = <4>;
- 		clocks = <&cru SCLK_UART3>, <&cru PCLK_UART3>;
- 		clock-names = "baudclk", "apb_pclk";
-+		dmas = <&dmac_peri 7>, <&dmac_peri 8>;
-+		dma-names = "tx", "rx";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&uart3_xfer>;
- 		status = "disabled";
-@@ -472,6 +478,8 @@ uart4: serial@ff1c0000 {
- 		reg-io-width = <4>;
- 		clocks = <&cru SCLK_UART4>, <&cru PCLK_UART4>;
- 		clock-names = "baudclk", "apb_pclk";
-+		dmas = <&dmac_peri 9>, <&dmac_peri 10>;
-+		dma-names = "tx", "rx";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&uart4_xfer>;
- 		status = "disabled";
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+
+  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+
+are available in the Git repository at:
+
+  git://git.infradead.org/linux-mvebu.git tags/mvebu-dt64-5.7-1
+
+for you to fetch changes up to d136d2588b21b1a07515632ed61120c9f262909b:
+
+  arm64: dts: marvell: Fix cpu compatible for AP807-quad (2020-03-15 10:37:00 +0100)
+
+----------------------------------------------------------------
+mvebu dt64 for 5.7 (part 1)
+
+Improve network support on two Armada 8040 based board:
+Clearfog GT 8 and Macchiatobin.
+
+Add ethernet alias on Espressobin for U-Boot support.
+
+Fix various dt compilation issue or warning.
+
+----------------------------------------------------------------
+Amit Kucheria (1):
+      arm64: dts: marvell: Fix cpu compatible for AP807-quad
+
+Russell King (2):
+      arm64: dts: clearfog-gt-8k: set gigabit PHY reset deassert delay
+      arm64: dts: mcbin: support 2W SFP modules
+
+Tomasz Maciej Nowak (3):
+      arm64: dts: marvell: espressobin: add ethernet alias
+      arm64: dts: marvell: espressobin: indicate dts version
+      arm64: dts: marvell: build ESPRESSObin variants
+
+Vadym Kochan (1):
+      arm64: dts: marvell: fix non-existed cpu referrence in armada-ap806-dual.dtsi
+
+ arch/arm64/boot/dts/marvell/Makefile                            | 3 +++
+ arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts    | 2 ++
+ arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts | 2 ++
+ arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts      | 2 ++
+ arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi        | 8 ++++++--
+ arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts      | 1 +
+ arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi              | 3 +++
+ arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi              | 5 +++++
+ arch/arm64/boot/dts/marvell/armada-ap807-quad.dtsi              | 8 ++++----
+ 9 files changed, 28 insertions(+), 6 deletions(-)
+
 -- 
-2.25.1
-
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
