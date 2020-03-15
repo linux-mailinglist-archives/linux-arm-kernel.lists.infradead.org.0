@@ -2,90 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97D52185C54
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 13:22:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CA3E185D40
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 14:51:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AAxI5JZ6al/sfa50RI4R+7meBMY7DyFdAC7cheeD5PY=; b=MMhGKZwj7iyglQ
-	H2yNbJCk8aSuJZd1XMuLJyLp7uNML+YxabU9WvUiVF6UKpnS/RGUcUIistgpBzZEhxoTWR5SL2oEq
-	rxBtNktUAYJdaEOLeHEVDa7nSR4zvael6fToz1qUaF7hhP7Qk9ZYK+6JHYZCa0+IUfcSptg0hl6qr
-	ZK+DfSwEG4uy8e4vhChxCnJeOXRAJ6kd98EdWelidLKQi7o4DINgh3EF0MWHytFTwc5KU0rA1Jykj
-	KMsgr0kD4iXKLlMBPWaaFtg9xik0Y1AJLcZng0rM3opoW4jJh08B+HV1+Artjcmc0rBlJTvpiLOj5
-	iZFg2YcgI3Xk7tiMhPEQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=obHvqPccM65LCB4AjUJO6Lbkzz1BikH0ZqUtGHNKNSs=; b=A/d
+	pKAmOd8vxDVlDfPt5b3GT7XdqBMwhRRuOAMbbT0913O5A0SJtVYcLfV38WuN9HJmWUX1whk3cCIBG
+	z6hgQEaEsfZRZ1/OXOHlJBmeEUevNq++bAqGSWq3nlMK1aa1lbPvn4zKlIkHiywb4PSYJMuXQTqV1
+	6oGZgMiGbBGT3A4R4U40ixxYHGQYQtng5dO73Zysu5AtEQ059Ozht1Vl0wkJo5dYgx+4ihgYH/VTD
+	su6vvJ4q7Bx3xbBBdobnlyj1p+m1TI4ctv9FKeXS+eQvWXuyUN/frbMJ++eINK57603tj4uMAfAZM
+	rSY6/dTWfwpeYsdGUjaIfP3Dtyqhw9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDSHU-0000oO-IY; Sun, 15 Mar 2020 12:22:12 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jDTfS-0003ul-92; Sun, 15 Mar 2020 13:51:02 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDSHI-0000mt-18
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 12:22:02 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z12so5798397wmf.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Mar 2020 05:21:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=vha27SiAYzAhcDNBs+Dl9n27oWyXGNvtt3qs0cPd6sQ=;
- b=vdx/AWpbJGf6eGvcUWhRBV5AGujIONlqn5ljlh0AgQ66Phu9FKyLyrmWy/dwSOhasL
- JiPWXsOZNSIAh8A1Wh1pWA7qgDOjt1EFP0EB/r+auvvRyG+xVTnXol7hnamr1lIZwvOe
- HaadraWXgolGcPtFXWLhEaD5NJbjlJh3oMnL9DOpFK2M2jU/D338nlC9jpdyrrfmIAxs
- S4EbWrB7Vlkjo1cKRTeq+NbcrV9RNCiXTyvKOFpxfuHfRf4f5FMYoFOJ6UA0BBdnFb/m
- hR82zI96c6qAGYF+9oq2mSz+7ZVkMPxoixusUO2LlJg3Ow3eKhlB5oIVPkHRHQcP5AYl
- BbaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:cc:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=vha27SiAYzAhcDNBs+Dl9n27oWyXGNvtt3qs0cPd6sQ=;
- b=ldzTZ5m8D+QBiyfHRem9gqWgD1cbxUW4lHqRI1mtRlFURNtBLalPiwKcEbwRkqg13S
- wQmYITsqCzmcA//WymgDPGUURok4tIIy1a+aDgmp6BX9NBUU0HIR3Yrf/XvoFOR/kSUq
- 4FIvwk34u3VV37h96rL7Tc8Z2VKCTZA0eipNExUc6gL5uQzSZj3TUIXwtACEy9a5WU2Z
- j9zjQbASsdxDrbbA9da9M8NG8s9jSF8wm1s8JRLSe9mdKpEeJC8roYqDsbYLb8f311o0
- kz48lo+Ch7dQvVYjsg6J0MTgkjtqQgJqC+AU2Faozm2sB2XpGh9KUFCc3xmuC0GiU9NZ
- k/Yw==
-X-Gm-Message-State: ANhLgQ1s4LdeqA35ekv7S7pKJ1V+MkQqnGDQZORjixDhBiWnM50BIF2E
- VU4OL2hOzf17rG5Ik4yQJ4xfuw==
-X-Google-Smtp-Source: ADFU+vtQnU95n7qy8u75UCKhpXx1uwrD1M1UBVCsAjszEJYzX3P1D8bBHGSvVEKd+7LWflB5zO4tYg==
-X-Received: by 2002:a1c:a950:: with SMTP id s77mr21714742wme.176.1584274917762; 
- Sun, 15 Mar 2020 05:21:57 -0700 (PDT)
-Received: from Armstrongs-MacBook-Pro.local
- ([2a01:e35:2ec0:82b0:9df:5498:f5ea:8be8])
- by smtp.gmail.com with ESMTPSA id v26sm7733803wra.7.2020.03.15.05.21.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 15 Mar 2020 05:21:57 -0700 (PDT)
-Subject: Re: [PATCH] pwm: meson: Fix confusing indentation
-To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
- Krzysztof Kozlowski <krzk@kernel.org>
-References: <20200314113524.23031-1-krzk@kernel.org>
- <20200314214347.dun6ith5zamaa3m6@pengutronix.de>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Message-ID: <658d2096-8a2d-7cd0-b4fd-88f4516ac7a9@baylibre.com>
-Date: Sun, 15 Mar 2020 13:21:40 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:45.0)
- Gecko/20100101 Thunderbird/45.8.0
-MIME-Version: 1.0
-In-Reply-To: <20200314214347.dun6ith5zamaa3m6@pengutronix.de>
+ id 1jDTfD-0003tC-B9
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 13:50:49 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7FCA41A04DF;
+ Sun, 15 Mar 2020 14:50:41 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B1A2E1A04CE;
+ Sun, 15 Mar 2020 14:50:36 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AB35C402D0;
+ Sun, 15 Mar 2020 21:50:30 +0800 (SGT)
+From: Dong Aisheng <aisheng.dong@nxp.com>
+To: linux-clk@vger.kernel.org
+Subject: [PATCH V6 00/12] clk: imx8: add new clock binding for better pm
+ support
+Date: Sun, 15 Mar 2020 21:43:44 +0800
+Message-Id: <1584279836-29825-1-git-send-email-aisheng.dong@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_052200_211929_0EF2EF75 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200315_065047_666848_5F30B320 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,48 +65,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- kernel@pengutronix.de, linux-amlogic@lists.infradead.org,
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch series is a preparation for the MX8 Architecture improvement.
+As for IMX SCU based platforms like MX8QM and MX8QXP, they are comprised
+of a couple of SS(Subsystems) while most of them within the same SS
+can be shared. e.g. Clocks, Devices and etc.
+
+However, current clock binding is using SW IDs for device tree to use
+which can cause troubles in writing the common <soc>-ss-xx.dtsi file for
+different SoCs.
+
+This patch series aims to introduce a new binding which is more close to
+hardware and platform independent and can makes us write a more general
+drivers for different SCU based SoCs.
+
+Another important thing is that on MX8, each Clock resource is associated
+with a power domain. So we have to attach that clock device to the power
+domain in order to make it work properly. Further more, the clock state
+will be lost when its power domain is completely off during suspend/resume,
+so we also introduce the clock state save&restore mechanism.
+
+It's based on latest shanw/for-next branch.
+
+The top commit is:
+4559a11e48d5 Merge branch 'imx/defconfig' into for-next
+
+ChangeLog:
+v5->v6:
+ * add scu clk unregister if add provider failed
+v4->v5:
+ * Address all comments from Stephen
+v3->v4:
+ * use clk-indices for LPCG to fetch each clks offset from dt
+v2->v3:
+ * change scu clk into two cells binding
+ * add clk pm patches to ease the understand of the changes
+v1->v2:
+ * SCU clock changed to one cell clock binding inspired by arm,scpi.txt
+   Documentation/devicetree/bindings/arm/arm,scpi.txt
+ * Add required power domain property
+ * Dropped PATCH 3&4 first, will send the updated version accordingly
+   after the binding is finally determined,
 
 
-Le 14/03/2020 =E0 22:43, Uwe Kleine-K=F6nig a =E9crit :
-> On Sat, Mar 14, 2020 at 12:35:24PM +0100, Krzysztof Kozlowski wrote:
->> Fix indentation of return block.  Smatch warning:
->>     drivers/pwm/pwm-meson.c:139 meson_pwm_request() warn: inconsistent i=
-ndenting
->>
->> Reported-by: kbuild test robot <lkp@intel.com>
->> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> =
+Dong Aisheng (12):
+  dt-bindings: firmware: imx-scu: new binding to parse clocks from
+    device tree
+  dt-bindings: clock: imx-lpcg: add support to parse clocks from device
+    tree
+  clk: imx: scu: add two cells binding support
+  clk: imx: scu: bypass cpu power domains
+  clk: imx: scu: allow scu clk to take device pointer
+  clk: imx: scu: add runtime pm support
+  clk: imx: scu: add suspend/resume support
+  clk: imx: imx8qxp-lpcg: add parsing clocks from device tree
+  clk: imx: lpcg: allow lpcg clk to take device pointer
+  clk: imx: clk-imx8qxp-lpcg: add runtime pm support
+  clk: imx: lpcg: add suspend/resume support
+  clk: imx: scu: unregister clocks if add provider failed
 
-> This exists since commit 211ed630753d ("pwm: Add support for Meson PWM
-> Controller") in 2016. Added Neil to Cc:.
-> =
+ .../bindings/arm/freescale/fsl,scu.txt        |  12 +-
+ .../bindings/clock/imx8qxp-lpcg.txt           |  36 ++-
+ drivers/clk/imx/clk-imx8qxp-lpcg.c            | 139 +++++++++++
+ drivers/clk/imx/clk-imx8qxp.c                 | 136 ++++++-----
+ drivers/clk/imx/clk-lpcg-scu.c                |  53 +++-
+ drivers/clk/imx/clk-scu.c                     | 231 +++++++++++++++++-
+ drivers/clk/imx/clk-scu.h                     |  56 ++++-
+ include/dt-bindings/clock/imx8-lpcg.h         |  14 ++
+ include/dt-bindings/firmware/imx/rsrc.h       |  23 ++
+ 9 files changed, 610 insertions(+), 90 deletions(-)
+ create mode 100644 include/dt-bindings/clock/imx8-lpcg.h
 
-> Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> =
+-- 
+2.23.0
 
-> Thanks
-> Uwe
-> =
-
-
-Missing
-
-Fixes: 211ed630753d ("pwm: Add support for Meson PWM Controller")
-
-With that
-
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
-
-Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
