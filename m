@@ -2,63 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA48185BA0
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:44:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCB54185BA8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:47:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CNqzHhEXdjSVc4HHF4QEI1tRmPAoj9p8QjDHn+EBax4=; b=bTyrKr1Utb7v4XUlCxCpg1maw
-	sOBaT+3/eSAcAd4gOw3hj04JUM8rpu3vHGFOPo+sj9oM1x6OUQCbYNVbgoEppuYxzYeqDkD2EzPPW
-	KZjlj7CZrY2p6ZHP22DAppFrDqUZSxf1njhG+3RgxtPdtMLXE7retdliXJcxDd36l0b9k8EcEbdh0
-	IKU7zFEoZR3dFydGpzUJGmhCRrcEEqW9NjZk3bVDdo5KNe7R0HblzKSPz5xRS2jsVuioAs6ZzvGcV
-	VHPlOZGJF5vZrSRe5yVOe474qtuT3Ftux/20aveU1M8gC+h5Fg1HhUnQO7zcHeIdGY6OpFK/7P2q2
-	5G5TFzKKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YgYqwnVrRs5L3hBrCEjFyvJk8IrxtX+C/SiK52fDxGc=; b=uun5EKHSszmetI
+	lBrcLTP8upMSDW8br7XSr6f8HtG+2UcjyzzjfFg+mFCTs2DJmKi05AaEQ4VwbJzkiS45XdH0cNyNI
+	RZAgGdx8yAD97w6LlJWVs3EMU9vTZF5WavCnqKpM/wfhvhIczBlc5GkNRxbcTsB3PRiDUM4xVCitY
+	9S32vQkhVUUbIKdAriQcp08Q++AyFiah907fvJE7xg1SMV6qJ1hv41KKU0uuh4Y1Mv5w7yqP01EDI
+	t8X1KLp78zdEEJAND3uPYVvalUNwFsEBJFpaDWwhwo85fPf6qAwZoQ3JywMB3xdkTYubre2sWoMJn
+	lzvQrLPh+fumd2RTe4/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDPoo-0000yo-VC; Sun, 15 Mar 2020 09:44:26 +0000
-Received: from www1102.sakura.ne.jp ([219.94.129.142])
+	id 1jDPrB-0002hJ-J8; Sun, 15 Mar 2020 09:46:53 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDPof-0000yR-5C; Sun, 15 Mar 2020 09:44:19 +0000
-Received: from fsav101.sakura.ne.jp (fsav101.sakura.ne.jp [27.133.134.228])
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 02F9iDJp004785;
- Sun, 15 Mar 2020 18:44:13 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Received: from www1102.sakura.ne.jp (219.94.129.142)
- by fsav101.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav101.sakura.ne.jp);
- Sun, 15 Mar 2020 18:44:13 +0900 (JST)
-X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav101.sakura.ne.jp)
-Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
- (authenticated bits=0)
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 02F9iDK0004781
- (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
- Sun, 15 Mar 2020 18:44:13 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Subject: Re: [PATCH] ARM: dts: rockchip: use DMA channels for UARTs of
- TinkerBoard
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <20200314142327.25568-1-katsuhiro@katsuster.net>
- <2930126.sCcUyySgUU@diego>
-From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-Message-ID: <0b36bf84-0e7b-7287-a094-9fd2f33167ee@katsuster.net>
-Date: Sun, 15 Mar 2020 18:44:13 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jDPr2-0002gr-Cx
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 09:46:45 +0000
+Received: by mail-io1-xd41.google.com with SMTP id v3so14070524iom.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 15 Mar 2020 02:46:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GNFfXHO2uILPgu0B1T3kwaBgaXjP+dlED6DVNl3sNIg=;
+ b=I+ZgyUWzIa8Yxi+0xMqH9yaVxAhiEOypJ/WXcO5ujz84CdXXQxL2d1ab/itSy71+MY
+ v1zS6OgxvE0Bn+Qa0JXfcz8RKJwprkoMCBipzhzZlHWCugVSwinT5j3lnrH2WDYlwZ01
+ eYOr9xN2OR+z2u3VNz+TrTa75FmvLhds4/9O2wY6HbEzs0xPbUZ28UtXN7LT2TXhup6Y
+ pkBRtDX0RpzM5wTDCNpUYBgBjIeYHAnSJprQYhPVixRf+4+i5CWwFDcVCSryxTo7o+n+
+ QvVX5JRwWD/Ek/EyR8q7MTRXZ3swX8IoaPhhLPo/I0oYQ9PA+4e/gT6RGNbVnejmq4aN
+ w9FA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GNFfXHO2uILPgu0B1T3kwaBgaXjP+dlED6DVNl3sNIg=;
+ b=grWAb/wXuZD2OdCJr1ayqg7BtnT5dZHQz/dkLHIh1+EHFOVt/4vhWr5qAvoYdpIcsk
+ WHdQx3EkYwnEN+sAxSFms1nRfHPu5LvDLaiKgzYunj7o+oGwjoFDIjX3CM5Sgfr0CWlV
+ pdHb6UEygFjIW0trcn3TT/hT/TGIHUAOnNdFJd5O8rYDljaduOfv/nm48um9yTaguz+3
+ OmgB8KvcBXIkkEelNnPxqbGEmyFaj2jcNUYvdPrteGjXroNbJpl10KRndEBQFJgJFl5q
+ LGyNkXISErY4EmtlKkZIB2cmkEsXcUNzc0dSYoU15daoTUzrHuo+AJ5WTFHV2o/9hxvo
+ 7jXA==
+X-Gm-Message-State: ANhLgQ1AcpJGYrizIUD7487q7UXB91UBM9H/mcMFidOJRQFmnZiK+PwG
+ qgW7ZknS+ReqX+HT4J/H2xDFBKoUYmwRYxGwIVo=
+X-Google-Smtp-Source: ADFU+vsewoQ8rLqcke0ekgyn+gsES6vdYQVgDzjdOdmXOPVuxzoaksZJ3jLUICWiRwD3y5hXFyjeMrRhGfoBBlDZBWk=
+X-Received: by 2002:a6b:f311:: with SMTP id m17mr19317386ioh.128.1584265603378; 
+ Sun, 15 Mar 2020 02:46:43 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <2930126.sCcUyySgUU@diego>
-Content-Language: en-US
+References: <20200310194854.831-1-linux.amoon@gmail.com>
+ <20200310194854.831-3-linux.amoon@gmail.com>
+ <CANAwSgR4fJK0uVANv-x-=iSL_hAKD8kvazACUsY9Meu5xonuqQ@mail.gmail.com>
+ <20200314182010.GB17580@kozik-lap>
+In-Reply-To: <20200314182010.GB17580@kozik-lap>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Sun, 15 Mar 2020 15:16:33 +0530
+Message-ID: <CANAwSgS1+6Dzv2XbmMUR40AbJePxUzWkKkBC1W9hBMGzaMWP3w@mail.gmail.com>
+Subject: Re: [PATCHv3 2/5] ARM: dts: exynos: Add missing usbdrd3 suspend clk
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_024417_429056_1749AAE8 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200315_024644_487842_9BC375E2 
+X-CRM114-Status: GOOD (  20.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [linux.amoon[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,53 +95,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, Felipe Balbi <balbi@kernel.org>,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gSGVpa28sCgo+IFRoaXMgYmVsb25ncyBpbiByazMyODguZHRzaSwgYXMgdGhpcyBpcyBk
-ZWZpbml0bHkgbm90IGJvYXJkLXNwZWNpZmljLCBhcwo+IHRoZSBkbWEtdWFydCBjb25uZWN0aW9u
-IGlzIGRvbmUgaW5zaWRlIHRoZSBzb2MuCj4gCj4gQXQgbGVhc3Qgb24gYXJtNjQgKHJrMzMyOCwg
-cHgzMCwgcHJvYmFibHkgbW9yZSkgd2UgYWxyZWFkeSBoYXZlIHRoZQo+IHVhcnQgZG1hcyBpbiB0
-aGUgY29yZSBkdHNpIHdpdGhvdXQgYW55IHByb2JsZW1zLgo+IAo+IElzIHRoZXJlIGFueSByZWFz
-b24gd2h5IHlvdSBvbmx5IGRpZCBhZGQgaXQgdG8gdGhlIHRpbmtlciBib2FyZCBvbmx5PwoKVGhl
-cmUgaXMgbm8gc3BlY2lhbCByZWFzb24uIFNpbXBseSBJIGRvbid0IGhhdmUgYW5kIG5vdCB0ZXN0
-ZWQgb24gb3RoZXIKYm9hcmRzIG9mIFJLMzI4OC4gQnV0IEkgaG9wZSB0aGVzZSBETUEgc2V0dGlu
-Z3MgY2FuIHdvcmsgY29ycmVjdGx5IG9uCm90aGVyIGJvYXJkcy4KCkknbGwgcmVzZW5kIHBhdGNo
-IGZvciByazMyODguZHRzaS4KCkJlc3QgUmVnYXJkcywKS2F0c3VoaXJvIFN1enVraQoKCk9uIDIw
-MjAvMDMvMTUgMDowOSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gSGksCj4gCj4gQW0gU2Ftc3Rh
-ZywgMTQuIE3DpHJ6IDIwMjAsIDE1OjIzOjI3IENFVCBzY2hyaWViIEthdHN1aGlybyBTdXp1a2k6
-Cj4+IFRoaXMgcGF0Y2ggZW5hYmxlcyB0byB1c2UgRE1BQyBmb3IgYWxsIFVBUlRzIHRoYXQgYXJl
-IGNvbm5lY3RlZCB0bwo+PiBkbWFjX3BlcmkgY29yZSBmb3IgVGlua2VyQm9hcmQuCj4+Cj4+IE9u
-bHkgdWFydDIgaXMgY29ubmVjdGVkIGRpZmZlcmVudCBETUFDIChkbWFjX2J1c19zKSBzbyBrZWVw
-IGN1cnJlbnQKPj4gc2V0dGluZ3Mgb24gdGhpcyBwYXRjaC4KPiAKPiBUaGlzIGJlbG9uZ3MgaW4g
-cmszMjg4LmR0c2ksIGFzIHRoaXMgaXMgZGVmaW5pdGx5IG5vdCBib2FyZC1zcGVjaWZpYywgYXMK
-PiB0aGUgZG1hLXVhcnQgY29ubmVjdGlvbiBpcyBkb25lIGluc2lkZSB0aGUgc29jLgo+IAo+IEF0
-IGxlYXN0IG9uIGFybTY0IChyazMzMjgsIHB4MzAsIHByb2JhYmx5IG1vcmUpIHdlIGFscmVhZHkg
-aGF2ZSB0aGUKPiB1YXJ0IGRtYXMgaW4gdGhlIGNvcmUgZHRzaSB3aXRob3V0IGFueSBwcm9ibGVt
-cy4KPiAKPiBJcyB0aGVyZSBhbnkgcmVhc29uIHdoeSB5b3Ugb25seSBkaWQgYWRkIGl0IHRvIHRo
-ZSB0aW5rZXIgYm9hcmQgb25seT8KPiAKPiAKPiBIZWlrbwo+IAo+IAo+PiBTaWduZWQtb2ZmLWJ5
-OiBLYXRzdWhpcm8gU3V6dWtpIDxrYXRzdWhpcm9Aa2F0c3VzdGVyLm5ldD4KPj4gLS0tCj4+ICAg
-YXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXRpbmtlci5kdHNpIHwgOCArKysrKysrKwo+PiAgIDEg
-ZmlsZSBjaGFuZ2VkLCA4IGluc2VydGlvbnMoKykKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
-L2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10
-aW5rZXIuZHRzaQo+PiBpbmRleCAzMTI1ODJjMWJkMzcuLjZlZmFiZWFmM2M2ZCAxMDA2NDQKPj4g
-LS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXRpbmtlci5kdHNpCj4+ICsrKyBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRzaQo+PiBAQCAtNDkxLDEwICs0OTEsMTQgQEAg
-JnRzYWRjIHsKPj4gICB9Owo+PiAgIAo+PiAgICZ1YXJ0MCB7Cj4+ICsJZG1hcyA9IDwmZG1hY19w
-ZXJpIDE+LCA8JmRtYWNfcGVyaSAyPjsKPj4gKwlkbWEtbmFtZXMgPSAidHgiLCAicngiOwo+PiAg
-IAlzdGF0dXMgPSAib2theSI7Cj4+ICAgfTsKPj4gICAKPj4gICAmdWFydDEgewo+PiArCWRtYXMg
-PSA8JmRtYWNfcGVyaSAzPiwgPCZkbWFjX3BlcmkgND47Cj4+ICsJZG1hLW5hbWVzID0gInR4Iiwg
-InJ4IjsKPj4gICAJc3RhdHVzID0gIm9rYXkiOwo+PiAgIH07Cj4+ICAgCj4+IEBAIC01MDMsMTAg
-KzUwNywxNCBAQCAmdWFydDIgewo+PiAgIH07Cj4+ICAgCj4+ICAgJnVhcnQzIHsKPj4gKwlkbWFz
-ID0gPCZkbWFjX3BlcmkgNz4sIDwmZG1hY19wZXJpIDg+Owo+PiArCWRtYS1uYW1lcyA9ICJ0eCIs
-ICJyeCI7Cj4+ICAgCXN0YXR1cyA9ICJva2F5IjsKPj4gICB9Owo+PiAgIAo+PiAgICZ1YXJ0NCB7
-Cj4+ICsJZG1hcyA9IDwmZG1hY19wZXJpIDk+LCA8JmRtYWNfcGVyaSAxMD47Cj4+ICsJZG1hLW5h
-bWVzID0gInR4IiwgInJ4IjsKPj4gICAJc3RhdHVzID0gIm9rYXkiOwo+PiAgIH07Cj4+ICAgCj4+
-Cj4gCj4gCj4gCj4gCj4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Krzysztof,
+
+On Sat, 14 Mar 2020 at 23:50, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Sat, Mar 14, 2020 at 07:02:33PM +0530, Anand Moon wrote:
+> > Hi Krzysztof,
+> >
+> > On Wed, 11 Mar 2020 at 01:19, Anand Moon <linux.amoon@gmail.com> wrote:
+> > >
+> > > Add new compatible strings for USBDRD3 for adding missing
+> > > suspend clk, exynos5422 usbdrd3 support two clk USBD300 and
+> > > SCLK_USBD300, so add missing suspemd_clk for Exynos542x DWC3 nodes.
+> > >
+> > > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> >
+> > My assumption based on the FSYS clock source diagram below was bit wrong.
+> > [0] https://imgur.com/gallery/zAiBoyh
+> >
+> > And again re-looking into the driver source code, it turn out their
+> > are *6 clock*
+> > Here is the correct mapping as per the Exynos5420 clock driver.
+> >
+> > USB-(phy@12100000)
+> > |___________________CLK_SCLK_USBD300
+> > |___________________CLK_SCLK_USBPHY300
+> >
+> > USB-(phy@12500000)
+> > |___________________CLK_SCLK_USBD301
+> > |___________________CLK_SCLK_USBPHY301
+> >
+> > USB-(dwc3@12000000)
+> > |___________________CLK_USBD300
+> > USB-(dwc3@12400000)
+> > |___________________CLK_USBD301
+> >
+> > Note: As per Exynos 5422 user manual, There are some more USB CLK
+> > configuration missing in GATE_IP_FSYS. So we could enable another dwc3 clk,
+> > If needed I would like too add this missing clk code and enable this
+> > clk for dwc3 driver.
+> >
+> > For some reason we already use CLK_USBD300 and CLK_USBD301
+> > for PHY nodes, which lead to this confusion. So we need to update PHY clock
+> > CLK_USBD300 with CLK_SCLK_USBD300 and clock CLK_USBD301 with CLK_SCLK_USBD301.
+> >
+> > Please share your thought on linking PHY nodes above and add new DWC3 clock
+> > and enable this clock.
+>
+> The real clock topology of Exynos5422 is not properly reflected in the
+> kernel. However cleaning this up is quite big task.
+>
+>
+> Best regards,
+> Krzysztof
+>
+
+I would like to fix all my patches with new finding and submit them
+once again for review.
+
+-Anand
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
