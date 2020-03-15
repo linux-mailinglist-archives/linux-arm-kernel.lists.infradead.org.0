@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83F771859F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 05:01:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36F741859F4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 05:01:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yIwSfQwxeaIBkBbOElxegS8c/KPryIlrFabPNHjKFfY=; b=TiUF/af6ojHDWS
-	XZrkBhmR2GY7hagd81u0IxHfJ8sS+MHFjieuEcWkxoZPoHnF+0isY653HZ5IswIo18wa6K4l6uFzP
-	rCxjPeRj5Ri6wYDVWsAoYy510IAkZwJGx6HZ6ongQh/MaDvDKWY7yv+o+14cRAw4OJDmlu1rQW/bs
-	5mayq7NyX1SrRDt2nzsJeQCU4ubjpxSCPmpbXhoWvQdQw49F5z2qzZGuhXlhkKWzN4s16HAE8Dddm
-	KLTtBn1ilngyn4glRozFi8saBFCViyOdCDGysp+DjruTyLU1fMsZ9KPKcgwp0rw+0TFGLR5AKz2wY
-	KzD0eD4kZKIZACs/ugBw==;
+	List-Archive:List-Unsubscribe:List-Id:Date:From:MIME-Version:Subject:To:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VUsjMVWHoG09DuxkasgLf4YWqaV29CCHQ40W4VqM9DI=; b=bekwJjKHZ0MA1L
+	GGbeAjtiAyPTh7oVEP2MCAZt1Ius57at4tk0VAVLBq+0SnI4eihjFaK4k97H/kgGEmpdONpukwfl0
+	GbksCavhC5QrrL6UkrxE7srx801eN2+VptJIQWzavz87eDDVmWr5bkA+pHpz4ukiyFxvUP9jcdWxB
+	44npYI/2D5e5HzrGK6Nl3ppDfVFLNT7LMRnzhzaogT1/+hdFZqlacI307fZivdBZ+me3T17vw4F+q
+	BDKC2ldw1PvN7YjtfD9D0jWHOjZaa2IWk+mq2Vn8T50W+CwTSKKSkg2U6h7+7As6PtcsKW0dpS63B
+	NMTKMAbhUMt9ytYKQ5ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDKSV-0001Aa-GU; Sun, 15 Mar 2020 04:01:03 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jDKT1-0001U1-Af; Sun, 15 Mar 2020 04:01:35 +0000
+Received: from m176148.mail.qiye.163.com ([59.111.176.148])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDKSN-00019d-2c
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 04:00:56 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id A700E15AD855B;
- Sat, 14 Mar 2020 21:00:53 -0700 (PDT)
-Date: Sat, 14 Mar 2020 21:00:52 -0700 (PDT)
-Message-Id: <20200314.210052.2035605917214699487.davem@davemloft.net>
-To: mklntf@gmail.com
-Subject: Re: [PATCH] net: stmmac: platform: Fix misleading interrupt error msg
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200312194625.GA6684@DEFRL0001.localdomain>
-References: <20200306163848.5910-1-mklntf@gmail.com>
- <20200311.230402.1496009558967017193.davem@davemloft.net>
- <20200312194625.GA6684@DEFRL0001.localdomain>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sat, 14 Mar 2020 21:00:54 -0700 (PDT)
+ id 1jDKSs-0001SD-Lb
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 04:01:28 +0000
+Received: from vivo.com (wm-8.qy.internal [127.0.0.1])
+ by m176148.mail.qiye.163.com (Hmail) with ESMTP id 1403C1A3D78;
+ Sun, 15 Mar 2020 12:01:19 +0800 (CST)
+Message-ID: <AOoADQCXCJCLyVN7qh-tYqrl.1.1584244879067.Hmail.hankecai@vivo.com>
+To: catalin.marinas@arm.com, will@kernel.org, broonie@kernel.org, 
+ alexios.zavras@intel.com, tglx@linutronix.de, allison@lohutok.net, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: =?UTF-8?B?W1BBVENIXSBhcm02NDogZml4IHNwZWxsaW5nIG1pc3Rha2UgImNhIG5vdCIgLT4gImNhbm5vdCI=?=
+X-Priority: 3
+X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com
+X-Originating-IP: 58.251.74.227
+MIME-Version: 1.0
+Received: from hankecai@vivo.com( [58.251.74.227) ] by ajax-webmail (
+ [127.0.0.1] ) ; Sun, 15 Mar 2020 12:01:19 +0800 (GMT+08:00)
+From: =?UTF-8?B?6Z+p56eR5omN?= <hankecai@vivo.com>
+Date: Sun, 15 Mar 2020 12:01:19 +0800 (GMT+08:00)
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZTlVOS0xCQkJDQkxLS0hKTFlXWShZQU
+ hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
+X-HM-Sender-Digest: e1kMHhlZQQ8JDh5XWRIfHhUPWUFZRzo0FDo*KjgjODE4NwItNUwKE1YP
+ IgoJF1VKVUpOQ09JT09DTEJKSEJVMxYaEhdVExoVEB4YGhI7DRINFFUYFBZFWVdZEgtZQVlOQ1VJ
+ TkpVTE9VSUlMWVdZCAFZQUlNSE83Bg++
+X-HM-Tid: 0a70dc5a6ef29394kuws1403c1a3d78
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_210055_120359_B2D33F4C 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200314_210126_850245_D175CD18 
+X-CRM114-Status: UNSURE (   6.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [59.111.176.148 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,49 +70,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: kernel@vivo.com, trivial@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Fuchs <mklntf@gmail.com>
-Date: Thu, 12 Mar 2020 20:46:25 +0100
+There is a spelling mistake in the comment, Fix it.
 
-> On Wed, Mar 11, 2020 at 11:04:02PM -0700, David Miller wrote:
->> From: Markus Fuchs <mklntf@gmail.com>
->> Date: Fri,  6 Mar 2020 17:38:48 +0100
->> 
->> > Not every stmmac based platform makes use of the eth_wake_irq or eth_lpi
->> > interrupts. Use the platform_get_irq_byname_optional variant for these
->> > interrupts, so no error message is displayed, if they can't be found.
->> > Rather print an information to hint something might be wrong to assist
->> > debugging on platforms which use these interrupts.
->> > 
->> > Signed-off-by: Markus Fuchs <mklntf@gmail.com>
->> 
->> What do you mean the error message is misleading right now?
->> 
->> It isn't printing anything out at the moment in this situation.
-> 
-> Commit 7723f4c5ecdb driver core: platform: Add an error message to 
->     platform_get_irq*()
-> 
-> The above commit added a generic dev_err() output to the platform_get_irq_byname
-> function.
-> 
-> My patch uses the platform_get_irq_byname_optional function, which
-> doesn't print anything and adds the original dev_err output as dev_info output 
-> to the driver.
-> Otherwise there would be no output at all even for platforms in need of these 
-> irqs.
+Signed-off-by: hankecai <hankecai@bbktel.com>
+---
+ arch/arm64/lib/strcmp.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Aha, now I get it, thanks for explaining.
+diff --git a/arch/arm64/lib/strcmp.S b/arch/arm64/lib/strcmp.S
+index 4767540d1b94..4e79566726c8 100644
+--- a/arch/arm64/lib/strcmp.S
++++ b/arch/arm64/lib/strcmp.S
+@@ -186,7 +186,7 @@ CPU_LE( rev	data2, data2 )
+ 	* as carry-propagation can corrupt the upper bits if the trailing
+ 	* bytes in the string contain 0x01.
+ 	* However, if there is no NUL byte in the dword, we can generate
+-	* the result directly.  We ca not just subtract the bytes as the
++	* the result directly.  We cannot just subtract the bytes as the
+ 	* MSB might be significant.
+ 	*/
+ CPU_BE( cbnz	has_nul, 1f )
+-- 
+2.21.0
 
-Applied, thank you.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
