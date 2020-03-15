@@ -2,96 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04AA3185B73
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:28:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A1C1185B91
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 10:36:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ISEc8Monhn9qIgGXMnzL8pUHs1z9eVel7WltP230bF4=; b=k1rJ+09EQnkFYO12Depx/E9bT
-	KsVMKgB3XbHrAOhAyIuo1L7+TVD98ObJ+MyxRdqK6i3HbKpHocBnMIrmpBi6GN1G4pCkLd0oaPE00
-	L2WRL7mUkSib4gzmLeNM5eG2906+88O/Wdt/OdLahhMRwk6a1rwbc92kwbrnfHM8b7e+Qy0g6xThL
-	cHBEWkDGC5/RRpdTo+dvrE2AaH8pR5MFwZUYTvU2hXDCeWlFS/niwNlTGJtD/RqphURCzlrbm7Gv4
-	3ktEiCn8r0kJZD0Opf/+nLihWGmpoYRYzSrznbSepTMdSVEv8aWwb1dmnRKc9vaIb48+EO2ZwVkSe
-	T882rzZgA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/r0dVJItJ1X49C3mBbdk9j+uskXHDp/T2zUhvOrhLSg=; b=N9dJpjET8sXEiv
+	vHpebXKZpLGMDdUj4tqlzVG7+BqkZuAPHcOGPuSk5sOb8YXZ3Vdcn10+OzHx+tyFGtCiK5C5TmRe2
+	1qlNf37CQMCFJ5nMHN30vJ68F/WcTwoxOlcS6wSWewEydPlZCfRfYhD1AqbAjcGD4wfZyCA8SJsyO
+	dtPEWzz6Sh3Upvk2+R8fEuV/j+HyogDkVHH0Z1LEuVO1ha+u0f/SUxqZRjhLQfFddWf7uqDTjj0Cr
+	PKWEq4eTO5KUKNfRykyza+jc/H4tfpYngvTonXofc4ggab2s3sNG5INjyu8ibwbH64/UXQG9QvpSs
+	2lrAm70keRvB0H784afA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDPZH-0004Fp-0b; Sun, 15 Mar 2020 09:28:23 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jDPgk-0007D9-R1; Sun, 15 Mar 2020 09:36:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDPZ9-0004F8-DT
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 09:28:16 +0000
-Received: by mail-lj1-x244.google.com with SMTP id d23so15196822ljg.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Mar 2020 02:28:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=k0MY7Bqf584jeU9PbEpBAMYhk0hnAtxUjrOw1PNGQHQ=;
- b=Sx43VyZaq2psJT9xqIVidcHL3h96etCE7IVZacPBNdfwm1ykQfiCokV3MGbXASTucf
- d9kaMtFyylnFJ3xX2f/J5w5/35NG6F+ZeaHxZt0Sadpwbvume2jt3NPzVZ9g1cZY/HBB
- rtH5q3SMNBhds3/yLS4ny21+ruxPDH1i4tqAPqBqVirMMOW3+4LThDiAs5+MjWMBad8o
- isY3i/ywS97tlSH3hzgOD+3FKgzGiewOx+CByrS6E4BnVmKrNfa+ajysQa3xBErDNr5s
- SL0FywuSsdV1EfufhjaE/34EnTd1G0IhAj99w3QVYlYPsSzIEcmT+NIGFV2Xqbujl+gh
- 0qOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:in-reply-to:references
- :date:message-id:mime-version;
- bh=k0MY7Bqf584jeU9PbEpBAMYhk0hnAtxUjrOw1PNGQHQ=;
- b=IusXzH91c49zJxGbbDy63Dbb5qvULF9wPDV80S7kcJ0oNgl2+2weAMjg/D3MObq6MZ
- snQwo/yhKOL2BmJDNgLkj/353Yn7gYu+Ew6IEgwkaf9qqs4P1fRZLjH3wY0sOotYLScp
- EzGt0aE1C1ofilJT/D/AzXbyYpLaCIUC6hnfKVoByDq57hbYWoHkjr5RxjCVk6ryoggj
- L5QRV3F0FLhiUhE5Md6L59zw7rjgITWdZXcifWE4fzxzIky/g7x+SGN4f9L0cfJHgjQ3
- cxxu0YbCPrii66GFzIriLGjG/PfDE+FE0OvMNAQkikhnHy1cYlRDA0QXCfwpR3wRMDjH
- VJGQ==
-X-Gm-Message-State: ANhLgQ1Of2I8MMyGigxKlDeUEG5J3O1LlAreq6dWYFK6/smJHD2oGZd6
- rvNVDS1QNPjPZBEZHGMf4Ao=
-X-Google-Smtp-Source: ADFU+vvXjsjBwXRjg6blDRN9dWbFmFP0x6cQKEKKsY3Lzbg80fvZNanN8fszf7hNtH4/g9dBOm89Jw==
-X-Received: by 2002:a2e:891a:: with SMTP id d26mr12762955lji.182.1584264490463; 
- Sun, 15 Mar 2020 02:28:10 -0700 (PDT)
-Received: from saruman (88-113-215-213.elisa-laajakaista.fi. [88.113.215.213])
- by smtp.gmail.com with ESMTPSA id
- f23sm1708531lja.42.2020.03.15.02.28.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Mar 2020 02:28:09 -0700 (PDT)
-From: Felipe Balbi <balbi@kernel.org>
-To: Anand Moon <linux.amoon@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCHv2 1/3] devicetree: bindings: exynos: Add new compatible
- for Exynos5420 dwc3 clocks support
-In-Reply-To: <20200301212019.2248-2-linux.amoon@gmail.com>
-References: <20200301212019.2248-1-linux.amoon@gmail.com>
- <20200301212019.2248-2-linux.amoon@gmail.com>
-Date: Sun, 15 Mar 2020 11:28:05 +0200
-Message-ID: <871rpuezmi.fsf@kernel.org>
+ id 1jDPgZ-0007CH-N3
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 09:35:57 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 52A38206BE;
+ Sun, 15 Mar 2020 09:35:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584264954;
+ bh=bydZt1msrAZyMXtqxKfMHkV2PUIlKeyA7eIC50CIB/M=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=TBHxriSWt3P/WyyWLaDJyymqjhCzixdbSC6Kom2zz+dKvOk44zqBI4xFqNgxzw0Wy
+ Ec1OcZMiugGyij6LFyACRIo89VS8P5sckaeq5a0n/cowSIEVh/iA3WeJIKg6KgFvoH
+ Qv81sHhcA288CvhJUJKfSFmqxzysIMSHEP4Ff1Yg=
+Date: Sun, 15 Mar 2020 09:35:49 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH v2] iio: adc: stm32-adc: fix sleep in atomic context
+Message-ID: <20200315093549.20764470@archlinux>
+In-Reply-To: <288fb604-16c6-da52-533f-7f1440ed9daa@st.com>
+References: <20200309100212.16499-1-olivier.moysan@st.com>
+ <288fb604-16c6-da52-533f-7f1440ed9daa@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_022815_458502_845A681B 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200315_023555_786168_3AE4E11A 
+X-CRM114-Status: GOOD (  20.20  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [balbif[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,72 +77,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============5591234316945572498=="
+Cc: lars@metafoo.de, Olivier Moysan <olivier.moysan@st.com>,
+ benjamin.gaignard@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============5591234316945572498==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha256; protocol="application/pgp-signature"
+On Mon, 9 Mar 2020 11:39:17 +0100
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
+> On 3/9/20 11:02 AM, Olivier Moysan wrote:
+> > This commit fixes the following error:
+> > "BUG: sleeping function called from invalid context at kernel/irq/chip.c"
+> > 
+> > In DMA mode suppress the trigger irq handler, and make the buffer
+> > transfers directly in DMA callback, instead.
+> > 
+> > Fixes: 2763ea0585c9 ("iio: adc: stm32: add optional dma support")
+> > 
+> > Signed-off-by: Olivier Moysan <olivier.moysan@st.com>  
+> 
+> Hi Olivier,
+> 
+> Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+Thanks.  Queued up locally but not pushed out just yet as I have a pull
+request out to Greg.  Also marked for stable.
 
-Anand Moon <linux.amoon@gmail.com> writes:
+thanks,
 
-> This patch adds the new compatible string for Exynos5422 DWC3
-> to support enable/disable of core and suspend clk by DWC3 driver.
-> Also updated the clock names for compatible samsung,exynos5420-dwusb3.
->
-> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+Jonathan
 
-doesn't apply:
+> 
+> Thanks,
+> Fabrice
+> 
+> > ---
+> > Changes in v2:
+> > - Add "Fixes" tag in commit message
+> > 
+> > This solution has been already discussed in the thread
+> > https://lkml.org/lkml/2019/3/30/171, and applied in STM32 DFSDM driver:
+> > e19ac9d9a978 ("iio: adc: stm32-dfsdm: fix sleep in atomic context")
+> > ---
+> >  drivers/iio/adc/stm32-adc.c | 31 ++++++++++++++++++++++++++++---
+> >  1 file changed, 28 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+> > index 80c3f963527b..ae622ee6d08c 100644
+> > --- a/drivers/iio/adc/stm32-adc.c
+> > +++ b/drivers/iio/adc/stm32-adc.c
+> > @@ -1418,8 +1418,30 @@ static unsigned int stm32_adc_dma_residue(struct stm32_adc *adc)
+> >  static void stm32_adc_dma_buffer_done(void *data)
+> >  {
+> >  	struct iio_dev *indio_dev = data;
+> > +	struct stm32_adc *adc = iio_priv(indio_dev);
+> > +	int residue = stm32_adc_dma_residue(adc);
+> > +
+> > +	/*
+> > +	 * In DMA mode the trigger services of IIO are not used
+> > +	 * (e.g. no call to iio_trigger_poll).
+> > +	 * Calling irq handler associated to the hardware trigger is not
+> > +	 * relevant as the conversions have already been done. Data
+> > +	 * transfers are performed directly in DMA callback instead.
+> > +	 * This implementation avoids to call trigger irq handler that
+> > +	 * may sleep, in an atomic context (DMA irq handler context).
+> > +	 */
+> > +	dev_dbg(&indio_dev->dev, "%s bufi=%d\n", __func__, adc->bufi);
+> >  
+> > -	iio_trigger_poll_chained(indio_dev->trig);
+> > +	while (residue >= indio_dev->scan_bytes) {
+> > +		u16 *buffer = (u16 *)&adc->rx_buf[adc->bufi];
+> > +
+> > +		iio_push_to_buffers(indio_dev, buffer);
+> > +
+> > +		residue -= indio_dev->scan_bytes;
+> > +		adc->bufi += indio_dev->scan_bytes;
+> > +		if (adc->bufi >= adc->rx_buf_sz)
+> > +			adc->bufi = 0;
+> > +	}
+> >  }
+> >  
+> >  static int stm32_adc_dma_start(struct iio_dev *indio_dev)
+> > @@ -1845,6 +1867,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
+> >  {
+> >  	struct iio_dev *indio_dev;
+> >  	struct device *dev = &pdev->dev;
+> > +	irqreturn_t (*handler)(int irq, void *p) = NULL;
+> >  	struct stm32_adc *adc;
+> >  	int ret;
+> >  
+> > @@ -1911,9 +1934,11 @@ static int stm32_adc_probe(struct platform_device *pdev)
+> >  	if (ret < 0)
+> >  		return ret;
+> >  
+> > +	if (!adc->dma_chan)
+> > +		handler = &stm32_adc_trigger_handler;
+> > +
+> >  	ret = iio_triggered_buffer_setup(indio_dev,
+> > -					 &iio_pollfunc_store_time,
+> > -					 &stm32_adc_trigger_handler,
+> > +					 &iio_pollfunc_store_time, handler,
+> >  					 &stm32_adc_buffer_setup_ops);
+> >  	if (ret) {
+> >  		dev_err(&pdev->dev, "buffer setup failed\n");
+> >   
 
-checking file Documentation/devicetree/bindings/usb/exynos-usb.txt
-Hunk #2 FAILED at 84.
-1 out of 2 hunks FAILED
-
-=2D-=20
-balbi
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl5t9SUACgkQzL64meEa
-mQYm8xAA3I2/YauH6uYkFBQvDNCN3vk3Y9Nd7A0OQ7+zhusbeqhl93In7+YgQ+3r
-gvXux2DHyL121EUbI7Fj398cescSm4FBgnhlVx8qhKQFn85vPBWtCjI8vvS+PIxn
-S6+emDEeVhj0FF8mfuVV844SqIrz7UcIg9hS9PMsrZLvh31cFbgJhAKhR84ak4lr
-jku+TUy2tf9ZJr8DU8DUH8dRWccCRZJ+RXFyNAfaMZ3aNJuI6CS5bGTp1LBL4alh
-i4G3NgBIk4JStBxezp3AZuJ5yYz3yHcgk2paMSKiuZoLJ+12KiLwxIlY70Mo984P
-8XI9oP6xVTreGY1KGR3I819s4qAjCley7q1/2eFiO2i7B4JMbn4724lExPUpEaPy
-qBtoiOmN4cYBPaF75RGCJEZmgM/+yt/CQHWEowEQRHSaoQ6iqUBmyOjZhAh03fA3
-8Bg6Mfs2cJXntvjNSLneHTzbOXbh1F57UCh+cWJNk7QOag/O95kd5N4IZJ55CWD6
-BnAc4yMsl9aOGNLYqwX173WqeOUHm7r6MQ+vXxp24ZlBT0Z9x9OfPmN6BGXPXJyA
-OFgkjJacY7L6pTWhVMPDReQ0SkXpTvqBZVGxYaxAROVPg/+Do71j8tiUwESQg19A
-1k/AH25xxfy/4OvcBqCwpphqRwzxuOvc6/+NEwXFiBY+oJdTnQ4=
-=uud3
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============5591234316945572498==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5591234316945572498==--
-
