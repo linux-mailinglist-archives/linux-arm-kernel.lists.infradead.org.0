@@ -2,61 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3281185666
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Mar 2020 22:45:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E4B31859E5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 04:54:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8U65BpzNFaFYqw1CiKHHC0qcCm/lOXcvPhpcazBZGCM=; b=FpreGMgcQwq/sc
-	Ol4/FvrX+Lp10oJDQejoRwVh3abgO1hjWzyk+4AHV4njWar5FBUtY9Q3XQCtO1MgMNERBZc1GuMhD
-	9gelCvTm0G755cZ8oeE3ECOQF6exLK7sTloey/JMsxIigTHhRbZqkIxkn93O9F2fpIoZAdZZ2DOBt
-	+1I2aDGCya1gNseJRliK0Ww7d9V6+rPHZruTC34YoJIogjkWggydpzgN+HmOsVbMzmHs5FavhKJtu
-	0i6QnS/KNhwfYRu9n4cWGMedrLoVWv2DGnsk2si7t5/LOZCO+ZEwIkiUwUgNpwWw6HCj0MxPb1V5n
-	5Mfg5pEDph6lyMZRYPQA==;
+	List-Owner; bh=dK3XGLZUd2+E6QI4gmAK0llutcYo0X4qCIbGOjWg4GQ=; b=Rb8MRPmSIVERIK
+	55D5ePX2A8k/j7NbgCvV/0eintWy+pEuKjWp8vHgankQLNYfGNyPg+hJeHNcUUK8k5tZ+qzCrglZ3
+	F7580XdbM/AXvQHPqNMhyYQlANp0qKNUsP9L3SNBg2n7+in4x3JYdZFbN5qfNvVbJsE6zGMV+kCU3
+	8N2mMMiVtw9amWe70N9vxKlRhUfD4Oq6e84+K3IQY9SuFmo5kf9iB7ALth5AJOtdJUYIYHI+elKr4
+	GKOBJXAd5l10zFaT8xZU6IPTggja+326jvGWRcgb7bLkYgYh+mJGIKk/4xulaf3GxWfNT1k2ih1aY
+	n9ASAQChzbkGOKfANRqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDEat-0003NA-34; Sat, 14 Mar 2020 21:45:19 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jDKLX-0006ii-SB; Sun, 15 Mar 2020 03:53:51 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDEZY-00020l-Ea
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Mar 2020 21:44:00 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jDEZQ-0002vd-NZ; Sat, 14 Mar 2020 22:43:48 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jDEZP-0005Xp-Oz; Sat, 14 Mar 2020 22:43:47 +0100
-Date: Sat, 14 Mar 2020 22:43:47 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] pwm: meson: Fix confusing indentation
-Message-ID: <20200314214347.dun6ith5zamaa3m6@pengutronix.de>
-References: <20200314113524.23031-1-krzk@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200314113524.23031-1-krzk@kernel.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1jDKLQ-0006iM-CP
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 03:53:45 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 130F915B75272;
+ Sat, 14 Mar 2020 20:53:36 -0700 (PDT)
+Date: Sat, 14 Mar 2020 20:53:35 -0700 (PDT)
+Message-Id: <20200314.205335.907987569817755804.davem@davemloft.net>
+To: michael@walle.cc
+Subject: Re: [PATCH 1/2] net: dsa: felix: allow the device to be disabled
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200312164320.22349-1-michael@walle.cc>
+References: <20200312164320.22349-1-michael@walle.cc>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sat, 14 Mar 2020 20:53:36 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200314_144356_524140_8051E311 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20200314_205344_427267_B7E8796C 
+X-CRM114-Status: UNSURE (   4.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,36 +63,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, kernel@pengutronix.de,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com, andrew@lunn.ch,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
+ claudiu.manoil@nxp.com, robh+dt@kernel.org, vladimir.oltean@nxp.com,
+ shawnguo@kernel.org, vivien.didelot@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Mar 14, 2020 at 12:35:24PM +0100, Krzysztof Kozlowski wrote:
-> Fix indentation of return block.  Smatch warning:
->     drivers/pwm/pwm-meson.c:139 meson_pwm_request() warn: inconsistent in=
-denting
-> =
 
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+This series depends upon some devicetree tree changes, so why don't you
+submit these changes there and add my:
 
-This exists since commit 211ed630753d ("pwm: Add support for Meson PWM
-Controller") in 2016. Added Neil to Cc:.
+Acked-by: David S. Miller <davem@davemloft.net>
 
-Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-Thanks
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
