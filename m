@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 449A2185C12
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 11:55:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D79C0185C2E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 12:22:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MYm02ysnpI5FhzmuoxtQivuP1jV/zP8WixEC2gFT0EA=; b=npEnx4S8MkNY/i
-	k8sfYqGCS7nCxq//nWDjmDZfVLD4lHp0tdGP1kMG94WLQysCz21NCcG5t3bBMeXvGfl+EDbmjcQkI
-	2UOcx0kRQP2r3djuKNoGtgU/C95or5PUcyBCzaq2jojS99f8+5HRwqnE9sT+AdhMTtKI7GhGAMnuS
-	bfUNSGNU4eQY0DXSTGyPieX2hC/14UGflLZSusZvjlKScYksaEtkNZecU4wwQs9cpDLPnaF41L5UW
-	0zdfPL95iswQ+rGEVq5B8xo6yBCShLhaFdNkQWtO/nh9D7U+qrYQT8ozTFAyds2mSJ6g492uOqGY1
-	wrEeqqtlcQSExE+U2CYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J6AJfRr0cJk3zO273F+yYYbV9dxwi9cn9YA0e2V1x9Y=; b=Vl//xpisdQupGf
+	VMI4UIaASzw2E0r8TjGUdJjcidMjGwOKphDIqjishLJRYcMm1TjTbpjVAejCGSZiAKRE8viEuyVHU
+	HVsxcoRPRzssy5rbc1p+i+c1DJJNwfbf7y58iAB/AQCu8kKg0h0YRAJZgYTnf+5MK1sviQw7xqrww
+	3mpVt/Tn7e9+wOpF1vJQv7B1xNSRz/B0ZCG7WdTD6XSL/g+c88s2E2DWxpCU9a/yyjj5V/FFOrNE6
+	A2rIWJHWfF7bAhrOy6yVcG1wbCr/viDTEQ/TkCB2SU8AeKJA9wJofQ9cHyCpTwRYsFJvW11Xl0o5P
+	TLU8Iv5xT2H30cx/WPUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDQvU-0008Hk-S6; Sun, 15 Mar 2020 10:55:24 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jDRLq-00077T-9A; Sun, 15 Mar 2020 11:22:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDQvN-0008H6-Tl
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 10:55:19 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a23so6529294plm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Mar 2020 03:55:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=qIYlGm4yxuJWPGZE9jBq7SClwzl5SsZAe4AqIxxnJxw=;
- b=Ytc0lS9YIYTtXj0J3ndnY9qI6fhM69eKrhKeJ5hWX7SeOO/4qrOucPykSm86CZNO8A
- s/cwNwQwBvzidl9CI6IhyG44/yBrU+4+zrHEI7pMeo8jauUmWDcdGSe8oPOqm60mngsh
- IjaJvwxItnBtcLy7FjbinFyXmDxPa0hsdOOMGBuGw1NXGBey3CvcBlOWREWvIDBlKFM4
- pmc3VmBp9GHVODEGzIibmrVO83GA4HTOczijkd1We60WzCZSB4ufS30e9uZ9elP2uPdy
- F/11X6sogex+WjgabQT3H+1L767Pk8EzB003F5exqaqQIOCLNWzjBfMZy/XjkwdJ9sfd
- KIbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=qIYlGm4yxuJWPGZE9jBq7SClwzl5SsZAe4AqIxxnJxw=;
- b=IafwAvTfwlLu9cbvTzdNnuqOz20XZc7PjVZq7yCv3mvj2HAwQV3Qy4N2I3dpJWNnDs
- oNp7zOtGi+nIjUWTbyscBuudOGE/uN4B9sBYDGXmBQzw4w6+nDZ5CZbbCtwvM70fkmeO
- ObaKQrSgBJ3qE6UZ3VblwsvZ1jCjnlRpntAiRVFZxSPlZFevo6fm2VoZxQJ4mwVU0IQj
- ncemBkVIZEJpEz/3vnVgVJyYEmzbkBJbNGb24hHq6AkMQdeweFaTiZfDJOi8vF3Frex9
- w9p0ZML5L1XYLECl9K/d1aFonOooYlPX9G0bAY0XqsTqtfFLiguzSO/63cM9bf7BWbRs
- d9aQ==
-X-Gm-Message-State: ANhLgQ0FEbBupUEHqFR5aZUWVh94ApGTJ0fmIsK0ZSgg8c9Q/IN9mMoj
- pNYq5Hn6JsZqwePn9CjWqzI=
-X-Google-Smtp-Source: ADFU+vvvi9/IwQKAHenUTXb90ToqvygF+HzJRijet4tByzTJotX9aoip3MjS9Alg2JwZYozZzCUysA==
-X-Received: by 2002:a17:90a:9a90:: with SMTP id
- e16mr19401817pjp.164.1584269715129; 
- Sun, 15 Mar 2020 03:55:15 -0700 (PDT)
-Received: from nishad ([106.51.232.103])
- by smtp.gmail.com with ESMTPSA id j17sm18311949pfr.176.2020.03.15.03.55.11
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Mar 2020 03:55:14 -0700 (PDT)
-Date: Sun, 15 Mar 2020 16:25:07 +0530
-From: Nishad Kamdar <nishadkamdar@gmail.com>
-To: Peter Chen <Peter.Chen@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Joe Perches <joe@perches.com>
-Subject: [PATCH] USB: chipidea: Use the correct style for SPDX License
- Identifier
-Message-ID: <20200315105503.GA4440@nishad>
+ id 1jDRLh-00076n-5x; Sun, 15 Mar 2020 11:22:30 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 15C33206BE;
+ Sun, 15 Mar 2020 11:22:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584271347;
+ bh=1AWXnR4bMOypDl/1vwE6QjD2g4CHpkkerPN44udajYI=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=OehneP5TIjzNh3G0g0N6h8KLDklfmpLtfOlUcGl6Nz84u+vnZwviK+i7g0xRw/AQq
+ gxQigcTRI5nbsLWD+Vvmknr5XUlo9NP/s488bHEp36jl009+gq0ooihv87SSCu5JGE
+ i58uRfpCNtv2JO4YhcLKpm4YYGg2d2nMNF2h5Vi0=
+Date: Sun, 15 Mar 2020 11:22:23 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v1 1/3] dt-bindings: iio: adc: convert rockchip saradc
+ bindings to yaml
+Message-ID: <20200315112223.07dd863b@archlinux>
+In-Reply-To: <20200313132926.10543-1-jbx6244@gmail.com>
+References: <20200313132926.10543-1-jbx6244@gmail.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_035517_986716_CC1A9EE9 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200315_042229_266361_906D6D21 
+X-CRM114-Status: GOOD (  19.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [nishadkamdar[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,95 +76,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: devicetree@vger.kernel.org, lars@metafoo.de, heiko@sntech.de,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, pmeerw@pmeerw.net,
+ knaack.h@gmx.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch corrects the SPDX License Identifier style in
-header files related to ChipIdea Highspeed Dual Role Controller.
-For C header files Documentation/process/license-rules.rst
-mandates C-like comments (opposed to C source files where
-C++ style should be used).
+On Fri, 13 Mar 2020 14:29:24 +0100
+Johan Jonker <jbx6244@gmail.com> wrote:
 
-Changes made by using a script provided by Joe Perches here:
-https://lkml.org/lkml/2019/2/7/46.
+> Current dts files with 'saradc' nodes are manually verified.
+> In order to automate this process rockchip-saradc.txt
+> has to be converted to yaml.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-Suggested-by: Joe Perches <joe@perches.com>
-Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
----
- drivers/usb/chipidea/bits.h        | 2 +-
- drivers/usb/chipidea/ci.h          | 2 +-
- drivers/usb/chipidea/ci_hdrc_imx.h | 2 +-
- drivers/usb/chipidea/otg.h         | 2 +-
- drivers/usb/chipidea/otg_fsm.h     | 2 +-
- drivers/usb/chipidea/udc.h         | 2 +-
- 6 files changed, 6 insertions(+), 6 deletions(-)
+Hi Johan,
 
-diff --git a/drivers/usb/chipidea/bits.h b/drivers/usb/chipidea/bits.h
-index 98da99510be7..b1540ce93264 100644
---- a/drivers/usb/chipidea/bits.h
-+++ b/drivers/usb/chipidea/bits.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * bits.h - register bits of the ChipIdea USB IP core
-  *
-diff --git a/drivers/usb/chipidea/ci.h b/drivers/usb/chipidea/ci.h
-index d49d5e1235d0..644ecaef17ee 100644
---- a/drivers/usb/chipidea/ci.h
-+++ b/drivers/usb/chipidea/ci.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * ci.h - common structures, functions, and macros of the ChipIdea driver
-  *
-diff --git a/drivers/usb/chipidea/ci_hdrc_imx.h b/drivers/usb/chipidea/ci_hdrc_imx.h
-index de2aac9a2868..c2051aeba13f 100644
---- a/drivers/usb/chipidea/ci_hdrc_imx.h
-+++ b/drivers/usb/chipidea/ci_hdrc_imx.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- /*
-  * Copyright 2012 Freescale Semiconductor, Inc.
-  */
-diff --git a/drivers/usb/chipidea/otg.h b/drivers/usb/chipidea/otg.h
-index 4f8b8179ec96..5e7a6e571dd2 100644
---- a/drivers/usb/chipidea/otg.h
-+++ b/drivers/usb/chipidea/otg.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * Copyright (C) 2013-2014 Freescale Semiconductor, Inc.
-  *
-diff --git a/drivers/usb/chipidea/otg_fsm.h b/drivers/usb/chipidea/otg_fsm.h
-index 2b49d29bf2fb..1f5c5ae0e71e 100644
---- a/drivers/usb/chipidea/otg_fsm.h
-+++ b/drivers/usb/chipidea/otg_fsm.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * Copyright (C) 2014 Freescale Semiconductor, Inc.
-  *
-diff --git a/drivers/usb/chipidea/udc.h b/drivers/usb/chipidea/udc.h
-index e023735d94b7..ebb11b625bb8 100644
---- a/drivers/usb/chipidea/udc.h
-+++ b/drivers/usb/chipidea/udc.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * udc.h - ChipIdea UDC structures
-  *
--- 
-2.17.1
+A question inline which may just be my lack of yaml knowledge
+showing itself!
+
+Jonathan
+
+> ---
+>  .../bindings/iio/adc/rockchip-saradc.txt           | 37 ----------
+>  .../bindings/iio/adc/rockchip-saradc.yaml          | 79 ++++++++++++++++++++++
+>  2 files changed, 79 insertions(+), 37 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+>  create mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+> deleted file mode 100644
+> index c2c50b598..000000000
+> --- a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+> +++ /dev/null
+> @@ -1,37 +0,0 @@
+> -Rockchip Successive Approximation Register (SAR) A/D Converter bindings
+> -
+> -Required properties:
+> -- compatible: should be "rockchip,<name>-saradc" or "rockchip,rk3066-tsadc"
+> -   - "rockchip,saradc": for rk3188, rk3288
+> -   - "rockchip,rk3066-tsadc": for rk3036
+> -   - "rockchip,rk3328-saradc", "rockchip,rk3399-saradc": for rk3328
+> -   - "rockchip,rk3399-saradc": for rk3399
+> -   - "rockchip,rv1108-saradc", "rockchip,rk3399-saradc": for rv1108
+> -
+> -- reg: physical base address of the controller and length of memory mapped
+> -       region.
+> -- interrupts: The interrupt number to the cpu. The interrupt specifier format
+> -              depends on the interrupt controller.
+> -- clocks: Must contain an entry for each entry in clock-names.
+> -- clock-names: Shall be "saradc" for the converter-clock, and "apb_pclk" for
+> -               the peripheral clock.
+> -- vref-supply: The regulator supply ADC reference voltage.
+> -- #io-channel-cells: Should be 1, see ../iio-bindings.txt
+> -
+> -Optional properties:
+> -- resets: Must contain an entry for each entry in reset-names if need support
+> -	  this option. See ../reset/reset.txt for details.
+> -- reset-names: Must include the name "saradc-apb".
+> -
+> -Example:
+> -	saradc: saradc@2006c000 {
+> -		compatible = "rockchip,saradc";
+> -		reg = <0x2006c000 0x100>;
+> -		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+> -		clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
+> -		clock-names = "saradc", "apb_pclk";
+> -		resets = <&cru SRST_SARADC>;
+> -		reset-names = "saradc-apb";
+> -		#io-channel-cells = <1>;
+> -		vref-supply = <&vcc18>;
+> -	};
+> diff --git a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+> new file mode 100644
+> index 000000000..2908788b3
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+> @@ -0,0 +1,79 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/iio/adc/rockchip-saradc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip Successive Approximation Register (SAR) A/D Converter
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: rockchip,saradc
+> +      - const: rockchip,rk3066-tsadc
+> +      - const: rockchip,rk3399-saradc
+> +      - items:
+> +          - enum:
+> +            - rockchip,rk3328-saradc
+> +            - rockchip,rv1108-saradc
+> +          - const: rockchip,rk3399-saradc
+
+My yaml knowledge isn't great.  Why do we have this nested
+structure rather than a straight forward list?
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: converter clock
+> +      - description: peripheral clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: saradc
+> +      - const: apb_pclk
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  reset-names:
+> +    const: saradc-apb
+> +
+> +  vref-supply:
+> +    description:
+> +      The regulator supply for the ADC reference voltage.
+> +
+> +  "#io-channel-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - vref-supply
+> +  - "#io-channel-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3288-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    saradc: saradc@2006c000 {
+> +      compatible = "rockchip,saradc";
+> +      reg = <0x2006c000 0x100>;
+> +      interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
+> +      clock-names = "saradc", "apb_pclk";
+> +      resets = <&cru SRST_SARADC>;
+> +      reset-names = "saradc-apb";
+> +      vref-supply = <&vcc18>;
+> +      #io-channel-cells = <1>;
+> +    };
 
 
 _______________________________________________
