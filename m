@@ -2,92 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A4D8185DC2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 16:03:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64FE5185EBF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 18:31:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RdbUBSfheXgxsEbZ9DSoG4Vn0bfqIt2XUpcEa3wFRew=; b=h1dVVbTmhS3oFV
-	bEdg2TxUDsn4joctoWgL7XumnoY4OHrV/W64b/vbeT8lctEibdUB8Y0PuBUPhXXXI0kOhBvC0tyBI
-	T71noI4fyahvwYtYW/xaieyAkWTlLHcCUVvbxaBXE5R6yI2F2vTLpcoU7D2Mkd7UpaqhvdPK1qwYo
-	L7geHxUPrDDKhuqLUSvJAjBbDM62Le8S+6nqBGxj4NXJpr+UI3WzkT0YsRV8hS5hK5Y0ac5nNc83A
-	GnlJgiRT4iipxqz3ZUFc00Hh2N6ba2AK9MP4vxNO9T/ck6K2MZPhHN42onmtr1hQBBTfds8ENoRW0
-	b9p7kCu1fRh91I4CsNXQ==;
+	List-Owner; bh=Q/j2Yg+ljKFTxEOz4FNrrnU1FUoeZ0/jGWpQwcBaOqw=; b=jRxdHNEX/z680n
+	arJ0MgZVuiPrgx5moYkvIlc9mL9bp5zMrthUnBOG6Cvkmh661KieK3B1ELY0+w8on6bGN9JqJm2fY
+	81yNK8jExMCarbS8l3oRcceoKqW4cKrQDZLG9W3a8jGNN7DOjWuXrIQK99+AkUn1ZJ7skfbUBbjnn
+	u0BWczu/nWhUMJUcow7Q1va/2LBHA2ttnBguW8zhfIyFa77H1Rfj1xVrhd5OLhC48ws+b7YnsUIkH
+	FyrZLLPnW8y0uz/dlJy7DE8V+2nbEMFb25IEm3shXC85xwTNM+6ohjehY1hT1AtRDMPo5rWmBtT4S
+	GHSMAaBBIjF9DvKpFfkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDUnq-0007bk-Od; Sun, 15 Mar 2020 15:03:46 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jDX6z-0001Io-E1; Sun, 15 Mar 2020 17:31:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDUnN-0007GP-6Z
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 15:03:18 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id o23so950948pjp.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Mar 2020 08:03:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Akk5s7VpQ8EMc3QKWawmMJ2LR47WbqMiE93Yj41PNp4=;
- b=EXVKyar0oLMU5KHLP0/MgDHqO3OiUnDESNs5UJzJ9S7k4L+/ZVkySEuCx/dQsAJgjn
- q55m/TgfP+pwRhJyzcVffNuDndrcKrBLJkDgIRjck9pG3QXOAiuPj1CLQJB/t4YABVtf
- Mdp06gQ2T9rjOyUBBPJiY3vW+kKqe5xGnZI9/RYwaozLNgskqApBbDCe3ur3lkxGDCQJ
- 8xyK0OQhgRK+hB4pcClarUopyNQ3SVqU1x6Yl2Y/iYmbUI7XlD8j56JpwBgYZit8F833
- xMFCP3mi2p1jXS+LV9IWS8pEQcfFSgj5eVHp+4iZJTfPGqd9gfD4PMGCwe57khOZFYeU
- GADQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Akk5s7VpQ8EMc3QKWawmMJ2LR47WbqMiE93Yj41PNp4=;
- b=PD9bG4inJ2nBe0iQ409jbFqfR2QoAogUt8UYDdflq5XHJKVid7BvNOZrBQtgADnVVB
- u0mJDDucBBzFt1IVICeJOazErJOhg9m0VA5paiiz2KB6vM0SCdC5qfZujJ/U1BD/rUTI
- xR5j01jq4Isv9r34ReCeU+K8v16ZS3lS1ZeRO0R81TjsgBWbh8Fr4jOiJNtgWOkI+k4c
- ghjs6oKDsmWy/JWWmGFcrQJegQus07Nv/hfpmPU1oh56HKliiRxodcNagAAGs+2nW9kU
- +3/hADA/H2qWeBD1wuaPDXKEbTgR31GKw8XuLoIu2g3BI3/aH4k5I6OlXI6s2dRSTvqg
- mC2w==
-X-Gm-Message-State: ANhLgQ1P+VYAiYQmT6wzfaltKqXen+iHIQwu01SCvdrWDutb3he8XbsO
- Gree7Ub6BC8gNRuwXurbEYw=
-X-Google-Smtp-Source: ADFU+vuRkV82PozUwcHEZyF4En2HI40Sx1yE+v/Qbqok6rp0jWAkSiIAPTyMe9knTgb7aSiGk0Ofbw==
-X-Received: by 2002:a17:90a:d80b:: with SMTP id
- a11mr20775016pjv.21.1584284596078; 
- Sun, 15 Mar 2020 08:03:16 -0700 (PDT)
-Received: from localhost (216.24.188.11.16clouds.com. [216.24.188.11])
- by smtp.gmail.com with ESMTPSA id j21sm16849584pji.13.2020.03.15.08.03.15
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Mar 2020 08:03:15 -0700 (PDT)
-From: Dejin Zheng <zhengdejin5@gmail.com>
-To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
- davem@davemloft.net, mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH net-next v2 2/2] net: stmmac: use readl_poll_timeout()
- function in dwmac4_dma_reset()
-Date: Sun, 15 Mar 2020 23:03:01 +0800
-Message-Id: <20200315150301.32129-3-zhengdejin5@gmail.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200315150301.32129-1-zhengdejin5@gmail.com>
-References: <20200315150301.32129-1-zhengdejin5@gmail.com>
-MIME-Version: 1.0
+ id 1jDX6q-0001I2-DR
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 17:31:34 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BBCB8206B1;
+ Sun, 15 Mar 2020 17:31:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584293490;
+ bh=wyPKiOwBox4zyYo6q4dHotbRk4wts+qz3vKFfmPqolk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=LnsavhJMuq/NfHWvZLaILWN92IBV/MUgTdzSm8qzytNbdVlShyvTlPcZ/UGvknQpc
+ FTnDmZIXPUXP8HRjtrwwg/npWk6tSc2YPUDCgvym2OGyftE+7hs8gibfYmfWVIWEw3
+ gC3O/qUFjixe+nL7uu+GD5nu7l3X/q35hSi9/k1c=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jDX6l-00CueO-MT; Sun, 15 Mar 2020 17:31:27 +0000
+Date: Sun, 15 Mar 2020 17:31:25 +0000
+Message-ID: <86v9n5zfrm.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Michael Kelley <mikelley@microsoft.com>
+Subject: Re: [PATCH v6 01/10] arm64: hyperv: Add core Hyper-V include files
+In-Reply-To: <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
+References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
+ <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: mikelley@microsoft.com, will@kernel.org, ardb@kernel.org,
+ arnd@arndb.de, catalin.marinas@arm.com, mark.rutland@arm.com,
+ linux-arm-kernel@lists.infradead.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, linux-hyperv@vger.kernel.org,
+ linux-efi@vger.kernel.org, linux-arch@vger.kernel.org, olaf@aepfle.de,
+ apw@canonical.com, vkuznets@redhat.com, jasowang@redhat.com,
+ marcelo.cerri@canonical.com, kys@microsoft.com, sunilmut@microsoft.com,
+ boqun.feng@gmail.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_080317_313309_C5D1E259 
-X-CRM114-Status: GOOD (  11.05  )
-X-Spam-Score: 3.6 (+++)
+X-CRM114-CacheID: sfid-20200315_103132_501994_27C9A639 
+X-CRM114-Status: GOOD (  37.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.6 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [216.24.188.11 listed in zen.spamhaus.org]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhengdejin5[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhengdejin5[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,64 +97,393 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dejin Zheng <zhengdejin5@gmail.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, linux-arch@vger.kernel.org,
+ linux-hyperv@vger.kernel.org, linux-efi@vger.kernel.org, boqun.feng@gmail.com,
+ arnd@arndb.de, catalin.marinas@arm.com, jasowang@redhat.com,
+ sunilmut@microsoft.com, linux-kernel@vger.kernel.org,
+ marcelo.cerri@canonical.com, olaf@aepfle.de, gregkh@linuxfoundation.org,
+ apw@canonical.com, vkuznets@redhat.com, kys@microsoft.com, will@kernel.org,
+ ardb@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The dwmac4_dma_reset() function use an open coded of readl_poll_timeout().
-Replace the open coded handling with the proper function.
+On Sat, 14 Mar 2020 15:35:10 +0000,
+Hi Michael,
 
-Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
----
-v1 -> v2:
-	- no changed.
+Michael Kelley <mikelley@microsoft.com> wrote:
+> 
+> hyperv-tlfs.h defines Hyper-V interfaces from the Hyper-V Top Level
+> Functional Spec (TLFS). The TLFS is distinctly oriented to x86/x64,
+> and Hyper-V has not separated out the architecture-dependent parts into
+> x86/x64 vs. ARM64. So hyperv-tlfs.h includes information for ARM64
+> that is not yet formally published. The TLFS is available here:
+> 
+>   docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
+> 
+> mshyperv.h defines Linux-specific structures and routines for
+> interacting with Hyper-V on ARM64, and #includes the architecture-
+> independent part of mshyperv.h in include/asm-generic.
+> 
+> Signed-off-by: Michael Kelley <mikelley@microsoft.com>
+> ---
+>  MAINTAINERS                          |   2 +
+>  arch/arm64/include/asm/hyperv-tlfs.h | 413 +++++++++++++++++++++++++++++++++++
+>  arch/arm64/include/asm/mshyperv.h    | 115 ++++++++++
+>  3 files changed, 530 insertions(+)
+>  create mode 100644 arch/arm64/include/asm/hyperv-tlfs.h
+>  create mode 100644 arch/arm64/include/asm/mshyperv.h
 
- drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c | 14 ++++++--------
- 1 file changed, 6 insertions(+), 8 deletions(-)
+So this is a pretty large patch, mostly containing constants and other
+data structures that don't necessarily make sense immediately (or at
+least, I can't make sense of it without reading all the other 9
+patches and going back to patch #1).
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c
-index 9becca280074..af68ef952cd6 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c
-@@ -6,6 +6,7 @@
-  */
- 
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/delay.h>
- #include "common.h"
- #include "dwmac4_dma.h"
-@@ -14,19 +15,16 @@
- int dwmac4_dma_reset(void __iomem *ioaddr)
- {
- 	u32 value = readl(ioaddr + DMA_BUS_MODE);
--	int limit;
-+	int err;
- 
- 	/* DMA SW reset */
- 	value |= DMA_BUS_MODE_SFT_RESET;
- 	writel(value, ioaddr + DMA_BUS_MODE);
--	limit = 10;
--	while (limit--) {
--		if (!(readl(ioaddr + DMA_BUS_MODE) & DMA_BUS_MODE_SFT_RESET))
--			break;
--		mdelay(10);
--	}
- 
--	if (limit < 0)
-+	err = readl_poll_timeout(ioaddr + DMA_BUS_MODE, value,
-+				 !(value & DMA_BUS_MODE_SFT_RESET),
-+				 10000, 100000);
-+	if (err)
- 		return -EBUSY;
- 
- 	return 0;
+Could you please consider splitting this into more discreet bits that
+get added as required by the supporting code?
+
+So here's only a few sparse comments:
+
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 58bb5c4..398cfdb 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -7809,6 +7809,8 @@ F:	arch/x86/include/asm/trace/hyperv.h
+>  F:	arch/x86/include/asm/hyperv-tlfs.h
+>  F:	arch/x86/kernel/cpu/mshyperv.c
+>  F:	arch/x86/hyperv
+> +F:	arch/arm64/include/asm/hyperv-tlfs.h
+> +F:	arch/arm64/include/asm/mshyperv.h
+>  F:	drivers/clocksource/hyperv_timer.c
+>  F:	drivers/hid/hid-hyperv.c
+>  F:	drivers/hv/
+> diff --git a/arch/arm64/include/asm/hyperv-tlfs.h b/arch/arm64/include/asm/hyperv-tlfs.h
+> new file mode 100644
+> index 0000000..5e6a087
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/hyperv-tlfs.h
+> @@ -0,0 +1,413 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +/*
+> + * This file contains definitions from the Hyper-V Hypervisor Top-Level
+> + * Functional Specification (TLFS):
+> + * https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
+> + *
+> + * Copyright (C) 2019, Microsoft, Inc.
+> + *
+> + * Author : Michael Kelley <mikelley@microsoft.com>
+> + */
+> +
+> +#ifndef _ASM_HYPERV_TLFS_H
+> +#define _ASM_HYPERV_TLFS_H
+> +
+> +#include <linux/types.h>
+> +
+> +/*
+> + * All data structures defined in the TLFS that are shared between Hyper-V
+> + * and a guest VM use Little Endian byte ordering.  This matches the default
+> + * byte ordering of Linux running on ARM64, so no special handling is required.
+> + */
+> +
+> +
+> +/*
+> + * While not explicitly listed in the TLFS, Hyper-V always runs with a page
+> + * size of 4096. These definitions are used when communicating with Hyper-V
+> + * using guest physical pages and guest physical page addresses, since the
+> + * guest page size may not be 4096 on ARM64.
+> + */
+> +#define HV_HYP_PAGE_SHIFT	12
+> +#define HV_HYP_PAGE_SIZE	(1 << HV_HYP_PAGE_SHIFT)
+
+Probably worth writing this as 1UL to be on the safe side.
+
+> +#define HV_HYP_PAGE_MASK	(~(HV_HYP_PAGE_SIZE - 1))
+> +
+> +/*
+> + * These Hyper-V registers provide information equivalent to the CPUID
+> + * instruction on x86/x64.
+> + */
+> +#define HV_REGISTER_HYPERVISOR_VERSION		0x00000100 /*CPUID 0x40000002 */
+> +#define	HV_REGISTER_PRIVILEGES_AND_FEATURES	0x00000200 /*CPUID 0x40000003 */
+> +#define	HV_REGISTER_FEATURES			0x00000201 /*CPUID 0x40000004 */
+> +#define	HV_REGISTER_IMPLEMENTATION_LIMITS	0x00000202 /*CPUID 0x40000005 */
+> +#define HV_ARM64_REGISTER_INTERFACE_VERSION	0x00090006 /*CPUID 0x40000001 */
+> +
+> +/*
+> + * Feature identification. HvRegisterPrivilegesAndFeaturesInfo returns a
+> + * 128-bit value with flags indicating which features are available to the
+> + * partition based upon the current partition privileges. The 128-bit
+> + * value is broken up with different portions stored in different 32-bit
+> + * fields in the ms_hyperv structure.
+> + */
+> +
+> +/* Partition Reference Counter available*/
+> +#define HV_MSR_TIME_REF_COUNT_AVAILABLE		BIT(1)
+> +
+> +/* Synthetic Timers available */
+> +#define HV_MSR_SYNTIMER_AVAILABLE		BIT(3)
+> +
+> +/* Reference TSC available */
+> +#define HV_MSR_REFERENCE_TSC_AVAILABLE		BIT(9)
+> +
+> +
+> +/*
+> + * This group of flags is in the high order 64-bits of the returned
+> + * 128-bit value. Note that this set of bit positions differs from what
+> + * is used on x86/x64 architecture.
+> + */
+> +
+> +/* Crash MSRs available */
+> +#define HV_FEATURE_GUEST_CRASH_MSR_AVAILABLE	BIT(8)
+
+It is confusing that you don't have a single bit space for all these
+flags. It'd probably help if you had a structure describing this
+128bit value in multiple 32bit or 64bit words, and indicating which
+field the bit position is relevant to.
+
+[...]
+
+> +/* Define the hypercall status result */
+> +
+> +union hv_hypercall_status {
+> +	u64 as_uint64;
+
+nit: it'd be more consistent if as_uint64 was actually a uint64 type.
+
+> +	struct {
+> +		u16 status;
+> +		u16 reserved;
+> +		u16 reps_completed;  /* Low 12 bits */
+> +		u16 reserved2;
+> +	};
+> +};
+> +
+> +/* hypercall status code */
+> +#define HV_STATUS_SUCCESS			0
+> +#define HV_STATUS_INVALID_HYPERCALL_CODE	2
+> +#define HV_STATUS_INVALID_HYPERCALL_INPUT	3
+> +#define HV_STATUS_INVALID_ALIGNMENT		4
+> +#define HV_STATUS_INSUFFICIENT_MEMORY		11
+> +#define HV_STATUS_INVALID_CONNECTION_ID		18
+> +#define HV_STATUS_INSUFFICIENT_BUFFERS		19
+> +
+> +/* Define input and output layout for Get VP Register hypercall */
+> +struct hv_get_vp_register_input {
+> +	u64 partitionid;
+> +	u32 vpindex;
+> +	u8  inputvtl;
+> +	u8  padding[3];
+> +	u32 name0;
+> +	u32 name1;
+> +} __packed;
+> +
+> +struct hv_get_vp_register_output {
+> +	u64 registervaluelow;
+> +	u64 registervaluehigh;
+> +} __packed;
+> +
+> +#define HV_FLUSH_ALL_PROCESSORS			BIT(0)
+> +#define HV_FLUSH_ALL_VIRTUAL_ADDRESS_SPACES	BIT(1)
+> +#define HV_FLUSH_NON_GLOBAL_MAPPINGS_ONLY	BIT(2)
+
+I"m curious: Are these supposed to be PV'd TLB invalidation
+operations?
+
+> +#define HV_FLUSH_USE_EXTENDED_RANGE_FORMAT	BIT(3)
+> +
+> +enum HV_GENERIC_SET_FORMAT {
+> +	HV_GENERIC_SET_SPARSE_4K,
+> +	HV_GENERIC_SET_ALL,
+> +};
+> +
+> +/*
+> + * The Hyper-V TimeRefCount register and the TSC
+> + * page provide a guest VM clock with 100ns tick rate
+> + */
+> +#define HV_CLOCK_HZ (NSEC_PER_SEC/100)
+> +
+> +/*
+> + * The fields in this structure are set by Hyper-V and read
+> + * by the Linux guest.  They should be accessed with READ_ONCE()
+> + * so the compiler doesn't optimize in a way that will cause
+> + * problems.  The union pads the size out to the page size
+> + * used to communicate with Hyper-V.
+> + */
+> +struct ms_hyperv_tsc_page {
+> +	union {
+> +		struct {
+> +			u32 tsc_sequence;
+> +			u32 reserved1;
+> +			u64 tsc_scale;
+> +			s64 tsc_offset;
+> +		} __packed;
+> +		u8 reserved2[HV_HYP_PAGE_SIZE];
+> +	};
+> +};
+> +
+> +/* Define the number of synthetic interrupt sources. */
+> +#define HV_SYNIC_SINT_COUNT		(16)
+> +/* Define the expected SynIC version. */
+> +#define HV_SYNIC_VERSION_1		(0x1)
+> +
+> +#define HV_SYNIC_CONTROL_ENABLE		(1ULL << 0)
+> +#define HV_SYNIC_SIMP_ENABLE		(1ULL << 0)
+> +#define HV_SYNIC_SIEFP_ENABLE		(1ULL << 0)
+> +#define HV_SYNIC_SINT_MASKED		(1ULL << 16)
+> +#define HV_SYNIC_SINT_AUTO_EOI		(1ULL << 17)
+> +#define HV_SYNIC_SINT_VECTOR_MASK	(0xFF)
+
+Let's me guess: a PV interrupt controller? Do you really need this?
+Specially as I don't see any PV irqchip driver in this submission...
+
+[...]
+
+> diff --git a/arch/arm64/include/asm/mshyperv.h b/arch/arm64/include/asm/mshyperv.h
+> new file mode 100644
+> index 0000000..60b3f68
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/mshyperv.h
+> @@ -0,0 +1,115 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +/*
+> + * Linux-specific definitions for managing interactions with Microsoft's
+> + * Hyper-V hypervisor. The definitions in this file are specific to
+> + * the ARM64 architecture.  See include/asm-generic/mshyperv.h for
+> + * definitions are that architecture independent.
+> + *
+> + * Definitions that are specified in the Hyper-V Top Level Functional
+> + * Spec (TLFS) should not go in this file, but should instead go in
+> + * hyperv-tlfs.h.
+> + *
+> + * Copyright (C) 2019, Microsoft, Inc.
+> + *
+> + * Author : Michael Kelley <mikelley@microsoft.com>
+> + */
+> +
+> +#ifndef _ASM_MSHYPERV_H
+> +#define _ASM_MSHYPERV_H
+> +
+> +#include <linux/types.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/clocksource.h>
+> +#include <linux/irq.h>
+> +#include <linux/irqdesc.h>
+> +#include <linux/arm-smccc.h>
+> +#include <asm/hyperv-tlfs.h>
+> +
+> +/*
+> + * Define the IRQ numbers/vectors used by Hyper-V VMbus interrupts
+> + * and by STIMER0 Direct Mode interrupts. Hyper-V should be supplying
+> + * these values through ACPI, but there are no other interrupting
+> + * devices in a Hyper-V VM on ARM64, so it's OK to hard code for now.
+
+I'm not convinced it is OK. If you don't try to do the right thing
+now, what is the incentive to do it later? Starting to hard code
+things is akin to going back to the ARM board files of old. Been
+there, managed to fix it, not going back to it again anytime soon.
+
+> + * The "CALLBACK_VECTOR" terminology is a left-over from the x86/x64
+> + * world that is used in architecture independent Hyper-V code.
+> + */
+> +#define HYPERVISOR_CALLBACK_VECTOR 16
+> +#define	HV_STIMER0_IRQNR	   17
+> +
+> +extern u64 hv_do_hvc(u64 control, ...);
+> +extern u64 hv_do_hvc_fast_get(u64 control, u64 input1, u64 input2, u64 input3,
+> +		struct hv_get_vp_register_output *output);
+> +
+> +/*
+> + * Declare calls to get and set Hyper-V VP register values on ARM64, which
+> + * requires a hypercall.
+> + */
+> +extern void hv_set_vpreg(u32 reg, u64 value);
+> +extern u64 hv_get_vpreg(u32 reg);
+> +extern void hv_get_vpreg_128(u32 reg, struct hv_get_vp_register_output *result);
+> +
+> +/*
+> + * Use the Hyper-V provided stimer0 as the timer that is made
+> + * available to the architecture independent Hyper-V drivers.
+> + */
+> +#define hv_init_timer(timer, tick) \
+> +		hv_set_vpreg(HV_REGISTER_STIMER0_COUNT + (2*timer), tick)
+> +#define hv_init_timer_config(timer, val) \
+> +		hv_set_vpreg(HV_REGISTER_STIMER0_CONFIG + (2*timer), val)
+> +#define hv_get_current_tick(tick) \
+> +		(tick = hv_get_vpreg(HV_REGISTER_TIME_REFCOUNT))
+> +
+> +#define hv_get_simp(val) (val = hv_get_vpreg(HV_REGISTER_SIPP))
+> +#define hv_set_simp(val) hv_set_vpreg(HV_REGISTER_SIPP, val)
+> +
+> +#define hv_get_siefp(val) (val = hv_get_vpreg(HV_REGISTER_SIFP))
+> +#define hv_set_siefp(val) hv_set_vpreg(HV_REGISTER_SIFP, val)
+> +
+> +#define hv_get_synic_state(val) (val = hv_get_vpreg(HV_REGISTER_SCONTROL))
+> +#define hv_set_synic_state(val) hv_set_vpreg(HV_REGISTER_SCONTROL, val)
+> +
+> +#define hv_get_vp_index(index) (index = hv_get_vpreg(HV_REGISTER_VPINDEX))
+> +
+> +#define hv_signal_eom()	hv_set_vpreg(HV_REGISTER_EOM, 0)
+> +
+> +/*
+> + * Hyper-V SINT registers are numbered sequentially, so we can just
+> + * add the SINT number to the register number of SINT0
+> + */
+> +#define hv_get_synint_state(sint_num, val) \
+> +		(val = hv_get_vpreg(HV_REGISTER_SINT0 + sint_num))
+> +#define hv_set_synint_state(sint_num, val) \
+> +		hv_set_vpreg(HV_REGISTER_SINT0 + sint_num, val)
+> +
+> +#define hv_get_crash_ctl(val) \
+> +		(val = hv_get_vpreg(HV_REGISTER_CRASH_CTL))
+> +#define hv_get_time_ref_count(val) \
+> +		(val = hv_get_vpreg(HV_REGISTER_TIME_REFCOUNT))
+> +#define hv_get_reference_tsc(val) \
+> +		(val = hv_get_vpreg(HV_REGISTER_REFERENCE_TSC))
+> +#define hv_set_reference_tsc(val) \
+> +		hv_set_vpreg(HV_REGISTER_REFERENCE_TSC, val)
+> +#define hv_enable_vdso_clocksource()
+> +#define hv_set_clocksource_vdso(val) \
+> +		((val).vdso_clock_mode = VDSO_CLOCKMODE_NONE)
+> +
+> +#if IS_ENABLED(CONFIG_HYPERV)
+
+I don't think this guards anything useful.
+
+> +#define hv_enable_stimer0_percpu_irq(irq)	enable_percpu_irq(irq, 0)
+> +#define hv_disable_stimer0_percpu_irq(irq)	disable_percpu_irq(irq)
+
+and this looks pretty premature.
+
+> +#endif
+> +
+> +/* ARM64 specific code to read the hardware clock */
+> +#define hv_get_raw_timer() arch_timer_read_counter()
+> +
+> +/* SMCCC hypercall parameters */
+> +#define HV_SMCCC_FUNC_NUMBER	1
+> +#define HV_FUNC_ID	ARM_SMCCC_CALL_VAL(			\
+> +				ARM_SMCCC_STD_CALL,		\
+> +				ARM_SMCCC_SMC_64,		\
+> +				ARM_SMCCC_OWNER_VENDOR_HYP,	\
+
+This is only defined in patch #2...
+
+> +				HV_SMCCC_FUNC_NUMBER)
+> +
+> +#include <asm-generic/mshyperv.h>
+> +
+> +#endif
+
+Thanks,
+
+	M.
+
 -- 
-2.25.0
-
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
