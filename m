@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35204185F02
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 19:30:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 028B3185F0B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Mar 2020 19:30:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDuU/9Sm4AfyRJgCAE2b5mQWk7yRXQld6HLV5wNXsTQ=; b=H+NPTULNTJfsvY
-	r0rFLj9b7P5axn7Fdy/0Jv/b26CvyXKRD843rg2XwQP50MLr8i+JPQJ0REYPtTBMyVGsnXeSGnVsC
-	kJoAY+t9pWrIMXo2IOiqdzt/iOKcGvi1mutpu7eYAaEPHwu+qJeaLNazc4maIVYpzwKul0/Ee+vOn
-	acXmKMz4x2HMwj26Xiinq9u0dNcLNs5QUYkCiN1iucWmmNMSGB3dbc478fkMLDD5o9M9RkgZyktnj
-	OFL4E3RQ+SP1yAKmU446FX/aXpmLgk82DUw/EKYMKwuk7Il1sw9VB0Xmw6QEx5LlF058SMxJamxxY
-	DbWQOExqDirSNe0pXK9w==;
+	List-Owner; bh=hXbF2pTkUuVNbKVm15ekRrGgSQrwMCPrV5juSA1LyhM=; b=USakYPiAvccEgK
+	kDbuOEOffOfazkpYhU8w7xrMQsJ1jsoCeRhKofviW0er5k0DAI6qSGl5TFA+UCy/Ux8NHoX4ks8wO
+	bb52bhDTbbWNkX9+MVTPbVZrieRNCIS0nLVvW3Y2gGT3sAdrKh+O2E1pgJ/3ZsYm5zDVr2+ZshIue
+	khFaLjmQhc43gxQ8IJwcb/x8y8FGE22dT+WidyfCUgrW4l1nppeB4dkRRL309106bL0syurc3EcOG
+	gsdutx705amP29s2Lvp4k36Q1n+/lZg7cVdGHmEGrWN+LYXSdh3DWBnV7g+ANfM8yOn9lhZFTONh3
+	hXLJY5oL4uo1uXQsFvLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDY1r-0003rv-48; Sun, 15 Mar 2020 18:30:27 +0000
+	id 1jDY2D-000461-7i; Sun, 15 Mar 2020 18:30:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDY1h-0003r5-PD
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 18:30:19 +0000
+ id 1jDY20-00045O-Nj
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Mar 2020 18:30:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F3541FB;
- Sun, 15 Mar 2020 11:30:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 210921FB;
+ Sun, 15 Mar 2020 11:30:36 -0700 (PDT)
 Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A28C3F67D;
- Sun, 15 Mar 2020 11:30:12 -0700 (PDT)
-Date: Sun, 15 Mar 2020 18:30:09 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF5B73F67D;
+ Sun, 15 Mar 2020 11:30:32 -0700 (PDT)
+Date: Sun, 15 Mar 2020 18:30:22 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
-Message-ID: <20200315182950.GB32205@mbp>
+Subject: Re: [PATCH v3 19/26] arm64: vdso: Include common headers in the vdso
+ library
+Message-ID: <20200315183021.GC32205@mbp>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-19-vincenzo.frascino@arm.com>
+ <20200313154345.56760-20-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200313154345.56760-19-vincenzo.frascino@arm.com>
+In-Reply-To: <20200313154345.56760-20-vincenzo.frascino@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_113017_868338_74508951 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20200315_113036_831892_263CC300 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -80,38 +81,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 03:43:37PM +0000, Vincenzo Frascino wrote:
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/vdso/processor.h
-> @@ -0,0 +1,31 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright (C) 2020 ARM Ltd.
-> + */
-> +#ifndef __ASM_VDSO_PROCESSOR_H
-> +#define __ASM_VDSO_PROCESSOR_H
-> +
-> +#ifndef __ASSEMBLY__
-> +
-> +#include <asm/page-def.h>
-> +
-> +#ifdef CONFIG_COMPAT
-> +#if defined(CONFIG_ARM64_64K_PAGES) && defined(CONFIG_KUSER_HELPERS)
-> +/*
-> + * With CONFIG_ARM64_64K_PAGES enabled, the last page is occupied
-> + * by the compat vectors page.
-> + */
-> +#define TASK_SIZE_32		UL(0x100000000)
-> +#else
-> +#define TASK_SIZE_32		(UL(0x100000000) - PAGE_SIZE)
-> +#endif /* CONFIG_ARM64_64K_PAGES */
-> +#endif /* CONFIG_COMPAT */
+On Fri, Mar 13, 2020 at 03:43:38PM +0000, Vincenzo Frascino wrote:
+> The vDSO library should only include the necessary headers required for
+> a userspace library (UAPI and a minimal set of kernel headers). To make
+> this possible it is necessary to isolate from the kernel headers the
+> common parts that are strictly necessary to build the library.
+> 
+> Refactor the vdso implementation to include common headers.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-Just curious, what's TASK_SIZE_32 used for in the vDSO code? You don't
-seem to move TASK_SIZE.
-
--- 
-Catalin
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
