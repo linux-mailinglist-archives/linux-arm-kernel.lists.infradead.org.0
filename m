@@ -2,60 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7537186CF9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:24:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43545186D27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:34:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5wGXiKtcNHt9ydnxjvSNq28U1JQ+NgkSdJk0bKIhwsk=; b=W2y
-	isHwYcK3Hy/LDUBDTM9UmlWYmQiBl5+7jQ1rnj9jkew3ou4TJvmXFgUcrHAk22mlY37UyoHsw0wIM
-	PUAq8oUWtkXOntOgKSBtL9TnHRcvTqP1wDhmgcmc13rKpmU0CU5MeMAh2D3gPCY3I5FkBtVVYP9Nz
-	2t5y4tK9WMclE0PVvdVt69Syh0vujLytsncTroqTiUq4CrpKSc3HUNvDtB6IILWEYp45u1AEpmxZy
-	8gfxhYVE6oYieKcHWuVFT48xe2u/OGfCoHsPZzns+uIlIE+zgjOBN0aiGA1Pbh4s3pjokzXHzLreo
-	5CQKWtdxrTDegLLrWiWpFqyEvTlwIQQ==;
+	References:List-Owner; bh=QZaLzNLlSBRjlPjblN7FgzV2njxWhB3046Uc/yeQcwM=; b=QGW
+	hfwJkhVkPXMpUmiWOA8qDpzgn6ZR+8gb61M0i0jndOVYZptfFnWGHcdmrlsPYP48yGc+TBpibpF4L
+	EDfF5r2I+fUkwVN1VWcSpg60WA/5VzJeVtdB77MkE0BXWJWUfw81VsswgD9zi/zxIkBaz4gVjdA8G
+	vElNoEfzREoN64yWfxr1cfI4GO9P3z58sRBk7pXjq7S/Vkw6hI95ze1V9tMKtUUelVFpD5GsqtGgB
+	qIitQL+K48lQ6wRgKyPSUyOTjzL20MZlRiVMtytyP2KL37b57Y/tdgEPdS4hEhUilXvexD1tPud0W
+	opOjlmZFIo/StXD8ZqfeLsAnoRvCOwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDqfK-0002iQ-IO; Mon, 16 Mar 2020 14:24:26 +0000
-Received: from m176115.mail.qiye.163.com ([59.111.176.115])
+	id 1jDqoi-0006C2-HH; Mon, 16 Mar 2020 14:34:08 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDqfC-0002i1-Pb
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:24:21 +0000
-Received: from localhost.localdomain (unknown [58.251.74.226])
- by m176115.mail.qiye.163.com (Hmail) with ESMTPA id A5C8B664FF8;
- Mon, 16 Mar 2020 22:24:06 +0800 (CST)
-From: Zheng Wei <wei.zheng@vivo.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Jon Mason <jdmason@kudzu.us>, "David S. Miller" <davem@davemloft.net>,
- Yunfeng Ye <yeyunfeng@huawei.com>, Hanjun Guo <guohanjun@huawei.com>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org
-Subject: [PATCH] net: vxge: fix wrong __VA_ARGS__ usage
-Date: Mon, 16 Mar 2020 22:23:47 +0800
-Message-Id: <20200316142354.95201-1-wei.zheng@vivo.com>
+ id 1jDqoX-0006B6-CG
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:33:58 +0000
+Received: by mail-lj1-x241.google.com with SMTP id w4so4200752lji.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Mar 2020 07:33:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Ze2fZQQej6uS2QviuuQ6/4nfx3KKsQROZMmrRSSZ7Mo=;
+ b=WTSg24jq5f01YWvW8xwVD7FeWVKRz0ev4TrAtFnCp7bQttppRvY61XPKhpHSPTpJxa
+ Jqt0OkgtbYRv/kB2p3JPMJwQsUhWVOHReNRhcUwHwrbbR1B2Mj7WBR5AzhGZ4G9HEjDM
+ Fe0twJ1FTBDULVIH52D/u4zws9crwTPxXQTJ/8FDaqJJQvkwD6cRpYStxmGtNuCgllq3
+ 6/FDqNggxXFSlY+QpIhbKD0fb+xNsmzLIeRgE72Zj7gY377+3ihNuZu+x+LL/TFG2Zky
+ 4K/3TXWoPvGGXSK+W3z3ALoKJt2EZWFnGROZppSCFc5NNooE4Oly8G/OnD34XmlOCZNq
+ 0W/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Ze2fZQQej6uS2QviuuQ6/4nfx3KKsQROZMmrRSSZ7Mo=;
+ b=aSXaYO7tu+zlEU2aM+ly9Jx1lbVq8FtfiM2EhL97RkPz5T/vLCAGecZm17OCwrMxIv
+ +Kzyl7Y+NPWTh+PTeMxAiUw0rkbAmbT9aadDcj3fn7FVZzQWPzPCkKsCf+kYyBnw4V10
+ zm1fFB1omcwZCWyfMcQWBcEcZvO/ySy40bGN8V10sqJkJeeqSXJd374pb/vikeSoSp1Q
+ YuUxJ12ZsIvEPPH60M9op1TBxr5aC+FxZg3uVvl7DwWlLOtVqMDeN6jnwseIT2N8YtR7
+ JoXwvJaVTmxzwj1r+YJYA+ajVy1RzwCjiFdUaJoBr24PVQByZADYDO8mpmHvbIpYwpVW
+ htyg==
+X-Gm-Message-State: ANhLgQ2UXSsLgKDlylcZi4fRJizo0WaRIvtYgMt3kPUxsFCI4CU0Cx+p
+ 3UhMSRXfO6WaBiDFpFF8Ew/LFGic9L0=
+X-Google-Smtp-Source: ADFU+vuBwvid4HuMhjL8+kI1y+c4AzWbZXr1n+ZWQpJcTKm+LxnZytIGS/gy+1StNbKlROkMPPPB3Q==
+X-Received: by 2002:a05:651c:112c:: with SMTP id
+ e12mr17521019ljo.7.1584369231861; 
+ Mon, 16 Mar 2020 07:33:51 -0700 (PDT)
+Received: from localhost (host-176-37-176-139.la.net.ua. [176.37.176.139])
+ by smtp.gmail.com with ESMTPSA id w3sm60540lfe.9.2020.03.16.07.33.50
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 16 Mar 2020 07:33:51 -0700 (PDT)
+From: Igor Opaniuk <igor.opaniuk@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v5 1/2] dt-bindings: arm: fsl: add nxp based toradex colibri
+ bindings
+Date: Mon, 16 Mar 2020 16:33:44 +0200
+Message-Id: <20200316143345.30823-1-igor.opaniuk@gmail.com>
 X-Mailer: git-send-email 2.17.1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VCTktCQkJMSE1MQ05DQllXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Phg6PBw4EDg6CjYoCksYAxA5
- UUtPC0hVSlVKTkNPSE1DTU9MT0tJVTMWGhIXVQweElUBEx4VHDsNEg0UVRgUFkVZV1kSC1lBWU5D
- VUlOSlVMT1VJSU1ZV1kIAVlBT0xPSTcG
-X-HM-Tid: 0a70e3bafc5a9373kuwsa5c8b664ff8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_072419_367332_5EEF37DC 
-X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-CacheID: sfid-20200316_073357_445902_80C81689 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.115 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [igor.opaniuk[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,97 +96,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@vivo.com, wenhu.wang@vivo.com, Zheng Wei <wei.zheng@vivo.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>, Robert Jones <rjones@gateworks.com>,
+ Rob Herring <robh+dt@kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>,
+ Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Andreas Kemnade <andreas@kemnade.info>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, Shawn Guo <shawnguo@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-printk in macro vxge_debug_ll uses __VA_ARGS__ without "##" prefix,
-it causes a build error when there is no variable 
-arguments(e.g. only fmt is specified.).
+From: Igor Opaniuk <igor.opaniuk@toradex.com>
 
-Signed-off-by: Zheng Wei <wei.zheng@vivo.com>
+Document Colibri iMX6S/DL V1.1x re-design devicetree binding.
+
+Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
 ---
- drivers/net/ethernet/neterion/vxge/vxge-config.h |  2 +-
- drivers/net/ethernet/neterion/vxge/vxge-main.h   | 14 +++++++-------
- 2 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/ethernet/neterion/vxge/vxge-config.h b/drivers/net/ethernet/neterion/vxge/vxge-config.h
-index e678ba379598..077a527bb294 100644
---- a/drivers/net/ethernet/neterion/vxge/vxge-config.h
-+++ b/drivers/net/ethernet/neterion/vxge/vxge-config.h
-@@ -2045,7 +2045,7 @@ vxge_hw_vpath_strip_fcs_check(struct __vxge_hw_device *hldev, u64 vpath_mask);
- 	if ((level >= VXGE_ERR && VXGE_COMPONENT_LL & VXGE_DEBUG_ERR_MASK) ||  \
- 	    (level >= VXGE_TRACE && VXGE_COMPONENT_LL & VXGE_DEBUG_TRACE_MASK))\
- 		if ((mask & VXGE_DEBUG_MASK) == mask)			       \
--			printk(fmt "\n", __VA_ARGS__);			       \
-+			printk(fmt "\n", ##__VA_ARGS__);		       \
- } while (0)
- #else
- #define vxge_debug_ll(level, mask, fmt, ...)
-diff --git a/drivers/net/ethernet/neterion/vxge/vxge-main.h b/drivers/net/ethernet/neterion/vxge/vxge-main.h
-index 59a57ff5e96a..9c86f4f9cd42 100644
---- a/drivers/net/ethernet/neterion/vxge/vxge-main.h
-+++ b/drivers/net/ethernet/neterion/vxge/vxge-main.h
-@@ -452,49 +452,49 @@ int vxge_fw_upgrade(struct vxgedev *vdev, char *fw_name, int override);
- 
- #if (VXGE_DEBUG_LL_CONFIG & VXGE_DEBUG_MASK)
- #define vxge_debug_ll_config(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_LL_CONFIG, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_LL_CONFIG, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_ll_config(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_INIT & VXGE_DEBUG_MASK)
- #define vxge_debug_init(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_INIT, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_INIT, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_init(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_TX & VXGE_DEBUG_MASK)
- #define vxge_debug_tx(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_TX, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_TX, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_tx(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_RX & VXGE_DEBUG_MASK)
- #define vxge_debug_rx(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_RX, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_RX, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_rx(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_MEM & VXGE_DEBUG_MASK)
- #define vxge_debug_mem(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_MEM, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_MEM, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_mem(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_ENTRYEXIT & VXGE_DEBUG_MASK)
- #define vxge_debug_entryexit(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_ENTRYEXIT, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_ENTRYEXIT, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_entryexit(level, fmt, ...)
- #endif
- 
- #if (VXGE_DEBUG_INTR & VXGE_DEBUG_MASK)
- #define vxge_debug_intr(level, fmt, ...) \
--	vxge_debug_ll(level, VXGE_DEBUG_INTR, fmt, __VA_ARGS__)
-+	vxge_debug_ll(level, VXGE_DEBUG_INTR, fmt, ##__VA_ARGS__)
- #else
- #define vxge_debug_intr(level, fmt, ...)
- #endif
+ Documentation/devicetree/bindings/arm/fsl.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 0e17e1f6fb80..7342097056c3 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -169,7 +169,9 @@ properties:
+               - technologic,imx6dl-ts4900
+               - technologic,imx6dl-ts7970
+               - toradex,colibri_imx6dl          # Colibri iMX6 Module
++              - toradex,colibri_imx6dl-v1_1     # Colibri iMX6 Module V1.1
+               - toradex,colibri_imx6dl-eval-v3  # Colibri iMX6 Module on Colibri Evaluation Board V3
++              - toradex,colibri_imx6dl-v1_1-eval-v3 # Colibri iMX6 Module V1.1 on Colibri Evaluation Board V3
+               - ysoft,imx6dl-yapp4-draco  # i.MX6 DualLite Y Soft IOTA Draco board
+               - ysoft,imx6dl-yapp4-hydra  # i.MX6 DualLite Y Soft IOTA Hydra board
+               - ysoft,imx6dl-yapp4-ursa   # i.MX6 Solo Y Soft IOTA Ursa board
 -- 
 2.17.1
 
