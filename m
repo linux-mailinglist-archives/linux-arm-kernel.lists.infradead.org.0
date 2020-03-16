@@ -2,90 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C96AF18666A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:28:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52AFF18667A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:30:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EIuZz1fkQqCC295lWIMGW5dbaneBZhI1zJM1pilboFs=; b=dfXdh4Wf1RIKzBJlXOCLcKA8HG
-	ni1mf1nt0iosjexlVKfcJ1GCEL9osZsPekJSwFlCda9Sdk07PvTaLL2xhl/N7ShXs4Qz/v4CMHR7H
-	RAfxECs2vBK6ErLt0wkAPuTOL9iumKXoiJHSncCl4MIzThwa5GvYfVX5jumddeA/ac9VAHo4wt+m5
-	KklIgQWYzsxkQOuqbv2c8qgouLfDYUZFZiysJ9qDu2ktscOreuEDn1QLM+iX/6fAbXdpLF6asCxq0
-	S77j/sy5MkTxoxMk58y9Up7gVwDR6X71/3NNuU2VdFTU3AYK+6Fb7Wg2ULYVe7Z1LzpIM2MoAW9bq
-	LHJfla0Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TGScoktAX90RkWFrdtFdyIQ7grn4PuYsMvHIEpIUu3U=; b=NBCGcVV2I4Jd/E
+	CV5UdoHhw22a3i+EAdbtiv59A6RxdGBudlIHgPRk+/a/s/3XDe9TXYqwbi49bB0sJNqiogtYA6m4W
+	XRAGBif/slWL2zFkojInwWVlpLNBCcfJl4n48o3JTeYVJ42sTc1p31pePhgJ7TcAEome5w6rAj1fg
+	+K44D4dxSGkKIU6CWU3+UdlC5PS3Wi3ow1SdFVZmVXiMrijqGI/kHOfFiCwlV0xex6l3w65iXcez1
+	qYtyTB0JAm2PJkMHuDCIv431GQmfreGKhLw+NOpVi/pbz31MimhGIcdced3byspqPkTm3elQoOqyD
+	n4qFF8OeAL6E6+OQaaXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDl6m-0005mE-Ds; Mon, 16 Mar 2020 08:28:24 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jDl8d-0007c8-0R; Mon, 16 Mar 2020 08:30:19 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDl6d-0005iV-Av
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:28:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z15so19953951wrl.1
+ id 1jDl8U-0007Uu-C8
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:30:11 +0000
+Received: from mail-qk1-f176.google.com ([209.85.222.176]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MbizQ-1jjF8D3bw6-00dCEg for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 16 Mar 2020 09:30:08 +0100
+Received: by mail-qk1-f176.google.com with SMTP id z25so19779294qkj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 01:28:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=szWYYRkGahxA61hsmRUJ5tS74K70qXB8+PDKduH3nHs=;
- b=l3Gqhn+/M4Ha0UXVm0T3q6iV8ObxlaoHrtfqnRe+mfq3J/sCzFKJf4x7NlK7oimIwz
- tN1cuQljn0V24A6ikzf7Lh2Z5FZgBuhhcvzzlycmoWTw5AO/wLuLWUbxFwyAxd0Jt38q
- /YbIiOe4knXylQmu+M/SKDnkj5Ce2vCTOSweGQH50Ef2xnZ4js/HFbH2hFYpHx3TALhu
- 4wjaB4vv3tSbPvQLG21Ggst/b5DfZRjtQt537OaHLyEY5TqcODhqXaffxWBzdSqdvD78
- jTvX9ZUunrrWo00MZaFdHDpcGEp9sBOUca60V1fbLklrtGD+8Iu+s+9w+fpmj5Vravvv
- 5iNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=szWYYRkGahxA61hsmRUJ5tS74K70qXB8+PDKduH3nHs=;
- b=uTSw93XxEU+slqwi97B0DKekPA+7X9yZmlV2RUkOMCCx5ZB6ibK44GU4g6GnqnZDDX
- UcS76++7uiamsUElVkAQyC9wvnuBd3A75mf3XdhacQROAquqWX9SmZXuTlMmV2ejqvvT
- oD6RNVG2NLpQ3inRExPw5cC+LMtOOkxbhuQ1uX5O/3PA8gw3ttI4L0GY/s5WMQv1ELqW
- 8gKJPX87FdV8KYHkGjDVspwkL1q3q+E0n3Ok6WQAilLo/MUwTmfKb68Z9AFOEfX7F18M
- +sq9Apila8JG0xt9SD9JNQg+G0+qP3C7INo8PjBbMvUJO/biNoNNtAHv9UQnpMSwi7/A
- /MWQ==
-X-Gm-Message-State: ANhLgQ0RUf7jXtYAlKNbAvaM8Eb9eaP3lvPDdZiE9NS5IhLdu6r9tvve
- 4EQCJsK0yAwxR+DNDgBX6Yd18g==
-X-Google-Smtp-Source: ADFU+vtF0RfkG0k25HaWGkNvoj16Mvu5LgZ52qoUMhowQkFr4iYwgmRJjGLbQodQSmkECLChCJor9w==
-X-Received: by 2002:a5d:530e:: with SMTP id e14mr34558588wrv.245.1584347293228; 
- Mon, 16 Mar 2020 01:28:13 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id k133sm30082169wma.11.2020.03.16.01.28.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Mar 2020 01:28:12 -0700 (PDT)
-References: <20200316023411.1263-1-sashal@kernel.org>
- <20200316023411.1263-8-sashal@kernel.org>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Sasha Levin <sashal@kernel.org>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-Subject: Re: [PATCH AUTOSEL 5.4 08/35] ASoC: meson: g12a: add tohdmitx reset
-In-reply-to: <20200316023411.1263-8-sashal@kernel.org>
-Date: Mon, 16 Mar 2020 09:28:11 +0100
-Message-ID: <1ja74gg0v8.fsf@starbuckisacylon.baylibre.com>
+ Mon, 16 Mar 2020 01:30:07 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ2kTh9t+xncmVbPhJcKtNbl5mHHyztVnYFXY6FPUvEv3q/gYsof
+ L2ciIqOQrdHLdjy9uFQkVQHvYt4buN+6miamnfs=
+X-Google-Smtp-Source: ADFU+vvyPJOD7NA64Sv+/yqiF+NJlwZx8uue2CLxsFnH5N5ZzWWHWlodsVSd2XAZyQm3iAyvUigtWyzxiB7iRdaN1HM=
+X-Received: by 2002:a37:b984:: with SMTP id j126mr23740630qkf.3.1584347406786; 
+ Mon, 16 Mar 2020 01:30:06 -0700 (PDT)
 MIME-Version: 1.0
+References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
+ <1584200119-18594-8-git-send-email-mikelley@microsoft.com>
+In-Reply-To: <1584200119-18594-8-git-send-email-mikelley@microsoft.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 16 Mar 2020 09:29:50 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a0+uBsurfQ4smjPDGkJQSkMe-TxJ4cWR_EZXgDR4-bAWQ@mail.gmail.com>
+Message-ID: <CAK8P3a0+uBsurfQ4smjPDGkJQSkMe-TxJ4cWR_EZXgDR4-bAWQ@mail.gmail.com>
+Subject: Re: [PATCH v6 07/10] arm64: hyperv: Initialize hypervisor on boot
+To: Michael Kelley <mikelley@microsoft.com>
+X-Provags-ID: V03:K1:31pfKEowds1snMzVVnIjDQkiDnKKufj62hVgmVvm9jnz04/B4Ms
+ A0JqPybYGrFaLW0wJM1h9MFU4MPrA75Pwu23zaSyhqCjseckNl6o9o2oFTHoi06TAob14m9
+ SQufdihQKINtgCw/hB+JjjBnSgiJ41sRDLSLHnNhsTDCUg+fACNkQSD6CNwgwERQuPKtlxA
+ CfQus5vvfe8RV/aC/QtEQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nUJk7s3cXi0=:2glrro6REYx6SHdtPfCb+3
+ DPiZ80pyy+8NesdxwzmM2K/SVwC84tCuDTs4EZTwlxvfsmarAB2g3goW7NObEEpTH/wrUnttS
+ w+F2aBGk7vvLX3BFaw48PxSwuc1etif1CZ89udSduFleNZo5YncV0Exe4CmeN9U83EG8rbF+B
+ 91CDbJz1GIaXAFPb3moiaFayGg38ZNe9dRi6r37mwjnMJdSPhhFkEMtZBGp7f+ONLUfOw9h2X
+ DvjfEdqdumQc5/UN2soLqORMV8D6G1vpbfwofF3aHHslygXnHDZ7crnU7io6jLeKtuEFE0xRF
+ hTSyBwB4XUnjRe2FQKXI8KrD7uPy6+8IX0oJhcmjyuyrVqfzRXF8QpZTn1OI6VQS3p0S9hMgM
+ 7/ZEaoGHLFjCgSPW3Xoofy0g+fOprfgn4krFWOtKr7sI6yoXI9bJR45fcV/dmWpfk+QI1n47H
+ OJ2hKijjiPx8TbuPpJsaOoXo3v6DOHYBFcR5+6FuulYWL1wQh74BJxQcY97jynfHsXYOlrBPM
+ PME0as0kcYIWGN2h62xyTROwB+5seGoguX6H3ir/tLTA3UJiBr/kpD05JwBmsYEhPt1D0R5+F
+ oV4efFUt5sqPo9UFfMMuqQrk6PAojsuZz80xupmZgBh4lOYtkc0seKKDayOLB60+wRXbetlPm
+ D+2JbV+wzz0j8gr3Fiyx6WMtaTgHZCNQayuzvyOfi3Vq/tPoI5aiQ6OSo78ESfZnihtceyRnw
+ VVkXMpBXMyEMdtH2ULD42UHS237Y1jL2Zc0kI8/V/6zc5SmbE0wIfWM7FEsHwrguyrgIAjCeo
+ bnT3zxuRF6EhyRKnPEEDfSZW08GOqj6l+h2FBCqfubdy93eRts=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_012815_385986_F59D5E30 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20200316_013010_709547_9A45CCE1 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [217.72.192.73 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,69 +86,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, alsa-devel@alsa-project.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Kevin Hilman <khilman@baylibre.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-hyperv@vger.kernel.org,
+ linux-efi <linux-efi@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jason Wang <jasowang@redhat.com>,
+ "K. Y. Srinivasan" <kys@microsoft.com>, Will Deacon <will@kernel.org>,
+ sunilmut@microsoft.com, linux-arch <linux-arch@vger.kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ marcelo.cerri@canonical.com, olaf@aepfle.de, Boqun Feng <boqun.feng@gmail.com>,
+ John Stultz <john.stultz@linaro.org>, Andy Whitcroft <apw@canonical.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stephen Boyd <sboyd@kernel.org>, gregkh <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On Mon 16 Mar 2020 at 03:33, Sasha Levin <sashal@kernel.org> wrote:
-
-> From: Jerome Brunet <jbrunet@baylibre.com>
+On Sat, Mar 14, 2020 at 4:36 PM Michael Kelley <mikelley@microsoft.com> wrote:
 >
-> [ Upstream commit 22946f37557e27697aabc8e4f62642bfe4a17fd8 ]
+> Add ARM64-specific code to initialize the Hyper-V
+> hypervisor when booting as a guest VM. Provide functions
+> and data structures indicating hypervisor status that
+> are needed by VMbus driver.
 >
-> Reset the g12a hdmi codec glue on probe. This ensure a sane startup state.
+> This code is built only when CONFIG_HYPERV is enabled.
 >
-> Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-> Link: https://lore.kernel.org/r/20200221121146.1498427-1-jbrunet@baylibre.com
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> Signed-off-by: Sasha Levin <sashal@kernel.org>
-
-Hi Sasha,
-
-The tohdmitx reset property is not in the amlogic g12a DT in v5.4.
-Backporting this patch on v5.4 would break the hdmi sound, and probably
-the related sound card since the reset is not optional.
-
-Could you please drop this from v5.4 stable ?
-It is ok to keep it for v5.5.
-
-Thanks
-Jerome
-
+> Signed-off-by: Michael Kelley <mikelley@microsoft.com>
 > ---
->  sound/soc/meson/g12a-tohdmitx.c | 6 ++++++
->  1 file changed, 6 insertions(+)
->
-> diff --git a/sound/soc/meson/g12a-tohdmitx.c b/sound/soc/meson/g12a-tohdmitx.c
-> index 9cfbd343a00c8..8a0db28a6a406 100644
-> --- a/sound/soc/meson/g12a-tohdmitx.c
-> +++ b/sound/soc/meson/g12a-tohdmitx.c
-> @@ -8,6 +8,7 @@
->  #include <linux/module.h>
->  #include <sound/pcm_params.h>
->  #include <linux/regmap.h>
-> +#include <linux/reset.h>
->  #include <sound/soc.h>
->  #include <sound/soc-dai.h>
->  
-> @@ -378,6 +379,11 @@ static int g12a_tohdmitx_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	void __iomem *regs;
->  	struct regmap *map;
-> +	int ret;
-> +
-> +	ret = device_reset(dev);
-> +	if (ret)
-> +		return ret;
->  
->  	regs = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(regs))
+>  arch/arm64/hyperv/hv_core.c | 156 ++++++++++++++++++++++++++++++++++++++++++++
 
+As you are effectively adding a new clocksource driver here, please move the
+code to drivers/clocksource and send the patch to the respective maintainers
+(added to Cc here), splitting it out from the rest of the patch.
+
+You should also describe why your platform doesn't just use the normal
+architected timer interface.
+
+> +TIMER_ACPI_DECLARE(hyperv, ACPI_SIG_GTDT, hyperv_init);
+
+This looks like it registers a driver for the same device as the normal
+arch timer. Won't that clash?
+
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
