@@ -2,83 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32CBF1869C6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:09:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC4C81869F7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:22:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ubpL3OR3wA/jk6YavkEX8cTaP2qDZxePMD3TZcoZArk=; b=dsv3YLjqBGU10jOvuuqGjx4AH
-	oD8zU6rk2S1bzFteGK6WQ6gwnM9HCd7RDkDkluEw2rNoc4jLuYCXx9yMBYAdBOndeKgRxxSuc7LnF
-	3sUfbFHvaorGC0OA8vWnE03M+tpPGNQ6oEjCM3zNtDH691or6J55o3Khadpq/VQ/+uNGhfm5Kx+eM
-	xQZWad6iFrN9lPwW0wxG8CYDTWHCNsZWYZuYEPyhavrE8k9HuSnE3WOrVql6b7kdH8ZWFaidPVSLE
-	q9t6UpTV1DsuEQ7ePueOEDTpFocE7/KaPWIoiUkJGpZuw5QZnbEjOXoiham17XCQSdVFQMKwJMLM4
-	/kxnE19cw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=paNrQHmLJN1DLSDGKEqHK+bW/LYenZ4gU64PWQdQigo=; b=S5Dism4QJ8O1hb
+	ogjCsnGI1ydzj2v4AjKpQS8/x16FpfjMFTWBEKhneHmB/Uk87UdZj7+DtOcp0fo7lRXhttxCiZC9J
+	zG2um0126WE/S1jb3YC4LLH5vAbGzca79C6oPMpmyR6jEEmIDalXFxvi8Yus52kuyJxzGIhaZQoi/
+	9Yo4haJSMn8UHyDW1vQ1W6b9OD0x1PGbmWePhStWVgEpWWSvw8L1Nqq6Rj9xG4TBxgPKXp7dYsI31
+	xFhezVufFZCq3R1QBeU6cNODl0z2SK7jUFyxFxVQ0aSATNWaEs/+G3EN9y6Hy03kHl7fIge5eNq+c
+	3wNGcv/c38giPzLS2GhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDncQ-0007PJ-4h; Mon, 16 Mar 2020 11:09:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDncI-0007OR-Lh
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 11:09:07 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0371C205ED;
- Mon, 16 Mar 2020 11:09:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584356945;
- bh=7GnxZNUgFtH4VyMWdhOlCXj+A6q4k8+r/Ert4LPiEUg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=fXh7WLR86Zz7FIHD9/0xetiYssyqwbwXtbSusOmYKXIZUVB57528z/q+NGy6FA0zS
- uyFKf/ZYX3TH9TVaLtgy7bkAZvRI9/ESDSsLxCKo6SlK4RTHvEF9LJgvNHauqpITXU
- 3IRFo6Uwdgo4ma5B8B81byHZPU6ckH3rloLCWW5Y=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jDncF-00D3fu-D8; Mon, 16 Mar 2020 11:09:03 +0000
+	id 1jDnp6-0003pP-0X; Mon, 16 Mar 2020 11:22:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDnoy-0003ot-FD
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 11:22:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8FC430E;
+ Mon, 16 Mar 2020 04:22:11 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8238C3F52E;
+ Mon, 16 Mar 2020 04:22:08 -0700 (PDT)
+Date: Mon, 16 Mar 2020 11:22:06 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
+Message-ID: <20200316112205.GE3005@mbp>
+References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
+ <20200313154345.56760-19-vincenzo.frascino@arm.com>
+ <20200315182950.GB32205@mbp>
+ <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
+ <20200316103437.GD3005@mbp>
+ <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
 MIME-Version: 1.0
-Date: Mon, 16 Mar 2020 11:09:03 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH] KVM: arm64: Use the correct timer for accessing CNT
-In-Reply-To: <7ed91b9b-e968-770c-28f9-0ca479359657@huawei.com>
-References: <1584351546-5018-1-git-send-email-karahmed@amazon.de>
- <7ed91b9b-e968-770c-28f9-0ca479359657@huawei.com>
-Message-ID: <a8b72d6c0a28e0554050e98d011f32d9@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, karahmed@amazon.de,
- linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_040906_732527_1D13FD70 
-X-CRM114-Status: GOOD (  12.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200316_042212_554469_15AC53E4 
+X-CRM114-Status: GOOD (  18.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,66 +67,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: KarimAllah Ahmed <karahmed@amazon.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
+On Mon, Mar 16, 2020 at 10:55:00AM +0000, Vincenzo Frascino wrote:
+> On 3/16/20 10:34 AM, Catalin Marinas wrote:
+> >> I tried to fine grain the headers as much as I could in order to avoid
+> >> unneeded/unwanted inclusions:
+> >>  * TASK_SIZE_32 is used to verify ABI consistency on vdso32 (please refer to
+> >>    arch/arm64/kernel/vdso32/vgettimeofday.c).
+> > 
+> > I see. But the test is probably useless. With 4K pages, TASK_SIZE_32 is
+> > 1UL << 32, so you can't have a u32 greater than this. So I'd argue that
+> > the ABI compatibility here doesn't matter.
+> > 
+> > With 16K or 64K pages, TASK_SIZE_32 is slightly smaller but arm32 never
+> > supported it.
+> > 
+> > What's the side-effect of dropping this check altogether?
+> 
+> The main side-effect is that arm32 and arm64 compat have a different behavior,
+> that it is what we want to avoid.
+> 
+> The vdsotest [1] I am using, verifies all the side conditions with respect to
+> the ABI, which we are now compatible with. Removing those checks would break
+> this condition.
 
-On 2020-03-16 10:49, Zenghui Yu wrote:
-> Hi,
-> 
-> On 2020/3/16 17:39, KarimAllah Ahmed wrote:
->> Use the physical timer object when reading the physical timer counter
->> instead of using the virtual timer object. This is only visible when
->> reading it from user-space as kvm_arm_timer_get_reg() is only executed 
->> on
->> the get register patch from user-space.
-> 
-> s/patch/path/
-> 
-> I think the physical counter hasn't yet been accessed by the current
-> userspace, wrong?
+As I said above, I don't see how removing 'if ((u32)ts >= (1UL << 32))'
+makes any difference. This check was likely removed by the compiler
+already.
 
-I don't think userspace can access it, as the ONE_REG API only exposes 
-the virtual
-timer so far, and userspace is much better off just reading the counter 
-directly
-(it has access to the virtual counter, and the guarantee that cntvoff is 
-0 in this
-context).
+Also, userspace doesn't have a trivial way to figure out TASK_SIZE and I
+can't see anything that tests this in the vdsotest (though I haven't
+spent that much time looking). If it's hard-coded, note that arm32
+TASK_SIZE is different from TASK_SIZE_32 on arm64.
 
-But as we move towards a situation where we can save/restore the 
-physical timer
-just like the virtual one, we're going to use this path and hit this 
-bug.
+Can you tell what actually is failing in vdsotest if you remove the
+TASK_SIZE_32 checks in the arm64 compat vdso?
 
-> 
->> 
->> Cc: Marc Zyngier <maz@kernel.org>
->> Cc: James Morse <james.morse@arm.com>
->> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
->> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: kvmarm@lists.cs.columbia.edu
->> Cc: linux-kernel@vger.kernel.org
->> Signed-off-by: KarimAllah Ahmed <karahmed@amazon.de>
-> 
-> Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
-> 
-> And this might also deserve:
-> 
-> Fixes: 84135d3d18da ("KVM: arm/arm64: consolidate arch timer trap 
-> handlers")
-
-Indeed. Thanks,
-
-         M.
 -- 
-Jazz is not dead. It just smells funny...
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
