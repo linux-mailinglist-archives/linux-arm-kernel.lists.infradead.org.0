@@ -2,84 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CEA6186826
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:47:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B044618684B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:55:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yd4NjjUajWHnxtq+zdMHLIIRH1frQGH0ni9OJCwDOK8=; b=uSDs1gfOcm+fAI
-	/Fupu1nIUa3JmtBq2iNqx1+TH3HzTRvFKs2zis/XOHst1zkFletp6oLbvxxHgHgTAuNK2yUseNWCl
-	52X+eINhCXAH+p45NOLlA80OevOrpvIl3Ussa4gff6IHLDSXA1lN1xoU8SKPFvfecm2c5EJ36tJaY
-	oRic2u6HWNqM9CSHz8EfJ4GITAitagAeOQgi8mZFeWYai4lBpfBxxAv/lBl1cPB3Yg+UjHUiBBp1Y
-	qMNY6YWEtz0nY2aUpNt4dKMsmWNJhklHWyUDylUTlpQeHciwmhRkgwfzARzXuLZRxV2+jveMn2o9y
-	Vr1AP/6N5/sKSFqbvbxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qiMq/o3fp3YJ0mzg3tCBTWBPfeyMBWh6zdjW2pHUz8U=; b=pzv69ZDEsjz/te
+	Dxm0SSe2F7cGKd3kdc9O4+GdUqwWUXU/bW4d2IwDe+xG182wsLy6AzZDUhxMTQO1lvXvYXyEUWFwn
+	IWUhfmQEY7UnhU9QWSVkiWOvfkHHBwiXyuNxmSthApYr54eL3R2G4K5/w5Z6bKb2+XO8sX/IcStT5
+	r7phEnj0ZNgVXHfJVh8wmY4QzQeXw+Rl8t5NDCYbBc5tYDSm/9Xx81F8T8peax4fttzMHbqGbAvCr
+	o4AJBQQbZjKuqEOoCBiYyAtW6La8WVNEdtYxDKpBO77v3sZV0CeBgD57Mzknkq/CMplvUPxiRAs/T
+	j9LLEGprvhnbmGAR/pMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDmKo-0003th-Vx; Mon, 16 Mar 2020 09:46:58 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jDmT3-00084x-Oz; Mon, 16 Mar 2020 09:55:29 +0000
+Received: from mail.sensor-technik.de ([80.150.181.156])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDmKU-0003kE-M1; Mon, 16 Mar 2020 09:46:40 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02G9kWvG006458;
- Mon, 16 Mar 2020 04:46:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584351992;
- bh=67NfKjZCXz4JoWiD6fJ1v0YbK4GPD37mM9rvW/43LPw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Wei65B6JNh6HBmDkCjtnGulWnvu///dAGsrOvOF165b9GRGrqMMFp3Oe/NK0J9ZBU
- XX552222gziFCBqf4eaxapMykFfKxqWQpgTw7KkVbKf8c7i8moA6f5nvgdPIve9Mes
- hn0yFENE7hYuvx8w89jmHNNmWvTkcKfy1SnMFh3o=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02G9kWxk006969
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 16 Mar 2020 04:46:32 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
- Mar 2020 04:46:32 -0500
-Received: from localhost.localdomain (10.64.41.19) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 16 Mar 2020 04:46:32 -0500
-Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
- by localhost.localdomain (8.15.2/8.15.2) with ESMTP id 02G9kQfZ051982;
- Mon, 16 Mar 2020 04:46:29 -0500
-Subject: Re: [PATCH v2 00/25] mtd: spi-nor: Move manufacturer/SFDP code out
-To: <Tudor.Ambarus@microchip.com>, <bbrezillon@kernel.org>
-References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <28989bb7-9fe5-e4da-33c1-c3ad3442f9e2@ti.com>
-Date: Mon, 16 Mar 2020 15:17:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1jDmSu-00082r-JV
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:55:22 +0000
+IronPort-SDR: 6q954WrARo6dWQ0PjBh8BUXTYTXryJz2ZOz9h82I8f3hM9oREbezQFsLllT6272HOq+zcZXN8w
+ 7BHu2x1TV7tyWR/uDDt1H9bTudAFYgZiAGSo5HI9OYH5GHPRCDPtxyrazmCjze5GVfytzUrlZm
+ hBKGtx4P9oCWb+MNK2M2+MDKFtszlvjL2PoKbipZSFRSf2r1Fn6v/09neK7AFQvUCm7lt7qUND
+ 9EMPmpDoUp4iUF+ofEq6m2qSQAQ0d73lVkXrBnrecBF1SQU7100iVcL8VOGoMz/VsXhEmVH0Fv
+ fA4=
+Received: from stwz1.stww2k.local (HELO stwz1.sensor-technik.de)
+ ([172.25.209.3])
+ by mail.sensor-technik.de with ESMTP; 16 Mar 2020 10:55:07 +0100
+Received: from stwz1.stww2k.local (localhost [127.0.0.1])
+ by stwz1.sensor-technik.de (Postfix) with ESMTP id BF639B5ABC;
+ Mon, 16 Mar 2020 10:55:06 +0100 (CET)
+Received: from mail.sensor-technik.de (stwex1.stww2k.local [172.25.2.103])
+ by stwz1.sensor-technik.de (Postfix) with ESMTP id 02F75B5AAC;
+ Mon, 16 Mar 2020 10:55:03 +0100 (CET)
+Received: from STWEX1.stww2k.local (172.25.2.103) by STWEX1.stww2k.local
+ (172.25.2.103) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Mon, 16 Mar
+ 2020 10:55:02 +0100
+Received: from STWEX1.stww2k.local ([172.25.5.24]) by STWEX1.stww2k.local
+ ([172.25.5.24]) with mapi id 15.00.1497.000; Mon, 16 Mar 2020 10:55:02 +0100
+From: Waibel Georg <Georg.Waibel@wiedemann-group.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: AW: [PATCH] clk: imx: imx6ul: change flexcan clock to support CiA
+ bitrates
+Thread-Topic: [PATCH] clk: imx: imx6ul: change flexcan clock to support CiA
+ bitrates
+Thread-Index: AQHV+zKIoQ99JD5nw0OW4Drv9HPHOqhK+ZfH
+Date: Mon, 16 Mar 2020 09:55:02 +0000
+Message-ID: <1584352502593.54297@wiedemann-group.com>
+References: <1583928220724.65021@wiedemann-group.com>,
+ <20200316013040.GP17221@dragon>
+In-Reply-To: <20200316013040.GP17221@dragon>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [172.30.230.19]
+x-c2processedorg: 71f8fb5e-29e9-40bb-a2d4-613e155b19df
 MIME-Version: 1.0
-In-Reply-To: <20200313194130.342251-1-tudor.ambarus@microchip.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-TBoneOriginalFrom: Waibel Georg <Georg.Waibel@wiedemann-group.com>
+X-TBoneOriginalTo: Shawn Guo <shawnguo@kernel.org>
+X-TBoneOriginalCC: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team
+ <linux-imx@nxp.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Michel Alex
+ <Alex.Michel@wiedemann-group.com>, Appelt Andreas
+ <Andreas.Appelt@wiedemann-group.com>
+X-TBoneDomainSigned: false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_024638_824561_EF1A6621 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20200316_025520_955863_C423C535 
+X-CRM114-Status: UNSURE (   7.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.150.181.156 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,48 +95,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at, linux-mtd@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, miquel.raynal@bootlin.com
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Michel Alex <Alex.Michel@wiedemann-group.com>,
+ Appelt Andreas <Andreas.Appelt@wiedemann-group.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 16 Mar 2020 at 02:30, Shawn Guo <shawnguo@kernel.org> wrote:
+> On Wed, Mar 11, 2020 at 12:03:40PM +0000, Waibel Georg wrote:
+> > Setting a CAN bitrate of 800kbit/s fails with a bitrate error of 1.3% if the
+> > flexcan module is clocked at 30MHz (CAN_CLK_ROOT). This patch changes the clock
+> > frequency from 30MHz to 40MHz which allows to support all bitrates recommended
+>
+> But code changes IMX6UL_CLK_PLL3_60M to IMX6UL_CLK_PLL3_80M?  Or
+> IMX6UL_CLK_CAN_SEL is different from CAN_CLK_ROOT in the context?
+
+Correct. The patch sets CAN_CLK_SEL to 80MHZ. There is a post-divider 
+CAN_CLK_PODF which is set  to /2 by default which makes the 40MHz 
 
 
-On 14/03/20 1:12 am, Tudor.Ambarus@microchip.com wrote:
-> Boris Brezillon (21):
->   mtd: spi-nor: Stop prefixing generic functions with a manufacturer
->     name
->   mtd: spi-nor: Prepare core / manufacturer code split
->   mtd: spi-nor: Expose stuctures and functions to manufacturer drivers
->   mtd: spi-nor: Add the concept of SPI NOR manufacturer driver
-
-
->   mtd: spi-nor: Move Atmel bits out of core.c
->   mtd: spi-nor: Move Eon bits out of core.c
->   mtd: spi-nor: Move ESMT bits out of core.c
->   mtd: spi-nor: Move Everspin bits out of core.c
->   mtd: spi-nor: Move Fujitsu bits out of core.c
->   mtd: spi-nor: Move GigaDevice bits out of core.c
->   mtd: spi-nor: Move Intel bits out of core.c
->   mtd: spi-nor: Move ISSI bits out of core.c
->   mtd: spi-nor: Move Macronix bits out of core.c
->   mtd: spi-nor: Move Micron/ST bits out of core.c
->   mtd: spi-nor: Move Spansion bits out of core.c
->   mtd: spi-nor: Move SST bits out of core.c
->   mtd: spi-nor: Move Winbond bits out of core.c
->   mtd: spi-nor: Move Catalyst bits out of core.c
->   mtd: spi-nor: Move Xilinx bits out of core.c
->   mtd: spi-nor: Move XMC bits out of core.c
-
-
-I skimmed through patches 7 to 22 and did not see any issues. No
-objections from me.
-
--- 
-Regards
-Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
