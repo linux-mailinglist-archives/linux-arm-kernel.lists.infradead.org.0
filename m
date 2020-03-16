@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B044618684B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:55:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABC29186859
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:58:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qiMq/o3fp3YJ0mzg3tCBTWBPfeyMBWh6zdjW2pHUz8U=; b=pzv69ZDEsjz/te
-	Dxm0SSe2F7cGKd3kdc9O4+GdUqwWUXU/bW4d2IwDe+xG182wsLy6AzZDUhxMTQO1lvXvYXyEUWFwn
-	IWUhfmQEY7UnhU9QWSVkiWOvfkHHBwiXyuNxmSthApYr54eL3R2G4K5/w5Z6bKb2+XO8sX/IcStT5
-	r7phEnj0ZNgVXHfJVh8wmY4QzQeXw+Rl8t5NDCYbBc5tYDSm/9Xx81F8T8peax4fttzMHbqGbAvCr
-	o4AJBQQbZjKuqEOoCBiYyAtW6La8WVNEdtYxDKpBO77v3sZV0CeBgD57Mzknkq/CMplvUPxiRAs/T
-	j9LLEGprvhnbmGAR/pMw==;
+	List-Owner; bh=HBOtCzP6NjOejr95aTn6nTkj89UpXPpPjax/FXRHU9w=; b=h2QcpYZj6Gyrli
+	/rUH1iMIE3CG2YaFfJdl5fanG4IUlijTxL4KIV+5vLa+14HyRbbKsRz/lf3+oCsYKsc1NTfrVH3TP
+	G3VGHvVfs/Seph5WRoo7xnwjs39WBoAqFXEWZkh9m8Nbx/UXXI3HRotqptlGIjzq6AB4nAC4f07nd
+	Gff0BSU1OcC9cfbub5Pqb3zrTR5KDOsDUvadpK0J6xuXJ0Vs4MNWbdjEIQWAejTxve0DvA7SHGcFo
+	Jk9SzV0R1lYPLtSBTBlolS5uyXmwNOUsIOPBv/dP93fOXe7tsXycopK/LBGHcE1317by8XBlH5+1V
+	AoQ3tKo+vbKCnc7Xyo2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDmT3-00084x-Oz; Mon, 16 Mar 2020 09:55:29 +0000
+	id 1jDmW7-0000Nw-QZ; Mon, 16 Mar 2020 09:58:39 +0000
 Received: from mail.sensor-technik.de ([80.150.181.156])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDmSu-00082r-JV
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:55:22 +0000
-IronPort-SDR: 6q954WrARo6dWQ0PjBh8BUXTYTXryJz2ZOz9h82I8f3hM9oREbezQFsLllT6272HOq+zcZXN8w
- 7BHu2x1TV7tyWR/uDDt1H9bTudAFYgZiAGSo5HI9OYH5GHPRCDPtxyrazmCjze5GVfytzUrlZm
- hBKGtx4P9oCWb+MNK2M2+MDKFtszlvjL2PoKbipZSFRSf2r1Fn6v/09neK7AFQvUCm7lt7qUND
- 9EMPmpDoUp4iUF+ofEq6m2qSQAQ0d73lVkXrBnrecBF1SQU7100iVcL8VOGoMz/VsXhEmVH0Fv
- fA4=
+ id 1jDmVz-0000NW-OR
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:58:33 +0000
+IronPort-SDR: vo1SOg4VDT6SG7QKwa8urOI01MBAWRgseebrM5Xd36RIeG7e03WMrVkYVZi3pk8KVsyASF9Wlx
+ 3uBo8aU+gTxzLI1qmSNozaUFw+AVgJFpoBWaaQuj9MVj61LfSUta9kRfjz54cwtMBQR0G3niVC
+ Jmu3iILIl0dNLNPcdfeUOPOIQhb+959G4EKDf6lp1gX+JPwyVb6wRhk+k4pgdH9py6hUm8jnr/
+ wrtMQJy1bCY5Fd/TTZugIqmOAEpzhfLGHdbZF6yV3w9f2bmixYvyqBn3+S+xNuzgCDroVtTJQs
+ jgc=
 Received: from stwz1.stww2k.local (HELO stwz1.sensor-technik.de)
  ([172.25.209.3])
- by mail.sensor-technik.de with ESMTP; 16 Mar 2020 10:55:07 +0100
+ by mail.sensor-technik.de with ESMTP; 16 Mar 2020 10:58:29 +0100
 Received: from stwz1.stww2k.local (localhost [127.0.0.1])
- by stwz1.sensor-technik.de (Postfix) with ESMTP id BF639B5ABC;
- Mon, 16 Mar 2020 10:55:06 +0100 (CET)
-Received: from mail.sensor-technik.de (stwex1.stww2k.local [172.25.2.103])
- by stwz1.sensor-technik.de (Postfix) with ESMTP id 02F75B5AAC;
- Mon, 16 Mar 2020 10:55:03 +0100 (CET)
-Received: from STWEX1.stww2k.local (172.25.2.103) by STWEX1.stww2k.local
- (172.25.2.103) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Mon, 16 Mar
- 2020 10:55:02 +0100
+ by stwz1.sensor-technik.de (Postfix) with ESMTP id 52155B5ABC;
+ Mon, 16 Mar 2020 10:58:29 +0100 (CET)
+Received: from mail.sensor-technik.de (stwex2.stww2k.local [172.25.2.104])
+ by stwz1.sensor-technik.de (Postfix) with ESMTP id 38427B5AAC;
+ Mon, 16 Mar 2020 10:58:29 +0100 (CET)
+Received: from STWEX1.stww2k.local (172.25.2.103) by stwex2.stww2k.local
+ (172.25.2.107) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Mon, 16 Mar
+ 2020 10:58:28 +0100
 Received: from STWEX1.stww2k.local ([172.25.5.24]) by STWEX1.stww2k.local
- ([172.25.5.24]) with mapi id 15.00.1497.000; Mon, 16 Mar 2020 10:55:02 +0100
+ ([172.25.5.24]) with mapi id 15.00.1497.000; Mon, 16 Mar 2020 10:58:28 +0100
 From: Waibel Georg <Georg.Waibel@wiedemann-group.com>
 To: Shawn Guo <shawnguo@kernel.org>
-Subject: AW: [PATCH] clk: imx: imx6ul: change flexcan clock to support CiA
+Subject: Re: [PATCH] clk: imx: imx6ul: change flexcan clock to support CiA
  bitrates
 Thread-Topic: [PATCH] clk: imx: imx6ul: change flexcan clock to support CiA
  bitrates
-Thread-Index: AQHV+zKIoQ99JD5nw0OW4Drv9HPHOqhK+ZfH
-Date: Mon, 16 Mar 2020 09:55:02 +0000
-Message-ID: <1584352502593.54297@wiedemann-group.com>
+Thread-Index: AQHV+zKIoQ99JD5nw0OW4Drv9HPHOqhK+ZfHgAACFyg=
+Date: Mon, 16 Mar 2020 09:58:28 +0000
+Message-ID: <1584352708854.43164@wiedemann-group.com>
 References: <1583928220724.65021@wiedemann-group.com>,
- <20200316013040.GP17221@dragon>
-In-Reply-To: <20200316013040.GP17221@dragon>
+ <20200316013040.GP17221@dragon>, <1584352502593.54297@wiedemann-group.com>
+In-Reply-To: <1584352502593.54297@wiedemann-group.com>
 Accept-Language: de-DE, en-US
 Content-Language: de-DE
 X-MS-Has-Attach: 
@@ -72,8 +72,8 @@ X-TBoneOriginalCC: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
  <Andreas.Appelt@wiedemann-group.com>
 X-TBoneDomainSigned: false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_025520_955863_C423C535 
-X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-CacheID: sfid-20200316_025832_111736_597EB266 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -116,8 +116,12 @@ On Mon, 16 Mar 2020 at 02:30, Shawn Guo <shawnguo@kernel.org> wrote:
 > But code changes IMX6UL_CLK_PLL3_60M to IMX6UL_CLK_PLL3_80M?  Or
 > IMX6UL_CLK_CAN_SEL is different from CAN_CLK_ROOT in the context?
 
-Correct. The patch sets CAN_CLK_SEL to 80MHZ. There is a post-divider 
-CAN_CLK_PODF which is set  to /2 by default which makes the 40MHz 
+Correct. The patch sets CAN_CLK_SEL to 80MHZ. There is a post-divider
+CAN_CLK_PODF which is set  to /2 by default which makes the 40MHz
+CAN_CLK_ROOT.
+
+Regards
+Georg
 
 
 
