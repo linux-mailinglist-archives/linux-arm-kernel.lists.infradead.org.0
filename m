@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6AEA1861B8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:34:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C682A1862BC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:39:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3crdiGXnbvKAAoAZ9fES6gXm1tiiYagKoTZea5i+t94=; b=jxY8YFV9wL8K5d
-	Hh5rwLdUsud1KYSGlSadpEBY2soxYcOVpCsiOQjZg61o2Y9vW0vEgYm7ZCRKq9BGsjfBlpbSJNVtx
-	bFx5kjB2obUtibIQ7MU9pQfLEKEelAMDO/3FK006AZoBDG7pfheoWL0OG9eGAJBmTXbju4m2/xOsI
-	M+D/rYU9tPrFFCALOai6dIhzlqo5N+GdzfhD85VPEa66wMpCVrrcDDEWhs5obIHKTgjDwVXpAsiyh
-	qBtA7Jiau9LRi2CZYYT3/qeK8AKPZHDnFFG7zvI5/I8UUSVgkyQ0/2WkOyqgaxFUh0OPFusn277dN
-	iU1lTmDnN2DZPOX25L4Q==;
+	List-Owner; bh=u20E5kdA5eltL5XMmEY1i8wopLM7KFj+uOhje7nNTkU=; b=fYVSFG5CU0x7er
+	5OIKwWa71RMLwu7em0OtgWXUyd2/yZWk3X25mKDRGK45o5uVZFyDDR8y1k28KfR2A+XZFrkx6ujTe
+	hd09M7d/bstY1JqVO1z6iI2thMvrXdDxs4+aRAZWdNEKYvdaDHxd7RgBi1CMuJE0yYeCnfyUfZUT7
+	/ww42ABG3PUKYmrrBO/eJIJsFR/h2++anykeJ8yuhnsqyXK0FEOdP4xmokqzDVfwH7cF4cB6cqxtU
+	ljVs/JPsHc1GXVszwx/RGAokfO7DQcn77bdNDSrA7MRuzTAwr3OgVnez6yiQVIjDD7/9QNfQB6F59
+	uQyabvhppxppCGKrVjlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfa2-0002Wq-G5; Mon, 16 Mar 2020 02:34:14 +0000
+	id 1jDff9-00008y-B5; Mon, 16 Mar 2020 02:39:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfZ5-0001s9-Pm
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:33:17 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jDfa3-0002mK-LA; Mon, 16 Mar 2020 02:34:17 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92B57206BE;
- Mon, 16 Mar 2020 02:33:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 59A3A2073E;
+ Mon, 16 Mar 2020 02:34:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584325995;
- bh=JECNvcwgpBCM8o9+C4c1LowfMDmUIeZF7Y+YMfYbyQY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2ff1qLXS+iJ0mRFvywRJpgkqmkJRDQUzJtasC4snv9dFEbWMnpN8z9nldKCs/nWRz
- grOQkoeW5Tpi2uN6/U8i/WwVc2MYzBhjdLvomg0LHhOaytjUAQnmiRuVsRS/8obwW+
- b7F/hZEG6p9C1nUQ2E6O3V6RqG8/C/jSAIg3VHy0=
-Date: Mon, 16 Mar 2020 10:33:08 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH 2/2] arm64: dts: ls1028a: disable the felix switch by
- default
-Message-ID: <20200316023308.GW17221@dragon>
-References: <20200312164320.22349-1-michael@walle.cc>
- <20200312164320.22349-2-michael@walle.cc>
+ s=default; t=1584326055;
+ bh=EfynZ2r+tu0Bi5hPFBx1U/emhKKCOtF0JEBjFuUVq5U=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Z3tXJR23gk+SopL3xdna11gm6ndJl6LU/Yert/S8Fny1JweV0btstLlDGGtp3Rarf
+ sTTa/45vWyE8DuTO8NCMHiRZXEIWQvIVrC+rHwpEHkromOIOPX6U0GfLmgxsaMefKm
+ KR+UBpUSJuzNDFIAK4tje9gFg6N82AROnbm5EB2c=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.4 03/35] drm/mediatek: Find the cursor plane instead
+ of hard coding it
+Date: Sun, 15 Mar 2020 22:33:39 -0400
+Message-Id: <20200316023411.1263-3-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200316023411.1263-1-sashal@kernel.org>
+References: <20200316023411.1263-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200312164320.22349-2-michael@walle.cc>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193315_909408_7AAC995B 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200315_193415_728508_2F397587 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,24 +79,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Vivien Didelot <vivien.didelot@gmail.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Vladimir Oltean <vladimir.oltean@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-mediatek@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, Sean Paul <seanpaul@chromium.org>,
+ CK Hu <ck.hu@mediatek.com>, Evan Benn <evanbenn@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 12, 2020 at 05:43:20PM +0100, Michael Walle wrote:
-> Disable the felix switch by default and enable it per board which are
-> actually using it.
-> 
-> Signed-off-by: Michael Walle <michael@walle.cc>
+From: Evan Benn <evanbenn@chromium.org>
 
-Applied, thanks.
+[ Upstream commit 318caac7c81cdf5806df30c3d72385659a5f0f53 ]
+
+The cursor and primary planes were hard coded.
+Now search for them for passing to drm_crtc_init_with_planes
+
+Signed-off-by: Evan Benn <evanbenn@chromium.org>
+Reviewed-by: Sean Paul <seanpaul@chromium.org>
+Signed-off-by: CK Hu <ck.hu@mediatek.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index e6c049f4f08bb..f9455f2724d23 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -496,10 +496,18 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
+ 
+ static int mtk_drm_crtc_init(struct drm_device *drm,
+ 			     struct mtk_drm_crtc *mtk_crtc,
+-			     struct drm_plane *primary,
+-			     struct drm_plane *cursor, unsigned int pipe)
++			     unsigned int pipe)
+ {
+-	int ret;
++	struct drm_plane *primary = NULL;
++	struct drm_plane *cursor = NULL;
++	int i, ret;
++
++	for (i = 0; i < mtk_crtc->layer_nr; i++) {
++		if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_PRIMARY)
++			primary = &mtk_crtc->planes[i];
++		else if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_CURSOR)
++			cursor = &mtk_crtc->planes[i];
++	}
+ 
+ 	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
+ 					&mtk_crtc_funcs, NULL);
+@@ -608,9 +616,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 			return ret;
+ 	}
+ 
+-	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
+-				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
+-				NULL, pipe);
++	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
+ 	if (ret < 0)
+ 		return ret;
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
