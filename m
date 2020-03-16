@@ -2,77 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E2C2186A9A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 13:07:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4CAE186AA9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 13:12:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aELPr5tLmrXb8xGLeirAct1rtxvegZDjgeBzGfr5ZzQ=; b=qPtz7OJLyIIaKI
-	JLfo+/mh4cU7GD+g7LZOj907S89jUkCIIQnFh/hM5gs5erlmNYpXVC3o1WsQzLb7JVw+6LjMwiVYj
-	pdx97Pxkz635yueksEapIgwjsXtWsCVQ21acWqoIzNKhI7IpN5Fqia6sc3I3p4+VQM4KVpLLm1DcM
-	4LcKhSRaNuqDG7vUokjIruGwMRRdyyJ9xtLrWxGt3HGZTIkqwRC4ORl9k3NcDs5VyI4Y/PBsP4KD6
-	IHFXKKtQYpyjz9ereuyoEs5eH0L2fcsAJlOloV2TXyt0UXj3MSMWC0nBHKt8qaDurYIEQGJmIqyhl
-	LbE3TMiD5XLQCLb3TZpg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gsIoNS7fYDpC1w47leQ/NeL7iYyazL0qn3HZgFmuOr0=; b=poKL/5zMeDJHnZ
+	Dwc+N9TxPsJCMAAqiimFc7qSW3OYLnHolOe4FidSPfV1cGNZ2yYvEP0dAXpTrUgOszhI9kA4ncKOy
+	YxDO0LoiS+DLkwgU3DZk7+juK06y0cSzjzeYEWWetz7C2g3b9T0vXmmWB2D69M6ZMa0RsJHkvDSPq
+	D6qxwBjT0ptEKfVgjKFGVGiSdoRJ1dnidSzIr09pprT1vT/2ybqz/UJeKziAuEgJ10vxnxKw7nzH5
+	++mkU6Q+vwBft+Wki5+3sBg7a23v1xFuuVt+cZavkCiQw6Gwv/qlcCXa73mio7wrQEn/g+uTUONDX
+	8Eej87AdyOdBO+P/ghKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDoX4-0004NL-W0; Mon, 16 Mar 2020 12:07:46 +0000
-Received: from conssluserg-06.nifty.com ([210.131.2.91])
+	id 1jDobj-0006NR-Lu; Mon, 16 Mar 2020 12:12:35 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDoWv-0004MV-Fn
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 12:07:39 +0000
-Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
- [209.85.222.49]) (authenticated)
- by conssluserg-06.nifty.com with ESMTP id 02GC7H8K011611
- for <linux-arm-kernel@lists.infradead.org>; Mon, 16 Mar 2020 21:07:18 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com 02GC7H8K011611
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1584360438;
- bh=1WdVoD2GR3rsf9LOOCviumyPaCeZIZzcSnPah9GyQRo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=AUi5omdfuSn7fW9rIh8cuNHJWA0zaQvmfoAu6FSyf+rA74wjPaBnwEwYFIyT5gKb1
- 3taHlgNI8Nk9rzPXIs81zDPWrW4v3FOWnWTiZgEQwdX7W7SEDVa2WUcGlWLfisA846
- b8y5O10v/valqjW9DRcltYRBWCl7W46OLKc0T2CYSb3KH+ykxvTFuZ7/Ej3rtOAD2x
- xuEg38G0GnMpLQ/AGQl84RT8CCSORedML1RmAeet7LZiOMqeOWi2SyERorPKuSMPqg
- QqijorSqJ7CBixaPkPjtl16x5XnxB8st7OS5KkpWwtVdirMkLwqnQaysX0RiLLUPHP
- KE94L1sXvTIuQ==
-X-Nifty-SrcIP: [209.85.222.49]
-Received: by mail-ua1-f49.google.com with SMTP id h32so6403269uah.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 05:07:18 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0atH2pfWny6zY02m0k61H98dERJt3+dXNJbCcC5EXaoajXTKT9
- WniT548IKyRrs66ykhPLc0bwG3Spus5oJSeX1xo=
-X-Google-Smtp-Source: ADFU+vu+aiZaKzn4yQzmAfKsZEABMNGMwf1PqYMa2CZTlxIl9JDGIpCD9f5PgcYDxiJ9WvpEnqc4kwlvAq5+7XSqkjc=
-X-Received: by 2002:ab0:28d8:: with SMTP id g24mr13929982uaq.121.1584360437287; 
- Mon, 16 Mar 2020 05:07:17 -0700 (PDT)
+ id 1jDobb-0006MZ-EQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 12:12:29 +0000
+X-Originating-IP: 84.210.220.251
+Received: from [192.168.1.123] (cm-84.210.220.251.getinternet.no
+ [84.210.220.251]) (Authenticated sender: fredrik@strupe.net)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 97F0C2000F;
+ Mon, 16 Mar 2020 12:12:21 +0000 (UTC)
+To: Oleg Nesterov <oleg@redhat.com>, Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+From: Fredrik Strupe <fredrik@strupe.net>
+Subject: [PATCH] arm: ptrace: Fix mask for thumb breakpoint hook
+Message-ID: <6ab2ce75-0763-75b1-0d72-ddfb2b9dec19@strupe.net>
+Date: Mon, 16 Mar 2020 13:12:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1584061096-23686-2-git-send-email-hayashi.kunihiko@socionext.com>
- <CAK7LNASCOhZ5BMWWCA1zKep-sXra1pBBTxjsDp816k8Ph1m1Pw@mail.gmail.com>
- <20200316194330.B482.4A936039@socionext.com>
-In-Reply-To: <20200316194330.B482.4A936039@socionext.com>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Mon, 16 Mar 2020 21:06:40 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATmxhLn6fg8+5RAKcw+_-75SDN0dG=E1e8H2yrYU3p5Eg@mail.gmail.com>
-Message-ID: <CAK7LNATmxhLn6fg8+5RAKcw+_-75SDN0dG=E1e8H2yrYU3p5Eg@mail.gmail.com>
-Subject: Re: [PATCH 01/10] ARM: dts: uniphier: Add XDMAC node
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_050738_475768_55128D9C 
-X-CRM114-Status: GOOD (  17.59  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200316_051227_621289_4A738BFE 
+X-CRM114-Status: GOOD (  13.10  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.91 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,70 +61,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jassi Brar <jaswinder.singh@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 16, 2020 at 7:43 PM Kunihiko Hayashi
-<hayashi.kunihiko@socionext.com> wrote:
->
-> On Sat, 14 Mar 2020 11:14:09 +0900 <yamada.masahiro@socionext.com> wrote:
->
-> > On Fri, Mar 13, 2020 at 9:58 AM Kunihiko Hayashi
-> > <hayashi.kunihiko@socionext.com> wrote:
-> > >
-> > > Add external DMA controller support implemented in UniPhier SoCs.
-> > > This supports for Pro4, Pro5 and PXs2.
-> > >
-> > > Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> > > ---
-> > >  arch/arm/boot/dts/uniphier-pro4.dtsi | 8 ++++++++
-> > >  arch/arm/boot/dts/uniphier-pro5.dtsi | 8 ++++++++
-> > >  arch/arm/boot/dts/uniphier-pxs2.dtsi | 8 ++++++++
-> > >  3 files changed, 24 insertions(+)
-> > >
-> > > diff --git a/arch/arm/boot/dts/uniphier-pro4.dtsi b/arch/arm/boot/dts/uniphier-pro4.dtsi
-> > > index 2ec04d7..a1bfe0f 100644
-> > > --- a/arch/arm/boot/dts/uniphier-pro4.dtsi
-> > > +++ b/arch/arm/boot/dts/uniphier-pro4.dtsi
-> > > @@ -426,6 +426,14 @@
-> > >                         };
-> > >                 };
-> > >
-> > > +               xdmac: dma-controller@5fc10000 {
-> > > +                       compatible = "socionext,uniphier-xdmac";
-> > > +                       reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
-> >
-> >
-> >
-> > This is odd.
-> > <0x5fc20000 0x800> causes reg overwrap with
-> > aidet@5fc20000 below.
->
-> Thank you for pointing out.
->
-> Indeed, the address is wrong. I'll fix it.
-> And I'll also fix the example of dt-bindings.
->
-> Thank you,
+Since instr_mask in struct undef_hook is 32 bits wide, a mask with value
+0xffff will essentially be extended to 0x0000ffff. This makes undefined
+thumb2 instructions with the second half-word as 0xde01 generate SIGTRAPs
+instead of SIGILLs.
 
+This happens in total for 3143 instructions on my system. An example
+of such an instruction is e800de01.
 
+This patch fixes the issue by extending the mask to the full 32 bits,
+such that both half-words have to be matched. This will remove all of
+the accidental matchings, as 0x0000 is not a valid thumb2 prefix, while
+preserving the intended thumb hook.
 
-You did not notice the over-wrap
-because the second region is not used
-from the driver.
+Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
+---
+  arch/arm/kernel/ptrace.c | 9 +++++++--
+  1 file changed, 7 insertions(+), 2 deletions(-)
 
-Why did you define the unused region?
+diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
+index 36718a424..f51bec0bc 100644
+--- a/arch/arm/kernel/ptrace.c
++++ b/arch/arm/kernel/ptrace.c
+@@ -228,9 +228,14 @@ static struct undef_hook arm_break_hook = {
+  	.fn		= break_trap,
+  };
+  
++/*
++ * Set all bits in the instruction mask, even though the thumb
++ * instruction is only 16 bits. This is to prevent accidental
++ * matching of thumb2 instructions.
++ */
+  static struct undef_hook thumb_break_hook = {
+-	.instr_mask	= 0xffff,
+-	.instr_val	= 0xde01,
++	.instr_mask	= 0xffffffff,
++	.instr_val	= 0x0000de01,
+  	.cpsr_mask	= PSR_T_BIT,
+  	.cpsr_val	= PSR_T_BIT,
+  	.fn		= break_trap,
+-- 
+2.20.1
 
-
---
-Best Regards
-Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
