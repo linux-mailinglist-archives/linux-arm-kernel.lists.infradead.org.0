@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8D3D18670B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:54:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0422B18670C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:54:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m+gNJlhydAYGqn0KcINirE/oof0cXnO2wKQpgroqr8g=; b=Z8EuukOZqHvgNh
-	fnD4sxkACY7OfmfkDzT2lXPWWnaapxYQRh79fIpn+KfGHrIoZJmhhIo7YzWVvtQY0BQQO370suPPy
-	vdvawHGTcObtMi6HOzSciP2pNvFsJ95obE8S+qvZUOSbHt1NEDm9ia4K1RXJ/2nLFRGXmUgXwGV6g
-	dENftWYMh2fnH9zCxySwimwz4Cz90ID3fxy29umt9rQzUTQQXvwF99ZYc8iUHls5NlVOosrxZ0QjZ
-	3xZCVCEQmlsWcGi1hZ7HtwxZDPl5TWsLMpeKQAUxUhDHb5955lI4/TYoUJLDRHca1YRKuJpyp67k5
-	6eKRzQT+V+0DPNrH1yRQ==;
+	List-Owner; bh=Dis6BZAqiST/fXhrAAxu0L4f+71j0j3oJkoLutXpIXI=; b=J0ED9Ob6GnPFyG
+	OOY6pYu4BrZ3LLbZdYATnH09s09z72SLiPWOHupm+MzxvALl7tpaUtyrf3c3/a0LscsRTDZ//OhkV
+	7yF2GcdEocYjxcju9bec+8S+famJtXea/51VK0y8rOHhXtlDm7YWpaQ1JzrhbN1ofCw4Y8qegqcoU
+	Xdg+OC6e3cYpBd4GSqYwQMREoyHJJsiKSaV+/UaJPURcCeGUoGB9nLiWgW75Ud1+Lvnvwreim/TLl
+	VcZ++1sZlNt2edkZhBSDCVdHhAdIaEfeJZ9+l7/2APXYs5g/a+Gk/vz7fF48Lz5AeIoJsleDmwP0h
+	9AboIOsGAS59XZ4Pf7oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDlVL-0000td-70; Mon, 16 Mar 2020 08:53:47 +0000
+	id 1jDlVb-00018Q-Qb; Mon, 16 Mar 2020 08:54:03 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDlUn-0000Z2-CR; Mon, 16 Mar 2020 08:53:14 +0000
-X-UUID: 038587f29af9438b8fe7c894e1b17690-20200316
+ id 1jDlUn-0000Z3-CQ; Mon, 16 Mar 2020 08:53:14 +0000
+X-UUID: 38246ca2115e43e88b5ca7636f97f59c-20200316
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=X+DFchOZe2OpAsUM0+Gq6vu0pCSrT1gOAXXOi+6KyiQ=; 
- b=GG06d5W7kP/DOOu4Q1Ayy8OQzNsHunR+rMRV1ho4QSFGnA+a6ST3bhtNOfyGqgVzEYBuDEJPjSXuH+lVMdCT2pB/IhMRD/pQjGKkOoZtVdnMuXKbEE0+wva1lGO2XfdqgnlfYXmIPBqJTPWfactgSdu5pcf/5senNBMSwWHR8JU=;
-X-UUID: 038587f29af9438b8fe7c894e1b17690-20200316
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=dj5KB99V4jIFByooAmxz5JbekKkRboIPOi1U6PTrprM=; 
+ b=pMQsVMxdxXBoSGgsGifUgiyLVMSQJ5LXrM39gnvn0HNOwMd/53nGKIr7UZOWOH1iYrcjRskzssFerNy/IdI3Asebtqoof2wgGgXeZ1WAz/h4oZRNWKWsPYJ2Z0C4IbYb5g9UXShLW4F8rVgrr0xAXAOqLINoXEnls15Fqv5h3lY=;
+X-UUID: 38246ca2115e43e88b5ca7636f97f59c-20200316
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1606447681; Mon, 16 Mar 2020 00:53:07 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Mar 2020 01:53:24 -0700
+ with ESMTP id 1527482196; Mon, 16 Mar 2020 00:53:09 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Mar 2020 01:53:07 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Mar 2020 16:50:50 +0800
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Mar 2020 16:52:30 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 16 Mar 2020 16:53:53 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.peter~sen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v6 6/7] scsi: ufs: make HCE polling more compact to improve
- initialization latency
-Date: Mon, 16 Mar 2020 16:53:02 +0800
-Message-ID: <20200316085303.20350-7-stanley.chu@mediatek.com>
+Subject: [PATCH v6 7/7] scsi: ufs-mediatek: customize the delay for host
+ enabling
+Date: Mon, 16 Mar 2020 16:53:03 +0800
+Message-ID: <20200316085303.20350-8-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200316085303.20350-1-stanley.chu@mediatek.com>
 References: <20200316085303.20350-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 229F34FA95F0E0E18D30ACB4FEF427FDA1533AD8857E28584637E9A378D5A12D2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_015313_434379_06101EEF 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200316_015313_434829_26DAEBE2 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,42 +98,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reduce the waiting period between each HCE (Host Controller Enable)
-polling from 5 ms to 1 ms. In the same time, increase the maximum polling
-times to make "total polling time" unchanged approximately.
+MediaTek platform and UFS controller can dynamically customize
+the delay for host enabling according to different scenarios.
 
-This change could make HCE initializatoin faster to improve latency of
-ufshcd initialization, error recovery, and resume behaviors.
+For example, if UniPro enters lower-power mode, such delay can
+be minimized, otherwise longer delay shall be expected.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 Reviewed-by: Avri Altman <avri.altman@wdc.com>
-Reviewed-by: Can Guo <cang@codeaurora.org>
 ---
- drivers/scsi/ufs/ufshcd.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/scsi/ufs/ufs-mediatek.c | 43 ++++++++++++++++++++++++++-------
+ drivers/scsi/ufs/ufs-mediatek.h |  1 +
+ 2 files changed, 35 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 78b6ac6fcc4e..c06a15df2f40 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -4301,7 +4301,7 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
- 	ufshcd_wait_us(hba->hba_enable_delay_us, 100, true);
+diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+index 0ff6781654fd..c0fd7d2e4d0d 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.c
++++ b/drivers/scsi/ufs/ufs-mediatek.c
+@@ -30,11 +30,6 @@
+ #define ufs_mtk_device_reset_ctrl(high, res) \
+ 	ufs_mtk_smc(UFS_MTK_SIP_DEVICE_RESET, high, res)
  
- 	/* wait for the host controller to complete initialization */
--	retry = 10;
-+	retry = 50;
- 	while (ufshcd_is_hba_active(hba)) {
- 		if (retry) {
- 			retry--;
-@@ -4310,7 +4310,7 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
- 				"Controller enable failed\n");
- 			return -EIO;
- 		}
--		ufshcd_wait_us(5000, 100, true);
-+		ufshcd_wait_us(1000, 100, true);
+-#define ufs_mtk_unipro_powerdown(hba, powerdown) \
+-	ufshcd_dme_set(hba, \
+-		       UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0), \
+-		       powerdown)
+-
+ static void ufs_mtk_cfg_unipro_cg(struct ufs_hba *hba, bool enable)
+ {
+ 	u32 tmp;
+@@ -71,6 +66,21 @@ static void ufs_mtk_cfg_unipro_cg(struct ufs_hba *hba, bool enable)
+ 	}
+ }
+ 
++static int ufs_mtk_hce_enable_notify(struct ufs_hba *hba,
++				     enum ufs_notify_change_status status)
++{
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
++
++	if (status == PRE_CHANGE) {
++		if (host->unipro_lpm)
++			hba->hba_enable_delay_us = 0;
++		else
++			hba->hba_enable_delay_us = 600;
++	}
++
++	return 0;
++}
++
+ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
+ {
+ 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+@@ -324,12 +334,26 @@ static int ufs_mtk_pwr_change_notify(struct ufs_hba *hba,
+ 	return ret;
+ }
+ 
++static int ufs_mtk_unipro_set_pm(struct ufs_hba *hba, u32 lpm)
++{
++	int ret;
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
++
++	ret = ufshcd_dme_set(hba,
++			     UIC_ARG_MIB_SEL(VS_UNIPROPOWERDOWNCONTROL, 0),
++			     lpm);
++	if (!ret)
++		host->unipro_lpm = lpm;
++
++	return ret;
++}
++
+ static int ufs_mtk_pre_link(struct ufs_hba *hba)
+ {
+ 	int ret;
+ 	u32 tmp;
+ 
+-	ufs_mtk_unipro_powerdown(hba, 0);
++	ufs_mtk_unipro_set_pm(hba, 0);
+ 
+ 	/*
+ 	 * Setting PA_Local_TX_LCC_Enable to 0 before link startup
+@@ -437,7 +461,7 @@ static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
+ 	if (err)
+ 		return err;
+ 
+-	err = ufs_mtk_unipro_powerdown(hba, 0);
++	err = ufs_mtk_unipro_set_pm(hba, 0);
+ 	if (err)
+ 		return err;
+ 
+@@ -458,10 +482,10 @@ static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
+ {
+ 	int err;
+ 
+-	err = ufs_mtk_unipro_powerdown(hba, 1);
++	err = ufs_mtk_unipro_set_pm(hba, 1);
+ 	if (err) {
+ 		/* Resume UniPro state for following error recovery */
+-		ufs_mtk_unipro_powerdown(hba, 0);
++		ufs_mtk_unipro_set_pm(hba, 0);
+ 		return err;
  	}
  
- 	/* enable UIC related interrupts */
+@@ -552,6 +576,7 @@ static struct ufs_hba_variant_ops ufs_hba_mtk_vops = {
+ 	.name                = "mediatek.ufshci",
+ 	.init                = ufs_mtk_init,
+ 	.setup_clocks        = ufs_mtk_setup_clocks,
++	.hce_enable_notify   = ufs_mtk_hce_enable_notify,
+ 	.link_startup_notify = ufs_mtk_link_startup_notify,
+ 	.pwr_change_notify   = ufs_mtk_pwr_change_notify,
+ 	.apply_dev_quirks    = ufs_mtk_apply_dev_quirks,
+diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
+index 4c787b99fe41..5bbd3e9cbae2 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.h
++++ b/drivers/scsi/ufs/ufs-mediatek.h
+@@ -91,6 +91,7 @@ enum {
+ struct ufs_mtk_host {
+ 	struct ufs_hba *hba;
+ 	struct phy *mphy;
++	bool unipro_lpm;
+ 	bool ref_clk_enabled;
+ 	u16 ref_clk_ungating_wait_us;
+ 	u16 ref_clk_gating_wait_us;
 -- 
 2.18.0
 _______________________________________________
