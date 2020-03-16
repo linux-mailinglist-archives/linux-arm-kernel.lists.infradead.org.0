@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D8CB18656E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:08:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21860186573
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:10:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/XaWXl113K5T7McyOGXcGSkoXbwnns0sejHAuGVfd1M=; b=iVo+k6Ct5z0+B3
-	q1VfFPP6RmNQ0tenac+gn0YyHpQDQi2illV1Adzyt4rlqD2zK3negc1OYkdWE4zKIzSXtW5EgtjHg
-	TuLS9AvCBFqfWsHGe05XguAIMAPlwiYGRm9FayripZPAMYm6Z64k2tZhajZtkRthu9hBHfoEMuPgO
-	YdTgBOVDfFd9qO/korXCdaMHmeO2l1GAfPFy0f2rYw8rD35mcboq3JEdTKFcbauMIh3hzVZsNP+VE
-	QJwvO/wWWG1siaVYMMLRcN4S6GYIgKb5m3wtx8tlD+S8FAUS/sycMVTMnEoLldnsp6+3xU9crsXXY
-	BMp83eDY0IB+NFvcc3YQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4kr6IZ+YE1o+TQmYCXbSH5cEkye4IWKEeKzcNgpu8n0=; b=jgavgYmnlI5czBu3CLrThbTqB
+	rx/ImJvw0amaHBlYhe0CiFVqIjRUmYxnRTW5RrQ02GZx6krr0hgqXQ67Y5GNEqpV7jvZqasmAObcM
+	V63YISpQV8KSBvN/iMArG+AD64a5sOr+16RQ/Wm1k6VopUdB7aHW5Es//PY54gIYDOGD7Et3fRani
+	0Zj7jRv3RmHgUIGwyX4iIKWiQUJ9WPOSgV1ItFnZ1dOQ4AeHzYIpKjyPgk5YsbLKAp+bzp2NvVPUz
+	/SmfhDLLtORq7NZK0zXzwtURbK9mKnIqvMVkAKZdeZi4o7hS+K/qANrbMaRYv7+3M6oVbl/RI7COV
+	sXtVSnzQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDjrR-0005GB-7w; Mon, 16 Mar 2020 07:08:29 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jDjtA-0005gg-2g; Mon, 16 Mar 2020 07:10:16 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDjrH-0005Ei-SM; Mon, 16 Mar 2020 07:08:21 +0000
-X-UUID: f6c7d6a3a48247bba713358b62d20c56-20200315
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=dau95JaNBGsRunTGBlpYGDM3JLIWHp3+4y4tNiux/2U=; 
- b=BpGDmAXQShE3p/Mx8LKdOiQqUicz4QnmplojYZIxOeNrkR811wDSTmULr7hR3BaU6XsbhvpfEfDFXbgQgRBSivkElfFnZPEq1JfZMcyuSZCfrq8YplhJslOemcJOGinVkbCxZmWGi9OHWMXY7oaeda19he2Lv1JE/i9ViCW+mLU=;
-X-UUID: f6c7d6a3a48247bba713358b62d20c56-20200315
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1196337945; Sun, 15 Mar 2020 23:08:14 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Mar 2020 00:08:30 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Mar 2020 15:05:15 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 16 Mar 2020 15:07:28 +0800
-Message-ID: <1584342487.14250.11.camel@mtksdccf07>
+ id 1jDjss-0005f7-V5
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 07:10:00 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1584342598; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=KJZiL0sdohMQeVpJmkN38lZ6qU33N/oMM0pvgkF9gnc=;
+ b=LudcbJdOLCldXBL5Vp8nwCLvpa2cYS1UVbQLmb8p2T3/7MobsB7amBevORi3lB9Ko+fWlluZ
+ o+mMP5tUIisfpcg5x56+clag7lBs8HuTb41czSLojNqI1bZ6n/czx1uM2Mv0tyTJ5G+wB1Gf
+ LiRLTT4JLMtdy5pkvRtOn540fUI=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e6f2646.7f65ea85a3b0-smtp-out-n04;
+ Mon, 16 Mar 2020 07:09:58 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 3034CC43637; Mon, 16 Mar 2020 07:09:57 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: cang)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 5390EC433D2;
+ Mon, 16 Mar 2020 07:09:56 +0000 (UTC)
+MIME-Version: 1.0
+Date: Mon, 16 Mar 2020 15:09:56 +0800
+From: Can Guo <cang@codeaurora.org>
+To: Stanley Chu <stanley.chu@mediatek.com>
 Subject: Re: [PATCH v5 2/8] scsi: ufs: remove init_prefetch_data in struct
  ufs_hba
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Can Guo <cang@codeaurora.org>
-Date: Mon, 16 Mar 2020 15:08:07 +0800
-In-Reply-To: <51fde835f4f03fcca6e83ba6d3579f2e@codeaurora.org>
+In-Reply-To: <1584342487.14250.11.camel@mtksdccf07>
 References: <20200316034218.11914-1-stanley.chu@mediatek.com>
  <20200316034218.11914-3-stanley.chu@mediatek.com>
  <51fde835f4f03fcca6e83ba6d3579f2e@codeaurora.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 91130EEECD614F04B26B8D968427210292287D7953CE94BE6ED417119E909D972000:8
-X-MTK: N
+ <1584342487.14250.11.camel@mtksdccf07>
+Message-ID: <29d75c7ff1a5c7fb54ee145049daa5da@codeaurora.org>
+X-Sender: cang@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_000819_925214_872B06FA 
-X-CRM114-Status: UNSURE (   9.08  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200316_000959_235997_4449D167 
+X-CRM114-Status: GOOD (  13.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,36 +95,44 @@ Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
  linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
  alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
  linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Can,
+Hi Stanley,
 
-On Mon, 2020-03-16 at 14:25 +0800, Can Guo wrote:
-> On 2020-03-16 11:42, Stanley Chu wrote:
-> > Struct init_prefetch_data currently is used privately in
-> > ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
-> > 
-> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> > Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-> > Reviewed-by: Avri Altman <avri.altman@wdc.com>
+On 2020-03-16 15:08, Stanley Chu wrote:
+> Hi Can,
 > 
-> Hi Stanley,
+> On Mon, 2020-03-16 at 14:25 +0800, Can Guo wrote:
+>> On 2020-03-16 11:42, Stanley Chu wrote:
+>> > Struct init_prefetch_data currently is used privately in
+>> > ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
+>> >
+>> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+>> > Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+>> > Reviewed-by: Avri Altman <avri.altman@wdc.com>
+>> 
+>> Hi Stanley,
+>> 
+>> Earlier, I have one similar patch for this, but it does more than 
+>> this.
+>> Please check the mail I just sent.
+>> 
+>> Thanks,
+>> Can Guo.
 > 
-> Earlier, I have one similar patch for this, but it does more than this.
-> Please check the mail I just sent.
+> OK! Thanks to remind me this. Then I can drop this cleanup patch #2 in
+> its series to not conflict with your proposed one.
 > 
 > Thanks,
-> Can Guo.
+> Stanley Chu
 
-OK! Thanks to remind me this. Then I can drop this cleanup patch #2 in
-its series to not conflict with your proposed one.
+Sure, thank you for your quick response.
 
-Thanks,
-Stanley Chu
-
+Best regards,
+Can Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
