@@ -2,50 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5CB11863AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 04:26:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 143F71863B4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 04:35:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u7pXYlzCuMLVwEjhHovTCTrJmVq4FF5RCwmHOi/4NDo=; b=Ur620guhUTdrD4
-	VsebSje+mTVSnpNcs8BEhSvyi7QMgvvLSmXNmvIyaZdtlO1aYPg93L5N04dfoRtO4x0XZwxkeVmb/
-	eOUtAb6eVl50JQKuLUw/24kU0qb2xeOlPlCv9WWMjJtKDom9IiqcuvobADMS76T7zav7NxMI/zZ95
-	mca3KKTW3bOXib2Ih1Q1k6vKEG13BmF/KwNBWRx3RhYiOZ0DZEYS7RdmrnYjcR2pzlp6aHSfeObjS
-	dzc5oDrY7d/PvdDVVXJtMldpaZ+VZNvJMXeNbB1rXAeCd0z6rH1ye0CSaZCbuGU6EgbJAhpBS4tfa
-	4sxo8+n30ZxRyxu6T3Mw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RvrizHFXRlQF41PnduBbPgstmH3dcypdCo4wddUQlIQ=; b=Rd7tHMQN4PkW5O
+	KnnyLwD/CcXNq+qBNXhuodzshq1fLr4e3IM42KrVRu9sGatAWuUFHzarDqvd7+LX88BkO0bw3HKK3
+	Xu8gdmlK+e2dovVIytKKCUqtnU+hIRKzeKOtB2aE+l0m5PhgrNZT/Lx2GEkoeBcDTDE3OblX5k4wN
+	MKIaej5TVSvmB6136pE2ZWj1A0xYj/hjZRliXAxy9WTYTw6SSMh9e1zRz+AZhezMMFJE7Z6hy2zsz
+	lLWu6cQRe35HSN2OLHMY7EjWFv+TTrqZb0EM0K/8iJ/R0xgjfgUZPqZD/Dmey/4pabX0aiK3usFCM
+	TMM9PsP2++GqG/6CHHoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDgOK-0002rM-7U; Mon, 16 Mar 2020 03:26:12 +0000
+	id 1jDgX5-0005VQ-1j; Mon, 16 Mar 2020 03:35:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDgOC-0002qy-L4
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 03:26:05 +0000
+ id 1jDgWt-000533-42
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 03:35:04 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E6A920679;
- Mon, 16 Mar 2020 03:26:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3E95A205ED;
+ Mon, 16 Mar 2020 03:34:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584329164;
- bh=AeDcPIM6fWtG9TfyhkwrAHzpIDKASfisx8eb7lFRGqo=;
- h=Date:From:List-Id:To:Cc:Subject:From;
- b=xdDhpwQNeifYFwD7JQ6LpgCVBlIE6FRjDXIuwvH6lF2U2djNc002AOyyjK3QTCStm
- qdmLGOT8Ac61AUhsSrPSXldZRTCF+m2WfPaRE5jxcV+Mq/9blC3mAaTUm8u7eCfCGA
- 281Mbp+SNJmY+JH2szS1p9G3YKFmCEackilvH9Yw=
-Date: Mon, 16 Mar 2020 11:25:56 +0800
+ s=default; t=1584329701;
+ bh=r42/8/8azYLBlsApDX8O9MEW2SBamAdDhjr7m0WF5uA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=wLl7yHrTPgnRo2y9ZL1GfWAgFzWMel3NtzBUo/WChpeJW4HH9xBJ1bz7hce7OfUB6
+ a9jL3h/792H3sPHpVWi4pu8x2CpxPkDN1xQDUaRUILaL2Mk+kiDwmP+7g2bBik7RTL
+ kyJ1qLO3lC2gFx6143VQULpcEE/I8GzvBCSGzgzM=
+Date: Mon, 16 Mar 2020 11:34:48 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: soc@kernel.org, arm@kernel.org
-Subject: [GIT PULL] i.MX fixes for 5.6, round 2
-Message-ID: <20200316032555.GD17221@dragon>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
+Message-ID: <20200316033447.GE17221@dragon>
+References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
+ <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200316005219.GD17221@dragon>
+ <AM0PR04MB44819E4A9E027F1555C33D0B88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200316030744.GC17221@dragon>
+ <AM0PR04MB44817A48746601EADA4E06BC88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <AM0PR04MB44817A48746601EADA4E06BC88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_202604_710324_DDA6A6A2 
-X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-CacheID: sfid-20200315_203503_192266_E3065A5F 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,38 +82,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
- linux-imx@nxp.com, kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ Anson Huang <anson.huang@nxp.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "ronald@innovation.ch" <ronald@innovation.ch>,
+ "linux@roeck-us.net" <linux@roeck-us.net>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "a.zummo@towertech.it" <a.zummo@towertech.it>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit f10e58a5d20e1cf3a39a842da92c9dd0c3c23849:
+On Mon, Mar 16, 2020 at 03:18:43AM +0000, Peng Fan wrote:
+> Just sent out. One more thing, I think all drivers depends on IMX_SCU should not
+> have COMPILE_TEST if we plan not to add dummy functions. I see you picked up
+> Anson's patch in imx/drivers branch, please check more.
 
-  soc: imx-scu: Align imx sc msg structs to 4 (2020-02-24 15:29:43 +0800)
+Ha, yes. COMPILE_TEST should be dropped for IMX_SCU_PD in Anson's patch.
+Thanks for reminding.
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-fixes-5.6-2
-
-for you to fetch changes up to 636b45b8efa91db05553840b6c0120d6fa6b94fa:
-
-  ARM: dts: imx6: phycore-som: fix arm and soc minimum voltage (2020-03-11 16:28:33 +0800)
-
-----------------------------------------------------------------
-i.MX fixes for 5.6, round 2:
-
-- Fix minimum voltage setting of vdd_arm and vdd_soc on i.MX6
-  phycore-som board.
-
-----------------------------------------------------------------
-Marco Felsch (1):
-      ARM: dts: imx6: phycore-som: fix arm and soc minimum voltage
-
- arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
