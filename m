@@ -2,85 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 343C818658C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:22:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7974218659A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:24:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r27hWcoOLsQiRASlCw6TpmunJL3pm2SyBWayVbB2HaQ=; b=WGX4ltRPuHyNqM
-	GEFWUjcyesHaka6RDrkQ3lXG1fi+Qk8MDQVJ9ZtBA0L73sxHaJFPAdm5qURzTtenQY63IEhGs3eG/
-	8uEbNsWy2/PQ79KZIIyKuA1J6A+2rtivtuZmKUJpu81KUZTRXE8MVLqYRo7hp05uwlKcZijCmN9pO
-	sAGZXMtUd6A4mXE4wQL2ZWd/SZyxSTFm2mB2xZPNBqiLHSvJ/553+UCC9VMoxe/Ibc+MS6eznD3k2
-	KHp9hiT4h6ruPTU0sbd3cBvXnbAu3/k1E4sqqFxAFeyox7ITej9Nr81nqMhZWt4EAzOT6b4/fu5rB
-	Hye6tGrQn+pheQjhbSww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JwZ+DaFd3VadZcNWs3iGXgtgcx3gC0z+uwKgU5zawtg=; b=FkUvtwlQuUeb4M
+	8ZjVHwnaEyd6Oz12JKXg4vjo8Vjys38rcQ28slaKa0aYIJZehKOYF/bt8UMFAFSLIMuiWdqXYMS/V
+	fWNrPsV6M4U445cjmQq15+9BPHFxkDocrF3AsOcSXXzlb7FniZ6jkGjtmlFGzPisrlYq7B2R2jczt
+	/j3tuPOZFPKtQLJzFWWK9X2Hol4fyDJoUggy6oeCr3Qz7GEn9j/pG+LBWjSQO+4aHxeBYkRDg9CH7
+	rh7oGW1+PGg+KkIlnyYw0Dt4hoek9WpDcPyjynqiKDcQtRDdw3QgRdGsjPyDBVO0wSp7d+mZM1OfK
+	56a+2BMrpUMNARBtDrNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDk4i-0003i9-0q; Mon, 16 Mar 2020 07:22:12 +0000
-Received: from mail-lf1-f65.google.com ([209.85.167.65])
+	id 1jDk7F-0004S7-LP; Mon, 16 Mar 2020 07:24:49 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDk4Y-0003h5-VO
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 07:22:04 +0000
-Received: by mail-lf1-f65.google.com with SMTP id j11so13077428lfg.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 00:22:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=I7aBKCm8kI2F7Jl47saMU25REPiGQ5/LzV7PSFh0a9E=;
- b=IxaiDcD7aPMkW1MGvxPMYVjHcNxTabD2Fo0mh5DfsPi/xXNn+8+P0Vk/pdMwgMvv9w
- vqpKbGWJEAtqg1RqfzSRCxoHJbvSzzMvZpGDkfpWWj+PB6SbEfZXzdPjqXmDIVPG6OZZ
- B55AXdUWDGqNnxy13GhGVnZtWyShKocUh9M71u/gjep6Qklf5OfhFXyS8lJIhRT7YLbn
- oFILDm6hVY/2UzsarEqYeCurOQKo0676c1OQzIWkeQZy9pgmTGRc+7H1AD+QCJA9Iwjx
- jcjBuoWDYi0zhBGRsIWqtTaXmyeMvPu3eQZIH853PoXvbQfJLu+k45XLtlXC2SjhV4sa
- M8HQ==
-X-Gm-Message-State: ANhLgQ1JQ8ozWYMtMw0RSIazFNya3U/K5Lw6K/2rYZgIqO9s+GyWT+2e
- dgYAgwF65PmNTS9HfTphxOo=
-X-Google-Smtp-Source: ADFU+vvfXaI0eA6zxF80cwGW+BpzLifqbMXqRzCrqipFgyDI9intGbzRrLSOburBVMZ/TzFxex69dw==
-X-Received: by 2002:a19:6f44:: with SMTP id n4mr16199861lfk.59.1584343320572; 
- Mon, 16 Mar 2020 00:22:00 -0700 (PDT)
-Received: from xi.terra (c-12aae455.07-184-6d6c6d4.bbcust.telenor.se.
- [85.228.170.18])
- by smtp.gmail.com with ESMTPSA id a10sm14618994ljb.23.2020.03.16.00.21.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Mar 2020 00:21:59 -0700 (PDT)
-Received: from johan by xi.terra with local (Exim 4.92.3)
- (envelope-from <johan@kernel.org>)
- id 1jDk4F-0002Bi-58; Mon, 16 Mar 2020 08:21:43 +0100
-Date: Mon, 16 Mar 2020 08:21:43 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Sasha Levin <sashal@kernel.org>
-Subject: Re: [PATCH AUTOSEL 5.5 05/41] ARM: dts: imx6dl-colibri-eval-v3: fix
- sram compatible properties
-Message-ID: <20200316072143.GT14211@localhost>
-References: <20200316023319.749-1-sashal@kernel.org>
- <20200316023319.749-5-sashal@kernel.org>
+ id 1jDk73-0004Py-MX; Mon, 16 Mar 2020 07:24:39 +0000
+X-UUID: 5c7e3b4545f2430c903b07190db869e9-20200315
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=SME2J3snLnpUKDZ+/mhvA9A9BXydvq2FK3+5529r+Aw=; 
+ b=TEuM7M9480zmjH6HOjHEjnQC2v3iyUJKS1vHVOqQ4N0JqI67LVIPLJaknbBtkI2O81gvICQ8uvzTf+4E+LinJUlyXkSk9Tx+P65Y8EIo8p7w1npEbYmKrdygg1GCWKL9liNej+Y4IFX/SXNL9pnT+VRrChi6TPagiBGz9snH55Q=;
+X-UUID: 5c7e3b4545f2430c903b07190db869e9-20200315
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <roger.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1420860263; Sun, 15 Mar 2020 23:24:30 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Mar 2020 00:25:02 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Mar 2020 15:22:50 +0800
+Received: from mtksdaap41.mediatek.inc (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Mon, 16 Mar 2020 15:21:29 +0800
+From: Roger Lu <roger.lu@mediatek.com>
+To: Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Nicolas Boichat <drinkcat@google.com>, Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH v7 0/3] PM / AVS: SVS: Introduce SVS engine
+Date: Mon, 16 Mar 2020 15:23:14 +0800
+Message-ID: <20200316072316.7156-1-roger.lu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200316023319.749-5-sashal@kernel.org>
+X-TM-SNTS-SMTP: FAAF471B3CEBE181E2299E54C03D13A8F639F8379D2227AA0B0EE8D05A49E7012000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_002203_009804_0708B2AE 
-X-CRM114-Status: GOOD (  11.30  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200316_002437_746104_0B4E6B5C 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jhovold[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,45 +85,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Johan Hovold <johan@kernel.org>,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
- Sanchayan Maity <maitysanchayan@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ Angus Lin <Angus.Lin@mediatek.com>, devicetree@vger.kernel.org,
+ linux-pm@vger.kernel.org, Roger Lu <roger.lu@mediatek.com>,
+ linux-kernel@vger.kernel.org, Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
+ YT Lee <yt.lee@mediatek.com>, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, HenryC Chen <HenryC.Chen@mediatek.com>,
+ Charles Yang <Charles.Yang@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 15, 2020 at 10:32:43PM -0400, Sasha Levin wrote:
-> From: Johan Hovold <johan@kernel.org>
-> 
-> [ Upstream commit bcbf53a0dab50980867476994f6079c1ec5bb3a3 ]
-> 
-> The sram-node compatible properties have mistakingly combined the
-> model-specific string with the generic "mtd-ram" string.
-> 
-> Note that neither "cy7c1019dv33-10zsxi, mtd-ram" or
-> "cy7c1019dv33-10zsxi" are used by any in-kernel driver and they are
-> not present in any binding.
-> 
-> The physmap driver will however bind to platform devices that specify
-> "mtd-ram".
-> 
-> Fixes: fc48e76489fd ("ARM: dts: imx6: Add support for Toradex Colibri iMX6 module")
-> Cc: Sanchayan Maity <maitysanchayan@gmail.com>
-> Cc: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Signed-off-by: Johan Hovold <johan@kernel.org>
-> Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-> Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-> Signed-off-by: Sasha Levin <sashal@kernel.org>
+1. SVS driver use OPP adjust event in [1] to update OPP table voltage part.
+2. SVS dts node refers to CPU opp table [2] and GPU opp table [3].
+3. SVS and thermal dts use the same thermal efuse [4].
+4. SVS dts needs PMIC regulator [5].
+ 
+[1] https://patchwork.kernel.org/patch/11193513/
+[2] https://patchwork.kernel.org/patch/11304935/
+[3] https://patchwork.kernel.org/patch/11423009/
+[4] https://patchwork.kernel.org/patch/11316495/
+[5] https://patchwork.kernel.org/patch/11284617/
 
-Greg has already dropped this one from the stable queues once on my
-request, so please do not add it back.
+pending discussion on v7:
+- SVS sub-node architecture pending discussion in below patch.
+https://lore.kernel.org/patchwork/patch/1175994/
 
-Johan
+changes since v6:
+- svs_isr_handler() function is merged into svs_isr().
+- In svs_isr(), we find which bank fires interrupt first and check this bank
+is suspended or not secondly.
+- Use memdup_user_nul() instead of copy_from_user().
+- Use U32_MAX instead of "(u32)-1.
+- SVS needs to do resume after thermal resume in system suspend flow.
+Therefore, change SVS pm_ops to prepare/complete.
+- Add high temperature voltages compensation codes.
+- Add irqflags in "struct svs_platform" for supporting different SVS HW setting.
+- Set signed-off voltages to system when system suspend.
+- Add SVS HW reset flag for future SVS HW support.
+- Coding style refinement.
+
+Roger Lu (3):
+  dt-bindings: soc: add mtk svs dt-bindings
+  arm64: dts: mt8183: add svs device information
+  PM / AVS: SVS: Introduce SVS engine
+
+ .../devicetree/bindings/power/mtk-svs.txt     |   76 +
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   16 +
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |   41 +
+ drivers/power/avs/Kconfig                     |   10 +
+ drivers/power/avs/Makefile                    |    1 +
+ drivers/power/avs/mtk_svs.c                   | 2074 +++++++++++++++++
+ include/linux/power/mtk_svs.h                 |   23 +
+ 7 files changed, 2241 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+ create mode 100644 drivers/power/avs/mtk_svs.c
+ create mode 100644 include/linux/power/mtk_svs.h
 
 _______________________________________________
 linux-arm-kernel mailing list
