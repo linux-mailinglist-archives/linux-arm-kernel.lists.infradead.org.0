@@ -2,123 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89D1F1866CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:44:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A41521866E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:48:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jxm5G167FVa6wQtenhDnPBY1Lwj8oprTDIWBULrJfiU=; b=H2d7oErJjWcKow
-	y4KXCaca8Zv8QLiTU9O+sfjBH09t1f3iaejCXT5UpFf35lSuetO/05qi4uUKQw6tT4ouaznWsftAU
-	EOwbyMqm/XH0olSYgyCJI/KTAnT8kmtDwyfxAZLJL5+15Qd8Lzvwg3GTkQgsrIRL+xBPFNG/IkTrx
-	alroTtNfd30OP3ktlNbBsJVOPpsbLNWz+f7O3naK7vwWu6BQn/OPUpk5l2Ek2zEOFn54x3IzOqdqv
-	xaFLiKIdqU6SH0kp4XepbII8k7HxYsKVodiQm+sRmBr+iNSJIi0yPv4un8wg5vyc7fbHe3w0XF0W+
-	0HQX6vVKdlTz8NhqdUbg==;
+	List-Owner; bh=I6ednsMpDw95DfZZZ8/6iw1pN72fxdG5YQT5Bt/IWD4=; b=eGh6lXag6/Sjiq
+	FDkwUuiIWAjq9oFjaUr9M+8Pmab0+pMtt03TI3/K9azZUnatL4aTJBaQz++OPxvtHHQeywPDazotW
+	nZhUOLPTQBEH24mW42iCyhVkXmOEXAXv7+Kxno5pTcpGl4K8eC6KI225F6CpWHZA60plxbEZ5sDY1
+	Z9WE3FafNdEFqHN1rWWaytSJqTmvnRdnnalRwfvqjVbFNcZeCE1T6D1bDPuJvn26h72W8VFBWZgSJ
+	N46gGAT1/SOGRphydHthjv2RvikFSy61nL6sU2w9WzYQeWn0f1lwAkCbKzZ53QKVoDfsIi94SOPHi
+	JqXoOrecQsVAr03dBYVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDlMJ-0004AF-Vt; Mon, 16 Mar 2020 08:44:27 +0000
-Received: from mail-vi1eur05on2086.outbound.protection.outlook.com
- ([40.107.21.86] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jDlQ9-0006e1-Ci; Mon, 16 Mar 2020 08:48:25 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDlM6-00049g-2Z
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:44:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nHs4xJvZ1S7egWTlfa6eCclpRlQFY0F2S9C9rRxL8l1Lc4GXq2Yb4keVZthEADLFqVlXBL88z98GLl9HEFt6ydx7Ak4LEKnsMV4rXHMzS3JaUHNoCldCwwl/Rkez64fVdQRNbHyFmVd/X5RXB+kyEB8KcFZuGZXJ+aSbOKUaqLhSJJqtJbwdgvcgVOM+vHhXMXhXz/bGzmcaP6Ros5tFg8l3npoxMixaY548uCjNGVq42G4to3cx4DOc0cIRH7ZyX6wqYZljh02qx5ifyoaGbuqbprTvdwk7g866aOnl+DYjD+/m4/nrgX1ATYsGgtYlZgpCPUKn+4H33s4TE0yX0A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tg4VIhVXYMXP7TWkV2q51SFSYMEaSvUQMe3m9YWsX00=;
- b=eiDkwSJ8w4Fuj0cdyIL4KhhiLaJDgbdSr/jER59QSXlFB9qBx25XpaudDiKK8lVrCdgQOHdYgHrdDZxxA6pP3hXgAwsnCdHpQZgGltVPuWn6Y9GO0X9lmJZkgQ+MLAhsWr0/NcclalE3ChUPTD+g+zRfS3oi2191ShnCCE4ZsxGCFg3QLO4684TFU+Mxlg8FPCH3UFTaY3s+d7kcOfYsxRngrCd1TGGhL5sA/zJbNxGs8dlNw0ydx4UmkYTfBkglMVMRq2nhOygpiub5g4TNVvEBJPxq7i0NseeKFlBDuFrlUfrJ5SxJKN56+zOgi/QI689GN51dYl7b3x3rLC9NUw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tg4VIhVXYMXP7TWkV2q51SFSYMEaSvUQMe3m9YWsX00=;
- b=VMXHQvoPMQvn3EbW2Al+fvHkkt55UljWEGi70YlA65uwD6P2SHwEH32Ywj4ZF63fZd41M8BpwDzwUOKQMAXuK2opbm5Nyrw77MCxCffZj7ycRW/CDtADnd2+1lM1Cbjq8RQfHi1+m6XgR6sjfuvZeQdjDo0YUmvM0wdAUsxHv1E=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3689.eurprd04.prod.outlook.com (52.134.69.150) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.22; Mon, 16 Mar 2020 08:44:10 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2814.021; Mon, 16 Mar 2020
- 08:44:10 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: RE: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Topic: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Index: AQHV9av62LAReQhoZkKZ9LnT5dFdbahARTIAgAopwQCAACFfgIAABHaAgAADEYCAAAR+AIAASuWQgAAKpACAAABIoA==
-Date: Mon, 16 Mar 2020 08:44:10 +0000
-Message-ID: <DB3PR0402MB391663DB37A8D241092AD708F5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200316005219.GD17221@dragon>
- <AM0PR04MB44819E4A9E027F1555C33D0B88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200316030744.GC17221@dragon>
- <AM0PR04MB44817A48746601EADA4E06BC88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200316033447.GE17221@dragon>
- <DB3PR0402MB3916DA9F0F175B9D2E9E684FF5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20200316084056.GG4518@piout.net>
-In-Reply-To: <20200316084056.GG4518@piout.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 253ef0de-ffb7-4f42-b670-08d7c9863295
-x-ms-traffictypediagnostic: DB3PR0402MB3689:|DB3PR0402MB3689:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB36893B6CF1DD7D7ADEE38D87F5F90@DB3PR0402MB3689.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
-x-forefront-prvs: 03449D5DD1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(39860400002)(136003)(376002)(346002)(396003)(199004)(316002)(52536014)(7416002)(86362001)(26005)(33656002)(186003)(7696005)(6916009)(6506007)(54906003)(66946007)(66446008)(64756008)(9686003)(55016002)(66556008)(66476007)(76116006)(478600001)(4326008)(71200400001)(2906002)(5660300002)(44832011)(81166006)(81156014)(8676002)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3689;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +3CNHR7kYClQQtUTbFix7ZOCYkPUsCa7rZlYN+6hwOybGB7499qm46C00Yi99G2Nwl8uZ4U8Gl2nQlP2MtqHaFveNmqZDUACmBLJep2bm5uP1vMhWOWd75x7FVfMY2so+7u4H8EC0XmH3r+FSazPDSibLpr6YvfYKDWsKRFuDBttjIpgb72VcJTscPm87uPDU6rSp8luKmMZI79mWMJWlafgeRc1aBks5eWEZRUVofk464osg9n9uPpq6AZ6j6oYY6hKkz7ZukD82vBFtIA3Zrlbi23VZEsX5aiq3D7Gzvo4737S9bUygllIcwl9zutxNJ+Z91pBsgBLC6JfXr7J0sqIMpsbbU2exQRVCgD9rn62RUJtkth6lxXUbojvcIAFFy4eLT6CAVwO4ica2Xi0FELeN9gcQy10O8mDTC9t0mA+kdX0RZo5BplqL4F/kTbb
-x-ms-exchange-antispam-messagedata: gU4ZJ27MMFAAu6f/QF7R6g3hwmJiKgA5AaMyxzKAINosPytypBE0piQReN1Xywjfs2caD5TZtbjCNu+LESI5bQe779gCZZHI+s6UjwiIAhlBfGP5UOpBL+lSsi6wpuSQz36IB9cM3VuGQy0YtJie+Q==
+ id 1jDlQ0-0006dQ-Sc
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:48:18 +0000
+Received: from mail-qk1-f175.google.com ([209.85.222.175]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mnq8Y-1jftNU0zeM-00pONc for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 16 Mar 2020 09:48:14 +0100
+Received: by mail-qk1-f175.google.com with SMTP id h14so24729172qke.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Mar 2020 01:48:14 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ2+VYh52iVRCX4lWRprNzorPVkVhLVNLNqdAxhZP52aOzEcBu6L
+ zpYOlZZ4X8IX84CbkGw7PZskXfZDXJ8J+/csjec=
+X-Google-Smtp-Source: ADFU+vvOY/BGxo7kSvcD97t4Z1vQUfkOL22qs/tI6hULqTssDTO2tyghsLEAxf/j8ykiL2awuFtXPZNlBwPgv73H9fE=
+X-Received: by 2002:a37:b984:: with SMTP id j126mr23783692qkf.3.1584348493133; 
+ Mon, 16 Mar 2020 01:48:13 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 253ef0de-ffb7-4f42-b670-08d7c9863295
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Mar 2020 08:44:10.5228 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: VCpXcGjEZwvEjjzyfT81ZjIxtNi+NhcyPgWCflhIyDogj+pLe3tI+gckafrsslbyvzH24Z67oD5rl4hWSeKgJQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3689
+References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
+ <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
+In-Reply-To: <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 16 Mar 2020 09:47:57 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a1GFDUY4mXzst4Ds+S-4SGXso6-jfpsYyy-eHyceAC1Zg@mail.gmail.com>
+Message-ID: <CAK8P3a1GFDUY4mXzst4Ds+S-4SGXso6-jfpsYyy-eHyceAC1Zg@mail.gmail.com>
+Subject: Re: [PATCH v6 01/10] arm64: hyperv: Add core Hyper-V include files
+To: Michael Kelley <mikelley@microsoft.com>
+X-Provags-ID: V03:K1:hWOXq5xlvpxAIsb2kXyLZ/U3JGfURweQ7EzzQbbJ3+CidiF1SZj
+ gNvHSViSqSqWcg2XL0MQRfiOE5NvITl7ipJSsBN8ZE6uzEdkwNFHh44QWBI+nqzIGZNwAMx
+ ZsEwXp8j8za18FOSaWz0aOXfjK8NVoB6eIg4Y+AQAubhrFeuXamyyHxz5zjtE2xrvBfliqa
+ +AKcGH2oFexicJcAaCAzA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:K3FzP58SzoE=:ctCaV8/JGzoX+A9sYTg/p8
+ cp940fdDcwMXRPpMaHAU8GVlba7fMYADMQ1dJeeZcoTxixdUu6gsf73gboNhKJJjeuNo6Ra5J
+ +XcTGEHSpLObAeYBHbm5LVFnRhIGGU820ov/f3w2CRYgFE0KYhN46llforXy8FM+M0PzM7LdK
+ nR03/ne9natWSpXI45ytlVjRkDpzr/WOoPNLOFpRGsmD22yMH1ztNDLAkZ/RRJt0cjNmsPiGt
+ uAO1NXajNarAjcB2J+il/sAQ44ZKs0aKl0/+sQTmbC/8e/fjbAh2AUp8ddqCF7Z1C9jrJxtGx
+ bBcNeFEODeme0DrAW8Hn7MMmHH95ZpACrNPnHgVi4i1QVf9SdTasTPrtJQc+10X2w5V9PqCkZ
+ B/DdCRtJtlIjiz/BUKpXKrEpElQjoIqFX2g1c0cDWdrJx5raggN33zHTrLy4Zk6HfQFOUfWAm
+ bO5JyMtfTq1hX7uge+M5mbHLTUca5hmEsZIJ8iw0/VwqzKVXVtcl90zh1n7TT+bElyQ+pE1BN
+ VsmUpHLbLuUIYNdgG7/Z4pz9O+iWkRPX5VXTzDCgzUZbKlwfyTC1q/VU0MUVY2iCOVZZVjEkt
+ PPL8xyfgffgTgNkUGatZdLhx5gmKE8GnYP8wQZmRoRR/cCou7QkX3rSqbF5XvTTSUZtjcUfyQ
+ jZXMzeruBuBxESXNAmK3jsSpVrBAjiuQPp3vEqc2TfTN2LpaIOoeXUW8kSc+VCa+E46SoWKL/
+ QuXYOjfbDlEPUAr3hNEnNbvbuluf11SHJv6KZEekSEyoMT8oSB+58CsGEWpekDdCTiFocnQ9b
+ n9doa6OGbMGAlzHxb+x5Xf3w8Fxu0kpIBaZa17bAXxKKYLbYZI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_014414_125044_C26279B6 
-X-CRM114-Status: GOOD (  15.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200316_014817_221095_0460EFEB 
+X-CRM114-Status: GOOD (  15.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.86 listed in wl.mailspike.net]
+ no trust [212.227.126.134 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,76 +86,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "ronald@innovation.ch" <ronald@innovation.ch>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ linux-arch <linux-arch@vger.kernel.org>, linux-hyperv@vger.kernel.org,
+ linux-efi <linux-efi@vger.kernel.org>, Boqun Feng <boqun.feng@gmail.com>,
+ gregkh <gregkh@linuxfoundation.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Jason Wang <jasowang@redhat.com>, sunilmut@microsoft.com,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+ marcelo.cerri@canonical.com, olaf@aepfle.de, Marc Zyngier <maz@kernel.org>,
+ Andy Whitcroft <apw@canonical.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ "K. Y. Srinivasan" <kys@microsoft.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, Mar 14, 2020 at 4:36 PM Michael Kelley <mikelley@microsoft.com> wrote:
 
+> +
+> +/* Define input and output layout for Get VP Register hypercall */
+> +struct hv_get_vp_register_input {
+> +       u64 partitionid;
+> +       u32 vpindex;
+> +       u8  inputvtl;
+> +       u8  padding[3];
+> +       u32 name0;
+> +       u32 name1;
+> +} __packed;
 
-> Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU
-> case
-> 
-> On 16/03/2020 08:04:17+0000, Anson Huang wrote:
-> > Hi, Shawn
-> >
-> > > Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for
-> > > !CONFIG_IMX_SCU case
-> > >
-> > > On Mon, Mar 16, 2020 at 03:18:43AM +0000, Peng Fan wrote:
-> > > > Just sent out. One more thing, I think all drivers depends on
-> > > > IMX_SCU should not have COMPILE_TEST if we plan not to add dummy
-> > > > functions. I see you picked up Anson's patch in imx/drivers branch,
-> please check more.
-> > >
-> > > Ha, yes. COMPILE_TEST should be dropped for IMX_SCU_PD in Anson's
-> patch.
-> > > Thanks for reminding.
-> >
-> > I still NOT quite understand why we won't support COMPILE_TEST for SCU
-> > drivers, with whose stubs, the build should be OK, if there is any
-> > build error, we should try to fix it, NOT just remove the COMPILE_TEST
-> support, any special reason?
-> >
-> 
-> COMPILE_TEST is supported as long as IMX_SCU is selected like is it for any
-> driver depending on any bus.
+Are you sure these need to be made byte-aligned according to the
+specification? If the structure itself is aligned to 64 bit, better mark only
+the individual fields that are misaligned as __packed.
 
-But without having " || COMPILE_TEST " in kconfig, COMPILE_TEST will NOT be supported,
-I think as long as we have stubs for those SCU APIs, all drivers depending on IMX_SCU can
-support COMPILE_TEST independently.
+If the structure is aligned to only 32-bit addresses instead of
+64-bit, mark it as "__packed __aligned(4)" to let the compiler
+generate better code for accessing it.
 
-Anson  
+Also, in order to write portable code, it would be helpful to mark
+all the fields as explicitly little-endian, and use __le32_to_cpu()
+etc for accessing them.
+
+> +/* Define synthetic interrupt controller message flags. */
+> +union hv_message_flags {
+> +       __u8 asu8;
+> +       struct {
+> +               __u8 msg_pending:1;
+> +               __u8 reserved:7;
+> +       } __packed;
+> +};
+
+For similar reasons, please avoid bit fields and just use a
+bit mask on the first member of the union.
+
+The __packed annotation here is not meaningful,
+as the total size is already only a single byte.
+
+> +/* Define port identifier type. */
+> +union hv_port_id {
+> +       __u32 asu32;
+> +       struct {
+> +               __u32 id:24;
+> +               __u32 reserved:8;
+> +       }  __packed u;
+> +};
+
+Here, the __packed annotation is inconsistent with the use
+in the rest of the file: marking only one member of the union
+as __packed means that the union itself is still expected to
+be 4 byte aligned. I would expect that either all of these
+structures have a sensible alignment, or they are all
+completely unaligned.
+
+> + * Use the Hyper-V provided stimer0 as the timer that is made
+> + * available to the architecture independent Hyper-V drivers.
+> + */
+> +#define hv_init_timer(timer, tick) \
+> +               hv_set_vpreg(HV_REGISTER_STIMER0_COUNT + (2*timer), tick)
+> +#define hv_init_timer_config(timer, val) \
+> +               hv_set_vpreg(HV_REGISTER_STIMER0_CONFIG + (2*timer), val)
+> +#define hv_get_current_tick(tick) \
+> +               (tick = hv_get_vpreg(HV_REGISTER_TIME_REFCOUNT))
+
+In general, we prefer inline functions over macros in header files.
+
+> +#if IS_ENABLED(CONFIG_HYPERV)
+> +#define hv_enable_stimer0_percpu_irq(irq)      enable_percpu_irq(irq, 0)
+> +#define hv_disable_stimer0_percpu_irq(irq)     disable_percpu_irq(irq)
+> +#endif
+
+Should there be an #else definition here? It helps readability
+to have the two versions (with and without hyperv support) close
+together rather than in different files. If there is no other
+definition, just drop the #if.
+
+     Arnd
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
