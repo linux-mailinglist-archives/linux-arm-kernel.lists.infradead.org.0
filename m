@@ -2,60 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC4C81869F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:22:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DE8B186A04
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:24:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=paNrQHmLJN1DLSDGKEqHK+bW/LYenZ4gU64PWQdQigo=; b=S5Dism4QJ8O1hb
-	ogjCsnGI1ydzj2v4AjKpQS8/x16FpfjMFTWBEKhneHmB/Uk87UdZj7+DtOcp0fo7lRXhttxCiZC9J
-	zG2um0126WE/S1jb3YC4LLH5vAbGzca79C6oPMpmyR6jEEmIDalXFxvi8Yus52kuyJxzGIhaZQoi/
-	9Yo4haJSMn8UHyDW1vQ1W6b9OD0x1PGbmWePhStWVgEpWWSvw8L1Nqq6Rj9xG4TBxgPKXp7dYsI31
-	xFhezVufFZCq3R1QBeU6cNODl0z2SK7jUFyxFxVQ0aSATNWaEs/+G3EN9y6Hy03kHl7fIge5eNq+c
-	3wNGcv/c38giPzLS2GhA==;
+	List-Owner; bh=4MPM4mkLc03mGlNB+POzvaU0LnXXsqb8vVrRAbsf7cw=; b=JNvddK+/wuQ9I+
+	NZMjtM6t1jLpP1ZhKs2UTJTZSPziQ8pyPaPH/+ryKAMcUjHsvsP4rFRPPAroOo4KmtaozSYyMrz7X
+	Rlh8sXBDwlV2Am06StaeqMSpKBdZyUGeVva/nW9Z+6JJSA+CSH65BZO1DHkXvdBmDlbb3B4g2UKf6
+	DS31BzFzWISXGczFpKGgADkLy1qPXhdlREzUpZt0c3uxlPa6XzWAPfe3Rq8gD7yqJVnTnbzfeOnSU
+	vh/guqJ2eygceYOjeJVNbjo4xL1Ksz8BW0q2+QcnANv/4PfLHhixZGKMjDdzaLAETrgotvJgigWl5
+	1DwctS5vsQvc/lQ/Q/QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDnp6-0003pP-0X; Mon, 16 Mar 2020 11:22:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDnoy-0003ot-FD
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 11:22:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8FC430E;
- Mon, 16 Mar 2020 04:22:11 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8238C3F52E;
- Mon, 16 Mar 2020 04:22:08 -0700 (PDT)
-Date: Mon, 16 Mar 2020 11:22:06 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
-Message-ID: <20200316112205.GE3005@mbp>
-References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-19-vincenzo.frascino@arm.com>
- <20200315182950.GB32205@mbp>
- <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
- <20200316103437.GD3005@mbp>
- <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
+	id 1jDnrI-0004IK-OT; Mon, 16 Mar 2020 11:24:36 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDnr9-0004GS-0y; Mon, 16 Mar 2020 11:24:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=y8G04rfoWKUYzwsoZKQ5OhBejLp6XViSQs7CrSOGTTM=; b=faw7oWA9PeRP5tE0NxZu6Ae69
+ ALbTYfZYMc/tDDu7yWb2uKEGnzTwABdSYzR7JInOVhXdKmP1u4ZlaVgFYI/Ebe1GBaWzwsK3RIOwN
+ CzsPoCLYHOAWPiqKy67VxvfyJxJoMsV0mG8ycjXH2Cegk75D6qilj0DJatUzt1RIIEGnQZbT+4lty
+ XGWzg+PXBEU08Tc7xPKkaoTM8YzESxwh0UKhzrgpYi8t0+41dZPtLPK3aNKqr9Pg1/ENqyD/YZA8r
+ Sc5Q02sRfSdjuWfol0uBSOHQA0ZCwu+hMVgBN81KZL+7QvccD01s1rhw9Jt+bERARCTpJztK2p4sk
+ kHuEXGswQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:37186)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jDnqp-0000e3-Ef; Mon, 16 Mar 2020 11:24:07 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jDnqn-0001mN-BG; Mon, 16 Mar 2020 11:24:05 +0000
+Date: Mon, 16 Mar 2020 11:24:05 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH 1/2] rtc: mt2712: fix build without PM_SLEEP
+Message-ID: <20200316112405.GN25745@shell.armlinux.org.uk>
+References: <20200316104701.209293-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
+In-Reply-To: <20200316104701.209293-1-alexandre.belloni@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_042212_554469_15AC53E4 
-X-CRM114-Status: GOOD (  18.08  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200316_042427_066077_F046CF9E 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,60 +85,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
- linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
- Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Eddie Huang <eddie.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 16, 2020 at 10:55:00AM +0000, Vincenzo Frascino wrote:
-> On 3/16/20 10:34 AM, Catalin Marinas wrote:
-> >> I tried to fine grain the headers as much as I could in order to avoid
-> >> unneeded/unwanted inclusions:
-> >>  * TASK_SIZE_32 is used to verify ABI consistency on vdso32 (please refer to
-> >>    arch/arm64/kernel/vdso32/vgettimeofday.c).
-> > 
-> > I see. But the test is probably useless. With 4K pages, TASK_SIZE_32 is
-> > 1UL << 32, so you can't have a u32 greater than this. So I'd argue that
-> > the ABI compatibility here doesn't matter.
-> > 
-> > With 16K or 64K pages, TASK_SIZE_32 is slightly smaller but arm32 never
-> > supported it.
-> > 
-> > What's the side-effect of dropping this check altogether?
+On Mon, Mar 16, 2020 at 11:47:00AM +0100, Alexandre Belloni wrote:
+> Move SIMPLE_DEV_PM_OPS out of #ifdef to fix build issues when PM_SLEEP is
+> not selected.
 > 
-> The main side-effect is that arm32 and arm64 compat have a different behavior,
-> that it is what we want to avoid.
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> ---
+>  drivers/rtc/rtc-mt2712.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> The vdsotest [1] I am using, verifies all the side conditions with respect to
-> the ABI, which we are now compatible with. Removing those checks would break
-> this condition.
+> diff --git a/drivers/rtc/rtc-mt2712.c b/drivers/rtc/rtc-mt2712.c
+> index 432df9b0a3ac..c2709c1602f0 100644
+> --- a/drivers/rtc/rtc-mt2712.c
+> +++ b/drivers/rtc/rtc-mt2712.c
+> @@ -394,10 +394,10 @@ static int mt2712_rtc_resume(struct device *dev)
+>  
+>  	return 0;
+>  }
+> +#endif
 
-As I said above, I don't see how removing 'if ((u32)ts >= (1UL << 32))'
-makes any difference. This check was likely removed by the compiler
-already.
-
-Also, userspace doesn't have a trivial way to figure out TASK_SIZE and I
-can't see anything that tests this in the vdsotest (though I haven't
-spent that much time looking). If it's hard-coded, note that arm32
-TASK_SIZE is different from TASK_SIZE_32 on arm64.
-
-Can you tell what actually is failing in vdsotest if you remove the
-TASK_SIZE_32 checks in the arm64 compat vdso?
+Maybe use __maybe_unused for these, so they can still be compile-tested
+rather than #if'd out?
 
 -- 
-Catalin
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
