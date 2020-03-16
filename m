@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D48618621B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:37:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92052186287
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:38:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mtTJlT7/2Wpr/NvMcgDtWKMmK35AJRSXzUXwbZTIyB0=; b=JAm9MxmQeTCTKt
-	xi7sXwnTTkOaWu64i5FXcDAxjsoDKqwt9mtp2ODZqc5ma7XcXNdVmnvSUTwj6+D8K43xHTaG43oEz
-	DJd15ztNOPV38JQbTq5NjnT91cUDI8AjTNsIcOo0sNJHSLiMsdy081iTovdA2UaMPQxcTxDVj3HKA
-	cy90NB/mFEEP1ElB/68GS3HfBy8JD0v7uHmvy3Z09X6huRAKVDgHOCn8acOmup3AGssJsLolXhVFo
-	CqqLCQem871/iX0grqlp9j7fWuP8dRFcufh3cdsTFa7u/gfa8fnQHtR1DB53WTSKuJxSoIshjpzq4
-	Ob1SE3i5grjAv84Gtcsw==;
+	List-Owner; bh=FfODELCRWO2qSVZ0Yz3Xo4DbNyHaaK5hvHl8inhcgR4=; b=JTC/iDOybwkppX
+	H0sFH09UeUWBudHG1NJhBYS4JB3ZJe82kLru5GewUkG7UbMsQFLslIj4SBlVDD4Uj959ZaJtILiC1
+	cDc8rkjTNHbPEE/u7Ysfpd6QOZA+GD/5uL+ESKDzK0s73nlCQtU/7QXHU7VJ/T+vyTRELT3+G1SWu
+	jz6IOuhVtJ+h/qzaJkKCVpiPrGihhSeZDi8I8zJzWnut4lugi5Anto3uCSf7sfG1vT9zXlBy50TK0
+	nn2H9VsVy7RUB42yc4g4UN+cN1AgOSK8xSv6ugTY67oyVxYA0mjBKFwHj08rSEuMx0GM+fhxe9xA4
+	3RlRhZ9jjWl5wfZF9i/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfdE-0006Tb-1A; Mon, 16 Mar 2020 02:37:32 +0000
+	id 1jDfeQ-0007jW-RK; Mon, 16 Mar 2020 02:38:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfZX-0002Md-Sg
+ id 1jDfZY-0002Nx-TK
  for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:33:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3F158206E9;
- Mon, 16 Mar 2020 02:33:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8849B20738;
+ Mon, 16 Mar 2020 02:33:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326023;
- bh=7M6BqcEOcrNXV0twxa5hDGdRFmjF/9exVisatz4hJbo=;
+ s=default; t=1584326024;
+ bh=s2rFdOl3aT69qdT0TYXPhW8yEmrIvhPkYwNwwsXfbxU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rK3SElMcoLtndZHkXWCgG5ZUgC+cDgH1cxCMEwV5pZ3VXOUChCV/kdc6QH5awf+ut
- 4GyRn0YskhnKEegvhdxtg1Fpi2LbnfZxHzNjqSi20M+IcaTZtfKrje0x+NWJXoKOBW
- y/X7c7IvA+oHwb+EjhNjQFWfMZQs8XuRKIFkZfhU=
+ b=wYLieVFoC0xXbiIQQhBe0EIsHcoEKL1xi4GKzn1V6n1blz4ovb8ONu4SMP7dJsDY7
+ htKt8AJnEBXc9e3gwzviOTnFde+TQMJSJs8kSyC0enpGSifQHtlr4wyiKqdD4osu5Q
+ 9QewKkqFH9IqmyK1CEf01ZxTFXrhQtdPDBTEOvYc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 19/41] drm/exynos: dsi: fix workaround for the
- legacy clock name
-Date: Sun, 15 Mar 2020 22:32:57 -0400
-Message-Id: <20200316023319.749-19-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 20/41] drm/exynos: hdmi: don't leak enable HDMI_EN
+ regulator if probe fails
+Date: Sun, 15 Mar 2020 22:32:58 -0400
+Message-Id: <20200316023319.749-20-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200316023319.749-1-sashal@kernel.org>
 References: <20200316023319.749-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193343_993442_F552C341 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20200315_193345_153588_C57AF170 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,70 +91,102 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit c0fd99d659ba5582e09625c7a985d63fc2ca74b5 ]
+[ Upstream commit 3b6a9b19ab652efac7ad4c392add6f1235019568 ]
 
-Writing to the built-in strings arrays doesn't work if driver is loaded
-as kernel module. This is also considered as a bad pattern. Fix this by
-adding a call to clk_get() with legacy clock name. This fixes following
-kernel oops if driver is loaded as module:
+Move enabling and disabling HDMI_EN optional regulator to probe() function
+to keep track on the regulator status. This fixes following warning if
+probe() fails (for example when I2C DDC adapter cannot be yet gathered
+due to the missing driver). This fixes following warning observed on
+Arndale5250 board with multi_v7_defconfig:
 
-Unable to handle kernel paging request at virtual address bf047978
- pgd = (ptrval)
- [bf047978] *pgd=59344811, *pte=5903c6df, *ppte=5903c65f
- Internal error: Oops: 80f [#1] SMP ARM
- Modules linked in: mc exynosdrm(+) analogix_dp rtc_s3c exynos_ppmu i2c_gpio
- CPU: 1 PID: 212 Comm: systemd-udevd Not tainted 5.6.0-rc2-next-20200219 #326
- videodev: Linux video capture interface: v2.00
- Hardware name: Samsung Exynos (Flattened Device Tree)
- PC is at exynos_dsi_probe+0x1f0/0x384 [exynosdrm]
- LR is at exynos_dsi_probe+0x1dc/0x384 [exynosdrm]
- ...
- Process systemd-udevd (pid: 212, stack limit = 0x(ptrval))
- ...
- [<bf03cf14>] (exynos_dsi_probe [exynosdrm]) from [<c09b1ca0>] (platform_drv_probe+0x6c/0xa4)
- [<c09b1ca0>] (platform_drv_probe) from [<c09afcb8>] (really_probe+0x210/0x350)
- [<c09afcb8>] (really_probe) from [<c09aff74>] (driver_probe_device+0x60/0x1a0)
- [<c09aff74>] (driver_probe_device) from [<c09b0254>] (device_driver_attach+0x58/0x60)
- [<c09b0254>] (device_driver_attach) from [<c09b02dc>] (__driver_attach+0x80/0xbc)
- [<c09b02dc>] (__driver_attach) from [<c09ade00>] (bus_for_each_dev+0x68/0xb4)
- [<c09ade00>] (bus_for_each_dev) from [<c09aefd8>] (bus_add_driver+0x130/0x1e8)
- [<c09aefd8>] (bus_add_driver) from [<c09b0d64>] (driver_register+0x78/0x110)
- [<c09b0d64>] (driver_register) from [<bf038558>] (exynos_drm_init+0xe8/0x11c [exynosdrm])
- [<bf038558>] (exynos_drm_init [exynosdrm]) from [<c0302fa8>] (do_one_initcall+0x50/0x220)
- [<c0302fa8>] (do_one_initcall) from [<c03dd02c>] (do_init_module+0x60/0x210)
- [<c03dd02c>] (do_init_module) from [<c03dbf44>] (load_module+0x1c0c/0x2310)
- [<c03dbf44>] (load_module) from [<c03dc85c>] (sys_finit_module+0xac/0xbc)
- [<c03dc85c>] (sys_finit_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
- Exception stack(0xd979bfa8 to 0xd979bff0)
- ...
- ---[ end trace db16efe05faab470 ]---
+[drm] Failed to get ddc i2c adapter by node
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 214 at drivers/regulator/core.c:2051 _regulator_put+0x16c/0x184
+Modules linked in: ...
+CPU: 0 PID: 214 Comm: systemd-udevd Not tainted 5.6.0-rc2-next-20200219-00040-g38af1dfafdbb #7570
+Hardware name: Samsung Exynos (Flattened Device Tree)
+[<c0312258>] (unwind_backtrace) from [<c030cc10>] (show_stack+0x10/0x14)
+[<c030cc10>] (show_stack) from [<c0f0d3a0>] (dump_stack+0xcc/0xe0)
+[<c0f0d3a0>] (dump_stack) from [<c0346a58>] (__warn+0xe0/0xf8)
+[<c0346a58>] (__warn) from [<c0346b20>] (warn_slowpath_fmt+0xb0/0xb8)
+[<c0346b20>] (warn_slowpath_fmt) from [<c0893f58>] (_regulator_put+0x16c/0x184)
+[<c0893f58>] (_regulator_put) from [<c0893f8c>] (regulator_put+0x1c/0x2c)
+[<c0893f8c>] (regulator_put) from [<c09b2664>] (release_nodes+0x17c/0x200)
+[<c09b2664>] (release_nodes) from [<c09aebe8>] (really_probe+0x10c/0x350)
+[<c09aebe8>] (really_probe) from [<c09aefa8>] (driver_probe_device+0x60/0x1a0)
+[<c09aefa8>] (driver_probe_device) from [<c09af288>] (device_driver_attach+0x58/0x60)
+[<c09af288>] (device_driver_attach) from [<c09af310>] (__driver_attach+0x80/0xbc)
+[<c09af310>] (__driver_attach) from [<c09ace34>] (bus_for_each_dev+0x68/0xb4)
+[<c09ace34>] (bus_for_each_dev) from [<c09ae00c>] (bus_add_driver+0x130/0x1e8)
+[<c09ae00c>] (bus_add_driver) from [<c09afd98>] (driver_register+0x78/0x110)
+[<c09afd98>] (driver_register) from [<bf139558>] (exynos_drm_init+0xe8/0x11c [exynosdrm])
+[<bf139558>] (exynos_drm_init [exynosdrm]) from [<c0302fa8>] (do_one_initcall+0x50/0x220)
+[<c0302fa8>] (do_one_initcall) from [<c03dc02c>] (do_init_module+0x60/0x210)
+[<c03dc02c>] (do_init_module) from [<c03daf44>] (load_module+0x1c0c/0x2310)
+[<c03daf44>] (load_module) from [<c03db85c>] (sys_finit_module+0xac/0xbc)
+[<c03db85c>] (sys_finit_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
+Exception stack(0xecca3fa8 to 0xecca3ff0)
+...
+---[ end trace 276c91214635905c ]---
 
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
 Signed-off-by: Inki Dae <inki.dae@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/exynos/exynos_drm_dsi.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/exynos/exynos_hdmi.c | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-index 8d880012b5876..0f6497670e29d 100644
---- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-+++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-@@ -1766,9 +1766,10 @@ static int exynos_dsi_probe(struct platform_device *pdev)
- 		dsi->clks[i] = devm_clk_get(dev, clk_names[i]);
- 		if (IS_ERR(dsi->clks[i])) {
- 			if (strcmp(clk_names[i], "sclk_mipi") == 0) {
--				strcpy(clk_names[i], OLD_SCLK_MIPI_CLK_NAME);
--				i--;
--				continue;
-+				dsi->clks[i] = devm_clk_get(dev,
-+							OLD_SCLK_MIPI_CLK_NAME);
-+				if (!IS_ERR(dsi->clks[i]))
-+					continue;
- 			}
+diff --git a/drivers/gpu/drm/exynos/exynos_hdmi.c b/drivers/gpu/drm/exynos/exynos_hdmi.c
+index 48159d5d22144..d85e15e816e99 100644
+--- a/drivers/gpu/drm/exynos/exynos_hdmi.c
++++ b/drivers/gpu/drm/exynos/exynos_hdmi.c
+@@ -1803,18 +1803,10 @@ static int hdmi_resources_init(struct hdmi_context *hdata)
  
- 			dev_info(dev, "failed to get the clock: %s\n",
+ 	hdata->reg_hdmi_en = devm_regulator_get_optional(dev, "hdmi-en");
+ 
+-	if (PTR_ERR(hdata->reg_hdmi_en) != -ENODEV) {
++	if (PTR_ERR(hdata->reg_hdmi_en) != -ENODEV)
+ 		if (IS_ERR(hdata->reg_hdmi_en))
+ 			return PTR_ERR(hdata->reg_hdmi_en);
+ 
+-		ret = regulator_enable(hdata->reg_hdmi_en);
+-		if (ret) {
+-			DRM_DEV_ERROR(dev,
+-				      "failed to enable hdmi-en regulator\n");
+-			return ret;
+-		}
+-	}
+-
+ 	return hdmi_bridge_init(hdata);
+ }
+ 
+@@ -2021,6 +2013,15 @@ static int hdmi_probe(struct platform_device *pdev)
+ 		}
+ 	}
+ 
++	if (!IS_ERR(hdata->reg_hdmi_en)) {
++		ret = regulator_enable(hdata->reg_hdmi_en);
++		if (ret) {
++			DRM_DEV_ERROR(dev,
++			      "failed to enable hdmi-en regulator\n");
++			goto err_hdmiphy;
++		}
++	}
++
+ 	pm_runtime_enable(dev);
+ 
+ 	audio_infoframe = &hdata->audio.infoframe;
+@@ -2045,7 +2046,8 @@ static int hdmi_probe(struct platform_device *pdev)
+ 
+ err_rpm_disable:
+ 	pm_runtime_disable(dev);
+-
++	if (!IS_ERR(hdata->reg_hdmi_en))
++		regulator_disable(hdata->reg_hdmi_en);
+ err_hdmiphy:
+ 	if (hdata->hdmiphy_port)
+ 		put_device(&hdata->hdmiphy_port->dev);
 -- 
 2.20.1
 
