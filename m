@@ -2,82 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FD19186D28
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:34:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61A73186D29
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:34:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=S0/+ZcsknOMolN+rhmdFyinMNRDaWzxE8VCGKeka+9Y=; b=EqCbCBYygWyFaUZN2JEk8Zk3Jh
-	FCiY9oHPa0weaXMyGf3QOpy4nOyQV2ZIXmYwK/1DFCkgyoexT4on814G+5vQyAxvpNVdnIkM+49eI
-	tZkD65wp+7AAkw8/Ma/MI2gkHg+4cMKy/ngGfIt43PjPicnhIyQUooGVJHJxDmmfRSfA1aqdBs5do
-	4WL91RTVmFwp+Q+4O68eDubtf850scjDnMTtINb0sqTiTKx20kd5tkhZZ/N4eEH+zB4EBjU4N+oBa
-	NifjAKD5SmI/VubMl8f7T4oMmzzZ/9KPccuY3TciATRRDZCeLT2Mi43S93oyu5yqugQ4qWwTegG0M
-	X5yjkGxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IgVnxhroN97tzZm63A1PCdL2U3PWP3uNB2AE8uTbpQM=; b=q6kkfeGNu9Qn3ihBrspXkDa1N
+	xJnzmxyeIWB1OFkiu9qdc67D12i5kl2gSrG+iFL26dzq92yxjgqi8dhv8mu8wj00zjRoNpf1UX0U4
+	sKFt2NWS8iyGGiZKYiB5+LE8/iWd4NjSPsWhCZ6tvC6tcLuRnkT4qrWfpeT5tbuuce/+vRRWkWIUM
+	baT/lfkymvgrV4ezZZ4ewJZANHLJHgx6DYsi89OlvXkDwK9C6v0nixIdumclBv1Hvjf5ZhVm4F05K
+	5FieWI9hJ98e/uj0018HAcrcOtT0D5groC9v65pvdWqpHSHiwZAy7EkZJ52SusEkuoku+CUtiuYgV
+	Te8E50RpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDqov-0006K3-83; Mon, 16 Mar 2020 14:34:21 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jDqp8-0006Yz-Hw; Mon, 16 Mar 2020 14:34:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDqoZ-0006Bc-Pu
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:34:01 +0000
-Received: by mail-lf1-x141.google.com with SMTP id u26so2003314lfu.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 07:33:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZDDZumFM4GKkqmise65KcQNrnejQ1Q6C9mhu8+xXRqI=;
- b=AWG2bc+5Ee9obty+kw+QqJmaHXD0x6LGBAzcB3LeMs18u7WkxgnQW7Y4GrtHYDcNM0
- sefnHSJFaVkgZCWU85q+68eOtFB62Jd/P0u99x41+Fje0fVG8/8EBwEhfFEGkLHddt9n
- AGYTx1Zr5Oj5gYTX9I7DNlH/Wj4A3mD9qq2XkH8jtLsJwZ29gRfgS2Q+cpTM/WgFaT82
- FLkO32mTGfRVq7nrfG1zcOeV9REmaD5g+6SlBu5a+/LRxUW/ZVPjMOrr1bE5g2SA7uA1
- ym1ihLtMN+YsU28hNyTDzbewt5pJXlFkoIbSEVEUSYqvD768nslMn4YjNEGzRwqnvpWf
- NwGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=ZDDZumFM4GKkqmise65KcQNrnejQ1Q6C9mhu8+xXRqI=;
- b=OYGscliWc1kFVx0J4w3VnIuEG/1Ua+sSm8nMOZILHjvOXcHzL0sQfFdI6GB7FgLaqw
- e3Pg6DkDkUGMwoWFa+44VEtaYzD7yyyeE9hklKNqS+BE3Gx6Pt+7NAk8DNvtv2hxBs1O
- 8NNRZmfEsyVLWN5C2lobPRAyOT5MEr7eMox1iQUc//babzLfebJg02XzlFdlaFKWLj5i
- tNALrmJMGvNDvyl1qyeyNqecUigDjVlnTg1n+MB8sG9Cxj6RbEa0DSZDRNkotwrAPLiN
- jzIG2VDOvunubdU0GO0rCmn97XxJ5N9RcuhqEysqPnMbdkGuP001Vds+2Hk+6lFhA5vb
- PHMQ==
-X-Gm-Message-State: ANhLgQ0JL3hj6JBfdPSeb8LcAuVX8lpjOT8YnDaEDvZmJc4X69svtvYO
- zC8P8dfduNMabHVa2aoDrcIT0cYl3/g=
-X-Google-Smtp-Source: ADFU+vtEH3/gPLBV77T2Pvsxla+YknqaQV9OQHTagfl/9rf11cs5Qj8lXizAXfYMF8h9Iem5++ETMA==
-X-Received: by 2002:a19:4350:: with SMTP id m16mr9059395lfj.67.1584369233381; 
- Mon, 16 Mar 2020 07:33:53 -0700 (PDT)
-Received: from localhost (host-176-37-176-139.la.net.ua. [176.37.176.139])
- by smtp.gmail.com with ESMTPSA id k14sm16045lfg.96.2020.03.16.07.33.52
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 16 Mar 2020 07:33:52 -0700 (PDT)
-From: Igor Opaniuk <igor.opaniuk@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 2/2] ARM: dts: colibri: introduce device trees with UHS-I
- support
-Date: Mon, 16 Mar 2020 16:33:45 +0200
-Message-Id: <20200316143345.30823-2-igor.opaniuk@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200316143345.30823-1-igor.opaniuk@gmail.com>
-References: <20200316143345.30823-1-igor.opaniuk@gmail.com>
+ id 1jDqog-0006FD-2J
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:34:08 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 413582051A;
+ Mon, 16 Mar 2020 14:34:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584369244;
+ bh=uMF3QsbME7AEQLIGa4it4F+7gI7S9iWWCO7lcyAp5HI=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=HSv8Cm2r8XV3m93SmiqNJ1nWMcnKG4gI9XG3V1wG7Uu2Y+srI21d/OIJjkZVLWEpV
+ 1Xl0M+gKXvEHXXk0QqmN1mqGibRmMDE9cC8YtW+9hmABBCA+MDItqQdyAfZOevIbeH
+ SIloO7iYnJQBr/xMLhYAaCoVGd06DQFEx4VLvzA8=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jDqoc-00D655-Fc; Mon, 16 Mar 2020 14:34:02 +0000
+MIME-Version: 1.0
+Date: Mon, 16 Mar 2020 14:34:02 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Mubin Usman Sayyed <mubin.usman.sayyed@xilinx.com>
+Subject: Re: [PATCH v4 1/3] irqchip: xilinx: Add support for multiple instances
+In-Reply-To: <20200316135447.30162-2-mubin.usman.sayyed@xilinx.com>
+References: <20200316135447.30162-1-mubin.usman.sayyed@xilinx.com>
+ <20200316135447.30162-2-mubin.usman.sayyed@xilinx.com>
+Message-ID: <be19cec70f79e10483bd8da592b5a924@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: mubin.usman.sayyed@xilinx.com, tglx@linutronix.de,
+ jason@lakedaemon.net, michals@xilinx.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, sivadur@xilinx.com, anirudh@xilinx.com,
+ anirudha.sarangi@xilinx.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_073359_840217_839EA361 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200316_073406_212261_B8100B58 
+X-CRM114-Status: GOOD (  27.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [igor.opaniuk[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,192 +91,346 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Igor Opaniuk <igor.opaniuk@toradex.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Shawn Guo <shawnguo@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: jason@lakedaemon.net, Anirudha Sarangi <anirudha.sarangi@xilinx.com>,
+ sivadur@xilinx.com, linux-kernel@vger.kernel.org, michals@xilinx.com,
+ anirudh@xilinx.com, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Igor Opaniuk <igor.opaniuk@toradex.com>
+On 2020-03-16 13:54, Mubin Usman Sayyed wrote:
+> From: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> 
+> Added support for cascaded interrupt controllers.
+> 
+> Following cascaded configurations have been tested,
+> 
+> - peripheral->xilinx-intc->xilinx-intc->gic->Cortexa53 processor
+>   on zcu102 board
+> - peripheral->xilinx-intc->xilinx-intc->microblaze processor
+>   on kcu105 board
+> 
+> Signed-off-by: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> Signed-off-by: Anirudha Sarangi <anirudha.sarangi@xilinx.com>
+> ---
+> Changes for v4:
+> 	- Fixed review comments from Thomas - updated commit
+> 	  message, variable declarations changed to reverse
+> 	  fir tree and cleaned up some code.
+> 
+> Changes for v3:
+> 	- Modified prototype of xintc_write/xintc_read
+> 	- Fixed review comments regarding indentation/variable
+> 	  names, used BIT
+> 	- Modified xintc_get_irq_local to return 0
+> 	  in case of failure/no pending interrupts
+> 	- Fixed return type of xintc_read
+> 	- Reverted changes related to device name and
+> 	  kept intc_dev as static
+> 
+> Changes for v2:
+>         - Removed write_fn/read_fn hooks, used xintc_write/
+> 	  xintc_read directly
+>         - Moved primary_intc declaration after xintc_irq_chip
+> ---
+>  drivers/irqchip/irq-xilinx-intc.c | 121 ++++++++++++++++++------------
+>  1 file changed, 71 insertions(+), 50 deletions(-)
+> 
+> diff --git a/drivers/irqchip/irq-xilinx-intc.c
+> b/drivers/irqchip/irq-xilinx-intc.c
+> index e3043ded8973..65b77720ef2e 100644
+> --- a/drivers/irqchip/irq-xilinx-intc.c
+> +++ b/drivers/irqchip/irq-xilinx-intc.c
+> @@ -38,29 +38,32 @@ struct xintc_irq_chip {
+>  	void		__iomem *base;
+>  	struct		irq_domain *root_domain;
+>  	u32		intr_mask;
+> +	struct		irq_chip *intc_dev;
 
-1. Introduce dtsi with overlay configuration for enabling UHS-I
-for Colibri iMX6S/DL V1.1x re-design.
-2. Introduce new dts for the Colibri iMX6S/DL V1.1x
-on Colibri Evaluation Carrier Board V3.x. However, disable 1.8V for
-the Colibri Evaluation Board since this carrier board has 3.3V pull-ups on.
-3. Provide proper configuration for VGEN3, which allows that rail to
-be automatically switched to 1.8 volts for proper UHS-I operation mode.
+What is the need for this pointer? As far as I can see, all the 
+interrupts
+have the same callbacks, and even then, there should be no need to keep
+a pointer to that.
 
-Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
----
+> +	u32		nr_irq;
+>  };
+> 
+> -static struct xintc_irq_chip *xintc_irqc;
+> +static struct xintc_irq_chip *primary_intc;
+> 
+> -static void xintc_write(int reg, u32 data)
+> +static void xintc_write(struct xintc_irq_chip *irqc, int reg, u32 
+> data)
+>  {
+>  	if (static_branch_unlikely(&xintc_is_be))
+> -		iowrite32be(data, xintc_irqc->base + reg);
+> +		iowrite32be(data, irqc->base + reg);
+>  	else
+> -		iowrite32(data, xintc_irqc->base + reg);
+> +		iowrite32(data, irqc->base + reg);
+>  }
+> 
+> -static unsigned int xintc_read(int reg)
+> +static u32 xintc_read(struct xintc_irq_chip *irqc, int reg)
+>  {
+>  	if (static_branch_unlikely(&xintc_is_be))
+> -		return ioread32be(xintc_irqc->base + reg);
+> +		return ioread32be(irqc->base + reg);
+>  	else
+> -		return ioread32(xintc_irqc->base + reg);
+> +		return ioread32(irqc->base + reg);
+>  }
+> 
+>  static void intc_enable_or_unmask(struct irq_data *d)
+>  {
+> -	unsigned long mask = 1 << d->hwirq;
+> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> +	unsigned long mask = BIT(d->hwirq);
+> 
+>  	pr_debug("irq-xilinx: enable_or_unmask: %ld\n", d->hwirq);
+> 
+> @@ -69,30 +72,35 @@ static void intc_enable_or_unmask(struct irq_data 
+> *d)
+>  	 * acks the irq before calling the interrupt handler
+>  	 */
+>  	if (irqd_is_level_type(d))
+> -		xintc_write(IAR, mask);
+> +		xintc_write(irqc, IAR, mask);
+> 
+> -	xintc_write(SIE, mask);
+> +	xintc_write(irqc, SIE, mask);
+>  }
+> 
+>  static void intc_disable_or_mask(struct irq_data *d)
+>  {
+> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> +
+>  	pr_debug("irq-xilinx: disable: %ld\n", d->hwirq);
+> -	xintc_write(CIE, 1 << d->hwirq);
+> +	xintc_write(irqc, CIE, BIT(d->hwirq));
+>  }
+> 
+>  static void intc_ack(struct irq_data *d)
+>  {
+> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> +
+>  	pr_debug("irq-xilinx: ack: %ld\n", d->hwirq);
+> -	xintc_write(IAR, 1 << d->hwirq);
+> +	xintc_write(irqc, IAR, BIT(d->hwirq));
+>  }
+> 
+>  static void intc_mask_ack(struct irq_data *d)
+>  {
+> -	unsigned long mask = 1 << d->hwirq;
+> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> +	unsigned long mask = BIT(d->hwirq);
+> 
+>  	pr_debug("irq-xilinx: disable_and_ack: %ld\n", d->hwirq);
+> -	xintc_write(CIE, mask);
+> -	xintc_write(IAR, mask);
+> +	xintc_write(irqc, CIE, mask);
+> +	xintc_write(irqc, IAR, mask);
+>  }
+> 
+>  static struct irq_chip intc_dev = {
+> @@ -103,13 +111,28 @@ static struct irq_chip intc_dev = {
+>  	.irq_mask_ack = intc_mask_ack,
+>  };
+> 
+> +static unsigned int xintc_get_irq_local(struct xintc_irq_chip *irqc)
+> +{
+> +	unsigned int irq = 0;
+> +	u32 hwirq;
+> +
+> +	hwirq = xintc_read(irqc, IVR);
+> +	if (hwirq != -1U)
+> +		irq = irq_find_mapping(irqc->root_domain, hwirq);
+> +
+> +	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
+> +
+> +	return irq;
+> +}
+> +
+>  unsigned int xintc_get_irq(void)
+>  {
+> -	unsigned int hwirq, irq = -1;
+> +	unsigned int irq = -1;
+> +	u32 hwirq;
+> 
+> -	hwirq = xintc_read(IVR);
+> +	hwirq = xintc_read(primary_intc, IVR);
+>  	if (hwirq != -1U)
+> -		irq = irq_find_mapping(xintc_irqc->root_domain, hwirq);
+> +		irq = irq_find_mapping(primary_intc->root_domain, hwirq);
+> 
+>  	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
+> 
+> @@ -118,15 +141,18 @@ unsigned int xintc_get_irq(void)
+> 
+>  static int xintc_map(struct irq_domain *d, unsigned int irq,
+> irq_hw_number_t hw)
+>  {
+> -	if (xintc_irqc->intr_mask & (1 << hw)) {
+> -		irq_set_chip_and_handler_name(irq, &intc_dev,
+> -						handle_edge_irq, "edge");
+> +	struct xintc_irq_chip *irqc = d->host_data;
+> +
+> +	if (irqc->intr_mask & BIT(hw)) {
+> +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
+> +					      handle_edge_irq, "edge");
+>  		irq_clear_status_flags(irq, IRQ_LEVEL);
+>  	} else {
+> -		irq_set_chip_and_handler_name(irq, &intc_dev,
+> -						handle_level_irq, "level");
+> +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
+> +					      handle_level_irq, "level");
+>  		irq_set_status_flags(irq, IRQ_LEVEL);
+>  	}
+> +	irq_set_chip_data(irq, irqc);
+>  	return 0;
+>  }
+> 
+> @@ -138,12 +164,14 @@ static const struct irq_domain_ops
+> xintc_irq_domain_ops = {
+>  static void xil_intc_irq_handler(struct irq_desc *desc)
+>  {
+>  	struct irq_chip *chip = irq_desc_get_chip(desc);
+> +	struct xintc_irq_chip *irqc;
+>  	u32 pending;
+> 
+> +	irqc = irq_data_get_irq_handler_data(&desc->irq_data);
+>  	chained_irq_enter(chip, desc);
+>  	do {
+> -		pending = xintc_get_irq();
+> -		if (pending == -1U)
+> +		pending = xintc_get_irq_local(irqc);
+> +		if (pending == 0U)
 
-v5:
-- Fix copyright/licensing [Shawn Guo]
-- Don't enable 1.8V by default, as some carrier boards have 3.3V pull-ups,
-  which leads to [  164.058099] mmc0: error -110 whilst initialising SD
-  card errors. [Marcel Ziswiler]
-- Change hierarchy: move SD-card properties to the module level device
-  tree include (to explicitly state that these properties relate to module,
-  not carrier board) + people can easily include it in their custom
-  carrier board device trees.
+nit: I don't think we need to consider the sign of zero.
 
-v4:
-- Document Colibri iMX6S/DL V1.1x re-design devicetree binding [Shawn Guo]
-- wakeup-source property fix [Shawn Guo]
+>  			break;
+>  		generic_handle_irq(pending);
+>  	} while (true);
+> @@ -153,28 +181,19 @@ static void xil_intc_irq_handler(struct irq_desc 
+> *desc)
+>  static int __init xilinx_intc_of_init(struct device_node *intc,
+>  					     struct device_node *parent)
+>  {
+> -	u32 nr_irq;
+> -	int ret, irq;
+>  	struct xintc_irq_chip *irqc;
+> -
+> -	if (xintc_irqc) {
+> -		pr_err("irq-xilinx: Multiple instances aren't supported\n");
+> -		return -EINVAL;
+> -	}
+> +	int ret, irq;
+> 
+>  	irqc = kzalloc(sizeof(*irqc), GFP_KERNEL);
+>  	if (!irqc)
+>  		return -ENOMEM;
+> -
+> -	xintc_irqc = irqc;
+> -
+>  	irqc->base = of_iomap(intc, 0);
+>  	BUG_ON(!irqc->base);
+> 
+> -	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs", &nr_irq);
+> +	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs", 
+> &irqc->nr_irq);
+>  	if (ret < 0) {
+>  		pr_err("irq-xilinx: unable to read xlnx,num-intr-inputs\n");
+> -		goto err_alloc;
+> +		goto error;
+>  	}
+> 
+>  	ret = of_property_read_u32(intc, "xlnx,kind-of-intr", 
+> &irqc->intr_mask);
+> @@ -183,34 +202,35 @@ static int __init xilinx_intc_of_init(struct
+> device_node *intc,
+>  		irqc->intr_mask = 0;
+>  	}
+> 
+> -	if (irqc->intr_mask >> nr_irq)
+> +	if (irqc->intr_mask >> irqc->nr_irq)
+>  		pr_warn("irq-xilinx: mismatch in kind-of-intr param\n");
+> 
+>  	pr_info("irq-xilinx: %pOF: num_irq=%d, edge=0x%x\n",
+> -		intc, nr_irq, irqc->intr_mask);
+> +		intc, irqc->nr_irq, irqc->intr_mask);
+> 
+> +	irqc->intc_dev = &intc_dev;
 
-v3:
-- change hierarchy according to Marco's suggestions [Marco Felsch]
-- adjust compatible string adding v1.1 [Stefan Agner]
+Based on the above, this should go.
 
-v2:
-- rework hierarchy of dts files, and a separate dtsi for Colibri
-  iMX6S/DL V1.1x re-design, where UHS-I was added [Marcel Ziswiler]
-- add comments about vgen3 power rail [Marcel Ziswiler]
-- fix other minor issues, addressing Marcel's comments. [Marcel Ziswiler]
+> 
+>  	/*
+>  	 * Disable all external interrupts until they are
+>  	 * explicity requested.
+>  	 */
+> -	xintc_write(IER, 0);
+> +	xintc_write(irqc, IER, 0);
+> 
+>  	/* Acknowledge any pending interrupts just in case. */
+> -	xintc_write(IAR, 0xffffffff);
+> +	xintc_write(irqc, IAR, 0xffffffff);
+> 
+>  	/* Turn on the Master Enable. */
+> -	xintc_write(MER, MER_HIE | MER_ME);
+> -	if (!(xintc_read(MER) & (MER_HIE | MER_ME))) {
+> +	xintc_write(irqc, MER, MER_HIE | MER_ME);
+> +	if (xintc_read(irqc, MER) != (MER_HIE | MER_ME)) {
+>  		static_branch_enable(&xintc_is_be);
+> -		xintc_write(MER, MER_HIE | MER_ME);
+> +		xintc_write(irqc, MER, MER_HIE | MER_ME);
+>  	}
+> 
+> -	irqc->root_domain = irq_domain_add_linear(intc, nr_irq,
+> +	irqc->root_domain = irq_domain_add_linear(intc, irqc->nr_irq,
+>  						  &xintc_irq_domain_ops, irqc);
+>  	if (!irqc->root_domain) {
+>  		pr_err("irq-xilinx: Unable to create IRQ domain\n");
+> -		goto err_alloc;
+> +		goto error;
+>  	}
+> 
+>  	if (parent) {
+> @@ -222,16 +242,17 @@ static int __init xilinx_intc_of_init(struct
+> device_node *intc,
+>  		} else {
+>  			pr_err("irq-xilinx: interrupts property not in DT\n");
+>  			ret = -EINVAL;
+> -			goto err_alloc;
+> +			goto error;
+>  		}
+>  	} else {
+> -		irq_set_default_host(irqc->root_domain);
+> +		primary_intc = irqc;
+> +		irq_set_default_host(primary_intc->root_domain);
 
- arch/arm/boot/dts/Makefile                    |  1 +
- .../boot/dts/imx6dl-colibri-v1_1-eval-v3.dts  | 31 +++++++++++++
- .../boot/dts/imx6qdl-colibri-v1_1-uhs.dtsi    | 44 +++++++++++++++++++
- arch/arm/boot/dts/imx6qdl-colibri.dtsi        | 11 ++++-
- 4 files changed, 86 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/imx6dl-colibri-v1_1-eval-v3.dts
- create mode 100644 arch/arm/boot/dts/imx6qdl-colibri-v1_1-uhs.dtsi
+Do you still need this irq_set_default_host() horror? I thought 
+microblaze
+was fully DT-ified and didn't need this. The use of a non-legacy domain 
+tends
+to confirm this.
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index d6546d2676b9..97da51be1de6 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -412,6 +412,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
- 	imx6dl-aristainetos2_4.dtb \
- 	imx6dl-aristainetos2_7.dtb \
- 	imx6dl-colibri-eval-v3.dtb \
-+	imx6dl-colibri-v1_1-eval-v3.dtb \
- 	imx6dl-cubox-i.dtb \
- 	imx6dl-cubox-i-emmc-som-v15.dtb \
- 	imx6dl-cubox-i-som-v15.dtb \
-diff --git a/arch/arm/boot/dts/imx6dl-colibri-v1_1-eval-v3.dts b/arch/arm/boot/dts/imx6dl-colibri-v1_1-eval-v3.dts
-new file mode 100644
-index 000000000000..223275f028f1
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6dl-colibri-v1_1-eval-v3.dts
-@@ -0,0 +1,31 @@
-+// SPDX-License-Identifier: GPL-2.0+ OR MIT
-+/*
-+ * Copyright 2020 Toradex
-+ */
-+
-+/dts-v1/;
-+
-+#include "imx6dl-colibri-eval-v3.dts"
-+#include "imx6qdl-colibri-v1_1-uhs.dtsi"
-+
-+/ {
-+	model = "Toradex Colibri iMX6DL/S V1.1 on Colibri Evaluation Board V3";
-+	compatible = "toradex,colibri_imx6dl-v1_1-eval-v3",
-+		     "toradex,colibri_imx6dl-v1_1",
-+		     "toradex,colibri_imx6dl-eval-v3",
-+		     "toradex,colibri_imx6dl",
-+		     "fsl,imx6dl";
-+};
-+
-+/* Colibri MMC */
-+&usdhc1 {
-+	status = "okay";
-+	/*
-+	 * Please make sure your carrier board does not pull-up any of
-+	 * the MMC/SD signals to 3.3 volt before attempting to activate
-+	 * UHS-I support.
-+	 * To let signaling voltage be changed to 1.8V, please
-+	 * delete no-1-8-v property (example below):
-+	 * /delete-property/no-1-8-v;
-+	 */
-+};
-diff --git a/arch/arm/boot/dts/imx6qdl-colibri-v1_1-uhs.dtsi b/arch/arm/boot/dts/imx6qdl-colibri-v1_1-uhs.dtsi
-new file mode 100644
-index 000000000000..7672fbfc29be
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6qdl-colibri-v1_1-uhs.dtsi
-@@ -0,0 +1,44 @@
-+// SPDX-License-Identifier: GPL-2.0+ OR MIT
-+/*
-+ * Copyright 2020 Toradex
-+ */
-+
-+&iomuxc {
-+	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD1_CMD__SD1_CMD    0x170b1
-+			MX6QDL_PAD_SD1_CLK__SD1_CLK    0x100b1
-+			MX6QDL_PAD_SD1_DAT0__SD1_DATA0 0x170b1
-+			MX6QDL_PAD_SD1_DAT1__SD1_DATA1 0x170b1
-+			MX6QDL_PAD_SD1_DAT2__SD1_DATA2 0x170b1
-+			MX6QDL_PAD_SD1_DAT3__SD1_DATA3 0x170b1
-+		>;
-+	};
-+
-+	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
-+		fsl,pins = <
-+			MX6QDL_PAD_SD1_CMD__SD1_CMD    0x170f1
-+			MX6QDL_PAD_SD1_CLK__SD1_CLK    0x100f1
-+			MX6QDL_PAD_SD1_DAT0__SD1_DATA0 0x170f1
-+			MX6QDL_PAD_SD1_DAT1__SD1_DATA1 0x170f1
-+			MX6QDL_PAD_SD1_DAT2__SD1_DATA2 0x170f1
-+			MX6QDL_PAD_SD1_DAT3__SD1_DATA3 0x170f1
-+		>;
-+	};
-+};
-+
-+/* Colibri MMC */
-+&usdhc1 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_mmc_cd>;
-+	pinctrl-1 = <&pinctrl_usdhc1_100mhz &pinctrl_mmc_cd>;
-+	pinctrl-2 = <&pinctrl_usdhc1_200mhz &pinctrl_mmc_cd>;
-+	vmmc-supply = <&reg_module_3v3>;
-+	vqmmc-supply = <&vgen3_reg>;
-+	wakeup-source;
-+	keep-power-in-suspend;
-+	sd-uhs-sdr12;
-+	sd-uhs-sdr25;
-+	sd-uhs-sdr50;
-+	sd-uhs-sdr104;
-+};
-diff --git a/arch/arm/boot/dts/imx6qdl-colibri.dtsi b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
-index d03dff23863d..e85a41e84fd4 100644
---- a/arch/arm/boot/dts/imx6qdl-colibri.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
-@@ -229,7 +229,16 @@
- 				regulator-always-on;
- 			};
- 
--			/* vgen3: unused */
-+			/*
-+			 * +V3.3_1.8_SD1 coming off VGEN3 and supplying
-+			 * the i.MX 6 NVCC_SD1.
-+			 */
-+			vgen3_reg: vgen3 {
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
- 
- 			vgen4_reg: vgen4 {
- 				regulator-min-microvolt = <1800000>;
+>  	}
+> 
+>  	return 0;
+> 
+> -err_alloc:
+> -	xintc_irqc = NULL;
+> +error:
+> +	iounmap(irqc->base);
+>  	kfree(irqc);
+>  	return ret;
+
+Thanks,
+
+         M.
 -- 
-2.17.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
