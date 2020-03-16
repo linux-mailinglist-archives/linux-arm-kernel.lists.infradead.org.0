@@ -2,107 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD93B186C57
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 14:41:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B172186C72
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 14:49:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dQR51t2eoj0ZR1vrP2H/nr5CpUI1aw1Dejj7aAcX7Os=; b=fiz3WamSfe/Pst
-	VfwcKFGHEgGeITtpwQqsj22uSFiF6Ad8nHbw2k/HOQEps/T1AKQbnPWAlIAvQL2QFTXd9LaNLR0su
-	AD8F1DLu30AHEonQFVT4rExdm9cmEZGTXnK5M6zh2HDAqdLMJtgWg2e9EiWaLFkUBhMfGKNjSxYAD
-	3bdHhYACP4krjYqrF9ctkDWV18V1tPk5bBIFFH3suJlIXIyxHcx9DFXfRk07Hf5Jz66X4XzoUBMEr
-	9Xm/PkqnGcBT8kPwxW0/qTqVjfiSyLtthKJc4Z+pJFWlG2glciLnKkcwaADbUjZg3i/cyg14pyTje
-	v0R3SBLuKD2EvfQGvO3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sZhEHP1voz+infOy+k+Eh7BB+ULdAiYxuLle9r2FtH4=; b=m8NTTwtKvM4dVbeUYLdYj1ogj
+	+tBB9SlCk8aEr3CgPkQJ1lHM5kJHXuPz9R7PvbbStJS0O4PF6VDZs8lctls5GawfiQxvUACZuWnt4
+	piaEMM/XapdHa+6QAfJToy3cYEKdoKL4a4EFPFAfDE8W3CGZYKut4rCfUXCV5h+8bXI162JjWIbdY
+	YF90dEgfWnogNDFQFaeC5lBfVoMObDEpHN6wEK42wNltznTE94GRaWBtG9vJCKzCFdcb2JlXsL+F4
+	1+RckdtgtO17NRIiMaDBtfO2+g4BJiDHEXbxSfZ2XmvivtbeXZOkLWW0umCVh58N+PcfcufEVD31w
+	QKVQxdAtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDq08-0001az-EN; Mon, 16 Mar 2020 13:41:52 +0000
-Received: from mail-am6eur05on2065.outbound.protection.outlook.com
- ([40.107.22.65] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1jDq77-0004Wl-KE; Mon, 16 Mar 2020 13:49:05 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDpzy-0001Zw-TI
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 13:41:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=c3oD7wqXWfQQLDX+fVDLuHxfrqrn0mqkgAHSfbiGTyyqf2fSBYXBV668aDlNOUwu8TskCfrjkPFLJX8bD7tk7U7QuDZ4t3u7TZe1EA2Vl9wpXL0hsHb7F/UZRkaxmQ2FagJp4UorWi5jkDpFPCemjHovp8PXwsWUB385mWgdEzf7SnLSisLIyQwQx+lgtG8W3kHo8McDvEIxPXQvhP2kFW2IuIgyTp01snPZ6GYCnql3xQPv6E7q4RFc33ooOxSxVaVlWC9je4dCqrM6pEFn+ZEFpr5U+6pIN0sVI9UIAOUoMp650KaVn9pXwolGcb1RXtS2jRsoiR253SylGktv1w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QCYqdhKEA4z+tUCXCQP2txJovL/BbC1aGBqu9lyC+WQ=;
- b=PfVtpx9AR8ejGsQ5rOtadN538DGJerkqR7VPg7TMQeBbzy10cgcqzMkkO6yhkvBVrizKE76ZUXZqQ4QPlb5YUpK24k2N9pFOnP8AtjzPW7BTFQ1vYhv+l7fxasMO6sfRtR3Dv+8y0mHj81o3y4/E+y/9BGXgNLr92Yl3mEgr5ZaHBf+aPhOk3GVZ+Y2uqlRnrXiKKvsIO69px8Cei7bYrGJsYAokemg7Qzj1mgcQ6/uTjDNHpV5+HgzT0z1d0ETjeyRhMYyC9+mFAbeb8Xt950YZbXtLabxZ2XgvjgHdMd3/mczeadd6H2KeVyoaErUmRuv7+D9tDj+GaWa1/9IV7g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QCYqdhKEA4z+tUCXCQP2txJovL/BbC1aGBqu9lyC+WQ=;
- b=mVEsSUph+V7YaIykHDJkR2U6HdUy3mEnDSerHh3SAhvbgBRuttEp/MOwSLG86Tq5cXxgHdJwE+iBcZ51n8KJf+w/cDF5Hz3wsWzyLGEwRGVF+95Q23mUj5npR9dPwjN1H8j7KDDfn+7R+C3+VG/2Dr+DdfdqmLnt5tG+8npGyGk=
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com (20.179.250.159) by
- DB8PR04MB7050.eurprd04.prod.outlook.com (52.135.62.24) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.18; Mon, 16 Mar 2020 13:41:34 +0000
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::4528:6120:94a4:ce1e]) by DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::4528:6120:94a4:ce1e%5]) with mapi id 15.20.2814.016; Mon, 16 Mar 2020
- 13:41:34 +0000
-From: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-To: Lukas Bulwahn <lukas.bulwahn@gmail.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Rob Herring <robh@kernel.org>
-Subject: RE: [PATCH] MAINTAINERS: correct typo in new NXP LAYERSCAPE GEN4
-Thread-Topic: [PATCH] MAINTAINERS: correct typo in new NXP LAYERSCAPE GEN4
-Thread-Index: AQHV+gyIX68iXFnIKEaIIhxR91lGSKhLPECg
-Date: Mon, 16 Mar 2020 13:41:34 +0000
-Message-ID: <DB8PR04MB6747C64A930F240215A3FA8784F90@DB8PR04MB6747.eurprd04.prod.outlook.com>
-References: <20200314142559.13505-1-lukas.bulwahn@gmail.com>
-In-Reply-To: <20200314142559.13505-1-lukas.bulwahn@gmail.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=zhiqiang.hou@nxp.com; 
-x-originating-ip: [223.72.48.36]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7c99bfe5-df19-4eea-faf8-08d7c9afbe12
-x-ms-traffictypediagnostic: DB8PR04MB7050:
-x-microsoft-antispam-prvs: <DB8PR04MB7050CF1E56E39EBDCC3271AC84F90@DB8PR04MB7050.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 03449D5DD1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(366004)(376002)(136003)(199004)(76116006)(66556008)(66476007)(71200400001)(8676002)(2906002)(64756008)(66446008)(81166006)(81156014)(66946007)(53546011)(6506007)(55016002)(9686003)(54906003)(5660300002)(110136005)(478600001)(316002)(33656002)(8936002)(4326008)(86362001)(26005)(186003)(52536014)(7696005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR04MB7050;
- H:DB8PR04MB6747.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: sJl50Ebo2w/lQAEobCfUrRFVmuD3AhnC93TXmEbizpzG0Tn1ulIKxKMjtyE6nu/D12Wd8Iim5ooPXFx0WAQcRawTocN6YGVVhlInuW08UlPFcATukT8Yui1Tw1dAr4/9AMQEa9t7C40QtgfAQ+xQVVC6uS1syye1w6trzJxPJfB5R/8Sh6hhOpMNtFluPn8lbZq7JHv97I3eZQD/672Nhp1sYb10/K+OHuegSvj3KC1wxqVtem82u2lJbxrnjblbUOQjFNBVpvtxS4Mn2Yvu2ijx448Hv5UNKIGSPmhoLip0C0myrPa+KXb8upQKeeAvIanMM+7O70JZLM2iV7XILX4taWu7/gaKNCN93gLN4QAYGVQX7xIxS9ntWW/v8Iz3gu61iW4kUfxAOhmbu9VE/UC9ai+cJSp5oOwxmMYczyUa3VMVj+h+p1nK6SeZcq0j
-x-ms-exchange-antispam-messagedata: bEpwUAUVZ6aaSN807ij42hGeLXI+8aERrivE8ZazGS7LizKPYnh2v1YehCLtB3RCtKco+KhmfdV0z4Ll3ZxQjR//GAlFfpYQNqacrLeflz138QV3LwqcPqXNoUZ6ewWh+Ol934IV7OqPemG+gj1pcQ==
-x-ms-exchange-transport-forked: True
+ id 1jDq6x-0004W2-Cr
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 13:48:56 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 25so17747382wmk.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Mar 2020 06:48:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=mNuIcFRvWWtU/PuZPk0eD/H/O7lw1rT0jNE2PsQxCJg=;
+ b=KZS+lz7lt+gfG4h51laMCdrXX4I/DCdT5/1wyMqLScK+zmyJDrL/+Fzm5Jffkbg0Dp
+ qSzz1oDec37Xt5+FDONCcX21nC3F1qYnfNw4yr5KLwJb1MvjUIYR/UzZXW74m/in0+R/
+ axlkYhFUDb8HlGXZTb6wnRO3zHQLa8IAaTrvpFIUnLCTRLulA4YZSj8YUqPMY2m77Gik
+ wWa+Pp1OEz61k2hNO+LFOLdA1jWiOys3Y8DLlSPx25zsqXoTd9+Qsk35e5N4lZLGUy1v
+ IaGlOXcq0+/7PK/RLHG7uxk4rKFjsSA+ETIh+gkVj0nAjNhuZhkiiYuxc6VH9YumSAfA
+ 19pQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=mNuIcFRvWWtU/PuZPk0eD/H/O7lw1rT0jNE2PsQxCJg=;
+ b=WOvJirMdO3yVtddKVVmKETAF4uzlqDaBeFNW5Pcmp4v/v2f4OK3k14+jjnxQhInZJv
+ gsQX9l0YOSa0rWX5+Ff+hOkqv8CP1eFGTUrk2Fs3Mdam2nW0F90ZqphzmhMEmbhaYGWR
+ +w6CzanjavNiKqlXOkc2GHshLqxjiveDfhpSv1AXWPZzyup80JL3q1+Mq/IBIX7w6HUA
+ szgQrs9wW+nTL3Dmknydh+uZpgE6bQAEv+YLqVWg9AYX4uVZ+doevs8QnI90VSqmqrMI
+ qEUYZ8was+opRpA8Dqjxe+cq2JukyyrjHZ1nnsrUNP2UXX4aPrwqiOM7ErYrdkt+CHkT
+ 5NFw==
+X-Gm-Message-State: ANhLgQ0I2uiFN/XiuF18BSxDgWLbr4h7sR+H6UZjZibR7k2HmZ2PUhN7
+ YIWVt3DqhSmR5ucbq1gBMkg=
+X-Google-Smtp-Source: ADFU+vvxCZE1cx3VH2gU6qTI2ea+XHXem/rX60EuuNUSF0ftq/8KcqLMsyuncSjSUCGCHf9M0P5RaA==
+X-Received: by 2002:a1c:6885:: with SMTP id d127mr28305994wmc.33.1584366533270; 
+ Mon, 16 Mar 2020 06:48:53 -0700 (PDT)
+Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
+ by smtp.gmail.com with ESMTPSA id b82sm24135863wmb.46.2020.03.16.06.48.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Mar 2020 06:48:51 -0700 (PDT)
+Date: Mon, 16 Mar 2020 14:48:50 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: arm@kernel.org, soc@kernel.org
+Subject: Re: [GIT PULL 10/10] phy: tegra: Changes for v5.7-rc1
+Message-ID: <20200316134850.GB3825456@ulmo>
+References: <20200313165848.2915133-1-thierry.reding@gmail.com>
+ <20200313165848.2915133-10-thierry.reding@gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7c99bfe5-df19-4eea-faf8-08d7c9afbe12
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Mar 2020 13:41:34.0699 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tz4HA3Zhbkwb5ov/0WoBtcaPAT2l32qJApvH0WAniY9wKVqrmn0NYj8FP8eDMCx5ZIV8qinhUOim8/J3lwZSHw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7050
+In-Reply-To: <20200313165848.2915133-10-thierry.reding@gmail.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_064144_098250_9FAF6157 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20200316_064855_441783_75CDB162 
+X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.65 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -121,49 +99,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joe Perches <joe@perches.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jon Hunter <jonathanh@nvidia.com>
+Content-Type: multipart/mixed; boundary="===============1290300116138357435=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IEx1a2FzIEJ1bHdhaG4gPGx1
-a2FzLmJ1bHdhaG5AZ21haWwuY29tPg0KPiBTZW50OiAyMDIwxOoz1MIxNMjVIDIyOjI2DQo+IFRv
-OiBaLnEuIEhvdSA8emhpcWlhbmcuaG91QG54cC5jb20+OyBMb3JlbnpvIFBpZXJhbGlzaQ0KPiA8
-bG9yZW56by5waWVyYWxpc2lAYXJtLmNvbT47IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+
-DQo+IENjOiBsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmc7IEpvZQ0KPiBQZXJjaGVzIDxqb2VAcGVyY2hlcy5jb20+OyBrZXJuZWwt
-amFuaXRvcnNAdmdlci5rZXJuZWwub3JnOw0KPiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3Jn
-OyBMdWthcyBCdWx3YWhuIDxsdWthcy5idWx3YWhuQGdtYWlsLmNvbT4NCj4gU3ViamVjdDogW1BB
-VENIXSBNQUlOVEFJTkVSUzogY29ycmVjdCB0eXBvIGluIG5ldyBOWFAgTEFZRVJTQ0FQRSBHRU40
-DQo+IA0KPiBDb21taXQgM2VkZWI0OTUyNWJiICgiZHQtYmluZGluZ3M6IFBDSTogQWRkIE5YUCBM
-YXllcnNjYXBlIFNvQ3MgUENJZQ0KPiBHZW40DQo+IGNvbnRyb2xsZXIiKSBpbmNsdWRlcyBhIG5l
-dyBlbnRyeSBpbiBNQUlOVEFJTkVSUywgYnV0IHNsaXBwZWQgaW4gYSB0eXBvIGluIG9uZQ0KPiBv
-ZiB0aGUgZmlsZSBlbnRyaWVzLg0KPiANCj4gSGVuY2UsIHNpbmNlIHRoZW4sIC4vc2NyaXB0cy9n
-ZXRfbWFpbnRhaW5lci5wbCAtLXNlbGYtdGVzdCBjb21wbGFpbnM6DQo+IA0KPiAgIHdhcm5pbmc6
-IG5vIGZpbGUgbWF0Y2hlcyBGOiBcDQo+ICAgICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYmli
-ZWlsL3BjaWUtbGF5ZXJzY2FwZS1nZW40LmMNCj4gDQo+IENvcnJlY3QgdGhlIHR5cG8gaW4gUENJ
-IERSSVZFUiBGT1IgTlhQIExBWUVSU0NBUEUgR0VONCBDT05UUk9MTEVSLg0KPiANCj4gU2lnbmVk
-LW9mZi1ieTogTHVrYXMgQnVsd2FobiA8bHVrYXMuYnVsd2FobkBnbWFpbC5jb20+DQo+IC0tLQ0K
-PiBhcHBsaWVzIGNsZWFubHkgb24gbmV4dC0yMDIwMDMxMw0KPiANCj4gSG91LCBwbGVhc2UgYWNr
-Lg0KPiBSb2IsIHBsZWFzZSBwaWNrIHRoaXMgcGF0Y2ggKGl0IGlzIG5vdCB1cmdlbnQsIHRob3Vn
-aCkuDQo+IA0KPiAgTUFJTlRBSU5FUlMgfCAyICstDQo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNl
-cnRpb24oKyksIDEgZGVsZXRpb24oLSkNCj4gDQo+IGRpZmYgLS1naXQgYS9NQUlOVEFJTkVSUyBi
-L01BSU5UQUlORVJTDQo+IGluZGV4IDMyYTk1ZDE2MmYwNi4uNzdlZWRlOTc2ZDBmIDEwMDY0NA0K
-PiAtLS0gYS9NQUlOVEFJTkVSUw0KPiArKysgYi9NQUlOVEFJTkVSUw0KPiBAQCAtMTI4NTgsNyAr
-MTI4NTgsNyBAQCBMOglsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnDQo+ICBMOglsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gIFM6CU1haW50YWluZWQNCj4gIEY6CURvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kvbGF5ZXJzY2FwZS1wY2llLWdlbjQudHh0
-DQo+IC1GOglkcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYmliZWlsL3BjaWUtbGF5ZXJzY2FwZS1n
-ZW40LmMNCj4gK0Y6CWRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1sYXllcnNj
-YXBlLWdlbjQuYw0KPiANCj4gIFBDSSBEUklWRVIgRk9SIEdFTkVSSUMgT0YgSE9TVFMNCj4gIE06
-CVdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+DQo+IA0KPiBiYXNlLWNvbW1pdDogMmU2MDJk
-YjcyOTk0OGNlNTc3YmYwN2UyYjExM2YyYWE4MDZiNjJjNw0KPiAtLQ0KPiAyLjE3LjENCg0KUmV2
-aWV3ZWQtYnk6IEhvdSBaaGlxaWFuZyA8WmhpcWlhbmcuSG91QG54cC5jb20+DQoNCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+--===============1290300116138357435==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="K8nIJk4ghYZn606h"
+Content-Disposition: inline
+
+
+--K8nIJk4ghYZn606h
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Mar 13, 2020 at 05:58:48PM +0100, Thierry Reding wrote:
+> Hi ARM SoC maintainers,
+>=20
+> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862=
+b9:
+>=20
+>   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+>=20
+> are available in the Git repository at:
+>=20
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegr=
+a-for-5.7-phy
+>=20
+> for you to fetch changes up to 04c929223d1db6ad4ba8e4c23122e1052f670c2e:
+>=20
+>   phy: tegra: xusb: Don't warn on probe defer (2020-03-13 09:17:50 +0100)
+>=20
+> This is a dependency for the USB changes that are also part of this
+> series of pull requests, so it was deemed easier to take this all
+> through the ARM SoC tree. The patches have all been acked by Kishon.
+
+Please don't merge this just yet. Stephen reported today that this was
+breaking the build in linux-next because of a conflict with the USB
+tree. I'll rebase this on top of Greg's usb-next branch and resend the
+pull request.
+
+Sorry for the inconvenience.
+
+Thierry
+
+--K8nIJk4ghYZn606h
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5vg8IACgkQ3SOs138+
+s6FqWw//c6MHAtQmVy/jmygoyRjW60kHc9dGR6wmzgrZ2PEAN3SPkKHxMmsAOjQ1
+POFT7wg72m/PWduosFoVp6hLzSgVLFEY4HhEtuEGV9LaAtiEkDCmCSa3Q0cHsxhI
+SPYBmvkfmX3pWU0asxuh18gQJ8N2umoD99whfEgi4fwfwVpM19vrYdmpfjn43YrO
+RgNKr8v5/nL390jLNKqTwb4vv8uHOq5lSMG7udBFWH57JiOiajAHqVdigo6R/QGG
+WLkP3qS5Q+dQ1JH6NII68bFgCZNUxJweOaQXb9lBERmqmBdhWUqBtmoOu72hkZwT
+iBo0uXtAToTQ1i5N8+9GQi85BDoa3/ZktIiHeJPLAjRGSB1U2l3SU387cB8/DR+M
+nY47ctZlt6+oD3guO1Ilh8HxCqu8MV0OdnlauEZRDriunAaH5Xcg2STsPqUErjZg
+skbyWtMNbkx/XSNVkYkX2LSE0Pn5m/PUdsD7ieD40jOtHzkvi8njKRvE5F3KHCFg
+vc1EwoVYJ9e6EMsF0g9c+4Fxf/AhL9WcUqCfscSFLk14pSo40yQ3qc0QRMsbuFas
+1GQMWuPCMICvf7UxVfCg6bjKZgPAhSmRuF/Y2XUOo00DyksRUpr4JxmQN31XTqDh
+U+6rwgMb5I6RKtr2JxYdxKpWg+kwdZqOfr3zNg4PYJK4jq0WRpw=
+=s9Fz
+-----END PGP SIGNATURE-----
+
+--K8nIJk4ghYZn606h--
+
+
+--===============1290300116138357435==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1290300116138357435==--
+
