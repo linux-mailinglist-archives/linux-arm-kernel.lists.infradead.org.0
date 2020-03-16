@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CEF31862C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:41:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A8691862CB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:41:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WriDAb83y10SBa5H6TFJsVXkqK1po3xHhldipXWRxwA=; b=WtZNuA4L/WXUjz
-	4xxrSCcRp6PxxJorxQUQnCUPzevQ8epqfHce7cCI1SEhmzoB3Bk5AGQuRSrYAGeM/tyZws/rlOzcd
-	wycV1YOmuxNPCIV0c9P4BO16A586n0w8rWUW/MIie4W8xehL2VUckMOC1N1qxPWvZ7O86S7arwiMD
-	Eij0HpBgUjYEHvcSc3qz8lQNIiaWL4/sqTpSiXlQEKGZhTaqTGOUCbWufODq530Y5To7+c9p340IS
-	bpWxcfyXOxTAuqNdcWO76TNobMnAK2Jc6LtXtYsWMqkiKrsyjxwIguDxrMTBdTrEdvRRrIUnwoL2P
-	IeEmT9IvOevfjulBLw0A==;
+	List-Owner; bh=jbefWX6/9qX0wRGZcpIihlgL9PMAlxoaFW8I/oV70UU=; b=HWRDLTVeaKfzO2
+	L17Zn6U6MfBCVxr9ZkHW4qmSmrU/upryTfw6g1QGp7jMGOvEGY5M9Skwn4ihT/vEOve6fOqyallP+
+	P90CNqRDOMXzwa9zn1QPLvGeZFmaT9utT9ArOxxHXwXy6HYSloXJFvWfJ1kaoNSLTKj1fUs4z75Td
+	E1W9ypPswnFmPuR9m2ryhBo8eUfGEfJke2ikpnY8L6Vqgy/VUahzVSEm0Wv69Nd//mDldiZuBZzLI
+	SLdeWcDy76DCmnt3mCEbD/e1vZ9WhOeiDty/EYABpP+yyH6noLI4EKY6OKvsRAGjooqI1ka7ZZqWx
+	IgIxVw0LAogIz2RVafbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfh1-0003Om-Bm; Mon, 16 Mar 2020 02:41:27 +0000
+	id 1jDfhK-0003eN-ME; Mon, 16 Mar 2020 02:41:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfaM-00033C-VW
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:34:36 +0000
+ id 1jDfaN-00033z-Ia
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:34:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 588D0206EB;
- Mon, 16 Mar 2020 02:34:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 616012073C;
+ Mon, 16 Mar 2020 02:34:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326074;
- bh=OVFFe6LVDT1McSdceRcLJ0lU84O4es66sWRpFFWGBb4=;
+ s=default; t=1584326075;
+ bh=jM7Fews3e1MESegyezgjrz7anoNSo3IuYP4oG7HKigc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jzY3E/0WLgYZ5iuIFyab7l8SRnR2OHQfTgDWbPHRbWowLapwXulGsjPyXZOWbR10r
- GhHROs9t4KROcfu94BqSxd5aivTCyFF5LWBovUKUkj+glT2q/RF6WgtN2Eog/YTJDF
- +jEa350ptKPYQhF38vJI2Xg6p05KAAjYDd6YZD/g=
+ b=w/Et20zv5LYIKr4B0pRC7OO8Ocx8P8xsuhVVoZiAfOv3/xi/lu/5+HP9A/IugNq2O
+ sj8em3dC1PhBTD/cKDPNef9w1WAk6v0WFRyUDqpaJI0vN5onMjA+TwbKl3jeVf173f
+ vARlKQxVLTOgZQfX+a+4gm1BoaCgN6atYwnHpbnc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 19/35] drivers/perf: fsl_imx8_ddr: Correct the
- CLEAR bit definition
-Date: Sun, 15 Mar 2020 22:33:55 -0400
-Message-Id: <20200316023411.1263-19-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 20/35] drivers/perf: arm_pmu_acpi: Fix incorrect
+ checking of gicc pointer
+Date: Sun, 15 Mar 2020 22:33:56 -0400
+Message-Id: <20200316023411.1263-20-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200316023411.1263-1-sashal@kernel.org>
 References: <20200316023411.1263-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193435_064583_921F25FE 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20200315_193435_753245_0F1DE8B9 
+X-CRM114-Status: GOOD (  10.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,58 +80,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Will Deacon <will@kernel.org>,
- Joakim Zhang <qiangqing.zhang@nxp.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, luanshi <zhangliguang@linux.alibaba.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
+From: luanshi <zhangliguang@linux.alibaba.com>
 
-[ Upstream commit 049d919168458ac54e7fad27cd156a958b042d2f ]
+[ Upstream commit 3ba52ad55b533760a1f65836aa0ec9d35e36bb4f ]
 
-When disabling a counter from ddr_perf_event_stop(), the counter value
-is reset to 0 at the same time.
+Fix bogus NULL checks on the return value of acpi_cpu_get_madt_gicc()
+by checking for a 0 'gicc->performance_interrupt' value instead.
 
-Preserve the counter value by performing a read-modify-write of the
-PMU register and clearing only the enable bit.
-
-Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+Signed-off-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/perf/fsl_imx8_ddr_perf.c | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ drivers/perf/arm_pmu_acpi.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index 0e51baa48b149..6eef47de8fccc 100644
---- a/drivers/perf/fsl_imx8_ddr_perf.c
-+++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -327,9 +327,10 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
+diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
+index acce8781c456c..f5c7a845cd7bf 100644
+--- a/drivers/perf/arm_pmu_acpi.c
++++ b/drivers/perf/arm_pmu_acpi.c
+@@ -24,8 +24,6 @@ static int arm_pmu_acpi_register_irq(int cpu)
+ 	int gsi, trigger;
  
- 	if (enable) {
- 		/*
--		 * must disable first, then enable again
--		 * otherwise, cycle counter will not work
--		 * if previous state is enabled.
-+		 * cycle counter is special which should firstly write 0 then
-+		 * write 1 into CLEAR bit to clear it. Other counters only
-+		 * need write 0 into CLEAR bit and it turns out to be 1 by
-+		 * hardware. Below enable flow is harmless for all counters.
- 		 */
- 		writel(0, pmu->base + reg);
- 		val = CNTL_EN | CNTL_CLEAR;
-@@ -337,7 +338,8 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
- 		writel(val, pmu->base + reg);
- 	} else {
- 		/* Disable counter */
--		writel(0, pmu->base + reg);
-+		val = readl_relaxed(pmu->base + reg) & CNTL_EN_MASK;
-+		writel(val, pmu->base + reg);
- 	}
+ 	gicc = acpi_cpu_get_madt_gicc(cpu);
+-	if (WARN_ON(!gicc))
+-		return -EINVAL;
+ 
+ 	gsi = gicc->performance_interrupt;
+ 
+@@ -64,11 +62,10 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
+ 	int gsi;
+ 
+ 	gicc = acpi_cpu_get_madt_gicc(cpu);
+-	if (!gicc)
+-		return;
+ 
+ 	gsi = gicc->performance_interrupt;
+-	acpi_unregister_gsi(gsi);
++	if (gsi)
++		acpi_unregister_gsi(gsi);
  }
  
+ #if IS_ENABLED(CONFIG_ARM_SPE_PMU)
 -- 
 2.20.1
 
