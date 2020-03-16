@@ -2,58 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF8F2186A37
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:40:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67C6C186A70
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 12:55:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BWBlu4NxNWzy6XlSuz9j0R5kA7MeR1CIq5dnVPbi2og=; b=YYG3tytXdnrZrj
-	f0G5Y6R25C5zukdXdegQwpWPOAjwAiRgt7mhqgMWg5qIGfEh8yI6hUAtIdgzO23LPCcvnlzgEAtST
-	+JNpumyd+8YbyyuCuhm6DIw3Q/L+DUCAzHLJJQ4DdRklrjtZvRo6ftUxR2BgV0lZmAob35CW7/InQ
-	V6sud1C9SDziQuSpI0GNO+lefslTAOPrm9/GyNFH0so3I0iwjmFqmdiW1Wu6ElV3kjinE2O3LdZ44
-	J5IPIHC+0Zsr9+cg9SxmynezfXK6C9vhEZ9lHDR0EXfSpFEWPjmx5FVban+JR9f8EI2zX9BSQB2Ap
-	d3SOt0Q+lj5aJ/oOD+4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Crje29DhTQtgp7gSyH07QyjkvOySC0A0o7GAbCJYuss=; b=WZy23mp0c0ytDx
+	apReXbCe5b95YyxD2ckDeBpM2OUNB3XaLKadxRE28u2QkZPLDmnWpPbaOKDlRD7DRYZpcORjjI2Zc
+	EMusB/XT7leW8yGQlg480ftfhfaCcCZ/4r6h5cRLH+TuucXzcsIKocoHM+zKLavWH6AOf3iZnQ6Io
+	B1mNe2fIoJeejka70KToxO+k2sbELNmo4mtgBs/dch3nqVFAT3715SkR+u1IW+cC7eCCZ8FwOtBY5
+	OpHdjFS2WelZnW2PdYcfbdTH6wfeGDcqVRXiHVsY/V/SRxfySgG8+itJ3GsDTudLXsVfqGCj7VwjO
+	TL0WI+vzEgR6/MUHM2sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDo6U-00029i-QW; Mon, 16 Mar 2020 11:40:18 +0000
+	id 1jDoKe-00075G-4W; Mon, 16 Mar 2020 11:54:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDo6J-0001jI-Ah; Mon, 16 Mar 2020 11:40:08 +0000
-Received: from mail-il1-f173.google.com (mail-il1-f173.google.com
- [209.85.166.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jDoKX-00074A-58
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 11:54:50 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78F6420738;
- Mon, 16 Mar 2020 11:40:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9BDE0205ED;
+ Mon, 16 Mar 2020 11:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584358806;
- bh=Ko27tvjSOxWw2c+7T+N9R5DU0h2C2x51xk/JtN4IhvE=;
- h=References:In-Reply-To:From:Date:Subject:To:List-Id:Cc:From;
- b=WeLvgyLamuHAFXdtwDXFSF/6/Piw4dFGq8Pf9LSF5XqllMJnGQJxWw0Wq71qBh7WY
- orOPf5+N4Y0nJJY4OV0vPtwE5EHnLpjNZhO3THohB65YKk+f+U1vjdTXBphM2ZcOun
- DhkTOTbhaBW336jmYqOvh/14JCkrgnG07hFl3qqg=
-Received: by mail-il1-f173.google.com with SMTP id c8so16184814ilm.1;
- Mon, 16 Mar 2020 04:40:06 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ2Vtlt9PvvLT88utDRI96b8bqyYtInSK9SuK5kycCHqYWlqOEQA
- Ov5y+vQwIOrxVZd7BewccYxewzzMW/qYORxiYf0=
-X-Google-Smtp-Source: ADFU+vuFgPhL5LIJn6Q6qWWAt8kgnZ/+G77NUpqLggYXbJzzJCCABWIIMJBEP4g7XAkLWWpU1XlUU9Fkhq+CNT5Cfig=
-X-Received: by 2002:a92:5a88:: with SMTP id b8mr27282656ilg.206.1584358805937; 
- Mon, 16 Mar 2020 04:40:05 -0700 (PDT)
+ s=default; t=1584359688;
+ bh=24D2nmoA1PD2UDbWlzqD/g16A8HBhZbRXBxFqrR2eX4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=woKdUbjOhCrnilC3sCEt3y39EL5CZdCI72qTnRuL8MQi6XfOyOVAr9pfK77lb5S0g
+ bf0iUMADXGl0lmeO6obpAiBf7pymdUTcYXQfMlCDj2kS28OlnDyY2cql+Dol1Ed3oH
+ wE0B6RAxBU67RGkqB8soNjQ3f7LaTISLTdX+JYDA=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jDoKU-00D45x-VP; Mon, 16 Mar 2020 11:54:47 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 0/2] irqchip/gic-v3-its: Balance LPI affinity across CPUs
+Date: Mon, 16 Mar 2020 11:54:31 +0000
+Message-Id: <20200316115433.9017-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200311033908.31960-1-erin.lo@mediatek.com>
-In-Reply-To: <20200311033908.31960-1-erin.lo@mediatek.com>
-From: Josh Boyer <jwboyer@kernel.org>
-Date: Mon, 16 Mar 2020 07:39:55 -0400
-X-Gmail-Original-Message-ID: <CA+5PVA5SQWD0DOeDU4kr9CYQhz6u=o5L3OinG_+2VUxsUEpvbw@mail.gmail.com>
-Message-ID: <CA+5PVA5SQWD0DOeDU4kr9CYQhz6u=o5L3OinG_+2VUxsUEpvbw@mail.gmail.com>
-Subject: Re: pull request: linux-firmware: Create Mediatek MT8183 SCP firmware
-To: Erin Lo <erin.lo@mediatek.com>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, john.garry@huawei.com,
+ chenxiang66@hisilicon.com, wangzhou1@hisilicon.com, ming.lei@redhat.com,
+ jason@lakedaemon.net, tglx@linutronix.de
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_044007_396117_9ADCAE05 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20200316_045449_223017_A27936E5 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,42 +89,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: menghui.lin@mediatek.com, Maoguang Meng <maoguang.meng@mediatek.com>,
- srv_heupstream@mediatek.com, drinkcat@google.com,
- Yunfei Dong <yunfei.dong@mediatek.com>, linux-remoteproc@vger.kernel.org,
- Linux Firmware <linux-firmware@kernel.org>, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, shawnku@google.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Jason Cooper <jason@lakedaemon.net>, chenxiang <chenxiang66@hisilicon.com>,
+ John Garry <john.garry@huawei.com>, Ming Lei <ming.lei@redhat.com>,
+ Zhou Wang <wangzhou1@hisilicon.com>, Thomas Gleixner <tglx@linutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 10, 2020 at 11:40 PM Erin Lo <erin.lo@mediatek.com> wrote:
->
-> The following changes since commit 0148cfefcbf98898ca65bb26d9d7d638b30e211d:
->
->   Merge https://github.com/rjliao-qca/qca-btfw (2020-03-02 08:08:15 -0500)
->
-> are available in the Git repository at:
->
->   https://github.com/erinlo/linux_fw_scp v12573.77
->
-> for you to fetch changes up to a52150d8e1fe65994464b15ea162bdc89ba61ce8:
->
->   mediatek: Add mt8183 SCP firmware (2020-03-11 10:36:45 +0800)
->
-> ----------------------------------------------------------------
-> Erin Lo (1):
->       mediatek: Add mt8183 SCP firmware
->
->  mediatek/mt8183/scp.img | Bin 0 -> 1027104 bytes
->  1 file changed, 0 insertions(+), 0 deletions(-)
->  create mode 100644 mediatek/mt8183/scp.img
+When mapping a LPI, the ITS driver picks the first possible
+affinity, which is in most cases CPU0, assuming that if
+that's not suitable, someone will come and set the affinity
+to something more interesting.
 
-This file needs to be added to WHENCE.  Can you adjust the commit to add it?
+It apparently isn't the case, and people complain of poor
+performance when many interrupts are glued to the same CPU.
+So let's place the interrupts by finding the "least loaded"
+CPU (that is, the one that has the fewer LPIs mapped to it).
+So called 'managed' interrupts are an interesting case where
+the affinity is actually dictated by the kernel itself, and
+we should honor this.
 
-josh
+* From v2:
+  - Split accounting from CPU selection
+  - Track managed and unmanaged interrupts separately
+
+Marc Zyngier (2):
+  irqchip/gic-v3-its: Track LPI distribution on a per CPU basis
+  irqchip/gic-v3-its: Balance initial LPI affinity across CPUs
+
+ drivers/irqchip/irq-gic-v3-its.c | 153 +++++++++++++++++++++++++------
+ 1 file changed, 127 insertions(+), 26 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
