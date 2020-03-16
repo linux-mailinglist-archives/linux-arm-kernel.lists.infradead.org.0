@@ -2,74 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61A73186D29
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:34:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEDB3186D31
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 15:36:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IgVnxhroN97tzZm63A1PCdL2U3PWP3uNB2AE8uTbpQM=; b=q6kkfeGNu9Qn3ihBrspXkDa1N
-	xJnzmxyeIWB1OFkiu9qdc67D12i5kl2gSrG+iFL26dzq92yxjgqi8dhv8mu8wj00zjRoNpf1UX0U4
-	sKFt2NWS8iyGGiZKYiB5+LE8/iWd4NjSPsWhCZ6tvC6tcLuRnkT4qrWfpeT5tbuuce/+vRRWkWIUM
-	baT/lfkymvgrV4ezZZ4ewJZANHLJHgx6DYsi89OlvXkDwK9C6v0nixIdumclBv1Hvjf5ZhVm4F05K
-	5FieWI9hJ98e/uj0018HAcrcOtT0D5groC9v65pvdWqpHSHiwZAy7EkZJ52SusEkuoku+CUtiuYgV
-	Te8E50RpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hfqaDWqwFeR3/WTzAEBT94EzfkUgRgdLRtXLIMiMR+U=; b=GEjrSWpCXE5Q1j
+	lQbAUfXNDfyJ6lkUPl0/77gqiG9JsgSPqAsFHF8ILFf5d5huGoRNQMevPJW3lhXUc+RqOk5VJjLNl
+	ELXA5CWnwR6cypsc9Ybs2P2ikY1uQavVY/bIjzYp4BVDSJfQZvrWVYADcE3r7mzHsGkiKfH8eNOGA
+	ER/5451ax7HI1Jp6qBbGFp90eqaasA9E0TDjAfQA49/S6devmnM/XmIUHz5N0jRmgaEOolSc3EP3B
+	gI0RLLCZ0gViBPNPXHIUS1flu4dTSQZG3NIL3gMRhb+M6BFadHnwinoMxJNBCFQPVX80yx4lIR40W
+	sYnmqBwX/bpzQVJ8PR3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDqp8-0006Yz-Hw; Mon, 16 Mar 2020 14:34:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jDqr0-0008MZ-My; Mon, 16 Mar 2020 14:36:30 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDqog-0006FD-2J
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:34:08 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 413582051A;
- Mon, 16 Mar 2020 14:34:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584369244;
- bh=uMF3QsbME7AEQLIGa4it4F+7gI7S9iWWCO7lcyAp5HI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=HSv8Cm2r8XV3m93SmiqNJ1nWMcnKG4gI9XG3V1wG7Uu2Y+srI21d/OIJjkZVLWEpV
- 1Xl0M+gKXvEHXXk0QqmN1mqGibRmMDE9cC8YtW+9hmABBCA+MDItqQdyAfZOevIbeH
- SIloO7iYnJQBr/xMLhYAaCoVGd06DQFEx4VLvzA8=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jDqoc-00D655-Fc; Mon, 16 Mar 2020 14:34:02 +0000
+ id 1jDqqo-0008L6-PQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 14:36:20 +0000
+Received: by mail-wr1-x444.google.com with SMTP id 6so21523990wre.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Mar 2020 07:36:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=zSvIxm3iA6TownjBjcN4eHyWYv4jcnhwxRb+JDNU7QE=;
+ b=i8mQUmFkQ2sw1zCKiUmRaUHgZOcwznZXcwGqHZAOcT7E+vwVXEPEfniz1R3vWLCkxv
+ RvuF17E0iUYTsyQ3Dko2CFhgQRuWTsB/s3f61DB70srCqMl2vzNXNZDKG/esyLSkaY9e
+ mP/MTTDs7pC24uSaYZwqJkaLEQbWjIdUIINsLvqMQt5e7M2O2F+Z+B9spEbdE0XU6eJ8
+ heSxS1flEf5kEPwHDMmUfbGaBsDKVpKCYGFWIsjMxqI6D0JVYfenMXXMTY1wXhtHuMfx
+ QOjLQTmqV/+Wjweve3qQuIkhU5DUNFyeEotUV8GmpTxBmCWIKonoLdWKLIzuzeRl+tam
+ s4iQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=zSvIxm3iA6TownjBjcN4eHyWYv4jcnhwxRb+JDNU7QE=;
+ b=B+pRUOmO96q8jW6KJNB62dhDUyS+viHcFmNWYfa8E58Y9go8IbbtOG9zjBjMBXvyU0
+ pYivmgiFZj9bwuQrbDFzvMNXFGR2PHR1n6n7/fj2NgLQ/ZwDBhTtkEx/lFsx30LrC0Pa
+ oVcApt6R/1ApNgn20aMRG8dFRvAryZ2hs5lI+/qzPNzfYK6EktnRXJQJrum3PwL2PLkX
+ SwMW+L2UCMZdfFtDHCu3EZG7uN0EhNv6NJQWjfzs/zJqVSF+dXJXTcit7Rx1WKptr96c
+ hI+Y3/0jNfzk9b+CfXNFpE/mru4WLa/Ac/UTjbSPbtFIHFxy6z24V2YeG4/Evexboed6
+ 8PPQ==
+X-Gm-Message-State: ANhLgQ3cC5+XUvSmgQ6PDiM/B8jXfcmiJOxcLNFBNH02f1+Z7ucV5w3m
+ OQdvKarNlrC/jJKwR/TmD7VOUw==
+X-Google-Smtp-Source: ADFU+vu21f/HB7OfqxXeFitC8l6ANZFX5AxF6ffF9iy3dHLXFG4KcVEomy2KS35iyAfV5Qo1JsYFvA==
+X-Received: by 2002:adf:e9c4:: with SMTP id l4mr36598734wrn.421.1584369376651; 
+ Mon, 16 Mar 2020 07:36:16 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:f835:499f:9553:971a?
+ ([2a01:e34:ed2f:f020:f835:499f:9553:971a])
+ by smtp.googlemail.com with ESMTPSA id
+ s127sm30947726wmf.28.2020.03.16.07.36.15
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Mar 2020 07:36:16 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: meson: add thermal zones to meson gx devices
+To: Neil Armstrong <narmstrong@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1584328854-28575-1-git-send-email-christianshewitt@gmail.com>
+ <90c9133e-3a56-d6d6-abf0-9a3c269bc54a@baylibre.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <4772a180-11d2-2806-dad7-9a0d27e5b414@linaro.org>
+Date: Mon, 16 Mar 2020 15:36:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Date: Mon, 16 Mar 2020 14:34:02 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Mubin Usman Sayyed <mubin.usman.sayyed@xilinx.com>
-Subject: Re: [PATCH v4 1/3] irqchip: xilinx: Add support for multiple instances
-In-Reply-To: <20200316135447.30162-2-mubin.usman.sayyed@xilinx.com>
-References: <20200316135447.30162-1-mubin.usman.sayyed@xilinx.com>
- <20200316135447.30162-2-mubin.usman.sayyed@xilinx.com>
-Message-ID: <be19cec70f79e10483bd8da592b5a924@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: mubin.usman.sayyed@xilinx.com, tglx@linutronix.de,
- jason@lakedaemon.net, michals@xilinx.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, sivadur@xilinx.com, anirudh@xilinx.com,
- anirudha.sarangi@xilinx.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <90c9133e-3a56-d6d6-abf0-9a3c269bc54a@baylibre.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_073406_212261_B8100B58 
-X-CRM114-Status: GOOD (  27.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200316_073618_859385_3664D372 
+X-CRM114-Status: GOOD (  12.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,7 +150,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,348 +161,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, Anirudha Sarangi <anirudha.sarangi@xilinx.com>,
- sivadur@xilinx.com, linux-kernel@vger.kernel.org, michals@xilinx.com,
- anirudh@xilinx.com, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Nick Xie <nick@khadas.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-16 13:54, Mubin Usman Sayyed wrote:
-> From: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
-> 
-> Added support for cascaded interrupt controllers.
-> 
-> Following cascaded configurations have been tested,
-> 
-> - peripheral->xilinx-intc->xilinx-intc->gic->Cortexa53 processor
->   on zcu102 board
-> - peripheral->xilinx-intc->xilinx-intc->microblaze processor
->   on kcu105 board
-> 
-> Signed-off-by: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
-> Signed-off-by: Anirudha Sarangi <anirudha.sarangi@xilinx.com>
-> ---
-> Changes for v4:
-> 	- Fixed review comments from Thomas - updated commit
-> 	  message, variable declarations changed to reverse
-> 	  fir tree and cleaned up some code.
-> 
-> Changes for v3:
-> 	- Modified prototype of xintc_write/xintc_read
-> 	- Fixed review comments regarding indentation/variable
-> 	  names, used BIT
-> 	- Modified xintc_get_irq_local to return 0
-> 	  in case of failure/no pending interrupts
-> 	- Fixed return type of xintc_read
-> 	- Reverted changes related to device name and
-> 	  kept intc_dev as static
-> 
-> Changes for v2:
->         - Removed write_fn/read_fn hooks, used xintc_write/
-> 	  xintc_read directly
->         - Moved primary_intc declaration after xintc_irq_chip
-> ---
->  drivers/irqchip/irq-xilinx-intc.c | 121 ++++++++++++++++++------------
->  1 file changed, 71 insertions(+), 50 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-xilinx-intc.c
-> b/drivers/irqchip/irq-xilinx-intc.c
-> index e3043ded8973..65b77720ef2e 100644
-> --- a/drivers/irqchip/irq-xilinx-intc.c
-> +++ b/drivers/irqchip/irq-xilinx-intc.c
-> @@ -38,29 +38,32 @@ struct xintc_irq_chip {
->  	void		__iomem *base;
->  	struct		irq_domain *root_domain;
->  	u32		intr_mask;
-> +	struct		irq_chip *intc_dev;
-
-What is the need for this pointer? As far as I can see, all the 
-interrupts
-have the same callbacks, and even then, there should be no need to keep
-a pointer to that.
-
-> +	u32		nr_irq;
->  };
-> 
-> -static struct xintc_irq_chip *xintc_irqc;
-> +static struct xintc_irq_chip *primary_intc;
-> 
-> -static void xintc_write(int reg, u32 data)
-> +static void xintc_write(struct xintc_irq_chip *irqc, int reg, u32 
-> data)
->  {
->  	if (static_branch_unlikely(&xintc_is_be))
-> -		iowrite32be(data, xintc_irqc->base + reg);
-> +		iowrite32be(data, irqc->base + reg);
->  	else
-> -		iowrite32(data, xintc_irqc->base + reg);
-> +		iowrite32(data, irqc->base + reg);
->  }
-> 
-> -static unsigned int xintc_read(int reg)
-> +static u32 xintc_read(struct xintc_irq_chip *irqc, int reg)
->  {
->  	if (static_branch_unlikely(&xintc_is_be))
-> -		return ioread32be(xintc_irqc->base + reg);
-> +		return ioread32be(irqc->base + reg);
->  	else
-> -		return ioread32(xintc_irqc->base + reg);
-> +		return ioread32(irqc->base + reg);
->  }
-> 
->  static void intc_enable_or_unmask(struct irq_data *d)
->  {
-> -	unsigned long mask = 1 << d->hwirq;
-> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
-> +	unsigned long mask = BIT(d->hwirq);
-> 
->  	pr_debug("irq-xilinx: enable_or_unmask: %ld\n", d->hwirq);
-> 
-> @@ -69,30 +72,35 @@ static void intc_enable_or_unmask(struct irq_data 
-> *d)
->  	 * acks the irq before calling the interrupt handler
->  	 */
->  	if (irqd_is_level_type(d))
-> -		xintc_write(IAR, mask);
-> +		xintc_write(irqc, IAR, mask);
-> 
-> -	xintc_write(SIE, mask);
-> +	xintc_write(irqc, SIE, mask);
->  }
-> 
->  static void intc_disable_or_mask(struct irq_data *d)
->  {
-> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
-> +
->  	pr_debug("irq-xilinx: disable: %ld\n", d->hwirq);
-> -	xintc_write(CIE, 1 << d->hwirq);
-> +	xintc_write(irqc, CIE, BIT(d->hwirq));
->  }
-> 
->  static void intc_ack(struct irq_data *d)
->  {
-> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
-> +
->  	pr_debug("irq-xilinx: ack: %ld\n", d->hwirq);
-> -	xintc_write(IAR, 1 << d->hwirq);
-> +	xintc_write(irqc, IAR, BIT(d->hwirq));
->  }
-> 
->  static void intc_mask_ack(struct irq_data *d)
->  {
-> -	unsigned long mask = 1 << d->hwirq;
-> +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
-> +	unsigned long mask = BIT(d->hwirq);
-> 
->  	pr_debug("irq-xilinx: disable_and_ack: %ld\n", d->hwirq);
-> -	xintc_write(CIE, mask);
-> -	xintc_write(IAR, mask);
-> +	xintc_write(irqc, CIE, mask);
-> +	xintc_write(irqc, IAR, mask);
->  }
-> 
->  static struct irq_chip intc_dev = {
-> @@ -103,13 +111,28 @@ static struct irq_chip intc_dev = {
->  	.irq_mask_ack = intc_mask_ack,
->  };
-> 
-> +static unsigned int xintc_get_irq_local(struct xintc_irq_chip *irqc)
-> +{
-> +	unsigned int irq = 0;
-> +	u32 hwirq;
-> +
-> +	hwirq = xintc_read(irqc, IVR);
-> +	if (hwirq != -1U)
-> +		irq = irq_find_mapping(irqc->root_domain, hwirq);
-> +
-> +	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
-> +
-> +	return irq;
-> +}
-> +
->  unsigned int xintc_get_irq(void)
->  {
-> -	unsigned int hwirq, irq = -1;
-> +	unsigned int irq = -1;
-> +	u32 hwirq;
-> 
-> -	hwirq = xintc_read(IVR);
-> +	hwirq = xintc_read(primary_intc, IVR);
->  	if (hwirq != -1U)
-> -		irq = irq_find_mapping(xintc_irqc->root_domain, hwirq);
-> +		irq = irq_find_mapping(primary_intc->root_domain, hwirq);
-> 
->  	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
-> 
-> @@ -118,15 +141,18 @@ unsigned int xintc_get_irq(void)
-> 
->  static int xintc_map(struct irq_domain *d, unsigned int irq,
-> irq_hw_number_t hw)
->  {
-> -	if (xintc_irqc->intr_mask & (1 << hw)) {
-> -		irq_set_chip_and_handler_name(irq, &intc_dev,
-> -						handle_edge_irq, "edge");
-> +	struct xintc_irq_chip *irqc = d->host_data;
-> +
-> +	if (irqc->intr_mask & BIT(hw)) {
-> +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
-> +					      handle_edge_irq, "edge");
->  		irq_clear_status_flags(irq, IRQ_LEVEL);
->  	} else {
-> -		irq_set_chip_and_handler_name(irq, &intc_dev,
-> -						handle_level_irq, "level");
-> +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
-> +					      handle_level_irq, "level");
->  		irq_set_status_flags(irq, IRQ_LEVEL);
->  	}
-> +	irq_set_chip_data(irq, irqc);
->  	return 0;
->  }
-> 
-> @@ -138,12 +164,14 @@ static const struct irq_domain_ops
-> xintc_irq_domain_ops = {
->  static void xil_intc_irq_handler(struct irq_desc *desc)
->  {
->  	struct irq_chip *chip = irq_desc_get_chip(desc);
-> +	struct xintc_irq_chip *irqc;
->  	u32 pending;
-> 
-> +	irqc = irq_data_get_irq_handler_data(&desc->irq_data);
->  	chained_irq_enter(chip, desc);
->  	do {
-> -		pending = xintc_get_irq();
-> -		if (pending == -1U)
-> +		pending = xintc_get_irq_local(irqc);
-> +		if (pending == 0U)
-
-nit: I don't think we need to consider the sign of zero.
-
->  			break;
->  		generic_handle_irq(pending);
->  	} while (true);
-> @@ -153,28 +181,19 @@ static void xil_intc_irq_handler(struct irq_desc 
-> *desc)
->  static int __init xilinx_intc_of_init(struct device_node *intc,
->  					     struct device_node *parent)
->  {
-> -	u32 nr_irq;
-> -	int ret, irq;
->  	struct xintc_irq_chip *irqc;
-> -
-> -	if (xintc_irqc) {
-> -		pr_err("irq-xilinx: Multiple instances aren't supported\n");
-> -		return -EINVAL;
-> -	}
-> +	int ret, irq;
-> 
->  	irqc = kzalloc(sizeof(*irqc), GFP_KERNEL);
->  	if (!irqc)
->  		return -ENOMEM;
-> -
-> -	xintc_irqc = irqc;
-> -
->  	irqc->base = of_iomap(intc, 0);
->  	BUG_ON(!irqc->base);
-> 
-> -	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs", &nr_irq);
-> +	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs", 
-> &irqc->nr_irq);
->  	if (ret < 0) {
->  		pr_err("irq-xilinx: unable to read xlnx,num-intr-inputs\n");
-> -		goto err_alloc;
-> +		goto error;
->  	}
-> 
->  	ret = of_property_read_u32(intc, "xlnx,kind-of-intr", 
-> &irqc->intr_mask);
-> @@ -183,34 +202,35 @@ static int __init xilinx_intc_of_init(struct
-> device_node *intc,
->  		irqc->intr_mask = 0;
->  	}
-> 
-> -	if (irqc->intr_mask >> nr_irq)
-> +	if (irqc->intr_mask >> irqc->nr_irq)
->  		pr_warn("irq-xilinx: mismatch in kind-of-intr param\n");
-> 
->  	pr_info("irq-xilinx: %pOF: num_irq=%d, edge=0x%x\n",
-> -		intc, nr_irq, irqc->intr_mask);
-> +		intc, irqc->nr_irq, irqc->intr_mask);
-> 
-> +	irqc->intc_dev = &intc_dev;
-
-Based on the above, this should go.
-
-> 
->  	/*
->  	 * Disable all external interrupts until they are
->  	 * explicity requested.
->  	 */
-> -	xintc_write(IER, 0);
-> +	xintc_write(irqc, IER, 0);
-> 
->  	/* Acknowledge any pending interrupts just in case. */
-> -	xintc_write(IAR, 0xffffffff);
-> +	xintc_write(irqc, IAR, 0xffffffff);
-> 
->  	/* Turn on the Master Enable. */
-> -	xintc_write(MER, MER_HIE | MER_ME);
-> -	if (!(xintc_read(MER) & (MER_HIE | MER_ME))) {
-> +	xintc_write(irqc, MER, MER_HIE | MER_ME);
-> +	if (xintc_read(irqc, MER) != (MER_HIE | MER_ME)) {
->  		static_branch_enable(&xintc_is_be);
-> -		xintc_write(MER, MER_HIE | MER_ME);
-> +		xintc_write(irqc, MER, MER_HIE | MER_ME);
->  	}
-> 
-> -	irqc->root_domain = irq_domain_add_linear(intc, nr_irq,
-> +	irqc->root_domain = irq_domain_add_linear(intc, irqc->nr_irq,
->  						  &xintc_irq_domain_ops, irqc);
->  	if (!irqc->root_domain) {
->  		pr_err("irq-xilinx: Unable to create IRQ domain\n");
-> -		goto err_alloc;
-> +		goto error;
->  	}
-> 
->  	if (parent) {
-> @@ -222,16 +242,17 @@ static int __init xilinx_intc_of_init(struct
-> device_node *intc,
->  		} else {
->  			pr_err("irq-xilinx: interrupts property not in DT\n");
->  			ret = -EINVAL;
-> -			goto err_alloc;
-> +			goto error;
->  		}
->  	} else {
-> -		irq_set_default_host(irqc->root_domain);
-> +		primary_intc = irqc;
-> +		irq_set_default_host(primary_intc->root_domain);
-
-Do you still need this irq_set_default_host() horror? I thought 
-microblaze
-was fully DT-ified and didn't need this. The use of a non-legacy domain 
-tends
-to confirm this.
-
->  	}
-> 
->  	return 0;
-> 
-> -err_alloc:
-> -	xintc_irqc = NULL;
-> +error:
-> +	iounmap(irqc->base);
->  	kfree(irqc);
->  	return ret;
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTYvMDMvMjAyMCAwOToyMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cj4gT24gMTYvMDMvMjAy
+MCAwNDoyMCwgQ2hyaXN0aWFuIEhld2l0dCB3cm90ZToKPj4gQWRhcHQgYW5kIHVwZGF0ZSBjdXJy
+ZW50IFZJTTIgdGhlcm1hbCB6b25lcyBzdXBwb3J0IHNvIHRoYXQgem9uZXMgYXJlCj4+IGF2YWls
+YWJsZSBvbiBhbGwgbWVzb24gR1hCQi9HWEwvR1hNIGRldmljZXMgLSBzaW1pbGFyIHRvIGNoYW5n
+ZXMgbWFkZQo+PiBmb3IgRzEyQS9HMTJCL1NNMSBkZXZpY2VzLgo+Pgo+PiBTdWdnZXN0ZWQtYnk6
+IE5pY2sgWGllIDxuaWNrQGtoYWRhcy5jb20+Cj4+IFNpZ25lZC1vZmYtYnk6IENocmlzdGlhbiBI
+ZXdpdHQgPGNocmlzdGlhbnNoZXdpdHRAZ21haWwuY29tPgo+PiAtLS0KClsgLi4uIF0KClBsZWFz
+ZSB0cmltIDopCgo+IFJldmlld2VkLWJ5OiBOZWlsIEFybXN0cm9uZyA8bmFybXN0cm9uZ0BiYXls
+aWJyZS5jb20+CgoKCi0tIAogPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSC
+IE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRw
+Oi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0
+dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xp
+bmFyby1ibG9nLz4gQmxvZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
