@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D200A186200
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:35:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13663186215
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:36:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sOZPrnl0RmdKTCocj9U5IYuxv8Oc/NYKD5mbTnbUkTY=; b=jqAG/o7agJuqhg
-	1XHIpwGK6nCBEXaCR9J2UtWeg2oi7ktepgVJmrmjSy9j1y6MYxnZxOQkt+/vpSEpkd3qfCNVBHfkZ
-	nZJA+dvVnh6T4+WOp3xotM+QHKWg7LBo0suzGAgF98fMlVLoPRTHBW9msZ1rgwyGSIx4CQ+eWwJ5N
-	YxP4mjnZNpsChuali8NLFoSsp5RfDcfLioiQHju9XKkdV47xmDrvT8/L9PsadydJ5oyiOHkRBt6EI
-	UDh7pECFzOOcZhhutIYDIZu4GyYJA1N+OQIZhg0UrmuhIUbkHWvCsxFx71ldXdUG5odCH8V5RMj9e
-	dFzzO6LF+2Rcn7Jv3x3w==;
+	List-Owner; bh=m8R4SfA/K2KqT2tO3RbWW92i1OpqJnKyNGWMDYZ4vEE=; b=DluZatwY6smXH/
+	GymdCZhuwp8gRgYp3ldU2TRtBxDm/GJLJTl1FXkmfvMRbY8JiLbW8FP9lJxbbHLg2TWxcptqfvxDL
+	5jnt0mYvEkHGXL/pLmy+0wtc81pwIbEOcurUF0AgsP5HPUGucQYQ2unrBhUr+yVkEmQseGXaheLkQ
+	4ESQNQm5Tl9UrDtrSAiGb+dL0BxRpjZhTiDxjx3BHqPrGfIminU5Dt3eVMEMXk6v53Edr7eJjEA2T
+	FfRVPe/4X7HArsOLJokg2q4UtxT04feioM/evnQh6oMDTVdsQevHPER3zQR0twM45sHCZeg5TjMpu
+	Xb40w7IjZ5z7gl6r6+Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfbI-0004lu-3C; Mon, 16 Mar 2020 02:35:32 +0000
+	id 1jDfbu-0005DV-4N; Mon, 16 Mar 2020 02:36:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfZG-000262-V6
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:33:28 +0000
+ id 1jDfZM-0002Az-60; Mon, 16 Mar 2020 02:33:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9DA8820724;
- Mon, 16 Mar 2020 02:33:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 28F8B20722;
+ Mon, 16 Mar 2020 02:33:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326006;
- bh=xVkW6QXkoVncl6FlKkwsPTCwVa8yuWnT/9V+BX7zKXA=;
+ s=default; t=1584326011;
+ bh=zfd67u+rmC+7o1QvaUow5GVSNreqIe3rocf3yS5pvKo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JMejwOvMRVAbazWPFSjLYQmTETgbZwVM2FiQIGdBJ0rK9IYRvm4LCAOEJMMeiqs5S
- 8xdex6WltQClTd3IYxrfdpPcYmcQrIMpR11NSzDUAqojqAr/4n8aAFmbxQGZ09GrzR
- eEYHsx04FJ/KED7Pg6Y59VhMA6LF+8kRtIuaMg2g=
+ b=15z2Hr4N62lgDadgu2e6hhFsEsBVengXHRV3veArs8MJzogYZAAdxI1NOUHxS9adh
+ 0Xx9A+ttRGdQNuCDWBnCZfhdYlkMr/yD8/d5EEuB/5vrVwOvcNWb3tEHNFmn7Fn4+v
+ tpPGmV1/xwKc1LKtDOlUDXzVR1KDIZ+2xXaD83CE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 05/41] ARM: dts: imx6dl-colibri-eval-v3: fix sram
- compatible properties
-Date: Sun, 15 Mar 2020 22:32:43 -0400
-Message-Id: <20200316023319.749-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 09/41] ASoC: meson: g12a: add tohdmitx reset
+Date: Sun, 15 Mar 2020 22:32:47 -0400
+Message-Id: <20200316023319.749-9-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200316023319.749-1-sashal@kernel.org>
 References: <20200316023319.749-1-sashal@kernel.org>
@@ -50,8 +48,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193327_032315_8DFA3244 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20200315_193332_266588_132696A0 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,64 +79,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, Johan Hovold <johan@kernel.org>,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
- Sanchayan Maity <maitysanchayan@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ Mark Brown <broonie@kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Johan Hovold <johan@kernel.org>
+From: Jerome Brunet <jbrunet@baylibre.com>
 
-[ Upstream commit bcbf53a0dab50980867476994f6079c1ec5bb3a3 ]
+[ Upstream commit 22946f37557e27697aabc8e4f62642bfe4a17fd8 ]
 
-The sram-node compatible properties have mistakingly combined the
-model-specific string with the generic "mtd-ram" string.
+Reset the g12a hdmi codec glue on probe. This ensure a sane startup state.
 
-Note that neither "cy7c1019dv33-10zsxi, mtd-ram" or
-"cy7c1019dv33-10zsxi" are used by any in-kernel driver and they are
-not present in any binding.
-
-The physmap driver will however bind to platform devices that specify
-"mtd-ram".
-
-Fixes: fc48e76489fd ("ARM: dts: imx6: Add support for Toradex Colibri iMX6 module")
-Cc: Sanchayan Maity <maitysanchayan@gmail.com>
-Cc: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Signed-off-by: Johan Hovold <johan@kernel.org>
-Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+Link: https://lore.kernel.org/r/20200221121146.1498427-1-jbrunet@baylibre.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ sound/soc/meson/g12a-tohdmitx.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
-index cd075621de52d..84fcc203a2e48 100644
---- a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
-+++ b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
-@@ -275,7 +275,7 @@
+diff --git a/sound/soc/meson/g12a-tohdmitx.c b/sound/soc/meson/g12a-tohdmitx.c
+index 9cfbd343a00c8..8a0db28a6a406 100644
+--- a/sound/soc/meson/g12a-tohdmitx.c
++++ b/sound/soc/meson/g12a-tohdmitx.c
+@@ -8,6 +8,7 @@
+ #include <linux/module.h>
+ #include <sound/pcm_params.h>
+ #include <linux/regmap.h>
++#include <linux/reset.h>
+ #include <sound/soc.h>
+ #include <sound/soc-dai.h>
  
- 	/* SRAM on Colibri nEXT_CS0 */
- 	sram@0,0 {
--		compatible = "cypress,cy7c1019dv33-10zsxi, mtd-ram";
-+		compatible = "cypress,cy7c1019dv33-10zsxi", "mtd-ram";
- 		reg = <0 0 0x00010000>;
- 		#address-cells = <1>;
- 		#size-cells = <1>;
-@@ -286,7 +286,7 @@
+@@ -378,6 +379,11 @@ static int g12a_tohdmitx_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	void __iomem *regs;
+ 	struct regmap *map;
++	int ret;
++
++	ret = device_reset(dev);
++	if (ret)
++		return ret;
  
- 	/* SRAM on Colibri nEXT_CS1 */
- 	sram@1,0 {
--		compatible = "cypress,cy7c1019dv33-10zsxi, mtd-ram";
-+		compatible = "cypress,cy7c1019dv33-10zsxi", "mtd-ram";
- 		reg = <1 0 0x00010000>;
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+ 	regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(regs))
 -- 
 2.20.1
 
