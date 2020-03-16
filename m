@@ -2,51 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C151186B48
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 13:41:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05E52186B8E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 13:54:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/QcCc3oemZ1nQVsXM8KaZKe94x/iiJzH8XMW4kvSqs0=; b=EeuhmWnoDNItWf
-	MAxg0Z5WKnMWVutnG5seIIRS+6IWDFg54Wpqw/nsGiEdqr5qkZ2VtM9IW7YziiYDQeSKYozT8gFuv
-	Fh+qwhy3xhy/xZcRm994NikqvaoHOffhrOmuOFPQe75BpUy3fdQtO+MSi3Q37ZNC+ztmVhf27DJKE
-	6xInByl6QCGThwEQWg+fsmrACXJjOjedO3AaSAkMlUHzu/p9MlJ/gCuxnXX+jVWMp4vVChnwiOJJa
-	sLU7dxvcZNbCE1n7pvAj54FXHub+42KBDcNrTZ0c2RNq4jU06vFE98rcWlZVk0shF2pkzDYQrEFIi
-	FKunh0XRreCd3hO551hA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HVzGsX3ec1qAQyKZHfreBecW5F9zdWqVDUiDuJrDsH8=; b=V9nYZlW48ZBa2MqkDgDT5lchh
+	GKxsLVBpEGG1/nfOnEriGYU0p1o83GWJpiokbqnj5KUNVn9UONuSbsoQZHiLcwTfvT8PqHcUa1eM1
+	kmbDyYxeP5SVYV9q1K+GVuZzT8UXUqd2dzfYKPnexj7l8qIymmwDSJuO7vbtp/BmKJMhzmKtMwYUm
+	h6dayG4GygLX+EkxVXHHd19imdqv3R+8HTfJI70jStYb/ee2rzO36TUlCOQ6QucI5fG79jgmywktD
+	mttTRvXJOT6pExsuTc1cnnvxXA8P18mpQHMotaFvBtfaZT6FP5a1XJFKROzgYLV9yLQjLxYt4LpSn
+	JLgZG3XnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDp42-0002UQ-Aa; Mon, 16 Mar 2020 12:41:50 +0000
-Received: from poy.remlab.net ([2001:41d0:2:5a1a::]
- helo=ns207790.ip-94-23-215.eu)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDp3D-0001ro-LQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 12:41:02 +0000
-Received: from basile.remlab.net (87-92-31-51.bb.dnainternet.fi [87.92.31.51])
- (Authenticated sender: remi)
- by ns207790.ip-94-23-215.eu (Postfix) with ESMTPSA id 72F825FD9C;
- Mon, 16 Mar 2020 13:40:50 +0100 (CET)
-From: =?ISO-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv2 0/3] arm64: clean up trampoline alignment
-Date: Mon, 16 Mar 2020 14:40:49 +0200
-Message-ID: <4064091.qgymGCTE6G@basile.remlab.net>
-Organization: Remlab
+	id 1jDpGT-00061a-G5; Mon, 16 Mar 2020 12:54:41 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDpGL-00060x-Nr; Mon, 16 Mar 2020 12:54:35 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 6C502AB64;
+ Mon, 16 Mar 2020 12:54:31 +0000 (UTC)
+Message-ID: <9d8e1679b755940d85c95d5df8714d4bb3505cdc.camel@suse.de>
+Subject: Re: [PATCH 86/89] drm/vc4: hdmi: Adjust HSM clock rate depending on
+ pixel rate
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Maxime Ripard <maxime@cerno.tech>, Eric Anholt <eric@anholt.net>
+Date: Mon, 16 Mar 2020 13:54:29 +0100
+In-Reply-To: <abf64b907cd23488e06d2aca4991ac1be216ec8f.1582533919.git-series.maxime@cerno.tech>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <abf64b907cd23488e06d2aca4991ac1be216ec8f.1582533919.git-series.maxime@cerno.tech>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_054059_858622_666B0498 
-X-CRM114-Status: UNSURE (   4.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_055433_925365_CE03AE35 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,23 +63,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7298419956289539924=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpUaGUgS1BUSSBhbmQgU0RFIHRyYW1wb2xpbmVzIGVhY2ggbG9hZCBhIHBvaW50ZXIgZnJv
-bSB0aGUgc2FtZSBmaXhtYXAgZGF0YSAKcGFnZS4gVGhpcyByZWR1Y2VzIHRoZSBkYXRhIGFsaWdu
-bWVudCB0byB0aGUgdXNlZnVsIHZhbHVlLCBhbmQgdHJpZXMgdG8gCmNsYXJpZnkgdGhlIGFzc2Vt
-YmxlciBjb2RlLgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLQpSw6ltaSBEZW5pcy1Db3VybW9udCAoMyk6CiAgICAgIGFybTY0
-OiBjbGVhbiB1cCB0cmFtcG9saW5lIHZlY3RvciBsb2FkcwogICAgICBhcm02NC9zZGVpOiBnYXRo
-ZXIgdHJhbXBvbGluZXMnIC5yb2RhdGEKICAgICAgYXJtNjQ6IHJlZHVjZSB0cmFtcG9saW5lIGRh
-dGEgYWxpZ25tZW50CgogYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUyB8IDIzICsrKysrKysrKyst
-LS0tLS0tLS0tLS0tCiBhcmNoL2FybTY0L21tL21tdS5jICAgICAgIHwgIDUgKystLS0KIDIgZmls
-ZXMgY2hhbmdlZCwgMTIgaW5zZXJ0aW9ucygrKSwgMTYgZGVsZXRpb25zKC0pCgotLSAK6Zu357Gz
-4oCn5b635bC8LeW6k+WwlOiSmQpodHRwOi8vd3d3LnJlbWxhYi5uZXQvCgoKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+--===============7298419956289539924==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-2Nhzgdng4j8pr0d0VEie"
+
+
+--=-2Nhzgdng4j8pr0d0VEie
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Maxime,
+On Mon, 2020-02-24 at 10:07 +0100, Maxime Ripard wrote:
+> @@ -1460,6 +1456,7 @@ static int vc4_hdmi_dev_remove(struct platform_devi=
+ce
+> *pdev)
+>  }
+> =20
+>  struct vc4_hdmi_variant bcm2835_variant =3D {
+> +	.max_pixel_clock	=3D 148500000,
+
+Just a reminder this might change in the close future:
+https://www.spinics.net/lists/arm-kernel/msg793013.html
+
+Regards,
+Nicolas
+j
+>  	.audio_available	=3D true,
+>  	.cec_available		=3D true,
+>  	.registers		=3D vc4_hdmi_fields,
+> diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.h b/drivers/gpu/drm/vc4/vc4_hdm=
+i.h
+> index cbb1d3ab85d7..ee9753255b68 100644
+> --- a/drivers/gpu/drm/vc4/vc4_hdmi.h
+> +++ b/drivers/gpu/drm/vc4/vc4_hdmi.h
+> @@ -38,6 +38,9 @@ struct vc4_hdmi_variant {
+>  	/* Set to true when the CEC support is available */
+>  	bool cec_available;
+> =20
+> +	/* Maximum pixel clock supported by the controller (in Hz) */
+> +	unsigned long long max_pixel_clock;
+> +
+>  	/* List of the registers available on that variant */
+>  	const struct vc4_hdmi_register *registers;
+> =20
+
+
+--=-2Nhzgdng4j8pr0d0VEie
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5vdwUACgkQlfZmHno8
+x/5Emwf/c9TYjBffVgvOA41mykLV4Nr8lGqYlbGeCSqOkIJClpTw0XDG/Sam289n
+NVS5OpnsEXJWm2HMrWgVqYqZHb3E609pjVeibMyMUhBIvounfpp5kiGI0ZUfCm68
++JarBt0WtkW+731jvBxEnmfWB5j8FpHiZrSJkU5Eo7C7OhIHEAXvU+ZH6TdPqll6
+Zjic3+8SBELK0JfFzgB6qkVWFT4UBVpxQ53sokDF+NGROgOEdUkHWxivw9SGvFsg
+ewD3v2fbRdUNVTXI/9htZH4I/lupf3byyRQRnx8IWrzI/1U3NzY1xiHU3qEKUW3Q
+DQNY46wnSbAgfaRuOCuI0lgcGztljw==
+=xZA/
+-----END PGP SIGNATURE-----
+
+--=-2Nhzgdng4j8pr0d0VEie--
+
+
+
+--===============7298419956289539924==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7298419956289539924==--
+
+
