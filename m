@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3C9C1862B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:39:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6AEA1861B8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:34:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3713M9j1Zm+h/JjmGAPlGkuPode80bEd/d/XSgLEZ2A=; b=E0WE4fR7H0ZTV6
-	0T7y10zgaKKwEXBSR26R/Ah3ltiEkhNBxhRwhPRIpawdOKkDaiHl41SALSzsRK6xVAEWq9ubXv7m/
-	1LkRrwKSesYY4aX5c2PUD9TxOOEt5k5TZLgCeItT9G83x12gcnxJzYP8gb35mkJ3R52o+7Mik9x1z
-	q1/aEGt5BMdLaFA2a1mnAHnCk7gxIlwX6/lxD8J4bPRGNChv+hcBrWCIGkatvd5iH2WsnBV6rikAu
-	5IAA87MqKPqLUrb6J2Fd65dyCxpWXnhahhUmpP7ZhOtwx51XpCtDlHKpdwQWNQa6kRLXkaJ3TQ2OS
-	qKIckZkybxQz8jRAhe2w==;
+	List-Owner; bh=3crdiGXnbvKAAoAZ9fES6gXm1tiiYagKoTZea5i+t94=; b=jxY8YFV9wL8K5d
+	Hh5rwLdUsud1KYSGlSadpEBY2soxYcOVpCsiOQjZg61o2Y9vW0vEgYm7ZCRKq9BGsjfBlpbSJNVtx
+	bFx5kjB2obUtibIQ7MU9pQfLEKEelAMDO/3FK006AZoBDG7pfheoWL0OG9eGAJBmTXbju4m2/xOsI
+	M+D/rYU9tPrFFCALOai6dIhzlqo5N+GdzfhD85VPEa66wMpCVrrcDDEWhs5obIHKTgjDwVXpAsiyh
+	qBtA7Jiau9LRi2CZYYT3/qeK8AKPZHDnFFG7zvI5/I8UUSVgkyQ0/2WkOyqgaxFUh0OPFusn277dN
+	iU1lTmDnN2DZPOX25L4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfek-00085K-TD; Mon, 16 Mar 2020 02:39:06 +0000
+	id 1jDfa2-0002Wq-G5; Mon, 16 Mar 2020 02:34:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfZj-0002VO-5b
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:33:59 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jDfZ5-0001s9-Pm
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:33:17 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E197E206BE;
- Mon, 16 Mar 2020 02:33:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 92B57206BE;
+ Mon, 16 Mar 2020 02:33:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326034;
- bh=HDWemFmS6sNHHvqLejbRyMAPEs6e+okEDrDeTOhqVWg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sWoGXueoh9RRb9ZfMtqEouGMFCL9su9O4nrtnMEYxzO7hijuqz8FKpnxfH81EoccB
- w/SNJcnkP5oPSyAJvIzeTlxsAd3g+Z3e1n6OkGEfDXHk+kfY3HNI/UZ4zro6+n3Rby
- iVX22a/EeVg6vnFjla588hMJKfoFrL74BAX8xMg8=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 29/41] ASoC: stm32: sai: manage rebind issue
-Date: Sun, 15 Mar 2020 22:33:07 -0400
-Message-Id: <20200316023319.749-29-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200316023319.749-1-sashal@kernel.org>
-References: <20200316023319.749-1-sashal@kernel.org>
+ s=default; t=1584325995;
+ bh=JECNvcwgpBCM8o9+C4c1LowfMDmUIeZF7Y+YMfYbyQY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=2ff1qLXS+iJ0mRFvywRJpgkqmkJRDQUzJtasC4snv9dFEbWMnpN8z9nldKCs/nWRz
+ grOQkoeW5Tpi2uN6/U8i/WwVc2MYzBhjdLvomg0LHhOaytjUAQnmiRuVsRS/8obwW+
+ b7F/hZEG6p9C1nUQ2E6O3V6RqG8/C/jSAIg3VHy0=
+Date: Mon, 16 Mar 2020 10:33:08 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH 2/2] arm64: dts: ls1028a: disable the felix switch by
+ default
+Message-ID: <20200316023308.GW17221@dragon>
+References: <20200312164320.22349-1-michael@walle.cc>
+ <20200312164320.22349-2-michael@walle.cc>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20200312164320.22349-2-michael@walle.cc>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193355_294144_A1E56525 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20200315_193315_909408_7AAC995B 
+X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,108 +79,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Olivier Moysan <olivier.moysan@st.com>, Mark Brown <broonie@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Vivien Didelot <vivien.didelot@gmail.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Vladimir Oltean <vladimir.oltean@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Olivier Moysan <olivier.moysan@st.com>
+On Thu, Mar 12, 2020 at 05:43:20PM +0100, Michael Walle wrote:
+> Disable the felix switch by default and enable it per board which are
+> actually using it.
+> 
+> Signed-off-by: Michael Walle <michael@walle.cc>
 
-[ Upstream commit 0d6defc7e0e437a9fd53622f7fd85740f38d5693 ]
-
-The commit e894efef9ac7 ("ASoC: core: add support to card rebind")
-allows to rebind the sound card after a rebind of one of its component.
-With this commit, the sound card is actually rebound,
-but may be no more functional. The following problems have been seen
-with STM32 SAI driver.
-
-1) DMA channel is not requested:
-
-With the sound card rebind the simplified call sequence is:
-stm32_sai_sub_probe
-	snd_soc_register_component
-		snd_soc_try_rebind_card
-			snd_soc_instantiate_card
-	devm_snd_dmaengine_pcm_register
-
-The problem occurs because the pcm must be registered,
-before snd_soc_instantiate_card() is called.
-
-Modify SAI driver, to change the call sequence as follows:
-stm32_sai_sub_probe
-	devm_snd_dmaengine_pcm_register
-	snd_soc_register_component
-		snd_soc_try_rebind_card
-
-2) DMA channel is not released:
-
-dma_release_channel() is not called when
-devm_dmaengine_pcm_release() is executed.
-This occurs because SND_DMAENGINE_PCM_DRV_NAME component,
-has already been released through devm_component_release().
-
-devm_dmaengine_pcm_release() should be called before
-devm_component_release() to avoid this problem.
-
-Call snd_dmaengine_pcm_unregister() and snd_soc_unregister_component()
-explicitly from SAI driver, to have the right sequence.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Message-Id: <20200304102406.8093-1-olivier.moysan@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- sound/soc/stm/stm32_sai_sub.c | 18 ++++++++++--------
- 1 file changed, 10 insertions(+), 8 deletions(-)
-
-diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
-index 30bcd5d3a32a8..10eb4b8e8e7ee 100644
---- a/sound/soc/stm/stm32_sai_sub.c
-+++ b/sound/soc/stm/stm32_sai_sub.c
-@@ -1543,20 +1543,20 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	ret = devm_snd_soc_register_component(&pdev->dev, &stm32_component,
--					      &sai->cpu_dai_drv, 1);
-+	ret = snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Could not register pcm dma\n");
-+		return ret;
-+	}
-+
-+	ret = snd_soc_register_component(&pdev->dev, &stm32_component,
-+					 &sai->cpu_dai_drv, 1);
- 	if (ret)
- 		return ret;
- 
- 	if (STM_SAI_PROTOCOL_IS_SPDIF(sai))
- 		conf = &stm32_sai_pcm_config_spdif;
- 
--	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
--	if (ret) {
--		dev_err(&pdev->dev, "Could not register pcm dma\n");
--		return ret;
--	}
--
- 	return 0;
- }
- 
-@@ -1565,6 +1565,8 @@ static int stm32_sai_sub_remove(struct platform_device *pdev)
- 	struct stm32_sai_sub_data *sai = dev_get_drvdata(&pdev->dev);
- 
- 	clk_unprepare(sai->pdata->pclk);
-+	snd_dmaengine_pcm_unregister(&pdev->dev);
-+	snd_soc_unregister_component(&pdev->dev);
- 
- 	return 0;
- }
--- 
-2.20.1
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
