@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73EA918635D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:46:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80A8D18635E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:47:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1dAL3wHV9BIIfb6RiH6Kn1sUIIcHO9Wz2cqLul+tvdo=; b=aK2vSSJD06KosR
-	5FkX5VKotnwPEAXD/F+jcaMFMMXjaTyBfUi0mG/tv5luVuUC457MMqMfatGflGOUwmrm8Mdj6vTWc
-	ifWLdfsc5OcAGakjGQjaxi7xg5/ad9sb7SjxUxipla3M3vAUBl3FBWq1vem5XI74FD3Bn73rEeqP4
-	FB2Td79ksxUVqq88H3mIAKga+BbMIDt7FhTW9CLEHco0ykxw+3bK1GM88Z//q1dCnmlMd4RNNQW9+
-	9iM5wbyHBGNlLxgkf42EODUFZuDIMH1JVIw4VKCKhLdYrkfUGO6CD5dAfjdLXrqYKQdIdw8hHZzuG
-	KxIjGWgtfUQb684yDjyA==;
+	List-Owner; bh=O2BDRlVBpJvLutVfvLWsKvPekc+6vedxIQmkt3UxdXw=; b=bdEjTzabxzcv0r
+	+1Vb+Pmf9ovoRs5d5TAjCNxJJh3hE0PSrGPl/288WJD7mK8+XRHckXfgGVTFcMqhOMhqou6IZI1mZ
+	qV9FDOJYqgbmj2jxTNJEAiTnhrGp7MKi7Q5f9zN5YhWtrI1s2Xzouq0MO7doZ/rU3FcuC4RKfwxYB
+	SATI9VVGdMGRVFVPp8yT+JreNXPsHmaqCrobYeb4dMGR6acb2yJxHbNUdK8+QhJVQ28RiPfBuWOPl
+	T3pzbTC9lLj8+ulsVaws5U/KCcyEgxyIpi40uFsjE7U2XcOSf7Uatg0rcqi42jrCpisIWwiB3D6mC
+	5C0VWUnGbBN/CM4vvqRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfmA-0001Cp-1z; Mon, 16 Mar 2020 02:46:46 +0000
+	id 1jDfmQ-0001SU-EK; Mon, 16 Mar 2020 02:47:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfbe-0005FN-4p
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:35:56 +0000
+ id 1jDfbf-0005Ga-84
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:35:57 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7F5672074C;
- Mon, 16 Mar 2020 02:35:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B9E0620724;
+ Mon, 16 Mar 2020 02:35:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326153;
- bh=ZimnssbihiT/CUcvGjrmtWm5fbdnfn+B5wH6DVTDZMM=;
+ s=default; t=1584326154;
+ bh=RtkAOZXuRvJwL8YLTO8SpGSdqHr4pqf4Wyne0iQzA6o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Lcy+SkQYUCJqEpLLtN5fjgSp4a19uFUYFSR6kOJatsRalMGE+INAVofAAKgKIDZq6
- nYUTCxxG+pLrA7hd5FWmm43PlBiwVgZ4h6iGqbDWxHzF+QH5z4+1xIGVOGgZJdSDio
- BNlmssaUhL+8DkVB3gEBJHadHsHZkLJTeVIMXCQw=
+ b=QMSN9gD/9yR7B27hbxlnZrz3yD/Qb7p5FTZn0YIpIDctUw2dtt3Z6NxVp7sz6iXGc
+ JSDJvqytXktRuuH/3svepvAyf3MRdaoeFODbYKfSKTjKy5q1pWGw70sWchRlKW0E3W
+ ps63CSUdl6qMVwbwYLT9P5RsQx6uHUvkxVjbtn7c=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 4/7] spi/zynqmp: remove entry that causes a cs
- glitch
-Date: Sun, 15 Mar 2020 22:35:44 -0400
-Message-Id: <20200316023548.2347-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 5/7] drm/exynos: dsi: propagate error value and
+ silence meaningless warning
+Date: Sun, 15 Mar 2020 22:35:45 -0400
+Message-Id: <20200316023548.2347-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200316023548.2347-1-sashal@kernel.org>
 References: <20200316023548.2347-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193554_290917_27BA626C 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20200315_193555_341400_5ED40433 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,65 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
- linux-spi@vger.kernel.org, Thommy Jakobsson <thommyj@gmail.com>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Inki Dae <inki.dae@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thommy Jakobsson <thommyj@gmail.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit 5dd8304981ecffa77bb72b1c57c4be5dfe6cfae9 ]
+[ Upstream commit 0a9d1e3f3f038785ebc72d53f1c409d07f6b4ff5 ]
 
-In the public interface for chipselect, there is always an entry
-commented as "Dummy generic FIFO entry" pushed down to the fifo right
-after the activate/deactivate command. The dummy entry is 0x0,
-irregardless if the intention was to activate or deactive the cs. This
-causes the cs line to glitch rather than beeing activated in the case
-when there was an activate command.
+Properly propagate error value from devm_regulator_bulk_get() and don't
+confuse user with meaningless warning about failure in getting regulators
+in case of deferred probe.
 
-This has been observed on oscilloscope, and have caused problems for at
-least one specific flash device type connected to the qspi port. After
-the change the glitch is gone and cs goes active when intended.
-
-The reason why this worked before (except for the glitch) was because
-when sending the actual data, the CS bits are once again set. Since
-most flashes uses mode 0, there is always a half clk period anyway for
-cs to clk active setup time. If someone would rely on timing from a
-chip_select call to a transfer_one, it would fail though.
-
-It is unknown why the dummy entry was there in the first place, git log
-seems to be of no help in this case. The reference manual gives no
-indication of the necessity of this. In fact the lower 8 bits are a
-setup (or hold in case of deactivate) time expressed in cycles. So this
-should not be needed to fulfill any setup/hold timings.
-
-Signed-off-by: Thommy Jakobsson <thommyj@gmail.com>
-Reviewed-by: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
-Link: https://lore.kernel.org/r/20200224162643.29102-1-thommyj@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+Signed-off-by: Inki Dae <inki.dae@samsung.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-zynqmp-gqspi.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/gpu/drm/exynos/exynos_drm_dsi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
-index f23f36ebaf3dc..bd3945a5660a5 100644
---- a/drivers/spi/spi-zynqmp-gqspi.c
-+++ b/drivers/spi/spi-zynqmp-gqspi.c
-@@ -414,9 +414,6 @@ static void zynqmp_qspi_chipselect(struct spi_device *qspi, bool is_high)
+diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+index 12b03b3647034..1ee0b70472fd8 100644
+--- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
++++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+@@ -1899,8 +1899,9 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(dsi->supplies),
+ 				      dsi->supplies);
+ 	if (ret) {
+-		dev_info(dev, "failed to get regulators: %d\n", ret);
+-		return -EPROBE_DEFER;
++		if (ret != -EPROBE_DEFER)
++			dev_info(dev, "failed to get regulators: %d\n", ret);
++		return ret;
+ 	}
  
- 	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, genfifoentry);
- 
--	/* Dummy generic FIFO entry */
--	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, 0x0);
--
- 	/* Manually start the generic FIFO command */
- 	zynqmp_gqspi_write(xqspi, GQSPI_CONFIG_OFST,
- 			zynqmp_gqspi_read(xqspi, GQSPI_CONFIG_OFST) |
+ 	dsi->clks = devm_kzalloc(dev,
 -- 
 2.20.1
 
