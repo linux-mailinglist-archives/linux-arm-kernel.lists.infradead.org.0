@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FECA1860F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 01:52:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 191961860FD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 01:53:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IGY3Cl+pfOqAS0lljo2wXFTHV8+ixclJzmJF4bfB48A=; b=sVo9iG31IJNemQ
-	o1NGY6N6kLleGjn8VZjZFH8jyK+RChIjlORJX9iva97Q8TsmGMfgU1D/oBe6U3tRSRQHtgWebrukR
-	zV2zwHif5J+CApScTAcG3h5omk1rR39hSfVzznudLgvummtaElkPy3dByS2i7TdLckZ8BW4WpGaQ7
-	3nWqSQN3WJLhCz1hIK+mmJGgPBGqENqhuyCmB8uXAx3ESMlS3nzLTetXLgA/6ezVWsFLn8v3XVDcV
-	vmNqKhQdR4R0J1KrtWR2am5KDKaF9WIQGKVTr9CkDknOphnO8tuKoFqaNUx27q9U0xwjdG8o9/f06
-	kDU3/Dd4emYhq9emV8lQ==;
+	List-Owner; bh=gtoxoGQaZ1rOvb0Pn95jmXHnbmiV9LPUN8UIjUbyhzM=; b=cpN+DZliRhqxI7
+	tWjF+L+rNLMtbe/hQjRe4O44RjNLe4AKqrXaQKAFb9uJsJdqwGKxP2iiAxEX1eBnXW/RbYb3qEyh8
+	lVgmzRLQVeoHRwMNmhqgshKaiFsrp+agKqUNk/ucYKG03OPV+TX6GWAxxwzD8t5oGGVx2aRtADfLf
+	wLdnx3RjpQ2dMGHY2itlL/7gy9O8M7akG2QJmz5VjoSwSbg1R+GBDvfXwFwBh+RPQHGZImDahk9pk
+	uI9/yHhkQaFRLsP5thNmHiDzoQSga5+J54fWviHQ3cTbF/5dH2Cu/t3JxvJpwlrQ/gjr5HwssSEWm
+	84ulBycdpkhJFffEBfHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDdzn-0007iJ-OE; Mon, 16 Mar 2020 00:52:43 +0000
+	id 1jDe0p-00084v-Gj; Mon, 16 Mar 2020 00:53:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDdzd-0007hz-KY
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 00:52:35 +0000
+ id 1jDe0Y-000842-DL
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 00:53:33 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4EB57205C9;
- Mon, 16 Mar 2020 00:52:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEDB9205C9;
+ Mon, 16 Mar 2020 00:53:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584319953;
- bh=ny9zbhiYmmCK0lKTZmwrIn2SPlK9wGspRC1QJ1S7aR8=;
+ s=default; t=1584320010;
+ bh=v8Qu/XknM0RD2gDDO51zIHVXWGIRSk9coPKyrYVgcjM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=foDhsyXDcF4pCjYyX2l1SVV4OcwFH7qaraL4CpJjkbfvcrg2Rw6/UJTzop0haBhCD
- lsc/2jZZZJzzx1wPFSr69LyD6h7ja3nswzwLd2N1txNgVb00WbVZ3gRmxc7zAsE/uD
- NaoHN4RgYuO3TmojYq/ZIE9D5RqduOuTWb2QxJMs=
-Date: Mon, 16 Mar 2020 08:52:20 +0800
+ b=ujLJm6xe//rcf+hUNGkyO0h0a7Lx8tTwdm8N9OktM6r1qUflvMp+xloOLnsxQOza/
+ c5uAU61POySUJ2yy3PVfwOwUMuuQ4zY1uu2PsrmELF3D+3VA6P8/dkaynaQ+OkVW+8
+ 1QCQf0f4g8pwuwmRjEtpt1u+f6hID0vRaDjp1li0=
+Date: Mon, 16 Mar 2020 08:53:20 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Message-ID: <20200316005219.GD17221@dragon>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V3 2/7] firmware: imx: add COMPILE_TEST support
+Message-ID: <20200316005320.GE17221@dragon>
 References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <1583714300-19085-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+In-Reply-To: <1583714300-19085-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_175233_697961_75409BB0 
-X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-CacheID: sfid-20200315_175330_472393_7A114987 
+X-CRM114-Status: UNSURE (   7.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -78,51 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- Anson Huang <anson.huang@nxp.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "ronald@innovation.ch" <ronald@innovation.ch>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>
+Cc: alexandre.belloni@bootlin.com, m.felsch@pengutronix.de,
+ leonard.crestez@nxp.com, festevam@gmail.com, linux-rtc@vger.kernel.org,
+ robh@kernel.org, amit.kucheria@verdurent.com, wim@linux-watchdog.org,
+ daniel.lezcano@linaro.org, krzk@kernel.org, Linux-imx@nxp.com,
+ linux-input@vger.kernel.org, rui.zhang@intel.com, ronald@innovation.ch,
+ linux@roeck-us.net, linux-watchdog@vger.kernel.org, arnd@arndb.de,
+ linux-pm@vger.kernel.org, s.hauer@pengutronix.de, tglx@linutronix.de,
+ andriy.shevchenko@linux.intel.com, daniel.baluta@nxp.com,
+ linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
+ a.zummo@towertech.it, gregkh@linuxfoundation.org, dmitry.torokhov@gmail.com,
+ linux-kernel@vger.kernel.org, linux@rempel-privat.de, kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 01:40:18PM +0000, Peng Fan wrote:
-> > Subject: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
+On Mon, Mar 09, 2020 at 08:38:15AM +0800, Anson Huang wrote:
+> Add COMPILE_TEST support to i.MX SCU drivers for better compile
+> testing coverage.
 > 
-> I have one patch pending reviewing.
-> https://patchwork.kernel.org/patch/11395247/
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-I dropped that patch from my queue and picked patch #2 from this series
-as the favor.
-
-Shawn
+Applied this one, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
