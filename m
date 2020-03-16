@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 549961868EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 11:26:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C04431868F4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 11:27:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=C2dCDpRgkzdJAlCNNnt/PtiR6wxW1GgCyfck2lnhh9E=; b=RHF3fThBIoYeABsv7QzHad5iUm
-	NHCD9NBPKLidQVIKV2dZBKVZVPShWTfvriBg0jjIjVjApNsYtrIjybTydg72qSTPgxmvIpfcEvveo
-	8mfo0EBThJaAZecaEvTPb/xUxSOCs4VsLweYvFWHq8kZ0PIsAgvyAwNymgmuVWLgPDTHTAFNXsr3/
-	U12fBjKRSeLRhhEzoi2MAGnYgJqz8m8DorBG4mKSLC/jAF74gR4LYPlS1MIlVh3pcUy5hTz3s5/wE
-	oBPL4U3T2qsn1XoTG8mI6a8y+muyVnT4eNzKQzZVdFeMukQmexJWTl57z1IWWwuaM7lpVJ5usAJ0N
-	swEyZZjA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4JbJM+FG4yj2CeHSooJfLMbwTOuJQbzyBIK+oJtkDbw=; b=uVin/ixsXClryL
+	zWofeHKeH+4UFynkeIVNZ1sNDcCBqEb6+00PqsKJAUMthSV1Rc3BK5Ao/w//W78Pctov70hXh7BP2
+	KQSdeMzDe1f/HQaumXM0bv0l1OFUyWCiVzoMoYMVtSHzv2XN28brgpVKHlYXD9M2iYzJGDS3fICiq
+	52XPIHMRuVZeJMUp6yyr6V2A1eptxoNH2Yy6+UeSlvxpADYftGkNZVTujtTjohYmFTHxouEEhKO/d
+	Y730FzJ7xW7vvDfPH1G6xDqmAY/HUBS878k5CQrw9jR6JCYqClHQdu3Yq+5XUNq2kKkJa1oawEHo0
+	uq5IN2GMzRIsgb75WPbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDmwi-0004TI-Ui; Mon, 16 Mar 2020 10:26:08 +0000
-Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDmwX-0004Rs-FJ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 10:25:59 +0000
-Received: from ramsan ([84.195.182.253]) by albert.telenet-ops.be with bizsmtp
- id EyRk2200M5USYZQ06yRkjL; Mon, 16 Mar 2020 11:25:47 +0100
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1jDmwK-00069m-8J; Mon, 16 Mar 2020 11:25:44 +0100
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1jDmwK-0007Wk-7S; Mon, 16 Mar 2020 11:25:44 +0100
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH 2/2] ARM: dts: r8a7791: Add PWM device nodes
-Date: Mon, 16 Mar 2020 11:25:40 +0100
-Message-Id: <20200316102540.28887-3-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200316102540.28887-1-geert+renesas@glider.be>
-References: <20200316102540.28887-1-geert+renesas@glider.be>
+	id 1jDmxP-00058U-I5; Mon, 16 Mar 2020 10:26:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDmx6-00051Z-Ms
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 10:26:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D936F1FB;
+ Mon, 16 Mar 2020 03:26:31 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD0423F534;
+ Mon, 16 Mar 2020 03:26:28 -0700 (PDT)
+Date: Mon, 16 Mar 2020 10:26:22 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
+Message-ID: <20200316102621.GC3005@mbp>
+References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
+ <20200313154345.56760-19-vincenzo.frascino@arm.com>
+ <20200315182950.GB32205@mbp>
+ <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
+ <20200316102214.GA5746@lakrids.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200316102214.GA5746@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_032557_667941_AAC18041 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200316_032632_824161_7D29CF90 
+X-CRM114-Status: GOOD (  18.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:1a listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,107 +66,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Dmitry Safonov <0x7f454c46@gmail.com>, linux-mips@vger.kernel.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable support for the 7 PWM channels provided by PWM Timers on R-Car
-M2-W, by adding device nodes describing the PWM Timers.
+On Mon, Mar 16, 2020 at 10:22:15AM +0000, Mark Rutland wrote:
+> On Mon, Mar 16, 2020 at 09:42:32AM +0000, Vincenzo Frascino wrote:
+> > On 3/15/20 6:30 PM, Catalin Marinas wrote:
+> > > On Fri, Mar 13, 2020 at 03:43:37PM +0000, Vincenzo Frascino wrote:
+> > >> --- /dev/null
+> > >> +++ b/arch/arm64/include/asm/vdso/processor.h
+> > >> @@ -0,0 +1,31 @@
+> > >> +/* SPDX-License-Identifier: GPL-2.0-only */
+> > >> +/*
+> > >> + * Copyright (C) 2020 ARM Ltd.
+> > >> + */
+> > >> +#ifndef __ASM_VDSO_PROCESSOR_H
+> > >> +#define __ASM_VDSO_PROCESSOR_H
+> > >> +
+> > >> +#ifndef __ASSEMBLY__
+> > >> +
+> > >> +#include <asm/page-def.h>
+> > >> +
+> > >> +#ifdef CONFIG_COMPAT
+> > >> +#if defined(CONFIG_ARM64_64K_PAGES) && defined(CONFIG_KUSER_HELPERS)
+> > >> +/*
+> > >> + * With CONFIG_ARM64_64K_PAGES enabled, the last page is occupied
+> > >> + * by the compat vectors page.
+> > >> + */
+> > >> +#define TASK_SIZE_32		UL(0x100000000)
+> > >> +#else
+> > >> +#define TASK_SIZE_32		(UL(0x100000000) - PAGE_SIZE)
+> > >> +#endif /* CONFIG_ARM64_64K_PAGES */
+> > >> +#endif /* CONFIG_COMPAT */
+> > > 
+> > > Just curious, what's TASK_SIZE_32 used for in the vDSO code? You don't
+> > > seem to move TASK_SIZE.
+> > > 
+> > 
+> > I tried to fine grain the headers as much as I could in order to avoid
+> > unneeded/unwanted inclusions:
+> >  * TASK_SIZE_32 is used to verify ABI consistency on vdso32 (please refer to
+> >    arch/arm64/kernel/vdso32/vgettimeofday.c).
+> >  * TASK_SIZE is not required by the vdso library hence it is not present in
+> >    these headers.
+> 
+> It would be worth noting the former point in the commit message, since
+> it can be surprising.
+> 
+> I also think it's worth keeping the definitions together if that's easy,
+> as it makes it easier to navigate the codebase, even if TASK_SIZE isn't
+> necessary for the VDSO itself.
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- arch/arm/boot/dts/r8a7791.dtsi | 70 ++++++++++++++++++++++++++++++++++
- 1 file changed, 70 insertions(+)
+It won't work as TASK_SIZE requires (on arm64) test_thread_flag() which
+can't be made available to the vDSO.
 
-diff --git a/arch/arm/boot/dts/r8a7791.dtsi b/arch/arm/boot/dts/r8a7791.dtsi
-index a508098af205ee3e..b4dc177e45a6d915 100644
---- a/arch/arm/boot/dts/r8a7791.dtsi
-+++ b/arch/arm/boot/dts/r8a7791.dtsi
-@@ -1079,6 +1079,76 @@
- 			status = "disabled";
- 		};
- 
-+		pwm0: pwm@e6e30000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e30000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm1: pwm@e6e31000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e31000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm2: pwm@e6e32000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e32000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm3: pwm@e6e33000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e33000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm4: pwm@e6e34000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e34000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm5: pwm@e6e35000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e35000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		pwm6: pwm@e6e36000 {
-+			compatible = "renesas,pwm-r8a7791", "renesas,pwm-rcar";
-+			reg = <0 0xe6e36000 0 0x8>;
-+			clocks = <&cpg CPG_MOD 523>;
-+			power-domains = <&sysc R8A7791_PD_ALWAYS_ON>;
-+			resets = <&cpg 523>;
-+			#pwm-cells = <2>;
-+			status = "disabled";
-+		};
-+
- 		adc: adc@e6e54000 {
- 			compatible = "renesas,r8a7791-gyroadc",
- 				     "renesas,rcar-gyroadc";
 -- 
-2.17.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
