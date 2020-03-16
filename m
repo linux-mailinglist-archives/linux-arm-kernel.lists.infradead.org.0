@@ -2,52 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 809E4186EA7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 16:33:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AF37186EB2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 16:37:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ucGwAWuqdJDYKtSAVZ0u6Bv0/jXWcdWqKUAUIQXyWu0=; b=ids0fWwCCQGn8F
-	LO1o5lgh6mLkB3GOqV/iG9JYJisu02DSFQb0MzsJpRiVygdQfBPH4ty8XtSEniwOrzeVhewC4pgZY
-	BWMh0Sx62j8xATbwUcn2romB8A+xFgwCO1RX8oV87cdmREMgwk0Z7oyLP3OozJudJHlnDrSy8R+pk
-	viaoAePpCYlqRlp23wlcw8/zNbPckbLooQv+fnxKryESsvftArZrDztYbN6ekTJcf1ynQKQZV1HwX
-	eY4jFPl5I5Z16T3jICImWI4fvzlCQUX0D681ec8y2/78WWCWQC6w1AFsYLV+VIz68UetYz2V6X6k+
-	dfukS7tzL9MD/5d5EYKw==;
+	List-Owner; bh=X4XPF61otE8MmCMQK/neIK+OILW5H9wpanNiHteR67I=; b=X8yacAn84fvyKO
+	kd41guH19NGO+cm0fSLC8/nUXk684IPokkcXRE4EVOnJh2PWgII1LuRV7fyCoLAuypJaQDDhs5i9/
+	3YIp1vkPCJgqAi5SWdvh+eVlHOW/ZGYq1xJlTZLScqKMKtLux0D4VzjORAegIJ4wwF3RQH/GvKAY0
+	Bjil0GzUvtgOWwOFpBCOlHASnrkpS7vo40YXOqc1U0hlMWhNXVcoR9wLAgz6fz8ahPbXdpwJGjMS2
+	V16Fj0xEkTE1g1+1rBFu4SONaB99t47vvVmQRjhTVUaob/XPtuYp975SnTIbJlpGk5lINMRcRzExp
+	mcAUNtO87QDZXMOWGF3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDrjy-00037s-9U; Mon, 16 Mar 2020 15:33:18 +0000
+	id 1jDrnk-00054F-LU; Mon, 16 Mar 2020 15:37:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDrjp-00036f-21
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 15:33:10 +0000
+ id 1jDrna-00053g-7C
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 15:37:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F0F41FB;
- Mon, 16 Mar 2020 08:33:08 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 400A51FB;
+ Mon, 16 Mar 2020 08:37:01 -0700 (PDT)
 Received: from [10.37.9.38] (unknown [10.37.9.38])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4EBBC3F534;
- Mon, 16 Mar 2020 08:33:03 -0700 (PDT)
-Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 03C833F534;
+ Mon, 16 Mar 2020 08:36:55 -0700 (PDT)
+Subject: Re: [PATCH v3 21/26] arm64: Introduce asm/vdso/arch_timer.h
 To: Catalin Marinas <catalin.marinas@arm.com>
 References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-19-vincenzo.frascino@arm.com>
- <20200315182950.GB32205@mbp> <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
- <20200316103437.GD3005@mbp> <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
- <20200316112205.GE3005@mbp> <9a0a9285-8a45-4f65-3a83-813cabd0f0d3@arm.com>
- <20200316144346.GF3005@mbp>
+ <20200313154345.56760-22-vincenzo.frascino@arm.com>
+ <20200315183151.GE32205@mbp>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <427064ee-45df-233c-0281-69e3d62ba784@arm.com>
-Date: Mon, 16 Mar 2020 15:33:30 +0000
+Message-ID: <4914ad9c-3eaf-b328-f31b-5d3077ef272f@arm.com>
+Date: Mon, 16 Mar 2020 15:37:23 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200316144346.GF3005@mbp>
+In-Reply-To: <20200315183151.GE32205@mbp>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_083309_190285_37A81F56 
-X-CRM114-Status: GOOD (  21.02  )
+X-CRM114-CacheID: sfid-20200316_083702_307485_FDF2ED2A 
+X-CRM114-Status: GOOD (  15.25  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,68 +82,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Catalin,
 
-On 3/16/20 2:43 PM, Catalin Marinas wrote[...]
-
->> To me does not seem optimized out. Which version of the compiler are you using?
-> 
-> I misread the #ifdef'ery in asm/processor.h. So with 4K pages,
-> TASK_SIZE_32 is (1UL<<32)-PAGE_SIZE. However, with 64K pages _and_
-> CONFIG_KUSER_HELPERS, TASK_SIZE_32 is 1UL<<32 and the check is removed
-> by the compiler.
-> 
-> With the 4K build, __vdso_clock_gettime starts as:
-> 
-> 00000194 <__vdso_clock_gettime>:
->  194:   f511 5f80       cmn.w   r1, #4096       ; 0x1000
->  198:   d214            bcs.n   1c4 <__vdso_clock_gettime+0x30>
->  19a:   b5b0            push    {r4, r5, r7, lr}
->  ...
->  1c4:   f06f 000d       mvn.w   r0, #13
->  1c8:   4770            bx      lr
-> 
-> With 64K pages:
-> 
-> 00000194 <__vdso_clock_gettime>:
->  194:   b5b0            push    {r4, r5, r7, lr}
->  ...
->  1be:   bdb0            pop     {r4, r5, r7, pc}
-> 
-> I haven't tried but it's likely that the vdsotest fails with 64K pages
-> and compat enabled (requires EXPERT).
->
-
-This makes more sense. Thanks for the clarification.
-
-I agree on the behavior of 64K pages and I think as well that the
-"compatibility" issue is still there. However as you correctly stated in your
-first email arm32 never supported 16K or 64K pages, hence I think we should not
-be concerned about compatibility in this cases.
-
-To make it more explicit we could make COMPAT_VDSO on arm64 depend on
-ARM64_4K_PAGES. What do you think?
-
->> Please find below the list of errors for clock_gettime (similar for the other):
+On 3/15/20 6:32 PM, Catalin Marinas wrote:
+> On Fri, Mar 13, 2020 at 03:43:40PM +0000, Vincenzo Frascino wrote:
+>> The vDSO library should only include the necessary headers required for
+>> a userspace library (UAPI and a minimal set of kernel headers). To make
+>> this possible it is necessary to isolate from the kernel headers the
+>> common parts that are strictly necessary to build the library.
 >>
->> passing UINTPTR_MAX to clock_gettime (VDSO): terminated by unexpected signal 7
->> clock-gettime-monotonic/abi: 1 failures/inconsistencies encountered
+>> Introduce asm/vdso/arch_timer.h to contain all the arm64 specific
+>> code. This allows to replace the second isb() in __arch_get_hw_counter()
+>> with a fake dependent stack read of the counter which improves the vdso
+>> library peformances of ~4.5%. Below the results of vdsotest [1] ran for
+>> 100 iterations.
 > 
-> Ah, so it uses UINTPTR_MAX in the test. Fair enough but I don't think
-> the arm64 check is entirely useful. On arm32, the check was meant to
-> return -EFAULT for addresses beyond TASK_SIZE that may enter into the
-> kernel or module space. On arm64 compat, the kernel space is well above
-> the reach of the 32-bit code.
-> 
-> If you want to preserve some compatibility for this specific test, what
-> about checking for wrapping around 0, I think it would make more sense.
-> Something like:
-> 
-> 	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
+> The subject seems to imply a non-functional change but as you read, it
+> gets a lot more complicated. Could you keep the functional change
+> separate from the header clean-up, maybe submit it as an independent
+> patch? And it shouldn't go in without Will's ack ;).
 > 
 
-Ok, sounds good to me. But it is something that this patch series inherited,
-hence I would prefer to send a separate patch that introduces what you are
-proposing and removes TASK_SIZE_32 from the headers. How does it sound?
+It is fine by me. I will repost the series with the required fixes and without
+this patch. This will give to me enough time to address Mark's comments as well
+and to Will to have a proper look.
 
 -- 
 Regards,
