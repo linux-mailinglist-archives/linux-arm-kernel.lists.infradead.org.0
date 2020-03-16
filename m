@@ -2,79 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7535A18672B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:57:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94CA8186732
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:59:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zJEL0owivL9DmYEUswSe9G4dabMzhDmJHXJjXa6mzu0=; b=awPcy7VsukFa+UZhA4JHsLCsl
-	3nSMI0hLeENxMTmvEqsHU8nKPKcipMIyUxP/WVT529WamnMmBGM4eh55se56GWVmd30hycHabOKug
-	+4JvRm/DuLonbHI6sI6BqhkVa6aAHA//h67BiXnox5IX7bnbAH/57m/QMrl0hO68NEQRGhuFtoi4a
-	6fZZR+uZGBGx0jgYftTEMhTwLlN7HeKp+iHyVe1r0gWesi3KhCphH4oGmKq6WmpX0znUjlehZCWB+
-	rs1azS1mlr9WLuR/Q9fPhU1PwAzWyYjQVvRSLzoA0gd2D6GxazRXTdwjk/QoVsPRAJBfqZuMKImQA
-	GyD6ymAPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WtoAd5XpLpdztop7VFcPzlnjDp4hAJ03nmdM8cx3ySc=; b=lMN7WRDPC6L48d
+	cVZoV8RdMP18d4VuAdrdY8sCrD5QqLS6lDyJRjwrt7YePZuF2hvre4i9jxyGCm+dvNWVBrGJR24+i
+	xekhiEo3JrFBYHiYBu6i5lIsiACcQ87zwuUWeLw0h/8y8wxvsVwTbl1lZyGv+Xy3wc0UNMZPFaNRZ
+	Z+LVgBcvWbNCKyS2Ix9EPyb9vAhSS6OWiVmOIaWYkeEK9XEX1qXyTYiy+LzGOXw5BfAHAI0fvtakW
+	NwSHthu4swTxIpUCd1DRK+OuDEpUl9zqrV+dOK46WQRZ6cYyx06EqowQrm6kjeeNfykOu403i4w02
+	pZOLmbRjw/8HHX5AsGGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDlYk-0004wS-6w; Mon, 16 Mar 2020 08:57:18 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jDlap-0005Kx-EI; Mon, 16 Mar 2020 08:59:27 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDlYU-0004ux-0h
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:57:06 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1584349024; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=ijq3uor9SMJb3ExZBsPo87hwudJNjl8YhdOh+sCNnWA=;
- b=TvJQWGzpgjEmH/lQPnQktE07cc8DIIFaqXHZS214rV0QJrXqc5moLQ65JQWkcfhPtM743hdM
- LEXD21Hv/Nl5y/d2Zw4P+ByhhB5oYNDnhJ3Mb0sK1DnTNKx8/HK0qVlh3m8DF5Do1iRLx9IQ
- o/5IAwcALewoKNs2zj8I/gDNkzE=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e6f3f56.7f2fb99fd500-smtp-out-n05;
- Mon, 16 Mar 2020 08:56:54 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id D7EDFC44788; Mon, 16 Mar 2020 08:56:52 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 37B92C433CB;
- Mon, 16 Mar 2020 08:56:51 +0000 (UTC)
+ id 1jDlad-0005JS-2g
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:59:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1584349152;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=1Yb6X1nf1afqu1woqOPhFH/C7hFOIBFvA8rMXchYAn8=;
+ b=aHsdOfgDAN+Za8eHX7rxeICiZQU76vOaXLWIqazZ5EES2ru7nZFr5xD93C8+aKfbumNyS2
+ 6fRNzWEoOchz8QjiVZuQ7uM5o5dENt4W7dqjmk8K+RIVwFBwio+k/r3XhAeORT6YqftbiM
+ Eq5EuLD3kCMksJnx4xzQHd1qZ+g0Q+o=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-424-EL-lcsolPh2hO--2MdBz_A-1; Mon, 16 Mar 2020 04:59:10 -0400
+X-MC-Unique: EL-lcsolPh2hO--2MdBz_A-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E51298017CC;
+ Mon, 16 Mar 2020 08:59:08 +0000 (UTC)
+Received: from [10.36.118.12] (unknown [10.36.118.12])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 34F9060BF3;
+ Mon, 16 Mar 2020 08:58:59 +0000 (UTC)
+Subject: Re: [RFC PATCH] vfio: Ignore -ENODEV when getting MSI cookie
+To: Robin Murphy <robin.murphy@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Cornelia Huck <cohuck@redhat.com>, Will Deacon <will@kernel.org>
+References: <20200312181950.60664-1-andre.przywara@arm.com>
+ <c9e00735-9673-2016-b274-d5290b648a06@arm.com>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <1db62a9a-feb4-e717-53c7-65431fd6c6c1@redhat.com>
+Date: Mon, 16 Mar 2020 09:58:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-Date: Mon, 16 Mar 2020 16:56:51 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v6 3/7] scsi: ufs: introduce common delay function
-In-Reply-To: <20200316085303.20350-4-stanley.chu@mediatek.com>
-References: <20200316085303.20350-1-stanley.chu@mediatek.com>
- <20200316085303.20350-4-stanley.chu@mediatek.com>
-Message-ID: <19f7e050d992c67e363d6d582393c5a0@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <c9e00735-9673-2016-b274-d5290b648a06@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_015704_675450_B4564F39 
-X-CRM114-Status: GOOD (  19.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_015915_202498_9370A140 
+X-CRM114-Status: GOOD (  24.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,134 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
- jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, avri.altman@wdc.com, martin.peter~sen@oracle.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: iommu@lists.linux-foundation.org, kvm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-16 16:52, Stanley Chu wrote:
-> Introduce common delay function to collect all delay requirements
-> to simplify driver and take choices of udelay and usleep_range into
-> consideration.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> Reviewed-by: Avri Altman <avri.altman@wdc.com>
-
-Reviewed-by: Can Guo <cang@codeaurora.org>
-
-> ---
->  drivers/scsi/ufs/ufshcd.c | 27 ++++++++++++++++++---------
->  drivers/scsi/ufs/ufshcd.h |  1 +
->  2 files changed, 19 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index 314e808b0d4e..9fea346f7d22 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -597,6 +597,18 @@ static void ufshcd_print_pwr_info(struct ufs_hba 
-> *hba)
->  		 hba->pwr_info.hs_rate);
->  }
-> 
-> +void ufshcd_wait_us(unsigned long us, unsigned long tolerance, bool 
-> can_sleep)
-> +{
-> +	if (!us)
-> +		return;
-> +
-> +	if (us < 10 || !can_sleep)
-> +		udelay(us);
-> +	else
-> +		usleep_range(us, us + tolerance);
-> +}
-> +EXPORT_SYMBOL_GPL(ufshcd_wait_us);
-> +
->  /*
->   * ufshcd_wait_for_register - wait for register value to change
->   * @hba - per-adapter interface
-> @@ -620,10 +632,7 @@ int ufshcd_wait_for_register(struct ufs_hba *hba,
-> u32 reg, u32 mask,
->  	val = val & mask;
-> 
->  	while ((ufshcd_readl(hba, reg) & mask) != val) {
-> -		if (can_sleep)
-> -			usleep_range(interval_us, interval_us + 50);
-> -		else
-> -			udelay(interval_us);
-> +		ufshcd_wait_us(interval_us, 50, can_sleep);
->  		if (time_after(jiffies, timeout)) {
->  			if ((ufshcd_readl(hba, reg) & mask) != val)
->  				err = -ETIMEDOUT;
-> @@ -3565,7 +3574,7 @@ static inline void
-> ufshcd_add_delay_before_dme_cmd(struct ufs_hba *hba)
->  	}
-> 
->  	/* allow sleep for extra 50us if needed */
-> -	usleep_range(min_sleep_time_us, min_sleep_time_us + 50);
-> +	ufshcd_wait_us(min_sleep_time_us, 50, true);
->  }
-> 
->  /**
-> @@ -4289,7 +4298,7 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
->  	 * instruction might be read back.
->  	 * This delay can be changed based on the controller.
->  	 */
-> -	usleep_range(1000, 1100);
-> +	ufshcd_wait_us(1000, 100, true);
-> 
->  	/* wait for the host controller to complete initialization */
->  	retry = 10;
-> @@ -4301,7 +4310,7 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
->  				"Controller enable failed\n");
->  			return -EIO;
->  		}
-> -		usleep_range(5000, 5100);
-> +		ufshcd_wait_us(5000, 100, true);
->  	}
-> 
->  	/* enable UIC related interrupts */
-> @@ -6224,7 +6233,7 @@ static int ufshcd_abort(struct scsi_cmnd *cmd)
->  			reg = ufshcd_readl(hba, REG_UTP_TRANSFER_REQ_DOOR_BELL);
->  			if (reg & (1 << tag)) {
->  				/* sleep for max. 200us to stabilize */
-> -				usleep_range(100, 200);
-> +				ufshcd_wait_us(100, 100, true);
->  				continue;
->  			}
->  			/* command completed already */
-> @@ -7786,7 +7795,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba 
-> *hba)
->  	 */
->  	if (!ufshcd_is_link_active(hba) &&
->  	    hba->dev_quirks & UFS_DEVICE_QUIRK_DELAY_BEFORE_LPM)
-> -		usleep_range(2000, 2100);
-> +		ufshcd_wait_us(2000, 100, true);
-> 
->  	/*
->  	 * If UFS device is either in UFS_Sleep turn off VCC rail to save 
-> some
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index 52425371082a..842f0223f5e5 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -792,6 +792,7 @@ int ufshcd_init(struct ufs_hba * , void __iomem *
-> , unsigned int);
->  int ufshcd_make_hba_operational(struct ufs_hba *hba);
->  void ufshcd_remove(struct ufs_hba *);
->  int ufshcd_uic_hibern8_exit(struct ufs_hba *hba);
-> +void ufshcd_wait_us(unsigned long us, unsigned long tolerance, bool 
-> can_sleep);
->  int ufshcd_wait_for_register(struct ufs_hba *hba, u32 reg, u32 mask,
->  				u32 val, unsigned long interval_us,
->  				unsigned long timeout_ms, bool can_sleep);
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5kcmUsCgpPbiAzLzEzLzIwIDM6MDggUE0sIFJvYmluIE11cnBoeSB3cm90ZToKPiBPbiAy
+MDIwLTAzLTEyIDY6MTkgcG0sIEFuZHJlIFByenl3YXJhIHdyb3RlOgo+PiBXaGVuIHdlIHRyeSB0
+byBnZXQgYW4gTVNJIGNvb2tpZSBmb3IgYSBWRklPIGRldmljZSwgdGhhdCBjYW4gZmFpbCBpZgo+
+PiBDT05GSUdfSU9NTVVfRE1BIGlzIG5vdCBzZXQuIEluIHRoaXMgY2FzZSBpb21tdV9nZXRfbXNp
+X2Nvb2tpZSgpIHJldHVybnMKPj4gLUVOT0RFViwgYW5kIHRoYXQgc2hvdWxkIG5vdCBiZSBmYXRh
+bC4KPj4KPj4gSWdub3JlIHRoYXQgY2FzZSBhbmQgcHJvY2VlZCB3aXRoIHRoZSBpbml0aWFsaXNh
+dGlvbi4KPj4KPj4gVGhpcyBmaXhlcyBWRklPIHdpdGggYSBwbGF0Zm9ybSBkZXZpY2Ugb24gdGhl
+IENhbHhlZGEgTWlkd2F5IChubyBNU0lzKS4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQW5kcmUgUHJ6
+eXdhcmEgPGFuZHJlLnByenl3YXJhQGFybS5jb20+Cj4+IC0tLQo+PiBIaSwKPj4KPj4gbm90IHN1
+cmUgdGhpcyBpcyB0aGUgcmlnaHQgZml4LCBvciB3ZSBzaG91bGQgcmF0aGVyIGNoZWNrIGlmIHRo
+ZQo+PiBwbGF0Zm9ybSBkb2Vzbid0IHN1cHBvcnQgTVNJcyBhdCBhbGwgKHdoaWNoIGRvZXNuJ3Qg
+c2VlbSB0byBiZSBlYXN5Cj4+IHRvIGRvKS4KPj4gT3IgaXMgdGhpcyBiZWNhdXNlIGFybS1zbW11
+LmMgYWx3YXlzIHJlc2VydmVzIGFuIElPTU1VX1JFU1ZfU1dfTVNJCj4+IHJlZ2lvbj8KPiAKPiBC
+b3RoLCByZWFsbHkgLSBpZGVhbGx5IFZGSU8gc2hvdWxkIGJlIGFibGUgdG8gc2tpcCBhbGwgTVNJ
+X3JlbGF0ZWQgc2V0dXAKPiBpZiB0aGUgc3lzdGVtIGRvZXNuJ3Qgc3VwcG9ydCBNU0lzLCBidXQg
+ZXF1YWxseSB0aGUgU01NVSBkcml2ZXJzIHdvdWxkCj4gYWxzbyBpZGVhbGx5IG5vdCBleHBvc2Ug
+YSBwb2ludGxlc3MgU1dfTVNJIHJlZ2lvbiBpbiB0aGUgc2FtZSBzaXR1YXRpb24uCj4gCj4gSW4g
+bGlldSBvZiBhICduaWNlJyB3YXkgb2YgYWNoZWl2aW5nIHRoYXQsIEkgdGhpbmsgdGhpcyBwYXRj
+aCBzZWVtcwo+IHJlYXNvbmFibGUgLSBFTk9ERVYgZG9lc24ndCBjbGFzaCB3aXRoIGFueSByZWFs
+IGVycm9yIHRoYXQgY2FuIG9jY3VyCj4gd2hlbiBpb21tdS1kbWEgaXMgcHJlc2VudCwgYW5kIGNh
+cnJ5aW5nIG9uIHdpdGhvdXQgYSBjb29raWUgc2hvdWxkIGJlCj4gZmluZSBzaW5jZSB0aGUgTVNJ
+IGhvb2tzIHRoYXQgd291bGQgb3RoZXJ3aXNlIGRlcmVmZXJlbmNlIGl0IHdpbGwgYWxzbwo+IGJl
+IG5vLW9wcy4KCkxvb2tzIE9LIHRvIG1lIGFzIHdlbGwuCgpBYm91dCBsb29raW5nIGF0IHdoZXRo
+ZXIgTVNJIGlzIGluIHVzZSBJIHdvbmRlciB3aGV0aGVyIHdlIGNvdWxkIGRvIGxpa2UKaXJxX2Rv
+bWFpbl9jaGVja19tc2lfcmVtYXAoKSBpbiBrZXJuZWwvaXJxL2lycWRvbWFpbi5jIHdpdGhvdXQg
+Y2hlY2tpbmcKSVJRX0RPTUFJTl9GTEFHX01TSV9SRU1BUC4KCkJ1dCBpZiB0aGlzIHNpbXBsZSBw
+YXRjaCBmaXhlcyB0aGlzIG1hcmdpbmFsIE1pZHdheSB2ZmlvLXBsYXRmb3JtIHVzZQpjYXNlLCB0
+aGF0IHNob3VsZCBiZSBnb29kIGVub3VnaC4KClJldmlld2VkLWJ5OiBFcmljIEF1Z2VyIDxlcmlj
+LmF1Z2VyQHJlZGhhdC5jb20+CgpUaGFua3MKCkVyaWMKPiAKPiBQZXJoYXBzIGl0IG1pZ2h0IGJl
+IHdvcnRoIGEgY29tbWVudCB0byBjbGFyaWZ5IHRoYXQgdGhpcyBpcyBzcGVjaWZpY2FsbHkKPiB0
+byBhbGxvdyB2ZmlvLXBsYXRmb3JtIHRvIHdvcmsgd2l0aCBpb21tdS1kbWEgZGlzYWJsZWQsIGJ1
+dCBlaXRoZXIgd2F5LAo+IAo+IEFja2VkLWJ5OiBSb2JpbiBNdXJwaHkgPHJvYmluLm11cnBoeUBh
+cm0uY29tPgo+IAo+PiBBbHNvIHRoaXMgc2VlbXMgdG8gYmUgbG9uZyBicm9rZW4sIGFjdHVhbGx5
+IHNpbmNlIEVyaWMgaW50cm9kdWNlZCBNU0kKPj4gc3VwcG9ydCBpbiA0LjEwLXJjMywgYnV0IGF0
+IGxlYXN0IHNpbmNlIHRoZSBpbml0aWFsaXNhdGlvbiBvcmRlciB3YXMKPj4gZml4ZWQgd2l0aCBm
+NjgxMGMxNWNmOS4KPiAKPiBJJ20gc3VyZSB0aGUgZW50aXJlIE1pZHdheSB1c2VyYmFzZSBoYXZl
+IGJlZW4gdXAtaW4tYXJtcyB0aGUgd2hvbGUKPiB0aW1lLi4uIDpQCj4gCj4gUm9iaW4uCj4gCj4+
+Cj4+IEdyYXRlZnVsIGZvciBhbnkgaW5zaWdodC4KPj4KPj4gQ2hlZXJzLAo+PiBBbmRyZQo+Pgo+
+PiDCoCBkcml2ZXJzL3ZmaW8vdmZpb19pb21tdV90eXBlMS5jIHwgMiArLQo+PiDCoCAxIGZpbGUg
+Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPj4KPj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvdmZpby92ZmlvX2lvbW11X3R5cGUxLmMKPj4gYi9kcml2ZXJzL3ZmaW8vdmZpb19p
+b21tdV90eXBlMS5jCj4+IGluZGV4IGExNzdiZjJjNjY4My4uNDY3ZTIxN2VmMDlhIDEwMDY0NAo+
+PiAtLS0gYS9kcml2ZXJzL3ZmaW8vdmZpb19pb21tdV90eXBlMS5jCj4+ICsrKyBiL2RyaXZlcnMv
+dmZpby92ZmlvX2lvbW11X3R5cGUxLmMKPj4gQEAgLTE3ODYsNyArMTc4Niw3IEBAIHN0YXRpYyBp
+bnQgdmZpb19pb21tdV90eXBlMV9hdHRhY2hfZ3JvdXAodm9pZAo+PiAqaW9tbXVfZGF0YSwKPj4g
+wqAgwqDCoMKgwqDCoCBpZiAocmVzdl9tc2kpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9
+IGlvbW11X2dldF9tc2lfY29va2llKGRvbWFpbi0+ZG9tYWluLCByZXN2X21zaV9iYXNlKTsKPj4g
+LcKgwqDCoMKgwqDCoMKgIGlmIChyZXQpCj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAocmV0ICYmIHJl
+dCAhPSAtRU5PREVWKQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dF9kZXRh
+Y2g7Cj4+IMKgwqDCoMKgwqAgfQo+PiDCoAo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
