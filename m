@@ -2,53 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B251867E8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:30:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F253186806
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:40:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5NkiFFisj5c4j1P1CpvSigaJXpo3AyDtdZn5pB0oRAM=; b=F9oIApN1EJNuEZ
-	tb/rMSulX14txBuabbicO8UskPH5UVHDvkWhizvsYqLaV2ufhfFXdQ0eZNNk7RtnPjc3HjM4h41vc
-	cwAHXYkYOMNBMadX5EJGxqzgc8T0k8MiLeRr0MWe3XEebdKJQPdGf2VcRR2MUQug85dIY/PLSPjNi
-	BsLk6NOfUeqvzmX6O8p6Q9emgRdAlqySsEtYb18wxKGr1Il/IiesraPGmqcjG6zQkThhOqaM94ye/
-	Ccmin69tKQX7JsRqGryLwo8asrUZ7LDd0tlDUkkjsRarIvEZ/OlUsgoTtR52Yy3OA+eIlEZgKdimH
-	9cx6BpSKf28/XOzD87KA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4PhXknzVQXZ4EmGABfj4hvr8IFkodBZT0e1IiuI9iHw=; b=LWo
+	W6xcTv1ezSLH/wB8X1J1MXYpCiOG0O+HN5bcto1cnsV33VJ9BFoHe89jFEZ2mtTED9FVZ5PDcIM1R
+	tCzreRkxgdlH0VE9KIoG2pcTraiuUjfP/SS2w9XNx2NIY/zI5aWkthl2DlBpGFDN1ZypyK49hd8Cq
+	LPdiUqS05zZPH7TNcjtm77ILQZswtyjqx4giYOu6KpmLs4bfjVRcqFt8rAVvwocX1Km5w9e6a9Uf+
+	oKuplJc7ny6txuXUF7vLeRfGhTgPIeUR+xNg2556O/5umXX5RsFlhsaBhIB5e+pAjybps96Nl1pun
+	JpyCdFqD+NxBwR/g1Vl8zVrG7G4Wf3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDm4d-00047Q-Dw; Mon, 16 Mar 2020 09:30:15 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jDmDn-0007gx-QM; Mon, 16 Mar 2020 09:39:43 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDm4N-0003yH-H6; Mon, 16 Mar 2020 09:30:00 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 7D59C28DE96;
- Mon, 16 Mar 2020 09:29:56 +0000 (GMT)
-Date: Mon, 16 Mar 2020 10:29:53 +0100
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: <Tudor.Ambarus@microchip.com>
-Subject: Re: [PATCH v2 24/25] mtd: spi-nor: Drop the MFR definitions
-Message-ID: <20200316102953.3f656d67@collabora.com>
-In-Reply-To: <20200313194130.342251-25-tudor.ambarus@microchip.com>
-References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
- <20200313194130.342251-25-tudor.ambarus@microchip.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
-MIME-Version: 1.0
+ id 1jDmDf-0007gN-VR
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:39:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.de; i=@amazon.de; q=dns/txt; s=amazon201209;
+ t=1584351576; x=1615887576;
+ h=from:to:cc:subject:date:message-id;
+ bh=qSfJ6u84LZu6czX0X2ef4AdDkN6oHZIFm1K2WciznEs=;
+ b=Y7BvvoEM4podhqtv2c1anO+uOXTrTy435FC7fbfhhvZRcVOIuKomSY04
+ Fkt3FVdJm+m6kju5E2J7YkKnwxU20rwAjhNnzLp6zjhsqV4yRwqccQREl
+ Oouhc9SUslGj+Hcn/BTQ4+8acho/tgjAYmirlRqDXn/Mdja+S58Ec5zaU g=;
+IronPort-SDR: xsYhxKPGjqk2aAysy+zQY9HiQRGEhcQrSC6cz8QMXDMAK4Bl9ABga5RZJdQs+98Mauhlz0Fl+1
+ EnHgnQILdeOw==
+X-IronPort-AV: E=Sophos;i="5.70,559,1574121600"; d="scan'208";a="31381162"
+Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
+ email-inbound-relay-2c-87a10be6.us-west-2.amazon.com) ([10.47.23.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
+ 16 Mar 2020 09:39:23 +0000
+Received: from u54e1ad5160425a4b64ea.ant.amazon.com
+ (pdx2-ws-svc-lb17-vlan3.amazon.com [10.247.140.70])
+ by email-inbound-relay-2c-87a10be6.us-west-2.amazon.com (Postfix) with ESMTPS
+ id F1E8DA175E; Mon, 16 Mar 2020 09:39:21 +0000 (UTC)
+Received: from u54e1ad5160425a4b64ea.ant.amazon.com (localhost [127.0.0.1])
+ by u54e1ad5160425a4b64ea.ant.amazon.com (8.15.2/8.15.2/Debian-3) with ESMTP id
+ 02G9dI8G005147; Mon, 16 Mar 2020 10:39:18 +0100
+Received: (from karahmed@localhost)
+ by u54e1ad5160425a4b64ea.ant.amazon.com (8.15.2/8.15.2/Submit) id
+ 02G9dHYs005143; Mon, 16 Mar 2020 10:39:17 +0100
+From: KarimAllah Ahmed <karahmed@amazon.de>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] KVM: arm64: Use the correct timer for accessing CNT
+Date: Mon, 16 Mar 2020 10:39:06 +0100
+Message-Id: <1584351546-5018-1-git-send-email-karahmed@amazon.de>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_022959_701348_F46C61DB 
-X-CRM114-Status: GOOD (  14.05  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200316_023936_052668_934A913D 
+X-CRM114-Status: GOOD (  10.97  )
+X-Spam-Score: -12.4 (------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-12.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.29 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,73 +87,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vigneshr@ti.com, bbrezillon@kernel.org, richard@nod.at,
- linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ KarimAllah Ahmed <karahmed@amazon.de>, Marc Zyngier <maz@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 13 Mar 2020 19:42:52 +0000
-<Tudor.Ambarus@microchip.com> wrote:
+Use the physical timer object when reading the physical timer counter
+instead of using the virtual timer object. This is only visible when
+reading it from user-space as kvm_arm_timer_get_reg() is only executed on
+the get register patch from user-space.
 
-> From: Tudor Ambarus <tudor.ambarus@microchip.com>
-> 
-> Cross manufacturer code is unlikely and discouraged, get rid of the
-> MFR definitions.
-> 
-> Suggested-by: Vignesh Raghavendra <vigneshr@ti.com>
-> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: kvmarm@lists.cs.columbia.edu
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: KarimAllah Ahmed <karahmed@amazon.de>
+---
+ virt/kvm/arm/arch_timer.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
-
-> ---
->  drivers/mtd/spi-nor/core.c  |  2 --
->  include/linux/mtd/spi-nor.h | 17 -----------------
->  2 files changed, 19 deletions(-)
-> 
-> diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
-> index baee58fd8b04..b07e66f10995 100644
-> --- a/drivers/mtd/spi-nor/core.c
-> +++ b/drivers/mtd/spi-nor/core.c
-> @@ -40,8 +40,6 @@
->  
->  #define SPI_NOR_MAX_ADDR_WIDTH	4
->  
-> -#define JEDEC_MFR(info)        ((info)->id[0])
-> -
->  /**
->   * spi_nor_spimem_bounce() - check if a bounce buffer is needed for the data
->   *                           transfer
-> diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
-> index bf37bfc68797..2f7725525460 100644
-> --- a/include/linux/mtd/spi-nor.h
-> +++ b/include/linux/mtd/spi-nor.h
-> @@ -11,23 +11,6 @@
->  #include <linux/mtd/mtd.h>
->  #include <linux/spi/spi-mem.h>
->  
-> -/*
-> - * Manufacturer IDs
-> - *
-> - * The first byte returned from the flash after sending opcode SPINOR_OP_RDID.
-> - * Sometimes these are the same as CFI IDs, but sometimes they aren't.
-> - */
-> -#define SNOR_MFR_ATMEL		CFI_MFR_ATMEL
-> -#define SNOR_MFR_GIGADEVICE	0xc8
-> -#define SNOR_MFR_INTEL		CFI_MFR_INTEL
-> -#define SNOR_MFR_ST		CFI_MFR_ST	/* ST Micro */
-> -#define SNOR_MFR_MICRON		CFI_MFR_MICRON	/* Micron */
-> -#define SNOR_MFR_ISSI		CFI_MFR_PMC
-> -#define SNOR_MFR_MACRONIX	CFI_MFR_MACRONIX
-> -#define SNOR_MFR_SPANSION	CFI_MFR_AMD
-> -#define SNOR_MFR_SST		CFI_MFR_SST
-> -#define SNOR_MFR_WINBOND	0xef /* Also used by some Spansion */
-> -
->  /*
->   * Note on opcode nomenclature: some opcodes have a format like
->   * SPINOR_OP_FUNCTION{4,}_x_y_z. The numbers x, y, and z stand for the number
+diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+index 0d9438e..93bd59b 100644
+--- a/virt/kvm/arm/arch_timer.c
++++ b/virt/kvm/arm/arch_timer.c
+@@ -788,7 +788,7 @@ u64 kvm_arm_timer_get_reg(struct kvm_vcpu *vcpu, u64 regid)
+ 					  vcpu_ptimer(vcpu), TIMER_REG_CTL);
+ 	case KVM_REG_ARM_PTIMER_CNT:
+ 		return kvm_arm_timer_read(vcpu,
+-					  vcpu_vtimer(vcpu), TIMER_REG_CNT);
++					  vcpu_ptimer(vcpu), TIMER_REG_CNT);
+ 	case KVM_REG_ARM_PTIMER_CVAL:
+ 		return kvm_arm_timer_read(vcpu,
+ 					  vcpu_ptimer(vcpu), TIMER_REG_CVAL);
+-- 
+2.7.4
 
 
 _______________________________________________
