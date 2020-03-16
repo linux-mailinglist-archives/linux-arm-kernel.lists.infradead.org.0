@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4880918635C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:46:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73EA918635D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:46:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=APZsuu+hxHjDIiEOyyLRveNUi75NHjNzcRwswPBAGf4=; b=bMrw4jhwQzNhvQ
-	BQdgQ74ucb87XUDNh5UukkvfVjvi5uAi3/cHHp90PH5Ryw69KMAutCITnmUSEIQAnWCWtn6fFxuZK
-	4zVmFs6NKG1LRYiZ1kd4R2Ns4C/MNsr80y3UoW8r+hypZ7aVspIkrgcKuRxWyv+0elqRWGTPE2q+X
-	0/vax+F3CcXWC45wOS+8g5z11Vwg0X2IDDxTKydamdDow3k0XDCe/lhhueq4jmWKy6wkZ1a007yDV
-	uoe0/B0GI9UAPg/cd4kkKKZI26CGU8tzVvqJqt6JeI/aO49NHUX1NPFKl378VybySdUSboGZ6qmMz
-	K1p0XTDTFOSVWt18GGsg==;
+	List-Owner; bh=1dAL3wHV9BIIfb6RiH6Kn1sUIIcHO9Wz2cqLul+tvdo=; b=aK2vSSJD06KosR
+	5FkX5VKotnwPEAXD/F+jcaMFMMXjaTyBfUi0mG/tv5luVuUC457MMqMfatGflGOUwmrm8Mdj6vTWc
+	ifWLdfsc5OcAGakjGQjaxi7xg5/ad9sb7SjxUxipla3M3vAUBl3FBWq1vem5XI74FD3Bn73rEeqP4
+	FB2Td79ksxUVqq88H3mIAKga+BbMIDt7FhTW9CLEHco0ykxw+3bK1GM88Z//q1dCnmlMd4RNNQW9+
+	9iM5wbyHBGNlLxgkf42EODUFZuDIMH1JVIw4VKCKhLdYrkfUGO6CD5dAfjdLXrqYKQdIdw8hHZzuG
+	KxIjGWgtfUQb684yDjyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDflq-0000yd-7c; Mon, 16 Mar 2020 02:46:26 +0000
+	id 1jDfmA-0001Cp-1z; Mon, 16 Mar 2020 02:46:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfbW-00059r-IQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:35:49 +0000
+ id 1jDfbe-0005FN-4p
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:35:56 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 46AC320739;
- Mon, 16 Mar 2020 02:35:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F5672074C;
+ Mon, 16 Mar 2020 02:35:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326146;
- bh=DAzNytEKYVDkkCaQNm7J4s7xcEx2wTe7yrYfQJXX7+Q=;
+ s=default; t=1584326153;
+ bh=ZimnssbihiT/CUcvGjrmtWm5fbdnfn+B5wH6DVTDZMM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tRQCsIvpaAcy9268wB7HdS9Lh4R7JxEarnmqQi9YMfk87pHThOEcgdJKGULgqcSAl
- XwaTRb8krKW74cw9DLq7xgOAf0yHb6hcGvLUQ5ZodWzwmCHlb9rfz8lgiOaWBenXpE
- q5F5PS/WkiObAwFxTiQsy8MXdz+g5VoDY9Zv2Vnw=
+ b=Lcy+SkQYUCJqEpLLtN5fjgSp4a19uFUYFSR6kOJatsRalMGE+INAVofAAKgKIDZq6
+ nYUTCxxG+pLrA7hd5FWmm43PlBiwVgZ4h6iGqbDWxHzF+QH5z4+1xIGVOGgZJdSDio
+ BNlmssaUhL+8DkVB3gEBJHadHsHZkLJTeVIMXCQw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 6/7] drm/exynos: dsi: fix workaround for the
- legacy clock name
-Date: Sun, 15 Mar 2020 22:35:37 -0400
-Message-Id: <20200316023538.2232-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 4/7] spi/zynqmp: remove entry that causes a cs
+ glitch
+Date: Sun, 15 Mar 2020 22:35:44 -0400
+Message-Id: <20200316023548.2347-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200316023538.2232-1-sashal@kernel.org>
-References: <20200316023538.2232-1-sashal@kernel.org>
+In-Reply-To: <20200316023548.2347-1-sashal@kernel.org>
+References: <20200316023548.2347-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193546_693463_2150CE72 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20200315_193554_290917_27BA626C 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,81 +80,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Inki Dae <inki.dae@samsung.com>,
- Andrzej Hajda <a.hajda@samsung.com>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
+ linux-spi@vger.kernel.org, Thommy Jakobsson <thommyj@gmail.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Szyprowski <m.szyprowski@samsung.com>
+From: Thommy Jakobsson <thommyj@gmail.com>
 
-[ Upstream commit c0fd99d659ba5582e09625c7a985d63fc2ca74b5 ]
+[ Upstream commit 5dd8304981ecffa77bb72b1c57c4be5dfe6cfae9 ]
 
-Writing to the built-in strings arrays doesn't work if driver is loaded
-as kernel module. This is also considered as a bad pattern. Fix this by
-adding a call to clk_get() with legacy clock name. This fixes following
-kernel oops if driver is loaded as module:
+In the public interface for chipselect, there is always an entry
+commented as "Dummy generic FIFO entry" pushed down to the fifo right
+after the activate/deactivate command. The dummy entry is 0x0,
+irregardless if the intention was to activate or deactive the cs. This
+causes the cs line to glitch rather than beeing activated in the case
+when there was an activate command.
 
-Unable to handle kernel paging request at virtual address bf047978
- pgd = (ptrval)
- [bf047978] *pgd=59344811, *pte=5903c6df, *ppte=5903c65f
- Internal error: Oops: 80f [#1] SMP ARM
- Modules linked in: mc exynosdrm(+) analogix_dp rtc_s3c exynos_ppmu i2c_gpio
- CPU: 1 PID: 212 Comm: systemd-udevd Not tainted 5.6.0-rc2-next-20200219 #326
- videodev: Linux video capture interface: v2.00
- Hardware name: Samsung Exynos (Flattened Device Tree)
- PC is at exynos_dsi_probe+0x1f0/0x384 [exynosdrm]
- LR is at exynos_dsi_probe+0x1dc/0x384 [exynosdrm]
- ...
- Process systemd-udevd (pid: 212, stack limit = 0x(ptrval))
- ...
- [<bf03cf14>] (exynos_dsi_probe [exynosdrm]) from [<c09b1ca0>] (platform_drv_probe+0x6c/0xa4)
- [<c09b1ca0>] (platform_drv_probe) from [<c09afcb8>] (really_probe+0x210/0x350)
- [<c09afcb8>] (really_probe) from [<c09aff74>] (driver_probe_device+0x60/0x1a0)
- [<c09aff74>] (driver_probe_device) from [<c09b0254>] (device_driver_attach+0x58/0x60)
- [<c09b0254>] (device_driver_attach) from [<c09b02dc>] (__driver_attach+0x80/0xbc)
- [<c09b02dc>] (__driver_attach) from [<c09ade00>] (bus_for_each_dev+0x68/0xb4)
- [<c09ade00>] (bus_for_each_dev) from [<c09aefd8>] (bus_add_driver+0x130/0x1e8)
- [<c09aefd8>] (bus_add_driver) from [<c09b0d64>] (driver_register+0x78/0x110)
- [<c09b0d64>] (driver_register) from [<bf038558>] (exynos_drm_init+0xe8/0x11c [exynosdrm])
- [<bf038558>] (exynos_drm_init [exynosdrm]) from [<c0302fa8>] (do_one_initcall+0x50/0x220)
- [<c0302fa8>] (do_one_initcall) from [<c03dd02c>] (do_init_module+0x60/0x210)
- [<c03dd02c>] (do_init_module) from [<c03dbf44>] (load_module+0x1c0c/0x2310)
- [<c03dbf44>] (load_module) from [<c03dc85c>] (sys_finit_module+0xac/0xbc)
- [<c03dc85c>] (sys_finit_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
- Exception stack(0xd979bfa8 to 0xd979bff0)
- ...
- ---[ end trace db16efe05faab470 ]---
+This has been observed on oscilloscope, and have caused problems for at
+least one specific flash device type connected to the qspi port. After
+the change the glitch is gone and cs goes active when intended.
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
-Signed-off-by: Inki Dae <inki.dae@samsung.com>
+The reason why this worked before (except for the glitch) was because
+when sending the actual data, the CS bits are once again set. Since
+most flashes uses mode 0, there is always a half clk period anyway for
+cs to clk active setup time. If someone would rely on timing from a
+chip_select call to a transfer_one, it would fail though.
+
+It is unknown why the dummy entry was there in the first place, git log
+seems to be of no help in this case. The reference manual gives no
+indication of the necessity of this. In fact the lower 8 bits are a
+setup (or hold in case of deactivate) time expressed in cycles. So this
+should not be needed to fulfill any setup/hold timings.
+
+Signed-off-by: Thommy Jakobsson <thommyj@gmail.com>
+Reviewed-by: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
+Link: https://lore.kernel.org/r/20200224162643.29102-1-thommyj@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/exynos/exynos_drm_dsi.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/spi/spi-zynqmp-gqspi.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-index 5e202af7fbf53..2b6c04acb24f5 100644
---- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-+++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-@@ -1790,9 +1790,10 @@ static int exynos_dsi_probe(struct platform_device *pdev)
- 		dsi->clks[i] = devm_clk_get(dev, clk_names[i]);
- 		if (IS_ERR(dsi->clks[i])) {
- 			if (strcmp(clk_names[i], "sclk_mipi") == 0) {
--				strcpy(clk_names[i], OLD_SCLK_MIPI_CLK_NAME);
--				i--;
--				continue;
-+				dsi->clks[i] = devm_clk_get(dev,
-+							OLD_SCLK_MIPI_CLK_NAME);
-+				if (!IS_ERR(dsi->clks[i]))
-+					continue;
- 			}
+diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
+index f23f36ebaf3dc..bd3945a5660a5 100644
+--- a/drivers/spi/spi-zynqmp-gqspi.c
++++ b/drivers/spi/spi-zynqmp-gqspi.c
+@@ -414,9 +414,6 @@ static void zynqmp_qspi_chipselect(struct spi_device *qspi, bool is_high)
  
- 			dev_info(dev, "failed to get the clock: %s\n",
+ 	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, genfifoentry);
+ 
+-	/* Dummy generic FIFO entry */
+-	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, 0x0);
+-
+ 	/* Manually start the generic FIFO command */
+ 	zynqmp_gqspi_write(xqspi, GQSPI_CONFIG_OFST,
+ 			zynqmp_gqspi_read(xqspi, GQSPI_CONFIG_OFST) |
 -- 
 2.20.1
 
