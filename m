@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FC53186F9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 17:05:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3268186FEF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 17:23:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ulxbo3Q8gQ8mj9gTS+bLeKxUaWOecmEYK/Ns+Y/YNI=; b=c6zKDCM7ZEBHk6
-	Ca+zj2gfwggO92Amhte2FxuDMxliwl2Duyk04oI8UtgzHzS3uibKFfNrLPliAbuRC3jge/g48aaCj
-	eFNXliU1Su4y3lQ6Rz8R5pJbIX7ZYo5nf7R7hhYYAqC8Ek/FYfnQpq9X8FmwfyAE5/rlFTqYyQfop
-	PsgRS5y/oqDuQI05Jy3u92ixzB1rExI070Sbp4WNS7il9q3ucxqMW9B/M+b7yPRUyhYIGHU3tP2K3
-	YImpX6tPf6I0ZzH81TBUqcoI09hnFyrXys4ARSrVmQbXW/gjS5PChCaaaR+A6amP10y6kTOH5w5JN
-	N5lDxBpBpd/oEsXhwLbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2FoiFgGyc9miTC1M7JSJbcSCLCo8lcXa+exQDOIXDD4=; b=p2oCED4MWf0YuLhcjLh5S+WC1
+	A0C6Un00hpyr2SKYFfXI87g/NOtVfiE/iclqtwkg5cD2qj1tBdI5l97q4bpDF9JpoGz4rf9F8RT0H
+	YlvBAtjPmEIEMKfH92+W/YNHzaP7nlStvCBYKpYTMHFZTSgyB7S4Gn48hsdUlPf8lt9Sx3eNT1z0C
+	S331dtabhsfZD4W+wd8ohaVLwJp1gjimydLpkXpZBYzqpCH8uRgNx/IjEYcH4Yi3OMlpbc1pZLbgi
+	iCA/eMUcvuxL0W2AWzvlxhRpTpbnkQb7zIi+fKbYnrSMCt0jgaYF+jycCPvkAnhbfuo0vyShFcpfi
+	VTfnJnENw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDsEo-0001lZ-F3; Mon, 16 Mar 2020 16:05:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDsEa-0001l9-2F
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 16:04:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE4C71FB;
- Mon, 16 Mar 2020 09:04:54 -0700 (PDT)
-Received: from [10.37.9.38] (unknown [10.37.9.38])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D35C33F534;
- Mon, 16 Mar 2020 09:04:49 -0700 (PDT)
-Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-19-vincenzo.frascino@arm.com>
- <20200315182950.GB32205@mbp> <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
- <20200316103437.GD3005@mbp> <77a2e91a-58f4-3ba3-9eef-42d6a8faf859@arm.com>
- <20200316112205.GE3005@mbp> <9a0a9285-8a45-4f65-3a83-813cabd0f0d3@arm.com>
- <20200316144346.GF3005@mbp> <427064ee-45df-233c-0281-69e3d62ba784@arm.com>
- <20200316154930.GG3005@mbp>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <53eb7809-9da8-33e5-540f-7546de51b53d@arm.com>
-Date: Mon, 16 Mar 2020 16:05:17 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jDsWN-0000sr-Nj; Mon, 16 Mar 2020 16:23:19 +0000
+Received: from mail-pg1-f194.google.com ([209.85.215.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDsWF-0000sE-OL; Mon, 16 Mar 2020 16:23:13 +0000
+Received: by mail-pg1-f194.google.com with SMTP id u12so10020426pgb.10;
+ Mon, 16 Mar 2020 09:23:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=MPeWvE1ynYMgmBjcIfuACly8OXPEjkr9woxJje4Vp+k=;
+ b=Ynu7D155zNdMizfno52OJOHSmT5lXvXR+MPCmfHCg+2OkQOZ7sy6BLMEAywmxluUWV
+ rWWJEd9T790C4Zf/4OiFISrC53dHoAolU/Yr7WG1WVTD6BG1Q2c+YHPVAGKduSCYosc/
+ YAmxOXATv74eIDXeu/7Qa0zPlF+nXsw45C0TqWY8VEv9BPNV8srroj593Fy+g7uiB6iO
+ kaErRDcsFJodBcDRL113ZpLKCle1s4H1N75LW+/xq6QBwZT5qbOUM8E5xNz553PVVDJa
+ 7E/s0xQ+GC80O+UBAVRkRgjOPMn7LMgQZOv72mF1wwlrGK95NPIqtGZ7nwpyQpau9ITR
+ 8KBQ==
+X-Gm-Message-State: ANhLgQ2qOFsOu8liRG/YsoFb0V444SsurxkdRsAnHnAeGZIT2U0NWNjv
+ PcOOXgqAgTlXUGpbs2V7fxc=
+X-Google-Smtp-Source: ADFU+vteq0ZXl4bflTQr64JEC/RlOF0r9XRD+1FB4C6nIb76oOWRP1WchB6mng5hWY132x5LhHMaqQ==
+X-Received: by 2002:a63:921b:: with SMTP id o27mr659097pgd.364.1584375789493; 
+ Mon, 16 Mar 2020 09:23:09 -0700 (PDT)
+Received: from ?IPv6:2601:647:4000:d7:af99:b4cf:6b17:1075?
+ ([2601:647:4000:d7:af99:b4cf:6b17:1075])
+ by smtp.gmail.com with ESMTPSA id z20sm66684pge.62.2020.03.16.09.23.07
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Mar 2020 09:23:08 -0700 (PDT)
+Subject: Re: [PATCH v6 3/7] scsi: ufs: introduce common delay function
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>, avri.altman@wdc.com,
+ alim.akhtar@samsung.com, jejb@linux.ibm.com
+References: <20200316085303.20350-1-stanley.chu@mediatek.com>
+ <20200316085303.20350-4-stanley.chu@mediatek.com>
+From: Bart Van Assche <bvanassche@acm.org>
+Message-ID: <fdf91490-9c7d-df34-1c1f-e03e12855378@acm.org>
+Date: Mon, 16 Mar 2020 09:23:05 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200316154930.GG3005@mbp>
+In-Reply-To: <20200316085303.20350-4-stanley.chu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_090456_150719_DED2C1AE 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200316_092311_795442_7225E2BF 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.215.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [bart.vanassche[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.215.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,67 +92,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
- linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
- Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, beanhuo@micron.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/16/20 3:49 PM, Catalin Marinas wrote:
-> On Mon, Mar 16, 2020 at 03:33:30PM +0000, Vincenzo Frascino wrote:
->> On 3/16/20 2:43 PM, Catalin Marinas wrote[...]
-[...]
-> 
->> To make it more explicit we could make COMPAT_VDSO on arm64 depend on
->> ARM64_4K_PAGES. What do you think?
-> 
-> No, I don't see why we should add this limitation.
-> 
+On 3/16/20 1:52 AM, Stanley Chu wrote:
+> +void ufshcd_wait_us(unsigned long us, unsigned long tolerance, bool can_sleep)
+> +{
+> +	if (!us)
+> +		return;
+> +
+> +	if (us < 10 || !can_sleep)
+> +		udelay(us);
+> +	else
+> +		usleep_range(us, us + tolerance);
+> +}
+> +EXPORT_SYMBOL_GPL(ufshcd_wait_us);
 
-Fine by me.
+I don't like this function because I think it makes the UFS code harder 
+to read instead of easier. The 'can_sleep' argument is only set by one 
+caller which I think is a strong argument to remove that argument again 
+and to move the code that depends on that argument from the above 
+function into the caller. Additionally, it is not possible to comprehend 
+what a ufshcd_wait_us() call does without looking up the function 
+definition to see what the meaning of the third argument is.
 
->>>> Please find below the list of errors for clock_gettime (similar for the other):
->>>>
->>>> passing UINTPTR_MAX to clock_gettime (VDSO): terminated by unexpected signal 7
->>>> clock-gettime-monotonic/abi: 1 failures/inconsistencies encountered
->>>
->>> Ah, so it uses UINTPTR_MAX in the test. Fair enough but I don't think
->>> the arm64 check is entirely useful. On arm32, the check was meant to
->>> return -EFAULT for addresses beyond TASK_SIZE that may enter into the
->>> kernel or module space. On arm64 compat, the kernel space is well above
->>> the reach of the 32-bit code.
->>>
->>> If you want to preserve some compatibility for this specific test, what
->>> about checking for wrapping around 0, I think it would make more sense.
->>> Something like:
->>>
->>> 	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
->>
->> Ok, sounds good to me. But it is something that this patch series inherited,
->> hence I would prefer to send a separate patch that introduces what you are
->> proposing and removes TASK_SIZE_32 from the headers. How does it sound?
-> 
-> I'd rather avoid moving TASK_SIZE_32 unnecessarily. Just add a
-> preparatory patch to your series for arm64 compat vdso and follow with
-> the rest without moving TASK_SIZE_32 around.
-> 
+Please drop this patch.
 
-Ok, sounds good. I will test it and repost.
+Thanks,
 
--- 
-Regards,
-Vincenzo
+Bart.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
