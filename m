@@ -2,90 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7E1B18616F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:58:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B445186180
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:18:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/aMNG5pWqkgayln7jhfK0/8xA9smT5yyaBXkGbwbHCg=; b=I/CUMdIXYUIkxW
-	YUkJ2TIGOjCx5TkPQ8Uc8DNYv+pTvPb1hZpl97LlPxUa36pGoztlC7FJaceibCWnXoO5nyIBQHp/H
-	6ltumx1pC2qoZd6VjPDubDYOMnIVI0xeVPe80aCrjWTXCkti1DudKvYCOGdTtYoTw8POkW4a8MNzD
-	wuOo9YoSAH+1ycseZES5+khrbPEC45CdPS0xXFLEEJsKxXRwZDkTZH1GEtJdZJzEG3PP2jWbnuzsg
-	YXdF46ZtqJZ9qkndazF+eqbpd1hW2RjKScZXEy2p4FenFE4U7MfUHpyw9/pYT6htLJl2epUbNO1/V
-	3N7o9y3HcLn5K2kOHhgA==;
+	List-Owner; bh=4HobiSwAzLR0Qsv7H5FST3lfgNiYYUVB+KFLvTdwIxI=; b=MGDb1rfMzBKS1S
+	d0o6sMs8EqWAqwefx8uoDEcXH9S1V1M0uIF+2kwyxcoABKa8gI8yZZR5NznF7RilpMgKFUegSEn8L
+	+JEklf3EITm30pJYpDXJ6+FQFC8oaHWETaWyUFXLzNdIQkA5qsGttIgEdLhZ9o7zFAOfdDoAN0lPJ
+	TCWrndo/TkGineDGEhtSEF+NmzCZuS2DXrHeNz0uVEAGf1EwI3L5QeLgvqRyX16N8G6CzQnO9dejx
+	01RIv3O3pKv0VgESXyMmOFPclzXtH0i+G63Jquj9IoEKZOB7/ybB20JAneeor8SwQu7HWdvdw5ADE
+	aq9HbwAsriE7LY9CJddg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDf1g-0006sS-P6; Mon, 16 Mar 2020 01:58:44 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1jDfKD-0004QL-0a; Mon, 16 Mar 2020 02:17:53 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDf1W-0006s3-77
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:58:36 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 87FD55C020A;
- Sun, 15 Mar 2020 21:58:28 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute3.internal (MEProxy); Sun, 15 Mar 2020 21:58:28 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm2; bh=ki6O9+DkT6Sd8aaUr3ULLP91+bpcyb8
- Gpwm/HzzYeUc=; b=QAkMPndX+HToO8pffPPH2qwqgGkPuKrtKn9R1WUAivF+Zv/
- UDwtVMq7mgmykfnUAVuhXTYLMSbDknL71q4j6RvzL2Q3GkZhkn/b7UWaLoR06ff6
- 0wgHn83u/Qz4jZzBkJSh8XWt2mmbG6reXTfrcZpH3HkwZCu+7FvyUOK/8ypK52th
- GD1x/PbkhkYyA8bkBNqCjI7sNwbuBNSpgAYHEiWwYyx0Ko9JYT6TMi9TdbGh6G+l
- OXETHAJAtlNNVFZnWQCStHh1d152WRr7jqs7jqb4UucbjKYq24RWyVMxXnkXYr0u
- vllQI5uQLOflgxLFz/DkHa8pFeMLuP8Tks2hQmQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ki6O9+
- DkT6Sd8aaUr3ULLP91+bpcyb8Gpwm/HzzYeUc=; b=nCjuHw+D66EXIpqcyGyGux
- u/mj4SY6M5FqZW7Ko03ovkfzCcy/jgMSPpzeDT6e5kapunV28SNhiUzUGFg8aZY/
- Y5mBYpHr4Cjzxjyp9/9XcbjJU1wlT2phdh9NyZHzxAtJKVic5rnwRKwH4+YVOldi
- UxuXE/opyzXBdD4i2XxhuSt4zaAFfSByTf331UnN68MZEZDwZkBWQbK4F9Q3qsou
- tztPHcch4teW0tj/LZ1vuV4EOWYI9lltBiBu0qqPAJ7vYVvajt4TwmVeS2S9eAW4
- uHbzJ4gR493aAfh/SM83SG7O/WAgdXeuiY10JawZdgQt6WjzjCPwamom4ugfoDtg
- ==
-X-ME-Sender: <xms:Q91uXqvjLXDc-4WtP9vxCjFbJRVHzGMGsAK8qJu_xbFJzRLwN6raZg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudefuddguddutdcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehn
- ughrvgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlh
- hushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfies
- rghjrdhiugdrrghu
-X-ME-Proxy: <xmx:Q91uXuaW5L0ZoFWZmpkAJuuaY9XzpgKpfd2F2XytAMkQaaS6JDy6cQ>
- <xmx:Q91uXh1Xmf1kAWrJpFzP47QHDaNKiIVtwgqhDH1oFM-fNlsdsPRWKA>
- <xmx:Q91uXouVLZTONsqdaWP-xCLS0gI3djg76mwzt7gdn_bo_-SgOO9PhA>
- <xmx:RN1uXl6LsDUvB8eaDXoYLKYZL_WneytxmHEGoTcGcHisH8-ipOPadg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 21182E00BD; Sun, 15 Mar 2020 21:58:27 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-991-g5a577d3-fmstable-20200305v3
-Mime-Version: 1.0
-Message-Id: <2f51b12e-3651-48e4-b733-01f41ca44b92@www.fastmail.com>
-In-Reply-To: <20200312121413.294384-1-joel@jms.id.au>
-References: <20200312121413.294384-1-joel@jms.id.au>
-Date: Mon, 16 Mar 2020 12:28:35 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH] soc: aspeed-lpc-ctrl: LPC to AHB mapping on ast2600
+ id 1jDfK4-0004Pv-Uj
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:17:46 +0000
+Received: by mail-pl1-x641.google.com with SMTP id t3so7252346plz.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 15 Mar 2020 19:17:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=qWjBZjkx/KY8oeosSpB9MAxoMYpT7Z/9Dd9HUziHQCo=;
+ b=TGqbQ6O1HzIXJAmUYkTcbObT8QAmErwTVdiAxeK7pZ4bDCI/CJ6m6H8xDzUP9gz0+i
+ fSCRDMrYZhHgvU9DLCpfWsQSHZO7Nn7OtKE2CBchARrdH7O39In+Zfodd1y1ZSRtj93E
+ R3bVRUQyv1JPlang3KriuWWgp0LjMks4SJKtbIcueuV+fX/T1x++8AWlSR/p7K3wQLnA
+ tnTbJSpaPsPfQuPjctU9EzmBPo363wshN7EhePGon5nhS9kh3aT/SRJs2cfjhkVl3i8n
+ pjKgydM/sfBWG9mNJOFv0mrdM1EOws14tO37iMVZeXDpLzi7YNgDhfsLdoZB+93jusqP
+ 6VdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=qWjBZjkx/KY8oeosSpB9MAxoMYpT7Z/9Dd9HUziHQCo=;
+ b=JTZ/YLvJOaqMiSFc9bvOP/Qf0FMnfVBWwU35dTt7fJJakgRahATNdeV75lD7fmgjIs
+ dZ47B2FXba0BMD6d+qdgRKAwA4IpxHZBTtHXy10RjbAW20rpGiz6RxXdEXYDbckwOW6x
+ JWgf+WaEacapiwPDMeEWp28bBE8OkQzYTGXR4uRedp/a7utWcWNzQjt3Eis+Aohb9pf6
+ 3lIhI4zdwqABUSln7RCOUGnsQj5VBiDtvtpVo9vIMWDsc5MrC+uaHLXAe6qmEw+foCTt
+ OizUbeSJzOxC8wIeUNVfEvDHJuB/kASOik36KWNf/HEaTfsCcupWRXyfdJkVh2ugS6Ko
+ 8OYQ==
+X-Gm-Message-State: ANhLgQ3ncyOtFDJ/KxrXrfUH/9cByKbLhTzEB66KUaS9BLstXTW4yERD
+ FAIw3H38iIYxyXCwZZmSCHg=
+X-Google-Smtp-Source: ADFU+vvSlXruOq6QGZEaPnd9d+OEhOdhxSx/jKZA5JkbYveY8eFrZeTezL22IYW2GE+BrhiktXdAsw==
+X-Received: by 2002:a17:902:bb92:: with SMTP id
+ m18mr24764047pls.46.1584325063169; 
+ Sun, 15 Mar 2020 19:17:43 -0700 (PDT)
+Received: from localhost (216.24.188.11.16clouds.com. [216.24.188.11])
+ by smtp.gmail.com with ESMTPSA id s25sm4830589pgv.70.2020.03.15.19.17.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 15 Mar 2020 19:17:42 -0700 (PDT)
+Date: Mon, 16 Mar 2020 10:17:40 +0800
+From: Dejin Zheng <zhengdejin5@gmail.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH net-next v2 1/2] net: stmmac: use readl_poll_timeout()
+ function in init_systime()
+Message-ID: <20200316021740.GA3024@nuc8i5>
+References: <20200315150301.32129-1-zhengdejin5@gmail.com>
+ <20200315150301.32129-2-zhengdejin5@gmail.com>
+ <20200315182504.GA8524@lunn.ch>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200315182504.GA8524@lunn.ch>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_185835_200127_0832058F 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200315_191745_015027_F5D12A03 
+X-CRM114-Status: GOOD (  19.36  )
+X-Spam-Score: 3.6 (+++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (3.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [216.24.188.11 listed in zen.spamhaus.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zhengdejin5[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.26 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [zhengdejin5[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,7 +96,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,87 +107,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ joabreu@synopsys.com, mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sun, Mar 15, 2020 at 07:25:04PM +0100, Andrew Lunn wrote:
 
+Hi Andrew and David :
 
-On Thu, 12 Mar 2020, at 22:44, Joel Stanley wrote:
-> The ast2600 disables the mapping of AHB memory regions by default,
-> only allowing the LPC window to point to SPI NOR. In order to point the
-> window to any AHB address, an ast2600 specific bit must be toggled.
+> On Sun, Mar 15, 2020 at 11:03:00PM +0800, Dejin Zheng wrote:
+> > The init_systime() function use an open coded of readl_poll_timeout().
+> > Replace the open coded handling with the proper function.
+> > 
+> > Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+> > ---
+> > v1 -> v2:
+> > 	- no changed.
+> > 
+> >  .../net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c  | 14 ++++++--------
+> >  1 file changed, 6 insertions(+), 8 deletions(-)
+> > 
+> > diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c
+> > index 020159622559..2a24e2a7db3b 100644
+> > --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c
+> > +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c
+> > @@ -10,6 +10,7 @@
+> >  *******************************************************************************/
+> >  
+> >  #include <linux/io.h>
+> > +#include <linux/iopoll.h>
+> >  #include <linux/delay.h>
+> >  #include "common.h"
+> >  #include "stmmac_ptp.h"
+> > @@ -53,8 +54,8 @@ static void config_sub_second_increment(void __iomem *ioaddr,
+> >  
+> >  static int init_systime(void __iomem *ioaddr, u32 sec, u32 nsec)
+> >  {
+> > -	int limit;
+> >  	u32 value;
+> > +	int err;
+> >  
+> >  	writel(sec, ioaddr + PTP_STSUR);
+> >  	writel(nsec, ioaddr + PTP_STNSUR);
+> > @@ -64,13 +65,10 @@ static int init_systime(void __iomem *ioaddr, u32 sec, u32 nsec)
+> >  	writel(value, ioaddr + PTP_TCR);
+> >  
+> >  	/* wait for present system time initialize to complete */
+> > -	limit = 10;
+> > -	while (limit--) {
+> > -		if (!(readl(ioaddr + PTP_TCR) & PTP_TCR_TSINIT))
+> > -			break;
+> > -		mdelay(10);
+> > -	}
+> > -	if (limit < 0)
+> > +	err = readl_poll_timeout(ioaddr + PTP_TCR, value,
+> > +				 !(value & PTP_TCR_TSINIT),
+> > +				 10000, 100000);
+> > +	if (err)
+> >  		return -EBUSY;
 > 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
-> ---
->  drivers/soc/aspeed/aspeed-lpc-ctrl.c | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
+> Hi Dejin
 > 
-> diff --git a/drivers/soc/aspeed/aspeed-lpc-ctrl.c 
-> b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> index f4ac14c40518..142cb4cc85e7 100644
-> --- a/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> +++ b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> @@ -22,6 +22,9 @@
->  #define HICR5_ENL2H	BIT(8)
->  #define HICR5_ENFWH	BIT(10)
->  
-> +#define HICR6 0x4
+> It is normal to just return whatever error code readl_poll_timeout()
+> returned.
+> 
+> 	Andrew
 
-Given you introduced this I assume we don't have anything else touching
-the register, but if we ever do hopefully whoever it is that adds support is
-conscious that they need to be doing an read/modify/write to correctly
-clear the W1C registers without frobbing the bridge state.
+You are right. I will modify it. Thanks!
 
-Looks like Aspeed should have introduced two bits to manage it :/
+BR,
+Dejin
 
-> +#define SW_FWH2AHB	BIT(17)
-> +
->  #define HICR7 0x8
->  #define HICR8 0xc
->  
-> @@ -33,6 +36,7 @@ struct aspeed_lpc_ctrl {
->  	resource_size_t		mem_size;
->  	u32		pnor_size;
->  	u32		pnor_base;
-> +	bool			fwh2ahb;
->  };
->  
->  static struct aspeed_lpc_ctrl *file_aspeed_lpc_ctrl(struct file *file)
-> @@ -177,6 +181,16 @@ static long aspeed_lpc_ctrl_ioctl(struct file 
-> *file, unsigned int cmd,
->  		if (rc)
->  			return rc;
->  
-> +		/*
-> +		 * Switch to FWH2AHB mode, AST2600 only.
-> +		 *
-> +		 * The other bits in this register are interrupt status bits
-> +		 * that are cleared by writing 1. As we don't want to clear
-> +		 * them, set only the bit of interest.
-> +		 */
-> +		if (lpc_ctrl->fwh2ahb)
-> +			regmap_write(lpc_ctrl->regmap, HICR6, SW_FWH2AHB);
-> +
->  		/*
->  		 * Enable LPC FHW cycles. This is required for the host to
->  		 * access the regions specified.
-> @@ -274,6 +288,9 @@ static int aspeed_lpc_ctrl_probe(struct 
-> platform_device *pdev)
->  		return rc;
->  	}
->  
-> +	if (of_device_is_compatible(dev->of_node, "aspeed,ast2600-lpc-ctrl"))
-> +		lpc_ctrl->fwh2ahb = true;
-> +
-
-This implies that we don't want the SPI-only behaviour by default, which is
-true for our platforms but doesn't really reflect the hardware. What are your
-thoughts on adding an explict devicetree property? use-fwh2ahb?
-
-Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
