@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED1018611E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:04:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05453186125
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:08:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GOyCC7JgMnkXWE5I8gzjqAoEOefLx9LOSLelnJ+95EA=; b=ZeBX4o0eaIm6cq
-	PYyVK9Uz1nT2EJBaUFP0DfPswT7DDbXJsNsKVWfGgsLdJ90Edr3/7CJxssKdvvk+vWJRHVKBe6K7n
-	xWXEWd0PcQcCK5C5Kwi10v18f9yNppxyi3/Fky7NVOVqXa5yNVGHgkJGf1xIquAgBOX8AEaZXE+9r
-	PXwaGbR5mCq2YwQw8nscSdRan0XaZ3lvqkXwGtYZ6pGZgKpNL8aB5FwWKFmqqOsc4Nb8EFXLZ4NIZ
-	Vx6wyqnmZnkiulX5+KsIlVwpXzQWOrLOFnUp8SB8Xkmen8OubQdEVMUlfeJNG0kK38r7ZAzjDjx/6
-	zVmKAMNaXcJoXwj9gE3w==;
+	List-Owner; bh=GPMk0NNxDs9z0wy74pzSUygaCSFoJf1VdhU1mxyzXKs=; b=FRa/OX1BQv74Gl
+	9iG9kO7Njlmi0w65Yk318ODO6KLUGocX7vIKCSIRvLKJQG6vrgjFVFOYx9jhJ4YdzGEU0egT1h8hu
+	EFKExsMeU/nmqmyz7medUA5Hkdry7glStTENNNG+v1MaCXmM3fLWUfkWQjwNPvU7Cl6QdsVrYy+Wu
+	qnLhHqifOkAlFEaw29MeQDlDhLfwHiYa9LkPryWiYSfl6NHLsEaYj3HkzTEr56PGBzY8TRLeH+XbP
+	6SR1mwtcMoIhV+b81w8fNuSY0P68ONZBzTueFaAA0amZo+w2jBik6LIhQtfOuyaZXYZw8qnxMkc4Q
+	pUJt6RL054PusNVKGZtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDeBF-0003R9-Vh; Mon, 16 Mar 2020 01:04:33 +0000
+	id 1jDeEg-00050b-Ox; Mon, 16 Mar 2020 01:08:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDeB6-0003Qq-SQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:04:26 +0000
+ id 1jDeEV-000503-PA
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:07:57 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B491205ED;
- Mon, 16 Mar 2020 01:04:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B8FD2205ED;
+ Mon, 16 Mar 2020 01:07:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584320664;
- bh=Hw0ZivXWa3VjmpcCVQHuCLJJ+hlMopS5Berc2mfx4uU=;
+ s=default; t=1584320875;
+ bh=w8UFak9mwRktB8j1PIcCa8pAcucASI3uNlGd9Kq4HpE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sgOXCiVWkTvI7m9jrLidmfr5ERKuToqTfbuzGQ2P3SWJdpeH1NkNAM05witSWzZiz
- q+CxWlK+sxeZqzq6J3mULRs4ZbP4jYVMVXhspD4iqG3QvjgWe5LF/5ZtGi8pT6ENF6
- cqPZG70OPM+hb9UYZRzJb/HWrWD/IxrIgfUSDvOw=
-Date: Mon, 16 Mar 2020 09:04:17 +0800
+ b=hfE5VSZ74YXxfdd/Cx4j1B32EaJXUvcc1w1Nv1p6ZwFqzs94GLGZvRs7WmvuvGPNY
+ RSGf2Lu9hpTZ4PdUQB03eHjyFdbhQNpsPGrl/QN9kZitIQPn0slA7DpPT1lMk0r+8A
+ xQw4cMOgoPZa//zwT3JrogfFL8CabpPiyYxkJUsE=
+Date: Mon, 16 Mar 2020 09:07:49 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 1/2] arm64: dts: imx8qxp-mek: Sort labels alphabetically
-Message-ID: <20200316010416.GI17221@dragon>
-References: <1583830337-23889-1-git-send-email-Anson.Huang@nxp.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH v2 1/5] dt-bindings: arm: fsl: Add TechNexion boards
+Message-ID: <20200316010748.GJ17221@dragon>
+References: <20200310180825.10111-1-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1583830337-23889-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200310180825.10111-1-festevam@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_180424_938819_929374A1 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20200315_180755_838616_7B304377 
+X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,115 +77,19 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, abel.vesa@nxp.com,
- daniel.baluta@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
+Cc: devicetree@vger.kernel.org, otavio.salvador@ossystems.com.br,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 10, 2020 at 04:52:16PM +0800, Anson Huang wrote:
-> Sort the labels alphabetically for consistency.
+On Tue, Mar 10, 2020 at 03:08:21PM -0300, Fabio Estevam wrote:
+> Add entries for the TechNexion boards.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
-It doesn't apply to my branch.
-
-Shawn
-
-> ---
->  arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 60 +++++++++++++--------------
->  1 file changed, 30 insertions(+), 30 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> index 13460a3..2ed7aba 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> @@ -30,29 +30,8 @@
->  	};
->  };
->  
-> -&adma_lpuart0 {
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_lpuart0>;
-> -	status = "okay";
-> -};
-> -
-> -&fec1 {
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_fec1>;
-> -	phy-mode = "rgmii-id";
-> -	phy-handle = <&ethphy0>;
-> -	fsl,magic-packet;
-> +&adma_dsp {
->  	status = "okay";
-> -
-> -	mdio {
-> -		#address-cells = <1>;
-> -		#size-cells = <0>;
-> -
-> -		ethphy0: ethernet-phy@0 {
-> -			compatible = "ethernet-phy-ieee802.3-c22";
-> -			reg = <0>;
-> -		};
-> -	};
->  };
->  
->  &adma_i2c1 {
-> @@ -131,6 +110,35 @@
->  	};
->  };
->  
-> +&adma_lpuart0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_lpuart0>;
-> +	status = "okay";
-> +};
-> +
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_fec1>;
-> +	phy-mode = "rgmii-id";
-> +	phy-handle = <&ethphy0>;
-> +	fsl,magic-packet;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@0 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-> +			reg = <0>;
-> +		};
-> +	};
-> +};
-> +
-> +&scu_key {
-> +	status = "okay";
-> +};
-> +
->  &usdhc1 {
->  	assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
->  	assigned-clock-rates = <200000000>;
-> @@ -229,11 +237,3 @@
->  		>;
->  	};
->  };
-> -
-> -&adma_dsp {
-> -	status = "okay";
-> -};
-> -
-> -&scu_key {
-> -	status = "okay";
-> -};
-> -- 
-> 2.7.4
-> 
+Applied all, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
