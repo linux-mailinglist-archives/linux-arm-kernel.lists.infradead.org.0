@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21860186573
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 343C818658C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 08:22:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4kr6IZ+YE1o+TQmYCXbSH5cEkye4IWKEeKzcNgpu8n0=; b=jgavgYmnlI5czBu3CLrThbTqB
-	rx/ImJvw0amaHBlYhe0CiFVqIjRUmYxnRTW5RrQ02GZx6krr0hgqXQ67Y5GNEqpV7jvZqasmAObcM
-	V63YISpQV8KSBvN/iMArG+AD64a5sOr+16RQ/Wm1k6VopUdB7aHW5Es//PY54gIYDOGD7Et3fRani
-	0Zj7jRv3RmHgUIGwyX4iIKWiQUJ9WPOSgV1ItFnZ1dOQ4AeHzYIpKjyPgk5YsbLKAp+bzp2NvVPUz
-	/SmfhDLLtORq7NZK0zXzwtURbK9mKnIqvMVkAKZdeZi4o7hS+K/qANrbMaRYv7+3M6oVbl/RI7COV
-	sXtVSnzQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r27hWcoOLsQiRASlCw6TpmunJL3pm2SyBWayVbB2HaQ=; b=WGX4ltRPuHyNqM
+	GEFWUjcyesHaka6RDrkQ3lXG1fi+Qk8MDQVJ9ZtBA0L73sxHaJFPAdm5qURzTtenQY63IEhGs3eG/
+	8uEbNsWy2/PQ79KZIIyKuA1J6A+2rtivtuZmKUJpu81KUZTRXE8MVLqYRo7hp05uwlKcZijCmN9pO
+	sAGZXMtUd6A4mXE4wQL2ZWd/SZyxSTFm2mB2xZPNBqiLHSvJ/553+UCC9VMoxe/Ibc+MS6eznD3k2
+	KHp9hiT4h6ruPTU0sbd3cBvXnbAu3/k1E4sqqFxAFeyox7ITej9Nr81nqMhZWt4EAzOT6b4/fu5rB
+	Hye6tGrQn+pheQjhbSww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDjtA-0005gg-2g; Mon, 16 Mar 2020 07:10:16 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jDk4i-0003i9-0q; Mon, 16 Mar 2020 07:22:12 +0000
+Received: from mail-lf1-f65.google.com ([209.85.167.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDjss-0005f7-V5
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 07:10:00 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1584342598; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=KJZiL0sdohMQeVpJmkN38lZ6qU33N/oMM0pvgkF9gnc=;
- b=LudcbJdOLCldXBL5Vp8nwCLvpa2cYS1UVbQLmb8p2T3/7MobsB7amBevORi3lB9Ko+fWlluZ
- o+mMP5tUIisfpcg5x56+clag7lBs8HuTb41czSLojNqI1bZ6n/czx1uM2Mv0tyTJ5G+wB1Gf
- LiRLTT4JLMtdy5pkvRtOn540fUI=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e6f2646.7f65ea85a3b0-smtp-out-n04;
- Mon, 16 Mar 2020 07:09:58 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 3034CC43637; Mon, 16 Mar 2020 07:09:57 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 5390EC433D2;
- Mon, 16 Mar 2020 07:09:56 +0000 (UTC)
+ id 1jDk4Y-0003h5-VO
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 07:22:04 +0000
+Received: by mail-lf1-f65.google.com with SMTP id j11so13077428lfg.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Mar 2020 00:22:02 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=I7aBKCm8kI2F7Jl47saMU25REPiGQ5/LzV7PSFh0a9E=;
+ b=IxaiDcD7aPMkW1MGvxPMYVjHcNxTabD2Fo0mh5DfsPi/xXNn+8+P0Vk/pdMwgMvv9w
+ vqpKbGWJEAtqg1RqfzSRCxoHJbvSzzMvZpGDkfpWWj+PB6SbEfZXzdPjqXmDIVPG6OZZ
+ B55AXdUWDGqNnxy13GhGVnZtWyShKocUh9M71u/gjep6Qklf5OfhFXyS8lJIhRT7YLbn
+ oFILDm6hVY/2UzsarEqYeCurOQKo0676c1OQzIWkeQZy9pgmTGRc+7H1AD+QCJA9Iwjx
+ jcjBuoWDYi0zhBGRsIWqtTaXmyeMvPu3eQZIH853PoXvbQfJLu+k45XLtlXC2SjhV4sa
+ M8HQ==
+X-Gm-Message-State: ANhLgQ1JQ8ozWYMtMw0RSIazFNya3U/K5Lw6K/2rYZgIqO9s+GyWT+2e
+ dgYAgwF65PmNTS9HfTphxOo=
+X-Google-Smtp-Source: ADFU+vvfXaI0eA6zxF80cwGW+BpzLifqbMXqRzCrqipFgyDI9intGbzRrLSOburBVMZ/TzFxex69dw==
+X-Received: by 2002:a19:6f44:: with SMTP id n4mr16199861lfk.59.1584343320572; 
+ Mon, 16 Mar 2020 00:22:00 -0700 (PDT)
+Received: from xi.terra (c-12aae455.07-184-6d6c6d4.bbcust.telenor.se.
+ [85.228.170.18])
+ by smtp.gmail.com with ESMTPSA id a10sm14618994ljb.23.2020.03.16.00.21.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Mar 2020 00:21:59 -0700 (PDT)
+Received: from johan by xi.terra with local (Exim 4.92.3)
+ (envelope-from <johan@kernel.org>)
+ id 1jDk4F-0002Bi-58; Mon, 16 Mar 2020 08:21:43 +0100
+Date: Mon, 16 Mar 2020 08:21:43 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+Subject: Re: [PATCH AUTOSEL 5.5 05/41] ARM: dts: imx6dl-colibri-eval-v3: fix
+ sram compatible properties
+Message-ID: <20200316072143.GT14211@localhost>
+References: <20200316023319.749-1-sashal@kernel.org>
+ <20200316023319.749-5-sashal@kernel.org>
 MIME-Version: 1.0
-Date: Mon, 16 Mar 2020 15:09:56 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v5 2/8] scsi: ufs: remove init_prefetch_data in struct
- ufs_hba
-In-Reply-To: <1584342487.14250.11.camel@mtksdccf07>
-References: <20200316034218.11914-1-stanley.chu@mediatek.com>
- <20200316034218.11914-3-stanley.chu@mediatek.com>
- <51fde835f4f03fcca6e83ba6d3579f2e@codeaurora.org>
- <1584342487.14250.11.camel@mtksdccf07>
-Message-ID: <29d75c7ff1a5c7fb54ee145049daa5da@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <20200316023319.749-5-sashal@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_000959_235997_4449D167 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_002203_009804_0708B2AE 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [209.85.167.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jhovold[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,50 +92,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
- jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, avri.altman@wdc.com, martin.peter~sen@oracle.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: devicetree@vger.kernel.org, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Johan Hovold <johan@kernel.org>,
+ Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
+ Sanchayan Maity <maitysanchayan@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stanley,
-
-On 2020-03-16 15:08, Stanley Chu wrote:
-> Hi Can,
+On Sun, Mar 15, 2020 at 10:32:43PM -0400, Sasha Levin wrote:
+> From: Johan Hovold <johan@kernel.org>
 > 
-> On Mon, 2020-03-16 at 14:25 +0800, Can Guo wrote:
->> On 2020-03-16 11:42, Stanley Chu wrote:
->> > Struct init_prefetch_data currently is used privately in
->> > ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
->> >
->> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
->> > Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
->> > Reviewed-by: Avri Altman <avri.altman@wdc.com>
->> 
->> Hi Stanley,
->> 
->> Earlier, I have one similar patch for this, but it does more than 
->> this.
->> Please check the mail I just sent.
->> 
->> Thanks,
->> Can Guo.
+> [ Upstream commit bcbf53a0dab50980867476994f6079c1ec5bb3a3 ]
 > 
-> OK! Thanks to remind me this. Then I can drop this cleanup patch #2 in
-> its series to not conflict with your proposed one.
+> The sram-node compatible properties have mistakingly combined the
+> model-specific string with the generic "mtd-ram" string.
 > 
-> Thanks,
-> Stanley Chu
+> Note that neither "cy7c1019dv33-10zsxi, mtd-ram" or
+> "cy7c1019dv33-10zsxi" are used by any in-kernel driver and they are
+> not present in any binding.
+> 
+> The physmap driver will however bind to platform devices that specify
+> "mtd-ram".
+> 
+> Fixes: fc48e76489fd ("ARM: dts: imx6: Add support for Toradex Colibri iMX6 module")
+> Cc: Sanchayan Maity <maitysanchayan@gmail.com>
+> Cc: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Signed-off-by: Johan Hovold <johan@kernel.org>
+> Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+> Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+> Signed-off-by: Sasha Levin <sashal@kernel.org>
 
-Sure, thank you for your quick response.
+Greg has already dropped this one from the stable queues once on my
+request, so please do not add it back.
 
-Best regards,
-Can Guo
+Johan
 
 _______________________________________________
 linux-arm-kernel mailing list
