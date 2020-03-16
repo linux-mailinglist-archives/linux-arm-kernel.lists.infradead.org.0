@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B179E187250
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 19:28:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D2D1187313
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 20:11:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+D9jJY4JPVmHd4zd5SB8czM+44qLSy44vf4MC8wdmlE=; b=iHbcJkmiyri5PK
-	2/zY8hKYY1R9+D2MesQKl9z0Vm9XxZfdvejU3UohTihk43zzMvRsCF5s+fJAPbeoloKED4p9QHuBn
-	Vzg6e1UA6lbXkwMBpTkAI1+Aaujzjdjv4RN3CuZfrg80rrbi5LUNQqSlgUPBh4Dj6PYb0vpWcy9TA
-	0/wjiXf3sp60LiGvBp9+G/eUkiTontu5GdbdmTDx5LSJ9Lvgo7NwvAd4ax8lOfWQA1a8PBj4VxVGX
-	6ETrvRkR8QarrCV7KRgJoVIJrOjf8r7LLHIXOBctQ7wdlcyOz3bZx6/N/qpNMcrmgsjJSFXb6bQzX
-	mm6lZKs+WqMMhRIS8EkA==;
+	List-Owner; bh=kba1YLWK7EyQVL0LU4eyKlRNkrv7iE76L2wUjXaY3no=; b=a/Xii6XF+aYj/b
+	q8kNLsEsU47WRNu3uiPGNE1xG1Iv1ae9GP6vPSAVZyQOBZww7CXdIOA//qptxsiMwtcyJBY5c5sje
+	zYFYQYzGV9lO+PT59BJkxcyayS2NNPrvTFa9IZR37wpegCXT8pPOq3PKk99wpnTEHprYf/M5Va5WI
+	wJ4+odSkqzykcnnkKMt//qDD2MA0AEKxcdwZ0WPAQYm+RskbHPRt/HhzNlaaAHV6kWeMjnuVTKWcn
+	HKMQCco2oYvfixdsz0zgVNLVhw4cK+A02GvRhQ79MMnX0aLsZPVgwbvMzekWlIX50EsEILUQCTD6h
+	BTOgWW1Gt+9llqo5KSFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDuTA-00052l-MA; Mon, 16 Mar 2020 18:28:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jDv9G-00053a-IK; Mon, 16 Mar 2020 19:11:38 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDuSz-000525-Vg
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 18:27:59 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A2067206C0;
- Mon, 16 Mar 2020 18:27:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584383275;
- bh=1X0RWpWGXgWjM59m17N7HN5PeVRY8yHe1mAvSdyPZQw=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=Z+RIJZkR3Lun08KSd7Q+ocCxvwpEuKWytRxk9quUXtEzieQ1U8ArGpFaJPU2u31cl
- Xw/ScsYkKv75OnKN4O0C2hoOxyE+FgCfbcVJQZAMRLU55N3900lAUM87j1B47gNC4G
- dMjUtYAQ1LuWoMiZyO/38Mfa2PQbSQY8YMKH0mYM=
+ id 1jDv98-0004rw-Dg
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 19:11:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1584385882; bh=FW1eAGDaOwZotXT5BTvXsi+IhkF86WgYclyjbaMj8x0=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=tUMLz8BV7T0c827DnXQtea8vx0HkcPUk4ToUSZaHMUkDk+9csPNi+kqJ8KJVU2vjg
+ 5mxCNIApW9dNDx1t6jX13OOLMFgskXtNRfdIW7qMODyiG26wqc/yvtGDBkv7AlsSQA
+ eUYRwhujgrnht7UefJkn1OgNsJQ8aJw8PnwwT1h0=
+Date: Mon, 16 Mar 2020 20:11:22 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Icenowy Zheng <icenowy@aosc.io>
+Subject: Re: [PATCH v2 3/5] drm: panel: add Xingbangda XBD599 panel
+Message-ID: <20200316191122.yeb5l22ldtt73vx5@core.my.home>
+Mail-Followup-To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ Icenowy Zheng <icenowy@aosc.io>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@googlegroups.com
+References: <20200316133503.144650-1-icenowy@aosc.io>
+ <20200316133503.144650-4-icenowy@aosc.io>
 MIME-Version: 1.0
-In-Reply-To: <20200316002239.GK29269@dragon>
-References: <20200224121322.GI27688@dragon>
- <158352907905.174340.14348638942004736998@swboyd.mtv.corp.google.com>
- <20200316002239.GK29269@dragon>
-Subject: Re: [GIT PULL] i.MX clock fixes for 5.6, round 2
-From: Stephen Boyd <sboyd@kernel.org>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Mon, 16 Mar 2020 11:27:54 -0700
-Message-ID: <158438327489.88485.18004315671422121263@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+Content-Disposition: inline
+In-Reply-To: <20200316133503.144650-4-icenowy@aosc.io>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_112758_044329_25137139 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20200316_121130_632676_948080CC 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +67,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,32 +78,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Maxime Ripard <mripard@kernel.org>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Shawn Guo (2020-03-15 17:22:40)
-> On Fri, Mar 06, 2020 at 01:11:19PM -0800, Stephen Boyd wrote:
-> > Quoting Shawn Guo (2020-02-24 04:13:23)
-> > > The following changes since commit 5eb40257047fb11085d582b7b9ccd0bffe900726:
-> > > 
-> > >   clk: imx8mn: Fix incorrect clock defines (2020-02-17 15:18:00 +0800)
-> > > 
-> > > are available in the Git repository at:
-> > > 
-> > >   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-fixes-5.6-2
-> > > 
-> > > for you to fetch changes up to 6fb9006abe37e44afaed4f2a5fd3a247a815bb8d:
-> > > 
-> > >   clk: imx8mp: Correct the enet_qos parent clock (2020-02-24 15:38:03 +0800)
-> > > 
-> > > ----------------------------------------------------------------
+Hello Icenowy,
 
-Thanks. Pulled into clk-fixes.
+On Mon, Mar 16, 2020 at 09:35:01PM +0800, Icenowy Zheng wrote:
+> Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI IPS LCD panel made by
+> Xingbangda, which is used on PinePhone final assembled phones.
+>
+> [snip]
+>
+> +static const struct drm_display_mode xbd599_default_mode = {
+> +	.hdisplay    = 720,
+> +	.hsync_start = 720 + 40,
+> +	.hsync_end   = 720 + 40 + 40,
+> +	.htotal	     = 720 + 40 + 40 + 40,
+> +	.vdisplay    = 1440,
+> +	.vsync_start = 1440 + 18,
+> +	.vsync_end   = 1440 + 18 + 10,
+> +	.vtotal	     = 1440 + 18 + 10 + 17,
+> +	.vrefresh    = 60,
+
+Does the display actually run for you at 60fps? I measured 36.63 FPS with
+a DRM app that just does DRM_IOCTL_MODE_ATOMIC update after each
+DRM_EVENT_FLIP_COMPLETE event.
+
+thank you and regards,
+	o.
+
+> +	.clock	     = 69000,
+> +	.flags	     = DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
+> +
+> +	.width_mm    = 68,
+> +	.height_mm   = 136,
+> +	.type        = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED,
+> +};
+> +
 
 _______________________________________________
 linux-arm-kernel mailing list
