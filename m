@@ -2,142 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6BFD1864E5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 07:01:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5616F1864FD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 07:26:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hXrbJhXEpTbNeRaHRlNsEXzR6vydHk7MDiMUxF/BKHA=; b=eeDAPxmn5EQ5V6
-	QqkLbdlTLu825aJxWlwnU9EOGWKYLEXeTRsNOxBJ7TPc/LbEQV0c25PjiJFUmq0x2JIEMGBOtcLSS
-	+1UixKD3MI8BE+HDoB8Sq5I/u+HDfpg3rtdbzQqJ1MFyn7Gpdk1I4YE7KIqzS2NS66C5vALX+8/Gu
-	81YA6lqfktsvuv95Nyc5MHIrGNHs6htNzaVUuLdu41f5DeMu1PrGFqYqnlmMolXuVNQ69fJRm7MUV
-	/i/fiHDlZNJpd+KiZjLZs2nKwvTxCZz2M2pBVrE1ZatQeMKz2ToAr8KylwpkMiVbyCJ0ZUJGwD1Qb
-	rc2wF2AM54Of6m0KIjKQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=k/AVYcPx7XzTV/GHX3X7tNovLoIABecPyv5Aj2LrQSk=; b=t905GepvUQexEAhijRPkxXLMq
+	Wr5k+EOzRX7ZidhB7Yu1Q/OrvB1ogPfIUgaBP4xfW3XFRe+4wSrHFFfT2goYqGAGzw5pqNSTcUbu8
+	C3quXF8gt2uzqEhecF9xQxuZMQu0c1NdysPwMfvGVfnvELteFcXmQQltcNW6bkGb8kGbNvibFawSd
+	M7Lbo81/rpscvxMkNHbhNWAL8noyXmNFKZwGAgy1ix9hdlhdY2ymgU2Ol950k0zZvAtIMSdMjan80
+	01HquRNu3TEW9e7aC2z74qhK3Gn7LeVTTHn9JXOOW8AsLQQHjkysAlXYcB9eOWtjVDdv8U48IngDP
+	UJbNsOWmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDio3-00089c-Ky; Mon, 16 Mar 2020 06:00:55 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jDjCD-0007q7-Eq; Mon, 16 Mar 2020 06:25:53 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDinm-00080B-O7
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 06:00:41 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200316060034epoutp047183a21e9875908f808a26a65a6a2c53~8s2mSYisM1543515435epoutp04P
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 06:00:34 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200316060034epoutp047183a21e9875908f808a26a65a6a2c53~8s2mSYisM1543515435epoutp04P
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1584338434;
- bh=2Kv+w3PNCQWlj7hMQ3lPJvwlLeMJHkR1BiwXPydc7rw=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=gLX7Y46mmWgkuMGaRwWEbpzFdX+UQ63COuhNFZLCYh8495eHlbRJKKITYbdgrTBvT
- FsjJGlTOPdBeQE9WyUI1mrXzTL5LPuM7knft8h7Mbh7R5AkFdZqVVHlQ8DvmhySNi7
- R2XdyhMUfDSu5EueoC9/iPm/e/+T48yIu20pI3Cg=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
- epcas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200316060033epcas1p25f9fcf0f932e4dcb8ed8d5a2639b5aa2~8s2lZHDLS0437604376epcas1p2t;
- Mon, 16 Mar 2020 06:00:33 +0000 (GMT)
-Received: from epsmges1p2.samsung.com (unknown [182.195.40.152]) by
- epsnrtp1.localdomain (Postfix) with ESMTP id 48glyk4dQlzMqYlm; Mon, 16 Mar
- 2020 06:00:30 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- 0C.8F.04140.9F51F6E5; Mon, 16 Mar 2020 15:00:25 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200316060024epcas1p22426fb960f9d63d3e54178e0a7f7161d~8s2cemkrD0437704377epcas1p2X;
- Mon, 16 Mar 2020 06:00:24 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200316060024epsmtrp12481039a97564aae072b9d17e401300c~8s2cbFH2Y2667026670epsmtrp1j;
- Mon, 16 Mar 2020 06:00:24 +0000 (GMT)
-X-AuditID: b6c32a36-412c19c00000102c-d6-5e6f15f9259a
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 4D.EB.04024.8F51F6E5; Mon, 16 Mar 2020 15:00:24 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200316060024epsmtip2997fd94dd47d0296cf99fd7f3550fd78~8s2cM7Ch32560725607epsmtip2q;
- Mon, 16 Mar 2020 06:00:24 +0000 (GMT)
-Subject: Re: [PATCH v2] PM / devfreq: Fix handling dev_pm_qos_remove_request
- result
-To: Leonard Crestez <leonard.crestez@nxp.com>, dAN cARPENTER
- <DAN.CARPENTER@ORACLE.COM>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <2b49cbce-7d3f-3c61-5ae8-98b5e7580553@samsung.com>
-Date: Mon, 16 Mar 2020 15:09:12 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ id 1jDjC2-0007o6-Lj
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 06:25:46 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1584339945; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=UyuhZmeVdghEkFGq1LyGqfP9NwpUlzrusHvbYNXKk6I=;
+ b=LBdFzdHLODUgdiLy5tYApAdXjuOttGRYNUHpIcwkRPe3P+aF+We3SRNJV5LR3dqw4fV3UQz4
+ sV0dkulaMvql4JuqhVT319aH/zbw8LaGo8ueVe2LdHQM92JwpPgqvsfp4IcfnddblgywJ8kp
+ BGXCYH44n+wF19HIcmxld5nRM3E=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e6f1bdd.7f12f7d531b8-smtp-out-n02;
+ Mon, 16 Mar 2020 06:25:33 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id DFCA4C44788; Mon, 16 Mar 2020 06:25:32 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: cang)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 83A43C433CB;
+ Mon, 16 Mar 2020 06:25:31 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <06fc3c3d0a8bca1bce104ca9d6a7d5ff94bdf9ab.1584027085.git.leonard.crestez@nxp.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHJsWRmVeSWpSXmKPExsWy7bCmru5P0fw4g4tt3BZ3bp9mtnj9bzqL
- xfnzG9gtzja9YbdYcfcjq8Wmx9dYLbp+rWS2+Nx7hNHi84bHjBa3G1ewWZw5fYnVYvODY2wO
- PB6zGy6yeOycdZfdY9OqTjaPzUvqPTa+28Hk8fHpLRaPLVfbWTz6tqxi9Pi8SS6AMyrbJiM1
- MSW1SCE1Lzk/JTMv3VbJOzjeOd7UzMBQ19DSwlxJIS8xN9VWycUnQNctMwfoZCWFssScUqBQ
- QGJxsZK+nU1RfmlJqkJGfnGJrVJqQUpOgWWBXnFibnFpXrpecn6ulaGBgZEpUGFCdkbnpMyC
- P3wVd++INDBO5Oli5OSQEDCROP24kbWLkYtDSGAHo8S9B4+hnE+MEhMXfmCEcL4xSsw5f4cN
- pqXx+U12iMReRonpqw4wQzjvGSXO3TrKCFIlLBAq0bRnLguILSIQKXF+434mkCJmgTdMEnfv
- 3WIGSbAJaEnsf3EDbCy/gKLE1R+PwZp5Bewk9vf8Barh4GARUJWYuiEbJCwqECZxclsLVImg
- xMmZT8DmcwrESfzsWw1mMwuIS9x6Mp8JwpaX2P52DjPE1ZvYJY5MzQQZKSHgItH4mwUiLCzx
- 6vgWdghbSuJlfxuUXS2x8uQRNpCTJQQ6GCW27L/ACpEwlti/dDITyBxmAU2J9bv0IcKKEjt/
- z2WEWMsn8e5rDyvEKl6JjjYhiBJlicsP7jJB2JISi9s72SYwKs1C8swsJA/MQvLALIRlCxhZ
- VjGKpRYU56anFhsWGCFH9SZGcFrWMtvBuOiczyFGAQ5GJR5eibS8OCHWxLLiytxDjBIczEoi
- vB012XFCvCmJlVWpRfnxRaU5qcWHGE2BQT2RWUo0OR+YM/JK4g1NjYyNjS1MDM1MDQ2VxHmn
- Xs+JExJITyxJzU5NLUgtgulj4uCUamBc65f1/83aW0ELzuZNPf1xrd/FPeL6lQ8cp/31yllh
- FOj6eU5Gr3LYjotSWh9PekuemjVl8b0TTrOqj/c9iDOOLcqOiTt3sMh2FVdwQOY8YYkTc5qr
- uk2cnB6I2m20yM7I3FZZLtr/bd+WtuK/cUK5q8J39UyZ+ej2rYksxS1Ctkq2xRN37nulxFKc
- kWioxVxUnAgAkhIITuEDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrJIsWRmVeSWpSXmKPExsWy7bCSvO4P0fw4g0vH+S3u3D7NbPH633QW
- i/PnN7BbnG16w26x4u5HVotNj6+xWnT9Wsls8bn3CKPF5w2PGS1uN65gszhz+hKrxeYHx9gc
- eDxmN1xk8dg56y67x6ZVnWwem5fUe2x8t4PJ4+PTWyweW662s3j0bVnF6PF5k1wAZxSXTUpq
- TmZZapG+XQJXRuekzII/fBV374g0ME7k6WLk5JAQMJFofH6TvYuRi0NIYDejxLIF39khEpIS
- 0y4eZe5i5ACyhSUOHy6GqHnLKNE9oZ0RpEZYIFSiac9cFhBbRCBSYvbfw8wgRcwCb5gk2va3
- M4MkhAQ2Mkp8f+wFYrMJaEnsf3GDDcTmF1CUuPrjMdggXgE7if09f8GWsQioSkzdkA0SFhUI
- k9i55DETRImgxMmZT8B2cQrESfzsWw1mMwuoS/yZd4kZwhaXuPVkPhOELS+x/e0c5gmMwrOQ
- tM9C0jILScssJC0LGFlWMUqmFhTnpucWGxYY5qWW6xUn5haX5qXrJefnbmIER6iW5g7Gy0vi
- DzEKcDAq8fBKpOXFCbEmlhVX5h5ilOBgVhLh7ajJjhPiTUmsrEotyo8vKs1JLT7EKM3BoiTO
- +zTvWKSQQHpiSWp2ampBahFMlomDU6qBMd3k9STeP2eZjoqZJplU5s/Njlc9o8vtJKbL1q+e
- s1jfceJim2P3RJa8j+Vw+um9rXmi74fafJPV5yzXG8Z3vPeIS3K868Ez5XFZ8zWGOUX73P4y
- pHDcc1L9O23J549bi7KMg869PxL24sCq+Jo9i5fP8lKoVgsKfJPA2cOqZ7dEzfGsZSKPEktx
- RqKhFnNRcSIAYOoAtMwCAAA=
-X-CMS-MailID: 20200316060024epcas1p22426fb960f9d63d3e54178e0a7f7161d
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20200312153613epcas1p14982cbd7b5e327f8a13a82c95b5bfce4
-References: <CGME20200312153613epcas1p14982cbd7b5e327f8a13a82c95b5bfce4@epcas1p1.samsung.com>
- <06fc3c3d0a8bca1bce104ca9d6a7d5ff94bdf9ab.1584027085.git.leonard.crestez@nxp.com>
+Date: Mon, 16 Mar 2020 14:25:31 +0800
+From: Can Guo <cang@codeaurora.org>
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v5 2/8] scsi: ufs: remove init_prefetch_data in struct
+ ufs_hba
+In-Reply-To: <20200316034218.11914-3-stanley.chu@mediatek.com>
+References: <20200316034218.11914-1-stanley.chu@mediatek.com>
+ <20200316034218.11914-3-stanley.chu@mediatek.com>
+Message-ID: <51fde835f4f03fcca6e83ba6d3579f2e@codeaurora.org>
+X-Sender: cang@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_230039_056310_89E86DE3 
-X-CRM114-Status: GOOD (  22.42  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200315_232545_571890_C47E2D4E 
+X-CRM114-Status: GOOD (  16.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,71 +87,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, Viresh Kumar <vireshk@kernel.org>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- mYUNGjOO hAM <MYUNGJOO.HAM@SAMSUNG.COM>, linux-imx@nxp.com,
- Adam Ford <aford173@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
+ jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, martin.peter~sen@oracle.com,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/13/20 12:36 AM, Leonard Crestez wrote:
-> The dev_pm_qos_remove_request function can return 1 if
-> "aggregated constraint value has changed" so only negative values should
-> be reported as errors.
+On 2020-03-16 11:42, Stanley Chu wrote:
+> Struct init_prefetch_data currently is used privately in
+> ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
 > 
-> Fixes: 27dbc542f651 ("PM / devfreq: Use PM QoS for sysfs min/max_freq")
-> Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Cc: stable@vger.kernel.org
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+> Reviewed-by: Avri Altman <avri.altman@wdc.com>
+
+Hi Stanley,
+
+Earlier, I have one similar patch for this, but it does more than this.
+Please check the mail I just sent.
+
+Thanks,
+Can Guo.
+
 > ---
->  drivers/devfreq/devfreq.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/scsi/ufs/ufshcd.c | 15 ++++++---------
+>  drivers/scsi/ufs/ufshcd.h | 11 -----------
+>  2 files changed, 6 insertions(+), 20 deletions(-)
 > 
-> Changes since v1:
-> * Add fixes and cc: stable, drop empty line in message.
-> Link to v1: https://patchwork.kernel.org/patch/11433131/
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index 314e808b0d4e..b4988b9ee36c 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -6501,6 +6501,7 @@ static void ufshcd_init_icc_levels(struct ufs_hba 
+> *hba)
+>  {
+>  	int ret;
+>  	int buff_len = hba->desc_size.pwr_desc;
+> +	u32 icc_level;
+>  	u8 *desc_buf;
 > 
-> I'm not sure this meet that stable kernel standard of "real bug that
-> bothers people" because all this fixes is a spurious dev_warn on device
-> removal. But Sasha Levin's script seem to collect a lot of low-priority
-> fixes anyway.
-> 
-> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index 5c481ad1cfc7..6fecd11dafdd 100644
-> --- a/drivers/devfreq/devfreq.c
-> +++ b/drivers/devfreq/devfreq.c
-> @@ -703,17 +703,17 @@ static void devfreq_dev_release(struct device *dev)
->  		dev_warn(dev->parent,
->  			"Failed to remove min_freq notifier: %d\n", err);
->  
->  	if (dev_pm_qos_request_active(&devfreq->user_max_freq_req)) {
->  		err = dev_pm_qos_remove_request(&devfreq->user_max_freq_req);
-> -		if (err)
-> +		if (err < 0)
->  			dev_warn(dev->parent,
->  				"Failed to remove max_freq request: %d\n", err);
+>  	desc_buf = kmalloc(buff_len, GFP_KERNEL);
+> @@ -6516,21 +6517,17 @@ static void ufshcd_init_icc_levels(struct 
+> ufs_hba *hba)
+>  		goto out;
 >  	}
->  	if (dev_pm_qos_request_active(&devfreq->user_min_freq_req)) {
->  		err = dev_pm_qos_remove_request(&devfreq->user_min_freq_req);
-> -		if (err)
-> +		if (err < 0)
->  			dev_warn(dev->parent,
->  				"Failed to remove min_freq request: %d\n", err);
->  	}
->  
->  	if (devfreq->profile->exit)
 > 
-
-Applied it. Thanks.
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+> -	hba->init_prefetch_data.icc_level =
+> -			ufshcd_find_max_sup_active_icc_level(hba,
+> -			desc_buf, buff_len);
+> -	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",
+> -			__func__, hba->init_prefetch_data.icc_level);
+> +	icc_level =
+> +		ufshcd_find_max_sup_active_icc_level(hba, desc_buf, buff_len);
+> +	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",	__func__, icc_level);
+> 
+>  	ret = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_WRITE_ATTR,
+> -		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0,
+> -		&hba->init_prefetch_data.icc_level);
+> +		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0, &icc_level);
+> 
+>  	if (ret)
+>  		dev_err(hba->dev,
+>  			"%s: Failed configuring bActiveICCLevel = %d ret = %d",
+> -			__func__, hba->init_prefetch_data.icc_level , ret);
+> -
+> +			__func__, icc_level, ret);
+>  out:
+>  	kfree(desc_buf);
+>  }
+> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+> index 5c10777154fc..5cf79d2319a6 100644
+> --- a/drivers/scsi/ufs/ufshcd.h
+> +++ b/drivers/scsi/ufs/ufshcd.h
+> @@ -402,15 +402,6 @@ struct ufs_clk_scaling {
+>  	bool is_suspended;
+>  };
+> 
+> -/**
+> - * struct ufs_init_prefetch - contains data that is pre-fetched once 
+> during
+> - * initialization
+> - * @icc_level: icc level which was read during initialization
+> - */
+> -struct ufs_init_prefetch {
+> -	u32 icc_level;
+> -};
+> -
+>  #define UFS_ERR_REG_HIST_LENGTH 8
+>  /**
+>   * struct ufs_err_reg_hist - keeps history of errors
+> @@ -541,7 +532,6 @@ enum ufshcd_quirks {
+>   * @intr_mask: Interrupt Mask Bits
+>   * @ee_ctrl_mask: Exception event control mask
+>   * @is_powered: flag to check if HBA is powered
+> - * @init_prefetch_data: data pre-fetched during initialization
+>   * @eh_work: Worker to handle UFS errors that require s/w attention
+>   * @eeh_work: Worker to handle exception events
+>   * @errors: HBA errors
+> @@ -627,7 +617,6 @@ struct ufs_hba {
+>  	u32 intr_mask;
+>  	u16 ee_ctrl_mask;
+>  	bool is_powered;
+> -	struct ufs_init_prefetch init_prefetch_data;
+> 
+>  	/* Work Queues */
+>  	struct work_struct eh_work;
 
 _______________________________________________
 linux-arm-kernel mailing list
