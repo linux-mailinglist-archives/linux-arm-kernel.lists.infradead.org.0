@@ -2,62 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 880361867C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:22:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 769271867AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:17:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NzCFX1vohLskaSypdPvKabSoav96qHhvgHJ6kzQjzJo=; b=nmAfZDKFCBh6Xz
-	4AK8p+WBHXsGANdwg2RuV+v7ICDspjJ6nakvAFLhr860EmHVuZGOl97XJOoEccsfuGi3Y1jGO1mWK
-	odsjICXwfx4IvCQHUHYvwBpTkktZ6Hw7Ej9hDuFDJO92/W7DV/gAwWLgtFKN2GzSaNhgo3rlGxm5P
-	Jc6B4XocdSWAyaVqiiknjbvj2OYgKQ3P5JX2W5hNMxzITTqsShVndS6LwdFllfIN1GdYSyzdsqvtg
-	L5eShVc0IWd0Nl03SLbUIgiBts8J0M3ZOOiyy4AU8N0k+niN0iAFWwyVrvOIboXlF+ui2+Oo9I4rB
-	EQoSZtOHNqg+CzeNiUUQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jSrY7oOn6he8rXkdrAjE2s81WEO7OzCwUajAJt/m6UU=; b=OlB5fnf/EytVRa
+	LjTzjfccdivtn+MET5nghZ6KYSSxJ3sHdg/0/Z/ogZfgxLT64JscgUCa7Un8fY0PgucG7qwug8HC1
+	xPf1dL2Y5ynmOJ2HQ16HUDoH9cYr8oPOfUhb0Xks798HKe3bf2tb/B34YxHE3lQlCXUlCkbkrrvSg
+	lv3RHyc6kIUGOz0WXhS+G4E94ealYJ9pyFg7M49dhPQnAQy/ObI14Mcr1xy9gHzOqdekPfQHtlls4
+	zerFnc6a7fGumrMDARki52aJcJG2PDDQ91IalpRRDLqd7B/8j+J33YnrCyjYkC51807ZmCe7aIbq5
+	jR9OoobFKcsWNItmh5sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDlxC-000139-3b; Mon, 16 Mar 2020 09:22:34 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1jDlsD-0006dU-Rj; Mon, 16 Mar 2020 09:17:25 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDlx2-00012S-9C
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:22:26 +0000
-Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
- [86.202.105.35])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id F1229240035;
- Mon, 16 Mar 2020 09:15:41 +0000 (UTC)
-Date: Mon, 16 Mar 2020 10:15:41 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Message-ID: <20200316091541.GI4518@piout.net>
-References: <20200316005219.GD17221@dragon>
- <AM0PR04MB44819E4A9E027F1555C33D0B88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200316030744.GC17221@dragon>
- <AM0PR04MB44817A48746601EADA4E06BC88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200316033447.GE17221@dragon>
- <DB3PR0402MB3916DA9F0F175B9D2E9E684FF5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20200316084056.GG4518@piout.net>
- <DB3PR0402MB391663DB37A8D241092AD708F5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20200316090053.GH4518@piout.net>
- <DB3PR0402MB391683A05820920158DFDA77F5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ id 1jDlrt-0006XX-DB; Mon, 16 Mar 2020 09:17:06 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02G9GuXB130408;
+ Mon, 16 Mar 2020 04:16:56 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584350216;
+ bh=6yg8oYcf8z+TgHLkRvASbzJeF/TeWeUnldQ/HEB/VzY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=oqoFvlroiHTwRAQjAQk5K1uHkpGXSXrkzLn/mUmI+hTBHfh5/UhMPqZDPhlpXVFGk
+ AZHxW6DQKnqtrm5qv9eNc/LayFM3fk7AwmeiRwSnUFDis1Q03OtedRCjwSw+k+ILH/
+ QNXEDRSeH+526Yot3arzKPnhzAkHlhANAX80gAxs=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02G9Gu0C025899
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 16 Mar 2020 04:16:56 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
+ Mar 2020 04:16:56 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 16 Mar 2020 04:16:56 -0500
+Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02G9Gnel097875;
+ Mon, 16 Mar 2020 04:16:52 -0500
+Subject: Re: [PATCH v2 04/25] mtd: spi-nor: Move SFDP logic out of the core
+To: <Tudor.Ambarus@microchip.com>, <bbrezillon@kernel.org>
+References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
+ <20200313194130.342251-5-tudor.ambarus@microchip.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <4d451278-7e09-f824-7a7f-1d81c33021a5@ti.com>
+Date: Mon, 16 Mar 2020 14:47:28 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB391683A05820920158DFDA77F5F90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <20200313194130.342251-5-tudor.ambarus@microchip.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_022224_457815_85256EE4 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200316_021705_491313_DF47310B 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,68 +91,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "ronald@innovation.ch" <ronald@innovation.ch>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: richard@nod.at, boris.brezillon@collabora.com,
+ linux-mtd@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ miquel.raynal@bootlin.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/03/2020 09:08:53+0000, Anson Huang wrote:
-> > Why do you absolutely need to compile them independently? From a code
-> > coverage point of view, having:
-> > 
-> > COMPILE_TEST=y
-> > CONFIG_IMX_SCU=y
-> > 
-> > is enough to select and compile the remaining drivers.
-> 
-> What I meant is for below case, like using other arch config which does NOT have
-> CONFIG_IMX_SCU selected, ONLY with COMPILE_TEST selected, adding stubs for
-> IMX_SCU APIs can fix such scenario.
-> 
-> COMPILE_TEST=y
-> CONFIG_IMX_SCU=n
-> 
-
-Why is that an issue? If they don't have IMX_SCU selected, then the
-other SCU driver are not selected either, having stubs doesn't change
-that you will have to select at least one option. Please explain what is
-the issue that is not solved here.
 
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+On 14/03/20 1:12 am, Tudor.Ambarus@microchip.com wrote:
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> It makes the core file a bit smaller and provides better separation
+> between the SFDP parsing and core logic.
+> 
+> Keep the core.h and sfdp.h definitions private in drivers/mtd/spi-nor/.
+> Both expose just the definitions that are required by the core and
+> manufacturer drivers. None of the SPI NOR controller drivers should
+> include them.
+> 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+> ---
+
+Reviewed-by: Vignesh Raghavendra <vigneshr@ti.com>
+
+Regards
+Vignesh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
