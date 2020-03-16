@@ -2,79 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A41521866E4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:48:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9B831866F0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 09:52:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I6ednsMpDw95DfZZZ8/6iw1pN72fxdG5YQT5Bt/IWD4=; b=eGh6lXag6/Sjiq
-	FDkwUuiIWAjq9oFjaUr9M+8Pmab0+pMtt03TI3/K9azZUnatL4aTJBaQz++OPxvtHHQeywPDazotW
-	nZhUOLPTQBEH24mW42iCyhVkXmOEXAXv7+Kxno5pTcpGl4K8eC6KI225F6CpWHZA60plxbEZ5sDY1
-	Z9WE3FafNdEFqHN1rWWaytSJqTmvnRdnnalRwfvqjVbFNcZeCE1T6D1bDPuJvn26h72W8VFBWZgSJ
-	N46gGAT1/SOGRphydHthjv2RvikFSy61nL6sU2w9WzYQeWn0f1lwAkCbKzZ53QKVoDfsIi94SOPHi
-	JqXoOrecQsVAr03dBYVw==;
+	List-Owner; bh=m68mfctFZj2yqD1nQjMaS0NqCudiWZiD/AZmqmbJsRI=; b=tBuLZpxh7pM1CD
+	hUtzt9VEmLluAoKWZWpITqk0K0FHT+CfbfoGurnszIoMzYVXdUDGJ3A4fENW2G6I7H6dGwRciADaE
+	dzkp1ZNTw9IjLHPpq1LNuBVLjYQc0hC3zcVUzX2tXlJG6rDMa5qLnHObq6MRteAUEXP6kxEHx5Ivy
+	I9ptsaXYwIriD8kDeDLxU0XeF5N/27laQo4T1fFDxO7cfADuSEthlK5ZkF4/UWB0OYMeU5z0Jg5PI
+	I3LuWv6quZQqzn1d29Pvv9qLdqMtpu5CAMYFOFAnGF1Nb9WqKpg+TUY+1lZxrUKp1gbnuEuuav2I5
+	2aTT/Oow/fGwf1KCi+bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDlQ9-0006e1-Ci; Mon, 16 Mar 2020 08:48:25 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jDlTv-0008NJ-1c; Mon, 16 Mar 2020 08:52:19 +0000
+Received: from mail-eopbgr150057.outbound.protection.outlook.com
+ ([40.107.15.57] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDlQ0-0006dQ-Sc
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:48:18 +0000
-Received: from mail-qk1-f175.google.com ([209.85.222.175]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1Mnq8Y-1jftNU0zeM-00pONc for <linux-arm-kernel@lists.infradead.org>; Mon,
- 16 Mar 2020 09:48:14 +0100
-Received: by mail-qk1-f175.google.com with SMTP id h14so24729172qke.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Mar 2020 01:48:14 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ2+VYh52iVRCX4lWRprNzorPVkVhLVNLNqdAxhZP52aOzEcBu6L
- zpYOlZZ4X8IX84CbkGw7PZskXfZDXJ8J+/csjec=
-X-Google-Smtp-Source: ADFU+vvOY/BGxo7kSvcD97t4Z1vQUfkOL22qs/tI6hULqTssDTO2tyghsLEAxf/j8ykiL2awuFtXPZNlBwPgv73H9fE=
-X-Received: by 2002:a37:b984:: with SMTP id j126mr23783692qkf.3.1584348493133; 
- Mon, 16 Mar 2020 01:48:13 -0700 (PDT)
+ id 1jDlTk-0008MZ-HI
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 08:52:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EBi9wcMEV+apFn79Cknz49AEve4Mawbcgi6U4kllTA4h8FrXY34pEPlZ4S1cf3oA+FHxm43xJp2xMrOAOdn+6tziU2Ow/Bbcnqnfm+M9HVMI3Du+LITisyC1Ebeq5k2uEP41S2o+Fe+xuI7USnY1Zr74iwSGjHcP18iw2tFQRr4ryeYfdF+w2Q+Z0WWrjMgLjZiBVECSGz2wEB3ZQ9rY8YHGg0c6UGlSNJ7EkvtJraTP4HTxaD7ZqzBg7yDjlpE2d8OsGENmHduJcMBkzmliGtFy5m0Zj4E30oBZ2N7vqQjku7fslT2iuzi7xCyUhOmg6kYwJMegxFVDOpKLz3vd5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fyqpx1hArPMlgTojJG+OAiwvwbY9dFbVXdyvn1x5VmQ=;
+ b=mAazhZjSfD9nw7I1+wNJ7y4vRG1+VI+9nyKTFK+BVb0002EJVPbL+U2P7arSktm04Yebq/o98xi3OsdsaoCA6tbnDL6fXNL/2naPh5UxXj1HgOWBnC+FYbI/sDmXuno4m427e5JxFmZLBvH+Dw9jKTa0FaC90+Pp0T+GSlF9WJUqNT9PULK0aO6a79CcLzShQuPrs4eDGDRJY5dWT1LEHUPIXc4Lfer0aANVVI2uZabVOnW7BdbgoHfXaWxcAXP3iOmrPIwFhxip51Ozl/na10zUK4WuFzr98WalAyGNwqICz54izxVafchyBHRcW77awfTjlGlkRcE0cVzDKc/FLw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fyqpx1hArPMlgTojJG+OAiwvwbY9dFbVXdyvn1x5VmQ=;
+ b=XKaQ1tmdUlK64lPGG0JsKZTFWiAvZQRLoymO3KTkWOAIh3JXCIlCTt1DLiloNO30IIQHKRIeIWXfeZ7er9Yy4K2RyxJ1iOrcJUbbWcSB+eEWgtCqU4hVwjyrNi6A/afQpgRlVHNmpLARfJe1MOi5kifsGkM6FAYqzyRlz4dbv4Y=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB4529.eurprd04.prod.outlook.com (52.135.152.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.18; Mon, 16 Mar 2020 08:52:01 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::8cb2:6bfa:b5bc:2ae3]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::8cb2:6bfa:b5bc:2ae3%7]) with mapi id 15.20.2814.021; Mon, 16 Mar 2020
+ 08:52:01 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, Leonard Crestez
+ <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Subject: RE: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
+Thread-Topic: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
+Thread-Index: AQHV6Ar2+ns546NUFU6ZA9rx2mhDYqgsJ6+AgB7nvLA=
+Date: Mon, 16 Mar 2020 08:52:01 +0000
+Message-ID: <AM0PR04MB42111CF54405CD3492248AF580F90@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <cover.1582216144.git.leonard.crestez@nxp.com>
+ <10e97a04980d933b2cfecb6b124bf9046b6e4f16.1582216144.git.leonard.crestez@nxp.com>
+ <158264951569.54955.16797064769391310232@swboyd.mtv.corp.google.com>
+In-Reply-To: <158264951569.54955.16797064769391310232@swboyd.mtv.corp.google.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 4e7cd80c-9c43-4b07-9893-08d7c9874b47
+x-ms-traffictypediagnostic: AM0PR04MB4529:|AM0PR04MB4529:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB45293DE16436EFBD668AB22680F90@AM0PR04MB4529.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 03449D5DD1
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(39860400002)(366004)(346002)(136003)(376002)(199004)(55016002)(9686003)(26005)(478600001)(86362001)(2906002)(71200400001)(6506007)(4326008)(7696005)(66446008)(76116006)(44832011)(186003)(81156014)(8676002)(81166006)(5660300002)(54906003)(316002)(110136005)(64756008)(66476007)(66556008)(66946007)(8936002)(33656002)(52536014)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4529;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: O6Ni06P7OtXj/NWsEI8iO6W3n/fbW37AUiE48LlFlrHws04Ygeorb0FCQZqpiaX+bTW5F3mC0vPoI6vTgqlWfkju1bS7JQUJTNRGiTMzQgEkzndCfvcnU6pGXYexI9vAdyMYC9Eg8en1jX7jx9EtraKwkGFfWq/QnsDxjUI7cxCDBjZ4cMpsCPb0grKN+3o9w+n4SFIVrOTtO9fGKJNWIjzIvVRVLm3Q3RXXNYGxUA62ZIZ5iMvSCSBYZnXEZrKf+x78cZHG812VsQpmAymV1D02o5o1qaYCoo5wX3h/CAcvY5UJsm1Hy8u3QPGjP9XkC2NPaHUF8Zjzbx1T7GJ0+ffcCsUynEsz14wiq/5/HY4grC27EpzKYVTwWqmosIY6QpwAtx22uZrVCk9tITvBCzZEOJO3HuAFaFw0vi5Y4uyO84NmXNGRB3POfai/2mOY
+x-ms-exchange-antispam-messagedata: cNqN8oyw9Xez5vG8vMvB+Qc/7U0dZEut2IksI7/87gUCVBpNhm6KaKo3m+8eft/LSbXqQ4zDCU0bPJvCUmBoFMZBev37ISjXdvD4ZHEW+GiMFES3I048XfVwymYGBmNaLLnW58GYm8djjpvr+hBLRA==
 MIME-Version: 1.0
-References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
- <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
-In-Reply-To: <1584200119-18594-2-git-send-email-mikelley@microsoft.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 16 Mar 2020 09:47:57 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a1GFDUY4mXzst4Ds+S-4SGXso6-jfpsYyy-eHyceAC1Zg@mail.gmail.com>
-Message-ID: <CAK8P3a1GFDUY4mXzst4Ds+S-4SGXso6-jfpsYyy-eHyceAC1Zg@mail.gmail.com>
-Subject: Re: [PATCH v6 01/10] arm64: hyperv: Add core Hyper-V include files
-To: Michael Kelley <mikelley@microsoft.com>
-X-Provags-ID: V03:K1:hWOXq5xlvpxAIsb2kXyLZ/U3JGfURweQ7EzzQbbJ3+CidiF1SZj
- gNvHSViSqSqWcg2XL0MQRfiOE5NvITl7ipJSsBN8ZE6uzEdkwNFHh44QWBI+nqzIGZNwAMx
- ZsEwXp8j8za18FOSaWz0aOXfjK8NVoB6eIg4Y+AQAubhrFeuXamyyHxz5zjtE2xrvBfliqa
- +AKcGH2oFexicJcAaCAzA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:K3FzP58SzoE=:ctCaV8/JGzoX+A9sYTg/p8
- cp940fdDcwMXRPpMaHAU8GVlba7fMYADMQ1dJeeZcoTxixdUu6gsf73gboNhKJJjeuNo6Ra5J
- +XcTGEHSpLObAeYBHbm5LVFnRhIGGU820ov/f3w2CRYgFE0KYhN46llforXy8FM+M0PzM7LdK
- nR03/ne9natWSpXI45ytlVjRkDpzr/WOoPNLOFpRGsmD22yMH1ztNDLAkZ/RRJt0cjNmsPiGt
- uAO1NXajNarAjcB2J+il/sAQ44ZKs0aKl0/+sQTmbC/8e/fjbAh2AUp8ddqCF7Z1C9jrJxtGx
- bBcNeFEODeme0DrAW8Hn7MMmHH95ZpACrNPnHgVi4i1QVf9SdTasTPrtJQc+10X2w5V9PqCkZ
- B/DdCRtJtlIjiz/BUKpXKrEpElQjoIqFX2g1c0cDWdrJx5raggN33zHTrLy4Zk6HfQFOUfWAm
- bO5JyMtfTq1hX7uge+M5mbHLTUca5hmEsZIJ8iw0/VwqzKVXVtcl90zh1n7TT+bElyQ+pE1BN
- VsmUpHLbLuUIYNdgG7/Z4pz9O+iWkRPX5VXTzDCgzUZbKlwfyTC1q/VU0MUVY2iCOVZZVjEkt
- PPL8xyfgffgTgNkUGatZdLhx5gmKE8GnYP8wQZmRoRR/cCou7QkX3rSqbF5XvTTSUZtjcUfyQ
- jZXMzeruBuBxESXNAmK3jsSpVrBAjiuQPp3vEqc2TfTN2LpaIOoeXUW8kSc+VCa+E46SoWKL/
- QuXYOjfbDlEPUAr3hNEnNbvbuluf11SHJv6KZEekSEyoMT8oSB+58CsGEWpekDdCTiFocnQ9b
- n9doa6OGbMGAlzHxb+x5Xf3w8Fxu0kpIBaZa17bAXxKKYLbYZI=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4e7cd80c-9c43-4b07-9893-08d7c9874b47
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Mar 2020 08:52:01.6016 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qHMW7OkFyEiq82vHOfaIu6+pHaDzpHFLYfOyUoW/WtlONxCD2ZKXpF7x6GW4vmfv4HDSaWKidYytLlydHBo34g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4529
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_014817_221095_0460EFEB 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_015208_578301_7F8DF140 
+X-CRM114-Status: GOOD (  28.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.15.57 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,102 +123,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-arch <linux-arch@vger.kernel.org>, linux-hyperv@vger.kernel.org,
- linux-efi <linux-efi@vger.kernel.org>, Boqun Feng <boqun.feng@gmail.com>,
- gregkh <gregkh@linuxfoundation.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Jason Wang <jasowang@redhat.com>, sunilmut@microsoft.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- marcelo.cerri@canonical.com, olaf@aepfle.de, Marc Zyngier <maz@kernel.org>,
- Andy Whitcroft <apw@canonical.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- "K. Y. Srinivasan" <kys@microsoft.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stefan Agner <stefan@agner.ch>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Franck Lenormand <franck.lenormand@nxp.com>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Mar 14, 2020 at 4:36 PM Michael Kelley <mikelley@microsoft.com> wrote:
+> From: Stephen Boyd <sboyd@kernel.org>
+> Sent: Wednesday, February 26, 2020 12:52 AM 
+> Quoting Leonard Crestez (2020-02-20 08:29:32)
+> > The imx SC api strongly assumes that messages are composed out of
+> > 4-bytes words but some of our message structs have odd sizeofs.
+> >
+> > This produces many oopses with CONFIG_KASAN=y.
+> >
+> > Fix by marking with __aligned(4).
+> >
+> > Fixes: fe37b4820417 ("clk: imx: add scu clock common part")
+> > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> > ---
+> >  drivers/clk/imx/clk-scu.c | 6 +++---
+> >  1 file changed, 3 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
+> > index fbef740704d0..3c5c42d8833e 100644
+> > --- a/drivers/clk/imx/clk-scu.c
+> > +++ b/drivers/clk/imx/clk-scu.c
+> > @@ -41,16 +41,16 @@ struct clk_scu {
+> >  struct imx_sc_msg_req_set_clock_rate {
+> >         struct imx_sc_rpc_msg hdr;
+> >         __le32 rate;
+> >         __le16 resource;
+> >         u8 clk;
+> > -} __packed;
+> > +} __packed __aligned(4);
+> 
+> Sorry, this still doesn't make sense to me. Having __aligned(4) means that the
+> struct is placed on the stack at some alignment, great, but it still has __packed so
+> the sizeof this struct is some odd number like 11
 
-> +
-> +/* Define input and output layout for Get VP Register hypercall */
-> +struct hv_get_vp_register_input {
-> +       u64 partitionid;
-> +       u32 vpindex;
-> +       u8  inputvtl;
-> +       u8  padding[3];
-> +       u32 name0;
-> +       u32 name1;
-> +} __packed;
+> If this struct is the last element on the stack it will end at some unaligned address
+> and the mailbox code will read a few bytes beyond the end of the stack.
 
-Are you sure these need to be made byte-aligned according to the
-specification? If the structure itself is aligned to 64 bit, better mark only
-the individual fields that are misaligned as __packed.
+Hi Leonard,
 
-If the structure is aligned to only 32-bit addresses instead of
-64-bit, mark it as "__packed __aligned(4)" to let the compiler
-generate better code for accessing it.
+Can you construct this case to see if we can reproduce the issue as pointed by Stephen?
 
-Also, in order to write portable code, it would be helpful to mark
-all the fields as explicitly little-endian, and use __le32_to_cpu()
-etc for accessing them.
+Regards
+Aisheng
 
-> +/* Define synthetic interrupt controller message flags. */
-> +union hv_message_flags {
-> +       __u8 asu8;
-> +       struct {
-> +               __u8 msg_pending:1;
-> +               __u8 reserved:7;
-> +       } __packed;
-> +};
-
-For similar reasons, please avoid bit fields and just use a
-bit mask on the first member of the union.
-
-The __packed annotation here is not meaningful,
-as the total size is already only a single byte.
-
-> +/* Define port identifier type. */
-> +union hv_port_id {
-> +       __u32 asu32;
-> +       struct {
-> +               __u32 id:24;
-> +               __u32 reserved:8;
-> +       }  __packed u;
-> +};
-
-Here, the __packed annotation is inconsistent with the use
-in the rest of the file: marking only one member of the union
-as __packed means that the union itself is still expected to
-be 4 byte aligned. I would expect that either all of these
-structures have a sensible alignment, or they are all
-completely unaligned.
-
-> + * Use the Hyper-V provided stimer0 as the timer that is made
-> + * available to the architecture independent Hyper-V drivers.
-> + */
-> +#define hv_init_timer(timer, tick) \
-> +               hv_set_vpreg(HV_REGISTER_STIMER0_COUNT + (2*timer), tick)
-> +#define hv_init_timer_config(timer, val) \
-> +               hv_set_vpreg(HV_REGISTER_STIMER0_CONFIG + (2*timer), val)
-> +#define hv_get_current_tick(tick) \
-> +               (tick = hv_get_vpreg(HV_REGISTER_TIME_REFCOUNT))
-
-In general, we prefer inline functions over macros in header files.
-
-> +#if IS_ENABLED(CONFIG_HYPERV)
-> +#define hv_enable_stimer0_percpu_irq(irq)      enable_percpu_irq(irq, 0)
-> +#define hv_disable_stimer0_percpu_irq(irq)     disable_percpu_irq(irq)
-> +#endif
-
-Should there be an #else definition here? It helps readability
-to have the two versions (with and without hyperv support) close
-together rather than in different files. If there is no other
-definition, just drop the #if.
-
-     Arnd
-
+> 
+> I see that the calling code puts 3 as the 'size' for this struct in clk_scu_set_rate().
+> 
+> 	hdr->size = 3;
+> 
+> That seems to say that the struct is 3 words long, or 12 bytes. Then we call
+> imx_scu_call_rpc(), passing the pointer to this struct on the stack and that
+> eventually gets into imx_scu_ipc_write() calling
+> mbox_send_message() with u32 pointers.
+> 
+> 	for (i = 0; i < hdr->size; i++) {
+> 		sc_chan = &sc_ipc->chans[i % 4];
+> 		ret = mbox_send_message(sc_chan->ch, &data[i]);
+> 
+> So we've taken the 11 byte struct (data in this case) and casted it to a
+> u32 array with 3 elements, which is bad. This is what kasan is warning about.
+> Adding aligned sometimes fixes it because the compiler will place the next stack
+> variable at the naturally aligned location and thus we get the one byte padding
+> but I don't see how that works when it's the last stack element. The stack will
+> end at some unaligned address.
+> 
+> The better solution would be to drop __aligned(4) and make a union of the
+> struct with whatever size number of words the message is or do a copy of the
+> struct into a u32 array that is passed to imx_scu_call_rpc().
+> 
+> For example:
+> 
+> 	struct imx_sc_msg_req_set_clock_rate {
+> 		union {
+> 			struct packed_message {
+> 				struct imx_sc_rpc_msg hdr;
+> 				__le32 rate;
+> 				__le16 resource;
+> 				u8 clk;
+> 			} __packed;
+> 			u32 data[3];
+> 		};
+> 	};
+> 
+> If the union approach was used then each time imx_scu_call_rpc() is called we
+> can simply pass the 'data' member and make the second argument 'msg'
+> strongly typed to be a u32 pointer. kasan should be happy too.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
