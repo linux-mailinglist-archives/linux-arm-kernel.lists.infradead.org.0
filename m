@@ -2,109 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B5D5186398
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 04:16:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F68C1863A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 04:19:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8K0ruoPJBqSgnFAaWChLxmEBSa3D6isK9S3sOEWK5U0=; b=m7HELJBZdVxszR
-	RfC6bmltQEng3RQ82WCSguC3GLOtlPYfz03D4vF7BKRPAp5b/5DWcb/6+ktRYG+fQa1ZGs0OWa/6u
-	kjdqJ88Q/6zEqqBtNQ2WPJ2IgXOGJWjkyA+wTIN/iShYNVvXskhAml0pZVBz5MpRbQJK+ptZh3Shl
-	otTDn72P2XZ6ow1YcFoa2zCv9YhgIlTONr42ItFo8WTxODX+kww00x2zpAN874ROKPI3+n61sui65
-	VAAG/SPtMkH7N/TVRx/bnOWcaCotAFMW0q2ybBXgInwKztg52UEpBvr1S2bvBOYW9BjqdRqLtOdmv
-	yik7PfZ5DjjcarONw5mg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cUqHTiKLiP9ywQb0tqd5Uf7nlPzxTfCfZp5Yclm9NmQ=; b=tj765j9UVrkDUZ
+	jZCH8+E8B687HXgKDJ4jSEU8T+DAm9VKBhOuuJN9x04ewOUwXdZMonxQVMFUuq5DakM+UPlGnbd4J
+	JiQm9/Mp2oMWBvqlrHPEIjD7N2hFv+HkX7700ZKxL+VXYU0ycHcS2BVCIQp+YazYf5B6T3fMS/cy4
+	pdyyRmcHPD69hciJz4DJQ/4fCKRfpPatgoh2dtdHwWHNO9qpNrYQDbbVrZsQwEuu0cYHhZDrhywvU
+	Sn/39s3Ah+1et9R8ROtnTIkkQgqp4tSozY/GkzybMrtJepppvM2Hf7bj6sjBFHwHnPHscy21CAKjL
+	78tWuBzmzXPscMDogAkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDgET-0006UX-0N; Mon, 16 Mar 2020 03:16:01 +0000
-Received: from mail-eopbgr150049.outbound.protection.outlook.com
- ([40.107.15.49] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jDgHK-00076X-DI; Mon, 16 Mar 2020 03:18:58 +0000
+Received: from mail-am6eur05on2062.outbound.protection.outlook.com
+ ([40.107.22.62] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDgEL-0006Tw-2Q
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 03:15:54 +0000
+ id 1jDgHC-00075W-HC
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 03:18:52 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fFErWGu852fv//9sgQIpLbZNgLE8Cdw9SOj/l2fdCNF0FVkCLIRAHQijCrWhTo+jjKBwxQNCllxagSuoclL5XmklekVpwAUkdtpEqCKCBJ+o40CE2XfeCwjZdqHEJe87XuThTtg5icu6H2mtaRlVCSasatH1jdUsnn1it2nmwMNnRLY8KV4TH8YFjL3AtxsgHYEhFvQao4RJLF+HtwYxH2p9uq+mib8kXoUUq6aFCXklnTLOLbx6BHqxSZXDMFkB1puXKRhoOxyVbVFGEZ2Tl0O63AcvrvzK7/J6oYoCgdqwjRUnEpnasgMaPVuEWJTVN5IRtnTHO7FFAEhkLhEe+w==
+ b=jj1mSliTuLVmiYRtDfdp+LUH2w715J7OE4edPOpW39Xp22wD1bXIeeD0W0/LiuuNrOK3PY88rOwYDh42/QgYQfaUdE0YADhHwilbarwaZpQUysu3m2X3LRSKYFcXqPQYzXdb6pFs90PrUdaeonQXxMzn8B8CNeCV0U3mhhK5ie7GLZ/7xbYdeM/MxGyAQgnlrXP7XmsRHs3fZebY7jnrpUtvGi0yohBFMGmKU0X471S6OG5ZzANUHsbFIUAetKEpKCnSE0PJ05vFsISx+5gob0A2dvCFO33KgDG5YICObExl2h1Eq3R/c6o8Pjuec4MQynaQTqNdY6BOLabfo6xgjg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CFpcJfWftyCyHL3ntM+JubuiOiojkiOMfrs1o5LdxuE=;
- b=aXQ3sIL7VfHIAam2uqHLUF12lFLbHIrEufM62v+HXo/DvPoogRs0Et4hgPp84kHy4qzJSqJRf26ZTVikr0vy3gGI7rdpYA/hXbcWXUSTfOqP0YsZ1zdbQ3KBLPKrkR/D11Uv5ptg8l6bqvJdMZlJKklwLU/R4+WYCfjKdwvDhDsTHeyiZoCtlPvbOg2ywpNngXUKUduNelKJQ5fCNOdp6xeDIO/L4Ygr0lnbPC8XtXZnvLMOrPU5dHOh5C96wQAG13HTuX6+8ZiIzoY5ohyfmrbIQvTIbXU04SS7BkyC2O5Ca0JwE45kXWTgbQx1hO+a8meD2CZOHujlFgA+UAlRgA==
+ bh=TahVAyBCJPLtZmEHYqzD5raKzU7F/TiG/rDAo4s/h4Y=;
+ b=k2si+/UxbzsXgpxitS1JhU6m5ikA5eWBwiPnsik5jKviHVgjoZL3leVUAHq2KhWJDh6kV9TqXNdepo8+AWIuM0hVUH1X2+AJy8vkrPVNl1kXSwh2Wx2PCrOSIFqaH9qMCj5jjOCfY4pZfmxvwdHduKqRQSdX0KBAAG4Z5PTGiWaNlqRwYTOyYgflYzNp60bPEq5/9n9taYr5u5jbaGbvK+VvumnTmhBadyKH+fHqeVpU8tJ6OIPqd8ygWq2z0Fzbh+lsfwBkCUUChsadDD/8Kydh9vb3uVgGm+U5ZIy8cpZzdsKlKbWc2sxDfGi3LgkEPtzdj1eTIMz7h30XAWHfeQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CFpcJfWftyCyHL3ntM+JubuiOiojkiOMfrs1o5LdxuE=;
- b=hEyqCr1FD+GF6YOU6/fuJfr/vAULhERjWYO+fAUHPqY9MOb6Iy2NQOCXmtfd/PJ2VgKfHWobLLWLYhOEbvW9ec/XPOonG60JjsXagmK1AhlQicp1jJnv4Lr1V4Jcp//1cfK4OPVp7Lv8o2GIM73v1KfWXuGr89tvSy89FCfTlf8=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
+ bh=TahVAyBCJPLtZmEHYqzD5raKzU7F/TiG/rDAo4s/h4Y=;
+ b=hIGUPv4PBCI8THgjXlEEI/t9DKggGPCTDxiJy/WMk8YEcBLiq9uEqN+6TBHs0ihVmhLI+LbVI7qLHZmCGGbnNq4S7yeSglXa9eBWqYJ2vLskPQPY6JpFf7b2voXHsq4pGDe0aUIn4Fv8mVXFHnQiir0Z7pz1weq6SrPzV0+9NUY=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB4225.eurprd04.prod.outlook.com (52.134.91.154) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.21; Mon, 16 Mar 2020 03:15:49 +0000
+ 15.20.2814.21; Mon, 16 Mar 2020 03:18:44 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2814.019; Mon, 16 Mar 2020
- 03:15:49 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org,
-	s.hauer@pengutronix.de
-Subject: [PATCH] soc: imx: drop COMPILE_TEST for IMX_SCU_SOC
-Date: Mon, 16 Mar 2020 11:09:02 +0800
-Message-Id: <1584328142-11810-1-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SGBP274CA0013.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::25)
- To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SGBP274CA0013.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b0::25) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2814.16 via Frontend Transport; Mon, 16 Mar 2020 03:15:46 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: b60b472a-ae99-4789-d3ed-08d7c958537a
-X-MS-TrafficTypeDiagnostic: AM0PR04MB4225:|AM0PR04MB4225:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB42253903013F267F80A6D59788F90@AM0PR04MB4225.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1775;
-X-Forefront-PRVS: 03449D5DD1
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(366004)(376002)(396003)(136003)(346002)(199004)(2906002)(2616005)(69590400007)(4326008)(6666004)(4744005)(66946007)(478600001)(86362001)(66556008)(66476007)(956004)(26005)(316002)(6506007)(186003)(36756003)(6486002)(5660300002)(52116002)(6512007)(8936002)(9686003)(16526019)(8676002)(81166006)(81156014);
+ 03:18:44 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: RE: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
+Thread-Topic: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
+Thread-Index: AQHV9av6lP0y7UryDUCSkdoJ2q6AXKhARRTAgAop3wCAACC+IIAABReAgAACi8A=
+Date: Mon, 16 Mar 2020 03:18:43 +0000
+Message-ID: <AM0PR04MB44817A48746601EADA4E06BC88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
+ <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200316005219.GD17221@dragon>
+ <AM0PR04MB44819E4A9E027F1555C33D0B88F90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200316030744.GC17221@dragon>
+In-Reply-To: <20200316030744.GC17221@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [121.239.103.67]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 3079320c-af88-4163-89cd-08d7c958bbe0
+x-ms-traffictypediagnostic: AM0PR04MB4225:|AM0PR04MB4225:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB42259DF9930304848B8C219B88F90@AM0PR04MB4225.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 03449D5DD1
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10001)(10009020)(4636009)(39860400002)(366004)(376002)(396003)(136003)(346002)(199004)(2906002)(33656002)(45080400002)(4326008)(966005)(7416002)(66946007)(478600001)(6916009)(86362001)(66556008)(66476007)(76116006)(64756008)(66446008)(26005)(316002)(6506007)(186003)(54906003)(5660300002)(7696005)(8936002)(9686003)(55016002)(71200400001)(8676002)(81166006)(52536014)(81156014)(44832011);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4225;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: YyAMpjpe1W5ka7bQxpUjbVPj2uAcpfzLaOKT/69CI/9KYe80gY87rOSmuj5RmzXrBix6hi5bmI09bMZCKtwwEbMSclaCVdSA9LlFardm0PuShbZpHOHuVg8yRsMJDaR3zg3FrnA8pFfAipRju/pPC8iMLQYrbnfm8rxEJlde7qyPMQ/rB1iMmJqDiOepJwOrNGgxXDFUAM4xGyXevX4h8T2zs2JZMb7YmGP5y/k96WcoVAge5GgvtNE8YdIGJ3af4NJMA3Vce6N5/qNj7WdLTyk7dRfV9CmAO5tXArSikHpjxCyf8pdmE8TQRZpYX3s97hgsJQ2u2Cqdb5dlk+3mha692LUZB/DCujdgbDtvUz9JDjy8T9gtQ2VH+dIX0h0e+XIFIO3278BK18c4tF9C/Jgvg/DSEoa288BBwjD3QCECGfiKm4mqk7jEn/kKCMDmwrqqidHoGncuZfxDbucM6s3MGxgRAPyJu80gqXwgl+63tvmc0M23iHywdSiOyB0o
-X-MS-Exchange-AntiSpam-MessageData: FvgLiG0KB60DusRGQ3RcraBisx9woOQVu7TWb2kDkv30DhGOGarwmzBUiYCQTLBHIi9t09B3RWcIF9Kk2oomSozBIXET8dDW0sIVZW4zjzqc0PGZIUZ+hH1oE1vXRFB6alXg7yY9AbcqmPQi6Gau+A==
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: lhszBBbK78BO3V+mcm3R2DagCS9i8Eg7HQUhYe0sD67IsCkxp+bq2mmww1d0faekn38Oa0JW64Eb4/0iyA2dCO7rUY+/antncpcggZWkwHZnu4FW52VKrS28+CMar7nq2/0mTuK7WksB+ht1qgdFEY6FT8ZX6H2rUS/Q0wysoWfkzi/aEGx9lBYXQhIPbm9pQ739bED3hEYBkY03M+PMrCQRd+IiuK0RSDFr4dBJ7U3dAjUVgACW07FJJlwjni+MmrGIqijNau8yln229t6ZrFVytxANS1TZ1PTTGQQlo94VqGlouG+yiSdYzFm6HHQpUOfSdx/J0VNnfQQCaCTElg/bxdtKnKgenJuDL9SJXyKwHoLhnnzl8GE7kdkC8i7WDS9todOye7sDfFnQm1S0bwmUurMrUWRq9YCtisDZb9wzlZgU9GA5kzdIADGs3ZlGV2+excsb0zu44u5LwXGrjhjGl/n7v1YWuzkylPBRmAwNcG+SVBsZGQAqThGnwcR8D6iQLlQvTrc+dDuBHldCfS00Ug/cLm4xgn5Ln0/xzeOUvfmL+w8ZzqrEBI5DSfjxoxvH/xzDoaaTd256K755XQ==
+x-ms-exchange-antispam-messagedata: keGqj13UOWaWwY1/m4PZxDB1TRNoLa1JIvLWJmAn5Dyui1SI9PiV7XY/W6LeK+gXimN0BzoI7pNkUOt1mTEUA9/iA3tl83V7DL77jr0/YIbiLcG5Elpe4ihA5+ONSVpuhN8niW0cP1ngy9JJKYbgQw==
+MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b60b472a-ae99-4789-d3ed-08d7c958537a
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Mar 2020 03:15:49.5285 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: YigBz5+szbxTznNEoja8FLF1lIZ9DRg1kvHhyrY0BDmeU4WLEzXDJ3DmMQgKvB54MWNcZmqp0KSldTZ1CaqkwQ==
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3079320c-af88-4163-89cd-08d7c958bbe0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Mar 2020 03:18:44.0945 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vBBVTlbzTHJ3ZBYP/jlTyO5iM9iLqITQVLPKka5eyc7gPbBO8b+5iMM6Nx/Ec27Ivm/vgwGMKgNnsqM+ryDJSg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4225
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_201553_114101_6F43D038 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200315_201850_575176_45371C20 
+X-CRM114-Status: GOOD (  16.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.22.62 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.49 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -112,7 +113,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,41 +124,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ Anson Huang <anson.huang@nxp.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "ronald@innovation.ch" <ronald@innovation.ch>,
+ "linux@roeck-us.net" <linux@roeck-us.net>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "a.zummo@towertech.it" <a.zummo@towertech.it>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+> Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU
+> case
+> 
+> On Mon, Mar 16, 2020 at 02:51:47AM +0000, Peng Fan wrote:
+> > Hi Shawn,
+> >
+> > > Subject: Re: [PATCH V3 1/7] firmware: imx: Add stubs for
+> > > !CONFIG_IMX_SCU case
+> > >
+> > > On Mon, Mar 09, 2020 at 01:40:18PM +0000, Peng Fan wrote:
+> > > > > Subject: [PATCH V3 1/7] firmware: imx: Add stubs for
+> > > > > !CONFIG_IMX_SCU case
+> > > >
+> > > > I have one patch pending reviewing.
+> > > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+> > > > patc
+> > > >
+> > >
+> hwork.kernel.org%2Fpatch%2F11395247%2F&amp;data=02%7C01%7Cpeng.f
+> > > an%40n
+> > > >
+> > >
+> xp.com%7C995815002e2b490791e008d7c9445133%7C686ea1d3bc2b4c6fa9
+> > > 2cd99c5c
+> > > >
+> > >
+> 301635%7C0%7C0%7C637199167574579419&amp;sdata=RM4Mtwl8LZ3ft9
+> > > 3uL3FQPcHT
+> > > > 9lPHSqBOgugozkcLvag%3D&amp;reserved=0
+> > >
+> > > I dropped that patch from my queue and picked patch #2 from this
+> > > series as the favor.
+> >
+> > I think dropping that patch might cause Linux-next build fail as
+> > previously showed, because IMX_SCU_SOC depends on COMPILE_TEST. If
+> you
+> > drop that patch, also need to drop COMPILE_TEST from IMX_SCU_SOC.
+> >
+> >  ld: drivers/soc/imx/soc-imx-scu.o: in function `.imx_scu_soc_probe':
+> >  soc-imx-scu.c:(.text.imx_scu_soc_probe+0x44): undefined reference to
+> > `.imx_scu_get_handle'
+> >  ld: soc-imx-scu.c:(.text.imx_scu_soc_probe+0x134): undefined
+> > reference  to `.imx_scu_call_rpc'
+> >  ld: soc-imx-scu.c:(.text.imx_scu_soc_probe+0x20c): undefined
+> > reference  to `.imx_scu_call_rpc'
+> >
+> >  Caused by commit
+> >
+> >    68c189e3a93c ("soc: imx: increase build coverage for imx8m soc
+> >  driver")
+> >
+> > What do you prefer? I personally think dummy functions would be good.
+> 
+> I would rather drop COMPILE_TEST from IMX_SCU_SOC.  Could you send a
+> patch for that shortly?
 
-With COMPILE_TEST, there will be build error, because IMX_SCU
-might be set to n, so drop COMPILE_TEST.
+Just sent out. One more thing, I think all drivers depends on IMX_SCU should not
+have COMPILE_TEST if we plan not to add dummy functions. I see you picked up
+Anson's patch in imx/drivers branch, please check more.
 
-Suggested-by: Shawn Guo <shawnguo@kernel.org>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/soc/imx/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Thanks,
+Peng.
 
-diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
-index 0b69024296d5..b18271e99d4f 100644
---- a/drivers/soc/imx/Kconfig
-+++ b/drivers/soc/imx/Kconfig
-@@ -10,7 +10,7 @@ config IMX_GPCV2_PM_DOMAINS
- 
- config IMX_SCU_SOC
- 	bool "i.MX System Controller Unit SoC info support"
--	depends on IMX_SCU || COMPILE_TEST
-+	depends on IMX_SCU
- 	select SOC_BUS
- 	help
- 	  If you say yes here you get support for the NXP i.MX System
--- 
-2.16.4
-
+> 
+> Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
