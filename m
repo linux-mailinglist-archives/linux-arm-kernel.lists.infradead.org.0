@@ -2,76 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3718D1864AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 06:31:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0F971864E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 07:00:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xflDD1IQU5Y0wYjNLHeRhg7QQ3MT0G+VKU3OGQM4Sx0=; b=FKn/kLky7/YkXk
-	E7iDbxfGV87aTBArL2KYMH/dS2HKkcrql+dd8RqscRo1+EyX7VMfvWQ+AQsegR7bHGApYbnSsDfe/
-	vD60hZW+JbE9u2mz6/Ecc/EvaSdEncQYBeTyHnKJB5FsbunZgH3/c0nSji3UlV44GT7v23lch5GPS
-	VwmeTCdmCmWnL8X5SZsBzBkchOtZ00nGedVE2lkKNQ+QqmV17VfkmpkC2roYMZ6rsCE/BcNmi6TH1
-	uG1uUYI4RtfdzN3mzXvDU4VY5l2rsUZjNNHmyxKErlzWUANKJNamHS55bPR7bbZh01opIsZfn/srg
-	0/iU+jovw1mn/wFn/qxg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OHme1Ez/JaFUrlcYpKuv+e3U8Bc5JyduoxGqXbNixtE=; b=Br4z4S5XaWSuBU
+	Ajq3N9N8EtIdLHb67JJwZoqNKHqBSKp57lQnX4v+e3d9FNbOT9Ac+R7s2uO1SBftTAosXVPDIVBq6
+	FMuBz50r7c4ZYs56nf+kypiWiYN+Hs0ypuOGOCer407+JLVcgVHWAopXHNgsEZxHX7sHl3o7yXQAZ
+	ZxQ2RRc6JmEslSVGfjXuQ4jE5pd99AxT6IZ66C/CXHbkaR5fE3aSf2BjF+ZAL91PnhB5T+faxGDPI
+	/mVvG9j4LknqCWlv1hf0iWacKiT4YZ92iZhX7vfuY2+dgeIArc/4+yQmkA2AHRZGJE9Hdu6dG69Lr
+	R9pFydsJfYTRz3YVUkHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDiLe-00075R-JZ; Mon, 16 Mar 2020 05:31:34 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jDinp-0007zw-3E; Mon, 16 Mar 2020 06:00:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDiLD-0006pF-Qm; Mon, 16 Mar 2020 05:31:09 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02G5V2Se082315;
- Mon, 16 Mar 2020 00:31:02 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584336662;
- bh=5iEf73wHocHaQZKGUkrQn6k0q3C4k94LKnpa9L8ABh4=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=ykUtNBcaRNRogSbVCxZhQeE3FpTh1YqV2/pgXyUPdWxyWja3JKWfGFTg9Okm5Eloq
- LVgnIPhyzjDogt7RhwAARt8ID9DvR9hQ0cImrB/BvFtixd7IaOXVEv+xKdZR3KLuFm
- WFMyrpYaNEiOWuqrg95iJ4yZWORNyArYD8hW1fuk=
-Received: from DLEE111.ent.ti.com (dlee111.ent.ti.com [157.170.170.22])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02G5V2S9085309
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 16 Mar 2020 00:31:02 -0500
-Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
- Mar 2020 00:31:01 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 16 Mar 2020 00:31:02 -0500
-Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02G5Uv4C053652;
- Mon, 16 Mar 2020 00:31:00 -0500
-Subject: Re: [PATCH v2 23/25] mtd: spi-nor: Get rid of the now empty
- spi_nor_ids[] table
-To: <Tudor.Ambarus@microchip.com>, <bbrezillon@kernel.org>
-References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
- <20200313194130.342251-24-tudor.ambarus@microchip.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <d0166c42-159f-0a5a-3f0e-8e7ba3865da5@ti.com>
-Date: Mon, 16 Mar 2020 11:01:36 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1jDinh-0007zI-58
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 06:00:34 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F23AE20674;
+ Mon, 16 Mar 2020 06:00:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584338431;
+ bh=yl/qPFKKnwQwDufpWRGRjQqmbLS7/fSpdX7eJ+7fhnQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ypyaa/UQZF2jfFQsJ8Qqr9Ui/KpCleS7pHALam1HC8TRMikfNfrGfG9uTjeVN8sYt
+ 9gTYYA8lPIesJMDDSJ89snEbaep7vYM37q48wu8xy0mrO2Eomhr6uNTTbzhHd0lDgz
+ cj4L1PznVG4DqQ0F+dv8S5ElG2ffDKp+qXpOYzm0=
+Date: Mon, 16 Mar 2020 14:00:25 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2 1/2] arm64: dts: imx8qxp-mek: Sort labels alphabetically
+Message-ID: <20200316060024.GG17221@dragon>
+References: <1584321993-8642-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20200313194130.342251-24-tudor.ambarus@microchip.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <1584321993-8642-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_223107_950824_87F39500 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200315_230033_219980_E7632B22 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,31 +76,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at, linux-mtd@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, miquel.raynal@bootlin.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, abel.vesa@nxp.com,
+ daniel.baluta@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ leonard.crestez@nxp.com, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 14/03/20 1:12 am, Tudor.Ambarus@microchip.com wrote:
-> From: Boris Brezillon <bbrezillon@kernel.org>
+On Mon, Mar 16, 2020 at 09:26:32AM +0800, Anson Huang wrote:
+> Sort the labels alphabetically for consistency.
 > 
-> All entries have been moved to manufacturer drivers. Get rid of this
-> empty table.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V1:
+> 	- Rebase to latest branch, no code change.
+> ---
+>  arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 50 ++++++++++++++++-----------
+>  1 file changed, 30 insertions(+), 20 deletions(-)
 > 
-> Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
-> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+> index d3d26cc..b1befdb 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+> @@ -30,18 +30,7 @@
+>  	};
+>  };
+>  
+> -&adma_lpuart0 {
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_lpuart0>;
+> -	status = "okay";
+> -};
+> -
+> -&fec1 {
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_fec1>;
+> -	phy-mode = "rgmii-id";
+> -	phy-handle = <&ethphy0>;
+> -	fsl,magic-packet;
+> +&adma_dsp {
+>  	status = "okay";
+>  
+>  	mdio {
 
-Reviewed-by: Vignesh Raghavendra <vigneshr@ti.com>
+Here is a rebase issue, i.e. adma_dsp shouldn't get a mdio child node.
+It came from the conflict with one commit on my fixes branch.  I decided
+to drop the series for the coming merge window.  Let's start over again
+after 5.7-rc1 becomes available.
 
+Shawn
 
-
--- 
-Regards
-Vignesh
+> @@ -136,6 +125,35 @@
+>  	};
+>  };
+>  
+> +&adma_lpuart0 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lpuart0>;
+> +	status = "okay";
+> +};
+> +
+> +&fec1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_fec1>;
+> +	phy-mode = "rgmii-id";
+> +	phy-handle = <&ethphy0>;
+> +	fsl,magic-packet;
+> +	status = "okay";
+> +
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		ethphy0: ethernet-phy@0 {
+> +			compatible = "ethernet-phy-ieee802.3-c22";
+> +			reg = <0>;
+> +		};
+> +	};
+> +};
+> +
+> +&scu_key {
+> +	status = "okay";
+> +};
+> +
+>  &usdhc1 {
+>  	assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
+>  	assigned-clock-rates = <200000000>;
+> @@ -234,11 +252,3 @@
+>  		>;
+>  	};
+>  };
+> -
+> -&adma_dsp {
+> -	status = "okay";
+> -};
+> -
+> -&scu_key {
+> -	status = "okay";
+> -};
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
