@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D452D1860EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 01:48:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49CAF1860EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 01:50:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/ORssJ2H53ISs61MaowTwa0ZqK8lUiaA9M6iveWr7Q=; b=Ui4CtlGnc9NKkQ
-	g+sG79mzJ9m05OfsRlQqfgQogCGIBfgFQudfi5S9edncT6TMw5rYR1wVhXQav67I7H/BElYm9Ts/k
-	WbDpZ30/LSCvRL4BPE6YOGTVmbPua4f403woCVwiQrzmiMCKZKLDqlK9qFIhZFglmlpFeX1f35/3n
-	EWm0V4KO+J2zAUt1WRcLICh1SnKA8fjd5UXfRQHlhe/Cm2MbrEmpJVIkNoGSo8hrvrpiExLlwiFoE
-	eVNG7chwhJtGIE24i5cVoHECTJ8SnDY+0jhkMkqAWJSIJw03JwO/SvAJ8SsgGF/ntGBlq0GyJeq30
-	qusqrvRF5IMXiv1XsYYw==;
+	List-Owner; bh=4WAZTsfeXikv+ficgOpZgDiNubnvgf4Qs/Ki4pKbeGM=; b=lBuCfArGWOwQsT
+	aBnqy/uu3ebxX0neut7g/fIHdw7sO5QsknxDQ29qcKZvMSr/13VoSJ/fStV99FGxJdb6JW9Mwv7Ql
+	/Lp5kfr/taIS0ShQfM6plKVcyZ0EjL7jLF+siCINmlZ/cXqjTL0j7ELnVMA7XnBqUEO2YoXJn8KQi
+	2PVZg2Vl4PsOTg6T8COL+fmo6V4iBMv6aT9+Z61926kNE3NbWR49xxjJMlYfTymuX81XuLv+su1rv
+	HM8JziL0y5KAvhGm6KftbwH5UfsgPP6e5get7T/CYn0Ltu+47f4q/bx5s6jW5t0Lw9b4qE7a7ELcp
+	+WKTX5dAcx6w00xwMjFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDdvl-0005bv-OA; Mon, 16 Mar 2020 00:48:33 +0000
+	id 1jDdxo-0007OO-Pj; Mon, 16 Mar 2020 00:50:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDdv8-0004xq-ST
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 00:47:56 +0000
+ id 1jDdxc-0007Np-1z
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 00:50:29 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 482C5205C9;
- Mon, 16 Mar 2020 00:47:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F1615205C9;
+ Mon, 16 Mar 2020 00:50:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584319674;
- bh=s6CPDhXjtVNGRU8In3e3kagDf6tr13gZhiw5JX4K0CE=;
+ s=default; t=1584319827;
+ bh=MZc7oF3471k1hccW1atocrA0d/NQncNY/pnti0s5LzQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PrS1n0O2hE5xdVizU0WiA0Sw+DkXi1c4YNJff2vFXIO2Xj7F7wQRLvdFP35Vwh243
- qLoTQivc06Fq14FXUG+O+Dmrwv6xNzEQ7CWo39tJ74VCwtH0x4E8Wr6NyzbY5fGz9W
- RCy6SNICzkZb75Fp1K0ug7Kd5x5Rymmfl2PweuHo=
-Date: Mon, 16 Mar 2020 08:47:46 +0800
+ b=EmSkGTJqfSsEHrjGpbw7TCdn8y7Iv0YcJFmoX+d0AfoLbYxGQcuePcDkskovUoUTo
+ RKgvFpbRrCnzDfxwWayahd4qLANc8a1bTEGr0ADs2qwax31sKHAAmtyBGmApMF6jN7
+ h3SYM03EEE5ZZ5Lhn1O7Cru4zPo4UhXIjyM5jC/s=
+Date: Mon, 16 Mar 2020 08:50:21 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Jonathan =?iso-8859-1?Q?Neusch=E4fer?= <j.neuschaefer@gmx.net>
-Subject: Re: [PATCH] clk: imx: gate2: Fix a few typos
-Message-ID: <20200316004745.GB17221@dragon>
-References: <20200308214927.16688-1-j.neuschaefer@gmx.net>
+To: Michael Heimpold <mhei@heimpold.de>
+Subject: Re: [PATCH] ARM: dts: imx23: introduce mmc0_sck_cfg
+Message-ID: <20200316005019.GC17221@dragon>
+References: <20200308222144.24863-1-mhei@heimpold.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200308214927.16688-1-j.neuschaefer@gmx.net>
+In-Reply-To: <20200308222144.24863-1-mhei@heimpold.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_174754_952342_7936DA9C 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20200315_175028_119970_E6C7CB61 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,49 +76,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>, Abel Vesa <abel.vesa@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Enrico Weigelt <info@metux.net>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Allison Randal <allison@lohutok.net>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 08, 2020 at 10:49:26PM +0100, Jonathan Neusch=E4fer wrote:
-> Signed-off-by: Jonathan Neusch=E4fer <j.neuschaefer@gmx.net>
+On Sun, Mar 08, 2020 at 11:21:44PM +0100, Michael Heimpold wrote:
+> The Olimex Olinuxino board has a user led connected to SSP1_DETECT.
+> But since this pin is listed in mmc0_pins_fixup, it is already claimed
+> by MMC driver and this results in this error during boot:
+> 
+> [    1.390000] imx23-pinctrl 80018000.pinctrl: pin SSP1_DETECT already
+>   requested by 80010000.spi; cannot claim for leds
+> [    1.400000] imx23-pinctrl 80018000.pinctrl: pin-65 (leds) status -22
+> [    1.410000] imx23-pinctrl 80018000.pinctrl: could not request pin 65
+>    (SSP1_DETECT) from group led_gpio2_1.0  on device 80018000.pinctrl
+> [    1.420000] leds-gpio leds: Error applying setting, reverse things back
+> [    1.430000] leds-gpio: probe of leds failed with error -22
+> 
+> This fix it, introduce mmc0_sck_cfg and switch the Olinuxino board to it.
+> 
+> Signed-off-by: Michael Heimpold <mhei@heimpold.de>
 
-Sorry.  We do not take patch with empty commit log.
-
-Shawn
-
-> ---
->  drivers/clk/imx/clk-gate2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> =
-
-> diff --git a/drivers/clk/imx/clk-gate2.c b/drivers/clk/imx/clk-gate2.c
-> index 7d44ce814806..a1230cc215c4 100644
-> --- a/drivers/clk/imx/clk-gate2.c
-> +++ b/drivers/clk/imx/clk-gate2.c
-> @@ -15,7 +15,7 @@
->  #include "clk.h"
-> =
-
->  /**
-> - * DOC: basic gatable clock which can gate and ungate it's ouput
-> + * DOC: basic gateable clock which can gate and ungate its output
->   *
->   * Traits of this clock:
->   * prepare - clk_(un)prepare only ensures parent is (un)prepared
-> --
-> 2.20.1
-> =
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
