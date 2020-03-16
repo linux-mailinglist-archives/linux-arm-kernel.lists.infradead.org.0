@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08B9C18615B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:34:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76E42186159
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:33:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VFFvXO7nWK57FXf43QvfnjfzcdesIRCuimpZfLuU9ag=; b=GtT
-	R2HTDoyGNdey5tZr1S8dq9pLIyJI9Ek3EEOSXjw70uG44+5b2A2zB0mjf+tpGnkzLjQ3jlr2CNeJU
-	SSQ8B9Q53q2/w1ZXtmxhKNesAkv5rTcNAtc2jo1l+AOv2SfRKuGRTuyTtfV4lb/+8yKpCDoLekOZE
-	WMeRYe3jNi8yw+31uBnGhtvMYS6e+U1HxEOJl3dJ5suhalJ7/G17mR5ZLCIJtR/YzCvDTF9sZt4yZ
-	a/Iga+O/8ZBUdNmGP5LNTQP0gcMWdrxWP4sjzv5EqM103H1e51xXoeNG35ZmI2rRHPhSIA26J8vmY
-	NAalouiUXaezpvYQ28X87dZqm/3CA6Q==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=lPgA5b78mHK2GgaFuZdVhfJHG+xDybxkP/ovl7a2gmY=; b=OKhBTgv4EHx0Eynn2/Ruu8gjXX
+	vfE03iCaPNrl5o3mIEyyaUsXzBrfxHGYEdZaYJMM2cI5etE2P05weFbqoc9KVR5DryK9fx2StAM1F
+	qX9bt/BqAelO+DYplCt7wnaiigc0bayIdp0PTs0/KxovGGIBBbE3rkf6JG6QjTywsFM8LDE65cO8p
+	kHj7h+oBkp0pPzOh+6Ud+6jL6YXsPDDOyWTwHgkwceGbPRWFAUFDQvWtdW0qRl32Xb7VAvJ9oncS4
+	PSn3v66etD6kRgrIfuh5GkSfXD591WD0f7nVZ1zT3W362f/BHi63nLkAvarSZbEjg/uRSSiZCWXO/
+	EVdOKBnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDedg-0006Ry-A0; Mon, 16 Mar 2020 01:33:56 +0000
+	id 1jDedV-0006Gz-Qa; Mon, 16 Mar 2020 01:33:45 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDedJ-00069c-3s
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:33:34 +0000
+ id 1jDedI-0006Bz-Aq
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:33:33 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2C8C01A079D;
- Mon, 16 Mar 2020 02:33:26 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1ABA21A07AB;
+ Mon, 16 Mar 2020 02:33:28 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8212F1A07B1;
- Mon, 16 Mar 2020 02:33:19 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 77E951A079F;
+ Mon, 16 Mar 2020 02:33:21 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 69D1B402A5;
- Mon, 16 Mar 2020 09:33:11 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8259D402EE;
+ Mon, 16 Mar 2020 09:33:12 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  abel.vesa@nxp.com, leonard.crestez@nxp.com, daniel.baluta@nxp.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2 1/2] arm64: dts: imx8qxp-mek: Sort labels alphabetically
-Date: Mon, 16 Mar 2020 09:26:32 +0800
-Message-Id: <1584321993-8642-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/2] arm64: dts: imx8qxp-mek: Add PMIC thermal zone support
+Date: Mon, 16 Mar 2020 09:26:33 +0800
+Message-Id: <1584321993-8642-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1584321993-8642-1-git-send-email-Anson.Huang@nxp.com>
+References: <1584321993-8642-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_183333_291847_DB132383 
-X-CRM114-Status: UNSURE (   7.77  )
+X-CRM114-CacheID: sfid-20200315_183332_511764_8A7D11AB 
+X-CRM114-Status: UNSURE (   7.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -76,88 +79,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sort the labels alphabetically for consistency.
+i.MX8QXP MEK board has PMIC thermal sensor, add support for it.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V1:
-	- Rebase to latest branch, no code change.
+No change.
 ---
- arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 50 ++++++++++++++++-----------
- 1 file changed, 30 insertions(+), 20 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 33 +++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-index d3d26cc..b1befdb 100644
+index b1befdb..ff5695b 100644
 --- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-@@ -30,18 +30,7 @@
- 	};
- };
- 
--&adma_lpuart0 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_lpuart0>;
--	status = "okay";
--};
--
--&fec1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_fec1>;
--	phy-mode = "rgmii-id";
--	phy-handle = <&ethphy0>;
--	fsl,magic-packet;
-+&adma_dsp {
+@@ -154,6 +154,39 @@
  	status = "okay";
- 
- 	mdio {
-@@ -136,6 +125,35 @@
- 	};
  };
  
-+&adma_lpuart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_lpuart0>;
-+	status = "okay";
-+};
++&thermal_zones {
++	pmic-thermal0 {
++		polling-delay-passive = <250>;
++		polling-delay = <2000>;
++		thermal-sensors = <&tsens IMX_SC_R_PMIC_0>;
 +
-+&fec1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_fec1>;
-+	phy-mode = "rgmii-id";
-+	phy-handle = <&ethphy0>;
-+	fsl,magic-packet;
-+	status = "okay";
++		trips {
++			pmic_alert0: trip0 {
++				temperature = <110000>;
++				hysteresis = <2000>;
++				type = "passive";
++			};
 +
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
++			pmic_crit0: trip1 {
++				temperature = <125000>;
++				hysteresis = <2000>;
++				type = "critical";
++			};
++		};
 +
-+		ethphy0: ethernet-phy@0 {
-+			compatible = "ethernet-phy-ieee802.3-c22";
-+			reg = <0>;
++		cooling-maps {
++			map0 {
++				trip = <&pmic_alert0>;
++				cooling-device =
++					<&A35_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&A35_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&A35_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&A35_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++			};
 +		};
 +	};
-+};
-+
-+&scu_key {
-+	status = "okay";
 +};
 +
  &usdhc1 {
  	assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
  	assigned-clock-rates = <200000000>;
-@@ -234,11 +252,3 @@
- 		>;
- 	};
- };
--
--&adma_dsp {
--	status = "okay";
--};
--
--&scu_key {
--	status = "okay";
--};
 -- 
 2.7.4
 
