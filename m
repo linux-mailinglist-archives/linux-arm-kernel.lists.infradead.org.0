@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73F8A186819
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:42:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CEA6186826
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 10:47:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WAKtqzEH9U+en2sK5uuWZZmaN8VWNrph+PRPQ7pZxJU=; b=KfiMdGN/RLqjtC
-	Gsp8GbryH/8S5FCcmeZ09WQ0R8Bkllmk4OqkLJFhS4NtSzxCKJZJbadzlTAhTdY+cwQpfJUTcMCfs
-	HnCnu1E22MNcME7SxjSMdwfsVrduHeDyHGsei3ppWZLVwzeUZRs4QgdSfKbI3CwGuTIgx9BXjrpwF
-	JN859zvqJl9JtRxAoIG4yYoyEuhP0AGGg86e9s9cBrrddlxp3uDgzkXgDhN2e9BdivvX3CvH/F6mZ
-	pqxElR3QL2Ds1dnnpJzCRYwBxFgnvxk2ossFGJsEvW0Rziy6Ds3UKA762NlJkcL7b0cQz0osw1JEP
-	VnTdGr1gv38dgtDg0whg==;
+	List-Owner; bh=Yd4NjjUajWHnxtq+zdMHLIIRH1frQGH0ni9OJCwDOK8=; b=uSDs1gfOcm+fAI
+	/Fupu1nIUa3JmtBq2iNqx1+TH3HzTRvFKs2zis/XOHst1zkFletp6oLbvxxHgHgTAuNK2yUseNWCl
+	52X+eINhCXAH+p45NOLlA80OevOrpvIl3Ussa4gff6IHLDSXA1lN1xoU8SKPFvfecm2c5EJ36tJaY
+	oRic2u6HWNqM9CSHz8EfJ4GITAitagAeOQgi8mZFeWYai4lBpfBxxAv/lBl1cPB3Yg+UjHUiBBp1Y
+	qMNY6YWEtz0nY2aUpNt4dKMsmWNJhklHWyUDylUTlpQeHciwmhRkgwfzARzXuLZRxV2+jveMn2o9y
+	Vr1AP/6N5/sKSFqbvbxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDmGP-0001Lp-EL; Mon, 16 Mar 2020 09:42:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDmGF-0001KO-AO
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 09:42:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A1361FB;
- Mon, 16 Mar 2020 02:42:10 -0700 (PDT)
-Received: from [10.37.9.38] (unknown [10.37.9.38])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E587B3F534;
- Mon, 16 Mar 2020 02:42:04 -0700 (PDT)
-Subject: Re: [PATCH v3 18/26] arm64: Introduce asm/vdso/processor.h
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20200313154345.56760-1-vincenzo.frascino@arm.com>
- <20200313154345.56760-19-vincenzo.frascino@arm.com>
- <20200315182950.GB32205@mbp>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <c2c0157a-107a-debf-100f-0d97781add7c@arm.com>
-Date: Mon, 16 Mar 2020 09:42:32 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jDmKo-0003th-Vx; Mon, 16 Mar 2020 09:46:58 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDmKU-0003kE-M1; Mon, 16 Mar 2020 09:46:40 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02G9kWvG006458;
+ Mon, 16 Mar 2020 04:46:32 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584351992;
+ bh=67NfKjZCXz4JoWiD6fJ1v0YbK4GPD37mM9rvW/43LPw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Wei65B6JNh6HBmDkCjtnGulWnvu///dAGsrOvOF165b9GRGrqMMFp3Oe/NK0J9ZBU
+ XX552222gziFCBqf4eaxapMykFfKxqWQpgTw7KkVbKf8c7i8moA6f5nvgdPIve9Mes
+ hn0yFENE7hYuvx8w89jmHNNmWvTkcKfy1SnMFh3o=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02G9kWxk006969
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 16 Mar 2020 04:46:32 -0500
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
+ Mar 2020 04:46:32 -0500
+Received: from localhost.localdomain (10.64.41.19) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 16 Mar 2020 04:46:32 -0500
+Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by localhost.localdomain (8.15.2/8.15.2) with ESMTP id 02G9kQfZ051982;
+ Mon, 16 Mar 2020 04:46:29 -0500
+Subject: Re: [PATCH v2 00/25] mtd: spi-nor: Move manufacturer/SFDP code out
+To: <Tudor.Ambarus@microchip.com>, <bbrezillon@kernel.org>
+References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <28989bb7-9fe5-e4da-33c1-c3ad3442f9e2@ti.com>
+Date: Mon, 16 Mar 2020 15:17:05 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <20200315182950.GB32205@mbp>
+In-Reply-To: <20200313194130.342251-1-tudor.ambarus@microchip.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_024215_404101_7FCB1772 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200316_024638_824561_EF1A6621 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,69 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
- linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
- Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
+Cc: richard@nod.at, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, miquel.raynal@bootlin.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
 
-you should not really work on Sunday ;-) Joking, thanks for reviewing my patches.
 
-On 3/15/20 6:30 PM, Catalin Marinas wrote:
-> On Fri, Mar 13, 2020 at 03:43:37PM +0000, Vincenzo Frascino wrote:
->> --- /dev/null
->> +++ b/arch/arm64/include/asm/vdso/processor.h
->> @@ -0,0 +1,31 @@
->> +/* SPDX-License-Identifier: GPL-2.0-only */
->> +/*
->> + * Copyright (C) 2020 ARM Ltd.
->> + */
->> +#ifndef __ASM_VDSO_PROCESSOR_H
->> +#define __ASM_VDSO_PROCESSOR_H
->> +
->> +#ifndef __ASSEMBLY__
->> +
->> +#include <asm/page-def.h>
->> +
->> +#ifdef CONFIG_COMPAT
->> +#if defined(CONFIG_ARM64_64K_PAGES) && defined(CONFIG_KUSER_HELPERS)
->> +/*
->> + * With CONFIG_ARM64_64K_PAGES enabled, the last page is occupied
->> + * by the compat vectors page.
->> + */
->> +#define TASK_SIZE_32		UL(0x100000000)
->> +#else
->> +#define TASK_SIZE_32		(UL(0x100000000) - PAGE_SIZE)
->> +#endif /* CONFIG_ARM64_64K_PAGES */
->> +#endif /* CONFIG_COMPAT */
-> 
-> Just curious, what's TASK_SIZE_32 used for in the vDSO code? You don't
-> seem to move TASK_SIZE.
-> 
+On 14/03/20 1:12 am, Tudor.Ambarus@microchip.com wrote:
+> Boris Brezillon (21):
+>   mtd: spi-nor: Stop prefixing generic functions with a manufacturer
+>     name
+>   mtd: spi-nor: Prepare core / manufacturer code split
+>   mtd: spi-nor: Expose stuctures and functions to manufacturer drivers
+>   mtd: spi-nor: Add the concept of SPI NOR manufacturer driver
 
-I tried to fine grain the headers as much as I could in order to avoid
-unneeded/unwanted inclusions:
- * TASK_SIZE_32 is used to verify ABI consistency on vdso32 (please refer to
-   arch/arm64/kernel/vdso32/vgettimeofday.c).
- * TASK_SIZE is not required by the vdso library hence it is not present in
-   these headers.
+
+>   mtd: spi-nor: Move Atmel bits out of core.c
+>   mtd: spi-nor: Move Eon bits out of core.c
+>   mtd: spi-nor: Move ESMT bits out of core.c
+>   mtd: spi-nor: Move Everspin bits out of core.c
+>   mtd: spi-nor: Move Fujitsu bits out of core.c
+>   mtd: spi-nor: Move GigaDevice bits out of core.c
+>   mtd: spi-nor: Move Intel bits out of core.c
+>   mtd: spi-nor: Move ISSI bits out of core.c
+>   mtd: spi-nor: Move Macronix bits out of core.c
+>   mtd: spi-nor: Move Micron/ST bits out of core.c
+>   mtd: spi-nor: Move Spansion bits out of core.c
+>   mtd: spi-nor: Move SST bits out of core.c
+>   mtd: spi-nor: Move Winbond bits out of core.c
+>   mtd: spi-nor: Move Catalyst bits out of core.c
+>   mtd: spi-nor: Move Xilinx bits out of core.c
+>   mtd: spi-nor: Move XMC bits out of core.c
+
+
+I skimmed through patches 7 to 22 and did not see any issues. No
+objections from me.
 
 -- 
-Regards,
-Vincenzo
+Regards
+Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
