@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05453186125
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:08:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B9D518612A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 02:10:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GPMk0NNxDs9z0wy74pzSUygaCSFoJf1VdhU1mxyzXKs=; b=FRa/OX1BQv74Gl
-	9iG9kO7Njlmi0w65Yk318ODO6KLUGocX7vIKCSIRvLKJQG6vrgjFVFOYx9jhJ4YdzGEU0egT1h8hu
-	EFKExsMeU/nmqmyz7medUA5Hkdry7glStTENNNG+v1MaCXmM3fLWUfkWQjwNPvU7Cl6QdsVrYy+Wu
-	qnLhHqifOkAlFEaw29MeQDlDhLfwHiYa9LkPryWiYSfl6NHLsEaYj3HkzTEr56PGBzY8TRLeH+XbP
-	6SR1mwtcMoIhV+b81w8fNuSY0P68ONZBzTueFaAA0amZo+w2jBik6LIhQtfOuyaZXYZw8qnxMkc4Q
-	pUJt6RL054PusNVKGZtQ==;
+	List-Owner; bh=ZiTAWZqo+H0psYh4qBbJkSQz5DvR/DXo8CCmPVxxqsw=; b=N/jZQDvPirc7Kt
+	BQKI/vDjbOa0UHSdUKI2DQ1uCnQHiNLzwQXE9cweIyjDOAX6EkWjwUMJVMzkSsyGIKo3519UiK1i0
+	zq5XK2kaO6D1e42l/rTEf1uLsBDp49BSWK1f3Ia21I2IQfyrjLX3PP6+xAP1KIc5xFd/bLIK914Er
+	3bsozqhHeHs3FP7JIb+WAvDbpHfXEbn65i7bQRC0jYvnUb90mK+jsZlDeLlJYt+l5CVgbUCQZvgVs
+	m/6T0H23A3K3zbj97fJ6QXa1akMexLo7t8dEiXV1e1a6X5RBnvboeWnB6PDYx5VI9ot9yE5IlQcln
+	LwnoAgVxjKSv8XU2p3eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDeEg-00050b-Ox; Mon, 16 Mar 2020 01:08:06 +0000
+	id 1jDeGn-0006cN-2o; Mon, 16 Mar 2020 01:10:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDeEV-000503-PA
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:07:57 +0000
+ id 1jDeGe-0006Ov-4L
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 01:10:09 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B8FD2205ED;
- Mon, 16 Mar 2020 01:07:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01AF4205ED;
+ Mon, 16 Mar 2020 01:10:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584320875;
- bh=w8UFak9mwRktB8j1PIcCa8pAcucASI3uNlGd9Kq4HpE=;
+ s=default; t=1584321007;
+ bh=B+RgY4eWmKYIohuPnnLlZsHGg0C9YbXktLg86yPQHpo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hfE5VSZ74YXxfdd/Cx4j1B32EaJXUvcc1w1Nv1p6ZwFqzs94GLGZvRs7WmvuvGPNY
- RSGf2Lu9hpTZ4PdUQB03eHjyFdbhQNpsPGrl/QN9kZitIQPn0slA7DpPT1lMk0r+8A
- xQw4cMOgoPZa//zwT3JrogfFL8CabpPiyYxkJUsE=
-Date: Mon, 16 Mar 2020 09:07:49 +0800
+ b=1vmtg6Y0xDCQPlT5x6tSnUX7Mve4kKeNP0RVXXYRk1Bvcl+A7kI3XkzPbIQxvYRGR
+ xS/xRNwZmMdrNvrYGtyeVSqGzWzzNgG2jyoQK4ix/O2SBdiUKICfZnhJbSND/ZLnC6
+ Yv03F7zm4E0ZoUb67hGKZevkJM4J4LO1p9Jhnmdk=
+Date: Mon, 16 Mar 2020 09:10:03 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH v2 1/5] dt-bindings: arm: fsl: Add TechNexion boards
-Message-ID: <20200316010748.GJ17221@dragon>
-References: <20200310180825.10111-1-festevam@gmail.com>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH V2] arm64: dts: imx8m: fix aips dts node
+Message-ID: <20200316011001.GK17221@dragon>
+References: <1583911076-31551-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200310180825.10111-1-festevam@gmail.com>
+In-Reply-To: <1583911076-31551-1-git-send-email-peng.fan@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_180755_838616_7B304377 
-X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-CacheID: sfid-20200315_181008_203544_1606986B 
+X-CRM114-Status: UNSURE (   8.19  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -77,19 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, otavio.salvador@ossystems.com.br,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 10, 2020 at 03:08:21PM -0300, Fabio Estevam wrote:
-> Add entries for the TechNexion boards.
+On Wed, Mar 11, 2020 at 03:17:56PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Per binding doc fsl,aips-bus.yaml, compatible and reg is
+> required. And for reg, the AIPS configuration space should be
+> used, not all the AIPS bus space.
+> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Applied all, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
