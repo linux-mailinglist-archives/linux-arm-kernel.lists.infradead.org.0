@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF64C186350
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:44:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B413186351
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Mar 2020 03:44:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w70679gbpS6rQx0vZVwE+OVkLEHWY/6H/pFngU6CVjk=; b=NBP118PyMiJYv1
-	8BcgFBEkeq2CXyHZSxJELGaLz1V1Bz30dh/fLFlu1ec0+lNv2aoCg0PZUD8aFMnFYYRpGP2RA7HCE
-	GRq7+bigyvcHIHFhCnZryGz4BQkP2pT4A01kG+JH1TEZJbHQqUT10FDjW/yhYwR6l+Pxh9cwJYtrl
-	B+LNsEW5y++AaYkZ2zoKMa1wwCOjU5kI9GYrDD+LdjLIbRDPQAhvChwxAXpce10NIELQ/lVq+NxeK
-	lDpG2eTqvFQuWFlyZrESUiRmq3a5qO2H7JG0uYOTLmTKl1u4EPMDX2onXoAC+J1hMCnOdc8jf7z9i
-	vqIAGptnJ0H4ujrnvFZA==;
+	List-Owner; bh=C27eqdEjbrGzFQyIZxvBTP2lR7D5Qf/DJWNxxe905do=; b=LrIGaM6R9BGztx
+	2hbr+0aIeBs7EPRoseBAsgfbGXotcCIw45XS1isyrZLzZVHW95prbIjel0BW6ulkBDyEXOUX/YtFV
+	H19xgBXEHMuHiNU2V3mczGnRmfdDqskksMRbyRLc3GzFrHPbohrNEna0OEp9h5vN8HOZP9WsIGsM9
+	4kyOsTiXXf/kG3e3NEnbk0ibTJ6A48r2FcoK+ax63f1cHBas7O//IacvXbK/d3VIFBWA1RFF+9U1N
+	f7V7jKjINvWpSn9yBzxOd5dtxQ5zCZ77rVn9sQ9RjtlQ93+ruZ4HBFz2YEtIDiczwbppck5zxIBrq
+	BcKvTl0RZSK8uf9vak1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDfk4-0006Wq-BJ; Mon, 16 Mar 2020 02:44:36 +0000
+	id 1jDfkG-0006q4-Hq; Mon, 16 Mar 2020 02:44:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDfbC-0004u8-Kj
+ id 1jDfbD-0004v9-Io
  for linux-arm-kernel@lists.infradead.org; Mon, 16 Mar 2020 02:35:30 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 286AA206BE;
- Mon, 16 Mar 2020 02:35:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D37E206EB;
+ Mon, 16 Mar 2020 02:35:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584326126;
- bh=OfXpKBA7jzQyXn/bl/k84peHRGE0FjKMueS/+tHh9G8=;
+ s=default; t=1584326127;
+ bh=T7EptmKtFcmwZNYtW2NJwIhPk4hbrAUxmdJ1+Wx/nAc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=hMlayoh02FkyRE7/X/Hfi8A/MIlx3a64Kf1d2BE0bYzHRFeelYuH50HqiGxafg+vI
- poqBajzGvEW3XrAhwU6LfAs327cA7tQD++RebqY8J/2t905jADcms6n31cs+OpRA89
- au9ydplBayo9GLRyfXckEKsvLgY4ruwe73sgfFmg=
+ b=lBA1/lwPo4Pe9KvBXJ2liqX/vpUmFrDnv/4FqvfgAGTGksmzHPUTgdAQkxaPMNfH5
+ J33zKusBc+Btj8CauVyx1IrcxW6Vcr3wHgcAxbR0sL/P6tkiwVka96a6+L6epVq3Oh
+ Cf97A3RMsm8QI0my9Sp1YMVteekMERRYRCLbBL2w=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 05/15] spi: pxa2xx: Add CS control clock quirk
-Date: Sun, 15 Mar 2020 22:35:09 -0400
-Message-Id: <20200316023519.2050-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 06/15] spi/zynqmp: remove entry that causes a cs
+ glitch
+Date: Sun, 15 Mar 2020 22:35:10 -0400
+Message-Id: <20200316023519.2050-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200316023519.2050-1-sashal@kernel.org>
 References: <20200316023519.2050-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200315_193526_767579_1D89BDE9 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20200315_193527_662044_B9961A5F 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,93 +80,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Evan Green <evgreen@chromium.org>,
- linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Rajat Jain <rajatja@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
+ linux-spi@vger.kernel.org, Thommy Jakobsson <thommyj@gmail.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Evan Green <evgreen@chromium.org>
+From: Thommy Jakobsson <thommyj@gmail.com>
 
-[ Upstream commit 683f65ded66a9a7ff01ed7280804d2132ebfdf7e ]
+[ Upstream commit 5dd8304981ecffa77bb72b1c57c4be5dfe6cfae9 ]
 
-In some circumstances on Intel LPSS controllers, toggling the LPSS
-CS control register doesn't actually cause the CS line to toggle.
-This seems to be failure of dynamic clock gating that occurs after
-going through a suspend/resume transition, where the controller
-is sent through a reset transition. This ruins SPI transactions
-that either rely on delay_usecs, or toggle the CS line without
-sending data.
+In the public interface for chipselect, there is always an entry
+commented as "Dummy generic FIFO entry" pushed down to the fifo right
+after the activate/deactivate command. The dummy entry is 0x0,
+irregardless if the intention was to activate or deactive the cs. This
+causes the cs line to glitch rather than beeing activated in the case
+when there was an activate command.
 
-Whenever CS is toggled, momentarily set the clock gating register
-to "Force On" to poke the controller into acting on CS.
+This has been observed on oscilloscope, and have caused problems for at
+least one specific flash device type connected to the qspi port. After
+the change the glitch is gone and cs goes active when intended.
 
-Signed-off-by: Rajat Jain <rajatja@google.com>
-Signed-off-by: Evan Green <evgreen@chromium.org>
-Link: https://lore.kernel.org/r/20200211223700.110252-1-rajatja@google.com
+The reason why this worked before (except for the glitch) was because
+when sending the actual data, the CS bits are once again set. Since
+most flashes uses mode 0, there is always a half clk period anyway for
+cs to clk active setup time. If someone would rely on timing from a
+chip_select call to a transfer_one, it would fail though.
+
+It is unknown why the dummy entry was there in the first place, git log
+seems to be of no help in this case. The reference manual gives no
+indication of the necessity of this. In fact the lower 8 bits are a
+setup (or hold in case of deactivate) time expressed in cycles. So this
+should not be needed to fulfill any setup/hold timings.
+
+Signed-off-by: Thommy Jakobsson <thommyj@gmail.com>
+Reviewed-by: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
+Link: https://lore.kernel.org/r/20200224162643.29102-1-thommyj@gmail.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ drivers/spi/spi-zynqmp-gqspi.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index b2245cdce230b..5160e16d3a985 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -76,6 +76,10 @@ MODULE_ALIAS("platform:pxa2xx-spi");
- #define LPSS_CAPS_CS_EN_SHIFT			9
- #define LPSS_CAPS_CS_EN_MASK			(0xf << LPSS_CAPS_CS_EN_SHIFT)
+diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
+index 18aeaceee2862..d26c0eda2d9ea 100644
+--- a/drivers/spi/spi-zynqmp-gqspi.c
++++ b/drivers/spi/spi-zynqmp-gqspi.c
+@@ -415,9 +415,6 @@ static void zynqmp_qspi_chipselect(struct spi_device *qspi, bool is_high)
  
-+#define LPSS_PRIV_CLOCK_GATE 0x38
-+#define LPSS_PRIV_CLOCK_GATE_CLK_CTL_MASK 0x3
-+#define LPSS_PRIV_CLOCK_GATE_CLK_CTL_FORCE_ON 0x3
-+
- struct lpss_config {
- 	/* LPSS offset from drv_data->ioaddr */
- 	unsigned offset;
-@@ -92,6 +96,8 @@ struct lpss_config {
- 	unsigned cs_sel_shift;
- 	unsigned cs_sel_mask;
- 	unsigned cs_num;
-+	/* Quirks */
-+	unsigned cs_clk_stays_gated : 1;
- };
+ 	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, genfifoentry);
  
- /* Keep these sorted with enum pxa_ssp_type */
-@@ -162,6 +168,7 @@ static const struct lpss_config lpss_platforms[] = {
- 		.tx_threshold_hi = 56,
- 		.cs_sel_shift = 8,
- 		.cs_sel_mask = 3 << 8,
-+		.cs_clk_stays_gated = true,
- 	},
- };
- 
-@@ -385,6 +392,22 @@ static void lpss_ssp_cs_control(struct driver_data *drv_data, bool enable)
- 	else
- 		value |= LPSS_CS_CONTROL_CS_HIGH;
- 	__lpss_ssp_write_priv(drv_data, config->reg_cs_ctrl, value);
-+	if (config->cs_clk_stays_gated) {
-+		u32 clkgate;
-+
-+		/*
-+		 * Changing CS alone when dynamic clock gating is on won't
-+		 * actually flip CS at that time. This ruins SPI transfers
-+		 * that specify delays, or have no data. Toggle the clock mode
-+		 * to force on briefly to poke the CS pin to move.
-+		 */
-+		clkgate = __lpss_ssp_read_priv(drv_data, LPSS_PRIV_CLOCK_GATE);
-+		value = (clkgate & ~LPSS_PRIV_CLOCK_GATE_CLK_CTL_MASK) |
-+			LPSS_PRIV_CLOCK_GATE_CLK_CTL_FORCE_ON;
-+
-+		__lpss_ssp_write_priv(drv_data, LPSS_PRIV_CLOCK_GATE, value);
-+		__lpss_ssp_write_priv(drv_data, LPSS_PRIV_CLOCK_GATE, clkgate);
-+	}
- }
- 
- static void cs_assert(struct driver_data *drv_data)
+-	/* Dummy generic FIFO entry */
+-	zynqmp_gqspi_write(xqspi, GQSPI_GEN_FIFO_OFST, 0x0);
+-
+ 	/* Manually start the generic FIFO command */
+ 	zynqmp_gqspi_write(xqspi, GQSPI_CONFIG_OFST,
+ 			zynqmp_gqspi_read(xqspi, GQSPI_CONFIG_OFST) |
 -- 
 2.20.1
 
