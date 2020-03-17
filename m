@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DD41188698
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 14:58:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C7F81886A1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 14:58:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dl2vKj1eVhqHODmz7HFCTiAtBBeGb6dSxGK8hSpscH4=; b=t9Q/RyzeYFKIMo
-	HoxsA+GcRTufpvT3SkJTXIIxtE2zRya7anqDMX9I+n9nl6IfghOkP5xzCE28AwgEt2euPcfAsqPIr
-	yQRc5GVhqBDYVCIo9W+fj+V5G2xqA2WxSONIYoeW1vOAtusfAby+h87uJG0jopx8tVx9Eb/04tEFl
-	cFsp2FfPvw2RxMMFRHrUeMucUKSkjgz4US5zzH8adNvq1iK39NUmzuj8j4qSU/OIPyZGc+6mKtI5o
-	jRiPpqrVSofjsngndPxjMxGAzxmcOBxi3VelJWiJacm3uh0oB8bAFcDEWw6Hr6pq7XmhPwoGWnI7o
-	opg+3hxO0//X638Imvvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s7ZvRTUKwV1E9UUcSMaKcQjYIGqR+D0YcZASenmXvpQ=; b=j68GB03GxMJLLG
+	AfSqIOcBeDnocJkn2N+6CtG91fobyhCzuR/f426LtIJ1jd8vXtNNwf4+CaX0MdvvunXXVqr/tEByr
+	rDgjyp//YWLIcRTWleCzlYa0JcNJo2ZoPOMGDYmHDx9sb9Q+IQmsOosjMoAJpWip7BdyITA0O9zXR
+	oYW1macpj4hiILTTrhHqemkHQMnoRuX6VJF897yR76Hbr+93M+m7XwJnM5hllQepzVzhe/lyjDVE5
+	G0It6mOuTw0Txi918BIWVK3fS7h7wbGGhyxn1xRrtS6zAcOEwZAliDnj+GUKMDFsNHlfDU+dTgxHB
+	4Fsf/sOxM5hdYy7rw7qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jECjO-0000cm-4s; Tue, 17 Mar 2020 13:58:06 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jECjf-0000qA-LU; Tue, 17 Mar 2020 13:58:23 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jECj9-0000c3-Ef
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 13:57:52 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f3so18832948wrw.7
+ id 1jECjB-0000cP-A7
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 13:57:55 +0000
+Received: by mail-wm1-x341.google.com with SMTP id m3so22104720wmi.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Mar 2020 06:57:51 -0700 (PDT)
+ Tue, 17 Mar 2020 06:57:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=R7mPWyazQzpq+QB7kvcjm1xqFg1EYXZslw7p+6l9zyk=;
- b=almf5Jtj3eNx0d/aXBR7+Oze2+ETeYjtyMlJ9OEbQmb8gMN8blXwHv2GG8cTMSG8Gb
- TqQI2NvD/8dBdMeEBmIXhIlFHwrbl/hv5ChDDsNGpnlpK5hvQzof8fIixUIUsBguIXTb
- KDN4gxBzEroJNoXlYrX/bRITTsURtbZ+0C1rc3DI0n3W0P0ylmLJ6omYznM5Mry+BHEl
- sXOc3Pq73C98/nsy0iLaajh56wLjwq7AMkYoauh0RYGnVUMCy44eNrnIGcJTSZeVDb/w
- dYQ9baRi0UO2Pr1LUpCM6HKEzgo2MXSbZM7mFSpDv3xrJ2Ax8m4VmF9IwYMZTjiNJSAG
- YvNg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=gE0E48YTccXbLL7Wbu4iPyqHzH6s/0ICIW3f6yKP+/M=;
+ b=x08FyS2T11lS2rzYbZquOz72b/VYEhQW0IYOEhRHdIaWKC7c6IH50zqHBkykkzCS2z
+ tlqO3+fvtycThLWxdLJ8ORoW7YLVdBWSNPgFDPxjaDPVoWT1M0z9XLu8AExRZtroGelh
+ wjDC4HZRwOkeqdUcoTqMlGdUoVwrCtD0HV6C0AZZ2sPcVmOBtjHrfMqQck/DfqJx/1Qv
+ vrsxAn+O2zmYJzq0MB+pwNCheLxJ+6wb/tpV7v0vmU5Kh81Gttp0XBMHuougn+cNcRjT
+ mOnkCuzfDhMXhDrBvNh+Clc2n+2RNsZLQgFtryQ5Q+aI6721wxo/NS2w3EqFEqD0+IFJ
+ fiBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=R7mPWyazQzpq+QB7kvcjm1xqFg1EYXZslw7p+6l9zyk=;
- b=awwRlRbbkIl35oTaSi3Qpv0jeqg+OQwzBGrjmwc11ZHxkCg6yFR0JDtt3o5J3KHVj7
- pvmporikeFrpM4AA0R+vWx6fCzXBgKgygJ8KkSU2l6HI/Yyty4kADLHat2+79yph6wMH
- R5YAlxyYGo7TfISlfoFNQ9qgiK84zvhJb0INl/PCGybZItEmrGtbCMQb3DLKUomHIz/0
- O8dOvVyh9Ta2JLZzxB5CcNLmCixWk5PhPqfPHCPUNoJ9fW7z+hsvUGL3W0XNSIYoR2lU
- 3bIQK3F/kUthwCal6q8qCZW/9hPhQXmgHElctF6FXckrM5wWbVZGwXwzfdjpGU9HMLG1
- NxOA==
-X-Gm-Message-State: ANhLgQ2A8NDUhPCfSG6WwO/6ldyUcFjT5G1FySnTLJMZyp+SVGiLzqmL
- TtpSRLMYAm4dCLU88S7ywrx0sA==
-X-Google-Smtp-Source: ADFU+vtjVlC/k5+6U/ZJ5/Eyy3Wu7I7oB0zbdo6cV/jFpbNjcRBn/Fnh1DNmBZO9Lag7OIncCJrjOw==
-X-Received: by 2002:a5d:490e:: with SMTP id x14mr6707580wrq.58.1584453470131; 
- Tue, 17 Mar 2020 06:57:50 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=gE0E48YTccXbLL7Wbu4iPyqHzH6s/0ICIW3f6yKP+/M=;
+ b=trpc/N2mdC0MTAB7mDp5aobFW/MHYTza5J/C/NeSFVW/Dk3uzAWDcTo1dpQ2uGG/Zi
+ JTD9lpzWJNyZuLkoUD4IpM+b3H864f7+QGHaouJSOAsUFO6u8VLgcAMXmgi7hmTBwu4v
+ HuOF/BFgn8uwfVB00pBYmZdf4IefOCo7WL9DgII5cyXqWeEsHeQP+1+2HxWLHaPV2JOt
+ OpmRqd63kpEs0fYpTKrrzVJ4mb8RE1HZFWDWdiIESG6Zpye/XbYZIRIa25t+puQ9IYC/
+ zgm5cgssgSrDOl6nc5Zgu+3dnPBfCqAAfgPcEm+lrcTgjdtMeWXf2vqMHcXo0Fujh6r9
+ /qcg==
+X-Gm-Message-State: ANhLgQ0/KHW8ycdgnNPqiQCE/Xgf+aNWu1C37BPyoyRfIE3zUzM9g0T0
+ S/572s467CtsuJJtbHsyCtcIdg==
+X-Google-Smtp-Source: ADFU+vu0XS8SjB4/Yw6xnU/f/BoTF8gd2wERlztERMFvMKS5J+6ajXkkC526BVd31HEWQoXRWNZptg==
+X-Received: by 2002:a1c:6a07:: with SMTP id f7mr5331001wmc.38.1584453471765;
+ Tue, 17 Mar 2020 06:57:51 -0700 (PDT)
 Received: from xps7590.local ([2a02:2450:102f:13b8:84f7:5c25:a9d8:81a1])
- by smtp.gmail.com with ESMTPSA id r3sm2976558wrn.35.2020.03.17.06.57.48
+ by smtp.gmail.com with ESMTPSA id r3sm2976558wrn.35.2020.03.17.06.57.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Mar 2020 06:57:49 -0700 (PDT)
+ Tue, 17 Mar 2020 06:57:51 -0700 (PDT)
 From: Robert Foss <robert.foss@linaro.org>
 To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
@@ -65,14 +65,16 @@ To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Loic Poulain <loic.poulain@linaro.org>
-Subject: [v2 0/6] Qualcomm CCI & Camera for db410c & db845c
-Date: Tue, 17 Mar 2020 14:57:34 +0100
-Message-Id: <20200317135740.19412-1-robert.foss@linaro.org>
+Subject: [v2 1/6] arm64: dts: msm8916: Add i2c-qcom-cci node
+Date: Tue, 17 Mar 2020 14:57:35 +0100
+Message-Id: <20200317135740.19412-2-robert.foss@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200317135740.19412-1-robert.foss@linaro.org>
+References: <20200317135740.19412-1-robert.foss@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_065751_500947_96F340D9 
-X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-CacheID: sfid-20200317_065753_498627_76242910 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -80,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,32 +110,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series depends on the Qualcom CCI I2C driver series:
-https://patchwork.kernel.org/cover/10569957/
+From: Loic Poulain <loic.poulain@linaro.org>
 
-This series enables basic camera functionality on the Qualcomm db410c and
-db845c (RB3) platforms.
+The msm8916 CCI controller provides one CCI/I2C bus.
 
-This includes building drivers as modules, adding devicetree nodes
-for camera controllers, clocks, regulators and sensor nodes.
+Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
+Signed-off-by: Robert Foss <robert.foss@linaro.org>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
 
-Loic Poulain (2):
-  arm64: dts: msm8916: Add i2c-qcom-cci node
-  arm64: dts: apq8016-sbc: Add CCI/Sensor nodes
+Changes since v1:
+ - Add label to cci node
+ - Sort cci node by address
+ - Relabel cci0 i2c bus to cci-i2c0
 
-Robert Foss (4):
-  arm64: dts: sdm845: Add i2c-qcom-cci node
-  arm64: dts: sdm845-db845c: Add pm_8998 gpio names
-  arm64: dts: sdm845-db845c: Add ov8856 & ov7251 camera nodes
-  arm64: defconfig: Enable QCOM CAMCC, CAMSS and CCI drivers
+ arch/arm64/boot/dts/qcom/msm8916.dtsi | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
- arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi  |  76 ++++++++
- arch/arm64/boot/dts/qcom/msm8916.dtsi      |  27 +++
- arch/arm64/boot/dts/qcom/sdm845-db845c.dts | 210 +++++++++++++++++++++
- arch/arm64/boot/dts/qcom/sdm845.dtsi       |  92 +++++++++
- arch/arm64/configs/defconfig               |   4 +
- 5 files changed, 409 insertions(+)
-
+diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+index 9f31064f2374..1d5cb3fef906 100644
+--- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+@@ -1584,6 +1584,33 @@
+ 		};
+ 	};
+ 
++	cci: cci@1b0c000 {
++		compatible = "qcom,msm8916-cci";
++		#address-cells = <1>;
++		#size-cells = <0>;
++		reg = <0x1b0c000 0x1000>;
++		interrupts = <GIC_SPI 50 IRQ_TYPE_EDGE_RISING>;
++		clocks = <&gcc GCC_CAMSS_TOP_AHB_CLK>,
++			<&gcc GCC_CAMSS_CCI_AHB_CLK>,
++			<&gcc GCC_CAMSS_CCI_CLK>,
++			<&gcc GCC_CAMSS_AHB_CLK>;
++		clock-names = "camss_top_ahb", "cci_ahb",
++				  "cci", "camss_ahb";
++		assigned-clocks = <&gcc GCC_CAMSS_CCI_AHB_CLK>,
++				  <&gcc GCC_CAMSS_CCI_CLK>;
++		assigned-clock-rates = <80000000>, <19200000>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&cci0_default>;
++		status = "disabled";
++
++		cci_i2c0: i2c-bus@0 {
++			reg = <0>;
++			clock-frequency = <400000>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++		};
++	};
++
+ 	smd {
+ 		compatible = "qcom,smd";
+ 
 -- 
 2.20.1
 
