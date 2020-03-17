@@ -2,82 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C15C18902A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:14:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DA5E189076
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:34:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R9kN/wv6ntXD64MFUI7l/BVsAaQEBbbnXFSKyyohmHY=; b=uRkeQpQjyxoYgF
-	Svqg5HCUf5Wdqq1Ln/VwiBqcZUok1hkQT5zA8XwwECeTmpqIH4sbxjQPOYemAU+wJyNj1RGWayaGf
-	sDawVmtqfig5XNLLAIOZHiRVVlPfk3lYFt5Inj9robhryyJ3Rz/VnFLBFeym5lxw3SptSkmkszIGE
-	8KsGH37AccWSGUB1njFGbl/vGuqGahP/ix5jPIX6ko73fh/ACzrI3aKWu8WrJXRG77XR4qgEVrvY7
-	maKh+FgElAt5wciUH6m25bydxWmjw+nz7wyRuemzeL3/kNJKH0H1FLGPi71HtYZ3tGSQgqejepePA
-	XqzOmdTepTDI9HhDQqZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ieQgxbI4ApOZE9Qz6JMG9+N3l9tfF4/USBDSUcNm0pk=; b=lRTvJ7uZHrLyvK
+	zj0uBb5coSFCafdzk/IdBgJPUbjYqrnvQUJwXAeMqLqyumrBUJyviC5S9YoZOMoR3kfPoZFUE2ia3
+	OSQNTtuunupVmdEe0AiqMIBxt2t5Nb8IVZyShAppeGVVX3YDkM2GnHg4gPos1YtM9RydfN4JKmuqQ
+	+YYo0Y1kPDKEPnQZeDjezpYIhF/1DJhcBw+YFUVq9tCuCaztSIF+dUzl5360v0tpceQNf9f4Yo+nP
+	9kMdPOJia9b4jZiU52SQHDUmh1aKvxgKPeEWfrdK2JXfb/JAJFdSs7IBY5UMe/abNlgPSiERc1tpQ
+	YR3p7Vc3hkKuj2yApfHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJX9-0003Im-OW; Tue, 17 Mar 2020 21:13:55 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jEJqQ-0001mD-7u; Tue, 17 Mar 2020 21:33:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJX1-0003IA-PS
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:13:49 +0000
-Received: by mail-lj1-x243.google.com with SMTP id s13so24628535ljm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Mar 2020 14:13:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=LARHXuaKUkUDUGOK/jHk/g5Im0xzFquLTlHFxXm0daM=;
- b=t7xU/aenX4xqSWnjdQPZN30yZ/IjtmHuiFKftszZqzwhQWL8TRlOqqDYY2SwOL5+I/
- qQQPKX0PFV/6+99DGDQ6pfyVXCNEvOPtcZ6yIMdxkn3rMT1VonrudSTSx0X8Ckv28ry5
- Fx4Uv/CcSo6k0iskVK3ZsZn33unZQzzGpHKtlOExLnDT3euQjXcSevzg9HxgqysxlxvR
- G17Ikijijdpn/COzDMczpwkds4lCXoH4gXCjOlSwOLEjROcZWM9tshGGpsh0qPbvos/a
- v2i0ZjqJaFpemIEzgTnnWIgKAucfWHQhccIuf8YRJBDNj4kJXvXT1sIkRPDr/hoFkney
- LoHA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=LARHXuaKUkUDUGOK/jHk/g5Im0xzFquLTlHFxXm0daM=;
- b=DHyI5Zln/8sJ0sAtKGNkWPTjgIKsSAT9nU5jqrwlLYivpf982X2ThX9lZ9kKrNYJ3V
- 7MQuZMahujukxqRfGL8a1EZ7OH64cucj8mru4MZnuuHRahZ8+0jz9LJTCBXxJv6cEwdo
- kckWfYuZPt7tOVq2GTQnm3nvJcQwyUIlIkpRk0yuCgbduRKQMv3M7peZg3FcOdHx79FS
- GlbYXpfnwxvlpC9AnWQx6jAyR/B4Sjzqgxn88B4jEvdld50DmMClP2u5vWbdewj4GjPz
- RLv8HQWg3zjtCL9LoeAp99IEBeq5spR1xtmHJdbTmoKCTi4ZHm/2Iq+jqOee4dGNwxo4
- eXSw==
-X-Gm-Message-State: ANhLgQ0NSx6Ia+GY1Dka7lbr4zx40OBcE1Vizf4fl7ngFwfZrWGwhT4F
- cZi7/K/RJc9KGAWxigMksHau2oEE8bE=
-X-Google-Smtp-Source: ADFU+vuyM49tC3h/AoMvCI49PxDJ6dQ5ze4WGJnrp9JpPJcDjaJwpK77nRLAOABktoWj2YSKBvJ4dA==
-X-Received: by 2002:a2e:818e:: with SMTP id e14mr435422ljg.104.1584479625500; 
- Tue, 17 Mar 2020 14:13:45 -0700 (PDT)
-Received: from localhost.localdomain (h-158-174-186-78.NA.cust.bahnhof.se.
- [158.174.186.78])
- by smtp.gmail.com with ESMTPSA id 23sm3341652lfa.28.2020.03.17.14.13.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Mar 2020 14:13:44 -0700 (PDT)
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-To: 
-Subject: [PATCH RESEND] clk: sunxi: Fix incorrect usage of round_down()
-Date: Tue, 17 Mar 2020 22:13:32 +0100
-Message-Id: <20200317211333.2597793-1-rikard.falkeborn@gmail.com>
-X-Mailer: git-send-email 2.25.1
+ id 1jEJqI-0001lZ-IZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:33:44 +0000
+Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DBDB420768;
+ Tue, 17 Mar 2020 21:33:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584480821;
+ bh=M3BrxNizDgtvsDigyFidbHiD1UnzC8+C8J4O1HpPPow=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=G2MMA1Ph48N9VtHU/5bj5UCz5OSSe/ZOp33LNXj1Mm7lK1ITppKFboY6xiEG4lv5w
+ 394UwSHNfdq6qdsmw1i/eun/4YFjF2xd8O0M8hyxsR6jnjsEcMSObj/XPL7ZneCKan
+ y+ML5SJufvctrXcT9CWyY/cSPrTLf+hbxREbylng=
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Ingo Molnar <mingo@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH 09/23] perf cs-etm: Swap packets for instruction samples
+Date: Tue, 17 Mar 2020 18:32:45 -0300
+Message-Id: <20200317213259.15494-10-acme@kernel.org>
+X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200317213259.15494-1-acme@kernel.org>
+References: <20200317213259.15494-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_141347_852308_67E46654 
-X-CRM114-Status: GOOD (  12.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200317_143342_656360_3EC3CCB4 
+X-CRM114-Status: GOOD (  14.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rikard.falkeborn[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -86,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,47 +76,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Emilio=20L=C3=B3pez?= <emilio@elopez.com.ar>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
+ coresight ml <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ linux-perf-users@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-round_down() can only round to powers of 2. If round_down() is asked
-to round to something that is not a power of 2, incorrect results are
-produced. The incorrect results can be both too large and too small.
+From: Leo Yan <leo.yan@linaro.org>
 
-Instead, use rounddown() which can round to any number.
+If use option '--itrace=iNNN' with Arm CoreSight trace data, perf tool
+fails inject instruction samples; the root cause is the packets are only
+swapped for branch samples and last branches but not for instruction
+samples, so the new coming packets cannot be properly handled for only
+synthesizing instruction samples.
 
-Fixes: 6a721db180a2 ("clk: sunxi: Add A31 clocks support")
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+To fix this issue, this patch refactors the code with a new function
+cs_etm__packet_swap() which is used to swap packets and adds the
+condition for instruction samples.
+
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Mike Leach <mike.leach@linaro.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Robert Walker <robert.walker@arm.com>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: coresight ml <coresight@lists.linaro.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lore.kernel.org/lkml/20200219021811.20067-2-leo.yan@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
-Resend to include lists, appologies for missing that.
+ tools/perf/util/cs-etm.c | 39 +++++++++++++++++++--------------------
+ 1 file changed, 19 insertions(+), 20 deletions(-)
 
-Patch has only been compile tested, I don't have the hardware.
-
- drivers/clk/sunxi/clk-sunxi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/clk/sunxi/clk-sunxi.c b/drivers/clk/sunxi/clk-sunxi.c
-index 27201fd26e44..e1aa1fbac48a 100644
---- a/drivers/clk/sunxi/clk-sunxi.c
-+++ b/drivers/clk/sunxi/clk-sunxi.c
-@@ -90,7 +90,7 @@ static void sun6i_a31_get_pll1_factors(struct factors_request *req)
- 	 * Round down the frequency to the closest multiple of either
- 	 * 6 or 16
- 	 */
--	u32 round_freq_6 = round_down(freq_mhz, 6);
-+	u32 round_freq_6 = rounddown(freq_mhz, 6);
- 	u32 round_freq_16 = round_down(freq_mhz, 16);
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index b3b3fe3ea345..294b09cfb034 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -363,6 +363,23 @@ struct cs_etm_packet_queue
+ 	return NULL;
+ }
  
- 	if (round_freq_6 > round_freq_16)
++static void cs_etm__packet_swap(struct cs_etm_auxtrace *etm,
++				struct cs_etm_traceid_queue *tidq)
++{
++	struct cs_etm_packet *tmp;
++
++	if (etm->sample_branches || etm->synth_opts.last_branch ||
++	    etm->sample_instructions) {
++		/*
++		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
++		 * the next incoming packet.
++		 */
++		tmp = tidq->packet;
++		tidq->packet = tidq->prev_packet;
++		tidq->prev_packet = tmp;
++	}
++}
++
+ static void cs_etm__packet_dump(const char *pkt_string)
+ {
+ 	const char *color = PERF_COLOR_BLUE;
+@@ -1342,7 +1359,6 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 			  struct cs_etm_traceid_queue *tidq)
+ {
+ 	struct cs_etm_auxtrace *etm = etmq->etm;
+-	struct cs_etm_packet *tmp;
+ 	int ret;
+ 	u8 trace_chan_id = tidq->trace_chan_id;
+ 	u64 instrs_executed = tidq->packet->instr_count;
+@@ -1406,15 +1422,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 		}
+ 	}
+ 
+-	if (etm->sample_branches || etm->synth_opts.last_branch) {
+-		/*
+-		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
+-		 * the next incoming packet.
+-		 */
+-		tmp = tidq->packet;
+-		tidq->packet = tidq->prev_packet;
+-		tidq->prev_packet = tmp;
+-	}
++	cs_etm__packet_swap(etm, tidq);
+ 
+ 	return 0;
+ }
+@@ -1443,7 +1451,6 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
+ {
+ 	int err = 0;
+ 	struct cs_etm_auxtrace *etm = etmq->etm;
+-	struct cs_etm_packet *tmp;
+ 
+ 	/* Handle start tracing packet */
+ 	if (tidq->prev_packet->sample_type == CS_ETM_EMPTY)
+@@ -1478,15 +1485,7 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
+ 	}
+ 
+ swap_packet:
+-	if (etm->sample_branches || etm->synth_opts.last_branch) {
+-		/*
+-		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
+-		 * the next incoming packet.
+-		 */
+-		tmp = tidq->packet;
+-		tidq->packet = tidq->prev_packet;
+-		tidq->prev_packet = tmp;
+-	}
++	cs_etm__packet_swap(etm, tidq);
+ 
+ 	return err;
+ }
 -- 
-2.25.1
+2.21.1
 
 
 _______________________________________________
