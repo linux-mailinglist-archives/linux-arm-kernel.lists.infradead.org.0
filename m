@@ -2,90 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F21B2187E27
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:21:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E965187E2A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:21:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hLk+lR5lIh9I9FYtbD/LCHtsZLCwBCnQ6PsF1A0GDgw=; b=ucrOFJs3P5Jnfjl+sT8ks+dWGk
-	pI0r7KTRhLdiYtq60PY/hnd1PsdK43VAX/YTqoYETI09elxm87VXDuxoT/YBtS8p+jaapzf3qdxZM
-	QMtZQoG83lMcb5uqIi7T7V4iMTm6mIswPTmaokXNsJsL/WO1Y1FNRjU1wCtbQGEiPhR7AZzWWasEm
-	WGUeEZYYgzslDjZtENGyu9sVWBEuy2t3bCHibe3OrEB0kOPKZ7NGKF2b0jL5EIu842xzM/UxL3Xva
-	t0lv3wt+ghZrXVSMdBlMDj0ovD4AYQmU04r7D8wAQCVr+mYBXZDE0BBZeYL/BBdOPO2U+wWbvl/51
-	pzC9Lb6Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KvT/qRImO4WWp2DMfZcIeyQIaYanCCUtPX1BtgtIUxY=; b=d3pwToUVHrZRTa
+	9P9oirVUtfSTk22c2biDIrXQLAz6cfmhxD91btB95ONjPeCt0BjHSvRq4IXVfaUI7rCjfVImQVq/e
+	0J/dBAURld0ea08fDASLAvt4TDWOSdjn7jwQLlAOIVA0gZvk4EL0sq50cMgJwI+aWgEnncf42unNu
+	oA059WpiE9EMrqhLBkmapZowKotLxvknesysmCtG8CNk4g2uC4MqyGK+vTXevqT6ybL08rrp8k2eV
+	1mVVkcPwKVbtdA3W3eJDpqLq/g47aHqaiEdmAEwtYrjMGRgxKepCYpsvSfHSYlLmPnmc/YDceWxdS
+	1HMz2PTMmw25a2pSOerg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE9Lb-0005w5-4Q; Tue, 17 Mar 2020 10:21:19 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE9KZ-000549-HH
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 10:20:17 +0000
-Received: by mail-lj1-x241.google.com with SMTP id f10so22122067ljn.6
- for <linux-arm-kernel@lists.infradead.org>;
+	id 1jE9Lp-000682-L8; Tue, 17 Mar 2020 10:21:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jE9Kb-00056X-QW
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 10:20:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D3FF1FB;
+ Tue, 17 Mar 2020 03:20:17 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0224F3F52E;
  Tue, 17 Mar 2020 03:20:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2bvQoM7fTBjp0klcuiM54Wdtln7AcxQr31yym9z34dg=;
- b=MZDRgS4BaT0SU4IYSBvCwUz5CUebXUPcrF+pOqrlQ1nhj3L6353fbCQP8jVC8mCPoM
- If2LSZ8A1bUp6I1JalHYrMfCENCwipMZawDM3C9DxuEvV2bOreSnHD4oq5016l48hXvd
- YBEq1jmeL7JcsMdn1Aiel7r7H6xkrbU4IoBKDGPRfUcNbWF5dpCJXyge6KD889Qvzcog
- feNv988Lw6Fj7ZZ1AqjZQ/hRPBcmFU+WvZ+OiyVIdU8yYLhyCE8KAsp8KJSBdZL0JiZ4
- gNwDURP5LVtLbziVRCqlTW+LOJPwTJVmDHi++ePSEnUbwOEOdMbJtFOa/h7wiAXm41Ux
- GeHw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=2bvQoM7fTBjp0klcuiM54Wdtln7AcxQr31yym9z34dg=;
- b=VENZpBav4LxmxjlB3J6SwndCVkLLQVqgZLlZwPu9yED4b4uhnaSnpbGWsy4EOrzyjR
- HPCmWJsv7/NAuS5Tf0wEhs61YoJ+CcgwefWv6Gd+dVFnxTQD9PQQ8nSYyG0b/bMJpRF8
- OpF0JYRqGVNSMhiLeD/UKe0C6NOBthbOSdQHKjNdgU7Tsau3PgqPE+Rv5TCmSibkv/ka
- 3b7tsbfPOtc9DvCwhG0dssP3+FFmHB2nY39sRrp36vAvoqNz+qIl4TO0agZXMWGgLEBa
- jbR6Krh8MxQgCTVVOn3xnXHKbqH4lJdsJdxwngTX3qAZMGOFCT4sa/2yGWL8ufywt1TF
- T8BQ==
-X-Gm-Message-State: ANhLgQ0MlOpnSrxYvLI20F0mmUXqG/Xk95w9+yxshaDSlTewME1omF7r
- Wl763oXaeocTL37ZXwIsrLC6H7bLglA=
-X-Google-Smtp-Source: ADFU+vvszzeoWJVd3TcHDvI8WAFElfYnQkMXm+roHZR329HPbNexz7N9xlKt3WDG1FhhpHxuuB7jgA==
-X-Received: by 2002:a2e:5844:: with SMTP id x4mr2279916ljd.40.1584440413435;
- Tue, 17 Mar 2020 03:20:13 -0700 (PDT)
-Received: from localhost (host-176-37-176-139.la.net.ua. [176.37.176.139])
- by smtp.gmail.com with ESMTPSA id c20sm2189438lfb.60.2020.03.17.03.20.12
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 17 Mar 2020 03:20:12 -0700 (PDT)
-From: Igor Opaniuk <igor.opaniuk@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v1 5/5] input: Dual license file adding MIT
-Date: Tue, 17 Mar 2020 12:19:47 +0200
-Message-Id: <20200317101947.27250-5-igor.opaniuk@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200317101947.27250-1-igor.opaniuk@gmail.com>
-References: <20200317101947.27250-1-igor.opaniuk@gmail.com>
+Date: Tue, 17 Mar 2020 10:20:13 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH v4 2/5] arm64: Rename cpu_read_ops() to init_cpu_ops()
+Message-ID: <20200317102013.GC8831@lakrids.cambridge.arm.com>
+References: <20200226002356.86986-1-gshan@redhat.com>
+ <20200226002356.86986-3-gshan@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200226002356.86986-3-gshan@redhat.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_032015_608181_3A228433 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200317_032017_936957_BD447E63 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [igor.opaniuk[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,45 +64,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Igor Opaniuk <igor.opaniuk@toradex.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
- Stefan Agner <stefan@agner.ch>,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Max Krummenacher <max.krummenacher@toradex.com>, linux-input@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>
-MIME-Version: 1.0
+Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, robin.murphy@arm.com,
+ shan.gavin@gmail.com, sudeep.holla@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Igor Opaniuk <igor.opaniuk@toradex.com>
+On Wed, Feb 26, 2020 at 11:23:53AM +1100, Gavin Shan wrote:
+> This renames cpu_read_ops() to init_cpu_ops() as the function it's only
+> called in initialization phase. Also, we will introduce get_cpu_ops() in
+> the subsequent patches, to retireve the CPU operation by the given CPU
+> index. The usage of cpu_read_ops() and get_cpu_ops() are difficult to be
+> distinguish from their names.
+> 
+> Signed-off-by: Gavin Shan <gshan@redhat.com>
 
-Dual license file adding MIT license, which will permit to re-use
-bindings and dependent device tree sources (that include this file
-directly or indirectly via dt-bindings) in other non-GPL OSS projects.
+That rationale makes sense to me, and the patch itself looks sound, so:
 
-Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
----
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 
- include/uapi/linux/input-event-codes.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Mark.
 
-diff --git a/include/uapi/linux/input-event-codes.h b/include/uapi/linux/input-event-codes.h
-index 0f1db1cccc3f..2f86c4554721 100644
---- a/include/uapi/linux/input-event-codes.h
-+++ b/include/uapi/linux/input-event-codes.h
-@@ -1,4 +1,4 @@
--/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note OR MIT */
- /*
-  * Input event codes
-  *
--- 
-2.17.1
-
+> ---
+>  arch/arm64/include/asm/cpu_ops.h | 6 +++---
+>  arch/arm64/kernel/cpu_ops.c      | 2 +-
+>  arch/arm64/kernel/setup.c        | 2 +-
+>  arch/arm64/kernel/smp.c          | 2 +-
+>  4 files changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/cpu_ops.h b/arch/arm64/include/asm/cpu_ops.h
+> index 86aabf1e0199..baa13b5db2ca 100644
+> --- a/arch/arm64/include/asm/cpu_ops.h
+> +++ b/arch/arm64/include/asm/cpu_ops.h
+> @@ -56,11 +56,11 @@ struct cpu_operations {
+>  };
+>  
+>  extern const struct cpu_operations *cpu_ops[NR_CPUS];
+> -int __init cpu_read_ops(int cpu);
+> +int __init init_cpu_ops(int cpu);
+>  
+> -static inline void __init cpu_read_bootcpu_ops(void)
+> +static inline void __init init_bootcpu_ops(void)
+>  {
+> -	cpu_read_ops(0);
+> +	init_cpu_ops(0);
+>  }
+>  
+>  #endif /* ifndef __ASM_CPU_OPS_H */
+> diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
+> index 2082cfb1be86..a6c3c816b618 100644
+> --- a/arch/arm64/kernel/cpu_ops.c
+> +++ b/arch/arm64/kernel/cpu_ops.c
+> @@ -96,7 +96,7 @@ static const char *__init cpu_read_enable_method(int cpu)
+>  /*
+>   * Read a cpu's enable method and record it in cpu_ops.
+>   */
+> -int __init cpu_read_ops(int cpu)
+> +int __init init_cpu_ops(int cpu)
+>  {
+>  	const char *enable_method = cpu_read_enable_method(cpu);
+>  
+> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> index a34890bf309f..f66bd260cce8 100644
+> --- a/arch/arm64/kernel/setup.c
+> +++ b/arch/arm64/kernel/setup.c
+> @@ -344,7 +344,7 @@ void __init setup_arch(char **cmdline_p)
+>  	else
+>  		psci_acpi_init();
+>  
+> -	cpu_read_bootcpu_ops();
+> +	init_bootcpu_ops();
+>  	smp_init_cpus();
+>  	smp_build_mpidr_hash();
+>  
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index d4ed9a19d8fe..6f8477d7f3be 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -488,7 +488,7 @@ static bool __init is_mpidr_duplicate(unsigned int cpu, u64 hwid)
+>   */
+>  static int __init smp_cpu_setup(int cpu)
+>  {
+> -	if (cpu_read_ops(cpu))
+> +	if (init_cpu_ops(cpu))
+>  		return -ENODEV;
+>  
+>  	if (cpu_ops[cpu]->cpu_init(cpu))
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
