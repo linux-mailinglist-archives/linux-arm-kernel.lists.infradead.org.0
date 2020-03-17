@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A92BA18907B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:35:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65D9F1890C9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:53:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tJH5OtnDBPb2WChk8wP2gO40gJJRO1rjtlfNq1oO94=; b=L4ICqO/pOeGmzD
-	Mj9DFSUVz5Rc+YpmontWjp1R9azlS53s8xXMsmaPAFSx0mkfkyXMeIBjhm5zO6SfdSBb8vU3TJdBT
-	PHvbygmfROPph3yjfjHKYwjpCCtgmCe/PyLcpvJao31HYVZc37fM4yOM9r8apU6QuuoW8J9aYXTh3
-	CpH4JHpagVY54A2H3YzD+ClwFTK3wR0UuVubs68z/hmKrp+qMPbuX89WlWcKOw5HP4Cx0RJqCv3Wd
-	Pdqxplv0ZfHwd6RqDlUXEBF8JCb5GIcWU/L5KsQxVZcHxrCC/2Ra0LAETJ+Tu4n0wjLrRvZ1XklaV
-	1PdV4MrLPpGClyXN8E1A==;
+	List-Owner; bh=C48752ysmeBsIMWKq3b0arq4Elj9Nt7n22XZKsDLiOA=; b=M91to/IIMOzY/f
+	QGY10PMv+VHh8N49ML62RgWsYv1klDnUt5BQ3HcQ1UJyX8wu03wPqtxFn2b/jva0YxsMur+0vBoMe
+	j6rfwbQfJXFXypCdbbz7t/Pv5lGOasMptlmFfUmwfyWW1NsdIFJeBoHe76yDVXRtV8Int+WsT0AMT
+	Cr8SCL20MBGTFWWmgU+403ag7GaQDhkJKxRIVkf6z5rsxD2KYDXyFIKSJBT9hD8CZ3wW1EoK1IS+9
+	dc5ppg1kPLuXgTBceIZAKg64tOAXUUxzcS9qXuooVRtoBY7dB4JBqHRVil24CLlTBEipathCiXsLQ
+	E4GcYpgWojXnllX9Ld+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJrR-0002kT-R3; Tue, 17 Mar 2020 21:34:53 +0000
+	id 1jEK9C-0000o4-9f; Tue, 17 Mar 2020 21:53:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJqZ-00022h-If
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:34:01 +0000
-Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 204BD2075E;
- Tue, 17 Mar 2020 21:33:54 +0000 (UTC)
+ id 1jEK93-0000jy-0C
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:53:06 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F25DB20724;
+ Tue, 17 Mar 2020 21:53:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584480838;
- bh=cp/OajyD3gRzQ49t0K84cyurs/ktRa0u33udp0rWu3o=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kE42HPlj4QGMlWBz+AtT68g531cYRgeHVTWTWphLGP+G7j+YrNpUzrCdaHTnWjGM8
- je9ut5n+/8Yjvdswipyq2Feic3A7ZxDbL5Yx+C55ey3vmOOxIIA2xdj5xMz6rYP8zD
- TWxx5mbt7IFVKWQZYvTmmhpawp1Gsb8GgEDGG8n0=
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Ingo Molnar <mingo@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 13/23] perf cs-etm: Fix unsigned variable comparison to zero
-Date: Tue, 17 Mar 2020 18:32:49 -0300
-Message-Id: <20200317213259.15494-14-acme@kernel.org>
-X-Mailer: git-send-email 2.21.1
-In-Reply-To: <20200317213259.15494-1-acme@kernel.org>
-References: <20200317213259.15494-1-acme@kernel.org>
+ s=default; t=1584481984;
+ bh=4fpXMStLT3ChZUSNNoR5DM0vAh+pn633V+leBozCyWA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=j9izuxAJEYWfwOlyHm+dzHMrstapzlPoXAEYb7DfotjV7f8+lIrKsh/8yjOmRey35
+ G6BkqEvgCCE0/nxL4u9SrTR3Ai5Q51DCYkWMsq7w+HwzxaZHlQeiS4oaslEAOKqBXs
+ HfHocYpm5b4/XhOJrKH+WzAynGxE3ddRp080wgDc=
+Date: Tue, 17 Mar 2020 21:52:57 +0000
+From: Will Deacon <will@kernel.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH 6/9] arm64/build: Use common DISCARDS in linker script
+Message-ID: <20200317215256.GA20788@willie-the-truck>
+References: <20200228002244.15240-1-keescook@chromium.org>
+ <20200228002244.15240-7-keescook@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200228002244.15240-7-keescook@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_143359_672804_E937B5E9 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20200317_145305_065749_BDD98769 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,62 +77,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Arnaldo Carvalho de Melo <acme@redhat.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
- coresight ml <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- linux-perf-users@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
- Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
- Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, James Morse <james.morse@arm.com>,
+ linux-arch@vger.kernel.org, Borislav Petkov <bp@suse.de>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Leo Yan <leo.yan@linaro.org>
+On Thu, Feb 27, 2020 at 04:22:41PM -0800, Kees Cook wrote:
+> Use the common DISCARDS rule for the linker script in an effort to
+> regularize the linker script to prepare for warning on orphaned
+> sections.
+> 
+> Signed-off-by: Kees Cook <keescook@chromium.org>
+> ---
+>  arch/arm64/kernel/vmlinux.lds.S | 8 ++------
+>  1 file changed, 2 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+> index 497f9675071d..c61d9ab3211c 100644
+> --- a/arch/arm64/kernel/vmlinux.lds.S
+> +++ b/arch/arm64/kernel/vmlinux.lds.S
+> @@ -6,6 +6,7 @@
+>   */
+>  
+>  #define RO_EXCEPTION_TABLE_ALIGN	8
+> +#define RUNTIME_DISCARD_EXIT
+>  
+>  #include <asm-generic/vmlinux.lds.h>
+>  #include <asm/cache.h>
+> @@ -19,7 +20,6 @@
+>  
+>  /* .exit.text needed in case of alternative patching */
+>  #define ARM_EXIT_KEEP(x)	x
+> -#define ARM_EXIT_DISCARD(x)
+>  
+>  OUTPUT_ARCH(aarch64)
+>  ENTRY(_text)
+> @@ -94,12 +94,8 @@ SECTIONS
+>  	 * matching the same input section name.  There is no documented
+>  	 * order of matching.
+>  	 */
+> +	DISCARDS
+>  	/DISCARD/ : {
+> -		ARM_EXIT_DISCARD(EXIT_TEXT)
+> -		ARM_EXIT_DISCARD(EXIT_DATA)
+> -		EXIT_CALL
+> -		*(.discard)
+> -		*(.discard.*)
+>  		*(.interp .dynamic)
+>  		*(.dynsym .dynstr .hash .gnu.hash)
+>  		*(.eh_frame)
 
-The variable 'offset' in function cs_etm__sample() is u64 type, it's not
-appropriate to check it with 'while (offset > 0)'; this patch changes to
-'while (offset)'.
+Acked-by: Will Deacon <will@kernel.org>
 
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Reviewed-by: Mike Leach <mike.leach@linaro.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Robert Walker <robert.walker@arm.com>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: coresight ml <coresight@lists.linaro.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lore.kernel.org/lkml/20200219021811.20067-6-leo.yan@linaro.org
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
----
- tools/perf/util/cs-etm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 87d9943177bc..62d2f9b9ce1b 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -962,7 +962,7 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
- 	if (packet->isa == CS_ETM_ISA_T32) {
- 		u64 addr = packet->start_addr;
- 
--		while (offset > 0) {
-+		while (offset) {
- 			addr += cs_etm__t32_instr_size(etmq,
- 						       trace_chan_id, addr);
- 			offset--;
--- 
-2.21.1
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
