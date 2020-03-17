@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D45A188792
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:34:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33C451887A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:38:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BaiCTSjAHuUTaiulKXqwlCbiRQbrj/ufkCmDjVr7K+U=; b=kwzbgvfPCVqGGQ
-	qwcUEfDy7g8jxDJ0WZF7ygppK5lNo+572pSEYlcnxw9vxA669Be4BPvVADm/4YkEKXVKGkJ5krptp
-	Tat2KHJNVVhIV2S4xgiGINkXhIiBw+gBDOIjgjio9oDEl1jMQuGXtjm9e93deMVnRUhZBdlZzlTIr
-	43Z6eeyQtL7romjhwQyfgU0XGMYQ7kDCncvjPW9WaGt1/n9+nppPuEVasd3sOMCCj3ROmHfUuD9Um
-	QIImb8YJDBi+iQg+18+554VcpUgEjWM6KFN6Hat55a1lfmMqm3sYtYl92RXqogUywmI0Hc+s0offS
-	RIEhHMzQ9IV2TN1mH9DA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A1di2BRg3YMlLZFJb2EvU5WPgN9eBebW6yVvKPC0Wy8=; b=Og3z1bMi9lXLks
+	G7NZN1A2F6RI2MdodSygf7GaprSx/kpz71GVdN3QW+8D6qemAyeoXMNn57ooJ8FULri4keWQwPRXA
+	QR0NuVjgY+I3ZpC5u09Lfn7V2ItLJ56EsK65Suhx6Au/4r9RamTG5Mjwba3dU+3lFHhsLkpKPoeap
+	1XHAE0k5NlQOAdY4WqJJeBRU2GiyZA+bH7D9gApOkTyhzl1/taiHDEhyuyCcXo0+1W6ZQIdmFQNNO
+	ojcmIobsW9r/gHwwwWd41IYYaxA2Eb2+Rn127oHHZSJtPTCoJO74msyP4w1n0q9/zDOtuHM8+zdqE
+	c1mzaGDoc5enPF3AtUqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEDIp-0001wJ-Sg; Tue, 17 Mar 2020 14:34:43 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEDIg-0001vS-RP; Tue, 17 Mar 2020 14:34:37 +0000
-Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
- [86.202.105.35])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id C5F1324000A;
- Tue, 17 Mar 2020 14:34:28 +0000 (UTC)
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Eddie Huang <eddie.huang@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH v2] rtc: mt2712: fix build without PM_SLEEP
-Date: Tue, 17 Mar 2020 15:34:21 +0100
-Message-Id: <20200317143421.9551-1-alexandre.belloni@bootlin.com>
-X-Mailer: git-send-email 2.24.1
+	id 1jEDMm-0004Cn-Dm; Tue, 17 Mar 2020 14:38:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEDMe-0004C1-D9
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 14:38:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 19D3630E;
+ Tue, 17 Mar 2020 07:38:39 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 241AA3F534; Tue, 17 Mar 2020 07:38:36 -0700 (PDT)
+Date: Tue, 17 Mar 2020 14:38:34 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v4 18/26] arm64: vdso32: Replace TASK_SIZE_32 check in
+ vgettimeofday
+Message-ID: <20200317143834.GC632169@arrakis.emea.arm.com>
+References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
+ <20200317122220.30393-19-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200317122220.30393-19-vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_073435_021263_CF9ED9B7 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200317_073840_489757_1D324DAE 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,28 +63,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rml4IHRoaXMgYnVpbGQgZXJyb3Igd2hlbiBQTV9TTEVFUCBpcyBub3Qgc2VsZWN0ZWQ6Cgpkcml2
-ZXJzL3J0Yy9ydGMtbXQyNzEyLmM6NDEyOjEwOiBlcnJvcjog4oCYbXQyNzEyX3BtX29wc+KAmSB1
-bmRlY2xhcmVkIGhlcmUgKG5vdCBpbiBhIGZ1bmN0aW9uKTsgZGlkIHlvdSBtZWFuIOKAmG10Mjcx
-Ml9ydGNfb3Bz4oCZPwogIDQxMiB8ICAgLnBtID0gJm10MjcxMl9wbV9vcHMsCiAgICAgIHwgICAg
-ICAgICAgXn5+fn5+fn5+fn5+fgoKU2lnbmVkLW9mZi1ieTogQWxleGFuZHJlIEJlbGxvbmkgPGFs
-ZXhhbmRyZS5iZWxsb25pQGJvb3RsaW4uY29tPgotLS0KIGRyaXZlcnMvcnRjL3J0Yy1tdDI3MTIu
-YyB8IDIgKysKIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9k
-cml2ZXJzL3J0Yy9ydGMtbXQyNzEyLmMgYi9kcml2ZXJzL3J0Yy9ydGMtbXQyNzEyLmMKaW5kZXgg
-NjJjMjAyNDE0MjZkLi41ODFiODczMWZiOGEgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcnRjL3J0Yy1t
-dDI3MTIuYworKysgYi9kcml2ZXJzL3J0Yy9ydGMtbXQyNzEyLmMKQEAgLTQwOSw3ICs0MDksOSBA
-QCBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBtdDI3MTJfcnRjX2RyaXZlciA9IHsKIAku
-ZHJpdmVyID0gewogCQkubmFtZSA9ICJtdDI3MTItcnRjIiwKIAkJLm9mX21hdGNoX3RhYmxlID0g
-bXQyNzEyX3J0Y19vZl9tYXRjaCwKKyNpZmRlZiBDT05GSUdfUE1fU0xFRVAKIAkJLnBtID0gJm10
-MjcxMl9wbV9vcHMsCisjZW5kaWYKIAl9LAogCS5wcm9iZSAgPSBtdDI3MTJfcnRjX3Byb2JlLAog
-fTsKLS0gCjIuMjQuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Mar 17, 2020 at 12:22:12PM +0000, Vincenzo Frascino wrote:
+> diff --git a/arch/arm64/kernel/vdso32/vgettimeofday.c b/arch/arm64/kernel/vdso32/vgettimeofday.c
+> index 54fc1c2ce93f..91138077b073 100644
+> --- a/arch/arm64/kernel/vdso32/vgettimeofday.c
+> +++ b/arch/arm64/kernel/vdso32/vgettimeofday.c
+> @@ -8,11 +8,14 @@
+>  #include <linux/time.h>
+>  #include <linux/types.h>
+>  
+> +#define VALID_CLOCK_ID(x) \
+> +	((x >= 0) && (x < VDSO_BASES))
+> +
+>  int __vdso_clock_gettime(clockid_t clock,
+>  			 struct old_timespec32 *ts)
+>  {
+>  	/* The checks below are required for ABI consistency with arm */
+> -	if ((u32)ts >= TASK_SIZE_32)
+> +	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
+>  		return -EFAULT;
+>  
+>  	return __cvdso_clock_gettime32(clock, ts);
+
+I probably miss something but I can't find the TASK_SIZE check in the
+arch/arm/vdso/vgettimeofday.c code. Is this done elsewhere?
+
+> @@ -22,7 +25,7 @@ int __vdso_clock_gettime64(clockid_t clock,
+>  			   struct __kernel_timespec *ts)
+>  {
+>  	/* The checks below are required for ABI consistency with arm */
+> -	if ((u32)ts >= TASK_SIZE_32)
+> +	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
+>  		return -EFAULT;
+>  
+>  	return __cvdso_clock_gettime(clock, ts);
+> @@ -38,9 +41,12 @@ int __vdso_clock_getres(clockid_t clock_id,
+>  			struct old_timespec32 *res)
+>  {
+>  	/* The checks below are required for ABI consistency with arm */
+> -	if ((u32)res >= TASK_SIZE_32)
+> +	if ((u32)res > UINTPTR_MAX - sizeof(res) + 1)
+>  		return -EFAULT;
+>  
+> +	if (!VALID_CLOCK_ID(clock_id) && res == NULL)
+> +		return -EINVAL;
+
+This last check needs an explanation. If the clock_id is invalid but res
+is not NULL, we allow it. I don't see where the compatibility issue is,
+arm32 doesn't have such check.
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
