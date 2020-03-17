@@ -2,63 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ECE8188C2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 18:32:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC889188C31
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 18:34:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cwfqb9vam3b2cNqGrji8JJ6/Q6SNd8yGS2eclLY+W+I=; b=sFtoK1thN4NFFg
-	rKlv0vSQOtdASLdv6caCfgKtsbuaTocBSL5iMF+QDVRmwS7Vi2r/Rz8ibBRRu+hvBPKTEBgVY06bX
-	Py3VOwVP1njDneH5LLLe5OK4ujHRpua0n9VUaFdDy9TFyC3/Y66wkmzKHzE2ap1SnDVSDe+m/NV2v
-	/rxnGH71rzs31FFUVh8b5s8dADDu/H1XFRItTSqfxWgpv/1bBTP4b8sihuEDckqkvcF5ccFh3ymB3
-	QfjvVXVPER3vt/03ERa/eXl12IwhUZ37vtAlyFZSveQx87XpXI+Su4F6BEBgnStkCWP10CA2StKQO
-	mVkDHJcQCodtI7A7M8kQ==;
+	List-Owner; bh=h1l+niL04c/uAJLSG6nxp4ZDnYSLjsSsrKF1slPtAEc=; b=CjmTJ2G4+XEr2E
+	khcndKKXnlW83eXq5yQ/dMgGvqbAH6q5avfFqoACKDKhOvraaKhQSpo85+oSMZn9TeudSpFK5X4N5
+	HgP70KdPzr6SGk/pwoy65LhWezgcEgT5+rBK6ztUWHnwvj8U2ewPNLYqcUmCEPLHf2zfWVm/3O0nO
+	AcV5ljFtYMsxyH0Ljup8PyiG6i4C93mouGCkYf0wnxJWc50m9zd1CWmIy1IgttXy+6FeFimW1uSYV
+	O5Fgtr8vTTns13tPLWYXkymSp3J7lOiXj5TFEr2ZeeTVRi96rKtNtNbqcXqgJXPXJWDpGlXEWHdOi
+	fQWeiM+hsa9LW4s1kadQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEG4p-0002FO-L8; Tue, 17 Mar 2020 17:32:27 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEG4f-0002Eh-Fm
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 17:32:19 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jEG4Y-0008Oe-4d; Tue, 17 Mar 2020 18:32:10 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jEG4W-0005Tl-OS; Tue, 17 Mar 2020 18:32:08 +0100
-Date: Tue, 17 Mar 2020 18:32:08 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Pascal Roeleven <dev@pascalroeleven.nl>
-Subject: Re: pwm: sun4i: pwm-backlight not working since 5.6-rc1
-Message-ID: <20200317173208.t5s63pfz3byxsgzi@pengutronix.de>
-References: <6185b5540ca082d887d7d13330c9d938@pascalroeleven.nl>
- <20200312132942.2kfspvmoc3mxkdx4@pengutronix.de>
- <6e995c4c22c4e6c93acb1f491e5aa109@pascalroeleven.nl>
- <20200316072613.37lnjfloac4npudf@pengutronix.de>
+	id 1jEG6z-0002aC-Fa; Tue, 17 Mar 2020 17:34:41 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEG6n-0002Zs-UK
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 17:34:31 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 56C60810D;
+ Tue, 17 Mar 2020 17:35:12 +0000 (UTC)
+Date: Tue, 17 Mar 2020 10:34:22 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 0/3] Block idle in gpio-omap with cpu_pm
+Message-ID: <20200317173422.GN37466@atomide.com>
+References: <20200304225433.37336-1-tony@atomide.com>
+ <CACRpkdYL5mZ7i6bEF0b_CUXaG-jHKz4KnSXsBNfs_9M054U3vQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200316072613.37lnjfloac4npudf@pengutronix.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <CACRpkdYL5mZ7i6bEF0b_CUXaG-jHKz4KnSXsBNfs_9M054U3vQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_103217_526084_55B4AB57 
-X-CRM114-Status: GOOD (  25.45  )
+X-CRM114-CacheID: sfid-20200317_103430_017067_ECDD0142 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,135 +60,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Ladislav Michl <ladis@linux-mips.org>, Linux-OMAP <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Pascal,
+Hi Linus,
 
-On Mon, Mar 16, 2020 at 08:26:13AM +0100, Uwe Kleine-K=F6nig wrote:
-> On Thu, Mar 12, 2020 at 04:06:07PM +0100, Pascal Roeleven wrote:
-> > On 2020-03-12 14:29, Uwe Kleine-K=F6nig wrote:
-> > > On Thu, Mar 12, 2020 at 01:22:13PM +0100, Pascal Roeleven wrote:
-> > > > Hi all,
-> > > > =
+* Linus Walleij <linus.walleij@linaro.org> [200309 09:27]:
+> On Wed, Mar 4, 2020 at 11:54 PM Tony Lindgren <tony@atomide.com> wrote:
+> 
+> > As discussed earlier, here's a series to use cpu_pm to block deeper SoC
+> > idle states if a gpio interrupt is pending.
+> 
+> As you requested I queued these on an immutable branch
+> based on v5.6-rc1:
+> https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/log/?h=ib-omap-block-idle
+> 
+> And merged into gpio-devel for v5.7.
 
-> > > > I am working on adding an old A10 device to mainline and noticed an
-> > > > issue
-> > > > when testing on 5.5.8 vs master.
-> > > > =
+Hmm I'm not seeing these in Linux next yet though, care to check?
 
-> > > > Since 5.6-rc1, I can't control the brightness of my LCD backlight
-> > > > anymore.
-> > > > The backlight stays on full brightness instead. I am controlling the
-> > > > brightness value via sysfs for testing.
-> > > > =
+Regards,
 
-> > > > I am not sure if this is a general pwm-sun4i issue or if it is
-> > > > related to
-> > > > the backlight. However I narrowed it down to one commit for pwm-sun=
-4i:
-> > > > =
-
-> > > > fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5
-> > > > =
-
-> > > > If I use pwm-sun4i.c from 5b090b430d750961305030232314b6acdb0102aa =
-on
-> > > > master, the backlight works fine. Unfortunately, due to my lack of
-> > > > kernel
-> > > > experience, I can't see how the commit above broke it.
-> > > =
-
-> > > Hmm, I cannot see how fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5 breaks
-> > > this. Looking at the output of
-> > > =
-
-> > > 	git show -b fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5
-> > > =
-
-> > > (i.e. ignoring whitespace changes) I don't see how the behaviour you'=
-re
-> > > reporting can be explained.
-> > > =
-
-> > > Are you sure that fa4d81784681a26bcf7d2a43c6ac5cf991ef28f5 is the bad
-> > > commit?
-> > > =
-
-> > > Can you install a tool to inspect register values and check how the
-> > > affected registers change if you switch kernel versions and/or pwm
-> > > settings?
-> > > =
-
-> > > (e.g.
-> > > 	memtool md 0x1c20e00+0xc
-> > > )
-> > > =
-
-> > > Best regards
-> > > Uwe
-> > =
-
-> > Thanks for your response.
-> > =
-
-> > Yes I am sure that is the commit. If I am on master, and replace pwm-su=
-n4i.c
-> > with the one from 5b090b43, everything works. If I then apply fa4d8178,=
- it
-> > stops working.
-> > =
-
-> > And strangely the output of the registers is exactly the same before and
-> > after fa4d8178:
-> > =
-
-> > 01c20e00: 00000050 00130014 00000000 (full brightness)
-> > 01c20e00: 00000050 00130006 00000000 (min brightness)
-> > =
-
-> > Even when I'm on 5b090b43 and cherry-pick fa4d8178 can I reproduce the
-> > issue.
-> =
-
-> Very strange. I'm out of sensible ideas. The remaining ones are:
-> =
-
-> - enable tracing in the kernel and boot with
-> =
-
-> 	trace_event=3Dpwm
-> =
-
->   And then check after the problem occurred in
->   /sys/kernel/debug/tracing/trace if something sticks out.
-> =
-
-> - Try modifying the registers using memtool. E.g.
-> =
-
-> 	memtool mw 0x01c20e04 0x00130012
-> =
-
-> - Do you have equipment to check the actual output of the PWM hardware?
->   If so, what do you see?
-
-I assume the sun4i-series you sent earlier today resolves the problems
-you reported here?
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
