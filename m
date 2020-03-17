@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C99D6188F72
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 21:52:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72302188FB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 21:52:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zj6BiYleEovlENfJO9ndXceZXXjTiQUI0h7E9Wiq6bM=; b=a1Gv4v42X80Nj5
-	SvyeGNEnLMFYqEh2hBWkUHmZUK3k9mTebj/s6c2iOHrTBF/NpqeNH1tDppSKjO0AtTMdcXKIpEvN2
-	NJzzX4GWpLL85KMFEy2wHymHxOcBT/16USQ4s3GCXXcmKCyHgNkI46UfnkZ7/8yuIz9laTFJBzS7I
-	oOqf/A8hGBwUeMh39ekRJlW2Mz4LF57NGYdaoa0cda21Ik3oW7C7Pi6RbwyW4icaGbe842m0VNLN/
-	K3sScsYWKFlYYta5AgZaTN7Yg7GJcZylSprcoekKLrKJy2StliWiuaLFx/JmIx+yKzYdfq5VpnoKz
-	cL3H2BvwLkElLaoZWgAg==;
+	List-Owner; bh=XxD9cUBoeWQPX4nBUcyzD5B3J7aGETa0BWixSm+rxlI=; b=iNfCBonQ+EByoy
+	Rl0NnaggJBZvo8wXzMnYlWiZu/bViVOT/g1+03DDOjlvLtS1ZtvRCiZHyJ6VF3ndcmJakh7Rm8yW3
+	/4zJHHyOP0ht1s5e0oUE2VVHJkOCpeQI5B/nMwyT5ryDvkocYntNbwMNU8lU2z+6hTWQuQGO1hepf
+	dfb2EE0JSaPtj0me2YnFlSGPt5xegYNrnpxNExvwYtWZIkW8AjV1XEa/5C9OIE2PbyV0ZUVKn6t4z
+	7S482x8KfH2hV7k5pV0NjFkqty4IjycR6PKNawaPWC9t6PqtrZfENjkEHkBRdHh0aHOtmf/XZvFo0
+	PcBor8i0OH67erEvqcfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJBn-0008J5-Eg; Tue, 17 Mar 2020 20:51:51 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1jEJCI-0000P7-Dq; Tue, 17 Mar 2020 20:52:22 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJAo-0007lo-Ri
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 20:50:52 +0000
+ id 1jEJAp-0007mD-K7
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 20:50:53 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 0A64E23E4F;
+ by ssl.serverraum.org (Postfix) with ESMTPSA id A696D23E57;
  Tue, 17 Mar 2020 21:50:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1584478249;
+ s=mail2016061301; t=1584478250;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=J3JWSJwRY1VsrcUPrD3u272/QamxSCbn9RXueEbf4uk=;
- b=vLZj6OVlT0vaDqMOUz9UOOOWDbOOw5HJF9006hPb4dBLeTin5Fn0EoR0j9hCV+th7bINCG
- x2SzpjlBZNM77VAM9gK6adOpSnxf77jHZyZHz5oa4Sb98N+19/xZAEmNJxD8Us33JvNodB
- dxL8Jo2mIWf3mrcCiyhaMnD0AjugxjQ=
+ bh=pnvrMHq4df7PzQAC7TxqlEV1vqqRU/yK9xcpXwNVrAk=;
+ b=jGR32UkzFLXyXtavF5314t9FNqbgpQUuNIGQd7EMFzYI52w+yrSo0qjpNZxXtFLPoqpn6f
+ 8/qSs9/b7EE68cQvsCR9zAZvq6qXV3mbMdftT3LDRPefa3oYZ8I+2VFnIGuiUTxk34heY7
+ +sH/kROcX7Xm1z5qyHxJXifGrw5dVvo=
 From: Michael Walle <michael@walle.cc>
 To: linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 03/18] mfd: mfd-core: match device tree node against reg
- property
-Date: Tue, 17 Mar 2020 21:50:02 +0100
-Message-Id: <20200317205017.28280-4-michael@walle.cc>
+Subject: [PATCH 04/18] dt-bindings: mfd: Add bindings for sl28cpld
+Date: Tue, 17 Mar 2020 21:50:03 +0100
+Message-Id: <20200317205017.28280-5-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200317205017.28280-1-michael@walle.cc>
 References: <20200317205017.28280-1-michael@walle.cc>
@@ -58,30 +57,31 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 0A64E23E4F
+X-Rspamd-Queue-Id: A696D23E57
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  FREEMAIL_ENVRCPT(0.00)[gmail.com]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.542];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_TWELVE(0.00)[22];
- MID_CONTAINS_FROM(1.00)[]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.606];
+ DKIM_SIGNED(0.00)[];
+ DBL_PROHIBIT(0.00)[0.0.0.1:email,0.0.0.0:email];
+ RCPT_COUNT_TWELVE(0.00)[22]; MID_CONTAINS_FROM(1.00)[];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
  ASN(0.00)[asn:31334, ipnet:2a02:810c:8000::/33, country:DE];
  FREEMAIL_CC(0.00)[linaro.org,baylibre.com,kernel.org,suse.com,roeck-us.net,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,walle.cc];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_135051_048563_30F65725 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20200317_135051_952601_255C2278 
+X-CRM114-Status: GOOD (  11.80  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -117,64 +117,164 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There might be multiple children with the device tree compatible, for
-example if a MFD has multiple instances of the same function. In this
-case only the first is matched and the other children get a wrong
-of_node reference.
-We distinguish them by looking at the reg property and match it against
-the mfd_cell id element if the latter is non-zero and the reg property
-exists in the device tree node.
+This adds device tree bindings for the board management controller found
+on the Kontron SMARC-sAL28 board.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- drivers/mfd/mfd-core.c | 26 +++++++++++++++++---------
- 1 file changed, 17 insertions(+), 9 deletions(-)
+ .../bindings/mfd/kontron,sl28cpld.yaml        | 143 ++++++++++++++++++
+ 1 file changed, 143 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
 
-diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
-index e735565969b3..0e718e6cdbde 100644
---- a/drivers/mfd/mfd-core.c
-+++ b/drivers/mfd/mfd-core.c
-@@ -117,6 +117,7 @@ static int mfd_add_device(struct device *parent, int id,
- 	struct device_node *np = NULL;
- 	int ret = -ENOMEM;
- 	int platform_id;
-+	u32 of_id;
- 	int r;
- 
- 	if (id == PLATFORM_DEVID_AUTO)
-@@ -151,16 +152,23 @@ static int mfd_add_device(struct device *parent, int id,
- 
- 	if (parent->of_node && cell->of_compatible) {
- 		for_each_child_of_node(parent->of_node, np) {
--			if (of_device_is_compatible(np, cell->of_compatible)) {
--				if (!of_device_is_available(np)) {
--					/* Ignore disabled devices error free */
--					ret = 0;
--					goto fail_alias;
--				}
--				pdev->dev.of_node = np;
--				pdev->dev.fwnode = &np->fwnode;
--				break;
-+			if (!of_device_is_compatible(np, cell->of_compatible))
-+				continue;
+diff --git a/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml b/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
+new file mode 100644
+index 000000000000..3b9cca49d2d6
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mfd/kontron,sl28cpld.yaml
+@@ -0,0 +1,143 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mfd/kontron,sl28cpld.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+			/* match the reg property to the id */
-+			if (!of_property_read_u32(np, "reg", &of_id))
-+				if (cell->id && cell->id != of_id)
-+					continue;
++title: Kontron's sl28cpld board management controller
 +
-+			if (!of_device_is_available(np)) {
-+				/* Ignore disabled devices error free */
-+				ret = 0;
-+				goto fail_alias;
- 			}
++maintainers:
++  - Michael Walle <michael@walle.cc>
 +
-+			pdev->dev.of_node = np;
-+			pdev->dev.fwnode = &np->fwnode;
-+			break;
- 		}
- 	}
- 
++description: |
++  The board management controller may contain different IP blocks like
++  watchdog, fan monitoring, PWM controller, interrupt controller and a
++  GPIO controller.
++
++properties:
++  compatible:
++    const: kontron,sl28cpld
++
++  reg:
++    description:
++      I2C device address.
++    maxItems: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++  "#interrupt-cells":
++    const: 2
++
++  interrupts:
++    maxItems: 1
++
++  interrupt-controller: true
++
++patternProperties:
++  "^gp(io|i|o)(@[0-9]+)?$":
++    $ref: ../gpio/kontron,sl28cpld-gpio.yaml
++
++  "^hwmon(@[0-9]+)?$":
++    $ref: ../hwmon/kontron,sl28cpld-hwmon.yaml
++
++  "^pwm(@[0-9]+)?$":
++    $ref: ../pwm/kontron,sl28cpld-pwm.yaml
++
++  "^watchdog(@[0-9]+)?$":
++    $ref: ../watchdog/kontron,sl28cpld-wdt.yaml
++
++required:
++  - "#address-cells"
++  - "#size-cells"
++  - compatible
++  - reg
++  - "#interrupt-cells"
++  - interrupt-controller
++
++oneOf:
++  - required:
++    - interrupts
++  - required:
++    - interrupts-extended
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/irq.h>
++    i2c {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        sl28cpld@4a {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            compatible = "kontron,sl28cpld";
++            reg = <0x4a>;
++            interrupts-extended = <&gpio2 6 IRQ_TYPE_EDGE_FALLING>;
++
++            #interrupt-cells = <2>;
++            interrupt-controller;
++
++            gpio@0 {
++                compatible = "kontron,sl28cpld-gpio";
++                reg = <0>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++
++                interrupt-controller;
++                #interrupt-cells = <2>;
++            };
++
++            gpio@1 {
++                compatible = "kontron,sl28cpld-gpio";
++                reg = <1>;
++
++                gpio-controller;
++                #gpio-cells = <2>;
++
++                interrupt-controller;
++                #interrupt-cells = <2>;
++            };
++
++            gpo {
++                compatible = "kontron,sl28cpld-gpo";
++
++                gpio-controller;
++                #gpio-cells = <2>;
++                gpio-line-names = "a", "b", "c";
++            };
++
++            gpi {
++                compatible = "kontron,sl28cpld-gpi";
++
++                gpio-controller;
++                #gpio-cells = <2>;
++            };
++
++            hwmon {
++                compatible = "kontron,sl28cpld-fan";
++            };
++
++            pwm@0 {
++                compatible = "kontron,sl28cpld-pwm";
++                reg = <0>;
++                #pwm-cells = <2>;
++            };
++
++            pwm@1 {
++                compatible = "kontron,sl28cpld-pwm";
++                reg = <1>;
++                #pwm-cells = <2>;
++            };
++
++            watchdog {
++                compatible = "kontron,sl28cpld-wdt";
++            };
++        };
++    };
 -- 
 2.20.1
 
