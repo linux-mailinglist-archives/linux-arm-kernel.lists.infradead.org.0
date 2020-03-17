@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14F9F188429
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:29:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D03018842A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:29:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+b/LZbkk+wOA86Ln4xGvs7xu3W9ihTS6/KtdR0krNmk=; b=lFay7CcwBFIITA
-	2Lhqe1B2DEiDnjP7phtDJecveJ2/rj1rW9IpO1lQv5jV9odRTSxpppemr21KU2nOhYnM/T+jBg4Um
-	un4q+joGBMGhIy21PbTXdSiy5BVAwfHhffRv9nUXZ8qtV8txgE+9oNYbxwG5/DJ6ikAjzqNsa/fjI
-	DRcqwlmaCgenASv2DTcwpeWw9yLBSZYlj1g1wfg/Iv7xROdwVh9wSTOFirHTC7RTTCzOIuBCv8LO+
-	I+FqA4c6qomSsYeVt4c6phcjz/urIS/hkHRIHnInCDfYxoQmg9/OAqMbETSQnwGXrjkYxDV8r8gMc
-	tfoQpkq4SMZPhX8OqCmA==;
+	List-Owner; bh=RU3RPrifpw3VHcqjQ0iJvyFmS9JoTt9lfFAvQ9hNu/Q=; b=q6HISUJfF11Lh5
+	7XmoM1RCeRa1TmScSrWp5t6K8icNsWX198goZGdP50AOwaT7x6Q0QMNZlJR+BjvTvOH/LvCfKGrBJ
+	eJBckietTp2ladyuoWbnooctWxT9LYthxlOwzkrVm+c7gUlyGHDs5YKkVPB48xdnJXdpD4JgLIgFE
+	9WSAeyUuddrm4WVvp+UbAVy9ng3GBG3foM+R3rtDngUCmCVe2TQxTEyhT1n6xBybV9ZkRC0ufaGPh
+	Bh1I989vDiwC+B+XeRF60+EsWj197I8eYBu12AO+obc32VxUjoOyoepcKHchLX1fg9n+LKOsH09aM
+	pE8JhqRj3MN3wdgLrxJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEBLc-0004lX-Tc; Tue, 17 Mar 2020 12:29:29 +0000
+	id 1jEBLt-0004yN-9C; Tue, 17 Mar 2020 12:29:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEBGQ-0006jR-3g
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:24:07 +0000
+ id 1jEBGT-0006nz-GC
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:24:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2B95FEC;
- Tue, 17 Mar 2020 05:24:05 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF607101E;
+ Tue, 17 Mar 2020 05:24:08 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD3723F534;
- Tue, 17 Mar 2020 05:24:02 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 047EE3F534;
+ Tue, 17 Mar 2020 05:24:05 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v4 23/26] x86: vdso: Enable x86 to use common headers
-Date: Tue, 17 Mar 2020 12:22:17 +0000
-Message-Id: <20200317122220.30393-24-vincenzo.frascino@arm.com>
+Subject: [PATCH v4 24/26] arm: vdso: Enable arm to use common headers
+Date: Tue, 17 Mar 2020 12:22:18 +0000
+Message-Id: <20200317122220.30393-25-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_052406_239481_2EF5F4F7 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20200317_052409_767102_BA8D3FC9 
+X-CRM114-Status: GOOD (  15.06  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -80,56 +80,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable x86 to use only the common headers in the implementation
+Enable arm to use only the common headers in the implementation
 of the vDSO library.
 
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
+Cc: Russell King <linux@armlinux.org.uk>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/x86/include/asm/processor.h      | 12 +-----------
- arch/x86/include/asm/vdso/processor.h | 23 +++++++++++++++++++++++
- 2 files changed, 24 insertions(+), 11 deletions(-)
- create mode 100644 arch/x86/include/asm/vdso/processor.h
+ arch/arm/include/asm/cp15.h              | 20 +------------
+ arch/arm/include/asm/processor.h         | 11 +------
+ arch/arm/include/asm/vdso/cp15.h         | 38 ++++++++++++++++++++++++
+ arch/arm/include/asm/vdso/gettimeofday.h |  4 +--
+ arch/arm/include/asm/vdso/processor.h    | 22 ++++++++++++++
+ 5 files changed, 64 insertions(+), 31 deletions(-)
+ create mode 100644 arch/arm/include/asm/vdso/cp15.h
+ create mode 100644 arch/arm/include/asm/vdso/processor.h
 
-diff --git a/arch/x86/include/asm/processor.h b/arch/x86/include/asm/processor.h
-index 09705ccc393c..94789db550df 100644
---- a/arch/x86/include/asm/processor.h
-+++ b/arch/x86/include/asm/processor.h
-@@ -26,6 +26,7 @@ struct vm86;
- #include <asm/fpu/types.h>
- #include <asm/unwind_hints.h>
- #include <asm/vmxfeatures.h>
+diff --git a/arch/arm/include/asm/cp15.h b/arch/arm/include/asm/cp15.h
+index d2453e2d3f1f..a54230e65647 100644
+--- a/arch/arm/include/asm/cp15.h
++++ b/arch/arm/include/asm/cp15.h
+@@ -50,25 +50,7 @@
+ 
+ #ifdef CONFIG_CPU_CP15
+ 
+-#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
+-	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
+-#define __ACCESS_CP15_64(Op1, CRm)		\
+-	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
+-
+-#define __read_sysreg(r, w, c, t) ({				\
+-	t __val;						\
+-	asm volatile(r " " c : "=r" (__val));			\
+-	__val;							\
+-})
+-#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
+-
+-#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
+-#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
+-
+-#define BPIALL				__ACCESS_CP15(c7, 0, c5, 6)
+-#define ICIALLU				__ACCESS_CP15(c7, 0, c5, 0)
+-
+-#define CNTVCT				__ACCESS_CP15_64(1, c14)
++#include <asm/vdso/cp15.h>
+ 
+ extern unsigned long cr_alignment;	/* defined in entry-armv.S */
+ 
+diff --git a/arch/arm/include/asm/processor.h b/arch/arm/include/asm/processor.h
+index 614bf829e454..b9241051e5cb 100644
+--- a/arch/arm/include/asm/processor.h
++++ b/arch/arm/include/asm/processor.h
+@@ -14,6 +14,7 @@
+ #include <asm/ptrace.h>
+ #include <asm/types.h>
+ #include <asm/unified.h>
 +#include <asm/vdso/processor.h>
  
- #include <linux/personality.h>
- #include <linux/cache.h>
-@@ -677,17 +678,6 @@ static inline unsigned int cpuid_edx(unsigned int op)
- 	return edx;
- }
+ #ifdef __KERNEL__
+ #define STACK_TOP	((current->personality & ADDR_LIMIT_32BIT) ? \
+@@ -85,16 +86,6 @@ extern void release_thread(struct task_struct *);
  
--/* REP NOP (PAUSE) is a good thing to insert into busy-wait loops. */
--static __always_inline void rep_nop(void)
--{
--	asm volatile("rep; nop" ::: "memory");
--}
+ unsigned long get_wchan(struct task_struct *p);
+ 
+-#if __LINUX_ARM_ARCH__ == 6 || defined(CONFIG_ARM_ERRATA_754327)
+-#define cpu_relax()						\
+-	do {							\
+-		smp_mb();					\
+-		__asm__ __volatile__("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop;");	\
+-	} while (0)
+-#else
+-#define cpu_relax()			barrier()
+-#endif
 -
--static __always_inline void cpu_relax(void)
--{
--	rep_nop();
--}
--
- /*
-  * This function forces the icache and prefetched instruction stream to
-  * catch up with reality in two very specific cases:
-diff --git a/arch/x86/include/asm/vdso/processor.h b/arch/x86/include/asm/vdso/processor.h
+ #define task_pt_regs(p) \
+ 	((struct pt_regs *)(THREAD_START_SP + task_stack_page(p)) - 1)
+ 
+diff --git a/arch/arm/include/asm/vdso/cp15.h b/arch/arm/include/asm/vdso/cp15.h
 new file mode 100644
-index 000000000000..57b1a7034c64
+index 000000000000..bed16fa1865e
 --- /dev/null
-+++ b/arch/x86/include/asm/vdso/processor.h
-@@ -0,0 +1,23 @@
++++ b/arch/arm/include/asm/vdso/cp15.h
+@@ -0,0 +1,38 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
++/*
++ * Copyright (C) 2020 ARM Ltd.
++ */
++#ifndef __ASM_VDSO_CP15_H
++#define __ASM_VDSO_CP15_H
++
++#ifndef __ASSEMBLY__
++
++#ifdef CONFIG_CPU_CP15
++
++#include <linux/stringify.h>
++
++#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
++	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
++#define __ACCESS_CP15_64(Op1, CRm)		\
++	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
++
++#define __read_sysreg(r, w, c, t) ({				\
++	t __val;						\
++	asm volatile(r " " c : "=r" (__val));			\
++	__val;							\
++})
++#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
++
++#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
++#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
++
++#define BPIALL				__ACCESS_CP15(c7, 0, c5, 6)
++#define ICIALLU				__ACCESS_CP15(c7, 0, c5, 0)
++
++#define CNTVCT				__ACCESS_CP15_64(1, c14)
++
++#endif /* CONFIG_CPU_CP15 */
++
++#endif /* __ASSEMBLY__ */
++
++#endif /* __ASM_VDSO_CP15_H */
+diff --git a/arch/arm/include/asm/vdso/gettimeofday.h b/arch/arm/include/asm/vdso/gettimeofday.h
+index 07d791c65cf7..36dc18553ed8 100644
+--- a/arch/arm/include/asm/vdso/gettimeofday.h
++++ b/arch/arm/include/asm/vdso/gettimeofday.h
+@@ -7,9 +7,9 @@
+ 
+ #ifndef __ASSEMBLY__
+ 
+-#include <asm/barrier.h>
+-#include <asm/cp15.h>
++#include <asm/errno.h>
+ #include <asm/unistd.h>
++#include <asm/vdso/cp15.h>
+ #include <uapi/linux/time.h>
+ 
+ #define VDSO_HAS_CLOCK_GETRES		1
+diff --git a/arch/arm/include/asm/vdso/processor.h b/arch/arm/include/asm/vdso/processor.h
+new file mode 100644
+index 000000000000..45efb3ff511c
+--- /dev/null
++++ b/arch/arm/include/asm/vdso/processor.h
+@@ -0,0 +1,22 @@
 +/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
 + * Copyright (C) 2020 ARM Ltd.
@@ -139,16 +230,15 @@ index 000000000000..57b1a7034c64
 +
 +#ifndef __ASSEMBLY__
 +
-+/* REP NOP (PAUSE) is a good thing to insert into busy-wait loops. */
-+static __always_inline void rep_nop(void)
-+{
-+	asm volatile("rep; nop" ::: "memory");
-+}
-+
-+static __always_inline void cpu_relax(void)
-+{
-+	rep_nop();
-+}
++#if __LINUX_ARM_ARCH__ == 6 || defined(CONFIG_ARM_ERRATA_754327)
++#define cpu_relax()						\
++	do {							\
++		smp_mb();					\
++		__asm__ __volatile__("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop;");	\
++	} while (0)
++#else
++#define cpu_relax()			barrier()
++#endif
 +
 +#endif /* __ASSEMBLY__ */
 +
