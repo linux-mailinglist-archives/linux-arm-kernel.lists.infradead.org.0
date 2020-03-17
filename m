@@ -2,72 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B866188841
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:55:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2920C188884
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 16:04:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sMFDpzwBQTHES92v8czoGjdgh+nMJX84ZsUIj0/6fs0=; b=GxfYXUG8u6qMHb
-	hN7kEQFXoTCBDim8TdHBlZU1AuhY9Hw1/cgiP3hQQUbd4UyAMQ0FCG3mmbSLKTCx93XJbs5I3eY3C
-	CnTnvQfq9/v6QTvnNDA42+wzeERe2ziRj0om5Z6aaJZYfbSwsL/lD7gnI8TEad61BIWUFvK5L0W4L
-	pUw7lP0PIXdPbo9Uw+50MGytyCdGnytz4yaONOd52yZeAWw3rtun9W6xBUotSFkke2c9KA0K6o/Gw
-	HgNpvFXeVtomyNlC6U+PWQ5TgfauTyW2bzkCn4/4ls9xlWythsPuV/4rVlbCUUqQ8xHs7D3+8HMtq
-	Fw2ffcJJYzIgw5H4aDNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mn82mc5z8y9axBoyxTKz4BvjzCdtpWBxME2WfmGo0vc=; b=cEIsYBKnj1wj3B
+	ETaWqvHhQcRWHA0jzKUv53ZCT4bzNv9OsuHcel13IL2OeU6Yrwq18LuGs+y498+t3z05iWdRmC6TE
+	kdb4VnvAB8u98A45cLv+S6ItozovLuvSe2dFX4c9DRP0OZMS//tX1Ade/ufeHUWM6KC3f2k5xu5ae
+	7ZdL54XlwAeDaPauF8f0eqiofx3JgdcSDy8LkPIlfed+CUaQPbtTMxkdJp6F4RCAtc2LinwXf1Ood
+	eVklleM5lieRkuFkRlY7LB7dT+nQyg6bOGhLC7lG6/CKKI6ne1+9s10WXaNxoPGA1dDqgVQ5mYvFD
+	8dbbG931jyUbgkKYYZPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEDcN-00024k-HG; Tue, 17 Mar 2020 14:54:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEDbz-0001up-5s
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 14:54:32 +0000
-Received: from mail.kernel.org (ip5f5ad4e9.dynamic.kabel-deutschland.de
- [95.90.212.233])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5254620735;
- Tue, 17 Mar 2020 14:54:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584456870;
- bh=lCdLEJ5w0ZRwfZb7Xc7NwaWoCZT37OUHOWlWSj57v6g=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Djw9jFOmPVxugYNlt7C0HBMWT+aNtPhjpQIY7HubEC1HmKNR2QVXCfav5TZcdI21d
- MHQRonO5QctE4EIaQ93hoVZIqzEuDSKIFY7/q11VB9V+nNIYRpm4RTp3qnuOEHeme/
- iaJDADaRIHzNun8GSiXS2ZcLmFAmkQl8YUKWsR/o=
-Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
- (envelope-from <mchehab@kernel.org>)
- id 1jEDbw-000AML-CZ; Tue, 17 Mar 2020 15:54:28 +0100
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH 02/17] docs: arm64: booting.rst: get rid of some warnings
-Date: Tue, 17 Mar 2020 15:54:11 +0100
-Message-Id: <7f4f13e03c2d0c5a30db4eb209eaa5aef339de94.1584456635.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <cover.1584456635.git.mchehab+huawei@kernel.org>
-References: <cover.1584456635.git.mchehab+huawei@kernel.org>
+	id 1jEDkz-0006nz-J6; Tue, 17 Mar 2020 15:03:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEDkq-0006n3-13
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 15:03:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4C3030E;
+ Tue, 17 Mar 2020 08:03:38 -0700 (PDT)
+Received: from [10.37.12.228] (unknown [10.37.12.228])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 80D4E3F52E;
+ Tue, 17 Mar 2020 08:03:33 -0700 (PDT)
+Subject: Re: [PATCH v4 18/26] arm64: vdso32: Replace TASK_SIZE_32 check in
+ vgettimeofday
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
+ <20200317122220.30393-19-vincenzo.frascino@arm.com>
+ <20200317143834.GC632169@arrakis.emea.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <f03a9493-c8c2-e981-f560-b2f437a208e4@arm.com>
+Date: Tue, 17 Mar 2020 15:04:01 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20200317143834.GC632169@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_075431_259599_87A9620A 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200317_080340_156505_4BD7DF53 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,101 +66,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Get rid of those warnings:
+Hi Catalin,
 
-    Documentation/arm64/booting.rst:253: WARNING: Unexpected indentation.
-    Documentation/arm64/booting.rst:259: WARNING: Block quote ends without a blank line; unexpected unindent.
+On 3/17/20 2:38 PM, Catalin Marinas wrote:
+> On Tue, Mar 17, 2020 at 12:22:12PM +0000, Vincenzo Frascino wrote:
+>> diff --git a/arch/arm64/kernel/vdso32/vgettimeofday.c b/arch/arm64/kernel/vdso32/vgettimeofday.c
+>> index 54fc1c2ce93f..91138077b073 100644
+>> --- a/arch/arm64/kernel/vdso32/vgettimeofday.c
+>> +++ b/arch/arm64/kernel/vdso32/vgettimeofday.c
+>> @@ -8,11 +8,14 @@
+>>  #include <linux/time.h>
+>>  #include <linux/types.h>
+>>  
+>> +#define VALID_CLOCK_ID(x) \
+>> +	((x >= 0) && (x < VDSO_BASES))
+>> +
+>>  int __vdso_clock_gettime(clockid_t clock,
+>>  			 struct old_timespec32 *ts)
+>>  {
+>>  	/* The checks below are required for ABI consistency with arm */
+>> -	if ((u32)ts >= TASK_SIZE_32)
+>> +	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
+>>  		return -EFAULT;
+>>  
+>>  	return __cvdso_clock_gettime32(clock, ts);
+> 
+> I probably miss something but I can't find the TASK_SIZE check in the
+> arch/arm/vdso/vgettimeofday.c code. Is this done elsewhere?
 
-By adding an extra blank lines where needed.
+Can TASK_SIZE > UINTPTR_MAX on an arm64 system?
 
-While here, use list markups on some places, as otherwise Sphinx
-will consider the next lines as continuation of the privious ones.
+> 
+>> @@ -22,7 +25,7 @@ int __vdso_clock_gettime64(clockid_t clock,
+>>  			   struct __kernel_timespec *ts)
+>>  {
+>>  	/* The checks below are required for ABI consistency with arm */
+>> -	if ((u32)ts >= TASK_SIZE_32)
+>> +	if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
+>>  		return -EFAULT;
+>>  
+>>  	return __cvdso_clock_gettime(clock, ts);
+>> @@ -38,9 +41,12 @@ int __vdso_clock_getres(clockid_t clock_id,
+>>  			struct old_timespec32 *res)
+>>  {
+>>  	/* The checks below are required for ABI consistency with arm */
+>> -	if ((u32)res >= TASK_SIZE_32)
+>> +	if ((u32)res > UINTPTR_MAX - sizeof(res) + 1)
+>>  		return -EFAULT;
+>>  
+>> +	if (!VALID_CLOCK_ID(clock_id) && res == NULL)
+>> +		return -EINVAL;
+> 
+> This last check needs an explanation. If the clock_id is invalid but res
+> is not NULL, we allow it. I don't see where the compatibility issue is,
+> arm32 doesn't have such check.
+> 
 
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- Documentation/arm64/booting.rst | 36 ++++++++++++++++++++-------------
- 1 file changed, 22 insertions(+), 14 deletions(-)
+The case that you are describing has to return -EPERM per ABI spec. This case
+has to return -EINVAL.
 
-diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
-index a3f1a47b6f1c..e50186092948 100644
---- a/Documentation/arm64/booting.rst
-+++ b/Documentation/arm64/booting.rst
-@@ -173,7 +173,9 @@ Before jumping into the kernel, the following conditions must be met:
- - Caches, MMUs
- 
-   The MMU must be off.
-+
-   Instruction cache may be on or off.
-+
-   The address range corresponding to the loaded kernel image must be
-   cleaned to the PoC. In the presence of a system cache or other
-   coherent masters with caches enabled, this will typically require
-@@ -238,6 +240,7 @@ Before jumping into the kernel, the following conditions must be met:
-   - The DT or ACPI tables must describe a GICv2 interrupt controller.
- 
-   For CPUs with pointer authentication functionality:
-+
-   - If EL3 is present:
- 
-     - SCR_EL3.APK (bit 16) must be initialised to 0b1
-@@ -249,18 +252,22 @@ Before jumping into the kernel, the following conditions must be met:
-     - HCR_EL2.API (bit 41) must be initialised to 0b1
- 
-   For CPUs with Activity Monitors Unit v1 (AMUv1) extension present:
-+
-   - If EL3 is present:
--    CPTR_EL3.TAM (bit 30) must be initialised to 0b0
--    CPTR_EL2.TAM (bit 30) must be initialised to 0b0
--    AMCNTENSET0_EL0 must be initialised to 0b1111
--    AMCNTENSET1_EL0 must be initialised to a platform specific value
--    having 0b1 set for the corresponding bit for each of the auxiliary
--    counters present.
-+
-+    - CPTR_EL3.TAM (bit 30) must be initialised to 0b0
-+    - CPTR_EL2.TAM (bit 30) must be initialised to 0b0
-+    - AMCNTENSET0_EL0 must be initialised to 0b1111
-+    - AMCNTENSET1_EL0 must be initialised to a platform specific value
-+      having 0b1 set for the corresponding bit for each of the auxiliary
-+      counters present.
-+
-   - If the kernel is entered at EL1:
--    AMCNTENSET0_EL0 must be initialised to 0b1111
--    AMCNTENSET1_EL0 must be initialised to a platform specific value
--    having 0b1 set for the corresponding bit for each of the auxiliary
--    counters present.
-+
-+    - AMCNTENSET0_EL0 must be initialised to 0b1111
-+    - AMCNTENSET1_EL0 must be initialised to a platform specific value
-+      having 0b1 set for the corresponding bit for each of the auxiliary
-+      counters present.
- 
- The requirements described above for CPU mode, caches, MMUs, architected
- timers, coherency and system registers apply to all CPUs.  All CPUs must
-@@ -304,7 +311,8 @@ following manner:
-   Documentation/devicetree/bindings/arm/psci.yaml.
- 
- - Secondary CPU general-purpose register settings
--  x0 = 0 (reserved for future use)
--  x1 = 0 (reserved for future use)
--  x2 = 0 (reserved for future use)
--  x3 = 0 (reserved for future use)
-+
-+  - x0 = 0 (reserved for future use)
-+  - x1 = 0 (reserved for future use)
-+  - x2 = 0 (reserved for future use)
-+  - x3 = 0 (reserved for future use)
+The first case is taken care from the generic code. But if we don't do this
+check before on arm64 compat we end up returning the wrong error code.
+
+For the non compat case the same is taken care from the syscall fallback [1].
+
+[1] lib/vdso/gettimeofday.c
+
 -- 
-2.24.1
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
