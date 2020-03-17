@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0266218875D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:21:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5094218875E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:22:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+0IBPFkS+5w6+hZgKPNfLXqQHIcvKHR56yNadPP8vjU=; b=ZXdrdh4c/Fdtyf
-	bCDwT7n+SmutdtfauWqvEh+4NpiFWf8Jvq5SgpiICQLMdTYk3DwWTi1p8jAwd0eK94xM0PizIWl6a
-	RTvejCGZsCWVbbZFFvH+VQvqoJKOn7xNYVe8pd1+jORNkmdfz1fUDfTmtaXAmKfvXK2X5JsyRICA+
-	XOErYVsdPxg/xvfERGHy6Kl90I5stVq1UywVhcPO8r8RJTHutvSM/Aflq3dWTOcqRvXOrsA8Yc72p
-	P91dwmmNzgygl521XJYW8Jbn15w4OnVMWoPlnOdFAPXZT5/Swr4TZyDjNTCB7a+wytJLC8icbzDU6
-	bhhyGyHxe3ToihHSZDjg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qFdcZPjDpZaQaDvcxaC6v+fhgB0EDPdTnQG5wxE0g7o=; b=bg+gM1lqpQCZgT
+	2T4RJ61C7jUmX5I+Sh7uG982S6C6qfMIS08YEVlhp5d3O78e99AQWv0OMEQw50RVM+kw6eEIEIJX7
+	naZeOysgEhUoocEjAFzzypYS6qzD4sk9kZIXQubH2GWBhpQeL56Y6Fx09hxCe5CZ04TRuzoxqIP/9
+	Itsjx8z8sdDMBFdcsdmiaFvUejmVo77tWV9yShMV8aRH3Q//cQ6xQz72xxqg63QmxCnTCZAtF5jmD
+	22cPlQknEFUcRf9BPh4U7X2MMIMnyJ9laUpXAPlckPV+UoLtgzXXeuKqoapTJwxq6qm2NVYz7GHe2
+	j7kB4lcaa6K7KfxM2axg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jED67-00047N-Ic; Tue, 17 Mar 2020 14:21:35 +0000
-Received: from mail-vi1eur05on2061.outbound.protection.outlook.com
- ([40.107.21.61] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jED6P-0004GX-K2; Tue, 17 Mar 2020 14:21:53 +0000
+Received: from mail-db8eur05on2045.outbound.protection.outlook.com
+ ([40.107.20.45] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jED5v-00046O-1j
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 14:21:25 +0000
+ id 1jED5y-00046k-Gp
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 14:21:27 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Hs2e9NDEZPSKheT4QJHvIvguGFviM+BjcEAdlHG978y+cKMZUvFQSeVV8XdcnbXvP3zUxlDcVrSzvyQaMGLvt0crARnLtzXGfrPMW2A6WVm0ukLWBBuQLlQ1poqwVhYhahdvSbHEpwi7cNk9OrCmVCOIXHWjYOF8Uaj8G0DEjfz2Vm94BKvhSRv3q5H8gjDoE7t88vMULWhpCZ1gpvgGUujKWNKH2RRc9qM7zlLxwb5Ws+5QSucuZ7OUK8ngxFLr2Lw7y0X7REZoCSkRDuk0A9ayQUgtwfkq2z2RUAi4RuLb9qVlpgiNmdP9jok6dQBg/SHW/r0ZGe2/NDvtvYOvJQ==
+ b=dFzDCOuLJ3NaNm6ENYa+mS57f6qQK3gGGMI/Zbh/Rj3ubx2BijU446GxXtLX7ND6eGaY6XJ1mEY/JXagqqGzbiJQKxZ9wj60PJfHgk8SPyLHgJB8iJphmc4hQQKDJQCfjH7KuRg44aDumGqlpv8YR/pGLUVJZzRisrqCmaQosWdTxXh6DBPah+S3yrBt25i5gAwlA0d+9asi0O+1XRQTAO17PKwkkBcr0uY8jdEUhcLN+8msBGCCgVzlSgsvmUgd5k76yhFFpAZJs4SfapltMjDX+GGm3erDi6IoDPTIALHLAIe1bqjPVrnuR2CjXzajbbnRvaJ+/9Hjuuca1+NPgw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PXn+DU1cF1s7c7fW4v9D4L4sRb6c5pfanXGsWA1/p3E=;
- b=UxJ5AQj3oJbq4Qw6NgBo5KDDR63FuqhtBIThChO1Q78CC1/pWWjpGIxrGdPyPKCLvrzKqoUryMB3i5Q1vDqUDsZ25G3lby0C2m3XnkPsnqLFSiNQsWrLxvSJGbuaj9k5k9XyU9wNNJq4ZaIE5t0pBcOhu1LrJgICbAbvB8I0egeT49oWlEnqoY8DdDEEPWiKb2vBDtJt//hxWm/rYQoMIdtkYIMXueKNt4cVnZKpRF9xoY04w+Fzzfab5lv2/c2vuKpVAb903HpW5SB7do2SGv/xfswdTHTxRbhZhnk359GRBmP09Ba8yBydmw5kWozJw/nTcV6YsaZOoMpmAxC5WA==
+ bh=VPj5X1gl2PdatTZcZuFhLPksS7DLcdToHbQEUyrV0dY=;
+ b=PkSh7SebL1SnyREH14AcDITLLqTWFYm/DibEbbk/1WlvtmyUToTkf0YrlkkOJcC74xAWftX3TD2YS2fs6C4Gr2Ya1nHYWuPrMHPdE8JVM4uPJBJH/msqYCxRvb24ResXZRNiaGnz0KSoplAsCMn5o0Qo+KtcfEsp5GIbE0B28o08nFEwqFMt1A7tRLgGQU24uRpW2p7oQdjpiKq2eZ4oUveFX3bJW3o98QIeBYcnU4T4yXWjh/Ldj9wLOVfyc1URsMJFhLCq+9YzdtbHSZ7ss4IvZ3reRi7zKaMn+FgIUtR9PHZIk/yE069q6euIYLjRK0YJyJXE7IVDplOdB/VLZQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PXn+DU1cF1s7c7fW4v9D4L4sRb6c5pfanXGsWA1/p3E=;
- b=DmQkzfPf3jTaHEaH4lzuO8HSJmtg6dVAQOGvpSDKxWe9dKc8EnHkd5HOY6u/Q8fwtFPw153ckAPge3wLVLwTA6J0Aq/0dtRy7P5+5p7iJfBa7MDOdIxI11IMOL+twRz+IIwcoy311blDoBqLLo5genxMgiqJKmAK/rhSEn9yhro=
+ bh=VPj5X1gl2PdatTZcZuFhLPksS7DLcdToHbQEUyrV0dY=;
+ b=DRszfRy44XfWdMAwItxHeoZ/a9ge/8JT/YFGxenWyJKQ5QBBPmdkLA4ea3P9TMJu4CefI48ilV9AfRKXUNvpxeG0f1wlQzkUZxxGlFafAC19da9Wm2qQ5Ue4WnkWG9oac90/ytfNlz5rFfBBUWnKPdyAEBv5NQk7pfHFr+/rilQ=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=laurentiu.tudor@nxp.com; 
 Received: from AM6PR04MB5925.eurprd04.prod.outlook.com (20.179.2.147) by
- AM6PR04MB4070.eurprd04.prod.outlook.com (52.135.163.14) with Microsoft SMTP
+ AM6PR04MB5416.eurprd04.prod.outlook.com (20.178.94.25) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.18; Tue, 17 Mar 2020 14:21:18 +0000
+ 15.20.2814.18; Tue, 17 Mar 2020 14:21:19 +0000
 Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
  ([fe80::fdd6:55d:c03e:5818]) by AM6PR04MB5925.eurprd04.prod.outlook.com
  ([fe80::fdd6:55d:c03e:5818%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
@@ -51,11 +51,12 @@ Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
 From: laurentiu.tudor@nxp.com
 To: thierry.reding@gmail.com, robin.murphy@arm.com, will@kernel.org,
  iommu@lists.linux-foundation.org
-Subject: [RFC PATCH v2 0/2] iommu: arm-smmu: Add support for early direct
- mappings
-Date: Tue, 17 Mar 2020 16:21:05 +0200
-Message-Id: <20200317142107.28776-1-laurentiu.tudor@nxp.com>
+Subject: [RFC PATCH v2 1/2] iommu: arm-smmu: Extract arm_smmu_of_parse()
+Date: Tue, 17 Mar 2020 16:21:06 +0200
+Message-Id: <20200317142107.28776-2-laurentiu.tudor@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200317142107.28776-1-laurentiu.tudor@nxp.com>
+References: <20200317142107.28776-1-laurentiu.tudor@nxp.com>
 X-ClientProxiedBy: AM3PR05CA0105.eurprd05.prod.outlook.com
  (2603:10a6:207:1::31) To AM6PR04MB5925.eurprd04.prod.outlook.com
  (2603:10a6:20b:ab::19)
@@ -64,48 +65,50 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from fsr-ub1864-101.ea.freescale.net (89.37.124.34) by
  AM3PR05CA0105.eurprd05.prod.outlook.com (2603:10a6:207:1::31) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.15 via Frontend Transport; Tue, 17 Mar 2020 14:21:17 +0000
+ 15.20.2835.15 via Frontend Transport; Tue, 17 Mar 2020 14:21:18 +0000
 X-Mailer: git-send-email 2.17.1
 X-Originating-IP: [89.37.124.34]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 7a9b013e-1c16-48e9-b064-08d7ca7e753e
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4070:|AM6PR04MB4070:
+X-MS-Office365-Filtering-Correlation-Id: 761985ca-eaa7-40b5-5d35-08d7ca7e75c3
+X-MS-TrafficTypeDiagnostic: AM6PR04MB5416:|AM6PR04MB5416:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB4070952621790F41A31F89C6ECF60@AM6PR04MB4070.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Microsoft-Antispam-PRVS: <AM6PR04MB5416FBFCC28038221C50E47AECF60@AM6PR04MB5416.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:561;
 X-Forefront-PRVS: 0345CFD558
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(39860400002)(366004)(376002)(136003)(199004)(66476007)(8676002)(2906002)(81156014)(66946007)(66556008)(81166006)(2616005)(36756003)(6506007)(6512007)(966005)(9686003)(16526019)(6486002)(7416002)(5660300002)(478600001)(316002)(52116002)(956004)(4326008)(8936002)(86362001)(6666004)(186003)(26005)(1076003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4070;
+ SFS:(10009020)(4636009)(346002)(136003)(366004)(39860400002)(376002)(396003)(199004)(52116002)(1076003)(8676002)(81156014)(66556008)(8936002)(9686003)(81166006)(66946007)(66476007)(6512007)(7416002)(5660300002)(6506007)(6486002)(4326008)(16526019)(186003)(26005)(316002)(86362001)(956004)(2616005)(36756003)(6666004)(2906002)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5416;
  H:AM6PR04MB5925.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
 Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QAMrHGQfU2yImM/9DxMtpAOtcAENRFzqih5yjAX87sw493cSJVatV7ncNDCed0QOUJ/JKr8Ey4wxTBw0C8gulYV3PB5RPb9BNK9p64CZOgKvFjDZ0+6O9P0mtrR6qDtrOKt2SV4eln/e41CmhKxX19xunNT4yl6m+7/itU7mjULEccFqK8ujV6/QKeU4QCYNhU545yjBtUDIYG/sIm2wKFXL/ReDNrJ3sIIXhVNwsUmxwREASNvBzjE/J98vQ9IjLBHRuPxEv/3og4lsMg7zJoiDGgqDJDmbLJ/pX2eZHnTJ2FEXPFkrX9i1ma1Fl5176PR6vPzCyjQaDr+CrQgDddLeAwPPDdS76YQQVEfDsfERDsSjdKaR0ox9f7Gr7NlWxLM/cLJbVKIIzk9cVF7QDkFngP4Xgy2+V/4WUX51EwWZJ0hT3Uj8e/2fMh/QNlyXf6BYXhnIAwEqhP+k/XJCxXz1i7OLe2e91VCpBaEylRdIkAnOPnD13CpqFuyLmDfLrFT8kCTR0TPqiubZ2698jA==
-X-MS-Exchange-AntiSpam-MessageData: HtcqrkpXEFpOQk1h786oyB46Iiw6SPpJb5xyMKPNRi+pA2nlEX/N1QCEkSm8HTTj3LqFQf4kzBUfMTfhbG3rQI+1pnjejwFuus4/o1QizA7/zORJNUueJOAyfosr/B20B0Ay1R+PmJrK7Ub6EXDISw==
+X-Microsoft-Antispam-Message-Info: Dj6RFZlyCSyI/E3yczuYetwd9rx5kfVakXc/wk5OExX2BKQLUppYb0MD/9Ji507Yma4T6nNzuCPWc/vZzT2c+0g6rEgkYK1TJuiGN5FckqQjgsi7hD4k9TcBFYJ/RZcGcM3sMede0fyXarc1SYgM+9SlM5vEWaSrdiOYprUW3rhErOfM5ZWbklB8YeEUk4pp60EUgR1NK/VQWokrNuZDNfeuGLNpu8acDGWOSByNZOfgkO4UD2J0LfQyoQcmLWfrKMe6ha3Qnp2jJtl+p6D/+Hbf/lCqYe1H+dBGsAmyvtZkatixmkiLEDAsQCJyQ9ZL+rmxUyUiB8XaOoWN/MlB7JkUbcWTYyFYkRcWHUA1AfBdg86n+J0C+qZJRIKrQ0sGBipRYKz6NWzt6Ke4HPR/0Wple2N2ru4JvF21l0U723s09lg7B+TsgUIPX+gxJTYX
+X-MS-Exchange-AntiSpam-MessageData: V/W23DkVGWQ76l2Dl9VkT3NZFQU81P03ef5UyerXm3QcPXCxoZ8mVHMY54QoJnVGkYV19+DRdAGHbmGq45hlpB++p55tcb5XxJDK4gIC6GNAIHrSJrZagsOaj8+1TAV0eTrU+8iKGNmnuWUsUjeRVA==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7a9b013e-1c16-48e9-b064-08d7ca7e753e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2020 14:21:17.9666 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 761985ca-eaa7-40b5-5d35-08d7ca7e75c3
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2020 14:21:18.8880 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: W1zgjaaNYMgb+P9Z/T/xbhFda/np9AANwoJ9cKS3WDS0tB72/5G+z8YcvqsLqHq+84iVTftPQhmSI2B2QMyj9w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4070
+X-MS-Exchange-CrossTenant-UserPrincipalName: GDLSJl+E7+tWUNwWwqvcZ2sPrPHkojx+3cBwJRfAq8uT8hShS4PIkL/vC5GMjZXftO3Y8/6IaWXpCY81Ui9UqQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5416
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_072123_189635_281FDA62 
-X-CRM114-Status: GOOD (  18.06  )
+X-CRM114-CacheID: sfid-20200317_072126_573856_74A09804 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.61 listed in list.dnswl.org]
+ no trust [40.107.20.45 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.20.45 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -136,65 +139,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-On some platforms, the firmware will setup hardware to read from a given
-region of memory. One such example is a display controller that is
-scanning out a splash screen from physical memory.
+This function will be subsequently used to extract stream ID information
+early, before a struct device is available.
 
-During Linux' boot process, the ARM SMMU will configure all contexts to
-fault by default. This means that memory accesses that happen by an SMMU
-master before its driver has had a chance to properly set up the IOMMU
-will cause a fault. This is especially annoying for something like the
-display controller scanning out a splash screen because the faults will
-result in the display controller getting bogus data (all-ones on Tegra)
-and since it repeatedly scans that framebuffer, it will keep triggering
-such faults and spam the boot log with them.
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/iommu/arm-smmu.c | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
 
-In order to work around such problems, scan the device tree for IOMMU
-masters and set up a special identity domain that will map 1:1 all of
-the reserved regions associated with them. This happens before the SMMU
-is enabled, so that the mappings are already set up before translations
-begin.
-
-One thing that was pointed out earlier, and which I don't have a good
-idea on how to solve it, is that the early identity domain is not
-discarded. The assumption is that the standard direct mappings code of
-the IOMMU framework will replace the early identity domain once devices
-are properly attached to domains, but we don't have a good point in time
-when it would be safe to remove the early identity domain.
-
-One option that I can think of would be to create an early identity
-domain for each master and inherit it when that master is attached to
-the domain later on, but that seems rather complicated from an book-
-keeping point of view and tricky because we need to be careful not to
-map regions twice, etc.
-
-Any good ideas on how to solve this? It'd also be interesting to see if
-there's a more generic way of doing this. I know that something like
-this isn't necessary on earlier Tegra SoCs with the custom Tegra SMMU
-because translations are only enabled when the devices are attached to a
-domain. I'm not sure about other IOMMUs, but in the absence of a struct
-device, I suspect that we can't really do anything really generic that
-would work across drivers.
-
-Previous version: https://patchwork.kernel.org/cover/11279577/
-
-Changes in v2:
- - recreate identity mappings when the device is placed in its rightful domain
- - delete its original identity mappings from the identity domain
- - added a counter to keep track of number of devices with identity mappings
- - free identity domain when the counter reaches 0
- - this should help fix our firmware issue, mentioned here [1]
-
-[1] https://patchwork.kernel.org/comment/23200041/
-
-Thierry Reding (2):
-  iommu: arm-smmu: Extract arm_smmu_of_parse()
-  iommu: arm-smmu: Add support for early direct mappings
-
- drivers/iommu/arm-smmu.c | 280 +++++++++++++++++++++++++++++++++++++--
- drivers/iommu/arm-smmu.h |   3 +
- 2 files changed, 275 insertions(+), 8 deletions(-)
-
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 16c4b87af42b..8a238d5a4b51 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -1584,18 +1584,28 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
+ 	return ret;
+ }
+ 
+-static int arm_smmu_of_xlate(struct device *dev, struct of_phandle_args *args)
++static int arm_smmu_of_parse(struct device_node *np, const u32 *args,
++			     unsigned int count)
+ {
+-	u32 mask, fwid = 0;
++	u32 fwid = 0, mask;
+ 
+-	if (args->args_count > 0)
+-		fwid |= FIELD_PREP(ARM_SMMU_SMR_ID, args->args[0]);
++	if (count > 0)
++		fwid |= FIELD_PREP(ARM_SMMU_SMR_ID, args[0]);
+ 
+-	if (args->args_count > 1)
+-		fwid |= FIELD_PREP(ARM_SMMU_SMR_MASK, args->args[1]);
+-	else if (!of_property_read_u32(args->np, "stream-match-mask", &mask))
++	if (count > 1)
++		fwid |= FIELD_PREP(ARM_SMMU_SMR_MASK, args[1]);
++	else if (!of_property_read_u32(np, "stream-match-mask", &mask))
+ 		fwid |= FIELD_PREP(ARM_SMMU_SMR_MASK, mask);
+ 
++	return fwid;
++}
++
++static int arm_smmu_of_xlate(struct device *dev, struct of_phandle_args *args)
++{
++	u32 fwid;
++
++	fwid = arm_smmu_of_parse(args->np, args->args, args->args_count);
++
+ 	return iommu_fwspec_add_ids(dev, &fwid, 1);
+ }
+ 
 -- 
 2.17.1
 
