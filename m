@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E4BF187716
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 01:52:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3010018771E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 01:53:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7TH7yyCL1syXN/EfeY99rCE3oWTeSH7WO3SpXbYB2d8=; b=GlCiSQ+N4pFAGr
-	ZLta7npS5YCEoSB4kOhLx3e1aOaHGW0SUNVEWPJyRDZ6Cgh4FwBwmRZHdwF/OI7KnNbfdGGENupRw
-	SzzRRYwiWGfJbZrF+EbhOhL1+7yfvvngs0GSgTKxg7ZuAhpOaGX0mBqRd+vsX9XvZP72aKnSDaHBA
-	YKH696kN8F14/2z3RqYX+/ssJZVe0M3BphbhdzU2kZ6J2PErOq+9XUVEV/4qC3dId8tVT4MhEBgQI
-	+p4I1ox00aSEXroGRqGMobxlk4vs0Yr49cqTnR9K+iMC0i/fWKKJgrBUu7Tq/YIgtnZuDYE3k8pjf
-	AF719CRoZQwMSeT41zSw==;
+	List-Owner; bh=zXxTuFK4lPgzx+e1NXhrTE46WE757nurJqqhmm7WWRY=; b=HZgfv0Tqqw5MyK
+	ZYak47fXO+MlzGkAghwqOXb1d2gz0FS30HutpoKhoE4iaAldTjtc7fC5BddvLH/cju/z/Jie0OFjQ
+	ns05W8roq0ls0i6LsK36R3FEWTj7MJ9J2kgKloWPFdDGikYGq+4W/ha4nzfBrnS5i3xP4GrxQs5vJ
+	6hJCh896bBtBqCVCT6szQuaEizduofPJpIhLjv5iOfMhw3DAmlbQDVwtvs5vdFRfZM4tJIelQ9KsI
+	RxN48vjKTbYBg1kuA2r/NbzFflu73UCtVo8C5PNTuohRkLv+pU0l9v30i4ZSOxRSl83RCwkmnhWdb
+	6OvE+KLkC8YpMgJNP3YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE0St-0001XN-U4; Tue, 17 Mar 2020 00:52:15 +0000
+	id 1jE0Tb-0001se-Iv; Tue, 17 Mar 2020 00:52:59 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE0Sj-0001Wn-4r; Tue, 17 Mar 2020 00:52:06 +0000
+ id 1jE0TP-0001rq-DW; Tue, 17 Mar 2020 00:52:48 +0000
 Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jE0Sh-0004VF-6h; Tue, 17 Mar 2020 01:52:03 +0100
+ id 1jE0TN-0004Ve-LD; Tue, 17 Mar 2020 01:52:45 +0100
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: remove properties from spdif
- node RK3399 Excavator
-Date: Tue, 17 Mar 2020 01:52:02 +0100
-Message-ID: <18213991.ifHWx50xby@phil>
-In-Reply-To: <20200312172240.21362-1-jbx6244@gmail.com>
-References: <20200312172240.21362-1-jbx6244@gmail.com>
+Subject: Re: [PATCH 3/4] arm64: dts: rockchip: remove clock-names property
+ from 'generic-ehci' nodes
+Date: Tue, 17 Mar 2020 01:52:44 +0100
+Message-ID: <2757914.d0uldur9AL@phil>
+In-Reply-To: <20200312171441.21144-3-jbx6244@gmail.com>
+References: <20200312171441.21144-1-jbx6244@gmail.com>
+ <20200312171441.21144-3-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_175205_340575_9E71CFCB 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20200316_175247_607820_1147714E 
+X-CRM114-Status: UNSURE (   9.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -66,23 +67,20 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 12. M=E4rz 2020, 18:22:39 CET schrieb Johan Jonker:
-> An expermental test with the command below gives this error:
+Am Donnerstag, 12. M=E4rz 2020, 18:14:40 CET schrieb Johan Jonker:
+> A test with the command below gives for example this error:
 > =
 
-> arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dt.yaml:
-> spdif@ff870000:
-> 'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns', 'power-domains'
-> do not match any of the regexes: 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff5c0000:
+> 'clock-names' does not match any of the regexes: 'pinctrl-[0-9]+'
 > =
 
-> 'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns'
-> are not valid properties for 'spdif' nodes, so remove them.
+> 'clock-names' is not a valid property name for usb_host nodes with
+> compatible string 'generic-ehci', so remove them.
 > =
 
 > make ARCH=3Darm64 dtbs_check
-> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/sound/rockchip-spdif.=
-yaml
+> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/usb/generic-ehci.yaml
 > =
 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
