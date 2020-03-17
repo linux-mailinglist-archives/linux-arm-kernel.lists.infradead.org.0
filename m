@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E360D1884A0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:58:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A288B18849F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:58:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fk2yGLuTMxP+iaipUDZ2iX42wDE6qiHnC61+ThPdFDM=; b=CdlIdw7VUmG7Dl
-	g2bLtmufMVw+23g0JX/m0PvKTsFro9elj+Fav7bq7jMa9mU0Pwri6B+gLN6YruxlPNKZpJCvJkyBI
-	3ab3hAmxy8VE+ejQqop6xBywjvZ88HIP+6AOX4UFthCXdkVmHVDo5RPZe/l2RMbFYXXYytUCPJc4p
-	9AZNYZ+t4SC+OyG2gpfiRQ0u7QkvNOWSxlrYrF7Pe1g+euqwqgYjxP39kxV0EGXkYM8toCmSUBJI6
-	VFlJBVr1viIfOgkip1sQUpxtFOvF74U1xKhJZqbqKFnC1+1KmrbW4h6pSEPG3g8jzNOJrESIwvDoW
-	BQr5UrXpEM3eh3RQhCpA==;
+	List-Owner; bh=3BfXjuNe29HvsYJq+zTWKB2Bo2o8i+B1ZIe+xFCuDek=; b=aHUYgdBOArlp9U
+	Le89LkrBLwBptznyGEupwwK16NL53nStgByAFzfihMOaUjL+mJT4mHA1vUFIlWZwxYRE+GTOeXHQA
+	HRlOSsvSFkWIliR1pIKoYdQthA95zm0fx+bACi4qiPHRyrfSxSjCQfkjlmugwnVF9t4Il0y2vIUUB
+	qsHntR/lvDG/NVI6+YeEqXuHEQUg3fLcis8jptShB+DGD82ocz6kNsCYQB5ORHve75fYaS8Hfiovg
+	SRg/uOfBbiJNUoVDnfhPZFxrPpvT21l8/B4rMVvOxWOIntTVU1ReSevnRglzhCedo5IJteT/Fv/4w
+	yiFolmbe4reqdFMi/ZsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEBnU-0005RN-Ry; Tue, 17 Mar 2020 12:58:16 +0000
-Received: from mail-bn8nam12on2080.outbound.protection.outlook.com
- ([40.107.237.80] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1jEBnF-0004s5-RI; Tue, 17 Mar 2020 12:58:01 +0000
+Received: from mail-mw2nam12on2049.outbound.protection.outlook.com
+ ([40.107.244.49] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEBmf-0004bP-2f
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:57:28 +0000
+ id 1jEBme-0004aR-GJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:57:26 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oThj/w+miq1btOcJiv2ZqWmq4IY+SjL46/WtxhqnT6lvuXHEEErbtglpc4oADfGkypG2XJPLCK6MPUE/j+3zqlDMCg6nZXA9EJsbX+lXhYA1rICYUxRdswY0w/uhpw2Lr4ZCAgtggaO8yaiuLH+JRG2zTo56JVvlBr4AHLsqgXJ15mSZdtCYoA5bYJzl0HujAdHT8zPDi4GF6u1OAt3XvuFRfQGJV1cIk9DCdPJxaz8jh8ewr308kQELk9BwoVZzrJ81xC7uGw5DRfhMcdE+IOwiE1dmBtY8mgxVv5wT1qT0cENlQqk6qVrwt9YE6QBc1lS6PUr1G5djOGy55Q7cQg==
+ b=OFmmT+7A53WpxwJuC3JdcSTVbpZobWsMOe9HsQFjSfittpsG+dVf5S120LmPdTkeBBW40zl0p2upczBBbFYpsP5ErtZYiFlzsPayI0XZbTsoKoVIx0pljN5o3Z+h73BfotHbo4HJEL+uf2NeYy98OqtX+qYivBcIe/TV1YfslfMX3zirbFM0WPdaLNR55ARncYa+Siox3tEb0q/XoCxYxz5TZBB0ShKx71FqU0mdfwkTt6xQLf2+x6/3j76T3w7et2TJdq0v1FeY9Mg44/TV/76B93nob/bKneo1yHsthf7YtGUaVIVE7RIAJ5bO8J64fyJk1NMsBxa6ADpeW2Ry6g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6L72Gtidg8CWXEyZFVE4vZ8JjcGve4yCkcZ+QY85f50=;
- b=ezCtVAjp+m/vp1UW1Mi+43+/UoZCWNVZAoknsODf9t7k7k5XSUwQGXuxDgjDcQvxcgHMO5f4rVlUsZ6rAMpnnjvALn/Ehz+YDY0nmfhvrWVT6cZgnZ+mT08ZsCnrpgaXa6507KewJfLdUSXgGqqZHAZoJFnu4s7QuzBTxBgox5lyjJXdBsy8NaY4CBMmRvXyfDZsySN7CeQPfctI+zdmIUq1eV7Z4UFWal9ZrYEm1A+TgU0IMVviIUV/r0VnCwgwdCOItd232NPSw4WigEGK9VNcpTmwEmxuG6WgFIkTHVhMIZ8qqFdr+/DrM9PDOJhvkSYJ1bmKfGwtBEw2xNHrCQ==
+ bh=a0M4RkKOqKSyaoiz5/CPwjE74bW44QYMekf6640LJkI=;
+ b=V7Btx9syECERoz5y9x3n8Vgq+rIVdzaIF9STOsB0YmjUDUzMpDpW/dfMFUp9H4yxVuDpW97HH5Lu0LTNVpkM/N70bPbRKJ/2VRUMtnLgxdlMJfaM77oRwhMOhfkTvTeH91ezA6Uylb0Gzjt7Vm2sfSRwmbs540StiW9rXHdCFEaQESHALmAEP0YuNhqD77A2P5h4dQDx7EadRVUbIcF+RBpyiXK2R1prXgAE8sDckli6xegB4fUFIt83y7tqlnfrbN/D5q8KdTMfhTLf3goYdxX85clUsLcWkh0XLU9rnm8yymhoXz+jGD7H9rRcJooRIeBgIH8YouZPWavr4DvN6Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,17 +38,17 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6L72Gtidg8CWXEyZFVE4vZ8JjcGve4yCkcZ+QY85f50=;
- b=DtXEFM9gTbQBf0A5dIL7a9y2aguhKnHsQ5nmfXjwOomkBluu5/9FD2Ru03q4vfhuEHY9l5POiBg21KwQDlDEdSDcujSPxKRwkG9HT/8Z8dxGrPdIj67XSBREYgORjEllXGxGoZ+jltlIV8vm7dRSzlhpFSnwFVAdPQ+kDSEn9dI=
-Received: from DM5PR18CA0055.namprd18.prod.outlook.com (2603:10b6:3:22::17) by
- CY4PR02MB3333.namprd02.prod.outlook.com (2603:10b6:910:7c::37) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.16; Tue, 17 Mar 2020 12:57:21 +0000
-Received: from CY1NAM02FT003.eop-nam02.prod.protection.outlook.com
- (2603:10b6:3:22:cafe::f2) by DM5PR18CA0055.outlook.office365.com
- (2603:10b6:3:22::17) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.21 via Frontend
+ bh=a0M4RkKOqKSyaoiz5/CPwjE74bW44QYMekf6640LJkI=;
+ b=WvTLQ23PKwtA6zxmVkst7tbu7eoc9qTzvBalsYnXGRdiz3/XUTH4x+U9lklb51Ne8TFSZrV77UVI10wdA1JIuIM50Ev9LsKD6+T5NfesD/qAJIWWwJ4SN/Y2cOf5jARhbp4EU0260i+465hjEfE5CYQ5YpCfyndLg6/GgefbrBU=
+Received: from MN2PR19CA0013.namprd19.prod.outlook.com (2603:10b6:208:178::26)
+ by BN6PR02MB2244.namprd02.prod.outlook.com (2603:10b6:404:29::10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.18; Tue, 17 Mar
+ 2020 12:57:21 +0000
+Received: from BL2NAM02FT017.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:208:178:cafe::6e) by MN2PR19CA0013.outlook.office365.com
+ (2603:10b6:208:178::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.18 via Frontend
  Transport; Tue, 17 Mar 2020 12:57:21 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
@@ -58,31 +58,30 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT003.mail.protection.outlook.com (10.152.74.151) with Microsoft SMTP
+ BL2NAM02FT017.mail.protection.outlook.com (10.152.77.174) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2814.13
  via Frontend Transport; Tue, 17 Mar 2020 12:57:20 +0000
 Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <mubin.usman.sayyed@xilinx.com>)
- id 1jEBma-00020f-30; Tue, 17 Mar 2020 05:57:20 -0700
+ id 1jEBma-00020g-5q; Tue, 17 Mar 2020 05:57:20 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <mubin.usman.sayyed@xilinx.com>)
- id 1jEBmU-0001hW-Vn; Tue, 17 Mar 2020 05:57:15 -0700
-Received: from xsj-pvapsmtp01 (xsj-smtp1.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 02HCv6QW007565; 
- Tue, 17 Mar 2020 05:57:07 -0700
+ id 1jEBmV-0001hW-2X; Tue, 17 Mar 2020 05:57:15 -0700
+Received: from xsj-pvapsmtp01 (smtp3.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 02HCvBx1026755; 
+ Tue, 17 Mar 2020 05:57:11 -0700
 Received: from [10.140.6.23] (helo=xhdmubinusm40.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <mubin.usman.sayyed@xilinx.com>)
- id 1jEBmM-0001dT-B1; Tue, 17 Mar 2020 05:57:06 -0700
+ id 1jEBmR-0001dT-0u; Tue, 17 Mar 2020 05:57:11 -0700
 From: Mubin Usman Sayyed <mubin.usman.sayyed@xilinx.com>
 To: tglx@linutronix.de, jason@lakedaemon.net, maz@kernel.org,
  michals@xilinx.com, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 2/4] irqchip: xilinx: Fill error code when irq domain
- registration fails
-Date: Tue, 17 Mar 2020 18:25:58 +0530
-Message-Id: <20200317125600.15913-3-mubin.usman.sayyed@xilinx.com>
+Subject: [PATCH v5 3/4] irqchip: xilinx: Enable generic irq multi handler
+Date: Tue, 17 Mar 2020 18:25:59 +0530
+Message-Id: <20200317125600.15913-4-mubin.usman.sayyed@xilinx.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200317125600.15913-1-mubin.usman.sayyed@xilinx.com>
 References: <20200317125600.15913-1-mubin.usman.sayyed@xilinx.com>
@@ -94,37 +93,37 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(376002)(136003)(39860400002)(199004)(46966005)(4744005)(4326008)(356004)(6666004)(107886003)(478600001)(8676002)(81166006)(81156014)(1076003)(26005)(2906002)(70586007)(336012)(426003)(2616005)(5660300002)(70206006)(36756003)(186003)(47076004)(9786002)(316002)(8936002)(103116003)(7696005)(54906003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR02MB3333; H:xsj-pvapsmtpgw01; FPR:;
+ SFS:(10009020)(4636009)(376002)(136003)(346002)(396003)(39860400002)(199004)(46966005)(5660300002)(9786002)(54906003)(81166006)(81156014)(107886003)(478600001)(316002)(8676002)(8936002)(2906002)(7696005)(4326008)(356004)(6666004)(103116003)(2616005)(36756003)(1076003)(70206006)(47076004)(186003)(426003)(70586007)(26005)(336012)(41533002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR02MB2244; H:xsj-pvapsmtpgw01; FPR:;
  SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 84f0687d-e656-45eb-da31-08d7ca72bada
-X-MS-TrafficTypeDiagnostic: CY4PR02MB3333:
-X-Microsoft-Antispam-PRVS: <CY4PR02MB333312EE7C39F44ECD4B06B9A1F60@CY4PR02MB3333.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: 86fd1267-942a-4c2e-a921-08d7ca72bb18
+X-MS-TrafficTypeDiagnostic: BN6PR02MB2244:
+X-Microsoft-Antispam-PRVS: <BN6PR02MB224440AB19416A0CCCF1902CA1F60@BN6PR02MB2244.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:1728;
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
 X-Forefront-PRVS: 0345CFD558
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: hYASBHbdD/1s4SjNvciE3xkMkR97XG/FP9p342+Q4BqRnSRxfdzy2LcxWfMjhETyuXxswakCnDsPV5f1iIUUCdIGc3B3M611c+6MAYjaItzsK9jgGuhEVIvOdmCsRhkkOymZomJu0wGPXDsn/OLjaFUaepfsLDPmsBEelboOTbZ/hCNUK0YawEBytje8uYi38o2ryFfswNzQdhiMGtris92cITN7x+zUB6JZKo8ARC48EI6QbRDAXLWzr9iM4PjfKScazcPU7UgYcPFgQh5h1Qx4rPgFMJrrvSYi/0CM5EMqMr3MIS6Xy3KfPiejD0J8XwPUowgExp+HxMjo4xXnOcu7DudpXevVSJUgU0oSnrXQk/Og0J7B/pykf+Xpi30f5ZS6RoVWBFbFKzKcDTeccGc3aQuBPnAiZWxfwWPAEmc5ziRAA2yOojtkK0Y9O7o3xLS9TtphTnMl3DxNrePRgsNqrByqWvUpXJS36KyplwL041GxCS3zhFEokBP+xjUsKLTFh5Rn1EHM96hPye/JAA==
+X-Microsoft-Antispam-Message-Info: JJp/YdAMit1q3c625NdvPGISZzviIvPS7VG2Wv2y5utwecltG59t0d8tenHeI17OMVr65fzZjpjCbCa6L050snu5VlL9DYfklZXOsDup+vmCPq0jLSLjyjXC6sQoFVLiiG3rj/ypZDVaG/ukZV0vPclHxHEZrxYY1++hCVEyiwgMUqpszezAgyaPVKWfau3fiTdzkCixZM36NFrh/ZdzVFb02fZBj92FF2fi8BGado+W3komf52nUy14H+v3Lz3LgJgfgPgLc55mgCyNAP8KysMfq0fUjytYvJ0LXQaft34oN+8FEWhzO0N5s6veFdwOSmgXQ/xBhMOae45UwR4F3P3ZbPgB9vbHrvuRfOsXGLtxkpAWEdgFibsfb4xOr0kPaV1o21udOqnyKSfFE0gJ0Vn075KSB1Vvk/oGFJRp6Z/G+l4uDvcQov92nplmdVonavyVK+enN54ufsQ/tmflQJkD0tUvA4Il5j+9nbJBDF3eCOItzi4+rqxssx4XtLr+ZZvyy5D9guJmjkePOfBORtuAWaZ4iAD8q8zUb8bdS4A=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2020 12:57:20.4880 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 84f0687d-e656-45eb-da31-08d7ca72bada
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2020 12:57:20.7800 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 86fd1267-942a-4c2e-a921-08d7ca72bb18
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR02MB3333
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2244
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_055725_399162_A4AABA85 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20200317_055724_572892_ED8FA439 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.80 listed in list.dnswl.org]
+ no trust [40.107.244.49 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -151,26 +150,143 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Michal Simek <michal.simek@xilinx.com>
 
-There is no ret filled in case of irq_domain_add_linear() failure.
+Register default arch handler via driver instead of directly pointing to
+xilinx intc controller. This patch makes architecture code more generic.
+
+Driver calls generic domain specific irq handler which does the most of
+things self. Also get rid of concurrent_irq counting which hasn't been
+exported anywhere.
+Based on this loop was also optimized by using do/while loop instead of
+goto loop.
 
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 Reviewed-by: Stefan Asserhall <stefan.asserhall@xilinx.com>
 ---
- drivers/irqchip/irq-xilinx-intc.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/microblaze/Kconfig           |  2 ++
+ arch/microblaze/include/asm/irq.h |  3 ---
+ arch/microblaze/kernel/irq.c      | 21 +------------------
+ drivers/irqchip/irq-xilinx-intc.c | 34 ++++++++++++++++++-------------
+ 4 files changed, 23 insertions(+), 37 deletions(-)
 
+diff --git a/arch/microblaze/Kconfig b/arch/microblaze/Kconfig
+index a75896f18e58..b5a87c294925 100644
+--- a/arch/microblaze/Kconfig
++++ b/arch/microblaze/Kconfig
+@@ -47,6 +47,8 @@ config MICROBLAZE
+ 	select CPU_NO_EFFICIENT_FFS
+ 	select MMU_GATHER_NO_RANGE if MMU
+ 	select SPARSE_IRQ
++	select GENERIC_IRQ_MULTI_HANDLER
++	select HANDLE_DOMAIN_IRQ
+ 
+ # Endianness selection
+ choice
+diff --git a/arch/microblaze/include/asm/irq.h b/arch/microblaze/include/asm/irq.h
+index eac2fb4b3fb9..5166f0893e2b 100644
+--- a/arch/microblaze/include/asm/irq.h
++++ b/arch/microblaze/include/asm/irq.h
+@@ -14,7 +14,4 @@
+ struct pt_regs;
+ extern void do_IRQ(struct pt_regs *regs);
+ 
+-/* should be defined in each interrupt controller driver */
+-extern unsigned int xintc_get_irq(void);
+-
+ #endif /* _ASM_MICROBLAZE_IRQ_H */
+diff --git a/arch/microblaze/kernel/irq.c b/arch/microblaze/kernel/irq.c
+index 903dad822fad..0b37dde60a1e 100644
+--- a/arch/microblaze/kernel/irq.c
++++ b/arch/microblaze/kernel/irq.c
+@@ -20,29 +20,10 @@
+ #include <linux/irqchip.h>
+ #include <linux/of_irq.h>
+ 
+-static u32 concurrent_irq;
+-
+ void __irq_entry do_IRQ(struct pt_regs *regs)
+ {
+-	unsigned int irq;
+-	struct pt_regs *old_regs = set_irq_regs(regs);
+ 	trace_hardirqs_off();
+-
+-	irq_enter();
+-	irq = xintc_get_irq();
+-next_irq:
+-	BUG_ON(!irq);
+-	generic_handle_irq(irq);
+-
+-	irq = xintc_get_irq();
+-	if (irq != -1U) {
+-		pr_debug("next irq: %d\n", irq);
+-		++concurrent_irq;
+-		goto next_irq;
+-	}
+-
+-	irq_exit();
+-	set_irq_regs(old_regs);
++	handle_arch_irq(regs);
+ 	trace_hardirqs_on();
+ }
+ 
 diff --git a/drivers/irqchip/irq-xilinx-intc.c b/drivers/irqchip/irq-xilinx-intc.c
-index 34593fa34c68..1d3d273309bd 100644
+index 1d3d273309bd..ea741818a1ce 100644
 --- a/drivers/irqchip/irq-xilinx-intc.c
 +++ b/drivers/irqchip/irq-xilinx-intc.c
-@@ -228,6 +228,7 @@ static int __init xilinx_intc_of_init(struct device_node *intc,
- 						  &xintc_irq_domain_ops, irqc);
- 	if (!irqc->root_domain) {
- 		pr_err("irq-xilinx: Unable to create IRQ domain\n");
-+		ret = -EINVAL;
- 		goto error;
+@@ -124,20 +124,6 @@ static unsigned int xintc_get_irq_local(struct xintc_irq_chip *irqc)
+ 	return irq;
+ }
+ 
+-unsigned int xintc_get_irq(void)
+-{
+-	unsigned int irq = -1;
+-	u32 hwirq;
+-
+-	hwirq = xintc_read(primary_intc, IVR);
+-	if (hwirq != -1U)
+-		irq = irq_find_mapping(primary_intc->root_domain, hwirq);
+-
+-	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
+-
+-	return irq;
+-}
+-
+ static int xintc_map(struct irq_domain *d, unsigned int irq, irq_hw_number_t hw)
+ {
+ 	struct xintc_irq_chip *irqc = d->host_data;
+@@ -177,6 +163,25 @@ static void xil_intc_irq_handler(struct irq_desc *desc)
+ 	chained_irq_exit(chip, desc);
+ }
+ 
++static void xil_intc_handle_irq(struct pt_regs *regs)
++{
++	u32 hwirq;
++	struct xintc_irq_chip *irqc = primary_intc;
++
++	do {
++		hwirq = xintc_read(irqc, IVR);
++		if (likely(hwirq != -1U)) {
++			int ret;
++
++			ret = handle_domain_irq(irqc->root_domain, hwirq, regs);
++			WARN_ONCE(ret, "Unhandled HWIRQ %d\n", hwirq);
++			continue;
++		}
++
++		break;
++	} while (1);
++}
++
+ static int __init xilinx_intc_of_init(struct device_node *intc,
+ 					     struct device_node *parent)
+ {
+@@ -246,6 +251,7 @@ static int __init xilinx_intc_of_init(struct device_node *intc,
+ 	} else {
+ 		primary_intc = irqc;
+ 		irq_set_default_host(primary_intc->root_domain);
++		set_handle_irq(xil_intc_handle_irq);
  	}
  
+ 	return 0;
 -- 
 2.25.0
 
