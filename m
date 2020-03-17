@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AA52188406
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:26:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8213D188407
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:26:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7+xOM4XnWHAJ627cNgYbegcrwTXBvfKjBbuoGpEU33o=; b=g/hl9j8dWso/Ev
-	V3iQDfODEZz7cv9op9TZJ9Dc2xikHR1ODacUsVVnHDu937IJeR1mwjujg1/OBrrxGo9wVnKLC8E6X
-	l/kdKIF3mRnDk4Qw24uUG/rvOZteByZM+Ss4Y9dxJ4xlzK+3MpbTNiSurzBsALodmBrDnDCcqfO5P
-	jtDEze13MeTa0Waz+EueioUZFdzNDeaHVlylJVPhOArSSO+WHg0k/hD1tqKLADFVqMQvUAiAARa/a
-	IFf5zCuqkPFwwy7+SvlNvJHtwKPHu+mOc+O7pKmDF0u5cFhyFTmRs6V1uf+eJ96abbPXqRmGMhvGe
-	+MiKdrzZEs9g0gUqE1kw==;
+	List-Owner; bh=WbhTxarRFn7uD/jdd4GThzGbAuX899fMS6h/J0DuC/c=; b=hUlyERBfohNy0E
+	uIV8gMSsAgVKNknGMEeZa162lSCbYz0HHclu/d3NP0birGfJL0u3lqctT/5DBB4/UIB+zuf0QJoyz
+	pIod1KyqpFL8VrjvqhwklOcZ4ny4KWnCQdPwlv5j3qpE7+PpgD/WGJBKQ5hj3lcUplYkF80V/UD35
+	rhHpcffF5trkqB8JkGJOGtXsheVBtDGIClJxMhAA45bcJQo4ZXLUgjdwrzO98WX+UMKGuqV+170DK
+	n/h+EBNtqP3SqDbzk+/NfC+1j3c2V06REmo1nRxYbAT/zFzc56XqE669gXE1m8f+LpzM51Lu/4U6+
+	R07AlPH7E2F4j9S5ILjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEBIZ-0001FP-Le; Tue, 17 Mar 2020 12:26:19 +0000
+	id 1jEBIt-0001jr-V6; Tue, 17 Mar 2020 12:26:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEBFk-0005qR-B4
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:23:26 +0000
+ id 1jEBFn-0005ue-Aj
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:23:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9217030E;
- Tue, 17 Mar 2020 05:23:23 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BCB9BFEC;
+ Tue, 17 Mar 2020 05:23:26 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9BCD93F534;
- Tue, 17 Mar 2020 05:23:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C7A783F534;
+ Tue, 17 Mar 2020 05:23:23 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v4 10/26] linux/time.h: Extract common header for vDSO
-Date: Tue, 17 Mar 2020 12:22:04 +0000
-Message-Id: <20200317122220.30393-11-vincenzo.frascino@arm.com>
+Subject: [PATCH v4 11/26] linux/time32.h: Extract common header for vDSO
+Date: Tue, 17 Mar 2020 12:22:05 +0000
+Message-Id: <20200317122220.30393-12-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_052324_497218_6EA485FC 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200317_052327_423282_1E7B39E6 
+X-CRM114-Status: GOOD (  12.57  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,49 +85,65 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split time.h into linux and common headers to make the latter suitable
+Split time32.h into linux and common headers to make the latter suitable
 for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/linux/time.h |  5 +----
- include/vdso/time.h  | 12 ++++++++++++
- 2 files changed, 13 insertions(+), 4 deletions(-)
- create mode 100644 include/vdso/time.h
+ include/linux/time32.h | 14 ++------------
+ include/vdso/time32.h  | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+), 12 deletions(-)
+ create mode 100644 include/vdso/time32.h
 
-diff --git a/include/linux/time.h b/include/linux/time.h
-index 8ef5e5cc9f57..4c325bf44ce0 100644
---- a/include/linux/time.h
-+++ b/include/linux/time.h
-@@ -111,9 +111,6 @@ static inline bool itimerspec64_valid(const struct itimerspec64 *its)
-  */
- #define time_between32(t, l, h) ((u32)(h) - (u32)(l) >= (u32)(t) - (u32)(l))
+diff --git a/include/linux/time32.h b/include/linux/time32.h
+index cad4c3186002..0933f28214c0 100644
+--- a/include/linux/time32.h
++++ b/include/linux/time32.h
+@@ -12,19 +12,9 @@
+ #include <linux/time64.h>
+ #include <linux/timex.h>
  
--struct timens_offset {
--	s64	sec;
--	u64	nsec;
+-#define TIME_T_MAX	(__kernel_old_time_t)((1UL << ((sizeof(__kernel_old_time_t) << 3) - 1)) - 1)
+-
+-typedef s32		old_time32_t;
+-
+-struct old_timespec32 {
+-	old_time32_t	tv_sec;
+-	s32		tv_nsec;
 -};
-+# include <vdso/time.h>
++#include <vdso/time32.h>
  
- #endif
-diff --git a/include/vdso/time.h b/include/vdso/time.h
+-struct old_timeval32 {
+-	old_time32_t	tv_sec;
+-	s32		tv_usec;
+-};
++#define TIME_T_MAX	(__kernel_old_time_t)((1UL << ((sizeof(__kernel_old_time_t) << 3) - 1)) - 1)
+ 
+ struct old_itimerspec32 {
+ 	struct old_timespec32 it_interval;
+diff --git a/include/vdso/time32.h b/include/vdso/time32.h
 new file mode 100644
-index 000000000000..739f53cd2949
+index 000000000000..fdf56f932f67
 --- /dev/null
-+++ b/include/vdso/time.h
-@@ -0,0 +1,12 @@
++++ b/include/vdso/time32.h
+@@ -0,0 +1,17 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __VDSO_TIME_H
-+#define __VDSO_TIME_H
++#ifndef __VDSO_TIME32_H
++#define __VDSO_TIME32_H
 +
-+#include <uapi/linux/types.h>
++typedef s32		old_time32_t;
 +
-+struct timens_offset {
-+	s64	sec;
-+	u64	nsec;
++struct old_timespec32 {
++	old_time32_t	tv_sec;
++	s32		tv_nsec;
 +};
 +
-+#endif /* __VDSO_TIME_H */
++struct old_timeval32 {
++	old_time32_t	tv_sec;
++	s32		tv_usec;
++};
++
++#endif /* __VDSO_TIME32_H */
 -- 
 2.25.1
 
