@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FEAE18907A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:34:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A92BA18907B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:35:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=whSSSbnTaAMrk5VI/zHiqjctinQ/YWKRw/ufQ5rC7ss=; b=sFXcFmCQAocXCn
-	8pGVWojBi8RcTQV98NjRTXo9C2IMJFadf1DUF3oTCcUXerEvlMiKOTgstEWzSopvhi3BPAGvlfR2O
-	UPfXvARs+wu5ViHecX87jtpo3AueARb6ZeOrFuT9Mu0svvMfP8nOgKbi5MuX9jS0EkiByhS/zS0Dr
-	g6j9qlgQN6iX5ADG0puI4qHqlpb29QGlyPWfwCzjUgC4L6B8ZqiBY1zVUDX43FbNgHmZX09SyRONi
-	62NLMNutVBpi3LuP5XaaTEmedhjhORaJjpHk6Q4t4GEhPZDsdWOlLhdZcwhkc+a5CC4Bz0Oci9Z/b
-	SnIjCGltGY/tzj0DTNxw==;
+	List-Owner; bh=3tJH5OtnDBPb2WChk8wP2gO40gJJRO1rjtlfNq1oO94=; b=L4ICqO/pOeGmzD
+	Mj9DFSUVz5Rc+YpmontWjp1R9azlS53s8xXMsmaPAFSx0mkfkyXMeIBjhm5zO6SfdSBb8vU3TJdBT
+	PHvbygmfROPph3yjfjHKYwjpCCtgmCe/PyLcpvJao31HYVZc37fM4yOM9r8apU6QuuoW8J9aYXTh3
+	CpH4JHpagVY54A2H3YzD+ClwFTK3wR0UuVubs68z/hmKrp+qMPbuX89WlWcKOw5HP4Cx0RJqCv3Wd
+	Pdqxplv0ZfHwd6RqDlUXEBF8JCb5GIcWU/L5KsQxVZcHxrCC/2Ra0LAETJ+Tu4n0wjLrRvZ1XklaV
+	1PdV4MrLPpGClyXN8E1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJrA-0002QL-4C; Tue, 17 Mar 2020 21:34:36 +0000
+	id 1jEJrR-0002kT-R3; Tue, 17 Mar 2020 21:34:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJqV-0001xj-JF
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:33:57 +0000
+ id 1jEJqZ-00022h-If
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:34:01 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D296E20714;
- Tue, 17 Mar 2020 21:33:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 204BD2075E;
+ Tue, 17 Mar 2020 21:33:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584480834;
- bh=9kx0bjseCZd6aYyxdHYKCohfu23NKwAgTnfR8yH1ZMs=;
+ s=default; t=1584480838;
+ bh=cp/OajyD3gRzQ49t0K84cyurs/ktRa0u33udp0rWu3o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=u7fPlRgy8fG6kNfbZNkH+gRTIhbtjUoSvlZ3GLSoLOqB6sy8p8MsOXe99vVAIBy3e
- jx/RqnxcGWBLwS1ahcqRDhBNaRyo5TmJyp/GiiaOd5wspxjWz/z69Ynfluq6K/sLMU
- OWH+EOprWKokf728V1yXJZdiPuFGO6/l9X5mMhoo=
+ b=kE42HPlj4QGMlWBz+AtT68g531cYRgeHVTWTWphLGP+G7j+YrNpUzrCdaHTnWjGM8
+ je9ut5n+/8Yjvdswipyq2Feic3A7ZxDbL5Yx+C55ey3vmOOxIIA2xdj5xMz6rYP8zD
+ TWxx5mbt7IFVKWQZYvTmmhpawp1Gsb8GgEDGG8n0=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 12/23] perf cs-etm: Optimize copying last branches
-Date: Tue, 17 Mar 2020 18:32:48 -0300
-Message-Id: <20200317213259.15494-13-acme@kernel.org>
+Subject: [PATCH 13/23] perf cs-etm: Fix unsigned variable comparison to zero
+Date: Tue, 17 Mar 2020 18:32:49 -0300
+Message-Id: <20200317213259.15494-14-acme@kernel.org>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200317213259.15494-1-acme@kernel.org>
 References: <20200317213259.15494-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_143355_683914_33363333 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20200317_143359_672804_E937B5E9 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,14 +94,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-If an instruction range packet can generate multiple instruction
-samples, these samples share the same last branches; it's not necessary
-to copy the same last branches repeatedly for these samples within the
-same packet.
-
-This patch moves out the last branches copying from function
-cs_etm__synth_instruction_sample(), and execute it prior to generating
-instruction samples.
+The variable 'offset' in function cs_etm__sample() is u64 type, it's not
+appropriate to check it with 'while (offset > 0)'; this patch changes to
+'while (offset)'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
@@ -115,78 +110,25 @@ Cc: Robert Walker <robert.walker@arm.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: coresight ml <coresight@lists.linaro.org>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lore.kernel.org/lkml/20200219021811.20067-5-leo.yan@linaro.org
+Link: http://lore.kernel.org/lkml/20200219021811.20067-6-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/cs-etm.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
+ tools/perf/util/cs-etm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 1ddcc67e13dd..87d9943177bc 100644
+index 87d9943177bc..62d2f9b9ce1b 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -1151,10 +1151,8 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+@@ -962,7 +962,7 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+ 	if (packet->isa == CS_ETM_ISA_T32) {
+ 		u64 addr = packet->start_addr;
  
- 	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
- 
--	if (etm->synth_opts.last_branch) {
--		cs_etm__copy_last_branch_rb(etmq, tidq);
-+	if (etm->synth_opts.last_branch)
- 		sample.branch_stack = tidq->last_branch;
--	}
- 
- 	if (etm->synth_opts.inject) {
- 		ret = cs_etm__inject_event(event, &sample,
-@@ -1431,6 +1429,10 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 		u64 offset = etm->instructions_sample_period - instrs_prev;
- 		u64 addr;
- 
-+		/* Prepare last branches for instruction sample */
-+		if (etm->synth_opts.last_branch)
-+			cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		while (tidq->period_instructions >=
- 				etm->instructions_sample_period) {
- 			/*
-@@ -1508,6 +1510,11 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- 
- 	if (etmq->etm->synth_opts.last_branch &&
- 	    tidq->prev_packet->sample_type == CS_ETM_RANGE) {
-+		u64 addr;
-+
-+		/* Prepare last branches for instruction sample */
-+		cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		/*
- 		 * Generate a last branch event for the branches left in the
- 		 * circular buffer at the end of the trace.
-@@ -1515,7 +1522,7 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- 		 * Use the address of the end of the last reported execution
- 		 * range
- 		 */
--		u64 addr = cs_etm__last_executed_instr(tidq->prev_packet);
-+		addr = cs_etm__last_executed_instr(tidq->prev_packet);
- 
- 		err = cs_etm__synth_instruction_sample(
- 			etmq, tidq, addr,
-@@ -1560,11 +1567,16 @@ static int cs_etm__end_block(struct cs_etm_queue *etmq,
- 	 */
- 	if (etmq->etm->synth_opts.last_branch &&
- 	    tidq->prev_packet->sample_type == CS_ETM_RANGE) {
-+		u64 addr;
-+
-+		/* Prepare last branches for instruction sample */
-+		cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		/*
- 		 * Use the address of the end of the last reported execution
- 		 * range.
- 		 */
--		u64 addr = cs_etm__last_executed_instr(tidq->prev_packet);
-+		addr = cs_etm__last_executed_instr(tidq->prev_packet);
- 
- 		err = cs_etm__synth_instruction_sample(
- 			etmq, tidq, addr,
+-		while (offset > 0) {
++		while (offset) {
+ 			addr += cs_etm__t32_instr_size(etmq,
+ 						       trace_chan_id, addr);
+ 			offset--;
 -- 
 2.21.1
 
