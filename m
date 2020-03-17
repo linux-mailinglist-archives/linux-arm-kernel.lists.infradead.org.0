@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A780187BED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 10:20:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED745187BEB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 10:19:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=S3vAGbXatXCn0gdHofP0bh3N9Ks9Dp8F12jbquL1CLE=; b=oJTmcuTo14d1i+VXaIWPe3yXhe
-	H0UxYq8eJdtnEm8fpS2IyAoiraHWkVUu6oEHlct6JrDY9NTX1iatqGV5Gzj6I/zl2sCtbwdA95VwQ
-	3fYLZ5/zdj4/1DGa4SIVtPAyEnhhaXdf4NwwTIicvu2PK8hH4ob7DvwMfduleLPJf9xZuy451NcIQ
-	axHJh0WPykg7c9XnK/FulhbtYXEoTrV8MycOQ8XdmJZjAzKE2Eei/zzlGbtduHIR9nOSrLM4cfOxa
-	Yfo3nFg0JVgM0HhNlGc5rUsZCdo1Ma7HGnC0I48XrLGgWg8VLltmUhXPTgUEjY04M0JqV/Fm/yO61
-	ldHyuprw==;
+	bh=lc9+ns333nW+4CyIULL3tO/+V6x274vlJ1ZoLoYDjYg=; b=HcnGRVLwTtaMczzps6DjEMPApl
+	HvS8u2sl/8woppYsGauzLljpdRc6kSOLCQkxIqGyGJMBsTpk72/UgNYRD1DvBmliOHeFC358UkOxG
+	YsljRv8O+RUNqrdU43VOe67C7VGme8N88+wWgWrFkssbGYA8QQvz6Z2b0ny1y8QNX1caMx6QlSH+z
+	Bj9qfu8CWrPGSfWFWXqmzxKi0ReOiW22oaivLX/YsKxH8Z91dMuPBBTokhw3SCs9yucy69J0Gkqax
+	sT7WtRmUVAbE0aDBknFw3MQvWXmXdXMfEv8ZlwXCqYQim3YkWDV6GPF7HsgJQ7B1GqLszrLyNrYmS
+	pILiUkzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE8OY-0004BP-7e; Tue, 17 Mar 2020 09:20:18 +0000
+	id 1jE8Nv-0003fw-AW; Tue, 17 Mar 2020 09:19:39 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE8NU-0003Vb-LT
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 09:19:14 +0000
+ id 1jE8NT-0003VY-Q6
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 09:19:13 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A149D401B1;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A92B640213;
  Tue, 17 Mar 2020 09:19:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1584436751; bh=reyRkIO30rMjfEmIIORSjTHaVgu6VrPHBQfaxcm6dc4=;
+ t=1584436750; bh=4DNEwGa8x0Rtm2b3zdl8zHnej+ACHTHcSd04X1562/c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=dy+HDgoycAZwTrfRS014e98sMNwsCVNIWElbQfzrTDkc9GL7qHJtm1URyofQ+JWI9
- H1UPjdhEaaaVcWgQZJ6g01YjWxSQhqTgMUSXfV5xQD98Vynxo5kNN9m/7rikPbkv75
- Rl2RHp9/HzedE5UQPH6lZ8wGTXrsuzWabWTNckXPqoJ509nH7Z7bwJRc5vvukJcpAh
- i+1ylC1N2xr+pTrKLomtRItMd5uRdxVZ/F9XE9QEkZanMJwXXdOP6cm0lDnHkdSwsz
- IekF2C2PEz6oSBYoRDMesLduE1MirPUPE84CENxrUTlE84H3iNRnttW63j04AheBWP
- 0ymSGxfogRExQ==
+ b=lVaBY62iQU0IwKS7oJaxdNs9A92AfJoD3CP62ZYxVx2FhDpwCSMpOk+qUKsWUmHk2
+ pgxLDvvM9CB6oKcan5dOTF9H6ZtdxAz5nwCIOTR7VnR3auqIfL7HP0eT7zdTvNZtKN
+ IQjGMIyZMN+5RYsr1aINNPnGC4QMgVeAX9Et3cjhDXSSMpmuaKYzlPrvoKzp8XEsnQ
+ b5FXbZ0sfjbY8nVlOR+XnW7tGe5DwgNftfijRaO2FjF55sjyIYDh0w7JOxyAra7UjD
+ oenwGZ+K/58dqY5fYpAAuSSkwoIjwCxK+sVbyxzx0mh84zWLz4JBC8ua4pTdH0GsFG
+ t9zijbTNkt2/g==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 2CBFAA005B;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 43E79A0063;
  Tue, 17 Mar 2020 09:19:08 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 1/4] net: phy: xpcs: Add XLGMII support
-Date: Tue, 17 Mar 2020 10:18:50 +0100
-Message-Id: <782596b855dd604d0fb31b75bdf51c5f6326d192.1584436401.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 2/4] net: stmmac: Add XLGMII support
+Date: Tue, 17 Mar 2020 10:18:51 +0100
+Message-Id: <e15b19c4d91dcf648a0dcd738ebfe1b327f9c617.1584436401.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1584436401.git.Jose.Abreu@synopsys.com>
 References: <cover.1584436401.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1584436401.git.Jose.Abreu@synopsys.com>
 References: <cover.1584436401.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_021912_701663_35D65FBA 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200317_021911_861351_1D5F4226 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,7 +98,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add XLGMII support for XPCS. This does not include Autoneg feature.
+Add XLGMII support for stmmac including the list of speeds and defines
+for them.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -117,153 +118,103 @@ Cc: Florian Fainelli <f.fainelli@gmail.com>
 Cc: Heiner Kallweit <hkallweit1@gmail.com>
 Cc: Russell King <linux@armlinux.org.uk>
 ---
- drivers/net/phy/mdio-xpcs.c | 98 +++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 98 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/common.h      |  6 +++
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 58 +++++++++++++++++++++++
+ 2 files changed, 64 insertions(+)
 
-diff --git a/drivers/net/phy/mdio-xpcs.c b/drivers/net/phy/mdio-xpcs.c
-index 973f588146f7..2f4cdf807160 100644
---- a/drivers/net/phy/mdio-xpcs.c
-+++ b/drivers/net/phy/mdio-xpcs.c
-@@ -14,6 +14,7 @@
- 
- #define SYNOPSYS_XPCS_USXGMII_ID	0x7996ced0
- #define SYNOPSYS_XPCS_10GKR_ID		0x7996ced0
-+#define SYNOPSYS_XPCS_XLGMII_ID		0x7996ced0
- #define SYNOPSYS_XPCS_MASK		0xffffffff
- 
- /* Vendor regs access */
-@@ -74,6 +75,36 @@ static const int xpcs_10gkr_features[] = {
- 	__ETHTOOL_LINK_MODE_MASK_NBITS,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
+index 9bdbf589d93f..7fd073144bac 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/common.h
++++ b/drivers/net/ethernet/stmicro/stmmac/common.h
+@@ -426,6 +426,12 @@ struct mac_link {
+ 		u32 speed5000;
+ 		u32 speed10000;
+ 	} xgmii;
++	struct {
++		u32 speed25000;
++		u32 speed40000;
++		u32 speed50000;
++		u32 speed100000;
++	} xlgmii;
  };
  
-+static const int xpcs_xlgmii_features[] = {
-+	ETHTOOL_LINK_MODE_Pause_BIT,
-+	ETHTOOL_LINK_MODE_Asym_Pause_BIT,
-+	ETHTOOL_LINK_MODE_25000baseCR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_25000baseSR_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseSR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_40000baseLR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseCR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseKR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseSR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseKR_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseSR_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseCR_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseLR_ER_FR_Full_BIT,
-+	ETHTOOL_LINK_MODE_50000baseDR_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseSR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseLR4_ER4_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseKR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseSR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseCR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseLR2_ER2_FR2_Full_BIT,
-+	ETHTOOL_LINK_MODE_100000baseDR2_Full_BIT,
-+	__ETHTOOL_LINK_MODE_MASK_NBITS,
-+};
-+
- static const phy_interface_t xpcs_usxgmii_interfaces[] = {
- 	PHY_INTERFACE_MODE_USXGMII,
- 	PHY_INTERFACE_MODE_MAX,
-@@ -84,6 +115,11 @@ static const phy_interface_t xpcs_10gkr_interfaces[] = {
- 	PHY_INTERFACE_MODE_MAX,
- };
+ struct mii_regs {
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index f26699d9a050..0e8c80f23557 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -849,6 +849,38 @@ static void stmmac_validate(struct phylink_config *config,
+ 			phylink_set(mac_supported, 10000baseKX4_Full);
+ 			phylink_set(mac_supported, 10000baseKR_Full);
+ 		}
++		if (!max_speed || (max_speed >= 25000)) {
++			phylink_set(mac_supported, 25000baseCR_Full);
++			phylink_set(mac_supported, 25000baseKR_Full);
++			phylink_set(mac_supported, 25000baseSR_Full);
++		}
++		if (!max_speed || (max_speed >= 40000)) {
++			phylink_set(mac_supported, 40000baseKR4_Full);
++			phylink_set(mac_supported, 40000baseCR4_Full);
++			phylink_set(mac_supported, 40000baseSR4_Full);
++			phylink_set(mac_supported, 40000baseLR4_Full);
++		}
++		if (!max_speed || (max_speed >= 50000)) {
++			phylink_set(mac_supported, 50000baseCR2_Full);
++			phylink_set(mac_supported, 50000baseKR2_Full);
++			phylink_set(mac_supported, 50000baseSR2_Full);
++			phylink_set(mac_supported, 50000baseKR_Full);
++			phylink_set(mac_supported, 50000baseSR_Full);
++			phylink_set(mac_supported, 50000baseCR_Full);
++			phylink_set(mac_supported, 50000baseLR_ER_FR_Full);
++			phylink_set(mac_supported, 50000baseDR_Full);
++		}
++		if (!max_speed || (max_speed >= 100000)) {
++			phylink_set(mac_supported, 100000baseKR4_Full);
++			phylink_set(mac_supported, 100000baseSR4_Full);
++			phylink_set(mac_supported, 100000baseCR4_Full);
++			phylink_set(mac_supported, 100000baseLR4_ER4_Full);
++			phylink_set(mac_supported, 100000baseKR2_Full);
++			phylink_set(mac_supported, 100000baseSR2_Full);
++			phylink_set(mac_supported, 100000baseCR2_Full);
++			phylink_set(mac_supported, 100000baseLR2_ER2_FR2_Full);
++			phylink_set(mac_supported, 100000baseDR2_Full);
++		}
+ 	}
  
-+static const phy_interface_t xpcs_xlgmii_interfaces[] = {
-+	PHY_INTERFACE_MODE_XLGMII,
-+	PHY_INTERFACE_MODE_MAX,
-+};
-+
- static struct xpcs_id {
- 	u32 id;
- 	u32 mask;
-@@ -100,6 +136,11 @@ static struct xpcs_id {
- 		.mask = SYNOPSYS_XPCS_MASK,
- 		.supported = xpcs_10gkr_features,
- 		.interface = xpcs_10gkr_interfaces,
-+	}, {
-+		.id = SYNOPSYS_XPCS_XLGMII_ID,
-+		.mask = SYNOPSYS_XPCS_MASK,
-+		.supported = xpcs_xlgmii_features,
-+		.interface = xpcs_xlgmii_interfaces,
- 	},
- };
- 
-@@ -458,6 +499,60 @@ static void xpcs_resolve_lpa(struct mdio_xpcs_args *xpcs,
- 	state->duplex = DUPLEX_FULL;
- }
- 
-+static int xpcs_get_max_xlgmii_speed(struct mdio_xpcs_args *xpcs,
-+				     struct phylink_link_state *state)
-+{
-+	unsigned long *adv = state->advertising;
-+	int speed = SPEED_UNKNOWN;
-+	int bit;
-+
-+	for_each_set_bit(bit, adv, __ETHTOOL_LINK_MODE_MASK_NBITS) {
-+		int new_speed = SPEED_UNKNOWN;
-+
-+		switch (bit) {
-+		case ETHTOOL_LINK_MODE_25000baseCR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_25000baseKR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_25000baseSR_Full_BIT:
-+			new_speed = SPEED_25000;
+ 	/* Half-Duplex can only work with single queue */
+@@ -929,6 +961,32 @@ static void stmmac_mac_link_up(struct phylink_config *config,
+ 		default:
+ 			return;
+ 		}
++	} else if (interface == PHY_INTERFACE_MODE_XLGMII) {
++		switch (speed) {
++		case SPEED_100000:
++			ctrl |= priv->hw->link.xlgmii.speed100000;
 +			break;
-+		case ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_40000baseSR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_40000baseLR4_Full_BIT:
-+			new_speed = SPEED_40000;
++		case SPEED_50000:
++			ctrl |= priv->hw->link.xlgmii.speed50000;
 +			break;
-+		case ETHTOOL_LINK_MODE_50000baseCR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseKR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseSR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseKR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseSR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseCR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseLR_ER_FR_Full_BIT:
-+		case ETHTOOL_LINK_MODE_50000baseDR_Full_BIT:
-+			new_speed = SPEED_50000;
++		case SPEED_40000:
++			ctrl |= priv->hw->link.xlgmii.speed40000;
 +			break;
-+		case ETHTOOL_LINK_MODE_100000baseKR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseSR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseCR4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseLR4_ER4_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseKR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseSR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseCR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseLR2_ER2_FR2_Full_BIT:
-+		case ETHTOOL_LINK_MODE_100000baseDR2_Full_BIT:
-+			new_speed = SPEED_100000;
++		case SPEED_25000:
++			ctrl |= priv->hw->link.xlgmii.speed25000;
++			break;
++		case SPEED_10000:
++			ctrl |= priv->hw->link.xgmii.speed10000;
++			break;
++		case SPEED_2500:
++			ctrl |= priv->hw->link.speed2500;
++			break;
++		case SPEED_1000:
++			ctrl |= priv->hw->link.speed1000;
 +			break;
 +		default:
-+			continue;
++			return;
 +		}
-+
-+		if (new_speed > speed)
-+			speed = new_speed;
-+	}
-+
-+	return speed;
-+}
-+
- static void xpcs_resolve_pma(struct mdio_xpcs_args *xpcs,
- 			     struct phylink_link_state *state)
- {
-@@ -468,6 +563,9 @@ static void xpcs_resolve_pma(struct mdio_xpcs_args *xpcs,
- 	case PHY_INTERFACE_MODE_10GKR:
- 		state->speed = SPEED_10000;
- 		break;
-+	case PHY_INTERFACE_MODE_XLGMII:
-+		state->speed = xpcs_get_max_xlgmii_speed(xpcs, state);
-+		break;
- 	default:
- 		state->speed = SPEED_UNKNOWN;
- 		break;
+ 	} else {
+ 		switch (speed) {
+ 		case SPEED_2500:
 -- 
 2.7.4
 
