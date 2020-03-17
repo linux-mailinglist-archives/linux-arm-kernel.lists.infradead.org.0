@@ -2,94 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43276188E6C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 20:55:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22766188EF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 21:25:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E2XFUbvpEnpu/cX5YVD1UtvZWnyRR+ZhT2sqchzhQrA=; b=iiACjk6s/SC9Sm
-	xMfsV+2gOWHmJmqsOPi7Y5qBqXQg+w4Vkn2x6k5OMTBKIrOscu52BXU7tazLLp9T5DIvau0C5m7bh
-	pMz9wwWCZTMbbODU1HrwQepBmtTkuDT4pmN36XBCekt3MAmqUuYcH8Ra1uB2Uq5TzaUO7VaCKWzMO
-	Bw1gglmKSca3C0BfkzQNvOl1AaFkM+JZo95iYOW6bT1FkN3EXJJhLqkuMvKsNcTX8XjbnwMHGnySp
-	r+R37ZbxJNcySBmuLV7jaF8AiNowQ9K5zwqc2K/8y3s8q7vr1vSYpbm+gL3qw8tiMvqGc8g85gJzQ
-	emt++v5tIaTsCIxyp60Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FZo6kX83MxeOg1B9JG8UENpnVDhmWpMJT9g6L/bmFhk=; b=iSrIjcmt9jhNhs
+	LJjoYTXO4NRNaU53zP5AN1GXi1zyxD6cV671155DBXbNQHFcOD2wj2rl9BvxAP6Zv2BO+oYPJZive
+	bHsupBGQRvw3hTIFNQIkkf/zK/Fz2clnwiqN/TrFuYVv1WalXO+d4iVLFNg30LIH8U0WaHLLJ49UN
+	muWOuuWD87Zw2exWzKXRIaz+9aTTMOawVE3LGTHhPpbiXM9MHOrNt8KxeXYiH4OQAGjMBr7/CV64E
+	UUFG+ya2Tg/rY1zxRbFbj165M6VhZOKlBdt5HRkDn1RMVVT4gaIlCyvi8f0z31KhteFEhjwXPpMNd
+	IKgWzxogUDZu9YP4mang==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEIIs-0003mg-CD; Tue, 17 Mar 2020 19:55:06 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jEIll-0006cw-PJ; Tue, 17 Mar 2020 20:24:57 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEIIZ-0003lX-PW
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 19:54:49 +0000
-Received: by mail-qt1-x841.google.com with SMTP id e20so18656941qto.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Mar 2020 12:54:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=17f/5HAzacgo37aOQY2l5ZAXL11rooxUDN7MpTirpco=;
- b=m7MfNqI7gMKPghfs2UVKwM/5LopUKuTeY8MSGSoBj1VPrMcBmyBdq/onMG2S1zdZIw
- ro5llebBR7YgSBhsmf1qY753t++yy3CMmEcMqswp9IADP0PvSxzDwMYljHKp4KU0VjJp
- f9RPlWUS3p1R2Ec24MfOiTy8n91vsVPf0BfQ5xqWjgsGs2X1H2TBREhEarwyNN4Hz51T
- +XqQVH7DMP0oKCO9AxTVY+P5iks+vzOhpOsGUxc17xAABInayuIJxVoLVaJ2AnwaNTmp
- y9DalNbFJl814KpaIewrmUU1nWYlYxvZN35MSJwy/7a3XX3ByAzzUXK58//QvYpVTrgv
- ccuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=17f/5HAzacgo37aOQY2l5ZAXL11rooxUDN7MpTirpco=;
- b=KDrlF3lkBT306JE7eJHY1T8k5jrElqCv4ev41nI/nzOanT5UDkB6QDTrVCnJ0bD7eV
- 175bw+wEJQDPi0S3gbncu7owm8fQzy2ZAC9aWhjbm8DsPqMO8uDzzAAROduIjjwojpaY
- QnkKwigf6QR8jCdozW7MglFt9w04o3PhidTL+OKm8Hz9znWfBEARCM7vH6bQlBwSL9sa
- 6jdL6CB+ZMH24qdNNa8MO/SZvp6M6nyLa9Df9lUHKFn0yguQSaZdRmvGLAehnqm+IpCv
- qDaA4/AWs3UNoZe2v9yGsm/LrN9qTEOBm3aScqNBxjdIFzM10Bwu1uqk6Gfs5JB4qOog
- OAGg==
-X-Gm-Message-State: ANhLgQ0+fYQIS+H5IUnZjQTwQ2nVwWHqLKUCjjm8dXNs3kceWxeypMp8
- +ooX13AH0d8CwR06bzTIJ6jOSWKD73rm3BI8aQmehA==
-X-Google-Smtp-Source: ADFU+vu6wS9JeHtmW3epgzOV1MST2nNVB0ceK2w3js281Cy199cEhhv8WPpeAy8Syv2R39HVJ9suMHNI23wVqxhnpzk=
-X-Received: by 2002:aed:38c8:: with SMTP id k66mr928098qte.50.1584474883559;
- Tue, 17 Mar 2020 12:54:43 -0700 (PDT)
+ id 1jEIld-0006cK-7y
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 20:24:51 +0000
+IronPort-SDR: TaI2kZ7120dQW5lOgG/HWgJlrhO+HbnhRRwq+wLHXVgf24Tyr+ugrTUQhkMZneAH5+1vZNA9zd
+ +j73eXA7eP4Q==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 17 Mar 2020 13:24:45 -0700
+IronPort-SDR: EAGTgl6VPMzeUUaLheo6Y4VR2S8yS1JYlw9uPBBA1ve90QAJsLcT9yA1G2Uyh2au39ZeplhcOy
+ N2XmL72RQ9ww==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,565,1574150400"; d="scan'208";a="279510334"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga002.fm.intel.com with ESMTP; 17 Mar 2020 13:24:43 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jEIlX-0008TC-2o; Wed, 18 Mar 2020 04:24:43 +0800
+Date: Wed, 18 Mar 2020 04:23:50 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+Subject: [keystone:next] BUILD SUCCESS 560b4d4691b07819f8d3e0cb030f72f863ec1ba3
+Message-ID: <5e7131d6.E65EeEH5k8IxQGLx%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-References: <cover.1582216144.git.leonard.crestez@nxp.com>
- <10e97a04980d933b2cfecb6b124bf9046b6e4f16.1582216144.git.leonard.crestez@nxp.com>
- <158264951569.54955.16797064769391310232@swboyd.mtv.corp.google.com>
- <VI1PR04MB70233A098DC4A2A82B114E93EEED0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <158276809953.177367.6095692240077023796@swboyd.mtv.corp.google.com>
- <VI1PR04MB6941383E77EC501E96D2CBB0EEF60@VI1PR04MB6941.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB6941383E77EC501E96D2CBB0EEF60@VI1PR04MB6941.eurprd04.prod.outlook.com>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Tue, 17 Mar 2020 20:54:31 +0100
-Message-ID: <CACT4Y+Yqrx+GXF9+_oPY+4HXhufN=eoghUcimSzhWsQbLz75wg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
-To: Leonard Crestez <leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_125447_855876_243370D9 
-X-CRM114-Status: GOOD (  35.32  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200317_132449_355839_8BB6BFF8 
+X-CRM114-Status: UNSURE (   5.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,196 +71,578 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Stefan Agner <stefan@agner.ch>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>,
- Alexander Potapenko <glider@google.com>, dl-linux-imx <linux-imx@nxp.com>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- "kasan-dev@googlegroups.com" <kasan-dev@googlegroups.com>,
- Shawn Guo <shawnguo@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 8:25 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->
-> On 2020-02-27 3:48 AM, Stephen Boyd wrote:
-> > Quoting Leonard Crestez (2020-02-25 11:52:11)
-> >> On 25.02.2020 18:52, Stephen Boyd wrote:
-> >>> Quoting Leonard Crestez (2020-02-20 08:29:32)
-> >>>> The imx SC api strongly assumes that messages are composed out of
-> >>>> 4-bytes words but some of our message structs have odd sizeofs.
-> >>>>
-> >>>> This produces many oopses with CONFIG_KASAN=y.
-> >>>>
-> >>>> Fix by marking with __aligned(4).
-> >>>>
-> >>>> Fixes: fe37b4820417 ("clk: imx: add scu clock common part")
-> >>>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> >>>> ---
-> >>>>    drivers/clk/imx/clk-scu.c | 6 +++---
-> >>>>    1 file changed, 3 insertions(+), 3 deletions(-)
-> >>>>
-> >>>> diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-> >>>> index fbef740704d0..3c5c42d8833e 100644
-> >>>> --- a/drivers/clk/imx/clk-scu.c
-> >>>> +++ b/drivers/clk/imx/clk-scu.c
-> >>>> @@ -41,16 +41,16 @@ struct clk_scu {
-> >>>>    struct imx_sc_msg_req_set_clock_rate {
-> >>>>           struct imx_sc_rpc_msg hdr;
-> >>>>           __le32 rate;
-> >>>>           __le16 resource;
-> >>>>           u8 clk;
-> >>>> -} __packed;
-> >>>> +} __packed __aligned(4);
-> >>>
-> >>> Sorry, this still doesn't make sense to me. Having __aligned(4) means
-> >>> that the struct is placed on the stack at some alignment, great, but it
-> >>> still has __packed so the sizeof this struct is some odd number like 11.
-> >>> If this struct is the last element on the stack it will end at some
-> >>> unaligned address and the mailbox code will read a few bytes beyond the
-> >>> end of the stack.
-> >>
-> >> I checked again and marking the struct with __aligned(4) makes it have
-> >> sizeof == 12 as intended. It was 11 before.
-> >>
-> >>       static_assert(sizeof(struct imx_sc_msg_req_set_clock_rate) == 12);
-> >>
-> >> After reading through your email and gcc docs again I'm not sure if this
-> >> portable/reliable this is but as far as I understand "sizeof" needs to
-> >> account for alignment. Or is this just an accident with my compiler?
-> >>
-> >> Marking a structure both __packed and __aligned(4) means that __packed
-> >> only affects internal struct member layout but sizeof is still rounded
-> >> up to a multiple of 4:
-> >>
-> >> struct test {
-> >>          u8      a;
-> >>          u16     b;
-> >> } __packed __aligned(4);
-> >>
-> >> static_assert(sizeof(struct test) == 4);
-> >> static_assert(offsetof(struct test, a) == 0);
-> >> static_assert(offsetof(struct test, b) == 1);
-> >>
-> >> This test is not realistic because I don't think SCU messages have any
-> >> such oddly-aligned members.
-> >>
-> >
-> > I'm not really sure as I'm not a linker expert. I'm just especially wary
-> > of using __packed or __aligned attributes because they silently generate
-> > code that is usually inefficient. This is why we typically do lots of
-> > shifting and masking in the kernel, so that we can easily see how
-> > complicated it is to pack bits into place. Maybe it makes sense to get
-> > rid of the structs entirely and pack the bits into __le32 arrays of
-> > varying length. Then we don't have to worry about packed or aligned or
-> > what the compiler will do and we can easily be confident that we've put
-> > the bits in the right place in each u32 that is eventually written to
-> > the mailbox register space.
->
-> These message structs are not as complicated as hardware register, for
-> example everything is always on a byte border.
->
-> In older versions of the imx internal tree SC messaging is done by
-> packing into arrays through a layer of generated code which looks like this:
->
->           RPC_VER(&msg) = SC_RPC_VERSION;
->           RPC_SVC(&msg) = U8(SC_RPC_SVC_MISC);
->           RPC_FUNC(&msg) = U8(MISC_FUNC_SET_CONTROL);
->           RPC_U32(&msg, 0U) = U32(ctrl);
->           RPC_U32(&msg, 4U) = U32(val);
->           RPC_U16(&msg, 8U) = U16(resource);
->           RPC_SIZE(&msg) = 4U;
->
-> The RPC_U32/U16 macros look like this:
->
-> #define RPC_I32(MESG, IDX)      ((MESG)->DATA.i32[(IDX) / 4U])
-> #define RPC_I16(MESG, IDX)      ((MESG)->DATA.i16[(IDX) / 2U])
-> #define RPC_I8(MESG, IDX)       ((MESG)->DATA.i8[(IDX)])
-> #define RPC_U32(MESG, IDX)      ((MESG)->DATA.u32[(IDX) / 4U])
-> #define RPC_U16(MESG, IDX)      ((MESG)->DATA.u16[(IDX) / 2U])
-> #define RPC_U8(MESG, IDX)       ((MESG)->DATA.u8[(IDX)])
->
-> and the message struct itself has a big union for the data:
->
-> typedef struct {
->           uint8_t version;
->           uint8_t size;
->           uint8_t svc;
->           uint8_t func;
->           union {
->                   int32_t i32[(SC_RPC_MAX_MSG - 1U)];
->                   int16_t i16[(SC_RPC_MAX_MSG - 1U) * 2U];
->                   int8_t i8[(SC_RPC_MAX_MSG - 1U) * 4U];
->                   uint32_t u32[(SC_RPC_MAX_MSG - 1U)];
->                   uint16_t u16[(SC_RPC_MAX_MSG - 1U) * 2U];
->                   uint8_t u8[(SC_RPC_MAX_MSG - 1U) * 4U];
->           } DATA;
-> } sc_rpc_msg_t;
->
-> This approach is very verbose to the point of being unreadable I think
-> it's much to message structs instead. Compiler struct layout rules are
-> not really all that complicated and casting binary data as structs is
-> very common in areas such as networking. This approach is also used by
-> other firmware interfaces like TI sci and nvidia bpmp.
->
-> imx8 currently has manually written message structs, it's unfortunate
-> that a bug was found and fixing required a scattering patches in
-> multiple subsystems. Perhaps a better solution would be to centralize
-> all structs in a single header similar to drivers/firmware/ti_sci.h?
->
-> In order to ensrue that there are no issues specific to the compile
-> version perhaps a bunch of static_assert statements could be added to
-> check that sizeof and offset are as expected?
->
-> ---------------------------------
->
-> As far as I can tell the issue KASAN warns about can be simplified to this:
->
-> struct __packed badpack {
->      u32     a;
->      u16     b;
->      u8      c;
-> };
->
-> static_assert(sizeof(struct badpack) == 7);
->
-> static void func(void *x)
-> {
->      u32* arr = (u32*)x;
->      arr[0] = 0x11111111;
->      arr[1] = 0x22222222;
-> }
->
-> static int hello(void)
-> {
->      struct badpack s;
->      u8 x = 0x33;
->
->      printk("&s=%px &x=%px\n", &s, &x);
->      func(&s);
->      // x could be overwritten here, depending on stack layout.
->      BUG_ON(x != 0x33);
->
->      return 0;
-> }
->
-> Adding __aligned(4) bumps struct size to 8 and avoids the issue
->
-> Added KASAN maintainers to check if this is a valid fix.
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git  next
+branch HEAD: 560b4d4691b07819f8d3e0cb030f72f863ec1ba3  Merge branch 'for_5.7/keystone-dts' into next
 
-Hi Leonard,
+elapsed time: 14540m
 
-I think it should fix the bug.
-It's not so much about KASAN, more about the validity of the C program.
+configs tested: 551
+configs skipped: 150
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+arm                              allyesconfig
+arm                               allnoconfig
+arm                              allmodconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                           efm32_defconfig
+arm                         at91_dt_defconfig
+arm                        shmobile_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                           sunxi_defconfig
+arm                        multi_v7_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+sparc64                          allyesconfig
+sh                                allnoconfig
+sparc64                          allmodconfig
+openrisc                 simple_smp_defconfig
+h8300                     edosk2674_defconfig
+ia64                              allnoconfig
+powerpc                       ppc64_defconfig
+c6x                        evmc6678_defconfig
+ia64                             allmodconfig
+ia64                             allyesconfig
+riscv                             allnoconfig
+openrisc                    or1ksim_defconfig
+mips                              allnoconfig
+mips                             allyesconfig
+riscv                               defconfig
+um                             i386_defconfig
+sh                               allmodconfig
+um                           x86_64_defconfig
+sh                            titan_defconfig
+i386                                defconfig
+ia64                                defconfig
+powerpc                             defconfig
+parisc                generic-32bit_defconfig
+s390                             alldefconfig
+um                                  defconfig
+nds32                             allnoconfig
+sparc                               defconfig
+s390                                defconfig
+i386                              allnoconfig
+i386                             alldefconfig
+i386                             allyesconfig
+ia64                             alldefconfig
+c6x                              allyesconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                               defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                          rhel-kconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                            allnoconfig
+parisc                           allyesconfig
+parisc                generic-64bit_defconfig
+x86_64               randconfig-a001-20200312
+x86_64               randconfig-a002-20200312
+x86_64               randconfig-a003-20200312
+i386                 randconfig-a001-20200312
+i386                 randconfig-a002-20200312
+i386                 randconfig-a003-20200312
+x86_64               randconfig-a001-20200316
+x86_64               randconfig-a002-20200316
+x86_64               randconfig-a003-20200316
+i386                 randconfig-a001-20200316
+i386                 randconfig-a002-20200316
+i386                 randconfig-a003-20200316
+x86_64               randconfig-a001-20200317
+x86_64               randconfig-a002-20200317
+x86_64               randconfig-a003-20200317
+i386                 randconfig-a001-20200317
+i386                 randconfig-a002-20200317
+i386                 randconfig-a003-20200317
+x86_64               randconfig-a001-20200310
+x86_64               randconfig-a002-20200310
+x86_64               randconfig-a003-20200310
+i386                 randconfig-a001-20200310
+i386                 randconfig-a002-20200310
+i386                 randconfig-a003-20200310
+x86_64               randconfig-a001-20200311
+x86_64               randconfig-a002-20200311
+x86_64               randconfig-a003-20200311
+i386                 randconfig-a001-20200311
+i386                 randconfig-a002-20200311
+i386                 randconfig-a003-20200311
+x86_64               randconfig-a001-20200308
+x86_64               randconfig-a002-20200308
+x86_64               randconfig-a003-20200308
+i386                 randconfig-a001-20200308
+i386                 randconfig-a002-20200308
+i386                 randconfig-a003-20200308
+x86_64               randconfig-a001-20200313
+x86_64               randconfig-a002-20200313
+x86_64               randconfig-a003-20200313
+i386                 randconfig-a001-20200313
+i386                 randconfig-a002-20200313
+i386                 randconfig-a003-20200313
+alpha                randconfig-a001-20200311
+m68k                 randconfig-a001-20200311
+mips                 randconfig-a001-20200311
+nds32                randconfig-a001-20200311
+parisc               randconfig-a001-20200311
+riscv                randconfig-a001-20200311
+alpha                randconfig-a001-20200312
+m68k                 randconfig-a001-20200312
+mips                 randconfig-a001-20200312
+nds32                randconfig-a001-20200312
+parisc               randconfig-a001-20200312
+riscv                randconfig-a001-20200312
+alpha                randconfig-a001-20200316
+m68k                 randconfig-a001-20200316
+mips                 randconfig-a001-20200316
+nds32                randconfig-a001-20200316
+parisc               randconfig-a001-20200316
+riscv                randconfig-a001-20200316
+alpha                randconfig-a001-20200309
+m68k                 randconfig-a001-20200309
+mips                 randconfig-a001-20200309
+nds32                randconfig-a001-20200309
+parisc               randconfig-a001-20200309
+riscv                randconfig-a001-20200309
+alpha                randconfig-a001-20200317
+m68k                 randconfig-a001-20200317
+mips                 randconfig-a001-20200317
+nds32                randconfig-a001-20200317
+parisc               randconfig-a001-20200317
+riscv                randconfig-a001-20200317
+c6x                  randconfig-a001-20200317
+h8300                randconfig-a001-20200317
+microblaze           randconfig-a001-20200317
+nios2                randconfig-a001-20200317
+sparc64              randconfig-a001-20200317
+c6x                  randconfig-a001-20200311
+h8300                randconfig-a001-20200311
+microblaze           randconfig-a001-20200311
+nios2                randconfig-a001-20200311
+sparc64              randconfig-a001-20200311
+c6x                  randconfig-a001-20200312
+h8300                randconfig-a001-20200312
+microblaze           randconfig-a001-20200312
+nios2                randconfig-a001-20200312
+sparc64              randconfig-a001-20200312
+c6x                  randconfig-a001-20200316
+h8300                randconfig-a001-20200316
+microblaze           randconfig-a001-20200316
+nios2                randconfig-a001-20200316
+sparc64              randconfig-a001-20200316
+c6x                  randconfig-a001-20200310
+h8300                randconfig-a001-20200310
+microblaze           randconfig-a001-20200310
+nios2                randconfig-a001-20200310
+sparc64              randconfig-a001-20200310
+c6x                  randconfig-a001-20200309
+h8300                randconfig-a001-20200309
+microblaze           randconfig-a001-20200309
+nios2                randconfig-a001-20200309
+sparc64              randconfig-a001-20200309
+csky                 randconfig-a001-20200311
+openrisc             randconfig-a001-20200311
+s390                 randconfig-a001-20200311
+sh                   randconfig-a001-20200311
+xtensa               randconfig-a001-20200311
+csky                 randconfig-a001-20200316
+s390                 randconfig-a001-20200316
+sh                   randconfig-a001-20200316
+xtensa               randconfig-a001-20200316
+openrisc             randconfig-a001-20200316
+csky                 randconfig-a001-20200317
+openrisc             randconfig-a001-20200317
+s390                 randconfig-a001-20200317
+sh                   randconfig-a001-20200317
+xtensa               randconfig-a001-20200317
+csky                 randconfig-a001-20200309
+openrisc             randconfig-a001-20200309
+s390                 randconfig-a001-20200309
+sh                   randconfig-a001-20200309
+xtensa               randconfig-a001-20200309
+csky                 randconfig-a001-20200310
+openrisc             randconfig-a001-20200310
+s390                 randconfig-a001-20200310
+sh                   randconfig-a001-20200310
+xtensa               randconfig-a001-20200310
+csky                 randconfig-a001-20200308
+openrisc             randconfig-a001-20200308
+s390                 randconfig-a001-20200308
+sh                   randconfig-a001-20200308
+xtensa               randconfig-a001-20200308
+x86_64               randconfig-b001-20200317
+x86_64               randconfig-b002-20200317
+x86_64               randconfig-b003-20200317
+i386                 randconfig-b001-20200317
+i386                 randconfig-b002-20200317
+i386                 randconfig-b003-20200317
+x86_64               randconfig-b001-20200312
+x86_64               randconfig-b002-20200312
+x86_64               randconfig-b003-20200312
+i386                 randconfig-b001-20200312
+i386                 randconfig-b002-20200312
+i386                 randconfig-b003-20200312
+x86_64               randconfig-b001-20200311
+x86_64               randconfig-b002-20200311
+x86_64               randconfig-b003-20200311
+i386                 randconfig-b001-20200311
+i386                 randconfig-b002-20200311
+i386                 randconfig-b003-20200311
+x86_64               randconfig-b001-20200308
+x86_64               randconfig-b002-20200308
+x86_64               randconfig-b003-20200308
+i386                 randconfig-b001-20200308
+i386                 randconfig-b002-20200308
+i386                 randconfig-b003-20200308
+x86_64               randconfig-b001-20200316
+x86_64               randconfig-b002-20200316
+x86_64               randconfig-b003-20200316
+i386                 randconfig-b001-20200316
+i386                 randconfig-b002-20200316
+i386                 randconfig-b003-20200316
+x86_64               randconfig-b001-20200309
+x86_64               randconfig-b002-20200309
+x86_64               randconfig-b003-20200309
+i386                 randconfig-b001-20200309
+i386                 randconfig-b002-20200309
+i386                 randconfig-b003-20200309
+x86_64               randconfig-b001-20200310
+x86_64               randconfig-b002-20200310
+x86_64               randconfig-b003-20200310
+i386                 randconfig-b001-20200310
+i386                 randconfig-b002-20200310
+i386                 randconfig-b003-20200310
+x86_64               randconfig-c001-20200310
+x86_64               randconfig-c002-20200310
+x86_64               randconfig-c003-20200310
+i386                 randconfig-c001-20200310
+i386                 randconfig-c002-20200310
+i386                 randconfig-c003-20200310
+x86_64               randconfig-c001-20200312
+x86_64               randconfig-c002-20200312
+x86_64               randconfig-c003-20200312
+i386                 randconfig-c001-20200312
+i386                 randconfig-c002-20200312
+i386                 randconfig-c003-20200312
+x86_64               randconfig-c001-20200316
+x86_64               randconfig-c002-20200316
+x86_64               randconfig-c003-20200316
+i386                 randconfig-c001-20200316
+i386                 randconfig-c002-20200316
+i386                 randconfig-c003-20200316
+x86_64               randconfig-c001-20200317
+x86_64               randconfig-c002-20200317
+x86_64               randconfig-c003-20200317
+i386                 randconfig-c001-20200317
+i386                 randconfig-c002-20200317
+i386                 randconfig-c003-20200317
+x86_64               randconfig-c001-20200308
+x86_64               randconfig-c002-20200308
+x86_64               randconfig-c003-20200308
+i386                 randconfig-c001-20200308
+i386                 randconfig-c002-20200308
+i386                 randconfig-c003-20200308
+x86_64               randconfig-c001-20200311
+x86_64               randconfig-c002-20200311
+x86_64               randconfig-c003-20200311
+i386                 randconfig-c001-20200311
+i386                 randconfig-c002-20200311
+i386                 randconfig-c003-20200311
+x86_64               randconfig-c001-20200309
+x86_64               randconfig-c002-20200309
+x86_64               randconfig-c003-20200309
+i386                 randconfig-c001-20200309
+i386                 randconfig-c002-20200309
+i386                 randconfig-c003-20200309
+x86_64               randconfig-c001-20200313
+x86_64               randconfig-c002-20200313
+x86_64               randconfig-c003-20200313
+i386                 randconfig-c001-20200313
+i386                 randconfig-c002-20200313
+i386                 randconfig-c003-20200313
+x86_64               randconfig-d001-20200310
+x86_64               randconfig-d002-20200310
+x86_64               randconfig-d003-20200310
+i386                 randconfig-d001-20200310
+i386                 randconfig-d002-20200310
+i386                 randconfig-d003-20200310
+x86_64               randconfig-d001-20200312
+x86_64               randconfig-d002-20200312
+x86_64               randconfig-d003-20200312
+i386                 randconfig-d001-20200312
+i386                 randconfig-d002-20200312
+i386                 randconfig-d003-20200312
+x86_64               randconfig-d001-20200316
+x86_64               randconfig-d002-20200316
+x86_64               randconfig-d003-20200316
+i386                 randconfig-d001-20200316
+i386                 randconfig-d002-20200316
+i386                 randconfig-d003-20200316
+x86_64               randconfig-d001-20200311
+x86_64               randconfig-d002-20200311
+x86_64               randconfig-d003-20200311
+i386                 randconfig-d001-20200311
+i386                 randconfig-d002-20200311
+i386                 randconfig-d003-20200311
+x86_64               randconfig-d001-20200313
+x86_64               randconfig-d002-20200313
+x86_64               randconfig-d003-20200313
+i386                 randconfig-d001-20200313
+i386                 randconfig-d002-20200313
+i386                 randconfig-d003-20200313
+x86_64               randconfig-d001-20200317
+x86_64               randconfig-d002-20200317
+x86_64               randconfig-d003-20200317
+i386                 randconfig-d001-20200317
+i386                 randconfig-d002-20200317
+i386                 randconfig-d003-20200317
+x86_64               randconfig-d001-20200309
+x86_64               randconfig-d002-20200309
+x86_64               randconfig-d003-20200309
+i386                 randconfig-d001-20200309
+i386                 randconfig-d002-20200309
+i386                 randconfig-d003-20200309
+x86_64               randconfig-d001-20200308
+x86_64               randconfig-d002-20200308
+x86_64               randconfig-d003-20200308
+i386                 randconfig-d001-20200308
+i386                 randconfig-d002-20200308
+i386                 randconfig-d003-20200308
+x86_64               randconfig-e001-20200310
+x86_64               randconfig-e002-20200310
+x86_64               randconfig-e003-20200310
+i386                 randconfig-e001-20200310
+i386                 randconfig-e002-20200310
+i386                 randconfig-e003-20200310
+x86_64               randconfig-e001-20200316
+x86_64               randconfig-e002-20200316
+x86_64               randconfig-e003-20200316
+i386                 randconfig-e001-20200316
+i386                 randconfig-e002-20200316
+i386                 randconfig-e003-20200316
+x86_64               randconfig-e001-20200311
+x86_64               randconfig-e002-20200311
+x86_64               randconfig-e003-20200311
+i386                 randconfig-e001-20200311
+i386                 randconfig-e002-20200311
+i386                 randconfig-e003-20200311
+x86_64               randconfig-e001-20200312
+x86_64               randconfig-e002-20200312
+x86_64               randconfig-e003-20200312
+i386                 randconfig-e001-20200312
+i386                 randconfig-e002-20200312
+i386                 randconfig-e003-20200312
+x86_64               randconfig-e001-20200317
+x86_64               randconfig-e002-20200317
+x86_64               randconfig-e003-20200317
+i386                 randconfig-e001-20200317
+i386                 randconfig-e002-20200317
+i386                 randconfig-e003-20200317
+x86_64               randconfig-f001-20200316
+x86_64               randconfig-f002-20200316
+x86_64               randconfig-f003-20200316
+i386                 randconfig-f001-20200316
+i386                 randconfig-f002-20200316
+i386                 randconfig-f003-20200316
+x86_64               randconfig-f001-20200310
+x86_64               randconfig-f002-20200310
+x86_64               randconfig-f003-20200310
+i386                 randconfig-f001-20200310
+i386                 randconfig-f002-20200310
+i386                 randconfig-f003-20200310
+x86_64               randconfig-f001-20200317
+x86_64               randconfig-f002-20200317
+x86_64               randconfig-f003-20200317
+i386                 randconfig-f001-20200317
+i386                 randconfig-f002-20200317
+i386                 randconfig-f003-20200317
+x86_64               randconfig-f001-20200311
+x86_64               randconfig-f002-20200311
+x86_64               randconfig-f003-20200311
+i386                 randconfig-f001-20200311
+i386                 randconfig-f002-20200311
+i386                 randconfig-f003-20200311
+x86_64               randconfig-f001-20200312
+x86_64               randconfig-f002-20200312
+x86_64               randconfig-f003-20200312
+i386                 randconfig-f001-20200312
+i386                 randconfig-f002-20200312
+i386                 randconfig-f003-20200312
+x86_64               randconfig-f001-20200308
+x86_64               randconfig-f002-20200308
+x86_64               randconfig-f003-20200308
+i386                 randconfig-f001-20200308
+i386                 randconfig-f002-20200308
+i386                 randconfig-f003-20200308
+x86_64               randconfig-f001-20200309
+x86_64               randconfig-f002-20200309
+x86_64               randconfig-f003-20200309
+i386                 randconfig-f001-20200309
+i386                 randconfig-f002-20200309
+i386                 randconfig-f003-20200309
+x86_64               randconfig-g001-20200310
+x86_64               randconfig-g002-20200310
+x86_64               randconfig-g003-20200310
+i386                 randconfig-g001-20200310
+i386                 randconfig-g002-20200310
+i386                 randconfig-g003-20200310
+x86_64               randconfig-g001-20200312
+x86_64               randconfig-g002-20200312
+x86_64               randconfig-g003-20200312
+i386                 randconfig-g001-20200312
+i386                 randconfig-g002-20200312
+i386                 randconfig-g003-20200312
+x86_64               randconfig-g001-20200316
+x86_64               randconfig-g002-20200316
+x86_64               randconfig-g003-20200316
+i386                 randconfig-g001-20200316
+i386                 randconfig-g002-20200316
+i386                 randconfig-g003-20200316
+x86_64               randconfig-g001-20200317
+x86_64               randconfig-g002-20200317
+x86_64               randconfig-g003-20200317
+i386                 randconfig-g001-20200317
+i386                 randconfig-g002-20200317
+i386                 randconfig-g003-20200317
+x86_64               randconfig-g001-20200308
+x86_64               randconfig-g002-20200308
+x86_64               randconfig-g003-20200308
+i386                 randconfig-g001-20200308
+i386                 randconfig-g002-20200308
+i386                 randconfig-g003-20200308
+x86_64               randconfig-g001-20200311
+x86_64               randconfig-g002-20200311
+x86_64               randconfig-g003-20200311
+i386                 randconfig-g001-20200311
+i386                 randconfig-g002-20200311
+i386                 randconfig-g003-20200311
+x86_64               randconfig-g001-20200309
+x86_64               randconfig-g002-20200309
+x86_64               randconfig-g003-20200309
+i386                 randconfig-g001-20200309
+i386                 randconfig-g002-20200309
+i386                 randconfig-g003-20200309
+x86_64               randconfig-h001-20200308
+x86_64               randconfig-h002-20200308
+x86_64               randconfig-h003-20200308
+i386                 randconfig-h001-20200308
+i386                 randconfig-h002-20200308
+i386                 randconfig-h003-20200308
+x86_64               randconfig-h001-20200310
+x86_64               randconfig-h002-20200310
+x86_64               randconfig-h003-20200310
+i386                 randconfig-h001-20200310
+i386                 randconfig-h002-20200310
+i386                 randconfig-h003-20200310
+x86_64               randconfig-h001-20200311
+x86_64               randconfig-h002-20200311
+x86_64               randconfig-h003-20200311
+i386                 randconfig-h001-20200311
+i386                 randconfig-h002-20200311
+i386                 randconfig-h003-20200311
+x86_64               randconfig-h001-20200317
+x86_64               randconfig-h002-20200317
+x86_64               randconfig-h003-20200317
+i386                 randconfig-h001-20200317
+i386                 randconfig-h002-20200317
+i386                 randconfig-h003-20200317
+x86_64               randconfig-h001-20200316
+x86_64               randconfig-h002-20200316
+x86_64               randconfig-h003-20200316
+i386                 randconfig-h001-20200316
+i386                 randconfig-h002-20200316
+i386                 randconfig-h003-20200316
+x86_64               randconfig-h001-20200312
+x86_64               randconfig-h002-20200312
+x86_64               randconfig-h003-20200312
+i386                 randconfig-h001-20200312
+i386                 randconfig-h002-20200312
+i386                 randconfig-h003-20200312
+x86_64               randconfig-h001-20200309
+x86_64               randconfig-h002-20200309
+x86_64               randconfig-h003-20200309
+i386                 randconfig-h001-20200309
+i386                 randconfig-h002-20200309
+i386                 randconfig-h003-20200309
+arc                  randconfig-a001-20200317
+arm                  randconfig-a001-20200317
+arm64                randconfig-a001-20200317
+ia64                 randconfig-a001-20200317
+powerpc              randconfig-a001-20200317
+sparc                randconfig-a001-20200317
+arc                  randconfig-a001-20200312
+arm                  randconfig-a001-20200312
+arm64                randconfig-a001-20200312
+ia64                 randconfig-a001-20200312
+powerpc              randconfig-a001-20200312
+sparc                randconfig-a001-20200312
+arm                  randconfig-a001-20200308
+arc                  randconfig-a001-20200310
+arm                  randconfig-a001-20200310
+arm64                randconfig-a001-20200310
+ia64                 randconfig-a001-20200310
+powerpc              randconfig-a001-20200310
+sparc                randconfig-a001-20200310
+arc                  randconfig-a001-20200311
+arm                  randconfig-a001-20200311
+arm64                randconfig-a001-20200311
+ia64                 randconfig-a001-20200311
+powerpc              randconfig-a001-20200311
+sparc                randconfig-a001-20200311
+arc                  randconfig-a001-20200316
+arm                  randconfig-a001-20200316
+arm64                randconfig-a001-20200316
+ia64                 randconfig-a001-20200316
+powerpc              randconfig-a001-20200316
+sparc                randconfig-a001-20200316
+riscv                            allyesconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+riscv                            allmodconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                       zfcpdump_defconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sparc64                           allnoconfig
+sparc64                             defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
