@@ -2,107 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A94AF187AE2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 09:12:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9699C187B10
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 09:18:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yrQ+AUi7CHPIZtrE2m68SqJRZ1I0+9jE028grySgWko=; b=q5pADsOguDLjnr
-	jinfmf1Ieo0U+Ex5k8XuMrDHzM+q6yzrm82/6SxxvIJHfNe8oTrzqgt8a4VEicKWfZdc1ZL56ywX0
-	ChXZd4qvBcxW4OnmWSAmgqCx11l3cJwlSedq0CNu2VFKwWRJsOfAreBH6OLsAu3j9Ial3XtZBwQG2
-	W/Rsn6SNMQ3vqsijm4yAFsaK9lTBUXx3nY3XwQkR8fpfG3uWHM8QSo2UUPD24IcNj7AWCu8XLN84y
-	7xQHF6gz3tOScFFQOHukgFi+WNDZQ0Zgv1W2N5N4FJ4NWDZ6NT51TTwuYEapM9zpnkaMbedzsWpUQ
-	m4bYl6P9KCW2Qm8CAbKA==;
+	List-Owner; bh=MU0Xctvt4HwKaz65QvmYOFLD6IXJolBAZEuZ93v0E+Q=; b=GS7FnptoobIQE9
+	VDL6OYnm21oFPnlBsNj9jSRjE3YIMJj0Css4JLhDuLxTyAeCynA/dO0BjnNpC7yFOjhs7sCsbeVB1
+	uEdzoNCG4HrdkaxA0+rRaswGJxwiTpzWO02Ci1jAzxUT5Cm1LPe5wtYBeB2XEdxV6oegMV2XS21sP
+	AzALS20YvqtKbIB+Y+eUF3A6SLcnF2WS/3h/qnIDE9nhOjjOwMHSBfAyM+Xn/WEnp4zf68+8KC4sR
+	5YxNsWn0EZ3W1o89Sm5gydWOuglcEaSPeey0vOfAtWGMz80EO/ShEXJcEyrGGMMHRnBHTqn0PgnL4
+	TEB0o1R5WWryrhpDXsqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE7KU-0004Xx-U9; Tue, 17 Mar 2020 08:12:02 +0000
-Received: from mail-eopbgr1410104.outbound.protection.outlook.com
- ([40.107.141.104] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jE7QY-0006jC-Ae; Tue, 17 Mar 2020 08:18:18 +0000
+Received: from mail-dm6nam12on2080.outbound.protection.outlook.com
+ ([40.107.243.80] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE7KE-0004WI-1h; Tue, 17 Mar 2020 08:11:53 +0000
+ id 1jE7QP-0006ee-Ds
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 08:18:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=O8aukGEkuiWteAk5dmjin9d/0C3J62FE58ssJBqp9XwHvXwWlSPw61n9Brt+t8rskXrIFdT8s7OfGLwxYJyvEBDzG+/WpvCmEeGVVqVfIDcgwvqJKd4Lk09W3f2gpYEjweeakxTd2s9Jpv8Dol7Qr8GEfj9txdzZIg08dM0sutbARWkuzdi3RBHocmou6nsE55jKNLOlYiP7aMmpabx9vkGz2dedlrSwCdt7/lJGbzBX9rKtTALvcj1IWHNTRjXbe5qQLDmhR661vRFmYPknmlvKSlrjY9IxczaA1IUv9CueQZr0VD+fmYlEHym+mChgu/a9AgooGlWsLAXvjQVwgA==
+ b=LKRzwZMUIQtA7g59Zp6bj8AKclExoitQBfc56k3TF4QOb0onFDXjGuajGdlSW5u2S7URP4oUHW2GnyOFrWnZXu9/qnv2WS1VWffnZENxr+gNG2EU9OzmkV5xXFFJ4UmGXPpQL18d72IwWmKSKiewBLeL8B60IgvAl/7jItWVHu9W+NOuEatT3N1DzsQn52NH+56caMq1BJM6m+wL4BeoKHvccpqnT1nfGDIZNkZ1PfCLpI0NXqo0SPkjnkBkAbYm2OTFeXjqnZlCed2x+HPxucJjkONcA6T3CNjPXpkBhzhKLy/7LHOSw6EFErknuVQOao6zB9mjuDDPip9hjzYj2A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Sk51RpIV3z65ouhKeErC7AE+u02C5ZqfUsI1ptS+/yM=;
- b=A+74vpEEkuUW8iUbLiGl7fan6wPppMCrayGCN1bDo7bokZud7O9TWGvIEhI1OKhjCiGbGhVBzmlnfXaLApYScIXLWBhA2tzwfXdsEegZapy5wBJaIyndGl8nbl+KqEDVqS6qgy3aN5a4JeOUlWdeYu4joxV/nLosylebBYaK8cnAkf7fDIq+CW70ayDnt0h51nUw/eYWaued+eiahFbL4KVOWqJZDoyjCidLdzzM2OeqitDGmGzoK3AAnbfxXXE2XBrsSDijiqmsAliM9aTJHr6ctXCQeUAcGyaTQ9bSxrjHjM54X7CQ3Ypa+153ZknMXMLrE73yO6/dOKxfdxlSLw==
+ bh=VV/Vh2LiAS0kElbgw8A0BEczvIVTRedbpCnP7UYPM+M=;
+ b=c7OmAeTlfTJFveRNh/71qK722o5tizHOAaAXOdm/D1KrxBKBdqkNHRVmMVcuWJGubWfRoEkTc5hnp6eAUuu6EpUIJZz27gVlo7Ru75oUGb20q0YdCDv7PDHlmPrZfAj95vhpli+GPtfuu6WUCnMu0q/lkxW1FvvO+dm6xMxYeXwIG+f14QnKfT98cIP+0FXdmLkv+bfW0ZFKiaG+aU/ZO8WKVV0zwoKo0FnBsY3VKVj57tfQWgHRrhMGWK8NYgt+f5CTJCUlwkUdsU52mbTDTV7gLD0P4qUwVzcJHt60RcN3Adjaxa/k3JRuFyjaayhpCtMfhV1VScoGNu2qUAHzPg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Sk51RpIV3z65ouhKeErC7AE+u02C5ZqfUsI1ptS+/yM=;
- b=IOU6eCKGndmWg+zQHjgBMAY6Nx0mHmHyX4sovlllVV6OFVxlO6UaqGj5ezd9eu8GNwjbGZUNix4VJnUoqnYCsm5iWccCJH12yxQooQc8ZqurUy71OPL28k1UPkOw+Azg6kEWtKmUVl/xfwSme/r9wo1YJ7cMMpgacWZxAwKKFk4=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB2446.jpnprd01.prod.outlook.com (20.177.104.74) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.14; Tue, 17 Mar 2020 08:11:41 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
- 08:11:41 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: RE: [PATCH v5 4/7] PCI: endpoint: Add support to handle multiple base
- for mapping outbound memory
-Thread-Topic: [PATCH v5 4/7] PCI: endpoint: Add support to handle multiple
- base for mapping outbound memory
-Thread-Index: AQHV7k2kfqtu6T0o2UCPs98u98LxN6hMgYXQ
-Date: Tue, 17 Mar 2020 08:11:41 +0000
-Message-ID: <TYAPR01MB4544599A72C88666B4F972B7D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200228154122.14164-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20200228154122.14164-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
+ bh=VV/Vh2LiAS0kElbgw8A0BEczvIVTRedbpCnP7UYPM+M=;
+ b=nVDqLy1g6qP926ay+y1L22Rr25K4p4C98eBh7Xpjco79JaQdnDdxzDOaSJPMqqgBcPGvciPROJ+3vrPBDwUwMFSup4780i6QU5PcTrn9LWXTwPIpWfV9IRzK1z1lxj4gUcxoQZGm7opo6jvKBKZVgz41QSRfGRo9Kq8EqkHPLHU=
+Received: from DM6PR02MB5819.namprd02.prod.outlook.com (2603:10b6:5:17d::25)
+ by DM6PR02MB6811.namprd02.prod.outlook.com (2603:10b6:5:21a::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.21; Tue, 17 Mar
+ 2020 08:18:06 +0000
+Received: from DM6PR02MB5819.namprd02.prod.outlook.com
+ ([fe80::88bf:6a72:fe27:4870]) by DM6PR02MB5819.namprd02.prod.outlook.com
+ ([fe80::88bf:6a72:fe27:4870%7]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 08:18:06 +0000
+From: Mubin Usman Sayyed <MUBINUSM@xilinx.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: RE: [PATCH v4 1/3] irqchip: xilinx: Add support for multiple instances
+Thread-Topic: [PATCH v4 1/3] irqchip: xilinx: Add support for multiple
+ instances
+Thread-Index: AQHV+5qaKfIvQZIUyk+H7chI/zqyoahLSKoAgAEoIAA=
+Date: Tue, 17 Mar 2020 08:18:05 +0000
+Message-ID: <DM6PR02MB58194D2E4A5D987555423FEFA1F60@DM6PR02MB5819.namprd02.prod.outlook.com>
+References: <20200316135447.30162-1-mubin.usman.sayyed@xilinx.com>
+ <20200316135447.30162-2-mubin.usman.sayyed@xilinx.com>
+ <be19cec70f79e10483bd8da592b5a924@kernel.org>
+In-Reply-To: <be19cec70f79e10483bd8da592b5a924@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
 X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [124.210.22.195]
+ smtp.mailfrom=MUBINUSM@xilinx.com; 
+x-originating-ip: [149.199.50.130]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 68e53b0c-06b1-4b6e-4644-08d7ca4ad32a
-x-ms-traffictypediagnostic: TYAPR01MB2446:|TYAPR01MB2446:
+x-ms-office365-filtering-correlation-id: a724e2af-a840-4d08-511c-08d7ca4bb8b7
+x-ms-traffictypediagnostic: DM6PR02MB6811:|DM6PR02MB6811:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB24464B7AF815B5F1BEBA0396D8F60@TYAPR01MB2446.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <DM6PR02MB68119316E541334905948571A1F60@DM6PR02MB6811.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:243;
 x-forefront-prvs: 0345CFD558
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39860400002)(366004)(346002)(136003)(376002)(396003)(199004)(6916009)(33656002)(52536014)(55016002)(186003)(7416002)(64756008)(66446008)(9686003)(5660300002)(66556008)(54906003)(66476007)(76116006)(2906002)(4326008)(66946007)(478600001)(81156014)(6506007)(81166006)(316002)(26005)(86362001)(71200400001)(7696005)(8936002)(8676002)(30864003)(55236004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB2446;
- H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(346002)(136003)(366004)(396003)(39860400002)(376002)(199004)(52536014)(4326008)(186003)(26005)(71200400001)(2906002)(33656002)(81156014)(7696005)(30864003)(81166006)(66946007)(86362001)(5660300002)(316002)(8676002)(53546011)(54906003)(6506007)(9686003)(76116006)(55016002)(478600001)(107886003)(6916009)(8936002)(66476007)(66556008)(66446008)(64756008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB6811;
+ H:DM6PR02MB5819.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
+received-spf: None (protection.outlook.com: xilinx.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: hAq/At01g/7tnmlauLsvUd20keMFO+ARPPPTnI/d5FZhj4h4IeACg9yA8jC/K1J1EYfnaCUV0TSpB51gt5rszpNnMQKY5PlUm9OhdLk0PWZ6/JGjLwL2dDU/gAHNfrHXTIDlJNTWeSaOsJZIHDewEOBBtwa5gi31ioxc7qfCqxX3u3cYNpFEaxuTGRMvl7oxmbVyeAgaSTVB9Ki05gdKHpUxcWBNJgIVih9hMF5COoxSwT1bVO2wnnESqtO2Nsm8gcjDw3mBerGAt10I+/rfztrAvcTsFvcTjmAZbFeW8514m48Yi0kcm9xVn4dISmdxs0d8uPDAr3kwZeUk/kd97NCa3QWL3HBCmDbx1c9+PfPJneEf67gPUtGZqOpKDXZ3mzGABtnpmtAiaWoWRC6VI6ujN9WuPS64PL/vbvMo6me5bRgmo4R7mur9JC2V7bhw
-x-ms-exchange-antispam-messagedata: LEdjMkMcyFoovUj775K/x/z/smDMvRUScfA2PVS8k/oWWhAqxgy4zzx8xNCFHji2RgdZAoHgGYQ3k6XOSJxSerCN8m/0dX1lYxQ9y3jGWEclfGZPaPn0atpnGRPSUMXapOWBjOjwBvWoWX7683nHMg==
+x-microsoft-antispam-message-info: 4LTdP7MXZPX0PuBpLZ5ljEvzIxh9qdyuJS9oUwzaa1TGeY4tfz8itHOpgF2FIE2qqu5dHZuPhtd60tqA5dBgs0Tpkzri9bTBNe/d71sk6CJs3TpphZatc44aRHyYRLlibYRzZGkadeQ1DEJ50yVBqTt/xYQU1k5zMCf+y0neKGdvouf0EtYGhVdlt5JdTPjR7/1DOrOp6Y2UY6bFHmL9DfMfECxlj0ZLIYwUZj8BqWCFHkOnxBI8Yh5xF1JO0j5FK+HYlls1St0Or/6zzLhHn1yIuuQTuJjmozZTHdQVjjJkt4UHvB9o0Ike3wQO0L9UhXqE02WnGIwlkrpCuu4JNsjqfB6w0e85558c8b+gWUxmCY1HQrscY/3qF3s2runNkbffGNWpqSZeY9+V7/v6ShQqlKxTAMTytv4DNCzJkYwtey3UmbgT/GI6oVVuZ3Vh
+x-ms-exchange-antispam-messagedata: /GWkDAKUnm1qEQrHpUkQFub9zrAi3guTra7P5FQByMdOHEr7Ocdxr8pdE0fzx04iAUWMW8/3y/UlvWwNvZsX482P0fydY2VFukS3xRlN/K6qMO931WZ8T9QmWGqWH9ADUbW7QbswRhWH85ikLCD0uw==
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 68e53b0c-06b1-4b6e-4644-08d7ca4ad32a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 08:11:41.3479 (UTC)
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a724e2af-a840-4d08-511c-08d7ca4bb8b7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 08:18:05.8748 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Q98jJ9kPMXM04qDhaJcxldY5TQiNSL7ZuB3oDulA+SJvS/TXGnTKb7yCDUZKp1l8lwOpiq21LxAdwgtXOcg6QLrbZuTcm2h6ohs+U0JwxXvq4UEW+8iopOv1NTVbAHjR
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2446
+X-MS-Exchange-CrossTenant-userprincipalname: it+nTXb+tw/fQSxzqA0yP3vLutGEAkmPJwjMm7ymgp1hX2oTVZnzh9ZS0NMyJVWpBHIZnX6Xs7MJMcc0/9ZehQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB6811
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_011151_487170_410A49AE 
-X-CRM114-Status: GOOD (  26.54  )
+X-CRM114-CacheID: sfid-20200317_011809_529157_4528655E 
+X-CRM114-Status: GOOD (  27.20  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.104 listed in list.dnswl.org]
+ no trust [40.107.243.80 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -119,569 +122,363 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ Siva Durga Prasad Paladugu <sivadur@xilinx.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+ Michal Simek <michals@xilinx.com>, Anirudha Sarangi <anirudh@xilinx.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar-san,
+Hi Marc,
 
-Thank you for the patch!
+> -----Original Message-----
+> From: Marc Zyngier <maz@kernel.org>
+> Sent: Monday, March 16, 2020 8:04 PM
+> To: Mubin Usman Sayyed <MUBINUSM@xilinx.com>
+> Cc: tglx@linutronix.de; jason@lakedaemon.net; Michal Simek
+> <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; linux-
+> kernel@vger.kernel.org; Siva Durga Prasad Paladugu <sivadur@xilinx.com>;
+> Anirudha Sarangi <anirudh@xilinx.com>; Anirudha Sarangi
+> <anirudh@xilinx.com>
+> Subject: Re: [PATCH v4 1/3] irqchip: xilinx: Add support for multiple instances
+> 
+> On 2020-03-16 13:54, Mubin Usman Sayyed wrote:
+> > From: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> >
+> > Added support for cascaded interrupt controllers.
+> >
+> > Following cascaded configurations have been tested,
+> >
+> > - peripheral->xilinx-intc->xilinx-intc->gic->Cortexa53 processor
+> >   on zcu102 board
+> > - peripheral->xilinx-intc->xilinx-intc->microblaze processor
+> >   on kcu105 board
+> >
+> > Signed-off-by: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> > Signed-off-by: Anirudha Sarangi <anirudha.sarangi@xilinx.com>
+> > ---
+> > Changes for v4:
+> > 	- Fixed review comments from Thomas - updated commit
+> > 	  message, variable declarations changed to reverse
+> > 	  fir tree and cleaned up some code.
+> >
+> > Changes for v3:
+> > 	- Modified prototype of xintc_write/xintc_read
+> > 	- Fixed review comments regarding indentation/variable
+> > 	  names, used BIT
+> > 	- Modified xintc_get_irq_local to return 0
+> > 	  in case of failure/no pending interrupts
+> > 	- Fixed return type of xintc_read
+> > 	- Reverted changes related to device name and
+> > 	  kept intc_dev as static
+> >
+> > Changes for v2:
+> >         - Removed write_fn/read_fn hooks, used xintc_write/
+> > 	  xintc_read directly
+> >         - Moved primary_intc declaration after xintc_irq_chip
+> > ---
+> >  drivers/irqchip/irq-xilinx-intc.c | 121
+> > ++++++++++++++++++------------
+> >  1 file changed, 71 insertions(+), 50 deletions(-)
+> >
+> > diff --git a/drivers/irqchip/irq-xilinx-intc.c
+> > b/drivers/irqchip/irq-xilinx-intc.c
+> > index e3043ded8973..65b77720ef2e 100644
+> > --- a/drivers/irqchip/irq-xilinx-intc.c
+> > +++ b/drivers/irqchip/irq-xilinx-intc.c
+> > @@ -38,29 +38,32 @@ struct xintc_irq_chip {
+> >  	void		__iomem *base;
+> >  	struct		irq_domain *root_domain;
+> >  	u32		intr_mask;
+> > +	struct		irq_chip *intc_dev;
+> 
+> What is the need for this pointer? As far as I can see, all the interrupts have
+> the same callbacks, and even then, there should be no need to keep a
+> pointer to that.
+[Mubin]: Agreed, I will fix it in next version.
+> 
+> > +	u32		nr_irq;
+> >  };
+> >
+> > -static struct xintc_irq_chip *xintc_irqc;
+> > +static struct xintc_irq_chip *primary_intc;
+> >
+> > -static void xintc_write(int reg, u32 data)
+> > +static void xintc_write(struct xintc_irq_chip *irqc, int reg, u32
+> > data)
+> >  {
+> >  	if (static_branch_unlikely(&xintc_is_be))
+> > -		iowrite32be(data, xintc_irqc->base + reg);
+> > +		iowrite32be(data, irqc->base + reg);
+> >  	else
+> > -		iowrite32(data, xintc_irqc->base + reg);
+> > +		iowrite32(data, irqc->base + reg);
+> >  }
+> >
+> > -static unsigned int xintc_read(int reg)
+> > +static u32 xintc_read(struct xintc_irq_chip *irqc, int reg)
+> >  {
+> >  	if (static_branch_unlikely(&xintc_is_be))
+> > -		return ioread32be(xintc_irqc->base + reg);
+> > +		return ioread32be(irqc->base + reg);
+> >  	else
+> > -		return ioread32(xintc_irqc->base + reg);
+> > +		return ioread32(irqc->base + reg);
+> >  }
+> >
+> >  static void intc_enable_or_unmask(struct irq_data *d)  {
+> > -	unsigned long mask = 1 << d->hwirq;
+> > +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> > +	unsigned long mask = BIT(d->hwirq);
+> >
+> >  	pr_debug("irq-xilinx: enable_or_unmask: %ld\n", d->hwirq);
+> >
+> > @@ -69,30 +72,35 @@ static void intc_enable_or_unmask(struct irq_data
+> > *d)
+> >  	 * acks the irq before calling the interrupt handler
+> >  	 */
+> >  	if (irqd_is_level_type(d))
+> > -		xintc_write(IAR, mask);
+> > +		xintc_write(irqc, IAR, mask);
+> >
+> > -	xintc_write(SIE, mask);
+> > +	xintc_write(irqc, SIE, mask);
+> >  }
+> >
+> >  static void intc_disable_or_mask(struct irq_data *d)  {
+> > +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> > +
+> >  	pr_debug("irq-xilinx: disable: %ld\n", d->hwirq);
+> > -	xintc_write(CIE, 1 << d->hwirq);
+> > +	xintc_write(irqc, CIE, BIT(d->hwirq));
+> >  }
+> >
+> >  static void intc_ack(struct irq_data *d)  {
+> > +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> > +
+> >  	pr_debug("irq-xilinx: ack: %ld\n", d->hwirq);
+> > -	xintc_write(IAR, 1 << d->hwirq);
+> > +	xintc_write(irqc, IAR, BIT(d->hwirq));
+> >  }
+> >
+> >  static void intc_mask_ack(struct irq_data *d)  {
+> > -	unsigned long mask = 1 << d->hwirq;
+> > +	struct xintc_irq_chip *irqc = irq_data_get_irq_chip_data(d);
+> > +	unsigned long mask = BIT(d->hwirq);
+> >
+> >  	pr_debug("irq-xilinx: disable_and_ack: %ld\n", d->hwirq);
+> > -	xintc_write(CIE, mask);
+> > -	xintc_write(IAR, mask);
+> > +	xintc_write(irqc, CIE, mask);
+> > +	xintc_write(irqc, IAR, mask);
+> >  }
+> >
+> >  static struct irq_chip intc_dev = {
+> > @@ -103,13 +111,28 @@ static struct irq_chip intc_dev = {
+> >  	.irq_mask_ack = intc_mask_ack,
+> >  };
+> >
+> > +static unsigned int xintc_get_irq_local(struct xintc_irq_chip *irqc)
+> > +{
+> > +	unsigned int irq = 0;
+> > +	u32 hwirq;
+> > +
+> > +	hwirq = xintc_read(irqc, IVR);
+> > +	if (hwirq != -1U)
+> > +		irq = irq_find_mapping(irqc->root_domain, hwirq);
+> > +
+> > +	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
+> > +
+> > +	return irq;
+> > +}
+> > +
+> >  unsigned int xintc_get_irq(void)
+> >  {
+> > -	unsigned int hwirq, irq = -1;
+> > +	unsigned int irq = -1;
+> > +	u32 hwirq;
+> >
+> > -	hwirq = xintc_read(IVR);
+> > +	hwirq = xintc_read(primary_intc, IVR);
+> >  	if (hwirq != -1U)
+> > -		irq = irq_find_mapping(xintc_irqc->root_domain, hwirq);
+> > +		irq = irq_find_mapping(primary_intc->root_domain, hwirq);
+> >
+> >  	pr_debug("irq-xilinx: hwirq=%d, irq=%d\n", hwirq, irq);
+> >
+> > @@ -118,15 +141,18 @@ unsigned int xintc_get_irq(void)
+> >
+> >  static int xintc_map(struct irq_domain *d, unsigned int irq,
+> > irq_hw_number_t hw)  {
+> > -	if (xintc_irqc->intr_mask & (1 << hw)) {
+> > -		irq_set_chip_and_handler_name(irq, &intc_dev,
+> > -						handle_edge_irq, "edge");
+> > +	struct xintc_irq_chip *irqc = d->host_data;
+> > +
+> > +	if (irqc->intr_mask & BIT(hw)) {
+> > +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
+> > +					      handle_edge_irq, "edge");
+> >  		irq_clear_status_flags(irq, IRQ_LEVEL);
+> >  	} else {
+> > -		irq_set_chip_and_handler_name(irq, &intc_dev,
+> > -						handle_level_irq, "level");
+> > +		irq_set_chip_and_handler_name(irq, irqc->intc_dev,
+> > +					      handle_level_irq, "level");
+> >  		irq_set_status_flags(irq, IRQ_LEVEL);
+> >  	}
+> > +	irq_set_chip_data(irq, irqc);
+> >  	return 0;
+> >  }
+> >
+> > @@ -138,12 +164,14 @@ static const struct irq_domain_ops
+> > xintc_irq_domain_ops = {  static void xil_intc_irq_handler(struct
+> > irq_desc *desc)  {
+> >  	struct irq_chip *chip = irq_desc_get_chip(desc);
+> > +	struct xintc_irq_chip *irqc;
+> >  	u32 pending;
+> >
+> > +	irqc = irq_data_get_irq_handler_data(&desc->irq_data);
+> >  	chained_irq_enter(chip, desc);
+> >  	do {
+> > -		pending = xintc_get_irq();
+> > -		if (pending == -1U)
+> > +		pending = xintc_get_irq_local(irqc);
+> > +		if (pending == 0U)
+> 
+> nit: I don't think we need to consider the sign of zero.
+[Mubin]: I will fix it in next version.
+> 
+> >  			break;
+> >  		generic_handle_irq(pending);
+> >  	} while (true);
+> > @@ -153,28 +181,19 @@ static void xil_intc_irq_handler(struct irq_desc
+> > *desc)
+> >  static int __init xilinx_intc_of_init(struct device_node *intc,
+> >  					     struct device_node *parent)  {
+> > -	u32 nr_irq;
+> > -	int ret, irq;
+> >  	struct xintc_irq_chip *irqc;
+> > -
+> > -	if (xintc_irqc) {
+> > -		pr_err("irq-xilinx: Multiple instances aren't supported\n");
+> > -		return -EINVAL;
+> > -	}
+> > +	int ret, irq;
+> >
+> >  	irqc = kzalloc(sizeof(*irqc), GFP_KERNEL);
+> >  	if (!irqc)
+> >  		return -ENOMEM;
+> > -
+> > -	xintc_irqc = irqc;
+> > -
+> >  	irqc->base = of_iomap(intc, 0);
+> >  	BUG_ON(!irqc->base);
+> >
+> > -	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs", &nr_irq);
+> > +	ret = of_property_read_u32(intc, "xlnx,num-intr-inputs",
+> > &irqc->nr_irq);
+> >  	if (ret < 0) {
+> >  		pr_err("irq-xilinx: unable to read xlnx,num-intr-inputs\n");
+> > -		goto err_alloc;
+> > +		goto error;
+> >  	}
+> >
+> >  	ret = of_property_read_u32(intc, "xlnx,kind-of-intr",
+> > &irqc->intr_mask);
+> > @@ -183,34 +202,35 @@ static int __init xilinx_intc_of_init(struct
+> > device_node *intc,
+> >  		irqc->intr_mask = 0;
+> >  	}
+> >
+> > -	if (irqc->intr_mask >> nr_irq)
+> > +	if (irqc->intr_mask >> irqc->nr_irq)
+> >  		pr_warn("irq-xilinx: mismatch in kind-of-intr param\n");
+> >
+> >  	pr_info("irq-xilinx: %pOF: num_irq=%d, edge=0x%x\n",
+> > -		intc, nr_irq, irqc->intr_mask);
+> > +		intc, irqc->nr_irq, irqc->intr_mask);
+> >
+> > +	irqc->intc_dev = &intc_dev;
+> 
+> Based on the above, this should go.
+[Mubin]: will do it in next version
+> 
+> >
+> >  	/*
+> >  	 * Disable all external interrupts until they are
+> >  	 * explicity requested.
+> >  	 */
+> > -	xintc_write(IER, 0);
+> > +	xintc_write(irqc, IER, 0);
+> >
+> >  	/* Acknowledge any pending interrupts just in case. */
+> > -	xintc_write(IAR, 0xffffffff);
+> > +	xintc_write(irqc, IAR, 0xffffffff);
+> >
+> >  	/* Turn on the Master Enable. */
+> > -	xintc_write(MER, MER_HIE | MER_ME);
+> > -	if (!(xintc_read(MER) & (MER_HIE | MER_ME))) {
+> > +	xintc_write(irqc, MER, MER_HIE | MER_ME);
+> > +	if (xintc_read(irqc, MER) != (MER_HIE | MER_ME)) {
+> >  		static_branch_enable(&xintc_is_be);
+> > -		xintc_write(MER, MER_HIE | MER_ME);
+> > +		xintc_write(irqc, MER, MER_HIE | MER_ME);
+> >  	}
+> >
+> > -	irqc->root_domain = irq_domain_add_linear(intc, nr_irq,
+> > +	irqc->root_domain = irq_domain_add_linear(intc, irqc->nr_irq,
+> >  						  &xintc_irq_domain_ops,
+> irqc);
+> >  	if (!irqc->root_domain) {
+> >  		pr_err("irq-xilinx: Unable to create IRQ domain\n");
+> > -		goto err_alloc;
+> > +		goto error;
+> >  	}
+> >
+> >  	if (parent) {
+> > @@ -222,16 +242,17 @@ static int __init xilinx_intc_of_init(struct
+> > device_node *intc,
+> >  		} else {
+> >  			pr_err("irq-xilinx: interrupts property not in DT\n");
+> >  			ret = -EINVAL;
+> > -			goto err_alloc;
+> > +			goto error;
+> >  		}
+> >  	} else {
+> > -		irq_set_default_host(irqc->root_domain);
+> > +		primary_intc = irqc;
+> > +		irq_set_default_host(primary_intc->root_domain);
+> 
+> Do you still need this irq_set_default_host() horror? I thought
+> microblaze
+> was fully DT-ified and didn't need this. The use of a non-legacy domain
+> tends
+> to confirm this.
+[Mubin]: I will add  patch in next version to remove it.
 
-> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
+Thanks,
+Mubin
 > 
-> R-Car PCIe controller has support to map multiple memory regions for
-> mapping the outbound memory in local system also the controller limits
-> single allocation for each region (that is, once a chunk is used from the
-> region it cannot be used to allocate a new one). This features inspires to
-> add support for handling multiple memory bases in endpoint framework.
+> >  	}
+> >
+> >  	return 0;
+> >
+> > -err_alloc:
+> > -	xintc_irqc = NULL;
+> > +error:
+> > +	iounmap(irqc->base);
+> >  	kfree(irqc);
+> >  	return ret;
 > 
-> With this patch pci_epc_mem_init() now accepts multiple regions, also
-> page_size for each memory region is passed during initialization so as
-> to handle single allocation for each region by setting the page_size to
-> window_size.
+> Thanks,
 > 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  drivers/pci/controller/cadence/pcie-cadence-ep.c |   7 +-
->  drivers/pci/controller/dwc/pcie-designware-ep.c  |  29 ++--
->  drivers/pci/controller/pcie-rockchip-ep.c        |   7 +-
->  drivers/pci/endpoint/pci-epc-mem.c               | 167 ++++++++++++++++-------
-
-I could not apply this patch on the latest pci.git / next branch.
-So, you need to rebase.
-
->  include/linux/pci-epc.h                          |  39 ++++--
->  5 files changed, 169 insertions(+), 80 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence-ep.c b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> index 1c173da..90e32438 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> +++ b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> @@ -401,6 +401,7 @@ int cdns_pcie_ep_setup(struct cdns_pcie_ep *ep)
->  	struct device *dev = ep->pcie.dev;
->  	struct platform_device *pdev = to_platform_device(dev);
->  	struct device_node *np = dev->of_node;
-> +	struct pci_epc_mem_window mem_window;
->  	struct cdns_pcie *pcie = &ep->pcie;
->  	struct resource *res;
->  	struct pci_epc *epc;
-> @@ -449,8 +450,10 @@ int cdns_pcie_ep_setup(struct cdns_pcie_ep *ep)
->  	if (of_property_read_u8(np, "max-functions", &epc->max_functions) < 0)
->  		epc->max_functions = 1;
-> 
-> -	ret = pci_epc_mem_init(epc, pcie->mem_res->start,
-> -			       resource_size(pcie->mem_res));
-> +	mem_window.phys_base = pcie->mem_res->start;
-> +	mem_window.size = resource_size(pcie->mem_res);
-> +	mem_window.page_size = PAGE_SIZE;
-> +	ret = pci_epc_mem_init(epc, &mem_window, 1);
-
-I'm not sure my idea is acceptable or not but,
-I think we can have compatible API for single window like below.
-- In this patch, pci_epc_mem_init() and __pci_epc_mem_init() become the same behavior.
-  So, for example, pci_epc_mem_init() is for simple, and __pci_epc_mem_init() is multiple windows.
--- In this case, pci_epc_mem_init() should have page_size argument.
-- The original "mem" in the pci_epc can be the default window instead of
-  PCI_EPC_DEFAULT_WINDOW.
-
->  	if (ret < 0) {
->  		dev_err(dev, "failed to initialize the memory space\n");
->  		goto err_init;
-> diff --git a/drivers/pci/controller/dwc/pcie-designware-ep.c b/drivers/pci/controller/dwc/pcie-designware-ep.c
-> index cfeccd7..b150ef3 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware-ep.c
-> +++ b/drivers/pci/controller/dwc/pcie-designware-ep.c
-> @@ -195,8 +195,7 @@ static void dw_pcie_ep_unmap_addr(struct pci_epc *epc, u8 func_no,
->  }
-> 
->  static int dw_pcie_ep_map_addr(struct pci_epc *epc, u8 func_no,
-> -			       phys_addr_t addr,
-> -			       u64 pci_addr, size_t size)
-> +			       phys_addr_t addr, u64 pci_addr, size_t size)
->  {
->  	int ret;
->  	struct dw_pcie_ep *ep = epc_get_drvdata(epc);
-> @@ -367,6 +366,7 @@ int dw_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep, u8 func_no,
->  	unsigned int aligned_offset;
->  	u16 msg_ctrl, msg_data;
->  	u32 msg_addr_lower, msg_addr_upper, reg;
-> +	int window = PCI_EPC_DEFAULT_WINDOW;
->  	u64 msg_addr;
->  	bool has_upper;
->  	int ret;
-> @@ -390,11 +390,11 @@ int dw_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep, u8 func_no,
->  		reg = ep->msi_cap + PCI_MSI_DATA_32;
->  		msg_data = dw_pcie_readw_dbi(pci, reg);
->  	}
-> -	aligned_offset = msg_addr_lower & (epc->mem->page_size - 1);
-> +	aligned_offset = msg_addr_lower & (epc->mem[window]->page_size - 1);
->  	msg_addr = ((u64)msg_addr_upper) << 32 |
->  			(msg_addr_lower & ~aligned_offset);
-> -	ret = dw_pcie_ep_map_addr(epc, func_no, ep->msi_mem_phys, msg_addr,
-> -				  epc->mem->page_size);
-> +	ret = dw_pcie_ep_map_addr(epc, func_no, ep->msi_mem_phys,
-> +				  msg_addr, epc->mem[window]->page_size);
->  	if (ret)
->  		return ret;
-> 
-> @@ -416,6 +416,7 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
->  	u32 reg, msg_data, vec_ctrl;
->  	u64 tbl_addr, msg_addr, reg_u64;
->  	void __iomem *msix_tbl;
-> +	int window = PCI_EPC_DEFAULT_WINDOW;
->  	int ret;
-> 
->  	reg = ep->msix_cap + PCI_MSIX_TABLE;
-> @@ -452,8 +453,8 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
->  		return -EPERM;
->  	}
-> 
-> -	ret = dw_pcie_ep_map_addr(epc, func_no, ep->msi_mem_phys, msg_addr,
-> -				  epc->mem->page_size);
-> +	ret = dw_pcie_ep_map_addr(epc, func_no, ep->msi_mem_phys,
-> +				  msg_addr, epc->mem[window]->page_size);
->  	if (ret)
->  		return ret;
-> 
-> @@ -466,10 +467,11 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
-> 
->  void dw_pcie_ep_exit(struct dw_pcie_ep *ep)
->  {
-> +	int window = PCI_EPC_DEFAULT_WINDOW;
->  	struct pci_epc *epc = ep->epc;
-> 
->  	pci_epc_mem_free_addr(epc, ep->msi_mem_phys, ep->msi_mem,
-> -			      epc->mem->page_size);
-> +			      epc->mem[window]->page_size);
-> 
->  	pci_epc_mem_exit(epc);
->  }
-> @@ -502,6 +504,8 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
->  	unsigned int nbars;
->  	unsigned int offset;
->  	struct pci_epc *epc;
-> +	size_t msi_page_size;
-> +	struct pci_epc_mem_window mem_window;
->  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
->  	struct device *dev = pci->dev;
->  	struct device_node *np = dev->of_node;
-> @@ -574,15 +578,18 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
->  	if (ret < 0)
->  		epc->max_functions = 1;
-> 
-> -	ret = __pci_epc_mem_init(epc, ep->phys_base, ep->addr_size,
-> -				 ep->page_size);
-> +	mem_window.phys_base = ep->phys_base;
-> +	mem_window.size = ep->addr_size;
-> +	mem_window.page_size = ep->page_size;
-> +	ret = __pci_epc_mem_init(epc, &mem_window, 1);
->  	if (ret < 0) {
->  		dev_err(dev, "Failed to initialize address space\n");
->  		return ret;
->  	}
-> 
-> +	msi_page_size = epc->mem[PCI_EPC_DEFAULT_WINDOW]->page_size;
->  	ep->msi_mem = pci_epc_mem_alloc_addr(epc, &ep->msi_mem_phys,
-> -					     epc->mem->page_size);
-> +					     msi_page_size);
->  	if (!ep->msi_mem) {
->  		dev_err(dev, "Failed to reserve memory for MSI/MSI-X\n");
->  		return -ENOMEM;
-> diff --git a/drivers/pci/controller/pcie-rockchip-ep.c b/drivers/pci/controller/pcie-rockchip-ep.c
-> index d743b0a..5a97390 100644
-> --- a/drivers/pci/controller/pcie-rockchip-ep.c
-> +++ b/drivers/pci/controller/pcie-rockchip-ep.c
-> @@ -562,6 +562,7 @@ static const struct of_device_id rockchip_pcie_ep_of_match[] = {
-> 
->  static int rockchip_pcie_ep_probe(struct platform_device *pdev)
->  {
-> +	struct pci_epc_mem_window mem_window;
->  	struct device *dev = &pdev->dev;
->  	struct rockchip_pcie_ep *ep;
->  	struct rockchip_pcie *rockchip;
-> @@ -614,8 +615,10 @@ static int rockchip_pcie_ep_probe(struct platform_device *pdev)
->  	/* Only enable function 0 by default */
->  	rockchip_pcie_write(rockchip, BIT(0), PCIE_CORE_PHY_FUNC_CFG);
-> 
-> -	err = pci_epc_mem_init(epc, rockchip->mem_res->start,
-> -			       resource_size(rockchip->mem_res));
-> +	mem_window.phys_base = rockchip->mem_res->start;
-> +	mem_window.size = resource_size(rockchip->mem_res);
-> +	mem_window.page_size = PAGE_SIZE;
-> +	err = pci_epc_mem_init(epc, &mem_window, 1);
->  	if (err < 0) {
->  		dev_err(dev, "failed to initialize the memory space\n");
->  		goto err_uninit_port;
-> diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
-> index d2b174c..6c21957 100644
-> --- a/drivers/pci/endpoint/pci-epc-mem.c
-> +++ b/drivers/pci/endpoint/pci-epc-mem.c
-> @@ -38,57 +38,76 @@ static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
->  /**
->   * __pci_epc_mem_init() - initialize the pci_epc_mem structure
->   * @epc: the EPC device that invoked pci_epc_mem_init
-> - * @phys_base: the physical address of the base
-> - * @size: the size of the address space
-> - * @page_size: size of each page
-> + * @windows: pointer to windows supported by the device
-> + * @num_windows: number of windows device supports
->   *
->   * Invoke to initialize the pci_epc_mem structure used by the
->   * endpoint functions to allocate mapped PCI address.
->   */
-> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
-> -		       size_t page_size)
-> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *windows,
-> +		       int num_windows)
->  {
-> -	int ret;
-> -	struct pci_epc_mem *mem;
-> -	unsigned long *bitmap;
-> +	struct pci_epc_mem *mem = NULL;
-> +	unsigned long *bitmap = NULL;
->  	unsigned int page_shift;
-> -	int pages;
-> +	size_t page_size;
->  	int bitmap_size;
-> -
-> -	if (page_size < PAGE_SIZE)
-> -		page_size = PAGE_SIZE;
-> -
-> -	page_shift = ilog2(page_size);
-> -	pages = size >> page_shift;
-> -	bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> -
-> -	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> -	if (!mem) {
-> -		ret = -ENOMEM;
-> -		goto err;
-> -	}
-> -
-> -	bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> -	if (!bitmap) {
-> -		ret = -ENOMEM;
-> -		goto err_mem;
-> +	int pages;
-> +	int ret;
-> +	int i;
-> +
-> +	epc->mem_windows = 0;
-> +
-> +	if (!windows)
-> +		return -EINVAL;
-> +
-> +	if (num_windows <= 0)
-> +		return -EINVAL;
-> +
-> +	epc->mem = kcalloc(num_windows, sizeof(*mem), GFP_KERNEL);
-> +	if (!epc->mem)
-> +		return -EINVAL;
-> +
-> +	for (i = 0; i < num_windows; i++) {
-> +		page_size = windows[i].page_size;
-> +		if (page_size < PAGE_SIZE)
-> +			page_size = PAGE_SIZE;
-> +		page_shift = ilog2(page_size);
-> +		pages = windows[i].size >> page_shift;
-> +		bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> +
-> +		mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> +		if (!mem) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> +		if (!bitmap) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		mem->bitmap = bitmap;
-> +		mem->window.phys_base = windows[i].phys_base;
-
-I could not understand why the window member is needed.
-I think original members (just phys_base and size) are enough.
-Also, this function doesn't store the page_size to mem->window.page_size.
-
-> +		mem->page_size = page_size;
-> +		mem->pages = pages;
-> +		mem->window.size = windows[i].size;
-> +		epc->mem[i] = mem;
->  	}
-> -
-> -	mem->bitmap = bitmap;
-> -	mem->phys_base = phys_base;
-> -	mem->page_size = page_size;
-> -	mem->pages = pages;
-> -	mem->size = size;
-> -
-> -	epc->mem = mem;
-> +	epc->mem_windows = num_windows;
-> 
->  	return 0;
-> 
->  err_mem:
-> -	kfree(mem);
-> +	for (; i >= 0; i--) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-
-If bitmap cannot be allocated, the epc->mem[i] is NULL.
-So, freeing mem->bitmap anyway is not good.
-
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
-> 
-> -err:
-> -return ret;
-> +	return ret;
->  }
->  EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
-> 
-> @@ -101,11 +120,21 @@ EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
->   */
->  void pci_epc_mem_exit(struct pci_epc *epc)
->  {
-> -	struct pci_epc_mem *mem = epc->mem;
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	if (!epc->mem_windows)
-> +		return;
-> +
-> +	for (i = 0; i <= epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
-> 
->  	epc->mem = NULL;
-> -	kfree(mem->bitmap);
-> -	kfree(mem);
-> +	epc->mem_windows = 0;
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
-> 
-> @@ -121,20 +150,30 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  				     phys_addr_t *phys_addr, size_t size)
->  {
-> -	int pageno;
-> -	void __iomem *virt_addr;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
-> +	void __iomem *virt_addr = NULL;
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
-> +	int pageno = -EINVAL;
->  	int order;
-> +	int i;
-> 
-> -	size = ALIGN(size, mem->page_size);
-> -	order = pci_epc_mem_get_order(mem, size);
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		size = ALIGN(size, mem->page_size);
-> +		order = pci_epc_mem_get_order(mem, size);
-> +
-> +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> +						 order);
-> +		if (pageno >= 0)
-> +			break;
-> +	}
-> 
-> -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
->  	if (pageno < 0)
->  		return NULL;
-> 
-> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> +	page_shift = ilog2(mem->page_size);
-> +	*phys_addr = mem->window.phys_base +
-> +		     ((phys_addr_t)pageno << page_shift);
->  	virt_addr = ioremap(*phys_addr, size);
->  	if (!virt_addr)
->  		bitmap_release_region(mem->bitmap, pageno, order);
-> @@ -143,6 +182,23 @@ void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
-> 
-> +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
-> +						phys_addr_t phys_addr)
-> +{
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +
-> +		if (phys_addr >= mem->window.phys_base &&
-> +		    phys_addr < (mem->window.phys_base + mem->window.size))
-> +			return mem;
-> +	}
-> +
-> +	return NULL;
-> +}
-> +
->  /**
->   * pci_epc_mem_free_addr() - free the allocated memory address
->   * @epc: the EPC device on which memory was allocated
-> @@ -155,13 +211,20 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
->  			   void __iomem *virt_addr, size_t size)
->  {
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
->  	int pageno;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
->  	int order;
-> 
-> +	mem = pci_epc_get_matching_window(epc, phys_addr);
-> +	if (!mem) {
-> +		pr_err("failed to get matching window\n");
-> +		return;
-> +	}
-> +
-> +	page_shift = ilog2(mem->page_size);
->  	iounmap(virt_addr);
-> -	pageno = (phys_addr - mem->phys_base) >> page_shift;
-> +	pageno = (phys_addr - mem->window.phys_base) >> page_shift;
->  	size = ALIGN(size, mem->page_size);
->  	order = pci_epc_mem_get_order(mem, size);
->  	bitmap_release_region(mem->bitmap, pageno, order);
-> diff --git a/include/linux/pci-epc.h b/include/linux/pci-epc.h
-> index 56f1846..dde42e5 100644
-> --- a/include/linux/pci-epc.h
-> +++ b/include/linux/pci-epc.h
-> @@ -64,17 +64,29 @@ struct pci_epc_ops {
->  	struct module *owner;
->  };
-> 
-> +#define PCI_EPC_DEFAULT_WINDOW         0
-> +
-> +/**
-> + * struct pci_epc_mem_window - address window of the endpoint controller
-> + * @phys_base: physical base address of the PCI address window
-> + * @size: the size of the PCI address window
-> + * @page_size: size of each page
-> + */
-> +struct pci_epc_mem_window {
-> +	phys_addr_t	phys_base;
-> +	size_t		size;
-> +	size_t		page_size;
-> +};
-> +
->  /**
->   * struct pci_epc_mem - address space of the endpoint controller
-> - * @phys_base: physical base address of the PCI address space
-> - * @size: the size of the PCI address space
-> + * @window: address window of the endpoint controller
->   * @bitmap: bitmap to manage the PCI address space
-> - * @pages: number of bits representing the address region
->   * @page_size: size of each page
-> + * @pages: number of bits representing the address region
->   */
->  struct pci_epc_mem {
-> -	phys_addr_t	phys_base;
-> -	size_t		size;
-> +	struct pci_epc_mem_window window;
->  	unsigned long	*bitmap;
->  	size_t		page_size;
->  	int		pages;
-> @@ -85,7 +97,8 @@ struct pci_epc_mem {
->   * @dev: PCI EPC device
->   * @pci_epf: list of endpoint functions present in this EPC device
->   * @ops: function pointers for performing endpoint operations
-> - * @mem: address space of the endpoint controller
-
-If my idea is acceptable, this should be "default address space ...".
-
-> + * @mem: array of address space of the endpoint controller
-
-And, this should be difference name.
-
-> + * @mem_windows: number of windows supported by device
-
-Perhaps, num_windows?
-
->   * @max_functions: max number of functions that can be configured in this EPC
->   * @group: configfs group representing the PCI EPC device
->   * @lock: spinlock to protect pci_epc ops
-> @@ -94,7 +107,8 @@ struct pci_epc {
->  	struct device			dev;
->  	struct list_head		pci_epf;
->  	const struct pci_epc_ops	*ops;
-> -	struct pci_epc_mem		*mem;
-> +	struct pci_epc_mem		**mem;
-> +	unsigned int			mem_windows;
->  	u8				max_functions;
->  	struct config_group		*group;
->  	/* spinlock to protect against concurrent access of EP controller */
-> @@ -128,8 +142,8 @@ struct pci_epc_features {
->  #define devm_pci_epc_create(dev, ops)    \
->  		__devm_pci_epc_create((dev), (ops), THIS_MODULE)
-> 
-> -#define pci_epc_mem_init(epc, phys_addr, size)	\
-> -		__pci_epc_mem_init((epc), (phys_addr), (size), PAGE_SIZE)
-> +#define pci_epc_mem_init(epc, windows, num_windows)	\
-> +		__pci_epc_mem_init((epc), windows, num_windows)
-
-As I mentioned above, pci_epc_mem_init() and __ pci_epc_mem_init() are the same behavior.
-
->  static inline void epc_set_drvdata(struct pci_epc *epc, void *data)
->  {
-> @@ -159,8 +173,7 @@ int pci_epc_set_bar(struct pci_epc *epc, u8 func_no,
->  void pci_epc_clear_bar(struct pci_epc *epc, u8 func_no,
->  		       struct pci_epf_bar *epf_bar);
->  int pci_epc_map_addr(struct pci_epc *epc, u8 func_no,
-> -		     phys_addr_t phys_addr,
-> -		     u64 pci_addr, size_t size);
-> +		     phys_addr_t phys_addr, u64 pci_addr, size_t size);
-
-Perhaps, this is not needed to change?
-
-Best regards,
-Yoshihiro Shimoda
-
->  void pci_epc_unmap_addr(struct pci_epc *epc, u8 func_no,
->  			phys_addr_t phys_addr);
->  int pci_epc_set_msi(struct pci_epc *epc, u8 func_no, u8 interrupts);
-> @@ -178,8 +191,8 @@ unsigned int pci_epc_get_first_free_bar(const struct pci_epc_features
->  struct pci_epc *pci_epc_get(const char *epc_name);
->  void pci_epc_put(struct pci_epc *epc);
-> 
-> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_addr, size_t size,
-> -		       size_t page_size);
-> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *window,
-> +		       int num_windows);
->  void pci_epc_mem_exit(struct pci_epc *epc);
->  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  				     phys_addr_t *phys_addr, size_t size);
+>          M.
 > --
-> 2.7.4
-
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
