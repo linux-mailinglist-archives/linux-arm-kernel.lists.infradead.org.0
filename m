@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E2E8189135
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 23:18:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42DAC18915A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 23:27:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=acnPkaU9ZpTP9/rZdYYFpxqIvHthxXtKNmzxVpjUOgw=; b=IVPmNZFrqsRCMD
-	8CrcXTbplXEAAVFRe3gFJKr8MIwZGT0h2sBGVQ1bOzPpIiMmQd1horIEMgHK3wrZSDbBJUl1yFDKr
-	rW0GaDUyh5V8EIkNszyru9hGXHg60rBe8FaQO0N7hirOhklnul3j0u/xC3gdoQ55v47WlQkQ3m2Sd
-	24ya6iZMp7AwExIzbjoHRwu4nOq2iXQKWnSn1dCgrRdpPvKdOA1Nbfhuzzi/+0ygF6iTpYhS/riXV
-	NiSAnT970+jRsVfvDwzR6eaboAVcVACFIb0yoqR/PYwZsmw+qfUs24Y7L1ROp6ioZEhta3Q1pNJRI
-	i3I4muMtH8feO0+TqnfA==;
+	List-Owner; bh=csOB6wNHH8XONpPPcDvo4PuePIadDS+dY0wSs4JWyCA=; b=usgoXLCLFZ0Gcx
+	mCIwzYqlNtDZF7g3/pln1XlCO7962x1/W+/GliedM50FYMZDx9pmFRsfkH83d3uNqcV9Ys2fpDd6x
+	CNlR2mnBZ99FsFqVUD7PzzgivDnxHl7AsqPXE9o3VQJ1wHyeYWUZpOjYvNCCnXG+8C1P13TYJQI32
+	y5l4wgXZMuSk4+LxoCR5y+xSCTCl1OVC0hl1PM0D4NxVBQQDQUirPdHlQdy3+DCZNs+sWWZAsZLol
+	j8EvYXam/phNq8oHnEnOR37UTNKZCEwwGDWxnNQ5LMz6GEbGfFkHJB1ZB0oSiDsfbObUsmSgKH+J1
+	P5vQguBFbNOPH8cdxqCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEKX8-0001uE-4F; Tue, 17 Mar 2020 22:17:58 +0000
+	id 1jEKg2-0005uT-Fc; Tue, 17 Mar 2020 22:27:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEKWz-0001ti-1r
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 22:17:50 +0000
+ id 1jEKft-0005u4-GB
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 22:27:02 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 15A73206EC;
- Tue, 17 Mar 2020 22:17:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F310206EC;
+ Tue, 17 Mar 2020 22:26:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584483468;
- bh=sY4cOhcMEMawFpaLftRkDuoAZYkzfT6Iq/pDMIVQ+QM=;
+ s=default; t=1584484021;
+ bh=feXoVNdYfrV4TFKhykYHVASYD8nshaCB8LWcN1l/eP0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0QGP7zI9fM58OdTLqDxjLIcR2NDM+WwQ4MBisE/1SCYXBDjdNnC+PTF/305E5GyST
- kIqZVvbLlzYcUqBHggnCaCPlwSH7VtJqmiU8YuCYpkjEJG1LvNZnpjOCI11ZdmF4Ey
- 0175SzJkfPb8KuTVROY2dRPony8hRwWy9EPhI0ys=
-Date: Tue, 17 Mar 2020 22:17:43 +0000
+ b=OuSZmRfjKjT3bppoNPLTNL8hxyiP67j2pV1bJszZfFXsz6kepBPj0ffTfi3CAMdhX
+ PT18tvPVppBBRLf9c8jRrZiCyLQShrtjUtDVfD3YSbrLvSbOX73h0e1ecdX6fk7g8Q
+ jLcEb8O5V34blCKFSXRQG03gPImfHhSwjEX+lfPM=
+Date: Tue, 17 Mar 2020 22:26:56 +0000
 From: Will Deacon <will@kernel.org>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [Patch][Fix] crypto: arm{,64} neon: memzero_explicit aes-cbc key
-Message-ID: <20200317221743.GD20788@willie-the-truck>
-References: <20200313110258.94A0668C4E@verein.lst.de>
+To: =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
+Subject: Re: [PATCH] arm64: move kimage_vaddr to .rodata
+Message-ID: <20200317222656.GE20788@willie-the-truck>
+References: <20200312094002.153302-1-remi@remlab.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200313110258.94A0668C4E@verein.lst.de>
+In-Reply-To: <20200312094002.153302-1-remi@remlab.net>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_151749_118079_0674F968 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20200317_152701_562910_619B3212 
+X-CRM114-Status: GOOD (  14.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,54 +76,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>, ardb@kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- linux-crypto@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: suzuki.poulose@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ catalin.marinas@arm.com, kvmarm@lists.cs.columbia.edu,
+ julien.thierry.kdev@gmail.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[+Ard]
+On Thu, Mar 12, 2020 at 11:40:02AM +0200, R=E9mi Denis-Courmont wrote:
+> From: Remi Denis-Courmont <remi.denis.courmont@huawei.com>
+> =
 
-On Fri, Mar 13, 2020 at 12:02:58PM +0100, Torsten Duwe wrote:
-> From: Torsten Duwe <duwe@suse.de>
-> 
-> At function exit, do not leave the expanded key in the rk struct
-> which got allocated on the stack.
-> 
-> Signed-off-by: Torsten Duwe <duwe@suse.de>
+> This datum is not referenced from .idmap.text: it does not need to be
+> mapped in idmap. Lets move it to .rodata as it is never written to after
+> early boot of the primary CPU.
+> (Maybe .data.ro_after_init would be cleaner though?)
+> =
+
+> Signed-off-by: R=E9mi Denis-Courmont <remi@remlab.net>
 > ---
-> Another small fix from our FIPS evaluation. I hope you don't mind I merged
-> arm32 and arm64 into one patch -- this is really simple.
-> --- a/arch/arm/crypto/aes-neonbs-glue.c
-> +++ b/arch/arm/crypto/aes-neonbs-glue.c
-> @@ -138,6 +138,7 @@ static int aesbs_cbc_setkey(struct crypto_skcipher *tfm, const u8 *in_key,
->  	kernel_neon_begin();
->  	aesbs_convert_key(ctx->key.rk, rk.key_enc, ctx->key.rounds);
->  	kernel_neon_end();
-> +	memzero_explicit(&rk, sizeof(rk));
->  
->  	return crypto_cipher_setkey(ctx->enc_tfm, in_key, key_len);
->  }
-> diff --git a/arch/arm64/crypto/aes-neonbs-glue.c b/arch/arm64/crypto/aes-neonbs-glue.c
-> index e3e27349a9fe..c0b980503643 100644
-> --- a/arch/arm64/crypto/aes-neonbs-glue.c
-> +++ b/arch/arm64/crypto/aes-neonbs-glue.c
-> @@ -151,6 +151,7 @@ static int aesbs_cbc_setkey(struct crypto_skcipher *tfm, const u8 *in_key,
->  	kernel_neon_begin();
->  	aesbs_convert_key(ctx->key.rk, rk.key_enc, ctx->key.rounds);
->  	kernel_neon_end();
-> +	memzero_explicit(&rk, sizeof(rk));
->  
->  	return 0;
->  }
+>  arch/arm64/kernel/head.S | 12 +++++++-----
+>  1 file changed, 7 insertions(+), 5 deletions(-)
+> =
 
-I'm certainly not a crypto person, but this looks sensible to me and I
-couldn't find any other similar stack variable usage under
-arch/arm64/crypto/ at a quick glance.
+> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+> index 6e08ee2b4d55..8e5c0e0040e4 100644
+> --- a/arch/arm64/kernel/head.S
+> +++ b/arch/arm64/kernel/head.S
+> @@ -457,17 +457,19 @@ SYM_FUNC_START_LOCAL(__primary_switched)
+>  	b	start_kernel
+>  SYM_FUNC_END(__primary_switched)
+>  =
+
+> +	.pushsection ".rodata", "a"
+> +SYM_DATA_START(kimage_vaddr)
+> +	.quad		_text - TEXT_OFFSET
+> +SYM_DATA_END(kimage_vaddr)
+> +EXPORT_SYMBOL(kimage_vaddr)
+> +	.popsection
+> +
+>  /*
+>   * end early head section, begin head code that is also used for
+>   * hotplug and needs to have the same protections as the text region
+>   */
+>  	.section ".idmap.text","awx"
+>  =
+
+> -SYM_DATA_START(kimage_vaddr)
+> -	.quad		_text - TEXT_OFFSET
+> -SYM_DATA_END(kimage_vaddr)
+> -EXPORT_SYMBOL(kimage_vaddr)
 
 Acked-by: Will Deacon <will@kernel.org>
 
