@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C24FF187E22
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:21:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6787187E25
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:21:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,63 +11,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VYdjTXE3rU1IPf8vxRQOvmbedCLUZKq9qhRCO743U8M=; b=WmDva2Vx4PJR6DI/4x3UmcBVDF
-	oNcq8PmN7W8PuwL7IGzq+QKXAeU9pd5sBb9qVFwSg+LHNajpurZf5xKPbrOwnjDXHhuOZKL5nT7y3
-	WUIESZLDzRRsPU/1OQYVXnIQj++zt1QxZN9S4h+R5JGkoNamWRtA5aiGaeK+tnQLCmtZGoSl02his
-	jWAGw+we0zQJ8mHn1Rb+jcjvZIWYkvJgTzIgZgh7R/ZYukPUJaDVisxZvwOo93IuS6Bdq8o/bOg2V
-	z2GM14LYmmttVHqwMkBWfDEimY9GH/uroEpF94f+0GtMV6u0Sz9dWY3qVexIVbvyldRzIiJKwfJQZ
-	A5EyDcUQ==;
+	bh=fGmvjHBwnrxzlaoT+lXFT0hTpQfzcgKcY3dhyZKHh1o=; b=iDx4kXMV5TCwqoG6yg5wtV3m6Y
+	z4HkRHN1IHhSzajkX0Rg9GvmpuiJqGMODhnNC/3lcDenMi8XU7/s/tOVLFq0B5gW5eMCxjNdl+trF
+	5wx91izrjC6Z8bek9qrNy6bfPBcGrplmt16vwX0G0Vt8W3TPxQ3sbHJ5dJ+Z8E587JhH4OqLbXrwL
+	7+bTNh9W7hETKbpi0qsJNosf0xwOHksupxVlcvIRK1gz7eopgfxtfn837pKYPLB22Zem9ebtbp1Yq
+	Yu/W7z789B2VpTeusLbSGNnn8aoxSflc0R8fJ1oWPoMcFX1pxRUCfdQ1CFcDijEMjZAeLWsNHm93M
+	c7NSl9bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE9LC-0005Ug-9U; Tue, 17 Mar 2020 10:20:54 +0000
+	id 1jE9LS-0005gp-53; Tue, 17 Mar 2020 10:21:10 +0000
 Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE9KW-00052h-FC
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 10:20:13 +0000
-Received: by mail-lj1-x243.google.com with SMTP id u12so22149777ljo.2
+ id 1jE9KX-00053G-RT
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 10:20:15 +0000
+Received: by mail-lj1-x243.google.com with SMTP id r7so22122420ljp.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Mar 2020 03:20:12 -0700 (PDT)
+ Tue, 17 Mar 2020 03:20:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=TGItJuz5W+h2gk6C+B6NIbPkvJZ2cZOlOG/P+lQP9D0=;
- b=JFZQuTgf0ix5GURciyxJzWH0sf14opuwqmkI7yvs/F5Adnfkifh53/Erfv3MQTmy9/
- 9GQY7KikuoGDq/yCVcBDkdMFy3/kh7ZhPUiHw2lGonWtoSOaIFA2KhsqhfzSlN2rPWfG
- IlXWiOriBmkqXsDsZNrFxijHgX2FRmzOEdxtc1ijrDL2F2M2s4ulfcWlt2AN0AC3diI1
- s5rjK2JxOg8XUC9PJybzYaqxvBKFukvPzQH/pjfB1j83zku/E8mskdc33c8vCKAr4aW3
- inpShlE9qeQPQIWCfAZmUMCh8N/1dztWnZmGKEvsohgeY2GjsUB/kdzujVEVzcqlx22+
- fqug==
+ bh=WGynCl+wfPeR4qb/AG3pyJyPwdo3k8wHw+AwHbtPDSo=;
+ b=gp5vOfr4E7mqJYwNhg7/IIR8w1lDuNJON4+f9eMbKOf/7Amusv/O2Tvh9K8HEoSlpe
+ xiMIASpuj2uiVqkt6a6mTnyqETDiZoFFalrBXBnVggQYun6llahJlZ+XO7h7dwb79Rjh
+ 1vL+qRTUS06BicP3SfkSNZRLvdgWBEVNYPQwdHD8Fqmv1qqs67v9n/59uxtlst137v8J
+ XsOSGyw2DQ9ze9cAeb3OyMMiIQGeeFsJZGp1riG6UQiRBh6AX0oPxg/YgTQjsl4Xmq7Z
+ +RtoO4y8XFCs+yR5Ar7bSh04yMxFlmljjs/sNYm4NPlHHOQhsOVMPPInqh12Un2rdooc
+ XFeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=TGItJuz5W+h2gk6C+B6NIbPkvJZ2cZOlOG/P+lQP9D0=;
- b=n5ngPqr9/JGkrG0vVbacawrE+PFXL51LjWZJ71+bTCYIUHHj27d9x6d3Yw1fmXds83
- zmVK10P+AgSr8yCYWPGVhtSvvM4n/dB9PVzKB4M+MV8FC174NrHRDnJCgkGu7g9C/Ubp
- GZRfuUbYCE1wqtDPHC2tCkvU7PY6TnM/ztUjMA39bcECZySsrdoCeRWUGcyLl9pscIYv
- qATmBIhtIEImEtIMaRxIoe662t7lemvq+qFILHbapaHKzVeH1yRt8zFUyWq7Ff4TwACV
- wdL30k5qM0XregSX/RunQNTsPo5G0qO+u9GV19jjUwzfJtM27xY8IJIokrs3Q0CHoVb7
- CSNw==
-X-Gm-Message-State: ANhLgQ3Iba8m+VhGY/aXCyFX10pt9De3jWE/CfuzqCAzDCFfryBw6Q3b
- fo1pdLwPaardLhz2xtPujj0ByXxjfCw=
-X-Google-Smtp-Source: ADFU+vslGfTWII4zYbs4+SWZVmzcm1asQXYP0xCVtUNvJ3fqgQvjprHgGlIsriWG0xbiU7Nx1gBO4A==
-X-Received: by 2002:a05:651c:1058:: with SMTP id
- x24mr2423894ljm.248.1584440410561; 
- Tue, 17 Mar 2020 03:20:10 -0700 (PDT)
+ bh=WGynCl+wfPeR4qb/AG3pyJyPwdo3k8wHw+AwHbtPDSo=;
+ b=OV+mltU1C3yy744onevPFhO6gU4Oo4o89kmsm9A2m8i6kmbp2/mDh4DXplabeLe3pV
+ mXzCEfMERVIQ6kVKeo0von5q/cgrekKuD3Ot5NroBuMliHwYQehV9p7o9W1hCgv84pOu
+ eiuknjJh/sIG7x6KTxTa+CRTZR2vi/eTuy9p92vKfzkmqzPrWQz8jaA9SLzOyhXJPDpg
+ xL+RlqIcpbGM9iUnQGNXMWFbrXgenwOsneICFjPLSpKqxj9YJHqLLuckOtwETRvShQAD
+ zO1OhLNqBAaFpJW9O5dtIHmdfnSb6yMVfe1pUXuWmOIsy9NBF3I66A1XZ+21uYIpaVX2
+ rdGg==
+X-Gm-Message-State: ANhLgQ0Wn3e9DLGs4gK5Xn+LUutlOsTDMYHq6Z9CEv6GJ+uEO0Sb7QOc
+ beA+usFKyu9YxzaEQCSpG0nLvSqHS5g=
+X-Google-Smtp-Source: ADFU+vtY35x2PkeN39BHTb3sRwtOAYWhTE1k0pSIWTXjVyFc5Yh/KLkKzaQCsDKkUAvWZnyLNwLqRg==
+X-Received: by 2002:a2e:9797:: with SMTP id y23mr2322272lji.183.1584440412020; 
+ Tue, 17 Mar 2020 03:20:12 -0700 (PDT)
 Received: from localhost (host-176-37-176-139.la.net.ua. [176.37.176.139])
- by smtp.gmail.com with ESMTPSA id m18sm1956945ljj.52.2020.03.17.03.20.09
+ by smtp.gmail.com with ESMTPSA id w22sm1962649ljm.58.2020.03.17.03.20.11
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 17 Mar 2020 03:20:10 -0700 (PDT)
+ Tue, 17 Mar 2020 03:20:11 -0700 (PDT)
 From: Igor Opaniuk <igor.opaniuk@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v1 3/5] dt-bindings: gpio: Dual license file adding MIT
-Date: Tue, 17 Mar 2020 12:19:45 +0200
-Message-Id: <20200317101947.27250-3-igor.opaniuk@gmail.com>
+Subject: [RFC PATCH v1 4/5] dt-bindings: input: Dual license input.h adding MIT
+Date: Tue, 17 Mar 2020 12:19:46 +0200
+Message-Id: <20200317101947.27250-4-igor.opaniuk@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200317101947.27250-1-igor.opaniuk@gmail.com>
 References: <20200317101947.27250-1-igor.opaniuk@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_032012_507864_5B151F87 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20200317_032013_923842_868DD51D 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -115,24 +114,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Igor Opaniuk <igor.opaniuk@toradex.com>
 
-Dual license files adding MIT license, which will permit to re-use
-bindings and dependent device tree sources in other non-GPL OSS projects.
+Dual license header adding MIT license, which will permit to re-use
+dependent device tree sources that include this header
+in other non-GPL OSS projects.
 
 Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
 ---
 
- include/dt-bindings/gpio/gpio.h | 2 +-
+ include/dt-bindings/input/input.h | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/include/dt-bindings/gpio/gpio.h b/include/dt-bindings/gpio/gpio.h
-index c029467e828b..01c528708208 100644
---- a/include/dt-bindings/gpio/gpio.h
-+++ b/include/dt-bindings/gpio/gpio.h
+diff --git a/include/dt-bindings/input/input.h b/include/dt-bindings/input/input.h
+index bcf0ae100f21..c3cf5d034025 100644
+--- a/include/dt-bindings/input/input.h
++++ b/include/dt-bindings/input/input.h
 @@ -1,4 +1,4 @@
 -/* SPDX-License-Identifier: GPL-2.0 */
 +/* SPDX-License-Identifier: GPL-2.0 OR MIT */
  /*
-  * This header provides constants for most GPIO bindings.
+  * This header provides constants for most input bindings.
   *
 -- 
 2.17.1
