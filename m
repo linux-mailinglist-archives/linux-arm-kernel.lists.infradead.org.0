@@ -2,60 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53A01188687
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 14:57:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DD41188698
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 14:58:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LhHr0Uz0vp3MB9pMWu3GY78CB9Po1iEMf6egmYUvZYI=; b=e3+lUX/7Ot+2Rw0SmZn22349V
-	oHDo0ReHmf06dfpoObi9RJJxPOwl5bHZh71rsun1FxIRVoYVhPWx7isosL/ltyjv38ggxoElS8XxV
-	8NNK6VbOXlXNG9BPgN8PyYWTES49IYbdI3QzXU8R/Ar6Fol20ciIv7evyjAd2h9RBVUsd5hwew9X9
-	I/1lbyoBO3CHhnmV49pkahqpVAq5hzsWcoHHngiHTDbowh0mRyMc2d+bWc9U4w7owYEN8StbqrA0a
-	c7AkTs0Qu/iXULt8LMZWwuw7s5SrOG1ZwfQfoJi4fsRbaMwkyaCef0hEttJkwnV+mIL0Qfeb+vj/0
-	Fmio4Wazw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dl2vKj1eVhqHODmz7HFCTiAtBBeGb6dSxGK8hSpscH4=; b=t9Q/RyzeYFKIMo
+	HoxsA+GcRTufpvT3SkJTXIIxtE2zRya7anqDMX9I+n9nl6IfghOkP5xzCE28AwgEt2euPcfAsqPIr
+	yQRc5GVhqBDYVCIo9W+fj+V5G2xqA2WxSONIYoeW1vOAtusfAby+h87uJG0jopx8tVx9Eb/04tEFl
+	cFsp2FfPvw2RxMMFRHrUeMucUKSkjgz4US5zzH8adNvq1iK39NUmzuj8j4qSU/OIPyZGc+6mKtI5o
+	jRiPpqrVSofjsngndPxjMxGAzxmcOBxi3VelJWiJacm3uh0oB8bAFcDEWw6Hr6pq7XmhPwoGWnI7o
+	opg+3hxO0//X638Imvvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jECiq-0000Mx-Gy; Tue, 17 Mar 2020 13:57:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jECig-0000MJ-Uc
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 13:57:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BBBDFEC;
- Tue, 17 Mar 2020 06:57:21 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F172C3F534;
- Tue, 17 Mar 2020 06:57:20 -0700 (PDT)
-Date: Tue, 17 Mar 2020 13:57:19 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [RFC PATCH] arm64: fix the missing ktpi= cmdline check in
- arm64_kernel_unmapped_at_el0()
-Message-ID: <20200317135719.GH3971@sirena.org.uk>
-References: <20200317114708.109283-1-yaohongbo@huawei.com>
- <20200317121050.GH8831@lakrids.cambridge.arm.com>
- <20200317124323.GA16200@willie-the-truck>
+	id 1jECjO-0000cm-4s; Tue, 17 Mar 2020 13:58:06 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jECj9-0000c3-Ef
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 13:57:52 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f3so18832948wrw.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Mar 2020 06:57:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=R7mPWyazQzpq+QB7kvcjm1xqFg1EYXZslw7p+6l9zyk=;
+ b=almf5Jtj3eNx0d/aXBR7+Oze2+ETeYjtyMlJ9OEbQmb8gMN8blXwHv2GG8cTMSG8Gb
+ TqQI2NvD/8dBdMeEBmIXhIlFHwrbl/hv5ChDDsNGpnlpK5hvQzof8fIixUIUsBguIXTb
+ KDN4gxBzEroJNoXlYrX/bRITTsURtbZ+0C1rc3DI0n3W0P0ylmLJ6omYznM5Mry+BHEl
+ sXOc3Pq73C98/nsy0iLaajh56wLjwq7AMkYoauh0RYGnVUMCy44eNrnIGcJTSZeVDb/w
+ dYQ9baRi0UO2Pr1LUpCM6HKEzgo2MXSbZM7mFSpDv3xrJ2Ax8m4VmF9IwYMZTjiNJSAG
+ YvNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=R7mPWyazQzpq+QB7kvcjm1xqFg1EYXZslw7p+6l9zyk=;
+ b=awwRlRbbkIl35oTaSi3Qpv0jeqg+OQwzBGrjmwc11ZHxkCg6yFR0JDtt3o5J3KHVj7
+ pvmporikeFrpM4AA0R+vWx6fCzXBgKgygJ8KkSU2l6HI/Yyty4kADLHat2+79yph6wMH
+ R5YAlxyYGo7TfISlfoFNQ9qgiK84zvhJb0INl/PCGybZItEmrGtbCMQb3DLKUomHIz/0
+ O8dOvVyh9Ta2JLZzxB5CcNLmCixWk5PhPqfPHCPUNoJ9fW7z+hsvUGL3W0XNSIYoR2lU
+ 3bIQK3F/kUthwCal6q8qCZW/9hPhQXmgHElctF6FXckrM5wWbVZGwXwzfdjpGU9HMLG1
+ NxOA==
+X-Gm-Message-State: ANhLgQ2A8NDUhPCfSG6WwO/6ldyUcFjT5G1FySnTLJMZyp+SVGiLzqmL
+ TtpSRLMYAm4dCLU88S7ywrx0sA==
+X-Google-Smtp-Source: ADFU+vtjVlC/k5+6U/ZJ5/Eyy3Wu7I7oB0zbdo6cV/jFpbNjcRBn/Fnh1DNmBZO9Lag7OIncCJrjOw==
+X-Received: by 2002:a5d:490e:: with SMTP id x14mr6707580wrq.58.1584453470131; 
+ Tue, 17 Mar 2020 06:57:50 -0700 (PDT)
+Received: from xps7590.local ([2a02:2450:102f:13b8:84f7:5c25:a9d8:81a1])
+ by smtp.gmail.com with ESMTPSA id r3sm2976558wrn.35.2020.03.17.06.57.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Mar 2020 06:57:49 -0700 (PDT)
+From: Robert Foss <robert.foss@linaro.org>
+To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ shawnguo@kernel.org, olof@lixom.net, maxime@cerno.tech,
+ Anson.Huang@nxp.com, dinguyen@kernel.org, leonard.crestez@nxp.com,
+ marcin.juszkiewicz@linaro.org, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Loic Poulain <loic.poulain@linaro.org>
+Subject: [v2 0/6] Qualcomm CCI & Camera for db410c & db845c
+Date: Tue, 17 Mar 2020 14:57:34 +0100
+Message-Id: <20200317135740.19412-1-robert.foss@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200317124323.GA16200@willie-the-truck>
-X-Cookie: There's only one everything.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_065723_034159_9436A721 
-X-CRM114-Status: GOOD (  18.70  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200317_065751_500947_96F340D9 
+X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,98 +102,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- Hongbo Yao <yaohongbo@huawei.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5315360072501678130=="
+Cc: Robert Foss <robert.foss@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This series depends on the Qualcom CCI I2C driver series:
+https://patchwork.kernel.org/cover/10569957/
 
---===============5315360072501678130==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="CEUtFxTsmBsHRLs3"
-Content-Disposition: inline
+This series enables basic camera functionality on the Qualcomm db410c and
+db845c (RB3) platforms.
 
+This includes building drivers as modules, adding devicetree nodes
+for camera controllers, clocks, regulators and sensor nodes.
 
---CEUtFxTsmBsHRLs3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Loic Poulain (2):
+  arm64: dts: msm8916: Add i2c-qcom-cci node
+  arm64: dts: apq8016-sbc: Add CCI/Sensor nodes
 
-On Tue, Mar 17, 2020 at 12:43:24PM +0000, Will Deacon wrote:
-> On Tue, Mar 17, 2020 at 12:10:51PM +0000, Mark Rutland wrote:
-> > On Tue, Mar 17, 2020 at 07:47:08PM +0800, Hongbo Yao wrote:
+Robert Foss (4):
+  arm64: dts: sdm845: Add i2c-qcom-cci node
+  arm64: dts: sdm845-db845c: Add pm_8998 gpio names
+  arm64: dts: sdm845-db845c: Add ov8856 & ov7251 camera nodes
+  arm64: defconfig: Enable QCOM CAMCC, CAMSS and CCI drivers
 
-> > > Kpti cannot be disabled from the kernel cmdline after the commit
-> > > 09e3c22a("arm64: Use a variable to store non-global mappings decision").
+ arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi  |  76 ++++++++
+ arch/arm64/boot/dts/qcom/msm8916.dtsi      |  27 +++
+ arch/arm64/boot/dts/qcom/sdm845-db845c.dts | 210 +++++++++++++++++++++
+ arch/arm64/boot/dts/qcom/sdm845.dtsi       |  92 +++++++++
+ arch/arm64/configs/defconfig               |   4 +
+ 5 files changed, 409 insertions(+)
 
-> > > Bring back the missing check of kpti= command-line option to fix the
-> > > case where the SPE driver complains the missing "kpti-off" even it has
-> > > already been set.
+-- 
+2.20.1
 
-> > > -	return arm64_use_ng_mappings;
-> > > +	return arm64_use_ng_mappings &&
-> > > +		cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
-> > >  }
-
-> This probably isn't the right fix, since this will mean that early mappings
-> will be global and we'll have to go through the painful page-table rewrite
-> logic when the cap gets enabled for KASLR-enabled kernels.
-
-Aren't we looking for a rewrite from non-global to global here (disable
-KPTI where we would otherwise have it), which we don't currently have
-code for?
-
-> Maybe a better bodge is something like:
-
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 0b6715625cf6..ad10f55b7bb9 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1085,6 +1085,8 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
->  		if (!__kpti_forced) {
->  			str = "KASLR";
->  			__kpti_forced = 1;
-> +		} else if (__kpti_forced < 0) {
-> +			arm64_use_ng_mappings = false;
->  		}
->  	}
-
-That is probably a good idea but I think that runs too late to affect
-the early mappings, they're done based on kaslr_requires_kpti() well
-before we start secondaries.  My first pass not having paged everything
-back in yet is that there needs to be command line parsing in
-kaslr_requires_kpti() but as things stand the command line isn't
-actually ready then...
-
---CEUtFxTsmBsHRLs3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5w1z4ACgkQJNaLcl1U
-h9DHPQf/Yk+8QriE8OOokiXkCDmOzV62HaR9JUB4YrP/wXt51ciPUarL47VDjxX0
-BVZornO01cOyFwLJ9ZPhFc+XXYoaO7hhRXI+9eervR0LYo9pEvTzGyAXPpKyyldo
-lNUHzr5zABlfNy9XMAPHWUu2audTlT5ECyLd5jzKYvQH6fIQ3GMr7niaEauktkue
-mJYqjjnCXMZdCfIPB1djyXTWIwHWA1d4SC1IuxSfEG1Z+3pmWB6O2xcuLXPzDpiC
-C9pZ8fPwDbG1fqOKCMT4RkoAgceWg2jhE2ATlpEawsOyF8Xy9pnlXcV4el33+rMP
-iNg5UVCxpnbw8Z2WQXOD4er3dk5BHw==
-=o53u
------END PGP SIGNATURE-----
-
---CEUtFxTsmBsHRLs3--
-
-
---===============5315360072501678130==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5315360072501678130==--
-
