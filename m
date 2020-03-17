@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D09818883F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:55:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B866188841
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 15:55:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JxzTTzOz2pqSGmhsaYCNKVG4tR0hR5T3gCEkAHpqe0A=; b=IpjtFfT64597vH
-	SZG55/BaIvaOx0EopLI3Z0aYGyCQikQZymaTD8s8zEX6TC8O/KE+h2Ts1hzcKub1wOp3/9fuz0E5o
-	s1DSjvg9sRh8P3ALoGH509AdDV5UUMkvqlHE0n7JfyLxK5lOhwHmJbZjrWBDjd/QvOEti6kpz4Mhx
-	PWKizG0V8ejWh45TxMy3S2ODcjR7FNxd/77Ox2VzoYMLe/h0dprapvu/8YfxYm62N7jZW8rj36eer
-	mgpbhoKbz0lx3nQpuO0LvR9g9mBG+sKq09oTaKDNsTzocNrn+UffE97ULU6snDMtJPWKDwUA5rMLa
-	fQ6YZn17dOgtsvTvNysQ==;
+	List-Owner; bh=sMFDpzwBQTHES92v8czoGjdgh+nMJX84ZsUIj0/6fs0=; b=GxfYXUG8u6qMHb
+	hN7kEQFXoTCBDim8TdHBlZU1AuhY9Hw1/cgiP3hQQUbd4UyAMQ0FCG3mmbSLKTCx93XJbs5I3eY3C
+	CnTnvQfq9/v6QTvnNDA42+wzeERe2ziRj0om5Z6aaJZYfbSwsL/lD7gnI8TEad61BIWUFvK5L0W4L
+	pUw7lP0PIXdPbo9Uw+50MGytyCdGnytz4yaONOd52yZeAWw3rtun9W6xBUotSFkke2c9KA0K6o/Gw
+	HgNpvFXeVtomyNlC6U+PWQ5TgfauTyW2bzkCn4/4ls9xlWythsPuV/4rVlbCUUqQ8xHs7D3+8HMtq
+	Fw2ffcJJYzIgw5H4aDNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEDc8-0001w4-KK; Tue, 17 Mar 2020 14:54:40 +0000
+	id 1jEDcN-00024k-HG; Tue, 17 Mar 2020 14:54:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEDbz-0001uq-5s
+ id 1jEDbz-0001up-5s
  for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 14:54:32 +0000
 Received: from mail.kernel.org (ip5f5ad4e9.dynamic.kabel-deutschland.de
  [95.90.212.233])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F90F20724;
+ by mail.kernel.org (Postfix) with ESMTPSA id 5254620735;
  Tue, 17 Mar 2020 14:54:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1584456870;
- bh=EQt8XNF67n6Qz/qYgjsQ6OrZnV8PGeVV9kM2E6Xo1RM=;
+ bh=lCdLEJ5w0ZRwfZb7Xc7NwaWoCZT37OUHOWlWSj57v6g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RueX3oIjzReC6mbi0x8E5FbR4B6JmuuosRjGYhQfoJP6FUW5I1d87YHLzroI3VqHr
- aTlyextonkTgWKILznM0gPhOolMhHWhoCwjS4lmyZRoAF6OcqNFTe24gxlNj44gMMY
- nLp9fwI1zZvq+RkAkB/vMntVV6cEiLmBE7xn/ETw=
+ b=Djw9jFOmPVxugYNlt7C0HBMWT+aNtPhjpQIY7HubEC1HmKNR2QVXCfav5TZcdI21d
+ MHQRonO5QctE4EIaQ93hoVZIqzEuDSKIFY7/q11VB9V+nNIYRpm4RTp3qnuOEHeme/
+ iaJDADaRIHzNun8GSiXS2ZcLmFAmkQl8YUKWsR/o=
 Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
  (envelope-from <mchehab@kernel.org>)
- id 1jEDbw-000AMH-Bc; Tue, 17 Mar 2020 15:54:28 +0100
+ id 1jEDbw-000AML-CZ; Tue, 17 Mar 2020 15:54:28 +0100
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH 01/17] docs: amu: supress some Sphinx warnings
-Date: Tue, 17 Mar 2020 15:54:10 +0100
-Message-Id: <d12f2ee809ee078c1e5e6d6da6dd9465f35109e2.1584456635.git.mchehab+huawei@kernel.org>
+Subject: [PATCH 02/17] docs: arm64: booting.rst: get rid of some warnings
+Date: Tue, 17 Mar 2020 15:54:11 +0100
+Message-Id: <7f4f13e03c2d0c5a30db4eb209eaa5aef339de94.1584456635.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.1584456635.git.mchehab+huawei@kernel.org>
 References: <cover.1584456635.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_075431_247774_6A78DA89 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200317_075431_259599_87A9620A 
+X-CRM114-Status: GOOD (  12.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,63 +88,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add extra blank lines on some places, in order to avoid those
-warnings when building the docs:
+Get rid of those warnings:
 
-    Documentation/arm64/amu.rst:26: WARNING: Unexpected indentation.
-    Documentation/arm64/amu.rst:60: WARNING: Unexpected indentation.
-    Documentation/arm64/amu.rst:81: WARNING: Unexpected indentation.
-    Documentation/arm64/amu.rst:108: WARNING: Unexpected indentation.
+    Documentation/arm64/booting.rst:253: WARNING: Unexpected indentation.
+    Documentation/arm64/booting.rst:259: WARNING: Block quote ends without a blank line; unexpected unindent.
+
+By adding an extra blank lines where needed.
+
+While here, use list markups on some places, as otherwise Sphinx
+will consider the next lines as continuation of the privious ones.
 
 Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 ---
- Documentation/arm64/amu.rst | 5 +++++
- 1 file changed, 5 insertions(+)
+ Documentation/arm64/booting.rst | 36 ++++++++++++++++++++-------------
+ 1 file changed, 22 insertions(+), 14 deletions(-)
 
-diff --git a/Documentation/arm64/amu.rst b/Documentation/arm64/amu.rst
-index 5057b11100ed..452ec8b115c2 100644
---- a/Documentation/arm64/amu.rst
-+++ b/Documentation/arm64/amu.rst
-@@ -23,6 +23,7 @@ optional external memory-mapped interface.
+diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
+index a3f1a47b6f1c..e50186092948 100644
+--- a/Documentation/arm64/booting.rst
++++ b/Documentation/arm64/booting.rst
+@@ -173,7 +173,9 @@ Before jumping into the kernel, the following conditions must be met:
+ - Caches, MMUs
  
- Version 1 of the Activity Monitors architecture implements a counter group
- of four fixed and architecturally defined 64-bit event counters.
+   The MMU must be off.
 +
-   - CPU cycle counter: increments at the frequency of the CPU.
-   - Constant counter: increments at the fixed frequency of the system
-     clock.
-@@ -57,6 +58,7 @@ counters, only the presence of the extension.
- 
- Firmware (code running at higher exception levels, e.g. arm-tf) support is
- needed to:
+   Instruction cache may be on or off.
 +
-  - Enable access for lower exception levels (EL2 and EL1) to the AMU
-    registers.
-  - Enable the counters. If not enabled these will read as 0.
-@@ -78,6 +80,7 @@ are not trapped in EL2/EL3.
+   The address range corresponding to the loaded kernel image must be
+   cleaned to the PoC. In the presence of a system cache or other
+   coherent masters with caches enabled, this will typically require
+@@ -238,6 +240,7 @@ Before jumping into the kernel, the following conditions must be met:
+   - The DT or ACPI tables must describe a GICv2 interrupt controller.
  
- The fixed counters of AMUv1 are accessible though the following system
- register definitions:
+   For CPUs with pointer authentication functionality:
 +
-  - SYS_AMEVCNTR0_CORE_EL0
-  - SYS_AMEVCNTR0_CONST_EL0
-  - SYS_AMEVCNTR0_INST_RET_EL0
-@@ -93,6 +96,7 @@ Userspace access
- ----------------
+   - If EL3 is present:
  
- Currently, access from userspace to the AMU registers is disabled due to:
+     - SCR_EL3.APK (bit 16) must be initialised to 0b1
+@@ -249,18 +252,22 @@ Before jumping into the kernel, the following conditions must be met:
+     - HCR_EL2.API (bit 41) must be initialised to 0b1
+ 
+   For CPUs with Activity Monitors Unit v1 (AMUv1) extension present:
 +
-  - Security reasons: they might expose information about code executed in
-    secure mode.
-  - Purpose: AMU counters are intended for system management use.
-@@ -105,6 +109,7 @@ Virtualization
- 
- Currently, access from userspace (EL0) and kernelspace (EL1) on the KVM
- guest side is disabled due to:
+   - If EL3 is present:
+-    CPTR_EL3.TAM (bit 30) must be initialised to 0b0
+-    CPTR_EL2.TAM (bit 30) must be initialised to 0b0
+-    AMCNTENSET0_EL0 must be initialised to 0b1111
+-    AMCNTENSET1_EL0 must be initialised to a platform specific value
+-    having 0b1 set for the corresponding bit for each of the auxiliary
+-    counters present.
 +
-  - Security reasons: they might expose information about code executed
-    by other guests or the host.
++    - CPTR_EL3.TAM (bit 30) must be initialised to 0b0
++    - CPTR_EL2.TAM (bit 30) must be initialised to 0b0
++    - AMCNTENSET0_EL0 must be initialised to 0b1111
++    - AMCNTENSET1_EL0 must be initialised to a platform specific value
++      having 0b1 set for the corresponding bit for each of the auxiliary
++      counters present.
++
+   - If the kernel is entered at EL1:
+-    AMCNTENSET0_EL0 must be initialised to 0b1111
+-    AMCNTENSET1_EL0 must be initialised to a platform specific value
+-    having 0b1 set for the corresponding bit for each of the auxiliary
+-    counters present.
++
++    - AMCNTENSET0_EL0 must be initialised to 0b1111
++    - AMCNTENSET1_EL0 must be initialised to a platform specific value
++      having 0b1 set for the corresponding bit for each of the auxiliary
++      counters present.
  
+ The requirements described above for CPU mode, caches, MMUs, architected
+ timers, coherency and system registers apply to all CPUs.  All CPUs must
+@@ -304,7 +311,8 @@ following manner:
+   Documentation/devicetree/bindings/arm/psci.yaml.
+ 
+ - Secondary CPU general-purpose register settings
+-  x0 = 0 (reserved for future use)
+-  x1 = 0 (reserved for future use)
+-  x2 = 0 (reserved for future use)
+-  x3 = 0 (reserved for future use)
++
++  - x0 = 0 (reserved for future use)
++  - x1 = 0 (reserved for future use)
++  - x2 = 0 (reserved for future use)
++  - x3 = 0 (reserved for future use)
 -- 
 2.24.1
 
