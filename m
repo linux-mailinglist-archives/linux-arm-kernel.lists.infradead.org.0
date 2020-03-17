@@ -2,86 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BEA5187E70
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:35:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F39F187E76
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 11:36:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXbiMKYNQafqhhC+o4vrc/TWxvHbbpgELt451Y8YIUQ=; b=qMTPqbcMzmbUWb
-	e0utOE4px3tR/vN+Mr/XdNHx/epzUmDhAvil1uypWU8JBEPhdIWN2pumIIWCsSKgjHZmy8bBq7RfC
-	MLjiKDK+K5h4vGkv4YVSZS4zxbWQ4RMAHxXkbsaahI0qTosE4AfF4frTprf2Gp3zOHwhQAUZGiV7d
-	jzVIF2zVhq76tG5KAubc1eEI7pLGp8nWym1GO3XfNgswgecoJCxFf7re1a4FdMXcsN4+Im7nu43Rk
-	DqQubOxjNoWQDhkZwrR5GL2PPsYsy9Z/r7qOMKx4YaB5v0fkXFrNwdEdiQNtuRvXu6EcBX56CvUsA
-	mn2n5hgMYkMi9BqoD52A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wRYpPxbKHtKBt5KW5rsP/zgxjnynrc14K7Uet6TEDOk=; b=Plx/8lP+aMknhW
+	gghOzrLQydrFz5T71yTk1spiUCj9haWiXbB+42APvWmPrQRntQwKRRHUZ/3NT0J0AFUGZ+5pentm6
+	UAqv2s/lfab0u25vGHWWgH38qF8phO4ZJstY4AA2IKZX9C6HzSCslq18aC7afWHv9gY6nMrFFSWkk
+	XP64wNMlI8vImZ14vCllRodpWN0mNoDZ0cd9CcUcreZ5vHfDFcXALAz+9L6fPQrGzmDVY9j8VQa/9
+	Td4YBQjvlyQ8PZrHUxW4iCzqgP700U1fpe/JpMBcJkGCrMdSye2VVl3uvX7XQkSeBqC6kCWlR5RI9
+	XLjWWZFcTXqHdrLPnkDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE9ZO-0004YG-92; Tue, 17 Mar 2020 10:35:34 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jE9aD-0004qU-JB; Tue, 17 Mar 2020 10:36:25 +0000
+Received: from mail-eopbgr1400122.outbound.protection.outlook.com
+ ([40.107.140.122] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE9ZB-0004Xo-93
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 10:35:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584441320;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=PDF9KX2gWP/KQxi7FPC/r6zYWiKxTIB+y9Tt6qr75x0=;
- b=LTy4UdqpBNBBc3aSHY0F8dFlzuqCWbH/8UU2MItDnqXEsmYJ36iHxIp0Q+0I81Hg5hj165
- ofK9ebV7x/h/3HkxaZlKElW9TtLwxm41dW+a9wgsI8FDia/A7Rv5IUU7o084FwucRDQEaT
- 8y4YXk5yv584g79LZeKIOFLp4VXEOak=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-362-MHeVK9nTPLqv1JiyvpOjEw-1; Tue, 17 Mar 2020 06:35:18 -0400
-X-MC-Unique: MHeVK9nTPLqv1JiyvpOjEw-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0656118A551B;
- Tue, 17 Mar 2020 10:35:16 +0000 (UTC)
-Received: from [10.36.113.142] (ovpn-113-142.ams2.redhat.com [10.36.113.142])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id F33D75C1C3;
- Tue, 17 Mar 2020 10:35:12 +0000 (UTC)
-Subject: Re: [PATCH v5 12/23] irqchip/gic-v4.1: Plumb set_vcpu_affinity SGI
- callbacks
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-13-maz@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <2f981328-92e8-7554-ccf7-962c79add0c3@redhat.com>
-Date: Tue, 17 Mar 2020 11:35:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <20200304203330.4967-13-maz@kernel.org>
+ id 1jE9a5-0004pe-Ie; Tue, 17 Mar 2020 10:36:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=oKn25MNWblYsWTtaRQ+dfyynHX3mtbSczcFN1oguAbU/QdVcOMGS3qfo7npjoZwegO3obXy8T2Cm/R9MMjg+NdDkpI3AwqkUsu0X9lHzXceufHBaW7zWJh7m+rm28RxAT+RxAC8cstdTgGFpAagVCRPL7JnBptbwIMLuGEvnM7fyLG75XWCpwRNWGexL6+ZlYpis/O+aCH/+4/imyx4H8jwtlpF++M6fehez9Y5RlHoUNiYCh16GPitoO5m6rR0qOcedeHlBoX7mnl0InAGamzvSQwp54D4s5wDFoM4YzX70jHzeDZi4O3yHIrj1m9NhM+s3sFxlG9lsg0PvS/ExMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uur5A43zlIis658Vag6mGc9U4SZ3N8hynWthYglxrpY=;
+ b=J573pYRhjXxz6cr4EQ9MFkrY/piSHNlJ9LAfu9PMI3m6Jlp82f5kYPjFu13aoP+1ybEe9VBVnDBhci8WMNE+78a2OkEBHPdAclO9EkkIOszKI4swloGvfjDc6MH2OswIyC4VPoEVLMzXDleC4KaFFf5fm2v2KTVtN5hp5dp0dXmjijg1Qe86rkHJu430j0E2HeGpgNHKXRkZOgkkxXV7GLu9pdAteEbwVLKCoMUZdobI2xYmP81D2+10GYkYWEs03w9z7bi69h2PMFiYZOOeLnBALbY3uDSO3g0Kwcgi0N+POSo+9AColNCoBinzdlGlzLh+xWqpgl8zJmBNWPW2Pg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uur5A43zlIis658Vag6mGc9U4SZ3N8hynWthYglxrpY=;
+ b=Y9Xi4xFyf92TIwC7gimedqS6mr9PN7kjnTouYODAUTWPWp/6zJ8Gzaw8sI8JgI1bXxbVFXeDKHrWVIOvHUxqbuIonzfepb0ClSFxy684KkeDYdKlGrTpWojXeMSxYZ9qvhEQI3BfhJco79MLEGbVTii3wVKIt66FjFwmepbYWGA=
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
+ OSBPR01MB2662.jpnprd01.prod.outlook.com (52.134.255.145) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.21; Tue, 17 Mar 2020 10:36:13 +0000
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::490:aa83:2d09:3a0b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::490:aa83:2d09:3a0b%5]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 10:36:12 +0000
+From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Lad Prabhakar
+ <prabhakar.csengg@gmail.com>
+Subject: RE: [PATCH v5 7/7] misc: pci_endpoint_test: Add Device ID for RZ/G2E
+ PCIe controller
+Thread-Topic: [PATCH v5 7/7] misc: pci_endpoint_test: Add Device ID for RZ/G2E
+ PCIe controller
+Thread-Index: AQHV7k2qHnZcas9owkCCufgdtXIhrqhMsfcAgAAA1TA=
+Date: Tue, 17 Mar 2020 10:36:12 +0000
+Message-ID: <OSBPR01MB3590DA5CDC8DF1B618B0AA34AAF60@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200228154122.14164-8-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <TYAPR01MB45441E4766FD57506A5B9F98D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+In-Reply-To: <TYAPR01MB45441E4766FD57506A5B9F98D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
+x-originating-ip: [193.141.220.21]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 417486e6-7007-4090-8ec5-08d7ca5f03b0
+x-ms-traffictypediagnostic: OSBPR01MB2662:|OSBPR01MB2662:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <OSBPR01MB266246D624F7611F628DC645AAF60@OSBPR01MB2662.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2399;
+x-forefront-prvs: 0345CFD558
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(39860400002)(366004)(396003)(376002)(346002)(136003)(199004)(316002)(26005)(110136005)(52536014)(5660300002)(66946007)(86362001)(64756008)(81166006)(66446008)(66476007)(81156014)(66556008)(186003)(2906002)(7416002)(76116006)(33656002)(53546011)(6506007)(8936002)(478600001)(7696005)(9686003)(54906003)(4326008)(55016002)(71200400001)(8676002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB2662;
+ H:OSBPR01MB3590.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; 
+received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: XR8rIn7GMNL4pne/aHHfzP1Lw7O3F/XMP8dw1XbaLQ1JVzYqpybJvpzdKcz4+CeLgYtwTGrXd7gNWUYiC5JBHJvXRqHK+lI8VoPUpjM6oI94OpqbnYJQLmvm/dHyriIU+WNMtjeiU5ouagtfgYTuoFJv0W/Lrb2tMQLkbHBJjTtMQj9KIJy+hQtDzEEJ2bV12pnJJ1ZVtVUvZTZWH7t8goM+mYZvjov1fOrxKmueQQiqnYqFzTkJ1V9W4ALVMLy+U868Au6ui7sVMx5BF0jGDD2BijCqBC61SyObj6TplqKAU+aN+GwYUOk5cFG58Q/R/zldXFARgt/ExwZSBOWf8J6T/qLH369qdPUsY7DvGCiSRS/2SJsEkDvSsW87zKeTKPlc7TMBs9JwpvhI9UFH5IwKSn9hRUx3PaQvf5R/RSTULbnlmMAlLrvACI5iXLsU
+x-ms-exchange-antispam-messagedata: 1EsQNu/6793dt86AJ2FVXrO0TEgUs6Sxw+q7mY7dZ4v05flbrg8CnlAraN5XKPelGzHxQSVJXL+zCy8l1he5SxG8Q3IvA8VegsfPvOWmo2R5m6/wNjP/00xp7DZeG3tMN33E5PvZ8Ji5K/VKB8H1Ww==
+MIME-Version: 1.0
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 417486e6-7007-4090-8ec5-08d7ca5f03b0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 10:36:12.6242 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zijk8rJbZRMsYr+paqqg4EsOB3s7zvIAuikfWRJ7OmmPhQ3z4hIuaXRpdZGtb19h6ojUpwrgddCa2K5H358O+5XZ+jlwm9mx2Bt4g9U+uOIPRp+rq3R0vx/UiljEPtIK
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2662
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_033521_431150_97CB257D 
-X-CRM114-Status: GOOD (  19.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200317_033617_613367_AAB10800 
+X-CRM114-Status: GOOD (  21.29  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.140.122 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,99 +121,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Jingoo Han <jingoohan1@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi Yoshihiro,
 
-On 3/4/20 9:33 PM, Marc Zyngier wrote:
-> Just like for vLPIs, there is some configuration information that cannot
-> be directly communicated through the normal irqchip API, and we have to
-> use our good old friend set_vcpu_affinity as a side-band communication
-> mechanism.
-> 
-> This is used to configure group and priority for a given vSGI.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
-> ---
->  drivers/irqchip/irq-gic-v3-its.c   | 18 ++++++++++++++++++
->  include/linux/irqchip/arm-gic-v4.h |  5 +++++
->  2 files changed, 23 insertions(+)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-> index fb2b836c31ff..effb0e0b0c9d 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -4033,6 +4033,23 @@ static int its_sgi_get_irqchip_state(struct irq_data *d,
->  	return 0;
->  }
->  
-> +static int its_sgi_set_vcpu_affinity(struct irq_data *d, void *vcpu_info)
-> +{
-> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-> +	struct its_cmd_info *info = vcpu_info;
-> +
-> +	switch (info->cmd_type) {
-> +	case PROP_UPDATE_SGI:
-PROP_UPDATE_VSGI directly?
-> +		vpe->sgi_config[d->hwirq].priority = info->priority;
-> +		vpe->sgi_config[d->hwirq].group = info->group;
-> +		its_configure_sgi(d, false);
-> +		return 0;
-> +
-extra line
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-> +
->  static struct irq_chip its_sgi_irq_chip = {
->  	.name			= "GICv4.1-sgi",
->  	.irq_mask		= its_sgi_mask_irq,
-> @@ -4040,6 +4057,7 @@ static struct irq_chip its_sgi_irq_chip = {
->  	.irq_set_affinity	= its_sgi_set_affinity,
->  	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
->  	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
-> +	.irq_set_vcpu_affinity	= its_sgi_set_vcpu_affinity,
->  };
->  
->  static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
-> diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
-> index 44e8c19e3d56..b4dbf899460b 100644
-> --- a/include/linux/irqchip/arm-gic-v4.h
-> +++ b/include/linux/irqchip/arm-gic-v4.h
-> @@ -103,6 +103,7 @@ enum its_vcpu_info_cmd_type {
->  	SCHEDULE_VPE,
->  	DESCHEDULE_VPE,
->  	INVALL_VPE,
-> +	PROP_UPDATE_SGI,
->  };
->  
->  struct its_cmd_info {
-> @@ -115,6 +116,10 @@ struct its_cmd_info {
->  			bool		g0en;
->  			bool		g1en;
->  		};
-> +		struct {
-> +			u8		priority;
-> +			bool		group;
-> +		};
->  	};
->  };
->  
-> 
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Thank you for the review.
 
-Eric
+> -----Original Message-----
+> From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> Sent: 17 March 2020 10:32
+> To: Lad Prabhakar <prabhakar.csengg@gmail.com>
+> Cc: Andrew Murray <andrew.murray@arm.com>; linux-pci@vger.kernel.org;
+> linux-arm-kernel@lists.infradead.org; linux-renesas-soc@vger.kernel.org;
+> linux-rockchip@lists.infradead.org; linux-kernel@vger.kernel.org;
+> devicetree@vger.kernel.org; Prabhakar Mahadev Lad <prabhakar.mahadev-
+> lad.rj@bp.renesas.com>; Bjorn Helgaas <bhelgaas@google.com>; Rob
+> Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>;
+> Catalin Marinas <catalin.marinas@arm.com>; Will Deacon <will@kernel.org>;
+> Kishon Vijay Abraham I <kishon@ti.com>; Lorenzo Pieralisi
+> <lorenzo.pieralisi@arm.com>; Arnd Bergmann <arnd@arndb.de>; Greg
+> Kroah-Hartman <gregkh@linuxfoundation.org>; Jingoo Han
+> <jingoohan1@gmail.com>; Gustavo Pimentel
+> <gustavo.pimentel@synopsys.com>; Marek Vasut
+> <marek.vasut+renesas@gmail.com>; Shawn Lin <shawn.lin@rock-
+> chips.com>; Heiko Stuebner <heiko@sntech.de>
+> Subject: RE: [PATCH v5 7/7] misc: pci_endpoint_test: Add Device ID for
+> RZ/G2E PCIe controller
+>
+> Hi Prabhakar-san,
+>
+> Thank you for the patch!
+>
+> > From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
+> >
+> > Add RZ/G2E in pci_device_id table so that pci-epf-test can be used for
+> > testing PCIe EP in RZ/G2E.
+> >
+> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-
+> lad.rj@bp.renesas.com>
+> > ---
+> >  drivers/misc/pci_endpoint_test.c | 3 +++
+> >  1 file changed, 3 insertions(+)
+> >
+> > diff --git a/drivers/misc/pci_endpoint_test.c
+> > b/drivers/misc/pci_endpoint_test.c
+> > index a5e3170..3c84e9a 100644
+> > --- a/drivers/misc/pci_endpoint_test.c
+> > +++ b/drivers/misc/pci_endpoint_test.c
+> > @@ -66,6 +66,8 @@
+> >
+> >  #define PCI_DEVICE_ID_TI_AM6540xb00c
+> >
+> > +#define PCI_DEVICE_ID_RENESAS_RZG2E0x002d
+>
+> This define should be in include/linux/pci_ids.h, and adding the define
+> should be separated.
+> Also, I think "R8A774C0" is better than "RZG2E".
+>
+Agreed will add it under PCI_VENDOR_ID_RENESAS.
 
+Cheers,
+--Prabhakar
+
+> Best regards,
+> Yoshihiro Shimoda
+>
+> >  #define is_am654_pci_dev(pdev)\
+> >  ((pdev)->device == PCI_DEVICE_ID_TI_AM654)
+> >
+> > @@ -797,6 +799,7 @@ static const struct pci_device_id
+> pci_endpoint_test_tbl[] = {
+> >  { PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
+> >    .driver_data = (kernel_ulong_t)&am654_data
+> >  },
+> > +{ PCI_DEVICE(PCI_VENDOR_ID_RENESAS,
+> PCI_DEVICE_ID_RENESAS_RZG2E) },
+> >  { }
+> >  };
+> >  MODULE_DEVICE_TABLE(pci, pci_endpoint_test_tbl);
+> > --
+> > 2.7.4
+
+
+
+Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
 
 _______________________________________________
 linux-arm-kernel mailing list
