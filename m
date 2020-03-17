@@ -2,91 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79242188A6D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 17:36:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDC8F188A70
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 17:37:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QGAhAAFpcdbqL+P/rVwdGxCOzO3DLAvqcq9aS6pkXPA=; b=TtPP5foBWw0ZJidJeCow5zAJ8t
-	d8FIHjXqgM5n50drv2vk/wVurY47l46rNjN9GxkhTTpKaUTL8RbVMDBWKwDwCcWQa4Bfe2bAqB4Kv
-	lMeuoe6l9CKYXg2CYDkYAxWYuYBye7SMxXg0DW96qQGZBw43qmKNK7744MFvwUF5absKvrKdk76b+
-	Vv+ay+/P3B+yPXlIKUD4NlxDYh5eC702gngbgobOuf/dCDGghVxSK/Rc/qglH3IZjynB/zqsY+JVR
-	RHoALL5gZ+x4nvD1NSk6Tv7hCAfJLlwKBnl9N8FbQjA5yqVQgjTXxKFYcf7cIbWZoRfEyAVQAzbo3
-	Wwk8OfiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UR3OcRDZaJu3E1f3g3Bw9bmKpBqbbb+kQhyjeJnqam4=; b=ipgurmIq6gQj+X0I3HJ0Hq/0K
+	gQURPepYhORB+YRZfsEYieR2ya/3Wosip4R1SQfJrXeIAhLy7zWv1nNIkbhnz5PrhcBxCGmeTpdDU
+	SsA62E94Hq/NFlo0S3pAQzxFwypb0jAvPUJkBJHmfUktllybdlBRi7V1g1rQYO+VdFsoiekhRFrMU
+	um2Q4bUILwuWZ1z5vD09JLn0CdbhaLmqISB6WUcSMl2pkhDkyZMLZWoosWcV6LIl4c7f1dT/xRoYh
+	8qyGxhH0ubH+a6aNA4WWGrSp66x7Z47lvlQ+lKQrPEdvDWK9MJ9GBuEBuAdNJLpZ9JtZymTLu+zsN
+	fHbg//HIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEFCd-0003Gl-HI; Tue, 17 Mar 2020 16:36:27 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEFCG-00033I-Ka; Tue, 17 Mar 2020 16:36:06 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z13so6134110wml.0;
- Tue, 17 Mar 2020 09:36:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pjMnwjFJerbx0N3L2Dqt4xop1wyGSpDLGCMz6+TnU/s=;
- b=ae4n6jEjH+OoCBS3DnCEY+jJdqGdHoFGgsv2iRa/Cup2ogFIxxfK4FqkXdeKrPHJjG
- Ik/j9T4EEt12OeXtkoJyGcezLGrulc504g7REHd58NzxHSwPYmSw9GQqbCUPGn/uQlnZ
- AiojD5bU/QJsdFQP2QlQcdP+GZTg4N3K2ZHkqL+sPY2H/IRoE5riBfgejccuahVRH71T
- HbrTTgF+1x8EqHv9pBZOoUpFTE17T2HiRjFN0UZKK5ASEK9nl2TOakhivBhivLlFRuqS
- Tmi4R0dsNh3/ScEt2CBSROrbPl03upAOGp4siQdjiOsNF30lNwxBxH/ZFzrRKyglU+zP
- hNAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pjMnwjFJerbx0N3L2Dqt4xop1wyGSpDLGCMz6+TnU/s=;
- b=XRhoAnQpjLgFwk9EKau6nci+DRRoDJvpoDiKyF54jGSPOsQBAVvB0/ed/oD/UNaVCD
- GC7YWs66HUpS4oYOx4Pfy1HOaioqt5MMPYtoMuYJ4UjRKgvnl90nxh4E77cQ9c3ks+gm
- APdHVUH6mSTCMjVWBa+IguhOCfaYLzTJrSHy51MPtcsW7pLvzJd5AlLEuhryBvuTPn7Z
- K7hBPnoiqnQPT0KZxolzljPngxK6TtNVSdO+jjH1K/TuvsQV9ONJmBIpm86AVRZjuxHK
- x34qpWCoM7LisOl5hG7bgBx4c3BKBXwCWw6K8pyZNQGWpNmAKpNHcPjvZWf9w8HWoC98
- 3psg==
-X-Gm-Message-State: ANhLgQ21hH8w+Njeij7MyZ14ld9BLzWeQn84kGgPyo/1VeUc3g2ejATP
- zuxEKH5hN0vo9NULgl9YHDq7ARNN
-X-Google-Smtp-Source: ADFU+vvBNQ5z4r9YWuB8B/zFVlS25fu6bKiScd+gMjdgNptjWWj9nway+jpZRp+sZT2jBqbDdFBFng==
-X-Received: by 2002:a7b:cb44:: with SMTP id v4mr138704wmj.29.1584462963204;
- Tue, 17 Mar 2020 09:36:03 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id b10sm5389702wrm.30.2020.03.17.09.36.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 17 Mar 2020 09:36:02 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [RFC PATCH 2/2] dt-bindings: sram: fix yaml warnings for
- rk3288-pmu-sram compatible nodes
-Date: Tue, 17 Mar 2020 17:35:55 +0100
-Message-Id: <20200317163555.18107-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200317163555.18107-1-jbx6244@gmail.com>
-References: <20200317163555.18107-1-jbx6244@gmail.com>
+	id 1jEFD2-0003nq-Md; Tue, 17 Mar 2020 16:36:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEFCr-0003ji-SH
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 16:36:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F221030E;
+ Tue, 17 Mar 2020 09:36:40 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7559A3F52E;
+ Tue, 17 Mar 2020 09:36:40 -0700 (PDT)
+Date: Tue, 17 Mar 2020 16:36:38 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [RFC PATCH] arm64: fix the missing ktpi= cmdline check in
+ arm64_kernel_unmapped_at_el0()
+Message-ID: <20200317163638.GI3971@sirena.org.uk>
+References: <20200317114708.109283-1-yaohongbo@huawei.com>
+ <20200317121050.GH8831@lakrids.cambridge.arm.com>
+ <20200317124323.GA16200@willie-the-truck>
+ <20200317135719.GH3971@sirena.org.uk>
+ <20200317151813.GA16579@willie-the-truck>
+MIME-Version: 1.0
+In-Reply-To: <20200317151813.GA16579@willie-the-truck>
+X-Cookie: There's only one everything.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_093604_672099_4D5DAE37 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200317_093642_020442_C8B2B6D3 
+X-CRM114-Status: GOOD (  21.02  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,67 +69,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ Hongbo Yao <yaohongbo@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6406865635260190494=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example these warnings:
 
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#size-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'ranges' is a required property
+--===============6406865635260190494==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="tctmm6wHVGT/P6vA"
+Content-Disposition: inline
 
-Fix this error by making '#address-cells', '#size-cells' and
-'ranges' required for all compatible strings except for
-'rockchip,rk3288-pmu-sram'.
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/sram.yaml
+--tctmm6wHVGT/P6vA
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/sram/sram.yaml | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+On Tue, Mar 17, 2020 at 03:18:14PM +0000, Will Deacon wrote:
+> On Tue, Mar 17, 2020 at 01:57:19PM +0000, Mark Brown wrote:
+> > On Tue, Mar 17, 2020 at 12:43:24PM +0000, Will Deacon wrote:
+> > > On Tue, Mar 17, 2020 at 12:10:51PM +0000, Mark Rutland wrote:
+> > > > On Tue, Mar 17, 2020 at 07:47:08PM +0800, Hongbo Yao wrote:
 
-diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-index 7b83cc6c9..f06d254ba 100644
---- a/Documentation/devicetree/bindings/sram/sram.yaml
-+++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -118,9 +118,18 @@ patternProperties:
- required:
-   - compatible
-   - reg
--  - "#address-cells"
--  - "#size-cells"
--  - ranges
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: rockchip,rk3288-pmu-sram
-+
-+else:
-+  required:
-+    - "#address-cells"
-+    - "#size-cells"
-+    - ranges
- 
- additionalProperties: false
- 
--- 
-2.11.0
+> > > > > -	return arm64_use_ng_mappings;
+> > > > > +	return arm64_use_ng_mappings &&
+> > > > > +		cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
 
+> > > This probably isn't the right fix, since this will mean that early mappings
+> > > will be global and we'll have to go through the painful page-table rewrite
+> > > logic when the cap gets enabled for KASLR-enabled kernels.
+
+> > Aren't we looking for a rewrite from non-global to global here (disable
+> > KPTI where we would otherwise have it), which we don't currently have
+> > code for?
+
+> What I mean is that cpus_have_const_cap() will be false initially, so we'll
+> put down global mappings early on because PTE_MAYBE_NG will be 0, which
+> means that we'll have to invoke the rewriting code if we then realise we
+> want non-global mappings after the caps are finalised.
+
+Ah, I see - a different case to the one originally reported but also an
+issue.
+
+> > That is probably a good idea but I think that runs too late to affect
+> > the early mappings, they're done based on kaslr_requires_kpti() well
+> > before we start secondaries.  My first pass not having paged everything
+> > back in yet is that there needs to be command line parsing in
+> > kaslr_requires_kpti() but as things stand the command line isn't
+> > actually ready then...
+
+> Yeah, and I think you probably run into chicken and egg problems mapping
+
+The whole area is just a mess.
+
+> the thing. With the change above, it's true that /some/ mappings will
+> still be nG if you pass kpti=off, but I was hoping that didn't really matter
+> :)
+
+> What was the behaviour prior to your patch? If it used to work without
+> any nG mappings, then I suppose we should try to restore that behaviour.
+
+I'd need to go back and retest to confirm but it looks like always had
+the issue that we'd install some nG mappings early even with KPTI
+disabled on the command line so your change is just restoring the
+previous behaviour and we're no worse than we were before.
+
+--tctmm6wHVGT/P6vA
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5w/JYACgkQJNaLcl1U
+h9Dl1wf9GX3p/adfELLXBzUuhsdtD5YuF5wPbqLNWia/xE1GxwQwLTICvYRzF5UH
+oQ4z9xdwIxtBDXMcOre3yio7NphtC3i0zLTE0TBK5yj2xidtONZkV2hFh/gMFkO1
+AJ798O5jj5gL/oaHIYEA/iuKHi9wj2qA7iXiBIpq8v5z9MkDHz1CFAXYrLKAdcaU
+0mEhWJrh5xTycRkTY55/+Hegou21QfcXvqcEQq+p2zxJ+dLpt+kQ9C2SsK7/sxkj
+buyhcuLV7tUtaW5IrwfyypOpwBR57PTpecCkYGEmPgY51BpHtR9Gp1LBNsC7LbbP
++Ct5O9PmEr9d6wur0BxoHlrKlz+MeQ==
+=vYFK
+-----END PGP SIGNATURE-----
+
+--tctmm6wHVGT/P6vA--
+
+
+--===============6406865635260190494==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6406865635260190494==--
+
