@@ -2,68 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 958CB188DE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 20:21:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C72D7188DF1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 20:25:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6w8HB6P0XkRw4EhSN2Fm+KdHcZshvgFYlTXXBu8kBUg=; b=KdIywAxPPz4UUn
-	D3SP97gHlMSlh4HDhXngJjGma3OCDGDU++vmhLnc8zmgUCbO+gkhwh2KPJf8Qs1QVnM9SDT+u8veb
-	Xz3CfDJpvxlqbNXGYYsIvhOeB3xugO4dwwt8vklpAyawYdLhN+5iMe2IPqOc0FnqxyS7B5Bj7m4z+
-	0OayZUFPfsUzkdaRA2T6zm4hZIrpeuVD9M4ZkXlqkEgv04WkTSAr6nD7h6kcIjzd9ciIqJ5ucGlls
-	9is/ZJjVTGIi/kieCnSFSJ5GUqeZzYOFusGGloaB4JEwUktxE6UOvzirjNkTtyQDUpqLiJNFduWLz
-	yQu7RPADvvBNObBna1Fw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=q8zncVvd50V6/jBtIR9xr3gZprN7IMYWx7obTJWzYCM=; b=mmucMbiXPiEct4
+	ERmqA6RBD3ZXz3t23/nRS3piZ0XrjclCK5FzZM+JlMGECalX0kh8JiFeJ2Ebf+Dw4M6Bu814aoY5O
+	99r5qhpZ+lpHJOrKUYrz/mJbgQJjvzyiH/WpV8tnRhyPikMZ2WXtnsrrPlZUHxcX9r71KIAp3LKQx
+	QYOO44AWF3N3oKUv4yYjY5dRe8/B46i9LjK3sWaHnfNzwroaPsrAVFp+3xhLuSWY6IJBaCOkRCz2r
+	d4fxbEQV1VVl0b58M5+eA4Om/WYqlfgeAm1Ia9CpBmQdIliKTRY3nM7nczMK4tv3/KmGtl6fQ+lB1
+	dgwOvTpFpGb+jbdEpqwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEHmU-0000sy-Ib; Tue, 17 Mar 2020 19:21:38 +0000
-Received: from plasma4.jpberlin.de ([80.241.57.33])
+	id 1jEHqR-0002aY-Uq; Tue, 17 Mar 2020 19:25:43 +0000
+Received: from mail-eopbgr10076.outbound.protection.outlook.com ([40.107.1.76]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEHmI-0000sF-HF
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 19:21:29 +0000
-Received: from gerste.heinlein-support.de (gerste.heinlein-support.de
- [91.198.250.173])
- by plasma.jpberlin.de (Postfix) with ESMTP id DF1FBB9634;
- Tue, 17 Mar 2020 20:21:17 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from plasma.jpberlin.de ([91.198.250.140])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id DSLs7-eCfS8U; Tue, 17 Mar 2020 20:21:15 +0100 (CET)
-Received: from webmail.opensynergy.com (unknown [217.66.60.5])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (Client CN "webmail.opensynergy.com",
- Issuer "GeoTrust EV RSA CA 2018" (not verified))
- (Authenticated sender: opensynergy@jpberlin.de)
- by plasma.jpberlin.de (Postfix) with ESMTPSA id 65998B95B3;
- Tue, 17 Mar 2020 20:21:15 +0100 (CET)
-Received: from os-lin-phi.open-synergy.com (10.25.255.1) by
- MXS01.open-synergy.com (10.25.10.17) with Microsoft SMTP Server (TLS) id
- 14.3.487.0; Tue, 17 Mar 2020 20:21:14 +0100
-From: Peter Hilber <peter.hilber@opensynergy.com>
-To: <virtio-comment@lists.oasis-open.org>
-Subject: [PATCH v3] Add virtio SCMI device specification
-Date: Tue, 17 Mar 2020 20:20:53 +0100
-Message-ID: <20200317192053.15665-1-peter.hilber@opensynergy.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200227113735.23605-1-peter.hilber@opensynergy.com>
-References: <20200227113735.23605-1-peter.hilber@opensynergy.com>
+ id 1jEHqI-0002Zw-Cd
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 19:25:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YwUUf+xos9Fu38Il5Ft1rLlvrmPC6fjcRreRxdTqCE2keVf+j+tRV9vnEsU5nnFwr/WtdZshMValEqJYk7xXs1kGWlVfShJEILdlpM72OiThybODsaPSlZ7omAF11VRcI6B4iMDh98+h9NNN79cwsAswnOs5U/NwCChsintWAhzI2Fg/0w2WM3Xw+39kmwvn6t+tur6Im4sA34FWUnqRGv7/F0fApDr42yOm5ZH2h00P1lvhjH/H7VPyrf2inzG4K2b8tzdxI/cgg7CwV+50+qNaBJkx5Cu3cVEUa4uc/DX6wzPbntCN+4EfUT+SuHT3ESVktgIugT9D+cWOUBfW5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zRr6IIQSfIOzAZex5zW8dYAPAp+aahvugMA72oRtshk=;
+ b=ZU1KuehTWsi0WjIWcmQAAIXuCiw8UZTqeaaFaWa5GhghoQ+J25iOPOV5Bkp0rp6AwKd0l40kRFFtXLyJ1YANfteM0NvM3zQxxq6xXFlWp/hHztt24E4N5Mbgnuvzyjpod3jfR/99BNa/ztUk756cJz8zpjPHrdQ9IW3LLdcWGSYYfOdkFfnvvkGlYVbs1sZqg2kUuLLUbmi13OxQkK5Q0yx7YLS2FECr2Dx8Fi9pFt+qm7GON+/scQAXdBJDc59q5Hy2oW+1m/mxUzGMeOdgSKQJsvEcS7V6ch6ilgLr4aktJQX/60R2nyGghLNWG1jfWaMqTEYP6F/bNrHSOfP/Fw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zRr6IIQSfIOzAZex5zW8dYAPAp+aahvugMA72oRtshk=;
+ b=aP8lAyE5RNz16DfZZIPlHoMxpO3vOsvfsbyVo4oC3c5KgiaF5pexNmEHPI0OijEHtNkWN045O9pZphWoAKXumebVsY3sRnCJt1Zg6zrViZdwEjp6pvjdG/AvTOdeDgOGEsOq/Pp+btzKuA5kh7sqhrRUpAxDqb6bsQT+CRAjJXM=
+Received: from VI1PR04MB6941.eurprd04.prod.outlook.com (52.133.244.87) by
+ VI1PR04MB4430.eurprd04.prod.outlook.com (20.177.53.95) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.21; Tue, 17 Mar 2020 19:25:27 +0000
+Received: from VI1PR04MB6941.eurprd04.prod.outlook.com
+ ([fe80::289c:fdf8:faf0:3200]) by VI1PR04MB6941.eurprd04.prod.outlook.com
+ ([fe80::289c:fdf8:faf0:3200%2]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 19:25:27 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
+Thread-Topic: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
+Thread-Index: AQHV6Ar29fUTh/h0xEeUNN9RFuY7RA==
+Date: Tue, 17 Mar 2020 19:25:27 +0000
+Message-ID: <VI1PR04MB6941383E77EC501E96D2CBB0EEF60@VI1PR04MB6941.eurprd04.prod.outlook.com>
+References: <cover.1582216144.git.leonard.crestez@nxp.com>
+ <10e97a04980d933b2cfecb6b124bf9046b6e4f16.1582216144.git.leonard.crestez@nxp.com>
+ <158264951569.54955.16797064769391310232@swboyd.mtv.corp.google.com>
+ <VI1PR04MB70233A098DC4A2A82B114E93EEED0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <158276809953.177367.6095692240077023796@swboyd.mtv.corp.google.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 782aa1a2-dee5-4b89-fb80-08d7caa8f2c9
+x-ms-traffictypediagnostic: VI1PR04MB4430:|VI1PR04MB4430:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB44307A11C734F634C6F033BEEEF60@VI1PR04MB4430.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1107;
+x-forefront-prvs: 0345CFD558
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(376002)(346002)(396003)(39860400002)(136003)(199004)(186003)(44832011)(316002)(26005)(8936002)(8676002)(81156014)(54906003)(81166006)(5660300002)(7416002)(110136005)(71200400001)(2906002)(66556008)(7696005)(6506007)(66446008)(53546011)(76116006)(64756008)(478600001)(66946007)(55016002)(52536014)(91956017)(86362001)(66476007)(33656002)(4326008)(9686003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4430;
+ H:VI1PR04MB6941.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: lho5ObqdQ9QumK0hbpy8nzcTQp5OPuBIJTujmOjVNxDEWd6lzs41w1RGDbkUutxi9cyjGkQmvbqavLrG0ZFKEf1OJtzbqAyC+Tm51GbMRDSCmskHtf4816W6E84NDzgpYGoFI0WqzhnyAGRKG40QO+3rlUlFsc2u9oLV3R/E1fjDQrefk/yJuHuQiST6Xcbe1taFMmHojvg6lJBHSnQqporNf/cPzvzCafuLvqco+N1Q7PVfGe9LxXoqZ6Tx/0u6mn9KPenRUSEkoA8op5RiIRxnLekC+ZGkJvRAAv+w7TopQbp3Y3HdjiaXJJ0Mv8etDyO7XEIQIsNl2ZYu5ze2YSWFyEcvhSWGUKNWQTruQ6JPtrH+t9tg9ATOveU0xXx/Ci2AJUqWr++fxML81B64BXUNKm175C6ej/xpgj4ceoMpL98Dw6xxUJDjgto3OgL2
+x-ms-exchange-antispam-messagedata: YMkPkaOe5AdkRaTySb+dJSfCThH+oCTZREqNFaoXUeqjzIqFMQqz0hs/Ekdef8LXzFG4NldAGPnTh7HHcDoadaFxtRX4i43hdF9TpYv2etfpUkjwJvVzSTKFJvn/Jil3boiVhrCUjpSgIOqdalepGQ==
 MIME-Version: 1.0
-X-Originating-IP: [10.25.255.1]
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 782aa1a2-dee5-4b89-fb80-08d7caa8f2c9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 19:25:27.1351 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: kjL3YHcLIkDqxJxcwD9HHp5SJiGzq0xdz9KuNyGvNhoQU2FzRstowWWjUFlSCfsnM+bmO5UPPvWIXDKYpXqWHQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4430
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_122126_883014_6C63C84E 
-X-CRM114-Status: GOOD (  21.77  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200317_122534_480351_2D569DF4 
+X-CRM114-Status: GOOD (  21.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.57.33 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.76 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,427 +123,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Hilber <peter.hilber@opensynergy.com>,
- virtio-dev@lists.oasis-open.org, Souvik.Chakravarty@arm.com,
- linux-arm-kernel@lists.infradead.org, Sudeep.Holla@arm.com
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stefan Agner <stefan@agner.ch>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Franck Lenormand <franck.lenormand@nxp.com>,
+ Alexander Potapenko <glider@google.com>, dl-linux-imx <linux-imx@nxp.com>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>,
+ "kasan-dev@googlegroups.com" <kasan-dev@googlegroups.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch proposes a new virtio device for the Arm SCMI protocol.
+On 2020-02-27 3:48 AM, Stephen Boyd wrote:
+> Quoting Leonard Crestez (2020-02-25 11:52:11)
+>> On 25.02.2020 18:52, Stephen Boyd wrote:
+>>> Quoting Leonard Crestez (2020-02-20 08:29:32)
+>>>> The imx SC api strongly assumes that messages are composed out of
+>>>> 4-bytes words but some of our message structs have odd sizeofs.
+>>>>
+>>>> This produces many oopses with CONFIG_KASAN=y.
+>>>>
+>>>> Fix by marking with __aligned(4).
+>>>>
+>>>> Fixes: fe37b4820417 ("clk: imx: add scu clock common part")
+>>>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+>>>> ---
+>>>>    drivers/clk/imx/clk-scu.c | 6 +++---
+>>>>    1 file changed, 3 insertions(+), 3 deletions(-)
+>>>>
+>>>> diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
+>>>> index fbef740704d0..3c5c42d8833e 100644
+>>>> --- a/drivers/clk/imx/clk-scu.c
+>>>> +++ b/drivers/clk/imx/clk-scu.c
+>>>> @@ -41,16 +41,16 @@ struct clk_scu {
+>>>>    struct imx_sc_msg_req_set_clock_rate {
+>>>>           struct imx_sc_rpc_msg hdr;
+>>>>           __le32 rate;
+>>>>           __le16 resource;
+>>>>           u8 clk;
+>>>> -} __packed;
+>>>> +} __packed __aligned(4);
+>>>
+>>> Sorry, this still doesn't make sense to me. Having __aligned(4) means
+>>> that the struct is placed on the stack at some alignment, great, but it
+>>> still has __packed so the sizeof this struct is some odd number like 11.
+>>> If this struct is the last element on the stack it will end at some
+>>> unaligned address and the mailbox code will read a few bytes beyond the
+>>> end of the stack.
+>>
+>> I checked again and marking the struct with __aligned(4) makes it have
+>> sizeof == 12 as intended. It was 11 before.
+>>
+>>       static_assert(sizeof(struct imx_sc_msg_req_set_clock_rate) == 12);
+>>
+>> After reading through your email and gcc docs again I'm not sure if this
+>> portable/reliable this is but as far as I understand "sizeof" needs to
+>> account for alignment. Or is this just an accident with my compiler?
+>>
+>> Marking a structure both __packed and __aligned(4) means that __packed
+>> only affects internal struct member layout but sizeof is still rounded
+>> up to a multiple of 4:
+>>
+>> struct test {
+>>          u8      a;
+>>          u16     b;
+>> } __packed __aligned(4);
+>>
+>> static_assert(sizeof(struct test) == 4);
+>> static_assert(offsetof(struct test, a) == 0);
+>> static_assert(offsetof(struct test, b) == 1);
+>>
+>> This test is not realistic because I don't think SCU messages have any
+>> such oddly-aligned members.
+>>
+> 
+> I'm not really sure as I'm not a linker expert. I'm just especially wary
+> of using __packed or __aligned attributes because they silently generate
+> code that is usually inefficient. This is why we typically do lots of
+> shifting and masking in the kernel, so that we can easily see how
+> complicated it is to pack bits into place. Maybe it makes sense to get
+> rid of the structs entirely and pack the bits into __le32 arrays of
+> varying length. Then we don't have to worry about packed or aligned or
+> what the compiler will do and we can easily be confident that we've put
+> the bits in the right place in each u32 that is eventually written to
+> the mailbox register space.
 
-The device provides a simple transport for the Arm SCMI protocol[1]. The
-*S*ystem *C*ontrol and *M*anagement *I*nterface protocol allows speaking
-to system controllers that allow orchestrating things like power
-management, system state management and sensor access. The SCMI protocol
-is used on SoCs where multiple cores and co-processors need access to
-these resources.
+These message structs are not as complicated as hardware register, for 
+example everything is always on a byte border.
 
-The virtio transport allows making use of this protocol in virtualized
-systems.
+In older versions of the imx internal tree SC messaging is done by 
+packing into arrays through a layer of generated code which looks like this:
 
-[1] https://developer.arm.com/docs/den0056/b
+          RPC_VER(&msg) = SC_RPC_VERSION;
+          RPC_SVC(&msg) = U8(SC_RPC_SVC_MISC);
+          RPC_FUNC(&msg) = U8(MISC_FUNC_SET_CONTROL);
+          RPC_U32(&msg, 0U) = U32(ctrl);
+          RPC_U32(&msg, 4U) = U32(val);
+          RPC_U16(&msg, 8U) = U16(resource);
+          RPC_SIZE(&msg) = 4U;
 
-Signed-off-by: Peter Hilber <peter.hilber@opensynergy.com>
----
-Changes for v3:
+The RPC_U32/U16 macros look like this:
 
-- Add tentative device ID 32 in device section.
+#define RPC_I32(MESG, IDX)      ((MESG)->DATA.i32[(IDX) / 4U])
+#define RPC_I16(MESG, IDX)      ((MESG)->DATA.i16[(IDX) / 2U])
+#define RPC_I8(MESG, IDX)       ((MESG)->DATA.i8[(IDX)])
+#define RPC_U32(MESG, IDX)      ((MESG)->DATA.u32[(IDX) / 4U])
+#define RPC_U16(MESG, IDX)      ((MESG)->DATA.u16[(IDX) / 2U])
+#define RPC_U8(MESG, IDX)       ((MESG)->DATA.u8[(IDX)])
 
-- Remove redundant 'len' fields. The length of the payload fields can
-already be deduced from the generic virtqueue 'len' fields. Therefore,
-remove the redundant device-specific 'len' fields.
+and the message struct itself has a big union for the data:
 
-- Reword requirement that driver must not put too small buffers into
-eventq.
+typedef struct {
+          uint8_t version;
+          uint8_t size;
+          uint8_t svc;
+          uint8_t func;
+          union {
+                  int32_t i32[(SC_RPC_MAX_MSG - 1U)];
+                  int16_t i16[(SC_RPC_MAX_MSG - 1U) * 2U];
+                  int8_t i8[(SC_RPC_MAX_MSG - 1U) * 4U];
+                  uint32_t u32[(SC_RPC_MAX_MSG - 1U)];
+                  uint16_t u16[(SC_RPC_MAX_MSG - 1U) * 2U];
+                  uint8_t u8[(SC_RPC_MAX_MSG - 1U) * 4U];
+          } DATA;
+} sc_rpc_msg_t;
 
-Changes for v2:
+This approach is very verbose to the point of being unreadable I think 
+it's much to message structs instead. Compiler struct layout rules are 
+not really all that complicated and casting binary data as structs is 
+very common in areas such as networking. This approach is also used by 
+other firmware interfaces like TI sci and nvidia bpmp.
 
-- CC virtio-dev list.
-- Define size of erroneous delayed/not delayed responses.
-- Use correct long name for SCMI.
-- Remove restriction to `embedded' in commit message.
-- Add motivation for conceptual per-message-channels.
-- Device may now just drop notification if no buffers are available.
+imx8 currently has manually written message structs, it's unfortunate 
+that a bug was found and fixing required a scattering patches in 
+multiple subsystems. Perhaps a better solution would be to centralize 
+all structs in a single header similar to drivers/firmware/ti_sci.h?
 
-OpenSynergy has a prototype implementation (without device specific
-features so far), and plans to upstream the Linux kernel driver.
+In order to ensrue that there are no issues specific to the compile 
+version perhaps a bunch of static_assert statements could be added to 
+check that sizeof and offset are as expected?
 
-The PDF output is available at [2].
+---------------------------------
 
-[2] https://share.mailbox.org/ajax/share/056076e70571144f50c4ca7571144b319a1d7236dda1cd3b/1/8/MzQ/MzQvMQ
+As far as I can tell the issue KASAN warns about can be simplified to this:
 
- conformance.tex  |  27 ++++-
- content.tex      |   1 +
- introduction.tex |   3 +
- virtio-scmi.tex  | 269 +++++++++++++++++++++++++++++++++++++++++++++++
- 4 files changed, 297 insertions(+), 3 deletions(-)
- create mode 100644 virtio-scmi.tex
+struct __packed badpack {
+     u32     a;
+     u16     b;
+     u8      c;
+};
 
-diff --git a/conformance.tex b/conformance.tex
-index b6fdec0..99f037a 100644
---- a/conformance.tex
-+++ b/conformance.tex
-@@ -15,7 +15,7 @@ \section{Conformance Targets}\label{sec:Conformance / Conformance Targets}
-   \begin{itemize}
-     \item Clause \ref{sec:Conformance / Driver Conformance}.
-     \item One of clauses \ref{sec:Conformance / Driver Conformance / PCI Driver Conformance}, \ref{sec:Conformance / Driver Conformance / MMIO Driver Conformance} or \ref{sec:Conformance / Driver Conformance / Channel I/O Driver Conformance}.
--    \item One of clauses \ref{sec:Conformance / Driver Conformance / Network Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Block Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Console Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Entropy Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Traditional Memory Balloon Driver Conformance}, \ref{sec:Conformance / Driver Conformance / SCSI Host Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Input Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Crypto Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Socket Driver Conformance} or \ref{sec:Conformance / Driver Conformance / IOMMU Driver Conformance}.
-+    \item One of clauses \ref{sec:Conformance / Driver Conformance / Network Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Block Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Console Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Entropy Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Traditional Memory Balloon Driver Conformance}, \ref{sec:Conformance / Driver Conformance / SCSI Host Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Input Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Crypto Driver Conformance}, \ref{sec:Conformance / Driver Conformance / Socket Driver Conformance}, \ref{sec:Conformance / Driver Conformance / IOMMU Driver Conformance} or \ref{sec:Conformance / Driver Conformance / SCMI Driver Conformance}.
-     \item Clause \ref{sec:Conformance / Legacy Interface: Transitional Device and Transitional Driver Conformance}.
-   \end{itemize}
- \item[Device] A device MUST conform to four conformance clauses:
-@@ -32,8 +32,9 @@ \section{Conformance Targets}\label{sec:Conformance / Conformance Targets}
- \ref{sec:Conformance / Device Conformance / Input Device Conformance}, 
- \ref{sec:Conformance / Device Conformance / Crypto Device Conformance}, 
- \ref{sec:Conformance / Device Conformance / Socket Device Conformance}, 
--\ref{sec:Conformance / Device Conformance / RPMB Device Conformance} or 
--\ref{sec:Conformance / Device Conformance / IOMMU Device Conformance}.
-+\ref{sec:Conformance / Device Conformance / RPMB Device Conformance},
-+\ref{sec:Conformance / Device Conformance / IOMMU Device Conformance} or
-+\ref{sec:Conformance / Device Conformance / SCMI Device Conformance}.
-     \item Clause \ref{sec:Conformance / Legacy Interface: Transitional Device and Transitional Driver Conformance}.
-   \end{itemize}
- \end{description}
-@@ -220,6 +221,15 @@ \section{Conformance Targets}\label{sec:Conformance / Conformance Targets}
- \item \ref{drivernormative:Device Types / IOMMU Device / Device operations / Fault reporting}
- \end{itemize}
- 
-+\conformance{\subsection}{SCMI Driver Conformance}\label{sec:Conformance / Driver Conformance / SCMI Driver Conformance}
-+
-+An SCMI driver MUST conform to the following normative statements:
-+
-+\begin{itemize}
-+\item \ref{drivernormative:Device Types / SCMI Device / Device Operation / cmdq Operation}
-+\item \ref{drivernormative:Device Types / SCMI Device / Device Operation / Setting Up eventq Buffers}
-+\end{itemize}
-+
- \conformance{\section}{Device Conformance}\label{sec:Conformance / Device Conformance}
- 
- A device MUST conform to the following normative statements:
-@@ -408,6 +418,17 @@ \section{Conformance Targets}\label{sec:Conformance / Conformance Targets}
- \item \ref{devicenormative:Device Types / IOMMU Device / Device operations / Fault reporting}
- \end{itemize}
- 
-+\conformance{\subsection}{SCMI Device Conformance}\label{sec:Conformance / Device Conformance / SCMI Device Conformance}
-+
-+An SCMI device MUST conform to the following normative statements:
-+
-+\begin{itemize}
-+\item \ref{devicenormative:Device Types / SCMI Device / Feature bits}
-+\item \ref{devicenormative:Device Types / SCMI Device / Device Operation / cmdq Operation}
-+\item \ref{devicenormative:Device Types / SCMI Device / Device Operation / eventq Operation}
-+\item \ref{devicenormative:Device Types / SCMI Device / Device Operation / Shared Memory Operation}
-+\end{itemize}
-+
- \conformance{\section}{Legacy Interface: Transitional Device and Transitional Driver Conformance}\label{sec:Conformance / Legacy Interface: Transitional Device and Transitional Driver Conformance}
- A conformant implementation MUST be either transitional or
- non-transitional, see \ref{intro:Legacy
-diff --git a/content.tex b/content.tex
-index b91a132..6c97f04 100644
---- a/content.tex
-+++ b/content.tex
-@@ -6062,6 +6062,7 @@ \subsubsection{Legacy Interface: Framing Requirements}\label{sec:Device
- \input{virtio-fs.tex}
- \input{virtio-rpmb.tex}
- \input{virtio-iommu.tex}
-+\input{virtio-scmi.tex}
- 
- \chapter{Reserved Feature Bits}\label{sec:Reserved Feature Bits}
- 
-diff --git a/introduction.tex b/introduction.tex
-index 33da3ec..3a2ee80 100644
---- a/introduction.tex
-+++ b/introduction.tex
-@@ -66,6 +66,9 @@ \section{Normative References}\label{sec:Normative References}
-         \phantomsection\label{intro:eMMC}\textbf{[eMMC]} &
-         eMMC Electrical Standard (5.1), JESD84-B51,
-         \newline\url{http://www.jedec.org/sites/default/files/docs/JESD84-B51.pdf}\\
-+	\phantomsection\label{intro:SCMI}\textbf{[SCMI]} &
-+	Arm System Control and Management Interface, DEN0056,
-+	\newline\url{https://developer.arm.com/docs/den0056/b}, version B and any future revisions\\
- 
- \end{longtable}
- 
-diff --git a/virtio-scmi.tex b/virtio-scmi.tex
-new file mode 100644
-index 0000000..c728741
---- /dev/null
-+++ b/virtio-scmi.tex
-@@ -0,0 +1,269 @@
-+\section{SCMI Device}\label{sec:Device Types / SCMI Device}
-+
-+An SCMI device implements the Arm System Control and Management
-+Interface (SCMI). SCMI can be used for sensors, power state management,
-+clock management and performance management among other things.
-+
-+This section relies on definitions from the \hyperref[intro:SCMI]{SCMI
-+specification}.
-+
-+Virtio SCMI device and driver are mapped to SCMI platform and agent
-+respectively. The device is visible to a particular SCMI agent. The
-+device allows a guest to communicate as an SCMI agent using one or more
-+SCMI protocols. The default SCMI protocols are defined in the
-+\hyperref[intro:SCMI]{SCMI specification}. Virtio provides a transport
-+medium for exchanging SCMI messages between the SCMI agent and platform.
-+The virtio SCMI transport allows the queueing of multiple messages and
-+responses.
-+
-+SCMI FastChannels are not supported.
-+
-+\subsection{Device ID}\label{sec:Device Types / SCMI Device / Device ID}
-+
-+32
-+
-+\subsection{Virtqueues}\label{sec:Device Types / SCMI Device / Virtqueues}
-+
-+\begin{description}
-+\item[0] cmdq
-+\item[1] eventq
-+\end{description}
-+
-+The cmdq is used by the driver to send commands to the device. The
-+device replies with responses (not delayed responses) over the cmdq.
-+
-+The eventq is used by the device to send notifications and delayed
-+responses. The eventq only exists if VIRTIO_SCMI_F_P2A_CHANNELS was
-+negotiated.
-+
-+\subsection{Feature bits}\label{sec:Device Types / SCMI Device / Feature bits}
-+
-+\begin{description}
-+\item[VIRTIO_SCMI_F_P2A_CHANNELS (0)] Device implements some SCMI
-+notifications, or delayed responses.
-+\item[VIRTIO_SCMI_F_SHARED_MEMORY (1)] Device implements any SCMI
-+statistics shared memory region.
-+\end{description}
-+
-+VIRTIO_SCMI_F_P2A_CHANNELS is used to determine the existence of the
-+eventq. The eventq is required for SCMI notifications and delayed
-+responses.
-+
-+VIRTIO_SCMI_F_SHARED_MEMORY is used to determine whether the device
-+provides any SCMI statistics shared memory region. SCMI statistics
-+shared memory regions are defined by some SCMI protocols.
-+
-+The SCMI protocols provide the PROTOCOL_MESSAGE_ATTRIBUTES commands to
-+inquire about the particular SCMI notifications and delayed responses
-+implemented by the device. The SCMI protocols provide additional
-+commands to detect other features implemented by the device.
-+
-+\devicenormative{\subsubsection}{Feature bits}{Device Types / SCMI Device / Feature bits}
-+
-+The device MUST offer VIRTIO_SCMI_F_P2A_CHANNELS if the device can
-+implement at least one SCMI notification, or delayed response.
-+
-+The device MUST offer VIRTIO_SCMI_F_SHARED_MEMORY if the device can
-+implement at least one SCMI statistics shared memory region.
-+
-+\subsection{Device configuration layout}\label{sec:Device Types / SCMI Device / Device configuration layout}
-+
-+There is no configuration data for the device.
-+
-+\subsection{Device Initialization}\label{sec:Device Types / SCMI Device / Device Initialization}
-+
-+The
-+\hyperref[sec:General Initialization And Device Operation / Device Initialization]{general
-+requirements on device initialization} apply.
-+
-+\subsection{Device Operation}\label{sec:Device Types / SCMI Device / Device Operation}
-+
-+The SCMI transport used for the device puts each SCMI message into a
-+dedicated virtio buffer. The driver uses the cmdq for transmitting SCMI
-+commands and receiving the corresponding SCMI responses. The device uses
-+the eventq for transmitting SCMI notifications and delayed responses.
-+Each message includes an SCMI protocol header and payload, as defined by
-+the \hyperref[intro:SCMI]{SCMI specification}.
-+
-+\subsubsection{cmdq Operation}\label{sec:Device Types / SCMI Device / Device Operation / cmdq Operation}
-+
-+Each buffer in the cmdq holds a single SCMI command once the buffer has
-+been made available. When the buffer has been marked as used, it
-+contains the SCMI response. An arbitrary number of such SCMI messages
-+can be in transit at the same time. Conceptually, each SCMI message in
-+the cmdq uses its own SCMI A2P (agent to platform) channel.
-+
-+The SCMI response is in the same virtio buffer as the corresponding SCMI
-+command. The response contains the return values which SCMI specifies
-+for each command, whether synchronous or asynchronous. Delayed responses
-+are distinct SCMI messages transmitted over the eventq.
-+
-+Buffers in the cmdq contain both the request and the response. A request
-+has the following layout:
-+
-+\begin{lstlisting}
-+struct virtio_scmi_request {
-+        le32 hdr;
-+        u8 params[<actual parameters size>];
-+};
-+\end{lstlisting}
-+
-+The virtio_scmi_request fields are interpreted as follows:
-+
-+\begin{description}
-+\item[\field{hdr}] (device-readable) contains the SCMI message header
-+\item[\field{params}] (device-readable) comprises the SCMI message
-+parameters
-+\end{description}
-+
-+A cmdq response has the following layout:
-+
-+\begin{lstlisting}
-+struct virtio_scmi_response {
-+        le32 hdr;
-+        u8 ret_values[<actual return values size>];
-+};
-+\end{lstlisting}
-+
-+The virtio_scmi_response fields are interpreted as follows:
-+
-+\begin{description}
-+\item[\field{hdr}] (device-writable) contains the SCMI message header
-+\item[\field{ret_values}] (device-writable) comprises the SCMI message
-+return values
-+\end{description}
-+
-+If VIRTIO_SCMI_F_P2A_CHANNELS was not negotiated, the device responds to
-+SCMI commands as if no SCMI notifications or delayed responses were
-+implemented.
-+
-+\devicenormative{\paragraph}{cmdq Operation}{Device Types / SCMI Device / Device Operation / cmdq Operation}
-+
-+The device MAY process available commands out of order and in parallel.
-+
-+The device MUST process all available commands eventually, even in the
-+case of bursts of multiple command messages.
-+
-+If the \field{status} field in the \field{virtio_scmi_response}
-+\field{ret_values} has a value other than SUCCESS, the device MUST set
-+the size of \field{ret_values} to the size of the \field{status} field.
-+
-+If the driver requests an SCMI notification or a delayed response and
-+there are currently NOT enough available buffers in the eventq, the
-+device SHOULD still return SCMI status code SUCCESS.
-+
-+If VIRTIO_SCMI_F_P2A_CHANNELS was not negotiated, the device MUST deny
-+any request for an SCMI notification or a delayed response by returning
-+SCMI status code NOT_SUPPORTED.
-+
-+If VIRTIO_SCMI_F_P2A_CHANNELS was not negotiated, the device MUST NOT
-+indicate in the PROTOCOL_MESSAGE_ATTRIBUTES return values that any SCMI
-+notification, or delayed response, is implemented.
-+
-+\drivernormative{\paragraph}{cmdq Operation}{Device Types / SCMI Device / Device Operation / cmdq Operation}
-+
-+Before sending a command, the driver MUST wait for responses to all
-+commands whose completion the driver considers prerequisites to
-+executing the command.
-+
-+With every command message, the driver MUST provide enough
-+device-writable memory to enable the device to return corresponding
-+return values.
-+
-+If VIRTIO_SCMI_F_P2A_CHANNELS was not negotiated, the driver MUST NOT
-+request any SCMI notification, nor any delayed response.
-+
-+\subsubsection{Setting Up eventq Buffers}
-+
-+The driver has to populate the eventq before the device can use it.
-+
-+\drivernormative{\paragraph}{Setting Up eventq Buffers}{Device Types / SCMI Device / Device Operation / Setting Up eventq Buffers}
-+
-+If VIRTIO_SCMI_F_P2A_CHANNELS was negotiated, the driver SHOULD populate
-+the eventq with buffers.
-+
-+The driver MUST NOT put device-readable descriptors into the eventq.
-+
-+The driver MUST NOT put into the eventq any buffer which is smaller than
-+the largest SCMI P2A (platform to agent) message which the driver will
-+request.
-+
-+\subsubsection{eventq Operation}
-+
-+Each buffer in the eventq holds (once the buffer is marked as used)
-+either a single SCMI notification, or a single SCMI delayed response. An
-+arbitrary number of such SCMI messages can be in transit at the same
-+time. Conceptually, each SCMI message transmitted over the eventq uses
-+its own SCMI P2A (platform to agent) channel. Buffers in the eventq have
-+the following layout:
-+
-+\begin{lstlisting}
-+struct virtio_scmi_event_msg {
-+        /* start of device-writable data */
-+        le32 hdr;
-+        u8 payload[<actual payload size>];
-+};
-+\end{lstlisting}
-+
-+\begin{description}
-+\item[\field{hdr}] (device-writable) contains the SCMI message header
-+\item[\field{payload}] (device-writable) comprises the SCMI message
-+payload
-+\end{description}
-+
-+\devicenormative{\paragraph}{eventq Operation}{Device Types / SCMI Device / Device Operation / eventq Operation}
-+
-+If the device intends to send a notification and there are no available
-+buffers in the eventq, the device MAY drop the notification, or send a
-+corresponding notification later, once enough buffers become available.
-+
-+The device MAY send the notification later if the events which cause the
-+notification take place in quick succession.
-+
-+If the device sends the notification later, the device MAY send the
-+notification with updated data, unless the specific SCMI protocol
-+disallows this.
-+
-+If the device intends to send a notification and there are available
-+buffers, but one of the buffers is too small to fit the notification,
-+the device MAY omit the notification.
-+
-+If the device intends to send a delayed response and there are no
-+available buffers in the eventq, the device MUST send the corresponding
-+delayed response once enough buffers become available.
-+
-+If the \field{status} field in a delayed response \field{payload} has a
-+value other than SUCCESS, the device MUST set the size of
-+\field{payload} to the size of the \field{status} field.
-+
-+\subsubsection{Shared Memory Operation}
-+
-+Various SCMI protocols define statistics shared memory regions (for
-+statistics and sensor values).
-+
-+\devicenormative{\paragraph}{Shared Memory Operation}{Device Types / SCMI Device / Device Operation / Shared Memory Operation}
-+
-+If VIRTIO_SCMI_F_SHARED_MEMORY was negotiated, the device MAY implement
-+an SCMI statistics shared memory region using a virtio shared memory
-+region.
-+
-+If the device implements a shared memory region, the device MUST assign
-+the corresponding shmid as per the following table:
-+
-+\begin{tabular}{|l|l|}
-+\hline
-+SCMI statistics shared memory region & Virtio shmid \\
-+\hline \hline
-+Power state statistics shared memory region & 1 \\
-+\hline
-+Performance domain statistics shared memory region & 2 \\
-+\hline
-+Sensor Values Shared Memory & 3 \\
-+\hline
-+Reserved for future use & 4 to 0x7F \\
-+\hline
-+Vendor-specific statistics shared memory regions & 0x80 to 0xFF \\
-+\hline
-+Reserved for future use & 0x100 and greater \\
-+\hline
-+\end{tabular}
--- 
-2.20.1
+static_assert(sizeof(struct badpack) == 7);
 
+static void func(void *x)
+{
+     u32* arr = (u32*)x;
+     arr[0] = 0x11111111;
+     arr[1] = 0x22222222;
+}
+
+static int hello(void)
+{
+     struct badpack s;
+     u8 x = 0x33;
+
+     printk("&s=%px &x=%px\n", &s, &x);
+     func(&s);
+     // x could be overwritten here, depending on stack layout.
+     BUG_ON(x != 0x33);
+
+     return 0;
+}
+
+Adding __aligned(4) bumps struct size to 8 and avoids the issue
+
+Added KASAN maintainers to check if this is a valid fix.
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
