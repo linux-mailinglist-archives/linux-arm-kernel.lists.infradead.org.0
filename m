@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEDF2188FDD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 21:55:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D59B5188FDF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 21:56:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tEcO/73tUmpbLovXnCr2xd0c5lXhkiQansIVkLRyDuk=; b=jyPoMqoFPulDkh
-	VYZrmmuAaz5fZn4GA2YdRHLrWUBU3yGoTT9Xos0//yKxTPBlIVKxTFY0KDrcimrlyXBPM6qzD4eC6
-	1XsFkioyboH8MM9SIZ3lNqXYwOYvfdF3CFduOe1ZJgy0S+NtllclC9OVJz+UFx98jwREIWQJ4rssg
-	BJIx/Mcp01xMxSnMl3ufEXIM4wsctD7UBIzuSVeGy/8sBwdNaqjUw0hJwh7WkYSt5ZXR0fJiMSNxr
-	5Y3UJCvL+gHuPPNqXg9HXLy2GcUQlEG94dfAZXmXgEBlaZvu0GLklwaZV92f16zSa8zAieS31+fEU
-	wq+AYXvsKEf2fnvF+eyA==;
+	List-Owner; bh=rGR3a8UAZqo8XY83ifZ99WgXSFcWZ3YcGqSrwA2mn9Q=; b=WVSKTCzT6aiVPj
+	pcaWFUxepxkDc8bUjoISKDztsqZonBjRyUXPhHLihYx9vVw9F9SXjos2eIg8du9v1Sn5cx7CRfnlI
+	vJDJaCTFuu678ZW8+cDqygPj8UUFUcuxjgFqlnpiwcvt/lbrZe1TNnq2hDeIvk2YVLcWYEYaBz9Xy
+	CIUHWvtUbRn58dL8eACw5fnVlfcFzO2w3icX/oUIDhQbz+OZn2c3cjZEq+/lZ3HpQrFGVUG09AJFl
+	8M441Ya9lIIeGwhHIjxgXMt8SEHfA5LdlmkOslgoF66PvymTB271ULWFzg5TEoveUi051YZgkRhQG
+	BYEW3PG82Ld0l2eztJJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJFf-0004h6-Rm; Tue, 17 Mar 2020 20:55:51 +0000
+	id 1jEJG3-0005Az-Ml; Tue, 17 Mar 2020 20:56:15 +0000
 Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJAy-0007uF-R1
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 20:51:02 +0000
+ id 1jEJAz-0007uq-Mw
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 20:51:03 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id D3EC623EC0;
- Tue, 17 Mar 2020 21:50:58 +0100 (CET)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 778A223EC2;
+ Tue, 17 Mar 2020 21:50:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
  s=mail2016061301; t=1584478259;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=NUw0gx6+My8N/12AqVTkfCdlDH/GWGQWdSq0OF6q+Z4=;
- b=RmRSryiD7nyUD8UE2wAKcFtIWF5WUpVw4WFwcZflNUSJFGu8RliszA0kcspDjBcJAoyYV3
- yBSD/Y0nrG4L1i+PHAHy/fIEOxtY6+kq+RJTQRTroJqw1v6r0KIFCBejV1acMU2Xl1QysL
- /d5nAGhfW0fZrM+yCEQigBnbwgLFTkg=
+ bh=FEFHFIMJWfw1b5h2UikI3VWi/Se8syLTpHGjAqXEjxw=;
+ b=W/xx59EqowcJaM5zDZqDbsYGs0J6Sb0FGG3HsIWHti81UDmiSfvcxz/JkeBge3oa1W2KNF
+ i6tHeTyg56CijHUPKMCOoI9R3EoLTHpZ/c5Psb2tbIxwwfyaiR4sIbKBMAu8XruRxbtNDe
+ kv/eWhdiQydgK7hVmsThH/fF5yKX69g=
 From: Michael Walle <michael@walle.cc>
 To: linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 16/18] arm64: dts: freescale: sl28: map GPIOs to input events
-Date: Tue, 17 Mar 2020 21:50:15 +0100
-Message-Id: <20200317205017.28280-17-michael@walle.cc>
+Subject: [PATCH 17/18] arm64: dts: freescale: sl28: enable LED support
+Date: Tue, 17 Mar 2020 21:50:16 +0100
+Message-Id: <20200317205017.28280-18-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200317205017.28280-1-michael@walle.cc>
 References: <20200317205017.28280-1-michael@walle.cc>
@@ -57,12 +57,12 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: D3EC623EC0
+X-Rspamd-Queue-Id: 778A223EC2
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  FREEMAIL_ENVRCPT(0.00)[gmail.com]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.541];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.555];
  DKIM_SIGNED(0.00)[]; RCPT_COUNT_TWELVE(0.00)[22];
  MID_CONTAINS_FROM(1.00)[]; RCVD_COUNT_ZERO(0.00)[0];
  FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
@@ -71,9 +71,8 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_135101_164377_E81EAF05 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200317_135101_900615_A71EA168 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -116,67 +115,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have support for GPIO lines of the SMARC connector, map the
-sleep, power and lid switch signals to the corresponding keys using the
-gpio-keys and gpio-keys-polled drivers. The power and sleep signals have
-dedicated interrupts, thus we use these ones. The lid switch is just
-mapped to a GPIO input and needs polling.
+Now that we have support for GPIO lines of the SMARC connector, enable
+LED support on the KBox A-230-LS. There are two LEDs without fixed
+functions, one is yellow and one is green. Unfortunately, it is just one
+multi-color LED, thus while it is possible to enable both at the same
+time it is hard to tell the difference between "yellow only" and "yellow
+and green".
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- .../freescale/fsl-ls1028a-kontron-sl28.dts    | 32 +++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ .../fsl-ls1028a-kontron-kbox-a-230-ls.dts          | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-index b74d9ac0c388..f92a2b1b6628 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-@@ -9,6 +9,8 @@
- /dts-v1/;
- #include "fsl-ls1028a.dtsi"
- #include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
- 
- / {
- 	model = "Kontron SMARC-sAL28";
-@@ -22,6 +24,36 @@
- 		spi1 = &dspi2;
- 	};
- 
-+	buttons0 {
-+		compatible = "gpio-keys";
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+index 4b4cc6a1573d..d4ca12b140b4 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+@@ -16,6 +16,20 @@
+ 	model = "Kontron KBox A-230-LS";
+ 	compatible = "kontron,kbox-a-230-ls", "kontron,sl28-var4",
+ 		     "kontron,sl28", "fsl,ls1028a";
 +
-+		power-button {
-+			interrupts-extended = <&sl28cpld
-+					       4 IRQ_TYPE_EDGE_BOTH>;
-+			linux,code = <KEY_POWER>;
-+			label = "Power";
++	leds {
++		compatible = "gpio-leds";
++
++		user_yellow {
++			label = "s1914:yellow:user";
++			gpios = <&cpld_gpio0 0 0>;
 +		};
 +
-+		sleep-button {
-+			interrupts-extended = <&sl28cpld
-+					       5 IRQ_TYPE_EDGE_BOTH>;
-+			linux,code = <KEY_SLEEP>;
-+			label = "Sleep";
++		user_green {
++			label = "s1914:green:user";
++			gpios = <&cpld_gpio1 3 0>;
 +		};
 +	};
-+
-+	buttons1 {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <200>;
-+
-+		lid-switch {
-+			linux,input-type = <EV_SW>;
-+			linux,code = <SW_LID>;
-+			gpios = <&cpld_gpi 4 GPIO_ACTIVE_LOW>;
-+			label = "Lid";
-+		};
-+	};
-+
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
+ };
+ 
+ &enetc_mdio_pf3 {
 -- 
 2.20.1
 
