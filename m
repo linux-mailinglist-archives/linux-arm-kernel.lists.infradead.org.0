@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C93F188404
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:26:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AA52188406
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:26:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cp/d8H8RR2Y6nwPC07TOlwfXaQUoEBAQCyNyz+1+RBk=; b=ObOlFp3/mJkqr0
-	ymoV74ToFpINbk5OKIMsHVXe+DsE5ImNq7TauOEgI7wb1LPbIyKRysVwg+II40mU67MIGnKlR5bjN
-	J93DQBHi0YYEolYJbgT21H3bfFAwNzXDo2n/uec1q3nFxoYScjhk9wZY/aaRM+OLG15zn5MAxJI99
-	W6+GHZdMK2foEUH0xn4XIIHxNrCBS8nyYsqzWuCxbTYPp7A+uHkYli2f5A/AnQDqJ5ucqERCiVGHM
-	tvKGciTdNNsAgmggJONVA9DrVXkOu3s0AHAgPAOgAWaUKRdp2l1ZDasutuW7iPud/IOWOrZ9qcTgE
-	7hNDGCAppaUOkXmUi6aA==;
+	List-Owner; bh=7+xOM4XnWHAJ627cNgYbegcrwTXBvfKjBbuoGpEU33o=; b=g/hl9j8dWso/Ev
+	V3iQDfODEZz7cv9op9TZJ9Dc2xikHR1ODacUsVVnHDu937IJeR1mwjujg1/OBrrxGo9wVnKLC8E6X
+	l/kdKIF3mRnDk4Qw24uUG/rvOZteByZM+Ss4Y9dxJ4xlzK+3MpbTNiSurzBsALodmBrDnDCcqfO5P
+	jtDEze13MeTa0Waz+EueioUZFdzNDeaHVlylJVPhOArSSO+WHg0k/hD1tqKLADFVqMQvUAiAARa/a
+	IFf5zCuqkPFwwy7+SvlNvJHtwKPHu+mOc+O7pKmDF0u5cFhyFTmRs6V1uf+eJ96abbPXqRmGMhvGe
+	+MiKdrzZEs9g0gUqE1kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEBIL-0000sX-Ml; Tue, 17 Mar 2020 12:26:05 +0000
+	id 1jEBIZ-0001FP-Le; Tue, 17 Mar 2020 12:26:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEBFh-0005nW-3j
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:23:23 +0000
+ id 1jEBFk-0005qR-B4
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:23:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65EAE101E;
- Tue, 17 Mar 2020 05:23:20 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9217030E;
+ Tue, 17 Mar 2020 05:23:23 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 700573F534;
- Tue, 17 Mar 2020 05:23:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9BCD93F534;
+ Tue, 17 Mar 2020 05:23:20 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v4 09/26] linux/math64.h: Extract common header for vDSO
-Date: Tue, 17 Mar 2020 12:22:03 +0000
-Message-Id: <20200317122220.30393-10-vincenzo.frascino@arm.com>
+Subject: [PATCH v4 10/26] linux/time.h: Extract common header for vDSO
+Date: Tue, 17 Mar 2020 12:22:04 +0000
+Message-Id: <20200317122220.30393-11-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_052321_284732_5B14B1B8 
-X-CRM114-Status: GOOD (  15.76  )
+X-CRM114-CacheID: sfid-20200317_052324_497218_6EA485FC 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,84 +85,49 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split math64.h into linux and common headers to make the latter suitable
+Split time.h into linux and common headers to make the latter suitable
 for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/linux/math64.h | 20 +-------------------
- include/vdso/math64.h  | 24 ++++++++++++++++++++++++
- 2 files changed, 25 insertions(+), 19 deletions(-)
- create mode 100644 include/vdso/math64.h
+ include/linux/time.h |  5 +----
+ include/vdso/time.h  | 12 ++++++++++++
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+ create mode 100644 include/vdso/time.h
 
-diff --git a/include/linux/math64.h b/include/linux/math64.h
-index 65bef21cdddb..11a267413e8e 100644
---- a/include/linux/math64.h
-+++ b/include/linux/math64.h
-@@ -3,6 +3,7 @@
- #define _LINUX_MATH64_H
+diff --git a/include/linux/time.h b/include/linux/time.h
+index 8ef5e5cc9f57..4c325bf44ce0 100644
+--- a/include/linux/time.h
++++ b/include/linux/time.h
+@@ -111,9 +111,6 @@ static inline bool itimerspec64_valid(const struct itimerspec64 *its)
+  */
+ #define time_between32(t, l, h) ((u32)(h) - (u32)(l) >= (u32)(t) - (u32)(l))
  
- #include <linux/types.h>
-+#include <vdso/math64.h>
- #include <asm/div64.h>
+-struct timens_offset {
+-	s64	sec;
+-	u64	nsec;
+-};
++# include <vdso/time.h>
  
- #if BITS_PER_LONG == 64
-@@ -142,25 +143,6 @@ static inline s64 div_s64(s64 dividend, s32 divisor)
- 
- u32 iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder);
- 
--static __always_inline u32
--__iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder)
--{
--	u32 ret = 0;
--
--	while (dividend >= divisor) {
--		/* The following asm() prevents the compiler from
--		   optimising this loop into a modulo operation.  */
--		asm("" : "+rm"(dividend));
--
--		dividend -= divisor;
--		ret++;
--	}
--
--	*remainder = dividend;
--
--	return ret;
--}
--
- #ifndef mul_u32_u32
- /*
-  * Many a GCC version messes this up and generates a 64x64 mult :-(
-diff --git a/include/vdso/math64.h b/include/vdso/math64.h
+ #endif
+diff --git a/include/vdso/time.h b/include/vdso/time.h
 new file mode 100644
-index 000000000000..7da703ee5561
+index 000000000000..739f53cd2949
 --- /dev/null
-+++ b/include/vdso/math64.h
-@@ -0,0 +1,24 @@
++++ b/include/vdso/time.h
+@@ -0,0 +1,12 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __VDSO_MATH64_H
-+#define __VDSO_MATH64_H
++#ifndef __VDSO_TIME_H
++#define __VDSO_TIME_H
 +
-+static __always_inline u32
-+__iter_div_u64_rem(u64 dividend, u32 divisor, u64 *remainder)
-+{
-+	u32 ret = 0;
++#include <uapi/linux/types.h>
 +
-+	while (dividend >= divisor) {
-+		/* The following asm() prevents the compiler from
-+		   optimising this loop into a modulo operation.  */
-+		asm("" : "+rm"(dividend));
++struct timens_offset {
++	s64	sec;
++	u64	nsec;
++};
 +
-+		dividend -= divisor;
-+		ret++;
-+	}
-+
-+	*remainder = dividend;
-+
-+	return ret;
-+}
-+
-+#endif /* __VDSO_MATH64_H */
++#endif /* __VDSO_TIME_H */
 -- 
 2.25.1
 
