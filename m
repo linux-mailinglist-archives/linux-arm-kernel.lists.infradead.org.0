@@ -2,111 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD234187B1F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 09:26:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 181FC187B22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 09:26:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PuqfK3hG1Gy5pT5yv5AhkqYGJv9UQKgg+++c1YUFn4k=; b=Au8nGAQb2g3hay
-	Gj2lhSjXb3I7agBStI1Z30hRZXKcLb2j2SmFO0gdmpmGOiuxfVJLtAWp3ipYkvDkXhfpyVeD8GdwE
-	Pwt70TK/34KO/zKDt6jt37J3cb5gaAND0SI8+dmla8QVNOf1OtbdUyLHooOgmKwIsmAUaoDaktNxC
-	h7PaY8/EbR1gdVpxH43Ds6YONbXIQTSb6mlGkYsXFrvjDDFNQsDkDoIFN2+ZIbHa7l13WuhKhHGdt
-	jVHFCeo8gj5SszdETS9l6yB4rO5EQx0dP5G+Od7P5f1djoGdVz/LSXI29pxdGhZ3Jl/yj+TfUkHRc
-	0ctXUp0D34iZW8IDwNpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HpkPhAOTM9seklXnszYj5JoAZVeIe2kdME46wVhVV28=; b=LM3MYOrwyQRLQNmJ+xYXpFnDz
+	3YGKkUnlq9EBurHKozsPp31YiKIONVltY7w/McitxiS4z/EDRIBMsQ8ZT1REpyIMcXelklnCpLXvy
+	XJl3pwgJ8AhtSxr95l/XtnnhMkar06TtG45fvgay13cdxhlH/rsWEPDNcP32kUMWL6NJ8KCG3qn4m
+	F7cdcsdZ/coE1hnx03K9RMTmXpDQ2GtqPohMGTZ+lsFiUmW4p6msgSUvmI/vHpDwE4KoxziIlv4uT
+	0M/SrgOVO60UVZ4Ui4O1rzugwDfW2O2UXJrENiNpFzmyT+UcqALSlVy8xm2ga5FEUsAccU+hMeL4V
+	DRsoWdGNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE7YH-0001og-Ds; Tue, 17 Mar 2020 08:26:17 +0000
-Received: from mail-eopbgr1400099.outbound.protection.outlook.com
- ([40.107.140.99] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1jE7Ya-00024p-Gg; Tue, 17 Mar 2020 08:26:36 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE7Y9-0001nV-7y; Tue, 17 Mar 2020 08:26:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZKlyewpyvE9GtjntPtFDSAmOg9Dt7R857VqxRBkVf1WHk3pAhDb9M6C0IbYxE3cMJ1VDUvePk09EXAJURBRYNU6KIaowqx5GIWvx4E3y/wwX9OQgisSFAoy8Ryzr8QMA7OWkh8GCF1pI3GTmqaJSpbgBI1OCb+j0WzJL/Eza5TDtn7l/wmITpnSqwAqUaSj8DqMCT6uTG0N9ihg1sceTjefrkEShhnMzflxKcBQatLRBdtIymLKgWLZBMIx//I/sbBZ/+Q1PFfjlZdNnyLIjy3v6byuUs77R8dpljd50YSJk4QG8rlua7DGpazX0QOncyoHTizsDlMWgm9pi6FEuEA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BPmcOlrb+yKUg/weZuB9bCyL075WJYW3h6SzJ8jlSIk=;
- b=WGlJ8ZmwsbLq5axrJwKgbOagtPeVXEDrR76XfvKHT+mXUL5mKnfMAiEdNDuCpMp4vDHXiLxfbKL4w86fCcMX2Z9PXZLQaq8rB3AKVSizwhWWi6yqOZZ4u19V7MXGfWf42eS8G9bY6PyPU19gFVhC7ylzfuiox46CsfoTeNJP48nl8zkzOQbRX1FUQEmHIZJ3B65n6Tfaapr5IV63m/JlBL9sLnvBEm+VkhyGUBQyR+UsLPaalVMzDlsbr33DyKh3mLYtFwV11JjYI04CAGEXq24id9Me2BIGNtXn5OsuL/p6MYktbn+Si40hMdvsxtpftAaIj0DvFP2T/0rKXUmk/A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BPmcOlrb+yKUg/weZuB9bCyL075WJYW3h6SzJ8jlSIk=;
- b=Fs497W/R9O9rc8yQL1NiWI/xDXB1fCqswlATrATmnG+lJlq0Lj9UiFXEYeXblDV6h4c5DF/rotAY6/rOTQVyqeeM7bY5PSyIj0wcUsATtTiwYRjim34LrpT3/zLo6RMDsaAqIq6BJ14GdfBmk6+Lwj85VpAL1fUx18+eJW7ZNfM=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB3213.jpnprd01.prod.outlook.com (20.177.104.82) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.16; Tue, 17 Mar 2020 08:26:03 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
- 08:26:03 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: RE: [PATCH v5 5/7] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Topic: [PATCH v5 5/7] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Index: AQHV7k2mHX0IeWzmbUuqL/cidPXc16hMjZhw
-Date: Tue, 17 Mar 2020 08:26:03 +0000
-Message-ID: <TYAPR01MB454466B8451E3115D8A7DFB7D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200228154122.14164-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20200228154122.14164-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [124.210.22.195]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 40f9e958-e883-4431-5168-08d7ca4cd4d2
-x-ms-traffictypediagnostic: TYAPR01MB3213:|TYAPR01MB3213:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB3213D0CB519558870D56BF0FD8F60@TYAPR01MB3213.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2331;
-x-forefront-prvs: 0345CFD558
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39860400002)(396003)(366004)(136003)(346002)(376002)(199004)(33656002)(52536014)(8936002)(55016002)(5660300002)(4326008)(64756008)(9686003)(26005)(186003)(86362001)(2906002)(8676002)(66476007)(76116006)(66946007)(81156014)(66556008)(81166006)(66446008)(478600001)(7416002)(558084003)(6916009)(54906003)(7696005)(71200400001)(6506007)(55236004)(316002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB3213;
- H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: sUP2WRCSrmCT6B1OnBLOt5bGDTtxR/U5eJQcpyk8Pbwc1Fn4SEXwO/mXY0itdaDSRG5a+e+rBEp2rza2Auce5Vks63f1rew4j54hRB2PhTUhjPlMNh9btDY6jfWFwWWwjIGo4x9Wg6S7A/FECW2emIETwPqo/R3O7+43IixeHuv6JSj41hdkBz1e83b8sv/fVqtVqOodnHpXaH2DdOl2QziUF7t/PVZaH/dDoXvFTu3FkNFXAiB+i2+XhZS4nVh7yROYMeQ+IBhqxReFPTqqXjwSR2x6kkcxzaJbhA0+PbQQR8LOCHDqn+LuzvjZtXumjG3Qng0s7KtfDVlF5hPcIii4hbizIzw6VknTxdO6cQf7CmEBtR3YJ5UykwSbeL9PtldiBAabUD7RPZGYmmjewUxjuiGITfMOGzhMifgT45Df87HLrcnvy9fkGGpcQcaG
-x-ms-exchange-antispam-messagedata: nPz+KD4K74cmcwqaO3a0XU8r0gIQNhMLKks3YAtYZellB3K/NocEQobWkDJrmcN0fAMlGqDfDeWD3q5E19hYP9gmwhLVVT/+qsgfFBoXa3GWDD3Qelygo3oH0NfIEJXbsF+4TH8izMyDVyJ1QPQraA==
+ id 1jE7YP-0001zx-8I
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 08:26:27 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id 2F812898;
+ Tue, 17 Mar 2020 04:26:18 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 17 Mar 2020 04:26:18 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=QcFc4KFHqYr3j6lEXgOzci8FWvz
+ LuD5A0QcnYmW5GVM=; b=XdiHHj9IE6ynwv4pYKIa5SAZ7hLRjUmpRaF8KQM357V
+ /TgqObjBeaDpTCSOFyWqjQbwzD6e9/I0VUtliB3pH7uLgaooHJmfIXMcOjAVERtA
+ KuXoITkZ3db1CyM9RSITGWpVnuDYxuXcW+163w8M0Sph1TQ6G+bZZePQbP778f5V
+ jux/HgyNgBZCYFQ+l/eeJoTXjPBm4pn0RYUmki1/RfBWHM84A3qeC73tMeEpD6If
+ xfsQta6mDllyLtPaE/T3O8+dhPrB+pOLjOxZ0VAha7AciQ23Pkx5xs8FKP6f/uNr
+ Ph6y+RIxpaPVa18KcHzSK5D1o7D8rPSxx/h3cZSeVMg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=QcFc4K
+ FHqYr3j6lEXgOzci8FWvzLuD5A0QcnYmW5GVM=; b=lW2XSjJxD3uVq+Vl+xGJNU
+ DzINv0R9hushe8Uw+b6C+TtZiso3VaFkC26KNay/iliJv0N6JNHCpsV3gimlpOl1
+ 4qZnz+uGqQ2ZcHREMa4tYNc+W5GkQGyRSgdK65IPRh+Vap1ZynoI3AjZlH7ntomz
+ 7dmFpSeWDl2lYfyFyI/mcXz7fKvsV47Dnf2i+wQbNH5VcT1rTJm5HyzrWGaizgR9
+ dWva/wQ1fO2INn2FzzoCFAPeIEndS0a2LLs9G1E63AyzRK1fO/Q7XhkB1z2l6BPw
+ VNVF2QRsQlIQYkDJ6HDoMuBi91yCelx7RudXb+fIpJcVUSsK8r0gak+Bs6vDnaIw
+ ==
+X-ME-Sender: <xms:qYlwXqMyvTIm_YrroCNUMb4-HrjE6QdpsGphiPisxxQv9eNRuQ1fnw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudefgedguddukecutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enucfjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihi
+ mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkpheple
+ dtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgr
+ ihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:qYlwXtP2dT8YSXxS8TN47TF0jyGv6RuP_SYB_tXx9KFKlD7xkP_o2w>
+ <xmx:qYlwXsSWKkfW3nqL654wE-NAvvybM1thChKbB9kXc8IciYWzylffbg>
+ <xmx:qYlwXvBSRZQ2WEg9WIEfblYxPw5CWy_PlJ2duMP7Fr5eNrGkgQJGRw>
+ <xmx:qYlwXv9cHa6YeTLFuFYDwJ4Df8XH1LQCACk9691bM0nGDYcC3vwXsg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1CB54328005A;
+ Tue, 17 Mar 2020 04:26:17 -0400 (EDT)
+Date: Tue, 17 Mar 2020 09:26:15 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH] ARM: dts: sunxi: Fix dtc 'dma-ranges' warnings
+Message-ID: <20200317082615.2p32qzgvzs6d7ddk@gilmour.lan>
+References: <20200313154701.948-1-robh@kernel.org>
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 40f9e958-e883-4431-5168-08d7ca4cd4d2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 08:26:03.0654 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: AEKg5toFkrBKfz+kdF84oWoV3nR1G6DMm4T5UFA66MhY9gKq4bjo6/Gv0D9zoUlNxci9CL0CYvkulni7TSOBvAeWUGQGx6hTQ3RQ0rHzcCnNr1OH1GHsjze3578YHReO
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3213
+In-Reply-To: <20200313154701.948-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_012609_286943_0212117A 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200317_012625_564980_387735B0 
+X-CRM114-Status: GOOD (  10.73  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.25 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -119,48 +102,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jingoo Han <jingoohan1@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5359524513003330011=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar-san,
 
-Thank you for the patch!
+--===============5359524513003330011==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bfpjsm7kcssdh6bm"
+Content-Disposition: inline
 
-> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
-> 
-> This patch adds the bindings for the R-Car PCIe endpoint driver.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
 
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+--bfpjsm7kcssdh6bm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Best regards,
-Yoshihiro Shimoda
+Hi Rob,
 
+On Fri, Mar 13, 2020 at 10:47:01AM -0500, Rob Herring wrote:
+> '#address-cells' and '#size-cells' are needed in the same node (for the
+> child bus) as 'dma-ranges' in order to parse it. The kernel is more lax
+> and will walk up the tree to get the properties from a parent node, but
+> it's better to be explicit. dtc now does checks on 'dma-ranges' and is
+> more strict:
+>
+> arch/arm/boot/dts/sun5i.dtsi:189.4-52: Warning (dma_ranges_format): \
+> /soc/dram-controller@1c01000:dma-ranges: "dma-ranges" property has invalid length (12 bytes) (parent #address-cells == 1, child #address-cells == 2, #size-cells == 1)
+> arch/arm/boot/dts/sun8i-r40.dtsi:742.4-52: Warning (dma_ranges_format): \
+> /soc/dram-controller@1c62000:dma-ranges: "dma-ranges" property has invalid length (12 bytes) (parent #address-cells == 1, child #address-cells == 2, #size-cells == 1)
+> arch/arm/boot/dts/sunxi-h3-h5.dtsi:563.4-52: Warning (dma_ranges_format): \
+> /soc/dram-controller@1c62000:dma-ranges: "dma-ranges" property has invalid length (12 bytes) (parent #address-cells == 1, child #address-cells == 2, #size-cells == 1)
+>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Chen-Yu Tsai <wens@csie.org>
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+> I'm updating dtc for 5.7 which will introduce this warning.
+
+Acked-by: Maxime Ripard <mripard@kernel.org>
+
+We've pushed our changes through arm-soc already, so you might want to
+pick this up through your tree?
+
+Thanks!
+Maxime
+
+--bfpjsm7kcssdh6bm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXnCJpgAKCRDj7w1vZxhR
+xXPbAQCD20XKSz2PdFcJDLTi6jtTDcgbWaSQlNt6AP6s+Lmu0gEA2EffYFn1SZxE
+kZglaQxu1bljA8emP9nrUE124REPxwQ=
+=Cvbw
+-----END PGP SIGNATURE-----
+
+--bfpjsm7kcssdh6bm--
+
+
+--===============5359524513003330011==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5359524513003330011==--
+
