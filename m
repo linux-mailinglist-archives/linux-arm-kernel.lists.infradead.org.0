@@ -2,152 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99EF2188A35
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 17:27:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8391188A6B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 17:36:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZDGQmTWer5CQVbxQXLWbkXEiDAccOq2oTroGEw539SQ=; b=ETYJ2A3QHzRZtH
-	nGa+UYlqFBI772AScJ8o6BJ361B9PliCyjBwgkJ2rDtTE3kGo2QvWLeB45GGFNwKhN5v+MtEMhUBU
-	5NSbAMnMIo+Vh4NuCzTgUxNEVuucpZXWGxYNcMsNAbQnaevmWpCvcvJdW1157DDUbxgD1vEGQRK0V
-	trveheQNtJ2pryQ963i3l3dMQ88vlty4B5z+5YvGI9TOgm94tdKPe5TPTn7OsrzyXcjUfQfIpLvi6
-	QOXiQm1r099qLOUBg65W7cS+gWUJ4uJgSTdAPNRGHDXIy6H6V2hVOyC1RXrLHNMtMvtwase6v0zDQ
-	FbcZwdN0py1xw2xEoTJw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=DhmkyMvFnAKjR2YU6SFuGphk01t0YHv7YCSvGYBrzkQ=; b=nOv
+	Pwbj8+VyIIOX5qk9VcBFHoYvIFrAcf/8pX14m1VfGyNdCAy9jZSGtFQnW6J1mZ6eR3qbSaJiqcLOb
+	1A9ym9t+fQk9TiytI2IzU51TFyFhp6skXJhCV82GzBBhb8tOCFNKCZho6p4QV1EOa9YGD5uUubuJS
+	dhhWOzIhXGk8vOBC2WFcP9bWasM7f4sBFHHtoKxk3G7ZwSS48XOVoja3oCg9psQSjHGMhrUiGTUxw
+	3NpxXWgoGqCIoN/+ViXxbGGSD/Oz2k2511a9aNrvNzkDw0FvrL3+26F6sg0rTo4qGypp+EcDky/tH
+	XLTOsOr55u3GsqQmATXHYPjDvFiAUwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEF3j-0007so-Ue; Tue, 17 Mar 2020 16:27:15 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1jEFCO-00034F-Dx; Tue, 17 Mar 2020 16:36:12 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEF3Y-0007qz-WB; Tue, 17 Mar 2020 16:27:08 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: hiZgdZ5wt/s+H4xus3clYlfc8H3Oq+kIGETbH0Vmd1tCk+1PeKx6wDgeGGKGGEBhNzSGIdgNSG
- vP5XXb6SsLhYakhhXl/cHRj9L+ed0wQQe/9DqTGxjx6GGoefl+QLHXp1fQjp7M2o59K0MMjM5N
- 7I/EBXuUNPxtgBIkV/PGGCo4R+8uyojo/0sPpG3cmZfIWkGryIUZP55CsiXAPsX3NieX175ejF
- R/ErTnG095oMB9vPF44NN7II+WesfyYp+gC2rHqioOAmMsi3MUcH8Ar53x2IQDXnztyMRKPBtL
- pBE=
-X-IronPort-AV: E=Sophos;i="5.70,565,1574146800"; 
-   d="scan'208";a="5953021"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 17 Mar 2020 09:26:53 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 17 Mar 2020 09:26:53 -0700
-Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Tue, 17 Mar 2020 09:26:53 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KlEFxC+IfhHDXhsVgPEoqQcELVi/QrCc+hvIMCDhmw96PZgqgRpuxM7NVYxB++C12paY48UZfJw5y9uf76yRbT0DgtgQGexKG2+hzpio08DneFotLXDR3oSwcCgSfRryeCdCpb3pCsNGU18O7GJzmfxPueR27nSqWLr0w8EiRhIqllPLwstoSAKt7dNKe6KUI9UFJw5X0dWG/1zd8ludmrsTDHd9LtfiQkw0cHZumhhVEHtArz/qdnI2hMvril1r8iuv98eR6THaBw6Do3Zb6FLP1Iyxx5MaA3k2eKxH4a16NRj59Mb2qVthqEpPyxIAeYuUeWvnUXSUp2SMgrJnug==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EIzOciiFpPp1sQzpGEUBr6eHXjX2bEc2vxNCrPI5zN4=;
- b=HN+SCIe79XvpnJf/w0UsIQJZgCFdrWHo8wOyY3QiY/3V7wJ8kr1JuvQkD5xtt9d4YH6bh+eqofoGvV2cmqI6EzQU9PZgifTD+OkqoPT4gib4Zub4qcUAUaCbjo4LkNlDEHBwq24KapBEXuQNAgr2QQ7yqNqPGH/G1AQRt6qSk9h0rR640ZnN96GlMCgccBcpTXxVnzgC+qMTS7m0zxf9JVd/YfnYDwzfVdZaaVyRn3h+T23vvF6HN5J/2iRAbi7OiwsMYT7p7U7Tp2awzNvd8uR5F5+PZIPWIerhXjrQbOnC/MuOj8Blz2AnaXfQJf/nO0+hLWKc1UDuEMNRebm0lg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EIzOciiFpPp1sQzpGEUBr6eHXjX2bEc2vxNCrPI5zN4=;
- b=b5Uaan6Ik2ujIYO18GUWOiuu/64lzJSiEGQlSr80Ssd9Vzxfh54A9rRsUbn9saMg2Tc5KRnz9zrG5W1sAQ1DQelNwbU2KcGhHdk+kHvBNxc6SqQ2UGDusxS93JTHYofFcOuv1jrrZeSXvIo9LeW3Sy27fh9Bhc7AZN+N/3gbgdM=
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com (2603:10b6:5:5b::32) by
- DM6PR11MB2603.namprd11.prod.outlook.com (2603:10b6:5:c6::21) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.13; Tue, 17 Mar 2020 16:26:50 +0000
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::dc6b:1191:3a76:8b6a]) by DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::dc6b:1191:3a76:8b6a%7]) with mapi id 15.20.2793.023; Tue, 17 Mar 2020
- 16:26:50 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <oleksandr.suvorov@toradex.com>, <devicetree@vger.kernel.org>,
- <linux-pwm@vger.kernel.org>
-Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
-Thread-Topic: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
-Thread-Index: AQHV/Hjcr8D0wJ1/KU6yOYf2aNcyvA==
-Date: Tue, 17 Mar 2020 16:26:50 +0000
-Message-ID: <f281a6a0-a150-514d-ef02-4e51192031d7@microchip.com>
-References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
- <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
-In-Reply-To: <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-originating-ip: [86.126.9.245]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ce6ecb69-76b3-43f3-fb04-08d7ca8fff34
-x-ms-traffictypediagnostic: DM6PR11MB2603:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB2603160B4E2BA59142F59D8A87F60@DM6PR11MB2603.namprd11.prod.outlook.com>
-x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:218;
-x-forefront-prvs: 0345CFD558
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(346002)(136003)(39860400002)(376002)(199004)(31696002)(4326008)(31686004)(2906002)(91956017)(76116006)(71200400001)(6486002)(66446008)(81166006)(86362001)(66946007)(7416002)(64756008)(66556008)(7406005)(66476007)(110136005)(81156014)(186003)(54906003)(478600001)(8676002)(26005)(8936002)(2616005)(6512007)(5660300002)(53546011)(4744005)(36756003)(6506007)(316002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB2603;
- H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IHpw69mXXcfgiHzurM7j01zyT8PYjuTWrFBX/Z+gK4W2ArC6phY+due3PiwxkDWUKv/aNKTQhFbBtghnhHYeBL5PubIL31sYMPlaJR0E9mplKTQoCIY2SeuJ7Ghi3QLD9FEfW9i4EVjWTK5b3ZnhqWZmtVMRxKY/exnutU1ZGu3R41Obz5uraoM8L1Co9dHcRUprgyJKwujk318niv5n6yapwJDmtw3d7+KPEah5uAkKugV5tuvQSf1a/4q5SpChMBmVksNQYKVwt852WaA0QXFJnLFoGt2/hzO7nvYV6qlL8foEirpb2w6aajECFP4jJM7Y5Wcv+xdOvaB1ANPGwMmtsbQu+1+3bP1boerYTjirIZX+gaeGrgL0m7lgWI7IjDWLj4iwLhp6IColBaaWVP1rTCGJ7H9WcHk89yiFI25c920UA9dAIZZ5Y3qoPKXf
-x-ms-exchange-antispam-messagedata: kVDFYKtTgbeYS4/dP8kT/ISXT3ss3Uh/024uKSW7TRN49m9cQG7UYpys52grIkIpPfeeaRiBY+rVggypZOr9Co1NuNWfPkthVNm35X2Ufv1xkSZ5+GtjTlgfbdYjWY/U1cRDlCzXSUKU09pZS+YTPw==
-Content-ID: <5888E88EB76E8649A10DB864BB54BC2E@namprd11.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ce6ecb69-76b3-43f3-fb04-08d7ca8fff34
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 16:26:50.4921 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: oNuGH8X6o35HIT2auDm4AePv5WhlN/Nxi9h7VsR/67IG1IIPszVehpt5idm0n1GLnIy3StHKTYF9jnzRxgboUWfeMkSaUoF+2w+zrflDOhI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB2603
+ id 1jEFCG-00033H-2W; Tue, 17 Mar 2020 16:36:05 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z13so6134043wml.0;
+ Tue, 17 Mar 2020 09:36:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=WiB0u/leEGdcW1B+cHUhgFUc+5o/BZhuLHHQx8vVK4Y=;
+ b=a47jTiixaLJG9rKjBDKQjHrYCYALh0axG7IEvuZmG5kxyTi7LzW49WxdAtDI3N1B08
+ fNZ9DSCMu+gE61Ca4ftdVmbNPN0bDsaPdrrtdhYEv50m827YOKLS/6Gd6O1NLO+0l5gG
+ vUrhlc3K4hhmbVBv7ceC0vxDHPBGEoACsmXtx9T3Xr/zY5gZyyuJ0tycgNE6D7Gnu7tv
+ bNyRVzJDxkwtExRU1s39sfiYY+LuPgFnZzZ3qyWB+emuzKu5yUnPOvqpIgSNHZzkLnkh
+ KrweK3LyHhw3j9ITk66Fqm7fVi8MzYGKDkLeVbXd+Pf/yQe8aJIv53p17+b3NigbrGjg
+ /zoA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=WiB0u/leEGdcW1B+cHUhgFUc+5o/BZhuLHHQx8vVK4Y=;
+ b=i5px2cq6PK/yPUKcpJ9cunz/uzATDi1FYVKfYLpr+XHrIOjD61//Xn66wnPNpOUnHX
+ RQGlrUMNYPh6uStPzP4bfgSQsdBP78mM7zn7uh4Eh/JF3f4eiU4KKMXzNeqVPPpXbASh
+ zf7/SIvQCQsrFqply+gDKACgPEUuzZszMKp2KJvB1uNZ++7lhdlfggqi/kHW5+pJTwsX
+ Q5l90l5iGUv2yC28nJdhp3UpwQ6eoY9MUJ0i6oBPezrRLA2zrDuN+mJw1bsuMBKpVQai
+ MHHvsBtJmiDwoIxz8+iRURaa+jdCfegMIOFOznc6k0q1PUGfmNcCyrGNmxVhNPakpdJJ
+ Xc/w==
+X-Gm-Message-State: ANhLgQ1hL0//9sf/Cxmfsz4yBhSj1xhdM4aNyG67tC0HGviPnZLULd9R
+ kpzZe8qJdk6v7qTMjKD4B10=
+X-Google-Smtp-Source: ADFU+vvTbdxbQ8NuM1t3+foh2whJCugiJIlAkWJHzkdA1yliE1Ar3iJ2fVnrlc/J0tx6/r10MnuCGw==
+X-Received: by 2002:a1c:7f10:: with SMTP id a16mr145719wmd.1.1584462962316;
+ Tue, 17 Mar 2020 09:36:02 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id b10sm5389702wrm.30.2020.03.17.09.36.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 17 Mar 2020 09:36:01 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [RFC PATCH 1/2] dt-bindings: sram: convert rockchip-pmu-sram bindings
+ to yaml
+Date: Tue, 17 Mar 2020 17:35:54 +0100
+Message-Id: <20200317163555.18107-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_092705_072575_A2A57985 
-X-CRM114-Status: UNSURE (   7.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200317_093604_141097_BC3BE8CA 
+X-CRM114-Status: GOOD (  13.41  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -160,35 +94,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, heiko@sntech.de, marcel.ziswiler@toradex.com,
- linux-kernel@vger.kernel.org, paul@crapouillou.net, thierry.reding@gmail.com,
- laurent.pinchart@ideasonboard.com, linux-riscv@lists.infradead.org,
- festevam@gmail.com, f.fainelli@gmail.com, khilman@baylibre.com, wens@csie.org,
- linux-rockchip@lists.infradead.org, Ludovic.Desroches@microchip.com,
- bcm-kernel-feedback-list@broadcom.com, linux-imx@nxp.com,
- u.kleine-koenig@pengutronix.de, rjui@broadcom.com, s.hauer@pengutronix.de,
- mripard@kernel.org, philippe.schenker@toradex.com, pbarker@konsulko.com,
- paul.walmsley@sifive.com, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, igor.opaniuk@toradex.com,
- sbranden@broadcom.com, linux@prisktech.co.nz, palmer@dabbelt.com,
- kernel@pengutronix.de, shawnguo@kernel.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Current dts files with 'rockchip-pmu-sram' compatible nodes
+are manually verified. In order to automate this process
+rockchip-pmu-sram.txt has to be converted to yaml.
+
+A check with the command below gives for example this error:
+
+arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff700000:
+compatible:0:
+'rockchip,rk3288-pmu-sram' was expected
+arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff700000:
+compatible:
+['mmio-sram'] is too short
+
+Fix this error by adding an extra 'mmio-sram' compatible and
+'if then' structure to filter yaml warnings.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/
+rockchip-pmu-sram.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../devicetree/bindings/sram/rockchip-pmu-sram.txt | 16 --------
+ .../bindings/sram/rockchip-pmu-sram.yaml           | 46 ++++++++++++++++++++++
+ 2 files changed, 46 insertions(+), 16 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+ create mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+
+diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+deleted file mode 100644
+index 6b42fda30..000000000
+--- a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
++++ /dev/null
+@@ -1,16 +0,0 @@
+-Rockchip SRAM for pmu:
+-------------------------------
+-
+-The sram of pmu is used to store the function of resume from maskrom(the 1st
+-level loader). This is a common use of the "pmu-sram" because it keeps power
+-even in low power states in the system.
+-
+-Required node properties:
+-- compatible : should be "rockchip,rk3288-pmu-sram"
+-- reg : physical base address and the size of the registers window
+-
+-Example:
+-	sram@ff720000 {
+-		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+-		reg = <0xff720000 0x1000>;
+-	};
+diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+new file mode 100644
+index 000000000..bb72e4f53
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+@@ -0,0 +1,46 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sram/rockchip-pmu-sram.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip SRAM for pmu
++
++description:
++  The sram of pmu is used to store the function of resume from maskrom(the 1st
++  level loader). This is a common use of the "pmu-sram" because it keeps power
++  even in low power states in the system.
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++# The extra 'mmio-sram' compatible and 'if then' structure is needed
++# to filter yaml warnings.
++properties:
++  compatible:
++    oneOf:
++      - const: mmio-sram
++      - items:
++        - const: rockchip,rk3288-pmu-sram
++        - const: mmio-sram
++
++  reg:
++    maxItems: 1
++
++if:
++  properties:
++    compatible:
++      contains:
++        const: rockchip,rk3288-pmu-sram
++
++then:
++  required:
++    - compatible
++    - reg
++
++examples:
++  - |
++    pmu_sram: sram@ff720000 {
++      compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
++      reg = <0xff720000 0x1000>;
++    };
+-- 
+2.11.0
 
 
-On 17.03.2020 14:32, Oleksandr Suvorov wrote:
-> @@ -187,7 +187,7 @@ static ssize_t polarity_store(struct device *child,
->         if (sysfs_streq(buf, "normal"))
->                 polarity = PWM_POLARITY_NORMAL;
->         else if (sysfs_streq(buf, "inversed"))
-
-You may also consider this string     ^
-
-> -               polarity = PWM_POLARITY_INVERSED;
-> +               polarity = PWM_POLARITY_INVERTED;
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
