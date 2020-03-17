@@ -2,53 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC889188C31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 18:34:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45478188C52
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 18:41:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h1l+niL04c/uAJLSG6nxp4ZDnYSLjsSsrKF1slPtAEc=; b=CjmTJ2G4+XEr2E
-	khcndKKXnlW83eXq5yQ/dMgGvqbAH6q5avfFqoACKDKhOvraaKhQSpo85+oSMZn9TeudSpFK5X4N5
-	HgP70KdPzr6SGk/pwoy65LhWezgcEgT5+rBK6ztUWHnwvj8U2ewPNLYqcUmCEPLHf2zfWVm/3O0nO
-	AcV5ljFtYMsxyH0Ljup8PyiG6i4C93mouGCkYf0wnxJWc50m9zd1CWmIy1IgttXy+6FeFimW1uSYV
-	O5Fgtr8vTTns13tPLWYXkymSp3J7lOiXj5TFEr2ZeeTVRi96rKtNtNbqcXqgJXPXJWDpGlXEWHdOi
-	fQWeiM+hsa9LW4s1kadQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ScGVXaj/ZCh8j2Hry9KJ7s6rMbVqtid9+GFTuISEpZc=; b=OhQtpUUav0IPn/nBCzGyD5vn+
+	/QHXCT9U7fMVyKJ69Yz4lKyZLVG+J4/dw/Wabumu1hfnRxBPVjG8kUJa/nyfaLAweHjL1J50bAFlp
+	KkFD8v6C3MHmFK4fa1lX68kKgvKHS4g92NaWHgg6kbh3d/yShWayUgUVrNE8oeVSJVVhdLngvXwlL
+	K0m0+2P4MVML5K+4rLdZMuAV5wigDOpMKADtQiJwTGzDKKbdQ/zddUFQb7V9sC+ZuTK68YhXFfhfW
+	KmGSaJPROkkl/4QSUUtOtD6DCOnuS8qqSd6cQVuyu9v1iIHclv8zJdvy9ZAdR2JW/e6Rqd+4QGc8K
+	7rky5n5oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEG6z-0002aC-Fa; Tue, 17 Mar 2020 17:34:41 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEG6n-0002Zs-UK
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 17:34:31 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 56C60810D;
- Tue, 17 Mar 2020 17:35:12 +0000 (UTC)
-Date: Tue, 17 Mar 2020 10:34:22 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 0/3] Block idle in gpio-omap with cpu_pm
-Message-ID: <20200317173422.GN37466@atomide.com>
-References: <20200304225433.37336-1-tony@atomide.com>
- <CACRpkdYL5mZ7i6bEF0b_CUXaG-jHKz4KnSXsBNfs_9M054U3vQ@mail.gmail.com>
+	id 1jEGD5-0005o2-QT; Tue, 17 Mar 2020 17:40:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEGCv-0005ls-Jf; Tue, 17 Mar 2020 17:40:50 +0000
+Received: by mail-wr1-x444.google.com with SMTP id h6so6496330wrs.6;
+ Tue, 17 Mar 2020 10:40:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rc0VhOzC+cfi+lRAZOsev4h8V+6Va+aJEr9E8LvZgKM=;
+ b=YEGcuymmdA1koXtAzKhxXyAqsGbSjuSF9Gf/r5/tFJpfpAJtl554f4SPyWu4D9aPdV
+ U1eo6YunSh38qtdiE2pmwVXCk7x/6E+LUHBUXpj/6NzaBoI3mk9tVxADAX71vbvYYtX7
+ 66RIYKj036o3dm0SH6DosZE7PZ/n2S2Y8m0QKysF21GALcCvi0vOh0Pf2hIoWCfXWwTb
+ 2Pik0pZnRjaB8asBt5THZVPIeBbuefcq/q9BC7MrSE4pI7jjJirG6cV4mUfz0eAXK2zr
+ PLD9ZOrib1yfSqRJly+eqUh6JGh4Jo7XpIUo0HDdZNjOuWqMXbIYxkDmssiKhtFNCm9E
+ dPEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rc0VhOzC+cfi+lRAZOsev4h8V+6Va+aJEr9E8LvZgKM=;
+ b=PSaiqrm41BAm4WXs4/jhwTZNLUsRU67EmbzH+GhRyHN7X4Z0dUcvGA1MFFuxeGDq9d
+ bIURDuFGtxeda29tTZaqd6yXmTGnwBjApMMrPrzqOVPNl/1/3Cadzub8s3xoAKf9B9lh
+ DANJth7HjySC9Swes31DwAdChx6+h6BcPD1S3KYzgK3ue36m7X9b4UNKqceAgSwtdPAJ
+ 8fqCbXppondQuvUOmxGzdQQcy0pKpLMvH7rytwbaAy4XMU6GjTWpnwiiDSBl959/buv9
+ bH/AH3sZ/v1qzX2gN/moRNh8+frDMyrMHxiFdsKTjYhbhW7ULXQuoJNsCosHsUXRUwvx
+ ft7A==
+X-Gm-Message-State: ANhLgQ1WwlduUS5Z7/zjQeYbmXNkrOadRCs+RxEDkN1oNyYAiVZ1b9Zq
+ 20NYhpsLnuuA3TBM++dNduQ=
+X-Google-Smtp-Source: ADFU+vvJMLEildc7nNypq9mzxdWXUau/bFgKNV+o6iv6Bg9xgKaVE/V2kZVdo5OKLUcxi2q+rfgi8g==
+X-Received: by 2002:a5d:69cc:: with SMTP id s12mr161953wrw.20.1584466845960;
+ Tue, 17 Mar 2020 10:40:45 -0700 (PDT)
+Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
+ by smtp.gmail.com with ESMTPSA id o4sm5467990wrp.84.2020.03.17.10.40.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Mar 2020 10:40:44 -0700 (PDT)
+Date: Tue, 17 Mar 2020 18:40:43 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
+Message-ID: <20200317174043.GA1464607@ulmo>
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdYL5mZ7i6bEF0b_CUXaG-jHKz4KnSXsBNfs_9M054U3vQ@mail.gmail.com>
+In-Reply-To: <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_103430_017067_ECDD0142 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200317_104049_673444_1F52D069 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,40 +97,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
- Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Ladislav Michl <ladis@linux-mips.org>, Linux-OMAP <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>, Scott Branden <sbranden@broadcom.com>,
+ Tony Prisk <linux@prisktech.co.nz>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
+Content-Type: multipart/mixed; boundary="===============3905890512354682593=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
 
-* Linus Walleij <linus.walleij@linaro.org> [200309 09:27]:
-> On Wed, Mar 4, 2020 at 11:54 PM Tony Lindgren <tony@atomide.com> wrote:
-> 
-> > As discussed earlier, here's a series to use cpu_pm to block deeper SoC
-> > idle states if a gpio interrupt is pending.
-> 
-> As you requested I queued these on an immutable branch
-> based on v5.6-rc1:
-> https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/log/?h=ib-omap-block-idle
-> 
-> And merged into gpio-devel for v5.7.
+--===============3905890512354682593==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="sdtB3X0nJg68CQEu"
+Content-Disposition: inline
 
-Hmm I'm not seeing these in Linux next yet though, care to check?
 
-Regards,
+--sdtB3X0nJg68CQEu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Tony
+On Tue, Mar 17, 2020 at 02:32:25PM +0200, Oleksandr Suvorov wrote:
+> The polarity enum definition PWM_POLARITY_INVERSED is misspelled.
+> Rename it to PWM_POLARITY_INVERTED.
+
+It isn't misspelled. "inversed" is a synonym for "inverted". Both
+spellings are correct.
+
+And as you noted in the cover letter, there's a conflict between the
+macro defined in dt-bindings/pwm/pwm.txt. If they end up being included
+in the wrong order you'll get a compile error.
+
+The enum was named this way on purpose to make it separate from the
+definition for the DT bindings. Note that DT bindings are an ABI and can
+never change, whereas the enum pwm_polarity is part of a Linux internal
+API and doesn't have the same restrictions as an ABI.
+
+As far as I'm concerned this is completely unnecessary churn that's
+potentially going to come back and bite us, so I see no reason to accept
+this.
+
+Thierry
+
+--sdtB3X0nJg68CQEu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5xC5cACgkQ3SOs138+
+s6Fzrg//W6eAtrfA02CGekiB6CchW1v901SEIXd0i/BUbGhUbBXgNAk0CdFr1oZF
+oWh3FArEd2Ugq3qvpgf4UqWlO/2IptBucOUVSwQ5Imuc+eS/JKxC3lriUcpyI519
+b5+MI+QPztSa8Nae3cVvDVd1zs+s5QE1J9TOJTINsayE0yxs2QDk7px+T2hP6S5y
+fZmxD7DxmhzzTjY9pUb7B8Km/c+g3iLZ2dOrjizHPQ0D6gjni2sAljxJXKBkExBG
+nSSO7pOuxA1Koi0/lKAQGtxKl1QbfH5aerdiSj8wi74C4DXTG/yHIU0x4YKpbu1d
+C0nSwCafh3P/dIz0ja7iv+8y02HB43gdu9tyA6dlVzIs7UAS/upZfwtLCI49zdOL
+Qq28oqgpytPujRWyFSdT7EisrlmqA4TlG6jvndwdhKiurjM98oNob5FiUYz/QebP
+cX0mZQFNM8UJjzhu51wkfu3NwtdIBXMWv+EhD8Kh7Ash60aI7LE2HltEC5Y/KqiW
+uprdNVNa09YyyZLgE0W1rDU4rsdPw+yxp/XR/vzPWR4eivXlrbPtkBxcZcZfHAmj
+Yg13OeYRbxUgR1Jx4vGYyRgV2wSNSyDcwqZ0vU0Z8C4C3qLFNqQPllTPonTSdcnX
+gQU9NZOlpo00W4TwrlO7I+3Ww9qNIvnHhMwcaOQGIca6+ZVYyfQ=
+=EuQk
+-----END PGP SIGNATURE-----
+
+--sdtB3X0nJg68CQEu--
+
+
+--===============3905890512354682593==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3905890512354682593==--
+
