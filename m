@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65D9F1890C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:53:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9D291890E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:56:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C48752ysmeBsIMWKq3b0arq4Elj9Nt7n22XZKsDLiOA=; b=M91to/IIMOzY/f
-	QGY10PMv+VHh8N49ML62RgWsYv1klDnUt5BQ3HcQ1UJyX8wu03wPqtxFn2b/jva0YxsMur+0vBoMe
-	j6rfwbQfJXFXypCdbbz7t/Pv5lGOasMptlmFfUmwfyWW1NsdIFJeBoHe76yDVXRtV8Int+WsT0AMT
-	Cr8SCL20MBGTFWWmgU+403ag7GaQDhkJKxRIVkf6z5rsxD2KYDXyFIKSJBT9hD8CZ3wW1EoK1IS+9
-	dc5ppg1kPLuXgTBceIZAKg64tOAXUUxzcS9qXuooVRtoBY7dB4JBqHRVil24CLlTBEipathCiXsLQ
-	E4GcYpgWojXnllX9Ld+A==;
+	List-Owner; bh=HfAGSE1jsizecWo8gEs8vB7nLG1dbKOUE04ufpbNQqQ=; b=EhvzxCIehr7zOa
+	tftdX2O6XqpcQzdi51U2d62U+hg08W8MZbWG3g/SZd9c5729ly/sYUA7v4TFyKVdbKQAnlgMXVWbk
+	zw5Nne/0TPs5gflfZfEBMmPzppGnmqhcIaj1FOzzjBL1cns/E/SdzaoMXZbZUYbD7x4IM+UeZ1LbE
+	jZHdkfAQJ8Hl3rmz+IjnpMRzrnq1HzXrzk8cvPOfc+qvDzOMVw0WCEXKdP8002jy/8gkzbJO/w5MQ
+	PAYpFMnq7Hk9uD9AUSo8rH3MDtLu2x8GmCRFZEa5KrsT19gYDYzZIiPdirHanlZuLezQaN2+V3SQ1
+	54OLmTKei0R+NHOe4akA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEK9C-0000o4-9f; Tue, 17 Mar 2020 21:53:14 +0000
+	id 1jEKCK-0002V9-KQ; Tue, 17 Mar 2020 21:56:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEK93-0000jy-0C
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:53:06 +0000
+ id 1jEKCC-0002UX-QO
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:56:22 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F25DB20724;
- Tue, 17 Mar 2020 21:53:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E421420724;
+ Tue, 17 Mar 2020 21:56:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584481984;
- bh=4fpXMStLT3ChZUSNNoR5DM0vAh+pn633V+leBozCyWA=;
+ s=default; t=1584482180;
+ bh=ltu6nAB3cqjUcyzN/b/tv8nLp/YUwPWjD/rDtUy+sgk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=j9izuxAJEYWfwOlyHm+dzHMrstapzlPoXAEYb7DfotjV7f8+lIrKsh/8yjOmRey35
- G6BkqEvgCCE0/nxL4u9SrTR3Ai5Q51DCYkWMsq7w+HwzxaZHlQeiS4oaslEAOKqBXs
- HfHocYpm5b4/XhOJrKH+WzAynGxE3ddRp080wgDc=
-Date: Tue, 17 Mar 2020 21:52:57 +0000
+ b=n+jfY58+O3gxLesJbYsTqizSa2RR6XLi3KOzJTD9QCVRkf2N2Vb/4Egzsdk/L4b5b
+ CP91bT2bOG+axRpAPBNen9T7gdpGU4eqbWfc5APbhlKH3xrtmf+fdXJN+ndAQyj+K2
+ eWeHzI67pC4vnqYjNGg2gteEqMyW7yXWzsIKxNmc=
+Date: Tue, 17 Mar 2020 21:56:14 +0000
 From: Will Deacon <will@kernel.org>
 To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH 6/9] arm64/build: Use common DISCARDS in linker script
-Message-ID: <20200317215256.GA20788@willie-the-truck>
+Subject: Re: [PATCH 7/9] arm64/build: Warn on orphan section placement
+Message-ID: <20200317215614.GB20788@willie-the-truck>
 References: <20200228002244.15240-1-keescook@chromium.org>
- <20200228002244.15240-7-keescook@chromium.org>
+ <20200228002244.15240-8-keescook@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200228002244.15240-7-keescook@chromium.org>
+In-Reply-To: <20200228002244.15240-8-keescook@chromium.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_145305_065749_BDD98769 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20200317_145620_873336_051A78B4 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,52 +91,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 04:22:41PM -0800, Kees Cook wrote:
-> Use the common DISCARDS rule for the linker script in an effort to
-> regularize the linker script to prepare for warning on orphaned
-> sections.
+On Thu, Feb 27, 2020 at 04:22:42PM -0800, Kees Cook wrote:
+> We don't want to depend on the linker's orphan section placement
+> heuristics as these can vary between linkers, and may change between
+> versions. All sections need to be explicitly named in the linker
+> script.
 > 
-> Signed-off-by: Kees Cook <keescook@chromium.org>
-> ---
->  arch/arm64/kernel/vmlinux.lds.S | 8 ++------
->  1 file changed, 2 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-> index 497f9675071d..c61d9ab3211c 100644
-> --- a/arch/arm64/kernel/vmlinux.lds.S
-> +++ b/arch/arm64/kernel/vmlinux.lds.S
-> @@ -6,6 +6,7 @@
->   */
->  
->  #define RO_EXCEPTION_TABLE_ALIGN	8
-> +#define RUNTIME_DISCARD_EXIT
->  
->  #include <asm-generic/vmlinux.lds.h>
->  #include <asm/cache.h>
-> @@ -19,7 +20,6 @@
->  
->  /* .exit.text needed in case of alternative patching */
->  #define ARM_EXIT_KEEP(x)	x
-> -#define ARM_EXIT_DISCARD(x)
->  
->  OUTPUT_ARCH(aarch64)
->  ENTRY(_text)
-> @@ -94,12 +94,8 @@ SECTIONS
->  	 * matching the same input section name.  There is no documented
->  	 * order of matching.
->  	 */
-> +	DISCARDS
->  	/DISCARD/ : {
-> -		ARM_EXIT_DISCARD(EXIT_TEXT)
-> -		ARM_EXIT_DISCARD(EXIT_DATA)
-> -		EXIT_CALL
-> -		*(.discard)
-> -		*(.discard.*)
->  		*(.interp .dynamic)
->  		*(.dynsym .dynstr .hash .gnu.hash)
->  		*(.eh_frame)
+> Explicitly include debug sections when they're present. Add .eh_frame*
+> to discard as it seems that these are still generated even though
+> -fno-asynchronous-unwind-tables is being specified. Add .plt and
+> .data.rel.ro to discards as they are not actually used. Add .got.plt
+> to the image as it does appear to be mapped near .data. Finally enable
+> orphan section warnings.
 
-Acked-by: Will Deacon <will@kernel.org>
+Hmm, I don't understand what .got.plt is doing here. Please can you
+elaborate?
 
 Will
 
