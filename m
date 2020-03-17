@@ -2,109 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E57B187A86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 08:32:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D262187A97
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 08:41:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bfeUT5dmFsEMJYwWA9pJfXS0xSxOTDe1+ZNIWvmN9UY=; b=eAFyaNU6pGYPVK
-	+jUHzBN5/oCQBPzIqpA6MSatp13RhabWPzvh+x6Qt3MaJNKE1k+tk63AiXdCCqfKN+ggUK0uttqw+
-	vYNdfvLSgC+C/4BBH4dL2hupguwPr8u35e2yDHpVs8FtKfIg8a6w6nhmdcq2nrUn/c/6MFH0BOSRA
-	tgQ1SEnxhQePbdOHl6mzg1nHEpBUy9D02e/u9N9dOUd/U8ixHkNAWF2w1rK6IkYU9FKmsdjPZp513
-	dKRyjcJ5kzUxPOdeZ7ienJauqwjnl6y8NlK1YNO8S72rHUx1/o9aLxLBSlFAdveDnENQB3TM6WsJv
-	o2JbL3v4PnWKAN3C59uA==;
+	List-Owner; bh=bLG1BxXSB6VM8KaIn5RqAdZRtFlon9emkgMu450dzQQ=; b=dNMldlDxI9Gtis
+	zIvKJ+wtov4wDnd9sqSKz9/u5GLj6ggRpk5BD38/HHHSd9qYZe7VKP2D01fh5Iwo5L6NVDZMbFUrj
+	MKufR8m4KxogH9k2VjzFwpr8SHcpvreUtU97ok2I8Cyzl8w3K7mJoNKQHbU41HhJtcXzLIyHccU3q
+	YSEMau6X/RKtbyTH5cNhAtqOFpKoesIenScWzPTYfIBww8LiWzmpn5ZfP33d5PJlF5nGrP94UetCD
+	We4uQYKdZYS7ryMUZM7UtMrgwOOur/m3cwanG15660jbP6rsxvI9dTxbP0ovTgtN/lgkx0RmirB4Z
+	jlbsZ1AmrnEC9UZLI4HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE6hl-0006Bb-67; Tue, 17 Mar 2020 07:32:01 +0000
-Received: from mail-eopbgr1410094.outbound.protection.outlook.com
- ([40.107.141.94] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jE6qV-0001JF-Ic; Tue, 17 Mar 2020 07:41:03 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE6hP-00060x-HI; Tue, 17 Mar 2020 07:31:53 +0000
+ id 1jE6q6-000193-L0; Tue, 17 Mar 2020 07:40:42 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: i3fAPvvEFMGf9E8k6KRN7TiEKwhb4Gui95pT1U3ObgI9CE5uBRmT0k2YJuhXmHd/cRZwaZlr2z
+ PAVMY0qM2tFj63729mVBYRVu+7jc3/IqpTEvDmFQ9aMrSUxsCFGzOSaFCfOU0QUbV+Sx/CZ4Qz
+ sPmwxs/cM2lJo9EOJ+NeVHcGIqd4VVi89mZu/JT8BXm8Nz/sVnS1LpmEOUkxf/Z0OhNE4/sIoB
+ VLJzE+7ybMnPX2aLmtjQ4t4tiXOjf+FXhK9B4/EwNKYawJJZGWNhl80OF4hXsgh4hVDEMok1Ra
+ WRU=
+X-IronPort-AV: E=Sophos;i="5.70,563,1574146800"; d="scan'208";a="72342727"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 17 Mar 2020 00:40:30 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 17 Mar 2020 00:40:21 -0700
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 17 Mar 2020 00:40:29 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=J3WijfjHKXnm7peRdfXNelNkUVLkmnZNOexY1sYi19o98P5+Ebxkj3SSNUqg5vBTbR5HJ5Rkp7OkwXWf7NdG3aNcXCQQ6Lh2ZBZQx1gMo38Xb9wXA7Xnl2GbWAcWuewm1kVV3aDjdxlaBm+OICWx4z64uSMnw+EjwGSwFun6u9LJCV6u07cjqX5gGN4B4pM9UY4waNfJI1r3ZtSiVjYfflwmSPDyX0VT5j5vy0gev4ALuSP8v9bfJN2k8dS/QCemYHjpjavKbALSC6YzZBpWE0Af5XnE44Rl5+wphW9J4aBfJFdaG2DRw8VBG0FkAxQOUfxCpa/aDEjt48a0NYvKRA==
+ b=aGJuR1CfnYJc6A4JtZG/TGAlVfnt0rMkdm+GM3OuF7UsRnpbzNf4qUzZCcRyroqQbATsx5rg5MiegCfLKLgpwoFfEuYlrnxQkXklCJtUn26SkURA544sCXDpj1ZhHACLXbi6vsFzaPh9W/IT4aFr7K3Rs6DjM4lQwyueadj19RXofgyW9wX6T69x1jkUYX+O4dNTFLOFcO73Qow0OdcZ8pj1BhYnLkoKeU9luM6R4pzOO4aCK6AmgqgItU+akBphVS8QV001gZtQkeSOi3hhFvn04Y8RFAjoKbhPkqbnZ8nN5/bN2JVzSZvqfRC0kXA5gD+e2Q+hyqYWG5CRPc+lpA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KZlu8doWsEAtzvwPUT6qKWOCHIjBTQpDhp2z+v4aUTQ=;
- b=TS9v0lTfPjHNNJkDwRzBMWpS5YD6eGKMXSE8NYGoueaVJpGTsaBmsoQMdnAfjY/cNdtWOXvN8jWrlma+CotglkPYdTwX+V9wdmCboyqZx1W8ShjjtNfoazGaTaFARuL1CHgfuvkID2MwlLer3Z6TldK7ivFF6Iz2ELJDwEHFjoCiljvGssbWV0i94cT7iusfWD1tYyqeaf9vQITyCyIfnYyjRNDEQZ5ZtsSY8sTT4T0ui29TxoU4XoT8inwBgtw1lO/ONEDXKCOBZQbC5/0MIysP03bh/nfa9jpGKxEmRrHoZUg1k3WaBebJ13o1KuLKOZxBVfsRhrLJuQYH4ZzpMQ==
+ bh=ef9tfTa5ik3JnaA5m5/lsYXR9k1I6mgNqyeVq44POHc=;
+ b=Z4EMHyLnJB9GYN+LtnN+muEjm2OuLsibnM8Pond1Kjd125OPDI6rhG4yS3do+3FsMrzszIcI+FALkcar+r2ci2HdzsqjmLtsTIB8aayeslcLTDgrzt5O0kQeqkpqOvnreZM1oCe17JeOrNgjpR8+VQ/gf5WwNzG9NG0oFBiPYBQ1LLH8OnatRUhaAG8KjVaxm60kTMRBm3crpWNTcLr0H/0k4j/u0eu6oPAGmbbJCuFRBDBTubU5eYF24kyKJ7rYb5GQflk/5I60pSi5d1FUrWo7V1Ta4U6bjIuLXlbuD3n+u2xo9SMcRdZpVqN72/iDQRDeNwlTqe59UQKhQrx9sA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KZlu8doWsEAtzvwPUT6qKWOCHIjBTQpDhp2z+v4aUTQ=;
- b=B2fO/9KeggWBRwbDX2ChAGrWY7UntMWGJoz+KD/9msTMif4OHRWYL/9mciXOCw8lRq4JFWGYPLvFAoZTX7poSnW44lvZd/GC+8M+Q1b5ta3wzjZjULfC+GFKBJmz6Y0MT/bwvcLkj+DXvWFQjQU+gh+U1ba3LetaPL6OYRJGMlI=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB2925.jpnprd01.prod.outlook.com (20.177.103.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.17; Tue, 17 Mar 2020 07:31:25 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
- 07:31:25 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: RE: [PATCH v5 3/7] PCI: rcar: Fix calculating mask for PCIEPAMR
- register
-Thread-Topic: [PATCH v5 3/7] PCI: rcar: Fix calculating mask for PCIEPAMR
- register
-Thread-Index: AQHV7k2hxh1UWQe7gUC78mciysp7oahMfYuA
-Date: Tue, 17 Mar 2020 07:31:24 +0000
-Message-ID: <TYAPR01MB454464006DE4D6547EB19443D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200228154122.14164-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20200228154122.14164-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
+ bh=ef9tfTa5ik3JnaA5m5/lsYXR9k1I6mgNqyeVq44POHc=;
+ b=RtWhMwp1Rip05wJa/e1m+LRdsxYyo/kg2oNeO67e7cAWnYSNvqJwoP2GSI4bgTzOETKR9RUaI0xS3lO+aTPww3KsEGalu2B8AKqBQv6TkUVgUkVeEEL5/0J6bUXp2cG2R14knxerlK8kvhKwgIcLN+MCjxjVgu+LVbDDwbb/r9s=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
+ by MN2PR11MB4662.namprd11.prod.outlook.com (2603:10b6:208:263::10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.19; Tue, 17 Mar
+ 2020 07:40:28 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 07:40:28 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <bbrezillon@kernel.org>
+Subject: Re: [PATCH v2 00/25] mtd: spi-nor: Move manufacturer/SFDP code out
+Thread-Topic: [PATCH v2 00/25] mtd: spi-nor: Move manufacturer/SFDP code out
+Thread-Index: AQHV+W+KYE9fHU+ne0GupK9M0z2kHqhMa8eA
+Date: Tue, 17 Mar 2020 07:40:28 +0000
+Message-ID: <2383597.40V64ZQkGk@192.168.1.3>
+References: <20200313194130.342251-1-tudor.ambarus@microchip.com>
+In-Reply-To: <20200313194130.342251-1-tudor.ambarus@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [124.210.22.195]
+x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c40bab91-4a24-4186-b97f-08d7ca4532d5
-x-ms-traffictypediagnostic: TYAPR01MB2925:|TYAPR01MB2925:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB292560A71E0E75850070EDEFD8F60@TYAPR01MB2925.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-ms-office365-filtering-correlation-id: db0ded06-e416-4bbc-6f0d-08d7ca46769c
+x-ms-traffictypediagnostic: MN2PR11MB4662:
+x-microsoft-antispam-prvs: <MN2PR11MB466260FF9F4FEB86B37430E2F0F60@MN2PR11MB4662.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
 x-forefront-prvs: 0345CFD558
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39860400002)(136003)(396003)(376002)(346002)(366004)(199004)(26005)(186003)(7696005)(55236004)(478600001)(33656002)(316002)(6916009)(4326008)(7416002)(71200400001)(8936002)(81166006)(81156014)(8676002)(54906003)(6506007)(86362001)(66556008)(76116006)(9686003)(52536014)(2906002)(66446008)(5660300002)(55016002)(64756008)(66476007)(66946007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB2925;
- H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(136003)(376002)(366004)(39860400002)(346002)(396003)(199004)(26005)(186003)(6512007)(6486002)(9686003)(4326008)(5660300002)(14286002)(966005)(478600001)(6916009)(91956017)(76116006)(54906003)(86362001)(66556008)(66476007)(66946007)(66446008)(64756008)(316002)(81156014)(71200400001)(53546011)(8936002)(6506007)(8676002)(81166006)(2906002)(39026012);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4662;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
+received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: QItKDRMGxxJk/LzRWxzMgXvpyNefoyeUESI3YRid/1Dqjw9RlnHHzXqC5rOgcHZQQkleKMgHRJEjf2a+m2oEkUzl5GoK2G0pleG8kStZDJuuJiUE/CkqIipJFg1VNJXj3A5qb+pTe8kfSxy41VQAIDMs/sgXsGSjBJMjX3dF8lnDnlOsudliMozoAF5N++RskZoMtZgG6i5SNvMH1Ru6V/5wVBGhU7yzc7KCZU22dB3W1XY3MhGh+g4jaUTtufvIu4LkAa3SMEgh/gssN83iRkx2D9itzXc6ECBivTXBks6V2vzbl9PW5OQGD+JWpNrxV7eQhAoteVayypCN1QFuqs8KpzU7JZYhXFPy/AbxHNWvouljPJsEjG9cT+Jtqz3w/yFMp2cbLP+sxPMHkImOhwut58nP8Zp31bm7kJyz9nDbS9jApJHknHqqAXD+Z9gq
-x-ms-exchange-antispam-messagedata: U6uhQRPXIFlJp0xF8xlzCnIMEhjQAhmwL71dXH2r1313wHMPfb2OtZajpmTiUqPvB/WRPEjD80RCc9EToVqyPJOK/VvRK+x4TI/BSUaJEIGmmeoJyVC+sVSPS/KxK5uo/PnzkdCZ5pJFFLcMMYLr2Q==
+x-microsoft-antispam-message-info: JB4J+g+Gr+G3HWADQjyGagGVEnRqR9FOG3FGN4jEi2SCrWYDtS1kjfWsyWuZg1aPHQmR67OulSMmKYdw59vuz5o7AM1ZQhdc94GgaWw0rQ0z9bp/WrEzSxvIfrEVmHJJbxc6iGus+NhCwkyE9CpA2fU3U2wAFr8qZ3tCL11djcaCce5yV9qeDCWDAoKSAou4hDY5aYAQq81+SDOQ4lTKCMYz5EgQaJtFw3B3uvbULawiE8aQk4wxgMUwlKSFdhworvDq3GI4KIeE57fmTsIbb1/ZpbLWSthVFoyojf9HlZjGua7egHht9O3sjao0Xbl9uShW1i9tx2VQIynsyXOrxRwKsD1E95tl7p33a3+gzyjbFwX7zdx47pAQY8pl9fgtU5j6apZd9F/ZiSI5FdNj82qrgwK0cjYBgjAe5JFZXeiShB8pNTEyixLw8jqx0hbLjGPrReEh3gPa8LKN7vRCzDYkmYquL+lKB8NMOWhncwOaavQuzPMON2M9vu3Qr/aFqvny3rRLBDXVRaWUzF3rSXIdroqJQTyvgIlwZw+mYl5cN0YKJVuK0r85TSpbzFjT
+x-ms-exchange-antispam-messagedata: rtDL9v2zLpVQ0gEDSMHuYfx49kHgcQfCNS71WZLHIAeTvAvYVKhuC7MFA2oUrXBkyTBGxGlxZHUePD5/yh1TDRb4o5tOjbh5BHNcss8BP4r9TrbXac9LBuBPnX7G6XTSQmNsRvc06X+uxKlpp1pbBw==
+x-ms-exchange-transport-forked: True
+Content-ID: <C6002666972CAF4E86286A6FD7A3F132@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c40bab91-4a24-4186-b97f-08d7ca4532d5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 07:31:24.8647 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: db0ded06-e416-4bbc-6f0d-08d7ca46769c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 07:40:28.1460 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: NAYgwXmL1WkFsRrf5ujGtVCPSIsda+cvEvzlwFgc/4zzyLJudp3qP/5pKN9NUwHw63OXcO110dL6KIOUOrah547JL5sgdvWNQ6JmWv9mAGsBjC57aKfwmdW4gc35Ru84
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2925
+X-MS-Exchange-CrossTenant-userprincipalname: T0mM0HZo2YIp2t1lGPyjCK4FGlI6YicUoEOBg9wgBrpjn2wmSvPltGVo/r9m7vbpSSmWXRR01zsvtiOulPzXifu5Faf+bKV+WGls0Pwfh+I=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4662
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_003151_482642_980B031F 
-X-CRM114-Status: GOOD (  16.26  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200317_004038_761902_151253B5 
+X-CRM114-Status: GOOD (  15.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.94 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -119,68 +155,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: richard@nod.at, linux-mtd@lists.infradead.org, vigneshr@ti.com,
+ linux-arm-kernel@lists.infradead.org, miquel.raynal@bootlin.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar-san,
-
-Thank you for the patch!
-
-> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
+On Friday, March 13, 2020 9:42:33 PM EET Tudor Ambarus - M18064 wrote:
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> The mask value was calculated incorrectly for PCIEPAMR register if the
-> size was less than 128 bytes. Fix this issue by adding a check on size.
+> Hello,
 > 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  drivers/pci/controller/pcie-rcar.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+> This patch series is an attempt at getting all manufacturer specific
+> quirks/code out of the core to make the core logic more readable and
+> thus ease maintainance.
 > 
-> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
-> index 41275f9..90d47b21 100644
-> --- a/drivers/pci/controller/pcie-rcar.c
-> +++ b/drivers/pci/controller/pcie-rcar.c
-> @@ -75,7 +75,10 @@ void rcar_pcie_set_outbound(int win, void __iomem *base,
->  	 * keeps things pretty simple.
->  	 */
->  	size = resource_size(res);
-> -	mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> +	if (size > 128)
-> +		mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> +	else
-> +		mask = 0x0;
->  	rcar_pci_write_reg(base, mask << 7, PCIEPAMR(win));
+> This is a respin of the last chunk of Boris's work from
+> https://patchwork.ozlabs.org/cover/1009290/.
+> 
+> (Re)tested an erase-write-read-compare with a 1MB file on the following
+> flashes: n25q256a, w25q256jvm, is25lp256, gd25q256, mx25l25635e,
+> s25fl256s0.
+> 
+> v2:
+> 1/ The mtk-quadspi driver was replaced by a new spi-mtk-nor driver.
+> In order to test these, one has to merge the mtk-mtd-spi-move from
+> https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git,
+> in spi-nor/next and add this patch set on top of the merge.
+> 
+> 2/ new patch:
+> mtd: spi-nor: Emphasise which is the generic set_4byte_addr_mode()
+>     method
+> - macronix_set_4byte() is renamed to spi_nor_set_4byte_addr_mode(),
+>   it will be the only 4 byte address mode method exposed to the
+>   manufacturer drivers
+> - adapt the rest of the patches based on this
+> 
+> 3/ new patch
+> mtd: spi-nor: Drop the MFR definitions
+> - MFR definitions are unlikely to be used, drop them.
+> 
+> Boris Brezillon (21):
+>   mtd: spi-nor: Stop prefixing generic functions with a manufacturer
+>     name
+>   mtd: spi-nor: Prepare core / manufacturer code split
+>   mtd: spi-nor: Expose stuctures and functions to manufacturer drivers
+>   mtd: spi-nor: Add the concept of SPI NOR manufacturer driver
+>   mtd: spi-nor: Move Atmel bits out of core.c
+>   mtd: spi-nor: Move Eon bits out of core.c
+>   mtd: spi-nor: Move ESMT bits out of core.c
+>   mtd: spi-nor: Move Everspin bits out of core.c
+>   mtd: spi-nor: Move Fujitsu bits out of core.c
+>   mtd: spi-nor: Move GigaDevice bits out of core.c
+>   mtd: spi-nor: Move Intel bits out of core.c
+>   mtd: spi-nor: Move ISSI bits out of core.c
+>   mtd: spi-nor: Move Macronix bits out of core.c
+>   mtd: spi-nor: Move Micron/ST bits out of core.c
+>   mtd: spi-nor: Move Spansion bits out of core.c
+>   mtd: spi-nor: Move SST bits out of core.c
+>   mtd: spi-nor: Move Winbond bits out of core.c
+>   mtd: spi-nor: Move Catalyst bits out of core.c
+>   mtd: spi-nor: Move Xilinx bits out of core.c
+>   mtd: spi-nor: Move XMC bits out of core.c
+>   mtd: spi-nor: Get rid of the now empty spi_nor_ids[] table
+> 
+> Tudor Ambarus (4):
+>   mtd: spi-nor: Emphasise which is the generic set_4byte_addr_mode()
+>     method
+>   mtd: spi-nor: Move SFDP logic out of the core
+>   mtd: spi-nor: Drop the MFR definitions
+>   mtd: spi-nor: Trim what is exposed in spi-nor.h
+> 
+>  drivers/mtd/spi-nor/Kconfig                   |   75 +-
+>  drivers/mtd/spi-nor/Makefile                  |   25 +-
+>  drivers/mtd/spi-nor/atmel.c                   |   46 +
+>  drivers/mtd/spi-nor/catalyst.c                |   29 +
+>  drivers/mtd/spi-nor/controllers/Kconfig       |   75 +
+>  drivers/mtd/spi-nor/controllers/Makefile      |    8 +
+>  .../spi-nor/{ => controllers}/aspeed-smc.c    |    0
+>  .../{ => controllers}/cadence-quadspi.c       |    0
+>  .../mtd/spi-nor/{ => controllers}/hisi-sfc.c  |    0
+>  .../spi-nor/{ => controllers}/intel-spi-pci.c |    0
+>  .../{ => controllers}/intel-spi-platform.c    |    0
+>  .../mtd/spi-nor/{ => controllers}/intel-spi.c |    0
+>  .../mtd/spi-nor/{ => controllers}/intel-spi.h |    0
+>  .../mtd/spi-nor/{ => controllers}/nxp-spifi.c |    0
+>  drivers/mtd/spi-nor/{spi-nor.c => core.c}     | 2501 ++---------------
+>  drivers/mtd/spi-nor/core.h                    |  431 +++
+>  drivers/mtd/spi-nor/eon.c                     |   34 +
+>  drivers/mtd/spi-nor/esmt.c                    |   25 +
+>  drivers/mtd/spi-nor/everspin.c                |   27 +
+>  drivers/mtd/spi-nor/fujitsu.c                 |   20 +
+>  drivers/mtd/spi-nor/gigadevice.c              |   59 +
+>  drivers/mtd/spi-nor/intel.c                   |   32 +
+>  drivers/mtd/spi-nor/issi.c                    |   83 +
+>  drivers/mtd/spi-nor/macronix.c                |   98 +
+>  drivers/mtd/spi-nor/micron-st.c               |  153 +
+>  drivers/mtd/spi-nor/sfdp.c                    | 1205 ++++++++
+>  drivers/mtd/spi-nor/sfdp.h                    |   98 +
+>  drivers/mtd/spi-nor/spansion.c                |   95 +
+>  drivers/mtd/spi-nor/sst.c                     |  151 +
+>  drivers/mtd/spi-nor/winbond.c                 |  112 +
+>  drivers/mtd/spi-nor/xilinx.c                  |   94 +
+>  drivers/mtd/spi-nor/xmc.c                     |   23 +
+>  include/linux/mtd/spi-nor.h                   |  275 +-
+>  33 files changed, 3120 insertions(+), 2654 deletions(-)
+>  create mode 100644 drivers/mtd/spi-nor/atmel.c
+>  create mode 100644 drivers/mtd/spi-nor/catalyst.c
+>  create mode 100644 drivers/mtd/spi-nor/controllers/Kconfig
+>  create mode 100644 drivers/mtd/spi-nor/controllers/Makefile
+>  rename drivers/mtd/spi-nor/{ => controllers}/aspeed-smc.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/cadence-quadspi.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/hisi-sfc.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-pci.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-platform.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.c (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.h (100%)
+>  rename drivers/mtd/spi-nor/{ => controllers}/nxp-spifi.c (100%)
+>  rename drivers/mtd/spi-nor/{spi-nor.c => core.c} (51%)
+>  create mode 100644 drivers/mtd/spi-nor/core.h
+>  create mode 100644 drivers/mtd/spi-nor/eon.c
+>  create mode 100644 drivers/mtd/spi-nor/esmt.c
+>  create mode 100644 drivers/mtd/spi-nor/everspin.c
+>  create mode 100644 drivers/mtd/spi-nor/fujitsu.c
+>  create mode 100644 drivers/mtd/spi-nor/gigadevice.c
+>  create mode 100644 drivers/mtd/spi-nor/intel.c
+>  create mode 100644 drivers/mtd/spi-nor/issi.c
+>  create mode 100644 drivers/mtd/spi-nor/macronix.c
+>  create mode 100644 drivers/mtd/spi-nor/micron-st.c
+>  create mode 100644 drivers/mtd/spi-nor/sfdp.c
+>  create mode 100644 drivers/mtd/spi-nor/sfdp.h
+>  create mode 100644 drivers/mtd/spi-nor/spansion.c
+>  create mode 100644 drivers/mtd/spi-nor/sst.c
+>  create mode 100644 drivers/mtd/spi-nor/winbond.c
+>  create mode 100644 drivers/mtd/spi-nor/xilinx.c
+>  create mode 100644 drivers/mtd/spi-nor/xmc.c
 
-This patch seems OK. I think rebasing is needed though. Anyway,
-
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-
-Best regards,
-Yoshihiro Shimoda
-
->  	if (res->flags & IORESOURCE_IO)
-> --
-> 2.7.4
+All applied to spi-nor/next. Thanks,
+ta
 
 
 _______________________________________________
