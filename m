@@ -2,83 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92FD71888F6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 16:18:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0294B1888F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 16:18:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rc9r3zJMv5FDWnSTzlzYOTNBsDglZL2Q0cER1OB17F8=; b=nogUqwyg8bN76D
-	bC4godPJ/zwLwuaPD4fYGPZ20ES2U+w6izOAfPnYhYNySbSbY8kmZdlNHMMoq1MaWvzDa4HZDPXR8
-	emf7YjdGH16vGHkaRwVfshpe63KoKnsnxzVL6Cnt2YmYsDq9T4aXRrFEZIi8Ej6DE3HIS1c94yPnI
-	e5+BwkXyrfNet72KpczhTOxHCD6LblIAatvMXouYbKp5yMM07sJDmwbLSWZLr4zHosHfQCbtGOBCK
-	z+oE91FJS/NVQEFNauPpih00Tujgs7Fl519TQ6p+imLD43Zlt7yRYiMTu8+hKz9j/1ixy197ZCjb0
-	srgbMmy6SsWsgondbo5A==;
+	List-Owner; bh=OJUK9m4EFK+m+7oTv0TS7/tur13nc5hnWaEyYt4nmAs=; b=uaG4cr4bnARUkn
+	9eolM2QRyb9L1saqTWyo1ktJAX/2ZBa1YUcgFRQOTe8mGG9ULq8pAjGTIfUekGh9YxJt1P+zNCKrL
+	lG+lgjfriNJ59c0U9glqPpm/AUMdg0nfBuCfR/FD165C6iRyrjKBuoEUkktgFM06ABduw2mZBi9KP
+	08GNCUrGPQc1+Txq5ZMnGWPiKbdfNjnFy0foohUHCUXnt02pnwheQBsLx3Q9BmbfWJbDcBEfvGAaP
+	NHBqdJLkaINUEGmPDiP+hSyNm4gHvc8/YnalRwfV62dIvTV6Pi7ENQFT+3bqEKU/xxX02GQ+OOWRf
+	IXl7IHd0WZR6AV+1occg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEDzC-00042L-1D; Tue, 17 Mar 2020 15:18:30 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jEDzM-0004Jw-QW; Tue, 17 Mar 2020 15:18:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEDyT-0003cc-MQ
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 15:17:50 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02HFDNjo001999; Tue, 17 Mar 2020 16:17:24 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=z2Z/BSGosSRak6mnNoW0BFzlgP/CgbBuGPkERy2kuNc=;
- b=k0YFT87AtxGDAo48E7eIHgMY1MFGYUPyIC0Iq2SuAHyw1EgyWIX/oyStxAPAdc1/MoGa
- eiQ8/1ECXFptNJ3AL7V0gsp4XuYPKKDdrluM7CU4YAYilO75EPZyI+nG0a+250z+Ne95
- LMGy43jFuCtLHDxBrKg2ck17a+kbF8u8Fy9YvavSIEs8MvJL9KqSKLlTHES5NK0vhQoD
- 5Uvhq98UAIsdhLKRJRONRXZYYMWakKCY+YNqSsbXq7YtMW/TroIqthcw6mQxUUJf1toR
- e34xSCTh9PJ+7szy1U2um7bWvoynFwBLtABf14rLPDwTiFWntEE4BI4Sx2tjKX//qzxC rA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yrqa9s1vq-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 17 Mar 2020 16:17:24 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CD6A410002A;
- Tue, 17 Mar 2020 16:17:19 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BDD252BC7AF;
- Tue, 17 Mar 2020 16:17:19 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 17 Mar 2020 16:17:18 +0100
-From: Christophe Roullier <christophe.roullier@st.com>
-To: <davem@davemloft.net>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <mripard@kernel.org>, <martin.blumenstingl@googlemail.com>,
- <alexandru.ardelean@analog.com>, <narmstrong@baylibre.com>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCHv2 2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
- schema
-Date: Tue, 17 Mar 2020 16:17:06 +0100
-Message-ID: <20200317151706.25810-3-christophe.roullier@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200317151706.25810-1-christophe.roullier@st.com>
-References: <20200317151706.25810-1-christophe.roullier@st.com>
+ id 1jEDz1-0004AK-QY
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 15:18:21 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD79C20714;
+ Tue, 17 Mar 2020 15:18:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584458299;
+ bh=kPqFh2OC+QYr6S9udTfHPUyXCCUZbCYYP+w4Ykyo5ac=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=LUy+OokcgDni5hFal9vNvB6rC6CWzLecLAR9f1XopbpdGlLV9X07U3BWT4J1Jyptv
+ +BJnDAuiik5lDTDZCkqpU0RGXJefbmywJuUAg/a8wyiePh7LnOVpvESitpBYCV7A+e
+ 2DBa1Y8EAPamXkr2ZdZUIVFv/dQQwZOAdMfsZp2Y=
+Date: Tue, 17 Mar 2020 15:18:14 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [RFC PATCH] arm64: fix the missing ktpi= cmdline check in
+ arm64_kernel_unmapped_at_el0()
+Message-ID: <20200317151813.GA16579@willie-the-truck>
+References: <20200317114708.109283-1-yaohongbo@huawei.com>
+ <20200317121050.GH8831@lakrids.cambridge.arm.com>
+ <20200317124323.GA16200@willie-the-truck>
+ <20200317135719.GH3971@sirena.org.uk>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-17_06:2020-03-17,
- 2020-03-17 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200317135719.GH3971@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_081746_033264_593F1977 
-X-CRM114-Status: GOOD (  18.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200317_081819_952429_1A22F3E2 
+X-CRM114-Status: GOOD (  22.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,243 +80,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, christophe.roullier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ Hongbo Yao <yaohongbo@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert stm32 dwmac to DT schema.
+On Tue, Mar 17, 2020 at 01:57:19PM +0000, Mark Brown wrote:
+> On Tue, Mar 17, 2020 at 12:43:24PM +0000, Will Deacon wrote:
+> > On Tue, Mar 17, 2020 at 12:10:51PM +0000, Mark Rutland wrote:
+> > > On Tue, Mar 17, 2020 at 07:47:08PM +0800, Hongbo Yao wrote:
+> 
+> > > > Kpti cannot be disabled from the kernel cmdline after the commit
+> > > > 09e3c22a("arm64: Use a variable to store non-global mappings decision").
+> 
+> > > > Bring back the missing check of kpti= command-line option to fix the
+> > > > case where the SPE driver complains the missing "kpti-off" even it has
+> > > > already been set.
+> 
+> > > > -	return arm64_use_ng_mappings;
+> > > > +	return arm64_use_ng_mappings &&
+> > > > +		cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
+> > > >  }
+> 
+> > This probably isn't the right fix, since this will mean that early mappings
+> > will be global and we'll have to go through the painful page-table rewrite
+> > logic when the cap gets enabled for KASLR-enabled kernels.
+> 
+> Aren't we looking for a rewrite from non-global to global here (disable
+> KPTI where we would otherwise have it), which we don't currently have
+> code for?
 
-Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
----
- .../devicetree/bindings/net/stm32-dwmac.txt   |  44 -----
- .../devicetree/bindings/net/stm32-dwmac.yaml  | 160 ++++++++++++++++++
- 2 files changed, 160 insertions(+), 44 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.txt
- create mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+What I mean is that cpus_have_const_cap() will be false initially, so we'll
+put down global mappings early on because PTE_MAYBE_NG will be 0, which
+means that we'll have to invoke the rewriting code if we then realise we
+want non-global mappings after the caps are finalised.
 
-diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.txt b/Documentation/devicetree/bindings/net/stm32-dwmac.txt
-deleted file mode 100644
-index a90eef11dc46..000000000000
---- a/Documentation/devicetree/bindings/net/stm32-dwmac.txt
-+++ /dev/null
-@@ -1,44 +0,0 @@
--STMicroelectronics STM32 / MCU DWMAC glue layer controller
--
--This file documents platform glue layer for stmmac.
--Please see stmmac.txt for the other unchanged properties.
--
--The device node has following properties.
--
--Required properties:
--- compatible:  For MCU family should be "st,stm32-dwmac" to select glue, and
--	       "snps,dwmac-3.50a" to select IP version.
--	       For MPU family should be "st,stm32mp1-dwmac" to select
--	       glue, and "snps,dwmac-4.20a" to select IP version.
--- clocks: Must contain a phandle for each entry in clock-names.
--- clock-names: Should be "stmmaceth" for the host clock.
--	       Should be "mac-clk-tx" for the MAC TX clock.
--	       Should be "mac-clk-rx" for the MAC RX clock.
--	       For MPU family need to add also "ethstp" for power mode clock
--- interrupt-names: Should contain a list of interrupt names corresponding to
--           the interrupts in the interrupts property, if available.
--		   Should be "macirq" for the main MAC IRQ
--		   Should be "eth_wake_irq" for the IT which wake up system
--- st,syscon : Should be phandle/offset pair. The phandle to the syscon node which
--	       encompases the glue register, and the offset of the control register.
--
--Optional properties:
--- clock-names:     For MPU family "eth-ck" for PHY without quartz
--- st,eth-clk-sel (boolean) : set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
--- st,eth-ref-clk-sel (boolean) :  set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
--
--Example:
--
--	ethernet@40028000 {
--		compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
--		reg = <0x40028000 0x8000>;
--		reg-names = "stmmaceth";
--		interrupts = <0 61 0>, <0 62 0>;
--		interrupt-names = "macirq", "eth_wake_irq";
--		clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
--		clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
--		st,syscon = <&syscfg 0x4>;
--		snps,pbl = <8>;
--		snps,mixed-burst;
--		dma-ranges;
--	};
-diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.yaml b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
-new file mode 100644
-index 000000000000..4440216917b3
---- /dev/null
-+++ b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
-@@ -0,0 +1,160 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# Copyright 2019 BayLibre, SAS
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/net/stm32-dwmac.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: STMicroelectronics STM32 / MCU DWMAC glue layer controller
-+
-+maintainers:
-+  - Alexandre Torgue <alexandre.torgue@st.com>
-+  - Christophe Roullier <christophe.roullier@st.com>
-+
-+description:
-+  This file documents platform glue layer for stmmac.
-+
-+# We need a select here so we don't match all nodes with 'snps,dwmac'
-+select:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - st,stm32-dwmac
-+          - st,stm32mp1-dwmac
-+  required:
-+    - compatible
-+
-+allOf:
-+  - $ref: "snps,dwmac.yaml#"
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - st,stm32-dwmac
-+              - st,stm32mp1-dwmac
-+    then:
-+      properties:
-+       clocks:
-+         minItems: 3
-+         maxItems: 5
-+         items:
-+          - description: GMAC main clock
-+          - description: MAC TX clock
-+          - description: MAC RX clock
-+          - description: For MPU family, used for power mode
-+          - description: For MPU family, used for PHY without quartz
-+
-+       clock-names:
-+         minItems: 3
-+         maxItems: 5
-+         contains:
-+          enum:
-+            - stmmaceth
-+            - mac-clk-tx
-+            - mac-clk-rx
-+            - ethstp
-+            - eth-ck
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - items:
-+          - enum:
-+              - st,stm32mp1-dwmac
-+          - const: snps,dwmac-4.20a
-+      - items:
-+          - enum:
-+              - st,stm32-dwmac
-+          - const: snps,dwmac-4.10a
-+      - items:
-+          - enum:
-+              - st,stm32-dwmac
-+          - const: snps,dwmac-3.50a
-+
-+  st,syscon:
-+    allOf:
-+      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
-+    description:
-+      Should be phandle/offset pair. The phandle to the syscon node which
-+      encompases the glue register, and the offset of the control register
-+
-+  st,eth-clk-sel:
-+    description:
-+      set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
-+    type: boolean
-+
-+  st,eth-ref-clk-sel:
-+    description:
-+      set this property in RMII mode when you have PHY without crystal 50MHz and want to
-+      select RCC clock instead of ETH_REF_CLK.
-+    type: boolean
-+
-+required:
-+  - compatible
-+  - clocks
-+  - clock-names
-+  - st,syscon
-+
-+examples:
-+ - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    #include <dt-bindings/reset/stm32mp1-resets.h>
-+    #include <dt-bindings/mfd/stm32h7-rcc.h>
-+    //Example 1
-+     ethernet0: ethernet@5800a000 {
-+       compatible = "st,stm32mp1-dwmac", "snps,dwmac-4.20a";
-+       reg = <0x5800a000 0x2000>;
-+       reg-names = "stmmaceth";
-+       interrupts = <&intc GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
-+       interrupt-names = "macirq";
-+       clock-names = "stmmaceth",
-+                     "mac-clk-tx",
-+                     "mac-clk-rx",
-+                     "ethstp",
-+                     "eth-ck";
-+       clocks = <&rcc ETHMAC>,
-+                <&rcc ETHTX>,
-+                <&rcc ETHRX>,
-+                <&rcc ETHSTP>,
-+                <&rcc ETHCK_K>;
-+       st,syscon = <&syscfg 0x4>;
-+       snps,pbl = <2>;
-+       snps,axi-config = <&stmmac_axi_config_0>;
-+       snps,tso;
-+       status = "disabled";
-+       phy-mode = "rgmii";
-+       };
-+
-+    //Example 2 (MCU example)
-+     ethernet1: ethernet@40028000 {
-+       compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
-+       reg = <0x40028000 0x8000>;
-+       reg-names = "stmmaceth";
-+       interrupts = <0 61 0>, <0 62 0>;
-+       interrupt-names = "macirq", "eth_wake_irq";
-+       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
-+       clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
-+       st,syscon = <&syscfg 0x4>;
-+       snps,pbl = <8>;
-+       snps,mixed-burst;
-+       dma-ranges;
-+       phy-mode = "mii";
-+       };
-+
-+    //Example 3
-+     ethernet2: ethernet@40027000 {
-+       compatible = "st,stm32-dwmac", "snps,dwmac-4.10a";
-+       reg = <0x40028000 0x8000>;
-+       reg-names = "stmmaceth";
-+       interrupts = <61>;
-+       interrupt-names = "macirq";
-+       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
-+       clocks = <&rcc 62>, <&rcc 61>, <&rcc 60>;
-+       st,syscon = <&syscfg 0x4>;
-+       snps,pbl = <8>;
-+       status = "disabled";
-+       phy-mode = "mii";
-+       };
--- 
-2.17.1
+> > Maybe a better bodge is something like:
+> 
+> > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> > index 0b6715625cf6..ad10f55b7bb9 100644
+> > --- a/arch/arm64/kernel/cpufeature.c
+> > +++ b/arch/arm64/kernel/cpufeature.c
+> > @@ -1085,6 +1085,8 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
+> >  		if (!__kpti_forced) {
+> >  			str = "KASLR";
+> >  			__kpti_forced = 1;
+> > +		} else if (__kpti_forced < 0) {
+> > +			arm64_use_ng_mappings = false;
+> >  		}
+> >  	}
+> 
+> That is probably a good idea but I think that runs too late to affect
+> the early mappings, they're done based on kaslr_requires_kpti() well
+> before we start secondaries.  My first pass not having paged everything
+> back in yet is that there needs to be command line parsing in
+> kaslr_requires_kpti() but as things stand the command line isn't
+> actually ready then...
 
+Yeah, and I think you probably run into chicken and egg problems mapping
+the thing. With the change above, it's true that /some/ mappings will
+still be nG if you pass kpti=off, but I was hoping that didn't really matter
+:)
+
+What was the behaviour prior to your patch? If it used to work without
+any nG mappings, then I suppose we should try to restore that behaviour.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
