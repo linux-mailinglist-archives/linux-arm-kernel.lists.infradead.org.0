@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DA5E189076
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:34:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28149189077
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 22:34:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ieQgxbI4ApOZE9Qz6JMG9+N3l9tfF4/USBDSUcNm0pk=; b=lRTvJ7uZHrLyvK
-	zj0uBb5coSFCafdzk/IdBgJPUbjYqrnvQUJwXAeMqLqyumrBUJyviC5S9YoZOMoR3kfPoZFUE2ia3
-	OSQNTtuunupVmdEe0AiqMIBxt2t5Nb8IVZyShAppeGVVX3YDkM2GnHg4gPos1YtM9RydfN4JKmuqQ
-	+YYo0Y1kPDKEPnQZeDjezpYIhF/1DJhcBw+YFUVq9tCuCaztSIF+dUzl5360v0tpceQNf9f4Yo+nP
-	9kMdPOJia9b4jZiU52SQHDUmh1aKvxgKPeEWfrdK2JXfb/JAJFdSs7IBY5UMe/abNlgPSiERc1tpQ
-	YR3p7Vc3hkKuj2yApfHQ==;
+	List-Owner; bh=jEbQC3XWofpMrbC4kBoTWdkqO51NccQB4SupqkcTWKY=; b=YEcBa3eSjJGJpq
+	YVcG9GImu+oAcsc/0WMQy2Kxmnv2ZHlDYWjfMKbwTQdNkLlLQCoRPdE8+wyF8E3aW13WVK0wvDIkm
+	gy2rEEZcgyVP362Zi5+F8VNMCaQVajEmmHSQ8UcHKai6KBeW3J/MUUOw/0nR5Cik0raV+YmKpj9Ay
+	03J5mrSZjXRRhzIINpmoE8OCFAaA5dYk0apYV0+MwxHdTlfO4JD/uoCETpKg2UMp9SJ7arIjq3By/
+	L0nvml5lNchJ8k9cv3mukPCWQAQ2zg1MmbkmaYmMvCpAIn9WU7xCDTLBTJjHz0vFj8Sp8jQDbfGfW
+	rOlRVV5TVJMuft+zHhug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEJqQ-0001mD-7u; Tue, 17 Mar 2020 21:33:50 +0000
+	id 1jEJql-0001sx-Eo; Tue, 17 Mar 2020 21:34:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEJqI-0001lZ-IZ
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:33:44 +0000
+ id 1jEJqM-0001nV-Dd
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 21:33:48 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBDB420768;
- Tue, 17 Mar 2020 21:33:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C11320754;
+ Tue, 17 Mar 2020 21:33:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584480821;
- bh=M3BrxNizDgtvsDigyFidbHiD1UnzC8+C8J4O1HpPPow=;
+ s=default; t=1584480826;
+ bh=gcJnFPP0ksb1GRI6uV7QJRMhRKrj0jE6f1HzxdYooNw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=G2MMA1Ph48N9VtHU/5bj5UCz5OSSe/ZOp33LNXj1Mm7lK1ITppKFboY6xiEG4lv5w
- 394UwSHNfdq6qdsmw1i/eun/4YFjF2xd8O0M8hyxsR6jnjsEcMSObj/XPL7ZneCKan
- y+ML5SJufvctrXcT9CWyY/cSPrTLf+hbxREbylng=
+ b=Nfzl6pCu2hF0D2LpDWw/kxI0er/n2XrAdzj8/25UmRFx0mjlFRl6t2ay1zMD3JG8T
+ 7DkAoRY03haz7NcsUEVTPfZ1VELlN1Ixvkadl78PEhBBl4bBsZ1an4LMpciswVQciq
+ 2A2H+H4GPoxu4aJk8nB1JFDkpzDZ37kALL99y224=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 09/23] perf cs-etm: Swap packets for instruction samples
-Date: Tue, 17 Mar 2020 18:32:45 -0300
-Message-Id: <20200317213259.15494-10-acme@kernel.org>
+Subject: [PATCH 10/23] perf cs-etm: Continuously record last branch
+Date: Tue, 17 Mar 2020 18:32:46 -0300
+Message-Id: <20200317213259.15494-11-acme@kernel.org>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200317213259.15494-1-acme@kernel.org>
 References: <20200317213259.15494-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_143342_656360_3EC3CCB4 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20200317_143346_517658_E21E85A8 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,15 +94,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-If use option '--itrace=iNNN' with Arm CoreSight trace data, perf tool
-fails inject instruction samples; the root cause is the packets are only
-swapped for branch samples and last branches but not for instruction
-samples, so the new coming packets cannot be properly handled for only
-synthesizing instruction samples.
+Every time synthesize instruction sample, the last branch recording will
+be reset.  This is fine if the instruction period is big enough, for
+example if use the option '--itrace=i100000', the last branch array is
+reset for every sample with 100000 instructions per period; before
+generate the next instruction sample, there has the sufficient packets
+coming to fill the last branch array.
 
-To fix this issue, this patch refactors the code with a new function
-cs_etm__packet_swap() which is used to swap packets and adds the
-condition for instruction samples.
+On the other hand, if set a very small period, the packets will be
+significantly reduced between two continuous instruction samples, thus
+the last branch array is almost empty for new instruction sample by
+frequently resetting.
+
+To allow the last branches to work properly for any instruction periods,
+this patch avoids to reset the last branch for every instruction sample
+and only reset it when flush the trace data.  The last branches will be
+reset only for two cases, one is for trace starting, another case is for
+discontinuous trace; other cases can keep recording last branches for
+continuous instruction samples.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
@@ -116,90 +125,37 @@ Cc: Robert Walker <robert.walker@arm.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: coresight ml <coresight@lists.linaro.org>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lore.kernel.org/lkml/20200219021811.20067-2-leo.yan@linaro.org
+Link: http://lore.kernel.org/lkml/20200219021811.20067-3-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/cs-etm.c | 39 +++++++++++++++++++--------------------
- 1 file changed, 19 insertions(+), 20 deletions(-)
+ tools/perf/util/cs-etm.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index b3b3fe3ea345..294b09cfb034 100644
+index 294b09cfb034..2c4156c5ed09 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -363,6 +363,23 @@ struct cs_etm_packet_queue
- 	return NULL;
+@@ -1170,9 +1170,6 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+ 			"CS ETM Trace: failed to deliver instruction event, error %d\n",
+ 			ret);
+ 
+-	if (etm->synth_opts.last_branch)
+-		cs_etm__reset_last_branch_rb(tidq);
+-
+ 	return ret;
  }
  
-+static void cs_etm__packet_swap(struct cs_etm_auxtrace *etm,
-+				struct cs_etm_traceid_queue *tidq)
-+{
-+	struct cs_etm_packet *tmp;
-+
-+	if (etm->sample_branches || etm->synth_opts.last_branch ||
-+	    etm->sample_instructions) {
-+		/*
-+		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
-+		 * the next incoming packet.
-+		 */
-+		tmp = tidq->packet;
-+		tidq->packet = tidq->prev_packet;
-+		tidq->prev_packet = tmp;
-+	}
-+}
-+
- static void cs_etm__packet_dump(const char *pkt_string)
- {
- 	const char *color = PERF_COLOR_BLUE;
-@@ -1342,7 +1359,6 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 			  struct cs_etm_traceid_queue *tidq)
- {
- 	struct cs_etm_auxtrace *etm = etmq->etm;
--	struct cs_etm_packet *tmp;
- 	int ret;
- 	u8 trace_chan_id = tidq->trace_chan_id;
- 	u64 instrs_executed = tidq->packet->instr_count;
-@@ -1406,15 +1422,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 		}
- 	}
- 
--	if (etm->sample_branches || etm->synth_opts.last_branch) {
--		/*
--		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
--		 * the next incoming packet.
--		 */
--		tmp = tidq->packet;
--		tidq->packet = tidq->prev_packet;
--		tidq->prev_packet = tmp;
--	}
-+	cs_etm__packet_swap(etm, tidq);
- 
- 	return 0;
- }
-@@ -1443,7 +1451,6 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- {
- 	int err = 0;
- 	struct cs_etm_auxtrace *etm = etmq->etm;
--	struct cs_etm_packet *tmp;
- 
- 	/* Handle start tracing packet */
- 	if (tidq->prev_packet->sample_type == CS_ETM_EMPTY)
-@@ -1478,15 +1485,7 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- 	}
- 
+@@ -1487,6 +1484,10 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
  swap_packet:
--	if (etm->sample_branches || etm->synth_opts.last_branch) {
--		/*
--		 * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
--		 * the next incoming packet.
--		 */
--		tmp = tidq->packet;
--		tidq->packet = tidq->prev_packet;
--		tidq->prev_packet = tmp;
--	}
-+	cs_etm__packet_swap(etm, tidq);
+ 	cs_etm__packet_swap(etm, tidq);
  
++	/* Reset last branches after flush the trace */
++	if (etm->synth_opts.last_branch)
++		cs_etm__reset_last_branch_rb(tidq);
++
  	return err;
  }
+ 
 -- 
 2.21.1
 
