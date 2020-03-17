@@ -2,59 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E5B4189187
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 23:34:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FA141891BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 00:01:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JEp/2Rz+1JsnrJe5tDq/PjwxlI9Wotnn2pPpgxpw7MY=; b=YN0iUYguT4/zV2
-	U0yISXxffweyEPF921AQnzKUYpJX+BgQDOzPHzXFfDQ0pxmof2hze/fyicTP4cXIkhLgdnPiqfTT3
-	wLmhE8PMwPw57gNSr0oTq56ASAdC0zJnffd/S1J5vPW6uUR3XCYJ8W6/6s2kD5+GP5lVqEb3Tg0hu
-	eHobSEzasvp3/+n9RRk3HmEsQnd9seFNdE7XOFGK/e5vtYmpDMw92PjfnxL/Vr8EijrooL0A5emWI
-	eCmJ42esCeJrIqGuKWKCfUaW38LTxO2bwXcee2lH6EREwBBkvXQdxA577GHDVdfYOhZXOxsm0SN/Z
-	MvzeXEx98xcPs0tts7pQ==;
+	List-Owner; bh=wM24Wc1YdaXdE1wmhuzUN+hsy/NQbXuxywbUalLUddQ=; b=q+6l2+wgaqOliP
+	r1mne7AhPdIcpGjH5osHjDk7GqzZmXvDI5xiWTSq7cLTAfgaW+xoZkWD9e2g8mnfD3SVO696JHs4U
+	ZE5zfa/DlFL642arMWW6QjB5e4gXgCWpknvLJKpUNxqKGpvp6Ry5q/5Y31PIP03H7cusTNlSO8z7J
+	XGYOM8RDZBfVDG6iXSFV+NMrHNtB69lbWk5pdzEuTUbjRCCRLePAnjdfQoZuANAEYM7uAbudhVbpZ
+	Okii+tHh2QzIbnefM2wvXgLzQ5BWtHFqlT8W3AzG2bXnZbYAks0Ek8HtLkuSsFcMwWHsjEZNVRBY/
+	3OH95gUIYm4n9/CCLSxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEKnO-0000ln-H6; Tue, 17 Mar 2020 22:34:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jELDD-0001x9-DN; Tue, 17 Mar 2020 23:01:27 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEKnG-0000lL-9Q
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 22:34:39 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F1DE820674;
- Tue, 17 Mar 2020 22:34:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584484478;
- bh=/LP+yOTLJ8bmG3iy62G9dpLGOzZo7YWw9GhpuzL/3Zs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ovh3ufRqT9Kuyo9vQDhUv7CQkINb8MM9jyYJfqQwQ+2OZ535SCMb8SWLt3EXfRA+E
- MvWraLAlFagDJiHV+WH16RTeK3bAk57Ro2Rb2j5ay4/vfaC+i1DYK8vvt/OlezHboy
- nvKpIex7HtHVlPKF2eU7nHym/Y/cbkuYjzF1oZ3I=
-Date: Tue, 17 Mar 2020 22:34:33 +0000
-From: Will Deacon <will@kernel.org>
-To: =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
-Subject: Re: [PATCH 3/3] arm64: reduce trampoline data alignment
-Message-ID: <20200317223433.GL20788@willie-the-truck>
-References: <20200316124046.103844-3-remi@remlab.net>
+ id 1jELD6-0001wX-Cl
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 23:01:21 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 2so12759305pfg.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Mar 2020 16:01:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=CLAXJR/m1S5mvbxDH/gOJKQ31fTpJSMrQ/dm5IseVLo=;
+ b=nHn8XPpjogArRYq/pgvsanPOK+4o4O576oiPZS+njOPe1Iyb2CbZK5pOPlCvHz+Erq
+ ycjuE3lMYgppqAWBDcD1CzbbzRU1NJ+lLGqwcVY1M/ynuQLTbpDg/KVTErnY8WshjnKQ
+ dLlK6CXABUAwVSNrHVBjY4SoDTh8u6qiXtVM0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=CLAXJR/m1S5mvbxDH/gOJKQ31fTpJSMrQ/dm5IseVLo=;
+ b=FlVbaLKCOFDkgvyH0wc8Euxgqu44K54KN9APoN7roc2bDV2uFjrMMScn7OusZVxGc4
+ MHASX2MRdfVNM/AbzA3uGsBpfq0Gf/Y9dsMqcovnD396lCWcYGGNTmdPLSwB3jbHtTze
+ tLOx7+0JFuxSGRgHMCHWE9QwXVsSybN56FCDCGM/16rtMxI8QbhOEiMoVcBsEu2ejYfF
+ 3Fbc89SEAAvN81QLiC11pGp2Y+48Rj4fh+euct04oWXdSRtNzjyM0+M1vAUyprTYPAil
+ DVthh7/EIy8VDw0PFjno/NtNO+EAF8BdiriU61qe8A+2ib8NHzBpR+SIPmNAEV5BBgUO
+ QNKQ==
+X-Gm-Message-State: ANhLgQ0TtkIW+33fmBvUXjQ5Jj8GSYvBLxpqbUk1MpIsvjO9cGhYJR2z
+ VLofqQmTX0ditKMFcFz/qkoXpg==
+X-Google-Smtp-Source: ADFU+vvg0MZXI74SVi2HiksDnjxAGYalVyFBX2Irz0ufLm1PbI7PXP1Iee6C/syJdSKNKPaBtFiibQ==
+X-Received: by 2002:a63:1245:: with SMTP id 5mr1481307pgs.55.1584486078671;
+ Tue, 17 Mar 2020 16:01:18 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id w15sm1772273pfj.28.2020.03.17.16.01.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Mar 2020 16:01:17 -0700 (PDT)
+Date: Tue, 17 Mar 2020 16:01:16 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 7/9] arm64/build: Warn on orphan section placement
+Message-ID: <202003171558.7E1D46AED6@keescook>
+References: <20200228002244.15240-1-keescook@chromium.org>
+ <20200228002244.15240-8-keescook@chromium.org>
+ <20200317215614.GB20788@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200316124046.103844-3-remi@remlab.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200317215614.GB20788@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_153438_354478_0265F3BE 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200317_160120_455141_0EB1BEDE 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,75 +96,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, James Morse <james.morse@arm.com>,
+ linux-arch@vger.kernel.org, Borislav Petkov <bp@suse.de>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 16, 2020 at 02:40:46PM +0200, R=E9mi Denis-Courmont wrote:
-> From: R=E9mi Denis-Courmont <remi.denis.courmont@huawei.com>
-> =
+On Tue, Mar 17, 2020 at 09:56:14PM +0000, Will Deacon wrote:
+> On Thu, Feb 27, 2020 at 04:22:42PM -0800, Kees Cook wrote:
+> > We don't want to depend on the linker's orphan section placement
+> > heuristics as these can vary between linkers, and may change between
+> > versions. All sections need to be explicitly named in the linker
+> > script.
+> > 
+> > Explicitly include debug sections when they're present. Add .eh_frame*
+> > to discard as it seems that these are still generated even though
+> > -fno-asynchronous-unwind-tables is being specified. Add .plt and
+> > .data.rel.ro to discards as they are not actually used. Add .got.plt
+> > to the image as it does appear to be mapped near .data. Finally enable
+> > orphan section warnings.
+> 
+> Hmm, I don't understand what .got.plt is doing here. Please can you
+> elaborate?
 
-> The trampoline data, currently consisting of two relocated pointers,
-> must be within a single page. However, there are no needs for it to
-> start a page.
-> =
+I didn't track it down, but it seems to have been present (and merged
+into the kernel .data) for a while now. I can try to track this down if
+you want?
 
-> This reduces the alignment to 16 bytes (with SDEI) or 8 bytes (without
-> SDEI), which is sufficient to ensure that the data is entirely within a
-> single page of the fixmap.
-> =
-
-> Signed-off-by: R=E9mi Denis-Courmont <remi.denis.courmont@huawei.com>
-> ---
->  arch/arm64/kernel/entry.S | 4 ++--
->  arch/arm64/mm/mmu.c       | 5 ++---
->  2 files changed, 4 insertions(+), 5 deletions(-)
-> =
-
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index af17fcb4aaea..b648f9fe1e33 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -858,12 +858,12 @@ SYM_CODE_END(tramp_exit_compat)
->  	.popsection				// .entry.tramp.text
->  #ifdef CONFIG_RANDOMIZE_BASE
->  	.pushsection ".rodata", "a"
-> -	.align PAGE_SHIFT
->  #ifdef CONFIG_ARM_SDE_INTERFACE
-> +	.align	4	// all .rodata must be in a single fixmap page
->  SYM_DATA_START(__sdei_asm_trampoline_next_handler)
->  	.quad	__sdei_asm_handler
->  SYM_DATA_END(__sdei_asm_trampoline_next_handler)
-> -#endif
-> +#endif /* CONFIG_ARM_SDE_INTERFACE */
->  SYM_DATA_START(__entry_tramp_data_start)
->  	.quad	vectors
->  SYM_DATA_END(__entry_tramp_data_start)
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 9b08f7c7e6f0..6a0e75f48e7b 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -599,9 +599,8 @@ static int __init map_entry_trampoline(void)
->  	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE)) {
->  		extern char __entry_tramp_data_start[];
->  =
-
-> -		__set_fixmap(FIX_ENTRY_TRAMP_DATA,
-> -			     __pa_symbol(__entry_tramp_data_start),
-> -			     PAGE_KERNEL_RO);
-> +		pa_start =3D __pa_symbol(__entry_tramp_data_start) & PAGE_MASK;
-> +		__set_fixmap(FIX_ENTRY_TRAMP_DATA, pa_start, PAGE_KERNEL_RO);
->  	}
->  =
-
->  	return 0;
-
-Acked-by: Will Deacon <will@kernel.org>
-
-Will
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
