@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C96F81883C0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:23:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DC681883CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Mar 2020 13:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z1OQdfGIIFW6Hw377gBb1AYPDCwHUdgAMuB4sehxQmg=; b=r877CaKcRmaiXq
-	w3j/BCQaTHBtLcao9O57U38wFMW+CzL6Z/eMK9nlOfV+q0WUnfxDnAn/7O0j/t4iPEbzv6QWcJlyL
-	a/vfpOZ7Gfjj+1Z/GEHzUinwVHuTjhcZ10VDI6A0lYdXp/2eUKivb+pxrGEYqI+CgBMVqxrjs5U17
-	LzKd1ItfoeIQBLstFJamLuEECyUn67DN2YihRz0nb88UV/hbwo+RJuhPjZZOhysEm0naDV9mESYz2
-	jb5Ky1cdATGAPwR8UVX3YcjLdkwG1iBb2kpnq0rmTzDm1KreiKOM8+65Le4GUZq4T9LnEWp+B8XTj
-	CyJ+t5wdhaRvyAfv86XA==;
+	List-Owner; bh=UQKF4DUWN6i2EdshEcHdIFscVbWPSEVdYPqh2wLX9Go=; b=gvUwchAoyztZkC
+	Uai14kJZCz49AuBfpuTtQT1V6sva7nxFkeJVLJg1/yVee41hbcV3n0pWBxxrn9mtKRG/AYFGjnbl2
+	22e9Eklxa9xMQCly8CbBy2HXvtrWeeaqLnIowAFPBLWiIH3dx+Cpx4bbekwr2eePdSY3mzjv/ZdaI
+	1G+kMGEjd630PtUWllMPZpY8bnixv+RZQgravpq3w/k1iocR7UTBFifetGt8pAjs+edgtO/+IMZ0s
+	7jc3mokYrM+iWcRK/Ob9/r10pZKh8Ej/QmW+1QkxT9zCwwIVjIAxw7XVV0Xo3r+vyzPg14WfBOtft
+	BhWN3Bder7tV2pdqa8qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEBFq-0005Zw-Ux; Tue, 17 Mar 2020 12:23:30 +0000
+	id 1jEBG4-0005zb-Ud; Tue, 17 Mar 2020 12:23:44 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEBFK-0005Ov-4C
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:22:59 +0000
+ id 1jEBFK-0005PY-Qn
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Mar 2020 12:23:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BBA71FEC;
- Tue, 17 Mar 2020 05:22:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E694F101E;
+ Tue, 17 Mar 2020 05:22:57 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C69383F534;
- Tue, 17 Mar 2020 05:22:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F12AA3F534;
+ Tue, 17 Mar 2020 05:22:54 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v4 01/26] linux/const.h: Extract common header for vDSO
-Date: Tue, 17 Mar 2020 12:21:55 +0000
-Message-Id: <20200317122220.30393-2-vincenzo.frascino@arm.com>
+Subject: [PATCH v4 02/26] linux/bits.h: Extract common header for vDSO
+Date: Tue, 17 Mar 2020 12:21:56 +0000
+Message-Id: <20200317122220.30393-3-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_052258_211432_53E28E8D 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20200317_052258_906990_2AFB8572 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,47 +85,46 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split const.h into linux and common headers to make the latter suitable
+Split bits.h into linux and common headers to make the latter suitable
 for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/linux/const.h |  5 +----
- include/vdso/const.h  | 10 ++++++++++
- 2 files changed, 11 insertions(+), 4 deletions(-)
- create mode 100644 include/vdso/const.h
+ include/linux/bits.h | 2 +-
+ include/vdso/bits.h  | 9 +++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 include/vdso/bits.h
 
-diff --git a/include/linux/const.h b/include/linux/const.h
-index 7b55a55f5911..81b8aae5a855 100644
---- a/include/linux/const.h
-+++ b/include/linux/const.h
-@@ -1,9 +1,6 @@
- #ifndef _LINUX_CONST_H
- #define _LINUX_CONST_H
+diff --git a/include/linux/bits.h b/include/linux/bits.h
+index 669d69441a62..a740bbcf3cd2 100644
+--- a/include/linux/bits.h
++++ b/include/linux/bits.h
+@@ -3,9 +3,9 @@
+ #define __LINUX_BITS_H
  
--#include <uapi/linux/const.h>
--
--#define UL(x)		(_UL(x))
--#define ULL(x)		(_ULL(x))
-+#include <vdso/const.h>
+ #include <linux/const.h>
++#include <vdso/bits.h>
+ #include <asm/bitsperlong.h>
  
- #endif /* _LINUX_CONST_H */
-diff --git a/include/vdso/const.h b/include/vdso/const.h
+-#define BIT(nr)			(UL(1) << (nr))
+ #define BIT_ULL(nr)		(ULL(1) << (nr))
+ #define BIT_MASK(nr)		(UL(1) << ((nr) % BITS_PER_LONG))
+ #define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
+diff --git a/include/vdso/bits.h b/include/vdso/bits.h
 new file mode 100644
-index 000000000000..94b385ad438d
+index 000000000000..6d005a1f5d94
 --- /dev/null
-+++ b/include/vdso/const.h
-@@ -0,0 +1,10 @@
++++ b/include/vdso/bits.h
+@@ -0,0 +1,9 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __VDSO_CONST_H
-+#define __VDSO_CONST_H
++#ifndef __VDSO_BITS_H
++#define __VDSO_BITS_H
 +
-+#include <uapi/linux/const.h>
++#include <vdso/const.h>
 +
-+#define UL(x)		(_UL(x))
-+#define ULL(x)		(_ULL(x))
++#define BIT(nr)			(UL(1) << (nr))
 +
-+#endif /* __VDSO_CONST_H */
++#endif	/* __VDSO_BITS_H */
 -- 
 2.25.1
 
