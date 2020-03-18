@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47B3E18951F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 06:20:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D092189520
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 06:20:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0RK2+SEZYyHmcKsYtCpCOwG3cfvqc+Q6a8xF/jLe1yw=; b=LFA3McEowreXPtRKMF3NRZqRaA
-	4MruurkO2rVqgASMFAAA9oz1J6BRWWMNZqpxGU3nsvjGunCCGUNEmwHsu6j88CXTvgRBmnIm2r85N
-	eMKMK6hveIIgwo9OzG404I3EeRwbdwGmLrp7GtruDEmI983Pv2m3Q2jfHf+3clTSfQ3dDFNKWOaJr
-	P6oCZDvCrFns7pOut/4yrJfKVFnxvNIT5nsglxH+g76S3bolTbqDE3reWWEnkshK2NJwSyp4o2ybz
-	ZOHuPh9KDgxwkpq7UoQPdqL/B5lxogw8WqM3dVtA43GqjMFGKV8OFQcRmZc7DwKTc9fXJWGp9sdR+
-	PQhW+UQA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yeTXecKY5Xeg2k2LN2TBz5F/ENwaR58xug56ZsmnsPI=; b=YUXmh/Yo3B8LMl
+	95PFlip20SiMKiJ3tvmbI5L/InsMNnqBinaRSA2ux3eEAQccmaJB8Rxa5llf6LxQ0qjrlhBB4Rme4
+	vQKO/ucqX/moQHlYozi0+aN7AkCcctHaJfzJBriEhroQBxIbGss56rwO2GIss6sONze9aOBnbc3Eg
+	Qpe3gmFFqLRUJEsNTjaaP6rziin4qZ70vhvbDa8YXw4mgDYU/463/bmOw2jQ9CxF/YUFT1B/MUX0G
+	48tb45u8rLZ1oElgix+8vov0WPRzevQv0bdWKJLAMkuWYpVHpGSE018gKvolhebYVdpAQeIYCX5OM
+	NmcNIKfIEnWMrTKJ8xsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jER7e-0006d5-8a; Wed, 18 Mar 2020 05:20:06 +0000
+	id 1jER7z-0006zA-P5; Wed, 18 Mar 2020 05:20:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jER7B-0006TS-3E
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 05:19:38 +0000
+ id 1jER7D-0006UR-T3
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 05:19:41 +0000
 Received: from localhost.localdomain (80.251.214.228.16clouds.com
  [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D16E82076E;
- Wed, 18 Mar 2020 05:19:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3F1DF20771;
+ Wed, 18 Mar 2020 05:19:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584508776;
- bh=InKISOTngiLpQA7Frp2HmGa+Lh0Ml5VtkzpokZMn8nU=;
+ s=default; t=1584508779;
+ bh=Y+Tqf7yBwOUkHOr5SMJcL6/5ab7w4PsyOS+cz6VDSCA=;
  h=From:List-Id:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZMN47QnFjTVzs5BZD/uJqjl2Y5Du8/kdp06nomM29czt13XGFfmpaebrATOB64Wom
- JMs1d1xsMoKST773dJ6oSmxbE/fYzeyJTB7gg9ro7fN43LE4Vwip6KHx69If5x5fRn
- ijDYOi/iGMwCiSN4RWJ17Ks7qMIzV/AEg0HOUJeA=
+ b=qTphW+AlhZhf3g3SL72dtYaSQIMmO+2qxJwrFZDRjfy+Yez98YZfAgy1+CKpTS/cn
+ MDr082Aegs6Nt1W3UL6l+HfvbLyNzyE6jjKelFKCodZOVgb+7a6McfnLIxjwNPziuk
+ DSvhUhcPbFuJQ1itKTZ/kPrOMRCLe6jF+c8y97J0=
 From: Shawn Guo <shawnguo@kernel.org>
 To: soc@kernel.org,
 	arm@kernel.org
-Subject: [GIT PULL 2/6] i.MX SoC changes for 5.7
-Date: Wed, 18 Mar 2020 13:19:14 +0800
-Message-Id: <20200318051918.32579-2-shawnguo@kernel.org>
+Subject: [GIT PULL 3/6] i.MX DT bindings update for 5.7
+Date: Wed, 18 Mar 2020 13:19:15 +0800
+Message-Id: <20200318051918.32579-3-shawnguo@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200318051918.32579-1-shawnguo@kernel.org>
 References: <20200318051918.32579-1-shawnguo@kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_221937_154300_773EA2E6 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200317_221939_963212_55431E9D 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,57 +81,40 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Shawn Guo <shawnguo@kernel.org>, Stefan Agner <stefan@agner.ch>,
  Li Yang <leoyang.li@nxp.com>, linux-imx@nxp.com, kernel@pengutronix.de,
  Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-soc-5.7
-
-for you to fetch changes up to 756931e058ec3dc625f85a09ae0c3143d2a6ef72:
-
-  ARM: imx: Drop unnecessary src_base check (2020-03-11 15:18:17 +0800)
-
-----------------------------------------------------------------
-i.MX SoC changes for 5.7:
-
- - A number of cleanups from Anson Huang to remove unneeded includes,
-   drop unnecessary newlines and base check etc.
- - Apply Cortex-A9 specific errata only to Cortex-A9 based i.MX SoCs
-   and avoid impacting Cortex-A7 based designs.
-
-----------------------------------------------------------------
-Anson Huang (6):
-      ARM: imx: Remove unused include of linux/irqchip/arm-gic.h
-      ARM: imx: Remove unused includes on mach-imx6q.c
-      ARM: imx: Remove unused include of linux/of.h on mach-imx6sl.c
-      ARM: imx: Add missing of_node_put()
-      ARM: imx: Remove unnecessary blank lines
-      ARM: imx: Drop unnecessary src_base check
-
-Stefan Agner (1):
-      ARM: imx: limit errata selection to Cortex-A9 based designs
-
- arch/arm/mach-imx/Kconfig       | 10 ++++++++--
- arch/arm/mach-imx/anatop.c      |  7 ++++---
- arch/arm/mach-imx/gpc.c         |  4 ++--
- arch/arm/mach-imx/mach-imx6q.c  | 13 -------------
- arch/arm/mach-imx/mach-imx6sl.c |  1 -
- arch/arm/mach-imx/mach-imx6ul.c |  1 -
- arch/arm/mach-imx/platsmp.c     |  1 +
- arch/arm/mach-imx/pm-imx6.c     |  2 ++
- arch/arm/mach-imx/pm-imx7ulp.c  |  1 +
- arch/arm/mach-imx/src.c         |  3 ---
- 10 files changed, 18 insertions(+), 25 deletions(-)
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGZvbGxvd2luZyBjaGFuZ2VzIHNpbmNlIGNvbW1pdCBiYjZkM2ZiMzU0YzVlZThkNmJkZTJk
+NTc2ZWI3MjIwZWEwOTg2MmI5OgoKICBMaW51eCA1LjYtcmMxICgyMDIwLTAyLTA5IDE2OjA4OjQ4
+IC0wODAwKQoKYXJlIGF2YWlsYWJsZSBpbiB0aGUgR2l0IHJlcG9zaXRvcnkgYXQ6CgogIGdpdDov
+L2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9zaGF3bmd1by9saW51eC5n
+aXQgdGFncy9pbXgtYmluZGluZ3MtNS43Cgpmb3IgeW91IHRvIGZldGNoIGNoYW5nZXMgdXAgdG8g
+NTNiNjEyMjRjYTQwZGM0NTRiOTRiNWQ3MDVkMTdmMTllNzgwMjk5YToKCiAgZHQtYmluZGluZ3M6
+IGFybTogZnNsOiBBZGQgVGVjaE5leGlvbiBib2FyZHMgKDIwMjAtMDMtMTYgMDk6MDY6NDIgKzA4
+MDApCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tCmkuTVggRFQgYmluZGluZ3MgdXBkYXRlIGZvciA1Ljc6CgogLSBBZGQgY29t
+cGF0aWJsZXMgZm9yIFRlY2hOZXhpb24gaS5NWDYvNywgS29udHJvbiBMUzEwMjhBLCBUb3JhZGV4
+IGkuTVg3LAogICBOWFAgaS5NWDhNUCBFVkssIGFuZCBMUzEwMjhBIGV2YWx1YXRpb24gYm9hcmRz
+LgogLSBJbXByb3ZlIE5YUCBjcnlwdG8gYmluZGluZyBleGFtcGxlcyB0byB1c2UgZ2VuZXJpYyBu
+b2RlIG5hbWUuCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tCkFuc29uIEh1YW5nICgxKToKICAgICAgZHQtYmluZGluZ3M6IGFy
+bTogaW14OiBBZGQgdGhlIGkuTVg4TVAgRVZLIGJvYXJkCgpGYWJpbyBFc3RldmFtICgxKToKICAg
+ICAgZHQtYmluZGluZ3M6IGFybTogZnNsOiBBZGQgVGVjaE5leGlvbiBib2FyZHMKCkhvcmlhIEdl
+YW50xIMgKDMpOgogICAgICBkdC1iaW5kaW5nczogY3J5cHRvOiBzYWhhcmE6IHVzZSBnZW5lcmlj
+IG5vZGUgbmFtZQogICAgICBkdC1iaW5kaW5nczogY3J5cHRvOiBkY3A6IHVzZSBnZW5lcmljIG5v
+ZGUgbmFtZQogICAgICBkdC1iaW5kaW5nczogY3J5cHRvOiBjYWFtOiB1c2UgZ2VuZXJpYyBub2Rl
+IG5hbWUKCk1pY2hhZWwgV2FsbGUgKDIpOgogICAgICBkdC1iaW5kaW5nczogYXJtOiBmc2w6IGFk
+ZCBMUzEwMjhBIGJhc2VkIGJvYXJkcwogICAgICBkdC1iaW5kaW5nczogYXJtOiBmc2w6IGFkZCBL
+b250cm9uIHNsMjggYm9hcmRzCgpPbGVrc2FuZHIgU3V2b3JvdiAoMSk6CiAgICAgIGR0LWJpbmRp
+bmdzOiBhcm06IGZzbDogYWRkIG54cCBiYXNlZCB0b3JhZGV4IGNvbGlicmktaW14NyBiaW5kaW5n
+cwoKIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwgICAgIHwg
+NjkgKysrKysrKysrKysrKysrKysrKysrKwogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY3J5cHRv
+L2ZzbC1kY3AudHh0ICAgICAgICAgfCAgMiArLQogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY3J5
+cHRvL2ZzbC1pbXgtc2FoYXJhLnR4dCAgfCAgMiArLQogLi4uL2RldmljZXRyZWUvYmluZGluZ3Mv
+Y3J5cHRvL2ZzbC1zZWM0LnR4dCAgICAgICAgfCAgMiArLQogNCBmaWxlcyBjaGFuZ2VkLCA3MiBp
+bnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
