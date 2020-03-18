@@ -2,61 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1F65189727
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 09:29:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77A97189728
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 09:29:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SiYtZmxcqSf1TeJhuZy4ATr9rqVoXa10HeHyVzScvlw=; b=cH6mGa+mIJz2zK
-	Cq3t8uOaSYFU6y5RLDgexaLD+XERnJ9Wi3sryPEvpBQNlBXv3A3PUat+Ogj7TcAk4bKvWH5YKzmzx
-	N26l6HSehnRNI/8dh4nYI0AethmDhM0te6a7YB38VwB68zjeLacFAeVl45RBiM1aDA9oUAWnofCMY
-	J6fpNLGtCgOHBjEMunn3Nbz5/DJGIYMCCf8U89m+fzPwNNsRnjf+nAZzknzkKyBAq2jRwxJ9JkRji
-	Ypk29+qu3W8Ha585fpdGYVHXjF8G1sflUNiqLPsq1kOsTLGcSbKHQylX5kj9bLE4Nysy5JKN14hPp
-	aWpEQhyVDfdNfxUnk42A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gSK7sXzfguV7AD4WLUcwBAmTL2SVdFdcd1wFYGM+lFU=; b=isTWObM3Z3+aqyDlWzPAVvhu1
+	BsCpv2APXId4CX+kVZC+K7mu8eRMsfqmpjYKYI+Q9TdqoMn2HgHSfiNbl9GRpsluWvy4K/AqGYq3f
+	GLbgHhabdjTi4MePVzrgiod23L5+zTLkc3X45ijZs4XGzdyGlRdTEWoriVZZlQMa4bQSxCiOLJ+5t
+	mNlYzivaPr9tRHziDD4EBkwrkR8DjQDlHTCdQrR05zYlIlPqQsL0FRVuppQ7kmOwA+XhF5AmuCpjd
+	1XXE3PX0ZdG4PCq0j/Oism+C8EDR2HUdZeP1Kn3LJkIbbErzhXuWsCK4Rq3VLc2JgMF2kOKJhhDye
+	+zdq9I6UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEU52-0005dt-J0; Wed, 18 Mar 2020 08:29:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEU5F-0005r0-Ey; Wed, 18 Mar 2020 08:29:49 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEU44-0004sX-Tr
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 08:28:40 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C225A2076E;
- Wed, 18 Mar 2020 08:28:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584520115;
- bh=qW9OSoZD0tlHpJQld7rMEP4xIvNVkWvCnKt+38BpdO4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Skg4xjw/tkl4AmorChGaLDMKMQfvgME3qtyM7EdTp9yArvwFVuQ0QqsZXqNuIeEW6
- avYgvUZQiJRw1uXYkH1A2lvEjTr8B4TjeQllVNQdSixEttnHLNSgVtoEeB4YQPI0eU
- 1RVxwqvfetEwwdFQvZ+d5KUxMmRFp7vij7iH5tvI=
-Date: Wed, 18 Mar 2020 08:28:31 +0000
-From: Will Deacon <will@kernel.org>
-To: "kernelci.org bot" <bot@kernelci.org>
-Subject: Re: arm64/for-kernelci build: 3 builds: 1 failed, 2 passed, 1 error
- (v5.6-rc6-67-gcf89e8c383a6)
-Message-ID: <20200318082830.GA31312@willie-the-truck>
-References: <5e715a20.1c69fb81.d52f4.2251@mx.google.com>
+ id 1jEU4G-00052Z-Oy
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 08:28:50 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02I8ShsO001920;
+ Wed, 18 Mar 2020 03:28:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584520123;
+ bh=r7hfrVd1UO4cryqlIERMdEHrB5xQJNVBTAcIB89Hoc8=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=RdWdG027MjirHwsHmP72JYacWTZLKCnbafOsOzR89kbCCfYvn9B+wnkSuVCZ1DnWQ
+ EAKJ4MYAVq1JXWc/yP8tdLk0LeSObmBwlagNL9eyPv5dQ8WWZXeNcNf3Iqvd5l/cG1
+ NX8vnUcwtgmE1SlZSB42Ybv/Sug0vXM+HIyDX3Bc=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02I8Sghv030135
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 18 Mar 2020 03:28:42 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 18
+ Mar 2020 03:28:42 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 18 Mar 2020 03:28:42 -0500
+Received: from [10.24.69.174] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02I8ScHV104898;
+ Wed, 18 Mar 2020 03:28:39 -0500
+Subject: Re: [PATCH v4 1/4] dt-bindings: thermal: k3: Add VTM bindings
+ documentation
+To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
+References: <20200318082739.9833-1-j-keerthy@ti.com>
+ <20200318082739.9833-2-j-keerthy@ti.com>
+From: Keerthy <j-keerthy@ti.com>
+Message-ID: <fa5d9e36-9893-91df-cb13-f8f3e31c4f1a@ti.com>
+Date: Wed, 18 Mar 2020 13:58:41 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5e715a20.1c69fb81.d52f4.2251@mx.google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200318082739.9833-2-j-keerthy@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_012837_028702_60C27636 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200318_012848_916235_7E6B09DF 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,54 +93,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org,
- kernel-build-reports@lists.linaro.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 04:15:44PM -0700, kernelci.org bot wrote:
-> arm64/for-kernelci build: 3 builds: 1 failed, 2 passed, 1 error (v5.6-rc6-67-gcf89e8c383a6)
-> 
-> Full Build Summary: https://kernelci.org/build/arm64/branch/for-kernelci/kernel/v5.6-rc6-67-gcf89e8c383a6/
-> 
-> Tree: arm64
-> Branch: for-kernelci
-> Git Describe: v5.6-rc6-67-gcf89e8c383a6
-> Git Commit: cf89e8c383a6447a635400f669d0cd97e89770d9
-> Git URL: https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-> Built: 1 unique architecture
-> 
-> Build Failure Detected:
-> 
-> arm64:
->     allnoconfig: (gcc-8) FAIL
-> 
-> Errors Detected:
-> 
-> arm64:
->     allnoconfig (gcc-8): 1 error
 
-Looks like this is easily fixed as per below.
 
-Will
+On 18/03/20 1:57 pm, Keerthy wrote:
+> Add VTM bindings documentation. In the Voltage Thermal
+> Management Module(VTM), K3 AM654 supplies a voltage
+> reference and a temperature sensor feature that are gathered in the band
+> gap voltage and temperature sensor (VBGAPTS) module. The band
+> gap provides current and voltage reference for its internal
+> circuits and other analog IP blocks. The analog-to-digital
+> converter (ADC) produces an output value that is proportional
+> to the silicon temperature.
 
---->8
+Numbering is bad. I will resend in a bit.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index d65d226a77ec..53c77711f752 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -64,7 +64,7 @@ config ARM64
- 	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
- 	select ARCH_KEEP_MEMBLOCK
- 	select ARCH_USE_CMPXCHG_LOCKREF
--	select ARCH_USE_GNU_PROPERTY if BINFMT_ELF
-+	select ARCH_USE_GNU_PROPERTY
- 	select ARCH_USE_QUEUED_RWLOCKS
- 	select ARCH_USE_QUEUED_SPINLOCKS
- 	select ARCH_SUPPORTS_MEMORY_FAILURE
+> 
+> Signed-off-by: Keerthy <j-keerthy@ti.com>
+> ---
+>   .../bindings/thermal/ti,am654-thermal.yaml    | 56 +++++++++++++++++++
+>   1 file changed, 56 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> new file mode 100644
+> index 000000000000..d241b65d6072
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> @@ -0,0 +1,56 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/ti,am654-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Texas Instruments AM654 VTM (DTS) binding
+> +
+> +maintainers:
+> +  - Keerthy <j-keerthy@ti.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: ti,am654-vtm
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  "#thermal-sensor-cells":
+> +    const: 1
+> +
+> +required:
+> +  - "#thermal-sensor-cells"
+> +  - compatible
+> +  - reg
+> +  - power-domains
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
+> +    vtm: thermal@42050000 {
+> +        compatible = "ti,am654-vtm";
+> +        reg = <0x0 0x42050000 0x0 0x25c>;
+> +        power-domains = <&k3_pds 80 TI_SCI_PD_EXCLUSIVE>;
+> +        #thermal-sensor-cells = <1>;
+> +    };
+> +
+> +    mpu0_thermal: mpu0_thermal {
+> +        polling-delay-passive = <250>; /* milliseconds */
+> +        polling-delay = <500>; /* milliseconds */
+> +        thermal-sensors = <&vtm0 0>;
+> +
+> +        trips {
+> +                mpu0_crit: mpu0_crit {
+> +                        temperature = <125000>; /* milliCelsius */
+> +                        hysteresis = <2000>; /* milliCelsius */
+> +                        type = "critical";
+> +                };
+> +        };
+> +    };
+> +...
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
