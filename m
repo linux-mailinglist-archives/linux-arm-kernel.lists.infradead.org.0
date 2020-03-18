@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE6D18A43F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:50:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3325C18A453
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:53:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HT6pBWCxrN6xWL/EEMc8iefpMV13avlgu/yBrkQrS9k=; b=FwKnAa/kOXWBh4
-	iVNvAztiBYbrQRP5dXjgPC7krkcOHkJ93WO2+af+3Y8jfjSJ+ZF5Jg7urDx0z3ZL5oFvHs/lu08gx
-	ho7tcAvx32Yql+O2Nvrjm/EpuxdX+ym5V8djA15Pd6ZhSLTuhOCTwRBMED71E83+NJxitHWU5kngM
-	XQF5kY0sqhYJ+g5ARXO5+mvdMrb9y53QeXqIX8WiSjEai6xETxzSWYuUaU55+WRCi40bL2oYg+OIb
-	F6b7i8bV8htT+nOX0snzTq4rBzLkKQZi0g8emDCiZa2+OrRjcB+wg9dojwD/m+cIJMPiTd5x8o/F2
-	TPDqszZ5QPJfHgkg0DRQ==;
+	List-Owner; bh=mehrwbY8lTJdTVg0CBnd+tqHL8jBsIqkU426namA6tA=; b=UdLql7CtFcMvoX
+	7HqwmU303Ky5TLCcLBYDcmAIVdYvXtcLfJOSEv/U08gKOncaLYsmlE8ha36ZYdNITLBjirq2D3jJj
+	KQtVFDzV8DKg4Ji0r2+54wnV4OinxZQ//xiwcVl6TSGGyM44fSgBQSBxndV3UArPo6t9D78FQMXuv
+	Xs4eoPmyI4SRUrlbdl6JkpJW3H2PUvr2hGLcyUnUJ3QdJj3M5MJI8HieoO9nW3GPnoH0wK5/U6YUS
+	a27zJXXAQqNZ4Cpgq4SQTWPNnudiC6gQOU9s+DkngtAZJqcUvwdgKObrsIs2pAC1x6UBvP5XyH7f7
+	+VUInQJKW0yTAQ9BcBVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEfeH-0003cb-7n; Wed, 18 Mar 2020 20:50:45 +0000
+	id 1jEfh2-0004Ld-Jj; Wed, 18 Mar 2020 20:53:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEfe9-0003c6-Eu
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:50:38 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 28DB320724;
- Wed, 18 Mar 2020 20:50:34 +0000 (UTC)
+ id 1jEfgt-0004KP-LU
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:53:28 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5756A208CA;
+ Wed, 18 Mar 2020 20:53:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584564637;
- bh=RpVUbrA6GLX6oxjlNmWztIMdXN6zWtDhebJqAHQf1+c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uoOE98RpOGBl59PNZvCx/Au9i4LC64YKNe98455ND4I6HWKEz9G1qqIvggonNnedD
- dLXXgSx4gMv0y4BeMSxxI8oJC1jrSz9UVH772yTbtO77WTZ8GQc0V8J6YsKI6Ej165
- xOes8VhTaE8+5snNexRj2elwnj8NYen9ITpA1eu4=
-Date: Wed, 18 Mar 2020 20:50:30 +0000
-From: Will Deacon <will@kernel.org>
-To: Krishna Reddy <vdumpa@nvidia.com>
-Subject: Re: [PATCH v4 0/6] Nvidia Arm SMMUv2 Implementation
-Message-ID: <20200318205030.GA8094@willie-the-truck>
-References: <1572480437-28449-1-git-send-email-vdumpa@nvidia.com>
+ s=default; t=1584564807;
+ bh=uXDGNLCrGr2jksJkSRoXf3F08iWPTsL4n2XmsDF9I/8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=0W9CW62ntiqX8cgol8Qxem+r5dXRH0vznfEjueJGnwGl350RNS282Lu/5MRlcU/Ge
+ 2o+ybnVieaU0hDLHF5/LPHSejKRh2PZAStmLngJppFhkZiRUAkPr7n0lJ2Th5YW5PY
+ mZz2uKsPnIhX/IyKflu851bz9By+hfgP0rgIrRTc=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.5 04/84] clk: imx8mn: Fix incorrect clock defines
+Date: Wed, 18 Mar 2020 16:52:01 -0400
+Message-Id: <20200318205321.16066-4-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200318205321.16066-1-sashal@kernel.org>
+References: <20200318205321.16066-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572480437-28449-1-git-send-email-vdumpa@nvidia.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_135037_522027_B7469E2C 
-X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-CacheID: sfid-20200318_135327_725980_B1234882 
+X-CRM114-Status: UNSURE (   9.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -77,32 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: snikam@nvidia.com, jtukkinen@nvidia.com, mperttunen@nvidia.com,
- joro@8bytes.org, linux-kernel@vger.kernel.org, praithatha@nvidia.com,
- talho@nvidia.com, olof@lixom.net, iommu@lists.linux-foundation.org,
- nicolinc@nvidia.com, linux-tegra@vger.kernel.org, yhsu@nvidia.com,
- treding@nvidia.com, robin.murphy@arm.com, avanbrunt@nvidia.com,
- linux-arm-kernel@lists.infradead.org, bbiswas@nvidia.com
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Anson Huang <Anson.Huang@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krishna,
+From: Anson Huang <Anson.Huang@nxp.com>
 
-On Wed, Oct 30, 2019 at 05:07:11PM -0700, Krishna Reddy wrote:
-> Changes in v4:
-> Rebased on top of https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/ for-joerg/arm-smmu/updates.
-> Updated arm-smmu-nvidia.c to use the tlb_sync implementation hook.
-> Dropped patch that updates arm_smmu_flush_ops for override as it is no longer necessary.
-> 
-> v3 - https://lkml.org/lkml/2019/10/18/1601
-> v2 - https://lkml.org/lkml/2019/9/2/980
-> v1 - https://lkml.org/lkml/2019/8/29/1588
+[ Upstream commit 5eb40257047fb11085d582b7b9ccd0bffe900726 ]
 
-Do you plan to repost this at some point?
+IMX8MN_CLK_I2C4 and IMX8MN_CLK_UART1's index definitions are incorrect,
+fix them.
 
-Will
+Fixes: 1e80936a42e1 ("dt-bindings: imx: Add clock binding doc for i.MX8MN")
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ include/dt-bindings/clock/imx8mn-clock.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/dt-bindings/clock/imx8mn-clock.h b/include/dt-bindings/clock/imx8mn-clock.h
+index 0f2b8423ce1d1..65ac6eb6c7330 100644
+--- a/include/dt-bindings/clock/imx8mn-clock.h
++++ b/include/dt-bindings/clock/imx8mn-clock.h
+@@ -122,8 +122,8 @@
+ #define IMX8MN_CLK_I2C1				105
+ #define IMX8MN_CLK_I2C2				106
+ #define IMX8MN_CLK_I2C3				107
+-#define IMX8MN_CLK_I2C4				118
+-#define IMX8MN_CLK_UART1			119
++#define IMX8MN_CLK_I2C4				108
++#define IMX8MN_CLK_UART1			109
+ #define IMX8MN_CLK_UART2			110
+ #define IMX8MN_CLK_UART3			111
+ #define IMX8MN_CLK_UART4			112
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
