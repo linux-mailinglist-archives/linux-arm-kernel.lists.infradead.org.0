@@ -2,63 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D9D2189DC4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 15:26:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A278A189DE7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 15:33:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Message-ID:Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:To:Subject:From:
-	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wOFrhCCCUh8T608dYPt+YlZ8db1Bg/dpqXrgFbSaEvc=; b=hnjzLa4WpAvLSDxFAugf80vLr1
-	Xc6qj3wePqKstFcg4P0DF5woi0sckFWl4toVQ9AkoS7e4c3HYjp7VEkMaHiD8Pdw9lCpCYPe1Pfg9
-	EShftRSgYDxsqEWEwsrWjpP41kVlINTY0XMdRG5ND+wskXHKNNfBm2HqZvwUNu6vm/O14DXXJ0m6I
-	Y+PvZsFSOF584JpAEiEVrP4rLXPAOHRQFIXkmpk/GBBgguk7o7iV7IzCvPbhEnfmUa+thb1WofYt9
-	bZgwgImZl8cuH9lY3U0AM6N+pH+Q9UDvFMap1htBVrUu022Kguy5hLd9DATPQhSTT+PnXh/2/y3YY
-	TNl/FcWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4LN1l07PcBfXX41aK27vlyJSYWnNDwDzMCFAkC3EwdE=; b=VarqCQcuJk+Q5a
+	NnExNDqr71qwoitbIa0MRfzkelyQdxctm1cN7SnvQGUBZeeDAEefP9idmsYSbVAQetjVIL5UQH/Nw
+	hFewkLO2v7CIoNW9qk8t5MV4tJVUEyxbau+3fPpEG5CbnCXqSaxUql+HZMGzcnD1Z2D3yGKahgQuf
+	/F0w/Mh+4XfmUIeGPQFucSoEq6V5hLxHPmxiWP1EWXHrNrP7zbHd8Cyd6fUadodzKg6EKEVCNlc04
+	SCJYpxCVgJA1gaDOoRfpamW7xzINVl6QKsOYW4TMlU19+jfCExj5mzUR4M8zvLnwj2n2U6ONyJdTk
+	qJc5h9oFua48HSZKiAKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEZe1-0001fE-5j; Wed, 18 Mar 2020 14:26:05 +0000
-Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEZdp-0001e8-HT
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 14:25:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
- s=mail; t=1584541540;
- h=from:from:sender:reply-to:subject:subject:date:date:message-id:to:to:
- cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=XoZs/iGNg5X0SFbIXdwyhUZP+FOxe40B9STaGSo4ZLY=;
- b=IALK9uCI9hw9JzT8JratsRArxBeW1mY0F9RkKn4OCaCapNSTyTOEWDu8xlr3qScU3dKvbx
- g1CM/jSfq+/eK5Vp79vuUkPcKXnMtql10EjmREsZb/Gq/MUbwz7l8Qe0gQ/P9INXHwJh/v
- C0hD8/OpCqlQnbwc6W9IVwNkxoUi2CE=
-Date: Wed, 18 Mar 2020 15:25:22 +0100
-From: Paul Cercueil <paul@crapouillou.net>
-Subject: Re: [PATCH 2/2] ARM: DTS: Add devicetree file for the Galaxy S2
-To: Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20200313090011.GB7416@pi3>
-References: <20200312153411.13535-1-paul@crapouillou.net>
- <20200312153411.13535-2-paul@crapouillou.net> <20200313090011.GB7416@pi3>
+	id 1jEZkg-0003Xx-0a; Wed, 18 Mar 2020 14:32:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEZkX-0003XG-Pi
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 14:32:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99B1031B;
+ Wed, 18 Mar 2020 07:32:48 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ EDDA13F52E; Wed, 18 Mar 2020 07:32:46 -0700 (PDT)
+Date: Wed, 18 Mar 2020 14:32:44 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v7 00/17] arm64: return address signing
+Message-ID: <20200318143244.GC94111@arrakis.emea.arm.com>
+References: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1584090304-18043-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_072554_292696_EBEE90DB 
-X-CRM114-Status: GOOD (  21.45  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200318_073249_879573_5E863E3A 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 MISSING_MID            Missing Message-Id: header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,871 +62,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
-Message-ID: <E1jEZe1-0001fE-5j@bombadil.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krzysztof,
-
-
-Le ven. 13 mars 2020 =E0 10:00, Krzysztof Kozlowski <krzk@kernel.org> a =
-
-=E9crit :
-> On Thu, Mar 12, 2020 at 04:34:11PM +0100, Paul Cercueil wrote:
->>  From: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
->> =
-
->>  Add devicetree file for the Exynos 4210 based Galaxy S2 (i9100 =
-
->> version).
-> =
-
-> Thanks for the patch!
-> =
-
-> It is an GT-I9100.
-> =
-
-> +Cc Marek (I have few questions further)
-> =
-
-> =
-
->> =
-
->>  Signed-off-by: Stenkin Evgeniy <stenkinevgeniy@gmail.com>
->>  Signed-off-by: Paul Cercueil <paul@crapouillou.net>
->>  ---
->>   arch/arm/boot/dts/Makefile             |   1 +
->>   arch/arm/boot/dts/exynos4210-i9100.dts | 816 =
-
->> +++++++++++++++++++++++++
->>   2 files changed, 817 insertions(+)
->>   create mode 100644 arch/arm/boot/dts/exynos4210-i9100.dts
->> =
-
->>  diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
->>  index d6546d2676b9..522436d30690 100644
->>  --- a/arch/arm/boot/dts/Makefile
->>  +++ b/arch/arm/boot/dts/Makefile
->>  @@ -181,6 +181,7 @@ dtb-$(CONFIG_ARCH_EXYNOS3) +=3D \
->>   	exynos3250-monk.dtb \
->>   	exynos3250-rinato.dtb
->>   dtb-$(CONFIG_ARCH_EXYNOS4) +=3D \
->>  +	exynos4210-i9100.dtb \
->>   	exynos4210-origen.dtb \
->>   	exynos4210-smdkv310.dtb \
->>   	exynos4210-trats.dtb \
->>  diff --git a/arch/arm/boot/dts/exynos4210-i9100.dts =
-
->> b/arch/arm/boot/dts/exynos4210-i9100.dts
->>  new file mode 100644
->>  index 000000000000..c218e34959be
->>  --- /dev/null
->>  +++ b/arch/arm/boot/dts/exynos4210-i9100.dts
->>  @@ -0,0 +1,816 @@
->>  +// SPDX-License-Identifier: GPL-2.0
->>  +/*
->>  + * Samsung's Exynos4210 based Galaxy S2 (i9100 version) device tree
-> =
-
-> Ditto
-> =
-
->>  + *
->>  + * Copyright (c) 2012 Samsung Electronics Co., Ltd.
->>  + *		http://www.samsung.com
->>  + * Copyright (c) 2020 Stenkin Evgeniy <stenkinevgeniy@gmail.com>
->>  + * Copyright (c) 2020 Paul Cercueil <paul@crapouillou.net>
->>  + *
->>  + * Device tree source file for Samsung's Galaxy S2 smartphone =
-
->> (i9100 version),
->>  + * which is based on Samsung's Exynos4210 SoC.
-> =
-
-> Duplicated description, you mentioned it before.
-> =
-
->>  + */
->>  +
->>  +/dts-v1/;
->>  +#include "exynos4210.dtsi"
->>  +#include "exynos4412-ppmu-common.dtsi"
->>  +
->>  +#include <dt-bindings/gpio/gpio.h>
->>  +#include <dt-bindings/input/linux-event-codes.h>
->>  +
->>  +/ {
->>  +	model =3D "Samsung Galaxy S2 (i9100)";
-> =
-
-> GT-I9100
-> =
-
->>  +	compatible =3D "samsung,i9100", "samsung,exynos4210", =
-
->> "samsung,exynos4";
-> =
-
-> I think it shares a lot with Trats board...
-> =
-
-> Marek, how similar these
-> designs are? Maybe it is worth to split some parts and make common =
-
-> part?
-> =
-
->>  +
->>  +
->>  +	memory@40000000 {
->>  +		device_type =3D "memory";
->>  +		reg =3D <0x40000000 0x40000000>;
->>  +	};
->>  +
-> =
-
-> You do not have a chosen node, at least for stdout serial selection.
-> Probably you should have one... bootargs I guess could come from
-> bootloader.
-> =
-
-> =
-
->>  +	vemmc_reg: regulator-0 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "VMEM_VDD_2.8V";
->>  +		regulator-min-microvolt =3D <2800000>;
->>  +		regulator-max-microvolt =3D <2800000>;
->>  +		gpio =3D <&gpk0 2 GPIO_ACTIVE_HIGH>;
->>  +		enable-active-high;
-> =
-
-> This looks like a stub/fake regulator. Probably it shoould be replaced
-> with proper regulator coming from PMIC (few seems to be missing =
-
-> there).
-> =
-
-> I don't have the schematics so I cannot judge... I see Trats has the
-> same.
-> =
-
-> Marek, mayybe you know, is it really a separate regulator?
-> =
-
->>  +	};
->>  +
->>  +	tsp_reg: regulator-1 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "TSP_FIXED_VOLTAGES";
->>  +		regulator-min-microvolt =3D <3300000>;
->>  +		regulator-max-microvolt =3D <3300000>;
->>  +		gpio =3D <&gpl0 3 GPIO_ACTIVE_HIGH>;
->>  +		startup-delay-us =3D <70000>;
->>  +		enable-active-high;
->>  +		regulator-boot-on;
->>  +		regulator-always-on;
-> =
-
-> always-on and boot-on should not be needed. You have a consumer for =
-
-> this
-> regulator.
-
-About this: the touchscreen driver does not use a regulator, so I =
-
-believe that's why these properties were here.
-
-I sent patches upstream to address the issue: =
-
-https://lkml.org/lkml/2020/3/15/94
-
-I believe this means I cannot merge the i9100 devicetree until it is =
-
-acked.
-
--Paul
-
->>  +	};
->>  +
->>  +	cam_af_28v_reg: regulator-3 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "8M_AF_2.8V_EN";
->>  +		regulator-min-microvolt =3D <2800000>;
->>  +		regulator-max-microvolt =3D <2800000>;
->>  +		gpio =3D <&gpk1 1 GPIO_ACTIVE_HIGH>;
->>  +		enable-active-high;
->>  +	};
->>  +
->>  +	cam_io_en_reg: regulator-4 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "CAM_IO_EN";
->>  +		regulator-min-microvolt =3D <2800000>;
->>  +		regulator-max-microvolt =3D <2800000>;
->>  +		gpio =3D <&gpe2 1 GPIO_ACTIVE_HIGH>;
->>  +		enable-active-high;
->>  +	};
->>  +
->>  +	cam_io_12v_reg: regulator-5 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "8M_1.2V_EN";
->>  +		regulator-min-microvolt =3D <1200000>;
->>  +		regulator-max-microvolt =3D <1200000>;
->>  +		gpio =3D <&gpe2 5 GPIO_ACTIVE_HIGH>;
->>  +		enable-active-high;
->>  +	};
->>  +
->>  +	vt_core_15v_reg: regulator-6 {
->>  +		compatible =3D "regulator-fixed";
->>  +		regulator-name =3D "VT_CORE_1.5V";
->>  +		regulator-min-microvolt =3D <1500000>;
->>  +		regulator-max-microvolt =3D <1500000>;
->>  +		gpio =3D <&gpe2 2 GPIO_ACTIVE_HIGH>;
->>  +		enable-active-high;
->>  +	};
->>  +
->>  +	gpio-keys {
->>  +		compatible =3D "gpio-keys";
->>  +
->>  +		vol-down {
->>  +			gpios =3D <&gpx2 1 GPIO_ACTIVE_LOW>;
->>  +			linux,code =3D <KEY_VOLUMEDOWN>;
->>  +			label =3D "volume down";
->>  +			debounce-interval =3D <10>;
->>  +		};
->>  +
->>  +		vol-up {
->>  +			gpios =3D <&gpx2 0 GPIO_ACTIVE_LOW>;
->>  +			linux,code =3D <KEY_VOLUMEUP>;
->>  +			label =3D "volume up";
->>  +			debounce-interval =3D <10>;
->>  +		};
->>  +
->>  +		power {
->>  +			gpios =3D <&gpx2 7 GPIO_ACTIVE_LOW>;
->>  +			linux,code =3D <KEY_POWER>;
->>  +			label =3D "power";
->>  +			debounce-interval =3D <10>;
->>  +			wakeup-source;
->>  +		};
->>  +
->>  +		ok {
->>  +			gpios =3D <&gpx3 5 GPIO_ACTIVE_LOW>;
->>  +			linux,code =3D <KEY_OK>;
->>  +			label =3D "ok";
->>  +			debounce-interval =3D <10>;
->>  +		};
->>  +	};
->>  +
->>  +	wlan_pwrseq: sdhci3-pwrseq {
->>  +		compatible =3D "mmc-pwrseq-simple";
->>  +		reset-gpios =3D <&gpl1 2 GPIO_ACTIVE_LOW>;
->>  +	};
->>  +
->>  +	i2c_max17042_fuel: i2c-gpio-3 {
-> =
-
-> i2c-gpio-3 -> i2c-gpio
-> =
-
->>  +		compatible =3D "i2c-gpio";
->>  +		#address-cells =3D <1>;
->>  +		#size-cells =3D <0>;
->>  +
->>  +		sda-gpios =3D <&gpy4 0 GPIO_ACTIVE_HIGH>;
->>  +		scl-gpios =3D <&gpy4 1 GPIO_ACTIVE_HIGH>;
->>  +		i2c-gpio,delay-us =3D <5>;
->>  +
->>  +		battery@36 {
->>  +			compatible =3D "maxim,max17042";
->>  +
->>  +			interrupt-parent =3D <&gpx2>;
->>  +			interrupts =3D <3 2>;
-> =
-
-> s/2/IRQ_TYPE_EDGE_FALLING/
-> =
-
->>  +
->>  +			pinctrl-0 =3D <&max17042_fuel_irq>;
->>  +			pinctrl-names =3D "default";
->>  +
->>  +			reg =3D <0x36>;
->>  +			maxim,over-heat-temp =3D <700>;
->>  +			maxim,over-volt =3D <4500>;
->>  +
-> =
-
-> Remove empty line.
-> =
-
->>  +		};
->>  +	};
->>  +
->>  +	spi-lcd {
->>  +		compatible =3D "spi-gpio";
->>  +		#address-cells =3D <1>;
->>  +		#size-cells =3D <0>;
->>  +
->>  +		num-chipselects =3D <1>;
->>  +		cs-gpios =3D <&gpy4 3 GPIO_ACTIVE_HIGH>;
->>  +		sck-gpios =3D <&gpy3 1 GPIO_ACTIVE_HIGH>;
->>  +		mosi-gpios =3D <&gpy3 3 GPIO_ACTIVE_HIGH>;
->>  +
->>  +		lcd@0 {
->>  +			compatible =3D "samsung,ld9040";
->>  +			reg =3D <0>;
->>  +
->>  +			spi-max-frequency =3D <1200000>;
->>  +			spi-cpol;
->>  +			spi-cpha;
->>  +
->>  +			vdd3-supply =3D <&vmipi_reg>;
->>  +			vci-supply =3D <&vcclcd_reg>;
->>  +
->>  +			reset-gpios =3D <&gpy4 5 GPIO_ACTIVE_HIGH>;
->>  +			power-on-delay =3D <10>;
->>  +			reset-delay =3D <10>;
->>  +
->>  +			panel-width-mm =3D <90>;
->>  +			panel-height-mm =3D <154>;
->>  +
->>  +			display-timings {
->>  +				timing {
->>  +					clock-frequency =3D <23492370>;
->>  +					hactive =3D <480>;
->>  +					vactive =3D <800>;
->>  +					hback-porch =3D <16>;
->>  +					hfront-porch =3D <16>;
->>  +					vback-porch =3D <2>;
->>  +					vfront-porch =3D <28>;
->>  +					hsync-len =3D <2>;
->>  +					vsync-len =3D <1>;
->>  +					hsync-active =3D <0>;
->>  +					vsync-active =3D <0>;
->>  +					de-active =3D <0>;
->>  +					pixelclk-active =3D <0>;
->>  +				};
->>  +			};
->>  +
->>  +			port {
->>  +				lcd_ep: endpoint {
->>  +					remote-endpoint =3D <&fimd_dpi_ep>;
->>  +				};
->>  +			};
->>  +		};
->>  +	};
->>  +
->>  +	fixed-rate-clocks {
->>  +		xxti {
->>  +			compatible =3D "samsung,clock-xxti";
->>  +			clock-frequency =3D <0>;
->>  +		};
->>  +
->>  +		xusbxti {
->>  +			compatible =3D "samsung,clock-xusbxti";
->>  +			clock-frequency =3D <24000000>;
->>  +		};
->>  +	};
->>  +
->>  +	thermal-zones {
->>  +		cpu_thermal: cpu-thermal {
->>  +			cooling-maps {
->>  +				map0 {
->>  +					/* Corresponds to 800MHz */
->>  +					cooling-device =3D <&cpu0 2 2>;
->>  +				};
->>  +				map1 {
->>  +					/* Corresponds to 200MHz */
->>  +					cooling-device =3D <&cpu0 4 4>;
->>  +				};
->>  +			};
->>  +		};
->>  +	};
->>  +
->>  +};
->>  +
->>  +&camera {
->>  +	status =3D "okay";
->>  +};
->>  +
->>  +&cpu0 {
->>  +	cpu0-supply =3D <&varm_breg>;
->>  +};
->>  +
->>  +&exynos_usbphy {
->>  +	status =3D "okay";
->>  +
->>  +	vbus-supply =3D <&safe1_sreg>;
->>  +};
->>  +
->>  +&fimc_0 {
->>  +	status =3D "okay";
->>  +
->>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC0>, <&clock =
-
->> CLK_SCLK_FIMC0>;
->>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
->>  +	assigned-clock-rates =3D <0>, <160000000>;
->>  +};
->>  +
->>  +&fimc_1 {
->>  +	status =3D "okay";
->>  +
->>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC1>, <&clock =
-
->> CLK_SCLK_FIMC1>;
->>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
->>  +	assigned-clock-rates =3D <0>, <160000000>;
->>  +};
->>  +
->>  +&fimc_2 {
->>  +	status =3D "okay";
->>  +
->>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC2>, <&clock =
-
->> CLK_SCLK_FIMC2>;
->>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
->>  +	assigned-clock-rates =3D <0>, <160000000>;
->>  +};
->>  +
->>  +&fimc_3 {
->>  +	status =3D "okay";
->>  +
->>  +	assigned-clocks =3D <&clock CLK_MOUT_FIMC3>, <&clock =
-
->> CLK_SCLK_FIMC3>;
->>  +	assigned-clock-parents =3D <&clock CLK_SCLK_MPLL>;
->>  +	assigned-clock-rates =3D <0>, <160000000>;
->>  +};
->>  +
->>  +&fimd {
->>  +	status =3D "okay";
->>  +	#address-cells =3D <1>;
->>  +	#size-cells =3D <0>;
->>  +
->>  +	samsung,invert-vden;
->>  +	samsung,invert-vclk;
->>  +
->>  +	pinctrl-0 =3D <&lcd_clk>, <&lcd_data24>;
->>  +	pinctrl-names =3D "default";
->>  +
->>  +	port@3 {
->>  +		reg =3D <3>;
->>  +
->>  +		fimd_dpi_ep: endpoint {
->>  +			remote-endpoint =3D <&lcd_ep>;
->>  +		};
->>  +	};
->>  +};
->>  +
->>  +&hsotg {
->>  +	status =3D "okay";
->>  +
->>  +	dr_mode =3D "otg";
->>  +	vusb_d-supply =3D <&vusb_reg>;
->>  +	vusb_a-supply =3D <&vusbdac_reg>;
->>  +};
->>  +
->>  +&ehci {
-> =
-
-> Order the phandle/nodes in alphabetical order, please. So:
-> =
-
-> &ehci ...
-> &hsoth ...
-> &i2c ...
-> =
-
-> etc.
-> =
-
->>  +	status =3D "okay";
->>  +
->>  +	port@0 {
->>  +		status =3D "okay";
->>  +	};
->>  +
->>  +	port@1 {
->>  +		status =3D "okay";
->>  +	};
->>  +
->>  +	port@2 {
->>  +		status =3D "okay";
->>  +	};
->>  +};
->>  +
-> =
-
-> Double empty line.
-> =
-
->>  +
->>  +&i2c_3 {
->>  +	status =3D "okay";
->>  +
->>  +	samsung,i2c-sda-delay =3D <100>;
->>  +	samsung,i2c-slave-addr =3D <0x10>;
->>  +	samsung,i2c-max-bus-freq =3D <100000>;
->>  +
->>  +	pinctrl-0 =3D <&i2c3_bus>;
->>  +	pinctrl-names =3D "default";
->>  +
->>  +	mxt224-touchscreen@4a {
->>  +		compatible =3D "atmel,maxtouch";
->>  +		reg =3D <0x4a>;
->>  +
->>  +		interrupt-parent =3D <&gpx0>;
->>  +		interrupts =3D <4 IRQ_TYPE_EDGE_FALLING>;
->>  +
->>  +		avdd-supply =3D <&tsp_reg>;
->>  +		vdd-supply =3D <&tsp_reg>;
->>  +	};
->>  +};
->>  +
->>  +&i2c_7 {
->>  +	status =3D "okay";
->>  +
->>  +	samsung,i2c-sda-delay =3D <100>;
->>  +	samsung,i2c-slave-addr =3D <0x10>;
->>  +	samsung,i2c-max-bus-freq =3D <400000>;
->>  +
->>  +	pinctrl-0 =3D <&i2c7_bus>;
->>  +	pinctrl-names =3D "default";
->>  +
->>  +	ak8975@c {
->>  +		compatible =3D "asahi-kasei,ak8975";
->>  +		reg =3D <0x0c>;
->>  +
->>  +		gpios =3D <&gpx2 2 GPIO_ACTIVE_HIGH>;
->>  +	};
->>  +};
->>  +
->>  +
->>  +&i2c_5 {
->>  +	status =3D "okay";
->>  +
->>  +	samsung,i2c-sda-delay =3D <100>;
->>  +	samsung,i2c-slave-addr =3D <0x10>;
->>  +	samsung,i2c-max-bus-freq =3D <100000>;
->>  +
->>  +	pinctrl-0 =3D <&i2c5_bus>;
->>  +	pinctrl-names =3D "default";
->>  +
->>  +	max8997_pmic@66 {
->>  +		compatible =3D "maxim,max8997-pmic";
->>  +		reg =3D <0x66>;
->>  +
->>  +		interrupts-extended =3D <&gpx0 7 0>, <&gpx2 3 2>;
->>  +		interrupt-parent =3D <&gpx0>;
->>  +		interrupts =3D <7 IRQ_TYPE_NONE>;
->>  +
->>  +		otg_en-gpios =3D <&gpx3 3 0>;
->>  +		usb_sel-gpios =3D <&gpl0 6 0>;
->>  +
->>  +		max8997,pmic-buck1-uses-gpio-dvs;
->>  +		max8997,pmic-buck2-uses-gpio-dvs;
->>  +		max8997,pmic-buck5-uses-gpio-dvs;
->>  +
->>  +		max8997,pmic-ignore-gpiodvs-side-effect;
->>  +		max8997,pmic-buck125-default-dvs-idx =3D <0>;
->>  +
->>  +		max8997,pmic-buck125-dvs-gpios =3D <&gpx0 5 GPIO_ACTIVE_HIGH>,
->>  +						 <&gpx0 6 GPIO_ACTIVE_HIGH>,
->>  +						 <&gpl0 0 GPIO_ACTIVE_HIGH>;
->>  +
->>  +		max8997,pmic-buck1-dvs-voltage =3D <1350000>, <1300000>,
->>  +						 <1250000>, <1200000>,
->>  +						 <1150000>, <1100000>,
->>  +						 <1000000>, <950000>;
->>  +
->>  +		max8997,pmic-buck2-dvs-voltage =3D <1100000>, <1000000>,
->>  +						 <950000>,  <900000>,
->>  +						 <1100000>, <1000000>,
->>  +						 <950000>,  <900000>;
->>  +
->>  +		max8997,pmic-buck5-dvs-voltage =3D <1200000>, <1200000>,
->>  +						 <1200000>, <1200000>,
->>  +						 <1200000>, <1200000>,
->>  +						 <1200000>, <1200000>;
->>  +
->>  +		pinctrl-0 =3D <&max8997_irq>, <&otg_gp>, <&usb_sel>;
->>  +		pinctrl-names =3D "default";
->>  +
->>  +		regulators {
->>  +			vadc_reg: LDO1 {
->>  +				regulator-name =3D "VADC_3.3V_C210";
->>  +				regulator-min-microvolt =3D <3300000>;
->>  +				regulator-max-microvolt =3D <3300000>;
->>  +				regulator-always-on;
->>  +
->>  +			};
-> =
-
-> Add empty line.
-> =
-
->>  +			valive_reg: LDO2 {
->>  +				regulator-name =3D "VALIVE_1.1V_C210";
->>  +				regulator-min-microvolt =3D <1100000>;
->>  +				regulator-max-microvolt =3D <1100000>;
->>  +				regulator-always-on;
->>  +
->>  +			};
->>  +
->>  +			vusb_reg: LDO3 {
->>  +				regulator-name =3D "VUSB_1.1V_C210";
->>  +				regulator-min-microvolt =3D <1100000>;
->>  +				regulator-max-microvolt =3D <1100000>;
->>  +			};
->>  +
->>  +			vmipi_reg: LDO4 {
->>  +				regulator-name =3D "VMIPI_1.8V";
->>  +				regulator-min-microvolt =3D <1800000>;
->>  +				regulator-max-microvolt =3D <1800000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vhsic_reg: LDO5 {
->>  +				regulator-name =3D "VHSIC_1.2V";
->>  +				regulator-min-microvolt =3D <1200000>;
->>  +				regulator-max-microvolt =3D <1200000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vpda_reg: LDO6 {
->>  +				regulator-name =3D "VCC_1.8V_PDA";
->>  +				regulator-min-microvolt =3D <1800000>;
->>  +				regulator-max-microvolt =3D <1800000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vcam_reg: LDO7 {
->>  +				regulator-name =3D "CAM_ISP_1.8V";
->>  +				regulator-min-microvolt =3D <1800000>;
->>  +				regulator-max-microvolt =3D <1800000>;
->>  +			};
->>  +
->>  +			vusbdac_reg: LDO8 {
->>  +				regulator-name =3D "VUSB+VDAC_3.3V_C210";
->>  +				regulator-min-microvolt =3D <3300000>;
->>  +				regulator-max-microvolt =3D <3300000>;
->>  +			};
->>  +
->>  +			vccpda_reg: LDO9 {
->>  +				regulator-name =3D "VCC_2.8V_PDA";
->>  +				regulator-min-microvolt =3D <2800000>;
->>  +				regulator-max-microvolt =3D <2800000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vtouch_reg: LDO11 {
->>  +				regulator-name =3D "TOUCH_2.8V";
->>  +				regulator-min-microvolt =3D <2800000>;
->>  +				regulator-max-microvolt =3D <2800000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vpll_reg: LDO10 {
->>  +				regulator-name =3D "VPLL_1.1V";
->>  +				regulator-min-microvolt =3D <1100000>;
->>  +				regulator-max-microvolt =3D <1100000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vtcam_reg: LDO12 {
->>  +				regulator-name =3D "VT_CAM_1.8V";
->>  +				regulator-min-microvolt =3D <1800000>;
->>  +				regulator-max-microvolt =3D <1800000>;
->>  +			};
->>  +
->>  +			vcclcd_reg: LDO13 {
->>  +				regulator-name =3D "VCC_3.0V_LCD";
->>  +				regulator-min-microvolt =3D <3000000>;
->>  +				regulator-max-microvolt =3D <3000000>;
->>  +			};
->>  +
->>  +			vmotor_reg: LDO14 {
->>  +				regulator-name =3D "VCC_2.8V_MOTOR";
->>  +				regulator-min-microvolt =3D <2800000>;
->>  +				regulator-max-microvolt =3D <2800000>;
->>  +			};
->>  +
->>  +			vled_reg: LDO15 {
->>  +				regulator-name =3D "LED_A_2.8V";
->>  +				regulator-min-microvolt =3D <2800000>;
->>  +				regulator-max-microvolt =3D <2800000>;
->>  +			};
->>  +
->>  +			camsensor_reg: LDO16 {
->>  +				regulator-name =3D "CAM_SENSOR_IO_1.8V";
->>  +				regulator-min-microvolt =3D <1800000>;
->>  +				regulator-max-microvolt =3D <1800000>;
->>  +			};
->>  +
->>  +			vtf_reg: LDO17 {
->>  +				regulator-name =3D "VTF_2.8V";
->>  +				regulator-min-microvolt =3D <2800000>;
->>  +				regulator-max-microvolt =3D <2800000>;
->>  +			};
->>  +
->>  +			vtouchled_reg: LDO18 {
->>  +				regulator-name =3D "TOUCH_LED_3.3V";
->>  +				regulator-min-microvolt =3D <2500000>;
->>  +				regulator-max-microvolt =3D <3300000>;
->>  +			};
->>  +
->>  +			vddq_reg: LDO21 {
->>  +				regulator-name =3D "VDDQ_M1M2_1.2V";
->>  +				regulator-min-microvolt =3D <1200000>;
->>  +				regulator-max-microvolt =3D <1200000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			varm_breg: BUCK1 {
->>  +				//regulator-name =3D "VARM_1.2V_C210";
->>  +				regulator-name =3D "vdd_arm";
->>  +				regulator-min-microvolt =3D <65000>;
->>  +				regulator-max-microvolt =3D <2225000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vint_breg: BUCK2 {
->>  +				regulator-name =3D "VINT_1.1V_C210";
->>  +				regulator-min-microvolt =3D <65000>;
->>  +				regulator-max-microvolt =3D <2225000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vg3d_breg: BUCK3 {
->>  +				regulator-name =3D "G3D_1.1V";
->>  +				regulator-min-microvolt =3D <900000>;
->>  +				regulator-max-microvolt =3D <1200000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			camisp_breg: BUCK4 {
->>  +				regulator-name =3D "CAM_ISP_CORE_1.2V";
->>  +				regulator-min-microvolt =3D <1200000>;
->>  +				regulator-max-microvolt =3D <1200000>;
->>  +			};
->>  +
->>  +			vmem_breg: BUCK5 {
->>  +				regulator-name =3D "VMEM_1.2V";
->>  +				regulator-min-microvolt =3D <1200000>;
->>  +				regulator-max-microvolt =3D <1200000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			vccsub_breg: BUCK7 {
->>  +				regulator-name =3D "VCC_SUB_2.0V";
->>  +				regulator-min-microvolt =3D <2000000>;
->>  +				regulator-max-microvolt =3D <2000000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			safe1_sreg: ESAFEOUT1 {
->>  +				regulator-name =3D "SAFEOUT1";
->>  +			};
->>  +
->>  +			safe2_sreg: ESAFEOUT2 {
->>  +				regulator-name =3D "SAFEOUT2";
->>  +				regulator-boot-on;
->>  +			};
->>  +
->>  +			charger_reg: CHARGER {
->>  +				regulator-name =3D "CHARGER";
->>  +				regulator-min-microamp =3D <60000>;
->>  +				regulator-max-microamp =3D <2580000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
->>  +			chargercv_reg: CHARGER_CV {
->>  +				regulator-name =3D "CHARGER_CV";
->>  +				regulator-min-microvolt =3D <3800000>;
->>  +				regulator-max-microvolt =3D <4100000>;
->>  +				regulator-always-on;
->>  +			};
->>  +
-> =
-
-> Empty line, not needed.
-> =
-
->>  +		};
->>  +
-> =
-
-> Empty line, not needed.
-> =
-
->>  +	};
->>  +};
->>  +
->>  +
-> =
-
-> Empty line, not needed. Please fix them in all places.
-> =
-
->>  +&gpu {
->>  +	status =3D "okay";
->>  +
->>  +	mali-supply =3D <&vg3d_breg>;
->>  +	regulator-microvolt-offset =3D <50000>;
->>  +	regulator-microsecs-delay =3D <50>;
->>  +};
->>  +
-> =
-
-> and more...
-> =
-
->>  +
->>  +&sdhci_0 {
->>  +	status =3D "okay";
->>  +
->>  +	bus-width =3D <8>;
->>  +	non-removable;
->>  +	vmmc-supply =3D <&vemmc_reg>;
->>  +
->>  +	pinctrl-0 =3D <&sd0_clk>, <&sd0_cmd>, <&sd0_bus8>;
->>  +	pinctrl-names =3D "default";
->>  +};
->>  +
->>  +&sdhci_2 {
->>  +	status =3D "okay";
->>  +
->>  +	bus-width =3D <4>;
->>  +	cd-gpios =3D <&gpx3 4 GPIO_ACTIVE_LOW>;
->>  +	vmmc-supply =3D <&vtf_reg>;
->>  +
->>  +	pinctrl-0 =3D <&sd2_clk>, <&sd2_cmd>, <&sd2_bus4>;
->>  +	pinctrl-names =3D "default";
->>  +};
->>  +
->>  +&ehci {
-> =
-
-> Duplicated.
-> =
-
-> Best regards,
-> Krzysztof
-> =
-
-
-
+On Fri, Mar 13, 2020 at 02:34:47PM +0530, Amit Daniel Kachhap wrote:
+> Amit Daniel Kachhap (8):
+>   arm64: cpufeature: Fix meta-capability cpufeature check
+>   arm64: ptrauth: Add bootup/runtime flags for __cpu_setup
+>   arm64: cpufeature: Move cpu capability helpers inside C file
+>   arm64: initialize ptrauth keys for kernel booting task
+>   arm64: mask PAC bits of __builtin_return_address
+>   arm64: __show_regs: strip PAC from lr in printk
+>   arm64: suspend: restore the kernel ptrauth keys
+>   lkdtm: arm64: test kernel pointer authentication
+> 
+> Kristina Martsenko (7):
+>   arm64: cpufeature: add pointer auth meta-capabilities
+>   arm64: rename ptrauth key structures to be user-specific
+>   arm64: install user ptrauth keys at kernel exit time
+>   arm64: cpufeature: handle conflicts based on capability
+>   arm64: enable ptrauth earlier
+>   arm64: initialize and switch ptrauth kernel keys
+>   arm64: compile the kernel with ptrauth return address signing
+> 
+> Mark Rutland (1):
+>   arm64: unwind: strip PAC from kernel addresses
+> 
+> Vincenzo Frascino (1):
+>   kconfig: Add support for 'as-option'
+
+Queued for 5.7. Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
