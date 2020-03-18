@@ -2,40 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F14718A974
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:49:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF05118A97E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:51:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RlHx6iXW08qCzZcoFQZ4LxWXd/o2eF77eMPVUxSLjnY=; b=Fs8h95fR+kn84K
-	1J0jfcpH0jQKGQJWoDoCuxeorGCYywr+DHFcrK87Nba5+qQh+F1bVguRkhU5Catr1vUo+aCos+ZBC
-	EBcGVYaSmPsRePgGVggJlq7wCRSUfiJRQF8Dzp2Ycl3iR93WdTg0TMNhRJckAkzawFTwrf/0iqpNJ
-	Tn589yTcgmAngpii3YW8jDi45SDiumBx+0QOVpsyUikbVKXVcWPO28P3Xqhfj5PZmU/VghTeomx1u
-	wcmL6PyuNabtcg6PgCvIv9WSH4Dtnp9UNABfECnv8zXGFj/XjlyQLFmQQcu+n3dX0PftQXW05BU0r
-	zoLFPvEFsjzBK9zlMRMg==;
+	List-Owner; bh=QCyLVRZEMUQYP5zw/H7j+keIKwuKW6VF/jQoJbI+JhU=; b=iYoVF/itFd7BgV
+	S7N3HP6NVcPeGG8UmQZbMQzxi2vitc/fAU1QlXCXOiMaL2JaVR9prs1ilNMVAuVvY94X2i/9svp5M
+	UUoOoRsfNQhDrWJZKNzE0PyMzz0h+YfY1YfujzT5yNUijnsWDDUelX1Irr7USXOi/ohMvnEOwlx0J
+	K5mxsAOzq/ciLfkSwHZQIEIOpFPe1dTQHOtEXEVvDvz7mftcCp6QPmcV7thFR5bg5TPZIGoUH84Lp
+	PKRqh1H5eZ0y7r3hmf5R0tML+VUSyJ9ESCiqIPhizdNoOhejrSDFeSErxIMwaQMssSg1gt2j+u6Qv
+	IAqUbEOUFTdQr0m0eWDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEiQk-0008NC-Jb; Wed, 18 Mar 2020 23:48:58 +0000
+	id 1jEiSb-0001TF-Iu; Wed, 18 Mar 2020 23:50:53 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEiQc-0008Mt-Uf
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:48:52 +0000
+ id 1jEiSR-0001Sw-Hg
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:50:44 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 6DDF580B6;
- Wed, 18 Mar 2020 23:49:37 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id D202380B6;
+ Wed, 18 Mar 2020 23:51:29 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL] drop remaining cpsw and edma platform data for v5.7
-Date: Wed, 18 Mar 2020 16:48:43 -0700
-Message-Id: <pull-1584575307-189595@atomide.com>
+Subject: [GIT PULL] defconfig updates for omaps for v5.7
+Date: Wed, 18 Mar 2020 16:50:40 -0700
+Message-Id: <pull-1584575344-983293@atomide.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_164851_022237_2C3B1D29 
-X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-CacheID: sfid-20200318_165043_627722_F4203626 
+X-CRM114-Status: UNSURE (   8.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -66,48 +66,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit 104d56b3e3766931ff1a1d786d2fcce908daaaf7:
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
-  ARM: OMAP2+: Drop legacy platform data for dra7 edma (2020-03-06 07:20:04 -0800)
+  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.7/ti-sysc-drop-pdata-ti81xx-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.7/defconfig-signed
 
-for you to fetch changes up to 0143b9fd06ed6da93fd8c6b3393f5d4de7a01ba9:
+for you to fetch changes up to 98c2cc359f8fa67992eb715f89f19390d70e135d:
 
-  ARM: OMAP2+: Drop legacy platform data for ti81xx edma (2020-03-17 09:48:54 -0700)
+  ARM: omap2plus_defconfig: Update for moved and dropped options (2020-03-17 09:37:53 -0700)
 
-----------------------------------------------------------------
-Drop remaining legacy platform data for cpsw and edma
-
-With a non-critical clock fix for dm814x ethernet, we can update ti81xx
-for cpsw ethernet and edma to probe them with ti-sysc interconnect
-target module driver and device tree data. And we can drop the related
-remaining platform data for cpsw and edma.
+Note that this causes a minor merge conflict in next with the dss
+panel changes.
 
 ----------------------------------------------------------------
-Tony Lindgren (11):
-      clk: ti: Fix dm814x clkctrl for ethernet
-      Merge tag 'omap-for-v5.7/ti-sysc-drop-pdata-signed' into ti81xx
-      ARM: dts: Configure interconnect target module for dm814x cpsw
-      ARM: OMAP2+: Drop legacy platform data for dm814x cpsw
-      ARM: dts: Configure interconnect target module for dm814x tpcc
-      ARM: dts: Configure interconnect target module for dm814x tptc0
-      ARM: dts: Configure interconnect target module for dm814x tptc1
-      ARM: dts: Configure interconnect target module for dm814x tptc2
-      ARM: dts: Configure interconnect target module for dm814x tptc3
-      ARM: dts: Configure interconnect target module for ti816x edma
-      ARM: OMAP2+: Drop legacy platform data for ti81xx edma
+Defconfig changes for omaps for v5.7 merge window
 
- arch/arm/boot/dts/dm814x-clocks.dtsi       |  14 ++
- arch/arm/boot/dts/dm814x.dtsi              | 260 +++++++++++++++++++----------
- arch/arm/boot/dts/dm816x.dtsi              | 148 ++++++++++++++--
- arch/arm/boot/dts/dra62x.dtsi              |   6 +-
- arch/arm/mach-omap2/omap_hwmod_81xx_data.c | 231 -------------------------
- drivers/clk/ti/clk-814x.c                  |   7 +-
- include/dt-bindings/clock/dm814.h          |   5 +
- 7 files changed, 332 insertions(+), 339 deletions(-)
+We want to enable some more features for omap2plus_defconfig to make it
+more usable:
+
+- Enable scururity for ext4 so setcap works
+
+- Enable simple-pm-bus so it can be later on be configured in the dts
+  files as needed
+
+- Enable zram as loadable modules as we do have devices using it
+
+- Enable more devices for droid4 for 1-wire battery eeprom and isl29028
+  proximity sensor
+
+- Enable mcpdm clocks from the PMIC as loadable modules
+
+- Enable ina2xx_adc as loadable module
+
+- And finally let's also  omap2plus_deconfig for moved and dropped options
+
+----------------------------------------------------------------
+Tony Lindgren (7):
+      ARM: omap2plus_defconfig: Enable ext4 security for setcap
+      ARM: omap2plus_defconfig: Enable simple-pm-bus
+      ARM: omap2plus_defconfig: Enable zram as loadable modules
+      ARM: omap2plus_defconfig: Enable more droid4 devices as loadable modules
+      ARM: omap2plus_defconfig: Enable McPDM optional PMIC clock as modules
+      ARM: omap2plus_defconfig: Enable ina2xx_adc as a loadable module
+      ARM: omap2plus_defconfig: Update for moved and dropped options
+
+ arch/arm/configs/omap2plus_defconfig | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
