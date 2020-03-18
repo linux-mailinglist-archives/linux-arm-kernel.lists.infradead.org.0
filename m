@@ -2,82 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E5A118A0B0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 17:38:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABEDF18A0E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 17:49:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7viM45vupcOPCjScVLwi9+WTUxt9ba0JVy5nOZbRv/g=; b=CFAV2r6h698zBuZom+UBjJwUz
-	TtAqG/vaxMS0Ti7UN47YqI9MgQ6vnP2/AR0BUZpk24xsS4b8coYx67e6kOipPTyaqKvdXsXsazTNX
-	dmEfzK99GXyM6a31jwbADwfB68EIMsnCFyOl2FikE71Seg6UzJxhe8GatSwG71D5q3vf8Z08qDQm9
-	/Z1N9vDJD8poumKHl2bvpBmalvQq+191DwwAtJfMmUsViioc0S0KZGLejctAGSVkxD3I0dREIn+dH
-	DdyVwvv4fbrjWmNTeBR4AJFSeUNvVih4dRVic4+pOINGPCHX3WcaFvOBAxLbZwg/knx5Kyo9f+dN8
-	H2vsCI0jg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rzJvw4+DVmN0QxTg+W1VXRfEM/rxs7bpRRKxRam9DNk=; b=j0Zg5qNX2AN4IS
+	WOtMoPvLZfjaA0liWl0BV6gX6x34r6ULLtodFvUFR8VpEM4MUGNnrn7h2ftWCrRQtsci4WX+p7gnu
+	1KrvX1Ihv5HwMukKTybUfyrH/PMt7+hF/kI74YS+oj2Pp0m96Ju+a1o+lU8XtYEZNNSRVMwu/eEa4
+	WvDgrDHOJ/QDFoGImu0D9KWDrfjUaIz5I11W0RAynQkljh3h8xLU0zSEgLt9dlitgIkJAWxjgNEy4
+	BDvIz9jySWmugEi5NuCrYXdtPR1I+Os9dGjc+S/WCg2tfnOhK0pkom1OhZo4aDPdcWSqxdLAa/Ork
+	kQe2t8jpYAZwyMAgwdIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEbiE-0004uv-QF; Wed, 18 Mar 2020 16:38:34 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1jEbt6-0000d9-N6; Wed, 18 Mar 2020 16:49:48 +0000
+Received: from mail-eopbgr80050.outbound.protection.outlook.com ([40.107.8.50]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEbi5-0004tk-Od
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 16:38:28 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 9C4CC23E23;
- Wed, 18 Mar 2020 17:38:23 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1584549503;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=IkS8jJMv9wh5cSPJlxUZcqKz2rH3rVn5T/65gMAnXqA=;
- b=at0OUZVlamT2Rl+xqkcMU4i6fddcaaUExruxrtpDBMq+/6zLKQgmuVz7mAmraQiW/Dv/mZ
- NXbUVPgUan/HDRw4Qz6x7o9PFgN0E/AnyEmZTX/UGXxL0BAV+6SRIkgLV9jXe/RhFMY+AR
- uNf9dkArNwlub5PmHpKxGMf9G5MEEHM=
+ id 1jEbsj-0000RB-27
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 16:49:29 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZygiMQlsWkNff6hAicbp6qeVzWWva7hUC9eTS3QWbTtx26h/ajjkbpk3dVtItk54Fc5fP1Mo70BnsB+L05wIlT0NffqDzNtgVsrtNoAEk/U6rHREHbZZWW0MehbDbegBXN8Ii2hIR3834yS4qqx2cL0hKuJI90f9NwDqbTY9cLJ9VxryQ96IdPN8PZJJyGBotelnAnU7k1ETHkyxOlgq7n3oksMSY6kFnpa8snNd32YufJbavOwyYu68/vZSjGjdwuKWDhWuaaZ1rXLG6QsMFWWu+oHitRw/clqx75XLwTiO6X/CEBerOGvOfVKDX7pZ3InGWteVBcs+g8GxH9cPsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=T7icJXE+P3NcLKQQkxumDttWO3IDuvwgFF6VzEF+ERU=;
+ b=l0isT1xOWIsJvIE3rLuoM7c07m7Oge9ninFz+/mWiT+bEXRRQCJVlrVc39af25QmFW8fO2bCNQqKFx2IbtVolto6u1IbyUR2KcsU3QDJlg5J9bX8tcC4RDJMS71XJzcbf6gkYVJs0XK8LFBjxsv+HFs5nxOM5B7a9EFoBchDKNZVOf1GxmKjJWxLL0TEky4fUs7MNaQMQXKRcuzEg5IiL6p42kx2zLiiPK42xIWYbAyluBljQNf4AkICx+FyQVj26fXfhBc2J6mFdBvXnbfWa1z6LIIFBY87/Wpv4vQzZMZF1GIxCrTFbpSEmNGV7ihK0M+rTxbaFilN9xo/3WhBWg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vaisala.com; dmarc=pass action=none header.from=vaisala.com;
+ dkim=pass header.d=vaisala.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vaisala.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=T7icJXE+P3NcLKQQkxumDttWO3IDuvwgFF6VzEF+ERU=;
+ b=s1/WET66FJAzorHh1MeeX/7cQqcLsjYoEpcHDmDyIyGw+Mjr4Fx4AYALU0A/WpX8nizSm5ujDmxH8vfFiBh58yiLYvdtp531FJ/renNM1MJ0g1nuj9n47fOJa4M98RZTHpKTu7+k1ge0y1YGh3qNYJneqFKRTrUQ1zIegUWbeD4=
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com (20.178.82.25) by
+ AM0PR06MB4129.eurprd06.prod.outlook.com (52.133.54.153) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.19; Wed, 18 Mar 2020 16:49:20 +0000
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd]) by AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd%5]) with mapi id 15.20.2814.021; Wed, 18 Mar 2020
+ 16:49:20 +0000
+From: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+To: Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>
+Subject: RE: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Topic: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Index: AQHV5mNyTIn2+pYf+Eu7yiopaV9KGKhOcmGAgAAnv5A=
+Date: Wed, 18 Mar 2020 16:49:19 +0000
+Message-ID: <AM0PR06MB5185E501349E06428093B62FD4F70@AM0PR06MB5185.eurprd06.prod.outlook.com>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+In-Reply-To: <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Enabled=True;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SetDate=2020-03-18T16:49:17.7096272Z;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Name=Restricted;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_ActionId=6a03551a-384e-42f6-b58f-367d6f895fbf;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Extended_MSFT_Method=Automatic;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Enabled=True;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SetDate=2020-03-18T16:49:17.7106244Z;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Name=No Label;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_ActionId=6a03551a-384e-42f6-b58f-367d6f895fbf;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Parent=d5842b46-9b7a-431a-b662-8cc44ff92a4e;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Extended_MSFT_Method=Automatic
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ext-jaakko.laine@vaisala.com; 
+x-originating-ip: [2001:14ba:21e9:fc00:4537:b0a7:a50f:840a]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d11a894a-49e3-4f73-4f01-08d7cb5c4de5
+x-ms-traffictypediagnostic: AM0PR06MB4129:
+x-microsoft-antispam-prvs: <AM0PR06MB41293EF2007910EE6806D148D4F70@AM0PR06MB4129.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 03468CBA43
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(199004)(55016002)(966005)(9686003)(498600001)(8936002)(4326008)(81166006)(6916009)(81156014)(186003)(54906003)(8676002)(7696005)(6506007)(66446008)(71200400001)(76116006)(52536014)(66946007)(64756008)(5660300002)(2906002)(66556008)(86362001)(33656002)(66476007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR06MB4129;
+ H:AM0PR06MB5185.eurprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: vaisala.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: JDoy5lpBsp5/ArD20OKQL1KzZak+DI0E6PmY8gY7HWYGnfWGK1Phwkp8vWBkAF95AHgaaa6pcoCYwXBzOKbY1bUvGssdM9JI6upxOL4stXkhv8EQFPa9sRxVE4ITFPNbhva3XqeUkND3oU1BoJvRfxdWpp2V5sI0K2xBB5ooZ3gKtsLWPoNP9R4DTn90jB+5vrpgMMuZ4PEol0ZVzGjqCeAzp395ZiVe2+FEWF0Wxz/3BDq8+HHEWez8u5rjA0CF0SeTpZSt6/FUykBTVhsdzToPgNuF+y617U0juD4wVKZS26UBechKs9pTrpqQ67KeyOAbRyDXRzJa112/hV5YUDlyhXy9teGUjYmn9sFw6kuJddj6z9JcMTlLPWYUILRWrS18+/PKmTO5Kqt14mraf+y6WNaEkENeQdHRBSZC6nOL/RPHPCRDm7gAorPt9GYW46hDpAkXSBep0P/l6wUdGnqo4/yNdrOQcvn9VBYFehwtCm3ScgmueYiz2m+bKhc8TE2hJm9UB1ny5EhA9JxlAg==
+x-ms-exchange-antispam-messagedata: e2Ww2PZpr4wEt9++uOQgfNz6l4ZTgKV/Nq/GNKZ9gmLTcoyfXd9ijJgIOWfTJ2gpLV9/XI0b5fNKv5mAEF7M/IGuZr8dsAu4QEB6Bmh/X/yf2sHDWa/dQIN9q9A1KaL2OIbrogXJgz2VTwMYuPIvfcYg4+NZd/8MudtbEwsTODIJoTWJWBx29epD2Amd138aoW5xDMcNfZeg+fFWNm5J3g==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Date: Wed, 18 Mar 2020 17:38:23 +0100
-From: Michael Walle <michael@walle.cc>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH 05/18] mfd: Add support for Kontron sl28cpld management
- controller
-In-Reply-To: <1ea0ae38-c91d-810b-1474-71f17b66fbd0@roeck-us.net>
-References: <20200317205017.28280-1-michael@walle.cc>
- <20200317205017.28280-6-michael@walle.cc>
- <1ea0ae38-c91d-810b-1474-71f17b66fbd0@roeck-us.net>
-Message-ID: <9648f3e4cf30c9303a28c89d08519513@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 9C4CC23E23
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[22]; NEURAL_HAM(-0.00)[-0.621];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,linaro.org,baylibre.com,kernel.org,suse.com,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+X-OriginatorOrg: vaisala.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d11a894a-49e3-4f73-4f01-08d7cb5c4de5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Mar 2020 16:49:19.8968 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 6d7393e0-41f5-4c2e-9b12-4c2be5da5c57
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Jz87t8cjIKGpUpwtyMBxFzmt8Jax5vQT/MKy2IBUOBpjeoygkZcwJGKiz4P2I3lK9DMYujBwAAsuwT2wysTFuy/ds7ikjVq9mm/RHP6qvFs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB4129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_093826_118045_340A9D63 
-X-CRM114-Status: GOOD (  17.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200318_094925_454402_60A1FE83 
+X-CRM114-Status: GOOD (  19.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.50 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,264 +140,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Marc Zyngier <maz@kernel.org>,
- linux-watchdog@vger.kernel.org, devicetree@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Guenter Roeck <groeck7@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Jason Cooper <jason@lakedaemon.net>
+Cc: "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-03-18 04:28, schrieb Guenter Roeck:
-> On 3/17/20 1:50 PM, Michael Walle wrote:
->> This patch adds core support for the board management controller found
->> on the SMARC-sAL28 board. It consists of the following functions:
->>  - watchdog
->>  - GPIO controller
->>  - PWM controller
->>  - fan sensor
->>  - interrupt controller
->> 
->> At the moment, this controller is used on the Kontron SMARC-sAL28 
->> board.
->> 
->> Signed-off-by: Michael Walle <michael@walle.cc>
->> ---
->>  drivers/mfd/Kconfig    |  21 ++++++
->>  drivers/mfd/Makefile   |   2 +
->>  drivers/mfd/sl28cpld.c | 155 
->> +++++++++++++++++++++++++++++++++++++++++
->>  3 files changed, 178 insertions(+)
->>  create mode 100644 drivers/mfd/sl28cpld.c
->> 
->> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
->> index 3c547ed575e6..01588c366476 100644
->> --- a/drivers/mfd/Kconfig
->> +++ b/drivers/mfd/Kconfig
->> @@ -2059,5 +2059,26 @@ config SGI_MFD_IOC3
->>  	  If you have an SGI Origin, Octane, or a PCI IOC3 card,
->>  	  then say Y. Otherwise say N.
->> 
->> +config MFD_SL28CPLD
->> +	tristate "Kontron sl28 core driver"
->> +	depends on I2C=y
-> 
-> Why I2C=y and not just I2C ?
+Hello,
 
-Oh this should be changed in the next patch which adds
-interrupt controller support, where I2C=y is needed, correct?
+>> @@ -521,19 +523,26 @@ static int xiic_bus_busy(struct xiic_i2c *i2c)
+>>  static int xiic_busy(struct xiic_i2c *i2c)
+>>  {
+>>         int tries = 3;
+>> -       int err;
+>> +       int err = 0;
+>>
+>>         if (i2c->tx_msg)
+>>                 return -EBUSY;
+>>
+>> -       /* for instance if previous transfer was terminated due to TX error
+>> -        * it might be that the bus is on it's way to become available
+>> -        * give it at most 3 ms to wake
+>> +       /* In single master mode bus can only be busy, when in use by this
+>> +        * driver. If the register indicates bus being busy for some reason we
+>> +        * should ignore it, since bus will never be released and i2c will be
+>> +        * stuck forever.
+>>          */
+>
+>the other thing i was thinking how will multithreading .
+>Should we have a lock here.
+>
+>> -       err = xiic_bus_busy(i2c);
+>> -       while (err && tries--) {
+>> -               msleep(1);
+>> +       if (i2c->multimaster) {
+>> +               /* for instance if previous transfer was terminated due to TX
+>> +                * error it might be that the bus is on it's way to become
+>> +                * available give it at most 3 ms to wake
+>> +                */
+>>                 err = xiic_bus_busy(i2c);
+>> +               while (err && tries--) {
+>> +                       msleep(1);
+>> +                       err = xiic_bus_busy(i2c);
+>> +               }
+>>         }
+>>
+>>         return err;
 
--michael
+Which resource specifically are you worried about needing locking here?
 
-> 
->> +	depends on OF
->> +	select REGMAP_I2C
->> +	select REGMAP_IRQ
->> +	select SL28CPLD_IRQ
->> +	select MFD_CORE
->> +	help
->> +	  This option enables support for the board management controller
->> +	  found on the Kontron sl28 CPLD. You have to select individual
->> +	  functions, such as watchdog, GPIO, etc, under the corresponding 
->> menus
->> +	  in order to enable them.
->> +
->> +	  Currently supported boards are:
->> +
->> +		Kontron SMARC-sAL28
->> +
->> +	  To compile this driver as a module, choose M here: the module will 
->> be
->> +	  called sl28cpld.
->> +
->>  endmenu
->>  endif
->> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
->> index f935d10cbf0f..9bc38863b9c7 100644
->> --- a/drivers/mfd/Makefile
->> +++ b/drivers/mfd/Makefile
->> @@ -259,3 +259,5 @@ obj-$(CONFIG_MFD_ROHM_BD718XX)	+= rohm-bd718x7.o
->>  obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
->> 
->>  obj-$(CONFIG_SGI_MFD_IOC3)	+= ioc3.o
->> +
->> +obj-$(CONFIG_MFD_SL28CPLD)	+= sl28cpld.o
->> diff --git a/drivers/mfd/sl28cpld.c b/drivers/mfd/sl28cpld.c
->> new file mode 100644
->> index 000000000000..789f21f90752
->> --- /dev/null
->> +++ b/drivers/mfd/sl28cpld.c
->> @@ -0,0 +1,155 @@
->> +// SPDX-License-Identifier: GPL-2.0-only
->> +/*
->> + * MFD core for the CPLD on a SMARC-sAL28 board.
->> + *
->> + * Copyright 2019 Kontron Europe GmbH
->> + */
->> +
->> +#include <linux/kernel.h>
->> +#include <linux/module.h>
->> +#include <linux/of.h>
->> +#include <linux/of_address.h>
->> +#include <linux/of_platform.h>
->> +#include <linux/i2c.h>
->> +#include <linux/regmap.h>
->> +#include <linux/interrupt.h>
->> +#include <linux/mfd/core.h>
->> +
->> +#define SL28CPLD_VERSION 0x03
->> +#define SL28CPLD_WATCHDOG_BASE 0x4
->> +#define SL28CPLD_HWMON_FAN_BASE 0xb
->> +#define SL28CPLD_PWM0_BASE 0xc
->> +#define SL28CPLD_PWM1_BASE 0xe
->> +#define SL28CPLD_GPIO0_BASE 0x10
->> +#define SL28CPLD_GPIO1_BASE 0x15
->> +#define SL28CPLD_GPO_BASE 0x1a
->> +#define SL28CPLD_GPI_BASE 0x1b
->> +#define SL28CPLD_INTC_BASE 0x1c
->> +
->> +/* all subdevices share the same IRQ */
->> +#define SL28CPLD_IRQ 0
->> +
->> +#define SL28CPLD_MIN_REQ_VERSION 14
->> +
->> +struct sl28cpld {
->> +	struct device *dev;
->> +	struct regmap *regmap;
->> +};
->> +
->> +static const struct regmap_config sl28cpld_regmap_config = {
->> +	.reg_bits = 8,
->> +	.val_bits = 8,
->> +	.reg_stride = 1,
->> +};
->> +
->> +static struct resource sl28cpld_watchdog_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_WATCHDOG_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_hwmon_fan_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_HWMON_FAN_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_pwm0_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_PWM0_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_pwm1_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_PWM1_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_gpio0_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_GPIO0_BASE, 1),
->> +	DEFINE_RES_IRQ(SL28CPLD_IRQ),
->> +};
->> +
->> +static struct resource sl28cpld_gpio1_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_GPIO1_BASE, 1),
->> +	DEFINE_RES_IRQ(SL28CPLD_IRQ),
->> +};
->> +
->> +static struct resource sl28cpld_gpo_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_GPO_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_gpi_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_GPI_BASE, 1),
->> +};
->> +
->> +static struct resource sl28cpld_intc_resources[] = {
->> +	DEFINE_RES_REG(SL28CPLD_INTC_BASE, 1),
->> +	DEFINE_RES_IRQ(SL28CPLD_IRQ),
->> +};
->> +
->> +static const struct mfd_cell sl28cpld_devs[] = {
->> +	OF_MFD_CELL("sl28cpld-wdt", sl28cpld_watchdog_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-wdt"),
->> +	OF_MFD_CELL("sl28cpld-fan", sl28cpld_hwmon_fan_resources, NULL, 0, 
->> 0,
->> +		    "kontron,sl28cpld-fan"),
->> +	OF_MFD_CELL("sl28cpld-pwm", sl28cpld_pwm0_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-pwm"),
->> +	OF_MFD_CELL("sl28cpld-pwm", sl28cpld_pwm1_resources, NULL, 0, 1,
->> +		    "kontron,sl28cpld-pwm"),
->> +	OF_MFD_CELL("sl28cpld-gpio", sl28cpld_gpio0_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-gpio"),
->> +	OF_MFD_CELL("sl28cpld-gpio", sl28cpld_gpio1_resources, NULL, 0, 1,
->> +		    "kontron,sl28cpld-gpio"),
->> +	OF_MFD_CELL("sl28cpld-gpo", sl28cpld_gpo_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-gpo"),
->> +	OF_MFD_CELL("sl28cpld-gpi", sl28cpld_gpi_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-gpi"),
->> +	OF_MFD_CELL("sl28cpld-intc", sl28cpld_intc_resources, NULL, 0, 0,
->> +		    "kontron,sl28cpld-intc"),
->> +};
->> +
->> +static int sl28cpld_probe(struct i2c_client *i2c)
->> +{
->> +	struct sl28cpld *sl28cpld;
->> +	struct device *dev = &i2c->dev;
->> +	unsigned int cpld_version;
->> +	int ret;
->> +
->> +	sl28cpld = devm_kzalloc(dev, sizeof(*sl28cpld), GFP_KERNEL);
->> +	if (!sl28cpld)
->> +		return -ENOMEM;
->> +
->> +	sl28cpld->regmap = devm_regmap_init_i2c(i2c, 
->> &sl28cpld_regmap_config);
->> +	if (IS_ERR(sl28cpld->regmap))
->> +		return PTR_ERR(sl28cpld->regmap);
->> +
->> +	ret = regmap_read(sl28cpld->regmap, SL28CPLD_VERSION, 
->> &cpld_version);
->> +	if (ret)
->> +		return ret;
->> +
->> +	if (cpld_version < SL28CPLD_MIN_REQ_VERSION) {
->> +		dev_err(dev, "unsupported CPLD version %d\n", cpld_version);
->> +		return -ENODEV;
->> +	}
->> +
->> +	sl28cpld->dev = dev;
->> +	i2c_set_clientdata(i2c, sl28cpld);
->> +
->> +	dev_info(dev, "successfully probed. CPLD version %d\n", 
->> cpld_version);
->> +
->> +	return devm_mfd_add_devices(dev, -1, sl28cpld_devs,
->> +				    ARRAY_SIZE(sl28cpld_devs), NULL,
->> +				    i2c->irq, NULL);
->> +}
->> +
->> +static const struct of_device_id sl28cpld_of_match[] = {
->> +	{ .compatible = "kontron,sl28cpld", },
->> +	{}
->> +};
->> +MODULE_DEVICE_TABLE(of, sl28cpld_of_match);
->> +
->> +static struct i2c_driver sl28cpld_driver = {
->> +	.probe_new = sl28cpld_probe,
->> +	.driver = {
->> +		.name = "sl28cpld",
->> +		.of_match_table = of_match_ptr(sl28cpld_of_match),
->> +	},
->> +};
->> +module_i2c_driver(sl28cpld_driver);
->> +
->> +MODULE_DESCRIPTION("sl28cpld MFD Core Driver");
->> +MODULE_LICENSE("GPL");
->> 
+I don't think this patch introduces any new need for locking. Only new parameter, which wasn't accessed already is i2c->multimaster, which is a constant that is never changed after driver is loaded.
+If i2c->multimaster, needed locking i2c->tx_msg would have needed it already before, since it is a parameter in the same struct and can actually get changed by some other thread.
+In this section the only variables written to are local to the function. Shared variables are only read from, which seems pretty safe to me if considering this function alone.
 
+However, now that you mention it multiple threads could be checking i2c->tx_msg at the same time inside this function or waiting for xiic_bus_busy(i2c) to not be busy anymore.
+Since in "static int xiic_xfer(struct i2c_adapter *adap, struct i2c_msg *msgs, int num)" i2c->tx_msg is written with data before any locking, multiple threads could exit "xiic_busy(struct xiic_i2c *i2c)" and write their stuff to i2c->tx_msg, since buffer being empty was checked before anyone had a chance to write to it. If this happens, some data to be transmitted could be lost when i2c->tx_msg gets overwritten multiple times before data gets transmitted. This issue did already exist before, but it looks like it should be fixed to me.
+
+Fixing would need locking here, but the possible msleep(1) -calls inside xiic_busy seem like an issue, so some more changes needed:
+// lock here
+err = xiic_busy(i2c);
+if (err)
+              // unlock here
+	goto out;
+i2c->tx_msg = msgs;
+i2c->nmsgs = num;
+// unlock here
+
+>> +       i2c->multimaster =
+>> +               of_property_read_bool(pdev->dev.of_node, "multi-master");
+>> +
+>Current will default to mustimaster is 0.
+>May be the default should be 1 if not specified.
+
+The multi-master -binding is documented here as boolean and encodes a Boolean by either existing or not existing in device tree.
+It is also used in other drivers so I couldn't do much about it missing meaning False.
+https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/i2c/i2c.txt
+I originally had a custom device tree entry where the default was for multi-master to be enabled before I noticed the pre-existing binding.
+
+Maybe if the multi-master binding was changed from Boolean to for example a string property (multi-master = "ON" / multi-master = "OFF"), code could still just check the existence with "of_property_read_bool()" first, where property missing means "OFF" and property existing means "ON"(like before) if there is no text associated. Xiic driver would then only disable multimaster, if device tree explicitly contains multi-master = "OFF".
+
+This should be able to maintain driver backwards compatibility with old device trees, but requires binding documentation change and all drivers should likely be updated to also accept the new style of multi-master property to be consistent. This is also not as clean as the old Boolean property in my opinion.
+
+Thank you for comments,
+Jaakko
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
