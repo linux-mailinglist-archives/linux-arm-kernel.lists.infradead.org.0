@@ -2,53 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 774EF1899CD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:44:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 360C61899FD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:54:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GporOCtFtk03oq8i16hVtOaL1KUChF/i0v/Lzy6oaHc=; b=QzfbxNhzcQyMHHJ8YPfXinj8F
-	053+ATGeauRs2DvIbQFcztjAhG9HLjdYVSYP8Zi3DALRf6tt2YAutD5/HeKR2hZ4CAknAzarwUjWf
-	HqCUooE9bmSqT+zxCnuH8291G/vGYTlzg0RrFQ45gERNW7Mb8+5ZNXk7WZRMXCQJ5FbRVkq8bffVB
-	2m9Ipd/LN9iMCZyf/7OaVSfHiE7lLrW4lMv3Xi/z9vL0lWQnzj1sQokpn3Y1P5sVyMNYXZNKm81lV
-	Rom1twBXndLqKA5QImZB2kFAV4P3U9Ik3DgtwfqvjgLr0o1Wv4hzeuu+ASYgC7qi/miWWH0u0qlBT
-	R+Bc3n95Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hy7yrUd1svv3j79PTwk5KknlTNA57YcRt35clIb2TX0=; b=Uk54c7S5sJZQZi
+	TNuLDgh9o6r9FhEPXZDPHOyg8YbsVdVTafOpnCLdwB1DtI/OG32SMxGyZFKZMi3BKuc8YmNvxy23/
+	BBM2/XjqjJc6fX6Dg2/5QrEjLIhADXYzQ+AI4P9+O7f5r5THrxWOtlcmxQRboJ1VCsMni3EyPq5Wy
+	tnMG39SOeIgsxqJKpmeo0Exw+k1tFvV3CfzsKKO414Je2dmTGID1lZUYPSFwOX5RUVto5Fyh7hsqg
+	SLA4XM3ciXtvXXKF8YDhRn0homE0fBloGgvS+wmbS2Tkb9w07wncVbpjt6Rw5gIyedsm92RtIdmJY
+	MLILJBOTAZiI6g2LLvNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEWBQ-00022q-4o; Wed, 18 Mar 2020 10:44:20 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+	id 1jEWLH-00061W-EQ; Wed, 18 Mar 2020 10:54:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEWBF-00021p-NJ
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:44:11 +0000
-Received: from localhost (p54B333FA.dip0.t-ipconnect.de [84.179.51.250])
- by pokefinder.org (Postfix) with ESMTPSA id 33AAF2C097D;
- Wed, 18 Mar 2020 11:44:06 +0100 (CET)
-Date: Wed, 18 Mar 2020 11:44:05 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH] drivers/i2c/busses/i2c-imx.c:remove duplicate print
- after platform_get_irq()
-Message-ID: <20200318104405.rsqiw5og4xbuv6n5@katana>
-References: <20200318100748.17540-1-tangbin@cmss.chinamobile.com>
- <20200318101844.55c273zh242ymxcf@pengutronix.de>
+ id 1jEWL6-0005t8-Py
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:54:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C06B41FB;
+ Wed, 18 Mar 2020 03:51:59 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB1AF3F534;
+ Wed, 18 Mar 2020 03:51:58 -0700 (PDT)
+Date: Wed, 18 Mar 2020 10:51:56 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCHv6 0/3] arm64: perf: Add support for ARMv8.5-PMU 64-bit
+ counters
+Message-ID: <20200318105156.GB16012@lakrids.cambridge.arm.com>
+References: <20200302181752.14251-1-mark.rutland@arm.com>
+ <20200317231431.GM20788@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200318101844.55c273zh242ymxcf@pengutronix.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
+Content-Disposition: inline
+In-Reply-To: <20200317231431.GM20788@willie-the-truck>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_034409_907042_DE589D26 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200318_035420_890865_29C6D26B 
+X-CRM114-Status: GOOD (  14.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,85 +65,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tang Bin <tangbin@cmss.chinamobile.com>, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, linux@rempel-privat.de,
- linux-i2c@vger.kernel.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4430737548517303122=="
+Cc: catalin.marinas@arm.com, robin.murphy@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, maz@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Mar 17, 2020 at 11:14:31PM +0000, Will Deacon wrote:
+> On Mon, Mar 02, 2020 at 06:17:49PM +0000, Mark Rutland wrote:
+> > This is a respin of Andrew Murray's series to enable support for 64-bit
+> > counters as introduced in ARMv8.5.
+> > 
+> > I've given this a spin on (ARMv8.2) hardware, to test that there are no
+> > regressions, but I have not had the chance to test in an ARMv8.5 model (which I
+> > beleive Andrew had previously tested).
+> > 
+> > Since v5 [1]:
+> > * Don't treat perfmon ID fields as signed
+> > * Fix up ID field names
+> > * Explicitly compare ARMV8.5 PMU value
+> 
+> I'm betting on your issue being a model bug, so I've queued this on top of
+> Robin's enable/disable rework. Please take a look at for-next/perf [1] in
+> case I screwed it up.
 
---===============4430737548517303122==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="bce44n5wofewyr2x"
-Content-Disposition: inline
+From a cursory review, that all looks good to me.
 
+I'll poke if the issue turns out to be anything beyond a model bug. but
+I agree it seems that's all it is.
 
---bce44n5wofewyr2x
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Thanks,
+Mark.
 
-Hi Uwe,
-
-> Maybe add a comment for the next person who wonders about an error path
-> without error message? Something like:
->=20
-> 	irq =3D platform_get_irq(pdev, 0);
-> 	if (irq < 0)
-> 		/*
-> 		 * platform_get_irq() already issued an error message, so
-> 		 * fail silently here.
-> 		 */
-> 		 return irq;
-
-Hmm, too much boilerplate for my taste. I'd rather assume it will be
-printed during the call.
-
-> And to get some extra kudos mention the commit that modified
-> platform_get_irq() to emit a message in the commit log.
-
-Yes.
-
-Kind regards,
-
-   Wolfram
-
-
---bce44n5wofewyr2x
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5x+3UACgkQFA3kzBSg
-Kba8nA/+P5T/G4aR4JXxKUJpSsklVKMksLmr30FVYSwIDwRM+ZtiE1Gb5YlxIq2w
-xGrwNdKPkoYaYYfPeV51FgcQ0p6LcVF1SkgFxox8B8ga20m65uyu+/CoSeblzcJ+
-J7OP6D1XHGezNJ75wD6rUO9buqqBhxDOQ1VvQsKxVN6V16Zc4TULuU5CZNh6KbnM
-h//fMAuKK2mubFJVYiDHZCeaFPgCLESrmYmuCup46fPkthkMwZbynpeXo23dvhd4
-5rh8tB1n1DpCz4JICMfyaTlLMD53U3Lkq4UivUmwi3oU17rnhNqfYvggZ+gGmucz
-UNZGT9FiMCRzwidSU9WitQbF8CkkS7+0RhVRf/8T52GtZm8VroRg3apGfp+FpzP3
-Ep/bFgZrBJuDCY/27JtiaGlF4qGSFis0ZvdOnneEC1pzwQ5WuaN0yJw6PdYq5W6X
-Hy2Bn1m9gsnI1DfEF47y6jlDgjmMAt0huqoTKwvWIAJnaE8SQfGIaHsB667c/Vo6
-BEHCeewgbX9crZk5S7P6swVEXIoFAVZYnCAqFowunYx81dKn/VV/mHiuwVw6gy7A
-tnvZh1GvJGAzC5JibIhAfA6ZExGesQRR36XegKDiQm2YrLMH8l0qYmUjkYCWZjE4
-Ejq+5Srx6Sxk+rZxdMmxA8stM2qhn+QFnUtZKJ4g6jdTYeI6720=
-=MP33
------END PGP SIGNATURE-----
-
---bce44n5wofewyr2x--
-
-
---===============4430737548517303122==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> Thanks,
+> 
+> Will
+> 
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-next/perf
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4430737548517303122==--
-
