@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DC7B189CB9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:18:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 451C3189CDA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:23:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A8X3eku8xFqKlns2dChMTW7Fb7vJ75aVI9EY3Tht/os=; b=uFjCaICaAB+29e
-	KKUxNflbWcvszlIemhDLAa8RzyUQskcszb9VGn6jnyXm67eoZ2WarDs2qRUoSAaJ3TjISGULqpwus
-	mNw6sZjLVOiw2luAy/emEW5VzDK5KuCcluuWkrloW6kx0wUyTxcL5hXss0azhVzi7jw0ahvIQWK5/
-	FBZCOKlBoREPvDdAB/c8tFdmRJdc5rQDfqV0SetChjbN17Yw1FwLAiv1PgWeYeICf/P16N5vKuWyf
-	eBqzBXWHpUfRI9qC84gul4msktW3y2yUWFOHdC6Y3Ay6qUpuYAq63Ei1kxOlhTFLSMMRczzOa7YUE
-	S9zBjeHHppGNjuQPeQHg==;
+	List-Owner; bh=mOyjz2Ucg2GdeSOJBzbBml9OiQKoB2DOiEdWG5+p4SQ=; b=pljoYwtn/dRDVc
+	ktedRTlB3N04uO2zY1Oul7U1EMqDfG675EhUNyWinQJE9AL1T9eVPNYColXqp6NsJY9Xnmbz5g6eU
+	U8KYiDCZR7BAdTUS7KnczF+ipIYvgffbup1ZVv4awbmpMj1Fa+jq7TVDj7VDCVFztMDlDx2g9/1h2
+	86/FsOjO97B2PBkzGd+Q6A74S5qh60x+RHvJwwakswdElUPg3/XRAgbGH3USV/yW2Q/GPbgoGpSGz
+	N/LKvG4o7CkmS8KtCqq1lW4h2lV6vdhVavIG0iPDSgP4cixVGpoMNOvon9WU9sTmySUXjz1W23VDY
+	5/yjXqPmlRfzjVCqI0Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEYak-0001En-PE; Wed, 18 Mar 2020 13:18:38 +0000
+	id 1jEYes-0003nW-OY; Wed, 18 Mar 2020 13:22:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEYaX-0001Dy-7X
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:18:26 +0000
+ id 1jEYeh-0003kc-OO
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:22:45 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE42220768;
- Wed, 18 Mar 2020 13:18:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 00DA32076F;
+ Wed, 18 Mar 2020 13:22:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584537504;
- bh=aUGyqTKA5hfG5n2z9i2CNgp/54hZegNuW8F7Ze1TW5w=;
+ s=default; t=1584537763;
+ bh=CKEreA8CUxYmEbiSZgNzqX5KgmCpM63Ng+o18LXBl38=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Y9oZVQVnpxVULOg3RGf6NiAye0DIn2rRsAkn5peJSOgZHhXQeyED5i+8YsCwpgHcz
- irENiKSIHsgvGcO1BpcVr3qeKVbRLj4iClEGte2zNHT1SDhFTjnEPCoRh40U63SAur
- Ers4QWZsoS95whsZOwL4fBfDXbam/VOYhJtZJv6Y=
-Date: Wed, 18 Mar 2020 14:18:21 +0100
+ b=JorCG4C+ZGySiVuSu/z2+zdsj8FFbdzJ/Mp1MEZsbo/dyOHhwA/+Mw/1buc1hJZkx
+ lOo2bzLYuiL6RFah4WngRMZW5fEq0OyfOlc8GblgkDZG5603FFUj+eWm4DEUKSAsZi
+ joOSh8U3p8fA7Jx9In9dBPuZhzY5YPFNM1LDPeWI=
+Date: Wed, 18 Mar 2020 14:22:41 +0100
 From: Greg KH <gregkh@linuxfoundation.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 02/13] coresight: cti: Add sysfs coresight mgmt register
- access
-Message-ID: <20200318131821.GA2789508@kroah.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Mike Leach <mike.leach@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH 01/13] coresight: cti: Initial CoreSight CTI Driver
+Message-ID: <20200318132241.GB2789508@kroah.com>
 References: <20200309161748.31975-1-mathieu.poirier@linaro.org>
- <20200309161748.31975-3-mathieu.poirier@linaro.org>
+ <20200309161748.31975-2-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200309161748.31975-3-mathieu.poirier@linaro.org>
+In-Reply-To: <20200309161748.31975-2-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_061825_309380_0B99BA64 
-X-CRM114-Status: GOOD (  17.42  )
+X-CRM114-CacheID: sfid-20200318_062243_812040_B2619B82 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -80,111 +81,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 10:17:37AM -0600, Mathieu Poirier wrote:
+On Mon, Mar 09, 2020 at 10:17:36AM -0600, Mathieu Poirier wrote:
 > From: Mike Leach <mike.leach@linaro.org>
 > 
-> Adds sysfs access to the coresight management registers.
+> This introduces a baseline CTI driver and associated configuration files.
+> 
+> Uses the platform agnostic naming standard for CoreSight devices, along
+> with a generic platform probing method that currently supports device
+> tree descriptions, but allows for the ACPI bindings to be added once these
+> have been defined for the CTI devices.
+> 
+> Driver will probe for the device on the AMBA bus, and load the CTI driver
+> on CoreSight ID match to CTI IDs in tables.
+> 
+> Initial sysfs support for enable / disable provided.
+> 
+> Default CTI interconnection data is generated based on hardware
+> register signal counts, with no additional connection information.
 > 
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> [Fixed abbreviation in title]
 > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->  .../hwtracing/coresight/coresight-cti-sysfs.c | 53 +++++++++++++++++++
->  drivers/hwtracing/coresight/coresight-priv.h  |  1 +
->  2 files changed, 54 insertions(+)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> index a832b8c6b866..507f8eb487fe 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> @@ -62,11 +62,64 @@ static struct attribute *coresight_cti_attrs[] = {
->  	NULL,
->  };
->  
-> +/* register based attributes */
+
+You didn't cc: all of them to get review comments?  I've added it
+above...
+
+And signed-off-by implies reviewed-by.
+
+> +/* basic attributes */
+> +static ssize_t enable_show(struct device *dev,
+> +			   struct device_attribute *attr,
+> +			   char *buf)
+> +{
+> +	int enable_req;
+> +	bool enabled, powered;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	ssize_t size = 0;
 > +
-> +/* macro to access RO registers with power check only (no enable check). */
-> +#define coresight_cti_reg(name, offset)			\
-> +static ssize_t name##_show(struct device *dev,				\
-> +			   struct device_attribute *attr, char *buf)	\
-> +{									\
-> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);	\
-> +	u32 val = 0;							\
-> +	pm_runtime_get_sync(dev->parent);				\
-> +	spin_lock(&drvdata->spinlock);					\
-> +	if (drvdata->config.hw_powered)					\
-> +		val = readl_relaxed(drvdata->base + offset);		\
-> +	spin_unlock(&drvdata->spinlock);				\
-> +	pm_runtime_put_sync(dev->parent);				\
-> +	return scnprintf(buf, PAGE_SIZE, "0x%x\n", val);		\
-> +}									\
-> +static DEVICE_ATTR_RO(name)
+> +	enable_req = atomic_read(&drvdata->config.enable_req_count);
+> +	spin_lock(&drvdata->spinlock);
+> +	powered = drvdata->config.hw_powered;
+> +	enabled = drvdata->config.hw_enabled;
+> +	spin_unlock(&drvdata->spinlock);
 > +
-> +/* coresight management registers */
-> +coresight_cti_reg(devaff0, CTIDEVAFF0);
-> +coresight_cti_reg(devaff1, CTIDEVAFF1);
-> +coresight_cti_reg(authstatus, CORESIGHT_AUTHSTATUS);
-> +coresight_cti_reg(devarch, CORESIGHT_DEVARCH);
-> +coresight_cti_reg(devid, CORESIGHT_DEVID);
-> +coresight_cti_reg(devtype, CORESIGHT_DEVTYPE);
-> +coresight_cti_reg(pidr0, CORESIGHT_PERIPHIDR0);
-> +coresight_cti_reg(pidr1, CORESIGHT_PERIPHIDR1);
-> +coresight_cti_reg(pidr2, CORESIGHT_PERIPHIDR2);
-> +coresight_cti_reg(pidr3, CORESIGHT_PERIPHIDR3);
-> +coresight_cti_reg(pidr4, CORESIGHT_PERIPHIDR4);
-> +
-> +static struct attribute *coresight_cti_mgmt_attrs[] = {
-> +	&dev_attr_devaff0.attr,
-> +	&dev_attr_devaff1.attr,
-> +	&dev_attr_authstatus.attr,
-> +	&dev_attr_devarch.attr,
-> +	&dev_attr_devid.attr,
-> +	&dev_attr_devtype.attr,
-> +	&dev_attr_pidr0.attr,
-> +	&dev_attr_pidr1.attr,
-> +	&dev_attr_pidr2.attr,
-> +	&dev_attr_pidr3.attr,
-> +	&dev_attr_pidr4.attr,
+> +	if (powered) {
+> +		size = scnprintf(buf, PAGE_SIZE, "cti %s; powered;\n",
+> +				 enabled ? "enabled" : "disabled");
+> +	} else {
+> +		size = scnprintf(buf, PAGE_SIZE, "cti %s; unpowered;\n",
+> +				 enable_req ? "enable req" : "disabled");
+
+sysfs files should never need scnprintf() as you "know" a single value
+will fit into a PAGE_SIZE.
+
+And shouldn't this just be a single value, this looks like it is 2
+values in one line, that then needs to be parsed, is that to be
+expected?
+
+Where is the documentation for this new sysfs file?
+
+> +const struct attribute_group *coresight_cti_groups[] = {
+> +	&coresight_cti_group,
 > +	NULL,
 > +};
-> +
->  static const struct attribute_group coresight_cti_group = {
->  	.attrs = coresight_cti_attrs,
->  };
->  
-> +static const struct attribute_group coresight_cti_mgmt_group = {
-> +	.attrs = coresight_cti_mgmt_attrs,
-> +	.name = "mgmt",
-> +};
-> +
->  const struct attribute_group *coresight_cti_groups[] = {
->  	&coresight_cti_group,
-> +	&coresight_cti_mgmt_group,
->  	NULL,
->  };
-> diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
-> index 82e563cdc879..aba6b789c969 100644
-> --- a/drivers/hwtracing/coresight/coresight-priv.h
-> +++ b/drivers/hwtracing/coresight/coresight-priv.h
-> @@ -22,6 +22,7 @@
->  #define CORESIGHT_CLAIMCLR	0xfa4
->  #define CORESIGHT_LAR		0xfb0
->  #define CORESIGHT_LSR		0xfb4
-> +#define CORESIGHT_DEVARCH	0xfbc
->  #define CORESIGHT_AUTHSTATUS	0xfb8
->  #define CORESIGHT_DEVID		0xfc8
->  #define CORESIGHT_DEVTYPE	0xfcc
-> -- 
-> 2.20.1
-> 
 
-I do not see any Documentation/ABI/ entries for these new sysfs files,
-did I miss it somehow?  I can't take new sysfs code without
-documentation.
+ATTRIBUTE_GROUPS()?
 
-thanks,
+> +static struct amba_driver cti_driver = {
+> +	.drv = {
+> +		.name	= "coresight-cti",
+> +		.owner = THIS_MODULE,
+
+Aren't amba drivers smart enough to set this properly on their own?
+{sigh}
 
 greg k-h
 
