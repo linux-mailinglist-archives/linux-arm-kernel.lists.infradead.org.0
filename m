@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1518018A4AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:56:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08A0D18A4AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:56:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z1Rlsa/iZJqrQvsK07R+t9VQIr+08WdpEFM7QRpQ1js=; b=iJDhyif7gmDBu/
-	N3EwVFAbiXQq1kgX2wbvORgI+bBJNTjoJ7bhQWbkrRx9/e7AwpRg3e+awu3O7Ti/uSatwi3+tMs9N
-	g1RtOUOeM0BpJPyT7jrm1j5DzKxCH6rw5B9ELgpTJQeGl6JDlpCIYKWf/C7UGbCOlr7t00PUKTPEj
-	Boh0j0+sfkYkKLb7xBny07RO8shC7f012lAXuI8t3GW2LhD5ifJI2iMJZCKjNC5meuAJt+3fBELKY
-	696hrPZSKRlWyIIS1YFOTBAfe/tQ4rVJ9TVaFG/WusOpdzckXwGvKsPX+YjIVnLK+7w9suFzjweWx
-	+GrCNtRhfMdbPr5mhQTQ==;
+	List-Owner; bh=sI+V8K0zP4iwpkuNS0mfl22EaigJq/Oimh4tjNWrxbQ=; b=WZ5bLD+6W0nc5F
+	PvZlheFI+gij5vRCZDvTuasSKLuOB1ISQOuRnFS1tTl6squJx6pB9wYljbvGfUgp8eiiK0d8v7+MC
+	sh4OgmaQoUk5S/Pl3zRaGBjiXRZAhKrKPyA9AtyY7c0/ywjNp9AYsjELi+RG65WVaSzJUL8wlRDPq
+	zb3AIutA4Qp2wBr3q/BvUYpY7qxA8yFtgtP7s8Y5kfC9j3i/nX5XVIEK0hUwQsKLEKlsN9CdfrtU+
+	40W81f3Oh5RHfD6nZ4dv5/tuEaVYEnkDKFwmBkutjH/9q+Ac0sCl1qhS0ByCKLD6pwSdkpeSoHjUt
+	z6/nLyMD+O2YBO4gWwzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEfjM-0007wi-G6; Wed, 18 Mar 2020 20:56:00 +0000
+	id 1jEfjb-0008BU-BD; Wed, 18 Mar 2020 20:56:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEfid-0007Pc-R9; Wed, 18 Mar 2020 20:55:17 +0000
+ id 1jEfix-0007nN-LI
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:55:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 827BB21473;
- Wed, 18 Mar 2020 20:55:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4359E208DB;
+ Wed, 18 Mar 2020 20:55:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584564915;
- bh=bONTE9QdEECJ7irBIRK7fX137XpPZQEhsAzh0W8JQ/4=;
+ s=default; t=1584564935;
+ bh=JPCMMDsUwERJIXy175RNLP9ZgO/AEaV/j6hHU6P+eJk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mW+jkdajYXJf7POKeafghH/hpsXktWMSsj/+4xrU5uqk8Fb4JdZaGgjf4+qpWJQS6
- VDXcLgKNVrHfFmGnjOYT/9DQsBsDawm9r9yrJLAVcVRt7N38WP9Hngd9myFBABVacz
- P3YidteIk+B3oKNrrSGyFTO6qGJw32J8Or37Wa30=
+ b=GcMnpkAd0OhEiiu1ikrhCanyy9NXVDeLLd88zICCIB7PJVpCnJuBkTr8lWsqOainZ
+ QNMhBW4nz9Zd5nyj/910jIBH/C0dkoceVK/8CD/mOgCHWCU0dPW/TATw4czu7EvNpg
+ yAJOtPUcitZO1pnjchzorErhd+8xfdXNkIUOMEho=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 04/37] pinctrl: meson-gxl: fix GPIOX sdio pins
-Date: Wed, 18 Mar 2020 16:54:36 -0400
-Message-Id: <20200318205509.17053-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 21/37] arm64: dts: ls1043a: FMan erratum A050385
+Date: Wed, 18 Mar 2020 16:54:53 -0400
+Message-Id: <20200318205509.17053-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200318205509.17053-1-sashal@kernel.org>
 References: <20200318205509.17053-1-sashal@kernel.org>
@@ -48,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_135515_914813_9DD94BE1 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20200318_135535_743029_043850A7 
+X-CRM114-Status: UNSURE (   8.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -79,48 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- linux-gpio@vger.kernel.org, Nicolas Belin <nbelin@baylibre.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Belin <nbelin@baylibre.com>
+From: Madalin Bucur <madalin.bucur@nxp.com>
 
-[ Upstream commit dc7a06b0dbbafac8623c2b7657e61362f2f479a7 ]
+[ Upstream commit b54d3900862374e1bb2846e6b39d79c896c0b200 ]
 
-In the gxl driver, the sdio cmd and clk pins are inverted. It has not caused
-any issue so far because devices using these pins always take both pins
-so the resulting configuration is OK.
+The LS1043A SoC is affected by the A050385 erratum stating that
+FMAN DMA read or writes under heavy traffic load may cause FMAN
+internal resource leak thus stopping further packet processing.
 
-Fixes: 0f15f500ff2c ("pinctrl: meson: Add GXL pinctrl definitions")
-Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
-Signed-off-by: Nicolas Belin <nbelin@baylibre.com>
-Link: https://lore.kernel.org/r/1582204512-7582-1-git-send-email-nbelin@baylibre.com
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Madalin Bucur <madalin.bucur@nxp.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pinctrl/meson/pinctrl-meson-gxl.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/pinctrl/meson/pinctrl-meson-gxl.c b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-index 0c0a5018102b0..22ddb238e17c5 100644
---- a/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-+++ b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
-@@ -153,8 +153,8 @@ static const unsigned int sdio_d0_pins[]	= { GPIOX_0 };
- static const unsigned int sdio_d1_pins[]	= { GPIOX_1 };
- static const unsigned int sdio_d2_pins[]	= { GPIOX_2 };
- static const unsigned int sdio_d3_pins[]	= { GPIOX_3 };
--static const unsigned int sdio_cmd_pins[]	= { GPIOX_4 };
--static const unsigned int sdio_clk_pins[]	= { GPIOX_5 };
-+static const unsigned int sdio_clk_pins[]	= { GPIOX_4 };
-+static const unsigned int sdio_cmd_pins[]	= { GPIOX_5 };
- static const unsigned int sdio_irq_pins[]	= { GPIOX_7 };
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
+index 6082ae0221364..d237162a87446 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
+@@ -20,6 +20,8 @@
+ };
  
- static const unsigned int nand_ce0_pins[]	= { BOOT_8 };
+ &fman0 {
++	fsl,erratum-a050385;
++
+ 	/* these aliases provide the FMan ports mapping */
+ 	enet0: ethernet@e0000 {
+ 	};
 -- 
 2.20.1
 
