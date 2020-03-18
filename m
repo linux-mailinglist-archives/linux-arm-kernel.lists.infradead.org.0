@@ -2,66 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A0D1189FBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 16:35:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D5ED18A00F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 17:00:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qh4PEidqKbVTaiFCh9UzbJGJAeLbGoinmj2WlhlIPWg=; b=HC5kThMMCXdZSDCJBHRFgUlEK
-	AYVEabsqxZRe/dY26RJDxLxq4uE/mDi4Qb+V22S460SR7MhKp8eCe1Dvg50RVtxe4l51dqXn0LgIn
-	mym3OixSTyB0eHaV5iJy2RKTgqakpJ0QTswNXq282EIpjNPB0G35SUPu9cCxUBmpPxQYnLhIMh6tp
-	Ysv2ewoXNSnz7UrA1c2p9PN5r2VuNDTM7aNC3OocN7m5XG+Go4KLeNGp2eMmm18maTIt/K0MHqyNS
-	JNZeiawqJ6WwcXiU37WbcASzTSKXyS58aWQwyyxGlyoMWK7WkH/qTzQMnU78TDPWOBtZtcyn5XsfO
-	Ybw9VUp8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZLF99reRjKZsSXRCuLFoBbnezuuTVKKOOh+cagQmguQ=; b=ONzPLuNFyZ6tJT
+	2bMQk9uUAtsd4WKyzTnKB8fypYMi3iBonIVxqSVq9JMmrkV1eYxfEg/MWEoxl+sMk8mrILUAEvrJz
+	Jn+tjCPX79hLoeea4t/lqG+aIN1fTHyV33azfjicDu+3Wonav5A8gcz1Y91lN/hfKit9zdYCRhauU
+	t3kucU9BOQ4o8Nf/ID/Pxjt4hL5A4z7e22fKzJ9KJ6g95UG5DiWLZnTTr0BUqUHJGGk1cQJTIlqW8
+	QY9FstDw1N4U6LftofFXt2bYmgglONdfTYtFSN/BQ43YIIVGSPKs6LLIG0BwA/ByqrGTwH1ncuEeW
+	kuaPLXLkyicR7xxkWHgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEaj9-0008A2-1N; Wed, 18 Mar 2020 15:35:27 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jEb79-0006iq-EJ; Wed, 18 Mar 2020 16:00:15 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEaiz-00089M-Kl
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 15:35:19 +0000
-Received: from lhreml704-cah.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 034F84D0025CD28E4C92;
- Wed, 18 Mar 2020 15:35:10 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml704-cah.china.huawei.com (10.201.108.45) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 18 Mar 2020 15:35:09 +0000
-Received: from [127.0.0.1] (10.47.11.44) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 18 Mar
- 2020 15:35:08 +0000
-Subject: Re: [PATCH v3 2/2] irqchip/gic-v3-its: Balance initial LPI affinity
- across CPUs
-To: Marc Zyngier <maz@kernel.org>
-References: <20200316115433.9017-1-maz@kernel.org>
- <20200316115433.9017-3-maz@kernel.org>
- <d3a6435b-bc1f-e518-6461-2ebff72bbc59@huawei.com>
- <d74f9cb3df708335a56aec62963aa281@kernel.org>
+ id 1jEb6p-0006dw-Lk
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 15:59:57 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 74B381DFBFC724B5E42D;
+ Wed, 18 Mar 2020 23:59:49 +0800 (CST)
+Received: from localhost.localdomain (10.69.192.58) by
+ DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
+ 14.3.487.0; Wed, 18 Mar 2020 23:59:39 +0800
 From: John Garry <john.garry@huawei.com>
-Message-ID: <894aabcc-9676-3945-7a62-70fb930fd8a5@huawei.com>
-Date: Wed, 18 Mar 2020 15:34:56 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+To: <xuwei5@huawei.com>, <arnd@arndb.de>
+Subject: [PATCH 1/3] io: Provide _inX() and _outX()
+Date: Wed, 18 Mar 2020 23:55:33 +0800
+Message-ID: <1584546935-75393-2-git-send-email-john.garry@huawei.com>
+X-Mailer: git-send-email 2.8.1
+In-Reply-To: <1584546935-75393-1-git-send-email-john.garry@huawei.com>
+References: <1584546935-75393-1-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <d74f9cb3df708335a56aec62963aa281@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.47.11.44]
-X-ClientProxiedBy: lhreml721-chm.china.huawei.com (10.201.108.72) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
+X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_083517_831911_B3C4FAB2 
-X-CRM114-Status: GOOD (  21.33  )
+X-CRM114-CacheID: sfid-20200318_085955_883957_422036A1 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,143 +64,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Cooper <jason@lakedaemon.net>, luojiaxing <luojiaxing@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ming Lei <ming.lei@redhat.com>, "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, John
+ Garry <john.garry@huawei.com>, okaya@kernel.org, linux-kernel@vger.kernel.org,
+ jiaxun.yang@flygoat.com, linuxarm@huawei.com, olof@lixom.net,
+ bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Since commit a7851aa54c0c ("io: change outX() to have their own IO
+barrier overrides") and commit 87fe2d543f81 ("io: change inX() to have
+their own IO barrier overrides"), the outX and inX functions have memory
+barriers which can be overridden.
 
->>> +static int its_select_cpu(struct irq_data *d,
->>> +			  const struct cpumask *aff_mask)
->>> +{
->>> +	struct its_device *its_dev = irq_data_get_irq_chip_data(d);
->>> +	cpumask_var_t tmpmask;
->>> +	int cpu, node;
->>> +
->>> +	if (!alloc_cpumask_var(&tmpmask, GFP_KERNEL))
->>> +		return -ENOMEM;
->>> +
->>> +	node = its_dev->its->numa_node;
->>> +
->>> +	if (!irqd_affinity_is_managed(d)) {
->>> +		/* First try the NUMA node */
->>> +		if (node != NUMA_NO_NODE) {
->>> +			/*
->>> +			 * Try the intersection of the affinity mask and the
->>> +			 * node mask (and the online mask, just to be safe).
->>> +			 */
->>> +			cpumask_and(tmpmask, cpumask_of_node(node), aff_mask);
->>> +			cpumask_and(tmpmask, tmpmask, cpu_online_mask);
->>> +
->>> +			/* If that doesn't work, try the nodemask itself */
->>
->> So if tmpmsk is empty...
-> 
-> Which means the proposed affinity mask isn't part of the node mask the
-> first place.
-> Why did we get such an affinity the first place?
+However, the generic logic_pio lib has continued to use readl/writel et al
+for IO port accesses, which has weaker barriers on arm64.
 
-It seems to be just irqbalance setting the affinity mask via sysfs:
+Provide generic _inX() and _outX(), which can be used by logic pio.
 
-[44.782116] Calltrace:
-[44.782119] its_select_cpu+0x420/0x6e0
-[44.782121] its_set_affinity+0x180/0x208
-[44.782126] msi_domain_set_affinity+0x44/0xb8
-[44.782130] irq_do_set_affinity+0x48/0x190
-[44.782132] irq_set_affinity_locked+0xc0/0xe8
-[44.782134] __irq_set_affinity+0x48/0x78
-[44.782136] write_irq_affinity.isra.8+0xec/0x110
-[44.782138] irq_affinity_proc_write+0x1c/0x28
-[44.782142] proc_reg_write+0x70/0xb8
-[44.782147] __vfs_write+0x18/0x40
-[44.782149] vfs_write+0xb0/0x1d0
-[44.782151] ksys_write+0x64/0xe8
-[44.782154] __arm64_sys_write+0x18/0x20
-[44.782157] el0_svc_common.constprop.2+0x88/0x150
-[44.782159] do_el0_svc+0x20/0x80
-[44.782162] el0_sync_handler+0x118/0x188
-[44.782164] el0_sync+0x140/0x180
+Signed-off-by: John Garry <john.garry@huawei.com>
+---
+ include/asm-generic/io.h | 64 +++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 44 insertions(+), 20 deletions(-)
 
-And for some reason fancied cpu62.
+diff --git a/include/asm-generic/io.h b/include/asm-generic/io.h
+index d39ac997dda8..31f647389c84 100644
+--- a/include/asm-generic/io.h
++++ b/include/asm-generic/io.h
+@@ -448,17 +448,15 @@ static inline void writesq(volatile void __iomem *addr, const void *buffer,
+ #define IO_SPACE_LIMIT 0xffff
+ #endif
+ 
+-#include <linux/logic_pio.h>
+-
+ /*
+  * {in,out}{b,w,l}() access little endian I/O. {in,out}{b,w,l}_p() can be
+  * implemented on hardware that needs an additional delay for I/O accesses to
+  * take effect.
+  */
+ 
+-#ifndef inb
+-#define inb inb
+-static inline u8 inb(unsigned long addr)
++#ifndef _inb
++#define _inb _inb
++static inline u16 _inb(unsigned long addr)
+ {
+ 	u8 val;
+ 
+@@ -469,9 +467,9 @@ static inline u8 inb(unsigned long addr)
+ }
+ #endif
+ 
+-#ifndef inw
+-#define inw inw
+-static inline u16 inw(unsigned long addr)
++#ifndef _inw
++#define _inw _inw
++static inline u16 _inw(unsigned long addr)
+ {
+ 	u16 val;
+ 
+@@ -482,9 +480,9 @@ static inline u16 inw(unsigned long addr)
+ }
+ #endif
+ 
+-#ifndef inl
+-#define inl inl
+-static inline u32 inl(unsigned long addr)
++#ifndef _inl
++#define _inl _inl
++static inline u16 _inl(unsigned long addr)
+ {
+ 	u32 val;
+ 
+@@ -495,9 +493,9 @@ static inline u32 inl(unsigned long addr)
+ }
+ #endif
+ 
+-#ifndef outb
+-#define outb outb
+-static inline void outb(u8 value, unsigned long addr)
++#ifndef _outb
++#define _outb _outb
++static inline void _outb(u8 value, unsigned long addr)
+ {
+ 	__io_pbw();
+ 	__raw_writeb(value, PCI_IOBASE + addr);
+@@ -505,9 +503,9 @@ static inline void outb(u8 value, unsigned long addr)
+ }
+ #endif
+ 
+-#ifndef outw
+-#define outw outw
+-static inline void outw(u16 value, unsigned long addr)
++#ifndef _outw
++#define _outw _outw
++static inline void _outw(u16 value, unsigned long addr)
+ {
+ 	__io_pbw();
+ 	__raw_writew(cpu_to_le16(value), PCI_IOBASE + addr);
+@@ -515,9 +513,9 @@ static inline void outw(u16 value, unsigned long addr)
+ }
+ #endif
+ 
+-#ifndef outl
+-#define outl outl
+-static inline void outl(u32 value, unsigned long addr)
++#ifndef _outl
++#define _outl _outl
++static inline void _outl(u32 value, unsigned long addr)
+ {
+ 	__io_pbw();
+ 	__raw_writel(cpu_to_le32(value), PCI_IOBASE + addr);
+@@ -525,6 +523,32 @@ static inline void outl(u32 value, unsigned long addr)
+ }
+ #endif
+ 
++#include <linux/logic_pio.h>
++
++#ifndef inb
++#define inb _inb
++#endif
++
++#ifndef inw
++#define inw _inw
++#endif
++
++#ifndef inl
++#define inl _inl
++#endif
++
++#ifndef outb
++#define outb _outb
++#endif
++
++#ifndef outw
++#define outw _outw
++#endif
++
++#ifndef outl
++#define outl _outl
++#endif
++
+ #ifndef inb_p
+ #define inb_p inb_p
+ static inline u8 inb_p(unsigned long addr)
+-- 
+2.12.3
 
-> 
->>
->>> +			if (cpumask_empty(tmpmask))
->>> +				cpumask_and(tmpmask, cpumask_of_node(node), cpu_online_mask);
->>
->>   now the tmpmask may have no intersection with the aff_mask...
-> 
-> But it has the mask for CPUs that are best suited for this interrupt,
-> right?
-> If I understand the topology of your machine, it has an ITS per 64 CPUs,
-> and
-> this device is connected to the ITS that serves the second socket.
-
-No, this one (D06ES) has a single ITS:
-
-john@ubuntu:~/kernel-dev$ dmesg | grep ITS
-[    0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
-[    0.000000] ITS [mem 0x202100000-0x20211ffff]
-[    0.000000] ITS@0x0000000202100000: Using ITS number 0
-[    0.000000] ITS@0x0000000202100000: allocated 8192 Devices 
-@23ea9f0000 (indirect, esz 8, psz 16K, shr 1)
-[    0.000000] ITS@0x0000000202100000: allocated 2048 Virtual CPUs 
-@23ea9d8000 (indirect, esz 16, psz 4K, shr 1)
-[    0.000000] ITS@0x0000000202100000: allocated 256 Interrupt 
-Collections @23ea9d3000 (flat, esz 16, psz 4K, shr 1)
-[    0.000000] ITS: Using DirectLPI for VPE invalidation
-[    0.000000] ITS: Enabling GICv4 support
-[    0.044034] Platform MSI: ITS@0x202100000 domain created
-[    0.044042] PCI/MSI: ITS@0x202100000 domain created
-
-D06CS has 2x ITS, as you may know :)
-
-And, FWIW, the device is on the 2nd socket, numa node #2.
-
-So the cpu mask of node #0 (where the ITS lives) is 0-23. So no 
-intersection with what userspace requested.
-
->> 	if (cpu < 0 || cpu >= nr_cpu_ids)
->> 		return -EINVAL;
->>
->> 	if (cpu != its_dev->event_map.col_map[id]) {
->> 		its_inc_lpi_count(d, cpu);
->> 		its_dec_lpi_count(d, its_dev->event_map.col_map[id]);
->> 		target_col = &its_dev->its->collections[cpu];
->> 		its_send_movi(its_dev, target_col, id);
->> 		its_dev->event_map.col_map[id] = cpu;
->> 		irq_data_update_effective_affinity(d, cpumask_of(cpu));
->> 	}
->>
->> So cpu may not be a member of mask_val. Hence the inconsistency of the
->> affinity list and effective affinity. We could just drop the AND of
->> the ITS node mask in its_select_cpu().
-> 
-> That would be a departure from the algorithm Thomas proposed, which made
-> a lot of sense in my opinion. What its_select_cpu() does in this case is
-> probably the best that can be achieved from a latency perspective,
-> as it keeps the interrupt local to the socket that generated it.
-
-We seem to be following what Thomas described for a non-managed 
-interrupt bound to a node. But is this interrupt bound to the node?
-
-Regardless of that, what you're saying seems right - keep local 
-interrupt bound to the node. But the problem is that userspace is doing 
-its own thing.
-
-> 
-> What I wonder is how we end-up with this silly aff_mask the first place.
-
-Cheers,
-John
-
-BTW, sorry if any text formatting is mangled. I have to improve my WFH 
-setup....
 
 _______________________________________________
 linux-arm-kernel mailing list
