@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B41A418A391
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:14:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44F5218A3B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:24:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y8/7wbHvH7bOCKvGa0nkW/xo42Gc1/EPo1CnYYRJ5d4=; b=sJ2F7LUKOVSQ44
-	easrQkXIrDS78qb84zKWf5D8camT6JzsB4+MFjcdvSLkKN/a5/Lv/vUIjk9sjmCyMPgm84GLPoKHW
-	1jKmbx4xYpM9U6xLOstjWE6HJuMNKoha8P25BoR7TrSzg+eby1zzCMHz5/tDKQcHCmLzbTZj0JscI
-	o1C/kk6pRXcPd31Gfg8UkS+uoPXj4LHsEZztA1225kp2AxE6y0T1BZjQUYY109kcWulL8nzTRGAkM
-	YrcBnQ46VzQaols83qClMEmE+sXyIPNua068dHwc6trqbofBqm8Ppidjfb4ww3bJCAT4Euwrku/Ex
-	oP2zlKbmeAwl196F2Z+Q==;
+	List-Owner; bh=HTS1QTPorXz7o0eRhjPqR/b985YKUlS3XGnVTXXjpiE=; b=bK/gj693dpLfUm
+	5DUuRjmtTvos33OQ6I+0qS4jmnL3n/yS+xPXe0mUKSCLHRMCqbnmwQeMdV8P9iL5I8y7X+kJGl72S
+	l5xJmpsOIEE5kB7cESgPT2buZPu/PX/QGPP43BTXrUTQCDVMcVchZ3fWdmM71antWMJVr/c/h/5Yb
+	bMU1KH0m1z6yqYlb47Al4slk013dMoa3XtG8nGBV8n8x2G5foePbh0JUdC9kaaVecAGPsfVhUZ0sM
+	AHWW76IEhEtjpRl4f2j3hvvf9VBt4KrI8giDUH2yx8LekVDCQg52vLSiGLaJ6GMkftVJIz8STJZAX
+	Now7+d4+/yj642rhcQXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEf4m-0006tr-PB; Wed, 18 Mar 2020 20:14:04 +0000
+	id 1jEfEY-0001q0-B8; Wed, 18 Mar 2020 20:24:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEf4U-0006r4-OM
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:13:48 +0000
-Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
- [209.85.222.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 08CFD2077A
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 20:13:46 +0000 (UTC)
+ id 1jEfEP-0001pN-Vr
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:24:03 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B07F2077A;
+ Wed, 18 Mar 2020 20:24:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584562426;
- bh=4COnoFw4zZTTnD0icQvz2MrvlZlhqnrg/n8Iz1/EMx4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=hG3NmuBEg/VNJF/IzasJRv+KrhKn+chfwwim8Zb9QBC6PEP9RK7WhXO6Ozcvpoajp
- o2uT+sbqXtoNk9wLw4UdvfiYnCrwx6H8PzyQgeaPmwR321fVuj+8CQWqgSHLDO71Kn
- CsyL8chkBDdoLaUByLk+zYQ6P3dQ0+H8ur6eIKAc=
-Received: by mail-qk1-f181.google.com with SMTP id f3so41120681qkh.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 13:13:45 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3BL9OIHp3D6MzRCfz9tHS3FPrUevh0cnZNMAopNP3vvXwiziUm
- tysIuOAsarH6WJ1qYwSRhOctxM1q+kki3U1K6dM74Q==
-X-Google-Smtp-Source: ADFU+vv74xrkhSks5Z1lN+CW1yz6xICk4LN6UCwfLkqXNiod5pEmiZcGPF75Cr+JQKJXgdsr8mOh0nXsoF/xtGiZ/nA=
-X-Received: by 2002:a37:634d:: with SMTP id x74mr6249300qkb.254.1584562425124; 
- Wed, 18 Mar 2020 13:13:45 -0700 (PDT)
+ s=default; t=1584563041;
+ bh=8+isRKIpD31NteyXOn+rVN6+vqq+smaVnpeboarmzRc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=2J+KYlaa9WCmGtmPy+aN4+DmQ30/aLbe+Vz44pF/bohc88X+K5kdbGYHEJtpSymwo
+ rTqUCddn+HabtoBjAR59pFFKFihqJDBCAbBR7ntYTq78f5HRMau2AkgC6xYs4tTa7q
+ Jmi23uZGmd8WZhdo/yrGt/nHiYC2Y2Vcg1BL8/YI=
+Date: Wed, 18 Mar 2020 20:23:57 +0000
+From: Will Deacon <will@kernel.org>
+To: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+Subject: Re: [PATCH] driver/perf: Add PMU driver for the ARM DMC-620 memory
+ controller.
+Message-ID: <20200318202356.GB7463@willie-the-truck>
+References: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
+ <20200318160202.0000032c@Huawei.com>
 MIME-Version: 1.0
-References: <20200313110258.94A0668C4E@verein.lst.de>
- <20200317221743.GD20788@willie-the-truck>
-In-Reply-To: <20200317221743.GD20788@willie-the-truck>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 18 Mar 2020 16:13:33 -0400
-X-Gmail-Original-Message-ID: <CAKv+Gu9_gV0aVwa2QG7jgaR71bTz12vs386R9uPjdQTtm0HcUw@mail.gmail.com>
-Message-ID: <CAKv+Gu9_gV0aVwa2QG7jgaR71bTz12vs386R9uPjdQTtm0HcUw@mail.gmail.com>
-Subject: Re: [Patch][Fix] crypto: arm{,64} neon: memzero_explicit aes-cbc key
-To: Will Deacon <will@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200318160202.0000032c@Huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_131346_821148_2EB92E4C 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20200318_132402_047774_9E5BDE9D 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,64 +78,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Torsten Duwe <duwe@lst.de>,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Tuan Phan <tuanphan@os.amperecomputing.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Mar 2020 at 18:17, Will Deacon <will@kernel.org> wrote:
->
-> [+Ard]
->
-> On Fri, Mar 13, 2020 at 12:02:58PM +0100, Torsten Duwe wrote:
-> > From: Torsten Duwe <duwe@suse.de>
-> >
-> > At function exit, do not leave the expanded key in the rk struct
-> > which got allocated on the stack.
-> >
-> > Signed-off-by: Torsten Duwe <duwe@suse.de>
-> > ---
-> > Another small fix from our FIPS evaluation. I hope you don't mind I merged
-> > arm32 and arm64 into one patch -- this is really simple.
-> > --- a/arch/arm/crypto/aes-neonbs-glue.c
-> > +++ b/arch/arm/crypto/aes-neonbs-glue.c
-> > @@ -138,6 +138,7 @@ static int aesbs_cbc_setkey(struct crypto_skcipher *tfm, const u8 *in_key,
-> >       kernel_neon_begin();
-> >       aesbs_convert_key(ctx->key.rk, rk.key_enc, ctx->key.rounds);
-> >       kernel_neon_end();
-> > +     memzero_explicit(&rk, sizeof(rk));
-> >
-> >       return crypto_cipher_setkey(ctx->enc_tfm, in_key, key_len);
-> >  }
-> > diff --git a/arch/arm64/crypto/aes-neonbs-glue.c b/arch/arm64/crypto/aes-neonbs-glue.c
-> > index e3e27349a9fe..c0b980503643 100644
-> > --- a/arch/arm64/crypto/aes-neonbs-glue.c
-> > +++ b/arch/arm64/crypto/aes-neonbs-glue.c
-> > @@ -151,6 +151,7 @@ static int aesbs_cbc_setkey(struct crypto_skcipher *tfm, const u8 *in_key,
-> >       kernel_neon_begin();
-> >       aesbs_convert_key(ctx->key.rk, rk.key_enc, ctx->key.rounds);
-> >       kernel_neon_end();
-> > +     memzero_explicit(&rk, sizeof(rk));
-> >
-> >       return 0;
-> >  }
->
-> I'm certainly not a crypto person, but this looks sensible to me and I
-> couldn't find any other similar stack variable usage under
-> arch/arm64/crypto/ at a quick glance.
->
-> Acked-by: Will Deacon <will@kernel.org>
->
+On Wed, Mar 18, 2020 at 04:02:02PM +0000, Jonathan Cameron wrote:
+> On Tue, 17 Mar 2020 17:29:38 -0700
+> Tuan Phan <tuanphan@os.amperecomputing.com> wrote:
+> > +/* User ABI */
+> > +#define ATTR_CFG_FLD_mask_CFG		config
+> > +#define ATTR_CFG_FLD_mask_LO		0
+> > +#define ATTR_CFG_FLD_mask_HI		44
+> > +#define ATTR_CFG_FLD_match_CFG		config1
+> > +#define ATTR_CFG_FLD_match_LO		0
+> > +#define ATTR_CFG_FLD_match_HI		44
+> > +#define ATTR_CFG_FLD_invert_CFG		config2
+> > +#define ATTR_CFG_FLD_invert_LO		0
+> > +#define ATTR_CFG_FLD_invert_HI		0
+> > +#define ATTR_CFG_FLD_incr_CFG		config2
+> > +#define ATTR_CFG_FLD_incr_LO		1
+> > +#define ATTR_CFG_FLD_incr_HI		2
+> > +#define ATTR_CFG_FLD_event_CFG		config2
+> > +#define ATTR_CFG_FLD_event_LO		3
+> > +#define ATTR_CFG_FLD_event_HI		8
+> > +
+> > +#define __GEN_PMU_FORMAT_ATTR(cfg, lo, hi)			\
+> > +	(lo) == (hi) ? #cfg ":" #lo "\n" : #cfg ":" #lo "-" #hi
+> > +
+> > +#define _GEN_PMU_FORMAT_ATTR(cfg, lo, hi)			\
+> > +	__GEN_PMU_FORMAT_ATTR(cfg, lo, hi)
+> > +
+> > +#define GEN_PMU_FORMAT_ATTR(name)				\
+> > +	PMU_FORMAT_ATTR(name,					\
+> > +	_GEN_PMU_FORMAT_ATTR(ATTR_CFG_FLD_##name##_CFG,		\
+> > +			     ATTR_CFG_FLD_##name##_LO,		\
+> > +			     ATTR_CFG_FLD_##name##_HI))
+> > +
+> > +#define _ATTR_CFG_GET_FLD(attr, cfg, lo, hi)			\
+> > +	((((attr)->cfg) >> lo) & GENMASK(hi - lo, 0))
+> 
+> Hmm. I see this came form SPE pmu.
+> 
+> Personally I'd argue this makes the code harder to read than doing
+> most of it long hand.  Ah well.
 
-Acked-by: Ard Biesheuvel <ardb@kernel.org>
+I agree that it's harder to read, but I did it this way in the SPE driver
+so that the user ABI is always in sync with what the driver thinks, because
+the accessors and the sysfs bits are all generated from the same constants.
+If you screw that up, then it's really hard to fix without breaking
+userspace.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
