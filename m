@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CF8318A4B3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:56:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 960F618A4B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:57:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dUYpIKx+nuvqlcQrIOyiKLgDl2tzn9VQ4cIAnLd23uY=; b=AGo8EjZxbu6O+N
-	dzVqursiFCtvufk4xHcT/2z291XCgx9eZuoSVe15ZsQfXBURisOP/pgA0GxLcrDwEzRz1Eyxhhd40
-	HySgpCRDboTVocW/LmGRUY4QwlTiK2nMmjkHD+SVRrDS27EC76Ro+7ShA2oSUTgdFype3hynm1LdN
-	PCY7jP7aa1kmKHD6Rqz0qiBYr/yYcFFL7RpPknc2phOMPMda3eyARTjY7CggVVTulMjd1rZXMXjSp
-	vyMjc35uMugeUGuUGBPwJbuubb7Mo4myKCgopZHhuC7EDdzmO8wodHMq0vL5Lk/jhcuTVvacPXraq
-	QaFNAarwrueTzTFzCG9g==;
+	List-Owner; bh=oaBh+5VZlKiQK/wYzMsSjrBv/oSjh3GqjU7e+wCl/oU=; b=nCr57Vsb3U8MBx
+	YpK1seFkpQScauM5pt1Tnl5z+Zy4a2h4tCcLefeRMNO+kXp4zCxSe848E3edw1GxNM1DiwdJWqr7U
+	0/eCOfsIQvGHYH8dO8AIkXwAqqf5dxMD35CO7XlPsOoXmJpd2wDfXdOjKDkMwLeJ4PZyX3EWjEdb2
+	WhQKZMyzj2Le4ht0G8xmy3Zu7P/8CjgmwFqF0+X8mnYcMg5rR/CSXhC3d3/CIL6fi1GmeN8dapmMT
+	pz8bY1b+/1d432ekgRoUq/su2eIqdpb3Tw/ffaBxY974gd0FWH+fnYvhZaBmQE44L0p+HRRPYB2QS
+	7Gfk8aZU37AgcIR7U5Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEfjw-0008Vx-3z; Wed, 18 Mar 2020 20:56:36 +0000
+	id 1jEfkG-0000Ke-Fg; Wed, 18 Mar 2020 20:56:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEfj2-0007ri-Er
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:55:41 +0000
+ id 1jEfjd-0008Ru-52
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:56:18 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 232BE208E4;
- Wed, 18 Mar 2020 20:55:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 16EBB208E4;
+ Wed, 18 Mar 2020 20:56:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584564940;
- bh=CRAB778nqg1MgETvFzYotqQD43sufLM5qforwF49esM=;
+ s=default; t=1584564976;
+ bh=xiR447SPRj5Q7cH3/CX6Z/TdZ+9rqAJAouR0yNNLHPo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1tnQH3WcMhQwTPlTBB/AFo7ONdlU/qksvq4f+P8vaC6ud6nvirBnmTJRdc8hXk3E6
- i9jMt3hJ/8IpkRDicsNcwKXmNA/CLDJmd4Ozt9AEyH8H1mlO+6WdIeVbnO2vYc+fqB
- GK8mhHwOsnTAc2wao4VwagFc2JBoqrxACljaIC2M=
+ b=rHCW1dCrnzA2CbimAqSy8bGBcvQMBbJrntyqiYppXiy7scYmJyDIaQClzNsMWZrL2
+ NVanwMBEuj8WkALd6q+qMW6D59Zy+AMyBcs8W6nFQ27tfvfdIKFJsi3TT4oRV+TlO6
+ YM3L73D2maUAi4kzoj62hC4Oktr+achiZqTVFmOY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 25/37] net: stmmac: dwmac1000: Disable ACS if
- enhanced descs are not used
-Date: Wed, 18 Mar 2020 16:54:57 -0400
-Message-Id: <20200318205509.17053-25-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 18/28] arm64: dts: ls1043a: FMan erratum A050385
+Date: Wed, 18 Mar 2020 16:55:45 -0400
+Message-Id: <20200318205555.17447-18-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200318205509.17053-1-sashal@kernel.org>
-References: <20200318205509.17053-1-sashal@kernel.org>
+In-Reply-To: <20200318205555.17447-1-sashal@kernel.org>
+References: <20200318205555.17447-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_135540_544279_CC35A78A 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200318_135617_243253_EE761C2A 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,56 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, Remi Pommarel <repk@triplefau.lt>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Madalin Bucur <madalin.bucur@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Remi Pommarel <repk@triplefau.lt>
+From: Madalin Bucur <madalin.bucur@nxp.com>
 
-[ Upstream commit b723bd933980f4956dabc8a8d84b3e83be8d094c ]
+[ Upstream commit b54d3900862374e1bb2846e6b39d79c896c0b200 ]
 
-ACS (auto PAD/FCS stripping) removes FCS off 802.3 packets (LLC) so that
-there is no need to manually strip it for such packets. The enhanced DMA
-descriptors allow to flag LLC packets so that the receiving callback can
-use that to strip FCS manually or not. On the other hand, normal
-descriptors do not support that.
+The LS1043A SoC is affected by the A050385 erratum stating that
+FMAN DMA read or writes under heavy traffic load may cause FMAN
+internal resource leak thus stopping further packet processing.
 
-Thus in order to not truncate LLC packet ACS should be disabled when
-using normal DMA descriptors.
-
-Fixes: 47dd7a540b8a0 ("net: add support for STMicroelectronics Ethernet controllers.")
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+Signed-off-by: Madalin Bucur <madalin.bucur@nxp.com>
 Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index 21d131347e2ef..7b2a84320aabd 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -34,6 +34,7 @@
- static void dwmac1000_core_init(struct mac_device_info *hw,
- 				struct net_device *dev)
- {
-+	struct stmmac_priv *priv = netdev_priv(dev);
- 	void __iomem *ioaddr = hw->pcsr;
- 	u32 value = readl(ioaddr + GMAC_CONTROL);
- 	int mtu = dev->mtu;
-@@ -45,7 +46,7 @@ static void dwmac1000_core_init(struct mac_device_info *hw,
- 	 * Broadcom tags can look like invalid LLC/SNAP packets and cause the
- 	 * hardware to truncate packets on reception.
- 	 */
--	if (netdev_uses_dsa(dev))
-+	if (netdev_uses_dsa(dev) || !priv->plat->enh_desc)
- 		value &= ~GMAC_CONTROL_ACS;
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
+index 169e171407a63..acd205ef329f7 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1043-post.dtsi
+@@ -21,6 +21,8 @@
+ };
  
- 	if (mtu > 1500)
+ &fman0 {
++	fsl,erratum-a050385;
++
+ 	/* these aliases provide the FMan ports mapping */
+ 	enet0: ethernet@e0000 {
+ 	};
 -- 
 2.20.1
 
