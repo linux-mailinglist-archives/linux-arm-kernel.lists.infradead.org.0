@@ -2,114 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B97A18A950
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:37:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D3F18A964
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:43:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=abfkr1tjjUaXuIwPkFn59ahwgBATKfz1XP4BJVOJLhk=; b=Dc5TyTMyKhsXMy
-	L/05QK/TcIplYPF236k5Lu2PR3lrovy7+xe/GfLID5JCkLwG8TLMylONEVEwhF1OYVwqSud630x4N
-	+cnq7e/FENdrJDHjYpkx1EjCs6CvdGrNdv49ueYJ2ftxc0qfGAzOazkhpJKrcrYkoBX5Hv/JEprRR
-	CzssKDX0C5/jScV/fMkWFzstn8Ue0zerEHsXPm9Aib5Vr8hto0FbGr2+5oq6M0YxGvV25+ukWiP/r
-	V7/u6YppLI8fe4vrRQjlj+8odHazh7kU8aPAXS20mY9r2vJ71iYpwaYZrPDDQbVUaVUOVVWesFEhb
-	WJt7co1e7l0p2pwbeKzg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w69cZwQOHU/g8IHt43YSYSFzlKCr0a1i6yBUJa83fgw=; b=lkQaj4pZOhsePa
+	+d8jOGPvmARqa3/vmo4WHMLZ7+8+BJLzAXMlgDg7txT2EsqWY5B65iGPM/5uxi4Fsy3d3fx+v9Sml
+	GKx/VVLb7zvvowCRvmDk4UwvoQP5cqfXwSrM2rzOmAqwvEVm6Kw+0I6/8+JrCcTs483y0Bd9EAfD+
+	PHn8pYFEK/HCqpeoQRrSKelV+y0oE5+rxuhDuAlh180CN5F3SFbmdMa5ifvktMW27T4UoGeCGKsQn
+	60eKWawl+JvLaHRpFEjlmBVRVdlUVm79fHh9+7pBieTiVXrZrjJuAVz+Sd9wezUTMXDA+qnxYvkW8
+	/WW/mCgpfypfEZBkcogg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEiFI-0004IW-Hg; Wed, 18 Mar 2020 23:37:08 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1jEiLP-0006NF-4g; Wed, 18 Mar 2020 23:43:27 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEiF7-0004Ge-Uy; Wed, 18 Mar 2020 23:36:59 +0000
-IronPort-SDR: W8j5kD98qEaSGdce6PH/CGQVfx+2LVQmjewEHk2pnir7Vefy5JSHt1hT+67ny2S8uor1CSAHyJ
- /RIqQrAwkFMw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 18 Mar 2020 16:36:57 -0700
-IronPort-SDR: iWLL0so8vWAv8LJ3GsCuRjlYx5tk6WyY6FjDNM9HWhQejXG7Wz9SFkrksY/mObp65UquXQBFLi
- iMcp6fB4PsSw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,569,1574150400"; d="scan'208";a="248349506"
-Received: from mannamax-mobl1.amr.corp.intel.com (HELO [10.252.140.209])
- ([10.252.140.209])
- by orsmga006.jf.intel.com with ESMTP; 18 Mar 2020 16:36:56 -0700
-Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-2-mike.kravetz@oracle.com>
- <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
- <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
-From: Dave Hansen <dave.hansen@intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
-Date: Wed, 18 Mar 2020 16:36:56 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jEiLI-0006Mv-Er
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:43:21 +0000
+Received: by mail-ed1-x542.google.com with SMTP id a20so376634edj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Mar 2020 16:43:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=T6rxV8z4faDRzhqK467Xv2a7dOy/TE520C3YV3WjV8c=;
+ b=i3FPub1DIHkvCD+yi/2Y0pX69MrTIvO1RmbzVf6wk00DV0ApmY13YfnnFpks/NVTLs
+ G1QplMy/+0w+GsFrwD1fV1STvoKneEr8NQlSW0vIhii6MAK+xDn8ddbmfxyIfh+bWkPE
+ NEeRdRZ2QE6MO1YpPwSPzXvQKexEK5sr8Dox9C9jyfSyvqP6X6trr48Ms86RoFLn9dAG
+ 92zK1vRSIdLYDibQabEa5foOn7Ajn4QGZfbFS6XCk1yr6R/d+WaM4jqJ31uE4ljyQmMb
+ YiomgNSyyErYriEW6Abwe6sruyYqTy62RHKzpwUnN7Vinym7R/FBnsL8LzowJAa3l8q2
+ 3Z7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=T6rxV8z4faDRzhqK467Xv2a7dOy/TE520C3YV3WjV8c=;
+ b=aWrgGURHpo1LgQVz2YojbIsj3sx0UVXLuw8RxpGBbr2Aeepe1X0jKJmRiGqU6ZIA/d
+ g5Zv4tbJ+J09unR5Atm5F/ksGQcqYdenq20uaL2vwmQiVMLwInVSAmYBKHYtDaVjUceI
+ lqcY49XSN/E3T4Qh0iSfqRi3qmeJktAGjvtpS6jbJPwwyGhcauF2Hytzte4jzhA4tTpX
+ j9d4KSJlLOVRCi8J2oOYWaBQNGmlB0Z+VQJaNQz4Fv5MG5vp5Gcjt3Xon/cH1TaN/Bfp
+ sFE2OH4Na4gLLDh3MlTiu+kX/XI7EVapybZX+w75Wtn3+Zx3M0sGYxc8sq2/+BLlzBht
+ vogw==
+X-Gm-Message-State: ANhLgQ0VJzynrVgbwv5+l5e/9YNKhB8QJlNQx+RabKpWdUEF8ZkhzPex
+ CMjzrwlOk1zGGO1CBe67EQWdEN9L0rTr33cJwmw=
+X-Google-Smtp-Source: ADFU+vunbg/mabJAoT4ECckSo9VlWXEI7Tk7MCM2NEIzGX//dTyumqWFksHG62C18XwPsVHwF/wqELk+aHHpZR6UYqI=
+X-Received: by 2002:a17:906:b888:: with SMTP id
+ hb8mr686525ejb.166.1584574997823; 
+ Wed, 18 Mar 2020 16:43:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
-Content-Language: en-US
+References: <1580249770-1088-1-git-send-email-jcrouse@codeaurora.org>
+ <1580249770-1088-3-git-send-email-jcrouse@codeaurora.org>
+ <20200318224840.GA10796@willie-the-truck>
+In-Reply-To: <20200318224840.GA10796@willie-the-truck>
+From: Rob Clark <robdclark@gmail.com>
+Date: Wed, 18 Mar 2020 16:43:07 -0700
+Message-ID: <CAF6AEGu-hj6=3rsCe5XeBq_ffoq9VFmL+ycrQ8N=iv89DZf=8Q@mail.gmail.com>
+Subject: Re: [PATCH v1 2/6] arm/smmu: Add auxiliary domain support for
+ arm-smmuv2
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_163658_050112_40235B8E 
-X-CRM114-Status: GOOD (  11.74  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200318_164320_523476_78127688 
+X-CRM114-Status: GOOD (  23.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robdclark[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,36 +96,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
- Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
- "David S.Miller" <davem@davemloft.net>
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Jordan Crouse <jcrouse@codeaurora.org>, Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/18/20 3:52 PM, Mike Kravetz wrote:
-> Sounds good.  I'll incorporate those changes into a v2, unless someone
-> else with has a different opinion.
-> 
-> BTW, this patch should not really change the way the code works today.
-> It is mostly a movement of code.  Unless I am missing something, the
-> existing code will always allow setup of PMD_SIZE hugetlb pages.
+On Wed, Mar 18, 2020 at 3:48 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Tue, Jan 28, 2020 at 03:16:06PM -0700, Jordan Crouse wrote:
+> > Support auxiliary domains for arm-smmu-v2 to initialize and support
+> > multiple pagetables for a single SMMU context bank. Since the smmu-v2
+> > hardware doesn't have any built in support for switching the pagetable
+> > base it is left as an exercise to the caller to actually use the pagetable.
+> >
+> > Aux domains are supported if split pagetable (TTBR1) support has been
+> > enabled on the master domain.  Each auxiliary domain will reuse the
+> > configuration of the master domain. By default the a domain with TTBR1
+> > support will have the TTBR0 region disabled so the first attached aux
+> > domain will enable the TTBR0 region in the hardware and conversely the
+> > last domain to be detached will disable TTBR0 translations.  All subsequent
+> > auxiliary domains create a pagetable but not touch the hardware.
+> >
+> > The leaf driver will be able to query the physical address of the
+> > pagetable with the DOMAIN_ATTR_PTBASE attribute so that it can use the
+> > address with whatever means it has to switch the pagetable base.
+> >
+> > Following is a pseudo code example of how a domain can be created
+> >
+> >  /* Check to see if aux domains are supported */
+> >  if (iommu_dev_has_feature(dev, IOMMU_DEV_FEAT_AUX)) {
+> >        iommu = iommu_domain_alloc(...);
+> >
+> >        if (iommu_aux_attach_device(domain, dev))
+> >                return FAIL;
+> >
+> >       /* Save the base address of the pagetable for use by the driver
+> >       iommu_domain_get_attr(domain, DOMAIN_ATTR_PTBASE, &ptbase);
+> >  }
+>
+> I'm not really understanding what the pagetable base gets used for here and,
+> to be honest with you, the whole thing feels like a huge layering violation
+> with the way things are structured today. Why doesn't the caller just
+> interface with io-pgtable directly?
+>
+> Finally, if we need to support context-switching TTBR0 for a live domain
+> then that code really needs to live inside the SMMU driver because the
+> ASID and TLB management necessary to do that safely doesn't belong anywhere
+> else.
 
-Hah, I totally skipped over the old code in the diff.
+Hi Will,
 
-It looks like we'll disable hugetblfs *entirely* if PSE isn't supported.
- I think this is actually wrong, but nobody ever noticed.  I think you'd
-have to be running as a guest under a hypervisor that's lying about PSE
-not being supported *and* care about 1GB pages.  Nobody does that.
+We do in fact need live domain switching, that is really the whole
+point.  The GPU CP (command processor/parser) is directly updating
+TTBR0 and triggering TLB flush, asynchronously from the CPU.
+
+And I think the answer about ASID is easy (on current hw).. it must be zero[*].
+
+BR,
+-R
+
+[*] my rough theory/plan there, and to solve the issue with drm/msm
+getting dma-iommu ops when it really would rather not (since
+blacklisting idea wasn't popular and I couldn't figure out a way to
+deal with case where device gets attached before driver shows up) is
+to invent some API that drm/msm can call to unhook the dma-iommu ops
+and detatch the DMA domain.  Hopefully that at least gets us closer to
+the point where, when drm/msm attaches it's UNMANAGED domain, we get
+cbidx/asid zero.
 
 _______________________________________________
 linux-arm-kernel mailing list
