@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 360C61899FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:54:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E953189A41
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 12:08:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hy7yrUd1svv3j79PTwk5KknlTNA57YcRt35clIb2TX0=; b=Uk54c7S5sJZQZi
-	TNuLDgh9o6r9FhEPXZDPHOyg8YbsVdVTafOpnCLdwB1DtI/OG32SMxGyZFKZMi3BKuc8YmNvxy23/
-	BBM2/XjqjJc6fX6Dg2/5QrEjLIhADXYzQ+AI4P9+O7f5r5THrxWOtlcmxQRboJ1VCsMni3EyPq5Wy
-	tnMG39SOeIgsxqJKpmeo0Exw+k1tFvV3CfzsKKO414Je2dmTGID1lZUYPSFwOX5RUVto5Fyh7hsqg
-	SLA4XM3ciXtvXXKF8YDhRn0homE0fBloGgvS+wmbS2Tkb9w07wncVbpjt6Rw5gIyedsm92RtIdmJY
-	MLILJBOTAZiI6g2LLvNQ==;
+	List-Owner; bh=1NnqdCmMH9cn8xEZwOaITbDTlFE+7sxlqXavL562i/s=; b=XllPRJSu5lnG+8
+	2uYxmcH42scyKIa8ZyV3ImXe67IitXIkI/xdWE4axAqYlWENeAz+bTcRA8A8LuWzWaEiMs7m6s82y
+	mXF+OeiwKBYR8kLLsOPr4qhPQvWC9hEfttnSNby8ekeN07RYPWC0PbZQq/J+6EMeLiHzsZto48hBB
+	HLx/5zRj9d6BlrNfk5gxCFcguxnrGXimvssaFc6mg51FrluQPTBRWdYaSULY+86yIcJ6UULLBbzEi
+	kUg/hWLPh3q1bQRTkvgkSXodrah/iF6tCzZrj1Zw+LvqYfFt/gIPfr3zfS4GENjLGK+Km76UX52HF
+	8MvQUimq0WYV3VINjRYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEWLH-00061W-EQ; Wed, 18 Mar 2020 10:54:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEWL6-0005t8-Py
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:54:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C06B41FB;
- Wed, 18 Mar 2020 03:51:59 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB1AF3F534;
- Wed, 18 Mar 2020 03:51:58 -0700 (PDT)
-Date: Wed, 18 Mar 2020 10:51:56 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCHv6 0/3] arm64: perf: Add support for ARMv8.5-PMU 64-bit
- counters
-Message-ID: <20200318105156.GB16012@lakrids.cambridge.arm.com>
-References: <20200302181752.14251-1-mark.rutland@arm.com>
- <20200317231431.GM20788@willie-the-truck>
+	id 1jEWYm-0003qZ-9m; Wed, 18 Mar 2020 11:08:28 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEWYa-0003pj-Nw
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 11:08:18 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CEA862003C6;
+ Wed, 18 Mar 2020 12:08:08 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C18FD201202;
+ Wed, 18 Mar 2020 12:08:08 +0100 (CET)
+Received: from localhost (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id AD12620506;
+ Wed, 18 Mar 2020 12:08:08 +0100 (CET)
+Date: Wed, 18 Mar 2020 13:08:08 +0200
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+Subject: Re: [RFC 10/11] reset: imx: Add audiomix reset controller support
+Message-ID: <20200318110808.hzwr7m2hc2nfftvm@fsr-ub1664-175>
+References: <1583226206-19758-1-git-send-email-abel.vesa@nxp.com>
+ <1583226206-19758-11-git-send-email-abel.vesa@nxp.com>
+ <ac6eb54c01cce4ec52560ac622e024ab47f2136c.camel@pengutronix.de>
+ <20200313141606.euumtuizm562zghv@fsr-ub1664-175>
+ <3aedf6357f321efaf1d59a0b654300803ad51cef.camel@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200317231431.GM20788@willie-the-truck>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <3aedf6357f321efaf1d59a0b654300803ad51cef.camel@pengutronix.de>
+User-Agent: NeoMutt/20180622
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_035420_890865_29C6D26B 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20200318_040816_926595_A4107280 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,45 +71,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, robin.murphy@arm.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, maz@kernel.org
+Cc: Rob Herring <robh@kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Lee Jones <lee.jones@linaro.org>, Mike Turquette <mturquette@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 11:14:31PM +0000, Will Deacon wrote:
-> On Mon, Mar 02, 2020 at 06:17:49PM +0000, Mark Rutland wrote:
-> > This is a respin of Andrew Murray's series to enable support for 64-bit
-> > counters as introduced in ARMv8.5.
+On 20-03-13 16:55:47, Philipp Zabel wrote:
+> On Fri, 2020-03-13 at 16:16 +0200, Abel Vesa wrote:
+> [...]
+> > > > +	if (assert) {
+> > > > +		pm_runtime_get_sync(rcdev->dev);
+> > > 
+> > > This seems wrong. Why is the runtime PM reference count incremented when
+> > > a reset is asserted ...
 > > 
-> > I've given this a spin on (ARMv8.2) hardware, to test that there are no
-> > regressions, but I have not had the chance to test in an ARMv8.5 model (which I
-> > beleive Andrew had previously tested).
-> > 
-> > Since v5 [1]:
-> > * Don't treat perfmon ID fields as signed
-> > * Fix up ID field names
-> > * Explicitly compare ARMV8.5 PMU value
+> > The audiomix IP has its own power domain. 
 > 
-> I'm betting on your issue being a model bug, so I've queued this on top of
-> Robin's enable/disable rework. Please take a look at for-next/perf [1] in
-> case I screwed it up.
+> The reset controller does not control the power domain for its
+> consumers. The consumer of this reset should implement runtime PM.
+> 
 
-From a cursory review, that all looks good to me.
+No, the reset controller itself is part of a more complex IP called audiomix
+that has its own power domain.
 
-I'll poke if the issue turns out to be anything beyond a model bug. but
-I agree it seems that's all it is.
+> > The way I see it, when the last deassert is done, there is no point
+> > in keeping the audiomix on. So, unless the clock controller part of it does it,
+> > the audiomix will be powered down.
+> 
+> You mean when the last assert is done? Presumably the driver wants to
+> use the hardware after deasserting the reset and asserts the reset when
+> it is done.
 
-Thanks,
-Mark.
+No, I mean deassert. If there is no reset asserted anymore, then the audiomix
+can power down, if nothing else (I'm talking about the other stuff that's
+in the audiomix, like clock controller) keeping it on.
+
+The reset controller needs to be on only when there is an assertion of at least
+one reset bit going on.
 
 > 
-> Thanks,
-> 
-> Will
-> 
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-next/perf
+> regards
+> Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
