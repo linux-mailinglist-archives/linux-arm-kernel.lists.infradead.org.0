@@ -2,79 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8687018A8A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:53:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 982EB18A8B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:55:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CSexbQ4Kk8SNtofvBXqNOfqxoh0Ia1KuN6Jvzf6P3v8=; b=nTZquUBqJUkBT8
-	qPE/L+phaJrtNnWsUB0P6vslNtPfcEGotd55pkZ/IdBFx8LREr0ZWGby4uPjrJvy6/CQ6+XSR0iH7
-	HsSMAj4BO9BXv8qbCB7z2srJh0C3okrZGtVt8DRllHsONfbG8ascUxhhysby5u0NV9RiNRIOCANRf
-	1bZdVy3lOm/1j7c7EOYr3EzaJm2qmMicfhGcU6Iqs1f7oX0sy9pMtEpkp3+gZFFDjRdORPAIRR4FF
-	dIUHQij4nLX004qpnQOJ4xOShYBFMDaHc7u5xJxC6VUikT9fu1FTVeFtspET1IrxtIFzAheRpQbau
-	1l1ZzGceuW/AYv+blx8A==;
+	List-Owner; bh=hgWFGtjcCDY3NSS03JsNW1qW29sJO6OqD5w8WmoFavw=; b=kjZQMm2NLblxsd
+	n+wGbFM1xygGomwDl1z7lfU8pBmcarEwjIucR64HngATgpmaJzd1DcXKpjsIhxP/6fPVFAO0q5Qh5
+	RTla/G+S3JjjWDgyibcDonPbEOvAGSrwO4xxvH7BTBXRT9O3QvYnQhLMlC/Gv+D9r0JZF/nhMJr3i
+	cdvdD+xXnCvKzBG6F15M7Ll/XnD91kG4WV69VIha7XXoqahrpjjrOoZ31l9Ohx3LAee0xCPk1Heec
+	gOOj4Ml/T2v4KXxOwhW2KaTYGY7J8dYoL81+P/rosT9UAeCogncE1UyUgBMZfyTvDNZ+K7j9c3C6j
+	R5iOOz0sDJHjd6hc+siA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEhZD-0003hh-2K; Wed, 18 Mar 2020 22:53:39 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jEhbK-0005Ya-VB; Wed, 18 Mar 2020 22:55:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEhZ4-0003hF-Ny
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 22:53:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584572009;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=tG/mtmmtMGVD9urUDKpfLF4t0kTuO98Ej4s1XZSXB6g=;
- b=WdXVePXU/ORYd1wLhxE/7sN1e344S3gK0+DZMATYkyoFgLvK18cx3cmTDflv//DQ8uqphW
- fxbfuTQ0AqjE1MQwwqbifBYIBg76mNzzqYf2Nonlyu8n0GYk2NO+yN01IQIGyNy0iiqh+8
- OHHnMcfH1dTPon6SH9i8XCGrIaSWNIs=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-306-NxKYafz7PvqdP93x3I3KNA-1; Wed, 18 Mar 2020 18:53:23 -0400
-X-MC-Unique: NxKYafz7PvqdP93x3I3KNA-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1jEhb4-0005RM-EF; Wed, 18 Mar 2020 22:55:36 +0000
+Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
+ [209.85.222.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8539D800D4E;
- Wed, 18 Mar 2020 22:53:21 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-221.bne.redhat.com
- [10.64.54.221])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id AE49F60BF1;
- Wed, 18 Mar 2020 22:53:18 +0000 (UTC)
-Subject: Re: [PATCH v4 4/5] arm64: Remove CPU operations dereferencing array
-From: Gavin Shan <gshan@redhat.com>
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200226002356.86986-1-gshan@redhat.com>
- <20200226002356.86986-5-gshan@redhat.com>
- <20200317105626.GF8831@lakrids.cambridge.arm.com>
- <a92d9a3a-7bc3-81f0-f4a3-9e1da3623e16@redhat.com>
-Message-ID: <ec463176-d62d-9f59-130c-4d6beb6e1270@redhat.com>
-Date: Thu, 19 Mar 2020 09:53:15 +1100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ by mail.kernel.org (Postfix) with ESMTPSA id DF9052076F;
+ Wed, 18 Mar 2020 22:55:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584572133;
+ bh=uTyNAhR02/lueaTrSpsEtzvYiAwF0pB5xc/FKKpl73o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ro+4MZPj8/lr9itNf5dBH8a0rGlg1/wfIPWd62qVHcJMz5O10Y3Mue4fJROANWR2M
+ d9Id+B6QYs3dyhoYst2vuOUd2TWEt+ABTNjT89wpllcLEIOsJgqknKRgSJf4HGNAhX
+ +I2/h5ahnh8tO9lM4ZKnPS35fNMJ5ZBu0SkyHzks=
+Received: by mail-qk1-f179.google.com with SMTP id s11so165461qks.8;
+ Wed, 18 Mar 2020 15:55:32 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3ONx8REXG5dLgJVw6MvWReew4Jkl+o6oG2szDj/GSCey/9QAWj
+ MeDOEIa6hxQBRWyI5nKTimm+c8PaGUaWet7lNg==
+X-Google-Smtp-Source: ADFU+vvCBiYODaoYfbldWLW9rUsXW8+xYy7ob9N5BeJKkvAFoqoJHOy2oWFdT1cWnjoHpZxefKYgPbVzCXJcCqWfkKI=
+X-Received: by 2002:a37:393:: with SMTP id 141mr196155qkd.393.1584572131923;
+ Wed, 18 Mar 2020 15:55:31 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <a92d9a3a-7bc3-81f0-f4a3-9e1da3623e16@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+References: <20200317163555.18107-1-jbx6244@gmail.com>
+In-Reply-To: <20200317163555.18107-1-jbx6244@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 18 Mar 2020 16:55:20 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+0M1n7M1EjnJhum9Sn30FEb3ux4agJSa1KhNwUxv4THg@mail.gmail.com>
+Message-ID: <CAL_Jsq+0M1n7M1EjnJhum9Sn30FEb3ux4agJSa1KhNwUxv4THg@mail.gmail.com>
+Subject: Re: [RFC PATCH 1/2] dt-bindings: sram: convert rockchip-pmu-sram
+ bindings to yaml
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_155330_873532_D98720A8 
-X-CRM114-Status: GOOD (  22.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200318_155534_535886_CD397AE6 
+X-CRM114-Status: GOOD (  22.23  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,112 +83,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, robin.murphy@arm.com,
- shan.gavin@gmail.com, sudeep.holla@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/18/20 2:53 PM, Gavin Shan wrote:
-> On 3/17/20 9:56 PM, Mark Rutland wrote:
->> On Wed, Feb 26, 2020 at 11:23:55AM +1100, Gavin Shan wrote:
->>> One CPU operations is maintained through array @cpu_ops[NR_CPUS]. 2KB
->>> memory is consumed when CONFIG_NR_CPUS is set to 256. It seems too
->>> much memory has been used for this. Also, all CPUs must use same CPU
->>> operations and we shouldn't bring up the broken CPU, as Lorenzo Pierali=
-si
->>> pointed out.
->>
->> I suspect there might be some pre PSCIv0.2 platforms where the boot CPU
->> doesn't have PSCI, but others do. On those platforms, this could be
->> because CPU0 cannot be hotplugged out, and we must avoid doing so.
->>
->> Can you check the in-kernel DTs to see if any of those exist?
->>
->> Other than that, I agree that mandating uniformity is the best approach
->> here.
->>
-> =
+On Tue, Mar 17, 2020 at 10:36 AM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> Current dts files with 'rockchip-pmu-sram' compatible nodes
+> are manually verified. In order to automate this process
+> rockchip-pmu-sram.txt has to be converted to yaml.
+>
+> A check with the command below gives for example this error:
+>
+> arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff700000:
+> compatible:0:
+> 'rockchip,rk3288-pmu-sram' was expected
+> arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff700000:
+> compatible:
+> ['mmio-sram'] is too short
+>
+> Fix this error by adding an extra 'mmio-sram' compatible and
+> 'if then' structure to filter yaml warnings.
 
-> Thanks for the comments, Mark. There are platforms where the CPU#0 and ot=
-her
-> CPUs have different "enable-method" specified. More specificly, CPU#0 doe=
-sn't
-> have "enable-method" while other CPUs have "psci" specified:
-> =
+Seems to me you should fix the .dts file. If we adjust schemas to make
+dts files pass, then what is the point of the schemas?
 
->  =A0=A0 lg/lg1312.dtsi
->  =A0=A0 lg/lg1313.dtsi
->  =A0=A0 mediatek/mt2712e.dtsi
-> =
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/
+> rockchip-pmu-sram.yaml
 
-> In order to support two enable methods, I think we have two options here:
-> (1) Revert the code to what we had in v2. Two bits consumed by one CPU,
-> which is taken as index to a CPU operation array. The code can be found in
-> link [1] (2) Two CPU operation pointers are maintained. One is used to tr=
-ack
-> the CPU#0's operations and other one is for other cpus.
-> =
+Until recent changes in linux-next now, this is not sufficient as all
+examples are not checked against all schemas.
 
-> [1] https://patchwork.kernel.org/patch/11363745/
-> =
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../devicetree/bindings/sram/rockchip-pmu-sram.txt | 16 --------
+>  .../bindings/sram/rockchip-pmu-sram.yaml           | 46 ++++++++++++++++++++++
+>  2 files changed, 46 insertions(+), 16 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+>  create mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+> deleted file mode 100644
+> index 6b42fda30..000000000
+> --- a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+> +++ /dev/null
+> @@ -1,16 +0,0 @@
+> -Rockchip SRAM for pmu:
+> -------------------------------
+> -
+> -The sram of pmu is used to store the function of resume from maskrom(the 1st
+> -level loader). This is a common use of the "pmu-sram" because it keeps power
+> -even in low power states in the system.
+> -
+> -Required node properties:
+> -- compatible : should be "rockchip,rk3288-pmu-sram"
+> -- reg : physical base address and the size of the registers window
+> -
+> -Example:
+> -       sram@ff720000 {
+> -               compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+> -               reg = <0xff720000 0x1000>;
+> -       };
+> diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+> new file mode 100644
+> index 000000000..bb72e4f53
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.yaml
+> @@ -0,0 +1,46 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/sram/rockchip-pmu-sram.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip SRAM for pmu
+> +
+> +description:
+> +  The sram of pmu is used to store the function of resume from maskrom(the 1st
+> +  level loader). This is a common use of the "pmu-sram" because it keeps power
+> +  even in low power states in the system.
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +# The extra 'mmio-sram' compatible and 'if then' structure is needed
+> +# to filter yaml warnings.
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: mmio-sram
+> +      - items:
+> +        - const: rockchip,rk3288-pmu-sram
 
-> Please let me know which one is better.
-> =
-
-
-Mark, I plan to post a new revision to have option#2 after thinking
-about it: we will have two pointers to track the operations for boot cpu
-and the secondary CPUs separately. the consumed memory isn't scaled up to
-the configured CPU number. So I think it's better than option#1, which
-uses two-bits as index to CPU operation array.
-
-Thanks,
-Gavin
-
->>> =A0 int __init init_cpu_ops(int cpu)
->>> =A0 {
->>> -=A0=A0=A0 const char *enable_method =3D cpu_read_enable_method(cpu);
->>> -
->>> -=A0=A0=A0 if (!enable_method)
->>> -=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
->>> +=A0=A0=A0 const struct cpu_operations *ops =3D get_cpu_method(cpu);
->>> -=A0=A0=A0 cpu_ops[cpu] =3D cpu_get_ops(enable_method);
->>> -=A0=A0=A0 if (!cpu_ops[cpu]) {
->>> -=A0=A0=A0=A0=A0=A0=A0 pr_warn("Unsupported enable-method: %s\n", enabl=
-e_method);
->>> +=A0=A0=A0 if (!ops)
->>> =A0=A0=A0=A0=A0=A0=A0=A0=A0 return -EOPNOTSUPP;
->>> +
->>> +=A0=A0=A0 /* Update global CPU operations if it's not initialized yet =
-*/
->>> +=A0=A0=A0 if (!cpu_ops) {
->>> +=A0=A0=A0=A0=A0=A0=A0 cpu_ops =3D ops;
->>> +=A0=A0=A0=A0=A0=A0=A0 return 0;
->>> +=A0=A0=A0 }
->>
->> As above, I don't think this is quite right. If we're going to mandate
->> uniformity, we should init the ops from the boot CPU, and then verify
->> that every other CPU matches that. The initialization of the global ops
->> should not be conditional.> =
-
-> I think you're correct because CPU#0's "enable-method" can be unspecified.
-> In this case, the CPU#0's operations will be set to same one as other CPU=
-s,
-> which isn't correct. I will see how to handle this comments when the above
-> comments is resolved. This might become invalid after the above comments =
-get
-> resolved.
-> =
-
-> Thanks,
-> Gavin
-> =
+We've been just adding the compatibles to the common sram.yaml for the
+simple cases like this.
 
 
+> +        - const: mmio-sram
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +if:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        const: rockchip,rk3288-pmu-sram
+> +
+> +then:
+> +  required:
+> +    - compatible
+> +    - reg
+> +
+> +examples:
+> +  - |
+> +    pmu_sram: sram@ff720000 {
+> +      compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+> +      reg = <0xff720000 0x1000>;
+> +    };
+> --
+> 2.11.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
