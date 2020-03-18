@@ -2,67 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FDF6189CDD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:23:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E752189D2F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:42:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bl28nasenN8u35OAlHtwA+B/HNcw4iCjmLYtSTAaGJU=; b=gIY+8bN1pmg9Zu
-	EzLdd7OyP0yfvof4sAG0kwQL9CLuIu1sDLfXPnjgrcdRA6+vlUbVvQ3/KoV8LgPguUFmLYiS4Lsxu
-	WbApqpXAhEWYAuXIkDE/FChb2h452JQIxYVQmbCP+n3UsxEiN6dLzUv1b6Pv5DzpGcpjrZ5kpHUnH
-	7+TEa3ICg7dTzaMJn0GOWkHJZQ4jYnVrJOHIwsU4cty0KYjrjPQ2ZFrEUjyVqbkhX4rnG53GWa+Wd
-	UGruMkn4diwn41rGkrwqRs/md/UaYLsk/dkOvducjD5hOYl1uI+Tn4KDBcYLlcnG9fcOrIamqdewu
-	bVLqVSUM/MJppd8p8owA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=31ab6luoOKX/SWgY0LZQzrc/vuvWhW6464Dg0rhFsSI=; b=IRE2pAC2aLUEW9EXzXKb4BEhc
+	RBmRPeSUdp15yoH9bT0mLy0Lp1BLbWBwXjNqE8I2kBAQDM7j2rk46DEFW0+nCRdt4h7EaHce+7qt0
+	RhYD2aPL7TXmWfsDQMnQt/UDs1tAuUiyllSaPVQ5NXSKl01YrPTLN+l47tXLRNu8FSYmXok9fCwdn
+	LRnD6Adi9/nZM8JUMWA3H2NErP1Wzvk3y2k+1R3vRP+Xfb5sClWV+YZRbXnWCGNnbsD8/XkYEBaZE
+	OBkRQmxUvKift5R+w7YXcwFXsPMT/LWtyWs808VzWJTVgiYpjwH6ZkN45fhISRhjy0RZUr876BhR5
+	aKMFA2hMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEYfY-00047N-Lu; Wed, 18 Mar 2020 13:23:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEYxJ-0002nT-9E; Wed, 18 Mar 2020 13:41:57 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEYfO-00046L-Bl
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:23:27 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58F372076F;
- Wed, 18 Mar 2020 13:23:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584537805;
- bh=MS122+MI8HvaX7QgTFw/2hADw9MT/NgSAmlg4rviq4Y=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GpMwXcj8lqA4iW5RxQBBrJVd+qMgBVPfjSNN4WJBRjsMU7d8Yk1aMNAv8JOXZCoNN
- YNv1YD14IL/Pz+Dy5gs1Wdoc3pKe5v/9E+NQWPwpvjgve8Ok22jkKnZUeuiXyo1cr/
- cgOv8pXsr6CD1wNmMGyIJxKcDtQAr4r3Jtp0FjWQ=
-Date: Wed, 18 Mar 2020 14:23:22 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 03/13] coresight: cti: Add sysfs access to program
- function registers
-Message-ID: <20200318132322.GC2789508@kroah.com>
-References: <20200309161748.31975-1-mathieu.poirier@linaro.org>
- <20200309161748.31975-4-mathieu.poirier@linaro.org>
+ id 1jEYxA-0002n3-Cp
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:41:49 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 11so3440692wmo.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Mar 2020 06:41:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=GNDxVoBT2iKzZolV+xo2w6dbpJfkDsJ6BSfw16sOYh4=;
+ b=fYHVDqiYbiglR3W237Zvt5ckqSN9N6Q6zO4fBKJ9Fd7+rF1WPB/fvlcOwexOEPh7Fb
+ m0cxV7CYrClIBgW/dCitam3IYK/kK9RXdfEzOSXEqfjgs0O3BwFXdDpPrJGiAPRPJUWr
+ kGsmPvk49eXKbX4lBXn7qHxUr5DOmWXmDPe9YEt3G4ZY9b37i7TnZ9z/ShYhMXngrFz7
+ Y0tSUj7gqmuaJK1nbuealQsIkALKe5D0kbEBtLg1hk8j39cTh1elqKJCcMFzj6y88zRM
+ 0mBd8Rof+ii3evFfgsoRutA0ya0X2v6VuGCEnweI4SdZqEX9tSmDmRb5Nstu/KUWJtBj
+ xfSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=GNDxVoBT2iKzZolV+xo2w6dbpJfkDsJ6BSfw16sOYh4=;
+ b=rn64dch+98PwwbSVEB0e88QW2HkPnF4Sb3JmgT1LbM4L5pAg8+xXeeBQh2Z8eyWNmI
+ V3bqcAX0K87sS1ZgSh0PrmlBkLsuWY9Y2jZ7RB+7ZjHdBwQeIOAqnKBh8sO/bKcvoBVK
+ ZYw83me2W2R5a1aRBy725aqyyxXvpi0kx/o9X81iiOfss+rqGrkbRwpvkaaWV/oH/fV9
+ ZdU/N+6WTY3RiYVwlMV6bElz3bTP5IqXx8oa0Lmll+TmW+ruLgs+1EJp8mWSZi1Y1M9O
+ WdmfSE4jLm0nzWVwkgxd5jgmD1QfB4GiRx+icYfRVPELpufAG9B6BBv0KwlVorvz4o6L
+ Z9/Q==
+X-Gm-Message-State: ANhLgQ3MEk3g6Il51ODuNJkapTUEEkdjQ6orkVgffdZRScNhO9T+Hv0J
+ DgALREdxx7ZpcZYXj7D1S/9Ayg==
+X-Google-Smtp-Source: ADFU+vv3kSjyk96xe6Y/4OCtIVE9ioLklBRUOBX5s/Swg6e48yVxbLcyRaFKAOeohGdQWbV4rZCyng==
+X-Received: by 2002:a1c:dc55:: with SMTP id t82mr5272895wmg.6.1584538906267;
+ Wed, 18 Mar 2020 06:41:46 -0700 (PDT)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id n4sm9224120wrs.64.2020.03.18.06.41.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 18 Mar 2020 06:41:44 -0700 (PDT)
+Subject: Re: [PATCH] nvmem: mxs-ocotp: Use devm_add_action_or_reset() for
+ cleanup
+To: Anson Huang <Anson.Huang@nxp.com>, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1584169871-418-1-git-send-email-Anson.Huang@nxp.com>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <81390f07-a968-7e90-64e5-78fa7db868f6@linaro.org>
+Date: Wed, 18 Mar 2020 13:41:43 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200309161748.31975-4-mathieu.poirier@linaro.org>
+In-Reply-To: <1584169871-418-1-git-send-email-Anson.Huang@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_062326_446572_9E55E449 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200318_064148_436523_43063145 
+X-CRM114-Status: GOOD (  12.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,92 +103,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Linux-imx@nxp.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 10:17:38AM -0600, Mathieu Poirier wrote:
-> From: Mike Leach <mike.leach@linaro.org>
+
+
+On 14/03/2020 07:11, Anson Huang wrote:
+> Use devm_add_action_or_reset() for cleanup to call clk_unprepare(),
+> which can simplify the error handling in .probe, and .remove callback
+> can be dropped.
 > 
-> Adds in sysfs programming support for the CTI function register sets.
-> Allows direct manipulation of channel / trigger association registers.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> [Fixed abbreviation in title]
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->  drivers/hwtracing/coresight/Kconfig           |   9 +
->  .../hwtracing/coresight/coresight-cti-sysfs.c | 361 ++++++++++++++++++
->  drivers/hwtracing/coresight/coresight-cti.c   |  19 +
->  drivers/hwtracing/coresight/coresight-cti.h   |   8 +
->  4 files changed, 397 insertions(+)
+>   drivers/nvmem/mxs-ocotp.c | 30 +++++++++++-------------------
+>   1 file changed, 11 insertions(+), 19 deletions(-)
 > 
-> diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
-> index 45d3822c8c8c..83e841be1081 100644
-> --- a/drivers/hwtracing/coresight/Kconfig
-> +++ b/drivers/hwtracing/coresight/Kconfig
-> @@ -122,4 +122,13 @@ config CORESIGHT_CTI
->  	  halt compared to disabling sources and sinks normally in driver
->  	  software.
->  
-> +config CORESIGHT_CTI_INTEGRATION_REGS
-> +	bool "Access CTI CoreSight Integration Registers"
-> +	depends on CORESIGHT_CTI
-> +	help
-> +	  This option adds support for the CoreSight integration registers on
-> +	  this device. The integration registers allow the exploration of the
-> +	  CTI trigger connections between this and other devices.These
-> +	  registers are not used in normal operation and can leave devices in
-> +	  an inconsistent state.
->  endif
-> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> index 507f8eb487fe..f687e07b68b0 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> @@ -109,6 +109,361 @@ static struct attribute *coresight_cti_mgmt_attrs[] = {
->  	NULL,
->  };
->  
-> +/* CTI low level programming registers */
-> +
-> +/*
-> + * Show a simple 32 bit value if enabled and powered.
-> + * If inaccessible & pcached_val not NULL then show cached value.
-> + */
-> +static ssize_t cti_reg32_show(struct device *dev, char *buf,
-> +			      u32 *pcached_val, int reg_offset)
-> +{
-> +	u32 val = 0;
-> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct cti_config *config = &drvdata->config;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	if ((reg_offset >= 0) && cti_active(config)) {
-> +		CS_UNLOCK(drvdata->base);
-> +		val = readl_relaxed(drvdata->base + reg_offset);
-> +		if (pcached_val)
-> +			*pcached_val = val;
-> +		CS_LOCK(drvdata->base);
-> +	} else if (pcached_val) {
-> +		val = *pcached_val;
-> +	}
-> +	spin_unlock(&drvdata->spinlock);
-> +	return scnprintf(buf, PAGE_SIZE, "%#x\n", val);
 
-Fix all of the scnprintf() calls.
+Applied thanks,
 
-And again, no documentation?
-
-I'll stop here on this series, as much the same comments belong on the
-other patches in here.
-
-thanks,
-
-greg k-h
+srini
 
 _______________________________________________
 linux-arm-kernel mailing list
