@@ -2,55 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA21E18A353
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 20:49:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4000418A389
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 21:13:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M9Ql0BHUMfLdusLad+3Fzr5GNeB21pGd2nHUOwbCi3k=; b=hsmoarSTd6hlR9GkZ5Rf9usuT
-	+2ONOwWr+wL6XVRq7YQrmvktW9LDfNDODlAYVTJdcAobP0bl676W+J84K+Po7B07b1p/HVfItmpSm
-	as0zmkGRGIY79XFlGN0r9Tci0zSGomsuks1JdMch8QHc1pbS1+QZofrAfA6LFPBa0mCZm5tAbeYS6
-	8CF7b4sotlcbEWENzHEu9AIffCVIcdaaVkDZETjFTNT41UAS5ybPSBfvRq8s3HXlUFvRnEwBFasJj
-	YOJXGFfGEOCuOSK6ZmtxAygUHvUO5wE7tBWk5FNHsBTJkeSFFCd7T3wEgTBiz3NbOPpzLLyE2cvZl
-	319HLolLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=En/okSfMTgNbRzaZ5gKcR5v0AKZK3eN0IU8H7NTItuo=; b=WdPm++gZ6W034+
+	QRFQYcdipi8HPhMEOc7RubnUgMagLbPNNj0oLIMO6/7CYDwjZxpVQi2bg0W2xTMNuaiUTXCLhC2lV
+	KwxwWBW0vvQ8undOgIodVkdrCs8ZwM/3HxQtymI5HdtuNfx4O/wfgSmjXrGvFko1XyoDG+8Ubv29e
+	I/ikK488Mqh+5WATVbVA9U/j9hBP2sJbFp+1bSCBxNmVRh2JAOXXdLXxeDPCWrxEDkcUt9R4xp5jP
+	y+qFLbk6SvRi6ibzx+Ato9WUZAZGTN82jyIk9ixWcbAKGGtq0qDAnwp/ao9EIKtzF1cG/fe3kctjJ
+	Zg8gdwTZRgIXL81pDygw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEego-0006Sx-1w; Wed, 18 Mar 2020 19:49:18 +0000
-Received: from poy.remlab.net ([2001:41d0:2:5a1a::]
- helo=ns207790.ip-94-23-215.eu)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEegd-0006SJ-Qr
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 19:49:09 +0000
-Received: from roundcube.remlab.net (ip6-localhost [IPv6:::1])
- by ns207790.ip-94-23-215.eu (Postfix) with ESMTP id 36FB45FB07;
- Wed, 18 Mar 2020 20:48:50 +0100 (CET)
+	id 1jEf40-0006IN-08; Wed, 18 Mar 2020 20:13:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEf3q-0006Hv-Qe
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 20:13:08 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 56EEF2071C;
+ Wed, 18 Mar 2020 20:13:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584562385;
+ bh=pe4t1TUdWt373Ez1EnHNV+7ooE3eThnbOn1Mljp2GuQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fJfc1ht/bYxSxn6MowvslrLRwT9YTkQYplJpTElDcJogHBcmdK0MT1NWSEncYrRFw
+ 5+Fl9RF+m9QrQZoPXmFeB64y1NrjrT8m40A/WV2rYnfZVte49RVauotNPueT+RwzQR
+ W8fAahaG7Zx3ewn3MZDnu8JgRwY9AqocH74w51lg=
+Date: Wed, 18 Mar 2020 20:13:00 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [RFC PATCH] arm64: fix the missing ktpi= cmdline check in
+ arm64_kernel_unmapped_at_el0()
+Message-ID: <20200318201259.GA7463@willie-the-truck>
+References: <20200317114708.109283-1-yaohongbo@huawei.com>
+ <20200317121050.GH8831@lakrids.cambridge.arm.com>
+ <20200317124323.GA16200@willie-the-truck>
+ <20200317135719.GH3971@sirena.org.uk>
+ <20200317151813.GA16579@willie-the-truck>
+ <20200317163638.GI3971@sirena.org.uk>
+ <20200317210154.GA19752@willie-the-truck>
+ <20200318113217.GA4553@sirena.org.uk>
 MIME-Version: 1.0
-Date: Wed, 18 Mar 2020 21:48:50 +0200
-From: Remi Denis-Courmont <remi@remlab.net>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH 1/3] arm64: clean up trampoline vector loads
-Organization: Remlab Tmi
-In-Reply-To: <8127163.Epc2VWTDuo@basile.remlab.net>
-References: <20200316124046.103844-1-remi@remlab.net>
- <20200318175709.GD94111@arrakis.emea.arm.com>
- <20200318180630.GE94111@arrakis.emea.arm.com>
- <8127163.Epc2VWTDuo@basile.remlab.net>
-Message-ID: <fb0e19c2c231a5f256303253b92e64f3@remlab.net>
-X-Sender: remi@remlab.net
-User-Agent: Roundcube Webmail/1.2.3
+Content-Disposition: inline
+In-Reply-To: <20200318113217.GA4553@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_124908_013090_FE6FDAEA 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200318_131306_887354_AD9E1ACC 
+X-CRM114-Status: GOOD (  16.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,45 +84,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, will@kernel.org, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ Hongbo Yao <yaohongbo@huawei.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgMjAyMC0wMy0xOCAyMDoyOSwgUsOpbWkgRGVuaXMtQ291cm1vbnQgYSDDqWNyaXTCoDoKPiBM
-ZSBrZXNraXZpaWtrb25hIDE4LiBtYWFsaXNrdXV0YSAyMDIwLCAyMC4wNi4zMCBFRVQgQ2F0YWxp
-biBNYXJpbmFzIGEgCj4gw6ljcml0IDoKPj4gT24gV2VkLCBNYXIgMTgsIDIwMjAgYXQgMDU6NTc6
-MDlQTSArMDAwMCwgQ2F0YWxpbiBNYXJpbmFzIHdyb3RlOgo+PiA+IE9uIE1vbiwgTWFyIDE2LCAy
-MDIwIGF0IDAyOjQwOjQ0UE0gKzAyMDAsIFLDqW1pIERlbmlzLUNvdXJtb250IHdyb3RlOgo+PiA+
-ID4gRnJvbTogUsOpbWkgRGVuaXMtQ291cm1vbnQgPHJlbWkuZGVuaXMuY291cm1vbnRAaHVhd2Vp
-LmNvbT4KPj4gPiA+Cj4+ID4gPiBUaGlzIHN3aXRjaGVzIGZyb20gY3VzdG9tIGluc3RydWN0aW9u
-IHBhdHRlcm5zIHRvIHRoZSByZWd1bGFyIGxhcmdlCj4+ID4gPiBtZW1vcnkgbW9kZWwgc2VxdWVu
-Y2Ugd2l0aCBBRFJQIGFuZCBMRFIuIEluIGRvaW5nIHNvLCB0aGUgQURECj4+ID4gPiBpbnN0cnVj
-dGlvbiBjYW4gYmUgZWxpbWluYXRlZCBpbiB0aGUgU0RFSSBoYW5kbGVyLCBhbmQgdGhlIGNvZGUg
-bm8KPj4gPiA+IGxvbmdlciBhc3N1bWVzIHRoYXQgdGhlIHRyYW1wb2xpbmUgdmVjdG9ycyBhbmQg
-dGhlIHZlY3RvcnMgYWRkcmVzcyBib3RoCj4+ID4gPiBzdGFydCBvbiBhIHBhZ2UgYm91bmRhcnku
-Cj4+ID4gPgo+PiA+ID4gU2lnbmVkLW9mZi1ieTogUsOpbWkgRGVuaXMtQ291cm1vbnQgPHJlbWku
-ZGVuaXMuY291cm1vbnRAaHVhd2VpLmNvbT4KPj4gPgo+PiA+IEkgcXVldWVkIHRoZSAzIHRyYW1w
-b2xpbmUgcGF0Y2hlcyBmb3IgNS43LiBUaGFua3MuCj4+IAo+PiAuLi4gYW5kIHJlbW92ZWQuIEkg
-YXBwbGllZCB0aGVtIG9uIHRvcCBvZiBhcm02NCAKPj4gZm9yLW5leHQvYXNtLWFubm90YXRpb25z
-Cj4+IGFuZCB3aXRoIGRlZmNvbmZpZyBJIGdldDoKPj4gCj4+ICAgTEQgICAgICAudG1wX3ZtbGlu
-dXgxCj4+IGFyY2gvYXJtNjQva2VybmVsL2VudHJ5Lm86IGluIGZ1bmN0aW9uIGB0cmFtcF92ZWN0
-b3JzJzoKPj4gYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUzo4Mzg6KC5lbnRyeS50cmFtcC50ZXh0
-KzB4NDNjKTogcmVsb2NhdGlvbgo+PiB0cnVuY2F0ZWQgdG8gZml0OiBSX0FBUkNINjRfTERTVDY0
-X0FCU19MTzEyX05DIGFnYWluc3Qgc3ltYm9sCj4+IGBfX2VudHJ5X3RyYW1wX2RhdGFfc3RhcnQn
-IGRlZmluZWQgaW4gLnJvZGF0YSBzZWN0aW9uIGluCj4+IAo+PiBJIGhhdmVuJ3QgYmlzZWN0ZWQg
-dG8gc2VlIHdoaWNoIHBhdGNoIGNhdXNlZCB0aGlzIGlzc3VlLgoKSXQncyB0aGUgdGhpcmQgcGF0
-Y2guCgo+IFVobywgcmlnaHQgOi0oIEl0IG9ubHkgYnVpbGRzIHdpdGggU0RFSSBlbmFibGVkIDot
-JAo+IAo+IEknbGwgY2hlY2sgZnVydGhlci4KCkl0IHNlZW1zIHRoYXQgdGhlIFNZTV9EQVRBX1NU
-QVJUIG1hY3JvIGRvZXMgbm90IGFsaWduIHRoZSBkYXRhIG9uIGl0cyAKbmF0dXJhbCBib3VuZGFy
-eS4gSSBndWVzcyB0aGF0IGlzIGFsbCBmaW5lIG9uIHg4NiB3aGVyZSBkYXRhIG5lZWRzIG5vdCAK
-YmUgYWxpZ25lZCwgYnV0IGl0IGxlYWRzIHRvIHRoaXMga2luZCBvZiBtaXNjaGllZiBvbiBhcm02
-NC4gVGhvdWdoIGV2ZW4gCnRoZW4sIHRoZSBhZGRyZXNzIGlzIG9mIGNvdXJzZSBhY3R1YWxseSBh
-bGlnbmVkIGNvcnJlY3RseSBvbiBhbiA4LWJ5dGVzIApib3VuZGFyeSwgc28gSSBzdXBwb3NlIGJp
-bnV0aWxzIGlzIGp1c3QgYmVpbmcgcG9pbnRsZXNzbHkgcGVkYW50aWMgaGVyZT8KCi0tIApSw6lt
-aSBEZW5pcy1Db3VybW9udAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Mar 18, 2020 at 11:32:17AM +0000, Mark Brown wrote:
+> On Tue, Mar 17, 2020 at 09:01:54PM +0000, Will Deacon wrote:
+> > On Tue, Mar 17, 2020 at 04:36:38PM +0000, Mark Brown wrote:
+> 
+> > > I'd need to go back and retest to confirm but it looks like always had
+> > > the issue that we'd install some nG mappings early even with KPTI
+> > > disabled on the command line so your change is just restoring the
+> > > previous behaviour and we're no worse than we were before.
+> 
+> > Urgh, this code brings back really bad memories :( :( :(
+> 
+> Tell me about it.
+> 
+> > So I've hacked the following, which appears to work but damn I'd like
+> > somebody else to look at this. I also have a nagging feeling that you
+> > implemented it like this at some point, but we tried to consolidate things
+> > during review.
+> 
+> > Thoughts?
+> 
+> I don't think I did *exactly* this but it's familiar yeah.  It looks
+> sensible and I can't think of any problems but that doesn't mean there
+> aren't any.
+
+Well, thanks for having a look!
+
+Hongbo -- please can you confirm that this fixes the problem that you are
+seeing?
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
