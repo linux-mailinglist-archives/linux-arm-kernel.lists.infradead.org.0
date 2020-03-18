@@ -2,62 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DF2D18A892
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:49:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7C3D18A8A8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:55:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eOYwffPCIAX9j/4n9gs1AasHcWafQfyuP014oew/wzw=; b=a0V7E4ecyMuA1b
-	gkxKjvsNuUfQoo0wPQ10/tg35yCCX4y6h3Npa64WfPJXnsasq8MEP+6Y31k/S08FYyyyiMSWW0+5W
-	Pcfg0/KdGSMRaTwh8oFWNnZvGq5E832BcRiiai6eMaV2sbjhdb8HoTZiwPYNvv3mFGNK8yfL0Zq5/
-	YZ8KDkOhMwRFu/NHp8dlqf5ZJs2t3fOcp4BjFrcpEUruMXMpnFxgz21QuYLiaY/kVsISj7UqCdumj
-	J8BQ4ZbL4BSRCAfOM8D3o9Wn/OBE1CRsHBOdZ6SbzAixpzGK61Nk6w8lIFtnzoExJOUWSUUb2GqRQ
-	zP/J145wrRZ/mXphXcrg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=44egLPyjUatfjhkH8kmwfeNnZDj+ib0gHq5j2mwYWHQ=; b=jgRQMQJvUp+B6Q
+	5igTgUlUfjp32pZnxi3RLhwzZvvH5ZJ7baAZEh9vs7XiVrZsMWSKe7JCCN5J8brGw1v+uOrm4jrRn
+	KoyM/BlcAVtkMYaodgNgEdPTzx3Wv/OAaWLG3lpDRfQVJrZhRDhP8/uyXpGN3GpbAop/d50iLUVra
+	Dx851tGVzKxf9lh9Bk8+JPy4cGFR/rglPPlFFxRHUYDpSqINgAwuUQ4W7h7XFykwcH2pNpWqDWqlW
+	OgD16BoIKcEcXxc+y4eALFVQg4A4SqEVwYHM0E0nB3LtDEJAaNGqMYI19NWFt5mx9bjWCQi0L2c/d
+	VUIsgQ/I15fqOJ6FjdQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEhUb-0001kE-La; Wed, 18 Mar 2020 22:48:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEhb1-0005E2-C9; Wed, 18 Mar 2020 22:55:31 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEhUT-0001js-IS
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 22:48:46 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E7DC020752;
- Wed, 18 Mar 2020 22:48:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584571725;
- bh=sxbtUTf11iJytMzmHFkvIe4CnT3yrC6BYKS3V/0Z0Fk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jaM0G/5trMtdFkV2/vhMxNOFWaSGhrrs52HK2xDjUYl+JI3hUsWXm6CPYojhT/ldL
- j3jQDJn+SmUHKWEmCw8/fOnx7X2yRYKJ3RXUvmhvhVIUEaKPQzUP3rG1mL4eh2B5sb
- HN/0wISxOh2nwOxnShOj3pxzI9FpXy/K2iWAVTrY=
-Date: Wed, 18 Mar 2020 22:48:40 +0000
-From: Will Deacon <will@kernel.org>
-To: Jordan Crouse <jcrouse@codeaurora.org>
-Subject: Re: [PATCH v1 2/6] arm/smmu: Add auxiliary domain support for
- arm-smmuv2
-Message-ID: <20200318224840.GA10796@willie-the-truck>
-References: <1580249770-1088-1-git-send-email-jcrouse@codeaurora.org>
- <1580249770-1088-3-git-send-email-jcrouse@codeaurora.org>
+ id 1jEhaq-0005Co-0S; Wed, 18 Mar 2020 22:55:21 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMrlf6071331;
+ Wed, 18 Mar 2020 22:54:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=k6GRUsKzVXLcCjYW1URm4LWEsIVLbuUR75pRpcs7jfc=;
+ b=Ce2szXcqKXTI+HYLH8FYP/wXV6iZiiKOFiXrEFWqdPJZZGa+j5A6up1nM+H+PFvqAruq
+ 2bmtsY7uC4VN2eaTZy/ynVjVztGCL0aB3JQxl3COHF0Ov0PwR4HlLwExDxRFMh2/cNXG
+ i1ybAR233CYhUfDGv/pxrloIrywaQulPtyk7ClLHZs9yCHfZzR5cpSIIIa+WT1rA5dzF
+ NFd4ZArbsmv7PEUgi2CZJ24KAFXN2HF//8sIVskEaOldoq6xbpUb/mM3QxImkymGPtMk
+ aIwWY1Fs+z9eC6yx+apJdCdvWN5RNRjcCWh+OF3G1lU2Pog392rIPJcyhg+sABAAxpu/ Rg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 2yub2757m3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Mar 2020 22:54:54 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMq3hY125264;
+ Wed, 18 Mar 2020 22:52:53 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3020.oracle.com with ESMTP id 2ys92j3h77-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Mar 2020 22:52:53 +0000
+Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02IMqo0j011508;
+ Wed, 18 Mar 2020 22:52:50 GMT
+Received: from [192.168.1.206] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 18 Mar 2020 15:52:49 -0700
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+To: Dave Hansen <dave.hansen@intel.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-2-mike.kravetz@oracle.com>
+ <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
+Date: Wed, 18 Mar 2020 15:52:46 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1580249770-1088-3-git-send-email-jcrouse@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ mlxlogscore=999
+ mlxscore=0 spamscore=0 bulkscore=0 adultscore=0 suspectscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003180098
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ impostorscore=0
+ mlxlogscore=999 mlxscore=0 phishscore=0 adultscore=0 suspectscore=0
+ clxscore=1015 priorityscore=1501 lowpriorityscore=0 bulkscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003180098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_154845_631694_9F3C978C 
-X-CRM114-Status: GOOD (  16.88  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200318_155520_139595_761CB63B 
+X-CRM114-Status: GOOD (  22.34  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,56 +115,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 28, 2020 at 03:16:06PM -0700, Jordan Crouse wrote:
-> Support auxiliary domains for arm-smmu-v2 to initialize and support
-> multiple pagetables for a single SMMU context bank. Since the smmu-v2
-> hardware doesn't have any built in support for switching the pagetable
-> base it is left as an exercise to the caller to actually use the pagetable.
+On 3/18/20 3:15 PM, Dave Hansen wrote:
+> Hi Mike,
 > 
-> Aux domains are supported if split pagetable (TTBR1) support has been
-> enabled on the master domain.  Each auxiliary domain will reuse the
-> configuration of the master domain. By default the a domain with TTBR1
-> support will have the TTBR0 region disabled so the first attached aux
-> domain will enable the TTBR0 region in the hardware and conversely the
-> last domain to be detached will disable TTBR0 translations.  All subsequent
-> auxiliary domains create a pagetable but not touch the hardware.
+> The series looks like a great idea to me.  One nit on the x86 bits,
+> though...
 > 
-> The leaf driver will be able to query the physical address of the
-> pagetable with the DOMAIN_ATTR_PTBASE attribute so that it can use the
-> address with whatever means it has to switch the pagetable base.
+>> diff --git a/arch/x86/mm/hugetlbpage.c b/arch/x86/mm/hugetlbpage.c
+>> index 5bfd5aef5378..51e6208fdeec 100644
+>> --- a/arch/x86/mm/hugetlbpage.c
+>> +++ b/arch/x86/mm/hugetlbpage.c
+>> @@ -181,16 +181,25 @@ hugetlb_get_unmapped_area(struct file *file, unsigned long addr,
+>>  #endif /* CONFIG_HUGETLB_PAGE */
+>>  
+>>  #ifdef CONFIG_X86_64
+>> +bool __init arch_hugetlb_valid_size(unsigned long long size)
+>> +{
+>> +	if (size == PMD_SIZE)
+>> +		return true;
+>> +	else if (size == PUD_SIZE && boot_cpu_has(X86_FEATURE_GBPAGES))
+>> +		return true;
+>> +	else
+>> +		return false;
+>> +}
 > 
-> Following is a pseudo code example of how a domain can be created
+> I'm pretty sure it's possible to have a system without 2M/PMD page
+> support.  We even have a handy-dandy comment about it in
+> arch/x86/include/asm/required-features.h:
 > 
->  /* Check to see if aux domains are supported */
->  if (iommu_dev_has_feature(dev, IOMMU_DEV_FEAT_AUX)) {
-> 	 iommu = iommu_domain_alloc(...);
+> 	#ifdef CONFIG_X86_64
+> 	#ifdef CONFIG_PARAVIRT
+> 	/* Paravirtualized systems may not have PSE or PGE available */
+> 	#define NEED_PSE        0
+> 	...
 > 
-> 	 if (iommu_aux_attach_device(domain, dev))
-> 		 return FAIL;
+> I *think* you need an X86_FEATURE_PSE check here to be totally correct.
 > 
-> 	/* Save the base address of the pagetable for use by the driver
-> 	iommu_domain_get_attr(domain, DOMAIN_ATTR_PTBASE, &ptbase);
->  }
+> 	if (size == PMD_SIZE && cpu_feature_enabled(X86_FEATURE_PSE))
+> 		return true;
+> 
+> BTW, I prefer cpu_feature_enabled() to boot_cpu_has() because it
+> includes disabled-features checking.  I don't think any of it matters
+> for these specific features, but I generally prefer it on principle.
 
-I'm not really understanding what the pagetable base gets used for here and,
-to be honest with you, the whole thing feels like a huge layering violation
-with the way things are structured today. Why doesn't the caller just
-interface with io-pgtable directly?
+Sounds good.  I'll incorporate those changes into a v2, unless someone
+else with has a different opinion.
 
-Finally, if we need to support context-switching TTBR0 for a live domain
-then that code really needs to live inside the SMMU driver because the
-ASID and TLB management necessary to do that safely doesn't belong anywhere
-else.
-
-Will
+BTW, this patch should not really change the way the code works today.
+It is mostly a movement of code.  Unless I am missing something, the
+existing code will always allow setup of PMD_SIZE hugetlb pages.
+-- 
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
