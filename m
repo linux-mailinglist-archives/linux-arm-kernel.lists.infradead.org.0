@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7912618A8E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:03:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7533A18A91B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:19:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qkPWw3M8d0ooNG6h8F5q/TrhMmR7qpKSyq0NV9Htfdk=; b=nfuH0OkE1um6Bo
-	LRvVqE/vq7iRJI8BAo3mzIx6rFNykS8g4agaUXf73vybb6nrdbgP+0WGt3GfwZ0ZCkbehxM8EugAC
-	3GCdbb74fKjBUJSpwSVk6X89/9c18IRaqgNUkBsIP4k7pIfKqQ2JEKPi5IY3pMbrORZw0nNNOWtu1
-	BAnKiE2cca+fLOsgcK9ZXCkNHfM2GuPIDxhFNV0CqwptTQcgJ9qNHemu8EmWvktlK95Ccxrbc9MXW
-	6ysUh5JqGx7crD8VkqSK+zn29ENllaX+lmMYWycPr0X3mYsBYSHPoNZ8ba4uSAi0Fra8R6Hxsq2hV
-	BkX0WzEAsPeTvvwn8ujQ==;
+	List-Owner; bh=YX2Q/udDgbtOAjy/sKQG68MUP5sT5Km2vJ0mgYi+3hs=; b=YuUDMUZ0f38DtM
+	AriHKjxIdyt45H25aY54aKO9/IVih3vDHYG9VWxI2LYmUPt/dyqBtG9UCde/XupW02f/HfTe5u6GQ
+	DVtUlZTLOim2DzGxK5k4uW9GmQCv1uNTVnhYCV52sRqWSYw3eDiplZXvJGXfXYD4Rv0iq4Mh+THXA
+	uL0vBJmAzp0bjSLjhG2gvd/cXJcOkEHFylSLxJG1hkwtk1rcVBq70hIzZy6Yw/Ww1utIpA/nb1lsx
+	AICphOYvBYqqEsvjsEjRR1Bsz/CcnPJLFQM6bQsqBDxYHETyFDLWhLwiT4e8FTJWSK4pst7YEO/3D
+	1u3D9cRF+GTCoDWRbKXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEhiZ-0000Rp-Oy; Wed, 18 Mar 2020 23:03:19 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jEhxz-0005WS-WB; Wed, 18 Mar 2020 23:19:16 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEhhd-0008At-CI
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:02:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584572540;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Lj+zir0Ue9gE1PKXiWdDmdvmZpnnYokPcXWJOjBD3G8=;
- b=SERvN8zxEjxSpW25dQ31cp8jyrUVfpd1Io8NeHr0T6wxbV/6SpsWU26MAEdF7740WuSrvP
- mraKC6RqEHUYSCFY/A7ZTkt9RU1oh6K9qEx/1obYh1VZQjM1lBWEQnS5NRWQsNC5fikPHf
- 7dQTHd1OEOciCGbZNQqxOuZB1Q/IZAE=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-308-V9JPZc6IPTGeDfBCft3NRg-1; Wed, 18 Mar 2020 19:02:13 -0400
-X-MC-Unique: V9JPZc6IPTGeDfBCft3NRg-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3EB7D100550E;
- Wed, 18 Mar 2020 23:02:12 +0000 (UTC)
-Received: from localhost.localdomain.com (vpn2-54-221.bne.redhat.com
- [10.64.54.221])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 235FE17B91;
- Wed, 18 Mar 2020 23:02:08 +0000 (UTC)
-From: Gavin Shan <gshan@redhat.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 4/4] arm64: Remove CPU operations dereferencing array
-Date: Thu, 19 Mar 2020 10:01:45 +1100
-Message-Id: <20200318230145.72097-5-gshan@redhat.com>
-In-Reply-To: <20200318230145.72097-1-gshan@redhat.com>
-References: <20200318230145.72097-1-gshan@redhat.com>
+ id 1jEhxp-0005Vl-SN
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:19:07 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6269B5F;
+ Thu, 19 Mar 2020 00:19:02 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1584573542;
+ bh=/zedXgBTnib8ZFBNicYJfz7d9YDzUXZrVfIpem0oI00=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=X3wMKCohj+Eri0noSK4cxXv2J+Tdk+etLcebTplD2XwAu0mnpUCJBz9JoBTVtgKyB
+ BuYND21PycYFWMRG2CDc0GZ8rvrsDLqV+vZKMIO3R3FRv4+AgQPZ59Gq234fNiH5Z5
+ CrBG+MYpU8w1RzkF6O4stmkROcCdhibfo+U67x8I=
+Date: Thu, 19 Mar 2020 01:18:56 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v3 3/4] media: i2c: ov5645: Set maximum leverage of
+ external clock frequency to 24480000
+Message-ID: <20200318231856.GI24538@pendragon.ideasonboard.com>
+References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1584133954-6953-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200313212345.GM4751@pendragon.ideasonboard.com>
+ <OSBPR01MB359079EAA32E0DCBF63C6886AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <OSBPR01MB359079EAA32E0DCBF63C6886AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_160221_546680_C73F29E8 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20200318_161906_069706_6EFD3D2D 
+X-CRM114-Status: GOOD (  22.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,7 +66,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,151 +77,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, will@kernel.org,
- catalin.marinas@arm.com, shan.gavin@gmail.com, sudeep.holla@arm.com,
- robin.murphy@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-One CPU operations is maintained through array @cpu_ops[NR_CPUS]. 2KB
-memory is consumed when CONFIG_NR_CPUS is set to 256. It seems too
-much memory has been used for this. Also, all secondary CPUs must use
-same CPU operations and we shouldn't bring up the broken CPU as Lorenzo
-Pieralisi and Mark Rutland pointed out.
+Hi Prabhakar,
 
-This introduces two variables (@{boot,secondary}_cpu_ops) to store the
-CPU operations for boot CPU and secondary CPUs separately, which are
-figured out from device tree or ACPI table. The secondary CPUs which
-have inconsistent operations won't be brought up. With this, the CPU
-operations dereferencing array is removed and 2KB memory is saved. Note
-the logic of cpu_get_ops() is merged to get_cpu_method() since the logic
-is simple enough and no need to have a separate function for it.
+On Fri, Mar 13, 2020 at 09:31:25PM +0000, Prabhakar Mahadev Lad wrote:
+> On 13 March 2020 21:24, Laurent Pinchart wrote:
+> > On Fri, Mar 13, 2020 at 09:12:33PM +0000, Lad Prabhakar wrote:
+> > > While testing on Renesas RZ/G2E platform, noticed the clock frequency
+> > > to be 24242424 as a result the probe failed. However increasing the
+> > > maximum leverage of external clock frequency to 24480000 fixes this
+> > > issue. Since this difference is small enough and is insignificant set
+> > > the same in the driver.
+> > >
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > ---
+> > >  drivers/media/i2c/ov5645.c | 6 ++++--
+> > >  1 file changed, 4 insertions(+), 2 deletions(-)
+> > >
+> > > diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
+> > > index 4fbabf3..b49359b 100644
+> > > --- a/drivers/media/i2c/ov5645.c
+> > > +++ b/drivers/media/i2c/ov5645.c
+> > > @@ -1107,8 +1107,10 @@ static int ov5645_probe(struct i2c_client *client)
+> > >  }
+> > >
+> > >  xclk_freq = clk_get_rate(ov5645->xclk);
+> > > -/* external clock must be 24MHz, allow 1% tolerance */
+> > > -if (xclk_freq < 23760000 || xclk_freq > 24240000) {
+> > > +/* external clock must be 24MHz, allow a minimum 1% and a maximum of 2%
+> > > + * tolerance
+> >
+> > So where do these numbers come from ? I understand that 2% is what you
+> > need to make your clock fit in the range, but why -1%/+2% instead of -
+> > 2%/+2% ? And why not 2.5 or 3% ? The sensor datasheet documents the
+> > range of supported xvclk frequencies to be 6MHz to 54MHz. I understand
+> > that PLL parameters depend on the clock frequency, but could they be
+> > calculated instead of hardcoded, to avoid requiring an exact 24MHz input
+> > frequency ?
+>
+> To be honest I don't have the datasheet for ov5645, the flyer says 6-54Mhz but the
+> logs/comment says 24Mhz.
 
-Link: https://lore.kernel.org/linux-arm-kernel/20200211114553.GA21093@e121166-lin.cambridge.arm.com
-Signed-off-by: Gavin Shan <gshan@redhat.com>
----
- arch/arm64/kernel/cpu_ops.c | 77 +++++++++++++++++++------------------
- 1 file changed, 39 insertions(+), 38 deletions(-)
+The OV5645 clock topology is fairly complex, with two PLLs and different
+set of output dividers. It however shouldn't be impossible to calculate
+the PLL configuration in the driver, but would require some dedication,
+and is probably not worth it.
 
-diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
-index e133011f64b5..a0f647d22e36 100644
---- a/arch/arm64/kernel/cpu_ops.c
-+++ b/arch/arm64/kernel/cpu_ops.c
-@@ -20,41 +20,20 @@ extern const struct cpu_operations acpi_parking_protocol_ops;
- #endif
- extern const struct cpu_operations cpu_psci_ops;
- 
--static const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
--
--static const struct cpu_operations *const dt_supported_cpu_ops[] __initconst = {
-+static const struct cpu_operations *const available_cpu_ops[] __initconst = {
- 	&smp_spin_table_ops,
--	&cpu_psci_ops,
--	NULL,
--};
--
--static const struct cpu_operations *const acpi_supported_cpu_ops[] __initconst = {
- #ifdef CONFIG_ARM64_ACPI_PARKING_PROTOCOL
- 	&acpi_parking_protocol_ops,
- #endif
- 	&cpu_psci_ops,
--	NULL,
- };
-+static const struct cpu_operations *boot_cpu_ops __ro_after_init;
-+static const struct cpu_operations *secondary_cpu_ops __ro_after_init;
- 
--static const struct cpu_operations * __init cpu_get_ops(const char *name)
--{
--	const struct cpu_operations *const *ops;
--
--	ops = acpi_disabled ? dt_supported_cpu_ops : acpi_supported_cpu_ops;
--
--	while (*ops) {
--		if (!strcmp(name, (*ops)->name))
--			return *ops;
--
--		ops++;
--	}
--
--	return NULL;
--}
--
--static const char *__init cpu_read_enable_method(int cpu)
-+static const struct cpu_operations * __init get_cpu_method(int cpu)
- {
- 	const char *enable_method;
-+	int i;
- 
- 	if (acpi_disabled) {
- 		struct device_node *dn = of_get_cpu_node(cpu, NULL);
-@@ -91,22 +70,44 @@ static const char *__init cpu_read_enable_method(int cpu)
- 		}
- 	}
- 
--	return enable_method;
-+	if (!enable_method) {
-+		pr_warn("No enable-method found on CPU %d\n", cpu);
-+		return NULL;
-+	}
-+
-+	/* Search in the array with method */
-+	for (i = 0; i < ARRAY_SIZE(available_cpu_ops); i++) {
-+		if (!strcmp(available_cpu_ops[i]->name, enable_method))
-+			return available_cpu_ops[i];
-+	}
-+
-+	return NULL;
- }
--/*
-- * Read a cpu's enable method and record it in cpu_ops.
-- */
-+
- int __init init_cpu_ops(int cpu)
- {
--	const char *enable_method = cpu_read_enable_method(cpu);
-+	const struct cpu_operations *ops = get_cpu_method(cpu);
- 
--	if (!enable_method)
--		return -ENODEV;
--
--	cpu_ops[cpu] = cpu_get_ops(enable_method);
--	if (!cpu_ops[cpu]) {
--		pr_warn("Unsupported enable-method: %s\n", enable_method);
-+	if (!ops)
- 		return -EOPNOTSUPP;
-+
-+	/* Update boot CPU operations */
-+	if (!cpu) {
-+		boot_cpu_ops = ops;
-+		return 0;
-+	}
-+
-+	/* Update secondary CPU operations if it's not initialized yet */
-+	if (!secondary_cpu_ops) {
-+		secondary_cpu_ops = ops;
-+		return 0;
-+	}
-+
-+	/* We should have unified secondary CPU operations */
-+	if (ops != secondary_cpu_ops) {
-+		pr_warn("Invalid CPU operations %s (%s) on secondary CPU %d\n",
-+			ops->name, secondary_cpu_ops->name, cpu);
-+		return -EINVAL;
- 	}
- 
- 	return 0;
-@@ -114,5 +115,5 @@ int __init init_cpu_ops(int cpu)
- 
- const struct cpu_operations *get_cpu_ops(int cpu)
- {
--	return cpu_ops[cpu];
-+	return cpu ? secondary_cpu_ops : boot_cpu_ops;
- }
+I've discussed the matter with Sakari, and we concluded that this is
+just a sanity check. We advise increasing the tolerance by a bigger
+amount to avoid patching this for every new board (completely
+arbitrarily, +/- 5%), and turning the fatal error into a dev_warn,
+dropping the return -EINVAL statement.
+
+> > > + */
+> > > +if (xclk_freq < 23760000 || xclk_freq > 24480000) {
+> > >  dev_err(dev, "external clock frequency %u is not supported\n",
+> > >  xclk_freq);
+> > >  return -EINVAL;
+
 -- 
-2.23.0
+Regards,
 
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
