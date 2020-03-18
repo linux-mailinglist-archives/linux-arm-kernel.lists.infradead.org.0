@@ -2,77 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84DD8189B0D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 12:47:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B39D189B5B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 12:53:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5j2sCYZqHnHeQ46Xp8Ctw7B9uEpbr6AaWuFU9JzBF5E=; b=fNQ4gTYCuu6/JF
-	GQNRavTNl+NMUMAB1gNydWQNA2XBkPCcbhusBbk5x31GNydyiywRBa7iiRtrKlWCEItrz3oxvjcS8
-	miBbYa2ApPQQLOEicMue4X5MRZlUHNmcWlqCS6+eDHIkAEPjNzYFgUkjtXJABt9OgPpD4nIss8q7+
-	+lmJ6Vwj9/YJc17qtUi1eJtP5RnGZxG9rqVKhCI8nntXmExviR+1A7Gp2D84VN3N9ahpkqJeKFElI
-	pfPW816LDDzFlR0azVOlMCwX3LY4bUMEOU4YyXwv30wjPN33yhESGHP0EUXFEcbi7jHmh2WlNkvZD
-	GGms7Ohrnj3LZVLjijnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rT8GVlBkJBRWH4VzfMdUfA9PjpKKpCERRI/HKBLKmtI=; b=hZI3FnXZgMtF4s
+	HGv5o9i4sAQhJE7/cI1qj+nJDJI1Wq+PSo7UtA0SpHfuwwkQbYo5c7+PRsXWU/8f4K4zjC5wxNRnl
+	k1CFgADHIKESqQwYMszqqGvnjA+VaH9kXzXS/VmiiqfAjyputkYZdwRJObc1z7fpOWfExDxwMBRIW
+	U85ABf1bfKblW7FOVghpZoXzmX0DhIpYSFAN6guOi4QcrwU8z7L2qGsdqs0/U0sMZLseIU9SfMy0J
+	/cEkK5d93GM3Udi8fq2lMuicuwyO+27BJXYfuRNWvE8Ibrqn8SaSqIVEUtaxGBgZgvswAxMuOdXfc
+	SFACAztw1xUmDGg5xhUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEXAR-0002n2-6w; Wed, 18 Mar 2020 11:47:23 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1jEXGf-0006ui-KB; Wed, 18 Mar 2020 11:53:49 +0000
+Received: from mail-eopbgr70129.outbound.protection.outlook.com
+ ([40.107.7.129] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEXAG-0002k3-MH; Wed, 18 Mar 2020 11:47:14 +0000
-Received: by mail-lj1-f194.google.com with SMTP id 19so26582936ljj.7;
- Wed, 18 Mar 2020 04:47:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=Ab62Ifr6mdslEB8rNbBB2lyNK3id75uGbHTExJNuy2w=;
- b=JPtSA/VrJ1QkKyBdbBaZIE2ktPOtVxGj3aBFHixpTd91Sfq8UKgZXMpg77CUYhQlMy
- PHXKiqQWWSZJZr+m2eiL0+8C2yh5Vp79s8TYGLkGd+emXF92DUhloQqT6kDOKBrytoK/
- B7jNNsYxNAyeLvCWXqCMQK0/y1dNcWTshDigMrsFFO3iv/BAq/C7zLhWautk4cujQcw0
- Yo6T4CuNa2rKdkG+oIlt7LLfMpXvuxPRqf/M/1bRKswVNT7sB7reRxjaRPswYsxMm6By
- Uybe+E0kBIkYzaweZO1VNRo2Ix/NFqYMFzBALuJ63xT2Z1CHa22T9ZSD3qYrBiCOP4MK
- 27yg==
-X-Gm-Message-State: ANhLgQ1aCeK7/lsei7XtEt/05dTB7lvc33VrBmRP9LRQDLcWJ975W7AY
- l+hj0qkf6j5+F5W4/C+pa+o=
-X-Google-Smtp-Source: ADFU+vsjikg6Y2a5KjS3oadSfQozrw8fRFUY0OAeRSoGQxPf78q4+DaqJVZpkfQhudkt2r3G0F7+Xg==
-X-Received: by 2002:a2e:240e:: with SMTP id k14mr2152030ljk.228.1584532030161; 
- Wed, 18 Mar 2020 04:47:10 -0700 (PDT)
-Received: from localhost.localdomain
- (dc7t7ryyyyyyyyyyyyybt-3.rev.dnainternet.fi. [2001:14ba:16e1:b700::3])
- by smtp.gmail.com with ESMTPSA id 8sm17094lfy.21.2020.03.18.04.47.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Mar 2020 04:47:09 -0700 (PDT)
-Date: Wed, 18 Mar 2020 13:47:01 +0200
-From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v5 0/9] Support ROHM BD99954 charger IC
-Message-ID: <cover.1584468798.git.matti.vaittinen@fi.rohmeurope.com>
+ id 1jEXGC-0006pl-NI; Wed, 18 Mar 2020 11:53:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Dtzs2GW7vy0UmZRmF+m72Fpo4YleF9VH/w+g52Ued9FukFS2RmJIYi+MHnDyOFCD6ME27sKc8eaUUVLyC7IN2oGZ5qoe7h2rB7jMDulrsWTLEBmxthue2D4qazrjKxKq1zcDUVe5ETbIzhzYuiqEErj5K41VdaK2QpeV8qvCQMI9cMU7ovbPoAMHjNgsGCZ2h2gpT1da/kqWYWLCwv+MIaX7A/KKqV8yKpUqWlkBD6U7B1a8+cwk/zpxNPusCT+0D5KSumtr9IYJfFCTpUCsg4miBRyYx4vnHh+yq2n/1mxablP6G1eocVX25hLz/trvMgSQ5HTX85JS1z3/fcEzNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lP8agbcq2AYAILADyUgk5nJ/czwsxA8ATaSe+V6FyBs=;
+ b=BNZiGUHM1VYccOLplqeqjFdv9LGeVzXOaJ5ZQN1tz80pYeWdJYqMP7lG0qAtXZmt6KoRcAGJQ81NNKdkQEYvnnPaOwzpQCRNz2b8pcSACK9uZZQArJQI/7XjBUr09SQrL7Wua9H676/tZTjNkj+oxqkvwhVhuJi+4tybgbITEYhCkXCCb/dX+kX2313Pkw15DD76S6E5pnDG378ETKXe6TmZGlTBrSU3/YPPHyXf4SAy55mQ/8cRWzjw/DLsDauowhOpP5FB/w5gUJrHecvclx764TRgM5oTBcOB+G4Jq4Nn8UFrBHHzAWFQFHQ6ezW5cvhSIGIxXcHQi5HchEi3kw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lP8agbcq2AYAILADyUgk5nJ/czwsxA8ATaSe+V6FyBs=;
+ b=raY6hGar69e12FrP/DIAVhCgnGos7uAR2lTW4uDkqcWc/mgg4e2cr3ZnjZXXAKaFGShfWzoVMH7P4dK2yxgyxSEOq9lF5sBH2+BgKOegmuEBACHawoTcAlCnIfXB/rZ2boE6fCJklSeCyPn8mOGKr1Y7N+grjcDUhLflPnZj+gM=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=oleksandr.suvorov@toradex.com; 
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
+ VI1PR05MB5456.eurprd05.prod.outlook.com (20.177.201.11) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.18; Wed, 18 Mar 2020 11:53:16 +0000
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2]) by VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2%7]) with mapi id 15.20.2814.021; Wed, 18 Mar 2020
+ 11:53:16 +0000
+X-Gm-Message-State: ANhLgQ3k/yH4oRhxZ5LnJMKIrp3699GUzrkm2GcF+QNZ7p6c9OlWFnF0
+ rt3N5Dc5A0bJhw4DkqwZ5TRePU2ZoDStZ9NMP1s=
+X-Google-Smtp-Source: ADFU+vuIN9vi3EnzahwoHqBu0uZg9qdX6KincFfsWht2IbWF+j4fV2L42M4aXtG7Pv38JtpTaFmsRwkNpHNmxW/8YWA=
+X-Received: by 2002:a37:4fd4:: with SMTP id d203mr3613801qkb.249.1584532071685; 
+ Wed, 18 Mar 2020 04:47:51 -0700 (PDT)
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
+ <20200317174043.GA1464607@ulmo>
+In-Reply-To: <20200317174043.GA1464607@ulmo>
+From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Date: Wed, 18 Mar 2020 13:47:40 +0200
+X-Gmail-Original-Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
+Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
+Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
+To: Thierry Reding <thierry.reding@gmail.com>
+X-ClientProxiedBy: MN2PR16CA0064.namprd16.prod.outlook.com
+ (2603:10b6:208:234::33) To VI1PR05MB3279.eurprd05.prod.outlook.com
+ (2603:10a6:802:1c::24)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from mail-qt1-f175.google.com (209.85.160.175) by
+ MN2PR16CA0064.namprd16.prod.outlook.com (2603:10b6:208:234::33) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.21 via Frontend
+ Transport; Wed, 18 Mar 2020 11:53:15 +0000
+Received: by mail-qt1-f175.google.com with SMTP id z8so16934014qto.12;
+ Wed, 18 Mar 2020 04:53:15 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3k/yH4oRhxZ5LnJMKIrp3699GUzrkm2GcF+QNZ7p6c9OlWFnF0
+ rt3N5Dc5A0bJhw4DkqwZ5TRePU2ZoDStZ9NMP1s=
+X-Google-Smtp-Source: ADFU+vuIN9vi3EnzahwoHqBu0uZg9qdX6KincFfsWht2IbWF+j4fV2L42M4aXtG7Pv38JtpTaFmsRwkNpHNmxW/8YWA=
+X-Received: by 2002:a37:4fd4:: with SMTP id
+ d203mr3613801qkb.249.1584532071685; Wed, 18 Mar 2020 04:47:51 -0700 (PDT)
+X-Gmail-Original-Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
+X-Originating-IP: [209.85.160.175]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: aad552e2-1dec-4d8f-aab6-08d7cb32f17b
+X-MS-TrafficTypeDiagnostic: VI1PR05MB5456:
+X-Microsoft-Antispam-PRVS: <VI1PR05MB545678DD6EDA9D3BA9E04BF9F9F70@VI1PR05MB5456.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 03468CBA43
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(4636009)(366004)(136003)(39850400004)(376002)(396003)(346002)(199004)(66556008)(66476007)(26005)(52116002)(42186006)(478600001)(54906003)(66946007)(53546011)(2906002)(55236004)(6666004)(81156014)(9686003)(55446002)(450100002)(5660300002)(186003)(8936002)(316002)(44832011)(8676002)(4326008)(6862004)(81166006)(86362001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5456;
+ H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: acF67KKwhF3KUaL0msz+cdXq1x0VSn6OCAssSb4Levcd+1jOP3+Ymn0jscm3VqQdBkmko2nYvXNFmRWTL+aM7Nk0a1SlST2Z5h3YPP/hdP6jsZd/M+lBaXI0UjMRfr3NwKmeq6tIa0AJ/LWOQY3FfoBOEWevPPUtCMjxmCvILf4mGh1IkpKz+N3qkccTowAsvH15FzH0Sx//Gv0x+DO8Q2DDuNBda88Kk/NALgLqivNXPbZSuA9DowzhTX49Z0GPwK+jz3T7yIY50OqWJUxB4FwlDdoZSDIRcq9Q1Ck6cm1OOdcTYD/28qur68/Viiubrx7JycaNS4gewuYooYsObJi3R/xdkz34JQ/QQxGP2x9MbkAtVye78zZ0X0oEBqBLakO6TpBnZP8RU/LzhfBlD3G2w50Jopb+lFZo4Nlm8v5r2PQpOPgvodwsBRrnAjRt
+X-MS-Exchange-AntiSpam-MessageData: s95irvv0uP4QK4Cns697H0ZBHq1kXuHSH+Q6r/4LHWf/57y1jXLsLN06LrViJVZPNWqia4nb30i3qRU7uerPhaR2JdRcKD9ZHJcTnfyl23QZemJ4XbvdMiYUyb1BzCtMms3CZa7QT8lIOKthuUsqfg==
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: aad552e2-1dec-4d8f-aab6-08d7cb32f17b
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2020 11:53:16.0089 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: lMFQJGCK2KoxTqEGrjBAuaQ5kUVbaKklBCjCmsUOcvowxvIO1pG50bZBnOxEPNXEPsd5ogiGbMKy2lT6H05YlMwaEIAGbaez3rYuXI4/G+A=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5456
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_044712_728876_113495B0 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200318_045320_768598_EFC73CBE 
+X-CRM114-Status: GOOD (  16.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mazziesaccount[at]gmail.com]
+ no trust [40.107.7.129 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,225 +138,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Andrei Stefanescu <andrei.stefanescu@microchip.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Sebastian Reichel <sre@kernel.org>, linux-samsung-soc@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-pm@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- Andy Gross <agross@kernel.org>, Markus Laine <markus.laine@fi.rohmeurope.com>,
- devicetree@vger.kernel.org, Charles Keepax <ckeepax@opensource.cirrus.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>,
- Sangbeom Kim <sbkim73@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- Mikko Mutanen <mikko.mutanen@fi.rohmeurope.com>,
- Rob Herring <robh+dt@kernel.org>, patches@opensource.cirrus.com
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>, Scott Branden <sbranden@broadcom.com>,
+ Tony Prisk <linux@prisktech.co.nz>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support ROHM BD99954 Battery Management IC
+On Tue, Mar 17, 2020 at 7:41 PM Thierry Reding <thierry.reding@gmail.com> wrote:
+>
+> On Tue, Mar 17, 2020 at 02:32:25PM +0200, Oleksandr Suvorov wrote:
+> > The polarity enum definition PWM_POLARITY_INVERSED is misspelled.
+> > Rename it to PWM_POLARITY_INVERTED.
+>
+> It isn't misspelled. "inversed" is a synonym for "inverted". Both
+> spellings are correct.
 
-ROHM BD99954 is a Battery Management IC for 1-4 cell Lithium-Ion
-secondary battery. BD99954 is intended to be used in space-constraint
-equipment such as Low profile Notebook PC, Tablets and other
-applications.
+> And as you noted in the cover letter, there's a conflict between the
+> macro defined in dt-bindings/pwm/pwm.txt. If they end up being included
+> in the wrong order you'll get a compile error.
 
-Series extracts a "linear ranges" helper out of the regulator
-framework. Linear ranges helper is intended to help converting
-real-world values to register values when conversion is linear. I
-suspect this is useful also for power subsystem and possibly for clk.
+This patch is a part of the patchset, which in result removes enum at all,
+so there will be no definition conflict.
 
-This version of series introduces new battry DT binding entries and
-adds the parsing in power_supply_get_battery_info().
+> The enum was named this way on purpose to make it separate from the
+> definition for the DT bindings. Note that DT bindings are an ABI and can
+> never change, whereas the enum pwm_polarity is part of a Linux internal
+> API and doesn't have the same restrictions as an ABI.
 
-Changelog v5:
- generic:
-   - rebased on top of 5.6-rc6.
- DT-bindings:
-   - Dropped -charger extension from compatible and removed wildcard x.
- regulators:
-   - squashed the regulator changes in one patch.
- power-supply KConfig:
-   - fixed indentiation
-   - dropped unnecessary 'default N' from BD99954.
+AFAIU, DTS files are not a part of ABI.
 
-Changelog v4:
- generic:
-   - rebase and drop RFC.
- DT-bindings:
-   - add I2C node address-cells and size-cells to fix yaml check errors
-   - uncomment multipleOf:
- bd70528:
-   - add patch which renames driver internal linear_range struct to
-     avoid collision when regulator/driver.h (which gets included from
-     rohm generic header) introduces the linear_range struct.
- regulators:
-   - rebase to v5.6-rc2 and convert also the two newly introduced
-     drivers to use linear_range struct instead of
-     regulator_linear_range.
- linear_ranges:
-   - Fix kerneldoc.
+I understand that enums are better than macros for some reasons.
+However, I think it is dangerous to use duplicate definitions in
+different places when values of these definitions use in the same
+code.
+So, given that the enum cannot be used in DT, I left only macros.
 
-Changelog RFC-v3:
- DT-bindings:
-   - fix the BD99954 binding (the *-microvolt Vs. *-microvolts issue is
-     still there. Not sure which one is correct)
-   - renabe tricklecharge-* binding to trickle-charge-* as suggested by
-     Rob.
- - drop the linear-ranges helper which was written for BD70528 and
-   extract the linear-range code from regulator framework instead.
- - refactor regulator framework to utilize extracted linear-ranges
-   code.
- - change the struct regulator_linear_range to linear_range from
-   regulator drivers.
- - refactor BD70528 to use regulator framework originated
-   linear-ranges code.
- - change BD99954 to use linear-ranges code from regulator framework
+You personally wrote that the enum pwm_polarity can change, so the
+desynchronization I quite possible.
 
-Changelog RFC-v2:
- DT-bindings:
-   - Used the battery parameters described in battery.txt
-   - Added few new parameters to battery.txt
-   - Added ASCII art charging profile chart for BD99954 to explain
-     states and limits.
- Linear ranges:
-   - Fixed division by zero error from linear-ranges code if step 0 is
-     used.
- Power-supply core:
-   - Added parsing of new battery parameters.
- BD99954 driver:
-   - converted to use battery parameters from battery node
-   - Added step 0 ranges for reg values which do not change voltage
-   - added dt-node to psy-config
-
-Patch 1:
-	DT binding docs for the new battery parameters
-Patch 2:
-	BD99954 charger DT binding docs
-Patch 3:
-	Linear ranges helpers
-Patch 4:
-	Rename driver internal struct linear_range from bd70528-power
-Patch 5:
-	Use linear-ranges helpers in regulator framework and
-	convert regulator drivers to use new linear_range struct.
-Patch 6:
-	Use linear-ranges helpers in bd70528 driver
-Patch 7:
-	Parsing of new battery parameters
-Patch 8:
-	ROHM BD99954 charger IC driver
-Patch 9:
-	Fix Kconfig help text indentiation for other entries as well.
-
----
-
-Matti Vaittinen (9):
-  dt-bindings: battery: add new battery parameters
-  dt_bindings: ROHM BD99954 Charger
-  drivers: base: add linear ranges helpers
-  power: supply: bd70528: rename linear_range to avoid collision
-  regulator: use linear_ranges helper
-  power: supply: bd70528: use linear ranges
-  power: supply: add battery parameters
-  power: supply: Support ROHM bd99954 charger
-  power: supply: Fix Kconfig help text indentiation
-
- .../bindings/power/supply/battery.txt         |    6 +
- .../bindings/power/supply/rohm,bd99954.yaml   |  155 +++
- drivers/base/Kconfig                          |    3 +
- drivers/base/Makefile                         |    1 +
- drivers/base/linear_ranges.c                  |  246 ++++
- drivers/power/supply/Kconfig                  |   34 +-
- drivers/power/supply/Makefile                 |    1 +
- drivers/power/supply/bd70528-charger.c        |  140 +-
- drivers/power/supply/bd99954-charger.c        | 1171 +++++++++++++++++
- drivers/power/supply/power_supply_core.c      |    8 +
- drivers/regulator/88pg86x.c                   |    4 +-
- drivers/regulator/88pm800-regulator.c         |    4 +-
- drivers/regulator/Kconfig                     |    1 +
- drivers/regulator/act8865-regulator.c         |    4 +-
- drivers/regulator/act8945a-regulator.c        |    2 +-
- drivers/regulator/arizona-ldo1.c              |    2 +-
- drivers/regulator/arizona-micsupp.c           |    4 +-
- drivers/regulator/as3711-regulator.c          |    6 +-
- drivers/regulator/as3722-regulator.c          |    4 +-
- drivers/regulator/axp20x-regulator.c          |   16 +-
- drivers/regulator/bcm590xx-regulator.c        |    8 +-
- drivers/regulator/bd70528-regulator.c         |    8 +-
- drivers/regulator/bd71828-regulator.c         |   10 +-
- drivers/regulator/bd718x7-regulator.c         |   26 +-
- drivers/regulator/da903x.c                    |    2 +-
- drivers/regulator/helpers.c                   |  130 +-
- drivers/regulator/hi6421-regulator.c          |    4 +-
- drivers/regulator/lochnagar-regulator.c       |    4 +-
- drivers/regulator/lp873x-regulator.c          |    4 +-
- drivers/regulator/lp87565-regulator.c         |    2 +-
- drivers/regulator/lp8788-buck.c               |    2 +-
- drivers/regulator/max77650-regulator.c        |    2 +-
- drivers/regulator/mcp16502.c                  |    4 +-
- drivers/regulator/mp8859.c                    |    2 +-
- drivers/regulator/mt6323-regulator.c          |    6 +-
- drivers/regulator/mt6358-regulator.c          |    8 +-
- drivers/regulator/mt6380-regulator.c          |    6 +-
- drivers/regulator/mt6397-regulator.c          |    6 +-
- drivers/regulator/palmas-regulator.c          |    4 +-
- drivers/regulator/qcom-rpmh-regulator.c       |    2 +-
- drivers/regulator/qcom_rpm-regulator.c        |   14 +-
- drivers/regulator/qcom_smd-regulator.c        |   70 +-
- drivers/regulator/rk808-regulator.c           |   10 +-
- drivers/regulator/s2mps11.c                   |   14 +-
- drivers/regulator/sky81452-regulator.c        |    2 +-
- drivers/regulator/stpmic1_regulator.c         |   18 +-
- drivers/regulator/tps65086-regulator.c        |   10 +-
- drivers/regulator/tps65217-regulator.c        |    4 +-
- drivers/regulator/tps65218-regulator.c        |    6 +-
- drivers/regulator/tps65912-regulator.c        |    4 +-
- drivers/regulator/twl-regulator.c             |    4 +-
- drivers/regulator/twl6030-regulator.c         |    2 +-
- drivers/regulator/wm831x-dcdc.c               |    2 +-
- drivers/regulator/wm831x-ldo.c                |    4 +-
- drivers/regulator/wm8350-regulator.c          |    2 +-
- drivers/regulator/wm8400-regulator.c          |    2 +-
- include/linux/linear_range.h                  |   48 +
- include/linux/power/bd99954-charger.h         | 1075 +++++++++++++++
- include/linux/power_supply.h                  |    4 +
- include/linux/regulator/driver.h              |   27 +-
- 60 files changed, 3018 insertions(+), 356 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/power/supply/rohm,bd99954.yaml
- create mode 100644 drivers/base/linear_ranges.c
- create mode 100644 drivers/power/supply/bd99954-charger.c
- create mode 100644 include/linux/linear_range.h
- create mode 100644 include/linux/power/bd99954-charger.h
+> As far as I'm concerned this is completely unnecessary churn that's
+> potentially going to come back and bite us, so I see no reason to accept
+> this.
 
 
-base-commit: fb33c6510d55 ("Linux 5.6-rc6")
--- 
-2.21.0
+>
+> Thierry
+--
+Best regards
+Oleksandr Suvorov
 
-
--- 
-Matti Vaittinen, Linux device drivers
-ROHM Semiconductors, Finland SWDC
-Kiviharjunlenkki 1E
-90220 OULU
-FINLAND
-
-~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
-Simon says - in Latin please.
-~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
-Thanks to Simon Glass for the translation =] 
+Toradex AG
+Ebenaustrasse 10 | 6048 Horw | Switzerland | T: +41 41 500 48 00
 
 _______________________________________________
 linux-arm-kernel mailing list
