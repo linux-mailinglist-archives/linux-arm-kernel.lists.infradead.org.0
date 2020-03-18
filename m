@@ -2,70 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B23F18A92B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:23:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B97A18A950
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 00:37:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Gufmb0j0T5t9dasXn6wVmMBmrkH6Ix9aqj50jQpVKk=; b=WCMY/1Xc8X+b2F
-	SB1rLz7Yeomp6EjnMa7XJ2pmkq8EkzN9GoryLXxM36dZJsfVsnc+ZIkHBk1J48MnxuucjkhcrT0ef
-	3YLRcGVlCLktiAlveUDeH0JwXI7b6buYP/ui4pOTrTu6Er+j3UiIEofEIzDNhIA5EQJEYKt7nFF7f
-	Dc4stBVoKw+mvoJqpmyMqaO9G18F/NesDKPT++5YdAyWzFtHw+SX9i0K0TPGzvW/FC1eeUgqarE/r
-	rAXFBVpOwNz6F3ZtuvSlhRfvjVifPBA4LjlFI7yjFo1zBZJxUgae0fXguKEX//HAOk3n+0gbvuP3p
-	y38yxErjR4R26FsqTA7g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=abfkr1tjjUaXuIwPkFn59ahwgBATKfz1XP4BJVOJLhk=; b=Dc5TyTMyKhsXMy
+	L/05QK/TcIplYPF236k5Lu2PR3lrovy7+xe/GfLID5JCkLwG8TLMylONEVEwhF1OYVwqSud630x4N
+	+cnq7e/FENdrJDHjYpkx1EjCs6CvdGrNdv49ueYJ2ftxc0qfGAzOazkhpJKrcrYkoBX5Hv/JEprRR
+	CzssKDX0C5/jScV/fMkWFzstn8Ue0zerEHsXPm9Aib5Vr8hto0FbGr2+5oq6M0YxGvV25+ukWiP/r
+	V7/u6YppLI8fe4vrRQjlj+8odHazh7kU8aPAXS20mY9r2vJ71iYpwaYZrPDDQbVUaVUOVVWesFEhb
+	WJt7co1e7l0p2pwbeKzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEi1W-0007EO-TV; Wed, 18 Mar 2020 23:22:54 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jEiFI-0004IW-Hg; Wed, 18 Mar 2020 23:37:08 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEi1M-0007Dn-6C
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 23:22:45 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 97FC55F;
- Thu, 19 Mar 2020 00:22:41 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1584573761;
- bh=1QAaixOPnCwRw0nvHVWpdyGWaxWNnlcsHJ49Rt5k58U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oE6t/vXko3yx5XAp9J589i8nmC888tp0v4tRNpiAWr96RdlwpAmyPgSnKB6ylZ3Ed
- KCyszDJ5PVG8nNuo9n3ParRafUZPjU/cytzUaXu726C2RtCCbBFPU/TxL+ESM52ohX
- G6UZkWgj7t41IP17PvvPQAychsPHRSDWPCPYrEyI=
-Date: Thu, 19 Mar 2020 01:22:36 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH v3 3/4] media: i2c: ov5645: Set maximum leverage of
- external clock frequency to 24480000
-Message-ID: <20200318232236.GJ24538@pendragon.ideasonboard.com>
-References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1584133954-6953-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200313212345.GM4751@pendragon.ideasonboard.com>
- <OSBPR01MB359079EAA32E0DCBF63C6886AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
- <CA+V-a8t-rA-6AmZry63QeXN6pvGWVtcEEuHaDA1jsS-x+30oiQ@mail.gmail.com>
+ id 1jEiF7-0004Ge-Uy; Wed, 18 Mar 2020 23:36:59 +0000
+IronPort-SDR: W8j5kD98qEaSGdce6PH/CGQVfx+2LVQmjewEHk2pnir7Vefy5JSHt1hT+67ny2S8uor1CSAHyJ
+ /RIqQrAwkFMw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 18 Mar 2020 16:36:57 -0700
+IronPort-SDR: iWLL0so8vWAv8LJ3GsCuRjlYx5tk6WyY6FjDNM9HWhQejXG7Wz9SFkrksY/mObp65UquXQBFLi
+ iMcp6fB4PsSw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,569,1574150400"; d="scan'208";a="248349506"
+Received: from mannamax-mobl1.amr.corp.intel.com (HELO [10.252.140.209])
+ ([10.252.140.209])
+ by orsmga006.jf.intel.com with ESMTP; 18 Mar 2020 16:36:56 -0700
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-2-mike.kravetz@oracle.com>
+ <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
+ <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
+From: Dave Hansen <dave.hansen@intel.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=dave.hansen@intel.com; keydata=
+ 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
+Message-ID: <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
+Date: Wed, 18 Mar 2020 16:36:56 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+V-a8t-rA-6AmZry63QeXN6pvGWVtcEEuHaDA1jsS-x+30oiQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_162244_374718_25E2883B 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200318_163658_050112_40235B8E 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,88 +121,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, Shawn Guo <shawnguo@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Albert Ou <aou@eecs.berkeley.edu>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
-
-On Wed, Mar 18, 2020 at 10:41:57PM +0000, Lad, Prabhakar wrote:
-> On Fri, Mar 13, 2020 at 9:31 PM Prabhakar Mahadev Lad wrote:
-> > On 13 March 2020 21:24, Laurent Pinchart wrote:
-> >> On Fri, Mar 13, 2020 at 09:12:33PM +0000, Lad Prabhakar wrote:
-> >>> While testing on Renesas RZ/G2E platform, noticed the clock frequency
-> >>> to be 24242424 as a result the probe failed. However increasing the
-> >>> maximum leverage of external clock frequency to 24480000 fixes this
-> >>> issue. Since this difference is small enough and is insignificant set
-> >>> the same in the driver.
-> >>>
-> >>> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >>> ---
-> >>>  drivers/media/i2c/ov5645.c | 6 ++++--
-> >>>  1 file changed, 4 insertions(+), 2 deletions(-)
-> >>>
-> >>> diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
-> >>> index 4fbabf3..b49359b 100644
-> >>> --- a/drivers/media/i2c/ov5645.c
-> >>> +++ b/drivers/media/i2c/ov5645.c
-> >>> @@ -1107,8 +1107,10 @@ static int ov5645_probe(struct i2c_client *client)
-> >>>  }
-> >>>
-> >>>  xclk_freq = clk_get_rate(ov5645->xclk);
-> >>> -/* external clock must be 24MHz, allow 1% tolerance */
-> >>> -if (xclk_freq < 23760000 || xclk_freq > 24240000) {
-> >>> +/* external clock must be 24MHz, allow a minimum 1% and a
-> >> maximum of 2%
-> >>> + * tolerance
-> >>
-> >> So where do these numbers come from ? I understand that 2% is what you
-> >> need to make your clock fit in the range, but why -1%/+2% instead of -
-> >> 2%/+2% ? And why not 2.5 or 3% ? The sensor datasheet documents the
-> >> range of supported xvclk frequencies to be 6MHz to 54MHz. I understand
-> >> that PLL parameters depend on the clock frequency, but could they be
-> >> calculated instead of hardcoded, to avoid requiring an exact 24MHz input
-> >> frequency ?
-> >>
-> > To be honest I don't have the datasheet for ov5645, the flyer says 6-54Mhz but the
-> > logs/comment says 24Mhz.
-> >
-> Comparing to ov5640 datasheet [1] (which I am assuming might be
-> similar to ov5645),
-
-Let's assume this to be the case, I see no reason not to :-)
-
-> this change should affect the driver.
-
-How do you mean ?
-
-> [1] https://cdn.sparkfun.com/datasheets/Sensors/LightImaging/OV5640_datasheet.pdf
+On 3/18/20 3:52 PM, Mike Kravetz wrote:
+> Sounds good.  I'll incorporate those changes into a v2, unless someone
+> else with has a different opinion.
 > 
-> >>> + */
-> >>> +if (xclk_freq < 23760000 || xclk_freq > 24480000) {
-> >>>  dev_err(dev, "external clock frequency %u is not supported\n",
-> >>>  xclk_freq);
-> >>>  return -EINVAL;
+> BTW, this patch should not really change the way the code works today.
+> It is mostly a movement of code.  Unless I am missing something, the
+> existing code will always allow setup of PMD_SIZE hugetlb pages.
 
--- 
-Regards,
+Hah, I totally skipped over the old code in the diff.
 
-Laurent Pinchart
+It looks like we'll disable hugetblfs *entirely* if PSE isn't supported.
+ I think this is actually wrong, but nobody ever noticed.  I think you'd
+have to be running as a guest under a hypervisor that's lying about PSE
+not being supported *and* care about 1GB pages.  Nobody does that.
 
 _______________________________________________
 linux-arm-kernel mailing list
