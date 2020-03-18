@@ -2,62 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CF6118955F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 06:33:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EDB9189588
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 07:03:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:MIME-Version:In-Reply-To:
-	Subject:To:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=A/II6mEhPvWcjFJ6MF0BvgK5+09Gi+puOoWy25Xn93c=; b=oB0bH2uk/YV1Ik
-	dyhWsSX1heL4qdiiLGhrdaqGy1YMMDQAEavAMTC26JPs2ivX88eu2ipNzpKGTe6cetZovJEhOBRS7
-	g3cuv+vETDB8FMUR4ZDfA0qCkMB2Q3XmZOWtSv8w/BHgYM9r2wbTqkirV2Kk4/KSJqHmZ9DX5C5BD
-	H4baQ9mDXkNh4H0/Ok6ny3Vxv537352PGTI2z16e5/9h0Je0FW15XuUfECdy2YC5lRTZoaOTKIAVC
-	Bqwxyp+qdiDiiTWiW74P3STXVnfWJfKRd/X07KzL17qVeK7aE/8+xKmFqq4RbXvpIV7yCmZz54SQU
-	ymtpNkkxIdp/RICvyQQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/DBGmQMJPMteLXylKHXTQzML2zzU1eWvIdbjBhviEho=; b=eBZWuY7ZzFMeas
+	wGf4OrADPd/i1l8xcyMwuW/XgucRVj5rolv7QYu3HUMtom9FSjzy3fCgbmgP13ttbhWWMF6oaODbX
+	D5mmqqsQ7Ix/hck2L531UhlOkF0VR3DINvU5mfq+ZmqLmnoK5QJCGmCdZvRWjXvf0qlnMBKWcl+Rw
+	fjat1ymhsvwohLZtNbN8pU8HqkX3EPOPsiIX6d3UY+UFYBJsaouCzfbwvSon5yXDVAhliBZhLQnen
+	Wcsl8NzD6iOw1Mnajz/yZnI+Fiqu09983YVebgBgQc0uRB85ad+VcPdGfsSUod9xbHbnPMBVi6/Ls
+	r4oEITe1Ev56CNgBhc/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jERK0-0004FM-IG; Wed, 18 Mar 2020 05:32:52 +0000
-Received: from m177129.mail.qiye.163.com ([123.58.177.129])
+	id 1jERnO-0005dB-FU; Wed, 18 Mar 2020 06:03:14 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jERJp-0004EV-OC
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 05:32:44 +0000
-Received: from vivo.com (wm-2.qy.internal [127.0.0.1])
- by m177129.mail.qiye.163.com (Hmail) with ESMTP id 1ABAA5C18EA;
- Wed, 18 Mar 2020 13:32:28 +0800 (CST)
-Message-ID: <AG*ACQC2CEOOiVKFwxZXw4qM.3.1584509548085.Hmail.wenhu.wang@vivo.com>
-To: Zheng Wei <wei.zheng@vivo.com>
-Subject: =?UTF-8?B?UmU6UmU6IFtQQVRDSF0gYXJtNjQ6IGFkZCBibGFuayBhZnRlciAnaWYn?=
-X-Priority: 3
-X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com
-X-Originating-IP: 58.251.74.227
-In-Reply-To: <20200317222823.GG20788@willie-the-truck>
+ id 1jERnE-0005bx-Gg; Wed, 18 Mar 2020 06:03:05 +0000
+X-UUID: 0010e68ef9d542c4a1e19e54408ef303-20200317
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=JtfsImJ1VhBceXif49tzk/48LaZcVQ1FVbSnBovfdT8=; 
+ b=lkfUPx7g/8ZbGbhJ0ml3nUUU84sJF8s40F748F1YqvxvRENnG6VQ28Jss4VnhdnvKJNiFJAamenKri+7x95wDhVVt3tmDwLCnsMJYaQ3imIVTXO6aG3uRNoOY0ORo4MuIth6ti1ye759IJ7r5JWhp9zE7cUJ8hrJnWiJ1HyHLak=;
+X-UUID: 0010e68ef9d542c4a1e19e54408ef303-20200317
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1401561184; Tue, 17 Mar 2020 22:03:01 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 17 Mar 2020 23:02:59 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 18 Mar 2020 14:00:40 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 18 Mar 2020 14:03:37 +0800
+Message-ID: <1584511378.14250.55.camel@mtksdccf07>
+Subject: Re: [SPAM]Re: [PATCH v6 3/7] scsi: ufs: introduce common delay
+ function
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Bart Van Assche <bvanassche@acm.org>
+Date: Wed, 18 Mar 2020 14:02:58 +0800
+In-Reply-To: <b7a6045e-9615-0cd2-9812-2871bf9ba44c@acm.org>
+References: <20200316085303.20350-1-stanley.chu@mediatek.com>
+ <20200316085303.20350-4-stanley.chu@mediatek.com>
+ <fdf91490-9c7d-df34-1c1f-e03e12855378@acm.org>
+ <1584404000.14250.28.camel@mtksdccf07>
+ <b7a6045e-9615-0cd2-9812-2871bf9ba44c@acm.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Received: from wenhu.wang@vivo.com( [58.251.74.227) ] by ajax-webmail (
- [127.0.0.1] ) ; Wed, 18 Mar 2020 13:32:28 +0800 (GMT+08:00)
-From: =?UTF-8?B?546L5paH6JmO?= <wenhu.wang@vivo.com>
-Date: Wed, 18 Mar 2020 13:32:28 +0800 (GMT+08:00)
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VJTkNCQkJDSU9OSUhCSFlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kJHlYWEh9ZQUhNTE9LTEJNQ0xPN1dZDB4ZWUEPCQ4eV1kSHx4VD1lB
- WUc6PFE6OCo4STg#NDQSLTA9DAMhIwxPCjZVSFVKTkNPTktCTk5LSUNCVTMWGhIXVQweFRMOVQwa
- FRw7DRINFFUYFBZFWVdZEgtZQVlOQ1VJTkpVTE9VSUlMWVdZCAFZQU9NQkw3Bg++
-X-HM-Tid: 0a70ec20f65c6447kurs1abaa5c18ea
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_223242_541463_0C40BFF0 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200317_230304_568610_5FEF7174 
+X-CRM114-Status: GOOD (  22.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [123.58.177.129 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,58 +89,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Hanjun Guo <guohanjun@huawei.com>,
- linux-kernel@vger.kernel.org, kernel@vivo.com,
- Yunfeng Ye <yeyunfeng@huawei.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Allison Randal <allison@lohutok.net>
+Cc: linux-scsi@vger.kernel.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>, andy.teng@mediatek.com,
+ jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will@kernel.org>
-Date: 2020-03-18 06:28:24
-To:  Zheng Wei <wei.zheng@vivo.com>
-Cc:  Catalin Marinas <catalin.marinas@arm.com>,Hanjun Guo <guohanjun@huawei.com>,Enrico Weigelt <info@metux.net>,Allison Randal <allison@lohutok.net>,Greg Kroah-Hartman <gregkh@linuxfoundation.org>,Thomas Gleixner <tglx@linutronix.de>,Yunfeng Ye <yeyunfeng@huawei.com>,linux-arm-kernel@lists.infradead.org,linux-kernel@vger.kernel.org,kernel@vivo.com,wenhu.wang@vivo.com
-Subject: Re: [PATCH] arm64: add blank after 'if'>On Fri, Mar 13, 2020 at 10:54:02PM +0800, Zheng Wei wrote:
->> add blank after 'if' for armv8_deprecated_init()
->> to make it comply with kernel coding style.
->> 
->> Signed-off-by: Zheng Wei <wei.zheng@vivo.com>
->> ---
->>  arch/arm64/kernel/armv8_deprecated.c | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->> 
->> diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
->> index 7832b3216370..4cc581af2d96 100644
->> --- a/arch/arm64/kernel/armv8_deprecated.c
->> +++ b/arch/arm64/kernel/armv8_deprecated.c
->> @@ -630,7 +630,7 @@ static int __init armv8_deprecated_init(void)
->>  		register_insn_emulation(&cp15_barrier_ops);
->>  
->>  	if (IS_ENABLED(CONFIG_SETEND_EMULATION)) {
->> -		if(system_supports_mixed_endian_el0())
->> +		if (system_supports_mixed_endian_el0())
->>  			register_insn_emulation(&setend_ops);
->>  		else
->>  			pr_info("setend instruction emulation is not supported on this system\n");
->
->(Catalin: I'm just acking these trivial typo/style fixes to get them out
->of my inbox; do whatever you like with them ;)
->
->Acked-by: Will Deacon <will@kernel.org>
->
->Will
+Hi Bart,
 
-Shouldn't you have Cc trivial<trivial@kernel.org>?
-Asked-by: Wang Wenhu <wenhu.wang@vivo.com>
+On Mon, 2020-03-16 at 20:59 -0700, Bart Van Assche wrote:
+> On 2020-03-16 17:13, Stanley Chu wrote:
+> > On Mon, 2020-03-16 at 09:23 -0700, Bart Van Assche wrote:
+> >> On 3/16/20 1:52 AM, Stanley Chu wrote:
+> >>> +void ufshcd_wait_us(unsigned long us, unsigned long tolerance, bool can_sleep)
+> >>> +{
+> >>> +	if (!us)
+> >>> +		return;
+> >>> +
+> >>> +	if (us < 10 || !can_sleep)
+> >>> +		udelay(us);
+> >>> +	else
+> >>> +		usleep_range(us, us + tolerance);
+> >>> +}
+> >>> +EXPORT_SYMBOL_GPL(ufshcd_wait_us);
+> >>
+> >> I don't like this function because I think it makes the UFS code harder 
+> >> to read instead of easier. The 'can_sleep' argument is only set by one 
+> >> caller which I think is a strong argument to remove that argument again 
+> >> and to move the code that depends on that argument from the above 
+> >> function into the caller. Additionally, it is not possible to comprehend 
+> >> what a ufshcd_wait_us() call does without looking up the function 
+> >> definition to see what the meaning of the third argument is.
+> >>
+> >> Please drop this patch.
+> > 
+> > Thanks for your review and comments.
+> > 
+> > If the problem is the third argument 'can_sleep' which makes the code
+> > not be easily comprehensible, how about just removing 'can_sleep' from
+> > this function and keeping left parts because this function provides good
+> > flexibility to users to choose udelay or usleep_range according to the
+> > 'us' argument?
+> 
+> Hi Stanley,
+> 
+> I think that we need to get rid of 'can_sleep' across the entire UFS
+> driver. As far as I can see the only context from which 'can_sleep' is
+> set to true is ufshcd_host_reset_and_restore() and 'can_sleep' is set to
+> true because ufshcd_hba_stop() is called with a spinlock held. Do you
+> agree that it is wrong to call udelay() while holding a spinlock() and
+> that doing so has a bad impact on the energy consumption of the UFS
+> driver?
 
-Wenhu
+Thanks for your positive suggestion.
+
+Indeed using udelay() with spinlock held may have performance or power
+consumption concerns. However the concern in ufshcd_hba_stop() could be
+ignored in most cases since the execution period of changing bit 0 in
+REG_CONTROLLER_ENABLE from 1 to 0 shall be very fast. In my local
+environment, it could have only several 'ns' latency thus udelay() was
+never executed during the stress test. The delay here may be required
+for rare cases that host is under an abnormal state.
 
 
+> Has it already been considered to use another mechanism to
+> serialize REG_CONTROLLER_ENABLE changes, e.g. a mutex?
+
+I think mutex is not suitable for REG_CONTROLLER_ENABLE case because
+stopping host (by what ufshcd_hba_stop does) will reset doorbell bits in
+the same time by host, and those doorbell bits are looked up by UFS
+interrupt routine for request completion flow as well.
+
+I agree that "can_sleep" can be improved and may have other optimized
+way but this is beyond this patch set. I would like to remove the
+"can_sleep" related modification from this patch set first.
+
+Thanks,
+Stanley Chu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
