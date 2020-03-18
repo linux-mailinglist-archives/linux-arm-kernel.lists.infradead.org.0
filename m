@@ -2,86 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03A571899C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:43:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 774EF1899CD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:44:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xC3OQ4TOQFynWc7JC6IAY1SZVHnb029v81zVqXUs7Z8=; b=afKxXK3CDF9hb9
-	DtknfKLVXEGuOtdgDsF5YzeiH1qI8gSOQ9yPEjBJ6uetwVof/eB9e4mYSuVIOm1RuM7Bpk+tzpr9/
-	9xkbPmWybS+g/757wupgaGZGerxQ7XBS7v4iy5qxdJwGfTyRs4dRMLXrKjawnAjFmijOaQChvfv3/
-	uVMFzWjsLvSYraJqGIBwNNGItnikspfjJTY+f6ca3dOmWynGfs6TGdJGD9gu0UmNN20JtKpIeG2ry
-	OP2gYRzk/f20nn2irJKpSjZOKOY6cKPAgOKpTuniQF7h5Ut4E77z7k54Cu7pxy7zpqF1qzmvN05nw
-	7eKKdiKvMhutuBqR52jA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GporOCtFtk03oq8i16hVtOaL1KUChF/i0v/Lzy6oaHc=; b=QzfbxNhzcQyMHHJ8YPfXinj8F
+	053+ATGeauRs2DvIbQFcztjAhG9HLjdYVSYP8Zi3DALRf6tt2YAutD5/HeKR2hZ4CAknAzarwUjWf
+	HqCUooE9bmSqT+zxCnuH8291G/vGYTlzg0RrFQ45gERNW7Mb8+5ZNXk7WZRMXCQJ5FbRVkq8bffVB
+	2m9Ipd/LN9iMCZyf/7OaVSfHiE7lLrW4lMv3Xi/z9vL0lWQnzj1sQokpn3Y1P5sVyMNYXZNKm81lV
+	Rom1twBXndLqKA5QImZB2kFAV4P3U9Ik3DgtwfqvjgLr0o1Wv4hzeuu+ASYgC7qi/miWWH0u0qlBT
+	R+Bc3n95Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEWAn-0001mp-I5; Wed, 18 Mar 2020 10:43:41 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEWAf-0001lH-4B
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:43:35 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Eugen.Hristev@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="Eugen.Hristev@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 0zvM3WYQSKGglrOZe4qS9nW731ZR99ZYSOTnB9obzkpu7Fa7oUWoFakKB88/Mt53am09je59e6
- vLKhxRsckpIA9/gL91TlxjWTJui5T3F6cWQ03qIQye5nU1V4ylM07D14KIrY2NOzYvIXQysdlr
- 5AsMjzeWjWJBIJtlcLsgA2xso+WeEGH4qVLBVT6rJBlS94gVitMcCPaIq38odYzrzF6kim/YiG
- wVkOg2SF40rhk9hI/xHGKKBB7nZYxm/Lqz937naM/I1UBD2hS8jfznkxyPjIL9bY1jZ01F9f9y
- RLE=
-X-IronPort-AV: E=Sophos;i="5.70,566,1574146800"; d="scan'208";a="69337725"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 18 Mar 2020 03:43:24 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 18 Mar 2020 03:43:20 -0700
-Received: from ROB-ULT-M18282.microchip.com (10.10.115.15) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 18 Mar 2020 03:43:09 -0700
-From: Eugen Hristev <eugen.hristev@microchip.com>
-To: <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] ARM: dts: at91: sama5d27_wlsom1_ek: add USB device node
-Date: Wed, 18 Mar 2020 12:42:36 +0200
-Message-ID: <20200318104236.21114-1-eugen.hristev@microchip.com>
-X-Mailer: git-send-email 2.20.1
+	id 1jEWBQ-00022q-4o; Wed, 18 Mar 2020 10:44:20 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEWBF-00021p-NJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:44:11 +0000
+Received: from localhost (p54B333FA.dip0.t-ipconnect.de [84.179.51.250])
+ by pokefinder.org (Postfix) with ESMTPSA id 33AAF2C097D;
+ Wed, 18 Mar 2020 11:44:06 +0100 (CET)
+Date: Wed, 18 Mar 2020 11:44:05 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH] drivers/i2c/busses/i2c-imx.c:remove duplicate print
+ after platform_get_irq()
+Message-ID: <20200318104405.rsqiw5og4xbuv6n5@katana>
+References: <20200318100748.17540-1-tangbin@cmss.chinamobile.com>
+ <20200318101844.55c273zh242ymxcf@pengutronix.de>
 MIME-Version: 1.0
+In-Reply-To: <20200318101844.55c273zh242ymxcf@pengutronix.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_034333_175860_931BAF16 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20200318_034409_907042_DE589D26 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,58 +61,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eugen.hristev@microchip.com, cristian.birsan@microchip.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tang Bin <tangbin@cmss.chinamobile.com>, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, linux@rempel-privat.de,
+ linux-i2c@vger.kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4430737548517303122=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Cristian Birsan <cristian.birsan@microchip.com>
 
-Add USB device node for WLSoM1 EK and enable it.
+--===============4430737548517303122==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bce44n5wofewyr2x"
+Content-Disposition: inline
 
-Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
-[eugen.hristev@microchip.com: ported to 5.4]
-Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
----
- arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
 
-diff --git a/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts b/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
-index 0b9fa2942dff..6b8461278950 100644
---- a/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
-+++ b/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
-@@ -186,6 +186,11 @@
- 		pinmux = <PIN_PA10__GPIO>;
- 		bias-disable;
- 	};
-+
-+	pinctrl_usba_vbus: usba_vbus {
-+		pinmux = <PIN_PA16__GPIO>;
-+		bias-disable;
-+	};
- };
- 
- &pwm0 {
-@@ -248,6 +253,13 @@
- 	status = "okay";
- };
- 
-+&usb0 {
-+	atmel,vbus-gpio = <&pioA PIN_PA16 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usba_vbus>;
-+	status = "okay";
-+};
-+
- &usb1 {
- 	num-ports = <3>;
- 	atmel,vbus-gpio = <0
--- 
-2.20.1
+--bce44n5wofewyr2x
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi Uwe,
+
+> Maybe add a comment for the next person who wonders about an error path
+> without error message? Something like:
+>=20
+> 	irq =3D platform_get_irq(pdev, 0);
+> 	if (irq < 0)
+> 		/*
+> 		 * platform_get_irq() already issued an error message, so
+> 		 * fail silently here.
+> 		 */
+> 		 return irq;
+
+Hmm, too much boilerplate for my taste. I'd rather assume it will be
+printed during the call.
+
+> And to get some extra kudos mention the commit that modified
+> platform_get_irq() to emit a message in the commit log.
+
+Yes.
+
+Kind regards,
+
+   Wolfram
+
+
+--bce44n5wofewyr2x
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5x+3UACgkQFA3kzBSg
+Kba8nA/+P5T/G4aR4JXxKUJpSsklVKMksLmr30FVYSwIDwRM+ZtiE1Gb5YlxIq2w
+xGrwNdKPkoYaYYfPeV51FgcQ0p6LcVF1SkgFxox8B8ga20m65uyu+/CoSeblzcJ+
+J7OP6D1XHGezNJ75wD6rUO9buqqBhxDOQ1VvQsKxVN6V16Zc4TULuU5CZNh6KbnM
+h//fMAuKK2mubFJVYiDHZCeaFPgCLESrmYmuCup46fPkthkMwZbynpeXo23dvhd4
+5rh8tB1n1DpCz4JICMfyaTlLMD53U3Lkq4UivUmwi3oU17rnhNqfYvggZ+gGmucz
+UNZGT9FiMCRzwidSU9WitQbF8CkkS7+0RhVRf/8T52GtZm8VroRg3apGfp+FpzP3
+Ep/bFgZrBJuDCY/27JtiaGlF4qGSFis0ZvdOnneEC1pzwQ5WuaN0yJw6PdYq5W6X
+Hy2Bn1m9gsnI1DfEF47y6jlDgjmMAt0huqoTKwvWIAJnaE8SQfGIaHsB667c/Vo6
+BEHCeewgbX9crZk5S7P6swVEXIoFAVZYnCAqFowunYx81dKn/VV/mHiuwVw6gy7A
+tnvZh1GvJGAzC5JibIhAfA6ZExGesQRR36XegKDiQm2YrLMH8l0qYmUjkYCWZjE4
+Ejq+5Srx6Sxk+rZxdMmxA8stM2qhn+QFnUtZKJ4g6jdTYeI6720=
+=MP33
+-----END PGP SIGNATURE-----
+
+--bce44n5wofewyr2x--
+
+
+--===============4430737548517303122==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4430737548517303122==--
+
