@@ -2,84 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD32F18A855
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:38:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7910418A864
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:39:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FGpqYLmx6nM8V9aUTkwcVBquehXgJ8sA99OcSZXUl7c=; b=VxFJXForOOkNyV
-	RFid0M1OFqIWrIVgx6wXMi0RDxc/uHK2R6TxKPHsL0ndCAUwm3C4Z2BIkeHKRqxwB0p1UEcRRqWCk
-	bs6uKSHy8WIOizda9BWDFVlf1jOcl8mVdaiUvvQhT65kA1nCOmx5sGI0w7qeEkarnI4IHjvltijgC
-	N2+C1C8vCzaOVDDRhDt1x9jlOFz93c9WIe572OqN0nl0tZCbpXf9CUm0kSDLUOGT8CrKGtSCWbUkv
-	6gcB48PDI6C/K6TUJuDEqKXalC1WTmxBz1I2DC90bf7QtgdokR1MMAJRHQD+Js/NamDXLFAnibsT7
-	xWZEgHDR7lwg0Y9/jSPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4FDjszDLC6X+v+A5B/X3CSky+UBPaGU/h19ng9Iy0s8=; b=lWb8TdaAtbUrMZ
+	5D2l8688JdX8w6ipJokC/98oRJT+6coZhktecRHFpEJ2S1aimtfaGSQiGBHxBTiGWsEXiU/p1ea49
+	UJ0DEGZ3bpDORXzu+aUG0aNqMtsx1CObIghueqPnbJvVP+KPipIVxKCzOjx+kKbv3qgUTZnfI/O1W
+	YfRRWCH+QlnrEbehYExaqIRxYSAOX+c+fNtGF/tpGfwZ+ZPGQ8aW+uC0D4QkDgmM07ZMDbFnBbub6
+	Qj8iomVItkTZJboWYxI1xbbz+HuPq3IKAfu5+7gnTJ2/VbVMD06MdYT2vxfTW5k8gPVIHmbmmmG9X
+	tMBJI0WtRrmI6rniG+wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEhKP-0004pb-0s; Wed, 18 Mar 2020 22:38:21 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jEhLj-0005E0-DC; Wed, 18 Mar 2020 22:39:43 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEhKE-0004pC-Vu
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 22:38:12 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r2so385643otn.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 15:38:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OEbb45cGPFZm8qmmQB3oPZ+2/N+3osCrsUq9riyORzM=;
- b=PsUlFx+EpgrcwOaqknrsFqpYwVWuwwev8sFr4FUn9wBNgafRsum7+is+Jdjs/1e9SA
- xTt+RNNSUP8M/ypsUaWm5BAbDqRbmLNrnPCvfpkchubePG8n2S9Pac5fRF+BPLDdqZfA
- JwMMxaQYOy1gbmYrnuK/8T5Cw+L/pwew14vhbixQGdOOL9284sb0hGl8IvNKVPHsgfu5
- LkkeA18Zw8wqFUtY/lBa0koAgl0zxPkJTo5uM3AEvxATxvO8o6dITmUIzCwuIQteGsdF
- gHL1CXZ6f6w7MCwZ5/j88CO8QyvtWJhwsJTXYo8Ngee36RIBI4SW9YRESBeBbfobwX7g
- qf/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OEbb45cGPFZm8qmmQB3oPZ+2/N+3osCrsUq9riyORzM=;
- b=hCgA0XA3VFfy9yQp8khBaLIJ3lyuwKoYMYeUIbkDoY/uC7yiELZUrphSIsaToL8NxD
- P4YD7fcc5Tcwn+WKxlLAl+FS8FsRkCwcHxTN14lyWw0sM/d0bm40ByTGDjg24EL4eX+0
- cfmpDsJpX49PSo+puNMU82W6zkH0W7k5sdFU7A+O9aLVJ3MkcpDNxYpZoMgHXjrk5aS7
- lX5sFTrYDUNbVqwTVZ06LgQI/pp3UXz/AhRQBS9aanFLGCbkgeWA7Ee7QoqErzSFY3g8
- nG0Lb2W7u0oUfVHizlIqK2cxeJmJC7LL23eBQoAsZapNWSO42pyoUkihkbIIjxYrkq1W
- V3Gw==
-X-Gm-Message-State: ANhLgQ1Kgm8WUOls51aTNbb1U6eTOnc0fc29mMN9Gr0cKvMnF9pL6zJ+
- nMYzwvBUHCrObSLT22N7ltGf8SvSRpmNqdXpAAQ=
-X-Google-Smtp-Source: ADFU+vsGjSRTwN0zvpiH0XKK8o/xfFABGdDrIZJqfgKbP/+BTkeCH7RyeEQaJfxXTomJkxqErvu7d/IlyGNsJEijbF0=
-X-Received: by 2002:a9d:64ca:: with SMTP id n10mr6023292otl.325.1584571089403; 
- Wed, 18 Mar 2020 15:38:09 -0700 (PDT)
+ id 1jEhLY-0005C1-Fm; Wed, 18 Mar 2020 22:39:33 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMd6da003668;
+ Wed, 18 Mar 2020 22:39:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=H1MqLvxMQu57KLqvhSHFxWcNzIe9uVH2pzVyel8x3lY=;
+ b=YRFM8a6G/Nlx2vr+v00SsVqX8z+MTuEh6bQcPh317YpuKbvbvW/V1YrZ4GafwKwUWFAM
+ CLTRLGdG/wGJv4fvSn/OIsLtkEOrE1kTK7QLdLjaOPhFHxLExj4mvQNWrxwRUaTodqK9
+ Yu66Qcg0aAbs0n1iKUfXdYUkL/lWY9RSzX635I6NqpyjvMqP23tsyz9CXmmiHVHW+XDv
+ Dpvkszh0PGrln064nj1pqUqZWPmLM94FcgPKTGY0wczu7fBtU89e7l2RIiDXGcwbcY36
+ vT+6bjLnrYqH9P3W09Sh/G4ZPGweC2OG1tYuva0v3txraGIhO3Ko2ocoPmPlwXsDpdc/ Ag== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2120.oracle.com with ESMTP id 2yrq7m57nx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Mar 2020 22:39:05 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMaggY070076;
+ Wed, 18 Mar 2020 22:39:05 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by aserp3030.oracle.com with ESMTP id 2ys8tuvjum-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Mar 2020 22:39:05 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 02IMctjE013967;
+ Wed, 18 Mar 2020 22:38:56 GMT
+Received: from [192.168.1.206] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 18 Mar 2020 15:38:55 -0700
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+To: Will Deacon <will@kernel.org>
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-2-mike.kravetz@oracle.com>
+ <20200318220954.GD8477@willie-the-truck>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <43735ae0-f5f6-1e7b-2d0f-a46f9af1627e@oracle.com>
+Date: Wed, 18 Mar 2020 15:38:53 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1584133954-6953-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200313212012.GL4751@pendragon.ideasonboard.com>
- <OSBPR01MB35905D6D72DCBF154FCF7C88AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
- <20200313212717.GO4751@pendragon.ideasonboard.com>
- <CA+V-a8veXbwMrda8UEu2mN6gGgrBJA8Mp7gdN7Q3-iXNw9c4pg@mail.gmail.com>
- <20200318223311.GH24538@pendragon.ideasonboard.com>
-In-Reply-To: <20200318223311.GH24538@pendragon.ideasonboard.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Wed, 18 Mar 2020 22:37:42 +0000
-Message-ID: <CA+V-a8u5Tn+i22h-X5OMUjJfSuhjHqsfDX87o5X94r8M+N1e5w@mail.gmail.com>
-Subject: Re: [PATCH v3 1/4] media: dt-bindings: media: i2c: Switch to
- assigned-clock-rates
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+In-Reply-To: <20200318220954.GD8477@willie-the-truck>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ phishscore=0 mlxscore=0
+ malwarescore=0 suspectscore=0 mlxlogscore=999 spamscore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003180097
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ lowpriorityscore=0 suspectscore=0
+ adultscore=0 bulkscore=0 mlxlogscore=999 priorityscore=1501 clxscore=1015
+ malwarescore=0 mlxscore=0 phishscore=0 impostorscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003180097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_153811_052589_B1FF2CB2 
-X-CRM114-Status: GOOD (  23.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200318_153932_610979_6A5BCCCD 
+X-CRM114-Status: GOOD (  20.33  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,6 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,109 +111,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, Shawn Guo <shawnguo@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
+On 3/18/20 3:09 PM, Will Deacon wrote:
+> On Wed, Mar 18, 2020 at 03:06:31PM -0700, Mike Kravetz wrote:
+>> The architecture independent routine hugetlb_default_setup sets up
+>> the default huge pages size.  It has no way to verify if the passed
+>> value is valid, so it accepts it and attempts to validate at a later
+>> time.  This requires undocumented cooperation between the arch specific
+>> and arch independent code.
+>>
+>> For architectures that support more than one huge page size, provide
+>> a routine arch_hugetlb_valid_size to validate a huge page size.
+>> hugetlb_default_setup can use this to validate passed values.
+>>
+>> arch_hugetlb_valid_size will also be used in a subsequent patch to
+>> move processing of the "hugepagesz=" in arch specific code to a common
+>> routine in arch independent code.
+>>
+>> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+>> ---
+>>  arch/arm64/include/asm/hugetlb.h   |  2 ++
+>>  arch/arm64/mm/hugetlbpage.c        | 19 ++++++++++++++-----
+>>  arch/powerpc/include/asm/hugetlb.h |  3 +++
+>>  arch/powerpc/mm/hugetlbpage.c      | 20 +++++++++++++-------
+>>  arch/riscv/include/asm/hugetlb.h   |  3 +++
+>>  arch/riscv/mm/hugetlbpage.c        | 28 ++++++++++++++++++----------
+>>  arch/s390/include/asm/hugetlb.h    |  3 +++
+>>  arch/s390/mm/hugetlbpage.c         | 18 +++++++++++++-----
+>>  arch/sparc/include/asm/hugetlb.h   |  3 +++
+>>  arch/sparc/mm/init_64.c            | 23 ++++++++++++++++-------
+>>  arch/x86/include/asm/hugetlb.h     |  3 +++
+>>  arch/x86/mm/hugetlbpage.c          | 21 +++++++++++++++------
+>>  include/linux/hugetlb.h            |  7 +++++++
+>>  mm/hugetlb.c                       | 16 +++++++++++++---
+>>  14 files changed, 126 insertions(+), 43 deletions(-)
+>>
+>> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
+>> index 2eb6c234d594..3248f35213ee 100644
+>> --- a/arch/arm64/include/asm/hugetlb.h
+>> +++ b/arch/arm64/include/asm/hugetlb.h
+<snip>
+>> +
+>> +static __init int setup_hugepagesz(char *opt)
+>> +{
+>> +	unsigned long long ps = memparse(opt, &opt);
+>> +
+>> +	if arch_hugetlb_valid_size(ps)) {
+> 
+> Please compile your changes if you're touching multiple architectures. You
+> can get cross-compiler binaries from:
+> 
 
-On Wed, Mar 18, 2020 at 10:33 PM Laurent Pinchart
-<laurent.pinchart@ideasonboard.com> wrote:
->
-> Hi Prabhakar,
->
-> On Wed, Mar 18, 2020 at 08:13:00PM +0000, Lad, Prabhakar wrote:
-> > On Fri, Mar 13, 2020 at 9:27 PM Laurent Pinchart wrote:
-> > > On Fri, Mar 13, 2020 at 09:25:01PM +0000, Prabhakar Mahadev Lad wrote:
-> > >> On Sent: 13 March 2020 21:20, Laurent Pinchart wrote:
-> > >>> On Fri, Mar 13, 2020 at 09:12:31PM +0000, Lad Prabhakar wrote:
-> > >>>> Use assigned-clock-rates to specify the clock rate. Also mark
-> > >>>> clock-frequency property as deprecated.
-> > >>>
-> > >>> I would phrase it the other way around, this patch mainly deprecates clock-
-> > >>> frequency, and as a side effect recommends usage of assigned-clock-rates.
-> > >>>
-> > >>> "Deprecate usage of the clock-frequency propertly. The preferred method
-> > >>> to set clock rates is to use assigned-clock-rates."
-> > >>
-> > >> Agreed will do that.
-> > >>
-> > >>>> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > >>>> ---
-> > >>>>  Documentation/devicetree/bindings/media/i2c/ov5645.txt | 5 +++--
-> > >>>>  1 file changed, 3 insertions(+), 2 deletions(-)
-> > >>>>
-> > >>>> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > >>>> b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > >>>> index 72ad992..e62fe82 100644
-> > >>>> --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > >>>> +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> > >>>> @@ -8,7 +8,7 @@ Required Properties:
-> > >>>>  - compatible: Value should be "ovti,ov5645".
-> > >>>>  - clocks: Reference to the xclk clock.
-> > >>>>  - clock-names: Should be "xclk".
-> > >>>> -- clock-frequency: Frequency of the xclk clock.
-> > >>>> +- clock-frequency (deprecated): Frequency of the xclk clock.
-> > >>>
-> > >>> I would drop this completely. Drivers need to ensure backward compatibility,
-> > >>> but DT bindings should only document the latest version, the history is
-> > >>> available in git.
-> > >>
-> > >> Sure will drop it.
-> > >>
-> > >>> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> > >>>
-> > >>> While at it, can I enlist you to convert these bindings to yaml ? :-)
-> > >>>
-> > >> Sure will do the honours , will make sure yaml patch is ontop of this patch too.
-> >
-> > Shall I enlist you as the maintainer  in the json-schema ?
-> > dt_binding_check says  'maintainers' is a required property.
->
-> Do you want to be the new maintainer ? :-) Sakari is maintaining sensor
-> drivers (in his spare time though) so maybe he could be listed in the DT
-> bindings too if he wants. Otherwise, I could do it.
->
-OK I will add myself and Sakari for now and post a v4.
+My apologies.  I only cross compiled the result of the series on each
+architecture.  The above code is obviously bad.
 
-Cheers,
---Prabhakar
-
-> > > Thank you :-)
-> > >
-> > >>>>  - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-> > >>>>    to the hardware pin PWDNB which is physically active low.
-> > >>>>  - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-> > >>>> @@ -37,7 +37,8 @@ Example:
-> > >>>>
-> > >>>>  clocks = <&clks 200>;
-> > >>>>  clock-names = "xclk";
-> > >>>> -clock-frequency = <24000000>;
-> > >>>> +assigned-clocks = <&clks 200>;
-> > >>>> +assigned-clock-rates = <24000000>;
-> > >>>>
-> > >>>>  vdddo-supply = <&camera_dovdd_1v8>;
-> > >>>>  vdda-supply = <&camera_avdd_2v8>;
->
-> --
-> Regards,
->
-> Laurent Pinchart
+-- 
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
