@@ -2,88 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D23189989
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:34:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89D791899BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 11:41:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJsmh2UEtkhIAowpFr8eIJanp7jEGKybgsmNRM0hq6U=; b=jp1E5l0Cxw702u
-	oc2G72GwpMRZUFqqelwPxCLBI3SWj5Zg9k6Fw7f0Q4ZZvglH1rLk1OucKr5aoobicOWz4WeMJ4kif
-	AQo2tbYWDco4I3qMr+aukDwnid3/6dJ+rmYlSQzAeQpd7CWPE7VFisi32FqpqksZTV+xBrW+N7cBE
-	Emq9ZCEu+NJnOTjQSsXXDXx8On21UFykHOjWb+Pz1I4K97AQa2aWZ8ErGQr7i6GuJ4ZswyRsqMCnp
-	icCMS51iTfGE6yKuUYa4ZBcwQIbkNPIU4lJp2Y+ZoipSx46lvEGYki+gdj0JZ7lsasJyV1tXKmu1N
-	63TbsA6NH12uMoFkUWMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=334T5SJ4A79d8g8tJZpt2TDrRzIrcjSv22+gvjwk390=; b=lgs1Y37pYRNWRX
+	15/RAd/+JmA8lf6BFFzY0Y6MNJpBJnCHV7F4fOyF7GfYxLLlCskJZjuuYldP55LwW52InoWCU593b
+	Gwk8TIZcIZrvZCznJepgoVb2ARL3YGmmuykr0KRDqP5qSmN87OGLNKpYvkK2fZ0nM13+ptKMux4eW
+	wtl1p8Y2A4n8gtwmHUxKg/Xsc8qWo++O3oF/m7TWGcDlA+lPLRMMapGUu8o1dnhPAkBdBO+PCyHs+
+	gQojijThwtFvrvxsqc6RkFzJkS72griHrRl3SPkD/OhHffLw9NDiSprCu4FBt/KJ/118e+nZz2Kvy
+	Dnym8WOWRXscKQGM8pyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEW1a-0004jq-PK; Wed, 18 Mar 2020 10:34:10 +0000
-Received: from mail.sensor-technik.de ([80.150.181.156])
+	id 1jEW8v-0000hP-7j; Wed, 18 Mar 2020 10:41:45 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEW1P-0004aQ-0H
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 10:34:01 +0000
-IronPort-SDR: a9xfOGL70q49mYkQkjeKT3TR/wYQ9iWWv4FCcTwvhs2Phts2hGbHxHoN308LkNYNxlPULxYQzp
- UXbinFyxvqkrPpDP4PHfkEPRrYC2D/HEJdtHsmIcOvfMEwclBNGA9/Umys6cE59G461d/eYtJo
- MfJk7Vl/R90P97PNx/4rQLKyzmhH33lvKXF3PcaEKUzYklvwoB2faC+C0f691d/BBlTqFb1nGM
- b761yvEKk+GbpMJcsOpZRSaqy9DnoNEAwZfq3jyRJPMC48zfmqPuwWOeA2vtzFunn0N3OZU0Yb
- J5s=
-Received: from stwz1.stww2k.local (HELO stwz1.sensor-technik.de)
- ([172.25.209.3])
- by mail.sensor-technik.de with ESMTP; 18 Mar 2020 11:33:45 +0100
-Received: from stwz1.stww2k.local (localhost [127.0.0.1])
- by stwz1.sensor-technik.de (Postfix) with ESMTP id 1D982B5ABC;
- Wed, 18 Mar 2020 11:33:45 +0100 (CET)
-Received: from mail.sensor-technik.de (stwex2.stww2k.local [172.25.2.104])
- by stwz1.sensor-technik.de (Postfix) with ESMTP id 76F7FB5AAC;
- Wed, 18 Mar 2020 11:33:24 +0100 (CET)
-Received: from STWEX1.stww2k.local (172.25.2.103) by stwex2.stww2k.local
- (172.25.2.107) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Wed, 18 Mar
- 2020 11:33:24 +0100
-Received: from STWEX1.stww2k.local ([172.25.5.24]) by STWEX1.stww2k.local
- ([172.25.5.24]) with mapi id 15.00.1497.000; Wed, 18 Mar 2020 11:33:24 +0100
-From: Waibel Georg <Georg.Waibel@wiedemann-group.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH V2] clk: imx: imx6ul: change flexcan clock to support CiA
- bitrates
-Thread-Topic: [PATCH V2] clk: imx: imx6ul: change flexcan clock to support CiA
- bitrates
-Thread-Index: AQHV/RCmZXBxQMwcQkC3HnwC/fNLPg==
-Date: Wed, 18 Mar 2020 10:33:24 +0000
-Message-ID: <1584527604108.70800@wiedemann-group.com>
-References: <1583928220724.65021@wiedemann-group.com>
- <20200316013040.GP17221@dragon> <1584352502593.54297@wiedemann-group.com>
- <1584352708854.43164@wiedemann-group.com>,<20200317134810.GA2884@dragon>
-In-Reply-To: <20200317134810.GA2884@dragon>
-Accept-Language: de-DE, en-US
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [172.30.230.19]
-x-c2processedorg: 71f8fb5e-29e9-40bb-a2d4-613e155b19df
+ id 1jEW7i-0008Ig-GT; Wed, 18 Mar 2020 10:40:33 +0000
+X-UUID: 47f6da4424ce4635931514ed31eaff76-20200318
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=O++pLXuj0DX/kTHP26oFWY1EQqKvdFA9wne654JlhgA=; 
+ b=AxibO5Yfa8I9VFxjXdWY6CyufjZdlPs9mMWGjQ4NGa04SE1IJghvUTitkt7P6mDo91zlQ+Xed68iqBi1tiI1GpY+Lru7RvzX38IXd07jXDGCl1pmyfv4ri9HVsxqEO2Uioac1bkxJQ8XshD9ttSEBRR7PbZ/9qJ8RzUTi1JPkq0=;
+X-UUID: 47f6da4424ce4635931514ed31eaff76-20200318
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1624295181; Wed, 18 Mar 2020 02:40:29 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 18 Mar 2020 03:41:00 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 18 Mar 2020 18:37:25 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 18 Mar 2020 18:40:30 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.peter~sen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <bvanassche@acm.org>
+Subject: [PATCH v7 0/7] scsi: ufs: some cleanups and make the delay for host
+ enabling customizable
+Date: Wed, 18 Mar 2020 18:40:09 +0800
+Message-ID: <20200318104016.28049-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-X-TBoneOriginalFrom: Waibel Georg <Georg.Waibel@wiedemann-group.com>
-X-TBoneOriginalTo: Shawn Guo <shawnguo@kernel.org>
-X-TBoneOriginalCC: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team
- <linux-imx@nxp.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Michel Alex
- <Alex.Michel@wiedemann-group.com>, Appelt Andreas
- <Andreas.Appelt@wiedemann-group.com>
-X-TBoneDomainSigned: false
+X-TM-SNTS-SMTP: C898DCF254560EA0341542683F3E0BFC4414FA2D8198C3B73AF12E8E0B47139F2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_033359_402380_5718214F 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200318_034030_611278_CB3C737F 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.150.181.156 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,101 +87,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Michel Alex <Alex.Michel@wiedemann-group.com>,
- Appelt Andreas <Andreas.Appelt@wiedemann-group.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Stanley Chu <stanley.chu@mediatek.com>, andy.teng@mediatek.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, beanhuo@micron.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Setting a CAN bitrate of 800kbit/s fails with a bitrate error of 1.3% if the
-flexcan module is clocked at 30MHz (CAN_CLK_ROOT). This patch changes the clock
-frequency from 30MHz to 40MHz which allows to support all bitrates recommended
-by CiA.
+v6 -> v7
+	- Fix patch #3 "scsi: ufs: introduce common delay function" (Bart Van Assche)
+		- Remove "can_sleep" related changes.
+		- Limit the usage of common delay function, for example, if delay time
+		is fixed and larger than 10 us, using introduced common delay function is not required.
+	- Other related changes according to patch #3 changes
 
-The patch sets CAN_CLK_SEL to 80MHz by changing its clock parent from
-CLK_PLL3_60M to CLK_PLL3_80M. The post-divider CAN_CLK_PODF is set to /2 by
-default which makes 40MHz CAN_CLK_ROOT from its parent CAN_CLK_SEL.
+v5 -> v6
+	- Drop patch #2 "scsi: ufs: remove init_prefetch_data in struct ufs_hba" in v5
+	because Can Guo has similar cleanup earlier in patch "scsi: ufs: Do not rely on prefetched data"
 
-Background:
-CAN in Automation document 102 (CiA102) recommends the CAN bitrates 10, 20, 50,
-125, 250, 500, 800 and 1000kbit/s.
+v4 -> v5
+	- Fix patch #7: Fix typo "initializatoin" in title
 
-With the flexcan serial clock at 30MHz (original value) setting some common
-bitrates ("ip link set canX type can bitrate <bitrate>") gives the following
-results:
-requested value / actually set value
-5000: bitrate 5000 sample-point 0.708
-10000: bitrate 10000 sample-point 0.866
-20000: bitrate 20000 sample-point 0.866
-40000: bitrate 40000 sample-point 0.866
-50000: bitrate 50000 sample-point 0.866
-80000: bitrate 80000 sample-point 0.866
-100000: bitrate 100000 sample-point 0.866
-125000: bitrate 125000 sample-point 0.875
-250000: bitrate 250000 sample-point 0.866
-400000: bitrate 400000 sample-point 0.866
-500000: bitrate 500000 sample-point 0.866
-666666: bitrate 666666 sample-point 0.800
-800000: bitrate 789473 sample-point 0.789 !!!bitrate error 1.3%
-1000000: bitrate 1000000 sample-point 0.733
+v3 -> v4
+	- In patch #8, fix incorrect condition of customized delay for host enabling
 
-With the flexcan serial clock at 40MHz (new value) we get this:
-5000: no more possible
-10000: bitrate 10000 sample-point 0.875
-20000: bitrate 20000 sample-point 0.875
-40000: bitrate 40000 sample-point 0.850
-50000: bitrate 50000 sample-point 0.875
-80000: bitrate 80000 sample-point 0.850
-100000: bitrate 100000 sample-point 0.875
-125000: bitrate 125000 sample-point 0.875
-250000: bitrate 250000 sample-point 0.875
-400000: bitrate 400000 sample-point 0.850
-500000: bitrate 500000 sample-point 0.875
-666666: bitrate 666666 sample-point 0.800
-800000: bitrate 800000 sample-point 0.800
-1000000: bitrate 1000000 sample-point 0.750
+v2 -> v3
+	- Remove /arch/arm64/configs/defconfig chnage because it is for local test only
 
-A drawback of the modification is that 5kbit/s is no more supported.
+v1 -> v2
+	- Add patch #1 "scsi: ufs: fix uninitialized tx_lanes in ufshcd_disable_tx_lcc"
+	- Remove struct ufs_init_prefetch in patch #2 "scsi: ufs: remove init_prefetch_data in struct ufs_hba"
+	- Introduce common delay function in patch #4
+	- Replace all delay places by common delay function in ufs-mediatek in patch #5
+	- Use common delay function instead for host enabling delay in patch #6
+	- Add patch #7 "scsi: ufs: make HCE polling more compact to improve initializatoin latency"
+	- In patch #8, customize the delay in ufs_mtk_hce_enable_notify callback instead of ufs_mtk_init (Avri Altman)
 
-Setting the flexcan serial clock to 60MHz or 80MHz would produce similar
-results but with losing even more bitrates at the lower end.
+Stanley Chu (7):
+  scsi: ufs: fix uninitialized tx_lanes in ufshcd_disable_tx_lcc()
+  scsi: ufs: use an enum for host capabilities
+  scsi: ufs: introduce common and flexible delay function
+  scsi: ufs-mediatek: use common delay function for required places
+  scsi: ufs: allow customized delay for host enabling
+  scsi: ufs: make HCE polling more compact to improve initialization
+    latency
+  scsi: ufs-mediatek: customize the delay for host enabling
 
-Changing the flexcan serial clock to 40MHz might apply for other SoCs
-using the flaxcan module as well (e.g. imx6q/d/s..). But since I don't
-have such hardware to test I did not add this to the patch.
+ drivers/scsi/ufs/ufs-mediatek.c | 58 +++++++++++++++++-----------
+ drivers/scsi/ufs/ufs-mediatek.h |  1 +
+ drivers/scsi/ufs/ufshcd.c       | 21 +++++++++--
+ drivers/scsi/ufs/ufshcd.h       | 67 +++++++++++++++++++--------------
+ 4 files changed, 93 insertions(+), 54 deletions(-)
 
-Signed-off-by: Georg Waibel <georg.waibel@wiedemann-group.de>
----
-
-V2: Added some technical details to commit log.
-
----
- drivers/clk/imx/clk-imx6ul.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/clk/imx/clk-imx6ul.c b/drivers/clk/imx/clk-imx6ul.c
-index dafc8806b03e..5dbb6a937732 100644
---- a/drivers/clk/imx/clk-imx6ul.c
-+++ b/drivers/clk/imx/clk-imx6ul.c
-@@ -503,7 +503,7 @@ static void __init imx6ul_clocks_init(struct device_node *ccm_node)
- 		clk_prepare_enable(hws[IMX6UL_CLK_USBPHY2_GATE]->clk);
- 	}
- 
--	clk_set_parent(hws[IMX6UL_CLK_CAN_SEL]->clk, hws[IMX6UL_CLK_PLL3_60M]->clk);
-+	clk_set_parent(hws[IMX6UL_CLK_CAN_SEL]->clk, hws[IMX6UL_CLK_PLL3_80M]->clk);
- 	if (clk_on_imx6ul())
- 		clk_set_parent(hws[IMX6UL_CLK_SIM_PRE_SEL]->clk, hws[IMX6UL_CLK_PLL3_USB_OTG]->clk);
- 	else if (clk_on_imx6ull())
 -- 
-2.17.1
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
