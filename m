@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5615D18A32D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 20:29:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20A9018A329
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 20:29:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=I66Ve27u3K/AD8J3g/BdRkaDHSHH/Rhh7SMwHU5VoFg=; b=Mxm
-	wm4RfiRoSa0xEvh0YzJTyzMvVT6KunZU2BCN4xtBkauseXg/0os/+n3z/zKIYXesRX81RCbFjXsc4
-	obocYtsn4zio8eomZptnHF3G72ltJP0BtSxEb+wBx83+2+CbaPFAY+N8KqyskBSI5lcXUTqSH5GPi
-	8bq4GH14HaK7Enjw1VesHsijRyGxd0Rs3xKfdq4KMZU9cLETKHE9V2pU9YZ9f4EISPD9gmHygTcpt
-	2/SoUjTH2DVX6Tt80SehfpngnzalxY0Y69b03PaW7/2KrOYBWbaG3/dFmTtPhhVfIA4TEwt7+DTH4
-	pgY/AhhFEJMpMeEJVMHsBL5lkyX5STg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=gDVQ2LsOeo7OmMGsT1b07DGlSwFMskwxX7i2rSFZ+2A=; b=a5Y/OCB2ktkGCMP8e1b1ZtCDbG
+	31oTzpJjR3i/mtkMIRg9Em62g80fCqAiL0suYuJZ7YjnuE845X79pjvFoEHHMQWnOJPZ8Bc+iGDYF
+	Yn6MbzUVOcPS/g8P93WI0ChxtUOB8g1zXtoR7KQ55k9hDr+uoTeQprN8nZpdvXNuUO84L8htH1H2w
+	YK00iug95YNTxlhB+0FULPRE3YvWWy/eJ93JW7N+1hF3LRHOfbSTSeQo6MIKz7zY3nZVbFAEp9Uzv
+	VmJG33ZiElFniGvPCjPjP4ATWOUauRKh5SrZ0vafp8hWAXh5wjxAjKJtRk+/u3dF1yQLAGvEM62lh
+	xSjVT3vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEeNn-0000Lr-UZ; Wed, 18 Mar 2020 19:29:39 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jEeNY-00004y-G2; Wed, 18 Mar 2020 19:29:24 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEeNV-0000CU-Ke; Wed, 18 Mar 2020 19:29:24 +0000
-Received: by mail-wm1-x342.google.com with SMTP id x3so3071983wmj.1;
- Wed, 18 Mar 2020 12:29:21 -0700 (PDT)
+ id 1jEeNL-0008RZ-Hg; Wed, 18 Mar 2020 19:29:12 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w16so15532338wrv.13;
+ Wed, 18 Mar 2020 12:29:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=KdMSCAwSZJxCt921knCES5wm2vjg59UHOmJpntfpsrQ=;
- b=sui7jwdNSHCvkLhFYYQSkI0ZjDuWgLtUu5b759IGsMx1wv9Z9N9ZzdJqIcgi4ib/6J
- bawhTKLg1nuRNdm7jXAdEchx2sS6sjhljMNMLJLUZ6E1gmLvU5uJsBHOkt5VzJ8wLcQu
- MRviLgH7pqcRjfo7c1AX3tyzH4xlEJNaLf/qRMknWGShNp2BE9I3G5UPF3lhSRPTkz6u
- +XSm4UQROFEOuwXX3YeB3JZahiasVUowWRwWNa7Oy0Il+0/aY4UyRiiznby5TJGiDEsm
- keY7btWvt8kAO+BPgKaEWLQIc6Lsfn0bU46CESNP3tQozftD1cXg+BJoypD7CmcupCQE
- cQXQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=24spxwKs6/lu06D14Gb2r20D9msuLPFYXhBKgOUGLVY=;
+ b=e/RATo9W4dh73ey1VeO1DFTpBsoaeBO/sb3+wu9I5BZ4DnG6xs/Fzvnqv2+wU6o+bK
+ CB5yNr5Vt+FtbsHgYSE80t+Txf8NJPHdqDgPHfxh0bXiU+wgCkJrpmm/s87WIG0TWiK6
+ zOamz7BEEoj4xtqAFGCOFl48gQXf49BoXuyZiaP71lJH8bfxd3FfjAbInUrV4LILb23p
+ o/uv5iv2aS1FePjcgLw4sIER9Ek+zIVXvcGamxqobtmqU90tdvFFokcSBeG+3i2U1i47
+ MKPY+6bvDkp9oAvYPOo4a5NmX2JMV4Tc/oIg0R77XkWocS63V3xq8RhVEjjnYSIUtX6s
+ gB0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=KdMSCAwSZJxCt921knCES5wm2vjg59UHOmJpntfpsrQ=;
- b=XubbjCrjxhmzNOjeF26wT6RGGYgXs+3PhGylOKLFP4ZOJQBFlMS/+IgoU4FYO2XSYC
- KlXR6oqVenf5J1PvGXph2ClhgGw0rC6rMAoYqksn9BLJ6cZR+vAXknCZttVxcDyXCRxx
- HFkZrOXh1i/6FBj5087OMvy1g/m84S61J2gtl7/jw32lRJT0HzpsokgX0yBck0xzJUHd
- wny5S5wpn8cHJxWNEN20Pc9QJjU4Vg9LWUT5pPcd2DIeXcPR0rRuw07nMNMe9zh7Npr3
- 09axNZO7WzXwZrFZ9HiormvDO8f4kWy4VN+3wOu4X1nBVC4OVjRjFTssEnoklnNq04gq
- UjhQ==
-X-Gm-Message-State: ANhLgQ3KxhBqOGb0eCktsGPl83EUrx67g4OLuebabCTZGJQt6ChCwdpz
- zJ76W4nct+SfQcRLEIWS5rI=
-X-Google-Smtp-Source: ADFU+vtNuNfl3UuIaIj8ul1aotqzBFUnCK8di4ve2AE4ngboh5WtUUw+uyNnpNWlHDERAppMlduMsA==
-X-Received: by 2002:a7b:cb50:: with SMTP id v16mr6784337wmj.74.1584559748306; 
- Wed, 18 Mar 2020 12:29:08 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=24spxwKs6/lu06D14Gb2r20D9msuLPFYXhBKgOUGLVY=;
+ b=DCYHovyVCwzIWHMn2nRGDrUEiVmPZfUu90mM177e0MpiX643j5dvHycwsRLMxsGjPx
+ pEDIOYmHKSX0tMeV8cFIE71QEjFTG0YFGp30W/A1Y6MrK4SR4J2ueueQGIr4QcvAveiS
+ sAmCd3ZJQF14rDiqhb/mMwB5c7/8zVsqPIYx+XgnXYuHcdTo3/XImONpjWiyGzukqZ2f
+ Cyc2/UaKuZB/da70eahXF7NuvRb9F+HKcBx6IgYrk4fTLQ8VV97GgS38KohCoGMDFwHp
+ oHDi2xbwBpmN26aYF+aJsL0PrT6WF/fI9NCYGvC5ggAVOYxrESVhe5CB4dj+OlnCBW6z
+ JcEA==
+X-Gm-Message-State: ANhLgQ2kjvSHoFu+VHlZWxv0KBZIobp7OtpRVBpapNdkvJdHysaq/QoU
+ 4WXC+eDtwRai9iFiHnmyRGl359Tq
+X-Google-Smtp-Source: ADFU+vuJAKgOP6N0WJCkC/0D+fPS5480Ytml+vLa/YcsAurBD7mGJpj/3MStcWaMC+osRkDc+h/ZnA==
+X-Received: by 2002:adf:9b96:: with SMTP id d22mr7727492wrc.249.1584559749269; 
+ Wed, 18 Mar 2020 12:29:09 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id s131sm5333728wmf.35.2020.03.18.12.29.07
+ by smtp.gmail.com with ESMTPSA id s131sm5333728wmf.35.2020.03.18.12.29.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 18 Mar 2020 12:29:07 -0700 (PDT)
+ Wed, 18 Mar 2020 12:29:08 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: kishon@ti.com
-Subject: [RFC PATCH 1/2] dt-bindings: phy: convert phy-rockchip-inno-usb2
- bindings to yaml
-Date: Wed, 18 Mar 2020 20:29:00 +0100
-Message-Id: <20200318192901.5023-1-jbx6244@gmail.com>
+Subject: [RFC PATCH 2/2] phy: phy-rockchip-inno-usb2: remove support for
+ rockchip, rk3366-usb2phy
+Date: Wed, 18 Mar 2020 20:29:01 +0100
+Message-Id: <20200318192901.5023-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200318192901.5023-1-jbx6244@gmail.com>
+References: <20200318192901.5023-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_122922_214236_DFBE208B 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20200318_122911_596446_7FDF4DC5 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -103,265 +107,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files for Rockchip with 'usb2-phy' subnodes
-are manually verified. In order to automate this process
-phy-rockchip-inno-usb2.txt has to be converted to yaml.
-
-Changed:
-  Removed unused "rockchip,rk3366-usb2phy" support.
-  Replaced example with something that has SoC support
-  in the kernel.
+'phy-rockchip-inno-usb2.txt' is updated to yaml, whereby
+the compatible string 'rockchip,rk3366-usb2phy' was removed,
+because it's not in use by a dts file, so remove support
+in the code as well.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- .../bindings/phy/phy-rockchip-inno-usb2.txt        |  81 -----------
- .../bindings/phy/phy-rockchip-inno-usb2.yaml       | 149 +++++++++++++++++++++
- 2 files changed, 149 insertions(+), 81 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
- create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 20 --------------------
+ 1 file changed, 20 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-deleted file mode 100644
-index 541f52988..000000000
---- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-+++ /dev/null
-@@ -1,81 +0,0 @@
--ROCKCHIP USB2.0 PHY WITH INNO IP BLOCK
--
--Required properties (phy (parent) node):
-- - compatible : should be one of the listed compatibles:
--	* "rockchip,px30-usb2phy"
--	* "rockchip,rk3228-usb2phy"
--	* "rockchip,rk3328-usb2phy"
--	* "rockchip,rk3366-usb2phy"
--	* "rockchip,rk3399-usb2phy"
--	* "rockchip,rv1108-usb2phy"
-- - reg : the address offset of grf for usb-phy configuration.
-- - #clock-cells : should be 0.
-- - clock-output-names : specify the 480m output clock name.
--
--Optional properties:
-- - clocks : phandle + phy specifier pair, for the input clock of phy.
-- - clock-names : input clock name of phy, must be "phyclk".
-- - assigned-clocks : phandle of usb 480m clock.
-- - assigned-clock-parents : parent of usb 480m clock, select between
--		 usb-phy output 480m and xin24m.
--		 Refer to clk/clock-bindings.txt for generic clock
--		 consumer properties.
-- - rockchip,usbgrf : phandle to the syscon managing the "usb general
--		 register files". When set driver will request its
--		 phandle as one companion-grf for some special SoCs
--		 (e.g RV1108).
-- - extcon : phandle to the extcon device providing the cable state for
--		 the otg phy.
--
--Required nodes : a sub-node is required for each port the phy provides.
--		 The sub-node name is used to identify host or otg port,
--		 and shall be the following entries:
--	* "otg-port" : the name of otg port.
--	* "host-port" : the name of host port.
--
--Required properties (port (child) node):
-- - #phy-cells : must be 0. See ./phy-bindings.txt for details.
-- - interrupts : specify an interrupt for each entry in interrupt-names.
-- - interrupt-names : a list which should be one of the following cases:
--	Regular case:
--	* "otg-id" : for the otg id interrupt.
--	* "otg-bvalid" : for the otg vbus interrupt.
--	* "linestate" : for the host/otg linestate interrupt.
--	Some SoCs use one interrupt with the above muxed together, so for these
--	* "otg-mux" : otg-port interrupt, which mux otg-id/otg-bvalid/linestate
--		to one.
--
--Optional properties:
-- - phy-supply : phandle to a regulator that provides power to VBUS.
--		See ./phy-bindings.txt for details.
--
--Example:
--
--grf: syscon@ff770000 {
--	compatible = "rockchip,rk3366-grf", "syscon", "simple-mfd";
--	#address-cells = <1>;
--	#size-cells = <1>;
--
--...
--
--	u2phy: usb2-phy@700 {
--		compatible = "rockchip,rk3366-usb2phy";
--		reg = <0x700 0x2c>;
--		#clock-cells = <0>;
--		clock-output-names = "sclk_otgphy0_480m";
--
--		u2phy_otg: otg-port {
--			#phy-cells = <0>;
--			interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "otg-id", "otg-bvalid", "linestate";
--		};
--
--		u2phy_host: host-port {
--			#phy-cells = <0>;
--			interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "linestate";
--		};
--	};
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 680cc0c88..dcdb5589b 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1299,25 +1299,6 @@ static const struct rockchip_usb2phy_cfg rk3328_phy_cfgs[] = {
+ 	{ /* sentinel */ }
+ };
+ 
+-static const struct rockchip_usb2phy_cfg rk3366_phy_cfgs[] = {
+-	{
+-		.reg = 0x700,
+-		.num_ports	= 2,
+-		.clkout_ctl	= { 0x0724, 15, 15, 1, 0 },
+-		.port_cfgs	= {
+-			[USB2PHY_PORT_HOST] = {
+-				.phy_sus	= { 0x0728, 15, 0, 0, 0x1d1 },
+-				.ls_det_en	= { 0x0680, 4, 4, 0, 1 },
+-				.ls_det_st	= { 0x0690, 4, 4, 0, 1 },
+-				.ls_det_clr	= { 0x06a0, 4, 4, 0, 1 },
+-				.utmi_ls	= { 0x049c, 14, 13, 0, 1 },
+-				.utmi_hstdet	= { 0x049c, 12, 12, 0, 1 }
+-			}
+-		},
+-	},
+-	{ /* sentinel */ }
 -};
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-new file mode 100644
-index 000000000..df92ac993
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-@@ -0,0 +1,149 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/phy-rockchip-inno-usb2.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip USB2.0 phy with inno IP block
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,px30-usb2phy
-+      - const: rockchip,rk3228-usb2phy
-+      - const: rockchip,rk3328-usb2phy
-+      - const: rockchip,rk3399-usb2phy
-+      - const: rockchip,rv1108-usb2phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clock-output-names:
-+    description:
-+      The usb 480m output clock name.
-+
-+  "#clock-cells":
-+    const: 0
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: phyclk
-+
-+  assigned-clocks:
-+    description:
-+      Phandle of the usb 480m clock.
-+
-+  assigned-clock-parents:
-+    description:
-+      Parent of the usb 480m clock.
-+      Select between usb-phy output 480m and xin24m.
-+      Refer to clk/clock-bindings.txt for generic clock consumer properties.
-+
-+  extcon:
-+    description:
-+      Phandle to the extcon device providing the cable state for the otg phy.
-+
-+  rockchip,usbgrf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'usb general register files'.
-+      When set the driver will request its phandle as one companion-grf
-+      for some special SoCs (e.g rv1108).
-+
-+  host-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+      interrupts:
-+        description: host linestate interrupt
-+
-+      interrupt-names:
-+        const: linestate
-+
-+      phy-supply:
-+        description:
-+          Phandle to a regulator that provides power to VBUS.
-+          See ./phy-bindings.txt for details.
-+
-+    required:
-+      - "#phy-cells"
-+      - interrupts
-+      - interrupt-names
-+
-+  otg-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+      interrupts:
-+        minItems: 1
-+        maxItems: 3
-+
-+      interrupt-names:
-+        oneOf:
-+          - const: linestate
-+          - const: otg-mux
-+          - items:
-+            - const: otg-bvalid
-+            - const: otg-id
-+            - const: linestate
-+
-+      phy-supply:
-+        description:
-+          Phandle to a regulator that provides power to VBUS.
-+          See ./phy-bindings.txt for details.
-+
-+    required:
-+      - "#phy-cells"
-+      - interrupts
-+      - interrupt-names
-+
-+required:
-+  - compatible
-+  - reg
-+  - clock-output-names
-+  - "#clock-cells"
-+  - host-port
-+  - otg-port
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3399-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    u2phy0: usb2-phy@e450 {
-+      compatible = "rockchip,rk3399-usb2phy";
-+      reg = <0xe450 0x10>;
-+      clocks = <&cru SCLK_USB2PHY0_REF>;
-+      clock-names = "phyclk";
-+      clock-output-names = "clk_usbphy0_480m";
-+      #clock-cells = <0>;
-+
-+      u2phy0_host: host-port {
-+        #phy-cells = <0>;
-+        interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH 0>;
-+        interrupt-names = "linestate";
-+      };
-+
-+      u2phy0_otg: otg-port {
-+        #phy-cells = <0>;
-+        interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH 0>,
-+                     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH 0>,
-+                     <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH 0>;
-+        interrupt-names = "otg-bvalid", "otg-id", "linestate";
-+      };
-+    };
+-
+ static const struct rockchip_usb2phy_cfg rk3399_phy_cfgs[] = {
+ 	{
+ 		.reg		= 0xe450,
+@@ -1426,7 +1407,6 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
+ 	{ .compatible = "rockchip,px30-usb2phy", .data = &rk3328_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3228-usb2phy", .data = &rk3228_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
+-	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
+ 	{ .compatible = "rockchip,rv1108-usb2phy", .data = &rv1108_phy_cfgs },
+ 	{}
 -- 
 2.11.0
 
