@@ -2,95 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7910418A864
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:39:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F2818A878
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 23:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4FDjszDLC6X+v+A5B/X3CSky+UBPaGU/h19ng9Iy0s8=; b=lWb8TdaAtbUrMZ
-	5D2l8688JdX8w6ipJokC/98oRJT+6coZhktecRHFpEJ2S1aimtfaGSQiGBHxBTiGWsEXiU/p1ea49
-	UJ0DEGZ3bpDORXzu+aUG0aNqMtsx1CObIghueqPnbJvVP+KPipIVxKCzOjx+kKbv3qgUTZnfI/O1W
-	YfRRWCH+QlnrEbehYExaqIRxYSAOX+c+fNtGF/tpGfwZ+ZPGQ8aW+uC0D4QkDgmM07ZMDbFnBbub6
-	Qj8iomVItkTZJboWYxI1xbbz+HuPq3IKAfu5+7gnTJ2/VbVMD06MdYT2vxfTW5k8gPVIHmbmmmG9X
-	tMBJI0WtRrmI6rniG+wg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1GacbWv+yrajDdmVwvf8YEv6QrREeMtOcU9MM2KsbXE=; b=irceAicoZQoCHk
+	bv5epyrK3Zsx443IP4Vj9yQe3VFeFlErENRMA/JnYhYCwSm8NZsOdYHoAW9TCU6NFkla21X0ViafE
+	iCgLcqak0QqIXFQl72svSVaml5xVg3xRCbznD0ije9QAyOsXo8NWj0+KrhrCov9S4KFPNe7BOouFv
+	nFazYmmrNfy2pDRYnkpfm+Rlak3fjPQzEvTKBMmM2k26eIj4QjM+VUo+jq9aQALf3TwUlA+qo4oNJ
+	TZQqQmK7ealJSKi5j9p49Mat1t6CUvAZlE7yo103nEQpynzqnQRgtFmpfC0x2bUuBkxx841Bc/qlO
+	Q5bZxSPlB8/0VWM1WYVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEhLj-0005E0-DC; Wed, 18 Mar 2020 22:39:43 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jEhOn-0007iO-6q; Wed, 18 Mar 2020 22:42:53 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEhLY-0005C1-Fm; Wed, 18 Mar 2020 22:39:33 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMd6da003668;
- Wed, 18 Mar 2020 22:39:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=H1MqLvxMQu57KLqvhSHFxWcNzIe9uVH2pzVyel8x3lY=;
- b=YRFM8a6G/Nlx2vr+v00SsVqX8z+MTuEh6bQcPh317YpuKbvbvW/V1YrZ4GafwKwUWFAM
- CLTRLGdG/wGJv4fvSn/OIsLtkEOrE1kTK7QLdLjaOPhFHxLExj4mvQNWrxwRUaTodqK9
- Yu66Qcg0aAbs0n1iKUfXdYUkL/lWY9RSzX635I6NqpyjvMqP23tsyz9CXmmiHVHW+XDv
- Dpvkszh0PGrln064nj1pqUqZWPmLM94FcgPKTGY0wczu7fBtU89e7l2RIiDXGcwbcY36
- vT+6bjLnrYqH9P3W09Sh/G4ZPGweC2OG1tYuva0v3txraGIhO3Ko2ocoPmPlwXsDpdc/ Ag== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 2yrq7m57nx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 18 Mar 2020 22:39:05 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02IMaggY070076;
- Wed, 18 Mar 2020 22:39:05 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3030.oracle.com with ESMTP id 2ys8tuvjum-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 18 Mar 2020 22:39:05 +0000
-Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 02IMctjE013967;
- Wed, 18 Mar 2020 22:38:56 GMT
-Received: from [192.168.1.206] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 18 Mar 2020 15:38:55 -0700
-Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Will Deacon <will@kernel.org>
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-2-mike.kravetz@oracle.com>
- <20200318220954.GD8477@willie-the-truck>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <43735ae0-f5f6-1e7b-2d0f-a46f9af1627e@oracle.com>
-Date: Wed, 18 Mar 2020 15:38:53 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jEhOK-0007WL-LB
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 22:42:27 +0000
+Received: by mail-ot1-x342.google.com with SMTP id i12so409349otp.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Mar 2020 15:42:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=xmDtlPZZt6AhkIa9RNZ63X94d3qxtY/pBeuqTxtM6B8=;
+ b=b7nNzbOXPtnvlE3gG1PJ0B6/TDG5+2bsj66N8oWRaWt+djk+gNRA8ueaW1TI6ofTIi
+ Dv3DBijbD4E6cWOZT9jT7J2AjcCLp7qxEdmfvs35qp8VSBkLgeuD7+FdXReOQHsFlulT
+ tFICkBCaM3fwRoF8rlvtkXP6Jgt0PQIxVv0vzYdfigRS+BQVKMCSxh9/JIDU4vpW7wTk
+ Lv+O5O31N0BTBOeJVK60H5HnMazVMh1LWfXvZisI5fNIw4fuM8B9IM0DWcgt2K6npEJS
+ MenqtwxHDFLS3kjlniGTDeld7jBtod/fnDZiAm6H9yD9AvqFuY6Pz+akI9ujCi6cNBKo
+ Sc5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=xmDtlPZZt6AhkIa9RNZ63X94d3qxtY/pBeuqTxtM6B8=;
+ b=pqa1PCP3pgHWYyszqyBBYXFjhSKZg9GJ1IYA8zXJrS3zQStsVhKIMzygMqf3IBoS8z
+ xY4C89cjRhh2jzm3p1vEtLY2hNrsfEsenSv1EoS+9/DpzAAU5TIgkDEakOGFpqaLJl7z
+ /RI9jMypIlssh3c04OAmGG0Sk3kp8nAQJlyB55KN4FybAiAh+jGLD14FJO9Ijmf6Kerx
+ Zi1VGwsJpcXW0vT2A7MrQq2cXJ0Y4rUcuE0IeB4rO0ZamxD07yem+3nd5mmmD1aWJuP1
+ wK76FuLLFZq6QacYh8dPn8Vfq3CbhwtnGJg7PLGOf5jFIf8IMgXi5hlt13oszEf69P+E
+ W8AQ==
+X-Gm-Message-State: ANhLgQ2YZr+s4z215PyDey1cDbDAx29Ui+o5dFoqzMbJ+FFP+TmIohSL
+ 1lkN+MbUVerTdluficVI36Ro86iSyNEsHoLEFfw=
+X-Google-Smtp-Source: ADFU+vsvjgAClOIMqrGGIb7SpXqS1gb1iFF33qVcEpJgyK0wGZvK+9LgyP8Z7Vpzi0hvGvTCOziEP0Qb1UkSCWhgSCQ=
+X-Received: by 2002:a9d:6ac6:: with SMTP id m6mr6155284otq.198.1584571343441; 
+ Wed, 18 Mar 2020 15:42:23 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200318220954.GD8477@willie-the-truck>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- phishscore=0 mlxscore=0
- malwarescore=0 suspectscore=0 mlxlogscore=999 spamscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2003180097
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- lowpriorityscore=0 suspectscore=0
- adultscore=0 bulkscore=0 mlxlogscore=999 priorityscore=1501 clxscore=1015
- malwarescore=0 mlxscore=0 phishscore=0 impostorscore=0 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2003180097
+References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1584133954-6953-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200313212345.GM4751@pendragon.ideasonboard.com>
+ <OSBPR01MB359079EAA32E0DCBF63C6886AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+In-Reply-To: <OSBPR01MB359079EAA32E0DCBF63C6886AAFA0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Wed, 18 Mar 2020 22:41:57 +0000
+Message-ID: <CA+V-a8t-rA-6AmZry63QeXN6pvGWVtcEEuHaDA1jsS-x+30oiQ@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] media: i2c: ov5645: Set maximum leverage of
+ external clock frequency to 24480000
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_153932_610979_6A5BCCCD 
-X-CRM114-Status: GOOD (  20.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200318_154224_707496_0CC821D4 
+X-CRM114-Status: GOOD (  26.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.csengg[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,80 +97,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S.Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/18/20 3:09 PM, Will Deacon wrote:
-> On Wed, Mar 18, 2020 at 03:06:31PM -0700, Mike Kravetz wrote:
->> The architecture independent routine hugetlb_default_setup sets up
->> the default huge pages size.  It has no way to verify if the passed
->> value is valid, so it accepts it and attempts to validate at a later
->> time.  This requires undocumented cooperation between the arch specific
->> and arch independent code.
->>
->> For architectures that support more than one huge page size, provide
->> a routine arch_hugetlb_valid_size to validate a huge page size.
->> hugetlb_default_setup can use this to validate passed values.
->>
->> arch_hugetlb_valid_size will also be used in a subsequent patch to
->> move processing of the "hugepagesz=" in arch specific code to a common
->> routine in arch independent code.
->>
->> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
->> ---
->>  arch/arm64/include/asm/hugetlb.h   |  2 ++
->>  arch/arm64/mm/hugetlbpage.c        | 19 ++++++++++++++-----
->>  arch/powerpc/include/asm/hugetlb.h |  3 +++
->>  arch/powerpc/mm/hugetlbpage.c      | 20 +++++++++++++-------
->>  arch/riscv/include/asm/hugetlb.h   |  3 +++
->>  arch/riscv/mm/hugetlbpage.c        | 28 ++++++++++++++++++----------
->>  arch/s390/include/asm/hugetlb.h    |  3 +++
->>  arch/s390/mm/hugetlbpage.c         | 18 +++++++++++++-----
->>  arch/sparc/include/asm/hugetlb.h   |  3 +++
->>  arch/sparc/mm/init_64.c            | 23 ++++++++++++++++-------
->>  arch/x86/include/asm/hugetlb.h     |  3 +++
->>  arch/x86/mm/hugetlbpage.c          | 21 +++++++++++++++------
->>  include/linux/hugetlb.h            |  7 +++++++
->>  mm/hugetlb.c                       | 16 +++++++++++++---
->>  14 files changed, 126 insertions(+), 43 deletions(-)
->>
->> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
->> index 2eb6c234d594..3248f35213ee 100644
->> --- a/arch/arm64/include/asm/hugetlb.h
->> +++ b/arch/arm64/include/asm/hugetlb.h
-<snip>
->> +
->> +static __init int setup_hugepagesz(char *opt)
->> +{
->> +	unsigned long long ps = memparse(opt, &opt);
->> +
->> +	if arch_hugetlb_valid_size(ps)) {
-> 
-> Please compile your changes if you're touching multiple architectures. You
-> can get cross-compiler binaries from:
-> 
+Hi Laurent,
 
-My apologies.  I only cross compiled the result of the series on each
-architecture.  The above code is obviously bad.
+On Fri, Mar 13, 2020 at 9:31 PM Prabhakar Mahadev Lad
+<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+>
+> Hi Laurent,
+>
+> Thank you for the review.
+>
+> > -----Original Message-----
+> > From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> > Sent: 13 March 2020 21:24
+> > To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > Cc: Mauro Carvalho Chehab <mchehab@kernel.org>; Shawn Guo
+> > <shawnguo@kernel.org>; Sascha Hauer <s.hauer@pengutronix.de>;
+> > Pengutronix Kernel Team <kernel@pengutronix.de>; Rob Herring
+> > <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; Sakari
+> > Ailus <sakari.ailus@linux.intel.com>; NXP Linux Team <linux-imx@nxp.com>;
+> > Magnus Damm <magnus.damm@gmail.com>; Ezequiel Garcia
+> > <ezequiel@collabora.com>; Geert Uytterhoeven <geert@linux-m68k.org>;
+> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-renesas-
+> > soc@vger.kernel.org; Fabio Estevam <festevam@gmail.com>; linux-
+> > media@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> > Subject: Re: [PATCH v3 3/4] media: i2c: ov5645: Set maximum leverage of
+> > external clock frequency to 24480000
+> >
+> > Hi Prabhakar,
+> >
+> > Thank you for the patch.
+> >
+> > On Fri, Mar 13, 2020 at 09:12:33PM +0000, Lad Prabhakar wrote:
+> > > While testing on Renesas RZ/G2E platform, noticed the clock frequency
+> > > to be 24242424 as a result the probe failed. However increasing the
+> > > maximum leverage of external clock frequency to 24480000 fixes this
+> > > issue. Since this difference is small enough and is insignificant set
+> > > the same in the driver.
+> > >
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-
+> > lad.rj@bp.renesas.com>
+> > > ---
+> > >  drivers/media/i2c/ov5645.c | 6 ++++--
+> > >  1 file changed, 4 insertions(+), 2 deletions(-)
+> > >
+> > > diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
+> > > index 4fbabf3..b49359b 100644
+> > > --- a/drivers/media/i2c/ov5645.c
+> > > +++ b/drivers/media/i2c/ov5645.c
+> > > @@ -1107,8 +1107,10 @@ static int ov5645_probe(struct i2c_client *client)
+> > >  }
+> > >
+> > >  xclk_freq = clk_get_rate(ov5645->xclk);
+> > > -/* external clock must be 24MHz, allow 1% tolerance */
+> > > -if (xclk_freq < 23760000 || xclk_freq > 24240000) {
+> > > +/* external clock must be 24MHz, allow a minimum 1% and a
+> > maximum of 2%
+> > > + * tolerance
+> >
+> > So where do these numbers come from ? I understand that 2% is what you
+> > need to make your clock fit in the range, but why -1%/+2% instead of -
+> > 2%/+2% ? And why not 2.5 or 3% ? The sensor datasheet documents the
+> > range of supported xvclk frequencies to be 6MHz to 54MHz. I understand
+> > that PLL parameters depend on the clock frequency, but could they be
+> > calculated instead of hardcoded, to avoid requiring an exact 24MHz input
+> > frequency ?
+> >
+> To be honest I don't have the datasheet for ov5645, the flyer says 6-54Mhz but the
+> logs/comment says 24Mhz.
+>
+Comparing to ov5640 datasheet [1] (which I am assuming might be
+similar to ov5645), this change should affect the driver.
 
--- 
-Mike Kravetz
+[1] https://cdn.sparkfun.com/datasheets/Sensors/LightImaging/OV5640_datasheet.pdf
+
+Cheers,
+--Prabhakar
+
+> Cheers,
+> --Prabhakar
+>
+> > > + */
+> > > +if (xclk_freq < 23760000 || xclk_freq > 24480000) {
+> > >  dev_err(dev, "external clock frequency %u is not
+> > supported\n",
+> > >  xclk_freq);
+> > >  return -EINVAL;
+> >
+> > --
+> > Regards,
+> >
+> > Laurent Pinchart
+>
+>
+> Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
