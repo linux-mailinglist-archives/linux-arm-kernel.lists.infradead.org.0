@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 451C3189CDA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:23:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FDF6189CDD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 14:23:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mOyjz2Ucg2GdeSOJBzbBml9OiQKoB2DOiEdWG5+p4SQ=; b=pljoYwtn/dRDVc
-	ktedRTlB3N04uO2zY1Oul7U1EMqDfG675EhUNyWinQJE9AL1T9eVPNYColXqp6NsJY9Xnmbz5g6eU
-	U8KYiDCZR7BAdTUS7KnczF+ipIYvgffbup1ZVv4awbmpMj1Fa+jq7TVDj7VDCVFztMDlDx2g9/1h2
-	86/FsOjO97B2PBkzGd+Q6A74S5qh60x+RHvJwwakswdElUPg3/XRAgbGH3USV/yW2Q/GPbgoGpSGz
-	N/LKvG4o7CkmS8KtCqq1lW4h2lV6vdhVavIG0iPDSgP4cixVGpoMNOvon9WU9sTmySUXjz1W23VDY
-	5/yjXqPmlRfzjVCqI0Nw==;
+	List-Owner; bh=bl28nasenN8u35OAlHtwA+B/HNcw4iCjmLYtSTAaGJU=; b=gIY+8bN1pmg9Zu
+	EzLdd7OyP0yfvof4sAG0kwQL9CLuIu1sDLfXPnjgrcdRA6+vlUbVvQ3/KoV8LgPguUFmLYiS4Lsxu
+	WbApqpXAhEWYAuXIkDE/FChb2h452JQIxYVQmbCP+n3UsxEiN6dLzUv1b6Pv5DzpGcpjrZ5kpHUnH
+	7+TEa3ICg7dTzaMJn0GOWkHJZQ4jYnVrJOHIwsU4cty0KYjrjPQ2ZFrEUjyVqbkhX4rnG53GWa+Wd
+	UGruMkn4diwn41rGkrwqRs/md/UaYLsk/dkOvducjD5hOYl1uI+Tn4KDBcYLlcnG9fcOrIamqdewu
+	bVLqVSUM/MJppd8p8owA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEYes-0003nW-OY; Wed, 18 Mar 2020 13:22:54 +0000
+	id 1jEYfY-00047N-Lu; Wed, 18 Mar 2020 13:23:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEYeh-0003kc-OO
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:22:45 +0000
+ id 1jEYfO-00046L-Bl
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 13:23:27 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00DA32076F;
- Wed, 18 Mar 2020 13:22:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 58F372076F;
+ Wed, 18 Mar 2020 13:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584537763;
- bh=CKEreA8CUxYmEbiSZgNzqX5KgmCpM63Ng+o18LXBl38=;
+ s=default; t=1584537805;
+ bh=MS122+MI8HvaX7QgTFw/2hADw9MT/NgSAmlg4rviq4Y=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JorCG4C+ZGySiVuSu/z2+zdsj8FFbdzJ/Mp1MEZsbo/dyOHhwA/+Mw/1buc1hJZkx
- lOo2bzLYuiL6RFah4WngRMZW5fEq0OyfOlc8GblgkDZG5603FFUj+eWm4DEUKSAsZi
- joOSh8U3p8fA7Jx9In9dBPuZhzY5YPFNM1LDPeWI=
-Date: Wed, 18 Mar 2020 14:22:41 +0100
+ b=GpMwXcj8lqA4iW5RxQBBrJVd+qMgBVPfjSNN4WJBRjsMU7d8Yk1aMNAv8JOXZCoNN
+ YNv1YD14IL/Pz+Dy5gs1Wdoc3pKe5v/9E+NQWPwpvjgve8Ok22jkKnZUeuiXyo1cr/
+ cgOv8pXsr6CD1wNmMGyIJxKcDtQAr4r3Jtp0FjWQ=
+Date: Wed, 18 Mar 2020 14:23:22 +0100
 From: Greg KH <gregkh@linuxfoundation.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Mike Leach <mike.leach@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH 01/13] coresight: cti: Initial CoreSight CTI Driver
-Message-ID: <20200318132241.GB2789508@kroah.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 03/13] coresight: cti: Add sysfs access to program
+ function registers
+Message-ID: <20200318132322.GC2789508@kroah.com>
 References: <20200309161748.31975-1-mathieu.poirier@linaro.org>
- <20200309161748.31975-2-mathieu.poirier@linaro.org>
+ <20200309161748.31975-4-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200309161748.31975-2-mathieu.poirier@linaro.org>
+In-Reply-To: <20200309161748.31975-4-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_062243_812040_B2619B82 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20200318_062326_446572_9E55E449 
+X-CRM114-Status: GOOD (  21.82  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -81,80 +80,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 10:17:36AM -0600, Mathieu Poirier wrote:
+On Mon, Mar 09, 2020 at 10:17:38AM -0600, Mathieu Poirier wrote:
 > From: Mike Leach <mike.leach@linaro.org>
 > 
-> This introduces a baseline CTI driver and associated configuration files.
-> 
-> Uses the platform agnostic naming standard for CoreSight devices, along
-> with a generic platform probing method that currently supports device
-> tree descriptions, but allows for the ACPI bindings to be added once these
-> have been defined for the CTI devices.
-> 
-> Driver will probe for the device on the AMBA bus, and load the CTI driver
-> on CoreSight ID match to CTI IDs in tables.
-> 
-> Initial sysfs support for enable / disable provided.
-> 
-> Default CTI interconnection data is generated based on hardware
-> register signal counts, with no additional connection information.
+> Adds in sysfs programming support for the CTI function register sets.
+> Allows direct manipulation of channel / trigger association registers.
 > 
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> [Fixed abbreviation in title]
 > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-
-You didn't cc: all of them to get review comments?  I've added it
-above...
-
-And signed-off-by implies reviewed-by.
-
-> +/* basic attributes */
-> +static ssize_t enable_show(struct device *dev,
-> +			   struct device_attribute *attr,
-> +			   char *buf)
+> ---
+>  drivers/hwtracing/coresight/Kconfig           |   9 +
+>  .../hwtracing/coresight/coresight-cti-sysfs.c | 361 ++++++++++++++++++
+>  drivers/hwtracing/coresight/coresight-cti.c   |  19 +
+>  drivers/hwtracing/coresight/coresight-cti.h   |   8 +
+>  4 files changed, 397 insertions(+)
+> 
+> diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
+> index 45d3822c8c8c..83e841be1081 100644
+> --- a/drivers/hwtracing/coresight/Kconfig
+> +++ b/drivers/hwtracing/coresight/Kconfig
+> @@ -122,4 +122,13 @@ config CORESIGHT_CTI
+>  	  halt compared to disabling sources and sinks normally in driver
+>  	  software.
+>  
+> +config CORESIGHT_CTI_INTEGRATION_REGS
+> +	bool "Access CTI CoreSight Integration Registers"
+> +	depends on CORESIGHT_CTI
+> +	help
+> +	  This option adds support for the CoreSight integration registers on
+> +	  this device. The integration registers allow the exploration of the
+> +	  CTI trigger connections between this and other devices.These
+> +	  registers are not used in normal operation and can leave devices in
+> +	  an inconsistent state.
+>  endif
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index 507f8eb487fe..f687e07b68b0 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -109,6 +109,361 @@ static struct attribute *coresight_cti_mgmt_attrs[] = {
+>  	NULL,
+>  };
+>  
+> +/* CTI low level programming registers */
+> +
+> +/*
+> + * Show a simple 32 bit value if enabled and powered.
+> + * If inaccessible & pcached_val not NULL then show cached value.
+> + */
+> +static ssize_t cti_reg32_show(struct device *dev, char *buf,
+> +			      u32 *pcached_val, int reg_offset)
 > +{
-> +	int enable_req;
-> +	bool enabled, powered;
+> +	u32 val = 0;
 > +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	ssize_t size = 0;
+> +	struct cti_config *config = &drvdata->config;
 > +
-> +	enable_req = atomic_read(&drvdata->config.enable_req_count);
 > +	spin_lock(&drvdata->spinlock);
-> +	powered = drvdata->config.hw_powered;
-> +	enabled = drvdata->config.hw_enabled;
+> +	if ((reg_offset >= 0) && cti_active(config)) {
+> +		CS_UNLOCK(drvdata->base);
+> +		val = readl_relaxed(drvdata->base + reg_offset);
+> +		if (pcached_val)
+> +			*pcached_val = val;
+> +		CS_LOCK(drvdata->base);
+> +	} else if (pcached_val) {
+> +		val = *pcached_val;
+> +	}
 > +	spin_unlock(&drvdata->spinlock);
-> +
-> +	if (powered) {
-> +		size = scnprintf(buf, PAGE_SIZE, "cti %s; powered;\n",
-> +				 enabled ? "enabled" : "disabled");
-> +	} else {
-> +		size = scnprintf(buf, PAGE_SIZE, "cti %s; unpowered;\n",
-> +				 enable_req ? "enable req" : "disabled");
+> +	return scnprintf(buf, PAGE_SIZE, "%#x\n", val);
 
-sysfs files should never need scnprintf() as you "know" a single value
-will fit into a PAGE_SIZE.
+Fix all of the scnprintf() calls.
 
-And shouldn't this just be a single value, this looks like it is 2
-values in one line, that then needs to be parsed, is that to be
-expected?
+And again, no documentation?
 
-Where is the documentation for this new sysfs file?
+I'll stop here on this series, as much the same comments belong on the
+other patches in here.
 
-> +const struct attribute_group *coresight_cti_groups[] = {
-> +	&coresight_cti_group,
-> +	NULL,
-> +};
-
-ATTRIBUTE_GROUPS()?
-
-> +static struct amba_driver cti_driver = {
-> +	.drv = {
-> +		.name	= "coresight-cti",
-> +		.owner = THIS_MODULE,
-
-Aren't amba drivers smart enough to set this properly on their own?
-{sigh}
+thanks,
 
 greg k-h
 
