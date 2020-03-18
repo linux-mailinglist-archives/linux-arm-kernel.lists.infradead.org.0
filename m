@@ -2,84 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8D20189F8F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 16:24:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A0D1189FBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 16:35:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jirpfypyQxGINMoiwKqSjujZWhLMtTulkHvTzFHXtwA=; b=MH/IkxZOujBlEZ
-	RX76vZDta53EB8zspOxN6WtukB1lph+KZlrWpBziBJ4JqT9dh312GlVd0aUYQFdkPn8+yHy/AXz1G
-	/IG92VCGoNn/uxZJhoHJdQfVWnqt6fJiCykKpJArxtjcg461WeP54jBqRQPhd7Bjd7SKvoCz50vMJ
-	lnFYC52nWvoaStewYgY5h7Hx3OvYxtaTsj0tqb6BGVOg5Q82EEb6pK1JOy8qJvydtHAn0YwaQDwNh
-	WVMZaeaZFelpUbMYF7Pk6sd+4lbQHLp4Ldpq3DKec9kv3Pi0rxVwCYiVeNS+3g23hDtJjSTSOmDY1
-	dDtNlw8ceLr06EZD07Ug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qh4PEidqKbVTaiFCh9UzbJGJAeLbGoinmj2WlhlIPWg=; b=HC5kThMMCXdZSDCJBHRFgUlEK
+	AYVEabsqxZRe/dY26RJDxLxq4uE/mDi4Qb+V22S460SR7MhKp8eCe1Dvg50RVtxe4l51dqXn0LgIn
+	mym3OixSTyB0eHaV5iJy2RKTgqakpJ0QTswNXq282EIpjNPB0G35SUPu9cCxUBmpPxQYnLhIMh6tp
+	Ysv2ewoXNSnz7UrA1c2p9PN5r2VuNDTM7aNC3OocN7m5XG+Go4KLeNGp2eMmm18maTIt/K0MHqyNS
+	JNZeiawqJ6WwcXiU37WbcASzTSKXyS58aWQwyyxGlyoMWK7WkH/qTzQMnU78TDPWOBtZtcyn5XsfO
+	Ybw9VUp8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEaXz-0002XD-Kc; Wed, 18 Mar 2020 15:23:55 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1jEaj9-0008A2-1N; Wed, 18 Mar 2020 15:35:27 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEaXl-0002WG-HP
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 15:23:44 +0000
-Received: by mail-ed1-f65.google.com with SMTP id u59so3027650edc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 08:23:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=o/P0A6ezH4SEJwDeuvTx7Zm75dRTOfNAGjM7Gto+Be4=;
- b=bvRJRKsRC4MStIE8V7F2lw2itHgrbJI//u4+R14XInNJaRWsa+UT762B3KhraCmanh
- mbj3xELkvfs84H5w5b+xqVY8OrGeHsChGCz3BfwGjk5D3z6fJjp/4x0ZuAN02cEacaBi
- zxN/OxdOqCcWHKOsGZR1aJj2S4Sp/MAZqqe5royCB0UX98Z2b1KUyY4/7wmzi/VEj/K5
- f6cRQBvLwm4RqNLn6gt6SQZCfHh9LQLm9X+EOk5lIPU+Z3FWbYIrb3RWdkGqVjfLWaq4
- A8fdEUNmvHnEQgP5m3bSS2WBG4/VNaFryRSCNcVXjO0GZoVAwtd9SN4ATlaX/KJdBFWN
- nwFw==
-X-Gm-Message-State: ANhLgQ23Lop9WY0PntHNvGfuX3K4HsIZ6NZ1LaDXK2vO3gRriNZcY1hl
- bKyTKvdaH7fto2/5qValK0Q=
-X-Google-Smtp-Source: ADFU+vvlLB74JgRlXg+xDPlq4YvNZSuookChWiizS7jCejQkfzsJGQqnWGmzWtT6WtrTpus21OVJ/w==
-X-Received: by 2002:a50:950b:: with SMTP id u11mr4435941eda.233.1584545016013; 
- Wed, 18 Mar 2020 08:23:36 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id lc15sm363298ejb.58.2020.03.18.08.23.29
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 18 Mar 2020 08:23:35 -0700 (PDT)
-Date: Wed, 18 Mar 2020 16:23:22 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Paul Cercueil <paul@crapouillou.net>
-Subject: Re: [PATCH 2/2] ARM: DTS: Add devicetree file for the Galaxy S2
-Message-ID: <20200318152322.GA4112@kozik-lap>
-References: <20200312153411.13535-1-paul@crapouillou.net>
- <20200312153411.13535-2-paul@crapouillou.net>
- <20200313090011.GB7416@pi3>
- <20200318142543.C167520772@mail.kernel.org>
+ id 1jEaiz-00089M-Kl
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 15:35:19 +0000
+Received: from lhreml704-cah.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 034F84D0025CD28E4C92;
+ Wed, 18 Mar 2020 15:35:10 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ lhreml704-cah.china.huawei.com (10.201.108.45) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 18 Mar 2020 15:35:09 +0000
+Received: from [127.0.0.1] (10.47.11.44) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 18 Mar
+ 2020 15:35:08 +0000
+Subject: Re: [PATCH v3 2/2] irqchip/gic-v3-its: Balance initial LPI affinity
+ across CPUs
+To: Marc Zyngier <maz@kernel.org>
+References: <20200316115433.9017-1-maz@kernel.org>
+ <20200316115433.9017-3-maz@kernel.org>
+ <d3a6435b-bc1f-e518-6461-2ebff72bbc59@huawei.com>
+ <d74f9cb3df708335a56aec62963aa281@kernel.org>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <894aabcc-9676-3945-7a62-70fb930fd8a5@huawei.com>
+Date: Wed, 18 Mar 2020 15:34:56 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200318142543.C167520772@mail.kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <d74f9cb3df708335a56aec62963aa281@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.47.11.44]
+X-ClientProxiedBy: lhreml721-chm.china.huawei.com (10.201.108.72) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_082341_577597_BACF2EC7 
-X-CRM114-Status: GOOD (  30.36  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200318_083517_831911_B3C4FAB2 
+X-CRM114-Status: GOOD (  21.33  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,101 +75,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jason Cooper <jason@lakedaemon.net>, luojiaxing <luojiaxing@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ming Lei <ming.lei@redhat.com>, "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBNYXIgMTgsIDIwMjAgYXQgMDM6MjU6MjJQTSArMDEwMCwgUGF1bCBDZXJjdWVpbCB3
-cm90ZToKPiBIaSBLcnp5c3p0b2YsCj4gCj4gCj4gTGUgdmVuLiAxMyBtYXJzIDIwMjAgw6AgMTA6
-MDAsIEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4gYSDDqWNyaXQKPiA6Cj4g
-PiBPbiBUaHUsIE1hciAxMiwgMjAyMCBhdCAwNDozNDoxMVBNICswMTAwLCBQYXVsIENlcmN1ZWls
-IHdyb3RlOgo+ID4gPiAgRnJvbTogU3RlbmtpbiBFdmdlbml5IDxzdGVua2luZXZnZW5peUBnbWFp
-bC5jb20+Cj4gPiA+IAo+ID4gPiAgQWRkIGRldmljZXRyZWUgZmlsZSBmb3IgdGhlIEV4eW5vcyA0
-MjEwIGJhc2VkIEdhbGF4eSBTMiAoaTkxMDAKPiA+ID4gdmVyc2lvbikuCj4gPiAKPiA+IFRoYW5r
-cyBmb3IgdGhlIHBhdGNoIQo+ID4gCj4gPiBJdCBpcyBhbiBHVC1JOTEwMC4KPiA+IAo+ID4gK0Nj
-IE1hcmVrIChJIGhhdmUgZmV3IHF1ZXN0aW9ucyBmdXJ0aGVyKQo+ID4gCj4gPiAKPiA+ID4gCj4g
-PiA+ICBTaWduZWQtb2ZmLWJ5OiBTdGVua2luIEV2Z2VuaXkgPHN0ZW5raW5ldmdlbml5QGdtYWls
-LmNvbT4KPiA+ID4gIFNpZ25lZC1vZmYtYnk6IFBhdWwgQ2VyY3VlaWwgPHBhdWxAY3JhcG91aWxs
-b3UubmV0Pgo+ID4gPiAgLS0tCj4gPiA+ICAgYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUgICAg
-ICAgICAgICAgfCAgIDEgKwo+ID4gPiAgIGFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQyMTAtaTkx
-MDAuZHRzIHwgODE2Cj4gPiA+ICsrKysrKysrKysrKysrKysrKysrKysrKysKPiA+ID4gICAyIGZp
-bGVzIGNoYW5nZWQsIDgxNyBpbnNlcnRpb25zKCspCj4gPiA+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0
-IGFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQyMTAtaTkxMDAuZHRzCj4gPiA+IAo+ID4gPiAgZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlIGIvYXJjaC9hcm0vYm9vdC9kdHMv
-TWFrZWZpbGUKPiA+ID4gIGluZGV4IGQ2NTQ2ZDI2NzZiOS4uNTIyNDM2ZDMwNjkwIDEwMDY0NAo+
-ID4gPiAgLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUKPiA+ID4gICsrKyBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL01ha2VmaWxlCj4gPiA+ICBAQCAtMTgxLDYgKzE4MSw3IEBAIGR0Yi0kKENP
-TkZJR19BUkNIX0VYWU5PUzMpICs9IFwKPiA+ID4gICAJZXh5bm9zMzI1MC1tb25rLmR0YiBcCj4g
-PiA+ICAgCWV4eW5vczMyNTAtcmluYXRvLmR0Ygo+ID4gPiAgIGR0Yi0kKENPTkZJR19BUkNIX0VY
-WU5PUzQpICs9IFwKPiA+ID4gICsJZXh5bm9zNDIxMC1pOTEwMC5kdGIgXAo+ID4gPiAgIAlleHlu
-b3M0MjEwLW9yaWdlbi5kdGIgXAo+ID4gPiAgIAlleHlub3M0MjEwLXNtZGt2MzEwLmR0YiBcCj4g
-PiA+ICAgCWV4eW5vczQyMTAtdHJhdHMuZHRiIFwKPiA+ID4gIGRpZmYgLS1naXQgYS9hcmNoL2Fy
-bS9ib290L2R0cy9leHlub3M0MjEwLWk5MTAwLmR0cwo+ID4gPiBiL2FyY2gvYXJtL2Jvb3QvZHRz
-L2V4eW5vczQyMTAtaTkxMDAuZHRzCj4gPiA+ICBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4gPiAg
-aW5kZXggMDAwMDAwMDAwMDAwLi5jMjE4ZTM0OTU5YmUKPiA+ID4gIC0tLSAvZGV2L251bGwKPiA+
-ID4gICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQyMTAtaTkxMDAuZHRzCj4gPiA+ICBA
-QCAtMCwwICsxLDgxNiBAQAo+ID4gPiAgKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwt
-Mi4wCj4gPiA+ICArLyoKPiA+ID4gICsgKiBTYW1zdW5nJ3MgRXh5bm9zNDIxMCBiYXNlZCBHYWxh
-eHkgUzIgKGk5MTAwIHZlcnNpb24pIGRldmljZSB0cmVlCj4gPiAKPiA+IERpdHRvCj4gPiAKPiA+
-ID4gICsgKgo+ID4gPiAgKyAqIENvcHlyaWdodCAoYykgMjAxMiBTYW1zdW5nIEVsZWN0cm9uaWNz
-IENvLiwgTHRkLgo+ID4gPiAgKyAqCQlodHRwOi8vd3d3LnNhbXN1bmcuY29tCj4gPiA+ICArICog
-Q29weXJpZ2h0IChjKSAyMDIwIFN0ZW5raW4gRXZnZW5peSA8c3RlbmtpbmV2Z2VuaXlAZ21haWwu
-Y29tPgo+ID4gPiAgKyAqIENvcHlyaWdodCAoYykgMjAyMCBQYXVsIENlcmN1ZWlsIDxwYXVsQGNy
-YXBvdWlsbG91Lm5ldD4KPiA+ID4gICsgKgo+ID4gPiAgKyAqIERldmljZSB0cmVlIHNvdXJjZSBm
-aWxlIGZvciBTYW1zdW5nJ3MgR2FsYXh5IFMyIHNtYXJ0cGhvbmUKPiA+ID4gKGk5MTAwIHZlcnNp
-b24pLAo+ID4gPiAgKyAqIHdoaWNoIGlzIGJhc2VkIG9uIFNhbXN1bmcncyBFeHlub3M0MjEwIFNv
-Qy4KPiA+IAo+ID4gRHVwbGljYXRlZCBkZXNjcmlwdGlvbiwgeW91IG1lbnRpb25lZCBpdCBiZWZv
-cmUuCj4gPiAKPiA+ID4gICsgKi8KPiA+ID4gICsKPiA+ID4gICsvZHRzLXYxLzsKPiA+ID4gICsj
-aW5jbHVkZSAiZXh5bm9zNDIxMC5kdHNpIgo+ID4gPiAgKyNpbmNsdWRlICJleHlub3M0NDEyLXBw
-bXUtY29tbW9uLmR0c2kiCj4gPiA+ICArCj4gPiA+ICArI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2dw
-aW8vZ3Bpby5oPgo+ID4gPiAgKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnB1dC9saW51eC1ldmVu
-dC1jb2Rlcy5oPgo+ID4gPiAgKwo+ID4gPiAgKy8gewo+ID4gPiAgKwltb2RlbCA9ICJTYW1zdW5n
-IEdhbGF4eSBTMiAoaTkxMDApIjsKPiA+IAo+ID4gR1QtSTkxMDAKPiA+IAo+ID4gPiAgKwljb21w
-YXRpYmxlID0gInNhbXN1bmcsaTkxMDAiLCAic2Ftc3VuZyxleHlub3M0MjEwIiwKPiA+ID4gInNh
-bXN1bmcsZXh5bm9zNCI7Cj4gPiAKPiA+IEkgdGhpbmsgaXQgc2hhcmVzIGEgbG90IHdpdGggVHJh
-dHMgYm9hcmQuLi4KPiA+IAo+ID4gTWFyZWssIGhvdyBzaW1pbGFyIHRoZXNlCj4gPiBkZXNpZ25z
-IGFyZT8gTWF5YmUgaXQgaXMgd29ydGggdG8gc3BsaXQgc29tZSBwYXJ0cyBhbmQgbWFrZSBjb21t
-b24gcGFydD8KPiA+IAo+ID4gPiAgKwo+ID4gPiAgKwo+ID4gPiAgKwltZW1vcnlANDAwMDAwMDAg
-ewo+ID4gPiAgKwkJZGV2aWNlX3R5cGUgPSAibWVtb3J5IjsKPiA+ID4gICsJCXJlZyA9IDwweDQw
-MDAwMDAwIDB4NDAwMDAwMDA+Owo+ID4gPiAgKwl9Owo+ID4gPiAgKwo+ID4gCj4gPiBZb3UgZG8g
-bm90IGhhdmUgYSBjaG9zZW4gbm9kZSwgYXQgbGVhc3QgZm9yIHN0ZG91dCBzZXJpYWwgc2VsZWN0
-aW9uLgo+ID4gUHJvYmFibHkgeW91IHNob3VsZCBoYXZlIG9uZS4uLiBib290YXJncyBJIGd1ZXNz
-IGNvdWxkIGNvbWUgZnJvbQo+ID4gYm9vdGxvYWRlci4KPiA+IAo+ID4gCj4gPiA+ICArCXZlbW1j
-X3JlZzogcmVndWxhdG9yLTAgewo+ID4gPiAgKwkJY29tcGF0aWJsZSA9ICJyZWd1bGF0b3ItZml4
-ZWQiOwo+ID4gPiAgKwkJcmVndWxhdG9yLW5hbWUgPSAiVk1FTV9WRERfMi44ViI7Cj4gPiA+ICAr
-CQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwyODAwMDAwPjsKPiA+ID4gICsJCXJlZ3VsYXRv
-ci1tYXgtbWljcm92b2x0ID0gPDI4MDAwMDA+Owo+ID4gPiAgKwkJZ3BpbyA9IDwmZ3BrMCAyIEdQ
-SU9fQUNUSVZFX0hJR0g+Owo+ID4gPiAgKwkJZW5hYmxlLWFjdGl2ZS1oaWdoOwo+ID4gCj4gPiBU
-aGlzIGxvb2tzIGxpa2UgYSBzdHViL2Zha2UgcmVndWxhdG9yLiBQcm9iYWJseSBpdCBzaG9vdWxk
-IGJlIHJlcGxhY2VkCj4gPiB3aXRoIHByb3BlciByZWd1bGF0b3IgY29taW5nIGZyb20gUE1JQyAo
-ZmV3IHNlZW1zIHRvIGJlIG1pc3NpbmcgdGhlcmUpLgo+ID4gCj4gPiBJIGRvbid0IGhhdmUgdGhl
-IHNjaGVtYXRpY3Mgc28gSSBjYW5ub3QganVkZ2UuLi4gSSBzZWUgVHJhdHMgaGFzIHRoZQo+ID4g
-c2FtZS4KPiA+IAo+ID4gTWFyZWssIG1heXliZSB5b3Uga25vdywgaXMgaXQgcmVhbGx5IGEgc2Vw
-YXJhdGUgcmVndWxhdG9yPwo+ID4gCj4gPiA+ICArCX07Cj4gPiA+ICArCj4gPiA+ICArCXRzcF9y
-ZWc6IHJlZ3VsYXRvci0xIHsKPiA+ID4gICsJCWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVk
-IjsKPiA+ID4gICsJCXJlZ3VsYXRvci1uYW1lID0gIlRTUF9GSVhFRF9WT0xUQUdFUyI7Cj4gPiA+
-ICArCQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwzMzAwMDAwPjsKPiA+ID4gICsJCXJlZ3Vs
-YXRvci1tYXgtbWljcm92b2x0ID0gPDMzMDAwMDA+Owo+ID4gPiAgKwkJZ3BpbyA9IDwmZ3BsMCAz
-IEdQSU9fQUNUSVZFX0hJR0g+Owo+ID4gPiAgKwkJc3RhcnR1cC1kZWxheS11cyA9IDw3MDAwMD47
-Cj4gPiA+ICArCQllbmFibGUtYWN0aXZlLWhpZ2g7Cj4gPiA+ICArCQlyZWd1bGF0b3ItYm9vdC1v
-bjsKPiA+ID4gICsJCXJlZ3VsYXRvci1hbHdheXMtb247Cj4gPiAKPiA+IGFsd2F5cy1vbiBhbmQg
-Ym9vdC1vbiBzaG91bGQgbm90IGJlIG5lZWRlZC4gWW91IGhhdmUgYSBjb25zdW1lciBmb3IgdGhp
-cwo+ID4gcmVndWxhdG9yLgo+IAo+IEFib3V0IHRoaXM6IHRoZSB0b3VjaHNjcmVlbiBkcml2ZXIg
-ZG9lcyBub3QgdXNlIGEgcmVndWxhdG9yLCBzbyBJIGJlbGlldmUKPiB0aGF0J3Mgd2h5IHRoZXNl
-IHByb3BlcnRpZXMgd2VyZSBoZXJlLgo+IAo+IEkgc2VudCBwYXRjaGVzIHVwc3RyZWFtIHRvIGFk
-ZHJlc3MgdGhlIGlzc3VlOgo+IGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDIwLzMvMTUvOTQKPiAK
-PiBJIGJlbGlldmUgdGhpcyBtZWFucyBJIGNhbm5vdCBtZXJnZSB0aGUgaTkxMDAgZGV2aWNldHJl
-ZSB1bnRpbCBpdCBpcyBhY2tlZC4KClRoaXMgY2FuIHN0YXkgYmVjYXVzZSBpdCBpcyBjb3JyZWN0
-IHdpdGggY3VycmVudCBiaW5kaW5ncyBhbmQgZHJpdmVyLgpIb3dldmVyIHlvdSBzaG91bGQgcmVt
-b3ZlIGF2ZGQtc3VwcGx5L3ZkZC1zdXBwbHkgZnJvbSB0b3VjaHNjcmVlbiBub2RlCmJlY2F1c2Ug
-dGhleSBhcmUgbm90IHVzZWQvc3VwcG9ydGVkLgoKWW91IGNhbiByZS1hZGQgdGhlbSBvbmNlIGJp
-bmRpbmdzIGdldCBhY2NlcHRlZC4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+>>> +static int its_select_cpu(struct irq_data *d,
+>>> +			  const struct cpumask *aff_mask)
+>>> +{
+>>> +	struct its_device *its_dev = irq_data_get_irq_chip_data(d);
+>>> +	cpumask_var_t tmpmask;
+>>> +	int cpu, node;
+>>> +
+>>> +	if (!alloc_cpumask_var(&tmpmask, GFP_KERNEL))
+>>> +		return -ENOMEM;
+>>> +
+>>> +	node = its_dev->its->numa_node;
+>>> +
+>>> +	if (!irqd_affinity_is_managed(d)) {
+>>> +		/* First try the NUMA node */
+>>> +		if (node != NUMA_NO_NODE) {
+>>> +			/*
+>>> +			 * Try the intersection of the affinity mask and the
+>>> +			 * node mask (and the online mask, just to be safe).
+>>> +			 */
+>>> +			cpumask_and(tmpmask, cpumask_of_node(node), aff_mask);
+>>> +			cpumask_and(tmpmask, tmpmask, cpu_online_mask);
+>>> +
+>>> +			/* If that doesn't work, try the nodemask itself */
+>>
+>> So if tmpmsk is empty...
+> 
+> Which means the proposed affinity mask isn't part of the node mask the
+> first place.
+> Why did we get such an affinity the first place?
+
+It seems to be just irqbalance setting the affinity mask via sysfs:
+
+[44.782116] Calltrace:
+[44.782119] its_select_cpu+0x420/0x6e0
+[44.782121] its_set_affinity+0x180/0x208
+[44.782126] msi_domain_set_affinity+0x44/0xb8
+[44.782130] irq_do_set_affinity+0x48/0x190
+[44.782132] irq_set_affinity_locked+0xc0/0xe8
+[44.782134] __irq_set_affinity+0x48/0x78
+[44.782136] write_irq_affinity.isra.8+0xec/0x110
+[44.782138] irq_affinity_proc_write+0x1c/0x28
+[44.782142] proc_reg_write+0x70/0xb8
+[44.782147] __vfs_write+0x18/0x40
+[44.782149] vfs_write+0xb0/0x1d0
+[44.782151] ksys_write+0x64/0xe8
+[44.782154] __arm64_sys_write+0x18/0x20
+[44.782157] el0_svc_common.constprop.2+0x88/0x150
+[44.782159] do_el0_svc+0x20/0x80
+[44.782162] el0_sync_handler+0x118/0x188
+[44.782164] el0_sync+0x140/0x180
+
+And for some reason fancied cpu62.
+
+> 
+>>
+>>> +			if (cpumask_empty(tmpmask))
+>>> +				cpumask_and(tmpmask, cpumask_of_node(node), cpu_online_mask);
+>>
+>>   now the tmpmask may have no intersection with the aff_mask...
+> 
+> But it has the mask for CPUs that are best suited for this interrupt,
+> right?
+> If I understand the topology of your machine, it has an ITS per 64 CPUs,
+> and
+> this device is connected to the ITS that serves the second socket.
+
+No, this one (D06ES) has a single ITS:
+
+john@ubuntu:~/kernel-dev$ dmesg | grep ITS
+[    0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
+[    0.000000] ITS [mem 0x202100000-0x20211ffff]
+[    0.000000] ITS@0x0000000202100000: Using ITS number 0
+[    0.000000] ITS@0x0000000202100000: allocated 8192 Devices 
+@23ea9f0000 (indirect, esz 8, psz 16K, shr 1)
+[    0.000000] ITS@0x0000000202100000: allocated 2048 Virtual CPUs 
+@23ea9d8000 (indirect, esz 16, psz 4K, shr 1)
+[    0.000000] ITS@0x0000000202100000: allocated 256 Interrupt 
+Collections @23ea9d3000 (flat, esz 16, psz 4K, shr 1)
+[    0.000000] ITS: Using DirectLPI for VPE invalidation
+[    0.000000] ITS: Enabling GICv4 support
+[    0.044034] Platform MSI: ITS@0x202100000 domain created
+[    0.044042] PCI/MSI: ITS@0x202100000 domain created
+
+D06CS has 2x ITS, as you may know :)
+
+And, FWIW, the device is on the 2nd socket, numa node #2.
+
+So the cpu mask of node #0 (where the ITS lives) is 0-23. So no 
+intersection with what userspace requested.
+
+>> 	if (cpu < 0 || cpu >= nr_cpu_ids)
+>> 		return -EINVAL;
+>>
+>> 	if (cpu != its_dev->event_map.col_map[id]) {
+>> 		its_inc_lpi_count(d, cpu);
+>> 		its_dec_lpi_count(d, its_dev->event_map.col_map[id]);
+>> 		target_col = &its_dev->its->collections[cpu];
+>> 		its_send_movi(its_dev, target_col, id);
+>> 		its_dev->event_map.col_map[id] = cpu;
+>> 		irq_data_update_effective_affinity(d, cpumask_of(cpu));
+>> 	}
+>>
+>> So cpu may not be a member of mask_val. Hence the inconsistency of the
+>> affinity list and effective affinity. We could just drop the AND of
+>> the ITS node mask in its_select_cpu().
+> 
+> That would be a departure from the algorithm Thomas proposed, which made
+> a lot of sense in my opinion. What its_select_cpu() does in this case is
+> probably the best that can be achieved from a latency perspective,
+> as it keeps the interrupt local to the socket that generated it.
+
+We seem to be following what Thomas described for a non-managed 
+interrupt bound to a node. But is this interrupt bound to the node?
+
+Regardless of that, what you're saying seems right - keep local 
+interrupt bound to the node. But the problem is that userspace is doing 
+its own thing.
+
+> 
+> What I wonder is how we end-up with this silly aff_mask the first place.
+
+Cheers,
+John
+
+BTW, sorry if any text formatting is mangled. I have to improve my WFH 
+setup....
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
