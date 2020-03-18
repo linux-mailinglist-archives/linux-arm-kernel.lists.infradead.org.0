@@ -2,131 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B39D189B5B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 12:53:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56F9A189B39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 12:51:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:Message-ID:Date
-	:From:In-Reply-To:References:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rT8GVlBkJBRWH4VzfMdUfA9PjpKKpCERRI/HKBLKmtI=; b=hZI3FnXZgMtF4s
-	HGv5o9i4sAQhJE7/cI1qj+nJDJI1Wq+PSo7UtA0SpHfuwwkQbYo5c7+PRsXWU/8f4K4zjC5wxNRnl
-	k1CFgADHIKESqQwYMszqqGvnjA+VaH9kXzXS/VmiiqfAjyputkYZdwRJObc1z7fpOWfExDxwMBRIW
-	U85ABf1bfKblW7FOVghpZoXzmX0DhIpYSFAN6guOi4QcrwU8z7L2qGsdqs0/U0sMZLseIU9SfMy0J
-	/cEkK5d93GM3Udi8fq2lMuicuwyO+27BJXYfuRNWvE8Ibrqn8SaSqIVEUtaxGBgZgvswAxMuOdXfc
-	SFACAztw1xUmDGg5xhUA==;
+	List-Owner; bh=2MDRpSSDoT5dbUTyzj2xUDUGP/BPZn2PFBsmJTd4Rz8=; b=SYvYiCwIh3QOj4
+	Uzc1MCMo1G+Hi1bXP9C65Pzt8WRWLKh4DZFfIqscCP3xtVwVIPl64kp9JIi6UbGGzqkhM79yfHXzP
+	tJ42mHM/IcpI8l4uqpbf1uOrWk5ofpGkPyQDMxNHPiHA5HOXRDltKc9IrxC70bi8AOoP44/7FtXQq
+	CY+mxFz6lsDqj13u0wWau3AtOmAc8iWDc3hlueD9zh9lFoadilghJnl2L67W9bj7pEuBqvHO3oaXk
+	1yJqjTihE5NAhdWZkaFAQu/PF+O8LW5jQx+yJq0jG5mH44fYJQuttx/wCHUB/o25MQ7lz6vpj3Yev
+	IEsqZc9Y620cDW3/k/0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEXGf-0006ui-KB; Wed, 18 Mar 2020 11:53:49 +0000
-Received: from mail-eopbgr70129.outbound.protection.outlook.com
- ([40.107.7.129] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jEXEE-0005M2-Pq; Wed, 18 Mar 2020 11:51:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEXGC-0006pl-NI; Wed, 18 Mar 2020 11:53:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dtzs2GW7vy0UmZRmF+m72Fpo4YleF9VH/w+g52Ued9FukFS2RmJIYi+MHnDyOFCD6ME27sKc8eaUUVLyC7IN2oGZ5qoe7h2rB7jMDulrsWTLEBmxthue2D4qazrjKxKq1zcDUVe5ETbIzhzYuiqEErj5K41VdaK2QpeV8qvCQMI9cMU7ovbPoAMHjNgsGCZ2h2gpT1da/kqWYWLCwv+MIaX7A/KKqV8yKpUqWlkBD6U7B1a8+cwk/zpxNPusCT+0D5KSumtr9IYJfFCTpUCsg4miBRyYx4vnHh+yq2n/1mxablP6G1eocVX25hLz/trvMgSQ5HTX85JS1z3/fcEzNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lP8agbcq2AYAILADyUgk5nJ/czwsxA8ATaSe+V6FyBs=;
- b=BNZiGUHM1VYccOLplqeqjFdv9LGeVzXOaJ5ZQN1tz80pYeWdJYqMP7lG0qAtXZmt6KoRcAGJQ81NNKdkQEYvnnPaOwzpQCRNz2b8pcSACK9uZZQArJQI/7XjBUr09SQrL7Wua9H676/tZTjNkj+oxqkvwhVhuJi+4tybgbITEYhCkXCCb/dX+kX2313Pkw15DD76S6E5pnDG378ETKXe6TmZGlTBrSU3/YPPHyXf4SAy55mQ/8cRWzjw/DLsDauowhOpP5FB/w5gUJrHecvclx764TRgM5oTBcOB+G4Jq4Nn8UFrBHHzAWFQFHQ6ezW5cvhSIGIxXcHQi5HchEi3kw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lP8agbcq2AYAILADyUgk5nJ/czwsxA8ATaSe+V6FyBs=;
- b=raY6hGar69e12FrP/DIAVhCgnGos7uAR2lTW4uDkqcWc/mgg4e2cr3ZnjZXXAKaFGShfWzoVMH7P4dK2yxgyxSEOq9lF5sBH2+BgKOegmuEBACHawoTcAlCnIfXB/rZ2boE6fCJklSeCyPn8mOGKr1Y7N+grjcDUhLflPnZj+gM=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=oleksandr.suvorov@toradex.com; 
-Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
- VI1PR05MB5456.eurprd05.prod.outlook.com (20.177.201.11) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.18; Wed, 18 Mar 2020 11:53:16 +0000
-Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
- ([fe80::7cdd:4feb:a8b6:a6d2]) by VI1PR05MB3279.eurprd05.prod.outlook.com
- ([fe80::7cdd:4feb:a8b6:a6d2%7]) with mapi id 15.20.2814.021; Wed, 18 Mar 2020
- 11:53:16 +0000
-X-Gm-Message-State: ANhLgQ3k/yH4oRhxZ5LnJMKIrp3699GUzrkm2GcF+QNZ7p6c9OlWFnF0
- rt3N5Dc5A0bJhw4DkqwZ5TRePU2ZoDStZ9NMP1s=
-X-Google-Smtp-Source: ADFU+vuIN9vi3EnzahwoHqBu0uZg9qdX6KincFfsWht2IbWF+j4fV2L42M4aXtG7Pv38JtpTaFmsRwkNpHNmxW/8YWA=
-X-Received: by 2002:a37:4fd4:: with SMTP id d203mr3613801qkb.249.1584532071685; 
- Wed, 18 Mar 2020 04:47:51 -0700 (PDT)
-References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
- <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
- <20200317174043.GA1464607@ulmo>
-In-Reply-To: <20200317174043.GA1464607@ulmo>
-From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-Date: Wed, 18 Mar 2020 13:47:40 +0200
-X-Gmail-Original-Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
-Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
-To: Thierry Reding <thierry.reding@gmail.com>
-X-ClientProxiedBy: MN2PR16CA0064.namprd16.prod.outlook.com
- (2603:10b6:208:234::33) To VI1PR05MB3279.eurprd05.prod.outlook.com
- (2603:10a6:802:1c::24)
+ id 1jEXE6-0005La-LN
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 11:51:12 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 10DDE205ED;
+ Wed, 18 Mar 2020 11:51:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584532269;
+ bh=1Yb33p2EOgcIG+yF6C3ogUaPMdffTiWMrhOm8DQm7bM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qvb6ZWhVn28Qg7oOgvHErkfXXIlDizOs4yMIVZRaGpjLFjAU0jN2Qi+GJ9hdGt1x6
+ oCZ6Wgq1P5omPGzSx7PyxGVaf+qptbxBgBSNrFd75c0lGPgTb6jYvByhE2kmnOs3VH
+ F1dHYqNIgWq6TJh8cxtu/OexhJn8CDiSuyG3Nu1Q=
+Date: Wed, 18 Mar 2020 12:51:05 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Jolly Shah <jolly.shah@xilinx.com>
+Subject: Re: [PATCH v3 21/24] firmware: xilinx: Add sysfs interface
+Message-ID: <20200318115105.GA2472686@kroah.com>
+References: <1583538452-1992-1-git-send-email-jolly.shah@xilinx.com>
+ <1583538452-1992-22-git-send-email-jolly.shah@xilinx.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from mail-qt1-f175.google.com (209.85.160.175) by
- MN2PR16CA0064.namprd16.prod.outlook.com (2603:10b6:208:234::33) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.21 via Frontend
- Transport; Wed, 18 Mar 2020 11:53:15 +0000
-Received: by mail-qt1-f175.google.com with SMTP id z8so16934014qto.12;
- Wed, 18 Mar 2020 04:53:15 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3k/yH4oRhxZ5LnJMKIrp3699GUzrkm2GcF+QNZ7p6c9OlWFnF0
- rt3N5Dc5A0bJhw4DkqwZ5TRePU2ZoDStZ9NMP1s=
-X-Google-Smtp-Source: ADFU+vuIN9vi3EnzahwoHqBu0uZg9qdX6KincFfsWht2IbWF+j4fV2L42M4aXtG7Pv38JtpTaFmsRwkNpHNmxW/8YWA=
-X-Received: by 2002:a37:4fd4:: with SMTP id
- d203mr3613801qkb.249.1584532071685; Wed, 18 Mar 2020 04:47:51 -0700 (PDT)
-X-Gmail-Original-Message-ID: <CAGgjyvGDTD=ZgEjU540HLApQXCoM1a8bk_-eQbS44sge+GpeAg@mail.gmail.com>
-X-Originating-IP: [209.85.160.175]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: aad552e2-1dec-4d8f-aab6-08d7cb32f17b
-X-MS-TrafficTypeDiagnostic: VI1PR05MB5456:
-X-Microsoft-Antispam-PRVS: <VI1PR05MB545678DD6EDA9D3BA9E04BF9F9F70@VI1PR05MB5456.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-Forefront-PRVS: 03468CBA43
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10019020)(4636009)(366004)(136003)(39850400004)(376002)(396003)(346002)(199004)(66556008)(66476007)(26005)(52116002)(42186006)(478600001)(54906003)(66946007)(53546011)(2906002)(55236004)(6666004)(81156014)(9686003)(55446002)(450100002)(5660300002)(186003)(8936002)(316002)(44832011)(8676002)(4326008)(6862004)(81166006)(86362001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5456;
- H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-Received-SPF: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: acF67KKwhF3KUaL0msz+cdXq1x0VSn6OCAssSb4Levcd+1jOP3+Ymn0jscm3VqQdBkmko2nYvXNFmRWTL+aM7Nk0a1SlST2Z5h3YPP/hdP6jsZd/M+lBaXI0UjMRfr3NwKmeq6tIa0AJ/LWOQY3FfoBOEWevPPUtCMjxmCvILf4mGh1IkpKz+N3qkccTowAsvH15FzH0Sx//Gv0x+DO8Q2DDuNBda88Kk/NALgLqivNXPbZSuA9DowzhTX49Z0GPwK+jz3T7yIY50OqWJUxB4FwlDdoZSDIRcq9Q1Ck6cm1OOdcTYD/28qur68/Viiubrx7JycaNS4gewuYooYsObJi3R/xdkz34JQ/QQxGP2x9MbkAtVye78zZ0X0oEBqBLakO6TpBnZP8RU/LzhfBlD3G2w50Jopb+lFZo4Nlm8v5r2PQpOPgvodwsBRrnAjRt
-X-MS-Exchange-AntiSpam-MessageData: s95irvv0uP4QK4Cns697H0ZBHq1kXuHSH+Q6r/4LHWf/57y1jXLsLN06LrViJVZPNWqia4nb30i3qRU7uerPhaR2JdRcKD9ZHJcTnfyl23QZemJ4XbvdMiYUyb1BzCtMms3CZa7QT8lIOKthuUsqfg==
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aad552e2-1dec-4d8f-aab6-08d7cb32f17b
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2020 11:53:16.0089 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lMFQJGCK2KoxTqEGrjBAuaQ5kUVbaKklBCjCmsUOcvowxvIO1pG50bZBnOxEPNXEPsd5ogiGbMKy2lT6H05YlMwaEIAGbaez3rYuXI4/G+A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5456
+Content-Disposition: inline
+In-Reply-To: <1583538452-1992-22-git-send-email-jolly.shah@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_045320_768598_EFC73CBE 
-X-CRM114-Status: GOOD (  16.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200318_045110_744582_774117D7 
+X-CRM114-Status: GOOD (  17.95  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.129 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,76 +73,282 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
- Paul Cercueil <paul@crapouillou.net>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
- Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Igor Opaniuk <igor.opaniuk@toradex.com>, Scott Branden <sbranden@broadcom.com>,
- Tony Prisk <linux@prisktech.co.nz>, Palmer Dabbelt <palmer@dabbelt.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
+Cc: Tejas Patel <tejas.patel@xilinx.com>, keescook@chromium.org,
+ Rajan Vaja <rajan.vaja@xilinx.com>, ard.biesheuvel@linaro.org,
+ matt@codeblueprint.co.uk, dmitry.torokhov@gmail.com, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, Jolly Shah <jollys@xilinx.com>,
+ rajanv@xilinx.com, sudeep.holla@arm.com, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 7:41 PM Thierry Reding <thierry.reding@gmail.com> wrote:
->
-> On Tue, Mar 17, 2020 at 02:32:25PM +0200, Oleksandr Suvorov wrote:
-> > The polarity enum definition PWM_POLARITY_INVERSED is misspelled.
-> > Rename it to PWM_POLARITY_INVERTED.
->
-> It isn't misspelled. "inversed" is a synonym for "inverted". Both
-> spellings are correct.
+On Fri, Mar 06, 2020 at 03:47:29PM -0800, Jolly Shah wrote:
+> +/**
+> + * ggs_store - Store global general storage (ggs) sysfs attribute
+> + * @device: Device structure
+> + * @attr: Device attribute structure
+> + * @buf: User entered shutdown_scope attribute string
+> + * @count: Size of buf
+> + * @reg: Register number
+> + *
+> + * Return: count argument if request succeeds, the corresponding
+> + * error code otherwise
+> + *
+> + * Helper function for storing a ggs register value.
+> + *
+> + * For example, the user-space interface for storing a value to the
+> + * ggs0 register:
+> + * echo 0xFFFFFFFF 0x1234ABCD > /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
+> + */
 
-> And as you noted in the cover letter, there's a conflict between the
-> macro defined in dt-bindings/pwm/pwm.txt. If they end up being included
-> in the wrong order you'll get a compile error.
+Do you really need a whole kernel_doc format for a static function?
+Anyway...
 
-This patch is a part of the patchset, which in result removes enum at all,
-so there will be no definition conflict.
+> +static ssize_t ggs_store(struct device *device,
+> +			 struct device_attribute *attr,
+> +			 const char *buf, size_t count,
+> +			 u32 reg)
+> +{
+> +	char *kern_buff, *inbuf, *tok;
+> +	long mask, value;
+> +	int ret;
+> +	u32 ret_payload[PAYLOAD_ARG_CNT];
+> +
+> +	if (!device || !attr || !buf || !count || reg >= GSS_NUM_REGS)
 
-> The enum was named this way on purpose to make it separate from the
-> definition for the DT bindings. Note that DT bindings are an ABI and can
-> never change, whereas the enum pwm_polarity is part of a Linux internal
-> API and doesn't have the same restrictions as an ABI.
+How can !device, !attr, !buf, or !count ever happen?
 
-AFAIU, DTS files are not a part of ABI.
+Do not check for things that are impossible please.
 
-I understand that enums are better than macros for some reasons.
-However, I think it is dangerous to use duplicate definitions in
-different places when values of these definitions use in the same
-code.
-So, given that the enum cannot be used in DT, I left only macros.
+> +		return -EINVAL;
+> +
+> +	kern_buff = kzalloc(count, GFP_KERNEL);
+> +	if (!kern_buff)
+> +		return -ENOMEM;
+> +
+> +	ret = strlcpy(kern_buff, buf, count);
+> +	if (ret < 0) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	inbuf = kern_buff;
+> +
+> +	/* Read the write mask */
+> +	tok = strsep(&inbuf, " ");
+> +	if (!tok) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	ret = kstrtol(tok, 16, &mask);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	/* Read the write value */
+> +	tok = strsep(&inbuf, " ");
+> +	if (!tok) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	ret = kstrtol(tok, 16, &value);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
 
-You personally wrote that the enum pwm_polarity can change, so the
-desynchronization I quite possible.
+sysfs files are "one value per file" which prevents this string parsing
+mess.  Please do not do that.
 
-> As far as I'm concerned this is completely unnecessary churn that's
-> potentially going to come back and bite us, so I see no reason to accept
-> this.
+Again, one value per file, not X values.
 
 
->
-> Thierry
---
-Best regards
-Oleksandr Suvorov
+> +
+> +	ret = zynqmp_pm_read_ggs(reg, ret_payload);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +	ret_payload[1] &= ~mask;
+> +	value &= mask;
+> +	value |= ret_payload[1];
+> +
+> +	ret = zynqmp_pm_write_ggs(reg, value);
+> +	if (ret)
+> +		count = -EFAULT;
+> +
+> +err:
+> +	kfree(kern_buff);
+> +
+> +	return count;
+> +}
 
-Toradex AG
-Ebenaustrasse 10 | 6048 Horw | Switzerland | T: +41 41 500 48 00
+> +/**
+> + * pggs_store - Store persistent global general storage (pggs) sysfs attribute
+> + * @device: Device structure
+> + * @attr: Device attribute structure
+> + * @buf: User entered shutdown_scope attribute string
+> + * @count: Size of buf
+> + * @reg: Register number
+> + *
+> + * Return: count argument if request succeeds, the corresponding
+> + * error code otherwise
+> + *
+> + * Helper function for storing a pggs register value.
+> + */
+> +static ssize_t pggs_store(struct device *device,
+> +			  struct device_attribute *attr,
+> +			  const char *buf, size_t count,
+> +			  u32 reg)
+> +{
+> +	char *kern_buff, *inbuf, *tok;
+> +	long mask, value;
+> +	int ret;
+> +	u32 ret_payload[PAYLOAD_ARG_CNT];
+> +
+> +	if (!device || !attr || !buf || !count || reg >= GSS_NUM_REGS)
+> +		return -EINVAL;
+
+Again, clean this up.
+
+> +
+> +	kern_buff = kzalloc(count, GFP_KERNEL);
+> +	if (!kern_buff)
+> +		return -ENOMEM;
+> +
+> +	ret = strlcpy(kern_buff, buf, count);
+> +	if (ret < 0) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	inbuf = kern_buff;
+> +
+> +	/* Read the write mask */
+> +	tok = strsep(&inbuf, " ");
+
+No need to parse when there is only one value.
+
+> +	if (!tok) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	ret = kstrtol(tok, 16, &mask);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	/* Read the write value */
+> +	tok = strsep(&inbuf, " ");
+> +	if (!tok) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	ret = kstrtol(tok, 16, &value);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +
+> +	ret = zynqmp_pm_read_pggs(reg, ret_payload);
+> +	if (ret) {
+> +		count = -EFAULT;
+> +		goto err;
+> +	}
+> +	ret_payload[1] &= ~mask;
+> +	value &= mask;
+> +	value |= ret_payload[1];
+> +
+> +	ret = zynqmp_pm_write_pggs(reg, value);
+> +	if (ret)
+> +		count = -EFAULT;
+> +
+> +err:
+> +	kfree(kern_buff);
+> +
+> +	return count;
+> +}
+
+> +static struct attribute *zynqmp_ggs_attrs[] = {
+> +	&dev_attr_ggs0.attr,
+> +	&dev_attr_ggs1.attr,
+> +	&dev_attr_ggs2.attr,
+> +	&dev_attr_ggs3.attr,
+> +	&dev_attr_pggs0.attr,
+> +	&dev_attr_pggs1.attr,
+> +	&dev_attr_pggs2.attr,
+> +	&dev_attr_pggs3.attr,
+> +	NULL,
+> +};
+> +
+> +static const struct attribute_group ggs_attribute_group = {
+> +	.attrs = zynqmp_ggs_attrs,
+> +};
+> +
+> +const struct attribute_group *firmware_attribute_groups[] = {
+> +	&ggs_attribute_group,
+> +	NULL,
+> +};
+
+ATTRIBUTE_GROUPS()?
+
+
+
+> +
+>  static int zynqmp_firmware_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+> @@ -910,6 +1226,7 @@ static struct platform_driver zynqmp_firmware_driver = {
+>  	.driver = {
+>  		.name = "zynqmp_firmware",
+>  		.of_match_table = zynqmp_firmware_of_match,
+> +		.dev_groups = firmware_attribute_groups,
+>  	},
+>  	.probe = zynqmp_firmware_probe,
+>  	.remove = zynqmp_firmware_remove,
+> diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
+> index 725dccf..8ccaa39 100644
+> --- a/include/linux/firmware/xlnx-zynqmp.h
+> +++ b/include/linux/firmware/xlnx-zynqmp.h
+> @@ -13,6 +13,8 @@
+>  #ifndef __FIRMWARE_ZYNQMP_H__
+>  #define __FIRMWARE_ZYNQMP_H__
+>  
+> +#include <linux/device.h>
+
+Why is this needed here?
+
+> +
+>  #define ZYNQMP_PM_VERSION_MAJOR	1
+>  #define ZYNQMP_PM_VERSION_MINOR	0
+>  
+> @@ -42,6 +44,8 @@
+>  
+>  #define ZYNQMP_PM_MAX_QOS		100U
+>  
+> +#define GSS_NUM_REGS	(4)
+> +
+>  /* Node capabilities */
+>  #define	ZYNQMP_PM_CAPABILITY_ACCESS	0x1U
+>  #define	ZYNQMP_PM_CAPABILITY_CONTEXT	0x2U
+
+
+You are not adding anything that depends on device.h in this file, so
+just include the needed .h file in the .c file that needs it please.
+
+Helps unwind .h include messes.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
