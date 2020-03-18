@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1667518983B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 10:44:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6C6C18988C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Mar 2020 10:53:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2dHFQBuDIm+HQFW11Wh+3JDd/s9WHX5ljbaacWFgpjw=; b=oGF/4qdQQwqwqt
-	U6PMn54rG2s1krxydA9LPDzDaaN06aMRER+Frk5VZEGSlbwXPbsai80aj71MlZw/0W2dFRgO/+DJd
-	43RQn3OZ+VFK+tpMsVoOxRLpPKRT1wL+Qx6Kst9w8BhnH+JrQdBM5aa+WTwFIfrNAUsqaxcqAh89s
-	DxnIQSdYiYNgcU6M0lzGHOqA7BVEhBqyJAYVhvpsK8y2UMqhp7tSe7S/+ZFh0I1HN6RMDfvZutuX3
-	CtL1hS/3aH8XmhOgMlPah1Yg366sDaHLtkQG0VyQZCZSKb8pQBpdqJU4J+LTs3ki/yDa9s+qrNudO
-	LUR6Suillgq9gv9sszsw==;
+	List-Owner; bh=hR902rwZyje7nNPynRyNlNr6eOx4AZmtVxU/LfxkFMc=; b=OKyjp2pvDZjexN
+	+bU0EmNhesSfzwJvZTzVNc9I1xzzvsZnFhlEdGucMM5vEuJihEwdyu6yXz3ggYD3VJzg/d3zLdNG+
+	7fnkGv5bxzFVpDTEBp+9ZIuwbbyE/HRp70qvln0xflhHGzoMhtCcjds57bfDzLtrr59SbTWuF7zgg
+	Pe1951Wj0e4TbofArE9ylrzgh1ZpeIKMy3RY2YNOwoN88PdLUt9iZ5w0HGjpB2bSyK4grxwTxgiRy
+	XrmolrSYRBoCz1GMir9GNC+mHIYjaWMTMkxScwTp1jdVs6quvSk9t192uozEkBHOEwBcrTxNnqCKu
+	THDkSP9SuE7kGMJJ8Svw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEVFl-0001SM-0b; Wed, 18 Mar 2020 09:44:45 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jEVNj-000562-5k; Wed, 18 Mar 2020 09:52:59 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEVFc-0001Rh-4Q
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 09:44:37 +0000
-Received: from mail-qv1-f45.google.com ([209.85.219.45]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M8hIl-1j9qQC2IFt-004nYz for <linux-arm-kernel@lists.infradead.org>; Wed,
- 18 Mar 2020 10:44:33 +0100
-Received: by mail-qv1-f45.google.com with SMTP id h20so8577527qvr.12
+ id 1jEVNZ-00054r-RE
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Mar 2020 09:52:51 +0000
+Received: from mail-qk1-f181.google.com ([209.85.222.181]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MZCrZ-1ijLR82azh-00V7gl for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 18 Mar 2020 10:52:47 +0100
+Received: by mail-qk1-f181.google.com with SMTP id u25so37647808qkk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 02:44:33 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0fG+6AX0cMy047Zdce94Yi2L9ebII6TMfuKhSnZRKixOXDOG86
- bQp7IKB6+mMbdf1s7M6hW79chAR6tyaNwuT8+To=
-X-Google-Smtp-Source: ADFU+vtLo+GOWNxMC15V2TiH90BEPvu2JmMbmtc3AvFP8wu5z0vI2xAgHqQbsb7yudqWQcePXGno6172j7v0a1xP4uw=
-X-Received: by 2002:a0c:a602:: with SMTP id s2mr3333321qva.222.1584524672422; 
- Wed, 18 Mar 2020 02:44:32 -0700 (PDT)
+ Wed, 18 Mar 2020 02:52:47 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ0jOqxwRdyEVidt+V8R2mMCQ2ufLlvPukVbIktCYBZMn21vLRCR
+ VJHPFRggfWgU3C7cU+PypLCOIbO8BRzz9sIq1VY=
+X-Google-Smtp-Source: ADFU+vvPPpkP18ZKfrFNh8gvaXPMHk4SKQCYU0CemL9wvz6IRWOfSh9+2To1NcmRy07HyNQyHflromqOgChlyMVwpd0=
+X-Received: by 2002:a37:6285:: with SMTP id w127mr3096860qkb.138.1584525166497; 
+ Wed, 18 Mar 2020 02:52:46 -0700 (PDT)
 MIME-Version: 1.0
 References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
- <1584200119-18594-8-git-send-email-mikelley@microsoft.com>
- <CAK8P3a0+uBsurfQ4smjPDGkJQSkMe-TxJ4cWR_EZXgDR4-bAWQ@mail.gmail.com>
- <MW2PR2101MB1052281E5B197F2AA8E4D622D7F70@MW2PR2101MB1052.namprd21.prod.outlook.com>
-In-Reply-To: <MW2PR2101MB1052281E5B197F2AA8E4D622D7F70@MW2PR2101MB1052.namprd21.prod.outlook.com>
+ <1584200119-18594-6-git-send-email-mikelley@microsoft.com>
+ <CAK8P3a2yve3R1w5igBYMy3HSFJ8Xt4BHhXQcaTAkNCdZXZ1v-w@mail.gmail.com>
+ <MW2PR2101MB1052B9C24DAB19FBBD818347D7F70@MW2PR2101MB1052.namprd21.prod.outlook.com>
+In-Reply-To: <MW2PR2101MB1052B9C24DAB19FBBD818347D7F70@MW2PR2101MB1052.namprd21.prod.outlook.com>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 18 Mar 2020 10:44:16 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a2fzFdXoMKz_-Bryq0HUar=Tgs7SwJL4JFw2_KjzpOPdg@mail.gmail.com>
-Message-ID: <CAK8P3a2fzFdXoMKz_-Bryq0HUar=Tgs7SwJL4JFw2_KjzpOPdg@mail.gmail.com>
-Subject: Re: [PATCH v6 07/10] arm64: hyperv: Initialize hypervisor on boot
+Date: Wed, 18 Mar 2020 10:52:30 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a1zm2UH-S6eN4qMO_o1M8b0ieMq+2tQGVKmtC-UKeZUTQ@mail.gmail.com>
+Message-ID: <CAK8P3a1zm2UH-S6eN4qMO_o1M8b0ieMq+2tQGVKmtC-UKeZUTQ@mail.gmail.com>
+Subject: Re: [PATCH v6 05/10] arm64: hyperv: Add interrupt handlers for VMbus
+ and stimer
 To: Michael Kelley <mikelley@microsoft.com>
-X-Provags-ID: V03:K1:BjmO55CThJUvBKaV9mGGQdjCM5DUiYwUeN2xmTt3qN4u90W0Z61
- sso9KUKQsds8qHas7kWoE0ZLqngxDd4QzBSI7iD3aS2j0YPmh3VLrCNWnK4KHmTqaJa6gbQ
- xUWy3i2ZDtSJkqjSU1EOBL9Xt+ZCw/7ll75MXYg9pHKf5iR7OO9rLGqfHNYDuD6EJK999u3
- qhM5I+BMHwLKl3fv1nOiQ==
+X-Provags-ID: V03:K1:9RpKNzt96w/0eGnOab4KgkjHGTli6FgrHkbic3O263Hu90eYYqz
+ 9TQ2uHaFGZZIwRfeFLwBeuYDpZNg3J3hTDsjlzRjaFWpY7pyBHlt/a6EGQMhHGGTwmEFZfU
+ vG0O93o21NUZE2iYZJXaUujXUlzFN9pWWlRtqI3/j3uzf2dZCvQXfAqJlG2dbwTGxd/Jb35
+ t45sSwFx3swZ202ZC7mKA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:RHgvtXwhKDU=:FRzlibRl1WPus41jMJUefA
- XN8Q7UPwRyH6F7Q9FuE9AKfkWU43k37R/45HbxFMQ7lU48Fy5miLs4+Gu5em+Bwcj7kz7P44T
- Q2Yq+Fw0ic7SUJ4fxesox8FATP1tNBT72A5NgVJyZM59YaRTes+Fcs9ZkpNzEH5Mk7RwXeUnw
- 0XCnpx1myU5T4MoRJj7sZspxYtJCBGso4Uu7MUbODtwFsdduBT9oZxxnjDen8Sikq4nFvzyrv
- 1a57wtsX/5F0AUQxzov9ENJVSl9Hvxj+I7M/W4To+PS+mJLyeYgr8kvD7fz3klFbMa+Pt3ySi
- RVmJYJsSHtzfQB57TxsTdpvJvs2q/Rxo+aBbUsoGQKYkUWfrnFjHm7eZBC6iipD+hs8H3uWWo
- IQcC4zxB2vKtXDnCUs5wxRyTJrww0a5dPlNyhgrZUkU0yFXSjN28LPTi6B9pGLdgTPKvFb5T6
- I3qGmvQAcmQ4X2JToKICsxjyJmONZDFElDy3ZR/VYe0tZHBt67gtd3IxRL7x/i00cMmYxnvLR
- 4hAzrERo3oCSlJOwadR3NQV+qeW9AYkutp84/z/TaiPKwARisRSa2olyJ1YM+9YkTHrm205BT
- vSQVRLhXxsW9wi4Q3Fge9KLqrZ7SmvLmDB8FVFe9gbQ0kT+vLUpqhax6lh17NbM3b55RB5rt0
- nS3SNpZhslOoAGZpbxV9bEjGyVOsMnpbu7KOJH9y+VoAoDuGFYnU8nRPwNPJ1/rdX3PRRmlWW
- PelEcSUDc3LqYr9vXSL9RDRH2KfCpHsSxnlaIWedSyqK+LdpvBvtQD6tq3nXbYMv1BhTsUlWz
- xn5ieQ/8l/17tAT8qXO4wLpbs6YZhZiLli9phR1qNdeduTH+6s=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:VyUq+whkJxY=:gEbnDeNn3Hg+FN7oLcO8zt
+ 7Q/PxMMZ4Vk4w/P/LSlWjf3lqMo7aCR6AIrT6RNhSuHl4pEo1+F/z5m4w9Pl1TH/eO4tYMFiv
+ mjXotOlmuk97lke22ozGbW+jd1fZ2e9e86syWETy4h/tOnINLtsEAoxfurc08yJn6v4Mnc3st
+ WNyFZ58ztd6fajeYtBO9fFMs1lFC2tCGF+gUGgdjxNkiI/la8pFYVKXNVF01STQJaMxFcIZxX
+ xIXshmizqgPRkCbA9qMgsLoT69n2PzG83kjUDrn4FiOUp/PXQn6uGHBI44TiCGlRFhxmXXpMY
+ FhOv0htZPeQXhtaabWHFOMs7KchhEwj2bxXiMGxyxlbXh3SmKARbQkTSMe9mMMvpUSVpCchFn
+ BQsnH/yLY/JxyKpMVv24D5I4nWjkUSv7AguD6WmH9PCqpq35aIBkiCZOGr244YyQ8xW2VWhCQ
+ CHlenZjoB2gTrMPLTsvrdxKY9mSkZ0uKMc66m8IwVfrtjd+9nxJuZDwuNYxfQZTCHWSapvQYL
+ MKNlL9QNG1L/cNwQ2E/wBWlsMdE5NahZLkxhCVLJeMOltg2YSVQaCojO5z9jZJKirBlFBlEsk
+ paHJnN+EZAa7LS0iNpG9Z/BQe/VQVB2LRlv72qw14wQAVtDvD7b+5A9udz64PWJiRlOLToj9x
+ 6Jv8K2XmeWGXzGdOWNn4G8Hh23nPl49rw7tJOvCg41d3GJmNIiDYC8bhwoMkW4kEs78qkWGsi
+ IutT6/bsI2XVGJG0ltx2RBZY3z4a8YfDCVc1sK2L2NP3CGktLn5IfE0GidOKXwbL5FyJf+8eh
+ VU+rbU5eHUrukmPYYALdsvrqeXJJqOTOGashMbHZLyFhcTLqZU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_024436_470342_B5629541 
-X-CRM114-Status: GOOD (  23.09  )
+X-CRM114-CacheID: sfid-20200318_025250_178581_57DEE1C0 
+X-CRM114-Status: GOOD (  21.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,72 +90,61 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
+ linux-arch <linux-arch@vger.kernel.org>,
  "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- linux-efi <linux-efi@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jason Wang <jasowang@redhat.com>,
- KY Srinivasan <kys@microsoft.com>, Will Deacon <will@kernel.org>,
- Sunil Muthuswamy <sunilmut@microsoft.com>,
- linux-arch <linux-arch@vger.kernel.org>, Marc Zyngier <maz@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "olaf@aepfle.de" <olaf@aepfle.de>, Boqun Feng <boqun.feng@gmail.com>,
- John Stultz <john.stultz@linaro.org>, Andy Whitcroft <apw@canonical.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Stephen Boyd <sboyd@kernel.org>, gregkh <gregkh@linuxfoundation.org>,
+ linux-efi <linux-efi@vger.kernel.org>, Boqun Feng <boqun.feng@gmail.com>,
+ gregkh <gregkh@linuxfoundation.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Jason Wang <jasowang@redhat.com>, Sunil Muthuswamy <sunilmut@microsoft.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- vkuznets <vkuznets@redhat.com>
+ "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
+ "olaf@aepfle.de" <olaf@aepfle.de>, Marc Zyngier <maz@kernel.org>,
+ Andy Whitcroft <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
+ KY Srinivasan <kys@microsoft.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 18, 2020 at 1:18 AM Michael Kelley <mikelley@microsoft.com> wrote:
->
-> From: Arnd Bergmann <arnd@arndb.de> Sent: Monday, March 16, 2020 1:30 AM
+On Wed, Mar 18, 2020 at 1:16 AM Michael Kelley <mikelley@microsoft.com> wrote:
+> From: Arnd Bergmann <arnd@arndb.de>
+> > On Sat, Mar 14, 2020 at 4:36 PM Michael Kelley <mikelley@microsoft.com> wrote:
+> > >
+> > > Add ARM64-specific code to set up and handle the interrupts
+> > > generated by Hyper-V for VMbus messages and for stimer expiration.
+> > >
+> > > This code is architecture dependent and is mostly driven by
+> > > architecture independent code in the VMbus driver and the
+> > > Hyper-V timer clocksource driver.
+> > >
+> > > This code is built only when CONFIG_HYPERV is enabled.
+> > >
+> > > Signed-off-by: Michael Kelley <mikelley@microsoft.com>
 > >
-> > As you are effectively adding a new clocksource driver here, please move the
-> > code to drivers/clocksource and send the patch to the respective maintainers
-> > (added to Cc here), splitting it out from the rest of the patch.
+> > This looks like it should be a nested irqchip driver instead, so your
+> > device drivers can use the normal request_irq() functions etc.
 > >
-> > You should also describe why your platform doesn't just use the normal
-> > architected timer interface.
+> > Is anything preventing you from doing that? If so, please describe
+> > that in the changelog and in a comment in the driver.
 > >
-> > > +TIMER_ACPI_DECLARE(hyperv, ACPI_SIG_GTDT, hyperv_init);
-> >
-> > This looks like it registers a driver for the same device as the normal
-> > arch timer. Won't that clash?
 >
-> There is a Hyper-V clocksource driver in drivers/clocksource/hyperv_timer.c.
-> It is architecture independent and works for both x86 and ARM64.
->
-> The requirement here is really for a place to hang the general Hyper-V
-> initialization code.   On the x86 side, there's infrastructure already in place
-> to do hypervisor initialization, but nothing corresponding on the ARM64 side.
-> The TIMER_ACPI_DECLARE hook is admittedly a temporary approach, and I'm
-> happy to hear if someone has a better way to handle this.
->
-> FWIW, Hyper-V doesn't currently virtualize the ARM arch counter/timer for
-> guest VMs.  The Hyper-V synthetic counter/timer in the Hyper-V clocksource
-> driver is used on both ARM64 and x86.  But this Hyper-V init code doesn't actually
-> touch the GTDT device, so it won't interfere with the ARM arch counter/timer
-> when a future Hyper-V version does virtualize it.
+> As mentioned in my reply on Patch 1, Hyper-V offers a limited synthetic
+> interrupt controller managed by Linux code that's been around the last
+> 10 years on the x86 side.   For reasons that pre-date me, it was not written
+> as an irqchip driver.
 
-I don't have a good idea to solve it, just a few more thoughts:
+I think the reason is just that 10 years ago, we did not have the concept
+of irqchips as device drivers.
 
-- if your platform does not actually provide the generic timer, then the
-  ACPI tables should not list one either. Instead, create a separate
-  description for your custom timer, and have that added to the ACPI
-  spec.
+> Modulo the small routines you see in this patch, the code is architecture
+> independent, and it seems we ought to keep the high degree of commonality.
+> Re-architecting the arch independent code to model as an irqchip driver seems
+> to carry some risk to the x86 side that has a lot of real-world usage today, but
+> I'll take a look and see what the risks look like and if it adds any clarity.
 
-- To treat the timer more like a normal driver, better have the
-   TIMER_ACPI_DECLARE() function live only in the driver itself,
-   and use an early initcall (arch_initcall, subsys_initcall, etc)
-   it initialize the rest as late as you can.
-
-- Some of the other code added to arch/arm64/ might be able to
-  live in drivers/virt/hyperv in order to be shared between x86 and
-  arm64. (No idea how much of it there is).
+How many drivers link against the custom interface? If it's less than 10,
+making it a real driver is probably not too hard to do.
 
        Arnd
 
