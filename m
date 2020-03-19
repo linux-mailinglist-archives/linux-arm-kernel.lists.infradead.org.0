@@ -2,80 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D520518BB09
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:25:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CF4B18BB0C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:26:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7pSAO6xItRA1ZpoYHaIT2ffHIcojEO/uwcXGCQVlD5Q=; b=pB0mDEmY+EUise
-	TrQO8DMLvMO19pXzA0jRaxxnUA9/VY/N7o1/LVhKsccm7qkBgHEhUVLg9qTJtM74Ygy6FyxzChcW1
-	aZ+mGMHRjkU5SDHmaf+feQLajyxyPcVfHeRPRKkq6/4jwDjS3sRCEdHalJxYMep5j6V9bKLTOwpBg
-	DTygEHAitXACCFvwl6CHGxhur27/GpQJWuttwQNE7eFvJjq7h4osaZOvPMKsE6fx73DF+qDJaDSti
-	P5FXoLYbeu0U+5vRhpuE2J4kEd/Au4N+Yxx4Q/T4incXiA/er+dg3rDa8dLFKFAcxFr84m2uLQ0nA
-	TqpB8NM1xElSH1+O4FXQ==;
+	List-Owner; bh=eYqLInpxjttHH6PNO/kYk6R/2N+FNyyr48pd4vYoVh8=; b=oqiyfaa3B0+WYh
+	5vKHT1ZKv+uFamdYcs/UbsQ+mRWnHQhA4rv1FLWIdpYZ5rAFuVn2I1sUxAv6aQaf6872r5Wd/pong
+	yNlwT0jtZCGbylUlXBFwGOeHLqYbeVyFjXNnapo3bJ57iHaCuQQVSisXZm9wtQrP4hrt2bsPuvhDr
+	+hmltA4+dKMzbupQZVA5ZMxRhi7QFTvmP4tWxw4LsaDc50tgHKGOOJ10MAr86OEdLXuI6I9NfpiVC
+	gr+BwieR+l3+P1lpcq4JcipVx2zPDp4mABPzo6J8DQg0uE5gus8HLiNtF02yEHXdPBymwU5MNFJg0
+	t69BdRxm29lXO7k5oeHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEx2t-0002M0-TU; Thu, 19 Mar 2020 15:25:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEx3R-0002dW-DO; Thu, 19 Mar 2020 15:25:53 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEx2c-000181-6S
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 15:25:08 +0000
-Received: from mail-yb1-f181.google.com (mail-yb1-f181.google.com
- [209.85.219.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C970212CC
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 15:25:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584631501;
- bh=Xe4RFKD4eyCqTEXb3Z+do6asys5ScQi6UXuiuAOgDbQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=xSWwcU1AMk7ym1mW+VY0swBRzWGykIEwrZhaFWQj7TnDZf57zcrjMrORElE+tPq65
- 3E/VlLLQYO2HSwLz4GCtDNq4gFBijpiSwVpfbAfgc/5kP7O2a3S5W0lhI+8U0Wu+Wm
- 67tKixILlz4DBLB0tJZjpH8Di4WrzZBbiHn3T7+Y=
-Received: by mail-yb1-f181.google.com with SMTP id s17so471714ybk.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 08:25:01 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3ZBHn9a/2Us1brJny3JUiyz+ZphcIcrGYcUElc9H13hFH6i/ZC
- 2g4NAyvSub8X77eGDk70h1XQwu8YTDtsbHzMiA==
-X-Google-Smtp-Source: ADFU+vt6KNn3hMjhQ+yFcZFxiLcwKK2nQbVMZf+iW6Y4/QRvUWdyjDQmDvq9gH8i3wNmX645jChl/2rD0UuU1RoVe0Q=
-X-Received: by 2002:a25:3612:: with SMTP id d18mr6134924yba.472.1584631500676; 
- Thu, 19 Mar 2020 08:25:00 -0700 (PDT)
+ id 1jEx3E-0002c5-85; Thu, 19 Mar 2020 15:25:42 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jEx39-0001eF-PI; Thu, 19 Mar 2020 16:25:35 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Subject: Re: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each
+ dts for rk3288
+Date: Thu, 19 Mar 2020 16:25:35 +0100
+Message-ID: <4307911.4IBKxFWOMT@diego>
+In-Reply-To: <20200319151339.17909-1-katsuhiro@katsuster.net>
+References: <20200319151339.17909-1-katsuhiro@katsuster.net>
 MIME-Version: 1.0
-References: <20200224223129.1068-1-robh@kernel.org>
- <20200318221926.GA10097@willie-the-truck>
-In-Reply-To: <20200318221926.GA10097@willie-the-truck>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 19 Mar 2020 09:24:48 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLJukKY0h1GVd_fZLC=JUw4bwi_GyxF1GHYPiA_Q1pRFA@mail.gmail.com>
-Message-ID: <CAL_JsqLJukKY0h1GVd_fZLC=JUw4bwi_GyxF1GHYPiA_Q1pRFA@mail.gmail.com>
-Subject: Re: [PATCH v3] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
- support
-To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_082502_331184_65487F1E 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200319_082540_436098_F1F3069D 
+X-CRM114-Status: GOOD (  17.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,56 +57,289 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Joerg Roedel <joro@8bytes.org>, Eric Auger <eric.auger@redhat.com>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 18, 2020 at 4:19 PM Will Deacon <will@kernel.org> wrote:
->
-> Hi Rob,
->
-> On Mon, Feb 24, 2020 at 04:31:29PM -0600, Rob Herring wrote:
-> > Arm SMMUv3.2 adds support for TLB range invalidate operations.
-> > Support for range invalidate is determined by the RIL bit in the IDR3
-> > register.
-> >
-> > The range invalidate is in units of the leaf page size and operates on
-> > 1-32 chunks of a power of 2 multiple pages. First, we determine from the
-> > size what power of 2 multiple we can use. Then we calculate how many
-> > chunks (1-31) of the power of 2 size for the range on the iteration. On
-> > each iteration, we move up in size by at least 5 bits.
-> >
-> > Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > Cc: Joerg Roedel <joro@8bytes.org>
-> > Reviewed-by: Eric Auger <eric.auger@redhat.com>
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> > v3:
-> > - Use inv_range local instead of modifying granule
-> > - Simplify the TG calculation
-> > - Use shift instead of divide by power of 2.
-> > ---
-> >  drivers/iommu/arm-smmu-v3.c | 69 +++++++++++++++++++++++++++++++++++--
-> >  1 file changed, 67 insertions(+), 2 deletions(-)
->
-> I've queued this one, but I had to resolve some conflicts with the command
-> queue batching changes, so please can you take a quick look at my
-> resolution?
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/commit/?h=for-joerg/arm-smmu/updates
+Hi,
 
-Thanks, LGTM.
+Am Donnerstag, 19. M=E4rz 2020, 16:13:39 CET schrieb Katsuhiro Suzuki:
+> This patch removes conflicted pinctrl settings uart2 and pwm 2/3
+> from common rk3288.dtsi and moves exist uart2 pinctrl settings
+> into each rk3288*.dts files.
+> =
 
-Rob
+>   - pwm2_pin  : use GPIO7_C6
+>   - pwm3_pin  : use GPIO7_C7
+>   - uart2_xfer: use GPIO7_C6, GPIO7_C7
+
+Board files only ever get to enable either pwm2/3 or uart2,
+not both at once - so I'm not sure where you see conflicts.
+
+And of course there are alternative pins to use, if you need uart2
+you need both pins in uart-pinmux and if you need either as pwm, then
+the board by design just can't use them as uart2.
+
+So pin setting should stay where they are, as there really is no conflict.
+
+
+Heiko
+
+
+
+> Currently uart2 rk3288 user is the following:
+> =
+
+>   - rk3288-evb.dtsi:&uart2 {
+>   - rk3288-firefly-reload.dts:&uart2 {
+>   - rk3288-firefly.dtsi:&uart2 {
+>   - rk3288-miqi.dts:&uart2 {
+>   - rk3288-phycore-rdk.dts:&uart2 {
+>   - rk3288-popmetal.dts:&uart2 {
+>   - rk3288-r89.dts:&uart2 {
+>   - rk3288-rock2-square.dts:&uart2 {
+>   - rk3288-tinker.dtsi:&uart2 {
+>   - rk3288-veyron.dtsi:&uart2 {
+>   - rk3288-vyasa.dts:&uart2 {
+> =
+
+> And no one is using pwm2 nor pwm3.
+> =
+
+> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+> ---
+>  arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
+>  arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
+>  arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
+>  arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
+>  arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
+>  arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
+>  arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
+>  arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
+>  arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
+>  arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
+>  arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
+>  arch/arm/boot/dts/rk3288.dtsi               | 6 ------
+>  12 files changed, 22 insertions(+), 6 deletions(-)
+> =
+
+> diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3288=
+-evb.dtsi
+> index 018802df4c0e..74091f831ecf 100644
+> --- a/arch/arm/boot/dts/rk3288-evb.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-evb.dtsi
+> @@ -285,6 +285,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/boot/=
+dts/rk3288-firefly-reload.dts
+> index 8c38bda21a7c..b0c976c8e35b 100644
+> --- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
+> +++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+> @@ -283,6 +283,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts/rk=
+3288-firefly.dtsi
+> index 5e0a19004e46..1632cc083c12 100644
+> --- a/arch/arm/boot/dts/rk3288-firefly.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
+> @@ -532,6 +532,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3288=
+-miqi.dts
+> index c41d012c8850..2c0ed37fde80 100644
+> --- a/arch/arm/boot/dts/rk3288-miqi.dts
+> +++ b/arch/arm/boot/dts/rk3288-miqi.dts
+> @@ -379,6 +379,8 @@ &tsadc {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/dts=
+/rk3288-phycore-rdk.dts
+> index 1e33859de484..6532c1ac43cd 100644
+> --- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+> +++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+> @@ -244,6 +244,8 @@ &uart0 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts/rk=
+3288-popmetal.dts
+> index 6a51940398b5..f18306bd9e6e 100644
+> --- a/arch/arm/boot/dts/rk3288-popmetal.dts
+> +++ b/arch/arm/boot/dts/rk3288-popmetal.dts
+> @@ -481,6 +481,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk3288-=
+r89.dts
+> index a258c7ae5329..02d2f5cfe201 100644
+> --- a/arch/arm/boot/dts/rk3288-r89.dts
+> +++ b/arch/arm/boot/dts/rk3288-r89.dts
+> @@ -340,6 +340,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot/dt=
+s/rk3288-rock2-square.dts
+> index cdcdc921ee09..a44290e882be 100644
+> --- a/arch/arm/boot/dts/rk3288-rock2-square.dts
+> +++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
+> @@ -264,6 +264,8 @@ &spdif {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3=
+288-tinker.dtsi
+> index acfaa12ec239..0327119f71b4 100644
+> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> @@ -500,6 +500,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3=
+288-veyron.dtsi
+> index 54a6838d73f5..baa44d00e49a 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> @@ -412,6 +412,8 @@ &uart1 {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk328=
+8-vyasa.dts
+> index 385dd59393e1..aa50cdc7f839 100644
+> --- a/arch/arm/boot/dts/rk3288-vyasa.dts
+> +++ b/arch/arm/boot/dts/rk3288-vyasa.dts
+> @@ -398,6 +398,8 @@ &tsadc {
+>  };
+>  =
+
+>  &uart2 {
+> +	pinctrl-names =3D "default";
+> +	pinctrl-0 =3D <&uart2_xfer>;
+>  	status =3D "okay";
+>  };
+>  =
+
+> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+> index 0cd88774db95..4c1f8cabb5eb 100644
+> --- a/arch/arm/boot/dts/rk3288.dtsi
+> +++ b/arch/arm/boot/dts/rk3288.dtsi
+> @@ -450,8 +450,6 @@ uart2: serial@ff690000 {
+>  		reg-io-width =3D <4>;
+>  		clocks =3D <&cru SCLK_UART2>, <&cru PCLK_UART2>;
+>  		clock-names =3D "baudclk", "apb_pclk";
+> -		pinctrl-names =3D "default";
+> -		pinctrl-0 =3D <&uart2_xfer>;
+>  		status =3D "disabled";
+>  	};
+>  =
+
+> @@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
+>  		compatible =3D "rockchip,rk3288-pwm";
+>  		reg =3D <0x0 0xff680020 0x0 0x10>;
+>  		#pwm-cells =3D <3>;
+> -		pinctrl-names =3D "default";
+> -		pinctrl-0 =3D <&pwm2_pin>;
+>  		clocks =3D <&cru PCLK_RKPWM>;
+>  		clock-names =3D "pwm";
+>  		status =3D "disabled";
+> @@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
+>  		compatible =3D "rockchip,rk3288-pwm";
+>  		reg =3D <0x0 0xff680030 0x0 0x10>;
+>  		#pwm-cells =3D <3>;
+> -		pinctrl-names =3D "default";
+> -		pinctrl-0 =3D <&pwm3_pin>;
+>  		clocks =3D <&cru PCLK_RKPWM>;
+>  		clock-names =3D "pwm";
+>  		status =3D "disabled";
+> =
+
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
