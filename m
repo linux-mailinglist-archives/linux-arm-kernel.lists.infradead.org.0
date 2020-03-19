@@ -2,78 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 251C818BB69
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:44:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A8A318BB6A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:44:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i7MPMlPRi53UMWYNIwU/rbuoJLpPVMvTSsq+sb2MRyA=; b=i6VxEy9NzoWceb
-	I/B/9DbHH5FtGHVjK1pGMkHEX/VKIFbrqfypjQdmUWBTzINyqLzuRxKE7MHRUexopiv5TUiAzfKFe
-	CmZVg1a5FZkH4SJTI1Td4KI5JIZgIJUMjTKOKfknvO5w+5dv/YYSfuZJyuw64n2IKQ7CgybTJ7EtK
-	xziLGvR/6zakb7uLGKbIaL0qV9KBqTNrXqU+1IDi76r3S8HMEvdj7HQMlLfXGfKkicNGgaix0Qd4m
-	KSm6iFexY3pbKxdz33EhKSRs0SSv7ixGeJ/vBW63mPK3CAH8JQAyREyw6OZ1hBmdAeuYZowoSMlOa
-	KZx9PoEyrCGCQhDyxWwA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4PsXyawwOKYzD8O0wVLPxYzmWDYP2apMhfz7hOt+72o=; b=dD2Cd1pmKjZSi6
+	+YWx+/cDMjKD6AVUKFENpgvDlLUu0z3tMu6bXH8ikzWZISCv1bXt3V7i3mAk+hU8PXo015CNwfqbl
+	0AJbPymFjxGAThg7eHBdbH72n2NDrkVevx4T8OHaKox0JiNzrVkvnqU6PV5xWuZWKfI5k3JrZjLSa
+	lvd5ISIp0xYS6xkQTX3cF1q1d7p1oJ2DCWUS/39B1n0eN3Qh+RpaOpE3MCqrUO0/vMIJHkbcWuMs9
+	XSoL8/hK7k1pQMeA77c7fUirPNnvW0Ew83jCOfGI0uHCSZigzL9AcVovsajYa33pfVDZfw4FJ9cYp
+	woa8ppHcg9fzkWsM8pIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jExLJ-0003Wo-3A; Thu, 19 Mar 2020 15:44:21 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jExLe-0003vw-UU; Thu, 19 Mar 2020 15:44:42 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jExKO-0002q2-4s
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 15:43:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584632601;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=lokpvkMQVoKd0lod8SVkg+xNqrbRc/YyD9IgFwSAqTc=;
- b=HZSwW80SeYaxWWnPtIzz5Xk0s2NlhXCh1uE6+UnzyxrZ044d96uampXDT2rHATM3MuwvSP
- nc8IoKWCX860bYU4N1DgHRdB8o2oQ8f2U3QLiCrxQtOemhUHrmucOm0DFTS4RpYN8rE0lo
- da9fTYxaWZ3air6gjdkVTpyetgZCPHQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-58-I-NX-DfHPpaC7toQ5qn_KQ-1; Thu, 19 Mar 2020 11:43:16 -0400
-X-MC-Unique: I-NX-DfHPpaC7toQ5qn_KQ-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 82C16107ACC4;
- Thu, 19 Mar 2020 15:43:14 +0000 (UTC)
-Received: from [10.36.113.142] (ovpn-113-142.ams2.redhat.com [10.36.113.142])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 0AE829081F;
- Thu, 19 Mar 2020 15:43:10 +0000 (UTC)
-Subject: Re: [PATCH v5 23/23] KVM: arm64: GICv4.1: Expose HW-based SGIs in
- debugfs
-To: Marc Zyngier <maz@kernel.org>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-24-maz@kernel.org>
- <4cb4c3d4-7b02-bb77-cd7a-c185346b6a2f@redhat.com>
- <45c282bddd43420024633943c1befac3@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <33576d89-2b12-b98b-e392-3342b9b1265c@redhat.com>
-Date: Thu, 19 Mar 2020 16:43:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1jExLV-0003v9-JK
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 15:44:35 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id A60A6A53;
+ Thu, 19 Mar 2020 16:44:31 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1584632671;
+ bh=hwZnoYroqcsfC5OilM724CM4HxaREyK5LGahL3aJmfU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IRODqzXFUr0MVZ9ql1jSz/DFgC4uoHZjBv0SlngeYx6cSAomXNK2bvrQSOuiC1LJ1
+ uMuFWWZGeAJu3E6wLvgO3yUrhJXpXiwHAwEMP2SnqJ+8oju+suv9ksMPMi1zkEwO+/
+ K//I0LAQ7izBCNu6tCNYegUYdYl9xlIL+o71PjZY=
+Date: Thu, 19 Mar 2020 17:44:26 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Subject: Re: [PATCH v4 5/5] media: dt-bindings: media: i2c: convert ov5645
+ bindings to json-schema
+Message-ID: <20200319154426.GE14585@pendragon.ideasonboard.com>
+References: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1584620363-2255-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200319151035.GC14585@pendragon.ideasonboard.com>
+ <CA+V-a8unmH8LskcjNXLum5a=+YkYOj=kZ3oOK6YZGKE2t4qf6w@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <45c282bddd43420024633943c1befac3@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+Content-Disposition: inline
+In-Reply-To: <CA+V-a8unmH8LskcjNXLum5a=+YkYOj=kZ3oOK6YZGKE2t4qf6w@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_084324_280884_19CF200A 
-X-CRM114-Status: GOOD (  21.39  )
+X-CRM114-CacheID: sfid-20200319_084433_804514_59974EE3 
+X-CRM114-Status: GOOD (  31.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -81,7 +66,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,78 +77,322 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywKCk9uIDMvMTkvMjAgNDoyMSBQTSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IEhpIEVy
-aWMsCj4gCj4gT24gMjAyMC0wMy0xOSAxNTowNSwgQXVnZXIgRXJpYyB3cm90ZToKPj4gSGkgTWFy
-YywKPj4KPj4gT24gMy80LzIwIDk6MzMgUE0sIE1hcmMgWnluZ2llciB3cm90ZToKPj4+IFRoZSB2
-Z2ljLXN0YXRlIGRlYnVnZnMgZmlsZSBjb3VsZCBkbyB3aXRoIHNob3dpbmcgdGhlIHBlbmRpbmcg
-c3RhdGUKPj4+IG9mIHRoZSBIVy1iYWNrZWQgU0dJcy4gUGx1ZyBpdCBpbnRvIHRoZSBsb3ctbGV2
-ZWwgY29kZS4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwu
-b3JnPgo+Pj4gLS0tCj4+PiDCoHZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtZGVidWcuYyB8IDE0ICsr
-KysrKysrKysrKystCj4+PiDCoDEgZmlsZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspLCAxIGRl
-bGV0aW9uKC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtZGVi
-dWcuYwo+Pj4gYi92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLWRlYnVnLmMKPj4+IGluZGV4IGNjMTJm
-ZTliMmRmMy4uYjEzYTllM2Y5OWRkIDEwMDY0NAo+Pj4gLS0tIGEvdmlydC9rdm0vYXJtL3ZnaWMv
-dmdpYy1kZWJ1Zy5jCj4+PiArKysgYi92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLWRlYnVnLmMKPj4+
-IEBAIC0xNzgsNiArMTc4LDggQEAgc3RhdGljIHZvaWQgcHJpbnRfaXJxX3N0YXRlKHN0cnVjdCBz
-ZXFfZmlsZSAqcywKPj4+IHN0cnVjdCB2Z2ljX2lycSAqaXJxLAo+Pj4gwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgc3RydWN0IGt2bV92Y3B1ICp2Y3B1KQo+Pj4gwqB7Cj4+PiDCoMKg
-wqDCoCBjaGFyICp0eXBlOwo+Pj4gK8KgwqDCoCBib29sIHBlbmRpbmc7Cj4+IG5pdDogY2FuIGJl
-IGRpcmVjdGx5IGluaXRpYWxpemVkIHRvIGlycS0+cGVuZGluZ19sYXRjaAo+Pj4gKwo+Pj4gwqDC
-oMKgwqAgaWYgKGlycS0+aW50aWQgPCBWR0lDX05SX1NHSVMpCj4+PiDCoMKgwqDCoMKgwqDCoMKg
-IHR5cGUgPSAiU0dJIjsKPj4+IMKgwqDCoMKgIGVsc2UgaWYgKGlycS0+aW50aWQgPCBWR0lDX05S
-X1BSSVZBVEVfSVJRUykKPj4+IEBAIC0xOTAsNiArMTkyLDE2IEBAIHN0YXRpYyB2b2lkIHByaW50
-X2lycV9zdGF0ZShzdHJ1Y3Qgc2VxX2ZpbGUgKnMsCj4+PiBzdHJ1Y3QgdmdpY19pcnEgKmlycSwK
-Pj4+IMKgwqDCoMKgIGlmIChpcnEtPmludGlkID09MCB8fCBpcnEtPmludGlkID09IFZHSUNfTlJf
-UFJJVkFURV9JUlFTKQo+Pj4gwqDCoMKgwqDCoMKgwqDCoCBwcmludF9oZWFkZXIocywgaXJxLCB2
-Y3B1KTsKPj4+Cj4+PiArwqDCoMKgIHBlbmRpbmcgPSBpcnEtPnBlbmRpbmdfbGF0Y2g7Cj4+PiAr
-wqDCoMKgIGlmIChpcnEtPmh3ICYmIHZnaWNfaXJxX2lzX3NnaShpcnEtPmludGlkKSkgewo+Pj4g
-K8KgwqDCoMKgwqDCoMKgIGludCBlcnI7Cj4+PiArCj4+PiArwqDCoMKgwqDCoMKgwqAgZXJyID0g
-aXJxX2dldF9pcnFjaGlwX3N0YXRlKGlycS0+aG9zdF9pcnEsCj4+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBJUlFDSElQX1NUQVRFX1BFTkRJTkcsCj4+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAmcGVuZGlu
-Zyk7Cj4+PiArwqDCoMKgwqDCoMKgwqAgV0FSTl9PTl9PTkNFKGVycik7Cj4+PiArwqDCoMKgIH0K
-Pj4+ICsKPj4+IMKgwqDCoMKgIHNlcV9wcmludGYocywgIsKgwqDCoMKgwqDCoCAlcyAlNGQgIgo+
-Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAiwqDCoMKgICUyZCAiCj4+PiDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgICIlZCVkJWQlZCVkJWQlZCAiCj4+PiBAQCAtMjAxLDcgKzIx
-Myw3IEBAIHN0YXRpYyB2b2lkIHByaW50X2lycV9zdGF0ZShzdHJ1Y3Qgc2VxX2ZpbGUgKnMsCj4+
-PiBzdHJ1Y3QgdmdpY19pcnEgKmlycSwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-IlxuIiwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0eXBlLCBpcnEtPmludGlkLAo+Pj4g
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIChpcnEtPnRhcmdldF92Y3B1KSA/IGlycS0+dGFyZ2V0
-X3ZjcHUtPnZjcHVfaWQgOiAtMSwKPj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlycS0+cGVu
-ZGluZ19sYXRjaCwKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBlbmRpbmcsCj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgaXJxLT5saW5lX2xldmVsLAo+Pj4gwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIGlycS0+YWN0aXZlLAo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlycS0+
-ZW5hYmxlZCwKPj4+Cj4+IFRoZSBwYXRjaCBsb29rcyBnb29kIHRvIG1lIGJ1dCBJIGFtIG5vdyBs
-b3N0IGFib3V0IGhvdyB3ZSByZXRyaWV2ZSB0aGUKPj4gcGVuZGluZyBzdGF0IG9mIG90aGVyIGh3
-IG1hcHBlZCBpbnRlcnJ1cHRzLiBMb29rcyB3ZSB1c2UKPj4gaXJxLT5wZW5kaW5nX2xhdGNoIGFs
-d2F5cy4gSXMgdGhhdCBjb3JyZWN0Pwo+IAo+IENvcnJlY3QuIEdJQ3Y0LjAgZG9lc24ndCBnaXZl
-IHVzIGFuIGFyY2hpdGVjdHVyYWwgd2F5IHRvIGxvb2sgYXQgdGhlCj4gdkxQSSBwZW5kaW5nIHN0
-YXRlICh0aGVyZSBpc24ndCBldmVuIGEgZ3VhcmFudGVlIGFib3V0IHdoZW4gdGhlIEdJQwo+IHdp
-bGwgc3RvcCB3cml0aW5nIHRvIG1lbW9yeSwgaWYgaXQgZXZlciBkb2VzKS4KPiAKPiBXaXRoIEdJ
-Q3Y0LjEsIHlvdSBjYW4gaW50cm9zcGVjdCB0aGUgSFcgc3RhdGUgZm9yIFNHSXMuIFlvdSBjYW4g
-YWxzbwo+IGxvb2sgYXQgdGhlIHZMUEkgc3RhdGUgYnkgcGVla2luZyBhdCB0aGUgdmlydHVhbCBw
-ZW5kaW5nIHRhYmxlLCBidXQKPiB5b3UnZCBuZWVkIHRvIHVubWFwIHRoZSBWUEUgZmlyc3QsIHdo
-aWNoIEkgb2J2aW91c2x5IGRvbid0IHdhbnQgdG8gZG8KPiBmb3IgdGhpcyBkZWJ1ZyBpbnRlcmZh
-Y2UsIHNwZWNpYWxseSBhcyBpdCBjYW4gYmUgdXNlZCB3aGlsc3QgdGhlIGd1ZXN0Cj4gaXMgdXAg
-YW5kIHJ1bm5pbmcuCk9LIGZvciB2TFBJcywgd2hhdCBhYm91dCBvdGhlciBIVyBtYXBwZWQgSVJR
-cyAoYXJjaCB0aW1lcj8pCgpFcmljCj4gCj4gSW4gdGhlIGZ1dHVyZSwgd2UnbGwgaGF2ZSB0byBp
-bXBsZW1lbnQgdGhhdCBpbiBvcmRlciB0byBzdXBwb3J0IGd1ZXN0Cj4gc2F2ZS9yZXN0b3JlIGZy
-b20gYSBHSUN2NC4xIHN5c3RlbS4gSSBoYXZlbid0IGdpdmVuIG11Y2ggdGhvdWdodCB0byBpdAo+
-IHRob3VnaC4KPiAKPj4gRm9yIHRoZSBwYXRjaDoKPj4gUmV2aWV3ZWQtYnk6IEVyaWMgQXVnZXIg
-PGVyaWMuYXVnZXJAcmVkaGF0LmNvbT4KPiAKPiBUaGFua3MsCj4gCj4gwqDCoMKgwqDCoMKgwqAg
-TS4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Hi Prabhakar,
+
+On Thu, Mar 19, 2020 at 03:38:46PM +0000, Lad, Prabhakar wrote:
+> On Thu, Mar 19, 2020 at 3:10 PM Laurent Pinchart wrote:
+> > On Thu, Mar 19, 2020 at 12:19:23PM +0000, Lad Prabhakar wrote:
+> > > Convert ov5645 bindings to json-schema.
+> >
+> > \o/
+>
+> :)
+> 
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > ---
+> > >  .../devicetree/bindings/media/i2c/ov5645.txt  |  54 -------
+> > >  .../devicetree/bindings/media/i2c/ov5645.yaml | 140 ++++++++++++++++++
+> > >  2 files changed, 140 insertions(+), 54 deletions(-)
+> > >  delete mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > > deleted file mode 100644
+> > > index 1c85c78ec58c..000000000000
+> > > --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > > +++ /dev/null
+> > > @@ -1,54 +0,0 @@
+> > > -* Omnivision 1/4-Inch 5Mp CMOS Digital Image Sensor
+> > > -
+> > > -The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
+> > > -an active array size of 2592H x 1944V. It is programmable through a serial I2C
+> > > -interface.
+> > > -
+> > > -Required Properties:
+> > > -- compatible: Value should be "ovti,ov5645".
+> > > -- clocks: Reference to the xclk clock.
+> > > -- clock-names: Should be "xclk".
+> > > -- enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
+> > > -  to the hardware pin PWDNB which is physically active low.
+> > > -- reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
+> > > -  the hardware pin RESETB.
+> > > -- vdddo-supply: Chip digital IO regulator.
+> > > -- vdda-supply: Chip analog regulator.
+> > > -- vddd-supply: Chip digital core regulator.
+> > > -
+> > > -The device node must contain one 'port' child node for its digital output
+> > > -video port, in accordance with the video interface bindings defined in
+> > > -Documentation/devicetree/bindings/media/video-interfaces.txt.
+> > > -
+> > > -Example:
+> > > -
+> > > -     &i2c1 {
+> > > -             ...
+> > > -
+> > > -             ov5645: ov5645@3c {
+> > > -                     compatible = "ovti,ov5645";
+> > > -                     reg = <0x3c>;
+> > > -
+> > > -                     enable-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+> > > -                     reset-gpios = <&gpio5 20 GPIO_ACTIVE_LOW>;
+> > > -                     pinctrl-names = "default";
+> > > -                     pinctrl-0 = <&camera_rear_default>;
+> > > -
+> > > -                     clocks = <&clks 200>;
+> > > -                     clock-names = "xclk";
+> > > -                     assigned-clocks = <&clks 200>;
+> > > -                     assigned-clock-rates = <24000000>;
+> > > -
+> > > -                     vdddo-supply = <&camera_dovdd_1v8>;
+> > > -                     vdda-supply = <&camera_avdd_2v8>;
+> > > -                     vddd-supply = <&camera_dvdd_1v2>;
+> > > -
+> > > -                     port {
+> > > -                             ov5645_ep: endpoint {
+> > > -                                     clock-lanes = <1>;
+> > > -                                     data-lanes = <0 2>;
+> > > -                                     remote-endpoint = <&csi0_ep>;
+> > > -                             };
+> > > -                     };
+> > > -             };
+> > > -     };
+> > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.yaml b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
+> > > new file mode 100644
+> > > index 000000000000..4bf58ad210c5
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
+> > > @@ -0,0 +1,140 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/media/i2c/ov5645.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Omnivision 1/4-Inch 5Mp CMOS Digital Image Sensor
+> >
+> > s/Mp/MP/ ?
+>
+> OK
+> 
+> > > +
+> > > +maintainers:
+> > > +  - Sakari Ailus <sakari.ailus@linux.intel.com>
+> > > +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > +
+> > > +description: |-
+> > > + The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
+> > > + an active array size of 2592H x 1944V. It is programmable through a serial I2C
+> > > + interface.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    const: ovti,ov5645
+> > > +
+> > > +  reg:
+> > > +    description: I2C device address
+> > > +    maxItems: 1
+> > > +
+> > > +  clocks:
+> > > +    maxItems: 1
+> > > +
+> > > +  clock-names:
+> > > +    items:
+> > > +      - const: xclk
+> > > +
+> > > +  assigned-clocks:
+> > > +    maxItems: 1
+> > > +
+> > > +  assigned-clock-rates:
+> > > +     items:
+> > > +     - description: Must be 24MHz (24000000).
+> >
+> > These two properties shouldn't be part of the bindings, they're generic.
+>
+> In that case how do we specify whats the expected clock frequency ?
+
+You could specify the frequency range supported by the sensor (6 MHz to
+27 MHz) in the description of the clocks property. The fact that only 24
+MHz is supported is a driver issue, and should not be reflected in the
+DT bindings.
+
+> > > +
+> > > +  enable-gpios:
+> > > +    description: |-
+> > > +      Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
+> > > +      to the hardware pin PWDNB which is physically active low.
+> >
+> > Specifying that the polarity is GPIO_ACTIVE_HIGH is confusing in my
+> > opinion. If there's an inverter on the board, you'll need
+> > GPIO_ACTIVE_LOW. We could possibly drop the sentence, as all GPIOs in DT
+> > are supposed to be active high, but the fact that the GPIO name
+> > corresponds to the opposite of the pin probably has to be documented. I
+> > have no better wording to propose now I'm afraid, but it needs to be
+> > addressed. Maybe Rob or Maxime could help.
+>
+> Agreed, will wait for either Rob/Maxime to comment.
+> 
+> > > +
+> > > +  reset-gpios:
+> > > +    description: |-
+> > > +      Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
+> > > +      the hardware pin RESETB.
+> >
+> > Here you could just drop the second sentence, or apply the same fix as
+> > for enable-gpios.
+>
+> OK
+> 
+> > > +
+> > > +  vdddo-supply:
+> > > +    description:
+> > > +      Chip digital IO regulator.
+> >
+> > You can move the description on the same line as the "description:" key.
+> > Same below.
+>
+> Will fix that.
+> 
+> > > +
+> > > +  vdda-supply:
+> > > +    description:
+> > > +      Chip analog regulator.
+> > > +
+> > > +  vddd-supply:
+> > > +    description:
+> > > +      Chip digital core regulator.
+> > > +
+> > > +  # See ../video-interfaces.txt for more details
+> > > +  port:
+> > > +    type: object
+> > > +    properties:
+> > > +      endpoint:
+> > > +        type: object
+> > > +
+> > > +        properties:
+> > > +          data-lanes:
+> > > +            description: |-
+> > > +              The sensor supports two-lane operation.
+> > > +              For two-lane operation the property must be set to <1 2>.
+> > > +            items:
+> > > +              - const: 1
+> > > +              - const: 2
+> >
+> > What if only one lane is wired, does the sensor support that ?
+>
+> Comparing with ov5640 datasheet (Assuming its similar to it) the
+> sensor can support
+> single/dual lane but looking at the driver it only supports dual lane mode atm
+> { OV5645_MIPI_CTRL00, 0x24 },
+
+That's a driver limitation though, the bindings should support both.
+
+> > > +
+> > > +          clock-lanes:
+> > > +            description:
+> > > +              should be set to <0> (clock lane on hardware lane 0).
+> > > +            items:
+> > > +              - const: 0
+> > > +
+> > > +          remote-endpoint: true
+> > > +
+> > > +        required:
+> > > +          - data-lanes
+> > > +          - clock-lanes
+> > > +          - remote-endpoint
+> > > +
+> > > +        additionalProperties: false
+> > > +
+> > > +    additionalProperties: false
+> > > +
+> > > +required:
+> > > +  - compatible
+> > > +  - reg
+> > > +  - clocks
+> > > +  - clock-names
+> > > +  - assigned-clocks
+> > > +  - assigned-clock-rates
+> >
+> > Those two properties should be dropped.
+>
+> Will do that.
+> 
+> > > +  - enable-gpios
+> > > +  - reset-gpios
+> >
+> > Are the GPIOs mandatory ? What if the signals are hardwired on the board
+> > ?
+>
+> Yes as per the driver, which needs to be fixed for making these optional :)
+
+We can make them optional in the bindings at a later point, or do so
+already.
+
+> > > +  - vdddo-supply
+> > > +  - vdda-supply
+> > > +  - vddd-supply
+> > > +  - port
+> > > +
+> > > +additionalProperties: false
+> > > +
+> > > +examples:
+> > > +  - |
+> > > +    i2c1 {
+> >
+> > s/i2c1/i2c/
+>
+> Will fix that.
+> 
+> > > +        #address-cells = <1>;
+> > > +        #size-cells = <0>;
+> > > +
+> > > +        ov5645: sensor@3c {
+> > > +            compatible = "ovti,ov5645";
+> > > +            reg = <0x3c>;
+> > > +            clocks = <&ov5645_cl>;
+> > > +            clock-names = "xclk";
+> > > +            assigned-clocks = <&ov5645_cl>;
+> > > +            assigned-clock-rates = <24000000>;
+> > > +            enable-gpios = <&gpio1 6 /* GPIO_ACTIVE_HIGH */>;
+> > > +            reset-gpios = <&gpio5 20 /* GPIO_ACTIVE_LOW */>;
+> > > +            vdddo-supply = <&camera_dovdd_1v8>;
+> > > +            vdda-supply = <&camera_avdd_2v8>;
+> > > +            vddd-supply = <&camera_dvdd_1v2>;
+> > > +
+> > > +            port {
+> > > +                ov5645_0: endpoint {
+> > > +                    remote-endpoint = <&csi1_ep>;
+> > > +                    clock-lanes = <0>;
+> > > +                    data-lanes = <1 2>;
+> > > +                };
+> > > +            };
+> > > +        };
+> > > +    };
+> > > +
+> > > +...
+
+-- 
+Regards,
+
+Laurent Pinchart
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
