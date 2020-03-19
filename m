@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EEAD18BF36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:19:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 701D418BF43
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:20:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GBWuMyHCLyIHPIUYMCA/FhBVLiHWyrskrdEdDsg1ZBE=; b=b6jaw2zGoxeTil
-	d/R+nvph/Gih3fkBnEGgXdwYbA0GksDHOJOB3qxO+iuDSTVfdCr0Es/v3OLvbknE/VCyGgu1H9Lq4
-	fbCBa24VjxxcND/Sfg33p2ngeLyU84XvP3qoye+6Ra7AARhzf4+vkXd0zD2w1quLHywtehYXXvbBf
-	Lkl7ptSZQ4jz0G5IGAm7pdXbuAycVXd4DJ16kW6TpDKR1Q34IrJCz87m8TjDZ1S9VXQBNUZUitoPZ
-	oIG5MgxhCkouaI3mUZ4rBz1eZ1BbEwxgWaOXjLjKwq7Qjv/wa7vwCClPcQBaLOb93lnguZGSdLLwl
-	9OwYWQ7VM2J5DKMPgtsQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TqYvmXQuvUZidH4mqCqXBnn76dneyLWIrHTb1H3eFrM=; b=seglTGHDIDi5nQ
+	OoOo70lLv2euFvtWkGkDJLyzCJVhTlexjJsxdzsPND6AUJ6tzNbn3I5pZk7Vz7vlOErTvjgFWBYb3
+	LE8fMIG6RRgXITH6a6/SazKqY4aXr4tAVRUca+iizEZjdD1P6Hkh53P9jnpvaYFBowhOCbFJjTdBs
+	T8kzpTH3DtU06KBfkZuFEGgxUUeE/oK14UFRwS4Oa1n8Cln0pFxZduBsHYEXnV7yOMz3ekkU8EYzx
+	htaWpV0ih/f9XbsWximQSqn7ff3P4LvGDrtH2XBbKjNQTQtMhSHyjGdFxBMfQ+6RwAZX02vvypiYN
+	sRHmOiDetu1iPFp2YpnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEzlE-0005J8-5b; Thu, 19 Mar 2020 18:19:16 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jEzmE-0006sw-G1; Thu, 19 Mar 2020 18:20:18 +0000
+Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEzl1-0005IP-8H
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:19:05 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02JIEBPw006390; Thu, 19 Mar 2020 19:18:54 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=/NryDuotj7GwNZeRIKiNEE04efcoGmBTQAarcZjEeEM=;
- b=ilA6UgYTk/SDj4tn5Z6fnFBav5jjz1+QPUuhykOWCICXnTQbuN9lCImuGO5mfM74pK5G
- zwHzIGNe8OZtgvP8b5h5uHX0X664bbc8r2oBXBCViIyVq6UU8eCUfmYGPO8UL857euAg
- Gl2bMIbLLfn8BKroKXWRAudQVM0xht+L59+g07dQg8c9X9ox8mDre43QM2mDXwS8j4Ck
- v6Pfv3qj514b276Bct9qyAKQAjVmywK3rRSN3IDEN3TU36uvbU9i3ZJugxrVWoWsB56w
- SGT5h/Ct2mhkqEEqorqZVUL2hJ2XgJY3U4MJC3z/gG+fMxSwKZdKbI9BlZoXv0KbXF4e +w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yu8etkc0q-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 19 Mar 2020 19:18:54 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 733AC10002A;
- Thu, 19 Mar 2020 19:18:49 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3AC7A2A70CB;
- Thu, 19 Mar 2020 19:18:49 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Thu, 19 Mar 2020 19:18:48 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <robh+dt@kernel.org>, <jic23@kernel.org>
-Subject: [PATCH] dt-bindings: iio: adc: stm32-adc: fix id relative path
-Date: Thu, 19 Mar 2020 19:18:27 +0100
-Message-ID: <1584641907-8228-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
-MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-19_07:2020-03-19,
- 2020-03-19 signatures=0
+ id 1jEzm1-0006It-5V
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:20:06 +0000
+Received: by mail-pf1-x44a.google.com with SMTP id o5so2423214pfp.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 11:20:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=5P5en98KHUaK2c9M1pt238mEzcEaVTQjW087IgSolEA=;
+ b=gZEbou2CFuaRnaBVs6VGbGvdKyHSc6hsxdOHqe41Rv9utlPQNEjMrL6T6vvkHx37Cu
+ /vHX5EuZNvKik3a3u20F2MrAuKaFQ7nxZTmc/1pMUDms/2LcMvNAulNc9MqMQ1h3jfEH
+ UZV6MxnTTmdOPAuoyoLtVG6Re13YairDdP2toVomRVYRKKbVCGNyIO1X7B/V/6Kfh8/5
+ kgtOtfjp6DYF3GzXFXAMY6+rJ9myyxOSSfr1ogAJ6n3Fmahpl1DYb3UEkKhBE8z/jyVq
+ ZEJBZX9KLq5slu9ikq2GFdltBeFk2GOnEa92fAimmySPEkyjAbw+0n9YEIhYxutbpTEY
+ 0DLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=5P5en98KHUaK2c9M1pt238mEzcEaVTQjW087IgSolEA=;
+ b=qU5G/aw0W7qXqbT4BFi9W5qj83ab8iC0kg3w3LC130zg/+yNhDim1aQP28DRfrorNs
+ kbQh0L7v1Es+66NXXeGjMFVdB+l/a7dFpwhZ5LimBkrpTz4LqEDEKTjIxgguUvy5Zezt
+ 4lkyabqB1bS9AwpnNp9fpognKN5foJi9i0DRS88OGhhdMwd/fYQ1VEtjioSseG1+7x2i
+ o+2BpuCLovmq4N9c9ewuxti1SF5OFqKnNv2DagbGLan/G17SzstOVELPU6o5AH6st3XX
+ XUu1ZB8S962D5i8+mluFxasnrnn24+UuCmgjRNpiXPJ66l3PcA8xugG1qb6u0c58MOoc
+ 4uGQ==
+X-Gm-Message-State: ANhLgQ272N/E+VzujgblAPbOP3vCONtU27DWO9f/+g8YRq2D6jPb54Lp
+ cN7lAiONqjzfZiR8lFFnyZ2GUEA0Dt0az24FwKQ=
+X-Google-Smtp-Source: ADFU+vuZ2bD3gmRBQWRDXcfM3W9Vv2K6blc9+iR8Eairy2ZQkUXysQBJOhnJDtDqunIO1wLRZLRmERhHq+7ZLmHVD/o=
+X-Received: by 2002:a17:90a:af81:: with SMTP id
+ w1mr5234832pjq.14.1584642003433; 
+ Thu, 19 Mar 2020 11:20:03 -0700 (PDT)
+Date: Thu, 19 Mar 2020 11:19:51 -0700
+In-Reply-To: <1584090304-18043-17-git-send-email-amit.kachhap@arm.com>
+Message-Id: <20200319181951.102662-1-ndesaulniers@google.com>
+Mime-Version: 1.0
+References: <1584090304-18043-17-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.25.1.696.g5e7596f4ac-goog
+Subject: [PATCH] arm64: Kconfig: verify binutils support for ARM64_PTR_AUTH
+From: Nick Desaulniers <ndesaulniers@google.com>
+To: catalin.marinas@arm.com, will@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_111904_591711_4FAD2A5F 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200319_112005_250239_6C523CD4 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,42 +96,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mcoquelin.stm32@gmail.com, lars@metafoo.de,
- olivier.moysan@st.com, alexandre.torgue@st.com, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, pmeerw@pmeerw.net,
- knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, keescook@chromium.org, suzuki.poulose@arm.com,
+ Nick Desaulniers <ndesaulniers@google.com>, kristina.martsenko@arm.com,
+ ardb@kernel.org, yamada.masahiro@socionext.com, broonie@kernel.org,
+ james.morse@arm.com, clang-built-linux@googlegroups.com,
+ ramana.radhakrishnan@arm.com, amit.kachhap@arm.com, vincenzo.frascino@arm.com,
+ Dave.Martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix id relative path that shouldn't contain 'bindings', as pointed out
-when submitting st,stm32-dac bindings conversion to json-schema [1].
-[1] https://patchwork.ozlabs.org/patch/1257568/
+Clang relies on GNU as from binutils to assemble the Linux kernel,
+currently. A recent patch to enable the armv8.3-a extension for pointer
+authentication checked for compiler support of the relevant flags.
+Everything works with binutils 2.34+, but for older versions we observe
+assembler errors:
 
-Fixes: a8cf1723c4b7 ("dt-bindings: iio: adc: stm32-adc: convert bindings to json-schema")
+/tmp/vgettimeofday-36a54b.s: Assembler messages:
+/tmp/vgettimeofday-36a54b.s:40: Error: unknown pseudo-op: `.cfi_negate_ra_state'
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+When compiling with Clang, require the assembler to support
+.cfi_negate_ra_state directives, in order to support CONFIG_ARM64_PTR_AUTH.
+
+Link: https://github.com/ClangBuiltLinux/linux/issues/938
+Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
 ---
- Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Tested with binutils 2.33.1 and ToT. Boot tested in QEMU.
+I added this requirement only for Clang.
 
-diff --git a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-index 933ba37..dd8eb15 100644
---- a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-+++ b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
-@@ -1,7 +1,7 @@
- # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
- %YAML 1.2
- ---
--$id: "http://devicetree.org/schemas/bindings/iio/adc/st,stm32-adc.yaml#"
-+$id: "http://devicetree.org/schemas/iio/adc/st,stm32-adc.yaml#"
- $schema: "http://devicetree.org/meta-schemas/core.yaml#"
+GCC maybe doesn't produce these assembler directives, or looks like GCC
+8.2 produces .cfi_window_save (https://godbolt.org/z/awZWZ5, godbolt
+doesn't have a newer aarch64-linux-gnu-gcc...) instead of
+.cfi_negate_ra_state. Maybe ARM can sort out the inconsistency between
+compilers?
+
+If we plan to add .cfi_negate_ra_state to out of
+line assembly, we may want to make AS_HAS_CFI_NEGATE_RA_STATE a hard
+requirement, regardless of compiler.
+
+Also, rather than CC_IS_GCC, we could do !CC_IS_CLANG || ...
+
+
+ arch/arm64/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index b889d7956abf..1ee1d8fab218 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1506,6 +1506,7 @@ config ARM64_PTR_AUTH
+ 	default y
+ 	depends on !KVM || ARM64_VHE
+ 	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
++	depends on CC_IS_GCC || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
+ 	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
+ 	help
+ 	  Pointer authentication (part of the ARMv8.3 Extensions) provides
+@@ -1550,6 +1551,9 @@ config CC_HAS_SIGN_RETURN_ADDRESS
+ config AS_HAS_PAC
+ 	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
  
- title: STMicroelectronics STM32 ADC bindings
++config AS_HAS_CFI_NEGATE_RA_STATE
++	def_bool $(as-instr,.cfi_startproc\n.cfi_negate_ra_state\n.cfi_endproc\n)
++
+ endmenu
+ 
+ menu "ARMv8.4 architectural features"
 -- 
-2.7.4
+2.25.1.696.g5e7596f4ac-goog
 
 
 _______________________________________________
