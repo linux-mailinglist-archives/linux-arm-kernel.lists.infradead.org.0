@@ -2,86 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D440718BC35
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:17:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06C1018BC3F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:18:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oYkEEdmFr+E9GWC/DECOvbS2pFbNnEA/JGlmVz6dTDA=; b=TnNTnv81Rwy0G8
-	WFiHfTJ9BNKtcYN3hRUqM1Py7DTl76/IF14fHHK4Jw52BokcLBgZqJ28+waLNTDBaBgfFLHQVaC8M
-	nyx2Pb+4imU9Vf8SNpWHnfPqmpD1lWFXgUNI4g9Hddn315pxgYORgKPGsqVIzyDMBAKCrqn79Amsl
-	qXIU/U6HQK6k8GUrpmx9hHhcKSfjYp4Ha5ALKVv1+xZ6B61eoXCbDvGaEDGgIjhYS4jTd5k0v/x1S
-	NQ0i/XlgInEtjTufnWlW1MH3JiT0vtSZbesgA4C0YA2+FnPE+4RA6O+D8lWzGKRktaF6v7g0W6CTZ
-	STnvj2KgmOZGlY2SDThQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I4+r40uIoGb075S2Sqcyp213IsclddJRCAnvTH0BJU8=; b=nhaE/A+GkvX9aF
+	RBUCkFpCbGzaDXOAWVQIPkfPx+25Dwz4p8aHMHw3nLBIF8maJx34pDjdcZMxGuBNbRWEwinRCyp28
+	OVn3nJUwLAzyOvLgvrJhEKV2cuqr3/Tml7erqbafIDbLAy+JHRv4ix3m0vDQ9Zr/cCua2ZvP35deN
+	nqFVaBvsbC2GLffU6cYMbVmVO8Yh8A8Ykipv7xgI7PK6gx6RUzUA4YiIbV8acjziLglS8RTc+y4ah
+	xODrOEgVTIDrCF6UB2NE4gqfptV2mEQ/e6g++z55P9ZL7yddEriNpr29d9I1ikZhCMK4dOq+uApG8
+	TyQ/DIntVIJ7VqivUuNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jExqw-0002IM-Dq; Thu, 19 Mar 2020 16:17:02 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jExrs-0002i7-Uz; Thu, 19 Mar 2020 16:18:00 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jExqi-0002HW-Vl
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 16:16:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584634607;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=6L0/RW+VybIY9YlBcySb8qcqc4y1OrahRYFLfqqgB0g=;
- b=KgBlCxjbqbYoiqatd3+NrXxrG1HfjarWdYT+tNn9EAWFB3JdUaqdCsiZ0OqukyF7W9ENBs
- wbprPRpodh4ZFVA/gq0B0DgZupq2QRUSMDn3Gfijzrbc2m7lLT4NrMjKtvA4m20vKdIq8F
- LTWjWZqJHiWl0L/1WI/di8SoYGAHSFQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-378-vX5yTDLbP-aj3TcYLVcNAw-1; Thu, 19 Mar 2020 12:16:43 -0400
-X-MC-Unique: vX5yTDLbP-aj3TcYLVcNAw-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 129021005516;
- Thu, 19 Mar 2020 16:16:41 +0000 (UTC)
-Received: from [10.36.113.142] (ovpn-113-142.ams2.redhat.com [10.36.113.142])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id D7D6F60BF1;
- Thu, 19 Mar 2020 16:16:37 +0000 (UTC)
-Subject: Re: [PATCH v5 19/23] KVM: arm64: GICv4.1: Allow SGIs to switch
- between HW and SW interrupts
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-20-maz@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <8a6cf87a-7eee-5502-3b54-093ea0ab5e2d@redhat.com>
-Date: Thu, 19 Mar 2020 17:16:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1jExrf-0002h2-Gp; Thu, 19 Mar 2020 16:17:49 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jExrc-0001rp-J9; Thu, 19 Mar 2020 17:17:44 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Subject: Re: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each
+ dts for rk3288
+Date: Thu, 19 Mar 2020 17:17:41 +0100
+Message-ID: <3546891.GlR2YxYlMe@diego>
+In-Reply-To: <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
+References: <20200319151339.17909-1-katsuhiro@katsuster.net>
+ <4307911.4IBKxFWOMT@diego>
+ <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
 MIME-Version: 1.0
-In-Reply-To: <20200304203330.4967-20-maz@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_091649_110053_6BFB49B4 
-X-CRM114-Status: GOOD (  23.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_091747_708521_412F23AA 
+X-CRM114-Status: GOOD (  23.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,169 +59,353 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi,
 
-On 3/4/20 9:33 PM, Marc Zyngier wrote:
-> In order to let a guest buy in the new, active-less SGIs, we
-> need to be able to switch between the two modes.
-> 
-> Handle this by stopping all guest activity, transfer the state
-> from one mode to the other, and resume the guest. Nothing calls
-> this code so far, but a later patch will plug it into the MMIO
-> emulation.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  include/kvm/arm_vgic.h      |  3 ++
->  virt/kvm/arm/vgic/vgic-v4.c | 94 +++++++++++++++++++++++++++++++++++++
->  virt/kvm/arm/vgic/vgic.h    |  1 +
->  3 files changed, 98 insertions(+)
-> 
-> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-> index 63457908c9c4..69f4164d6477 100644
-> --- a/include/kvm/arm_vgic.h
-> +++ b/include/kvm/arm_vgic.h
-> @@ -231,6 +231,9 @@ struct vgic_dist {
->  	/* distributor enabled */
->  	bool			enabled;
->  
-> +	/* Wants SGIs without active state */
-> +	bool			nassgireq;
-> +
->  	struct vgic_irq		*spis;
->  
->  	struct vgic_io_device	dist_iodev;
-> diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
-> index c2fcde104ea2..a65dc1c85363 100644
-> --- a/virt/kvm/arm/vgic/vgic-v4.c
-> +++ b/virt/kvm/arm/vgic/vgic-v4.c
-> @@ -97,6 +97,100 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
->  	return IRQ_HANDLED;
->  }
->  
-> +static void vgic_v4_sync_sgi_config(struct its_vpe *vpe, struct vgic_irq *irq)
-> +{
-> +	vpe->sgi_config[irq->intid].enabled	= irq->enabled;
-> +	vpe->sgi_config[irq->intid].group 	= irq->group;
-> +	vpe->sgi_config[irq->intid].priority	= irq->priority;
-> +}
-> +
-> +static void vgic_v4_enable_vsgis(struct kvm_vcpu *vcpu)
-> +{
-> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
-> +	int i;
-> +
-> +	/*
-> +	 * With GICv4.1, every virtual SGI can be directly injected. So
-> +	 * let's pretend that they are HW interrupts, tied to a host
-> +	 * IRQ. The SGI code will do its magic.
-> +	 */
-> +	for (i = 0; i < VGIC_NR_SGIS; i++) {
-> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, i);
-> +		struct irq_desc *desc;
-> +		int ret;
-Is is safe without holding the irq->irq_lock?
-> +
-> +		if (irq->hw) {
-> +			vgic_put_irq(vcpu->kvm, irq);
-> +			continue;
-> +		}
-> +
-> +		irq->hw = true;
-> +		irq->host_irq = irq_find_mapping(vpe->sgi_domain, i);
-> +
-> +		/* Transfer the full irq state to the vPE */
-> +		vgic_v4_sync_sgi_config(vpe, irq);
-> +		desc = irq_to_desc(irq->host_irq);
-> +		ret = irq_domain_activate_irq(irq_desc_get_irq_data(desc),
-> +					      false);
-> +		if (!WARN_ON(ret)) {
-> +			/* Transfer pending state */
-> +			ret = irq_set_irqchip_state(irq->host_irq,
-> +						    IRQCHIP_STATE_PENDING,
-> +						    irq->pending_latch);
-> +			WARN_ON(ret);
-> +			irq->pending_latch = false;
-> +		}
-> +
-> +		vgic_put_irq(vcpu->kvm, irq);
-> +	}
-> +}
-> +
-> +static void vgic_v4_disable_vsgis(struct kvm_vcpu *vcpu)
-> +{
-> +	int i;
-> +
-> +	for (i = 0; i < VGIC_NR_SGIS; i++) {
-> +		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, i);
-> +		struct irq_desc *desc;
-> +		int ret;
-> +
-> +		if (!irq->hw) {
-> +			vgic_put_irq(vcpu->kvm, irq);
-> +			continue;
-> +		}
-> +
-> +		irq->hw = false;
-> +		ret = irq_get_irqchip_state(irq->host_irq,
-> +					    IRQCHIP_STATE_PENDING,
-> +					    &irq->pending_latch);
-> +		WARN_ON(ret);
-> +
-> +		desc = irq_to_desc(irq->host_irq);
-> +		irq_domain_deactivate_irq(irq_desc_get_irq_data(desc));
-> +
-> +		vgic_put_irq(vcpu->kvm, irq);
-> +	}
-> +}
-> +
-> +/* Must be called with the kvm lock held */
-> +void vgic_v4_configure_vsgis(struct kvm *kvm)
-> +{
-> +	struct vgic_dist *dist = &kvm->arch.vgic;
-> +	struct kvm_vcpu *vcpu;
-> +	int i;
-> +
-> +	kvm_arm_halt_guest(kvm);
-> +
-> +	kvm_for_each_vcpu(i, vcpu, kvm) {
-> +		if (dist->nassgireq)
-> +			vgic_v4_enable_vsgis(vcpu);
-> +		else
-> +			vgic_v4_disable_vsgis(vcpu);
-> +	}
-> +
-> +	kvm_arm_resume_guest(kvm);
-> +}
-> +
->  /**
->   * vgic_v4_init - Initialize the GICv4 data structures
->   * @kvm:	Pointer to the VM being initialized
-> diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-> index c7fefd6b1c80..769e4802645e 100644
-> --- a/virt/kvm/arm/vgic/vgic.h
-> +++ b/virt/kvm/arm/vgic/vgic.h
-> @@ -316,5 +316,6 @@ void vgic_its_invalidate_cache(struct kvm *kvm);
->  bool vgic_supports_direct_msis(struct kvm *kvm);
->  int vgic_v4_init(struct kvm *kvm);
->  void vgic_v4_teardown(struct kvm *kvm);
-> +void vgic_v4_configure_vsgis(struct kvm *kvm);
->  
->  #endif
-> 
-Thanks
+Am Donnerstag, 19. M=E4rz 2020, 16:58:00 CET schrieb Katsuhiro Suzuki:
+> On 2020/03/20 0:25, Heiko St=FCbner wrote:
+> > Am Donnerstag, 19. M=E4rz 2020, 16:13:39 CET schrieb Katsuhiro Suzuki:
+> >> This patch removes conflicted pinctrl settings uart2 and pwm 2/3
+> >> from common rk3288.dtsi and moves exist uart2 pinctrl settings
+> >> into each rk3288*.dts files.
+> >>
+> >>    - pwm2_pin  : use GPIO7_C6
+> >>    - pwm3_pin  : use GPIO7_C7
+> >>    - uart2_xfer: use GPIO7_C6, GPIO7_C7
+> > =
 
-Eric
+> > Board files only ever get to enable either pwm2/3 or uart2,
+> > not both at once - so I'm not sure where you see conflicts.
+> > =
+
+> =
+
+> At first, I think so too. But I've saw this message when booting.
+> =
+
+> ----------
+> [    2.435504] rockchip-pinctrl pinctrl: pin gpio7-22 already requested b=
+y ff680020.pwm; cannot claim for ff690000.serial
+> [    2.447506] rockchip-pinctrl pinctrl: pin-238 (ff690000.serial) status=
+ -22
+> [    2.455198] rockchip-pinctrl pinctrl: could not request pin 238 (gpio7=
+-22) from group uart2-xfer  on device rockchip-pinctrl
+> ----------
+> =
+
+> And it seems that uart2(ttyS2) is not working correctly.
+> =
+
+> ----------
+> # cat /dev/ttyS2
+> cat: /dev/ttyS2: Input/output error
+> ----------
+> =
+
+> I'm using newest linux-next, make defconfig and CONFIG_MODULES =3D n sett=
+ing
+> with TinkerBoard. Can I resolve this issue in other ways?
+
+On the tinker-board pwm2 is unused and has a status=3Ddisabled in the
+devicetree [at least when checking my current branches], so the kernel
+shouldn't even create a plaform-device for it.
+
+I.e. see [0] - the of_device_is_available() call should already drop the
+disabled devices, so there should not even exist a ff680020.pwm .
+
+So I guess the solution would be to find out why it creates ff680020.pwm
+in the first place and fix that.
+
+Heiko
+
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tre=
+e/drivers/of/platform.c#n174
+
+
+
+> > And of course there are alternative pins to use, if you need uart2
+> > you need both pins in uart-pinmux and if you need either as pwm, then
+> > the board by design just can't use them as uart2.
+> > =
+
+> > So pin setting should stay where they are, as there really is no confli=
+ct.
+> > =
+
+> > =
+
+> > Heiko
+> > =
+
+> > =
+
+> > =
+
+> >> Currently uart2 rk3288 user is the following:
+> >>
+> >>    - rk3288-evb.dtsi:&uart2 {
+> >>    - rk3288-firefly-reload.dts:&uart2 {
+> >>    - rk3288-firefly.dtsi:&uart2 {
+> >>    - rk3288-miqi.dts:&uart2 {
+> >>    - rk3288-phycore-rdk.dts:&uart2 {
+> >>    - rk3288-popmetal.dts:&uart2 {
+> >>    - rk3288-r89.dts:&uart2 {
+> >>    - rk3288-rock2-square.dts:&uart2 {
+> >>    - rk3288-tinker.dtsi:&uart2 {
+> >>    - rk3288-veyron.dtsi:&uart2 {
+> >>    - rk3288-vyasa.dts:&uart2 {
+> >>
+> >> And no one is using pwm2 nor pwm3.
+> >>
+> >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+> >> ---
+> >>   arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
+> >>   arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
+> >>   arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
+> >>   arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
+> >>   arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
+> >>   arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
+> >>   arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
+> >>   arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
+> >>   arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
+> >>   arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
+> >>   arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
+> >>   arch/arm/boot/dts/rk3288.dtsi               | 6 ------
+> >>   12 files changed, 22 insertions(+), 6 deletions(-)
+> >>
+> >> diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3=
+288-evb.dtsi
+> >> index 018802df4c0e..74091f831ecf 100644
+> >> --- a/arch/arm/boot/dts/rk3288-evb.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288-evb.dtsi
+> >> @@ -285,6 +285,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/bo=
+ot/dts/rk3288-firefly-reload.dts
+> >> index 8c38bda21a7c..b0c976c8e35b 100644
+> >> --- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+> >> @@ -283,6 +283,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts=
+/rk3288-firefly.dtsi
+> >> index 5e0a19004e46..1632cc083c12 100644
+> >> --- a/arch/arm/boot/dts/rk3288-firefly.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
+> >> @@ -532,6 +532,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3=
+288-miqi.dts
+> >> index c41d012c8850..2c0ed37fde80 100644
+> >> --- a/arch/arm/boot/dts/rk3288-miqi.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-miqi.dts
+> >> @@ -379,6 +379,8 @@ &tsadc {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/=
+dts/rk3288-phycore-rdk.dts
+> >> index 1e33859de484..6532c1ac43cd 100644
+> >> --- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+> >> @@ -244,6 +244,8 @@ &uart0 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts=
+/rk3288-popmetal.dts
+> >> index 6a51940398b5..f18306bd9e6e 100644
+> >> --- a/arch/arm/boot/dts/rk3288-popmetal.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-popmetal.dts
+> >> @@ -481,6 +481,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk32=
+88-r89.dts
+> >> index a258c7ae5329..02d2f5cfe201 100644
+> >> --- a/arch/arm/boot/dts/rk3288-r89.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-r89.dts
+> >> @@ -340,6 +340,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot=
+/dts/rk3288-rock2-square.dts
+> >> index cdcdc921ee09..a44290e882be 100644
+> >> --- a/arch/arm/boot/dts/rk3288-rock2-square.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
+> >> @@ -264,6 +264,8 @@ &spdif {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/=
+rk3288-tinker.dtsi
+> >> index acfaa12ec239..0327119f71b4 100644
+> >> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> >> @@ -500,6 +500,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/=
+rk3288-veyron.dtsi
+> >> index 54a6838d73f5..baa44d00e49a 100644
+> >> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> >> @@ -412,6 +412,8 @@ &uart1 {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk=
+3288-vyasa.dts
+> >> index 385dd59393e1..aa50cdc7f839 100644
+> >> --- a/arch/arm/boot/dts/rk3288-vyasa.dts
+> >> +++ b/arch/arm/boot/dts/rk3288-vyasa.dts
+> >> @@ -398,6 +398,8 @@ &tsadc {
+> >>   };
+> >>   =
+
+> >>   &uart2 {
+> >> +	pinctrl-names =3D "default";
+> >> +	pinctrl-0 =3D <&uart2_xfer>;
+> >>   	status =3D "okay";
+> >>   };
+> >>   =
+
+> >> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.=
+dtsi
+> >> index 0cd88774db95..4c1f8cabb5eb 100644
+> >> --- a/arch/arm/boot/dts/rk3288.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288.dtsi
+> >> @@ -450,8 +450,6 @@ uart2: serial@ff690000 {
+> >>   		reg-io-width =3D <4>;
+> >>   		clocks =3D <&cru SCLK_UART2>, <&cru PCLK_UART2>;
+> >>   		clock-names =3D "baudclk", "apb_pclk";
+> >> -		pinctrl-names =3D "default";
+> >> -		pinctrl-0 =3D <&uart2_xfer>;
+> >>   		status =3D "disabled";
+> >>   	};
+> >>   =
+
+> >> @@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
+> >>   		compatible =3D "rockchip,rk3288-pwm";
+> >>   		reg =3D <0x0 0xff680020 0x0 0x10>;
+> >>   		#pwm-cells =3D <3>;
+> >> -		pinctrl-names =3D "default";
+> >> -		pinctrl-0 =3D <&pwm2_pin>;
+> >>   		clocks =3D <&cru PCLK_RKPWM>;
+> >>   		clock-names =3D "pwm";
+> >>   		status =3D "disabled";
+> >> @@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
+> >>   		compatible =3D "rockchip,rk3288-pwm";
+> >>   		reg =3D <0x0 0xff680030 0x0 0x10>;
+> >>   		#pwm-cells =3D <3>;
+> >> -		pinctrl-names =3D "default";
+> >> -		pinctrl-0 =3D <&pwm3_pin>;
+> >>   		clocks =3D <&cru PCLK_RKPWM>;
+> >>   		clock-names =3D "pwm";
+> >>   		status =3D "disabled";
+> >>
+> > =
+
+> > =
+
+> > =
+
+> > =
+
+> > =
+
+> =
+
+> =
+
+
+
+
 
 
 _______________________________________________
