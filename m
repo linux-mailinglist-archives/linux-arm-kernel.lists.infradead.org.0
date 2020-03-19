@@ -2,84 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B649A18BF72
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:34:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3FD118BF77
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:36:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZlTMqmUGYir/vDSaowJ39b229RhpWRo0f9rUnuxGH1o=; b=B0Jk+1bVvPlsgz
-	jcw96S15JQtsN1znMuBSoGJLpXyegPmIDOonTEfy4WhZz6W2AhnxepqHvUUVdUpPYLYEOvNBsfO1o
-	8Y+lweJ8smIGtmd8L2iIQnRbSp1g/GbX8R2alYh2+Lye6Q+IgwbsNmgyqyP0CpAHnonsCHd5n7KTn
-	rmH6059smk31n7QNVjzkOd7Jv6Z4W3LHe5mHBYrxohfvqEolNZcoB7xNFj5vZjLkFNcHmec4sWXOH
-	EIK5EpI9XMlLhtexOmv5NASYiirwApY2V+KJnL9qCvfRu2g1VCE+IDtS2RDS6w6wEaCVB1I/MIHZH
-	n3ilwrmmbr3BTUsqBJ5w==;
+	List-Owner; bh=uuMmp8eInVhnbk7qrzjw4kvG/FYv6psz3YBgOouZMjA=; b=gJnaURRTZ42nIy
+	pKedRGovET+8Sjdh76a8BDB68JbzcwsadmVDox1tt4jKKbqsYvIxikXOx42LFLYDjcXBftZYkznXg
+	EbQdJK00e3X/TviVrbnsAVLrOdL+P0dWlugMwdbobia1owcuGqWYogvvJKszRobVKnrbKo5lqjrec
+	2amO2uD3CxOh27gQeGXvHayGZs81I0HXBH0IRPH54lkoei1RTatUCcs6JlL6JB57nvk54qZHqRCUH
+	Wx414WaUvut+3pIpnVRB8X0Luxw+DpGIF72MIrjdMo2vKxShJfpZr2BR0JlOyL/LNCQ2608bjzDRq
+	XNdsvjszjM0UXE7B538w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEzzm-0004am-H4; Thu, 19 Mar 2020 18:34:18 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jF01L-000696-Ho; Thu, 19 Mar 2020 18:35:55 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEzzX-0004Zc-Fg; Thu, 19 Mar 2020 18:34:05 +0000
-Received: by mail-il1-f196.google.com with SMTP id a6so3225664ilc.4;
- Thu, 19 Mar 2020 11:34:03 -0700 (PDT)
+ id 1jF01A-00067y-KA
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:35:46 +0000
+Received: by mail-ot1-x344.google.com with SMTP id e19so3444687otj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 11:35:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=APPSDaugBHGyzNNQiEw4/hvzhF063bWi+DW3Elw8lic=;
+ b=XDz6g/wODqwBu/rhJfDOMoCjZF6mJRJ57DL3tR1vEhgipsOaY28B2Z058gv4nBzCov
+ x3Wwpdpem33qUZg5+Y9mBGP2ZicZ/AxoMQw2+zykMAmKY+AmyaypIQEE7esKuhf1YDSO
+ 8tfuhnOc8OF96gr5dIIAYhwH6XGmUP7UVokdDvbCV1FJWvgevDs/N7pLuN/R71786Bb1
+ 9tXpRBx/8vzxVST0nsNmULdMKyqJrejhSKDEcwf6Lz3DrMGgdZByWdRuqPUvn5Bl0I7V
+ IX39qHV5kaOd9e5Dcl9uAyWXm+aQVolLqNrFEHlFW03p6kthQBiuGocfRy9xXQOgjVQZ
+ Xlbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uPWry8RY6+hi4eAi0Y1bb3DGJuUvwAMEt6jfhx00FwM=;
- b=rs0mflbuBWtgOZGd6XJlnx9kXOf03ZLlQdtcMLYLqPyPaS5YkJs0l0yyYHZEp7J1NH
- O+wKumALX8sOA1yU3OOmd6hKlp1I5pnqW9JVYNBwPrsZlF0twNg2QDxd/mMiy7YlLDPD
- o+o0RtZ7UKeYifFYSvuVfUhscYwVpp159CdXi7IaN/JywzP1uQ1KvyWnfEVZcQNcBJA+
- skbjaf9Ao7jqElNVSqXeke56POfO/RBGB9HqgDuzNcRodo7FzmLk/x0m0c3AZjQBR1Xn
- 6KfYowWCXKEEGrDLMDa71fKY3z6cWQ1JvhlvDxBVxUxDUe/vz84/uGKZdGZiJJyU5VLI
- vlnQ==
-X-Gm-Message-State: ANhLgQ0N9kuCB4VADr6EA9V7Hq5uQc4zJ3hKd99CPvwqpsp5tsAU8YdP
- eIWa1K0TuFVpwHs0PZHrXQ==
-X-Google-Smtp-Source: ADFU+vs1k4gpcdfKiMfAtAb7CaNrV8yNwy8ti//ggPn+OEJyJsCKN0w4f4f/ANYejiLSsUVzM5ackg==
-X-Received: by 2002:a92:9149:: with SMTP id t70mr4864882ild.114.1584642842382; 
- Thu, 19 Mar 2020 11:34:02 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id z1sm1124712ilq.83.2020.03.19.11.34.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Mar 2020 11:34:01 -0700 (PDT)
-Received: (nullmailer pid 24310 invoked by uid 1000);
- Thu, 19 Mar 2020 18:33:58 -0000
-Date: Thu, 19 Mar 2020 12:33:58 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v13 4/6] dt-bindings: display: mediatek: convert the
- document format from txt to yaml
-Message-ID: <20200319183358.GA17237@bogus>
-References: <20200311071823.117899-1-jitao.shi@mediatek.com>
- <20200311071823.117899-5-jitao.shi@mediatek.com>
+ bh=APPSDaugBHGyzNNQiEw4/hvzhF063bWi+DW3Elw8lic=;
+ b=N8xCdqARIhUGU5AufTYSQKJOvEhs56/EK/bHXvVyn+7+Em5/XbEIUs1bCQzNMvriqT
+ AUSkgsmjJ5TNo+NgAOdVTFnxE/GId3oPdIvBp5BOc6xBZojJQuZ0t+QcXOdCvnPtmcWG
+ IOIH83vUXHL86LnWEbj8mdwQwRwvONFymleq7H+16174d9gBe5XC1+X8rmsq7xX2Go18
+ gHaBjrK1+SN3L6SqrLBfPkvYG/exV93V/DukSg/RdkaVF44JuOKmuYhePzcBwpbM8Mt4
+ /3jR90HiWF+G5zTv2H57r4Qel68Sqlzsx/E9zAu0XEaeB+LsgA2eef0xvEBPw7gtE2Jt
+ KMRg==
+X-Gm-Message-State: ANhLgQ12dDX0wPnFz3xQEpcMZSeYKqwGiI8AUEIoMWtCbGFdzhX2Mhcd
+ DTvPaUqYQKmBpnp0lsc6jvQ=
+X-Google-Smtp-Source: ADFU+vumlvX6T9k76TfyqAcBtquCENXwqoCLZgPP1wIPk9O2fGuB15OIyNyeVT+MygklM9sP98kV3g==
+X-Received: by 2002:a9d:3603:: with SMTP id w3mr3559717otb.94.1584642940494;
+ Thu, 19 Mar 2020 11:35:40 -0700 (PDT)
+Received: from ubuntu-m2-xlarge-x86 ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id c1sm1067571oib.46.2020.03.19.11.35.39
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 19 Mar 2020 11:35:39 -0700 (PDT)
+Date: Thu, 19 Mar 2020 11:35:38 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH] arm64: Kconfig: verify binutils support for ARM64_PTR_AUTH
+Message-ID: <20200319183538.GA33965@ubuntu-m2-xlarge-x86>
+References: <1584090304-18043-17-git-send-email-amit.kachhap@arm.com>
+ <20200319181951.102662-1-ndesaulniers@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200311071823.117899-5-jitao.shi@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200319181951.102662-1-ndesaulniers@google.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_113403_522638_8FFE2229 
-X-CRM114-Status: GOOD (  18.88  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200319_113544_693488_BFE55054 
+X-CRM114-Status: GOOD (  20.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider [natechancellor[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,196 +100,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, keescook@chromium.org, suzuki.poulose@arm.com,
+ catalin.marinas@arm.com, kristina.martsenko@arm.com, ardb@kernel.org,
+ yamada.masahiro@socionext.com, broonie@kernel.org, james.morse@arm.com,
+ clang-built-linux@googlegroups.com, ramana.radhakrishnan@arm.com,
+ amit.kachhap@arm.com, vincenzo.frascino@arm.com, will@kernel.org,
+ Dave.Martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 03:18:21PM +0800, Jitao Shi wrote:
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../display/mediatek/mediatek,dpi.txt         |  45 --------
->  .../display/mediatek/mediatek,dpi.yaml        | 103 ++++++++++++++++++
->  2 files changed, 103 insertions(+), 45 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+On Thu, Mar 19, 2020 at 11:19:51AM -0700, 'Nick Desaulniers' via Clang Built Linux wrote:
+> Clang relies on GNU as from binutils to assemble the Linux kernel,
+> currently. A recent patch to enable the armv8.3-a extension for pointer
+> authentication checked for compiler support of the relevant flags.
+> Everything works with binutils 2.34+, but for older versions we observe
+> assembler errors:
 > 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> deleted file mode 100644
-> index 2dfb50a7321e..000000000000
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> +++ /dev/null
-> @@ -1,45 +0,0 @@
-> -Mediatek DPI Device
-> -===================
-> -
-> -The Mediatek DPI function block is a sink of the display subsystem and
-> -provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
-> -output bus.
-> -
-> -Required properties:
-> -- compatible: "mediatek,<chip>-dpi"
-> -  the supported chips are mt2701 , mt8173 and mt8183.
-> -- reg: Physical base address and length of the controller's registers
-> -- interrupts: The interrupt signal from the function block.
-> -- clocks: device clocks
-> -  See Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-> -- clock-names: must contain "pixel", "engine", and "pll"
-> -- port: Output port node with endpoint definitions as described in
-> -  Documentation/devicetree/bindings/graph.txt. This port should be connected
-> -  to the input port of an attached HDMI or LVDS encoder chip.
-> -
-> -Optional properties:
-> -- pinctrl-names: Contain "default" and "sleep".
-> -  pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
-> -- pclk-sample: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
-> -
-> -Example:
-> -
-> -dpi0: dpi@1401d000 {
-> -	compatible = "mediatek,mt8173-dpi";
-> -	reg = <0 0x1401d000 0 0x1000>;
-> -	interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
-> -	clocks = <&mmsys CLK_MM_DPI_PIXEL>,
-> -		 <&mmsys CLK_MM_DPI_ENGINE>,
-> -		 <&apmixedsys CLK_APMIXED_TVDPLL>;
-> -	clock-names = "pixel", "engine", "pll";
-> -	pinctrl-names = "default", "sleep";
-> -	pinctrl-0 = <&dpi_pin_func>;
-> -	pinctrl-1 = <&dpi_pin_idle>;
-> -
-> -	port {
-> -		dpi0_out: endpoint {
-> -			pclk-sample = <0>;
-> -			remote-endpoint = <&hdmi0_in>;
-> -		};
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> new file mode 100644
-> index 000000000000..d65543e3bf8c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-> @@ -0,0 +1,103 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> /tmp/vgettimeofday-36a54b.s: Assembler messages:
+> /tmp/vgettimeofday-36a54b.s:40: Error: unknown pseudo-op: `.cfi_negate_ra_state'
+> 
+> When compiling with Clang, require the assembler to support
+> .cfi_negate_ra_state directives, in order to support CONFIG_ARM64_PTR_AUTH.
+> 
+> Link: https://github.com/ClangBuiltLinux/linux/issues/938
+> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+> ---
+> Tested with binutils 2.33.1 and ToT. Boot tested in QEMU.
+> I added this requirement only for Clang.
+> 
+> GCC maybe doesn't produce these assembler directives, or looks like GCC
+> 8.2 produces .cfi_window_save (https://godbolt.org/z/awZWZ5, godbolt
+> doesn't have a newer aarch64-linux-gnu-gcc...) instead of
+> .cfi_negate_ra_state. Maybe ARM can sort out the inconsistency between
+> compilers?
+> 
+> If we plan to add .cfi_negate_ra_state to out of
+> line assembly, we may want to make AS_HAS_CFI_NEGATE_RA_STATE a hard
+> requirement, regardless of compiler.
+> 
+> Also, rather than CC_IS_GCC, we could do !CC_IS_CLANG || ...
+> 
+> 
+>  arch/arm64/Kconfig | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index b889d7956abf..1ee1d8fab218 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1506,6 +1506,7 @@ config ARM64_PTR_AUTH
+>  	default y
+>  	depends on !KVM || ARM64_VHE
+>  	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
+> +	depends on CC_IS_GCC || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
+>  	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
+>  	help
+>  	  Pointer authentication (part of the ARMv8.3 Extensions) provides
+> @@ -1550,6 +1551,9 @@ config CC_HAS_SIGN_RETURN_ADDRESS
+>  config AS_HAS_PAC
+>  	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
+>  
+> +config AS_HAS_CFI_NEGATE_RA_STATE
+> +	def_bool $(as-instr,.cfi_startproc\n.cfi_negate_ra_state\n.cfi_endproc\n)
 > +
-> +title: mediatek DPI Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - CK Hu <ck.hu@mediatek.com>
-> +  - Jitao shi <jitao.shi@mediatek.com>
-> +
-> +description: |
-> +  The Mediatek DPI function block is a sink of the display subsystem and
-> +  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
-> +  output bus.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mediatek,mt2701-dpi
-> +      - mediatek,mt8173-dpi
-> +      - mediatek,mt8183-dpi
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Pixel Clock
-> +      - description: Engine Clock
-> +      - description: DPI PLL
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pixel
-> +      - const: engine
-> +      - const: pll
-> +
-> +  pinctrl-0: true
-> +  pinctrl-1: true
-> +
-> +  pinctrl-names:
-> +    items:
-> +      - const: default
-> +      - const: sleep
-> +
-> +  port@0:
-> +    type: object
-> +    description:
-> +      Output port node with endpoint definitions as described in
-> +      Documentation/devicetree/bindings/graph.txt. This port should be connected
-> +      to the input port of an attached HDMI or LVDS encoder chip.
-> +
-> +    properties:
-> +      endpoint:
-> +        type: object
-> +
-> +        properties:
-> +          pclk-sample:
-> +            items:
-> +            - description: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
-
-This is not an array.
-
-Just 'pclk-sample: true' if both values are allowed or 'const: 0|1' if 
-only one value is allowed.
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - port@0
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/mt8173-clk.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    dpi0: dpi@1401d000 {
-> +        compatible = "mediatek,mt8173-dpi";
-> +        reg = <0 0x1401d000 0 0x1000>;
-> +        interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
-> +        clocks = <&mmsys CLK_MM_DPI_PIXEL>,
-> +             <&mmsys CLK_MM_DPI_ENGINE>,
-> +             <&apmixedsys CLK_APMIXED_TVDPLL>;
-> +        clock-names = "pixel", "engine", "pll";
-> +        pinctrl-names = "default", "sleep";
-> +        pinctrl-0 = <&dpi_pin_func>;
-> +        pinctrl-1 = <&dpi_pin_idle>;
-> +
-> +        port@0 {
-> +            dpi0_out: endpoint {
-> +                pclk-sample = <0>;
-> +                remote-endpoint = <&hdmi0_in>;
-> +            };
-> +        };
-> +    };
-> +
-> +...
+>  endmenu
+>  
+>  menu "ARMv8.4 architectural features"
 > -- 
-> 2.21.0
+> 2.25.1.696.g5e7596f4ac-goog
+> 
+
+It would be nice to make this kind of check work for both GCC and Clang
+but like you noted, there appears to be inconsistencies between them so
+something for another day. CONFIG_ARM64_PTR_AUTH is getting a little
+gnarly in terms of dependencies but I suppose that makes sense given its
+nature. I verified that AS_HAS_CFI_NEGATE_RA_STATE gets set with ToT
+binutils and that it does not with an older version.
+
+Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
+Tested-by: Nathan Chancellor <natechancellor@gmail.com>
+
+This unlocks our CI so hopefully it can get picked up quickly.
+
+https://travis-ci.com/github/ClangBuiltLinux/continuous-integration/jobs/299816618
+
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
