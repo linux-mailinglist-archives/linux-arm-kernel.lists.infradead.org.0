@@ -2,86 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3FD118BF77
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:36:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0C8C18BF7E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:38:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uuMmp8eInVhnbk7qrzjw4kvG/FYv6psz3YBgOouZMjA=; b=gJnaURRTZ42nIy
-	pKedRGovET+8Sjdh76a8BDB68JbzcwsadmVDox1tt4jKKbqsYvIxikXOx42LFLYDjcXBftZYkznXg
-	EbQdJK00e3X/TviVrbnsAVLrOdL+P0dWlugMwdbobia1owcuGqWYogvvJKszRobVKnrbKo5lqjrec
-	2amO2uD3CxOh27gQeGXvHayGZs81I0HXBH0IRPH54lkoei1RTatUCcs6JlL6JB57nvk54qZHqRCUH
-	Wx414WaUvut+3pIpnVRB8X0Luxw+DpGIF72MIrjdMo2vKxShJfpZr2BR0JlOyL/LNCQ2608bjzDRq
-	XNdsvjszjM0UXE7B538w==;
+	List-Owner; bh=AVTe8+cHIEGIU2F55g8XDmFIxOCLcjCgTIPgFMXC0Fc=; b=H5whZXZPGXCYgR
+	7UC9PTchj+FsIZ+vPN0QhxlK+SiO4sgz4RNbQ8Jc8/onSZfFhlwptV7ELQQyj1f/s2gwg9T/zVX/d
+	1+YSLCt69ijNoVRSaRtHIjTSOZ2tftfQa+G9gxI71eP7UxtXwAWVxFXbG9wwlA3PjomyQE7JU7bjw
+	v60g5segyQ+AuzJpQgpP3Tt9CekDRDd2HOy6941vuf6XO6F6nb8eINtFW84UPlyVmnsAyMpO9MiOS
+	Up+t4i83cavyToHOH4VnCVRDYAT71eBWXQN3J63GbxCoNvblu7zR2oHIoj1kRf3E7ArJm/sMfpH1/
+	LVezr+EZFXgwLkzcmkkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF01L-000696-Ho; Thu, 19 Mar 2020 18:35:55 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jF03b-0006bl-Qd; Thu, 19 Mar 2020 18:38:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF01A-00067y-KA
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:35:46 +0000
-Received: by mail-ot1-x344.google.com with SMTP id e19so3444687otj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 11:35:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=APPSDaugBHGyzNNQiEw4/hvzhF063bWi+DW3Elw8lic=;
- b=XDz6g/wODqwBu/rhJfDOMoCjZF6mJRJ57DL3tR1vEhgipsOaY28B2Z058gv4nBzCov
- x3Wwpdpem33qUZg5+Y9mBGP2ZicZ/AxoMQw2+zykMAmKY+AmyaypIQEE7esKuhf1YDSO
- 8tfuhnOc8OF96gr5dIIAYhwH6XGmUP7UVokdDvbCV1FJWvgevDs/N7pLuN/R71786Bb1
- 9tXpRBx/8vzxVST0nsNmULdMKyqJrejhSKDEcwf6Lz3DrMGgdZByWdRuqPUvn5Bl0I7V
- IX39qHV5kaOd9e5Dcl9uAyWXm+aQVolLqNrFEHlFW03p6kthQBiuGocfRy9xXQOgjVQZ
- Xlbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=APPSDaugBHGyzNNQiEw4/hvzhF063bWi+DW3Elw8lic=;
- b=N8xCdqARIhUGU5AufTYSQKJOvEhs56/EK/bHXvVyn+7+Em5/XbEIUs1bCQzNMvriqT
- AUSkgsmjJ5TNo+NgAOdVTFnxE/GId3oPdIvBp5BOc6xBZojJQuZ0t+QcXOdCvnPtmcWG
- IOIH83vUXHL86LnWEbj8mdwQwRwvONFymleq7H+16174d9gBe5XC1+X8rmsq7xX2Go18
- gHaBjrK1+SN3L6SqrLBfPkvYG/exV93V/DukSg/RdkaVF44JuOKmuYhePzcBwpbM8Mt4
- /3jR90HiWF+G5zTv2H57r4Qel68Sqlzsx/E9zAu0XEaeB+LsgA2eef0xvEBPw7gtE2Jt
- KMRg==
-X-Gm-Message-State: ANhLgQ12dDX0wPnFz3xQEpcMZSeYKqwGiI8AUEIoMWtCbGFdzhX2Mhcd
- DTvPaUqYQKmBpnp0lsc6jvQ=
-X-Google-Smtp-Source: ADFU+vumlvX6T9k76TfyqAcBtquCENXwqoCLZgPP1wIPk9O2fGuB15OIyNyeVT+MygklM9sP98kV3g==
-X-Received: by 2002:a9d:3603:: with SMTP id w3mr3559717otb.94.1584642940494;
- Thu, 19 Mar 2020 11:35:40 -0700 (PDT)
-Received: from ubuntu-m2-xlarge-x86 ([2604:1380:4111:8b00::1])
- by smtp.gmail.com with ESMTPSA id c1sm1067571oib.46.2020.03.19.11.35.39
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 19 Mar 2020 11:35:39 -0700 (PDT)
-Date: Thu, 19 Mar 2020 11:35:38 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH] arm64: Kconfig: verify binutils support for ARM64_PTR_AUTH
-Message-ID: <20200319183538.GA33965@ubuntu-m2-xlarge-x86>
-References: <1584090304-18043-17-git-send-email-amit.kachhap@arm.com>
- <20200319181951.102662-1-ndesaulniers@google.com>
+ id 1jF03P-0006bE-J3
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:38:04 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1849A20787;
+ Thu, 19 Mar 2020 18:38:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584643083;
+ bh=EbDQJIl0hkZJqlYCAUK0V7oBidFc1rqWCcQnEG+tmG0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=YqrPWyawhOPX3wobShrUGlCj0Sr0s52Zez9zH5c2PmSayEOBmwJ4+mshlUP6DhnLw
+ TA3y83J/Ycn+3TgNY3QKePsAXJKNICU6xAzTXNrtOgnKgP7rKTeic5n/MX/Y6U5hCE
+ +L1gTUZ5C36Cd7MZd8CYoam4z6dEQL9p9kx/+AOw=
+Date: Thu, 19 Mar 2020 18:37:58 +0000
+From: Will Deacon <will@kernel.org>
+To: =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
+Subject: Re: [PATCHv3 0/3] clean up KPTI / SDEI trampoline data alignment
+Message-ID: <20200319183758.GB27141@willie-the-truck>
+References: <1938400.7m7sAWtiY1@basile.remlab.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200319181951.102662-1-ndesaulniers@google.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1938400.7m7sAWtiY1@basile.remlab.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_113544_693488_BFE55054 
-X-CRM114-Status: GOOD (  20.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_113803_648463_B2473CF8 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [natechancellor[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -89,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,94 +77,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, keescook@chromium.org, suzuki.poulose@arm.com,
- catalin.marinas@arm.com, kristina.martsenko@arm.com, ardb@kernel.org,
- yamada.masahiro@socionext.com, broonie@kernel.org, james.morse@arm.com,
- clang-built-linux@googlegroups.com, ramana.radhakrishnan@arm.com,
- amit.kachhap@arm.com, vincenzo.frascino@arm.com, will@kernel.org,
- Dave.Martin@arm.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 11:19:51AM -0700, 'Nick Desaulniers' via Clang Built Linux wrote:
-> Clang relies on GNU as from binutils to assemble the Linux kernel,
-> currently. A recent patch to enable the armv8.3-a extension for pointer
-> authentication checked for compiler support of the relevant flags.
-> Everything works with binutils 2.34+, but for older versions we observe
-> assembler errors:
-> 
-> /tmp/vgettimeofday-36a54b.s: Assembler messages:
-> /tmp/vgettimeofday-36a54b.s:40: Error: unknown pseudo-op: `.cfi_negate_ra_state'
-> 
-> When compiling with Clang, require the assembler to support
-> .cfi_negate_ra_state directives, in order to support CONFIG_ARM64_PTR_AUTH.
-> 
-> Link: https://github.com/ClangBuiltLinux/linux/issues/938
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> ---
-> Tested with binutils 2.33.1 and ToT. Boot tested in QEMU.
-> I added this requirement only for Clang.
-> 
-> GCC maybe doesn't produce these assembler directives, or looks like GCC
-> 8.2 produces .cfi_window_save (https://godbolt.org/z/awZWZ5, godbolt
-> doesn't have a newer aarch64-linux-gnu-gcc...) instead of
-> .cfi_negate_ra_state. Maybe ARM can sort out the inconsistency between
-> compilers?
-> 
-> If we plan to add .cfi_negate_ra_state to out of
-> line assembly, we may want to make AS_HAS_CFI_NEGATE_RA_STATE a hard
-> requirement, regardless of compiler.
-> 
-> Also, rather than CC_IS_GCC, we could do !CC_IS_CLANG || ...
-> 
-> 
->  arch/arm64/Kconfig | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index b889d7956abf..1ee1d8fab218 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1506,6 +1506,7 @@ config ARM64_PTR_AUTH
->  	default y
->  	depends on !KVM || ARM64_VHE
->  	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
-> +	depends on CC_IS_GCC || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
->  	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
->  	help
->  	  Pointer authentication (part of the ARMv8.3 Extensions) provides
-> @@ -1550,6 +1551,9 @@ config CC_HAS_SIGN_RETURN_ADDRESS
->  config AS_HAS_PAC
->  	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
->  
-> +config AS_HAS_CFI_NEGATE_RA_STATE
-> +	def_bool $(as-instr,.cfi_startproc\n.cfi_negate_ra_state\n.cfi_endproc\n)
-> +
->  endmenu
->  
->  menu "ARMv8.4 architectural features"
-> -- 
-> 2.25.1.696.g5e7596f4ac-goog
-> 
+On Thu, Mar 19, 2020 at 11:12:56AM +0200, R=E9mi Denis-Courmont wrote:
+> 	Hi,
+> =
 
-It would be nice to make this kind of check work for both GCC and Clang
-but like you noted, there appears to be inconsistencies between them so
-something for another day. CONFIG_ARM64_PTR_AUTH is getting a little
-gnarly in terms of dependencies but I suppose that makes sense given its
-nature. I verified that AS_HAS_CFI_NEGATE_RA_STATE gets set with ToT
-binutils and that it does not with an older version.
+> The KPTI and SDE trampolines each load a pointer from the same fixmap data
+> page. This reduces the data alignment to the useful value, and tries to
+> clarify the assembler code.
+> =
 
-Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
-Tested-by: Nathan Chancellor <natechancellor@gmail.com>
+> Changes since v2:
+> - Retain alignment even when SDEI is disabled to keep ld happy.
+> =
 
-This unlocks our CI so hopefully it can get picked up quickly.
+> ----------------------------------------------------------------
+> R=E9mi Denis-Courmont (3):
+>       arm64: clean up trampoline vector loads
+>       arm64/sdei: gather trampolines' .rodata
+>       arm64: reduce trampoline data alignment
 
-https://travis-ci.com/github/ClangBuiltLinux/continuous-integration/jobs/299816618
+For the series:
 
-Cheers,
-Nathan
+Acked-by: Will Deacon <will@kernel.org>
+
+[in future please don't drop acks from patches that haven't changed, cheers]
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
