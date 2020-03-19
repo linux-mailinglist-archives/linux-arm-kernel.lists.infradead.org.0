@@ -2,91 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B163F18C3E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 00:44:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9796618C3F3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 00:51:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SoKkt63MQuaVlrIheTRw6y+3lk0ZlIbNC4zP1vnXJCk=; b=OfQ7ovqXMFc8SR
-	7FZgx5Nmmmz2YeTp4yQokr+4FUwAFerAw8BAidhgeIiyA1FOWMSLDsDBXJU7ZqwU3M05RZr5rgfeR
-	2LXVTJLVgIyyie5b1zCi4sAXGbHMWTHVzro/ZHgDdpNo5hmEF5TZatJs/zDm932Envo6MFg6yAbCx
-	uVDtPPZZDnEzPjO2tZXZRC11OH31m2zM1M8IprWoe/pUISZ45YUADTz94Q5U9MwUUerv3+CuTib8j
-	s7sw6PsLGfpD3QV8jQc1ytajND4jgcXX/V84n2Vonfq0QYK/Ojp4L4ggxVYIG4beErCstDYY3vCmJ
-	zGCVtRU8ZEV4GvC5oECA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MsvEEJWOacpvb3M7C8XwF+zp75CfQrcx4gkvNpivFb0=; b=HkL
+	ooQy0+pQQLK1CK8oLz2rA5R1XY+rw+x+Krs8VxH1I63GXg1WBd2DCRJUp9ze8edPaWEQiR8HSI823
+	dM4aGpCaFGtA/RkdIno6AR+4AbaBtp93nNGSAHszuAjrKSUa6BCEofYe2o2gH0+6EoHbUS0EgSmzk
+	95hNvFgkfQuHlw9ZxztEbCdmST6tnl7Iu+KQfSLhocN4E4WgnvMN+kyb/kiQ9sBUlh9Lb+C0558XV
+	K5XoC0DlZdHZkhZDKq4CQjSL4jfev5SANoy4oyIjwo68LOKJy3GYRckHitEK+kkDxLM7T9iXorc1y
+	YkzGcKj81WXb+mcJvMQqjMhSyPbwTnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF4pn-0002vM-U1; Thu, 19 Mar 2020 23:44:19 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jF4wT-0005nN-NS; Thu, 19 Mar 2020 23:51:13 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF4pe-0002uy-17
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 23:44:11 +0000
-Received: by mail-pl1-x643.google.com with SMTP id r3so1724603pls.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 16:44:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=R0+TGEcl33aqQZuHdJpZvB8paDQF2GsWepjBb7GJLN0=;
- b=g01y/QG6zB8hIiuj4wDvdx12dB7i4g2oOiN2aFecZXwj8QAY5tVLL5iH3uhtkQGtIN
- jqOlFcSJx7THcCtImBOQp1HaO+lNQ+y4mrfz+L5YbFg1WV7xn/VHwnxKtcCyGnPAI4bQ
- QoFNLnT5RQOyW5H2iDh8lvr24e7GmW0icEfczV6Zm/Y3OHI1HS+67AZVEl3sVe2+9o8G
- WZqBAoaIyte3bSpt/ez2IaL5dP6H0eBBqL0SyclRJw5tJzQ14gmaCmbRp2u5Y+YSbZs1
- xq1BRnFqNQxqpvsjMirdME/B+it8upp2FMVE2cmR091yQWxNavqNHwWL+gVz4ovunboZ
- lCiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=R0+TGEcl33aqQZuHdJpZvB8paDQF2GsWepjBb7GJLN0=;
- b=LdQF8zX569JTG4dlrajfsxur/LG+/98H8acbjIKqz68yFlGJLuc1TxmlHTUyyhh6bK
- ZCrUh21+MVsWq+z5ZfemUUxjAMQreGvsopOnk5BtzB9HjN06dJ8olWoJfZDCTkADoi07
- 1mlwFyBOk0Ug7e1RmF6cFRrvB4ump9Ts0+5lbXgH9XDey9g7JiHq9PP0zQpIRdx9ndv8
- Ytt5JBycjI33yl/Bh+U9w4bMIrobccC5bHNdvwBNo3OcFaa1ppnph0Lcuj3+067v/YEf
- Qc+I67PX83n7WHkjzGgQzcxwEYWwMDFrQiljkzF/6m4mFi418YRgqVWQ4IlwCetXCyxg
- fppA==
-X-Gm-Message-State: ANhLgQ33xI6oNFe51kVrxcwGDyM4NhTexLaDy4ztn+6UH3AtDyGSFPRf
- /sksmEGL7WtW7MRXWnOTI7xx/IlJ+9jZrtYADeh1LA==
-X-Google-Smtp-Source: ADFU+vtliPn0Z54RcDzNcvaqRpfR5R9aZU+uGpjGhHuUBhqLn7elEClsTACLZUjB8MWlbn/itDALZ2t4CjWaipi5Fng=
-X-Received: by 2002:a17:902:820a:: with SMTP id
- x10mr2291998pln.179.1584661448715; 
- Thu, 19 Mar 2020 16:44:08 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200319214530.2046-1-ilie.halip@gmail.com>
-In-Reply-To: <20200319214530.2046-1-ilie.halip@gmail.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 19 Mar 2020 16:43:56 -0700
-Message-ID: <CAKwvOdneL8F_ZHBAzyb+VoJ+Z1FZp0VW8asGTu=g39TrouqAgA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: alternative: fix build with clang integrated
- assembler
-To: Ilie Halip <ilie.halip@gmail.com>
+ id 1jF4wM-0005mm-22
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 23:51:08 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0A8EA1A0121;
+ Fri, 20 Mar 2020 00:51:04 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F09191A0058;
+ Fri, 20 Mar 2020 00:50:56 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5E1464029F;
+ Fri, 20 Mar 2020 07:50:48 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ gustavo@embeddedor.com, gregkh@linuxfoundation.org, tglx@linutronix.de,
+ abel.vesa@nxp.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH V2] clk: imx: clk-pllv3: Use readl_relaxed_poll_timeout() for
+ PLL lock wait
+Date: Fri, 20 Mar 2020 07:44:03 +0800
+Message-Id: <1584661443-12032-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_164410_097733_5E163377 
-X-CRM114-Status: GOOD (  17.20  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200319_165106_241706_7D368CF3 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,83 +69,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>,
- Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 2:45 PM Ilie Halip <ilie.halip@gmail.com> wrote:
->
-> Building an arm64 defconfig with clang's integrated assembler, this error
-> occurs:
->     <instantiation>:2:2: error: unrecognized instruction mnemonic
->      _ASM_EXTABLE 9999b, 9f
->      ^
->     arch/arm64/mm/cache.S:50:1: note: while in macro instantiation
->     user_alt 9f, "dc cvau, x4", "dc civac, x4", 0
->     ^
->
-> While GNU as seems fine with case-sensitive macro instantiations, clang
-> doesn't, so use the actual macro name (_asm_extable) as in the rest of
-> the file.
->
-> Also checked that the generated assembly matches the GCC output.
->
-> Fixes: 290622efc76e ("arm64: fix "dc cvau" cache operation on errata-affected core")
-> Link: https://github.com/ClangBuiltLinux/linux/issues/924
-> Signed-off-by: Ilie Halip <ilie.halip@gmail.com>
-> ---
->  arch/arm64/include/asm/alternative.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-> index 324e7d5ab37e..5e5dc05d63a0 100644
-> --- a/arch/arm64/include/asm/alternative.h
-> +++ b/arch/arm64/include/asm/alternative.h
-> @@ -221,7 +221,7 @@ alternative_endif
->
->  .macro user_alt, label, oldinstr, newinstr, cond
->  9999:  alternative_insn "\oldinstr", "\newinstr", \cond
-> -       _ASM_EXTABLE 9999b, \label
-> +       _asm_extable 9999b, \label
->  .endm
+Use readl_relaxed_poll_timeout() for PLL lock wait which can simplify the
+code a lot.
 
-Testing a -next defconfig build, if I apply this, apply fixes for
-https://github.com/ClangBuiltLinux/linux/issues/913, then disable
-CONFIG_KVM, I can assemble (with Clang's integrated assembler) and
-boot an aarch64 kernel.  I think that's a first for Clang.  Wow.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+---
+Changes since V1:
+	- Use readl_relaxed_poll_timeout() instead of readl_poll_timeout().
+---
+ drivers/clk/imx/clk-pllv3.c | 16 +++++-----------
+ 1 file changed, 5 insertions(+), 11 deletions(-)
 
-For CONFIG_KVM, I see:
-arch/arm64/kvm/hyp/entry.S:112:87: error: too many positional arguments
- alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) |
-((!!1) << 8)), 4, 1
-
-               ^
-which also uses `alternative_insn`, but not `user_alt`, so another bug
-for us to look into, filed:
-https://github.com/ClangBuiltLinux/linux/issues/939
-
-Looks like `_asm_extable` itself is a macro, defined in
-arch/arm64/include/asm/assembler.h on line 125.  It's probably easy to
-fix this in clang, but from a consistency with the rest of the file
-(arch/arm64/include/asm/alternative.h) this patch should be accepted.
-
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-
-Should be easy to fix in Clang, too. Filed:
-https://bugs.llvm.org/show_bug.cgi?id=45257
-Thanks for the patch!
-
+diff --git a/drivers/clk/imx/clk-pllv3.c b/drivers/clk/imx/clk-pllv3.c
+index df91a82..a7db930 100644
+--- a/drivers/clk/imx/clk-pllv3.c
++++ b/drivers/clk/imx/clk-pllv3.c
+@@ -7,6 +7,7 @@
+ #include <linux/clk-provider.h>
+ #include <linux/delay.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/slab.h>
+ #include <linux/jiffies.h>
+ #include <linux/err.h>
+@@ -25,6 +26,8 @@
+ #define IMX7_ENET_PLL_POWER	(0x1 << 5)
+ #define IMX7_DDR_PLL_POWER	(0x1 << 20)
+ 
++#define PLL_LOCK_TIMEOUT	10000
++
+ /**
+  * struct clk_pllv3 - IMX PLL clock version 3
+  * @clk_hw:	 clock source
+@@ -53,23 +56,14 @@ struct clk_pllv3 {
+ 
+ static int clk_pllv3_wait_lock(struct clk_pllv3 *pll)
+ {
+-	unsigned long timeout = jiffies + msecs_to_jiffies(10);
+ 	u32 val = readl_relaxed(pll->base) & pll->power_bit;
+ 
+ 	/* No need to wait for lock when pll is not powered up */
+ 	if ((pll->powerup_set && !val) || (!pll->powerup_set && val))
+ 		return 0;
+ 
+-	/* Wait for PLL to lock */
+-	do {
+-		if (readl_relaxed(pll->base) & BM_PLL_LOCK)
+-			break;
+-		if (time_after(jiffies, timeout))
+-			break;
+-		usleep_range(50, 500);
+-	} while (1);
+-
+-	return readl_relaxed(pll->base) & BM_PLL_LOCK ? 0 : -ETIMEDOUT;
++	return readl_relaxed_poll_timeout(pll->base, val, val & BM_PLL_LOCK,
++					  500, PLL_LOCK_TIMEOUT);
+ }
+ 
+ static int clk_pllv3_prepare(struct clk_hw *hw)
 -- 
-Thanks,
-~Nick Desaulniers
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
