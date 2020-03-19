@@ -2,62 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 315EA18C25D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 22:35:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2D7618C266
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 22:40:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=GaIxUNcvdDvBOmtdGePXLtP79CdbEEidDRVvShpyYC8=; b=A8hnNgPNFPZh14
-	v0z1q27/7QFaX1f/neewkrwmPEqRvMxO0fCl4Rr64r0+DIYVBKonPOiKJB2wK8tyS4TTsCSrPvEs8
-	/vqPMYfT712KglabCzzjVX2XkIGPuFry6hHAxfAAL3T8SOudVjelmNaqsN8TAEjcjz7QUblA5f0Wt
-	CpfuVrIKtIUuWsxWB4hEEJw8tB73AzcouqhQEzsL0qBy1Yc/FAL5EA4bVPLx/uuXPwUEYLEhmkAev
-	9ZXlXpl62I0/HQw01NUF9Sst8mcrW70A9M+CqKFGtX8UmrgAGdD+6yDdpNZcOFstV+IyssPCKPgqO
-	i0zeqKrgz06Nu3+62/fw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=B2OcpmeKWE4ZkLq0d5xwcdhqVjAC40EKSfd38cFQOTQ=; b=EtGVLH520VHt0a
+	r6FRs2rhoyZtr2SNBR3m0BAMvEL4FebY/bUwo/Gbm4J/kgBHn++AOVmrn8YZD+bRkd1+BCJNfxLzL
+	72n3Yb97cUKxaIsBGN+2Fzr0Ied0Fjz8rcTxG+TBvXk7750BecNsFbUdiXJ0wI6Gu7wsjFlkYfRkH
+	nNudYS31ZFaH6PSSU2mzc5f+bga3gn45eiqdT2AZX1D3xwhJDAaoa6w8bFUMYC9ogIRRJrgCEVAV4
+	FAHJ51mBOyXR7SxDAFpcBIYry8JrZvIPGq4AR+2Z0Y6Z9Ytx9BH26rUcbUnfDcwG2aPql9qiUSEJS
+	XjzSXFPpRpOyXQGMJ51Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF2pA-0007UH-6P; Thu, 19 Mar 2020 21:35:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jF2tz-0002Bl-So; Thu, 19 Mar 2020 21:40:31 +0000
+Received: from gateway33.websitewelcome.com ([192.185.146.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF2ot-0007TV-74; Thu, 19 Mar 2020 21:35:16 +0000
-Received: from localhost (mobile-166-175-186-165.mycingular.net
- [166.175.186.165])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 671AB2076F;
- Thu, 19 Mar 2020 21:35:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584653714;
- bh=2lNHn4kRt+Z7xc10xfDSVFGeTLx4ykXDxtTBlKddkcs=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=aAU0Lzpe/C5KZfK8/Ii55DZc8zab4TcDPmxQLV32qu9CRsUNGPgxeCAWcFk5pDbt0
- 1iXpY9cEHttbqHPd7TNXcf8QUOOCdPuoY0ee07NSz5LaMC2Sfrg/etm6j2dSO8aQH8
- bLRoaPOvFgVe2/mNq5UVYju4nIV+U79eEJeqIaEc=
-Date: Thu, 19 Mar 2020 16:35:12 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Thomas Gleixner <tglx@linutronix.de>,
- Aman Sharma <amanharitsh123@gmail.com>
-Subject: Re: [PATCH 4/5] pci: handled return value of platform_get_irq
- correctly
-Message-ID: <20200319213512.GA415@google.com>
+ id 1jF2ts-00029z-Bj
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 21:40:25 +0000
+Received: from cm17.websitewelcome.com (cm17.websitewelcome.com [100.42.49.20])
+ by gateway33.websitewelcome.com (Postfix) with ESMTP id AF4E15EC19
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 16:40:10 -0500 (CDT)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id F2tejjnReAGTXF2tej9jv6; Thu, 19 Mar 2020 16:40:10 -0500
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=oA/NJzx0KXN+QumtJADitL2cYB/VD8HJ14U8VnEp9zA=; b=JRnvCmww/9bMYZ7+kD7HHrRpyB
+ 7dyWttXY5Z7XmETXNeoPM/TgZfMh9kdhfJVaOqwtO6SSkCy0FWCN7trwktbppOe5YOow9ubVoFZP8
+ H5MjhsO10o/N4CwXVNd1mCbABooStdUjOfZtt8ekPF3Jg/9MTCu1qfnSe2uTMNr6kHsMou6xiaGqt
+ zPOatNuxUDVRgh48lxdGpF9M+TnTCtcSDHdo74KI3dpJPRolopCgmfRtVO2e9X1XhPIcOQd32b9cz
+ yzkk50vpQl20IZtHA1NwK6q2FUxoZws9qhB+gYEo2HsAFfp0z2euLWZeq592hCu6rAmTJ/0FwV/+I
+ ETThXjBQ==;
+Received: from cablelink-189-218-116-241.hosts.intercable.net
+ ([189.218.116.241]:53372 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1jF2tc-001i0U-04; Thu, 19 Mar 2020 16:40:08 -0500
+Date: Thu, 19 Mar 2020 16:40:07 -0500
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Subject: [PATCH][next] hwtracing: stm: stm.h: Replace zero-length array with
+ flexible-array member
+Message-ID: <20200319214007.GA13640@embeddedor.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <877dzgennw.fsf@nanos.tec.linutronix.de>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 189.218.116.241
+X-Source-L: No
+X-Exim-ID: 1jF2tc-001i0U-04
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: cablelink-189-218-116-241.hosts.intercable.net (embeddedor)
+ [189.218.116.241]:53372
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 46
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_143515_305499_F61B4713 
-X-CRM114-Status: GOOD (  25.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200319_144024_493268_FB3D256C 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.185.146.130 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -65,8 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,216 +108,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryder Lee <ryder.lee@mediatek.com>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-pci@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-mediatek@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, Marc Zyngier <maz@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Mans Rullgard <mans@mansr.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 09:47:47AM +0100, Thomas Gleixner wrote:
-> Bjorn Helgaas <helgaas@kernel.org> writes:
-> > On Wed, Mar 18, 2020 at 02:42:48PM +0100, Thomas Gleixner wrote:
-> >> Bjorn Helgaas <helgaas@kernel.org> writes:
-> >> > On Fri, Mar 13, 2020 at 04:56:42PM -0500, Bjorn Helgaas wrote:
-> >> >> On Fri, Mar 13, 2020 at 10:05:58PM +0100, Thomas Gleixner wrote:
-> >> >> > >   I think the best pattern is:
-> >> >> > >
-> >> >> > >     irq = platform_get_irq(pdev, i);
-> >> >> > >     if (irq < 0)
-> >> >> > >       return irq;
-> >> >> > 
-> >> >> > Careful. 0 is not a valid interrupt.
-> >> >> 
-> >> >> Should callers of platform_get_irq() check for a 0 return value?
-> >> >> About 900 of them do not.
-> >> 
-> >> I don't know what I was looking at.
-> >> 
-> >> platform_get_irq() does the right thing already, so checking for irq < 0
-> >> is sufficient.
-> >> 
-> >> Sorry for the confusion!
-> >
-> > Thanks, I was indeed confused!  Maybe we could reduce future confusion
-> > by strengthening the comments slightly, e.g.,
-> >
-> >   - * Return: IRQ number on success, negative error number on failure.
-> >   + * Return: non-zero IRQ number on success, negative error number on failure.
-> >
-> > I don't want to push my luck, but it's pretty hard to prove that
-> > platform_get_irq() never returns 0.  What would you think of something
-> > like the following?
-> 
-> No objections from my side.
+The current codebase makes use of the zero-length array language
+extension to the C90 standard, but the preferred mechanism to declare
+variable-length types such as these ones is a flexible array member[1][2],
+introduced in C99:
 
-OK, thanks!
+struct foo {
+        int stuff;
+        struct boo array[];
+};
 
-Aman, my suggestion for you is to include the patch below as the first
-patch in your series.  Then post a v2 of it, making sure to cc:
-everybody who commented on the first version.
+By making use of the mechanism above, we will get a compiler warning
+in case the flexible array does not occur last in the structure, which
+will help us prevent some kind of undefined behavior bugs from being
+inadvertently introduced[3] to the codebase from now on.
 
-Bjorn
+Also, notice that, dynamic memory allocations won't be affected by
+this change:
 
+"Flexible array members have incomplete type, and so the sizeof operator
+may not be applied. As a quirk of the original implementation of
+zero-length arrays, sizeof evaluates to zero."[1]
 
-driver core: platform: Specify that IRQ 0 is invalid
+This issue was found with the help of Coccinelle.
 
-These interfaces return a negative error number or an IRQ:
+[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
+[2] https://github.com/KSPP/linux/issues/21
+[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
 
-  platform_get_irq()
-  platform_get_irq_optional()
-  platform_get_irq_byname()
-  platform_get_irq_byname_optional()
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+---
+ drivers/hwtracing/stm/stm.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The function comments suggest checking for error like this:
-
-  irq = platform_get_irq(...);
-  if (irq < 0)
-    return irq;
-
-which is what most callers (~900 of 1400) do, so it's implicit that IRQ 0
-is invalid.  But some callers check for "irq <= 0", and it's not obvious
-from the source that we never return an IRQ 0.
-
-Make this more explicit by updating the comments to say that an IRQ number
-is always non-zero and adding a WARN() if we ever do return zero.  If we do
-return IRQ 0, it likely indicates a bug in the arch-specific parts of
-platform_get_irq().
-
-Relevant prior discussion at [1,2].
-
-[1] https://lore.kernel.org/lkml/Pine.LNX.4.64.0701250940220.25027@woody.linux-foundation.org/
-[2] https://lore.kernel.org/lkml/Pine.LNX.4.64.0701252029570.25027@woody.linux-foundation.org/
-Signed-off-by: Bjorn Helgaas <bhelgaas@google.com>
-
-diff --git a/drivers/base/platform.c b/drivers/base/platform.c
-index 7fa654f1288b..50f3a5da89dc 100644
---- a/drivers/base/platform.c
-+++ b/drivers/base/platform.c
-@@ -133,23 +133,24 @@ EXPORT_SYMBOL_GPL(devm_platform_ioremap_resource_byname);
-  *		if (irq < 0)
-  *			return irq;
-  *
-- * Return: IRQ number on success, negative error number on failure.
-+ * Return: non-zero IRQ number on success, negative error number on failure.
-  */
- int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
- {
-+	int ret;
- #ifdef CONFIG_SPARC
- 	/* sparc does not have irqs represented as IORESOURCE_IRQ resources */
- 	if (!dev || num >= dev->archdata.num_irqs)
- 		return -ENXIO;
--	return dev->archdata.irqs[num];
-+	ret = dev->archdata.irqs[num];
-+	goto out;
- #else
- 	struct resource *r;
--	int ret;
+diff --git a/drivers/hwtracing/stm/stm.h b/drivers/hwtracing/stm/stm.h
+index 3569439d53bb..a9be49fc7a6b 100644
+--- a/drivers/hwtracing/stm/stm.h
++++ b/drivers/hwtracing/stm/stm.h
+@@ -23,7 +23,7 @@ void *stp_policy_node_priv(struct stp_policy_node *pn);
  
- 	if (IS_ENABLED(CONFIG_OF_IRQ) && dev->dev.of_node) {
- 		ret = of_irq_get(dev->dev.of_node, num);
- 		if (ret > 0 || ret == -EPROBE_DEFER)
--			return ret;
-+			goto out;
- 	}
+ struct stp_master {
+ 	unsigned int	nr_free;
+-	unsigned long	chan_map[0];
++	unsigned long	chan_map[];
+ };
  
- 	r = platform_get_resource(dev, IORESOURCE_IRQ, num);
-@@ -157,7 +158,7 @@ int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
- 		if (r && r->flags & IORESOURCE_DISABLED) {
- 			ret = acpi_irq_get(ACPI_HANDLE(&dev->dev), num, r);
- 			if (ret)
--				return ret;
-+				goto out;
- 		}
- 	}
+ struct stm_device {
+@@ -42,7 +42,7 @@ struct stm_device {
+ 	const struct config_item_type		*pdrv_node_type;
+ 	/* master allocation */
+ 	spinlock_t		mc_lock;
+-	struct stp_master	*masters[0];
++	struct stp_master	*masters[];
+ };
  
-@@ -171,13 +172,17 @@ int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
- 		struct irq_data *irqd;
- 
- 		irqd = irq_get_irq_data(r->start);
--		if (!irqd)
--			return -ENXIO;
-+		if (!irqd) {
-+			ret = -ENXIO;
-+			goto out;
-+		}
- 		irqd_set_trigger_type(irqd, r->flags & IORESOURCE_BITS);
- 	}
- 
--	if (r)
--		return r->start;
-+	if (r) {
-+		ret = r->start;
-+		goto out;
-+	}
- 
- 	/*
- 	 * For the index 0 interrupt, allow falling back to GpioInt
-@@ -190,11 +195,14 @@ int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
- 		ret = acpi_dev_gpio_irq_get(ACPI_COMPANION(&dev->dev), num);
- 		/* Our callers expect -ENXIO for missing IRQs. */
- 		if (ret >= 0 || ret == -EPROBE_DEFER)
--			return ret;
-+			goto out;
- 	}
- 
--	return -ENXIO;
-+	ret = -ENXIO;
- #endif
-+out:
-+	WARN(ret == 0, "0 is an invalid IRQ number\n");
-+	return ret;
- }
- EXPORT_SYMBOL_GPL(platform_get_irq_optional);
- 
-@@ -212,7 +220,7 @@ EXPORT_SYMBOL_GPL(platform_get_irq_optional);
-  *		if (irq < 0)
-  *			return irq;
-  *
-- * Return: IRQ number on success, negative error number on failure.
-+ * Return: non-zero IRQ number on success, negative error number on failure.
-  */
- int platform_get_irq(struct platform_device *dev, unsigned int num)
- {
-@@ -284,8 +292,10 @@ static int __platform_get_irq_byname(struct platform_device *dev,
- 	}
- 
- 	r = platform_get_resource_byname(dev, IORESOURCE_IRQ, name);
--	if (r)
-+	if (r) {
-+		WARN(r->start == 0, "0 is an invalid IRQ number\n");
- 		return r->start;
-+	}
- 
- 	return -ENXIO;
- }
-@@ -297,7 +307,7 @@ static int __platform_get_irq_byname(struct platform_device *dev,
-  *
-  * Get an IRQ like platform_get_irq(), but then by name rather then by index.
-  *
-- * Return: IRQ number on success, negative error number on failure.
-+ * Return: non-zero IRQ number on success, negative error number on failure.
-  */
- int platform_get_irq_byname(struct platform_device *dev, const char *name)
- {
-@@ -319,7 +329,7 @@ EXPORT_SYMBOL_GPL(platform_get_irq_byname);
-  * Get an optional IRQ by name like platform_get_irq_byname(). Except that it
-  * does not print an error message if an IRQ can not be obtained.
-  *
-- * Return: IRQ number on success, negative error number on failure.
-+ * Return: non-zero IRQ number on success, negative error number on failure.
-  */
- int platform_get_irq_byname_optional(struct platform_device *dev,
- 				     const char *name)
+ #define to_stm_device(_d)				\
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
