@@ -2,74 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3150E18BF6D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:33:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B649A18BF72
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:34:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/MIpa5e1JW0vIIO/vT5a5UVgI6vbZSvWqTnk7kolddQ=; b=pPyPgdkvnY/RwW
-	pfyQuB0+dGKafoLR4GEJU7NAqgbLDdSz00YtRQepnPf+/Zj+3x8ELlqkct/t0kqCVbBbYmoohjIbP
-	A47lWDGvQY4opGDFhGtQOgsu+wUO556euZWyV5QT7apVuTroFkUnqwSFUGvy02J4yhADcZYi8qPtx
-	7A7CnxBZ9hEZzbInCapKq7/WLAMR4AS7WrthAfqFzgb2AwHhEiPIctQtUnYLX0WkjLcHazD3hrgAQ
-	sTwStGIX8wo/AD33nCSMgvtmBX9WCtqT56/0F4URxmVnToCodGmlOPb8d2Z1wQoW/K8jLAyukbqil
-	NVJDB+ovy9qRaLuLExfQ==;
+	List-Owner; bh=ZlTMqmUGYir/vDSaowJ39b229RhpWRo0f9rUnuxGH1o=; b=B0Jk+1bVvPlsgz
+	jcw96S15JQtsN1znMuBSoGJLpXyegPmIDOonTEfy4WhZz6W2AhnxepqHvUUVdUpPYLYEOvNBsfO1o
+	8Y+lweJ8smIGtmd8L2iIQnRbSp1g/GbX8R2alYh2+Lye6Q+IgwbsNmgyqyP0CpAHnonsCHd5n7KTn
+	rmH6059smk31n7QNVjzkOd7Jv6Z4W3LHe5mHBYrxohfvqEolNZcoB7xNFj5vZjLkFNcHmec4sWXOH
+	EIK5EpI9XMlLhtexOmv5NASYiirwApY2V+KJnL9qCvfRu2g1VCE+IDtS2RDS6w6wEaCVB1I/MIHZH
+	n3ilwrmmbr3BTUsqBJ5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEzyf-0004Ip-7g; Thu, 19 Mar 2020 18:33:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEzzm-0004am-H4; Thu, 19 Mar 2020 18:34:18 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEzyV-0004IV-Q2
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:33:01 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D66020787;
- Thu, 19 Mar 2020 18:32:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584642779;
- bh=vWC53xuIwbcvlZtUjvLtXkAFlLvKIaP8Wi2Wi740fjk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sEmiPLH8nJ/EiqLkDJJok7EXoTzk4Hbjcn4KHPM4rD/IjInM0z0WlYNhLDgYF8a0l
- gM3dC3mrKg9Z8S/KQ4+wB0n5zHHA0TB70S3WmQMS+bHF+SntJgBQxlIse07gKfzYDi
- nMTNWWhWpYOF1oZG7xFkI7Bi//YMYz15t7NPGEPA=
-Date: Thu, 19 Mar 2020 18:32:52 +0000
-From: Will Deacon <will@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v4 18/26] arm64: vdso32: Replace TASK_SIZE_32 check in
- vgettimeofday
-Message-ID: <20200319183251.GA27141@willie-the-truck>
-References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
- <20200317122220.30393-19-vincenzo.frascino@arm.com>
- <20200317143834.GC632169@arrakis.emea.arm.com>
- <CALCETrVWPNaJMbYoXbnWsALXKrhHMaePOUvY0DmXpvte8Zz9Zw@mail.gmail.com>
- <78109f4e-c9c7-57b6-079b-c911b6090aa0@arm.com>
+ id 1jEzzX-0004Zc-Fg; Thu, 19 Mar 2020 18:34:05 +0000
+Received: by mail-il1-f196.google.com with SMTP id a6so3225664ilc.4;
+ Thu, 19 Mar 2020 11:34:03 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=uPWry8RY6+hi4eAi0Y1bb3DGJuUvwAMEt6jfhx00FwM=;
+ b=rs0mflbuBWtgOZGd6XJlnx9kXOf03ZLlQdtcMLYLqPyPaS5YkJs0l0yyYHZEp7J1NH
+ O+wKumALX8sOA1yU3OOmd6hKlp1I5pnqW9JVYNBwPrsZlF0twNg2QDxd/mMiy7YlLDPD
+ o+o0RtZ7UKeYifFYSvuVfUhscYwVpp159CdXi7IaN/JywzP1uQ1KvyWnfEVZcQNcBJA+
+ skbjaf9Ao7jqElNVSqXeke56POfO/RBGB9HqgDuzNcRodo7FzmLk/x0m0c3AZjQBR1Xn
+ 6KfYowWCXKEEGrDLMDa71fKY3z6cWQ1JvhlvDxBVxUxDUe/vz84/uGKZdGZiJJyU5VLI
+ vlnQ==
+X-Gm-Message-State: ANhLgQ0N9kuCB4VADr6EA9V7Hq5uQc4zJ3hKd99CPvwqpsp5tsAU8YdP
+ eIWa1K0TuFVpwHs0PZHrXQ==
+X-Google-Smtp-Source: ADFU+vs1k4gpcdfKiMfAtAb7CaNrV8yNwy8ti//ggPn+OEJyJsCKN0w4f4f/ANYejiLSsUVzM5ackg==
+X-Received: by 2002:a92:9149:: with SMTP id t70mr4864882ild.114.1584642842382; 
+ Thu, 19 Mar 2020 11:34:02 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id z1sm1124712ilq.83.2020.03.19.11.34.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Mar 2020 11:34:01 -0700 (PDT)
+Received: (nullmailer pid 24310 invoked by uid 1000);
+ Thu, 19 Mar 2020 18:33:58 -0000
+Date: Thu, 19 Mar 2020 12:33:58 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH v13 4/6] dt-bindings: display: mediatek: convert the
+ document format from txt to yaml
+Message-ID: <20200319183358.GA17237@bogus>
+References: <20200311071823.117899-1-jitao.shi@mediatek.com>
+ <20200311071823.117899-5-jitao.shi@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <78109f4e-c9c7-57b6-079b-c911b6090aa0@arm.com>
+In-Reply-To: <20200311071823.117899-5-jitao.shi@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_113259_885490_7150977A 
-X-CRM114-Status: GOOD (  23.39  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200319_113403_522638_8FFE2229 
+X-CRM114-Status: GOOD (  18.88  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,86 +91,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>, Marc Zyngier <maz@kernel.org>,
- X86 ML <x86@kernel.org>, Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Andrei Vagin <avagin@openvz.org>, Stephen Boyd <sboyd@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, ck.hu@mediatek.com,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 04:58:00PM +0000, Vincenzo Frascino wrote:
-> On 3/19/20 3:49 PM, Andy Lutomirski wrote:
-> > On Tue, Mar 17, 2020 at 7:38 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> >>
-> >> On Tue, Mar 17, 2020 at 12:22:12PM +0000, Vincenzo Frascino wrote:
-> >>> diff --git a/arch/arm64/kernel/vdso32/vgettimeofday.c b/arch/arm64/kernel/vdso32/vgettimeofday.c
-> >>> index 54fc1c2ce93f..91138077b073 100644
-> >>> --- a/arch/arm64/kernel/vdso32/vgettimeofday.c
-> >>> +++ b/arch/arm64/kernel/vdso32/vgettimeofday.c
-> >>> @@ -8,11 +8,14 @@
-> >>>  #include <linux/time.h>
-> >>>  #include <linux/types.h>
-> >>>
-> >>> +#define VALID_CLOCK_ID(x) \
-> >>> +     ((x >= 0) && (x < VDSO_BASES))
-> >>> +
-> >>>  int __vdso_clock_gettime(clockid_t clock,
-> >>>                        struct old_timespec32 *ts)
-> >>>  {
-> >>>       /* The checks below are required for ABI consistency with arm */
-> >>> -     if ((u32)ts >= TASK_SIZE_32)
-> >>> +     if ((u32)ts > UINTPTR_MAX - sizeof(*ts) + 1)
-> >>>               return -EFAULT;
-> >>>
-> >>>       return __cvdso_clock_gettime32(clock, ts);
-> >>
-> >> I probably miss something but I can't find the TASK_SIZE check in the
-> >> arch/arm/vdso/vgettimeofday.c code. Is this done elsewhere?
-> >>
-> > 
-> > Can you not just remove the TASK_SIZE_32 check entirely?  If you pass
-> > a garbage address to the vDSO, you are quite likely to get SIGSEGV.
-> > Why does this particular type of error need special handling?
-> > 
+On Wed, Mar 11, 2020 at 03:18:21PM +0800, Jitao Shi wrote:
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../display/mediatek/mediatek,dpi.txt         |  45 --------
+>  .../display/mediatek/mediatek,dpi.yaml        | 103 ++++++++++++++++++
+>  2 files changed, 103 insertions(+), 45 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
 > 
-> In this particular case the system call and the vDSO library as it stands
-> returns -EFAULT on all the architectures that support the vdso library except on
-> arm64 compat. The reason why it does not return the correct error code, as I was
-> discussing with Catalin, it is because arm64 uses USER_DS (addr_limit set
-> happens in arch/arm64/kernel/entry.S), which is defined as (1 << VA_BITS), as
-> access_ok() validation even on compat tasks and since arm64 supports up to 52bit
-> VA, this does not detect the end of the user address space for a 32 bit task.
-> Hence when we fall back on the system call we get the wrong error code out of it.
-> 
-> According to me to have ABI consistency we need this check, but if we say that
-> we can make an ABI exception in this case, I am fine with that either if it has
-> enough consensus.
-> 
-> Please let me know your thoughts.
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> deleted file mode 100644
+> index 2dfb50a7321e..000000000000
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> +++ /dev/null
+> @@ -1,45 +0,0 @@
+> -Mediatek DPI Device
+> -===================
+> -
+> -The Mediatek DPI function block is a sink of the display subsystem and
+> -provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+> -output bus.
+> -
+> -Required properties:
+> -- compatible: "mediatek,<chip>-dpi"
+> -  the supported chips are mt2701 , mt8173 and mt8183.
+> -- reg: Physical base address and length of the controller's registers
+> -- interrupts: The interrupt signal from the function block.
+> -- clocks: device clocks
+> -  See Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> -- clock-names: must contain "pixel", "engine", and "pll"
+> -- port: Output port node with endpoint definitions as described in
+> -  Documentation/devicetree/bindings/graph.txt. This port should be connected
+> -  to the input port of an attached HDMI or LVDS encoder chip.
+> -
+> -Optional properties:
+> -- pinctrl-names: Contain "default" and "sleep".
+> -  pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
+> -- pclk-sample: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
+> -
+> -Example:
+> -
+> -dpi0: dpi@1401d000 {
+> -	compatible = "mediatek,mt8173-dpi";
+> -	reg = <0 0x1401d000 0 0x1000>;
+> -	interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
+> -	clocks = <&mmsys CLK_MM_DPI_PIXEL>,
+> -		 <&mmsys CLK_MM_DPI_ENGINE>,
+> -		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+> -	clock-names = "pixel", "engine", "pll";
+> -	pinctrl-names = "default", "sleep";
+> -	pinctrl-0 = <&dpi_pin_func>;
+> -	pinctrl-1 = <&dpi_pin_idle>;
+> -
+> -	port {
+> -		dpi0_out: endpoint {
+> -			pclk-sample = <0>;
+> -			remote-endpoint = <&hdmi0_in>;
+> -		};
+> -	};
+> -};
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> new file mode 100644
+> index 000000000000..d65543e3bf8c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+> @@ -0,0 +1,103 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,dpi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: mediatek DPI Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - CK Hu <ck.hu@mediatek.com>
+> +  - Jitao shi <jitao.shi@mediatek.com>
+> +
+> +description: |
+> +  The Mediatek DPI function block is a sink of the display subsystem and
+> +  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
+> +  output bus.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - mediatek,mt2701-dpi
+> +      - mediatek,mt8173-dpi
+> +      - mediatek,mt8183-dpi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Pixel Clock
+> +      - description: Engine Clock
+> +      - description: DPI PLL
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pixel
+> +      - const: engine
+> +      - const: pll
+> +
+> +  pinctrl-0: true
+> +  pinctrl-1: true
+> +
+> +  pinctrl-names:
+> +    items:
+> +      - const: default
+> +      - const: sleep
+> +
+> +  port@0:
+> +    type: object
+> +    description:
+> +      Output port node with endpoint definitions as described in
+> +      Documentation/devicetree/bindings/graph.txt. This port should be connected
+> +      to the input port of an attached HDMI or LVDS encoder chip.
+> +
+> +    properties:
+> +      endpoint:
+> +        type: object
+> +
+> +        properties:
+> +          pclk-sample:
+> +            items:
+> +            - description: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
 
-I don't agree with your reasoning -- letting the thing SEGV is perfectly
-fine and we don't need to perform additional checking in userspace here.
-If you treat the vDSO more as being part of libc then part of the kernel
-then I think it makes perfect sense.
+This is not an array.
 
-There are other system calls that will SEGV in libc if they are passed dodgy
-pointers before the kernel has a chance to return -EFAULT.
+Just 'pclk-sample: true' if both values are allowed or 'const: 0|1' if 
+only one value is allowed.
 
-Will
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - port@0
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/mt8173-clk.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    dpi0: dpi@1401d000 {
+> +        compatible = "mediatek,mt8173-dpi";
+> +        reg = <0 0x1401d000 0 0x1000>;
+> +        interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
+> +        clocks = <&mmsys CLK_MM_DPI_PIXEL>,
+> +             <&mmsys CLK_MM_DPI_ENGINE>,
+> +             <&apmixedsys CLK_APMIXED_TVDPLL>;
+> +        clock-names = "pixel", "engine", "pll";
+> +        pinctrl-names = "default", "sleep";
+> +        pinctrl-0 = <&dpi_pin_func>;
+> +        pinctrl-1 = <&dpi_pin_idle>;
+> +
+> +        port@0 {
+> +            dpi0_out: endpoint {
+> +                pclk-sample = <0>;
+> +                remote-endpoint = <&hdmi0_in>;
+> +            };
+> +        };
+> +    };
+> +
+> +...
+> -- 
+> 2.21.0
 
 _______________________________________________
 linux-arm-kernel mailing list
