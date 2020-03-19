@@ -2,96 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24C5418B15D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 11:29:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B00618B171
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 11:31:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dh37tzXI59U95O89p+XtbS52e9BfQpNSytRntF0PJHg=; b=C4+g+VXMaM/uHf
-	4PeUe7v0BCwcdOUSySVLRFBNOQiDARwHBf74BKitVOAuTTC11Uxum3Xg3o17MDU6bfIn4dLZENLEL
-	BhbHUvpmKLzzcBUvJ4r53qgs1WHoYpnCKqt86IIYeMz+qq/JwhPpvRyojyvGvAgjIxDgrsNrC20uv
-	XpMFRA+kD9hy1YTYxKJDZPSjPB++r4NKU1CexPWh5CwG6uRtBMzuXVK8BauhnUHriebe+Ymj9eQNj
-	VavqPb0Qr7Ys3KEqQUep07jQla6V7AKnH93GX4LsOBy6XUojZjLcQBnuy2SifrJvyeOqnel2Ub/YT
-	hUEBXAHgr8iLocnd2utA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=s6OuH1jNwRzpHaptfbmzYeDLech38PcbR8TpAQnvS9g=; b=uX+lc/oCdPxTJU
+	2H/wdmM4LLoMWvXAbDZkL6rqvWpepRLsgG5WzPfxyvNXZk3jze0ISqGOumjeIUsf37xn5gxB4A6SA
+	EOyJceWxl/Rq5aH+v7W8D7cCQAq6C13y3QZM5+dDYmjHCp3wtT9n8iY3K6eaP6H9E/djErkE0waQH
+	I82CfqeqX2HT2z9kviXkZfh1SkC17XbsH+yKS0zAVPrFIOy/UXmId2P/4Z8iJS6uU0dtYcF4exxnK
+	whGXNFp3gFggme+5KcxkKqWjHDd2aZBVOLtFVdulOx8/KN4aiui3eW5vXqawGapR10wHfoReC1Gt8
+	aSGHEBq8oPmJ60xHzXcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEsQ3-0007YW-Jl; Thu, 19 Mar 2020 10:28:55 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jEsSB-0000rr-Sw; Thu, 19 Mar 2020 10:31:07 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEsPq-0007XY-7m
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 10:28:43 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1jEsS3-0000r2-KO
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 10:31:01 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02JAR7eY032209; Thu, 19 Mar 2020 11:28:28 +0100
+ 02JASqwX011436; Thu, 19 Mar 2020 11:30:54 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=a8IUIDV/simADAYkwM+Njnv3lTBx4k59GizTkWNN6Ss=;
- b=bkBlNCmUITsQYwAIxDnXxiof6dfStcMQbxGYnOstUEFFI+V/ja+pfnndlQ3ZN8hLH0B3
- b+QUBAtxCj5IBu9RWXHrpB26PYPUXuwmSsNqlJ0vJPFIMC3aTdGOm8K0qDGsC+pmPEtG
- +bHO3dOG9podOt62m+JmVlBu4y/NdkbfPyzjTPxFmIj9dc5ff3ShkYAqCHLc90RrWQ98
- EKW3VeunwewQVQWDDkyE+/ZLYcZPzfQdsyVdZX7tZQRwedRHYkD6IElxfdceTVH/iu/k
- EfgP2ECx8WZiBoSrWIexJtYkgZw1zVGEexLxS/quRrB1UkYUrakRbQwdSYfSmosiKuIb YA== 
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=T6KxkBVdSlvswEwEr/fHrokZ23VjltZtaEhbr8esy5Y=;
+ b=V+mZ7etU3SXK2Sgi/eC0JJJcC0C2b6+W/lPBlCAm7cql5HaWiqr1nCquGskoO938ojO3
+ TdSa/73rQ4/9Vvydn+LYsfxmm9I3QKhZN0JEy+AOwUCnb0aeS/71iN2Yva50ffyWCgq9
+ I0MCbyxNAYcW/39U+TDk9ZKbSkOZsYCL8JGlcJt3G2UCWPWPGhcKA1ZyR7oHBgPqpjgV
+ d5U7uQKSx9mtCf1tjaEMXBLZGcjHBReEe4BlbVciglZhy7j4HO9qOoGTq5xv49RadOwH
+ UDbgdOcwmZUUsC+ZbjX8ZrM2hb9dppXkrhQGS0VR4mTJn5+H9X7tbTD8lWRFOJtMYtOh AQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yu95us066-1
+ by mx07-00178001.pphosted.com with ESMTP id 2yu6xdhk8b-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 19 Mar 2020 11:28:28 +0100
+ Thu, 19 Mar 2020 11:30:54 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 996FB100034;
- Thu, 19 Mar 2020 11:28:23 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 80D312A5810;
- Thu, 19 Mar 2020 11:28:23 +0100 (CET)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE3.st.com
- (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 19 Mar
- 2020 11:28:23 +0100
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Thu, 19 Mar 2020 11:28:23 +0100
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: Lee Jones <lee.jones@linaro.org>, Daniel Lezcano
- <daniel.lezcano@linaro.org>
-Subject: Re: [PATCH v4 2/3] mfd: stm32: Add defines to be used for clkevent
- purpose
-Thread-Topic: [PATCH v4 2/3] mfd: stm32: Add defines to be used for clkevent
- purpose
-Thread-Index: AQHV5ZiQaom2ANb1fkS0EaDa85E9JagjxuwAgCwKSQCAAAURAA==
-Date: Thu, 19 Mar 2020 10:28:23 +0000
-Message-ID: <b21ac320-080d-3995-1c63-ca5c187224c6@st.com>
-References: <20200217134546.14562-1-benjamin.gaignard@st.com>
- <20200217134546.14562-3-benjamin.gaignard@st.com>
- <e9f7eaac-5b61-1662-2ae1-924d126e6a97@linaro.org>
- <20200319101014.GA5477@dell>
-In-Reply-To: <20200319101014.GA5477@dell>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.45]
-Content-ID: <85765BABAB3113468E684283C64674E7@st.com>
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 12BCD100038;
+ Thu, 19 Mar 2020 11:30:54 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F0ED82A5824;
+ Thu, 19 Mar 2020 11:30:53 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Thu, 19 Mar 2020 11:30:53 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <alexandre.torgue@st.com>
+Subject: [PATCH] ARM: dts: stm32: fix a typo for DAC io-channel-cells on
+ stm32mp15
+Date: Thu, 19 Mar 2020 11:30:26 +0100
+Message-ID: <1584613826-10838-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-19_02:2020-03-18,
+ definitions=2020-03-19_02:2020-03-19,
  2020-03-19 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_032842_567202_D58DADAD 
-X-CRM114-Status: GOOD (  15.96  )
+X-CRM114-CacheID: sfid-20200319_033059_967055_B93494F9 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -112,42 +92,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Fix a typo on STM32MP15 DAC, e.g. s/channels/channel
+
+Fixes: da6cddc7e8a4 ("ARM: dts: stm32: Add DAC support to stm32mp157c")
+
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ arch/arm/boot/dts/stm32mp151.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
+index 3ea05ba..5260818 100644
+--- a/arch/arm/boot/dts/stm32mp151.dtsi
++++ b/arch/arm/boot/dts/stm32mp151.dtsi
+@@ -550,14 +550,14 @@
+ 
+ 			dac1: dac@1 {
+ 				compatible = "st,stm32-dac";
+-				#io-channels-cells = <1>;
++				#io-channel-cells = <1>;
+ 				reg = <1>;
+ 				status = "disabled";
+ 			};
+ 
+ 			dac2: dac@2 {
+ 				compatible = "st,stm32-dac";
+-				#io-channels-cells = <1>;
++				#io-channel-cells = <1>;
+ 				reg = <2>;
+ 				status = "disabled";
+ 			};
+-- 
+2.7.4
 
 
-On 3/19/20 11:10 AM, Lee Jones wrote:
-> On Thu, 20 Feb 2020, Daniel Lezcano wrote:
->> On 17/02/2020 14:45, Benjamin Gaignard wrote:
->>> Add defines to be able to enable/clear irq and configure one shot mode.
->>>
->>> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
->> Are you fine if I pick this patch with the series?
-> Nothing heard from you since I Acked this.
->
-> Are you still planning on taking this patch?
->
-> If so, can you also take patch 1 please?
-I will send a v5.
-Daniel could you wait until that to merge all the patches (even if this 
-one won't change) ?
-
-Benjamin
->
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
