@@ -2,90 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79BF418AA38
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 02:11:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F4C718AA59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 02:35:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=unxrMxlxKit/wBybJEJ8ME5DLOycoK7q2mtdAeEjrJk=; b=qu80uoHt+iT+i0
-	tEJCOca9LXmCRBe9lYfEIQyd2MxSUhoxpqwKr7L+ys7uxY7GebzjiPlaWFs8ytt/AJGqk6ttj30k4
-	r7vJq6ZDyPbLSNt5l8Xsrh+cS898OO92Pi0XCmJzKonrfqMSfYJdXjtZRnqP7AKPIP87VhemCYGG1
-	cOafuvRLUG4ZF1ytYICdHRuNx/2RgVD9p6qhETZYKmCrqPr6n+of3NWo/JmQkZcMX5ur5Rqu8w6+8
-	8LDgT0tDDoocyeiIkhKdYNofjU6H5kF67LVbc6oZCMvEsMLEt5wXR46t9nTNqaU/nCQMkGAs3Bi+D
-	aaTSdq2kbkzHiz+LIUdQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OvdK10uH+rMyDcCrm1Zq43KkyDfeIRdrNMnORUeokFE=; b=j3oZJ41OWeXrn0
+	Z84fwmpdTPkuZCPrrwHcPdxTmHHWTWfG8MLeGF89FVc9DLupzj/g1wjXGAQWP8J1NLYeGK2Buk+8s
+	S2ODj25kpDlNl5ceYt/U3jzv0CO55KW2dNYvgraC2Mq6zIJzUrJp2Qv84tRKyXb4dt6KyHH+oIiF0
+	qK/2k3w0rvm5IhsqMsOjfzrqp2y+MUcnGRpGRVdLeyvK1DHjwkNyv8lnKB7i6h3hphwASxHTNaZsS
+	F93zkK1ioWHEERtq4grVmTLLXfrmHL8MYP6GTY2wACG3wEOVbFD5H2C6vysf5z/37fY5wFt+P65Vj
+	2rD+/rwXlScAre/Bx8hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEjii-0003jX-CO; Thu, 19 Mar 2020 01:11:36 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1jEk5r-0003tW-9o; Thu, 19 Mar 2020 01:35:31 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEjiX-0003hg-Bj
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 01:11:27 +0000
-Received: by mail-pl1-x636.google.com with SMTP id f16so287930plj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Mar 2020 18:11:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=pvlVGuy8I5M4aISqtRmP/fVwpcqMhjpDaSrBCF1NYFc=;
- b=GllHW8A4h1Dx1iXquh8hiMXCkN4N9zSxoJ6e3DUfmONfJ2oJQh06xdg5+V5jJ15vt9
- r/3ENzgJvnwqgd8NZnfe2ZvmYLYYpWf06690yFzK5QczSWeU0j7hOFInDzObkTkQxnh7
- LKzkRQidFyw4DnvHtBaikiO96OY8LnvlvlfBerlhq0vJOfWnxjAOLzxUBwGHVzCaBUwn
- Rzy3rs29zRiF+YPGvlSdfUkyLjtJQ84Vy0XIr7R+gFzOANPGAidmpHPCgXrXrqVuTiJk
- VQOiUXcwiPzSvkhtZzRImON5q2eF46TpruzyuTt3yZBENi/EO+aSHy6EwXZGidu/i3fb
- KMWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=pvlVGuy8I5M4aISqtRmP/fVwpcqMhjpDaSrBCF1NYFc=;
- b=OMlq2x4csv1VpQhPokRpf4tdED1cxaW61FYPcwGCJrH40j4DodawgYWfPi66hUmfuw
- kyc4yLsyAHjmrZV2gE8cWVUKiYlUpemxyTBqJ2FKGyZQaasQbUIO1bnOfzrxLKFaQHY0
- CDIwU4nh10CR03+zWTbMuFbOLZLQJSM695J0ouAMykT0G52+zJ77ZIJSqLr+lNMJIUnk
- CJ7ygqSDcsOkTXFf3pWCu0tZLVeX7FWSGGD8VMz7Uq/quauvTUfMvTb3wMheuPbE3NuM
- HxTmqTuidXiAqmXtZIOGZoXQXBexRgnpJdFTypZh2ZfQtqQved1xNrZRmZ5C/eCUMEG/
- 80vA==
-X-Gm-Message-State: ANhLgQ1XQ5esQF3Qo/NH27EmlG+veEzdwXVSzyd0FXitErkmysB6TWMh
- 9M3VIH48qNkyLHDPsCrW4jrpNg==
-X-Google-Smtp-Source: ADFU+vvnuJwUjDmtP2hr+Vd8z2fb/4zo8Xd7R9IX/ToargwDLwNin3NYypclrJPToVP4UKsSJWHGMw==
-X-Received: by 2002:a17:90a:7309:: with SMTP id
- m9mr1050499pjk.52.1584580283678; 
- Wed, 18 Mar 2020 18:11:23 -0700 (PDT)
-Received: from [10.0.9.4] ([52.250.1.28])
- by smtp.gmail.com with ESMTPSA id c128sm229325pfa.11.2020.03.18.18.11.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Mar 2020 18:11:22 -0700 (PDT)
-Message-ID: <5e72c6ba.1c69fb81.6f9a5.1caf@mx.google.com>
-Date: Wed, 18 Mar 2020 18:11:22 -0700 (PDT)
+ id 1jEk5g-00032n-GH
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 01:35:22 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 5F4303A32EB79CAF7C94;
+ Thu, 19 Mar 2020 09:34:59 +0800 (CST)
+Received: from [127.0.0.1] (10.65.95.32) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.487.0; Thu, 19 Mar 2020
+ 09:34:50 +0800
+Subject: Re: [PATCH RFC] perf:Add driver for HiSilicon PCIe PMU
+To: Mark Rutland <mark.rutland@arm.com>, Robin Murphy <robin.murphy@arm.com>
+References: <1584014816-1908-1-git-send-email-liuqi115@huawei.com>
+ <49a04327-b58b-3103-f992-97e8838c41df@arm.com>
+ <20200313135940.GK42546@lakrids.cambridge.arm.com>
+From: Qi Liu <liuqi115@huawei.com>
+Message-ID: <8a154c7b-9698-a329-a63a-4d13680d5916@huawei.com>
+Date: Thu, 19 Mar 2020 09:34:45 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Kernel: v5.6-rc6-97-g825596c5c10b
-X-Kernelci-Report-Type: build
-Subject: arm64/for-kernelci build: 3 builds: 0 failed,
- 3 passed (v5.6-rc6-97-g825596c5c10b)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+In-Reply-To: <20200313135940.GK42546@lakrids.cambridge.arm.com>
+X-Originating-IP: [10.65.95.32]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_181125_402226_B9CC34E2 
-X-CRM114-Status: UNSURE (   4.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200318_183520_711076_F5F6F457 
+X-CRM114-Status: GOOD (  14.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,30 +66,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pci@vger.kernel.org, linuxarm@huawei.com,
+ linux-kernel@vger.kernel.org, bhelgaas@google.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-YXJtNjQvZm9yLWtlcm5lbGNpIGJ1aWxkOiAzIGJ1aWxkczogMCBmYWlsZWQsIDMgcGFzc2VkICh2
-NS42LXJjNi05Ny1nODI1NTk2YzVjMTBiKQoKRnVsbCBCdWlsZCBTdW1tYXJ5OiBodHRwczovL2tl
-cm5lbGNpLm9yZy9idWlsZC9hcm02NC9icmFuY2gvZm9yLWtlcm5lbGNpL2tlcm5lbC92NS42LXJj
-Ni05Ny1nODI1NTk2YzVjMTBiLwoKVHJlZTogYXJtNjQKQnJhbmNoOiBmb3Ita2VybmVsY2kKR2l0
-IERlc2NyaWJlOiB2NS42LXJjNi05Ny1nODI1NTk2YzVjMTBiCkdpdCBDb21taXQ6IDgyNTU5NmM1
-YzEwYjBmNDA5MzE4MWJkYzhlN2I0ZmJjODYyMjg3NDMKR2l0IFVSTDogaHR0cHM6Ly9naXQua2Vy
-bmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJtNjQvbGludXguZ2l0CkJ1aWx0OiAx
-IHVuaXF1ZSBhcmNoaXRlY3R1cmUKCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgpEZXRhaWxlZCBw
-ZXItZGVmY29uZmlnIGJ1aWxkIHJlcG9ydHM6CgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQphbGxt
-b2Rjb25maWcgKGFybTY0LCBnY2MtOCkg4oCUIFBBU1MsIDAgZXJyb3JzLCAwIHdhcm5pbmdzLCAw
-IHNlY3Rpb24gbWlzbWF0Y2hlcwoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KYWxsbm9jb25maWcg
-KGFybTY0LCBnY2MtOCkg4oCUIFBBU1MsIDAgZXJyb3JzLCAwIHdhcm5pbmdzLCAwIHNlY3Rpb24g
-bWlzbWF0Y2hlcwoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KZGVmY29uZmlnIChhcm02NCwgZ2Nj
-LTgpIOKAlCBQQVNTLCAwIGVycm9ycywgMCB3YXJuaW5ncywgMCBzZWN0aW9uIG1pc21hdGNoZXMK
-Ci0tLQpGb3IgbW9yZSBpbmZvIHdyaXRlIHRvIDxpbmZvQGtlcm5lbGNpLm9yZz4KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Thanks for reviewing this patch, will fix these in v2 patch!
+
+On 2020/3/13 21:59, Mark Rutland wrote:
+> On Fri, Mar 13, 2020 at 01:23:53PM +0000, Robin Murphy wrote:
+>> On 2020-03-12 12:06 pm, Qi Liu wrote:
+>>> From: Qi liu <liuqi115@huawei.com>
+> 
+> [...]
+> 
+>>> +#define HISI_PCIE_EVENT_SHIFT_M			GENMASK(15, 0)
+>>> +#define HISI_PCIE_SUBEVENT_SHIFT_M		GENMASK(31, 16)
+>>> +#define HISI_PCIE_SUBEVENT_SHIFT_S		16
+>>> +#define HISI_PCIE_PORT_SHIFT_M			GENMASK(7, 0)
+>>> +#define HISI_PCIE_FUNC_SHIFT_M			GENMASK(15, 8)
+>>> +#define HISI_PCIE_FUNC_SHIFT_S			8
+>>
+>> So "SHIFT_S" means "shift" and "SHIFT_M" actually means "mask"? That's
+>> unnecessarily confusing. Furthermore it might be helpful if there was a more
+>> obvious distinction between hardware register fields and config fields.
+> 
+> Also, If you use the FIELD_GET() and FIELD_PREP() helpers, you only need
+> to define the mask. See <linux/bitfield.h>.
+> 
+>>> +int hisi_pcie_pmu_event_init(struct perf_event *event)
+>>> +{
+>>> +	struct hisi_pcie_pmu *pcie_pmu = to_pcie_pmu(event->pmu);
+>>> +	struct hw_perf_event *hwc = &event->hw;
+>>> +	u32 subevent_id, event_id, func_id, port_id;
+>>> +
+>>> +	if (event->attr.type != event->pmu->type)
+>>> +		return -ENOENT;
+>>> +
+>>> +	/*
+>>> +	 * We do not support sampling as the counters are all shared by all
+>>> +	 * CPU cores in a CPU die(SCCL). Also we do not support attach to a
+>>
+>> Do the PCIe counters have anything to do with CPU clusters at all?
+>>
+>>> +	 * task(per-process mode)
+>>> +	 */
+>>> +	if (is_sampling_event(event) || event->attach_state & PERF_ATTACH_TASK)
+>>> +		return -EOPNOTSUPP;
+>>> +
+>>> +	/*
+>>> +	 * The uncore counters not specific to any CPU, so cannot
+>>> +	 * support per-task
+>>> +	 */
+>>> +	if (event->cpu < 0)
+>>> +		return -EINVAL;
+>>> +
+>>> +	/*
+>>> +	 * Validate if the events in group does not exceed the
+>>> +	 * available counters in hardware.
+>>> +	 */
+>>> +	if (!hisi_validate_event_group(event))
+>>> +		return -EINVAL;
+>>> +
+>>> +	event_id = event->attr.config && HISI_PCIE_EVENT_SHIFT_M;
+>>
+>> Really? Are you sure you've tested this properly?
+> 
+> If you had:
+> 
+> #define HISI_PCI_EVENT_ID	GENMASK(15, 0)
+> #define HISI_PCI_SUBEVENT_ID	GENMASK(31, 16)
+> 
+> ... here you could do:
+> 
+> 	event_id = FIELD_GET(HISI_PCI_EVENT_ID, event->attr.config);
+> 
+>>
+>>> +	subevent_id = (event->attr.config && HISI_PCIE_SUBEVENT_SHIFT_M)
+>>> +		       >> HISI_PCIE_SUBEVENT_SHIFT_S;
+> 
+> ... and:
+> 
+> 	subevent_id = FIELD_GET(HISI_PCI_SUBEVENT_ID, event->attr.config);
+> 
+> ... and so on for other fields.
+> 
+> Thanks,
+> Mark.
+> 
+> .
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
