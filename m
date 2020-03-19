@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02F4518B09C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 10:56:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CF4F18B0A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 10:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SXiqCwdD/Qh25C9KMyDvquG5cNi1Zb72UE0v6d8KXDY=; b=ezou1UfW+g72kr
-	W1Eb5nTLmJ0aA0ezHj84ssE5sh/ubdRWoowvdSPXnB54VHVbx4nkAiI2IknnFmRBhpyvWhzXHcfDZ
-	ivP3VNG3JZZlHraCRk5tK3AXcpI0Qdvtom7bgVhcnHdm8LwYej7ribO4jXwbT0GhzJWBVvwtvdpnR
-	uBT9VTd4vfvIr7HqHuX2YeP/E69V2/lNcDqbW+JdpkmYUlwu1Fdsv+Lo5rqlkdc8P75TNasWdLSl0
-	5eaYklia0cPu/VpC5YglCAlm27OQX3PYJmELHD/acgKs/P3hbSoMgUB2MvRPTmFp669oHo1n5Hg4Z
-	JmYZynyqhvYhT/7RW7oQ==;
+	List-Owner; bh=wbQW2GWxXTi66ldj3BQEqxhsPVAyxrarOJdoomWm31s=; b=jHoGy8XuXR+uGF
+	1jbvmTmoDONkROf38HUe0OCVZs5y+XqJdlwTn85Bf1BEL8gFx6XNEPpKufkMkp/byxwrnveg5C3wO
+	DZp/wg+I/ivN2jTO5nVaCISfoHe3uJ0CObWWRL6OABbRgr42awaOOOd9Sc973QbLqCKcz7s5qEbZf
+	GUqplYstA4kFtjowKDDLpMm74d2oGMFsLLjEMGpfWAJRoo+7xQFYOuIxd9PwalDvTBDf8s3jh0tOj
+	Q0bC2NHHRB64vuHsB/zn2aDDRkWOWNxpBkwUjeAwRR8XJ8fzLALnPj73VVQb3gOLhK+2QD6PYZviB
+	qMVYEqohgbQaTQ659yOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEruF-0002Vt-44; Thu, 19 Mar 2020 09:56:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jEruc-0002oP-76; Thu, 19 Mar 2020 09:56:26 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jErtt-0002Ll-32; Thu, 19 Mar 2020 09:55:42 +0000
-X-UUID: f72db802757a41cb94733655e389e2a2-20200319
+ id 1jErtx-0002OG-Mn; Thu, 19 Mar 2020 09:55:47 +0000
+X-UUID: a86a32e420554ac182796a11bc3f877b-20200319
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=zswPWHVhfJ7nFxwbL6xqlaMcZR4nTaQJcaTzmyhFPTc=; 
- b=oDu5HOAerXAicaIbeHfR2aPCrO5CalBDSdIwGBGs+dq6PbbQfQtS4IO7VVW7r9lAOGRJ9Ur+MWReom8m8M0tVn5QKYLC/Iiz+trpXHTHLSyqhd1P72gODT7CTf+0Gwlbt0JlBwY1nMs9WAjznU68DuGQ55Pw/PTBpPNi2KA5Qto=;
-X-UUID: f72db802757a41cb94733655e389e2a2-20200319
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=EgjJ4/ozN7amIJ2TNqfWpzKzRvybv6gnG75eeEAlrTA=; 
+ b=hDWyToAOP+cLBPWrdgTVFUSXIVixELalE8FQAS8xj/Ov7TkSOWfr5eUc7g+QXlxiVxvXmgkRf5DCgN3+MdmOY/rJ699HqTcESMJNrpaBJWn9BasY9E0USy0iNfwAffc294xZ5cmQkU82Q029tv1FvkgUWzuwAI8jgWPt8R7dXfQ=;
+X-UUID: a86a32e420554ac182796a11bc3f877b-20200319
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <henry.yen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2020755195; Thu, 19 Mar 2020 01:55:39 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ with ESMTP id 274401742; Thu, 19 Mar 2020 01:55:41 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 19 Mar 2020 02:56:10 -0700
+ 15.0.1395.4; Thu, 19 Mar 2020 02:56:12 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 19 Mar 2020 17:54:28 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 19 Mar 2020 17:52:43 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 19 Mar 2020 17:52:32 +0800
+ Frontend Transport; Thu, 19 Mar 2020 17:52:33 +0800
 From: Henry Yen <henry.yen@mediatek.com>
 To: Zhang Rui <rui.zhang@intel.com>, Daniel Lezcano
  <daniel.lezcano@linaro.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
  Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH 1/2] thermal: mediatek: prepare to add support for other
- platforms
-Date: Thu, 19 Mar 2020 17:54:52 +0800
-Message-ID: <1584611693-3553-2-git-send-email-henry.yen@mediatek.com>
+Subject: [PATCH 2/2] thermal: mediatek: add tsensor support for MT7622 SoC
+Date: Thu, 19 Mar 2020 17:54:53 +0800
+Message-ID: <1584611693-3553-3-git-send-email-henry.yen@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1584611693-3553-1-git-send-email-henry.yen@mediatek.com>
 References: <1584611693-3553-1-git-send-email-henry.yen@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 3BE1D2BE5077A5896A53555467BB7CAAAF41036944F071EE7B81B4AA7364ADF02000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_025541_184184_D88098B2 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20200319_025545_828633_EE25EE9C 
+X-CRM114-Status: GOOD (  15.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -98,219 +96,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It is known that Mediatek owns two thermal system, which differs
-in the way of reading calibration data and converting temperature.
-MT8173, MT2701, MT2712 and MT8183 belongs to version 1 thermal
-system, and MT7622 belongs to version 2 thermal system.
-For platform compatibility, we add two sensor ops (extract and
-convert) to the thermal data structure. Each platform will register
-the sensor ops to the proper function implementation according to
-its version.
+This patch adds the support for version 2 thermal system(e.g., MT7622 SoC).
+The changes include the way of reading calibration data, the way of
+converting temperature and hardware initialization specific for version 2
+thermal system.
 
 Signed-off-by: Henry Yen <henry.yen@mediatek.com>
 ---
- drivers/thermal/mtk_thermal.c | 148 +++++++++++++++++++++-------------
- 1 file changed, 93 insertions(+), 55 deletions(-)
+ drivers/thermal/mtk_thermal.c | 100 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 98 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-index 76e30603d4d5..13e17c31ba3b 100644
+index 13e17c31ba3b..9e6807f6abd4 100644
 --- a/drivers/thermal/mtk_thermal.c
 +++ b/drivers/thermal/mtk_thermal.c
-@@ -120,18 +120,18 @@
-  * MT2701 has 3 sensors and needs 3 VTS calibration data.
-  * MT2712 has 4 sensors and needs 4 VTS calibration data.
-  */
--#define CALIB_BUF0_VALID		BIT(0)
--#define CALIB_BUF1_ADC_GE(x)		(((x) >> 22) & 0x3ff)
--#define CALIB_BUF0_VTS_TS1(x)		(((x) >> 17) & 0x1ff)
--#define CALIB_BUF0_VTS_TS2(x)		(((x) >> 8) & 0x1ff)
--#define CALIB_BUF1_VTS_TS3(x)		(((x) >> 0) & 0x1ff)
--#define CALIB_BUF2_VTS_TS4(x)		(((x) >> 23) & 0x1ff)
--#define CALIB_BUF2_VTS_TS5(x)		(((x) >> 5) & 0x1ff)
--#define CALIB_BUF2_VTS_TSABB(x)		(((x) >> 14) & 0x1ff)
--#define CALIB_BUF0_DEGC_CALI(x)		(((x) >> 1) & 0x3f)
--#define CALIB_BUF0_O_SLOPE(x)		(((x) >> 26) & 0x3f)
--#define CALIB_BUF0_O_SLOPE_SIGN(x)	(((x) >> 7) & 0x1)
--#define CALIB_BUF1_ID(x)		(((x) >> 9) & 0x1)
-+#define CALIB_BUF0_VALID_V1		BIT(0)
-+#define CALIB_BUF1_ADC_GE_V1(x)		(((x) >> 22) & 0x3ff)
-+#define CALIB_BUF0_VTS_TS1_V1(x)	(((x) >> 17) & 0x1ff)
-+#define CALIB_BUF0_VTS_TS2_V1(x)	(((x) >> 8) & 0x1ff)
-+#define CALIB_BUF1_VTS_TS3_V1(x)	(((x) >> 0) & 0x1ff)
-+#define CALIB_BUF2_VTS_TS4_V1(x)	(((x) >> 23) & 0x1ff)
-+#define CALIB_BUF2_VTS_TS5_V1(x)	(((x) >> 5) & 0x1ff)
-+#define CALIB_BUF2_VTS_TSABB_V1(x)	(((x) >> 14) & 0x1ff)
-+#define CALIB_BUF0_DEGC_CALI_V1(x)	(((x) >> 1) & 0x3f)
-+#define CALIB_BUF0_O_SLOPE_V1(x)	(((x) >> 26) & 0x3f)
-+#define CALIB_BUF0_O_SLOPE_SIGN_V1(x)	(((x) >> 7) & 0x1)
-+#define CALIB_BUF1_ID_V1(x)		(((x) >> 9) & 0x1)
+@@ -38,6 +38,7 @@
+ #define TEMP_MONIDET0		0x014
+ #define TEMP_MONIDET1		0x018
+ #define TEMP_MSRCTL0		0x038
++#define TEMP_MSRCTL1		0x03c
+ #define TEMP_AHBPOLL		0x040
+ #define TEMP_AHBTO		0x044
+ #define TEMP_ADCPNP0		0x048
+@@ -133,6 +134,20 @@
+ #define CALIB_BUF0_O_SLOPE_SIGN_V1(x)	(((x) >> 7) & 0x1)
+ #define CALIB_BUF1_ID_V1(x)		(((x) >> 9) & 0x1)
  
++/*
++ * Layout of the fuses providing the calibration data
++ * These macros could be used for MT7622.
++ */
++#define CALIB_BUF0_ADC_OE_V2(x)		(((x) >> 22) & 0x3ff)
++#define CALIB_BUF0_ADC_GE_V2(x)		(((x) >> 12) & 0x3ff)
++#define CALIB_BUF0_DEGC_CALI_V2(x)	(((x) >> 6) & 0x3f)
++#define CALIB_BUF0_O_SLOPE_V2(x)	(((x) >> 0) & 0x3f)
++#define CALIB_BUF1_VTS_TS1_V2(x)	(((x) >> 23) & 0x1ff)
++#define CALIB_BUF1_VTS_TS2_V2(x)	(((x) >> 14) & 0x1ff)
++#define CALIB_BUF1_VTS_TSABB_V2(x)	(((x) >> 5) & 0x1ff)
++#define CALIB_BUF1_VALID_V2(x)		(((x) >> 4) & 0x1)
++#define CALIB_BUF1_O_SLOPE_SIGN_V2(x)	(((x) >> 3) & 0x1)
++
  enum {
  	VTS1,
-@@ -143,6 +143,11 @@ enum {
- 	MAX_NUM_VTS,
- };
+ 	VTS2,
+@@ -266,8 +281,10 @@ struct mtk_thermal {
  
-+enum mtk_thermal_version {
-+	MTK_THERMAL_V1 = 1,
-+	MTK_THERMAL_V2,
-+};
-+
- /* MT2701 thermal sensors */
- #define MT2701_TS1	0
- #define MT2701_TS2	1
-@@ -245,6 +250,9 @@ struct mtk_thermal_data {
- 	const int *controller_offset;
- 	bool need_switch_bank;
- 	struct thermal_bank_cfg bank_data[MAX_NUM_ZONES];
-+	enum mtk_thermal_version version;
-+	int (*extract)(struct mtk_thermal *mt, u32 *buf);
-+	int (*convert)(struct mtk_thermal *mt, int sensno, s32 raw);
- };
+ 	/* Calibration values */
+ 	s32 adc_ge;
++	s32 adc_oe;
+ 	s32 degc_cali;
+ 	s32 o_slope;
++	s32 o_slope_sign;
+ 	s32 vts[MAX_NUM_VTS];
  
- struct mtk_thermal {
-@@ -358,6 +366,9 @@ static const int mt7622_mux_values[MT7622_NUM_SENSORS] = { 0, };
- static const int mt7622_vts_index[MT7622_NUM_SENSORS] = { VTS1 };
+ 	const struct mtk_thermal_data *conf;
+@@ -367,7 +384,9 @@ static const int mt7622_vts_index[MT7622_NUM_SENSORS] = { VTS1 };
  static const int mt7622_tc_offset[MT7622_NUM_CONTROLLER] = { 0x0, };
  
-+static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf);
-+static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw);
-+
+ static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf);
++static int mtk_thermal_extract_efuse_v2(struct mtk_thermal *mt, u32 *buf);
+ static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw);
++static int raw_to_mcelsius_v2(struct mtk_thermal *mt, int sensno, s32 raw);
+ 
  /*
   * The MT8173 thermal controller has four banks. Each bank can read up to
-  * four temperature sensors simultaneously. The MT8173 has a total of 5
-@@ -398,6 +409,9 @@ static const struct mtk_thermal_data mt8173_thermal_data = {
- 	.msr = mt8173_msr,
- 	.adcpnp = mt8173_adcpnp,
- 	.sensor_mux_values = mt8173_mux_values,
-+	.version = MTK_THERMAL_V1,
-+	.extract = mtk_thermal_extract_efuse_v1,
-+	.convert = raw_to_mcelsius_v1,
- };
- 
- /*
-@@ -428,6 +442,9 @@ static const struct mtk_thermal_data mt2701_thermal_data = {
- 	.msr = mt2701_msr,
- 	.adcpnp = mt2701_adcpnp,
- 	.sensor_mux_values = mt2701_mux_values,
-+	.version = MTK_THERMAL_V1,
-+	.extract = mtk_thermal_extract_efuse_v1,
-+	.convert = raw_to_mcelsius_v1,
- };
- 
- /*
-@@ -458,6 +475,9 @@ static const struct mtk_thermal_data mt2712_thermal_data = {
- 	.msr = mt2712_msr,
- 	.adcpnp = mt2712_adcpnp,
- 	.sensor_mux_values = mt2712_mux_values,
-+	.version = MTK_THERMAL_V1,
-+	.extract = mtk_thermal_extract_efuse_v1,
-+	.convert = raw_to_mcelsius_v1,
- };
- 
- /*
-@@ -482,6 +502,9 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
- 	.msr = mt7622_msr,
+@@ -503,8 +522,8 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
  	.adcpnp = mt7622_adcpnp,
  	.sensor_mux_values = mt7622_mux_values,
-+	.version = MTK_THERMAL_V2,
-+	.extract = mtk_thermal_extract_efuse_v1,
-+	.convert = raw_to_mcelsius_v1,
+ 	.version = MTK_THERMAL_V2,
+-	.extract = mtk_thermal_extract_efuse_v1,
+-	.convert = raw_to_mcelsius_v1,
++	.extract = mtk_thermal_extract_efuse_v2,
++	.convert = raw_to_mcelsius_v2,
  };
  
  /*
-@@ -514,6 +537,9 @@ static const struct mtk_thermal_data mt8183_thermal_data = {
- 	.msr = mt8183_msr,
- 	.adcpnp = mt8183_adcpnp,
- 	.sensor_mux_values = mt8183_mux_values,
-+	.version = MTK_THERMAL_V1,
-+	.extract = mtk_thermal_extract_efuse_v1,
-+	.convert = raw_to_mcelsius_v1,
- };
- 
- /**
-@@ -525,7 +551,7 @@ static const struct mtk_thermal_data mt8183_thermal_data = {
-  * This converts the raw ADC value to mcelsius using the SoC specific
-  * calibration constants
-  */
--static int raw_to_mcelsius(struct mtk_thermal *mt, int sensno, s32 raw)
-+static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw)
- {
- 	s32 tmp;
- 
-@@ -594,9 +620,9 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
- 		raw = readl(mt->thermal_base +
- 			    conf->msr[conf->bank_data[bank->id].sensors[i]]);
- 
--		temp = raw_to_mcelsius(mt,
--				       conf->bank_data[bank->id].sensors[i],
--				       raw);
-+		temp = conf->convert(mt,
-+				     conf->bank_data[bank->id].sensors[i],
-+				     raw);
- 
- 		/*
- 		 * The first read of a sensor often contains very high bogus
-@@ -698,9 +724,11 @@ static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
- 	writel(auxadc_phys_base + AUXADC_CON1_CLR_V,
- 	       controller_base + TEMP_ADCMUXADDR);
- 
--	/* AHB address for pnp sensor mux selection */
--	writel(apmixed_phys_base + APMIXED_SYS_TS_CON1,
--	       controller_base + TEMP_PNPMUXADDR);
-+	if (mt->conf->version == MTK_THERMAL_V1) {
-+		/* AHB address for pnp sensor mux selection */
-+		writel(apmixed_phys_base + APMIXED_SYS_TS_CON1,
-+		       controller_base + TEMP_PNPMUXADDR);
-+	}
- 
- 	/* AHB value for auxadc enable */
- 	writel(BIT(conf->auxadc_channel), controller_base + TEMP_ADCEN);
-@@ -758,6 +786,51 @@ static u64 of_get_phys_base(struct device_node *np)
- 	return of_translate_address(np, regaddr_p);
+@@ -566,6 +585,36 @@ static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw)
+ 	return mt->degc_cali * 500 - tmp;
  }
  
-+static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf)
++static int raw_to_mcelsius_v2(struct mtk_thermal *mt, int sensno, s32 raw)
 +{
-+	int i;
++	s32 format_1 = 0;
++	s32 format_2 = 0;
++	s32 g_oe = 1;
++	s32 g_gain = 1;
++	s32 g_x_roomt = 0;
++	s32 tmp = 0;
 +
-+	if (!(buf[0] & CALIB_BUF0_VALID_V1))
++	if (raw == 0)
++		return 0;
++
++	raw &= 0xfff;
++	g_gain = 10000 + (((mt->adc_ge - 512) * 10000) >> 12);
++	g_oe = mt->adc_oe - 512;
++	format_1 = mt->vts[VTS2] + 3105 - g_oe;
++	format_2 = (mt->degc_cali * 10) >> 1;
++	g_x_roomt = (((format_1 * 10000) >> 12) * 10000) / g_gain;
++
++	tmp = (((((raw - g_oe) * 10000) >> 12) * 10000) / g_gain) - g_x_roomt;
++	tmp = tmp * 10 * 100 / 11;
++
++	if (mt->o_slope_sign == 0)
++		tmp = tmp / (165 - mt->o_slope);
++	else
++		tmp = tmp / (165 + mt->o_slope);
++
++	return (format_2 - tmp) * 100;
++}
++
+ /**
+  * mtk_thermal_get_bank - get bank
+  * @bank:	The bank
+@@ -831,6 +880,23 @@ static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf)
+ 	return 0;
+ }
+ 
++static int mtk_thermal_extract_efuse_v2(struct mtk_thermal *mt, u32 *buf)
++{
++	if (!CALIB_BUF1_VALID_V2(buf[1]))
 +		return -EINVAL;
 +
-+	mt->adc_ge = CALIB_BUF1_ADC_GE_V1(buf[1]);
-+
-+	for (i = 0; i < mt->conf->num_sensors; i++) {
-+		switch (mt->conf->vts_index[i]) {
-+		case VTS1:
-+			mt->vts[VTS1] = CALIB_BUF0_VTS_TS1_V1(buf[0]);
-+			break;
-+		case VTS2:
-+			mt->vts[VTS2] = CALIB_BUF0_VTS_TS2_V1(buf[0]);
-+			break;
-+		case VTS3:
-+			mt->vts[VTS3] = CALIB_BUF1_VTS_TS3_V1(buf[1]);
-+			break;
-+		case VTS4:
-+			mt->vts[VTS4] = CALIB_BUF2_VTS_TS4_V1(buf[2]);
-+			break;
-+		case VTS5:
-+			mt->vts[VTS5] = CALIB_BUF2_VTS_TS5_V1(buf[2]);
-+			break;
-+		case VTSABB:
-+			mt->vts[VTSABB] =
-+				CALIB_BUF2_VTS_TSABB_V1(buf[2]);
-+			break;
-+		default:
-+			break;
-+		}
-+	}
-+
-+	mt->degc_cali = CALIB_BUF0_DEGC_CALI_V1(buf[0]);
-+	if (CALIB_BUF1_ID_V1(buf[1]) &
-+	    CALIB_BUF0_O_SLOPE_SIGN_V1(buf[0]))
-+		mt->o_slope = -CALIB_BUF0_O_SLOPE_V1(buf[0]);
-+	else
-+		mt->o_slope = CALIB_BUF0_O_SLOPE_V1(buf[0]);
++	mt->adc_oe = CALIB_BUF0_ADC_OE_V2(buf[0]);
++	mt->adc_ge = CALIB_BUF0_ADC_GE_V2(buf[0]);
++	mt->degc_cali = CALIB_BUF0_DEGC_CALI_V2(buf[0]);
++	mt->o_slope = CALIB_BUF0_O_SLOPE_V2(buf[0]);
++	mt->vts[VTS1] = CALIB_BUF1_VTS_TS1_V2(buf[1]);
++	mt->vts[VTS2] = CALIB_BUF1_VTS_TS2_V2(buf[1]);
++	mt->vts[VTSABB] = CALIB_BUF1_VTS_TSABB_V2(buf[1]);
++	mt->o_slope_sign = CALIB_BUF1_O_SLOPE_SIGN_V2(buf[1]);
 +
 +	return 0;
 +}
@@ -318,51 +232,71 @@ index 76e30603d4d5..13e17c31ba3b 100644
  static int mtk_thermal_get_calibration_data(struct device *dev,
  					    struct mtk_thermal *mt)
  {
-@@ -793,43 +866,8 @@ static int mtk_thermal_get_calibration_data(struct device *dev,
- 		goto out;
+@@ -900,6 +966,28 @@ static const struct of_device_id mtk_thermal_of_match[] = {
+ };
+ MODULE_DEVICE_TABLE(of, mtk_thermal_of_match);
+ 
++static void mtk_thermal_turn_on_buffer(void __iomem *apmixed_base)
++{
++	int tmp;
++
++	tmp = readl(apmixed_base + APMIXED_SYS_TS_CON1);
++	tmp &= ~(0x37);
++	tmp |= 0x1;
++	writel(tmp, apmixed_base + APMIXED_SYS_TS_CON1);
++	udelay(200);
++}
++
++static void mtk_thermal_release_periodic_ts(struct mtk_thermal *mt,
++					    void __iomem *auxadc_base)
++{
++	int tmp;
++
++	writel(0x800, auxadc_base + AUXADC_CON1_SET_V);
++	writel(0x1, mt->thermal_base + TEMP_MONCTL0);
++	tmp = readl(mt->thermal_base + TEMP_MSRCTL1);
++	writel((tmp & (~0x10e)), mt->thermal_base + TEMP_MSRCTL1);
++}
++
+ static int mtk_thermal_probe(struct platform_device *pdev)
+ {
+ 	int ret, i, ctrl_id;
+@@ -908,6 +996,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 	struct resource *res;
+ 	u64 auxadc_phys_base, apmixed_phys_base;
+ 	struct thermal_zone_device *tzdev;
++	void __iomem *apmixed_base, *auxadc_base;
+ 
+ 	mt = devm_kzalloc(&pdev->dev, sizeof(*mt), GFP_KERNEL);
+ 	if (!mt)
+@@ -942,6 +1031,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 		return -ENODEV;
  	}
  
--	if (buf[0] & CALIB_BUF0_VALID) {
--		mt->adc_ge = CALIB_BUF1_ADC_GE(buf[1]);
--
--		for (i = 0; i < mt->conf->num_sensors; i++) {
--			switch (mt->conf->vts_index[i]) {
--			case VTS1:
--				mt->vts[VTS1] = CALIB_BUF0_VTS_TS1(buf[0]);
--				break;
--			case VTS2:
--				mt->vts[VTS2] = CALIB_BUF0_VTS_TS2(buf[0]);
--				break;
--			case VTS3:
--				mt->vts[VTS3] = CALIB_BUF1_VTS_TS3(buf[1]);
--				break;
--			case VTS4:
--				mt->vts[VTS4] = CALIB_BUF2_VTS_TS4(buf[2]);
--				break;
--			case VTS5:
--				mt->vts[VTS5] = CALIB_BUF2_VTS_TS5(buf[2]);
--				break;
--			case VTSABB:
--				mt->vts[VTSABB] = CALIB_BUF2_VTS_TSABB(buf[2]);
--				break;
--			default:
--				break;
--			}
--		}
--
--		mt->degc_cali = CALIB_BUF0_DEGC_CALI(buf[0]);
--		if (CALIB_BUF1_ID(buf[1]) &
--		    CALIB_BUF0_O_SLOPE_SIGN(buf[0]))
--			mt->o_slope = -CALIB_BUF0_O_SLOPE(buf[0]);
--		else
--			mt->o_slope = CALIB_BUF0_O_SLOPE(buf[0]);
--	} else {
-+	if (mt->conf->extract(mt, buf))
- 		dev_info(dev, "Device not calibrated, using default calibration values\n");
--	}
++	auxadc_base = of_iomap(auxadc, 0);
+ 	auxadc_phys_base = of_get_phys_base(auxadc);
  
- out:
- 	kfree(buf);
+ 	of_node_put(auxadc);
+@@ -957,6 +1047,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 		return -ENODEV;
+ 	}
+ 
++	apmixed_base = of_iomap(apmixedsys, 0);
+ 	apmixed_phys_base = of_get_phys_base(apmixedsys);
+ 
+ 	of_node_put(apmixedsys);
+@@ -982,6 +1073,11 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 		goto err_disable_clk_auxadc;
+ 	}
+ 
++	if (mt->conf->version == MTK_THERMAL_V2) {
++		mtk_thermal_turn_on_buffer(apmixed_base);
++		mtk_thermal_release_periodic_ts(mt, auxadc_base);
++	}
++
+ 	for (ctrl_id = 0; ctrl_id < mt->conf->num_controller ; ctrl_id++)
+ 		for (i = 0; i < mt->conf->num_banks; i++)
+ 			mtk_thermal_init_bank(mt, i, apmixed_phys_base,
 -- 
 2.17.1
 _______________________________________________
