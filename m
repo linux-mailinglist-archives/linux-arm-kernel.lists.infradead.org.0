@@ -2,88 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9AD318B53F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 14:17:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 212E818B569
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 14:18:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=laXbFUnPd9dG5cG+zJgGSdupQmEwALiNlRsSDM1s2cM=; b=VMKIpdqqycZVxu
-	fUcuOcjazIGJ/rIVyoiT3CmNvdxDgB6mpKX5vS+tmSeZ7eA7/Av7NPKu3hN6+f8sFGgb4EiwCTcyw
-	mtkEJ6mXapzoTbr7jaZySspyne1EdrxeBm/GTep/ASOHAYhjh0ufBvHQNJszWBAKHPgt/oWxWDGcs
-	SgPCrAEhVoiyOo/Nt+tIFQQs0WC49LZrYwYO5dVm5gR9hsJNsC7P2qEXQwgXy1lIiKepqJPQEX2X8
-	YSOsGBH+f1w8D0TzdJWmcrCqHd0GdnJi0MHvUTu1Mfr1Ze7QHq0Iik8LkiwQBTQ9s5sBl3Kc1bPCc
-	whSV4hrKN9t3m4Lbb6gg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B6I/W8R0qolJ2XGyGw4BcNd6ojNaNVhm5laN7XxJuVE=; b=khgDEQRTKwArZ8
+	Pwza3eqnMGd/FNaVfXzcDksl+ArLsoRki8hI+Qkgzqh3iyyRYSl1wNJvv+vkU/zq80WDTfYfH+XSE
+	Ub+dDy5EzGjDtOb6Uj0yXfeFnJpk/K04bicPsvcHRkE0J5rf81SJLG++bVWrudqPOEkBM8lkrc3t/
+	kek/hXxdVvVRYEzVWhIoTX5l3upfpaBWY+s32Xvw6EwWBvK98gtuQoylvsEvMbzENkhJQQnb5PWqY
+	PnUhPx5LpBmbLux/AJdYxcXimGtHb3ldLrlQJiW4loH+b/3Z3Ux2H77HcFHNjdvQJw2jElOqfqrWk
+	C+nu7WtRnJXtAPljN4IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEv2e-0003YD-EA; Thu, 19 Mar 2020 13:16:56 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jEv49-00044M-Q8; Thu, 19 Mar 2020 13:18:29 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEv2U-0003Xo-TL
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 13:16:48 +0000
-Received: by mail-pg1-x544.google.com with SMTP id b1so1254255pgm.8
+ id 1jEv3z-00043y-10
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 13:18:20 +0000
+Received: by mail-oi1-x241.google.com with SMTP id 9so2554363oiq.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 06:16:46 -0700 (PDT)
+ Thu, 19 Mar 2020 06:18:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=nqJw5vg4Nil/Y9pZjcpy6DTelU/teueaanPhC3c5U58=;
- b=T+cYXbZAHaDkG0GNHDjApa0wSTlshXtBKTVMP29hon48mbyn2rSVvYi8nKMBRhYv9j
- MaKesS8Pu3GoCeHrmfoHRCXKVwIARQ+N1VF8r9mMjrHKehag+deLDFwHqy1/FTUkY05S
- sVFv9NZdiGYRSgp05pOjM0JIVbyLu+ZxdRZxdviw9Je8WpmC/i2tyZNZz+Te2KvU9QW8
- kdwYoB2a2CEZcw/nAJpp1R7rHtdDIZKpe9p5irMpWk6Wzn/6LtM5AysvML1Dnh/9sa3O
- Kr6n9MBkKJjOY7RyLAJSwa7bpppLJSIOzc7Ly3KI+uiKWassksQrMsoh1gxvZTIgRr/o
- pY3A==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qDQpti7t01GpCTV3F9lVKa0JXF79TC4yEbf9DOSPn8g=;
+ b=mcAQ0yZCaJg48cbZ+UPok9xqwUcsLaZsb9fzmjLgeh8zdqkKXz81zq/ILbwNrBso2a
+ MN4btAAs+YQirt8xgKGSVUBCNTD5zHSZMVoAo15X2tUTWsKNcvIDf9ULConjYj0Aprz0
+ bpiQ94KXoh7flze0IXswZPt+qyF2ZmgAi+FL55Ar139q+XJxp4ZasBrKaZYUwGFxD95X
+ tRz65ibnOZuh9KDbSY3lfdkiqYrn9QcbjX/2NHFqETcoSloqNpfMtrf5PdxLbZOgMjA/
+ GFpujd6djm/SWaidRo4GwHfr2sGBvYlPciDOrkswyNdJYyeprCBX+oLvAN4PxdBkODDL
+ lXEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=nqJw5vg4Nil/Y9pZjcpy6DTelU/teueaanPhC3c5U58=;
- b=VO94L7QlsG294GjzToQioLxGpslF3EjNc1jFU5VIVSd3AOF6yyMWZEmi0z0Z3VTi+j
- c4fKwzfJb9DjaheQN3qS2zuLoOM3xrsNkR/KeU0astea2fncZMZ2MkQQv5mdpEv3Y436
- c1b7ub8Eo8+LRzVQBV66yM3b1NvUuEswpyKaj+dJzlQCd+78F35UwdqO/ci27aMIDwQd
- VqZ0APa+XaboCVEC8VuCkR8K74At9jRvNuJDwuy74eOtEcao4hi1B4qbf0DEuBJyYXIK
- /Ev7cFhk5PYjflgl34jOK5U8MySbiFqj0aCzx79q6N5S7BNzHcM7R+Fd8xfw04Cr80yV
- YwMA==
-X-Gm-Message-State: ANhLgQ0VR5PCFHbsDX+OXA8GbyDRPh40tWsERyEkJKHPwTak98RO2ZSS
- OjArelaRfd9bh5flzN11c2Q=
-X-Google-Smtp-Source: ADFU+vsVUcop1IJD5Y5GJDWMkZo9mIv9UFBUlK2kkpeO2PwWiaR6FToo9iw+OWXW3qnKj5G8oMYMrA==
-X-Received: by 2002:a63:fd0d:: with SMTP id d13mr2905382pgh.302.1584623806046; 
- Thu, 19 Mar 2020 06:16:46 -0700 (PDT)
-Received: from localhost ([216.24.188.11])
- by smtp.gmail.com with ESMTPSA id j38sm2383940pgi.51.2020.03.19.06.16.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 19 Mar 2020 06:16:45 -0700 (PDT)
-From: Dejin Zheng <zhengdejin5@gmail.com>
-To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
- davem@davemloft.net, mcoquelin.stm32@gmail.com, netdev@vger.kernel.org
-Subject: [PATCH net-next v2] net: stmmac: dwmac_lib: remove unnecessary checks
- in dwmac_dma_reset()
-Date: Thu, 19 Mar 2020 21:16:38 +0800
-Message-Id: <20200319131638.12936-1-zhengdejin5@gmail.com>
-X-Mailer: git-send-email 2.25.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qDQpti7t01GpCTV3F9lVKa0JXF79TC4yEbf9DOSPn8g=;
+ b=OTLwkh8Uw22rNp4e7FiN6T0g9UJ8Ka/3HPYGYsOGi6eRlfQk2cutDSIUfbx5d8aYgx
+ xWQhxtny+yuaJvFtWG/mAyFO9yvYThOrlhFxxaX3cW/mgBse9iJbDu3l89x7+rsqM26B
+ OeyHOwRfbo0I3Q93LNEeOob/N7cpZlmjnvt3T9bhq0ReeQ6u88LdCMBxR75J5aRSkHie
+ HauQJzXA/k1swCgMtnX5Yki4oAa+vGOf78PqdZMyVBNDd8jH6POQ5/zb3O6NNGtbPONU
+ x6hR2VFpIR+CC2rEqPoNPMl6fYM8T8T7BpwHeBi924BQUeYRn3gJtmCbc4eBtPkutoA6
+ Pwng==
+X-Gm-Message-State: ANhLgQ2g6oyhloNleMFvJYDsWfEgBlhUONrqlBVEdK3Aab7ZqFCoJMK+
+ vevgP4v2XtAJUTtIe2yrpNFDN0C+9v7DpePeww4=
+X-Google-Smtp-Source: ADFU+vsS6/XH+ew6MFOJMJjm3XI7q3PIxIoAJ7KFCUkmkMgL0Zaluvh9eiLo/6KcPprvw6aGuxFV0AQaeSh8Jiiw3FI=
+X-Received: by 2002:aca:ac89:: with SMTP id v131mr2290732oie.7.1584623898057; 
+ Thu, 19 Mar 2020 06:18:18 -0700 (PDT)
 MIME-Version: 1.0
+References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1584133954-6953-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200319124452.3yfcvq754vi4q2rv@gilmour.lan>
+ <20200319130348.GC4872@pendragon.ideasonboard.com>
+In-Reply-To: <20200319130348.GC4872@pendragon.ideasonboard.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 19 Mar 2020 13:17:51 +0000
+Message-ID: <CA+V-a8s-GZsYuBLyGnzURZfGD42f0c+QEan6FSwb2ew1=7Gj3g@mail.gmail.com>
+Subject: Re: [PATCH v3 1/4] media: dt-bindings: media: i2c: Switch to
+ assigned-clock-rates
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_061646_951182_401222CA 
-X-CRM114-Status: GOOD (  13.27  )
-X-Spam-Score: 3.6 (+++)
+X-CRM114-CacheID: sfid-20200319_061819_068691_23522B24 
+X-CRM114-Status: GOOD (  25.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [216.24.188.11 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhengdejin5[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhengdejin5[at]gmail.com]
+ provider [prabhakar.csengg[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,54 +96,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dejin Zheng <zhengdejin5@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Maxime Ripard <maxime@cerno.tech>, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Shawn Guo <shawnguo@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, linux-media <linux-media@vger.kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>, NXP Linux Team <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-it will check the return value of dwmac_dma_reset() in the
-stmmac_init_dma_engine() function and report an error if the
-return value is not zero. so don't need check here.
+Hi Laurent,
 
-Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
----
-v1 -> v2:
-	changed subject-prefix to [PATCH net-next v2] from [PATCH]
+On Thu, Mar 19, 2020 at 1:04 PM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+>
+> Hi Maxime,
+>
+> On Thu, Mar 19, 2020 at 01:44:52PM +0100, Maxime Ripard wrote:
+> > On Fri, Mar 13, 2020 at 09:12:31PM +0000, Lad Prabhakar wrote:
+> > > Use assigned-clock-rates to specify the clock rate. Also mark
+> > > clock-frequency property as deprecated.
+> > >
+> > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/media/i2c/ov5645.txt | 5 +++--
+> > >  1 file changed, 3 insertions(+), 2 deletions(-)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > > index 72ad992..e62fe82 100644
+> > > --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > > +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+> > > @@ -8,7 +8,7 @@ Required Properties:
+> > >  - compatible: Value should be "ovti,ov5645".
+> > >  - clocks: Reference to the xclk clock.
+> > >  - clock-names: Should be "xclk".
+> > > -- clock-frequency: Frequency of the xclk clock.
+> > > +- clock-frequency (deprecated): Frequency of the xclk clock.
+> > >  - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
+> > >    to the hardware pin PWDNB which is physically active low.
+> > >  - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
+> > > @@ -37,7 +37,8 @@ Example:
+> > >
+> > >                     clocks = <&clks 200>;
+> > >                     clock-names = "xclk";
+> > > -                   clock-frequency = <24000000>;
+> > > +                   assigned-clocks = <&clks 200>;
+> > > +                   assigned-clock-rates = <24000000>;
+> > >
+> > >                     vdddo-supply = <&camera_dovdd_1v8>;
+> > >                     vdda-supply = <&camera_avdd_2v8>;
+> >
+> > clock-frequency is quite different from assigned-clock-rates though,
+> > semantically speaking. clock-frequency is only about what the clock
+> > frequency is, while assigned-clock-rates will change the rate as well,
+> > and you have no idea how long it will last.
+>
+> The driver currently reads the clock-frequency property and then calls
+> clk_set_rate(). I agree tht assigned-clock-rates isn't a panacea, but I
+> think it's less of a hack than what we currently have.
+>
+> As discussed on IRC, maybe the best option in this specific case is to
+> drop clock-frequency and assigned-clok-rates, and call clk_set_rate()
+> with a hardcoded frequency of 24MHz in the driver, as that's the only
+> frequency the driver supports.
+>
+Does this mean any driver which has a fixed clock requirement shouldn't be a
+DT property and should be just handled by the drivers internally ?
 
- drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+Cheers,
+--Prabhakar
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c b/drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c
-index 688d36095333..cb87d31a99df 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c
-@@ -16,19 +16,14 @@
- int dwmac_dma_reset(void __iomem *ioaddr)
- {
- 	u32 value = readl(ioaddr + DMA_BUS_MODE);
--	int err;
- 
- 	/* DMA SW reset */
- 	value |= DMA_BUS_MODE_SFT_RESET;
- 	writel(value, ioaddr + DMA_BUS_MODE);
- 
--	err = readl_poll_timeout(ioaddr + DMA_BUS_MODE, value,
-+	return readl_poll_timeout(ioaddr + DMA_BUS_MODE, value,
- 				 !(value & DMA_BUS_MODE_SFT_RESET),
- 				 10000, 100000);
--	if (err)
--		return -EBUSY;
--
--	return 0;
- }
- 
- /* CSR1 enables the transmit DMA to check for new descriptor */
--- 
-2.25.0
-
+> > If you want to retrieve that through the clock framework, then just
+> > making clock-frequency optional is enough and falling back to
+> > clk_get_rate on the clocks property already provided is enough.
+>
+> --
+> Regards,
+>
+> Laurent Pinchart
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
