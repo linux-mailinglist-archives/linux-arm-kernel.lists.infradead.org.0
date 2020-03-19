@@ -2,64 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 325EA18AD03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 07:51:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7580318AD12
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 08:01:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=skZ4RZ64APzZhBaEMFqEwIf7qEk3t1fKOY9LtHVi2Cg=; b=C5yipc00Zezwon
-	cpFsxsLcfw5OaDQg0WNCXry25LCcxT9hYOdyTTjFgmSlNuuviXPhemrlXxmM3BUc8AaZSXiwAiRRq
-	oO1DErpZZu6pxKljosolpP0/PsGc8i4tlobax8IVx2zMhE9nr6i5UbRZK/WoZ8tbOOb7glRd4ageZ
-	HBZrHsOt+4vdaErbs2xME5GWIQsyrO8Wp0Icm/ZJlx5OiU0tML/r4JVyReqF4o3rYyjwAb8sbV8Jr
-	4wCtLDPwclDZJXhfo8M0Dtb01CdUTHDZTd6QVKgxODdc4oIM7WSpF9fSCf8K/teqnm9J6l1jMP57d
-	5frOVkaWBO4SN0UE90Sg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lWiF5max2KSL4kjeRo7SlQe1PsCoKT62jBXAkTcqavQ=; b=WuG2d3Wz+hJsGybFgMMQ2vEka
+	jkYAWj7E94NJ3eUZElHlgxRmEGKExTFwAohEeJ5IXAvbTzakhrQGQ6SOEgvk+R/L4G0HCaaAyUdh6
+	ojRILA1CTakIJQTyTJtXfuBY1npC3GBqgL39fhWqpAiw0xmCy2kSqVgRIkCEM911f81bfVxedmzNh
+	Z3IyxUvrd7JtZpAibA4RMpQa069b1f7BAwtS2SiCRm+fJTEr8mkGFiKavZtYgYcNAYRVzK9ZQipFq
+	bCxc8vjnt4bJ09hzpBPdTwiMUjtDHGJiSZma0ZBguZFG/7ispR64zC7QZJYkV7HCR9JYnb7GEVmuG
+	gDvM1f7GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEp1c-0002go-KN; Thu, 19 Mar 2020 06:51:28 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jEpBD-0006Ie-8u; Thu, 19 Mar 2020 07:01:23 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEp1R-0002eO-Gw
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 06:51:19 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jEp0w-0005WC-FG; Thu, 19 Mar 2020 07:50:46 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jEp0p-0002ri-RB; Thu, 19 Mar 2020 07:50:39 +0100
-Date: Thu, 19 Mar 2020 07:50:39 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
-Message-ID: <20200319065039.szhh5dm6v3ejwijd@pengutronix.de>
-References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
- <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
- <20200317174043.GA1464607@ulmo>
- <20200317210042.ryrof3amr7fxp4w5@pengutronix.de>
- <20200318225953.GA2874972@ulmo>
+ id 1jEpB4-0006H6-TE; Thu, 19 Mar 2020 07:01:17 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 48jd9D5Wspz9v1Md;
+ Thu, 19 Mar 2020 08:01:04 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=kSCCxuWg; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id a91KdXxJSw9z; Thu, 19 Mar 2020 08:01:04 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 48jd9D4MMFz9v1Mc;
+ Thu, 19 Mar 2020 08:01:04 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1584601264; bh=f1YwOhdxX26Y+wBuzZ6KcmY62u5y/+8Hvgm0wH6ueYs=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=kSCCxuWg89EGpfCGJFvQQEKaoHe/kCd5TGb/eJd9YNW4o9nMza+I2DetAh60y0OYl
+ jNWoevB3fgK3oMJ2kFYnvfR61+Z0w2UWeOnoIyGuiPFaUDv3CG1pmdSv9t5BVLTXov
+ N7ub0KXLdsT/u4I32YAoSgYf0fhvDN90dndC0kTk=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 784F58B769;
+ Thu, 19 Mar 2020 08:01:05 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id MWrtuWx18n7g; Thu, 19 Mar 2020 08:01:05 +0100 (CET)
+Received: from [192.168.4.90] (unknown [192.168.4.90])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id DFB5B8B798;
+ Thu, 19 Mar 2020 08:01:03 +0100 (CET)
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-2-mike.kravetz@oracle.com>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <c3071359-c5d3-4247-7f16-6f61b2fa0756@c-s.fr>
+Date: Thu, 19 Mar 2020 08:00:59 +0100
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200318225953.GA2874972@ulmo>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200318220634.32100-2-mike.kravetz@oracle.com>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_235117_567133_4985C33C 
-X-CRM114-Status: GOOD (  31.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200319_000115_243536_9558B18C 
+X-CRM114-Status: GOOD (  25.16  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
+ [URI: openpower.xyz (xyz)]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,174 +100,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
- Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
- devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Paul Cercueil <paul@crapouillou.net>, Igor Opaniuk <igor.opaniuk@toradex.com>,
- Scott Branden <sbranden@broadcom.com>, Palmer Dabbelt <palmer@dabbelt.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Paul Mackerras <paulus@samba.org>, Andrew Morton <akpm@linux-foundation.org>,
+ Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-[Dropped Tony Prisk from recipients as the address bounces]
-
-Hello,
-
-On Wed, Mar 18, 2020 at 11:59:53PM +0100, Thierry Reding wrote:
-> On Tue, Mar 17, 2020 at 10:00:42PM +0100, Uwe Kleine-K=F6nig wrote:
-> > Hello,
-> > =
-
-> > On Tue, Mar 17, 2020 at 06:40:43PM +0100, Thierry Reding wrote:
-> > > On Tue, Mar 17, 2020 at 02:32:25PM +0200, Oleksandr Suvorov wrote:
-> > > > The polarity enum definition PWM_POLARITY_INVERSED is misspelled.
-> > > > Rename it to PWM_POLARITY_INVERTED.
-> > > =
-
-> > > It isn't misspelled. "inversed" is a synonym for "inverted". Both
-> > > spellings are correct.
-> > =
-
-> > Some time ago I stumbled about "inversed", too. My spell checker doesn't
-> > know it and I checked some dictionaries and none of them knew that word:
-> > =
-
-> > https://www.lexico.com/search?utf8=3D%E2%9C%93&filter=3Ddictionary&dict=
-ionary=3Den&query=3Dinversed
-> > https://de.pons.com/%C3%BCbersetzung/englisch-deutsch/inversed
-> > https://dictionary.cambridge.org/spellcheck/english-german/?q=3Dinversed
-> > =
-
-> > https://en.wiktionary.org/wiki/inverse#Verb mentions "inverse" as a verb
-> > having "inversed" as past participle.
-> =
-
-> Here are the first three results from a Google query:
-> =
-
-> 	https://www.yourdictionary.com/inversed
-
-There is something fishy. In the Verb section it says indeed, that it is
-the past participle and simple past of inverse. The entry for inverse
-however only has sections that identify this word as adjective or noun;
-not a verb.
-
-> 	https://www.dictionary.com/browse/inversed
-
-Not sure I'd count this as hint that inversed exists. The entry shown to
-me under this URL is about "inverse" and it has
-
-	verb (used with object), in=B7versed, in=B7vers=B7ing.
-		? to invert.
-
-Does this mean: "Did you mean invert instead?"
-
-> 	https://en.wiktionary.org/wiki/inversed
-
-Yeah, that's the one I found, too.
-
-I still have the impression that "inversed" is in use because people
-don't know better and understand the intended meaning. And this results
-in leaking of this word into the references.
-
-> > Having said this I think (independent of the question if "inversed"
-> > exists) using two similar terms for the same thing just results in
-> > confusion. I hit that in the past already and I like it being addressed.
-> =
-
-> I don't know. It's pretty common to use different words for the same
-> thing. They're called synonyms.
-
-In literature yes, I agree. In a novel it is annoying to repeat the same
-words over and over again and some variation is good. In programming
-however the goal is a different one. There the goal should be to be
-precise and consistent.
-
-> > > And as you noted in the cover letter, there's a conflict between the
-> > > macro defined in dt-bindings/pwm/pwm.txt. If they end up being includ=
-ed
-> > > in the wrong order you'll get a compile error.
-> > =
-
-> > There are also other symbols that exist twice (GPIO_ACTIVE_HIGH was the
-> > first to come to my mind). I'm not aware of any problems related to
-> > these. What am I missing?
-> =
-
-> There's currently no problem, obviously. But if for some reason the
-> include files end up being included in a different order (i.e. the
-> dt-bindings header is included before linux/pwm.h) then the macro will
-> be evaluated and result in something like:
-> =
-
-> 	enum pwm_polarity {
-> 		PWM_POLARITY_NORMAL,
-> 		1,
-> 	};
-> =
-
-> and that's not valid C, so will cause a build error.
-
-I admit I didn't look closely here and I assume you are right. If I
-understand Oleksandr right this is only an intermediate step and when
-the series is applied completely this issue is gone. Still it might be
-worth to improve the series here.
-
-My original question was about similar problems with GPIO_ACTIVE_HIGH.
-Are you aware of problems there?
-
-> > > Note that DT bindings are an ABI and can
-> > > never change, whereas the enum pwm_polarity is part of a Linux intern=
-al
-> > > API and doesn't have the same restrictions as an ABI.
-> > =
-
-> > I thought only binary device trees (dtb) are supposed to be ABI.
-> =
-
-> Yes, the DTB is the ABI. dt-bindings/pwm/pwm.h is used to generate DTBs,
-> which basically makes it ABI as well.
-
-We disagree here. With this argument you could fix quite some things as
-ABI.
-
-> Yes, the symbol name may not be part of the ABI, but changing the
-> symbol becomes very inconvenient because everyone that depends on it
-> would have to change.
-
-Oleksandr adapted all in-tree users, so it only affects out-of-tree
-users. In my book this is fine.
-
-> Why bother?
-
-To make the API more precise and consistent. That's a good goal in my
-eyes.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAxOC8wMy8yMDIwIMOgIDIzOjA2LCBNaWtlIEtyYXZldHogYSDDqWNyaXTCoDoKPiBUaGUg
+YXJjaGl0ZWN0dXJlIGluZGVwZW5kZW50IHJvdXRpbmUgaHVnZXRsYl9kZWZhdWx0X3NldHVwIHNl
+dHMgdXAKPiB0aGUgZGVmYXVsdCBodWdlIHBhZ2VzIHNpemUuICBJdCBoYXMgbm8gd2F5IHRvIHZl
+cmlmeSBpZiB0aGUgcGFzc2VkCj4gdmFsdWUgaXMgdmFsaWQsIHNvIGl0IGFjY2VwdHMgaXQgYW5k
+IGF0dGVtcHRzIHRvIHZhbGlkYXRlIGF0IGEgbGF0ZXIKPiB0aW1lLiAgVGhpcyByZXF1aXJlcyB1
+bmRvY3VtZW50ZWQgY29vcGVyYXRpb24gYmV0d2VlbiB0aGUgYXJjaCBzcGVjaWZpYwo+IGFuZCBh
+cmNoIGluZGVwZW5kZW50IGNvZGUuCj4gCj4gRm9yIGFyY2hpdGVjdHVyZXMgdGhhdCBzdXBwb3J0
+IG1vcmUgdGhhbiBvbmUgaHVnZSBwYWdlIHNpemUsIHByb3ZpZGUKPiBhIHJvdXRpbmUgYXJjaF9o
+dWdldGxiX3ZhbGlkX3NpemUgdG8gdmFsaWRhdGUgYSBodWdlIHBhZ2Ugc2l6ZS4KPiBodWdldGxi
+X2RlZmF1bHRfc2V0dXAgY2FuIHVzZSB0aGlzIHRvIHZhbGlkYXRlIHBhc3NlZCB2YWx1ZXMuCj4g
+Cj4gYXJjaF9odWdldGxiX3ZhbGlkX3NpemUgd2lsbCBhbHNvIGJlIHVzZWQgaW4gYSBzdWJzZXF1
+ZW50IHBhdGNoIHRvCj4gbW92ZSBwcm9jZXNzaW5nIG9mIHRoZSAiaHVnZXBhZ2Vzej0iIGluIGFy
+Y2ggc3BlY2lmaWMgY29kZSB0byBhIGNvbW1vbgo+IHJvdXRpbmUgaW4gYXJjaCBpbmRlcGVuZGVu
+dCBjb2RlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1pa2UgS3JhdmV0eiA8bWlrZS5rcmF2ZXR6QG9y
+YWNsZS5jb20+Cj4gLS0tCj4gICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL2h1Z2V0bGIuaCAgIHwg
+IDIgKysKPiAgIGFyY2gvYXJtNjQvbW0vaHVnZXRsYnBhZ2UuYyAgICAgICAgfCAxOSArKysrKysr
+KysrKysrKy0tLS0tCj4gICBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vaHVnZXRsYi5oIHwgIDMg
+KysrCj4gICBhcmNoL3Bvd2VycGMvbW0vaHVnZXRsYnBhZ2UuYyAgICAgIHwgMjAgKysrKysrKysr
+KysrKy0tLS0tLS0KPiAgIGFyY2gvcmlzY3YvaW5jbHVkZS9hc20vaHVnZXRsYi5oICAgfCAgMyAr
+KysKPiAgIGFyY2gvcmlzY3YvbW0vaHVnZXRsYnBhZ2UuYyAgICAgICAgfCAyOCArKysrKysrKysr
+KysrKysrKystLS0tLS0tLS0tCj4gICBhcmNoL3MzOTAvaW5jbHVkZS9hc20vaHVnZXRsYi5oICAg
+IHwgIDMgKysrCj4gICBhcmNoL3MzOTAvbW0vaHVnZXRsYnBhZ2UuYyAgICAgICAgIHwgMTggKysr
+KysrKysrKysrKy0tLS0tCj4gICBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL2h1Z2V0bGIuaCAgIHwg
+IDMgKysrCj4gICBhcmNoL3NwYXJjL21tL2luaXRfNjQuYyAgICAgICAgICAgIHwgMjMgKysrKysr
+KysrKysrKysrKy0tLS0tLS0KPiAgIGFyY2gveDg2L2luY2x1ZGUvYXNtL2h1Z2V0bGIuaCAgICAg
+fCAgMyArKysKPiAgIGFyY2gveDg2L21tL2h1Z2V0bGJwYWdlLmMgICAgICAgICAgfCAyMSArKysr
+KysrKysrKysrKystLS0tLS0KPiAgIGluY2x1ZGUvbGludXgvaHVnZXRsYi5oICAgICAgICAgICAg
+fCAgNyArKysrKysrCj4gICBtbS9odWdldGxiLmMgICAgICAgICAgICAgICAgICAgICAgIHwgMTYg
+KysrKysrKysrKysrKy0tLQo+ICAgMTQgZmlsZXMgY2hhbmdlZCwgMTI2IGluc2VydGlvbnMoKyks
+IDQzIGRlbGV0aW9ucygtKQo+IAoKW3NuaXBdCgo+IGRpZmYgLS1naXQgYS9hcmNoL3Bvd2VycGMv
+aW5jbHVkZS9hc20vaHVnZXRsYi5oIGIvYXJjaC9wb3dlcnBjL2luY2x1ZGUvYXNtL2h1Z2V0bGIu
+aAo+IGluZGV4IGJkNjUwNGMyOGMyZi4uM2I1OTM5MDE2OTU1IDEwMDY0NAo+IC0tLSBhL2FyY2gv
+cG93ZXJwYy9pbmNsdWRlL2FzbS9odWdldGxiLmgKPiArKysgYi9hcmNoL3Bvd2VycGMvaW5jbHVk
+ZS9hc20vaHVnZXRsYi5oCj4gQEAgLTY0LDYgKzY0LDkgQEAgc3RhdGljIGlubGluZSB2b2lkIGFy
+Y2hfY2xlYXJfaHVnZXBhZ2VfZmxhZ3Moc3RydWN0IHBhZ2UgKnBhZ2UpCj4gICB7Cj4gICB9Cj4g
+ICAKPiArI2RlZmluZSBhcmNoX2h1Z2V0bGJfdmFsaWRfc2l6ZSBhcmNoX2h1Z2V0bGJfdmFsaWRf
+c2l6ZQo+ICtleHRlcm4gYm9vbCBfX2luaXQgYXJjaF9odWdldGxiX3ZhbGlkX3NpemUodW5zaWdu
+ZWQgbG9uZyBsb25nIHNpemUpOwoKRG9uJ3QgYWRkICdleHRlcm4nIGtleXdvcmQsIGl0IGlzIGly
+cmVsZXZhbnQgZm9yIGEgZnVuY3Rpb24gZGVjbGFyYXRpb24uCgpjaGVja3BhdGNoIC0tc3RyaWN0
+IGRvZXNuJ3QgbGlrZSBpdCBlaXRoZXIgCihodHRwczovL29wZW5wb3dlci54eXovam9iL3Nub3dw
+YXRjaC9qb2Ivc25vd3BhdGNoLWxpbnV4LWNoZWNrcGF0Y2gvMTIzMTgvL2FydGlmYWN0L2xpbnV4
+L2NoZWNrcGF0Y2gubG9nKQoKPiArCj4gICAjaW5jbHVkZSA8YXNtLWdlbmVyaWMvaHVnZXRsYi5o
+Pgo+ICAgCj4gICAjZWxzZSAvKiAhIENPTkZJR19IVUdFVExCX1BBR0UgKi8KPiBkaWZmIC0tZ2l0
+IGEvYXJjaC9wb3dlcnBjL21tL2h1Z2V0bGJwYWdlLmMgYi9hcmNoL3Bvd2VycGMvbW0vaHVnZXRs
+YnBhZ2UuYwo+IGluZGV4IDMzYjM0NjFkOTFlOC4uYjc4ZjY2MDI1MmYzIDEwMDY0NAo+IC0tLSBh
+L2FyY2gvcG93ZXJwYy9tbS9odWdldGxicGFnZS5jCj4gKysrIGIvYXJjaC9wb3dlcnBjL21tL2h1
+Z2V0bGJwYWdlLmMKPiBAQCAtNTU4LDcgKzU1OCw3IEBAIHVuc2lnbmVkIGxvbmcgdm1hX21tdV9w
+YWdlc2l6ZShzdHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSkKPiAgIAlyZXR1cm4gdm1hX2tlcm5l
+bF9wYWdlc2l6ZSh2bWEpOwo+ICAgfQo+ICAgCj4gLXN0YXRpYyBpbnQgX19pbml0IGFkZF9odWdl
+X3BhZ2Vfc2l6ZSh1bnNpZ25lZCBsb25nIGxvbmcgc2l6ZSkKPiArYm9vbCBfX2luaXQgYXJjaF9o
+dWdldGxiX3ZhbGlkX3NpemUodW5zaWduZWQgbG9uZyBsb25nIHNpemUpCj4gICB7Cj4gICAJaW50
+IHNoaWZ0ID0gX19mZnMoc2l6ZSk7Cj4gICAJaW50IG1tdV9wc2l6ZTsKPiBAQCAtNTY2LDIwICs1
+NjYsMjYgQEAgc3RhdGljIGludCBfX2luaXQgYWRkX2h1Z2VfcGFnZV9zaXplKHVuc2lnbmVkIGxv
+bmcgbG9uZyBzaXplKQo+ICAgCS8qIENoZWNrIHRoYXQgaXQgaXMgYSBwYWdlIHNpemUgc3VwcG9y
+dGVkIGJ5IHRoZSBoYXJkd2FyZSBhbmQKPiAgIAkgKiB0aGF0IGl0IGZpdHMgd2l0aGluIHBhZ2V0
+YWJsZSBhbmQgc2xpY2UgbGltaXRzLiAqLwo+ICAgCWlmIChzaXplIDw9IFBBR0VfU0laRSB8fCAh
+aXNfcG93ZXJfb2ZfMihzaXplKSkKPiAtCQlyZXR1cm4gLUVJTlZBTDsKPiArCQlyZXR1cm4gZmFs
+c2U7Cj4gICAKPiAgIAltbXVfcHNpemUgPSBjaGVja19hbmRfZ2V0X2h1Z2VfcHNpemUoc2hpZnQp
+Owo+ICAgCWlmIChtbXVfcHNpemUgPCAwKQo+IC0JCXJldHVybiAtRUlOVkFMOwo+ICsJCXJldHVy
+biBmYWxzZTsKPiAgIAo+ICAgCUJVR19PTihtbXVfcHNpemVfZGVmc1ttbXVfcHNpemVdLnNoaWZ0
+ICE9IHNoaWZ0KTsKPiAgIAo+IC0JLyogUmV0dXJuIGlmIGh1Z2UgcGFnZSBzaXplIGhhcyBhbHJl
+YWR5IGJlZW4gc2V0dXAgKi8KPiAtCWlmIChzaXplX3RvX2hzdGF0ZShzaXplKSkKPiAtCQlyZXR1
+cm4gMDsKPiArCXJldHVybiB0cnVlOwo+ICt9Cj4gICAKPiAtCWh1Z2V0bGJfYWRkX2hzdGF0ZShz
+aGlmdCAtIFBBR0VfU0hJRlQpOwo+ICtzdGF0aWMgaW50IF9faW5pdCBhZGRfaHVnZV9wYWdlX3Np
+emUodW5zaWduZWQgbG9uZyBsb25nIHNpemUpCj4gK3sKPiArCWludCBzaGlmdCA9IF9fZmZzKHNp
+emUpOwo+ICsKPiArCWlmICghYXJjaF9odWdldGxiX3ZhbGlkX3NpemUoc2l6ZSkpCj4gKwkJcmV0
+dXJuIC1FSU5WQUw7Cj4gICAKPiArCWlmICghc2l6ZV90b19oc3RhdGUoc2l6ZSkpCj4gKwkJaHVn
+ZXRsYl9hZGRfaHN0YXRlKHNoaWZ0IC0gUEFHRV9TSElGVCk7Cj4gICAJcmV0dXJuIDA7Cj4gICB9
+Cj4gICAKCltzbmlwXQoKPiBkaWZmIC0tZ2l0IGEvYXJjaC94ODYvbW0vaHVnZXRsYnBhZ2UuYyBi
+L2FyY2gveDg2L21tL2h1Z2V0bGJwYWdlLmMKPiBpbmRleCA1YmZkNWFlZjUzNzguLjUxZTYyMDhm
+ZGVlYyAxMDA2NDQKPiAtLS0gYS9hcmNoL3g4Ni9tbS9odWdldGxicGFnZS5jCj4gKysrIGIvYXJj
+aC94ODYvbW0vaHVnZXRsYnBhZ2UuYwo+IEBAIC0xODEsMTYgKzE4MSwyNSBAQCBodWdldGxiX2dl
+dF91bm1hcHBlZF9hcmVhKHN0cnVjdCBmaWxlICpmaWxlLCB1bnNpZ25lZCBsb25nIGFkZHIsCj4g
+ICAjZW5kaWYgLyogQ09ORklHX0hVR0VUTEJfUEFHRSAqLwo+ICAgCj4gICAjaWZkZWYgQ09ORklH
+X1g4Nl82NAo+ICtib29sIF9faW5pdCBhcmNoX2h1Z2V0bGJfdmFsaWRfc2l6ZSh1bnNpZ25lZCBs
+b25nIGxvbmcgc2l6ZSkKPiArewo+ICsJaWYgKHNpemUgPT0gUE1EX1NJWkUpCj4gKwkJcmV0dXJu
+IHRydWU7Cj4gKwllbHNlIGlmIChzaXplID09IFBVRF9TSVpFICYmIGJvb3RfY3B1X2hhcyhYODZf
+RkVBVFVSRV9HQlBBR0VTKSkKPiArCQlyZXR1cm4gdHJ1ZTsKPiArCWVsc2UKPiArCQlyZXR1cm4g
+ZmFsc2U7Cj4gK30KPiArCj4gICBzdGF0aWMgX19pbml0IGludCBzZXR1cF9odWdlcGFnZXN6KGNo
+YXIgKm9wdCkKPiAgIHsKPiAtCXVuc2lnbmVkIGxvbmcgcHMgPSBtZW1wYXJzZShvcHQsICZvcHQp
+Owo+IC0JaWYgKHBzID09IFBNRF9TSVpFKSB7Cj4gLQkJaHVnZXRsYl9hZGRfaHN0YXRlKFBNRF9T
+SElGVCAtIFBBR0VfU0hJRlQpOwo+IC0JfSBlbHNlIGlmIChwcyA9PSBQVURfU0laRSAmJiBib290
+X2NwdV9oYXMoWDg2X0ZFQVRVUkVfR0JQQUdFUykpIHsKPiAtCQlodWdldGxiX2FkZF9oc3RhdGUo
+UFVEX1NISUZUIC0gUEFHRV9TSElGVCk7Cj4gKwl1bnNpZ25lZCBsb25nIGxvbmcgcHMgPSBtZW1w
+YXJzZShvcHQsICZvcHQpOwo+ICsKPiArCWlmIChhcmNoX2h1Z2V0bGJfdmFsaWRfc2l6ZShwcykp
+IHsKPiArCQlodWdldGxiX2FkZF9oc3RhdGUoaWxvZzIocHMpIC0gUEFHRV9TSElGVCk7Cj4gICAJ
+fSBlbHNlIHsKPiAgIAkJaHVnZXRsYl9iYWRfc2l6ZSgpOwo+IC0JCXByaW50ayhLRVJOX0VSUiAi
+aHVnZXBhZ2VzejogVW5zdXBwb3J0ZWQgcGFnZSBzaXplICVsdSBNXG4iLAo+ICsJCXByaW50ayhL
+RVJOX0VSUiAiaHVnZXBhZ2VzejogVW5zdXBwb3J0ZWQgcGFnZSBzaXplICVsbHUgTVxuIiwKPiAg
+IAkJCXBzID4+IDIwKTsKCk5vd2FkYXlzIHdlIHVzZSBwcl9lcnIoKSBpbnN0ZWFkIG9mIHByaW50
+ay4KCkl0IHdvdWxkIGFsc28gbGlrZWx5IGFsbG93IHlvdSB0byBoYXZlIGV2ZXJ5dGhpbmcgZml0
+IG9uIGEgc2luZ2xlIGxpbmUuCgo+ICAgCQlyZXR1cm4gMDsKPiAgIAl9Cj4gZGlmZiAtLWdpdCBh
+L2luY2x1ZGUvbGludXgvaHVnZXRsYi5oIGIvaW5jbHVkZS9saW51eC9odWdldGxiLmgKPiBpbmRl
+eCBiODMxZTlmYTFhMjYuLjMzMzQzZWI5ODBkMCAxMDA2NDQKPiAtLS0gYS9pbmNsdWRlL2xpbnV4
+L2h1Z2V0bGIuaAo+ICsrKyBiL2luY2x1ZGUvbGludXgvaHVnZXRsYi5oCj4gQEAgLTY3OCw2ICs2
+NzgsMTMgQEAgc3RhdGljIGlubGluZSBzcGlubG9ja190ICpodWdlX3B0ZV9sb2NrcHRyKHN0cnVj
+dCBoc3RhdGUgKmgsCj4gICAJcmV0dXJuICZtbS0+cGFnZV90YWJsZV9sb2NrOwo+ICAgfQo+ICAg
+Cj4gKyNpZm5kZWYgYXJjaF9odWdldGxiX3ZhbGlkX3NpemUKPiArc3RhdGljIGlubGluZSBib29s
+IGFyY2hfaHVnZXRsYl92YWxpZF9zaXplKHVuc2lnbmVkIGxvbmcgbG9uZyBzaXplKQo+ICt7Cj4g
+KwlyZXR1cm4gKHNpemUgPT0gSFBBR0VfU0laRSk7CgpOb3Qgc3VyZSB0aGUgKCApIGFyZSBuZWNl
+c3NhcnkuCgo+ICt9Cj4gKyNlbmRpZgo+ICsKPiAgICNpZm5kZWYgaHVnZXBhZ2VzX3N1cHBvcnRl
+ZAo+ICAgLyoKPiAgICAqIFNvbWUgcGxhdGZvcm0gZGVjaWRlIHdoZXRoZXIgdGhleSBzdXBwb3J0
+IGh1Z2UgcGFnZXMgYXQgYm9vdAo+IGRpZmYgLS1naXQgYS9tbS9odWdldGxiLmMgYi9tbS9odWdl
+dGxiLmMKPiBpbmRleCBkOGViZDg3Njg3MWQuLjJmOTkzNTliOTNhZiAxMDA2NDQKPiAtLS0gYS9t
+bS9odWdldGxiLmMKPiArKysgYi9tbS9odWdldGxiLmMKPiBAQCAtMzIyNCwxMiArMzIyNCwyMiBA
+QCBzdGF0aWMgaW50IF9faW5pdCBodWdldGxiX25ycGFnZXNfc2V0dXAoY2hhciAqcykKPiAgIH0K
+PiAgIF9fc2V0dXAoImh1Z2VwYWdlcz0iLCBodWdldGxiX25ycGFnZXNfc2V0dXApOwo+ICAgCj4g
+LXN0YXRpYyBpbnQgX19pbml0IGh1Z2V0bGJfZGVmYXVsdF9zZXR1cChjaGFyICpzKQo+ICtzdGF0
+aWMgaW50IF9faW5pdCBkZWZhdWx0X2h1Z2VwYWdlc3pfc2V0dXAoY2hhciAqcykKPiAgIHsKPiAt
+CWRlZmF1bHRfaHN0YXRlX3NpemUgPSBtZW1wYXJzZShzLCAmcyk7Cj4gKwl1bnNpZ25lZCBsb25n
+IGxvbmcgc2l6ZTsKCldoeSB1bnNpZ25lZCBsb25nIGxvbmcgPwoKZGVmYXVsdF9oc3RhdGVfc2l6
+ZSBpcyBsb25nLgoKSSBjYW4ndCBpbWFnaW5lIDMyIGJpdHMgcGxhdGZvcm1zIGhhdmluZyBhIGh1
+Z2VwYWdlIHdpdGggYSA2NCBiaXRzIHNpemUuCgo+ICsJY2hhciAqc2F2ZWRfcyA9IHM7Cj4gKwo+
+ICsJc2l6ZSA9IG1lbXBhcnNlKHMsICZzKTsKClRoZSB1cGRhdGVkIHMgaXMgbm90IHJldXNlZCBh
+ZnRlciB0aGF0IHNvIHlvdSBjYW4gcGFzcyBOVUxMIGluc3RlYWQgb2YgCiZzIGFuZCB0aGVuIHlv
+dSBkb24ndCBuZWVkIHRoZSBzYXZlZF9zLgoKPiArCj4gKwlpZiAoIWFyY2hfaHVnZXRsYl92YWxp
+ZF9zaXplKHNpemUpKSB7Cj4gKwkJcHJfZXJyKCJIdWdlVExCOiB1bnN1cHBvcnRlZCBkZWZhdWx0
+X2h1Z2VwYWdlc3ogJXNcbiIsIHNhdmVkX3MpOwo+ICsJCXJldHVybiAwOwo+ICsJfQo+ICsKPiAr
+CWRlZmF1bHRfaHN0YXRlX3NpemUgPSBzaXplOwo+ICAgCXJldHVybiAxOwo+ICAgfQo+IC1fX3Nl
+dHVwKCJkZWZhdWx0X2h1Z2VwYWdlc3o9IiwgaHVnZXRsYl9kZWZhdWx0X3NldHVwKTsKPiArX19z
+ZXR1cCgiZGVmYXVsdF9odWdlcGFnZXN6PSIsIGRlZmF1bHRfaHVnZXBhZ2Vzel9zZXR1cCk7Cj4g
+ICAKPiAgIHN0YXRpYyB1bnNpZ25lZCBpbnQgY3B1c2V0X21lbXNfbnIodW5zaWduZWQgaW50ICph
+cnJheSkKPiAgIHsKPiAKCgpDaHJpc3RvcGhlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
+cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
