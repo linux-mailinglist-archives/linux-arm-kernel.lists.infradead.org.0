@@ -2,62 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5003118B3DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 14:04:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14DA518B3FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 14:06:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nd5swdH8XFqKKjBnnfcf2M5ZwbJCcUq1e4pQNptfvmg=; b=GU4zD4k1CCAxHB
-	EXgqsWOEL8o+DTSzff6VzDhy66pOegwb8Cw0l9IG9jyYiuCWfTjpcyVCtPKyoIi0F1syTTMKfOXCp
-	ecDcKj3XMr5WPWUFqm3CftJv301yJGrI6OvG7Bxo3IhVd8xlE3yvmtsI39zxDyhu1HDzmttQKsgJq
-	jS/L/yoYs8dmXMatSfZCopjj3gsTY7ldwBQvqy15eVGYKUAlvaZgYZfKbb7pPm5u29b+mH+7q8t0G
-	7anIXbewtw9Kmj3qOVuMSb3ad4BUtxIiqlDxW8yoBG6bW6GxdXL7WwzVRR3EzvBYBtA13nE2J38BP
-	iKv7iMFUwnH3Qhzh5B4g==;
+	List-Owner; bh=z1XU5gJQW2nU9+JqwEbq6hfsvPBXO1hSyEqcw6RzQiA=; b=FYo+zWZMAcFSGV
+	uMT8o+IGgKjUquYWHFoV2vaa0b1FiDEZx2K1CEeErk43E0AF4EYk8WlqVeSKswpvss4prt3vRsBum
+	Qz1oIhDCSRXaYm1G8ZqUIwH9jNhOPvyutRIEvJcyzgN5T/RO7OFK4WaFAkX5xOgb+VoJn4L94AYSW
+	d34OghCk4o7Xhl87aZJeySQ0RNWDZJ18sXPHEMUnC1QpPV473QESr5ygkxkYcFBO2ybpud2cR85Jd
+	3jAoOFHMOXXL/Qur8WZxzXYGq6Ys5aeC7zJsW2rrkzZlG6DfsKVymtKx3/wcddlU6hR5dfT6XufG5
+	vEbtsctURIZDembDQPoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEuqK-0004It-3T; Thu, 19 Mar 2020 13:04:12 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jEusH-0005xa-NM; Thu, 19 Mar 2020 13:06:13 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEuq9-0004HM-DL
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 13:04:02 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5B98EA53;
- Thu, 19 Mar 2020 14:03:54 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1584623034;
- bh=D1jU5CecA8xmxcxpuPAP4tWuL8Jb5B+/4IYit8jX3O8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=f/2X+PGB9yBjdoPWDUPQluoD2ZTKNIlyTlrfleMbp07PhAnFnYboOGvf4RuR5sczj
- pz3qd7BHaRLVYrTMmPRH85jd7mrnmw50+rai0pAUEjPAaD3Jr/xdWmF+kqzURJ1A5w
- BfrL2lEgZgAp36XWI89ffk9rD1B1wz9CGhDMMLsA=
-Date: Thu, 19 Mar 2020 15:03:48 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v3 1/4] media: dt-bindings: media: i2c: Switch to
- assigned-clock-rates
-Message-ID: <20200319130348.GC4872@pendragon.ideasonboard.com>
+ id 1jEus9-0005ws-Eq
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 13:06:07 +0000
+Received: by mail-ot1-x341.google.com with SMTP id a2so2236348otq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 06:06:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JNrzJ43ADUGKGgcYIYmm8uAsAxVnbPxCKcqomy6wzR8=;
+ b=TVp42mYXKeI+CzEDqNdIZ8OSjOYd/x2BHF3WQsRwUplFoeXvhUkRzymLKfdlVKXVgS
+ GzwUg2Q7ho8ZvC7uyy7SUT28MucxF4UxCJ/qO2fnyTsnua7SxjrDkXe0e99BVkOpALLL
+ iX+Nfz8vqxrVET+CnfJyBGbZP9aENhotFEL8cWKt0rx0UXQxhpJcqzqqhY1hbF4XQMVh
+ hUW+v4bgFd5HlN+csF5pQThvddNw+lZumxBcb3eP9pq7feovGzeBUf7Mthvx/0+wAbcr
+ 6u5pwajrtYTDgDnYY4EI1S3xWl1jc0aoSPYiQM1i+Ngl1EVzCXMzYw/esdw5gERxe7wM
+ leBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JNrzJ43ADUGKGgcYIYmm8uAsAxVnbPxCKcqomy6wzR8=;
+ b=OkpM8mRyYCiBwV2deM6O502Bv521nbQKz+rMJHp9c7RzVlhTFvqmXTZFrJG2TaZGUy
+ SOEVc+OsSAbUMhQtSSp2aPf6GAgwZKjQf+5r3MUtqaTyOAdMiJhk+JJ1Yuq+i3YlYfz3
+ PupGOq7roJIgiZckp414e/XBzZTYhu+pY6sHJb9YX00uU8LougSqIkVptNqNLLXB/b2q
+ oEzIIATrdbZ9ycKLMoxO8+Zw5X9mtFiR/uGwnBySo7ESAz9Fie9hm548WRczRTaxs4B8
+ 0heX2zKW2FdNz81ml3QVMY8tVTyTVkOOr4xFb+RCDptzkzum7ajWZUMH4w/90IjEa0xZ
+ N8/Q==
+X-Gm-Message-State: ANhLgQ2USKY8RGLRRsLHKlmtcdDumVJYLAXz8SyNqcXr5eUBMjVfV8zh
+ rTiaCAgF+sjFIj49bLK+YTTOs9RU0H4lcJr5X54=
+X-Google-Smtp-Source: ADFU+vu6TgclLFcGUTWCKylwKuQ1xUKX/i4NckoB5Lg2bmpS65EzGwsKNTO9xiLZkksGH2ZBHR96INCeNIhBb87zs70=
+X-Received: by 2002:a9d:264a:: with SMTP id a68mr2250727otb.176.1584623163859; 
+ Thu, 19 Mar 2020 06:06:03 -0700 (PDT)
+MIME-Version: 1.0
 References: <1584133954-6953-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
  <1584133954-6953-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
  <20200319124452.3yfcvq754vi4q2rv@gilmour.lan>
-MIME-Version: 1.0
-Content-Disposition: inline
 In-Reply-To: <20200319124452.3yfcvq754vi4q2rv@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 19 Mar 2020 13:05:37 +0000
+Message-ID: <CA+V-a8vH+wJoC1SL0nuk8ypAH3Mosd+K1dLNDA5wwgP4W6A=CQ@mail.gmail.com>
+Subject: Re: [PATCH v3 1/4] media: dt-bindings: media: i2c: Switch to
+ assigned-clock-rates
+To: Maxime Ripard <maxime@cerno.tech>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_060401_605005_981DC19F 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20200319_060605_502799_AAD44B07 
+X-CRM114-Status: GOOD (  22.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.csengg[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -76,18 +96,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  Ezequiel Garcia <ezequiel@collabora.com>,
  Sascha Hauer <s.hauer@pengutronix.de>, Magnus Damm <magnus.damm@gmail.com>,
  Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
  NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+ Sakari Ailus <sakari.ailus@linux.intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -95,7 +119,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Maxime,
 
-On Thu, Mar 19, 2020 at 01:44:52PM +0100, Maxime Ripard wrote:
+Thank you for the review.
+
+On Thu, Mar 19, 2020 at 12:45 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> Hi,
+>
 > On Fri, Mar 13, 2020 at 09:12:31PM +0000, Lad Prabhakar wrote:
 > > Use assigned-clock-rates to specify the clock rate. Also mark
 > > clock-frequency property as deprecated.
@@ -120,37 +149,44 @@ On Thu, Mar 19, 2020 at 01:44:52PM +0100, Maxime Ripard wrote:
 > >  - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
 > > @@ -37,7 +37,8 @@ Example:
 > >
-> >  			clocks = <&clks 200>;
-> >  			clock-names = "xclk";
-> > -			clock-frequency = <24000000>;
-> > +			assigned-clocks = <&clks 200>;
-> > +			assigned-clock-rates = <24000000>;
+> >                       clocks = <&clks 200>;
+> >                       clock-names = "xclk";
+> > -                     clock-frequency = <24000000>;
+> > +                     assigned-clocks = <&clks 200>;
+> > +                     assigned-clock-rates = <24000000>;
 > >
-> >  			vdddo-supply = <&camera_dovdd_1v8>;
-> >  			vdda-supply = <&camera_avdd_2v8>;
-> 
+> >                       vdddo-supply = <&camera_dovdd_1v8>;
+> >                       vdda-supply = <&camera_avdd_2v8>;
+>
 > clock-frequency is quite different from assigned-clock-rates though,
 > semantically speaking. clock-frequency is only about what the clock
 > frequency is, while assigned-clock-rates will change the rate as well,
 > and you have no idea how long it will last.
-
-The driver currently reads the clock-frequency property and then calls
-clk_set_rate(). I agree tht assigned-clock-rates isn't a panacea, but I
-think it's less of a hack than what we currently have.
-
-As discussed on IRC, maybe the best option in this specific case is to
-drop clock-frequency and assigned-clok-rates, and call clk_set_rate()
-with a hardcoded frequency of 24MHz in the driver, as that's the only
-frequency the driver supports.
+>
+Agreed clock-frequency tells whats the clock frequency, wrt ov5645 driver
+this property was read and and the clock rate was changed accordingly as per
+the value being passed. So switching  to assigned-clock-rates does bypass
+of clock rate being set in the ov5645 driver [1] as the framework does it.
 
 > If you want to retrieve that through the clock framework, then just
 > making clock-frequency optional is enough and falling back to
 > clk_get_rate on the clocks property already provided is enough.
+>
+As done in patch [1] ?
 
--- 
-Regards,
+Fyi I have posted a v4 [2] to ML.
 
-Laurent Pinchart
+[1] https://patchwork.linuxtv.org/patch/62378/
+[2] https://patchwork.linuxtv.org/project/linux-media/list/?series=1990
+
+Cheers,
+--Prabhakar
+
+> Maxime
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
