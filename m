@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C8A718BF89
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:43:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6068818BFAE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 19:52:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ijUPM1d6YyTstN2eQ60BqX//Ch/KUO+fbr3bJZo17U=; b=I5hq36hB6BGVQ4
-	3LedGIL9N1wEXrY9xXAy3iIfQFcwHvxlRPye95jcYzPzdF2mKJtEo4oVAcpHKNrPlKZpyqvf+/wwO
-	+T5o2NGKZi59ci/BJXvXy4gsmbOHo1YDpGRSPe51A991SBetCgt2oT8pBvupahU0EusUzbrDNYA0c
-	zo8mGkFx6OsWdYWf+t++PVx7Kvmt5SG3P5a5ramu6o1l5e4fdvfZr7AxudMk9dg3Kc7TcKsIAllIE
-	0gEeDFhjApkiJ7uubjVWigfnE+t8xfFDQ6jYxRnhEDNuf+ML3e1a1VirFWRuSv2XIwP+VciaNYulD
-	xXIbt9AR1Y+ZZ9gDGGOw==;
+	List-Owner; bh=UIqDbQ4FhO5f1NJlum+3c/PgkZfCnhin0E2uP5oDmo4=; b=SfAtwWK6ndKYg/
+	UfGz4q/7nTAiVcoR7ew4MdlJzcu6p/GnugLzJDd+G+gL10VQDTtwD7vpJDnGwfnLIxWjOFaO4uyUJ
+	XMbR0dfP8NOCRujZ7bmqvafRNsgNFkCHeZ6ScYBQtwB4uvpeD0o2XcVbV89Oqt8l/He+v/1Sr2r++
+	322nawTTgG2/p6Fug5bFIoj0HjT1pMfduzZrMNIP8nPxPndloH502hKomlNRlHbAsCKGqnYKGjg28
+	5/CZzPpriTIkIpeob5T1jL8SbTia1kv9R3KmToFtDAiVZNPJSzZBfnGSSaGcaW1XQNSIN0lKK7BSr
+	WeLN5CzugRXkcMgsEhJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF08O-0000Sr-8o; Thu, 19 Mar 2020 18:43:12 +0000
+	id 1jF0HQ-0004h2-A5; Thu, 19 Mar 2020 18:52:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF08G-0000SN-NC
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:43:05 +0000
+ id 1jF0HI-0004g5-2y
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 18:52:25 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0A3D820787;
- Thu, 19 Mar 2020 18:43:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 132C92070A;
+ Thu, 19 Mar 2020 18:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584643384;
- bh=+vgcHdLhhtb+ajyUNxQekv1ON55TgPbVwgX7E6jDLgU=;
+ s=default; t=1584643941;
+ bh=m+shdL7C7EaM3QtPm8TsyLH2ZhlRHrypClgBpyQGT48=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sUxpqcgD6Y93HTuHXg5h0Qz3nt+L3A2TfD5OrDS6vZ8dvWZqSV0Ki0TnxUUiJZY6Q
- dmxl/GTcRwlUaw07dL8J++h7uq24D+3hFk7zw4A3UrD2mm33dnZnboHUQD/mDwb2A8
- j03xPtn5geOFe+RB9aX1Wv2ZMxGhr7rDHuARE9K0=
-Date: Thu, 19 Mar 2020 18:42:59 +0000
+ b=HHGlocEeaJaJXF2JjGzFzJqrg1ksv0lrzQ0/Vu+MFhg3roqKb9vpUmJn3+LshqLnA
+ TBGeYPYjvNWZDnktdr9genFx9zC6PfegcStAynai0o154Sx8gMVJqvYvciCUL6lxYu
+ +7wpTB9QVeieoB+2vnsLbmKArqykYvBvc6plJ1WM=
+Date: Thu, 19 Mar 2020 18:52:16 +0000
 From: Will Deacon <will@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
 Subject: Re: [PATCH] arm64: compat: Fix syscall number of compat_clock_getres
-Message-ID: <20200319184258.GC27141@willie-the-truck>
+Message-ID: <20200319185216.GD27141@willie-the-truck>
 References: <20200319141138.19343-1-vincenzo.frascino@arm.com>
+ <20200319181203.GB29214@mbp>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200319141138.19343-1-vincenzo.frascino@arm.com>
+In-Reply-To: <20200319181203.GB29214@mbp>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_114304_778292_10D8CD3D 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20200319_115224_151708_94624E34 
+X-CRM114-Status: GOOD (  12.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,46 +77,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, clang-built-linux@googlegroups.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "clang-built-linux@googlegroups.com" <clang-built-linux@googlegroups.com>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 02:11:38PM +0000, Vincenzo Frascino wrote:
-> The syscall number of compat_clock_getres was erroneously set to 247
-> instead of 264. This causes the vDSO fallback of clock_getres to land
-> on the wrong syscall.
+On Thu, Mar 19, 2020 at 06:12:03PM +0000, Catalin Marinas wrote:
+> On Thu, Mar 19, 2020 at 02:11:38PM +0000, Vincenzo Frascino wrote:
+> > The syscall number of compat_clock_getres was erroneously set to 247
+> > instead of 264. This causes the vDSO fallback of clock_getres to land
+> > on the wrong syscall.
+> > 
+> > Address the issue fixing the syscall number of compat_clock_getres.
+> > 
+> > Fixes: 53c489e1dfeb6 ("arm64: compat: Add missing syscall numbers")
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Will Deacon <will.deacon@arm.com>
 > 
-> Address the issue fixing the syscall number of compat_clock_getres.
-> 
-> Fixes: 53c489e1dfeb6 ("arm64: compat: Add missing syscall numbers")
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> ---
->  arch/arm64/include/asm/unistd.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/unistd.h b/arch/arm64/include/asm/unistd.h
-> index 1dd22da1c3a9..803039d504de 100644
-> --- a/arch/arm64/include/asm/unistd.h
-> +++ b/arch/arm64/include/asm/unistd.h
-> @@ -25,8 +25,8 @@
->  #define __NR_compat_gettimeofday	78
->  #define __NR_compat_sigreturn		119
->  #define __NR_compat_rt_sigreturn	173
-> -#define __NR_compat_clock_getres	247
->  #define __NR_compat_clock_gettime	263
-> +#define __NR_compat_clock_getres	264
->  #define __NR_compat_clock_gettime64	403
->  #define __NR_compat_clock_getres_time64	406
+> Will left ARM about 8 months ago IIRC ;).
 
-Ha, what a howler. I'll queue this one as a fix.
+Haha, well I certainly tried to!
+
+> > Cc: stable@vger.kernel.org
+> > Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> 
+> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> 
+> I think Will could take this as a fix.
+
+For sure, I'm queuing it now.
 
 Will
 
