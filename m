@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3241E18B340
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:20:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9419218B345
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:21:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZyrdkbzP1+GMmlDHNhEPoHxK3r++pMQdG2I0MYZI7GY=; b=TSSK1p97yYdOrvLQMqGGTIcErT
-	1shXLAS6TwfsxLb5D/CAMQHapRjsiAZc7x41be5Z93dewqxCsJzMf4e+FuCik0Nn7Xr9zvLg60gfY
-	ih4c52W3WXxc39uMLLGKY6pzQLxWmAMRDzbeI49zuDjcmlV2AVO1Inmg+RUupSIPQSqUHT09pYlTu
-	MLix+hYUpF1NTi2X4zp8iTY/AxEHE6NlbZfhrx7iHV39I126irheMdwf4rT/OYdtmjzHZ+/ytfR1I
-	2yPZbG4QN5V67BfNrMDq7FlmRt58F5s8c049Y1nvc2c854ZbvyRMFwTZ+45ZNHyM4rLv46AX3yEDp
-	YczvyFpg==;
+	bh=+1PLWkt0fLrhM3VfvBPWb97Ga35XTQOgDzmx4oIwPXk=; b=s5JkguvX58GpV8TezhqyLm8MXw
+	HslKjgKyIsGx5Nec3ke8mJ6pTB+dsNY4wmfEvvQMWQY9Cn4/u1cJXR+ogbAQVQegirrL9YEUxqxEa
+	6s8eDAzXJbUxHPVtfvVfXR0208P1LGhRHlbpO9Nn/ZJ2PNUxTMQoa/ykpzFsMKr19izvbnVnLrsbM
+	VbNB2wNfQExjqQ8enx4owEzk/kmbIIXluC481QwPUpxWZU5q5XK6GSx9b8LpYL7d4E3AvM828ZXv4
+	MQaXw3aKDxZHrldx9ALfd+xMbzDMIn5SlSDJjRnY9IHewBminwNtwtkTn3gG7BHJosWqXaZuKCkeF
+	SXaclm8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEuA8-00035P-2M; Thu, 19 Mar 2020 12:20:36 +0000
+	id 1jEuB2-0003MV-U7; Thu, 19 Mar 2020 12:21:32 +0000
 Received: from relmlor1.renesas.com ([210.160.252.171]
  helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEu9w-00034J-UP
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 12:20:26 +0000
-X-IronPort-AV: E=Sophos;i="5.70,571,1574089200"; d="scan'208";a="42339758"
+ id 1jEuAr-0003Lb-C3
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 12:21:25 +0000
+X-IronPort-AV: E=Sophos;i="5.70,571,1574089200"; d="scan'208";a="42339811"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie5.idc.renesas.com with ESMTP; 19 Mar 2020 21:20:24 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 19 Mar 2020 21:21:20 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id 79A8042BCBB7;
- Thu, 19 Mar 2020 21:20:20 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id CF1A44013DFF;
+ Thu, 19 Mar 2020 21:21:16 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
@@ -40,16 +40,15 @@ To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-Subject: [PATCH v4 1/5] media: dt-bindings: media: i2c: Deprecate usage of the
- clock-frequency property
-Date: Thu, 19 Mar 2020 12:19:19 +0000
-Message-Id: <1584620363-2255-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v4 2/5] media: i2c: ov5645: Switch to assigned-clock-rates
+Date: Thu, 19 Mar 2020 12:19:20 +0000
+Message-Id: <1584620363-2255-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_052025_105182_6A62B1E3 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20200319_052121_792085_FE0DA8D2 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,37 +79,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Deprecate usage of the clock-frequency property. The preferred method to
-set clock rates is to use assigned-clock-rates.
+This patch switches to assigned-clock-rates for specifying the clock rate.
+The clk-conf.c internally handles setting the clock rate when
+assigned-clock-rates is passed.
+
+The driver now sets the clock frequency only if the deprecated property
+clock-frequency is defined instead assigned-clock-rates, this is to avoid
+breakage with existing DT binaries.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 ---
- Documentation/devicetree/bindings/media/i2c/ov5645.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/media/i2c/ov5645.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-index 72ad992f77be..1c85c78ec58c 100644
---- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-+++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-@@ -8,7 +8,6 @@ Required Properties:
- - compatible: Value should be "ovti,ov5645".
- - clocks: Reference to the xclk clock.
- - clock-names: Should be "xclk".
--- clock-frequency: Frequency of the xclk clock.
- - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-   to the hardware pin PWDNB which is physically active low.
- - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-@@ -37,7 +36,8 @@ Example:
+diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
+index a6c17d15d754..e298acdadeef 100644
+--- a/drivers/media/i2c/ov5645.c
++++ b/drivers/media/i2c/ov5645.c
+@@ -1094,25 +1094,25 @@ static int ov5645_probe(struct i2c_client *client)
+ 		return PTR_ERR(ov5645->xclk);
+ 	}
  
- 			clocks = <&clks 200>;
- 			clock-names = "xclk";
--			clock-frequency = <24000000>;
-+			assigned-clocks = <&clks 200>;
-+			assigned-clock-rates = <24000000>;
+-	ret = of_property_read_u32(dev->of_node, "clock-frequency", &xclk_freq);
+-	if (ret) {
+-		dev_err(dev, "could not get xclk frequency\n");
+-		return ret;
++	/* check if deprecated property clock-frequency is defined */
++	ret = of_property_read_u32(dev->of_node, "clock-frequency",
++				   &xclk_freq);
++	if (!ret) {
++		ret = clk_set_rate(ov5645->xclk, xclk_freq);
++		if (ret) {
++			dev_err(dev, "could not set xclk frequency\n");
++			return ret;
++		}
+ 	}
  
- 			vdddo-supply = <&camera_dovdd_1v8>;
- 			vdda-supply = <&camera_avdd_2v8>;
+ 	/* external clock must be 24MHz, allow 1% tolerance */
++	xclk_freq = clk_get_rate(ov5645->xclk);
+ 	if (xclk_freq < 23760000 || xclk_freq > 24240000) {
+ 		dev_err(dev, "external clock frequency %u is not supported\n",
+ 			xclk_freq);
+ 		return -EINVAL;
+ 	}
+ 
+-	ret = clk_set_rate(ov5645->xclk, xclk_freq);
+-	if (ret) {
+-		dev_err(dev, "could not set xclk frequency\n");
+-		return ret;
+-	}
+-
+ 	for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
+ 		ov5645->supplies[i].supply = ov5645_supply_name[i];
+ 
 -- 
 2.20.1
 
