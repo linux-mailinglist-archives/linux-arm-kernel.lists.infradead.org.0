@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CF4F18B0A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 10:56:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6656F18B0D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 11:03:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbQW2GWxXTi66ldj3BQEqxhsPVAyxrarOJdoomWm31s=; b=jHoGy8XuXR+uGF
-	1jbvmTmoDONkROf38HUe0OCVZs5y+XqJdlwTn85Bf1BEL8gFx6XNEPpKufkMkp/byxwrnveg5C3wO
-	DZp/wg+I/ivN2jTO5nVaCISfoHe3uJ0CObWWRL6OABbRgr42awaOOOd9Sc973QbLqCKcz7s5qEbZf
-	GUqplYstA4kFtjowKDDLpMm74d2oGMFsLLjEMGpfWAJRoo+7xQFYOuIxd9PwalDvTBDf8s3jh0tOj
-	Q0bC2NHHRB64vuHsB/zn2aDDRkWOWNxpBkwUjeAwRR8XJ8fzLALnPj73VVQb3gOLhK+2QD6PYZviB
-	qMVYEqohgbQaTQ659yOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XBXn01GlB+8DKWV9jhaMasxoMChcr6zFK7CrH/301T4=; b=RIYSyZSnGSd8tjPRMMabmerES
+	rqOviO43U7U/w7otxPB+V47h9Nw19dzbUisiNsaIr9ua8C9Akhwuqoh+foiyMZ0BZrVbNxDtPicnD
+	CRyR6QFW0j2W58IEMA4LZbtDwzKdrlFrROicB71gUyJx2ZeN2HDeAJSKtsDmlnYQgeVwaCb6RYksB
+	H6Kra3DAczth7ELFlO5XHybmAXWdp5cWkBSZVYA6j0gw5I9pzUg0AjYE8G2YGtLnzaARKVg1q8/Vo
+	5tHvm2pQ+NZa2cC90TVj8+E1osRMfqib7ky7o1iEhpLewqzp7Oy/h6gvGAPQtBAZIjuYXOAk0mL63
+	vUPgjqfpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEruc-0002oP-76; Thu, 19 Mar 2020 09:56:26 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jEs1V-00059E-MB; Thu, 19 Mar 2020 10:03:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jErtx-0002OG-Mn; Thu, 19 Mar 2020 09:55:47 +0000
-X-UUID: a86a32e420554ac182796a11bc3f877b-20200319
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=EgjJ4/ozN7amIJ2TNqfWpzKzRvybv6gnG75eeEAlrTA=; 
- b=hDWyToAOP+cLBPWrdgTVFUSXIVixELalE8FQAS8xj/Ov7TkSOWfr5eUc7g+QXlxiVxvXmgkRf5DCgN3+MdmOY/rJ699HqTcESMJNrpaBJWn9BasY9E0USy0iNfwAffc294xZ5cmQkU82Q029tv1FvkgUWzuwAI8jgWPt8R7dXfQ=;
-X-UUID: a86a32e420554ac182796a11bc3f877b-20200319
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <henry.yen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 274401742; Thu, 19 Mar 2020 01:55:41 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 19 Mar 2020 02:56:12 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 19 Mar 2020 17:52:43 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 19 Mar 2020 17:52:33 +0800
-From: Henry Yen <henry.yen@mediatek.com>
-To: Zhang Rui <rui.zhang@intel.com>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH 2/2] thermal: mediatek: add tsensor support for MT7622 SoC
-Date: Thu, 19 Mar 2020 17:54:53 +0800
-Message-ID: <1584611693-3553-3-git-send-email-henry.yen@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1584611693-3553-1-git-send-email-henry.yen@mediatek.com>
-References: <1584611693-3553-1-git-send-email-henry.yen@mediatek.com>
+ id 1jEs1M-00058i-9U
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 10:03:25 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8EAA820732;
+ Thu, 19 Mar 2020 10:03:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584612203;
+ bh=NDSw/JHoFN2BsN1UPsDHqsSP+Epv+7qlVjTIxm9k30w=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=2CgxD8XmSED4dEoiCYiJoMLzjCtDg7MWOmknGZZE0JMWtDRHoN7jrUC2jeLJF6wjs
+ PqE48a7Co9nnn72MO7/KpdrPqldvZdEE/n4ouuywXgdFrUILCOBcCUlbE/0Q2Qiemr
+ K8cp4g++UHHw3tsaSBk8mSHzuxUBjsDDiEpIj8FU=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jEs1J-00DuEW-Rn; Thu, 19 Mar 2020 10:03:21 +0000
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3BE1D2BE5077A5896A53555467BB7CAAAF41036944F071EE7B81B4AA7364ADF02000:8
-X-MTK: N
+Date: Thu, 19 Mar 2020 10:03:21 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Auger Eric <eric.auger@redhat.com>
+Subject: Re: [PATCH v5 08/23] irqchip/gic-v4.1: Plumb skeletal VSGI irqchip
+In-Reply-To: <67a863c1-1d68-458a-39b1-6c43b8730d60@redhat.com>
+References: <20200304203330.4967-1-maz@kernel.org>
+ <20200304203330.4967-9-maz@kernel.org>
+ <67a863c1-1d68-458a-39b1-6c43b8730d60@redhat.com>
+Message-ID: <c0f06359b2c5f15282a87201b1ff60ce@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: eric.auger@redhat.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com, jason@lakedaemon.net,
+ rrichter@marvell.com, tglx@linutronix.de, yuzenghui@huawei.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_025545_828633_EE25EE9C 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_030324_380844_B6451E74 
+X-CRM114-Status: GOOD (  20.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -74,8 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,218 +93,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Steven Liu <steven.liu@mediatek.com>, Henry Yen <henry.yen@mediatek.com>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, Michael
- Kao <michael.kao@mediatek.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the support for version 2 thermal system(e.g., MT7622 SoC).
-The changes include the way of reading calibration data, the way of
-converting temperature and hardware initialization specific for version 2
-thermal system.
+Hi Eric,
 
-Signed-off-by: Henry Yen <henry.yen@mediatek.com>
----
- drivers/thermal/mtk_thermal.c | 100 +++++++++++++++++++++++++++++++++-
- 1 file changed, 98 insertions(+), 2 deletions(-)
+On 2020-03-16 17:10, Auger Eric wrote:
+> Hi Marc,
+> 
+> On 3/4/20 9:33 PM, Marc Zyngier wrote:
+>> Since GICv4.1 has the capability to inject 16 SGIs into each VPE,
+>> and that I'm keen not to invent too many specific interfaces to
+>> manipulate these interrupts, let's pretend that each of these SGIs
+>> is an actual Linux interrupt.
+>> 
+>> For that matter, let's introduce a minimal irqchip and irqdomain
+>> setup that will get fleshed up in the following patches.
+>> 
+>> Signed-off-by: Marc Zyngier <maz@kernel.org>
+>> Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+>> ---
+>>  drivers/irqchip/irq-gic-v3-its.c   | 68 
+>> +++++++++++++++++++++++++++++-
+>>  drivers/irqchip/irq-gic-v4.c       |  8 +++-
+>>  include/linux/irqchip/arm-gic-v4.h |  9 +++-
+>>  3 files changed, 81 insertions(+), 4 deletions(-)
+>> 
+>> diff --git a/drivers/irqchip/irq-gic-v3-its.c 
+>> b/drivers/irqchip/irq-gic-v3-its.c
+>> index 54d6fdf7a28e..112b452fcb40 100644
+>> --- a/drivers/irqchip/irq-gic-v3-its.c
+>> +++ b/drivers/irqchip/irq-gic-v3-its.c
+>> @@ -3870,6 +3870,67 @@ static struct irq_chip its_vpe_4_1_irq_chip = {
+>>  	.irq_set_vcpu_affinity	= its_vpe_4_1_set_vcpu_affinity,
+>>  };
+>> 
+>> +static int its_sgi_set_affinity(struct irq_data *d,
+>> +				const struct cpumask *mask_val,
+>> +				bool force)
+>> +{
+>> +	return -EINVAL;
+>> +}
+>> +
+>> +static struct irq_chip its_sgi_irq_chip = {
+>> +	.name			= "GICv4.1-sgi",
+>> +	.irq_set_affinity	= its_sgi_set_affinity,
+>> +};
+> nit: const?
 
-diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-index 13e17c31ba3b..9e6807f6abd4 100644
---- a/drivers/thermal/mtk_thermal.c
-+++ b/drivers/thermal/mtk_thermal.c
-@@ -38,6 +38,7 @@
- #define TEMP_MONIDET0		0x014
- #define TEMP_MONIDET1		0x018
- #define TEMP_MSRCTL0		0x038
-+#define TEMP_MSRCTL1		0x03c
- #define TEMP_AHBPOLL		0x040
- #define TEMP_AHBTO		0x044
- #define TEMP_ADCPNP0		0x048
-@@ -133,6 +134,20 @@
- #define CALIB_BUF0_O_SLOPE_SIGN_V1(x)	(((x) >> 7) & 0x1)
- #define CALIB_BUF1_ID_V1(x)		(((x) >> 9) & 0x1)
- 
-+/*
-+ * Layout of the fuses providing the calibration data
-+ * These macros could be used for MT7622.
-+ */
-+#define CALIB_BUF0_ADC_OE_V2(x)		(((x) >> 22) & 0x3ff)
-+#define CALIB_BUF0_ADC_GE_V2(x)		(((x) >> 12) & 0x3ff)
-+#define CALIB_BUF0_DEGC_CALI_V2(x)	(((x) >> 6) & 0x3f)
-+#define CALIB_BUF0_O_SLOPE_V2(x)	(((x) >> 0) & 0x3f)
-+#define CALIB_BUF1_VTS_TS1_V2(x)	(((x) >> 23) & 0x1ff)
-+#define CALIB_BUF1_VTS_TS2_V2(x)	(((x) >> 14) & 0x1ff)
-+#define CALIB_BUF1_VTS_TSABB_V2(x)	(((x) >> 5) & 0x1ff)
-+#define CALIB_BUF1_VALID_V2(x)		(((x) >> 4) & 0x1)
-+#define CALIB_BUF1_O_SLOPE_SIGN_V2(x)	(((x) >> 3) & 0x1)
-+
- enum {
- 	VTS1,
- 	VTS2,
-@@ -266,8 +281,10 @@ struct mtk_thermal {
- 
- 	/* Calibration values */
- 	s32 adc_ge;
-+	s32 adc_oe;
- 	s32 degc_cali;
- 	s32 o_slope;
-+	s32 o_slope_sign;
- 	s32 vts[MAX_NUM_VTS];
- 
- 	const struct mtk_thermal_data *conf;
-@@ -367,7 +384,9 @@ static const int mt7622_vts_index[MT7622_NUM_SENSORS] = { VTS1 };
- static const int mt7622_tc_offset[MT7622_NUM_CONTROLLER] = { 0x0, };
- 
- static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf);
-+static int mtk_thermal_extract_efuse_v2(struct mtk_thermal *mt, u32 *buf);
- static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw);
-+static int raw_to_mcelsius_v2(struct mtk_thermal *mt, int sensno, s32 raw);
- 
- /*
-  * The MT8173 thermal controller has four banks. Each bank can read up to
-@@ -503,8 +522,8 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
- 	.adcpnp = mt7622_adcpnp,
- 	.sensor_mux_values = mt7622_mux_values,
- 	.version = MTK_THERMAL_V2,
--	.extract = mtk_thermal_extract_efuse_v1,
--	.convert = raw_to_mcelsius_v1,
-+	.extract = mtk_thermal_extract_efuse_v2,
-+	.convert = raw_to_mcelsius_v2,
- };
- 
- /*
-@@ -566,6 +585,36 @@ static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw)
- 	return mt->degc_cali * 500 - tmp;
- }
- 
-+static int raw_to_mcelsius_v2(struct mtk_thermal *mt, int sensno, s32 raw)
-+{
-+	s32 format_1 = 0;
-+	s32 format_2 = 0;
-+	s32 g_oe = 1;
-+	s32 g_gain = 1;
-+	s32 g_x_roomt = 0;
-+	s32 tmp = 0;
-+
-+	if (raw == 0)
-+		return 0;
-+
-+	raw &= 0xfff;
-+	g_gain = 10000 + (((mt->adc_ge - 512) * 10000) >> 12);
-+	g_oe = mt->adc_oe - 512;
-+	format_1 = mt->vts[VTS2] + 3105 - g_oe;
-+	format_2 = (mt->degc_cali * 10) >> 1;
-+	g_x_roomt = (((format_1 * 10000) >> 12) * 10000) / g_gain;
-+
-+	tmp = (((((raw - g_oe) * 10000) >> 12) * 10000) / g_gain) - g_x_roomt;
-+	tmp = tmp * 10 * 100 / 11;
-+
-+	if (mt->o_slope_sign == 0)
-+		tmp = tmp / (165 - mt->o_slope);
-+	else
-+		tmp = tmp / (165 + mt->o_slope);
-+
-+	return (format_2 - tmp) * 100;
-+}
-+
- /**
-  * mtk_thermal_get_bank - get bank
-  * @bank:	The bank
-@@ -831,6 +880,23 @@ static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf)
- 	return 0;
- }
- 
-+static int mtk_thermal_extract_efuse_v2(struct mtk_thermal *mt, u32 *buf)
-+{
-+	if (!CALIB_BUF1_VALID_V2(buf[1]))
-+		return -EINVAL;
-+
-+	mt->adc_oe = CALIB_BUF0_ADC_OE_V2(buf[0]);
-+	mt->adc_ge = CALIB_BUF0_ADC_GE_V2(buf[0]);
-+	mt->degc_cali = CALIB_BUF0_DEGC_CALI_V2(buf[0]);
-+	mt->o_slope = CALIB_BUF0_O_SLOPE_V2(buf[0]);
-+	mt->vts[VTS1] = CALIB_BUF1_VTS_TS1_V2(buf[1]);
-+	mt->vts[VTS2] = CALIB_BUF1_VTS_TS2_V2(buf[1]);
-+	mt->vts[VTSABB] = CALIB_BUF1_VTS_TSABB_V2(buf[1]);
-+	mt->o_slope_sign = CALIB_BUF1_O_SLOPE_SIGN_V2(buf[1]);
-+
-+	return 0;
-+}
-+
- static int mtk_thermal_get_calibration_data(struct device *dev,
- 					    struct mtk_thermal *mt)
- {
-@@ -900,6 +966,28 @@ static const struct of_device_id mtk_thermal_of_match[] = {
- };
- MODULE_DEVICE_TABLE(of, mtk_thermal_of_match);
- 
-+static void mtk_thermal_turn_on_buffer(void __iomem *apmixed_base)
-+{
-+	int tmp;
-+
-+	tmp = readl(apmixed_base + APMIXED_SYS_TS_CON1);
-+	tmp &= ~(0x37);
-+	tmp |= 0x1;
-+	writel(tmp, apmixed_base + APMIXED_SYS_TS_CON1);
-+	udelay(200);
-+}
-+
-+static void mtk_thermal_release_periodic_ts(struct mtk_thermal *mt,
-+					    void __iomem *auxadc_base)
-+{
-+	int tmp;
-+
-+	writel(0x800, auxadc_base + AUXADC_CON1_SET_V);
-+	writel(0x1, mt->thermal_base + TEMP_MONCTL0);
-+	tmp = readl(mt->thermal_base + TEMP_MSRCTL1);
-+	writel((tmp & (~0x10e)), mt->thermal_base + TEMP_MSRCTL1);
-+}
-+
- static int mtk_thermal_probe(struct platform_device *pdev)
- {
- 	int ret, i, ctrl_id;
-@@ -908,6 +996,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
- 	struct resource *res;
- 	u64 auxadc_phys_base, apmixed_phys_base;
- 	struct thermal_zone_device *tzdev;
-+	void __iomem *apmixed_base, *auxadc_base;
- 
- 	mt = devm_kzalloc(&pdev->dev, sizeof(*mt), GFP_KERNEL);
- 	if (!mt)
-@@ -942,6 +1031,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
- 		return -ENODEV;
- 	}
- 
-+	auxadc_base = of_iomap(auxadc, 0);
- 	auxadc_phys_base = of_get_phys_base(auxadc);
- 
- 	of_node_put(auxadc);
-@@ -957,6 +1047,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
- 		return -ENODEV;
- 	}
- 
-+	apmixed_base = of_iomap(apmixedsys, 0);
- 	apmixed_phys_base = of_get_phys_base(apmixedsys);
- 
- 	of_node_put(apmixedsys);
-@@ -982,6 +1073,11 @@ static int mtk_thermal_probe(struct platform_device *pdev)
- 		goto err_disable_clk_auxadc;
- 	}
- 
-+	if (mt->conf->version == MTK_THERMAL_V2) {
-+		mtk_thermal_turn_on_buffer(apmixed_base);
-+		mtk_thermal_release_periodic_ts(mt, auxadc_base);
-+	}
-+
- 	for (ctrl_id = 0; ctrl_id < mt->conf->num_controller ; ctrl_id++)
- 		for (i = 0; i < mt->conf->num_banks; i++)
- 			mtk_thermal_init_bank(mt, i, apmixed_phys_base,
+That would create a warning with irq_domain_set_hwirq_and_chip(), which
+doesn't take a const argument. I think this is fixable in the long run,
+but only as a sweeping tree-wide change.
+
+>> +
+>> +static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
+>> +				    unsigned int virq, unsigned int nr_irqs,
+>> +				    void *args)
+>> +{
+>> +	struct its_vpe *vpe = args;
+>> +	int i;
+>> +
+>> +	/* Yes, we do want 16 SGIs */
+>> +	WARN_ON(nr_irqs != 16);
+>> +
+>> +	for (i = 0; i < 16; i++) {
+>> +		vpe->sgi_config[i].priority = 0;
+>> +		vpe->sgi_config[i].enabled = false;
+>> +		vpe->sgi_config[i].group = false;
+>> +
+>> +		irq_domain_set_hwirq_and_chip(domain, virq + i, i,
+>> +					      &its_sgi_irq_chip, vpe);
+>> +		irq_set_status_flags(virq + i, IRQ_DISABLE_UNLAZY);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void its_sgi_irq_domain_free(struct irq_domain *domain,
+>> +				    unsigned int virq,
+>> +				    unsigned int nr_irqs)
+>> +{
+>> +	/* Nothing to do */
+>> +}
+>> +
+>> +static int its_sgi_irq_domain_activate(struct irq_domain *domain,
+>> +				       struct irq_data *d, bool reserve)
+>> +{
+>> +	return 0;
+>> +}
+>> +
+>> +static void its_sgi_irq_domain_deactivate(struct irq_domain *domain,
+>> +					  struct irq_data *d)
+>> +{
+>> +	/* Nothing to do */
+>> +}
+>> +
+>> +static struct irq_domain_ops its_sgi_domain_ops = {
+>> +	.alloc		= its_sgi_irq_domain_alloc,
+>> +	.free		= its_sgi_irq_domain_free,
+>> +	.activate	= its_sgi_irq_domain_activate,
+>> +	.deactivate	= its_sgi_irq_domain_deactivate,
+>> +};
+> nit: const?
+
+This one can work with a bit of surgery below:
+
+diff --git a/drivers/irqchip/irq-gic-v3-its.c 
+b/drivers/irqchip/irq-gic-v3-its.c
+index 2e12bc52e3a2..321f73015d6c 100644
+--- a/drivers/irqchip/irq-gic-v3-its.c
++++ b/drivers/irqchip/irq-gic-v3-its.c
+@@ -4129,7 +4129,7 @@ static void its_sgi_irq_domain_deactivate(struct 
+irq_domain *domain,
+  	its_configure_sgi(d, true);
+  }
+
+-static struct irq_domain_ops its_sgi_domain_ops = {
++static const struct irq_domain_ops its_sgi_domain_ops = {
+  	.alloc		= its_sgi_irq_domain_alloc,
+  	.free		= its_sgi_irq_domain_free,
+  	.activate	= its_sgi_irq_domain_activate,
+@@ -5182,10 +5182,12 @@ int __init its_init(struct fwnode_handle 
+*handle, struct rdists *rdists,
+  		rdists->has_rvpeid = false;
+
+  	if (has_v4 & rdists->has_vlpis) {
+-		struct irq_domain_ops *sgi_ops = NULL;
++		const struct irq_domain_ops *sgi_ops;
+
+  		if (has_v4_1)
+  			sgi_ops = &its_sgi_domain_ops;
++		else
++			sgi_ops = NULL;
+
+  		if (its_init_vpe_domain() ||
+  		    its_init_v4(parent_domain, &its_vpe_domain_ops, sgi_ops)) {
+
+>> +
+>>  static int its_vpe_id_alloc(void)
+>>  {
+>>  	return ida_simple_get(&its_vpeid_ida, 0, ITS_MAX_VPEID, GFP_KERNEL);
+>> @@ -4912,8 +4973,13 @@ int __init its_init(struct fwnode_handle 
+>> *handle, struct rdists *rdists,
+>>  		rdists->has_rvpeid = false;
+>> 
+>>  	if (has_v4 & rdists->has_vlpis) {
+>> +		struct irq_domain_ops *sgi_ops = NULL;
+>> +
+>> +		if (has_v4_1)
+>> +			sgi_ops = &its_sgi_domain_ops;
+>> +
+>>  		if (its_init_vpe_domain() ||
+>> -		    its_init_v4(parent_domain, &its_vpe_domain_ops)) {
+>> +		    its_init_v4(parent_domain, &its_vpe_domain_ops, sgi_ops)) {
+>>  			rdists->has_vlpis = false;
+>>  			pr_err("ITS: Disabling GICv4 support\n");
+>>  		}
+>> diff --git a/drivers/irqchip/irq-gic-v4.c 
+>> b/drivers/irqchip/irq-gic-v4.c
+>> index 45969927cc81..c01910d53f9e 100644
+>> --- a/drivers/irqchip/irq-gic-v4.c
+>> +++ b/drivers/irqchip/irq-gic-v4.c
+>> @@ -85,6 +85,7 @@
+>> 
+>>  static struct irq_domain *gic_domain;
+>>  static const struct irq_domain_ops *vpe_domain_ops;
+>> +static const struct irq_domain_ops *sgi_domain_ops;
+>> 
+>>  int its_alloc_vcpu_irqs(struct its_vm *vm)
+>>  {
+>> @@ -216,12 +217,15 @@ int its_prop_update_vlpi(int irq, u8 config, 
+>> bool inv)
+>>  	return irq_set_vcpu_affinity(irq, &info);
+>>  }
+>> 
+>> -int its_init_v4(struct irq_domain *domain, const struct 
+>> irq_domain_ops *ops)
+>> +int its_init_v4(struct irq_domain *domain,
+>> +		const struct irq_domain_ops *vpe_ops,
+>> +		const struct irq_domain_ops *sgi_ops)
+>>  {
+>>  	if (domain) {
+>>  		pr_info("ITS: Enabling GICv4 support\n");
+>>  		gic_domain = domain;
+>> -		vpe_domain_ops = ops;
+>> +		vpe_domain_ops = vpe_ops;
+>> +		sgi_domain_ops = sgi_ops;
+>>  		return 0;
+>>  	}
+>> 
+>> diff --git a/include/linux/irqchip/arm-gic-v4.h 
+>> b/include/linux/irqchip/arm-gic-v4.h
+>> index 439963f4c66a..44e8c19e3d56 100644
+>> --- a/include/linux/irqchip/arm-gic-v4.h
+>> +++ b/include/linux/irqchip/arm-gic-v4.h
+>> @@ -49,6 +49,11 @@ struct its_vpe {
+>>  		};
+>>  		/* GICv4.1 implementations */
+>>  		struct {
+>> +			struct {
+>> +				u8	priority;
+>> +				bool	enabled;
+>> +				bool	group;
+>> +			}			sgi_config[16];
+>>  			atomic_t vmapp_count;
+>>  		};
+>>  	};
+>> @@ -123,6 +128,8 @@ int its_unmap_vlpi(int irq);
+>>  int its_prop_update_vlpi(int irq, u8 config, bool inv);
+>> 
+>>  struct irq_domain_ops;
+>> -int its_init_v4(struct irq_domain *domain, const struct 
+>> irq_domain_ops *ops);
+>> +int its_init_v4(struct irq_domain *domain,
+>> +		const struct irq_domain_ops *vpe_ops,
+>> +		const struct irq_domain_ops *sgi_ops);
+>> 
+>>  #endif
+>> 
+> Reviewed-by: Eric Auger <eric.auger@redhat.com>
+
+Thanks,
+
+         M.
 -- 
-2.17.1
+Jazz is not dead. It just smells funny...
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
