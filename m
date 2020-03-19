@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147AB18B34B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:22:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 225F718B353
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:22:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=aCcILSdzxlHJcosPiHQJzkkwh51CX44H3+jcJD73uUk=; b=ZQknpE9Ee7zRufKuqW106AQwW9
-	9GvgJRAr1ib87kIL/eOR7Nqoy7msIutYLTeslCOXhUkWS5+0qKSqrDUyQPp6n9LAn1sy/J9Tm2NlU
-	cchero7vIRKP1KQ85snerwal/QAa/TpNQt0Ii+Y1ZPNkFyNIJS4/Moo4HxasybfjzckhYs/VbgvI5
-	5Ucloaf+bhq5aaO49nY4iUdCwvhbyUkyD1i5zA2Q/gEtMfZZuURGSjsupthc5+NWkoWolqcFcH2qf
-	AFmTeHmqZzpSjKjTRGPqeUne6AWUJzmzw3tBV8TQSfgysyKCk4KdpNwnMJxKgEhaNu/bAacxsCDTz
-	5PVBt0cA==;
+	bh=DRHU/LaYn/YojagzztJDqLd8E7PHDbB93wYIyAwNAUw=; b=Tw7OsduYzLmi5LoNWYCyr7h6vY
+	hcRpcXunLH/LgEPNuONXRc4coh/4eflaqnpcKfXZVbxZsfRWbhXLdkOhDMN7MatDesOAGZSMFnaJs
+	1e7+ceZ+YusmvXe73mZlM0t7JqWsECsxt5S6pTK200cWcF3mEUk6Hx6ft8ydUC5SwDa0r/q3jESk8
+	mNV9Htb89Vz9vtMgvye4yvPsKvoGPYXHAngAdJogYynKxtw3i60xruPwh4cYZTuScW5CxRHbLdMZu
+	yqDiZrJgA955Kq3x68XtEL0qLc8mSGsYlESREWiPVMplZh33R1joHJ7+EfF1p+fmBWtbcag7xh/KU
+	6oCufhZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEuBi-0003dM-01; Thu, 19 Mar 2020 12:22:14 +0000
+	id 1jEuBx-0003rL-Re; Thu, 19 Mar 2020 12:22:29 +0000
 Received: from relmlor1.renesas.com ([210.160.252.171]
  helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEuBZ-0003cv-1b
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 12:22:06 +0000
-X-IronPort-AV: E=Sophos;i="5.70,571,1574089200"; d="scan'208";a="42339836"
+ id 1jEuBn-0003pI-5k
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 12:22:20 +0000
+X-IronPort-AV: E=Sophos;i="5.70,571,1574089200"; d="scan'208";a="42339858"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie5.idc.renesas.com with ESMTP; 19 Mar 2020 21:22:04 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 19 Mar 2020 21:22:18 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id 71BB242BCBDB;
- Thu, 19 Mar 2020 21:22:00 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id 8F65D42ED942;
+ Thu, 19 Mar 2020 21:22:14 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
@@ -40,16 +40,16 @@ To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-Subject: [PATCH v4 3/5] media: i2c: ov5645: Increase tolerance of external
- clock frequency
-Date: Thu, 19 Mar 2020 12:19:21 +0000
-Message-Id: <1584620363-2255-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v4 4/5] ARM: dts: imx6qdl-wandboard: Switch to
+ assigned-clock-rates for ov5645 node
+Date: Thu, 19 Mar 2020 12:19:22 +0000
+Message-Id: <1584620363-2255-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_052205_187830_544BFBC9 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20200319_052219_420414_54596437 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,40 +80,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While testing on Renesas RZ/G2E platform, noticed the clock frequency to
-be 24242424 as a result the probe failed.
-
-This patch increases the tolerance to 5% so that it avoids patching for
-new platforms and it warns the users if the frequency is not within the
-range and continue further in the probe instead of returning failure.
+clock-frequency property has been deprecated in ov5645 binding, so switch
+to assigned-clock-rates for specifying xclk clock frequency.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 ---
- drivers/media/i2c/ov5645.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
+ arch/arm/boot/dts/imx6qdl-wandboard.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
-index e298acdadeef..52a185ed4368 100644
---- a/drivers/media/i2c/ov5645.c
-+++ b/drivers/media/i2c/ov5645.c
-@@ -1105,13 +1105,11 @@ static int ov5645_probe(struct i2c_client *client)
- 		}
- 	}
- 
--	/* external clock must be 24MHz, allow 1% tolerance */
-+	/* ideally external clock must be 24MHz, allow 5% tolerance */
- 	xclk_freq = clk_get_rate(ov5645->xclk);
--	if (xclk_freq < 23760000 || xclk_freq > 24240000) {
--		dev_err(dev, "external clock frequency %u is not supported\n",
--			xclk_freq);
--		return -EINVAL;
--	}
-+	if (xclk_freq < 22800000 || xclk_freq > 25200000)
-+		dev_warn(dev, "external clock frequency is set to %u, sensor might misbehave\n",
-+			 xclk_freq);
- 
- 	for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
- 		ov5645->supplies[i].supply = ov5645_supply_name[i];
+diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+index c070893c509e..71f5f75a0aa2 100644
+--- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+@@ -126,7 +126,8 @@
+ 		reg = <0x3c>;
+ 		clocks = <&clks IMX6QDL_CLK_CKO2>;
+ 		clock-names = "xclk";
+-		clock-frequency = <24000000>;
++		assigned-clocks = <&clks IMX6QDL_CLK_CKO2>;
++		assigned-clock-rates = <24000000>;
+ 		vdddo-supply = <&reg_1p8v>;
+ 		vdda-supply = <&reg_2p8v>;
+ 		vddd-supply = <&reg_1p5v>;
 -- 
 2.20.1
 
