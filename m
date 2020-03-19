@@ -2,59 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C84418BCA6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:32:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6635818BCB5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:37:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EUtozS1xbd6gqFoc+cGEcYlMQodDZ/p3CQvhAcMbMu4=; b=NiRfXzfHIbXqpa1qee4DeNCWS
-	J9IoUMj0M6RHI7JvUVSiGsQ1qo6Gz2qXZLfWJ9augmHt3eGLEr9OhvIi66gVPfOINUBYZ1xQGcooD
-	Nkk3NYpMSflDzgJUG5qfeTqetq+MeY2u1QErMBkf17q745Ybklsqo6UaU6fr0CBuROAPIj2/ba331
-	Ix5Lf+ZrcqQIc3/IBxR4guWSnpKa5VPAVe1p5sH/QWHH3fop+MfBELRbBY5Fc/8eIcNMNqxiN4tUZ
-	kRHmCwcfzkcY/Lnhr2RrDMezB1jcl+fOl/hCNBd+hCGQDfshjUZ7ag86m9ECZhu+Mywxm/R97lWTf
-	SkH+Nw25Q==;
+	 bh=xsn7C8aZKlWaAVTOvSYC6ugwmlrpfojyueUER/8zzkA=; b=CGRkk+5Z3w4YpSbyOD5SdIxMo
+	TTdvZUQH/zQHzRYgl3Bq6g9FXr8AAr6ShmCOP/rDcbbh0OTpdtFC9rEpMeYBwwbOlf2J/4Saq2mCn
+	rkwNesBlN3VgpQ62No8pZLTOHQ+k9EQrpxn3dJNsmAP5cFm4pr6Trf4XyCYVmRuhaO9e/eq/LvW73
+	AisfM+P2qdhANtgd5AQpw+jkRPdrDdFzOB1CztgfU91j8GxrtZFn8Fqemxl8D+8FYyXqqsHLol9QD
+	vV+xjULgd3YKUBlZF/wPsvouJstEbQzpikAb6FLPhrVJWGPuhwbsm+BSMC42BBKVAh5p9gn3P2lYf
+	3IsMRQ5ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEy5y-0003AB-J1; Thu, 19 Mar 2020 16:32:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEy2g-0007Du-5l; Thu, 19 Mar 2020 16:29:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D60830E;
- Thu, 19 Mar 2020 09:29:08 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 347323F52E;
- Thu, 19 Mar 2020 09:29:07 -0700 (PDT)
-Subject: Re: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each
- dts for rk3288
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <20200319151339.17909-1-katsuhiro@katsuster.net>
- <4307911.4IBKxFWOMT@diego>
- <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <4d93b050-6185-0d39-c89a-ac7fb6fc7780@arm.com>
-Date: Thu, 19 Mar 2020 16:29:06 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jEyAZ-000572-7y; Thu, 19 Mar 2020 16:37:19 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEyAL-000558-0E; Thu, 19 Mar 2020 16:37:08 +0000
+Received: by mail-wr1-x442.google.com with SMTP id h4so3947839wru.2;
+ Thu, 19 Mar 2020 09:37:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=NMueQiP9jz9O+z3rNtEF0OHXn/KJHT1fioATarE40G8=;
+ b=kRFKQKfEBEqihNIaveyPStDvKrgGhFdZYXEgGipYSaA/2qb6vfhLO+/QfXCyCFXgSF
+ 4F9OSwGjKC73SFYPFCirtCRMbpEEoDU3RUq+OjredkiZDGPLh5a47GO0D6W+wOc90ph7
+ VF9FDlcb17/e3+Ta1efGon4YAfa5fgDS4iEpV+0BmBtdIA1z6lRAepOpcej3xMKWo/ux
+ Vg8pKnGn9tr2cb5/j+Mc193lHK4mxDTwsK+cC3L/LI6irZpb0ZVA50uMqMMR//1l7yZB
+ kun/1ogBpRNi9sP3YX7gPc3nz4ngJ4FX5E4UnQvyiQODgPw0LbfZxDr7lHa2ya6glUVd
+ PhUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NMueQiP9jz9O+z3rNtEF0OHXn/KJHT1fioATarE40G8=;
+ b=sjQyBVmp7llktNTJ0+X4GSKXLM3Ot0eqrNqBiv5DXvO7tInRSxtdm6l+KiDPI2y5Zv
+ njPH2djSZvZ+PQbXI9p8GT5vYCIpuGG0md57APGsxPt33bYtuXBKtcnhHCSWVfDj7HPG
+ E/c76VOAa9SNNFiT1piCj+JzY99AUD9hnNPpYxIGqdadqDi0EQ6Jm9NsAZrsA+SbSyBd
+ 2acAd/nRd7rE9uekjIJCRJZSfaUfgaK5pyAA5clxewMpiatFgzfz0fxzSDBRLSpP9+0o
+ 1hCjhq6vpAwHaYsxUXKYhp2l/w6+PdJY5547IBa9BhUMqOJZeXGBQ58rt7300MKWGlTK
+ 5+jw==
+X-Gm-Message-State: ANhLgQ2T+YtRV8CD5sshGKwr2goZYS+m1M3OA3ARF07JaxxqSM0mtDQb
+ /Ycbpybc/dw2cSQN4NPxDDg=
+X-Google-Smtp-Source: ADFU+vtoxuuyxX+HT1GPJKiSCaAgThQGtgPWSsP45bIWCEbkNowuDDd0U3X4oTdHznURld4tZlgyhg==
+X-Received: by 2002:a05:6000:d0:: with SMTP id
+ q16mr5551345wrx.71.1584635822900; 
+ Thu, 19 Mar 2020 09:37:02 -0700 (PDT)
+Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
+ by smtp.gmail.com with ESMTPSA id z22sm3851524wmi.1.2020.03.19.09.37.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Mar 2020 09:37:01 -0700 (PDT)
+Date: Thu, 19 Mar 2020 17:37:00 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
+Message-ID: <20200319163700.GA3354541@ulmo>
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
+ <20200317174043.GA1464607@ulmo>
+ <20200317210042.ryrof3amr7fxp4w5@pengutronix.de>
+ <20200318225953.GA2874972@ulmo>
+ <20200319065039.szhh5dm6v3ejwijd@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
-Content-Language: en-GB
+In-Reply-To: <20200319065039.szhh5dm6v3ejwijd@pengutronix.de>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_092910_393342_9BBB97D8 
-X-CRM114-Status: GOOD (  23.83  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200319_093705_047249_9F5AB4ED 
+X-CRM114-Status: GOOD (  38.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,184 +102,252 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
+ Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Paul Cercueil <paul@crapouillou.net>, Igor Opaniuk <igor.opaniuk@toradex.com>,
+ Scott Branden <sbranden@broadcom.com>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
+Content-Type: multipart/mixed; boundary="===============5675704445170311560=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wMy0xOSAzOjU4IHBtLCBLYXRzdWhpcm8gU3V6dWtpIHdyb3RlOgo+IEhlbGxvIEhl
-aWtvLAo+IAo+IE9uIDIwMjAvMDMvMjAgMDoyNSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4+IEhp
-LAo+Pgo+PiBBbSBEb25uZXJzdGFnLCAxOS4gTcOkcnogMjAyMCwgMTY6MTM6MzkgQ0VUIHNjaHJp
-ZWIgS2F0c3VoaXJvIFN1enVraToKPj4+IFRoaXMgcGF0Y2ggcmVtb3ZlcyBjb25mbGljdGVkIHBp
-bmN0cmwgc2V0dGluZ3MgdWFydDIgYW5kIHB3bSAyLzMKPj4+IGZyb20gY29tbW9uIHJrMzI4OC5k
-dHNpIGFuZCBtb3ZlcyBleGlzdCB1YXJ0MiBwaW5jdHJsIHNldHRpbmdzCj4+PiBpbnRvIGVhY2gg
-cmszMjg4Ki5kdHMgZmlsZXMuCj4+Pgo+Pj4gwqDCoCAtIHB3bTJfcGluwqAgOiB1c2UgR1BJTzdf
-QzYKPj4+IMKgwqAgLSBwd20zX3BpbsKgIDogdXNlIEdQSU83X0M3Cj4+PiDCoMKgIC0gdWFydDJf
-eGZlcjogdXNlIEdQSU83X0M2LCBHUElPN19DNwo+Pgo+PiBCb2FyZCBmaWxlcyBvbmx5IGV2ZXIg
-Z2V0IHRvIGVuYWJsZSBlaXRoZXIgcHdtMi8zIG9yIHVhcnQyLAo+PiBub3QgYm90aCBhdCBvbmNl
-IC0gc28gSSdtIG5vdCBzdXJlIHdoZXJlIHlvdSBzZWUgY29uZmxpY3RzLgo+Pgo+IAo+IEF0IGZp
-cnN0LCBJIHRoaW5rIHNvIHRvby4gQnV0IEkndmUgc2F3IHRoaXMgbWVzc2FnZSB3aGVuIGJvb3Rp
-bmcuCj4gCj4gLS0tLS0tLS0tLQo+IFvCoMKgwqAgMi40MzU1MDRdIHJvY2tjaGlwLXBpbmN0cmwg
-cGluY3RybDogcGluIGdwaW83LTIyIGFscmVhZHkgcmVxdWVzdGVkIAo+IGJ5IGZmNjgwMDIwLnB3
-bTsgY2Fubm90IGNsYWltIGZvciBmZjY5MDAwMC5zZXJpYWwKPiBbwqDCoMKgIDIuNDQ3NTA2XSBy
-b2NrY2hpcC1waW5jdHJsIHBpbmN0cmw6IHBpbi0yMzggKGZmNjkwMDAwLnNlcmlhbCkgCj4gc3Rh
-dHVzIC0yMgo+IFvCoMKgwqAgMi40NTUxOThdIHJvY2tjaGlwLXBpbmN0cmwgcGluY3RybDogY291
-bGQgbm90IHJlcXVlc3QgcGluIDIzOCAKPiAoZ3BpbzctMjIpIGZyb20gZ3JvdXAgdWFydDIteGZl
-csKgIG9uIGRldmljZSByb2NrY2hpcC1waW5jdHJsCj4gLS0tLS0tLS0tLQo+IAo+IEFuZCBpdCBz
-ZWVtcyB0aGF0IHVhcnQyKHR0eVMyKSBpcyBub3Qgd29ya2luZyBjb3JyZWN0bHkuCj4gCj4gLS0t
-LS0tLS0tLQo+ICMgY2F0IC9kZXYvdHR5UzIKPiBjYXQ6IC9kZXYvdHR5UzI6IElucHV0L291dHB1
-dCBlcnJvcgo+IC0tLS0tLS0tLS0KPiAKPiBJJ20gdXNpbmcgbmV3ZXN0IGxpbnV4LW5leHQsIG1h
-a2UgZGVmY29uZmlnIGFuZCBDT05GSUdfTU9EVUxFUyA9IG4gc2V0dGluZwo+IHdpdGggVGlua2Vy
-Qm9hcmQuIENhbiBJIHJlc29sdmUgdGhpcyBpc3N1ZSBpbiBvdGhlciB3YXlzPwoKRG8geW91IHBl
-cmhhcHMgaGF2ZSBhIERUIG92ZXJsYXkgb3IgYm9vdGxvYWRlciBzY3JpcHQgZW5hYmxpbmcgcHdt
-Mj8gCih0cnkgYGNhdCAvc3lzL2Zpcm13YXJlL2RldmljZXRyZWUvYmFzZS9wd21AZmY2ODAwMjAv
-c3RhdHVzYCBmb3IgYSAKc2FuaXR5IGNoZWNrKS4gRldJVyBJIGRvbid0IHJlY2FsbCBldmVyIHNl
-ZWluZyB0aGlzIG9uIG15IFJLMzI4OCBib3guCgoob3Igb2YgY291cnNlIG1heWJlIHRoZXJlJ3Mg
-anVzdCBzb21lIHBpbmN0cmwgYnVnIGluIC1uZXh0IHRoYXQncyAKY2xhaW1pbmcgY29uZmlncyBm
-b3IgZGlzYWJsZWQgZGV2aWNlcykKClJvYmluLgoKPiAKPiBCZXN0IFJlZ2FyZHMsCj4gS2F0c3Vo
-aXJvIFN1enVraQo+IAo+IAo+PiBBbmQgb2YgY291cnNlIHRoZXJlIGFyZSBhbHRlcm5hdGl2ZSBw
-aW5zIHRvIHVzZSwgaWYgeW91IG5lZWQgdWFydDIKPj4geW91IG5lZWQgYm90aCBwaW5zIGluIHVh
-cnQtcGlubXV4IGFuZCBpZiB5b3UgbmVlZCBlaXRoZXIgYXMgcHdtLCB0aGVuCj4+IHRoZSBib2Fy
-ZCBieSBkZXNpZ24ganVzdCBjYW4ndCB1c2UgdGhlbSBhcyB1YXJ0Mi4KPj4KPj4gU28gcGluIHNl
-dHRpbmcgc2hvdWxkIHN0YXkgd2hlcmUgdGhleSBhcmUsIGFzIHRoZXJlIHJlYWxseSBpcyBubyAK
-Pj4gY29uZmxpY3QuCj4+Cj4+Cj4+IEhlaWtvCj4+Cj4+Cj4+Cj4+PiBDdXJyZW50bHkgdWFydDIg
-cmszMjg4IHVzZXIgaXMgdGhlIGZvbGxvd2luZzoKPj4+Cj4+PiDCoMKgIC0gcmszMjg4LWV2Yi5k
-dHNpOiZ1YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LWZpcmVmbHktcmVsb2FkLmR0czomdWFydDIg
-ewo+Pj4gwqDCoCAtIHJrMzI4OC1maXJlZmx5LmR0c2k6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMy
-ODgtbWlxaS5kdHM6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtcGh5Y29yZS1yZGsuZHRzOiZ1
-YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LXBvcG1ldGFsLmR0czomdWFydDIgewo+Pj4gwqDCoCAt
-IHJrMzI4OC1yODkuZHRzOiZ1YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LXJvY2syLXNxdWFyZS5k
-dHM6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtdGlua2VyLmR0c2k6JnVhcnQyIHsKPj4+IMKg
-wqAgLSByazMyODgtdmV5cm9uLmR0c2k6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtdnlhc2Eu
-ZHRzOiZ1YXJ0MiB7Cj4+Pgo+Pj4gQW5kIG5vIG9uZSBpcyB1c2luZyBwd20yIG5vciBwd20zLgo+
-Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEthdHN1aGlybyBTdXp1a2kgPGthdHN1aGlyb0BrYXRzdXN0
-ZXIubmV0Pgo+Pj4gLS0tCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9yazMyODgtZXZiLmR0c2nC
-oMKgwqDCoMKgwqDCoMKgwqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
-OC1maXJlZmx5LXJlbG9hZC5kdHMgfCAyICsrCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9yazMy
-ODgtZmlyZWZseS5kdHNpwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0vYm9vdC9k
-dHMvcmszMjg4LW1pcWkuZHRzwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCAyICsrCj4+PiDCoCBhcmNo
-L2FybS9ib290L2R0cy9yazMyODgtcGh5Y29yZS1yZGsuZHRzwqDCoMKgIHwgMiArKwo+Pj4gwqAg
-YXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0c8KgwqDCoMKgwqDCoCB8IDIgKysK
-Pj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yODkuZHRzwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yb2NrMi1zcXVhcmUu
-ZHRzwqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRz
-acKgwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZl
-eXJvbi5kdHNpwqDCoMKgwqDCoMKgwqAgfCAyICsrCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9y
-azMyODgtdnlhc2EuZHRzwqDCoMKgwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0v
-Ym9vdC9kdHMvcmszMjg4LmR0c2nCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgNiAtLS0t
-LS0KPj4+IMKgIDEyIGZpbGVzIGNoYW5nZWQsIDIyIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25z
-KC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1ldmIuZHRz
-aSAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWV2Yi5kdHNpCj4+PiBpbmRleCAwMTg4
-MDJkZjRjMGUuLjc0MDkxZjgzMWVjZiAxMDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRz
-L3JrMzI4OC1ldmIuZHRzaQo+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWV2Yi5k
-dHNpCj4+PiBAQCAtMjg1LDYgKzI4NSw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4gwqAgJnVh
-cnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvCoMKgwqAg
-cGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0gIm9rYXki
-Owo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMyODgtZmly
-ZWZseS1yZWxvYWQuZHRzIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtZmlyZWZseS1y
-ZWxvYWQuZHRzCj4+PiBpbmRleCA4YzM4YmRhMjFhN2MuLmIwYzk3NmM4ZTM1YiAxMDA2NDQKPj4+
-IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LXJlbG9hZC5kdHMKPj4+ICsr
-KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LXJlbG9hZC5kdHMKPj4+IEBAIC0y
-ODMsNiArMjgzLDggQEAgJnVhcnQxIHsKPj4+IMKgIH07Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8Kg
-wqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8
-JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDCoCBzdGF0dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+
-Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LmR0c2kgCj4+
-PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LmR0c2kKPj4+IGluZGV4IDVlMGEx
-OTAwNGU0Ni4uMTYzMmNjMDgzYzEyIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMv
-cmszMjg4LWZpcmVmbHkuZHRzaQo+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWZp
-cmVmbHkuZHRzaQo+Pj4gQEAgLTUzMiw2ICs1MzIsOCBAQCAmdWFydDEgewo+Pj4gwqAgfTsKPj4+
-IMKgICZ1YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiAr
-wqDCoMKgIHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9
-ICJva2F5IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmsz
-Mjg4LW1pcWkuZHRzIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtbWlxaS5kdHMKPj4+
-IGluZGV4IGM0MWQwMTJjODg1MC4uMmMwZWQzN2ZkZTgwIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9h
-cm0vYm9vdC9kdHMvcmszMjg4LW1pcWkuZHRzCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9y
-azMyODgtbWlxaS5kdHMKPj4+IEBAIC0zNzksNiArMzc5LDggQEAgJnRzYWRjIHsKPj4+IMKgIH07
-Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8KgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+
-Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDCoCBzdGF0
-dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRz
-L3JrMzI4OC1waHljb3JlLXJkay5kdHMgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1w
-aHljb3JlLXJkay5kdHMKPj4+IGluZGV4IDFlMzM4NTlkZTQ4NC4uNjUzMmMxYWM0M2NkIDEwMDY0
-NAo+Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBoeWNvcmUtcmRrLmR0cwo+Pj4g
-KysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBoeWNvcmUtcmRrLmR0cwo+Pj4gQEAgLTI0
-NCw2ICsyNDQsOCBAQCAmdWFydDAgewo+Pj4gwqAgfTsKPj4+IMKgICZ1YXJ0MiB7Cj4+PiArwqDC
-oMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKgIHBpbmN0cmwtMCA9IDwm
-dWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5IjsKPj4+IMKgIH07Cj4+
-PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0cyAKPj4+
-IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0cwo+Pj4gaW5kZXggNmE1MTk0
-MDM5OGI1Li5mMTgzMDZiZDllNmUgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9y
-azMyODgtcG9wbWV0YWwuZHRzCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtcG9w
-bWV0YWwuZHRzCj4+PiBAQCAtNDgxLDYgKzQ4MSw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4g
-wqAgJnVhcnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvC
-oMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0g
-Im9rYXkiOwo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMy
-ODgtcjg5LmR0cyAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXI4OS5kdHMKPj4+IGlu
-ZGV4IGEyNThjN2FlNTMyOS4uMDJkMmY1Y2ZlMjAxIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm0v
-Ym9vdC9kdHMvcmszMjg4LXI4OS5kdHMKPj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
-OC1yODkuZHRzCj4+PiBAQCAtMzQwLDYgKzM0MCw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4g
-wqAgJnVhcnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvC
-oMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0g
-Im9rYXkiOwo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMy
-ODgtcm9jazItc3F1YXJlLmR0cyAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXJvY2sy
-LXNxdWFyZS5kdHMKPj4+IGluZGV4IGNkY2RjOTIxZWUwOS4uYTQ0MjkwZTg4MmJlIDEwMDY0NAo+
-Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXJvY2syLXNxdWFyZS5kdHMKPj4+ICsr
-KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yb2NrMi1zcXVhcmUuZHRzCj4+PiBAQCAtMjY0
-LDYgKzI2NCw4IEBAICZzcGRpZiB7Cj4+PiDCoCB9Owo+Pj4gwqAgJnVhcnQyIHsKPj4+ICvCoMKg
-wqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvCoMKgwqAgcGluY3RybC0wID0gPCZ1
-YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0gIm9rYXkiOwo+Pj4gwqAgfTsKPj4+
-IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdGlua2VyLmR0c2kgCj4+PiBi
-L2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRzaQo+Pj4gaW5kZXggYWNmYWExMmVj
-MjM5Li4wMzI3MTE5ZjcxYjQgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9yazMy
-ODgtdGlua2VyLmR0c2kKPj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIu
-ZHRzaQo+Pj4gQEAgLTUwMCw2ICs1MDAsOCBAQCAmdWFydDEgewo+Pj4gwqAgfTsKPj4+IMKgICZ1
-YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKg
-IHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5
-IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZl
-eXJvbi5kdHNpIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLmR0c2kKPj4+
-IGluZGV4IDU0YTY4MzhkNzNmNS4uYmFhNDRkMDBlNDlhIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9h
-cm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi5kdHNpCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0
-cy9yazMyODgtdmV5cm9uLmR0c2kKPj4+IEBAIC00MTIsNiArNDEyLDggQEAgJnVhcnQxIHsKPj4+
-IMKgIH07Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8KgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1
-bHQiOwo+Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDC
-oCBzdGF0dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jv
-b3QvZHRzL3JrMzI4OC12eWFzYS5kdHMgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12
-eWFzYS5kdHMKPj4+IGluZGV4IDM4NWRkNTkzOTNlMS4uYWE1MGNkYzdmODM5IDEwMDY0NAo+Pj4g
-LS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZ5YXNhLmR0cwo+Pj4gKysrIGIvYXJjaC9h
-cm0vYm9vdC9kdHMvcmszMjg4LXZ5YXNhLmR0cwo+Pj4gQEAgLTM5OCw2ICszOTgsOCBAQCAmdHNh
-ZGMgewo+Pj4gwqAgfTsKPj4+IMKgICZ1YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMg
-PSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKgIHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDC
-oMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm0vYm9vdC9kdHMvcmszMjg4LmR0c2kgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
-OC5kdHNpCj4+PiBpbmRleCAwY2Q4ODc3NGRiOTUuLjRjMWY4Y2FiYjVlYiAxMDA2NDQKPj4+IC0t
-LSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC5kdHNpCj4+PiArKysgYi9hcmNoL2FybS9ib290
-L2R0cy9yazMyODguZHRzaQo+Pj4gQEAgLTQ1MCw4ICs0NTAsNiBAQCB1YXJ0Mjogc2VyaWFsQGZm
-NjkwMDAwIHsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZWctaW8td2lkdGggPSA8ND47Cj4+PiDC
-oMKgwqDCoMKgwqDCoMKgwqAgY2xvY2tzID0gPCZjcnUgU0NMS19VQVJUMj4sIDwmY3J1IFBDTEtf
-VUFSVDI+Owo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIGNsb2NrLW5hbWVzID0gImJhdWRjbGsiLCAi
-YXBiX3BjbGsiOwo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7
-Cj4+PiAtwqDCoMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDC
-oMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+Pj4gwqDCoMKgwqDCoCB9Owo+Pj4g
-QEAgLTcwNiw4ICs3MDQsNiBAQCBwd20yOiBwd21AZmY2ODAwMjAgewo+Pj4gwqDCoMKgwqDCoMKg
-wqDCoMKgIGNvbXBhdGlibGUgPSAicm9ja2NoaXAscmszMjg4LXB3bSI7Cj4+PiDCoMKgwqDCoMKg
-wqDCoMKgwqAgcmVnID0gPDB4MCAweGZmNjgwMDIwIDB4MCAweDEwPjsKPj4+IMKgwqDCoMKgwqDC
-oMKgwqDCoCAjcHdtLWNlbGxzID0gPDM+Owo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFt
-ZXMgPSAiZGVmYXVsdCI7Cj4+PiAtwqDCoMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZwd20yX3Bp
-bj47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2tzID0gPCZjcnUgUENMS19SS1BXTT47Cj4+
-PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2stbmFtZXMgPSAicHdtIjsKPj4+IMKgwqDCoMKgwqDC
-oMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+Pj4gQEAgLTcxNyw4ICs3MTMsNiBAQCBwd20z
-OiBwd21AZmY2ODAwMzAgewo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIGNvbXBhdGlibGUgPSAicm9j
-a2NoaXAscmszMjg4LXB3bSI7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4MCAweGZm
-NjgwMDMwIDB4MCAweDEwPjsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCAjcHdtLWNlbGxzID0gPDM+
-Owo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiAtwqDC
-oMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZwd20zX3Bpbj47Cj4+PiDCoMKgwqDCoMKgwqDCoMKg
-wqAgY2xvY2tzID0gPCZjcnUgUENMS19SS1BXTT47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xv
-Y2stbmFtZXMgPSAicHdtIjsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJs
-ZWQiOwo+Pj4KPj4KPj4KPj4KPj4KPj4KPiAKPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4g
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+--===============5675704445170311560==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="LZvS9be/3tNcYl/X"
+Content-Disposition: inline
+
+
+--LZvS9be/3tNcYl/X
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Mar 19, 2020 at 07:50:39AM +0100, Uwe Kleine-K=C3=B6nig wrote:
+>=20
+> [Dropped Tony Prisk from recipients as the address bounces]
+>=20
+> Hello,
+>=20
+> On Wed, Mar 18, 2020 at 11:59:53PM +0100, Thierry Reding wrote:
+> > On Tue, Mar 17, 2020 at 10:00:42PM +0100, Uwe Kleine-K=C3=B6nig wrote:
+> > > Hello,
+> > >=20
+> > > On Tue, Mar 17, 2020 at 06:40:43PM +0100, Thierry Reding wrote:
+> > > > On Tue, Mar 17, 2020 at 02:32:25PM +0200, Oleksandr Suvorov wrote:
+> > > > > The polarity enum definition PWM_POLARITY_INVERSED is misspelled.
+> > > > > Rename it to PWM_POLARITY_INVERTED.
+> > > >=20
+> > > > It isn't misspelled. "inversed" is a synonym for "inverted". Both
+> > > > spellings are correct.
+> > >=20
+> > > Some time ago I stumbled about "inversed", too. My spell checker does=
+n't
+> > > know it and I checked some dictionaries and none of them knew that wo=
+rd:
+> > >=20
+> > > https://www.lexico.com/search?utf8=3D%E2%9C%93&filter=3Ddictionary&di=
+ctionary=3Den&query=3Dinversed
+> > > https://de.pons.com/%C3%BCbersetzung/englisch-deutsch/inversed
+> > > https://dictionary.cambridge.org/spellcheck/english-german/?q=3Dinver=
+sed
+> > >=20
+> > > https://en.wiktionary.org/wiki/inverse#Verb mentions "inverse" as a v=
+erb
+> > > having "inversed" as past participle.
+> >=20
+> > Here are the first three results from a Google query:
+> >=20
+> > 	https://www.yourdictionary.com/inversed
+>=20
+> There is something fishy. In the Verb section it says indeed, that it is
+> the past participle and simple past of inverse. The entry for inverse
+> however only has sections that identify this word as adjective or noun;
+> not a verb.
+>=20
+> > 	https://www.dictionary.com/browse/inversed
+>=20
+> Not sure I'd count this as hint that inversed exists. The entry shown to
+> me under this URL is about "inverse" and it has
+>=20
+> 	verb (used with object), in=C2=B7versed, in=C2=B7vers=C2=B7ing.
+> 		? to invert.
+>=20
+> Does this mean: "Did you mean invert instead?"
+>=20
+> > 	https://en.wiktionary.org/wiki/inversed
+>=20
+> Yeah, that's the one I found, too.
+>=20
+> I still have the impression that "inversed" is in use because people
+> don't know better and understand the intended meaning. And this results
+> in leaking of this word into the references.
+>=20
+> > > Having said this I think (independent of the question if "inversed"
+> > > exists) using two similar terms for the same thing just results in
+> > > confusion. I hit that in the past already and I like it being address=
+ed.
+> >=20
+> > I don't know. It's pretty common to use different words for the same
+> > thing. They're called synonyms.
+>=20
+> In literature yes, I agree. In a novel it is annoying to repeat the same
+> words over and over again and some variation is good. In programming
+> however the goal is a different one. There the goal should be to be
+> precise and consistent.
+
+We also need to make sure that things don't break. It's a very bad idea
+to have a macro with the same name as an enum value for reasons I stated
+before. I think that's the most important thing here.
+
+Also, if inversed is a synonym of inverted, we don't loose any precision
+at all. All you have to remember is that you're dealing with a device
+tree constant in one case and an API enumeration in the other.
+
+So I think the current form is actually more precise, though I guess it
+could be confusing if you don't care about the difference.
+
+> > > > And as you noted in the cover letter, there's a conflict between the
+> > > > macro defined in dt-bindings/pwm/pwm.txt. If they end up being incl=
+uded
+> > > > in the wrong order you'll get a compile error.
+> > >=20
+> > > There are also other symbols that exist twice (GPIO_ACTIVE_HIGH was t=
+he
+> > > first to come to my mind). I'm not aware of any problems related to
+> > > these. What am I missing?
+> >=20
+> > There's currently no problem, obviously. But if for some reason the
+> > include files end up being included in a different order (i.e. the
+> > dt-bindings header is included before linux/pwm.h) then the macro will
+> > be evaluated and result in something like:
+> >=20
+> > 	enum pwm_polarity {
+> > 		PWM_POLARITY_NORMAL,
+> > 		1,
+> > 	};
+> >=20
+> > and that's not valid C, so will cause a build error.
+>=20
+> I admit I didn't look closely here and I assume you are right. If I
+> understand Oleksandr right this is only an intermediate step and when
+> the series is applied completely this issue is gone. Still it might be
+> worth to improve the series here.
+
+	$ gcc -o /dev/null -x c - <<- EOF
+	>     #define PWM_POLARITY_INVERTED (1 << 0)
+	>
+	>     enum pwm_polarity {
+	>         PWM_POLARITY_NORMAL,
+	>         PWM_POLARITY_INVERTED,
+	>     };
+	> EOF
+	<stdin>:1:35: error: expected identifier before =E2=80=98(=E2=80=99 token
+	<stdin>:5:9: note: in expansion of macro =E2=80=98PWM_POLARITY_INVERTED=E2=
+=80=99
+
+Q.E.D.
+
+> My original question was about similar problems with GPIO_ACTIVE_HIGH.
+> Are you aware of problems there?
+
+The problem exists there equally. We're probably not running into it
+because drivers don't end up including dt-bindings/gpio/gpio.h and
+include/linux/gpio/machine.h at the same time. Or they end up always
+including them in the right order.
+
+For PWM the situation is slightly more complicated because we only have
+one header for the kernel API, so the likelihood of including it along
+with the dt-bindings header is increased compared to GPIO.
+
+> > > > Note that DT bindings are an ABI and can
+> > > > never change, whereas the enum pwm_polarity is part of a Linux inte=
+rnal
+> > > > API and doesn't have the same restrictions as an ABI.
+> > >=20
+> > > I thought only binary device trees (dtb) are supposed to be ABI.
+> >=20
+> > Yes, the DTB is the ABI. dt-bindings/pwm/pwm.h is used to generate DTBs,
+> > which basically makes it ABI as well.
+>=20
+> We disagree here. With this argument you could fix quite some things as
+> ABI.
+
+I don't understand what you're trying to say.
+
+> > Yes, the symbol name may not be part of the ABI, but changing the
+> > symbol becomes very inconvenient because everyone that depends on it
+> > would have to change.
+>=20
+> Oleksandr adapted all in-tree users, so it only affects out-of-tree
+> users. In my book this is fine.
+
+There used to be a time when it was assumed that eventually device tree
+sources would live outside of the kernel tree. Given that they are a HW
+description, they really ought not to be relying on the Linux kernel
+tree as a way of keeping them consistent. That's really only out of
+convenience.
+
+> > Why bother?
+>=20
+> To make the API more precise and consistent. That's a good goal in my
+> eyes.
+
+PWM_POLARITY_INVERTED is not part of the API. It doesn't exist for
+anything other than to make the device tree more readable.
+
+I now regret that we ever introduced this in the first place. Perhaps it
+would've been better to just deal with raw numbers instead.
+
+Thierry
+
+--LZvS9be/3tNcYl/X
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5zn6kACgkQ3SOs138+
+s6G0qA//TRbmBTBaIgA8loJnEh1oNwlzPblJdiH8lXKLSVxfyTXfaFGDQcOzMyBg
+DkLtpO51Rah1o+3yB/j6b8TXA9amdpD65SP2FBL2dFLyBn8K5Ot5ZWuvTapyclcz
+2TI8cG1Du/xLWxMDDX+Rylj+9XTlQxu3lGssuCM56hF0VXmhyvEzD3/aLlA/MjeY
+QQky3apxaRT+lnGsAzRLGbLHZufTV+OaZ9ZYZZGTlsXR1VAUsyR44TGM+290Ut6p
+Ds8bLPjI3xTa6uy66MlsUcYAAo1/jCQMAS+Nr/B0XGRPJdtK2G+MY3vtTZENSvqr
+VKDulCTAEGE/uP+7qZVOmxOZIhX7n1zBdwSdZS5FgjCok6QjfOUa9SlT77O4bGAM
+lGaeG9h8gBYpE2wk+9Wd6V9vm8UoJXPujpsyJXRHpQa5nJhgqr/VNYCeHlYhKXuQ
+ymd6V9cwXRk/0xoRKR8WnRl5ZgfZtTYDfh/dGD7CdUBcyfCFZVcYEI01iO54m5Dr
+/kakaDhUXRLv+xBGk4CocrSgo92DQeFUWyb2QnoW/5yYbHEOYEsfz+pWUicxin/y
+Yf9ZNfDh5MPRidZyJ5b/wy3xz2OHEkyGKGGIb2em5E5AwvDZiDXhQkjhf5hzb2fD
+xgjBAa+LbbBZYCs2a4Y85i+tpsJpp72cE4Xamu4rr3Pz7URiAnw=
+=VES6
+-----END PGP SIGNATURE-----
+
+--LZvS9be/3tNcYl/X--
+
+
+--===============5675704445170311560==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5675704445170311560==--
+
