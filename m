@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0D2818AD9F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 08:52:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80E6418ADA0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 08:52:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Xo185yIz0ftoo9dcoyHBYIDIdZudPI1HUprYDQDfteU=; b=fTRghWROWk1nKecs1rfyyN6L8r
-	SFq+L0bcH4eUSpKeGV8kEJXqVdebPd1ei1BYISybnIBgvfwq6io9VpMP4KH5QUIGrTUpcDd2ivyfd
-	Q/e6QPPWqpmZsjIlIu7K95WHhD5l6xlJFVxu1lBJLTtCCnUCGVo5os54eKEzX+DDVM7+Ve9NpknVG
-	1tX2Yv+6qWmoZdTiTKPw/JC7zs29JoHU+wrJpKIUyYobytJZ1Q/qoh4KibFRs+g7ISdF6Hw7cKq8m
-	ahiCLkeyOsqKhV9eLUik99MrfYCOkt5gWoX0fx4L6nSZARKlZuo6998SscMo1FvvQpb4n6vuxJCG+
-	0Eqp7thw==;
+	bh=cY1/1GW5ke84Rzs1v0EEBwEeNJgAmIdK/l76RKuSN/M=; b=ieMXaAPFkWXOg4cM4VnPBbfw+E
+	5q6E/yvYdeOvBRB/oX+tRokWJn5uJ6JekOY2ghKD5HNAdAaF6MRNoksok7tEwM/E4XyOMS3L0ZsC7
+	GqSuAjdsww89DLKoQCY2NF14fsVe+FR6YVfD4JF1OyKS1/TPY9/YvtifNs190C3lhTf7FytawSJwf
+	qJDkCZvJgdVaeV+5SSw6BDv6McWQyC01i+wI3ZA4cedh8D98rld7s/t/dQarXXqQ0Mjb3u5ncAGbE
+	2xxQ3Rac1fRYJ4/StzW2iWIkeCX29ZHy8NdYzoXPSi/yA4+ooJQurdbHgDEtAR9KHrBXxG9e8lThI
+	zReRrh2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEpy7-0007nf-BI; Thu, 19 Mar 2020 07:51:55 +0000
+	id 1jEpyG-00084h-EA; Thu, 19 Mar 2020 07:52:04 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEpxF-0007A3-CK
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 07:51:02 +0000
+ id 1jEpxG-00079z-1E
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 07:51:03 +0000
 Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 19 Mar 2020 16:51:00 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id C1BD218005C;
- Thu, 19 Mar 2020 16:51:00 +0900 (JST)
+ by mx.socionext.com with ESMTP; 19 Mar 2020 16:51:01 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id ACC4E18005C;
+ Thu, 19 Mar 2020 16:51:01 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 19 Mar 2020 16:51:00 +0900
+ Thu, 19 Mar 2020 16:51:01 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 4CE621A0E67;
- Thu, 19 Mar 2020 16:51:00 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 746EC1A0E67;
+ Thu, 19 Mar 2020 16:51:01 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v2 3/6] arm64: dts: uniphier: Add XDMAC node
-Date: Thu, 19 Mar 2020 16:50:49 +0900
-Message-Id: <1584604252-13172-4-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v2 4/6] ARM: dts: uniphier: Add ethernet aliases
+Date: Thu, 19 Mar 2020 16:50:50 +0900
+Message-Id: <1584604252-13172-5-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1584604252-13172-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1584604252-13172-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_005101_524404_1D7C5183 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20200319_005102_185435_250A536A 
+X-CRM114-Status: GOOD (  14.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,73 +76,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add external DMA controller support implemented in UniPhier SoCs.
-This supports for LD11, LD20 and PXs3.
+Add an aliases property of ethernet device for each SoC.
+
+U-boot performs a fix-up of the MAC address and will overwrite the values
+from the Linux devicetree for aliased ethernet device. The MAC address can
+be inherited from u-boot by adding aliases of ethernet devices.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 8 ++++++++
- arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 8 ++++++++
- arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 8 ++++++++
- 3 files changed, 24 insertions(+)
+ arch/arm/boot/dts/uniphier-ld6b-ref.dts    | 1 +
+ arch/arm/boot/dts/uniphier-pro4-ace.dts    | 1 +
+ arch/arm/boot/dts/uniphier-pro4-ref.dts    | 1 +
+ arch/arm/boot/dts/uniphier-pro4-sanji.dts  | 1 +
+ arch/arm/boot/dts/uniphier-pxs2-gentil.dts | 1 +
+ arch/arm/boot/dts/uniphier-pxs2-vodka.dts  | 1 +
+ 6 files changed, 6 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-index 56f382f..c001f6c 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi
-@@ -566,6 +566,14 @@
- 			};
- 		};
+diff --git a/arch/arm/boot/dts/uniphier-ld6b-ref.dts b/arch/arm/boot/dts/uniphier-ld6b-ref.dts
+index 60994b6..079cadc 100644
+--- a/arch/arm/boot/dts/uniphier-ld6b-ref.dts
++++ b/arch/arm/boot/dts/uniphier-ld6b-ref.dts
+@@ -29,6 +29,7 @@
+ 		i2c4 = &i2c4;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
  
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
-+		};
-+
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-ld11-aidet";
- 			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-index bd4f8db..ebd0d98 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi
-@@ -664,6 +664,14 @@
- 			};
- 		};
+ 	memory@80000000 {
+diff --git a/arch/arm/boot/dts/uniphier-pro4-ace.dts b/arch/arm/boot/dts/uniphier-pro4-ace.dts
+index 92cc48d..64246fa 100644
+--- a/arch/arm/boot/dts/uniphier-pro4-ace.dts
++++ b/arch/arm/boot/dts/uniphier-pro4-ace.dts
+@@ -26,6 +26,7 @@
+ 		i2c3 = &i2c3;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
  
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
-+		};
-+
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-ld20-aidet";
- 			reg = <0x5fc20000 0x200>;
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-index cf4f762..d69c57b 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-+++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi
-@@ -498,6 +498,14 @@
- 			};
- 		};
+ 	memory@80000000 {
+diff --git a/arch/arm/boot/dts/uniphier-pro4-ref.dts b/arch/arm/boot/dts/uniphier-pro4-ref.dts
+index 854f2eb..181442c 100644
+--- a/arch/arm/boot/dts/uniphier-pro4-ref.dts
++++ b/arch/arm/boot/dts/uniphier-pro4-ref.dts
+@@ -29,6 +29,7 @@
+ 		i2c3 = &i2c3;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
  
-+		xdmac: dma-controller@5fc10000 {
-+			compatible = "socionext,uniphier-xdmac";
-+			reg = <0x5fc10000 0x1000>;
-+			interrupts = <0 188 4>;
-+			dma-channels = <16>;
-+			#dma-cells = <2>;
-+		};
-+
- 		aidet: aidet@5fc20000 {
- 			compatible = "socionext,uniphier-pxs3-aidet";
- 			reg = <0x5fc20000 0x200>;
+ 	memory@80000000 {
+diff --git a/arch/arm/boot/dts/uniphier-pro4-sanji.dts b/arch/arm/boot/dts/uniphier-pro4-sanji.dts
+index dda1a2f..5396556 100644
+--- a/arch/arm/boot/dts/uniphier-pro4-sanji.dts
++++ b/arch/arm/boot/dts/uniphier-pro4-sanji.dts
+@@ -25,6 +25,7 @@
+ 		i2c3 = &i2c3;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
+ 
+ 	memory@80000000 {
+diff --git a/arch/arm/boot/dts/uniphier-pxs2-gentil.dts b/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
+index e27fd4f..8e9ac57 100644
+--- a/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
++++ b/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
+@@ -26,6 +26,7 @@
+ 		i2c4 = &i2c4;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
+ 
+ 	memory@80000000 {
+diff --git a/arch/arm/boot/dts/uniphier-pxs2-vodka.dts b/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
+index 23fe42b..8eacc7b 100644
+--- a/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
++++ b/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
+@@ -24,6 +24,7 @@
+ 		i2c4 = &i2c4;
+ 		i2c5 = &i2c5;
+ 		i2c6 = &i2c6;
++		ethernet0 = &eth;
+ 	};
+ 
+ 	memory@80000000 {
 -- 
 2.7.4
 
