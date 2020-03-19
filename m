@@ -2,76 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B00618B171
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 11:31:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E664818B193
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 11:35:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s6OuH1jNwRzpHaptfbmzYeDLech38PcbR8TpAQnvS9g=; b=uX+lc/oCdPxTJU
-	2H/wdmM4LLoMWvXAbDZkL6rqvWpepRLsgG5WzPfxyvNXZk3jze0ISqGOumjeIUsf37xn5gxB4A6SA
-	EOyJceWxl/Rq5aH+v7W8D7cCQAq6C13y3QZM5+dDYmjHCp3wtT9n8iY3K6eaP6H9E/djErkE0waQH
-	I82CfqeqX2HT2z9kviXkZfh1SkC17XbsH+yKS0zAVPrFIOy/UXmId2P/4Z8iJS6uU0dtYcF4exxnK
-	whGXNFp3gFggme+5KcxkKqWjHDd2aZBVOLtFVdulOx8/KN4aiui3eW5vXqawGapR10wHfoReC1Gt8
-	aSGHEBq8oPmJ60xHzXcw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SFxThFPlchKJREy1MixcH3Wo9Ie8Ljy1DDWdh4gG0K8=; b=fizYjEVhhJad/p
+	+eweo9mLEyj4FzpB+dmhvOverDImayTE2vusn0axkWxOtwJYjSvjhFU8S78jbawzAHHBX8VJJCaNY
+	y4PWRqY/lSm7TTWwBY0047ilnx5t4Gmat0Ts4N4LVWiI+72n0TIlSKAvFSA66TQrct8uSWWWjifuX
+	5MdHQ1ZMWsEBxyR4YBUENJkMN4Ek9vXj5kiki8sQn1UQWeuOjgp8wHmPDwnBo9xfM87hdVJAA4QqX
+	bjw2ghJRg8S8WzEfpcjsUDkyitu8oGikCiXZ5y3VapSZ8I/FNw6gPhnDuZh7twRtJViNEu+5UpXaw
+	uuZ8nYhEMo6okBfXfFOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEsSB-0000rr-Sw; Thu, 19 Mar 2020 10:31:07 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jEsWC-0002od-Pe; Thu, 19 Mar 2020 10:35:16 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEsS3-0000r2-KO
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 10:31:01 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02JASqwX011436; Thu, 19 Mar 2020 11:30:54 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=T6KxkBVdSlvswEwEr/fHrokZ23VjltZtaEhbr8esy5Y=;
- b=V+mZ7etU3SXK2Sgi/eC0JJJcC0C2b6+W/lPBlCAm7cql5HaWiqr1nCquGskoO938ojO3
- TdSa/73rQ4/9Vvydn+LYsfxmm9I3QKhZN0JEy+AOwUCnb0aeS/71iN2Yva50ffyWCgq9
- I0MCbyxNAYcW/39U+TDk9ZKbSkOZsYCL8JGlcJt3G2UCWPWPGhcKA1ZyR7oHBgPqpjgV
- d5U7uQKSx9mtCf1tjaEMXBLZGcjHBReEe4BlbVciglZhy7j4HO9qOoGTq5xv49RadOwH
- UDbgdOcwmZUUsC+ZbjX8ZrM2hb9dppXkrhQGS0VR4mTJn5+H9X7tbTD8lWRFOJtMYtOh AQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yu6xdhk8b-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 19 Mar 2020 11:30:54 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 12BCD100038;
- Thu, 19 Mar 2020 11:30:54 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F0ED82A5824;
- Thu, 19 Mar 2020 11:30:53 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Thu, 19 Mar 2020 11:30:53 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <alexandre.torgue@st.com>
-Subject: [PATCH] ARM: dts: stm32: fix a typo for DAC io-channel-cells on
- stm32mp15
-Date: Thu, 19 Mar 2020 11:30:26 +0100
-Message-ID: <1584613826-10838-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jEsW3-0002P2-A5
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 10:35:09 +0000
+Received: by mail-wr1-x441.google.com with SMTP id o12so1635838wrh.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 03:35:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=2+YzF/enOl4r8vw1k/q8oc5IXEy2l58lzcK2eUNswfY=;
+ b=Wp4tTtAyAWCkbsPcQSF1ZOz8RAlcqD8ibXINn9PJKpdAXbhfc7GCivPHat0hkVek4f
+ 6LJaQOHpabmjypynqJUUiOY6Pe9Tvi8bqN5iNsrYA/QRbBm5xwFBKyMeVbsBjI7X8rap
+ jDFpPbWzKtuUaJGc2Gckj5c9i6beLsO7/P+91qV6iBFfBMJwrYpAzY6W2dfjQRVPnP78
+ LcZ92m4BuzgLS3bgxCGRcIs/59G31ukgk/papywUMre3c+kqEfwP561yU/biqHMswwon
+ lgIuO1q5wLkem74N3WI3aZeIapEvcdx0umUm+m8YIrOY5F0p9i9O2XSRiv6EwzyfKdBh
+ Oinw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=2+YzF/enOl4r8vw1k/q8oc5IXEy2l58lzcK2eUNswfY=;
+ b=rouW7PWCQgnunMw/BZqk4EaJQ10xUJxsYJkzesmy5bm7od5WA8O3a0J+MWTsU8X47Y
+ 9zqJGcIJ+69PjMmam+yQFycxk8aE1rZZSWBJuHax1lPYn9y/m1AD3vHZ0wfn14j9W+bz
+ XldJbJIoukT8AeG+bXnTqFLTJY8vaErfpak62+K/0LCKnL9rLhrNTx4w0ODQ1ijFJkBr
+ mPu+9IZ25vsu6o4gH60MqYsnid8MDtWQEMKGzRrw3p4zaHPCLE0vvMGVNogM6OxMhYPP
+ iWuPHwBT75JAM/0RBxxtNMd4UzPNmSEcc5AgaR8HJN6jxpuu0AZX1ZWJ5RF986bexWyw
+ KmtQ==
+X-Gm-Message-State: ANhLgQ0hi/tDRdKbHD/WBCNe4j5CR7QtwkUwU2S5ntnVUeBK/qNzQJjo
+ 3M1o2Gg1ej/rfrFo7ebZfjOciA==
+X-Google-Smtp-Source: ADFU+vvWVPvDmQ2o7lcxXplurl0m1ySuvprLskmlFV5vI9w9UjTSgZCIc9HI8DRkk9fXcIrY+0pXrg==
+X-Received: by 2002:a5d:4b8b:: with SMTP id b11mr3438636wrt.341.1584614105567; 
+ Thu, 19 Mar 2020 03:35:05 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:5d64:ea6:49bd:69d7?
+ ([2a01:e34:ed2f:f020:5d64:ea6:49bd:69d7])
+ by smtp.googlemail.com with ESMTPSA id p10sm2953167wrx.81.2020.03.19.03.35.02
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 19 Mar 2020 03:35:04 -0700 (PDT)
+Subject: Re: [PATCH v4 2/3] mfd: stm32: Add defines to be used for clkevent
+ purpose
+To: Benjamin GAIGNARD <benjamin.gaignard@st.com>,
+ Lee Jones <lee.jones@linaro.org>
+References: <20200217134546.14562-1-benjamin.gaignard@st.com>
+ <20200217134546.14562-3-benjamin.gaignard@st.com>
+ <e9f7eaac-5b61-1662-2ae1-924d126e6a97@linaro.org>
+ <20200319101014.GA5477@dell> <b21ac320-080d-3995-1c63-ca5c187224c6@st.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <3dc62545-b8e0-ebc2-8ddf-9a4aacc6d5b6@linaro.org>
+Date: Thu, 19 Mar 2020 11:35:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-19_02:2020-03-19,
- 2020-03-19 signatures=0
+In-Reply-To: <b21ac320-080d-3995-1c63-ca5c187224c6@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_033059_967055_B93494F9 
-X-CRM114-Status: GOOD (  13.63  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200319_033507_379181_C677CDDF 
+X-CRM114-Status: GOOD (  13.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,51 +159,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- jic23@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix a typo on STM32MP15 DAC, e.g. s/channels/channel
-
-Fixes: da6cddc7e8a4 ("ARM: dts: stm32: Add DAC support to stm32mp157c")
-
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- arch/arm/boot/dts/stm32mp151.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
-index 3ea05ba..5260818 100644
---- a/arch/arm/boot/dts/stm32mp151.dtsi
-+++ b/arch/arm/boot/dts/stm32mp151.dtsi
-@@ -550,14 +550,14 @@
- 
- 			dac1: dac@1 {
- 				compatible = "st,stm32-dac";
--				#io-channels-cells = <1>;
-+				#io-channel-cells = <1>;
- 				reg = <1>;
- 				status = "disabled";
- 			};
- 
- 			dac2: dac@2 {
- 				compatible = "st,stm32-dac";
--				#io-channels-cells = <1>;
-+				#io-channel-cells = <1>;
- 				reg = <2>;
- 				status = "disabled";
- 			};
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTkvMDMvMjAyMCAxMToyOCwgQmVuamFtaW4gR0FJR05BUkQgd3JvdGU6Cj4gCj4gCj4gT24g
+My8xOS8yMCAxMToxMCBBTSwgTGVlIEpvbmVzIHdyb3RlOgo+PiBPbiBUaHUsIDIwIEZlYiAyMDIw
+LCBEYW5pZWwgTGV6Y2FubyB3cm90ZToKPj4+IE9uIDE3LzAyLzIwMjAgMTQ6NDUsIEJlbmphbWlu
+IEdhaWduYXJkIHdyb3RlOgo+Pj4+IEFkZCBkZWZpbmVzIHRvIGJlIGFibGUgdG8gZW5hYmxlL2Ns
+ZWFyIGlycSBhbmQgY29uZmlndXJlIG9uZSBzaG90IG1vZGUuCj4+Pj4KPj4+PiBTaWduZWQtb2Zm
+LWJ5OiBCZW5qYW1pbiBHYWlnbmFyZCA8YmVuamFtaW4uZ2FpZ25hcmRAc3QuY29tPgo+Pj4gQXJl
+IHlvdSBmaW5lIGlmIEkgcGljayB0aGlzIHBhdGNoIHdpdGggdGhlIHNlcmllcz8KPj4gTm90aGlu
+ZyBoZWFyZCBmcm9tIHlvdSBzaW5jZSBJIEFja2VkIHRoaXMuCj4+Cj4+IEFyZSB5b3Ugc3RpbGwg
+cGxhbm5pbmcgb24gdGFraW5nIHRoaXMgcGF0Y2g/Cj4+Cj4+IElmIHNvLCBjYW4geW91IGFsc28g
+dGFrZSBwYXRjaCAxIHBsZWFzZT8KPiBJIHdpbGwgc2VuZCBhIHY1Lgo+IERhbmllbCBjb3VsZCB5
+b3Ugd2FpdCB1bnRpbCB0aGF0IHRvIG1lcmdlIGFsbCB0aGUgcGF0Y2hlcyAoZXZlbiBpZiB0aGlz
+IAo+IG9uZSB3b24ndCBjaGFuZ2UpID8KClN1cmUsIG5vIHByb2JsZW0uCgoKLS0gCiA8aHR0cDov
+L3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9y
+IEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93d3cuZmFjZWJvb2suY29tL3BhZ2Vz
+L0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3aXR0ZXIuY29tLyMhL2xpbmFyb29yZz4gVHdp
+dHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcvbGluYXJvLWJsb2cvPiBCbG9nCgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
