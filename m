@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3A4118B994
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 15:40:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E889B18B99E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 15:42:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lhHCymNJLTz467/wkESILeGjJayUD9sA95XVtlsKToE=; b=gHrIO3cYgSnJrT
-	XgA/5Ov6fDlHvuzF9gjuNM7gVG5FhsFQcQ3XakWIU1howVVWM2NZhU6J74JS1RDq+M88e5RAVKtag
-	RHAHRhsgjBvxgQUWdFFgdA9+2zBpbhL0bMhW3pV0czkxVn8wn9wo2mHbfsRmIBzO0KUSHBpXCF6Yr
-	SBexV7MbdcmRbYrdZ8SITNdFpP18awfoDyl3NJY8P5vF7500Eqy97JeKhq3hfFtYIJEaCdZE1MHtj
-	7JIXDhOfKx542JguecZRg9hH8QdyRiqpvbLKWprWQY/ozUFnOw0XMSgn93vPhOYKeaXLf9gDZVjV7
-	NB2wnOnGOVNG9wNWBMbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bTocvaRI0bSLysFeNrSG8u7Y8PTgXJb53wNkowRaFi0=; b=YQx0lDnvPP5Zveb57BCqrgTP+
+	6UIiaqxXsWAEl3nqNIl341qKDdg6aMOBNFZObOSNTjs/kXhzd2Q+3qVLrCyF9ayAKGsSfeNuRso7l
+	BAnPDMJSmRpGHwAPNoJmoQ12NT3sWqYtjm/mlG7A+MmBDBbBW6F45tjcABcXYffkpFkix2LHtJbvd
+	BEtEx47LFw0DnPJMRNSVpRKztS715TWDlxehsgvb6XuJph/IkNHOtaoAx3iPOE41UAABNGJT+GR6g
+	IpoNBTnBBDeZ1qmqphqgcOr2tQctnvw49a8UCsx49Vs0+LLUpRy8/2Tv5TXTY+gWZwvqsHQsPOhAH
+	ki7yA9new==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEwLi-0005i6-Vn; Thu, 19 Mar 2020 14:40:42 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1jEwMr-00060R-7d; Thu, 19 Mar 2020 14:41:53 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEwLV-0005hK-QR
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 14:40:31 +0000
-Received: by mail-il1-x143.google.com with SMTP id c8so2466474ilm.1
+ id 1jEwMe-0005zm-0U
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 14:41:41 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f7so2579303wml.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 07:40:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jjHet+d6PgTVVQzngVDu0DWyN0tpKckAYla4JKs7W40=;
- b=dgnqc9TorOD+T7DJjFZzT7XMOPM1Uql4eYR/gS5bo9ceo7hLhVWlnB54uKbeWs8glD
- W0GqzPTosEGlGB2FD4wkXNwzYZe1nOu0nYaC/hIo2N0bT8j+uZ/S4yEUI2ICrA31I84p
- Bb/+Nm31Se85+XJ81U/2TkVgpWOuFMRxwpI2Kt9SP//ToZtVsaN9s7Lb4s9RJX5ktYfS
- V9srf5U7C3MlP4rJEsNCwqTpMjNie8Mc07Dv81W7d1pNkAZ/cj+/WKOZEY1O6Cqnbhnv
- y/GJRrcFHuQ1nRXCu66Eew+tnit/uhgJXJLi4MM9daknEEsDIvsge+5QMBVuDDWhwi58
- umvw==
+ Thu, 19 Mar 2020 07:41:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=UnzFvog/ZZHuYATA7oC6JDKAefk/FCpxOezZvEwjAdU=;
+ b=tu4TuftGlwZKz+Qtl4lhdHpEuOO6VhSRIq2xiOD8bw6cQqbxgiv13q1PY//tDgnjcA
+ F1LhfGl4MwLkfc5wrwa4LL1BFpDjHA7PLco//1x28cpRWV+l2kip8mgiMYaxSoC0nLFU
+ +NAfU97ch+GQCldaY1+wcFSciIz/rJhBkhkOBYLyNypmET3/a5paT2jFOTT8jzWqmX7w
+ 7wIVi7QZFAGmz5zj+/mtYW7ajs9k6MsPk/RIhC3r3AN9EMLv2Itcw503vJ2JFJCrPX/e
+ OVUCMVCDl8dAL/Oqz7hxrRCOTy/7eq5xxnUPr78IjBTlwaDNy2UTVhtYAPt71tkvkQnY
+ ELbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jjHet+d6PgTVVQzngVDu0DWyN0tpKckAYla4JKs7W40=;
- b=mPg8BQDlOEzXt67D90h6k1gUR0BjLGWDQJ8OgRYx+x44Y2OGmooPoyN4bdxyoc2XtR
- 7EXixxNx9KV7mTTmd0PXUFdHL9ylKUCVdEMes8phwIH8GZjaVRLIe+lOdy4ait+wgUX4
- guwZNclFrh+TBKtXSCBW0kHs6PNMqUpz49TGhG0G5pktARRKrMUnkPw+9wtbeYGYfHQf
- 3xO6pAicStgWIyKKf1/XkUPlMAUURm0SnlFgl0W43orl4WlWrP5tZWs3PqOanStbCe7P
- HYNv5O8filjwDt5JRq7IPJ4JeK2T7tkUZq4Lu7alV0sBkkFqfZ1Yl5PeFjxZBODF92T4
- b1GA==
-X-Gm-Message-State: ANhLgQ1JrHljMmBPAg+jcFDlz2TMsD+0r5fJduW6r8yvgUkaQTlAseM1
- YudjFtWNyItmg5My5FzqYjzuhxFRQOaFj4/HAORMXQ==
-X-Google-Smtp-Source: ADFU+vsnPog9qFORvypj6xgLmeNjTJ3qbUUNUhTdvHi8BkTFesTjFNHuDKSwwaQaDPgWVZwvifE+xVBtSq04YCVh2eA=
-X-Received: by 2002:a92:9f1a:: with SMTP id u26mr3577794ili.72.1584628828813; 
- Thu, 19 Mar 2020 07:40:28 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=UnzFvog/ZZHuYATA7oC6JDKAefk/FCpxOezZvEwjAdU=;
+ b=mzX9xcDGE3Gcw6QMoP42sRCC21hh18YiiAetGUPbvNbcoOmt61n96eTgVFySyqAYnR
+ /RP+qsfAUs+rvRa8TuNOOW8kOwzH128q74iiW80kEfberTpmDYBvUSJv9SpQroS9fDl6
+ G2geyDqypmwD+rPHB2L468LujL300tr4V9boIGlxNYIbsiSvccI45jZG8hUqHNUoSgI0
+ U9BOA+gPePLmJm5MqE7HjSJ6zDpP1su5/Q4ilOjeME3ipiSylUWSDmCRlR7OGNoLOyRW
+ FMjTLK/qm2NFchLrdf01qoJE/zEk9nMpfpg9k64aOT9jHYCwd2zR/fCktzmLAN93Eohw
+ JthA==
+X-Gm-Message-State: ANhLgQ1kRKS3prNEQqAa38r9jiuffcfDVQi2JnhebBPMz2rmHPEPeb/x
+ qgHnPz49HIVkTKsT8CH37Bk=
+X-Google-Smtp-Source: ADFU+vvygh4kwm3N8tRWNNbFM700F+qp0H9Eyg7Gm0xuYPyb6QNswXk1TsnIOXUj53YSuNIwwVVdXQ==
+X-Received: by 2002:a7b:c082:: with SMTP id r2mr4375609wmh.177.1584628897613; 
+ Thu, 19 Mar 2020 07:41:37 -0700 (PDT)
+Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
+ by smtp.gmail.com with ESMTPSA id s1sm3787541wrp.41.2020.03.19.07.41.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Mar 2020 07:41:36 -0700 (PDT)
+Date: Thu, 19 Mar 2020 15:41:35 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: arm@kernel.org, soc@kernel.org
+Subject: Re: [GIT PULL 10/10] phy: tegra: Changes for v5.7-rc1
+Message-ID: <20200319144135.GA3266151@ulmo>
+References: <20200313165848.2915133-1-thierry.reding@gmail.com>
+ <20200313165848.2915133-10-thierry.reding@gmail.com>
+ <20200316134850.GB3825456@ulmo>
 MIME-Version: 1.0
-References: <20200309161748.31975-1-mathieu.poirier@linaro.org>
- <20200309161748.31975-3-mathieu.poirier@linaro.org>
- <20200318131821.GA2789508@kroah.com>
- <20200318181604.GB18359@xps15> <20200318182201.GA3235688@kroah.com>
- <CANLsYkxkg1bCCN=iuSQBF_oG-wWwrSvEC2pLNVkP64EgTfVAvg@mail.gmail.com>
- <20200319075414.GA3445010@kroah.com>
-In-Reply-To: <20200319075414.GA3445010@kroah.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 19 Mar 2020 08:40:18 -0600
-Message-ID: <CANLsYkwVDi1RoAOoQ8fKf5GuOnD=YFM6Bo308j7KJ5eg0fAR=w@mail.gmail.com>
-Subject: Re: [PATCH 02/13] coresight: cti: Add sysfs coresight mgmt register
- access
-To: Greg KH <gregkh@linuxfoundation.org>
+In-Reply-To: <20200316134850.GB3825456@ulmo>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_074029_864915_8DF3FD56 
-X-CRM114-Status: GOOD (  28.47  )
+X-CRM114-CacheID: sfid-20200319_074140_058875_D3F8119D 
+X-CRM114-Status: GOOD (  17.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -96,163 +100,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jon Hunter <jonathanh@nvidia.com>
+Content-Type: multipart/mixed; boundary="===============0967632776862230740=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 19 Mar 2020 at 01:54, Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Wed, Mar 18, 2020 at 01:28:05PM -0600, Mathieu Poirier wrote:
-> > On Wed, 18 Mar 2020 at 12:22, Greg KH <gregkh@linuxfoundation.org> wrote:
-> > >
-> > > On Wed, Mar 18, 2020 at 12:16:04PM -0600, Mathieu Poirier wrote:
-> > > > On Wed, Mar 18, 2020 at 02:18:21PM +0100, Greg KH wrote:
-> > > > > On Mon, Mar 09, 2020 at 10:17:37AM -0600, Mathieu Poirier wrote:
-> > > > > > From: Mike Leach <mike.leach@linaro.org>
-> > > > > >
-> > > > > > Adds sysfs access to the coresight management registers.
-> > > > > >
-> > > > > > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > > > > > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > > > > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > > > > [Fixed abbreviation in title]
-> > > > > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > > > > ---
-> > > > > >  .../hwtracing/coresight/coresight-cti-sysfs.c | 53 +++++++++++++++++++
-> > > > > >  drivers/hwtracing/coresight/coresight-priv.h  |  1 +
-> > > > > >  2 files changed, 54 insertions(+)
-> > > > > >
-> > > > > > diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> > > > > > index a832b8c6b866..507f8eb487fe 100644
-> > > > > > --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> > > > > > +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> > > > > > @@ -62,11 +62,64 @@ static struct attribute *coresight_cti_attrs[] = {
-> > > > > >   NULL,
-> > > > > >  };
-> > > > > >
-> > > > > > +/* register based attributes */
-> > > > > > +
-> > > > > > +/* macro to access RO registers with power check only (no enable check). */
-> > > > > > +#define coresight_cti_reg(name, offset)                  \
-> > > > > > +static ssize_t name##_show(struct device *dev,                           \
-> > > > > > +                    struct device_attribute *attr, char *buf)    \
-> > > > > > +{                                                                        \
-> > > > > > + struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);     \
-> > > > > > + u32 val = 0;                                                    \
-> > > > > > + pm_runtime_get_sync(dev->parent);                               \
-> > > > > > + spin_lock(&drvdata->spinlock);                                  \
-> > > > > > + if (drvdata->config.hw_powered)                                 \
-> > > > > > +         val = readl_relaxed(drvdata->base + offset);            \
-> > > > > > + spin_unlock(&drvdata->spinlock);                                \
-> > > > > > + pm_runtime_put_sync(dev->parent);                               \
-> > > > > > + return scnprintf(buf, PAGE_SIZE, "0x%x\n", val);                \
-> > > > > > +}                                                                        \
-> > > > > > +static DEVICE_ATTR_RO(name)
-> > > > > > +
-> > > > > > +/* coresight management registers */
-> > > > > > +coresight_cti_reg(devaff0, CTIDEVAFF0);
-> > > > > > +coresight_cti_reg(devaff1, CTIDEVAFF1);
-> > > > > > +coresight_cti_reg(authstatus, CORESIGHT_AUTHSTATUS);
-> > > > > > +coresight_cti_reg(devarch, CORESIGHT_DEVARCH);
-> > > > > > +coresight_cti_reg(devid, CORESIGHT_DEVID);
-> > > > > > +coresight_cti_reg(devtype, CORESIGHT_DEVTYPE);
-> > > > > > +coresight_cti_reg(pidr0, CORESIGHT_PERIPHIDR0);
-> > > > > > +coresight_cti_reg(pidr1, CORESIGHT_PERIPHIDR1);
-> > > > > > +coresight_cti_reg(pidr2, CORESIGHT_PERIPHIDR2);
-> > > > > > +coresight_cti_reg(pidr3, CORESIGHT_PERIPHIDR3);
-> > > > > > +coresight_cti_reg(pidr4, CORESIGHT_PERIPHIDR4);
-> > > > > > +
-> > > > > > +static struct attribute *coresight_cti_mgmt_attrs[] = {
-> > > > > > + &dev_attr_devaff0.attr,
-> > > > > > + &dev_attr_devaff1.attr,
-> > > > > > + &dev_attr_authstatus.attr,
-> > > > > > + &dev_attr_devarch.attr,
-> > > > > > + &dev_attr_devid.attr,
-> > > > > > + &dev_attr_devtype.attr,
-> > > > > > + &dev_attr_pidr0.attr,
-> > > > > > + &dev_attr_pidr1.attr,
-> > > > > > + &dev_attr_pidr2.attr,
-> > > > > > + &dev_attr_pidr3.attr,
-> > > > > > + &dev_attr_pidr4.attr,
-> > > > > > + NULL,
-> > > > > > +};
-> > > > > > +
-> > > > > >  static const struct attribute_group coresight_cti_group = {
-> > > > > >   .attrs = coresight_cti_attrs,
-> > > > > >  };
-> > > > > >
-> > > > > > +static const struct attribute_group coresight_cti_mgmt_group = {
-> > > > > > + .attrs = coresight_cti_mgmt_attrs,
-> > > > > > + .name = "mgmt",
-> > > > > > +};
-> > > > > > +
-> > > > > >  const struct attribute_group *coresight_cti_groups[] = {
-> > > > > >   &coresight_cti_group,
-> > > > > > + &coresight_cti_mgmt_group,
-> > > > > >   NULL,
-> > > > > >  };
-> > > > > > diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
-> > > > > > index 82e563cdc879..aba6b789c969 100644
-> > > > > > --- a/drivers/hwtracing/coresight/coresight-priv.h
-> > > > > > +++ b/drivers/hwtracing/coresight/coresight-priv.h
-> > > > > > @@ -22,6 +22,7 @@
-> > > > > >  #define CORESIGHT_CLAIMCLR       0xfa4
-> > > > > >  #define CORESIGHT_LAR            0xfb0
-> > > > > >  #define CORESIGHT_LSR            0xfb4
-> > > > > > +#define CORESIGHT_DEVARCH        0xfbc
-> > > > > >  #define CORESIGHT_AUTHSTATUS     0xfb8
-> > > > > >  #define CORESIGHT_DEVID          0xfc8
-> > > > > >  #define CORESIGHT_DEVTYPE        0xfcc
-> > > > > > --
-> > > > > > 2.20.1
-> > > > > >
-> > > > >
-> > > > > I do not see any Documentation/ABI/ entries for these new sysfs files,
-> > > > > did I miss it somehow?  I can't take new sysfs code without
-> > > > > documentation.
-> > > >
-> > > > All the ABI is documented in this patch, which is part of this set.
-> > > >
-> > > > [1]. https://lkml.org/lkml/2020/3/9/642
-> > >
-> > > That is not in the required Documentation/ABI/ form that all sysfs files
-> > > should have.  If they don't, it's a bug.
-> >
-> > Now I'm very confused...  As far as I can tell Mike has followed the
-> > (very loose) guidelines set out in the ABI documentation [1].  I have
-> > also taken a look at the patches that were merged in the v5.5 cycle -
-> > nothing is very different than what Mike has put together.  It is also
-> > based on the work I did a while back [2] that you merged.
->
-> {sigh}
->
-> I churned through 1200+ patches yesterday to get caught up and I think I
-> totally missed this, sorry.  Yes, that is the correct format, I was
-> looking at the .rst files you added to this series and missed this API
-> file instead.
 
-That's understandable - I review patches for only 2 subsystems and I
-get overwhelmed.
+--===============0967632776862230740==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bp/iNruPH9dso1Pn"
+Content-Disposition: inline
 
->
-> Ugh, my fault.
->
-> Can you just resend this whole series and I'll go through it again?
 
-I'll address the issues we agree on over in the other thread and will respin.
+--bp/iNruPH9dso1Pn
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Thanks,
-Mathieu
+On Mon, Mar 16, 2020 at 02:48:50PM +0100, Thierry Reding wrote:
+> On Fri, Mar 13, 2020 at 05:58:48PM +0100, Thierry Reding wrote:
+> > Hi ARM SoC maintainers,
+> >=20
+> > The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea098=
+62b9:
+> >=20
+> >   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> >=20
+> > are available in the Git repository at:
+> >=20
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/te=
+gra-for-5.7-phy
+> >=20
+> > for you to fetch changes up to 04c929223d1db6ad4ba8e4c23122e1052f670c2e:
+> >=20
+> >   phy: tegra: xusb: Don't warn on probe defer (2020-03-13 09:17:50 +010=
+0)
+> >=20
+> > This is a dependency for the USB changes that are also part of this
+> > series of pull requests, so it was deemed easier to take this all
+> > through the ARM SoC tree. The patches have all been acked by Kishon.
+>=20
+> Please don't merge this just yet. Stephen reported today that this was
+> breaking the build in linux-next because of a conflict with the USB
+> tree. I'll rebase this on top of Greg's usb-next branch and resend the
+> pull request.
+>=20
+> Sorry for the inconvenience.
 
->
-> thanks,
->
-> greg k-h
+I've pushed an updated version of this as tegra-for-5.7-phy-v2. However,
+it's also included as a dependency in a USB branch for which I've sent a
+PR to Greg, so I don't think you'll need to merge this after all.
+
+Thierry
+
+--bp/iNruPH9dso1Pn
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5zhJ8ACgkQ3SOs138+
+s6GhORAAjNlN+ZLW5SU5O91T0zeQguAXCuV2DegEYBPX2Bi4ASL1voQ77Yx1LQ7j
+xIlWW9JPRfeKw8jwS9gF3VihEoTEnFe4S5XzM/Ozsn5h3v2gO+TPu/dvswa0X3AV
+H/Wq5YWGMLnKDJVGi1T7rnfRHgIfw5iMwhE+0cEdCwVhPFqcfJbToF9Fi9ff33qp
+y6sE2mbv/RuME62u+vNoNo9oJMva0sXo5FyJOzRD3yd2YkvCOmeVJsqlhPeJt5qH
+cslbI+ExBZhTZGnGbePA8AqzRZxXEq/c4ddwN4cnW5BEpzCD8o9hfngQW2A20EpH
+kzOpgZheF3SnHqOpmvMiola/5cAd6mXgVdgFkWnwDnBgPqYk9mttnL+IOLwSJCsA
+W8hu2bZkw8bnstp5X7UaBZY3G8QaWToyhl+JDMD4LZcxyybQflhYIoFoFtoyWPeE
+74CLBAU+VfKl/HNQqvbWsNAMss76ldwP1HKXtau552hpYY51mQrZlahUaKRMTrM1
+YXNKSgbjBr7YleiMa621DKgxda7Kq/qTBYLevK6V4QBXTvLrZAH7giCOrg0P/qpW
+5Cx2SOuKCaLLYz6mCOXJK1voyeIraOlvuDRClE4VpZAbOY5cqDemCBob/+L3Y6NU
+xuh+YKkPNi3fel3tAMyjvsJLzYaGFev5z5Sr4jA50+HejLHZtiY=
+=GYTf
+-----END PGP SIGNATURE-----
+
+--bp/iNruPH9dso1Pn--
+
+
+--===============0967632776862230740==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0967632776862230740==--
+
