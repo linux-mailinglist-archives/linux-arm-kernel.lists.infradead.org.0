@@ -2,78 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D708118BC46
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:18:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2544018BC76
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:28:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HMeK1CkR9VG+QnnqWsjvbEKEBjB0x11EO76vSoF6+1A=; b=IYbsOvxjSrGuiX
-	ifo21hV0VZC5WTPqJkrhqriofCVrldlkW4SZvVLLHZEdwtzh2qxFmMoq2ibIPUJsvd3hqh8gvplvN
-	fD9q4BTqiTMrb13EQqZQk0wXevl9ik6g4fzsIts6hU/Rzt055Q01y0rhzn9HjaftSNQqw7eHTqWfo
-	TAWTmS6UDxS67oGtm+Lnfq+lk+5oIHflz72xNPIkORhGUTH74+U1xwLTx9dpsCWWRovq7IWhEh4pm
-	B3IrsYSzv0KK+VVsZHKqZMNgyvig0GwnOyHilPMPCAR0sO0Op/SKnKRtqhzDyDJo0k/uKitOdq2LU
-	ngdqj7Ot/d79AUEhrcnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pCLJuW5jxsRRae00fQHqXrAaTkta/Dcn75fi9rdnu/4=; b=DtDsya8vQSxUwY
+	QFZKA7lg67npUTciu+1MDixhDrFdtQoZv9uxhxvIQ+dfB5aMf9g8X+a5Y2tBRTxrz5DbSm/ARXHWC
+	oJQxcvImGKtqVng47lGoP3C7dL2fHCnIXFlz0Q5kzyRORd2W8qJcdo8rzLkSQN/kSppKLPRdP+Aqu
+	QV+dmWeKqwb81pkDaQT7Xw97D136piibgFblt5NCerhkDA3rCH34Akugb1L9iGXnsiMgllHvd5gho
+	4ITYWFyhKv1OKeygu9t94aoTgAXdV8AOdLR0aL7zRol3GAz5j250ug0HI0BC3H9jVUbF4ZDdR4FdZ
+	YgRHdUgPK5XKstRKyFDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jExsQ-00031I-2u; Thu, 19 Mar 2020 16:18:34 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jEy28-0006XQ-1O; Thu, 19 Mar 2020 16:28:36 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jExsD-00030Y-UR
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 16:18:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584634701;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=TPMaeSZsclHVIbI6q8ygnn5aaACtoMCOfBf0pAjRkic=;
- b=cLVt3hXI4cjSXS6M4oNVTu30+c6Szax1IQ8fhhk7qwtSt2L7P33nywqf/XNdNjB3a9UOF7
- Y3JwDzJZd6w38mKCwHJSrlegTsY3efTRj5/BsaXs6W/WT0FJ4S9HF7gPsGPtUtoywG8cKE
- hOmRFFlyQy1P3NXMQ+GCKoS2MqGmirU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-2-HTtkVwovMASSWR69wcGIBQ-1; Thu, 19 Mar 2020 12:18:17 -0400
-X-MC-Unique: HTtkVwovMASSWR69wcGIBQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8238B1050920;
- Thu, 19 Mar 2020 16:17:52 +0000 (UTC)
-Received: from [10.36.113.142] (ovpn-113-142.ams2.redhat.com [10.36.113.142])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B01975D9CD;
- Thu, 19 Mar 2020 16:17:49 +0000 (UTC)
-Subject: Re: [PATCH v5 23/23] KVM: arm64: GICv4.1: Expose HW-based SGIs in
- debugfs
-To: Marc Zyngier <maz@kernel.org>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-24-maz@kernel.org>
- <4cb4c3d4-7b02-bb77-cd7a-c185346b6a2f@redhat.com>
- <45c282bddd43420024633943c1befac3@kernel.org>
- <33576d89-2b12-b98b-e392-3342b9b1265c@redhat.com>
- <17921081f98a589c67b37b1d07a9cfcc@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <791e08fc-417c-e956-1a41-0c605f7617b7@redhat.com>
-Date: Thu, 19 Mar 2020 17:17:48 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1jEy1n-0006WE-BX
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 16:28:17 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02JGSAZ4026976;
+ Thu, 19 Mar 2020 11:28:10 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1584635290;
+ bh=k6bkA/KJdYJk33YAk4UWI+sIZqfJh9tELgeOYvF7XsQ=;
+ h=From:To:CC:Subject:Date;
+ b=LXcBuV5uoYiWNRuRJ39gVYcOEG5aEnGj64X5zrI75NOJFo3GQqu460bTUHxe9kAFe
+ Nrvb8dJ+URcBcWH5+IglSkN5woeX1BvibUmENjhmnXhlVy6wUs3Bjsp5ai+dfkMDC7
+ 1OzTVBmou6alUWMwhMabhk1sK0MpXa2JjF7bXFuk=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02JGSA6N093215;
+ Thu, 19 Mar 2020 11:28:10 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 19
+ Mar 2020 11:28:10 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 19 Mar 2020 11:28:10 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02JGS90o109899;
+ Thu, 19 Mar 2020 11:28:09 -0500
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, Rob Herring <robh+dt@kernel.org>, 
+ Tero Kristo <t-kristo@ti.com>, "David S . Miller" <davem@davemloft.net>,
+ netdev <netdev@vger.kernel.org>, Roger Quadros <rogerq@ti.com>,
+ <devicetree@vger.kernel.org>, Jakub Kicinski <kuba@kernel.org>
+Subject: [PATCH net-next v5 00/11] net: ethernet: ti: add networking support
+ for k3 am65x/j721e soc
+Date: Thu, 19 Mar 2020 18:27:55 +0200
+Message-ID: <20200319162806.25705-1-grygorii.strashko@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <17921081f98a589c67b37b1d07a9cfcc@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_091822_052697_4510329A 
-X-CRM114-Status: GOOD (  15.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_092815_482063_30350C8F 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,43 +90,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Grygorii Strashko <grygorii.strashko@ti.com>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Murali Karicheri <m-karicheri2@ti.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAzLzE5LzIwIDU6MTYgUE0sIE1hcmMgWnluZ2llciB3cm90ZToKPiBIaSBFcmljLAo+
-IAo+IE9uIDIwMjAtMDMtMTkgMTU6NDMsIEF1Z2VyIEVyaWMgd3JvdGU6Cj4+IEhpIE1hcmMsCj4+
-Cj4+IE9uIDMvMTkvMjAgNDoyMSBQTSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4gSGkgRXJpYywK
-PiAKPiBbLi4uXQo+IAo+Pj4+IFRoZSBwYXRjaCBsb29rcyBnb29kIHRvIG1lIGJ1dCBJIGFtIG5v
-dyBsb3N0IGFib3V0IGhvdyB3ZSByZXRyaWV2ZSB0aGUKPj4+PiBwZW5kaW5nIHN0YXQgb2Ygb3Ro
-ZXIgaHcgbWFwcGVkIGludGVycnVwdHMuIExvb2tzIHdlIHVzZQo+Pj4+IGlycS0+cGVuZGluZ19s
-YXRjaCBhbHdheXMuIElzIHRoYXQgY29ycmVjdD8KPj4+Cj4+PiBDb3JyZWN0LiBHSUN2NC4wIGRv
-ZXNuJ3QgZ2l2ZSB1cyBhbiBhcmNoaXRlY3R1cmFsIHdheSB0byBsb29rIGF0IHRoZQo+Pj4gdkxQ
-SSBwZW5kaW5nIHN0YXRlICh0aGVyZSBpc24ndCBldmVuIGEgZ3VhcmFudGVlIGFib3V0IHdoZW4g
-dGhlIEdJQwo+Pj4gd2lsbCBzdG9wIHdyaXRpbmcgdG8gbWVtb3J5LCBpZiBpdCBldmVyIGRvZXMp
-Lgo+Pj4KPj4+IFdpdGggR0lDdjQuMSwgeW91IGNhbiBpbnRyb3NwZWN0IHRoZSBIVyBzdGF0ZSBm
-b3IgU0dJcy4gWW91IGNhbiBhbHNvCj4+PiBsb29rIGF0IHRoZSB2TFBJIHN0YXRlIGJ5IHBlZWtp
-bmcgYXQgdGhlIHZpcnR1YWwgcGVuZGluZyB0YWJsZSwgYnV0Cj4+PiB5b3UnZCBuZWVkIHRvIHVu
-bWFwIHRoZSBWUEUgZmlyc3QsIHdoaWNoIEkgb2J2aW91c2x5IGRvbid0IHdhbnQgdG8gZG8KPj4+
-IGZvciB0aGlzIGRlYnVnIGludGVyZmFjZSwgc3BlY2lhbGx5IGFzIGl0IGNhbiBiZSB1c2VkIHdo
-aWxzdCB0aGUgZ3Vlc3QKPj4+IGlzIHVwIGFuZCBydW5uaW5nLgo+PiBPSyBmb3IgdkxQSXMsIHdo
-YXQgYWJvdXQgb3RoZXIgSFcgbWFwcGVkIElSUXMgKGFyY2ggdGltZXI/KQo+IAo+IERpZmZlcmVu
-dCBraW5kIG9mIEhXLiBXaXRoIHRob3NlLCB0aGUgaW5qZWN0aW9uIGlzIHN0aWxsIHZpcnR1YWws
-IHNvIHRoZQo+IFNXIHBlbmRpbmcgYml0IGlzIHN0aWxsIHZlcnkgbXVjaCB2YWxpZC4gWW91IGNh
-biBhY3R1YWxseSB0cnkgYW5kIG1ha2UKPiB0aGUgdGltZXIgaW50ZXJydXB0IHBlbmRpbmcsIGl0
-IHNob3VsZCBzaG93IHVwLgo+IAo+IFdoYXQgdGhlIGlycS0+aHcgYml0IG1lYW5zIGlzICJ0aGlz
-IHZpcnR1YWwgaW50ZXJydXB0IGlzIHNvbWVob3cgcmVsYXRlZAo+IHRvIHRoZSBob3N0X2lycSIu
-IEhvdyB0aGlzIGlzIGludGVycHJldGVkIGlzIGNvbXBsZXRlbHkgY29udGV4dC1kZXBlbmRlbnQu
-Ck9LIHRoYW5rIHlvdSBmb3IgcmVmcmVzaGluZyBteSBtZW1vcmllcyA7LSkKCkVyaWMKPiAKPiBU
-aGFua3MsCj4gCj4gwqDCoMKgwqDCoMKgwqAgTS4KCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi
+
+This v5 series adds basic networking support support TI K3 AM654x/J721E SoC which
+have integrated Gigabit Ethernet MAC (Media Access Controller) into device MCU
+domain and named MCU_CPSW0 (CPSW2G NUSS).
+
+Formally TRMs refer CPSW2G NUSS as two-port Gigabit Ethernet Switch subsystem
+with port 0 being the CPPI DMA host port and port 1 being the external Ethernet
+port, but for 1 external port device it's just Port 0 <-> ALE <-> Port 1 and it's
+rather device with HW filtering capabilities then actually switching device.
+It's expected to have similar devices, but with more external ports.
+
+The new Host port 0 Communications Port Programming Interface (CPPI5) is
+operating by TI AM654x/J721E NAVSS Unified DMA Peripheral Root Complex (UDMA-P)
+controller [1].
+
+The CPSW2G contains below modules for which existing code is re-used:
+ - MAC SL: cpsw_sl.c
+ - Address Lookup Engine (ALE): cpsw_ale.c, basically compatible with K2 66AK2E/G
+ - Management Data Input/Output interface (MDIO): davinci_mdio.c, fully 
+   compatible with TI AM3/4/5 devices
+
+Basic features supported by CPSW2G NUSS driver:
+ - VLAN support, 802.1Q compliant, Auto add port VLAN for untagged frames on
+   ingress, Auto VLAN removal on egress and auto pad to minimum frame size.
+ - multicast filtering
+ - promisc mode
+ - TX multiq support in Round Robin or Fixed priority modes
+ - RX checksum offload for non-fragmented IPv4/IPv6 TCP/UDP packets
+ - TX checksum offload support for IPv4/IPv6 TCP/UDP packets (J721E only).
+
+Features under development:
+ - Support for IEEE 1588 Clock Synchronization. The CPSW2G NUSS includes new
+   version of Common Platform Time Sync (CPTS)
+ - tc-mqprio: priority level Quality Of Service (QOS) support (802.1p)
+ - tc-cbs: Support for Audio/Video Bridging (P802.1Qav/D6.0) HW shapers
+ - tc-taprio: IEEE 802.1Qbv/D2.2 Enhancements for Scheduled Traffic
+ - frame preemption: IEEE P902.3br/D2.0 Interspersing Express Traffic, 802.1Qbu
+ - extended ALE features: classifier/policers, auto-aging
+
+Patches 1-6 are intended for netdev, Patches 7-11 are intended for K3 Platform
+tree and provided here for testing purposes.
+
+Changes in v5:
+ - renamed files k3-udma-desc-pool.*  k3-udma-desc-pool to k3-cppi-desc-pool.*,
+   and API to k3_cppi_desc_pool_* as requested by Peter Ujfalusi <peter.ujfalusi@ti.com>
+ - fixed copy-paste err in am65_cpsw_nuss_ndo_slave_set_rx_mode() which blocked
+   recieving of mcast frames.
+ - added Tested-by: Murali Karicheri <m-karicheri2@ti.com> 
+
+Changes in v4:
+ - fixed minor comments from Jakub Kicinski <kuba@kernel.org>
+ - dependencies resolved: required phy-rmii-sel changes [2] queued for merge
+   except one [3] which is included in this series with Kishon's ask.
+
+Changes in v3:
+ - add ARM64 defconfig changes for testing purposes
+ - fixed DT yaml definition
+ - fixed comments from Jakub Kicinski <kuba@kernel.org>
+
+Changes in v2:
+ - fixed DT yaml definition
+ - fixed comments from David Miller
+
+v4: https://patchwork.ozlabs.org/cover/1256092/
+v3: https://patchwork.ozlabs.org/cover/1254568/
+v2: https://patchwork.ozlabs.org/cover/1250674/
+v1: https://lwn.net/Articles/813087/
+
+TRMs:
+ AM654: http://www.ti.com/lit/ug/spruid7e/spruid7e.pdf
+ J721E: http://www.ti.com/lit/ug/spruil1a/spruil1a.pdf
+
+Preliminary documentation can be found at:
+ http://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/linux/Foundational_Components/Kernel/Kernel_Drivers/Network/K3_CPSW2g.html
+
+[1] https://lwn.net/Articles/808030/
+[2] https://lkml.org/lkml/2020/2/22/100
+[3] https://lkml.org/lkml/2020/3/3/724
+Grygorii Strashko (11):
+  phy: ti: gmii-sel: simplify config dependencies between net drivers
+    and gmii phy
+  net: ethernet: ti: ale: fix seeing unreg mcast packets with promisc
+    and allmulti disabled
+  net: ethernet: ti: ale: add support for mac-only mode
+  net: ethernet: ti: ale: am65: add support for default thread cfg
+  dt-binding: ti: am65x: document mcu cpsw nuss
+  net: ethernet: ti: introduce am65x/j721e gigabit eth subsystem driver
+  arm64: dts: ti: k3-am65-mcu: add cpsw nuss node
+  arm64: dts: k3-am654-base-board: add mcu cpsw nuss pinmux and phy defs
+  arm64: dts: ti: k3-j721e-mcu: add mcu cpsw nuss node
+  arm64: dts: ti: k3-j721e-common-proc-board: add mcu cpsw nuss pinmux
+    and phy defs
+  arm64: defconfig: ti: k3: enable dma and networking
+
+ .../bindings/net/ti,k3-am654-cpsw-nuss.yaml   |  226 ++
+ arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       |   49 +
+ arch/arm64/boot/dts/ti/k3-am65.dtsi           |    1 +
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts |   42 +
+ .../dts/ti/k3-j721e-common-proc-board.dts     |   43 +
+ .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |   49 +
+ arch/arm64/boot/dts/ti/k3-j721e.dtsi          |    1 +
+ arch/arm64/configs/defconfig                  |    3 +
+ drivers/net/ethernet/ti/Kconfig               |   20 +-
+ drivers/net/ethernet/ti/Makefile              |    3 +
+ drivers/net/ethernet/ti/am65-cpsw-ethtool.c   |  747 +++++++
+ drivers/net/ethernet/ti/am65-cpsw-nuss.c      | 1965 +++++++++++++++++
+ drivers/net/ethernet/ti/am65-cpsw-nuss.h      |  142 ++
+ drivers/net/ethernet/ti/cpsw_ale.c            |   38 +
+ drivers/net/ethernet/ti/cpsw_ale.h            |    4 +
+ drivers/net/ethernet/ti/k3-cppi-desc-pool.c   |  126 ++
+ drivers/net/ethernet/ti/k3-cppi-desc-pool.h   |   30 +
+ drivers/phy/ti/Kconfig                        |    3 -
+ 18 files changed, 3487 insertions(+), 5 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml
+ create mode 100644 drivers/net/ethernet/ti/am65-cpsw-ethtool.c
+ create mode 100644 drivers/net/ethernet/ti/am65-cpsw-nuss.c
+ create mode 100644 drivers/net/ethernet/ti/am65-cpsw-nuss.h
+ create mode 100644 drivers/net/ethernet/ti/k3-cppi-desc-pool.c
+ create mode 100644 drivers/net/ethernet/ti/k3-cppi-desc-pool.h
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
