@@ -2,85 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D72718B922
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 15:14:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D88218B931
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 15:19:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8v7v8aFY9RYqtHiJL2rAWy2wbn3jWNCxurWvsG+Kd8g=; b=PFPmM4GskaxXY6
-	SOFZ3VzFLv+QyhNW9CB1EZkbgfpPbcSx04uevmK0NLiCURRv/kBVN0HMyfvJwnPlGfXfE4GyDQbd2
-	+JYf4M/rGH7kwT6gPQQ3LG6ZbcSco/Fez7E7cBEADFnqPvlmbI1ockmlycNDKkw8bMkxnlOxH8gOm
-	2Y/HQ37ZG3Bxuto7gZ4n1+xqRnpp7olwGCYDoIKHo0n2rzYf0G1GE+oULspSNUp9zr+8twjyEBOKb
-	kqRIxPZ/xB8OGVDl8yMiFH2EIJnIkrFzT/WklxnPWCx7tYxz6r1ZBohH0angJFix3fUvQhfweOXl8
-	Pqa2WC12VnjL9GM2N44w==;
+	List-Owner; bh=Dh6eLQ0ErWFxDOO8nmQHlxDCfvGT8pWhXSU80Q4mOUA=; b=bfkrt1jjqkaZbG
+	7QA55B9rnHtphxI4c39MWfzJK58jR6fCYEqGf8rUjCA/vuAVTgjhWOf/qVfwQBzbD8sfNSPCjECwp
+	3Qr7nlgmmDpk4q641LS9x8wJWl9wHUlkxHQiI6HXupOT7EqXaaXfAFwn5hfEl5n5AzRRbWCd3Z5NT
+	e8PACrh0VhuHY2kF02KnJKNFG2RPc/p6sxokC8Bpj7bpTQTwx00CMm2MQRLdHu+euHTi/VID1G/W4
+	F1/I51wZ0K4/PAM8CDyZYs12Ox7btp+jJ4VUydvDNOpftdutASECoMHnJRdfucyxCD2bW1gTafryK
+	/jBMPqg4eeclDUQ6Pc8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEvwf-0001m0-Oz; Thu, 19 Mar 2020 14:14:49 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jEw1T-0003gn-3e; Thu, 19 Mar 2020 14:19:47 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEvwW-0001lc-7Q
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 14:14:41 +0000
-Received: by mail-lf1-x141.google.com with SMTP id c20so1779323lfb.0
+ id 1jEw1K-0003gA-JH
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 14:19:40 +0000
+Received: from mail-vs1-f42.google.com (mail-vs1-f42.google.com
+ [209.85.217.42]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id 02JEJ6N4013583
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 19 Mar 2020 23:19:07 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 02JEJ6N4013583
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1584627547;
+ bh=w1lbHoDNgA6TwOiiJZhZx8M7iyfr3Ed70vDIRSfWaiA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JmygXgMYln+Hv9uz66IB4Y/m6/YDaGHqDhaJQohiqqhgDR187g8zADDL3Q8wm42Ua
+ Kb/foXnTs9Jyy/gC+oKSua6jBI9fGfvOfIIPLfmkS7bM7OOfILPey3zBMISqXAy3K5
+ d/dsOGvPnxoRcSVBO1cjM72DRW+qk3QqdjEqqaq3jiEUSUVwlzJwkDUy6AAZadLwey
+ GOFTsJvjYUChUzEl8EI1vq/Nl/XNKTpsh1EjKCjdSJ1WcVrBel685Aupr8jIoZfG9N
+ J3QshXrP4NJLaPlY+DkFzd4BSAuoYbRHsIJQgM4IQb6I5do49Qw82OZFLXmg08e0bp
+ z/Nl8VJgAqm6w==
+X-Nifty-SrcIP: [209.85.217.42]
+Received: by mail-vs1-f42.google.com with SMTP id x206so1700581vsx.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Mar 2020 07:14:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OxjXVpGbkMkJ0WExSWqPpSaBQvMwnWJnTr1Wx+V8SG8=;
- b=AZOPCFBQYSqsz/AEYGuuPOzJTdJ/ZTsTX/5uwunSTWHVK4GeC09eczWB8hdsOqDQsH
- NE8V3RKBTTt/IsOKfyue6IUukFCUmj3uB93xzQ16sNd3pX1n2wcUou3DKPqS5PevTns+
- 5LNt1lCgFE2eWtnlkTxMBQdN+pvFJKsgupqIqdXFoBTY7yLdtCl4MwY5foZ598hflKd0
- QT2gQX4or7spIgIPXs8+H8T97cA1BW9Up0Z2Vcurti7BHsL+aF7uRlooa5KRFECreWJz
- bd8L7aFaU+J0uvbvpWCM1DHhdsSBSToFgHhOJr52xfwt7vvwoFoygtLsq273UwCfnbVy
- J3Fw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OxjXVpGbkMkJ0WExSWqPpSaBQvMwnWJnTr1Wx+V8SG8=;
- b=YAzIpa4UziHfU24zK0nGmCzI9d3ba9zwzZnZczKSC62cP54uO1/5B4CV4lQiwsfHeJ
- O1+yfJMU1qUAvQZ/XsSZ9X0gneC82p8GNjixCUOM3aPw/lifoNpWjRDTFxG7wEHqpuMB
- byg+uKV+oPXQ4TAL5KSOC5PDIP/6ZolNpD7RLO+4hmjTNU3ccIq2nhehhWBSS30eM3gN
- ieAjPcDKbMKP6I0TK639BmEHK+5jyr5bDDDsJ5ZZETodsDhXYTBsaJR4sIW29ozgW64t
- DQJ2eoiAMzJXQ7CU17NYHTYBNcIkpGiKjdfRRDwNdaxn8C1T3z8eU/D79IhpV/+eIeo3
- so1A==
-X-Gm-Message-State: ANhLgQ3z95wfmWNuI7L6JsCfJTJbuojNFOqBeJlmWYH8KL03UyzbV6+5
- XoLzL+0xatJuIN9YFEC9q9PGYmLE36/MG4MgDUg8mG1Zc8c=
-X-Google-Smtp-Source: ADFU+vt1yS1vI9ljM0gwVaf68ZRjuY1p2nfT2WzK32ag3cYSnzmKGhQi4YvVl/W8DZtvTQtWWxSu7seu9AnqnrT9Fjo=
-X-Received: by 2002:a19:2353:: with SMTP id j80mr2188497lfj.4.1584627278167;
- Thu, 19 Mar 2020 07:14:38 -0700 (PDT)
+ Thu, 19 Mar 2020 07:19:07 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ0cmym7VbaJssDS3Nw5DlmLGQj/tdfpX2TnRR/YsChKOIL3tLhX
+ Enrgwu+4nNUWUgv3hSQ51e6gSr3U0VBWHuJ52tA=
+X-Google-Smtp-Source: ADFU+vuilX6NSpIv5I8KSxSguokUibNXJs2yofeG2OKKLHVzmKA1clQOz5tEg/6qziFICi7KIwK4EHdU/Rnj219Bb0k=
+X-Received: by 2002:a67:33cb:: with SMTP id z194mr2384802vsz.155.1584627545771; 
+ Thu, 19 Mar 2020 07:19:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200316133503.144650-1-icenowy@aosc.io>
- <20200316133503.144650-3-icenowy@aosc.io>
-In-Reply-To: <20200316133503.144650-3-icenowy@aosc.io>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 19 Mar 2020 15:14:27 +0100
-Message-ID: <CACRpkdaVrfd1p+WyACy-gq-3BPsXJ_CZwi2OZe+=csseBcvcaA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] dt-bindings: panel: add binding for Xingbangda
- XBD599 panel
-To: Icenowy Zheng <icenowy@aosc.io>
+References: <1584604252-13172-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1584604252-13172-2-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <1584604252-13172-2-git-send-email-hayashi.kunihiko@socionext.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Thu, 19 Mar 2020 23:18:29 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASmZRszPB-o4pzeu0aQM4_cQBkRxwFM2T4_onHA4-1r8w@mail.gmail.com>
+Message-ID: <CAK7LNASmZRszPB-o4pzeu0aQM4_cQBkRxwFM2T4_onHA4-1r8w@mail.gmail.com>
+Subject: Re: [PATCH v2 1/6] dt-bindings: dma: uniphier-xdmac: Remove extension
+ register region description
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_071440_331419_2EE4524C 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_071938_974646_C24FCACF 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,56 +84,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Sam Ravnborg <sam@ravnborg.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Icenowy,
-
-On Mon, Mar 16, 2020 at 2:37 PM Icenowy Zheng <icenowy@aosc.io> wrote:
-
-> Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI LCD panel.
+On Thu, Mar 19, 2020 at 4:51 PM Kunihiko Hayashi
+<hayashi.kunihiko@socionext.com> wrote:
 >
-> Add its device tree binding.
+> The address of the extension register region in example is incorrect,
+> however, this extension register region is optional
+
+
+On which SoC is it optional?
+
+In your previous DT submission, every reg was,
+like this:
+
+reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
+
+
+
+and you meant
+
+reg = <0x5fc10000 0x1000>, <0x5fc12000 0x800>;
+
+?
+
+> and isn't currently
+> referred from the driver, so the description of the region should be
+> suppressed until referred by the driver.
+
+This sounds like you plan to get it back
+as you extend the driver.
+
+I checked the datasheet. This controller has more registers,
+so you split the reg into small chunks, the final form will look scary:
+
+reg = <0x5fc10000 0x1000>, <0x5fc12000 0x800>,
+      <0x5fc14000 0x100>,  <0x5fc15000 0x100>;
+
+
+My question is why you did not use a single reg tuple
+that covers the whole registers.
+
+Is any other hardware reg interleaved in between?
+
+
+
+
+
+
 >
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-(...)
+> Fixes: b9fb56b6ba8a ("dt-bindings: dmaengine: Add UniPhier external DMA controller bindings")
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> index 86cfb59..f4c3f49 100644
+> --- a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> +++ b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> @@ -24,7 +24,6 @@ properties:
+>    reg:
+>      items:
+>        - description: XDMAC base register region (offset and length)
+> -      - description: XDMAC extension register region (offset and length)
+>
+>    interrupts:
+>      maxItems: 1
+> @@ -54,7 +53,7 @@ examples:
+>    - |
+>      xdmac: dma-controller@5fc10000 {
+>          compatible = "socionext,uniphier-xdmac";
+> -        reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
+> +        reg = <0x5fc10000 0x1000>;
+>          interrupts = <0 188 4>;
+>          #dma-cells = <2>;
+>          dma-channels = <16>;
+> --
+> 2.7.4
+>
 
-> +properties:
-> +  compatible:
-> +    const: xingbangda,xbd599
 
-As noticed in the review of the driver, this display is very close to
-himax,hx8363.
-
-I think the best is to determin what actual display controller it is,
-I think it is some kind of Ilitek controller since Ilitek ili9342 is
-clearly very similar.
-
-The best would be something like name the bindings
-ilitek-ili9342.yaml and then:
-
-properties:
-  compatible:
-    items:
-      - const: xingbangda,xbd599
-      - const: ilitek,ili9342
-
-Possibly use oneOf and add support for the himax,hx8363
-already while you're at it.
-
-Yours,
-Linus Walleij
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
