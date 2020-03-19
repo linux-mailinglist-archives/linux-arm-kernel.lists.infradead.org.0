@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F3818C0CC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 20:52:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4F3F18C0D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 20:52:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9UwVzboaF5DUWg+1ZaZYR7gys1DbVZrZr1chKIjJsv4=; b=fidD41NohDx5gm
-	Pr1egnb6FCxWsvVJDfkytmKrLVNeYDSk+VgU67mkxmoRB680LVTxuw6xb8srbvCLl5KJfAsWDSHti
-	GXFKTv6rT5MsQuH4o8L9ILVPjBrv6/Sa7rw9MXEh9Rf5ikg4EhqIEbFnIjaJYqJO9THtsRyiMeQCD
-	p0Q63oupTfzZp1mDHIpc9CFwhUEjffQ67qVDBZr7no+KN17C1viVJ3ihAtfPtiuuPRThqEL4uGSuO
-	3uR9oaVjr7/zhQzdqX80DVxhmvmSty84ghu2XsJF7H1I8pZTHT91cBPHjOYeRZGcaiWtjCCkALTsS
-	HT3my/kh0ADUHvYeFmBw==;
+	List-Owner; bh=lqKcKTDNZr4I7MxXDu0LxGSddLKc0UG7DayCw9Q08Fs=; b=THgdfKIlEgIBgl
+	Spw0lMJL94szIxRrYrZYfrFUT6UvNJyerFFLmPvO+Ww+e1fDzrH98v8B3IJ3bRyepdmpIwUY+tMK/
+	FdSds1m/GSRG74tIGmp3GKoptxUuwFgID3TMy68WeAeKRT9DyPRlzx+SLvGY/xUgBdFGIHp94At7h
+	K6PmZVJxpCm/QdPbX674CFZ+rC7pkH1TlsYO0OLAQFYUGEpEhyd7YMeHp8lnlFdTL8x7lmS4L6t56
+	gAQT26vlIFf6aTDY8eEZe1cDlFZBq4F87W0ZULFg2f/asPYfSLdHSO2oifFGBJkMc3B6djhh0NVTa
+	MZeh+aGJ2H5+arxJ1zJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF1DM-0002rF-Jf; Thu, 19 Mar 2020 19:52:24 +0000
+	id 1jF1DX-00037f-I5; Thu, 19 Mar 2020 19:52:35 +0000
 Received: from mail-eopbgr80054.outbound.protection.outlook.com ([40.107.8.54]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF1Cm-0002IB-RZ
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 19:51:50 +0000
+ id 1jF1Co-0002IB-Ex
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 19:51:51 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ni5ktaZi01JxaQqHnu9Thd2Sd4Ln880Q2v5JnByqyso4VirLQPeSzaSch5z0pseeKqACNwc1qOWCXJFfowsANNY6O8bIK+xB6TDK9LhoDqBccMeDVBHQbRGQAaa7Jbgqjfae4geiK+X6HV81SWLd8duhWfTf0ysrthZ83Cj5khQUh6bER1XCNnOr1xCM5fGCmCBlMTHBZic7UwJGcRtiaC87mWMKPWXvzNlts5aT4oBIQeCdcosjvP8IZXp6tSpQMyZKfgxkzwPKskYHbxsIYfIOdf0kse02pWc+7Cgiz7ORhJA7mTkqc5cwm3AukLBrMtPxtjUMVyI7xaRcqr6rZA==
+ b=c9D9wYq9Eub2KplHkUla7283hJLpW6bijlrX6hL5doTVQc45KAMLIg15bkOE+1JMeywnr2UpRN7XW+9XeTViCqLNXUpHj+oyCtK1M+z/MLi/IGmaPzBWMT4ew1yTb1yEsd85zTf3bosIwSGRJ2u2Z40YwidM85rx0oJg5zm697kAZ/t43xlRKWQgbzF8BS0ch4rnUz9VnlOYK2ZR/NXrb3BPucAQxIRlEyPawvMyUjXkyNHXuZD6sELHFx7NBlnec/yql1kmovvwZJlv+g/M/fBXlnu8lvxn5u0Ltpq/ioTA4HYMSEWJQCOsDMM7n1AuU7gyj58ekRfKH6MBEVfImw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n50d34UAFoD31TdOb/UenHzu6OWlJmOwhnhtBlo5j5c=;
- b=aQ7wOpMAKSppJMfD4Sw76UPSN8utueUb73sg7oqI+Xyi866fSvs8lj9LPDJI900e9YXyzi1GT9tI2ja3PikzmgF1lb5GO4v5T0+W5Hjh0dPnLPhreRQIAoThrt6epksLgY13RtO+TMSh0QN4gCIxMB8TDXUlaO1rEXdMzbPwnacGnaAqeqcd1qx16sR2n8Tcu469f1INb5cMsENQ1rCUsvneppsF26h8XS1rfk7dc2ZM/80v1CVmR4BJaCacw3/tLZINwgobCycJED4O44fDhA68cZJgYjHSNCQVwwBMlISZ1W2svYo0jPQOCHwIi/PaKG3f+ke9dfTwvj1OS3TSuA==
+ bh=s0QTYR+zBU/gPa+yJ0Tvr7AOSy44w97Zi5bWKxRvmcM=;
+ b=nMAOdU+obZMnRpTEhVzUWND78XuSO92T4uVdgnNI3r5UsQM8df7S6NrFyptqgKmoNPBs0Lj7/wgmOClDyeJvXR1TJ3tl+bMZgnyxJ/ZcJ0FxiR3JqE4cZWG5tfFdJDQp3EM6FYIIThBL5pGR2Mb6BhGZm+YqHgpE23qnHo7L0AtxA+reX4GLnhcXJU3/iStkrUtccWzPQlzDwj0R6aGGTI56Fw1xPhCIPiHpdg8nCAHQrjezoyGMHWgQhY5ba3yGu4IRu+st322+OuFjUexDIhtv7oZN1og1tA4/rL4CTjhprpWivEkPKcqNVjVzjdQh6avZi5nwtTIjX8ImjaazLw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
  s=selector2-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n50d34UAFoD31TdOb/UenHzu6OWlJmOwhnhtBlo5j5c=;
- b=e49anRXzTBKqN6ztwelhcYsRyMjA9sEaZS4EA3dW7Fr0No0TUBE5LEoQ/4Se/QfK0igQhItTI7uMk0RPstqZWLur+SrJHAjJQD/P7D8yJxdURdP3ZHQUMsYKahraGZyPbdN8fMlrg8IjT5TaWxI4JsshvTiBh81WBGVZCH71a58=
+ bh=s0QTYR+zBU/gPa+yJ0Tvr7AOSy44w97Zi5bWKxRvmcM=;
+ b=mckwreSivnBDYNQztOZJKanuSCLzdbbv1J6pcLaSpSTrNd2WE01AIoWG3CybpLnPsi+aLA6513w949ASv1Zqodbc5VQ2wFjCIfrGEXhsOW6Udeg5cqy4GmKRhnsk+3rwzf7PNUMCXCur80T1QevnAhtLBhKCc6UQgUJhNKL8VCA=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=daniel.baluta@oss.nxp.com; 
 Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com (52.134.16.147) by
  VI1PR0402MB3486.eurprd04.prod.outlook.com (52.134.4.10) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.13; Thu, 19 Mar 2020 19:51:44 +0000
+ 15.20.2814.13; Thu, 19 Mar 2020 19:51:46 +0000
 Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com
  ([fe80::35d0:31bc:91d9:ceb0]) by VI1PR0402MB3839.eurprd04.prod.outlook.com
  ([fe80::35d0:31bc:91d9:ceb0%7]) with mapi id 15.20.2835.017; Thu, 19 Mar 2020
- 19:51:44 +0000
+ 19:51:46 +0000
 From: Daniel Baluta <daniel.baluta@oss.nxp.com>
 To: lgirdwood@gmail.com,
 	broonie@kernel.org
-Subject: [PATCH 1/5] ASoC: SOF: imx8: Fix randbuild error
-Date: Thu, 19 Mar 2020 21:49:53 +0200
-Message-Id: <20200319194957.9569-2-daniel.baluta@oss.nxp.com>
+Subject: [PATCH 2/5] ASoC: SOF: imx: fix undefined reference issue
+Date: Thu, 19 Mar 2020 21:49:54 +0200
+Message-Id: <20200319194957.9569-3-daniel.baluta@oss.nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200319194957.9569-1-daniel.baluta@oss.nxp.com>
 References: <20200319194957.9569-1-daniel.baluta@oss.nxp.com>
@@ -66,17 +66,17 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from fsr-ub1864-103.ro-buh02.nxp.com (89.37.124.34) by
  AM0PR07CA0031.eurprd07.prod.outlook.com (2603:10a6:208:ac::44) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.12 via Frontend Transport; Thu, 19 Mar 2020 19:51:42 +0000
+ 15.20.2835.12 via Frontend Transport; Thu, 19 Mar 2020 19:51:44 +0000
 X-Mailer: git-send-email 2.17.1
 X-Originating-IP: [89.37.124.34]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: f957147d-3441-440c-a2ba-08d7cc3ef384
+X-MS-Office365-Filtering-Correlation-Id: 229774bf-87d2-417a-5de8-08d7cc3ef4b1
 X-MS-TrafficTypeDiagnostic: VI1PR0402MB3486:|VI1PR0402MB3486:
 X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR0402MB34868FAD67FD17A51BBA8B10B8F40@VI1PR0402MB3486.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:923;
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB3486EC278CF9DE7DEC95A62DB8F40@VI1PR0402MB3486.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
 X-Forefront-PRVS: 0347410860
 X-Forefront-Antispam-Report: SFV:NSPM;
  SFS:(10009020)(4636009)(346002)(366004)(39860400002)(396003)(136003)(376002)(199004)(81156014)(8676002)(8936002)(1076003)(81166006)(186003)(26005)(956004)(4326008)(16526019)(2616005)(478600001)(6506007)(316002)(6666004)(2906002)(44832011)(86362001)(66946007)(7416002)(66476007)(6486002)(52116002)(66556008)(6512007)(5660300002);
@@ -87,19 +87,19 @@ Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: UFyBHcu9dd4CiE72t3GNwG7fJ/6VFokN6nqxMxwEneEXZTvQt1gmGyz46/FD9FSg9fYTOy0T7nPYCYAisgSHF/wC2cbaGnKA2jMeKcxCXC3+K+5BGQmLwRPyuY1O8pbjFV/+yzDunU0yaVr0t2ObYAAzLqsBAbvxubAh94slTNztjQJB5mzwYrhM4GbMeosubNKsaUrIplxb9OOFnktgw+KXnzYCRWgbj84/hbUsDRWdDJD3/3Jo3i+bifNTD66thlzgwW9SBLJsptPdUVi4UcfS/8x02iJQMMtPDxjsw+p+md0Ck4G3zkfGu++mx6dHrzzyQgJKrwXbONSYH9oRT5XCZzd1YftXrXAKfqKIykzfoKniDEl347L7pumxv+rGC4P61R/gdO7YnD4r8qQHymSKCfut7o5OaW1FDynqFfRYXE1E3XVa9fvCuRS1cfaT
-X-MS-Exchange-AntiSpam-MessageData: vi7EBYL36xqYDDDACuuTJlu+6OsSXOuZS22cgQmxRtgA68QAcFhdCGApyKzQpxaa1FA6FGqpLYRhMRK/rJMmwET38Abda7OxPNfS08+VRxwHKEglxIGAnEhbhExoPJ63vFN8y994309ptQigcZ6Xfg==
+X-Microsoft-Antispam-Message-Info: 0x3/0y1zVptZ5VA9qcroBbaXRyP/N+MR8+m6i6ByKNImlKPgcYXLSDF472WnW5+4OVM5iafvlHpUF0YIIGI39nPi+coh8cVBQqK0vse5iGKOppUMLsSg5TO+ZZi6k9XbwEcnjf95v2X7eQzUXyaQWjK5S73KgdrB9PQvPmPn0yCea7jVIGRsh96xMflOXPtd3DtSqK80yBHWiEfWlUNBsvhIUrQRv/qB81n/nE29pgFJItUeJPUsMGSuOrZGbopBXJGeN4T+bw/+7K9rjPbAz3fUbjQDTsXoGD6ryXhiDaZ3VARr9rjOSzlVClum00nmy0iyxFq6TGvl+CWMtyqlJyHwxN/t19wBFwxfCBnBVboAQORId3UM74+vNvdOpzPBOgO6r0TIP2ZMoCEWDd8r8zhmiWjDHguCMRR+cV+i/V7SOjN1QdRXNqlZJlGsPngy
+X-MS-Exchange-AntiSpam-MessageData: Aui9wGuY8UX14msPUG1ryqGFXXv6DtS5q6rZz/3SZifeGc2OZqwDR6U32XtQScuEYCaUc12a3CCgoZlS+zAWrPWH8sB1yM8ixZQEQcP1k0BadrmsuTcBRce3g52lUHpQg+XyJlPjcJyJmV0Y1v+uqw==
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f957147d-3441-440c-a2ba-08d7cc3ef384
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2020 19:51:44.5227 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 229774bf-87d2-417a-5de8-08d7cc3ef4b1
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2020 19:51:46.3326 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kK4AyjF2d1B91MX/pRAfUA4zh65uiCBg5vX12VWfUbo4re8CH3+0OcAtMJV/sN+xfEm8azOC/cQf+AD4fM36XQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2APgmY5nfmseak7H65WNXth67KgSbWLI5AIWJoT5QJZnVwT/YHjiFRxepYdKtlccDiCqsT3D9UthU7IQlV+WDg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3486
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_125148_896399_4B11F293 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20200319_125150_536365_C3D06424 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -135,43 +135,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: YueHaibing <yuehaibing@huawei.com>
+From: Daniel Baluta <daniel.baluta@nxp.com>
 
-when do randconfig like this:
-CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
-CONFIG_SND_SOC_SOF_IMX8=y
-CONFIG_SND_SOC_SOF_OF=y
-CONFIG_IMX_DSP=m
-CONFIG_IMX_SCU=y
+make.cross ARCH=mips allyesconfig fails with the following error:
 
-there is a link error:
+sound/soc/sof/sof-of-dev.o:(.data.sof_of_imx8qxp_desc+0x40): undefined
+reference to `sof_imx8x_ops'.
 
-sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
-imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
+This seems to be a Makefile order issue, solve by using the same
+structure as for Intel platforms.
 
-Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF
+dependency")
+Signed-off-by: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
 Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 ---
- sound/soc/sof/imx/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/sof/imx/Kconfig | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
 
 diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
-index bae4f7bf5f75..812749064ca8 100644
+index 812749064ca8..9586635cf8ab 100644
 --- a/sound/soc/sof/imx/Kconfig
 +++ b/sound/soc/sof/imx/Kconfig
-@@ -14,7 +14,7 @@ if SND_SOC_SOF_IMX_TOPLEVEL
+@@ -11,17 +11,26 @@ config SND_SOC_SOF_IMX_TOPLEVEL
+ 
+ if SND_SOC_SOF_IMX_TOPLEVEL
+ 
++config SND_SOC_SOF_IMX_OF
++	def_tristate SND_SOC_SOF_OF
++	select SND_SOC_SOF_IMX8 if SND_SOC_SOF_IMX8_SUPPORT
++	help
++	  This option is not user-selectable but automagically handled by
++	  'select' statements at a higher level
++
  config SND_SOC_SOF_IMX8_SUPPORT
  	bool "SOF support for i.MX8"
- 	depends on IMX_SCU
--	depends on IMX_DSP
-+	select IMX_DSP
+-	depends on IMX_SCU
+-	select IMX_DSP
  	help
  	  This adds support for Sound Open Firmware for NXP i.MX8 platforms
  	  Say Y if you have such a device.
+ 	  If unsure select "N".
+ 
+ config SND_SOC_SOF_IMX8
+-	def_tristate SND_SOC_SOF_OF
+-	depends on SND_SOC_SOF_IMX8_SUPPORT
++	tristate
++	depends on IMX_SCU
++	select IMX_DSP
++	help
++	  This option is not user-selectable but automagically handled by
++	  'select' statements at a higher level
+ 
+ endif ## SND_SOC_SOF_IMX_IMX_TOPLEVEL
 -- 
 2.17.1
 
