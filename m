@@ -2,71 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F87218BD8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 18:07:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DEC818BDB0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 18:12:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=Hz9FIbWHLl6UmPTUl1mtdAkKOcaEg3etmqaCKzTShRg=; b=HKToJlsrMScnoi
-	oNAtz5ughBRF8OS7UjJfC3DTFbyoJq2mUs9JapD9aYGjhBwipYGb7wBxP23rij/tJOppQTptkDRg7
-	BHj9IkW92pC6Ndy+6zwyHLmKQiVgjuRhRQwt9aRLFt+adNkepypxNw6gZmtp+O6d0SuDphBnFQ11e
-	foXxtmkZh7ksck4B2kOMegjeoRrEzEiyJ09us+TnhXYgHQxeWW3Gbh4stE5155Cm3/I2lDHsoKJpe
-	Y/IzNtkIAdaCsR7mSIITyx8/4eix+g4ph0VLKJ92cZ+4bDW5eL1ufIRXuai/bJ3PjwYFOaOea9D1P
-	mxs6L6PRu2px/sqPnyfw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V3FZachqvP94mTqNwjHmd2y6+K6kWHTkVRNqlKVaZ+4=; b=jC+6Ei2kk9VnFW
+	x69u+Y5ZLpUo+tsj9emkoP9uAL/fIryv3CuMxCooijRCaSlgEYjTA9PTmsBeVGPI4htQcVwiaOQ/p
+	NA/V//DgubOfnUBAh0zKG6zpWA2DWyTwiHNd3s8K0uSB5twz8WVexufHQNSFogCDrdRUvKEJxSzRw
+	ctpUcP5XFjDZWhN3W33w+3du2jScB7hFUe2qUsnqMLZSsI6AhBSQy1KEnn7Ceq7/6QtIj+EOHCoYH
+	AFm+VcPwv86c3RIgShRGbMuMUT9Bw/SCX9UrxOsaT4jxaz5a0DQx3dk1/0dINbEiB4VR+ATk87O19
+	/yYUCVJ+p7/6CQQD8W5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEydU-00020H-Ge; Thu, 19 Mar 2020 17:07:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jEyiW-0004X5-9X; Thu, 19 Mar 2020 17:12:24 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEydK-0001zc-79
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 17:07:04 +0000
-Received: from localhost (mobile-166-175-186-165.mycingular.net
- [166.175.186.165])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 71D4C2072D;
- Thu, 19 Mar 2020 17:07:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584637621;
- bh=NdR6LVZ2cIsGAen/1ujzdrUs8tOtmmAvYQrgY/mLbXM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=fAsoMHdZ+CYuM4c3hgzSAXhoiZ3xbVbN8s2cz7P9jqZcY1HB2yJCvRtzAv8IouYHO
- LC3dp3VGJ75UAMS0WzOgKBLBc3qum4Xg8DyXU67qvbSw9FVQNq+jdccLoJUC4cY0Oe
- POScnOpP9mVL6PMYpSsyL0K3elHJk1q6Tes9R0s8=
-Date: Thu, 19 Mar 2020 12:06:59 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH v2 2/2] PCI: uniphier: Add UniPhier PCIe endpoint
- controller support
-Message-ID: <20200319170659.GA158868@google.com>
+ id 1jEyiN-0004WS-37
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 17:12:16 +0000
+Received: by mail-il1-f194.google.com with SMTP id w15so2958324ilq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 10:12:14 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=FuFy53dKsb2fck0JMwy1FXmxdDEmegXgO4r2caNX4Qo=;
+ b=o4N4KB5MUzTcoOiws4HyjsNakal4Dh8LCi+EowabBkFiyF/N2KHVVsJE7K+Prsfcl/
+ LEJdU17xxG5ZiQFTDji3cvpUjoMccMRZP5XabAPrWXzg0vtv6cTZ6gzfhddDBxgxkNBC
+ mzofZRx60t+800gVZFmFhW7glgBS5TwVTgvhlOQRG2JXNCtUPW6X10IIPWAGFwQUeLzj
+ dFYN14zJdFIQgZej4gZUsFSF5fOqFOqmZVDMz7LpUlk6if7BLtia8qy1K4dc/htsWp4a
+ r/t9i0zAxUEZWUwkwiYgryjCy4n2veejJByqOR+U9T4o8vMKc5xWug9nHC4ndNqFxILW
+ vwXw==
+X-Gm-Message-State: ANhLgQ2OUlurZ5detEOc6LxQI6HaP1qhWQqeNB6Nnt6J2SBCtDhP7Upy
+ aPb0MAMbpsienHlwLQMnqX+CarI=
+X-Google-Smtp-Source: ADFU+vs/qjBgZCguu4PgrA7kda0SwMTPsdT6I/2Mcj/b7bYNjpINO1LuIXtpzuRHB/7LUhmdIByVUQ==
+X-Received: by 2002:a92:35db:: with SMTP id c88mr4010676ilf.187.1584637934049; 
+ Thu, 19 Mar 2020 10:12:14 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id y8sm937166iot.14.2020.03.19.10.12.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Mar 2020 10:12:13 -0700 (PDT)
+Received: (nullmailer pid 16694 invoked by uid 1000);
+ Thu, 19 Mar 2020 17:12:10 -0000
+Date: Thu, 19 Mar 2020 11:12:10 -0600
+From: Rob Herring <robh@kernel.org>
+To: Alim Akhtar <alim.akhtar@samsung.com>
+Subject: Re: [PATCH v2 1/5] dt-bindings: phy: Document Samsung UFS PHY bindings
+Message-ID: <20200319171210.GA14990@bogus>
+References: <20200318111144.39525-1-alim.akhtar@samsung.com>
+ <CGME20200318111805epcas5p3e68724d923a07ddd80a45e3316292940@epcas5p3.samsung.com>
+ <20200318111144.39525-2-alim.akhtar@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1584604449-13461-3-git-send-email-hayashi.kunihiko@socionext.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20200318111144.39525-2-alim.akhtar@samsung.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_100702_844833_BD25BA27 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200319_101215_135206_F106D862 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,94 +94,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Andrew Murray <andrew.murray@arm.com>,
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
+ avri.altman@wdc.com, robh+dt@kernel.org, cang@codeaurora.org,
+ Alim Akhtar <alim.akhtar@samsung.com>, stanley.chu@mediatek.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 04:54:09PM +0900, Kunihiko Hayashi wrote:
-> This introduces specific glue layer for UniPhier platform to support
-> PCIe controller that is based on the DesignWare PCIe core, and
-> this driver supports endpoint mode. This supports for Pro5 SoC only.
+On Wed, 18 Mar 2020 16:41:40 +0530, Alim Akhtar wrote:
+> This patch documents Samsung UFS PHY device tree bindings
+> 
+> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+> ---
+>  .../bindings/phy/samsung,ufs-phy.yaml         | 62 +++++++++++++++++++
+>  1 file changed, 62 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> 
 
-Possible alternate text: ("specific glue layer" isn't the usual way to
-describe a driver)
+My bot found errors running 'make dt_binding_check' on your patch:
 
-  PCI: uniphier: Add Socionext UniPhier Pro5 SoC endpoint controller driver
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/samsung,ufs-phy.example.dt.yaml: example-0: 'ufs-phy@0x15571800' does not match any of the regexes: '.*-names$', '.*-supply$', '^#.*-cells$', '^#[a-zA-Z0-9,+\\-._]{0,63}$', '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}$', '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-fA-F]+(,[0-9a-fA-F]+)*$', '^__.*__$', 'pinctrl-[0-9]+'
 
-  Add driver for the Socionext UniPhier Pro5 SoC endpoint controller.
-  This controller is based on the DesignWare PCIe core.
-
-> +/* assertion time of intx in usec */
-
-s/intx/INTx/ to match usage in spec (and in comments below :))
-
-> +#define PCL_INTX_WIDTH_USEC		30
-
-> +struct uniphier_pcie_ep_soc_data {
-> +	bool is_legacy;
-
-I'd prefer "unsigned int is_legacy:1".  See [1].
-
-But AFAICT you actually don't need this at all (yet), since you only
-have a single of_device_id, and it sets "is_legacy = true".  That
-means the *not* legacy code is effectively dead and hasn't been
-tested.
-
-My preference would be to add "is_legacy" and the associated tests
-when you actually *need* them, i.e., when you add support for a
-non-legacy device.
-
-> +static int uniphier_pcie_ep_raise_legacy_irq(struct dw_pcie_ep *ep)
-> +{
-> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> +	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-> +	u32 val;
-> +
-> +	/* assert INTx */
-> +	val = readl(priv->base + PCL_APP_INTX);
-> +	val |= PCL_APP_INTX_SYS_INT;
-> +	writel(val, priv->base + PCL_APP_INTX);
-> +
-> +	udelay(PCL_INTX_WIDTH_USEC);
-> +
-> +	/* deassert INTx */
-> +	val = readl(priv->base + PCL_APP_INTX);
-
-Why do you need to read PCL_APP_INTX again here?
-
-> +	val &= ~PCL_APP_INTX_SYS_INT;
-> +	writel(val, priv->base + PCL_APP_INTX);
-> +
-> +	return 0;
-> +}
-
-> +	ret = dw_pcie_ep_init(ep);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-
-This is equivalent to:
-
-  ret = dw_pcie_ep_init(ep);
-  if (ret)
-    dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-
-  return ret;
-
-> +}
-
-[1] https://lore.kernel.org/linux-fsdevel/CA+55aFzKQ6Pj18TB8p4Yr0M4t+S+BsiHH=BJNmn=76-NcjTj-g@mail.gmail.com/
+See https://patchwork.ozlabs.org/patch/1257427
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
