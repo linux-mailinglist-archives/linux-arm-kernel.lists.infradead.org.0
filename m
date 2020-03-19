@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7907918A996
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 01:11:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2841D18A9B5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 01:21:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FIwjEoMe8rfND9lWywBj48h8jtQVMqSGVGkYfq/C7oI=; b=UKucTZprNOgHW6
-	VPWO5P32Jg84N+RY152XVwYUPfGJKzUrlPirtZxh1wsHaF3rB3Y21yPdwyU0niDbc0CqfkGco2xDU
-	sEEzhISdER4nD6ZijxfsmLuuCdmj5WOxelP7HXOext+z2Eqx2HbjdeJF5KgH8lP15UYF4fz4rhg+g
-	ROLRoO9Sd2BmZVOhR2x8HvOXxyz++muzFQy0G7uJho3uqQQUOBN/5XKBKBpSwY0vOWBUC+48RVL45
-	DzuVen9epmzaaU6xaY5beuCduSeU/YtQQX/iG0ckz0aYQbgEKOqN1Bruq+t6qqnAfHyum84nhjQbm
-	oH5unmg53XPPP9+mrFNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vCxn00z73lvKNSLSTdSRJCjIucbYYstXUTIy/aROhRw=; b=HGoOQ5pYiCMjrz
+	en39F5j6D6BOeZxkwjQmlIA2z03cpgceLMANaRFRUBMfxeCs09o5Ntbwy/G1Su9YoLQe1fiB3Vq2O
+	n7p2m+7/5JYKZwS4v48LaBSHjSMhSOAX8dQrljQE2STl3VqpInJum+m/yMZw2k3Re70zn0O7WwwwU
+	fA5y9Nq2ZsDQbIcgdc+LI0da1vQ/b8y/SGi2dHIHedQ0zbOJNaEC4kbTY+VqEMA9xlW650VVo/WFh
+	3nXS7pyUDE1VJymZdDAWJHgJxORxGqFbkiFC01kSB+miXh4K4z/G3BEMtD3ZHfeCNre2XU0kG0yRQ
+	PFyXt+jDoyfiyMwxs/WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEilu-0007ym-C0; Thu, 19 Mar 2020 00:10:50 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jEivx-00035x-AE; Thu, 19 Mar 2020 00:21:13 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEill-0007y9-2n; Thu, 19 Mar 2020 00:10:42 +0000
-X-UUID: e0b328a22bc2409b8a2dbf978794d9ea-20200318
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=sraA/18wg1ANfXAVlyaQ+1II+H594amOEvAI6LBOxx4=; 
- b=VSmWT2xknC6i0fRW6FMoRlcDkCf0L89fo9L5RqvQWKV79UUboi36chXgI5uZX2rALQO2i2N91/yKoVHPN/kIkFBNN4p0ZhNat450Y04nhj14A6sEZwhC7ez5fFK7IsVRitgfER9H77ijQ8FVY4z3qNcJchjW8NMLmxwGfHQrVn8=;
-X-UUID: e0b328a22bc2409b8a2dbf978794d9ea-20200318
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2047728987; Wed, 18 Mar 2020 16:10:38 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 18 Mar 2020 17:11:10 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 19 Mar 2020 08:08:17 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 19 Mar 2020 08:11:11 +0800
-Message-ID: <1584576635.14250.63.camel@mtksdccf07>
-Subject: RE: [EXT] [PATCH v7 3/7] scsi: ufs: introduce common and flexible
- delay function
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "Bean Huo (beanhuo)" <beanhuo@micron.com>
-Date: Thu, 19 Mar 2020 08:10:35 +0800
-In-Reply-To: <BN7PR08MB5684DA8C4FB4304CDAE39440DBF70@BN7PR08MB5684.namprd08.prod.outlook.com>
-References: <20200318104016.28049-1-stanley.chu@mediatek.com>
- <20200318104016.28049-4-stanley.chu@mediatek.com>
- <BN7PR08MB5684DA8C4FB4304CDAE39440DBF70@BN7PR08MB5684.namprd08.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jEivp-00034r-Re; Thu, 19 Mar 2020 00:21:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=Y0czQRAz/kOPllfphXUjXudXCZCxZCs56nRoN+fK9Zs=; b=U2dqLL+663SgPnghCMGR8BF8Y0
+ CZcLj/WCyPzBCV3IAXDape2LJMGZ9E9h8mLvL93UF6xS6flxgRdFGaZ8/3EZeFY5MLpjBkVXQdM3F
+ 26ktVz0JuP/YjCOcMiUwXM8U/3WqY/1g/8JlnNOgitbzgKslHSBWEAMVo14KQymj5kToLM+xxIAPd
+ lPVeE9cKJREw8RGyVwEvCDVMzH3khG9KgYpDhZwQ52cH4cn0i8R7SP4WibjhCrLOYKc7abcSk0Cc6
+ k46Y3sU2mrcoF3pjsyU8z4kAqRfkXv0RuDgUdWhj0llbGVWPwKQDK3am5dUfZzcsQeeM023WkwPRb
+ /dkivxmA==;
+Received: from c-73-157-219-8.hsd1.or.comcast.net ([73.157.219.8]
+ helo=[10.0.0.252])
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEivf-0000pW-Gf; Thu, 19 Mar 2020 00:20:55 +0000
+Subject: Re: [PATCH 4/4] hugetlbfs: clean up command line processing
+To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-5-mike.kravetz@oracle.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <1820045d-0bf2-9a86-226d-e9c4d5928749@infradead.org>
+Date: Wed, 18 Mar 2020 17:20:46 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-MTK: N
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_171041_131124_BE94161D 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+In-Reply-To: <20200318220634.32100-5-mike.kravetz@oracle.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,65 +63,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "martin.peter~sen@oracle.com" <martin.peter~sen@oracle.com>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Longpeng <longpeng2@huawei.com>,
+ Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bean,
+Hi Mike,
 
-On Wed, 2020-03-18 at 22:10 +0000, Bean Huo (beanhuo) wrote:
-> Hi, Stanley
-> > 
-> > diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c index
-> > 314e808b0d4e..a42a84164dec 100644
-> > --- a/drivers/scsi/ufs/ufshcd.c
-> > +++ b/drivers/scsi/ufs/ufshcd.c
-> > @@ -597,6 +597,18 @@ static void ufshcd_print_pwr_info(struct ufs_hba *hba)
-> >  		 hba->pwr_info.hs_rate);
-> >  }
-> > 
-> > +void ufshcd_delay_us(unsigned long us, unsigned long tolerance) {
-> > +	if (!us)
-> > +		return;
-> > +
-> > +	if (us < 10)
-> > +		udelay(us);
-> > +	else
-> > +		usleep_range(us, us + tolerance);
-> > +}
-> > +EXPORT_SYMBOL_GPL(ufshcd_delay_us);
-> > +
-> In this way, the callers of ufshcd_delay_us(), can directly call udelay() or usleep_range(), what is exist meaning of ufshcd_delay_us()?
+On 3/18/20 3:06 PM, Mike Kravetz wrote:
+> With all hugetlb page processing done in a single file clean up code.
+> - Make code match desired semantics
+>   - Update documentation with semantics
+> - Make all warnings and errors messages start with 'HugeTLB:'.
+> - Consistently name command line parsing routines.
+> - Add comments to code
+>   - Describe some of the subtle interactions
+>   - Describe semantics of command line arguments
+> 
+> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+> ---
+>  Documentation/admin-guide/mm/hugetlbpage.rst | 26 +++++++
+>  mm/hugetlb.c                                 | 78 +++++++++++++++-----
+>  2 files changed, 87 insertions(+), 17 deletions(-)
 
-Sure, the callers always can directly call udelay() or usleep_range().
 
-The customizable delay (either by hosts or devices) value in UFS driver
-is becoming more and more, like "reference clock gating delay" and
-introduced "hce_enable_delay". The customized delay time could be 0, <
-10 us, or >= 10 us in real cases. Hence this function can help driver
-simplify the driver and user's decision of "just passed without any
-delay" or "choosing a suitable delay function according to the delay
-time".
+> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
+> index cc85b4f156ca..2b9bf01db2b6 100644
+> --- a/mm/hugetlb.c
+> +++ b/mm/hugetlb.c
 
-Thanks,
-Stanley Chu
+> @@ -3214,8 +3238,15 @@ static int __init hugetlb_nrpages_setup(char *s)
+>  
+>  	return 1;
+>  }
+> -__setup("hugepages=", hugetlb_nrpages_setup);
+> +__setup("hugepages=", hugepages_setup);
+>  
+> +/*
+> + * hugepagesz command line processing
+> + * A specific huge page size can only be specified once with hugepagesz.
+> + * hugepagesz is followed by hugepages on the commnad line.  The global
+
+typo:                                            command
+
+> + * variable 'parsed_valid_hugepagesz' is used to determine if prior
+> + * hugepagesz argument was valid.
+> + */
+>  static int __init hugepagesz_setup(char *s)
+>  {
+>  	unsigned long long size;
+
+
+Does any of this need to be updated?  (from Documentation/admin-guide/kernel-parameters.txt)
+
+	hugepagesz=	[HW,IA-64,PPC,X86-64] The size of the HugeTLB pages.
+			On x86-64 and powerpc, this option can be specified
+			multiple times interleaved with hugepages= to reserve
+			huge pages of different sizes. Valid pages sizes on
+			x86-64 are 2M (when the CPU supports "pse") and 1G
+			(when the CPU supports the "pdpe1gb" cpuinfo flag).
+
+
+-- 
+~Randy
+
 
 _______________________________________________
 linux-arm-kernel mailing list
