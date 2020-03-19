@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69B2B18BC05
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:12:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D518518BC0F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 17:13:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=RET7mPH7cjtBgiDFrvr2mZNwQt7nnWBkLq1E3VD0XU0=; b=F7F4sC5ymeYQXz8KC/UT9IBtyO
-	rXcauGJ9RCFbozxHnM3ZiFmxC1IzyKAipUzZSn3n0p/S8qmAM1nhT0zKOC8f5ZouLrMQF/hMSd3Pu
-	cEiNS1VjbGuwzviMhTI1+daDEMbat6KoOt55kKjqe1GTMcbDR5SS7gKVbAZbp2zcSheqx3OLmpcgz
-	7oXMgISvsq0RY8GMhWf0r8djtyR0Q7JwExLEZdYxqq4W04wsGfTvWZvLvX4eqaqXFoAw5DSwBbKOE
-	LBwJnMcc6mKWGpT91++Uzgrca6GFFCZflruXpEBpln4i/4UdzayJX5a6rqW6unWSQRFFB3OzYWTdh
-	/CIJcD5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JP21fv5WimnhPc1xkFHGF/zhLDPgvHIBTP2V8xvWCR0=; b=FWHdcO5H4UvWZ5jo5qfz2rFUQ
+	PWDty195yBcjt6f/HS4+5g+Uv6DeLSjjOcfqM1u85gbVSuXBkK50TGF6wzJR24xKSkuVZ/gM5X9xh
+	xHMvpyYQoV7FNHV9DQnhELN0W0L/tbCX2uJ+ubixZGJGiwZ+PxM2NZ2iR6g0RrdUuZXMT1/GRHovL
+	grbBV9Js1GSj11L9QNZ519D/yiccIWawhgvfwUpeIWHOo4+nQQIg0vTriZ9RNIScrEK/CVfWehDxE
+	KN+Ym4+XK614SfoGx3q4eeKdlWGW5ZBU0SYx25tYVcjN2Ihep1RtdCAUjFOFW9kP79nCWX+Q007x4
+	YXG/P9mrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jExmR-000848-5r; Thu, 19 Mar 2020 16:12:23 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jExmD-00083L-Jv; Thu, 19 Mar 2020 16:12:10 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c187so3144484wme.1;
- Thu, 19 Mar 2020 09:12:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=KrbGWoGHrNAkN/7yoRVhGOKa+eWQ1UuA90EUgfCOQho=;
- b=JqKQF2NSbWpkaB2YQgRtXi4pRnvqxVXmxEgbnq8qDBmDopCObaDOAnMTXtkDT0oNU5
- cpvIF2wxDxKAj4elpcd6dfsDzZbAuKrT43BAPG1Jqa8ten4zIMVGeoOg/n+6miEMbmaB
- ZBuaerwrjc1U/nDIL23r8oouA0huCJJndVhe2FNfSxsGzsbvc86yZKm3cHMMu1XpFsvn
- bZVyC8ug9BqSrbIHzKlxBxwqs/QljYkfVWQLmPt1gS8WqFmCB+fKSLSrW6E448fWLMfx
- HHcmiofaLLNdeWPJscgY4LsFVR13MCTf23SaGz6OUcs0rLggP81rdpWr0w50nyvmU3Fb
- EHIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=KrbGWoGHrNAkN/7yoRVhGOKa+eWQ1UuA90EUgfCOQho=;
- b=dluNYvnvCjj5P4faglfGsr/1XdS+CzmtglMhmaGByLqHHRDuB9/c94EuupnrRHLk6d
- sJxwaNiLBtlQCuVZsPYpnRuEVf9xguLjazIV2wW16QPDGBbyKSATtnju7DBf050UmOG3
- p6LtSRAT6q6MPYEv81TP4vWnJ99QHK6R8fyxNfYzqSK/Fgmw+AwOlloyCj1hOgG0TjSE
- 2OSut6aKCUQM+GxQ5no6SNxW8tFogcBArghYJiMW3NuyJUOAHsT6S8n4eWbXSMGjdwqg
- bwYJEnep8FDY29NQA9MaBGAQWR02b9eeJ2sTVj3IdM86wwToVE33trYJlLNWeHZbaQnG
- hVFw==
-X-Gm-Message-State: ANhLgQ3nNVF0Fn7LCCtg8K/0XbDrSnhAP7X+qlYi2xtH7a5Gbt/4oqTk
- +CTD/7brTJoVKYE73YoyYujNsj2E
-X-Google-Smtp-Source: ADFU+vui/AhR7WL50TXv0XoVgoj9U4tQmO2VTlUOWhnKa9HAfhIMLkPJTm7GaGae0ATpMTrjXS2SRQ==
-X-Received: by 2002:a7b:c0cf:: with SMTP id s15mr4793754wmh.106.1584634328020; 
- Thu, 19 Mar 2020 09:12:08 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w204sm3973485wma.1.2020.03.19.09.12.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 19 Mar 2020 09:12:07 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [RFC PATCH v2 2/2] ARM: dts: rockchip: fix yaml warnings for
- rk3288-pmu-sram compatible nodes
-Date: Thu, 19 Mar 2020 17:11:59 +0100
-Message-Id: <20200319161159.24548-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200319161159.24548-1-jbx6244@gmail.com>
-References: <20200319161159.24548-1-jbx6244@gmail.com>
+	id 1jExn3-0000EB-Iy; Thu, 19 Mar 2020 16:13:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jExmu-0000Cb-4w
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 16:12:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6677330E;
+ Thu, 19 Mar 2020 09:12:51 -0700 (PDT)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A75F3F52E;
+ Thu, 19 Mar 2020 09:12:47 -0700 (PDT)
+Subject: Re: [PATCH 1/2] perf: dsu: Allow multiple devices share same IRQ.
+To: Mark Rutland <mark.rutland@arm.com>,
+ Tuan Phan <tuanphan@os.amperecomputing.com>
+References: <1584491176-31358-1-git-send-email-tuanphan@os.amperecomputing.com>
+ <20200319143250.GA4876@lakrids.cambridge.arm.com>
+ <20200319143510.GB4876@lakrids.cambridge.arm.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <5c1e81ff-467c-f2dc-4d92-f60117f67b40@arm.com>
+Date: Thu, 19 Mar 2020 16:12:43 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <20200319143510.GB4876@lakrids.cambridge.arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_091209_653228_10C26D81 
-X-CRM114-Status: GOOD (  11.70  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200319_091252_236992_CE540274 
+X-CRM114-Status: GOOD (  15.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,58 +66,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: patches@amperecomputing.com, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example these warnings:
+On 2020-03-19 2:35 pm, Mark Rutland wrote:
+> On Thu, Mar 19, 2020 at 02:32:51PM +0000, Mark Rutland wrote:
+>> On Tue, Mar 17, 2020 at 05:26:15PM -0700, Tuan Phan wrote:
+>>> Add IRQF_SHARED flag when register IRQ such that multiple dsu
+>>> devices can share same IRQ.
+>>>
+>>> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+>>
+>> I don't think that this makes sense; further I think that this
+>> highlights that the current driver doesn't support such a configuration
+>> for other reasons.
+>>
+>> A DSU instance can only be accessed from a CPU associated with it, since
+>> it's accessed via sysregs. The IRQ handler must run on one of those
+>> CPUs.
+>>
+>> To handle that, the DSU PMU driver will need to gain an understanding of
+>> which CPUs are associated with the instance. As it stands the driver
+>> seems to assume that there's a single DSU instance, and that all CPUs
+>> are affine to that same instance.
+> 
+> Sorry, I misread dsu_pmu_get_online_cpu_any_but(), multiple instances
+> are handled already.
 
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#size-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'ranges' is a required property
+Oh, so either way it's effectively a rerun of the U8500 problem of 
+having no guarantee that the interrupt will be taken on an appropriate 
+CPU, and losing genuine events as apparently spurious if it isn't. Yeah, 
+that's really really bad... :(
 
-Fix this error by adding '#address-cells', '#size-cells' and
-'ranges' to the 'rockchip,rk3288-pmu-sram' compatible node
-in rk3288.dtsi.
+>> So NAK to this patch, given the above.
+> 
+> Regardless, this NAK stands.
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/sram.yaml
+Agreed, pretending that this might work without significantly more 
+invasive workarounds does more harm than good.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-Not tested with hardware.
-
-Changed v2:
-  Fix dtsi.
----
- arch/arm/boot/dts/rk3288.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 07681f1f0..e72368a7a 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -731,6 +731,9 @@
- 	pmu_sram: sram@ff720000 {
- 		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
- 		reg = <0x0 0xff720000 0x0 0x1000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0 0x0 0xff720000 0x1000>;
- 	};
- 
- 	pmu: power-management@ff730000 {
--- 
-2.11.0
-
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
