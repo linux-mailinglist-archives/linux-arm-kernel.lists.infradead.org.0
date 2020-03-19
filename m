@@ -2,79 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3972818B3C6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:53:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F40618B3CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 13:57:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RewhyMX9mklSsKgxhHWaIPj2Am55KaEtWt3BEBf7I9g=; b=CxyYokIwlyWaASOZaBEOs7UwG
-	4I5YKKBhLZyAwbk3a9uvxhbC8njcYT+fDLrUNotciuNsY26KYpNOBRQR0eO9lTmT6h7F5Nt71yspW
-	ddSBgLyQVeNgAf78CnKFdEq32iC6xHUdKaBUB5H0L4C40xDMplYeNw3JxwOIZLI9wJ/GMorVkevzW
-	TEBx8ypSTWCiQUAXum3SwEjj7kbCchktAvDLHMri29Zs9kaYG0ihGRayDQgDbTlVI1qvC6tVH5E/y
-	frTHr42gS+dLfOuKz5mCBSKOOCMam6K0oCFhVhYkcn8Gzl30rFFbj9+MLBNZBgsFH60itXgKU6aNZ
-	cQG/P6gwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E9qbqIqJTjhn89wWjemO+jQ9XFEEtwEIJ9eNNu20S5k=; b=c0vvHFLnd0m3gL
+	MfWr/KZJ21mHIn6DGyrmDBTp++8jq28PXj9nwDeydtRcIKeK0dAtK38FHeBexJt6oAqPc5R5MrweE
+	zTj1efNK7nqyvK+ZRtX1mVDV1aCuIQRI8uRu64NZQvRFLvGYvNHB+J2Sb5nvOU2SWKw7/HLOoUMY6
+	pdCxRr83ti7b2sE9mtrlCpUYat54brTObydzwUG0/T511wrsekaKPSJqP8uAfYyYo49MG+n0yUAXD
+	uqxLW2vVdLZCNOnwYwlJexSsNIpJd5/bbKrpC/5Uk5ekRzVE7MsyzdiXj5U44328wj0N0R2v9riyk
+	Fn4yyOcXrBu9O0Ce2BIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEufV-0007Ju-Dn; Thu, 19 Mar 2020 12:53:01 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jEuk2-0001JM-Nd; Thu, 19 Mar 2020 12:57:42 +0000
+Received: from mail-eopbgr30117.outbound.protection.outlook.com
+ ([40.107.3.117] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEufL-0007JM-QB
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 12:52:54 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02JCqg3L057622;
- Thu, 19 Mar 2020 07:52:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584622362;
- bh=eAilZA11iLm+gtgKCQlqZ03zeJpEkI1sgXDufYTW4Z0=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=UULxQAyiPCilF0eBOjYEqm6IkbqmXwXh9x1uS6t2TrJ56EITFCIeTET1urEHUgM73
- lEKAVQbv/a8Sq+mxAtU6L1HCKarZEJRYC2hJAJHzda1z+ZM0FcYyV4jjPi5eaZbybO
- yxXx2HbFEpkWxO2iXuXqmrZsg3YIn+el15Y3LciE=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02JCqgI2049419
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 19 Mar 2020 07:52:42 -0500
-Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 19
- Mar 2020 07:52:41 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 19 Mar 2020 07:52:41 -0500
-Received: from [10.24.69.174] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02JCqchj043796;
- Thu, 19 Mar 2020 07:52:38 -0500
-Subject: Re: [RESEND PATCH v4 2/4] thermal: k3: Add support for bandgap sensors
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, <rui.zhang@intel.com>,
- <robh+dt@kernel.org>
-References: <20200318083028.9984-1-j-keerthy@ti.com>
- <20200318083028.9984-3-j-keerthy@ti.com>
- <ea3b34dc-42e3-0b10-4b89-faf2621a4ee2@linaro.org>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <03b837de-ff25-2308-8a56-15bc3377cd5f@ti.com>
-Date: Thu, 19 Mar 2020 18:22:41 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jEujo-0001Hr-G5; Thu, 19 Mar 2020 12:57:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=X8JxkgFYn6ejoYvL14Bknc/3taLDqAPVhRnHqFM9+Add67LApRwjLGLZVcspMAEXkgc+m05fx3SA4TcZY6hXyz9oyPItDowa4LT1F97c1PuzgilIxLOEo0WZ4LwkIWXlI0wPmJwuTAY2MYSi+cppVXFGNvvn6VtRzzkwqFo2oV2gjLnnSe0Ce2anlbskLRVuJlq9Dw9ikoFdWD2QWV52QoK2Gp2qxEKbKcp+KR+EF+bhu7Y7J0BPd1uwsx+ropsVDqwFVdW72+KBxKQgMdz669qz53mtprrBPVk5vM4rFeVsRvJ8P8w1A6wLKkcU2KGcmnK424XyEU4FBf0787bzYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ct/vC+pyknaapJ/kjDeMGgchdOUlt5aZcJZO1q8mKtw=;
+ b=WyWChx4rwOPq+eOV0RJC/SR68bWq2r6Ab4pChpN34R67Gp0RxQ98o64zmhFWBoUn700pQY3zXc9VRb+qsz1RP7790TJBoP4tnJoQ93Rpy85B4N0cMBbaXuJpoPyhQkyVPLRUN7bifax3oqZiZ3qewjY5dLkuMgIx2oEcHp5nkdlqu99BqgnE/BPgT3AdcN9BrhQOs1gVvQgzWmqIUSCRwv3vDAURwWUYTBq8bUtdMWEnB0NzusKMWbY071sWRaqsmijtDu+8W3IYKoazGD/YMO15U2hK3z4G0gb2O1eES1gcv0akURteq9bvgQEUnbJZQ0gLq4BjUwxuZdathXHKCw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ct/vC+pyknaapJ/kjDeMGgchdOUlt5aZcJZO1q8mKtw=;
+ b=tU0XZSw8e4Ws6iZOGfhACAY0qOFB6LptP/wiQNm3bDY4LOdL/QsmUpuSVGfc5wxLWtX2MZxhcdXBwQnXrZoOMtwYJFlToj4VF4qWVgsGTuEeMPTbAKCbRCLJ8Y1sIUEPxA5HEQeUUFZf0E3g777xw/ytCIkXIRggsMXi5DlPnqQ=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=oleksandr.suvorov@toradex.com; 
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
+ VI1PR05MB4384.eurprd05.prod.outlook.com (52.134.30.158) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.23; Thu, 19 Mar 2020 12:57:25 +0000
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2]) by VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::7cdd:4feb:a8b6:a6d2%7]) with mapi id 15.20.2814.021; Thu, 19 Mar 2020
+ 12:57:25 +0000
+X-Gm-Message-State: ANhLgQ36U2OAvPJRkdJQihBdRm4enAqHdwgWsLaNC1cRtT2agsDONohK
+ DOyZgFy9v/b8JSGjaHw6pzYsvPimxRFGM0HjJgk=
+X-Google-Smtp-Source: ADFU+vv7UiYjMyQD/4E12h86CR7/cYPU2WKNtIqkeDfie1uanDVnCD4QjGal5pFHF/ZOfpjDVMav8J/uvLvFUH2D2Ko=
+X-Received: by 2002:ac8:554a:: with SMTP id o10mr2778015qtr.224.1584622638973; 
+ Thu, 19 Mar 2020 05:57:18 -0700 (PDT)
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-2-oleksandr.suvorov@toradex.com>
+ <20200317174043.GA1464607@ulmo>
+ <20200317210042.ryrof3amr7fxp4w5@pengutronix.de>
+ <20200318225953.GA2874972@ulmo>
+ <CAGgjyvGd4y8M0L1sFMvQ1=gPcKfUPoR13dVS7F5WZx=333KG6g@mail.gmail.com>
+ <20200319121026.3rzcxdknfyhtkryi@pengutronix.de>
+In-Reply-To: <20200319121026.3rzcxdknfyhtkryi@pengutronix.de>
+From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Date: Thu, 19 Mar 2020 14:57:07 +0200
+X-Gmail-Original-Message-ID: <CAGgjyvFebxXaKkhy-UR1-kaYWozpP67YtVf5mp4mTHFQRhsjKg@mail.gmail.com>
+Message-ID: <CAGgjyvFebxXaKkhy-UR1-kaYWozpP67YtVf5mp4mTHFQRhsjKg@mail.gmail.com>
+Subject: Re: [RFC PATCH 1/7] pwm: rename the PWM_POLARITY_INVERSED enum
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+X-ClientProxiedBy: MN2PR04CA0027.namprd04.prod.outlook.com
+ (2603:10b6:208:d4::40) To VI1PR05MB3279.eurprd05.prod.outlook.com
+ (2603:10a6:802:1c::24)
 MIME-Version: 1.0
-In-Reply-To: <ea3b34dc-42e3-0b10-4b89-faf2621a4ee2@linaro.org>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from mail-qt1-f178.google.com (209.85.160.178) by
+ MN2PR04CA0027.namprd04.prod.outlook.com (2603:10b6:208:d4::40) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.22 via Frontend Transport; Thu, 19 Mar 2020 12:57:23 +0000
+Received: by mail-qt1-f178.google.com with SMTP id m33so1646914qtb.3;
+ Thu, 19 Mar 2020 05:57:23 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ36U2OAvPJRkdJQihBdRm4enAqHdwgWsLaNC1cRtT2agsDONohK
+ DOyZgFy9v/b8JSGjaHw6pzYsvPimxRFGM0HjJgk=
+X-Google-Smtp-Source: ADFU+vv7UiYjMyQD/4E12h86CR7/cYPU2WKNtIqkeDfie1uanDVnCD4QjGal5pFHF/ZOfpjDVMav8J/uvLvFUH2D2Ko=
+X-Received: by 2002:ac8:554a:: with SMTP id o10mr2778015qtr.224.1584622638973; 
+ Thu, 19 Mar 2020 05:57:18 -0700 (PDT)
+X-Gmail-Original-Message-ID: <CAGgjyvFebxXaKkhy-UR1-kaYWozpP67YtVf5mp4mTHFQRhsjKg@mail.gmail.com>
+X-Originating-IP: [209.85.160.178]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 570ac88b-5d4b-40e7-6c8c-08d7cc051169
+X-MS-TrafficTypeDiagnostic: VI1PR05MB4384:
+X-Microsoft-Antispam-PRVS: <VI1PR05MB438482C1B40F4958951803ADF9F40@VI1PR05MB4384.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
+X-Forefront-PRVS: 0347410860
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(4636009)(366004)(199004)(5660300002)(6862004)(9686003)(44832011)(450100002)(4326008)(66946007)(66556008)(55446002)(55236004)(6666004)(86362001)(66476007)(498600001)(2906002)(966005)(53546011)(8676002)(81156014)(81166006)(54906003)(52116002)(42186006)(8936002)(186003)(26005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB4384;
+ H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: y9CljjCgpjvMGtRFzS2W5w7qTHttXtn99OsaWB8mr+i8SU7qSjcAMvwyS5gQAQTSO/kixHx5+pFmh1PAoUOHH625JCWQFkPnyjxuU2WhMPnW5leGNOBHFPaT22+VeDIvjr2PrT7YTCLu/+96NLwNuqiMHLwm8OXYmcOjTa4GO6nYrPsRSUX9G6ZCis2Ipl3lu/Aj3lCPFRI0csUCyXb/FsrKx9HUtln2fddvP/VBJWafyYya9WsYagInyyXOEwXs/W4BW2D4KDLXSmQP+zElLU8418sC83cullqqdVE2PFFcXidH05thiLqifT0Y1RIgsqGXf1mbTk6NKGAhhA5X7ZKOijlYEmhKg7MM1iouRmqN0wIz9Ri5nD/fc2vW2/zxKgOzueiERGpNoOVarY4dAZ3P9MlyljGK7sm2yY6uGSjZacltP5Yb7zVAJyt5/yQd00FbqsABnkfQzLtUxskzasoD5/xYdP8QGklfcQbmewsJVW8RtwVsN/oZQHjDtxi1F8HJrHVMv4jfNJMsinVk+w==
+X-MS-Exchange-AntiSpam-MessageData: RgUsfkaRWRO5188fdPGaQTF7TSMWcKCwuyV8jBoEu5XYtJuBoZWPmlTLYQ6gBhqKfpRngO/KahZaKPAjYtixXsOu3wvrTp1rGWTTdXQ/M7BESBHZjHi82tkUpfgoxmxE6ZaEGN7Y9whyxxBv/0w9ig==
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 570ac88b-5d4b-40e7-6c8c-08d7cc051169
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2020 12:57:24.0735 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: FnKkTj2y9vq701sHy6quJ7xiaV1247AOx7DZLbzv1X3p4H68Wf4Ii9l/oVnBZ6q0N6GRYOZumamA2lWgXP3hu09w6ZDPOhXd42erhvPwuE8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB4384
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_055251_981888_3C90275C 
-X-CRM114-Status: GOOD (  30.23  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200319_055728_569308_5B0BB3CF 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.117 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -82,7 +129,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,429 +141,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-riscv@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ devicetree@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>, Scott Branden <sbranden@broadcom.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Claudiu Beznea <claudiu.beznea@microchip.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 19/03/20 6:08 pm, Daniel Lezcano wrote:
-> On 18/03/2020 09:30, Keerthy wrote:
->> The bandgap provides current and voltage reference for its internal
->> circuits and other analog IP blocks. The analog-to-digital
->> converter (ADC) produces an output value that is proportional
->> to the silicon temperature.
->>
->> Currently reading temperatures and creating work to periodically
->> read temperatures from the zones are supported.
->> There are no active/passive cooling agent supported.
->>
->> Signed-off-by: Keerthy <j-keerthy@ti.com>
->> ---
->>
->> Changes in v4:
->>
->>    * Fixed comments from Daniel to remove trend function.
->>    * Mostly cleaned up all the unused variables.
->>    * Driver from bool to tristate.
->>
->>   drivers/thermal/Kconfig      |  11 ++
->>   drivers/thermal/Makefile     |   1 +
->>   drivers/thermal/k3_bandgap.c | 287 +++++++++++++++++++++++++++++++++++
->>   3 files changed, 299 insertions(+)
->>   create mode 100644 drivers/thermal/k3_bandgap.c
->>
->> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
->> index 5a05db5438d6..d848d9a3c4f1 100644
->> --- a/drivers/thermal/Kconfig
->> +++ b/drivers/thermal/Kconfig
->> @@ -251,6 +251,17 @@ config IMX_THERMAL
->>   	  cpufreq is used as the cooling device to throttle CPUs when the
->>   	  passive trip is crossed.
->>   
->> +config K3_THERMAL
->> +	tristate "Texas Instruments K3 thermal support"
->> +	depends on ARCH_K3 || COMPILE_TEST
->> +	help
->> +	  If you say yes here you get thermal support for the Texas Instruments
->> +	  K3 SoC family. The current chip supported is:
->> +	   - AM654
->> +
->> +	  This includes temperature reading functionality and also trend
->> +	  computation.
-> 
-> trend is now removed :)
-
-Oops missed this one here. I will remove.
-
-> 
->>   config MAX77620_THERMAL
->>   	tristate "Temperature sensor driver for Maxim MAX77620 PMIC"
->>   	depends on MFD_MAX77620
->> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
->> index 9fb88e26fb10..5ad6535139ae 100644
->> --- a/drivers/thermal/Makefile
->> +++ b/drivers/thermal/Makefile
->> @@ -28,6 +28,7 @@ thermal_sys-$(CONFIG_CLOCK_THERMAL)	+= clock_cooling.o
->>   # devfreq cooling
->>   thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
->>   
->> +obj-$(CONFIG_K3_THERMAL)	+= k3_bandgap.o
->>   # platform thermal drivers
->>   obj-y				+= broadcom/
->>   obj-$(CONFIG_THERMAL_MMIO)		+= thermal_mmio.o
->> diff --git a/drivers/thermal/k3_bandgap.c b/drivers/thermal/k3_bandgap.c
->> new file mode 100644
->> index 000000000000..d16e60335721
->> --- /dev/null
->> +++ b/drivers/thermal/k3_bandgap.c
->> @@ -0,0 +1,287 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * TI Bandgap temperature sensor driver for K3 SoC Family
->> + *
->> + * Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
->> + */
->> +
->> +#include <linux/module.h>
->> +#include <linux/init.h>
->> +#include <linux/kernel.h>
->> +#include <linux/pm_runtime.h>
->> +#include <linux/err.h>
->> +#include <linux/types.h>
->> +#include <linux/spinlock.h>
->> +#include <linux/of_platform.h>
->> +#include <linux/io.h>
->> +#include <linux/workqueue.h>
-> 
-> Please check all the headers are needed, AFAICT workqueue.h and
-> spinlock.h are not.
-
-okay
-
-> 
->> +#include <linux/thermal.h>
->> +#include <linux/of.h>
->> +
->> +#define K3_VTM_DEVINFO_PWR0_OFFSET		0x4
->> +#define K3_VTM_DEVINFO_PWR0_CVD_CT_MASK	0xf
->> +#define K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK	0xf0
->> +#define K3_VTM_TMPSENS0_CTRL_OFFSET	0x80
->> +#define K3_VTM_REGS_PER_TS			0x10
->> +#define K3_VTM_TS_STAT_DTEMP_MASK	0x3ff
->> +#define K3_VTM_MAX_NUM_TS		8
->> +#define K3_VTM_TMPSENS_CTRL_CBIASSEL	BIT(0)
->> +#define K3_VTM_TMPSENS_CTRL_SOC		BIT(5)
->> +#define K3_VTM_TMPSENS_CTRL_CLRZ		BIT(6)
->> +#define K3_VTM_TMPSENS_CTRL_CLKON_REQ	BIT(7)
->> +
->> +#define K3_VTM_ADC_BEGIN_VAL		540
->> +#define K3_VTM_ADC_END_VAL		944
->> +
->> +static const int k3_adc_to_temp[] = {
->> +	-40000, -40000, -40000, -40000, -39800, -39400, -39000, -38600, -38200,
->> +	-37800, -37400, -37000, -36600, -36200, -35800, -35300, -34700, -34200,
->> +	-33800, -33400, -33000, -32600, -32200, -31800, -31400, -31000, -30600,
->> +	-30200, -29800, -29400, -29000, -28600, -28200, -27700, -27100, -26600,
->> +	-26200, -25800, -25400, -25000, -24600, -24200, -23800, -23400, -23000,
->> +	-22600, -22200, -21800, -21400, -21000, -20500, -19900, -19400, -19000,
->> +	-18600, -18200, -17800, -17400, -17000, -16600, -16200, -15800, -15400,
->> +	-15000, -14600, -14200, -13800, -13400, -13000, -12500, -11900, -11400,
->> +	-11000, -10600, -10200, -9800, -9400, -9000, -8600, -8200, -7800, -7400,
->> +	-7000, -6600, -6200, -5800, -5400, -5000, -4500, -3900, -3400, -3000,
->> +	-2600, -2200, -1800, -1400, -1000, -600, -200, 200, 600, 1000, 1400,
->> +	1800, 2200, 2600, 3000, 3400, 3900, 4500, 5000, 5400, 5800, 6200, 6600,
->> +	7000, 7400, 7800, 8200, 8600, 9000, 9400, 9800, 10200, 10600, 11000,
->> +	11400, 11800, 12200, 12700, 13300, 13800, 14200, 14600, 15000, 15400,
->> +	15800, 16200, 16600, 17000, 17400, 17800, 18200, 18600, 19000, 19400,
->> +	19800, 20200, 20600, 21000, 21400, 21900, 22500, 23000, 23400, 23800,
->> +	24200, 24600, 25000, 25400, 25800, 26200, 26600, 27000, 27400, 27800,
->> +	28200, 28600, 29000, 29400, 29800, 30200, 30600, 31000, 31400, 31900,
->> +	32500, 33000, 33400, 33800, 34200, 34600, 35000, 35400, 35800, 36200,
->> +	36600, 37000, 37400, 37800, 38200, 38600, 39000, 39400, 39800, 40200,
->> +	40600, 41000, 41400, 41800, 42200, 42600, 43100, 43700, 44200, 44600,
->> +	45000, 45400, 45800, 46200, 46600, 47000, 47400, 47800, 48200, 48600,
->> +	49000, 49400, 49800, 50200, 50600, 51000, 51400, 51800, 52200, 52600,
->> +	53000, 53400, 53800, 54200, 54600, 55000, 55400, 55900, 56500, 57000,
->> +	57400, 57800, 58200, 58600, 59000, 59400, 59800, 60200, 60600, 61000,
->> +	61400, 61800, 62200, 62600, 63000, 63400, 63800, 64200, 64600, 65000,
->> +	65400, 65800, 66200, 66600, 67000, 67400, 67800, 68200, 68600, 69000,
->> +	69400, 69800, 70200, 70600, 71000, 71500, 72100, 72600, 73000, 73400,
->> +	73800, 74200, 74600, 75000, 75400, 75800, 76200, 76600, 77000, 77400,
->> +	77800, 78200, 78600, 79000, 79400, 79800, 80200, 80600, 81000, 81400,
->> +	81800, 82200, 82600, 83000, 83400, 83800, 84200, 84600, 85000, 85400,
->> +	85800, 86200, 86600, 87000, 87400, 87800, 88200, 88600, 89000, 89400,
->> +	89800, 90200, 90600, 91000, 91400, 91800, 92200, 92600, 93000, 93400,
->> +	93800, 94200, 94600, 95000, 95400, 95800, 96200, 96600, 97000, 97500,
->> +	98100, 98600, 99000, 99400, 99800, 100200, 100600, 101000, 101400,
->> +	101800, 102200, 102600, 103000, 103400, 103800, 104200, 104600, 105000,
->> +	105400, 105800, 106200, 106600, 107000, 107400, 107800, 108200, 108600,
->> +	109000, 109400, 109800, 110200, 110600, 111000, 111400, 111800, 112200,
->> +	112600, 113000, 113400, 113800, 114200, 114600, 115000, 115400, 115800,
->> +	116200, 116600, 117000, 117400, 117800, 118200, 118600, 119000, 119400,
->> +	119800, 120200, 120600, 121000, 121400, 121800, 122200, 122600, 123000,
->> +	123400, 123800, 124200, 124600, 124900, 125000,
->> +};
-> 
-> Can be this array replaced by an initialization array with a formula?
-> 
-> Why do we have most of the time a step of 400 then suddenly 500 and 400
-> again? eg. 30600, 31000, 31400, 31900, 32500, 33000, 33400
-
-This has come from a polynomial equation which i do not want to 
-calculate every time we read the temperature. Hence prefer Look up table.
-
-> 
->> +struct k3_thermal_data;
-> 
-> forward declaration not needed.
-
-okay
-
-> 
->> +struct k3_bandgap {
->> +	void __iomem *base;
->> +	const struct k3_bandgap_data *conf;
->> +};
->> +
->> +/* common data structures */
->> +struct k3_thermal_data {
->> +	struct thermal_zone_device *ti_thermal;
->> +	struct k3_bandgap *bgp;
->> +	struct work_struct thermal_wq;
->> +	int sensor_id;
->> +	u32 ctrl_offset;
->> +	u32 stat_offset;
->> +	int prev_temp;
-> 
-> prev_temp is assigned but not used.
-
-Yes this can be removed.
-
-> 
->> +};
->> +
->> +static unsigned int vtm_get_best_value(unsigned int s0, unsigned int s1,
->> +				       unsigned int s2)
->> +{
->> +	int d01 = abs(s0 - s1);
->> +	int d02 = abs(s0 - s2);
->> +	int d12 = abs(s1 - s2);
->> +
->> +	if (d01 <= d02 && d01 <= d12)
->> +		return (s0 + s1) / 2;
->> +
->> +	if (d02 <= d01 && d02 <= d12)
->> +		return (s0 + s2) / 2;
->> +
->> +	return (s1 + s2) / 2;
->> +}
->> +
->> +static int k3_bgp_read_temp(struct k3_thermal_data *devdata,
->> +			    int *temp)
->> +{
->> +	struct k3_bandgap *bgp;
->> +	unsigned int dtemp, s0, s1, s2;
->> +
->> +	bgp = devdata->bgp;
->> +
->> +	/*
->> +	 * Errata is applicable for am654 pg 1.0 silicon. There
->> +	 * is a variation of the order for 8-10 degree centigrade.
->> +	 * Work around that by getting the average of two closest
->> +	 * readings out of three readings everytime we want to
->> +	 * report temperatures.
->> +	 *
->> +	 * Errata workaround.
->> +	 */
->> +	s0 = readl(bgp->base + devdata->stat_offset) &
->> +		K3_VTM_TS_STAT_DTEMP_MASK;
->> +	s1 = readl(bgp->base + devdata->stat_offset) &
->> +		K3_VTM_TS_STAT_DTEMP_MASK;
->> +	s2 = readl(bgp->base + devdata->stat_offset) &
->> +		K3_VTM_TS_STAT_DTEMP_MASK;
->> +	dtemp = vtm_get_best_value(s0, s1, s2);
->> +
->> +	if (dtemp < K3_VTM_ADC_BEGIN_VAL || dtemp > K3_VTM_ADC_END_VAL)
->> +		return -EINVAL;
->> +
->> +	*temp = k3_adc_to_temp[dtemp - K3_VTM_ADC_BEGIN_VAL];
-> 
-> To be sure there is not a subtle memory corruption, I would recommend to
-> check the consistency between K3_VTM_ADC_END_VAL - K3_VTM_ADC_BEGIN_VAL
-> and the array size at init time.
-> 
-> For example:
-> 
-> if (ARRAY_SIZE(k3_adc_to_temp) !=
-> 	(K3_VTM_ADC_END_VAL - K3_VTM_ADC_BEGIN_VAL))
-
-okay
-
-> 
->> +	return 0;
->> +}
->> +
->> +static int k3_thermal_get_temp(void *devdata, int *temp)
->> +{
->> +	struct k3_thermal_data *data = devdata;
->> +	int ret = 0;
->> +
->> +	ret = k3_bgp_read_temp(data, temp);
->> +	if (ret)
->> +		return ret;
->> +
->> +	data->prev_temp = *temp;
->> +
->> +	return ret;
->> +}
->> +
->> +static const struct thermal_zone_of_device_ops k3_of_thermal_ops = {
->> +	.get_temp = k3_thermal_get_temp,
->> +};
->> +
->> +static void k3_thermal_work(struct work_struct *work)
->> +{
->> +	struct k3_thermal_data *data = container_of(work,
->> +					struct k3_thermal_data, thermal_wq);
->> +
->> +	thermal_zone_device_update(data->ti_thermal, THERMAL_EVENT_UNSPECIFIED);
->> +
->> +	dev_dbg(&data->ti_thermal->device, "updated thermal zone %s\n",
->> +		data->ti_thermal->type);
->> +}
->> +
->> +static const struct of_device_id of_k3_bandgap_match[];
->> +
->> +static int k3_bandgap_probe(struct platform_device *pdev)
->> +{
->> +	int ret = 0, cnt, val, id, reg_cnt = 0;
->> +	struct resource *res;
->> +	struct device *dev = &pdev->dev;
->> +	struct k3_bandgap *bgp;
->> +	struct k3_thermal_data *data;
->> +
->> +	bgp = devm_kzalloc(&pdev->dev, sizeof(*bgp), GFP_KERNEL);
->> +	if (!bgp)
->> +		return -ENOMEM;
->> +
->> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->> +	bgp->base = devm_ioremap_resource(dev, res);
->> +	if (IS_ERR(bgp->base))
->> +		return PTR_ERR(bgp->base);
->> +
->> +	pm_runtime_enable(dev);
->> +	ret = pm_runtime_get_sync(dev);
->> +	if (ret < 0) {
->> +		pm_runtime_put_noidle(dev);
->> +		pm_runtime_disable(dev);
->> +		return ret;
->> +	}
->> +
->> +	/* Get the sensor count in the VTM */
->> +	val = readl(bgp->base + K3_VTM_DEVINFO_PWR0_OFFSET);
->> +	cnt = val & K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK;
->> +	cnt >>= __ffs(K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK);
->> +
->> +	data = devm_kcalloc(dev, cnt, sizeof(*data), GFP_KERNEL);
->> +	if (!data) {
->> +		ret = -ENOMEM;
->> +		goto err_alloc;
->> +	}
->> +
->> +	/* Register the thermal sensors */
->> +	for (id = 0; id < cnt; id++) {
->> +		data[id].sensor_id = id;
->> +		data[id].bgp = bgp;
->> +		data[id].ctrl_offset = K3_VTM_TMPSENS0_CTRL_OFFSET +
->> +					id * K3_VTM_REGS_PER_TS;
->> +		data[id].stat_offset = data[id].ctrl_offset + 0x8;
->> +		INIT_WORK(&data[id].thermal_wq, k3_thermal_work);
-> 
-> 		What is supposed to do ?
-
-Periodically poll temperature. I know there is no passive cooling agent
-like cpufreq at the moment but i do have a critical trip do you 
-recommend to remove that?
-
-Thanks,
-Keerthy
-
-> 
->> +		val = readl(data[id].bgp->base + data[id].ctrl_offset);
->> +		val |= (K3_VTM_TMPSENS_CTRL_SOC |
->> +			K3_VTM_TMPSENS_CTRL_CLRZ |
->> +			K3_VTM_TMPSENS_CTRL_CLKON_REQ);
->> +		val &= ~K3_VTM_TMPSENS_CTRL_CBIASSEL;
->> +		writel(val, data[id].bgp->base + data[id].ctrl_offset);
->> +
->> +		data[id].ti_thermal =
->> +		devm_thermal_zone_of_sensor_register(dev, id,
->> +						     &data[id],
->> +						     &k3_of_thermal_ops);
->> +		if (IS_ERR(data[id].ti_thermal)) {
->> +			dev_err(dev, "thermal zone device is NULL\n");
->> +			ret = PTR_ERR(data[id].ti_thermal);
->> +			goto err_alloc;
->> +		}
->> +
->> +		reg_cnt++;
->> +
->> +		/* Initialize Previous temp */
->> +		k3_thermal_get_temp(&data[id], &data[id].prev_temp);
->> +	}
->> +
->> +	platform_set_drvdata(pdev, bgp);
->> +
->> +	return 0;
->> +
->> +err_alloc:
->> +	pm_runtime_put_sync(&pdev->dev);
->> +	pm_runtime_disable(&pdev->dev);
->> +
->> +	return ret;
->> +}
->> +
->> +static int k3_bandgap_remove(struct platform_device *pdev)
->> +{
->> +	pm_runtime_put_sync(&pdev->dev);
->> +	pm_runtime_disable(&pdev->dev);
->> +
->> +	return 0;
->> +}
->> +
->> +static const struct of_device_id of_k3_bandgap_match[] = {
->> +	{
->> +		.compatible = "ti,am654-vtm",
->> +	},
->> +	{ /* sentinel */ },
->> +};
->> +MODULE_DEVICE_TABLE(of, of_k3_bandgap_match);
->> +
->> +static struct platform_driver k3_bandgap_sensor_driver = {
->> +	.probe = k3_bandgap_probe,
->> +	.remove = k3_bandgap_remove,
->> +	.driver = {
->> +		.name = "k3-soc-thermal",
->> +		.of_match_table	= of_k3_bandgap_match,
->> +	},
->> +};
->> +
->> +module_platform_driver(k3_bandgap_sensor_driver);
->> +
->> +MODULE_DESCRIPTION("K3 bandgap temperature sensor driver");
->> +MODULE_LICENSE("GPL v2");
->> +MODULE_AUTHOR("J Keerthy <j-keerthy@ti.com>");
->>
-> 
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBNYXIgMTksIDIwMjAgYXQgMjoxMSBQTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
+bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IEhlbGxvLAo+Cj4gW2Ryb3BwaW5n
+IFRvbnkgUHJpc2sgPGxpbnV4QHByaXNrdGVjaC5jby5uej4gZnJvbSByZWNpcGllbnRzXQo+Cj4g
+T24gVGh1LCBNYXIgMTksIDIwMjAgYXQgMDE6NDA6MjhQTSArMDIwMCwgT2xla3NhbmRyIFN1dm9y
+b3Ygd3JvdGU6Cj4gPiBUaGllcnJ5LCBJIHNlZSB0aGUgUFdNIGNvcmUgY29udmVydHMgdGhlIGJp
+dCBmaWVsZCAidGhpcmQgY2VsbCIgaW50bwo+ID4gdGhlIHBvbGFyaXR5IHZhcmlhYmxlLgo+ID4g
+Tm93IEkgcHJvYmFibHkgdW5kZXJzdGFuZCB5b3VyIHNpZ2h0IGFuZCBhZ3JlZSB0aGF0IHdlIHNo
+b3VsZG4ndCBnaXZlCj4gPiB0aGUgc2FtZSBuYW1lcyB0byBiaXRzIGluIGJpdGZpZWxkIChkdHMp
+IGFuZCB2YWx1ZXMgb2YgYSB2YXJpYWJsZS4KPiA+Cj4gPiBCdXQgdGhlcmUgYXJlIGxvdHMgb2Yg
+dXNlbGVzcyAiMCIgdmFsdWVzIG9mIHRoaXJkIGNlbGwgb2YgInB3bXMiCj4gPiBvcHRpb24gaW4g
+ZHRzIGZpbGVzLgo+ID4KPiA+IEkgc2VlIDIgd2F5cyBub3c6Cj4gPiAtIGp1c3QgcmVtb3ZlIGFs
+bCAiMCIgInRoaXJkIGNlbGwiIGZyb20gInB3bXMiIG9wdGlvbnMgaW4gZHRzIGZpbGVzLiBJCj4g
+PiBzZWUgdGhpcyAiMCIgY29uZnVzZXMgc29tZSBwZW9wbGUuCj4KPiBUaGVuIHlvdSBoYXZlIHRv
+IG92ZXJ3cml0ZSBwd20tY2VsbHMgb2YgdGhlIHByb3ZpZGVyLiBJZiB0aGVyZSBhcmUgdHdvCj4g
+UFdNcyB1c2VkIGZyb20gdGhlIHNhbWUgcHJvdmlkZXIgYW5kIG9ubHkgb25lIGlzIGludmVydGVk
+IHRoaXMgd29uJ3QKPiB3b3JrLiAoTm90IGVudGlyZWx5IHN1cmUgSSB1bmRlcnN0b29kIHlvdXIg
+c3VnZ2VzdGlvbi4pIFNvIEkgZG9uJ3QgbGlrZQo+IHRoaXMgc3VnZ2VzdGlvbi4KCkdvb2QgcG9p
+bnQsIGFncmVlLiBCdXQgd2Ugc3RpbGwgaGF2ZSB0aGUgdW5uYW1lZCAiMCIuCgpXaGF0IGFib3V0
+IHJlbmFtaW5nIHRoZSBkdC1iaW5kaW5ncyBtYWNybyBQV01fUE9MQVJJVFlfSU5WRVJURUQKYW5k
+IGFkZCB0aGUgbmV3IG9uZSBmb3IgdGhlIG5vcm1hbCBwb2xhcml0eT8KTGlrZSBQV01fRkxBR19Q
+T0xBUklUWV9OT1JNQUwgLyBQV01fRkxBR19QT0xBUklUWV9JTlZFUlRFRCBvcgpEVF9QV01fUE9M
+QVJJVFlfTk9STUFMIC8gRFRfUFdNX1BPTEFSSVRZX0lOVkVSVEVEPwoKVXNpbmcgZGlmZmVyZW50
+IHByZWZpeCB3aWxsIHByZXZlbnQgaW50ZXJmZXJpbmcgbmFtZXMgb2YgZW51bSBhbmQKbWFjcm9z
+IGluIHRoZSBmdXR1cmUKYW5kIHdpbGwgYWxsb3cgdXNpbmcgdGhlIG5hbWVkIG5vcC1mbGFnIFBX
+TV9GTEFHX1BPTEFSSVRZX05PUk1BTCBpbiBkdHMuCgo+IEFuZCBhbHNvIGluIG15IGV5ZXMgdGhp
+cyBpc24ndCBjbGVhcmVyLCBqdXN0IG1vcmUgY29tcGxpY2F0ZWQgdG8gdXNlLgo+Cj4gPiAtIGNv
+bnZlcnQgcHdtX3N0YXRlLnBvbGFyaXR5IGludG8gcHdtX3N0YXRlLmZsYWdzIGFuZCB1c2UgYml0
+ZmllbGQKPiA+ICAgZGlyZWN0bHkgZnJvbSBkdGIuCj4gPiAgIEl0IHNpbXBsaWZpZXMgdGhlIHBh
+cnNpbmcgbG9naWMgYW5kIG1ha2VzIGFkZGluZyBuZXcgZmxhZ3MgZWFzaWVyLgo+Cj4gKnNocnVn
+KiwgSSBkb24ndCBjYXJlIG11Y2guCj4KPiBCZXN0IHJlZ2FyZHMKPiBVd2UKPgo+IC0tCj4gUGVu
+Z3V0cm9uaXggZS5LLiAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgVXdlIEtsZWluZS1Lw7Zu
+aWcgICAgICAgICAgICB8Cj4gSW5kdXN0cmlhbCBMaW51eCBTb2x1dGlvbnMgICAgICAgICAgICAg
+ICAgIHwgaHR0cHM6Ly93d3cucGVuZ3V0cm9uaXguZGUvIHwKCgoKLS0gCkJlc3QgcmVnYXJkcwpP
+bGVrc2FuZHIgU3V2b3JvdgoKVG9yYWRleCBBRwpFYmVuYXVzdHJhc3NlIDEwIHwgNjA0OCBIb3J3
+IHwgU3dpdHplcmxhbmQgfCBUOiArNDEgNDEgNTAwIDQ4IDAwCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
