@@ -2,123 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A34318AAC8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 03:42:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3065518AACC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 03:44:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:References:Message-Id:
-	Date:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cpBAK0rPJjIcPwUc8e159cgNXzVqo6qupklL1sqEvAo=; b=KAG9mmHnbyrvrw
-	vSIj3BoRKwtGiMarw4I4yAPUrvmI/obLsKqva8YQq68wQRJZ75JKPle+GGp6XWkUqULftrf8Mu4qs
-	VtOmG8jB8uxQn/lvxQ0eNIqdmiZCJWHOaLmLfBTr0XczHgAtY1ZmQ/MSb57+0lkZkUZBfG8y8bChu
-	HCOkMWMN0ziMV/g3fqea7PZxgJ2wYdcrVnvoVBPVARod0SKR3zgya8t+XrtirZeUtBeDeLlWd0X+L
-	kgTtwP89Mnt4dWNy+l9J9tU9n6b7WXvFLBG3W8WUSKf0pDYT7Jtk5wBgzI1VpSa8X08K54Zd7+LmJ
-	Jv/L1WOUSd8mpT9TXLxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/zkq4h9ERnLk9rBmlbwIMEYIRLpGKWY1wX9wfRQZmMw=; b=cAPynVftigc1ab
+	lfGLdipdyRQIHOIxNbtjvuq8DLue1TYe4AbP4U9iCKpdpW6bhHt9cAY+1saHFHrNQQKlWnhwBzpjO
+	EFsVkz657+9GJ1cP9NIOrq1S9HVsrr/GwUJJFQeWSGAdK5XxD9eXj9rEWuK3E3UHztWxuGMIDE24m
+	YRpfqgsdPYdi4TxQ5oalkQqF18GtBqRNlzNv3VKJVBfIcnLLVU0l/5iSpMSZEtcmruQekDRXtD2Ix
+	qel618TW9M+eN8GJ6iRtSDRX37zQbnf2U2qKeQKd6Jbd5+flVAy2gAjmaj4rBmoKMoAucGqt9i2Hk
+	VgAAqImduA7xrganDOPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEl8j-0001Ho-LF; Thu, 19 Mar 2020 02:42:33 +0000
-Received: from mail-bn8nam12on2128.outbound.protection.outlook.com
- ([40.107.237.128] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1jElAk-0001mU-Ic; Thu, 19 Mar 2020 02:44:38 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEl8a-0001GF-So
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 02:42:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=k7FMAR1mZcuWQKwbJQRMKNctQUq30R3vfglXcbihSGubht0pEIzJQkxlSt9VqN2HB1D+cMao1y/rCro4PUD4JZRrh3JgIDNNg4BUa6s/g8LGU9TY3Wton+MsY325a4lLGuaxOT82kHvj2o4qhPsDpf+TFFmQ1GoQs2osR8kiKysKsgcbpq9IqbDkKJWcrTiIcvc6DXSMi8fWr4his9Sm0GpVYlWB/HH2zlCoWUFj+bOy0GXga1VAAF40mjt1CrDaGzR3kCy+vRdiCHH+PcY9nXw+ku5CFujc3JqrlBi7YEuafEy2HdR6cT3jYie+mj1keG/qCIT7z7A1O1qvPvQdCg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a86rLbbH8QJPC4kAHdHDYk2VKVTAPmVg8Bas+y4eimE=;
- b=UhHfxiSa91Wb9MYnFoaXoTi/J+MEdYfOhi0yPUtRM7W6ip0X0bqZ19F9e8uFQVS3YMJZG/BaFDrSHVp96O9d3oijhLX3uN3or0AHSa9VLiquwIzPXEtRmF1xXqjrT+dCH/gTvaSZj2hM3iQJgr5KzugbmjFKpNivEK1nRrSNJHA+j3pvW8ry/yFSa7TTj3yR2H6izA8rWV7kHaKlsAwABZKxnJNElGc6nzRxX2Gb/HioTsEGUH4j9ND00Phahm/35acNdYj++U98lRo6t5VVfXBHh6FnwJtmZ8kLP2ouwOd+Y7XyLdQG9qT5b/fmK3oinM3fQJp/PUEyPtlQ0kUplg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
- header.from=amperemail.onmicrosoft.com; dkim=pass
- header.d=amperemail.onmicrosoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=os.amperecomputing.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a86rLbbH8QJPC4kAHdHDYk2VKVTAPmVg8Bas+y4eimE=;
- b=iZYs+uEa6JRdCtcTcmUAp9LyljuMeouT/SrYpOBHkaOYQUiqQGW6IMuhJQMhsfBjO+wbEhAjafuIKv31rTF0NVzo1J4ktEzG1qOGFG2PoOEnn2mbKbwipWo5mdxner1QEo6WFr/2deJCcTlrq/fBW+9V2IEk6iMGF50lWxQjdho=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=tuanphan@os.amperecomputing.com; 
-Received: from MWHPR01MB2317.prod.exchangelabs.com (2603:10b6:300:28::16) by
- MWHPR01MB2239.prod.exchangelabs.com (2603:10b6:300:24::7) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.18; Thu, 19 Mar 2020 02:42:18 +0000
-Received: from MWHPR01MB2317.prod.exchangelabs.com
- ([fe80::5151:bb2b:8ed2:b53c]) by MWHPR01MB2317.prod.exchangelabs.com
- ([fe80::5151:bb2b:8ed2:b53c%12]) with mapi id 15.20.2814.021; Thu, 19 Mar
- 2020 02:42:17 +0000
-Subject: Re: [PATCH 2/2] perf: arm_dsu: Support DSU ACPI devices.
-From: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
-In-Reply-To: <a571cf7e-c2a5-e8f8-e782-8087249143b0@arm.com>
-Date: Wed, 18 Mar 2020 19:42:13 -0700
-Message-Id: <9D13EDC1-B0A9-4945-AAC6-E71A1AAAEBC5@amperemail.onmicrosoft.com>
-References: <1584491323-31436-1-git-send-email-tuanphan@os.amperecomputing.com>
- <a571cf7e-c2a5-e8f8-e782-8087249143b0@arm.com>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-X-Mailer: Apple Mail (2.3608.60.0.2.5)
-X-ClientProxiedBy: CY4PR06CA0070.namprd06.prod.outlook.com
- (2603:10b6:903:13d::32) To MWHPR01MB2317.prod.exchangelabs.com
- (2603:10b6:300:28::16)
+ id 1jElAY-0001kz-TP; Thu, 19 Mar 2020 02:44:28 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02J2duCG113507;
+ Thu, 19 Mar 2020 02:43:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=tlqfao3WTOxafP9NKrqfKjCr04ddDS0BAqDBioqzffk=;
+ b=I5fGQ+bEY2D3HVUudZ4/cDB4EEwcd2o9NKNR1UF4QIwVKWdBAZgPj+wnjERJSsRy81be
+ tTTOj7iGi5qRqBMNMQxiS4tudZ+1HaR0tZpM5YE8oqJScneRTxGCzlZ2xA7kPdLxKIWq
+ XbBG+LwRIsF/R7LNoYId30itp4AUw52DKO0s4jXM2xmmwkVe856Akxflb6cdtyBv+RAA
+ 085koBJCgMMiAI27kGTCaf7D5TiF+RLsCuqb2ZAlXG0TV60GMmTGgYSNMxU3o3dPh/Hs
+ sWSoMqSgz4xk3/1mVzxxdyfnaE6HRMYoWp3PBoEy9SxxuaCjnTY/ahE3XevjnACVfiMj Qw== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2120.oracle.com with ESMTP id 2yub275qgu-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Mar 2020 02:43:13 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02J2hAZH071118;
+ Thu, 19 Mar 2020 02:43:12 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3030.oracle.com with ESMTP id 2ys8tv4qbk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Mar 2020 02:43:12 +0000
+Received: from abhmp0007.oracle.com (abhmp0007.oracle.com [141.146.116.13])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02J2gwkB031582;
+ Thu, 19 Mar 2020 02:42:59 GMT
+Received: from [192.168.1.206] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 18 Mar 2020 19:42:58 -0700
+Subject: Re: [PATCH 4/4] hugetlbfs: clean up command line processing
+To: Randy Dunlap <rdunlap@infradead.org>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-5-mike.kravetz@oracle.com>
+ <1820045d-0bf2-9a86-226d-e9c4d5928749@infradead.org>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <7196b6b5-53df-9898-471a-ae481395e97c@oracle.com>
+Date: Wed, 18 Mar 2020 19:42:56 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.104] (73.151.103.95) by
- CY4PR06CA0070.namprd06.prod.outlook.com (2603:10b6:903:13d::32) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.18 via Frontend
- Transport; Thu, 19 Mar 2020 02:42:15 +0000
-X-Mailer: Apple Mail (2.3608.60.0.2.5)
-X-Originating-IP: [73.151.103.95]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 9c618678-fb61-4bcb-74e4-08d7cbaf233f
-X-MS-TrafficTypeDiagnostic: MWHPR01MB2239:|MWHPR01MB2239:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <MWHPR01MB223917E84F152F9A295A99A7E0F40@MWHPR01MB2239.prod.exchangelabs.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:983;
-X-Forefront-PRVS: 0347410860
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10019020)(4636009)(396003)(136003)(376002)(39840400004)(366004)(346002)(199004)(66476007)(66946007)(6916009)(66556008)(2906002)(6486002)(52116002)(316002)(16576012)(53546011)(33656002)(8676002)(4326008)(81166006)(956004)(42882007)(2616005)(8936002)(26005)(16526019)(186003)(81156014)(478600001)(5660300002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR01MB2239;
- H:MWHPR01MB2317.prod.exchangelabs.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; 
-Received-SPF: None (protection.outlook.com: os.amperecomputing.com does not
- designate permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: wkYZAMPAL20jCtM5lyl8PugBpHdWWIWYOxwGPcFfbH6udaQqFDbJZaN1Hi2PkFkxaySeoqADEVYtp4A6Y7z8LhzdHDC5vUAusT75GwfCjUKpPg9bpk2GnXovoS2YYb2jIfYIdTbWvLb0wsg7w+Mb7N6n/tyqF7f+41mbKEXsZfk02UwrAoQ3fR9yYAkbe8rlEniE3EUoxbZmgC5G23sLu2ts7UohgYCXOSL+y4yB5J1xuDZrlHBiEIZW8TSZiPkAv5/ahSpIq5qGfCgItk+jquko3AUtk+4yTovPULK2yXTNcStUkOvZUO644Qy3/l3DGi7p8Vkl6glfbbmIYLos1VRpiq2htTqeNJLKLLFwaPEtEiccEAYb51THORi4Buyk6/6e4A+Gtk1mYz4v/TdlnE3fSKEYF4pMK9oEXEVNGBGWiqF8SsHAJgl29qnrUCdM
-X-MS-Exchange-AntiSpam-MessageData: Dcu41/S3gtJkOHGVbir4HGPHWNzSVyAaWtC/lX0ioRUmlirz6mG9zV3f/0sff1V4pGTzTR8CjF9yL8evn4I78MQHi0bzNT1z/yODlkm+6KL0BBDrxfddQCrbSDz9wVDK2qFgYA43hnzKlMSJTwEAHA==
-X-OriginatorOrg: amperemail.onmicrosoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9c618678-fb61-4bcb-74e4-08d7cbaf233f
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2020 02:42:17.2658 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qDnoEDOJkDdNwZuHyeCBFjzLEwY9fO32bJARQIXKoSn+QY/Sv2BkzWFWD3LHm1Xp9Wxh1dMOebxiWcde3HN0ronSxO7y2XZiUxVdYPONjz0AYO7fTR8dviWkHgDtHlPN
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR01MB2239
+In-Reply-To: <1820045d-0bf2-9a86-226d-e9c4d5928749@infradead.org>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ phishscore=0 mlxscore=0
+ malwarescore=0 suspectscore=0 mlxlogscore=999 spamscore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003190011
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ impostorscore=0
+ mlxlogscore=999 mlxscore=0 phishscore=0 adultscore=0 suspectscore=0
+ clxscore=1015 priorityscore=1501 lowpriorityscore=0 bulkscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003190010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_194224_968116_DEDA58D7 
-X-CRM114-Status: GOOD (  16.52  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200318_194427_035978_00D864A5 
+X-CRM114-Status: GOOD (  25.86  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.128 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tuanphan[at]amperemail.onmicrosoft.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,138 +115,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, tuanphan@os.amperecomputing.com,
- linux-kernel@vger.kernel.org, sudeep.holla@arm.com,
- patches@amperecomputing.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "David S.Miller" <davem@davemloft.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Longpeng <longpeng2@huawei.com>,
+ Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks Suzuki and Robin for quick reply.
-Please find my comments below.
-
-> On Mar 18, 2020, at 5:45 PM, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+On 3/18/20 5:20 PM, Randy Dunlap wrote:
+> Hi Mike,
 > 
-> Hello,
-> 
-> 
-> Please find my comments below.
-> 
-> On 03/18/2020 12:28 AM, Tuan Phan wrote:
->> Add support for probing device from ACPI node.
->> Each DSU ACPI node defines "cpus" package which
->> each element is the MPIDR of associated cpu.
->> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+> On 3/18/20 3:06 PM, Mike Kravetz wrote:
+>> With all hugetlb page processing done in a single file clean up code.
+>> - Make code match desired semantics
+>>   - Update documentation with semantics
+>> - Make all warnings and errors messages start with 'HugeTLB:'.
+>> - Consistently name command line parsing routines.
+>> - Add comments to code
+>>   - Describe some of the subtle interactions
+>>   - Describe semantics of command line arguments
+>>
+>> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
 >> ---
->>  drivers/perf/arm_dsu_pmu.c | 53 +++++++++++++++++++++++++++++++++++++++-------
->>  1 file changed, 45 insertions(+), 8 deletions(-)
->> diff --git a/drivers/perf/arm_dsu_pmu.c b/drivers/perf/arm_dsu_pmu.c Tua
->> index 2622900..6ef762c 100644
->> --- a/drivers/perf/arm_dsu_pmu.c
->> +++ b/drivers/perf/arm_dsu_pmu.c
->> @@ -11,6 +11,7 @@
->>  #define DRVNAME		PMUNAME "_pmu"
->>  #define pr_fmt(fmt)	DRVNAME ": " fmt
->>  +#include <linux/acpi.h>
->>  #include <linux/bitmap.h>
->>  #include <linux/bitops.h>
->>  #include <linux/bug.h>
->> @@ -603,18 +604,22 @@ static struct dsu_pmu *dsu_pmu_alloc(struct platform_device *pdev)
->>  }
->>    /**
->> - * dsu_pmu_dt_get_cpus: Get the list of CPUs in the cluster.
->> + * dsu_pmu_get_cpus: Get the list of CPUs in the cluster.
->>   */
->> -static int dsu_pmu_dt_get_cpus(struct device_node *dev, cpumask_t *mask)
->> +static int dsu_pmu_get_cpus(struct platform_device *pdev)
->>  {
->> +#ifndef CONFIG_ACPI
->> +	/* Get the list of CPUs from device tree */
-> 
-> What if we have a kernel with both:
-> 
-> CONFIG_OF=y
-> CONFIG_ACPI=y
-> 
-> and boot the kernel on a system with DT ? In other words, the decision
-> to choose the DT vs ACPI must be runtime decision, not buildtime.
-> 
-> See drivers/hwtracing/coresight/coresight-platform.c:coresight_get_platform_data() for an example.
-
-I will update so it can be detected in runtime.
-
->>  	int i = 0, n, cpu;
->>  	struct device_node *cpu_node;
->> +	struct dsu_pmu *dsu_pmu =
->> +		(struct dsu_pmu *) platform_get_drvdata(pdev);
->>  -	n = of_count_phandle_with_args(dev, "cpus", NULL);
->> +	n = of_count_phandle_with_args(pdev->dev.of_node, "cpus", NULL);
->>  	if (n <= 0)
->>  		return -ENODEV;
->>  	for (; i < n; i++) {
->> -		cpu_node = of_parse_phandle(dev, "cpus", i);
->> +		cpu_node = of_parse_phandle(pdev->dev.of_node, "cpus", i);
->>  		if (!cpu_node)
->>  			break;
->>  		cpu = of_cpu_node_to_id(cpu_node);
->> @@ -626,9 +631,33 @@ static int dsu_pmu_dt_get_cpus(struct device_node *dev, cpumask_t *mask)
->>  		 */
->>  		if (cpu < 0)
->>  			continue;
->> -		cpumask_set_cpu(cpu, mask);
->> +		cpumask_set_cpu(cpu, &dsu_pmu->associated_cpus);
->>  	}
->>  	return 0;
->> +#else /* CONFIG_ACPI */
->> +	int i, cpu, ret;
->> +	const union acpi_object *obj;
->> +	struct acpi_device *adev = ACPI_COMPANION(&pdev->dev);
->> +	struct dsu_pmu *dsu_pmu =
->> +		(struct dsu_pmu *) platform_get_drvdata(pdev);
->> +
-> 
->> +	ret = acpi_dev_get_property(adev, "cpus", ACPI_TYPE_ANY, &obj);
-> 
-> Is the binding documented somewhere ?
-
-=> Will add one.
-
+>>  Documentation/admin-guide/mm/hugetlbpage.rst | 26 +++++++
+>>  mm/hugetlb.c                                 | 78 +++++++++++++++-----
+>>  2 files changed, 87 insertions(+), 17 deletions(-)
 > 
 > 
-> nit: Also, why not :
-> 	ret = acpi_dev_get_propert(adev, "cpus", ACPI_TYPE_PACKAGE, &obj);
-> 	if (ret < 0)
-> 		return ret;
-> ?
+>> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
+>> index cc85b4f156ca..2b9bf01db2b6 100644
+>> --- a/mm/hugetlb.c
+>> +++ b/mm/hugetlb.c
 > 
-> 
->> +	if (ret < 0)
->> +		return -EINVAL;
->> +
->> +	if (obj->type != ACPI_TYPE_PACKAGE)
->> +		return -EINVAL;
->> +
->> +	for (i = 0; i < obj->package.count; i++) {
-> 
-> 
->> +		/* Each element is the MPIDR of associated cpu */
->> +		for_each_possible_cpu(cpu) {
->> +			if (cpu_physical_id(cpu) ==
->> +				obj->package.elements[i].integer.value)
->> +				cpumask_set_cpu(cpu, &dsu_pmu->associated_cpus);
->> +		}
->> +	}
->> +	return 0;
->> +#endif
->>  }
+>> @@ -3214,8 +3238,15 @@ static int __init hugetlb_nrpages_setup(char *s)
 >>  
+>>  	return 1;
+>>  }
+>> -__setup("hugepages=", hugetlb_nrpages_setup);
+>> +__setup("hugepages=", hugepages_setup);
+>>  
+>> +/*
+>> + * hugepagesz command line processing
+>> + * A specific huge page size can only be specified once with hugepagesz.
+>> + * hugepagesz is followed by hugepages on the commnad line.  The global
 > 
-> Otherwise looks good to me.
-> 
-> Suzuki
+> typo:                                            command
 
+Thanks
+
+> 
+>> + * variable 'parsed_valid_hugepagesz' is used to determine if prior
+>> + * hugepagesz argument was valid.
+>> + */
+>>  static int __init hugepagesz_setup(char *s)
+>>  {
+>>  	unsigned long long size;
+> 
+> 
+> Does any of this need to be updated?  (from Documentation/admin-guide/kernel-parameters.txt)
+> 
+> 	hugepagesz=	[HW,IA-64,PPC,X86-64] The size of the HugeTLB pages.
+> 			On x86-64 and powerpc, this option can be specified
+> 			multiple times interleaved with hugepages= to reserve
+> 			huge pages of different sizes. Valid pages sizes on
+> 			x86-64 are 2M (when the CPU supports "pse") and 1G
+> 			(when the CPU supports the "pdpe1gb" cpuinfo flag).
+> 
+
+No functional changes should be expected/seen as a result of these patches.
+So the documentation here is basically OK.  However, it is out of date as
+more architectures are supported.  In addition, the statement "this option
+can be specified multiple times interleaved with hugepages= to reserve
+huge pages of different sizes." may need a little clarification.  As mentioned
+elsewhere,  hugepagesz= can only be specified once per huge page size.
+
+I'll make some updates in v2.
+-- 
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
