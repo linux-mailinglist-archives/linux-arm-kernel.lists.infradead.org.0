@@ -2,67 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EC8418BAA9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:11:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D925818BABA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 16:14:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HDumb+gxbWcG2s8LxhsPzhS0Oc+Mw/xgO1K9BMdBrt8=; b=OVvqXEu6Urqwmh
-	kkoNYZ38uvp2OlWvTgfl7nzJDOYNcvYPybsDOann8si0f8Yd/5xUOOsycGEYSCATRhxY9DG61nYq2
-	bCSfPqaNmqFmcduRLE5ugncUgBqzZH73G0fiBykDZr1KIf3zFdgGpSU492Uneb7Jx879HRIDAWCO6
-	eNwwTd9iJuGv2Od2kWnQPGChpSAQh2KlONIvi2LMLJfpV79tXSuS8pDLAHhbRB+MpBlFKMsB83jzB
-	5sZxDWTifTbJnybahnjYDPQev7ImBmpOnCws8ONA6NIj0uW/hLuEr3hIvb2R4xgmasXz4rYpMqP70
-	OJkqRUV4ER302RueG0tA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uaH8ftEypVAW3wRyykkdCEUJuB4q12nnidNzgswOl2I=; b=D3k7vXS0Ul7PV8
+	DSy/1bR9vdWF6ctJuz6zZVNEhrmoYFV6jCK7RmgPvqlMyr/USCXK3NhXmIsSZd7Y4pzxtA4MpvFCx
+	dT8ZxuVGGNGaA55ehScocmObinqs4wbhUXfr/KH70BNxoI4XvvoWnW1Dppe3Ngmhj5dvrV+SwDf9/
+	uhbwjfCt8HYD6m7bX0KsqdmPOXV99AbU9uNJEM+n5Z47UgvgqIZxk3SLsLxc9pI4zcwZXg7b91dMq
+	XdQ78zdcWZ+mPcRNZRNYZrPJL+oo9bIWU7PyRUnnDI5KysnJPtehLvFgWOyjSAv+183OisuLQYOA2
+	FEH9YNIxx10xM1XHA4bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEwoy-00046w-7D; Thu, 19 Mar 2020 15:10:56 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jEwrx-0004lJ-6S; Thu, 19 Mar 2020 15:14:01 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEwol-000463-Sk
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 15:10:45 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id D601EA53;
- Thu, 19 Mar 2020 16:10:40 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1584630641;
- bh=ZagPwbifJqGqaIMIH8swjff4JDupju7QHr6vf9ntCho=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=r0ZnpMk2fmSiofYFk5NavcnDZX9BOdmx3XLv4Hjn31UgV99YgbOuBRZwN11RofDID
- EPWyCNSpLMNhwsrJx98dV1i2SDB1DWVzalP4JGlyTDrjBTyUnFxg/SBNX+l0wDLID2
- NryYU+ywDYoICNX6o+7Myc1wtCGhAqm9U5Isg8aw=
-Date: Thu, 19 Mar 2020 17:10:35 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v4 5/5] media: dt-bindings: media: i2c: convert ov5645
- bindings to json-schema
-Message-ID: <20200319151035.GC14585@pendragon.ideasonboard.com>
-References: <1584620363-2255-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1584620363-2255-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ id 1jEwrn-0004jw-68; Thu, 19 Mar 2020 15:13:53 +0000
+Received: from fsav303.sakura.ne.jp (fsav303.sakura.ne.jp [153.120.85.134])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 02JFDj1l032351;
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav303.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp);
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp)
+Received: from localhost.localdomain (121.252.232.153.ap.dti.ne.jp
+ [153.232.252.121]) (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 02JFDeaK032340
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
+Subject: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each dts
+ for rk3288
+Date: Fri, 20 Mar 2020 00:13:39 +0900
+Message-Id: <20200319151339.17909-1-katsuhiro@katsuster.net>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1584620363-2255-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_081044_073743_80A249B2 
-X-CRM114-Status: GOOD (  22.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200319_081351_567309_2D1B0159 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,286 +65,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+This patch removes conflicted pinctrl settings uart2 and pwm 2/3
+from common rk3288.dtsi and moves exist uart2 pinctrl settings
+into each rk3288*.dts files.
 
-Thank you for the patch.
+  - pwm2_pin  : use GPIO7_C6
+  - pwm3_pin  : use GPIO7_C7
+  - uart2_xfer: use GPIO7_C6, GPIO7_C7
 
-On Thu, Mar 19, 2020 at 12:19:23PM +0000, Lad Prabhakar wrote:
-> Convert ov5645 bindings to json-schema.
+Currently uart2 rk3288 user is the following:
 
-\o/
+  - rk3288-evb.dtsi:&uart2 {
+  - rk3288-firefly-reload.dts:&uart2 {
+  - rk3288-firefly.dtsi:&uart2 {
+  - rk3288-miqi.dts:&uart2 {
+  - rk3288-phycore-rdk.dts:&uart2 {
+  - rk3288-popmetal.dts:&uart2 {
+  - rk3288-r89.dts:&uart2 {
+  - rk3288-rock2-square.dts:&uart2 {
+  - rk3288-tinker.dtsi:&uart2 {
+  - rk3288-veyron.dtsi:&uart2 {
+  - rk3288-vyasa.dts:&uart2 {
 
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  .../devicetree/bindings/media/i2c/ov5645.txt  |  54 -------
->  .../devicetree/bindings/media/i2c/ov5645.yaml | 140 ++++++++++++++++++
->  2 files changed, 140 insertions(+), 54 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.txt
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> deleted file mode 100644
-> index 1c85c78ec58c..000000000000
-> --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> +++ /dev/null
-> @@ -1,54 +0,0 @@
-> -* Omnivision 1/4-Inch 5Mp CMOS Digital Image Sensor
-> -
-> -The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
-> -an active array size of 2592H x 1944V. It is programmable through a serial I2C
-> -interface.
-> -
-> -Required Properties:
-> -- compatible: Value should be "ovti,ov5645".
-> -- clocks: Reference to the xclk clock.
-> -- clock-names: Should be "xclk".
-> -- enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-> -  to the hardware pin PWDNB which is physically active low.
-> -- reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-> -  the hardware pin RESETB.
-> -- vdddo-supply: Chip digital IO regulator.
-> -- vdda-supply: Chip analog regulator.
-> -- vddd-supply: Chip digital core regulator.
-> -
-> -The device node must contain one 'port' child node for its digital output
-> -video port, in accordance with the video interface bindings defined in
-> -Documentation/devicetree/bindings/media/video-interfaces.txt.
-> -
-> -Example:
-> -
-> -	&i2c1 {
-> -		...
-> -
-> -		ov5645: ov5645@3c {
-> -			compatible = "ovti,ov5645";
-> -			reg = <0x3c>;
-> -
-> -			enable-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
-> -			reset-gpios = <&gpio5 20 GPIO_ACTIVE_LOW>;
-> -			pinctrl-names = "default";
-> -			pinctrl-0 = <&camera_rear_default>;
-> -
-> -			clocks = <&clks 200>;
-> -			clock-names = "xclk";
-> -			assigned-clocks = <&clks 200>;
-> -			assigned-clock-rates = <24000000>;
-> -
-> -			vdddo-supply = <&camera_dovdd_1v8>;
-> -			vdda-supply = <&camera_avdd_2v8>;
-> -			vddd-supply = <&camera_dvdd_1v2>;
-> -
-> -			port {
-> -				ov5645_ep: endpoint {
-> -					clock-lanes = <1>;
-> -					data-lanes = <0 2>;
-> -					remote-endpoint = <&csi0_ep>;
-> -				};
-> -			};
-> -		};
-> -	};
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.yaml b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> new file mode 100644
-> index 000000000000..4bf58ad210c5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> @@ -0,0 +1,140 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/i2c/ov5645.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Omnivision 1/4-Inch 5Mp CMOS Digital Image Sensor
+And no one is using pwm2 nor pwm3.
 
-s/Mp/MP/ ?
+Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+---
+ arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
+ arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
+ arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
+ arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
+ arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
+ arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
+ arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
+ arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
+ arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
+ arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
+ arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
+ arch/arm/boot/dts/rk3288.dtsi               | 6 ------
+ 12 files changed, 22 insertions(+), 6 deletions(-)
 
-> +
-> +maintainers:
-> +  - Sakari Ailus <sakari.ailus@linux.intel.com>
-> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> +
-> +description: |-
-> + The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
-> + an active array size of 2592H x 1944V. It is programmable through a serial I2C
-> + interface.
-> +
-> +properties:
-> +  compatible:
-> +    const: ovti,ov5645
-> +
-> +  reg:
-> +    description: I2C device address
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: xclk
-> +
-> +  assigned-clocks:
-> +    maxItems: 1
-> +
-> +  assigned-clock-rates:
-> +     items:
-> +     - description: Must be 24MHz (24000000).
-
-These two properties shouldn't be part of the bindings, they're generic.
-
-> +
-> +  enable-gpios:
-> +    description: |-
-> +      Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-> +      to the hardware pin PWDNB which is physically active low.
-
-Specifying that the polarity is GPIO_ACTIVE_HIGH is confusing in my
-opinion. If there's an inverter on the board, you'll need
-GPIO_ACTIVE_LOW. We could possibly drop the sentence, as all GPIOs in DT
-are supposed to be active high, but the fact that the GPIO name
-corresponds to the opposite of the pin probably has to be documented. I
-have no better wording to propose now I'm afraid, but it needs to be
-addressed. Maybe Rob or Maxime could help.
-
-> +
-> +  reset-gpios:
-> +    description: |-
-> +      Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-> +      the hardware pin RESETB.
-
-Here you could just drop the second sentence, or apply the same fix as
-for enable-gpios.
-
-> +
-> +  vdddo-supply:
-> +    description:
-> +      Chip digital IO regulator.
-
-You can move the description on the same line as the "description:" key.
-Same below.
-
-> +
-> +  vdda-supply:
-> +    description:
-> +      Chip analog regulator.
-> +
-> +  vddd-supply:
-> +    description:
-> +      Chip digital core regulator.
-> +
-> +  # See ../video-interfaces.txt for more details
-> +  port:
-> +    type: object
-> +    properties:
-> +      endpoint:
-> +        type: object
-> +
-> +        properties:
-> +          data-lanes:
-> +            description: |-
-> +              The sensor supports two-lane operation.
-> +              For two-lane operation the property must be set to <1 2>.
-> +            items:
-> +              - const: 1
-> +              - const: 2
-
-
-What if only one lane is wired, does the sensor support that ?
-
-> +
-> +          clock-lanes:
-> +            description:
-> +              should be set to <0> (clock lane on hardware lane 0).
-> +            items:
-> +              - const: 0
-> +
-> +          remote-endpoint: true
-> +
-> +        required:
-> +          - data-lanes
-> +          - clock-lanes
-> +          - remote-endpoint
-> +
-> +        additionalProperties: false
-> +
-> +    additionalProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - assigned-clocks
-> +  - assigned-clock-rates
-
-Those two properties should be dropped.
-
-> +  - enable-gpios
-> +  - reset-gpios
-
-Are the GPIOs mandatory ? What if the signals are hardwired on the board
-?
-
-> +  - vdddo-supply
-> +  - vdda-supply
-> +  - vddd-supply
-> +  - port
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    i2c1 {
-
-s/i2c1/i2c/
-
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        ov5645: sensor@3c {
-> +            compatible = "ovti,ov5645";
-> +            reg = <0x3c>;
-> +            clocks = <&ov5645_cl>;
-> +            clock-names = "xclk";
-> +            assigned-clocks = <&ov5645_cl>;
-> +            assigned-clock-rates = <24000000>;
-> +            enable-gpios = <&gpio1 6 /* GPIO_ACTIVE_HIGH */>;
-> +            reset-gpios = <&gpio5 20 /* GPIO_ACTIVE_LOW */>;
-> +            vdddo-supply = <&camera_dovdd_1v8>;
-> +            vdda-supply = <&camera_avdd_2v8>;
-> +            vddd-supply = <&camera_dvdd_1v2>;
-> +
-> +            port {
-> +                ov5645_0: endpoint {
-> +                    remote-endpoint = <&csi1_ep>;
-> +                    clock-lanes = <0>;
-> +                    data-lanes = <1 2>;
-> +                };
-> +            };
-> +        };
-> +    };
-> +
-> +...
-
+diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3288-evb.dtsi
+index 018802df4c0e..74091f831ecf 100644
+--- a/arch/arm/boot/dts/rk3288-evb.dtsi
++++ b/arch/arm/boot/dts/rk3288-evb.dtsi
+@@ -285,6 +285,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+index 8c38bda21a7c..b0c976c8e35b 100644
+--- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
++++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+@@ -283,6 +283,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts/rk3288-firefly.dtsi
+index 5e0a19004e46..1632cc083c12 100644
+--- a/arch/arm/boot/dts/rk3288-firefly.dtsi
++++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
+@@ -532,6 +532,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3288-miqi.dts
+index c41d012c8850..2c0ed37fde80 100644
+--- a/arch/arm/boot/dts/rk3288-miqi.dts
++++ b/arch/arm/boot/dts/rk3288-miqi.dts
+@@ -379,6 +379,8 @@ &tsadc {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+index 1e33859de484..6532c1ac43cd 100644
+--- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
++++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+@@ -244,6 +244,8 @@ &uart0 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts/rk3288-popmetal.dts
+index 6a51940398b5..f18306bd9e6e 100644
+--- a/arch/arm/boot/dts/rk3288-popmetal.dts
++++ b/arch/arm/boot/dts/rk3288-popmetal.dts
+@@ -481,6 +481,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk3288-r89.dts
+index a258c7ae5329..02d2f5cfe201 100644
+--- a/arch/arm/boot/dts/rk3288-r89.dts
++++ b/arch/arm/boot/dts/rk3288-r89.dts
+@@ -340,6 +340,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot/dts/rk3288-rock2-square.dts
+index cdcdc921ee09..a44290e882be 100644
+--- a/arch/arm/boot/dts/rk3288-rock2-square.dts
++++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
+@@ -264,6 +264,8 @@ &spdif {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+index acfaa12ec239..0327119f71b4 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dtsi
++++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+@@ -500,6 +500,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
+index 54a6838d73f5..baa44d00e49a 100644
+--- a/arch/arm/boot/dts/rk3288-veyron.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+@@ -412,6 +412,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk3288-vyasa.dts
+index 385dd59393e1..aa50cdc7f839 100644
+--- a/arch/arm/boot/dts/rk3288-vyasa.dts
++++ b/arch/arm/boot/dts/rk3288-vyasa.dts
+@@ -398,6 +398,8 @@ &tsadc {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 0cd88774db95..4c1f8cabb5eb 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -450,8 +450,6 @@ uart2: serial@ff690000 {
+ 		reg-io-width = <4>;
+ 		clocks = <&cru SCLK_UART2>, <&cru PCLK_UART2>;
+ 		clock-names = "baudclk", "apb_pclk";
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&uart2_xfer>;
+ 		status = "disabled";
+ 	};
+ 
+@@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
+ 		compatible = "rockchip,rk3288-pwm";
+ 		reg = <0x0 0xff680020 0x0 0x10>;
+ 		#pwm-cells = <3>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pwm2_pin>;
+ 		clocks = <&cru PCLK_RKPWM>;
+ 		clock-names = "pwm";
+ 		status = "disabled";
+@@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
+ 		compatible = "rockchip,rk3288-pwm";
+ 		reg = <0x0 0xff680030 0x0 0x10>;
+ 		#pwm-cells = <3>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pwm3_pin>;
+ 		clocks = <&cru PCLK_RKPWM>;
+ 		clock-names = "pwm";
+ 		status = "disabled";
 -- 
-Regards,
+2.25.1
 
-Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
