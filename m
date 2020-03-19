@@ -2,57 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09A9C18AA5A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 02:35:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A45D018AA62
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Mar 2020 02:40:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JYYLfaguXIz+aCtX0IJ4sRoOHvEHRhhQIiVj5OfVN+8=; b=WEl3MAp1lA54g7
-	fgTDgV3ssRhVw7Fx3eR7FUEf/KNi5xhhDOhfYcJGzurGTUbSKuGGGA8HjewG4AYSotUgPvziJlTHZ
-	mpQ7Bk/zu1byv3xsTSRL5Xs1VHZU1SjatITQ+R/Kjxw2HWVUZm5/NG+cYGTDnJCcne/ZNibCb1s+p
-	9ipEniW5byddZZ3zq3vr+ETuHq1c6kQHxjYAKf8E57A3NKhbMNYbfBDxBDByeqjnWY0qsXTk6jGO9
-	FKVMFRa7UrzWJI3gC11T1lkNKGDQ4w8pwmM9gCofffQzL06FKZ41h2mW5AuyZu6W2W0r5uOA9Dc7l
-	kscQF0WnCLAcwujNfGUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
+	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lGC2Nciw85gMgR1CYDM69VROciH7hl9LjMxyW3K7i1s=; b=N1csfG4zglq4suJUU1+dZ/x5i
+	mSWbSQx0zMvRQxnEktm4IvEQXxFjNDd9yIawn2MMl/LrcQFCRg3iacMBlTAtQ+XVCb+8e4Jv9Fyp1
+	7+OCuESfIkIyIVhX4aV2KLvhW+/92R6nmSAWKm4HkmUazmE5o4QFzeLzqGCirsZ//cFO/ZAklEx4c
+	cUJt/bw/EJ/cB5YO3vtG1hvROwgVJ93Gp/2koghvEBO8h3wcyhHUL2sp5V3MM+xwxxxHR0LHh6hDD
+	BWJxC/MxWPXYwyg6S4UtE16aeUPy3GCTRfubB+HWFST2fE21s3q7Sujx43pWqgkVhbX02irNjdIip
+	7g0xPuPRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEk65-00041k-P4; Thu, 19 Mar 2020 01:35:45 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jEkAa-0005sH-UB; Thu, 19 Mar 2020 01:40:24 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEk5g-00032r-GD
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Mar 2020 01:35:24 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id D71AEBCAC55BA5CB31C5;
- Thu, 19 Mar 2020 09:35:00 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0; Thu, 19 Mar 2020
- 09:34:56 +0800
-Subject: Re: [PATCH] driver/perf: Add PMU driver for the ARM DMC-620 memory
- controller.
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-References: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <593912ac-943c-349e-9e6e-bd2fda7fb97d@hisilicon.com>
-Date: Thu, 19 Mar 2020 09:34:54 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1jEkAO-0005rG-Qc; Thu, 19 Mar 2020 01:40:15 +0000
+IronPort-SDR: FY0wBfLJk5YjzY48BOI86fe9FV3RxmIGb9k+VO9Viyc6juoG+KZbnZfi54YU0CxCb9XUjs8+IF
+ fZSXswI8Emmg==
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 18 Mar 2020 18:40:11 -0700
+IronPort-SDR: 4To05qu/AHMjpXVZ8Wd3Ejr75Bwmpe8ruNOKUKeTG0IgNZecReoQj0a8deU/MdPbWN1UxEX3Vx
+ LoN62ObODUeg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,569,1574150400"; 
+ d="gz'50?scan'50,208,50";a="391643992"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga004.jf.intel.com with ESMTP; 18 Mar 2020 18:40:07 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jEkAI-000D69-MB; Thu, 19 Mar 2020 09:40:06 +0800
+Date: Thu, 19 Mar 2020 09:39:31 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Mike Kravetz <mike.kravetz@oracle.com>
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+Message-ID: <202003190939.c0fXQYaW%lkp@intel.com>
+References: <20200318220634.32100-2-mike.kravetz@oracle.com>
 MIME-Version: 1.0
-In-Reply-To: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+Content-Type: multipart/mixed; boundary="jRHKVT23PllUwdXP"
+Content-Disposition: inline
+In-Reply-To: <20200318220634.32100-2-mike.kravetz@oracle.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_183520_886833_813E51FD 
-X-CRM114-Status: GOOD (  23.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200318_184012_900761_21A75A96 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,933 +74,595 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, paches@amperecomputing.com,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-s390@vger.kernel.org, kbuild-all@lists.01.org,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tuan,
 
-On 2020/3/18 8:29, Tuan Phan wrote:
-> DMC-620 PMU supports total 10 counters which each is
-> independently programmable to different events and can
-> be started and stopped individually.
-> 
-> DMC-620 PMU devices are named as arm_dmc620_<uid> where
-> <uid> is the UID of DMC-620 PMU ACPI node. Currently, it only
-> supports ACPI. Other platforms feel free to test and add
-> support for device tree.
-> 
-> Usage example:
->   #perf stat -e arm_dmc620_0/clk_cycle_count/ -C 0
->   Get perf event for clk_cycle_count counter.
-> 
->   #perf stat -e arm_dmc620_0/clkdiv2_allocate,mask=0x1f,match=0x2f,
->   incr=2,invert=1/ -C 0
->   The above example shows how to specify mask, match, incr,
->   invert parameters for clkdiv2_allocate event.
-> 
-> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-> ---
->  drivers/perf/Kconfig          |   8 +
->  drivers/perf/Makefile         |   1 +
->  drivers/perf/arm_dmc620_pmu.c | 836 ++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 845 insertions(+)
->  create mode 100644 drivers/perf/arm_dmc620_pmu.c
-> 
-> diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
-> index 09ae8a9..8c5b5cf 100644
-> --- a/drivers/perf/Kconfig
-> +++ b/drivers/perf/Kconfig
-> @@ -129,4 +129,12 @@ config ARM_SPE_PMU
->  	  Extension, which provides periodic sampling of operations in
->  	  the CPU pipeline and reports this via the perf AUX interface.
->  
-> +config ARM_DMC620_PMU
-> +	bool "Enable PMU support for the ARM DMC-620 memory controller"
-> +	depends on ARM64 && ACPI
-> +	default n
-> +	help
-> +	  Support for PMU events monitoring on the ARM DMC-620 memory
-> +	  controller.
-> +
->  endmenu
-> diff --git a/drivers/perf/Makefile b/drivers/perf/Makefile
-> index 2ebb4de..15a31ac 100644
-> --- a/drivers/perf/Makefile
-> +++ b/drivers/perf/Makefile
-> @@ -12,3 +12,4 @@ obj-$(CONFIG_QCOM_L3_PMU) += qcom_l3_pmu.o
->  obj-$(CONFIG_THUNDERX2_PMU) += thunderx2_pmu.o
->  obj-$(CONFIG_XGENE_PMU) += xgene_pmu.o
->  obj-$(CONFIG_ARM_SPE_PMU) += arm_spe_pmu.o
-> +obj-$(CONFIG_ARM_DMC_PMU) += arm_dmc_pmu.o
-> \ No newline at end of file
-> diff --git a/drivers/perf/arm_dmc620_pmu.c b/drivers/perf/arm_dmc620_pmu.c
-> new file mode 100644
-> index 0000000..e222bdb
-> --- /dev/null
-> +++ b/drivers/perf/arm_dmc620_pmu.c
-> @@ -0,0 +1,836 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * ARM DMC-620 memory controller PMU driver
-> + *
-> + * Copyright (C) 2020 Ampere Computing LLC.
-> + */
-> +
-> +#define PMUNAME		"arm_dmc620"
-> +#define DRVNAME		PMUNAME "_pmu"
-> +#define pr_fmt(fmt)	DRVNAME ": " fmt
-> +
-> +#include <linux/acpi.h>
-> +#include <linux/bitops.h>
-> +#include <linux/cpuhotplug.h>
-> +#include <linux/cpumask.h>
-> +#include <linux/device.h>
-> +#include <linux/errno.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/irq.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/perf_event.h>
-> +#include <linux/perf/arm_pmu.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/printk.h>
-> +
-> +#define DMC620_CNT_MAX_PERIOD				0xffffffff
-> +#define DMC620_PMU_CLKDIV2_MAX_COUNTERS			8
-> +#define DMC620_PMU_CLK_MAX_COUNTERS			2
-> +#define DMC620_PMU_MAX_COUNTERS				\
-> +	(DMC620_PMU_CLKDIV2_MAX_COUNTERS + DMC620_PMU_CLK_MAX_COUNTERS)
-> +
-> +#define DMC620_PMU_OVERFLOW_STATUS_CLKDIV2_OFFSET	8
-> +#define  DMC620_PMU_OVERFLOW_STATUS_CLKDIV2_MASK	\
-> +		(DMC620_PMU_CLKDIV2_MAX_COUNTERS - 1)
-> +#define DMC620_PMU_OVERFLOW_STATUS_CLK_OFFSET		12
-> +#define  DMC620_PMU_OVERFLOW_STATUS_CLK_MASK		\
-> +		(DMC620_PMU_CLK_MAX_COUNTERS - 1)
-> +#define DMC620_PMU_COUNTERS_BASE_OFFSET			16
-> +#define DMC620_PMU_COUNTER_MASK_31_00_OFFSET		0
-> +#define DMC620_PMU_COUNTER_MASK_63_32_OFFSET		4
-> +#define DMC620_PMU_COUNTER_MATCH_31_00_OFFSET		8
-> +#define DMC620_PMU_COUNTER_MATCH_63_32_OFFSET		12
-> +#define DMC620_PMU_COUNTER_CONTROL_OFFSET		16
-> +#define  DMC620_PMU_COUNTER_CONTROL_ENABLE_MASK		BIT(0)
-> +#define  DMC620_PMU_COUNTER_CONTROL_INVERT_SHIFT	1
-> +#define  DMC620_PMU_COUNTER_CONTROL_EVENT_MUX		(((x)&0x1f)>>2)
-> +#define  DMC620_PMU_COUNTER_CONTROL_EVENT_MUX_SHIFT	2
-> +#define  DMC620_PMU_COUNTER_CONTROL_INCR		(((x)&0x1ff)>>7)
-> +#define  DMC620_PMU_COUNTER_CONTROL_INCR_SHIFT		7
-> +#define DMC620_PMU_COUNTER_SNAPSHOT_OFFSET		24
-> +#define DMC620_PMU_COUNTER_VALUE_OFFSET			32
-> +#define DMC620_PMU_COUNTER_REG_BYTE_LENGTH		40
-> +
-> +#define DMC620_PMU_CLKDIV2_CYCLE_COUNT			0x0
-> +#define DMC620_PMU_CLKDIV2_ALLOCATE			0x1
-> +#define DMC620_PMU_CLKDIV2_QUEUE_DEPTH			0x2
-> +#define DMC620_PMU_CLKDIV2_WAITING_FOR_WR_DATA		0x3
-> +#define DMC620_PMU_CLKDIV2_READ_BACKLOG			0x4
-> +#define DMC620_PMU_CLKDIV2_WAITING_FOR_MI		0x5
-> +#define DMC620_PMU_CLKDIV2_HAZARD_RESOLUTION		0x6
-> +#define DMC620_PMU_CLKDIV2_ENQUEUE			0x7
-> +#define DMC620_PMU_CLKDIV2_ARBITRATE			0x8
-> +#define DMC620_PMU_CLKDIV2_LRANK_TURNAROUND_ACTIVATE	0x9
-> +#define DMC620_PMU_CLKDIV2_PRANK_TURNAROUND_ACTIVATE	0xA
-> +#define DMC620_PMU_CLKDIV2_READ_DEPTH			0xB
-> +#define DMC620_PMU_CLKDIV2_WRITE_DEPTH			0xC
-> +#define DMC620_PMU_CLKDIV2_HIGHHIGH_QOS_DEPTH		0xD
-> +#define DMC620_PMU_CLKDIV2_HIGH_QOS_DEPTH		0xE
-> +#define DMC620_PMU_CLKDIV2_MEDIUM_QOS_DEPTH		0xF
-> +#define DMC620_PMU_CLKDIV2_LOW_QOS_DEPTH		0x10
-> +#define DMC620_PMU_CLKDIV2_ACTIVATE			0x11
-> +#define DMC620_PMU_CLKDIV2_RDWR				0x12
-> +#define DMC620_PMU_CLKDIV2_REFRESH			0x13
-> +#define DMC620_PMU_CLKDIV2_TRAINING_REQUEST		0x14
-> +#define DMC620_PMU_CLKDIV2_T_MAC_TRACKER		0x15
-> +#define DMC620_PMU_CLKDIV2_BK_FSM_TRACKER		0x16
-> +#define DMC620_PMU_CLKDIV2_BK_OPEN_TRACKER		0x17
-> +#define DMC620_PMU_CLKDIV2_RANKS_IN_PWR_DOWN		0x18
-> +#define DMC620_PMU_CLKDIV2_RANKS_IN_SREF		0x19
-> +
-> +#define DMC620_PMU_CLK_CYCLE_COUNTER			0x20
-> +#define DMC620_PMU_CLK_REQUEST				0x21
-> +#define DMC620_PMU_CLK_UPLOAD_STALL			0x22
-> +#define DMC620_PMU_CLK_INDICATE_MASK			0x20
-> +
-> +struct arm_dmc620_pmu {
-> +	struct pmu		pmu;
-> +	struct platform_device	*pdev;
-> +
-> +	void __iomem		*pmu_csr;
-> +	int			irq;
-> +	cpumask_t		cpu;
-> +	struct hlist_node	hotplug_node;
-> +
-> +	/*
-> +	 * We put all clkdiv2 and clk counters to a same array.
-> +	 * The first DMC620_PMU_CLKDIV2_MAX_COUNTERS bits belong to
-> +	 * clkdiv2 counters, the last DMC620_PMU_CLK_MAX_COUNTERS
-> +	 * belong to clk counters.
-> +	 */
-> +	DECLARE_BITMAP(used_mask, DMC620_PMU_MAX_COUNTERS);
-> +	struct perf_event	*act_counter[DMC620_PMU_MAX_COUNTERS];
-> +};
-> +
-> +#define to_dmc620_pmu(p) (container_of(p, struct arm_dmc620_pmu, pmu))
-> +
-> +/* Keep track of our dynamic hotplug state */
-> +static enum cpuhp_state arm_dmc620_pmu_online;
-> +
-> +static ssize_t
-> +dmc620_pmu_events_sysfs_show(struct device *dev,
-> +			   struct device_attribute *attr, char *page)
-> +{
-> +	struct perf_pmu_events_attr *pmu_attr;
-> +
-> +	pmu_attr = container_of(attr, struct perf_pmu_events_attr, attr);
-> +
-> +	return sprintf(page, "event=0x%03llx\n", pmu_attr->id);
-> +}
-> +
-> +#define DMC620_PMU_EVENT_ATTR(name, config)			\
-> +	PMU_EVENT_ATTR(name, dmc620_pmu_event_attr_##name,	\
-> +		       config, dmc620_pmu_events_sysfs_show)
-> +
+--jRHKVT23PllUwdXP
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-How about this and can simplify the event attributes?
+Hi Mike,
 
-#define DMC620_PMU_EVENT_ATTR(name, config)                                         \
-       (&((struct perf_pmu_events_attr) {                                      \
-               .attr = __ATTR(name, 0444, dmc620_pmu_events_sysfs_show, NULL),   \
-               .id = config,                                                   \
-       }).attr.attr)
+I love your patch! Yet something to improve:
 
-static struct attribute *arm_dmc620_pmu_events_attrs[] = {
-	DMC620_PMU_EVENT_ATTR(clkdiv2_cycle_count, DMC620_PMU_CLKDIV2_CYCLE_COUNT),
-	......
-};
+[auto build test ERROR on next-20200318]
+[also build test ERROR on v5.6-rc6]
+[cannot apply to arm64/for-next/core powerpc/next sparc/master linus/master sparc-next/master v5.6-rc6 v5.6-rc5 v5.6-rc4]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 
-Thanks,
-Shaokun
+url:    https://github.com/0day-ci/linux/commits/Mike-Kravetz/Clean-up-hugetlb-boot-command-line-processing/20200319-060943
+base:    47780d7892b77e922bbe19b5dea99cde06b2f0e5
+config: i386-defconfig (attached as .config)
+compiler: gcc-7 (Debian 7.5.0-5) 7.5.0
+reproduce:
+        # save the attached .config to linux build tree
+        make ARCH=i386 
 
-> +/* clkdiv2 events list */
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_cycle_count,
-> +		DMC620_PMU_CLKDIV2_CYCLE_COUNT);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_allocate,
-> +		DMC620_PMU_CLKDIV2_ALLOCATE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_queue_depth,
-> +		DMC620_PMU_CLKDIV2_QUEUE_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_waiting_for_wr_data,
-> +		DMC620_PMU_CLKDIV2_WAITING_FOR_WR_DATA);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_read_backlog,
-> +		DMC620_PMU_CLKDIV2_READ_BACKLOG);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_waiting_for_mi,
-> +		DMC620_PMU_CLKDIV2_WAITING_FOR_MI);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_hazard_resolution,
-> +		DMC620_PMU_CLKDIV2_HAZARD_RESOLUTION);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_enqueue,
-> +		DMC620_PMU_CLKDIV2_ENQUEUE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_arbitrate,
-> +		DMC620_PMU_CLKDIV2_ARBITRATE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_lrank_turnaround_activate,
-> +		DMC620_PMU_CLKDIV2_LRANK_TURNAROUND_ACTIVATE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_prank_turnaround_activate,
-> +		DMC620_PMU_CLKDIV2_PRANK_TURNAROUND_ACTIVATE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_read_depth,
-> +		DMC620_PMU_CLKDIV2_READ_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_write_depth,
-> +		DMC620_PMU_CLKDIV2_WRITE_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_highigh_qos_depth,
-> +		DMC620_PMU_CLKDIV2_HIGHHIGH_QOS_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_high_qos_depth,
-> +		DMC620_PMU_CLKDIV2_HIGH_QOS_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_medium_qos_depth,
-> +		DMC620_PMU_CLKDIV2_MEDIUM_QOS_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_low_qos_depth,
-> +		DMC620_PMU_CLKDIV2_LOW_QOS_DEPTH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_activate,
-> +		DMC620_PMU_CLKDIV2_ACTIVATE);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_rdwr,
-> +		DMC620_PMU_CLKDIV2_RDWR);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_refresh,
-> +		DMC620_PMU_CLKDIV2_REFRESH);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_training_request,
-> +		DMC620_PMU_CLKDIV2_TRAINING_REQUEST);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_t_mac_tracker,
-> +		DMC620_PMU_CLKDIV2_T_MAC_TRACKER);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_bk_fsm_tracker,
-> +		DMC620_PMU_CLKDIV2_BK_FSM_TRACKER);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_bk_open_tracker,
-> +		DMC620_PMU_CLKDIV2_BK_OPEN_TRACKER);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_ranks_in_pwr_down,
-> +		DMC620_PMU_CLKDIV2_RANKS_IN_PWR_DOWN);
-> +DMC620_PMU_EVENT_ATTR(clkdiv2_ranks_in_sref,
-> +		DMC620_PMU_CLKDIV2_RANKS_IN_SREF);
-> +
-> +/* clk events list */
-> +DMC620_PMU_EVENT_ATTR(clk_cycle_count,
-> +		DMC620_PMU_CLK_CYCLE_COUNTER);
-> +DMC620_PMU_EVENT_ATTR(clk_request,
-> +		DMC620_PMU_CLK_REQUEST);
-> +DMC620_PMU_EVENT_ATTR(clk_upload_stall,
-> +		DMC620_PMU_CLK_UPLOAD_STALL);
-> +
-> +static struct attribute *arm_dmc620_pmu_events_attrs[] = {
-> +	&dmc620_pmu_event_attr_clkdiv2_cycle_count.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_allocate.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_queue_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_waiting_for_wr_data.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_read_backlog.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_waiting_for_mi.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_hazard_resolution.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_enqueue.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_arbitrate.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_lrank_turnaround_activate.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_prank_turnaround_activate.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_read_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_write_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_highigh_qos_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_high_qos_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_medium_qos_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_low_qos_depth.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_activate.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_rdwr.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_refresh.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_training_request.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_t_mac_tracker.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_bk_fsm_tracker.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_bk_open_tracker.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_ranks_in_pwr_down.attr.attr,
-> +	&dmc620_pmu_event_attr_clkdiv2_ranks_in_sref.attr.attr,
-> +	&dmc620_pmu_event_attr_clk_cycle_count.attr.attr,
-> +	&dmc620_pmu_event_attr_clk_request.attr.attr,
-> +	&dmc620_pmu_event_attr_clk_upload_stall.attr.attr,
-> +	NULL,
-> +};
-> +
-> +static struct attribute_group arm_dmc620_pmu_events_attr_group = {
-> +	.name = "events",
-> +	.attrs = arm_dmc620_pmu_events_attrs,
-> +};
-> +
-> +/* User ABI */
-> +#define ATTR_CFG_FLD_mask_CFG		config
-> +#define ATTR_CFG_FLD_mask_LO		0
-> +#define ATTR_CFG_FLD_mask_HI		44
-> +#define ATTR_CFG_FLD_match_CFG		config1
-> +#define ATTR_CFG_FLD_match_LO		0
-> +#define ATTR_CFG_FLD_match_HI		44
-> +#define ATTR_CFG_FLD_invert_CFG		config2
-> +#define ATTR_CFG_FLD_invert_LO		0
-> +#define ATTR_CFG_FLD_invert_HI		0
-> +#define ATTR_CFG_FLD_incr_CFG		config2
-> +#define ATTR_CFG_FLD_incr_LO		1
-> +#define ATTR_CFG_FLD_incr_HI		2
-> +#define ATTR_CFG_FLD_event_CFG		config2
-> +#define ATTR_CFG_FLD_event_LO		3
-> +#define ATTR_CFG_FLD_event_HI		8
-> +
-> +#define __GEN_PMU_FORMAT_ATTR(cfg, lo, hi)			\
-> +	(lo) == (hi) ? #cfg ":" #lo "\n" : #cfg ":" #lo "-" #hi
-> +
-> +#define _GEN_PMU_FORMAT_ATTR(cfg, lo, hi)			\
-> +	__GEN_PMU_FORMAT_ATTR(cfg, lo, hi)
-> +
-> +#define GEN_PMU_FORMAT_ATTR(name)				\
-> +	PMU_FORMAT_ATTR(name,					\
-> +	_GEN_PMU_FORMAT_ATTR(ATTR_CFG_FLD_##name##_CFG,		\
-> +			     ATTR_CFG_FLD_##name##_LO,		\
-> +			     ATTR_CFG_FLD_##name##_HI))
-> +
-> +#define _ATTR_CFG_GET_FLD(attr, cfg, lo, hi)			\
-> +	((((attr)->cfg) >> lo) & GENMASK(hi - lo, 0))
-> +
-> +#define ATTR_CFG_GET_FLD(attr, name)				\
-> +	_ATTR_CFG_GET_FLD(attr,					\
-> +			  ATTR_CFG_FLD_##name##_CFG,		\
-> +			  ATTR_CFG_FLD_##name##_LO,		\
-> +			  ATTR_CFG_FLD_##name##_HI)
-> +
-> +GEN_PMU_FORMAT_ATTR(mask);
-> +GEN_PMU_FORMAT_ATTR(match);
-> +GEN_PMU_FORMAT_ATTR(invert);
-> +GEN_PMU_FORMAT_ATTR(incr);
-> +GEN_PMU_FORMAT_ATTR(event);
-> +
-> +static struct attribute *arm_dmc620_pmu_formats_attrs[] = {
-> +	&format_attr_mask.attr,
-> +	&format_attr_match.attr,
-> +	&format_attr_invert.attr,
-> +	&format_attr_incr.attr,
-> +	&format_attr_event.attr,
-> +	NULL,
-> +};
-> +
-> +static struct attribute_group arm_dmc620_pmu_format_attr_group = {
-> +	.name	= "format",
-> +	.attrs	= arm_dmc620_pmu_formats_attrs,
-> +};
-> +
-> +static const struct attribute_group *arm_dmc620_pmu_attr_groups[] = {
-> +	&arm_dmc620_pmu_events_attr_group,
-> +	&arm_dmc620_pmu_format_attr_group,
-> +	NULL,
-> +};
-> +
-> +static inline
-> +unsigned int arm_dmc620_pmu_counter_read32(struct arm_dmc620_pmu *dmc620_pmu,
-> +					  unsigned int idx,
-> +					  unsigned int offset)
-> +{
-> +	return readl(dmc620_pmu->pmu_csr + DMC620_PMU_COUNTERS_BASE_OFFSET +
-> +		(idx * DMC620_PMU_COUNTER_REG_BYTE_LENGTH + offset));
-> +}
-> +
-> +static inline
-> +void arm_dmc620_pmu_counter_write32(struct arm_dmc620_pmu *dmc620_pmu,
-> +					  unsigned int idx,
-> +					  unsigned int offset,
-> +					  unsigned int val)
-> +{
-> +	writel(val, dmc620_pmu->pmu_csr + DMC620_PMU_COUNTERS_BASE_OFFSET +
-> +		(idx * DMC620_PMU_COUNTER_REG_BYTE_LENGTH + offset));
-> +}
-> +
-> +static
-> +unsigned int arm_dmc620_event_to_counter_control(struct perf_event *event)
-> +{
-> +	struct perf_event_attr *attr = &event->attr;
-> +	unsigned int reg = 0;
-> +
-> +	reg |= ATTR_CFG_GET_FLD(attr, invert) <<
-> +		DMC620_PMU_COUNTER_CONTROL_INVERT_SHIFT;
-> +	reg |= ATTR_CFG_GET_FLD(attr, incr) <<
-> +		DMC620_PMU_COUNTER_CONTROL_INCR_SHIFT;
-> +	reg |= (ATTR_CFG_GET_FLD(attr, event) &
-> +		~DMC620_PMU_CLK_INDICATE_MASK) <<
-> +		DMC620_PMU_COUNTER_CONTROL_EVENT_MUX_SHIFT;
-> +
-> +	return reg;
-> +}
-> +
-> +static int arm_dmc620_get_event_idx(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	struct perf_event_attr *attr = &event->attr;
-> +	int start_idx, end_idx;
-> +	int idx;
-> +
-> +	if (ATTR_CFG_GET_FLD(attr, event) & DMC620_PMU_CLK_INDICATE_MASK) {
-> +		/* clk events are selected */
-> +		start_idx = DMC620_PMU_CLKDIV2_MAX_COUNTERS;
-> +		end_idx = DMC620_PMU_MAX_COUNTERS;
-> +	} else {
-> +		start_idx = 0;
-> +		end_idx = DMC620_PMU_CLKDIV2_MAX_COUNTERS;
-> +	}
-> +
-> +	for (idx = start_idx; idx < end_idx; ++idx) {
-> +		if (!test_and_set_bit(idx, dmc620_pmu->used_mask))
-> +			return idx;
-> +	}
-> +
-> +	/* The counters are all in use. */
-> +	return -EAGAIN;
-> +}
-> +
-> +static u64 arm_dmc620_pmu_read_counter(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +
-> +	return (u64)arm_dmc620_pmu_counter_read32(dmc620_pmu,
-> +			  event->hw.idx,
-> +			  DMC620_PMU_COUNTER_VALUE_OFFSET);
-> +}
-> +
-> +static void arm_dmc620_pmu_event_update(struct perf_event *event)
-> +{
-> +	struct hw_perf_event *hwc = &event->hw;
-> +	u64 delta, prev_count, new_count;
-> +
-> +	do {
-> +		/* We may also be called from the irq handler */
-> +		prev_count = local64_read(&hwc->prev_count);
-> +		new_count = arm_dmc620_pmu_read_counter(event);
-> +	} while (local64_cmpxchg(&hwc->prev_count,
-> +			prev_count, new_count) != prev_count);
-> +	delta = (new_count - prev_count) & DMC620_CNT_MAX_PERIOD;
-> +	local64_add(delta, &event->count);
-> +}
-> +
-> +static void arm_dmc620_pmu_event_set_period(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +
-> +	/*
-> +	 * All DMC-620 PMU event counters are 32bit counters.
-> +	 * To handle cases of extreme interrupt latency, we program
-> +	 * the counter with half of the max count for the counters.
-> +	 */
-> +	u64 val = DMC620_CNT_MAX_PERIOD >> 1;
-> +
-> +	local64_set(&event->hw.prev_count, val);
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_VALUE_OFFSET,
-> +			  val);
-> +}
-> +
-> +static void arm_dmc620_pmu_enable_counter(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	unsigned int reg;
-> +
-> +	reg = arm_dmc620_pmu_counter_read32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_CONTROL_OFFSET);
-> +	reg |= DMC620_PMU_COUNTER_CONTROL_ENABLE_MASK;
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_CONTROL_OFFSET,
-> +			  reg);
-> +}
-> +
-> +static void arm_dmc620_pmu_disable_counter(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	unsigned int reg;
-> +
-> +	reg = arm_dmc620_pmu_counter_read32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_CONTROL_OFFSET);
-> +	reg &= ~DMC620_PMU_COUNTER_CONTROL_ENABLE_MASK;
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_CONTROL_OFFSET,
-> +			  reg);
-> +}
-> +
-> +static irqreturn_t arm_dmc620_pmu_handle_irq(int irq_num, void *dev)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = dev;
-> +	struct perf_event *event;
-> +	bool handled = false;
-> +	unsigned long overflow_clkdiv2, overflow_clk;
-> +	int i;
-> +
-> +	overflow_clkdiv2 = readl(dmc620_pmu->pmu_csr +
-> +				DMC620_PMU_OVERFLOW_STATUS_CLKDIV2_OFFSET);
-> +	overflow_clk = readl(dmc620_pmu->pmu_csr +
-> +				DMC620_PMU_OVERFLOW_STATUS_CLK_OFFSET);
-> +	if (!overflow_clkdiv2 && !overflow_clk)
-> +		return IRQ_NONE;
-> +
-> +	for_each_set_bit(i, &overflow_clkdiv2,
-> +				DMC620_PMU_CLKDIV2_MAX_COUNTERS) {
-> +		/* clkdiv2 event overflow */
-> +		event = dmc620_pmu->act_counter[i];
-> +		if (!event)
-> +			continue;
-> +		arm_dmc620_pmu_disable_counter(event);
-> +		arm_dmc620_pmu_event_update(event);
-> +		arm_dmc620_pmu_event_set_period(event);
-> +		arm_dmc620_pmu_enable_counter(event);
-> +		handled = true;
-> +	}
-> +
-> +	for_each_set_bit(i, &overflow_clk,
-> +				DMC620_PMU_CLK_MAX_COUNTERS) {
-> +		/* clk event overflow */
-> +		event = dmc620_pmu->act_counter[i +
-> +			DMC620_PMU_CLKDIV2_MAX_COUNTERS];
-> +		if (!event)
-> +			continue;
-> +		arm_dmc620_pmu_disable_counter(event);
-> +		arm_dmc620_pmu_event_update(event);
-> +		arm_dmc620_pmu_event_set_period(event);
-> +		arm_dmc620_pmu_enable_counter(event);
-> +		handled = true;
-> +	}
-> +
-> +	if (overflow_clkdiv2)
-> +		writel(0, dmc620_pmu->pmu_csr +
-> +			DMC620_PMU_OVERFLOW_STATUS_CLKDIV2_OFFSET);
-> +	if (overflow_clk)
-> +		writel(0, dmc620_pmu->pmu_csr +
-> +			DMC620_PMU_OVERFLOW_STATUS_CLK_OFFSET);
-> +
-> +	return IRQ_RETVAL(handled);
-> +}
-> +
-> +static int arm_dmc620_pmu_event_init(struct perf_event *event)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	struct hw_perf_event *hwc = &event->hw;
-> +	struct perf_event *sibling;
-> +
-> +	if (event->attr.type != event->pmu->type)
-> +		return -ENOENT;
-> +
-> +	/*
-> +	 * DMC 620 PMUs are shared across all cpus and cannot
-> +	 * support task bound and sampling events.
-> +	 */
-> +	if (is_sampling_event(event) ||
-> +		event->attach_state & PERF_ATTACH_TASK) {
-> +		dev_dbg(dmc620_pmu->pmu.dev,
-> +			"Can't support per-task counters\n");
-> +		return -EOPNOTSUPP;
-> +	}
-> +
-> +	if (event->cpu < 0) {
-> +		dev_dbg(dmc620_pmu->pmu.dev,
-> +			"Per-task mode not supported\n");
-> +		return -EOPNOTSUPP;
-> +	}
-> +	/*
-> +	 * Many perf core operations (eg. events rotation) operate on a
-> +	 * single CPU context. This is obvious for CPU PMUs, where one
-> +	 * expects the same sets of events being observed on all CPUs,
-> +	 * but can lead to issues for off-core PMUs, where each
-> +	 * event could be theoretically assigned to a different CPU. To
-> +	 * mitigate this, we enforce CPU assignment to one, selected
-> +	 * processor.
-> +	 */
-> +	event->cpu = cpumask_first(&dmc620_pmu->cpu);
-> +
-> +	/*
-> +	 * We must NOT create groups containing mixed PMUs, although software
-> +	 * events are acceptable
-> +	 */
-> +	if (event->group_leader->pmu != event->pmu &&
-> +			!is_software_event(event->group_leader))
-> +		return -EINVAL;
-> +
-> +	for_each_sibling_event(sibling, event->group_leader) {
-> +		if (sibling->pmu != event->pmu &&
-> +				!is_software_event(sibling))
-> +			return -EINVAL;
-> +	}
-> +
-> +	hwc->idx = -1;
-> +	return 0;
-> +}
-> +
-> +static void arm_dmc620_pmu_read(struct perf_event *event)
-> +{
-> +	arm_dmc620_pmu_event_update(event);
-> +}
-> +
-> +static void arm_dmc620_pmu_start(struct perf_event *event, int flags)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +
-> +	event->hw.state = 0;
-> +	arm_dmc620_pmu_event_set_period(event);
-> +
-> +	if (flags & PERF_EF_RELOAD) {
-> +		unsigned long prev_raw_count =
-> +			local64_read(&event->hw.prev_count);
-> +
-> +		arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_VALUE_OFFSET,
-> +			  (unsigned int)prev_raw_count);
-> +	}
-> +	arm_dmc620_pmu_enable_counter(event);
-> +}
-> +
-> +static void arm_dmc620_pmu_stop(struct perf_event *event, int flags)
-> +{
-> +	if (event->hw.state & PERF_HES_STOPPED)
-> +		return;
-> +
-> +	arm_dmc620_pmu_disable_counter(event);
-> +	arm_dmc620_pmu_event_update(event);
-> +	event->hw.state |= PERF_HES_STOPPED | PERF_HES_UPTODATE;
-> +}
-> +
-> +static int arm_dmc620_pmu_add(struct perf_event *event, int flags)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	struct hw_perf_event *hwc = &event->hw;
-> +	struct perf_event_attr *attr = &event->attr;
-> +	unsigned long reg;
-> +	int idx = 0;
-> +
-> +	idx = arm_dmc620_get_event_idx(event);
-> +	if (idx < 0)
-> +		return idx;
-> +
-> +	hwc->idx = idx;
-> +	dmc620_pmu->act_counter[idx] = event;
-> +	hwc->state = PERF_HES_STOPPED | PERF_HES_UPTODATE;
-> +
-> +	/* Write to mask 31-00 register */
-> +	reg = ATTR_CFG_GET_FLD(attr, mask);
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_MASK_31_00_OFFSET,
-> +			  (unsigned int)(reg & 0xffffffff));
-> +	/* Write to mask 63-32 register */
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_MASK_63_32_OFFSET,
-> +			  (unsigned int)(reg >> 32));
-> +
-> +	/* Write to match 31-00 register */
-> +	reg = ATTR_CFG_GET_FLD(attr, match);
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_MATCH_31_00_OFFSET,
-> +			  (unsigned int)(reg & 0xffffffff));
-> +	/* Write to match 63-32 register */
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_MATCH_63_32_OFFSET,
-> +			  (unsigned int)(reg >> 32));
-> +
-> +	/* Write to control register */
-> +	reg = arm_dmc620_event_to_counter_control(event);
-> +	arm_dmc620_pmu_counter_write32(dmc620_pmu,
-> +			  event->hw.idx, DMC620_PMU_COUNTER_CONTROL_OFFSET,
-> +			  (unsigned int)reg);
-> +
-> +	if (flags & PERF_EF_START)
-> +		arm_dmc620_pmu_start(event, PERF_EF_RELOAD);
-> +
-> +	perf_event_update_userpage(event);
-> +	return 0;
-> +}
-> +
-> +static void arm_dmc620_pmu_del(struct perf_event *event, int flags)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = to_dmc620_pmu(event->pmu);
-> +	struct hw_perf_event *hwc = &event->hw;
-> +	int idx = hwc->idx;
-> +
-> +	arm_dmc620_pmu_stop(event, PERF_EF_UPDATE);
-> +	dmc620_pmu->act_counter[idx] = NULL;
-> +	clear_bit(idx, dmc620_pmu->used_mask);
-> +	perf_event_update_userpage(event);
-> +}
-> +
-> +static int arm_dmc620_pmu_perf_init(struct arm_dmc620_pmu *dmc620_pmu)
-> +{
-> +	struct device *dev = &dmc620_pmu->pdev->dev;
-> +	unsigned long long value;
-> +	char *name;
-> +	acpi_handle handle;
-> +	acpi_status status;
-> +
-> +	dmc620_pmu->pmu = (struct pmu) {
-> +		.capabilities	= PERF_PMU_CAP_NO_EXCLUDE,
-> +		.task_ctx_nr	= perf_invalid_context,
-> +		.event_init	= arm_dmc620_pmu_event_init,
-> +		.add		= arm_dmc620_pmu_add,
-> +		.del		= arm_dmc620_pmu_del,
-> +		.start		= arm_dmc620_pmu_start,
-> +		.stop		= arm_dmc620_pmu_stop,
-> +		.read		= arm_dmc620_pmu_read,
-> +		.attr_groups	= arm_dmc620_pmu_attr_groups,
-> +	};
-> +
-> +	handle = ACPI_HANDLE(dev);
-> +	if (!handle)
-> +		return -ENODEV;
-> +
-> +	status = acpi_evaluate_integer(handle, METHOD_NAME__UID, NULL,
-> +					&value);
-> +	if (ACPI_FAILURE(status)) {
-> +		dev_err(dev, "Failed to evaluate _UID (0x%x)\n", status);
-> +		return -ENODEV;
-> +	}
-> +
-> +	name = devm_kasprintf(dev, GFP_KERNEL, "%s_%d", PMUNAME,
-> +				(unsigned int)value);
-> +
-> +	return perf_pmu_register(&dmc620_pmu->pmu, name, -1);
-> +}
-> +
-> +static void arm_dmc620_pmu_perf_destroy(struct arm_dmc620_pmu *dmc620_pmu)
-> +{
-> +	perf_pmu_unregister(&dmc620_pmu->pmu);
-> +}
-> +
-> +static int arm_dmc620_pmu_cpu_startup(unsigned int cpu,
-> +				   struct hlist_node *node)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = hlist_entry_safe(node,
-> +						struct arm_dmc620_pmu,
-> +						hotplug_node);
-> +
-> +	dmc620_pmu = hlist_entry_safe(node, struct arm_dmc620_pmu,
-> +					hotplug_node);
-> +	if (cpumask_empty(&dmc620_pmu->cpu))
-> +		cpumask_set_cpu(cpu, &dmc620_pmu->cpu);
-> +
-> +	/* Overflow interrupt also should use the same CPU */
-> +	WARN_ON(irq_set_affinity(dmc620_pmu->irq, &dmc620_pmu->cpu));
-> +
-> +	return 0;
-> +}
-> +
-> +static int arm_dmc620_pmu_cpu_teardown(unsigned int cpu,
-> +				   struct hlist_node *node)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = hlist_entry_safe(node,
-> +						struct arm_dmc620_pmu,
-> +						hotplug_node);
-> +	unsigned int target;
-> +
-> +	if (!cpumask_test_and_clear_cpu(cpu, &dmc620_pmu->cpu))
-> +		return 0;
-> +
-> +	target = cpumask_any_but(cpu_online_mask, cpu);
-> +	if (target >= nr_cpu_ids)
-> +		return 0;
-> +
-> +	cpumask_set_cpu(target, &dmc620_pmu->cpu);
-> +
-> +	/* Overflow interrupt also should use the same CPU */
-> +	WARN_ON(irq_set_affinity(dmc620_pmu->irq, &dmc620_pmu->cpu));
-> +
-> +	return 0;
-> +}
-> +
-> +static int arm_dmc620_pmu_dev_init(struct arm_dmc620_pmu *dmc620_pmu)
-> +{
-> +	struct platform_device *pdev = dmc620_pmu->pdev;
-> +	int ret;
-> +
-> +	ret = devm_request_irq(&pdev->dev, dmc620_pmu->irq,
-> +				arm_dmc620_pmu_handle_irq,
-> +				IRQF_SHARED,
-> +				dev_name(&pdev->dev), dmc620_pmu);
-> +	if (ret)
-> +		dev_err(&pdev->dev,
-> +			"Could not request IRQ %d\n", dmc620_pmu->irq);
-> +
-> +	/*
-> +	 * Register our hotplug notifier now so we don't miss any events.
-> +	 */
-> +	return cpuhp_state_add_instance(arm_dmc620_pmu_online,
-> +				       &dmc620_pmu->hotplug_node);
-> +}
-> +
-> +static void arm_dmc620_pmu_dev_teardown(struct arm_dmc620_pmu *dmc620_pmu)
-> +{
-> +	cpuhp_state_remove_instance(arm_dmc620_pmu_online,
-> +					&dmc620_pmu->hotplug_node);
-> +}
-> +
-> +static int arm_dmc620_pmu_resource_probe(struct arm_dmc620_pmu *dmc620_pmu)
-> +{
-> +	struct platform_device *pdev = dmc620_pmu->pdev;
-> +	struct resource *res;
-> +	int irq;
-> +
-> +	irq = platform_get_irq(pdev, 0);
-> +	if (irq < 0) {
-> +		dev_err(&pdev->dev, "failed to get IRQ (%d)\n", irq);
-> +		return -ENXIO;
-> +	}
-> +	dmc620_pmu->irq = irq;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	dmc620_pmu->pmu_csr = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(dmc620_pmu->pmu_csr)) {
-> +		dev_err(&pdev->dev,
-> +			"ioremap failed for DMC-620 PMU resource\n");
-> +		return -ENXIO;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int arm_dmc620_pmu_device_probe(struct platform_device *pdev)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu;
-> +	struct device *dev = &pdev->dev;
-> +	int ret;
-> +
-> +	dmc620_pmu = devm_kzalloc(dev, sizeof(*dmc620_pmu), GFP_KERNEL);
-> +	if (!dmc620_pmu)
-> +		return -ENOMEM;
-> +
-> +	dmc620_pmu->pdev = pdev;
-> +	platform_set_drvdata(pdev, dmc620_pmu);
-> +
-> +	ret = arm_dmc620_pmu_resource_probe(dmc620_pmu);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = arm_dmc620_pmu_dev_init(dmc620_pmu);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = arm_dmc620_pmu_perf_init(dmc620_pmu);
-> +	if (ret)
-> +		goto out_teardown_dev;
-> +
-> +	return 0;
-> +
-> +out_teardown_dev:
-> +	arm_dmc620_pmu_dev_teardown(dmc620_pmu);
-> +	return ret;
-> +}
-> +
-> +static int arm_dmc620_pmu_device_remove(struct platform_device *pdev)
-> +{
-> +	struct arm_dmc620_pmu *dmc620_pmu = platform_get_drvdata(pdev);
-> +
-> +	arm_dmc620_pmu_perf_destroy(dmc620_pmu);
-> +	arm_dmc620_pmu_dev_teardown(dmc620_pmu);
-> +	return 0;
-> +}
-> +
-> +static const struct acpi_device_id arm_dmc620_acpi_match[] = {
-> +	{ "ARMHD620", 0},
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(acpi, arm_dmc620_acpi_match);
-> +static struct platform_driver arm_dmc620_pmu_driver = {
-> +	.driver	= {
-> +		.name		= DRVNAME,
-> +		.acpi_match_table = ACPI_PTR(arm_dmc620_acpi_match),
-> +	},
-> +	.probe	= arm_dmc620_pmu_device_probe,
-> +	.remove	= arm_dmc620_pmu_device_remove,
-> +};
-> +
-> +static int __init arm_dmc620_pmu_init(void)
-> +{
-> +	int ret;
-> +
-> +	ret = cpuhp_setup_state_multi(CPUHP_AP_ONLINE_DYN, DRVNAME,
-> +				      arm_dmc620_pmu_cpu_startup,
-> +				      arm_dmc620_pmu_cpu_teardown);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	arm_dmc620_pmu_online = ret;
-> +
-> +	ret = platform_driver_register(&arm_dmc620_pmu_driver);
-> +	if (ret)
-> +		cpuhp_remove_multi_state(arm_dmc620_pmu_online);
-> +
-> +	return ret;
-> +}
-> +
-> +static void __exit arm_dmc620_pmu_exit(void)
-> +{
-> +	platform_driver_unregister(&arm_dmc620_pmu_driver);
-> +	cpuhp_remove_multi_state(arm_dmc620_pmu_online);
-> +}
-> +
-> +module_init(arm_dmc620_pmu_init);
-> +module_exit(arm_dmc620_pmu_exit);
-> +
-> +MODULE_DESCRIPTION("Perf driver for the ARM DMC-620 memory controller");
-> +MODULE_AUTHOR("Tuan Phan <tuanphan@os.amperecomputing.com");
-> +MODULE_LICENSE("GPL v2");
-> 
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
+All errors (new ones prefixed by >>):
+
+   ld: mm/hugetlb.o: in function `default_hugepagesz_setup':
+>> hugetlb.c:(.init.text+0x16): undefined reference to `arch_hugetlb_valid_size'
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
+--jRHKVT23PllUwdXP
+Content-Type: application/gzip
+Content-Disposition: attachment; filename=".config.gz"
+Content-Transfer-Encoding: base64
+
+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
+q5qavBAcB2L1qP4/JotI95/gAQA=
+
+--jRHKVT23PllUwdXP
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--jRHKVT23PllUwdXP--
+
