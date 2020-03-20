@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C50C18CD88
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 13:11:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1186C18CDE5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 13:30:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9VW02J0qD2XhG/d90cq+JySl9YpedFJQrJquhRCHx7Q=; b=VshYHWYQG8qb0BGp7K7BNZbz+
-	rYrTqIp90MOcuPA89pvit5k7jAm6g0oUVOZnjJScWnuxi5LQmOLe2CLBKTod28GlQItPzcBc/fPtz
-	DWallCVjl+3f5/e9Ay3ZJZNrxhO8Wa+57o+X9RKSvK48mx3R0t7uQF1x1Nrhc127jJHaJOtZ8kTjn
-	Saf0Rgx3cby0zsOC432+wH9Lt632VZ0QwT688Qea10bFhXnxs5R2rEVkkk7cUrgNKzXxBEViq+Rt5
-	BFjGn0k7DtprNlGL4Vx06Kkw6N6IFh9dRjPebL7Hkcia6TJqkBz1bzvl7GIlGYm8PwBoQIo7pst7Z
-	odFUx0SgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5uagC/H40qCyzcWD1RTBl+SN/s5YSMw3Q072d2z756U=; b=pvnKHng5sPYbma
+	W7/zD6XTucnNOLiuf7QMXu3xGsiTTPY4jEeW8RfiFQupkFk2sKwfJ4DfD199O5PbBM6Bmr95+xhhW
+	6WhkkG9LMgzz2ory72rXYy+BfCRzz7a8OlH2hyH1Hpe0GZdERvjt5BoB0I7z6Df9imSvLDZ7xSMFp
+	CAWZhNH6qVXOv2vECAsiOq/KhpBK9GVEunuzPDvPSVA75wCCWG84IpipjXqEyZPU5voy47/VtCEad
+	kYVNRQ5pttbo1pZVfT46pWTLM9veruEzyVzb3qrQvUEUtKaKNmWDx+QNIB8VWaQ6PNHGjDVCBK743
+	OPOqCmSk/HkAvosomYJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFGUx-0000TK-AE; Fri, 20 Mar 2020 12:11:35 +0000
+	id 1jFGn2-0005iQ-8E; Fri, 20 Mar 2020 12:30:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFGUk-0000OK-Ay
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 12:11:24 +0000
+ id 1jFGml-0005hT-EF
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 12:30:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9FB8331B;
- Fri, 20 Mar 2020 05:11:19 -0700 (PDT)
-Received: from localhost (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5882D3F85E;
- Fri, 20 Mar 2020 05:11:19 -0700 (PDT)
-Date: Fri, 20 Mar 2020 12:11:17 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Tudor.Ambarus@microchip.com
-Subject: Re: [PATCH] spi: atmel-quadspi: Add verbose debug facilities to
- monitor register accesses
-Message-ID: <20200320121117.GA3961@sirena.org.uk>
-References: <20200320065058.891221-1-tudor.ambarus@microchip.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E3A131B;
+ Fri, 20 Mar 2020 05:29:58 -0700 (PDT)
+Received: from [10.37.12.155] (unknown [10.37.12.155])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7A6343F85E;
+ Fri, 20 Mar 2020 05:29:55 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH] arm64: compat: Fix syscall number of compat_clock_getres
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20200319141138.19343-1-vincenzo.frascino@arm.com>
+ <20200319181203.GB29214@mbp>
+Message-ID: <d9418e75-0136-4f56-6d82-3d509be0e414@arm.com>
+Date: Fri, 20 Mar 2020 12:30:24 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200320065058.891221-1-tudor.ambarus@microchip.com>
-X-Cookie: Laugh when you can
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200319181203.GB29214@mbp>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_051122_448884_A7DCA7B6 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200320_052959_522859_ADEC43CA 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,60 +64,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Ludovic.Desroches@microchip.com,
- linux-arm-kernel@lists.infradead.org, linux-spi@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============7894622172123568398=="
+Cc: "clang-built-linux@googlegroups.com" <clang-built-linux@googlegroups.com>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ Will Deacon <will@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 3/19/20 6:12 PM, Catalin Marinas wrote:
+> On Thu, Mar 19, 2020 at 02:11:38PM +0000, Vincenzo Frascino wrote:
+>> The syscall number of compat_clock_getres was erroneously set to 247
+>> instead of 264. This causes the vDSO fallback of clock_getres to land
+>> on the wrong syscall.
+>>
+>> Address the issue fixing the syscall number of compat_clock_getres.
+>>
+>> Fixes: 53c489e1dfeb6 ("arm64: compat: Add missing syscall numbers")
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will.deacon@arm.com>
+> 
+> Will left ARM about 8 months ago IIRC ;).
+>
 
---===============7894622172123568398==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="oyUTqETQ0mS9luUI"
-Content-Disposition: inline
+Nice ;) I typed it manually, it came by "instinct" I guess ;) Sorry Will!
 
+>> Cc: stable@vger.kernel.org
+>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> 
+> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> 
+> I think Will could take this as a fix.
+> 
+> Thanks,
+> 
+> Catalin
+> 
 
---oyUTqETQ0mS9luUI
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Mar 20, 2020 at 06:51:01AM +0000, Tudor.Ambarus@microchip.com wrote:
-> From: Tudor Ambarus <tudor.ambarus@microchip.com>
->=20
-> This feature should not be enabled in release but can be useful for
-> developers who need to monitor register accesses at some specific places.
-
-Looks a lot like the trace regmap would give you....
-
---oyUTqETQ0mS9luUI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl50suEACgkQJNaLcl1U
-h9D1fAf/VQnn06p5m4B5/lqhwYYKIVVW6P9u/0hBvpkxfRGfRDTxHr4lEOVO+9me
-fiHiUJiG7hRJZ7gkf9nT+yr/NG/Feih+70C7F2fkrNqflZqi7iFWEJHrT8gPjri0
-zuSkqgYo7kLnkBlrrcgaI+00KK3J15c59SZNJa9Qes/3VWtfa0jSi3x2WgAMPuGm
-z5YDPYMTAe6dqSYkYfU14FrWN+p7/039ylhVcwzWZ3aActb7Kjuw4+ND9S7u203b
-+9j4IeIXpbSCEkE19P3ZczIbiCJJ0fmgZiDkNPL4WGUSDsE3jvLxcKpKSKKRuo0B
-o9T+CGXY/Htz//y4U+jLBI9Cg3BMYA==
-=JInW
------END PGP SIGNATURE-----
-
---oyUTqETQ0mS9luUI--
-
-
---===============7894622172123568398==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7894622172123568398==--
-
