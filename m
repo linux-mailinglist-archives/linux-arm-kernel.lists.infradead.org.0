@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAE5718D6CA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 19:24:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 143B018D708
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 19:28:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dUEZnlZAhhyOEopZPtdecgafj5xYBxk1HNOGgwVDT+Q=; b=ZDBmzCtRNQ8D1Y
-	B611pJVeJgw2sxWO6T5BhctmCdoVVRS/R+d6VCk+3QfaO0vVE+oklOMfp84M9qgAncgCrWtWCU/Ta
-	d6CaYz9/ORhkWtTlHDORhw5xAjqN84t+ywX7fa3DFGvjNS8TB4owqq+Wie1+mTz625we4aYnFQVGx
-	LfNPBxapkKaVCMaoktUv/mhj9esHvJanuIIrTzdVbP+LkP5pm9fG6pPO68aIeOiVmzzHuTjfctOUQ
-	ey5cE8PN9HtwTrTCNeCe13Pw99HyW7QPAIotjGXKuqaZ2qoj+nUCMsx4hafxa3LGNSH+M8mfznrNH
-	gAckO4bRVUdeP8wOj3FQ==;
+	List-Owner; bh=ZbG5xJo3sjuA/n6XssR5xhNlei9Qh79kWob767ZNH6U=; b=CB7NJxP8Pj1kaB
+	u/3qoBJiXNtgkthbUwUmvJsnkwndLfYyDNn8XziA/m7xabJtT3itxGdI000UnnL71Px8VnFV3shhP
+	s/erdfFKsHd8LYD0HS0yI8GqQUio0LdMLXJ9PWasTqQR4jhaDluB7b4HjpP8ZqCOLY5Eb8xcR0TR3
+	a5gu/bcNlRr0KoR87AdrnI484xXrunl8MNH5OZo2QFDVASi0Iq9yikdj6UGubPzqDDOANLomXT6k2
+	Xz2HVRQPZR4Xi5FiskVBoYSqefZFjftAvL6AP2Rl9yMWDfLl2+FRFU9s1IfG8aTc/m7WmAz5xNlTR
+	0pmWjx/8cweE/wjiFPfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFMJt-00072o-GL; Fri, 20 Mar 2020 18:24:33 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFMJl-00072N-BA
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 18:24:26 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z72so3510521pgz.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Mar 2020 11:24:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=2xWVMcAkfq5ne45p4xyMZVZzHfwNqETngAro5lkreP4=;
- b=egxARSlFh+gl8BSoKEBkPxmioi72UPPDmz+ssHOs8UemiCka73hYdGEersNQgdrjqn
- c9iW1spOQ7Y1EaKd8/93ca30yRGiOpdG1LxIk06m6fckNrb3yNGJ1b0zsz3OwKkRoNSS
- x85gCSRaoiqfjdrokwJmmZlkj+6L0Y12RifNA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=2xWVMcAkfq5ne45p4xyMZVZzHfwNqETngAro5lkreP4=;
- b=UuYRtVs6DgL6c3G6tlH5kFwGAJ5eLTow7wceZi8ZmOppb3YGL31sl2bpBf6kCFflBL
- 0o0Mc0/PEmfGHkhqcNsd8iZP4BzkV436xuYYGl8o1Gk8hgqBuRh6fyAU1bQ374RfQy7d
- 8qf0+rdaz87ZmSlHJf81lLdOGCwfF8cOZ0wIp4EbEtDAPMuX+HNcT/8bjr/pQwielxJ8
- yy9jsqrEUavROSGyg2Q60C+UEZjoQsdop2aVQJ/kYcvKo1yS3Iaj138mdeVlnE6/hiQd
- BssBQoaEekl29o2qbScKUQKEfsrzF9vUrNydkRCs1DG43xNYrjeRKxC/CeEiF1u6XrPq
- c5EA==
-X-Gm-Message-State: ANhLgQ0ikebHkEoLF8Vgyw04GCG/5shal03ZpbHfQbnAXZEjmd4u8AqD
- 75geO2KZMK+oC0vO1nrVb0Jd0A==
-X-Google-Smtp-Source: ADFU+vvJ86QsFIReD0LB05B1a0McdUNTvZoxWG49MXWb/we6ziLuZVXT1lHzITCce8/XQ3hfd6rn8g==
-X-Received: by 2002:a63:b706:: with SMTP id t6mr9859014pgf.329.1584728664667; 
- Fri, 20 Mar 2020 11:24:24 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id w205sm6244774pfc.75.2020.03.20.11.24.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 20 Mar 2020 11:24:23 -0700 (PDT)
-Date: Fri, 20 Mar 2020 11:24:22 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 1/9] scripts/link-vmlinux.sh: Delay orphan handling
- warnings until final link
-Message-ID: <202003201121.8CBD96451B@keescook>
-References: <20200228002244.15240-1-keescook@chromium.org>
- <20200228002244.15240-2-keescook@chromium.org>
- <1584672297.mudnpz3ir9.astroid@bobo.none>
+	id 1jFMNC-0002eq-NQ; Fri, 20 Mar 2020 18:27:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFMKL-0007cF-D0
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 18:25:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 914D21FB;
+ Fri, 20 Mar 2020 11:25:00 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4939B3F305;
+ Fri, 20 Mar 2020 11:24:59 -0700 (PDT)
+Date: Fri, 20 Mar 2020 18:24:56 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
+Subject: Re: [PATCH] arm64: move kimage_vaddr to .rodata
+Message-ID: <20200320182456.GF7448@mbp>
+References: <20200312094002.153302-1-remi@remlab.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1584672297.mudnpz3ir9.astroid@bobo.none>
+In-Reply-To: <20200312094002.153302-1-remi@remlab.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_112425_389397_6DBD6305 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200320_112501_531301_E8F56688 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,72 +63,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Will Deacon <will@kernel.org>,
- James Morse <james.morse@arm.com>, Mark Rutland <mark.rutland@arm.com>,
- Borislav Petkov <bp@suse.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: suzuki.poulose@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 12:47:54PM +1000, Nicholas Piggin wrote:
-> Kees Cook's on February 28, 2020 10:22 am:
-> > Right now, powerpc adds "--orphan-handling=warn" to LD_FLAGS_vmlinux
-> > to detect when there are unexpected sections getting added to the kernel
-> > image. There is no need to report these warnings more than once, so it
-> > can be removed until the final link stage.
-> > 
-> > This helps pave the way for other architectures to enable this, with the
-> > end goal of enabling this warning by default for vmlinux for all
-> > architectures.
-> > 
-> > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > ---
-> >  scripts/link-vmlinux.sh | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> > 
-> > diff --git a/scripts/link-vmlinux.sh b/scripts/link-vmlinux.sh
-> > index 1919c311c149..416968fea685 100755
-> > --- a/scripts/link-vmlinux.sh
-> > +++ b/scripts/link-vmlinux.sh
-> > @@ -255,6 +255,11 @@ info GEN modules.builtin
-> >  tr '\0' '\n' < modules.builtin.modinfo | sed -n 's/^[[:alnum:]:_]*\.file=//p' |
-> >  	tr ' ' '\n' | uniq | sed -e 's:^:kernel/:' -e 's/$/.ko/' > modules.builtin
-> >  
-> > +
-> > +# Do not warn about orphan sections until the final link stage.
-> > +saved_LDFLAGS_vmlinux="${LDFLAGS_vmlinux}"
-> > +LDFLAGS_vmlinux="$(echo "${LDFLAGS_vmlinux}" | sed -E 's/ --orphan-handling=warn( |$)/ /g')"
-> > +
-> >  btf_vmlinux_bin_o=""
-> >  if [ -n "${CONFIG_DEBUG_INFO_BTF}" ]; then
-> >  	if gen_btf .tmp_vmlinux.btf .btf.vmlinux.bin.o ; then
-> > @@ -306,6 +311,7 @@ if [ -n "${CONFIG_KALLSYMS}" ]; then
-> >  	fi
-> >  fi
-> >  
-> > +LDFLAGS_vmlinux="${saved_LDFLAGS_vmlinux}"
-> >  vmlinux_link vmlinux "${kallsymso}" ${btf_vmlinux_bin_o}
-> >  
-> >  if [ -n "${CONFIG_BUILDTIME_TABLE_SORT}" ]; then
-> 
-> That's ugly. Why not just enable it for all archs?
+On Thu, Mar 12, 2020 at 11:40:02AM +0200, R=E9mi Denis-Courmont wrote:
+> From: Remi Denis-Courmont <remi.denis.courmont@huawei.com>
+> =
 
-It is ugly; I agree.
+> This datum is not referenced from .idmap.text: it does not need to be
+> mapped in idmap. Lets move it to .rodata as it is never written to after
+> early boot of the primary CPU.
+> (Maybe .data.ro_after_init would be cleaner though?)
+> =
 
-I can try to do this for all architectures, but I worry there are a
-bunch I can't test. But I guess it would stand out. ;)
+> Signed-off-by: R=E9mi Denis-Courmont <remi@remlab.net>
 
--Kees
+Queued for 5.7. Thanks.
 
--- 
-Kees Cook
+-- =
+
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
