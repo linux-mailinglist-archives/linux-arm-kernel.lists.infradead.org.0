@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D1F18D14D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 15:41:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD2518D152
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 15:43:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=45y2+FaY5xWnXXT8lJNehgVyFzwbNjl3vKfcchlMOQQ=; b=SXiD6+xuQHukTD
-	vbmo4iLCu50UqIxWoiVsyQxHoDW/Tg28uRZxVZqDEh1mUWw4az7aRYX0/lKKqX4azA04n7Y5E4YLW
-	tqAOukWBtZFgp0mJcMIEr9qxkezTmd8iQKJkfON4kauDNPljC8TeAGlM/voqnTRIh0/Jqj3502rEU
-	wJ5ofGlnsAmeHrBAaO4moXiAcVIXagH9TU344vpcOGHepyv9ldCJ+Wy3yff0jIRlyW/elkvudQbJy
-	BU4kpB1JzumTatZUW8ny/bbftV2cIRgM2IFeWErQwhIu/4CXW4IAXluzESQrOeqf4OY8e6e/Qw6YD
-	oOVdlFycRqksKamB5RvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VaQJAksgUHgZnWYxb1yAyJECIrso4J4uQVyfhAWiNMw=; b=fRpsrzroanXqExrgbgwYdSeed
+	CpwYBrOAWUY3GVf8vd+IAiJbYmy+U2SWVHHDKfpkYR+LWnHfEQYuVPZFpyyWT9t8nQ5a4OTkfGlKt
+	zR67wSv+1ZLa6nv6XzXUVhLzxcvVpxn2cEq5amA2dBEO/R5d0XE2XJTra1Z7XdEIN1m8iTJTGz+mW
+	Oga2ajD4tdSSWEZg98Mf9F9M1+3OZ9HZ9/HlJ/t40uJMF7n88ZvqbsJQGZRLxEcvh7JPlhAQy+9vo
+	vIlhVIuGIKla5SlDwpwDaDlNsJ9wApl8+Q97zkqG9Q8n76/DWPo+Qucfw+/3l4O55McRwK0EJOVfc
+	PvW6sACNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFIqC-0001IE-93; Fri, 20 Mar 2020 14:41:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFIq5-0001Hn-R1
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 14:41:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7D161FB;
- Fri, 20 Mar 2020 07:41:32 -0700 (PDT)
-Received: from [10.37.12.155] (unknown [10.37.12.155])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D2EFB3F792;
- Fri, 20 Mar 2020 07:41:27 -0700 (PDT)
-Subject: Re: [PATCH v4 18/26] arm64: vdso32: Replace TASK_SIZE_32 check in
- vgettimeofday
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20200317143834.GC632169@arrakis.emea.arm.com>
- <f03a9493-c8c2-e981-f560-b2f437a208e4@arm.com>
- <20200317155031.GD632169@arrakis.emea.arm.com>
- <83aaf9e1-0a8f-4908-577a-23766541b2ba@arm.com>
- <20200317174806.GE632169@arrakis.emea.arm.com>
- <93cfe94a-c2a3-1025-bc9c-e7c3fd891100@arm.com>
- <20200318183603.GF94111@arrakis.emea.arm.com>
- <1bc25a53-7a59-0f60-ecf2-a3cace46b823@arm.com> <20200319181004.GA29214@mbp>
- <b937d1eb-c7fd-e903-fa36-b261662bf40b@arm.com> <20200320142208.GC29214@mbp>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <46add8e3-dd04-9194-4196-4d8e5cd4c70f@arm.com>
-Date: Fri, 20 Mar 2020 14:41:57 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jFIs5-0001ag-Qf; Fri, 20 Mar 2020 14:43:37 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFIrx-0001a4-Fy; Fri, 20 Mar 2020 14:43:31 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 69C2EAD32;
+ Fri, 20 Mar 2020 14:43:27 +0000 (UTC)
+Message-ID: <2f198d1afe80e4a4c48703462d63bdb0858fb4a2.camel@suse.de>
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Dave Stevenson <dave.stevenson@raspberrypi.com>, Stefan Wahren
+ <stefan.wahren@i2se.com>
+Date: Fri, 20 Mar 2020 15:43:25 +0100
+In-Reply-To: <CAPY8ntBB3wwkVj=+fzNRXzAqQs5q5MYmb7t7Be74zADeMCXHVA@mail.gmail.com>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+ <736f0c59-352b-03b2-f77f-bfc22171b3fb@i2se.com>
+ <03fcb1e2bc7f3ff389b6dfbf3964e159a93ae835.camel@suse.de>
+ <d3d40174-9c08-f42f-e088-08e23c2dc029@i2se.com>
+ <f2ec22160ac86aec8d252ade7d6eb8789777cc42.camel@suse.de>
+ <01ceb60e-a791-b6ca-352e-ad2e79f264e3@i2se.com>
+ <ddcb8fd5-9e35-454c-b38d-d36e7b41ef07@i2se.com>
+ <9e685fce547d808f269e59e2290331e75c66f3e4.camel@suse.de>
+ <bb2c7d99-06b1-d222-7f69-8ce91157bde5@i2se.com>
+ <90e92438-00df-520f-c8b1-2e2077934592@i2se.com>
+ <a25b759292901eee3eab4dbf8002d2050edda6d3.camel@suse.de>
+ <CAPY8ntBB3wwkVj=+fzNRXzAqQs5q5MYmb7t7Be74zADeMCXHVA@mail.gmail.com>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-In-Reply-To: <20200320142208.GC29214@mbp>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_074133_963066_ADCF1897 
-X-CRM114-Status: GOOD (  20.41  )
+X-CRM114-CacheID: sfid-20200320_074329_822506_D30B2962 
+X-CRM114-Status: GOOD (  18.70  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,70 +73,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
- linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
- Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
+Content-Type: multipart/mixed; boundary="===============5443663461911992541=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
 
-On 3/20/20 2:22 PM, Catalin Marinas wrote:
-> On Fri, Mar 20, 2020 at 01:05:14PM +0000, Vincenzo Frascino wrote:
->> On 3/19/20 6:10 PM, Catalin Marinas wrote:
->>> On Thu, Mar 19, 2020 at 12:38:42PM +0000, Vincenzo Frascino wrote:
->>>> On 3/18/20 6:36 PM, Catalin Marinas wrote:
->>>>> On Wed, Mar 18, 2020 at 04:14:26PM +0000, Vincenzo Frascino wrote:
->>>>>> On 3/17/20 5:48 PM, Catalin Marinas wrote:
-[...]
+--===============5443663461911992541==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-/tkxwxJi1mY/EDU3Qsgm"
 
->>
->> Thank you for the long chat this morning. As we agreed I am going to repost the
->> patches removing the checks discussed in this thread
-> 
-> Great, thanks.
-> 
->> and we will address the syscall ABI difference subsequently with a
->> different series.
-> 
-> Now I'm even less convinced we need any additional patches. The arm64
-> compat syscall would still return -EFAULT for res >= TASK_SIZE_32
-> because copy_to_user() will fail. So it would be entirely consistent
-> with the arm32 syscall. In the vdso-only case, both arm32 and arm64
-> compat would generate a signal.
-> 
-> As Will said, arguably, the syscall semantics may not be applicable to
-> the vdso implementation. But if you do want to get down this route (tp =
-> UINTPTR_MAX - sizeof(*tp) returning -EFAULT), please do it for all
-> architectures, not just arm64 compat. However, I'm not sure anyone
-> relies on this functionality, other than the vdsotest, so no real
-> application broken.
-> 
 
-It is ok, we will discuss the topic once we cross that bridge. I am already
-happy that I managed to explain finally my reasons ;)
+--=-/tkxwxJi1mY/EDU3Qsgm
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-Anyway, I think that if there is an application that relies on this behavior (or
-similar) and uses compat we will discover it as soon as these patches will be
-out in the wild. For this reason I am putting a link to this discussion in the
-commit message of the relevant patch so that we can take it from there.
+On Mon, 2020-03-16 at 13:57 +0000, Dave Stevenson wrote:
+>  Hi Stefan and Nicolas
+>=20
+> Checking the docs it does state the restriction that Eric quotes.
+>=20
+> HDMI Core Clock (state machine clock)
+> Most of the HDMI logic operates on that clock. It
+> is asynchronous to system core clock and pixel
+> clock. Source for this clock can be chosen from
+> various PLLs in the chip. See CPR Manager for
+> details.
+>=20
+> This clock is also used for clocking pixel valve
+> when HDMI peripheral is used. See Pixel Valve
+> for details.axi_clock >=3D hdmi_core_clock > 108% of
+> pixel_clock.
+>=20
+>=20
+> The default max pixel clock from the firmware side is 162MHz.
+>=20
+> In the firmware source we have a comment
+>          // HDMI state machine clock must be faster than pixel clock -
+> infinitessimally faster tested in simulation.
+>          // Otherwise, exact value is unimportant - for HDMI operation.
+>          // hdmi state machine clock now derived from PLLC_PER (typ
+> 500MHz, see relevant platform.c).
+>          //
+>          // However, CEC bit clock is derived from the HSM clock, and
+> the (programmable) CEC timing table
+>          // is configured for a 40.00kHz CEC clock.
+>          const unsigned margin =3D 1*1000*1000;
+>          unsigned min_hsm_clock =3D margin + timings->pixel_freq;
+>          const unsigned max_hsm_clock_for_cec =3D max(163682864,
+> hdmi_pixel_freq_limit);
+>=20
+>          unsigned hdmi_state_machine_clock =3D max_hsm_clock_for_cec;
+>=20
+> So it adds 1MHz to the pixel clock for min_hsm_clock, but then doesn't
+> use the value.
+> Unless you do request a higher hdmi_pixel_freq_limit then the HSM is
+> running at the same 163.68MHz that Eric's driver hard codes, and our
+> max pixel clock is 162MHz.
+> Keeping it a fixed value makes sorting the divider for CEC easier.
+>=20
+> Just adopting a 162MHz limit with a suitable comment is probably the
+> most sensible move here, and Maxime's patches can pick up the same
+> value.
 
--- 
+I agree with Dave.
+
+Moreover, this was initially introduced to fix resolution negotiations with=
+ 4k
+devices, which use higher pixel clocks than HSM_CLOCK_FREQ. I've been revie=
+wing
+common HDMI resolutions and 1200p60 seems to be the one closer to RPi's HSM
+limitations (as far as widely used aspect ratios are concerned). So I can't
+image how setting a smaller than HSM_CLOCK_FREQ limit here is going to brea=
+k
+anything. That said I'm no expert in this area.
+
+Stefan, any opinions? Feel like sending a patch? :)
+
 Regards,
-Vincenzo
+Nicolas
+
+
+--=-/tkxwxJi1mY/EDU3Qsgm
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl501o0ACgkQlfZmHno8
+x/5X7gf8Dt1VwHhuwYsFMK0N+kIBlPJFPb020tJAsnrIkw664hu9Cll04EB4MOG9
+EaG3b2Jo9QUseesoKUnxkOMvUk05CxuOhUvhpM3pz5g9cI0BDrqo4n35pEh6F0CV
+p/JQGMzrXznbciEzJVXP2Tyz1HtNeECyOnQwpCrQLuE5c6zd4v+bw3ydexf+0LmH
+IAluJa/u4x3u1jrs4i2VGn2kGT9bWT3q+Y9bBCCwjKkYZigCx6Ab92HZaKC+N+hI
+unHr/aTUSGwUx6qjmtt+WXdXLt+Z1X3PfPzn6g69yLGg9mX64asfQeGoeRQT8x6v
+7qW0Lis2BzrEEv5ih1yUoILIWbx0sA==
+=N/Y7
+-----END PGP SIGNATURE-----
+
+--=-/tkxwxJi1mY/EDU3Qsgm--
+
+
+
+--===============5443663461911992541==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5443663461911992541==--
+
+
