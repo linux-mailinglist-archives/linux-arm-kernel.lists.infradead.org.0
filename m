@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16F8618CF4A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:44:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87C8A18CF4F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:45:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cZfkv91c+SO5EcSbRmP2wagCIyL5w+/8Cu41z/uk1dc=; b=CHtSFt5gcIQ0Ss
-	7rXUtR3+VojKfjo88asRf17IBYP5L8WWLFBJx8wqNlhB1fxoiuwWJrGAaPym14ZR5KITrNBlzC16c
-	JJAKEEelKSOKmJ4kdKM+oyHwjmAPMNj2ZDo9pdJx5GmzXmiitGw7hmuSdFE9ndfUqzc6QJSMqLfQ6
-	+nI2tbHMC6cI+4FU0DxFr8awbAWlgBt4HheEvISjEFOpYC2Hs6DbzE9/JfsA1nNxlfgmOz7y0h0FS
-	aKRDr3x6VQT8PATDU/zDm+/c2eI/tQ95KJl+2SD5giMDgEicJ5I7wNJD3bGTlhxQFtXM6BnxdivHj
-	Yvz8ByUndz2Ae3VkxMsg==;
+	List-Owner; bh=Gw3w2Nr50eMyb6Edt3Q7VGdb9fjM7W6/80Oth0MyBzc=; b=X7lKNhOGnREfnW
+	1zSft0vyeCxoemPDxxD1sUJh5K4hL+j0ph61LBdoBJ9zm/9HRj4muRwarCmcopLriJvr7dhUWcb+c
+	cSBpceNMNQqBkz0ppvI3RMH/MRSbPasfoFSvTGC2+s09dB+nAvanKgoNO6drrGiOjMuZQImxs3EBB
+	ZfySC4kAj/wDOxjpeIEbWi3g4cdOsKAcfb/vzOpPcbd3AZmKMDKN/+cjOZlPrM4SG4bS/2Nnwruzg
+	VA4P9fwigUdQUQxZ67bDqTIrjHaQ4Syc+DLq/74Kky+7a5EB9zouenqUWw8fArd6i0SZp5d3A3bmU
+	RSBXIvKg/2ilkWrn0R7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFHx2-0001nV-DL; Fri, 20 Mar 2020 13:44:40 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jFHy8-0003OP-A3; Fri, 20 Mar 2020 13:45:48 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFHwm-0001lD-D5
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:44:26 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02KDdWBJ018194; Fri, 20 Mar 2020 14:44:18 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=76LWxNmSrLcSGRcg4g7Zi1Kwv4e4NUwj8UcZLmOsR/A=;
- b=cI4WXI3y9bFxguxSW/ud9wbG8G9O66qDQz31hGwVmuOo03h3bRRKSL6o4aAenEMwce6D
- skY8oS2lH5MEBKZNt9POdKywz9e7Nfa/WiltXMN/PomQVCK0RxTJ6nXswEt2FfSQLjPb
- 8SH+Gd/lKaXCEJKr7P7wnaUM5matY2HDFBLAyd9RAUppD4QG5uEtP4+XTm4HnibUcbLd
- Xkx8D4PDuMiv7wuVz6ZoWNFYIYodxonvnHaFF1yhW+yFzko4nvIHL76C+Le4uwd8Tx+8
- 8P6AUsgQZjTV6Gc6wHYKPn3o6O9X0O5bfycnMeu0q4AJEg3KpC0SZ1qAqOvsoiZ74Ock dw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yu95uys1k-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 20 Mar 2020 14:44:18 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AC9CC100034;
- Fri, 20 Mar 2020 14:44:17 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9CE2A2AF351;
- Fri, 20 Mar 2020 14:44:17 +0100 (CET)
-Received: from localhost (10.75.127.49) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 20 Mar 2020 14:44:17
- +0100
-From: Alain Volmat <alain.volmat@st.com>
-To: <broonie@kernel.org>, <amelie.delaunay@st.com>
-Subject: [PATCH] spi: stm32: Fix comments compilation warnings
-Date: Fri, 20 Mar 2020 14:44:17 +0100
-Message-ID: <1584711857-9162-1-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jFHxw-0003Nz-1K
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:45:38 +0000
+Received: by mail-lj1-x243.google.com with SMTP id d23so6397199ljg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Mar 2020 06:45:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Dhev12vgplB0YGPEx4Uruvjf1kUwXHqE9D1Ta1+i8vc=;
+ b=RHuPFZ0By7Ocjqg0xJ137qu2BhNeFIluwAlqvDjoCWiUFCANyfPo/DXo6N7s0izeEv
+ rGNNiqF1nbSD/bWQGoqQ0Du8B/OP+0ZFkOlsnHhyh9Gm4UhNNNkm6MBBgOHo+svFLfps
+ PerY3tm6F9ut4TsS1kFuFO16G9JDi0Jljh2Y8iflRcG2KfrKUVQL6ub8UdIp4t0+X8D5
+ VJVB8b99nmDtsZE/yThHYVWeG03DgWBd3xDPXOkonKvBxXgl/iY9pmhojZXc68OO6Jmo
+ N8vU2/mkJ1ugWHiVZvzggi10tLJnjP0afQI2qqqawmwoDJQP2+xo4yqouRk2xTbVAiEo
+ 4bPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Dhev12vgplB0YGPEx4Uruvjf1kUwXHqE9D1Ta1+i8vc=;
+ b=kE7Tq2JoPTxC+7VNhdWxaq8Czsi0nOImYHRdsCg2bnGzWttJSrYuXLkFISfaUPKIia
+ uIXz/h6yZAz4M8zb3hxfK6ePjhlPg/UnvLhW9vsDRbbGeVbpcoHHXrlwhG4E6vQK6dbq
+ RE3fFhCg5u4mnOHHluOKPrhWtBbUc+D367+EkD8vo0vlqdRIydy/IyhzB70PrWuXNDUP
+ hsaVJolxhXAOnWvbHOspzPDChPPZQKmMQ6jN+mcmDWbRFvi7zS7S8MKO4jKurSubNvbM
+ JzJgsUusrnOTnKrq4QTjMdhuhi32ZeMfeN0B/rhNEQVrxy7faoa86lF8lwRXV9PgDgKz
+ jPrA==
+X-Gm-Message-State: ANhLgQ2hzUTZ6VltJDKT9RXJjcCsarYhlv3x+kXDZi4phT6ljrTvwqZJ
+ CpMJGusxUif3Q2QvsD1NMMWe8dX4KfRuNw==
+X-Google-Smtp-Source: ADFU+vuOWEFVG0gP0Elps6dSYnypfg2BpwEqEMPnvtzDEJ3aXMvLcW1YXcAAOXoOYo5VB6AyB+rNkg==
+X-Received: by 2002:a2e:9e16:: with SMTP id e22mr5744206ljk.220.1584711933927; 
+ Fri, 20 Mar 2020 06:45:33 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id t12sm3372135ljc.69.2020.03.20.06.45.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Mar 2020 06:45:33 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2 v3] bus: Add DT bindings for Integrator/AP logic modules
+Date: Fri, 20 Mar 2020 14:45:24 +0100
+Message-Id: <20200320134524.52140-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-20_04:2020-03-20,
- 2020-03-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_064424_824498_59EFDFF6 
-X-CRM114-Status: GOOD (  18.15  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200320_064536_662832_8FD4A13F 
+X-CRM114-Status: GOOD (  14.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,256 +94,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, alain.volmat@st.com, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix all functions and structure descriptions to have the driver
-warning free when built with W=1.
+This adds YAML device tree bindings for the Integrator/AP
+logic modules. These are plug-in tiles used typically for
+FPGA prototyping.
 
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
+Cc: devicetree@vger.kernel.org
+Cc: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/spi/spi-stm32.c | 62 +++++++++++++++++++++++++++++++++++--------------
- 1 file changed, 45 insertions(+), 17 deletions(-)
+ChangeLog v2->v3:
+- Put proper ranges around the addresses managed by the
+  LM bus, 0xc0000000-0xffffffff as
+  <0xc0000000 0xc0000000 0x40000000>
+- Put unit name on the first LM bus bus@c0000000 in the
+  example in the bindings.
+- Drop leading zeroes in the unit names of the devices
+  in the example.
+ChangeLog v1->v2:
+- Fix Logical->Logic spelling error
+- Set generic names for bus and serial
+- Just map the addresses 1:1 and use empty ranges, as the
+  LM's don't really translate the address.
+- Provide proper DMA ranges: the LM modules see the RAM at
+  the system-wide alias @80000000 rather than 1:1.
+- Drop the reg from the bus node (we just need the ranges)
+- Make the regexp for the bus node such that @address is
+  optional, as we don't require any reg on the node
+---
+ .../bindings/bus/arm,integrator-ap-lm.yaml    | 83 +++++++++++++++++++
+ 1 file changed, 83 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
 
-diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
-index e041f9c4ec47..44ac6eb3298d 100644
---- a/drivers/spi/spi-stm32.c
-+++ b/drivers/spi/spi-stm32.c
-@@ -175,7 +175,7 @@
- #define SPI_DMA_MIN_BYTES	16
- 
- /**
-- * stm32_spi_reg - stm32 SPI register & bitfield desc
-+ * struct stm32_spi_reg - stm32 SPI register & bitfield desc
-  * @reg:		register offset
-  * @mask:		bitfield mask
-  * @shift:		left shift
-@@ -187,16 +187,16 @@ struct stm32_spi_reg {
- };
- 
- /**
-- * stm32_spi_regspec - stm32 registers definition, compatible dependent data
-- * en: enable register and SPI enable bit
-- * dma_rx_en: SPI DMA RX enable register end SPI DMA RX enable bit
-- * dma_tx_en: SPI DMA TX enable register end SPI DMA TX enable bit
-- * cpol: clock polarity register and polarity bit
-- * cpha: clock phase register and phase bit
-- * lsb_first: LSB transmitted first register and bit
-- * br: baud rate register and bitfields
-- * rx: SPI RX data register
-- * tx: SPI TX data register
-+ * struct stm32_spi_regspec - stm32 registers definition, compatible dependent data
-+ * @en: enable register and SPI enable bit
-+ * @dma_rx_en: SPI DMA RX enable register end SPI DMA RX enable bit
-+ * @dma_tx_en: SPI DMA TX enable register end SPI DMA TX enable bit
-+ * @cpol: clock polarity register and polarity bit
-+ * @cpha: clock phase register and phase bit
-+ * @lsb_first: LSB transmitted first register and bit
-+ * @br: baud rate register and bitfields
-+ * @rx: SPI RX data register
-+ * @tx: SPI TX data register
-  */
- struct stm32_spi_regspec {
- 	const struct stm32_spi_reg en;
-@@ -213,7 +213,7 @@ struct stm32_spi_regspec {
- struct stm32_spi;
- 
- /**
-- * stm32_spi_cfg - stm32 compatible configuration data
-+ * struct stm32_spi_cfg - stm32 compatible configuration data
-  * @regs: registers descriptions
-  * @get_fifo_size: routine to get fifo size
-  * @get_bpw_mask: routine to get bits per word mask
-@@ -223,13 +223,13 @@ struct stm32_spi;
-  * @set_mode: routine to configure registers to desired mode
-  * @set_data_idleness: optional routine to configure registers to desired idle
-  * time between frames (if driver has this functionality)
-- * set_number_of_data: optional routine to configure registers to desired
-+ * @set_number_of_data: optional routine to configure registers to desired
-  * number of data (if driver has this functionality)
-  * @can_dma: routine to determine if the transfer is eligible for DMA use
-  * @transfer_one_dma_start: routine to start transfer a single spi_transfer
-  * using DMA
-- * @dma_rx cb: routine to call after DMA RX channel operation is complete
-- * @dma_tx cb: routine to call after DMA TX channel operation is complete
-+ * @dma_rx_cb: routine to call after DMA RX channel operation is complete
-+ * @dma_tx_cb: routine to call after DMA TX channel operation is complete
-  * @transfer_one_irq: routine to configure interrupts for driver
-  * @irq_handler_event: Interrupt handler for SPI controller events
-  * @irq_handler_thread: thread of interrupt handler for SPI controller
-@@ -587,6 +587,7 @@ static void stm32f4_spi_read_rx(struct stm32_spi *spi)
- /**
-  * stm32h7_spi_read_rxfifo - Read bytes in Receive Data Register
-  * @spi: pointer to the spi controller data structure
-+ * @flush: boolean indicating that FIFO should be flushed
-  *
-  * Write in rx_buf depends on remaining bytes to avoid to write beyond
-  * rx_buf end.
-@@ -756,6 +757,9 @@ static void stm32h7_spi_disable(struct stm32_spi *spi)
- 
- /**
-  * stm32_spi_can_dma - Determine if the transfer is eligible for DMA use
-+ * @master: controller master interface
-+ * @spi_dev: pointer to the spi device
-+ * @transfer: pointer to spi transfer
-  *
-  * If driver has fifo and the current transfer size is greater than fifo size,
-  * use DMA. Otherwise use DMA for transfer longer than defined DMA min bytes.
-@@ -974,6 +978,8 @@ static irqreturn_t stm32h7_spi_irq_thread(int irq, void *dev_id)
- 
- /**
-  * stm32_spi_prepare_msg - set up the controller to transfer a single message
-+ * @master: controller master interface
-+ * @msg: pointer to spi message
-  */
- static int stm32_spi_prepare_msg(struct spi_master *master,
- 				 struct spi_message *msg)
-@@ -1026,6 +1032,7 @@ static int stm32_spi_prepare_msg(struct spi_master *master,
- 
- /**
-  * stm32f4_spi_dma_tx_cb - dma callback
-+ * @data: pointer to the spi controller data structure
-  *
-  * DMA callback is called when the transfer is complete for DMA TX channel.
-  */
-@@ -1041,6 +1048,7 @@ static void stm32f4_spi_dma_tx_cb(void *data)
- 
- /**
-  * stm32f4_spi_dma_rx_cb - dma callback
-+ * @data: pointer to the spi controller data structure
-  *
-  * DMA callback is called when the transfer is complete for DMA RX channel.
-  */
-@@ -1054,6 +1062,7 @@ static void stm32f4_spi_dma_rx_cb(void *data)
- 
- /**
-  * stm32h7_spi_dma_cb - dma callback
-+ * @data: pointer to the spi controller data structure
-  *
-  * DMA callback is called when the transfer is complete or when an error
-  * occurs. If the transfer is complete, EOT flag is raised.
-@@ -1079,6 +1088,9 @@ static void stm32h7_spi_dma_cb(void *data)
- /**
-  * stm32_spi_dma_config - configure dma slave channel depending on current
-  *			  transfer bits_per_word.
-+ * @spi: pointer to the spi controller data structure
-+ * @dma_conf: pointer to the dma_slave_config structure
-+ * @dir: direction of the dma transfer
-  */
- static void stm32_spi_dma_config(struct stm32_spi *spi,
- 				 struct dma_slave_config *dma_conf,
-@@ -1126,6 +1138,7 @@ static void stm32_spi_dma_config(struct stm32_spi *spi,
- /**
-  * stm32f4_spi_transfer_one_irq - transfer a single spi_transfer using
-  *				  interrupts
-+ * @spi: pointer to the spi controller data structure
-  *
-  * It must returns 0 if the transfer is finished or 1 if the transfer is still
-  * in progress.
-@@ -1166,6 +1179,7 @@ static int stm32f4_spi_transfer_one_irq(struct stm32_spi *spi)
- /**
-  * stm32h7_spi_transfer_one_irq - transfer a single spi_transfer using
-  *				  interrupts
-+ * @spi: pointer to the spi controller data structure
-  *
-  * It must returns 0 if the transfer is finished or 1 if the transfer is still
-  * in progress.
-@@ -1207,6 +1221,7 @@ static int stm32h7_spi_transfer_one_irq(struct stm32_spi *spi)
- /**
-  * stm32f4_spi_transfer_one_dma_start - Set SPI driver registers to start
-  *					transfer using DMA
-+ * @spi: pointer to the spi controller data structure
-  */
- static void stm32f4_spi_transfer_one_dma_start(struct stm32_spi *spi)
- {
-@@ -1227,6 +1242,7 @@ static void stm32f4_spi_transfer_one_dma_start(struct stm32_spi *spi)
- /**
-  * stm32h7_spi_transfer_one_dma_start - Set SPI driver registers to start
-  *					transfer using DMA
-+ * @spi: pointer to the spi controller data structure
-  */
- static void stm32h7_spi_transfer_one_dma_start(struct stm32_spi *spi)
- {
-@@ -1243,6 +1259,8 @@ static void stm32h7_spi_transfer_one_dma_start(struct stm32_spi *spi)
- 
- /**
-  * stm32_spi_transfer_one_dma - transfer a single spi_transfer using DMA
-+ * @spi: pointer to the spi controller data structure
-+ * @xfer: pointer to the spi_transfer structure
-  *
-  * It must returns 0 if the transfer is finished or 1 if the transfer is still
-  * in progress.
-@@ -1405,7 +1423,7 @@ static void stm32_spi_set_mbr(struct stm32_spi *spi, u32 mbrdiv)
- /**
-  * stm32_spi_communication_type - return transfer communication type
-  * @spi_dev: pointer to the spi device
-- * transfer: pointer to spi transfer
-+ * @transfer: pointer to spi transfer
-  */
- static unsigned int stm32_spi_communication_type(struct spi_device *spi_dev,
- 						 struct spi_transfer *transfer)
-@@ -1522,7 +1540,7 @@ static void stm32h7_spi_data_idleness(struct stm32_spi *spi, u32 len)
- /**
-  * stm32h7_spi_number_of_data - configure number of data at current transfer
-  * @spi: pointer to the spi controller data structure
-- * @len: transfer length
-+ * @nb_words: transfer length (in words)
-  */
- static int stm32h7_spi_number_of_data(struct stm32_spi *spi, u32 nb_words)
- {
-@@ -1546,6 +1564,9 @@ static int stm32h7_spi_number_of_data(struct stm32_spi *spi, u32 nb_words)
-  * stm32_spi_transfer_one_setup - common setup to transfer a single
-  *				  spi_transfer either using DMA or
-  *				  interrupts.
-+ * @spi: pointer to the spi controller data structure
-+ * @spi_dev: pointer to the spi device
-+ * @transfer: pointer to spi transfer
-  */
- static int stm32_spi_transfer_one_setup(struct stm32_spi *spi,
- 					struct spi_device *spi_dev,
-@@ -1625,6 +1646,9 @@ static int stm32_spi_transfer_one_setup(struct stm32_spi *spi,
- 
- /**
-  * stm32_spi_transfer_one - transfer a single spi_transfer
-+ * @master: controller master interface
-+ * @spi_dev: pointer to the spi device
-+ * @transfer: pointer to spi transfer
-  *
-  * It must return 0 if the transfer is finished or 1 if the transfer is still
-  * in progress.
-@@ -1658,6 +1682,8 @@ static int stm32_spi_transfer_one(struct spi_master *master,
- 
- /**
-  * stm32_spi_unprepare_msg - relax the hardware
-+ * @master: controller master interface
-+ * @msg: pointer to the spi message
-  */
- static int stm32_spi_unprepare_msg(struct spi_master *master,
- 				   struct spi_message *msg)
-@@ -1671,6 +1697,7 @@ static int stm32_spi_unprepare_msg(struct spi_master *master,
- 
- /**
-  * stm32f4_spi_config - Configure SPI controller as SPI master
-+ * @spi: pointer to the spi controller data structure
-  */
- static int stm32f4_spi_config(struct stm32_spi *spi)
- {
-@@ -1701,6 +1728,7 @@ static int stm32f4_spi_config(struct stm32_spi *spi)
- 
- /**
-  * stm32h7_spi_config - Configure SPI controller as SPI master
-+ * @spi: pointer to the spi controller data structure
-  */
- static int stm32h7_spi_config(struct stm32_spi *spi)
- {
+diff --git a/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+new file mode 100644
+index 000000000000..47227427c1c0
+--- /dev/null
++++ b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+@@ -0,0 +1,83 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/arm,integrator-ap-lm.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Integrator/AP Logic Module extension bus
++
++maintainers:
++  - Linus Walleij <linusw@kernel.org>
++
++description: The Integrator/AP is a prototyping platform and as such has a
++  site for stacking up to four logic modules (LM) designed specifically for
++  use with this platform. A special system controller register can be read to
++  determine if a logic module is connected at index 0, 1, 2 or 3. The logic
++  module connector is described in this binding. The logic modules per se
++  then have their own specific per-module bindings and they will be described
++  as subnodes under this logic module extension bus.
++
++properties:
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 1
++
++  compatible:
++    items:
++      - const: arm,integrator-ap-lm
++
++  ranges: true
++  dma-ranges: true
++
++patternProperties:
++  "^bus(@[0-9a-f]*)?$":
++    description: Nodes on the Logic Module bus represent logic modules
++      and are named with bus. The first module is at 0xc0000000, the second
++      at 0xd0000000 and so on until the top of the memory of the system at
++      0xffffffff. All information about the memory used by the module is
++      in ranges and dma-ranges.
++    type: object
++
++    required:
++      - compatible
++
++required:
++  - compatible
++
++examples:
++  - |
++    bus@c0000000 {
++      compatible = "arm,integrator-ap-lm";
++      #address-cells = <1>;
++      #size-cells = <1>;
++      ranges = <0xc0000000 0xc0000000 0x40000000>;
++      dma-ranges;
++
++      bus@c0000000 {
++        compatible = "simple-bus";
++        ranges = <0x00000000 0xc0000000 0x10000000>;
++        /* The Logic Modules sees the Core Module 0 RAM @80000000 */
++        dma-ranges = <0x00000000 0x80000000 0x10000000>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++
++        serial@100000 {
++          compatible = "arm,pl011", "arm,primecell";
++          reg = <0x00100000 0x1000>;
++          interrupts-extended = <&impd1_vic 1>;
++        };
++
++        impd1_vic: interrupt-controller@3000000 {
++          compatible = "arm,pl192-vic";
++          interrupt-controller;
++          #interrupt-cells = <1>;
++          reg = <0x03000000 0x1000>;
++          valid-mask = <0x00000bff>;
++          interrupts-extended = <&pic 9>;
++        };
++      };
++    };
++
++additionalProperties: false
 -- 
-2.7.4
+2.24.1
 
 
 _______________________________________________
