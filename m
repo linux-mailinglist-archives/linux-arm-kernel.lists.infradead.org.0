@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72A6818D235
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 15:59:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60C7D18D238
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 16:00:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+LvWYY6fGWwcWbb6QzMsRsiQgOTzrwrf2XRjaYBLBOg=; b=HMVg9HxRZnkvhS
-	bIcwrHAfS0sAj+l9g6rrJFV4RjON5fwh0pbhoIizLjTsoebH/YrA5gNcF9WGCMJ8qpl/j/C7hq9M+
-	CTc43jRZ3IOxGyovEY8NYE0BkU9iJ6pbI/y+sEnC2gXKsT3aR/YU+Y6XgDtjR7GXNuTNFRHnG2iiV
-	E88jzZ+e2xQygIWmeQgxkSxa+p2zhur9FVseuUGCzsisxJ04a7CH+uRYvrsoKL5lbwu8vWdEcaAuc
-	L2xqr9yKJ/P3sVZElk9KdFSBWzcIIp0yFFxrCqpPHXP2zhN+K63YZazCjpx1QIVg4tX9/U6juex85
-	4KohE2e+Z1L3g8ezjGtA==;
+	List-Owner; bh=9oRNwpHfCp/NPZxqP52Rc4tLXNsV2EHUe1bB0GExeRo=; b=NUXTrabpQQPfhS
+	MAJ+u4mfO97t/UeTO35ed8nOvJSGM2esVQbIsqP4pG4UBIBlx+Uo29/qPD1DXdAfcHnrWYwxKMVjc
+	d4pcFqu6iYzSkGuHZpMQnm6UXrDFgGtfl6Uc5zo5g4Pqnuf3pWAqdn5B81GwU5ZHQ64xBanQxQCvh
+	JJweApc7549WYnOnYDOPfx+jG+FKjkgRHJiT/HhMJ9l/CcxY2qFqOMsHh0au7Nzy6EKEUr7NPgucc
+	wopNs5WL+wS2AjMNaXGcFTkaNK/mPHN5UPqwliI6aeI3c+sI+TSegq785nKOK6k/eJDQN/9AZ3oZo
+	3WAo9q8q74SMRc6n/xaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFJ7n-000264-9y; Fri, 20 Mar 2020 14:59:51 +0000
+	id 1jFJ83-0002Mh-5Y; Fri, 20 Mar 2020 15:00:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFJ3f-0007Ai-Kj
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 14:55:37 +0000
+ id 1jFJ3i-0007Di-LN
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 14:55:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D4921FB;
- Fri, 20 Mar 2020 07:55:35 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38FDF7FA;
+ Fri, 20 Mar 2020 07:55:38 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BAC1E3F792;
- Fri, 20 Mar 2020 07:55:31 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 436313F792;
+ Fri, 20 Mar 2020 07:55:35 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v5 16/26] scripts: Fix the inclusion order in modpost
-Date: Fri, 20 Mar 2020 14:53:41 +0000
-Message-Id: <20200320145351.32292-17-vincenzo.frascino@arm.com>
+Subject: [PATCH v5 17/26] linux/elfnote.h: Replace elf.h with UAPI equivalent
+Date: Fri, 20 Mar 2020 14:53:42 +0000
+Message-Id: <20200320145351.32292-18-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200320145351.32292-1-vincenzo.frascino@arm.com>
 References: <20200320145351.32292-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_075535_755109_4AAAB68D 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20200320_075538_766793_2114E260 
+X-CRM114-Status: GOOD (  12.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,73 +65,47 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Peter Collingbourne <pcc@google.com>, Thomas Gleixner <tglx@linutronix.de>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- kbuild test robot <lkp@intel.com>, Marc Zyngier <maz@kernel.org>,
- Masahiro Yamada <masahiroy@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Peter Collingbourne <pcc@google.com>, Michal Marek <michal.lkml@markovi.net>,
- Andrei Vagin <avagin@openvz.org>, Stephen Boyd <sboyd@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
+ Andrei Vagin <avagin@openvz.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the process of creating the source file of a module modpost injects a
-set of includes that are not required if the compilation unit is
-statically built into the kernel.
+The vDSO library should only include the necessary headers required for
+a userspace library (UAPI and a minimal set of kernel headers). To make
+this possible it is necessary to isolate from the kernel headers the
+common parts that are strictly necessary to build the library.
 
-The order of inclusion of the headers can cause redefinition problems
-(e.g.):
+Replace linux/elf.h with UAPI equivalent in elfnote.h to make the header
+suitable for vDSO inclusion.
 
-   In file included from include/linux/elf.h:5:0,
-                    from include/linux/module.h:18,
-                    from crypto/arc4.mod.c:2:
->> arch/parisc/include/asm/elf.h:324:0: warning: "ELF_OSABI" redefined
-    #define ELF_OSABI  ELFOSABI_LINUX
-
-   In file included from include/linux/elfnote.h:62:0,
-                    from include/linux/build-salt.h:4,
-                    from crypto/arc4.mod.c:1:
-   include/uapi/linux/elf.h:363:0: note: this is the location of
-   the previous definition
-    #define ELF_OSABI ELFOSABI_NONE
-
-The issue was exposed during the development of the series [1].
-
-[1] https://lore.kernel.org/lkml/20200306133242.26279-1-vincenzo.frascino@arm.com/
-
-Reported-by: kbuild test robot <lkp@intel.com>
-Cc: Masahiro Yamada <masahiroy@kernel.org>
-Cc: Michal Marek <michal.lkml@markovi.net>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- scripts/mod/modpost.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ include/linux/elfnote.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/scripts/mod/modpost.c b/scripts/mod/modpost.c
-index 7edfdb2f4497..0f354b1ee2aa 100644
---- a/scripts/mod/modpost.c
-+++ b/scripts/mod/modpost.c
-@@ -2251,8 +2251,12 @@ static int check_modname_len(struct module *mod)
-  **/
- static void add_header(struct buffer *b, struct module *mod)
- {
--	buf_printf(b, "#include <linux/build-salt.h>\n");
- 	buf_printf(b, "#include <linux/module.h>\n");
-+	/*
-+	 * Include build-salt.h after module.h in order to
-+	 * inherit the definitions.
-+	 */
-+	buf_printf(b, "#include <linux/build-salt.h>\n");
- 	buf_printf(b, "#include <linux/vermagic.h>\n");
- 	buf_printf(b, "#include <linux/compiler.h>\n");
- 	buf_printf(b, "\n");
+diff --git a/include/linux/elfnote.h b/include/linux/elfnote.h
+index f236f5b931b2..594d4e78654f 100644
+--- a/include/linux/elfnote.h
++++ b/include/linux/elfnote.h
+@@ -59,7 +59,7 @@
+ 	ELFNOTE_END
+ 
+ #else	/* !__ASSEMBLER__ */
+-#include <linux/elf.h>
++#include <uapi/linux/elf.h>
+ /*
+  * Use an anonymous structure which matches the shape of
+  * Elf{32,64}_Nhdr, but includes the name and desc data.  The size and
 -- 
 2.25.1
 
