@@ -2,77 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 294BA18CCFB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 12:27:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3739718CCF3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 12:26:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mZpn8bzkVMIfq9dj1si/fSq3otVMafDyhuHevalpZHY=; b=eGSnNI9vxrYWOx
-	ZBTPUYLv86+xMlxaQKZTFv8gVrLKLg3ZX2LuxbUVagqLazZ1iQzIgdMV01ejSmcbom/ChuAVfgZoy
-	jJcjb3wrPu3nUeQ79ZHs9Nw1hjLB7AVjqKQ1saDZMFkZj0v+OWMyAiwbWv4j0GVJJC+64+ZzqSol+
-	VI7gbm/40MuKUXyJ76YRqVnkNINq95JUtgXRHIDTV2PTZCIohp/d4U8ENOgpwNtkAo+DugchUxqfU
-	9c2VpQTy4cfdg76pZAHuzn/xPl1KT3p18bB6ggisiDDy1DTzKD4pDl9PoSfjj5L6i3vCa3q4MxJtY
-	hXP6ABTM2tsEXYX9URlA==;
+	List-Owner; bh=ZFOZ2sfNqHrXg/Rw+/Fm4F3OrwW52NBFKM7wd/R6I9s=; b=pSi3cj1Ecku84q
+	e6R6a9ed+iyjDCxxTXJJzJtPFLzzer/4NdQ9cfrW99kmtbgBwXOPByqaqzLgGHESO2GLiRy+WEBZt
+	7K5DotaSEwPGwgzZwZ2CKG8Qz5DV3VKAC+iVEg7935i+WQP+gM11GX2Gb0oN9aGVhMVQ841ZntPVp
+	kQfR6EVaBkbQwX08uWV24pqgO9Nr9Xs3EYSpvJ/lNAk3c3q/8j5jSsP2XL1X1ZaT/XAPBwrgdolSy
+	nuwa7dD6agzTFFZquWW7pHkLpBvOgyfirUxcn1icw0zHtPuXO55/Tx7UrmPJ9i9z7Jg/qEqrBa0M9
+	/l+qk2OEVYINVwebU01Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFFo7-0008Mj-Jl; Fri, 20 Mar 2020 11:27:19 +0000
-Received: from web0081.zxcs.nl ([2a06:2ec0:1::81])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFFnz-0008La-BY
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 11:27:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=pascalroeleven.nl; s=x; h=Content-Transfer-Encoding:MIME-Version:References
- :In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=46bymtTeZdIRfz8ns1mclDd2aTpPZb8MaF2yz0v69wI=; b=hLaCnl1WS/ptAg34FJWrRB19vY
- zi2p3dNV+kgs+8f54SROCdvfTlJWqpog8YgVURNvjj3U/7Pw4NufZlDuAcjpE+d7Up8CLxxNmiY+x
- d5mu2uIExmv9JIE9NjkPMU+vpaWw8J+2acxCWv0qh9sjs1gWpGGX0oLqQwnK8VdGLGk5v5Z9ASGrZ
- 6RFJ8DWbAv0D2v43kIpkiMwjsXesJ0W7CZI6dEJGeZUYrnjwZzfRgPMABhgE0kDjtMVOQJrtE/3Fm
- bN5td0rcZPiZfsNVO3qfatn+OGCQtJ+YprIFjBqShKDvnzeQ4rLlzMy1mwT3TplIHC9a3TZt3q86Q
- FTcBOZvw==;
-Received: from ip565b1bc7.direct-adsl.nl ([86.91.27.199]:57936
- helo=localhost.localdomain)
- by web0081.zxcs.nl with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92.3) (envelope-from <dev@pascalroeleven.nl>)
- id 1jFFnt-0011ci-Ml; Fri, 20 Mar 2020 12:27:05 +0100
-From: Pascal Roeleven <dev@pascalroeleven.nl>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Mark Brown <broonie@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-Subject: [PATCH v2 5/5] ARM: dts: sun4i: Add support for Topwise A721 tablet
-Date: Fri, 20 Mar 2020 12:21:36 +0100
-Message-Id: <20200320112205.7100-6-dev@pascalroeleven.nl>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200320112205.7100-1-dev@pascalroeleven.nl>
-References: <20200320112205.7100-1-dev@pascalroeleven.nl>
+	id 1jFFml-0007Xf-S5; Fri, 20 Mar 2020 11:25:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFFmc-0007X9-Sp
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 11:25:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F046231B;
+ Fri, 20 Mar 2020 04:25:45 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E2EE3F85E;
+ Fri, 20 Mar 2020 04:25:44 -0700 (PDT)
+Date: Fri, 20 Mar 2020 11:25:38 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
+Subject: Re: [PATCH] driver/perf: Add PMU driver for the ARM DMC-620 memory
+ controller.
+Message-ID: <20200320105315.GA35932@C02TD0UTHF1T.local>
+References: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
+ <20200319151646.GC4876@lakrids.cambridge.arm.com>
+ <23AD5E45-15E3-4487-9B0D-0D9554DD9DE8@amperemail.onmicrosoft.com>
 MIME-Version: 1.0
-X-Authenticated-Id: dev@pascalroeleven.nl
+Content-Disposition: inline
+In-Reply-To: <23AD5E45-15E3-4487-9B0D-0D9554DD9DE8@amperemail.onmicrosoft.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_042711_535663_E80DB602 
-X-CRM114-Status: GOOD (  13.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200320_042547_014835_DF28E4D5 
+X-CRM114-Status: GOOD (  25.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,290 +65,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, Pascal Roeleven <dev@pascalroeleven.nl>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tuan Phan <tuanphan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Topwise A721/LY-F1 tablet is a tablet sold around 2012 under
-different brands. The mainboard mentions A721 clearly, so this tablet
-is best known under this name.
-
-Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
----
- arch/arm/boot/dts/Makefile                   |   3 +-
- arch/arm/boot/dts/sun4i-a10-topwise-a721.dts | 242 +++++++++++++++++++
- 2 files changed, 244 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/sun4i-a10-topwise-a721.dts
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 78f144e33..6e6141e00 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1040,7 +1040,8 @@ dtb-$(CONFIG_MACH_SUN4I) += \
- 	sun4i-a10-olinuxino-lime.dtb \
- 	sun4i-a10-pcduino.dtb \
- 	sun4i-a10-pcduino2.dtb \
--	sun4i-a10-pov-protab2-ips9.dtb
-+	sun4i-a10-pov-protab2-ips9.dtb \
-+	sun4i-a10-topwise-a721.dtb
- dtb-$(CONFIG_MACH_SUN5I) += \
- 	sun5i-a10s-auxtek-t003.dtb \
- 	sun5i-a10s-auxtek-t004.dtb \
-diff --git a/arch/arm/boot/dts/sun4i-a10-topwise-a721.dts b/arch/arm/boot/dts/sun4i-a10-topwise-a721.dts
-new file mode 100644
-index 000000000..936171d30
---- /dev/null
-+++ b/arch/arm/boot/dts/sun4i-a10-topwise-a721.dts
-@@ -0,0 +1,242 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2020 Pascal Roeleven <dev@pascalroeleven.nl>
-+ */
-+
-+/dts-v1/;
-+#include "sun4i-a10.dtsi"
-+#include "sunxi-common-regulators.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/pwm/pwm.h>
-+
-+/ {
-+	model = "Topwise A721";
-+	compatible = "topwise,a721", "allwinner,sun4i-a10";
-+
-+	aliases {
-+		serial0 = &uart0;
-+	};
-+
-+	backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm 0 100000 PWM_POLARITY_INVERTED>;
-+		power-supply = <&reg_vbat>;
-+		enable-gpios = <&pio 7 7 GPIO_ACTIVE_HIGH>; /* PH7 */
-+		brightness-levels = <0 30 40 50 60 70 80 90 100>;
-+		default-brightness-level = <8>;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	panel: panel {
-+		compatible = "starry,kr070pe2t";
-+		backlight = <&backlight>;
-+		power-supply = <&reg_lcd_power>;
-+
-+		port {
-+			panel_input: endpoint {
-+				remote-endpoint = <&tcon0_out_panel>;
-+			};
-+		};
-+	};
-+
-+	reg_lcd_power: reg-lcd-power {
-+		compatible = "regulator-fixed";
-+		regulator-name = "reg-lcd-power";
-+		gpio = <&pio 7 8 GPIO_ACTIVE_HIGH>; /* PH8 */
-+		enable-active-high;
-+	};
-+
-+	reg_vbat: reg-vbat {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vbat";
-+		regulator-min-microvolt = <3700000>;
-+		regulator-max-microvolt = <3700000>;
-+	};
-+
-+};
-+
-+&codec {
-+	status = "okay";
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
-+&de {
-+	status = "okay";
-+};
-+
-+&ehci0 {
-+	status = "okay";
-+};
-+
-+&ehci1 {
-+	status = "okay";
-+};
-+
-+&i2c0 {
-+	status = "okay";
-+
-+	axp209: pmic@34 {
-+		reg = <0x34>;
-+		interrupts = <0>;
-+	};
-+};
-+
-+#include "axp209.dtsi"
-+
-+&ac_power_supply {
-+	status = "okay";
-+};
-+
-+&battery_power_supply {
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	status = "okay";
-+
-+	mma7660: accelerometer@4c {
-+		compatible = "fsl,mma7660";
-+		reg = <0x4c>;
-+	};
-+};
-+
-+&i2c2 {
-+	status = "okay";
-+
-+	ft5406ee8: touchscreen@38 {
-+		compatible = "edt,edt-ft5406";
-+		reg = <0x38>;
-+		interrupt-parent = <&pio>;
-+		interrupts = <7 21 IRQ_TYPE_EDGE_FALLING>;
-+		touchscreen-size-x = <800>;
-+		touchscreen-size-y = <480>;
-+		vcc-supply = <&reg_vcc3v3>;
-+	};
-+};
-+
-+&lradc {
-+	vref-supply = <&reg_ldo2>;
-+	status = "okay";
-+
-+	button-vol-down {
-+		label = "Volume Down";
-+		linux,code = <KEY_VOLUMEDOWN>;
-+		channel = <0>;
-+		voltage = <761904>;
-+	};
-+
-+	button-vol-up {
-+		label = "Volume Up";
-+		linux,code = <KEY_VOLUMEUP>;
-+		channel = <0>;
-+		voltage = <571428>;
-+	};
-+};
-+
-+&mmc0 {
-+	vmmc-supply = <&reg_vcc3v3>;
-+	bus-width = <4>;
-+	cd-gpios = <&pio 7 1 GPIO_ACTIVE_LOW>; /* PH01 */
-+	status = "okay";
-+};
-+
-+&ohci0 {
-+	status = "okay";
-+};
-+
-+&ohci1 {
-+	status = "okay";
-+};
-+
-+&otg_sram {
-+	status = "okay";
-+};
-+
-+&pio {
-+	vcc-pb-supply = <&reg_vcc3v3>;
-+	vcc-pf-supply = <&reg_vcc3v3>;
-+	vcc-ph-supply = <&reg_vcc3v3>;
-+};
-+
-+&pwm {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pwm0_pin>;
-+	status = "okay";
-+};
-+
-+&reg_dcdc2 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1000000>;
-+	regulator-max-microvolt = <1400000>;
-+	regulator-name = "vdd-cpu";
-+};
-+
-+&reg_dcdc3 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1250000>;
-+	regulator-max-microvolt = <1250000>;
-+	regulator-name = "vdd-int-dll";
-+};
-+
-+&reg_ldo1 {
-+	regulator-name = "vdd-rtc";
-+};
-+
-+&reg_ldo2 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <3000000>;
-+	regulator-max-microvolt = <3000000>;
-+	regulator-name = "avcc";
-+};
-+
-+&reg_usb0_vbus {
-+	status = "okay";
-+};
-+
-+&reg_usb1_vbus {
-+	status = "okay";
-+};
-+
-+&reg_usb2_vbus {
-+	status = "okay";
-+};
-+
-+&tcon0_out {
-+	tcon0_out_panel: endpoint@0 {
-+		reg = <0>;
-+		remote-endpoint = <&panel_input>;
-+	};
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pb_pins>;
-+	status = "okay";
-+};
-+
-+&usb_otg {
-+	dr_mode = "otg";
-+	status = "okay";
-+};
-+
-+&usb_power_supply {
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	usb0_id_det-gpios = <&pio 7 4 GPIO_ACTIVE_HIGH>; /* PH4 */
-+	usb0_vbus_det-gpios = <&pio 7 5 GPIO_ACTIVE_HIGH>; /* PH5 */
-+	usb0_vbus-supply = <&reg_usb0_vbus>;
-+	usb1_vbus-supply = <&reg_usb1_vbus>;
-+	usb2_vbus-supply = <&reg_usb2_vbus>;
-+	status = "okay";
-+};
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBNYXIgMTksIDIwMjAgYXQgMTI6MDM6NDNQTSAtMDcwMCwgVHVhbiBQaGFuIHdyb3Rl
+Ogo+IEhpIE1hcmssCj4gUGxlYXNlIGZpbmQgbXkgY29tbWVudHMgYmVsb3cuCgpIaSBUdWFuLAoK
+QXMgV2lsbCBzYWlkLCAqcGxlYXNlKiBzZXQgdXAgYSBtb3JlIHVzdWFsIG1haWwgY2xpbmV0IGNv
+bmZpZ3VyYXRpb24gaWYKeW91IGNhbi4gVGhlIHJlcGx5IHN0eWxlICh3aXRoIGxpbmVzIHN0YXJ0
+aW5nIHdpdGggJz0+JykgaXMgdW51c3VhbCBhbmQKdmVyeSBwYWluZnVsIHRvIHNwb3QuCgo+ID4g
+T24gTWFyIDE5LCAyMDIwLCBhdCA4OjE2IEFNLCBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBh
+cm0uY29tPiB3cm90ZToKPiA+IAo+ID4gSGkgVHVhbiwKPiA+IAo+ID4gT24gVHVlLCBNYXIgMTcs
+IDIwMjAgYXQgMDU6Mjk6MzhQTSAtMDcwMCwgVHVhbiBQaGFuIHdyb3RlOgo+ID4+IERNQy02MjAg
+UE1VIHN1cHBvcnRzIHRvdGFsIDEwIGNvdW50ZXJzIHdoaWNoIGVhY2ggaXMKPiA+PiBpbmRlcGVu
+ZGVudGx5IHByb2dyYW1tYWJsZSB0byBkaWZmZXJlbnQgZXZlbnRzIGFuZCBjYW4KPiA+PiBiZSBz
+dGFydGVkIGFuZCBzdG9wcGVkIGluZGl2aWR1YWxseS4KPiA+IAo+ID4gTG9va2luZyBhdCB0aGUg
+VFJNIGZvciBETUMtNjIwLCB0aGUgUE1VIHJlZ2lzdGVycyBhcmUgbm90IGluIGEgc2VwYXJhdGUK
+PiA+IGZyYW1lIGZyb20gdGhlIG90aGVyIERNQyBjb250cm9sIHJlZ2lzdGVycywgYW5kIHN0YXJ0
+IGF0IG9mZnNldCAweEEwMAo+ID4gKEFLQSAyNTYwKS4gSSB3b3VsZCBnZW5lcmFsbHkgZXhwZWN0
+IHRoYXQgYWNjZXNzIHRvIHRoZSBETUMgY29udHJvbAo+ID4gcmVnaXN0ZXJzIHdhcyByZXN0cmlj
+dGVkIHRvIHRoZSBzZWN1cmUgd29ybGQ7IGlzIHRoYXQgbm90IHRoZSBjYXNlIG9uCj4gPiB5b3Vy
+IHBsYXRmb3JtPwo+ID4gCj4gPiBJIGFzayBiZWNhdXNlIGlmIHRob3NlIGFyZSBub3QgcmVzdHJp
+Y3RlZCwgdGhlIE5vcm1hbCB3b3JsZCBjb3VsZAo+ID4gcG90ZW50aWFsbHkgdW5kZXJtaW5lIHRo
+ZSBTZWN1cmUgd29ybGQgdGhyb3VnaCB0aGlzIChlLmcuIHBsYXlpbmcgd2l0aAo+ID4gdHJhaW5p
+bmcgc2V0dGluZ3MsIG1lc3Npbmcgd2l0aCB0aGUgcGh5c2ljYWwgbWVtb3J5IG1hcCwgaW5qZWN0
+aW5nIFJBUwo+ID4gZXJyb3JzKS4gSGF2ZSB5b3UgY29uc2lkZXJlZCB0aGlzPwo+ID0+IE9ubHkg
+UE1VIHJlZ2lzdGVycyBjYW4gYmUgYWNjZXNzZWQgd2l0aGluIG5vcm1hbCB3b3JsZC4gSSBvbmx5
+IHBhc3MKPiBQTVUgcmVnaXN0ZXJzIChvZmZzZXQgMHhBMDApIHRvIGtlcm5lbCBzbyBzaG91bGRu
+4oCZdCBiZSBwcm9ibGVtLgoKU3VyZSwgeW91IG9ubHkgKmRlc2NyaWJlKiB0aGF0IGluIHRoZSBB
+Q1BJIHRhYmxlcywgYnV0IEkgY2FuJ3Qgc2VlIGhvdwp0aGF0J3MgYWNjZXNzIGNvbnRyb2wgaXMg
+ZW5mb3JjZWQgaW4gdGhlIGhhcmR3YXJlLCBiZWNhdXNlIHRoZXNlCnJlZ2lzdGVycyBmYWxsIGlu
+IHRoZSBzYW1lIDRLIHBhZ2UgYXMgb3RoZXIgY29udHJvbCByZWdpc3RlcnMsIGFuZApBRkFJQ1Qg
+dGhlIElQIGRvZXNuJ3QgZGlzdGluZ3Vpc2ggUy9OUyBhY2Nlc3Nlcy4KCklmIHRoZSBTZWN1cmUg
+d29ybGQgb24geW91ciBwYXJ0IHVzZXMgRFJBTSAoaW5jbHVkaW5nIHRoZSBzZWN1cmUKcG9ydGlv
+bnMgb2YgSVBzIGxpa2UgU01NVXMpLCB5b3UgKm11c3QqIGVuc3VyZSB0aGF0IHRoZSBOb3JtYWwg
+d29ybGQKY2Fubm90IGFjY2VzcyB0aG9zZSBvdGhlciBjb250cm9sIHJlZ2lzdGVycywgb3IgaXQg
+Y2FuIGNvcnJ1cHQgU2VjdXJlCndvcmxkIHN0YXRlIGFuZCBlc2NhbGF0ZSBwcml2aWxlZ2UuCgpJ
+cyB0aGF0IG5vdCBhIGNvbmNlcm4gaGVyZT8KCj4gPj4gRE1DLTYyMCBQTVUgZGV2aWNlcyBhcmUg
+bmFtZWQgYXMgYXJtX2RtYzYyMF88dWlkPiB3aGVyZQo+ID4+IDx1aWQ+IGlzIHRoZSBVSUQgb2Yg
+RE1DLTYyMCBQTVUgQUNQSSBub2RlLiBDdXJyZW50bHksIGl0IG9ubHkKPiA+PiBzdXBwb3J0cyBB
+Q1BJLiBPdGhlciBwbGF0Zm9ybXMgZmVlbCBmcmVlIHRvIHRlc3QgYW5kIGFkZAo+ID4+IHN1cHBv
+cnQgZm9yIGRldmljZSB0cmVlLgo+ID4+IAo+ID4+IFVzYWdlIGV4YW1wbGU6Cj4gPj4gICNwZXJm
+IHN0YXQgLWUgYXJtX2RtYzYyMF8wL2Nsa19jeWNsZV9jb3VudC8gLUMgMAo+ID4+ICBHZXQgcGVy
+ZiBldmVudCBmb3IgY2xrX2N5Y2xlX2NvdW50IGNvdW50ZXIuCj4gPj4gCj4gPj4gICNwZXJmIHN0
+YXQgLWUgYXJtX2RtYzYyMF8wL2Nsa2RpdjJfYWxsb2NhdGUsbWFzaz0weDFmLG1hdGNoPTB4MmYs
+Cj4gPj4gIGluY3I9MixpbnZlcnQ9MS8gLUMgMAo+ID4+ICBUaGUgYWJvdmUgZXhhbXBsZSBzaG93
+cyBob3cgdG8gc3BlY2lmeSBtYXNrLCBtYXRjaCwgaW5jciwKPiA+PiAgaW52ZXJ0IHBhcmFtZXRl
+cnMgZm9yIGNsa2RpdjJfYWxsb2NhdGUgZXZlbnQuCj4gPiAKPiA+IFsuLi5dCj4gPiAKPiA+PiAr
+I2RlZmluZSBETUM2MjBfQ05UX01BWF9QRVJJT0QJCQkJMHhmZmZmZmZmZgo+ID4+ICsjZGVmaW5l
+IERNQzYyMF9QTVVfQ0xLRElWMl9NQVhfQ09VTlRFUlMJCQk4Cj4gPj4gKyNkZWZpbmUgRE1DNjIw
+X1BNVV9DTEtfTUFYX0NPVU5URVJTCQkJMgo+ID4+ICsjZGVmaW5lIERNQzYyMF9QTVVfTUFYX0NP
+VU5URVJTCQkJCVwKPiA+PiArCShETUM2MjBfUE1VX0NMS0RJVjJfTUFYX0NPVU5URVJTICsgRE1D
+NjIwX1BNVV9DTEtfTUFYX0NPVU5URVJTKQo+ID4+ICsKPiA+PiArI2RlZmluZSBETUM2MjBfUE1V
+X09WRVJGTE9XX1NUQVRVU19DTEtESVYyX09GRlNFVAk4Cj4gPiAKPiA+IFRoaXMgYXBwZWFycyB0
+byBiZSByZWxhdGl2ZSB0byAweEEwMC4gV2hhdCBleGFjdGx5IGRvZXMgeW91ciBBQ1BJCj4gPiBk
+ZXNjcmlwdGlvbiBwcm92aWRlPyBUaGUgd2hvbGUgc2V0IG9mIERNQyByZWdpc3RlcnMsIG9yIGp1
+c3QgdGhlIFBNVQo+ID4gcmVnaXN0ZXJzPwo+ID0+IEp1c3QgUE1VIHJlZ2lzdGVycyBmcm9tIDB4
+QTAwIHRvIDB4QkZGLgoKSSBkb24ndCBiZWxpZXZlIHRoYXQgaXMgY29ycmVjdDsgc2VlIGJlbG93
+IHcuci50LiB0aGUgQUNQSSBiaW5kaW5nLgoKPiA+PiArc3RhdGljIGludCBhcm1fZG1jNjIwX3Bt
+dV9kZXZfaW5pdChzdHJ1Y3QgYXJtX2RtYzYyMF9wbXUgKmRtYzYyMF9wbXUpCj4gPj4gK3sKPiA+
+PiArCXN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYgPSBkbWM2MjBfcG11LT5wZGV2Owo+ID4+
+ICsJaW50IHJldDsKPiA+PiArCj4gPj4gKwlyZXQgPSBkZXZtX3JlcXVlc3RfaXJxKCZwZGV2LT5k
+ZXYsIGRtYzYyMF9wbXUtPmlycSwKPiA+PiArCQkJCWFybV9kbWM2MjBfcG11X2hhbmRsZV9pcnEs
+Cj4gPj4gKwkJCQlJUlFGX1NIQVJFRCwKPiA+PiArCQkJCWRldl9uYW1lKCZwZGV2LT5kZXYpLCBk
+bWM2MjBfcG11KTsKPiA+IAo+ID4gVGhpcyBzaG91bGQgaGF2ZSBJUlFGX05PQkFMQU5DSU5HIHwg
+SVJRRl9OT19USFJFQUQuIEkgZG9uJ3QgdGhpbmsgd2UKPiA+IHNob3VsZCBoYXZlIElSUUZfU0hB
+UkVELgo+ID0+IEkgYWdyZWUgb24gaGF2aW5nIElSUUZfTk9CQUxBTkNJTkcgYW5kIElSUUZfTk9f
+VEhSRUFELiBCdXQKPiBJUlFGX1NIQVJFRCBpcyBuZWVkZWQuIEluIG91ciBwbGF0Zm9ybSBhbGwg
+RE1DNjIwcyBzaGFyZSBzYW1lIElSUXMgYW5kCj4gYW55IGNwdXMgY2FuIGFjY2VzcyB0aGUgcG11
+IHJlZ2lzdGVycy4KCkxpbnV4IG5lZWRzIHRvIGVuc3VyZSB0aGF0IHRoZSBzYW1lIGluc3RhbmNl
+IGlzIGNvbmNpc3RlbnRseSBhY2Nlc3NlZApmcm9tIHRoZSBzYW1lIENQVSwgYW5kIG5lZWRzIHRv
+IG1pZ3JhdGUgdGhlIElSUSB0byBoYW5kbGUgdGhhdC4gR2l2ZW4gd2UKZG8gdGhhdCBvbiBhIHBl
+ci1pbnN0YW5jZSBiYXNpcywgd2UgY2Fubm90IHNoYXJlIHRoZSBJUlEgd2l0aCBhbm90aGVyCmlu
+c3RhbmNlLgoKUGxlYXNlIGZlZWQgYmFjayB0byB5b3UgSFcgZGVzaWduZXJzIHRoYXQgbXV4aW5n
+IElSUXMgbGlrZSB0aGlzIGNhdXNlcwpzaWduaWZpY2FudCBwcm9ibGVtcyBmb3Igc29mdHdhcmUu
+Cgo+ID4gCj4gPiBbLi4uXQo+ID4gCj4gPj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgYWNwaV9kZXZp
+Y2VfaWQgYXJtX2RtYzYyMF9hY3BpX21hdGNoW10gPSB7Cj4gPj4gKwl7ICJBUk1IRDYyMCIsIDB9
+LAo+ID4+ICsJe30sCj4gPj4gK307Cj4gPiAKPiA+IEp1c3QgdG8gY2hlY2ssIHdhcyB0aGlzIElE
+IGFsbG9jYXRlZCBieSBBcm0sIG9yIGhhdmUgeW91IGFsbG9jYXRlZCBpdD8KPiA9PiBJRCB3YXMg
+YWxsb2NhdGVkIGJ5IEFSTS4gUGxlYXNlIHJlZmVyIHRvIAo+IGh0dHBzOi8vc3RhdGljLmRvY3Mu
+YXJtLmNvbS9kZW4wMDkzL2EvREVOMDA5M19BQ1BJX0FybV9Db21wb25lbnRzXzEuMC5wZGYgPGh0
+dHBzOi8vc3RhdGljLmRvY3MuYXJtLmNvbS9kZW4wMDkzL2EvREVOMDA5M19BQ1BJX0FybV9Db21w
+b25lbnRzXzEuMC5wZGY+CgpUaGFua3MgZm9yIHRoZSBsaW5rISBGb3IgdGhpcyBfSElELCB0aGUg
+ZG9jdW1lbnQgc2F5cyB0aGUgX0NSUyBjb250YWlucwphIFFXb3JkTWVtb3J5IEJhc2UgYWRkcmVz
+cywgd2hpY2ggdGhlIGZ1bGwgZGVzY3JpcHRpb24gaXM6Cgp8IEJhc2UgQWRkcmVzcyBvZiB0aGUg
+RE1DNjIwIGluIHRoZSBzeXN0ZW0gYWRkcmVzcyBtYXAKCi4uLiB3aGljaCB3b3VsZCBwcmVzdW1h
+Ymx5IG1lYW4gdGhlICplbnRpcmUqIHNldCBvZiBNTUlPIHJlZ2lzdGVycywgbm90Cmp1c3QgdGhl
+IFBNVSBwb3J0aW9uLiBUaGUgZXhhbXBsZSBmaXJtbHkgaGludHMgdGhhdCBpdCBpcyB0aGUgZW50
+aXJlIHNldApvZiBNTUlPIHJlZ2lzdGVyczoKCnwgSW4gdGhpcyBleGFtcGxlLCB0aGUgRE1DNjIw
+IHJlZ2lzdGVyIHNwYWNlIGlzIG1hcHBlZCB0byBhIDY0SyByYW5nZQp8IHRoYXQgYmVnaW5zIGF0
+IG9mZnNldCAweDgwQ0FGRTAwMDAgaW4gdGhlIHN5c3RlbSBhZGRyZXNzIHNwYWNlCgpUaGFua3Ms
+Ck1hcmsuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
