@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D1FE18D244
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 16:01:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F4DB18D248
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 16:02:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RU3RPrifpw3VHcqjQ0iJvyFmS9JoTt9lfFAvQ9hNu/Q=; b=dvO/+4QdbsiRUr
-	E4tSeUIhqaZ91wAuIwqHjICUldx4I9KpVfr0KIK0guNkVZUsMhk7qCIWXocheKEikivK6EJ8Z26Po
-	CposcYd7dqkI0Ltn1KiKKSTjGGCl4XCfqQHGh1g9uuM42kD/8Wwj6qAzv+0/+TrfyE+PGZ8xN4Scc
-	j5CBXErtlyZhf/M76MH20cBeEvmC1AVb9jGw1Eq+HNnpD36AiAmvXm9FNcLWFVGUf39ryErmv3tPl
-	GyH0BoJDhrtv60/jipPEWos6CX9PocBmsnfMrvPrpp4gh74BuFTjVQigNjnHMGZZOb7ZsLp1sruhR
-	jLy5vq9ymztrg1OR7DyA==;
+	List-Owner; bh=ufSX1UVS1VrXlFhQq+mG704faw56NLPttNJ381i4yxQ=; b=b8+3h2iuB46XX1
+	7jzbD4KJ/C9Ah4U8m+Ta/iWitjJbz9myiZcqnwnzgtWMQo1eg9BWyFK65C02Hs/feoJ18KtUIsg5j
+	NqHzYzAo1EOX2Lx3WMhOaonFlPltaJFZJxVz8NwW23CcWk/Di1RYvUf2jCSpGByLsFZsyjP95PDDl
+	Jer2HFOONJMMMobamqCXhO9H2trFeRpBSzumm6GgZTYal5XXbOBKJdhSD03srfw7IdfDA2xNrg/+t
+	3G/6OmACS2CEJauF5QmeILJZ4IF78eStLD9bVbEo9+JAmmoE8xjAz+ZFFZgVW1by+cC+XI36MZXxW
+	heDj7rDVPbYHwMQm3fkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFJ9b-00055R-Cc; Fri, 20 Mar 2020 15:01:43 +0000
+	id 1jFJ9r-0005K4-TE; Fri, 20 Mar 2020 15:01:59 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFJ45-0007Wb-8f
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 14:56:03 +0000
+ id 1jFJ48-0007ZK-7o
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 14:56:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 930187FA;
- Fri, 20 Mar 2020 07:56:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF4B71FB;
+ Fri, 20 Mar 2020 07:56:03 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9C8913F792;
- Fri, 20 Mar 2020 07:55:57 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C92783F792;
+ Fri, 20 Mar 2020 07:56:00 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
  linux-mips@vger.kernel.org, x86@kernel.org
-Subject: [PATCH v5 24/26] arm: vdso: Enable arm to use common headers
-Date: Fri, 20 Mar 2020 14:53:49 +0000
-Message-Id: <20200320145351.32292-25-vincenzo.frascino@arm.com>
+Subject: [PATCH v5 25/26] lib: vdso: Enable common headers
+Date: Fri, 20 Mar 2020 14:53:50 +0000
+Message-Id: <20200320145351.32292-26-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200320145351.32292-1-vincenzo.frascino@arm.com>
 References: <20200320145351.32292-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_075601_473165_76F0DA3C 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200320_075604_393952_FE1135E1 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -80,169 +80,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable arm to use only the common headers in the implementation
-of the vDSO library.
+The vDSO library should only include the necessary headers required for
+a userspace library (UAPI and a minimal set of kernel headers). To make
+this possible it is necessary to isolate from the kernel headers the
+common parts that are strictly necessary to build the library.
 
-Cc: Russell King <linux@armlinux.org.uk>
+Refactor the unified vdso code to use the common headers.
+
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm/include/asm/cp15.h              | 20 +------------
- arch/arm/include/asm/processor.h         | 11 +------
- arch/arm/include/asm/vdso/cp15.h         | 38 ++++++++++++++++++++++++
- arch/arm/include/asm/vdso/gettimeofday.h |  4 +--
- arch/arm/include/asm/vdso/processor.h    | 22 ++++++++++++++
- 5 files changed, 64 insertions(+), 31 deletions(-)
- create mode 100644 arch/arm/include/asm/vdso/cp15.h
- create mode 100644 arch/arm/include/asm/vdso/processor.h
+ include/vdso/datapage.h | 33 ++++++++++++++++++++++++++++++---
+ lib/vdso/gettimeofday.c | 22 ----------------------
+ 2 files changed, 30 insertions(+), 25 deletions(-)
 
-diff --git a/arch/arm/include/asm/cp15.h b/arch/arm/include/asm/cp15.h
-index d2453e2d3f1f..a54230e65647 100644
---- a/arch/arm/include/asm/cp15.h
-+++ b/arch/arm/include/asm/cp15.h
-@@ -50,25 +50,7 @@
- 
- #ifdef CONFIG_CPU_CP15
- 
--#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
--	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
--#define __ACCESS_CP15_64(Op1, CRm)		\
--	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
--
--#define __read_sysreg(r, w, c, t) ({				\
--	t __val;						\
--	asm volatile(r " " c : "=r" (__val));			\
--	__val;							\
--})
--#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
--
--#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
--#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
--
--#define BPIALL				__ACCESS_CP15(c7, 0, c5, 6)
--#define ICIALLU				__ACCESS_CP15(c7, 0, c5, 0)
--
--#define CNTVCT				__ACCESS_CP15_64(1, c14)
-+#include <asm/vdso/cp15.h>
- 
- extern unsigned long cr_alignment;	/* defined in entry-armv.S */
- 
-diff --git a/arch/arm/include/asm/processor.h b/arch/arm/include/asm/processor.h
-index 614bf829e454..b9241051e5cb 100644
---- a/arch/arm/include/asm/processor.h
-+++ b/arch/arm/include/asm/processor.h
-@@ -14,6 +14,7 @@
- #include <asm/ptrace.h>
- #include <asm/types.h>
- #include <asm/unified.h>
-+#include <asm/vdso/processor.h>
- 
- #ifdef __KERNEL__
- #define STACK_TOP	((current->personality & ADDR_LIMIT_32BIT) ? \
-@@ -85,16 +86,6 @@ extern void release_thread(struct task_struct *);
- 
- unsigned long get_wchan(struct task_struct *p);
- 
--#if __LINUX_ARM_ARCH__ == 6 || defined(CONFIG_ARM_ERRATA_754327)
--#define cpu_relax()						\
--	do {							\
--		smp_mb();					\
--		__asm__ __volatile__("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop;");	\
--	} while (0)
--#else
--#define cpu_relax()			barrier()
--#endif
--
- #define task_pt_regs(p) \
- 	((struct pt_regs *)(THREAD_START_SP + task_stack_page(p)) - 1)
- 
-diff --git a/arch/arm/include/asm/vdso/cp15.h b/arch/arm/include/asm/vdso/cp15.h
-new file mode 100644
-index 000000000000..bed16fa1865e
---- /dev/null
-+++ b/arch/arm/include/asm/vdso/cp15.h
-@@ -0,0 +1,38 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (C) 2020 ARM Ltd.
-+ */
-+#ifndef __ASM_VDSO_CP15_H
-+#define __ASM_VDSO_CP15_H
-+
-+#ifndef __ASSEMBLY__
-+
-+#ifdef CONFIG_CPU_CP15
-+
-+#include <linux/stringify.h>
-+
-+#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
-+	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
-+#define __ACCESS_CP15_64(Op1, CRm)		\
-+	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
-+
-+#define __read_sysreg(r, w, c, t) ({				\
-+	t __val;						\
-+	asm volatile(r " " c : "=r" (__val));			\
-+	__val;							\
-+})
-+#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
-+
-+#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
-+#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
-+
-+#define BPIALL				__ACCESS_CP15(c7, 0, c5, 6)
-+#define ICIALLU				__ACCESS_CP15(c7, 0, c5, 0)
-+
-+#define CNTVCT				__ACCESS_CP15_64(1, c14)
-+
-+#endif /* CONFIG_CPU_CP15 */
-+
-+#endif /* __ASSEMBLY__ */
-+
-+#endif /* __ASM_VDSO_CP15_H */
-diff --git a/arch/arm/include/asm/vdso/gettimeofday.h b/arch/arm/include/asm/vdso/gettimeofday.h
-index 07d791c65cf7..36dc18553ed8 100644
---- a/arch/arm/include/asm/vdso/gettimeofday.h
-+++ b/arch/arm/include/asm/vdso/gettimeofday.h
-@@ -7,9 +7,9 @@
+diff --git a/include/vdso/datapage.h b/include/vdso/datapage.h
+index 30c4cb0428d1..5cbc9fcbfd45 100644
+--- a/include/vdso/datapage.h
++++ b/include/vdso/datapage.h
+@@ -4,9 +4,20 @@
  
  #ifndef __ASSEMBLY__
  
--#include <asm/barrier.h>
--#include <asm/cp15.h>
-+#include <asm/errno.h>
- #include <asm/unistd.h>
-+#include <asm/vdso/cp15.h>
- #include <uapi/linux/time.h>
+-#include <linux/bits.h>
+-#include <linux/time.h>
+-#include <linux/types.h>
++#include <linux/compiler.h>
++#include <uapi/linux/time.h>
++#include <uapi/linux/types.h>
++#include <uapi/asm-generic/errno-base.h>
++
++#include <vdso/bits.h>
++#include <vdso/clocksource.h>
++#include <vdso/ktime.h>
++#include <vdso/limits.h>
++#include <vdso/math64.h>
++#include <vdso/processor.h>
++#include <vdso/time.h>
++#include <vdso/time32.h>
++#include <vdso/time64.h>
  
- #define VDSO_HAS_CLOCK_GETRES		1
-diff --git a/arch/arm/include/asm/vdso/processor.h b/arch/arm/include/asm/vdso/processor.h
-new file mode 100644
-index 000000000000..45efb3ff511c
---- /dev/null
-+++ b/arch/arm/include/asm/vdso/processor.h
-@@ -0,0 +1,22 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
+ #define VDSO_BASES	(CLOCK_TAI + 1)
+ #define VDSO_HRES	(BIT(CLOCK_REALTIME)		| \
+@@ -99,6 +110,22 @@ struct vdso_data {
+  */
+ extern struct vdso_data _vdso_data[CS_BASES] __attribute__((visibility("hidden")));
+ 
 +/*
-+ * Copyright (C) 2020 ARM Ltd.
++ * The generic vDSO implementation requires that gettimeofday.h
++ * provides:
++ * - __arch_get_vdso_data(): to get the vdso datapage.
++ * - __arch_get_hw_counter(): to get the hw counter based on the
++ *   clock_mode.
++ * - gettimeofday_fallback(): fallback for gettimeofday.
++ * - clock_gettime_fallback(): fallback for clock_gettime.
++ * - clock_getres_fallback(): fallback for clock_getres.
 + */
-+#ifndef __ASM_VDSO_PROCESSOR_H
-+#define __ASM_VDSO_PROCESSOR_H
-+
-+#ifndef __ASSEMBLY__
-+
-+#if __LINUX_ARM_ARCH__ == 6 || defined(CONFIG_ARM_ERRATA_754327)
-+#define cpu_relax()						\
-+	do {							\
-+		smp_mb();					\
-+		__asm__ __volatile__("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop;");	\
-+	} while (0)
++#ifdef ENABLE_COMPAT_VDSO
++#include <asm/vdso/compat_gettimeofday.h>
 +#else
-+#define cpu_relax()			barrier()
-+#endif
++#include <asm/vdso/gettimeofday.h>
++#endif /* ENABLE_COMPAT_VDSO */
 +
-+#endif /* __ASSEMBLY__ */
-+
-+#endif /* __ASM_VDSO_PROCESSOR_H */
+ #endif /* !__ASSEMBLY__ */
+ 
+ #endif /* __VDSO_DATAPAGE_H */
+diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
+index 72d282ffd156..a2909af4b924 100644
+--- a/lib/vdso/gettimeofday.c
++++ b/lib/vdso/gettimeofday.c
+@@ -2,31 +2,9 @@
+ /*
+  * Generic userspace implementations of gettimeofday() and similar.
+  */
+-#include <linux/compiler.h>
+-#include <linux/math64.h>
+-#include <linux/time.h>
+-#include <linux/kernel.h>
+-#include <linux/hrtimer_defs.h>
+-#include <linux/clocksource.h>
+ #include <vdso/datapage.h>
+ #include <vdso/helpers.h>
+ 
+-/*
+- * The generic vDSO implementation requires that gettimeofday.h
+- * provides:
+- * - __arch_get_vdso_data(): to get the vdso datapage.
+- * - __arch_get_hw_counter(): to get the hw counter based on the
+- *   clock_mode.
+- * - gettimeofday_fallback(): fallback for gettimeofday.
+- * - clock_gettime_fallback(): fallback for clock_gettime.
+- * - clock_getres_fallback(): fallback for clock_getres.
+- */
+-#ifdef ENABLE_COMPAT_VDSO
+-#include <asm/vdso/compat_gettimeofday.h>
+-#else
+-#include <asm/vdso/gettimeofday.h>
+-#endif /* ENABLE_COMPAT_VDSO */
+-
+ #ifndef vdso_calc_delta
+ /*
+  * Default implementation which works for all sane clocksources. That
 -- 
 2.25.1
 
