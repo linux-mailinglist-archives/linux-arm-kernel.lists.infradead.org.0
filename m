@@ -2,91 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C46D18CAA2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:47:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FB5818CB13
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 11:03:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=N7+PicSSrzwP7ltMuqIquWUXsPYuIqiPPKb//hinTec=; b=RssS7+K9j1md98F4NNrAGKkCx
-	9Wc8ar2dlEWX9ZdL4BNfHjfYnrYGNF6mtuntEgkK35aKrYb8d2BlNnMV3TSnDOr0pGY8n8VUJwMDG
-	4RGIoBLlKQzyvxc0qXK9CETFpSFj/F0QVU2beuE4oVgoGb4owtYZB1f+xf5ACPDLaj4KFncSk/6Se
-	XxySdXQjI1fQWIpVKl3n96gNRjoFTRAZ+tM/w2fvqSW2YPpFQ3KQNw9AKxFEc1TTYjoSj5aZtXz4B
-	OtXtVBwxP/5GE1vlqO/2b1szKT9uP+dcD6IxxYj2ADYPTZAkCOgk0a2gY8vxHwNgdifs48wOlieUs
-	nLzwLlyDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MTeduP7h9AhkqETYmywwBxFfvhBSxzxk+Bw0FKeg6Pw=; b=iw2/PAbemP8uk6
+	S1wG+C8O+vV8IccRw0/WZ/z5eR6viLs0BcT9x7N0XGjFNhbzz46AQJ1l/Y9vqFzwM/vHb24OR2lHl
+	OsWeUTe52ilSoLftb5IysZ5Ji9fYZlQDNED8ed19S61y1+aArA7qdGg9Mt0/h/QmVQKfFneoZ45ga
+	QTKUValb5KpTVnaFTf8zG2RNa8rkh1rHZNdjsGZ3Mk7BW8tcoPYqsoz1bvlVacnqvjE4jrfyTLcBS
+	KuC9FJfK6k90zIZPAEZUdzJARYnfC4JkAwZU5hcdX5Kq4JogvDkm7i0fg7BCLeK42vGJZA1NYx9HH
+	7HSML2m/bq/CFXY5uakg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFEEv-0008Hg-V2; Fri, 20 Mar 2020 09:46:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jFEUa-0005Ln-IQ; Fri, 20 Mar 2020 10:03:04 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFEEl-0008H5-Ig
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:46:44 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1465B20722;
- Fri, 20 Mar 2020 09:46:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584697603;
- bh=sH00fgk3RsESsOzjD0MUh1sZMoSY4NuqAFqEGyvk7e0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=ItI1QpzyKSVUkFN7wa/i/V45ewgZpp3DClIR0InqIMZkVG+EK7K0pAmfLrqHF4Q8J
- /SS89IRYjdwgTYFXEFX+noGtt2gjTx+ON+a+YTUI98bq9b3jN92UQezsjndwCXQU+F
- CQVQp/L7o6zEDC/1uCi6hANuXAqBro9utoN1iB0w=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jFEEj-00ECaQ-Cs; Fri, 20 Mar 2020 09:46:41 +0000
+ id 1jFEUP-0005Kq-1P; Fri, 20 Mar 2020 10:02:54 +0000
+Received: by mail-ed1-f66.google.com with SMTP id z65so6481399ede.0;
+ Fri, 20 Mar 2020 03:02:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=yKhEFD0HDc489I3cxzxcRx7nCJ4icJCiGjR0lWOPd2k=;
+ b=p2xLRa8/c3PDzyJVTS1qmgzQoP3wVrxe8xiT4PnhTArOjQ5Lvd6dmq0AfdLAQ9ez/n
+ YuS71Ymcv1VdgKTMeYnI4Z8W5TZAV+CvvANf3oS56okq39L0ChBIP9hEA9+0eY8Qjlxm
+ egSXESZr7XGWxSstz+k/ENtU0h5pw+CRmoMc69zeDJaxtCVXIHgOGD053FLOq1bGvAOQ
+ gjQA2ZGWleKfF71Y1eWHh+2K8mBW5IM+6USD6VQ+9a9C3CcKunrXv3eTSOkScvREXqBW
+ aHTVliN+fLcuh74J4W9mc7WOASLMJRi3BAt2raZKGP/dHMQxJg555hhwvRT9Ux0nJhJA
+ Dq+Q==
+X-Gm-Message-State: ANhLgQ3/wpJO0Cb8McT+XV24K8AhDPP6DvdwsO8SUud1ORuwdQWWzuFg
+ 4nfn4gYDr9p+AAztjbodpAA=
+X-Google-Smtp-Source: ADFU+vtTJo8GuuHT33eJ8VISdzNZK+dw+AG9XHRSiOF+v3/TwxvILo+kc3y2aVtBOdqG/TC06c4U9g==
+X-Received: by 2002:a17:906:80d5:: with SMTP id
+ a21mr7612042ejx.240.1584698571643; 
+ Fri, 20 Mar 2020 03:02:51 -0700 (PDT)
+Received: from pi3 ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id e16sm319824ejx.53.2020.03.20.03.02.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Mar 2020 03:02:50 -0700 (PDT)
+Date: Fri, 20 Mar 2020 11:02:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Subject: Re: [RFC PATCH 7/7] arm: dts: pwm: replace polarity constant with
+ macro
+Message-ID: <20200320100243.GA16931@pi3>
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-8-oleksandr.suvorov@toradex.com>
 MIME-Version: 1.0
-Date: Fri, 20 Mar 2020 09:46:41 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Auger Eric <eric.auger@redhat.com>
-Subject: Re: [PATCH v5 20/23] KVM: arm64: GICv4.1: Plumb SGI implementation
- selection in the distributor
-In-Reply-To: <e60578b5-910c-0355-d231-29322900679d@redhat.com>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-21-maz@kernel.org>
- <72832f51-bbde-8502-3e03-189ac20a0143@huawei.com>
- <4a06fae9c93e10351276d173747d17f4@kernel.org>
- <49995ec9-3970-1f62-5dfc-118563ca00fc@redhat.com>
- <b98855a1-6300-d323-80f6-82d3b9854290@huawei.com>
- <e60578b5-910c-0355-d231-29322900679d@redhat.com>
-Message-ID: <dfaf8a1b7c7fd8b769a244a8a779d952@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: eric.auger@redhat.com, yuzenghui@huawei.com,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com,
- jason@lakedaemon.net, rrichter@marvell.com, tglx@linutronix.de,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200317123231.2843297-8-oleksandr.suvorov@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_024643_661524_2E6B4A9E 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200320_030253_082235_8D1A4C67 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,72 +87,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pwm@vger.kernel.org, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sekhar Nori <nsekhar@ti.com>, Stefan Agner <stefan@agner.ch>,
+ linux-kernel@vger.kernel.org,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>,
+ Magnus Damm <magnus.damm@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ devicetree@vger.kernel.org, David Lechner <david@lechnology.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Rob Herring <robh+dt@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, linux-amlogic@lists.infradead.org,
+ linux-omap@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Igor Opaniuk <igor.opaniuk@toradex.com>,
+ linux-renesas-soc@vger.kernel.org, Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Rosin <peda@axentia.se>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wMy0yMCAwNzo1OSwgQXVnZXIgRXJpYyB3cm90ZToKPiBIaSBaZW5naHVpLAo+IAo+
-IE9uIDMvMjAvMjAgNDowOCBBTSwgWmVuZ2h1aSBZdSB3cm90ZToKPj4gT24gMjAyMC8zLzIwIDQ6
-MzgsIEF1Z2VyIEVyaWMgd3JvdGU6Cj4+PiBIaSBNYXJjLAo+Pj4gT24gMy8xOS8yMCAxOjEwIFBN
-LCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+Pj4gSGkgWmVuZ2h1aSwKPj4+PiAKPj4+PiBPbiAyMDIw
-LTAzLTE4IDA2OjM0LCBaZW5naHVpIFl1IHdyb3RlOgo+Pj4+PiBIaSBNYXJjLAo+Pj4+PiAKPj4+
-Pj4gT24gMjAyMC8zLzUgNDozMywgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4+Pj4gVGhlIEdJQ3Y0
-LjEgYXJjaGl0ZWN0dXJlIGdpdmVzIHRoZSBoeXBlcnZpc29yIHRoZSBvcHRpb24gdG8gbGV0Cj4+
-Pj4+PiB0aGUgZ3Vlc3QgY2hvb3NlIHdoZXRoZXIgaXQgd2FudHMgdGhlIGdvb2Qgb2xkIFNHSXMg
-d2l0aCBhbgo+Pj4+Pj4gYWN0aXZlIHN0YXRlLCBvciB0aGUgbmV3LCBIVy1iYXNlZCBvbmVzIHRo
-YXQgZG8gbm90IGhhdmUgb25lLgo+Pj4+Pj4gCj4+Pj4+PiBGb3IgdGhpcywgcGx1bWIgdGhlIGNv
-bmZpZ3VyYXRpb24gb2YgU0dJcyBpbnRvIHRoZSBHSUN2MyBNTUlPCj4+Pj4+PiBoYW5kbGluZywg
-cHJlc2VudCB0aGUgR0lDRF9UWVBFUjIubkFTU0dJY2FwIHRvIHRoZSBndWVzdCwKPj4+Pj4+IGFu
-ZCBoYW5kbGUgdGhlIEdJQ0RfQ1RMUi5uQVNTR0lyZXEgc2V0dGluZy4KPj4+Pj4+IAo+Pj4+Pj4g
-SW4gb3JkZXIgdG8gYmUgYWJsZSB0byBkZWFsIHdpdGggdGhlIHJlc3RvcmUgb2YgYSBndWVzdCwg
-YWxzbwo+Pj4+Pj4gYXBwbHkgdGhlIEdJQ0RfQ1RMUi5uQVNTR0lyZXEgc2V0dGluZyBhdCBmaXJz
-dCBydW4gc28gdGhhdCB3ZQo+Pj4+Pj4gY2FuIG1vdmUgdGhlIHJlc3RvcmVkIFNHSXMgdG8gdGhl
-IEhXIGlmIHRoYXQncyB3aGF0IHRoZSBndWVzdAo+Pj4+Pj4gaGFkIHNlbGVjdGVkIGluIGEgcHJl
-dmlvdXMgbGlmZS4KPj4+Pj4gCj4+Pj4+IEknbSBva2F5IHdpdGggdGhlIHJlc3RvcmUgcGF0aC7C
-oCBCdXQgaXQgc2VlbXMgdGhhdCB3ZSBzdGlsbCBmYWlsIHRvCj4+Pj4+IHNhdmUgdGhlIHBlbmRp
-bmcgc3RhdGUgb2YgdlNHSSAtIHNvZnR3YXJlIHBlbmRpbmdfbGF0Y2ggb2YgSFctYmFzZWQKPj4+
-Pj4gdlNHSXMgd2lsbCBub3QgYmUgdXBkYXRlZCAoYW5kIGFsd2F5cyBiZSBmYWxzZSkgYmVjYXVz
-ZSB3ZSBkaXJlY3RseQo+Pj4+PiBpbmplY3QgdGhlbSB0aHJvdWdoIElUUywgc28gdmdpY192M191
-YWNjZXNzX3JlYWRfcGVuZGluZygpIGNhbid0Cj4+Pj4+IHRlbGwgdGhlIGNvcnJlY3QgcGVuZGlu
-ZyBzdGF0ZSB0byB1c2VyLXNwYWNlICh0aGUgY29ycmVjdCBvbmUgCj4+Pj4+IHNob3VsZAo+Pj4+
-PiBiZSBsYXRjaGVkIGluIEhXKS4KPj4+Pj4gCj4+Pj4+IEl0IHdvdWxkIGJlIGdvb2QgaWYgd2Ug
-Y2FuIHN5bmMgdGhlIGhhcmR3YXJlIHN0YXRlIGludG8gCj4+Pj4+IHBlbmRpbmdfbGF0Y2gKPj4+
-Pj4gYXQgYW4gYXBwcm9wcmlhdGUgdGltZSAoanVzdCBiZWZvcmUgc2F2ZSksIGJ1dCBub3Qgc3Vy
-ZSBpZiB3ZSAKPj4+Pj4gY2FuLi4uCj4+Pj4gCj4+Pj4gVGhlIHByb2JsZW0gaXMgdG8gZmluZCB0
-aGUgImFwcHJvcHJpYXRlIHRpbWUiLiBJdCB3b3VsZCByZXF1aXJlIHRvCj4+Pj4gZGVmaW5lCj4+
-Pj4gYSBwb2ludCBpbiB0aGUgc2F2ZSBzZXF1ZW5jZSB3aGVyZSB3ZSB0cmFuc2l0aW9uIHRoZSBz
-dGF0ZSBmcm9tIEhXIAo+Pj4+IHRvCj4+Pj4gU1cuIEknbSBub3Qga2VlbiBvbiBhZGRpbmcgbW9y
-ZSBzdGF0ZSB0aGFuIHdlIGFscmVhZHkgaGF2ZS4KPj4+IAo+Pj4gbWF5IGJlIHdlIGNvdWxkIHVz
-ZSBhIGRlZGljYXRlZCBkZXZpY2UgZ3JvdXAvYXR0ciBhcyB3ZSBoYXZlIGZvciB0aGUgCj4+PiBJ
-VFMKPj4+IHNhdmUgdGFibGVzPyB0aGUgdXNlciBzcGFjZSB3b3VsZCBjaG9vc2UuCj4+IAo+PiBJ
-dCBtZWFucyB0aGF0IHVzZXJzcGFjZSB3aWxsIGJlIGF3YXJlIG9mIHNvbWUgZm9ybSBvZiBHSUN2
-NC4xIGRldGFpbHMKPj4gKGUuZy4sIGdldC9zZXQgdlNHSSBzdGF0ZSBhdCBIVyBsZXZlbCkgdGhh
-dCBLVk0gaGFzIGltcGxlbWVudGVkLgo+PiBJcyBpdCBzb21ldGhpbmcgdGhhdCB1c2Vyc3BhY2Ug
-cmVxdWlyZWQgdG8ga25vdz8gSSdtIG9wZW4gdG8gdGhpcyA7LSkKPiBOb3Qgc3VyZSB3ZSB3b3Vs
-ZCBiZSBvYmxpZ2VkIHRvIGV4cG9zZSBmaW5lIGRldGFpbHMuIFRoaXMgY291bGQgYmUgYQo+IGdl
-bmVyaWMgc2F2ZS9yZXN0b3JlIGRldmljZSBncm91cC9hdHRyIHdob3NlIGltcGxlbWVudGF0aW9u
-IGF0IEtWTSAKPiBsZXZlbAo+IGNvdWxkIGRpZmZlciBkZXBlbmRpbmcgb24gdGhlIHZlcnNpb24g
-YmVpbmcgaW1wbGVtZW50ZWQsIG5vPwoKV2hhdCBwcmV2ZW50cyB1cyBmcm9tIGhvb2tpbmcgdGhp
-cyBzeW5jaHJvbml6YXRpb24gdG8gdGhlIGN1cnJlbnQgCmJlaGF2aW91cgpvZiBLVk1fREVWX0FS
-TV9WR0lDX1NBVkVfUEVORElOR19UQUJMRVM/IEFmdGVyIGFsbCwgdGhpcyBpcyBhbHJlYWR5IHRo
-ZSAKcG9pbnQKd2hlcmUgd2Ugc3luY2hyb25pemUgdGhlIEtWTSB2aWV3IG9mIHRoZSBwZW5kaW5n
-IHN0YXRlIHdpdGggdXNlcnNwYWNlLgpIZXJlLCBpdCdzIGp1c3QgYSBtYXR0ZXIgb2YgcGlja2lu
-ZyB0aGUgaW5mb3JtYXRpb24gZnJvbSBzb21lIG90aGVyIApwbGFjZQooaS5lLiB0aGUgaG9zdCdz
-IHZpcnR1YWwgcGVuZGluZyB0YWJsZSkuCgpUaGUgdGhpbmcgd2UgbmVlZCB0aG91Z2ggaXMgdGhl
-IGd1YXJhbnRlZSB0aGF0IHRoZSBndWVzdCBpc24ndCBnb2luZyB0bwpnZXQgbW9yZSB2TFBJcyBh
-dCB0aGF0IHN0YWdlLCBhcyB0aGV5IHdvdWxkIGJlIGxvc3QuIFRoaXMgZWZmZWN0aXZlbHkKYXNz
-dW1lcyB0aGF0IHdlIGNhbiBhbHNvIHNhdmUvcmVzdG9yZSB0aGUgc3RhdGUgb2YgdGhlIHNpZ25h
-bGxpbmcgCmRldmljZXMsCmFuZCBJIGRvbid0IGtub3cgaWYgd2UncmUgcXVpdGUgdGhlcmUgeWV0
-LgoKVGhhbmtzLAoKICAgICAgICAgTS4KLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21l
-bGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+On Tue, Mar 17, 2020 at 02:32:31PM +0200, Oleksandr Suvorov wrote:
+> There is the PWM_POLARITY_NORMAL defined and describled in
+> <dt-bindings/pwm/pwm.h> and used by pwm drivers.
+> 
+> This patch converts all '0' constant in pwms parameters into
+> PWM_POLARITY_NORMAL.
+> 
+> Replace with sed regexp:
+> 's/(pwms = <&[a-zA-Z_0-9]+ [0-9]+ [0-9]+) 0>/\1 PWM_POLARITY_NORMAL>/'
+> 
+> Then:
+> - included pwm.h in some dts/dtsi to fix building errors about undefined
+>   symbols.
+> - fixed the patman warnings about the code format;
+> 
+> Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+> ---
+> 
+>  arch/arm/boot/dts/am335x-cm-t335.dts               | 2 +-
+>  arch/arm/boot/dts/am335x-evm.dts                   | 2 +-
+>  arch/arm/boot/dts/am3517-evm.dts                   | 2 +-
+>  arch/arm/boot/dts/at91-dvk_su60_somc_lcm.dtsi      | 2 +-
+>  arch/arm/boot/dts/at91-kizbox2-common.dtsi         | 6 +++---
+>  arch/arm/boot/dts/at91-kizbox3_common.dtsi         | 8 ++++----
+>  arch/arm/boot/dts/at91-kizboxmini-common.dtsi      | 6 +++---
+>  arch/arm/boot/dts/at91-nattis-2-natte-2.dts        | 2 +-
+>  arch/arm/boot/dts/at91-sama5d4_ma5d4evk.dts        | 2 +-
+>  arch/arm/boot/dts/at91sam9n12ek.dts                | 2 +-
+>  arch/arm/boot/dts/at91sam9x5dm.dtsi                | 2 +-
+>  arch/arm/boot/dts/berlin2cd-google-chromecast.dts  | 4 ++--
+>  arch/arm/boot/dts/da850-evm.dts                    | 2 +-
+>  arch/arm/boot/dts/da850-lego-ev3.dts               | 4 ++--
+>  arch/arm/boot/dts/exynos4412-midas.dtsi            | 2 +-
+>  arch/arm/boot/dts/exynos4412-odroidu3.dts          | 2 +-
+>  arch/arm/boot/dts/exynos5250-snow-common.dtsi      | 2 +-
+>  arch/arm/boot/dts/exynos5410-odroidxu.dts          | 2 +-
+>  arch/arm/boot/dts/exynos5420-peach-pit.dts         | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidhc1.dts         | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidxu4.dts         | 2 +-
+>  arch/arm/boot/dts/exynos54xx-odroidxu-leds.dtsi    | 4 ++--
+>  arch/arm/boot/dts/exynos5800-peach-pi.dts          | 2 +-
+>  arch/arm/boot/dts/imx53-tx53-x13x.dts              | 5 +++--
+>  arch/arm/boot/dts/imx6dl-tx6dl-comtft.dts          | 2 +-
+>  arch/arm/boot/dts/imx6q-display5.dtsi              | 2 +-
+>  arch/arm/boot/dts/imx6q-tx6q-1010-comtft.dts       | 2 +-
+>  arch/arm/boot/dts/imx6q-tx6q-1020-comtft.dts       | 2 +-
+>  arch/arm/boot/dts/imx6qdl-tx6-lvds.dtsi            | 4 ++--
+>  arch/arm/boot/dts/imx7-colibri.dtsi                | 4 +++-
+>  arch/arm/boot/dts/imx7d-nitrogen7.dts              | 3 ++-
+>  arch/arm/boot/dts/imx7d-pico.dtsi                  | 3 ++-
+>  arch/arm/boot/dts/imx7d-sdb.dts                    | 3 ++-
+>  arch/arm/boot/dts/imx7ulp-evk.dts                  | 3 ++-
+>  arch/arm/boot/dts/iwg20d-q7-common.dtsi            | 2 +-
+>  arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   | 2 +-
+>  arch/arm/boot/dts/meson8b-ec100.dts                | 4 ++--
+>  arch/arm/boot/dts/meson8b-mxq.dts                  | 4 ++--
+>  arch/arm/boot/dts/meson8b-odroidc1.dts             | 4 ++--
+>  arch/arm/boot/dts/motorola-mapphone-common.dtsi    | 3 ++-
+>  arch/arm/boot/dts/omap3-gta04.dtsi                 | 2 +-
+>  arch/arm/boot/dts/omap3-n900.dts                   | 2 +-
+>  arch/arm/boot/dts/rk3288-veyron-edp.dtsi           | 2 +-
+>  arch/arm/boot/dts/rk3288-veyron.dtsi               | 2 +-
+>  arch/arm/boot/dts/rv1108-evb.dts                   | 2 +-
+>  arch/arm/boot/dts/s3c6410-mini6410.dts             | 2 +-
+>  arch/arm/boot/dts/s5pv210-aries.dtsi               | 2 +-
+>  arch/arm/boot/dts/s5pv210-smdkv210.dts             | 2 +-
+
+For Exynos/S3C/S5P:
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+Best regards,
+Krzysztof
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
