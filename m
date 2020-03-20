@@ -2,74 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E452218C989
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:08:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D088C18C999
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:09:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eKpE28OOAdE/m2Jv9DCxiFu8wPwqmDSnuy5H4B27qIc=; b=o6lQ3TXaZDBLrrn/MM140n1I6
-	v9UjsnNXsEWVcR/2QR7uoI8tz7iRqHG2CzvzuHA65nbgTDOjv4JHhsfjSRQwVZCaVGBBYipHe1wHl
-	pNZFAoH1AaAkTeSXpJXRX+olEav5ibpq3wg3d+EahTi4xPIPi4CgvVkubyANNTAkiyK9DL15NFrCy
-	86E72jRmMA3HFi80xzi6M4Pi9vjleFMF3spW8Zp8HH2BIbFA/H61Ff7cdxDTk/AFSqXy5GXsE/Aby
-	bfiJ1LrHyFx7CFLcEA0NGE6fBsfAVvcXas+wFdyS1LU1R609rL6HLVTqhi47lJo/UphlUPw/cmVQS
-	pH5HL9gug==;
+	 bh=zYbns03sEI0kII4LKEiPLNx45jDWLDWtJd1fbdp4mmw=; b=kV+DkVjQ4dno4ijR0Dk5D9rj4
+	9s9SXBnJI/xy3peHCsruw2aI/kfUeVOlo/mDH/2WKXwQNT7YCNiqYK0KRd/HtdMZ5DiSemRUbyf44
+	pmCroSHJyE4sWNh64tl19bVBdfbjLNFTdG7nlMqJWx8m3aA99v29U7CUvnet/eE7+KSrZt1Hlio28
+	UrzYk1VgXmmx8CPNNKJpmR//0h44tVTvs6qS/UhH9NdFjDMotmddlVotKF4PhAKytPFS+IMghhD32
+	olvIXzlv5i3dW4wEcb3b1GEVzV/an/fo7+fw/vLpzHKzslH7yEqz86BFJ0Drp+K+gI+bsROMjjFL5
+	7HdP3yWTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFDdO-0006Hh-I1; Fri, 20 Mar 2020 09:08:06 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jFDf0-0006aW-65; Fri, 20 Mar 2020 09:09:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFDdD-0006DL-8k
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:07:56 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02K97sDA001263;
- Fri, 20 Mar 2020 04:07:54 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584695274;
- bh=N8POESgNbRbRirVxkmMy0bAxBkY2aB1P4q5cc5w0mZo=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=mHza96b7BZmaVRgaeagy0y5m6jAPu+h2wV85HjMq/r3EDQJnw5EnynO5ZVLHliB2u
- c4y8uR+tzc6NS8IxObqB44szLlr3vXVzSZbACpm9vxtrxYbEjB6cZTqeOQD/OBI5xi
- khOb7mZKyJDApLNYF1OMtXAhFkYP6E2rvwv1iEbA=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02K97slN035967;
- Fri, 20 Mar 2020 04:07:54 -0500
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 20
- Mar 2020 04:07:53 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 20 Mar 2020 04:07:53 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02K97pHN012013;
- Fri, 20 Mar 2020 04:07:52 -0500
-Subject: Re: [PATCH] arm64: dts: ti: k3-j721e-mcu-wakeup: Add DMA entries for
- ADC
-To: Vignesh Raghavendra <vigneshr@ti.com>, Nishanth Menon <nm@ti.com>
-References: <20200312121251.4582-1-vigneshr@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <10d8a214-82e7-e245-7a81-70f2dd59e7df@ti.com>
-Date: Fri, 20 Mar 2020 11:07:50 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jFDer-0006Zv-Bw
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:09:38 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E871A20752;
+ Fri, 20 Mar 2020 09:09:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584695377;
+ bh=lKTpTlYWFEgvmkW6XkcldhhG5+woVU4cLcAGikERfqo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=wqxswQOYA6BABIMXoM2nOSVgWJ47cTHAzkq5NO+OYTws4zesQC/Bq4/lMrY5xYdT3
+ LLMxbcIFzNwWU+tjzVGlaWY8W7/DyefzA7Y7u6Z+ryCAs80UEFGKtPql/c5ERxj9ZT
+ Yf7rVSM+Zww6zuKaVgksoCp+gttl1NC23l6B3Fpc=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jFDep-00EBy9-8B; Fri, 20 Mar 2020 09:09:35 +0000
 MIME-Version: 1.0
-In-Reply-To: <20200312121251.4582-1-vigneshr@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Date: Fri, 20 Mar 2020 09:09:35 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH v5 23/23] KVM: arm64: GICv4.1: Expose HW-based SGIs in
+ debugfs
+In-Reply-To: <e1a1e537-9f8e-5cfb-0132-f796e8bf06c9@huawei.com>
+References: <20200304203330.4967-1-maz@kernel.org>
+ <20200304203330.4967-24-maz@kernel.org>
+ <4cb4c3d4-7b02-bb77-cd7a-c185346b6a2f@redhat.com>
+ <45c282bddd43420024633943c1befac3@kernel.org>
+ <e1a1e537-9f8e-5cfb-0132-f796e8bf06c9@huawei.com>
+Message-ID: <b63950513f519d9a04f9719f5aa6a2db@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, eric.auger@redhat.com,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org, linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ jason@lakedaemon.net, rrichter@marvell.com, tglx@linutronix.de,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_020755_644417_9DACC0D9 
-X-CRM114-Status: GOOD (  14.55  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200320_020937_431882_C61FDE72 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,55 +96,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Auger Eric <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/03/2020 14:12, Vignesh Raghavendra wrote:
-> Add DMA entries for ADC nodes
+Hi Zenghui,
+
+On 2020-03-20 04:38, Zenghui Yu wrote:
+> Hi Marc,
 > 
-> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
-
-Queued up for 5.7, thanks.
-
--Tero
-
-
-> ---
->   arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 6 ++++++
->   1 file changed, 6 insertions(+)
+> On 2020/3/19 23:21, Marc Zyngier wrote:
+>> With GICv4.1, you can introspect the HW state for SGIs. You can also
+>> look at the vLPI state by peeking at the virtual pending table, but
+>> you'd need to unmap the VPE first,
 > 
-> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> index 16c874bfd49a..23f8a9dbb595 100644
-> --- a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> +++ b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> @@ -203,6 +203,9 @@ tscadc0: tscadc@40200000 {
->   		assigned-clocks = <&k3_clks 0 3>;
->   		assigned-clock-rates = <60000000>;
->   		clock-names = "adc_tsc_fck";
-> +		dmas = <&main_udmap 0x7400>,
-> +			<&main_udmap 0x7401>;
-> +		dma-names = "fifo0", "fifo1";
->   
->   		adc {
->   			#io-channel-cells = <1>;
-> @@ -219,6 +222,9 @@ tscadc1: tscadc@40210000 {
->   		assigned-clocks = <&k3_clks 1 3>;
->   		assigned-clock-rates = <60000000>;
->   		clock-names = "adc_tsc_fck";
-> +		dmas = <&main_udmap 0x7402>,
-> +			<&main_udmap 0x7403>;
-> +		dma-names = "fifo0", "fifo1";
->   
->   		adc {
->   			#io-channel-cells = <1>;
-> 
+> Out of curiosity, could you please point me to the "unmap the VPE"
+> requirement in the v4.1 spec? I'd like to have a look.
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Sure. See IHI0069F, 5.3.19 (VMAPP GICv4.1), "Caching of virtual LPI data
+structures", and the bit that says:
+
+"A VMAPP with {V,Alloc}=={0,1} cleans and invalidates any caching of the
+Virtual Pending Table and Virtual Configuration Table associated with 
+the
+vPEID held in the GIC"
+
+which is what was crucially missing from the GICv4.0 spec (it doesn't 
+say
+when the GIC is done writing to memory).
+
+Side note: it'd be good to know what the rules are for your own GICv4
+implementations, so that we can at least make sure the current code is 
+safe.
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
