@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 315F518C643
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 05:08:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FD6C18C661
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 05:22:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oge2R+SzlEguUEfwGmjSwPN5qCGLU8xhaPNlxLE/Qks=; b=dwwDxGf7ASsFz0
-	0s9LYRdHVFhXpv0WiC2UQKMlOtVugZ5Fy1DL2b/XPs7gqF63xNpA3Ij50HpRc//Pc9X6iymCda2Di
-	p0FupB3UJjx5oCp97OJBl5CP4P278iouUbvEyx5jdC0Ox6YP1iZ7CW3bGUgWMjaQkpou2icZ8wyaV
-	ktJVQsk+F62mgYoawdphih0M+yTvYRWwgoq2eomVuU2wFeIRcGC/LpKZZZUMV9IhL7B39KZ7k2aI2
-	OFxtZa0uqULmEYhwg8WYnlmeTaFoyPSQF+TH4kr0ZJkJSN5ojE3BJYGrKKVs00bAtmKkoPtZCmp+u
-	vE5cuF+ngbpf4HNQU9BQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Ws3ebte8KDXSmZWVI6NcawPzMX9i7k9GXpyv0aXoR9Q=; b=b2tFHmaioedJuBeBq6BVYu1g/
+	iYAKEncDGF7SPjJky7QjfNUTP+fv+UhrrXTij7FPPsOi2P3nKHTPCH2b5TJc6SiA6qJHD9juAsBz0
+	MHEQfJY+oOjYuHQd94rqAel3UgasQX8gD/MLA9gtVZwVxaH0ygmspwK/HXnjuvgXAZEfR2EERNcjX
+	2hI1VyMFRbxoXO/hoHy9lOiB1uzp6tw8SuC00AqLZUc3tRbZ8KrgNhIQ6VUKveYmpIGnS7T6gC3sZ
+	gfId5mJL4IaQ9D9++yCXZYLmzSKd7GGEjSJm269njq8w63r5qVwAaozwTO3EGe7OBNVXFQWoEXAN2
+	akd/57omw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF8xA-0008SF-Lw; Fri, 20 Mar 2020 04:08:12 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jF9BF-0004lI-N5; Fri, 20 Mar 2020 04:22:45 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF8x3-0008Rh-Fn
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 04:08:06 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id A9CE3158F9869;
- Thu, 19 Mar 2020 21:08:04 -0700 (PDT)
-Date: Thu, 19 Mar 2020 21:08:04 -0700 (PDT)
-Message-Id: <20200319.210804.13050792474896711.davem@davemloft.net>
-To: zhengdejin5@gmail.com
-Subject: Re: [PATCH] net: stmmac: dwmac_lib: remove unnecessary checks in
- dwmac_dma_reset()
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200319131019.12829-1-zhengdejin5@gmail.com>
-References: <20200319131019.12829-1-zhengdejin5@gmail.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Thu, 19 Mar 2020 21:08:05 -0700 (PDT)
+ id 1jF9B6-0004kt-CA
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 04:22:38 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A24DAE60EF66344F6A94;
+ Fri, 20 Mar 2020 12:22:27 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Fri, 20 Mar 2020
+ 12:22:18 +0800
+Subject: Re: [PATCH v5 19/23] KVM: arm64: GICv4.1: Allow SGIs to switch
+ between HW and SW interrupts
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200304203330.4967-1-maz@kernel.org>
+ <20200304203330.4967-20-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <10847ac8-af94-0a83-73ed-24039840ca74@huawei.com>
+Date: Fri, 20 Mar 2020 12:22:15 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
+MIME-Version: 1.0
+In-Reply-To: <20200304203330.4967-20-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_210805_528212_0A9BD51E 
-X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-CacheID: sfid-20200319_212236_583175_46AE8CBF 
+X-CRM114-Status: UNSURE (   8.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,25 +70,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dejin Zheng <zhengdejin5@gmail.com>
-Date: Thu, 19 Mar 2020 21:10:19 +0800
+Hi Marc,
 
-> it will check the return value of dwmac_dma_reset() in the
-> stmmac_init_dma_engine() function and report an error if the
-> return value is not zero. so don't need check here.
+On 2020/3/5 4:33, Marc Zyngier wrote:
+> In order to let a guest buy in the new, active-less SGIs, we
+> need to be able to switch between the two modes.
 > 
-> Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+> Handle this by stopping all guest activity, transfer the state
+> from one mode to the other, and resume the guest. Nothing calls
+> this code so far, but a later patch will plug it into the MMIO
+> emulation.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-Applied, thanks.
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+
+
+Thanks
+
 
 _______________________________________________
 linux-arm-kernel mailing list
