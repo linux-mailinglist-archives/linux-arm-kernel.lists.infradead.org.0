@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 734C318CCD9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 12:24:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5721718CCDA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 12:24:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TK9EV0NsNnlZwoEBc6ZnqWyZCyZ4I+SMjWcjT5P0So4=; b=OfiFMEPWzBfBWR
-	ZC0oRIDK/qKBZQ6crLUolLG5ywqFQqC8Wos6sECMIwVCRK9BlO+xc4ClcQstB+VEcHDo6RT8Hd/i7
-	ul7J+vE1y3i29PUgq3Xs+NzlHAAEQhxKe6KA31WLNkoJfT0pltPSe7UBup42QHnp4E/xhiJa0vLmo
-	k9FjsjIRQNssx3MtA+HnptN8qF8NuOKIv2XfB9l1gJAOH0T1Ik1lHMNb/gTyybphmyCy57K6zBkgs
-	POj6RiFl2YMcD0GxiaTF1pVm9y4nueIMrluFVPJnnV+qppd9kOuYRN41XRCV5rqqmN952I8pV4CJb
-	x+u+OUTdTFylI28+kuUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zZNolU3V/LhBkMcbO74ht+OQ7mR8iy8IX5yfERvkHyE=; b=QfVmokrOh5tgR3
+	7XUug3r8WhLoAkxRJJea1AJVA9D5UV7nExfH84dP5djUsFvvNDu/BXzXsy5sxv1sSmqKtq8P/mgTY
+	iTK+zJHDkjqU6hIckw79cKrJYSIfPsEpwf2Faek5X+5dZdgKqRW1ADkd9Q3qW6wRif/QrAspvBt3t
+	fQqAkExQRBNByBFFJa0yH/GZbU6Ua6lW4LMaIfakYnG2XUMPtsQbONI9nbQU591Et4y2Wr8gMbe0i
+	bciwmH5sSSCbYwvAxHKE9XUWUMNFpXs0jtDzNY6Vqdwnud8N76qSGDg7jBsUlS0hT20sYhqWc/i2u
+	N3kRZWdRNU3MQ/2rIbvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFFky-0005Tn-F2; Fri, 20 Mar 2020 11:24:04 +0000
+	id 1jFFlF-0005i4-5f; Fri, 20 Mar 2020 11:24:21 +0000
 Received: from web0081.zxcs.nl ([2a06:2ec0:1::81])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFFkq-0005T6-8i
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 11:23:58 +0000
+ id 1jFFl5-0005fa-36
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 11:24:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=pascalroeleven.nl; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id
- :Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=pascalroeleven.nl; s=x; h=Content-Transfer-Encoding:MIME-Version:References
+ :In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZJrg1yDpv5ww0Brt1nAj95Gt3EySAGZ87ZQ9VnS/sEQ=; b=GbrwXQG+7PqA7MImIDjC8UvY/k
- iXkbgroGKcuE9AdMkYpIvTNOXSlHZj5JscwU8+lYQRu4+xK3WpkQsKKdNGvCaLUKoiCmwcASXthKk
- 8sk4I/RQ93p0VB1jqOxtVE88tz8q+ZueDK+L53GgD00R/M6kD1+tSmETZ3qRrlv4cyuni9lP2jsON
- fj7lk6fq4GBffWsPqtuyJ7QMJBVSVVNAsQMuejYQbXIuq/TIo/VdQt5CvTyUjUpL0+TRJT8GGADyi
- qDskACq68WeooW01ToNYjfgapbxnrjDzqw4TFdEC5anYw34pXC6AleqFVdaHbcnnx+yxoHcz0APiq
- HnRi0/GA==;
+ bh=ALXaab2s1Lnzx+nrRs34/oE0duhtrEmt949ImG19WlQ=; b=qT1hN+mMLdTgt3zkV6EZlpedaX
+ TrB0dv1Ypg7q9Uy7f+dWH+EhWKpjtNV7TXVUwczk3Cz4r/iFICmItVabjcsWR6ntVPam1v/Vesbok
+ PHQEk+qMopTee/MjeuiPXH6JJO5B6iCFT8g+KrSi+8dVlESVn3S6thH7rSe7zUee5ToI3TX0X7c5D
+ CjvWLpi7FGV6V23rK6g8cv4diTGyGPxwmPpnmSDaa9+NBNcuAKZiW68xmOKPAM1AqvNpUR9Da6mDL
+ T2K9kq3aIeXOtfLV4pdM4xeYQMlR1923Q98DpkZRrny0f1aZIQsjx+ILpDgnvrCdh3b/hlk/k1fxU
+ jCEOe0NA==;
 Received: from ip565b1bc7.direct-adsl.nl ([86.91.27.199]:57936
  helo=localhost.localdomain)
  by web0081.zxcs.nl with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
  (Exim 4.92.3) (envelope-from <dev@pascalroeleven.nl>)
- id 1jFFk1-0011ci-Ha; Fri, 20 Mar 2020 12:23:05 +0100
+ id 1jFFkr-0011ci-BD; Fri, 20 Mar 2020 12:23:57 +0100
 From: Pascal Roeleven <dev@pascalroeleven.nl>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -48,15 +48,18 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Mark Brown <broonie@kernel.org>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  dri-devel@lists.freedesktop.org
-Subject: [PATCH v2 0/5] Add support for Topwise A721 tablet
-Date: Fri, 20 Mar 2020 12:21:31 +0100
-Message-Id: <20200320112205.7100-1-dev@pascalroeleven.nl>
+Subject: [PATCH v2 1/5] dt-bindings: panel: Add binding for Starry KR070PE2T
+Date: Fri, 20 Mar 2020 12:21:32 +0100
+Message-Id: <20200320112205.7100-2-dev@pascalroeleven.nl>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200320112205.7100-1-dev@pascalroeleven.nl>
+References: <20200320112205.7100-1-dev@pascalroeleven.nl>
 MIME-Version: 1.0
 X-Authenticated-Id: dev@pascalroeleven.nl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_042356_589794_CD6A27F6 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20200320_042411_323583_4B3E4F23 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,35 +91,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series add support for the Topwise A721 tablet and it's display.
-It is an old tablet (around 2012) but it might be useful as reference
-as the devicetree is pretty complete.
+Add the devicetree binding for Starry KR070PE2T
 
-Changes from v1:
-* Split into multiple patches
-* dt-binding: use yaml instead of txt
-* dt-binding: add Topwise A721 to sunxi.yaml
-* dt-binding: add Topwise to vendor-prefixes
-* drm: Add bus_format, bus_flags and connector_type
-* dts: Use SPDX license identifier instead of boilerplate license text
-* dts: Remove pinctrl leftovers
+Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
+---
+ .../devicetree/bindings/display/panel/panel-simple.yaml         | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Pascal Roeleven (5):
-  dt-bindings: panel: Add binding for Starry KR070PE2T
-  drm: panel: Add Starry KR070PE2T
-  dt-bindings: vendor-prefixes: Add Topwise
-  dt-bindings: arm: Add Topwise A721
-  ARM: dts: sun4i: Add support for Topwise A721 tablet
-
- .../devicetree/bindings/arm/sunxi.yaml        |   5 +
- .../bindings/display/panel/panel-simple.yaml  |   2 +
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- arch/arm/boot/dts/Makefile                    |   3 +-
- arch/arm/boot/dts/sun4i-a10-topwise-a721.dts  | 242 ++++++++++++++++++
- drivers/gpu/drm/panel/panel-simple.c          |  29 +++
- 6 files changed, 282 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/sun4i-a10-topwise-a721.dts
-
+diff --git a/Documentation/devicetree/bindings/display/panel/panel-simple.yaml b/Documentation/devicetree/bindings/display/panel/panel-simple.yaml
+index 8fe60ee25..7cbace360 100644
+--- a/Documentation/devicetree/bindings/display/panel/panel-simple.yaml
++++ b/Documentation/devicetree/bindings/display/panel/panel-simple.yaml
+@@ -43,6 +43,8 @@ properties:
+       - satoz,sat050at40h12r2
+         # Sharp LS020B1DD01D 2.0" HQVGA TFT LCD panel
+       - sharp,ls020b1dd01d
++        # Starry KR070PE2T 7" WVGA TFT LCD panel
++      - starry,kr070pe2t
+ 
+   backlight: true
+   enable-gpios: true
 -- 
 2.20.1
 
