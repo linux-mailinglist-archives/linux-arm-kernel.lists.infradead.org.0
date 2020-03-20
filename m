@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EED118D7FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 19:54:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC0DA18D7EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 19:52:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8sIzbgwFiiPeZDaoXbM7lsAHt8ZSIzOe2ZauYJoWVdA=; b=n3lEgQByBFBAqX
-	jlux+Q0LzSXf4V9g0zDZgCIJ+EasJHcNYOxq5jCfoAmS7XHrJyn62pjO4h2zHDul5PNd16aoaT60i
-	RfVLpOjQb4NEcgSZlUBk6zOEluGPPBv/u6AeUes2vrjvn90itbHfWWWqaYa6Bl3RLIo2LRWN1dDDM
-	NmQJidMHNTjuSwk+lY+HNMJqGYEb1B7EKtP8E3kY/BxD87yEnnLlr8PTkob16dA8K1cqFQMX+2HVK
-	lbF/2SaqXub1tWwRIsjdfcRKek1S3hUiGYaiWxxNxNajgL0fasgB0VSlK5ZDp7Ivvtm2v5bCPyVCO
-	M84WnMR6DH4RBKDNCfyQ==;
+	List-Owner; bh=hbGD+HrRdT8lzsX3Ev0MwApq77tsS3ROiv4KRpJtLh4=; b=FWatdfFgfmmLeT
+	7kD+VL1e4VtiQhLJoyg317bBkkcAhgzlMvLDiKWcKESMZ9YjEQ1kB6icCX1PxDfFVjmCvvnttaOEz
+	1XyuwFWEUwfeRaWS/IPnVcO6P5jEi6dWZ1VYXF/kYRaR5mtcBbtBh/LAaYk/VCTj5xpf37cuD6blO
+	DCwTatbv39nDt8C8XSnEUVnL+6FcvCDdUELV4q83O9qUco8DEXOfDuS9mTpS68ciu35iHt5jFcRmy
+	z+ZZvGJibyJsNCwu4ATxDWQCUraPblsaP2/okmNJ8FqZO7F1H0fvy8hsXPqLFP67hGr3LZBSwdDeS
+	WPB7qEazHq2gbzlduvuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFMmd-0000TP-B6; Fri, 20 Mar 2020 18:54:15 +0000
+	id 1jFMl1-0007Bb-TD; Fri, 20 Mar 2020 18:52:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFMjs-00063U-7j
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 18:51:26 +0000
+ id 1jFMje-0005ok-A2
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 18:51:12 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6212C20789;
- Fri, 20 Mar 2020 18:51:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D148020788;
+ Fri, 20 Mar 2020 18:51:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584730283;
- bh=8x+c5hfe93aO5y0fHqTlCC+EdYfw+zTY52sRuEmUGxc=;
+ s=default; t=1584730270;
+ bh=AB4UOyZ8oyBskvWThVKVaY0WT/9377ee2YYUA4RUI48=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=r5zpMHrt7gwjAZSVllSvlxY/UaBmpvIjzBM3Q0zS7RPhgp3IfXI6hoquSm7c1292S
- R+cL7rQ3rsxJC06DfAvBo9c6PNNZoZqn+B1WylqULQvVly1WeHGjRgHRvcDr4FOJiX
- ImddGTvv1O0mO6cK2VHhiKCAhT0jEfTMZYjNEwp8=
+ b=ztgpg6m4VjCacoZKs9ZM2B4kr9TIgGgdS2xRPwc5sMSchwghyi+PtQI4d1S+/y5gC
+ gu78UNrQ3Hw7NH9MiJSkjo9ZrMvDa/QYLFX6ZSwY3OHLJ0mLCqQDGTOD9zKRQmmh9C
+ unF3M/GywPIRPiiS2CR5FjGSB6nr8d/AfO177sNM=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jFMK1-00EKAx-Ki; Fri, 20 Mar 2020 18:24:41 +0000
+ id 1jFMK2-00EKAx-EW; Fri, 20 Mar 2020 18:24:42 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v6 11/23] irqchip/gic-v4.1: Plumb get/set_irqchip_state SGI
+Subject: [PATCH v6 12/23] irqchip/gic-v4.1: Plumb set_vcpu_affinity SGI
  callbacks
-Date: Fri, 20 Mar 2020 18:23:54 +0000
-Message-Id: <20200320182406.23465-12-maz@kernel.org>
+Date: Fri, 20 Mar 2020 18:23:55 +0000
+Message-Id: <20200320182406.23465-13-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200320182406.23465-1-maz@kernel.org>
 References: <20200320182406.23465-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_115124_373218_E7A130F7 
-X-CRM114-Status: GOOD (  16.97  )
+X-CRM114-CacheID: sfid-20200320_115110_407523_4343AF52 
+X-CRM114-Status: GOOD (  12.95  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,158 +102,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To implement the get/set_irqchip_state callbacks (limited to the
-PENDING state), we have to use a particular set of hacks:
+Just like for vLPIs, there is some configuration information that cannot
+be directly communicated through the normal irqchip API, and we have to
+use our good old friend set_vcpu_affinity as a side-band communication
+mechanism.
 
-- Reading the pending state is done by using a pair of new redistributor
-  registers (GICR_VSGIR, GICR_VSGIPENDR), which allow the 16 interrupts
-  state to be retrieved.
-- Setting the pending state is done by generating it as we'd otherwise do
-  for a guest (writing to GITS_SGIR).
-- Clearing the pending state is done by emitting a VSGI command with the
-  "clear" bit set.
-
-This requires some interesting locking though:
-- When talking to the redistributor, we must make sure that the VPE
-  affinity doesn't change, hence taking the VPE lock.
-- At the same time, we must ensure that nobody accesses the same
-  redistributor's GICR_VSGIR registers for a different VPE, which
-  would corrupt the reading of the pending bits. We thus take the
-  per-RD spinlock. Much fun.
+This is used to configure group and priority for a given vSGI.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
-Link: https://lore.kernel.org/r/20200304203330.4967-12-maz@kernel.org
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Link: https://lore.kernel.org/r/20200304203330.4967-13-maz@kernel.org
 ---
- drivers/irqchip/irq-gic-v3-its.c   | 77 ++++++++++++++++++++++++++++++
- include/linux/irqchip/arm-gic-v3.h | 14 ++++++
- 2 files changed, 91 insertions(+)
+ drivers/irqchip/irq-gic-v3-its.c   | 18 ++++++++++++++++++
+ include/linux/irqchip/arm-gic-v4.h |  5 +++++
+ 2 files changed, 23 insertions(+)
 
 diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-index d89b9d78394d..ce11cba09d4d 100644
+index ce11cba09d4d..15250faa9ef7 100644
 --- a/drivers/irqchip/irq-gic-v3-its.c
 +++ b/drivers/irqchip/irq-gic-v3-its.c
-@@ -3972,11 +3972,88 @@ static int its_sgi_set_affinity(struct irq_data *d,
- 	return IRQ_SET_MASK_OK;
+@@ -4047,6 +4047,23 @@ static int its_sgi_get_irqchip_state(struct irq_data *d,
+ 	return 0;
  }
  
-+static int its_sgi_set_irqchip_state(struct irq_data *d,
-+				     enum irqchip_irq_state which,
-+				     bool state)
-+{
-+	if (which != IRQCHIP_STATE_PENDING)
-+		return -EINVAL;
-+
-+	if (state) {
-+		struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-+		struct its_node *its = find_4_1_its();
-+		u64 val;
-+
-+		val  = FIELD_PREP(GITS_SGIR_VPEID, vpe->vpe_id);
-+		val |= FIELD_PREP(GITS_SGIR_VINTID, d->hwirq);
-+		writeq_relaxed(val, its->sgir_base + GITS_SGIR - SZ_128K);
-+	} else {
-+		its_configure_sgi(d, true);
-+	}
-+
-+	return 0;
-+}
-+
-+static int its_sgi_get_irqchip_state(struct irq_data *d,
-+				     enum irqchip_irq_state which, bool *val)
++static int its_sgi_set_vcpu_affinity(struct irq_data *d, void *vcpu_info)
 +{
 +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-+	void __iomem *base;
-+	unsigned long flags;
-+	u32 count = 1000000;	/* 1s! */
-+	u32 status;
-+	int cpu;
++	struct its_cmd_info *info = vcpu_info;
 +
-+	if (which != IRQCHIP_STATE_PENDING)
++	switch (info->cmd_type) {
++	case PROP_UPDATE_SGI:
++		vpe->sgi_config[d->hwirq].priority = info->priority;
++		vpe->sgi_config[d->hwirq].group = info->group;
++		its_configure_sgi(d, false);
++		return 0;
++
++	default:
 +		return -EINVAL;
-+
-+	/*
-+	 * Locking galore! We can race against two different events:
-+	 *
-+	 * - Concurent vPE affinity change: we must make sure it cannot
-+	 *   happen, or we'll talk to the wrong redistributor. This is
-+	 *   identical to what happens with vLPIs.
-+	 *
-+	 * - Concurrent VSGIPENDR access: As it involves accessing two
-+	 *   MMIO registers, this must be made atomic one way or another.
-+	 */
-+	cpu = vpe_to_cpuid_lock(vpe, &flags);
-+	raw_spin_lock(&gic_data_rdist_cpu(cpu)->rd_lock);
-+	base = gic_data_rdist_cpu(cpu)->rd_base + SZ_128K;
-+	writel_relaxed(vpe->vpe_id, base + GICR_VSGIR);
-+	do {
-+		status = readl_relaxed(base + GICR_VSGIPENDR);
-+		if (!(status & GICR_VSGIPENDR_BUSY))
-+			goto out;
-+
-+		count--;
-+		if (!count) {
-+			pr_err_ratelimited("Unable to get SGI status\n");
-+			goto out;
-+		}
-+		cpu_relax();
-+		udelay(1);
-+	} while (count);
-+
-+out:
-+	raw_spin_unlock(&gic_data_rdist_cpu(cpu)->rd_lock);
-+	vpe_to_cpuid_unlock(vpe, flags);
-+
-+	if (!count)
-+		return -ENXIO;
-+
-+	*val = !!(status & (1 << d->hwirq));
-+
-+	return 0;
++	}
 +}
 +
  static struct irq_chip its_sgi_irq_chip = {
  	.name			= "GICv4.1-sgi",
  	.irq_mask		= its_sgi_mask_irq,
- 	.irq_unmask		= its_sgi_unmask_irq,
+@@ -4054,6 +4071,7 @@ static struct irq_chip its_sgi_irq_chip = {
  	.irq_set_affinity	= its_sgi_set_affinity,
-+	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
-+	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
+ 	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
+ 	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
++	.irq_set_vcpu_affinity	= its_sgi_set_vcpu_affinity,
  };
  
  static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
-diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
-index fd3be49ac9a5..590cdbeba9d5 100644
---- a/include/linux/irqchip/arm-gic-v3.h
-+++ b/include/linux/irqchip/arm-gic-v3.h
-@@ -345,6 +345,15 @@
- #define GICR_VPENDBASER_4_1_VGRP1EN	(1ULL << 58)
- #define GICR_VPENDBASER_4_1_VPEID	GENMASK_ULL(15, 0)
+diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
+index 44e8c19e3d56..b4dbf899460b 100644
+--- a/include/linux/irqchip/arm-gic-v4.h
++++ b/include/linux/irqchip/arm-gic-v4.h
+@@ -103,6 +103,7 @@ enum its_vcpu_info_cmd_type {
+ 	SCHEDULE_VPE,
+ 	DESCHEDULE_VPE,
+ 	INVALL_VPE,
++	PROP_UPDATE_SGI,
+ };
  
-+#define GICR_VSGIR			0x0080
-+
-+#define GICR_VSGIR_VPEID		GENMASK(15, 0)
-+
-+#define GICR_VSGIPENDR			0x0088
-+
-+#define GICR_VSGIPENDR_BUSY		(1U << 31)
-+#define GICR_VSGIPENDR_PENDING		GENMASK(15, 0)
-+
- /*
-  * ITS registers, offsets from ITS_base
-  */
-@@ -368,6 +377,11 @@
+ struct its_cmd_info {
+@@ -115,6 +116,10 @@ struct its_cmd_info {
+ 			bool		g0en;
+ 			bool		g1en;
+ 		};
++		struct {
++			u8		priority;
++			bool		group;
++		};
+ 	};
+ };
  
- #define GITS_TRANSLATER			0x10040
- 
-+#define GITS_SGIR			0x20020
-+
-+#define GITS_SGIR_VPEID			GENMASK_ULL(47, 32)
-+#define GITS_SGIR_VINTID		GENMASK_ULL(3, 0)
-+
- #define GITS_CTLR_ENABLE		(1U << 0)
- #define GITS_CTLR_ImDe			(1U << 1)
- #define	GITS_CTLR_ITS_NUMBER_SHIFT	4
 -- 
 2.20.1
 
