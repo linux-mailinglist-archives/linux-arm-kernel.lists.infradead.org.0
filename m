@@ -2,89 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 285FA18C9A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:11:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BCEC18C9F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:15:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uGGm3RGKZ6EbjJmiATQlQrhVMXaIJvUQqHIepOrGsss=; b=pcyP91dzzwslhC
-	IZr6MGrNBDGD4o4bWu8Vq4VlJXgoONDXb0Fjc9KEjbYwFGRBt8rZNGaEmGhEv7pu9ri9xzmCKD3Kp
-	KKsMdjQ3Rv7U37FP/ipKgg49zYKChDfdiND3hRqfh+QER2ZYl1ckeI2j8fSCmcMojw2rn1CK7uqse
-	GXVFmA1GJFVS4KJvWneA5SgEB/Z+NdMTofw+Y/odi3sx7jMpBfkSwZs19/kP1Nq6lSq5/SfkVoLlT
-	qlArqj9yFTT5MEkQFmyrMHcacnp6PJ1UHvCnvm2FSeRJj8X0tdUVNJ/i5QDDutfBpgdnXrQavte2z
-	efh+MDk29U9NJoTK8WAg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xG8DkuKWc30oqhoIzNcFf14nwOB/6wu5AyqYeoOVqUA=; b=VgQsuUuqfG24ab
+	DA9LxURZCc+kpzNyr+lNLFTVXipipLCz87E/5VGcVmoBkL0Y/vzb8iHUpVoDgduJXn5wZtD1v2Qju
+	ODaRsrOFmqQgyQE62iKLFzgoFOqZ2v2e8uhzgkanZTr1WZTFnBbVomQNm4nHnL9T7tXFb3bd/7ARI
+	a2R8nbvJJolAM0jIjfuKD4GTYFjuPPUP8B5Opu4cV8+MK4gBXsDOc8d2a98o7+otrTPHq5iBMbn7S
+	epTKJ7dOITmZtWciXSsUaJ7rnXrAE8QpVqe9Ns4M25luqcjQjXS1+FZr1GPZBwFxBblKcioSk9tcY
+	Ox+pbx1feJLmzpmBMnIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFDgx-0008Fa-Ce; Fri, 20 Mar 2020 09:11:47 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFDgo-0008F2-1f
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:11:40 +0000
-Received: by mail-lf1-x144.google.com with SMTP id j188so49584lfj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Mar 2020 02:11:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=OU/CpAGIqH8KmfsyruwEDtwqFN1iNUUKyUH7R3UxLkw=;
- b=mllYl6GF2syYSUniY8DE9rxhVQ9ZjeJtdUw2jL/qdetWaKL4P4TFCzv5AjONaNrDzs
- BGM8hqFjQpEIYY1BWfAadf0qCywfRXMAfeboea/zxJo57UoIVHfgZWrG/zwY9BwTuVgb
- DRXULnIB8wnRcpx/yKPfjz+J/PSnVSxl+Bt7vPIcZyJtyReDP/OxZHesXHBx+tinokkR
- IKKc188enCZ7EwyPkgD6Y9blmbi+56B1MJKDi1Fk8OvlUKZw3GAPgVVhAJvfZibhUl5t
- ekKWzyO+eyqmq12qo3Pns7t3wOzedDpKks/K9dXWARk5rtaiwF/SWq6Rqe5cYFNsYqlU
- rw+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=OU/CpAGIqH8KmfsyruwEDtwqFN1iNUUKyUH7R3UxLkw=;
- b=K5Im8aRgPA5q7DSDrCVx6shUEMFpLpo66xqhtOGMjYv/USk41ayLqq8DkaO0dCoaIc
- MLHdOMKZeAtr8/7naVGGGXSGfWQTB7zBPOMLwX5h0NMY0f1BHg74bEx30v+sa+k69N1I
- RYWSg10Wy/1Da6ARLMJm4OwWXJ3MjjDMdfvyzCagWiTOLRaXFUNkNKvmYCfX+K4ymTpu
- 4INVbDpyPFvNK8IHVE8X8VVu+yPtWxjEplNRUIkgp8Y8Q5tDh06wBcyT8/ZSU8z7VHoq
- X5p9Tp6x3SAbg5zDDVQElsnqJnDC6DlvxboYNBZ6TsZt8c5inGrcF7KLhUoikHxUX21m
- ZPtg==
-X-Gm-Message-State: ANhLgQ3KETvK5SVm6XPGk+n4oL51LKCHV+CYEmGkt7Xw5jyUdGpbhbkF
- faRpPtwwLL27FXOxhjjJukoSPJM6/QLsIo+KHbFzwQ==
-X-Google-Smtp-Source: ADFU+vtJYWG8EQJP/hgD78QKWv99yAbCP307TFvbYqg8VWMrgeCGnVYbnG2Hccuki3Zkny8VqCdXwG3hw10skhhk4Rw=
-X-Received: by 2002:a05:6512:247:: with SMTP id
- b7mr4683821lfo.21.1584695495451; 
- Fri, 20 Mar 2020 02:11:35 -0700 (PDT)
+	id 1jFDkL-0001TE-De; Fri, 20 Mar 2020 09:15:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFDjx-0000ae-O0
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:14:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F326830E;
+ Fri, 20 Mar 2020 02:14:50 -0700 (PDT)
+Received: from [192.168.0.106] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB82B3F305;
+ Fri, 20 Mar 2020 02:14:49 -0700 (PDT)
+Subject: Re: [PATCH kvmtool v3] Add emulation for CFI compatible flash memory
+To: Will Deacon <will@kernel.org>, Andre Przywara <andre.przywara@arm.com>
+References: <20200221165532.90618-1-andre.przywara@arm.com>
+ <20200318215847.GC8477@willie-the-truck>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <1a9578a8-8907-94f6-0f8f-ad8ff08b5028@arm.com>
+Date: Fri, 20 Mar 2020 09:15:11 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <20200316133503.144650-1-icenowy@aosc.io>
- <20200316133503.144650-3-icenowy@aosc.io>
- <CACRpkdaVrfd1p+WyACy-gq-3BPsXJ_CZwi2OZe+=csseBcvcaA@mail.gmail.com>
- <491ADD02-5511-404B-88A8-5725EF061EAC@aosc.io>
-In-Reply-To: <491ADD02-5511-404B-88A8-5725EF061EAC@aosc.io>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 20 Mar 2020 10:11:22 +0100
-Message-ID: <CACRpkdbeLAyhhkx115zAV0tdC7KJ4T0UoQ2QeDwTVN+btxp=Jw@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] dt-bindings: panel: add binding for Xingbangda
- XBD599 panel
-To: Icenowy Zheng <icenowy@aosc.io>, Jagan Teki <jagan@amarulasolutions.com>
+In-Reply-To: <20200318215847.GC8477@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_021138_122217_04DFD922 
-X-CRM114-Status: GOOD (  13.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200320_021453_825838_A6066358 
+X-CRM114-Status: GOOD (  14.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,52 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Chen-Yu Tsai <wens@csie.org>, Sam Ravnborg <sam@ravnborg.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kvm@vger.kernel.org, Raphael Gault <raphael.gault@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Sami Mujawar <sami.mujawar@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBNYXIgMjAsIDIwMjAgYXQgOTowNyBBTSBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFv
-c2MuaW8+IHdyb3RlOgo+IOS6jiAyMDIw5bm0M+aciDE55pelIEdNVCswODowMCDkuIvljYgxMDox
-NDoyNywgTGludXMgV2FsbGVpaiA8bGludXMud2FsbGVpakBsaW5hcm8ub3JnPiDlhpnliLA6Cj4g
-Pk9uIE1vbiwgTWFyIDE2LCAyMDIwIGF0IDI6MzcgUE0gSWNlbm93eSBaaGVuZyA8aWNlbm93eUBh
-b3NjLmlvPiB3cm90ZToKCj4gPkFzIG5vdGljZWQgaW4gdGhlIHJldmlldyBvZiB0aGUgZHJpdmVy
-LCB0aGlzIGRpc3BsYXkgaXMgdmVyeSBjbG9zZSB0bwo+ID5oaW1heCxoeDgzNjMuCj4gPgo+ID5J
-IHRoaW5rIHRoZSBiZXN0IGlzIHRvIGRldGVybWluIHdoYXQgYWN0dWFsIGRpc3BsYXkgY29udHJv
-bGxlciBpdCBpcywKPiA+SSB0aGluayBpdCBpcyBzb21lIGtpbmQgb2YgSWxpdGVrIGNvbnRyb2xs
-ZXIgc2luY2UgSWxpdGVrIGlsaTkzNDIgaXMKPiA+Y2xlYXJseSB2ZXJ5IHNpbWlsYXIuCj4KPiBJ
-dCdzIFNpdHJvbml4IFNUNzcwMywgc2FtZSBhcyB0aGUgTGlicmVtIDUgcGFuZWwuCgpIZWgsIEkg
-d29uZGVyIGhvdyBpdCBjb21lcyB0aGF0IGl0IGlzIHNvIHNpbWlsYXIgdG8gSWxpdGVrLgpJIGd1
-ZXNzIEkgd2lsbCBuZXZlciB1bmRlcnN0YW5kIGhvdyB0aGUgc2lsaWNvbiBlY29zeXN0ZW0gd29y
-a3MKaW4gYXNpYSAoSSBkaWQgcmVhZCBhIGxvdCBvZiBCdW5uaWUgSHVhbmcncyBhcnRpY2xlcyBh
-bmQgaGFyZHdhcmUKaGFja2luZyBib29rIHRvIHRyeSB0byB1bmRlcnN0YW5kLi4uKQoKVGhpcyBm
-aWxlIHNob3VsZCBiZSBuYW1lZCBzaXRyb25peCxzdDc3MDMueWFtbCB0aGVuLgoKQWNjb3JkaW5n
-IHRvIHRoZSBjb2RlIGluIHRoZSBMaWJyZW0gNToKaHR0cHM6Ly9zb3VyY2UucHVyaS5zbS9MaWJy
-ZW01L2xpbnV4LW5leHQvYmxvYi9pbXg4LWN1cnJlbnQtbGlicmVtNS9kcml2ZXJzL2dwdS9kcm0v
-cGFuZWwvcGFuZWwtc2l0cm9uaXgtc3Q3NzAxLmMKVGhlIGFjdHVhbCBuYW1lIG9mIHRoZSBkaXNw
-bGF5IGlzIFRlY2hzdGFyIHRzODU1MGIuCkFuZCB0aGUgZGlzcGxheSBjb250cm9sbGVyIGlzIHN0
-NzcwMSwgc28gbWF5YmUgd2Ugc2hvdWxkCmFjdHVhbGx5IG5hbWUgaXQgc2l0cm9uaXgsc3Q3NzB4
-LnlhbWwgaWYgdGhlcmUgYXJlIHNvbWUKc3ViLXZhcmlhbnRzIG9mIHN0NzcweD8KCj4gPnByb3Bl
-cnRpZXM6Cj4gPiAgY29tcGF0aWJsZToKPiA+ICAgIGl0ZW1zOgo+ID4gICAgICAtIGNvbnN0OiB4
-aW5nYmFuZ2RhLHhiZDU5OQo+ID4gICAgICAtIGNvbnN0OiBpbGl0ZWssaWxpOTM0Mgo+ID4KPiA+
-UG9zc2libHkgdXNlIG9uZU9mIGFuZCBhZGQgc3VwcG9ydCBmb3IgdGhlIGhpbWF4LGh4ODM2Mwo+
-ID5hbHJlYWR5IHdoaWxlIHlvdSdyZSBhdCBpdC4KClRoaXMgc2hvdWxkIGF0IGxlYXN0IGJlOgoK
-Y29tcGF0aWJsZToKICAgaXRlbXM6CiAgICAgLSBlbnVtOgogICAgICAgLSB4aW5nYmFuZ2RhLHhi
-ZDU5OQogICAgICAgLSBoaW1heCxoeDgzNjMKICAgICAgIC0gdGVjaHN0YXIsdHM4NTUwYgogICAg
-IC0gZW51bToKICAgICAgIC0gc2l0cm9uaXgsc3Q3NzAxCiAgICAgICAtIHNpdHJvbml4LHN0Nzcw
-MwoKU28gcGFuZWwgbm9kZXMgdXNpbmcgdGhpcyBwYW5lbCBiZWNvbWUKY29tcGF0aWJsZSA9ICJ4
-aW5nYmFuZ2RhLHNiZDU5OSIsICJzaXRyb25peCxzdDc3MDMiCmV0Yy4KClRoaXMgd2F5IGl0IGlz
-IHN0cmFpZ2h0LWZvcndhcmQgZm9yIGRyaXZlcnMgdG8gaWRlbnRpZnkgdGhlIHBhbmVsCnZlbmRv
-ciBhbmQgZGlzcGxheSBjb250cm9sbGVyLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Will,
+
+On 3/18/20 9:58 PM, Will Deacon wrote:
+
+> On Fri, Feb 21, 2020 at 04:55:32PM +0000, Andre Przywara wrote:
+>> From: Raphael Gault <raphael.gault@arm.com>
+>>
+>> The EDK II UEFI firmware implementation requires some storage for the EFI
+>> variables, which is typically some flash storage.
+>> Since this is already supported on the EDK II side, we add a CFI flash
+>> emulation to kvmtool.
+>> This is backed by a file, specified via the --flash or -F command line
+>> option. Any flash writes done by the guest will immediately be reflected
+>> into this file (kvmtool mmap's the file).
+>> The flash will be limited to the nearest power-of-2 size, so only the
+>> first 2 MB of a 3 MB file will be used.
+>>
+>> This implements a CFI flash using the "Intel/Sharp extended command
+>> set", as specified in:
+>> - JEDEC JESD68.01
+>> - JEDEC JEP137B
+>> - Intel Application Note 646
+>> Some gaps in those specs have been filled by looking at real devices and
+>> other implementations (QEMU, Linux kernel driver).
+>>
+>> At the moment this relies on DT to advertise the base address of the
+>> flash memory (mapped into the MMIO address space) and is only enabled
+>> for ARM/ARM64. The emulation itself is architecture agnostic, though.
+>>
+>> This is one missing piece toward a working UEFI boot with kvmtool on
+>> ARM guests, the other is to provide writable PCI BARs, which is WIP.
+>>
+>> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+>> [Andre: rewriting and fixing]
+>> Signed-off-by: Andre Przywra <andre.przywara@arm.com>
+>> ---
+>> Hi,
+>>
+>> an update fixing Alexandru's review comments (many thanks for those!)
+>> The biggest change code-wise is the split of the MMIO handler into three
+>> different functions. Another significant change is the rounding *down* of
+>> the present flash file size to the nearest power-of-two, to match flash
+>> hardware chips and Linux' expectations.
+> Alexandru -- are you happy with this now?
+
+I really appreciate taking the time to look at it, but at the moment I'm busy
+testing v3 of the reassignable BARs and PCIE support [1]. I'll try to send the
+patches as soon as possible, then I'll review this patch.
+
+[1] https://www.spinics.net/lists/kvm/msg204878.html
+
+Thanks,
+Alex
+>
+> Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
