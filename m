@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDEB518CF42
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:44:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16F8618CF4A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:44:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEkpMCPyzSS1lcUP89jLkvThKSdZ0evSSlhIlb/QaHg=; b=iPSOUtIxPDIV5Z
-	kvXzkn5L6ycXImdTQ0/axp19IIN54XUrgsTaKRXdMGEQ3mbqSw3tIjR1tjgaZftTyXEEcP5R3TKXC
-	rz7pl4FiF752NKcosn06t78GkxCONFfct91vCrSC4dQkX7nTBaWRneP+WAHYi2vnf/YSkr9ENT8vr
-	zpa63ZD+UbPtoPKu4v/ORHQ+E2PAa2aC3T8btJkPGlzLguI7KCCOC9pir5YL7ltt4JOYkme4QyB6p
-	IqHRx2OH3wb4G5d/7JUUD+EQqmXrxd/bxBsKS85PFM9ptg9oXjiURn6m6YmQDHCnhPD68KWaDgmx6
-	j+5gjDMTV+LHQX7J5LPA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cZfkv91c+SO5EcSbRmP2wagCIyL5w+/8Cu41z/uk1dc=; b=CHtSFt5gcIQ0Ss
+	7rXUtR3+VojKfjo88asRf17IBYP5L8WWLFBJx8wqNlhB1fxoiuwWJrGAaPym14ZR5KITrNBlzC16c
+	JJAKEEelKSOKmJ4kdKM+oyHwjmAPMNj2ZDo9pdJx5GmzXmiitGw7hmuSdFE9ndfUqzc6QJSMqLfQ6
+	+nI2tbHMC6cI+4FU0DxFr8awbAWlgBt4HheEvISjEFOpYC2Hs6DbzE9/JfsA1nNxlfgmOz7y0h0FS
+	aKRDr3x6VQT8PATDU/zDm+/c2eI/tQ95KJl+2SD5giMDgEicJ5I7wNJD3bGTlhxQFtXM6BnxdivHj
+	Yvz8ByUndz2Ae3VkxMsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFHwZ-0001Ug-3R; Fri, 20 Mar 2020 13:44:11 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jFHx2-0001nV-DL; Fri, 20 Mar 2020 13:44:40 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFHwP-0001Tq-56
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:44:02 +0000
-Received: by mail-ot1-f67.google.com with SMTP id e19so5977148otj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Mar 2020 06:44:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HTiNRBW6uZ5w4Aw+oJKhvSzAGoLn1XvNb66iGTV4mFU=;
- b=k6sOWp3FJqVrkCDeG32NXyI9NHBjpeBMhrmhCfKR0lecBjc6OxwWiG2Gsb4srll2gI
- AhmywIG6Z5D1+f3oVWN1IXhQqb0bikilMIbGx/pjBu+x+8tLiiqWDfvn8fvdBhwqKReR
- Ob7BLvwQwtSG8Ei2xLUzvWwtxk6XbuA/+7xrPgvvFM0NvmzQQV+TrnmmA0YKSRt8gpx9
- Tvty9IZ9gR8HQhrjduEQXvCdYLRGbDAxHqLIIt2jyk1jnIABRfDOoySA2ZVQRIxCERTB
- YsvelyIZeuiapqtdzvPDCbtG7UV78EPSQ6EBrfnxHFKDg2Exb8Ttm/3YcKMP7omlrU24
- M/7Q==
-X-Gm-Message-State: ANhLgQ1/+S+dNqvEg5GD6boihF+NzH7HMCIGPq/sprVCo3+srh6bTH51
- ZiNPe4xyIUALTD1v9GMkKqwljaXHDRPtluPIpUY=
-X-Google-Smtp-Source: ADFU+vvEmg/6HsmpxKKaMImY62zgJb2bd3AJh/9jTVUjPK3jVM6yuBr7QDpI3y7cw9SFs4dn0QsgJ13LDN+MQ4od7LE=
-X-Received: by 2002:a9d:1708:: with SMTP id i8mr6703347ota.250.1584711840156; 
- Fri, 20 Mar 2020 06:44:00 -0700 (PDT)
+ id 1jFHwm-0001lD-D5
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:44:26 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02KDdWBJ018194; Fri, 20 Mar 2020 14:44:18 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=76LWxNmSrLcSGRcg4g7Zi1Kwv4e4NUwj8UcZLmOsR/A=;
+ b=cI4WXI3y9bFxguxSW/ud9wbG8G9O66qDQz31hGwVmuOo03h3bRRKSL6o4aAenEMwce6D
+ skY8oS2lH5MEBKZNt9POdKywz9e7Nfa/WiltXMN/PomQVCK0RxTJ6nXswEt2FfSQLjPb
+ 8SH+Gd/lKaXCEJKr7P7wnaUM5matY2HDFBLAyd9RAUppD4QG5uEtP4+XTm4HnibUcbLd
+ Xkx8D4PDuMiv7wuVz6ZoWNFYIYodxonvnHaFF1yhW+yFzko4nvIHL76C+Le4uwd8Tx+8
+ 8P6AUsgQZjTV6Gc6wHYKPn3o6O9X0O5bfycnMeu0q4AJEg3KpC0SZ1qAqOvsoiZ74Ock dw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yu95uys1k-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 20 Mar 2020 14:44:18 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AC9CC100034;
+ Fri, 20 Mar 2020 14:44:17 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9CE2A2AF351;
+ Fri, 20 Mar 2020 14:44:17 +0100 (CET)
+Received: from localhost (10.75.127.49) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 20 Mar 2020 14:44:17
+ +0100
+From: Alain Volmat <alain.volmat@st.com>
+To: <broonie@kernel.org>, <amelie.delaunay@st.com>
+Subject: [PATCH] spi: stm32: Fix comments compilation warnings
+Date: Fri, 20 Mar 2020 14:44:17 +0100
+Message-ID: <1584711857-9162-1-git-send-email-alain.volmat@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <CGME20200225112354eucas1p1300749b32c6809b6a22194c1a952a68c@eucas1p1.samsung.com>
- <20200127140716.15673-1-geert+renesas@glider.be>
- <d1b12473-5199-1cf6-25d1-a6ce79450e8e@samsung.com>
- <CAMuHMdUGu4eStpYp5W0SKJd8yrLLDTgF4__Jq_n+Z7SWtPM+Cg@mail.gmail.com>
- <90c006f2-8c13-2976-008f-37139ca49f37@gmail.com>
- <CAMuHMdVkhf+4CQwpf9tn3UfaMb=qoRRYS2XpwcgBMciTVmXjHA@mail.gmail.com>
- <75358399-c292-4e60-abdc-bd0729cf5c08@gmail.com>
- <CAMuHMdX9PH+WUvONz2C8D1fRrZXn5rEND-p_my2mYvoyxF_gWA@mail.gmail.com>
-In-Reply-To: <CAMuHMdX9PH+WUvONz2C8D1fRrZXn5rEND-p_my2mYvoyxF_gWA@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 20 Mar 2020 14:43:48 +0100
-Message-ID: <CAMuHMdVwxi57jMrVoH8P2ms0j9YrZvc1Zi+BVR3VDo8QJHaU-w@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: boot: Obtain start of physical memory from DTB
-To: Dmitry Osipenko <digetx@gmail.com>
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-20_04:2020-03-20,
+ 2020-03-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_064401_197408_08F05CD0 
-X-CRM114-Status: GOOD (  26.87  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200320_064424_824498_59EFDFF6 
+X-CRM114-Status: GOOD (  18.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,96 +92,259 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- Eric Miao <eric.miao@nvidia.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, alain.volmat@st.com, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRG1pdHJ5IGV0IGFsLAoKT24gRnJpLCBNYXIgMjAsIDIwMjAgYXQgMTA6MTggQU0gR2VlcnQg
-VXl0dGVyaG9ldmVuCjxnZWVydEBsaW51eC1tNjhrLm9yZz4gd3JvdGU6Cj4gT24gVGh1LCBNYXIg
-MTksIDIwMjAgYXQgMzozNSBQTSBEbWl0cnkgT3NpcGVua28gPGRpZ2V0eEBnbWFpbC5jb20+IHdy
-b3RlOgo+ID4gMTkuMDMuMjAyMCAxMToxOCwgR2VlcnQgVXl0dGVyaG9ldmVuINC/0LjRiNC10YI6
-Cj4gPiA+IE9uIFRodSwgTWFyIDE5LCAyMDIwIGF0IDI6MTEgQU0gRG1pdHJ5IE9zaXBlbmtvIDxk
-aWdldHhAZ21haWwuY29tPiB3cm90ZToKPiA+ID4+IDI1LjAyLjIwMjAgMTQ6NDAsIEdlZXJ0IFV5
-dHRlcmhvZXZlbiDQv9C40YjQtdGCOgo+ID4gPj4+IE9uIFR1ZSwgRmViIDI1LCAyMDIwIGF0IDEy
-OjI0IFBNIE1hcmVrIFN6eXByb3dza2kKPiA+ID4+PiA8bS5zenlwcm93c2tpQHNhbXN1bmcuY29t
-PiB3cm90ZToKPiA+ID4+Pj4gT24gMjcuMDEuMjAyMCAxNTowNywgR2VlcnQgVXl0dGVyaG9ldmVu
-IHdyb3RlOgo+ID4gPj4+Pj4gQ3VycmVudGx5LCB0aGUgc3RhcnQgYWRkcmVzcyBvZiBwaHlzaWNh
-bCBtZW1vcnkgaXMgb2J0YWluZWQgYnkgbWFza2luZwo+ID4gPj4+Pj4gdGhlIHByb2dyYW0gY291
-bnRlciB3aXRoIGEgZml4ZWQgbWFzayBvZiAweGY4MDAwMDAwLiAgVGhpcyBtYXNrIHZhbHVlCj4g
-PiA+Pj4+PiB3YXMgY2hvc2VuIGFzIGEgYmFsYW5jZSBiZXR3ZWVuIHRoZSByZXF1aXJlbWVudHMg
-b2YgZGlmZmVyZW50IHBsYXRmb3Jtcy4KPiA+ID4+Pj4+IEhvd2V2ZXIsIHRoaXMgZG9lcyByZXF1
-aXJlIHRoYXQgdGhlIHN0YXJ0IGFkZHJlc3Mgb2YgcGh5c2ljYWwgbWVtb3J5IGlzCj4gPiA+Pj4+
-PiBhIG11bHRpcGxlIG9mIDEyOCBNaUIsIHByZWNsdWRpbmcgYm9vdGluZyBMaW51eCBvbiBwbGF0
-Zm9ybXMgd2hlcmUgdGhpcwo+ID4gPj4+Pj4gcmVxdWlyZW1lbnQgaXMgbm90IGZ1bGZpbGxlZC4K
-PiA+ID4+Pj4+Cj4gPiA+Pj4+PiBGaXggdGhpcyBsaW1pdGF0aW9uIGJ5IG9idGFpbmluZyB0aGUg
-c3RhcnQgYWRkcmVzcyBmcm9tIHRoZSBEVEIgaW5zdGVhZCwKPiA+ID4+Pj4+IGlmIGF2YWlsYWJs
-ZSAoZWl0aGVyIGV4cGxpY2l0bHkgcGFzc2VkLCBvciBhcHBlbmRlZCB0byB0aGUga2VybmVsKS4K
-PiA+ID4+Pj4+IEZhbGwgYmFjayB0byB0aGUgdHJhZGl0aW9uYWwgbWV0aG9kIHdoZW4gbmVlZGVk
-Lgo+ID4gPj4+Pj4KPiA+ID4+Pj4+IFRoaXMgYWxsb3dzIHRvIGJvb3QgTGludXggb24gcjdzOTIx
-MC9yemEybWV2YiB1c2luZyB0aGUgNjQgTWlCIG9mIFNEUkFNCj4gPiA+Pj4+PiBvbiB0aGUgUlpB
-Mk1FVkIgc3ViIGJvYXJkLCB3aGljaCBpcyBsb2NhdGVkIGF0IDB4MEMwMDAwMDAgKENTMyBzcGFj
-ZSksCj4gPiA+Pj4+PiBpLmUuIG5vdCBhdCBhIG11bHRpcGxlIG9mIDEyOCBNaUIuCj4gPiA+Pj4+
-Pgo+ID4gPj4+Pj4gU3VnZ2VzdGVkLWJ5OiBOaWNvbGFzIFBpdHJlIDxuaWNvQGZsdXhuaWMubmV0
-Pgo+ID4gPj4+Pj4gU2lnbmVkLW9mZi1ieTogR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydCtyZW5l
-c2FzQGdsaWRlci5iZT4KPiA+ID4+Pj4+IFJldmlld2VkLWJ5OiBOaWNvbGFzIFBpdHJlIDxuaWNv
-QGZsdXhuaWMubmV0Pgo+ID4gPj4+Pj4gLS0tCj4gPiA+Pj4+PiBBZ2FpbnN0IGFybS9mb3ItbmV4
-dC4KPiA+ID4+Pj4KPiA+ID4+Pj4gVGhpcyBwYXRjaCBsYW5kZWQgcmVjZW50bHkgaW4gbGludXgt
-bmV4dC4gSXQgYnJlYWtzIGxlZ2FjeSBib290aW5nIGZyb20KPiA+ID4+Pj4gdGhlIHpJbWFnZSAr
-IGFwcGVuZGVkIERUICsgY21kbGluZS9tZW1vcnkgaW5mbyBwcm92aWRlZCB2aWEgQVRBR3MuIEkK
-PiA+ID4+Pj4gd2lsbCBkZWJ1ZyBpdCBmdXJ0aGVyIG9uY2UgSSBmaW5kIHNvbWUgc3BhcmUgdGlt
-ZS4gV2hhdCBJIG5vdGljZWQgc28KPiA+ID4+Pj4gZmFyLCB0aGUgY21kbGluZS9tZW1vcnkgaW5m
-byBpcyBub3QgcmVhZCBmcm9tIHRoZSBBVEFHcywgb25seSB0aGUgdmFsdWVzCj4gPiA+Pj4+IHBy
-b3ZpZGVkIHZpYSBhcHBlbmRlZCBEVCBhcmUgdXNlZC4KPiA+ID4+Pgo+ID4gPj4+IE9vcHMsIHNv
-bWV0aGluZyBoYXBwZW5pbmcgbGlrZSB0aGlzIHdhcyBvbmUgb2YgbXkgYmlnZ2VzdCB3b3JyaWVz
-IHdoZW4KPiA+ID4+PiBwb3N0aW5nIHRoaXMgcGF0Y2guLi4gU29ycnkgZm9yIHRoZSBicmVha2Fn
-ZS4KPiA+ID4+Pgo+ID4gPj4+IElJVUlDLCB0aGUga2VybmVsIHN0aWxsIGJvb3RzLCBidXQganVz
-dCBkb2Vzbid0IHVzZSB0aGUgaW5mbyBwYXNzZWQgYnkgQVRBR3M/Cj4gPiA+Pj4KPiA+ID4+PiBJ
-J2xsIGhhdmUgYSBjbG9zZXIgbG9vayBsYXRlciB0b2RheS4KPiA+ID4+PiBJbiB0aGUgbWVhbiB0
-aW1lLCBJJ3ZlIHNlbnQgc29tZSBkZWJ1ZyBjb2RlIEkgdXNlZCB3aGVuIGRldmVsb3BpbmcKPiA+
-ID4+PiB0aGlzIHBhdGNoLCB3aGljaCBtYXkgYmUgdXNlZnVsLCBob3BlZnVsbHkuCj4gPiA+Pgo+
-ID4gPj4gTlZJRElBIFRlZ3JhIGlzIGFsc28gYWZmZWN0ZWQgYnkgdGhpcyBwYXRjaC4gQSB3ZWVr
-IGFnbyBhbiB1cGRhdGVkCj4gPiA+PiB2ZXJzaW9uIG9mIHRoZSBwYXRjaCB3YXMgcHVzaGVkIGlu
-dG8gbGludXgtbmV4dCBhbmQgbm93IG1hY2hpbmUgZG9lc24ndAo+ID4gPj4gYm9vdCBhdCBhbGwu
-Cgo+ID4gSSByZWNhbGxlZCB0aGF0IENPTkZJR19USFVNQjJfS0VSTkVMPXkgaXMgc2V0IGluIG15
-IGtlcm5lbCdzIGNvbmZpZyBhbmQKPiA+IGRpc2FibGluZyB0aHVtYjIgYnVpbGQgZml4ZXMgdGhl
-IHByb2JsZW0uIFBsZWFzZSBjb3JyZWN0IGl0IGluIHRoZSBuZXh0Cj4gPiB2ZXJzaW9uIG9mIHRo
-ZSBwYXRjaCwgdGhhbmtzIGluIGFkdmFuY2UuCj4KPiBJbnRlcmVzdGluZy4gIEkgZW5hYmxlZCBD
-T05GSUdfVEhVTUIyX0tFUk5FTD15LCBhbmQgaXQgZG9lc24ndCBtYWtlCj4gYSBkaWZmZXJlbmNl
-IGZvciB0aGUgZmV3IGJvYXJkIGNvbWJvcyBJJ3ZlIHRyaWVkICh3aXRoL3dpdGhvdXQgYXBwZW5k
-ZWQgRFRCKS4KPiBTbyBpdCBtdXN0IGJlIHJlbGF0ZWQgdG8gQVRBR1MuICBXaWxsIGRpdmUgZGVl
-cGVyLi4uCgpJIG1hbmFnZWQgdG8gcmVwcm9kdWNlIGl0IHdpdGhvdXQgQVRBR1MuCgpUdXJucyBv
-dXQgdG8gYmUgYSBiYWQgaW50ZXJhY3Rpb24gd2l0aCBjb21taXQgMTg0YmY2NTNhN2E0NTJjMSAo
-IkFSTToKZGVjb21wcmVzc29yOiBmYWN0b3Igb3V0IHJvdXRpbmUgdG8gb2J0YWluIHRoZSBpbmZs
-YXRlZCBpbWFnZSBzaXplIiksCndoaWNoIHJlbW92ZWQgb25lIGVudHJ5IGZyb20gdGhlIGRhdGEg
-YXJyYXkgYXQgTEMwLiAgV2hpbGUgdGhhdCBjb21taXQKdXBkYXRlZCBhbGwgdGhlbi1leGlzdGlu
-ZyB1c2VycywgbWVyZ2luZyBBcmQncyBwdWxsIHJlcXVlc3QgZGlkbid0IHRha2UKaW50byBhY2Nv
-dW50IHRoYXQgYSBuZXcgdXNlciBoYWQgZW1lcmdlZCwgd2hpY2ggYWxzbyBuZWVkZWQgdXBkYXRp
-bmcuCgpXaGVuIENPTkZJR19USFVNQjJfS0VSTkVMPXksIHRoZSBzdGFjayBwb2ludGVyIGJlY29t
-ZXMgMi1ieXRlCmluc3RlYWQgb2YgNC1ieXRlIGFsaWduZWQsIGNhdXNpbmcgYSBjcmFzaC4KV2hl
-biBDT05GSUdfVEhVTUIyX0tFUk5FTD1uLCBpdCBzdGlsbCB3b3JrcywgcHJvYmFibHkgYnkgYWNj
-aWRlbnQuCgogICAgICAgICAgICAgICAgYWRyICAgICByMCwgTEMwCiAgICAgICAgICAgICAgICBs
-ZHIgICAgIHIxLCBbcjBdICAgICAgICBAIGdldCBhYnNvbHV0ZSBMQzAKLSAgICAgICAgICAgICAg
-IGxkciAgICAgc3AsIFtyMCwgIzI4XSAgIEAgZ2V0IHN0YWNrIGxvY2F0aW9uCisgICAgICAgICAg
-ICAgICBsZHIgICAgIHNwLCBbcjAsICMyNF0gICBAIGdldCBzdGFjayBsb2NhdGlvbgoKaW4gYXJj
-aC9hcm0vYm9vdC9jb21wcmVzc2VkL2hlYWQuUyBmaXhlcyB0aGUgaXNzdWUgZm9yIG1lLgoKV2ls
-bCBzZW5kIHY0IHNob3J0bHkuCgpHcntvZXRqZSxlZXRpbmd9cywKCiAgICAgICAgICAgICAgICAg
-ICAgICAgIEdlZXJ0CgotLSAKR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRoZXJlJ3MgbG90cyBvZiBM
-aW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwoKSW4gcGVyc29uYWwgY29u
-dmVyc2F0aW9ucyB3aXRoIHRlY2huaWNhbCBwZW9wbGUsIEkgY2FsbCBteXNlbGYgYSBoYWNrZXIu
-IEJ1dAp3aGVuIEknbSB0YWxraW5nIHRvIGpvdXJuYWxpc3RzIEkganVzdCBzYXkgInByb2dyYW1t
-ZXIiIG9yIHNvbWV0aGluZyBsaWtlIHRoYXQuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgLS0gTGludXMgVG9ydmFsZHMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Fix all functions and structure descriptions to have the driver
+warning free when built with W=1.
+
+Signed-off-by: Alain Volmat <alain.volmat@st.com>
+---
+ drivers/spi/spi-stm32.c | 62 +++++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 45 insertions(+), 17 deletions(-)
+
+diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
+index e041f9c4ec47..44ac6eb3298d 100644
+--- a/drivers/spi/spi-stm32.c
++++ b/drivers/spi/spi-stm32.c
+@@ -175,7 +175,7 @@
+ #define SPI_DMA_MIN_BYTES	16
+ 
+ /**
+- * stm32_spi_reg - stm32 SPI register & bitfield desc
++ * struct stm32_spi_reg - stm32 SPI register & bitfield desc
+  * @reg:		register offset
+  * @mask:		bitfield mask
+  * @shift:		left shift
+@@ -187,16 +187,16 @@ struct stm32_spi_reg {
+ };
+ 
+ /**
+- * stm32_spi_regspec - stm32 registers definition, compatible dependent data
+- * en: enable register and SPI enable bit
+- * dma_rx_en: SPI DMA RX enable register end SPI DMA RX enable bit
+- * dma_tx_en: SPI DMA TX enable register end SPI DMA TX enable bit
+- * cpol: clock polarity register and polarity bit
+- * cpha: clock phase register and phase bit
+- * lsb_first: LSB transmitted first register and bit
+- * br: baud rate register and bitfields
+- * rx: SPI RX data register
+- * tx: SPI TX data register
++ * struct stm32_spi_regspec - stm32 registers definition, compatible dependent data
++ * @en: enable register and SPI enable bit
++ * @dma_rx_en: SPI DMA RX enable register end SPI DMA RX enable bit
++ * @dma_tx_en: SPI DMA TX enable register end SPI DMA TX enable bit
++ * @cpol: clock polarity register and polarity bit
++ * @cpha: clock phase register and phase bit
++ * @lsb_first: LSB transmitted first register and bit
++ * @br: baud rate register and bitfields
++ * @rx: SPI RX data register
++ * @tx: SPI TX data register
+  */
+ struct stm32_spi_regspec {
+ 	const struct stm32_spi_reg en;
+@@ -213,7 +213,7 @@ struct stm32_spi_regspec {
+ struct stm32_spi;
+ 
+ /**
+- * stm32_spi_cfg - stm32 compatible configuration data
++ * struct stm32_spi_cfg - stm32 compatible configuration data
+  * @regs: registers descriptions
+  * @get_fifo_size: routine to get fifo size
+  * @get_bpw_mask: routine to get bits per word mask
+@@ -223,13 +223,13 @@ struct stm32_spi;
+  * @set_mode: routine to configure registers to desired mode
+  * @set_data_idleness: optional routine to configure registers to desired idle
+  * time between frames (if driver has this functionality)
+- * set_number_of_data: optional routine to configure registers to desired
++ * @set_number_of_data: optional routine to configure registers to desired
+  * number of data (if driver has this functionality)
+  * @can_dma: routine to determine if the transfer is eligible for DMA use
+  * @transfer_one_dma_start: routine to start transfer a single spi_transfer
+  * using DMA
+- * @dma_rx cb: routine to call after DMA RX channel operation is complete
+- * @dma_tx cb: routine to call after DMA TX channel operation is complete
++ * @dma_rx_cb: routine to call after DMA RX channel operation is complete
++ * @dma_tx_cb: routine to call after DMA TX channel operation is complete
+  * @transfer_one_irq: routine to configure interrupts for driver
+  * @irq_handler_event: Interrupt handler for SPI controller events
+  * @irq_handler_thread: thread of interrupt handler for SPI controller
+@@ -587,6 +587,7 @@ static void stm32f4_spi_read_rx(struct stm32_spi *spi)
+ /**
+  * stm32h7_spi_read_rxfifo - Read bytes in Receive Data Register
+  * @spi: pointer to the spi controller data structure
++ * @flush: boolean indicating that FIFO should be flushed
+  *
+  * Write in rx_buf depends on remaining bytes to avoid to write beyond
+  * rx_buf end.
+@@ -756,6 +757,9 @@ static void stm32h7_spi_disable(struct stm32_spi *spi)
+ 
+ /**
+  * stm32_spi_can_dma - Determine if the transfer is eligible for DMA use
++ * @master: controller master interface
++ * @spi_dev: pointer to the spi device
++ * @transfer: pointer to spi transfer
+  *
+  * If driver has fifo and the current transfer size is greater than fifo size,
+  * use DMA. Otherwise use DMA for transfer longer than defined DMA min bytes.
+@@ -974,6 +978,8 @@ static irqreturn_t stm32h7_spi_irq_thread(int irq, void *dev_id)
+ 
+ /**
+  * stm32_spi_prepare_msg - set up the controller to transfer a single message
++ * @master: controller master interface
++ * @msg: pointer to spi message
+  */
+ static int stm32_spi_prepare_msg(struct spi_master *master,
+ 				 struct spi_message *msg)
+@@ -1026,6 +1032,7 @@ static int stm32_spi_prepare_msg(struct spi_master *master,
+ 
+ /**
+  * stm32f4_spi_dma_tx_cb - dma callback
++ * @data: pointer to the spi controller data structure
+  *
+  * DMA callback is called when the transfer is complete for DMA TX channel.
+  */
+@@ -1041,6 +1048,7 @@ static void stm32f4_spi_dma_tx_cb(void *data)
+ 
+ /**
+  * stm32f4_spi_dma_rx_cb - dma callback
++ * @data: pointer to the spi controller data structure
+  *
+  * DMA callback is called when the transfer is complete for DMA RX channel.
+  */
+@@ -1054,6 +1062,7 @@ static void stm32f4_spi_dma_rx_cb(void *data)
+ 
+ /**
+  * stm32h7_spi_dma_cb - dma callback
++ * @data: pointer to the spi controller data structure
+  *
+  * DMA callback is called when the transfer is complete or when an error
+  * occurs. If the transfer is complete, EOT flag is raised.
+@@ -1079,6 +1088,9 @@ static void stm32h7_spi_dma_cb(void *data)
+ /**
+  * stm32_spi_dma_config - configure dma slave channel depending on current
+  *			  transfer bits_per_word.
++ * @spi: pointer to the spi controller data structure
++ * @dma_conf: pointer to the dma_slave_config structure
++ * @dir: direction of the dma transfer
+  */
+ static void stm32_spi_dma_config(struct stm32_spi *spi,
+ 				 struct dma_slave_config *dma_conf,
+@@ -1126,6 +1138,7 @@ static void stm32_spi_dma_config(struct stm32_spi *spi,
+ /**
+  * stm32f4_spi_transfer_one_irq - transfer a single spi_transfer using
+  *				  interrupts
++ * @spi: pointer to the spi controller data structure
+  *
+  * It must returns 0 if the transfer is finished or 1 if the transfer is still
+  * in progress.
+@@ -1166,6 +1179,7 @@ static int stm32f4_spi_transfer_one_irq(struct stm32_spi *spi)
+ /**
+  * stm32h7_spi_transfer_one_irq - transfer a single spi_transfer using
+  *				  interrupts
++ * @spi: pointer to the spi controller data structure
+  *
+  * It must returns 0 if the transfer is finished or 1 if the transfer is still
+  * in progress.
+@@ -1207,6 +1221,7 @@ static int stm32h7_spi_transfer_one_irq(struct stm32_spi *spi)
+ /**
+  * stm32f4_spi_transfer_one_dma_start - Set SPI driver registers to start
+  *					transfer using DMA
++ * @spi: pointer to the spi controller data structure
+  */
+ static void stm32f4_spi_transfer_one_dma_start(struct stm32_spi *spi)
+ {
+@@ -1227,6 +1242,7 @@ static void stm32f4_spi_transfer_one_dma_start(struct stm32_spi *spi)
+ /**
+  * stm32h7_spi_transfer_one_dma_start - Set SPI driver registers to start
+  *					transfer using DMA
++ * @spi: pointer to the spi controller data structure
+  */
+ static void stm32h7_spi_transfer_one_dma_start(struct stm32_spi *spi)
+ {
+@@ -1243,6 +1259,8 @@ static void stm32h7_spi_transfer_one_dma_start(struct stm32_spi *spi)
+ 
+ /**
+  * stm32_spi_transfer_one_dma - transfer a single spi_transfer using DMA
++ * @spi: pointer to the spi controller data structure
++ * @xfer: pointer to the spi_transfer structure
+  *
+  * It must returns 0 if the transfer is finished or 1 if the transfer is still
+  * in progress.
+@@ -1405,7 +1423,7 @@ static void stm32_spi_set_mbr(struct stm32_spi *spi, u32 mbrdiv)
+ /**
+  * stm32_spi_communication_type - return transfer communication type
+  * @spi_dev: pointer to the spi device
+- * transfer: pointer to spi transfer
++ * @transfer: pointer to spi transfer
+  */
+ static unsigned int stm32_spi_communication_type(struct spi_device *spi_dev,
+ 						 struct spi_transfer *transfer)
+@@ -1522,7 +1540,7 @@ static void stm32h7_spi_data_idleness(struct stm32_spi *spi, u32 len)
+ /**
+  * stm32h7_spi_number_of_data - configure number of data at current transfer
+  * @spi: pointer to the spi controller data structure
+- * @len: transfer length
++ * @nb_words: transfer length (in words)
+  */
+ static int stm32h7_spi_number_of_data(struct stm32_spi *spi, u32 nb_words)
+ {
+@@ -1546,6 +1564,9 @@ static int stm32h7_spi_number_of_data(struct stm32_spi *spi, u32 nb_words)
+  * stm32_spi_transfer_one_setup - common setup to transfer a single
+  *				  spi_transfer either using DMA or
+  *				  interrupts.
++ * @spi: pointer to the spi controller data structure
++ * @spi_dev: pointer to the spi device
++ * @transfer: pointer to spi transfer
+  */
+ static int stm32_spi_transfer_one_setup(struct stm32_spi *spi,
+ 					struct spi_device *spi_dev,
+@@ -1625,6 +1646,9 @@ static int stm32_spi_transfer_one_setup(struct stm32_spi *spi,
+ 
+ /**
+  * stm32_spi_transfer_one - transfer a single spi_transfer
++ * @master: controller master interface
++ * @spi_dev: pointer to the spi device
++ * @transfer: pointer to spi transfer
+  *
+  * It must return 0 if the transfer is finished or 1 if the transfer is still
+  * in progress.
+@@ -1658,6 +1682,8 @@ static int stm32_spi_transfer_one(struct spi_master *master,
+ 
+ /**
+  * stm32_spi_unprepare_msg - relax the hardware
++ * @master: controller master interface
++ * @msg: pointer to the spi message
+  */
+ static int stm32_spi_unprepare_msg(struct spi_master *master,
+ 				   struct spi_message *msg)
+@@ -1671,6 +1697,7 @@ static int stm32_spi_unprepare_msg(struct spi_master *master,
+ 
+ /**
+  * stm32f4_spi_config - Configure SPI controller as SPI master
++ * @spi: pointer to the spi controller data structure
+  */
+ static int stm32f4_spi_config(struct stm32_spi *spi)
+ {
+@@ -1701,6 +1728,7 @@ static int stm32f4_spi_config(struct stm32_spi *spi)
+ 
+ /**
+  * stm32h7_spi_config - Configure SPI controller as SPI master
++ * @spi: pointer to the spi controller data structure
+  */
+ static int stm32h7_spi_config(struct stm32_spi *spi)
+ {
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
