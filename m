@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA16918CE56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 13:59:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F08018CE6D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:05:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5jap7ApIdx2hL4DOxBNHfPjw3j6OXa/Q4cS5y5DnmJw=; b=sqocwXFMiUr4Mp
-	5dKkh35fuR2zeQ3nvBzmhoHUNbaUUOrWM1vxWaJmnD2+lX7Lb6LmgA0L3TXOEOaf/2Ztc4pBtDuEz
-	cfgpiJITE74RyUOqkgGwW3su3XYg0KtyNzXJuS0A8Z8WDYcDorGvoSzQ75M6nxfcwqhgqoDi96u9B
-	ArUlWi8hb7XNUwn+BqlKBp1HeDLleNtroLBTSZai15BubI0PGsfNIQ+IK3Tf+G3EHg2hNWfsPs48S
-	0UHMUkwexkp9rYADy9Wjn/K+h8YKysUXIfdaUSzl45NVbAzC0NQFqjI4qx/MSwwk6TzTJDbxaeIne
-	rlWi7SYuVAx1gR/ypQOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rCrbXHEWnHRJt5lJl1RZYLXcViZ8R+JnU/wCJFe82Zk=; b=ap65yrW2L+7Om2
+	r+sY0ugN67E5YrWIqX4V2rI6daEnFVZ54g8jK1TkIaz3SN0sNu8cIxNRl+EiDrBUtv1GpVuDfSs7L
+	XumJRBbMTxXX8ql7CP5LLITOVU9JZHA1AY9y6Y0xmFAtaxgAE2a/Lyx4f0/Mo/3AnajHQWm64FG2r
+	8CVls7LsI7o7LqieuTfvtovyfjpJcy6PGjEqNKA8Tro8xevlTYGJ3G0kdWPa05ppl6wkNpNYFL8dG
+	svu2Oj17Hb88AnXS1LMPZokZuBXC27h5RnN4T+MtW6Vfw4REVXuPbm2VEe658rcvY5QwBrmwMWn0v
+	jRdpXA8+PP6fVwno+P6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFHFE-00005y-Fg; Fri, 20 Mar 2020 12:59:24 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFHF4-0008Ve-UL
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 12:59:17 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02KCcOWJ003548; Fri, 20 Mar 2020 13:59:04 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=o41DLb60dwo0XgM7XyP9TCm5BF2bWxbtelGzKn5ttsg=;
- b=qcHeB6XbZYRgiaXbFm1srtc3QoUBsAu1yHFSKI+okPPT0K/lFR34o73UZj/hFnHwiNUu
- h0Dx2PfLYKlb/nAzhE0N5p7UcPXqlnEAKQeROJL1xfvPhqB9NeoP7ZqFi3v7Lszin0+D
- LALKHcG+EqeIUaMaEA8MZ5+Wh8PEGY8oD5Z8lxR8CPUh4g/EVAH6RZYPATpJe8wfCR5w
- 2C5WJqIkfZ04qJDBU2Mwm+VkXAYo2sqkm/uVIDd3JICfNdwQ+gDV5Z5w9bLmOqr3BMwo
- 3iu+Na2a2wgqDBU9255CyKVKE28k3Ko/oluwY+Rh99qYKXauTH8l7XiyMjY4Vi+SidZl OA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yu8etqtk4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 20 Mar 2020 13:59:04 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C0E3B100034;
- Fri, 20 Mar 2020 13:58:59 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B48982AE6AF;
- Fri, 20 Mar 2020 13:58:59 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 20 Mar 2020 13:58:57
- +0100
-From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-To: Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>
-Subject: [PATCH] ARM: dts: stm32: add cortex-M4 pdds management in Cortex-M4
- node
-Date: Fri, 20 Mar 2020 13:58:41 +0100
-Message-ID: <20200320125841.11059-1-arnaud.pouliquen@st.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jFHKc-00029C-SA; Fri, 20 Mar 2020 13:04:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFHKU-00028i-Ab
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:04:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9AB21FB;
+ Fri, 20 Mar 2020 06:04:48 -0700 (PDT)
+Received: from [10.37.12.155] (unknown [10.37.12.155])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B1B3F3F85E;
+ Fri, 20 Mar 2020 06:04:44 -0700 (PDT)
+Subject: Re: [PATCH v4 18/26] arm64: vdso32: Replace TASK_SIZE_32 check in
+ vgettimeofday
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20200317122220.30393-1-vincenzo.frascino@arm.com>
+ <20200317122220.30393-19-vincenzo.frascino@arm.com>
+ <20200317143834.GC632169@arrakis.emea.arm.com>
+ <f03a9493-c8c2-e981-f560-b2f437a208e4@arm.com>
+ <20200317155031.GD632169@arrakis.emea.arm.com>
+ <83aaf9e1-0a8f-4908-577a-23766541b2ba@arm.com>
+ <20200317174806.GE632169@arrakis.emea.arm.com>
+ <93cfe94a-c2a3-1025-bc9c-e7c3fd891100@arm.com>
+ <20200318183603.GF94111@arrakis.emea.arm.com>
+ <1bc25a53-7a59-0f60-ecf2-a3cace46b823@arm.com> <20200319181004.GA29214@mbp>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <b937d1eb-c7fd-e903-fa36-b261662bf40b@arm.com>
+Date: Fri, 20 Mar 2020 13:05:14 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-20_03:2020-03-20,
- 2020-03-20 signatures=0
+In-Reply-To: <20200319181004.GA29214@mbp>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_055915_276605_8D6CB9F0 
-X-CRM114-Status: GOOD (  12.24  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200320_060450_455407_07D6B8DF 
+X-CRM114-Status: GOOD (  18.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,48 +73,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- linux-kernel@vger.kernel.org, Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org, Andrei Vagin <avagin@openvz.org>,
+ Stephen Boyd <sboyd@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add declarations related to the syscon pdds for deep sleep management.
+Hi Catalin,
 
-Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
----
- arch/arm/boot/dts/stm32mp151.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+On 3/19/20 6:10 PM, Catalin Marinas wrote:
+> Hi Vincenzo,
+> 
+> On Thu, Mar 19, 2020 at 12:38:42PM +0000, Vincenzo Frascino wrote:
+>> On 3/18/20 6:36 PM, Catalin Marinas wrote:
+>>> On Wed, Mar 18, 2020 at 04:14:26PM +0000, Vincenzo Frascino wrote:
+>>>> On 3/17/20 5:48 PM, Catalin Marinas wrote:
+>>>>> So clock_gettime() on arm32 always falls back to the syscall?
+>>>>
+>>>> This seems not what you asked, and I think I answered accordingly. Anyway, in
+>>>> the case of arm32 the error code path is handled via syscall fallback.
+>>>>
+>>>> Look at the code below as an example (I am using getres because I know this
+>>>> email will be already too long, and I do not want to add pointless code, but the
+>>>> concept is the same for gettime and the others):
+>>>>
+>>>> static __maybe_unused
+>>>> int __cvdso_clock_getres(clockid_t clock, struct __kernel_timespec *res)
+>>>> {
+>>>> 	int ret = __cvdso_clock_getres_common(clock, res);
+>>>>
+>>>> 	if (unlikely(ret))
+>>>> 		return clock_getres_fallback(clock, res);
+>>>> 	return 0;
+>>>> }
+>>>>
+>>>> When the return code of the "vdso" internal function returns an error the system
+>>>> call is triggered.
+>>>
+>>> But when __cvdso_clock_getres_common() does *not* return an error, it
+>>> means that it handled the clock_getres() call without a fallback to the
+>>> syscall. I assume this is possible on arm32. When the clock_getres() is
+>>> handled directly (not as a syscall), why doesn't arm32 need the same
+>>> (res >= TASK_SIZE) check?
+>>
+>> Ok, I see what you mean.
+> 
+> I'm not sure.
+> 
+Thank you for the long chat this morning. As we agreed I am going to repost the
+patches removing the checks discussed in this thread and we will address the
+syscall ABI difference subsequently with a different series.
 
-diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
-index 7b93eb4b8f49..46ea1024340e 100644
---- a/arch/arm/boot/dts/stm32mp151.dtsi
-+++ b/arch/arm/boot/dts/stm32mp151.dtsi
-@@ -1115,6 +1115,11 @@
- 			};
- 		};
- 
-+		pwr_mcu: pwr_mcu@50001014 {
-+			compatible = "syscon";
-+			reg = <0x50001014 0x4>;
-+		};
-+
- 		exti: interrupt-controller@5000d000 {
- 			compatible = "st,stm32mp1-exti", "syscon";
- 			interrupt-controller;
-@@ -1693,6 +1698,7 @@
- 			st,syscfg-tz = <&rcc 0x000 0x1>;
- 			st,syscfg-rsc-tbl = <&tamp 0x144 0xFFFFFFFF>;
- 			st,syscfg-copro-state = <&tamp 0x148 0xFFFFFFFF>;
-+			st,syscfg-pdds = <&pwr_mcu 0x0 0x1>;
- 			status = "disabled";
- 		};
- 	};
 -- 
-2.17.1
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
