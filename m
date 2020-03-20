@@ -2,53 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B843618C6AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 05:55:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4589118C706
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 06:30:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YiCnlZVe8KsNgKu/RZ0bRUUpV9qmlFuEeIqAd7CFtXQ=; b=n7pWrdEp3WGrTYTw7zOuHnNiWw
-	gVYaJxASBckDP4Cr5xAdWfUOVb3Bk6BrUAA5PSPeMIdy9Asu39HWuyxIEzezcaSBkyftbnGqtWS1w
-	mWNSykmARuzG9/RgBgG7reZHfi8+oT3k4nx3hRaB4Ay/HA5xFs4M5KwHkigVhGou7mRf4ZuoEG9Vc
-	2b1x60FgtJDkldx02DWBJFh/C2L2VRMYgt0ffVw4k+qXjNY6aJEHM5V0J+zfZUW9tzXmGeTVvbsSc
-	m1TlzD5gFkxwlyYiyUHvPMnFAhNODGj8b2/KYapv9hCVQfPxpDj6eJ0tH0/D/kM14WTDSGjVo6iAa
-	jgCBUTQA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oOF+VhTPVq8dcsBVk2ZpW68ZzT1KXazRCyTgDqjVqwk=; b=nINRF3zoiH85pq
+	XwQctc/LXv9GNMr4ImWTUsHXvwR1C3artaODGICmmaSGvXsy+0fFSoCbMlL0rIFfdUWvLl7Fq8dEc
+	W9ld3OT6X31QgwncqP9MxP71ZSTT7aN7ZVJITTiV9zWCqvkW9ox3EnjnAzbBWJ191PtlJOVckEp4S
+	p1VlN5iXZ201qf8IBR5MHRhw7+5SyQi58M7al7DRFd/RZgUqT7gsJyvObIiiVvKHFCe7ufMf93T10
+	xLXrB/rs6AfH1wUOaNGUPeff82SSyI1NzbgQvrL5VRfTx0PtZYD6utD/3MUo4/hKdtp90AQgTHaxo
+	34QAVbG1nHiaYBM6FoVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF9gg-0006Qz-82; Fri, 20 Mar 2020 04:55:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF9gE-0006Iu-HN; Fri, 20 Mar 2020 04:54:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0289101E;
- Thu, 19 Mar 2020 21:54:45 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7AE3D3F52E;
- Thu, 19 Mar 2020 21:54:38 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH 2/2] mm/thp: Rename pmd_mknotpresent() as pmd_mknotvalid()
-Date: Fri, 20 Mar 2020 10:24:17 +0530
-Message-Id: <1584680057-13753-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
-References: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
+	id 1jFAEk-0001jm-3v; Fri, 20 Mar 2020 05:30:26 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFAEd-0001iD-3t
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 05:30:20 +0000
+Received: by mail-oi1-x241.google.com with SMTP id k21so5324198oij.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Mar 2020 22:30:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+thAp6yyX7UKE9dtUxDENsQxMtVNf3sefwYHyrkPjH0=;
+ b=EZIUuPizsyWJamEo8OnXltTQLT0zbEnN7i0eoveXQdd8aAXB0sTHgk0h0j2aPv3xdl
+ PvlcmCU9Qqo6UPCU0YGJjPZHZklXi0mnfTFFSMmLJO2+8XQJhgG2+SrUYGqJLbRUs34w
+ MHA/fMaS5ydEyWuSCzaNeVFjEQP3llaZOTs2mjgeihPn7LkbpRz5ycvSOPlzm6gBjn0W
+ OaxQcy9AeArJqrxxJWa3gm8Z8TuZZTaY8qlWeFQ/x5EcXXheQhyOAhxkq6P9XBi6DkuI
+ q84xSlpwp6t9y/DeFQzUxsQx2V8ge6Z5qW1kL9lgqfzvKq4NqI8zeJih0o6Bvzr7ePwC
+ XgPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+thAp6yyX7UKE9dtUxDENsQxMtVNf3sefwYHyrkPjH0=;
+ b=i7HsySzEp3+UBhkkskGPzSl+bez/SLZhBH7/jJfWnALFa7S4Qtb0FhWAge1brn+7me
+ ISbSYeLtoeu/9NVAcFY4hCZg7WsMsj568zUTnHEkCPdE6TN7Xmz8xB50xdRac879eRCw
+ 8mOb/38s5BxuoV9VSOjIi/+g1WScACBMY7lsJShHAi90sjZBVvpFKMaayiFmohRfbS3/
+ XVI2rJOe6Qb0pCEirKtt+hLfFw3++uQd8otZYIcfm16XytlVRCa8iRzhUCQEXZBqb7A2
+ k7kwwt8QQQucDxIKCAZsYfWeT80yHOJKPPMTXbTHW9wpilugXTo4cleEb6+3Fzfqj57m
+ /iCA==
+X-Gm-Message-State: ANhLgQ3Yagx8TUP0KUBa2TjTykbJVxlxaIC4bW99SN9dLWA9GJF0fPK2
+ +OSUQFzc28t5dJdhz9IGyxrfQSUtLChRhOcGNgcjCg==
+X-Google-Smtp-Source: ADFU+vs9ry2XYsgdK4314uO1jxo2AlhedtLaVepDUfyzcjwnRtJPqD/97uig5eK0Wc99bItxHnujbp8fjRWMCAR3xjM=
+X-Received: by 2002:aca:f541:: with SMTP id t62mr5236270oih.172.1584682212108; 
+ Thu, 19 Mar 2020 22:30:12 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200317065452.236670-1-saravanak@google.com>
+ <CAGETcx-uZ3YJHCYqFm3so8-woTvL3SSDY2deNonthTetcE+mXQ@mail.gmail.com>
+ <20200319073927.GA3442166@kroah.com>
+In-Reply-To: <20200319073927.GA3442166@kroah.com>
+From: Saravana Kannan <saravanak@google.com>
+Date: Thu, 19 Mar 2020 22:29:36 -0700
+Message-ID: <CAGETcx-3oeJOvpCYj==RJuBU9HP8F0ZNr0YLvUHGHF52b=F7HA@mail.gmail.com>
+Subject: Re: [PATCH v1 0/6] Fix device links functional breakage in 4.19.99
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_215446_689068_6C4B8A49 
-X-CRM114-Status: GOOD (  13.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200319_223019_161825_BD3724E0 
+X-CRM114-Status: GOOD (  23.27  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,172 +98,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- linux-kernel@vger.kernel.org, Anshuman Khandual <anshuman.khandual@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Vineet Gupta <vgupta@synopsys.com>,
- "H. Peter Anvin" <hpa@zytor.com>, Russell King <linux@armlinux.org.uk>,
- Steven Rostedt <rostedt@goodmis.org>, linux-mips@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, nouveau@lists.freedesktop.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-snps-arc@lists.infradead.org,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Len Brown <len.brown@intel.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Linux PM <linux-pm@vger.kernel.org>, Jonathan Corbet <corbet@lwn.net>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, stable <stable@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Pavel Machek <pavel@ucw.cz>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Android Kernel Team <kernel-team@android.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pmd_present() is expected to test positive after pmdp_mknotpresent() as the
-PMD entry still points to a valid huge page in memory. pmdp_mknotpresent()
-implies that given PMD entry is just invalidated from MMU perspective while
-still holding on to pmd_page() referred valid huge page thus also clearing
-pmd_present() test. This creates the following situation which is counter
-intuitive.
+On Thu, Mar 19, 2020 at 12:39 AM Greg Kroah-Hartman
+<gregkh@linuxfoundation.org> wrote:
+>
+> On Wed, Mar 18, 2020 at 12:10:43PM -0700, Saravana Kannan wrote:
+> > On Mon, Mar 16, 2020 at 11:54 PM Saravana Kannan <saravanak@google.com> wrote:
+> > >
+> > > As mentioned in an earlier email thread [1], 4.19.99 broke the ability
+> > > to create stateful and stateless device links between the same set of
+> > > devices when it pulled in a valid bug fix [2]. While the fix was valid,
+> > > it removes a functionality that was present before the bug fix.
+> > >
+> > > This patch series attempts to fix that by pulling in more patches from
+> > > upstream. I've just done compilation testing so far. But wanted to send
+> > > out a v1 to see if this patch list was acceptable before I fixed up the
+> > > commit text format to match what's needed for stable mailing list.
+> > >
+> > > Some of the patches are new functionality, but for a first pass, it was
+> > > easier to pull these in than try and fix the conflicts. If these patches
+> > > are okay to pull into stable, then all I need to do is fix the commit
+> > > text.
+> >
+> > I took a closer look at all the patches. Everyone of them is a bug fix
+> > except Patch 4/6. But Patch 4/6 is a fairly minimal change and I think
+> > it's easier/cleaner to just pick it up too instead of trying to
+> > resolve merge conflicts in the stable branch.
+> >
+> > 1/6 - Fixes what appears to be a memory leak bug in upstream.
+> > 2/6 - Fixes error in initial state of the device link if it's created
+> > under some circumstances.
+> > 3/6 - Fixes a ref count bug in upstream. Looks like it can lead to memory leaks?
+> > 4/6 - Adds a minor feature to kick off a probe attempt of a consumer
+> > 5/6 - Fixes the break in functionality that happened in 4.19.99
+> > 6/6 - Fixes bug in 5/6 (upstream bug)
+> >
+> > Greg
+> >
+> > Do these patches look okay for you to pull into 4.19 stable? If so,
+> > please let me know if you need me to send v2 with commit fix up.
+> >
+> > The only fix up needed is to these patches at this point is changing
+> > "(cherry picked from commit ...)" with "[ Upstream commit ... ]". The
+> > SHAs themselves are the correct SHAs from upstream.
+>
+> These all look good to me, now all queued up, thanks.
 
-[pmd_present(pmd_mknotpresent(pmd)) = true]
+Awesome, thanks!
 
-This renames pmd_mknotpresent() as pmd_mknotvalid() reflecting the helper's
-functionality more accurately while changing the above mentioned situation
-as follows. This does not create any functional change.
-
-[pmd_present(pmd_mknotvalid(pmd)) = true]
-
-This is not applicable for platforms that define own pmdp_invalidate() via
-__HAVE_ARCH_PMDP_INVALIDATE. Suggestion for renaming came during a previous
-discussion here.
-
-https://patchwork.kernel.org/patch/11019637/
-
-Cc: Vineet Gupta <vgupta@synopsys.com>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H. Peter Anvin" <hpa@zytor.com>
-Cc: Steven Rostedt <rostedt@goodmis.org>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: nouveau@lists.freedesktop.org
-Cc: linux-snps-arc@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-mips@vger.kernel.org
-Cc: x86@kernel.org
-Cc: linux-mm@kvack.org
-Cc: linux-kernel@vger.kernel.org
-
-Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arc/include/asm/hugepage.h       | 2 +-
- arch/arm/include/asm/pgtable-3level.h | 2 +-
- arch/arm64/include/asm/pgtable.h      | 2 +-
- arch/mips/include/asm/pgtable.h       | 2 +-
- arch/x86/include/asm/pgtable.h        | 2 +-
- arch/x86/mm/kmmio.c                   | 2 +-
- mm/pgtable-generic.c                  | 2 +-
- 7 files changed, 7 insertions(+), 7 deletions(-)
-
-diff --git a/arch/arc/include/asm/hugepage.h b/arch/arc/include/asm/hugepage.h
-index 30ac40fed2c5..98d56267050f 100644
---- a/arch/arc/include/asm/hugepage.h
-+++ b/arch/arc/include/asm/hugepage.h
-@@ -26,7 +26,7 @@ static inline pmd_t pte_pmd(pte_t pte)
- #define pmd_mkold(pmd)		pte_pmd(pte_mkold(pmd_pte(pmd)))
- #define pmd_mkyoung(pmd)	pte_pmd(pte_mkyoung(pmd_pte(pmd)))
- #define pmd_mkhuge(pmd)		pte_pmd(pte_mkhuge(pmd_pte(pmd)))
--#define pmd_mknotpresent(pmd)	pte_pmd(pte_mknotpresent(pmd_pte(pmd)))
-+#define pmd_mknotvalid(pmd)	pte_pmd(pte_mknotpresent(pmd_pte(pmd)))
- #define pmd_mkclean(pmd)	pte_pmd(pte_mkclean(pmd_pte(pmd)))
- 
- #define pmd_write(pmd)		pte_write(pmd_pte(pmd))
-diff --git a/arch/arm/include/asm/pgtable-3level.h b/arch/arm/include/asm/pgtable-3level.h
-index ad55ab068dbf..2943cdf2828b 100644
---- a/arch/arm/include/asm/pgtable-3level.h
-+++ b/arch/arm/include/asm/pgtable-3level.h
-@@ -241,7 +241,7 @@ PMD_BIT_FUNC(mkyoung,   |= PMD_SECT_AF);
- #define pmdp_establish generic_pmdp_establish
- 
- /* represent a notpresent pmd by faulting entry, this is used by pmdp_invalidate */
--static inline pmd_t pmd_mknotpresent(pmd_t pmd)
-+static inline pmd_t pmd_mknotvalid(pmd_t pmd)
- {
- 	return __pmd(pmd_val(pmd) & ~L_PMD_SECT_VALID);
- }
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 538c85e62f86..28cdd97578a5 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -366,7 +366,7 @@ static inline int pmd_protnone(pmd_t pmd)
- #define pmd_mkclean(pmd)	pte_pmd(pte_mkclean(pmd_pte(pmd)))
- #define pmd_mkdirty(pmd)	pte_pmd(pte_mkdirty(pmd_pte(pmd)))
- #define pmd_mkyoung(pmd)	pte_pmd(pte_mkyoung(pmd_pte(pmd)))
--#define pmd_mknotpresent(pmd)	(__pmd(pmd_val(pmd) & ~PMD_SECT_VALID))
-+#define pmd_mknotvalid(pmd)	(__pmd(pmd_val(pmd) & ~PMD_SECT_VALID))
- 
- #define pmd_thp_or_huge(pmd)	(pmd_huge(pmd) || pmd_trans_huge(pmd))
- 
-diff --git a/arch/mips/include/asm/pgtable.h b/arch/mips/include/asm/pgtable.h
-index aef5378f909c..2a66dee3a9b8 100644
---- a/arch/mips/include/asm/pgtable.h
-+++ b/arch/mips/include/asm/pgtable.h
-@@ -615,7 +615,7 @@ static inline pmd_t pmd_modify(pmd_t pmd, pgprot_t newprot)
- 	return pmd;
- }
- 
--static inline pmd_t pmd_mknotpresent(pmd_t pmd)
-+static inline pmd_t pmd_mknotvalid(pmd_t pmd)
- {
- 	pmd_val(pmd) &= ~(_PAGE_PRESENT | _PAGE_VALID | _PAGE_DIRTY);
- 
-diff --git a/arch/x86/include/asm/pgtable.h b/arch/x86/include/asm/pgtable.h
-index 7e118660bbd9..6279668d430f 100644
---- a/arch/x86/include/asm/pgtable.h
-+++ b/arch/x86/include/asm/pgtable.h
-@@ -589,7 +589,7 @@ static inline pud_t pfn_pud(unsigned long page_nr, pgprot_t pgprot)
- 	return __pud(pfn | check_pgprot(pgprot));
- }
- 
--static inline pmd_t pmd_mknotpresent(pmd_t pmd)
-+static inline pmd_t pmd_mknotvalid(pmd_t pmd)
- {
- 	return pfn_pmd(pmd_pfn(pmd),
- 		      __pgprot(pmd_flags(pmd) & ~(_PAGE_PRESENT|_PAGE_PROTNONE)));
-diff --git a/arch/x86/mm/kmmio.c b/arch/x86/mm/kmmio.c
-index 49d7814b59a9..f9f61b934475 100644
---- a/arch/x86/mm/kmmio.c
-+++ b/arch/x86/mm/kmmio.c
-@@ -130,7 +130,7 @@ static void clear_pmd_presence(pmd_t *pmd, bool clear, pmdval_t *old)
- 	pmdval_t v = pmd_val(*pmd);
- 	if (clear) {
- 		*old = v;
--		new_pmd = pmd_mknotpresent(*pmd);
-+		new_pmd = pmd_mknotvalid(*pmd);
- 	} else {
- 		/* Presume this has been called with clear==true previously */
- 		new_pmd = __pmd(*old);
-diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
-index 3d7c01e76efc..5b8055ef4120 100644
---- a/mm/pgtable-generic.c
-+++ b/mm/pgtable-generic.c
-@@ -194,7 +194,7 @@ pgtable_t pgtable_trans_huge_withdraw(struct mm_struct *mm, pmd_t *pmdp)
- pmd_t pmdp_invalidate(struct vm_area_struct *vma, unsigned long address,
- 		     pmd_t *pmdp)
- {
--	pmd_t old = pmdp_establish(vma, address, pmdp, pmd_mknotpresent(*pmdp));
-+	pmd_t old = pmdp_establish(vma, address, pmdp, pmd_mknotvalid(*pmdp));
- 	flush_pmd_tlb_range(vma, address, address + HPAGE_PMD_SIZE);
- 	return old;
- }
--- 
-2.20.1
-
+-Saravana
 
 _______________________________________________
 linux-arm-kernel mailing list
