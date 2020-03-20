@@ -2,78 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8BEC18C80B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 08:14:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29B2D18C81F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 08:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nn6BzzEFBQLMPWTuX8irK65K4h/IXR7+bHczmFUWMXc=; b=KKmynC5mrmCeC4
-	GsqUyZ1ZwB32aP7reT3f4Dm6RqvO5slgvpiIaKJdI4arpDB54TMsxKhZI1RJaMEPjxsans7XP8udO
-	91KpabqMAldMqemcXE7cjxCRILfIMRj7nYn0/Bo9THVGr/a2FDBQf8Ec8ah5msGhsm85NZzJ38zDr
-	PzQGbOvMt0toYTJNvfC7Dny0hu33pEGm3l1G5lEhFLfH/nGsfBXa53cihs6B84xkLLtdCkewDy8Lk
-	ZP3wyJQuZXvP4crIFLFxllCXMYfJ2UbyiKfBNjoRm0AjBAg7q1b7rUl8Kk7xL6+gJjN6f2/OGaPUo
-	BP+ENHfk22brtAu2g3RQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JHRf8m5d79WQb6/V0yQ08cTOQnr9ZWiyitMf/gHZ5nY=; b=kDa4pf8MKv0zeU
+	hfiwaAvymQpqBqnbVEFZHFgLbHqI5zNly4OAgb1WLAZknVLcoEfD8QTHJ6JMfL6+hEcYXlKy7OqPg
+	NvVuf4Da93Mo7IMejiur/C9BVyotQEelNlCauWMNCyjRewMx5vDjNtVOFOsEIsDBrg/MazbkaH17Z
+	zYinpedInjebdpy537bk6dy/A+doP2f7qgjviep40ECJQD05/xuIJyZDOdW6x1+v2YpD+i1VBsVhg
+	My8fxDW/qAAmBPwJF80w5SgpiAnYnvWuVIcE7BXf/xOq26e5uPRXdUHL5bb9HmYsEn7rZ036+Tuwi
+	j8n8t66Hv/PBlfjQaw9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFBqr-0004dT-HB; Fri, 20 Mar 2020 07:13:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jFC81-0002gx-OX; Fri, 20 Mar 2020 07:31:37 +0000
+Received: from mail-co1nam11on2060.outbound.protection.outlook.com
+ ([40.107.220.60] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFBqi-0004c2-Dv; Fri, 20 Mar 2020 07:13:46 +0000
-X-UUID: ed32d557a3d94f8b99cceb813e0b93a4-20200319
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=k58APG24uidmU5v8KtptUOGOeNfiLEWeS+xyzZ6fKUI=; 
- b=iQ5dSost9Wnho3MFg3aDcFx5NtUWxkTmfe3IuhR1yUa6k0WtBY+nXG7GX5BeU5nqaHFKmoUCyHUvm5qfWIoPRi6Ayw4aRQg2fHtOnaLwGJw78oH138t61PAQw76pjuIrUwPwEJBqWH2T5pm2Qk3uliHu0jroGLlC6n+EcPX4ZDg=;
-X-UUID: ed32d557a3d94f8b99cceb813e0b93a4-20200319
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <erin.lo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 617265054; Thu, 19 Mar 2020 23:13:38 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 20 Mar 2020 00:14:02 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 20 Mar 2020 15:12:36 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 20 Mar 2020 15:13:37 +0800
-From: Erin Lo <erin.lo@mediatek.com>
-To: <linux-firmware@kernel.org>
-Subject: pull request v2: linux-firmware: Create Mediatek MT8183 SCP firmware 
-Date: Fri, 20 Mar 2020 15:11:42 +0800
-Message-ID: <20200320071143.4225-1-erin.lo@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1jFC7r-0002gQ-M2
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 07:31:29 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MgFzYZeIeHYClOrXkeQyXokiBz9jPG3eH5s7t9Lee1VSL5PsA3VSiRDLsYxGGpOKc7ApEjbgNX4q+y2xc/1uwhlazI5WPBGhpYQGAiTz3LoY9P9mxwvCG+nOCHeVvD3j9YjYKn35p+EBgW+4IV6l/EXKhed7DqPfA9k7m3V3LFCimmBbDZ8n2weu1hWGliIHMCnIqA1aazkY1kCroC0toGXS4uRd5A84nA2SCV0WXf5QR4d2UHnANclzY3jvSzvKVTh1W0JadaiNNiBY5JUD2KDqUBzR9QRvGqcvE3lr5kpKEIyxTUcPH/DFfp1IWEOJRnunq6cswz5VutNzJ7sglA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xFMpMOgciMaF7chBjNojKc2qHd9K6c0ZZfEmiuMLdmY=;
+ b=MWTNt4UiN7RCMdNKGCY4CeDsTOxWR1kuySde6rvtaTOZf8MfaJ/X4jZHzzNoVaPeR2FHD5ApeD+ncKsILOFwUc38DL+WfICwuPrB6a01jOJLNgmVxbqnGFnp7/15LEDuOljh0a7JPA/Gb8DmK6ezlqjLBOqEi3ppgjxMo7NTPT2sKLDy3zbw0hr2EeqiYusSjlfNRWMz9XJZRQR5JjypnBU6L3NAIpnZk/s2FhOAnz4e3/Rxco8klNY+GM6gksv3UbfzEdQuB8wWTb0z4T4qJPCjyG0wElbURQT32xZ/Xpr/caMxhouleLKKhP6nBEvrSiLFgzpBzN5G8y/v6JHBbg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amdcloud.onmicrosoft.com; s=selector2-amdcloud-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xFMpMOgciMaF7chBjNojKc2qHd9K6c0ZZfEmiuMLdmY=;
+ b=XsFM2l8AwhaaOgtGtKyYUApfcPgldgMRHDp02eXeLbyQOwYokkc3oiZnL/OfQlvSU7FlpPf4HO8zHvn0zk1K/vDTWKZv0tnoBC6VLOj5YOBwc1f4jHWgwnTX4eGJN43v74t5U8KSSF765ORg5zO4ZTS3tMjRZi+03ASk6s1qhYE=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Rijo-john.Thomas@amd.com; 
+Received: from CY4PR12MB1925.namprd12.prod.outlook.com (2603:10b6:903:120::7)
+ by CY4PR12MB1752.namprd12.prod.outlook.com (2603:10b6:903:120::8)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.18; Fri, 20 Mar
+ 2020 07:31:22 +0000
+Received: from CY4PR12MB1925.namprd12.prod.outlook.com
+ ([fe80::c5ae:bcf3:b96b:3ef6]) by CY4PR12MB1925.namprd12.prod.outlook.com
+ ([fe80::c5ae:bcf3:b96b:3ef6%9]) with mapi id 15.20.2835.017; Fri, 20 Mar 2020
+ 07:31:22 +0000
+Subject: Re: [GIT PULL] another amdtee driver fix for v5.6
+To: Jens Wiklander <jens.wiklander@linaro.org>, arm@kernel.org, soc@kernel.org
+References: <20200320063446.GA9892@jade>
+From: Rijo Thomas <Rijo-john.Thomas@amd.com>
+Message-ID: <d3af1c98-39e0-5608-0e70-daf35015452c@amd.com>
+Date: Fri, 20 Mar 2020 13:01:11 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+In-Reply-To: <20200320063446.GA9892@jade>
+Content-Language: en-US
+X-ClientProxiedBy: MA1PR01CA0136.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:a00:35::30) To CY4PR12MB1925.namprd12.prod.outlook.com
+ (2603:10b6:903:120::7)
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [10.138.129.230] (165.204.156.251) by
+ MA1PR01CA0136.INDPRD01.PROD.OUTLOOK.COM (2603:1096:a00:35::30) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.17 via Frontend Transport; Fri, 20 Mar 2020 07:31:20 +0000
+X-Originating-IP: [165.204.156.251]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 8feadc3c-9bcd-4137-3ce9-08d7cca0b021
+X-MS-TrafficTypeDiagnostic: CY4PR12MB1752:
+X-Microsoft-Antispam-PRVS: <CY4PR12MB175286CE9189A1DAF8BEFB90CFF50@CY4PR12MB1752.namprd12.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2582;
+X-Forefront-PRVS: 03484C0ABF
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(346002)(136003)(366004)(396003)(199004)(5660300002)(26005)(16526019)(966005)(66946007)(6666004)(186003)(66476007)(31686004)(4326008)(36756003)(66556008)(16576012)(316002)(2616005)(45080400002)(956004)(8676002)(81166006)(8936002)(81156014)(6486002)(54906003)(2906002)(86362001)(53546011)(31696002)(52116002)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR12MB1752;
+ H:CY4PR12MB1925.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: amd.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: /nhe7hJNfuYvFy1fpCDXahMOXxhys3f5DrtJsecHjYKMUe0XXvfaJWuVq2hKHP4/caZJQNxHbHx4C402oZMy7TNqLOKqJfwUlUwlTgMIRSDlRkRUFx5n3NwMFTFirwHeGNV6GXY8OsPcfwDhhdb7euW1EhlqHZAhailhrI/dbcAfis5AS9JPLbFxpwi0zKJQeCY4JmXv7EzaZ3cKFbvm8XsWb3ERnchQivjvDlbUZ7FnnAKMa3w20ggzeb1rCNP77i/PZL9Zmliw/1K4/BGdTUTxNBVoTmrkLM7GpHQtz0eQtySQ8Lhcfs+Hexg6VvEO7sm3qKTVXHQfSPsA0Byj/lQsezAoAOGkiDZ6P22OedHpXFquHa1J9swhtuwraiQfFcj9UE8LZHyvFZNXeHi+7BGc8MCWXbzS4HGDVaSk7ElPCG5nhu0HND96W15J/iLjU26OvgQbZoABG6pthTE6IIJ909dCRFECbhCt9fdx+Tuj9kUE3tN2ApxoR7W9aHSSgxqOBLgsCEho0gF2uZNEnw==
+X-MS-Exchange-AntiSpam-MessageData: I0GcFP8KWYtR0grCnggyNrpKeMnAED0lQby70j+xRCyfAxSrkT6cw2hafycqml8p9tmD7FYB8GL8rqVL+ODpYX0lJQTElAlQ0yxI7JbHHHs7kzJTrejH7XMpYFShTR/wrh89OpjAWhR24pxdST2n3w==
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8feadc3c-9bcd-4137-3ce9-08d7cca0b021
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Mar 2020 07:31:22.0175 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Weis/yVt03FfBQizQon5Db/rhRCmrOrXW1yySQ4NjkqaS+Aw4//F0eFS7oShFEIkgEmSywHz2q86x2e4HWyNlw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR12MB1752
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_001344_479601_63261857 
-X-CRM114-Status: UNSURE (   6.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200320_003127_783952_D61B972F 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ no trust [40.107.220.60 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ valid 1.0 FORGED_SPF_HELO        No description available.
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,40 +123,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: menghui.lin@mediatek.com, maoguang.meng@mediatek.com,
- srv_heupstream@mediatek.com, drinkcat@google.com, yunfei.dong@mediatek.com,
- erin.lo@mediatek.com, linux-remoteproc@vger.kernel.org, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, shawnku@google.com,
- linux-arm-kernel@lists.infradead.org
+Cc: tee-dev@lists.linaro.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, maintainers,
-Changes since v1:
- - Add information to WHENCE
+Thanks Jens for pulling in the fixes!
 
-The following changes since commit 0148cfefcbf98898ca65bb26d9d7d638b30e211d:
+-Rijo
 
-  Merge https://github.com/rjliao-qca/qca-btfw (2020-03-02 08:08:15 -0500)
-
-are available in the Git repository at:
-
-  https://github.com/erinlo/linux_fw_scp v12573.77
-
-for you to fetch changes up to 3c213aa59661c4641f0c2166a315140ac0445230:
-
-  mediatek: Add mt8183 SCP firmware (2020-03-20 14:37:49 +0800)
-
-----------------------------------------------------------------
-Erin Lo (1):
-      mediatek: Add mt8183 SCP firmware
-
- WHENCE                  |  18 ++++++++++++++++++
- mediatek/mt8183/scp.img | Bin 0 -> 1027104 bytes
- 2 files changed, 18 insertions(+)
- create mode 100644 mediatek/mt8183/scp.img
+On 20/03/20 12:04 pm, Jens Wiklander wrote:
+> Hello arm-soc maintainers,
+> 
+> Please pull this AMDTEE driver fix for an out of bounds read in
+> find_session()
+> 
+> Thanks,
+> Jens
+> 
+> The following changes since commit 11a48a5a18c63fd7621bb050228cebf13566e4d8:
+> 
+>   Linux 5.6-rc2 (2020-02-16 13:16:59 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgit.linaro.org%2Fpeople%2Fjens.wiklander%2Flinux-tee.git&amp;data=02%7C01%7CRijo-john.Thomas%40amd.com%7C1ce9782363e24e7add1d08d7cc98cb02%7C3dd8961fe4884e608e11a82d994e183d%7C0%7C0%7C637202828927574171&amp;sdata=tFMMPSmDgdsgAeUJZ1y2wGo6nhgICw%2BZsr524HQgw5E%3D&amp;reserved=0 tags/tee-amdtee-fix2-for-5.6
+> 
+> for you to fetch changes up to 36fa3e50085e3858dd506e4431b9abd1bcb1f542:
+> 
+>   tee: amdtee: out of bounds read in find_session() (2020-03-10 08:12:04 +0100)
+> 
+> ----------------------------------------------------------------
+> tee: amdtee: out of bounds read in find_session()
+> 
+> ----------------------------------------------------------------
+> Dan Carpenter (1):
+>       tee: amdtee: out of bounds read in find_session()
+> 
+>  drivers/tee/amdtee/core.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
