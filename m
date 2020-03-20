@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D088C18C999
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:09:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 285FA18C9A3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 10:11:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zYbns03sEI0kII4LKEiPLNx45jDWLDWtJd1fbdp4mmw=; b=kV+DkVjQ4dno4ijR0Dk5D9rj4
-	9s9SXBnJI/xy3peHCsruw2aI/kfUeVOlo/mDH/2WKXwQNT7YCNiqYK0KRd/HtdMZ5DiSemRUbyf44
-	pmCroSHJyE4sWNh64tl19bVBdfbjLNFTdG7nlMqJWx8m3aA99v29U7CUvnet/eE7+KSrZt1Hlio28
-	UrzYk1VgXmmx8CPNNKJpmR//0h44tVTvs6qS/UhH9NdFjDMotmddlVotKF4PhAKytPFS+IMghhD32
-	olvIXzlv5i3dW4wEcb3b1GEVzV/an/fo7+fw/vLpzHKzslH7yEqz86BFJ0Drp+K+gI+bsROMjjFL5
-	7HdP3yWTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uGGm3RGKZ6EbjJmiATQlQrhVMXaIJvUQqHIepOrGsss=; b=pcyP91dzzwslhC
+	IZr6MGrNBDGD4o4bWu8Vq4VlJXgoONDXb0Fjc9KEjbYwFGRBt8rZNGaEmGhEv7pu9ri9xzmCKD3Kp
+	KKsMdjQ3Rv7U37FP/ipKgg49zYKChDfdiND3hRqfh+QER2ZYl1ckeI2j8fSCmcMojw2rn1CK7uqse
+	GXVFmA1GJFVS4KJvWneA5SgEB/Z+NdMTofw+Y/odi3sx7jMpBfkSwZs19/kP1Nq6lSq5/SfkVoLlT
+	qlArqj9yFTT5MEkQFmyrMHcacnp6PJ1UHvCnvm2FSeRJj8X0tdUVNJ/i5QDDutfBpgdnXrQavte2z
+	efh+MDk29U9NJoTK8WAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFDf0-0006aW-65; Fri, 20 Mar 2020 09:09:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jFDgx-0008Fa-Ce; Fri, 20 Mar 2020 09:11:47 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFDer-0006Zv-Bw
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:09:38 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E871A20752;
- Fri, 20 Mar 2020 09:09:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584695377;
- bh=lKTpTlYWFEgvmkW6XkcldhhG5+woVU4cLcAGikERfqo=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=wqxswQOYA6BABIMXoM2nOSVgWJ47cTHAzkq5NO+OYTws4zesQC/Bq4/lMrY5xYdT3
- LLMxbcIFzNwWU+tjzVGlaWY8W7/DyefzA7Y7u6Z+ryCAs80UEFGKtPql/c5ERxj9ZT
- Yf7rVSM+Zww6zuKaVgksoCp+gttl1NC23l6B3Fpc=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jFDep-00EBy9-8B; Fri, 20 Mar 2020 09:09:35 +0000
+ id 1jFDgo-0008F2-1f
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 09:11:40 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j188so49584lfj.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Mar 2020 02:11:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=OU/CpAGIqH8KmfsyruwEDtwqFN1iNUUKyUH7R3UxLkw=;
+ b=mllYl6GF2syYSUniY8DE9rxhVQ9ZjeJtdUw2jL/qdetWaKL4P4TFCzv5AjONaNrDzs
+ BGM8hqFjQpEIYY1BWfAadf0qCywfRXMAfeboea/zxJo57UoIVHfgZWrG/zwY9BwTuVgb
+ DRXULnIB8wnRcpx/yKPfjz+J/PSnVSxl+Bt7vPIcZyJtyReDP/OxZHesXHBx+tinokkR
+ IKKc188enCZ7EwyPkgD6Y9blmbi+56B1MJKDi1Fk8OvlUKZw3GAPgVVhAJvfZibhUl5t
+ ekKWzyO+eyqmq12qo3Pns7t3wOzedDpKks/K9dXWARk5rtaiwF/SWq6Rqe5cYFNsYqlU
+ rw+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=OU/CpAGIqH8KmfsyruwEDtwqFN1iNUUKyUH7R3UxLkw=;
+ b=K5Im8aRgPA5q7DSDrCVx6shUEMFpLpo66xqhtOGMjYv/USk41ayLqq8DkaO0dCoaIc
+ MLHdOMKZeAtr8/7naVGGGXSGfWQTB7zBPOMLwX5h0NMY0f1BHg74bEx30v+sa+k69N1I
+ RYWSg10Wy/1Da6ARLMJm4OwWXJ3MjjDMdfvyzCagWiTOLRaXFUNkNKvmYCfX+K4ymTpu
+ 4INVbDpyPFvNK8IHVE8X8VVu+yPtWxjEplNRUIkgp8Y8Q5tDh06wBcyT8/ZSU8z7VHoq
+ X5p9Tp6x3SAbg5zDDVQElsnqJnDC6DlvxboYNBZ6TsZt8c5inGrcF7KLhUoikHxUX21m
+ ZPtg==
+X-Gm-Message-State: ANhLgQ3KETvK5SVm6XPGk+n4oL51LKCHV+CYEmGkt7Xw5jyUdGpbhbkF
+ faRpPtwwLL27FXOxhjjJukoSPJM6/QLsIo+KHbFzwQ==
+X-Google-Smtp-Source: ADFU+vtJYWG8EQJP/hgD78QKWv99yAbCP307TFvbYqg8VWMrgeCGnVYbnG2Hccuki3Zkny8VqCdXwG3hw10skhhk4Rw=
+X-Received: by 2002:a05:6512:247:: with SMTP id
+ b7mr4683821lfo.21.1584695495451; 
+ Fri, 20 Mar 2020 02:11:35 -0700 (PDT)
 MIME-Version: 1.0
-Date: Fri, 20 Mar 2020 09:09:35 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH v5 23/23] KVM: arm64: GICv4.1: Expose HW-based SGIs in
- debugfs
-In-Reply-To: <e1a1e537-9f8e-5cfb-0132-f796e8bf06c9@huawei.com>
-References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-24-maz@kernel.org>
- <4cb4c3d4-7b02-bb77-cd7a-c185346b6a2f@redhat.com>
- <45c282bddd43420024633943c1befac3@kernel.org>
- <e1a1e537-9f8e-5cfb-0132-f796e8bf06c9@huawei.com>
-Message-ID: <b63950513f519d9a04f9719f5aa6a2db@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, eric.auger@redhat.com,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com,
- jason@lakedaemon.net, rrichter@marvell.com, tglx@linutronix.de,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+References: <20200316133503.144650-1-icenowy@aosc.io>
+ <20200316133503.144650-3-icenowy@aosc.io>
+ <CACRpkdaVrfd1p+WyACy-gq-3BPsXJ_CZwi2OZe+=csseBcvcaA@mail.gmail.com>
+ <491ADD02-5511-404B-88A8-5725EF061EAC@aosc.io>
+In-Reply-To: <491ADD02-5511-404B-88A8-5725EF061EAC@aosc.io>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 20 Mar 2020 10:11:22 +0100
+Message-ID: <CACRpkdbeLAyhhkx115zAV0tdC7KJ4T0UoQ2QeDwTVN+btxp=Jw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/5] dt-bindings: panel: add binding for Xingbangda
+ XBD599 panel
+To: Icenowy Zheng <icenowy@aosc.io>, Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_020937_431882_C61FDE72 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200320_021138_122217_04DFD922 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,55 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Auger Eric <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Ondrej Jirman <megous@megous.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Chen-Yu Tsai <wens@csie.org>, Sam Ravnborg <sam@ravnborg.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
-
-On 2020-03-20 04:38, Zenghui Yu wrote:
-> Hi Marc,
-> 
-> On 2020/3/19 23:21, Marc Zyngier wrote:
->> With GICv4.1, you can introspect the HW state for SGIs. You can also
->> look at the vLPI state by peeking at the virtual pending table, but
->> you'd need to unmap the VPE first,
-> 
-> Out of curiosity, could you please point me to the "unmap the VPE"
-> requirement in the v4.1 spec? I'd like to have a look.
-
-Sure. See IHI0069F, 5.3.19 (VMAPP GICv4.1), "Caching of virtual LPI data
-structures", and the bit that says:
-
-"A VMAPP with {V,Alloc}=={0,1} cleans and invalidates any caching of the
-Virtual Pending Table and Virtual Configuration Table associated with 
-the
-vPEID held in the GIC"
-
-which is what was crucially missing from the GICv4.0 spec (it doesn't 
-say
-when the GIC is done writing to memory).
-
-Side note: it'd be good to know what the rules are for your own GICv4
-implementations, so that we can at least make sure the current code is 
-safe.
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBNYXIgMjAsIDIwMjAgYXQgOTowNyBBTSBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFv
+c2MuaW8+IHdyb3RlOgo+IOS6jiAyMDIw5bm0M+aciDE55pelIEdNVCswODowMCDkuIvljYgxMDox
+NDoyNywgTGludXMgV2FsbGVpaiA8bGludXMud2FsbGVpakBsaW5hcm8ub3JnPiDlhpnliLA6Cj4g
+Pk9uIE1vbiwgTWFyIDE2LCAyMDIwIGF0IDI6MzcgUE0gSWNlbm93eSBaaGVuZyA8aWNlbm93eUBh
+b3NjLmlvPiB3cm90ZToKCj4gPkFzIG5vdGljZWQgaW4gdGhlIHJldmlldyBvZiB0aGUgZHJpdmVy
+LCB0aGlzIGRpc3BsYXkgaXMgdmVyeSBjbG9zZSB0bwo+ID5oaW1heCxoeDgzNjMuCj4gPgo+ID5J
+IHRoaW5rIHRoZSBiZXN0IGlzIHRvIGRldGVybWluIHdoYXQgYWN0dWFsIGRpc3BsYXkgY29udHJv
+bGxlciBpdCBpcywKPiA+SSB0aGluayBpdCBpcyBzb21lIGtpbmQgb2YgSWxpdGVrIGNvbnRyb2xs
+ZXIgc2luY2UgSWxpdGVrIGlsaTkzNDIgaXMKPiA+Y2xlYXJseSB2ZXJ5IHNpbWlsYXIuCj4KPiBJ
+dCdzIFNpdHJvbml4IFNUNzcwMywgc2FtZSBhcyB0aGUgTGlicmVtIDUgcGFuZWwuCgpIZWgsIEkg
+d29uZGVyIGhvdyBpdCBjb21lcyB0aGF0IGl0IGlzIHNvIHNpbWlsYXIgdG8gSWxpdGVrLgpJIGd1
+ZXNzIEkgd2lsbCBuZXZlciB1bmRlcnN0YW5kIGhvdyB0aGUgc2lsaWNvbiBlY29zeXN0ZW0gd29y
+a3MKaW4gYXNpYSAoSSBkaWQgcmVhZCBhIGxvdCBvZiBCdW5uaWUgSHVhbmcncyBhcnRpY2xlcyBh
+bmQgaGFyZHdhcmUKaGFja2luZyBib29rIHRvIHRyeSB0byB1bmRlcnN0YW5kLi4uKQoKVGhpcyBm
+aWxlIHNob3VsZCBiZSBuYW1lZCBzaXRyb25peCxzdDc3MDMueWFtbCB0aGVuLgoKQWNjb3JkaW5n
+IHRvIHRoZSBjb2RlIGluIHRoZSBMaWJyZW0gNToKaHR0cHM6Ly9zb3VyY2UucHVyaS5zbS9MaWJy
+ZW01L2xpbnV4LW5leHQvYmxvYi9pbXg4LWN1cnJlbnQtbGlicmVtNS9kcml2ZXJzL2dwdS9kcm0v
+cGFuZWwvcGFuZWwtc2l0cm9uaXgtc3Q3NzAxLmMKVGhlIGFjdHVhbCBuYW1lIG9mIHRoZSBkaXNw
+bGF5IGlzIFRlY2hzdGFyIHRzODU1MGIuCkFuZCB0aGUgZGlzcGxheSBjb250cm9sbGVyIGlzIHN0
+NzcwMSwgc28gbWF5YmUgd2Ugc2hvdWxkCmFjdHVhbGx5IG5hbWUgaXQgc2l0cm9uaXgsc3Q3NzB4
+LnlhbWwgaWYgdGhlcmUgYXJlIHNvbWUKc3ViLXZhcmlhbnRzIG9mIHN0NzcweD8KCj4gPnByb3Bl
+cnRpZXM6Cj4gPiAgY29tcGF0aWJsZToKPiA+ICAgIGl0ZW1zOgo+ID4gICAgICAtIGNvbnN0OiB4
+aW5nYmFuZ2RhLHhiZDU5OQo+ID4gICAgICAtIGNvbnN0OiBpbGl0ZWssaWxpOTM0Mgo+ID4KPiA+
+UG9zc2libHkgdXNlIG9uZU9mIGFuZCBhZGQgc3VwcG9ydCBmb3IgdGhlIGhpbWF4LGh4ODM2Mwo+
+ID5hbHJlYWR5IHdoaWxlIHlvdSdyZSBhdCBpdC4KClRoaXMgc2hvdWxkIGF0IGxlYXN0IGJlOgoK
+Y29tcGF0aWJsZToKICAgaXRlbXM6CiAgICAgLSBlbnVtOgogICAgICAgLSB4aW5nYmFuZ2RhLHhi
+ZDU5OQogICAgICAgLSBoaW1heCxoeDgzNjMKICAgICAgIC0gdGVjaHN0YXIsdHM4NTUwYgogICAg
+IC0gZW51bToKICAgICAgIC0gc2l0cm9uaXgsc3Q3NzAxCiAgICAgICAtIHNpdHJvbml4LHN0Nzcw
+MwoKU28gcGFuZWwgbm9kZXMgdXNpbmcgdGhpcyBwYW5lbCBiZWNvbWUKY29tcGF0aWJsZSA9ICJ4
+aW5nYmFuZ2RhLHNiZDU5OSIsICJzaXRyb25peCxzdDc3MDMiCmV0Yy4KClRoaXMgd2F5IGl0IGlz
+IHN0cmFpZ2h0LWZvcndhcmQgZm9yIGRyaXZlcnMgdG8gaWRlbnRpZnkgdGhlIHBhbmVsCnZlbmRv
+ciBhbmQgZGlzcGxheSBjb250cm9sbGVyLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
