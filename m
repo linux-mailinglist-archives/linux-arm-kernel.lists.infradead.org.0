@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 411AA18CE72
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:07:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E148318CED5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 14:27:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dga8FrC9Rbn2sElw9C4IZYvfZTSTAbvglMumCs+5i2c=; b=GP4cTL3LUl0dhU
-	RAOzOos2Qca7J9aP5403Zx5uedGAaSexfUNT0YWOub1r9nlp0zlog9/zABMC+r+MpLfBKgO6hl7rb
-	kdRa0DeTHs2aiWXSdxgNl+5tGh304M8EVhHWnfYOrCDeLFKZj9kM3BAxVLTeLgOI85WffHG3BN0Wb
-	o5PTF2f62VNbGx/Yamr+ekZCx6sf8R1MJz9lvaEtenca6wPIpw+og9REtn50dD/K3XXI3pn4jZqHL
-	LfZEjkKXqnN8mD5Coe5ciR2ODub/VURryWPCuVPnoJFHkNDWMc9Siz/JMj9I8EbJmaqEphW43QSVw
-	7v3Ly9xbT8eDCEK4ln2g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L4+MfdJTN4oDXidhwqQBedSDjPQEJ0rKKL2SyQyYLhw=; b=klwFN4Y9v86Vrh
+	W5Q0X6iW1l/G0enqSKqgDHZ9gfxfAioXMdRzbklcgScTES8bbMF5KoeOfPykfMv1T8Kyq3tZ0hRNM
+	ElKnK/IQHFNP/FvBV0a6wEc94v3hA/tI2mATgz+yj90XPilrhf2JTFszJX5w6NiSQSe/NCxZNpP9v
+	JcMOGuIf1gfoPIcGbTnnyexJKiGMzqHVdEpT5q+OHjSgp0q+RXzsljQMl/IDvRyMRT7zTNYw/la8h
+	hD1WC8FofEv80mcydYuXs+PYG8PDJ6qihlnWjcf4UiP9CEDb9pHFigwFElKNOk42UDgFZFP6odAJM
+	v6Z90apNU61E9kEV9Y8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFHN2-0004Do-3u; Fri, 20 Mar 2020 13:07:28 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jFHgH-00044Z-IY; Fri, 20 Mar 2020 13:27:21 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFHMu-0004Bc-6v
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:07:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UruEh+QPWdIyoj6UKAjvgmG3F1nB4TGGozNiE2Ak4pc=; b=C10XJss4RLdfq+4z3wT/a+fgR
- tObaHD6QoI3lh7aLZROqwKhC1Sqv97jd+JrGbdu3hcTcd+VgxgM2Iw+yCyyKnY+GSUy8G4UrkQhLE
- TV8fYLln/wpBktD5R+BWmmH7epdgvg4qrOeKps6QyAhmflVmx/9s5iNflLUnNgUiIdgRC3vMcediF
- QfLm0zI7iVFx0DXiV6pdfmkrJUtb7CYJkf8Q+/XJ3ADVQI9O6ffdbKQ0MqSGUrot7qyQJDB1qeyiR
- ijaOXbXNBH2f67DwMeVtqSP26LdG+lii9zV5J7b/ncmKurxaVcnUOAKHfb62xCrIpYHTwK3XhJgda
- 9yCQuLFHw==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:34882)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jFHMc-0008Pq-U1; Fri, 20 Mar 2020 13:07:03 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jFHMb-0005ni-1d; Fri, 20 Mar 2020 13:07:01 +0000
-Date: Fri, 20 Mar 2020 13:07:01 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Qais Yousef <qais.yousef@arm.com>
-Subject: Re: [PATCH v3 04/15] arm: Don't use disable_nonboot_cpus()
-Message-ID: <20200320130700.GR25745@shell.armlinux.org.uk>
-References: <20200223192942.18420-1-qais.yousef@arm.com>
- <20200223192942.18420-5-qais.yousef@arm.com>
- <20200320110430.jozfyrqqx272266u@e107158-lin.cambridge.arm.com>
+ id 1jFHg7-000440-Ui
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 13:27:13 +0000
+Received: by mail-lj1-x241.google.com with SMTP id a2so6390573ljk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Mar 2020 06:27:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=wc4bfjrR+uREaIIZaXwsklhD3AeNPjVXLEgTl+fkFC8=;
+ b=D5pq5EEfn55+AsWz/yn9b30LsZ4b40DJoub3Vv9dg1p0+ouxIPliu6inR7N0AIY0CS
+ L+6oHD+IoJFVQCLsrcfJ32s+nVNe54KTCw3jq2PRP1dBF0Dkx7snD/fzFZGfFdPTo5Jc
+ 8iBYW1H+xkGs/aBwWC/EFdFk1F8qtnjDYxVvZDlqqysJ+PhloDoo1uuxJFnvVByEO/4z
+ zD1afdj5LQSrUvfcKujfGHdZr3Zt1iDh4ERUknHtMpfM22Mw0veoS3ffn+cSUVsUAcMs
+ addb/FGOVI4BpFv4fRA7PAdCe1Buyqc8XVUCgkg56RbOBI/pHJ2tJncDj3eCjRXDfNL7
+ dHTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=wc4bfjrR+uREaIIZaXwsklhD3AeNPjVXLEgTl+fkFC8=;
+ b=iPYlz/OlEJqTJD/abNcWODGxqzcSbQqnJu5U/xVJOEnC1gK++bGUYYyzqrTk84qJB1
+ jSsUHVPsaEVIqVRiEppeOT3FFRFn+F+d3EaQwrdSCBW9cLaBlM536pXV8bSXfANC10z2
+ uWzdH1VRrXMSS61ysaJqYVKhozAhVMNILz2iaxIjhZrhd72+vhxc+dXMyBCXmxSlMPuX
+ LIG4vFEPEyIbXJsGgJDsuTBg9K2US85dzJNAtKS13x9rMVaOBKKyWLrQN8mLIUE0w6aP
+ nijfXEvrjU4dPPLuTENqZNuX9JYRMJ71J/W9p3p/T8EVyUurSlCuSOtsbLXIf7eseR/r
+ 75wg==
+X-Gm-Message-State: ANhLgQ3ZWzyefpT/9D4oId0e1yLcHP2/hbeBqNZZAtFV9UkYS1zfLyW0
+ 5soOWWeb4+6aGcTQiZR5inY=
+X-Google-Smtp-Source: ADFU+vs9X33ooryzjZDTx+xNfE4vhyGx9fcHpid/WypfKXilGP2kWn2XGuDr4xWIPUYqj1dEeoo3kw==
+X-Received: by 2002:a2e:8095:: with SMTP id i21mr5526453ljg.193.1584710829378; 
+ Fri, 20 Mar 2020 06:27:09 -0700 (PDT)
+Received: from [192.168.2.145] (94-29-39-224.dynamic.spd-mgts.ru.
+ [94.29.39.224])
+ by smtp.googlemail.com with ESMTPSA id c2sm3315589lja.84.2020.03.20.06.27.07
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 20 Mar 2020 06:27:08 -0700 (PDT)
+Subject: Re: [PATCH v2] ARM: boot: Obtain start of physical memory from DTB
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <CGME20200225112354eucas1p1300749b32c6809b6a22194c1a952a68c@eucas1p1.samsung.com>
+ <20200127140716.15673-1-geert+renesas@glider.be>
+ <d1b12473-5199-1cf6-25d1-a6ce79450e8e@samsung.com>
+ <CAMuHMdUGu4eStpYp5W0SKJd8yrLLDTgF4__Jq_n+Z7SWtPM+Cg@mail.gmail.com>
+ <90c006f2-8c13-2976-008f-37139ca49f37@gmail.com>
+ <CAMuHMdVkhf+4CQwpf9tn3UfaMb=qoRRYS2XpwcgBMciTVmXjHA@mail.gmail.com>
+ <75358399-c292-4e60-abdc-bd0729cf5c08@gmail.com>
+ <CAMuHMdX9PH+WUvONz2C8D1fRrZXn5rEND-p_my2mYvoyxF_gWA@mail.gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <0c70b161-64e8-7765-cc4f-112c2cec9a29@gmail.com>
+Date: Fri, 20 Mar 2020 16:27:07 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200320110430.jozfyrqqx272266u@e107158-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAMuHMdX9PH+WUvONz2C8D1fRrZXn5rEND-p_my2mYvoyxF_gWA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_060720_255241_D2701413 
-X-CRM114-Status: GOOD (  22.73  )
+X-CRM114-CacheID: sfid-20200320_062712_013742_B769D4CA 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -88,83 +109,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- "Paul E . McKenney" <paulmck@kernel.org>, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Chris Brandt <chris.brandt@renesas.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ Eric Miao <eric.miao@nvidia.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 11:04:31AM +0000, Qais Yousef wrote:
-> On 02/23/20 19:29, Qais Yousef wrote:
-> > disable_nonboot_cpus() is not safe to use when doing machine_down(),
-> > because it relies on freeze_secondary_cpus() which in turn is
-> > a suspend/resume related freeze and could abort if the logic detects any
-> > pending activities that can prevent finishing the offlining process.
-> > 
-> > Beside disable_nonboot_cpus() is dependent on CONFIG_PM_SLEEP_SMP which
-> > is an othogonal config to rely on to ensure this function works
-> > correctly.
-> > 
-> > Use `reboot_cpu` variable instead of hardcoding 0 as the reboot cpu.
-
-I think that should be a separate change - you have two separate
-changes in this patch:
-
-1. to switch to using the new helper.
-2. to change the CPU that we potentially use for the final steps of
-   shutdown
-
-These should be two seperate changes, so if (2) causes a regression
-it can be reverted independently of (1).
-
-> > 
-> > Signed-off-by: Qais Yousef <qais.yousef@arm.com>
-> > CC: Russell King <linux@armlinux.org.uk>
-> > CC: linux-arm-kernel@lists.infradead.org
-> > CC: linux-kernel@vger.kernel.org
-> > ---
-> 
-> Hi Russel
-> 
-> Does the updated version look good to you now?
-> 
-> Thanks
-> 
-> --
-> Qais Yousef
-> 
-> >  arch/arm/kernel/reboot.c | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm/kernel/reboot.c b/arch/arm/kernel/reboot.c
-> > index bb18ed0539f4..0ce388f15422 100644
-> > --- a/arch/arm/kernel/reboot.c
-> > +++ b/arch/arm/kernel/reboot.c
-> > @@ -88,11 +88,11 @@ void soft_restart(unsigned long addr)
-> >   * to execute e.g. a RAM-based pin loop is not sufficient. This allows the
-> >   * kexec'd kernel to use any and all RAM as it sees fit, without having to
-> >   * avoid any code or data used by any SW CPU pin loop. The CPU hotplug
-> > - * functionality embodied in disable_nonboot_cpus() to achieve this.
-> > + * functionality embodied in smp_shutdown_nonboot_cpus() to achieve this.
-> >   */
-> >  void machine_shutdown(void)
-> >  {
-> > -	disable_nonboot_cpus();
-> > +	smp_shutdown_nonboot_cpus(reboot_cpu);
-> >  }
-> >  
-> >  /*
-> > -- 
-> > 2.17.1
-> > 
-> 
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MjAuMDMuMjAyMCAxMjoxOCwgR2VlcnQgVXl0dGVyaG9ldmVuINC/0LjRiNC10YI6Ci4uLgo+IFRo
+YW5rcyBmb3IgdGhlIGluZm8hCj4gCj4+IEkgcmVjYWxsZWQgdGhhdCBDT05GSUdfVEhVTUIyX0tF
+Uk5FTD15IGlzIHNldCBpbiBteSBrZXJuZWwncyBjb25maWcgYW5kCj4+IGRpc2FibGluZyB0aHVt
+YjIgYnVpbGQgZml4ZXMgdGhlIHByb2JsZW0uIFBsZWFzZSBjb3JyZWN0IGl0IGluIHRoZSBuZXh0
+Cj4+IHZlcnNpb24gb2YgdGhlIHBhdGNoLCB0aGFua3MgaW4gYWR2YW5jZS4KPiAKPiBJbnRlcmVz
+dGluZy4gIEkgZW5hYmxlZCBDT05GSUdfVEhVTUIyX0tFUk5FTD15LCBhbmQgaXQgZG9lc24ndCBt
+YWtlCj4gYSBkaWZmZXJlbmNlIGZvciB0aGUgZmV3IGJvYXJkIGNvbWJvcyBJJ3ZlIHRyaWVkICh3
+aXRoL3dpdGhvdXQgYXBwZW5kZWQgRFRCKS4KPiBTbyBpdCBtdXN0IGJlIHJlbGF0ZWQgdG8gQVRB
+R1MuICBXaWxsIGRpdmUgZGVlcGVyLi4uCj4gCj4gUC5TLiBJIG5ldmVyIHJlYWxpemVkIENPTkZJ
+R19USFVNQjJfS0VSTkVMPXkgaGFkIHN1Y2ggYSBiaWcgc2l6ZQo+IGltcGFjdDogbXkga2VybmVs
+IHNocnVuayBieSBjYS4gMSBNaUIuCgpBIHF1aWNrIG9ic2VydmF0aW9uIHRlbGxzIHRoYXQgZmR0
+X2dldF9tZW1fc3RhcnQoKSByZXR1cm5zIGEgd3JvbmcKYWRkcmVzcyB3aXRoIENPTkZJR19USFVN
+QjJfS0VSTkVMPXksIEkgaGF2ZW4ndCB0cmllZCB0byBsb29rIGZ1cnRoZXIgeWV0LgoKRGlzYWJs
+aW5nIGFsbCBBVEFHUyBvcHRpb25zIGluIGtlcm5lbCdzIGNvbmZpZyBkb2Vzbid0IGhlbHAuCgpL
+ZXJuZWwgY29uZmlnOgpodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kaWdldHgvYjdjNGUxZDJkNGRh
+ZTBjNTU2Njc0OGMwZDdmMWU4ODQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
