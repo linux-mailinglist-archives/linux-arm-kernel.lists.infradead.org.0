@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FD6C18C661
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 05:22:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2604318C666
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Mar 2020 05:23:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ws3ebte8KDXSmZWVI6NcawPzMX9i7k9GXpyv0aXoR9Q=; b=b2tFHmaioedJuBeBq6BVYu1g/
-	iYAKEncDGF7SPjJky7QjfNUTP+fv+UhrrXTij7FPPsOi2P3nKHTPCH2b5TJc6SiA6qJHD9juAsBz0
-	MHEQfJY+oOjYuHQd94rqAel3UgasQX8gD/MLA9gtVZwVxaH0ygmspwK/HXnjuvgXAZEfR2EERNcjX
-	2hI1VyMFRbxoXO/hoHy9lOiB1uzp6tw8SuC00AqLZUc3tRbZ8KrgNhIQ6VUKveYmpIGnS7T6gC3sZ
-	gfId5mJL4IaQ9D9++yCXZYLmzSKd7GGEjSJm269njq8w63r5qVwAaozwTO3EGe7OBNVXFQWoEXAN2
-	akd/57omw==;
+	 bh=6Mel79CING0wgoO3kIe0WjFZy28jm+gyRQzbxok/v54=; b=DMaaJprA6AzZatkefKDBghF8T
+	VH+5+3G/AQkYu20PBcZfAP5HFhcKTxblQvghtgUJ9tkUXcD/L+Tvcg18mRWbZcd9jV94BlTj5cgIE
+	8yGKYiEOPPZiR/Gj3TVu3orOsZTsrDXTkE7sCnAxPNb7r+GVpelhX1o8TM+4rrhnePfrvYeHk+DrP
+	lsVsM+1ClLSndQYMUTzCdtkve0DvAyHbMG4xPGtKAIZ9Mk8guHGLl8KtJWl7KPP8ATbhwX7dA5WFr
+	kHa+nUdoPuq4vbBHeK1TYG9zNHRC8+y7KoiA+9Y4Fkbepa+UpyU5xP6KJbcHV5PypoloM/J/znpKk
+	P3P0At15A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF9BF-0004lI-N5; Fri, 20 Mar 2020 04:22:45 +0000
+	id 1jF9CB-000545-QD; Fri, 20 Mar 2020 04:23:43 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF9B6-0004kt-CA
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 04:22:38 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id A24DAE60EF66344F6A94;
- Fri, 20 Mar 2020 12:22:27 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Fri, 20 Mar 2020
- 12:22:18 +0800
-Subject: Re: [PATCH v5 19/23] KVM: arm64: GICv4.1: Allow SGIs to switch
- between HW and SW interrupts
+ id 1jF9Bw-00053V-IW
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Mar 2020 04:23:29 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 36E0FF08001D6C88CCDA;
+ Fri, 20 Mar 2020 12:23:27 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.487.0; Fri, 20 Mar 2020
+ 12:23:19 +0800
+Subject: Re: [PATCH v5 22/23] KVM: arm64: GICv4.1: Allow non-trapping WFI when
+ using HW SGIs
 To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
 References: <20200304203330.4967-1-maz@kernel.org>
- <20200304203330.4967-20-maz@kernel.org>
+ <20200304203330.4967-23-maz@kernel.org>
 From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <10847ac8-af94-0a83-73ed-24039840ca74@huawei.com>
-Date: Fri, 20 Mar 2020 12:22:15 +0800
+Message-ID: <1eef38a1-4ee1-a88c-53bd-5994421a8186@huawei.com>
+Date: Fri, 20 Mar 2020 12:23:17 +0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20200304203330.4967-20-maz@kernel.org>
+In-Reply-To: <20200304203330.4967-23-maz@kernel.org>
 Content-Language: en-US
 X-Originating-IP: [10.173.222.27]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_212236_583175_46AE8CBF 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200319_212328_780366_C3594427 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,13 +82,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Marc,
 
 On 2020/3/5 4:33, Marc Zyngier wrote:
-> In order to let a guest buy in the new, active-less SGIs, we
-> need to be able to switch between the two modes.
+> Just like for VLPIs, it is beneficial to avoid trapping on WFI when the
+> vcpu is using the GICv4.1 SGIs.
 > 
-> Handle this by stopping all guest activity, transfer the state
-> from one mode to the other, and resume the guest. Nothing calls
-> this code so far, but a later patch will plug it into the MMIO
-> emulation.
+> Add such a check to vcpu_clear_wfx_traps().
 > 
 > Signed-off-by: Marc Zyngier <maz@kernel.org>
 
@@ -97,6 +93,26 @@ Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
 
 
 Thanks
+
+> ---
+>   arch/arm64/include/asm/kvm_emulate.h | 3 ++-
+>   1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+> index f658dda12364..a30b4eec7cb4 100644
+> --- a/arch/arm64/include/asm/kvm_emulate.h
+> +++ b/arch/arm64/include/asm/kvm_emulate.h
+> @@ -89,7 +89,8 @@ static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
+>   static inline void vcpu_clear_wfx_traps(struct kvm_vcpu *vcpu)
+>   {
+>   	vcpu->arch.hcr_el2 &= ~HCR_TWE;
+> -	if (atomic_read(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe.vlpi_count))
+> +	if (atomic_read(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe.vlpi_count) ||
+> +	    vcpu->kvm->arch.vgic.nassgireq)
+>   		vcpu->arch.hcr_el2 &= ~HCR_TWI;
+>   	else
+>   		vcpu->arch.hcr_el2 |= HCR_TWI;
+> 
 
 
 _______________________________________________
