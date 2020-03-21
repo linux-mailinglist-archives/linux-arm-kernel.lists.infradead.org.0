@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7159E18DD1E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:20:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DC3618DD31
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:24:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/cmm7Y1EIZ6fXcjtAVKMiBW/YskgVkhUPGTM0r6dE/Q=; b=pTo9eBSs5quBYk
-	Wd0nSOIbuBOoW8ucRmfC+4ymZQhv7T9G8IosGcEjc8sS2doPRDn3VhAsQhQxQHJCo4ybzO8vO/5k5
-	34OiiR4XwUSoaYowahPVUhMYN/cdbllRUgYz4xUzh09dqObxZi42xqLCqU+HFKY8JsHFvOfbRLATM
-	jExU0HS4SIRjCzhkUqccTStVOHFyDRn8ouYR2zSwWX3SJr1sVXV0mUHJtc17i0Ub9UbLdP4wfHwdF
-	V2RzV8g76dqiJ4wOa09t9IVFkKH197UrTZDep9a331CpdMeBJgqBV1Bh52LsHPKKqIOwyD2sVR95R
-	2n10qsHMkmUWNC3Dt0Bg==;
+	List-Owner; bh=jdeSW3Y1+4HYtGuENA6lB+L+WbcRwY/PlsdUdZ3A74E=; b=cCq+vGO8K3tGH4
+	hFqdAt+tTrPxQWrvbGgrbOUeulmk7lK6zJg+4iGg2FQqfqLX9SAmaT0tdpoiXWDauSlyiiNsJ9OiS
+	ksr4VnxJL24wQLFP77jfm2svkzWwT61VlmBMZ01Gu/xyFVHrhNorekbr3p3VHJdAR58U8z+HNEKB+
+	9lRIJbu1mhHmeNvwGi8s1NLbbVTyLLuPYKhh639PcjHkD0hPOeJxnuoEMk/Aidn92K0UE9D8uPITa
+	7hZZMBJ+EkHUYvosz8sAG199hMOdIV5xIVw2mgple44G6gTt1xjiOkaWK3q51nKKX752bvhW70Gxr
+	uh06Dj8/rWxfWDoY47xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFSoU-0005Nq-7C; Sat, 21 Mar 2020 01:20:34 +0000
+	id 1jFSsU-0005lz-Bc; Sat, 21 Mar 2020 01:24:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFSoM-0005Mz-Fo
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:20:27 +0000
+ id 1jFSsJ-0005lh-80
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:24:32 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DAE2720732;
- Sat, 21 Mar 2020 01:20:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D26B220732;
+ Sat, 21 Mar 2020 01:24:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584753625;
- bh=PKwRe7u86A+QwaW2mIzR2r5lUuReYhr5HBypXEYk/+Y=;
+ s=default; t=1584753870;
+ bh=b2JbIbLu1vzPlTM1xcky55IFGUKce44Xpwaq1wYIoPg=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=vvKUbJTXpLMRO+4QAVCgX6Bpl7T1beAdx2weTIZJdSie4VPuGBsj3hzcfVq6SCqS5
- tQI8icPrdzB76QfnpHb2Yf/REase2uvUsKrK0A2+SMc9/+vE/qJfcQ9bWzDbj8f35u
- GIj951rrvLqgc2hH98vsVDcjOhKJPLawsgBVct64=
+ b=as16LPAWLiq2GGQWpg88bWepte1CiqKsdWHlK5e56VYNpk/5EEiZY8+EoaXHpEWl3
+ xirLPIPJhFkTfIbKiHpYNbxQQDwwD3LQdjF0yUwj1CIcokGrATXDV+bkAgeJq5pZDk
+ cdtCFPpud0JTtxdYphuWZczKaSO2/mBMAzkDQG9Q=
 MIME-Version: 1.0
-In-Reply-To: <20200309194254.29009-11-lkundrak@v3.sk>
+In-Reply-To: <20200309194254.29009-2-lkundrak@v3.sk>
 References: <20200309194254.29009-1-lkundrak@v3.sk>
- <20200309194254.29009-11-lkundrak@v3.sk>
-Subject: Re: [PATCH v2 10/17] ARM: dts: mmp3: Use the MMP3 compatible string
- for /clocks
+ <20200309194254.29009-2-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 01/17] clk: mmp2: Remove a unused prototype
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Fri, 20 Mar 2020 18:20:24 -0700
-Message-ID: <158475362408.125146.4406419142833020130@swboyd.mtv.corp.google.com>
+Date: Fri, 20 Mar 2020 18:24:30 -0700
+Message-ID: <158475387003.125146.14218245508304103071@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_182026_555226_3843D5FF 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20200320_182431_306818_277D1E03 
+X-CRM114-Status: UNSURE (   5.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -87,15 +86,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-03-09 12:42:47)
-> Clocks are in fact slightly different on MMP3. In particular, PLL2 is
-> fixed to a different frequency, there's an extra PLL3, and the GPU
-> clocks are configured differently.
+Quoting Lubomir Rintel (2020-03-09 12:42:38)
+> There is no mmp_clk_register_pll2() routine.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
 
-This should go through arm-soc.
+Applied to clk-next
 
 _______________________________________________
 linux-arm-kernel mailing list
