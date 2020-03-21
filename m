@@ -2,58 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BC8D18E117
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 13:17:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23A4C18E19E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 14:41:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JCZgEQFzQLgxc6MteqzhnhAWcQbVbEniZAuLOKdKCtA=; b=KIYGt4S70heytF
-	rEwZc6mBPKRznv+rEJtdnekMQCUz1nlUjmKfzNYzE7o9Mr+ZkRVbJq1vcP7jWtZhjMF3mbAuvBCOm
-	J9Fs5j7BZRjauBjBx58KFZgZMFRU4WQCMJ+vivvAk4br34XhcNjde0xIxUUMYOvgVudJ+npya+kEo
-	1sDjkw+CCHw4AQ3QnqwuStODJFeBVjZCo9WEAsUre2FZbr/tkqhQyvwAhgcgVeWvn0FbmfJsA7B4y
-	hDwWfbGkconTHn8M3UNIJ9w6xX6UUrHjBel/9XJvPC7SraTSHjgJSzEmsHsKtj4Dfxr/yzHBBSuo2
-	bE63pPfKhXcuqOveSdvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CPxo/MXL3Nlv00XjydAUPmH3kigE0JDK7j9lQDisY4E=; b=UG9gj0Lh1T4Q7p
+	Gyz5jDGul+janYhn/ZnXdVxsmjR3HyWyp6+61DKHgrHK/HoUDEPiLKaF7T0K3F2I23NBp5HU2zFl3
+	eTeRf58Uvp+Y9pWLD8Q2LpE9T9ak2C6PeBLot2S2WhUmN9IUBEGoFcV8uN3y0+rmOgXJ4kCJl+pl0
+	WD5XsDDJTpOjhSe8Yb9v8AwYocRIkyEQHM/GsIBuSbwqT9J0Ijmr+TDF+VGlp2weqzA90YiiY+6wb
+	lGReVXFyMamaMmlaC+3zU0TfW/6uOQlwfDA1Tm/x3eY93B9Kmi0J5up1zwn6PKj/sJobXClDtE+Z0
+	pTvh+B0UWYNySISuYwWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFd41-00028o-HL; Sat, 21 Mar 2020 12:17:17 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jFeMv-000571-3X; Sat, 21 Mar 2020 13:40:53 +0000
+Received: from mout-u-107.mailbox.org ([91.198.250.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFd3Y-0001wu-8g
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 12:16:49 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 60DF2373D7F53E2F57F7;
- Sat, 21 Mar 2020 20:16:42 +0800 (CST)
-Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
- DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.487.0; Sat, 21 Mar 2020 20:16:33 +0800
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-To: <will@kernel.org>, <mark.rutland@arm.com>, <catalin.marinas@arm.com>,
- <aneesh.kumar@linux.ibm.com>, <maz@kernel.org>, <steven.price@arm.com>,
- <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [RFC PATCH v3 4/4] mm: Set VM_LEVEL flags in some tlb_flush functions
-Date: Sat, 21 Mar 2020 20:16:21 +0800
-Message-ID: <20200321121621.1600-5-yezhenyu2@huawei.com>
-X-Mailer: git-send-email 2.22.0.windows.1
-In-Reply-To: <20200321121621.1600-1-yezhenyu2@huawei.com>
-References: <20200321121621.1600-1-yezhenyu2@huawei.com>
+ id 1jFeMl-00055s-NR
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 13:40:46 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-u-107.mailbox.org (Postfix) with ESMTPS id 48l1xJ4ySSzKpBh;
+ Sat, 21 Mar 2020 14:40:36 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run; s=MBO0001; 
+ t=1584798035;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=6gUTnyBd+wF4DcNE7R2+NzsCS2Cnj7qei4GbwrUoBsU=;
+ b=Wp7XIFjG6vsHM2RFsi/R75ByN0PxJkmTChTRZvcA+95nlBCKmnP4g7OSuMA+ZS2VpR+ISZ
+ 7Atuz113Kb5RaHrkzhR61DmpN+ggZqWjOdqQZdgV7ChSvSJCaao6aWwFLXWBSQLt5WL9yX
+ gBV+5eHxP880JVPNiKZqrJ05hmDGThEySDr/3gRb9RQABUoqYt9FMZB5uneBp//M2o5SUg
+ OGI+qnmtISB7gtviyrw37VajKO7QRZgjsf2e7TkOv0zsfphv4E/+4HGsW7rvenPcSqIbg8
+ iEffaHuAVBQMe6o7j+iDeT5+PcvCKryZAAOEvSY1YxqFy9j+btbl7H1FzQjrNQ==
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id Gpg7pxJw-UWe; Sat, 21 Mar 2020 14:40:33 +0100 (CET)
+From: Sungbo Eo <mans0n@gorani.run>
+To: linux-oxnas@groups.io, Linus Walleij <linus.walleij@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] irqchip/versatile-fpga: Apply clear-mask earlier
+Date: Sat, 21 Mar 2020 22:38:42 +0900
+Message-Id: <20200321133842.2408823-1-mans0n@gorani.run>
 MIME-Version: 1.0
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_051648_489800_A08FEF74 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200321_064044_059746_58DD8503 
+X-CRM114-Status: GOOD (  14.86  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.198.250.252 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,132 +83,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, yezhenyu2@huawei.com,
- linux-kernel@vger.kernel.org, xiexiangyou@huawei.com,
- zhangshaokun@hisilicon.com, linux-mm@kvack.org, arm@kernel.org,
- prime.zeng@hisilicon.com, linux-arm-kernel@lists.infradead.org
+Cc: Sungbo Eo <mans0n@gorani.run>, Daniel Golle <daniel@makrotopia.org>,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The relevant functions are:
+Clear its own IRQs before the parent IRQ get enabled, so that the
+remaining IRQs do not accidentally interrupt the parent IRQ controller.
 
-	tlb_flush in asm/tlb.h
-	get_clear_flush and clear_flush in mm/hugetlbpage.c
-	flush_pmd|pud_tlb_range in asm-generic/patable.h
-	do_huge_pmd_numa_page and move_huge_pmd in mm/huge_memory.c
+This patch also fixes a reboot bug on OX820 SoC, where the remaining
+rps-timer IRQ raises a GIC interrupt that is left pending. After that,
+the rps-timer IRQ is cleared during driver initialization, and there's
+no IRQ left in rps-irq when local_irq_enable() is called, which evokes
+an error message "unexpected IRQ trap".
 
-Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+Fixes: bdd272cbb97a ("irqchip: versatile FPGA: support cascaded interrupts from DT")
+Signed-off-by: Sungbo Eo <mans0n@gorani.run>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Daniel Golle <daniel@makrotopia.org>
 ---
- arch/arm64/include/asm/tlb.h  | 12 ++++++++++++
- arch/arm64/mm/hugetlbpage.c   |  4 ++--
- include/asm-generic/pgtable.h | 16 ++++++++++++++--
- mm/huge_memory.c              |  8 +++++++-
- 4 files changed, 35 insertions(+), 5 deletions(-)
+ drivers/irqchip/irq-versatile-fpga.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/include/asm/tlb.h b/arch/arm64/include/asm/tlb.h
-index b76df828e6b7..77fe942b30b6 100644
---- a/arch/arm64/include/asm/tlb.h
-+++ b/arch/arm64/include/asm/tlb.h
-@@ -27,6 +27,18 @@ static inline void tlb_flush(struct mmu_gather *tlb)
- 	bool last_level = !tlb->freed_tables;
- 	unsigned long stride = tlb_get_unmap_size(tlb);
+diff --git a/drivers/irqchip/irq-versatile-fpga.c b/drivers/irqchip/irq-versatile-fpga.c
+index 70e2cfff8175..f1386733d3bc 100644
+--- a/drivers/irqchip/irq-versatile-fpga.c
++++ b/drivers/irqchip/irq-versatile-fpga.c
+@@ -212,6 +212,9 @@ int __init fpga_irq_of_init(struct device_node *node,
+ 	if (of_property_read_u32(node, "valid-mask", &valid_mask))
+ 		valid_mask = 0;
  
-+	/*
-+	 * mm_gather tracked which levels of the page tables
-+	 * have been cleared, we can use this info to set
-+	 * vm->vm_flags.
-+	 */
-+	if (tlb->cleared_ptes)
-+		vma.vm_flags |= VM_LEVEL_PTE;
-+	else if (tlb->cleared_pmds)
-+		vma.vm_flags |= VM_LEVEL_PMD;
-+	else if (tlb->cleared_puds)
-+		vma.vm_flags |= VM_LEVEL_PUD;
++	writel(clear_mask, base + IRQ_ENABLE_CLEAR);
++	writel(clear_mask, base + FIQ_ENABLE_CLEAR);
 +
+ 	/* Some chips are cascaded from a parent IRQ */
+ 	parent_irq = irq_of_parse_and_map(node, 0);
+ 	if (!parent_irq) {
+@@ -221,9 +224,6 @@ int __init fpga_irq_of_init(struct device_node *node,
+ 
+ 	fpga_irq_init(base, node->name, 0, parent_irq, valid_mask, node);
+ 
+-	writel(clear_mask, base + IRQ_ENABLE_CLEAR);
+-	writel(clear_mask, base + FIQ_ENABLE_CLEAR);
+-
  	/*
- 	 * If we're tearing down the address space then we only care about
- 	 * invalidating the walk-cache, since the ASID allocator won't
-diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
-index bbeb6a5a6ba6..c35a1bd06bd0 100644
---- a/arch/arm64/mm/hugetlbpage.c
-+++ b/arch/arm64/mm/hugetlbpage.c
-@@ -140,7 +140,7 @@ static pte_t get_clear_flush(struct mm_struct *mm,
- 	}
- 
- 	if (valid) {
--		struct vm_area_struct vma = TLB_FLUSH_VMA(mm, 0);
-+		struct vm_area_struct vma = TLB_FLUSH_VMA(mm, VM_LEVEL_PTE);
- 		flush_tlb_range(&vma, saddr, addr);
- 	}
- 	return orig_pte;
-@@ -161,7 +161,7 @@ static void clear_flush(struct mm_struct *mm,
- 			     unsigned long pgsize,
- 			     unsigned long ncontig)
- {
--	struct vm_area_struct vma = TLB_FLUSH_VMA(mm, 0);
-+	struct vm_area_struct vma = TLB_FLUSH_VMA(mm, VM_LEVEL_PTE);
- 	unsigned long i, saddr = addr;
- 
- 	for (i = 0; i < ncontig; i++, addr += pgsize, ptep++)
-diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
-index e2e2bef07dd2..391e704faf7a 100644
---- a/include/asm-generic/pgtable.h
-+++ b/include/asm-generic/pgtable.h
-@@ -1160,8 +1160,20 @@ static inline int pmd_free_pte_page(pmd_t *pmd, unsigned long addr)
-  * invalidate the entire TLB which is not desitable.
-  * e.g. see arch/arc: flush_pmd_tlb_range
-  */
--#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
--#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
-+#define flush_pmd_tlb_range(vma, addr, end)				\
-+	do {								\
-+		vma->vm_flags &= ~(VM_LEVEL_PUD | VM_LEVEL_PTE);	\
-+		vma->vm_flags |= VM_LEVEL_PMD;				\
-+		flush_tlb_range(vma, addr, end);			\
-+	} while (0)
-+
-+#define flush_pud_tlb_range(vma, addr, end)				\
-+	do {								\
-+		vma->vm_flags &= ~(VM_LEVEL_PMD | VM_LEVEL_PTE);	\
-+		vma->vm_flags |= VM_LEVEL_PUD;				\
-+		flush_tlb_range(vma, addr, end);			\
-+	} while (0)
-+
- #else
- #define flush_pmd_tlb_range(vma, addr, end)	BUILD_BUG()
- #define flush_pud_tlb_range(vma, addr, end)	BUILD_BUG()
-diff --git a/mm/huge_memory.c b/mm/huge_memory.c
-index b08b199f9a11..f28ced8d298e 100644
---- a/mm/huge_memory.c
-+++ b/mm/huge_memory.c
-@@ -1646,6 +1646,8 @@ vm_fault_t do_huge_pmd_numa_page(struct vm_fault *vmf, pmd_t pmd)
- 	 * mapping or not. Hence use the tlb range variant
- 	 */
- 	if (mm_tlb_flush_pending(vma->vm_mm)) {
-+		vma->vm_flags &= ~(VM_LEVEL_PUD | VM_LEVEL_PTE);
-+		vma->vm_flags |= VM_LEVEL_PMD;
- 		flush_tlb_range(vma, haddr, haddr + HPAGE_PMD_SIZE);
- 		/*
- 		 * change_huge_pmd() released the pmd lock before
-@@ -1917,8 +1919,12 @@ bool move_huge_pmd(struct vm_area_struct *vma, unsigned long old_addr,
- 		}
- 		pmd = move_soft_dirty_pmd(pmd);
- 		set_pmd_at(mm, new_addr, new_pmd, pmd);
--		if (force_flush)
-+		if (force_flush) {
-+			vma->vm_flags &= ~(VM_LEVEL_PUD | VM_LEVEL_PTE);
-+			vma->vm_flags |= VM_LEVEL_PMD;
- 			flush_tlb_range(vma, old_addr, old_addr + PMD_SIZE);
-+		}
-+
- 		if (new_ptl != old_ptl)
- 			spin_unlock(new_ptl);
- 		spin_unlock(old_ptl);
+ 	 * On Versatile AB/PB, some secondary interrupts have a direct
+ 	 * pass-thru to the primary controller for IRQs 20 and 22-31 which need
 -- 
-2.19.1
-
+2.25.2
 
 
 _______________________________________________
