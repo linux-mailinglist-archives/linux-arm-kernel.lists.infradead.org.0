@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A99418DD58
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:26:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB9418DD59
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:26:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLmHpANQEvKESVKmb1nXr1EJxys0gcUDrxttV+GWG6A=; b=uYZqOwXz2E6wg7
-	VtLLKs6JCKJ2WPOa3Jssrl4jUEl0l7kRwyhKhI8ls3N7yh4OgBmi5a1Wgz0R7iUrc8MHvmtUlEs3N
-	sCkdkAdUsAHINdaJ0DugOXDpI/eHce9kNQTaLPyoA7ACKTrj1/mASpkRPxXA6TKfQ+GrwNPCvaWsS
-	AwdTfTTs2U62UNKLyQkUv0rd2cgWSH4hK0GWs9UtXQDpS1oFLy6M4GdQXzM9RvEfuQpWCxryK18XT
-	2gJA8eJ1eOtth9G5OgINPTON5AZCOQEg7RYD5gvB5NMvjtGm2PiAtUpt1N/HCROyQDUSCb4jTdzUn
-	Vnfw+LOL4+b7S8MuiilQ==;
+	List-Owner; bh=vZryEul8wbAjK0G7G5cFdGjD8x8fPQvPtEk0s2GYOnE=; b=DaHR7wh2F9hzN6
+	V+yRlgCs3ovOM1eNjEKZPT2lruQpiQIApBG41tJlZKzhWsCf3ZRyEkgwKSX8rAE1ZsexZ3T8Fd8YL
+	yV/0U+9zS2StbVJtaMpF+di7lLSVsp1uQsM2W6aVK1HluhbBVRi5eN14l+a6iZCObg0kOx8aMhmno
+	Lig/zAWIgQve3/TTxP01z/qH/6U9HmHixS72RcKCw1xObq8iwug1veLAyvzTL/MDPIp4pyfXkmuDq
+	Fudkqu1eAiZ2IGAfAli3Pcw3GBtxhKLotsbHhDajtuzNYlR93qVx8c1NvasxRJm0O2crHLoGX2b2t
+	WTXkM78r+VpLmA0MimAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFStg-0007tD-N2; Sat, 21 Mar 2020 01:25:56 +0000
+	id 1jFStz-00086a-30; Sat, 21 Mar 2020 01:26:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFSsW-0005wR-57
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:24:45 +0000
+ id 1jFSsa-00060J-CX
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:24:49 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 615C820732;
- Sat, 21 Mar 2020 01:24:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9707420752;
+ Sat, 21 Mar 2020 01:24:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584753883;
- bh=a7oq14gh90f9G9cupQDvc9EWm1m9yJ4iZFLErXizOcA=;
+ s=default; t=1584753887;
+ bh=UmHKXTMUzMpNRl9QVJY/I1GCYTb5dCitp7Hy9LqKIT8=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=TGEI4V2Sr9IwJ2vBZpVZGIAwljW2QxC17vCA1WzaVme3mY5AjgPfyfixpvTQgspyz
- omNWEhBVFBT8YfXNrFYmYw5dg8JcsPjOXCDyoOJWEa4mvy8dpxHs3kTTWYfruumyqT
- J7JYlBIh/rvdFNpNScrVbkMGiM0orrW9U07q7WGI=
+ b=bTS6UTSiz87KuzlFx2Nbu/rLy91hYrGU4zj4+suGlh8Y+bvM5wK2uPif2+qCrTnqv
+ QtKXDKsIx5ydoPIsWRCf82AQpZFcEZTXaWW2oOU7wiFdafM5GkGAP8lt5FB9niqYbn
+ BOzCSkORMx7V7ttuuOW7O0Uu/Bt7/ZY8NTG3qtyg=
 MIME-Version: 1.0
-In-Reply-To: <20200309194254.29009-5-lkundrak@v3.sk>
+In-Reply-To: <20200309194254.29009-6-lkundrak@v3.sk>
 References: <20200309194254.29009-1-lkundrak@v3.sk>
- <20200309194254.29009-5-lkundrak@v3.sk>
-Subject: Re: [PATCH v2 04/17] clk: mmp2: Add support for PLL clock sources
+ <20200309194254.29009-6-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 05/17] clk: mmp2: Stop pretending PLL outputs are
+ constant
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Fri, 20 Mar 2020 18:24:42 -0700
-Message-ID: <158475388263.125146.11372517982520346232@swboyd.mtv.corp.google.com>
+Date: Fri, 20 Mar 2020 18:24:46 -0700
+Message-ID: <158475388687.125146.14592941783278965687@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_182444_352119_B60DDA61 
-X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-CacheID: sfid-20200320_182448_478826_32CC644C 
+X-CRM114-Status: UNSURE (   6.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -86,22 +87,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-03-09 12:42:41)
-> The clk-of-mmp2 driver pretends that the clock outputs from the PLLs are
-> constant, but in fact they are configurable.
+Quoting Lubomir Rintel (2020-03-09 12:42:42)
+> The hardcoded values for PLL1 and PLL2 are wrong. PLL1 is slightly
+> off -- it defaults to 797.33 MHz, not 800 MHz. PLL2 is disabled by default,
+> but also configurable.
 > 
-> Add logic for obtaining the actual clock rates on MMP2 as well as MMP3.
-> There is no documentation for either SoC, but the "systemsetting" drivers
-> from Marvell GPL code dump provide some clue as far as MPMU registers on
-> MMP2 [1] and MMP3 [2] go.
-> 
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/lkundrak/linux-mmp3-dell-ariel.git/tree/drivers/char/mmp2_systemsetting.c
-> [2] https://git.kernel.org/pub/scm/linux/kernel/git/lkundrak/linux-mmp3-dell-ariel.git/tree/drivers/char/mmp3_systemsetting.c
-> 
-> A separate commit will adjust the clk-of-mmp2 driver.
-> 
-> Tested on a MMP3-based Dell Wyse 3020 as well as MMP2-based OLPC
-> XO-1.75 laptop.
+> Tested on a MMP2-based OLPC XO-1.75 laptop, with PLL1=797.33 and various
+> values of PLL2 set via set-pll2-520mhz, set-pll2-910mhz and
+> set-pll2-988mhz Open Firmware words.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
