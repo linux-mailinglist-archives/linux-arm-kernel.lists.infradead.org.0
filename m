@@ -2,65 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4383318E2D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 17:05:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97E7A18E36C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 18:43:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	In-Reply-To:Content-Transfer-Encoding:Content-Type:References:Message-ID:
-	Subject:To:From:Date:Resent-To:Resent-Message-ID:Resent-Date:Resent-From:
-	Reply-To:Content-ID:Content-Description:Resent-Sender:Resent-Cc:List-Owner;
-	 bh=z5g6PQ+Xq9zQ59yy4eGgoYdjrTnTQT3GGvyLmzps15E=; b=L7LWx+j4h2W9ZZuahYUFbI9wQ
-	P/FNF629CkBoO//KYrQFtBQ0mA6ULfvmYw3kbuFD/ImjCv/fIAPcZv4ZjsCa9hVjpOfTNNDzIwUUz
-	AYqqU5D62iI3XLq5yRX5cedB7LeKU0L+9FHtHrjxmakucglcoDPH+/K1fxIA3YQOFXbK1rzryR9WV
-	mld/xUZf50TJ7K5XYH2wkVCMebxmYsM5ynAz6x9ekwEEqryW7haBjfQq9DXzy6QCthhBVgc+YPCW+
-	K+U+uO+frBhdK7jg7xjfhePaIpfRUvKSTqAo5fYXvZ/n+2QyNNzY0NnITwQUZdaobPQMsaTmMPx63
-	0NBuFrHNQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PjK8j27U8zsk5wVvqdd82uH98Ay1MQuOlsC1JWMPzHA=; b=Eu+8TjEraEG0EC
+	pLmmKqboUJoLmHYLkKepzFY5LNmp91chQdNhmCas9198Syd4pMsFpLus5Q5xzsYbaJJF8OtVx+LCF
+	Ct+VuTDFnVIDg2SIMMeQU/vUtvjlfMGNu/3MixDQDkiUvw9sKbTQGIx0FUwgOJol5N5UlrC8JUq6r
+	H1zoscvXI2+EGr0lNIIGeeZvO2wz/DrtOWm178WukwMfHjRkGQztMs/iTC4qEUFczD1aszW0ajRo5
+	+KAulKsSO9+b026uHyeNwacrmVLeGfrq75IY1umW/VE/59/Vlz2XM0XPnltiNzHU+RvqPXvaUIKOS
+	BDPHpNKmpj/RZ1lmjEnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFgcD-00010I-Qd; Sat, 21 Mar 2020 16:04:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFgc3-0000zs-Uv
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 16:04:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33A4231B
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 21 Mar 2020 09:04:35 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB3203F305
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 21 Mar 2020 09:04:34 -0700 (PDT)
-Resent-From: Catalin Marinas <catalin.marinas@arm.com>
-Resent-Date: Sat, 21 Mar 2020 16:04:32 +0000
-Resent-Message-ID: <20200321160432.GC3052@mbp>
-Resent-To: linux-arm-kernel@lists.infradead.org
-Date: Sat, 21 Mar 2020 13:40:56 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
-Subject: Re: [PATCH 3/3] arm64: reduce trampoline data alignment
-Message-ID: <20200321134056.GB3052@mbp>
-References: <1938400.7m7sAWtiY1@basile.remlab.net>
- <20200319091407.51449-3-remi@remlab.net>
-Content-Type: multipart/mixed; boundary="BOKacYhQ+x31HxR3"
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20200319091407.51449-3-remi@remlab.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1jFi9X-0006TH-6W; Sat, 21 Mar 2020 17:43:19 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFi9Q-0006Sc-4r; Sat, 21 Mar 2020 17:43:13 +0000
+Received: by mail-pf1-x444.google.com with SMTP id h72so2871790pfe.4;
+ Sat, 21 Mar 2020 10:43:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3fStVl9rL3YRgIiAf/TzVVtMNrh3VX50fi0qgiiuA8o=;
+ b=UXIHaUBhFEcnW+OMHvNaZ8x6pk7Kw7xSi1XSqUQ/ypXJwX+/0kjbU9/UcI39UYrFww
+ L4SWYiuz/x5ZDo+euy1EVFm6/xEfsJuGVNtbr58w1aJIyLLbxr5Zvw2YV6+Jz2IFJLx1
+ hSKDnD+ugCfCtYPbwa0qtQZzvaVCFI/U0Hh49Bh/9v4+8cPYNZpxmxPxHCL/ucL4FfPB
+ t55wM9/sifQrsJ2x7qaYOUyTwSXOMqFFX7kbT5BvfLIkW8EyaBXHAHAACDZSlA65LB0e
+ +oYG1mMj2pkG+negyyMWiq2E57sl6r93kYgmOlv5Tvke5FfWZ2pC2/wfVUCgtyT6TaL9
+ 9P/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3fStVl9rL3YRgIiAf/TzVVtMNrh3VX50fi0qgiiuA8o=;
+ b=J+HpwUbor4NKmgN7MG6mNj8RvDsDlGT9VbfE9HtHwgSfpy+dLMLvkNOKR6Tfc767+n
+ +7BqKNdAT0aLSUGVTxDJV1B/KL5mh45igbu2ZGKsyt2khdc1uZ9CKSvWL4UrtLAThJPi
+ tBwTXr1rMwoROdAhdH1ENQi1oCEuHTJQuA7kENCKjRqImeqgKfQityZRTcJtuxAGSYT/
+ L0zK8zqRfki/Mc6x6Y4h2ZnqDS6RzN49h6r/u3vtM7bYUsZskcDbxAozxQ7tknGUqQoY
+ zkzCh5sVr9j8s3nASVIPB9wyxlKFo5RvFgZIJnSgFNPtxAY+vt6o3PcWrdx5/CJJ9VNr
+ 9geQ==
+X-Gm-Message-State: ANhLgQ0yvqlz5MGifLULete1zl6MENmB/0oW1jtfl6x4PA+tRLdOspEq
+ HkgwhMwTqSP+BnpUACIedaM=
+X-Google-Smtp-Source: ADFU+vtSB9sj3T3LCfhecLdyVMoQimjNCV0Ow3ys209048E+VImdKW1kqpUYGGvxT4nwaYSYvsoI7Q==
+X-Received: by 2002:a63:e856:: with SMTP id a22mr1215468pgk.283.1584812590871; 
+ Sat, 21 Mar 2020 10:43:10 -0700 (PDT)
+Received: from localhost ([49.207.51.24])
+ by smtp.gmail.com with ESMTPSA id f127sm8973833pfa.9.2020.03.21.10.43.09
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 21 Mar 2020 10:43:10 -0700 (PDT)
+Date: Sat, 21 Mar 2020 23:13:03 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: Re: [PATCH 00/18] genirq: Remove setup_irq()
+Message-ID: <20200321174303.GA7930@afzalpc>
+References: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
+ <87y2somido.fsf@nanos.tec.linutronix.de>
+ <20200227110713.GA5708@afzalpc>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200227110713.GA5708@afzalpc>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_090440_089048_D108EDB1 
-X-CRM114-Status: GOOD (  13.95  )
-X-Spam-Score: -1.1 (-)
+X-CRM114-CacheID: sfid-20200321_104312_214764_274B02DA 
+X-CRM114-Status: GOOD (  12.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,541 +99,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, james.morse@arm.com, will@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, x86@kernel.org,
+ Nicolas Palix <nicolas.palix@imag.fr>, linux-kernel@vger.kernel.org,
+ linux-mips@vger.kernel.org, Julia Lawall <Julia.Lawall@lip6.fr>,
+ linux-m68k@lists.linux-m68k.org, Michal Marek <michal.lkml@markovi.net>,
+ linux-rpi-kernel@lists.infradead.org, linux-alpha@vger.kernel.org,
+ Gilles Muller <Gilles.Muller@lip6.fr>, linux-omap@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---BOKacYhQ+x31HxR3
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
+Hi Thomas,
 
-On Thu, Mar 19, 2020 at 11:14:07AM +0200, Rémi Denis-Courmont wrote:
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index c36733d8cd75..ecad15443655 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -858,7 +858,7 @@ SYM_CODE_END(tramp_exit_compat)
->  	.popsection				// .entry.tramp.text
->  #ifdef CONFIG_RANDOMIZE_BASE
->  	.pushsection ".rodata", "a"
-> -	.align PAGE_SHIFT
-> +	.align	4	// all .rodata must be in a single fixmap page
->  SYM_DATA_START(__entry_tramp_data_start)
->  	.quad	vectors
->  SYM_DATA_END(__entry_tramp_data_start)
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 9b08f7c7e6f0..6a0e75f48e7b 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -599,9 +599,8 @@ static int __init map_entry_trampoline(void)
->  	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE)) {
->  		extern char __entry_tramp_data_start[];
->  
-> -		__set_fixmap(FIX_ENTRY_TRAMP_DATA,
-> -			     __pa_symbol(__entry_tramp_data_start),
-> -			     PAGE_KERNEL_RO);
-> +		pa_start = __pa_symbol(__entry_tramp_data_start) & PAGE_MASK;
-> +		__set_fixmap(FIX_ENTRY_TRAMP_DATA, pa_start, PAGE_KERNEL_RO);
->  	}
->  
->  	return 0;
+On Thu, Feb 27, 2020 at 04:37:13PM +0530, afzal mohammed wrote:
+> On Thu, Feb 27, 2020 at 11:31:15AM +0100, Thomas Gleixner wrote:
 
-For some reason, I haven't investigated yet, a kernel with KASAN and 64K
-pages enabled does not boot (see the attached config). It seems to lock
-up when starting user space. Bisected to this commit, reverting it fixes
-the issue.
+> > Vs. merging this series, I suggest the following approach:
+> > 
+> >    - Resubmit the individual changes as single patches or small series
+> >      to the relevant maintainers and subsystem mailing lists. They have
+> >      no dependency on a core change and can be applied where they belong
+> >      to.
+> > 
+> >    - After 5.6-rc6, verify which parts have made their way into
+> >      linux-next and resubmit the ignored ones as a series to me along
+> >      with the removal of the core parts.
+> > 
+> > That way we can avoid conflicting changes between subsystems and the tip
+> > irq/core branch as much as possible.
+> 
+> Okay, i will do accordingly.
 
--- 
-Catalin
+i am on it, is delayed due to the reason as mentioned at,
 
---BOKacYhQ+x31HxR3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment; filename=".config"
+https://lkml.kernel.org/r/20200321172626.GA6323@afzalpc
 
-CONFIG_SYSVIPC=y
-CONFIG_POSIX_MQUEUE=y
-CONFIG_AUDIT=y
-CONFIG_NO_HZ_IDLE=y
-CONFIG_HIGH_RES_TIMERS=y
-CONFIG_PREEMPT=y
-CONFIG_IRQ_TIME_ACCOUNTING=y
-CONFIG_BSD_PROCESS_ACCT=y
-CONFIG_BSD_PROCESS_ACCT_V3=y
-CONFIG_IKCONFIG=y
-CONFIG_IKCONFIG_PROC=y
-CONFIG_NUMA_BALANCING=y
-CONFIG_MEMCG=y
-CONFIG_MEMCG_SWAP=y
-CONFIG_BLK_CGROUP=y
-CONFIG_CGROUP_PIDS=y
-CONFIG_CGROUP_HUGETLB=y
-CONFIG_CPUSETS=y
-CONFIG_CGROUP_DEVICE=y
-CONFIG_CGROUP_CPUACCT=y
-CONFIG_CGROUP_PERF=y
-CONFIG_USER_NS=y
-CONFIG_SCHED_AUTOGROUP=y
-CONFIG_BLK_DEV_INITRD=y
-CONFIG_KALLSYMS_ALL=y
-# CONFIG_COMPAT_BRK is not set
-CONFIG_PROFILING=y
-CONFIG_ARM64_64K_PAGES=y
-CONFIG_NUMA=y
-CONFIG_KEXEC=y
-CONFIG_CRASH_DUMP=y
-CONFIG_HIBERNATION=y
-CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
-CONFIG_EFI_CAPSULE_LOADER=y
-CONFIG_JUMP_LABEL=y
-CONFIG_COMPAT_32BIT_TIME=y
-CONFIG_MODULES=y
-CONFIG_MODULE_UNLOAD=y
-CONFIG_BLK_DEV_INTEGRITY=y
-# CONFIG_CORE_DUMP_DEFAULT_ELF_HEADERS is not set
-CONFIG_KSM=y
-CONFIG_MEMORY_FAILURE=y
-CONFIG_TRANSPARENT_HUGEPAGE=y
-CONFIG_NET=y
-CONFIG_PACKET=y
-CONFIG_UNIX=y
-CONFIG_INET=y
-CONFIG_IP_MULTICAST=y
-CONFIG_IP_PNP=y
-CONFIG_IP_PNP_DHCP=y
-CONFIG_IP_PNP_BOOTP=y
-CONFIG_IPV6=m
-CONFIG_NETFILTER=y
-CONFIG_NF_CONNTRACK=m
-CONFIG_NF_CONNTRACK_EVENTS=y
-CONFIG_NETFILTER_XT_TARGET_CHECKSUM=m
-CONFIG_NETFILTER_XT_TARGET_LOG=m
-CONFIG_NETFILTER_XT_MATCH_ADDRTYPE=m
-CONFIG_NETFILTER_XT_MATCH_CONNTRACK=m
-CONFIG_IP_NF_IPTABLES=m
-CONFIG_IP_NF_FILTER=m
-CONFIG_IP_NF_TARGET_REJECT=m
-CONFIG_IP_NF_NAT=m
-CONFIG_IP_NF_TARGET_MASQUERADE=m
-CONFIG_IP_NF_MANGLE=m
-CONFIG_IP6_NF_IPTABLES=m
-CONFIG_IP6_NF_FILTER=m
-CONFIG_IP6_NF_TARGET_REJECT=m
-CONFIG_IP6_NF_MANGLE=m
-CONFIG_IP6_NF_NAT=m
-CONFIG_IP6_NF_TARGET_MASQUERADE=m
-CONFIG_BRIDGE=m
-CONFIG_BRIDGE_VLAN_FILTERING=y
-CONFIG_VLAN_8021Q=m
-CONFIG_VLAN_8021Q_GVRP=y
-CONFIG_VLAN_8021Q_MVRP=y
-CONFIG_BPF_JIT=y
-CONFIG_BT=m
-CONFIG_BT_HIDP=m
-# CONFIG_BT_HS is not set
-# CONFIG_BT_LE is not set
-CONFIG_BT_LEDS=y
-# CONFIG_BT_DEBUGFS is not set
-CONFIG_BT_HCIBTUSB=m
-CONFIG_BT_HCIUART=m
-CONFIG_BT_HCIUART_LL=y
-CONFIG_BT_HCIUART_BCM=y
-CONFIG_BT_HCIUART_QCA=y
-CONFIG_CFG80211=m
-CONFIG_MAC80211=m
-CONFIG_MAC80211_LEDS=y
-CONFIG_RFKILL=m
-CONFIG_NET_9P=y
-CONFIG_NET_9P_VIRTIO=y
-CONFIG_PCI=y
-CONFIG_PCIEPORTBUS=y
-CONFIG_PCI_IOV=y
-CONFIG_HOTPLUG_PCI=y
-CONFIG_PCI_HOST_GENERIC=y
-CONFIG_DEVTMPFS=y
-CONFIG_DEVTMPFS_MOUNT=y
-CONFIG_FW_LOADER_USER_HELPER=y
-CONFIG_FW_LOADER_USER_HELPER_FALLBACK=y
-CONFIG_SIMPLE_PM_BUS=y
-CONFIG_MTD=y
-CONFIG_MTD_BLOCK=y
-CONFIG_MTD_RAW_NAND=y
-CONFIG_MTD_NAND_DENALI_DT=y
-CONFIG_MTD_SPI_NOR=y
-CONFIG_BLK_DEV_LOOP=y
-CONFIG_BLK_DEV_NBD=m
-CONFIG_VIRTIO_BLK=y
-CONFIG_BLK_DEV_NVME=m
-CONFIG_SRAM=y
-CONFIG_EEPROM_AT25=m
-# CONFIG_SCSI_PROC_FS is not set
-CONFIG_BLK_DEV_SD=y
-CONFIG_SCSI_SAS_LIBSAS=y
-CONFIG_SCSI_SAS_ATA=y
-CONFIG_SCSI_MPT3SAS=m
-CONFIG_SCSI_UFSHCD=y
-CONFIG_SCSI_UFSHCD_PLATFORM=y
-CONFIG_ATA=y
-CONFIG_SATA_AHCI=y
-CONFIG_SATA_AHCI_PLATFORM=y
-CONFIG_AHCI_CEVA=y
-CONFIG_AHCI_QORIQ=y
-CONFIG_SATA_SIL24=y
-CONFIG_MD=y
-CONFIG_BLK_DEV_MD=m
-CONFIG_BLK_DEV_DM=m
-CONFIG_DM_MIRROR=m
-CONFIG_DM_ZERO=m
-CONFIG_NETDEVICES=y
-CONFIG_MACVLAN=m
-CONFIG_MACVTAP=m
-CONFIG_TUN=y
-CONFIG_VETH=m
-CONFIG_VIRTIO_NET=y
-CONFIG_AMD_XGBE=y
-CONFIG_ATL1C=m
-CONFIG_BCMGENET=m
-CONFIG_BNX2X=m
-CONFIG_MACB=y
-CONFIG_THUNDER_NIC_PF=y
-CONFIG_E1000E=y
-CONFIG_IGB=y
-CONFIG_IGBVF=y
-CONFIG_MVMDIO=y
-CONFIG_SKY2=y
-CONFIG_MLX4_EN=m
-CONFIG_MLX5_CORE=m
-CONFIG_MLX5_CORE_EN=y
-CONFIG_QCOM_EMAC=m
-CONFIG_SMSC911X=y
-CONFIG_STMMAC_ETH=m
-CONFIG_MDIO_BITBANG=y
-CONFIG_MDIO_BUS_MUX_MMIOREG=y
-CONFIG_MARVELL_PHY=m
-CONFIG_MARVELL_10G_PHY=m
-CONFIG_MICREL_PHY=y
-CONFIG_AT803X_PHY=y
-CONFIG_REALTEK_PHY=m
-CONFIG_ROCKCHIP_PHY=y
-CONFIG_USB_PEGASUS=m
-CONFIG_USB_RTL8150=m
-CONFIG_USB_RTL8152=m
-CONFIG_USB_LAN78XX=m
-CONFIG_USB_USBNET=m
-CONFIG_USB_NET_DM9601=m
-CONFIG_USB_NET_SR9800=m
-CONFIG_USB_NET_SMSC75XX=m
-CONFIG_USB_NET_SMSC95XX=m
-CONFIG_USB_NET_PLUSB=m
-CONFIG_USB_NET_MCS7830=m
-CONFIG_ATH10K=m
-CONFIG_ATH10K_PCI=m
-CONFIG_BRCMFMAC=m
-CONFIG_MWIFIEX=m
-CONFIG_MWIFIEX_PCIE=m
-CONFIG_WL18XX=m
-CONFIG_WLCORE_SDIO=m
-CONFIG_INPUT_EVDEV=y
-CONFIG_KEYBOARD_ADC=m
-CONFIG_KEYBOARD_GPIO=y
-CONFIG_KEYBOARD_CROS_EC=y
-CONFIG_INPUT_TOUCHSCREEN=y
-CONFIG_TOUCHSCREEN_ATMEL_MXT=m
-CONFIG_INPUT_MISC=y
-# CONFIG_SERIO_SERPORT is not set
-CONFIG_LEGACY_PTY_COUNT=16
-CONFIG_SERIAL_8250=y
-CONFIG_SERIAL_8250_CONSOLE=y
-CONFIG_SERIAL_8250_EXTENDED=y
-CONFIG_SERIAL_8250_SHARE_IRQ=y
-CONFIG_SERIAL_8250_DW=y
-CONFIG_SERIAL_OF_PLATFORM=y
-CONFIG_SERIAL_XILINX_PS_UART=y
-CONFIG_SERIAL_XILINX_PS_UART_CONSOLE=y
-CONFIG_SERIAL_FSL_LPUART=y
-CONFIG_SERIAL_FSL_LPUART_CONSOLE=y
-CONFIG_SERIAL_FSL_LINFLEXUART=y
-CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE=y
-CONFIG_SERIAL_DEV_BUS=y
-CONFIG_VIRTIO_CONSOLE=y
-CONFIG_IPMI_HANDLER=m
-CONFIG_IPMI_DEVICE_INTERFACE=m
-CONFIG_IPMI_SI=m
-CONFIG_TCG_TPM=y
-CONFIG_TCG_TIS_I2C_INFINEON=y
-CONFIG_I2C_CHARDEV=y
-CONFIG_I2C_MUX=y
-CONFIG_I2C_MUX_PCA954x=y
-CONFIG_I2C_DESIGNWARE_PLATFORM=y
-CONFIG_I2C_GPIO=m
-CONFIG_I2C_RK3X=y
-CONFIG_I2C_CROS_EC_TUNNEL=y
-CONFIG_I2C_SLAVE=y
-CONFIG_SPI=y
-CONFIG_SPI_BITBANG=m
-CONFIG_SPI_NXP_FLEXSPI=y
-CONFIG_SPI_ROCKCHIP=y
-CONFIG_SPI_SPIDEV=m
-CONFIG_SPMI=y
-CONFIG_PINCTRL=y
-CONFIG_PINCTRL_SINGLE=y
-CONFIG_PINCTRL_MAX77620=y
-CONFIG_GPIOLIB=y
-CONFIG_GPIO_ALTERA=m
-CONFIG_GPIO_DWAPB=y
-CONFIG_GPIO_GENERIC_PLATFORM=y
-CONFIG_GPIO_MB86S7X=y
-CONFIG_GPIO_MAX732X=y
-CONFIG_GPIO_PCA953X=y
-CONFIG_GPIO_PCA953X_IRQ=y
-CONFIG_GPIO_MAX77620=y
-CONFIG_POWER_AVS=y
-CONFIG_QCOM_CPR=y
-CONFIG_POWER_RESET_SYSCON=y
-CONFIG_SYSCON_REBOOT_MODE=y
-CONFIG_BATTERY_SBS=m
-CONFIG_BATTERY_BQ27XXX=y
-CONFIG_SENSORS_LM90=m
-CONFIG_SENSORS_PWM_FAN=m
-CONFIG_SENSORS_INA2XX=m
-CONFIG_SENSORS_INA3221=m
-CONFIG_CPU_THERMAL=y
-CONFIG_THERMAL_EMULATION=y
-CONFIG_QORIQ_THERMAL=m
-CONFIG_WATCHDOG=y
-CONFIG_DW_WATCHDOG=y
-CONFIG_MFD_BD9571MWV=y
-CONFIG_MFD_AXP20X_I2C=y
-CONFIG_MFD_HI6421_PMIC=y
-CONFIG_MFD_MAX77620=y
-CONFIG_MFD_RK808=y
-CONFIG_MFD_SEC_CORE=y
-CONFIG_MFD_ROHM_BD718XX=y
-CONFIG_REGULATOR=y
-CONFIG_REGULATOR_FIXED_VOLTAGE=y
-CONFIG_REGULATOR_AXP20X=y
-CONFIG_REGULATOR_BD718XX=y
-CONFIG_REGULATOR_BD9571MWV=y
-CONFIG_REGULATOR_FAN53555=y
-CONFIG_REGULATOR_GPIO=y
-CONFIG_REGULATOR_HI6421V530=y
-CONFIG_REGULATOR_MAX77620=y
-CONFIG_REGULATOR_MAX8973=y
-CONFIG_REGULATOR_PFUZE100=y
-CONFIG_REGULATOR_PWM=y
-CONFIG_REGULATOR_QCOM_SPMI=y
-CONFIG_REGULATOR_RK808=y
-CONFIG_REGULATOR_S2MPS11=y
-CONFIG_REGULATOR_VCTRL=m
-CONFIG_RC_CORE=m
-CONFIG_RC_DECODERS=y
-CONFIG_RC_DEVICES=y
-CONFIG_MEDIA_SUPPORT=m
-CONFIG_MEDIA_CAMERA_SUPPORT=y
-CONFIG_MEDIA_ANALOG_TV_SUPPORT=y
-CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y
-CONFIG_MEDIA_CONTROLLER=y
-CONFIG_VIDEO_V4L2_SUBDEV_API=y
-# CONFIG_DVB_NET is not set
-CONFIG_MEDIA_USB_SUPPORT=y
-CONFIG_USB_VIDEO_CLASS=m
-CONFIG_V4L_PLATFORM_DRIVERS=y
-CONFIG_V4L_MEM2MEM_DRIVERS=y
-CONFIG_DRM=m
-CONFIG_DRM_I2C_NXP_TDA998X=m
-CONFIG_DRM_NOUVEAU=m
-CONFIG_DRM_RCAR_LVDS=m
-CONFIG_DRM_PANEL_SIMPLE=m
-CONFIG_DRM_SII902X=m
-CONFIG_DRM_TI_SN65DSI86=m
-CONFIG_DRM_I2C_ADV7511=m
-CONFIG_DRM_ETNAVIV=m
-CONFIG_FB=y
-CONFIG_FB_MODE_HELPERS=y
-CONFIG_FB_EFI=y
-CONFIG_BACKLIGHT_CLASS_DEVICE=y
-CONFIG_BACKLIGHT_GENERIC=m
-CONFIG_BACKLIGHT_PWM=m
-CONFIG_BACKLIGHT_LP855X=m
-CONFIG_LOGO=y
-# CONFIG_LOGO_LINUX_MONO is not set
-# CONFIG_LOGO_LINUX_VGA16 is not set
-CONFIG_SOUND=y
-CONFIG_SND=y
-CONFIG_SND_DYNAMIC_MINORS=y
-CONFIG_SND_SOC=y
-CONFIG_SND_SOC_AK4613=m
-CONFIG_SND_SOC_DMIC=m
-CONFIG_SND_SOC_ES7134=m
-CONFIG_SND_SOC_ES7241=m
-CONFIG_SND_SOC_MAX98357A=m
-CONFIG_SND_SOC_PCM3168A_I2C=m
-CONFIG_SND_SOC_SPDIF=m
-CONFIG_SND_SOC_TAS571X=m
-CONFIG_SND_SIMPLE_CARD=m
-CONFIG_SND_AUDIO_GRAPH_CARD=m
-CONFIG_I2C_HID=m
-CONFIG_USB_CONN_GPIO=m
-CONFIG_USB=y
-CONFIG_USB_OTG=y
-CONFIG_USB_XHCI_HCD=y
-CONFIG_USB_EHCI_HCD=y
-CONFIG_USB_EHCI_HCD_PLATFORM=y
-CONFIG_USB_OHCI_HCD=y
-CONFIG_USB_OHCI_HCD_PLATFORM=y
-CONFIG_USB_STORAGE=y
-CONFIG_USB_MUSB_HDRC=y
-CONFIG_USB_DWC3=y
-CONFIG_USB_DWC2=y
-CONFIG_USB_CHIPIDEA=y
-CONFIG_USB_CHIPIDEA_UDC=y
-CONFIG_USB_CHIPIDEA_HOST=y
-CONFIG_USB_ISP1760=y
-CONFIG_USB_HSIC_USB3503=y
-CONFIG_NOP_USB_XCEIV=y
-CONFIG_USB_GADGET=y
-CONFIG_USB_SNP_UDC_PLAT=y
-CONFIG_USB_BDC_UDC=y
-CONFIG_TYPEC=m
-CONFIG_TYPEC_TCPM=m
-CONFIG_TYPEC_FUSB302=m
-CONFIG_TYPEC_HD3SS3220=m
-CONFIG_MMC=y
-CONFIG_MMC_BLOCK_MINORS=32
-CONFIG_MMC_SDHCI=y
-CONFIG_MMC_SDHCI_PLTFM=y
-CONFIG_MMC_SDHCI_OF_ARASAN=y
-CONFIG_MMC_SDHCI_CADENCE=y
-CONFIG_MMC_SDHCI_F_SDH30=y
-CONFIG_MMC_SPI=y
-CONFIG_MMC_SDHCI_XENON=y
-CONFIG_NEW_LEDS=y
-CONFIG_LEDS_CLASS=y
-CONFIG_LEDS_GPIO=y
-CONFIG_LEDS_PWM=y
-CONFIG_LEDS_SYSCON=y
-CONFIG_LEDS_TRIGGER_DISK=y
-CONFIG_LEDS_TRIGGER_HEARTBEAT=y
-CONFIG_LEDS_TRIGGER_CPU=y
-CONFIG_LEDS_TRIGGER_DEFAULT_ON=y
-CONFIG_LEDS_TRIGGER_PANIC=y
-CONFIG_EDAC=y
-CONFIG_RTC_CLASS=y
-CONFIG_RTC_DRV_MAX77686=y
-CONFIG_RTC_DRV_RK808=m
-CONFIG_RTC_DRV_RX8581=m
-CONFIG_RTC_DRV_S5M=y
-CONFIG_RTC_DRV_DS3232=y
-CONFIG_RTC_DRV_CROS_EC=y
-CONFIG_RTC_DRV_SNVS=m
-CONFIG_DMADEVICES=y
-CONFIG_FSL_EDMA=y
-CONFIG_QCOM_HIDMA_MGMT=y
-CONFIG_QCOM_HIDMA=y
-CONFIG_VFIO=y
-CONFIG_VFIO_PCI=y
-CONFIG_VIRTIO_PCI=y
-CONFIG_VIRTIO_BALLOON=y
-CONFIG_VIRTIO_MMIO=y
-CONFIG_MFD_CROS_EC=y
-CONFIG_CROS_EC_I2C=y
-CONFIG_CROS_EC_SPI=y
-CONFIG_COMMON_CLK_RK808=y
-CONFIG_COMMON_CLK_CS2000_CP=y
-CONFIG_COMMON_CLK_S2MPS11=y
-CONFIG_COMMON_CLK_PWM=y
-CONFIG_HWSPINLOCK=y
-CONFIG_REMOTEPROC=y
-CONFIG_SOC_TI=y
-CONFIG_EXTCON_USB_GPIO=y
-CONFIG_EXTCON_USBC_CROS_EC=y
-CONFIG_MEMORY=y
-CONFIG_IIO=y
-CONFIG_QCOM_SPMI_ADC5=m
-CONFIG_IIO_CROS_EC_SENSORS_CORE=m
-CONFIG_IIO_CROS_EC_SENSORS=m
-CONFIG_IIO_CROS_EC_LIGHT_PROX=m
-CONFIG_SENSORS_ISL29018=m
-CONFIG_IIO_CROS_EC_BARO=m
-CONFIG_MPL3115=m
-CONFIG_PWM=y
-CONFIG_PWM_CROS_EC=m
-CONFIG_RESET_BRCMSTB_RESCAL=y
-CONFIG_PHY_FSL_IMX8MQ_USB=y
-CONFIG_PHY_QCOM_USB_HS=y
-CONFIG_PHY_SAMSUNG_USB2=y
-CONFIG_FPGA=y
-CONFIG_FPGA_BRIDGE=m
-CONFIG_ALTERA_FREEZE_BRIDGE=m
-CONFIG_FPGA_REGION=m
-CONFIG_OF_FPGA_REGION=m
-CONFIG_TEE=y
-CONFIG_EXT2_FS=y
-CONFIG_EXT3_FS=y
-CONFIG_EXT4_FS_POSIX_ACL=y
-CONFIG_XFS_FS=y
-CONFIG_XFS_QUOTA=y
-CONFIG_BTRFS_FS=m
-CONFIG_BTRFS_FS_POSIX_ACL=y
-CONFIG_FANOTIFY=y
-CONFIG_FANOTIFY_ACCESS_PERMISSIONS=y
-CONFIG_QUOTA=y
-CONFIG_AUTOFS4_FS=y
-CONFIG_FUSE_FS=m
-CONFIG_CUSE=m
-CONFIG_OVERLAY_FS=m
-CONFIG_VFAT_FS=y
-CONFIG_HUGETLBFS=y
-CONFIG_CONFIGFS_FS=y
-CONFIG_EFIVAR_FS=y
-CONFIG_SQUASHFS=y
-CONFIG_NFS_FS=y
-CONFIG_NFS_V4=y
-CONFIG_NFS_V4_1=y
-CONFIG_NFS_V4_2=y
-CONFIG_ROOT_NFS=y
-CONFIG_9P_FS=y
-CONFIG_NLS_CODEPAGE_437=y
-CONFIG_NLS_ISO8859_1=y
-CONFIG_SECURITY=y
-CONFIG_CRYPTO_CRYPTD=y
-CONFIG_CRYPTO_AUTHENC=m
-CONFIG_CRYPTO_ECHAINIV=y
-CONFIG_CRYPTO_MD5=m
-CONFIG_CRYPTO_SHA1=y
-CONFIG_CRYPTO_SHA512=m
-CONFIG_CRYPTO_SHA3=m
-CONFIG_CRYPTO_SM3=m
-CONFIG_CRYPTO_DES=m
-CONFIG_CRYPTO_ANSI_CPRNG=y
-CONFIG_CRYPTO_USER_API_RNG=m
-CONFIG_CRYPTO_DEV_AMLOGIC_GXL=y
-CONFIG_CRC_CCITT=m
-CONFIG_CMA_SIZE_MBYTES=32
-CONFIG_PRINTK_TIME=y
-CONFIG_DEBUG_INFO=y
-CONFIG_MAGIC_SYSRQ=y
-CONFIG_DEBUG_FS=y
-CONFIG_DEBUG_KERNEL=y
-CONFIG_KASAN=y
-CONFIG_KASAN_INLINE=y
-# CONFIG_SCHED_DEBUG is not set
-# CONFIG_DEBUG_PREEMPT is not set
-# CONFIG_FTRACE is not set
-CONFIG_LKDTM=y
-CONFIG_MEMTEST=y
+[ not repeating contents here since other mail was sent just now,
+  cc'ing you ]
 
---BOKacYhQ+x31HxR3
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards
+afzal
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---BOKacYhQ+x31HxR3--
-
