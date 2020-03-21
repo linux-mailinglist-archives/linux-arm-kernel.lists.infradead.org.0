@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B28018DD63
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:28:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E157C18DD64
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:28:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e6Pp5pypNSQnLyJQM1AFm7PaVVf68dDsVM4oIXX1URM=; b=TBcCu43JFsiINo
-	uxu1ckgPp4OriFX9XKAWVUrA9lOmledRr6IpSAgAcdt91Dn9BODTgFSYFJa9XNp8DxLAQWpZLHNO3
-	Yf0PquAE5tHH2gqLZIbYXYB8b1F0Wbxt5iFLgzETicR46ESBvKg1fVrsfkjJoPP9ytqui4pO6TdM+
-	YF3FvXbKXU4hOeSrw1dKgSXeNtz6MlTN2OpddEvTpMwL9FsAzLRS9y2ZIpWbst56LF5JbPP62ji3p
-	fK7oCfkXnLdht+BH8kEO5fwTj1AVSn4eSb0TuL03F6bsjUNICdt3JN5AmtV1fzokQKfyOThySyP4e
-	hAsmur4ZbIQto4anzJSg==;
+	List-Owner; bh=v2voy3pORS9o5imOVMGEgC7YHulBu3pOtcX5NCNUZSo=; b=ccIyNrRlmXzYDO
+	vKy6HDi20pPnr0ZIp/9WmAM22rN9gACgn8B2GSZq7oysDpUMP9R2D/Aa+3Ea2CLwTwW+2bXF5dfP7
+	MEvmjbhU7280IvfK74gqYSAMxJshTYv84BUGn1BRsEQbO5gjF8cL0MSRIP6pGrCewrEcdfmZ7htwx
+	ZEp0nTWubK7gtp4CTDHhnuWC4ySU/X/yYDWyivWoSGsAIbf2ny3qusVbvl6GrqYNr/hY8tvDELDVG
+	Jv4o0sa07xFSRWyODFnd8FIJbgaAnX3gmnv4YenilaD8xdPNNQZkbndyxSeV5Qycx1S6lM2H+Hd0B
+	tjnKEDBJ5wd7b7ZV4xrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFSvu-0001Yv-EC; Sat, 21 Mar 2020 01:28:14 +0000
+	id 1jFSw8-0001m6-Jr; Sat, 21 Mar 2020 01:28:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFStB-0007ge-1c
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:25:26 +0000
+ id 1jFStF-0007k3-0N
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:25:35 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEB5B20752;
- Sat, 21 Mar 2020 01:25:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD8C420732;
+ Sat, 21 Mar 2020 01:25:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584753924;
- bh=WsWYKSU47uiJNHIr8ngS+x4WBnd1J9kfnIffh7q+PFs=;
+ s=default; t=1584753928;
+ bh=+p0Klu0jDZrr7ZmPTQbGJqZmG+d/hb3NZuytHTg7YWE=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=SuOmKDH4mFwfASBaA2ht56R2ikzxyDDya9VuDemHoXL/sLr47hYXBqby0s9LRgvRt
- jjX3/p11zXDJW0vIiQbj2gT8WsL+AYnUI7+esmRkr85xgzHLYtQlXTga3dL/KHQZU3
- iBK/pP0DgwO27hgP0vj6aGlQf8IwoRoXo0kXXdXU=
+ b=CGV32s7GbEbKbk/XRfskUUXN+VoosXWsyt8sLpXova7D+KTVzOLZk3QPQF3oCUyZm
+ qMO2VCtrGI5VArFfXE3+8EkVjV5LbtNH94uMl0GABYIxhR7nCvF9YXeJuVsdw+kZ9P
+ 94u7Wl3UP6Ph3ZlHtxEGQVje/TdUJjwOElQip834=
 MIME-Version: 1.0
-In-Reply-To: <20200309194254.29009-15-lkundrak@v3.sk>
+In-Reply-To: <20200309194254.29009-16-lkundrak@v3.sk>
 References: <20200309194254.29009-1-lkundrak@v3.sk>
- <20200309194254.29009-15-lkundrak@v3.sk>
-Subject: Re: [PATCH v2 14/17] clk: mmp2: Add clocks for the thermal sensors
+ <20200309194254.29009-16-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 15/17] dt-bindings: marvell,
+ mmp2: Add clock id for the fifth SD HCI on MMP3
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Fri, 20 Mar 2020 18:25:23 -0700
-Message-ID: <158475392307.125146.13543743868856093457@swboyd.mtv.corp.google.com>
+Date: Fri, 20 Mar 2020 18:25:27 -0700
+Message-ID: <158475392718.125146.10468033951768755643@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_182525_188991_379BA6BB 
-X-CRM114-Status: UNSURE (   5.79  )
+X-CRM114-CacheID: sfid-20200320_182529_194471_5B4D2A36 
+X-CRM114-Status: UNSURE (   6.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -86,8 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-03-09 12:42:51)
-> The register definitions gotten from OLPC Open Firmware.
+Quoting Lubomir Rintel (2020-03-09 12:42:52)
+> There's one extra SDHCI on MMP3, used by the internal SD card on OLPC
+> XO-4. Add a clock for it.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > 
