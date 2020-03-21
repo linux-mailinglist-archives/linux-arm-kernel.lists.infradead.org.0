@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB6AB18DD5D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:26:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CAF118DD5E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:27:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g/J6JYwNN2sUYSVCd7a+f+ujNLT5lT8GIPr4useafWI=; b=Kcf+oam1TCiAA6
-	ZmaNZlgRO5xyKGDYPNXv82eiwV04zox57YLDEk023cBgLrqLwKEUagkPVTGV3kBWSmq0kTrr717RU
-	Ok/2KE8ete+5V9nE7diQ0ttX53vXuxmXSWYtUdGCb/4LgV2NJKbJGJj2Zz4VqvesCqniYjJ/euylk
-	xuT2EtrBfLkpq+QHa+HgLtLX+Ryc85dWbSdKfVq4KgMr0wng7d6GNQsT8js/yEtbP7KN/ObejgBQt
-	Usdu5ng6U9Dz3aEeXimzLib8GsmAUGuutPS7XthmK41RR8QMEpH+qcaRVR72ALkpN77vs3wJza6sf
-	JDwCES+23mtQT3XiWsxg==;
+	List-Owner; bh=+eagF4UifZcCjAhIuOnDyxHZ3HR+IcudlTyvXIDgyzo=; b=sKn9HX7InS+djI
+	7Cpx0TjtAL71SlQ4joTtQVElOfQbHgeSC707aKiiF9ukA0gA0SXtr4CmDcZ+IafhcqXgMN/L71bIj
+	KbHD9jJ7e2lnCArh/CSi/NQK75Hzx6WpiMrRRX+HuK6TALRmaVmeIRKQqmliBgTTFfbRJYGhueQJq
+	uIgCBqIhAVshEzZ+INoHS/b2KMIEWik9hhTYPHRLPMOVZCJr0X5wLv99RwzqxrrAqwIxQRP3J6z+h
+	eNcN4br3fIek3xfocLei0sQJ6a7pQkB5vViwy61NMWY4mvcLlfRiUXaYh3GzO0XnL4XF4AWlxLKD0
+	Hv4RbPCbHCgsnzjAt+QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFSuY-0000Jg-Fs; Sat, 21 Mar 2020 01:26:50 +0000
+	id 1jFSun-0000XL-RQ; Sat, 21 Mar 2020 01:27:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFSsm-00069x-G8
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:25:01 +0000
+ id 1jFSss-0006V9-Qi
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:25:08 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 04BE820757;
- Sat, 21 Mar 2020 01:24:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1DB7320752;
+ Sat, 21 Mar 2020 01:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584753900;
- bh=5YHGDWKXcxMs3WiVI+ZdL/cNmSi1iXG0YAyAcs54hVw=;
+ s=default; t=1584753905;
+ bh=2kInnsJovIKSAGHr2E5aPdzoRLpJbwUYULYLdudGOyY=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=WL+CPDRcthtrNthiPWAVJlr/e264I4mfTpgQ0IAKqT4gwsJ/wj9RZq7H0HsKKG/pX
- 2IrfNOPbaDJm9gn8ShTdGovIVYIQ4F9x/imXmqRjUE9DIy7+nUKnB6BS/wXjrixzGB
- MHSZkb0NsAHz+i4x10j/42nrYTPRPPe4SGdfP4qQ=
+ b=klzJ166FbGo5TxJyYm7ENwN3mVmG4ecwKgbx/JtC+2OJ6VgoLdhFsf6uGU9UQPjp2
+ E2BjLIUkPQPbzirM4RnJn5x+1TyhfD0vT4ZPU3d8qUnWhMuLBsHbcgDVyVWL+5tNDj
+ xSTK8A82IAjH4syIKy8qrmOVv7wwSyuXY/yNVw48=
 MIME-Version: 1.0
-In-Reply-To: <20200309194254.29009-9-lkundrak@v3.sk>
+In-Reply-To: <20200309194254.29009-10-lkundrak@v3.sk>
 References: <20200309194254.29009-1-lkundrak@v3.sk>
- <20200309194254.29009-9-lkundrak@v3.sk>
-Subject: Re: [PATCH v2 08/17] dt-bindings: marvell,
- mmp2: Add clock ids for MMP3 PLLs
+ <20200309194254.29009-10-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 09/17] clk: mmp2: Add PLLs that are available on MMP3
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Fri, 20 Mar 2020 18:24:59 -0700
-Message-ID: <158475389929.125146.15303542756865379794@swboyd.mtv.corp.google.com>
+Date: Fri, 20 Mar 2020 18:25:04 -0700
+Message-ID: <158475390434.125146.6482589568960006845@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_182500_581798_C9D198B7 
-X-CRM114-Status: UNSURE (   5.60  )
+X-CRM114-CacheID: sfid-20200320_182507_066926_29E1DC7D 
+X-CRM114-Status: UNSURE (   6.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -79,21 +78,19 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-03-09 12:42:45)
-> MMP3 variant provides some more clocks. Add respective IDs.
+Quoting Lubomir Rintel (2020-03-09 12:42:46)
+> There are more PLLs on MMP3 and are configured slightly differently.
+> Tested on a MMP3-based Dell Wyse 3020 machine.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> Acked-by: Rob Herring <robh@kernel.org>
-> 
 > ---
 
 Applied to clk-next
