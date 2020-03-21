@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7119018E0C6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 12:40:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13D2818E0F8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 13:07:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2Z+bLXXoy8okPkF+wl3l1XitdcTRI26DmSEvi/1Ii4Y=; b=CAA
-	YOxmoSLNoXtH0/0cKMP0cQy2US4ke218bMk5kypyDNNZ88/Cj0F5tJsXyJQztWD3t9c2ZlgVHC4nd
-	b+Tg8Iay3TFORMSjRxs//ZNR44/7SqmXivU9wvpQlBJsIsnOr89y1uSR57j/dPePA3Z8HMZOgvYxM
-	E8DF2Ql2XcO9xmAbbeTK6khAGNSM96izNJT0qrOX8rpw3ECA+AHTp3iyN79QP74tlmHmvFMe0sWEw
-	N2Nq7UNBzw+D5lWkjsgOfqXDlLZsK7Y6HvrZv948EeL06gR/ih5Jr7VWb8Z3vknhvPinMVZkoEWXO
-	8oK00Y7Nw+M+VG9HyByn32Gsg1c7VAQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zlLXn3yaD1hcfAlVRXUle46l3prYgmcThbZfVCBoYQY=; b=ZVTDaqMvh0Db1i
+	V029+1U5bylr4X2z+PS9f7EKhM3Wgkq6DbzSa9xuImTemgIupW/MrIlbt6+fYAl7lRFPIAsmaecLe
+	6ABGt2KYIxrJub7q/9+TK8LOMlYQa9jjgzkfnKCQ+FaCXOxxoifwVyMsXorzTXzflD5YPs9yYHZr7
+	rESOxbJzpmL6TBktX8aAcReZEa+d8IgXW75pFqQHU9ZcsSb3FMZdFnx/8dWomJYrjLhTsRjhR67tI
+	KExng3BjuIz9AlRNqk/sTQDvi/z3ajgJilIFClyaAn4xww3jIkweWW03xJm4ZNlEGVNjpOwV//ga0
+	WCUKA8GdXfMV4+tg8q5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFcUf-0007Is-NM; Sat, 21 Mar 2020 11:40:45 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFcUW-0007He-E9; Sat, 21 Mar 2020 11:40:37 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h4so10627819wru.2;
- Sat, 21 Mar 2020 04:40:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=7jR/DJniamHEDhpAAfPOcbN20Xg7ftVEruh/hyhO0PE=;
- b=LsLAT8+uDmGSdQQJntAF8vnUqUnpGplRkCu3wIrpjOm72QwxiPSyucWszlZYxKozpk
- qp1vUdTtSmAetmlLU6jTQsYrGZZvda/aPVoulZxELtCJkR0Tsk815tDkL+3HK/YXbxmF
- jtLdYdPDUeiOXDU/BXFfAiZiw+i+o+K8v/k6ReFNHkMNTlclmAibR2TVRvpJfZhdkJjf
- PO6EcEnhKLmfdn1TCVDGkM0VDNM4QsMMh+da0N9WrkDmlYc+Nei1FaumMXpQqwIkgw4S
- CSLK6Su/ZLNqr4Y5WZVY9LyUUDLzSlUN8nngsIj++Gs1w7nQoRTiQsF98zCyGaGin7Oz
- uAYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=7jR/DJniamHEDhpAAfPOcbN20Xg7ftVEruh/hyhO0PE=;
- b=MN44luOnCYUoG1/KeortEgoKWaDFCRKaWHDDnTHitD+PIF70P8Mbc4olti27w13TuT
- dA9HW2kNnWSopKBuliXtz8Ua/KsXeTuU9OlSXauYZXgAjW21BMcNfPhNGH5MyOecIjvz
- 91SRQemmc0VMlQgOr4zqQabF1Aa//DQnbgLIjPtLKgkSYJdgyYPXyDKjc1oTTPfGsieK
- KjLq+/xB3f6ctcQFjAkxFol2x7WjXKH3jis6huWrhyoKtwv0ENuye6xklgrSHOqWYM2o
- /YV5LG7u2xl4oUE7Pt2ds5VlKzAuoCkacvz1bQKsACB3VWBdmRROS8/8yXwt009yX2MO
- ScPQ==
-X-Gm-Message-State: ANhLgQ0irQKg0JKE5P9XuZ5UN0axI7Kg7d8Wk47qa25pmm+J+f+JTV3r
- +dZ+6p3VxB4EEgqAjrG6ci8=
-X-Google-Smtp-Source: ADFU+vvxfx5Oi42isr8/wePrVDB2XPv0PjWByfMkPVW34u6Ng9Fb9YvXxU3xXUegrdwEReYm41u9Cg==
-X-Received: by 2002:a5d:6a4b:: with SMTP id t11mr17009174wrw.52.1584790834729; 
- Sat, 21 Mar 2020 04:40:34 -0700 (PDT)
-Received: from felia.fritz.box ([2001:16b8:2d49:b100:e503:a7c7:f4c6:1aab])
- by smtp.gmail.com with ESMTPSA id t16sm9533091wra.17.2020.03.21.04.40.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 21 Mar 2020 04:40:34 -0700 (PDT)
-From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-To: Jeff Chang <jeff_chang@richtek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org
-Subject: [PATCH] ASoC: MT6660: make spdxcheck.py happy
-Date: Sat, 21 Mar 2020 12:40:22 +0100
-Message-Id: <20200321114022.8545-1-lukas.bulwahn@gmail.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jFctx-000732-4p; Sat, 21 Mar 2020 12:06:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jFctn-00072N-TL
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 12:06:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 134EC31B;
+ Sat, 21 Mar 2020 05:06:42 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 026A33F52E;
+ Sat, 21 Mar 2020 05:06:38 -0700 (PDT)
+Date: Sat, 21 Mar 2020 12:06:36 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v5 18/26] arm64: vdso32: Code clean up
+Message-ID: <20200321120635.GA3052@mbp>
+References: <20200320145351.32292-1-vincenzo.frascino@arm.com>
+ <20200320145351.32292-19-vincenzo.frascino@arm.com>
+ <158474646622.125146.3263940499372231797@swboyd.mtv.corp.google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <158474646622.125146.3263940499372231797@swboyd.mtv.corp.google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_044036_500093_4A6E84D2 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200321_050643_990811_5A7EE655 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lukas.bulwahn[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,40 +64,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Lukas Bulwahn <lukas.bulwahn@gmail.com>,
- linux-spdx@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ linux-mips@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andrei Vagin <avagin@openvz.org>, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SPDX-License-Identifier shall not be suffixed with anything further.
-This makes ./scripts/spdxcheck.py complain:
+On Fri, Mar 20, 2020 at 04:21:06PM -0700, Stephen Boyd wrote:
+> Quoting Vincenzo Frascino (2020-03-20 07:53:43)
+> > The compat vdso library had some checks that are not anymore relevant.
+> 
+> Can we get the information on why they aren't relevant anymore in the
+> commit text? I'd rather not find this commit three years from now and
+> have no idea why it was applied.
 
-  sound/soc/codecs/mt6660.c: 1:36 Invalid token: //
+Good point. But I'd rather say that the original reason for adding them
+was bogus (ABI compatibility between arm64 compat and arm32, when arm32
+vdso never got them).
 
-Clean up SPDX-License-Identifier line to make spdxcheck.py happy.
+There may be some (very hard to justify) reason to add them if we want
+compatibility between vdso and syscall fallback on addresses greater
+than TASK_SIZE. The vdso code generates a SIGSEGV or SIGBUS while the
+syscall returns -EFAULT. However, you'd have similar mismatch on
+unmapped addresses below TASK_SIZE which cannot be handled by the vdso
+(not a simple comparison).
 
-Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
----
- sound/soc/codecs/mt6660.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+I think the vdsotest code should be adjusted accordingly.
 
-diff --git a/sound/soc/codecs/mt6660.c b/sound/soc/codecs/mt6660.c
-index a36c416caad4..06ab1d39d2c1 100644
---- a/sound/soc/codecs/mt6660.c
-+++ b/sound/soc/codecs/mt6660.c
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0 //
-+// SPDX-License-Identifier: GPL-2.0
- 
- // Copyright (c) 2019 MediaTek Inc.
- 
 -- 
-2.17.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
