@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07AF118DDEE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 06:14:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 563B818DE4D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 07:43:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6yHGQLjBi39RiEHpLEu0/qz2K1K7GEHi9rFPa9L8XrI=; b=KWjtrOf64x3v/1
-	mg8ljfsMfRrlQDFc8VIFFmnLH+bQ1de5WdOTlR5QDIV6DdXrT0USwDWdCjVMT9p0RelFC3xkSd3dZ
-	f165Yt7u8+nOIwjRQ/ULUlzIcjc9KnX1FI10p7ZXTWZAfaqM826UUXKh+m9ycZf5e/OUGaST/NqYa
-	ycTo1aNtz3WPUiL0fxPp4+P56RsF/jTESioRaGyfNHj38G4S7J2llnNK2GmoUg4NWdDJ8kK4qXBVs
-	nRuiLhMBbunQBpre+PWubzWPiSaQM2WludRizW4HLseGv6E69mvbxzr4MlCi+2buorUJ3KICbnPoq
-	Zqg+DTX6MzkfeJehdTug==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SZFa5LLVUwmNoyJHCjY0LSDmkDe3gPW4K4Xu/IuPARQ=; b=kGR
+	1cfw5c209VmaED3Y/hNVr10lqYxn65B6gxVwm/JZSV8j6VUi4ggpHybeolky8h0TPP5Nn0eD1p14c
+	KQdA4gRaFX1qb64mNH8+PwOp04VKPnLpPRjiUP1aCnC1t44+NH6XyhlntyP5Y+7KGBMR8EyKWrzQ0
+	3Yv3GnroO2s4nYlfZnZmR6KcFXa8UwQDl8qBJWgJoH61Izy+hiQx4tPqnS7Y7XL05Zr8OtFV+zVFU
+	QzhWxgjLC031dk9sp29XtBRBipcPVJaDFlDA8uUiVfP654jnKi1f73Td4pOzP/NHYsSTlvx03Lycb
+	57MCj7fklsmQNUXnAoGVtV5X5g4EdSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFWSS-0003vE-4K; Sat, 21 Mar 2020 05:14:04 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jFXqN-0006z1-BH; Sat, 21 Mar 2020 06:42:51 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFWSK-0003ua-UP
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 05:13:59 +0000
-Received: by mail-pl1-x641.google.com with SMTP id f16so3408838plj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Mar 2020 22:13:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=G4ie2ATCwbZooXJQ532fViymENcXwSAXBHLmGP5UImg=;
- b=lpYFf7zTc68lGeegRP6NhdqTJj4B+yESmmWSOOvCZmHGkYhgGQXpiGoqM9DOuAElnO
- fHx2Jnp4Qo+ALnbTgOKdQZuauX9FZlzKXxcemtBQcrSt95/AiaKxzbltfElFwzizhbUU
- aINqHV14ao1LM+JfGrL3fxL3RPxfNVJF/prlNH7QEs+2KnSw1K0NM7R7OzXzrAjID5rK
- YUtXO4SSx59bhPzb0TmINw3h94KqKyKkQklyXnmOvhIBX6V66/1y+Hf1Ws+P4thGAyqt
- sPYY3abU78tEZmHgzPH66aL64cbQ7TaQdS6veaIwNu/Y8DrFk4EhrUS1ADUdMfGZlbjE
- SxtA==
+ id 1jFXq5-0006qS-Jh; Sat, 21 Mar 2020 06:42:35 +0000
+Received: by mail-wr1-x441.google.com with SMTP id h6so9991006wrs.6;
+ Fri, 20 Mar 2020 23:42:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=6jwYi+4smvXpVmrJrlCNrUCQ6TbLycTN4aAVHLYtEcY=;
+ b=qLbxc/xyJkaMd31ImtrVXGmY8aoSdkbThQE6UnMCnH7JaMVwcP4cYHI8+c7QPkkvYO
+ zPjpG6Vg+gwbiRi3kvYGCHE8s6aTgILjcx74heIq7gHhAu6Ji/71vD+USpqEPHOrhBVB
+ 2X+S/YOiYfCmore9+jCcd0yhfl7VlNhpVMsuOGBDaZV/GtyJTlbyDe5zC9imvitplxaJ
+ YRCNRXXKhnyD6Wa4Pt+p67YknAmbAOih+TyIhyMNbWe0W4bseHXmGNNzfBgVOUE58cKW
+ tZjJdJ1eKq0QGABwVMGbeVqJ0P0TtQ1uXGkTqsopkMTUuWED6CZL9WV3u10dJE7W4W6V
+ ZWNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=G4ie2ATCwbZooXJQ532fViymENcXwSAXBHLmGP5UImg=;
- b=kyFc4FKU5dHZzJfu3qj+ZebLn5plTy5ShUbaJ3bVPAXQM8joTRHjVFN9SlrvhRNOgo
- XA+ZbaA9v0VZ+xpjkpNoNElb7zdg/aXHGogTsjoYAJQGHeBWzKr3gFzSqi8F7MXS01H8
- 9S6TDAejQNWvBbpCNooV8g2XOeFPJqPvWGJds2xiqM+MZDfq3gZYpqiVNhF/iR87WInZ
- QRm5Q1kBz8sqhcpgBOpzsrSgZAn2hn/pAANCK1j39ablLBW4NCtzRvdu1OTPkG81SMxj
- 0b9zNLlvb7GMVqpagMdotI1RfYDzNJMQtffldRD7/x9HHi6XT27MGNFqhGoBYOeWKepN
- ysYw==
-X-Gm-Message-State: ANhLgQ11Q0rXq4CBvgpWaBy4IzCtY7Fo5OWQyOPIlPUHe+1lTm8r+XKv
- qZXouohXzrMZFlEbMzZ8Fyo75KPvJsc=
-X-Google-Smtp-Source: ADFU+vvOkMHAhqhNjqIAE3bf3xyX5vtsXrtwqU9BWtyW1VP/wGTKquw3jXw+D4jqCJTzq/hA5uXXhA==
-X-Received: by 2002:a17:902:a5c4:: with SMTP id
- t4mr12305734plq.242.1584767635736; 
- Fri, 20 Mar 2020 22:13:55 -0700 (PDT)
-Received: from localhost.localdomain (97-126-123-70.tukw.qwest.net.
- [97.126.123.70])
- by smtp.gmail.com with ESMTPSA id 74sm7078317pfy.120.2020.03.20.22.13.54
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=6jwYi+4smvXpVmrJrlCNrUCQ6TbLycTN4aAVHLYtEcY=;
+ b=Ow5wwwWUsN0lFhQB2J96QEcBmXw6gZFoKrHr4kYEIct2rb9B/WZsljsx/NS8SsCvGb
+ SlsS3E3Dz0+c2AgjgbcroyH9WQ+F+RKnDCMUgDr0QWOgvTs2Kh4RjwlulHFNQ+lmdEBl
+ LT8Bfhml2riR1JulTMgc7Z93FmXbZgjQbNRdbwOtcYMs7q+NnTiCxwhbP3U8HZzrwJht
+ nRBHUsxmbNbKHuXkPHj57kv4vwHKl22wbj7/CEa0WuSNwRhJ76ZtXNnG5K/VS6dkyODQ
+ +nbRJujin6WGP/tF+TD9boczM9xwBu1dKO3T1aGoE+MwDBzCz4FsRSEQRhy6rr55Ey6m
+ PVAg==
+X-Gm-Message-State: ANhLgQ3HzpIF3OZDX+OK8WRngxyQz4lTaO3CvugzmqfgUpmqBP2gNSwh
+ Pbje7J6u0sFrjl8pn0OwO1I=
+X-Google-Smtp-Source: ADFU+vuR82I6jdQEXvp8/i3BFcsKQ5kIC/3RfxJfhRkmcC28/6Y1EcInIoAYgazpWuhDC8DKZ9sGfA==
+X-Received: by 2002:a05:6000:d1:: with SMTP id
+ q17mr15985822wrx.409.1584772948918; 
+ Fri, 20 Mar 2020 23:42:28 -0700 (PDT)
+Received: from felia.fritz.box ([2001:16b8:2d49:b100:ccc3:14ec:86ef:bd24])
+ by smtp.gmail.com with ESMTPSA id k126sm11356619wme.4.2020.03.20.23.42.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 20 Mar 2020 22:13:55 -0700 (PDT)
-From: Richard Henderson <richard.henderson@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/1] arm64: Simplify __range_ok
-Date: Fri, 20 Mar 2020 22:13:52 -0700
-Message-Id: <20200321051352.16484-2-richard.henderson@linaro.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200321051352.16484-1-richard.henderson@linaro.org>
-References: <20200321051352.16484-1-richard.henderson@linaro.org>
-MIME-Version: 1.0
+ Fri, 20 Mar 2020 23:42:28 -0700 (PDT)
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+To: Boris Brezillon <bbrezillon@kernel.org>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>
+Subject: [PATCH] MAINTAINERS: update entry after SPI NOR controller move
+Date: Sat, 21 Mar 2020 07:42:17 +0100
+Message-Id: <20200321064217.6179-1-lukas.bulwahn@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_221357_325142_42F2E134 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20200320_234233_674336_F144B1A7 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [lukas.bulwahn[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,77 +95,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robin.murphy@arm.com
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Vladimir Zapolskiy <vz@mleia.com>, linux-mtd@lists.infradead.org,
+ Joe Perches <joe@perches.com>, Lukas Bulwahn <lukas.bulwahn@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The general case is not quite as compact as the inline assembly,
-but with a sufficiently advanced compiler it is only 6 insns vs 5.
+Commit a0900d0195d2 ("mtd: spi-nor: Prepare core / manufacturer code
+split") moved all SPI NOR controller drivers to a controllers/
+sub-directory. However, the moved nxp-spifi.c file was referenced in the
+ARM/LPC18XX ARCHITECTURE entry in MAINTAINERS.
 
-The real improvement comes from assuming that limit is never tiny,
-and using __builtin_constant_p to make sure the constant folding
-does not go awry.  This produces a 2 insn sequence even for older
-compilers.
+Hence, since then, ./scripts/get_maintainer.pl --self-test complains:
 
-Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
+  warning: no file matches F: drivers/mtd/spi-nor/nxp-spifi.c
+
+Update the file entry in MAINTAINERS to its new location.
+
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
 ---
- arch/arm64/include/asm/uaccess.h | 31 +++++++++++++------------------
- 1 file changed, 13 insertions(+), 18 deletions(-)
+applies cleanly on next-20200320
+Boris, Tudor, please pick this trivial patch. Not urgent.
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 32fc8061aa76..683727696dc3 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -60,7 +60,8 @@ static inline void set_fs(mm_segment_t fs)
-  */
- static inline unsigned long __range_ok(const void __user *addr, unsigned long size)
- {
--	unsigned long ret, limit = current_thread_info()->addr_limit;
-+	unsigned long limit = current_thread_info()->addr_limit;
-+	unsigned long iaddr;
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 50e8b900c0ae..3822efce14bc 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1948,7 +1948,7 @@ F:	Documentation/devicetree/bindings/i2c/i2c-lpc2k.txt
+ F:	arch/arm/boot/dts/lpc43*
+ F:	drivers/i2c/busses/i2c-lpc2k.c
+ F:	drivers/memory/pl172.c
+-F:	drivers/mtd/spi-nor/nxp-spifi.c
++F:	drivers/mtd/spi-nor/controllers/nxp-spifi.c
+ F:	drivers/rtc/rtc-lpc24xx.c
+ N:	lpc18xx
  
- 	/*
- 	 * Asynchronous I/O running in a kernel thread does not have the
-@@ -72,24 +73,18 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- 		addr = untagged_addr(addr);
- 
- 	__chk_user_ptr(addr);
--	asm volatile(
--	// A + B <= C + 1 for all A,B,C, in four easy steps:
--	// 1: X = A + B; X' = X % 2^64
--	"	adds	%0, %3, %2\n"
--	// 2: Set C = 0 if X > 2^64, to guarantee X' > C in step 4
--	"	csel	%1, xzr, %1, hi\n"
--	// 3: Set X' = ~0 if X >= 2^64. For X == 2^64, this decrements X'
--	//    to compensate for the carry flag being set in step 4. For
--	//    X > 2^64, X' merely has to remain nonzero, which it does.
--	"	csinv	%0, %0, xzr, cc\n"
--	// 4: For X < 2^64, this gives us X' - C - 1 <= 0, where the -1
--	//    comes from the carry in being clear. Otherwise, we are
--	//    testing X' - C == 0, subject to the previous adjustments.
--	"	sbcs	xzr, %0, %1\n"
--	"	cset	%0, ls\n"
--	: "=&r" (ret), "+r" (limit) : "Ir" (size), "0" (addr) : "cc");
- 
--	return ret;
-+	/*
-+	 * Quite a lot of range checks use sizeof(some_type), and are
-+	 * therefore constant.  If we can assume that limit is never unusably
-+	 * small, then we can rearrange the computation to avoid the need for
-+	 * 65-bit arithmetic.  Arbitrary choice for size limit of 1MiB.
-+	 */
-+	iaddr = (unsigned long)addr;
-+	if (__builtin_constant_p(size) && size > 0 && size < 0x100000)
-+		return iaddr <= limit + 1 - size;
-+
-+	return (__uint128_t)iaddr + size <= (__uint128_t)limit + 1;
- }
- 
- #define access_ok(addr, size)	__range_ok(addr, size)
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
