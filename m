@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE77218E4F0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 22:55:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D74918E4F4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 22:56:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6JUNHJI1FD2T6Es8KCvTGnwhBs2EheWkf9S8j98MFJo=; b=YdO83f4QqbAxNBTNvep4w6nPUF
-	4+V5cYsUPB8SuWJIS4yJciXSKThPtG+KRTjXfxmH3t0FQXkfyyHrRV7wKvKutxgsZd25hYytEWjmV
-	VzI+Pi0OqHlfMf6Ypmz4TlCXwbgATBV5iHQwDQH0B8PwbtvKQwTRrLQz6pX4z5c2qTO+OUejd4HIu
-	w0tkX24zIZ12AFTd/LSLsrlqcFKHWu5IT4efsjd4oRNrlkql8xGXOxo9Jx+s6lLEe88Cm5y+KJ7hr
-	nEJ+5woW0ougE+mv//AqGg7XRt72ylmq0Pt291Rim8Sg4Mh2yY+exEapRjxNbLtSpOBBRtWx4BZFv
-	GU1u1OVQ==;
+	bh=VQ7dBK85YVbJbbgfWiVx2kCTZPSzEBl/0d0C1l6jJwA=; b=C0bSWOj3A53CWm2PxCjdDv43H5
+	ZMauxGvcg0FZ81BLPV8ypoX8+hVEXRcdQusoyJeGNCO0Z0qMz/davthFqn0FgxuJ9R4LPqGtbGLC2
+	9ApbSsGUI1vrBxMpYKfU1mNxICfVQjfCDQyuFIWikkvEdpI2+DYFpO+3ZDZ5GvXCc3SAA0Elm24V7
+	fbK4axACjW4DXGMMPKwDS1U2SOTylTEKNP5TPv+0DnJR8TNFzciv4U/SwAt0dSLZknRju4rUfdDGZ
+	f93hj+yMlRtYXmaJw/mP2Jbqudge66o64KfE5AM0MKVUU00WJnIV6luB+HhDjbu0R1D/NuU5Cuf5v
+	3OgGPg2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFm5g-0005Jp-T3; Sat, 21 Mar 2020 21:55:37 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jFm6C-0005pr-Cp; Sat, 21 Mar 2020 21:56:08 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFm4g-0003aO-4y; Sat, 21 Mar 2020 21:54:36 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s1so11888777wrv.5;
- Sat, 21 Mar 2020 14:54:34 -0700 (PDT)
+ id 1jFm4h-0003b4-Fp; Sat, 21 Mar 2020 21:54:36 +0000
+Received: by mail-wr1-x444.google.com with SMTP id m17so2908399wrw.11;
+ Sat, 21 Mar 2020 14:54:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=yAx8su1/7aGFuhAGg/EaVyMzVkBJWF+j6/kaWK9mJHw=;
- b=DYPMRiocriecW171ocGwPa9hcFeccH9jeYHN2XRG1NEeJm4jMNxU5HEbT66vOzJ+0b
- TBM+D+7C+/rGvMBuWvg7CL+g6f8u/nBpXpE87DuISS9Miig1W+Lkw91huA7ov4ubDRsf
- FOpgumAN96EbnJbeMfACCrmh+z4C75zUyN9AgYGxnTo2DeubxMSx4kNyqVz6E7AdrEny
- 7fcCG5uRamQa0V/TnRUWzvNXwnVRKsZ8mfcAlfc4ACpKJ2z2GJpVTHk9UGlbvaotImyM
- YKaHOnPxLE2+ChXIQpvjLViwAimRpS0AQI/3bALuyQkarhgh26ntT3Ssj0/ZSaMQ0yEw
- /z7g==
+ bh=Bxcr3nNnRLp2AG9FEGj15mIEI/kFHkOT02wIVui39kg=;
+ b=SapOtdi4CUcy3PP4jh3XqIzTwXML5Wv/wnJb/OwAFB538IYea64Y6ExPjoIG0SzOij
+ aazEeEFBMTbZRxJ4kBvuZfLBiYAQZaKjT4GHqsjMWzxDsm0IKi+b3CQjbL1re6vuKlxd
+ dke7jLU0SPvxmQsNC4eBMfOrWt5c4xe+Qzhd8PQkjITqEcKBE2vwkjz4WEbWOyOj2TcF
+ mnwq3ZsB1PXSG5zUc1W19Xb7xG0a5/GCRVcZUpk+RakV87qMK5qVqLisUIY+bXPYTbj5
+ X8cwdXTV+ynxu6erBzcT+pbSop0dflfJjK2Atx6w31QfcHGOb7g8tZMpvEDxMzx1vuKB
+ ORvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=yAx8su1/7aGFuhAGg/EaVyMzVkBJWF+j6/kaWK9mJHw=;
- b=oXT6TD3eOBMy8ypO7he0dMdTV2ysBFs86PHFKzgsa9jdMbQl23+LtZM9DZP6/cXVvT
- LroxVd3ynphqcs5la6HSun7k2/ca89WMcYRBXTUi3LcY/cCLi1bcJLvC1qV4xKNPCyTR
- RBUbbNVgaye2iRXmjOaufVMpnhqzsIgU3IOMoKBlagxBptgVMqPbBD8uoDbesjuD5vks
- Nnsh84FFVMF9fZKk7khk59CEE3NqBQfeysSMyMsv+cZBn7KgkX8JMDA116gFgLweSD1R
- EY9s6xjEk+omNWUdXsGJSs+W3mbpTx9ruSPN5niyrl3/AV+kS3dhQNTWHyocqrX0BZ2Z
- 7HRQ==
-X-Gm-Message-State: ANhLgQ2P1D0Lp/g493GHhKBqEW0M/UQndJBvhFV7/pEEYtBYV+Rc8+VH
- A72ahPfVH9ALARgZU6fFR+U=
-X-Google-Smtp-Source: ADFU+vv2IejMRNQduQ+Dww45mKhZKuLxpXnA3+KypuBSPMYHDsOLLuGwcTQoWBA5U+2hewuhWvgEPQ==
-X-Received: by 2002:a05:6000:1184:: with SMTP id
- g4mr19735035wrx.396.1584827673044; 
+ bh=Bxcr3nNnRLp2AG9FEGj15mIEI/kFHkOT02wIVui39kg=;
+ b=rrsRP/iKYs7urQeJ8qGBMwucpOGrdwsKg3VO0tXGpph7klTgpyjISbpjTyFbQJ1DfV
+ 5iMZt91kg6mja2LzdIEOcW2AfYq+QsrAZR+A421UY4Sm7KD5YVueAb7rA0gT0DGJsQCF
+ xJb4XBs3i0O88hVw7XQC4jO5o3TJFGBUpQ1t38y89NM7EzaFTpAg9YsIy0cAZsCjtGPm
+ bHsvZrgdMfaaPx5IMW4GNIXkiLkz95Q8kTpFrfkmJ4QDSZ1wx8X2L3idR/pcufwhTAav
+ 2vIfQTxgkO7x87hxIzj2gHDvnnRz9e55QlQGmSgPhMHMwbqBMeXGjoj7iCVdAe9mK3BD
+ jPYw==
+X-Gm-Message-State: ANhLgQ2OGU4nCCOF3uo13RjdsW6DEXkQtRe8eJs5fcRrgjmGmcBr5PPK
+ NwW6EU9JVpHMFJ0jy54bs0Q=
+X-Google-Smtp-Source: ADFU+vsnerx72rIsn/e3/S0PUZrUA3I/NLF1OcJy9UClE81yPoADVu/RCabv7zYfNmrnE2Ad6JVelw==
+X-Received: by 2002:a5d:528e:: with SMTP id c14mr20126416wrv.308.1584827673988; 
  Sat, 21 Mar 2020 14:54:33 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id l83sm14113796wmf.43.2020.03.21.14.54.32
+ by smtp.gmail.com with ESMTPSA id l83sm14113796wmf.43.2020.03.21.14.54.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 21 Mar 2020 14:54:32 -0700 (PDT)
+ Sat, 21 Mar 2020 14:54:33 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 3/6] arm64: dts: rockchip: fix rtl8211e nodename for
+Subject: [PATCH 4/6] arm64: dts: rockchip: fix &pinctrl phy sub nodename for
  rk3399-nanopi4
-Date: Sat, 21 Mar 2020 22:54:20 +0100
-Message-Id: <20200321215423.12176-3-jbx6244@gmail.com>
+Date: Sat, 21 Mar 2020 22:54:21 +0100
+Message-Id: <20200321215423.12176-4-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200321215423.12176-1-jbx6244@gmail.com>
 References: <20200321215423.12176-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_145434_188565_EB0370F0 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20200321_145435_535646_5D62F7C5 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jbx6244[at]gmail.com]
@@ -108,19 +107,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives these errors:
+A test with the command below gives for example this error:
 
-arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dt.yaml: phy@1:
+arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dt.yaml: phy:
 '#phy-cells' is a required property
-arch/arm64/boot/dts/rockchip/rk3399-nanopi-m4.dt.yaml: phy@1:
+arch/arm64/boot/dts/rockchip/rk3399-nanopi-m4.dt.yaml: phy:
 '#phy-cells' is a required property
-arch/arm64/boot/dts/rockchip/rk3399-nanopi-neo4.dt.yaml: phy@1:
+arch/arm64/boot/dts/rockchip/rk3399-nanopi-neo4.dt.yaml: phy:
 '#phy-cells' is a required property
 
-The rtl8211e node is used by a phy-handle.
-The parent node is compatible with "snps,dwmac-mdio",
-so change nodename to 'ethernet-phy', for which '#phy-cells'
-is not a required property.
+'phy' is a reserved nodename and should not be used for pinctrl,
+so change it to 'gmac'.
 
 make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
@@ -132,18 +129,18 @@ Signed-off-by: Johan Jonker <jbx6244@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-index c88018a0e..20529105c 100644
+index 20529105c..1d246c2ca 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-@@ -182,7 +182,7 @@
- 		#address-cells = <1>;
- 		#size-cells = <0>;
+@@ -525,7 +525,7 @@
+ 		};
+ 	};
  
--		rtl8211e: phy@1 {
-+		rtl8211e: ethernet-phy@1 {
- 			reg = <1>;
- 			interrupt-parent = <&gpio3>;
- 			interrupts = <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
+-	phy {
++	gmac {
+ 		phy_intb: phy-intb {
+ 			rockchip,pins = <3 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
 -- 
 2.11.0
 
