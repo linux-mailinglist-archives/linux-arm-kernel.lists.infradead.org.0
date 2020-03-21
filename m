@@ -2,60 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC83D18DE9B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 08:59:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3559F18DEE7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 09:59:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CuspnRVZs8ZO8Bn/+d2YQa3FaVvhd0ocRW/zjo/ffGI=; b=GOHJbiXPkbed8PRdBo4K4eS6gT
-	OF2FqlknihTJPLdO8WHcDmpx5IWw1aJ3YLQciHfOC0TInGuVmyILmopsUnqWrEVIg9fEdbf2B648z
-	YGKSY370lncEBlh0vH8W/ocLpy0+/tBgRj7VCX7Vg8RnvJAOjy9ZmrKc2zrEnXnr8IZQiX535ByMk
-	qfZmlrzCCtMnbDyOpdxgTbcWfYj8M5etGY1mBuILWKeQpXDMvhfNtgEepe4l1dZcmxEV4xJx1Uqsx
-	AsqkVOQDzBk53KyoWj8pk76neBo13qKrddcFUCPEnWOQaxwu+JE2k0MfVoH3CCdT/Qbx6ieBF2Il4
-	c/sSD18g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CI9L0ipKZ+Yb10badbNGG+AKeav1xA1hEENGlsSkMzc=; b=N3GPkyZQecD2BT
+	Ba3IXkNeGUFMjWWxgIDZKqnQf2X8ghc49mOq3tY8hRWczqj8I080PZE0GdNMKSmtVJxlqFqUxFeXQ
+	UHOqpXQqCo1z9D180tDZ4X/eoZLspEtgADxasR8sfzopq3F8ghgBzfJuDxqMoTIhHvJLeS2JDdq+U
+	AJPspvr9xAOnFFjBSObr3KjE/+Ok7t6W3hGSz3jItLJSWctH1cb0ybNU1q6slT7Z+c6EhCfTkwPMK
+	mRWA9lknsCY8hrMYm+wHAa+/GrvxsVa9HnOl6sE28o6J7ikdXzrw8CWr7HQ8FOaOpNEuiBc2cxjGE
+	BzZNXufdWVPk9qGfhkKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFZ23-0004Du-OK; Sat, 21 Mar 2020 07:58:59 +0000
-Received: from olimex.com ([2001:470:0:1f2::b869:4820])
+	id 1jFZyX-0005X6-6e; Sat, 21 Mar 2020 08:59:25 +0000
+Received: from smtp05.smtpout.orange.fr ([80.12.242.127]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFZ1U-0003sI-Tq
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 07:58:26 +0000
-Received: from localhost.localdomain ([89.25.85.162])
- by olimex.com with ESMTPSA
- (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
- (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Sat, 21 Mar 2020 00:58:17 -0700
-From: Stefan Mavrodiev <stefan@olimex.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Corentin Labbe <clabbe@baylibre.com>, Stefan Mavrodiev <stefan@olimex.com>,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
- BINDINGS), 
- linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC
- support), linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH 2/2] dt-bindings: arm: sunxi: Add compatible for
- A20-OLinuXino-LIME-eMMC
-Date: Sat, 21 Mar 2020 09:57:57 +0200
-Message-Id: <20200321075757.15853-3-stefan@olimex.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200321075757.15853-1-stefan@olimex.com>
-References: <20200321075757.15853-1-stefan@olimex.com>
+ id 1jFZyQ-0005W9-FD
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 08:59:20 +0000
+Received: from localhost.localdomain ([90.126.162.40]) by mwinf5d62 with ME
+ id Gwyl220070scBcy03wytzK; Sat, 21 Mar 2020 09:59:12 +0100
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Sat, 21 Mar 2020 09:59:12 +0100
+X-ME-IP: 90.126.162.40
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: nsekhar@ti.com,
+	bgolaszewski@baylibre.com,
+	linux@armlinux.org.uk
+Subject: [PATCH] ARM: davinci: dm646x-evm: Simplify error handling in
+ 'evm_sw_setup()'
+Date: Sat, 21 Mar 2020 09:58:36 +0100
+Message-Id: <20200321085836.16493-1-christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_005824_957476_C9389368 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200321_015918_800348_61B3964B 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.127 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.127 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,39 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com
-MIME-Version: 1.0
+Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible string for A20-OLinuXino-LIME2-eMMC to the
-bindings documentation.
+There is no need to call 'gpio_free(evm_sw_gpio[i])' for these error
+handling cases, it is already done in the error handling path at label
+'out_free'.
 
-Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
+Simplify the code and axe a few LoC.
+
+While at it, also explicitly return 0 in the normal path.
+
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 ---
- Documentation/devicetree/bindings/arm/sunxi.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+The code after 'out_free' could also be replace by a single
+'evm_sw_teardown()' call, but I'm not a big fan of such construction.
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index 327ce6730823..25c09a121b63 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -555,6 +555,11 @@ properties:
-           - const: olimex,a20-olinuxino-lime
-           - const: allwinner,sun7i-a20
+In 'evm_sw_teardown()', the 'gpio_unexport()' call could also be removed
+because it is implied by 'gpio_free()'.
+
+Let me now if interested for one or both of these additional clean-up.
+---
+ arch/arm/mach-davinci/board-dm646x-evm.c | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+
+diff --git a/arch/arm/mach-davinci/board-dm646x-evm.c b/arch/arm/mach-davinci/board-dm646x-evm.c
+index 4600b617f9b4..dd7d60f4139a 100644
+--- a/arch/arm/mach-davinci/board-dm646x-evm.c
++++ b/arch/arm/mach-davinci/board-dm646x-evm.c
+@@ -267,20 +267,15 @@ static int evm_sw_setup(struct i2c_client *client, int gpio,
+ 		evm_sw_gpio[i] = gpio++;
  
-+      - description: Olimex A20-OlinuXino LIME (with eMMC)
-+        items:
-+          - const: olimex,a20-olinuxino-lime-emmc
-+          - const: allwinner,sun7i-a20
+ 		status = gpio_direction_input(evm_sw_gpio[i]);
+-		if (status) {
+-			gpio_free(evm_sw_gpio[i]);
+-			evm_sw_gpio[i] = -EINVAL;
++		if (status)
+ 			goto out_free;
+-		}
+ 
+ 		status = gpio_export(evm_sw_gpio[i], 0);
+-		if (status) {
+-			gpio_free(evm_sw_gpio[i]);
+-			evm_sw_gpio[i] = -EINVAL;
++		if (status)
+ 			goto out_free;
+-		}
+ 	}
+-	return status;
++	return 0;
 +
-       - description: Olimex A20-OlinuXino LIME2
-         items:
-           - const: olimex,a20-olinuxino-lime2
+ out_free:
+ 	for (i = 0; i < 4; ++i) {
+ 		if (evm_sw_gpio[i] != -EINVAL) {
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
