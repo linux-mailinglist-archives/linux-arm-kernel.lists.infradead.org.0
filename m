@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3559F18DEE7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 09:59:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B07518DF58
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 11:07:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CI9L0ipKZ+Yb10badbNGG+AKeav1xA1hEENGlsSkMzc=; b=N3GPkyZQecD2BT
-	Ba3IXkNeGUFMjWWxgIDZKqnQf2X8ghc49mOq3tY8hRWczqj8I080PZE0GdNMKSmtVJxlqFqUxFeXQ
-	UHOqpXQqCo1z9D180tDZ4X/eoZLspEtgADxasR8sfzopq3F8ghgBzfJuDxqMoTIhHvJLeS2JDdq+U
-	AJPspvr9xAOnFFjBSObr3KjE/+Ok7t6W3hGSz3jItLJSWctH1cb0ybNU1q6slT7Z+c6EhCfTkwPMK
-	mRWA9lknsCY8hrMYm+wHAa+/GrvxsVa9HnOl6sE28o6J7ikdXzrw8CWr7HQ8FOaOpNEuiBc2cxjGE
-	BzZNXufdWVPk9qGfhkKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ID3aEAzqt4d75+JqvwDTwEezsZwcTqqfA/IZsPTwmfE=; b=QEq+rLMQMAA04vo7kcrGVyWC7
+	qvLfmj79AYJfly+5lO2FeEP3gQyLny50Up+6qspe1jcnqLezX/t919TRubyLW8ObfHvYAp1/vQlyN
+	rU6+/recfc1yq5euBiJle6JzJGxSwOu7ptkGyMY+JsItCvWv6fhhVrM5PI8TgeGW2T4QtAX8b6iKj
+	11uU62w9BZwUsaUlf4ZdHfCZOpBCSJ4LGKrFDWUxUExsueLRxKu4lmRheFpYebmNa3X2pxWd5i8dx
+	n9EkORrdwRqks5fZ+2Z5qYuHxL9o0CF52CIxHF/Yjw5/V+e9AQsxZ4SWwsY6P4aY4AA1eTSyZrTbv
+	HjAlK2CnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFZyX-0005X6-6e; Sat, 21 Mar 2020 08:59:25 +0000
-Received: from smtp05.smtpout.orange.fr ([80.12.242.127]
- helo=smtp.smtpout.orange.fr)
+	id 1jFb2V-0002ZK-G3; Sat, 21 Mar 2020 10:07:35 +0000
+Received: from fieber.vanmierlo.com ([84.243.197.177]
+ helo=kerio9.vanmierlo.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFZyQ-0005W9-FD
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 08:59:20 +0000
-Received: from localhost.localdomain ([90.126.162.40]) by mwinf5d62 with ME
- id Gwyl220070scBcy03wytzK; Sat, 21 Mar 2020 09:59:12 +0100
-X-ME-Helo: localhost.localdomain
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sat, 21 Mar 2020 09:59:12 +0100
-X-ME-IP: 90.126.162.40
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: nsekhar@ti.com,
-	bgolaszewski@baylibre.com,
-	linux@armlinux.org.uk
-Subject: [PATCH] ARM: davinci: dm646x-evm: Simplify error handling in
- 'evm_sw_setup()'
-Date: Sat, 21 Mar 2020 09:58:36 +0100
-Message-Id: <20200321085836.16493-1-christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.20.1
+ id 1jFb2O-0002Yg-0N
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 10:07:29 +0000
+X-Footer: dmFubWllcmxvLmNvbQ==
+Received: from roundcube.vanmierlo.com ([192.168.37.37])
+ (authenticated user m.brock@vanmierlo.com)
+ by kerio9.vanmierlo.com (Kerio Connect 9.2.11 beta 1) with ESMTPA;
+ Sat, 21 Mar 2020 11:07:11 +0100
 MIME-Version: 1.0
+Date: Sat, 21 Mar 2020 11:07:10 +0100
+From: Maarten Brock <m.brock@vanmierlo.com>
+To: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+Subject: Re: [PATCH v4 2/2] serial: uartps: Add TACTIVE check in
+ cdns_uart_tx_empty function
+In-Reply-To: <e2514818af5973be291cc117d07739f068b71639.1584610774.git.shubhrajyoti.datta@xilinx.com>
+References: <cover.1584610774.git.shubhrajyoti.datta@xilinx.com>
+ <e2514818af5973be291cc117d07739f068b71639.1584610774.git.shubhrajyoti.datta@xilinx.com>
+Message-ID: <afd6fd6bc3413692ee91123fc3028583@vanmierlo.com>
+X-Sender: m.brock@vanmierlo.com
+User-Agent: Roundcube Webmail/1.3.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_015918_800348_61B3964B 
-X-CRM114-Status: GOOD (  17.82  )
+X-CRM114-CacheID: sfid-20200321_030728_192178_48C7F009 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.12.242.127 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [80.12.242.127 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,66 +63,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: Raviteja Narayanam <raviteja.narayanam@xilinx.com>,
+ linux-serial@vger.kernel.org, gregkh@linuxfoundation.org,
+ michal.simek@xilinx.com, linux-serial-owner@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to call 'gpio_free(evm_sw_gpio[i])' for these error
-handling cases, it is already done in the error handling path at label
-'out_free'.
+On 2020-03-19 10:44, Shubhrajyoti Datta wrote:
+> From: Raviteja Narayanam <raviteja.narayanam@xilinx.com>
+> 
+> Make sure that all bytes are transmitted out of Uart by monitoring
+> CDNS_UART_SR_TACTIVE bit as well.
+> 
+> Signed-off-by: Raviteja Narayanam <raviteja.narayanam@xilinx.com>
+> Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+> ---
+>  drivers/tty/serial/xilinx_uartps.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/tty/serial/xilinx_uartps.c
+> b/drivers/tty/serial/xilinx_uartps.c
+> index 662b8ab..38cb76a9 100644
+> --- a/drivers/tty/serial/xilinx_uartps.c
+> +++ b/drivers/tty/serial/xilinx_uartps.c
+> @@ -663,8 +663,8 @@ static unsigned int cdns_uart_tx_empty(struct
+> uart_port *port)
+>  	unsigned int status;
+> 
+>  	status = readl(port->membase + CDNS_UART_SR) &
+> -				CDNS_UART_SR_TXEMPTY;
+> -	return status ? TIOCSER_TEMT : 0;
+> +		       (CDNS_UART_SR_TXEMPTY | CDNS_UART_SR_TACTIVE);
+> +	return (status == CDNS_UART_SR_TXEMPTY) ? TIOCSER_TEMT : 0;
+>  }
+> 
+>  /**
 
-Simplify the code and axe a few LoC.
-
-While at it, also explicitly return 0 in the normal path.
-
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
----
-The code after 'out_free' could also be replace by a single
-'evm_sw_teardown()' call, but I'm not a big fan of such construction.
-
-In 'evm_sw_teardown()', the 'gpio_unexport()' call could also be removed
-because it is implied by 'gpio_free()'.
-
-Let me now if interested for one or both of these additional clean-up.
----
- arch/arm/mach-davinci/board-dm646x-evm.c | 13 ++++---------
- 1 file changed, 4 insertions(+), 9 deletions(-)
-
-diff --git a/arch/arm/mach-davinci/board-dm646x-evm.c b/arch/arm/mach-davinci/board-dm646x-evm.c
-index 4600b617f9b4..dd7d60f4139a 100644
---- a/arch/arm/mach-davinci/board-dm646x-evm.c
-+++ b/arch/arm/mach-davinci/board-dm646x-evm.c
-@@ -267,20 +267,15 @@ static int evm_sw_setup(struct i2c_client *client, int gpio,
- 		evm_sw_gpio[i] = gpio++;
- 
- 		status = gpio_direction_input(evm_sw_gpio[i]);
--		if (status) {
--			gpio_free(evm_sw_gpio[i]);
--			evm_sw_gpio[i] = -EINVAL;
-+		if (status)
- 			goto out_free;
--		}
- 
- 		status = gpio_export(evm_sw_gpio[i], 0);
--		if (status) {
--			gpio_free(evm_sw_gpio[i]);
--			evm_sw_gpio[i] = -EINVAL;
-+		if (status)
- 			goto out_free;
--		}
- 	}
--	return status;
-+	return 0;
-+
- out_free:
- 	for (i = 0; i < 4; ++i) {
- 		if (evm_sw_gpio[i] != -EINVAL) {
--- 
-2.20.1
+Acked-by: Maarten Brock <m.brock@vanmierlo.com>
 
 
 _______________________________________________
