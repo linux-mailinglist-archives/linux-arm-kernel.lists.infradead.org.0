@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD93D18DE99
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 08:58:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96BAF18DE9A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 08:59:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sYArtYLWpKVyWQ1aocJUJQLrmJdtvBn5me2iDgsrmfA=; b=ePZ
-	acZTgk50FU/rLbfj8DBFuy52W/e5ZTnVOiFHg55SJmLzWR/99ZDMsjOEaK8fFjhLY+1KCogoPHEkK
-	EAUfWwU0p2JqRPJm47l9JysuXYlm/ffvgnxkVfjpwhR/7sRFGnvmzn39vQ/PKeb3r7/f5b71Z9PHb
-	kkk9YWQyqcc+ekOlYYmdae329IlZOQ1coueQleSQyM5wGX0c1jUdBuMNSqltk9b2fc+umHfM6ka1O
-	Drn7oyCaPb/JRbYXXOyXINJkowsjKO1iPMohLc2Kk5/k54Th6i2EEktFROwGtzVujI32MNHQ4+8+f
-	6UV9UOuo4kKZyce0XFRYFw6xN2/ib6g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=QAV1Xf9KJjQsL05al3+r/tWg2Gs/ysTXk0rgWffM8PU=; b=NFvoFbLww9WEEqIBQ15NpNg38j
+	mzAfRV2vPp77QA6f6138UovotirHGNR+aik7U0oUPmHkFB/74gFDt1sz0B4y4RvJpj704NPbF71fe
+	G9zBb9FldYaIbg+KCf+IJRiSXuFn9VHGXBiCkMFXCpyqw5vVdwf70gGxqKCVIGc6ljDT+vcj6gBzB
+	jVuvgTRZz8qsQDeGYGJ60WoWFjkJqTGCpeR5WRI/3chE0Pp49cqp3OQW5VP69Qe4udsxRQBGTA2Tl
+	pR9tDvsCMMBe2u2Ynlcmi7VDIIStFuOFrrDlcKYKjHlLSOqiS17mY752GJTvvFJRnQVVulNAMnD9u
+	l6Nr0gCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFZ1d-0003tj-4o; Sat, 21 Mar 2020 07:58:33 +0000
+	id 1jFZ1s-0003zo-H6; Sat, 21 Mar 2020 07:58:48 +0000
 Received: from olimex.com ([184.105.72.32])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFZ1U-0003sG-BE
+ id 1jFZ1U-0003sF-BD
  for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 07:58:25 +0000
 Received: from localhost.localdomain ([89.25.85.162])
  by olimex.com with ESMTPSA
  (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
  (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Sat, 21 Mar 2020 00:58:11 -0700
+ for <linux-arm-kernel@lists.infradead.org>; Sat, 21 Mar 2020 00:58:14 -0700
 From: Stefan Mavrodiev <stefan@olimex.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -37,14 +38,15 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  BINDINGS), 
  linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC
  support), linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH 0/2] Add A20-OLinuXino-LIME-eMMC
-Date: Sat, 21 Mar 2020 09:57:55 +0200
-Message-Id: <20200321075757.15853-1-stefan@olimex.com>
+Subject: [PATCH 1/2] ARM: dts: sun7i: Add A20-OLinuXino-LIME-eMMC
+Date: Sat, 21 Mar 2020 09:57:56 +0200
+Message-Id: <20200321075757.15853-2-stefan@olimex.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200321075757.15853-1-stefan@olimex.com>
+References: <20200321075757.15853-1-stefan@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_005824_388044_43254862 
-X-CRM114-Status: UNSURE (   9.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200321_005824_388060_C1EEE29D 
+X-CRM114-Status: GOOD (  12.81  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -70,24 +72,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The board is the same as A20-OLinuXino-LIME with added eMMC chip. So the
-dts is almost identical with A20-OLinuXino-LIME2.
+There is new version of A20-OLinuXino-LIME with eMMC storage. The
+card routing is the same as in A20-OLinuXino-LIME2-eMMC, so this
+is basically copy/paste.
 
-This patch series adds a new dts file and appends the bindings
-documentation.
-
-Stefan Mavrodiev (2):
-  ARM: dts: sun7i: Add A20-OLinuXino-LIME-eMMC
-  dt-bindings: arm: sunxi: Add compatible for A20-OLinuXino-LIME-eMMC
-
- .../devicetree/bindings/arm/sunxi.yaml        |  5 +++
+Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
+---
  arch/arm/boot/dts/Makefile                    |  1 +
  .../dts/sun7i-a20-olinuxino-lime-emmc.dts     | 32 +++++++++++++++++++
- 3 files changed, 38 insertions(+)
+ 2 files changed, 33 insertions(+)
  create mode 100644 arch/arm/boot/dts/sun7i-a20-olinuxino-lime-emmc.dts
 
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index d6546d2676b9..6bf3c5a98a0f 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -1093,6 +1093,7 @@ dtb-$(CONFIG_MACH_SUN7I) += \
+ 	sun7i-a20-olimex-som204-evb.dtb \
+ 	sun7i-a20-olimex-som204-evb-emmc.dtb \
+ 	sun7i-a20-olinuxino-lime.dtb \
++	sun7i-a20-olinuxino-lime-emmc.dtb \
+ 	sun7i-a20-olinuxino-lime2.dtb \
+ 	sun7i-a20-olinuxino-lime2-emmc.dtb \
+ 	sun7i-a20-olinuxino-micro.dtb \
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime-emmc.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime-emmc.dts
+new file mode 100644
+index 000000000000..033cab3443f8
+--- /dev/null
++++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime-emmc.dts
+@@ -0,0 +1,32 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (C) 2020 Olimex Ltd.
++ *   Author: Stefan Mavrodiev <stefan@olimex.com>
++ */
++
++#include "sun7i-a20-olinuxino-lime.dts"
++
++/ {
++	model = "Olimex A20-OLinuXino-LIME-eMMC";
++	compatible = "olimex,a20-olinuxino-lime-emmc", "allwinner,sun7i-a20";
++
++	mmc2_pwrseq: pwrseq {
++		compatible = "mmc-pwrseq-emmc";
++		reset-gpios = <&pio 2 16 GPIO_ACTIVE_LOW>;
++	};
++};
++
++&mmc2 {
++	vmmc-supply = <&reg_vcc3v3>;
++	vqmmc-supply = <&reg_vcc3v3>;
++	bus-width = <4>;
++	non-removable;
++	mmc-pwrseq = <&mmc2_pwrseq>;
++	status = "okay";
++
++	emmc: emmc@0 {
++		reg = <0>;
++		compatible = "mmc-card";
++		broken-hpi;
++	};
++};
 -- 
 2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
