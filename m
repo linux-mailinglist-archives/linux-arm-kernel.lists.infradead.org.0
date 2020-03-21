@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CB9418DD59
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:26:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20FF718DD5B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:26:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vZryEul8wbAjK0G7G5cFdGjD8x8fPQvPtEk0s2GYOnE=; b=DaHR7wh2F9hzN6
-	V+yRlgCs3ovOM1eNjEKZPT2lruQpiQIApBG41tJlZKzhWsCf3ZRyEkgwKSX8rAE1ZsexZ3T8Fd8YL
-	yV/0U+9zS2StbVJtaMpF+di7lLSVsp1uQsM2W6aVK1HluhbBVRi5eN14l+a6iZCObg0kOx8aMhmno
-	Lig/zAWIgQve3/TTxP01z/qH/6U9HmHixS72RcKCw1xObq8iwug1veLAyvzTL/MDPIp4pyfXkmuDq
-	Fudkqu1eAiZ2IGAfAli3Pcw3GBtxhKLotsbHhDajtuzNYlR93qVx8c1NvasxRJm0O2crHLoGX2b2t
-	WTXkM78r+VpLmA0MimAw==;
+	List-Owner; bh=5BXcR2OMaiBzXbtClPLOIvIohnhWAJZm4F2JFsmJv+c=; b=rNKcJyWFZxfaHA
+	FQrN8mC1L4TirWiqYBwooW6Kwmkx+x025u/0/JERYqD9TBUt7L7wVFgILvTwU6nqFIxWzt97Xl/q5
+	U+VcunIGEssWExak+Q1R1Z0spqw2vb5psfJD3FOTCNSDWsf7AGIhkRpD8yZKHqoBXvvV85CpF9Sqh
+	0H/jKqh9Ngjg345M8LPZp6ir5/HOsZ72FjDzPl2sFIcdbewEGYV9CXNctTnrc01Shn8C0xIsK9lWi
+	gzhlnnNurs3lCguNj1nOEpQPbQQdRT8Qd1SE0jvyrznYf5GOvkghhyS4/10hleg2PIhvJvoaVL8Ub
+	uZdEUSx3f9Y1r2u+INaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFStz-00086a-30; Sat, 21 Mar 2020 01:26:15 +0000
+	id 1jFSu9-0008KH-44; Sat, 21 Mar 2020 01:26:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFSsa-00060J-CX
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:24:49 +0000
+ id 1jFSse-00063b-Pv
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:24:54 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9707420752;
- Sat, 21 Mar 2020 01:24:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BF0B720752;
+ Sat, 21 Mar 2020 01:24:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584753887;
- bh=UmHKXTMUzMpNRl9QVJY/I1GCYTb5dCitp7Hy9LqKIT8=;
+ s=default; t=1584753891;
+ bh=3Gvii+Cx3jPfn3YMShf1slVelDTAR8E8J6N+9AYJeps=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=bTS6UTSiz87KuzlFx2Nbu/rLy91hYrGU4zj4+suGlh8Y+bvM5wK2uPif2+qCrTnqv
- QtKXDKsIx5ydoPIsWRCf82AQpZFcEZTXaWW2oOU7wiFdafM5GkGAP8lt5FB9niqYbn
- BOzCSkORMx7V7ttuuOW7O0Uu/Bt7/ZY8NTG3qtyg=
+ b=bR0MpNwovvuClGfmHY549DED1jvxeG3+RKu2RZtuaP2xcGjpIQcOxN0HtuNpBf213
+ J9ibZTKxxGVlIut6V6zbCW9wekc4caGljPCudND9J6C4OOTKXaLAmR2ZnFMfN9Fio4
+ oYeDwB1RujmzJEDBSPwZMH1vLVZAu/Cev4dMzPeU=
 MIME-Version: 1.0
-In-Reply-To: <20200309194254.29009-6-lkundrak@v3.sk>
+In-Reply-To: <20200309194254.29009-7-lkundrak@v3.sk>
 References: <20200309194254.29009-1-lkundrak@v3.sk>
- <20200309194254.29009-6-lkundrak@v3.sk>
-Subject: Re: [PATCH v2 05/17] clk: mmp2: Stop pretending PLL outputs are
- constant
+ <20200309194254.29009-7-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 06/17] dt-bindings: clock: Add MMP3 compatible string
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Fri, 20 Mar 2020 18:24:46 -0700
-Message-ID: <158475388687.125146.14592941783278965687@swboyd.mtv.corp.google.com>
+Date: Fri, 20 Mar 2020 18:24:51 -0700
+Message-ID: <158475389106.125146.9384124617803697337@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_182448_478826_32CC644C 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20200320_182452_892994_AD474619 
+X-CRM114-Status: UNSURE (   6.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -79,24 +78,22 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ Rob Herring <robh@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-03-09 12:42:42)
-> The hardcoded values for PLL1 and PLL2 are wrong. PLL1 is slightly
-> off -- it defaults to 797.33 MHz, not 800 MHz. PLL2 is disabled by default,
-> but also configurable.
-> 
-> Tested on a MMP2-based OLPC XO-1.75 laptop, with PLL1=797.33 and various
-> values of PLL2 set via set-pll2-520mhz, set-pll2-910mhz and
-> set-pll2-988mhz Open Firmware words.
+Quoting Lubomir Rintel (2020-03-09 12:42:43)
+> This binding describes the PMUs that are found on MMP3 as well. Add the
+> compatible strings and adjust the description.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> 
 > ---
 
 Applied to clk-next
