@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D269F18DCE0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 01:51:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7159E18DD1E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 02:20:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MPvBFSprTR4Wh6bF3bU+D2ylOIFaxUTnwhjujuqnq+s=; b=SaZGNkA3bEnYs2
-	GWhkpGrGmtHv8ligKL1B1jKRHeMqQBgEfSH57zPAoTeqoaa9kiZBpPwGXLsp19lrghzJCfKJePgX8
-	zB6ujFGO6sbiyZ1Tlf4gOby4fKAZpBKrIBoAkDU9llS3x0pXHPGD9LQf+mA8dk5Vwl+G2R5tdwfhz
-	G7UvSFXIUD7Qbh7L6p8HQDhh2/YX+DsXy8tQWV4Qv/oH+kek+b75U+N8ndQaq04w8f6xmdS9uqNmW
-	GZul3feLYysCg1T9nwDBW8pMsACHBWRCCmXFqRo8Tq19AQzEskmAhxGnluOI7DKA2AlxxGeFeLEVr
-	U7iXGcLon57/NiyMNAKg==;
+	List-Owner; bh=/cmm7Y1EIZ6fXcjtAVKMiBW/YskgVkhUPGTM0r6dE/Q=; b=pTo9eBSs5quBYk
+	Wd0nSOIbuBOoW8ucRmfC+4ymZQhv7T9G8IosGcEjc8sS2doPRDn3VhAsQhQxQHJCo4ybzO8vO/5k5
+	34OiiR4XwUSoaYowahPVUhMYN/cdbllRUgYz4xUzh09dqObxZi42xqLCqU+HFKY8JsHFvOfbRLATM
+	jExU0HS4SIRjCzhkUqccTStVOHFyDRn8ouYR2zSwWX3SJr1sVXV0mUHJtc17i0Ub9UbLdP4wfHwdF
+	V2RzV8g76dqiJ4wOa09t9IVFkKH197UrTZDep9a331CpdMeBJgqBV1Bh52LsHPKKqIOwyD2sVR95R
+	2n10qsHMkmUWNC3Dt0Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFSMV-00045O-9z; Sat, 21 Mar 2020 00:51:39 +0000
+	id 1jFSoU-0005Nq-7C; Sat, 21 Mar 2020 01:20:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFSM9-000417-KL
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 00:51:19 +0000
+ id 1jFSoM-0005Mz-Fo
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 01:20:27 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 032432072D;
- Sat, 21 Mar 2020 00:51:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DAE2720732;
+ Sat, 21 Mar 2020 01:20:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584751877;
- bh=/X4IyP+E38WVsHXgZMdfX7uFKgdBDPBpd/iwdy0faCk=;
+ s=default; t=1584753625;
+ bh=PKwRe7u86A+QwaW2mIzR2r5lUuReYhr5HBypXEYk/+Y=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=BdPC3BMmEkyGL67czhOd3nliW9rEy8Y4yr5x/2ugrLWd1UImDuX+5cn7ABzBLR1h2
- goh8K4r0TC8fzLllHoUBfhYJ8iG+uPPVmhMbrJy0ezNtt06a7Hji8VU0Mj1irvxip8
- GS4g0lodOp846JO2LE+RErB3yKzr83N9LuD3ogRc=
+ b=vvKUbJTXpLMRO+4QAVCgX6Bpl7T1beAdx2weTIZJdSie4VPuGBsj3hzcfVq6SCqS5
+ tQI8icPrdzB76QfnpHb2Yf/REase2uvUsKrK0A2+SMc9/+vE/qJfcQ9bWzDbj8f35u
+ GIj951rrvLqgc2hH98vsVDcjOhKJPLawsgBVct64=
 MIME-Version: 1.0
-In-Reply-To: <1583226206-19758-8-git-send-email-abel.vesa@nxp.com>
-References: <1583226206-19758-1-git-send-email-abel.vesa@nxp.com>
- <1583226206-19758-8-git-send-email-abel.vesa@nxp.com>
-Subject: Re: [RFC 07/11] dt-bindings: clocks: imx8mp: Add ids for audiomix
- clocks
+In-Reply-To: <20200309194254.29009-11-lkundrak@v3.sk>
+References: <20200309194254.29009-1-lkundrak@v3.sk>
+ <20200309194254.29009-11-lkundrak@v3.sk>
+Subject: Re: [PATCH v2 10/17] ARM: dts: mmp3: Use the MMP3 compatible string
+ for /clocks
 From: Stephen Boyd <sboyd@kernel.org>
-To: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Fabio Estevam <fabio.estevam@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Lee Jones <lee.jones@linaro.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Mike Turquette <mturquette@baylibre.com>, Peng Fan <peng.fan@nxp.com>,
- Rob Herring <robh@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Date: Fri, 20 Mar 2020 17:51:16 -0700
-Message-ID: <158475187625.125146.13295001565504238093@swboyd.mtv.corp.google.com>
+To: Lubomir Rintel <lkundrak@v3.sk>
+Date: Fri, 20 Mar 2020 18:20:24 -0700
+Message-ID: <158475362408.125146.4406419142833020130@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_175117_720714_304F818A 
-X-CRM114-Status: UNSURE (   6.24  )
+X-CRM114-CacheID: sfid-20200320_182026_555226_3843D5FF 
+X-CRM114-Status: UNSURE (   7.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -83,22 +78,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Abel Vesa (2020-03-03 01:03:22)
-> Add all the clock ids for the audiomix clocks.
+Quoting Lubomir Rintel (2020-03-09 12:42:47)
+> Clocks are in fact slightly different on MMP3. In particular, PLL2 is
+> fixed to a different frequency, there's an extra PLL3, and the GPU
+> clocks are configured differently.
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+This should go through arm-soc.
 
 _______________________________________________
 linux-arm-kernel mailing list
