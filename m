@@ -2,68 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5492818E218
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 15:40:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4967318E25D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Mar 2020 16:20:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u5BXZPCyyLC9gcsC6wz7bIyRJFTXY2wH2XqbreM49OA=; b=HUePSF6hI/yW8d
-	bwuhVZ2YnaNx2Zcxe1XzDnPO/zdPEl7LQXmG+7njB01DZaLHepw8fQdMKJK8KJaOvMbvQnRc1arJ3
-	iQYKvfFoe+rlzwfSkmbUuq1y10gdm1boqSg8xF25nlHZnll4iSOd0QUuamvSNnzQk7fgpq+Kd4HUB
-	H8mmWcqnf+jhqlh0ktICTuxlXtCcs0HEAA7RLQAVGWT0WwrBMrPJb24IBZqgrg2yj7cxRd/7jF04d
-	297du8OznQ77NEb9HvwK3H1zhQMOJ96Elb4qrUV4XdbsXt9cs/YMfiKdwiM7m4gp84P0ORvoCrdsU
-	GBDSpiX+0aWXVe3b0+ZA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WyRVg7jDVaUkydzT/KSOdvYI+4WDr8bV+OEHM3jw+Po=; b=aiuZFwmETsz79D
+	yTPUt0U5v6rMSYUa32ikrlup8uf6naRFJzq++6nK207aXB1BfeihfctvWaE4gCCuSGs6FwHOLxotu
+	cUyFBUIuMAXTWc8QKDhDYaouu1lvqDXtuMVnUze+JFiTb7LWz4Qcx8vJV3Quv7AlDnqpf36gztnpy
+	4AELhkaBUEmg8PksQZhkfLCRPVKlLWCWm/tcrEU+/MJ+gyThqeB5LFZ2tzMHj4fZK91k3YsxCz3R8
+	wBJXXZJ6xtpGzs1X0J77c7D+S44JGTsErWsKvrsROi7oX6YsPIMJu+XoLU9ucSQVZudIoFK7qsb17
+	mCUrOmngEQ6bLG9s7cGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFfI5-0005q7-6V; Sat, 21 Mar 2020 14:39:57 +0000
-Received: from mout-u-204.mailbox.org ([91.198.250.253])
+	id 1jFfur-0002pi-6p; Sat, 21 Mar 2020 15:20:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFfHw-0005pl-4D
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 14:39:49 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ id 1jFfui-0002pJ-1a
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Mar 2020 15:19:53 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mout-u-204.mailbox.org (Postfix) with ESMTPS id 48l3FY4BMnzQkJl;
- Sat, 21 Mar 2020 15:39:45 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run; s=MBO0001; 
- t=1584801583;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=Tkpjw41OSQS6g4mnJ1HdI3U2kVush6jX6zP98pED8vo=;
- b=sAR5y0fAccgXVWrnYlH9HkSy0j/qIMg3EXITWYl9lGkPa/KR5mp/m083mpcbKwXhx/vgch
- dS+1bufCW+lKOHUIZJ3hV65QTD1avsJWu0gExWdtuCBfjE3lPVwSwYC+iXhUFITurtJy7h
- +kx1fhSA9yS9T7EsV5pCv9lEIayFNiwDXWJNiGDTmKI7x2Hcia1O5woQovtAscEk0oT84L
- w9JrJTwDre073BVtsIF+EiOqmhm3R+Rc9spSXNRpFkVrFuEIBXTjn5YMIJZwSF1IdmVkzh
- FXxuQh9dhs1Df5CLq21/vxXa3PHki1sA3VdvSLF+dwGlKpk+XAaodJh3JFk9Cw==
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id exzjPqbLDL-R; Sat, 21 Mar 2020 15:39:42 +0100 (CET)
-From: Sungbo Eo <mans0n@gorani.run>
-To: Neil Armstrong <narmstrong@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
- linux-oxnas@groups.io, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dts: oxnas: Fix clear-mask property
-Date: Sat, 21 Mar 2020 23:36:53 +0900
-Message-Id: <20200321143653.2412823-1-mans0n@gorani.run>
-MIME-Version: 1.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 3D45320780;
+ Sat, 21 Mar 2020 15:19:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584803991;
+ bh=jZtJHLZB1pDxnL6IF+FqpIr8sXqSqFX3e9z1z/qGEpA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=NhHAlKpphg6HwxhPg4uucsbgLQtioiK/rC7iftdYFB06dpshXZwNtmmMSGKGq/QgM
+ 4ICYHgqTDBIL3SFrKO+PeK7SVTfO3r2AQA12VpROa0ECncL941QSHElqLn7Wc4HiGT
+ /EmFFAgAIf2k/c/am1ZKLkGOMd49Ex3jECDzvk2I=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jFfuf-00EWJM-IB; Sat, 21 Mar 2020 15:19:49 +0000
+Date: Sat, 21 Mar 2020 15:19:48 +0000
+Message-ID: <86o8spzqej.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Mubin Usman Sayyed <mubin.usman.sayyed@xilinx.com>
+Subject: Re: [PATCH v5 0/4] irqchip: xilinx: Add support for multiple instances
+In-Reply-To: <20200317125600.15913-1-mubin.usman.sayyed@xilinx.com>
+References: <20200317125600.15913-1-mubin.usman.sayyed@xilinx.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: mubin.usman.sayyed@xilinx.com, tglx@linutronix.de,
+ jason@lakedaemon.net, michals@xilinx.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, sivadur@xilinx.com, anirudh@xilinx.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_073948_322578_245D088F 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200321_081952_127667_290BEE65 
+X-CRM114-Status: GOOD (  16.29  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.198.250.253 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -73,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,56 +91,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sungbo Eo <mans0n@gorani.run>
+Cc: jason@lakedaemon.net, sivadur@xilinx.com, linux-kernel@vger.kernel.org,
+ michals@xilinx.com, anirudh@xilinx.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Disable all rps-irq interrupts during driver initialization to prevent
-an accidental interrupt on GIC.
+On Tue, 17 Mar 2020 12:55:56 +0000,
+Mubin Usman Sayyed <mubin.usman.sayyed@xilinx.com> wrote:
+> 
+> Created series by rebasing inter-dependent patches
+> from Michal (https://lkml.org/lkml/2020/3/8/164) on top
+> of v3 (https://lkml.org/lkml/2020/2/14/2680)
+> 
+> Changes for v5:
+>         - Fixed review comments from Marc - fixed intc_dev
+>           related handling in 1/4 and added 4/4 to remove
+>           unnecessary call to irq_set_default_host()
+> Changes for v4:
+>         - Fixed review comments from Thomas - updated commit
+>           message, variable declarations changed to reverse
+>           fir tree and cleaned up some code.
+>         - Added inter-dependendent patches 2/3 and 3/3 from Michal
+>           https://lkml.org/lkml/2020/3/8/164
+> 
+> Changes for v3:
+>         - Modified prototype of xintc_write/xintc_read
+>         - Fixed review comments regarding indentation/variable
+>           names, used BIT
+>         - Modified xintc_get_irq_local to return 0
+>           in case of failure/no pending interrupts
+>         - Fixed return type of xintc_read
+>         - Reverted changes related to device name and
+>           kept intc_dev as static
+> 
+> Changes for v2:
+>         - Removed write_fn/read_fn hooks, used xintc_write/
+>           xintc_read directly
+>         - Moved primary_intc declaration after xintc_irq_chip
+> 
+> 
+> 
+> Michal Simek (2):
+>   irqchip: xilinx: Fill error code when irq domain registration fails
+>   irqchip: xilinx: Enable generic irq multi handler
+> 
+> Mubin Sayyed (2):
+>   irqchip: xilinx: Add support for multiple instances
+>   irqchip: xilinx:  Do not call irq_set_default_host()
+> 
+>  arch/microblaze/Kconfig           |   2 +
+>  arch/microblaze/include/asm/irq.h |   3 -
+>  arch/microblaze/kernel/irq.c      |  21 +----
+>  drivers/irqchip/irq-xilinx-intc.c | 123 ++++++++++++++++++------------
+>  4 files changed, 77 insertions(+), 72 deletions(-)
 
-Fixes: 84316f4ef141 ("ARM: boot: dts: Add Oxford Semiconductor OX810SE dtsi")
-Fixes: 38d4a53733f5 ("ARM: dts: Add support for OX820 and Pogoplug V3")
-Signed-off-by: Sungbo Eo <mans0n@gorani.run>
----
- arch/arm/boot/dts/ox810se.dtsi | 4 ++--
- arch/arm/boot/dts/ox820.dtsi   | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+Queued for 5.7.
 
-diff --git a/arch/arm/boot/dts/ox810se.dtsi b/arch/arm/boot/dts/ox810se.dtsi
-index 9f6c2b660ed3..0755e5864c4a 100644
---- a/arch/arm/boot/dts/ox810se.dtsi
-+++ b/arch/arm/boot/dts/ox810se.dtsi
-@@ -323,8 +323,8 @@ intc: interrupt-controller@0 {
- 					interrupt-controller;
- 					reg = <0 0x200>;
- 					#interrupt-cells = <1>;
--					valid-mask = <0xFFFFFFFF>;
--					clear-mask = <0>;
-+					valid-mask = <0xffffffff>;
-+					clear-mask = <0xffffffff>;
- 				};
- 
- 				timer0: timer@200 {
-diff --git a/arch/arm/boot/dts/ox820.dtsi b/arch/arm/boot/dts/ox820.dtsi
-index c9b327732063..90846a7655b4 100644
---- a/arch/arm/boot/dts/ox820.dtsi
-+++ b/arch/arm/boot/dts/ox820.dtsi
-@@ -240,8 +240,8 @@ intc: interrupt-controller@0 {
- 					reg = <0 0x200>;
- 					interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
- 					#interrupt-cells = <1>;
--					valid-mask = <0xFFFFFFFF>;
--					clear-mask = <0>;
-+					valid-mask = <0xffffffff>;
-+					clear-mask = <0xffffffff>;
- 				};
- 
- 				timer0: timer@200 {
+Thanks,
+
+	M.
+
 -- 
-2.25.2
-
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
