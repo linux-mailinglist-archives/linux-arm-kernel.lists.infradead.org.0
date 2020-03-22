@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2F9018E9DC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 16:46:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B29A418E9F3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 17:00:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RuG48LXH2zL4DU2OtnSZvkkGD3/92pF8jN6YQ2vBozk=; b=CVItwgRnvEoaOD
-	XkoRd6Qc7QWCDNFHAOcnNgzqWdiPInaPF/UiPJkUs3nO22OoogKY72KxSqgzL301lm7uIwHpSqsfO
-	XL7z1R9HJ8nlEPSU7cWktNVnbLgznqNKIQES9dPXVyfIqssNLyknt7TfLfrXPhIzzC8NQ+z4e9qoH
-	ywZmsMD7sf/SLS8TpZVAzhq+eP2v/mwz0Y8hsKdlxUmsWsv4xfXSUM6O81vLjGp5mU54ziaun6jFh
-	PAmFmpwH7ztC4xaJhXksflktjQNhs/AG5zxbsUNMsc7eIFBoQOTgudcIwqXy6ryBIKELLWASo6R6n
-	f9ed26CLS9wbkVe0amJw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=33HZuUEZtaBP/mao/DIhrOwfzrR5oJlS5+apQ3vZKsc=; b=tda8iQvBsIXCIZ
+	vZnhcT+Wf/AIBQ+Sr/Psd6RgsalVFefkj1Huy5cyYUjLR3JCioG117a+x/2hs35jhe3kb8hh+FA9d
+	zuX0Mw1geHI/fmnAKxOp4U2wDoHwRuIN3XuzSITP1+nTy6MoNth6i+bQEDVc0or4m8W+bdfyE7AqZ
+	NTBAyRYsDYScWmRzZGTQgmH7Q2QdEBG7BfXaPu8rYWTC4TDIbYOCmUqBYt4sB41xxCmzC2kVMkZ74
+	e8pTL6M5geMuHgUwTRLz5EG9zJNv1YgvnfH7X0AmZjfyA1P2qA2VO1azA/Si5rPvtevebZGsiRYOi
+	//9CVXaV4RAZN5dAk+9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG2nR-000269-PF; Sun, 22 Mar 2020 15:45:53 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jG31f-00077M-0V; Sun, 22 Mar 2020 16:00:35 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG2nI-00024O-ID; Sun, 22 Mar 2020 15:45:45 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h9so13532087wrc.8;
- Sun, 22 Mar 2020 08:45:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=oW0vYewmMm0M3PXQVGqM0DMXOo8Xcl8P8bGj8WAcz1s=;
- b=UZAlZvIAW51LULMnDZHiLUIyOPiuB672JgdsY9xSfZmPxy9rSKsc2mRMp26i4Uv2Nm
- ByT7sJUTHNxolCeVb7eNDxWXO1BvR6+ZwFHcZxr9gHN8Vkac3Zd3B7DKjYykBp+GOABq
- T74BZntD5uAnvoQ3JlOfihftY9JeoXu0n8g6YdqPErGdkWIDmsNJGUTZ/a3m5CxP8t2f
- Wm2stFjip8ht8zH3nq0kba+vMB8i4avKJsePBOY2kIopk/amvbvEc0TAZ5aYMYUUOGy5
- 4i9GaJXboD41m6m6h13rDonxBTFGTwN3i/luyjrBH1qfV3/xg4s6v2qj0j3nvvecqnqc
- H30w==
+ id 1jG31U-00076h-QT
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 16:00:27 +0000
+Received: by mail-pf1-x444.google.com with SMTP id h72so3982886pfe.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 22 Mar 2020 09:00:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=MZnunFMXbRiY6HhjSua+SYJfQ+tuSHBnq9fjrfedNSU=;
+ b=UiseloQi7Q50zpFXi5Sj0YO9rKXAWYBKycPFxzwvcjG+fSbAEz8JpjkczACNYpw6y8
+ i43J4zt0Bu+J+WnbtpFAh1BdbvLy2cqLus59mgkM8/XjySQ2RuPeFya5b/pyiEZ74Bw2
+ kzB/pjprqBnITJPTNa9esWoz6cPqUebmBsckA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=oW0vYewmMm0M3PXQVGqM0DMXOo8Xcl8P8bGj8WAcz1s=;
- b=NV8OT8g0sWEwm0kU/7yZDRvs7bqGvNDHdlkPxY+pNdqqyJdpuUTsq38UfjSzfADGEr
- hrWQdniQsB3AmanJ4X1eGzWPNom8+zGJUVcJ8VEzwV2wranu9RVxdUVCUTyRn5Pz9nfP
- SrNxpHAvG63Z6Mu+gAy1sydl4jCkugLyl3LDY0jaaa4CoYWYdDXscpL0GafvPl3nPblq
- /ksLIh09FdZsPSh03b4PvcfptyLFDh++d1uK4nr2LJfz9EbU4f+AM6nNyUAaJl/TtqPn
- 0dJqSHrbzIYWMndfU96FoMcbIy8NXZwGr7/7VOH7VoAhYHAyIid7V9mbl3xHHFc4YLch
- saSQ==
-X-Gm-Message-State: ANhLgQ0Ky9okUj87mXk8gHsQcx+4tpGMRR3rcSq3eyUFdrnQtUmbnAz3
- J/W0MQyqenGh6OI46ZHIru6D/0b+
-X-Google-Smtp-Source: ADFU+vuLfqJLTVWgtE2gxmF3zyW7/5g33LYY933B6JEG7gw8iL8V704y0dGVTMbKy7oXYEW3aN89ag==
-X-Received: by 2002:adf:e60b:: with SMTP id p11mr23245914wrm.140.1584891942005; 
- Sun, 22 Mar 2020 08:45:42 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x17sm17685351wmi.28.2020.03.22.08.45.40
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 22 Mar 2020 08:45:41 -0700 (PDT)
-To: jbx6244@gmail.com
-References: <20200322140046.5824-1-jbx6244@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix defines in pd_vio node for
- rk3399
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <48a91cc1-7751-4df0-a2cd-940eb829fa16@gmail.com>
-Date: Sun, 22 Mar 2020 16:45:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=MZnunFMXbRiY6HhjSua+SYJfQ+tuSHBnq9fjrfedNSU=;
+ b=KpJKVDA/uJaA7E/iLZqlIjqo2mAM2Vb/o2zrUMyLN9Q0sTpwhD50BtINiEBNB8rDZQ
+ agRwkSSCxeeqn9LY6a+G/inXLiYtUPW3AgeixNXEMz+o2MQhWCVoPyGoBPj5S5nqvSv1
+ 0NnIsj5bC3qqgXJoVVxpIBaOI5M2/I8NtwfhyJpNy9wxmy1/HT7coem3WRewL8ys0mgT
+ qOcghRKDrOQKhggXI8E+lM3G6h/6xc9kGr9LbSa1L5hyPYTVrM29mD4Q2GFnLufMtXEg
+ 3nGGfcSY/LZCUteTI/n7qDJS990N6ZaBtwHWYeeZyb3NfU3tVyykAfTvockqKLOl4I25
+ MUnw==
+X-Gm-Message-State: ANhLgQ0SMcaTMLGQiwx/Jflb0xfx/bAUQTbJdYrQ0buOv3h5/e29MyCb
+ 0ME3vTnP+4kZX8szW00KMu88uw==
+X-Google-Smtp-Source: ADFU+vvsIHJRgFm4AMsl8mZy4RcjRPdpt/Bxks2m7kQfkj84k1duCai32eKXFRMuQMfF7FOK2pobZA==
+X-Received: by 2002:a63:7159:: with SMTP id b25mr8811601pgn.72.1584892824203; 
+ Sun, 22 Mar 2020 09:00:24 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id 15sm10831504pfu.186.2020.03.22.09.00.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 22 Mar 2020 09:00:23 -0700 (PDT)
+Date: Sun, 22 Mar 2020 09:00:22 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH 1/9] scripts/link-vmlinux.sh: Delay orphan handling
+ warnings until final link
+Message-ID: <202003220859.E54327D98C@keescook>
+References: <20200228002244.15240-1-keescook@chromium.org>
+ <20200228002244.15240-2-keescook@chromium.org>
+ <1584672297.mudnpz3ir9.astroid@bobo.none>
+ <202003201121.8CBD96451B@keescook>
+ <1584868418.o62lxee8k1.astroid@bobo.none>
 MIME-Version: 1.0
-In-Reply-To: <20200322140046.5824-1-jbx6244@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1584868418.o62lxee8k1.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_084544_605770_49B54F2B 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200322_090025_752562_F7B034E1 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,50 +99,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Will Deacon <will@kernel.org>,
+ James Morse <james.morse@arm.com>, Mark Rutland <mark.rutland@arm.com>,
+ Borislav Petkov <bp@suse.de>, Peter Collingbourne <pcc@google.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Sun, Mar 22, 2020 at 07:16:29PM +1000, Nicholas Piggin wrote:
+> Kees Cook's on March 21, 2020 4:24 am:
+> > On Fri, Mar 20, 2020 at 12:47:54PM +1000, Nicholas Piggin wrote:
+> >> Kees Cook's on February 28, 2020 10:22 am:
+> >> > Right now, powerpc adds "--orphan-handling=warn" to LD_FLAGS_vmlinux
+> >> > to detect when there are unexpected sections getting added to the kernel
+> >> > image. There is no need to report these warnings more than once, so it
+> >> > can be removed until the final link stage.
+> >> > 
+> >> > This helps pave the way for other architectures to enable this, with the
+> >> > end goal of enabling this warning by default for vmlinux for all
+> >> > architectures.
+> >> > 
+> >> > Signed-off-by: Kees Cook <keescook@chromium.org>
+> >> > ---
+> >> >  scripts/link-vmlinux.sh | 6 ++++++
+> >> >  1 file changed, 6 insertions(+)
+> >> > 
+> >> > diff --git a/scripts/link-vmlinux.sh b/scripts/link-vmlinux.sh
+> >> > index 1919c311c149..416968fea685 100755
+> >> > --- a/scripts/link-vmlinux.sh
+> >> > +++ b/scripts/link-vmlinux.sh
+> >> > @@ -255,6 +255,11 @@ info GEN modules.builtin
+> >> >  tr '\0' '\n' < modules.builtin.modinfo | sed -n 's/^[[:alnum:]:_]*\.file=//p' |
+> >> >  	tr ' ' '\n' | uniq | sed -e 's:^:kernel/:' -e 's/$/.ko/' > modules.builtin
+> >> >  
+> >> > +
+> >> > +# Do not warn about orphan sections until the final link stage.
+> >> > +saved_LDFLAGS_vmlinux="${LDFLAGS_vmlinux}"
+> >> > +LDFLAGS_vmlinux="$(echo "${LDFLAGS_vmlinux}" | sed -E 's/ --orphan-handling=warn( |$)/ /g')"
+> >> > +
+> >> >  btf_vmlinux_bin_o=""
+> >> >  if [ -n "${CONFIG_DEBUG_INFO_BTF}" ]; then
+> >> >  	if gen_btf .tmp_vmlinux.btf .btf.vmlinux.bin.o ; then
+> >> > @@ -306,6 +311,7 @@ if [ -n "${CONFIG_KALLSYMS}" ]; then
+> >> >  	fi
+> >> >  fi
+> >> >  
+> >> > +LDFLAGS_vmlinux="${saved_LDFLAGS_vmlinux}"
+> >> >  vmlinux_link vmlinux "${kallsymso}" ${btf_vmlinux_bin_o}
+> >> >  
+> >> >  if [ -n "${CONFIG_BUILDTIME_TABLE_SORT}" ]; then
+> >> 
+> >> That's ugly. Why not just enable it for all archs?
+> > 
+> > It is ugly; I agree.
+> > 
+> > I can try to do this for all architectures, but I worry there are a
+> > bunch I can't test. But I guess it would stand out. ;)
+> 
+> It's only warn, so it doesn't break their builds (unless there's a 
+> linker error on warn option I don't know about?). We had a powerpc bug 
+> that would have been caught with it as well, so it's not a bad idea to
+> get everyone using it.
 
-The RK3399 TRM uses both
+Well, it's bad form to add warnings to a build. I am expected to fix any
+warnings before I enable a warning flag.
 
-'pd_tcpc0, pd_tcpc1'
+> I would just do it. Doesn't take much to fix.
 
-as
+I will do my best on the archs I can't test. :)
 
-'pd_tcpd0, pd_tcpd1'.
-
-What should we use here?
-
-Thanks.
-
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> index 8aac201f0..3dc8fe620 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> @@ -1087,12 +1087,12 @@
->  					pm_qos = <&qos_isp1_m0>,
->  						 <&qos_isp1_m1>;
->  				};
-> -				pd_tcpc0@RK3399_PD_TCPC0 {
-> +				pd_tcpc0@RK3399_PD_TCPD0 {
->  					reg = <RK3399_PD_TCPD0>;
->  					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
->  						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
->  				};
-> -				pd_tcpc1@RK3399_PD_TCPC1 {
-> +				pd_tcpc1@RK3399_PD_TCPD1 {
->  					reg = <RK3399_PD_TCPD1>;
->  					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
->  						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
-> -- 
-> 2.11.0
-
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
