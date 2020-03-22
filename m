@@ -2,87 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1581F18E7CA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 10:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34F6C18E858
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 12:25:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
-	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m1yvoupYycnMTBpmXdt4QhKOiFhucO5irrPE7sSMEwI=; b=awWHEDIoCttf2k
-	kNE6PLa5pJDjniShbfo5TDOoAVV+BUt1Os5RQpncba77aVj1pdP/z9FrrO7ov8Wr44TCeHRPhkWup
-	0uFj+I8/oA1O7CN3KqNQ8Gtq2PXFF3Q1fDob+i5GmUlAw9fPeWgRrjajAnMO6s6I3gsajdsS8tlj/
-	tstWfx1Zs44VOz2h8iZxRZeShsQKSejqow/CEdvcLAkB19PVepdurv7GWV+WZgd/1mGxiBh7epy+S
-	gQUjEUbfTamCccwP41f3MELrQIQH02lAWH/7VaKarX6UT8DtLlzb+Btz1CRv3MsLLSteA5DlVQJZZ
-	qF00bXGQrjHDaNCBS8cA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mzpbGodKzDqAqfmkvb60NiI1eQuVhJrfVxTxJE1moTM=; b=RrU8FdW4tOwbGM
+	I/YuoqIY6d35tXKTQD05MUHjMfig5rzPlLvtN/Ldn/Sipt/39NJT8fFhDVKVm4Ii5Z+/aexQD1neX
+	dIPdBTfT+oATfmjtERCJI1kdpjEy9iR/o+4u6uIPLIojyO4TP14B7Of0WVwotwHmnCTBchDk2RlJ4
+	zAPJcAp4VIq5kof2gX/BmN19iXkJbbEL6z5scf1CSfFC0VztCraarOs+mxJHEpwm+f5UhfuAku0ZB
+	e9rGeju7QLVJB/XlvM02lKQXIJtQDVKifZxg3hyx8+BYPSLYdENDO0rJsIoO8Sb3mUgsTqEyFTcWm
+	SrnVfw/SjK1BySI5a6hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFwlp-0006oX-0v; Sun, 22 Mar 2020 09:19:49 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jFyjJ-0007Yg-Ft; Sun, 22 Mar 2020 11:25:21 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFwle-0006o9-07
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 09:19:39 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x1so497589plm.4
+ id 1jFyj8-0007HG-Ly
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 11:25:13 +0000
+Received: by mail-lj1-x241.google.com with SMTP id n17so999567lji.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Mar 2020 02:19:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:references:in-reply-to:mime-version
- :user-agent:message-id:content-transfer-encoding;
- bh=RcD8qCKrPNyWahymG+XggFywpYlZflG+yOoi1VKPcZM=;
- b=StLgn8PbrwJUm7PSm4ZmiUUFOZu5relJteRb0w2rOHU3ZbLHU2J1ymZ7llG0UkTnVz
- 0QOKG27kbiHAv3LEJMwGjELp7f6ExNG0iB/+ioSz5/++rhSlLfDtpzeQg2Jmd+KKFcik
- ZTzzc795Ico0pVtHbhCjmOOXqYVNFrRYlCB5HFyF5ZR8CPoFqJilS5wewFeaMkaXh/IX
- hoSV/F0EnxnIpokg14WI6ejSYSdOR/dkZPbgxlDt3FV777EyA5Ac+yxpLCLvHpRBKL3R
- QkWTocxO3YBvXJsMjV5KSE25kW6t6KwTp+2mW5Dj2qFj+airVbQaPTFRrg/MKH2ohuSA
- AgEw==
+ Sun, 22 Mar 2020 04:25:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TApTSstzMDFcZUtGtLotmZcoiZAQG0W0Mv7nRQ4N8LQ=;
+ b=W7bTsGaLpmK248rg8tQJU8k1EE7nwidYZ7OMhR3oQ9xmVCjsXTOA+PxjEyzQUoV7JC
+ 8JXviNkbdSEIlO5IAeZu6OeZR2zUQCfW4IlLAjw2o/txolcbSMq5IDojJMrJc7FEXx9h
+ wvEHx8wt9SSUtuwzCJJRwvEzzY96DPBPT31R8TJo4UIjGph9eJwqQkP8r0ZE7PnNMkXB
+ Ymi6UeXD59LTFAhdMHVPM/aN40B5GF4Y3Fk2BUgT33T5EWfThKnY/gjWM0LkfTWSQbvR
+ hjW7hDZyVP28X0aamHREyKDfs3DWM4YcPn1YEKerfR6oDmSvSR04GnVNyAnsINKWejNQ
+ E8rw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
- :mime-version:user-agent:message-id:content-transfer-encoding;
- bh=RcD8qCKrPNyWahymG+XggFywpYlZflG+yOoi1VKPcZM=;
- b=fQf0bUnv9ZfH/eBXA2eqD6muO6egR4E4of+hWkh1j9Z2/GeKEggmEgdcWaLzzaZLGy
- S1N9/JM7suPKBKhl7U7qEM/LrhkhCr56hJWado50koFi4cOqhihlpXmHEJjc4jxBKwv0
- GczD9zUF7u6Dokzn0RYBnbMljwUU1DoSXvJu0DaWigssig1N5ahhmHQ59f1qs49UOeIG
- 9m8InuVgFQvLpqew4w5sYUZezgnQJG/qJr8OHUM8DkXAevl1lIbZ3x3M9fVRX8Bn4ZAY
- hGoksFWQ9njBd4i9Fq0ysVWAvRxqvIaqaywVLUZGYyOfu0qG32hqXiTkDWpI3A+QELCH
- lmiw==
-X-Gm-Message-State: ANhLgQ0npbcDrSQ5W9Lr35Px9r5C5kD9FNI3QY8RRYqZiB6ySRBVOnJ6
- 5nOJDA3KoXVJvHGMwC0pSZnnKoY0
-X-Google-Smtp-Source: ADFU+vtSQWcRQXBqFkI6+6wD9KgSitqZbOhf0f5r0lePNLY7dXEhFsjp8mRszfo1EE5B+fQ+MhbwMA==
-X-Received: by 2002:a17:902:169:: with SMTP id
- 96mr16385732plb.140.1584868776275; 
- Sun, 22 Mar 2020 02:19:36 -0700 (PDT)
-Received: from localhost (14-202-190-183.tpgi.com.au. [14.202.190.183])
- by smtp.gmail.com with ESMTPSA id 6sm10061621pfx.69.2020.03.22.02.19.34
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TApTSstzMDFcZUtGtLotmZcoiZAQG0W0Mv7nRQ4N8LQ=;
+ b=fnzke+4/WIMkZrYe+pEQHKHvC83Vusyej/wpRgJ1FKCqG3SD0U9kqvsy8jnhXdBCw9
+ spjb/q+36YXeS/gzT29UMHG54RI9WDi8X4jTJfNf7t/U9CDnnmuwemM/VDZZ+fJE1LW6
+ 57W0NhpEOAOHDqhsYKGRYdwjxJY98Tdi0BhEE40BxG9nSlOm8JbnSNBPI56r6QS5JapS
+ wxaOnYcoWY55TUq8hMGcz3WvAsYlO1rdAjprhH/3E1ySES8T97hJsENRmMH4mDbTcD4X
+ M5XJQfjQOdYSfMBixSa4WGawLqyYntQE5iYsdAsjE7gdSlEUSW8+WVWvfiH18sRm2vho
+ iwwA==
+X-Gm-Message-State: ANhLgQ0KVQyW5sCqnAFgHUz6SAZWQvPe/m0U6Hu0DOAGSZD6FECGrkpP
+ 4Ojv8YLRJKz4fWLyRUiZpQNnpw==
+X-Google-Smtp-Source: ADFU+vsO0zRWstY2Gw8qvI5vxLtSiVr/agsiSEgGcyHRv8hv6BLJDHuHmoaVLu9MThkZRIx0mZLqoQ==
+X-Received: by 2002:a2e:9b54:: with SMTP id o20mr4487060ljj.189.1584876304967; 
+ Sun, 22 Mar 2020 04:25:04 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-5ac9225c.014-348-6c756e10.bbcust.telenor.se. [92.34.201.90])
+ by smtp.gmail.com with ESMTPSA id m21sm6963005ljb.89.2020.03.22.04.25.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Mar 2020 02:19:35 -0700 (PDT)
-Date: Sun, 22 Mar 2020 19:16:29 +1000
-From: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 1/9] scripts/link-vmlinux.sh: Delay orphan handling
- warnings until final link
-To: Kees Cook <keescook@chromium.org>
-References: <20200228002244.15240-1-keescook@chromium.org>
- <20200228002244.15240-2-keescook@chromium.org>
- <1584672297.mudnpz3ir9.astroid@bobo.none> <202003201121.8CBD96451B@keescook>
-In-Reply-To: <202003201121.8CBD96451B@keescook>
+ Sun, 22 Mar 2020 04:25:04 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH] arm64: dts: Fix leftover entry-methods for PSCI
+Date: Sun, 22 Mar 2020 12:24:37 +0100
+Message-Id: <20200322112437.18070-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-User-Agent: astroid/0.15.0 (https://github.com/astroidmail/astroid)
-Message-Id: <1584868418.o62lxee8k1.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_021938_068955_CD44A299 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20200322_042511_266890_08996DF5 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [npiggin[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,78 +96,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Will Deacon <will@kernel.org>,
- James Morse <james.morse@arm.com>, Mark Rutland <mark.rutland@arm.com>,
- Borislav Petkov <bp@suse.de>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Kees Cook's on March 21, 2020 4:24 am:
-> On Fri, Mar 20, 2020 at 12:47:54PM +1000, Nicholas Piggin wrote:
->> Kees Cook's on February 28, 2020 10:22 am:
->> > Right now, powerpc adds "--orphan-handling=warn" to LD_FLAGS_vmlinux
->> > to detect when there are unexpected sections getting added to the kernel
->> > image. There is no need to report these warnings more than once, so it
->> > can be removed until the final link stage.
->> > 
->> > This helps pave the way for other architectures to enable this, with the
->> > end goal of enabling this warning by default for vmlinux for all
->> > architectures.
->> > 
->> > Signed-off-by: Kees Cook <keescook@chromium.org>
->> > ---
->> >  scripts/link-vmlinux.sh | 6 ++++++
->> >  1 file changed, 6 insertions(+)
->> > 
->> > diff --git a/scripts/link-vmlinux.sh b/scripts/link-vmlinux.sh
->> > index 1919c311c149..416968fea685 100755
->> > --- a/scripts/link-vmlinux.sh
->> > +++ b/scripts/link-vmlinux.sh
->> > @@ -255,6 +255,11 @@ info GEN modules.builtin
->> >  tr '\0' '\n' < modules.builtin.modinfo | sed -n 's/^[[:alnum:]:_]*\.file=//p' |
->> >  	tr ' ' '\n' | uniq | sed -e 's:^:kernel/:' -e 's/$/.ko/' > modules.builtin
->> >  
->> > +
->> > +# Do not warn about orphan sections until the final link stage.
->> > +saved_LDFLAGS_vmlinux="${LDFLAGS_vmlinux}"
->> > +LDFLAGS_vmlinux="$(echo "${LDFLAGS_vmlinux}" | sed -E 's/ --orphan-handling=warn( |$)/ /g')"
->> > +
->> >  btf_vmlinux_bin_o=""
->> >  if [ -n "${CONFIG_DEBUG_INFO_BTF}" ]; then
->> >  	if gen_btf .tmp_vmlinux.btf .btf.vmlinux.bin.o ; then
->> > @@ -306,6 +311,7 @@ if [ -n "${CONFIG_KALLSYMS}" ]; then
->> >  	fi
->> >  fi
->> >  
->> > +LDFLAGS_vmlinux="${saved_LDFLAGS_vmlinux}"
->> >  vmlinux_link vmlinux "${kallsymso}" ${btf_vmlinux_bin_o}
->> >  
->> >  if [ -n "${CONFIG_BUILDTIME_TABLE_SORT}" ]; then
->> 
->> That's ugly. Why not just enable it for all archs?
-> 
-> It is ugly; I agree.
-> 
-> I can try to do this for all architectures, but I worry there are a
-> bunch I can't test. But I guess it would stand out. ;)
+These two device trees were either missed or added after
+the commit correcting the "entry-method" from
+"arm,psci" to just "psci" as per the binding.
 
-It's only warn, so it doesn't break their builds (unless there's a 
-linker error on warn option I don't know about?). We had a powerpc bug 
-that would have been caught with it as well, so it's not a bad idea to
-get everyone using it.
+Fixes: commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to reflect documentation")
+Cc: Amit Kucheria <amit.kucheria@linaro.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Chunyan Zhang <chunyan.zhang@unisoc.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ARM SoC folks: if this is fine just apply it to the
+tree where appropriate please.
+---
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
+ arch/arm64/boot/dts/sprd/sc9863a.dtsi          | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-I would just do it. Doesn't take much to fix.
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index 0bf375ec959b..55b71bb4baf8 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -53,7 +53,7 @@
+ 		 * PSCI node is not added default, U-boot will add missing
+ 		 * parts if it determines to use PSCI.
+ 		 */
+-		entry-method = "arm,psci";
++		entry-method = "psci";
+ 
+ 		CPU_PW20: cpu-pw20 {
+ 			  compatible = "arm,idle-state";
+diff --git a/arch/arm64/boot/dts/sprd/sc9863a.dtsi b/arch/arm64/boot/dts/sprd/sc9863a.dtsi
+index cd80756c888d..2c590ca1d079 100644
+--- a/arch/arm64/boot/dts/sprd/sc9863a.dtsi
++++ b/arch/arm64/boot/dts/sprd/sc9863a.dtsi
+@@ -108,7 +108,7 @@
+ 	};
+ 
+ 	idle-states {
+-		entry-method = "arm,psci";
++		entry-method = "psci";
+ 		CORE_PD: core-pd {
+ 			compatible = "arm,idle-state";
+ 			entry-latency-us = <4000>;
+-- 
+2.21.1
 
-Thanks,
-Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
