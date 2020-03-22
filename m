@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C05E18E7AE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 09:59:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2DEE18E7B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 10:01:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rR/ZweCIN09qL04cDcMJdgtkQEOxfFKuQWJb9VELOHA=; b=l5EViHfgZlmBOE
-	qAKKj5Cr3F81v/xoUVUdhYq1zHT/E5nerZ8z5JjGU2xSqgcf/QLDoQJs/P5upDejKCcaGscTzQJb0
-	zWbIkaA++qHHsXh1FfSpAvSLQpkB8P92+sbLzWAbLboSLHiHqdmInS3pyYnMLHsV6asusWLh2auoB
-	noijeYAYkytU95WSGgCiNGGPQPw2+1ufIpzu0OZjPrAKmDozBXSiylNo7MDlhoCUehpZgPMFDmh4Z
-	lZOpp0mdGa+QhhCw6You6dIXbfhaEG9QXIDg/dZiTPKDQdOPPp3R/pZ/W2HXFm5VOWHzQ82NfpkW4
-	5CnqBtynasw5BTto1PBA==;
+	List-Owner; bh=zwnrC4c/6P2ugcu3QmA1AAA+3aXO+z5xr0joHKQKLQk=; b=uXEpLcNbYmaLOC
+	tUiug2/H7peRDt+9vywXlA4Ls1+2bHHF5b9/iSFejkfI99wbCeAFwjWkgwtzYaft8TwetN4oRLsnM
+	RUl0tWgWn7GwhSXRUY7fiPQDHlHyySdI+ODHt3Xi+FmZE1SjmcidROH7dGF+vDCZ8X3R781muDOUR
+	nU/1U8By+UCwl4GlIa7fLMp4tfelPrGjq3ShH87PPy2rK4SVEv/ic/o9eZLSgJktwi7AO8j7hGVGq
+	r0s5aItxFZK0WJlqObKFsjv2cye9tDqkw7cA263gXcUXxtJfiv2m1V1fMT1wgUAOL5cpSJTMFjCC+
+	+17We2TsGX2XLdwXuCnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFwST-0000n7-PK; Sun, 22 Mar 2020 08:59:49 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1jFwUD-0002IK-Ec; Sun, 22 Mar 2020 09:01:37 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFwSK-0000mj-VB
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 08:59:42 +0000
+ id 1jFwU2-0002Ho-LR
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 09:01:28 +0000
+X-Originating-IP: 86.202.105.35
 Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
  [86.202.105.35])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 26DDB24000B;
- Sun, 22 Mar 2020 08:59:32 +0000 (UTC)
-Date: Sun, 22 Mar 2020 09:59:31 +0100
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 70DCAC0005;
+ Sun, 22 Mar 2020 09:01:16 +0000 (UTC)
+Date: Sun, 22 Mar 2020 10:01:16 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
  arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] ARM: at91: DT for 5.7
-Message-ID: <20200322085931.GA208770@piout.net>
+Subject: [GIT PULL] ARM: at91: SoC for 5.7
+Message-ID: <20200322090116.GA208895@piout.net>
 MIME-Version: 1.0
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_015941_140855_A5053763 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20200322_020126_840336_D0C7BBCD 
+X-CRM114-Status: GOOD (  10.61  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,8 +69,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Arnd, Olof,
 
-Very few DT updates this cycle. I've filled in the google doc as you
-requested.
+A bigger update than usual, reworking the PM code to support sam9x60.
+I've filled in the google doc as you requested.
 
 The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
@@ -77,52 +78,39 @@ The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/at91/linux tags/at91-5.7-dt
+  git://git.kernel.org/pub/scm/linux/kernel/git/at91/linux tags/at91-5.7-soc
 
-for you to fetch changes up to b8c2c052de210d23d83eb178fa030b541ca51842:
+for you to fetch changes up to bb1a0e87e1c54cd884e9b92b1cec06b186edc7a0:
 
-  ARM: dts: at91: sama5d27_wlsom1_ek: add USB device node (2020-03-20 23:58:14 +0100)
-
-----------------------------------------------------------------
-AT91 DT for 5.7
-
- - Enable watchdog on sam9x60
- - Correct sama5d4/2 RTC compatibles
- - Add i2c gpio pinctrl to allow i2c recovery
+  ARM: at91: pm: add quirk for sam9x60's ulp1 (2020-02-18 21:47:54 +0100)
 
 ----------------------------------------------------------------
-Alexandre Belloni (2):
-      ARM: dts: at91: sama5d2: use correct rtc compatible
-      ARM: dts: at91: sama5d4: use correct rtc compatible
+AT91 SoC for 5.7
 
-Cristian Birsan (1):
-      ARM: dts: at91: sama5d27_wlsom1_ek: add USB device node
+ - Rework PM to support sam9x60
 
-Eugen Hristev (2):
-      ARM: dts: at91: sam9x60: add watchdog node
-      ARM: dts: at91: sam9x60ek: enable watchdog node
+----------------------------------------------------------------
+Claudiu Beznea (8):
+      ARM: at91: pm: use proper master clock register offset
+      ARM: at91: pm: revert do not disable/enable PLLA for ULP modes
+      ARM: at91: pm: add macros for plla disable/enable
+      ARM: at91: pm: add pmc_version member to at91_pm_data
+      ARM: at91: pm: s/sfr/sfrbu in pm_suspend.S
+      clk: at91: move sam9x60's PLL register offsets to PMC header
+      ARM: at91: pm: add plla disable/enable support for sam9x60
+      ARM: at91: pm: add quirk for sam9x60's ulp1
 
-Kamel Bouhara (3):
-      ARM: dts: at91: sama5d3: add i2c gpio pinctrl
-      ARM: dts: at91: sama5d4: add i2c gpio pinctrl
-      ARM: dts: at91: sama5d2: add i2c gpio pinctrl
+Geert Uytterhoeven (1):
+      ARM: at91: Drop unneeded select of COMMON_CLK
 
-Rob Herring (1):
-      ARM: dts: at91: Kill off "simple-panel" compatibles
-
- arch/arm/boot/dts/at91-dvk_su60_somc_lcm.dtsi |  2 +-
- arch/arm/boot/dts/at91-sam9x60ek.dts          |  5 ++++
- arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts | 12 +++++++++
- arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts     | 33 ++++++++++++++++++++++---
- arch/arm/boot/dts/at91-sama5d2_xplained.dts   | 33 ++++++++++++++++++++++---
- arch/arm/boot/dts/at91-sama5d4_ma5d4evk.dts   |  2 +-
- arch/arm/boot/dts/at91sam9n12ek.dts           |  2 +-
- arch/arm/boot/dts/at91sam9x5dm.dtsi           |  2 +-
- arch/arm/boot/dts/sam9x60.dtsi                |  8 ++++++
- arch/arm/boot/dts/sama5d2.dtsi                |  2 +-
- arch/arm/boot/dts/sama5d3.dtsi                | 33 ++++++++++++++++++++++---
- arch/arm/boot/dts/sama5d4.dtsi                | 35 ++++++++++++++++++++++++---
- 12 files changed, 151 insertions(+), 18 deletions(-)
+ arch/arm/mach-at91/Kconfig           |   1 -
+ arch/arm/mach-at91/pm.c              |  35 ++++++-
+ arch/arm/mach-at91/pm.h              |   2 +
+ arch/arm/mach-at91/pm_data-offsets.c |   4 +
+ arch/arm/mach-at91/pm_suspend.S      | 189 ++++++++++++++++++++++++++++++++---
+ drivers/clk/at91/clk-sam9x60-pll.c   |  91 +++++++----------
+ include/linux/clk/at91_pmc.h         |  23 +++++
+ 7 files changed, 270 insertions(+), 75 deletions(-)
 
 -- 
 Alexandre Belloni, Bootlin
