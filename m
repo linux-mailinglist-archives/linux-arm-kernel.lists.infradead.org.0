@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9E3718EA3C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 17:19:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F48B18EA4A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 17:24:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AdcgGlQrCmXxBPBFm3idk7054g0vQv6Uy0AADWK0C1k=; b=VgDVra/kdkd7f3szoUbHtxQQm
-	bxnlw+sH+h7cW5UbzBMhThGWdnezjHrhTYgA3SBIVubAEI+pJcqNGbCONh+15A0rQjCYi9n/6LGQx
-	ydF9SDiZMiTspZTROR14Q7587GBfqEuI5+e/MmJJLHjCVmMSsJpM1OC4fHF827FfAN7dkceWRyshf
-	l5xrlgJe1t4SC6/90Zk2CuAbrZNmjSFsv+nB0kzusKbiBgDfOzMmXC9tcA3Aful9GA94o6/70jz0k
-	6j7Ewn6f4T0O9P/uVOkVr7F+dYTtF4R7m5UOWlbTRUnjgDoVa9dI1dixmyB8QsyFwKO/2OmYK8NQ5
-	L54TfSNBA==;
+	 bh=TQC0uidIDE4hF9UecXYKhzserwm8gsZ7R9+qmemg//E=; b=Ql39C9FmIHgTCbwjALbwTN6sK
+	B7VEDAxbhaU5+K7YyXb01ZIDWELiElNSp/ZWpQ0dLUcKZqlh6V5Zr6bC/2v3xBe1D3V5llKer2rau
+	PwWgrvG2rIkqJV60ZnP0oCwveThpIg+yx7zBdxUkvLJPmCTvBAAKJJ1lwEbq0GNqdJ2e8eYHJVEd5
+	nl4sQAmFyyK7b4q0nGF5iXKibu9Tv3+nuUqs9ZZO1P8t/Hr847uyGEE3t2iPD+pKK9Dy+IeBqh/lB
+	dkPKExWJfB5pBGSBYQguSq0taLn3a/dXIPrj9ni48Cf12dpb8/pU2n0hn3hjopmSuHQ+YlGAwYIgX
+	tVDeZSgcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG3K3-0005F7-Qp; Sun, 22 Mar 2020 16:19:35 +0000
+	id 1jG3ON-0006xS-31; Sun, 22 Mar 2020 16:24:03 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG3Ju-0005EQ-2Y
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 16:19:27 +0000
+ id 1jG3OE-0006xB-9h
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 16:23:55 +0000
 Received: from localhost (p54B33042.dip0.t-ipconnect.de [84.179.48.66])
- by pokefinder.org (Postfix) with ESMTPSA id E34CC2C0064;
- Sun, 22 Mar 2020 17:19:23 +0100 (CET)
-Date: Sun, 22 Mar 2020 17:19:23 +0100
+ by pokefinder.org (Postfix) with ESMTPSA id 8EE862C0064;
+ Sun, 22 Mar 2020 17:23:53 +0100 (CET)
+Date: Sun, 22 Mar 2020 17:23:53 +0100
 From: Wolfram Sang <wsa@the-dreams.de>
-To: Chuhong Yuan <hslester96@gmail.com>,
-	Dong Aisheng <aisheng.dong@nxp.com>
-Subject: Re: [PATCH v2] i2c: imx-lpi2c: add clk_disable_unprepare calls
-Message-ID: <20200322161923.GC6766@ninjato>
-References: <20191102062149.3957-1-hslester96@gmail.com>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH] i2c: mxs: Use dma_request_chan() instead
+ dma_request_slave_channel()
+Message-ID: <20200322162353.GE6766@ninjato>
+References: <20191217074505.22527-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <20191102062149.3957-1-hslester96@gmail.com>
+In-Reply-To: <20191217074505.22527-1-peter.ujfalusi@ti.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_091926_264999_44989FDB 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20200322_092354_485397_BF40579B 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -59,95 +60,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6820624977412909248=="
+Cc: s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ linux-i2c@vger.kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7357709178678820166=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6820624977412909248==
+--===============7357709178678820166==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ncSAzJYg3Aa9+CRW"
+	protocol="application/pgp-signature"; boundary="2qXFWqzzG3v1+95a"
 Content-Disposition: inline
 
 
---ncSAzJYg3Aa9+CRW
+--2qXFWqzzG3v1+95a
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, Nov 02, 2019 at 02:21:49PM +0800, Chuhong Yuan wrote:
-> The driver forgets to call clk_disable_unprepare when probe fails
-> and remove.
-> Add the two calls to fix the problem.
+On Tue, Dec 17, 2019 at 09:45:05AM +0200, Peter Ujfalusi wrote:
+> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+> eating up the error code.
 >=20
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> ---
+> By using dma_request_chan() directly the driver can support deferred
+> probing against DMA.
+>=20
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 
-Dong Aisheng, what do you think of this patch?
+Applied to for-next, thanks!
 
-> Changes in v2:
->   - Adjust the call order to make it consistent in probe failure and
->     removal.
->=20
->  drivers/i2c/busses/i2c-imx-lpi2c.c | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/drivers/i2c/busses/i2c-imx-lpi2c.c b/drivers/i2c/busses/i2c-=
-imx-lpi2c.c
-> index c92b56485fa6..f964693c0901 100644
-> --- a/drivers/i2c/busses/i2c-imx-lpi2c.c
-> +++ b/drivers/i2c/busses/i2c-imx-lpi2c.c
-> @@ -618,6 +618,7 @@ static int lpi2c_imx_probe(struct platform_device *pd=
-ev)
->  	return 0;
-> =20
->  rpm_disable:
-> +	clk_disable_unprepare(lpi2c_imx->clk);
->  	pm_runtime_put(&pdev->dev);
->  	pm_runtime_disable(&pdev->dev);
->  	pm_runtime_dont_use_autosuspend(&pdev->dev);
-> @@ -630,6 +631,7 @@ static int lpi2c_imx_remove(struct platform_device *p=
-dev)
->  	struct lpi2c_imx_struct *lpi2c_imx =3D platform_get_drvdata(pdev);
-> =20
->  	i2c_del_adapter(&lpi2c_imx->adapter);
-> +	clk_disable_unprepare(lpi2c_imx->clk);
-> =20
->  	pm_runtime_disable(&pdev->dev);
->  	pm_runtime_dont_use_autosuspend(&pdev->dev);
-> --=20
-> 2.23.0
->=20
+This driver is looking for a maintainer! Not much work, but still. So,
+if someone who reads this is interested, let me know.
 
---ncSAzJYg3Aa9+CRW
+
+--2qXFWqzzG3v1+95a
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl53kAsACgkQFA3kzBSg
-KbbqfBAAr4xo6h3QMRN0UZqEYIpK0gzk/HZOftIiMf9vqWEa/cLiWftCZohgjDOT
-jFS4aO+uyYJKdhT9bEDhoX61nuHXaEQVGBsWOS3Rp+JXvfOIo+vtSeTp64O38mqq
-0+E7GBrQDsqyOHA7Iw3lhQftzQe4MJwE8EsgN9HzCTaEgtnfhBuCScdXiVYBV2Ad
-TmLxHYEtERUnBRD+FiB6+HdrRi3KrrUsKPEZd/Mwe3ENfHi6CTaH8z4OM+f8aHOi
-84cIBxJO7JlSl1JkZ0MQZ6IiL5yEC0RC0Nz871VfrJBRvfdUs+f0mHCk8hATepL+
-fNtZNJIApBteuEhiA/WJ7A4X+QNNaWp60JZdpIUzhljevvGzjO5wK7GIlBZXHzxR
-ApzQcQVDsj2fe054NHSpa2UfK3Z0ZULPa5L/SBZeV8gErQvoBXYXQOhTiucmGM8H
-vnVHegYHx1gHeyIAmEAIJExbjNKDiw0qWPU29AQov1kkpFOlYSgu420x7sFaODY9
-wT+typO0J5LgmA/YMepI5RMYOkB/pG4CkiNuYDxfCBuPjXxpyGTvHHtibnYInt+4
-HV51Rmk5AMcYc8edLM6jrQNPo55fFyAJCgav36h7kf/IiAaL8hvc03MQZt7Tlkqa
-Hds0OeOUO75afYoAjJVg9wC15OXww9V/8fUB39zf9zvdcqA7LKw=
-=ebsn
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl53kRgACgkQFA3kzBSg
+KbYpww//ZHuO+vdrwCU/8+E79GAmZOvtmFZavOMa97NDWrNFFvB/RoP2gZPhEoZ3
+irMqPrbs9wRlFp1/17zvEfdvTcd/SaG+Eo2/eYFcEu+JTzZ6+CRkqv8VrDfCTKp/
+U4KRE9qnn0bQCSlU/PqqnBGZLT/M3UIZBpZETd1woCbry/jb8vtjUhXqOi9fiRvx
+7a5N22vNRR29NmafmjOnppWh/GQJwF369apaF/0vXCK09hB98nPCrX9XdJqxfPZZ
+eWACcwoyPxEA1KednREw2Si7jqbMNosEdsfN2/+GJZlQstMtDoye6du6JkoCOeOv
+XtlHcIX9gC5aViQWsOoxdOAPnCEH3EN+xa+lDveOCwVQSUtyQlCmoCE9DbsNwQCH
+1W80a8O4ktMG9KSeWmbjsGmyZOoxE3Oxj8Nwwebp7Fk535GqjXIxZGRnxA0Kynm1
+XJR4hcZJvLVzFEG/3yhLtS7meSoXmiVHmmSgRsHFvownE/K3RllREHlOxe4e+18x
+zj5j+9BUhDwUuaXlLU7JUcp8RXz0d1cJk4YWdmQqkz5I0KA/TzPORb5V+mrsNM4j
+WXaaKFd/LTu7YszYxtes38skel/elO8rH4ONRf0l2JGyQ6iq+xCvJOBNEB4PISi7
+vShJaiIv7ez8UE429xH3gzbapalKxjZld+602Obn1ssavQiynyU=
+=N00J
 -----END PGP SIGNATURE-----
 
---ncSAzJYg3Aa9+CRW--
+--2qXFWqzzG3v1+95a--
 
 
---===============6820624977412909248==
+--===============7357709178678820166==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -158,5 +128,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6820624977412909248==--
+--===============7357709178678820166==--
 
