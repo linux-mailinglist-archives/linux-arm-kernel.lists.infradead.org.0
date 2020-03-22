@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D61D518E87D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 12:59:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57B0218E88B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 13:12:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+4Txw1vCvx79rELRib90NP/YZ2t24LFcNcFDhV47tD0=; b=i2XZ7tg3MiYuSf
-	YCLpa32MgmRLJz1+Op1vHNp4uhG3wJCgY6/kE29I22EflzjP8yRsORcA2kK4PfKFvNNhDxhHEiu+I
-	yX/1ZMBH7CePhKY7mDfpclVYrdXJ50/brX2LwfRWgaRXajcJkpYEkuDeZoC4TlaEvdpEoGlaGTP8w
-	KgCmRuAExCdFzdi+aA/Mg/5zBqZlMhR7X+v+WI1qDzqOB071V/4nDMiF4dl/F3ubzXT9yZdfM19o9
-	JLoRbNRxdui2aWqfryhFkkib6dFs7NE+jNZyp3RmShtT7NZhHb79lLGaBak1rXmkKdF3Ef8xpdl/G
-	qMsiVaqdVuH9yVbeyD9w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Z+nlRq/osVJZfeRs0S5lpCCLFaTBTiRKc9TJMLtXO1E=; b=hVS
+	Wu4ySLIRaHe06ffPU9N0vEUNTKWT0gSqwqILYzAxXHNx9wXzlrDANfCF7mnAayOW/jHKgtZ+ItJj0
+	zwJPbDgL4C4CPQciyssbfmFibfLwbORqGOQoxiVlA7EAaBN4mUvTJ0S5P9OK2yvxQg++JqosUsKCK
+	VUCRlvB1CmaEaLN9CqNrBsO0z7SfaufrTqVhwKuttTGk1hY+TA8PSRMhqQnr2w9r2pOU58qRHghH7
+	DOZsnH4eAuOMOaCAIPSh0tv2bA0cVMhjiWSOtSwidv4oS2L+oBq05JRRiAF9NdZM40HzLugFDhboS
+	R2oY9rsyZslbBUlm8JIjZ8SD9GqYlDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFzFu-0002fv-In; Sun, 22 Mar 2020 11:59:02 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jFzSl-0007ry-Ft; Sun, 22 Mar 2020 12:12:19 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFzFl-0002fR-ON
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 11:58:55 +0000
-Received: by mail-lf1-x141.google.com with SMTP id m15so7989011lfp.2
+ id 1jFzSc-0007rX-4I
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 12:12:11 +0000
+Received: by mail-pl1-x644.google.com with SMTP id h11so4640370plk.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Mar 2020 04:58:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zlYMO1xg3/FP6UANfiFZiZoAOK1/Mwd8+kH78AXytAY=;
- b=c2hk0cZcg9aSjSoDaf0TSMngXGHHQ+e9awBT1j8al/sXEXj8kDTs0Mps7S+MhSXNbh
- bJmuZKoi7YDqs15WXfYVPKBmINCOtKYizAMg5a6EuVvzH4QpzjT4uEu7wXEtB+et6BUx
- 7WDdFoAGXxsxnPdr14NYNwfi70IKH13wW2kxTz+t+r/TzUr3lZWElU/8bhj+jTSXmRR4
- HNlQBBkD/V8CZ5OntEj25dbptMyGnlhUjlFvgBHNlD6G9r9dj8vp3kpcdZzmlvp2ffnH
- 5FqkJovVbN/Le14aqtOMP/iBlxvYnGYyO22fciN7ABIQluShSVvRmK56mVdVaT3zjLxY
- MhRQ==
+ Sun, 22 Mar 2020 05:12:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=FvY0YKKCnsrLLlr9trBfCh6Rrrghhq8OHSokm6+VTcI=;
+ b=N7m8NTJKmhFmzHgmnnmrcnC0b1DNueYZ8TZJeIqI/YSQ0HxpPb8q8iltHbef4ESEWV
+ o5O4fQjgcpIwlCH+T68QK1xVKIaSL/Ijr2APeKFVOOdW+yeuG6gfBjbCAyx8hQnVJ0lv
+ AB+StnvqK23tbHLsJnjRgBrcEb5K4wcVMlBs1M1OGrZW0Zw+Ag3FZBCSBPB9FNpPQ/qR
+ m4W3vtORIog+Vf2cTO1I2DBxXW1Ka5DAcBAD66ZWDZI1D/u6pZpP7XinVUmaegg7HRv6
+ wWTBLVI6RAubb9EqCwpNyyvy9X9fAobAQAXRz00Fh21aK7J8StlrcwGI/i4uvSk+FJ5o
+ zjcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zlYMO1xg3/FP6UANfiFZiZoAOK1/Mwd8+kH78AXytAY=;
- b=ksutni5HfSpal9zlrICuFIquBAz3ADQ44gW2m/7l2nWJH1685RyWQOeDt3Uwg1v2JZ
- u1Kxo8rovCOeAIBz5ZAiC63uuDQ74P65rztG/kBUJy1zdS9e3CY6ut5apYHB8kEa4iXI
- 3ALSrSby34QheitPlG0eoUpZo+g1DWut/E902cSsAhWVcy+GHxVoelmKHT80SDh3BNHT
- py6Nnsejy6z4jnlh/rwpBxRoXvhXYmCjzlSJu6rPwVFV+v8EBunm0ORxejHYWS/9n0qA
- hkC3qfXAT/O/anzLGGHyKis79UA5sTjDhGb4tG48017FiDbYFKqRh4gn2NOjz9c9MglD
- EQKg==
-X-Gm-Message-State: ANhLgQ01aAIsuQPowgReNVx2rLszsKyUxhZeU+O2F0nAJbf1JD7cfL+l
- kTReD5OAohg0QgdMHx8j7h7mfA==
-X-Google-Smtp-Source: ADFU+vsbo+I0cwJSttrp+F4Le4/cYfQWd7EZ+BVDhmXKGu+GhUSjZ5LIojHRv6wF8Iaf6tD6xgSmcg==
-X-Received: by 2002:ac2:42d9:: with SMTP id n25mr10085351lfl.97.1584878332293; 
- Sun, 22 Mar 2020 04:58:52 -0700 (PDT)
-Received: from localhost.bredbandsbolaget
- (c-5ac9225c.014-348-6c756e10.bbcust.telenor.se. [92.34.201.90])
- by smtp.gmail.com with ESMTPSA id c22sm2509006lja.86.2020.03.22.04.58.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Mar 2020 04:58:51 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: arm@kernel.org,
-	soc@kernel.org
-Subject: [PATCH v2] arm64: dts: Fix leftover entry-methods for PSCI
-Date: Sun, 22 Mar 2020 12:58:46 +0100
-Message-Id: <20200322115846.16265-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.21.1
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=FvY0YKKCnsrLLlr9trBfCh6Rrrghhq8OHSokm6+VTcI=;
+ b=SKsNVYp+Gkz1leHbjU5TjAKQyxmAubHKtVyyXkDsOlZ0+Djn10XHlZZwY1Xc56QAl8
+ 1TSamJ1Hmrokdaf7DK8IpX3bB29+hasJWyXK9gPIDTyyhj5vH2zmqecqaGpV1sdQvV5R
+ 0nEAzPm/Q2BepVfkvK1OHuPPj92DeTyagkVPeVdsGh4stFntbA8+BBhR6j4oXxdsMget
+ 1FNxybTtAwjL1RAwhPMxngCe3FlNetDINV1SrgaEhYIofOMxARqcKPETf0QGjjlqEwb/
+ 0J/bVe4Pu+f64TLy/QgnQ2pUSZe9s4szIilbUn1zuUin79qgkkb1JDtVdF6njrd7W3jr
+ IhFQ==
+X-Gm-Message-State: ANhLgQ28xw7pvShTR4QBb8ANcFdziJGvDFUiS2AkuNzhQL0dCLENpmm3
+ AndoOwLQ5oa+6PrtTMps/PA8hOXflhU=
+X-Google-Smtp-Source: ADFU+vt4iQK3kCgBt7aFvRB5DjR/GAG7IMVpphTJsXiohifoP306KYhcs/C7FxZMNa3IcGvIjXwUtQ==
+X-Received: by 2002:a17:90a:36e5:: with SMTP id
+ t92mr5721243pjb.51.1584879128254; 
+ Sun, 22 Mar 2020 05:12:08 -0700 (PDT)
+Received: from localhost.localdomain ([223.233.79.39])
+ by smtp.gmail.com with ESMTPSA id i2sm10503301pfr.151.2020.03.22.05.12.05
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Sun, 22 Mar 2020 05:12:07 -0700 (PDT)
+From: Amit Singh Tomar <amittomer25@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] dt-bindings: clock: Use "CLK_ETHERNET" for the Ethernet clock
+Date: Sun, 22 Mar 2020 17:41:29 +0530
+Message-Id: <1584879089-12123-1-git-send-email-amittomer25@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_045853_809553_45501428 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200322_051210_172293_8CBBD972 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,62 +96,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- Amit Kucheria <amit.kucheria@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: robh@kernel.org, manivannan.sadhasivam@linaro.org, afaerber@suse.de,
+ Amit Singh Tomar <amittomer25@gmail.com>, andre.przywara@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These two device trees were either missed or added after
-the commit correcting the "entry-method" from
-"arm,psci" to just "psci" as per the binding.
+Right now, dt clock binding for ethernet uses different names CLK_ETH_MAC for S900
+and CLK_ETHERNET for S700, while dt clock binding for most of the other devices uses
+same name(for instance, the UART clock binding that uses CLK_UARTx).
 
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Chunyan Zhang <chunyan.zhang@unisoc.com>
-Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Let's use same name CLK_ETHERNET for both S700 and S900.
+
+Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
 ---
-ARM SoC folks: if this is fine just apply it to the
-tree where appropriate please.
+Noticed it while working on U-BOOT Ethernet support for S700 where we have common clock driver used
+by S700 and S900. Patch[1] was initially sent to U-BOOT list.
+
+[1]: https://patchwork.ozlabs.org/patch/1229219/
 ---
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
- arch/arm64/boot/dts/sprd/sc9863a.dtsi          | 2 +-
+ drivers/clk/actions/owl-s900.c               | 2 +-
+ include/dt-bindings/clock/actions,s900-cmu.h | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 0bf375ec959b..55b71bb4baf8 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -53,7 +53,7 @@
- 		 * PSCI node is not added default, U-boot will add missing
- 		 * parts if it determines to use PSCI.
- 		 */
--		entry-method = "arm,psci";
-+		entry-method = "psci";
+diff --git a/drivers/clk/actions/owl-s900.c b/drivers/clk/actions/owl-s900.c
+index 7908909..5293086 100644
+--- a/drivers/clk/actions/owl-s900.c
++++ b/drivers/clk/actions/owl-s900.c
+@@ -648,7 +648,7 @@ static struct clk_hw_onecell_data s900_hw_clks = {
+ 		[CLK_DE0]		= &de_clk.common.hw,
+ 		[CLK_DMM]		= &dmm_clk.common.hw,
+ 		[CLK_EDP]		= &edp_clk.common.hw,
+-		[CLK_ETH_MAC]		= &eth_mac_clk.common.hw,
++		[CLK_ETHERNET]		= &eth_mac_clk.common.hw,
+ 		[CLK_GPU_CORE]		= &gpu_core_clk.common.hw,
+ 		[CLK_GPU_MEM]		= &gpu_mem_clk.common.hw,
+ 		[CLK_GPU_SYS]		= &gpu_sys_clk.common.hw,
+diff --git a/include/dt-bindings/clock/actions,s900-cmu.h b/include/dt-bindings/clock/actions,s900-cmu.h
+index 7c12515..2247f1c 100644
+--- a/include/dt-bindings/clock/actions,s900-cmu.h
++++ b/include/dt-bindings/clock/actions,s900-cmu.h
+@@ -121,7 +121,7 @@
+ #define CLK_DDR1			97
+ #define CLK_DMM				98
  
- 		CPU_PW20: cpu-pw20 {
- 			  compatible = "arm,idle-state";
-diff --git a/arch/arm64/boot/dts/sprd/sc9863a.dtsi b/arch/arm64/boot/dts/sprd/sc9863a.dtsi
-index cd80756c888d..2c590ca1d079 100644
---- a/arch/arm64/boot/dts/sprd/sc9863a.dtsi
-+++ b/arch/arm64/boot/dts/sprd/sc9863a.dtsi
-@@ -108,7 +108,7 @@
- 	};
+-#define CLK_ETH_MAC			99
++#define CLK_ETHERNET			99
+ #define CLK_RMII_REF			100
  
- 	idle-states {
--		entry-method = "arm,psci";
-+		entry-method = "psci";
- 		CORE_PD: core-pd {
- 			compatible = "arm,idle-state";
- 			entry-latency-us = <4000>;
+ #define CLK_NR_CLKS			(CLK_RMII_REF + 1)
 -- 
-2.21.1
+2.7.4
 
 
 _______________________________________________
