@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C3BE18EBEC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 20:36:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A71918EBF5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 20:39:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Kq2QOHw9nNvm5JbohDTClhuXYxT1Fy46GSlb4LeNkto=; b=Tzt5EmWF41lDnnvC1FGqFBxiQ
-	DtESRjjrCHNZpWukjOZIH2mwO2prbRBbqdnKulJPw2P91I69zlClpTdDzllFcOEvsmlwzlnPj+It3
-	dsYNRY9BTyEMhv5OCL7dLSS8NmtMiVq/uq6rBOY70+E7wdbTK8jRz1xxs4egWkQ59Wo3WTsSZgXUq
-	AP8E/3Csq3wWe8Fx0X/OyxJ5aS4IJwGYHf45SmM7XByZsVQSwE5O1E+UweBVWCbhH37SloXgGvQk9
-	pm6u5PIZJApX0YlWMFuwtycQppX/p3NVBxzL9mYYd8cqOO98ofqs5uiZL4lZ30FzbmXDMwdm/qg3s
-	z9i8+W+vw==;
+	 bh=LCBy7C7CSCNLWRdauJ+OvWX/1n1Pej1luMYiF1h5pVI=; b=AiTdhGNUHziyyOT15uwIZ76+2
+	Ef8wCeTI+npT8XFUg+iLEJI8SGF3hRfn9wYowPX8olL2oNWFiOfie7lqjCFzudgrw343kXQExg7i4
+	3ezGa7DTttS4kzmGAYRbhlRvldUYBTsCYCO+zS6Rc+OVyQ3pCI02qQ2RPAqHNEl4GOQ8EEFGiDLQX
+	juklK2G3oq/yybYekOA+2P+xh4wJe7WJLIraM//YBpTSSbR4zbc2w3oTrp456yU2I54f0NbBwKdVg
+	YUoM/YCwebvhNDboWkYtqznOa/PyhYKed7jVEJiU5CCk4kjcW34bBhR1yQ1JBK/WLv0Xe2bafS19K
+	xYfhLA2Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG6OG-0007l2-4h; Sun, 22 Mar 2020 19:36:08 +0000
+	id 1jG6Ra-0008Dd-RJ; Sun, 22 Mar 2020 19:39:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG6O7-0007hG-IW
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 19:36:00 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jG6RP-0008CW-0h; Sun, 22 Mar 2020 19:39:24 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CB6172070A;
- Sun, 22 Mar 2020 19:35:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6E2772070A;
+ Sun, 22 Mar 2020 19:39:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584905759;
- bh=iL1sjTLvw1JVu+N++3CO4C0/tIF4N6blP9U1IKYS5gQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=kAXEx17aS3TrizisnrRafSOkN+ibt5U0Y7672k6/Yrcv7ai6MHzcqZgalHr4qyo/W
- A215K6TVqFPDF3E6GPENUbZiJDMKPTfFhFXiwNllNT5vdOKjOmD9nBjxHQmuWx7aLI
- wpzmhLnSjrqktPegHm6AwDxvzGfDny/5xovTe7Yk=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jG6O5-00Eknk-0F; Sun, 22 Mar 2020 19:35:57 +0000
+ s=default; t=1584905962;
+ bh=aGGx1nH/psZA7otCHWR4bp5UFDdxLz4Yls1e8FeqbP8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RpzIB6/NcuUVL2rRNhtd463rKUSmMi1zOKWJ7aOy89Esuu+Q+/QRp6HstMSs9FGn9
+ inmSJqWLSN0wR51pFwU8rnc8CDiAcu6Tf9IE78z9qzzL87ikGPu3sKiEsitLF1ibY+
+ UWYLCHX1KEqkG4cc5p3hFaSV1vRn/OTd7bOX/sVA=
+Date: Sun, 22 Mar 2020 15:39:21 -0400
+From: Sasha Levin <sashal@kernel.org>
+To: Jerome Brunet <jbrunet@baylibre.com>
+Subject: Re: [PATCH AUTOSEL 5.4 08/35] ASoC: meson: g12a: add tohdmitx reset
+Message-ID: <20200322193921.GP4189@sasha-vm>
+References: <20200316023411.1263-1-sashal@kernel.org>
+ <20200316023411.1263-8-sashal@kernel.org>
+ <1ja74gg0v8.fsf@starbuckisacylon.baylibre.com>
+ <1jsgi0ckcc.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-Date: Sun, 22 Mar 2020 19:35:56 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH] irqchip: irq-imx-gpcv2: Remove unnecessary blank lines
-In-Reply-To: <CAEnQRZCcmaU91Ep5kVesaGPsrvujq5mznk2SZccmZG9rbSCG0w@mail.gmail.com>
-References: <1584421001-2647-1-git-send-email-Anson.Huang@nxp.com>
- <86mu89zqce.wl-maz@kernel.org>
- <CAEnQRZCcmaU91Ep5kVesaGPsrvujq5mznk2SZccmZG9rbSCG0w@mail.gmail.com>
-Message-ID: <a690ecc9169f0594e22b4eae0a056d89@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: daniel.baluta@gmail.com, Anson.Huang@nxp.com,
- tglx@linutronix.de, jason@lakedaemon.net, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Linux-imx@nxp.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <1jsgi0ckcc.fsf@starbuckisacylon.baylibre.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_123559_655823_5A29EFFC 
-X-CRM114-Status: GOOD (  19.04  )
+X-CRM114-CacheID: sfid-20200322_123923_079037_C9180169 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,78 +79,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, Anson Huang <Anson.Huang@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <Linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, tglx@linutronix.de,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, Kevin Hilman <khilman@baylibre.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Daniel,
+On Sun, Mar 22, 2020 at 07:31:31PM +0100, Jerome Brunet wrote:
+>
+>On Mon 16 Mar 2020 at 09:28, Jerome Brunet <jbrunet@baylibre.com> wrote:
+>
+>> On Mon 16 Mar 2020 at 03:33, Sasha Levin <sashal@kernel.org> wrote:
+>>
+>>> From: Jerome Brunet <jbrunet@baylibre.com>
+>>>
+>>> [ Upstream commit 22946f37557e27697aabc8e4f62642bfe4a17fd8 ]
+>>>
+>>> Reset the g12a hdmi codec glue on probe. This ensure a sane startup state.
+>>>
+>>> Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+>>> Link: https://lore.kernel.org/r/20200221121146.1498427-1-jbrunet@baylibre.com
+>>> Signed-off-by: Mark Brown <broonie@kernel.org>
+>>> Signed-off-by: Sasha Levin <sashal@kernel.org>
+>>
+>> Hi Sasha,
+>>
+>> The tohdmitx reset property is not in the amlogic g12a DT in v5.4.
+>> Backporting this patch on v5.4 would break the hdmi sound, and probably
+>> the related sound card since the reset is not optional.
+>>
+>> Could you please drop this from v5.4 stable ?
+>
+>Hi Sasha,
+>
+>I just received a notification that this patch has been applied to 5.4
+>stable.
+>
+>As explained above, it will cause a regression.
+>Could you please drop it from v5.4 stable ?
 
-On 2020-03-22 19:08, Daniel Baluta wrote:
-> On Sat, Mar 21, 2020 at 5:22 PM Marc Zyngier <maz@kernel.org> wrote:
->> 
->> On Tue, 17 Mar 2020 04:56:41 +0000,
->> Anson Huang <Anson.Huang@nxp.com> wrote:
->> >
->> > Remove unnecessary blank lines for cleanup.
->> >
->> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
->> > ---
->> >  drivers/irqchip/irq-imx-gpcv2.c | 2 --
->> >  1 file changed, 2 deletions(-)
->> >
->> > diff --git a/drivers/irqchip/irq-imx-gpcv2.c b/drivers/irqchip/irq-imx-gpcv2.c
->> > index 4f74c15..4f11b9b 100644
->> > --- a/drivers/irqchip/irq-imx-gpcv2.c
->> > +++ b/drivers/irqchip/irq-imx-gpcv2.c
->> > @@ -17,7 +17,6 @@
->> >  #define GPC_IMR1_CORE2               0x1c0
->> >  #define GPC_IMR1_CORE3               0x1d0
->> >
->> > -
->> >  struct gpcv2_irqchip_data {
->> >       struct raw_spinlock     rlock;
->> >       void __iomem            *gpc_base;
->> > @@ -287,6 +286,5 @@ static int __init imx_gpcv2_irqchip_init(struct device_node *node,
->> >       of_node_clear_flag(node, OF_POPULATED);
->> >       return 0;
->> >  }
->> > -
->> >  IRQCHIP_DECLARE(imx_gpcv2_imx7d, "fsl,imx7d-gpc", imx_gpcv2_irqchip_init);
->> >  IRQCHIP_DECLARE(imx_gpcv2_imx8mq, "fsl,imx8mq-gpc", imx_gpcv2_irqchip_init);
->> 
->> I honestly don't think this deserves a patch. Next time you work on
->> this driver, add the cleanups to it. But on its own, it's only churn.
-> 
-> While you are technically right, it's only churn I think we need this
-> for code consistency and cleanup.
+Hi Jerome,
 
-Get real. We really don't. Two blank lines do not lead to a
-misinterpretation of the code, do not get in the way of normal
-maintenance, do not lead to *any* practical issue.
+Sorry - I've missed your previous mail. Now dropped from all trees.
 
-What's next? Cc stable?
-
-> Even if we fix this when we work on the driver we still need
-> to make the cleanup in a separate patch.
-
-Neither. As well as removing blank lines, you could also remove the
-dead code in this driver. That would be a good cleanup. You could
-also have a look at what feels like a potential deadlock in the
-mask/unmask callbacks. That'd be a good thing to do too.
-
-Certainly more useful than just dropping two blank lines.
-
-         M.
 -- 
-Jazz is not dead. It just smells funny...
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
