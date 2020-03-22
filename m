@@ -2,76 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B800918EA29
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 17:17:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9E3718EA3C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Mar 2020 17:19:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=u3bdSl2wl72iQ3vo1dNjkEMArkd0swRFiRdXh2lrn/8=; b=tiI
-	hZeOT2JLp7sr6lIKQfh0poyxldXxb31z4SvZpLs50mYyL8xnP6dleGh0a7QbHShYt0AivltjHZSpL
-	qAYC5Gy1gkQJyJ7N/6DGAmjX6A7dm4y8V1ISuWlfqeUCqDNau9WCLZ0FB3mg0p8JuayLr6XA6dHUR
-	oCj87qk9cWTfRTj+a5xqXhn56kzEr1/7yRW6f8PaqtGmyehrz8PS7zPxUzzDHhcwdR5W95P6556DH
-	YsqD7XjbNLGiwo9XGj94NbhaUf5MQkXV7oAt1m8QcJRk0jNNcdgMOPn9gyBGN9ILLrDxN8bWl6Mbf
-	1qbw56Hs5zdYlCDtuFDePkjov0ttnzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AdcgGlQrCmXxBPBFm3idk7054g0vQv6Uy0AADWK0C1k=; b=VgDVra/kdkd7f3szoUbHtxQQm
+	bxnlw+sH+h7cW5UbzBMhThGWdnezjHrhTYgA3SBIVubAEI+pJcqNGbCONh+15A0rQjCYi9n/6LGQx
+	ydF9SDiZMiTspZTROR14Q7587GBfqEuI5+e/MmJJLHjCVmMSsJpM1OC4fHF827FfAN7dkceWRyshf
+	l5xrlgJe1t4SC6/90Zk2CuAbrZNmjSFsv+nB0kzusKbiBgDfOzMmXC9tcA3Aful9GA94o6/70jz0k
+	6j7Ewn6f4T0O9P/uVOkVr7F+dYTtF4R7m5UOWlbTRUnjgDoVa9dI1dixmyB8QsyFwKO/2OmYK8NQ5
+	L54TfSNBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG3HP-0004lN-Vn; Sun, 22 Mar 2020 16:16:52 +0000
-Received: from mr85p00im-zteg06011501.me.com ([17.58.23.182])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG3HA-0004iw-Vn
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 16:16:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=me.com; s=1a1hai;
- t=1584893795; bh=owGB4mIyguzHqbacAQ1ITgVAMVCvoWtMPYe1ryNau40=;
- h=From:To:Subject:Date:Message-Id;
- b=jdmxPOOU947wEYpxkztzbuTxjTnVtF0JLrauThWv12N5LxsVx+QTkXP2XLaI9Q49g
- nAEY50vCkZkq5zFUBvDLg1q3H3dBebua0MDuKJTkS6BjD/QIR9Rj+ak0iGsM2OenUC
- X4s1eKTwDNdhCiYxyZRb1yVlWdU++DCjZkDT88rybVRvP8dABw0WBRNoZH81bwzCX6
- BJsd58ldpLSe/aPAlM+Wscc8ll9JzTpclQSCxeVNIAbKNHINyeZ993zZSkJHho610q
- dTq9Opl4C67U50CMujK1pfNlWXrdsN4I0WVs2UD+mKUo44LuXyQLquwoEn0FtODsdx
- fj71q1lJM2mQg==
-Received: from localhost (101.220.150.77.rev.sfr.net [77.150.220.101])
- by mr85p00im-zteg06011501.me.com (Postfix) with ESMTPSA id BC6BF2A0436;
- Sun, 22 Mar 2020 16:16:34 +0000 (UTC)
-From: Alain Volmat <avolmat@me.com>
-To: patrice.chotard@st.com, robh+dt@kernel.org, mark.rutland@arm.com,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] dts: arm: stih418: Fix complain about IRQ_TYPE_NONE usage
-Date: Sun, 22 Mar 2020 17:16:31 +0100
-Message-Id: <20200322161631.19151-1-avolmat@me.com>
-X-Mailer: git-send-email 2.17.1
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2020-03-22_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 clxscore=1011 mlxscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1908290000 definitions=main-2003220099
+	id 1jG3K3-0005F7-Qp; Sun, 22 Mar 2020 16:19:35 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jG3Ju-0005EQ-2Y
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Mar 2020 16:19:27 +0000
+Received: from localhost (p54B33042.dip0.t-ipconnect.de [84.179.48.66])
+ by pokefinder.org (Postfix) with ESMTPSA id E34CC2C0064;
+ Sun, 22 Mar 2020 17:19:23 +0100 (CET)
+Date: Sun, 22 Mar 2020 17:19:23 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Chuhong Yuan <hslester96@gmail.com>,
+	Dong Aisheng <aisheng.dong@nxp.com>
+Subject: Re: [PATCH v2] i2c: imx-lpi2c: add clk_disable_unprepare calls
+Message-ID: <20200322161923.GC6766@ninjato>
+References: <20191102062149.3957-1-hslester96@gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <20191102062149.3957-1-hslester96@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_091637_045056_6BBB712B 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200322_091926_264999_44989FDB 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [17.58.23.182 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [avolmat[at]me.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,69 +59,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: avolmat@me.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6820624977412909248=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since commit 83a86fbb5b56 ("irqchip/gic: Loudly complain about the use of IRQ_TYPE_NONE")
-kernel is complaining about the IRQ_TYPE_NONE usage which shouldn't
-be used.
 
-Use IRQ_TYPE_LEVEL_HIGH instead.
+--===============6820624977412909248==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ncSAzJYg3Aa9+CRW"
+Content-Disposition: inline
 
-Signed-off-by: Alain Volmat <avolmat@me.com>
----
- arch/arm/boot/dts/stih418.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stih418.dtsi b/arch/arm/boot/dts/stih418.dtsi
-index 83411322bd92..a05e2278b448 100644
---- a/arch/arm/boot/dts/stih418.dtsi
-+++ b/arch/arm/boot/dts/stih418.dtsi
-@@ -50,7 +50,7 @@
- 		ohci0: usb@9a03c00 {
- 			compatible = "st,st-ohci-300x";
- 			reg = <0x9a03c00 0x100>;
--			interrupts = <GIC_SPI 180 IRQ_TYPE_NONE>;
-+			interrupts = <GIC_SPI 180 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
- 			resets = <&powerdown STIH407_USB2_PORT0_POWERDOWN>,
- 				 <&softreset STIH407_USB2_PORT0_SOFTRESET>;
-@@ -62,7 +62,7 @@
- 		ehci0: usb@9a03e00 {
- 			compatible = "st,st-ehci-300x";
- 			reg = <0x9a03e00 0x100>;
--			interrupts = <GIC_SPI 151 IRQ_TYPE_NONE>;
-+			interrupts = <GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_usb0>;
- 			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
-@@ -76,7 +76,7 @@
- 		ohci1: usb@9a83c00 {
- 			compatible = "st,st-ohci-300x";
- 			reg = <0x9a83c00 0x100>;
--			interrupts = <GIC_SPI 181 IRQ_TYPE_NONE>;
-+			interrupts = <GIC_SPI 181 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
- 			resets = <&powerdown STIH407_USB2_PORT1_POWERDOWN>,
- 				 <&softreset STIH407_USB2_PORT1_SOFTRESET>;
-@@ -88,7 +88,7 @@
- 		ehci1: usb@9a83e00 {
- 			compatible = "st,st-ehci-300x";
- 			reg = <0x9a83e00 0x100>;
--			interrupts = <GIC_SPI 153 IRQ_TYPE_NONE>;
-+			interrupts = <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>;
- 			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_usb1>;
- 			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
--- 
-2.17.1
+--ncSAzJYg3Aa9+CRW
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Sat, Nov 02, 2019 at 02:21:49PM +0800, Chuhong Yuan wrote:
+> The driver forgets to call clk_disable_unprepare when probe fails
+> and remove.
+> Add the two calls to fix the problem.
+>=20
+> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> ---
+
+Dong Aisheng, what do you think of this patch?
+
+> Changes in v2:
+>   - Adjust the call order to make it consistent in probe failure and
+>     removal.
+>=20
+>  drivers/i2c/busses/i2c-imx-lpi2c.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>=20
+> diff --git a/drivers/i2c/busses/i2c-imx-lpi2c.c b/drivers/i2c/busses/i2c-=
+imx-lpi2c.c
+> index c92b56485fa6..f964693c0901 100644
+> --- a/drivers/i2c/busses/i2c-imx-lpi2c.c
+> +++ b/drivers/i2c/busses/i2c-imx-lpi2c.c
+> @@ -618,6 +618,7 @@ static int lpi2c_imx_probe(struct platform_device *pd=
+ev)
+>  	return 0;
+> =20
+>  rpm_disable:
+> +	clk_disable_unprepare(lpi2c_imx->clk);
+>  	pm_runtime_put(&pdev->dev);
+>  	pm_runtime_disable(&pdev->dev);
+>  	pm_runtime_dont_use_autosuspend(&pdev->dev);
+> @@ -630,6 +631,7 @@ static int lpi2c_imx_remove(struct platform_device *p=
+dev)
+>  	struct lpi2c_imx_struct *lpi2c_imx =3D platform_get_drvdata(pdev);
+> =20
+>  	i2c_del_adapter(&lpi2c_imx->adapter);
+> +	clk_disable_unprepare(lpi2c_imx->clk);
+> =20
+>  	pm_runtime_disable(&pdev->dev);
+>  	pm_runtime_dont_use_autosuspend(&pdev->dev);
+> --=20
+> 2.23.0
+>=20
+
+--ncSAzJYg3Aa9+CRW
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl53kAsACgkQFA3kzBSg
+KbbqfBAAr4xo6h3QMRN0UZqEYIpK0gzk/HZOftIiMf9vqWEa/cLiWftCZohgjDOT
+jFS4aO+uyYJKdhT9bEDhoX61nuHXaEQVGBsWOS3Rp+JXvfOIo+vtSeTp64O38mqq
+0+E7GBrQDsqyOHA7Iw3lhQftzQe4MJwE8EsgN9HzCTaEgtnfhBuCScdXiVYBV2Ad
+TmLxHYEtERUnBRD+FiB6+HdrRi3KrrUsKPEZd/Mwe3ENfHi6CTaH8z4OM+f8aHOi
+84cIBxJO7JlSl1JkZ0MQZ6IiL5yEC0RC0Nz871VfrJBRvfdUs+f0mHCk8hATepL+
+fNtZNJIApBteuEhiA/WJ7A4X+QNNaWp60JZdpIUzhljevvGzjO5wK7GIlBZXHzxR
+ApzQcQVDsj2fe054NHSpa2UfK3Z0ZULPa5L/SBZeV8gErQvoBXYXQOhTiucmGM8H
+vnVHegYHx1gHeyIAmEAIJExbjNKDiw0qWPU29AQov1kkpFOlYSgu420x7sFaODY9
+wT+typO0J5LgmA/YMepI5RMYOkB/pG4CkiNuYDxfCBuPjXxpyGTvHHtibnYInt+4
+HV51Rmk5AMcYc8edLM6jrQNPo55fFyAJCgav36h7kf/IiAaL8hvc03MQZt7Tlkqa
+Hds0OeOUO75afYoAjJVg9wC15OXww9V/8fUB39zf9zvdcqA7LKw=
+=ebsn
+-----END PGP SIGNATURE-----
+
+--ncSAzJYg3Aa9+CRW--
+
+
+--===============6820624977412909248==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6820624977412909248==--
+
