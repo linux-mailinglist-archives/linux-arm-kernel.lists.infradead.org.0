@@ -2,92 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE36018F160
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:04:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01E3918F167
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:05:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eneqxnoQTbmUz3Xg73KBTRK66Te+G5ZkhK9XUVEs+wQ=; b=cNloLrffZvtJN9lHUvzr0hzwEy
-	lPF/28V3wuJw6ezsvxzhrGMq32AO+W2ijt1Kdtvd/4aGE5PXmBxbu5SNT3UVCCMok+pNY7Am2/xbF
-	Rd3ukFh+JE7bD4Tl94595j2r8raXID3dmjgKDPIavgyHuWf4e/+80D8XzTKGz1YdMH7NPj/y004z0
-	G+64CjAIYMPyjMMJIA0JXjmzAy9fq6rQEm04aBZMhXAwqccrUk2OmCAj+AS1d/zmJER4ooJLHCKvD
-	JmcDrksmYiUKFBNTKumWs4CtGbzYHvbWZRlGGmqYtmCcF+09U5mIJrDROQixRUOiTVJNnTpVKBNkg
-	ppXTYo1A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FAjPkZgmkBP+EJ8PW3B4rObTmkjKNPuqVQ+S4BzKWco=; b=OU6qmJmB4ZOwkQ
+	+hwdZ1NgWHFCjJPw0LmvKJJPOin8teUr+bjYcoeNI02F5FUBXEc7fNzgTRU3e91cYy/GfFsthwPKG
+	qfJMiNlLLz6LuES8VaoYnYTUAAUOPw4HiiYd+jTh2UBZwWFV8Xoh2yMan1xAQL0y4sf00h57NQ+R6
+	2f6a36vxcts7GO5lpmabnahXkN1RDBPs7ZlTiVSvtuaQmI4b8kUuJO5enyLg75scsiQ8hvZI6CAzl
+	FJLbVhY4Y6k4GGrP8rzEIWpQoLaOpwyrWFJC2Eh/kZ4tizZMA78p0+LY2ypNqGCuniSY6hT8YwXkf
+	4RRF964b6apcSwm5G++Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJ0J-0004er-BY; Mon, 23 Mar 2020 09:04:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jGJ1p-0006CR-W9; Mon, 23 Mar 2020 09:05:50 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJ03-0004e9-6F
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:04:01 +0000
-Received: by mail-wm1-x344.google.com with SMTP id b12so677026wmj.3
+ id 1jGJ1h-0006BX-NP
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:05:43 +0000
+Received: by mail-lj1-x243.google.com with SMTP id i20so1561000ljn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 02:03:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=lPutVzS3Ynb1eSmgIsa4JmohPw4ZclRrh1KFVq8nWQ0=;
- b=waSIN8+ApYqW/LXnPGRL/NvneWe4/UMrJ9lHgLm+ihlGugDYOwJ6NZkrFpWxvP6MC8
- GNsIhdx1sE0PQNevvLnFU8JLGhBZQCcM2iuXOWZHDd6af+85XDnWTjRVbwkVfZgA6PeF
- l0e1vdhqnc8FBwWg8vUGp27gtAkcfvVU/5tktj+zX+p8+lBs6MC90BoMyIOLPH2MhaTo
- 45RTZrMkvxEjep4JO6e+BufQZJamczxfLM8nme9e6rCkqkb9C0FBnOjVf9PxprElx5Zj
- rmrlPd6yS7hTFWmy4oW4XCTX9u6yeSNaotUzdicCYqM0JaLIz/ug+LCBJ9x1OWwCwopN
- OKDA==
+ Mon, 23 Mar 2020 02:05:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=UeQUAcdMZxn26RtbUmldtq49KvGfHbMzwTxg6ahzu8Q=;
+ b=gj67rIhc9xmtkaXHqF2aKuKpPzYsq6nRprfC6gX/IIfe2bFxncqRx4LENZfh1WRp3Q
+ OD6IItiqpkArFZmgK3PCQKt0vuhkduXH9aRT1J30TeWACtsHmjVjB+jefTtkmyXe/svS
+ IUOwswoEXf+4gP8/NR1KJqeG6PZs1vnX1Q6KI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=lPutVzS3Ynb1eSmgIsa4JmohPw4ZclRrh1KFVq8nWQ0=;
- b=AU4k8YGEy+bUGtDu/5PUB+MhbJqMo+5WfKpbhjLLAD0nBdlTEciLUgqzNrC2X420Qr
- p4gc4rwN56v417w9xpTCLqqide3Q/sRfc4MYWK7JNwpPOh0KKBT0rQiLjrL3bdFm5t6I
- OwXi7mzfJSEZIiRXxhhm8xaioXmbUfKqrjjWHSkObP6h6iaxH6o8S2jioiJ0Z5RrSCxB
- 20w/NS/SU8hdoerSHgJkeIZHoFw3aaJUtEGgrBFq49jQX6iFwN0Q+R/ElPTGZExsZmnh
- NIm2k0CK+0RDQ9wbPEpAbDEHnZjOICYxWfJFgZnbZOPCJZTC4K5fJhjhwCW6obcO8dk0
- bj8w==
-X-Gm-Message-State: ANhLgQ0Hk/6AL6iVdHq/jpSZPP9yHZtcRAkqox/wlppXqLshMLOoDQuW
- M1voVfEHd1MfhBq6nxnBn+ScXw==
-X-Google-Smtp-Source: ADFU+vta0fIyRtESZphpxuC88pwvr1xjRflNRJ4U+UNesyEuY+m+xd0K3+8cVkrJCyM2KNvZ6DRGtA==
-X-Received: by 2002:a1c:b144:: with SMTP id a65mr27313095wmf.54.1584954237568; 
- Mon, 23 Mar 2020 02:03:57 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id f15sm22881505wru.83.2020.03.23.02.03.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 02:03:56 -0700 (PDT)
-References: <20200302125310.742-1-linux.amoon@gmail.com>
- <20200302125310.742-3-linux.amoon@gmail.com> <7hlfoir8rj.fsf@baylibre.com>
- <CAFBinCB2WXZNRg4wdFD0RJ5k4hHqcfAOCHemvHzZE42-Mo5vzA@mail.gmail.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: Re: [PATCHv2 2/2] clk: meson: g12a: set cpub_clk flags to
- CLK_IS_CRITICAL
-In-reply-to: <CAFBinCB2WXZNRg4wdFD0RJ5k4hHqcfAOCHemvHzZE42-Mo5vzA@mail.gmail.com>
-Date: Mon, 23 Mar 2020 10:03:55 +0100
-Message-ID: <1jr1xjcuis.fsf@starbuckisacylon.baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=UeQUAcdMZxn26RtbUmldtq49KvGfHbMzwTxg6ahzu8Q=;
+ b=Ej8fmLgBgZIPx+dv2UxGzNnhYkMOV+AoZqlZlw7fu0uXgG5A72zvVAalYpzSeC0hcP
+ QSjJ8yLNLC2Tk9d0+l69kLjgoUlAaAAfNepjam6Gr0egvM9HYtU2N1c4ZLycFS4p6a8d
+ a2fm8j9JLPQapLfIY8xFUZpVMwmi0GWuoyH7i1FVWcTf8c0T2jEUMPSz+nLQyOnfP0ga
+ dpuaTZP2uAW79VLzgeJERftfa3Zu2cNSy1ih5Mnxg1cAG/4a1pOvlM7lwk1mAmrYCXgy
+ y+s5riJwstQBdgCZGEfCkF2RTxedlW3he+noyLsBAhTUtHoGbSegjZQiVCd2xZ6WcWH7
+ e2Iw==
+X-Gm-Message-State: ANhLgQ0KPA1DW15ynjWyLgCEp5/CfEWARXPjjO7N2GBcqYfuJ5CSsLoJ
+ tz0C8w/jbyIYy8VLHXdB+O/0H11R3GUQ3IZHvC/vYQ==
+X-Google-Smtp-Source: ADFU+vsThDf7qqsHDVU9kt7C92bwqzK+m2HTPz3VsgWRN3a2xVl/c7U7hQNsOxfPHdo8nHSIOPur05m8x4B3/bbbdgs=
+X-Received: by 2002:a2e:a483:: with SMTP id h3mr8739201lji.264.1584954338871; 
+ Mon, 23 Mar 2020 02:05:38 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200323065318.16533-1-rayagonda.kokatanur@broadcom.com>
+ <20200323065318.16533-2-rayagonda.kokatanur@broadcom.com>
+ <20200323082540.2gvbbxtwadvzeeos@pengutronix.de>
+In-Reply-To: <20200323082540.2gvbbxtwadvzeeos@pengutronix.de>
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+Date: Mon, 23 Mar 2020 14:35:27 +0530
+Message-ID: <CAHO=5PFBcgmnpA8D6prEo4WCu235Mr9jh8=_Y6pdM8R9=ShfXw@mail.gmail.com>
+Subject: Re: [PATCH v1 1/2] pwm: bcm-iproc: handle clk_get_rate() return
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_020359_228869_629E2E35 
-X-CRM114-Status: GOOD (  19.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200323_020541_772572_DD44867D 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,79 +91,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, Anand Moon <linux.amoon@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+Cc: linux-pwm@vger.kernel.org, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On Fri 20 Mar 2020 at 00:39, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
-
-> Hi Kevin,
->
-> On Mon, Mar 2, 2020 at 6:01 PM Kevin Hilman <khilman@baylibre.com> wrote:
-> [...]
->> > updating flags to CLK_IS_CRITICAL which help enable all the parent for
->> > cpub_clk.
->>
->> With current mainline, I've tested DVFS using CPUfreq on both clusters
->> on odroid-n2, and both clusters are booting, so I don't understand the
->> need for this patch.
-> I *think* there is a race condition at kernel boot between cpufreq and
-> disabling orphaned clocks
-> I'm not sure I fully understand it though and I don't have any G12B
-> board to verify it
->
-> my understanding is that u-boot runs Linux off CPU0 which is clocked by cpub_clk
-> this means we need to keep cpub_clk enabled as long as Linux wants the
-> CPU0 processor to be enabled (on 32-bit ARM platforms that would be
-> smp_operations.cpu_{kill,die})
-> cpufreq does not call clk_prepare_enable on the CPU clocks so this
-> means that the orphaned clock cleanup mechanism can disable it "at any
-> time",
-
-If nothing calls enable the cpu clock while it is managed by Linux
-(cpufreq), there might something worth fixing. Adding CLK_IS_CRITICAL
-will mask an issue that is still not explained.
-
-"at any time": absolutely not.
-Disabling unused clocks, is done only once, at during the late_init
-stage.
-
-If your clock gets disabled later on, it means it has been turned on and
-off by another driver (possibly due to probe deferral)
-
-> killing everything running on CPU0 and CPU1 (which are both
-> clocked by cpub_clk)
->
-> I have no explanation why this depends on booting from SD or eMMC.
->
-> for the 32-bit SoCs we have CLK_IS_CRITICAL on the CPU clock as well
-> since commit 0dad1ec65bc30a
-> on G12A we have CLK_IS_CRITICAL on the sys_pll clocks, however my
-> understanding is that cpub_clk could also be fed by one of the
-> fixed_pll derived clocks (which have a gate as well, which may or may
-> not be turned off by the orphaned clock cleanup - that is pure
-> speculation from my side though).
-
-Yes there are other critical clocks on Amlogic, mostly because the SCP Fw
-driver does not claim the clocks it depends on. At least we know why
-this flag is set and there should be a comment associated with it.
-
-ATM, the issue reported by Anand (anyone else ?) is not explained. 
-
->
->
-> Martin
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXIgMjMsIDIwMjAgYXQgMTo1NSBQTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
+bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IE9uIE1vbiwgTWFyIDIzLCAyMDIw
+IGF0IDEyOjIzOjE3UE0gKzA1MzAsIFJheWFnb25kYSBLb2thdGFudXIgd3JvdGU6Cj4gPiBIYW5k
+bGUgY2xrX2dldF9yYXRlKCkgcmV0dXJuaW5nIDw9IDAgY29uZGl0aW9uIHRvIGF2b2lkCj4gPiBw
+b3NzaWJsZSBkaXZpc2lvbiBieSB6ZXJvLgo+Cj4gV2FzIHRoaXMgbm90aWNlZCBkdXJpbmcgYSBy
+ZXZpZXcgYW5kIGlzIG1vcmUgdGhlb3JldGljLiBPciBkb2VzIHRoaXMKPiAoZGVwZW5kaW5nIG9u
+IHByZS1ib290IHN0YXRlKSByZXN1bHQgaW4gYSBrZXJuZWwgY3Jhc2g/CgpUaGlzIGlzIHJlcG9y
+dGVkIGJ5IGludGVybmFsIGNvdmVyaXR5IHRvb2wuCj4KPiA+IEZpeGVzOiBkYWE1YWJjNDFjODAg
+KCJwd206IEFkZCBzdXBwb3J0IGZvciBCcm9hZGNvbSBpUHJvYyBQV00gY29udHJvbGxlciIpCj4g
+PiBTaWduZWQtb2ZmLWJ5OiBSYXlhZ29uZGEgS29rYXRhbnVyIDxyYXlhZ29uZGEua29rYXRhbnVy
+QGJyb2FkY29tLmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvcHdtL3B3bS1iY20taXByb2MuYyB8
+IDMyICsrKysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQs
+IDE5IGluc2VydGlvbnMoKyksIDEzIGRlbGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9k
+cml2ZXJzL3B3bS9wd20tYmNtLWlwcm9jLmMgYi9kcml2ZXJzL3B3bS9wd20tYmNtLWlwcm9jLmMK
+PiA+IGluZGV4IDFmODI5ZWRkOGVlNy4uOGJiZDJhMDRmZWFkIDEwMDY0NAo+ID4gLS0tIGEvZHJp
+dmVycy9wd20vcHdtLWJjbS1pcHJvYy5jCj4gPiArKysgYi9kcml2ZXJzL3B3bS9wd20tYmNtLWlw
+cm9jLmMKPiA+IEBAIC05OSwxOSArOTksMjUgQEAgc3RhdGljIHZvaWQgaXByb2NfcHdtY19nZXRf
+c3RhdGUoc3RydWN0IHB3bV9jaGlwICpjaGlwLCBzdHJ1Y3QgcHdtX2RldmljZSAqcHdtLAo+ID4g
+ICAgICAgZWxzZQo+ID4gICAgICAgICAgICAgICBzdGF0ZS0+cG9sYXJpdHkgPSBQV01fUE9MQVJJ
+VFlfSU5WRVJTRUQ7Cj4gPgo+ID4gLSAgICAgdmFsdWUgPSByZWFkbChpcC0+YmFzZSArIElQUk9D
+X1BXTV9QUkVTQ0FMRV9PRkZTRVQpOwo+ID4gLSAgICAgcHJlc2NhbGUgPSB2YWx1ZSA+PiBJUFJP
+Q19QV01fUFJFU0NBTEVfU0hJRlQocHdtLT5od3B3bSk7Cj4gPiAtICAgICBwcmVzY2FsZSAmPSBJ
+UFJPQ19QV01fUFJFU0NBTEVfTUFYOwo+ID4gLQo+ID4gLSAgICAgbXVsdGkgPSBOU0VDX1BFUl9T
+RUMgKiAocHJlc2NhbGUgKyAxKTsKPiA+IC0KPiA+IC0gICAgIHZhbHVlID0gcmVhZGwoaXAtPmJh
+c2UgKyBJUFJPQ19QV01fUEVSSU9EX09GRlNFVChwd20tPmh3cHdtKSk7Cj4gPiAtICAgICB0bXAg
+PSAodmFsdWUgJiBJUFJPQ19QV01fUEVSSU9EX01BWCkgKiBtdWx0aTsKPiA+IC0gICAgIHN0YXRl
+LT5wZXJpb2QgPSBkaXY2NF91NjQodG1wLCByYXRlKTsKPiA+IC0KPiA+IC0gICAgIHZhbHVlID0g
+cmVhZGwoaXAtPmJhc2UgKyBJUFJPQ19QV01fRFVUWV9DWUNMRV9PRkZTRVQocHdtLT5od3B3bSkp
+Owo+ID4gLSAgICAgdG1wID0gKHZhbHVlICYgSVBST0NfUFdNX1BFUklPRF9NQVgpICogbXVsdGk7
+Cj4gPiAtICAgICBzdGF0ZS0+ZHV0eV9jeWNsZSA9IGRpdjY0X3U2NCh0bXAsIHJhdGUpOwo+ID4g
+KyAgICAgaWYgKHJhdGUgPT0gMCkgewo+ID4gKyAgICAgICAgICAgICBzdGF0ZS0+cGVyaW9kID0g
+MDsKPiA+ICsgICAgICAgICAgICAgc3RhdGUtPmR1dHlfY3ljbGUgPSAwOwo+ID4gKyAgICAgfSBl
+bHNlIHsKPiA+ICsgICAgICAgICAgICAgdmFsdWUgPSByZWFkbChpcC0+YmFzZSArIElQUk9DX1BX
+TV9QUkVTQ0FMRV9PRkZTRVQpOwo+ID4gKyAgICAgICAgICAgICBwcmVzY2FsZSA9IHZhbHVlID4+
+IElQUk9DX1BXTV9QUkVTQ0FMRV9TSElGVChwd20tPmh3cHdtKTsKPiA+ICsgICAgICAgICAgICAg
+cHJlc2NhbGUgJj0gSVBST0NfUFdNX1BSRVNDQUxFX01BWDsKPiA+ICsKPiA+ICsgICAgICAgICAg
+ICAgbXVsdGkgPSBOU0VDX1BFUl9TRUMgKiAocHJlc2NhbGUgKyAxKTsKPiA+ICsKPiA+ICsgICAg
+ICAgICAgICAgdmFsdWUgPSByZWFkbChpcC0+YmFzZSArIElQUk9DX1BXTV9QRVJJT0RfT0ZGU0VU
+KHB3bS0+aHdwd20pKTsKPiA+ICsgICAgICAgICAgICAgdG1wID0gKHZhbHVlICYgSVBST0NfUFdN
+X1BFUklPRF9NQVgpICogbXVsdGk7Cj4gPiArICAgICAgICAgICAgIHN0YXRlLT5wZXJpb2QgPSBk
+aXY2NF91NjQodG1wLCByYXRlKTsKPiA+ICsKPiA+ICsgICAgICAgICAgICAgdmFsdWUgPSByZWFk
+bChpcC0+YmFzZSArCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgSVBST0NfUFdNX0RV
+VFlfQ1lDTEVfT0ZGU0VUKHB3bS0+aHdwd20pKTsKPiA+ICsgICAgICAgICAgICAgdG1wID0gKHZh
+bHVlICYgSVBST0NfUFdNX1BFUklPRF9NQVgpICogbXVsdGk7Cj4gPiArICAgICAgICAgICAgIHN0
+YXRlLT5kdXR5X2N5Y2xlID0gZGl2NjRfdTY0KHRtcCwgcmF0ZSk7Cj4gPiArICAgICB9Cj4KPiBU
+aGUgY2hhbmdlIGxvb2tzIGZpbmUuCj4KPiBCZXN0IHJlZ2FyZHMKPiBVd2UKPgo+IC0tCj4gUGVu
+Z3V0cm9uaXggZS5LLiAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgVXdlIEtsZWluZS1Lw7Zu
+aWcgICAgICAgICAgICB8Cj4gSW5kdXN0cmlhbCBMaW51eCBTb2x1dGlvbnMgICAgICAgICAgICAg
+ICAgIHwgaHR0cHM6Ly93d3cucGVuZ3V0cm9uaXguZGUvIHwKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
