@@ -2,96 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9161718F24E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:01:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1238718F296
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:20:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IdXeEpJLGferq8e1KC+n/21Sz7z7lMZClVDIlUUSJqo=; b=ctulf4RJVMrhp4E1UauawtNBs
-	ENadeFOG69W3dfeZyjxlEhMH/WEBdL6oLq1muyCDfei6x3tmiJM0qeEEKCiwT2Yr8Y3z4ksomF6Gd
-	16jbnz6P1Ka1DU2h5M5gDKvm5cr75pe4rhVevLZwX38X/wqEQCI/xffKOZtDdwC+63zgwfhl3fSqN
-	9rpwOwyYWaen4KuOUM+ucxJQN2JZqTh1cHgVHOauz6a7FKRCAslSiDoKQBXRT5uIFzC6hLStqk7v9
-	7AIWYHMe/hFk0tEfJLjuh/6yRFOo8r3vUp0LtKMi6NnEXl3RvVmB4+c+D3w4VjipVAoAWkZ6Ef6Hg
-	gtkAmRnTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N7u8WzsERe3KGQMtZwxQtP+/eMl1EqgRfeDpvsRjHE4=; b=QePxoHLdPKBV/3
+	qM62xl2wkbie5Grn8fU0kPCvxw4GK1DvBP8HUtvpWUNbYX6eHhLRlqRKT/ANd6k/Augy+ABhtaf/a
+	WySAX0i6UQcH7xElFAPKrDHX2SRRRJPaKj14ubVE0/RmCMruNDTWVO579HZKqrsle44Ls02gGnAXs
+	CwgvlDCIXrKgBFOP4kuEDhe2uvDYJNBEeJG9Bxljfjnqu2VB0vUevfKAB8vkgyNEakxSYYKQfTrYs
+	ygrR/CC8MUDxBiqIAFaHmsxqSt6hMCCxlqBf7CHVFo8zAIvhUvTpAMgheo6XWj4jrciuIKEiKD24N
+	n8V2gJYm5x4v7MBf1SXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJti-0006H4-Ff; Mon, 23 Mar 2020 10:01:30 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1jGKC2-0004xF-A6; Mon, 23 Mar 2020 10:20:26 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJtZ-0006G8-Q9
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:01:23 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id A8F83580412;
- Mon, 23 Mar 2020 06:01:16 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 23 Mar 2020 06:01:16 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=/WvqdoYz5hLKl3XQDGdtoCAHQbJ
- /DVnk5Lp+j1NoVJE=; b=KBhRMnztT4+zGwbGOT27ZJcocQCf5IbbatGFS2Ix4AK
- i7UqTad3VvN9/BxpXfO1/bLnSWq4tnWdMsCVs3vVE+hYxxREvS4uajvOs5mDJWwx
- wF4W9E4hScT+Ry9Py2bipyjor1hy2Ne5/qi22p/uazJhi5gHiEF6XdSHVASfEmnr
- RWEVl9oR7kbGQTXTmq5RDMqH1YQnuVWwO4Y/ORqOs1ZovzK+R1gZuvhXH13hMTAb
- 041VhBrMmMvCCquYaWoH55EBYM6YOQHkkX01cnct9CSBQav7+LWRoI4DskoUI5HS
- Lx5sxxY2UQztjdFTJOfB0O0ESqHlqA5I39100sQP6rw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=/Wvqdo
- Yz5hLKl3XQDGdtoCAHQbJ/DVnk5Lp+j1NoVJE=; b=1smXx7hqCAppWfSH8INChc
- YQlJcPEg6EaCt+52hhKKFwg/NHLcjvUuvCNrrlxh2vVyRg4S7qFY+EVhiLTZEfLq
- wI8q28R+egn8YoNtK5L5eQH/ow9D4naTWg59HjwiwKiVpvIqP+llEAguk8gh48Oy
- f8YJV0paTKAc5+VnBBAnfsbGcN9UQsStV+wAV/QV4RifgXdTu97ersaCqT9OMv9M
- AeIolZ3t2PihtRWKLXa6FJA552COQdyXb4XBs73dPgY4U+G/LtG/iQd/KBEbnQtK
- oFVIpMheYYHWr8hva72DenuJ/0oDhomLox0/Up2IYVKf5Wy2PlghWYQB0Y74Ks3Q
- ==
-X-ME-Sender: <xms:54h4XrziilQ979XEEhoaeyyofL9igG3NuXqU2XjQUhKd_Vcw5gYbKA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudegkedgudduucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:54h4Xrko6pOn_bmge1a73E1F0VmZP_VNmHU1_i1Pz-qcng4k0XGuNg>
- <xmx:54h4XvUTPNd-RbEAQ3X9l38Ep1FUnvVJGOHoRgUqP5QcREhM7BFfmQ>
- <xmx:54h4XjWHxpNML3VV6lX08dN6aRcjHpTELuak6RjodvjD6suT4ZVJBQ>
- <xmx:7Ih4XpIBrcNGc3zZckpXGzpxM9HhuDaoqrON_j7rJ1hUdkSs2lD0BQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id CF1B8328005D;
- Mon, 23 Mar 2020 06:01:10 -0400 (EDT)
-Date: Mon, 23 Mar 2020 11:01:09 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Sergey.Semin@baikalelectronics.ru
-Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
-Message-ID: <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
-References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
- <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+ id 1jGKBu-0004w6-BE
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:20:20 +0000
+Received: by mail-wr1-x442.google.com with SMTP id m17so7286148wrw.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 03:20:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:subject:to:cc:autocrypt:organization:message-id:date
+ :user-agent:mime-version:content-language:content-transfer-encoding;
+ bh=pqTwcVJcx5MXKaIXGk1znnjJLU58wAuX4OU0qM4Zs48=;
+ b=RF/e1HrHPkkC8/FNbhFIA8Kr/GXaa6pLBehUNB2tRl+01Z6aDNppeMB0Sz/pPzRURE
+ SKdKXhjO7xB1VT6jyU2Uf4PnBagsgsVUIIciW5MA3GAK1byNCRardwH5rh4zJzPpKQts
+ YIIFUOoLwU/bWvOR0ZwTUP/osj3hGXSHs9k+PXbd1MIj5MEPgBdgJ6RG9GRMl66tk5x/
+ +fH4+eUj6mX0DN0famwNC6BakQDozPuAso1hG6n+j4BgpBjoMXuEkOKLTYxfl3yiEkmU
+ N2H82YFmPSjCd+hCrv7uPerOm9LlddhGYhwGJkULuXPlecSyAhGrpq9RKvWpCEL2v7eh
+ shkg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:autocrypt:organization
+ :message-id:date:user-agent:mime-version:content-language
+ :content-transfer-encoding;
+ bh=pqTwcVJcx5MXKaIXGk1znnjJLU58wAuX4OU0qM4Zs48=;
+ b=Y/Kv/zqqgeZXhuoEbHwnHCtz4C/yFqQ3b3eNz1Agp5eUnb+J5YnmyAN5s8j3IB4q//
+ wpyFveRfOL6fE631x4GFa2E00OaGAx+ucMm+w4LgDg9TjLq8ZcF+CRDMFqNdkAJQ5IXJ
+ M72bB+7WIzFgX7ORE8aMfSvlaOauS6/1LVaPDqntk63vQaFIDLVQCJ3W9TEotcVqwxxJ
+ M9aXLATxzqRFJgQfUqxJ17Z2lczOGk3Sz36q5hz85jmew43iM1ZHWNBbBAaQBqMhf503
+ KRdFIgpVNJ/B6B61VSPBVkcOnzgY5ByvroFE+9ScARil6tqOPbEe4jtnwTb1/wy+mIsa
+ xrRw==
+X-Gm-Message-State: ANhLgQ3mpNmrTgW28mgimIZnpTpqTFL5UOquUfuNMRako7mO9GPML/RO
+ O8XFu/l9sNyqVpaLVIkhpZwOD5PKaaTb7A==
+X-Google-Smtp-Source: ADFU+vtrLfQbo78F7b/oy1N+fc3rqyvQtTDLUmNaQCH56WBsxR2Z5siiDKkvMXXlRCcMKV/BfBxsnw==
+X-Received: by 2002:a5d:4cc2:: with SMTP id c2mr29656837wrt.398.1584958814030; 
+ Mon, 23 Mar 2020 03:20:14 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
+ ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
+ by smtp.gmail.com with ESMTPSA id v7sm22025378wml.18.2020.03.23.03.20.13
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 23 Mar 2020 03:20:13 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+Subject: [GIT PULL] oxnas fixes for 5.6
+To: soc@kernel.org, arm@kernel.org
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <1cc83d6b-78de-9160-59bf-77cfe726a365@baylibre.com>
+Date: Mon, 23 Mar 2020 11:20:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_030122_173786_5AC5C4E3 
-X-CRM114-Status: GOOD (  33.33  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200323_032018_439979_B78B213E 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,194 +145,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Serge Semin <fancer.lancer@gmail.com>, Will Deacon <will@kernel.org>,
- linux-clk@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
- Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
- Chen-Yu Tsai <wens@csie.org>,
- Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
- Jiri Slaby <jslaby@suse.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- linux-serial@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
- Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
-Content-Type: multipart/mixed; boundary="===============8943311647981320459=="
+Cc: linux-oxnas@groups.io, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============8943311647981320459==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="sxpqz3afj6jojk4c"
-Content-Disposition: inline
-
-
---sxpqz3afj6jojk4c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
 Hi,
 
-On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
-> From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
->
-> There are races possible in the dw8250_set_termios() callback method
-> and while the device is in PM suspend state. A race condition may
-> happen if the baudrate clock source device is shared with some other
-> device (in our machine it's another DW UART port). In this case if that
-> device changes the clock rate while serial console is using it the
-> DW 8250 UART port might not only end up with an invalid uartclk value
-> saved, but may also experience a distorted output data since baud-clock
-> could have been changed. In order to fix this lets enable an exclusive
-> reference clock rate access in case if "baudclk" device is specified.
->
-> So if some other device also acquires the rate exclusivity during the
-> time of a DW UART 8250 port being opened, then DW UART 8250 driver
-> won't be able to alter the baud-clock. It shall just use the available
-> clock rate. Similarly another device also won't manage to change the
-> rate at that time. If nothing else have the exclusive rate access
-> acquired except DW UART 8250 driver, then the driver will be able to
-> alter the rate as much as it needs to in accordance with the currently
-> implemented logic.
->
-> Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-> Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
-> Cc: Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>
-> Cc: Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
-> Cc: Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>
-> Cc: Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>
-> Cc: Vadim Vlasov <V.Vlasov@baikalelectronics.ru>
-> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-> Cc: Paul Burton <paulburton@kernel.org>
-> Cc: Ralf Baechle <ralf@linux-mips.org>
-> Cc: Maxime Ripard <mripard@kernel.org>
-> Cc: Chen-Yu Tsai <wens@csie.org>
-> CC: Ray Jui <rjui@broadcom.com>
-> Cc: Scott Branden <sbranden@broadcom.com>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Wei Xu <xuwei5@hisilicon.com>
-> Cc: Jason Cooper <jason@lakedaemon.net>
-> Cc: Andrew Lunn <andrew@lunn.ch>
-> Cc: Gregory Clement <gregory.clement@bootlin.com>
-> Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-> Cc: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
->
-> ---
->
-> Changelog v2:
-> - Move exclusive ref clock lock/unlock precudures to the 8250 port
->   startup/shutdown methods.
-> - The changelog message has also been slightly modified due to the
->   alteration.
-> - Remove Alexey' SoB tag.
-> - Cc someone from ARM who might be concerned regarding this change.
-> - Cc someone from Clocks Framework to get their comments on this patch.
-> ---
->  drivers/tty/serial/8250/8250_dw.c | 36 +++++++++++++++++++++++++++++++
->  1 file changed, 36 insertions(+)
->
-> diff --git a/drivers/tty/serial/8250/8250_dw.c b/drivers/tty/serial/8250/8250_dw.c
-> index aab3cccc6789..08f3f745ed54 100644
-> --- a/drivers/tty/serial/8250/8250_dw.c
-> +++ b/drivers/tty/serial/8250/8250_dw.c
-> @@ -319,6 +319,40 @@ static void dw8250_set_ldisc(struct uart_port *p, struct ktermios *termios)
->  	serial8250_do_set_ldisc(p, termios);
->  }
->
-> +static int dw8250_startup(struct uart_port *p)
-> +{
-> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
-> +
-> +	/*
-> +	 * Some platforms may provide a reference clock shared between several
-> +	 * devices. In this case before using the serial port first we have to
-> +	 * make sure nothing will change the rate behind our back and second
-> +	 * the tty/serial subsystem knows the actual reference clock rate of
-> +	 * the port.
-> +	 */
-> +	if (clk_rate_exclusive_get(d->clk)) {
-> +		dev_warn(p->dev, "Couldn't lock the clock rate\n");
-> +	} else if (d->clk) {
-> +		p->uartclk = clk_get_rate(d->clk);
-> +		if (!p->uartclk) {
-> +			clk_rate_exclusive_put(d->clk);
-> +			dev_err(p->dev, "Clock rate not defined\n");
-> +			return -EINVAL;
-> +		}
-> +	}
-> +
-> +	return serial8250_do_startup(p);
-> +}
+Long time no see, but upstream is still a base for Oxnas OpenWRT support, and
+hopefully we got a couple of fixes last week, so it's not dead yet !
 
-I've been facing that issue, so it would be great to get it fixed, but
-I'm not sure this is the right solution.
+Neil
 
-clk_rate_exclusive_get is pretty intrusive, and due to the usual
-topology of clock trees, this will lock down 3-4 parent clocks to
-their current rate as well. In the Allwinner SoCs case for example,
-this will lock down the same PLL than the one used by the CPU,
-preventing cpufreq from running.
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
-However, the 8250 has a pretty wide range of dividers and can adapt to
-any reasonable parent clock rate, so we don't really need to lock the
-rate either, we can simply react to a parent clock rate change using
-the clock notifiers, just like the SiFive UART is doing.
+  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
 
-I tried to do that, but given that I don't really have an extensive
-knowledge of the 8250, I couldn't find a way to stop the TX of chars
-while we change the clock rate. I'm not sure if this is a big deal or
-not, the SiFive UART doesn't seem to care.
+are available in the Git repository at:
 
-Maxime
+  git://git.kernel.org/pub/scm/linux/kernel/git/narmstrong/linux-oxnas.git tags/oxnas-arm-soc-dt-fixes-for-5.6
 
---sxpqz3afj6jojk4c
-Content-Type: application/pgp-signature; name="signature.asc"
+for you to fetch changes up to deeabb4c1341a12bf8b599e6a2f4cfa4fd74738c:
 
------BEGIN PGP SIGNATURE-----
+  ARM: dts: oxnas: Fix clear-mask property (2020-03-23 09:34:09 +0100)
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXniI5AAKCRDj7w1vZxhR
-xaAzAP9ZTOKvBcrPgQQ/+/TFF/Xyv1hvtNQylv3vEF/K9DeEuQEAjtCTjoyYyltZ
-86dRkGN6b2RHWNb6uaZbW0Kr/LH/4wE=
-=AtVK
------END PGP SIGNATURE-----
+----------------------------------------------------------------
+- interrupt controller mask init fix to avoid spurious irq after soft reset
 
---sxpqz3afj6jojk4c--
+----------------------------------------------------------------
+Sungbo Eo (1):
+      ARM: dts: oxnas: Fix clear-mask property
 
-
---===============8943311647981320459==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ arch/arm/boot/dts/ox810se.dtsi | 4 ++--
+ arch/arm/boot/dts/ox820.dtsi   | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8943311647981320459==--
-
