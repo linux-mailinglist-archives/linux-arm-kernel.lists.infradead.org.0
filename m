@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7DDF18FDCA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:38:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF8FE18FDD9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:41:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QTjjxsDQXs1Zl+XUXdeJaypnY4GXg//vytSkkeNmO2o=; b=NUcMKcI3NKk/L6
-	CfcJ0MdKRfh5cx/rS7zfnegbSIQzKegs5P1m/RlxoEM1jeNTBx+k0lnjq2e4vtlPgEj9cRp3kQb+z
-	lt+2Y6XFIRrru0GHTDisdH2JlQvISEoU77fz1c7y3N47+3s7Cz6tJgBtWubgghvZmc0l51+r/iJMk
-	itiRcbDFajxpMJUAWPyIstP4EdLjHukRWyqiUju08k/9sUl7jhMae58JePntiVevOB4Zc3yZEu10n
-	XEYdWzzQ6ZnxdH01iMjU8RAMaeClB8sBO8g3x1YOmZM4j+g3/yDhh5kVh++SxEWhg5LyPcw9KRQ8W
-	no+LJg1Z7Kkb36VtDAFw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W6eLPZ/kp5QOrTIKv0inbDLPHBXMW8HfIbLDSj5AGL8=; b=L1U3CpdvrTqH8E
+	HUtzI76SkK5QK0PySJiWZIykufxoQk8w3RjTBINS8EU5Ql9DXW+q7QkRB3zVMUxO2lfyQjEEVwcyX
+	CJdysg0+DVYWtNbYLp0UI7fmf9c9auDoy+RwzEQrnvXtow2ZZAX55TT9bZeeGwLYrfWocW4lFUT+0
+	dU3ihZEEhr9ZNiPP0CGrIIGUURF4V2mTQbxpnHwtyrowJZO/6/z1AkPVLy7hSl/zYt3G+vgGgeKEx
+	QHpX8VSIUC5nJvXyreCWp3ZdZ+6rhSlrP16aBnYOI+fATrnMqy8AiKCaLfOop+ATmp+bBCXNXmVie
+	zePIA0JaUet0LpSVjdNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGStr-0002yk-Fz; Mon, 23 Mar 2020 19:38:15 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jGSxC-0004h6-P9; Mon, 23 Mar 2020 19:41:42 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGStb-0002xV-3l
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:38:01 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48mPmh58Qkz1rrKb;
- Mon, 23 Mar 2020 20:37:56 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48mPmh3dmXz1qyDd;
- Mon, 23 Mar 2020 20:37:56 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id la4VWb-ZJ090; Mon, 23 Mar 2020 20:37:55 +0100 (CET)
-X-Auth-Info: 2HAWIBbYvus5V2XKLd5HdN0JKCCAwwqp/nMJ0D/R/6c=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Mon, 23 Mar 2020 20:37:55 +0100 (CET)
-Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
- gpio irq chip
-To: Marc Zyngier <maz@kernel.org>
-References: <20200219143229.18084-1-alexandre.torgue@st.com>
- <20200219143229.18084-3-alexandre.torgue@st.com>
- <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
- <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
- <a7fc5e43-34c2-a4e6-e0c5-1584f17fb024@denx.de>
- <8d6f6646-56e4-5218-9990-f0c96862dc83@denx.de> <20200323193157.038f36f9@why>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <8e2795d8-4a8b-35a7-7d3f-e24d011878f6@denx.de>
-Date: Mon, 23 Mar 2020 20:37:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jGSx0-0004fw-OX; Mon, 23 Mar 2020 19:41:32 +0000
+Received: by mail-il1-f196.google.com with SMTP id h3so14539131ils.3;
+ Mon, 23 Mar 2020 12:41:30 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wZqIgGpvp/4WvbCX5pHBFK/yoCSdaoYyZWmUWDi0I6w=;
+ b=JYWLP12mS9qt3UnLekspazMRJwuHCJDlyXGLsy9ol+VviKHixs5zrHQITuSgxg1Eys
+ xP7CLsUR5s3m9b8QcwOHycCJgglEzY061wz8vmnQVTH73aDPERhf9XeBPxWQEQ293sfE
+ TOILuq4ahBe7UN+Z+e3p8592by5KlAh+4h0ogc45ZvML1q0KdECotJU5Ob+UPOZA6W3F
+ cv8FDxLrCptolEXs14fk2NS7KVO463y3KE0kK9KKU8nnQaCafNfucjG4engwJmmOiqaX
+ RUD/jp0uvkdWh0Fotssw2AmU52N9k651oEjHf+havNk50hZ80hkuSoxKwQQcW/tpDZGv
+ 1alg==
+X-Gm-Message-State: ANhLgQ0LYpzGStQhMuETC5woPuvrJId5kWS78qjecxwX+QdI+zgSK3+5
+ C4PZ7mkOyrGrRyt0GJIh1Q==
+X-Google-Smtp-Source: ADFU+vvGYTk0BRk7h8eRIHfK7+xZWKAn2MCIiE63wBii1saw9W0SBjLLJ/OUebYGdQPaJwZK8SFAlw==
+X-Received: by 2002:a92:41c7:: with SMTP id o190mr22269984ila.11.1584992489760; 
+ Mon, 23 Mar 2020 12:41:29 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id m14sm795371ilr.16.2020.03.23.12.41.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 12:41:29 -0700 (PDT)
+Received: (nullmailer pid 15741 invoked by uid 1000);
+ Mon, 23 Mar 2020 19:41:28 -0000
+Date: Mon, 23 Mar 2020 13:41:28 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v1] dt-bindings: display: rockchip: convert rockchip vop
+ bindings to yaml
+Message-ID: <20200323194128.GD8470@bogus>
+References: <20200306170353.11393-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200323193157.038f36f9@why>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200306170353.11393-1-jbx6244@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_123759_470472_E8CEEF3D 
-X-CRM114-Status: GOOD (  23.08  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200323_124130_806949_A6B97635 
+X-CRM114-Status: GOOD (  20.28  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,109 +90,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jason Cooper <jason@lakedaemon.net>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, airlied@linux.ie,
+ hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/23/20 8:31 PM, Marc Zyngier wrote:
-> On Mon, 23 Mar 2020 20:19:39 +0100
-> Marek Vasut <marex@denx.de> wrote:
+On Fri, Mar 06, 2020 at 06:03:53PM +0100, Johan Jonker wrote:
+> Current dts files with 'vop' nodes are manually verified.
+> In order to automate this process rockchip-vop.txt
+> has to be converted to yaml. Also included are new
+> properties needed for the latest Rockchip Socs.
 > 
->> On 3/23/20 8:04 PM, Marek Vasut wrote:
->>> On 2/20/20 10:17 AM, Marc Zyngier wrote:
->>>> On 2020-02-20 09:04, Linus Walleij wrote:
->>>>> On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
->>>>> <alexandre.torgue@st.com> wrote:
->>>>>
->>>>>> GPIO hardware block is directly linked to EXTI block but EXTI handles
->>>>>> external interrupts only on edge. To be able to handle GPIO interrupt on
->>>>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
->>>>>> chip)
->>>>>> is retriggered following interrupt type and gpio line value.
->>>>>>
->>>>>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
->>>>>> Tested-by: Marek Vasut <marex@denx.de>
->>>>>
->>>>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
->>>>>
->>>>> If Marc want to merge it with patch 1/2 go ahead!
->>>>
->>>> I'll queue the whole thing for 5.7.
->>>
->>> I have a feeling this doesn't work with threaded interrupts.
->>>
->>> If the interrupt handler runs in a thread context, the EOI will happen
->>> almost right away (while the IRQ handler runs) and so will the code
->>> handling the IRQ retriggering. But since the IRQ handler still runs and
->>> didn't return yet, the retriggering doesn't cause the IRQ handler to be
->>> called again once it finishes, even if the IRQ line is still asserted.
->>> And that could result in some of the retriggers now happening I think.
->>> Or am I doing something wrong ?
->>
->> The patch below makes my usecase work, but I don't know whether it's
->> correct. Basically once the threaded IRQ handler finishes and unmasks
->> the IRQ, check whether the line is asserted and retrigger if so.
->>
->> diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c
->> b/drivers/pinctrl/stm32/pinctrl-stm32.c
->> index 9ac9ecfc2f34..060dbcb7ae72 100644
->> --- a/drivers/pinctrl/stm32/pinctrl-stm32.c
->> +++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
->> @@ -371,12 +371,26 @@ static void
->> stm32_gpio_irq_release_resources(struct irq_data *irq_data)
->>         gpiochip_unlock_as_irq(&bank->gpio_chip, irq_data->hwirq);
->>  }
->>
->> +static void stm32_gpio_irq_unmask(struct irq_data *d)
->> +{
->> +       struct stm32_gpio_bank *bank = d->domain->host_data;
->> +       int level;
->> +
->> +       irq_chip_unmask_parent(d);
->> +
->> +       /* If level interrupt type then retrig */
->> +       level = stm32_gpio_get(&bank->gpio_chip, d->hwirq);
->> +       if ((level == 0 && bank->irq_type[d->hwirq] ==
->> IRQ_TYPE_LEVEL_LOW) ||
->> +           (level == 1 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_HIGH))
->> +               irq_chip_retrigger_hierarchy(d);
->> +}
->> +
->>  static struct irq_chip stm32_gpio_irq_chip = {
->>         .name           = "stm32gpio",
->>         .irq_eoi        = stm32_gpio_irq_eoi,
->>         .irq_ack        = irq_chip_ack_parent,
->>         .irq_mask       = irq_chip_mask_parent,
->> -       .irq_unmask     = irq_chip_unmask_parent,
->> +       .irq_unmask     = stm32_gpio_irq_unmask,
->>         .irq_set_type   = stm32_gpio_set_type,
->>         .irq_set_wake   = irq_chip_set_wake_parent,
->>         .irq_request_resources = stm32_gpio_irq_request_resources,
->>
+> Added properties:
+>   assigned-clocks
+>   assigned-clock-rates
+>   power-domains
+>   rockchip,grf
 > 
-> OK, I see your problem now.
-> 
-> The usual flow is along the line of Ack+Eoi, and that's what the
-> current code guarantees.
-> 
-> Threaded interrupts do Ack+Mask+Eoi, followed by an Unmask once the
-> thread finishes. This unmask needs to do the retrigger as well, as you
-> found out.
-> 
-> Can you please refactor the above so that we have the common code
-> between unmask and eoi in a separate function, send a proper patch, and
-> I'll apply it on top of the current irq/irqchip-5.7 branch.
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/display/rockchip/rockchip-vop.txt     |  74 -----------
+>  .../bindings/display/rockchip/rockchip-vop.yaml    | 141 +++++++++++++++++++++
+>  2 files changed, 141 insertions(+), 74 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
 
-Sure, I can. Do we still need this retriggering in the irq_eoi too ?
 
-Also, are there any other hidden details I might've missed ?
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+> new file mode 100644
+> index 000000000..93ccd32aa
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+> @@ -0,0 +1,141 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/rockchip/rockchip-vop.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip soc display controller (VOP)
+> +
+> +description:
+> +  VOP (Visual Output Processor) is the Display Controller for the Rockchip
+> +  series of SoCs which transfers the image data from a video memory
+> +  buffer to an external LCD interface.
+> +
+> +maintainers:
+> +  - Sandy Huang <hjc@rock-chips.com>
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: rockchip,px30-vop-big
+> +      - const: rockchip,px30-vop-lit
+> +      - const: rockchip,rk3036-vop
+> +      - const: rockchip,rk3066-vop
+> +      - const: rockchip,rk3126-vop
+> +      - const: rockchip,rk3188-vop
+> +      - const: rockchip,rk3228-vop
+> +      - const: rockchip,rk3288-vop
+> +      - const: rockchip,rk3328-vop
+> +      - const: rockchip,rk3366-vop
+> +      - const: rockchip,rk3368-vop
+> +      - const: rockchip,rk3399-vop-big
+> +      - const: rockchip,rk3399-vop-lit
+
+Use an 'enum' instead of oneOf+const.
+
+> +
+> +  reg:
+> +    minItems: 1
+> +    items:
+> +      - description:
+> +          Must contain one entry corresponding to the base address and length
+> +          of the register space.
+> +      - description:
+> +          Can optionally contain a second entry corresponding to
+> +          the CRTC gamma LUT address.
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +    description:
+> +      Should contain a list of all VOP IP block interrupts in the
+> +      order VSYNC, LCD_SYSTEM. The interrupt specifier
+> +      format depends on the interrupt controller used.
+
+maxItems and the description disagree.
+
+> +
+> +  clocks:
+> +    items:
+> +      - description: Clock for ddr buffer transfer.
+> +      - description: Pixel clock.
+> +      - description: Clock for the ahb bus to R/W the phy regs.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: aclk_vop
+> +      - const: dclk_vop
+> +      - const: hclk_vop
+> +
+> +  resets:
+> +    minItems: 3
+> +    maxItems: 3
+
+Just maxItems is enough.
+
+> +
+> +  reset-names:
+> +    items:
+> +      - const: axi
+> +      - const: ahb
+> +      - const: dclk
+> +
+> +  port:
+> +    type: object
+> +    description:
+> +      A port node with endpoint definitions as defined in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt.
+> +
+> +  assigned-clocks:
+> +    maxItems: 2
+> +
+> +  assigned-clock-rates:
+> +    maxItems: 2
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  rockchip,grf:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description:
+> +      The phandle of the syscon node for
+> +      the general register file (GRF).
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - port
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3288-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    vopb: vopb@ff930000 {
+> +      compatible = "rockchip,rk3288-vop";
+> +      reg = <0x0 0xff930000 0x0 0x19c>,
+> +            <0x0 0xff931000 0x0 0x1000>;
+> +      interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&cru ACLK_VOP0>,
+> +               <&cru DCLK_VOP0>,
+> +               <&cru HCLK_VOP0>;
+> +      clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+> +      resets = <&cru SRST_LCDC1_AXI>,
+> +               <&cru SRST_LCDC1_AHB>,
+> +               <&cru SRST_LCDC1_DCLK>;
+> +      reset-names = "axi", "ahb", "dclk";
+> +      iommus = <&vopb_mmu>;
+> +      vopb_out: port {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        vopb_out_edp: endpoint@0 {
+> +          reg = <0>;
+> +          remote-endpoint=<&edp_in_vopb>;
+> +        };
+> +        vopb_out_hdmi: endpoint@1 {
+> +          reg = <1>;
+> +          remote-endpoint=<&hdmi_in_vopb>;
+> +        };
+> +      };
+> +    };
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
