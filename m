@@ -2,91 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DA3D18FE0F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:50:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8951D18FE14
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:50:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vnv53t9vQ9vHuyv0osppvZdPUtV8t5zYsiHH6HKQPKY=; b=h1ECJOJa7UvTVu
-	AAQ2bxslQE5ZDtfXbbbLTw6iYzHL8jvxKwhKvLzwl2/msJP0rEnAoeSGYywAgBpbAjb/rC8mhMj0b
-	uZxtVpbWV/1ONanppzVJKED1ZdykkvEHB+LiT1jppVMIq9owcjFova/aUkpD+8EEl4i2AZZRmtuLo
-	RKzKMJDBCFTt5Vf+0ijhw8j9aOTv704fCuJ4fXe3k/EBYR5jqkzsUl88beUqWay011JZypg/u7Rlj
-	E3g+TB1ps1Bs9mG8QBEQYniGcZLEfdw9MFGGtCoB/NLp2JCnvoL0LvgunF6lWHGn5dzYXHC1Q7hHj
-	wdKA+/8x1GghGVNCVmRQ==;
+	List-Owner; bh=auFd6mke3NFahYxM4YzVxA180/cKH6vGJG4Je8Fuwi0=; b=RGGx53R30zZKxB
+	+ytG07H928VVVgtOF1PUtr1Hik+n8tw4DU/vOQZG0sxsXjm9j/qXGiedBFF4IIzSm8TFW9HZas7EB
+	uYkljmHoQvsUoGoS7J5HOrUmksLHrEii1OgbGN98sgTdMJdp337SjDcxrw9FcZQTHmksa34fiL7CB
+	6baXmY+1vj0TLOoXSO1Sw3WjKE52PoIvHlQ4W+SC2y7nSCiPX7KwTbQXajgEm9kgQribXJsdfroiv
+	3jYL/Iq5lOLUmPoOIzdIIHyOXIBzJ2U/BaZDJE4SM9K0lXvrfTfbpx880Y8JMK0EDa3FtF1K8JQeK
+	gIYSx1GH1ld2Zwj2YHpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGT5C-00083d-2k; Mon, 23 Mar 2020 19:49:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jGT5d-0000ox-45; Mon, 23 Mar 2020 19:50:25 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGT54-00083C-71
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:49:51 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AD84C2070A;
- Mon, 23 Mar 2020 19:49:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584992989;
- bh=75fCAdyH4YV81OwXKG2GRQR18TAvhiNCXmFJeaAdyck=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=y5vo+6AF3TQK2YW/tZA0Jy8AbEKmvv1Y6a4gi+YZPNOKWLQaJnYCs22QY5MeFL+Tq
- ob/MhXhtp/8mzVoBIOuORDQL0p9rf4ph2aXEvxZygJS63Rv1lL7LtA4jfE+nD3pfz8
- sCBHKEfhQ71SriTplZAe4wRFHMKpKehZlwZ5yUaQ=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jGT51-00F3cy-U1; Mon, 23 Mar 2020 19:49:48 +0000
-Date: Mon, 23 Mar 2020 19:49:46 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
- gpio irq chip
-Message-ID: <20200323194946.26bdd003@why>
-In-Reply-To: <8e2795d8-4a8b-35a7-7d3f-e24d011878f6@denx.de>
-References: <20200219143229.18084-1-alexandre.torgue@st.com>
- <20200219143229.18084-3-alexandre.torgue@st.com>
- <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
- <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
- <a7fc5e43-34c2-a4e6-e0c5-1584f17fb024@denx.de>
- <8d6f6646-56e4-5218-9990-f0c96862dc83@denx.de>
- <20200323193157.038f36f9@why>
- <8e2795d8-4a8b-35a7-7d3f-e24d011878f6@denx.de>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jGT5J-0008N8-4z
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:50:09 +0000
+Received: by mail-il1-f194.google.com with SMTP id k29so14584228ilg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 12:50:04 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=OjC6r2usuImBDLu/35CLd+c7UkFmIFG+06FkAS9qKVg=;
+ b=aeaWuk76yWU/LU+ntmdGeyDFFoxSKsW8X88YnkwuGlKSDBLHqSL5P/i6lvS02Y4OHK
+ htnUHrmymD4hjNzTIhpXF0PQRO9kqdzyo7Qa9MpPe3LqtZ/aY5AC2RH4avRImS2yF3Ay
+ FtfGV02oQAoyHEYkQEMOcey+o0Iqd/Erf0tdP9CZ0MrRjZ4i8/NuwSQ7QEsSf2NLwZpD
+ TB8H2ZVuvXCVw0/cZx548vV7IPsb+w82sL9u6+nwgdP68nf+Vcd7jALqokGU8aTU/Pls
+ n7UwOpqqRDCupEbVJS0WwA1wbwRsk557BD3X1Jta1EBWqTie67Fu9ti8TKBZVE6XONX2
+ GFbg==
+X-Gm-Message-State: ANhLgQ2HTy8K930Y0PPEL9cl6yC7v70kIZPbFiZWgzgyfJspCq2Ps3DT
+ Z96N7T+86vs/HRHCbLWLtA==
+X-Google-Smtp-Source: ADFU+vu/MHCQinxeMPLh3FyJXqUbP8NrFB6mE2fqpJvLKhVTVJRcYgL95OftLKo2ne7u4RCE9iSYrw==
+X-Received: by 2002:a92:7b10:: with SMTP id w16mr22320500ilc.93.1584993003863; 
+ Mon, 23 Mar 2020 12:50:03 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id v24sm1199217iob.0.2020.03.23.12.50.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 12:50:03 -0700 (PDT)
+Received: (nullmailer pid 29486 invoked by uid 1000);
+ Mon, 23 Mar 2020 19:50:02 -0000
+Date: Mon, 23 Mar 2020 13:50:02 -0600
+From: Rob Herring <robh@kernel.org>
+To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
+Subject: Re: [RFC 05/11] dt-bindings: serial: Add Sunplus SP7021 UART
+Message-ID: <20200323195002.GA27190@bogus>
+References: <20200308163230.4002-1-afaerber@suse.de>
+ <20200308163230.4002-6-afaerber@suse.de>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: marex@denx.de, linus.walleij@linaro.org,
- alexandre.torgue@st.com, tglx@linutronix.de, jason@lakedaemon.net,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200308163230.4002-6-afaerber@suse.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_124950_295024_2305AD8C 
-X-CRM114-Status: GOOD (  27.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200323_125005_215362_60759D53 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,128 +93,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org, "open
- list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jason Cooper <jason@lakedaemon.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ Wells Lu =?utf-8?B?5ZGC6Iqz6aiw?= <wells.lu@sunplus.com>,
+ Dvorkin Dmitry <dvorkin@tibbo.com>, linux-kernel@vger.kernel.org,
+ linux-serial@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 23 Mar 2020 20:37:54 +0100
-Marek Vasut <marex@denx.de> wrote:
-
-> On 3/23/20 8:31 PM, Marc Zyngier wrote:
-> > On Mon, 23 Mar 2020 20:19:39 +0100
-> > Marek Vasut <marex@denx.de> wrote:
-> > 
-> >> On 3/23/20 8:04 PM, Marek Vasut wrote:
-> >>> On 2/20/20 10:17 AM, Marc Zyngier wrote:
-> >>>> On 2020-02-20 09:04, Linus Walleij wrote:
-> >>>>> On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
-> >>>>> <alexandre.torgue@st.com> wrote:
-> >>>>>
-> >>>>>> GPIO hardware block is directly linked to EXTI block but EXTI handles
-> >>>>>> external interrupts only on edge. To be able to handle GPIO interrupt on
-> >>>>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
-> >>>>>> chip)
-> >>>>>> is retriggered following interrupt type and gpio line value.
-> >>>>>>
-> >>>>>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
-> >>>>>> Tested-by: Marek Vasut <marex@denx.de>
-> >>>>>
-> >>>>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> >>>>>
-> >>>>> If Marc want to merge it with patch 1/2 go ahead!
-> >>>>
-> >>>> I'll queue the whole thing for 5.7.
-> >>>
-> >>> I have a feeling this doesn't work with threaded interrupts.
-> >>>
-> >>> If the interrupt handler runs in a thread context, the EOI will happen
-> >>> almost right away (while the IRQ handler runs) and so will the code
-> >>> handling the IRQ retriggering. But since the IRQ handler still runs and
-> >>> didn't return yet, the retriggering doesn't cause the IRQ handler to be
-> >>> called again once it finishes, even if the IRQ line is still asserted.
-> >>> And that could result in some of the retriggers now happening I think.
-> >>> Or am I doing something wrong ?
-> >>
-> >> The patch below makes my usecase work, but I don't know whether it's
-> >> correct. Basically once the threaded IRQ handler finishes and unmasks
-> >> the IRQ, check whether the line is asserted and retrigger if so.
-> >>
-> >> diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c
-> >> b/drivers/pinctrl/stm32/pinctrl-stm32.c
-> >> index 9ac9ecfc2f34..060dbcb7ae72 100644
-> >> --- a/drivers/pinctrl/stm32/pinctrl-stm32.c
-> >> +++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
-> >> @@ -371,12 +371,26 @@ static void
-> >> stm32_gpio_irq_release_resources(struct irq_data *irq_data)
-> >>         gpiochip_unlock_as_irq(&bank->gpio_chip, irq_data->hwirq);
-> >>  }
-> >>
-> >> +static void stm32_gpio_irq_unmask(struct irq_data *d)
-> >> +{
-> >> +       struct stm32_gpio_bank *bank = d->domain->host_data;
-> >> +       int level;
-> >> +
-> >> +       irq_chip_unmask_parent(d);
-> >> +
-> >> +       /* If level interrupt type then retrig */
-> >> +       level = stm32_gpio_get(&bank->gpio_chip, d->hwirq);
-> >> +       if ((level == 0 && bank->irq_type[d->hwirq] ==
-> >> IRQ_TYPE_LEVEL_LOW) ||
-> >> +           (level == 1 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_HIGH))
-> >> +               irq_chip_retrigger_hierarchy(d);
-> >> +}
-> >> +
-> >>  static struct irq_chip stm32_gpio_irq_chip = {
-> >>         .name           = "stm32gpio",
-> >>         .irq_eoi        = stm32_gpio_irq_eoi,
-> >>         .irq_ack        = irq_chip_ack_parent,
-> >>         .irq_mask       = irq_chip_mask_parent,
-> >> -       .irq_unmask     = irq_chip_unmask_parent,
-> >> +       .irq_unmask     = stm32_gpio_irq_unmask,
-> >>         .irq_set_type   = stm32_gpio_set_type,
-> >>         .irq_set_wake   = irq_chip_set_wake_parent,
-> >>         .irq_request_resources = stm32_gpio_irq_request_resources,
-> >>
-> > 
-> > OK, I see your problem now.
-> > 
-> > The usual flow is along the line of Ack+Eoi, and that's what the
-> > current code guarantees.
-> > 
-> > Threaded interrupts do Ack+Mask+Eoi, followed by an Unmask once the
-> > thread finishes. This unmask needs to do the retrigger as well, as you
-> > found out.
-> > 
-> > Can you please refactor the above so that we have the common code
-> > between unmask and eoi in a separate function, send a proper patch, and
-> > I'll apply it on top of the current irq/irqchip-5.7 branch.
-> 
-> Sure, I can. Do we still need this retriggering in the irq_eoi too ?
-
-Absolutely, because that's what matters for the non-threaded case
-(there is no mask/unmask on that path). It is also never wrong to
-over-resample (it just slows things down).
-
-> Also, are there any other hidden details I might've missed ?
-
-Probably. But let's fix one bug at a time, shall we? ;-) And let's hope
-that ST doesn't take this as a excuse not to clean up their act in
-their next SoC!
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCBNYXIgMDgsIDIwMjAgYXQgMDU6MzI6MjNQTSArMDEwMCwgQW5kcmVhcyBGw6RyYmVy
+IHdyb3RlOgo+IFRoZSBTdW5wbHVzIFBsdXMxIChha2EgUGVudGFncmFtKSBTUDcwMjEgU29DIGhh
+cyBmaXZlIFVBUlRzLgo+IAo+IENjOiBXZWxscyBMdSDlkYLoirPpqLAgPHdlbGxzLmx1QHN1bnBs
+dXMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEFuZHJlYXMgRsOkcmJlciA8YWZhZXJiZXJAc3VzZS5k
+ZT4KPiAtLS0KPiAgLi4uL2JpbmRpbmdzL3NlcmlhbC9zdW5wbHVzLHBlbnRhZ3JhbS11YXJ0Lnlh
+bWwgICAgfCAyNCArKysrKysrKysrKysrKysrKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAyNCBp
+bnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3Mvc2VyaWFsL3N1bnBsdXMscGVudGFncmFtLXVhcnQueWFtbAo+IAo+IGRpZmYg
+LS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc2VyaWFsL3N1bnBsdXMs
+cGVudGFncmFtLXVhcnQueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9z
+ZXJpYWwvc3VucGx1cyxwZW50YWdyYW0tdWFydC55YW1sCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQK
+PiBpbmRleCAwMDAwMDAwMDAwMDAuLjlkMTY0MTIzMmE0Ywo+IC0tLSAvZGV2L251bGwKPiArKysg
+Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc2VyaWFsL3N1bnBsdXMscGVudGFn
+cmFtLXVhcnQueWFtbAo+IEBAIC0wLDAgKzEsMjQgQEAKPiArIyBTUERYLUxpY2Vuc2UtSWRlbnRp
+ZmllcjogR1BMLTIuMC1vci1sYXRlciBPUiBCU0QtMi1DbGF1c2UKPiArJVlBTUwgMS4yCj4gKy0t
+LQo+ICskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3NlcmlhbC9zdW5wbHVzLHBl
+bnRhZ3JhbS11YXJ0LnlhbWwjCj4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRh
+LXNjaGVtYXMvY29yZS55YW1sIwo+ICsKPiArdGl0bGU6IFN1bnBsdXMgUGVudGFncmFtIFNvQyBV
+QVJUIFNlcmlhbCBJbnRlcmZhY2UKPiArCj4gK21haW50YWluZXJzOgo+ICsgIC0gQW5kcmVhcyBG
+w6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgo+ICsKClNvb24gdGhpcyB3aWxsIG5lZWQgdG8gcmVm
+ZXJlbmNlIHNlcmlhbC55YW1sIHdoaWNoIGlzIGdldHRpbmcgYWRkZWQgdG8gCjUuNy4KCj4gK3By
+b3BlcnRpZXM6Cj4gKyAgY29tcGF0aWJsZToKPiArICAgIGNvbnN0OiBzdW5wbHVzLHNwNzAyMS11
+YXJ0Cj4gKwo+ICsgIHJlZzoKPiArICAgIG1heEl0ZW1zOiAxCj4gKwo+ICsgIGludGVycnVwdHM6
+Cj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiArICBjbG9ja3M6Cj4gKyAgICBtYXhJdGVtczogMQo+
+ICsuLi4KPiAtLSAKPiAyLjE2LjQKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
