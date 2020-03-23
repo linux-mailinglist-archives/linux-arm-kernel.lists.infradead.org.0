@@ -2,87 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADFBF18FD5A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:11:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1707118FD79
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:18:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yztQZmVR4IZqDKg63VSxNdEqWWSzI7cqTzaLJQRuna8=; b=rOUQSlFid/Gq2Z
-	6UO+rjDxBDw9cDukCzEzpweLh0EaFMXAxJqZhxyQSrvaG3DjPG4O6SgfiBg3mRrNtRTS/eVivVxnJ
-	MFcdyhglGQbZzBt88xftgZt3Twvfs7MZn/WFMudl7ykkbzSHjNHJIPPBuRILRdjnnZ/IdLSROy/mA
-	VXqCrdPXwWzCj+xuDz610v4mkbcatVsgmZq/06bqGgEGO4FHZWqlmnK978JnMJoATrmwItXh6y+zU
-	ggeO9+MfpbSnAt52aVKqSR7MsD1hgOiPx79pAS7/QB4fnEashOkjvEqjcBlqHlX8liBZG8BpkYdFp
-	tWwutUm5OHVBcLo56g2g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=SRWAlfIa3h6Q5Yp7CEXeXWfr7+gimCdSCHXKPCm+OnQ=; b=Yetcz0VRSaEAqcgnODES2n+6Mb
+	stpgTly2a1rfelHvtGUIZG5VOQq+5nOLGNUj7OrknNi0vZaiKA9ErI3d5yJs6TQ68a+hJ1FRSPr/C
+	qohIfvsbCojVsl0hAYCMN2HWuRZ8/v8f0Tcm8qagrAwSI9c28aesqtxxK4LisRQ++99tE4dAq6J+k
+	+4j3Hugzzkxmd13lVjLMbYmT95era8+HWYFkK9KdpuPfLVrxiY1ay5CQLgTMK149bnD7z4GZqWQS3
+	8+nZOu3DuII8VqcRo7Iry+IFz2E5m2ng2B1dm4mzXa3sSwmY1TKZipsEjC6kH9Mb9GtmCgLozQx2J
+	5xlilpJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGSTw-0000FT-7k; Mon, 23 Mar 2020 19:11:28 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jGSav-0003X5-Ts; Mon, 23 Mar 2020 19:18:41 +0000
+Received: from mout02.posteo.de ([185.67.36.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGSTf-0000EC-BL
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:11:13 +0000
-Received: by mail-wm1-x344.google.com with SMTP id d1so792509wmb.2
+ id 1jGSaU-0003Ms-Aa
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:18:15 +0000
+Received: from submission (posteo.de [89.146.220.130]) 
+ by mout02.posteo.de (Postfix) with ESMTPS id C50EC2400E6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 12:11:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pf+qUh7EBEBDemmA22qZeNyA8zt651mmhnuvEAM+lMU=;
- b=KGNDsz72kXza0P4lMe9mMaNwZHz947JtWcUfoneVfrcVXW1+qa0ymRzAsS8UfKZNae
- 4Ve7rJwmNXbr+LhM6qAf3+DfGUfgdN9iVmlWMw/cvM18z4Js4X13MV3WhMXVvCcMVA8F
- QIfUWaw92rcQ2JBbaRXslKJpTnqQnGkZZD85SmJymORl0XVBJA7yV7r07O7GvuVOFd33
- js+ILbDOVsWj0iF3H/TbS5jIbZyBWZnP3pvlkZ+zaP9x6f1cgtOr/tMJ/R2gTD+Q7Vqz
- Dj2pulSs/7dAM5KNqSVAuUUQoWscY9wScRRU9I6a+NqOlkvwtfAFcH1o7Z1NFP0LXmRU
- oz5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pf+qUh7EBEBDemmA22qZeNyA8zt651mmhnuvEAM+lMU=;
- b=IqHv/ekCVRTy8CTgJ7aA4v4+6UL+kSqLclrcUqR1lWQ+HN/W9L7xDBc5cOGZgLOsW5
- tqDSZEuwESLMxBK8pWSTpCA+riTXmiusaHtM3GAGTk7FBv+nu7+oQY9lsUIARdYmNAMB
- kBinpgBUs7Ra00MooistayOQ0/B1uT8PFo/zCg7jf3/Y2z9lf72LhcvfgVGtzK0DuzHk
- +gI4VDx1amn3xyizYDcdig02ALlLnlwQeUeTQOwc79Wo5QbGGfvnWAMPnjULqJvRQqvE
- CMRSHr+qQzW90iWa8MMLbinExQm8gtlLsYgDJPyDdgafS0OeN3MuOm9XD4tpZ7yPsEm4
- 8ylg==
-X-Gm-Message-State: ANhLgQ1lrAS3TtKzj9CNOQSl2NIvT1dvaTLefl2/cFNZN0laFhP3+RHg
- aRFZJ06alZONQ29ioDnlpbWBzFxz3nI20TMzJ2dM8A==
-X-Google-Smtp-Source: ADFU+vsKLKTY5RnDNYB+1EQTfD7qahBL7j0X4NYY89owfLY8KBE1rjQmqRHFkwawi3Kcmp9BLgIAp6njZz7wq8uxn+0=
-X-Received: by 2002:a1c:7c18:: with SMTP id x24mr975857wmc.82.1584990669746;
- Mon, 23 Mar 2020 12:11:09 -0700 (PDT)
+ Mon, 23 Mar 2020 20:17:59 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
+ t=1584991086; bh=CneVslm+9nU3I8yqcNHFjyzSwOWZSvXKgwlbLmtkD8g=;
+ h=Subject:To:From:Autocrypt:Date:From;
+ b=qmHbvKr/RkbzxprS2gRHEZwHms/jGQZ/GyZAXu23BzYSMhmuZ8V7r5WsbNpqZYIN3
+ 48YkfTft/HOnK0Gq52qlGpuQACbYBhNMhtE503JhnxuJ/QiWPialm+GgMnp7pRqAij
+ 5zNJp/KHMGrcaC0Rg+3iiQyDnVw5uHqiW+RIeunv6NIryAGt/bZlJWiqte97Z/cTMn
+ 29nBQ298GclmY1nSTHeWNwP92DgvuCSYROA4uIyzSUHVlYbBy08YG/d2i4v9sQ/f5A
+ LP4YtLscPrTyTVwaV4vc2mx8dpgAtF0JEgGBK0wXiURaf/YNuXnChfABcjvi/sD29u
+ k63xIhnQp3zsg==
+Received: from customer (localhost [127.0.0.1])
+ by submission (posteo.de) with ESMTPSA id 48mPKd07lgz9rxW;
+ Mon, 23 Mar 2020 20:17:56 +0100 (CET)
+Subject: Re: [PATCH] arm64: dts: imx8mq-librem5-devkit: Use 0.9V for VDD_GPU
+To: =?UTF-8?Q?Guido_G=c3=bcnther?= <agx@sigxcpu.org>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ "Angus Ainslie (Purism)" <angus@akkea.ca>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <d9bfb11e3d66376792089d54d7d52fe3778efa33.1584636213.git.agx@sigxcpu.org>
+From: Martin Kepplinger <martink@posteo.de>
+Autocrypt: addr=martink@posteo.de; keydata=
+ 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
+Message-ID: <4cd156bb-ada6-7638-86ce-10b8e69b47a2@posteo.de>
+Date: Mon, 23 Mar 2020 20:17:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <03fcb1e2bc7f3ff389b6dfbf3964e159a93ae835.camel@suse.de>
- <d3d40174-9c08-f42f-e088-08e23c2dc029@i2se.com>
- <f2ec22160ac86aec8d252ade7d6eb8789777cc42.camel@suse.de>
- <01ceb60e-a791-b6ca-352e-ad2e79f264e3@i2se.com>
- <ddcb8fd5-9e35-454c-b38d-d36e7b41ef07@i2se.com>
- <9e685fce547d808f269e59e2290331e75c66f3e4.camel@suse.de>
- <bb2c7d99-06b1-d222-7f69-8ce91157bde5@i2se.com>
- <90e92438-00df-520f-c8b1-2e2077934592@i2se.com>
- <a25b759292901eee3eab4dbf8002d2050edda6d3.camel@suse.de>
- <CAPY8ntBB3wwkVj=+fzNRXzAqQs5q5MYmb7t7Be74zADeMCXHVA@mail.gmail.com>
- <20200323145658.gu72lt5wceqw4iwz@gilmour.lan>
- <CAPY8ntD=VFrb91V7uM5zROxD-r6+bU+Nmj+ZDFCdwvTuq8eF6g@mail.gmail.com>
- <ab7b5386-2471-006f-0d6f-5230fd92445c@i2se.com>
-In-Reply-To: <ab7b5386-2471-006f-0d6f-5230fd92445c@i2se.com>
-From: Dave Stevenson <dave.stevenson@raspberrypi.com>
-Date: Mon, 23 Mar 2020 19:10:52 +0000
-Message-ID: <CAPY8ntCeXD9rsfdN34QucUt236pu2-HgxUXuRPJ0pC_UQ+F36Q@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
-To: Stefan Wahren <stefan.wahren@i2se.com>
+In-Reply-To: <d9bfb11e3d66376792089d54d7d52fe3778efa33.1584636213.git.agx@sigxcpu.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_121111_527380_6C543A0D 
-X-CRM114-Status: GOOD (  44.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_121814_657320_A7410900 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.67.36.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,212 +161,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Eric Anholt <eric@anholt.net>,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan
-
-On Mon, 23 Mar 2020 at 18:53, Stefan Wahren <stefan.wahren@i2se.com> wrote:
->
-> Hi,
->
-> Am 23.03.20 um 16:55 schrieb Dave Stevenson:
-> > Hi Maxime
-> >
-> > On Mon, 23 Mar 2020 at 14:57, Maxime Ripard <maxime@cerno.tech> wrote:
-> >> Hi Dave,
-> >>
-> >> On Mon, Mar 16, 2020 at 01:57:13PM +0000, Dave Stevenson wrote:
-> >>>  Hi Stefan and Nicolas
-> >>>
-> >>> On Mon, 16 Mar 2020 at 12:40, Nicolas Saenz Julienne
-> >>> <nsaenzjulienne@suse.de> wrote:
-> >>>> Hi Stefan,
-> >>>> thanks for taking the time with this. That was a hard to find one, specially
-> >>>> given the race in X11.
-> >>>>
-> >>>> On Sun, 2020-03-15 at 20:16 +0100, Stefan Wahren wrote:
-> >>>>> Hi Nicolas,
-> >>>>>
-> >>>>> [adjust audience]
-> >>>>>
-> >>>>> i've narrowed down the issue. From kernel 4.19 until 5.1 the DRM
-> >>>>> emulated driver was responsible for a working X on my Raspberry Pi 3
-> >>>>> with HP ZR2440w. Starting with 5.2 the vc4drmfb took over and with 5.3 X
-> >>>>> didn't start anymore (display freeze).
-> >>>>>
-> >>>>> So i start bisecting and this was the commit where the freezing started:
-> >>>>>
-> >>>>> e08ab74bd4 drm/modes: Rewrite the command line parser
-> >>>>>
-> >>>>> After this i enabled drm debug and saw that suggest mode 1920x1200 by
-> >>>>> the firmware is rejected by the driver because the pixel clock would be
-> >>>>> too high (154 MHz, max = 148.5). This wasn't a problem before since the
-> >>>>> firmware provided video cmdline parameter wasn't parseable:
-> >>>>>
-> >>>>> [drm] parse error at position 69 in video mode
-> >>>>> '1920x1200M@60,margin_left=0,margin_right=0,margin_top=0,margin_bottom=0'
-> >>>>>
-> >>>>> After mentioned commit the display just freezes (no try to use
-> >>>>> 1920x1080, no error message).
-> >>>>>
-> >>>>> For comparison i switched to the vendor tree with firmware kms driver
-> >>>>> and noticed that the driver switches to 1920x1200 with a pixel at 154 MHz.
-> >>>>>
-> >>>>> So this patch works for me:
-> >>>>>
-> >>>>> ---
-> >>>>>  drivers/gpu/drm/vc4/vc4_hdmi.c | 9 +++++----
-> >>>>>  1 file changed, 5 insertions(+), 4 deletions(-)
-> >>>>>
-> >>>>> diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> >>>>> index cea18dc..647803e 100644
-> >>>>> --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-> >>>>> +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> >>>>> @@ -681,11 +681,12 @@ static enum drm_mode_status
-> >>>>>  vc4_hdmi_encoder_mode_valid(struct drm_encoder *crtc,
-> >>>>>                  const struct drm_display_mode *mode)
-> >>>>>  {
-> >>>>> -    /* HSM clock must be 108% of the pixel clock.
-> >>>> I think it'd be nice to understand how Eric came by this number. Maybe just
-> >>>> empirically with 1080p60? That said, I think your change is pretty much
-> >>>> harmless.
-> >>>>
-> >>>> I'll add a reminder to Maxime's series for him to update RPi[0-3]'s max
-> >>>> frequency to 1920x1200@60's.
-> >>>>
-> >>>>> -     * the AXI clock needs to be at least 25% of pixel clock, but
-> >>>>> -     * HSM ends up being the limiting factor.
-> >>>>> +    /* According to spec the HSM clock must be 108% of the pixel clock.
-> >>>>> +     * Additionally, the AXI clock needs to be at least 25% of pixel clock,
-> >>>>> +     * but HSM ends up being the limiting factor.
-> >>>>> +     * It seems that operating the pixel clock at 154 MHz still works.
-> >>>>>       */
-> >>>>> -    if (mode->clock > HSM_CLOCK_FREQ / (1000 * 108 / 100))
-> >>>>> +    if (mode->clock > HSM_CLOCK_FREQ / (1000 * 106 / 100))
-> >>>> Isn't hard-coding the HSM clock kind of limited, one could overclock it, isn't
-> >>>> it? I remember reading someone did it to support wider resolutions.
-> >>> Checking the docs it does state the restriction that Eric quotes.
-> >>>
-> >>> HDMI Core Clock (state machine clock)
-> >>> Most of the HDMI logic operates on that clock. It
-> >>> is asynchronous to system core clock and pixel
-> >>> clock. Source for this clock can be chosen from
-> >>> various PLLs in the chip. See CPR Manager for
-> >>> details.
-> >>>
-> >>> This clock is also used for clocking pixel valve
-> >>> when HDMI peripheral is used. See Pixel Valve
-> >>> for details.axi_clock >= hdmi_core_clock > 108% of
-> >>> pixel_clock.
-> >>>
-> >>>
-> >>> The default max pixel clock from the firmware side is 162MHz.
-> >>>
-> >>> In the firmware source we have a comment
-> >>>          // HDMI state machine clock must be faster than pixel clock -
-> >>> infinitessimally faster tested in simulation.
-> >>>          // Otherwise, exact value is unimportant - for HDMI operation.
-> >>>          // hdmi state machine clock now derived from PLLC_PER (typ
-> >>> 500MHz, see relevant platform.c).
-> >>>          //
-> >>>          // However, CEC bit clock is derived from the HSM clock, and
-> >>> the (programmable) CEC timing table
-> >>>          // is configured for a 40.00kHz CEC clock.
-> >>>          const unsigned margin = 1*1000*1000;
-> >>>          unsigned min_hsm_clock = margin + timings->pixel_freq;
-> >>>          const unsigned max_hsm_clock_for_cec = max(163682864,
-> >>> hdmi_pixel_freq_limit);
-> >>>
-> >>>          unsigned hdmi_state_machine_clock = max_hsm_clock_for_cec;
-> >>>
-> >>> So it adds 1MHz to the pixel clock for min_hsm_clock, but then doesn't
-> >>> use the value.
-> >>> Unless you do request a higher hdmi_pixel_freq_limit then the HSM is
-> >>> running at the same 163.68MHz that Eric's driver hard codes, and our
-> >>> max pixel clock is 162MHz.
-> >>> Keeping it a fixed value makes sorting the divider for CEC easier.
-> >>>
-> >>> Just adopting a 162MHz limit with a suitable comment is probably the
-> >>> most sensible move here, and Maxime's patches can pick up the same
-> >>> value.
-> >> It's kind of related, but one of the changes we did to support the
-> >> RPi4 is to change that rate calculation to increase the HSM clock for
-> >> pixel clocks higher than 148.5MHz (so typically 4k), while keeping it
-> >> as low as possible to reduce the power consumption.
-> >>
-> >> How would that interact with this change?
-> > I'd forgotten that your patches mean we change the HSM clock on Pi3.
-> > As you're aware, whilst I have some extra docs, many of them aren't as
-> > comprehensive as one would hope. We can go back to the Broadcom and
-> > RTL if absolutely necessary, but it's a pain. Broadcom don't
-> > necessarily have the personnel who designed the blocks still working
-> > there.
-> >
-> > Your patches appear to recompute the HSM clock based on pixel_clock *
-> > 108%, with a min of 108MHz, so effectively the same limit as the old
-> > version did by fixing the HSM rate.
-> >
-> > Checking the firmware for Pi4, it sets the HSM (M2MC) clock to
-> > pixel_rate * 1.01, clipped to 120MHz and 600Mhz. (Audio drops out if
-> > less than 108MHz. "Pick 120 to have an integer divider with some
-> > margin." I'd need to check which divider that is referring to).
-> > As noted above, the Pi3 firmware sets the HSM clock to 163.6MHz.
-> >
-> > I'd suggest that we:
-> > a) Increase max_pixel_clock for vc4 (Pi0-3) to 162MHz.
-> > b) Set HSM clock to 101% of the pixel clock, with a min of 120MHz
-> > (4k60 with pixel clock 594MHz would go to a 599.94MHz HSM clock which
-> > is still within range)
-> > c) Test it! I know we have some 1920x1200 monitors in the office (when
-> > I'm back in there).
->
-> i don't think that i'm able to prepare those patches, but i'm happy to
-> test them.
-
-Conversations at slight cross-purposes.
-With the current driver we just need the limit lifting to 162MHz.
-My comment:
-
-> >>> Just adopting a 162MHz limit with a suitable comment is probably the
-> >>> most sensible move here
-
-above. And code change along the lines of:
--    if (mode->clock > HSM_CLOCK_FREQ / (1000 * 108 / 100))
-+    if (mode->clock > 162000000)
-with suitable comment.
-
-Maxime was querying the plan for how the increased pixel rate/HSM
-clock should be reflected in his patch set which adds Pi4 support to
-the vc4 driver.
-
-  Dave
-
-> Thanks
-> Stefan
->
-> >
-> > Whilst the firmware would appear to use a fixed HSM clock on Pi0-3, I
-> > don't anticipate there being any issue with varying it. It looks like
-> > there was the expectation of it being variable in the past, but
-> > someone has refactored it and either accidentally or deliberately
-> > given up on the idea.
-> >
-> >   Dave
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTkuMDMuMjAgMTc6NDYsIEd1aWRvIEfDvG50aGVyIHdyb3RlOgo+IEFjY29yZGluZyB0byB0
+aGUgaW14OG1xIGRhdGEgc2hlZXQgcnVubmluZyBWRERfR1BVIGF0IDAuOVYgaXMgZW5vdWdoCj4g
+d2hlbiBub3Qgb3ZlcmNsb2NraW5nIHRvIDFHSHogKHdoaWNoIHdlIGN1cnJlbnRseSBkb24ndCBk
+bykuCj4gCj4gU2lnbmVkLW9mZi1ieTogR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4K
+PiAtLS0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLWxpYnJlbTUtZGV2
+a2l0LmR0cyB8IDIgKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0
+aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lt
+eDhtcS1saWJyZW01LWRldmtpdC5kdHMgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9p
+bXg4bXEtbGlicmVtNS1kZXZraXQuZHRzCj4gaW5kZXggYzQ3YTI2Y2Y4ZTQzLi43MzZiMjUwYmM5
+YzIgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLWxp
+YnJlbTUtZGV2a2l0LmR0cwo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lt
+eDhtcS1saWJyZW01LWRldmtpdC5kdHMKPiBAQCAtMzE4LDcgKzMxOCw3IEBACj4gIAkJCQlyZWd1
+bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDw3MDAwMDA+Owo+ICAJCQkJcmVndWxhdG9yLW1heC1taWNy
+b3ZvbHQgPSA8MTMwMDAwMD47Cj4gIAkJCQlyZWd1bGF0b3ItYWx3YXlzLW9uOwo+IC0JCQkJcm9o
+bSxkdnMtcnVuLXZvbHRhZ2UgPSA8MTAwMDAwMD47Cj4gKwkJCQlyb2htLGR2cy1ydW4tdm9sdGFn
+ZSA9IDw5MDAwMDA+Owo+ICAJCQl9Owo+ICAKPiAgCQkJYnVjazRfcmVnOiBCVUNLNCB7Cj4gCgoK
+c2luY2UgSSdtIHJ1bm5pbmcgdGhpcyBub3c6CgpUZXN0ZWQtYnk6IE1hcnRpbiBLZXBwbGluZ2Vy
+IDxtYXJ0aW4ua2VwcGxpbmdlckBwdXJpLnNtPgoKdGhhbmtzCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
