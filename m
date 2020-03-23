@@ -2,124 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 035DC18F7C0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:54:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7364218F7CB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:56:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W21i6SuXw0mMzi+wQIlA5cm7Gf+Xgy+KofmYIzlYQzw=; b=jCgs600UgJVOem
-	WzHtPTOJbfQ/sqySfHO8NgyycZwOuReDtYflJg1PCDfKzGVYumKygBCf/hvirXiU0UB0eiRzo77uV
-	RfIC0xwU22rwWPMyusMOvjjtLotsEM0AZEl4h0D1w3Z9GcZSfA3pFyD15o95dboENf1gpSTaF6XyB
-	xV0/5+OX77dyDmD9MhINWb7GDePgM67Y7kN0w+/uZSEfzlX33daJM953JSl5H4Wk8muIwo99xtuS6
-	PHDul53QhJwyiEX/enVCgvlOE0vUNoht1UG7nfcqTxZ7mZLWBg95wVc3NsFk+Aku/hL8+xuAJRP1N
-	kGIR7XeFB+H+AJgsnhMQ==;
+	List-Owner; bh=8OHauRLvO3Q8D/WtifXV+lcd4B8QxUd4ENQhMrVkm5c=; b=nlfmk3Rrp/SBjV
+	tX+/DpoFK/3546JFnJOpYOcpOWk1HaC8rxcN7i51pyFVgZW5z4KruH3F7MeTKI1bUJoEZXFD5fHhQ
+	YQMjtkcbTcfFKpYlO8Qz9jN1N1Ja4VF/dbgE8dO1+BjIfUxYRWZvTIo5w5vX1pMjB4pyG/S0VezGS
+	tKumGiw+UhST8gOb+pGuPV6zzTpY9lk6QVfhcNH6H2PXU8kwLibS2S7peqXQZdazukdpEfWUYWb2a
+	oS7pegYnYMKphhgsZnJtuHvS9O6wl4KhYnkjRn8Qao1z1HALIpdBTUoWs0JnoD4dA3zfy8L0LE72H
+	YoMKTJiIewWvQ38rEbTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGOSr-0004uA-Mj; Mon, 23 Mar 2020 14:54:05 +0000
-Received: from mail-eopbgr40082.outbound.protection.outlook.com ([40.107.4.82]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGOSk-0004tc-K8
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:54:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IPQBHWhp6sRL+89xEIlDiuwhe1d0k12pPwtVAAj/Rw3PlphIKpwhejia9lSFASYzLKS5fmiDBA47Wb7/T3avmjkoLlOIlD+dVPaXbXqgKj/XVjNJFCYMf6R/f8vV50YrF5mt19E33O3l/gPO2B+TNAkMveRBGiB/AnTHE3nBQo0RrWpPrXX439sAbylGcOxr+CvyTen9VE/La5oRRTVneHD7D4cjPvPhvxwXKanAi0DsTXcRhflCsqZs4PehyUyXFIk6FUO9rXEt2rOuEr638kOXl1GbBw9dJnXPrpPMO68PrqrvsFdCc4vr93S4hlQ9mQnKlWgUckj1vJlMQ6LF5g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YrHWuPWR/Jj7H+EBKnCNV4IIKtLfYebb43wNU+QaX84=;
- b=Xji9VUlobFhBcMzvG8LuR1c0lMpmRZuSt/r2LAlaoeiXxzpAH9leyRb5tZdyLIzN1Fo8nOnYrOrqO8ijOsimA/aq+mGb0jBnOT/wAE8hY5ToBlCxhcpz7bGUWrFuutKOGgReqypk8X+H+Rbi021QPXsDNML7Buwr8s3o/RehaEidYsKT925SbT7QAm4guezVIHkDb3qQ6tSat601kY4kfhCU8VkSGNf/QaI/KT4aP3y6wpiZoBTAxV+9O3A1PpR2gIyoXxW/9pNH8GOjvMU3g8OEIx1qXAelmoFBz+Z/jLUcXB1vw9J3xPYVrsYGp8N4UNIrTbu1OL16yQ78BNXCgQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YrHWuPWR/Jj7H+EBKnCNV4IIKtLfYebb43wNU+QaX84=;
- b=llQBe+5/kQgJXCm7JrmuZuai8cD+OH2qj70BDEKakqH5cNWqUzFt6iplfk5Y+3DIzc0x5nuMN/8BaBQ7tST5xXwqVcmOhx/zVd4g196pPWVKnoBDLcUHb76ql2H2YVFHl+vsrOLCHu+GNZlzyZ6jEDmbcZrghvbRHCVdzn/obAI=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3849.eurprd04.prod.outlook.com (52.134.71.16) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.21; Mon, 23 Mar 2020 14:53:56 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2835.021; Mon, 23 Mar 2020
- 14:53:56 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "rui.zhang@intel.com"
- <rui.zhang@intel.com>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] thermal: imx8mm: Fix build warning of incorrect argument
- type
-Thread-Topic: [PATCH] thermal: imx8mm: Fix build warning of incorrect argument
- type
-Thread-Index: AQHWAR8IqER7H1rXjEuQj4zN1DgcyqhWPb2AgAAEhLA=
-Date: Mon, 23 Mar 2020 14:53:55 +0000
-Message-ID: <DB3PR0402MB39164815DDDB8F94507E36B4F5F00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1584973156-25734-1-git-send-email-Anson.Huang@nxp.com>
- <8f1f2d2b-33bc-b5e0-ad06-78f7ce54f2b7@linaro.org>
-In-Reply-To: <8f1f2d2b-33bc-b5e0-ad06-78f7ce54f2b7@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 3848308c-8d57-4087-25ed-08d7cf3a02ea
-x-ms-traffictypediagnostic: DB3PR0402MB3849:|DB3PR0402MB3849:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3849CB25DB97FEC3864836A1F5F00@DB3PR0402MB3849.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1247;
-x-forefront-prvs: 0351D213B3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(396003)(136003)(366004)(376002)(199004)(7696005)(53546011)(26005)(86362001)(186003)(8936002)(110136005)(316002)(81166006)(44832011)(66446008)(64756008)(7416002)(33656002)(52536014)(71200400001)(66556008)(66946007)(76116006)(6506007)(81156014)(66476007)(4326008)(9686003)(55016002)(2906002)(5660300002)(8676002)(478600001)(32563001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3849;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: PCT6tAfCLrXw3p1gPxWH/PD+Lh97yvZArh02PSGebWeZvFrkVB9LGLRLx2lbGN7TQhBDJilmOMU3DnvUNCfbGV1RBoDH81v/prT8iwT4aAZbl3ZeRaieid0O10Qcn9cRCaY1CJososRppQaHy/2gAfmc3gxpoUEq4T/4+UiZhKDR91U7DNNHoQAIUbauhu1SQ18V7+Xt3jTSnA/feTcfW0zJn9RZUa0BExluAIkOJJXR6+oGOlOw+8/bYasy+4cHKli/CjEyQD+g4VIoN4olmXobtHykBVxUIyViK2jixwsZ2BSRiv8wJkKIIn9IXboVx2twc3LAl6QdPYTB4e9ECqmwgU11QPQkcgr9W8CDELz6JqNYGlcG7Fyk/lTYgxPVOqicmaNEX3LPrI35qT/dDAP9ksyoh5ubSKirrw81wLoDARsCaDPj8DOBu8B1dGZc29VFLsbRy+wEY+AFUR/28Zj1QaaMwrAGnIUN7HNsWY3ULq6TGTHQ4cwJZ10zuA7i3N17TN1lZyWzq32Xv7oTww==
-x-ms-exchange-antispam-messagedata: oBr/L6KLDUunYQs5AeoMCOmT7g4Eo/XexJhSlFa6xDzWUW1pKcDlW5wsWK72aawhs6ed9Wu9gTU8Q3sATVrE7Q7QBzZPPWhe7tl45sRH3096gNMsrFhSBGemC4XxbLHRuuDL2O7xL6uIH6X+W28/cg==
+	id 1jGOUo-0006Pq-Ff; Mon, 23 Mar 2020 14:56:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGOUe-0006P7-17
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:55:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2F4851FB;
+ Mon, 23 Mar 2020 07:55:54 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 51F243F7C3;
+ Mon, 23 Mar 2020 07:55:49 -0700 (PDT)
+Date: Mon, 23 Mar 2020 14:55:46 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200323145546.GB3959@C02TD0UTHF1T.local>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200320173945.GC27072@arm.com> <20200323122143.GB4892@mbp>
+ <20200323132412.GD4948@sirena.org.uk>
+ <20200323135722.GA3959@C02TD0UTHF1T.local>
+ <20200323143954.GC4892@mbp>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3848308c-8d57-4087-25ed-08d7cf3a02ea
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Mar 2020 14:53:55.8567 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 2kAlPlzYna444ABtGCxCkzZ2+xvm2HV6sYOqlixmtCmNAzkbWMDPHjBp7T94+wDM7xq7C+VID2UkxesLpumw4Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3849
+Content-Disposition: inline
+In-Reply-To: <20200323143954.GC4892@mbp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_075358_668889_2C27ABE1 
-X-CRM114-Status: GOOD (  15.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_075556_415143_34A8714B 
+X-CRM114-Status: GOOD (  23.96  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.82 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,43 +66,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Elliott <paul.elliott@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIERhbmllbA0KDQo+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIHRoZXJtYWw6IGlteDhtbTogRml4
-IGJ1aWxkIHdhcm5pbmcgb2YgaW5jb3JyZWN0DQo+IGFyZ3VtZW50IHR5cGUNCj4gDQo+IE9uIDIz
-LzAzLzIwMjAgMTU6MTksIEFuc29uIEh1YW5nIHdyb3RlOg0KPiA+IEZpeCBiZWxvdyBzcGFyc2Ug
-d2FybmluZzoNCj4gPg0KPiA+IGRyaXZlcnMvdGhlcm1hbC9pbXg4bW1fdGhlcm1hbC5jOjgyOjM2
-OiBzcGFyc2U6IHNwYXJzZTogaW5jb3JyZWN0IHR5cGUNCj4gPiBpbiBhcmd1bWVudCAyIChkaWZm
-ZXJlbnQgYWRkcmVzcyBzcGFjZXMpLCBleHBlY3RlZCB1bnNpZ25lZCBsb25nIGNvbnN0DQo+ID4g
-dm9sYXRpbGUgKmFkZHINCj4gPiBkcml2ZXJzL3RoZXJtYWwvaW14OG1tX3RoZXJtYWwuYzo4Mjoz
-Njogc3BhcnNlOiBleHBlY3RlZCB1bnNpZ25lZCBsb25nDQo+ID4gY29uc3Qgdm9sYXRpbGUgKmFk
-ZHINCj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IEFuc29uIEh1YW5nIDxBbnNvbi5IdWFuZ0BueHAu
-Y29tPg0KPiA+IC0tLQ0KPiA+ICBkcml2ZXJzL3RoZXJtYWwvaW14OG1tX3RoZXJtYWwuYyB8IDcg
-KysrLS0tLQ0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9u
-cygtKQ0KPiA+DQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9pbXg4bW1fdGhlcm1h
-bC5jDQo+ID4gYi9kcml2ZXJzL3RoZXJtYWwvaW14OG1tX3RoZXJtYWwuYw0KPiA+IGluZGV4IGMz
-MjMwOGIuLjBkNjBmOGQgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy90aGVybWFsL2lteDhtbV90
-aGVybWFsLmMNCj4gPiArKysgYi9kcml2ZXJzL3RoZXJtYWwvaW14OG1tX3RoZXJtYWwuYw0KPiA+
-IEBAIC03NSwxNSArNzUsMTQgQEAgc3RhdGljIGludCBpbXg4bXBfdG11X2dldF90ZW1wKHZvaWQg
-KmRhdGEsIGludA0KPiA+ICp0ZW1wKSAgew0KPiA+ICAJc3RydWN0IHRtdV9zZW5zb3IgKnNlbnNv
-ciA9IGRhdGE7DQo+ID4gIAlzdHJ1Y3QgaW14OG1tX3RtdSAqdG11ID0gc2Vuc29yLT5wcml2Ow0K
-PiA+ICsJdW5zaWduZWQgbG9uZyB2YWw7DQo+ID4gIAlib29sIHJlYWR5Ow0KPiA+IC0JdTMyIHZh
-bDsNCj4gPg0KPiA+IC0JcmVhZHkgPSB0ZXN0X2JpdChwcm9iZV9zdGF0dXNfb2Zmc2V0KHNlbnNv
-ci0+aHdfaWQpLA0KPiA+IC0JCQkgdG11LT5iYXNlICsgVFJJVFNSKTsNCj4gPiArCXZhbCA9IHJl
-YWRsX3JlbGF4ZWQodG11LT5iYXNlICsgVFJJVFNSKTsNCj4gPiArCXJlYWR5ID0gdGVzdF9iaXQo
-cHJvYmVfc3RhdHVzX29mZnNldChzZW5zb3ItPmh3X2lkKSwgJnZhbCk7DQo+ID4gIAlpZiAoIXJl
-YWR5KQ0KPiA+ICAJCXJldHVybiAtRUFHQUlOOw0KPiANCj4gRG9lc24ndCB0aGlzIHBhdGNoIGFs
-c28gZml4IGEgYnVnIGJlY2F1c2UgdGhlIHJlYWQgd2FzIGRvbmUgYWZ0ZXIgdGVzdGluZyB0aGUN
-Cj4gYml0PyA6KQ0KDQpZZXPwn5iKIFByZXZpb3VzIHBhdGNoIHJlYWRzIHRoZSByZWdpc3RlciB0
-d2ljZSBhdCBkaWZmZXJlbnQgdGltZSwgbWF5IGNhdXNlIGENCnN5bmMgaXNzdWUgb2YgY2hlY2tp
-bmcgdGhlIHJlYWR5IGJpdCBhbmQgcmVhZGluZyB0aGUgdGVtcGVyYXR1cmUgdXNpbmcgcmVnaXN0
-ZXINCnZhbHVlcyByZWFkIGF0IGRpZmZlcmVudCB0aW1lLg0KDQpEbyBJIG5lZWQgdG8gaW1wcm92
-ZSB0aGUgY29tbWl0IGxvZz8gSSBndWVzcyBubyBuZWVkPw0KDQpUaGFua3MsDQpBbnNvbiANCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+On Mon, Mar 23, 2020 at 02:39:55PM +0000, Catalin Marinas wrote:
+> On Mon, Mar 23, 2020 at 01:57:22PM +0000, Mark Rutland wrote:
+> > On Mon, Mar 23, 2020 at 01:24:12PM +0000, Mark Brown wrote:
+> > > On Mon, Mar 23, 2020 at 12:21:44PM +0000, Catalin Marinas wrote:
+> > > > On Fri, Mar 20, 2020 at 05:39:46PM +0000, Szabolcs Nagy wrote:
+> > > 
+> > > > +int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
+> > > > +                        bool has_interp, bool is_interp)
+> > > > +{
+> > > > +       if (is_interp != has_interp)
+> > > > +               return prot;
+> > > > +
+> > > > +       if (!(state->flags & ARM64_ELF_BTI))
+> > > > +               return prot;
+> > > > +
+> > > > +       if (prot & PROT_EXEC)
+> > > > +               prot |= PROT_BTI;
+> > > > +
+> > > > +       return prot;
+> > > > +}
+> > > 
+> > > > At a quick look, for dynamic binaries we have has_interp == true and
+> > > > is_interp == false. I don't know why but, either way, the above code
+> > > > needs a comment with some justification.
+> > > 
+> > > I don't really know for certain either, I inherited this code as is with
+> > > the understanding that this was all agreed with the toolchain and libc
+> > > people - the actual discussion that lead to the decisions being made
+> > > happened before I was involved.  My understanding is that the idea was
+> > > that the dynamic linker would be responsible for mapping everything in
+> > > dynamic applications other than itself but other than consistency I
+> > > don't know why.  I guess it defers more decision making to userspace but
+> > > I'm having a hard time thinking of sensible cases where one might wish
+> > > to make a decision other than enabling PROT_BTI.
+> > 
+> > My understanding was this had been agreed with the toolchain folk a
+> > while back -- anything static loaded by the kernel (i.e. a static
+> > executable or the dynamic linker) would get GP set. In other cases the
+> > linker will mess with the permissions on the pages anyhow, and needs to
+> > be aware of BTI in order to do the right thing, so it was better to
+> > leave it to userspace consistently (e.g. as that had the least risk of
+> > subtle changes in behaviour leading to ABI difficulties).
+> 
+> So this means that the interpreter will have to mprotect(PROT_BTI) the
+> text section of the primary executable.
+
+Yes, but after fixing up any relocations in that section it's going to
+have to call mprotect() on it anyhow (e.g. in order to make it
+read-only), and in doing so would throw away BTI unless it was BTI
+aware.
+
+> > I think it would be best to document the current behaviour, as it's a
+> > simple ABI that we can guarantee, and the dynamic linker will have to be
+> > aware of BTI in order to do the right thing anyhow.
+> 
+> That's a valid point. If we have an old dynamic linker and the kernel
+> enabled BTI automatically for the main executable, could things go wrong
+> (e.g. does the PLT need to be BTI-aware)?
+
+I believe that a PLT in an unguarded page needs no special treatment. A
+PLT within a guarded page needs to be built specially for BTI.
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
