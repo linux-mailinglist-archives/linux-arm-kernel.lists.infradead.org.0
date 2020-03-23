@@ -2,77 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99D75190248
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 00:53:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53C5A190253
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 00:57:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ahUWxlagBBfEMPpwTtVcTQk+IboUmNzKB7MpVGtwqw4=; b=YbSYjY+rL2rgwm
-	FOK8gAfMhCwM0+f0uYLhW5VKL2XihpajQ3tVJxOxMrDV0k8DuqGHmyMOU5FiZjsxYrHTl7U6b9J6Z
-	nNdprmkAY4akQNg1YrFzrntM+4RgoA2h+vUA/EuKJ5WEwWZgtomYEPIiKunIHoe0gnHeORzOagXcC
-	r4vRchQMtIS7gzmFfw46Ng6bveW0m7u90HMG68W+uexGfFG9HGjlCqB6+G4a2SBkw5daN4v5sAmLj
-	F1ZmBfoWsCowv1sDyXEJbI+tQUfzdjte3nyxglrXyOMfgeSrQO8/piVatFbJ0xYayb9jxoEdc+VOn
-	E7/ZoFgd1flMYuzCH3rw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=meOAwvpUdWJqDBKZV2LD0f68Bq5W//4/+ZArISCodJE=; b=c3Hj9k4q8eqjIN
+	RK78+F8nbdXBrOLeJaZDOT7EgDb9HZshRBxghpULoaLzaAx5/LGZhw065cj22awmM8EqyPqnU/jZl
+	nAOeDjQ8Kqjze1nfq1O2/SgfTXfjTP2gzIH/2c2KgsCoPi5fPi/MeOY5BmCleRmc8H8LWNpw3nMN6
+	q40l1fspLKwSpJvu5uMxVV6wBfJ4Xs2tBAloH9ccNB+b4nLBlHGspYysZpoo0JnmrBUsDRqqyug2J
+	KdAEdjW2+WC1wqr0jqZj6UwLhUm6jJ6G8jX98V0ha63Fi3PtmTSeHeZI601s1H3J39yi9YGiWtIOA
+	owq6HHjOmjcPIXhNH5Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGWsE-0005qQ-Km; Mon, 23 Mar 2020 23:52:50 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jGWwL-0007dw-9g; Mon, 23 Mar 2020 23:57:05 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGWs5-0005pn-Bg
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 23:52:43 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48mWQZ2fJFz1rwtx;
- Tue, 24 Mar 2020 00:52:38 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48mWQZ1mkbz1qyDv;
- Tue, 24 Mar 2020 00:52:38 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id dsdc2cmNuP8z; Tue, 24 Mar 2020 00:52:36 +0100 (CET)
-X-Auth-Info: 3FxyK811rrHcEf1hkb6YOMRfQXbYfd56Aqzjqx9BVm8=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 24 Mar 2020 00:52:36 +0100 (CET)
-Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
- gpio irq chip
-To: Marc Zyngier <maz@kernel.org>
-References: <20200219143229.18084-1-alexandre.torgue@st.com>
- <20200219143229.18084-3-alexandre.torgue@st.com>
- <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
- <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
- <a7fc5e43-34c2-a4e6-e0c5-1584f17fb024@denx.de>
- <8d6f6646-56e4-5218-9990-f0c96862dc83@denx.de> <20200323193157.038f36f9@why>
- <8e2795d8-4a8b-35a7-7d3f-e24d011878f6@denx.de> <20200323194946.26bdd003@why>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <3f032003-c847-ccd7-931a-16acc58c8342@denx.de>
-Date: Tue, 24 Mar 2020 00:52:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jGWwB-0007cm-Qn
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 23:56:57 +0000
+Received: by mail-ot1-x343.google.com with SMTP id e19so15397004otj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 16:56:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=Ix8wgcI17GVIT6csUF0tAYBE2LaGOYJ65o4zi4Z+Z6c=;
+ b=cxRClrgaWN/fpDic28j6dquzcmGVw+xYCBcb9evltHJpyFpceHUzfKZJMIJhOLclFx
+ Yn2A3TP5Stbe0rKKKA/IDNeP6sQu7YUUq74s5fXrAmxwnECa9lFLzGP2bXzZ2DmVKPgL
+ UDLguXXmIlABThiCSt5lssfGYmuDsDVHy3ovX3K/B0/plnPrQcOqebITxOQuZ/DZffwT
+ OhGqRBkkNp3UqEPletWR4FAIHWjJFvKqYVN8qCAzkXSZ9bQ7aH/jjGGf8ucrXstsZArj
+ gA7y7Jxp7obe4aoMrhUye9oj3Q9UqQfJGy1EH69U31823NIqpoSP5pj6ibFOe6U4weCd
+ K+uQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=Ix8wgcI17GVIT6csUF0tAYBE2LaGOYJ65o4zi4Z+Z6c=;
+ b=rrr2Bmm7wQRgplA2vadP+gDXM/MOqzzj+bxodfCzVY187CGHdKJci0rxPQvhzr1Ys1
+ j5wKZxeo4eXYLrqHYNRVLvPpGFfZqaYyZncPq1XHQEqCRlAb6ij7JxtrD9w6YXNDGQ+4
+ UMY8my20xea4DGk81Is4cokjmcgLdgXhRty/mAFp/lke9mxufwxqK1erSLud5KlcImyO
+ h7PDU2G5YfiD5aGLQI8SoYZtrcXjK/35lyfkJK0O+YY7Wpqa0CyP3RGhUUVtqP4FAxPI
+ Z7aJu4beo/4d508rdIZf00qcExqxGu1qDu+IlbdDYtChlM7WW2pQnaDNR2FjFxY5l7WL
+ /O4Q==
+X-Gm-Message-State: ANhLgQ3uc2HZX9e4I3VeOvX4yQl9IfOv5xaY0wCYLIoFDxOFtHmw8a7l
+ oWmNGe6n7VS4kIswhU3Cdgh86Vp1RDUYVoM1gpJZiQ==
+X-Google-Smtp-Source: ADFU+vuDPdpSQy4eIZVOQE+DA/YA6x9KuEZDOGaV/GyUNXkAFHrjBMzNKJjNEWfmfUZNmYn+XKHPMpfaDEYyQ1QtrIo=
+X-Received: by 2002:a05:6830:1e10:: with SMTP id
+ s16mr4024265otr.33.1585007814217; 
+ Mon, 23 Mar 2020 16:56:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200323194946.26bdd003@why>
-Content-Language: en-US
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-3-mike.kravetz@oracle.com>
+ <2ca058dc-47e6-1d08-154b-77d2cbe98e34@c-s.fr>
+In-Reply-To: <2ca058dc-47e6-1d08-154b-77d2cbe98e34@c-s.fr>
+From: Mina Almasry <almasrymina@google.com>
+Date: Mon, 23 Mar 2020 16:56:43 -0700
+Message-ID: <CAHS8izOeYeVi-W7z-DKw3Uv0rAqwuD1__uTr-oF6Lx=V9ekm3g@mail.gmail.com>
+Subject: Re: [PATCH 2/4] hugetlbfs: move hugepagesz= parsing to arch
+ independent code
+To: Christophe Leroy <christophe.leroy@c-s.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_165241_716979_F255548D 
-X-CRM114-Status: GOOD (  22.74  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200323_165655_899913_0637C160 
+X-CRM114-Status: GOOD (  20.11  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,127 +101,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jason Cooper <jason@lakedaemon.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Linux-MM <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ open list <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S . Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/23/20 8:49 PM, Marc Zyngier wrote:
-> On Mon, 23 Mar 2020 20:37:54 +0100
-> Marek Vasut <marex@denx.de> wrote:
-> 
->> On 3/23/20 8:31 PM, Marc Zyngier wrote:
->>> On Mon, 23 Mar 2020 20:19:39 +0100
->>> Marek Vasut <marex@denx.de> wrote:
->>>
->>>> On 3/23/20 8:04 PM, Marek Vasut wrote:
->>>>> On 2/20/20 10:17 AM, Marc Zyngier wrote:
->>>>>> On 2020-02-20 09:04, Linus Walleij wrote:
->>>>>>> On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
->>>>>>> <alexandre.torgue@st.com> wrote:
->>>>>>>
->>>>>>>> GPIO hardware block is directly linked to EXTI block but EXTI handles
->>>>>>>> external interrupts only on edge. To be able to handle GPIO interrupt on
->>>>>>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
->>>>>>>> chip)
->>>>>>>> is retriggered following interrupt type and gpio line value.
->>>>>>>>
->>>>>>>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
->>>>>>>> Tested-by: Marek Vasut <marex@denx.de>
->>>>>>>
->>>>>>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
->>>>>>>
->>>>>>> If Marc want to merge it with patch 1/2 go ahead!
->>>>>>
->>>>>> I'll queue the whole thing for 5.7.
->>>>>
->>>>> I have a feeling this doesn't work with threaded interrupts.
->>>>>
->>>>> If the interrupt handler runs in a thread context, the EOI will happen
->>>>> almost right away (while the IRQ handler runs) and so will the code
->>>>> handling the IRQ retriggering. But since the IRQ handler still runs and
->>>>> didn't return yet, the retriggering doesn't cause the IRQ handler to be
->>>>> called again once it finishes, even if the IRQ line is still asserted.
->>>>> And that could result in some of the retriggers now happening I think.
->>>>> Or am I doing something wrong ?
->>>>
->>>> The patch below makes my usecase work, but I don't know whether it's
->>>> correct. Basically once the threaded IRQ handler finishes and unmasks
->>>> the IRQ, check whether the line is asserted and retrigger if so.
->>>>
->>>> diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c
->>>> b/drivers/pinctrl/stm32/pinctrl-stm32.c
->>>> index 9ac9ecfc2f34..060dbcb7ae72 100644
->>>> --- a/drivers/pinctrl/stm32/pinctrl-stm32.c
->>>> +++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
->>>> @@ -371,12 +371,26 @@ static void
->>>> stm32_gpio_irq_release_resources(struct irq_data *irq_data)
->>>>         gpiochip_unlock_as_irq(&bank->gpio_chip, irq_data->hwirq);
->>>>  }
->>>>
->>>> +static void stm32_gpio_irq_unmask(struct irq_data *d)
->>>> +{
->>>> +       struct stm32_gpio_bank *bank = d->domain->host_data;
->>>> +       int level;
->>>> +
->>>> +       irq_chip_unmask_parent(d);
->>>> +
->>>> +       /* If level interrupt type then retrig */
->>>> +       level = stm32_gpio_get(&bank->gpio_chip, d->hwirq);
->>>> +       if ((level == 0 && bank->irq_type[d->hwirq] ==
->>>> IRQ_TYPE_LEVEL_LOW) ||
->>>> +           (level == 1 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_HIGH))
->>>> +               irq_chip_retrigger_hierarchy(d);
->>>> +}
->>>> +
->>>>  static struct irq_chip stm32_gpio_irq_chip = {
->>>>         .name           = "stm32gpio",
->>>>         .irq_eoi        = stm32_gpio_irq_eoi,
->>>>         .irq_ack        = irq_chip_ack_parent,
->>>>         .irq_mask       = irq_chip_mask_parent,
->>>> -       .irq_unmask     = irq_chip_unmask_parent,
->>>> +       .irq_unmask     = stm32_gpio_irq_unmask,
->>>>         .irq_set_type   = stm32_gpio_set_type,
->>>>         .irq_set_wake   = irq_chip_set_wake_parent,
->>>>         .irq_request_resources = stm32_gpio_irq_request_resources,
->>>>
->>>
->>> OK, I see your problem now.
->>>
->>> The usual flow is along the line of Ack+Eoi, and that's what the
->>> current code guarantees.
->>>
->>> Threaded interrupts do Ack+Mask+Eoi, followed by an Unmask once the
->>> thread finishes. This unmask needs to do the retrigger as well, as you
->>> found out.
->>>
->>> Can you please refactor the above so that we have the common code
->>> between unmask and eoi in a separate function, send a proper patch, and
->>> I'll apply it on top of the current irq/irqchip-5.7 branch.
->>
->> Sure, I can. Do we still need this retriggering in the irq_eoi too ?
-> 
-> Absolutely, because that's what matters for the non-threaded case
-> (there is no mask/unmask on that path). It is also never wrong to
-> over-resample (it just slows things down).
-> 
->> Also, are there any other hidden details I might've missed ?
-> 
-> Probably. But let's fix one bug at a time, shall we? ;-) And let's hope
-> that ST doesn't take this as a excuse not to clean up their act in
-> their next SoC!
-
-Indeed.
-
-Patch is out, thanks for the feedback :)
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBNYXIgMTksIDIwMjAgYXQgMTI6MDQgQU0gQ2hyaXN0b3BoZSBMZXJveQo8Y2hyaXN0
+b3BoZS5sZXJveUBjLXMuZnI+IHdyb3RlOgo+Cj4KPgo+IExlIDE4LzAzLzIwMjAgw6AgMjM6MDYs
+IE1pa2UgS3JhdmV0eiBhIMOpY3JpdCA6Cj4gPiBOb3cgdGhhdCBhcmNoaXRlY3R1cmVzIHByb3Zp
+ZGUgYXJjaF9odWdldGxiX3ZhbGlkX3NpemUoKSwgcGFyc2luZwo+ID4gb2YgImh1Z2VwYWdlc3o9
+IiBjYW4gYmUgZG9uZSBpbiBhcmNoaXRlY3R1cmUgaW5kZXBlbmRlbnQgY29kZS4KPiA+IENyZWF0
+ZSBhIHNpbmdsZSByb3V0aW5lIHRvIGhhbmRsZSBodWdlcGFnZXN6PSBwYXJzaW5nIGFuZCByZW1v
+dmUKPiA+IGFsbCBhcmNoIHNwZWNpZmljIHJvdXRpbmVzLiAgV2UgY2FuIGFsc28gcmVtb3ZlIHRo
+ZSBpbnRlcmZhY2UKPiA+IGh1Z2V0bGJfYmFkX3NpemUoKSBhcyB0aGlzIGlzIG5vIGxvbmdlciB1
+c2VkIG91dHNpZGUgYXJjaCBpbmRlcGVuZGVudAo+ID4gY29kZS4KPiA+Cj4gPiBUaGlzIGFsc28g
+cHJvdmlkZXMgY29uc2lzdGVudCBiZWhhdmlvciBvZiBodWdldGxiZnMgY29tbWFuZCBsaW5lCj4g
+PiBvcHRpb25zLiAgVGhlIGh1Z2VwYWdlc3o9IG9wdGlvbiBzaG91bGQgb25seSBiZSBzcGVjaWZp
+ZWQgb25jZSBmb3IKPiA+IGEgc3BlY2lmaWMgc2l6ZSwgYnV0IHNvbWUgYXJjaGl0ZWN0dXJlcyBh
+bGxvdyBtdWx0aXBsZSBpbnN0YW5jZXMuCj4gPiBUaGlzIGFwcGVhcnMgdG8gYmUgbW9yZSBvZiBh
+biBvdmVyc2lnaHQgd2hlbiBjb2RlIHdhcyBhZGRlZCBieSBzb21lCj4gPiBhcmNoaXRlY3R1cmVz
+IHRvIHNldCB1cCBBTEwgaHVnZSBwYWdlcyBzaXplcy4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBN
+aWtlIEtyYXZldHogPG1pa2Uua3JhdmV0ekBvcmFjbGUuY29tPgo+ID4gLS0tCj4gPiAgIGFyY2gv
+YXJtNjQvbW0vaHVnZXRsYnBhZ2UuYyAgIHwgMTUgLS0tLS0tLS0tLS0tLS0tCj4gPiAgIGFyY2gv
+cG93ZXJwYy9tbS9odWdldGxicGFnZS5jIHwgMTUgLS0tLS0tLS0tLS0tLS0tCj4gPiAgIGFyY2gv
+cmlzY3YvbW0vaHVnZXRsYnBhZ2UuYyAgIHwgMTYgLS0tLS0tLS0tLS0tLS0tLQo+ID4gICBhcmNo
+L3MzOTAvbW0vaHVnZXRsYnBhZ2UuYyAgICB8IDE4IC0tLS0tLS0tLS0tLS0tLS0tLQo+ID4gICBh
+cmNoL3NwYXJjL21tL2luaXRfNjQuYyAgICAgICB8IDIyIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0K
+PiA+ICAgYXJjaC94ODYvbW0vaHVnZXRsYnBhZ2UuYyAgICAgfCAxNiAtLS0tLS0tLS0tLS0tLS0t
+Cj4gPiAgIGluY2x1ZGUvbGludXgvaHVnZXRsYi5oICAgICAgIHwgIDEgLQo+ID4gICBtbS9odWdl
+dGxiLmMgICAgICAgICAgICAgICAgICB8IDI0ICsrKysrKysrKysrKysrKysrKy0tLS0tLQo+ID4g
+ICA4IGZpbGVzIGNoYW5nZWQsIDE4IGluc2VydGlvbnMoKyksIDEwOSBkZWxldGlvbnMoLSkKPiA+
+Cj4KPiBbc25pcF0KPgo+ID4gZGlmZiAtLWdpdCBhL21tL2h1Z2V0bGIuYyBiL21tL2h1Z2V0bGIu
+Ywo+ID4gaW5kZXggMmY5OTM1OWI5M2FmLi5jZDRlYzA3MDgwZmIgMTAwNjQ0Cj4gPiAtLS0gYS9t
+bS9odWdldGxiLmMKPiA+ICsrKyBiL21tL2h1Z2V0bGIuYwo+ID4gQEAgLTMxNDksMTIgKzMxNDks
+NiBAQCBzdGF0aWMgaW50IF9faW5pdCBodWdldGxiX2luaXQodm9pZCkKPiA+ICAgfQo+ID4gICBz
+dWJzeXNfaW5pdGNhbGwoaHVnZXRsYl9pbml0KTsKPiA+Cj4gPiAtLyogU2hvdWxkIGJlIGNhbGxl
+ZCBvbiBwcm9jZXNzaW5nIGEgaHVnZXBhZ2Vzej0uLi4gb3B0aW9uICovCj4gPiAtdm9pZCBfX2lu
+aXQgaHVnZXRsYl9iYWRfc2l6ZSh2b2lkKQo+ID4gLXsKPiA+IC0gICAgIHBhcnNlZF92YWxpZF9o
+dWdlcGFnZXN6ID0gZmFsc2U7Cj4gPiAtfQo+ID4gLQo+ID4gICB2b2lkIF9faW5pdCBodWdldGxi
+X2FkZF9oc3RhdGUodW5zaWduZWQgaW50IG9yZGVyKQo+ID4gICB7Cj4gPiAgICAgICBzdHJ1Y3Qg
+aHN0YXRlICpoOwo+ID4gQEAgLTMyMjQsNiArMzIxOCwyNCBAQCBzdGF0aWMgaW50IF9faW5pdCBo
+dWdldGxiX25ycGFnZXNfc2V0dXAoY2hhciAqcykKPiA+ICAgfQo+ID4gICBfX3NldHVwKCJodWdl
+cGFnZXM9IiwgaHVnZXRsYl9ucnBhZ2VzX3NldHVwKTsKPiA+Cj4gPiArc3RhdGljIGludCBfX2lu
+aXQgaHVnZXBhZ2Vzel9zZXR1cChjaGFyICpzKQo+ID4gK3sKPiA+ICsgICAgIHVuc2lnbmVkIGxv
+bmcgbG9uZyBzaXplOwo+ID4gKyAgICAgY2hhciAqc2F2ZWRfcyA9IHM7Cj4gPiArCj4gPiArICAg
+ICBzaXplID0gbWVtcGFyc2UocywgJnMpOwo+Cj4gWW91IGRvbid0IHVzZSBzIGFmdGVyIHRoYXQs
+IHNvIHlvdSBjYW4gcGFzcyBOVUxMIGluc3RlYWQgb2YgJnMgYW5kIGF2b2lkCj4gdGhlIHNhdmVk
+X3MKPgoKKzEKCkFja2VkLWJ5OiBNaW5hIEFsbWFzcnkgPGFsbWFzcnltaW5hQGdvb2dsZS5jb20+
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
