@@ -2,90 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8219218F41F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:11:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 837EB18F425
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:13:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gzGqJEH5vM7tkl6iKucF6qR/qnF+AnDs9Y290O1qjZU=; b=bhxe1s3cvDiX60
-	2SgAebCK/64MqIdIpLQPPr0At11rQRIwz+rqTf9kqJvcWeTWg8ptESMNuszXELLH262kgtnZ3qKJ5
-	RELKI3GQK9mni5SUTdUGS8aLHOSQKYhfLfPly/l8n3QtrYJl3VcttNf52h40H64IqCnyFzJfmm/Ay
-	R9Rz5aE5o5klr01r3PGxpD5WJdCTPFTno/pIVQ2yufFJremU5J1Xvb1r6Esg2oVzLOnPk479lOFz5
-	DZ44lE+eEhoOCYsmT8i6DT1j8XEC79bLm+UsJ7QezYSZ0k5RlocZOpCZMoFPyQOAX+yE6qCAsO5dG
-	+4rq/L2UvcZj1/12FGnw==;
+	List-Owner; bh=lu3lDaNCl/I/bOXtPH5curstx+lvv59GurfMklSD4w8=; b=cEt8sphma4/zRu
+	jXDu5gY2SsjQose9CwFF0nxNL9MxZO4fAp8k/hGScoD9zPQTv5NlwQyLsDSyleIW0Q2uM9uv7y/YI
+	wo5+OjRTYBS8IkGnLvv/1wLMiqNf2dkwC3ogVBKbknZMNOFxuBwwXYGG282vY2j3Vy8TBgoLGRT52
+	/qGSKs79q/Kpq4GeMJUOFQRMmuPT5epOP8R6MKDBhFOiv1rI56X2ZWaECFO2HyTCJ9wHWlYz2VIWB
+	1BCf1TjsYtreOUuaey1tD6LlTTcAT+dt0ZitfuzM+K8bVP1VIfs0P0Gq+Q49PO9hpj3X0zYOE76S+
+	Xt5kG5n91epaQAeFmZ1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGLv1-0004Tc-Fg; Mon, 23 Mar 2020 12:10:59 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jGLx1-00052Z-Og; Mon, 23 Mar 2020 12:13:03 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGLur-0004SX-05
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:10:50 +0000
+ id 1jGLws-00052C-NP
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:12:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584965446;
+ s=mimecast20190719; t=1584965573;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=KTi6Fbpftif/VSaqN/XQLRD1K5JgrsXFftrydIRiWZs=;
- b=dEmIS5WjQBJtpFM1CvUbPWjHJXTaKn7nU//8GG/AAmonADRMmnsHDcx6qWoKuMOUJuE2BS
- SFViJZRldHkSc+tX0XPj49etA27DKSqL4UQGwEDkhQk5ZrWZPHm4t5UjuHr1sxz2WsLzsv
- ULykLwDhRD5kQ15kqwaEEBJtgpEeFYY=
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-144-usOoLx0TPZKiK98fs08ACQ-1; Mon, 23 Mar 2020 08:10:44 -0400
-X-MC-Unique: usOoLx0TPZKiK98fs08ACQ-1
-Received: by mail-wm1-f69.google.com with SMTP id w9so875118wmi.2
+ bh=ZRJKGrc+yenXun2y4naCBRoLBNtZ9+biYSl31ZIdWDk=;
+ b=eeVWGPsr+b6qX0WaXpHmBiJRI9A83ixGUQhTRL+u210OJFBBufRpWyTyF3P9wIxFRSm5y+
+ /gaYYQ5SLVq/BcuZMrj4MTEVUYOba5oWC6NDORJPNgF33Wa90HiOSmUzGh/GW3cqGdDP5n
+ 7NWcVmvURoe60qigKiHgUUDbdgILBDo=
+Received: from mail-wr1-f72.google.com (mail-wr1-f72.google.com
+ [209.85.221.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-217-qQmU8JsAP1OFQ2nDOroK-g-1; Mon, 23 Mar 2020 08:12:51 -0400
+X-MC-Unique: qQmU8JsAP1OFQ2nDOroK-g-1
+Received: by mail-wr1-f72.google.com with SMTP id q18so7276480wrw.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 05:10:44 -0700 (PDT)
+ Mon, 23 Mar 2020 05:12:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=rHQRdviv+oNnM+wOvy7j9QWQo0zwjiFN+uLtW4Mvpq0=;
- b=qSU1ws0tM4081kRAHGCh29GsYDG6NGT0Pa744p1gvZA/AWzSF1+D8qcjjDGnKnzJCu
- jiPGdsLa0SErrbvfd80RyVTJiJ1/DTWcvGlP762SN1A2qE/M9vQU0ouJ+zxMDvO8UJlf
- tY5+QzCOeS+5mdHOcJ1qaE2YcJf8uPDQKioiC74kxAXnUFSRDHyVpvlAQBPcieFCVq53
- EXOh9yPghq8sDNgri9Mxln9Wv0ordYxEX7MjIW5/G6MsdhbsINu91fKg7GUQwLwXuCYb
- 6xqoac8ytFtIiImhn18GWhf/ed+4fNlO9LY8wucv5ScHg0LbttfA+xRhr0zcBO3uyIQ/
- UmMQ==
-X-Gm-Message-State: ANhLgQ0QrKtHA+GUSbyMAnjsCr8Xh8ZopRNo8+HuPfdiixEkaT2Y6jS7
- Uehvz1lPJh37oH8BKEjY1AdBsWKWWlygdv7od+xctcxz6c8CSpBUxmdv84A0fTrnhWE6Zxj8iH4
- p49LUxjCfcIDLodtwk8Z2lLSpDj3IxUnl380=
-X-Received: by 2002:adf:f7ce:: with SMTP id a14mr30662467wrq.180.1584965443485; 
- Mon, 23 Mar 2020 05:10:43 -0700 (PDT)
-X-Google-Smtp-Source: ADFU+vsLu0mWmhCib7a9L9Z4UgbCUMlvtjWeM7CpEh6ia2EdDdwqHhRYkq8ynpPTFBq7OzYIQ6wpBQ==
-X-Received: by 2002:adf:f7ce:: with SMTP id a14mr30662429wrq.180.1584965443217; 
- Mon, 23 Mar 2020 05:10:43 -0700 (PDT)
+ bh=5qx8zhPCnTE2qfI2i3stQlj2dT0PZ4HXDVQ2fRtvOJ8=;
+ b=NsD6NBtTkB/np7moXwu1K3PRzJsL78Vd4gEZYwy3mmEkt35HymHxaysieJlOQxaMe4
+ 2jLMH2PBC4Ppm/Cb7XpNCPdPDxlm7kTzLT/2cCIA+87OvbJ+1mhoGjbbV0eyvdY2IFC2
+ 3D0hMeRPNS6zHAPaDEqq4CFU0DVOAfEekQ/NXnzwIao28auu67rIjLnAtvFpqke5/tXQ
+ xHvtLjCuBIF0CHAhpTswRrkAiPRPtZFb6CUlTUcizVmlJHWDmdvEDpuPJ3pKMtfNhxDs
+ 8vPx3jUklTFLvcQgVkthamQ2TulW6H2wJqIw3OhyID/LuV/Bh4p6nIncqNTiT8hCstEY
+ S03A==
+X-Gm-Message-State: ANhLgQ3jPZ/vLmZaJ/6nhspyqrhBwRCpne99AYvVWxaNHHqm9UCNUlGI
+ 9eds9d1BikySWzIWDN0Qd1Kj9rcNPlpe4I2Ay+wasH33R1YnakzEThMTYejlulJ3mqnPzCyrYvl
+ TTlR0F2+QhISLXB4lRrrG5bwhH4XP6p8fiaI=
+X-Received: by 2002:a1c:7dc8:: with SMTP id
+ y191mr26149374wmc.167.1584965570414; 
+ Mon, 23 Mar 2020 05:12:50 -0700 (PDT)
+X-Google-Smtp-Source: ADFU+vvxdntzGTAq5lGTsloo1YunEi0RacH3kYz7CeYUhon5iCYkq0bwrHPPjatnROv0Mk0H2zrWhQ==
+X-Received: by 2002:a1c:7dc8:: with SMTP id
+ y191mr26149348wmc.167.1584965570127; 
+ Mon, 23 Mar 2020 05:12:50 -0700 (PDT)
 Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
- by smtp.gmail.com with ESMTPSA id m7sm957131wro.41.2020.03.23.05.10.41
+ by smtp.gmail.com with ESMTPSA id p16sm20678671wmi.40.2020.03.23.05.12.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 05:10:42 -0700 (PDT)
+ Mon, 23 Mar 2020 05:12:49 -0700 (PDT)
 From: Vitaly Kuznetsov <vkuznets@redhat.com>
 To: Sean Christopherson <sean.j.christopherson@intel.com>,
  Paolo Bonzini <pbonzini@redhat.com>
-Subject: Re: [PATCH v3 2/9] KVM: x86: Move init-only kvm_x86_ops to separate
- struct
-In-Reply-To: <20200321202603.19355-3-sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v3 3/9] KVM: VMX: Move hardware_setup() definition below
+ vmx_x86_ops
+In-Reply-To: <20200321202603.19355-4-sean.j.christopherson@intel.com>
 References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
- <20200321202603.19355-3-sean.j.christopherson@intel.com>
-Date: Mon, 23 Mar 2020 13:10:40 +0100
-Message-ID: <87lfnr9sqn.fsf@vitty.brq.redhat.com>
+ <20200321202603.19355-4-sean.j.christopherson@intel.com>
+Date: Mon, 23 Mar 2020 13:12:47 +0100
+Message-ID: <87imiv9sn4.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_051049_123879_50B6123F 
-X-CRM114-Status: GOOD (  17.27  )
+X-CRM114-CacheID: sfid-20200323_051254_930784_5E35A5F6 
+X-CRM114-Status: GOOD (  16.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ no trust [216.205.24.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -126,206 +128,382 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Sean Christopherson <sean.j.christopherson@intel.com> writes:
 
-> Move the kvm_x86_ops functions that are used only within the scope of
-> kvm_init() into a separate struct, kvm_x86_init_ops.  In addition to
-> identifying the init-only functions without restorting to code comments,
-> this also sets the stage for waiting until after ->hardware_setup() to
-> set kvm_x86_ops.  Setting kvm_x86_ops after ->hardware_setup() is
-> desirable as many of the hooks are not usable until ->hardware_setup()
-> completes.
+> Move VMX's hardware_setup() below its vmx_x86_ops definition so that a
+> future patch can refactor hardware_setup() to modify vmx_x86_ops
+> directly instead of indirectly modifying the ops via the global
+> kvm_x86_ops.
 >
 > No functional change intended.
 >
 > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 > ---
->  arch/x86/include/asm/kvm_host.h | 13 +++++++++----
->  arch/x86/kvm/svm.c              | 15 ++++++++++-----
->  arch/x86/kvm/vmx/vmx.c          | 16 +++++++++++-----
->  arch/x86/kvm/x86.c              | 10 ++++++----
->  4 files changed, 36 insertions(+), 18 deletions(-)
+>  arch/x86/kvm/vmx/vmx.c | 346 ++++++++++++++++++++---------------------
+>  1 file changed, 173 insertions(+), 173 deletions(-)
 >
-> diff --git a/arch/x86/include/asm/kvm_host.h b/arch/x86/include/asm/kvm_host.h
-> index 9a183e9d4cb1..f4c5b49299ff 100644
-> --- a/arch/x86/include/asm/kvm_host.h
-> +++ b/arch/x86/include/asm/kvm_host.h
-> @@ -1054,12 +1054,8 @@ static inline u16 kvm_lapic_irq_dest_mode(bool dest_mode_logical)
->  }
->  
->  struct kvm_x86_ops {
-> -	int (*cpu_has_kvm_support)(void);          /* __init */
-> -	int (*disabled_by_bios)(void);             /* __init */
->  	int (*hardware_enable)(void);
->  	void (*hardware_disable)(void);
-> -	int (*check_processor_compatibility)(void);/* __init */
-> -	int (*hardware_setup)(void);               /* __init */
->  	void (*hardware_unsetup)(void);            /* __exit */
->  	bool (*cpu_has_accelerated_tpr)(void);
->  	bool (*has_emulated_msr)(int index);
-> @@ -1260,6 +1256,15 @@ struct kvm_x86_ops {
->  	int (*enable_direct_tlbflush)(struct kvm_vcpu *vcpu);
->  };
->  
-> +struct kvm_x86_init_ops {
-> +	int (*cpu_has_kvm_support)(void);
-> +	int (*disabled_by_bios)(void);
-> +	int (*check_processor_compatibility)(void);
-> +	int (*hardware_setup)(void);
-> +
-> +	struct kvm_x86_ops *runtime_ops;
-> +};
-> +
->  struct kvm_arch_async_pf {
->  	u32 token;
->  	gfn_t gfn;
-> diff --git a/arch/x86/kvm/svm.c b/arch/x86/kvm/svm.c
-> index 2125c6ae5951..33e67c3389c2 100644
-> --- a/arch/x86/kvm/svm.c
-> +++ b/arch/x86/kvm/svm.c
-> @@ -7351,11 +7351,7 @@ static void svm_pre_update_apicv_exec_ctrl(struct kvm *kvm, bool activate)
->  }
->  
->  static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
-> -	.cpu_has_kvm_support = has_svm,
-> -	.disabled_by_bios = is_disabled,
-> -	.hardware_setup = svm_hardware_setup,
->  	.hardware_unsetup = svm_hardware_teardown,
-> -	.check_processor_compatibility = svm_check_processor_compat,
->  	.hardware_enable = svm_hardware_enable,
->  	.hardware_disable = svm_hardware_disable,
->  	.cpu_has_accelerated_tpr = svm_cpu_has_accelerated_tpr,
-> @@ -7480,9 +7476,18 @@ static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
->  	.check_nested_events = svm_check_nested_events,
->  };
->  
-> +static struct kvm_x86_init_ops svm_init_ops __initdata = {
-> +	.cpu_has_kvm_support = has_svm,
-> +	.disabled_by_bios = is_disabled,
-> +	.hardware_setup = svm_hardware_setup,
-> +	.check_processor_compatibility = svm_check_processor_compat,
-> +
-> +	.runtime_ops = &svm_x86_ops,
-> +};
-
-Unrelated to your patch but I think we can make the naming of some of
-these functions more consistend on SVM/VMX, in particular I'd suggest 
-
-has_svm() -> cpu_has_svm_support()
-is_disabled -> svm_disabled_by_bios()
-...
-(see below for VMX)
-
-> +
->  static int __init svm_init(void)
->  {
-> -	return kvm_init(&svm_x86_ops, sizeof(struct vcpu_svm),
-> +	return kvm_init(&svm_init_ops, sizeof(struct vcpu_svm),
->  			__alignof__(struct vcpu_svm), THIS_MODULE);
->  }
->  
 > diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
-> index 07299a957d4a..ffcdcc86f5b7 100644
+> index ffcdcc86f5b7..82dab775d520 100644
 > --- a/arch/x86/kvm/vmx/vmx.c
 > +++ b/arch/x86/kvm/vmx/vmx.c
-> @@ -7842,11 +7842,8 @@ static bool vmx_check_apicv_inhibit_reasons(ulong bit)
+> @@ -7652,179 +7652,6 @@ static bool vmx_apic_init_signal_blocked(struct kvm_vcpu *vcpu)
+>  	return to_vmx(vcpu)->nested.vmxon;
 >  }
 >  
->  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> -	.cpu_has_kvm_support = cpu_has_kvm_support,
-> -	.disabled_by_bios = vmx_disabled_by_bios,
-> -	.hardware_setup = hardware_setup,
->  	.hardware_unsetup = hardware_unsetup,
-> -	.check_processor_compatibility = vmx_check_processor_compat,
-> +
->  	.hardware_enable = hardware_enable,
->  	.hardware_disable = hardware_disable,
->  	.cpu_has_accelerated_tpr = report_flexpriority,
-> @@ -7981,6 +7978,15 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+> -static __init int hardware_setup(void)
+> -{
+> -	unsigned long host_bndcfgs;
+> -	struct desc_ptr dt;
+> -	int r, i, ept_lpage_level;
+> -
+> -	store_idt(&dt);
+> -	host_idt_base = dt.address;
+> -
+> -	for (i = 0; i < ARRAY_SIZE(vmx_msr_index); ++i)
+> -		kvm_define_shared_msr(i, vmx_msr_index[i]);
+> -
+> -	if (setup_vmcs_config(&vmcs_config, &vmx_capability) < 0)
+> -		return -EIO;
+> -
+> -	if (boot_cpu_has(X86_FEATURE_NX))
+> -		kvm_enable_efer_bits(EFER_NX);
+> -
+> -	if (boot_cpu_has(X86_FEATURE_MPX)) {
+> -		rdmsrl(MSR_IA32_BNDCFGS, host_bndcfgs);
+> -		WARN_ONCE(host_bndcfgs, "KVM: BNDCFGS in host will be lost");
+> -	}
+> -
+> -	if (!cpu_has_vmx_mpx())
+> -		supported_xcr0 &= ~(XFEATURE_MASK_BNDREGS |
+> -				    XFEATURE_MASK_BNDCSR);
+> -
+> -	if (!cpu_has_vmx_vpid() || !cpu_has_vmx_invvpid() ||
+> -	    !(cpu_has_vmx_invvpid_single() || cpu_has_vmx_invvpid_global()))
+> -		enable_vpid = 0;
+> -
+> -	if (!cpu_has_vmx_ept() ||
+> -	    !cpu_has_vmx_ept_4levels() ||
+> -	    !cpu_has_vmx_ept_mt_wb() ||
+> -	    !cpu_has_vmx_invept_global())
+> -		enable_ept = 0;
+> -
+> -	if (!cpu_has_vmx_ept_ad_bits() || !enable_ept)
+> -		enable_ept_ad_bits = 0;
+> -
+> -	if (!cpu_has_vmx_unrestricted_guest() || !enable_ept)
+> -		enable_unrestricted_guest = 0;
+> -
+> -	if (!cpu_has_vmx_flexpriority())
+> -		flexpriority_enabled = 0;
+> -
+> -	if (!cpu_has_virtual_nmis())
+> -		enable_vnmi = 0;
+> -
+> -	/*
+> -	 * set_apic_access_page_addr() is used to reload apic access
+> -	 * page upon invalidation.  No need to do anything if not
+> -	 * using the APIC_ACCESS_ADDR VMCS field.
+> -	 */
+> -	if (!flexpriority_enabled)
+> -		kvm_x86_ops->set_apic_access_page_addr = NULL;
+> -
+> -	if (!cpu_has_vmx_tpr_shadow())
+> -		kvm_x86_ops->update_cr8_intercept = NULL;
+> -
+> -#if IS_ENABLED(CONFIG_HYPERV)
+> -	if (ms_hyperv.nested_features & HV_X64_NESTED_GUEST_MAPPING_FLUSH
+> -	    && enable_ept) {
+> -		kvm_x86_ops->tlb_remote_flush = hv_remote_flush_tlb;
+> -		kvm_x86_ops->tlb_remote_flush_with_range =
+> -				hv_remote_flush_tlb_with_range;
+> -	}
+> -#endif
+> -
+> -	if (!cpu_has_vmx_ple()) {
+> -		ple_gap = 0;
+> -		ple_window = 0;
+> -		ple_window_grow = 0;
+> -		ple_window_max = 0;
+> -		ple_window_shrink = 0;
+> -	}
+> -
+> -	if (!cpu_has_vmx_apicv()) {
+> -		enable_apicv = 0;
+> -		kvm_x86_ops->sync_pir_to_irr = NULL;
+> -	}
+> -
+> -	if (cpu_has_vmx_tsc_scaling()) {
+> -		kvm_has_tsc_control = true;
+> -		kvm_max_tsc_scaling_ratio = KVM_VMX_TSC_MULTIPLIER_MAX;
+> -		kvm_tsc_scaling_ratio_frac_bits = 48;
+> -	}
+> -
+> -	set_bit(0, vmx_vpid_bitmap); /* 0 is reserved for host */
+> -
+> -	if (enable_ept)
+> -		vmx_enable_tdp();
+> -
+> -	if (!enable_ept)
+> -		ept_lpage_level = 0;
+> -	else if (cpu_has_vmx_ept_1g_page())
+> -		ept_lpage_level = PT_PDPE_LEVEL;
+> -	else if (cpu_has_vmx_ept_2m_page())
+> -		ept_lpage_level = PT_DIRECTORY_LEVEL;
+> -	else
+> -		ept_lpage_level = PT_PAGE_TABLE_LEVEL;
+> -	kvm_configure_mmu(enable_ept, ept_lpage_level);
+> -
+> -	/*
+> -	 * Only enable PML when hardware supports PML feature, and both EPT
+> -	 * and EPT A/D bit features are enabled -- PML depends on them to work.
+> -	 */
+> -	if (!enable_ept || !enable_ept_ad_bits || !cpu_has_vmx_pml())
+> -		enable_pml = 0;
+> -
+> -	if (!enable_pml) {
+> -		kvm_x86_ops->slot_enable_log_dirty = NULL;
+> -		kvm_x86_ops->slot_disable_log_dirty = NULL;
+> -		kvm_x86_ops->flush_log_dirty = NULL;
+> -		kvm_x86_ops->enable_log_dirty_pt_masked = NULL;
+> -	}
+> -
+> -	if (!cpu_has_vmx_preemption_timer())
+> -		enable_preemption_timer = false;
+> -
+> -	if (enable_preemption_timer) {
+> -		u64 use_timer_freq = 5000ULL * 1000 * 1000;
+> -		u64 vmx_msr;
+> -
+> -		rdmsrl(MSR_IA32_VMX_MISC, vmx_msr);
+> -		cpu_preemption_timer_multi =
+> -			vmx_msr & VMX_MISC_PREEMPTION_TIMER_RATE_MASK;
+> -
+> -		if (tsc_khz)
+> -			use_timer_freq = (u64)tsc_khz * 1000;
+> -		use_timer_freq >>= cpu_preemption_timer_multi;
+> -
+> -		/*
+> -		 * KVM "disables" the preemption timer by setting it to its max
+> -		 * value.  Don't use the timer if it might cause spurious exits
+> -		 * at a rate faster than 0.1 Hz (of uninterrupted guest time).
+> -		 */
+> -		if (use_timer_freq > 0xffffffffu / 10)
+> -			enable_preemption_timer = false;
+> -	}
+> -
+> -	if (!enable_preemption_timer) {
+> -		kvm_x86_ops->set_hv_timer = NULL;
+> -		kvm_x86_ops->cancel_hv_timer = NULL;
+> -		kvm_x86_ops->request_immediate_exit = __kvm_request_immediate_exit;
+> -	}
+> -
+> -	kvm_set_posted_intr_wakeup_handler(wakeup_handler);
+> -
+> -	kvm_mce_cap_supported |= MCG_LMCE_P;
+> -
+> -	if (pt_mode != PT_MODE_SYSTEM && pt_mode != PT_MODE_HOST_GUEST)
+> -		return -EINVAL;
+> -	if (!enable_ept || !cpu_has_vmx_intel_pt())
+> -		pt_mode = PT_MODE_SYSTEM;
+> -
+> -	if (nested) {
+> -		nested_vmx_setup_ctls_msrs(&vmcs_config.nested,
+> -					   vmx_capability.ept);
+> -
+> -		r = nested_vmx_hardware_setup(kvm_vmx_exit_handlers);
+> -		if (r)
+> -			return r;
+> -	}
+> -
+> -	vmx_set_cpu_caps();
+> -
+> -	r = alloc_kvm_area();
+> -	if (r)
+> -		nested_vmx_hardware_unsetup();
+> -	return r;
+> -}
+> -
+>  static __exit void hardware_unsetup(void)
+>  {
+>  	if (nested)
+> @@ -7978,6 +7805,179 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
 >  	.apic_init_signal_blocked = vmx_apic_init_signal_blocked,
 >  };
 >  
-> +static struct kvm_x86_init_ops vmx_init_ops __initdata = {
-> +	.cpu_has_kvm_support = cpu_has_kvm_support,
-> +	.disabled_by_bios = vmx_disabled_by_bios,
-> +	.check_processor_compatibility = vmx_check_processor_compat,
-> +	.hardware_setup = hardware_setup,
-
-cpu_has_kvm_support() -> cpu_has_vmx_support()
-hardware_setup() -> vmx_hardware_setup()
-
+> +static __init int hardware_setup(void)
+> +{
+> +	unsigned long host_bndcfgs;
+> +	struct desc_ptr dt;
+> +	int r, i, ept_lpage_level;
 > +
-> +	.runtime_ops = &vmx_x86_ops,
-> +};
+> +	store_idt(&dt);
+> +	host_idt_base = dt.address;
 > +
->  static void vmx_cleanup_l1d_flush(void)
->  {
->  	if (vmx_l1d_flush_pages) {
-> @@ -8065,7 +8071,7 @@ static int __init vmx_init(void)
->  	}
->  #endif
->  
-> -	r = kvm_init(&vmx_x86_ops, sizeof(struct vcpu_vmx),
-> +	r = kvm_init(&vmx_init_ops, sizeof(struct vcpu_vmx),
->  		     __alignof__(struct vcpu_vmx), THIS_MODULE);
->  	if (r)
->  		return r;
-> diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-> index 0f08e1b4e762..20f989d1bba8 100644
-> --- a/arch/x86/kvm/x86.c
-> +++ b/arch/x86/kvm/x86.c
-> @@ -7298,8 +7298,8 @@ static struct notifier_block pvclock_gtod_notifier = {
->  
->  int kvm_arch_init(void *opaque)
->  {
-> +	struct kvm_x86_init_ops *ops = opaque;
->  	int r;
-> -	struct kvm_x86_ops *ops = opaque;
->  
->  	if (kvm_x86_ops) {
->  		printk(KERN_ERR "kvm: already loaded the other module\n");
-> @@ -7354,7 +7354,7 @@ int kvm_arch_init(void *opaque)
->  	if (r)
->  		goto out_free_percpu;
->  
-> -	kvm_x86_ops = ops;
-> +	kvm_x86_ops = ops->runtime_ops;
->  
->  	kvm_mmu_set_mask_ptes(PT_USER_MASK, PT_ACCESSED_MASK,
->  			PT_DIRTY_MASK, PT64_NX_MASK, 0,
-> @@ -9623,6 +9623,7 @@ void kvm_arch_hardware_disable(void)
->  
->  int kvm_arch_hardware_setup(void *opaque)
->  {
-> +	struct kvm_x86_init_ops *ops = opaque;
->  	int r;
->  
->  	rdmsrl_safe(MSR_EFER, &host_efer);
-> @@ -9630,7 +9631,7 @@ int kvm_arch_hardware_setup(void *opaque)
->  	if (boot_cpu_has(X86_FEATURE_XSAVES))
->  		rdmsrl(MSR_IA32_XSS, host_xss);
->  
-> -	r = kvm_x86_ops->hardware_setup();
-> +	r = ops->hardware_setup();
->  	if (r != 0)
->  		return r;
->  
-> @@ -9665,13 +9666,14 @@ void kvm_arch_hardware_unsetup(void)
->  int kvm_arch_check_processor_compat(void *opaque)
->  {
->  	struct cpuinfo_x86 *c = &cpu_data(smp_processor_id());
-> +	struct kvm_x86_init_ops *ops = opaque;
->  
->  	WARN_ON(!irqs_disabled());
->  
->  	if (kvm_host_cr4_reserved_bits(c) != cr4_reserved_bits)
->  		return -EIO;
->  
-> -	return kvm_x86_ops->check_processor_compatibility();
-> +	return ops->check_processor_compatibility();
->  }
->  
->  bool kvm_vcpu_is_reset_bsp(struct kvm_vcpu *vcpu)
-
-The patch itself looks good,
+> +	for (i = 0; i < ARRAY_SIZE(vmx_msr_index); ++i)
+> +		kvm_define_shared_msr(i, vmx_msr_index[i]);
+> +
+> +	if (setup_vmcs_config(&vmcs_config, &vmx_capability) < 0)
+> +		return -EIO;
+> +
+> +	if (boot_cpu_has(X86_FEATURE_NX))
+> +		kvm_enable_efer_bits(EFER_NX);
+> +
+> +	if (boot_cpu_has(X86_FEATURE_MPX)) {
+> +		rdmsrl(MSR_IA32_BNDCFGS, host_bndcfgs);
+> +		WARN_ONCE(host_bndcfgs, "KVM: BNDCFGS in host will be lost");
+> +	}
+> +
+> +	if (!cpu_has_vmx_mpx())
+> +		supported_xcr0 &= ~(XFEATURE_MASK_BNDREGS |
+> +				    XFEATURE_MASK_BNDCSR);
+> +
+> +	if (!cpu_has_vmx_vpid() || !cpu_has_vmx_invvpid() ||
+> +	    !(cpu_has_vmx_invvpid_single() || cpu_has_vmx_invvpid_global()))
+> +		enable_vpid = 0;
+> +
+> +	if (!cpu_has_vmx_ept() ||
+> +	    !cpu_has_vmx_ept_4levels() ||
+> +	    !cpu_has_vmx_ept_mt_wb() ||
+> +	    !cpu_has_vmx_invept_global())
+> +		enable_ept = 0;
+> +
+> +	if (!cpu_has_vmx_ept_ad_bits() || !enable_ept)
+> +		enable_ept_ad_bits = 0;
+> +
+> +	if (!cpu_has_vmx_unrestricted_guest() || !enable_ept)
+> +		enable_unrestricted_guest = 0;
+> +
+> +	if (!cpu_has_vmx_flexpriority())
+> +		flexpriority_enabled = 0;
+> +
+> +	if (!cpu_has_virtual_nmis())
+> +		enable_vnmi = 0;
+> +
+> +	/*
+> +	 * set_apic_access_page_addr() is used to reload apic access
+> +	 * page upon invalidation.  No need to do anything if not
+> +	 * using the APIC_ACCESS_ADDR VMCS field.
+> +	 */
+> +	if (!flexpriority_enabled)
+> +		kvm_x86_ops->set_apic_access_page_addr = NULL;
+> +
+> +	if (!cpu_has_vmx_tpr_shadow())
+> +		kvm_x86_ops->update_cr8_intercept = NULL;
+> +
+> +#if IS_ENABLED(CONFIG_HYPERV)
+> +	if (ms_hyperv.nested_features & HV_X64_NESTED_GUEST_MAPPING_FLUSH
+> +	    && enable_ept) {
+> +		kvm_x86_ops->tlb_remote_flush = hv_remote_flush_tlb;
+> +		kvm_x86_ops->tlb_remote_flush_with_range =
+> +				hv_remote_flush_tlb_with_range;
+> +	}
+> +#endif
+> +
+> +	if (!cpu_has_vmx_ple()) {
+> +		ple_gap = 0;
+> +		ple_window = 0;
+> +		ple_window_grow = 0;
+> +		ple_window_max = 0;
+> +		ple_window_shrink = 0;
+> +	}
+> +
+> +	if (!cpu_has_vmx_apicv()) {
+> +		enable_apicv = 0;
+> +		kvm_x86_ops->sync_pir_to_irr = NULL;
+> +	}
+> +
+> +	if (cpu_has_vmx_tsc_scaling()) {
+> +		kvm_has_tsc_control = true;
+> +		kvm_max_tsc_scaling_ratio = KVM_VMX_TSC_MULTIPLIER_MAX;
+> +		kvm_tsc_scaling_ratio_frac_bits = 48;
+> +	}
+> +
+> +	set_bit(0, vmx_vpid_bitmap); /* 0 is reserved for host */
+> +
+> +	if (enable_ept)
+> +		vmx_enable_tdp();
+> +
+> +	if (!enable_ept)
+> +		ept_lpage_level = 0;
+> +	else if (cpu_has_vmx_ept_1g_page())
+> +		ept_lpage_level = PT_PDPE_LEVEL;
+> +	else if (cpu_has_vmx_ept_2m_page())
+> +		ept_lpage_level = PT_DIRECTORY_LEVEL;
+> +	else
+> +		ept_lpage_level = PT_PAGE_TABLE_LEVEL;
+> +	kvm_configure_mmu(enable_ept, ept_lpage_level);
+> +
+> +	/*
+> +	 * Only enable PML when hardware supports PML feature, and both EPT
+> +	 * and EPT A/D bit features are enabled -- PML depends on them to work.
+> +	 */
+> +	if (!enable_ept || !enable_ept_ad_bits || !cpu_has_vmx_pml())
+> +		enable_pml = 0;
+> +
+> +	if (!enable_pml) {
+> +		kvm_x86_ops->slot_enable_log_dirty = NULL;
+> +		kvm_x86_ops->slot_disable_log_dirty = NULL;
+> +		kvm_x86_ops->flush_log_dirty = NULL;
+> +		kvm_x86_ops->enable_log_dirty_pt_masked = NULL;
+> +	}
+> +
+> +	if (!cpu_has_vmx_preemption_timer())
+> +		enable_preemption_timer = false;
+> +
+> +	if (enable_preemption_timer) {
+> +		u64 use_timer_freq = 5000ULL * 1000 * 1000;
+> +		u64 vmx_msr;
+> +
+> +		rdmsrl(MSR_IA32_VMX_MISC, vmx_msr);
+> +		cpu_preemption_timer_multi =
+> +			vmx_msr & VMX_MISC_PREEMPTION_TIMER_RATE_MASK;
+> +
+> +		if (tsc_khz)
+> +			use_timer_freq = (u64)tsc_khz * 1000;
+> +		use_timer_freq >>= cpu_preemption_timer_multi;
+> +
+> +		/*
+> +		 * KVM "disables" the preemption timer by setting it to its max
+> +		 * value.  Don't use the timer if it might cause spurious exits
+> +		 * at a rate faster than 0.1 Hz (of uninterrupted guest time).
+> +		 */
+> +		if (use_timer_freq > 0xffffffffu / 10)
+> +			enable_preemption_timer = false;
+> +	}
+> +
+> +	if (!enable_preemption_timer) {
+> +		kvm_x86_ops->set_hv_timer = NULL;
+> +		kvm_x86_ops->cancel_hv_timer = NULL;
+> +		kvm_x86_ops->request_immediate_exit = __kvm_request_immediate_exit;
+> +	}
+> +
+> +	kvm_set_posted_intr_wakeup_handler(wakeup_handler);
+> +
+> +	kvm_mce_cap_supported |= MCG_LMCE_P;
+> +
+> +	if (pt_mode != PT_MODE_SYSTEM && pt_mode != PT_MODE_HOST_GUEST)
+> +		return -EINVAL;
+> +	if (!enable_ept || !cpu_has_vmx_intel_pt())
+> +		pt_mode = PT_MODE_SYSTEM;
+> +
+> +	if (nested) {
+> +		nested_vmx_setup_ctls_msrs(&vmcs_config.nested,
+> +					   vmx_capability.ept);
+> +
+> +		r = nested_vmx_hardware_setup(kvm_vmx_exit_handlers);
+> +		if (r)
+> +			return r;
+> +	}
+> +
+> +	vmx_set_cpu_caps();
+> +
+> +	r = alloc_kvm_area();
+> +	if (r)
+> +		nested_vmx_hardware_unsetup();
+> +	return r;
+> +}
+> +
+>  static struct kvm_x86_init_ops vmx_init_ops __initdata = {
+>  	.cpu_has_kvm_support = cpu_has_kvm_support,
+>  	.disabled_by_bios = vmx_disabled_by_bios,
 
 Reviewed-by: Vitaly Kuznetsov <vkuznets@redhat.com>
 
