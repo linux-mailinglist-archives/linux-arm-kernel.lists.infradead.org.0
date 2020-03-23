@@ -2,75 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B70EC18F182
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:14:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5F1518F18F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:17:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P8tSLIac+8YIDO+a04c9GPstBGK1B3ZeNkXP7lF3PXY=; b=Kx0Ce1ZfOgtwgN
-	nWjwo1UW2cuRzMdJtFjfI/wcpxKDM8i2ReEBZcuCpc5uKwq4T/JuYBbojx2VSHlVFpOwvn3yY+hkL
-	nqInM6YaLbKyqBK/Y7nno5MMQKBcqlhXikh0y8ZxlxoYxhdt+XaSRLvRNaT293lfEWNNHV7JlPEIP
-	uGufDwsWrWQ1nb3ls1afBsIqns1WU/9UYlztIIkW6Uha6XTMjEalGdzwZsBbRwvV6HXzwh8UlmU/w
-	XIv4eg8nVMsJX2X1a741akIyqzH2fCFxvGkqzJa68AbL0XTBlSizoDFXwPNc/U5lysb6pwEcjKT1O
-	zubsxMGPDpt3GWB/Vq+g==;
+	List-Owner; bh=HP+j0muDCfzeEQPnSjThvy3aIseKD1XYQTHumBj8gHU=; b=LQgbVBfZSu3Lpm
+	vB20cLNN8DyniQ6zogK4liRfxDMErbEXCwOlQ4xUsPMkBH4eb852C1mZEAUFzWmCc2k+Tu+ZSCcV4
+	izdnN7UWO3jnSP29ilcNMig++1WFgFMmUQcdtcqxjIogUbsHZNTf+kP/W/6ChOgsZoG1toRFpvygF
+	CfMgqPrCXqcyUGh+Zuanm8AHktxfFkKse2zh/sm0aLJwORpPAbGkJcVZvXya4tEcZ741i82OdnHX/
+	2N1GI6Bq6qbqs49AW5/MXZWWO8BicEth8mJHVdeBKvwr5vOJ2OLgbXdy9ejGD0+mVoPGHtl1SjBYe
+	mEbwx0tph4plrXMMxqYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJ9r-00086N-HG; Mon, 23 Mar 2020 09:14:07 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jGJCk-0001KM-2s; Mon, 23 Mar 2020 09:17:06 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJ9j-00085y-2R
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:14:00 +0000
-Received: by mail-lf1-x143.google.com with SMTP id j188so5744724lfj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 02:13:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=wWs92IouvEIpZgtyLlUCar33wlELXd5YoEyPXlLiTro=;
- b=QbDeCI7dYNFzd6fyHyqfAHAq63bQLRiJHT19fT4MkRi6jTMuI0QC28e9a4Pak1jEUa
- s11EYGMPEm6ADD5Mq5hQuV9351l3yGYjAbg+dzzd7aio3ISGAIuswd0yNbbHR9YIu30S
- M+ZYpecb4mDH7vTudL1qV/c8X68h61ZfXm89Y=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=wWs92IouvEIpZgtyLlUCar33wlELXd5YoEyPXlLiTro=;
- b=OOj4HV+LCAP2bCDf6cZxmv6JkMS1HVWqRqW3LewFkYiDigmmGJJcBveV5wJ4A3atI1
- Zd5iYmSh1Iw0/FnXS+PGkoG/pzc3JRYtYzCEFPYcwdTQai3+pQIfesW7cgKfFOItY8oM
- lpgf2D1ktPOpm5/VB3+HiOFODqySKutVKg2Bk0gHx5UWy2Yn53vhgrdLjWPZo9w+JMD4
- euIuufFN8H8ga+CDEFA1waUTtTaGINphDYtUV+NbHbQ61w7QSJAmdE818eqooxL42N9m
- MG14DWmDlLFSvNRtjSXtaWfGRTY+FPhOCxNCHpgg8OUYBO6Gu+z4OQvYRoLP7eA+vyFZ
- Nqsw==
-X-Gm-Message-State: ANhLgQ0AdbJ8u5xK3KG+oVhvojtUdsrtOAoBjw3C/kfmmulimDS3xq/9
- itbtR/vZB2mR6qMpl2PTXBa7L1Z0xGdJb9and9ol8A==
-X-Google-Smtp-Source: ADFU+vvx8jnLhfOgnWnseH4FTxIWcdY7WQsK5Ay/qiqPamQPGqpt4kJFOWL+guGHsaQwYq7XlwwWqRibftYmyeWIuKk=
-X-Received: by 2002:a05:6512:3041:: with SMTP id
- b1mr12674571lfb.167.1584954837051; 
- Mon, 23 Mar 2020 02:13:57 -0700 (PDT)
+ id 1jGJCZ-0001JQ-S8
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:16:58 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02N98iv7012739; Mon, 23 Mar 2020 10:16:43 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : references : in-reply-to : content-type : content-id :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=/HAdue9DXFtjKevkYv/5qC2RX5R7A47mv6fKkWpAlio=;
+ b=GiOeAvan2nCdagn47xKav7xOGwk2qTXLhuNEjgVMu+7jBK9i3lLPvj/uFHn86a4F5Fpb
+ jGIlb4iZMiserHQZIkiEWsqAweR0TMEw6V4VAL/PH/oX7u0+2ulbt388DQNqofwJrR53
+ ckhIhhkN274SoN0m68ZvnoTSn29sL66JOiLt0H5MEsvcoGtvtKPkKp0DMOKG4K225l6t
+ CnFQvktXZITUl0XBFKMm6DxRGZ4LnrtlbSoBBd69RPkLCovkOHTnJQAzukNHLpsQ3mJG
+ V8fpY21J/1XWUrR8bfh9W8sJejmpSaYm9K3S0GGZfUBu1uyF5ny+x5sqXs4oGtl+w7fn kQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yw9jys0d0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 23 Mar 2020 10:16:43 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7474E100038;
+ Mon, 23 Mar 2020 10:16:41 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 475752AAA85;
+ Mon, 23 Mar 2020 10:16:41 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 23 Mar
+ 2020 10:16:40 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Mon, 23 Mar 2020 10:16:40 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Alain Volmat <avolmat@me.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>, 
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] dts: arm: stih418: Fix complain about IRQ_TYPE_NONE usage
+Thread-Topic: [PATCH] dts: arm: stih418: Fix complain about IRQ_TYPE_NONE usage
+Thread-Index: AQHWAGVD1LVv67fNzEC4+ePomo0cJKhV1fSA
+Date: Mon, 23 Mar 2020 09:16:40 +0000
+Message-ID: <2515846e-a514-ef16-5f5c-9342b0aad098@st.com>
+References: <20200322161631.19151-1-avolmat@me.com>
+In-Reply-To: <20200322161631.19151-1-avolmat@me.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <EEE6929E4B209441888D5364B4FA25CF@st.com>
 MIME-Version: 1.0
-References: <20200323065318.16533-1-rayagonda.kokatanur@broadcom.com>
- <20200323065318.16533-3-rayagonda.kokatanur@broadcom.com>
- <20200323082823.twvpagq7tvrt76ws@pengutronix.de>
-In-Reply-To: <20200323082823.twvpagq7tvrt76ws@pengutronix.de>
-From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-Date: Mon, 23 Mar 2020 14:43:45 +0530
-Message-ID: <CAHO=5PHUPy=2_HZg26Akogv3Hbic7JPydGpz0j3QfA=3TUgCJw@mail.gmail.com>
-Subject: Re: [PATCH v1 2/2] pwm: bcm-iproc: remove unnecessary check of 'duty'
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-23_02:2020-03-21,
+ 2020-03-23 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_021359_116744_8D4EC4D3 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_021656_272480_F70E0E13 
+X-CRM114-Status: GOOD (  17.42  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +99,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,48 +110,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBNYXIgMjMsIDIwMjAgYXQgMTo1OCBQTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
-bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IE9uIE1vbiwgTWFyIDIzLCAyMDIw
-IGF0IDEyOjIzOjE4UE0gKzA1MzAsIFJheWFnb25kYSBLb2thdGFudXIgd3JvdGU6Cj4gPiBWYXJp
-YWJsZSAnZHV0eScgaXMgdTMyLiBIZW5jZSB0aGUgbGVzcy10aGFuIHplcm8KPiA+IGNvbXBhcmlz
-b24gaXMgbmV2ZXIgdHJ1ZSwgcmVtb3ZlIHRoZSBjaGVjay4KPgo+IEhvdyBkaWQgeW91IGZpbmQg
-dGhhdCBvbmU/IEkgYXNzdW1lIGl0IHdhcyBhIGNvbXBpbGVyIHdhcm5pbmcgeW91IGZpeGVkCj4g
-aGVyZT8gSW4gdGhpcyBjYXNlIHF1b3RpbmcgdGhlIHdhcm5pbmcgaW1wcm92ZXMgdGhlIGNvbW1p
-dCBsb2cuCkl0cyByZXBvcnRlZCBieSBpbnRlcm5hbCBjb3Zlcml0eSB0b29sLgo+Cj4gQWxzbyB0
-aGUgY29tbWl0IGxvZyBzdWdnZXN0cyB0aGF0IElQUk9DX1BXTV9EVVRZX0NZQ0xFX01JTiBpcyB6
-ZXJvLgo+IE1heWJlIG1lbnRpb25pbmcgdGhhdCBleHBsaWNpdGx5IGlzIGEgbmljZSBhZGRpdGlv
-biwgdG9vLgpPa2F5LCB3aWxsIGFkZCB0aGlzIHRvIGNvbW1pdCBtZXNzYWdlLiBUaGFua3MuCj4K
-PiA+IEZpeGVzOiBkYWE1YWJjNDFjODAgKCJwd206IEFkZCBzdXBwb3J0IGZvciBCcm9hZGNvbSBp
-UHJvYyBQV00gY29udHJvbGxlciIpCj4gPiBTaWduZWQtb2ZmLWJ5OiBSYXlhZ29uZGEgS29rYXRh
-bnVyIDxyYXlhZ29uZGEua29rYXRhbnVyQGJyb2FkY29tLmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZl
-cnMvcHdtL3B3bS1iY20taXByb2MuYyB8IDMgKy0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5z
-ZXJ0aW9uKCspLCAyIGRlbGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3B3
-bS9wd20tYmNtLWlwcm9jLmMgYi9kcml2ZXJzL3B3bS9wd20tYmNtLWlwcm9jLmMKPiA+IGluZGV4
-IDhiYmQyYTA0ZmVhZC4uMWJiNjY3MjFmOTg1IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9wd20v
-cHdtLWJjbS1pcHJvYy5jCj4gPiArKysgYi9kcml2ZXJzL3B3bS9wd20tYmNtLWlwcm9jLmMKPiA+
-IEBAIC0xNDksOCArMTQ5LDcgQEAgc3RhdGljIGludCBpcHJvY19wd21jX2FwcGx5KHN0cnVjdCBw
-d21fY2hpcCAqY2hpcCwgc3RydWN0IHB3bV9kZXZpY2UgKnB3bSwKPiA+ICAgICAgICAgICAgICAg
-dmFsdWUgPSByYXRlICogc3RhdGUtPmR1dHlfY3ljbGU7Cj4gPiAgICAgICAgICAgICAgIGR1dHkg
-PSBkaXY2NF91NjQodmFsdWUsIGRpdik7Cj4gPgo+ID4gLSAgICAgICAgICAgICBpZiAocGVyaW9k
-IDwgSVBST0NfUFdNX1BFUklPRF9NSU4gfHwKPiA+IC0gICAgICAgICAgICAgICAgIGR1dHkgPCBJ
-UFJPQ19QV01fRFVUWV9DWUNMRV9NSU4pCj4gPiArICAgICAgICAgICAgIGlmIChwZXJpb2QgPCBJ
-UFJPQ19QV01fUEVSSU9EX01JTikKPiA+ICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gLUVJ
-TlZBTDsKPgo+IEJlc3QgcmVnYXJkcwo+IFV3ZQo+Cj4gLS0KPiBQZW5ndXRyb25peCBlLksuICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgfCBVd2UgS2xlaW5lLUvDtm5pZyAgICAgICAgICAgIHwK
-PiBJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfCBodHRwczovL3d3
-dy5wZW5ndXRyb25peC5kZS8gfAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Alain
+
+On 3/22/20 5:16 PM, Alain Volmat wrote:
+> Since commit 83a86fbb5b56 ("irqchip/gic: Loudly complain about the use of IRQ_TYPE_NONE")
+> kernel is complaining about the IRQ_TYPE_NONE usage which shouldn't
+> be used.
+>
+> Use IRQ_TYPE_LEVEL_HIGH instead.
+>
+> Signed-off-by: Alain Volmat <avolmat@me.com>
+> ---
+>  arch/arm/boot/dts/stih418.dtsi | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/stih418.dtsi b/arch/arm/boot/dts/stih418.dtsi
+> index 83411322bd92..a05e2278b448 100644
+> --- a/arch/arm/boot/dts/stih418.dtsi
+> +++ b/arch/arm/boot/dts/stih418.dtsi
+> @@ -50,7 +50,7 @@
+>  		ohci0: usb@9a03c00 {
+>  			compatible = "st,st-ohci-300x";
+>  			reg = <0x9a03c00 0x100>;
+> -			interrupts = <GIC_SPI 180 IRQ_TYPE_NONE>;
+> +			interrupts = <GIC_SPI 180 IRQ_TYPE_LEVEL_HIGH>;
+>  			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
+>  			resets = <&powerdown STIH407_USB2_PORT0_POWERDOWN>,
+>  				 <&softreset STIH407_USB2_PORT0_SOFTRESET>;
+> @@ -62,7 +62,7 @@
+>  		ehci0: usb@9a03e00 {
+>  			compatible = "st,st-ehci-300x";
+>  			reg = <0x9a03e00 0x100>;
+> -			interrupts = <GIC_SPI 151 IRQ_TYPE_NONE>;
+> +			interrupts = <GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
+>  			pinctrl-names = "default";
+>  			pinctrl-0 = <&pinctrl_usb0>;
+>  			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
+> @@ -76,7 +76,7 @@
+>  		ohci1: usb@9a83c00 {
+>  			compatible = "st,st-ohci-300x";
+>  			reg = <0x9a83c00 0x100>;
+> -			interrupts = <GIC_SPI 181 IRQ_TYPE_NONE>;
+> +			interrupts = <GIC_SPI 181 IRQ_TYPE_LEVEL_HIGH>;
+>  			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
+>  			resets = <&powerdown STIH407_USB2_PORT1_POWERDOWN>,
+>  				 <&softreset STIH407_USB2_PORT1_SOFTRESET>;
+> @@ -88,7 +88,7 @@
+>  		ehci1: usb@9a83e00 {
+>  			compatible = "st,st-ehci-300x";
+>  			reg = <0x9a83e00 0x100>;
+> -			interrupts = <GIC_SPI 153 IRQ_TYPE_NONE>;
+> +			interrupts = <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>;
+>  			pinctrl-names = "default";
+>  			pinctrl-0 = <&pinctrl_usb1>;
+>  			clocks = <&clk_s_c0_flexgen CLK_TX_ICN_DISP_0>;
+
+Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+
+Thanks
+
+Patrice
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
