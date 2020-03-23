@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A63818FB38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 18:19:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97B2018FB42
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 18:20:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qVEp4rBB/9U3S+rIy7TTv07ONRpv0k2ND4lRtAeOpKM=; b=g68sTma2Sm74RcGAv5EhVneHCR
-	q7m4r5f5G6tmJ3r02nkgSRIPHxaSw8w2OY0EJHupAMlarnMIu+PqXDPSZWnB5P47oP6M42kU2c50W
-	ooNOlPmdUaYFUPdCWfK1PG37BrLD7c+5E1o1iT6DcyR2Ij3mRfbCUjDVVda6lcbNSezOJcGMZ6pB4
-	evAjvgelOPIHgz+5s07KpC87jIvyaFZ2IPoP8MN2BI2AsQpLxqOP0uMUN4ere6IBqEJmG4hlpz3Ox
-	jzXz/41KGXsvOzqolygkq+gynYuSWpkbrDzalwlxxTv1o1NNCAyovE2XQ4MS7QPx1sUVXEG4olG1e
-	vTnIPitA==;
+	bh=d3UPDAZaHHjEbdpcy0G9F5G75cqtR96eq/Ll5faCKCo=; b=Mj6hwo5+14Ire2zvDy53sXqlty
+	Mo+Hn0FVDf6N4dlgw+0GRG4F1bgL1919akNZ+Vxdq6GgHOwM1MxyCRfuPh4fSPu8NhZLomEODJXzp
+	RcHOVMGgzH/+pIuxNW0spFpS5dedesPxUTmXw6klN7pOnQAIwqeO7FIm4TPxhGrxXkxUfP0d5ih8/
+	h4d6yhWtff86khih4fgexfmXpQArxbAIVIFT+Mxg9A2Jo7k/WJnH6m/8ibANJ0yCH2Cx48Wg0nM6h
+	hBEhUkmahXBCjmci+Wjyl9sgVreGU9KiUxGi8wM0f0LSkOqsRdnLxdhyp8vLudouXc2uc5k9NxISp
+	pC5LTMTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGQjk-0003pr-Dk; Mon, 23 Mar 2020 17:19:40 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jGQk4-0003xV-5e; Mon, 23 Mar 2020 17:20:00 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGQja-0003n5-SZ
+ id 1jGQjb-0003n8-9C
  for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 17:19:32 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E38D91A14D4;
- Mon, 23 Mar 2020 18:19:27 +0100 (CET)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9B313201848;
+ Mon, 23 Mar 2020 18:19:28 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D73871A14A9;
- Mon, 23 Mar 2020 18:19:27 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8E2A52012E7;
+ Mon, 23 Mar 2020 18:19:28 +0100 (CET)
 Received: from fsr-ub1864-111.ea.freescale.net
  (fsr-ub1864-111.ea.freescale.net [10.171.82.141])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 599792035C;
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id F12E62035C;
  Mon, 23 Mar 2020 18:19:27 +0100 (CET)
 From: Diana Craciun <diana.craciun@oss.nxp.com>
 To: kvm@vger.kernel.org, alex.williamson@redhat.com, laurentiu.tudor@nxp.com,
  linux-arm-kernel@lists.infradead.org, bharatb.yadav@gmail.com
-Subject: [PATCH 2/9] vfio/fsl-mc: Scan DPRC objects on vfio-fsl-mc driver bind
-Date: Mon, 23 Mar 2020 19:19:04 +0200
-Message-Id: <20200323171911.27178-3-diana.craciun@oss.nxp.com>
+Subject: [PATCH 3/9] vfio/fsl-mc: Implement VFIO_DEVICE_GET_INFO ioctl
+Date: Mon, 23 Mar 2020 19:19:05 +0200
+Message-Id: <20200323171911.27178-4-diana.craciun@oss.nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
 References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_101931_203329_539AE6B7 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20200323_101931_457021_368D4ACC 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,110 +77,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DPRC (Data Path Resource Container) device is a bus device and has
-child devices attached to it. When the vfio-fsl-mc driver is probed
-the DPRC is scanned and the child devices discovered and initialized.
+Allow userspace to get fsl-mc device info (number of regions
+and irqs).
 
 Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
 Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
 ---
- drivers/vfio/fsl-mc/vfio_fsl_mc.c | 66 +++++++++++++++++++++++++++++++
- 1 file changed, 66 insertions(+)
+ drivers/vfio/fsl-mc/vfio_fsl_mc.c | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-index 320fb09b5691..5cc533808bc1 100644
+index 5cc533808bc1..ab1cde375fc6 100644
 --- a/drivers/vfio/fsl-mc/vfio_fsl_mc.c
 +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-@@ -74,6 +74,34 @@ static int vfio_fsl_mc_mmap(void *device_data, struct vm_area_struct *vma)
- 	return -EINVAL;
- }
- 
-+static int vfio_fsl_mc_init_device(struct vfio_fsl_mc_device *vdev)
-+{
-+	struct fsl_mc_device *mc_dev = vdev->mc_dev;
-+	int ret = 0;
-+
-+	/* Non-dprc devices share mc_io from parent */
-+	if (!is_fsl_mc_bus_dprc(mc_dev)) {
-+		struct fsl_mc_device *mc_cont = to_fsl_mc_device(mc_dev->dev.parent);
-+
-+		mc_dev->mc_io = mc_cont->mc_io;
-+		return 0;
-+	}
-+
-+	/* open DPRC, allocate a MC portal */
-+	ret = dprc_setup(mc_dev);
-+	if (ret < 0) {
-+		dev_err(&mc_dev->dev, "Failed to setup DPRC (error = %d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = dprc_scan_container(mc_dev, mc_dev->driver_override, false);
-+	if (ret < 0) {
-+		dev_err(&mc_dev->dev, "Container scanning failed: %d\n", ret);
-+		dprc_cleanup(mc_dev);
-+	}
-+
-+	return 0;
-+}
- static const struct vfio_device_ops vfio_fsl_mc_ops = {
- 	.name		= "vfio-fsl-mc",
- 	.open		= vfio_fsl_mc_open,
-@@ -112,9 +140,42 @@ static int vfio_fsl_mc_probe(struct fsl_mc_device *mc_dev)
- 		return ret;
- 	}
- 
-+	ret = vfio_fsl_mc_init_device(vdev);
-+	if (ret) {
-+		vfio_iommu_group_put(group, dev);
-+		return ret;
-+	}
-+
- 	return ret;
- }
- 
-+static int vfio_fsl_mc_device_remove(struct device *dev, void *data)
-+{
-+	struct fsl_mc_device *mc_dev;
-+
-+	WARN_ON(!dev);
-+	mc_dev = to_fsl_mc_device(dev);
-+	if (WARN_ON(!mc_dev))
-+		return -ENODEV;
-+
-+	kfree(mc_dev->driver_override);
-+	mc_dev->driver_override = NULL;
-+
-+	/*
-+	 * The device-specific remove callback will get invoked by device_del()
-+	 */
-+	device_del(&mc_dev->dev);
-+	put_device(&mc_dev->dev);
-+
-+	return 0;
-+}
-+
-+static void vfio_fsl_mc_cleanup_dprc(struct fsl_mc_device *mc_dev)
-+{
-+	device_for_each_child(&mc_dev->dev, NULL, vfio_fsl_mc_device_remove);
-+	dprc_cleanup(mc_dev);
-+}
-+
- static int vfio_fsl_mc_remove(struct fsl_mc_device *mc_dev)
+@@ -31,10 +31,30 @@ static void vfio_fsl_mc_release(void *device_data)
+ static long vfio_fsl_mc_ioctl(void *device_data, unsigned int cmd,
+ 			      unsigned long arg)
  {
- 	struct vfio_fsl_mc_device *vdev;
-@@ -124,6 +185,11 @@ static int vfio_fsl_mc_remove(struct fsl_mc_device *mc_dev)
- 	if (!vdev)
- 		return -EINVAL;
- 
-+	if (is_fsl_mc_bus_dprc(mc_dev))
-+		vfio_fsl_mc_cleanup_dprc(vdev->mc_dev);
++	unsigned long minsz;
++	struct vfio_fsl_mc_device *vdev = device_data;
++	struct fsl_mc_device *mc_dev = vdev->mc_dev;
 +
-+	mc_dev->mc_io = NULL;
+ 	switch (cmd) {
+ 	case VFIO_DEVICE_GET_INFO:
+ 	{
+-		return -EINVAL;
++		struct vfio_device_info info;
 +
- 	vfio_iommu_group_put(mc_dev->dev.iommu_group, dev);
- 	devm_kfree(dev, vdev);
- 
++		minsz = offsetofend(struct vfio_device_info, num_irqs);
++
++		if (copy_from_user(&info, (void __user *)arg, minsz))
++			return -EFAULT;
++
++		if (info.argsz < minsz)
++			return -EINVAL;
++
++		info.flags = VFIO_DEVICE_FLAGS_FSL_MC;
++		info.num_regions = mc_dev->obj_desc.region_count;
++		info.num_irqs = mc_dev->obj_desc.irq_count;
++
++		return copy_to_user((void __user *)arg, &info, minsz) ?
++			-EFAULT : 0;
++
+ 	}
+ 	case VFIO_DEVICE_GET_REGION_INFO:
+ 	{
 -- 
 2.17.1
 
