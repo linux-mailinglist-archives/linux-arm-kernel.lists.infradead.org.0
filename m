@@ -2,69 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85EDD18F89A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:29:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7949218F8A4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:32:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M+vfhfgYM0ccsytCRBBX4r8Fvi1S5q7ZHCPeZqzqe4c=; b=rCy0siosZ9Qjaz
-	/AJmAbijNvYTBTzDCMaxtRWKL7zeMGDCX9qcDEMlz/AtZ2P0EtuakmT/cHD+GcXmRGM2F0XcPnBj8
-	I2+LkR6c9ILq8baV6PwkR0D1gbiEZEV/534y4uSm9Dt1Fdjy03VYZ4qWBt4scxYyZ+qld9+KVWO/K
-	NoCgN2yFTu0OosYHjzNhg9JJTc3seta3clVtZ0guBhByoPn4BLKoUVATYGC0OgjS2KfgROlC07IhP
-	fBWwQob7evJqLLRVzCmAgI1t+HEcXgzbflG0/RoUSgi4FuFC2lGBWdLxPqeKv6gQwRKBkflhd4k0l
-	4Njq44ztazNfAx5QMZVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oherP+M8E22Y24M4fNikI2lUUShtHS4yiWOj/rOCcJY=; b=ZCxYK0VHV1gvTZUCKbs+uKoo8
+	dj6jg1RZ2yMV9+zZpzfnbplld52lPBXSwc0KR2T1X8dQlKrT2j7dCqPhZQr4lrr9z5vzoo0RNrJVU
+	GamS3wUsx3d3xEbv/1TGi9AziPB0Pa/ptE56kQPZ6gE4nwTEfBRkiDdIBdpkLJ25WPcHGSjI5/jda
+	2emI6p5B85dYx9rb9uAyoLzZE3bF2zDCc5j+G/rGp9JmSK0J1hw2Xue3G1M1kOfUN26TblcGB6BwZ
+	JQFl0kKOIw7cB4YCncJx1+8NUTfI2C0D1zOy7FEOZCg/TR4jytkQMW00Eku9LP9e2UuhjoTA+Bxry
+	SMffLY3mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGP10-000647-RB; Mon, 23 Mar 2020 15:29:22 +0000
-Received: from mga02.intel.com ([134.134.136.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGP0s-000637-LO
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 15:29:16 +0000
-IronPort-SDR: xZeeNRjjtbnVVjh42PHHN2Xcbh4CfUKRT0oRwv09xa2Iw15U7f/pgwkEioa4oGQDuBe1gxZ2lF
- qno0dr2Lp0iw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 23 Mar 2020 08:29:10 -0700
-IronPort-SDR: yayqoarf0l9NveDHmC/sqla8uNPjr0N8shaxffNuAwPkByVFjT7hsOSfphorNwP7R2dv9kN0mF
- tMgMyB8VORFA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,296,1580803200"; d="scan'208";a="269910183"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga004.fm.intel.com with ESMTP; 23 Mar 2020 08:29:09 -0700
-Date: Mon, 23 Mar 2020 08:29:09 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Vitaly Kuznetsov <vkuznets@redhat.com>
-Subject: Re: [PATCH v3 2/9] KVM: x86: Move init-only kvm_x86_ops to separate
- struct
-Message-ID: <20200323152909.GE28711@linux.intel.com>
-References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
- <20200321202603.19355-3-sean.j.christopherson@intel.com>
- <87lfnr9sqn.fsf@vitty.brq.redhat.com>
+	id 1jGP4D-0000cZ-AA; Mon, 23 Mar 2020 15:32:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGP44-0000bb-SX
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 15:32:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 640121FB;
+ Mon, 23 Mar 2020 08:32:30 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B83F23F7C3;
+ Mon, 23 Mar 2020 08:32:29 -0700 (PDT)
+Date: Mon, 23 Mar 2020 15:32:28 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200323153228.GE4948@sirena.org.uk>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200320173945.GC27072@arm.com> <20200323122143.GB4892@mbp>
+ <20200323132412.GD4948@sirena.org.uk>
+ <20200323135722.GA3959@C02TD0UTHF1T.local>
+ <20200323143954.GC4892@mbp>
+ <20200323145546.GB3959@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87lfnr9sqn.fsf@vitty.brq.redhat.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20200323145546.GB3959@C02TD0UTHF1T.local>
+X-Cookie: Stay on the trail.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_082914_748127_7A345EB5 
-X-CRM114-Status: GOOD (  15.68  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_083232_966236_BC16FB74 
+X-CRM114-Status: GOOD (  14.79  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,95 +69,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Paul Elliott <paul.elliott@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ nd@arm.com, linux-arm-kernel@lists.infradead.org,
+ Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Content-Type: multipart/mixed; boundary="===============5184026393314462673=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 01:10:40PM +0100, Vitaly Kuznetsov wrote:
-> Sean Christopherson <sean.j.christopherson@intel.com> writes:
-> 
-> > +
-> > +	.runtime_ops = &svm_x86_ops,
-> > +};
-> 
-> Unrelated to your patch but I think we can make the naming of some of
-> these functions more consistend on SVM/VMX, in particular I'd suggest 
-> 
-> has_svm() -> cpu_has_svm_support()
-> is_disabled -> svm_disabled_by_bios()
-> ...
-> (see below for VMX)
-> 
-> > +
-> >  static int __init svm_init(void)
-> >  {
-> > -	return kvm_init(&svm_x86_ops, sizeof(struct vcpu_svm),
-> > +	return kvm_init(&svm_init_ops, sizeof(struct vcpu_svm),
-> >  			__alignof__(struct vcpu_svm), THIS_MODULE);
-> >  }
-> >  
-> > diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
-> > index 07299a957d4a..ffcdcc86f5b7 100644
-> > --- a/arch/x86/kvm/vmx/vmx.c
-> > +++ b/arch/x86/kvm/vmx/vmx.c
-> > @@ -7842,11 +7842,8 @@ static bool vmx_check_apicv_inhibit_reasons(ulong bit)
-> >  }
-> >  
-> >  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> > -	.cpu_has_kvm_support = cpu_has_kvm_support,
-> > -	.disabled_by_bios = vmx_disabled_by_bios,
-> > -	.hardware_setup = hardware_setup,
-> >  	.hardware_unsetup = hardware_unsetup,
-> > -	.check_processor_compatibility = vmx_check_processor_compat,
-> > +
-> >  	.hardware_enable = hardware_enable,
-> >  	.hardware_disable = hardware_disable,
-> >  	.cpu_has_accelerated_tpr = report_flexpriority,
-> > @@ -7981,6 +7978,15 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> >  	.apic_init_signal_blocked = vmx_apic_init_signal_blocked,
-> >  };
-> >  
-> > +static struct kvm_x86_init_ops vmx_init_ops __initdata = {
-> > +	.cpu_has_kvm_support = cpu_has_kvm_support,
-> > +	.disabled_by_bios = vmx_disabled_by_bios,
-> > +	.check_processor_compatibility = vmx_check_processor_compat,
-> > +	.hardware_setup = hardware_setup,
-> 
-> cpu_has_kvm_support() -> cpu_has_vmx_support()
-> hardware_setup() -> vmx_hardware_setup()
 
-Preaching to the choir on this one.  The VMX functions without prefixes in
-in particular annoy me to no end, e.g. hardware_setup().  Though the worst
-is probably ".vcpu_create = vmx_create_vcpu", if I had a nickel for every
-time I've tried to find vmx_vcpu_create()...
+--===============5184026393314462673==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2hMgfIw2X+zgXrFs"
+Content-Disposition: inline
 
-What if we added a macro to auto-generate the common/required hooks?  E.g.:
 
-  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-	MANDATORY_KVM_X86_OPS(vmx),
+--2hMgfIw2X+zgXrFs
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-	.pmu_ops = &intel_pmu_ops,
+On Mon, Mar 23, 2020 at 02:55:46PM +0000, Mark Rutland wrote:
+> On Mon, Mar 23, 2020 at 02:39:55PM +0000, Catalin Marinas wrote:
 
-	...
-  };
+> > So this means that the interpreter will have to mprotect(PROT_BTI) the
+> > text section of the primary executable.
 
-That'd enforce consistent naming, and would provide a bit of documentation
-as to which hooks are optional, e.g. many of the nested hooks, and which
-must be defined for KVM to function.
+> Yes, but after fixing up any relocations in that section it's going to
+> have to call mprotect() on it anyhow (e.g. in order to make it
+> read-only), and in doing so would throw away BTI unless it was BTI
+> aware.
+
+Ah, of course - I forgot that's not a read/modify/write cycle.  I'll
+send the comment version.
+
+> > That's a valid point. If we have an old dynamic linker and the kernel
+> > enabled BTI automatically for the main executable, could things go wrong
+> > (e.g. does the PLT need to be BTI-aware)?
+
+> I believe that a PLT in an unguarded page needs no special treatment. A
+> PLT within a guarded page needs to be built specially for BTI.
+
+Unguarded stuff is unaffected.
+
+--2hMgfIw2X+zgXrFs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl541osACgkQJNaLcl1U
+h9A4pAf+IvJV9iWwP6vJKgT868+5ZjhSjiVsOKwt0PqgVzwOcV5HIX7k7mlf91GM
+k1Fn/ZsPWecmng93bj0iUlMtnBCoxTyE4F20odXx1vgUhscr6RjCvtPkGlLEgYEz
+0Cs6mB6NDjJxcTJDxB54HIXhlP4lL3Jo++u+yRS2/0lLHba08FUu7/gJYjh7TTCV
+n9kw50W8boGR1DgRe51u0Yn08RqNt2Boe/tauY2huT9H5zgbM2d40jv7qVcdTffJ
+PWeuF23KN9w9E/burfR4MrA8JtLgZHrnjt5cuSXuogtP28D1UcfgaKfr8JSDPT6P
+VjN8hBGRZhte6hqR58+ZsNUrKDDLIw==
+=1CsH
+-----END PGP SIGNATURE-----
+
+--2hMgfIw2X+zgXrFs--
+
+
+--===============5184026393314462673==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5184026393314462673==--
+
