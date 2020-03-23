@@ -2,63 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E5A918F205
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:41:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9161718F24E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:01:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/rs0BCX5pMLiXdS+IgjNVmnRi79GRakCAm7n400+4Ic=; b=YNXEv0zdGVvhf49MpFze0NAUTu
-	tgsSccA/fd0QDicY/tsRKwYygfbJPvvNooAukE3eWq7LcVCIkAHhljszGqRls3GTJVybI2PXdheCv
-	Cmlk5PGfjhmEaTWGPZFLHYasD81N5PMdMHtvGPDDlHFY4V1yfFlNr+tx7s5ucZbRCPdGBAtF8IxDv
-	AjMJkOJIezeWeGzs2lwmlF5D/2ii1ci7p+7j0MAVLvPRaocDE1CAnx28n7J9dPs4qqqaIWrWTSMXe
-	r4RxUOqLwNRfZF0DN9MmknEOK66NQjAhxzX37MatkJKfDdcU5B9uUbY2AZSiBpS9KX56rIqwJVQWb
-	th75X/2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IdXeEpJLGferq8e1KC+n/21Sz7z7lMZClVDIlUUSJqo=; b=ctulf4RJVMrhp4E1UauawtNBs
+	ENadeFOG69W3dfeZyjxlEhMH/WEBdL6oLq1muyCDfei6x3tmiJM0qeEEKCiwT2Yr8Y3z4ksomF6Gd
+	16jbnz6P1Ka1DU2h5M5gDKvm5cr75pe4rhVevLZwX38X/wqEQCI/xffKOZtDdwC+63zgwfhl3fSqN
+	9rpwOwyYWaen4KuOUM+ucxJQN2JZqTh1cHgVHOauz6a7FKRCAslSiDoKQBXRT5uIFzC6hLStqk7v9
+	7AIWYHMe/hFk0tEfJLjuh/6yRFOo8r3vUp0LtKMi6NnEXl3RvVmB4+c+D3w4VjipVAoAWkZ6Ef6Hg
+	gtkAmRnTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJaU-00073p-8q; Mon, 23 Mar 2020 09:41:38 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJZx-0006Xu-ER
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:41:08 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 23 Mar 2020 18:41:05 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 16FED180BCB;
- Mon, 23 Mar 2020 18:41:05 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Mon, 23 Mar 2020 18:41:05 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 5FCEE1A12AD;
- Mon, 23 Mar 2020 18:41:04 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v3 2/2] PCI: uniphier: Add Socionext UniPhier Pro5 PCIe
- endpoint controller driver
-Date: Mon, 23 Mar 2020 18:40:54 +0900
-Message-Id: <1584956454-8829-3-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1584956454-8829-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1584956454-8829-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1jGJti-0006H4-Ff; Mon, 23 Mar 2020 10:01:30 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGJtZ-0006G8-Q9
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:01:23 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id A8F83580412;
+ Mon, 23 Mar 2020 06:01:16 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 23 Mar 2020 06:01:16 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=/WvqdoYz5hLKl3XQDGdtoCAHQbJ
+ /DVnk5Lp+j1NoVJE=; b=KBhRMnztT4+zGwbGOT27ZJcocQCf5IbbatGFS2Ix4AK
+ i7UqTad3VvN9/BxpXfO1/bLnSWq4tnWdMsCVs3vVE+hYxxREvS4uajvOs5mDJWwx
+ wF4W9E4hScT+Ry9Py2bipyjor1hy2Ne5/qi22p/uazJhi5gHiEF6XdSHVASfEmnr
+ RWEVl9oR7kbGQTXTmq5RDMqH1YQnuVWwO4Y/ORqOs1ZovzK+R1gZuvhXH13hMTAb
+ 041VhBrMmMvCCquYaWoH55EBYM6YOQHkkX01cnct9CSBQav7+LWRoI4DskoUI5HS
+ Lx5sxxY2UQztjdFTJOfB0O0ESqHlqA5I39100sQP6rw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=/Wvqdo
+ Yz5hLKl3XQDGdtoCAHQbJ/DVnk5Lp+j1NoVJE=; b=1smXx7hqCAppWfSH8INChc
+ YQlJcPEg6EaCt+52hhKKFwg/NHLcjvUuvCNrrlxh2vVyRg4S7qFY+EVhiLTZEfLq
+ wI8q28R+egn8YoNtK5L5eQH/ow9D4naTWg59HjwiwKiVpvIqP+llEAguk8gh48Oy
+ f8YJV0paTKAc5+VnBBAnfsbGcN9UQsStV+wAV/QV4RifgXdTu97ersaCqT9OMv9M
+ AeIolZ3t2PihtRWKLXa6FJA552COQdyXb4XBs73dPgY4U+G/LtG/iQd/KBEbnQtK
+ oFVIpMheYYHWr8hva72DenuJ/0oDhomLox0/Up2IYVKf5Wy2PlghWYQB0Y74Ks3Q
+ ==
+X-ME-Sender: <xms:54h4XrziilQ979XEEhoaeyyofL9igG3NuXqU2XjQUhKd_Vcw5gYbKA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudegkedgudduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:54h4Xrko6pOn_bmge1a73E1F0VmZP_VNmHU1_i1Pz-qcng4k0XGuNg>
+ <xmx:54h4XvUTPNd-RbEAQ3X9l38Ep1FUnvVJGOHoRgUqP5QcREhM7BFfmQ>
+ <xmx:54h4XjWHxpNML3VV6lX08dN6aRcjHpTELuak6RjodvjD6suT4ZVJBQ>
+ <xmx:7Ih4XpIBrcNGc3zZckpXGzpxM9HhuDaoqrON_j7rJ1hUdkSs2lD0BQ>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id CF1B8328005D;
+ Mon, 23 Mar 2020 06:01:10 -0400 (EDT)
+Date: Mon, 23 Mar 2020 11:01:09 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Sergey.Semin@baikalelectronics.ru
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+MIME-Version: 1.0
+In-Reply-To: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_024105_935904_FF0D5A5B 
-X-CRM114-Status: GOOD (  24.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200323_030122_173786_5AC5C4E3 
+X-CRM114-Status: GOOD (  33.33  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.229 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,476 +103,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Serge Semin <fancer.lancer@gmail.com>, Will Deacon <will@kernel.org>,
+ linux-clk@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ linux-serial@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+Content-Type: multipart/mixed; boundary="===============8943311647981320459=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver for the Socionext UniPhier Pro5 SoC endpoint controller.
-This controller is based on the DesignWare PCIe core.
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- MAINTAINERS                                   |   2 +-
- drivers/pci/controller/dwc/Kconfig            |  13 +-
- drivers/pci/controller/dwc/Makefile           |   1 +
- drivers/pci/controller/dwc/pcie-uniphier-ep.c | 380 ++++++++++++++++++++++++++
- 4 files changed, 393 insertions(+), 3 deletions(-)
- create mode 100644 drivers/pci/controller/dwc/pcie-uniphier-ep.c
+--===============8943311647981320459==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="sxpqz3afj6jojk4c"
+Content-Disposition: inline
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 01a4631..95d296b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -13152,7 +13152,7 @@ M:	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
- L:	linux-pci@vger.kernel.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/pci/uniphier-pcie*.txt
--F:	drivers/pci/controller/dwc/pcie-uniphier.c
-+F:	drivers/pci/controller/dwc/pcie-uniphier*.c
- 
- PCIE DRIVER FOR ST SPEAR13XX
- M:	Pratyush Anand <pratyush.anand@gmail.com>
-diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-index 169cde5..4dd5ba9 100644
---- a/drivers/pci/controller/dwc/Kconfig
-+++ b/drivers/pci/controller/dwc/Kconfig
-@@ -282,15 +282,24 @@ config PCIE_TEGRA194_EP
- 	  selected. This uses the DesignWare core.
- 
- config PCIE_UNIPHIER
--	bool "Socionext UniPhier PCIe controllers"
-+	bool "Socionext UniPhier PCIe host controllers"
- 	depends on ARCH_UNIPHIER || COMPILE_TEST
- 	depends on OF && HAS_IOMEM
- 	depends on PCI_MSI_IRQ_DOMAIN
- 	select PCIE_DW_HOST
- 	help
--	  Say Y here if you want PCIe controller support on UniPhier SoCs.
-+	  Say Y here if you want PCIe host controller support on UniPhier SoCs.
- 	  This driver supports LD20 and PXs3 SoCs.
- 
-+config PCIE_UNIPHIER_EP
-+	bool "Socionext UniPhier PCIe endpoint controllers"
-+	depends on ARCH_UNIPHIER || COMPILE_TEST
-+	depends on OF && HAS_IOMEM
-+	select PCIE_DW_EP
-+	help
-+	  Say Y here if you want PCIe endpoint controller support on
-+	  UniPhier SoCs. This driver supports Pro5 SoC.
-+
- config PCIE_AL
- 	bool "Amazon Annapurna Labs PCIe controller"
- 	depends on OF && (ARM64 || COMPILE_TEST)
-diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
-index 8a637cf..a751553 100644
---- a/drivers/pci/controller/dwc/Makefile
-+++ b/drivers/pci/controller/dwc/Makefile
-@@ -19,6 +19,7 @@ obj-$(CONFIG_PCIE_HISI_STB) += pcie-histb.o
- obj-$(CONFIG_PCI_MESON) += pci-meson.o
- obj-$(CONFIG_PCIE_TEGRA194) += pcie-tegra194.o
- obj-$(CONFIG_PCIE_UNIPHIER) += pcie-uniphier.o
-+obj-$(CONFIG_PCIE_UNIPHIER_EP) += pcie-uniphier-ep.o
- 
- # The following drivers are for devices that use the generic ACPI
- # pci_root.c driver but don't support standard ECAM config access.
-diff --git a/drivers/pci/controller/dwc/pcie-uniphier-ep.c b/drivers/pci/controller/dwc/pcie-uniphier-ep.c
-new file mode 100644
-index 0000000..71db49f
---- /dev/null
-+++ b/drivers/pci/controller/dwc/pcie-uniphier-ep.c
-@@ -0,0 +1,380 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * PCIe endpoint controller driver for UniPhier SoCs
-+ * Copyright 2018 Socionext Inc.
-+ * Author: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-+ */
-+
-+#include <linux/bitops.h>
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/init.h>
-+#include <linux/of_device.h>
-+#include <linux/pci.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#include "pcie-designware.h"
-+
-+/* Link Glue registers */
-+#define PCL_RSTCTRL0			0x0010
-+#define PCL_RSTCTRL_AXI_REG		BIT(3)
-+#define PCL_RSTCTRL_AXI_SLAVE		BIT(2)
-+#define PCL_RSTCTRL_AXI_MASTER		BIT(1)
-+#define PCL_RSTCTRL_PIPE3		BIT(0)
-+
-+#define PCL_RSTCTRL1			0x0020
-+#define PCL_RSTCTRL_PERST		BIT(0)
-+
-+#define PCL_RSTCTRL2			0x0024
-+#define PCL_RSTCTRL_PHY_RESET		BIT(0)
-+
-+#define PCL_MODE			0x8000
-+#define PCL_MODE_REGEN			BIT(8)
-+#define PCL_MODE_REGVAL			BIT(0)
-+
-+#define PCL_APP_CLK_CTRL		0x8004
-+#define PCL_APP_CLK_REQ			BIT(0)
-+
-+#define PCL_APP_READY_CTRL		0x8008
-+#define PCL_APP_LTSSM_ENABLE		BIT(0)
-+
-+#define PCL_APP_MSI0			0x8040
-+#define PCL_APP_VEN_MSI_TC_MASK		GENMASK(10, 8)
-+#define PCL_APP_VEN_MSI_VECTOR_MASK	GENMASK(4, 0)
-+
-+#define PCL_APP_MSI1			0x8044
-+#define PCL_APP_MSI_REQ			BIT(0)
-+
-+#define PCL_APP_INTX			0x8074
-+#define PCL_APP_INTX_SYS_INT		BIT(0)
-+
-+/* assertion time of INTx in usec */
-+#define PCL_INTX_WIDTH_USEC		30
-+
-+struct uniphier_pcie_ep_priv {
-+	void __iomem *base;
-+	struct dw_pcie pci;
-+	struct clk *clk, *clk_gio;
-+	struct reset_control *rst, *rst_gio;
-+	struct phy *phy;
-+	const struct pci_epc_features *features;
-+};
-+
-+#define to_uniphier_pcie(x)	dev_get_drvdata((x)->dev)
-+
-+static void uniphier_pcie_ltssm_enable(struct uniphier_pcie_ep_priv *priv,
-+				       bool enable)
-+{
-+	u32 val;
-+
-+	val = readl(priv->base + PCL_APP_READY_CTRL);
-+	if (enable)
-+		val |= PCL_APP_LTSSM_ENABLE;
-+	else
-+		val &= ~PCL_APP_LTSSM_ENABLE;
-+	writel(val, priv->base + PCL_APP_READY_CTRL);
-+}
-+
-+static void uniphier_pcie_phy_reset(struct uniphier_pcie_ep_priv *priv,
-+				    bool assert)
-+{
-+	u32 val;
-+
-+	val = readl(priv->base + PCL_RSTCTRL2);
-+	if (assert)
-+		val |= PCL_RSTCTRL_PHY_RESET;
-+	else
-+		val &= ~PCL_RSTCTRL_PHY_RESET;
-+	writel(val, priv->base + PCL_RSTCTRL2);
-+}
-+
-+static void uniphier_pcie_init_ep(struct uniphier_pcie_ep_priv *priv)
-+{
-+	u32 val;
-+
-+	/* set EP mode */
-+	val = readl(priv->base + PCL_MODE);
-+	val |= PCL_MODE_REGEN | PCL_MODE_REGVAL;
-+	writel(val, priv->base + PCL_MODE);
-+
-+	/* clock request */
-+	val = readl(priv->base + PCL_APP_CLK_CTRL);
-+	val &= ~PCL_APP_CLK_REQ;
-+	writel(val, priv->base + PCL_APP_CLK_CTRL);
-+
-+	/* deassert PIPE3 and AXI reset */
-+	val = readl(priv->base + PCL_RSTCTRL0);
-+	val |= PCL_RSTCTRL_AXI_REG | PCL_RSTCTRL_AXI_SLAVE
-+		| PCL_RSTCTRL_AXI_MASTER | PCL_RSTCTRL_PIPE3;
-+	writel(val, priv->base + PCL_RSTCTRL0);
-+
-+	uniphier_pcie_ltssm_enable(priv, false);
-+
-+	msleep(100);
-+}
-+
-+static int uniphier_pcie_start_link(struct dw_pcie *pci)
-+{
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	uniphier_pcie_ltssm_enable(priv, true);
-+
-+	return 0;
-+}
-+
-+static void uniphier_pcie_stop_link(struct dw_pcie *pci)
-+{
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	uniphier_pcie_ltssm_enable(priv, false);
-+}
-+
-+static void uniphier_pcie_ep_init(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	enum pci_barno bar;
-+
-+	for (bar = BAR_0; bar <= BAR_5; bar++)
-+		dw_pcie_ep_reset_bar(pci, bar);
-+}
-+
-+static int uniphier_pcie_ep_raise_legacy_irq(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+	u32 val;
-+
-+	/* assert INTx */
-+	val = readl(priv->base + PCL_APP_INTX);
-+	val |= PCL_APP_INTX_SYS_INT;
-+	writel(val, priv->base + PCL_APP_INTX);
-+
-+	udelay(PCL_INTX_WIDTH_USEC);
-+
-+	/* deassert INTx */
-+	val &= ~PCL_APP_INTX_SYS_INT;
-+	writel(val, priv->base + PCL_APP_INTX);
-+
-+	return 0;
-+}
-+
-+static int uniphier_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep,
-+					  u8 func_no, u16 interrupt_num)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+	u32 val;
-+
-+	val = FIELD_PREP(PCL_APP_VEN_MSI_TC_MASK, func_no)
-+		| FIELD_PREP(PCL_APP_VEN_MSI_VECTOR_MASK, interrupt_num - 1);
-+	writel(val, priv->base + PCL_APP_MSI0);
-+
-+	val = readl(priv->base + PCL_APP_MSI1);
-+	val |= PCL_APP_MSI_REQ;
-+	writel(val, priv->base + PCL_APP_MSI1);
-+
-+	return 0;
-+}
-+
-+static int uniphier_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
-+				      enum pci_epc_irq_type type,
-+				      u16 interrupt_num)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+
-+	switch (type) {
-+	case PCI_EPC_IRQ_LEGACY:
-+		return uniphier_pcie_ep_raise_legacy_irq(ep);
-+	case PCI_EPC_IRQ_MSI:
-+		return uniphier_pcie_ep_raise_msi_irq(ep, func_no,
-+						      interrupt_num);
-+	default:
-+		dev_err(pci->dev, "UNKNOWN IRQ type (%d)\n", type);
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct pci_epc_features*
-+uniphier_pcie_get_features(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	return priv->features;
-+}
-+
-+static const struct dw_pcie_ep_ops uniphier_pcie_ep_ops = {
-+	.ep_init = uniphier_pcie_ep_init,
-+	.raise_irq = uniphier_pcie_ep_raise_irq,
-+	.get_features = uniphier_pcie_get_features,
-+};
-+
-+static int uniphier_add_pcie_ep(struct uniphier_pcie_ep_priv *priv,
-+				struct platform_device *pdev)
-+{
-+	struct dw_pcie *pci = &priv->pci;
-+	struct dw_pcie_ep *ep = &pci->ep;
-+	struct device *dev = &pdev->dev;
-+	struct resource *res;
-+	int ret;
-+
-+	ep->ops = &uniphier_pcie_ep_ops;
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi2");
-+	pci->dbi_base2 = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(pci->dbi_base2))
-+		return PTR_ERR(pci->dbi_base2);
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
-+	if (!res)
-+		return -EINVAL;
-+
-+	ep->phys_base = res->start;
-+	ep->addr_size = resource_size(res);
-+
-+	ret = dw_pcie_ep_init(ep);
-+	if (ret)
-+		dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-+
-+	return ret;
-+}
-+
-+static int uniphier_pcie_ep_enable(struct uniphier_pcie_ep_priv *priv)
-+{
-+	int ret;
-+
-+	ret = clk_prepare_enable(priv->clk);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(priv->clk_gio);
-+	if (ret)
-+		goto out_clk_disable;
-+
-+	ret = reset_control_deassert(priv->rst);
-+	if (ret)
-+		goto out_clk_gio_disable;
-+
-+	ret = reset_control_deassert(priv->rst_gio);
-+	if (ret)
-+		goto out_rst_assert;
-+
-+	uniphier_pcie_init_ep(priv);
-+
-+	uniphier_pcie_phy_reset(priv, true);
-+
-+	ret = phy_init(priv->phy);
-+	if (ret)
-+		goto out_rst_gio_assert;
-+
-+	uniphier_pcie_phy_reset(priv, false);
-+
-+	return 0;
-+
-+out_rst_gio_assert:
-+	reset_control_assert(priv->rst_gio);
-+out_rst_assert:
-+	reset_control_assert(priv->rst);
-+out_clk_gio_disable:
-+	clk_disable_unprepare(priv->clk_gio);
-+out_clk_disable:
-+	clk_disable_unprepare(priv->clk);
-+
-+	return ret;
-+}
-+
-+static const struct dw_pcie_ops dw_pcie_ops = {
-+	.start_link = uniphier_pcie_start_link,
-+	.stop_link = uniphier_pcie_stop_link,
-+};
-+
-+static int uniphier_pcie_ep_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct uniphier_pcie_ep_priv *priv;
-+	struct resource *res;
-+	int ret;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->features = of_device_get_match_data(dev);
-+	if (WARN_ON(!priv->features))
-+		return -EINVAL;
-+
-+	priv->pci.dev = dev;
-+	priv->pci.ops = &dw_pcie_ops;
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
-+	priv->pci.dbi_base = devm_pci_remap_cfg_resource(dev, res);
-+	if (IS_ERR(priv->pci.dbi_base))
-+		return PTR_ERR(priv->pci.dbi_base);
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
-+	priv->base = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(priv->base))
-+		return PTR_ERR(priv->base);
-+
-+	priv->clk_gio = devm_clk_get(dev, "gio");
-+	if (IS_ERR(priv->clk))
-+		return PTR_ERR(priv->clk);
-+
-+	priv->rst_gio = devm_reset_control_get_shared(dev, "gio");
-+	if (IS_ERR(priv->rst_gio))
-+		return PTR_ERR(priv->rst_gio);
-+
-+	priv->clk = devm_clk_get(dev, "link");
-+	if (IS_ERR(priv->clk))
-+		return PTR_ERR(priv->clk);
-+
-+	priv->rst = devm_reset_control_get_shared(dev, "link");
-+	if (IS_ERR(priv->rst))
-+		return PTR_ERR(priv->rst);
-+
-+	priv->phy = devm_phy_optional_get(dev, "pcie-phy");
-+	if (IS_ERR(priv->phy)) {
-+		ret = PTR_ERR(priv->phy);
-+		dev_err(dev, "Failed to get phy (%d)\n", ret);
-+		return ret;
-+	}
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	ret = uniphier_pcie_ep_enable(priv);
-+	if (ret)
-+		return ret;
-+
-+	return uniphier_add_pcie_ep(priv, pdev);
-+}
-+
-+static const struct pci_epc_features uniphier_pro5_data = {
-+	.linkup_notifier = false,
-+	.msi_capable = true,
-+	.msix_capable = false,
-+	.align = 1 << 16,
-+	.bar_fixed_64bit = BIT(BAR_0) | BIT(BAR_2) | BIT(BAR_4),
-+	.reserved_bar =  BIT(BAR_4),
-+};
-+
-+static const struct of_device_id uniphier_pcie_ep_match[] = {
-+	{
-+		.compatible = "socionext,uniphier-pro5-pcie-ep",
-+		.data = &uniphier_pro5_data,
-+	},
-+	{ /* sentinel */ },
-+};
-+
-+static struct platform_driver uniphier_pcie_ep_driver = {
-+	.probe  = uniphier_pcie_ep_probe,
-+	.driver = {
-+		.name = "uniphier-pcie-ep",
-+		.of_match_table = uniphier_pcie_ep_match,
-+		.suppress_bind_attrs = true,
-+	},
-+};
-+builtin_platform_driver(uniphier_pcie_ep_driver);
--- 
-2.7.4
 
+--sxpqz3afj6jojk4c
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
+> From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+>
+> There are races possible in the dw8250_set_termios() callback method
+> and while the device is in PM suspend state. A race condition may
+> happen if the baudrate clock source device is shared with some other
+> device (in our machine it's another DW UART port). In this case if that
+> device changes the clock rate while serial console is using it the
+> DW 8250 UART port might not only end up with an invalid uartclk value
+> saved, but may also experience a distorted output data since baud-clock
+> could have been changed. In order to fix this lets enable an exclusive
+> reference clock rate access in case if "baudclk" device is specified.
+>
+> So if some other device also acquires the rate exclusivity during the
+> time of a DW UART 8250 port being opened, then DW UART 8250 driver
+> won't be able to alter the baud-clock. It shall just use the available
+> clock rate. Similarly another device also won't manage to change the
+> rate at that time. If nothing else have the exclusive rate access
+> acquired except DW UART 8250 driver, then the driver will be able to
+> alter the rate as much as it needs to in accordance with the currently
+> implemented logic.
+>
+> Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+> Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
+> Cc: Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>
+> Cc: Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+> Cc: Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>
+> Cc: Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>
+> Cc: Vadim Vlasov <V.Vlasov@baikalelectronics.ru>
+> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+> Cc: Paul Burton <paulburton@kernel.org>
+> Cc: Ralf Baechle <ralf@linux-mips.org>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Chen-Yu Tsai <wens@csie.org>
+> CC: Ray Jui <rjui@broadcom.com>
+> Cc: Scott Branden <sbranden@broadcom.com>
+> Cc: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Wei Xu <xuwei5@hisilicon.com>
+> Cc: Jason Cooper <jason@lakedaemon.net>
+> Cc: Andrew Lunn <andrew@lunn.ch>
+> Cc: Gregory Clement <gregory.clement@bootlin.com>
+> Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+> Cc: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: Michael Turquette <mturquette@baylibre.com>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
+>
+> ---
+>
+> Changelog v2:
+> - Move exclusive ref clock lock/unlock precudures to the 8250 port
+>   startup/shutdown methods.
+> - The changelog message has also been slightly modified due to the
+>   alteration.
+> - Remove Alexey' SoB tag.
+> - Cc someone from ARM who might be concerned regarding this change.
+> - Cc someone from Clocks Framework to get their comments on this patch.
+> ---
+>  drivers/tty/serial/8250/8250_dw.c | 36 +++++++++++++++++++++++++++++++
+>  1 file changed, 36 insertions(+)
+>
+> diff --git a/drivers/tty/serial/8250/8250_dw.c b/drivers/tty/serial/8250/8250_dw.c
+> index aab3cccc6789..08f3f745ed54 100644
+> --- a/drivers/tty/serial/8250/8250_dw.c
+> +++ b/drivers/tty/serial/8250/8250_dw.c
+> @@ -319,6 +319,40 @@ static void dw8250_set_ldisc(struct uart_port *p, struct ktermios *termios)
+>  	serial8250_do_set_ldisc(p, termios);
+>  }
+>
+> +static int dw8250_startup(struct uart_port *p)
+> +{
+> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
+> +
+> +	/*
+> +	 * Some platforms may provide a reference clock shared between several
+> +	 * devices. In this case before using the serial port first we have to
+> +	 * make sure nothing will change the rate behind our back and second
+> +	 * the tty/serial subsystem knows the actual reference clock rate of
+> +	 * the port.
+> +	 */
+> +	if (clk_rate_exclusive_get(d->clk)) {
+> +		dev_warn(p->dev, "Couldn't lock the clock rate\n");
+> +	} else if (d->clk) {
+> +		p->uartclk = clk_get_rate(d->clk);
+> +		if (!p->uartclk) {
+> +			clk_rate_exclusive_put(d->clk);
+> +			dev_err(p->dev, "Clock rate not defined\n");
+> +			return -EINVAL;
+> +		}
+> +	}
+> +
+> +	return serial8250_do_startup(p);
+> +}
+
+I've been facing that issue, so it would be great to get it fixed, but
+I'm not sure this is the right solution.
+
+clk_rate_exclusive_get is pretty intrusive, and due to the usual
+topology of clock trees, this will lock down 3-4 parent clocks to
+their current rate as well. In the Allwinner SoCs case for example,
+this will lock down the same PLL than the one used by the CPU,
+preventing cpufreq from running.
+
+However, the 8250 has a pretty wide range of dividers and can adapt to
+any reasonable parent clock rate, so we don't really need to lock the
+rate either, we can simply react to a parent clock rate change using
+the clock notifiers, just like the SiFive UART is doing.
+
+I tried to do that, but given that I don't really have an extensive
+knowledge of the 8250, I couldn't find a way to stop the TX of chars
+while we change the clock rate. I'm not sure if this is a big deal or
+not, the SiFive UART doesn't seem to care.
+
+Maxime
+
+--sxpqz3afj6jojk4c
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXniI5AAKCRDj7w1vZxhR
+xaAzAP9ZTOKvBcrPgQQ/+/TFF/Xyv1hvtNQylv3vEF/K9DeEuQEAjtCTjoyYyltZ
+86dRkGN6b2RHWNb6uaZbW0Kr/LH/4wE=
+=AtVK
+-----END PGP SIGNATURE-----
+
+--sxpqz3afj6jojk4c--
+
+
+--===============8943311647981320459==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8943311647981320459==--
+
