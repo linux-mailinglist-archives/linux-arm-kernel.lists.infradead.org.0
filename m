@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3754E18EFFE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 07:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 024BF18EFFF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 07:54:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Q+qPz2yHLQaNajkoNlw0ONwhn+jVIwgrH9be6HclF7M=; b=oVG4J57L8mY4S04tYXXOY5fqQL
-	86wX9LBH3HISZqm8tWkqg+NATTI4cqKOVOTVC0KA6tsqr3bH4QmZLQglgr4ubbDdduI7mXdCFSI2V
-	GFbUUj8WXwEVrop6VeaxoniZreai4in8rjCgG5gsnjR7Y3UwiFZNagjNZ3hLJ18akKc12gzvOwEpU
-	xGrv/rLJYXPQJQ+zdRMIvBsBj1xfcBsrDPKhfJAMahZ3QgIJP82dEI6wi3myNDNuViq+sZ7IB98Km
-	kGsGo3NC6mt4dqaRUbX586fZUlhez3qGgxtyT9NNVPYyjmskc972ieW/NBntAKHq0fcSEuaUQ5CAs
-	mLdjL5YA==;
+	bh=TnoC4PmJsAgdTitHtXRM01o2ACoccyrELzxBs5c/VBU=; b=ZXZhLaJrOU781bYa9Kv22VXF7l
+	dIY137UkRQj0ZTCmC969Bem8q+S6V5R+o935nwlaLqWheGkso9O/wiDnTa0LXJZPQfPrhpkDfHDXM
+	vZ52XXRY4uxhBorqD5To8hdOjpB5Ihgz4dMg+gezQlUiQlzH8IvjVpVsZK2p2IfUnVa7JDNNTvypG
+	3cIZ923tcSFzeN5m6XmQKdid4DQ6M8HyXRlOu0ZHEm0dBukzid0GFCrerR0LKRyQDOaJTbv6o6n0Q
+	MpuE4H6dwctEeewG1rskzcwKPjQL5KvpzA+EnNnVCr569jidwYQF2Gqj7BbYcq3UJxJh+BFTt7j8Q
+	7MBNGoDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGGyK-0005h4-Oc; Mon, 23 Mar 2020 06:54:04 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jGGya-0005tU-Mq; Mon, 23 Mar 2020 06:54:20 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGGy0-0005cZ-Td
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 06:53:46 +0000
-Received: by mail-wm1-x343.google.com with SMTP id d1so13394516wmb.2
+ id 1jGGy2-0005ep-T2
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 06:53:48 +0000
+Received: by mail-wm1-x341.google.com with SMTP id c81so2910823wmd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Mar 2020 23:53:44 -0700 (PDT)
+ Sun, 22 Mar 2020 23:53:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=C3DogahGC9+RykrmX70/1+RE3NkN/OINb0pWKE0oiy4=;
- b=g3ks5wvh67hKay0usPtxla8zP4/ICys2eEZE2K2tUDUgQQl7Th+BDUgKXXp1AChHqM
- Hrc9Jfbt1PO3FMGfvF8dFCofuxtqQqRaXbCoBBKdeU0XQEczUdsuxO/1CHUN2yOD74SX
- bnUREGRRB5d9rtVwRNdRfZgeKXv2Vw81fQkig=
+ bh=DuqutkfVD4m7NtyrXjd1qFiuKaLZ6gnOOVtPX0RgVTY=;
+ b=TguF1o1/qlgnZwU27lTm96jgi4/VmGaBU9Eea/Y1AGY4nm0JxN1hlQq8gngr0eXvRZ
+ COkqUxmF+S78f7qM1i7WsXFrGqJBmuvAzIxi/Mx3KFXr2kUiPBQfEB7TEazWvWf1EJ8d
+ kBhyfPSYv7fRe/9sVm6xPmpCcJzBLyo9FjBsA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=C3DogahGC9+RykrmX70/1+RE3NkN/OINb0pWKE0oiy4=;
- b=JyYCPQXpYEMiSMGBXjCRZdBVjTaAgapo938KZngBl7Sba1G8L8pcmAj+bd9QVAbP6p
- AI1MIFj622TMaUJDtL9UQrjh8B+JkGp+30PQsAgRPZ3ZFfyBQAoOxU2e5vfKcqRoPoY8
- vq4w/MVgLOBt/wMXD3KomkjTozY3rQ9IqfoSy6azORMtYXUHDl44YmrT6gIn08kPtxdV
- 2FWO8/sdE7JMsqZw72fhb0i/cL42H8FRMXUSKnIzoirjx3SDvBNutoKzKUSlR7KhYwXg
- sQTE/UAYbnEyrgAtZ5X3KVgt4Hbd7F6tDBvmWKMbGQWgzX6IzQHovZWQaEmFWdMdpZTo
- Sntg==
-X-Gm-Message-State: ANhLgQ043pJZudgXYh4emt97kWoU9wpgrmF3WfYpC/5wQZI3/PyBOdr8
- sobIB2JHjOmL2AxiqwmhrTOdyw==
-X-Google-Smtp-Source: ADFU+vtUdIK/nmJ5km4kTi10jFNj5bmdEnLO9j2fB7uf9CpemLLpupJmfYE4Pun9FHYO8c9rMSa6kg==
-X-Received: by 2002:a05:600c:4013:: with SMTP id
- i19mr10552720wmm.17.1584946419207; 
- Sun, 22 Mar 2020 23:53:39 -0700 (PDT)
+ bh=DuqutkfVD4m7NtyrXjd1qFiuKaLZ6gnOOVtPX0RgVTY=;
+ b=Rg6iORrlYa1Z6wZsPJbZsdedeRpCCr9P/XrFee37sULxbO71b/ET9MEeOjhEZhUtyT
+ iSioOH5YZpzx2c4BUKjWqL0BCjPXucbx8EFNeNXuk65eg5cDtmAH7mW6zRSXjT/Dqpb5
+ n6/1ThjmGAWpx9qNitt6rOanveDBkUS8Pf5LGDpb8/Q3aIazmRjcUd4IyuR1qEi2VB67
+ NwHmVuQ5KKjQ97otnHxTiC6IpdCUB2fuokcFpHqu10VTopsdtpPBCE/JCQYwZ+CJiz6T
+ Qx+hN6FwAgdy0HZEqsa8trSw2Ev5PF0VvEnOz56dwF+xIWEcnnk31BRP5CDnzEzy/7e2
+ stag==
+X-Gm-Message-State: ANhLgQ16dR2+R8R3IobNILQpmEdr+XkTPdDTwg+bihJu6OsCCVGNlroF
+ mCVmyN9f5JJ9wllubtRFs0U1pA==
+X-Google-Smtp-Source: ADFU+vvTcWQvI4pQ74ETn6iuJkGTxDPyFfqkWItYiIQQfNbGj4qUUZzKTb7JO1lqWDauafYBB0xF4g==
+X-Received: by 2002:a1c:196:: with SMTP id 144mr26056577wmb.100.1584946424816; 
+ Sun, 22 Mar 2020 23:53:44 -0700 (PDT)
 Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
- by smtp.gmail.com with ESMTPSA id g128sm21127453wmf.27.2020.03.22.23.53.35
+ by smtp.gmail.com with ESMTPSA id g128sm21127453wmf.27.2020.03.22.23.53.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Mar 2020 23:53:38 -0700 (PDT)
+ Sun, 22 Mar 2020 23:53:44 -0700 (PDT)
 From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 To: Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
@@ -62,22 +61,22 @@ To: Thierry Reding <thierry.reding@gmail.com>,
  Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
  linux-pwm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v1 1/2] pwm: bcm-iproc: handle clk_get_rate() return
-Date: Mon, 23 Mar 2020 12:23:17 +0530
-Message-Id: <20200323065318.16533-2-rayagonda.kokatanur@broadcom.com>
+Subject: [PATCH v1 2/2] pwm: bcm-iproc: remove unnecessary check of 'duty'
+Date: Mon, 23 Mar 2020 12:23:18 +0530
+Message-Id: <20200323065318.16533-3-rayagonda.kokatanur@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200323065318.16533-1-rayagonda.kokatanur@broadcom.com>
 References: <20200323065318.16533-1-rayagonda.kokatanur@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_235344_977681_BDA03A1A 
-X-CRM114-Status: GOOD (  12.59  )
+X-CRM114-CacheID: sfid-20200322_235346_954817_99B67EAB 
+X-CRM114-Status: GOOD (  13.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,58 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Handle clk_get_rate() returning <= 0 condition to avoid
-possible division by zero.
+Variable 'duty' is u32. Hence the less-than zero
+comparison is never true, remove the check.
 
 Fixes: daa5abc41c80 ("pwm: Add support for Broadcom iProc PWM controller")
 Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 ---
- drivers/pwm/pwm-bcm-iproc.c | 32 +++++++++++++++++++-------------
- 1 file changed, 19 insertions(+), 13 deletions(-)
+ drivers/pwm/pwm-bcm-iproc.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/pwm/pwm-bcm-iproc.c b/drivers/pwm/pwm-bcm-iproc.c
-index 1f829edd8ee7..8bbd2a04fead 100644
+index 8bbd2a04fead..1bb66721f985 100644
 --- a/drivers/pwm/pwm-bcm-iproc.c
 +++ b/drivers/pwm/pwm-bcm-iproc.c
-@@ -99,19 +99,25 @@ static void iproc_pwmc_get_state(struct pwm_chip *chip, struct pwm_device *pwm,
- 	else
- 		state->polarity = PWM_POLARITY_INVERSED;
+@@ -149,8 +149,7 @@ static int iproc_pwmc_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 		value = rate * state->duty_cycle;
+ 		duty = div64_u64(value, div);
  
--	value = readl(ip->base + IPROC_PWM_PRESCALE_OFFSET);
--	prescale = value >> IPROC_PWM_PRESCALE_SHIFT(pwm->hwpwm);
--	prescale &= IPROC_PWM_PRESCALE_MAX;
--
--	multi = NSEC_PER_SEC * (prescale + 1);
--
--	value = readl(ip->base + IPROC_PWM_PERIOD_OFFSET(pwm->hwpwm));
--	tmp = (value & IPROC_PWM_PERIOD_MAX) * multi;
--	state->period = div64_u64(tmp, rate);
--
--	value = readl(ip->base + IPROC_PWM_DUTY_CYCLE_OFFSET(pwm->hwpwm));
--	tmp = (value & IPROC_PWM_PERIOD_MAX) * multi;
--	state->duty_cycle = div64_u64(tmp, rate);
-+	if (rate == 0) {
-+		state->period = 0;
-+		state->duty_cycle = 0;
-+	} else {
-+		value = readl(ip->base + IPROC_PWM_PRESCALE_OFFSET);
-+		prescale = value >> IPROC_PWM_PRESCALE_SHIFT(pwm->hwpwm);
-+		prescale &= IPROC_PWM_PRESCALE_MAX;
-+
-+		multi = NSEC_PER_SEC * (prescale + 1);
-+
-+		value = readl(ip->base + IPROC_PWM_PERIOD_OFFSET(pwm->hwpwm));
-+		tmp = (value & IPROC_PWM_PERIOD_MAX) * multi;
-+		state->period = div64_u64(tmp, rate);
-+
-+		value = readl(ip->base +
-+			      IPROC_PWM_DUTY_CYCLE_OFFSET(pwm->hwpwm));
-+		tmp = (value & IPROC_PWM_PERIOD_MAX) * multi;
-+		state->duty_cycle = div64_u64(tmp, rate);
-+	}
- }
+-		if (period < IPROC_PWM_PERIOD_MIN ||
+-		    duty < IPROC_PWM_DUTY_CYCLE_MIN)
++		if (period < IPROC_PWM_PERIOD_MIN)
+ 			return -EINVAL;
  
- static int iproc_pwmc_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 		if (period <= IPROC_PWM_PERIOD_MAX &&
 -- 
 2.17.1
 
