@@ -2,89 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1911618EEA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 04:53:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60F7F18EEC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 05:03:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mS8y4jdYgi3n0i5UnhqKqGUKfJnIuvbmp8Y4Pi9s+9U=; b=nBXRt+BLjKhI9qNF/6qtvVGtP
-	hvUzDfNsucEeBHL0U34InafhBC2CQSTOWQUVm1JSIWquQAqgQvQ5WJ7vSvJj+nKQS48Xme2l1hl7O
-	ayya2BC+r6g7qRg8FBXmW+xAvgF9caYDL0o/DlbegneizlB7lrnk/GFJP1114oiW6roRP899UBdHZ
-	YyMmx+H6IVVJ877SmiAIeNTjjtRFVM2JiQErPTFJn1WONpj6ERFkLHcBlruwuS5VNJ9xKsyk2vszp
-	aCe0oYrX0eMoWXqywyGG8rKCupqgc3zUMqQzfa+uVQA/RulKhdPyJXDZ8RdDihVZlo6DfwMjO0lON
-	xA79LRrVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fQnqmKHyeIcG3TEZWlJS5ddF+as2y5pgvDTLETqv2Rg=; b=FoO1tP5p48MU0f
+	h/7zkyp62R+RJqiU9X8G+zfgYoe4evbDFAC1IGLde+kVZIV3LGBCkXEENDPI2PAnM0pNZweNnH99c
+	4D4ADW8c2GNJARTi9q0A0wPr4FaI9fpXzC00tX9xX/4B3YrW7Pqs8990b/04qNL1sIHpFDcqJTFT3
+	2W1yfzyLtCli+gLXe5twcib/hH9/zQrv+JBoYem1LBWmis/IqBc14jrGLzSsE3B4oiXc83chr8hj7
+	Fh10VkOYx16QgfOhOqD1NVcv23wyQMdF/3QklfXgKia7l+h8tkGg9yxYDrs7uo1XSLsRAw1H6ntQg
+	CyDyndlBxcisoBBt1NlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGE9Q-00065s-NL; Mon, 23 Mar 2020 03:53:20 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGE9K-00065K-3u
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 03:53:15 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02N3qwla007132;
- Sun, 22 Mar 2020 22:52:58 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1584935578;
- bh=J2EBw4R7xBK+XNXX1pVY/q3taGIhB/DfdmfHuKxeQEA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=c82liV2m0aVep6i5yfZTXdvhFw9gCECk/eJcpGbSDvSMsdvOQVFyNf0hSDYty+/XR
- 8tETQuOkSWW3YjE2Iy/kF2j/Cus0MeORMdKnAad2tyDWVdXsIJBNUbBugHeG+09GKE
- bOUbS11kSwZt9T+YqleMuyjJGlpewt6vd5dLNMIk=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02N3qwKh102607
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sun, 22 Mar 2020 22:52:58 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Sun, 22
- Mar 2020 22:52:57 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Sun, 22 Mar 2020 22:52:57 -0500
-Received: from [10.250.133.209] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02N3qrlP039017;
- Sun, 22 Mar 2020 22:52:54 -0500
-Subject: Re: [RESEND PATCH v4 2/4] thermal: k3: Add support for bandgap sensors
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, <rui.zhang@intel.com>,
- <robh+dt@kernel.org>
-References: <20200318083028.9984-1-j-keerthy@ti.com>
- <20200318083028.9984-3-j-keerthy@ti.com>
- <ea3b34dc-42e3-0b10-4b89-faf2621a4ee2@linaro.org>
- <03b837de-ff25-2308-8a56-15bc3377cd5f@ti.com>
- <d8bff098-f852-4c55-0afc-d7fd043dd10a@linaro.org>
-From: "J, KEERTHY" <j-keerthy@ti.com>
-Message-ID: <b73f1fdc-16d6-7320-ab63-e51bb388fb5d@ti.com>
-Date: Mon, 23 Mar 2020 09:22:52 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jGEJM-0001yH-7L; Mon, 23 Mar 2020 04:03:36 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGEJD-0001wl-I6
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 04:03:29 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 23 Mar 2020 13:03:23 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 5182C60057;
+ Mon, 23 Mar 2020 13:03:23 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Mon, 23 Mar 2020 13:03:23 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id B034D1A12AD;
+ Mon, 23 Mar 2020 13:03:22 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 7646812013D;
+ Mon, 23 Mar 2020 13:03:22 +0900 (JST)
+Date: Mon, 23 Mar 2020 13:03:22 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Subject: Re: [PATCH v2 2/2] PCI: uniphier: Add UniPhier PCIe endpoint
+ controller support
+In-Reply-To: <20200319170659.GA158868@google.com>
+References: <1584604449-13461-3-git-send-email-hayashi.kunihiko@socionext.com>
+ <20200319170659.GA158868@google.com>
+Message-Id: <20200323130322.E519.4A936039@socionext.com>
 MIME-Version: 1.0
-In-Reply-To: <d8bff098-f852-4c55-0afc-d7fd043dd10a@linaro.org>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_205314_307937_F238E204 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200322_210327_818815_6ACF4A8D 
+X-CRM114-Status: GOOD (  23.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,72 +70,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Andrew Murray <andrew.murray@arm.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAzLzE5LzIwMjAgNzowNiBQTSwgRGFuaWVsIExlemNhbm8gd3JvdGU6Cj4gT24gMTkvMDMv
-MjAyMCAxMzo1MiwgS2VlcnRoeSB3cm90ZToKPj4KPj4KPj4gT24gMTkvMDMvMjAgNjowOCBwbSwg
-RGFuaWVsIExlemNhbm8gd3JvdGU6Cj4+PiBPbiAxOC8wMy8yMDIwIDA5OjMwLCBLZWVydGh5IHdy
-b3RlOgo+Pj4+IFRoZSBiYW5kZ2FwIHByb3ZpZGVzIGN1cnJlbnQgYW5kIHZvbHRhZ2UgcmVmZXJl
-bmNlIGZvciBpdHMgaW50ZXJuYWwKPj4+PiBjaXJjdWl0cyBhbmQgb3RoZXIgYW5hbG9nIElQIGJs
-b2Nrcy4gVGhlIGFuYWxvZy10by1kaWdpdGFsCj4+Pj4gY29udmVydGVyIChBREMpIHByb2R1Y2Vz
-IGFuIG91dHB1dCB2YWx1ZSB0aGF0IGlzIHByb3BvcnRpb25hbAo+Pj4+IHRvIHRoZSBzaWxpY29u
-IHRlbXBlcmF0dXJlLgo+Pj4+Cj4+Pj4gQ3VycmVudGx5IHJlYWRpbmcgdGVtcGVyYXR1cmVzIGFu
-ZCBjcmVhdGluZyB3b3JrIHRvIHBlcmlvZGljYWxseQo+Pj4+IHJlYWQgdGVtcGVyYXR1cmVzIGZy
-b20gdGhlIHpvbmVzIGFyZSBzdXBwb3J0ZWQuCj4+Pj4gVGhlcmUgYXJlIG5vIGFjdGl2ZS9wYXNz
-aXZlIGNvb2xpbmcgYWdlbnQgc3VwcG9ydGVkLgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogS2Vl
-cnRoeSA8ai1rZWVydGh5QHRpLmNvbT4KPj4+PiAtLS0KPiAKPiBbIC4uLiBdCj4gCj4+Pj4gK3N0
-YXRpYyBjb25zdCBpbnQgazNfYWRjX3RvX3RlbXBbXSA9IHsKPj4+PiArwqDCoMKgIC00MDAwMCwg
-LTQwMDAwLCAtNDAwMDAsIC00MDAwMCwgLTM5ODAwLCAtMzk0MDAsIC0zOTAwMCwgLTM4NjAwLAo+
-IAo+IFsgLi4uIF0KPiAKPj4+PiAxMjMwMDAsCj4+Pj4gK8KgwqDCoCAxMjM0MDAsIDEyMzgwMCwg
-MTI0MjAwLCAxMjQ2MDAsIDEyNDkwMCwgMTI1MDAwLAo+Pj4+ICt9Owo+Pj4KPj4+IENhbiBiZSB0
-aGlzIGFycmF5IHJlcGxhY2VkIGJ5IGFuIGluaXRpYWxpemF0aW9uIGFycmF5IHdpdGggYSBmb3Jt
-dWxhPwo+Pj4KPj4+IFdoeSBkbyB3ZSBoYXZlIG1vc3Qgb2YgdGhlIHRpbWUgYSBzdGVwIG9mIDQw
-MCB0aGVuIHN1ZGRlbmx5IDUwMCBhbmQgNDAwCj4+PiBhZ2Fpbj8gZWcuIDMwNjAwLCAzMTAwMCwg
-MzE0MDAsIDMxOTAwLCAzMjUwMCwgMzMwMDAsIDMzNDAwCj4+Cj4+IFRoaXMgaGFzIGNvbWUgZnJv
-bSBhIHBvbHlub21pYWwgZXF1YXRpb24gd2hpY2ggaSBkbyBub3Qgd2FudCB0bwo+PiBjYWxjdWxh
-dGUgZXZlcnkgdGltZSB3ZSByZWFkIHRoZSB0ZW1wZXJhdHVyZS4gSGVuY2UgcHJlZmVyIExvb2sg
-dXAgdGFibGUuCj4gCj4gQWdyZWUsIGl0IG1ha2VzIHNlbnNlIHRvIG5vdCBjYWxjdWxhdGUgZXZl
-cnkgdGltZSB0aGUgdGVtcGVyYXR1cmUgaXMgcmVhZC4KPiAKPiBJIHdhcyBzdWdnZXN0aW5nIHRv
-IGZpbGwgdGhlIGFycmF5IGF0IGluaXQgdGltZSB3aXRoIHRoaXMgcG9seW5vbWlhbAo+IGZvcm11
-bGEgaW5zdGVhZCBvZiBoYXJkY29kaW5nIGl0LgoKQXMgaW4gY2FzZSBvZiBPTUFQIHRoaXMgaXMg
-YSBzdGFuZGFyZCBwb2x5bm9taWFsIGVxdWF0aW9uIHRoYXQgZG9lcyBub3QKY2hhbmdlIHNvIGkg
-d291bGQgcHJlZmVyIG5vdCBjYWxjdWxhdGluZyBpbiB0aGUgZHJpdmVyIGFuZCBoYXZpbmcgdGhl
-IApsb29rIHVwIHRhYmxlIGZyb20gVFJNLgoKPiAKPiBbIC4uLiBdCj4gCj4+Pj4gKwo+Pj4+ICvC
-oMKgwqAgLyogR2V0IHRoZSBzZW5zb3IgY291bnQgaW4gdGhlIFZUTSAqLwo+Pj4+ICvCoMKgwqAg
-dmFsID0gcmVhZGwoYmdwLT5iYXNlICsgSzNfVlRNX0RFVklORk9fUFdSMF9PRkZTRVQpOwo+Pj4+
-ICvCoMKgwqAgY250ID0gdmFsICYgSzNfVlRNX0RFVklORk9fUFdSMF9URU1QU0VOU19DVF9NQVNL
-Owo+Pj4+ICvCoMKgwqAgY250ID4+PSBfX2ZmcyhLM19WVE1fREVWSU5GT19QV1IwX1RFTVBTRU5T
-X0NUX01BU0spOwo+Pj4+ICsKPj4+PiArwqDCoMKgIGRhdGEgPSBkZXZtX2tjYWxsb2MoZGV2LCBj
-bnQsIHNpemVvZigqZGF0YSksIEdGUF9LRVJORUwpOwo+Pj4+ICvCoMKgwqAgaWYgKCFkYXRhKSB7
-Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldCA9IC1FTk9NRU07Cj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-IGdvdG8gZXJyX2FsbG9jOwo+Pj4+ICvCoMKgwqAgfQo+Pj4+ICsKPj4+PiArwqDCoMKgIC8qIFJl
-Z2lzdGVyIHRoZSB0aGVybWFsIHNlbnNvcnMgKi8KPj4+PiArwqDCoMKgIGZvciAoaWQgPSAwOyBp
-ZCA8IGNudDsgaWQrKykgewo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBkYXRhW2lkXS5zZW5zb3JfaWQg
-PSBpZDsKPj4+PiArwqDCoMKgwqDCoMKgwqAgZGF0YVtpZF0uYmdwID0gYmdwOwo+Pj4+ICvCoMKg
-wqDCoMKgwqDCoCBkYXRhW2lkXS5jdHJsX29mZnNldCA9IEszX1ZUTV9UTVBTRU5TMF9DVFJMX09G
-RlNFVCArCj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlkICog
-SzNfVlRNX1JFR1NfUEVSX1RTOwo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBkYXRhW2lkXS5zdGF0X29m
-ZnNldCA9IGRhdGFbaWRdLmN0cmxfb2Zmc2V0ICsgMHg4Owo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBJ
-TklUX1dPUksoJmRhdGFbaWRdLnRoZXJtYWxfd3EsIGszX3RoZXJtYWxfd29yayk7Cj4+Pgo+Pj4g
-IMKgwqDCoMKgwqDCoMKgIFdoYXQgaXMgc3VwcG9zZWQgdG8gZG8gPwo+Pgo+PiBQZXJpb2RpY2Fs
-bHkgcG9sbCB0ZW1wZXJhdHVyZS4gSSBrbm93IHRoZXJlIGlzIG5vIHBhc3NpdmUgY29vbGluZyBh
-Z2VudAo+PiBsaWtlIGNwdWZyZXEgYXQgdGhlIG1vbWVudCBidXQgaSBkbyBoYXZlIGEgY3JpdGlj
-YWwgdHJpcCBkbyB5b3UKPj4gcmVjb21tZW5kIHRvIHJlbW92ZSB0aGF0Pwo+IAo+IEFjdHVhbGx5
-IEkgd2FzIHJlZmVycmluZyB0byB0aGUgd29ya3Egd2hpY2ggaXMgaW5pdGlhbGl6ZWQsIHRoZSBj
-YWxsYmFjawo+IHNldCBidXQgaXQgaXMgbmV2ZXIgY2FsbGVkLiBJdCBjYW4gYmUgcmVtb3ZlZC4K
-Ck9rYXkgZ290IGl0LgoKPiAKPiBQbGVhc2UgdGFrZSBhbHNvIHRoZSBvcHBvcnR1bml0eSB0byB3
-cmFwIHRoZSBjYWxscyB0byB0aGUgcmVnaXN0ZXIgd2l0aAo+IGFuIGV4cGxpY2l0IGhlbHBlciBm
-dW5jdGlvbiBuYW1lLgoKSUlVQyB0aGUgY29tbWVudCBhc2tzIG1lIHRvIGRlZmluZSBhIHNlcGFy
-YXRlIGZ1bmN0aW9uIHRoYXQgdGFrZXMgY2FyZSAKb2YgdGhlIGJvZHkgb2YgdGhlIGZvciBsb29w
-LgoKPiAKPiBBbmQgcmVtb3ZlIHJlZ19jbnQgd2hpY2ggaXMgdW51c2VkLgoKU3VyZQoKVGhhbmtz
-LApLZWVydGh5Cj4gCj4gVGhhbmtzCj4gCj4gICAgLS0gRGFuaWVsCj4gCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Bjorn,
+
+Thank you for your comment.
+
+On Thu, 19 Mar 2020 12:06:59 -0500 <helgaas@kernel.org> wrote:
+
+> On Thu, Mar 19, 2020 at 04:54:09PM +0900, Kunihiko Hayashi wrote:
+> > This introduces specific glue layer for UniPhier platform to support
+> > PCIe controller that is based on the DesignWare PCIe core, and
+> > this driver supports endpoint mode. This supports for Pro5 SoC only.
+> 
+> Possible alternate text: ("specific glue layer" isn't the usual way to
+> describe a driver)
+> 
+>   PCI: uniphier: Add Socionext UniPhier Pro5 SoC endpoint controller driver
+> 
+>   Add driver for the Socionext UniPhier Pro5 SoC endpoint controller.
+>   This controller is based on the DesignWare PCIe core.
+
+I see. I'll accept your suggestion for the commit log.
+
+> > +/* assertion time of intx in usec */
+> 
+> s/intx/INTx/ to match usage in spec (and in comments below :))
+
+Certainly this isn't unified. I'll fix it.
+
+> > +#define PCL_INTX_WIDTH_USEC		30
+> 
+> > +struct uniphier_pcie_ep_soc_data {
+> > +	bool is_legacy;
+> 
+> I'd prefer "unsigned int is_legacy:1".  See [1].
+> 
+> But AFAICT you actually don't need this at all (yet), since you only
+> have a single of_device_id, and it sets "is_legacy = true".  That
+> means the *not* legacy code is effectively dead and hasn't been
+> tested.
+
+Yes.
+Now I know the difference about between legacy and non-legacy SoC,
+however, currently the driver doesn't have any non-legacy SoC support.
+
+> My preference would be to add "is_legacy" and the associated tests
+> when you actually *need* them, i.e., when you add support for a
+> non-legacy device.
+
+Agreed. The test for non-legacy SoC is necessary.
+So I'll remove 'is_legacy' and related coded, and rewrite this driver
+to support only legacy device.
+
+And I'll remember [1] when adding non-legacy support.
+
+> > +static int uniphier_pcie_ep_raise_legacy_irq(struct dw_pcie_ep *ep)
+> > +{
+> > +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> > +	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
+> > +	u32 val;
+> > +
+> > +	/* assert INTx */
+> > +	val = readl(priv->base + PCL_APP_INTX);
+> > +	val |= PCL_APP_INTX_SYS_INT;
+> > +	writel(val, priv->base + PCL_APP_INTX);
+> > +
+> > +	udelay(PCL_INTX_WIDTH_USEC);
+> > +
+> > +	/* deassert INTx */
+> > +	val = readl(priv->base + PCL_APP_INTX);
+> 
+> Why do you need to read PCL_APP_INTX again here?
+
+Indeed. This 'readl' isn't unnecessary.
+
+> > +	val &= ~PCL_APP_INTX_SYS_INT;
+> > +	writel(val, priv->base + PCL_APP_INTX);
+> > +
+> > +	return 0;
+> > +}
+> 
+> > +	ret = dw_pcie_ep_init(ep);
+> > +	if (ret) {
+> > +		dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	return 0;
+> 
+> This is equivalent to:
+> 
+>   ret = dw_pcie_ep_init(ep);
+>   if (ret)
+>     dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
+> 
+>   return ret;
+
+Agreed. I'll rewrite it next.
+
+> 
+> > +}
+> 
+> [1] https://lore.kernel.org/linux-fsdevel/CA+55aFzKQ6Pj18TB8p4Yr0M4t+S+BsiHH=BJNmn=76-NcjTj-g@mail.gmail.com/
+
+Thank you,
+
+---
+Best Regards,
+Kunihiko Hayashi
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
