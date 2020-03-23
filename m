@@ -2,94 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B80318F906
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:56:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C192718F90A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:57:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TV5s59ClFuibR+iPsvDQ8m4/hlzRZpYo+t5oL6hFV6M=; b=GAMwjfJvZaszP4
-	FErBNYKwpscQ2/8EOoQByZne8ZiLPztbdebA1itK7PMn1eyxGxQnca/JlHy1yCpoWYuomp7ZQyXsk
-	rwg7YDnT11uNEEN4+ru3iBE54QNC/zZRlQndP511XaEmQ6Tra9YfdnmjAmcEQ4ZxrIwj39hYz1xbl
-	ND9WVT+Jq09uUp41rgWiC4JPcFT5hqBKOihyigkjboiNucuccmY3vIn4lKL7YsCBfgha+wDLY3d9Z
-	JJw0GnqS9W9hrhGFJwX05tjLe50zEUUQCtWxDASAf2TVxmnZLk8PpTO2xGXsSQpWKXHWCCqzB9IOR
-	4h16cRKj/KbOzNLfI/vQ==;
+	List-Owner; bh=O/WgXeebwNWDSZIgwwDz7AaWbglS3GwVeEIwsTSCuU4=; b=o03tCdF6ybElWR
+	Z0KSWW4SG5wKnOljDI9Kj158+VV8uj656hS60223HHgLCCXEL+fjGYDx7iMMYHL40XiLz4XFh6Tdp
+	5iJAlKxHIEgcRHbAOPdtn+FaWYCV6VkrtjiZgFPI0E4od42E5MULeusTVr0ZvfdaDzzAirNrSsf/N
+	2rmpiANXnHNlvDUyl6FnBGS0g0SL6nAGL1ntF5kuTHXPbHJD/ZjY+ErqnnW//i8iQLS20MeY7hv6o
+	8tWFsBDi0qHEMH5ZBpqi5DmwFKmE8t/Mz4t3R3ei+2qUXKOByc+mhohyv+/CsFgTvsiGsF0K/43qp
+	fwP8C/2aZgz+m9LVU4uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGPRG-00021O-BL; Mon, 23 Mar 2020 15:56:30 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jGPRq-0002Te-Jk; Mon, 23 Mar 2020 15:57:06 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGPQy-000202-PG
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 15:56:14 +0000
-Received: by mail-wm1-x344.google.com with SMTP id m3so70131wmi.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 08:56:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yDjhzvVXTfNCzMJXV9kcEXRAmZfTXAd+kZwMZxZQCmI=;
- b=KxPNTCwfmmsGVraOz65ygQHPnRfg6R+gUi0egeY2KsJYaPDquyRnqfuXthAfycKIwm
- fUZsw8C9LH5o7ysDkAgNRDOIm+XNLXUj6X6FpWZlaWvhrT4Tn3tFjC5FlqylqW9Oj5cN
- wE8T6Vr4bxGFIST9pBCGh6VyqeaUVVKW8E7l90MwE9Sulc18aEIIw71a1oYwxyzGUM4U
- oIkSYAj/xH/GgTthXCeuR2eAy7TueOevrUmA7qnBv8eQfFCUrRXmNyJkJlOZ4kaIaoVT
- nXbCGobKW885xt9vsibR7qX1MrJGKz6BKKXtGcv6YeZBBY8k5cpzXyGsl9WLcfKrbAQQ
- 2C+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yDjhzvVXTfNCzMJXV9kcEXRAmZfTXAd+kZwMZxZQCmI=;
- b=jT4Kgq5VXyynTQKqC34Xf+AAt3hjAUW9jihzvxmYqkoIsyEQyeRt2TcG6blBQaDuWm
- es0ZjOp+/YYx6Nf0ut1M1y5FujBbUdG1RT5sUK4MKfGKsXPlBS7Qxv9pS1Wm37iqk2Uq
- bHptU2UeqFwkIFMpwQBbYO82nkwTuZ6N5vjSOzWJSW92WjRDC9V5qnJudYatGcB4r5h5
- slxrEEwA6NIGOfqAhNxQSsZ9gwH+Mw31JgrsQa1uprUtyGuU9E6fvLrDPQBDydtHlNRD
- 1l3q/5KyrHeDbrmyTzuyvWVpao+4Srb2VHPE0F1wnHpT/7liefSgCRv46lXphUh0+DFj
- KYsg==
-X-Gm-Message-State: ANhLgQ0Mgm/oWTp+uuDF8O/QLL55K/gDBQheaIHG7kcvsl0NZRrDTOq/
- zoFRvar/NzsjAnNJpuciKAprh0jOI1wfPdaOw/EKkBd5K2s=
-X-Google-Smtp-Source: ADFU+vuP32tuCppZiX6ne5IafqrHXCKXZM/L3sfqoPhX8TPOveQs3j6u156rTQLYN+nYtFeNR+jH+6FvZZtc9aj1Ew0=
-X-Received: by 2002:a7b:c3cf:: with SMTP id t15mr27036739wmj.183.1584978970738; 
- Mon, 23 Mar 2020 08:56:10 -0700 (PDT)
+ id 1jGPRh-0002T6-OA
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 15:56:59 +0000
+IronPort-SDR: V+h5+vhksrqp8tz/BAdhybHVk4Q82gCZK1nP5zqb/SK0VGNLmAmGpDGUi9UIoEKN4UtI/+WBB7
+ c2S0hd8CF7lw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 23 Mar 2020 08:56:56 -0700
+IronPort-SDR: BNnYiC2VQITkM9v+SQUXhKRBHmLA2et7wJmlJvVdo2CApTzsgG6077xe40tzgSWuEQcNuw27/3
+ gO2RFey/aX+w==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,296,1580803200"; d="scan'208";a="235258454"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga007.jf.intel.com with ESMTP; 23 Mar 2020 08:56:52 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jGPRf-00CHQX-0w; Mon, 23 Mar 2020 17:56:55 +0200
+Date: Mon, 23 Mar 2020 17:56:55 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v9 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200323155655.GQ1922688@smile.fi.intel.com>
+References: <20200323134437.259210-1-tali.perry1@gmail.com>
+ <20200323134437.259210-3-tali.perry1@gmail.com>
 MIME-Version: 1.0
-References: <03fcb1e2bc7f3ff389b6dfbf3964e159a93ae835.camel@suse.de>
- <d3d40174-9c08-f42f-e088-08e23c2dc029@i2se.com>
- <f2ec22160ac86aec8d252ade7d6eb8789777cc42.camel@suse.de>
- <01ceb60e-a791-b6ca-352e-ad2e79f264e3@i2se.com>
- <ddcb8fd5-9e35-454c-b38d-d36e7b41ef07@i2se.com>
- <9e685fce547d808f269e59e2290331e75c66f3e4.camel@suse.de>
- <bb2c7d99-06b1-d222-7f69-8ce91157bde5@i2se.com>
- <90e92438-00df-520f-c8b1-2e2077934592@i2se.com>
- <a25b759292901eee3eab4dbf8002d2050edda6d3.camel@suse.de>
- <CAPY8ntBB3wwkVj=+fzNRXzAqQs5q5MYmb7t7Be74zADeMCXHVA@mail.gmail.com>
- <20200323145658.gu72lt5wceqw4iwz@gilmour.lan>
-In-Reply-To: <20200323145658.gu72lt5wceqw4iwz@gilmour.lan>
-From: Dave Stevenson <dave.stevenson@raspberrypi.com>
-Date: Mon, 23 Mar 2020 15:55:54 +0000
-Message-ID: <CAPY8ntD=VFrb91V7uM5zROxD-r6+bU+Nmj+ZDFCdwvTuq8eF6g@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
-To: Maxime Ripard <maxime@cerno.tech>
+Content-Disposition: inline
+In-Reply-To: <20200323134437.259210-3-tali.perry1@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_085612_864955_A02CF179 
-X-CRM114-Status: GOOD (  45.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_085657_857144_C80C39EF 
+X-CRM114-Status: GOOD (  26.73  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,180 +74,784 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ wsa@the-dreams.de, brendanhiggins@google.com, linux-kernel@vger.kernel.org,
+ kfting@nuvoton.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime
+On Mon, Mar 23, 2020 at 03:44:36PM +0200, Tali Perry wrote:
+> Add Nuvoton NPCM BMC I2C controller driver.
 
-On Mon, 23 Mar 2020 at 14:57, Maxime Ripard <maxime@cerno.tech> wrote:
+...
+
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/errno.h>
+> +#include <linux/i2c.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/irq.h>
+> +#include <linux/kernel.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/jiffies.h>
+> +#include <linux/iopoll.h>
+
+Perhaps ordered?
+
+> +enum i2c_mode {
+> +	I2C_MASTER,
+> +	I2C_SLAVE
+
++ Comma.
+
+> +};
+
+...
+
+> +#define NPCM_I2CSEGCTL  0xE4
+
+Indentation issue, see the below lines.
+
+> +#define NPCM_I2CSEGCTL_INIT_VAL	0x0333F000
+> +
+> +// Common regs
+> +#define NPCM_I2CSDA			0x00
+
+...
+
+> +#define  I2C_FREQ_100KHZ  100
+> +#define  I2C_FREQ_400KHZ  400
+> +#define  I2C_FREQ_1MHZ   1000
+
+Can you rather use standard definitions in Hz?
+
+...
+
+> +#define NPCM_I2C_EVENT_LOG(event)	(bus->event_log |= event)
+
+Useless macro, and even harmful to some extend - it hides one of the parameter
+(proper should take bus and event, but it will be quite longer than simple
+ conditional). Use in-place the conditional.
+
+...
+
+> +struct npcm_i2c {
+
+> +	u32			xmits;
+
+> +
+
+Unnecessary blank line.
+I have noticed other places with the same issue. Fix 'em all.
+
+> +};
+
+...
+
+> +static inline u16 npcm_i2c_get_index(struct npcm_i2c *bus)
+> +{
+> +	if (bus->operation == I2C_READ_OPER)
+> +		return bus->rd_ind;
+
+> +	else if (bus->operation == I2C_WRITE_OPER)
+
+Redundant 'else'
+
+> +		return bus->wr_ind;
+> +	return 0;
+> +}
+
+...
+
+> +static void npcm_i2c_disable(struct npcm_i2c *bus)
+> +{
+> +	u8 i2cctl2;
+
++ blank line.
+
+> +	// Disable module.
+> +	i2cctl2 = ioread8(bus->reg + NPCM_I2CCTL2);
+> +	i2cctl2 = i2cctl2 & ~I2CCTL2_ENABLE;
+> +	iowrite8(i2cctl2, bus->reg + NPCM_I2CCTL2);
+> +
+> +	bus->state = I2C_DISABLE;
+> +}
+
+...
+
+> +static void npcm_i2c_enable(struct npcm_i2c *bus)
+> +{
+> +	u8 i2cctl2 = ioread8(bus->reg + NPCM_I2CCTL2);
+
+In this case direct assignment like above is okay...
+
+> +
+> +	i2cctl2 = i2cctl2 | I2CCTL2_ENABLE;
+> +	iowrite8(i2cctl2, bus->reg + NPCM_I2CCTL2);
+> +	bus->state = I2C_IDLE;
+> +}
+> +
+> +// enable\disable end of busy (EOB) interrupt
+> +static inline void npcm_i2c_eob_int(struct npcm_i2c *bus, bool enable)
+> +{
+
+> +	u8 val = ioread8(bus->reg + NPCM_I2CCST3);
+
+...but not here. Better...
+
+> +
+
+> +	// Clear EO_BUSY pending bit:
+
+...to perform it explicitly here.
+
+> +	val = val | NPCM_I2CCST3_EO_BUSY;
+> +	iowrite8(val, bus->reg + NPCM_I2CCST3);
+> +
+> +	val = ioread8(bus->reg + NPCM_I2CCTL1);
+> +	if (enable)
+> +		val = (val | NPCM_I2CCTL1_EOBINTE) & ~NPCM_I2CCTL1_RWS;
+> +	else
+> +		val = (val & ~NPCM_I2CCTL1_EOBINTE) & ~NPCM_I2CCTL1_RWS;
+> +	iowrite8(val, bus->reg + NPCM_I2CCTL1);
+> +}
+
+...
+
+> +static void npcm_i2c_int_enable(struct npcm_i2c *bus, bool enable)
+> +{
+> +	u8 val = ioread8(bus->reg + NPCM_I2CCTL1);
+> +
+> +	if (enable)
+> +		val = (val | NPCM_I2CCTL1_INTEN) & ~NPCM_I2CCTL1_RWS;
+> +	else
+> +		val = (val & ~NPCM_I2CCTL1_INTEN) & ~NPCM_I2CCTL1_RWS;
+> +	iowrite8(val, bus->reg + NPCM_I2CCTL1);
+
+	if (enable)
+		val |= NPCM_I2CCTL1_INTEN;
+	else
+		val &= ~NPCM_I2CCTL1_INTEN;
+	iowrite8(val & ~NPCM_I2CCTL1_RWS, bus->reg + NPCM_I2CCTL1);
+
+Ditto for the rest similar cases.
+
+> +}
+
+...
+
+> +	val = (val | NPCM_I2CCTL1_START) &
+> +		 ~(NPCM_I2CCTL1_STOP | NPCM_I2CCTL1_ACK);
+
+	val |= NPCM_I2CCTL1_START;
+	val &= ~(NPCM_I2CCTL1_STOP | NPCM_I2CCTL1_ACK);
+
+Ditto for other similar cases.
+
+...
+
+> +static inline void npcm_i2c_master_stop(struct npcm_i2c *bus)
+> +{
+
+> +	if (bus->fifo_use) {
+
+	if (...)
+		return;
+
+> +		npcm_i2c_select_bank(bus, I2C_BANK_1);
+> +
+> +		if (bus->operation == I2C_READ_OPER)
+> +			npcm_i2c_clear_rx_fifo(bus);
+> +		else
+> +			npcm_i2c_clear_tx_fifo(bus);
+> +
+> +		npcm_i2c_clear_fifo_int(bus);
+> +
+> +		iowrite8(0, bus->reg + NPCM_I2CTXF_CTL);
+> +	}
+> +}
+
+...
+
+> +	NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_CB);
+
+Some magic happens here...
+
+...
+
+> +static u32 npcm_i2c_get_fifo_fullness(struct npcm_i2c *bus)
+> +{
+> +	if (bus->operation == I2C_WRITE_OPER)
+> +		return FIELD_GET(NPCM_I2CTXF_STS_TX_BYTES,
+> +				 ioread8(bus->reg + NPCM_I2CTXF_STS));
+
+> +	else if (bus->operation == I2C_READ_OPER)
+
+Redundant 'else'
+
+> +		return FIELD_GET(NPCM_I2CRXF_STS_RX_BYTES,
+> +				 ioread8(bus->reg + NPCM_I2CRXF_STS));
+> +	return 0;
+> +}
+
+...
+
+> +// configure the FIFO before using it. If nread is -1 RX FIFO will not be
+> +// configured. same for	nwrite
+
+TABs/spaces mix.
+
+...
+
+> +static void npcm_i2c_read_from_fifo(struct npcm_i2c *bus, u8 bytes_in_fifo)
+> +{
+> +	u8 data;
+> +
+> +	while (bytes_in_fifo--) {
+> +		data = npcm_i2c_rd_byte(bus);
+> +
+> +		if (bus->master_or_slave == I2C_MASTER) {
+> +			if (bus->rd_ind < bus->rd_size)
+> +				bus->rd_buf[bus->rd_ind++] = data;
+
+> +		} else { // I2C_SLAVE:
+
+Redundant (at least in this patch).
+
+> +		}
+> +	}
+> +}
+
+...
+
+> +	int rcount;
+> +	int fifo_bytes;
+
+> +	if (rcount < (2 * I2C_HW_FIFO_SIZE) && rcount > I2C_HW_FIFO_SIZE)
+
+> +		fifo_bytes = (u8)(rcount - I2C_HW_FIFO_SIZE);
+
+Why explicit casting?
+
+> +	if ((rcount - fifo_bytes) <= 0) {
+
+Why not positive conditional and drop those parentheses?
+
+> +		// last bytes are about to be read - end of transaction.
+> +		// Stop should be set before reading last byte.
+> +		NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_READ4);
+> +
+> +		bus->state = I2C_STOP_PENDING;
+> +		bus->stop_ind = ind;
+> +
+> +		npcm_i2c_eob_int(bus, true);
+> +		npcm_i2c_master_stop(bus);
+> +		npcm_i2c_read_from_fifo(bus, fifo_bytes);
+> +	} else {
+> +		NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_READ3);
+> +		npcm_i2c_read_from_fifo(bus, fifo_bytes);
+> +		rcount = bus->rd_size - bus->rd_ind;
+> +		npcm_i2c_set_fifo(bus, rcount, -1);
+> +	}
+
+...
+
+> +static void npcm_i2c_int_master_handler_read(struct npcm_i2c *bus)
+> +{
+> +	u16 block_extra_bytes_size;
+> +	u8 data;
+> +
+> +	// Master read operation (pure read or following a write operation).
+> +	NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_READ);
+> +
+> +	// added bytes to the packet:
+> +	block_extra_bytes_size = (u8)bus->read_block_use + (u8)bus->PEC_use;
+
+Why explicit castings?
+
+> +
+> +	// Perform master read, distinguishing between last byte and the rest of
+> +	// the bytes. The last byte should be read when the clock is stopped
+> +	if (bus->rd_ind == 0) { //first byte handling:
+> +		// in block protocol first byte is the size
+> +		NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_READ1);
+> +		if (bus->read_block_use) {
+> +			// first byte in block protocol is the size:
+> +			data = npcm_i2c_rd_byte(bus);
+
+> +			// if slave returned illegal size. read up to 32 bytes.
+> +			if (data >= I2C_SMBUS_BLOCK_MAX)
+> +				data = I2C_SMBUS_BLOCK_MAX;
+
+min() / min_t() ? See below...
+
+> +
+> +			// is data is 0 -> not supported. read at least one byte
+> +			if (data == 0)
+> +				data = 1;
+
+...actually clamp_val().
+
+> +			bus->rd_size = data + block_extra_bytes_size;
+> +
+> +			bus->rd_buf[bus->rd_ind++] = data;
+> +
+> +			// clear RX FIFO interrupt status:
+> +			if (bus->fifo_use) {
+> +				data = ioread8(bus->reg + NPCM_I2CFIF_CTS);
+> +				data = data | NPCM_I2CFIF_CTS_RXF_TXE;
+> +				iowrite8(data, bus->reg + NPCM_I2CFIF_CTS);
+> +			}
+
+> +			npcm_i2c_set_fifo(bus, (bus->rd_size - 1), -1);
+
+Too many parentheses.
+
+> +			npcm_i2c_stall_after_start(bus, false);
+> +		} else {
+> +			npcm_i2c_clear_tx_fifo(bus);
+> +			npcm_i2c_master_fifo_read(bus);
+> +		}
+> +	} else {
+> +		if (bus->rd_size == block_extra_bytes_size &&
+> +		    bus->read_block_use) {
+> +			bus->state = I2C_STOP_PENDING;
+> +			bus->stop_ind = I2C_BLOCK_BYTES_ERR_IND;
+> +			bus->cmd_err = -EIO;
+> +			npcm_i2c_eob_int(bus, true);
+> +			npcm_i2c_master_stop(bus);
+
+> +			npcm_i2c_read_from_fifo(bus,
+> +						npcm_i2c_get_fifo_fullness(bus)
+> +						);
+
+Bad style. Combine last two lines together.
+
+> +		} else {
+> +			NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_READ2);
+> +			npcm_i2c_master_fifo_read(bus);
+> +		}
+> +	}
+> +}
+
+...
+
+> +static irqreturn_t npcm_i2c_int_master_handler(struct npcm_i2c *bus)
+> +{
+
+> +			npcm_i2c_eob_int(bus,  false);
+
+Extra spaces.
+I have noticed more places with the same issue, fix 'em all.
+
+> +			val = NPCM_I2CST_BER | NPCM_I2CST_NEGACK |
+> +				 NPCM_I2CST_STASTR;
+
+Make it temporary variable and use here and below...
+
+> +			val = NPCM_I2CST_BER | NPCM_I2CST_NEGACK |
+> +				 NPCM_I2CST_STASTR;
+
+...here.
+
+> +	return ret;
+> +}
+
+Refactoring of such a big function will be benefit to all. And you may decrease
+indentation level at the same time.
+
+...
+
+> +	fif_cts = (fif_cts & ~NPCM_I2CFIF_CTS_SLVRSTR) |
+> +		  NPCM_I2CFIF_CTS_CLR_FIFO;
+
+	fif_cts &= ~NPCM_I2CFIF_CTS_SLVRSTR;
+	fif_cts |= NPCM_I2CFIF_CTS_CLR_FIFO;
+
+...
+
+> +	if (npcm_i2c_get_SDA(_adap) == 0) {
+> +		// Repeat the following sequence until SDA is released
+> +		do {
+> +			// Issue a single SCL cycle
+> +			iowrite8(NPCM_I2CCST_TGSCL, bus->reg + NPCM_I2CCST);
+
+> +			retries = 10;
+> +			while (retries != 0 &&
+> +			       FIELD_GET(NPCM_I2CCST_TGSCL,
+> +					 ioread8(bus->reg + NPCM_I2CCST))) {
+> +				udelay(20);
+> +				retries--;
+> +			}
+
+timeout loops more natural in do {} while form. But here is
+readx_poll_timeout() NIH.
+
+> +			// tgclk failed to toggle
+> +			if (retries == 0)
+> +				dev_err(bus->dev, "recovery toggle timeout");
+
+If it's an error, why we are still continuing?
+
+> +			// If SDA line is inactive (high), stop
+> +			if (npcm_i2c_get_SDA(_adap))
+> +				done = true;
+
+> +		} while ((!done) && (--iter != 0));
+
+Too many parentheses. done can be dropped (below you may use iter in condition).
+
+> +		// If SDA line is released: send start-addr-stop, to re-sync.
+> +		if (done) {
+> +			npcm_i2c_master_start(bus);
 >
-> Hi Dave,
->
-> On Mon, Mar 16, 2020 at 01:57:13PM +0000, Dave Stevenson wrote:
-> >  Hi Stefan and Nicolas
-> >
-> > On Mon, 16 Mar 2020 at 12:40, Nicolas Saenz Julienne
-> > <nsaenzjulienne@suse.de> wrote:
-> > >
-> > > Hi Stefan,
-> > > thanks for taking the time with this. That was a hard to find one, specially
-> > > given the race in X11.
-> > >
-> > > On Sun, 2020-03-15 at 20:16 +0100, Stefan Wahren wrote:
-> > > > Hi Nicolas,
-> > > >
-> > > > [adjust audience]
-> > > >
-> > > > i've narrowed down the issue. From kernel 4.19 until 5.1 the DRM
-> > > > emulated driver was responsible for a working X on my Raspberry Pi 3
-> > > > with HP ZR2440w. Starting with 5.2 the vc4drmfb took over and with 5.3 X
-> > > > didn't start anymore (display freeze).
-> > > >
-> > > > So i start bisecting and this was the commit where the freezing started:
-> > > >
-> > > > e08ab74bd4 drm/modes: Rewrite the command line parser
-> > > >
-> > > > After this i enabled drm debug and saw that suggest mode 1920x1200 by
-> > > > the firmware is rejected by the driver because the pixel clock would be
-> > > > too high (154 MHz, max = 148.5). This wasn't a problem before since the
-> > > > firmware provided video cmdline parameter wasn't parseable:
-> > > >
-> > > > [drm] parse error at position 69 in video mode
-> > > > '1920x1200M@60,margin_left=0,margin_right=0,margin_top=0,margin_bottom=0'
-> > > >
-> > > > After mentioned commit the display just freezes (no try to use
-> > > > 1920x1080, no error message).
-> > > >
-> > > > For comparison i switched to the vendor tree with firmware kms driver
-> > > > and noticed that the driver switches to 1920x1200 with a pixel at 154 MHz.
-> > > >
-> > > > So this patch works for me:
-> > > >
-> > > > ---
-> > > >  drivers/gpu/drm/vc4/vc4_hdmi.c | 9 +++++----
-> > > >  1 file changed, 5 insertions(+), 4 deletions(-)
-> > > >
-> > > > diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > > > index cea18dc..647803e 100644
-> > > > --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > > > +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > > > @@ -681,11 +681,12 @@ static enum drm_mode_status
-> > > >  vc4_hdmi_encoder_mode_valid(struct drm_encoder *crtc,
-> > > >                  const struct drm_display_mode *mode)
-> > > >  {
-> > > > -    /* HSM clock must be 108% of the pixel clock.
-> > >
-> > > I think it'd be nice to understand how Eric came by this number. Maybe just
-> > > empirically with 1080p60? That said, I think your change is pretty much
-> > > harmless.
-> > >
-> > > I'll add a reminder to Maxime's series for him to update RPi[0-3]'s max
-> > > frequency to 1920x1200@60's.
-> > >
-> > > > -     * the AXI clock needs to be at least 25% of pixel clock, but
-> > > > -     * HSM ends up being the limiting factor.
-> > > > +    /* According to spec the HSM clock must be 108% of the pixel clock.
-> > > > +     * Additionally, the AXI clock needs to be at least 25% of pixel clock,
-> > > > +     * but HSM ends up being the limiting factor.
-> > > > +     * It seems that operating the pixel clock at 154 MHz still works.
-> > > >       */
-> > > > -    if (mode->clock > HSM_CLOCK_FREQ / (1000 * 108 / 100))
-> > > > +    if (mode->clock > HSM_CLOCK_FREQ / (1000 * 106 / 100))
-> > >
-> > > Isn't hard-coding the HSM clock kind of limited, one could overclock it, isn't
-> > > it? I remember reading someone did it to support wider resolutions.
-> >
-> > Checking the docs it does state the restriction that Eric quotes.
-> >
-> > HDMI Core Clock (state machine clock)
-> > Most of the HDMI logic operates on that clock. It
-> > is asynchronous to system core clock and pixel
-> > clock. Source for this clock can be chosen from
-> > various PLLs in the chip. See CPR Manager for
-> > details.
-> >
-> > This clock is also used for clocking pixel valve
-> > when HDMI peripheral is used. See Pixel Valve
-> > for details.axi_clock >= hdmi_core_clock > 108% of
-> > pixel_clock.
-> >
-> >
-> > The default max pixel clock from the firmware side is 162MHz.
-> >
-> > In the firmware source we have a comment
-> >          // HDMI state machine clock must be faster than pixel clock -
-> > infinitessimally faster tested in simulation.
-> >          // Otherwise, exact value is unimportant - for HDMI operation.
-> >          // hdmi state machine clock now derived from PLLC_PER (typ
-> > 500MHz, see relevant platform.c).
-> >          //
-> >          // However, CEC bit clock is derived from the HSM clock, and
-> > the (programmable) CEC timing table
-> >          // is configured for a 40.00kHz CEC clock.
-> >          const unsigned margin = 1*1000*1000;
-> >          unsigned min_hsm_clock = margin + timings->pixel_freq;
-> >          const unsigned max_hsm_clock_for_cec = max(163682864,
-> > hdmi_pixel_freq_limit);
-> >
-> >          unsigned hdmi_state_machine_clock = max_hsm_clock_for_cec;
-> >
-> > So it adds 1MHz to the pixel clock for min_hsm_clock, but then doesn't
-> > use the value.
-> > Unless you do request a higher hdmi_pixel_freq_limit then the HSM is
-> > running at the same 163.68MHz that Eric's driver hard codes, and our
-> > max pixel clock is 162MHz.
-> > Keeping it a fixed value makes sorting the divider for CEC easier.
-> >
-> > Just adopting a 162MHz limit with a suitable comment is probably the
-> > most sensible move here, and Maxime's patches can pick up the same
-> > value.
->
-> It's kind of related, but one of the changes we did to support the
-> RPi4 is to change that rate calculation to increase the HSM clock for
-> pixel clocks higher than 148.5MHz (so typically 4k), while keeping it
-> as low as possible to reduce the power consumption.
->
-> How would that interact with this change?
+> +			// Wait until START condition is sent, or RETRIES_NUM
+> +			retries = RETRIES_NUM;
+> +			while (retries && !npcm_i2c_is_master(bus)) {
+> +				udelay(20);
+> +				retries--;
+> +			}
 
-I'd forgotten that your patches mean we change the HSM clock on Pi3.
-As you're aware, whilst I have some extra docs, many of them aren't as
-comprehensive as one would hope. We can go back to the Broadcom and
-RTL if absolutely necessary, but it's a pain. Broadcom don't
-necessarily have the personnel who designed the blocks still working
-there.
+do {} while ().
 
-Your patches appear to recompute the HSM clock based on pixel_clock *
-108%, with a min of 108MHz, so effectively the same limit as the old
-version did by fixing the HSM rate.
+> +			// If START condition was sent
+> +			if (retries > 0) {
+> +				// Send an address byte in write direction:
+> +				npcm_i2c_wr_byte(bus, bus->dest_addr);
+> +				udelay(200);
+> +				npcm_i2c_master_stop(bus);
+> +				udelay(200);
+> +				status = 0;
+> +			}
+> +		}
+> +	}
 
-Checking the firmware for Pi4, it sets the HSM (M2MC) clock to
-pixel_rate * 1.01, clipped to 120MHz and 600Mhz. (Audio drops out if
-less than 108MHz. "Pick 120 to have an integer divider with some
-margin." I'd need to check which divider that is referring to).
-As noted above, the Pi3 firmware sets the HSM clock to 163.6MHz.
+...
 
-I'd suggest that we:
-a) Increase max_pixel_clock for vc4 (Pi0-3) to 162MHz.
-b) Set HSM clock to 101% of the pixel clock, with a min of 120MHz
-(4k60 with pixel clock 594MHz would go to a 599.94MHz HSM clock which
-is still within range)
-c) Test it! I know we have some 1920x1200 monitors in the office (when
-I'm back in there).
+> +	if (unlikely(npcm_i2c_get_SDA(_adap) == 0)) {
+> +		// Generate a START, to synchronize Master and Slave
+> +		npcm_i2c_master_start(bus);
+> +
+> +		// Wait until START condition is sent, or RETRIES_NUM
+> +		retries = RETRIES_NUM;
 
-Whilst the firmware would appear to use a fixed HSM clock on Pi0-3, I
-don't anticipate there being any issue with varying it. It looks like
-there was the expectation of it being variable in the past, but
-someone has refactored it and either accidentally or deliberately
-given up on the idea.
+> +		while (retries && !npcm_i2c_is_master(bus))
+> +			retries--;
 
-  Dave
+do {} while (). Fix them all.
+
+> +		// set SCL low for a long time (note: this is unlikely)
+> +		usleep_range(25000, 35000);
+> +		npcm_i2c_master_stop(bus);
+> +		udelay(200);
+> +		status = 0;
+> +	}
+
+...
+
+> +static bool npcm_i2c_init_clk(struct npcm_i2c *bus, u32 bus_freq)
+> +{
+> +	u32  k1 = 0;
+> +	u32  k2 = 0;
+> +	u8   dbnct = 0;
+> +	u32  sclfrq = 0;
+> +	u8   hldt = 7;
+> +	bool fast_mode = false;
+> +	u32  src_clk_freq; // in KHz
+
+This is very cryptic.
+
+The function deserve a good comment above which shows all formulas in use with
+reference to datasheet pages, etc.
+
+> +		// Master or Slave with frequency > 25 MHZ
+> +		else if (src_clk_freq > 25000) {
+
+> +			hldt = (u8)__KERNEL_DIV_ROUND_UP(src_clk_freq * 300,
+> +							 1000000) + 7;
+> +
+> +			k1 = __KERNEL_DIV_ROUND_UP(src_clk_freq * 1600,
+> +						   1000000);
+> +			k2 = __KERNEL_DIV_ROUND_UP(src_clk_freq * 900,
+> +						   1000000);
+
+Why casting? Why __ special macro? Isn't DIV_ROUND_UP() enough?
+Ditto for other similar cases.
+
+> +			k1 = round_up(k1, 2);
+> +			k2 = round_up(k2 + 1, 2);
+> +			if (k1 < SCLFRQ_MIN || k1 > SCLFRQ_MAX ||
+> +			    k2 < SCLFRQ_MIN || k2 > SCLFRQ_MAX)
+> +				return false;
+> +		}
+
+> +	// After clock parameters calculation update reg (ENABLE should be 0):
+> +	iowrite8(FIELD_PREP(I2CCTL2_SCLFRQ6_0, sclfrq & 0x7F),
+
+Magic number.
+
+> +		 bus->reg + NPCM_I2CCTL2);
+> +
+> +	// force to bank 0, set SCL and fast mode
+> +	iowrite8(FIELD_PREP(I2CCTL3_400K_MODE, fast_mode) |
+> +		 FIELD_PREP(I2CCTL3_SCLFRQ8_7, (sclfrq >> 7) & 0x3),
+> +		 bus->reg + NPCM_I2CCTL3);
+> +
+> +	// Select Bank 0 to access NPCM_I2CCTL4/NPCM_I2CCTL5
+> +	npcm_i2c_select_bank(bus, I2C_BANK_0);
+
+> +		iowrite8((u8)k1 / 2, bus->reg + NPCM_I2CSCLLT);
+> +		iowrite8((u8)k2 / 2, bus->reg + NPCM_I2CSCLHT);
+
+Why casting?
+
+...
+
+> +	if (FIELD_GET(I2C_VER_FIFO_EN, ioread8(bus->reg + I2C_VER))) {
+> +		bus->fifo_use = true;
+> +		npcm_i2c_select_bank(bus, I2C_BANK_0);
+> +		val = ioread8(bus->reg + NPCM_I2CFIF_CTL);
+
+> +		iowrite8(val | NPCM_I2CFIF_CTL_FIFO_EN,
+> +			 bus->reg + NPCM_I2CFIF_CTL);
+
+Do it in two operations.
+
+> +		npcm_i2c_select_bank(bus, I2C_BANK_1);
+> +	} else {
+> +		bus->fifo_use = false;
+> +	}
+> +
+> +	// Configure I2C module clock frequency
+> +	if (!npcm_i2c_init_clk(bus, bus_freq)) {
+> +		dev_err(bus->dev, "npcm_i2c_init_clk failed\n");
+> +		return false;
+> +	}
+> +
+> +	// Enable module (before configuring CTL1)
+> +	npcm_i2c_enable(bus);
+> +	bus->state = I2C_IDLE;
+> +
+> +	// Enable I2C int and New Address Match int source
+> +	val = ioread8(bus->reg + NPCM_I2CCTL1);
+
+> +	val = (val | NPCM_I2CCTL1_NMINTE) & ~NPCM_I2CCTL1_RWS;
+
+Usually we mask first, then disjunct with new bits.
+Actually this applies to all code where I also suggest to split to two
+operations.
+
+> +	iowrite8(val, bus->reg + NPCM_I2CCTL1);
+
+...
+
+> +	ret = of_property_read_u32(pdev->dev.of_node,
+> +				   "bus-frequency", &clk_freq);
+
+With ugly ifdefery this seems suspicious. Probably you imply
+device_property_read_u32()?
+
+> +	if (ret < 0) {
+> +		dev_err(&pdev->dev, "Could not read bus-frequency property\n");
+> +		clk_freq = 100000;
+> +	}
+> +
+> +	ret = npcm_i2c_init_module(bus, I2C_MASTER, clk_freq / 1000);
+
+> +	if (!ret) {
+
+0 is error condition?!
+
+> +		dev_err(&pdev->dev, "npcm_i2c_init_module() failed\n");
+
+> +		return -1;
+
+Use proper error coded.
+
+> +	}
+
+...
+
+> +	bus->dest_addr = (u8)(slave_addr << 1);// Translate 7bit to 8bit format
+
+Awful formatting (comments) and casting.
+
+> +		i2cfif_cts = (i2cfif_cts & ~NPCM_I2CFIF_CTS_SLVRSTR) |
+> +			 NPCM_I2CFIF_CTS_CLR_FIFO;
+
+Do it in two operations.
+
+...
+
+> +	if (unlikely(bus->state == I2C_DISABLE)) {
+
+Why unlikely() is in use? Any performance improvement? Show numbers.
+
+> +		dev_err(bus->dev, "I2C%d module is disabled", bus->num);
+> +		return -EINVAL;
+> +	}
+
+...
+
+> +	time_left = jiffies +
+> +		    msecs_to_jiffies(DEFAULT_STALL_COUNT) + 1;
+> +	do {
+> +		/* we must clear slave address immediately when the bus is not
+> +		 * busy, so we spinlock it, but we don't keep the lock for the
+> +		 * entire while since it is too long.
+> +		 */
+
+> +		spin_lock_irqsave(&bus->lock, flags);
+> +		bus_busy = ioread8(bus->reg + NPCM_I2CCST) & NPCM_I2CCST_BB;
+> +		spin_unlock_irqrestore(&bus->lock, flags);
+
+> +		if (!bus_busy)
+> +			break;
+
+This can be part of below condition.
+
+> +
+> +	} while (time_is_after_jiffies(time_left));
+
+...
+
+> +	if (!npcm_i2c_master_start_xmit(bus, slave_addr, nwrite, nread,
+> +					write_data, read_data, read_PEC,
+> +					read_block))
+
+> +		ret = -(EBUSY);
+> +
+> +	if (ret != -(EBUSY)) {
+
+Too many parentheses. Fix them all in entire driver.
+
+> +		time_left = wait_for_completion_timeout(&bus->cmd_complete,
+> +							timeout);
+> +
+> +		if (time_left == 0) {
+> +			NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_TO);
+> +			if (bus->master_or_slave == I2C_MASTER) {
+
+> +				dev_dbg(bus->dev,
+> +					"i2c%d TO = %d\n", bus->num, timeout);
+
+Why not first line fit enough?
+
+> +				i2c_recover_bus(adap);
+> +				bus->cmd_err = -EIO;
+> +				bus->state = I2C_IDLE;
+> +			}
+> +		}
+> +	}
+> +	ret = bus->cmd_err;
+
+> +	// If nothing went wrong, return number of messages x-ferred.
+> +	if (ret >= 0)
+> +		return num;
+> +
+> +	return ret;
+
+Why not traditional pattern, i.e.
+
+	if (ret < 0)
+		return ret;
+
+?
+
+> +}
+
+...
+
+> +static u32 npcm_i2c_functionality(struct i2c_adapter *adap)
+> +{
+> +	return I2C_FUNC_I2C |
+> +		   I2C_FUNC_SMBUS_EMUL |
+> +		   I2C_FUNC_SMBUS_BLOCK_DATA |
+> +		   I2C_FUNC_SMBUS_PEC
+> +		   ;
+
+Awful indentation.
+
+> +}
+
+...
+
+> +static const struct i2c_adapter_quirks npcm_i2c_quirks = {
+> +	.max_read_len = 32768,
+> +	.max_write_len = 32768,
+> +	.max_num_msgs = 2,
+> +	.flags = I2C_AQ_COMB_WRITE_THEN_READ
+
+Missed comma.
+
+> +};
+
+...
+
+> +static int  npcm_i2c_probe_bus(struct platform_device *pdev)
+> +{
+
+> +#ifdef CONFIG_OF
+
+Why this ugly ifdefery?
+
+> +	num = of_alias_get_id(pdev->dev.of_node, "i2c");
+> +	bus->num = num;
+
+> +	i2c_clk = devm_clk_get(&pdev->dev, NULL);
+
+Can't be optional?
+
+> +	if (IS_ERR(i2c_clk))
+
+> +		return	-EPROBE_DEFER;
+
+Why shadow an error code? Fix them all.
+
+> +	bus->apb_clk = clk_get_rate(i2c_clk);
+> +#endif //  CONFIG_OF
+
+> +	bus->irq = platform_get_irq(pdev, 0);
+> +	if (bus->irq < 0)
+
+> +		return -ENODEV;
+
+Why shadowed error code?
+
+> +	ret = i2c_add_numbered_adapter(&bus->adap);
+
+> +	if (ret < 0)
+
+What about positive? Do they ever happen?
+Hint: drop ' < 0' part in each case you have in this driver where it's not
+needed.
+
+> +		return ret;
+> +
+> +	platform_set_drvdata(pdev, bus);
+> +
+> +	return 0;
+> +}
+
+...
+
+> +MODULE_VERSION("0.1.1");
+
+Does it make any sense?
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
