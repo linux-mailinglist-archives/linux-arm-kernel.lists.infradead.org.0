@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84F9918FD3D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:04:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D09418FD3E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:04:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n8yXJeWkweSPnpl3jpdt+wpXhaHb6YWhiAabBFTLYjY=; b=fPNEb9U6SFh8pN
-	S4xuwn4xuzjXwcKKTqA69/82pv23FHjcSNn9TH/nw0rhb2no5LxguES8N7K2QRM5gZMWGxIY09g8u
-	WmqY6QLvTsMWV83ChjnjxdB5clNgHyYvqtbty9PjGyuFeFkqoGAHpKPajB1BugIUhoUxUiJ13AS6d
-	ZisQJrmFuk1k9MA88E+1eAtgFFKFZHApIG7fKEGQQjUpWp7ia5zZXAx5rBzEg9spf5BrkCk21nz0T
-	MqepYmiJjHgddPLtBpGGPE999ZCAGSvGPKr0Mqgue8IhL79cJFblj6IIBkn8UwvJ9N3rA3AMNA2DH
-	nUKJyJckejRImruVSyBg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Lju0uiT/nrx2+18k00F4hLN7L+bpNfiQBkf1TRF2ihc=; b=erbXIP7CMHJU20
+	370nnsRKVcGH3TNLKOB9q47ZPEn59MpiSc1nKogRDC09EDDaZZe/xPGqlP8G8M7VmQBlxRWzfs1tZ
+	iBfD5q+qBd8BbxnIjzF5LU55Fj2UVik0A6olseHo9/S4WJqvcI3p05PzSagmSmWkccpJ1oq7SSOAz
+	KUk1S8Kg75/tLoHYDwAeS9yA9+7ROpvGAwjIYSTVGvymhzjQi+zVYf+nKqxE7uZtIErpvSfIi+BVS
+	myJumQghNVnjzdBQYkoYvYnYc3hXyChRuA8Q8rdh2hoe/u/rdnwgsu9zdCLC/ZndsOlrnaU1VZZpA
+	jUS0fvM49cZZ7nP4aAKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGSN8-0005IE-Gj; Mon, 23 Mar 2020 19:04:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGSN0-0005Hc-S6
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:04:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B40CC31B;
- Mon, 23 Mar 2020 12:04:12 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB8EA3F52E;
- Mon, 23 Mar 2020 12:04:11 -0700 (PDT)
-Date: Mon, 23 Mar 2020 19:04:09 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/3] arm64: clean up trampoline vector loads
-Message-ID: <20200323190408.GE4892@mbp>
-References: <1938400.7m7sAWtiY1@basile.remlab.net>
- <20200319091407.51449-1-remi@remlab.net>
- <20200323120700.GB2597@C02TD0UTHF1T.local>
- <2345780.q8flsOIESp@basile.remlab.net>
- <20200323121437.GC2597@C02TD0UTHF1T.local>
+	id 1jGSNR-0005Un-OM; Mon, 23 Mar 2020 19:04:45 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGSNC-0005O9-Ko
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:04:32 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48mP213YTmz1qs3f;
+ Mon, 23 Mar 2020 20:04:25 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48mP212dwFz1qyDb;
+ Mon, 23 Mar 2020 20:04:25 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id QqK1mG1Wus-J; Mon, 23 Mar 2020 20:04:24 +0100 (CET)
+X-Auth-Info: I4MqN1cNOhqaPCP1appfZmyf8HYmdhHvee0xhz+7aVc=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Mon, 23 Mar 2020 20:04:24 +0100 (CET)
+Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
+ gpio irq chip
+To: Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>
+References: <20200219143229.18084-1-alexandre.torgue@st.com>
+ <20200219143229.18084-3-alexandre.torgue@st.com>
+ <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
+ <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <a7fc5e43-34c2-a4e6-e0c5-1584f17fb024@denx.de>
+Date: Mon, 23 Mar 2020 20:04:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323121437.GC2597@C02TD0UTHF1T.local>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_120418_999179_886E3402 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_120430_842336_193DD958 
+X-CRM114-Status: GOOD (  13.98  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,110 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: james.morse@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org,
- =?iso-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jason Cooper <jason@lakedaemon.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 12:14:37PM +0000, Mark Rutland wrote:
-> On Mon, Mar 23, 2020 at 02:08:53PM +0200, R=E9mi Denis-Courmont wrote:
-> > Le maanantaina 23. maaliskuuta 2020, 14.07.00 EET Mark Rutland a =E9cri=
-t :
-> > > On Thu, Mar 19, 2020 at 11:14:05AM +0200, R=E9mi Denis-Courmont wrote:
-> > > > From: R=E9mi Denis-Courmont <remi.denis.courmont@huawei.com>
-> > > > =
+On 2/20/20 10:17 AM, Marc Zyngier wrote:
+> On 2020-02-20 09:04, Linus Walleij wrote:
+>> On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
+>> <alexandre.torgue@st.com> wrote:
+>>
+>>> GPIO hardware block is directly linked to EXTI block but EXTI handles
+>>> external interrupts only on edge. To be able to handle GPIO interrupt on
+>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
+>>> chip)
+>>> is retriggered following interrupt type and gpio line value.
+>>>
+>>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+>>> Tested-by: Marek Vasut <marex@denx.de>
+>>
+>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+>>
+>> If Marc want to merge it with patch 1/2 go ahead!
+> 
+> I'll queue the whole thing for 5.7.
 
-> > > > This switches from custom instruction patterns to the regular large
-> > > > memory model sequence with ADRP and LDR. In doing so, the ADD
-> > > > instruction can be eliminated in the SDEI handler, and the code no
-> > > > longer assumes that the trampoline vectors and the vectors address =
-both
-> > > > start on a page boundary.
-> > > > =
+I have a feeling this doesn't work with threaded interrupts.
 
-> > > > Signed-off-by: R=E9mi Denis-Courmont <remi.denis.courmont@huawei.co=
-m>
-> > > > ---
-> > > > =
-
-> > > >  arch/arm64/kernel/entry.S | 9 ++++-----
-> > > >  1 file changed, 4 insertions(+), 5 deletions(-)
-> > > > =
-
-> > > > diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> > > > index e5d4e30ee242..24f828739696 100644
-> > > > --- a/arch/arm64/kernel/entry.S
-> > > > +++ b/arch/arm64/kernel/entry.S
-> > > > @@ -805,9 +805,9 @@ alternative_else_nop_endif
-> > > > =
-
-> > > >  2:
-> > > >  	tramp_map_kernel	x30
-> > > >  =
-
-> > > >  #ifdef CONFIG_RANDOMIZE_BASE
-> > > > =
-
-> > > > -	adr	x30, tramp_vectors + PAGE_SIZE
-> > > > +	adrp	x30, tramp_vectors + PAGE_SIZE
-> > > > =
-
-> > > >  alternative_insn isb, nop, ARM64_WORKAROUND_QCOM_FALKOR_E1003
-> > > > =
-
-> > > > -	ldr	x30, [x30]
-> > > > +	ldr	x30, [x30, #:lo12:__entry_tramp_data_start]
-> > > =
-
-> > > I think this is busted for !4K kernels once we reduce the alignment of
-> > > __entry_tramp_data_start.
-> > > =
-
-> > > The ADRP gives us a 64K aligned address (with bits 15:0 clear). The l=
-o12
-> > > relocation gives us bits 11:0, so we haven't accounted for bits 15:12.
-> > =
-
-> > IMU, ADRP gives a 4K aligned value, regardless of MMU (TCR) settings.
-> =
-
-> Sorry, I had erroneously assumed tramp_vectors was page aligned. The
-> issue still stands -- we haven't accounted for bits 15:12, as those can
-> differ between tramp_vectors and __entry_tramp_data_start.
-
-Should we just use adrp on __entry_tramp_data_start? Anyway, the diff
-below doesn't solve the issue I'm seeing (only reverting patch 3).
-
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index ca1340eb46d8..4cc9d1df3985 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -810,7 +810,7 @@ alternative_else_nop_endif
- 2:
- 	tramp_map_kernel	x30
- #ifdef CONFIG_RANDOMIZE_BASE
--	adrp	x30, tramp_vectors + PAGE_SIZE
-+	adrp	x30, __entry_tramp_data_start
- alternative_insn isb, nop, ARM64_WORKAROUND_QCOM_FALKOR_E1003
- 	ldr	x30, [x30, #:lo12:__entry_tramp_data_start]
- #else
-@@ -964,7 +964,7 @@ SYM_CODE_START(__sdei_asm_entry_trampoline)
- 1:	str	x4, [x1, #(SDEI_EVENT_INTREGS + S_ORIG_ADDR_LIMIT)]
- =
-
- #ifdef CONFIG_RANDOMIZE_BASE
--	adrp	x4, tramp_vectors + PAGE_SIZE
-+	adrp	x4, __sdei_asm_trampoline_next_handler
- 	ldr	x4, [x4, #:lo12:__sdei_asm_trampoline_next_handler]
- #else
- 	ldr	x4, =3D__sdei_asm_handler
-
--- =
-
-Catalin
+If the interrupt handler runs in a thread context, the EOI will happen
+almost right away (while the IRQ handler runs) and so will the code
+handling the IRQ retriggering. But since the IRQ handler still runs and
+didn't return yet, the retriggering doesn't cause the IRQ handler to be
+called again once it finishes, even if the IRQ line is still asserted.
+And that could result in some of the retriggers now happening I think.
+Or am I doing something wrong ?
 
 _______________________________________________
 linux-arm-kernel mailing list
