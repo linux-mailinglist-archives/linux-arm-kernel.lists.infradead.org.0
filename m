@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60F7F18EEC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 05:03:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD65718EF5A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 06:29:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fQnqmKHyeIcG3TEZWlJS5ddF+as2y5pgvDTLETqv2Rg=; b=FoO1tP5p48MU0f
-	h/7zkyp62R+RJqiU9X8G+zfgYoe4evbDFAC1IGLde+kVZIV3LGBCkXEENDPI2PAnM0pNZweNnH99c
-	4D4ADW8c2GNJARTi9q0A0wPr4FaI9fpXzC00tX9xX/4B3YrW7Pqs8990b/04qNL1sIHpFDcqJTFT3
-	2W1yfzyLtCli+gLXe5twcib/hH9/zQrv+JBoYem1LBWmis/IqBc14jrGLzSsE3B4oiXc83chr8hj7
-	Fh10VkOYx16QgfOhOqD1NVcv23wyQMdF/3QklfXgKia7l+h8tkGg9yxYDrs7uo1XSLsRAw1H6ntQg
-	CyDyndlBxcisoBBt1NlQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X5kGDdDO6p6vJbYTVLhC91M0t6+buc5w9pJObOBWuyU=; b=tFbwYOTiUfmokR
+	Nx59hWlExHD85WaaJAPxPx9b6g0XTeSR25Vbtg2BKi8n6yME7sU5FAs8rGfSSR0RyJXotn+VjEWNA
+	Ren4ABzrMY52GuRMqJUYEZDSACLlut5hNeIvVK91rXaXk7Th1n1DaqcZyza4X86onIFM+xpsdK3PW
+	ouLHHetupukW/vNB6+rnHOgNWBeZaLQFFgG9d9BPXmBwlQIth+ulcKuHqPksuV7Haza0Qm6MTs3Up
+	AKTtG8CN6oV3ulGkNJGpmU0CHB8RsigNGm+3WjqxwTM/fwAywGi+aHKO9vPNRv7ksN04kPZIFleZ6
+	zouEy7ZwN9o5znDKpeXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGEJM-0001yH-7L; Mon, 23 Mar 2020 04:03:36 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGEJD-0001wl-I6
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 04:03:29 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 23 Mar 2020 13:03:23 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 5182C60057;
- Mon, 23 Mar 2020 13:03:23 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Mon, 23 Mar 2020 13:03:23 +0900
-Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by kinkan.css.socionext.com (Postfix) with ESMTP id B034D1A12AD;
- Mon, 23 Mar 2020 13:03:22 +0900 (JST)
-Received: from [10.213.132.48] (unknown [10.213.132.48])
- by yuzu.css.socionext.com (Postfix) with ESMTP id 7646812013D;
- Mon, 23 Mar 2020 13:03:22 +0900 (JST)
-Date: Mon, 23 Mar 2020 13:03:22 +0900
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: Re: [PATCH v2 2/2] PCI: uniphier: Add UniPhier PCIe endpoint
- controller support
-In-Reply-To: <20200319170659.GA158868@google.com>
-References: <1584604449-13461-3-git-send-email-hayashi.kunihiko@socionext.com>
- <20200319170659.GA158868@google.com>
-Message-Id: <20200323130322.E519.4A936039@socionext.com>
+	id 1jGFei-0003Mf-Gn; Mon, 23 Mar 2020 05:29:44 +0000
+Received: from 60-251-196-230.hinet-ip.hinet.net ([60.251.196.230]
+ helo=ironport.ite.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGFea-0003M2-LG; Mon, 23 Mar 2020 05:29:38 +0000
+IronPort-SDR: TC41G8qcmLB2t+YaofzrywAsMyYWzny3D9QdH0/1AgCAvOvB5MAPyW7Ofimh5DBSGUgps69Xe8
+ KwW+DXV2ah4A==
+Received: from unknown (HELO mse.ite.com.tw) ([192.168.35.30])
+ by ironport.ite.com.tw with ESMTP; 23 Mar 2020 13:29:19 +0800
+Received: from CSBMAIL1.internal.ite.com.tw (csbmail1.internal.ite.com.tw
+ [192.168.65.58]) by mse.ite.com.tw with ESMTP id 02N5TG6j002878;
+ Mon, 23 Mar 2020 13:29:16 +0800 (GMT-8)
+ (envelope-from allen.chen@ite.com.tw)
+Received: from allen-VirtualBox.internal.ite.com.tw (192.168.70.14) by
+ CSBMAIL1.internal.ite.com.tw (192.168.65.58) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1713.5; Mon, 23 Mar 2020 13:29:15 +0800
+From: allen <allen.chen@ite.com.tw>
+To: 
+Subject: [PATCH v8 0/3] IT6505 cover letter
+Date: Mon, 23 Mar 2020 13:21:51 +0800
+Message-ID: <1584941015-20541-1-git-send-email-allen.chen@ite.com.tw>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-X-Mailer: Becky! ver. 2.70 [ja]
+X-Originating-IP: [192.168.70.14]
+X-ClientProxiedBy: CSBMAIL1.internal.ite.com.tw (192.168.65.58) To
+ CSBMAIL1.internal.ite.com.tw (192.168.65.58)
+X-TM-SNTS-SMTP: 911E96001DC2B9A2A26B2875DB76AB159DBC622314FF6F08D4433F6B7BB342EC2000:8
+X-MAIL: mse.ite.com.tw 02N5TG6j002878
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_210327_818815_6ACF4A8D 
-X-CRM114-Status: GOOD (  23.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200322_222936_951509_5FDE5890 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,125 +72,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Maxime Ripard <mripard@kernel.org>, "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Stephan Gerhold <stephan@gerhold.net>,
+ Jau-Chih Tseng <Jau-Chih.Tseng@ite.com.tw>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Jonas Karlman <jonas@kwiboo.se>,
+ open list <linux-kernel@vger.kernel.org>, "open list:DRM
+ DRIVERS" <dri-devel@lists.freedesktop.org>, Mark Brown <broonie@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Pi-Hsun Shih <pihsun@chromium.org>, Allen Chen <allen.chen@ite.com.tw>,
+ Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+The IT6505 is a high-performance DisplayPort 1.1a transmitter, fully compliant with DisplayPort 1.1a, HDCP 1.3 specifications. The IT6505 supports color depth of up to 36 bits (12 bits/color) and ensures robust transmission of high-quality uncompressed video content, along with uncompressed and compressed digital audio content.
 
-Thank you for your comment.
+This series contains document bindings, revert commit, add vendor prefix, Kconfig to control the function enable or not.
 
-On Thu, 19 Mar 2020 12:06:59 -0500 <helgaas@kernel.org> wrote:
+Allen Chen (1):
+  WIP: drm/bridge: add it6505 driver
 
-> On Thu, Mar 19, 2020 at 04:54:09PM +0900, Kunihiko Hayashi wrote:
-> > This introduces specific glue layer for UniPhier platform to support
-> > PCIe controller that is based on the DesignWare PCIe core, and
-> > this driver supports endpoint mode. This supports for Pro5 SoC only.
-> 
-> Possible alternate text: ("specific glue layer" isn't the usual way to
-> describe a driver)
-> 
->   PCI: uniphier: Add Socionext UniPhier Pro5 SoC endpoint controller driver
-> 
->   Add driver for the Socionext UniPhier Pro5 SoC endpoint controller.
->   This controller is based on the DesignWare PCIe core.
+allen (2):
+  dt-bindings: Add vendor prefix for ITE Tech. Inc.
+  WIP: dt-bindings: Add binding for IT6505.
 
-I see. I'll accept your suggestion for the commit log.
+ .../bindings/display/bridge/ite,it6505.yaml        |   91 +
+ .../devicetree/bindings/vendor-prefixes.yaml       |    2 +-
+ drivers/gpu/drm/bridge/Kconfig                     |    7 +
+ drivers/gpu/drm/bridge/Makefile                    |    1 +
+ drivers/gpu/drm/bridge/ite-it6505.c                | 3064 ++++++++++++++++++++
+ 5 files changed, 3164 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/ite,it6505.yaml
+ create mode 100644 drivers/gpu/drm/bridge/ite-it6505.c
 
-> > +/* assertion time of intx in usec */
-> 
-> s/intx/INTx/ to match usage in spec (and in comments below :))
-
-Certainly this isn't unified. I'll fix it.
-
-> > +#define PCL_INTX_WIDTH_USEC		30
-> 
-> > +struct uniphier_pcie_ep_soc_data {
-> > +	bool is_legacy;
-> 
-> I'd prefer "unsigned int is_legacy:1".  See [1].
-> 
-> But AFAICT you actually don't need this at all (yet), since you only
-> have a single of_device_id, and it sets "is_legacy = true".  That
-> means the *not* legacy code is effectively dead and hasn't been
-> tested.
-
-Yes.
-Now I know the difference about between legacy and non-legacy SoC,
-however, currently the driver doesn't have any non-legacy SoC support.
-
-> My preference would be to add "is_legacy" and the associated tests
-> when you actually *need* them, i.e., when you add support for a
-> non-legacy device.
-
-Agreed. The test for non-legacy SoC is necessary.
-So I'll remove 'is_legacy' and related coded, and rewrite this driver
-to support only legacy device.
-
-And I'll remember [1] when adding non-legacy support.
-
-> > +static int uniphier_pcie_ep_raise_legacy_irq(struct dw_pcie_ep *ep)
-> > +{
-> > +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> > +	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-> > +	u32 val;
-> > +
-> > +	/* assert INTx */
-> > +	val = readl(priv->base + PCL_APP_INTX);
-> > +	val |= PCL_APP_INTX_SYS_INT;
-> > +	writel(val, priv->base + PCL_APP_INTX);
-> > +
-> > +	udelay(PCL_INTX_WIDTH_USEC);
-> > +
-> > +	/* deassert INTx */
-> > +	val = readl(priv->base + PCL_APP_INTX);
-> 
-> Why do you need to read PCL_APP_INTX again here?
-
-Indeed. This 'readl' isn't unnecessary.
-
-> > +	val &= ~PCL_APP_INTX_SYS_INT;
-> > +	writel(val, priv->base + PCL_APP_INTX);
-> > +
-> > +	return 0;
-> > +}
-> 
-> > +	ret = dw_pcie_ep_init(ep);
-> > +	if (ret) {
-> > +		dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	return 0;
-> 
-> This is equivalent to:
-> 
->   ret = dw_pcie_ep_init(ep);
->   if (ret)
->     dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-> 
->   return ret;
-
-Agreed. I'll rewrite it next.
-
-> 
-> > +}
-> 
-> [1] https://lore.kernel.org/linux-fsdevel/CA+55aFzKQ6Pj18TB8p4Yr0M4t+S+BsiHH=BJNmn=76-NcjTj-g@mail.gmail.com/
-
-Thank you,
-
----
-Best Regards,
-Kunihiko Hayashi
+-- 
+1.9.1
 
 
 _______________________________________________
