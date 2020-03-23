@@ -2,93 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 286EB18F364
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 12:06:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EA5418F380
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 12:12:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sz5ZGJ5Rs1TZPE5NXyJzIwvaQUrSUmWZMKx2Sas02UI=; b=u/FLz/OjpgNXJ3z42E9FfEk4i
-	opbINxgtiiGq82g9vjiB7JD/AyIbE14Uq4BPcoEMGqwq3V3EuaorTORTyK60Qg5spe0B8gFstcmhp
-	bt7AX8rIHvKJmqBH2QdI0Rq2nbZhd1lCxOhSm1ngmPVPEFCdrmHJaDHvhgLEjzJF4MgsgLo7du4Yl
-	PDk5IJDzEBy10Unz3/RlTdmcd6NfSJzXtPOiLoDl/CVIEAEtPxmnNxxXBUXiU4kRx54QH2xDr8Fuw
-	KPq6VU9Y5l+3OkD1wtX/gk29j3i6ThyUsgd7IumLn6T5ueaCcj+5gnvUxH2pjMXyI/7QPFMnKBcNy
-	lgIfebKzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ICk1wflPhe1/mX7PR/tySDOeMofTwRQe51nY67qCWZw=; b=ckPWzoLkhxxwKy
+	g0FmXHy8g+DaPn1GQhRvnb+6pA0CxZvoHCkPzdbK/xCHgjiMg48D5rpAEi82jVgYLQfzjY4F+BYpM
+	xZQBOTHiNWZFsZqrWwV+hOFBEAFTxv/oEA4ZARYY4IjAt25FqRL9EmGNATxyMeW7augwm6gsHmTE7
+	aOPmsmuM+L09se5UzaEfAXWgyXsr2KdQG0eUZ0fNdjUrsL9GDfLi3T04MQ0QcrTIxUTPUIZMEj6IW
+	DWE2uIc4UvTFhKm6LRV49s6EsqJEf5szxdhhTq84QtQ21xmExhm1bnHB4pjwA/A73Z2Rp94e0XtZd
+	QwMvAzk4+VOwS3B3BmYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGKuc-0007Tq-PX; Mon, 23 Mar 2020 11:06:30 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGKuO-0007TF-3F
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 11:06:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id w10so16497262wrm.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 04:06:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=PvaA9WErHPfhLzkoxic3oiXs7q2b8jdtV9hoK7AM6S0=;
- b=KL43WrYTI7twEj/ElGDXpP3z4rMkVQmiavtuO8E43tb0A1jiSZFqTFGw+Z9rt88KA0
- HLUcj0+mGIY741Fx7Qu16MrayKfc8YZsEbRjLfhJ9c+RGuIESIuOSlVhCAxEa+rO0xoe
- umC4lTvey0CxqQ/hse7eJEfAbX4NoGpq4rw4IRlAMkb6yqE6oD7r9OkthDgzmQDEHIyo
- ytE/bxH4kGUJRdQcOva84Pex07qX2lMFU3W3fs7Jx+niVvCzGkh0WC6Nvq4f64jCojPf
- rKIMQBJjiozsPim0+P7xtUx8YJmFyt1WZcOsHeyuUOgmOtEf0TnFAfCpq/ls81VokukE
- oKDw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PvaA9WErHPfhLzkoxic3oiXs7q2b8jdtV9hoK7AM6S0=;
- b=NKVHlslMoE0X9TZidmrYqoC+xvYK/dJNo9hsZgbJKqVo2tgNRAvcKwbSOxeqARHwdw
- 1tA7gJpP0Y9BUcqp8DSBMxcadi62wE2Wfu/jHMXnphCuwmAMH7S1V+My/Dj5ItRsuo+j
- ft7wPSTcaIpe1QhzdczCSyhy7MFmPfIIYnMQwNg6I9K5D0v1MFUJiXKXdiUAbtuNEHMf
- pqAH2Dt4ooolrtCK95C4Pk3D0YUiALcSGOFoNZQXimYxdx/3cHnX04ivL+AmLfIarPj4
- z5hlsag89MpfQV6lO1GJm0PwlfYSv7VotCEytTsOXDxmkRLniOJ0iUAqLn0rpivzxfaE
- 78Xg==
-X-Gm-Message-State: ANhLgQ2GKv1hJrnIH+7jkUmGhXcxPy6Ho8qK66Ht7oTOeDAALx/HomkB
- jo0/AD9CWqh7WQ9EU4i9OlE=
-X-Google-Smtp-Source: ADFU+vuP8WC1Z1+VeP4J2xlTB/CcaELAr/Oz4UztThDWUzq3KVBGIo7q2+7br3Tvbrtr8IlcXKy9Rg==
-X-Received: by 2002:adf:e44a:: with SMTP id t10mr19226457wrm.322.1584961574704; 
- Mon, 23 Mar 2020 04:06:14 -0700 (PDT)
-Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
- by smtp.gmail.com with ESMTPSA id r9sm21658997wma.47.2020.03.23.04.06.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 04:06:13 -0700 (PDT)
-Date: Mon, 23 Mar 2020 12:06:12 +0100
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Dmitry Osipenko <digetx@gmail.com>
-Subject: Re: [PATCH v5 3/8] clk: tegra: Implement Tegra210 EMC clock
-Message-ID: <20200323110612.GE3883508@ulmo>
-References: <20200310152003.2945170-1-thierry.reding@gmail.com>
- <20200310152003.2945170-4-thierry.reding@gmail.com>
- <3b583202-50d0-145c-d60f-91bd646008ad@gmail.com>
+	id 1jGL0N-0001Cx-CG; Mon, 23 Mar 2020 11:12:27 +0000
+Received: from mail.baikalelectronics.com ([87.245.175.226]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGL0E-0001CE-5z
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 11:12:20 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id C565980307CA;
+ Mon, 23 Mar 2020 11:12:14 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id FxD9Ltd8BT8a; Mon, 23 Mar 2020 14:12:13 +0300 (MSK)
+Date: Mon, 23 Mar 2020 14:11:49 +0300
+From: Sergey Semin <Sergey.Semin@baikalelectronics.ru>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200323111149.73wqrd7qnkkiitbe@ubsrv2.baikal.int>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+ <20200323092051.GB1922688@smile.fi.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <3b583202-50d0-145c-d60f-91bd646008ad@gmail.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+Content-Disposition: inline
+In-Reply-To: <20200323092051.GB1922688@smile.fi.intel.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_040616_141978_4F206FE0 
-X-CRM114-Status: GOOD (  16.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_041218_585202_04DCAE2A 
+X-CRM114-Status: GOOD (  34.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,100 +64,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2128181441841546040=="
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi
 
---===============2128181441841546040==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Rgf3q3z9SdmXC6oT"
-Content-Disposition: inline
+On Mon, Mar 23, 2020 at 11:20:51AM +0200, Andy Shevchenko wrote:
+> On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
+> > From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+> 
+> The question to CLK framework maintainers, is it correct approach in general
+> for this case?
+> 
 
+You should have been more specific then, if you wanted to see someone
+special.
 
---Rgf3q3z9SdmXC6oT
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> On Wed, Mar 18, 2020 at 05:19:53PM +0200, Andy Shevchenko wrote:
+>> Also it would be nice to see come clock framework guys' opinions...
 
-On Tue, Mar 10, 2020 at 07:29:42PM +0300, Dmitry Osipenko wrote:
-> 10.03.2020 18:19, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
-> > From: Joseph Lo <josephl@nvidia.com>
-> >=20
-> > The EMC clock needs to carefully coordinate with the EMC controller
-> > programming to make sure external memory can be properly clocked. Do so
-> > by hooking up the EMC clock with an EMC provider that will specify which
-> > rates are supported by the EMC and provide a callback to use for setting
-> > the clock rate at the EMC.
-> >=20
-> > Based on work by Peter De Schrijver <pdeschrijver@nvidia.com>.
-> >=20
-> > Signed-off-by: Joseph Lo <josephl@nvidia.com>
-> > Signed-off-by: Thierry Reding <treding@nvidia.com>
-> > ---
-> > Changes in v5:
-> > - major rework and cleanup
->=20
+Who can give a better comments regarding the clk API if not the
+subsystem maintainers?
+
+> > There are races possible in the dw8250_set_termios() callback method
+> > and while the device is in PM suspend state. A race condition may
+> > happen if the baudrate clock source device is shared with some other
+> > device (in our machine it's another DW UART port). In this case if that
+> > device changes the clock rate while serial console is using it the
+> > DW 8250 UART port might not only end up with an invalid uartclk value
+> > saved, but may also experience a distorted output data since baud-clock
+> > could have been changed. In order to fix this lets enable an exclusive
+> > reference clock rate access in case if "baudclk" device is specified.
+> > 
+> > So if some other device also acquires the rate exclusivity during the
+> > time of a DW UART 8250 port being opened, then DW UART 8250 driver
+> > won't be able to alter the baud-clock. It shall just use the available
+> > clock rate. Similarly another device also won't manage to change the
+> > rate at that time. If nothing else have the exclusive rate access
+> > acquired except DW UART 8250 driver, then the driver will be able to
+> > alter the rate as much as it needs to in accordance with the currently
+> > implemented logic.
+> 
+> Thank you for an update, my comments below.
+> 
 > ...
-> > +EXPORT_SYMBOL_GPL(tegra210_clk_emc_attach);
-> > +
-> > +void tegra210_clk_emc_detach(struct clk *clk)
+> 
+> > +static int dw8250_startup(struct uart_port *p)
 > > +{
-> > +	struct tegra210_clk_emc *emc =3D to_tegra210_clk_emc(__clk_get_hw(clk=
-));
+> > +	struct dw8250_data *d = to_dw8250_data(p->private_data);
 > > +
-> > +	emc->provider =3D NULL;
+> > +	/*
+> > +	 * Some platforms may provide a reference clock shared between several
+> > +	 * devices. In this case before using the serial port first we have to
+> > +	 * make sure nothing will change the rate behind our back and second
+> > +	 * the tty/serial subsystem knows the actual reference clock rate of
+> > +	 * the port.
+> > +	 */
+> 
+> > +	if (clk_rate_exclusive_get(d->clk)) {
+> > +		dev_warn(p->dev, "Couldn't lock the clock rate\n");
+> 
+> So, if this fails, in ->shutdown you will disbalance reference count, or did I
+> miss something?
+> 
+
+Hm, you are right. I didn't fully thought this through. The thing is
+that according to the clk_rate_exclusive_get() function code currently
+it never fails. Though this isn't excuse for introducing a prone to future
+bugs code.
+
+Anyway if according to design a function may return an error we must take
+into account in the code using it. Due to this obligation and seeing we can't
+easily detect whether clk_rate_exclusive_get() has been failed while the
+driver is being executed in the shutdown method, the best approach would be
+to just return an error in startup method in case of the clock rate exclusivity
+acquisition failure. If you are ok with this, I'll have it fixed in v3
+patchset.
+
+> > +	} else if (d->clk) {
+> 
+> > +		p->uartclk = clk_get_rate(d->clk);
+> > +		if (!p->uartclk) {
+> > +			clk_rate_exclusive_put(d->clk);
+> > +			dev_err(p->dev, "Clock rate not defined\n");
+> > +			return -EINVAL;
+> > +		}
+> 
+> This operations I didn't get. If we have d->clk and suddenly get 0 as a rate
+> (and note, that we still update uartclk member!), we try to put (why?) the
+> exclusiveness of rate.
+> 
+
+Here is what I had in my mind while implementing this code. If d->clk
+isn't NULL, then there is a "baudclk" clock handler and we can use it to
+alter/retrieve the baud clock rate. But the same clock could be used by
+some other driver and that driver could have changed the rate while we
+didn't have this tty port started up (opened). In this case that driver
+could also have the clock exclusively acquired. So instead of trying to
+set the current p->uartclk rate to the clock, check the return value,
+if it's an error, try to get the current clock rate, check the return
+value, and so on, I just get the current baud clock rate and make sure
+the value is not zero (clk_get_rate() returns a zero rate in case of
+internal errors). At the same time dw8250_set_termios() will try to update
+the baud clock rate anyway (also by the serial core at the point of the port
+startup), so we don't need such complication in the DW 8250 port startup
+code.
+
+> (and note, that we still update uartclk member!),
+
+Yes, if we can't determine the current baud clock rate, then the there is
+a problem with the clock device, so we don't know at what rate it's
+currently working. Zero is the most appropriate value to be set in this case.
+
+> we try to put (why?) the > exclusiveness of rate.
+
+Yes, we put the exclusivity and return an error, because this if-branch has
+been taken only if the exclusivity has been successfully acquired.
+
+Regards,
+-Sergey
+
+> > +	}
+> > +
+> > +	return serial8250_do_startup(p);
 > > +}
-> > +EXPORT_SYMBOL_GPL(tegra210_clk_emc_detach);...
-> > +config TEGRA210_EMC
-> > +	bool "NVIDIA Tegra210 External Memory Controller driver"
->=20
->=20
-> I'd remove all the exports for now, given that the driver is built-in.
-
-I was able to make the driver work as a loadable module, so I've kept
-the exports where needed and made TEGRA210_EMC tristate.
-
-Thierry
-
---Rgf3q3z9SdmXC6oT
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl54mCQACgkQ3SOs138+
-s6Fghw/9HFmA8d3ekqw+fFlSbracVyC8Jbzm7ovz/EMMhgzkKApEKD2G2L7GNFdZ
-XQiWXYuI4SANsOCnbgunpoZqi5M/zh35NvbBqQoT6pJlS1WxabPWekofZGxX9WkJ
-/oA5oD1gQhR3CpM+6QfgUH76surZ8LIgqlWDurqblrUeEWUftJuKa4xuhIj+7vwy
-B4cZYF04OqrUl5dJXKiX9qUAb2T0i6GZb9UbWIdPtzFGpxN7WfBBjuta/nbKJCqi
-Y4CkNqMDW3wqvj5zZrZN0/J+5SHQ2eJ26irWAn5Xrrd0N3xyIUy7/SetQ3hFsfAb
-Gxd9WyQA8OWDdlhdkoEHoMLXX7xBmKG7PA2LakCQxguSw2+meQUfgM7JJqS1sMLY
-xhqKLxu8GnMoTdwlh0LhoUAYgwYxfKrd+x+3h8qeGZAHju8nC+BrB5Pg/8gO4e3S
-e64USYE4iF8tLbAhD3WYLO7xFLEHWdI+bW8lqvuTWXqXqkXA1bRFrCBidwODDkb1
-rj8UuNJzhOzgB7A8us/of+PlabsIsJm4Pr7zqoBUm7LEv9x9BcDCcRRf7jl+4yE5
-6lq+SF+f18powYYqdHkaIQCK3ldSfUYJp+iql2mmJSreDcVl10P8m3AW/HO5mRoH
-do2qAyLmNX/4iNdEq5BnMtwMvgMqcfs6nWBayGmkpyjZhL+99YI=
-=5knT
------END PGP SIGNATURE-----
-
---Rgf3q3z9SdmXC6oT--
-
-
---===============2128181441841546040==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> > +
+> > +static void dw8250_shutdown(struct uart_port *p)
+> > +{
+> > +	struct dw8250_data *d = to_dw8250_data(p->private_data);
+> > +
+> > +	serial8250_do_shutdown(p);
+> > +
+> > +	clk_rate_exclusive_put(d->clk);
+> > +}
+> 
+> -- 
+> With Best Regards,
+> Andy Shevchenko
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2128181441841546040==--
-
