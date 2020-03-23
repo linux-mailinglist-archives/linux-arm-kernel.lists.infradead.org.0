@@ -2,91 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF0F18F502
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:49:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0119718F50F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:53:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fBsCVYd2f00sbGzjRmspW3IQcfWUFj9gfZn1mEDUUwE=; b=l7mMf2nCpfsiyo
-	Et7nCoVldh7AMcVbdwVLpkS5vZCDcHvAm64ZV0PP7UKOSbrvV2oe0FOdAWpuRux22SebyQCxrHsFq
-	7RVs1x4BWCngL/jsvZ5CSfAlXdJLZ5AA0Hpn9d4CsoT6q6RhRAyQDka7Q8K7RwRan9bFN2oJYRAcD
-	uP2TuGfDDrDGgPR0zRNKt0IVSf/woOgeekHMXg7ttoO0qXfrVK+jndgGG+0HFILItF7kQA/HkuFwk
-	dgoliYyWnhQ6Y2oic4CWemN5jO/OoNnNCSwPPYtnMKsHFKu7gOoYuey5BtRM8qZQbQIa+16o4yVaW
-	zl3R4/ncWNho3lWpv9Zg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=J75SnPg+W3nlVNZcNXqxVoAs1OyATNldISTzCOKFr9c=; b=EAT+gh6is6N7rab4tzkV8lfYCp
+	GiE5ltdY+FK/Vz7aG7KVuZ8UznxeO5mhMeHAeUEaBsg44liJatR7X4cDyCcH6JK7IhuJiSI6VbcN5
+	czANuGTdH0qdeVEpXAFwaG38Xr/drGHEW1cwWi7eWxvgjvKRtt7QOB9vmpi2DOOp0DXoguEJqNhJ3
+	kUT68LEw8WRuIdULKYzkP02ry+/m/KMl5jJdz3SM4u0Y/1reW5dFVD43+n6iW9j+pHV16K5GMhQY3
+	97LJ9jdZKU8g8pULNJ/Vt19ONL5QTR9+FisCSVQE5kI2rLZn88ZLej/EUWMSzrM7Oks7utyPjSwwK
+	yAUE/yAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGMVy-0006zC-Tc; Mon, 23 Mar 2020 12:49:10 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
+	id 1jGMZr-0000aW-3a; Mon, 23 Mar 2020 12:53:11 +0000
+Received: from mail-eopbgr70071.outbound.protection.outlook.com ([40.107.7.71]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGMVe-0006py-18
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:48:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584967729;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=jT01buco6uzW21meg0B5Msg/Bm4GIl6gV7g2Ambj934=;
- b=V/Aov3uQLKxqYLDeMHnKSVD326jYw7ENwiO0XYXpJzCn2l8uoz/14nDpdK9tjlTpvpwiio
- PZreNzFaIJf0Rm4tOg1ABZuHag1D1yoClg1rJA6mpKzYhuMX9KA94VcH5JmhS6V04dWRTA
- udq3pr+ULXlDyBVjW+qQ5tCxRIend7c=
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-63-PDXxN1mlMMGtdQz_2Ji65w-1; Mon, 23 Mar 2020 08:48:45 -0400
-X-MC-Unique: PDXxN1mlMMGtdQz_2Ji65w-1
-Received: by mail-wm1-f69.google.com with SMTP id g9so1899093wmh.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 05:48:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=wF/Z91rii7js9BxWiPX/IJSf6cOn716YQpoQOgnhvlY=;
- b=sooQ3gOtrWwKMDi7vm/4XN66BL5icH/rMSvlgy0e4q4bLXLlgXU5Vj6ZUjeLTOkVKL
- Jje+d26u0Bzkbv77S7FEUC2B7v0vGPSRlaXeTV5tpSBlppSAb96QMv4MEqNeLySr1bqh
- cooXzc1iB+/VzgsEM/0R1oKGrtnYZt8hLCCENYCrg8BTjHOrCBTGT/kOJYFuRVaI0sMJ
- CvoZhYtbSMbs+DQ6uPApZ5S5dY0a9tMeQhG0Asdn9SZRAqxAsU538hxvDUiweHp0aXrt
- PG+q9z1QB1jDvALpWEGLw+F6mdPAmzKzamThR0ZKiXIjO89FpB67/xAQRXJdH0UyH9hr
- i+vg==
-X-Gm-Message-State: ANhLgQ00iRePa4jhL/G1ukMzEOveATyaRc5UbZua7xa8RXH+dF2G6HJp
- 7Kb8wkmAtXGxSToYm/cVDmgnTen3vGrmZSdVKnctEVYDdsAy8v0vzzeOQQw4zmQ9d5ST8eR6i/K
- yfTdplMNYlMem1Xt2UcBTreOVJ30TngYga9w=
-X-Received: by 2002:a1c:5544:: with SMTP id j65mr25700718wmb.60.1584967724309; 
- Mon, 23 Mar 2020 05:48:44 -0700 (PDT)
-X-Google-Smtp-Source: ADFU+vsE+BwUdC/3N3MhWCg3gX3gw8CdW/xveukJtA9Qqd5DxMyzUeCK03I5juokdRkfNo1dgo0DkQ==
-X-Received: by 2002:a1c:5544:: with SMTP id j65mr25700677wmb.60.1584967724024; 
- Mon, 23 Mar 2020 05:48:44 -0700 (PDT)
-Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
- by smtp.gmail.com with ESMTPSA id j39sm24686004wre.11.2020.03.23.05.48.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 05:48:43 -0700 (PDT)
-From: Vitaly Kuznetsov <vkuznets@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>,
- Paolo Bonzini <pbonzini@redhat.com>
-Subject: Re: [PATCH v3 9/9] KVM: SVM: Annotate svm_x86_ops as __initdata
-In-Reply-To: <20200321202603.19355-10-sean.j.christopherson@intel.com>
-References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
- <20200321202603.19355-10-sean.j.christopherson@intel.com>
-Date: Mon, 23 Mar 2020 13:48:41 +0100
-Message-ID: <874kuf9qza.fsf@vitty.brq.redhat.com>
+ id 1jGMZi-0000a9-St
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:53:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GN5oZTEx0uvjbcouq33XjrTVn6eMpmvEvvIRfgE6pKirPDsDTy82qzynEnkBnJp3lYGav0trTnmAu6WlGsQ7V95+CQEEUINUX8qMZ5h6wAQxx0txWbcGAmQcTsugEFF+0SzMMUApM5cyCQ3EZ3VTCKHEv7Upjw02cJJ/VqyIA+1+jbw682uuuMkroFJ3QN1DD4WGabgCnMWvqPsGooAF1xDqbwEyYlOLDafCDEz/xh5TotWKL3lPNqBTrcIQbK460aLuJ0mRDTZs5zdR2Wk5Bl9QE3n22D1f3/d2GIoOtYF1/MHAqojG6AEcTuHMu41nUn6NTFMFIjGQfsAldHIQgA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9F+DRciLefOXZEMyhsAptNtkDNpPWFqNKengWKOBgUE=;
+ b=BIDTcGDX/NIanadUj8puzxCCNB8XIV9of//B4TG19hHmJd6B/B/rDxeg5gfW5ceegFuMCKU/N997pnWMoG2HzSEitxaORxjqXINcnvltz8/SReSBPQvF0s7lJAKjsDoGt+j5wtWGvxDNl8S1kPL73ZwgWc9xaqWOd74M+LQk68hQPBQcdxOP7lI8zlNIciAhbERIVlYe8DfQ9r9PbEuMqu5IZ4ExaoSiFIcEXC3WSGzEFOBjhg0A7nAwrD7GQkEo0ZywaMVLLcCExH3X2/Abt3RBeusA8cufvf4NDbo7qNnz+QfzbMS+ByPzFYksNV9SyH7Nhu00hF98I4U6gGBUIA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9F+DRciLefOXZEMyhsAptNtkDNpPWFqNKengWKOBgUE=;
+ b=Cufwk/RRwp8OX06ngDvE4BPNdRtVZaITEa7G8Rg7AgXpIScBtafIpVHwdHFYIPhuPIuTDQkKIKmE5dVRMP+HB/dz3WFJ1rcA1f1a/W1HNHOx12h743Tj9PBN6YIyiCyyP3K4j6Ot3Cs0mEugm5aYHEJWvkE1GMkIyT+IqYDtb2U=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=laurentiu.tudor@nxp.com; 
+Received: from AM6PR04MB5925.eurprd04.prod.outlook.com (20.179.2.147) by
+ AM6PR04MB6536.eurprd04.prod.outlook.com (20.179.246.222) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.22; Mon, 23 Mar 2020 12:53:00 +0000
+Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
+ ([fe80::dd71:5f33:1b21:cd9e]) by AM6PR04MB5925.eurprd04.prod.outlook.com
+ ([fe80::dd71:5f33:1b21:cd9e%5]) with mapi id 15.20.2835.021; Mon, 23 Mar 2020
+ 12:53:00 +0000
+Subject: Re: [PATCH 08/10] bus/fsl-mc: Export a cleanup function for DPRC
+To: Diana Craciun <diana.craciun@oss.nxp.com>, linux-kernel@vger.kernel.org,
+ stuyoder@gmail.com, leoyang.li@nxp.com,
+ linux-arm-kernel@lists.infradead.org, bharatb.yadav@gmail.com
+References: <20200319154051.30609-1-diana.craciun@oss.nxp.com>
+ <20200319154051.30609-9-diana.craciun@oss.nxp.com>
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Message-ID: <67018c5d-4a60-6b15-ea35-37a36c4f9e0f@nxp.com>
+Date: Mon, 23 Mar 2020 14:52:49 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+In-Reply-To: <20200319154051.30609-9-diana.craciun@oss.nxp.com>
+Content-Language: en-GB
+X-ClientProxiedBy: BYAPR01CA0060.prod.exchangelabs.com (2603:10b6:a03:94::37)
+ To AM6PR04MB5925.eurprd04.prod.outlook.com
+ (2603:10a6:20b:ab::19)
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [10.213.175.155] (192.88.158.246) by
+ BYAPR01CA0060.prod.exchangelabs.com (2603:10b6:a03:94::37) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.19 via Frontend Transport; Mon, 23 Mar 2020 12:52:56 +0000
+X-Originating-IP: [192.88.158.246]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: e648f32d-b481-4046-8c93-08d7cf291de7
+X-MS-TrafficTypeDiagnostic: AM6PR04MB6536:|AM6PR04MB6536:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR04MB6536218E4D19BA4AA275F27CECF00@AM6PR04MB6536.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
+X-Forefront-PRVS: 0351D213B3
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(396003)(346002)(376002)(136003)(366004)(199004)(86362001)(31696002)(26005)(186003)(478600001)(53546011)(52116002)(31686004)(6486002)(36756003)(16526019)(8936002)(8676002)(81156014)(81166006)(66476007)(44832011)(2906002)(316002)(66556008)(16576012)(6666004)(2616005)(956004)(5660300002)(66946007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB6536;
+ H:AM6PR04MB5925.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 18eoEjY4+MoxaHPaYwTwAzTNiR8yxXc1642dTZcHs1HQQX44TtnF7hQ+aDMS+MB3hWVNHcZ9mNtYyQTG4QF9pqXnxLB+P7y3MIykbjCvUWXApyruCbvjBODAg9UHLqlr9P/4AhXCqIpbxBZc7NLWvDXDMwoieXwXmiHS2KUr26ISdkYFF8BMf4J8Hv5Tk5Zi4nuVkFAEAUJxyhXL6xIQsFYvFGgyqn5aMvBIKx0mU1udLz8MLdXoBiCUfqYAU/cts9ePhkOptGrv93q0nsfSJnughnJIa4U6nYypzUD+EbaOEItPk8D1usPP7jbQOVJyeMfrBKupUKwKc+dOSm4lp+43t2mwIm9+NlP5xEGLfJBHCl7JJ/7ZpYteQTKcqVleyTF+sCvDI6TvMh82vGyitfKIbydlItRecAe0WynHyf18SQYrYvFbJo83Z7E3PA+4
+X-MS-Exchange-AntiSpam-MessageData: WhsBiBN/u5qRDf6JTv5KmgK5zpGcuyUvEtYek2St86lx4OdyCSqatPal5O6sRWUvdfcAwKeCu83Ul9eyK1qt3VRt6nu9V9wTAVQhCDGdHFz0IyxLczHr2qLfdrkIN5ABnAX5PVykZlkZvsehXdvQOg==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e648f32d-b481-4046-8c93-08d7cf291de7
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Mar 2020 12:52:59.9946 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: FH4KIslcuILRRNiuE8ptNMJCb1ijPMlzAkBxBVJYndSlmENF76lEDg34Zh97uDPZcNIhSMFOdB0E9n4Z+jwHQw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6536
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_054850_153488_4D2ACFDE 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20200323_055302_936406_12DB7384 
+X-CRM114-Status: GOOD (  20.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.205.24.74 listed in list.dnswl.org]
+ no trust [40.107.7.71 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,7 +118,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,55 +130,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Wanpeng Li <wanpengli@tencent.com>,
- Janosch Frank <frankja@linux.ibm.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Cornelia Huck <cohuck@redhat.com>,
- linux-mips@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- linux-kernel@vger.kernel.org, Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- James Morse <james.morse@arm.com>, kvm-ppc@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sean Christopherson <sean.j.christopherson@intel.com> writes:
 
-> Tag svm_x86_ops with __initdata now the the struct is copied by value to
 
-Same typo, "now that the struct".
-
-> a common x86 instance of kvm_x86_ops as part of kvm_init().
->
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+On 3/19/2020 5:40 PM, Diana Craciun wrote:
+> Create and export a cleanup function for DPRC. The function
+> is used by the DPRC driver, but it will be used by the VFIO
+> driver as well.
+> 
+> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
 > ---
->  arch/x86/kvm/svm.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/x86/kvm/svm.c b/arch/x86/kvm/svm.c
-> index b61bb306602b..ab2a1cf6c188 100644
-> --- a/arch/x86/kvm/svm.c
-> +++ b/arch/x86/kvm/svm.c
-> @@ -7350,7 +7350,7 @@ static void svm_pre_update_apicv_exec_ctrl(struct kvm *kvm, bool activate)
->  	avic_update_access_page(kvm, activate);
+>  drivers/bus/fsl-mc/dprc-driver.c | 52 ++++++++++++++++++++++++--------
+>  include/linux/fsl/mc.h           |  2 ++
+>  2 files changed, 41 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
+> index 789220f0372a..a655e3fee291 100644
+> --- a/drivers/bus/fsl-mc/dprc-driver.c
+> +++ b/drivers/bus/fsl-mc/dprc-driver.c
+> @@ -725,33 +725,25 @@ static void dprc_teardown_irq(struct fsl_mc_device *mc_dev)
 >  }
 >  
-> -static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
-> +static struct kvm_x86_ops svm_x86_ops __initdata = {
->  	.hardware_unsetup = svm_hardware_teardown,
->  	.hardware_enable = svm_hardware_enable,
->  	.hardware_disable = svm_hardware_disable,
+>  /**
+> - * dprc_remove - callback invoked when a DPRC is being unbound from this driver
+> + * dprc_cleanup - function that cleanups a DPRC
+>   *
+>   * @mc_dev: Pointer to fsl-mc device representing the DPRC
+>   *
+> - * It removes the DPRC's child objects from Linux (not from the MC) and
+> - * closes the DPRC device in the MC.
+> - * It tears down the interrupts that were configured for the DPRC device.
+> + * It closes the DPRC device in the MC.
+>   * It destroys the interrupt pool associated with this MC bus.
+>   */
+> -static int dprc_remove(struct fsl_mc_device *mc_dev)
+> +
 
-Reviewed-by: Vitaly Kuznetsov <vkuznets@redhat.com>
+nit: extra white space?
 
--- 
-Vitaly
+---
+Best Regards, Laurentiu
 
+> +int dprc_cleanup(struct fsl_mc_device *mc_dev)
+>  {
+>  	int error;
+>  	struct fsl_mc_bus *mc_bus = to_fsl_mc_bus(mc_dev);
+>  
+>  	if (!is_fsl_mc_bus_dprc(mc_dev))
+>  		return -EINVAL;
+> -	if (!mc_dev->mc_io)
+> -		return -EINVAL;
+>  
+> -	if (!mc_bus->irq_resources)
+> +	if (!mc_dev->mc_io)
+>  		return -EINVAL;
+>  
+> -	if (dev_get_msi_domain(&mc_dev->dev))
+> -		dprc_teardown_irq(mc_dev);
+> -
+> -	device_for_each_child(&mc_dev->dev, NULL, __fsl_mc_device_remove);
+> -
+>  	if (dev_get_msi_domain(&mc_dev->dev)) {
+>  		fsl_mc_cleanup_irq_pool(mc_bus);
+>  		dev_set_msi_domain(&mc_dev->dev, NULL);
+> @@ -768,6 +760,40 @@ static int dprc_remove(struct fsl_mc_device *mc_dev)
+>  		mc_dev->mc_io = NULL;
+>  	}
+>  
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(dprc_cleanup);
+> +
+> +/**
+> + * dprc_remove - callback invoked when a DPRC is being unbound from this driver
+> + *
+> + * @mc_dev: Pointer to fsl-mc device representing the DPRC
+> + *
+> + * It removes the DPRC's child objects from Linux (not from the MC) and
+> + * closes the DPRC device in the MC.
+> + * It tears down the interrupts that were configured for the DPRC device.
+> + * It destroys the interrupt pool associated with this MC bus.
+> + */
+> +static int dprc_remove(struct fsl_mc_device *mc_dev)
+> +{
+> +	int error;
+> +	struct fsl_mc_bus *mc_bus = to_fsl_mc_bus(mc_dev);
+> +
+> +	if (!is_fsl_mc_bus_dprc(mc_dev))
+> +		return -EINVAL;
+> +
+> +	if (!mc_bus->irq_resources)
+> +		return -EINVAL;
+> +
+> +	if (dev_get_msi_domain(&mc_dev->dev))
+> +		dprc_teardown_irq(mc_dev);
+> +
+> +	device_for_each_child(&mc_dev->dev, NULL, __fsl_mc_device_remove);
+> +
+> +	error = dprc_cleanup(mc_dev);
+> +	if (error < 0)
+> +		dev_err(&mc_dev->dev, "dprc_close() failed: %d\n", error);
+> +
+>  	dev_info(&mc_dev->dev, "DPRC device unbound from driver");
+>  	return 0;
+>  }
+> diff --git a/include/linux/fsl/mc.h b/include/linux/fsl/mc.h
+> index 2bdd96a482fb..e3ba273a1122 100644
+> --- a/include/linux/fsl/mc.h
+> +++ b/include/linux/fsl/mc.h
+> @@ -480,6 +480,8 @@ int dprc_scan_container(struct fsl_mc_device *mc_bus_dev,
+>  		   const char *driver_override,
+>  		   bool alloc_interrupts);
+>  
+> +int dprc_cleanup(struct fsl_mc_device *mc_dev);
+> +
+>  /*
+>   * Data Path Buffer Pool (DPBP) API
+>   * Contains initialization APIs and runtime control APIs for DPBP
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
