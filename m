@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3420218F9BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 17:31:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4B8018FA4F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 17:47:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z3OXGLoyFscEXPtDRf0FdTi9rFSxqtbfrZDB+0URV4o=; b=BAaQL4U/nK98CH
-	SqAWK9VxAN/iEZO0F7wDK4RSW5JN7g/M3BodN+WgXn4ChZ9RueA4CTm2EjWHgBGDbdz3VldrUVJTe
-	TYY7ZvgdOII1+8fGHAFyKvo+iDog8METKh5SIl1B4MabKhxGcKPr7+U0opzwjL/lu9EW9EXmAIJvW
-	n+Z/7ynzKy+vmB+hrRIy8kV+I6Xx0e+ZdBKW61hTQkZJs9jt+fWTcpgKPrdXg+H5nLMy4X1PHWF0F
-	EU0D+5WVLT2ESgx/EyXU8ZtISWRdZe29KhxlEseg0r3bFNyaXIv9fIp/hmj58+U0Vr1Y63TFSiGk+
-	1yq0ZAZhBdLNU+3CVFmA==;
+	List-Owner; bh=tjNd1fGpIG9/efOrtQq4c6hEBwyxH/0EMQlz6cTwAqI=; b=nypm2306wHWbTG
+	f9etk2kUnhOVtwNe+L1j9hNPAHoXJtuKmGxU49KB9FSJ9Xz/AI1PkY3KPb0xes4jQYICoQ6yYkQHg
+	Jv2MIO69I5gnvrTyY01weuejTa1XbWmO9mdWFwPpAeouSaMizRInIbl+Tzu/2qjdzzxqqrORtSPOB
+	SYwCAxHUaBpf5F/Z2Alxm8z4pBtMpvdTo9XYKxmFSDSK3nAXeFqbprPQrsj8osbFpILLj5b+/bf6H
+	nLPYv8+TUID8qN20sZydsnz48gx5kgG0SDuE2tnKLAWx01Fb7xD1hryFhLgoJWddhVi3be2bCzYdk
+	geva+PrJHvn8YQ3MGpDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGPzR-0002BH-CX; Mon, 23 Mar 2020 16:31:49 +0000
-Received: from mga05.intel.com ([192.55.52.43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGPzI-0002AF-Im
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 16:31:42 +0000
-IronPort-SDR: G9p34znk9fhvKkDQOYTArAEjtYHfPP5POfKY/21Rwog7i2464SWNSuiz9FTnQDkdZcJ5qtOtWi
- CFprOm/aATRg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 23 Mar 2020 09:31:37 -0700
-IronPort-SDR: szHRtSFDap8tPDDbCZjY8IsJB86JbCOaVx3NCNFM02k1aZo2cLfAgzLVZG93EZD2pGO8Xl0/T8
- x/vNCF1+MuCQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,297,1580803200"; d="scan'208";a="357141639"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 23 Mar 2020 09:31:37 -0700
-Date: Mon, 23 Mar 2020 09:31:36 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Vitaly Kuznetsov <vkuznets@redhat.com>
-Subject: Re: [PATCH v3 2/9] KVM: x86: Move init-only kvm_x86_ops to separate
- struct
-Message-ID: <20200323163136.GO28711@linux.intel.com>
-References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
- <20200321202603.19355-3-sean.j.christopherson@intel.com>
- <87lfnr9sqn.fsf@vitty.brq.redhat.com>
- <20200323152909.GE28711@linux.intel.com>
- <87o8sn82ef.fsf@vitty.brq.redhat.com>
+	id 1jGQEk-0007pw-9S; Mon, 23 Mar 2020 16:47:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGQEd-0007pU-4b
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 16:47:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 274921FB;
+ Mon, 23 Mar 2020 09:47:30 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 91D423F7C3;
+ Mon, 23 Mar 2020 09:47:29 -0700 (PDT)
+Date: Mon, 23 Mar 2020 16:47:24 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Changbin Du <changbin.du@gmail.com>
+Subject: Re: Two questions about cache coherency on arm platforms
+Message-ID: <20200323164723.GA8652@lakrids.cambridge.arm.com>
+References: <20200323123524.w67fici6oxzdo665@mail.google.com>
+ <20200323131720.GE2597@C02TD0UTHF1T.local>
+ <20200323161537.ptjrihqotgmon7tr@mail.google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87o8sn82ef.fsf@vitty.brq.redhat.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20200323161537.ptjrihqotgmon7tr@mail.google.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_093140_633109_A1922983 
-X-CRM114-Status: GOOD (  20.01  )
+X-CRM114-CacheID: sfid-20200323_094731_227305_1249C8D7 
+X-CRM114-Status: GOOD (  16.06  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,109 +65,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 05:24:56PM +0100, Vitaly Kuznetsov wrote:
-> Sean Christopherson <sean.j.christopherson@intel.com> writes:
-> 
-> > On Mon, Mar 23, 2020 at 01:10:40PM +0100, Vitaly Kuznetsov wrote:
-> >> Sean Christopherson <sean.j.christopherson@intel.com> writes:
-> >> 
-> >> > +
-> >> > +	.runtime_ops = &svm_x86_ops,
-> >> > +};
-> >> 
-> >> Unrelated to your patch but I think we can make the naming of some of
-> >> these functions more consistend on SVM/VMX, in particular I'd suggest 
-> >> 
-> >> has_svm() -> cpu_has_svm_support()
-> >> is_disabled -> svm_disabled_by_bios()
-> >> ...
-> >> (see below for VMX)
-> >> 
-> >> > +
-> >> >  static int __init svm_init(void)
-> >> >  {
-> >> > -	return kvm_init(&svm_x86_ops, sizeof(struct vcpu_svm),
-> >> > +	return kvm_init(&svm_init_ops, sizeof(struct vcpu_svm),
-> >> >  			__alignof__(struct vcpu_svm), THIS_MODULE);
-> >> >  }
-> >> >  
-> >> > diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
-> >> > index 07299a957d4a..ffcdcc86f5b7 100644
-> >> > --- a/arch/x86/kvm/vmx/vmx.c
-> >> > +++ b/arch/x86/kvm/vmx/vmx.c
-> >> > @@ -7842,11 +7842,8 @@ static bool vmx_check_apicv_inhibit_reasons(ulong bit)
-> >> >  }
-> >> >  
-> >> >  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> >> > -	.cpu_has_kvm_support = cpu_has_kvm_support,
-> >> > -	.disabled_by_bios = vmx_disabled_by_bios,
-> >> > -	.hardware_setup = hardware_setup,
-> >> >  	.hardware_unsetup = hardware_unsetup,
-> >> > -	.check_processor_compatibility = vmx_check_processor_compat,
-> >> > +
-> >> >  	.hardware_enable = hardware_enable,
-> >> >  	.hardware_disable = hardware_disable,
-> >> >  	.cpu_has_accelerated_tpr = report_flexpriority,
-> >> > @@ -7981,6 +7978,15 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> >> >  	.apic_init_signal_blocked = vmx_apic_init_signal_blocked,
-> >> >  };
-> >> >  
-> >> > +static struct kvm_x86_init_ops vmx_init_ops __initdata = {
-> >> > +	.cpu_has_kvm_support = cpu_has_kvm_support,
-> >> > +	.disabled_by_bios = vmx_disabled_by_bios,
-> >> > +	.check_processor_compatibility = vmx_check_processor_compat,
-> >> > +	.hardware_setup = hardware_setup,
-> >> 
-> >> cpu_has_kvm_support() -> cpu_has_vmx_support()
-> >> hardware_setup() -> vmx_hardware_setup()
-> >
-> > Preaching to the choir on this one.  The VMX functions without prefixes in
-> > in particular annoy me to no end, e.g. hardware_setup().  Though the worst
-> > is probably ".vcpu_create = vmx_create_vcpu", if I had a nickel for every
-> > time I've tried to find vmx_vcpu_create()...
-> >
-> > What if we added a macro to auto-generate the common/required hooks?  E.g.:
-> >
-> >   static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
-> > 	MANDATORY_KVM_X86_OPS(vmx),
-> >
-> > 	.pmu_ops = &intel_pmu_ops,
-> >
-> > 	...
-> >   };
-> >
-> > That'd enforce consistent naming, and would provide a bit of documentation
-> > as to which hooks are optional, e.g. many of the nested hooks, and which
-> > must be defined for KVM to function.
-> 
-> Sounds cool! (not sure that with only two implementations people won't
-> call it 'over-engineered' but cool). My personal wish would just be that
-> function names in function implementations are not auto-generated so
-> e.g. a simple 'git grep vmx_hardware_setup' works but the way how we
-> fill vmx_x86_ops in can be macroed I guess.
-
-Ya, I was thinking of just the macro.  Even that has downsides though, e.g.
-chasing kvm_x86_ops.hardware_setup() to find VMX's hardware_setup() becomes
-a bit kludgy.  On the other hand, _if_ you know how the fill macro works,
-getting to the implementation should be easier.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXIgMjMsIDIwMjAgYXQgMDQ6MTU6NDBQTSArMDAwMCwgQ2hhbmdiaW4gRHUgd3Jv
+dGU6Cj4gSGkgTWFyaywKPiBUaGFua3MgZm9yIHlvdXIgYW5zd2VyLiBJIHN0aWxsIGRvbid0IHVu
+ZGVyc3RhbmQgdGhlIGZpcnN0IHF1ZXN0aW9uLgo+IAo+IE9uIE1vbiwgTWFyIDIzLCAyMDIwIGF0
+IDAxOjE3OjIwUE0gKzAwMDAsIE1hcmsgUnV0bGFuZCB3cm90ZToKPiA+IE9uIE1vbiwgTWFyIDIz
+LCAyMDIwIGF0IDA4OjM1OjI2UE0gKzA4MDAsIENoYW5nYmluIER1IHdyb3RlOgo+ID4gPiBIaSwg
+QWxsLAo+ID4gPiBJIGFtIG5vdCB2ZXJ5IGZhbWlsaWFyIHdpdGggQVJNIHByb2Nlc3NvcnMuIEkg
+aGF2ZSB0d28gcXVlc3Rpb25zIGFib3V0Cj4gPiA+IGNhY2hlIGNvaGVyZW5jeS4gQ291bGQgYW55
+b25lIGhlbHAgbWU/Cj4gPiA+IAo+ID4gPiAxLiBIb3cgaXMgY2FjaGUgY29oZXJlbmN5IG1haW50
+ZW5hbmNlZCBvbiBBUk12OCBiaWcuTElUVExFIHN5c3RlbT8KPiA+ID4gQXMgZmFyIGFzIEkga25v
+dywgYmlnIGNvcmVzIGFuZCBsaXR0bGUgY29yZXMgYXJlIGluIHNlcGVyYXRlIGNsdXN0ZXJzIG9u
+Cj4gPiA+IGJpZy5MSVRUTEUgc3lzdGVtLgo+ID4gCj4gPiBUaGlzIGlzIG9mdGVuIHRydWUsIGJ1
+dCBub3QgYWx3YXlzIHRoZSBjYXNlLiBGb3IgZXhhbXBsZSwgd2l0aCBEU1UgYmlnCj4gPiBhbmQg
+bGl0dGxlIGNvcmVzIGNhbiBiZSBwbGFjZWQgd2l0aGluIHRoZSBzYW1lIGNsdXN0ZXIuCj4gCj4g
+WWVzLCBpdCBpcyB0dXJlIGZvciBEeW5hbUlRIHRoYXQgYmwgY29yZXMgY2FuIGJlIHBsYWNlZCB3
+aXRoaW4gdGhlIHNhbWUgY2x1c3Rlci4KPiBCdXQgSSBkb24ndCB1bmRlcnN0YW5kIGhvdyBsaW51
+eCBzdXBwb3J0IGJpZy5MSVRUTEUgYmVmb3JlIER5bmFtSVEuCgpNdWx0aXBsZSBjbHVzdGVycyBj
+YW4gYmUgaW4gdGhlIHNhbWUgSW5uZXIgU2hhcmVhYmxlIGRvbWFpbiwgYW5kIExpbnV4CnJlbGll
+cyBvbiB0aGlzIGJlaW5nIHRoZSBjYXNlIGZvciBzeXN0ZW1zIGl0IHN1cHBvcnRzLiBJdCdzIHBv
+c3NpYmxlIHRvCmJ1aWxkIGEgc3lzdGVtIHdoZXJlIGNsdXN0ZXJzIGFyZSBpbiBkaXN0aW5jdCBJ
+bm5lciBTaGFyZWFibGUgZG9tYWlucywKYnV0IExpbnV4IGRvZXMgbm90IHN1cHBvcnQgdXNpbmcg
+YWxsIGNvcmVzIG9uIHN1Y2ggYSBzeXN0ZW0uCgpFdmVuIHdpdGggQ0NJLCBDQ04sIENNTiwgZXRj
+LCBMaW51eCByZXF1aXJlcyB0aGF0IGFsbCBjb3JlcyAod2hpY2ggaXQgaXMKdG9sZCBhYm91dCkg
+YXJlIGluIHRoZSBzYW1lIElubmVyIFNoYXJlYWJsZSBkb21haW4uIFRoYXQgaXMgd2hhdCBpcwpj
+b21tb25seSBidWlsdC4KCj4gSSByZWFkIGJlbG93IGRlc2NyaXB0aW9uIGluIEFSTSBDb3J0ZXgt
+QSBTZXJpZXMgUHJvZ3JhbW1lcuKAmXMgR3VpZGUgZm9yCj4gQVJNdjgtQS4KPiAgfCBiaWcuTElU
+VExFIHNvZnR3YXJlIG1vZGVscyByZXF1aXJlIHRyYW5zcGFyZW50IGFuZCBlZmZpY2llbnQgdHJh
+bnNmZXIgb2YgZGF0YSBiZXR3ZWVuIGJpZyBhbmQgTElUVExFIGNsdXN0ZXJzLgo+ICB8IENvaGVy
+ZW5jeSBiZXR3ZWVuIGNsdXN0ZXJzIGlzIHByb3ZpZGVkIGJ5IGEgY2FjaGUtY29oZXJlbnQgaW50
+ZXJjb25uZWN0IHN1Y2ggYXMgdGhlIEFSTSBDb3JlTGluayBDQ0ktNDAwIGRlc2NyaWJlZCBpbiBD
+aGFwdGVyIDE0Lgo+IAo+IFNvIEkgdGhpbmsgIGJpZyBjb3JlcyBhbmQgbGl0dGxlIGNvcmVzIGFy
+ZSBpbiBkaWZmZXJlbnQgY2x1c3RlcnMgaW4gdGhpcwo+IGNhc2UuIFRoZW4gd2UgYXJlIG5vdCB3
+aXRoaW4gdGhlIHNhbWUgSW5uZXIgU2hhcmVhYmxlIGRvbWFpbj8KCkxpbnV4IHJlcXVpcmVzIHRo
+YXQgdGhvc2UgY2x1c3RlcnMgYXJlIGluIHRoZSBzYW1lIElubmVyIFNoYXJlYWJsZQpkb21haW4s
+IGFuZCB0aGF0J3Mgd2hhdCBwZW9wbGUgKG1vc3RseSkgYnVpbGQgdG9kYXkuCgpUaGFua3MsCk1h
+cmsuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
