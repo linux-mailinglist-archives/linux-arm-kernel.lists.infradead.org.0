@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41BEB18F719
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:40:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12E8018F773
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:51:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Inl9mZy7hq31gegZCV0scyxfaxgl89+uDdA7Yt/WxnA=; b=NY407OQjf/lEL1
-	8aZLqGs8NbED+0XetFNyYILYZEhGPkGbYrn4EXRyyqcK5WPmktwXKqoZe5MgcYJb58X0h/9dUHiOS
-	Y6PHqU7s9Fg1w+dEZdnLS3d1uHKyWOKjlNNDQoICMl00AZnRkuh46TfJcHlCdLsaJg4gsZWs93inF
-	DP3yecaQLc6bQEvlwyD2OCO17MGxo8q9rSytpb/fLFOJrzKX2WdUqoTDkY7l5NXcZh55wRbvqg6q0
-	1O9wS9Fxkc0z7wnSLA5q9Ko7dWR9uSlstXQ6VkyW2LoRsoZppggUZCkU2ESgdnpV97ox2vHhnErh8
-	Aabt2c55PsqTQGv/5YAQ==;
+	List-Owner; bh=jcDdhVxNsPuvA7fxz/g8Na4lvZT9dMn3uCIvn9N665c=; b=HA2yobZQLPZd4G
+	0dEj1WZQG6ryh4oGXGRdQzT918jcRH9jF0GXZiUiaM5W6/hheHlTpI7bCvLwNSO6yzIcSzqRrJZqU
+	uwN8GDAtC2uR6Fg+stPFU3EOK7cCVZ3SudWf0pbx/SCWic87wfVwXQW47bKJ3EuDORxst8MaUFuWE
+	W5Oicw5rz59L6S9QA3TyRsfEUV60JLWj6qSBA2rMS/m9UKaTPfpqnYWjqEDYDkboqzJpETSsyTINN
+	Q7TB+pfmsrwVRUjs9fo5foaVq+1UJjfoVqM3qfV9fUMAis2lRD/A5F0r0rMVcevWXJH3AK1XWFJ+k
+	JtbmTwg10E7DSuEh+WcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGOFV-0006j0-4u; Mon, 23 Mar 2020 14:40:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGOFG-0006G2-Ab
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:40:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74305FEC;
- Mon, 23 Mar 2020 07:40:01 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B8773F52E;
- Mon, 23 Mar 2020 07:39:57 -0700 (PDT)
-Date: Mon, 23 Mar 2020 14:39:55 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
-Message-ID: <20200323143954.GC4892@mbp>
-References: <20200316165055.31179-1-broonie@kernel.org>
- <20200320173945.GC27072@arm.com> <20200323122143.GB4892@mbp>
- <20200323132412.GD4948@sirena.org.uk>
- <20200323135722.GA3959@C02TD0UTHF1T.local>
+	id 1jGOPq-0002rg-1D; Mon, 23 Mar 2020 14:50:58 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGOPf-0002gY-8S
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:50:48 +0000
+Received: by mail-wm1-x341.google.com with SMTP id c187so14950070wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 07:50:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=i34UbOzUs3REVmAk537DyHJucnx+pUblYHjMYnRBadQ=;
+ b=NqNc9XHoIQZ8V6qZY8+MeP1dG+j4Hvxyvf7S0NYS9BnpjAt4yansdlyvBEq9+ewTMe
+ f33PqnD7Kr8gQe5qqf8ONzbgvxl8LDkaapE+XnTdergoGgYcJVxD0Ct0dm7jFYJrQzii
+ bhOUKF6S5AhgZW6Oyr2xxHMsoXyrn4vseWNFQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=i34UbOzUs3REVmAk537DyHJucnx+pUblYHjMYnRBadQ=;
+ b=DDbNxE0m/nz/A4MaHvaLo6y6KGr1euLdte6+oTFiICixpzAxwN19JrGVG6DFgXGWZT
+ lDB1MRipzOCUfjiC7QsCbOuu5iU/8HQCdwlzMz7ZR3LQHOrXmtdtaCeHhdSyP0q/0dei
+ KQAn+YE71i1hUPe2lLDgqE+dbugTBMUYHKoMQwQCNhi6wd1Iveqk+6XBlq7Br1dZNruD
+ bXa9FzG7wgxawkqhL5GsiS/Qr7/P7FUiZyIr39kpAVVmb1EbXdQfie2ZHpUPWeLAdeRU
+ wskDdDNRULvhu+ZzZLfdEoYkeXn3aWp8xxljJTHljCWrt/Q5V6R0R99oKTvaKGGAu5HQ
+ Ib4w==
+X-Gm-Message-State: ANhLgQ2r8KOZFcQ5O54Ng7qFkf9MeiGVaUvg4n0f+hcgnQVS0S8E5iA3
+ 8cGVb19kU/1RMiEHJmHCT40+YQ==
+X-Google-Smtp-Source: ADFU+vvry3T0NfLoW2WN162JPNdEkpQ0wBkkc79L4miLaCxGPcNEj2L8c1iiwD3cwBqU4s7IAUyDAg==
+X-Received: by 2002:a1c:a9cf:: with SMTP id
+ s198mr26541733wme.115.1584975045317; 
+ Mon, 23 Mar 2020 07:50:45 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id s22sm20376522wmc.16.2020.03.23.07.50.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 07:50:43 -0700 (PDT)
+From: Daniel Vetter <daniel.vetter@ffwll.ch>
+To: DRI Development <dri-devel@lists.freedesktop.org>
+Subject: [PATCH 34/51] drm/meson: Drop explicit drm_mode_config_cleanup call
+Date: Mon, 23 Mar 2020 15:49:33 +0100
+Message-Id: <20200323144950.3018436-35-daniel.vetter@ffwll.ch>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200323144950.3018436-1-daniel.vetter@ffwll.ch>
+References: <20200323144950.3018436-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323135722.GA3959@C02TD0UTHF1T.local>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_074002_475807_A60CBFE6 
-X-CRM114-Status: GOOD (  22.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_075047_372467_321D195B 
+X-CRM114-Status: GOOD (  14.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,85 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Eugene Syromiatnikov <esyr@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
- "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Sudakshina Das <sudi.das@arm.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Kevin Hilman <khilman@baylibre.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-amlogic@lists.infradead.org,
+ Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 01:57:22PM +0000, Mark Rutland wrote:
-> On Mon, Mar 23, 2020 at 01:24:12PM +0000, Mark Brown wrote:
-> > On Mon, Mar 23, 2020 at 12:21:44PM +0000, Catalin Marinas wrote:
-> > > On Fri, Mar 20, 2020 at 05:39:46PM +0000, Szabolcs Nagy wrote:
-> > 
-> > > +int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
-> > > +                        bool has_interp, bool is_interp)
-> > > +{
-> > > +       if (is_interp != has_interp)
-> > > +               return prot;
-> > > +
-> > > +       if (!(state->flags & ARM64_ELF_BTI))
-> > > +               return prot;
-> > > +
-> > > +       if (prot & PROT_EXEC)
-> > > +               prot |= PROT_BTI;
-> > > +
-> > > +       return prot;
-> > > +}
-> > 
-> > > At a quick look, for dynamic binaries we have has_interp == true and
-> > > is_interp == false. I don't know why but, either way, the above code
-> > > needs a comment with some justification.
-> > 
-> > I don't really know for certain either, I inherited this code as is with
-> > the understanding that this was all agreed with the toolchain and libc
-> > people - the actual discussion that lead to the decisions being made
-> > happened before I was involved.  My understanding is that the idea was
-> > that the dynamic linker would be responsible for mapping everything in
-> > dynamic applications other than itself but other than consistency I
-> > don't know why.  I guess it defers more decision making to userspace but
-> > I'm having a hard time thinking of sensible cases where one might wish
-> > to make a decision other than enabling PROT_BTI.
-> 
-> My understanding was this had been agreed with the toolchain folk a
-> while back -- anything static loaded by the kernel (i.e. a static
-> executable or the dynamic linker) would get GP set. In other cases the
-> linker will mess with the permissions on the pages anyhow, and needs to
-> be aware of BTI in order to do the right thing, so it was better to
-> leave it to userspace consistently (e.g. as that had the least risk of
-> subtle changes in behaviour leading to ABI difficulties).
+It's right above the drm_dev_put().
 
-So this means that the interpreter will have to mprotect(PROT_BTI) the
-text section of the primary executable. For subsequent libraries, it
-calls mmap() explicitly anyway but not for the main executable (IIUC).
+This is made possible by a preceeding patch which added a drmm_
+cleanup action to drm_mode_config_init(), hence all we need to do to
+ensure that drm_mode_config_cleanup() is run on final drm_device
+cleanup is check the new error code for _init().
 
-> > I'd be perfectly happy to drop the check if that makes more sense to
-> > people, otherwise I can send a patch adding a comment explaining the
-> > situation.
-> 
-> I think it would be best to document the current behaviour, as it's a
-> simple ABI that we can guarantee, and the dynamic linker will have to be
-> aware of BTI in order to do the right thing anyhow.
+Aside: This driver gets its devm_ stuff all wrong wrt drm_device and
+anything hanging off that. Not the only one unfortunately.
 
-That's a valid point. If we have an old dynamic linker and the kernel
-enabled BTI automatically for the main executable, could things go wrong
-(e.g. does the PLT need to be BTI-aware)?
+v2: Explain why this cleanup is possible (Laurent).
 
+v3: Use drmm_mode_config_init() for more clarity (Sam, Thomas)
+
+Cc: Sam Ravnborg <sam@ravnborg.org>
+Cc: Thomas Zimmermann <tzimmermann@suse.de>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com> (v2)
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Kevin Hilman <khilman@baylibre.com>
+Cc: linux-amlogic@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/gpu/drm/meson/meson_drv.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index b5f5eb7b4bb9..6f29fab79952 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -284,7 +284,9 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	/* Remove early framebuffers (ie. simplefb) */
+ 	meson_remove_framebuffers();
+ 
+-	drm_mode_config_init(drm);
++	ret = drmm_mode_config_init(drm);
++	if (ret)
++		goto free_drm;
+ 	drm->mode_config.max_width = 3840;
+ 	drm->mode_config.max_height = 2160;
+ 	drm->mode_config.funcs = &meson_mode_config_funcs;
+@@ -379,7 +381,6 @@ static void meson_drv_unbind(struct device *dev)
+ 	drm_dev_unregister(drm);
+ 	drm_irq_uninstall(drm);
+ 	drm_kms_helper_poll_fini(drm);
+-	drm_mode_config_cleanup(drm);
+ 	drm_dev_put(drm);
+ }
+ 
 -- 
-Catalin
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
