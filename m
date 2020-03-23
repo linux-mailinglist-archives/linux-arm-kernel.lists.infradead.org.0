@@ -2,83 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F10218F876
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:22:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85EDD18F89A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 16:29:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MDAurhVU2MrI9GMo4cU0SyrpQ3ghGmJ3jUblG4VqWFQ=; b=Y2eltwIfZRFkmR
-	OUc3NXCN8DjAd2Jmojo8RL+KuUijDzM5dJQYISeZljD9Vu9PZt898Cu7uzES5a4h87ewA6s0mqojN
-	6jEiJO+aqjaHZcdazqdeOFXqLMqJokS3c6c3+GfefsirBMiEylcKaNI5jcKCOQP/bY6LuxsKp9VIZ
-	2AoDagxCWhVMXt7LVC/pNfh13JgrtR4m/dCtQTcNxLOu1IWWyuuYBoNV75WzlEhlmIvBm/S46yDy7
-	lbwl1y7SXwDmmlwJtb7eziEX7xtufR9snD1E9Sr5o5ABNOF0jBemv2kMJuRatGG/YX8+9QPZpAjAk
-	T594/Ti+oxxZ6ptHQp8A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M+vfhfgYM0ccsytCRBBX4r8Fvi1S5q7ZHCPeZqzqe4c=; b=rCy0siosZ9Qjaz
+	/AJmAbijNvYTBTzDCMaxtRWKL7zeMGDCX9qcDEMlz/AtZ2P0EtuakmT/cHD+GcXmRGM2F0XcPnBj8
+	I2+LkR6c9ILq8baV6PwkR0D1gbiEZEV/534y4uSm9Dt1Fdjy03VYZ4qWBt4scxYyZ+qld9+KVWO/K
+	NoCgN2yFTu0OosYHjzNhg9JJTc3seta3clVtZ0guBhByoPn4BLKoUVATYGC0OgjS2KfgROlC07IhP
+	fBWwQob7evJqLLRVzCmAgI1t+HEcXgzbflG0/RoUSgi4FuFC2lGBWdLxPqeKv6gQwRKBkflhd4k0l
+	4Njq44ztazNfAx5QMZVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGOuL-0002wk-1A; Mon, 23 Mar 2020 15:22:29 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jGP10-000647-RB; Mon, 23 Mar 2020 15:29:22 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGOuD-0002vy-Cr; Mon, 23 Mar 2020 15:22:22 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t7so12897801wrw.12;
- Mon, 23 Mar 2020 08:22:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=bncEk+EpLmv9ZY8xJL78D4hkIi57iyy3GsMYnyuavO4=;
- b=qxaGiEDAW6ztaAHexshNvQtpr1QKMkRGljCQsS9T2Od9JzbEa4D7AmbwwJEGWDQglc
- FYWVd0Ti3JQ/5nr1RqQKoXOaEqFAizkLm8TEtg60WWaF/AT8l+80vWcO6h2dDiPK/gRR
- 1hXlWnfrxYCvJl/1FLqFzmWe88geQ5TrbWm82tdXz6VIDL2QWVw9VzcQ1pf0+U9Pnz/j
- eODN+XaNQsPM8H9b/KSZUd33A3hykMnhvgVSzaiYtcehnl9t4C4g9pE0YXfsGk8NTSNa
- RCRrr/Iw/E+pbz/KNuyB0aXs9GcX09Xq+vnRnt3cJfu+5kjyndSQoKn11x+FH39ZrvmY
- FvNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=bncEk+EpLmv9ZY8xJL78D4hkIi57iyy3GsMYnyuavO4=;
- b=V93JeUIgcpuQXM4vsBOuE9+ku8+kgjqoyjlAZMBLGyYijvsB+PEBOJdsUtZ21xThND
- MsmNeHtSNY898no+t7aMLEMM5X3Hc0xux4+40uVuoTEvuDK4FitJmPWjjz5LANkMjT6m
- JGhPB2zOn/M1fgUai+/Ph5DQcgL9s1Tox1TwrXG/iA+VM4nBVlJ8yUEGkLndqyALmAxj
- rp6fkYvM/ymoNrU60pUYljp3Ky/ksD2bJfqPCKSmW7fTJWvvt1Tq1Dafnc5fcf1jLaIr
- BCVS1jUjN6IzBaFHy5jZ3LuLtJVnixQRmEE1Dv9+UgkW17cc4OXk6utJiyDHjjeym2T2
- sMMQ==
-X-Gm-Message-State: ANhLgQ1PJdndVelnjAztC+wnjMw4hoqBlWGnQgZuSaQsOfhIk+uGGPAt
- 1qJG+YzsWDE1i7Y99gnzbg/4W+dTTqjMUE+J5ccc690p
-X-Google-Smtp-Source: ADFU+vsU/rl4EDgJVLLbr1Nu4MVjX6+uamUg9STL/ByhvnRYILvL1J+HRV1XL8iDTqymEL54RNZ971b6NsVLOJ5Q/fs=
-X-Received: by 2002:a5d:6044:: with SMTP id j4mr28959169wrt.232.1584976937505; 
- Mon, 23 Mar 2020 08:22:17 -0700 (PDT)
+ id 1jGP0s-000637-LO
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 15:29:16 +0000
+IronPort-SDR: xZeeNRjjtbnVVjh42PHHN2Xcbh4CfUKRT0oRwv09xa2Iw15U7f/pgwkEioa4oGQDuBe1gxZ2lF
+ qno0dr2Lp0iw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 23 Mar 2020 08:29:10 -0700
+IronPort-SDR: yayqoarf0l9NveDHmC/sqla8uNPjr0N8shaxffNuAwPkByVFjT7hsOSfphorNwP7R2dv9kN0mF
+ tMgMyB8VORFA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,296,1580803200"; d="scan'208";a="269910183"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by fmsmga004.fm.intel.com with ESMTP; 23 Mar 2020 08:29:09 -0700
+Date: Mon, 23 Mar 2020 08:29:09 -0700
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Vitaly Kuznetsov <vkuznets@redhat.com>
+Subject: Re: [PATCH v3 2/9] KVM: x86: Move init-only kvm_x86_ops to separate
+ struct
+Message-ID: <20200323152909.GE28711@linux.intel.com>
+References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
+ <20200321202603.19355-3-sean.j.christopherson@intel.com>
+ <87lfnr9sqn.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Mon, 23 Mar 2020 20:51:40 +0530
-Message-ID: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
-Subject: arm64: Getting continuous PCIe "CmpltTO" AER from network card in
- kdump kernel
-To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- kexec mailing list <kexec@lists.infradead.org>
+Content-Disposition: inline
+In-Reply-To: <87lfnr9sqn.fsf@vitty.brq.redhat.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_082221_460945_06B5774C 
-X-CRM114-Status: UNSURE (   6.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_082914_748127_7A345EB5 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,50 +76,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <helgaas@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- will.deacon@arm.com, Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+On Mon, Mar 23, 2020 at 01:10:40PM +0100, Vitaly Kuznetsov wrote:
+> Sean Christopherson <sean.j.christopherson@intel.com> writes:
+> 
+> > +
+> > +	.runtime_ops = &svm_x86_ops,
+> > +};
+> 
+> Unrelated to your patch but I think we can make the naming of some of
+> these functions more consistend on SVM/VMX, in particular I'd suggest 
+> 
+> has_svm() -> cpu_has_svm_support()
+> is_disabled -> svm_disabled_by_bios()
+> ...
+> (see below for VMX)
+> 
+> > +
+> >  static int __init svm_init(void)
+> >  {
+> > -	return kvm_init(&svm_x86_ops, sizeof(struct vcpu_svm),
+> > +	return kvm_init(&svm_init_ops, sizeof(struct vcpu_svm),
+> >  			__alignof__(struct vcpu_svm), THIS_MODULE);
+> >  }
+> >  
+> > diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
+> > index 07299a957d4a..ffcdcc86f5b7 100644
+> > --- a/arch/x86/kvm/vmx/vmx.c
+> > +++ b/arch/x86/kvm/vmx/vmx.c
+> > @@ -7842,11 +7842,8 @@ static bool vmx_check_apicv_inhibit_reasons(ulong bit)
+> >  }
+> >  
+> >  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+> > -	.cpu_has_kvm_support = cpu_has_kvm_support,
+> > -	.disabled_by_bios = vmx_disabled_by_bios,
+> > -	.hardware_setup = hardware_setup,
+> >  	.hardware_unsetup = hardware_unsetup,
+> > -	.check_processor_compatibility = vmx_check_processor_compat,
+> > +
+> >  	.hardware_enable = hardware_enable,
+> >  	.hardware_disable = hardware_disable,
+> >  	.cpu_has_accelerated_tpr = report_flexpriority,
+> > @@ -7981,6 +7978,15 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+> >  	.apic_init_signal_blocked = vmx_apic_init_signal_blocked,
+> >  };
+> >  
+> > +static struct kvm_x86_init_ops vmx_init_ops __initdata = {
+> > +	.cpu_has_kvm_support = cpu_has_kvm_support,
+> > +	.disabled_by_bios = vmx_disabled_by_bios,
+> > +	.check_processor_compatibility = vmx_check_processor_compat,
+> > +	.hardware_setup = hardware_setup,
+> 
+> cpu_has_kvm_support() -> cpu_has_vmx_support()
+> hardware_setup() -> vmx_hardware_setup()
 
-I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
-Here network card is continuously giving following AER error
-[  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-aer_mask: 0x00000000
-[  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-[  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-aer_agent=Requester ID
-[  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
+Preaching to the choir on this one.  The VMX functions without prefixes in
+in particular annoy me to no end, e.g. hardware_setup().  Though the worst
+is probably ".vcpu_create = vmx_create_vcpu", if I had a nickel for every
+time I've tried to find vmx_vcpu_create()...
 
-This error is not 100% reproducible. It happens 1 out of 4 try.
+What if we added a macro to auto-generate the common/required hooks?  E.g.:
 
-This error goes away in following two scenarios
-A) Set iommu in bypass mode via bootargs iommu.passthrough=1
-B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
-        if (reg & CR0_SMMUEN) {
-                dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
-                WARN_ON(is_kdump_kernel() && !disable_bypass);
-                mdelay(100);  <-- Added delay
-                arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
-        }
+  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+	MANDATORY_KVM_X86_OPS(vmx),
 
-From A), it is clear that it is related to IOMMU
-From B), looks like during boot of kdump kernel, network card is still
-active and it has sent some request over PCIe.
-as GPBA_ABORT bit is set, no response/completion coming to PCIe
-controller hence "CmpltTO" error.
+	.pmu_ops = &intel_pmu_ops,
 
-Ideally before setting GPBA_ABORT bit, there should be some check for
-active transaction. if it is not possible, a wait should be done to
-assure that no more pending transaction left.
+	...
+  };
 
-why any such delay has not been considered?
-
---pk
+That'd enforce consistent naming, and would provide a bit of documentation
+as to which hooks are optional, e.g. many of the nested hooks, and which
+must be defined for KVM to function.
 
 _______________________________________________
 linux-arm-kernel mailing list
