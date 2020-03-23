@@ -2,58 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6039718F14C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 09:54:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE36018F160
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:04:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OGEcoi1YpJLXcXxnSR7oSCgnbLlZwOAWgJBhP5gvQf4=; b=rkIUZGNjrGQy7JcRn2hnmwS7q
-	hVvlT9LMFpfYfZPF3gnZQ6GLuBZNvr4InroG2Qo6MyBV20Cv1aOpEYkyaR3/fWJdgDd12EVSNW55p
-	o50LH9vAOe7GscVHnIEB+Sf7oV3MjJrsCnU2FTkFOY0NpGrAE3RDXN5hqjkUKvmDJwhlV4ZAXgd8w
-	OsIxmmsVev1lQRlqwk991JhXy5y6TDBhpuM+lptWUPjdnaR1jXF7umUwR7NJC6AdeGuSQnvesn5OF
-	8UWvACrqobTDt+F9WzLKCZgN9uNz4V8hqeamlUo8j11m7ABpANEIhwJOnns63mr7ew4zxl/nZyuaW
-	MgdtuVRbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eneqxnoQTbmUz3Xg73KBTRK66Te+G5ZkhK9XUVEs+wQ=; b=cNloLrffZvtJN9lHUvzr0hzwEy
+	lPF/28V3wuJw6ezsvxzhrGMq32AO+W2ijt1Kdtvd/4aGE5PXmBxbu5SNT3UVCCMok+pNY7Am2/xbF
+	Rd3ukFh+JE7bD4Tl94595j2r8raXID3dmjgKDPIavgyHuWf4e/+80D8XzTKGz1YdMH7NPj/y004z0
+	G+64CjAIYMPyjMMJIA0JXjmzAy9fq6rQEm04aBZMhXAwqccrUk2OmCAj+AS1d/zmJER4ooJLHCKvD
+	JmcDrksmYiUKFBNTKumWs4CtGbzYHvbWZRlGGmqYtmCcF+09U5mIJrDROQixRUOiTVJNnTpVKBNkg
+	ppXTYo1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGIr3-00072h-Gl; Mon, 23 Mar 2020 08:54:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGIqu-00071n-AP
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 08:54:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B627631B;
- Mon, 23 Mar 2020 01:54:31 -0700 (PDT)
-Received: from [10.57.24.152] (unknown [10.57.24.152])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D41E63F792;
- Mon, 23 Mar 2020 01:54:30 -0700 (PDT)
-Subject: Re: [PATCH v5 00/13] SCMI Notifications Core Support
-To: Lukasz Luba <lukasz.luba@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20200316150334.47463-1-cristian.marussi@arm.com>
- <e51598b5-2c7b-56f2-4426-9cce3d5d3d52@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <00e588ec-9bc7-88e2-5e57-e0c223450693@arm.com>
-Date: Mon, 23 Mar 2020 08:54:41 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jGJ0J-0004er-BY; Mon, 23 Mar 2020 09:04:15 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGJ03-0004e9-6F
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:04:01 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b12so677026wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 02:03:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=lPutVzS3Ynb1eSmgIsa4JmohPw4ZclRrh1KFVq8nWQ0=;
+ b=waSIN8+ApYqW/LXnPGRL/NvneWe4/UMrJ9lHgLm+ihlGugDYOwJ6NZkrFpWxvP6MC8
+ GNsIhdx1sE0PQNevvLnFU8JLGhBZQCcM2iuXOWZHDd6af+85XDnWTjRVbwkVfZgA6PeF
+ l0e1vdhqnc8FBwWg8vUGp27gtAkcfvVU/5tktj+zX+p8+lBs6MC90BoMyIOLPH2MhaTo
+ 45RTZrMkvxEjep4JO6e+BufQZJamczxfLM8nme9e6rCkqkb9C0FBnOjVf9PxprElx5Zj
+ rmrlPd6yS7hTFWmy4oW4XCTX9u6yeSNaotUzdicCYqM0JaLIz/ug+LCBJ9x1OWwCwopN
+ OKDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=lPutVzS3Ynb1eSmgIsa4JmohPw4ZclRrh1KFVq8nWQ0=;
+ b=AU4k8YGEy+bUGtDu/5PUB+MhbJqMo+5WfKpbhjLLAD0nBdlTEciLUgqzNrC2X420Qr
+ p4gc4rwN56v417w9xpTCLqqide3Q/sRfc4MYWK7JNwpPOh0KKBT0rQiLjrL3bdFm5t6I
+ OwXi7mzfJSEZIiRXxhhm8xaioXmbUfKqrjjWHSkObP6h6iaxH6o8S2jioiJ0Z5RrSCxB
+ 20w/NS/SU8hdoerSHgJkeIZHoFw3aaJUtEGgrBFq49jQX6iFwN0Q+R/ElPTGZExsZmnh
+ NIm2k0CK+0RDQ9wbPEpAbDEHnZjOICYxWfJFgZnbZOPCJZTC4K5fJhjhwCW6obcO8dk0
+ bj8w==
+X-Gm-Message-State: ANhLgQ0Hk/6AL6iVdHq/jpSZPP9yHZtcRAkqox/wlppXqLshMLOoDQuW
+ M1voVfEHd1MfhBq6nxnBn+ScXw==
+X-Google-Smtp-Source: ADFU+vta0fIyRtESZphpxuC88pwvr1xjRflNRJ4U+UNesyEuY+m+xd0K3+8cVkrJCyM2KNvZ6DRGtA==
+X-Received: by 2002:a1c:b144:: with SMTP id a65mr27313095wmf.54.1584954237568; 
+ Mon, 23 Mar 2020 02:03:57 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id f15sm22881505wru.83.2020.03.23.02.03.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 02:03:56 -0700 (PDT)
+References: <20200302125310.742-1-linux.amoon@gmail.com>
+ <20200302125310.742-3-linux.amoon@gmail.com> <7hlfoir8rj.fsf@baylibre.com>
+ <CAFBinCB2WXZNRg4wdFD0RJ5k4hHqcfAOCHemvHzZE42-Mo5vzA@mail.gmail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>
+Subject: Re: [PATCHv2 2/2] clk: meson: g12a: set cpub_clk flags to
+ CLK_IS_CRITICAL
+In-reply-to: <CAFBinCB2WXZNRg4wdFD0RJ5k4hHqcfAOCHemvHzZE42-Mo5vzA@mail.gmail.com>
+Date: Mon, 23 Mar 2020 10:03:55 +0100
+Message-ID: <1jr1xjcuis.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <e51598b5-2c7b-56f2-4426-9cce3d5d3d52@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_015432_449742_01741C63 
-X-CRM114-Status: GOOD (  19.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_020359_228869_629E2E35 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,81 +99,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan.Cameron@Huawei.com, james.quinlan@broadcom.com,
- sudeep.holla@arm.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, Anand Moon <linux.amoon@gmail.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTHVrYXN6CgpPbiAzLzE4LzIwIDk6MDEgQU0sIEx1a2FzeiBMdWJhIHdyb3RlOgo+IEhpIENy
-aXN0aWFuLAo+IAo+IE9uIDMvMTYvMjAgMzowMyBQTSwgQ3Jpc3RpYW4gTWFydXNzaSB3cm90ZToK
-Pj4gSGkgYWxsLAo+Pgo+PiB0aGlzIHNlcmllcyB3YW50cyB0byBpbnRyb2R1Y2UgU0NNSSBOb3Rp
-ZmljYXRpb24gU3VwcG9ydCwgYnVpbHQgb24gdG9wIG9mCj4+IHRoZSBzdGFuZGFyZCBLZXJuZWwg
-bm90aWZpY2F0aW9uIGNoYWluIHN1YnN5c3RlbS4KPj4KPj4gQXQgaW5pdGlhbGl6YXRpb24gdGlt
-ZSBlYWNoIFNDTUkgUHJvdG9jb2wgdGFrZXMgY2FyZSB0byByZWdpc3RlciB3aXRoIHRoZQo+PiBu
-ZXcgU0NNSSBub3RpZmljYXRpb24gY29yZSB0aGUgc2V0IG9mIGl0cyBvd24gZXZlbnRzIHdoaWNo
-IGl0IGludGVuZHMgdG8KPj4gc3VwcG9ydC4KPj4KPj4gVXNpbmcgdGhlIEFQSSBleHBvc2VkIHZp
-YSBzY21pX2hhbmRsZS5ub3RpZnlfb3BzIGEgS2VybmVsIHVzZXIgY2FuIHJlZ2lzdGVyCj4+IGl0
-cyBvd24gbm90aWZpZXJfdCBjYWxsYmFjayAodmlhIGEgbm90aWZpZXJfYmxvY2sgYXMgdXN1YWwp
-IGFnYWluc3QgYW55Cj4+IHJlZ2lzdGVyZWQgZXZlbnQgYXMgaWRlbnRpZmllZCBieSB0aGUgdHVw
-bGU6Cj4+Cj4+IMKgwqDCoMKgwqDCoMKgIChwcm90b19pZCwgZXZlbnRfaWQsIHNyY19pZCkKPj4K
-Pj4gd2hlcmUgc3JjX2lkIHJlcHJlc2VudHMgYSBnZW5lcmljIHNvdXJjZSBpZGVudGlmaWVyIHdo
-aWNoIGlzIHByb3RvY29sCj4+IGRlcGVuZGVudCBsaWtlIGRvbWFpbl9pZCwgcGVyZm9ybWFuY2Vf
-aWQsIHNlbnNvcl9pZCBhbmQgc28gZm9ydGguCj4+ICh1c2VycyBjYW4gYW55d2F5IGRvIE5PVCBw
-cm92aWRlIGFueSBzcmNfaWQsIGFuZCBzdWJzY3JpYmUgaW5zdGVhZCB0byBBTEwKPj4gwqAgdGhl
-IGV4aXN0aW5nIChpZiBhbnkpIHNyY19pZCBzb3VyY2VzIGZvciB0aGF0IHByb3RvX2lkL2V2dF9p
-ZCBjb21iaW5hdGlvbikKPj4KPj4gRWFjaCBvZiB0aGUgYWJvdmUgdHVwbGUtc3BlY2lmaWVkIGV2
-ZW50IHdpbGwgYmUgc2VydmVkIG9uIGl0cyBvd24gZGVkaWNhdGVkCj4+IGJsb2NraW5nIG5vdGlm
-aWNhdGlvbiBjaGFpbiwgZHluYW1pY2FsbHkgYWxsb2NhdGVkIG9uLWRlbWFuZCB3aGVuIGF0IGxl
-YXN0Cj4+IG9uZSB1c2VyIGhhcyBzaG93biBpbnRlcmVzdCBvbiB0aGF0IGV2ZW50Lgo+Pgo+PiBV
-cG9uIGEgbm90aWZpY2F0aW9uIGRlbGl2ZXJ5IGFsbCB0aGUgdXNlcnMnIHJlZ2lzdGVyZWQgbm90
-aWZpZXJfdCBjYWxsYmFja3MKPj4gd2lsbCBiZSBpbiB0dXJuIGludm9rZWQgYW5kIGZlZCB3aXRo
-IHRoZSBldmVudF9pZCBhcyBAYWN0aW9uIHBhcmFtIGFuZCBhCj4+IGdlbmVyYXRlZCBjdXN0b20g
-cGVyLWV2ZW50IHN0cnVjdCBfcmVwb3J0IGFzIEBkYXRhIHBhcmFtLgo+PiAoYXMgaW4gaW5jbHVk
-ZS9saW51eC9zY21pX3Byb3RvY29sLmgpCj4+Cj4+IFRoZSBmaW5hbCBzdGVwIG9mIG5vdGlmaWNh
-dGlvbiBkZWxpdmVyeSB2aWEgdXNlcnMnIGNhbGxiYWNrIGludm9jYXRpb24gaXMKPj4gaW5zdGVh
-ZCBkZWxlZ2F0ZWQgdG8gYSBwb29sIG9mIGRlZmVycmVkIHdvcmtlcnMgKEtlcm5lbCBjbXdxKTog
-ZWFjaAo+PiBTQ01JIHByb3RvY29sIGhhcyBpdHMgb3duIGRlZGljYXRlZCB3b3JrZXIgYW5kIGRl
-ZGljYXRlZCBxdWV1ZSB0byBwdXNoCj4+IGV2ZW50cyBmcm9tIHRoZSByeCBJU1IgdG8gdGhlIHdv
-cmtlci4KPj4KPiAKPiBDb3VsZCB5b3UgZ2l2ZSBhbiBleGFtcGxlIGhvdyB0aGUgbm90aWZpY2F0
-aW9uIHdvdWxkIGJlIGRlbGl2ZXJlZAo+IGZ1cnRoZXIgdG8gdGhlIHVwcGVyIGxheWVycywgbGlr
-ZSBod21vbiBkcml2ZXIsIGNwdWZyZXEgb3IgdGhlcm1hbD8KClN1cmUuIEkgdGVzdGVkIHJlZ2lz
-dGVyaW5nIHZhcmlvdXMgY2FsbGJhY2tzIGFnYWluc3QgUEVSRiBldmVudHMgKHNpbmNlIHRoZXkn
-cmUKd2hhdCBJIGhhdmUgYXZhaWxhYmxlIG9uIG15IHBsYXRmb3JtIGltcGxlbWVudGF0aW9uKTsg
-SSB1c2VkIHByb2JlKCkgaW4gc2NtaS1nZW5wZAphbmQgc2NtaS1jcHVmcmVxIHRvIHJlZ2lzdGVy
-IGdlbmVyaWMgdGVzdGluZyBjYWxsYmFja3MgbGlrZToKCnNjbWlfY3B1ZnJxX3Byb2JlKCkKCi4u
-LgoJc3JjX2lkID0gMHgwMDsKCWhhbmRsZS0+bm90aWZ5X29wcy0+cmVnaXN0ZXJfZXZlbnRfbm90
-aWZpZXIoaGFuZGxlLCBTQ01JX1BST1RPQ09MX1BFUkYsCgkJCQkJCSAgICAweDEsICZzcmNfaWQs
-ICZteV9jcHVmcmVxX25iKTsKCmFuZCByZW1vdmluZyBzaW1pbGFybHkgaW4gcmVtb3ZlKCkuCgpJ
-J2xsIHNlbmQgeW91IG15IGRlYnVnIHBhdGNoZXMgdGhhdCBpbmNsdWRlcyBnZW5wZC9jcHVmcmVx
-IGNhbGxiYWNrcyByZWdpc3RyYXRpb24gYW5kCmFuIGFkZGl0aW9uYWwgZHVtbXkgZHJpdmVyIHRo
-YXQganVzdCByZWdpc3RlcnMgcGVyZiBjYWxsYmFja3Mgc28geW91IGNhbiBoYXZlIGEgYmV0dGVy
-IGlkZWEKb2YgdGhlIGludGVuZGVkIHVzYWdlLgoKPiBGb3IgZXhhbXBsZSwgZm9yIHNlbnNvciBw
-cm90b2NvbCB3aGljaCBkZWxpdmVycyBldmVudAo+IFNFTlNPUl9UUklQX1BPSU5UX0VWRU5UIGlu
-ZGljYXRpbmcgYSB0cmlwIHBvaW50IHdhcyBjcm9zc2VkLgo+CgpSZWdhcmRpbmcgc2Vuc29ycyBp
-dCBjb3VsZCBiZSBzb21ldGhpbmcgbGlrZToKCgoJc2Vuc29yX2lkID0gMHgwMDsKCgloYW5kbGUt
-Pm5vdGlmeV9vcHMtPnJlZ2lzdGVyX2V2ZW50X25vdGlmaWVyKGhhbmRsZSwgU0NNSV9QUk9UT0NP
-TF9TRU5TT1IsCgkJCQkJCSAgICAweDAsICZzZW5zb3JfaWQsICZteV9zZW5zb3JfbmIpOwoKCWhh
-bmRsZS0+c2Vuc29yX29wcy0+dHJpcF9wb2ludF9jb25maWcoaGFuZGxlLCBzZW5zb3JfaWQsIDAs
-IDEwMDAwKTsKICAKTm90ZSB0aGF0IHRoZSBub3RpZmljYXRpb24gY29yZSB0YWtlcyBjYXJlIG9u
-IGl0cyBvd24gb2YgZW5hYmxpbmcgdGhlIHNwZWNpZmljIGV2ZW50cyBnZW5lcmF0aW9uCndoZW4g
-eW91IHJlZ2lzdGVyIHRoZSBmaXJzdCBjYWxsYmFjayBmb3IgYSBzcGVjaWZpYyBldmVudCBhcyBp
-ZGVudGlmaWVkIGJ5IChwcm90b19pZCwgZXZlbnRfaWQsIHNyY19pZCkKYnV0IGluIHRoZSBjYXNl
-IG9mIHRoZSBzZW5zb3IgcHJvdG9jb2wgeW91J2xsIG5lZWQgdG8gZXhwbGljaXRseSBzZXR1cCB0
-aGUgdHJpcF9wb2ludCB0b28uCgpBcyBhIHJlc3VsdCB3aGVuIHRoZSB0cmlwIHBvaW50IGlzIGNy
-b3NzZWQgeW91J2xsIHJlY2VpdmUgaW4geW91ciBjYWxsYmFjayBhIHNlbnNvcl9yZXBvcnQKKGFz
-IGluIGluY2x1ZGUvbGludXgvc2NtaV9wcm90b2NvbC5oKSBhcyB5b3VyIGRhdGEgYXJnLgoKSSBq
-dXN0IHJlYWxpemVkIHRoYXQgYmVpbmcgdGhlIG5vdGlmaWNhdGlvbiBlbmFibGUgbWV0aG9kICh0
-cmlwX25vdGlmeSkgYWxzbyBleHBvc2VkIGJ5IHRoZSBvcHMgZGlyZWN0bHksCkkgc2hvdWxkIHBy
-b2JhYmx5IGFkZCBzb21lIHNvcnQgb2YgYWxlcnQgZm9yIGEgdXNlci4uLnNpbmNlIGl0IGlzIG5v
-dCBtZWFudCB0byBiZSB1c2VkIGRpcmVjdGx5IHdoZW4KdGhlIG5vdGlmaWNhdGlvbiBzdWJzeXN0
-ZW0gaXMgYmVpbmcgdXNlZC4uLi5JJ2xsIHRoaW5rIGFib3V0IHRoaXMgcGl0ZmFsbC4KCj4gV291
-bGQgaXQgYmUgcG9zc2libGUgZm9yOgo+IGRyaXZlcnMvaHdtb24vc2NtaS1od21vbi5jCj4gdG8g
-Z2V0IHRoaXMgdGVtcGVyYXR1cmUgZXZlbnRzIGxpa2UgYW4gaW50ZXJydXB0Pwo+IAoKU29ycnkg
-SSBkaWQgbm90IGdldCB3aGF0IHlvdSBtZWFuIGhlcmUuCgpSZWdhcmRzCgpDcmlzdGlhbgoKPiBJ
-IGNvdWxkbid0IGZpbmQgaXQgaW4gdGhlIGltcGxlbWVudGF0aW9uIG9mIHRoZSByZWdpc3RlcmVk
-IGhhbmRsZXJzLgo+IAo+IFJlZ2FyZHMsCj4gTHVrYXN6CgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+On Fri 20 Mar 2020 at 00:39, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+
+> Hi Kevin,
+>
+> On Mon, Mar 2, 2020 at 6:01 PM Kevin Hilman <khilman@baylibre.com> wrote:
+> [...]
+>> > updating flags to CLK_IS_CRITICAL which help enable all the parent for
+>> > cpub_clk.
+>>
+>> With current mainline, I've tested DVFS using CPUfreq on both clusters
+>> on odroid-n2, and both clusters are booting, so I don't understand the
+>> need for this patch.
+> I *think* there is a race condition at kernel boot between cpufreq and
+> disabling orphaned clocks
+> I'm not sure I fully understand it though and I don't have any G12B
+> board to verify it
+>
+> my understanding is that u-boot runs Linux off CPU0 which is clocked by cpub_clk
+> this means we need to keep cpub_clk enabled as long as Linux wants the
+> CPU0 processor to be enabled (on 32-bit ARM platforms that would be
+> smp_operations.cpu_{kill,die})
+> cpufreq does not call clk_prepare_enable on the CPU clocks so this
+> means that the orphaned clock cleanup mechanism can disable it "at any
+> time",
+
+If nothing calls enable the cpu clock while it is managed by Linux
+(cpufreq), there might something worth fixing. Adding CLK_IS_CRITICAL
+will mask an issue that is still not explained.
+
+"at any time": absolutely not.
+Disabling unused clocks, is done only once, at during the late_init
+stage.
+
+If your clock gets disabled later on, it means it has been turned on and
+off by another driver (possibly due to probe deferral)
+
+> killing everything running on CPU0 and CPU1 (which are both
+> clocked by cpub_clk)
+>
+> I have no explanation why this depends on booting from SD or eMMC.
+>
+> for the 32-bit SoCs we have CLK_IS_CRITICAL on the CPU clock as well
+> since commit 0dad1ec65bc30a
+> on G12A we have CLK_IS_CRITICAL on the sys_pll clocks, however my
+> understanding is that cpub_clk could also be fed by one of the
+> fixed_pll derived clocks (which have a gate as well, which may or may
+> not be turned off by the orphaned clock cleanup - that is pure
+> speculation from my side though).
+
+Yes there are other critical clocks on Amlogic, mostly because the SCP Fw
+driver does not claim the clocks it depends on. At least we know why
+this flag is set and there should be a comment associated with it.
+
+ATM, the issue reported by Anand (anyone else ?) is not explained. 
+
+>
+>
+> Martin
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
