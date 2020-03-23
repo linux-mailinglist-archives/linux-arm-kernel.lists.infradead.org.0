@@ -2,98 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 845E418F5A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 14:21:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D0D518F5AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 14:24:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Du7Jw0bNqknkTr4nKgnLtINgeXx5Gue6C/icnv988KI=; b=XK3t9/J3Vx4yxh
-	THZeyI/LBdq2lFPzNTOWY5Nk7HYWTL/FsjxTfNzxJynI+RnKACt3wtti7fgZQa9Lx6784pXfJh+nS
-	zwypWtGPHf120rGNfXFnP3EM9hs5RzJ+atDAKaOModVZzYaBoUNxxXN0/aqZkYweLVuRSAPqKHrwJ
-	AsMhYrtyVxwIewxJIxsPkjmfokPLs4U9a+indJ7fzfb+Kqn5EAUdXS25hVGTifb1HfBpyo8wwc8Pd
-	8HX3cZjOJwf7vuwIEOb41ANi1SV94QekxBQMeB0ObthBerKzdhZiBtdJSbHLtSYuIgGCR1Bpi/L1W
-	TwyY71QCffgh6GvClpHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vsT+WB9EpO5Tq7Y9fUaH57cu9kuEGDygcBNDCiFkvUI=; b=R5Q63MAYPw0Ae3TR49vunqKSo
+	BHKayMjPJ8XS1fCmJ/AxM/rTMOtbN8O1hlgERRjK5zPaTBC891/hJoExOK5ojDydJJzFJ5h3DTHQr
+	h3/8h8dgjWx9xXJCK5a3cTwbMYsnYc1NXviB317JIHpXC8ijhFMuNFd+T1zYg86jAS5DoMG0huH4G
+	PWgdSJC7yylXaDBE1k3EmTEOLnnJ077foWMcBimDoUe76wY4Y83uiSXJjBnDlHi3Df5DBFgzJedPl
+	5DR0XNjDuITAfSbmvFcQvKBkZmBY9X0Hw/CVTTaXFsYOfsoZsK5eAIrN1wYH4jQguHq/SMyd0RtEU
+	j87TefS3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGN19-0004Tk-05; Mon, 23 Mar 2020 13:21:23 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGN11-0004Su-9Y
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 13:21:16 +0000
-Received: by mail-lf1-x141.google.com with SMTP id c5so4732732lfp.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 06:21:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Xxi6l1fclcJsr5+CKBYbupw6npgtZlkO+8fmQyf+EsY=;
- b=Ou9NqB+7RrddepQ984O33P/tq2gZ5gJo2BJ57OHVBgXamswQgPXBiUlSQ+vaQtgnxi
- ytWbCwFtIoFWOcwj6qFoDy1T1YaIkmFYQurWVeuN/6avRstYoBMgeExBA/uSvgkC5Hq8
- AlhshJ0U4TDklxFMuVpM2/25MCTX52hjVKQtTvl5AVSGdUIJ2bqc66YFJ2pLPsp/5wJF
- rpMJ3MeOJd0uKOUSpY1ickWtL2rE/FrkxqdjeQc/PTWBhu4Dx+HsSOt4I33BvYLN69P1
- v9JLk6EiAeIJ6SyZW80o54wj/k3C92jaovUQ8apeyjMvjPgyLaxo0IeDXP+YpL103Dfa
- 6/Nw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Xxi6l1fclcJsr5+CKBYbupw6npgtZlkO+8fmQyf+EsY=;
- b=cXbC7YD8QzxeWIT6ovsy5ChEBoXvqAk/6R1qX9LQIwSjgagYt51wgvSDoViMTLL96f
- oIDOowwhraQg+P8SkeFUnuovHL9IDfKdNSgVM7T/oIIi4fkMOBUVdljl62NwGAQs0+LE
- 6v8JhGPPXRVL28s1GwOGXmwlusviEpoN/pRe2sRxrZk/rpMEZcVSn9mIxa8nBOzvAZmS
- ii1mYg4SDcCflu6s+kjKk+syHvmgupxdIhLxpd07tDMVHPfEvCgzHqiNvEJdWiP6o7gx
- l6yj1coVYz+BLpXwWm7j1uHDUX+NZzGcHlyeeGQLDUAFwMR2u/FHNmWP3xNsfT0eoBdE
- r3Yg==
-X-Gm-Message-State: ANhLgQ1PaAry2op/SHfOJWqjVGHGnIVnGIo857AR4mxUreJWcqzbQ8zj
- vKHpL76uvVkPM43r3rEkuTjKK16e
-X-Google-Smtp-Source: ADFU+vv/DDlXXllROgGPOZCQ2p80fEzGQ1G7DOdeC4Itk4FFwdCQQA0zXRgV7tLnBj0v44Otl+k+Uw==
-X-Received: by 2002:a19:3803:: with SMTP id f3mr13350164lfa.160.1584969673354; 
- Mon, 23 Mar 2020 06:21:13 -0700 (PDT)
-Received: from [192.168.2.145] (94-29-39-224.dynamic.spd-mgts.ru.
- [94.29.39.224])
- by smtp.googlemail.com with ESMTPSA id h14sm8214874lfc.24.2020.03.23.06.21.12
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 23 Mar 2020 06:21:12 -0700 (PDT)
-Subject: Re: [PATCH v5 3/8] clk: tegra: Implement Tegra210 EMC clock
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200310152003.2945170-1-thierry.reding@gmail.com>
- <20200310152003.2945170-4-thierry.reding@gmail.com>
- <a5c9e3d6-2b65-ec93-d8f1-7c7680092e53@gmail.com>
- <20200323110023.GB3883508@ulmo>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <baf98213-39fd-468f-58ec-fadd33c8ba5e@gmail.com>
-Date: Mon, 23 Mar 2020 16:21:11 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+	id 1jGN43-0005s6-Nw; Mon, 23 Mar 2020 13:24:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGN3v-0005rf-Ib
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 13:24:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD6651FB;
+ Mon, 23 Mar 2020 06:24:14 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 403A23F52E;
+ Mon, 23 Mar 2020 06:24:14 -0700 (PDT)
+Date: Mon, 23 Mar 2020 13:24:12 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200323132412.GD4948@sirena.org.uk>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200320173945.GC27072@arm.com> <20200323122143.GB4892@mbp>
 MIME-Version: 1.0
-In-Reply-To: <20200323110023.GB3883508@ulmo>
-Content-Language: en-US
+In-Reply-To: <20200323122143.GB4892@mbp>
+X-Cookie: Stay on the trail.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_062115_359901_1A57B8AE 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_062415_697251_98732B5B 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,26 +65,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Elliott <paul.elliott@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ nd@arm.com, linux-arm-kernel@lists.infradead.org,
+ Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Content-Type: multipart/mixed; boundary="===============3285272953365370192=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MjMuMDMuMjAyMCAxNDowMCwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKLi4uCj4+PiArCWlm
-ICghcHJvdmlkZXIgfHwgIXByb3ZpZGVyLT5jb25maWdzIHx8IHByb3ZpZGVyLT5udW1fY29uZmln
-cyA9PSAwKQo+Pj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4+Cj4+IFdoeSBhbGwgdGhlc2UgY2hlY2tz
-IGFyZSBuZWVkZWQ/IEkgZG9uJ3QgdGhpbmsgaXQgZXZlciBjb3VsZCBmYWlsLAo+PiBjb3VsZG4n
-dCBpdD8KPiAKPiBUaGlzIGNvdWxkIGZhaWwgaWYgbm8gRU1DIHByb3ZpZGVyIGlzIGF0dGFjaGVk
-LCB3aGljaCBoYXBwZW5zLCBmb3IKPiBleGFtcGxlLCB3aGVuIHRoZSBFTUMgZHJpdmVyIGlzIG5v
-dCBsb2FkZWQuCgpSZXF1ZXN0aW5nIEVNQyBjbG9jayBzaG91bGQgcmV0dXJuIEVQUk9CRV9ERUZF
-UiB1bnRpbCBwcm92aWRlciBpcwphdmFpbGFibGUuIFBsZWFzZSBzZWUgdGVncmEyMF9jbGtfc3Jj
-X29uZWNlbGxfZ2V0IGZvciB0aGUgZXhhbXBsZS4KVGVncmExMjQgc2hvdWxkIGRvIHRoZSBzYW1l
-LCBCVFcuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+
+--===============3285272953365370192==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="n2Pv11Ogg/Ox8ay5"
+Content-Disposition: inline
+
+
+--n2Pv11Ogg/Ox8ay5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Mar 23, 2020 at 12:21:44PM +0000, Catalin Marinas wrote:
+> On Fri, Mar 20, 2020 at 05:39:46PM +0000, Szabolcs Nagy wrote:
+
+> +int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
+> +                        bool has_interp, bool is_interp)
+> +{
+> +       if (is_interp != has_interp)
+> +               return prot;
+> +
+> +       if (!(state->flags & ARM64_ELF_BTI))
+> +               return prot;
+> +
+> +       if (prot & PROT_EXEC)
+> +               prot |= PROT_BTI;
+> +
+> +       return prot;
+> +}
+
+> At a quick look, for dynamic binaries we have has_interp == true and
+> is_interp == false. I don't know why but, either way, the above code
+> needs a comment with some justification.
+
+I don't really know for certain either, I inherited this code as is with
+the understanding that this was all agreed with the toolchain and libc
+people - the actual discussion that lead to the decisions being made
+happened before I was involved.  My understanding is that the idea was
+that the dynamic linker would be responsible for mapping everything in
+dynamic applications other than itself but other than consistency I
+don't know why.  I guess it defers more decision making to userspace but
+I'm having a hard time thinking of sensible cases where one might wish
+to make a decision other than enabling PROT_BTI.
+
+I'd be perfectly happy to drop the check if that makes more sense to
+people, otherwise I can send a patch adding a comment explaining the
+situation.
+
+--n2Pv11Ogg/Ox8ay5
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl54uHwACgkQJNaLcl1U
+h9DAYQf+PC+yaMtvYW9mN4nKAz7ncHVrReSbAGM8vzqPWdFAlq9YUOWrM19ZtwX3
+Reos273yUIeierbiwvJMNq+eDPFo9bF3mqTxkQr5uA4+RDAqXedTNeS637lX1tG3
+/uzSb0uqwvff1A9+IZsavz2GuhK8WNmybN7xbOPD1SLHZd4ouEiMlBoE3Ze+nMqm
+gClUEz9TTAmK6m9sL7rchJgnSFoG5OU4F/6sWpCoip4mFa5QnBAkeWh6RssDImFg
+hIm9njv6a9aeNHTw1YnM1heqRe86GkmGk3LsgGrHETzDNFOwlBNek95tXIVl7W7I
+f99IlRUisKUN9wu9VYAtNzRSGiDGLQ==
+=70MP
+-----END PGP SIGNATURE-----
+
+--n2Pv11Ogg/Ox8ay5--
+
+
+--===============3285272953365370192==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3285272953365370192==--
+
