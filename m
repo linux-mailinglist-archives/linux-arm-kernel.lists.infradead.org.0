@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE7FC18F351
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 12:02:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBB6918F35E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 12:05:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Kw5pZxrYm3ONEIL9fnqaGg+a9yGoW8Y2hLH0JosEh2o=; b=NdpucByY+B1eDTcqEbiCAIqLi
-	dQo3X3+uPyuZRrZ2oQHeFVBMRPUlYnXfU5zLP6/inD12nXd1VS2laLMXrtoHLBayB4A57Xo36LG8h
-	uBjkVaCOaJc5ZlI0nLbcGvom2HJP7/Is519eFvxATISK+T2JHA2RI2YIQZPnVVHnxy+naly0ROtOk
-	CO8KbJfhRIM81VWSaBjW40Ktyfq1Wi+KBfbFAqUCi+MY4EM+4aI0gYLIvg3E28iguOPosfmM4HY2r
-	Bp6hl1jFrJGcBFvHQi3BMNg0b2aov6QXRk7Ouoyjp3ZHeO5Hl2Szf2dnKtBa51F20FK8Fs+N516EV
-	Lya3vJk5w==;
+	 bh=QYjmk/LFflMHm0xGMMMf2t8o2nM1enTnRd3ntbB72jA=; b=QbRkxMl0pCpDipf7CH/NkzQyN
+	q5pZPIO+jk634es95fc9aSF9i2MFhrKqRmNW3OzxSmzB6yyGZlkynlcPeuaSqfJLM7fwGIVKUBLYl
+	taPn/4ItM15AbO/oifhr6AyR8Gtts/c3fBogcbNb+oDWw4RJaS+2ODMM7AiSgABPZv8XUVyeq1jBj
+	ODFAHFBPW0GwxhCRKnTD1SVpZFv6zIJnvT7RX0PDwkcF+QVn0g7IcISNiwlinmtvqf500MX48zdq7
+	yUg3hHUtyd9EeOfGx26+Z6yb5T9p3hpq39BCczxOEUoz9zpjIY0A4+G2WGJgDmpzDJ68ujKJNAO0L
+	91DhmRNpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGKqu-0005It-AZ; Mon, 23 Mar 2020 11:02:40 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jGKtu-0007Cs-HJ; Mon, 23 Mar 2020 11:05:46 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGKqf-0005I6-9U
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 11:02:26 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d5so4105672wrn.2
+ id 1jGKti-0007CC-NG
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 11:05:36 +0000
+Received: by mail-wr1-x441.google.com with SMTP id j17so13069759wru.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 04:02:24 -0700 (PDT)
+ Mon, 23 Mar 2020 04:05:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=YQ2GBjATshIplvLJBnkEmU69ZuL9aT5IEeXUjRBrBsc=;
- b=M5cxysHT4r3SLET1JXdcrPb7r/OqqF39uk/3o4c/yNFn7rWgC2LuS3QIYsiWdIBEFv
- 9JaF7/D9p30yfd1BMynaOETu93WomytHnw1m4A+J4iwTyodnulcmpsEKIxhLEq3QEMSo
- ZIge3jJlLIPLg3o5E2p9wDtKtAANlvlHK0MekgV3bDDq+fulOpfyEI66SsryMj19tqMU
- b8fN7dVyAdYJ/MKzcvppk8UX/qceBIdrwcWC38JIg2OyL2u6DWSaVv7OnRQVYyDZBGDD
- e3wlQs2fEYnTD34BTvhQWOr7dkumn4qGUNbkMy/LqE/EyCGMLcrnC9nobEUJmeBw+T59
- LJog==
+ bh=n5IqmciM7J1/WUmGc31nCBaJXVIdQHzoRYVr2A+AxaM=;
+ b=rQ0VIgnWmRV8twfDfXP66SOHYe+QLeXBW1nRKp+3zp/v6sR8SPjPpOUQ6pGN+wAGL6
+ kXw5BWubN206D1fdTHorlcpnbvusMqFmm4xxd06eWUAmBG6+dFltey56gtV63AMQ2rHh
+ mkW3V+Y8/bbsCgihxH9ANjUYNhGZba+VwQzhJYTr0NK8zS4D+COpgeDwO48MeXagJ0Zf
+ k7glDhcxpZUDM8UpDsNE/ScnLGRZCDTPNi34CmxKBq0Cio7wKt4wwHSa0mPXcAKQJVGr
+ pYZ6putsCwxwD2CRd+Y1ZsruJ4lt3FdEkJ9WmybEXLcRGeccV12Ep8Sp5aEh+CtlX08O
+ OpVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YQ2GBjATshIplvLJBnkEmU69ZuL9aT5IEeXUjRBrBsc=;
- b=fBoSWqPt95E3ZXceLzsx1PmVyVtOCaIhxcL+Oqt9wD8nc75yh1Vxvew5CoM7ryG9Ny
- RPu34BQzewMedAfXmVvL6ETnyIjCP5882BdxbXFo/Qc7Y4Hb/9K+bX+mHfmXLc4SEEfi
- 6ZIzO754i3POXVlCEMGGoi7VdklmSfgjQITW90cweHtlvbBm7TQ0lf0adZNG5KEmSU8D
- r8qWO9RXZwSm4UYvWdJtpFNBNXuZdUVYqwga1EOo9c32rwXVFb04wf0deGkmlTdaJ/I0
- mjHC9D4H0iYDP4ud0f+RDi3EO8v3TFNBbO3K9UW2k5R5r8pWJoG4BCZ46hal4QH9H3tm
- io6g==
-X-Gm-Message-State: ANhLgQ3Ng74rZhjEKm9I+bx8uw0PI6zM+7I50Lpm1HRvke81vhuS2cr/
- f1vD3glObrX1i15PRxMVX1w=
-X-Google-Smtp-Source: ADFU+vuSpKlosvvv4uXBUKCBdshjKyNRNBYzyUj88SroU8xss08DtZUl+XMts+0GAZqW9SyYFilW8A==
-X-Received: by 2002:adf:a21a:: with SMTP id p26mr29193441wra.102.1584961343825; 
- Mon, 23 Mar 2020 04:02:23 -0700 (PDT)
+ bh=n5IqmciM7J1/WUmGc31nCBaJXVIdQHzoRYVr2A+AxaM=;
+ b=igaO8Lqyf5z6owpCaMyj90jeBTF3KvuLsLMx2IMtq1PR8tRRRgm4KuyXWQC2vNv++L
+ 1nA0u24wvQsCRsElT9ID2RpSL8l6rDPppw4zMQJdDOSm93JCE5JZ9oJCTHj11h38sDww
+ GnJHG2JsmYBHXVmHxZFBnPEbPDHYZg71K7Rssq7JAZYEQ8KA7Cj/gqRxYNiRgXbW4oLd
+ +cn9vlv2qBO68W4jBlah0C2BqhnCEsylDCI9HGbIjUE4kE+RTrPpfTtYm1wfctg3Yf2S
+ jCo6iAIWz8SfSNzV5xamN+g9VcKZ19l3JE5EVaaCLyBIsatnyqlBdsSr4VgbLDEVVaGO
+ sFuQ==
+X-Gm-Message-State: ANhLgQ1Sf8QaxAFimnfZuF1JZ/dqv4EXdfQJjHchP5EzZe/19+x4rXH2
+ oT356l28aIZKH2dbtgB7oPg=
+X-Google-Smtp-Source: ADFU+vvQjV0wjKEwuIh9yioJEL7NAU3DgdAsS2sGZo3vAEWFH1x+NECd8Au8y1mbHKvmGstmp8Rnpw==
+X-Received: by 2002:adf:9796:: with SMTP id s22mr28506678wrb.31.1584961533542; 
+ Mon, 23 Mar 2020 04:05:33 -0700 (PDT)
 Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
- by smtp.gmail.com with ESMTPSA id k133sm22340434wma.11.2020.03.23.04.02.22
+ by smtp.gmail.com with ESMTPSA id n1sm23059060wrj.77.2020.03.23.04.05.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 04:02:22 -0700 (PDT)
-Date: Mon, 23 Mar 2020 12:02:21 +0100
+ Mon, 23 Mar 2020 04:05:32 -0700 (PDT)
+Date: Mon, 23 Mar 2020 12:05:31 +0100
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Dmitry Osipenko <digetx@gmail.com>
 Subject: Re: [PATCH v5 3/8] clk: tegra: Implement Tegra210 EMC clock
-Message-ID: <20200323110221.GC3883508@ulmo>
+Message-ID: <20200323110531.GD3883508@ulmo>
 References: <20200310152003.2945170-1-thierry.reding@gmail.com>
  <20200310152003.2945170-4-thierry.reding@gmail.com>
- <7a4e0ab4-e17e-9e6a-2d30-d9a321be1dc8@gmail.com>
+ <b5fb83d8-003c-d76b-9dac-7c8ef15f2ab1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <7a4e0ab4-e17e-9e6a-2d30-d9a321be1dc8@gmail.com>
+In-Reply-To: <b5fb83d8-003c-d76b-9dac-7c8ef15f2ab1@gmail.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_040225_334095_848ECA4F 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20200323_040534_791490_2A587CE0 
+X-CRM114-Status: GOOD (  18.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,23 +105,23 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
  Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5357981099998306097=="
+Content-Type: multipart/mixed; boundary="===============2643154049275351671=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5357981099998306097==
+--===============2643154049275351671==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="DSayHWYpDlRfCAAQ"
+	protocol="application/pgp-signature"; boundary="C1iGAkRnbeBonpVg"
 Content-Disposition: inline
 
 
---DSayHWYpDlRfCAAQ
+--C1iGAkRnbeBonpVg
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Mar 10, 2020 at 08:03:05PM +0300, Dmitry Osipenko wrote:
+On Tue, Mar 10, 2020 at 07:55:39PM +0300, Dmitry Osipenko wrote:
 > 10.03.2020 18:19, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
 > > From: Joseph Lo <josephl@nvidia.com>
 > >=20
@@ -140,39 +140,65 @@ On Tue, Mar 10, 2020 at 08:03:05PM +0300, Dmitry Osipenko wrote:
 > > - major rework and cleanup
 >=20
 > ...
-> > +#ifdef CONFIG_PM_SLEEP
-> > +static int tegra210_emc_suspend(struct device *dev)
 >=20
-> The __maybe_unused attribute will be a bit cleaner than the #ifdef.
+> > +static int tegra210_emc_resume(struct device *dev)
+> > +{
+> > +	struct tegra_emc *emc =3D dev_get_drvdata(dev);
+> > +
+> > +	emc->emc_suspend =3D false;
+>=20
+> Looks like the 'emc->emc_suspend' isn't really needed, nothing in kernel
+> shall touch EMC rate at this point.
 
-Done.
+I've removed this.
+
+> Perhaps should be better to make EMC clk exlusive in order to catch
+> abusers, please see tegra30-emc suspend/resume for an example.
+
+Good idea. Done.
+
+> > +	clk_set_rate(emc->emc_clk, emc->emc_resume_rate);
+> > +
+> > +	pr_debug("%s at rate %lu\n", __func__, clk_get_rate(emc->emc_clk));
+> > +
+> > +	return 0;
+> > +}
+> > +#endif
+> > +
+> > +static const struct dev_pm_ops tegra210_emc_pm_ops =3D {
+> > +	SET_SYSTEM_SLEEP_PM_OPS(tegra210_emc_suspend, tegra210_emc_resume)
+> > +};
+> What about to use the default suspend/resume level?
+
+I don't understand. This is already the default suspend/resume level,
+isn't it?
 
 Thierry
 
---DSayHWYpDlRfCAAQ
+--C1iGAkRnbeBonpVg
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl54lz0ACgkQ3SOs138+
-s6Gd3BAAuTyoEJ+JL1G9GWcOanhXD05YmbFew23yyyioslf+tvjbE65mIZ0quv65
-wLcxow76yP90BL1pX3dIbBHxs+rfq9SGdDC6L8cwT/Vh01xMti0YmWOFmmYZV/fm
-4l6OWJlwULsyaQh5q7blUqI5zX+OQ5cNPVNeO5HPpFrjhSrP7d0IbHYqcAcUo0b7
-942u/zU1r/yySYXvzOs7nZZ5+gQ6m/vTzbodk/XDZbSWWKZ4PGmrw2FlfFzmWELX
-7BoYGo8Y5fCynE7wqqFyPGOGlfr5ADydD5EhKr8ryBphTWNXHm8hL1I37o7RQ5w6
-ycwZX8lIkJMeC0x3HINZSkstv2VrPdKTH9h01K9tI/zwjBrzO5dXrfjjo1oszRg3
-caxfEzDNjUcO7qlZAJmLdspGU9iprnmXBg7TQQJ4p+tmfDkJjnHoh1+G8VmvXCIZ
-pnwS+pU80DSdcHwGFPWMs6vXpqaw92QOmNt/btkWLe06y00S/oTYLuLZ+kqPnX54
-JAppAovMhDk1U2PzesmMjzTdzLP8aneT+ScdfWPz+YjaMgoTGPY3+IYzVEaojL2K
-WYVSjyfyx5cCjHIeWKI91Mg/N3y096aOo0kRiEgHgpIwccaGezkRH1cu8eWtMPY+
-eTuE86Lh7LotXklg6Re46VNih9Q3SZDaVejoC1U9fdOjEpNqabQ=
-=Gt4N
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl54l/sACgkQ3SOs138+
+s6Gcgg//XEFAg5FXQke9ezCAmIWt0qxVXLKGIpJAn6Own9QsP/hoyD89LVQwfmMI
+JMow5JKbPdySRmJJ4Nb4ZLF1nT3Ma8eIPW58fGjaAlWodsmAdTpQTrD5s2dLsQRr
+Pu5GuDUR+7rVAz7fpBZl+DJREyq0DThvnN5ojtGnAqaYJ8LSbJuJuG2+7VNLCGF/
+YGIcH/xTYr+UvjPSQcnyxIjYLSqj6Y2KWJnCHeMeYm/5LFfsZ3l5p4fxAcVyS1E8
+pw2ejNhajSx+6MbolV/2j0/4flKzFs5FTWdq8mJOpuPwsVO6a3vJAahl1Y2xzOib
+BH8VZboNjnF1DYIO4QfqAzm116b2sTlm7rOV3czv3HYVtrrhIMX7RXNYHsTq5y+z
+TkwBqnt9uYjRHFgR/H1z7aNRcyBeW6ec0oc7Xl2wZ7AZoSDojbrdmI9gEqjSQryu
+DG1S484D0Tht+dhpHjYH3dIblsrfZiVJ9e3vyocFl8zdwRGOdbKXWl5gClF33yaN
+5kgIJWWXbGakpSF0JguWG2NLdpvdhvCJqCl9Y1fmqPs6yull0ptPW/mwPl02Bi/8
+5l9wo+QiUsg4PYWZf6NQ1Z77NXVyQCPmPJlO7RyWvQEyCJJIcpGAIxCfCbNSskZ5
+hCGvCUvxx05WtqmhAw3jtaXzbmtg1DrYXeouAxUz0G2TjXi/46U=
+=k3Qa
 -----END PGP SIGNATURE-----
 
---DSayHWYpDlRfCAAQ--
+--C1iGAkRnbeBonpVg--
 
 
---===============5357981099998306097==
+--===============2643154049275351671==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -183,5 +209,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5357981099998306097==--
+--===============2643154049275351671==--
 
