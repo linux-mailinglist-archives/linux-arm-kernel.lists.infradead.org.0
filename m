@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C56A18FD75
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:18:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B999218FD7A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:19:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ibmLlxrqOvk0eOyf+KJvU5lTf1y5M6/Rm1VdMJCoqps=; b=DgTS/fR7WY2FoO
-	erk5UIdTbv49S4A/0RmlamdPoe4bo0I4xFMoxzDiniJ/9qayZD9d3mIEwQyjAkiuGKtYGpxGxjae7
-	dhQxKaybo/NEkjj+S9dzIr1QFPcSCkehklC1UXmaMLruBqac2sp+ZAjcdUqXKuqECLOHn6Z+UIKYl
-	WT41dbmFtwL2Ez4iNXzhUat9e+AFzZajwhjQe8eE7cQ93jto+2eKQclD6gmTT8ljuurepdPhOjcE4
-	crAWz1DE1EuHIGeuDQ6ndbjRB/kPkVy5bYhDufh1fog0nbo67yA20XfP3HGFCxEOGjSJmPjux3RgX
-	l/qZMiupjfDEfx1O2rAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ORtR0JLRYQyLEtUKbxs0HDJAZT+7uS6lhVoQIOsYLY8=; b=U2ePaNGqbuYIz4
+	fQC6t91RfLUwYrGtc6Tehqd4D+mE/LPvUACKE5IT5vPZ9wgQDKbgCAEkRbLEJUoERevHM8uNjd3k5
+	aJmGBkAAtyXZgr060jVu4hH5+mrIX3mM7WAmlijDHgvCmGgT+XeKz6Ue2t5o1l5whbJfIBaRjmH9z
+	DBUvfaAUytKrMq+ZLT7wCo1dj/Kvkpt3+llXH69VF3MDqfwSadFV9Pw8G45fupI0j2s2J0+z/I1ZR
+	z6FdyMZ/EpjJjVz5oiNS1XkEGegpa9jrJf+9fnsY9Zb2fVvYfNS6515EqCxw5d0HJo+j5nvhf2mHJ
+	effa8WPktX8vR1biYvNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGSac-0003OL-Ne; Mon, 23 Mar 2020 19:18:22 +0000
+	id 1jGSbB-0003mJ-Ju; Mon, 23 Mar 2020 19:18:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGSaU-0003NA-8g
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:18:15 +0000
+ id 1jGSaW-0003Nu-0b
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:18:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1FB5231B;
- Mon, 23 Mar 2020 12:18:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 503C4FEC;
+ Mon, 23 Mar 2020 12:18:15 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 95FA63F52E;
- Mon, 23 Mar 2020 12:18:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C9DA13F52E;
+ Mon, 23 Mar 2020 12:18:14 -0700 (PDT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Eric Biggers <ebiggers@google.com>, Ard Biesheuvel <ardb@kernel.org>
-Subject: [PATCH 1/2] arm64: lib: Use .arch_extension
-Date: Mon, 23 Mar 2020 19:18:06 +0000
-Message-Id: <20200323191807.3864-1-broonie@kernel.org>
+Subject: [PATCH 2/2] arm64: crypto: Use .arch_extension
+Date: Mon, 23 Mar 2020 19:18:07 +0000
+Message-Id: <20200323191807.3864-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200323191807.3864-1-broonie@kernel.org>
+References: <20200323191807.3864-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_121814_352389_99F302C0 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200323_121816_142431_DD2053F3 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -79,22 +81,106 @@ support for .arch_extension we can use that.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/lib/crc32.S | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/crypto/aes-ce-ccm-core.S   | 2 +-
+ arch/arm64/crypto/aes-ce-core.S       | 2 +-
+ arch/arm64/crypto/aes-ce.S            | 2 +-
+ arch/arm64/crypto/crct10dif-ce-core.S | 2 +-
+ arch/arm64/crypto/ghash-ce-core.S     | 2 +-
+ arch/arm64/crypto/sha1-ce-core.S      | 2 +-
+ arch/arm64/crypto/sha2-ce-core.S      | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/lib/crc32.S b/arch/arm64/lib/crc32.S
-index 243e107e9896..7420dea6afc1 100644
---- a/arch/arm64/lib/crc32.S
-+++ b/arch/arm64/lib/crc32.S
+diff --git a/arch/arm64/crypto/aes-ce-ccm-core.S b/arch/arm64/crypto/aes-ce-ccm-core.S
+index 99a028e298ed..90fde12f8253 100644
+--- a/arch/arm64/crypto/aes-ce-ccm-core.S
++++ b/arch/arm64/crypto/aes-ce-ccm-core.S
 @@ -9,7 +9,7 @@
- #include <asm/alternative.h>
  #include <asm/assembler.h>
  
--	.cpu		generic+crc
-+	.arch_extension crc
+ 	.text
+-	.arch	armv8-a+crypto
++	.arch_extension crypto
  
- 	.macro		__crc32, c
- 	cmp		x2, #16
+ 	/*
+ 	 * void ce_aes_ccm_auth_data(u8 mac[], u8 const in[], u32 abytes,
+diff --git a/arch/arm64/crypto/aes-ce-core.S b/arch/arm64/crypto/aes-ce-core.S
+index e52e13eb8fdb..4dbc0052ffbe 100644
+--- a/arch/arm64/crypto/aes-ce-core.S
++++ b/arch/arm64/crypto/aes-ce-core.S
+@@ -6,7 +6,7 @@
+ #include <linux/linkage.h>
+ #include <asm/assembler.h>
+ 
+-	.arch		armv8-a+crypto
++	.arch_extension crypto
+ 
+ SYM_FUNC_START(__aes_ce_encrypt)
+ 	sub		w3, w3, #2
+diff --git a/arch/arm64/crypto/aes-ce.S b/arch/arm64/crypto/aes-ce.S
+index 1dc5bbbfeed2..d57516308cf1 100644
+--- a/arch/arm64/crypto/aes-ce.S
++++ b/arch/arm64/crypto/aes-ce.S
+@@ -12,7 +12,7 @@
+ #define AES_FUNC_START(func)		SYM_FUNC_START(ce_ ## func)
+ #define AES_FUNC_END(func)		SYM_FUNC_END(ce_ ## func)
+ 
+-	.arch		armv8-a+crypto
++	.arch_extension crypto
+ 
+ 	xtsmask		.req	v16
+ 	cbciv		.req	v16
+diff --git a/arch/arm64/crypto/crct10dif-ce-core.S b/arch/arm64/crypto/crct10dif-ce-core.S
+index 5a95c2628fbf..c6b8b387f3bd 100644
+--- a/arch/arm64/crypto/crct10dif-ce-core.S
++++ b/arch/arm64/crypto/crct10dif-ce-core.S
+@@ -66,7 +66,7 @@
+ #include <asm/assembler.h>
+ 
+ 	.text
+-	.cpu		generic+crypto
++	.arch_extension crypto
+ 
+ 	init_crc	.req	w19
+ 	buf		.req	x20
+diff --git a/arch/arm64/crypto/ghash-ce-core.S b/arch/arm64/crypto/ghash-ce-core.S
+index 6b958dcdf136..65ed5690735a 100644
+--- a/arch/arm64/crypto/ghash-ce-core.S
++++ b/arch/arm64/crypto/ghash-ce-core.S
+@@ -57,7 +57,7 @@
+ 	HH34		.req	v19
+ 
+ 	.text
+-	.arch		armv8-a+crypto
++	.arch_extension crypto
+ 
+ 	.macro		__pmull_p64, rd, rn, rm
+ 	pmull		\rd\().1q, \rn\().1d, \rm\().1d
+diff --git a/arch/arm64/crypto/sha1-ce-core.S b/arch/arm64/crypto/sha1-ce-core.S
+index 92d0d2753e81..8cfd30c5f605 100644
+--- a/arch/arm64/crypto/sha1-ce-core.S
++++ b/arch/arm64/crypto/sha1-ce-core.S
+@@ -9,7 +9,7 @@
+ #include <asm/assembler.h>
+ 
+ 	.text
+-	.arch		armv8-a+crypto
++	.arch_extension crypto
+ 
+ 	k0		.req	v0
+ 	k1		.req	v1
+diff --git a/arch/arm64/crypto/sha2-ce-core.S b/arch/arm64/crypto/sha2-ce-core.S
+index 3f9d0f326987..a7ea4fc8d570 100644
+--- a/arch/arm64/crypto/sha2-ce-core.S
++++ b/arch/arm64/crypto/sha2-ce-core.S
+@@ -9,7 +9,7 @@
+ #include <asm/assembler.h>
+ 
+ 	.text
+-	.arch		armv8-a+crypto
++	.arch_extension crypto
+ 
+ 	dga		.req	q20
+ 	dgav		.req	v20
 -- 
 2.20.1
 
