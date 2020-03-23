@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CD3618F707
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:36:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41BEB18F719
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 15:40:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tiWTUWrr0AxwxD6hFdAqPQoCBdxRZ68DcaD05Od/Qk0=; b=lKRVkiaxZhFfbXFl51jXe/tyI
-	ZPS/EGCcJuL8gVubURDNaycDk5LTAPPsvrGHX6ySINVA1ExkxRIZPiFcBGavmazSjKSzHOwjVnSws
-	yF/V9KYfDC08Zg/pmZD6l7AXiqgee04Dso3HpXFJ5Kifz7BC8QnlZ3tlg2wDNyBeWm7yYt4Z/NtAt
-	T3ktvSh/pEWSdXw5VNdDxhGceGS3GeI+5S8e/EpAEummvLRvrTn8v+H8zani9+WlZFQJ/paknpNb3
-	8hAJQS/dR7bPsOgNQSF1mnsypPfQnqxXKSC3DjIQz1P8ql/brD4jSegAzmwkikTcMwerY2/EnQ9VN
-	R+aUJIsLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Inl9mZy7hq31gegZCV0scyxfaxgl89+uDdA7Yt/WxnA=; b=NY407OQjf/lEL1
+	8aZLqGs8NbED+0XetFNyYILYZEhGPkGbYrn4EXRyyqcK5WPmktwXKqoZe5MgcYJb58X0h/9dUHiOS
+	Y6PHqU7s9Fg1w+dEZdnLS3d1uHKyWOKjlNNDQoICMl00AZnRkuh46TfJcHlCdLsaJg4gsZWs93inF
+	DP3yecaQLc6bQEvlwyD2OCO17MGxo8q9rSytpb/fLFOJrzKX2WdUqoTDkY7l5NXcZh55wRbvqg6q0
+	1O9wS9Fxkc0z7wnSLA5q9Ko7dWR9uSlstXQ6VkyW2LoRsoZppggUZCkU2ESgdnpV97ox2vHhnErh8
+	Aabt2c55PsqTQGv/5YAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGOBl-0004Yd-Dz; Mon, 23 Mar 2020 14:36:25 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGOBc-0004Wo-Vw
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:36:19 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 32EFE2304C;
- Mon, 23 Mar 2020 15:36:07 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1584974169;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=y3Afpl4Mo1o7I+chKBRp6t8NkD5Siw70y/D3EPvLGIM=;
- b=vmgF7nxi+pO6yK1h3/26DXcOEi4iESyqI+a3nBGAvWRMRSNVQh3lLVinlp2R6POQ4UGrIx
- K7kvRdOLxhwnSAJWl3LyXXv6P93URCZhct5XuGyUqM6DbnJ5oJPHOL8Qg+NKTAt5/JRTtn
- MOkOxyyGzoSZtzKNApo82QycuJqvLyE=
+	id 1jGOFV-0006j0-4u; Mon, 23 Mar 2020 14:40:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGOFG-0006G2-Ab
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 14:40:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74305FEC;
+ Mon, 23 Mar 2020 07:40:01 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B8773F52E;
+ Mon, 23 Mar 2020 07:39:57 -0700 (PDT)
+Date: Mon, 23 Mar 2020 14:39:55 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200323143954.GC4892@mbp>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200320173945.GC27072@arm.com> <20200323122143.GB4892@mbp>
+ <20200323132412.GD4948@sirena.org.uk>
+ <20200323135722.GA3959@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-Date: Mon, 23 Mar 2020 15:36:06 +0100
-From: Michael Walle <michael@walle.cc>
-To: dmaengine@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 2/2] arm64: dts: ls1028a: add "fsl,vf610-edma" compatible
-In-Reply-To: <20200306205403.29881-2-michael@walle.cc>
-References: <20200306205403.29881-1-michael@walle.cc>
- <20200306205403.29881-2-michael@walle.cc>
-Message-ID: <bd67afcd5720265109520d2ed5403b9f@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 32EFE2304C
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_SEVEN(0.00)[10];
- NEURAL_HAM(-0.00)[-0.528]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+Content-Disposition: inline
+In-Reply-To: <20200323135722.GA3959@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_073617_183071_D2EB181E 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200323_074002_475807_A60CBFE6 
+X-CRM114-Status: GOOD (  22.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,52 +65,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peng Ma <peng.ma@nxp.com>,
- Li Yang <leoyang.li@nxp.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Cc: Paul Elliott <paul.elliott@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Peter Zijlstra <peterz@infradead.org>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
-
-Am 2020-03-06 21:54, schrieb Michael Walle:
-> The bootloader does the IOMMU fixup and dynamically adds the "iommus"
-> property to devices according to its compatible string. In case of the
-> eDMA controller this property is missing. Add it. After that the IOMMU
-> will work with the eDMA core.
+On Mon, Mar 23, 2020 at 01:57:22PM +0000, Mark Rutland wrote:
+> On Mon, Mar 23, 2020 at 01:24:12PM +0000, Mark Brown wrote:
+> > On Mon, Mar 23, 2020 at 12:21:44PM +0000, Catalin Marinas wrote:
+> > > On Fri, Mar 20, 2020 at 05:39:46PM +0000, Szabolcs Nagy wrote:
+> > 
+> > > +int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
+> > > +                        bool has_interp, bool is_interp)
+> > > +{
+> > > +       if (is_interp != has_interp)
+> > > +               return prot;
+> > > +
+> > > +       if (!(state->flags & ARM64_ELF_BTI))
+> > > +               return prot;
+> > > +
+> > > +       if (prot & PROT_EXEC)
+> > > +               prot |= PROT_BTI;
+> > > +
+> > > +       return prot;
+> > > +}
+> > 
+> > > At a quick look, for dynamic binaries we have has_interp == true and
+> > > is_interp == false. I don't know why but, either way, the above code
+> > > needs a comment with some justification.
+> > 
+> > I don't really know for certain either, I inherited this code as is with
+> > the understanding that this was all agreed with the toolchain and libc
+> > people - the actual discussion that lead to the decisions being made
+> > happened before I was involved.  My understanding is that the idea was
+> > that the dynamic linker would be responsible for mapping everything in
+> > dynamic applications other than itself but other than consistency I
+> > don't know why.  I guess it defers more decision making to userspace but
+> > I'm having a hard time thinking of sensible cases where one might wish
+> > to make a decision other than enabling PROT_BTI.
 > 
-> Signed-off-by: Michael Walle <michael@walle.cc>
+> My understanding was this had been agreed with the toolchain folk a
+> while back -- anything static loaded by the kernel (i.e. a static
+> executable or the dynamic linker) would get GP set. In other cases the
+> linker will mess with the permissions on the pages anyhow, and needs to
+> be aware of BTI in order to do the right thing, so it was better to
+> leave it to userspace consistently (e.g. as that had the least risk of
+> subtle changes in behaviour leading to ABI difficulties).
 
-Is it possible to have this merged, so it gets into the merge window
-for 5.7? As I explained in this thread [1], without this compatible
-all boards with enabled IOMMU (and who have either sound, lpuart or
-i2c enabled), doesn't work.
+So this means that the interpreter will have to mprotect(PROT_BTI) the
+text section of the primary executable. For subsequent libraries, it
+calls mmap() explicitly anyway but not for the main executable (IIUC).
 
--michael
-
-[1] 
-https://lore.kernel.org/linux-devicetree/433418e889347784bc74f3c22c23e644@walle.cc/
-
-> ---
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> > I'd be perfectly happy to drop the check if that makes more sense to
+> > people, otherwise I can send a patch adding a comment explaining the
+> > situation.
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index b152fa90cf5c..aa467bff2209 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -447,7 +447,7 @@
-> 
->  		edma0: dma-controller@22c0000 {
->  			#dma-cells = <2>;
-> -			compatible = "fsl,ls1028a-edma";
-> +			compatible = "fsl,ls1028a-edma", "fsl,vf610-edma";
->  			reg = <0x0 0x22c0000 0x0 0x10000>,
->  			      <0x0 0x22d0000 0x0 0x10000>,
->  			      <0x0 0x22e0000 0x0 0x10000>;
+> I think it would be best to document the current behaviour, as it's a
+> simple ABI that we can guarantee, and the dynamic linker will have to be
+> aware of BTI in order to do the right thing anyhow.
+
+That's a valid point. If we have an old dynamic linker and the kernel
+enabled BTI automatically for the main executable, could things go wrong
+(e.g. does the PLT need to be BTI-aware)?
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
