@@ -2,89 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B034518F335
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:56:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D236E18F348
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 12:00:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HGbXbo+7+a/rrDcva49hwh2JZth090mv2KpJ0TcQQL8=; b=RYLkGmeBaGdOwFaSaS8Jvc8BZ
-	WMt4AezEISI91opw60udb5dAUs593IvoIXUMnJZIaJBDSxqifj0jA58Isp7E46yF2LucHXkcS7wzG
-	erL9tvd8+6AKz/QvJM4vODZlBSAI5JtAcrOwgDy9XXypfGV5COGpBth00ybTt8eI428DedSnl3wbq
-	wIy6iGDk056JNYnoYhIpLxDEpFfwm62LjrvMoDQBwt1LpCyrJWujDhMWhUNq6+RScF1jl496GUlR6
-	OmaPMO3usoe33uJlZTJWjd8iTxs7xHXXSZRnctkgPTlhsfdwrgGcgJIjuQuecfp3H35rOQImQmJXX
-	U1+d1+grQ==;
+	 bh=rGkPddeJrF3iHGhOiW+EDkCSzOpWI2i4EDLJ89gx39I=; b=g33Jb10LY2Q52NQHU6Vr3RDl1
+	W5dqmWi186jZBjkaHmvy7+soll7yei5wKN0T8cIq+P1jzMNBb5Y2NkFRQ1oH/51npcc0LfaLemDK1
+	QjEm2ezKo/a3hwLDkUzMc1h2eaw1prs9NVJqbFjObhR+w1o1Uf8Ut0FUo7WZvJARmybR76JRQPKx/
+	ctiS+a+6B2yti9NOfMFfZKNR0V0Bns6xcge6PWNDvf2Cx7o3OdBM/It1dK6OejtQs719XajjhfyMd
+	+QJ68Ht1p1TFBjfH6jfazqsxzmqCFczqiodKAKGODJJDPZcmK4WBV5Awz7INEK1EM1F9Uv9pnMSju
+	Xi3hDpBcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGKky-0002bw-Uo; Mon, 23 Mar 2020 10:56:32 +0000
-Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
+	id 1jGKoy-0004pD-Tu; Mon, 23 Mar 2020 11:00:40 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGKkn-0002b6-NH; Mon, 23 Mar 2020 10:56:23 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 6A43D47D;
- Mon, 23 Mar 2020 06:56:19 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 23 Mar 2020 06:56:20 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=fzpRCAmsyk5yn3no7NdCLTL9Xu4
- x7dq5wW+w+4PqNzo=; b=qjncN70i8E/mm68IiqelYpyQxaqaLFMFkq552WiZ0Ji
- RDnn/NVEiKwbPBkt2W9lxujvSitEatfIuvVuj78XE0PcmTk+hzhcz32ZYhhtM/60
- 1yFzSlh9H/oBHVjcFJ2ugGcpKarGWqzjiTKFex07KRbzpvbdVf3PAv/VcUoR/lEE
- 4Mot7T+dlrf+JN6aOHzR5EnTO9QxbMDHptMN9yXpWIF3+F9y4LIkzkSMZGx2pWtX
- eRWw3eyev+hZ+str3PdFD3tz8rBoKp737Mw4xtdpoMs32adEhVUPxmogt2MyYJ61
- wvNhvrQaE0WfsJKQNeLIf0hlfT9kkHEOSRIeNDJTpgA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=fzpRCA
- msyk5yn3no7NdCLTL9Xu4x7dq5wW+w+4PqNzo=; b=cE7OolyF0peWljveJycKKO
- zgMMYtHV+pOFwh6Kmd6FjS3CP/+dOVKARo6nxtG8RqXaYMk0oxNUtX/r5t4uzYfJ
- ZfoTXKnfD9BLHiemRmNxe/Xjoa7iM2bHZWVxMVCKDh99eCJp/7+cdLObC/GpnflV
- 1Avfs9ubY8SAgqT0wiE9/fvNICQXjzupm0tgLW7rFcKwOwdKcUfaUKY39TcyZ+Oo
- vGYIPzRBbyYmSY6T2s1DCdvEyosqg++n/woeb+t9tMYE+DiOZJGWeDQjX/1HyK5E
- nd7oA0OaxQeT1Ic99a9lrnRY63dcHnogyo8riCVTL2kprKBnMQJM/UMzPVf515sQ
- ==
-X-ME-Sender: <xms:0pV4XpGakGjxFm5WSUO12GozMq6f_D1A6FSPkAn00TVm_p6d4s6Ang>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudegkedgvddvucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:0pV4XikLQU1_NHrUyExDlyHq0J-4oojakDBlFW9FsrNR-C2JnF1hZw>
- <xmx:0pV4XmKDL-6HyZMPOqYR6s0tWnJrzCMMMdwAO5GIRETYm08AjRr-WA>
- <xmx:0pV4XjYGnEMLXt1wHnszQKokWtv-_l8H_BluGP_LWAI0VCj_lKT5Dw>
- <xmx:05V4XimO5x58E3e7V1Pcv11tNhvCMfJifrwgWq7JC9tH9wENGCIu1criPgA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id DED263280067;
- Mon, 23 Mar 2020 06:56:17 -0400 (EDT)
-Date: Mon, 23 Mar 2020 11:56:16 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 27/89] clk: bcm: Add BCM2711 DVP driver
-Message-ID: <20200323105616.kiwcyxxcb7eqqfsc@gilmour.lan>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <6dd6bd48e894c1e8ee85c29a30ba1b18041d83c4.1582533919.git-series.maxime@cerno.tech>
- <158406125965.149997.13919203635322854760@swboyd.mtv.corp.google.com>
+ id 1jGKop-0004oh-CP
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 11:00:32 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p10so4030935wrt.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 04:00:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sadhhHKl37kodrpSVYR2LnIwtVMN2BKSE6OvR4D241Q=;
+ b=VBGMIJ+nSe8j7N65h6/fTgP+fPgV4ZqrJIg0hTtEsehn7H9BA+8gYR2xAzFM/ZKpAY
+ 5vcm87vEKYZKCAA7Lgym+BF7/rTBHBJm4sCJ0XY0u5b+A585h8xmdhz29PWUx7Zr5Qbe
+ 5LrMyMqhWTEwT37cAEMAhQS6JnSOXxX1vei7h/SZZtBsq1nM4ao5uuGdbjfPlo/GU86m
+ ZyaligkLWyB07qOg/zprBUD3g7RkRagKW2HEzd2dScXXFgb3heV3NbEWmTNqI7OmQe4A
+ J/NJjFnOdOOAbm6e92Tequk0LEYcX0b2LLFefWBlEknJ9xc5LdfMoL9hUu5LSmZ4TZJl
+ dVVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sadhhHKl37kodrpSVYR2LnIwtVMN2BKSE6OvR4D241Q=;
+ b=l0KU25LPQq572M6lXLe+3gF6t6HryqfJXzvLe7sNb3RstvxWa6KW6EZw74tJlJdGTH
+ C1MsdcEjp5X32xRCWSsSZY9j9z0bfMGEVJnNxf6lfb+KYPUzIq92xul6CfCvLJPymbm+
+ qz2p/l9V+m1prkcvDYeXfpedsY2XJ2vzKje3eUeT7IeaZ7b7vDPxovVjOqwm2qKsgevi
+ lzVP6ZpdoC1y7PYjfkHm8OzT7nEYk+MIP0wIZnm+mZfXIEb0HlNnKlESFV1+S2JDexQ6
+ Ojedw5GnUlyx5uoWEHkCBYiRxrl59jZfYzPxXTrL5qC+loT08bdWTlr5ryNSFMut3cf9
+ qkSA==
+X-Gm-Message-State: ANhLgQ0SvOQ+8dGtavOkPo0yNio6/BD0eJw5dtzWylv7nJovd7fcXbKA
+ kPkDqwCo8YS0MqliHqRoQFnMw3u9
+X-Google-Smtp-Source: ADFU+vs23hQHjnsNpDugZtYful1vTGeawfdBFZ++4cAXCzh6x7Z59NoWJpJId2Y1TDOMh6OIOUhwYg==
+X-Received: by 2002:adf:eec7:: with SMTP id a7mr29025432wrp.405.1584961229361; 
+ Mon, 23 Mar 2020 04:00:29 -0700 (PDT)
+Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
+ by smtp.gmail.com with ESMTPSA id k18sm22461158wru.94.2020.03.23.04.00.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 04:00:27 -0700 (PDT)
+Date: Mon, 23 Mar 2020 12:00:23 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Dmitry Osipenko <digetx@gmail.com>
+Subject: Re: [PATCH v5 3/8] clk: tegra: Implement Tegra210 EMC clock
+Message-ID: <20200323110023.GB3883508@ulmo>
+References: <20200310152003.2945170-1-thierry.reding@gmail.com>
+ <20200310152003.2945170-4-thierry.reding@gmail.com>
+ <a5c9e3d6-2b65-ec93-d8f1-7c7680092e53@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <158406125965.149997.13919203635322854760@swboyd.mtv.corp.google.com>
+In-Reply-To: <a5c9e3d6-2b65-ec93-d8f1-7c7680092e53@gmail.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_035621_800675_CD6B7F70 
-X-CRM114-Status: GOOD (  10.46  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200323_040031_451242_CD6A8956 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,71 +100,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4685677254487424193=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
+ Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1475163260544994726=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4685677254487424193==
+--===============1475163260544994726==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tfljntymmeg4eptb"
+	protocol="application/pgp-signature"; boundary="rS8CxjVDS/+yyDmU"
 Content-Disposition: inline
 
 
---tfljntymmeg4eptb
-Content-Type: text/plain; charset=us-ascii
+--rS8CxjVDS/+yyDmU
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Hi Stephen,
+On Tue, Mar 10, 2020 at 08:44:38PM +0300, Dmitry Osipenko wrote:
+> 10.03.2020 18:19, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
+> > From: Joseph Lo <josephl@nvidia.com>
+> >=20
+> > The EMC clock needs to carefully coordinate with the EMC controller
+> > programming to make sure external memory can be properly clocked. Do so
+> > by hooking up the EMC clock with an EMC provider that will specify which
+> > rates are supported by the EMC and provide a callback to use for setting
+> > the clock rate at the EMC.
+> >=20
+> > Based on work by Peter De Schrijver <pdeschrijver@nvidia.com>.
+> >=20
+> > Signed-off-by: Joseph Lo <josephl@nvidia.com>
+> > Signed-off-by: Thierry Reding <treding@nvidia.com>
+> > ---
+> > Changes in v5:
+> > - major rework and cleanup
+>=20
+> ...
+> > +static u8 tegra210_clk_emc_get_parent(struct clk_hw *hw)
+> > +{
+> > +	struct tegra210_clk_emc *emc =3D to_tegra210_clk_emc(hw);
+> > +	u32 value;
+> > +	u8 src;
+> > +
+> > +	value =3D readl_relaxed(emc->regs + CLK_SOURCE_EMC);
+> > +	src =3D (value >> CLK_SOURCE_EMC_2X_CLK_SRC_SHIFT) &
+> > +			CLK_SOURCE_EMC_2X_CLK_SRC_MASK;
+>=20
+> What about to use a generic FIELD_GET/PREP()?
 
-On Thu, Mar 12, 2020 at 06:00:59PM -0700, Stephen Boyd wrote:
-> > +       dvp->clks[1] = clk_register_gate(&pdev->dev, "hdmi1-108MHz",
-> > +                                        parent, CLK_IS_CRITICAL,
-> > +                                        base + DVP_HT_RPI_MISC_CONFIG, 4,
-> > +                                        CLK_GATE_SET_TO_DISABLE, &dvp->reset.lock);
->
-> Can we use clk_hw APIs, document why CLK_IS_CRITICAL, and use something
-> like clk_hw_register_gate_parent_data() so that we don't have to use
-> of_clk_get_parent_name() above?
+Done.
 
-That function is new to me, and I'm not sure how I'm supposed to use it?
+> > +static int tegra210_clk_emc_set_rate(struct clk_hw *hw, unsigned long =
+rate,
+> > +				     unsigned long parent_rate)
+> > +{
+> > +	struct tegra210_clk_emc *emc =3D to_tegra210_clk_emc(hw);
+> > +	struct tegra210_clk_emc_provider *provider =3D emc->provider;
+> > +	struct tegra210_clk_emc_config *config;
+> > +	struct device *dev =3D provider->dev;
+> > +	struct clk_hw *old, *new, *parent;
+> > +	u8 old_idx, new_idx, index;
+> > +	struct clk *clk;
+> > +	unsigned int i;
+> > +	int err;
+> > +
+> > +	if (!provider || !provider->configs || provider->num_configs =3D=3D 0)
+> > +		return -EINVAL;
+>=20
+> Why all these checks are needed? I don't think it ever could fail,
+> couldn't it?
 
-It looks like clk_hw_register_gate, clk_hw_register_gate_parent_hw and
-clk_hw_register_gate_parent_data all call __clk_hw_register_gate with
-the same arguments, each expecting the parent_name, so they look
-equivalent?
+This could fail if no EMC provider is attached, which happens, for
+example, when the EMC driver is not loaded.
 
-It looks like the original intent was to have the parent name, clk_hw
-or clk_parent_data as argument, but the macro itself was copy pasted
-without changing the arguments it's calling __clk_hw_register_gate
-with?
+>=20
+> > +static int emc_table_lookup(struct tegra_emc *emc, unsigned long rate)
+> > +{
+> > +	int i;
+>=20
+> unsigned int
+>=20
+> Same for all other occurrences in the code.
 
-Maxime
+This was fixed automatically after I fixed the rebase issues.
 
---tfljntymmeg4eptb
+Thierry
+
+--rS8CxjVDS/+yyDmU
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXniV0AAKCRDj7w1vZxhR
-xTnlAQCIhFMKlCTUi7lT7vtutsg55UjNkCiTBydMK2jwFL/FAwD/SNvqj7HP9kXi
-Uu9uGwZ9ol7SO9ZaYUzJVfxPPZbXQww=
-=Ie9e
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl54lsQACgkQ3SOs138+
+s6EeQQ/9G63M1xZHwIQsmIIdgaOw5YN+TMj2fb5Fy/mSYOOmDYJyyyRe3dx4GvEn
+9HJ1jk7vLe54qYlncIy/Iq30OOZ9GfDKOQsebE/hc4j6EEa4h2VO8kRwUVWjTAer
++DykULLJpXnDOki2OeMkPx5ZRQe21SQ4NNDNcnyI1e3yHv9dNsa6lkjp1+rYshAi
+SghXsdNd3yrgWYuAInyKifrPBt3VS8oeezB36G2sRRkgoWlxrYrk11R1rHmvi8vR
+r5OzzniI25NLqkDpaEOQCsjYxeyqT7tr/9W6R1lmpxhcNtKT3puIA4/jYosGIRm2
+9i7olnK19urr93jkXS+ljzj8jA6zWNMNGkORPHL/H7HT3wFxS42jEt0dyOUiat/E
+oGN188QLQqi8grfb1qp+yeN6Gzrz9CkXNKJkC9Id3cqV1S2mqGtr9t5iDzNxYCR3
+N9OtxnOK238OIEzFyeApm099w7D6ly1/yeDAUps278bbeul9sID8CCH0XGmavk5g
+9ALun6d42DG1iagOafD3Reyqstw/vOItJg689zPC5aSC9MVXuTEs/Trqh2Rlgrg4
+xOJe+9epTCemM8e8hAlXkA1I/t8vpV8RuDwj8KJ6QpdBaCRjxy9fYzpmDwpwvrnL
+81TWT8PZbKw4IqXO/b9Yc/sjtiL4K5nPAVQVQx0d+NnjFRrLADk=
+=j0rX
 -----END PGP SIGNATURE-----
 
---tfljntymmeg4eptb--
+--rS8CxjVDS/+yyDmU--
 
 
---===============4685677254487424193==
+--===============1475163260544994726==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -178,5 +224,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4685677254487424193==--
+--===============1475163260544994726==--
 
