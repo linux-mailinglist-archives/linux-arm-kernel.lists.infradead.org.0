@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A945218F325
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:50:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9373A18F328
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:51:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GvVFzZ2Y5UJn7L8Y/NeuEw0Jru3s/Mjo0L+mbKfG7rk=; b=IzmRVqDR+rhTNz
-	ECJ7BcJwZSl6qJw8ewFJRNhGqzHRs4x2C51oFppf+IBt7Lcmio5S0+LOahQbB1ND+svp3FQzgz+Dh
-	L/sb4kpiBlLQQKV1F9uExDyLd6A1yZ8UDzOYLc+HykQ72REgPMFPlK1OFDI3WbJJyV8hA/TC+JhU6
-	t/NsAT+xhhR3vy4AG13kWFZQs5nhRq9hh4uSEdJ86b5LfpGxA8wa/ll7YkVov/b6EcwAQK/S5dlUI
-	H2dBrqe9zJkgnybHockaU4oXJN6T5hYNZJPQPwuKSgok1E4BisEb0Wxyye5yIpxfqX1r4vbZn+Qvy
-	kZ7fbmFoqyOmc3JXAT4A==;
+	List-Owner; bh=CT7k3mQa5GDOeX+Cec7YNw6cPk7yGXWgFaGN2qbYw2g=; b=UiPXapsNW+HNXx
+	mIXiRQ0d9KlIBrPNTa4RJBM3y7vL1/Gqb+2lBVEI8xoBs6+islYxpYgRW6Hz+hv7EunTry51P6yfe
+	9KmGlUsOTTXSWGbBDsmshvNT5CnNKi71Nr2X9O6lf9YedAzMWfojiJ4Ri2juwQY/qzvoqLc+qCQyQ
+	C03t/7XyWN1QFt0FqlJV9lNaLxaoiXaumvPaepfQ5Uuxyd5o0/onPSEoaaePFZXDYAetSPg6EfWJS
+	BykmHfEuvRALg7R+o57iH8Ee0fBZAEYUa5p6mZQ7vrQ64SgCB/a7T0E7s/MD5jzC8K9BU08hFwHC3
+	QwcQ18eMvHAdZJGtss8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGKez-0000aa-AH; Mon, 23 Mar 2020 10:50:21 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jGKfn-0000qD-GP; Mon, 23 Mar 2020 10:51:11 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGKeo-0000Z0-Je
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:50:12 +0000
-Received: by mail-lf1-x141.google.com with SMTP id j188so5968805lfj.11
+ id 1jGKfa-0000pB-VU
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:51:03 +0000
+Received: by mail-lj1-x241.google.com with SMTP id w4so13941454lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 03:50:10 -0700 (PDT)
+ Mon, 23 Mar 2020 03:50:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=siKVSOSU2AuaxCnLGzXMnO9hKgx66VndyuGaKMeNzAk=;
- b=G6nGo2oOHsvAJv17GKLVj/we/ZtSZ5nznKfQGFsZUvB0VOn3+E48g1tAniEG6MbQJZ
- rrvKvQOjOvESLanVYURjrhMorX//raN51ngN7gFqvLotu/J3Bpfm3tWa1GLzg9eUdTwr
- 3vyjfUUPciutYkb1atk8VnFy6OP2Kn+bEkh+dDu6hLeFTR4M1G60Sh5YEp0svmCNjikN
- GZht+smbCmDEgUh2xS22ASBe1nev4M1nKPx9THcQYg1YCsc/fjWgZVlbCmkdc5k9W5bq
- BYA+XbwtiTxIzHn25uyyIQnUUDdZwF9QbB3JqIaCCZOj8AmOxsWHHCy9kCLRBJtBGKf8
- LAIg==
+ bh=h9tNy9xYbDdOC07CHf7H4ZkCbKHWeUnDdMW9CfCVCkY=;
+ b=bdVyJBL359733WGvtU7Gof3j1/tutWr7jojcWw8wXUmNPOuLG7Hr563TWG8poB1U5U
+ xUVWVNWAz8/ChLwTngd8zi2Cfb9DT1RmMpNDrqfdF6H5cXf35C+3gOGZpsoMGME2J3Mp
+ JhUavNjXK2+gC4dHuct1aCXROrYOZEmKTFMPbSbRRfhPY/erbp78N+kosI7kczs0+Qml
+ f56C0Icn43kk4UuuvObeRpH0ScxZsCHIfXWWycdaKJ1jNTfl8L24YBeXH9Vi2a3ZIV96
+ N/xbr5/YMVNbX4HF5inRVM+Y0mkGUdcThY7SG9mi2CVHP/tjw3uDD9J9Buv8gnisr/pV
+ kATQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=siKVSOSU2AuaxCnLGzXMnO9hKgx66VndyuGaKMeNzAk=;
- b=TaVE2ABRPbDC6QSR67+XGOm1pqxhD33UMhgMTDeqXNTrp2mSNl4z5xhOxUXRRkzEhg
- t3UhADlwMmm2VfkDfQHu/8t3Suav9KralV7b8A0gDD86GORWWr9A5KFagetNtkUnuutG
- 7EeW8JN3fIEpcF8APsX9Kq4qto7GJ0b1WkFDCRWmzMuKz8uRcBCDYz8M4vxKU7FgndDJ
- DIC2ptTXNAP/3lYcIupJ2lcOGf8iwx850U2mqYplfRT5XfFvXLqR/D4AEaa6aH6mmH+0
- 91YgawG9xhSWHNGMxyyNXW7ptHywTDxSDPDEGQpqpPSgjsGJ+FFviegEcLElH3V9gyfL
- 9rgA==
-X-Gm-Message-State: ANhLgQ2rf1Vxm6XZTiJ/BAj7A8WezQvL+UO76w0kJneUNeDOinY/fxQl
- mSIzehxUQHtlRA/EpJDmAYY35h9uJSY=
-X-Google-Smtp-Source: ADFU+vuqCztGnSgEvaBbLfIgKv+NmYx+f8L26fTeb1SeELM4AjCd4cDOrJ1+xvWKNWCkk/mTRWYUDw==
-X-Received: by 2002:a19:4f0c:: with SMTP id d12mr4078302lfb.117.1584960608526; 
- Mon, 23 Mar 2020 03:50:08 -0700 (PDT)
+ bh=h9tNy9xYbDdOC07CHf7H4ZkCbKHWeUnDdMW9CfCVCkY=;
+ b=kMuELdyVJ6PXPvM5OMx7/CcCi6+473c5fumpjTDBrrGWWxeIiQfgplDBwiDA64bbxt
+ yPgCTFM9a3zOBlJH80UsRuLIOpU/YEGYSYvY+V3firKpRT2gIm5eZFmrDt8eOR4+LOmR
+ c0mx4LMqpwtSk1l+snpZjz2OBIDH8L7pWO24s1VDZzIPnbuN2zCGQpTAuOalz80Lbh3m
+ xt40ObbasutqV79dFNj+X728LszhEvbnq8T+J44pldRpe8MvcevsLbR/CbRPNyWtk+8r
+ lVbZABaloIFHnbjiXJ0QbxbR3+fOzIrd3JGpTQImYEIRnFf2WbL9EUi6R0c+AWeOt76y
+ mvgg==
+X-Gm-Message-State: ANhLgQ0mo/Ipm55B7dOakRJ1U0J6whwDCpwmZrFD0cHWyTcD6Zg8rwv7
+ vDfyxMJvsnYq1XztC2EnEncDB6NVVrs=
+X-Google-Smtp-Source: ADFU+vsKiSgepWD3zBk0d7FCKh222LKCe+KoUW/BqEQdIfjFcQps3p3ZMq9+T5sKfUjBP3ucTMZcwg==
+X-Received: by 2002:a2e:b896:: with SMTP id r22mr9541559ljp.43.1584960655907; 
+ Mon, 23 Mar 2020 03:50:55 -0700 (PDT)
 Received: from [192.168.0.74] ([178.233.178.9])
- by smtp.gmail.com with ESMTPSA id t136sm4144179lff.48.2020.03.23.03.50.06
+ by smtp.gmail.com with ESMTPSA id h25sm8240959ljg.31.2020.03.23.03.50.53
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 23 Mar 2020 03:50:07 -0700 (PDT)
-Subject: [RFC PATCH 2/3] vt: Set as preferred console when a non-dummy
- backend, is bound
+ Mon, 23 Mar 2020 03:50:55 -0700 (PDT)
+Subject: [RFC PATCH 3/3] printk: Preset tty0 as a pseudo-preferred console
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Jiri Slaby <jslaby@suse.com>, Petr Mladek <pmladek@suse.com>,
  Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
 References: <44156595-0eee-58da-4376-fd25b634d21b@gmail.com>
 From: Alper Nebi Yasak <alpernebiyasak@gmail.com>
-Message-ID: <611f42ec-194c-a121-bba1-5f0ac8e2109b@gmail.com>
-Date: Mon, 23 Mar 2020 13:50:03 +0300
+Message-ID: <2d6ab3dc-3571-2d27-b763-84c21e38ae2e@gmail.com>
+Date: Mon, 23 Mar 2020 13:50:49 +0300
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
 In-Reply-To: <44156595-0eee-58da-4376-fd25b634d21b@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_035010_662564_92ECAB18 
-X-CRM114-Status: GOOD (  18.15  )
+X-CRM114-CacheID: sfid-20200323_035059_014554_73AA694C 
+X-CRM114-Status: GOOD (  17.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,85 +110,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When a machine's device-tree has a "chosen" node with a "stdout-path"
-property that specified console is added as the preferred console by
-of_console_check via an add_preferred_console call. The property is
-quite common in kernel device-tree definitions. As far as I can tell, it
-is set to provide a reasonable default value for earlycon, and the
-(usually serial) console is set as preferred to avoid output going to
-VT's dummy backend instead of a working console.
+The ACPI SPCR (Serial Port Console Redirection) table from a machine's
+firmware can specify a serial console which can be used for earlycon.
+However, in at least ARM64 systems the same device is also set up as the
+preferred console.  Presumably due to the order of acpi_parse_spcr and
+VT's register_device calls, setting the specified console as the
+preferred one can prevent registering VT as a console.
 
-However, a chosen stdout-path property is included even in device-trees
-of systems that are designed to be used with a built-in display, e.g.
-several ARM Chromebooks. In these cases where CONFIG_VT_CONSOLE is
-enabled and no console argument is given on the kernel commandline, tty0
-is still registered (presumably based on the order of of_console_check
-and vt's register_console calls) but ends up not being the preferred
+This might look appropriate for machines which do not have or need
+working graphics and whose users most likely have access to a serial
+port. However, the use of SPCR tables may not be limited these. For
+example, ARM64 QEMU virtual machines include a SPCR table regardless of
+the existence of a graphics output or even the nonexistence of a serial
+console. Or server hardware which has a SPCR table can be repurposed
+into a workstation with the addition of a graphics card. As a result,
+boot messages and early userspace prompts can go to an unexpected
 console.
 
-As a result, it is possible for early userspace prompts (encryption
-passphrase requests, emergency shells) to end up in a console that the
-user doesn't expect or even have access to.
+This patch presets tty0 as a pseudo-preferred console at compile-time to
+ensure that CONFIG_VT_CONSOLE always results in the VT console getting
+registered. With this, VT can get registered, these other consoles are
+preferred when VT is a dummy, but we can also bump up VTs preference
+when working graphics are available.
 
-This patch tries to set tty0 as the /dev/console whenever a non-dummy
-backend tries to register as its default, unless the preferred console
-was set from the kernel commandline arguments.
-
-On a Samsung Chromebook Plus (Google Kevin, rk3399-gru-kevin.dts), boot
-messages are still visible on the framebuffer without this patch, but it
-isn't the preferred console due to the device-tree having a stdout-path
-property (from rk3399-gru.dtsi):
+Without this patch, an ARM64 QEMU virtual machine has roughly the
+following order of console events and consoles:
 
 	$ sudo dmesg | grep -i "console\|printk"
-	[    0.000000] printk: bootconsole [uart0] enabled
-	[    0.010232] Console: colour dummy device 80x25
-	[    0.015107] printk: console [tty0] enabled
-	[    0.019601] printk: bootconsole [uart0] disabled
-	[    7.145478] printk: console [ttyS2] enabled
-	[    9.316094] Console: switching to colour frame buffer device 300x100
+	[    0.000000] ACPI: SPCR: console: pl011,mmio,0x9000000,9600
+	[    0.000000] printk: bootconsole [pl11] enabled
+	[    0.004890] Console: colour dummy device 80x25
+	[    0.412252] printk: console [ttyAMA0] enabled
+	[    0.416173] printk: bootconsole [pl11] disabled
+	[    3.940510] Console: switching to colour frame buffer device 128x48
 
 	$ cat /proc/consoles
-	ttyS2                -W- (EC p a)    4:66
-	tty0                 -WU (E     )    4:7
+	ttyAMA0              -W- (EC   a)  204:64
 
-And on the same machine, with this patch:
+In addition, boot messages aren't printed to the framebuffer (as tty0 is
+not registered). With this patch, boot messages are visible on the
+framebuffer and the information above becomes:
 
 	$ sudo dmesg | grep -i "console\|printk"
-	[    0.000000] printk: bootconsole [uart0] enabled
-	[    0.010257] Console: colour dummy device 80x25
-	[    0.015132] printk: console [tty0] enabled
-	[    0.019626] printk: bootconsole [uart0] disabled
-	[    4.741120] printk: console [ttyS2] enabled
-	[    6.779994] Console: switching to colour frame buffer device 300x100
-	[    6.836117] printk: switching to console [tty0]
+	[    0.000000] ACPI: SPCR: console: pl011,mmio,0x9000000,9600
+	[    0.000000] printk: bootconsole [pl11] enabled
+	[    0.002768] Console: colour dummy device 80x25
+	[    0.004371] printk: console [tty0] enabled
+	[    0.380166] printk: console [ttyAMA0] enabled
+	[    0.387337] printk: bootconsole [pl11] disabled
+	[    4.695030] Console: switching to colour frame buffer device 128x48
+	[    4.709759] printk: switching to console [tty0]
 
 	$ cat /proc/consoles
-	tty0                 -WU (EC    )    4:7
-	ttyS2                -W- (E  p a)    4:66
+	tty0                 -WU (EC p  )    4:7
+	ttyAMA0              -W- (E    a)  204:64
 
 Signed-off-by: Alper Nebi Yasak <alpernebiyasak@gmail.com>
 ---
- drivers/tty/vt/vt.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ kernel/printk/printk.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/tty/vt/vt.c b/drivers/tty/vt/vt.c
-index bbc26d73209..0fc462ae8b2 100644
---- a/drivers/tty/vt/vt.c
-+++ b/drivers/tty/vt/vt.c
-@@ -3566,6 +3566,13 @@ static int do_bind_con_driver(const struct consw *csw, int first, int last,
- 		pr_cont("to %s\n", desc);
- 	}
+diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
+index 6b16c973587..4b05779ab69 100644
+--- a/kernel/printk/printk.c
++++ b/kernel/printk/printk.c
+@@ -277,7 +277,19 @@ static struct console *exclusive_console;
  
+ #define MAX_CMDLINECONSOLES 8
+ 
++/*
++ * The preferred_console and has_preferred_console variables are
++ * intentionally not modified to reflect this so that the first
++ * registered console is still used as the preferred console.
++ */
 +#ifdef CONFIG_VT_CONSOLE
-+	if (!console_set_on_cmdline && deflt && conswitchp != &dummy_con) {
-+		add_preferred_console("tty", 0, NULL);
-+		update_console_to_preferred();
-+	}
++static struct console_cmdline console_cmdline[MAX_CMDLINECONSOLES] = {
++	[0].name = "tty",
++	[0].index = 0,
++};
++#elif
+ static struct console_cmdline console_cmdline[MAX_CMDLINECONSOLES];
 +#endif
-+
- 	retval = 0;
- err:
- 	module_put(owner);
+ 
+ static int preferred_console = -1;
+ static bool has_preferred_console;
 -- 
 2.26.0.rc2
 
