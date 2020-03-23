@@ -2,53 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B553018F413
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:09:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8219218F41F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:11:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P5/uf/v+O80Thq993iq4E0bt0mUa0lEhjgLC25sD6AI=; b=hacYBqJL7DxyV8
-	60CKfHg1JJE2sf1iIBpLWweCrGt7CJYF3sxDxSAIeR4k2mYrzBrFiPRQWTact0RS4HL2unTcSS6Nu
-	XJdR7Ig7oCC2HbKFaSEVy3/Gm83IfykXvv83N6PVpJqkJQP9XxhNhlzEET9yHqj9CvdWbXSirQCwx
-	zBj7du/yfW3MvI3o+2SZ9sBjdeRKayF8fD//P+YOk9UTZ+TpNuCcVzzH10DQ9oDGJ4csAPs3F484z
-	CaaNozg+OKvADtvFrE9id/4UGzNtmosJDtV8ZqHMj+ko01CMcVTTC385OsGHBZWWBGFEW48iKsuJQ
-	G9eTeRZVn+eQ10u4A9TQ==;
+	List-Owner; bh=gzGqJEH5vM7tkl6iKucF6qR/qnF+AnDs9Y290O1qjZU=; b=bhxe1s3cvDiX60
+	2SgAebCK/64MqIdIpLQPPr0At11rQRIwz+rqTf9kqJvcWeTWg8ptESMNuszXELLH262kgtnZ3qKJ5
+	RELKI3GQK9mni5SUTdUGS8aLHOSQKYhfLfPly/l8n3QtrYJl3VcttNf52h40H64IqCnyFzJfmm/Ay
+	R9Rz5aE5o5klr01r3PGxpD5WJdCTPFTno/pIVQ2yufFJremU5J1Xvb1r6Esg2oVzLOnPk479lOFz5
+	DZ44lE+eEhoOCYsmT8i6DT1j8XEC79bLm+UsJ7QezYSZ0k5RlocZOpCZMoFPyQOAX+yE6qCAsO5dG
+	+4rq/L2UvcZj1/12FGnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGLtT-0002yZ-JM; Mon, 23 Mar 2020 12:09:23 +0000
-Received: from poy.remlab.net ([2001:41d0:2:5a1a::]
- helo=ns207790.ip-94-23-215.eu)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGLtJ-0002xv-8Y
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:09:15 +0000
-Received: from basile.remlab.net (87-92-31-51.bb.dnainternet.fi [87.92.31.51])
- (Authenticated sender: remi)
- by ns207790.ip-94-23-215.eu (Postfix) with ESMTPSA id 0E6085FCA2;
- Mon, 23 Mar 2020 13:08:54 +0100 (CET)
-From: =?ISO-8859-1?Q?R=E9mi?= Denis-Courmont <remi@remlab.net>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/3] arm64: clean up trampoline vector loads
-Date: Mon, 23 Mar 2020 14:08:53 +0200
-Message-ID: <2345780.q8flsOIESp@basile.remlab.net>
-Organization: Remlab
-In-Reply-To: <20200323120700.GB2597@C02TD0UTHF1T.local>
-References: <1938400.7m7sAWtiY1@basile.remlab.net>
- <20200319091407.51449-1-remi@remlab.net>
- <20200323120700.GB2597@C02TD0UTHF1T.local>
+	id 1jGLv1-0004Tc-Fg; Mon, 23 Mar 2020 12:10:59 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGLur-0004SX-05
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:10:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1584965446;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=KTi6Fbpftif/VSaqN/XQLRD1K5JgrsXFftrydIRiWZs=;
+ b=dEmIS5WjQBJtpFM1CvUbPWjHJXTaKn7nU//8GG/AAmonADRMmnsHDcx6qWoKuMOUJuE2BS
+ SFViJZRldHkSc+tX0XPj49etA27DKSqL4UQGwEDkhQk5ZrWZPHm4t5UjuHr1sxz2WsLzsv
+ ULykLwDhRD5kQ15kqwaEEBJtgpEeFYY=
+Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
+ [209.85.128.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-144-usOoLx0TPZKiK98fs08ACQ-1; Mon, 23 Mar 2020 08:10:44 -0400
+X-MC-Unique: usOoLx0TPZKiK98fs08ACQ-1
+Received: by mail-wm1-f69.google.com with SMTP id w9so875118wmi.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 05:10:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=rHQRdviv+oNnM+wOvy7j9QWQo0zwjiFN+uLtW4Mvpq0=;
+ b=qSU1ws0tM4081kRAHGCh29GsYDG6NGT0Pa744p1gvZA/AWzSF1+D8qcjjDGnKnzJCu
+ jiPGdsLa0SErrbvfd80RyVTJiJ1/DTWcvGlP762SN1A2qE/M9vQU0ouJ+zxMDvO8UJlf
+ tY5+QzCOeS+5mdHOcJ1qaE2YcJf8uPDQKioiC74kxAXnUFSRDHyVpvlAQBPcieFCVq53
+ EXOh9yPghq8sDNgri9Mxln9Wv0ordYxEX7MjIW5/G6MsdhbsINu91fKg7GUQwLwXuCYb
+ 6xqoac8ytFtIiImhn18GWhf/ed+4fNlO9LY8wucv5ScHg0LbttfA+xRhr0zcBO3uyIQ/
+ UmMQ==
+X-Gm-Message-State: ANhLgQ0QrKtHA+GUSbyMAnjsCr8Xh8ZopRNo8+HuPfdiixEkaT2Y6jS7
+ Uehvz1lPJh37oH8BKEjY1AdBsWKWWlygdv7od+xctcxz6c8CSpBUxmdv84A0fTrnhWE6Zxj8iH4
+ p49LUxjCfcIDLodtwk8Z2lLSpDj3IxUnl380=
+X-Received: by 2002:adf:f7ce:: with SMTP id a14mr30662467wrq.180.1584965443485; 
+ Mon, 23 Mar 2020 05:10:43 -0700 (PDT)
+X-Google-Smtp-Source: ADFU+vsLu0mWmhCib7a9L9Z4UgbCUMlvtjWeM7CpEh6ia2EdDdwqHhRYkq8ynpPTFBq7OzYIQ6wpBQ==
+X-Received: by 2002:adf:f7ce:: with SMTP id a14mr30662429wrq.180.1584965443217; 
+ Mon, 23 Mar 2020 05:10:43 -0700 (PDT)
+Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
+ by smtp.gmail.com with ESMTPSA id m7sm957131wro.41.2020.03.23.05.10.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Mar 2020 05:10:42 -0700 (PDT)
+From: Vitaly Kuznetsov <vkuznets@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>,
+ Paolo Bonzini <pbonzini@redhat.com>
+Subject: Re: [PATCH v3 2/9] KVM: x86: Move init-only kvm_x86_ops to separate
+ struct
+In-Reply-To: <20200321202603.19355-3-sean.j.christopherson@intel.com>
+References: <20200321202603.19355-1-sean.j.christopherson@intel.com>
+ <20200321202603.19355-3-sean.j.christopherson@intel.com>
+Date: Mon, 23 Mar 2020 13:10:40 +0100
+Message-ID: <87lfnr9sqn.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_050913_443555_42D133A1 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200323_051049_123879_50B6123F 
+X-CRM114-Status: GOOD (  17.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,44 +107,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org, Wanpeng Li <wanpengli@tencent.com>,
+ Janosch Frank <frankja@linux.ibm.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Cornelia Huck <cohuck@redhat.com>,
+ linux-mips@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ linux-kernel@vger.kernel.org, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ James Morse <james.morse@arm.com>, kvm-ppc@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgbWFhbmFudGFpbmEgMjMuIG1hYWxpc2t1dXRhIDIwMjAsIDE0LjA3LjAwIEVFVCBNYXJrIFJ1
-dGxhbmQgYSDDqWNyaXQgOgo+IE9uIFRodSwgTWFyIDE5LCAyMDIwIGF0IDExOjE0OjA1QU0gKzAy
-MDAsIFLDqW1pIERlbmlzLUNvdXJtb250IHdyb3RlOgo+ID4gRnJvbTogUsOpbWkgRGVuaXMtQ291
-cm1vbnQgPHJlbWkuZGVuaXMuY291cm1vbnRAaHVhd2VpLmNvbT4KPiA+IAo+ID4gVGhpcyBzd2l0
-Y2hlcyBmcm9tIGN1c3RvbSBpbnN0cnVjdGlvbiBwYXR0ZXJucyB0byB0aGUgcmVndWxhciBsYXJn
-ZQo+ID4gbWVtb3J5IG1vZGVsIHNlcXVlbmNlIHdpdGggQURSUCBhbmQgTERSLiBJbiBkb2luZyBz
-bywgdGhlIEFERAo+ID4gaW5zdHJ1Y3Rpb24gY2FuIGJlIGVsaW1pbmF0ZWQgaW4gdGhlIFNERUkg
-aGFuZGxlciwgYW5kIHRoZSBjb2RlIG5vCj4gPiBsb25nZXIgYXNzdW1lcyB0aGF0IHRoZSB0cmFt
-cG9saW5lIHZlY3RvcnMgYW5kIHRoZSB2ZWN0b3JzIGFkZHJlc3MgYm90aAo+ID4gc3RhcnQgb24g
-YSBwYWdlIGJvdW5kYXJ5Lgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBSw6ltaSBEZW5pcy1Db3Vy
-bW9udCA8cmVtaS5kZW5pcy5jb3VybW9udEBodWF3ZWkuY29tPgo+ID4gLS0tCj4gPiAKPiA+ICBh
-cmNoL2FybTY0L2tlcm5lbC9lbnRyeS5TIHwgOSArKysrLS0tLS0KPiA+ICAxIGZpbGUgY2hhbmdl
-ZCwgNCBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUyBiL2FyY2gvYXJtNjQva2VybmVsL2VudHJ5LlMKPiA+
-IGluZGV4IGU1ZDRlMzBlZTI0Mi4uMjRmODI4NzM5Njk2IDEwMDY0NAo+ID4gLS0tIGEvYXJjaC9h
-cm02NC9rZXJuZWwvZW50cnkuUwo+ID4gKysrIGIvYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUwo+
-ID4gQEAgLTgwNSw5ICs4MDUsOSBAQCBhbHRlcm5hdGl2ZV9lbHNlX25vcF9lbmRpZgo+ID4gCj4g
-PiAgMjoKPiA+ICAJdHJhbXBfbWFwX2tlcm5lbAl4MzAKPiA+ICAKPiA+ICAjaWZkZWYgQ09ORklH
-X1JBTkRPTUlaRV9CQVNFCj4gPiAKPiA+IC0JYWRyCXgzMCwgdHJhbXBfdmVjdG9ycyArIFBBR0Vf
-U0laRQo+ID4gKwlhZHJwCXgzMCwgdHJhbXBfdmVjdG9ycyArIFBBR0VfU0laRQo+ID4gCj4gPiAg
-YWx0ZXJuYXRpdmVfaW5zbiBpc2IsIG5vcCwgQVJNNjRfV09SS0FST1VORF9RQ09NX0ZBTEtPUl9F
-MTAwMwo+ID4gCj4gPiAtCWxkcgl4MzAsIFt4MzBdCj4gPiArCWxkcgl4MzAsIFt4MzAsICM6bG8x
-MjpfX2VudHJ5X3RyYW1wX2RhdGFfc3RhcnRdCj4gCj4gSSB0aGluayB0aGlzIGlzIGJ1c3RlZCBm
-b3IgITRLIGtlcm5lbHMgb25jZSB3ZSByZWR1Y2UgdGhlIGFsaWdubWVudCBvZgo+IF9fZW50cnlf
-dHJhbXBfZGF0YV9zdGFydC4KPiAKPiBUaGUgQURSUCBnaXZlcyB1cyBhIDY0SyBhbGlnbmVkIGFk
-ZHJlc3MgKHdpdGggYml0cyAxNTowIGNsZWFyKS4gVGhlIGxvMTIKPiByZWxvY2F0aW9uIGdpdmVz
-IHVzIGJpdHMgMTE6MCwgc28gd2UgaGF2ZW4ndCBhY2NvdW50ZWQgZm9yIGJpdHMgMTU6MTIuCgpJ
-TVUsIEFEUlAgZ2l2ZXMgYSA0SyBhbGlnbmVkIHZhbHVlLCByZWdhcmRsZXNzIG9mIE1NVSAoVENS
-KSBzZXR0aW5ncy4KCkkgcmF0aGVyIHN1c3BlY3QgdGhhdCB0aGUgcHJvYmxlbSBpcyB3aXRoIG15
-IEMgY29kZSBkaWZmIGFzc3VtaW5nIHRoYXQgClBBR0VfTUFTSyBpcyA0MDk1LgoKLS0gClLDqW1p
-IERlbmlzLUNvdXJtb250Cmh0dHA6Ly93d3cucmVtbGFiLm5ldC8KCgoKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Sean Christopherson <sean.j.christopherson@intel.com> writes:
+
+> Move the kvm_x86_ops functions that are used only within the scope of
+> kvm_init() into a separate struct, kvm_x86_init_ops.  In addition to
+> identifying the init-only functions without restorting to code comments,
+> this also sets the stage for waiting until after ->hardware_setup() to
+> set kvm_x86_ops.  Setting kvm_x86_ops after ->hardware_setup() is
+> desirable as many of the hooks are not usable until ->hardware_setup()
+> completes.
+>
+> No functional change intended.
+>
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+> ---
+>  arch/x86/include/asm/kvm_host.h | 13 +++++++++----
+>  arch/x86/kvm/svm.c              | 15 ++++++++++-----
+>  arch/x86/kvm/vmx/vmx.c          | 16 +++++++++++-----
+>  arch/x86/kvm/x86.c              | 10 ++++++----
+>  4 files changed, 36 insertions(+), 18 deletions(-)
+>
+> diff --git a/arch/x86/include/asm/kvm_host.h b/arch/x86/include/asm/kvm_host.h
+> index 9a183e9d4cb1..f4c5b49299ff 100644
+> --- a/arch/x86/include/asm/kvm_host.h
+> +++ b/arch/x86/include/asm/kvm_host.h
+> @@ -1054,12 +1054,8 @@ static inline u16 kvm_lapic_irq_dest_mode(bool dest_mode_logical)
+>  }
+>  
+>  struct kvm_x86_ops {
+> -	int (*cpu_has_kvm_support)(void);          /* __init */
+> -	int (*disabled_by_bios)(void);             /* __init */
+>  	int (*hardware_enable)(void);
+>  	void (*hardware_disable)(void);
+> -	int (*check_processor_compatibility)(void);/* __init */
+> -	int (*hardware_setup)(void);               /* __init */
+>  	void (*hardware_unsetup)(void);            /* __exit */
+>  	bool (*cpu_has_accelerated_tpr)(void);
+>  	bool (*has_emulated_msr)(int index);
+> @@ -1260,6 +1256,15 @@ struct kvm_x86_ops {
+>  	int (*enable_direct_tlbflush)(struct kvm_vcpu *vcpu);
+>  };
+>  
+> +struct kvm_x86_init_ops {
+> +	int (*cpu_has_kvm_support)(void);
+> +	int (*disabled_by_bios)(void);
+> +	int (*check_processor_compatibility)(void);
+> +	int (*hardware_setup)(void);
+> +
+> +	struct kvm_x86_ops *runtime_ops;
+> +};
+> +
+>  struct kvm_arch_async_pf {
+>  	u32 token;
+>  	gfn_t gfn;
+> diff --git a/arch/x86/kvm/svm.c b/arch/x86/kvm/svm.c
+> index 2125c6ae5951..33e67c3389c2 100644
+> --- a/arch/x86/kvm/svm.c
+> +++ b/arch/x86/kvm/svm.c
+> @@ -7351,11 +7351,7 @@ static void svm_pre_update_apicv_exec_ctrl(struct kvm *kvm, bool activate)
+>  }
+>  
+>  static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
+> -	.cpu_has_kvm_support = has_svm,
+> -	.disabled_by_bios = is_disabled,
+> -	.hardware_setup = svm_hardware_setup,
+>  	.hardware_unsetup = svm_hardware_teardown,
+> -	.check_processor_compatibility = svm_check_processor_compat,
+>  	.hardware_enable = svm_hardware_enable,
+>  	.hardware_disable = svm_hardware_disable,
+>  	.cpu_has_accelerated_tpr = svm_cpu_has_accelerated_tpr,
+> @@ -7480,9 +7476,18 @@ static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
+>  	.check_nested_events = svm_check_nested_events,
+>  };
+>  
+> +static struct kvm_x86_init_ops svm_init_ops __initdata = {
+> +	.cpu_has_kvm_support = has_svm,
+> +	.disabled_by_bios = is_disabled,
+> +	.hardware_setup = svm_hardware_setup,
+> +	.check_processor_compatibility = svm_check_processor_compat,
+> +
+> +	.runtime_ops = &svm_x86_ops,
+> +};
+
+Unrelated to your patch but I think we can make the naming of some of
+these functions more consistend on SVM/VMX, in particular I'd suggest 
+
+has_svm() -> cpu_has_svm_support()
+is_disabled -> svm_disabled_by_bios()
+...
+(see below for VMX)
+
+> +
+>  static int __init svm_init(void)
+>  {
+> -	return kvm_init(&svm_x86_ops, sizeof(struct vcpu_svm),
+> +	return kvm_init(&svm_init_ops, sizeof(struct vcpu_svm),
+>  			__alignof__(struct vcpu_svm), THIS_MODULE);
+>  }
+>  
+> diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
+> index 07299a957d4a..ffcdcc86f5b7 100644
+> --- a/arch/x86/kvm/vmx/vmx.c
+> +++ b/arch/x86/kvm/vmx/vmx.c
+> @@ -7842,11 +7842,8 @@ static bool vmx_check_apicv_inhibit_reasons(ulong bit)
+>  }
+>  
+>  static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+> -	.cpu_has_kvm_support = cpu_has_kvm_support,
+> -	.disabled_by_bios = vmx_disabled_by_bios,
+> -	.hardware_setup = hardware_setup,
+>  	.hardware_unsetup = hardware_unsetup,
+> -	.check_processor_compatibility = vmx_check_processor_compat,
+> +
+>  	.hardware_enable = hardware_enable,
+>  	.hardware_disable = hardware_disable,
+>  	.cpu_has_accelerated_tpr = report_flexpriority,
+> @@ -7981,6 +7978,15 @@ static struct kvm_x86_ops vmx_x86_ops __ro_after_init = {
+>  	.apic_init_signal_blocked = vmx_apic_init_signal_blocked,
+>  };
+>  
+> +static struct kvm_x86_init_ops vmx_init_ops __initdata = {
+> +	.cpu_has_kvm_support = cpu_has_kvm_support,
+> +	.disabled_by_bios = vmx_disabled_by_bios,
+> +	.check_processor_compatibility = vmx_check_processor_compat,
+> +	.hardware_setup = hardware_setup,
+
+cpu_has_kvm_support() -> cpu_has_vmx_support()
+hardware_setup() -> vmx_hardware_setup()
+
+> +
+> +	.runtime_ops = &vmx_x86_ops,
+> +};
+> +
+>  static void vmx_cleanup_l1d_flush(void)
+>  {
+>  	if (vmx_l1d_flush_pages) {
+> @@ -8065,7 +8071,7 @@ static int __init vmx_init(void)
+>  	}
+>  #endif
+>  
+> -	r = kvm_init(&vmx_x86_ops, sizeof(struct vcpu_vmx),
+> +	r = kvm_init(&vmx_init_ops, sizeof(struct vcpu_vmx),
+>  		     __alignof__(struct vcpu_vmx), THIS_MODULE);
+>  	if (r)
+>  		return r;
+> diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+> index 0f08e1b4e762..20f989d1bba8 100644
+> --- a/arch/x86/kvm/x86.c
+> +++ b/arch/x86/kvm/x86.c
+> @@ -7298,8 +7298,8 @@ static struct notifier_block pvclock_gtod_notifier = {
+>  
+>  int kvm_arch_init(void *opaque)
+>  {
+> +	struct kvm_x86_init_ops *ops = opaque;
+>  	int r;
+> -	struct kvm_x86_ops *ops = opaque;
+>  
+>  	if (kvm_x86_ops) {
+>  		printk(KERN_ERR "kvm: already loaded the other module\n");
+> @@ -7354,7 +7354,7 @@ int kvm_arch_init(void *opaque)
+>  	if (r)
+>  		goto out_free_percpu;
+>  
+> -	kvm_x86_ops = ops;
+> +	kvm_x86_ops = ops->runtime_ops;
+>  
+>  	kvm_mmu_set_mask_ptes(PT_USER_MASK, PT_ACCESSED_MASK,
+>  			PT_DIRTY_MASK, PT64_NX_MASK, 0,
+> @@ -9623,6 +9623,7 @@ void kvm_arch_hardware_disable(void)
+>  
+>  int kvm_arch_hardware_setup(void *opaque)
+>  {
+> +	struct kvm_x86_init_ops *ops = opaque;
+>  	int r;
+>  
+>  	rdmsrl_safe(MSR_EFER, &host_efer);
+> @@ -9630,7 +9631,7 @@ int kvm_arch_hardware_setup(void *opaque)
+>  	if (boot_cpu_has(X86_FEATURE_XSAVES))
+>  		rdmsrl(MSR_IA32_XSS, host_xss);
+>  
+> -	r = kvm_x86_ops->hardware_setup();
+> +	r = ops->hardware_setup();
+>  	if (r != 0)
+>  		return r;
+>  
+> @@ -9665,13 +9666,14 @@ void kvm_arch_hardware_unsetup(void)
+>  int kvm_arch_check_processor_compat(void *opaque)
+>  {
+>  	struct cpuinfo_x86 *c = &cpu_data(smp_processor_id());
+> +	struct kvm_x86_init_ops *ops = opaque;
+>  
+>  	WARN_ON(!irqs_disabled());
+>  
+>  	if (kvm_host_cr4_reserved_bits(c) != cr4_reserved_bits)
+>  		return -EIO;
+>  
+> -	return kvm_x86_ops->check_processor_compatibility();
+> +	return ops->check_processor_compatibility();
+>  }
+>  
+>  bool kvm_vcpu_is_reset_bsp(struct kvm_vcpu *vcpu)
+
+The patch itself looks good,
+
+Reviewed-by: Vitaly Kuznetsov <vkuznets@redhat.com>
+
+-- 
+Vitaly
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
