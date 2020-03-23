@@ -2,59 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB9ED18F312
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:42:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1D1318F311
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 11:42:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NShITWDg2/oMz/YbfBftPvCacgu9UlhriiNULuMJJYY=; b=RrtJPv26qbTvUWOGJ3f3aBAoM
-	av2tGpgLw6JQU/awSOqBSBV6TSxHxdzXhxs9+3XD64kjoN4H5ckFegbSyYgNjSShKdQx9qJ44iHAI
-	V3OcHyUJbBwOxBJw2AnzARcIx+bNJwG94f6hebvH+U/sFL95KFftNYeyOTSUvpvahV6IDXm/b3BE6
-	dqI5ATnEo5xG4ZKtIDzuGwCWZ7TekRXeL6Qon1i32Zlk/RO2otualenPaHWtNbFq55sCXBmsI7qsa
-	w1v75iQAb74ylLo38hOik0pmNg43UFVgJGIM6IpjrAEJflFCxiBLGQiFBOMCfO39i4a9fAdoJqDRP
-	lo5t5p6KQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Jz/D+w/y86PK6TgcTxeYNG1vaac/6z5QQfJp/jWxbtk=; b=CDm+S02S+L1OWE
+	6uBzJ+fDNdgOMEZ9cLuXVZFOMZkuT15ZBzHDt90VEnOI2CRL6SLtMeX1fIbnUbDt1gcEHJl/Q+jg/
+	cH4ML8bLrwBt9thxjsr7GLtwsPnEK4aLm5Q9YiGQzWaUk8HvFUZwYnh+YEhmiHqVNS8lTvWsRBsNP
+	v59yUud2jPDPuSaOm6Z10Jk9L0x7MjPtt5Raobt36SzmcHjyNrBPOIPEoKolft/OWMTd6qA3H5Mfo
+	5IJkJdeblMIrQV8ieCVart/f16xWRU5XesZwvxnCBHPmnB9RLjWxMSP7VdCcTLRMQvxiYI5+FIWHV
+	785QIMz2q4uKPeG7K20A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGKXh-00055D-1S; Mon, 23 Mar 2020 10:42:49 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jGKXQ-0004x1-T0; Mon, 23 Mar 2020 10:42:32 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGKXK-0004wb-Py; Mon, 23 Mar 2020 10:42:29 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 4C44FAEDA;
- Mon, 23 Mar 2020 10:42:20 +0000 (UTC)
-Message-ID: <fc5bcca4feed54de243b3e24228ef1ad99430c4c.camel@suse.de>
-Subject: Re: [PATCH v2 12/12] dt-bindings: arm: bcm: Convert BCM2835
- firmware binding to YAML
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Maxime Ripard <maxime@cerno.tech>, Florian Fainelli <f.fainelli@gmail.com>
-Date: Mon, 23 Mar 2020 11:42:16 +0100
-In-Reply-To: <20200323084044.dziwbk7pugoy73yh@gilmour.lan>
-References: <20200204235552.7466-1-f.fainelli@gmail.com>
- <20200204235552.7466-13-f.fainelli@gmail.com>
- <20200206192333.GA30325@bogus>
- <47e12841-d9bb-3204-76c0-5bc0ef74b094@gmail.com>
- <20200323084044.dziwbk7pugoy73yh@gilmour.lan>
-User-Agent: Evolution 3.34.4 
+ id 1jGKXI-0004wa-Bu
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 10:42:25 +0000
+IronPort-SDR: v57Mr7kaObUdgeBj/f/KUMoUJ5j3R81yPUWLIXllIZuBYkmbhu8SijGbAoIik9MP0Wlxa58Zzj
+ yCYAAsARq00rFcHl4TvxKWPg+AUIw+ohD5xWZ62/8r7YvatmFoCio+uK/Yt4tnNYD1lqf81of7
+ nxrmBSffhHdM2N+6tmn+331+XqgIEFdfUfHgQaqTv9/xxsWyqYTU7zmUKwmDzcCLYtVlsMNhkh
+ yq9tB6bPmQ7ERPe+03yANDh9tXEFNmyXtRO6DiJFbGHZdqfCZiiddc1tlVYpNJuIwiLZnFLj+0
+ M/U=
+X-IronPort-AV: E=Sophos;i="5.72,296,1580799600"; d="scan'208";a="69815413"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 23 Mar 2020 03:42:21 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 23 Mar 2020 03:42:26 -0700
+Received: from NAM11-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 23 Mar 2020 03:42:21 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AKWfHIH7TB9nXwC4AlOtDgs4PKFHwITddf3ABQDHvOOgQNhNwMXuFPt0UJ2sqrrsbhXRsoTFdY2zUKVqRyWVu9c0oZZ21di60q99kK5bmXrTx3HuQuEsut7o75xHml666Cwuhmd6XkcXoZcrpLt6b0Q2+IznWTszH0adxqwDHIQ8D/0Y4JRoEaEN7eYS57tnOyk1XFHXZ/32eQXnPZqdQKU7TSitaKpwfu5yepxu8JTwiolx3wwOO5F+cIf4N+yr4oAtNukTMV4Fh6D7upVlmO+gKbQWdMpA0pTkJVL9TTntcYUjh2N6y0tiLxAA417NlMoE+N5FuD6ZBd4aMGAGYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3JY6qpyo+yshj9POOfT2uMlso2WMNE9dwzh6iOCCVtg=;
+ b=eLqEj5rllA67O3nTGSFGFzwoHhcRux385fNKLhQ1cuMGpewa+Kd3Ig7TmrTjJUtqzO749P+ybuevb45wJR91ebnGqWcDtbeGvM6iFlhPhcpXWr94cUlyaxGwkg1M90bDAAFKX4Pznf8+FWIhPkpT4mHj0zqbNpDRbjM8UyYd5m5JB5T1aV69bV4KFR5A3BUC6UofSab8oL2h/qpxmopb0kmbV6x+2HIVX+ZiMzvyL2b3cqP294sf6hcbn89hJ5n/T4gvZQKqeDNUYhge+OFJQ9gglAz9QcRSJOUxmi/IAVc/W1UaaVoLuyiCoN5gHG5S6ah4e9NgQz7RFpCDLZVnkg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3JY6qpyo+yshj9POOfT2uMlso2WMNE9dwzh6iOCCVtg=;
+ b=UcMP+iACD/ogI04kIkb/xFMbt59Qxsr5YnghPjGCqyvDI2dZzb0tJIOk6SgypIoRjmzcpiNShn/qw7xfNFqZee8nUKqzwSVBDZ0uaEj+ZlIbJvSBZUAFAzLJbXA/kybaujHDABC0BDAUTZxAEcjSiYetmS+KXUws+4hKrS9l50Q=
+Received: from DM6PR11MB4123.namprd11.prod.outlook.com (2603:10b6:5:196::12)
+ by DM6PR11MB4252.namprd11.prod.outlook.com (2603:10b6:5:201::26) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.22; Mon, 23 Mar
+ 2020 10:42:19 +0000
+Received: from DM6PR11MB4123.namprd11.prod.outlook.com
+ ([fe80::f42c:82b3:ecda:5ff4]) by DM6PR11MB4123.namprd11.prod.outlook.com
+ ([fe80::f42c:82b3:ecda:5ff4%6]) with mapi id 15.20.2835.021; Mon, 23 Mar 2020
+ 10:42:19 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <jic23@kernel.org>
+Subject: Re: [PATCH v3 1/3] iio: adc: at91-sama5d2_adc: fix differential
+ channels in triggered mode
+Thread-Topic: [PATCH v3 1/3] iio: adc: at91-sama5d2_adc: fix differential
+ channels in triggered mode
+Thread-Index: AQHV1dqFsAVAQA8Fs0errk5mUZMqBagHxLQAgE6PCoA=
+Date: Mon, 23 Mar 2020 10:42:19 +0000
+Message-ID: <5c0829d6-3b8d-0efc-0ffc-042727cb9115@microchip.com>
+References: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
+ <1580216189-27418-2-git-send-email-eugen.hristev@microchip.com>
+ <20200202110206.7326ce4d@archlinux>
+In-Reply-To: <20200202110206.7326ce4d@archlinux>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Eugen.Hristev@microchip.com; 
+x-originating-ip: [86.120.188.33]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: fc701c65-661d-444a-6655-08d7cf16dcdf
+x-ms-traffictypediagnostic: DM6PR11MB4252:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB42521138B6FB150BE11F41DFE8F00@DM6PR11MB4252.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0351D213B3
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(136003)(396003)(366004)(376002)(346002)(199004)(31696002)(53546011)(8676002)(86362001)(8936002)(2616005)(81166006)(6512007)(81156014)(66476007)(71200400001)(76116006)(64756008)(5660300002)(66446008)(26005)(66556008)(66946007)(36756003)(2906002)(316002)(6916009)(6506007)(31686004)(6486002)(478600001)(186003)(4326008)(54906003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB4252;
+ H:DM6PR11MB4123.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: JvBOvfVO/BC8FxbqhQXfNnUJdePCA/yMZ9axu8sh9NDRUBO19Z4Df8dNacPrbwXcq61YdwsgDTJm9sVgyODHVr4DUv4oSGzMFUqc5dbYPDWi3W2L26BcO6hf8TCApZxjKEZqP6/yMuB2vqlF7Q5cVL/giUmS+DV8AQUmh8bqe+H5WvDps7V02q8X9ZproFBYpJhWwr1/ulKT6AtddnikyPgTyiVVyKmVtAPml4nFEe/+i/4Ms7Mcyp1f4BjEHxMmVICK5yz+yH6iH4hAXoGa1pfbzwwz1frbaKR3YjbwyVCvJXkSiU+0+TWHubQWu7bl2Bdrx/s8N8lVmAp7kxkAPnd/Lhek2zaqaZD2EMgqOBSt7Oiqt1hzM9mrDw9fwca/L1HM0DInyZCRGcpI1V3DFzezX1PSvP2CAjLyDNoeyGc7UZvukmQi8XilJDQjF+TT
+x-ms-exchange-antispam-messagedata: 9+k+keZboyXtSN6dUN3nDXfwCVX4yEgA8Z9eoe/yOk7vyZPl4iZPRdPP/XfOxOaivi4B338tYh0MZA8uGMaoHdUBNl07yldwsfSPrV/E2lk64M8TZljyme4Bk0jXtc66x2bCb1VQAbHFZN6UlhrycQ==
+Content-ID: <E38F89B21C5D104882476C94951021F4@namprd11.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: fc701c65-661d-444a-6655-08d7cf16dcdf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Mar 2020 10:42:19.7403 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: fZjISqWR4GoN3fr5nLREkbwa/alkp+jC7j2kAUWVoyUKAJjciAAkIvtofL6x76OqkKvPVHD8I++PR1MBPk3Owh3DxQAV+8FMQpJwRz9VvFQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4252
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_034227_186288_E2454FD6 
-X-CRM114-Status: GOOD (  26.32  )
+X-CRM114-CacheID: sfid-20200323_034224_470301_F98BF53E 
+X-CRM114-Status: GOOD (  16.04  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,167 +142,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- "james.tai" <james.tai@realtek.com>, Arnd Bergmann <arnd@arndb.de>,
- Scott Branden <sbranden@broadcom.com>, "open list:OPEN
- FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Sugaya Taichi <sugaya.taichi@socionext.com>, Ray Jui <rjui@broadcom.com>,
- open list <linux-kernel@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
- Vinod Koul <vkoul@kernel.org>, "maintainer:BROADCOM IPROC ARM
- ARCHITECTURE" <bcm-kernel-feedback-list@broadcom.com>,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org,
- "moderated list:BROADCOM
- BCM2711/BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1551704594673181470=="
+Cc: linux-iio@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ alexandru.ardelean@analog.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 02.02.2020 13:02, Jonathan Cameron wrote:
+> On Tue, 28 Jan 2020 12:57:39 +0000
+> <Eugen.Hristev@microchip.com> wrote:
+> 
+>> From: Eugen Hristev <eugen.hristev@microchip.com>
+>>
+>> The differential channels require writing the channel offset register (COR).
+>> Otherwise they do not work in differential mode.
+>> The configuration of COR is missing in triggered mode.
+>>
+>> Fixes: 5e1a1da0f8c9 ("iio: adc: at91-sama5d2_adc: add hw trigger and buffer support")
+>> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> Applied to the fixes-togreg branch of iio.git.  Normally I avoid rebasing that
+> branch but I may do so this time given it's currently mid merge window.
+> 
+> The other two patches will have to wait for this one to get upstream of
+> my togreg branch which will take a few weeks.
+> 
+> Please give me a poke if I seem to have forgotten about them!
+> 
 
---===============1551704594673181470==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-RpMYkWCESsJPGDcne0PU"
+Poke !
 
+Eugen
 
---=-RpMYkWCESsJPGDcne0PU
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, 2020-03-23 at 09:40 +0100, Maxime Ripard wrote:
-> Hi Florian,
->=20
-> On Sun, Mar 22, 2020 at 02:35:17PM -0700, Florian Fainelli wrote:
-> >=20
-> > On 2/6/2020 11:23 AM, Rob Herring wrote:
-> > > On Tue, Feb 04, 2020 at 03:55:52PM -0800, Florian Fainelli wrote:
-> > > > Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
-> > > > Verified with dt_binding_check and dtbs_check.
-> > > >=20
-> > > > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> > > > ---
-> > > >  .../arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------
-> > > >  .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 33 +++++++++++++++=
-++++
-> > > >  2 files changed, 33 insertions(+), 14 deletions(-)
-> > > >  delete mode 100644
-> > > > Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.txt
-> > > >  create mode 100644
-> > > > Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.yaml
-> > > >=20
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.txt
-> > > > b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.txt
-> > > > deleted file mode 100644
-> > > > index 6824b3180ffb..000000000000
-> > > > --- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835=
--
-> > > > firmware.txt
-> > > > +++ /dev/null
-> > > > @@ -1,14 +0,0 @@
-> > > > -Raspberry Pi VideoCore firmware driver
-> > > > -
-> > > > -Required properties:
-> > > > -
-> > > > -- compatible:		Should be "raspberrypi,bcm2835-firmware"
-> > > > -- mboxes:		Phandle to the firmware device's Mailbox.
-> > > > -			  (See: ../mailbox/mailbox.txt for more
-> > > > information)
-> > > > -
-> > > > -Example:
-> > > > -
-> > > > -firmware {
-> > > > -	compatible =3D "raspberrypi,bcm2835-firmware";
-> > > > -	mboxes =3D <&mailbox>;
-> > > > -};
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.yaml
-> > > > b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-
-> > > > firmware.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..db355d970f2b
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835=
--
-> > > > firmware.yaml
-> > > > @@ -0,0 +1,33 @@
-> > > > +# SPDX-License-Identifier: GPL-2.0
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id:=20
-> > > > http://devicetree.org/schemas/arm/bcm/raspberrypi,bcm2835-firmware.=
-yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Raspberry Pi VideoCore firmware driver
-> > > > +
-> > > > +maintainers:
-> > > > +  - Eric Anholt <eric@anholt.net>
-> > > > +  - Stefan Wahren <wahrenst@gmx.net>
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: raspberrypi,bcm2835-firmware simple-bus
-> > >                                           ^
-> > >=20
-> > > I need to check for spaces with the meta-schema...
-> >=20
-> > I believe I had tried to use:
-> >=20
-> > const: raspberrypi,bcm2835-firmware
-> > const: simple-bus
-> >=20
-> > but this did not work, and I had to resort to doing this.
->=20
-> That would be:
->=20
-> compatible:
->   items:
->     - const: raspberrypi,bcm2835-firmware
->     - const: simple-bus
->=20
-> It changes slightly from what the initial binding was saying though,
-> since it wasn't mentionning simple-bus at all? Is that on purpose?
-
-I guess we failed to update the binding after starting to use the firmware
-device as a bus.
-
-
---=-RpMYkWCESsJPGDcne0PU
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl54kogACgkQlfZmHno8
-x/6Oxwf/RxCalW3P6O6N4jDFJcvvMOR8hT0bzENJf8exug8nu2upzGFR9cp5rgvy
-nIuAsApBBpQ7BBIaD/Quv6256Qx5iYLAZGxbDMXhUwI7FyLiPJtf4Xgy6N1JVxrI
-KSxJVwYzKAqYvT0C8hEtcOYilaGkLv8uvoK/gN1x1zNYUZil304HblPxudfJUqb4
-/EDOh3y8ZL53j+7GQLp512aIF82mtD5m1Kvh7PqJSW41iqdQHW709Fw/lY+WoqHf
-8lRgpMAmDMxiw6rNLasp0M4CmTowgbE3FwjltqJdgykk1upD3GQXDbKkxoIVIzqZ
-gXEUdkyF5HlKG1wbYsTgqC6+vSnZiw==
-=I9aD
------END PGP SIGNATURE-----
-
---=-RpMYkWCESsJPGDcne0PU--
-
-
-
---===============1551704594673181470==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Thanks,
+> 
+> Jonathan
+> 
+>> ---
+>> Changes in v2:
+>> - moved to the start of the list
+>>
+>>   drivers/iio/adc/at91-sama5d2_adc.c | 15 +++++++++++++++
+>>   1 file changed, 15 insertions(+)
+>>
+>> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+>> index e1850f3..2a6950a 100644
+>> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+>> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+>> @@ -723,6 +723,7 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+>>
+>>        for_each_set_bit(bit, indio->active_scan_mask, indio->num_channels) {
+>>                struct iio_chan_spec const *chan = at91_adc_chan_get(indio, bit);
+>> +             u32 cor;
+>>
+>>                if (!chan)
+>>                        continue;
+>> @@ -732,6 +733,20 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+>>                        continue;
+>>
+>>                if (state) {
+>> +                     cor = at91_adc_readl(st, AT91_SAMA5D2_COR);
+>> +
+>> +                     if (chan->differential)
+>> +                             cor |= (BIT(chan->channel) |
+>> +                                     BIT(chan->channel2)) <<
+>> +                                     AT91_SAMA5D2_COR_DIFF_OFFSET;
+>> +                     else
+>> +                             cor &= ~(BIT(chan->channel) <<
+>> +                                    AT91_SAMA5D2_COR_DIFF_OFFSET);
+>> +
+>> +                     at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
+>> +             }
+>> +
+>> +             if (state) {
+>>                        at91_adc_writel(st, AT91_SAMA5D2_CHER,
+>>                                        BIT(chan->channel));
+>>                        /* enable irq only if not using DMA */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1551704594673181470==--
-
-
