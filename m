@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE27F18F469
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:22:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D77EC18F481
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 13:26:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jh9R3bct4ql/irYrPnwVLDKmOTpgvwgxUDhomIfu+us=; b=pqrcLI0VET9beL
-	wtvdXRV1fTDRrODiL6fiy1kZZqlTt3TGKhCoDfHBqi3rkSn1YtPnvZ+r6x0sStDGcqKm2Otrk8d3m
-	5ZjZ3CWp9n3oqpaMkAorq0eOZMX0bel88BauMpfhBiyy2eCSYWfBlmV1DH/bIDcaaJ7EviZ9YsiYj
-	AUeLEDOBCP6VlCam0QLU77PZRqehJElnw9nL16nWachQGR4o66PDISQaL1L0GWDRcuqMQKQinob3c
-	f7MmjHF2Ss10uxojao79xtlRWLnUiA4lYjFM2MzTDvuee5rxwEjOtzA/KeodoKY7UD8bklvgwim4I
-	gedmZwbKK3Um4NW+lgDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EtQpyARZRZB1X6FRnzY9U3dDhO3XXny4M2DjGBXkrHE=; b=JlTPDJJkEjfIam
+	5E5BCuDN6Irhkzq5g/ViaVNWJdq1So/rJDoujOcZ8alAY1HnFNzQHZZgjIea1hSlVqr4+Q+Fknkw/
+	F0yTyKto8HuRQ0RcPHQEIMaC0qDP7Yhg3zz8tnP6Fgc4n7fRs+CBokGA9G6r80/0J9zumnwO3dOhS
+	icgR2pN+dtAUvrRIREKsmhXs7TsA7wARLC2BmgsqHrByAdbqsUgaGvLlvKvjMEW8FszwlXae6jAdQ
+	kvHejVB7Kkkk+Sb31KQjDSzD4GJuwRHeokqg98HlK5sB12yHKbILvzivlnj3SrgXvx3QZNFSiSlIB
+	Ub7NwD/ZcRVVaWQR2wsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGM5f-0002AZ-Am; Mon, 23 Mar 2020 12:21:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGM5X-0002A0-06
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:21:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1DCC1FB;
- Mon, 23 Mar 2020 05:21:49 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7AFEC3F52E;
- Mon, 23 Mar 2020 05:21:46 -0700 (PDT)
-Date: Mon, 23 Mar 2020 12:21:44 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
-Message-ID: <20200323122143.GB4892@mbp>
-References: <20200316165055.31179-1-broonie@kernel.org>
- <20200320173945.GC27072@arm.com>
+	id 1jGMA9-0004P3-U8; Mon, 23 Mar 2020 12:26:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGMA0-0004O6-1Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 12:26:30 +0000
+Received: from mail.kernel.org (ip5f5ad4e9.dynamic.kabel-deutschland.de
+ [95.90.212.233])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EA4002076A;
+ Mon, 23 Mar 2020 12:26:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1584966387;
+ bh=YHai4ctJCjlmCmGFPnFzHa2wxTDr6jCJFRdt8EREGNo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=FvGbBMxXHG2jZpLD0Qn1P8L2JXwyRRyrcS3gMG6uIuzvISXsRYXWINbl5NCBWkIq/
+ 9DZXaqtRWF1meriBRM0A5+OAZNdhlfLw9Kz33qf2EHgFDYvSoP0jjmGyYV3k5ez67F
+ DPG26Bxg4jmHq+vUS6p48Sk0FLtudJiK67+fUqmM=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jGM9w-001Ttw-UG; Mon, 23 Mar 2020 13:26:24 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH] docs: trace: coresight-ect.rst: fix a build warning
+Date: Mon, 23 Mar 2020 13:26:24 +0100
+Message-Id: <049f74b1db84cf08a02d0922bfa7567a895d46f1.1584966380.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200320173945.GC27072@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_052151_134046_C7B348D4 
-X-CRM114-Status: GOOD (  17.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_052628_099364_141BCE89 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,71 +78,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Eugene Syromiatnikov <esyr@redhat.com>, "H . J . Lu " <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Sudakshina Das <sudi.das@arm.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 05:39:46PM +0000, Szabolcs Nagy wrote:
-> The 03/16/2020 16:50, Mark Brown wrote:
-> > This patch series implements support for ARMv8.5-A Branch Target
-> > Identification (BTI), which is a control flow integrity protection
-> > feature introduced as part of the ARMv8.5-A extensions.
-> 
-> i was playing with this and it seems the kernel does not add
-> PROT_BTI to non-static executables (i.e. there is an interpreter).
-> 
-> i thought any elf that the kernel maps would get PROT_BTI from the
-> kernel. (i want to remove the mprotect in glibc when not necessary)
+Sphinx wants a line after "..", as otherwise it complains with:
 
-I haven't followed the early discussions but I think this makes sense.
+	Documentation/trace/coresight/coresight-ect.rst:2: WARNING: Explicit markup ends without a blank line; unexpected unindent.
 
-> i tested by linking a hello world exe with -Wl,-z,force-bti (and
-> verified that the property note is there) and expected it to crash
-> (with SIGILL) when the dynamic linker jumps to _start in the exe,
-> but it executed without errors (if i do the mprotect in glibc then
-> i get SIGILL as expected).
-> 
-> is this deliberate? does the kernel map static exe and dynamic
-> linked exe differently?
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ Documentation/trace/coresight/coresight-ect.rst | 1 +
+ 1 file changed, 1 insertion(+)
 
-I think the logic is in patch 5:
-
-+int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
-+                        bool has_interp, bool is_interp)
-+{
-+       if (is_interp != has_interp)
-+               return prot;
+diff --git a/Documentation/trace/coresight/coresight-ect.rst b/Documentation/trace/coresight/coresight-ect.rst
+index ecc1e57012ef..a93e52abcf46 100644
+--- a/Documentation/trace/coresight/coresight-ect.rst
++++ b/Documentation/trace/coresight/coresight-ect.rst
+@@ -1,4 +1,5 @@
+ .. SPDX-License-Identifier: GPL-2.0
 +
-+       if (!(state->flags & ARM64_ELF_BTI))
-+               return prot;
-+
-+       if (prot & PROT_EXEC)
-+               prot |= PROT_BTI;
-+
-+       return prot;
-+}
-
-At a quick look, for dynamic binaries we have has_interp == true and
-is_interp == false. I don't know why but, either way, the above code
-needs a comment with some justification.
-
+ =============================================
+ CoreSight Embedded Cross Trigger (CTI & CTM).
+ =============================================
 -- 
-Catalin
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
