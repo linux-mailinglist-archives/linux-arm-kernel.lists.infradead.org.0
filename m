@@ -2,103 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F4D318F195
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:18:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4152D18F1AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 10:21:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=67QOjKjz3cA6GKD0wU97wC3jGkibfunyGlniJbRXgns=; b=MGob40LM2eyGTf
-	NMdZUtUZ18L5is2nG3Yslsq008CL/EQEL0NhUOe8mtQEHgJDYTfoePHPIGydxnap2Lusg72eiRPTI
-	dG+9Ij0meXQJmQ/ql4Q806Qyn8t9q9aeYOHMLmrR+wN1ypvuW0SqdFSP5fZ2jzWNal1BWwTU+BKwN
-	6CrcBBHOjIPaQUoPlwLqK6ASNlHu/aSgzsqjUgLU/p0V8bNazEK71aPxSKVW7wC2QdGgL9J1oYn7W
-	u0nKWCnSjmEdDCrhQXMTx77pvKWi+64Da/lUaeTlCsxzZa/3Bfe570EGB3JfVWL+DoolCXgfSoPcK
-	r6oh3+tJfo6cIFQKhS6w==;
+	List-Owner; bh=sJYR5FAddGRXFtUvmAWmV1NscRvENuKdNlz0+zz2yUQ=; b=JcmQ0Vi1fMgwoR
+	dmLYsLcJbrJIH88cZBa5ugy0WPQbIMnet7Co8q+ZJ7MDq2oWpS4Q8X/rWh5c8Q15heDWsXuP1yQGh
+	CdW137QA4SyQKtAAGYfCtS/rXOknxNYnmQ0mPbI4d46tdikMN9L/gRzirtU+JMZkLYRsM/85N9PG8
+	nWUoAazAY+i88aaeQabVMHSFDEGPLjCauYCACa1XqUGFN8tGhLMNbDixqYhAV2r3tVBBVSxPFnCi1
+	Arlk7N86EIgrEg+GRuzqMMoWdttx60PVkVw1rkxuvlXRk07bzyXH50I17eHA0ARloRPpgSKEzDAvu
+	k4zve7jY/r0WSjbDaNRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGJDj-0001ar-0n; Mon, 23 Mar 2020 09:18:07 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jGJGf-0003iy-9q; Mon, 23 Mar 2020 09:21:09 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGJDa-0001aF-SU
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:18:00 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02N97TuQ011197; Mon, 23 Mar 2020 10:17:53 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=UdIOJn9PEvaK3zLSkhSUlGSzzu66xRfXTNSMnBonJJ8=;
- b=G9nQPvqYGNjjIAjTmwr3YVxhCx8A2ltNxKCg7ZAmaZZtF9Ky8bWyWHeEHn8uWxhvuW2X
- p91Jp670TMCvF/olYo1aivTuVU86Bus509S290wo4hLJ7yNTJTcwohIh5pm43MGX9dvH
- HZ+t/fsc9fkgcZACwkNVUSJKWp4ywVIw/SdEY83COOoCjHKO7c8SNFnBpqT4WMafqzSW
- A8qtUl/CbrUy8x7oOZjwLemIA1ApTqgIQXiJaoA1R+rLV1Woyq9ImU35g+MrsoTHI1o3
- Jo8R/gn4yNt1e/bmO2pzIESa6IizIpdYCJxk0ae/n18c1kmka3Ou5pSBH8uHMe0gAu/v gg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yw99592rh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 23 Mar 2020 10:17:53 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 660FB100034;
- Mon, 23 Mar 2020 10:17:49 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 57AE42AAA8D;
- Mon, 23 Mar 2020 10:17:49 +0100 (CET)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 23 Mar
- 2020 10:17:48 +0100
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Mon, 23 Mar 2020 10:17:48 +0100
-From: Patrice CHOTARD <patrice.chotard@st.com>
-To: Alain Volmat <avolmat@me.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>, 
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] dts: arm: stih407-family: remove duplicated rng nodes
-Thread-Topic: [PATCH] dts: arm: stih407-family: remove duplicated rng nodes
-Thread-Index: AQHWAGU6HT4ybsc2/E+ksa70VtGSzKhV1j6A
-Date: Mon, 23 Mar 2020 09:17:48 +0000
-Message-ID: <6f1c708c-f415-5ed0-d39d-327737042507@st.com>
-References: <20200322161616.19111-1-avolmat@me.com>
-In-Reply-To: <20200322161616.19111-1-avolmat@me.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <65323D67C51D7046B2EE139A7B779FD7@st.com>
+ id 1jGJGX-0003iL-Kb
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 09:21:03 +0000
+IronPort-SDR: 3nluzYlJ88BDcyZV9EpoQfsh7nzUt6SZR8JCwuEMEJH4h5d9XXy86VxK8n0k8+I2+430mozura
+ CdQ8OuZ6QM7g==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 23 Mar 2020 02:20:57 -0700
+IronPort-SDR: NXZmagiSdrqKSbmt0vSeK1caYhZUJdpRy1VNqw/fs6h11L6MFR3KCibk2GOh3bYY+mYvl5cexF
+ nNhcReiFjm9g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,295,1580803200"; d="scan'208";a="239873817"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga008.jf.intel.com with ESMTP; 23 Mar 2020 02:20:50 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jGJGN-00CCZd-2B; Mon, 23 Mar 2020 11:20:51 +0200
+Date: Mon, 23 Mar 2020 11:20:51 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Sergey.Semin@baikalelectronics.ru
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200323092051.GB1922688@smile.fi.intel.com>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-23_02:2020-03-21,
- 2020-03-23 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_021759_220036_F0AFA2B0 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200323_022101_728280_8EAA95A2 
+X-CRM114-Status: GOOD (  23.74  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,31 +76,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Serge Semin <fancer.lancer@gmail.com>, Will Deacon <will@kernel.org>,
+ linux-clk@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQWxhaW7CoMKgDQoNCk9uIDMvMjIvMjAgNToxNiBQTSwgQWxhaW4gVm9sbWF0IHdyb3RlOg0K
-PiB0aGUgMiBybmcgbm9kZXMgYXJlIGR1cGxpY2F0ZWQgd2l0aGluIHRoZSBzdGloNDA3LWZhbWls
-eS5kdHNpDQo+DQo+IFNpZ25lZC1vZmYtYnk6IEFsYWluIFZvbG1hdCA8YXZvbG1hdEBtZS5jb20+
-DQo+IC0tLQ0KPiAgYXJjaC9hcm0vYm9vdC9kdHMvc3RpaDQwNy1mYW1pbHkuZHRzaSB8IDE0IC0t
-LS0tLS0tLS0tLS0tDQo+ICAxIGZpbGUgY2hhbmdlZCwgMTQgZGVsZXRpb25zKC0pDQo+DQo+IGRp
-ZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9zdGloNDA3LWZhbWlseS5kdHNpIGIvYXJjaC9h
-cm0vYm9vdC9kdHMvc3RpaDQwNy1mYW1pbHkuZHRzaQ0KPiBpbmRleCA3YzM2YzM3MjYwYTQuLjIz
-YTE3NDZmM2JhYSAxMDA2NDQNCj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvc3RpaDQwNy1mYW1p
-bHkuZHRzaQ0KPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9zdGloNDA3LWZhbWlseS5kdHNpDQo+
-IEBAIC03NjcsMjAgKzc2Nyw2IEBADQo+ICAJCQkJIDwmY2xrX3NfYzBfZmxleGdlbiBDTEtfRVRI
-X1BIWT47DQo+ICAJCX07DQo+ICANCj4gLQkJcm5nMTA6IHJuZ0A4YTg5MDAwIHsNCj4gLQkJCWNv
-bXBhdGlibGUgICAgICA9ICJzdCxybmciOw0KPiAtCQkJcmVnCQk9IDwweDA4YTg5MDAwIDB4MTAw
-MD47DQo+IC0JCQljbG9ja3MgICAgICAgICAgPSA8JmNsa19zeXNpbj47DQo+IC0JCQlzdGF0dXMJ
-CT0gIm9rYXkiOw0KPiAtCQl9Ow0KPiAtDQo+IC0JCXJuZzExOiBybmdAOGE4YTAwMCB7DQo+IC0J
-CQljb21wYXRpYmxlICAgICAgPSAic3Qscm5nIjsNCj4gLQkJCXJlZwkJPSA8MHgwOGE4YTAwMCAw
-eDEwMDA+Ow0KPiAtCQkJY2xvY2tzICAgICAgICAgID0gPCZjbGtfc3lzaW4+Ow0KPiAtCQkJc3Rh
-dHVzCQk9ICJva2F5IjsNCj4gLQkJfTsNCj4gLQ0KPiAgCQltYWlsYm94MDogbWFpbGJveEA4ZjAw
-MDAwICB7DQo+ICAJCQljb21wYXRpYmxlCT0gInN0LHN0aWg0MDctbWFpbGJveCI7DQo+ICAJCQly
-ZWcJCT0gPDB4OGYwMDAwMCAweDEwMDA+Ow0KDQoNClJldmlld2VkLWJ5OiBQYXRyaWNlIENob3Rh
-cmQgPHBhdHJpY2UuY2hvdGFyZEBzdC5jb20+DQoNClRoYW5rcw0KDQpQYXRyaWNlDQpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
+> From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+
+The question to CLK framework maintainers, is it correct approach in general
+for this case?
+
+> There are races possible in the dw8250_set_termios() callback method
+> and while the device is in PM suspend state. A race condition may
+> happen if the baudrate clock source device is shared with some other
+> device (in our machine it's another DW UART port). In this case if that
+> device changes the clock rate while serial console is using it the
+> DW 8250 UART port might not only end up with an invalid uartclk value
+> saved, but may also experience a distorted output data since baud-clock
+> could have been changed. In order to fix this lets enable an exclusive
+> reference clock rate access in case if "baudclk" device is specified.
+> 
+> So if some other device also acquires the rate exclusivity during the
+> time of a DW UART 8250 port being opened, then DW UART 8250 driver
+> won't be able to alter the baud-clock. It shall just use the available
+> clock rate. Similarly another device also won't manage to change the
+> rate at that time. If nothing else have the exclusive rate access
+> acquired except DW UART 8250 driver, then the driver will be able to
+> alter the rate as much as it needs to in accordance with the currently
+> implemented logic.
+
+Thank you for an update, my comments below.
+
+...
+
+> +static int dw8250_startup(struct uart_port *p)
+> +{
+> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
+> +
+> +	/*
+> +	 * Some platforms may provide a reference clock shared between several
+> +	 * devices. In this case before using the serial port first we have to
+> +	 * make sure nothing will change the rate behind our back and second
+> +	 * the tty/serial subsystem knows the actual reference clock rate of
+> +	 * the port.
+> +	 */
+
+> +	if (clk_rate_exclusive_get(d->clk)) {
+> +		dev_warn(p->dev, "Couldn't lock the clock rate\n");
+
+So, if this fails, in ->shutdown you will disbalance reference count, or did I
+miss something?
+
+> +	} else if (d->clk) {
+
+> +		p->uartclk = clk_get_rate(d->clk);
+> +		if (!p->uartclk) {
+> +			clk_rate_exclusive_put(d->clk);
+> +			dev_err(p->dev, "Clock rate not defined\n");
+> +			return -EINVAL;
+> +		}
+
+This operations I didn't get. If we have d->clk and suddenly get 0 as a rate
+(and note, that we still update uartclk member!), we try to put (why?) the
+exclusiveness of rate.
+
+> +	}
+> +
+> +	return serial8250_do_startup(p);
+> +}
+> +
+> +static void dw8250_shutdown(struct uart_port *p)
+> +{
+> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
+> +
+> +	serial8250_do_shutdown(p);
+> +
+> +	clk_rate_exclusive_put(d->clk);
+> +}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
