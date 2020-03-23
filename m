@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEA8518FDC7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:36:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7DDF18FDCA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Mar 2020 20:38:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yNWJumyORT+92ZE5rcQtf+P+Z2eAgqbRYtZ9Xajvoz0=; b=uJliFG8yYOBREz
-	9XX70fL4Oge/Lc+qFU5Pz6Yh0hGXR7/ut42PAWPkDmk93SjqsS4o4LYPTAvYLg3dLt2s83gqwaFHn
-	xVAeuRuhnlTGF15tTrO2+VBBIMEThZb6zBixyyHJniqfpIx8zj/7OaM36OMniShzBP4Kg35Zz5G9t
-	WOc/6koOVzzciAhWnagHrzKk4HvSN4H7ddIj4RUPWmLBGHtet/5qBxYNL3WQLYw8S0XfQUmF5LAvO
-	2H3ZqePQDbPBIaNwWeTXhhpDdhTZAc354g3HxyZocXDUnONp52rhJ2iURPhM2+TM+HXEQqx24slHe
-	Z0X8YfMJMrtl4/NBgCJw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QTjjxsDQXs1Zl+XUXdeJaypnY4GXg//vytSkkeNmO2o=; b=NUcMKcI3NKk/L6
+	CfcJ0MdKRfh5cx/rS7zfnegbSIQzKegs5P1m/RlxoEM1jeNTBx+k0lnjq2e4vtlPgEj9cRp3kQb+z
+	lt+2Y6XFIRrru0GHTDisdH2JlQvISEoU77fz1c7y3N47+3s7Cz6tJgBtWubgghvZmc0l51+r/iJMk
+	itiRcbDFajxpMJUAWPyIstP4EdLjHukRWyqiUju08k/9sUl7jhMae58JePntiVevOB4Zc3yZEu10n
+	XEYdWzzQ6ZnxdH01iMjU8RAMaeClB8sBO8g3x1YOmZM4j+g3/yDhh5kVh++SxEWhg5LyPcw9KRQ8W
+	no+LJg1Z7Kkb36VtDAFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGSrx-0002dN-Mr; Mon, 23 Mar 2020 19:36:17 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jGStr-0002yk-Fz; Mon, 23 Mar 2020 19:38:15 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGSrk-0002cs-Th; Mon, 23 Mar 2020 19:36:06 +0000
-Received: by mail-io1-f68.google.com with SMTP id m15so10530665iob.5;
- Mon, 23 Mar 2020 12:36:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3mkiUpmYaWqeC/9fVOMmUolcEDs7SdX572qqK/WHG1k=;
- b=CCpfxoPv4DohmtvVEGKpRzgD5Z9t6midU5BNkeGBP3PDAXzOVy2ORCnlGzLbSMkVEy
- oSKf5Laq9UGc0vfqq2Jb5pRoIqxa5a6YRKRmGQ5GuGauhjhoxQ60l5XbIIK5w74gze1g
- QQJpDwwCzgYj85uIjm5at52pYCzkLfN+Kf1PTmwQ1EM0dRTJpv255Y/PQlpOGMJLznDZ
- B3nAVfpBLib4/CZt8mtBvTZYD8tOUz6OybGNRB4tol1htlvNvad84dGTBGF8Rt3dl35A
- ZmjflpBw3adt9NbWmQZFnfOtcEThfuFBkcR4iMfRTuTDmg56RGRsg7mFu9PN105NiP/T
- BO3g==
-X-Gm-Message-State: ANhLgQ3XHy1IwEqepbLEk6sGHE6qsqGG4KCRPCTKQ8eaE/9Q71TpKQFh
- WcTZCqfi3Dkped+yPnK3jw==
-X-Google-Smtp-Source: ADFU+vtIcAv5y12f47+MkcXTNTAvWLJ98g9D7CVFcGDkK6sgqnjzg0FRX1r8Nvkvjh9Ami3EEIH0qg==
-X-Received: by 2002:a5d:8d90:: with SMTP id b16mr21124412ioj.9.1584992163562; 
- Mon, 23 Mar 2020 12:36:03 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id y1sm4614140ioq.47.2020.03.23.12.36.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 12:36:02 -0700 (PDT)
-Received: (nullmailer pid 6841 invoked by uid 1000);
- Mon, 23 Mar 2020 19:36:01 -0000
-Date: Mon, 23 Mar 2020 13:36:01 -0600
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v1] dt-bindings: display: rockchip: convert rockchip vop
- bindings to yaml
-Message-ID: <20200323193601.GC8470@bogus>
-References: <20200306170353.11393-1-jbx6244@gmail.com>
- <590762ab-db79-c8b1-7f0e-b653ed4b1721@gmail.com>
+ id 1jGStb-0002xV-3l
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Mar 2020 19:38:01 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48mPmh58Qkz1rrKb;
+ Mon, 23 Mar 2020 20:37:56 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48mPmh3dmXz1qyDd;
+ Mon, 23 Mar 2020 20:37:56 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id la4VWb-ZJ090; Mon, 23 Mar 2020 20:37:55 +0100 (CET)
+X-Auth-Info: 2HAWIBbYvus5V2XKLd5HdN0JKCCAwwqp/nMJ0D/R/6c=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Mon, 23 Mar 2020 20:37:55 +0100 (CET)
+Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
+ gpio irq chip
+To: Marc Zyngier <maz@kernel.org>
+References: <20200219143229.18084-1-alexandre.torgue@st.com>
+ <20200219143229.18084-3-alexandre.torgue@st.com>
+ <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
+ <c991edca3e8925cf0489c0a5676f77b2@kernel.org>
+ <a7fc5e43-34c2-a4e6-e0c5-1584f17fb024@denx.de>
+ <8d6f6646-56e4-5218-9990-f0c96862dc83@denx.de> <20200323193157.038f36f9@why>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <8e2795d8-4a8b-35a7-7d3f-e24d011878f6@denx.de>
+Date: Mon, 23 Mar 2020 20:37:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <590762ab-db79-c8b1-7f0e-b653ed4b1721@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200323193157.038f36f9@why>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_123604_962184_B86FFA3B 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200323_123759_470472_E8CEEF3D 
+X-CRM114-Status: GOOD (  23.08  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.10 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.10 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,36 +83,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, airlied@linux.ie,
- hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jason Cooper <jason@lakedaemon.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 07:55:22AM +0100, Johan Jonker wrote:
-> Hi,
+On 3/23/20 8:31 PM, Marc Zyngier wrote:
+> On Mon, 23 Mar 2020 20:19:39 +0100
+> Marek Vasut <marex@denx.de> wrote:
 > 
-> Question for robh:
+>> On 3/23/20 8:04 PM, Marek Vasut wrote:
+>>> On 2/20/20 10:17 AM, Marc Zyngier wrote:
+>>>> On 2020-02-20 09:04, Linus Walleij wrote:
+>>>>> On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
+>>>>> <alexandre.torgue@st.com> wrote:
+>>>>>
+>>>>>> GPIO hardware block is directly linked to EXTI block but EXTI handles
+>>>>>> external interrupts only on edge. To be able to handle GPIO interrupt on
+>>>>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
+>>>>>> chip)
+>>>>>> is retriggered following interrupt type and gpio line value.
+>>>>>>
+>>>>>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+>>>>>> Tested-by: Marek Vasut <marex@denx.de>
+>>>>>
+>>>>> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+>>>>>
+>>>>> If Marc want to merge it with patch 1/2 go ahead!
+>>>>
+>>>> I'll queue the whole thing for 5.7.
+>>>
+>>> I have a feeling this doesn't work with threaded interrupts.
+>>>
+>>> If the interrupt handler runs in a thread context, the EOI will happen
+>>> almost right away (while the IRQ handler runs) and so will the code
+>>> handling the IRQ retriggering. But since the IRQ handler still runs and
+>>> didn't return yet, the retriggering doesn't cause the IRQ handler to be
+>>> called again once it finishes, even if the IRQ line is still asserted.
+>>> And that could result in some of the retriggers now happening I think.
+>>> Or am I doing something wrong ?
+>>
+>> The patch below makes my usecase work, but I don't know whether it's
+>> correct. Basically once the threaded IRQ handler finishes and unmasks
+>> the IRQ, check whether the line is asserted and retrigger if so.
+>>
+>> diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> b/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> index 9ac9ecfc2f34..060dbcb7ae72 100644
+>> --- a/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> +++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> @@ -371,12 +371,26 @@ static void
+>> stm32_gpio_irq_release_resources(struct irq_data *irq_data)
+>>         gpiochip_unlock_as_irq(&bank->gpio_chip, irq_data->hwirq);
+>>  }
+>>
+>> +static void stm32_gpio_irq_unmask(struct irq_data *d)
+>> +{
+>> +       struct stm32_gpio_bank *bank = d->domain->host_data;
+>> +       int level;
+>> +
+>> +       irq_chip_unmask_parent(d);
+>> +
+>> +       /* If level interrupt type then retrig */
+>> +       level = stm32_gpio_get(&bank->gpio_chip, d->hwirq);
+>> +       if ((level == 0 && bank->irq_type[d->hwirq] ==
+>> IRQ_TYPE_LEVEL_LOW) ||
+>> +           (level == 1 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_HIGH))
+>> +               irq_chip_retrigger_hierarchy(d);
+>> +}
+>> +
+>>  static struct irq_chip stm32_gpio_irq_chip = {
+>>         .name           = "stm32gpio",
+>>         .irq_eoi        = stm32_gpio_irq_eoi,
+>>         .irq_ack        = irq_chip_ack_parent,
+>>         .irq_mask       = irq_chip_mask_parent,
+>> -       .irq_unmask     = irq_chip_unmask_parent,
+>> +       .irq_unmask     = stm32_gpio_irq_unmask,
+>>         .irq_set_type   = stm32_gpio_set_type,
+>>         .irq_set_wake   = irq_chip_set_wake_parent,
+>>         .irq_request_resources = stm32_gpio_irq_request_resources,
+>>
 > 
-> In the old txt situation we add/describe only properties that are used
-> by the driver/hardware itself. With yaml it also filters things in a
-> node that are used by other drivers like:
+> OK, I see your problem now.
 > 
-> assigned-clocks:
-> assigned-clock-rates:
-> power-domains:
+> The usual flow is along the line of Ack+Eoi, and that's what the
+> current code guarantees.
 > 
-> Should we add or not?
+> Threaded interrupts do Ack+Mask+Eoi, followed by an Unmask once the
+> thread finishes. This unmask needs to do the retrigger as well, as you
+> found out.
+> 
+> Can you please refactor the above so that we have the common code
+> between unmask and eoi in a separate function, send a proper patch, and
+> I'll apply it on top of the current irq/irqchip-5.7 branch.
 
-Yes, only pinctrl properties are automatically added.
+Sure, I can. Do we still need this retriggering in the irq_eoi too ?
 
-We could change 'assigned-clocks', but for now I think they should be 
-added.
-
-Rob
+Also, are there any other hidden details I might've missed ?
 
 _______________________________________________
 linux-arm-kernel mailing list
