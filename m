@@ -2,114 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95D5A190B4B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:41:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20B89190B02
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:32:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hpSOY1xr0GX4tioeDFfcjd0iNUMoGEtn7ltE6iwwgJk=; b=YKRayQVHt71plv
-	qLp5bc0KSSEuI719JnwVXHi7hMMcp2JtBHayrvybQau8lCEydakIomaCy+1rNpLzjRrq8fbK2ZzgC
-	IAEfNGYxWzHQ4+t0qyYHuYMmKAlAw/qJFlhC+9fN7iM+1W5wLAEhwDkF6Wdmg03LOJx0g6lvqMdEe
-	Dik7NLV6xs8IZ8vfQy0kCdpNfiOu6dyBlqHu/Csq1llT+2FJGuzbDtOJjfZpdXWc8I4DH5GyFhgxS
-	W2EwcSt/JmbzScLCEvYOK8obenvB1Wct3nnf3Lx3L7pRMBzWvIPAVUPJJn1+Kb6r9jNyxcfLT4LVM
-	uCYxfNZGTG6/vZjctoLQ==;
+	List-Owner; bh=7ync4EZgOzbwqaFhy3zdy7fdRoY5q48153dY7znCVkQ=; b=cjsonzqsbHZ+sU
+	tCgHZWhCJHjJq9xRLv4OHuwFKc/6QOjQWg3KYYAhFUtrwwDg3Tucd/OigKpj/ps9FKo6G9pFvQobx
+	YVE96YVMu/22lxl/9+QsVazNmMjvLMNHX5Q7IpvoGN6+tcN3ZCEqmUzj5rA7fyCRnRzSP1K3g9h05
+	cpFa7uoxASG11Hc6JLTiRfF1pg2wsZrr38aTjloBs5whCn7n6u1JcK4LI9E8E3TDvXvjldBotntry
+	V9VbgUwbQhqtBNL+X8bx/+dvf6RYeZiZ4aTKbqJ2bgJyOIq1p6DGcbOIQgrERl37munPIannuUUcu
+	+F1vzFCLd91CKM7pG1Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGh05-0006rt-KI; Tue, 24 Mar 2020 10:41:37 +0000
-Received: from mail-eopbgr20074.outbound.protection.outlook.com ([40.107.2.74]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1jGgqy-0000dR-Ap; Tue, 24 Mar 2020 10:32:12 +0000
+Received: from mail-eopbgr150084.outbound.protection.outlook.com
+ ([40.107.15.84] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGgzv-0006rQ-A6
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:41:28 +0000
+ id 1jGgqp-0000cx-Gh
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:32:05 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OJc2oUBrr75Czcmj2o3Hl5fGUtVFiyQeJa90PtR8PgJkhPW310ogHarmFTH4K8oV/D8jZMkypgWFsHa+XCSCs1uGvTrVV/fJ2P9c5M+4WKT8+RxcdElgywx4rKonlaIh9OwPUj7vj+a/4o2/hstdVWAwpDcSYrxDbQGoI/Bd1w07s9aUWD+cXBBgNUSeWvPdh4/v5n2lz11/04OD/Mva+qiTrWlC4XD3LAQYGWA4DEEkSV5CF5eJSjF4Dd5Az4n0GMdhGkGbS0CjXb0YdRm14/2oXYINhlI2iHsim1P6JoS8Pt8YIEsUZ7zK8iSmcdSc+Pj1JXH9SEiH81ZFKTMeGA==
+ b=QCqnA29+8Mw1XctzHNpLAlogbjRHp2w+NJ4RMxbEGutHZfJHILHG0E0EtmeCu44jfQRF2KFCtEvHvHR4mVRjqZ3mLfVNLFh7nrBRZC1c5kT8j8hefgTqtkNvLoNm8WQcA4FTqHH2TAx5cDe++zQzXgs0mCOM9JrUX7Ln2OT35Z4pD0m8C9YM9eHZsMKQsyr0akRMVrzNuznZERAdInhG02JNRQRHCWk+P2nR+WyaF+z13QcLvtJR3EcesRMGhup1kfQhMmzmRwT9Gg2RMyDVsjGfeOSl/KNeBfvb8hYmEdJ/u48C7zByN8tgIPe1qBE0+egHznHVUGKIY2Rb90OrRQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=APYAhm1+VJ2My/14/vl579MwcTGtW2UorebbtaELmBI=;
- b=NHQ1Q/1gi5nTB9e+RU47Ltp7RHIOEKkgWoQ11XsvwQqSm1LdI6c+88EHNwkZtg8Sx+EPwjfjJc84mYAJ3gz7yjbY8VQCENnb/sfp1IFto8/dItiIq7PH3DDJiHEPwK6QEPsGrGXRh/wsIgzEUGpgqwVVQpgNwhIVKl9xCw+ex9HdQ2+V7qukhfiOUr4e7ZplOM4UfALedCRUnUnXZthyIYTyBaAcZUTx+H1ng7/6IaQm+0E27XdqtXDu8Yuri8HAYIA45fSZkjMJsxYRVcamWAkL9PC0gHy5cwDzxonbbbdREgORe+vzBNJT3DePYhqh/ieILokC+Q7O3w5Y9x9cPA==
+ bh=oiVSQJeeOVejK2+8+q8JKOkFWkMeJMFSCttvrzQgawE=;
+ b=miDfzIJCfgvsqJNBQfYm/wgdjXcWV1eUlaYetk9aMXAHg/GNi4uY2mNTbSYiYmHiy15DKOoDUcbtwc1J59cSWN/aS/vIuIXwZgcCQ2M5wMvgXxdtzfE99vH+EdtzDLyviT8o2JlsO5uVnk366YkyzLhWtvAynZLLZEOkFd29KEiRWrCemxijMhAm313u2Pyj4prg/pPvhp4hZ+CJXZHF7hzZd/3dKUeNkFVRFOp6vDyspigJ1fC1aQPc9KM4zUDQHXRoGBY1MsdhonCe+xtDw+zCas8lm9KxksoJazG9P+fIXhW8hvyo4Ki+vIJrHhg7QfBl83gw8OFzcMk56O6tOg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=APYAhm1+VJ2My/14/vl579MwcTGtW2UorebbtaELmBI=;
- b=M7vSiyVt49XbcyVF9m2dTKNeWIbVO6WV8baf4wn5LpQ7NB4aRHFZn9obbqS/bKeuQl4RkyXKrQITb3pGxoWvbCqRMI1pDhwExGNBVNlo/YfWPwAXdR54qu5tlFjZragJmEtXKde2WwfVZI7wWDz69XSp6KeamxlKvWucIg9s9uw=
+ bh=oiVSQJeeOVejK2+8+q8JKOkFWkMeJMFSCttvrzQgawE=;
+ b=BEgL7BY9AnrZSvQQjj5tMVTaDVsYNqnUYdzDmLO2lZoC0gxr6dNluXT2u6hgomXiJnlvpM1JL3EL8mAG0Em7h9eIAc8INiGYVAl1Ch+Ptazp2VhsdIh+yN1F9TXmKPbCmaNmoC9L0Z+U2G5rkV+iJlXg+gRYvV82/4ds3AuQeQk=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=laurentiu.tudor@nxp.com; 
 Received: from AM6PR04MB5925.eurprd04.prod.outlook.com (20.179.2.147) by
- AM6PR04MB6504.eurprd04.prod.outlook.com (20.179.246.21) with Microsoft SMTP
+ AM6PR04MB5285.eurprd04.prod.outlook.com (20.177.32.217) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.22; Tue, 24 Mar 2020 10:25:44 +0000
+ 15.20.2835.22; Tue, 24 Mar 2020 10:32:00 +0000
 Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
  ([fe80::dd71:5f33:1b21:cd9e]) by AM6PR04MB5925.eurprd04.prod.outlook.com
  ([fe80::dd71:5f33:1b21:cd9e%5]) with mapi id 15.20.2835.023; Tue, 24 Mar 2020
- 10:25:44 +0000
-Subject: Re: [PATCH 7/9] vfio/fsl-mc: Add irq infrastructure for fsl-mc devices
+ 10:32:00 +0000
+Subject: Re: [PATCH 1/9] vfio/fsl-mc: Add VFIO framework skeleton for fsl-mc
+ devices
 To: Diana Craciun <diana.craciun@oss.nxp.com>, kvm@vger.kernel.org,
  alex.williamson@redhat.com, linux-arm-kernel@lists.infradead.org,
  bharatb.yadav@gmail.com
 References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
- <20200323171911.27178-8-diana.craciun@oss.nxp.com>
+ <20200323171911.27178-2-diana.craciun@oss.nxp.com>
 From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Message-ID: <733a0bed-5011-248d-73dc-94af2ffe7b78@nxp.com>
-Date: Tue, 24 Mar 2020 12:25:42 +0200
+Message-ID: <4e766043-df91-31fc-e639-816c02f0ba03@nxp.com>
+Date: Tue, 24 Mar 2020 12:31:58 +0200
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
-In-Reply-To: <20200323171911.27178-8-diana.craciun@oss.nxp.com>
+In-Reply-To: <20200323171911.27178-2-diana.craciun@oss.nxp.com>
 Content-Language: en-GB
-X-ClientProxiedBy: AM4PR05CA0033.eurprd05.prod.outlook.com (2603:10a6:205::46)
- To AM6PR04MB5925.eurprd04.prod.outlook.com
+X-ClientProxiedBy: AM5PR04CA0021.eurprd04.prod.outlook.com
+ (2603:10a6:206:1::34) To AM6PR04MB5925.eurprd04.prod.outlook.com
  (2603:10a6:20b:ab::19)
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from [192.168.1.107] (86.121.54.4) by
- AM4PR05CA0033.eurprd05.prod.outlook.com (2603:10a6:205::46) with Microsoft
+ AM5PR04CA0021.eurprd04.prod.outlook.com (2603:10a6:206:1::34) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.20 via Frontend Transport; Tue, 24 Mar 2020 10:25:44 +0000
+ 15.20.2835.19 via Frontend Transport; Tue, 24 Mar 2020 10:31:59 +0000
 X-Originating-IP: [86.121.54.4]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: cb3863aa-73de-435b-ec73-08d7cfddb5fe
-X-MS-TrafficTypeDiagnostic: AM6PR04MB6504:|AM6PR04MB6504:
+X-MS-Office365-Filtering-Correlation-Id: 347843b0-a420-4763-d09c-08d7cfde95cc
+X-MS-TrafficTypeDiagnostic: AM6PR04MB5285:|AM6PR04MB5285:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB6504F155AF6A67DA74D33844ECF10@AM6PR04MB6504.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
+X-Microsoft-Antispam-PRVS: <AM6PR04MB528586188B8F9B6A7750353DECF10@AM6PR04MB5285.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1728;
 X-Forefront-PRVS: 03524FBD26
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(366004)(346002)(39860400002)(376002)(396003)(36756003)(956004)(81166006)(316002)(8936002)(81156014)(8676002)(4326008)(26005)(16576012)(16526019)(2906002)(186003)(2616005)(44832011)(86362001)(31696002)(478600001)(66556008)(53546011)(52116002)(5660300002)(6486002)(31686004)(66476007)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB6504;
+ SFS:(10009020)(4636009)(376002)(39860400002)(396003)(346002)(136003)(366004)(6486002)(16576012)(316002)(186003)(16526019)(53546011)(26005)(36756003)(66476007)(66946007)(30864003)(66556008)(86362001)(31696002)(8676002)(44832011)(5660300002)(478600001)(8936002)(956004)(2616005)(4326008)(52116002)(81156014)(81166006)(2906002)(31686004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5285;
  H:AM6PR04MB5925.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; 
 Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: c0q4t56qyb1hWmwM4uHQwrGp5H6GIWkbzx64zIt+T1K0VI1UVHlHSwe06t3eoj9wxivBbS0LpeTzwzO9swIBjyG1jjI55WCmGmftf7ae7wYfjiRx9/v3ZLOjtrHZeOP99OgvjbzZgIND8uxhsMzYDmqnOvXCrGbkKQa6A6MH7g19hqANs4DHClM9Qsw6y1yFsLFdMpbltj6a3bYGsSEFp5FFaf2CDWJjqf+/bJOsqVwUddpdmHSDYAuNCKTMSHAo0dbghBnoDokAq4CMhYWszusVmmyw/tIYwuD1pOlQmCrq2+/u8zNgBdR3IFBswKzranT8PsS1Z5gHGPfvfwh7oSgLK5/4LSspbzkpoWWXZQ9B8yY4jLey+zW4wjfXIVVYY79gwVaepyT0ELcfp3rBaSU+rvswWQx9SnlzGfH1N+/KsfurPRnJaZ6jt54fcWCx
-X-MS-Exchange-AntiSpam-MessageData: iNvGrIXZrYFn6c9R4aQNzrJzkRFDEbdcLm5S2U52KV8jHJUxfdZ8qmN82e5U/mLQ/C+0FBS4Spoq90ULpnMXc4NteLJn8WQqCkxpMJbOkiENGEBfSnq5k6YsFxmILU1tVinSDN7DCU+rNMRx8vllFg==
+X-Microsoft-Antispam-Message-Info: 7rMiIPp1QPZXtKROwkq6wV+apuk1613O1W0ih/i2hrmMIhBRYHL+hrmaEajhwWszDYUnktgiI87LZOYSQbCB1BXSyUFL4c8e8JT6uEM2MAh7Ha89qw23xtJ+bYN8TaByf015PVFtD6AubbPVQ8N8khCcSP/P3SsqmMclmCzWAdWOV41DUXzH76PgZHmGMSd9GcboBfiTwwaeY9J2+frTQmWhs02lLVVk5XedhsdH47QQQD4dGReKQDXoi/MBfwtqHGz7q8/Gs8YDFNwOk484bdu4H8igs5bTlCMNonAuHblwn/uoS/GI6PQTsCcbozqWvN+yX0TAIeKTf9NJIkyamssQoAeqB9ge5Ix/HaguYK/So0tHNs3pvUBJfU5ZTR8XEbCfaxG6XYNeUxVo4QcbFm1MZuBqVl8SEE2mAEMzkj7780X2zy52E2Q/OneNqacb
+X-MS-Exchange-AntiSpam-MessageData: SvW8Msg4ir0fZLtnGylG4qwntzs/zsM4+ratl8yD/tw2ukSxwX0W1Fo0ihNZBQeBywvI4acWZ2V+yVnc3z4uqa/OHtisC5XGrXugbhXdsyLbILxcTmGFxi05kfKJbzwuGUjaA/FHFNpE+/4+JUsA1g==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cb3863aa-73de-435b-ec73-08d7cfddb5fe
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2020 10:25:44.7637 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 347843b0-a420-4763-d09c-08d7cfde95cc
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2020 10:32:00.0700 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2BI1TMphgc0L0pKMp/HpN3rnL+cbK5zZ72CwjZlzTtYJ7O3rMb36FeqrnnIUWu5x3VXiVpQ4cnKHrsOSDGAgXg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6504
+X-MS-Exchange-CrossTenant-UserPrincipalName: DoUPPGlOAMlVQnCxD1jmJ8BjxUjOn1ls+0KQFiHd4RkfYe+1/MRnjv/jVQsdg7qwFVMTmDG1y344t5huuzsTuA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5285
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_034127_350255_696760AC 
-X-CRM114-Status: GOOD (  22.75  )
+X-CRM114-CacheID: sfid-20200324_033203_689863_972DDE71 
+X-CRM114-Status: GOOD (  31.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.74 listed in list.dnswl.org]
+ no trust [40.107.15.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.84 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -138,213 +141,335 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 3/23/2020 7:19 PM, Diana Craciun wrote:
-> This patch adds the skeleton for interrupt support
-> for fsl-mc devices. The interrupts are not yet functional,
-> the functionality will be added by subsequent patches.
+> From: Bharat Bhushan <Bharat.Bhushan@nxp.com>
+> 
+> DPAA2 (Data Path Acceleration Architecture) consists in
+> mechanisms for processing Ethernet packets, queue management,
+> accelerators, etc.
+> 
+> The Management Complex (mc) is a hardware entity that manages the DPAA2
+> hardware resources. It provides an object-based abstraction for software
+> drivers to use the DPAA2 hardware. The MC mediates operations such as
+> create, discover, destroy of DPAA2 objects.
+> The MC provides memory-mapped I/O command interfaces (MC portals) which
+> DPAA2 software drivers use to operate on DPAA2 objects.
+> 
+> A DPRC is a container object that holds other types of DPAA2 objects.
+> Each object in the DPRC is a Linux device and bound to a driver.
+> The MC-bus driver is a platform driver (different from PCI or platform
+> bus). The DPRC driver does runtime management of a bus instance. It
+> performs the initial scan of the DPRC and handles changes in the DPRC
+> configuration (adding/removing objects).
+> 
+> All objects inside a container share the same hardware isolation
+> context, meaning that only an entire DPRC can be assigned to
+> a virtual machine.
+> When a container is assigned to a virtual machine, all the objects
+> within that container are assigned to that virtual machine.
+> The DPRC container assigned to the virtual machine is not allowed
+> to change contents (add/remove objects) by the guest. The restriction
+> is set by the host and enforced by the mc hardware.
+> 
+> The DPAA2 objects can be directly assigned to the guest. However
+> the MC portals (the memory mapped command interface to the MC) need
+> to be emulated because there are commands that configure the
+> interrupts and the isolation IDs which are virtual in the guest.
+> 
+> Example:
+> echo vfio-fsl-mc > /sys/bus/fsl-mc/devices/dprc.2/driver_override
+> echo dprc.2 > /sys/bus/fsl-mc/drivers/vfio-fsl-mc/bind
+> 
+> The dprc.2 is bound to the VFIO driver and all the objects within
+> dprc.2 are going to be bound to the VFIO driver.
+> 
+> This patch adds the infrastructure for VFIO support for fsl-mc
+> devices. Subsequent patches will add support for binding and secure
+> assigning these devices using VFIO.
+> 
+> More details about the DPAA2 objects can be found here:
+> Documentation/networking/device_drivers/freescale/dpaa2/overview.rst
 > 
 > Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
 > Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
 > ---
->  drivers/vfio/fsl-mc/Makefile              |  6 +-
->  drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 71 ++++++++++++++++++++++-
->  drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c    | 63 ++++++++++++++++++++
->  drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  5 ++
->  4 files changed, 141 insertions(+), 4 deletions(-)
->  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c
+>  MAINTAINERS                               |   6 +
+>  drivers/vfio/Kconfig                      |   1 +
+>  drivers/vfio/Makefile                     |   1 +
+>  drivers/vfio/fsl-mc/Kconfig               |   9 ++
+>  drivers/vfio/fsl-mc/Makefile              |   2 +
+>  drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 161 ++++++++++++++++++++++
+>  drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  14 ++
+>  include/uapi/linux/vfio.h                 |   1 +
+>  8 files changed, 195 insertions(+)
+>  create mode 100644 drivers/vfio/fsl-mc/Kconfig
+>  create mode 100644 drivers/vfio/fsl-mc/Makefile
+>  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc.c
+>  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
 > 
-> diff --git a/drivers/vfio/fsl-mc/Makefile b/drivers/vfio/fsl-mc/Makefile
-> index 6f2b80645d5b..cad6dbf0b735 100644
-> --- a/drivers/vfio/fsl-mc/Makefile
-> +++ b/drivers/vfio/fsl-mc/Makefile
-> @@ -1,2 +1,4 @@
-> -vfio-fsl_mc-y := vfio_fsl_mc.o
-> -obj-$(CONFIG_VFIO_FSL_MC) += vfio_fsl_mc.o
-> +# SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-
-nit: maybe the license should go in the first patch where the Makefile
-gets created?
-
----
-Best Regards, Laurentiu
-
-> +
-> +vfio-fsl-mc-y := vfio_fsl_mc.o vfio_fsl_mc_intr.o
-> +obj-$(CONFIG_VFIO_FSL_MC) += vfio-fsl-mc.o
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> index ea5e81e7791c..4d7baee2e474 100644
-> --- a/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> @@ -210,11 +210,75 @@ static long vfio_fsl_mc_ioctl(void *device_data, unsigned int cmd,
->  	}
->  	case VFIO_DEVICE_GET_IRQ_INFO:
->  	{
-> -		return -EINVAL;
-> +		struct vfio_irq_info info;
-> +
-> +		minsz = offsetofend(struct vfio_irq_info, count);
-> +		if (copy_from_user(&info, (void __user *)arg, minsz))
-> +			return -EFAULT;
-> +
-> +		if (info.argsz < minsz)
-> +			return -EINVAL;
-> +
-> +		if (info.index >= mc_dev->obj_desc.irq_count)
-> +			return -EINVAL;
-> +
-> +		info.flags = VFIO_IRQ_INFO_EVENTFD;
-> +		info.count = 1;
-> +
-> +		return copy_to_user((void __user *)arg, &info, minsz);
->  	}
->  	case VFIO_DEVICE_SET_IRQS:
->  	{
-> -		return -EINVAL;
-> +		struct vfio_irq_set hdr;
-> +		u8 *data = NULL;
-> +		int ret = 0;
-> +
-> +		minsz = offsetofend(struct vfio_irq_set, count);
-> +
-> +		if (copy_from_user(&hdr, (void __user *)arg, minsz))
-> +			return -EFAULT;
-> +
-> +		if (hdr.argsz < minsz)
-> +			return -EINVAL;
-> +
-> +		if (hdr.index >= mc_dev->obj_desc.irq_count)
-> +			return -EINVAL;
-> +
-> +		if (hdr.start != 0 || hdr.count > 1)
-> +			return -EINVAL;
-> +
-> +		if (hdr.count == 0 &&
-> +		    (!(hdr.flags & VFIO_IRQ_SET_DATA_NONE) ||
-> +		    !(hdr.flags & VFIO_IRQ_SET_ACTION_TRIGGER)))
-> +			return -EINVAL;
-> +
-> +		if (hdr.flags & ~(VFIO_IRQ_SET_DATA_TYPE_MASK |
-> +				  VFIO_IRQ_SET_ACTION_TYPE_MASK))
-> +			return -EINVAL;
-> +
-> +		if (!(hdr.flags & VFIO_IRQ_SET_DATA_NONE)) {
-> +			size_t size;
-> +
-> +			if (hdr.flags & VFIO_IRQ_SET_DATA_BOOL)
-> +				size = sizeof(uint8_t);
-> +			else if (hdr.flags & VFIO_IRQ_SET_DATA_EVENTFD)
-> +				size = sizeof(int32_t);
-> +			else
-> +				return -EINVAL;
-> +
-> +			if (hdr.argsz - minsz < hdr.count * size)
-> +				return -EINVAL;
-> +
-> +			data = memdup_user((void __user *)(arg + minsz),
-> +					   hdr.count * size);
-> +			if (IS_ERR(data))
-> +				return PTR_ERR(data);
-> +		}
-> +
-> +		ret = vfio_fsl_mc_set_irqs_ioctl(vdev, hdr.flags,
-> +						 hdr.index, hdr.start,
-> +						 hdr.count, data);
-> +		return ret;
->  	}
->  	case VFIO_DEVICE_RESET:
->  	{
-> @@ -303,6 +367,9 @@ static int vfio_fsl_mc_init_device(struct vfio_fsl_mc_device *vdev)
->  	struct fsl_mc_device *mc_dev = vdev->mc_dev;
->  	int ret = 0;
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index cc1d18cb5d18..fc547e6f5bf8 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -17566,6 +17566,12 @@ F:	drivers/vfio/
+>  F:	include/linux/vfio.h
+>  F:	include/uapi/linux/vfio.h
 >  
-> +	/* innherit the msi domain from parent */
-> +	dev_set_msi_domain(&mc_dev->dev, dev_get_msi_domain(mc_dev->dev.parent));
+> +VFIO FSL-MC DRIVER
+> +M:	Diana Craciun <diana.craciun@oss.nxp.com>
+> +L:	kvm@vger.kernel.org
+> +S:	Maintained
+> +F:	drivers/vfio/fsl-mc/
 > +
->  	/* Non-dprc devices share mc_io from parent */
->  	if (!is_fsl_mc_bus_dprc(mc_dev)) {
->  		struct fsl_mc_device *mc_cont = to_fsl_mc_device(mc_dev->dev.parent);
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c b/drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c
+>  VFIO MEDIATED DEVICE DRIVERS
+>  M:	Kirti Wankhede <kwankhede@nvidia.com>
+>  L:	kvm@vger.kernel.org
+> diff --git a/drivers/vfio/Kconfig b/drivers/vfio/Kconfig
+> index fd17db9b432f..5533df91b257 100644
+> --- a/drivers/vfio/Kconfig
+> +++ b/drivers/vfio/Kconfig
+> @@ -47,4 +47,5 @@ menuconfig VFIO_NOIOMMU
+>  source "drivers/vfio/pci/Kconfig"
+>  source "drivers/vfio/platform/Kconfig"
+>  source "drivers/vfio/mdev/Kconfig"
+> +source "drivers/vfio/fsl-mc/Kconfig"
+>  source "virt/lib/Kconfig"
+> diff --git a/drivers/vfio/Makefile b/drivers/vfio/Makefile
+> index de67c4725cce..fee73f3d9480 100644
+> --- a/drivers/vfio/Makefile
+> +++ b/drivers/vfio/Makefile
+> @@ -9,3 +9,4 @@ obj-$(CONFIG_VFIO_SPAPR_EEH) += vfio_spapr_eeh.o
+>  obj-$(CONFIG_VFIO_PCI) += pci/
+>  obj-$(CONFIG_VFIO_PLATFORM) += platform/
+>  obj-$(CONFIG_VFIO_MDEV) += mdev/
+> +obj-$(CONFIG_VFIO_FSL_MC) += fsl-mc/
+> diff --git a/drivers/vfio/fsl-mc/Kconfig b/drivers/vfio/fsl-mc/Kconfig
 > new file mode 100644
-> index 000000000000..058aa97aa54a
+> index 000000000000..b1a527d6b6f2
 > --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c
-> @@ -0,0 +1,63 @@
+> +++ b/drivers/vfio/fsl-mc/Kconfig
+> @@ -0,0 +1,9 @@
+> +config VFIO_FSL_MC
+> +	tristate "VFIO support for QorIQ DPAA2 fsl-mc bus devices"
+> +	depends on VFIO && FSL_MC_BUS && EVENTFD
+> +	help
+> +	  Driver to enable support for the VFIO QorIQ DPAA2 fsl-mc
+> +	  (Management Complex) devices. This is required to passthrough
+> +	  fsl-mc bus devices using the VFIO framework.
+> +
+> +	  If you don't know what to do here, say N.
+> diff --git a/drivers/vfio/fsl-mc/Makefile b/drivers/vfio/fsl-mc/Makefile
+> new file mode 100644
+> index 000000000000..6f2b80645d5b
+> --- /dev/null
+> +++ b/drivers/vfio/fsl-mc/Makefile
+> @@ -0,0 +1,2 @@
+> +vfio-fsl_mc-y := vfio_fsl_mc.o
+> +obj-$(CONFIG_VFIO_FSL_MC) += vfio_fsl_mc.o
+> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
+> new file mode 100644
+> index 000000000000..320fb09b5691
+> --- /dev/null
+> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
+> @@ -0,0 +1,161 @@
 > +// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
 > +/*
 > + * Copyright 2013-2016 Freescale Semiconductor Inc.
-> + * Copyright 2019 NXP
+> + * Copyright 2016-2017,2019-2020 NXP
 > + */
 > +
-> +#include <linux/vfio.h>
+> +#include <linux/device.h>
+> +#include <linux/iommu.h>
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
 > +#include <linux/slab.h>
 > +#include <linux/types.h>
-> +#include <linux/eventfd.h>
-> +#include <linux/msi.h>
+> +#include <linux/vfio.h>
+> +#include <linux/fsl/mc.h>
 > +
-> +#include "linux/fsl/mc.h"
 > +#include "vfio_fsl_mc_private.h"
 > +
-> +static int vfio_fsl_mc_irq_mask(struct vfio_fsl_mc_device *vdev,
-> +				unsigned int index, unsigned int start,
-> +				unsigned int count, u32 flags,
-> +				void *data)
+> +static int vfio_fsl_mc_open(void *device_data)
+> +{
+> +	if (!try_module_get(THIS_MODULE))
+> +		return -ENODEV;
+> +
+> +	return 0;
+> +}
+> +
+> +static void vfio_fsl_mc_release(void *device_data)
+> +{
+> +	module_put(THIS_MODULE);
+> +}
+> +
+> +static long vfio_fsl_mc_ioctl(void *device_data, unsigned int cmd,
+> +			      unsigned long arg)
+> +{
+> +	switch (cmd) {
+> +	case VFIO_DEVICE_GET_INFO:
+> +	{
+> +		return -EINVAL;
+> +	}
+> +	case VFIO_DEVICE_GET_REGION_INFO:
+> +	{
+> +		return -EINVAL;
+> +	}
+> +	case VFIO_DEVICE_GET_IRQ_INFO:
+> +	{
+> +		return -EINVAL;
+> +	}
+> +	case VFIO_DEVICE_SET_IRQS:
+> +	{
+> +		return -EINVAL;
+> +	}
+> +	case VFIO_DEVICE_RESET:
+> +	{
+> +		return -EINVAL;
+> +	}
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +}
+> +
+> +static ssize_t vfio_fsl_mc_read(void *device_data, char __user *buf,
+> +				size_t count, loff_t *ppos)
 > +{
 > +	return -EINVAL;
 > +}
 > +
-> +static int vfio_fsl_mc_irq_unmask(struct vfio_fsl_mc_device *vdev,
-> +				unsigned int index, unsigned int start,
-> +				unsigned int count, u32 flags,
-> +				void *data)
+> +static ssize_t vfio_fsl_mc_write(void *device_data, const char __user *buf,
+> +				 size_t count, loff_t *ppos)
 > +{
 > +	return -EINVAL;
 > +}
 > +
-> +static int vfio_fsl_mc_set_irq_trigger(struct vfio_fsl_mc_device *vdev,
-> +				       unsigned int index, unsigned int start,
-> +				       unsigned int count, u32 flags,
-> +				       void *data)
+> +static int vfio_fsl_mc_mmap(void *device_data, struct vm_area_struct *vma)
 > +{
 > +	return -EINVAL;
 > +}
 > +
-> +int vfio_fsl_mc_set_irqs_ioctl(struct vfio_fsl_mc_device *vdev,
-> +			       u32 flags, unsigned int index,
-> +			       unsigned int start, unsigned int count,
-> +			       void *data)
-> +{
-> +	int ret = -ENOTTY;
+> +static const struct vfio_device_ops vfio_fsl_mc_ops = {
+> +	.name		= "vfio-fsl-mc",
+> +	.open		= vfio_fsl_mc_open,
+> +	.release	= vfio_fsl_mc_release,
+> +	.ioctl		= vfio_fsl_mc_ioctl,
+> +	.read		= vfio_fsl_mc_read,
+> +	.write		= vfio_fsl_mc_write,
+> +	.mmap		= vfio_fsl_mc_mmap,
+> +};
 > +
-> +	switch (flags & VFIO_IRQ_SET_ACTION_TYPE_MASK) {
-> +	case VFIO_IRQ_SET_ACTION_MASK:
-> +		ret = vfio_fsl_mc_irq_mask(vdev, index, start, count,
-> +					   flags, data);
-> +		break;
-> +	case VFIO_IRQ_SET_ACTION_UNMASK:
-> +		ret = vfio_fsl_mc_irq_unmask(vdev, index, start, count,
-> +					     flags, data);
-> +		break;
-> +	case VFIO_IRQ_SET_ACTION_TRIGGER:
-> +		ret = vfio_fsl_mc_set_irq_trigger(vdev, index, start,
-> +						  count, flags, data);
-> +		break;
+> +static int vfio_fsl_mc_probe(struct fsl_mc_device *mc_dev)
+> +{
+> +	struct iommu_group *group;
+> +	struct vfio_fsl_mc_device *vdev;
+> +	struct device *dev = &mc_dev->dev;
+> +	int ret;
+> +
+> +	group = vfio_iommu_group_get(dev);
+> +	if (!group) {
+> +		dev_err(dev, "%s: VFIO: No IOMMU group\n", __func__);
+> +		return -EINVAL;
+> +	}
+> +
+> +	vdev = devm_kzalloc(dev, sizeof(*vdev), GFP_KERNEL);
+> +	if (!vdev) {
+> +		vfio_iommu_group_put(group, dev);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	vdev->mc_dev = mc_dev;
+> +
+> +	ret = vfio_add_group_dev(dev, &vfio_fsl_mc_ops, vdev);
+> +	if (ret) {
+> +		dev_err(dev, "%s: Failed to add to vfio group\n", __func__);
+> +		vfio_iommu_group_put(group, dev);
+> +		return ret;
 > +	}
 > +
 > +	return ret;
 > +}
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> index d072cccd93e0..0c7506e43880 100644
-> --- a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> @@ -37,4 +37,9 @@ struct vfio_fsl_mc_device {
->  	struct vfio_fsl_mc_reflck   *reflck;
->  };
->  
-> +extern int vfio_fsl_mc_set_irqs_ioctl(struct vfio_fsl_mc_device *vdev,
-> +			       u32 flags, unsigned int index,
-> +			       unsigned int start, unsigned int count,
-> +			       void *data);
 > +
->  #endif /* VFIO_PCI_PRIVATE_H */
+> +static int vfio_fsl_mc_remove(struct fsl_mc_device *mc_dev)
+> +{
+> +	struct vfio_fsl_mc_device *vdev;
+> +	struct device *dev = &mc_dev->dev;
+> +
+> +	vdev = vfio_del_group_dev(dev);
+> +	if (!vdev)
+> +		return -EINVAL;
+> +
+> +	vfio_iommu_group_put(mc_dev->dev.iommu_group, dev);
+> +	devm_kfree(dev, vdev);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * vfio-fsl_mc is a meta-driver, so use driver_override interface to
+> + * bind a fsl_mc container with this driver and match_id_table is NULL.
+> + */
+> +static struct fsl_mc_driver vfio_fsl_mc_driver = {
+> +	.probe		= vfio_fsl_mc_probe,
+> +	.remove		= vfio_fsl_mc_remove,
+> +	.match_id_table = NULL,
+> +	.driver	= {
+> +		.name	= "vfio-fsl-mc",
+> +		.owner	= THIS_MODULE,
+> +	},
+> +};
+> +
+> +static int __init vfio_fsl_mc_driver_init(void)
+> +{
+> +	return fsl_mc_driver_register(&vfio_fsl_mc_driver);
+> +}
+> +
+> +static void __exit vfio_fsl_mc_driver_exit(void)
+> +{
+> +	fsl_mc_driver_unregister(&vfio_fsl_mc_driver);
+> +}
+> +
+> +module_init(vfio_fsl_mc_driver_init);
+> +module_exit(vfio_fsl_mc_driver_exit);
+> +
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_DESCRIPTION("VFIO for FSL-MC devices - User Level meta-driver");
+> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
+> new file mode 100644
+> index 000000000000..b92858a003c0
+> --- /dev/null
+> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
+> @@ -0,0 +1,14 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause) */
+> +/*
+> + * Copyright 2013-2016 Freescale Semiconductor Inc.
+> + * Copyright 2016,2019-2020 NXP
+> + */
+> +
+> +#ifndef VFIO_FSL_MC_PRIVATE_H
+> +#define VFIO_FSL_MC_PRIVATE_H
+> +
+> +struct vfio_fsl_mc_device {
+> +	struct fsl_mc_device		*mc_dev;
+> +};
+> +
+> +#endif /* VFIO_PCI_PRIVATE_H */
+
+This should be VFIO_FSL_MC_PRIVATE_H.
+
+---
+Best Regards, Laurentiu
+
+> diff --git a/include/uapi/linux/vfio.h b/include/uapi/linux/vfio.h
+> index 9e843a147ead..6d0a7a071ef4 100644
+> --- a/include/uapi/linux/vfio.h
+> +++ b/include/uapi/linux/vfio.h
+> @@ -201,6 +201,7 @@ struct vfio_device_info {
+>  #define VFIO_DEVICE_FLAGS_AMBA  (1 << 3)	/* vfio-amba device */
+>  #define VFIO_DEVICE_FLAGS_CCW	(1 << 4)	/* vfio-ccw device */
+>  #define VFIO_DEVICE_FLAGS_AP	(1 << 5)	/* vfio-ap device */
+> +#define VFIO_DEVICE_FLAGS_FSL_MC (1 << 6)	/* vfio-fsl-mc device */
+>  	__u32	num_regions;	/* Max region index + 1 */
+>  	__u32	num_irqs;	/* Max IRQ index + 1 */
+>  };
 > 
 
 _______________________________________________
