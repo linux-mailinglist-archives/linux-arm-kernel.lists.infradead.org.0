@@ -2,58 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2A94191993
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:59:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FE761919FD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 20:34:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QNMuTH9YoF/UGBNItxOpLEwUX4jQnhIjbOsDWBa395I=; b=P1HOQcI5ZxHvw7HHDMtPvUEA3
-	tRU51WYzdCQjrZgwe+VKXFWoWp4Tr5UBRi0s7riwyq8OnOWzunjmEcchpm+1JQtXeNBtALqwl5iun
-	cLcBflaFn/NQOAp4bDV38T7q+uHQMGrTfnb9WWx8lIt8Kl88uzypxvye6+F1FL70NI9sp4HFLtvTk
-	h9L+UZblYOvRhdps6/zF9vzLtdCbpkFwJenNwKTdbDR2mN6JhtM9dvMxParM1V6pmnOhB4iTd6FNc
-	av5zSTdPTZBNFcb7Tg0aUf/zIT5KYG3WnPh3cjv/2ZOHQj310rZHT9gFXWZLKxoonESrA350r+wKk
-	bFVlrs1iw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3AiAELhp7hICxsyP6AXFd3vsRFEWkn0YYaUxvMLvSp4=; b=joNRz3/PcaF92g
+	wKHToKoXWO24XZ09jUGPCBb7VHieG6kUTwW6GNEAaX7XkfKbZNEdr3WH6e6QwtFDB43V1yj/Kv2kI
+	ZV32jeHDbId1u4/DR1Bfj7Ae+ztqbCCfNY85rRBikZmLLUaL4JhASB7a4NnJnsA6V1vhi1txP+CYV
+	kO2OEH25HCDjiBwSK90NwQuaKkUrDW8u3Zg8/ENfhKmK1P2UoQIsm2iBdN+PX+/Fz1NQeyoq+8crI
+	Dg5fxmqqD3kJ5eORDiUQh8wlGJ3XHGAY4MItEhA6uOErABHhsgAEOR78GRb4SLQe2szHA9N8mDNqr
+	da/wmjxuleS24K6RJmQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGolP-0004c4-3A; Tue, 24 Mar 2020 18:58:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGolG-0004bE-BV
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:58:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 649C331B;
- Tue, 24 Mar 2020 11:58:49 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB5023F71F;
- Tue, 24 Mar 2020 11:58:48 -0700 (PDT)
-Date: Tue, 24 Mar 2020 18:58:47 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH 1/2] arm64: lib: Use .arch_extension
-Message-ID: <20200324185847.GJ7039@sirena.org.uk>
-References: <20200323191807.3864-1-broonie@kernel.org>
- <CAKv+Gu_UW6KV4My9GSDCHmvqm44Krg+B4efjK_ta2MQ+A2cJNg@mail.gmail.com>
+	id 1jGpJn-0008K9-7b; Tue, 24 Mar 2020 19:34:31 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGpJg-0008Jg-P4
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 19:34:25 +0000
+Received: by mail-lf1-x143.google.com with SMTP id j15so14285451lfk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Mar 2020 12:34:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=BuW1pgtMi1nFDluniTHUYAMhP+ECNJICP5kvAttrp90=;
+ b=djAXMRGpfX/uYnxHJ3wl2qCQUySXiH6H9DG4JMMCYNMq+CNKLKGF43SapUWG/r/Sf4
+ 9jJQY9v5nX2vWjGcBkQV6PJN0djRJL8yL7kzP7wOERKNka2dR1DI6/7IZ1iDLorQSymH
+ g4ha+k4Hg7vSp7GajygnZJtjf2DJuxcohHO4EZ6207TwbQg2DpmeWx425DGGClfDKQds
+ 9pl/yqXmqdStvtaXrMDpMHP/+g3ZF+mlT1jkDlTJN5lZ3clkfzHhb5YCor7FDdD7Q5R5
+ ogEIx2Fuiom+0hLoUv/fY2iD3A3SXawE2a/bd3OenLkmaq6gxfuSXqBlTV1Hoxo5m1au
+ dc8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=BuW1pgtMi1nFDluniTHUYAMhP+ECNJICP5kvAttrp90=;
+ b=AV94+j4EXCFVmRSHgt2ko49jxAh63grZmYmu8qb1OsewA/nCJNhfIVMb2/71SOl6CJ
+ M2SucdeA/DuDNuokOphWYiX9sqAhWXsl2Je/jshcKRzDioI+67BCvy5JMRUSUaz70HiY
+ 8ia3Av5nPMf+8CNtSps7eJ0EXdWgu7pEsr3IS7GakwmT+VN/pDQ/tW2nq6KDB7nKq6OI
+ lefjMynxC/uIA3r+s8dqDj1/Iwkj13WcnTd7G/c90HxoOSYErtv1MlBBGM6DzCW2ldhv
+ TZGWvioJw27Wf880EzZ2nODVWeXerF/FIMF1tGfbqRwn5rnzgc64rxYwwQA6eR/Uv2i6
+ frSw==
+X-Gm-Message-State: ANhLgQ3EAAvZFJ2s7uCUFSareb83QIwsW78S3xnZPDhvU2yvXRFx8bBw
+ cyqTWDVSCvtTrpTJ+XG8/NqCmW/ukdlqsit5Rew=
+X-Google-Smtp-Source: ADFU+vtCUdIkmuQsY4QzJUMqNYV6lYZDkx1LNuGCgcfEy8vGbUSEMIGt5lO92LiWyGxs7J1Z7ulaFxz0Vq1YTqoUtYA=
+X-Received: by 2002:a05:6512:3b7:: with SMTP id
+ v23mr1260787lfp.66.1585078462025; 
+ Tue, 24 Mar 2020 12:34:22 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu_UW6KV4My9GSDCHmvqm44Krg+B4efjK_ta2MQ+A2cJNg@mail.gmail.com>
-X-Cookie: I feel ... JUGULAR ...
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <cover.1584730033.git.agx@sigxcpu.org>
+ <c7fd138e00608a108dae3651ab10d583a60040fc.1584730033.git.agx@sigxcpu.org>
+In-Reply-To: <c7fd138e00608a108dae3651ab10d583a60040fc.1584730033.git.agx@sigxcpu.org>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 24 Mar 2020 16:34:13 -0300
+Message-ID: <CAOMZO5Dhy7ahcR-S=QG=pumxXa8HnQoWpg0TdFyeu_Levdh9_Q@mail.gmail.com>
+Subject: Re: [PATCH v10 1/2] dt-bindings: display/bridge: Add binding for NWL
+ mipi dsi host controller
+To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_115850_439326_EBDF4AC6 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200324_123424_839364_BE81CD94 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,80 +97,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Eric Biggers <ebiggers@google.com>
-Content-Type: multipart/mixed; boundary="===============7214042870613902324=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Lee Jones <lee.jones@linaro.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Robert Chiras <robert.chiras@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7214042870613902324==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="5me2qT3T17SWzdxI"
-Content-Disposition: inline
-
-
---5me2qT3T17SWzdxI
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Mar 24, 2020 at 07:19:17PM +0100, Ard Biesheuvel wrote:
-> On Mon, 23 Mar 2020 at 20:18, Mark Brown <broonie@kernel.org> wrote:
-
-> > order to generate BTI landing pads.  We did this due to a lack of
-> > support for the .arch_extension gas feature in older versions of the
-> > clang built in assembler but since current versions of clang now have
-> > support for .arch_extension we can use that.
-
-> This is not 100% accurate. Support for .arch_extension was added to
-> GAS/aarch64 much later, so we should at least double check that it
-> works on the oldest binutils that we do support.
-
-Ah, OK - the information I figured out from history was misleading
-sorry. =20
-
-We've already got quite a lot of usages of .arch_extension in the kernel
-for arm and a couple for arm64 (one in TF and another for LSE).  It
-looks like the feature was added in binutils 2.26 which is newer than
-the current advertised minimum binutils version of 2.21 but dates from
-2016 (the code was added in 2014 and looks like it might've appeared in
-downstream releases earlier) so is pretty old in arm64 terms.  If that's
-not OK I've got an open coded version for BTI that does this with macros
-but it's obviously not as nice.
-
-I do wish the binutils docs included information on when features were
-added, it'd make life easier :/
-
---5me2qT3T17SWzdxI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56WGYACgkQJNaLcl1U
-h9CMIAf/eD4IfOb7vDMsyY/fzFZ+EsgS4Bz0DpXI1bm5283/AMD0kZdXfbWCRsSL
-nCHWLA418iO+7dr8xJ3W+NYEc0HZOI/MkdByZFStqJPXjJCXJ1FmRyfeGvP83715
-xwj9cr+ciY7gK1SraQJyTAwq6Bq4FFYH1BZzpIkOT2czv9fgwC2dVt8G31bJLGjb
-b1v1Zbn6Bh3E/COgiD34JLkwH+aawRpkzbJdzYJfMbETKsB4x/AVCCjcOt8ZVrZ2
-DO0sdRDrYqohgG5l/T+DDvul6zFSvxnJPbraDWzNlGd355iiGqiTpShkuwUI7NGu
-6rbwZfvqN6VBFEeTwW2zsYl7GPv9EA==
-=XrKB
------END PGP SIGNATURE-----
-
---5me2qT3T17SWzdxI--
-
-
---===============7214042870613902324==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7214042870613902324==--
-
+T24gRnJpLCBNYXIgMjAsIDIwMjAgYXQgMzo0OSBQTSBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hj
+cHUub3JnPiB3cm90ZToKPgo+IFRoZSBOb3J0aHdlc3QgTG9naWMgTUlQSSBEU0kgSVAgY29yZSBj
+YW4gYmUgZm91bmQgaW4gTlhQcyBpLk1YOCBTb0NzLgo+Cj4gU2lnbmVkLW9mZi1ieTogR3VpZG8g
+R8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4KPiBUZXN0ZWQtYnk6IFJvYmVydCBDaGlyYXMgPHJv
+YmVydC5jaGlyYXNAbnhwLmNvbT4KPiBSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2Vy
+bmVsLm9yZz4KPiBBY2tlZC1ieTogU2FtIFJhdm5ib3JnIDxzYW1AcmF2bmJvcmcub3JnPgoKUmV2
+aWV3ZWQtYnk6IEZhYmlvIEVzdGV2YW0gPGZlc3RldmFtQGdtYWlsLmNvbT4KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
