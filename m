@@ -2,75 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53DAB1918BE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:19:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E3091918C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:20:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CENrUgpU/8VrVfgAc6xhIHH/LQJvPCKh8X9Id9cR2gQ=; b=s5N/bFPgSuxJ7k
-	81/G9SQ380RNod90vTa9AwU5JMEkOAxM5ILFzLm2WpyzZopa5jCuZRqgCXImMxQC1XxO/3cWNAV99
-	9ZjCrPWfAffmPdJDnl/W9Casjrcze34E7isG0tMKMQeE+GpILs73aEHPZiXh5IVEgo+1csOoCXjJ9
-	oNJYAlomAzYOFERODVpSxMoPc6TvbBi5eNhNhnZ6ur2OPEcsjAj30Y7xue7AfeiPJRfCpj7Qq6Yin
-	GSVaW/znf5TUZYNwTTKZI2tfYPKLjEEirBQHTAWq/Y42GGTXDFbcvKBI7vqKCYtRMtLUWYpuxomqo
-	2LesPcSsUdh42L3UoQ+Q==;
+	List-Owner; bh=QXIP2ZXTemt2qNsn1sxKc+5KIwXQ3d8uvTWR6+DAb+4=; b=Dgj9lqxYx0jo78
+	b2sSuRsX7RPVjQcUp1n9VGg/VQ3p0YNcTtjqpceTKgMGw3h8jftwVjTYJezzVANqcJ3k7XJXIyGgP
+	MtEpF7vHa5cRIJ2pLlilHICMek6HipPysanS3AwkBWEe+O+YHnztzso33Ohw8EmN6eevfZ+kFjmTo
+	IBLXg5Xl6Eh7tvW35YTTa8Dp9VJKT/tB7bLCbFF3pveoYYvvHFsxvTv9QTtDjyKEugnYyloDruQeh
+	f8nqtAFYvdtuWLS2ARAvI08kkt2iN1FD52zE4a+YzJ9pIQSv441EoraYOe4PPCuwp6gtMQ5ydlnvV
+	G6R/fjeo/+5Iw7VTisgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGo8d-0005yS-JC; Tue, 24 Mar 2020 18:18:55 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1jGo9c-0006Jz-Hj; Tue, 24 Mar 2020 18:19:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGo8S-0005pK-7V
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:18:46 +0000
-Received: by mail-ua1-x944.google.com with SMTP id o15so4840249ual.3
+ id 1jGo9E-0006J9-JZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:19:33 +0000
+Received: from mail-wr1-f44.google.com (mail-wr1-f44.google.com
+ [209.85.221.44])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B67720714
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 11:18:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b8cHeEED3Z92a0ymNocC1wM2oY7nKh155USjPtUlk8U=;
- b=tQULf6iRNPtrwhWnpGrNRTC/RGfpdVv1KzNlJastPZALMPGl3mbmj1KkNDkkpF5Mxy
- lixTfrHNpsLM/X4FT9RkxlwmOS3LM/DO+X9aOaor10FOcK6r83pC3mbA+oy2nG2fMr9Z
- TSWgNKpSo4u0YGxvblpb7nv5keNyk+HW7/FiZC+ngRb8+MkN+mzP3tFATaolDmwakHxG
- KD8BsH3xzd9yKISmVML8u6OOOFaTQE7e1jRzcmtFV4xbTa8VcUitt4ddiz6OTA1aCToN
- 5/UVt4DhilfXkDTi+MLVQ2VXDWoDB/pDK661FdUgmUssNmKOQ/ACrDQieWFmixwIh8fZ
- Adaw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=b8cHeEED3Z92a0ymNocC1wM2oY7nKh155USjPtUlk8U=;
- b=AvB3h8D4fFMHq9AdWQ+X6yhuWrktw8PlGyM/ZKjPMS5uklecoiQjKZ65/573T1tksW
- GHYGYk8blra/n6cQJWv8t8VW7Sv4ZD78GvMXlMkLjOnMqVa5kP2TT1hua+DD7ul0y5fE
- zFEO54Tmw99R3oXljkKz7SsEcuJxhhOujViKRPRorpnKTHP9HWo7LVO4ZUhqHWMiQdPo
- PL5ggvUPyIg11Xrizsk3sx7p86qqV+SCSQZ4eSG2Q9Zuz7clBL/ZhZ9A+RbW7WfflPAX
- P5SXcmEa8/cvYVPo+832OkxXlmTolz8JKOu29w0cjaZpYtlKUWMtI3+28gfD9HYbtWs0
- gMUw==
-X-Gm-Message-State: ANhLgQ3mQY/P1ZGPSzOinhDcCK2sJalXGRsrAffz8TCfMauubZfKFSYo
- a+hgK6OIA9xnrmWUSNesKR0HevwNo7JbtCja4vI83w==
-X-Google-Smtp-Source: ADFU+vvlSyqmWv0VfXpmbCrbzrodCyzdctPb60GOiITOQ8IyBRoVME1UEIqwWvolQznE5P1J/DvCNwQi1YMBK+tDF/4=
-X-Received: by 2002:ab0:7556:: with SMTP id k22mr8587224uaq.104.1585073921836; 
- Tue, 24 Mar 2020 11:18:41 -0700 (PDT)
+ Tue, 24 Mar 2020 18:19:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585073969;
+ bh=NcM/onMreDLam4PvJlwH4W1pLKj1Wny5DcyrX3KbBFc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=xnVJ2XZOm+X8LXO+wqmx2hhSeVjOVuCybCCaFKvtyFeH+tPiD1lBrIybcJQMLa/zb
+ 8iwW5JPrgOQPSE//mbQZmTQXYhKJFYLs49scVKiz94MO1bvRsRj1VgwHduyhCQV4Xq
+ Q0nHXmGp5xCSRYiBuxHlZOTJSZK7Gx9r3oA10RWM=
+Received: by mail-wr1-f44.google.com with SMTP id w10so22795072wrm.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Mar 2020 11:19:29 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ34j0FqYMqpDeA1Nbemu6ycSXs51ETpBp4RuCHwzSUeLfaK4V2u
+ YjncNQf7ubUjlhXlvP4Bi+Y6FdcBH7gxfAnxkPCBJQ==
+X-Google-Smtp-Source: ADFU+vt2VXI8WSRdQDeJpnk3ZFnlIGkJ+DPPkks1ZUGrK5oqxa0xBW64g/kDN+3gXZ5AJkbV4GlcoGJcMG3T/5ePTAY=
+X-Received: by 2002:a5d:4fcf:: with SMTP id h15mr31882093wrw.262.1585073967934; 
+ Tue, 24 Mar 2020 11:19:27 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200324041526.GA1978@asgard.redhat.com>
-In-Reply-To: <20200324041526.GA1978@asgard.redhat.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 24 Mar 2020 19:18:05 +0100
-Message-ID: <CAPDyKFqEQZU=xSKX8_D3a7JQ7rRKXP8Yq8wwq9j=YYGQsWv4-w@mail.gmail.com>
-Subject: Re: [PATCH] drivers: firmware: psci: avoid BIT() macro usage in
- PSCI_1_0_OS_INITIATED
-To: Eugene Syromiatnikov <esyr@redhat.com>
+References: <20200323191807.3864-1-broonie@kernel.org>
+In-Reply-To: <20200323191807.3864-1-broonie@kernel.org>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Tue, 24 Mar 2020 19:19:17 +0100
+X-Gmail-Original-Message-ID: <CAKv+Gu_UW6KV4My9GSDCHmvqm44Krg+B4efjK_ta2MQ+A2cJNg@mail.gmail.com>
+Message-ID: <CAKv+Gu_UW6KV4My9GSDCHmvqm44Krg+B4efjK_ta2MQ+A2cJNg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: lib: Use .arch_extension
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_111844_794656_8523C98B 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_111932_675073_F5B5AD7D 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,59 +85,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Dmitry V. Levin" <ldv@altlinux.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Eric Biggers <ebiggers@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Mar 2020 at 05:15, Eugene Syromiatnikov <esyr@redhat.com> wrote:
+On Mon, 23 Mar 2020 at 20:18, Mark Brown <broonie@kernel.org> wrote:
 >
-> The BIT() macro is not available in UAPI headers, so let's replace
-> it with similarly defined _BITUL() macro provided by <linux/const.h>.
+> Currently when implementing optimised assembler routines using
+> architecture extensions we override the base architecture along with
+> enabling the new extensions, causing problems for in kernel BTI support
+> which needs to raise the base architecture level for assembler files in
+> order to generate BTI landing pads.  We did this due to a lack of
+> support for the .arch_extension gas feature in older versions of the
+> clang built in assembler but since current versions of clang now have
+> support for .arch_extension we can use that.
+
+This is not 100% accurate. Support for .arch_extension was added to
+GAS/aarch64 much later, so we should at least double check that it
+works on the oldest binutils that we do support.
+
 >
-> Fixes: 60dd1ead65e8 ("drivers: firmware: psci: Announce support for OS initiated suspend mode")
-> Signed-off-by: Eugene Syromiatnikov <esyr@redhat.com>
-
-Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
-
-Kind regards
-Uffe
-
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 > ---
->  include/uapi/linux/psci.h | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+>  arch/arm64/lib/crc32.S | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> diff --git a/include/uapi/linux/psci.h b/include/uapi/linux/psci.h
-> index 2fcad1d..87afdeb 100644
-> --- a/include/uapi/linux/psci.h
-> +++ b/include/uapi/linux/psci.h
-> @@ -12,6 +12,8 @@
->  #ifndef _UAPI_LINUX_PSCI_H
->  #define _UAPI_LINUX_PSCI_H
+> diff --git a/arch/arm64/lib/crc32.S b/arch/arm64/lib/crc32.S
+> index 243e107e9896..7420dea6afc1 100644
+> --- a/arch/arm64/lib/crc32.S
+> +++ b/arch/arm64/lib/crc32.S
+> @@ -9,7 +9,7 @@
+>  #include <asm/alternative.h>
+>  #include <asm/assembler.h>
 >
-> +#include <linux/const.h>
-> +
->  /*
->   * PSCI v0.1 interface
->   *
-> @@ -100,7 +102,7 @@
->  #define PSCI_1_0_FEATURES_CPU_SUSPEND_PF_MASK  \
->                         (0x1 << PSCI_1_0_FEATURES_CPU_SUSPEND_PF_SHIFT)
+> -       .cpu            generic+crc
+> +       .arch_extension crc
 >
-> -#define PSCI_1_0_OS_INITIATED                  BIT(0)
-> +#define PSCI_1_0_OS_INITIATED                  _BITUL(0)
->  #define PSCI_1_0_SUSPEND_MODE_PC               0
->  #define PSCI_1_0_SUSPEND_MODE_OSI              1
->
+>         .macro          __crc32, c
+>         cmp             x2, #16
 > --
-> 2.1.4
+> 2.20.1
 >
 
 _______________________________________________
