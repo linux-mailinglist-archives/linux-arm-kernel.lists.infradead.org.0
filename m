@@ -2,81 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAFC5190303
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 01:43:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BF71190314
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 01:52:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e0sQci+LVdVRkCPiCEvNsu6vi8hxieWKL8sDgNQn2fc=; b=XwSLmpo2NO1MOt
-	W/mRB/fCfmVMZGr+Gn1NrroO1l86AQfHxmsHB8YcKngKJ/cFvPlosVqNClM8AodVkfhQtN+u69cfM
-	R9qUVYrnDTWhfNsb/9LTRmCxJ4xLyVH026rnMb+dmdzR1F/RhRWIf4jGXdY69E5js/sFNoK9jxnVu
-	0djGbkJl9kAulRvEQUivtT32TVBSFF9UNncXT415PQiT+ZG6egxL3xcs6+5m5ElgJ9WyLLdcvvhYJ
-	KK5moSSJnRUM2xll3oMEFlRuU8I4gtptI741rQIt4czZcAQze2OQSsoXcFSNqszFhGUMsbwm94Zby
-	dHI2NHiNm6NhZdVy36dg==;
+	List-Owner; bh=svpE6V0aEBUrTvaEi1mzUDKSgKJfRDttFUzwu0JPZxQ=; b=klphkXww9PcKWN
+	PFP2uCNHixzQsW0BDQjhcTk90RHcf24cQhJfo2lhDMAJ8EUNb3V7678dMNzF3x3lbYoWeyJBo2NGL
+	J6pfkpPdyvEdR687cMdjS23ssZ4gxwe5oQ9TEHOVQt5N/PkJDbCmVnj1U8yz89X2zYxDTvn5RYWVy
+	ZsPtBgB/5et8CRTXB11PzaF4fLf1rWsNDGthiHdueQNe8uPt9K9acQN+wYAuvDZMX9hF1RZLdf1xX
+	Ezjeyisn2kK4h4wsJlanuXi9KkIMJwLSvKWJ8M/3SYHdK5MPBhfYE91drvBZ+hbP7b460t1VVc9L8
+	MBeGT9QlnQ9N+r3qgdJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGXfE-0007xP-DG; Tue, 24 Mar 2020 00:43:28 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1jGXnm-0003QT-5L; Tue, 24 Mar 2020 00:52:18 +0000
+Received: from mail-eopbgr20040.outbound.protection.outlook.com ([40.107.2.40]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGXf2-0007v4-4m
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 00:43:17 +0000
-Received: by mail-oi1-x242.google.com with SMTP id p125so16829506oif.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 17:43:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5XccjSmzQSYluJiyPzbiNHYe0YLLyvddDurt0q9/XDU=;
- b=i0k4De3b34CqM8gnM5JGiwY0ry7/ZrLpmzktSW0KiYPpha1vXvZ6wse2JF4KOZxVnD
- EvQKDMJyxbQBAohPuAtor1+p5fdwNmCCleq9CZv5MH/K0Typsq6VX/h+HiBxyMSITLFI
- 1zE9FFUnbH8lRcKH3LGjUdaDuM7j39TaZnPdg+9Irg+53LlaHdNuQO8FXCXwTEJNtQWf
- Hx25W6E5EVV7YjtXB8bV9UsFQXdrV3gzCscw1XOQnO5vKf2wtgnduAlQ6d/npzVosWTQ
- wsFC0bSpKMWWzljnO8WmBULkYUJ3j2VxltB1tjkDBKGyMg3Di8aGhK8E+knTKXDDf4ds
- 2eRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5XccjSmzQSYluJiyPzbiNHYe0YLLyvddDurt0q9/XDU=;
- b=UIemWJX3DzPE9dUuV9u6udAvTaBeGzkdgP+5fL9wRNZVqqcl+O1tzvNS/Kg0/SBcme
- QQgW+X2ZJYaJzw2Ag2Jif010JHl+lxHNLcRzFICb7PCXud+Xav8vX3GzD7RsoqqBjzNX
- aP/vjsZXw+pO2CHmf2Ob7/7xmKwnsks2RaUf2tdTKAl0bbRad6dmeTyUWDzmgZQeaY3V
- jhc2JVsDziu/yTL8c15qGUzBGprL6gC8W8ETDhodFqV7X/TCwmuIzqZrao3197cmgbZG
- i27Ikyf5XvDbjmY94ni3zfECz2y73inWHyMZQYC4aUV7KerlubViZxmhEc+AS8NYz6GK
- +rVw==
-X-Gm-Message-State: ANhLgQ1KBv+t9cj0J3zEyaOtNS1zPJEWx5hAd5Ee61b48JC5T0+2SY86
- vGRGJyObZUSO2genbe4Tl5ILln/nC7Dc2zzt9t+mLw==
-X-Google-Smtp-Source: ADFU+vtYBVk3tWWGsOMAMHUFEJFhvxQroU9ZV5f98ByE8nUcZKV6aGcbbi70XDgVtV9LxWY6a+Fz0IqYMsBbQbFZO5E=
-X-Received: by 2002:aca:a857:: with SMTP id r84mr1597815oie.65.1585010593973; 
- Mon, 23 Mar 2020 17:43:13 -0700 (PDT)
+ id 1jGXnd-0003PV-J2
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 00:52:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=JGN3N/Jy/SjCVX6efEp6aNFaJrlgsZ3zR4m7yMANnO/7E0xhup6PBmK18k5XGd0XngUJQ8DymJ7P24hyBOpsNiAlxvLeV0SfNxIA6gsjeddRnnHZaUNySAu5bpw/Gqb6TFN3YloOurQJN6PcU1vkWKDx+Uyt8wDpYUFRCB6iBSY2QSUZRjx3BH8+xluzTLcRftGYMPLt1Fye9twlrRns5ojF1zjqP3/0ITboUjLadqac/1t4yNdFhI6E8jr2gmYUB/p+LTBCnB3XOkw3X88ajb5RIhxHGwcSOwtBlx2jX0VBb/ttR3YFCW1zSetjKbgOHgSEJgWUIWUqswXPcWXLkQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ekRiOP5+uDcT0buFROQWK90bLw7SVOf4P1GWSugBm+4=;
+ b=n/8a34RjSWlUGMff0yukK6sn7UDRoEQDptxfdxlcBrxQCnF10N1IKo3dOYxOFzx3w2bESzIvqLpWYSpZ+xGRkjWIoTv5V0Ny6XDVAB9HDjyhOOmVZ3Lacp4eJoj2CLIOI20ltNw4F8IgNuoQxDXzSw+6M+CU1O93kmq31SX7O38wo9s/60GE3EyfHWQFOcCal+X0WHckmSeQuX72qFzVbS7ivJaaOLp+l7O4Kx5foUICpsDlChCE+WvQEGPXFn6AkTNcCM1Ms23/jick0IjympElgeU1/BXx2qnOdFDdMpsYzHVZGJyhYZTNRyAalhcntyj7YOK+KVX+7c7jhOtmIQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ekRiOP5+uDcT0buFROQWK90bLw7SVOf4P1GWSugBm+4=;
+ b=KrsQC9UUX4q9YsRNHbxMdGh8FUZx01wXln4EWJRnlJfAZ6Nqd3R1gEagWUr/iF/ha5wboFy7ysivtHpvYv7M23RSukj1cGzvVBCg+InkYIFe2CpZk/TF94cjpAhzv1NhwZegxBkSyiUvuDhRC3xvbXklV2tJ8g5fC5BKsjYumGw=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3914.eurprd04.prod.outlook.com (52.134.71.157) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.18; Tue, 24 Mar 2020 00:52:01 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2835.021; Tue, 24 Mar 2020
+ 00:52:01 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>, "rui.zhang@intel.com"
+ <rui.zhang@intel.com>, "amit.kucheria@verdurent.com"
+ <amit.kucheria@verdurent.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Horia Geanta
+ <horia.geanta@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH V3 2/3] thermal: imx8mm: Add i.MX8MP support
+Thread-Topic: [PATCH V3 2/3] thermal: imx8mm: Add i.MX8MP support
+Thread-Index: AQHWAQ+PMwlXAHkCzkSegBP0Of4mRKhWN38AgACy3VA=
+Date: Tue, 24 Mar 2020 00:52:01 +0000
+Message-ID: <DB3PR0402MB39163E02D851A95D843B1465F5F10@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1584966504-21719-1-git-send-email-Anson.Huang@nxp.com>
+ <1584966504-21719-2-git-send-email-Anson.Huang@nxp.com>
+ <644b108e-596c-64d6-9693-80ac7f706dc7@linaro.org>
+In-Reply-To: <644b108e-596c-64d6-9693-80ac7f706dc7@linaro.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: fd79f8e9-185c-49dd-751c-08d7cf8d9079
+x-ms-traffictypediagnostic: DB3PR0402MB3914:|DB3PR0402MB3914:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3914928FD8763E2295637C26F5F10@DB3PR0402MB3914.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-forefront-prvs: 03524FBD26
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(136003)(396003)(346002)(39860400002)(366004)(33656002)(110136005)(7696005)(4326008)(52536014)(55016002)(9686003)(478600001)(5660300002)(44832011)(186003)(316002)(26005)(71200400001)(4744005)(76116006)(6506007)(53546011)(64756008)(7416002)(66946007)(66476007)(66556008)(66446008)(81166006)(81156014)(2906002)(86362001)(8676002)(8936002)(921003)(32563001)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3914;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: MA8ua5c76kn4Wqcb4M+HBlHHxn342mRLpN9bh4SXLT7TP5GNl56yUeXpPu3ytbcxEzYsTJupHLr/yVyJYeD6KM1of48vzcN3BN+UvcRFg+95m9zLYEgzGkefb5k37Fh6hYYFNNaiGleQZGh14REOSDunVjWBWn5uZszv5mvKdpgG2KGQcgWrWb2a0sbRXtpjcwHZUi+iIZjqabXU8+SI5+sZ/RgoQ6gVGswA90a6D8I/rcHt5fijO3EOqXhXtPCUwjqsw4d6ySWR8q2pZD/DdUVuBjKazGBoQ9zZmiKfKHEM7x32N50n8mFiKLPiUC6AJQn8WJDryC7n5E0t8RyviJ+jj6quTgG3rv0xk+LiY5+ZsY0iWUOXtB+V60c/uOBpYd+2sSYG8hIDKFK+pSx/ioOHHkaVx7zjWabRDo3Adw+zF5E2cBPqW7/FJQqjX8QwUGK5aw75qMjzz99N3UJcYuaiv01ptMXb03oc6Ex5IGxoeAMY9wvI5fhqip4goAJ1vGPJLYhAZm4hfg73jvJvqQ==
+x-ms-exchange-antispam-messagedata: mE0ScmSpE9xJOOLhxPecFFjbtHnow+ffC6Thh5zThMxA0DJ5UHD2Q1emK0TNjlinYzaEH368E2hyCeIZSBJSlhpDH+hlJtBlggyMQFOoDanxPYHA8NPiZXsQQCiA4S8fR6Bd8Ql4O/orhSMZjsry5Q==
 MIME-Version: 1.0
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-5-mike.kravetz@oracle.com>
-In-Reply-To: <20200318220634.32100-5-mike.kravetz@oracle.com>
-From: Mina Almasry <almasrymina@google.com>
-Date: Mon, 23 Mar 2020 17:43:03 -0700
-Message-ID: <CAHS8izOhjvNVDXsx_SqP_oUQhCw-i_xcG9hxbvV86fFDeY_SAw@mail.gmail.com>
-Subject: Re: [PATCH 4/4] hugetlbfs: clean up command line processing
-To: Mike Kravetz <mike.kravetz@oracle.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd79f8e9-185c-49dd-751c-08d7cf8d9079
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Mar 2020 00:52:01.6622 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aNoKTDtxd5jq91qG48Y7RgpjRydbU/GaFu4ejAm74+Y8YaYNRvU5T5J3Lf0kQWqpO8g0e3rTo8nVro+et6LppQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3914
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_174316_187538_FAAAC5AB 
-X-CRM114-Status: GOOD (  34.76  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200323_175209_629961_AC493587 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [40.107.2.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -84,8 +122,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,272 +133,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Linux-MM <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- open list <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S . Miller" <davem@davemloft.net>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 18, 2020 at 3:07 PM Mike Kravetz <mike.kravetz@oracle.com> wrote:
->
-> With all hugetlb page processing done in a single file clean up code.
+Hi, Shawn
 
-Now that all hugepage page processing is done in a single file, clean
-up the code.
+> Subject: Re: [PATCH V3 2/3] thermal: imx8mm: Add i.MX8MP support
+> 
+> On 23/03/2020 13:28, Anson Huang wrote:
+> > i.MX8MP shares same TMU with i.MX8MM, the only difference is i.MX8MP
+> > has two thermal sensors while i.MX8MM ONLY has one, add multiple
+> > sensors support for i.MX8MM TMU driver.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V2:
+> > 	- Fix build warning about test_bit second argument type.
+> > ---
+> 
+> Please, just send a fix on top of this patch because the series is already
+> merged.
 
-> - Make code match desired semantics
->   - Update documentation with semantics
-> - Make all warnings and errors messages start with 'HugeTLB:'.
-> - Consistently name command line parsing routines.
-> - Add comments to code
->   - Describe some of the subtle interactions
->   - Describe semantics of command line arguments
->
-> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
-> ---
->  Documentation/admin-guide/mm/hugetlbpage.rst | 26 +++++++
->  mm/hugetlb.c                                 | 78 +++++++++++++++-----
->  2 files changed, 87 insertions(+), 17 deletions(-)
->
-> diff --git a/Documentation/admin-guide/mm/hugetlbpage.rst b/Documentation/admin-guide/mm/hugetlbpage.rst
-> index 1cc0bc78d10e..afc8888f33c3 100644
-> --- a/Documentation/admin-guide/mm/hugetlbpage.rst
-> +++ b/Documentation/admin-guide/mm/hugetlbpage.rst
-> @@ -100,6 +100,32 @@ with a huge page size selection parameter "hugepagesz=<size>".  <size> must
->  be specified in bytes with optional scale suffix [kKmMgG].  The default huge
->  page size may be selected with the "default_hugepagesz=<size>" boot parameter.
->
-> +Hugetlb boot command line parameter semantics
-> +hugepagesz - Specify a huge page size.  Used in conjunction with hugepages
-> +       parameter to preallocate a number of huge pages of the specified
-> +       size.  Hence, hugepagesz and hugepages are typically specified in
-> +       pairs such as:
-> +               hugepagesz=2M hugepages=512
-> +       hugepagesz can only be specified once on the command line for a
-> +       specific huge page size.  Valid huge page sizes are architecture
-> +       dependent.
-> +hugepages - Specify the number of huge pages to preallocate.  This typically
-> +       follows a valid hugepagesz parameter.  However, if hugepages is the
-> +       first or only hugetlb command line parameter it specifies the number
-> +       of huge pages of default size to allocate.  The number of huge pages
-> +       of default size specified in this manner can be overwritten by a
-> +       hugepagesz,hugepages parameter pair for the default size.
-> +       For example, on an architecture with 2M default huge page size:
-> +               hugepages=256 hugepagesz=2M hugepages=512
-> +       will result in 512 2M huge pages being allocated.  If a hugepages
-> +       parameter is preceded by an invalid hugepagesz parameter, it will
-> +       be ignored.
-> +default_hugepagesz - Specify the default huge page size.  This parameter can
-> +       only be specified on the command line.  No other hugetlb command line
-> +       parameter is associated with default_hugepagesz.  Therefore, it can
-> +       appear anywhere on the command line.  Valid default huge page size is
-> +       architecture dependent.
+The patch 1/3, 2/3 are merged, will you pick up the 3/3?
 
-Maybe specify what happens/should happen in a case like:
-
-hugepages=100 default_hugepagesz=1G
-
-Does that allocate 100 2MB pages or 100 1G pages? Assuming the default
-size is 2MB.
-
-Also, regarding Randy's comment. It may be nice to keep these docs in
-one place only, so we don't have to maintain 2 docs in sync.
-
-
-> +
->  When multiple huge page sizes are supported, ``/proc/sys/vm/nr_hugepages``
->  indicates the current number of pre-allocated huge pages of the default size.
->  Thus, one can use the following command to dynamically allocate/deallocate
-> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
-> index cc85b4f156ca..2b9bf01db2b6 100644
-> --- a/mm/hugetlb.c
-> +++ b/mm/hugetlb.c
-> @@ -2954,7 +2954,7 @@ static void __init hugetlb_sysfs_init(void)
->                 err = hugetlb_sysfs_add_hstate(h, hugepages_kobj,
->                                          hstate_kobjs, &hstate_attr_group);
->                 if (err)
-> -                       pr_err("Hugetlb: Unable to add hstate %s", h->name);
-> +                       pr_err("HugeTLB: Unable to add hstate %s", h->name);
->         }
->  }
->
-> @@ -3058,7 +3058,7 @@ static void hugetlb_register_node(struct node *node)
->                                                 nhs->hstate_kobjs,
->                                                 &per_node_hstate_attr_group);
->                 if (err) {
-> -                       pr_err("Hugetlb: Unable to add hstate %s for node %d\n",
-> +                       pr_err("HugeTLB: Unable to add hstate %s for node %d\n",
->                                 h->name, node->dev.id);
->                         hugetlb_unregister_node(node);
->                         break;
-> @@ -3109,19 +3109,35 @@ static int __init hugetlb_init(void)
->         if (!hugepages_supported())
->                 return 0;
->
-> -       if (!size_to_hstate(default_hstate_size)) {
-> -               if (default_hstate_size != 0) {
-> -                       pr_err("HugeTLB: unsupported default_hugepagesz %lu. Reverting to %lu\n",
-> -                              default_hstate_size, HPAGE_SIZE);
-> -               }
-> -
-> +       /*
-> +        * Make sure HPAGE_SIZE (HUGETLB_PAGE_ORDER) hstate exists.  Some
-> +        * architectures depend on setup being done here.
-> +        *
-> +        * If a valid default huge page size was specified on the command line,
-> +        * add associated hstate if necessary.  If not, set default_hstate_size
-> +        * to default size.  default_hstate_idx is used at runtime to identify
-> +        * the default huge page size/hstate.
-> +        */
-> +       hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
-> +       if (default_hstate_size)
-> +               hugetlb_add_hstate(ilog2(default_hstate_size) - PAGE_SHIFT);
-> +       else
->                 default_hstate_size = HPAGE_SIZE;
-> -               hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
-> -       }
->         default_hstate_idx = hstate_index(size_to_hstate(default_hstate_size));
-> +
-> +       /*
-> +        * default_hstate_max_huge_pages != 0 indicates a count (hugepages=)
-> +        * specified before a size (hugepagesz=).  Use this count for the
-> +        * default huge page size, unless a specific value was specified for
-> +        * this size in a hugepagesz/hugepages pair.
-> +        */
->         if (default_hstate_max_huge_pages) {
->                 if (!default_hstate.max_huge_pages)
-> -                       default_hstate.max_huge_pages = default_hstate_max_huge_pages;
-> +                       default_hstate.max_huge_pages =
-> +                               default_hstate_max_huge_pages;
-> +               else
-> +                       pr_warn("HugeTLB: First hugepages=%lu kB ignored\n",
-> +                               default_hstate_max_huge_pages);
->         }
->
->         hugetlb_init_hstates();
-> @@ -3174,20 +3190,27 @@ void __init hugetlb_add_hstate(unsigned int order)
->         parsed_hstate = h;
->  }
->
-> -static int __init hugetlb_nrpages_setup(char *s)
-> +/*
-> + * hugepages command line processing
-> + * hugepages must normally follows a valid hugepagsz specification.  If not,
-
-'hugepages must' or 'hugepages normally follows'
-> + * ignore the hugepages value.  hugepages can also be the first huge page
-> + * command line option in which case it specifies the number of huge pages
-> + * for the default size.
-> + */
-> +static int __init hugepages_setup(char *s)
->  {
->         unsigned long *mhp;
->         static unsigned long *last_mhp;
->
->         if (!parsed_valid_hugepagesz) {
-> -               pr_warn("hugepages = %s preceded by "
-> +               pr_warn("HugeTLB: hugepages = %s preceded by "
->                         "an unsupported hugepagesz, ignoring\n", s);
->                 parsed_valid_hugepagesz = true;
->                 return 1;
->         }
->         /*
-> -        * !hugetlb_max_hstate means we haven't parsed a hugepagesz= parameter yet,
-> -        * so this hugepages= parameter goes to the "default hstate".
-> +        * !hugetlb_max_hstate means we haven't parsed a hugepagesz= parameter
-> +        * yet, so this hugepages= parameter goes to the "default hstate".
->          */
->         else if (!hugetlb_max_hstate)
->                 mhp = &default_hstate_max_huge_pages;
-
-We don't set parsed_valid_hugepagesz to false at the end of this
-function, shouldn't we? Parsing a hugepages= value should 'consume' a
-previously defined hugepagesz= value, so that this is invalid IIUC:
-
-hugepagesz=x hugepages=z hugepages=y
-
-> @@ -3195,7 +3218,8 @@ static int __init hugetlb_nrpages_setup(char *s)
->                 mhp = &parsed_hstate->max_huge_pages;
->
->         if (mhp == last_mhp) {
-> -               pr_warn("hugepages= specified twice without interleaving hugepagesz=, ignoring\n");
-> +               pr_warn("HugeTLB: hugepages= specified twice without interleaving hugepagesz=, ignoring hugepages=%s\n",
-> +                       s);
->                 return 1;
->         }
->
-> @@ -3214,8 +3238,15 @@ static int __init hugetlb_nrpages_setup(char *s)
->
->         return 1;
->  }
-> -__setup("hugepages=", hugetlb_nrpages_setup);
-> +__setup("hugepages=", hugepages_setup);
->
-> +/*
-> + * hugepagesz command line processing
-> + * A specific huge page size can only be specified once with hugepagesz.
-> + * hugepagesz is followed by hugepages on the commnad line.  The global
-> + * variable 'parsed_valid_hugepagesz' is used to determine if prior
-> + * hugepagesz argument was valid.
-> + */
->  static int __init hugepagesz_setup(char *s)
->  {
->         unsigned long long size;
-> @@ -3230,16 +3261,23 @@ static int __init hugepagesz_setup(char *s)
->         }
->
->         if (size_to_hstate(size)) {
-> +               parsed_valid_hugepagesz = false;
->                 pr_warn("HugeTLB: hugepagesz %s specified twice, ignoring\n",
->                         saved_s);
->                 return 0;
->         }
->
-> +       parsed_valid_hugepagesz = true;
->         hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
->         return 1;
->  }
->  __setup("hugepagesz=", hugepagesz_setup);
->
-> +/*
-> + * default_hugepagesz command line input
-> + * Only one instance of default_hugepagesz allowed on command line.  Do not
-> + * add hstate here as that will confuse hugepagesz/hugepages processing.
-> + */
->  static int __init default_hugepagesz_setup(char *s)
->  {
->         unsigned long long size;
-> @@ -3252,6 +3290,12 @@ static int __init default_hugepagesz_setup(char *s)
->                 return 0;
->         }
->
-> +       if (default_hstate_size) {
-> +               pr_err("HugeTLB: default_hugepagesz previously specified, ignoring %s\n",
-> +                       saved_s);
-> +               return 0;
-> +       }
-> +
->         default_hstate_size = size;
->         return 1;
->  }
-> --
-> 2.24.1
->
->
-
+Thanks,
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
