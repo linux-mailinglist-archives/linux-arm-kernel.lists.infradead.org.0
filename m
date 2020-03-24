@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0ED5190F6B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:25:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8BB6190F6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:26:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=eHQPI/jCsJQ+WwzsXtZX36JFxvlbSubH7pPq2RA1RAE=; b=ovDXlPsEbP0nf8F0oNM9LSaEWO
-	RFeDiE8vvVcWPN9p0VOGp/S/dN16J9uexm4ByHyMTh53jmAmUzg3ehiWqeehOhIV0k919mxCZyfWL
-	l4MPoHrLepjdEWPdjGPnuxrGiIVdv+2Yes+cgYw+gWzDNHjrNBmn49bLNxvqTkjPUbPTokt+rvjsj
-	odNw6r9JjhgWIZIMcSTEPerAP7HNqQOVXDXFne5UI58M0sReLqmf8VHQ78oeotX7xc1ib0OScxGoV
-	H0XGBrkksF7Obnfgwtx3epzX2pgeMQi8FBgK721MxuAFshboWsfrZziDUX7+DwNhTxiOgvqsuVWt8
-	byDHkOmw==;
+	bh=bSWheouvT2Fd+jSkIptoL1f+/ZvPNYt4JfmL7b3ltIs=; b=QO8l6reqBErKIA/yYKJA+UTpzZ
+	kWfUyhxyLWEC/4rwrlx6DgzYCDnxogH+JX0vUVSfEycnetGBjDhw0CXEiEGowm5rBwQvcOO+41jNY
+	ddcXsC4jP6xZQmnqzSgWQvtZGkLu9vf4EpAHIhKs1r6MYpr+SX140C3ZDuX2xZ36QxmyMpKGXftQk
+	f05OuzES4nki5g16+CcHgk5E9mHTKxSUx6fU5Sgkl/LEz0+ewMWLDDncmYRFI/pvvOJxScwVqqJTr
+	ZX6YFSdMnZixB5Mfy4AD/mrqH1fQ9UzWxlGEZEwHnoBH2FV8bLZv+a34ofelcqDjHi07GUoaonnvt
+	+VVTaWIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGjYp-00029W-Hb; Tue, 24 Mar 2020 13:25:39 +0000
+	id 1jGjZ3-0003Y5-St; Tue, 24 Mar 2020 13:25:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGjXG-0000uU-Uj
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 13:24:04 +0000
+ id 1jGjXI-0000vj-05
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 13:24:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 01BA711B3;
- Tue, 24 Mar 2020 06:24:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 856761FB;
+ Tue, 24 Mar 2020 06:24:03 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A4C1C3F52E;
- Tue, 24 Mar 2020 06:24:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 35E5C3F52E;
+ Tue, 24 Mar 2020 06:24:02 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH v3 05/14] net: axienet: Improve DMA error handling
-Date: Tue, 24 Mar 2020 13:23:38 +0000
-Message-Id: <20200324132347.23709-6-andre.przywara@arm.com>
+Subject: [PATCH v3 06/14] net: axienet: Factor out TX descriptor chain cleanup
+Date: Tue, 24 Mar 2020 13:23:39 +0000
+Message-Id: <20200324132347.23709-7-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200324132347.23709-1-andre.przywara@arm.com>
 References: <20200324132347.23709-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_062403_032905_F7F5A07E 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20200324_062404_131036_039F677E 
+X-CRM114-Status: GOOD (  15.42  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,41 +73,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since 0 is a valid DMA address, we cannot use the physical address to
-check whether a TX descriptor is valid and is holding a DMA mapping.
-
-Use the "cntrl" member of the descriptor to make this decision, as it
-contains at least the length of the buffer, so 0 points to an
-uninitialised buffer.
+Factor out the code that cleans up a number of connected TX descriptors,
+as we will need it to properly roll back a failed _xmit() call.
+There are subtle differences between cleaning up a successfully sent
+chain (unknown number of involved descriptors, total data size needed)
+and a chain that was about to set up (number of descriptors known), so
+cater for those variations with some extra parameters.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 ---
- drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../net/ethernet/xilinx/xilinx_axienet_main.c | 79 +++++++++++++------
+ 1 file changed, 57 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 415179cbdc51..82ec7deacdfe 100644
+index 82ec7deacdfe..5c1b53944771 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -571,7 +571,7 @@ static void axienet_start_xmit_done(struct net_device *ndev)
+@@ -545,32 +545,46 @@ static int axienet_device_reset(struct net_device *ndev)
+ }
+ 
+ /**
+- * axienet_start_xmit_done - Invoked once a transmit is completed by the
+- * Axi DMA Tx channel.
++ * axienet_free_tx_chain - Clean up a series of linked TX descriptors.
+  * @ndev:	Pointer to the net_device structure
++ * @first_bd:	Index of first descriptor to clean up
++ * @nr_bds:	Number of descriptors to clean up, can be -1 if unknown.
++ * @sizep:	Pointer to a u32 filled with the total sum of all bytes
++ * 		in all cleaned-up descriptors. Ignored if NULL.
+  *
+- * This function is invoked from the Axi DMA Tx isr to notify the completion
+- * of transmit operation. It clears fields in the corresponding Tx BDs and
+- * unmaps the corresponding buffer so that CPU can regain ownership of the
+- * buffer. It finally invokes "netif_wake_queue" to restart transmission if
+- * required.
++ * Would either be called after a successful transmit operation, or after
++ * there was an error when setting up the chain.
++ * Returns the number of descriptors handled.
+  */
+-static void axienet_start_xmit_done(struct net_device *ndev)
++static int axienet_free_tx_chain(struct net_device *ndev, u32 first_bd,
++				 int nr_bds, u32 *sizep)
+ {
+-	u32 size = 0;
+-	u32 packets = 0;
+ 	struct axienet_local *lp = netdev_priv(ndev);
+ 	struct axidma_bd *cur_p;
+-	unsigned int status = 0;
++	int max_bds = nr_bds;
++	unsigned int status;
++	int i;
++
++	if (max_bds == -1)
++		max_bds = lp->tx_bd_num;
++
++	for (i = 0; i < max_bds; i++) {
++		cur_p = &lp->tx_bd_v[(first_bd + i) % lp->tx_bd_num];
++		status = cur_p->status;
++
++		/* If no number is given, clean up *all* descriptors that have
++		 * been completed by the MAC.
++		 */
++		if (nr_bds == -1 && !(status & XAXIDMA_BD_STS_COMPLETE_MASK))
++			break;
+ 
+-	cur_p = &lp->tx_bd_v[lp->tx_bd_ci];
+-	status = cur_p->status;
+-	while (status & XAXIDMA_BD_STS_COMPLETE_MASK) {
+ 		dma_unmap_single(ndev->dev.parent, cur_p->phys,
+ 				(cur_p->cntrl & XAXIDMA_BD_CTRL_LENGTH_MASK),
  				DMA_TO_DEVICE);
- 		if (cur_p->skb)
+-		if (cur_p->skb)
++
++		if (cur_p->skb && (status & XAXIDMA_BD_STS_COMPLETE_MASK))
  			dev_consume_skb_irq(cur_p->skb);
--		/*cur_p->phys = 0;*/
-+		cur_p->cntrl = 0;
++
+ 		cur_p->cntrl = 0;
  		cur_p->app0 = 0;
  		cur_p->app1 = 0;
- 		cur_p->app2 = 0;
-@@ -1539,7 +1539,7 @@ static void axienet_dma_err_handler(struct work_struct *work)
+@@ -579,15 +593,36 @@ static void axienet_start_xmit_done(struct net_device *ndev)
+ 		cur_p->status = 0;
+ 		cur_p->skb = NULL;
  
- 	for (i = 0; i < lp->tx_bd_num; i++) {
- 		cur_p = &lp->tx_bd_v[i];
--		if (cur_p->phys)
-+		if (cur_p->cntrl)
- 			dma_unmap_single(ndev->dev.parent, cur_p->phys,
- 					 (cur_p->cntrl &
- 					  XAXIDMA_BD_CTRL_LENGTH_MASK),
+-		size += status & XAXIDMA_BD_STS_ACTUAL_LEN_MASK;
+-		packets++;
+-
+-		if (++lp->tx_bd_ci >= lp->tx_bd_num)
+-			lp->tx_bd_ci = 0;
+-		cur_p = &lp->tx_bd_v[lp->tx_bd_ci];
+-		status = cur_p->status;
++		if (sizep)
++			*sizep += status & XAXIDMA_BD_STS_ACTUAL_LEN_MASK;
+ 	}
+ 
++	return i;
++}
++
++/**
++ * axienet_start_xmit_done - Invoked once a transmit is completed by the
++ * Axi DMA Tx channel.
++ * @ndev:	Pointer to the net_device structure
++ *
++ * This function is invoked from the Axi DMA Tx isr to notify the completion
++ * of transmit operation. It clears fields in the corresponding Tx BDs and
++ * unmaps the corresponding buffer so that CPU can regain ownership of the
++ * buffer. It finally invokes "netif_wake_queue" to restart transmission if
++ * required.
++ */
++static void axienet_start_xmit_done(struct net_device *ndev)
++{
++	struct axienet_local *lp = netdev_priv(ndev);
++	u32 packets = 0;
++	u32 size = 0;
++
++	packets = axienet_free_tx_chain(ndev, lp->tx_bd_ci, -1, &size);
++
++	lp->tx_bd_ci += packets;
++	if (lp->tx_bd_ci >= lp->tx_bd_num)
++		lp->tx_bd_ci -= lp->tx_bd_num;
++
+ 	ndev->stats.tx_packets += packets;
+ 	ndev->stats.tx_bytes += size;
+ 
 -- 
 2.17.1
 
