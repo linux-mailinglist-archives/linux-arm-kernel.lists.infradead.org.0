@@ -2,85 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA87E19087B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 10:06:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBCB3190889
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 10:11:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PYdubr11iE2o5F9eMA2lGQvShSg4P5SyNTVPZreRY/Y=; b=kzPoqCoSXz19GQ
-	Yc7IVDwqQ2ph6SGpY3FxghGwG3z6pcLK7lO4gDmMmm96XFm3tfJSB5pDE7yQ8fJmCNYgpPyhriqZ3
-	puf9v1N5Cx+gXv7Axzku2aO+9EERP0ur96hzJF0h3gjQ/dkvol6Src4CxyZLe80pQt3vysI5dGu5H
-	dBEnT0Pq7e4R15XiIyoDjtr+wisi2p+/rqVr/6T49VfHsPbUAf+R/JDjpkqBk5MwrOOWsoR53sK0i
-	boI6Fl3jDtovIjxo6bfiw66XcG9Jut3af+W7BhxVfR6iTAxQf289byTagEH5QkVEZJDKkxGI7jEFE
-	AoJyf8oFvl59QKozjxMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uvnj4TeOTxiWHZngBPuxa5v7gJ7nrsecGJnPIOMyqQs=; b=BGUXMpqpAng8GZ
+	kZ5hxIp9s68SPPGG1oO0BWxcwTdObdsp31fB+p5xfQqyB1HlFxJQ2/KfjsmP4/uuh8tjuk2unHct6
+	f01bZF/u4Yz66Ut5G3iOM0GGmCuTklxJIldZWcJw/YLqhpE261xR4USVIIct3EFlzZfFVjCigJxlw
+	mMs5oWPUaAwwyRC2G1stknJUkiN1ttFG39UJi3VC2mu0P4nGZNkuwF8EqyluEysOwdBIds9J5hd4R
+	xaGT6dpuy4GUe6WkxaVqqCnKD8E4wzu41AhvL97Q/cEEe9FX4W70APmjibeQgJi03hwFeo/2JU8Ts
+	8V3zh+g+7GzzPV7a2Gkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGfW5-0004oU-Or; Tue, 24 Mar 2020 09:06:33 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGfVw-0004ng-AF
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 09:06:26 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v16so10680791ljk.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 02:06:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uXJW3NYqkzBJPg9G4K5LGYBd3XGQpGvoVNtbcm5Oumc=;
- b=LbrZCbzmZx+Kfb1Pm57HvFHXuRgH444WCs3KnlNJ9YLTcdWzcACe0XYOMLFNxSnkVH
- wN88biDhrK+6HtUJj35VD4dFzg9cGhbGQzAhpXmOrRsqZITX0hTej20qj+VRoR4uNBfZ
- 3tUJpYkAFikVpIS6Bp8KePAb0Bq5MOTC1YBDjTrdFWYIi4okAdmrkjf7eH+cDjfvswnY
- eNJfCdKTpTYuGH9iE99z6qcWe86ldjM8DxZknJTAJcGlNvFpAvX0Pfg/dQO7bRVTt3WB
- AbQPQpSOS9CCHsoTsEYTkgwyICLIzP9k6ivxee5YATXOa10Axoo/TbZqZvmtGqKAQxpo
- 32Jw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uXJW3NYqkzBJPg9G4K5LGYBd3XGQpGvoVNtbcm5Oumc=;
- b=Z8F6RqFpQakVQqWKy40KVJL0MersFDhcFaCxhrJ2AKs1/y+bqPAph+SZiCiI1OZ8lQ
- hCfbEAgBrSu+QWqz/Q9mlLhxHUlRwfm0LHq+IjIzdTrmfeB79YJUOVcaR0tad1t0NTg9
- TmiBHzmc2eQzhDRZce2K7kZdP9Nvf53ubjuKXzbd0CHLvLzSszDnGOyEPP+H4aSfUMTg
- w36srsc6EYAK+SysMHS1AAFFnY9ewwJAgxzUWZCoiOCjWFmECmn1VY7xzJlzdA9M7sp/
- 5NEzq4sYaVqbd03LXbwB8EC4YMUcOm25Q43w6Yc+BMiU7w8qSVD3LGPSdct1gyoa5tuW
- nSuA==
-X-Gm-Message-State: ANhLgQ0U8yRZnzq//J+6bRY5eU+I857oe+U+44Kr/3nU9OcGOe0s6uLX
- hiKf36pNFHlAezWqtFUdS48vp4RANgyvj98em1Wefw==
-X-Google-Smtp-Source: ADFU+vsS0Vgh95i3gLQkXN72OAT1r7M91nH8bLgfI97o39Kb3z7Gj4YEOvUgl0V1KX45mkYxQ/82vB1+XBwxrugyzW4=
-X-Received: by 2002:a2e:8ecf:: with SMTP id e15mr17140251ljl.223.1585040782184; 
- Tue, 24 Mar 2020 02:06:22 -0700 (PDT)
+	id 1jGfa9-0006iD-9i; Tue, 24 Mar 2020 09:10:45 +0000
+Received: from pecan2-mail.exetel.com.au ([220.233.0.71]
+ helo=pecan2.exetel.com.au)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGfa1-0006gw-6K; Tue, 24 Mar 2020 09:10:38 +0000
+Received: from 41.68.233.220.static.exetel.com.au ([220.233.68.41]
+ helo=localhost.localdomain)
+ by pecan2.exetel.com.au with esmtp (Exim 4.91)
+ (envelope-from <flatmax@flatmax.org>)
+ id 1jGfZc-0000Zd-ME; Tue, 24 Mar 2020 20:10:12 +1100
+From: Matt Flax <flatmax@flatmax.org>
+To: 
+Subject: [PATCH] ASoC: bcm2835-i2s: substream alignment now independent in
+ hwparams
+Date: Tue, 24 Mar 2020 20:08:21 +1100
+Message-Id: <20200324090823.20754-1-flatmax@flatmax.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200323184501.5756-1-lukas.bulwahn@gmail.com>
-In-Reply-To: <20200323184501.5756-1-lukas.bulwahn@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 24 Mar 2020 10:06:10 +0100
-Message-ID: <CACRpkdYUURewhao=uDbKOmn2OnhBN6G6qnjUXgN2OBH_w_u2Qw@mail.gmail.com>
-Subject: Re: [PATCH] MAINTAINERS: adjust entry to ICST clocks YAML schema
- creation
-To: Lukas Bulwahn <lukas.bulwahn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_020624_389379_13C7963E 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_021037_240389_5AA91F69 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [220.233.0.71 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,37 +59,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- kernel-janitors@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joe Perches <joe@perches.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>, alsa-devel@alsa-project.org,
+ Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org,
+ Scott Branden <sbranden@broadcom.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Ray Jui <rjui@broadcom.com>,
+ YueHaibing <yuehaibing@huawei.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Matt Flax <flatmax@flatmax.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 7:45 PM Lukas Bulwahn <lukas.bulwahn@gmail.com> wrote:
+Substream sample alignment was being set in hwparams for both
+substreams at the same time. This became a problem when	the Audio
+Injector isolated sound card needed to offset sample alignment
+for high sample	rates. The latency difference between playback
+and capture occurs because of the digital isolation chip
+propagation time, particularly when the codec is master and
+the DAC return is twice delayed.
 
-> Commit 78c7d8f96b6f ("dt-bindings: clock: Create YAML schema for ICST
-> clocks") transformed arm-integrator.txt into arm,syscon-icst.yaml, but did
-> not adjust the reference to that file in the ARM INTEGRATOR, VERSATILE AND
-> REALVIEW SUPPORT entry in MAINTAINERS.
->
-> Hence, since then, ./scripts/get_maintainer.pl --self-test complains:
->
->   warning: no file matches \
->   F: Documentation/devicetree/bindings/clock/arm-integrator.txt
->
-> Update the file entry in MAINTAINERS to the new transformed yaml file.
->
-> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+This patch sets sample alignment registers  based on the substream
+direction in hwparams. This gives the machine driver more control
+over sample alignment in the bcm2835 i2s driver.
 
-Thanks!
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Matt Flax <flatmax@flatmax.org>
+---
+ sound/soc/bcm/bcm2835-i2s.c | 36 +++++++++++++++++++-----------------
+ 1 file changed, 19 insertions(+), 17 deletions(-)
 
-Yours,
-Linus Walleij
+diff --git a/sound/soc/bcm/bcm2835-i2s.c b/sound/soc/bcm/bcm2835-i2s.c
+index e6a12e271b07..9db542699a13 100644
+--- a/sound/soc/bcm/bcm2835-i2s.c
++++ b/sound/soc/bcm/bcm2835-i2s.c
+@@ -493,11 +493,6 @@ static int bcm2835_i2s_hw_params(struct snd_pcm_substream *substream,
+ 		return -EINVAL;
+ 	}
+ 
+-	bcm2835_i2s_calc_channel_pos(&rx_ch1_pos, &rx_ch2_pos,
+-		rx_mask, slot_width, data_delay, odd_slot_offset);
+-	bcm2835_i2s_calc_channel_pos(&tx_ch1_pos, &tx_ch2_pos,
+-		tx_mask, slot_width, data_delay, odd_slot_offset);
+-
+ 	/*
+ 	 * Transmitting data immediately after frame start, eg
+ 	 * in left-justified or DSP mode A, only works stable
+@@ -508,19 +503,26 @@ static int bcm2835_i2s_hw_params(struct snd_pcm_substream *substream,
+ 			"Unstable slave config detected, L/R may be swapped");
+ 
+ 	/*
+-	 * Set format for both streams.
+-	 * We cannot set another frame length
+-	 * (and therefore word length) anyway,
+-	 * so the format will be the same.
++	 * Set format on a per stream basis.
++	 * The alignment format can be different depending on direction.
+ 	 */
+-	regmap_write(dev->i2s_regmap, BCM2835_I2S_RXC_A_REG, 
+-		  format
+-		| BCM2835_I2S_CH1_POS(rx_ch1_pos)
+-		| BCM2835_I2S_CH2_POS(rx_ch2_pos));
+-	regmap_write(dev->i2s_regmap, BCM2835_I2S_TXC_A_REG, 
+-		  format
+-		| BCM2835_I2S_CH1_POS(tx_ch1_pos)
+-		| BCM2835_I2S_CH2_POS(tx_ch2_pos));
++	if (substream->stream == SNDRV_PCM_STREAM_CAPTURE) {
++		bcm2835_i2s_calc_channel_pos(&rx_ch1_pos, &rx_ch2_pos,
++			rx_mask, slot_width, data_delay, odd_slot_offset);
++		regmap_write(dev->i2s_regmap, BCM2835_I2S_RXC_A_REG,
++			  format
++			| BCM2835_I2S_CH1_POS(rx_ch1_pos)
++			| BCM2835_I2S_CH2_POS(rx_ch2_pos));
++	}
++
++	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
++		bcm2835_i2s_calc_channel_pos(&tx_ch1_pos, &tx_ch2_pos,
++			tx_mask, slot_width, data_delay, odd_slot_offset);
++		regmap_write(dev->i2s_regmap, BCM2835_I2S_TXC_A_REG,
++			  format
++			| BCM2835_I2S_CH1_POS(tx_ch1_pos)
++			| BCM2835_I2S_CH2_POS(tx_ch2_pos));
++	}
+ 
+ 	/* Setup the I2S mode */
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
