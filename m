@@ -2,60 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 632EB190BDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 12:05:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BCB4190BF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 12:07:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D4TPK1u5JlSkSNYD3qPfIN0Szds37aqSAyLb/5SYGbo=; b=LPBsn4ZvKHDto/
-	/IxU0yA+cPTg6ALZ6bWXj2/Gwx5Z+Go/5ZZ7y1lOXv/czuGI6pyXKmtFhqGTycMylg+XvjST2AKu7
-	zcLCtiC8d7XtaZiCevPBz5lVlltntuoLaILS0pbR4iaD/WpFPN964WWkSLLY6TnrPMBSmGOlswvlK
-	zGZOL/BNXWaC7G25kkkJrcoiXAH+XILAzOvoVS/HCHsW31iOISMln211fOFHLbHvql+1gFn6Yb8ga
-	at3t9MR37xVcCcwFIGebXyknAjkc5z3Cy1og7d4O8T4xVhRGJlIFEOTtEKxxICbAZbVOBtTk+Zi32
-	fbiEKCO1UyxmVniLZ4+g==;
+	List-Owner; bh=HlMbKAmUdY4hdSAyJOK3XzNHpxzK46yQWZnON1FWZHc=; b=Y1om+kgzA4s5b9
+	3rBpj2k2IEGv1adwdok6jOn4Yp7ph2hkwduRlpHQUk+T6XCi3mFoDsQhkNxBhSxD/8hdxI12X7WKH
+	cbkFXdR0J2zS2Mc1fSZ9WGnXG0g7auq9Dzlm0C6YwdGNKsyWcafZQzgv9L2yxFdqs8KtNCrzZfTm9
+	0v5ua9zCePjhnnQ0EZ3u+9t0KvUZHGjNS57AAlqyagRDf1RorTQsRnFl7Qot7F/CQaSUHPKLXWD9l
+	gLUe5P45Ia7no/0pvmrWAYHR0iQxHt5aihspRtvJSvCA1g7NiE5S6VAbp9/WouhtPSuExDpB9qbDT
+	L9VJ9IuFT3lI9eAgteyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGhN1-0001Ar-Bt; Tue, 24 Mar 2020 11:05:19 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jGhOY-0003gp-LG; Tue, 24 Mar 2020 11:06:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGhMY-00014J-80
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 11:04:52 +0000
-Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jGhML-0000j9-UJ; Tue, 24 Mar 2020 12:04:37 +0100
-Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jGhML-0006ad-Ec; Tue, 24 Mar 2020 12:04:37 +0100
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v3 5/5] ARM: dts: add Protonic RVT board
-Date: Tue, 24 Mar 2020 12:04:32 +0100
-Message-Id: <20200324110432.25062-6-o.rempel@pengutronix.de>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200324110432.25062-1-o.rempel@pengutronix.de>
-References: <20200324110432.25062-1-o.rempel@pengutronix.de>
+ id 1jGhNo-0003Jy-6U
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 11:06:12 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8A02F20786;
+ Tue, 24 Mar 2020 11:06:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585047967;
+ bh=2LvE4EYXx6S7St3XOfLekrr0TlyAbuI62HGedV7PVfQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BMhjKYnTWQPLqClRhwzeajd6cZLTTFORXjkcvfQmEmIVUg7JPlcZsMrANTFof7NHd
+ wlWlxdOGa8LS/D11JaFVyXerSDI6CgWlFZtnDC2IKK2L+gWLquXQla4/5eWmsPKoTQ
+ WgB2JPDT362mDWfTZOs1hyoYL2NDudE1kUbt6Hoo=
+Date: Tue, 24 Mar 2020 12:06:04 +0100
+From: gregkh <gregkh@linuxfoundation.org>
+To: =?utf-8?B?5ZSQ5b2s?= <tangbin@cmss.chinamobile.com>
+Subject: Re: Re: [PATCH] usb: gadget: bcm63xx_udc:remove useless variable
+ definition
+Message-ID: <20200324110604.GA2225782@kroah.com>
+References: <20200324062932.8364-1-tangbin@cmss.chinamobile.com>
+ <5f67315d-18c1-e444-03e7-a79a21d48b02@cogentembedded.com>
+ <202003241719218101862@cmss.chinamobile.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <202003241719218101862@cmss.chinamobile.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_040450_403065_EECA5570 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200324_040608_274373_449CACFD 
+X-CRM114-Status: UNSURE (   6.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -3.3 (---)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-3.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.7 DEAR_SOMETHING         BODY: Contains 'Dear (something)'
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,267 +77,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- David Jander <david@protonic.nl>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: balbi <balbi@kernel.org>, "f.fainelli" <f.fainelli@gmail.com>,
+ Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
+ cernekee <cernekee@gmail.com>, linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-usb <linux-usb@vger.kernel.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Protonic RVT is an internal development platform for a wireless ISObus
-Virtual Terminal based on COTS tablets, and the predecessor of the WD2
-platform.
-
-Signed-off-by: David Jander <david@protonic.nl>
-Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
----
- .../devicetree/bindings/arm/fsl.yaml          |   1 +
- arch/arm/boot/dts/Makefile                    |   1 +
- arch/arm/boot/dts/imx6dl-prtrvt.dts           | 203 ++++++++++++++++++
- 3 files changed, 205 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6dl-prtrvt.dts
-
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 424be1edf005..2e8a03ef5c95 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -168,6 +168,7 @@ properties:
-               - emtrion,emcon-mx6-avari   # emCON-MX6S or emCON-MX6DL SoM on Avari Base
-               - fsl,imx6dl-sabreauto      # i.MX6 DualLite/Solo SABRE Automotive Board
-               - fsl,imx6dl-sabresd        # i.MX6 DualLite SABRE Smart Device Board
-+              - prt,prtrvt                # Protonic RVT board
-               - prt,prtvt7                # Protonic VT7 board
-               - technologic,imx6dl-ts4900
-               - technologic,imx6dl-ts7970
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index e53abe1de259..afaccc9bc645 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -446,6 +446,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
- 	imx6dl-nitrogen6x.dtb \
- 	imx6dl-phytec-mira-rdk-nand.dtb \
- 	imx6dl-phytec-pbab01.dtb \
-+	imx6dl-prtrvt.dtb \
- 	imx6dl-prtvt7.dtb \
- 	imx6dl-rex-basic.dtb \
- 	imx6dl-riotboard.dtb \
-diff --git a/arch/arm/boot/dts/imx6dl-prtrvt.dts b/arch/arm/boot/dts/imx6dl-prtrvt.dts
-new file mode 100644
-index 000000000000..cf097437b276
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6dl-prtrvt.dts
-@@ -0,0 +1,203 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/*
-+ * Copyright (c) 2014 Protonic Holland
-+ */
-+
-+/dts-v1/;
-+#include "imx6dl.dtsi"
-+#include "imx6qdl-prti6q.dtsi"
-+#include <dt-bindings/leds/common.h>
-+
-+/ {
-+	model = "Protonic RVT board";
-+	compatible = "prt,prtrvt", "fsl,imx6dl";
-+
-+	memory@10000000 {
-+		device_type = "memory";
-+		reg = <0x10000000 0x10000000>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_leds>;
-+
-+		led-debug0 {
-+			function = LED_FUNCTION_STATUS;
-+			gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "heartbeat";
-+		};
-+	};
-+};
-+
-+&can1 {
-+	pinctrl-0 = <&pinctrl_can1 &pinctrl_can1phy>;
-+};
-+
-+&ecspi1 {
-+	cs-gpios = <&gpio3 19 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi1>;
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "winbond,w25q64", "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <20000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "boot";
-+				reg = <0x0 0x80000>;
-+			};
-+
-+			partition@80000 {
-+				label = "env";
-+				reg = <0x80000 0x10000>;
-+			};
-+
-+			partition@90000 {
-+				label = "spare";
-+				reg = <0x90000 0x370000>;
-+			};
-+		};
-+	};
-+};
-+
-+&ecspi3 {
-+	cs-gpios = <&gpio4 24 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi3>;
-+	status = "okay";
-+
-+	nfc@0 {
-+		compatible = "ti,trf7970a";
-+		reg = <0>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_nfc>;
-+		spi-max-frequency = <2000000>;
-+		interrupts-extended = <&gpio5 14 IRQ_TYPE_LEVEL_LOW>;
-+		ti,enable-gpios = <&gpio5 12 GPIO_ACTIVE_LOW>,
-+				  <&gpio5 11 GPIO_ACTIVE_LOW>;
-+		vin-supply = <&reg_3v3>;
-+		vin-voltage-override = <3100000>;
-+		autosuspend-delay = <30000>;
-+		irq-status-read-quirk;
-+		en2-rf-quirk;
-+		t5t-rmb-extra-byte-quirk;
-+		status = "okay";
-+	};
-+};
-+
-+&i2c3 {
-+	adc@49 {
-+		compatible = "ti,ads1015";
-+		reg = <0x49>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		/* nc */
-+		channel@4 {
-+			reg = <4>;
-+			ti,gain = <3>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* nc */
-+		channel@5 {
-+			reg = <5>;
-+			ti,gain = <3>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* can1_l */
-+		channel@6 {
-+			reg = <6>;
-+			ti,gain = <3>;
-+			ti,datarate = <3>;
-+		};
-+
-+		/* can1_h */
-+		channel@7 {
-+			reg = <7>;
-+			ti,gain = <3>;
-+			ti,datarate = <3>;
-+		};
-+	};
-+
-+	rtc@51 {
-+		compatible = "nxp,pcf8563";
-+		reg = <0x51>;
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&usbh1 {
-+	status = "disabled";
-+};
-+
-+&vpu {
-+	status = "disabled";
-+};
-+
-+&iomuxc {
-+	pinctrl_can1phy: can1phy {
-+		fsl,pins = <
-+			/* CAN1_SR */
-+			MX6QDL_PAD_KEY_COL3__GPIO4_IO12	0x13070
-+			/* CAN1_TERM */
-+			MX6QDL_PAD_GPIO_0__GPIO1_IO00	0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_ecspi1: ecspi1grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_EIM_D17__ECSPI1_MISO		0x100b1
-+			MX6QDL_PAD_EIM_D18__ECSPI1_MOSI		0x100b1
-+			MX6QDL_PAD_EIM_D16__ECSPI1_SCLK		0x100b1
-+			/* CS */
-+			MX6QDL_PAD_EIM_D19__GPIO3_IO19		0x000b1
-+		>;
-+	};
-+
-+	pinctrl_ecspi3: ecspi3grp {
-+		fsl,pins = <
-+			MX6QDL_PAD_DISP0_DAT0__ECSPI3_SCLK	0x100b1
-+			MX6QDL_PAD_DISP0_DAT1__ECSPI3_MOSI	0x100b1
-+			MX6QDL_PAD_DISP0_DAT2__ECSPI3_MISO	0x100b1
-+			MX6QDL_PAD_DISP0_DAT3__GPIO4_IO24	0x000b1
-+		>;
-+	};
-+
-+	pinctrl_leds: ledsgrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_GPIO_8__GPIO1_IO08		0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_nfc: nfcgrp {
-+		fsl,pins = <
-+			/* NFC_ASK_OOK */
-+			MX6QDL_PAD_DISP0_DAT15__GPIO5_IO09	0x100b1
-+			/* NFC_PWR_EN */
-+			MX6QDL_PAD_DISP0_DAT16__GPIO5_IO10	0x100b1
-+			/* NFC_EN2 */
-+			MX6QDL_PAD_DISP0_DAT17__GPIO5_IO11	0x100b1
-+			/* NFC_EN */
-+			MX6QDL_PAD_DISP0_DAT18__GPIO5_IO12	0x100b1
-+			/* NFC_MOD */
-+			MX6QDL_PAD_DISP0_DAT19__GPIO5_IO13	0x100b1
-+			/* NFC_IRQ */
-+			MX6QDL_PAD_DISP0_DAT20__GPIO5_IO14	0x100b1
-+		>;
-+	};
-+};
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXIgMjQsIDIwMjAgYXQgMDU6MTk6MjJQTSArMDgwMCwg5ZSQ5b2sIHdyb3RlOgo+
+IERlYXIgU2ly77yaCj4gICAgICAgICBJJ20gZ2xhZCBmb3IgeW91IHJlcGxheeOAglllc+OAgkkg
+dGhpbmsgdGhlIHZhcmlhYmxlIGFzc2lnbm1lbnQgaGVyZSBjYW4gYmUgZGVsZXRlZOOAggoKR3Jl
+YXQsIGNhbiB5b3UgcGxlYXNlIGZpeCB1cCB5b3VyIHBhdGNoIHRvIHNheSB0aGF0PwoKdGhhbmtz
+LAoKZ3JlZyBrLWgKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
