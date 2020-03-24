@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6D7F191573
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:59:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D35D191575
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 17:00:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lgzSG5/Bx+uLm+sRLs31UqM+nx3AofMZgtYxAGEowE0=; b=b3UvQXIJpw8QUT
-	5WnZRGzXiYg4nNfp2Vlf80+/wrMpUJ5rH9Pn0pAlrURmjF7y258Eh2ZJXyvFrGLDs8iMczIjCPndZ
-	BDpNSXzzvzJLgzV3VH2ZL0Sgs1Q7lwwkbyXVuqnW112UBEM/VIHJgAn+mw29L7S8OnyO5dtXynzUY
-	SYsIv86gm4rBegCuxmjY1gnxDH3oavJ9/h2ggZfCEegU1VBUAindXbXFx98dahBiy8M69x0VVIDDX
-	Lj/2SXr3GlKYHJL6DpwmLeiEEb15ulX12vH/95QQInw3y8Ohsf0xecuogg3sgF1bFZ3oPTO+o40b4
-	sDNA/owEPrhowhWwQz3g==;
+	List-Owner; bh=gWWCM2TCh1EOTprUkTkXpSERLABsdy4f1w0V2976NDo=; b=ptVeRcJXPRqiMn
+	VotRa/kvXYtYWOWdqHmTzYkXsUZhYIsJVzzYLI75AZ5gyOXLRvhTtI7amqW5IUzjSyoAcPM3Kkskc
+	GyBPjxoI9RT6w2ndBqgf5cTdPwiCZGmN5OkIxQiMc3suDkG4ekbIKs+WGuDc1OplcG5QCJXTWyUc2
+	3b/Ugckp0CcU3hGrROrfDPciWeMmocYjapn2voEMlCF1n41qWjzrSo6C4cLdXKtz0IuBFBPEem5F4
+	YWSP4X0VD/u42mpxXjOZ4ZPsuM6TULrq+Tec5tFAqXzcmZvOeyCLppUBZIoxBMQDmwFIFidZ7nam2
+	lwpm18X2hYT0DZWqzlDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGlxr-0002T0-05; Tue, 24 Mar 2020 15:59:39 +0000
+	id 1jGly3-0002gU-Ts; Tue, 24 Mar 2020 15:59:51 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGlx7-0001zl-V6
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:58:55 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a81so4012361wmf.5
+ id 1jGlx8-0001zp-F2
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:58:56 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z18so3797055wmk.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 08:58:53 -0700 (PDT)
+ Tue, 24 Mar 2020 08:58:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=XPYOl9OSvnlb7pbajpjD/KFcLeeFx7WRfchUdrcylgw=;
- b=YHsHf9RCWJ9Rkt8w6oePRTlQPhaIlN8o9yI18GdZk6d549IZQI9P0+hsaofIYyEuYJ
- Pu4WSGVwS4cBplZPuQ3WqdbIeCm+pJ8I7Q55t8f5yS57f49NCTL6DeIx97+mL4ijqlXM
- Sy+4gHnjl43p9nDSLap7RJ3f7oMqOMH7TO1cruo0H8JyPGX9id6qeoDIJzaTjBskAav7
- uQu6aJZCeEM/zClNuaDzR74lg++HuvFmB41duTI54392uEqAuGclZmUHHpfCUabph7fX
- BFrXxCxj3bYBkmJuiK7X8NVRLWhBcm8zMQchXuJ3gpD9r3GZhHgLzqyaMcFTyTbxfKVf
- ufJw==
+ bh=TBYaP2vsyfjpwpmYdocpG4qegwrjQ0C3wk8Hsfu1Y/w=;
+ b=SsYgwQaUoSmYVCBWgE9BQzt3RCSVmqXMexs3Ypisb3v86af/zdjtm7+6dQ61ssgEOe
+ 9LMAgo/FP1YW6hOwLeTRJtSBad2V5g/rJ2p78jIgr+QZdjSR+0ZYDwbAmXC8+QYIQDVX
+ H3i2n4b+Tp3orgL7YXDu4nC9Lg/RjYREGSOoS6k7Zzr/wztYxTGvVkRVxya2sVwIq+Fn
+ o2sp/PAnCgg/ulkf/iYrOJpKrePmLMHa1Cf5kZ6jvgEektGhojyS9PfsWtJlFJpKHOJi
+ YWK8fcYqB2mxAhToD0I/gohFiPkoEyS+WLQDr/LRj1VQwtvYcZhueB6PyuNJHmxR13Jw
+ eytg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XPYOl9OSvnlb7pbajpjD/KFcLeeFx7WRfchUdrcylgw=;
- b=hiDvvdUPPGxqyj5LSi9+CTi+rTQZdMCQYROby1oZD4CwvJ5b2n4ZZfRCHqiDvA3IGT
- X4uP7oJgjiM5TVi/tRNUam+2EX9CAz3Up0kYbHtS6E++itUpQqqyTslF7Wgyq9+I3320
- wOOvhIrAcY8TZSt9vt8sWQBO8Q0XHgZ2HtHdI82F1+iBPJFV2vb8RJ/opPCScPbRpE+6
- 8Kz7YfsBMGaS7UHSaaMODZvgNia1c64ArahQSS0BM0HEQvpYHsU3tGrfsGioAiZnY+P1
- 500AA2dBkYPfxYZ5GR/+7reQKluNlXDRcQAur+QEyeeGHVhcmODVz4o3bhIG8Z3Smdf6
- UJdQ==
-X-Gm-Message-State: ANhLgQ2/sTbi8DmevoRbvMO/lz1HLhnvNEMxyWgMObuM699yjWNueT53
- NWS/o8Uhy69sBOY476IsvqjNbw==
-X-Google-Smtp-Source: ADFU+vuZkUbQmRe+H1djjQ4pvSEQwOP24JfoxEbqOVwByz2BSkhjvCiifE7uaI//6oPP5ccMUuMJrA==
-X-Received: by 2002:a1c:9ecb:: with SMTP id h194mr6657099wme.49.1585065531892; 
- Tue, 24 Mar 2020 08:58:51 -0700 (PDT)
+ bh=TBYaP2vsyfjpwpmYdocpG4qegwrjQ0C3wk8Hsfu1Y/w=;
+ b=gRUcxIjejgUEFrYgTUFhcexEQiNqcTqX6tG0nRxyXiQPXE2Gp2rZcZXwb5nYyOjZ7k
+ gCiEh12FvgfTU8uE+3XZi+WeuhXdhyAYpYXeF8STmituxKg20YABSw/0C73vucGsZdJc
+ T21HMjfT0K2SQFbPFcs6iE4qz1NmvrpyACrdsDc88x+896bdZVAP5DHhx9N/LCgX2slm
+ eErbTP4qWzQbnre4GNasV5CZOEsMw1mj57Xz0tFxyeLU3Q43DEkRESCISysZR/ymO5+m
+ gMpbS74AuN3bpX6hCemzpoi8vHIsbGFEX1HCv4UYVX/zg4AUGTEAfok6dVKuX+aQiqk+
+ SlQQ==
+X-Gm-Message-State: ANhLgQ39mXsxac7Rq2QTQ8A2AGVoLMkaqRpBIprNmxV2QgJGp+iF63vJ
+ DXuU38EsEOEscGtWp2+bhvfGRQ==
+X-Google-Smtp-Source: ADFU+vvYiq9W4c0hmv6urRGxwAanhG7SOtOWDVdqA2ynUrbzpq9wr12pHubZf8XKqIXJ6UOSsR9Xjg==
+X-Received: by 2002:a7b:c20d:: with SMTP id x13mr6292071wmi.52.1585065533268; 
+ Tue, 24 Mar 2020 08:58:53 -0700 (PDT)
 Received: from xps7590.local ([2a02:2450:102f:13b8:e15d:2127:89a:e5dc])
- by smtp.gmail.com with ESMTPSA id t124sm4993321wmg.13.2020.03.24.08.58.50
+ by smtp.gmail.com with ESMTPSA id t124sm4993321wmg.13.2020.03.24.08.58.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 08:58:51 -0700 (PDT)
+ Tue, 24 Mar 2020 08:58:52 -0700 (PDT)
 From: Robert Foss <robert.foss@linaro.org>
 To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
@@ -65,16 +65,16 @@ To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Loic Poulain <loic.poulain@linaro.org>, Luca Weiss <luca@z3ntu.xyz>
-Subject: [v3 2/6] arm64: dts: apq8016-sbc: Add CCI/Sensor nodes
-Date: Tue, 24 Mar 2020 16:58:38 +0100
-Message-Id: <20200324155843.10719-3-robert.foss@linaro.org>
+Subject: [v3 3/6] arm64: dts: sdm845: Add i2c-qcom-cci node
+Date: Tue, 24 Mar 2020 16:58:39 +0100
+Message-Id: <20200324155843.10719-4-robert.foss@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200324155843.10719-1-robert.foss@linaro.org>
 References: <20200324155843.10719-1-robert.foss@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_085854_000911_AB824AE0 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20200324_085854_528825_C60EFD05 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,123 +109,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Loic Poulain <loic.poulain@linaro.org>
+The sdm845 SOC ships with a CCI controller, which
+has two CCI/I2C buses.
 
-Add cci device to msm8916.dtsi.
-Add default 96boards camera node for db410c (apq8016-sbc).
-
-Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
 Signed-off-by: Robert Foss <robert.foss@linaro.org>
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
 
 Changes since v1:
- - Reference CCI by label
- - Don't use generic node names
- - Move regulator nodes out of /soc
- - Use CCI label and move node out of /soc
- - Use reference for camss and move node out of /soc
- - Use reference for cci-i2c0 and move out of /cci
- - Disable camera_read by default, since no mezzanine board is guaranteed
+ - Pad addresses to 8 bytes
+ - Sort clock_camcc by address
+ - Change cciX pinctrl node names
+ - Remove pinmux/pinconf nodes from pinctrl nodes
+ - Remove clk suffix from CCI node clock-names
+ - Give CCI i2c-bus nodes labels
 
+ arch/arm64/boot/dts/qcom/sdm845-db845c.dts |  4 +
+ arch/arm64/boot/dts/qcom/sdm845.dtsi       | 92 ++++++++++++++++++++++
+ 2 files changed, 96 insertions(+)
 
- arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi | 76 +++++++++++++++++++++++
- 1 file changed, 76 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-index 037e26b3f8d5..d98c7e9e6eb9 100644
---- a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-+++ b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
-@@ -51,6 +51,30 @@ chosen {
- 		stdout-path = "serial0";
- 	};
- 
-+	camera_vdddo_1v8: camera_vdddo_1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "camera_vdddo";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-always-on;
-+	};
-+
-+	camera_vdda_2v8: camera_vdda_2v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "camera_vdda";
-+		regulator-min-microvolt = <2800000>;
-+		regulator-max-microvolt = <2800000>;
-+		regulator-always-on;
-+	};
-+
-+	camera_vddd_1v5: camera_vddd_1v5 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "camera_vddd";
-+		regulator-min-microvolt = <1500000>;
-+		regulator-max-microvolt = <1500000>;
-+		regulator-always-on;
-+	};
-+
- 	reserved-memory {
- 		ramoops@bff00000{
- 			compatible = "ramoops";
-@@ -538,6 +562,58 @@ button@0 {
+diff --git a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+index eb77aaa6a819..a6b6837c3d68 100644
+--- a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
++++ b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
+@@ -583,3 +583,7 @@ pinconf-rx {
+ 		bias-pull-up;
  	};
  };
- 
-+&camss {
-+	status = "ok";
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		port@0 {
-+			reg = <0>;
-+			csiphy0_ep: endpoint {
-+				clock-lanes = <1>;
-+				data-lanes = <0 2>;
-+				remote-endpoint = <&ov5640_ep>;
-+				status = "okay";
-+			};
-+		};
-+	};
-+};
 +
 +&cci {
 +	status = "ok";
 +};
+diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+index d42302b8889b..91a60847026f 100644
+--- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
++++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+@@ -5,6 +5,7 @@
+  * Copyright (c) 2018, The Linux Foundation. All rights reserved.
+  */
+ 
++#include <dt-bindings/clock/qcom,camcc-sdm845.h>
+ #include <dt-bindings/clock/qcom,dispcc-sdm845.h>
+ #include <dt-bindings/clock/qcom,gcc-sdm845.h>
+ #include <dt-bindings/clock/qcom,gpucc-sdm845.h>
+@@ -1451,6 +1452,42 @@ tlmm: pinctrl@3400000 {
+ 			gpio-ranges = <&tlmm 0 0 150>;
+ 			wakeup-parent = <&pdc_intc>;
+ 
++			cci0_default: cci0-default {
++				/* SDA, SCL */
++				pins = "gpio17", "gpio18";
++				function = "cci_i2c";
 +
-+&cci_i2c0 {
-+	camera_rear@3b {
-+		compatible = "ovti,ov5640";
-+		reg = <0x3b>;
++				bias-pull-up;
++				drive-strength = <2>; /* 2 mA */
++			};
 +
-+		enable-gpios = <&msmgpio 34 GPIO_ACTIVE_HIGH>;
-+		reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&camera_rear_default>;
++			cci0_sleep: cci0-sleep {
++				/* SDA, SCL */
++				pins = "gpio17", "gpio18";
++				function = "cci_i2c";
 +
-+		clocks = <&gcc GCC_CAMSS_MCLK0_CLK>;
-+		clock-names = "xclk";
-+		clock-frequency = <23880000>;
++				drive-strength = <2>; /* 2 mA */
++				bias-pull-down;
++			};
 +
-+		vdddo-supply = <&camera_vdddo_1v8>;
-+		vdda-supply = <&camera_vdda_2v8>;
-+		vddd-supply = <&camera_vddd_1v5>;
++			cci1_default: cci1-default {
++				/* SDA, SCL */
++				pins = "gpio19", "gpio20";
++				function = "cci_i2c";
 +
-+		/* No camera mezzanine by default */
-+		status = "disabled";
++				bias-pull-up;
++				drive-strength = <2>; /* 2 mA */
++			};
 +
-+		port {
-+			ov5640_ep: endpoint {
-+				clock-lanes = <1>;
-+				data-lanes = <0 2>;
-+				remote-endpoint = <&csiphy0_ep>;
++			cci1_sleep: cci1-sleep {
++				/* SDA, SCL */
++				pins = "gpio19", "gpio20";
++				function = "cci_i2c";
++
++				drive-strength = <2>; /* 2 mA */
++				bias-pull-down;
++			};
++
+ 			qspi_clk: qspi-clk {
+ 				pinmux {
+ 					pins = "gpio95";
+@@ -2608,6 +2645,61 @@ videocc: clock-controller@ab00000 {
+ 			#reset-cells = <1>;
+ 		};
+ 
++		cci: cci@ac4a000 {
++			compatible = "qcom,sdm845-cci";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			reg = <0 0x0ac4a000 0 0x4000>;
++			interrupts = <GIC_SPI 460 IRQ_TYPE_EDGE_RISING>;
++			power-domains = <&clock_camcc TITAN_TOP_GDSC>;
++
++			clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
++				<&clock_camcc CAM_CC_SOC_AHB_CLK>,
++				<&clock_camcc CAM_CC_SLOW_AHB_CLK_SRC>,
++				<&clock_camcc CAM_CC_CPAS_AHB_CLK>,
++				<&clock_camcc CAM_CC_CCI_CLK>,
++				<&clock_camcc CAM_CC_CCI_CLK_SRC>;
++			clock-names = "camnoc_axi",
++				"soc_ahb",
++				"slow_ahb_src",
++				"cpas_ahb",
++				"cci",
++				"cci_src";
++
++			assigned-clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
++				<&clock_camcc CAM_CC_CCI_CLK>;
++			assigned-clock-rates = <80000000>, <37500000>;
++
++			pinctrl-names = "default", "sleep";
++			pinctrl-0 = <&cci0_default &cci1_default>;
++			pinctrl-1 = <&cci0_sleep &cci1_sleep>;
++
++			status = "disabled";
++
++			cci_i2c0: i2c-bus@0 {
++				reg = <0>;
++				clock-frequency = <1000000>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++			};
++
++			cci_i2c1: i2c-bus@1 {
++				reg = <1>;
++				clock-frequency = <1000000>;
++				#address-cells = <1>;
++				#size-cells = <0>;
 +			};
 +		};
-+	};
-+};
 +
- &spmi_bus {
- 	pm8916_0: pm8916@0 {
- 		pon@800 {
++		clock_camcc: clock-controller@ad00000 {
++			compatible = "qcom,sdm845-camcc";
++			reg = <0 0x0ad00000 0 0x10000>;
++			#clock-cells = <1>;
++			#reset-cells = <1>;
++			#power-domain-cells = <1>;
++		};
++
+ 		mdss: mdss@ae00000 {
+ 			compatible = "qcom,sdm845-mdss";
+ 			reg = <0 0x0ae00000 0 0x1000>;
 -- 
 2.25.1
 
