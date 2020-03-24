@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAE6B19192A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:29:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B79B191935
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:34:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YaBoM78lqEEmZOW4u4cO0fQ+Qpc7vocOU6aRT/EpQsk=; b=BSDoMdbdXfJNCB
-	Ccoti2K8Qk9NgAlOnVt60cLhw66HCbJPwZn1v08f/rr05ZIoPMToFkJt5krqew7Vd+jlZnzMxf8MC
-	lBfOqOev9hIjbyu19c646LbpbqVrtrtm9vmy6Lvd2GGuQuvybpM0RHDvc2wzv8a3fejGMgKStaQ/3
-	Efne01FoiZvWBedWpTdsoGJbFzfSb4ua/8JT2Ki04i9itY4oTZs9itKK1Taqe3WfNDphluuFcmdGx
-	nNxQK/PkA6XCdpJHxaCz3DtyZj/2NhAqd8roXn+PUt5SG00Tfc6auERZQPLtTinW6m9ZaUkBhjJQ0
-	GHUMyyLHvQ583h1ty9ow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=50XJ4FTDIgyX555qT5n3h7squ8jMAwAPWeva9qLEpRw=; b=ZmZJ7ShHb5a5bCnv72z5TP7Ba
+	ENxzjcrb9w2JVez4lavCLn8MzaQ8oRXqWsNQbs/YPOHTgfHm+u9t85jEyE5SptyI7nviDFGbLxp3x
+	v/S5eONC72csQ9ppwYKS48pxd9ANmejFyHgEO/pAfRVKWtZMf+fNxsqiv1vA+DsKe86VixLi6D8r/
+	bcyS7Lp3cUSI95RBcmCoGj+CgnCcVG19jdJDUSqWSLtiH/qn4NVqolLFeBhhkEfP25XCTaF4vV10G
+	5yhz5plgpqSq8wHV/q88ThFR4DpZfjCI9HjYloAmqO3dyqp2f0nkLnJZ6eUlYAfC+AXl6c3DiTOJf
+	nok/1yN+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGoIL-0002Hl-9P; Tue, 24 Mar 2020 18:28:57 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGoHq-00024d-Jc; Tue, 24 Mar 2020 18:28:28 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id EE53FABF6;
- Tue, 24 Mar 2020 18:28:24 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: linux-kernel@vger.kernel.org,
-	Mathias Nyman <mathias.nyman@intel.com>
-Subject: [PATCH v6 4/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
-Date: Tue, 24 Mar 2020 19:28:12 +0100
-Message-Id: <20200324182812.20420-5-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200324182812.20420-1-nsaenzjulienne@suse.de>
-References: <20200324182812.20420-1-nsaenzjulienne@suse.de>
+	id 1jGoNM-0004zI-7O; Tue, 24 Mar 2020 18:34:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGoND-0004yo-Am
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:34:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D220331B;
+ Tue, 24 Mar 2020 11:33:56 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56C353F71F;
+ Tue, 24 Mar 2020 11:33:56 -0700 (PDT)
+Date: Tue, 24 Mar 2020 18:33:54 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH] arm64: head: Convert install_el2_stub to SYM_INNER_LABEL
+Message-ID: <20200324183354.GI7039@sirena.org.uk>
+References: <20200323123336.8728-1-broonie@kernel.org>
+ <CAKv+Gu-wX+gN+2YiK+PmpLe=+wKBE08yXGDNpwrgcS+eS6hX4A@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAKv+Gu-wX+gN+2YiK+PmpLe=+wKBE08yXGDNpwrgcS+eS6hX4A@mail.gmail.com>
+X-Cookie: I feel ... JUGULAR ...
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_112826_791336_2ABB38D1 
-X-CRM114-Status: GOOD (  16.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200324_113359_415535_B7AA9653 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,105 +66,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, sergei.shtylyov@cogentembedded.com,
- gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, tim.gover@raspberrypi.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- wahrenst@gmx.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6076213279487012263=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
-loaded directly from an EEPROM or, if not present, by the SoC's
-VideCore. Inform VideCore that VL805 was just reset.
 
-Also, as this creates a dependency between USB_PCI and VideoCore's
-firmware interface. Since USB_PCI can't be set as a module neither this
-should.
+--===============6076213279487012263==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="+PbGPm1eXpwOoWkI"
+Content-Disposition: inline
 
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
----
+--+PbGPm1eXpwOoWkI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Changes since v5:
- - Fix Kconfig issue with allmodconfig
+On Tue, Mar 24, 2020 at 07:19:56PM +0100, Ard Biesheuvel wrote:
+> On Mon, 23 Mar 2020 at 13:33, Mark Brown <broonie@kernel.org> wrote:
 
-Changes since v4:
- - Do not split up error message
+> > -install_el2_stub:
+> > +SYM_INNER_LABEL(install_el2_stub, SYM_L_GLOBAL)
 
-Changes since v3:
- - Add more complete error message
+> Shouldn't this be SYM_L_LOCAL?
 
-Changes since v1:
- - Make RASPBERRYPI_FIRMWARE dependent on this quirk to make sure it
-   gets compiled when needed.
+I think it could be, yes.
 
- drivers/firmware/Kconfig      |  3 ++-
- drivers/usb/host/pci-quirks.c | 16 ++++++++++++++++
- 2 files changed, 18 insertions(+), 1 deletion(-)
+--+PbGPm1eXpwOoWkI
+Content-Type: application/pgp-signature; name="signature.asc"
 
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index ea869addc89b..78ab2ad6d3f0 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -178,8 +178,9 @@ config ISCSI_IBFT
- 	  Otherwise, say N.
- 
- config RASPBERRYPI_FIRMWARE
--	tristate "Raspberry Pi Firmware Driver"
-+	bool "Raspberry Pi Firmware Driver"
- 	depends on BCM2835_MBOX
-+	default USB_PCI
- 	help
- 	  This option enables support for communicating with the firmware on the
- 	  Raspberry Pi.
-diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
-index beb2efa71341..0dc34668bb2a 100644
---- a/drivers/usb/host/pci-quirks.c
-+++ b/drivers/usb/host/pci-quirks.c
-@@ -16,6 +16,9 @@
- #include <linux/export.h>
- #include <linux/acpi.h>
- #include <linux/dmi.h>
-+
-+#include <soc/bcm2835/raspberrypi-firmware.h>
-+
- #include "pci-quirks.h"
- #include "xhci-ext-caps.h"
- 
-@@ -1243,11 +1246,24 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
- 
- static void quirk_usb_early_handoff(struct pci_dev *pdev)
- {
-+	int ret;
-+
- 	/* Skip Netlogic mips SoC's internal PCI USB controller.
- 	 * This device does not need/support EHCI/OHCI handoff
- 	 */
- 	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
- 		return;
-+
-+	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
-+		ret = rpi_firmware_init_vl805(pdev);
-+		if (ret) {
-+			/* Firmware might be outdated, or something failed */
-+			dev_warn(&pdev->dev,
-+				 "Failed to load VL805's firmware: %d. Will continue to attempt to work, but bad things might happen. You should fix this...\n",
-+				 ret);
-+		}
-+	}
-+
- 	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
- 			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
- 			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
--- 
-2.25.1
+-----BEGIN PGP SIGNATURE-----
 
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56UpIACgkQJNaLcl1U
+h9BOHwf+KghVipTgE+r4crM1W4zM+CvwJTFH/Ssml1+HcCJkPwO+/kranb6WwYjO
+/HIo6iXMp8WNnGvpFtnKzJ7t/WputwxvgqHsNO3xagAX/Xzc8kZSKXt137ytnopt
+dprIYFuwuBaDY4fm3CTZo8ZeJOP1i44loPb8bboucdGvVEediJjWTVlP+XAFK+jU
+uHexG+92DcNGA0RTkch6xyAjneZ8OfrgHRk/vbqoTfwCdO4OicmjXOIozwp+Z7Kv
+cKPZEJeIZR2TCYXNINWBxQY3cB8cHLiKa19wFRKU927dDp6HBd1Fj8p/TGeBcPqw
+C+NWJhQaNXdkP7Ardxv0ksEHJ5BBhw==
+=I+9r
+-----END PGP SIGNATURE-----
+
+--+PbGPm1eXpwOoWkI--
+
+
+--===============6076213279487012263==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6076213279487012263==--
+
