@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98212191AD8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 21:19:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DA07191AC9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 21:18:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gpkgjWWmKjtm/7hTBMzmQ4rHAT6rE5niIYcT2SbSijw=; b=rFY0CUCMPfWWc3
-	g4m/AHZsGorw2o2or8DV4aZVGcQ7gC6VUsJeTvwqrb2aiyVTQuhCGzMpz2kFaBT5F0nnrk6Io6RCn
-	1E54rSLS8Y3wiZmvnM2L34RwrfgYpYrUlsdljaBb2Y9qlIbNxH2wiA+CQYFBr+hGdwdluWKqRgQLj
-	Mk/ekMHVG84WiYNlr6UB1uyhDbcWShysx+3+WJIclZglJJ1PzYjsCesD5UG60xYK6S2ZkjA+u9zrS
-	f7m3iC3rqV08i29P6zJXsFerTOx3uOm/TnHhEu8LQlvClXDdDbzBvUouKaL3YXc0kbC6/P5x3S1Jo
-	gD9q2Kgscm5eY86zfqCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1JPUVqjgeyUgcaPzg84qLAY8yqjzDPnUTtyFCckKOEg=; b=AJd3IAC7sRISfr
+	GZIsufKS1zwlSNMNa7WxmN2gCh1g/GDxPq9quX6yXlBUzOcVg/IQ5ov+q1jea8Ui3amGVhMULbf+u
+	jXYF6DYP0ziED+WJFsmhtWmOC7ySuEAaqeW13OKgLnlkvj5tgEGq1RA0AjQxIKZhFlFYCwYyHxiOH
+	CCIW+n6F8nu+4zhkGd0r80oSPbSjJ4L6cEUVC0lsOGJaXAKepWnH6cs1MLuv73mFyN4H59cffloVH
+	tT1URWxI75dzhioa+GLmE3X6vILhkTqgS28e3lwlTLVGmY1bClNh1Gtgcy3kNEkt6J8i+gYX0mpOW
+	pGQoRDyllMvr8Vb8GEKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGq0p-0003Ts-J4; Tue, 24 Mar 2020 20:18:59 +0000
+	id 1jGq0W-0003Iz-Tp; Tue, 24 Mar 2020 20:18:40 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGq0J-0003I5-Dc
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 20:18:29 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02OKIM9N089235;
- Tue, 24 Mar 2020 15:18:22 -0500
+ id 1jGq0J-0003I6-Ak
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 20:18:28 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02OKIObx089240;
+ Tue, 24 Mar 2020 15:18:24 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1585081102;
- bh=HDnUg64MURgxOddjFc1rSjs5ym61HxadrRBf8tW9tdA=;
- h=From:To:CC:Subject:Date;
- b=TGYeZLwfb2+SaqZ9YIAGXHbP/zvkr4mXIjcQ1VSLyTVUFOVTH+hwdFfcF72Yg4IkQ
- ahYgH0QSGtq8FheXehvrFEkEheQzAn2j3k7heqxuxeyfyWs5CTPDqwwmIwKEOtJQmQ
- qSD1um2GqfWaD1ulEbC1+hHR/diqlqXFyHEz5lrY=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02OKIMe5065603
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 24 Mar 2020 15:18:22 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1585081104;
+ bh=8qgGwfZnwiU6/Ir3wlJnjMa4hJEnhp9Vr0iuUASMO6M=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=JepYCPNiGgj420B1JhpJuS7Ka+IMxnnobyJvzgCmwKWuHJ07sIjjxWsmDo2trprGE
+ TiQ3wUGFXu086tg2NZAgpzncMix8DUZsrUQJEpLgIVCzX2OUbVESwBz/Gt2XUUfrnw
+ ReQYqC1E75z1pmavpuPrPYhR37TpCCIN5GiQIba8=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02OKINUX110238;
+ Tue, 24 Mar 2020 15:18:23 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 24
- Mar 2020 15:18:21 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ Mar 2020 15:18:23 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 24 Mar 2020 15:18:21 -0500
+ Frontend Transport; Tue, 24 Mar 2020 15:18:23 -0500
 Received: from fllv0103.dal.design.ti.com (fllv0103.dal.design.ti.com
  [10.247.120.73])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02OKILWA124084;
- Tue, 24 Mar 2020 15:18:21 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02OKINTN083843;
+ Tue, 24 Mar 2020 15:18:23 -0500
 Received: from localhost ([10.250.35.147])
- by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 02OKILu1084949;
- Tue, 24 Mar 2020 15:18:21 -0500
+ by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 02OKIMmN084957;
+ Tue, 24 Mar 2020 15:18:23 -0500
 From: Suman Anna <s-anna@ti.com>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>, Mathieu Poirier
  <mathieu.poirier@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 0/7] TI K3 R5F remoteproc support
-Date: Tue, 24 Mar 2020 15:18:12 -0500
-Message-ID: <20200324201819.23095-1-s-anna@ti.com>
+Subject: [PATCH 1/7] remoteproc: add prepare and unprepare ops
+Date: Tue, 24 Mar 2020 15:18:13 -0500
+Message-ID: <20200324201819.23095-2-s-anna@ti.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20200324201819.23095-1-s-anna@ti.com>
+References: <20200324201819.23095-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_131827_540228_103B9E21 
-X-CRM114-Status: GOOD (  16.91  )
+X-CRM114-CacheID: sfid-20200324_131827_496690_BF41406C 
+X-CRM114-Status: GOOD (  17.00  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -92,78 +93,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Loic Pallardy <loic.pallardy@st.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Suman Anna <s-anna@ti.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+From: Loic Pallardy <loic.pallardy@st.com>
 
-The following series adds a new K3 R5F remoteproc driver for all the R5F
-processor clusters/subsystems on TI AM65x and J721E SoCs. The AM65x has a
-single R5FSS cluster, while J721E has three R5FSS clusters. All clusters
-are capable of supporting either LockStep (safety compliant providing
-fault tolerance) or Split (performance mode) mode. The modes themselves
-are limited on some SoC variants through an eFUSE setting. The IP version
-and SoC integration is slightly different between AM65x and J721E SoC
-families leading to couple of functional behavior differences.
+On some SoC architecture, it is needed to enable HW like
+clock, bus, regulator, memory region... before loading
+co-processor firmware.
 
-The R5Fs are designed to boot out of TCMs with the initial boot-up code
-on the R5Fs configure the Memory Protection Unit (MPU) to run code from
-DDR. IPC is through the virtio-rpmsg transport. There is no error recovery
-or Power Management support at present. The J721E 
+This patch introduces prepare and unprepare ops to execute
+platform specific function before firmware loading and after
+stop execution.
 
-The patches are on top of the current rproc-next branch, and uses one
-patch from the OMAP remoteproc series [1]. It also leverages the fixed
-memory carveout fixes series [2].  
+Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
+Signed-off-by: Suman Anna <s-anna@ti.com>
+---
+ drivers/remoteproc/remoteproc_core.c | 20 +++++++++++++++++++-
+ include/linux/remoteproc.h           |  4 ++++
+ 2 files changed, 23 insertions(+), 1 deletion(-)
 
-The following is the patch summary:
- - Patch 1 is an old patch [3] from Loic posted previously to the upstream
-   lists and allows the driver to perform the necessary sequencing
-   w.r.t IP power-on and local resets and provide a balanced state
-   machine across sysfs start/stop, and bind/unbind or module removal.
- - Patch 2 is a minor enhancement in remoteproc core to allow dynamically
-   created platform devices to be registered with remoteproc core.
- - Patches 3 and 5 add the base binding and the the driver respectively.
- - Patch 4 is a common helper that will also be used by a TI K3 DSP 
-   remoteproc driver (to be posted in the near future) providing the
-   interface to the System Controller software over TI-SCI for performing
-   device-specific operations.
- - Patches 6 and 7 are couple of incremental features to the R5F driver.
-
-regards
-Suman
-
-[1] https://patchwork.kernel.org/patch/11455135/
-[2] https://patchwork.kernel.org/cover/11447649/
-[3] https://patchwork.kernel.org/patch/10251897/
-
-Loic Pallardy (1):
-  remoteproc: add prepare and unprepare ops
-
-Suman Anna (6):
-  remoteproc: use a local copy for the name field
-  dt-bindings: remoteproc: Add bindings for R5F subsystem on TI K3 SoCs
-  remoteproc/k3-r5: Add TI-SCI processor control helper functions
-  remoteproc/k3-r5: Add a remoteproc driver for R5F subsystem
-  remoteproc/k3-r5: Initialize TCM memories for ECC
-  remoteproc/k3-r5: Add loading support for on-chip SRAM regions
-
- .../bindings/remoteproc/ti,k3-r5f-rproc.yaml  |  338 ++++
- drivers/remoteproc/Kconfig                    |   16 +
- drivers/remoteproc/Makefile                   |    1 +
- drivers/remoteproc/remoteproc_core.c          |   29 +-
- drivers/remoteproc/ti_k3_r5_remoteproc.c      | 1461 +++++++++++++++++
- drivers/remoteproc/ti_sci_proc.h              |  102 ++
- include/linux/remoteproc.h                    |    6 +-
- 7 files changed, 1950 insertions(+), 3 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-r5f-rproc.yaml
- create mode 100644 drivers/remoteproc/ti_k3_r5_remoteproc.c
- create mode 100644 drivers/remoteproc/ti_sci_proc.h
-
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index 26f6947267d2..aca6d022901a 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -1394,12 +1394,22 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
+ 		return ret;
+ 	}
+ 
++	/* Prepare rproc for firmware loading if needed */
++	if (rproc->ops->prepare) {
++		ret = rproc->ops->prepare(rproc);
++		if (ret) {
++			dev_err(dev, "can't prepare rproc %s: %d\n",
++				rproc->name, ret);
++			goto disable_iommu;
++		}
++	}
++
+ 	rproc->bootaddr = rproc_get_boot_addr(rproc, fw);
+ 
+ 	/* Load resource table, core dump segment list etc from the firmware */
+ 	ret = rproc_parse_fw(rproc, fw);
+ 	if (ret)
+-		goto disable_iommu;
++		goto unprepare_rproc;
+ 
+ 	/* reset max_notifyid */
+ 	rproc->max_notifyid = -1;
+@@ -1433,6 +1443,10 @@ static int rproc_fw_boot(struct rproc *rproc, const struct firmware *fw)
+ 	kfree(rproc->cached_table);
+ 	rproc->cached_table = NULL;
+ 	rproc->table_ptr = NULL;
++unprepare_rproc:
++	/* release HW resources if needed */
++	if (rproc->ops->unprepare)
++		rproc->ops->unprepare(rproc);
+ disable_iommu:
+ 	rproc_disable_iommu(rproc);
+ 	return ret;
+@@ -1838,6 +1852,10 @@ void rproc_shutdown(struct rproc *rproc)
+ 	/* clean up all acquired resources */
+ 	rproc_resource_cleanup(rproc);
+ 
++	/* release HW resources if needed */
++	if (rproc->ops->unprepare)
++		rproc->ops->unprepare(rproc);
++
+ 	rproc_disable_iommu(rproc);
+ 
+ 	/* Free the copy of the resource table */
+diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+index 07bd73a6d72a..ddce7a7775d1 100644
+--- a/include/linux/remoteproc.h
++++ b/include/linux/remoteproc.h
+@@ -355,6 +355,8 @@ enum rsc_handling_status {
+ 
+ /**
+  * struct rproc_ops - platform-specific device handlers
++ * @prepare:	prepare device for code loading
++ * @unprepare:	unprepare device after stop
+  * @start:	power on the device and boot it
+  * @stop:	power off the device
+  * @kick:	kick a virtqueue (virtqueue id given as a parameter)
+@@ -371,6 +373,8 @@ enum rsc_handling_status {
+  * @get_boot_addr:	get boot address to entry point specified in firmware
+  */
+ struct rproc_ops {
++	int (*prepare)(struct rproc *rproc);
++	int (*unprepare)(struct rproc *rproc);
+ 	int (*start)(struct rproc *rproc);
+ 	int (*stop)(struct rproc *rproc);
+ 	void (*kick)(struct rproc *rproc, int vqid);
 -- 
 2.23.0
 
