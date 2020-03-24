@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D31D190AC3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:23:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A94FF190AC4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UI53UolQvohNMktF9xVei/Fsf5InD5Mx6WZeBYNwXYQ=; b=UBjusQ0EuZVZNs
-	5P60oLElY6H4iTiuflKNO1adVcCwbI/MWvhM5FCSPIEQSWjQm0UnseJ9CwGPJb8DWeDyuyl5hIFsn
-	hYhaFbOXivKihHmovpeQqN9jHsxp3hXsN6i/KsuwRU7shSynWjSiTZwGZtlNEhtGeH5k4Hg3ljyFn
-	XgQ7Md43BCtrLS8eFoD3tyCz+rnwqeHBPZf5HYduQnTCSYZhAZS9afGByULIRfbgNu9NUaMdFF1kv
-	zLaGd4tng7puM/Xv+fEEChjH5CgX+nOFHoUmRKc9Lb7XnPIKABZUqIUYCXPWjvCsfCPmT+gETVclT
-	hrlw08DqZ5rzhh2Czifw==;
+	List-Owner; bh=iMwvl7cgp14ygKCNJh+NvoVHw8PizcmI3HMeV2AG4og=; b=SI/FFSUYZkomGN
+	/k/HkEkJCUug9va1VUicViBb8JZhC45PGrCXoGwpTLhgBgV2ly7bXNorAjHAoVl6e2WrcYOU30Lft
+	bYtMedhEQJI3ezhXGaRYzM0Y9aXqAYYrq3shHSQax5G3UIyF0/+KwAiZkzTjppubExK7q39zKRG7Q
+	vaS6JXLl22rMStprcboWwF+7QyHc8hnv/HQ/cxCQsDKWA7tt6hOOjcYC4PFWtok8WkIg+Ls5zkTVC
+	OmqePZA+hJRiKuerpDtLP+bSl2mlZ4sEl0kevXqfEF33t0bGilVm4+m4hgmyn1HE/ERugfRLAwKf4
+	/gd8QNugcLWEhQ7i9Y/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGgiY-0004H6-LS; Tue, 24 Mar 2020 10:23:30 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jGgin-0004Wg-Nu; Tue, 24 Mar 2020 10:23:45 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGgfy-0001xU-5X
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:20:53 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m17so11704619wrw.11
+ id 1jGgfz-0001z0-Jl
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:20:54 +0000
+Received: by mail-wr1-x442.google.com with SMTP id h9so20674522wrc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 03:20:50 -0700 (PDT)
+ Tue, 24 Mar 2020 03:20:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=F8WnUqvvgv0bNfMxu+Z5YIurl03M0THSbpRLL/FtCLA=;
- b=UXNAKlUji6QXYFoez6B97lqRSxFp/2RaSBUajI/Aedr8apB3h4H0VwDndhYnZ2JzEl
- FC197RxKDT6g/K2nCZytul9HfEymSllr9Q7w8zycHJglWhsQvd/NnmacjzPdNUBypmt+
- pzWLOVwh9eThhAXlJ/IiU6V2xCVyHEGaXEhTuDW424ORmOq1zl1s7l5kUtEBZ8UXzeL2
- gIhBPC98CkroePDhRzoUlLvWf+FoMyRr4mTfYyIvtFrB7qqZOwBjI09mbxypMANFLNe6
- n02vnUzOyT0hgD8l1+y9xrFd9+BgY8fWZKVgprNxLMdl5wwlveVsxKCarHVkZ6krz6P4
- 7pKg==
+ bh=RUZC0y6m91wh8P6MloCluJN4MyzlpiujN56N7qyR1cU=;
+ b=0FQ0JYNonm/ag5zASwww42AGRmy29MPr1EIDEnkdJCW8oANQ1A+HfjHMcH+Gh+7hBZ
+ iQNGfhGZXzNsAwgS/pTdIKpWXrp7lwdb1aaOsz8sYm6HDK4dSFtjmmFXaiLW6su6XQ2X
+ WFACp/E9Sqf/dI3rFOyKzyGWVUTZ/5IVti4OzZt5IpAhC0jycqmSkskmmmycRI62p2Yp
+ rG5rMiu5Ys72COSlWYNnowX1kBLOOmJefR7e8zQoT87PwfkxSPULj669O+cR+KBSz/Uc
+ SsJszUhpaT5BcxMv4uM0/6O/JA9g/ijrhnaUZ1eo1iMl0EqcOlyJFuUp76rImeHte4f3
+ PtJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=F8WnUqvvgv0bNfMxu+Z5YIurl03M0THSbpRLL/FtCLA=;
- b=ufIU39v9H6b0wuSrqqfi3SXRdAo2PVEt8Yyp4sbxm4IGGqUvbZpqdkH6kzXDE0cQXh
- Vm2AVSAhAmVGtGJba527XISf4Lp2ZkVk5AGAlDrBcgHdw9F94nhuobDV669dqx5GnlaN
- hp89q9wBkg/CxddVyUErz/JyVEi9b9RvapomV+LNjj21k05qFLRZZaYACn18bt/7PV0c
- AMNcUuPjWhhQyxrtUqnXFR0fLJTYabPFTK7a+wSVqeSpjq2Rz5ULmzQwjxg87n06QLq5
- MH1P3BTmk+TMJuWaELj118fU50dLsXdb5SGi5fBxZ1A45jVNW7Qbl5Ei0cLR4BXuqPek
- YLEQ==
-X-Gm-Message-State: ANhLgQ1nEXUqbe/EwPUnquNOSNijOvJR4ySXSTbwD1uRDcIPVghCbQRn
- 41TmH5gvY0OZ4+yxU56GmJOLgA==
-X-Google-Smtp-Source: ADFU+vt4c9bVq+V9ThHlYHhvr0dTYvJh1OeYeXaukx1RGe0MyWTMfPzs2/OuGR+x8sfuT/D6tEHg4w==
-X-Received: by 2002:adf:efc9:: with SMTP id i9mr15183815wrp.23.1585045248510; 
- Tue, 24 Mar 2020 03:20:48 -0700 (PDT)
+ bh=RUZC0y6m91wh8P6MloCluJN4MyzlpiujN56N7qyR1cU=;
+ b=KcN6XGKSkAnmPGNez3hkc1RF4mKo+08BKj77i2Wm2PtiDM1X2wOKH9seiJqFEzF52l
+ dxXqf/DbQ8Y/bRLpRlY7miJaD9/lc7eDwfoorLe7XtlasnDbJJZpOm+N14s/kAej7Bd2
+ lK2KzpIyXX7yrAkYjrO4+GIHiKgxXKC+KdUFfVefGHOm/I7IGrV5rkvTxO5pncHdZjFK
+ 7mmMpIryBVec665ePK6eyt4unSD5Fy7pzUpU/wweGC1SoK0OU/BOfbItNKW3vAaaxv8W
+ 9LzUlWUDfszJtTGaZj5Nd5lVlEOvwOW3YReEb/thmB4OMGSk/G04Gqcstq+HR8bGib/k
+ pRog==
+X-Gm-Message-State: ANhLgQ0d9iTkxOGW+AL74TiRHBGwZWdAOOfZSCVxkTJq1v7wb1Fgq9XR
+ sayuEEgtfXdzFq/KB86E4lBx7g==
+X-Google-Smtp-Source: ADFU+vuiIbLUejePRIv3X2iK+eVyZu3p6TH7RADbrPHxVPS0D1EZcldi8PEsppiY9lcbA0/PTKj0mQ==
+X-Received: by 2002:a5d:4a10:: with SMTP id m16mr34229352wrq.333.1585045249895; 
+ Tue, 24 Mar 2020 03:20:49 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id h5sm2879527wro.83.2020.03.24.03.20.47
+ by smtp.gmail.com with ESMTPSA id h5sm2879527wro.83.2020.03.24.03.20.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 03:20:48 -0700 (PDT)
+ Tue, 24 Mar 2020 03:20:49 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: kishon@ti.com, balbi@kernel.org, khilman@baylibre.com,
  martin.blumenstingl@googlemail.com
-Subject: [PATCH 08/13] usb: dwc3: meson-g12a: add support for GXL and GXM SoCs
-Date: Tue, 24 Mar 2020 11:20:25 +0100
-Message-Id: <20200324102030.31000-9-narmstrong@baylibre.com>
+Subject: [PATCH 09/13] arm64: dts: amlogic: use the new USB control driver for
+ GXL and GXM
+Date: Tue, 24 Mar 2020 11:20:26 +0100
+Message-Id: <20200324102030.31000-10-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200324102030.31000-1-narmstrong@baylibre.com>
 References: <20200324102030.31000-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_032050_399306_4635DB41 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20200324_032051_792501_BE18EF1E 
+X-CRM114-Status: GOOD (  13.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,182 +103,318 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to add support for the Amlogic GXL/GXM USB Glue, this adds
-the corresponding :
-- PHY names
-- clock names
-- USB2 PHY init and mode set
-- regmap setup
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
+Add the correcly architectured USB Glue node and adapt all the Amlogic
+GXL and GXM board to the new organization.
+
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/usb/dwc3/dwc3-meson-g12a.c | 102 ++++++++++++++++++++++++++++-
- 1 file changed, 101 insertions(+), 1 deletion(-)
+ .../dts/amlogic/meson-gx-libretech-pc.dtsi    |  2 +-
+ .../boot/dts/amlogic/meson-gx-p23x-q20x.dtsi  |  2 +-
+ .../amlogic/meson-gxl-s805x-libretech-ac.dts  |  3 +-
+ .../boot/dts/amlogic/meson-gxl-s805x-p241.dts |  3 +-
+ .../amlogic/meson-gxl-s905d-phicomm-n1.dts    |  4 ++
+ .../boot/dts/amlogic/meson-gxl-s905w-p281.dts |  4 ++
+ .../dts/amlogic/meson-gxl-s905w-tx3-mini.dts  |  4 ++
+ .../amlogic/meson-gxl-s905x-khadas-vim.dts    |  4 ++
+ .../amlogic/meson-gxl-s905x-libretech-cc.dts  |  7 ++-
+ .../amlogic/meson-gxl-s905x-nexbox-a95x.dts   |  3 +-
+ .../dts/amlogic/meson-gxl-s905x-p212.dtsi     |  7 ++-
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi    | 45 ++++++++++---------
+ .../dts/amlogic/meson-gxm-khadas-vim2.dts     |  3 +-
+ .../boot/dts/amlogic/meson-gxm-nexbox-a1.dts  |  3 +-
+ .../boot/dts/amlogic/meson-gxm-vega-s96.dts   |  4 ++
+ arch/arm64/boot/dts/amlogic/meson-gxm.dtsi    |  7 ++-
+ 16 files changed, 68 insertions(+), 37 deletions(-)
 
-diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-index 04ef70661711..0eae5945e82e 100644
---- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-+++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-@@ -101,6 +101,11 @@
- #define PHY_COUNT						3
- #define USB2_OTG_PHY						1
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gx-libretech-pc.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx-libretech-pc.dtsi
+index 248b018c83d5..ec195e88b777 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gx-libretech-pc.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gx-libretech-pc.dtsi
+@@ -360,7 +360,7 @@
+ 	status = "okay";
+ };
  
-+static struct clk_bulk_data meson_gxl_clocks[] = {
-+	{ .id = "usb_ctrl" },
-+	{ .id = "ddr" },
+-&usb0 {
++&usb {
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
+index 12d5e333e5f2..52525fcc5944 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
+@@ -223,6 +223,6 @@
+ 	pinctrl-names = "default";
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-libretech-ac.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-libretech-ac.dts
+index 4d5949496596..2cfea3094f6c 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-libretech-ac.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-libretech-ac.dts
+@@ -243,6 +243,7 @@
+ 	pinctrl-names = "default";
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
++	dr_mode = "host";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts
+index a1119cfb0280..867e30f1d62b 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts
+@@ -216,6 +216,7 @@
+ 	pinctrl-names = "default";
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
++	dr_mode = "host";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-phicomm-n1.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-phicomm-n1.dts
+index b5667f1fb2c8..9ef210f17b4a 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-phicomm-n1.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-phicomm-n1.dts
+@@ -29,3 +29,7 @@
+ &cvbs_vdac_port {
+ 	status = "disabled";
+ };
++
++&usb {
++	dr_mode = "host";
 +};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-p281.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-p281.dts
+index 6509c4950950..ecc9df7ca023 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-p281.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-p281.dts
+@@ -20,3 +20,7 @@
+ 		reg = <0x0 0x0 0x0 0x40000000>;
+ 	};
+ };
 +
- static struct clk_bulk_data meson_g12a_clocks[] = {
- 	{ .id = NULL },
- };
-@@ -111,6 +116,10 @@ static struct clk_bulk_data meson_a1_clocks[] = {
- 	{ .id = "xtal_usb_ctrl" },
- };
- 
-+static const char *meson_gxm_phy_names[] = {
-+	"usb2-phy0", "usb2-phy1", "usb2-phy2",
++&usb {
++	dr_mode = "host";
 +};
-+
- static const char *meson_g12a_phy_names[] = {
- 	"usb2-phy0", "usb2-phy1", "usb3-phy0",
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
+index dd729ac2300d..6705c2082a78 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
+@@ -24,3 +24,7 @@
+ &ir {
+ 	linux,rc-map-name = "rc-tanix-tx3mini";
  };
-@@ -137,16 +146,53 @@ struct dwc3_meson_g12a_drvdata {
- 	int (*usb_post_init)(struct dwc3_meson_g12a *priv);
- };
- 
-+static int dwc3_meson_gxl_setup_regmaps(struct dwc3_meson_g12a *priv,
-+					void __iomem *base);
- static int dwc3_meson_g12a_setup_regmaps(struct dwc3_meson_g12a *priv,
- 					 void __iomem *base);
- 
- static int dwc3_meson_g12a_usb2_init_phy(struct dwc3_meson_g12a *priv, int i,
--					  enum phy_mode mode);
-+					 enum phy_mode mode);
-+static int dwc3_meson_gxl_usb2_init_phy(struct dwc3_meson_g12a *priv, int i,
-+					enum phy_mode mode);
- 
- static int dwc3_meson_g12a_set_phy_mode(struct dwc3_meson_g12a *priv,
- 					int i, enum phy_mode mode);
-+static int dwc3_meson_gxl_set_phy_mode(struct dwc3_meson_g12a *priv,
-+				       int i, enum phy_mode mode);
- 
- static int dwc3_meson_g12a_usb_init(struct dwc3_meson_g12a *priv);
-+static int dwc3_meson_gxl_usb_init(struct dwc3_meson_g12a *priv);
 +
-+static int dwc3_meson_gxl_usb_post_init(struct dwc3_meson_g12a *priv);
-+
-+static struct dwc3_meson_g12a_drvdata gxl_drvdata = {
-+	.otg_switch_supported = true,
-+	.otg_phy_host_port_disable = true,
-+	.clks = meson_gxl_clocks,
-+	.num_clks = ARRAY_SIZE(meson_g12a_clocks),
-+	.phy_names = meson_a1_phy_names,
-+	.num_phys = ARRAY_SIZE(meson_a1_phy_names),
-+	.setup_regmaps = dwc3_meson_gxl_setup_regmaps,
-+	.usb2_init_phy = dwc3_meson_gxl_usb2_init_phy,
-+	.set_phy_mode = dwc3_meson_gxl_set_phy_mode,
-+	.usb_init = dwc3_meson_gxl_usb_init,
-+	.usb_post_init = dwc3_meson_gxl_usb_post_init,
++&usb {
++	dr_mode = "host";
 +};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+index 440bc23c7342..8bcdffdf55d0 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
+@@ -207,3 +207,7 @@
+ 	pinctrl-0 = <&uart_ao_b_pins>;
+ 	pinctrl-names = "default";
+ };
 +
-+static struct dwc3_meson_g12a_drvdata gxm_drvdata = {
-+	.otg_switch_supported = true,
-+	.otg_phy_host_port_disable = true,
-+	.clks = meson_gxl_clocks,
-+	.num_clks = ARRAY_SIZE(meson_g12a_clocks),
-+	.phy_names = meson_gxm_phy_names,
-+	.num_phys = ARRAY_SIZE(meson_gxm_phy_names),
-+	.setup_regmaps = dwc3_meson_gxl_setup_regmaps,
-+	.usb2_init_phy = dwc3_meson_gxl_usb2_init_phy,
-+	.set_phy_mode = dwc3_meson_gxl_set_phy_mode,
-+	.usb_init = dwc3_meson_gxl_usb_init,
-+	.usb_post_init = dwc3_meson_gxl_usb_post_init,
++&usb {
++	dr_mode = "peripheral";
 +};
- 
- /*
-  * For GXL and GXM SoCs:
-@@ -201,6 +247,21 @@ struct dwc3_meson_g12a {
- 	const struct dwc3_meson_g12a_drvdata *drvdata;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
+index e8348b2728db..bd62d06d072f 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
+@@ -272,14 +272,13 @@
+ 	pinctrl-names = "default";
  };
  
-+static int dwc3_meson_gxl_set_phy_mode(struct dwc3_meson_g12a *priv,
-+					 int i, enum phy_mode mode)
-+{
-+	return phy_set_mode(priv->phys[i], mode);
-+}
-+
-+static int dwc3_meson_gxl_usb2_init_phy(struct dwc3_meson_g12a *priv, int i,
-+					enum phy_mode mode)
-+{
-+	/* On GXL PHY must be started in device mode for DWC2 init */
-+	return priv->drvdata->set_phy_mode(priv, i,
-+				(i == USB2_OTG_PHY) ? PHY_MODE_USB_DEVICE
-+						    : PHY_MODE_USB_HOST);
-+}
-+
- static int dwc3_meson_g12a_set_phy_mode(struct dwc3_meson_g12a *priv,
- 					 int i, enum phy_mode mode)
- {
-@@ -548,6 +609,18 @@ static int dwc3_meson_g12a_otg_init(struct platform_device *pdev,
- 	return 0;
- }
+-&usb0 {
++&usb {
+ 	status = "okay";
+-};
++	dr_mode = "host";
  
-+static int dwc3_meson_gxl_setup_regmaps(struct dwc3_meson_g12a *priv,
-+					void __iomem *base)
-+{
-+	/* GXL controls the PHY mode in the PHY registers unlike G12A */
-+	priv->usb_glue_regmap = devm_regmap_init_mmio(priv->dev, base,
-+					&phy_meson_g12a_usb_glue_regmap_conf);
-+	if (IS_ERR(priv->usb_glue_regmap))
-+		return PTR_ERR(priv->usb_glue_regmap);
-+
-+	return 0;
-+}
-+
- static int dwc3_meson_g12a_setup_regmaps(struct dwc3_meson_g12a *priv,
- 					 void __iomem *base)
- {
-@@ -588,6 +661,25 @@ static int dwc3_meson_g12a_usb_init(struct dwc3_meson_g12a *priv)
- 	return dwc3_meson_g12a_usb_init_glue(priv, priv->otg_phy_mode);
- }
- 
-+static int dwc3_meson_gxl_usb_init(struct dwc3_meson_g12a *priv)
-+{
-+	return dwc3_meson_g12a_usb_init_glue(priv, PHY_MODE_USB_DEVICE);
-+}
-+
-+static int dwc3_meson_gxl_usb_post_init(struct dwc3_meson_g12a *priv)
-+{
-+	int ret;
-+
-+	ret = priv->drvdata->set_phy_mode(priv, USB2_OTG_PHY,
-+					  priv->otg_phy_mode);
-+	if (ret)
-+		return ret;
-+
-+	dwc3_meson_g12a_usb_otg_apply_mode(priv,  priv->otg_phy_mode);
-+
-+	return 0;
-+}
-+
- static int dwc3_meson_g12a_probe(struct platform_device *pdev)
- {
- 	struct dwc3_meson_g12a	*priv;
-@@ -817,6 +909,14 @@ static const struct dev_pm_ops dwc3_meson_g12a_dev_pm_ops = {
+-&usb2_phy0 {
+ 	/*
+ 	 * even though the schematics don't show it:
+ 	 * HDMI_5V is also used as supply for the USB VBUS.
+ 	 */
+-	phy-supply = <&hdmi_5v>;
++	vbus-supply = <&hdmi_5v>;
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
+index 62dd87821ce5..f1acca5c4434 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
+@@ -218,6 +218,7 @@
+ 	pinctrl-names = "default";
  };
  
- static const struct of_device_id dwc3_meson_g12a_match[] = {
-+	{
-+		.compatible = "amlogic,meson-gxl-usb-ctrl",
-+		.data = &gxl_drvdata,
-+	},
-+	{
-+		.compatible = "amlogic,meson-gxm-usb-ctrl",
-+		.data = &gxm_drvdata,
-+	},
- 	{
- 		.compatible = "amlogic,meson-g12a-usb-ctrl",
- 		.data = &g12a_drvdata,
+-&usb0 {
++&usb {
+ 	status = "okay";
++	dr_mode = "host";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi
+index 43eb7d149e36..b998f935e18d 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi
+@@ -188,13 +188,12 @@
+ 	pinctrl-names = "default";
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
+-};
++	dr_mode = "host";
+ 
+-&usb2_phy0 {
+ 	/*
+ 	 * HDMI_5V is also used as supply for the USB VBUS.
+ 	 */
+-	phy-supply = <&hdmi_5v>;
++	vbus-supply = <&hdmi_5v>;
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+index 259d86399390..95b301a7c725 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+@@ -14,26 +14,43 @@
+ 	compatible = "amlogic,meson-gxl";
+ 
+ 	soc {
+-		usb0: usb@c9000000 {
+-			status = "disabled";
+-			compatible = "amlogic,meson-gxl-dwc3";
++		usb: usb@d0078080 {
++			compatible = "amlogic,meson-gxl-usb-ctrl";
++			reg = <0x0 0xd0078080 0x0 0x20>;
++			interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+ 			#address-cells = <2>;
+ 			#size-cells = <2>;
+ 			ranges;
+ 
+-			clocks = <&clkc CLKID_USB>;
+-			clock-names = "usb_general";
++			clocks = <&clkc CLKID_USB>, <&clkc CLKID_USB1_DDR_BRIDGE>;
++			clock-names = "usb_ctrl", "ddr";
+ 			resets = <&reset RESET_USB_OTG>;
+-			reset-names = "usb_otg";
+ 
+-			dwc3: dwc3@c9000000 {
++			dr_mode = "otg";
++
++			phys = <&usb2_phy0>, <&usb2_phy1>;
++			phy-names = "usb2-phy0", "usb2-phy1";
++
++			dwc2: usb@c9100000 {
++				compatible = "amlogic,meson-g12a-usb", "snps,dwc2";
++				reg = <0x0 0xc9100000 0x0 0x40000>;
++				interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clkc CLKID_USB1>;
++				clock-names = "otg";
++				phys = <&usb2_phy1>;
++				dr_mode = "peripheral";
++				g-rx-fifo-size = <192>;
++				g-np-tx-fifo-size = <128>;
++				g-tx-fifo-size = <128 128 16 16 16>;
++			};
++
++			dwc3: usb@c9000000 {
+ 				compatible = "snps,dwc3";
+ 				reg = <0x0 0xc9000000 0x0 0x100000>;
+ 				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+ 				dr_mode = "host";
+ 				maximum-speed = "high-speed";
+ 				snps,dis_u2_susphy_quirk;
+-				phys = <&usb3_phy>, <&usb2_phy0>, <&usb2_phy1>;
+ 			};
+ 		};
+ 
+@@ -71,18 +88,6 @@
+ 		reset-names = "phy";
+ 		status = "okay";
+ 	};
+-
+-	usb3_phy: phy@78080 {
+-		compatible = "amlogic,meson-gxl-usb3-phy";
+-		#phy-cells = <0>;
+-		reg = <0x0 0x78080 0x0 0x20>;
+-		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&clkc CLKID_USB>, <&clkc_AO CLKID_AO_CEC_32K>;
+-		clock-names = "phy", "peripheral";
+-		resets = <&reset RESET_USB_OTG>, <&reset RESET_USB_OTG>;
+-		reset-names = "phy", "peripheral";
+-		status = "okay";
+-	};
+ };
+ 
+ &efuse {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+index f82f25c1a5f9..4310f01ccc89 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
+@@ -437,6 +437,7 @@
+ 	vref-supply = <&vddio_ao18>;
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
++	dr_mode = "peripheral";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
+index c2bd4dbbf38c..83eca3af44ce 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
+@@ -179,6 +179,7 @@
+ 	pinctrl-names = "default";
+ };
+ 
+-&usb0 {
++&usb {
+ 	status = "okay";
++	dr_mode = "host";
+ };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
+index 0bdf51d041ae..d3fdba4da9a6 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
+@@ -39,3 +39,7 @@
+ &ir {
+ 	linux,rc-map-name = "rc-vega-s9x";
+ };
++
++&usb {
++	dr_mode = "host";
++};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
+index 5ff64a0d2dcf..84399e802188 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
+@@ -141,8 +141,11 @@
+ 	compatible = "amlogic,meson-gxm-dw-hdmi", "amlogic,meson-gx-dw-hdmi";
+ };
+ 
+-&dwc3 {
+-	phys = <&usb3_phy>, <&usb2_phy0>, <&usb2_phy1>, <&usb2_phy2>;
++&usb {
++	compatible = "amlogic,meson-gxm-usb-ctrl";
++
++	phy-names = "usb2-phy0", "usb2-phy1", "usb2-phy2";
++	phys = <&usb2_phy0>, <&usb2_phy1>, <&usb2_phy2>;
+ };
+ 
+ &vdec {
 -- 
 2.22.0
 
