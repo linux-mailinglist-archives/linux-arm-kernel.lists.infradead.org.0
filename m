@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B79B191935
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:34:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6E8019195E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 19:45:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=50XJ4FTDIgyX555qT5n3h7squ8jMAwAPWeva9qLEpRw=; b=ZmZJ7ShHb5a5bCnv72z5TP7Ba
-	ENxzjcrb9w2JVez4lavCLn8MzaQ8oRXqWsNQbs/YPOHTgfHm+u9t85jEyE5SptyI7nviDFGbLxp3x
-	v/S5eONC72csQ9ppwYKS48pxd9ANmejFyHgEO/pAfRVKWtZMf+fNxsqiv1vA+DsKe86VixLi6D8r/
-	bcyS7Lp3cUSI95RBcmCoGj+CgnCcVG19jdJDUSqWSLtiH/qn4NVqolLFeBhhkEfP25XCTaF4vV10G
-	5yhz5plgpqSq8wHV/q88ThFR4DpZfjCI9HjYloAmqO3dyqp2f0nkLnJZ6eUlYAfC+AXl6c3DiTOJf
-	nok/1yN+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hdqp8unhxlpEiY9bquSW/hEH1lNPvQXBRvrLliw46MA=; b=nSkvXjFX/KInvi
+	qnWiduBcmQnXS0XNtOSjaFToOU5omskghecoNPx8dr/Xikd/cUTL8tZjrhRhHusVIXP9x727ssLEU
+	hTONH0qxO6PmcjhKVXJu/rZid0x0Q8pu9RpVexjfP5j69ut1S1UJ/TWJQTga6bJwSiFD0jkPyjYJM
+	Y7qMMFrZxPoBF6VusHzFR+xBm6WvGJPbBGYx6NVJq5Um4jO8Uyew+nuzdRZOYL3Qfdxwrea1YOuN7
+	AmZw1TnmHLuxjNFiw66d37jlAHi0OvXoBkGMRlCtOW3B1jOSwCaFvp2qCNcAG3xgGv07oTNnjcwgC
+	UKDjvhGOxy6uo5P5Jy1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGoNM-0004zI-7O; Tue, 24 Mar 2020 18:34:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGoND-0004yo-Am
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:34:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D220331B;
- Tue, 24 Mar 2020 11:33:56 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56C353F71F;
- Tue, 24 Mar 2020 11:33:56 -0700 (PDT)
-Date: Tue, 24 Mar 2020 18:33:54 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH] arm64: head: Convert install_el2_stub to SYM_INNER_LABEL
-Message-ID: <20200324183354.GI7039@sirena.org.uk>
-References: <20200323123336.8728-1-broonie@kernel.org>
- <CAKv+Gu-wX+gN+2YiK+PmpLe=+wKBE08yXGDNpwrgcS+eS6hX4A@mail.gmail.com>
+	id 1jGoXj-0008PP-00; Tue, 24 Mar 2020 18:44:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGoXY-0008Ox-MQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 18:44:42 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B969B2074D;
+ Tue, 24 Mar 2020 18:44:37 +0000 (UTC)
+Date: Tue, 24 Mar 2020 14:44:36 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Zhenyu Ye <yezhenyu2@huawei.com>
+Subject: Re: [RFC PATCH v4 4/6] mm: Add page table level flags to vm_flags
+Message-ID: <20200324144436.043659c2@gandalf.local.home>
+In-Reply-To: <20200324134534.1570-5-yezhenyu2@huawei.com>
+References: <20200324134534.1570-1-yezhenyu2@huawei.com>
+ <20200324134534.1570-5-yezhenyu2@huawei.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu-wX+gN+2YiK+PmpLe=+wKBE08yXGDNpwrgcS+eS6hX4A@mail.gmail.com>
-X-Cookie: I feel ... JUGULAR ...
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_113359_415535_B7AA9653 
-X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-CacheID: sfid-20200324_114440_754429_5C4BC48F 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -66,61 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6076213279487012263=="
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ linux-mm@kvack.org, guohanjun@huawei.com, will@kernel.org,
+ linux-arch@vger.kernel.org, yuzhao@google.com, maz@kernel.org,
+ steven.price@arm.com, arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de,
+ suzuki.poulose@arm.com, npiggin@gmail.com, zhangshaokun@hisilicon.com,
+ broonie@kernel.org, xiexiangyou@huawei.com, prime.zeng@hisilicon.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
+ akpm@linux-foundation.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 24 Mar 2020 21:45:32 +0800
+Zhenyu Ye <yezhenyu2@huawei.com> wrote:
 
---===============6076213279487012263==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="+PbGPm1eXpwOoWkI"
-Content-Disposition: inline
+> --- a/include/trace/events/mmflags.h
+> +++ b/include/trace/events/mmflags.h
+> @@ -130,6 +130,16 @@ IF_HAVE_PG_IDLE(PG_idle,		"idle"		)
+>  #define IF_HAVE_VM_SOFTDIRTY(flag,name)
+>  #endif
+>  
+> +#ifdef CONFIG_64BIT
+> +#define IF_HAVE_VM_LEVEL_PUD(flag,name)	{flag, name}
+> +#define IF_HAVE_VM_LEVEL_PMD(flag,name)	{flag, name}
+> +#define IF_HAVE_VM_LEVEL_PTE(flag,name)	{flag, name}
+> +#else
+> +#define IF_HAVE_VM_LEVEL_PUD(flag,name)
+> +#define IF_HAVE_VM_LEVEL_PMD(flag,name)
+> +#define IF_HAVE_VM_LEVEL_PTE(flag,name)
+> +#endif
+> +
+>  #define __def_vmaflag_names						\
+>  	{VM_READ,			"read"		},		\
+>  	{VM_WRITE,			"write"		},		\
+> @@ -161,7 +171,10 @@ IF_HAVE_VM_SOFTDIRTY(VM_SOFTDIRTY,	"softdirty"	)		\
+>  	{VM_MIXEDMAP,			"mixedmap"	},		\
+>  	{VM_HUGEPAGE,			"hugepage"	},		\
+>  	{VM_NOHUGEPAGE,			"nohugepage"	},		\
+> -	{VM_MERGEABLE,			"mergeable"	}		\
+> +	{VM_MERGEABLE,			"mergeable"	},		\
+> +IF_HAVE_VM_LEVEL_PUD(VM_LEVEL_PUD,	"pud-level"	),		\
+> +IF_HAVE_VM_LEVEL_PMD(VM_LEVEL_PMD,	"pmd-level"	),		\
+> +IF_HAVE_VM_LEVEL_PTE(VM_LEVEL_PTE,	"pte-level"	)		\
+>  
 
+Have you tested this on 32bit? It looks like you'll get empty commas there.
+Perhaps the defines need to be:
 
---+PbGPm1eXpwOoWkI
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+#ifdef CONFIG_64BIT
+#define IF_HAVE_VM_LEVEL_PUD(flag,name)	{flag, name},
+#define IF_HAVE_VM_LEVEL_PMD(flag,name)	{flag, name},
+#define IF_HAVE_VM_LEVEL_PTE(flag,name)	{flag, name}
+#else
+#define IF_HAVE_VM_LEVEL_PUD(flag,name)
+#define IF_HAVE_VM_LEVEL_PMD(flag,name)
+#define IF_HAVE_VM_LEVEL_PTE(flag,name)
+#endif
 
-On Tue, Mar 24, 2020 at 07:19:56PM +0100, Ard Biesheuvel wrote:
-> On Mon, 23 Mar 2020 at 13:33, Mark Brown <broonie@kernel.org> wrote:
+And leave out the commas in the list.
 
-> > -install_el2_stub:
-> > +SYM_INNER_LABEL(install_el2_stub, SYM_L_GLOBAL)
-
-> Shouldn't this be SYM_L_LOCAL?
-
-I think it could be, yes.
-
---+PbGPm1eXpwOoWkI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56UpIACgkQJNaLcl1U
-h9BOHwf+KghVipTgE+r4crM1W4zM+CvwJTFH/Ssml1+HcCJkPwO+/kranb6WwYjO
-/HIo6iXMp8WNnGvpFtnKzJ7t/WputwxvgqHsNO3xagAX/Xzc8kZSKXt137ytnopt
-dprIYFuwuBaDY4fm3CTZo8ZeJOP1i44loPb8bboucdGvVEediJjWTVlP+XAFK+jU
-uHexG+92DcNGA0RTkch6xyAjneZ8OfrgHRk/vbqoTfwCdO4OicmjXOIozwp+Z7Kv
-cKPZEJeIZR2TCYXNINWBxQY3cB8cHLiKa19wFRKU927dDp6HBd1Fj8p/TGeBcPqw
-C+NWJhQaNXdkP7Ardxv0ksEHJ5BBhw==
-=I+9r
------END PGP SIGNATURE-----
-
---+PbGPm1eXpwOoWkI--
-
-
---===============6076213279487012263==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6076213279487012263==--
-
