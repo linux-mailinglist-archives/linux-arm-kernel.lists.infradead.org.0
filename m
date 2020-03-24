@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E15F1909AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 10:42:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6F701909B3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 10:43:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wjBPZIX+wtajafR470eMgT4gyQkc2vlZbhgz6/FboaQ=; b=TYt5Y/y+hw6sIq1X5zp/juODOl
-	5LPxG/3zL1mOGegmQmsMk3180WGPPrjzIpWdptuBcb5DsS1t90ANoC0kE6onQL4lw3H9QOc6eOzJ9
-	QgJRx9QuSfqvU3balOevVH6311PBG1DXITIgktpzUxtj1sXIMt/ZT/KTpqpHqMJsO7VGFr52aIdTy
-	MCUFPO4qYbuor+BcJuGymANi30K55xghmZcaA1ItuFqrGPMc6jhIvAZ141uF2Ypc/6z/DG9udgsLN
-	1sA2/NmyQhMdQHxD6f396yQv6vDUV4t/UJbjbjxt5kQQZtmo+FflC/NLuv+D4mm2p6FLRigh3q8Tq
-	vStGMdww==;
+	bh=8GS52u6SgFkmSssxQEIMwhUUwcPqga0hmPmFOcHfnlA=; b=VAWPXzpZ+RdlstvxNG+ZJXMoMt
+	LWH0oy54JatMlcbOta61+k4To/Ripv8mp2AdkTrCdd+x7XCYqUkdlNPYFMeZKlsHMnpk1U9sC26fS
+	UJa8yKx7OAcgpg3qIZFJSnLC+YyEN6XAN7Z4BN7WK0WlrNV7ZkgBWZWbDDMK66W1K9TNMGwtmTbBz
+	DoAAy8RJsVSpiCdMNC4kypYLykPg3YZt7yR+4tfDPwr5LFuif+5DdMW4SU1ws4FOMooMgmkxwzMAT
+	a0dnIqcgznex8HlJuxLEDE66KyqAjZqs+tpTIAI0wWBAhPn749Bw3eAeh8MX9Y7sMgoZIkhEvtPJ+
+	O/rwyFDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGg4b-0001O7-MG; Tue, 24 Mar 2020 09:42:13 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jGg5K-0001uR-LK; Tue, 24 Mar 2020 09:42:58 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGg4N-0001Lv-VW; Tue, 24 Mar 2020 09:42:01 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j17so17133741wru.13;
- Tue, 24 Mar 2020 02:41:59 -0700 (PDT)
+ id 1jGg4O-0001Ly-E0; Tue, 24 Mar 2020 09:42:02 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w10so20569244wrm.4;
+ Tue, 24 Mar 2020 02:42:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=HNjGIiYj2PpNEKaGwYof99mf+bU/+Ss4GMUxM717vYs=;
- b=egl2JmPRGAUxRuOSAc1Jl1OqrLWKRg2CePCkrpRwV/8U2wzDPGGB7qXbEBo096GqjC
- GU1SkgX7ePypv9GkhRSPvEUbUN/QQHc092ELTeQLX4c2vHak9eIK9eboKOA7ZKrFO3lJ
- 0FnuTJgeXdNL5zblpPbjtgWJUPNoPYq9HL5KMttBbjHzMh/mN9piTviAuPdLDuK1X1JJ
- LzPTeRD14ukONHC3+G+SqAMFrQ4LfX9fVqtSoU4glVxCJdu70Qa1g5T373UicfCdnbPC
- SjDQ98IZY/dNwrAWLc+amI9ubxYWky2cL46kf655OkghRmEyiFkqnQPqZbX9bRXlf9WR
- pbdg==
+ bh=dfxSm/ZXM3N66X722SNsL52L/LGFXqsTtz+9P19Vsaw=;
+ b=t3N5twz1dwcUQlv/08FOM9GloZJW4uZFPOoAGwANFxm+gRTe7xCqofDI6qPDLyif0I
+ EKQz1253Y/rNmPOh+fUE4y4OiDiLPLkrhoI+TKhmK5sjXDtCL1D/LuEtCUxjkMZaId07
+ o8mmzuIja7j7REE1UdenUBxgPbbhXKBA4dwFA35SfT6ap1e8zFHy1RkAomULznQlAi+0
+ As9q2Ey7X3TXiHSzybimrHuKLKdRiuRPnt49y9lb9QB86QNEIv8xMi1pn2RW97lwZ1E5
+ KagS2B/fuqU5oVwOCble67kAx9WmHsXkcznJRjUbSoe/wtRfhnhF7FZoQbaImvc6yha/
+ 2JJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=HNjGIiYj2PpNEKaGwYof99mf+bU/+Ss4GMUxM717vYs=;
- b=TvOAy0wwYewKJ8i2XoJRot4nQTUqJm+voYh/ZJ0sCAeX7dWHvVVNQb06WkgikKX9MO
- ZvqgFblhxXawvfdsOAv6y7ngYChM0W/wcLnqpuWfUgbcudRp/28QoOBEJqYXVXwbBAhq
- 8CGM5oDhouqVYdYnHW7SXKZvFSvzLjHHpUz1PmZJPYXDBosZEM49+vWhJ0llyWe5yQck
- i7QPH0BLMBJ56pIaH/ESiZBCxz7Mk1HAidzD8PuQzyaYulD4k/28Nl8nIdeV7XE6Ps+T
- eeOTNbUaFfHE81JCKOcgOpugp4mUBsK6JBsAWnCtmDWT7MGrutEn6UCJfvGVplcudjUy
- Qd0Q==
-X-Gm-Message-State: ANhLgQ1QIsSysp/fW/0ChhDuJrMELs5yz4j91HozmF2Cp7IIpwwk7DDh
- uxblisxJFAwnbh6g5MUFolo=
-X-Google-Smtp-Source: ADFU+vv8C9cjYZxaDsbHr88EK25zLIa2C+78e0CD6QBdRLrO+K+8pTvsjYRa/RwUpjye0rYJNRrOew==
-X-Received: by 2002:a5d:44d0:: with SMTP id z16mr13006905wrr.28.1585042918365; 
- Tue, 24 Mar 2020 02:41:58 -0700 (PDT)
+ bh=dfxSm/ZXM3N66X722SNsL52L/LGFXqsTtz+9P19Vsaw=;
+ b=QU344ZefqYGZY/VyiJfwFdYqvwN15CN6UAY/3ynerGYGRMH0YIOiVxEikg1Sq1Ofz/
+ OgWCZMBg8nJD0TEzb7IiZyhyfZrcKd0sUHTgk3YWiN9e+H03wJZtdYvRegq1Au4ga5Ao
+ CY6STgY79Fqz9OU55u0jfT0qndk/cLJbUwMp8nDXo50bhsu/5pzq3vcEcN2aQRWInF+c
+ 7AITNwtT/I1uwFNA8os3g1mf4rby0QzzUZxPcD6OpFD0kG2sCkm1aYwHnKlpfI+n8b6L
+ XA+lt1Hxd7cMNqr7ytTHwuiDIlzmRsF7OKCeE9KFg7j0lt5Q39hB6FlJsFAed+o3kmS3
+ FKQQ==
+X-Gm-Message-State: ANhLgQ3UsiVcFYt7G2nmgIAeUj/sSjIUgJB8vljCRNjUNy3MFuBB+YF+
+ btELX7IMUeBReXx21dJXI4M=
+X-Google-Smtp-Source: ADFU+vvzCwo910TMGcnGtFYdDqZ3y/Vb2IoyGQ7eCMIcLg9baIfRO2Gk1omipjrbpyK3LZsE5oNM2A==
+X-Received: by 2002:adf:d0cb:: with SMTP id z11mr13022001wrh.1.1585042919263; 
+ Tue, 24 Mar 2020 02:41:59 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id r15sm22489916wra.19.2020.03.24.02.41.57
+ by smtp.gmail.com with ESMTPSA id r15sm22489916wra.19.2020.03.24.02.41.58
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Mar 2020 02:41:57 -0700 (PDT)
+ Tue, 24 Mar 2020 02:41:58 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: lgirdwood@gmail.com
-Subject: [PATCH v2 2/3] dt-bindings: sound: rockchip-i2s: add #sound-dai-cells
+Subject: [PATCH v2 3/3] dt-bindings: sound: rockchip-i2s: add power-domains
  property
-Date: Tue, 24 Mar 2020 10:41:48 +0100
-Message-Id: <20200324094149.6904-2-jbx6244@gmail.com>
+Date: Tue, 24 Mar 2020 10:41:49 +0100
+Message-Id: <20200324094149.6904-3-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200324094149.6904-1-jbx6244@gmail.com>
 References: <20200324094149.6904-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_024200_018047_BCA283EB 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20200324_024200_495136_51913F40 
+X-CRM114-Status: GOOD (  10.76  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -108,47 +108,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-'#sound-dai-cells' is required to properly interpret
-the list of DAI specified in the 'sound-dai' property,
-so add them to 'rockchip-i2s.yaml'
+In the old txt situation we add/describe only properties that are used
+by the driver/hardware itself. With yaml it also filters things in a
+node that are used by other drivers like 'power-domains' for rk3399,
+so add it to 'rockchip-i2s.yaml'.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-Changed V2:
-  Add Reviewed-by
----
- Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-index eff06b4b5..7cd0e278e 100644
+index 7cd0e278e..a3ba2186d 100644
 --- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
 +++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-@@ -77,6 +77,9 @@ properties:
-       Required property for controllers which support multi channel
-       playback/capture.
+@@ -56,6 +56,9 @@ properties:
+       - const: tx
+       - const: rx
  
-+  "#sound-dai-cells":
-+    const: 0
++  power-domains:
++    maxItems: 1
 +
- required:
-   - compatible
-   - reg
-@@ -85,6 +88,7 @@ required:
-   - clock-names
-   - dmas
-   - dma-names
-+  - "#sound-dai-cells"
- 
- additionalProperties: false
- 
-@@ -103,4 +107,5 @@ examples:
-       dma-names = "tx", "rx";
-       rockchip,capture-channels = <2>;
-       rockchip,playback-channels = <8>;
-+      #sound-dai-cells = <0>;
-     };
+   rockchip,capture-channels:
+     allOf:
+       - $ref: /schemas/types.yaml#/definitions/uint32
 -- 
 2.11.0
 
