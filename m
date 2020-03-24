@@ -2,85 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDD5019055D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 06:56:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A62E1905BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 07:29:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=StoBly9tEgt9WMpBmTvU+HSrj8+0hGGX2hJl4wT9kEU=; b=h0sOUjEr8Or2T9
-	FJtt+8eYRqSuJtizYt9I6uK9hrZRdAUxhnZFlQ3jEWjPYnvPvXNGNDzdaxD4FGfcTeM3qYpFmcuVk
-	WPB7wjXBrlsbdubOZeC381TR5Q1RSeYiz4rRJhmaWGlTKP6W6K+KgKSebyhF+BPv+P8NfKhM6kZkp
-	uIaUBLmq96dmO2fAy09L4VCMIky2gee3SbRB8p0r0aTkWqC+KfE1ab6RgGTftNfLgKCOLMmGN+zfh
-	/unXCOh8GkZPLhBcNjZKW7RK8oPKPJMVyNF0jb/0hKZP2ksij6OcHQ6b/fOCCHOY0XGvAtJurDz+e
-	4leovCoibK9wt6WEekDg==;
+	List-Owner; bh=4NPljs0AwWuxMQJ2KOOGQr1UO7MOTMOSfCzyk7WFRq8=; b=Mdvczz/97M3TtT
+	Z8v32HxOcNscPe7iYS5mz3xvByBIOp80x0PA53R2sfDTAvtad+pY5hfJdYZ0DFpC0hmEq8sQGRZL4
+	lVDJVKLOePwaE2InBxZcONCH5kUf2CFkFIJpFJ409LCIPLBPxl+gdcvMDfCLG89zxDGUg0Us75Bne
+	vLbe15nQNqxuZr0D8h+mZsDXClnnmWt7HC7mMzEORqGW6TvqWmDjUtFnjKWMh96loW5EN1++QIp94
+	DC7X6Y18/nsO6IvuRZN7ngE+zGdt4qNn9jNx47rrEq5XyKzliFWFl3eHKMUNOFLBtI4NpaQ4PuI5n
+	qvpmAoVAiDaP5SxqTXfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGcXu-0003OU-Lc; Tue, 24 Mar 2020 05:56:14 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jGd3j-0005hZ-0W; Tue, 24 Mar 2020 06:29:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGcXm-0003Nw-Gy
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 05:56:08 +0000
-Received: by mail-lj1-x244.google.com with SMTP id 19so17243046ljj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 22:56:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZIgOJesy3rleouhcqifjbAO4ow/9ZhExaaD5aoN7YJQ=;
- b=sOXO4EVoYyXDc/XDnuDmx8GdcjNnHctC1516GhWFsNxKS7B85Ckl4eNK43Fy0Q/l5e
- +IWs3YRcUpU4aA1lX2YsPJ+qBWVECYldEtK0AdLcQg5Pvan5BqfFHYAPr/KUjqSCWL18
- jTUtmo3phxh2TEliavvM06E5VYUhOukWCrqw6/VnEFN2cRUZO4Lhnd9C3WcaJaKoFrdp
- j6VfniKVVOut4BItjcC8pP9PoIgfbSPyhp9PSQqbgrYPrVlgdicqVZkOww1YRFPVB7IZ
- YtHF3Oc1TPZcikB2ewZwZz55ELrDXRnzogEG4lca7XOgHLzHstZJnTwfPVmpERfw+U8W
- uZ0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZIgOJesy3rleouhcqifjbAO4ow/9ZhExaaD5aoN7YJQ=;
- b=oktsKvds310Bb1tVTmU+IhDbt3bEfUVB3Cx35tXdJUO/u4I44TLijL7jiME3ucToVO
- trjJC0Ex+Rcyo+Xoc3t44WCcOvoyoKc+LHqec2DHFtRoUeLLYIsmbx585O170pOjwARd
- tjoIchqj/jvx5M4IzOM/mQZBpGQnDVy4YOrIeAF21c6XoDCiAHymMNBCf6dl9Q0lAJRc
- 0dWTXP8EFl8x0GSU/4bI0Au6CqllVjTKDbzKMy0xwQT6SO1m67RVjgOggDy+oY5F9JVH
- ImuuFpQdSBhFlOV0+R02oNq1Beaf9kLIFzy7k5wInGATDzPiIS+vMiHvn0YHqFfsJhh9
- 9ZbQ==
-X-Gm-Message-State: ANhLgQ2g27CsJyG5W3Y51etNs19pSRZpSLbQ7AX2DCYmXP8VxXMwsey8
- WSP3t+vWjJfAr6WGGoNUPgbs9f42Y+vr0+V0pE/ErA==
-X-Google-Smtp-Source: ADFU+vscG3rg0VL8Psf3Hfj0NUbJHZfA8zcYs3LQ6Ux97OwG7WctOvEAIs7PrpQ9BiE+KR7g+c9Zqvt9xLOmBCYDVfE=
-X-Received: by 2002:a2e:85cb:: with SMTP id h11mr16152375ljj.55.1585029363806; 
- Mon, 23 Mar 2020 22:56:03 -0700 (PDT)
+ id 1jGd3Z-0005gz-8A
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 06:28:58 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8597820663;
+ Tue, 24 Mar 2020 06:28:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585031336;
+ bh=QXnZDI5i54nlP9QF18vP1OcNbhYUp6bbcas64dls10w=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=u3rPCmFCYMNcFFoItsXZ1KUwNaD8tLa+PdkbHJKkOV+ddwKoY18kRUINpBbhW/ISl
+ E3AzpcFkEWRa+PhPYD/y3eLdxUcYi1fHqLLItvVkx1TJtCpzWWNn5aWlhNAWmspXaV
+ tSNOFKKHcnWruNLDgCtldVvr/dUrKJkeXBKu3fWs=
+Date: Tue, 24 Mar 2020 07:28:53 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Eugene Syromiatnikov <esyr@redhat.com>
+Subject: Re: [PATCH] coresight: do not use the BIT() macro in the UAPI header
+Message-ID: <20200324062853.GD1977781@kroah.com>
+References: <20200324042213.GA10452@asgard.redhat.com>
 MIME-Version: 1.0
-References: <20200322112437.18070-1-linus.walleij@linaro.org>
- <CAP245DXiU9XUwP-h1CAnORG=a+NAOcZiY7RvkOsgRQSAhSGG4Q@mail.gmail.com>
- <CACRpkdZzMsq6fYv3QiKi-FnnNivnyXj7oKzMrvt3XvN2-6WnDw@mail.gmail.com>
-In-Reply-To: <CACRpkdZzMsq6fYv3QiKi-FnnNivnyXj7oKzMrvt3XvN2-6WnDw@mail.gmail.com>
-From: Amit Kucheria <amit.kucheria@linaro.org>
-Date: Tue, 24 Mar 2020 11:25:52 +0530
-Message-ID: <CAP245DW-D5EGFq0cpMNy2DSa6DNrYjehwCBzjKyOiaWGEZVpLw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: Fix leftover entry-methods for PSCI
-To: Linus Walleij <linus.walleij@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20200324042213.GA10452@asgard.redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_225606_574815_1F9F42BD 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_232857_312594_ECCF922B 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,54 +73,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>, soc@kernel.org,
- arm-soc <arm@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Shawn Guo <shawnguo@kernel.org>,
- Lists LAKML <linux-arm-kernel@lists.infradead.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Michael Williams <michael.williams@arm.com>, linux-kernel@vger.kernel.org,
+ Chunyan Zhang <zhang.chunyan@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "Dmitry V. Levin" <ldv@altlinux.org>, Pratik Patel <pratikp@codeaurora.org>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 22, 2020 at 5:26 PM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Sun, Mar 22, 2020 at 12:49 PM Amit Kucheria <amit.kucheria@linaro.org> wrote:
->
-> > My patch went in, in 4.18.
-> >
-> > The FSL entry went in, in 4.20 and the spreadtrum one in 5.5.
-> >
-> > > Fixes: commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to reflect documentation")
-> >
-> > So only minor comment is that it isn't really a fix.
->
-> OK I'll resend a v2 without the Fixes and your reviewed-by.
->
-> > We've tried
-> > improving the text in the binding too but somehow people still get
-> > confused. Converting the binding to YAML and enforcing it seems to be
-> > the only course of action left now.
->
-> Since nothing in the kernel checks for entry-method right now, maybe
-> we could just add code to do that and warn in dmesg if entry-method
-> is set to anything else than "psci"?
+On Tue, Mar 24, 2020 at 05:22:13AM +0100, Eugene Syromiatnikov wrote:
+> The BIT() macro definition is not available for the UAPI headers
+> (moreover, it can be defined differently in the user space); replace
+> its usage with the _BITUL() macro that is defined in <linux/const.h>.
 
-Hi Linus,
+Why is somehow _BITUL() ok to use here instead?
 
-Documentation/devicetree/bindings/arm/idle-states.yaml already
-triggers an error on 'make dtbs_check'. Perhaps we just keep an eye on
-these?
+Just open-code it, I didn't think we could use any BIT()-like macros in
+uapi .h files.
 
-db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dt.yaml:
-idle-states: entry-method:0: 'psci' was expected
-db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dt.yaml:
-idle-states: entry-method:0: 'psci' was expected
-db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/sprd/sp9863a-1h10.dt.yaml:
-idle-states: entry-method:0: 'psci' was expected
+thanks,
 
-Regards,
-Amit
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
