@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD3EF190ACB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:24:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78070190AC5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:24:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gopI3CFa8xkQxSjfg4+wlDKsqqp1dyGJhrpIziwoKpo=; b=PThWCTpkSuQNDa
-	+jWVeZNfhS1iJrypgrE2nokMf0rxg6CCCc8cWzDWTMiBVNW2P0ifCyOApMP9qmJdrlZV9JLESsin0
-	cu6WBUs1zA1rzVjEfM7O8uUn+aW7Ypukl5ZbnZ4SJl6BuiGK/1VKsfSXcAzuhC9Wcy861MTj0pg92
-	aV1zJn850OAJBdQijeb3m27dZ03Q5hpl9Wz6H5Lv/8Q6hZ2hKOe1paLFx3mAtoFiV00CghxQaoArD
-	N0qQpa10VFmClHHF4wUYe9qsqYA74XuEeSmuc7HD5kPuyvvG53u1SxOkpuh42WC4NhsEWcHa9fO5H
-	B9q7RdjQXvbtO8y8dXPA==;
+	List-Owner; bh=ha/gY9waDL87tNtMbovkTVqDmG84YIvdCTDV2VQHxAQ=; b=L1F/7bEx+w18z4
+	ERcTgFXZRiPYyHPrkT/tU/6vZiV3N6hajN0lPXUbJz4KtnnWODzdNNWm8HG3u6Tp7gFd9BMUjAVz/
+	5AhxxCC/uMBibvsXGIWFLg65Adn3lR3nEefdrV8NO0cnXsA9TAhvuM3BctDI7/lfk0Mnu0X8q6yNT
+	XVd/yBG/AlF4VUpC/H54e3wRLaERP1tJLQYIWTwNUWiQLpEFuB0H3QV5cRc7P6fAO3jylfSL9a4Sv
+	r11coqL2P1PpmmPgOkwzA2lpZEzsFlm+RZMe7FeYtYCWF/HhIp1Qi5XQ9s8BnEJcH0KNogi/x5gTv
+	PDlKy6miYoYqi8vkXqPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGgjZ-0005G6-QB; Tue, 24 Mar 2020 10:24:33 +0000
+	id 1jGgj4-0004kc-F1; Tue, 24 Mar 2020 10:24:02 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGgg2-00022L-9o
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:20:57 +0000
-Received: by mail-wr1-x444.google.com with SMTP id u10so319248wro.7
+ id 1jGgg3-00023b-M2
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:20:58 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w10so20720230wrm.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 03:20:54 -0700 (PDT)
+ Tue, 24 Mar 2020 03:20:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=/+yRgmnGZVSZp6x2Og5KbLuzZTmkQMHFsn5IdENH0xo=;
- b=IA5zfeR049tZvKZYI8cq2z0elOrsbdBAOa6MzRPJSe+ht43wMcncI1KCc51x+ne47x
- oBBRwEWAyymb2BDcyHk7XhRMNz8w480OiAghggUEIRY9wTuyaX4AUC2WQfEXCwenUk84
- mtQC6p49r3bHe+TNnHplrGGLw+iDlI9XMqitMGZV/bZFwnlGksxwMDQ7cossooKC8AHn
- KF3+fH2Mpr+7canaq5zT2pikFQiK61DSJkgX39ExO2swh9DMfTG3b/UuGoCAkeubFSvf
- lLliiBXAlNxmljtOCHlYd8gbgUN2bIbk58pXLz3CchVWiFD16HiLnWHw8VAs8FRwUXXr
- KP1Q==
+ bh=GhA9x8hO0OSqZFQSsNcZ2UKUqCG4/t+w/VnuL1kPUHU=;
+ b=qkkU2Hsy3KDoPTQpcjYY1qdbEx1TTR+31GrBzsfrej5riME6gzYRij4LFJmmSnTlYn
+ uj/LhvVBDDEXQRX7bKMRLx6uC0Arw3UVexvCTGXLLPd0KvtNlZDpQ/iSPPpCvfeD0322
+ t5zFFnmBEAjdW2Lm7kugnAuT2aXCMf5miFReQar54A4WiMMmWmqciJhne0zU/qvbqbaG
+ W8odiVk5SpXaLfVOXq56uqevXAfUJi96Fz8kjWViOqX0ChuAew4G88CPv2PEnlwMUgKa
+ utrQa8uQqj3RjbNG5P9/9SQ2rcPjEpQJ16muoqs9rDaO7yh098l6yDOWeyHiGClZvjIH
+ 6hjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=/+yRgmnGZVSZp6x2Og5KbLuzZTmkQMHFsn5IdENH0xo=;
- b=TnTMgE95hiFfSpox3EcU7L5l2WgRjH0qoZ73jFTr/g1Qps8kBkVY/jgv76Fnz7p5OB
- 0SuBcMumW8J28JidsfsjZpmbBGoSNa7fnHf82hfveiemhp/huMuAIgzduPRnp86lvzEs
- h9I033gFuCASP5c7xnCSpYmQmr1PWaXOkSqp77av+E2YrG6g63C+8EsixtRs01XzLseZ
- D8ZsXnJIAFcSUxDsQcaUExnJguiaIzg1IWiHTtsILsUCKkbM9GT2pv2qdz7EIMnFQHvs
- abCUOm/IHEkyjPkgy8D1WlyETuo95EtGkUEdI3gwdoR6MHiaJCWoVgOWp3+Dn73zhpjB
- eQLQ==
-X-Gm-Message-State: ANhLgQ0W73OTTIr3I9DkspUhDgLFrvxcu31X7OQ85JjCdtBJS+q2SStR
- z9aGy+EW/9OpxqSeK0vX6qWqnw==
-X-Google-Smtp-Source: ADFU+vtvUBBxR2Sg0eSFzCOLuJ1X1wwwFy1YDkT2xiC/HpLU99Ebb8mRK3Li2BrG8iTbiPafoU4VSQ==
-X-Received: by 2002:adf:e848:: with SMTP id d8mr14204896wrn.209.1585045252806; 
- Tue, 24 Mar 2020 03:20:52 -0700 (PDT)
+ bh=GhA9x8hO0OSqZFQSsNcZ2UKUqCG4/t+w/VnuL1kPUHU=;
+ b=cYJLKIt1auGeea9rscqKQHOgD2gdKkH7q6ar55c9wKY4h0M/z4IZ4nc2mZo+jf3TMX
+ 7M+O/LgtOzttaBTIVkEqcbllJojSHcZVh1CUfb7WTJHB5Y3N7nRD/2XN50JKeDm7nu81
+ XS3zBcjCXsAL+bPxpuEf2ESIsw0QuGjMWymDI/Dx69tlCPwoAHH1KEHtjZQzz/ztJdHg
+ Y34BOPNon0XJtgV6sKB360twXInrJC+26M9ExqBTi8BTjVqEOvM/RvO2bH1AmIshR6K7
+ PKIXg3XJhjUiSpbnrNwoXGvIOcVW8zgySeRsNNtB2yyjI1fFoVwump8WrGlakrD3rFYh
+ nf8Q==
+X-Gm-Message-State: ANhLgQ0EwPaQaYFxPKsx6z0IyciVnd70AmUvvF9nu86BmlRbB6slKXpD
+ +QFDbHgFLvbhRBIxssVgBzTBHA==
+X-Google-Smtp-Source: ADFU+vsOUkcfU1BNDYfhQfb1PA6CgnmWBbxotLsJb0kQIO5yklTREcusHubmGOMO+cINekbgUIW0dA==
+X-Received: by 2002:a05:6000:a:: with SMTP id
+ h10mr8576233wrx.226.1585045254135; 
+ Tue, 24 Mar 2020 03:20:54 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id h5sm2879527wro.83.2020.03.24.03.20.51
+ by smtp.gmail.com with ESMTPSA id h5sm2879527wro.83.2020.03.24.03.20.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 03:20:52 -0700 (PDT)
+ Tue, 24 Mar 2020 03:20:53 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: kishon@ti.com, balbi@kernel.org, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com
-Subject: [PATCH 11/13] usb: dwc3: of-simple: remove Amlogic GXL and AXG
- compatibles
-Date: Tue, 24 Mar 2020 11:20:28 +0100
-Message-Id: <20200324102030.31000-12-narmstrong@baylibre.com>
+ martin.blumenstingl@googlemail.com, devicetree@vger.kernel.org
+Subject: [PATCH 12/13] dt-bindings: usb: dwc3: remove amlogic compatible
+ entries
+Date: Tue, 24 Mar 2020 11:20:29 +0100
+Message-Id: <20200324102030.31000-13-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200324102030.31000-1-narmstrong@baylibre.com>
 References: <20200324102030.31000-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_032054_429013_DAE89FBB 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20200324_032055_849882_B1E73C1D 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -103,100 +104,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
 There is now a dedicated driver for these SoCs making the old compatible
 obsolete.
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/usb/dwc3/dwc3-of-simple.c | 30 ++++++------------------------
- 1 file changed, 6 insertions(+), 24 deletions(-)
+ Documentation/devicetree/bindings/usb/dwc3.txt | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/drivers/usb/dwc3/dwc3-of-simple.c b/drivers/usb/dwc3/dwc3-of-simple.c
-index e64754be47b4..8852fbfdead4 100644
---- a/drivers/usb/dwc3/dwc3-of-simple.c
-+++ b/drivers/usb/dwc3/dwc3-of-simple.c
-@@ -27,7 +27,6 @@ struct dwc3_of_simple {
- 	struct clk_bulk_data	*clks;
- 	int			num_clocks;
- 	struct reset_control	*resets;
--	bool			pulse_resets;
- 	bool			need_reset;
- };
- 
-@@ -38,7 +37,6 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
- 	struct device_node	*np = dev->of_node;
- 
- 	int			ret;
--	bool			shared_resets = false;
- 
- 	simple = devm_kzalloc(dev, sizeof(*simple), GFP_KERNEL);
- 	if (!simple)
-@@ -54,13 +52,7 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
- 	if (of_device_is_compatible(np, "rockchip,rk3399-dwc3"))
- 		simple->need_reset = true;
- 
--	if (of_device_is_compatible(np, "amlogic,meson-axg-dwc3") ||
--	    of_device_is_compatible(np, "amlogic,meson-gxl-dwc3")) {
--		shared_resets = true;
--		simple->pulse_resets = true;
--	}
--
--	simple->resets = of_reset_control_array_get(np, shared_resets, true,
-+	simple->resets = of_reset_control_array_get(np, false, true,
- 						    true);
- 	if (IS_ERR(simple->resets)) {
- 		ret = PTR_ERR(simple->resets);
-@@ -68,15 +60,9 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	if (simple->pulse_resets) {
--		ret = reset_control_reset(simple->resets);
--		if (ret)
--			goto err_resetc_put;
--	} else {
--		ret = reset_control_deassert(simple->resets);
--		if (ret)
--			goto err_resetc_put;
--	}
-+	ret = reset_control_deassert(simple->resets);
-+	if (ret)
-+		goto err_resetc_put;
- 
- 	ret = clk_bulk_get_all(simple->dev, &simple->clks);
- 	if (ret < 0)
-@@ -102,8 +88,7 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
- 	clk_bulk_put_all(simple->num_clocks, simple->clks);
- 
- err_resetc_assert:
--	if (!simple->pulse_resets)
--		reset_control_assert(simple->resets);
-+	reset_control_assert(simple->resets);
- 
- err_resetc_put:
- 	reset_control_put(simple->resets);
-@@ -118,8 +103,7 @@ static void __dwc3_of_simple_teardown(struct dwc3_of_simple *simple)
- 	clk_bulk_put_all(simple->num_clocks, simple->clks);
- 	simple->num_clocks = 0;
- 
--	if (!simple->pulse_resets)
--		reset_control_assert(simple->resets);
-+	reset_control_assert(simple->resets);
- 
- 	reset_control_put(simple->resets);
- 
-@@ -191,8 +175,6 @@ static const struct of_device_id of_dwc3_simple_match[] = {
- 	{ .compatible = "xlnx,zynqmp-dwc3" },
- 	{ .compatible = "cavium,octeon-7130-usb-uctl" },
- 	{ .compatible = "sprd,sc9860-dwc3" },
--	{ .compatible = "amlogic,meson-axg-dwc3" },
--	{ .compatible = "amlogic,meson-gxl-dwc3" },
- 	{ .compatible = "allwinner,sun50i-h6-dwc3" },
- 	{ /* Sentinel */ }
- };
+diff --git a/Documentation/devicetree/bindings/usb/dwc3.txt b/Documentation/devicetree/bindings/usb/dwc3.txt
+index 66780a47ad85..2ef0bcc30648 100644
+--- a/Documentation/devicetree/bindings/usb/dwc3.txt
++++ b/Documentation/devicetree/bindings/usb/dwc3.txt
+@@ -14,8 +14,6 @@ Required properties:
+ Exception for clocks:
+   clocks are optional if the parent node (i.e. glue-layer) is compatible to
+   one of the following:
+-    "amlogic,meson-axg-dwc3"
+-    "amlogic,meson-gxl-dwc3"
+     "cavium,octeon-7130-usb-uctl"
+     "qcom,dwc3"
+     "samsung,exynos5250-dwusb3"
 -- 
 2.22.0
 
