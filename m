@@ -2,58 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B37461910F4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:35:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 118F019114D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:40:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9D+IeVn6mHOYy0CckZwzB1p5vswCB+mElzMD9l64nP4=; b=GxE1oL/55NnWSLfO+fMqehdf5
-	sX4OoiywlpZZoN5eK2SB2DrhsiR0f6xwVM6yPr/NnMKLJ/W3t7ePEomi9F6AE0cKvJ7KZIrqdXtSE
-	wQNekiQHnrf0e9i549du2D2HumqqccOQQEbM310o2kgVEwRhexacJmGudIUCzi/BR8hDr7fkp/uJh
-	+mWcgjQbXwCgwhyL1mRPO0gp/dpah9UO3iPrimE7CXJ70yzPyk7H7nkIGNykoPu/mTPfN08E6q0J9
-	dJEvn2GLDpd+xhrm14aJ6TByCtu41jkM2x8pNsliXRYgwGA1Tto1uLBcFTyvBZtfhsNCea3OpeDxx
-	EVAI9KnAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f4b2z9EdPAw36JTb5nldFJxVJ1cXvN6nNoyMfHkgKck=; b=YNl+5DWcDW7d00
+	3gAB6eLJ0CLnzYeWVCiMt2e1V8OmiqvI62sCvrkf2wiS9KJ1X4ij+lqmaeZWulQ5ZQlmXKF5B21Z5
+	xPFDPL9zlcwSIrxefYZtixixZD819KqTwLWbY4HPwvmJNVZ5X5i/Fku+DhpYFF1fHqpuSBX0HYpDZ
+	T4pejbZWrddaBIzYMh9abAB+kdMN2at5LExTr1tupntDaFUSTwSnil3ewnrxbjh82/r8q2xenbtAE
+	mNSZsN8z/iiSFsQ9YCxUbkIIy/xWKKA+qGsYmRw9Ys2lMFHjiCcN/2ZKG4Bctsjf0O4pMpHKU8VKV
+	lxYQYIhkDd/NZMdTCj/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGjiE-0001Wm-4P; Tue, 24 Mar 2020 13:35:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGji3-0001Vu-GB; Tue, 24 Mar 2020 13:35:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 798F91FB;
- Tue, 24 Mar 2020 06:35:08 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F16843F52E;
- Tue, 24 Mar 2020 06:35:07 -0700 (PDT)
-Date: Tue, 24 Mar 2020 13:35:06 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
+	id 1jGjmz-0003AM-Aw; Tue, 24 Mar 2020 13:40:17 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGjml-0002GT-Ma; Tue, 24 Mar 2020 13:40:05 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jGjmf-0008HX-2K; Tue, 24 Mar 2020 14:39:57 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Mark Brown <broonie@kernel.org>
 Subject: Re: [PATCH v2 1/3] dt-bindings: sound: convert rockchip spdif
  bindings to yaml
-Message-ID: <20200324133506.GC7039@sirena.org.uk>
+Date: Tue, 24 Mar 2020 14:39:56 +0100
+Message-ID: <2135168.SEOWuCda4h@diego>
+In-Reply-To: <20200324133506.GC7039@sirena.org.uk>
 References: <20200324123155.11858-1-jbx6244@gmail.com>
+ <20200324133506.GC7039@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200324123155.11858-1-jbx6244@gmail.com>
-X-Cookie: I feel ... JUGULAR ...
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_063511_621415_D5F21F59 
-X-CRM114-Status: UNSURE (   8.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200324_064003_902593_456B8408 
+X-CRM114-Status: GOOD (  11.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,66 +58,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
  lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4204048763028220026=="
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Mark,
 
---===============4204048763028220026==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ALfTUftag+2gvp1h"
-Content-Disposition: inline
+Am Dienstag, 24. M=E4rz 2020, 14:35:06 CET schrieb Mark Brown:
+> On Tue, Mar 24, 2020 at 01:31:53PM +0100, Johan Jonker wrote:
+> > Current dts files with 'spdif' nodes are manually verified.
+> > In order to automate this process rockchip-spdif.txt
+> > has to be converted to yaml.
+> =
 
+> > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> > ---
+> > Changed V2:
+> >   dmas and dma-names layout
+> =
 
---ALfTUftag+2gvp1h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> This is the second v2 you've sent of this today
 
-On Tue, Mar 24, 2020 at 01:31:53PM +0100, Johan Jonker wrote:
-> Current dts files with 'spdif' nodes are manually verified.
-> In order to automate this process rockchip-spdif.txt
-> has to be converted to yaml.
+hmm at least when looking at my inbox ... I got one series for
+spdif in v2 (this one) and one for i2s in v2. And yes they do look
+somewhat identical in what they do but of course handle binding
+changes for different controllers.
 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
-> Changed V2:
->   dmas and dma-names layout
+Heiko
 
-This is the second v2 you've sent of this today - it adds these but
-drops Rob's ack?
-
---ALfTUftag+2gvp1h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56DIkACgkQJNaLcl1U
-h9AN6Af+MtKFdLKwXOq0ZSd3pZudYzkK/o1iRhCoZguoCb361prSfHsrNxVH7UgS
-NoCl9lTGtnOnD0dSRW08nP6R1Uzy6S4RUHXymuSFsbFoE807UgdMhI2SlwOkSwYF
-3LqiuhploNOIFoQaW3InXfrzV1Xf5DQoC2765ifQGd/WvEMD42tBSLLWHZHtS2uU
-KykRMKF9TMjBko2J1usbH41ye2j5a/ubelF180cqOOdjGD+3hZ9V7CYqcEAS8zVX
-CRdNEpBGVl8EDKzzcnJAR1+cjxdUAO3bC0vtcN1HD+71ut9ZN6hc5SyMvBTL2/FU
-1m9eFraFsZ2Jpr4U0N4/N/LTdSmjTw==
-=I6tW
------END PGP SIGNATURE-----
-
---ALfTUftag+2gvp1h--
+> - it adds these but
+> drops Rob's ack?
+> =
 
 
---===============4204048763028220026==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4204048763028220026==--
-
