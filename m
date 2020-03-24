@@ -2,54 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFEA11904F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 06:24:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDD5019055D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 06:56:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=WXmQYm+5HngXItejDYaz6jQwo8jK4G1rYNY8vwWWON8=; b=P6nj2WuiUjP6aLNzBDRto5ifnb
-	YGVML8iqVzKwEn1ujtjd1xM8Hn1SfDEbWRka4AkToUmBTmLwfjbp11Xzz0MeD66vY5AojZwX2ZSxr
-	PUfkNlTyJnOXzl2QpVB2k8asv/xm4KXeUNQ3x6bOgRvkev2SME2Ju8sPrcTi7O8g+jb3LzIbJ68mc
-	Fo1Qavz6ruJOl7DJ0xoSEPNzxwZEU5Yg5npbar58JWBlgI3tgbwJNn6q6hyGkkih67uHBnW2Ljuaj
-	LjiJ1mzT1sYT7jBBPKKNCRE8N6OB3yrB/xUx3gyPZ6IHM5CbhpoSCXr+zB5+k9riq6va8yKB25YVM
-	v5rutA5Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=StoBly9tEgt9WMpBmTvU+HSrj8+0hGGX2hJl4wT9kEU=; b=h0sOUjEr8Or2T9
+	FJtt+8eYRqSuJtizYt9I6uK9hrZRdAUxhnZFlQ3jEWjPYnvPvXNGNDzdaxD4FGfcTeM3qYpFmcuVk
+	WPB7wjXBrlsbdubOZeC381TR5Q1RSeYiz4rRJhmaWGlTKP6W6K+KgKSebyhF+BPv+P8NfKhM6kZkp
+	uIaUBLmq96dmO2fAy09L4VCMIky2gee3SbRB8p0r0aTkWqC+KfE1ab6RgGTftNfLgKCOLMmGN+zfh
+	/unXCOh8GkZPLhBcNjZKW7RK8oPKPJMVyNF0jb/0hKZP2ksij6OcHQ6b/fOCCHOY0XGvAtJurDz+e
+	4leovCoibK9wt6WEekDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGc30-0000mA-AZ; Tue, 24 Mar 2020 05:24:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGc2K-0000Kf-Rk; Tue, 24 Mar 2020 05:23:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D590F30E;
- Mon, 23 Mar 2020 22:23:35 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.71])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AA2443F7C3;
- Mon, 23 Mar 2020 22:27:32 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH V2 2/3] mm/debug: Add tests validating arch advanced page
- table helpers
-Date: Tue, 24 Mar 2020 10:52:54 +0530
-Message-Id: <1585027375-9997-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
-References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+	id 1jGcXu-0003OU-Lc; Tue, 24 Mar 2020 05:56:14 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGcXm-0003Nw-Gy
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 05:56:08 +0000
+Received: by mail-lj1-x244.google.com with SMTP id 19so17243046ljj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Mar 2020 22:56:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZIgOJesy3rleouhcqifjbAO4ow/9ZhExaaD5aoN7YJQ=;
+ b=sOXO4EVoYyXDc/XDnuDmx8GdcjNnHctC1516GhWFsNxKS7B85Ckl4eNK43Fy0Q/l5e
+ +IWs3YRcUpU4aA1lX2YsPJ+qBWVECYldEtK0AdLcQg5Pvan5BqfFHYAPr/KUjqSCWL18
+ jTUtmo3phxh2TEliavvM06E5VYUhOukWCrqw6/VnEFN2cRUZO4Lhnd9C3WcaJaKoFrdp
+ j6VfniKVVOut4BItjcC8pP9PoIgfbSPyhp9PSQqbgrYPrVlgdicqVZkOww1YRFPVB7IZ
+ YtHF3Oc1TPZcikB2ewZwZz55ELrDXRnzogEG4lca7XOgHLzHstZJnTwfPVmpERfw+U8W
+ uZ0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZIgOJesy3rleouhcqifjbAO4ow/9ZhExaaD5aoN7YJQ=;
+ b=oktsKvds310Bb1tVTmU+IhDbt3bEfUVB3Cx35tXdJUO/u4I44TLijL7jiME3ucToVO
+ trjJC0Ex+Rcyo+Xoc3t44WCcOvoyoKc+LHqec2DHFtRoUeLLYIsmbx585O170pOjwARd
+ tjoIchqj/jvx5M4IzOM/mQZBpGQnDVy4YOrIeAF21c6XoDCiAHymMNBCf6dl9Q0lAJRc
+ 0dWTXP8EFl8x0GSU/4bI0Au6CqllVjTKDbzKMy0xwQT6SO1m67RVjgOggDy+oY5F9JVH
+ ImuuFpQdSBhFlOV0+R02oNq1Beaf9kLIFzy7k5wInGATDzPiIS+vMiHvn0YHqFfsJhh9
+ 9ZbQ==
+X-Gm-Message-State: ANhLgQ2g27CsJyG5W3Y51etNs19pSRZpSLbQ7AX2DCYmXP8VxXMwsey8
+ WSP3t+vWjJfAr6WGGoNUPgbs9f42Y+vr0+V0pE/ErA==
+X-Google-Smtp-Source: ADFU+vscG3rg0VL8Psf3Hfj0NUbJHZfA8zcYs3LQ6Ux97OwG7WctOvEAIs7PrpQ9BiE+KR7g+c9Zqvt9xLOmBCYDVfE=
+X-Received: by 2002:a2e:85cb:: with SMTP id h11mr16152375ljj.55.1585029363806; 
+ Mon, 23 Mar 2020 22:56:03 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200322112437.18070-1-linus.walleij@linaro.org>
+ <CAP245DXiU9XUwP-h1CAnORG=a+NAOcZiY7RvkOsgRQSAhSGG4Q@mail.gmail.com>
+ <CACRpkdZzMsq6fYv3QiKi-FnnNivnyXj7oKzMrvt3XvN2-6WnDw@mail.gmail.com>
+In-Reply-To: <CACRpkdZzMsq6fYv3QiKi-FnnNivnyXj7oKzMrvt3XvN2-6WnDw@mail.gmail.com>
+From: Amit Kucheria <amit.kucheria@linaro.org>
+Date: Tue, 24 Mar 2020 11:25:52 +0530
+Message-ID: <CAP245DW-D5EGFq0cpMNy2DSa6DNrYjehwCBzjKyOiaWGEZVpLw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: Fix leftover entry-methods for PSCI
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_222337_024387_BCA72860 
-X-CRM114-Status: GOOD (  12.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_225606_574815_1F9F42BD 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,442 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, soc@kernel.org,
+ arm-soc <arm@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Lists LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds new tests validating for these following arch advanced page table
-helpers. These tests create and test specific mapping types at various page
-table levels.
+On Sun, Mar 22, 2020 at 5:26 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Sun, Mar 22, 2020 at 12:49 PM Amit Kucheria <amit.kucheria@linaro.org> wrote:
+>
+> > My patch went in, in 4.18.
+> >
+> > The FSL entry went in, in 4.20 and the spreadtrum one in 5.5.
+> >
+> > > Fixes: commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to reflect documentation")
+> >
+> > So only minor comment is that it isn't really a fix.
+>
+> OK I'll resend a v2 without the Fixes and your reviewed-by.
+>
+> > We've tried
+> > improving the text in the binding too but somehow people still get
+> > confused. Converting the binding to YAML and enforcing it seems to be
+> > the only course of action left now.
+>
+> Since nothing in the kernel checks for entry-method right now, maybe
+> we could just add code to do that and warn in dmesg if entry-method
+> is set to anything else than "psci"?
 
-1. pxxp_set_wrprotect()
-2. pxxp_get_and_clear()
-3. pxxp_set_access_flags()
-4. pxxp_get_and_clear_full()
-5. pxxp_test_and_clear_young()
-6. pxx_leaf()
-7. pxx_set_huge()
-8. pxx_(clear|mk)_savedwrite()
-9. huge_pxxp_xxx()
+Hi Linus,
 
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Mike Rapoport <rppt@linux.ibm.com>
-Cc: Vineet Gupta <vgupta@synopsys.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Vasily Gorbik <gor@linux.ibm.com>
-Cc: Christian Borntraeger <borntraeger@de.ibm.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H. Peter Anvin" <hpa@zytor.com>
-Cc: Kirill A. Shutemov <kirill@shutemov.name>
-Cc: Paul Walmsley <paul.walmsley@sifive.com>
-Cc: Palmer Dabbelt <palmer@dabbelt.com>
-Cc: linux-snps-arc@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-s390@vger.kernel.org
-Cc: linux-riscv@lists.infradead.org
-Cc: x86@kernel.org
-Cc: linux-arch@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
-Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- mm/debug_vm_pgtable.c | 290 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 290 insertions(+)
+Documentation/devicetree/bindings/arm/idle-states.yaml already
+triggers an error on 'make dtbs_check'. Perhaps we just keep an eye on
+these?
 
-diff --git a/mm/debug_vm_pgtable.c b/mm/debug_vm_pgtable.c
-index 15055a8f6478..87b4b495333b 100644
---- a/mm/debug_vm_pgtable.c
-+++ b/mm/debug_vm_pgtable.c
-@@ -29,6 +29,7 @@
- #include <linux/sched/mm.h>
- #include <asm/pgalloc.h>
- #include <asm/pgtable.h>
-+#include <asm/tlbflush.h>
- 
- /*
-  * Basic operations
-@@ -68,6 +69,54 @@ static void __init pte_basic_tests(unsigned long pfn, pgprot_t prot)
- 	WARN_ON(pte_write(pte_wrprotect(pte_mkwrite(pte))));
- }
- 
-+static void __init pte_advanced_tests(struct mm_struct *mm,
-+			struct vm_area_struct *vma, pte_t *ptep,
-+			unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+	pte_t pte = pfn_pte(pfn, prot);
-+
-+	pte = pfn_pte(pfn, prot);
-+	set_pte_at(mm, vaddr, ptep, pte);
-+	ptep_set_wrprotect(mm, vaddr, ptep);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(pte_write(pte));
-+
-+	pte = pfn_pte(pfn, prot);
-+	set_pte_at(mm, vaddr, ptep, pte);
-+	ptep_get_and_clear(mm, vaddr, ptep);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!pte_none(pte));
-+
-+	pte = pfn_pte(pfn, prot);
-+	pte = pte_wrprotect(pte);
-+	pte = pte_mkclean(pte);
-+	set_pte_at(mm, vaddr, ptep, pte);
-+	pte = pte_mkwrite(pte);
-+	pte = pte_mkdirty(pte);
-+	ptep_set_access_flags(vma, vaddr, ptep, pte, 1);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!(pte_write(pte) && pte_dirty(pte)));
-+
-+	pte = pfn_pte(pfn, prot);
-+	set_pte_at(mm, vaddr, ptep, pte);
-+	ptep_get_and_clear_full(mm, vaddr, ptep, 1);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!pte_none(pte));
-+
-+	pte = pte_mkyoung(pte);
-+	set_pte_at(mm, vaddr, ptep, pte);
-+	ptep_test_and_clear_young(vma, vaddr, ptep);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(pte_young(pte));
-+}
-+
-+static void __init pte_savedwrite_tests(unsigned long pfn, pgprot_t prot)
-+{
-+	pte_t pte = pfn_pte(pfn, prot);
-+
-+	WARN_ON(!pte_savedwrite(pte_mk_savedwrite(pte_clear_savedwrite(pte))));
-+	WARN_ON(pte_savedwrite(pte_clear_savedwrite(pte_mk_savedwrite(pte))));
-+}
- #ifdef CONFIG_TRANSPARENT_HUGEPAGE
- static void __init pmd_basic_tests(unsigned long pfn, pgprot_t prot)
- {
-@@ -87,6 +136,83 @@ static void __init pmd_basic_tests(unsigned long pfn, pgprot_t prot)
- 	WARN_ON(!pmd_bad(pmd_mkhuge(pmd)));
- }
- 
-+static void __init pmd_advanced_tests(struct mm_struct *mm,
-+		struct vm_area_struct *vma, pmd_t *pmdp,
-+		unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+	pmd_t pmd = pfn_pmd(pfn, prot);
-+
-+	/* Align the address wrt HPAGE_PMD_SIZE */
-+	vaddr = (vaddr & HPAGE_PMD_MASK) + HPAGE_PMD_SIZE;
-+
-+	pmd = pfn_pmd(pfn, prot);
-+	set_pmd_at(mm, vaddr, pmdp, pmd);
-+	pmdp_set_wrprotect(mm, vaddr, pmdp);
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(pmd_write(pmd));
-+
-+	pmd = pfn_pmd(pfn, prot);
-+	set_pmd_at(mm, vaddr, pmdp, pmd);
-+	pmdp_huge_get_and_clear(mm, vaddr, pmdp);
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(!pmd_none(pmd));
-+
-+	pmd = pfn_pmd(pfn, prot);
-+	pmd = pmd_wrprotect(pmd);
-+	pmd = pmd_mkclean(pmd);
-+	set_pmd_at(mm, vaddr, pmdp, pmd);
-+	pmd = pmd_mkwrite(pmd);
-+	pmd = pmd_mkdirty(pmd);
-+	pmdp_set_access_flags(vma, vaddr, pmdp, pmd, 1);
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(!(pmd_write(pmd) && pmd_dirty(pmd)));
-+
-+	pmd = pmd_mkhuge(pfn_pmd(pfn, prot));
-+	set_pmd_at(mm, vaddr, pmdp, pmd);
-+	pmdp_huge_get_and_clear_full(mm, vaddr, pmdp, 1);
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(!pmd_none(pmd));
-+
-+	pmd = pmd_mkyoung(pmd);
-+	set_pmd_at(mm, vaddr, pmdp, pmd);
-+	pmdp_test_and_clear_young(vma, vaddr, pmdp);
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(pmd_young(pmd));
-+}
-+
-+static void __init pmd_leaf_tests(unsigned long pfn, pgprot_t prot)
-+{
-+	pmd_t pmd = pfn_pmd(pfn, prot);
-+
-+	/*
-+	 * PMD based THP is a leaf entry.
-+	 */
-+	pmd = pmd_mkhuge(pmd);
-+	WARN_ON(!pmd_leaf(pmd));
-+}
-+
-+static void __init pmd_huge_tests(pmd_t *pmdp, unsigned long pfn, pgprot_t prot)
-+{
-+	pmd_t pmd;
-+
-+	/*
-+	 * X86 defined pmd_set_huge() verifies that the given
-+	 * PMD is not a populated non-leaf entry.
-+	 */
-+	WRITE_ONCE(*pmdp, __pmd(0));
-+	WARN_ON(!pmd_set_huge(pmdp, __pfn_to_phys(pfn), prot));
-+	WARN_ON(!pmd_clear_huge(pmdp));
-+	pmd = READ_ONCE(*pmdp);
-+	WARN_ON(!pmd_none(pmd));
-+}
-+
-+static void __init pmd_savedwrite_tests(unsigned long pfn, pgprot_t prot)
-+{
-+	pmd_t pmd = pfn_pmd(pfn, prot);
-+
-+	WARN_ON(!pmd_savedwrite(pmd_mk_savedwrite(pmd_clear_savedwrite(pmd))));
-+	WARN_ON(pmd_savedwrite(pmd_clear_savedwrite(pmd_mk_savedwrite(pmd))));
-+}
- #ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
- static void __init pud_basic_tests(unsigned long pfn, pgprot_t prot)
- {
-@@ -107,12 +233,110 @@ static void __init pud_basic_tests(unsigned long pfn, pgprot_t prot)
- 	 */
- 	WARN_ON(!pud_bad(pud_mkhuge(pud)));
- }
-+
-+static void pud_advanced_tests(struct mm_struct *mm,
-+		struct vm_area_struct *vma, pud_t *pudp,
-+		unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+	pud_t pud = pfn_pud(pfn, prot);
-+
-+	/* Align the address wrt HPAGE_PUD_SIZE */
-+	vaddr = (vaddr & HPAGE_PUD_MASK) + HPAGE_PUD_SIZE;
-+
-+	set_pud_at(mm, vaddr, pudp, pud);
-+	pudp_set_wrprotect(mm, vaddr, pudp);
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(pud_write(pud));
-+
-+#ifndef __PAGETABLE_PMD_FOLDED
-+	pud = pfn_pud(pfn, prot);
-+	set_pud_at(mm, vaddr, pudp, pud);
-+	pudp_huge_get_and_clear(mm, vaddr, pudp);
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(!pud_none(pud));
-+
-+	pud = pfn_pud(pfn, prot);
-+	set_pud_at(mm, vaddr, pudp, pud);
-+	pudp_huge_get_and_clear_full(mm, vaddr, pudp, 1);
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(!pud_none(pud));
-+#endif
-+	pud = pfn_pud(pfn, prot);
-+	pud = pud_wrprotect(pud);
-+	pud = pud_mkclean(pud);
-+	set_pud_at(mm, vaddr, pudp, pud);
-+	pud = pud_mkwrite(pud);
-+	pud = pud_mkdirty(pud);
-+	pudp_set_access_flags(vma, vaddr, pudp, pud, 1);
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(!(pud_write(pud) && pud_dirty(pud)));
-+
-+	pud = pud_mkyoung(pud);
-+	set_pud_at(mm, vaddr, pudp, pud);
-+	pudp_test_and_clear_young(vma, vaddr, pudp);
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(pud_young(pud));
-+}
-+
-+static void __init pud_leaf_tests(unsigned long pfn, pgprot_t prot)
-+{
-+	pud_t pud = pfn_pud(pfn, prot);
-+
-+	/*
-+	 * PUD based THP is a leaf entry.
-+	 */
-+	pud = pud_mkhuge(pud);
-+	WARN_ON(!pud_leaf(pud));
-+}
-+
-+static void __init pud_huge_tests(pud_t *pudp, unsigned long pfn, pgprot_t prot)
-+{
-+	pud_t pud;
-+
-+	/*
-+	 * X86 defined pud_set_huge() verifies that the given
-+	 * PUD is not a populated non-leaf entry.
-+	 */
-+	WRITE_ONCE(*pudp, __pud(0));
-+	WARN_ON(!pud_set_huge(pudp, __pfn_to_phys(pfn), prot));
-+	WARN_ON(!pud_clear_huge(pudp));
-+	pud = READ_ONCE(*pudp);
-+	WARN_ON(!pud_none(pud));
-+}
- #else
- static void __init pud_basic_tests(unsigned long pfn, pgprot_t prot) { }
-+static void pud_advanced_tests(struct mm_struct *mm,
-+		struct vm_area_struct *vma, pud_t *pudp,
-+		unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+}
-+static void __init pud_leaf_tests(unsigned long pfn, pgprot_t prot) { }
-+static void __init pud_huge_tests(pud_t *pudp, unsigned long pfn, pgprot_t prot)
-+{
-+}
- #endif
- #else
- static void __init pmd_basic_tests(unsigned long pfn, pgprot_t prot) { }
- static void __init pud_basic_tests(unsigned long pfn, pgprot_t prot) { }
-+static void __init pmd_advanced_tests(struct mm_struct *mm,
-+		struct vm_area_struct *vma, pmd_t *pmdp,
-+		unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+}
-+static void __init pud_advanced_tests(struct mm_struct *mm,
-+		struct vm_area_struct *vma, pud_t *pudp,
-+		unsigned long pfn, unsigned long vaddr, pgprot_t prot)
-+{
-+}
-+static void __init pmd_leaf_tests(unsigned long pfn, pgprot_t prot) { }
-+static void __init pud_leaf_tests(unsigned long pfn, pgprot_t prot) { }
-+static void __init pmd_huge_tests(pmd_t *pmdp, unsigned long pfn, pgprot_t prot)
-+{
-+}
-+static void __init pud_huge_tests(pud_t *pudp, unsigned long pfn, pgprot_t prot)
-+{
-+}
-+static void __init pmd_savedwrite_tests(unsigned long pfn, pgprot_t prot) { }
- #endif
- 
- static void __init p4d_basic_tests(unsigned long pfn, pgprot_t prot)
-@@ -500,8 +724,52 @@ static void __init hugetlb_basic_tests(unsigned long pfn, pgprot_t prot)
- 	WARN_ON(!pte_huge(pte_mkhuge(pte)));
- #endif
- }
-+
-+static void __init hugetlb_advanced_tests(struct mm_struct *mm,
-+					  struct vm_area_struct *vma,
-+					  pte_t *ptep, unsigned long pfn,
-+					  unsigned long vaddr, pgprot_t prot)
-+{
-+	struct page *page = pfn_to_page(pfn);
-+	pte_t pte = READ_ONCE(*ptep);
-+
-+	pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
-+	set_huge_pte_at(mm, vaddr, ptep, pte);
-+	barrier();
-+	WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
-+	huge_pte_clear(mm, vaddr, ptep, PMD_SIZE);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!huge_pte_none(pte));
-+
-+	pte = mk_huge_pte(page, prot);
-+	set_huge_pte_at(mm, vaddr, ptep, pte);
-+	huge_ptep_set_wrprotect(mm, vaddr, ptep);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(huge_pte_write(pte));
-+
-+	pte = mk_huge_pte(page, prot);
-+	set_huge_pte_at(mm, vaddr, ptep, pte);
-+	huge_ptep_get_and_clear(mm, vaddr, ptep);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!huge_pte_none(pte));
-+
-+	pte = mk_huge_pte(page, prot);
-+	pte = huge_pte_wrprotect(pte);
-+	set_huge_pte_at(mm, vaddr, ptep, pte);
-+	pte = huge_pte_mkwrite(pte);
-+	pte = huge_pte_mkdirty(pte);
-+	huge_ptep_set_access_flags(vma, vaddr, ptep, pte, 1);
-+	pte = READ_ONCE(*ptep);
-+	WARN_ON(!(huge_pte_write(pte) && huge_pte_dirty(pte)));
-+}
- #else
- static void __init hugetlb_basic_tests(unsigned long pfn, pgprot_t prot) { }
-+static void __init hugetlb_advanced_tests(struct mm_struct *mm,
-+					  struct vm_area_struct *vma,
-+					  pte_t *ptep, unsigned long pfn,
-+					  unsigned long vaddr, pgprot_t prot)
-+{
-+}
- #endif
- 
- #ifdef CONFIG_TRANSPARENT_HUGEPAGE
-@@ -564,6 +832,7 @@ static unsigned long __init get_random_vaddr(void)
- 
- void __init debug_vm_pgtable(void)
- {
-+	struct vm_area_struct *vma;
- 	struct mm_struct *mm;
- 	pgd_t *pgdp;
- 	p4d_t *p4dp, *saved_p4dp;
-@@ -592,6 +861,12 @@ void __init debug_vm_pgtable(void)
- 	 */
- 	protnone = __P000;
- 
-+	vma = vm_area_alloc(mm);
-+	if (!vma) {
-+		pr_err("vma allocation failed\n");
-+		return;
-+	}
-+
- 	/*
- 	 * PFN for mapping at PTE level is determined from a standard kernel
- 	 * text symbol. But pfns for higher page table levels are derived by
-@@ -640,6 +915,20 @@ void __init debug_vm_pgtable(void)
- 	p4d_clear_tests(mm, p4dp);
- 	pgd_clear_tests(mm, pgdp);
- 
-+	pte_advanced_tests(mm, vma, ptep, pte_aligned, vaddr, prot);
-+	pmd_advanced_tests(mm, vma, pmdp, pmd_aligned, vaddr, prot);
-+	pud_advanced_tests(mm, vma, pudp, pud_aligned, vaddr, prot);
-+	hugetlb_advanced_tests(mm, vma, ptep, pte_aligned, vaddr, prot);
-+
-+	pmd_leaf_tests(pmd_aligned, prot);
-+	pud_leaf_tests(pud_aligned, prot);
-+
-+	pmd_huge_tests(pmdp, pmd_aligned, prot);
-+	pud_huge_tests(pudp, pud_aligned, prot);
-+
-+	pte_savedwrite_tests(pte_aligned, prot);
-+	pmd_savedwrite_tests(pmd_aligned, prot);
-+
- 	pte_unmap_unlock(ptep, ptl);
- 
- 	pmd_populate_tests(mm, pmdp, saved_ptep);
-@@ -674,6 +963,7 @@ void __init debug_vm_pgtable(void)
- 	pmd_free(mm, saved_pmdp);
- 	pte_free(mm, saved_ptep);
- 
-+	vm_area_free(vma);
- 	mm_dec_nr_puds(mm);
- 	mm_dec_nr_pmds(mm);
- 	mm_dec_nr_ptes(mm);
--- 
-2.20.1
+db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dt.yaml:
+idle-states: entry-method:0: 'psci' was expected
+db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dt.yaml:
+idle-states: entry-method:0: 'psci' was expected
+db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/sprd/sp9863a-1h10.dt.yaml:
+idle-states: entry-method:0: 'psci' was expected
 
+Regards,
+Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
