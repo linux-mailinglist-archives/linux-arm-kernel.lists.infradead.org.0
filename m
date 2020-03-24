@@ -2,76 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 137D7191477
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:32:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D5EC191482
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:36:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Kr4APJ4TLyafaNF+8A0HsVKZByG266mXLJILKaV+yg=; b=AsK5dtSY3Juo6L
-	cYFLDLtCdf3seZNBD98wxivu8WN74cXBWR2Qk2Hg/BsDPWmmDmSE0YE+MO+Ixe7k4spSRSufSWRpl
-	ryuc+gA7NHpxqaGe4isL2hmMkTzxYln6NAd8BiknAQRCPybZjMlOyWlJbECxeC//ot5h0ehE4H4Ih
-	zY77HDs2P+NSa0ruSe5OjAe8+H1DGUIUUOvWioBWyDXU4rMSRX/n5P0VWN0PfGn5CjGx4tqt/A7Co
-	5/3BRwBucZ3guCRO6pjH0vhc8Adz1zfLbEK2GtwOf6E+vRR7qm/H71z93QaMJ0wfTzX5ebs8xjokX
-	3d/GrmTVgpBT7EftzTCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cE0lqpB3ctpsBOK700My+fhCeNywAs/zLlvQ3u5wAIw=; b=YbDKg2iOr3uC/s32kbF9+dSfL
+	IcJC//szEm2X7ffdNRbXC2p5DnICLI8oOx3+7XMzEB/0lvgKNWD5sfr0JoAgGfGaH7bhIJ/iRVjIK
+	CbmSMItUDPkBHyfmDq/UeHcq38OEWjcjuZbEmLlhpaFm5TCXtcaWfLGhjVyldQLv+8RhHJMYbVrft
+	9GA+bHpH+ZRx0lwdt5ggKGTiCEOnnaqlUDOelVJUYMqApGlswR9/7/sJhWMomenjzEAMIOvthwAnw
+	kR1qYOOHCiv6w+a+IdT5Ga3eWV50XeidxenwRggTMgkPz0zt42BNdSpkz7mxr5L6oiWVWsJPl/rvI
+	l1yGBUQCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGlX0-0006GX-DW; Tue, 24 Mar 2020 15:31:54 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1jGlbM-0008Nh-TA; Tue, 24 Mar 2020 15:36:24 +0000
+Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGlWZ-000683-AV
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:31:36 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k9so7822949iov.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 08:31:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TvsXpRudrZXefQZMYk6cuc0cWu2RbTQ4gqZzuO1RbrE=;
- b=BjHea3wsg4pgRhuX5WvEm0e9slsyWVMuRNw2u5Xiba9mrWowe3NHzi4SMiyOfhRZl2
- VHDjDIl3XwbleetS0cuDb3fDQmZNs4rtS5UMl6A/IqxHlA8aVz2dgfdAnwibWW3zHMJO
- n2aHiBktj1ddQWYVNRo/NJaqEgppcrEZFUixzc7tqvXoNjZCCbBfSXvlXCxi0tSpDzgn
- PnB0zxefpTre2CedKpmwwlVJvSdiN/tui9ky+kB2VGxExJ2YYcZvF97AiqIUV1iHsU44
- 8PeuvVizzF3Lv/O2Bjg/nLDrz3V3einDnFaD6unLfWe0DvAjH7zUFur458nDcdXefd/A
- OWMA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TvsXpRudrZXefQZMYk6cuc0cWu2RbTQ4gqZzuO1RbrE=;
- b=hxpseKIx4ieIlCQRdsKedkEpo6UhAqLh6M0KChDlAYrWEWeedUubBGUYJAw2bvqjhk
- Jv6bICwabBIE1QKsRXziHag9ivlCxZn7W86yA6Uj8FuQmmrr1CtMCAFx5QFYg5twPDG5
- OOOYBDSMhYLcaflOhj2gHdhz7BtyE5fJiTsFeIg/GPXIXseEQnQsj3zxgrEmFDWgUhoZ
- iTx95VQANplPzDtxvZwXAZDIMcqYcutFqZc9jB/1psPwbbfpNE+Fu5xTVCbtjho9g+Ca
- i5FpQHBwwFGjBXM1UwwJRlBrrItqbIfS0NiP5uu2o1vUtRa6SkPdreF4MaD3oCM1po6H
- ziXg==
-X-Gm-Message-State: ANhLgQ1I6QbGrB7vAU9/dKTqrHVkgIdXqrKgiayMg/cQK3A1tR0SGzHb
- G1eVl3LiQ+Z7QntlxdWDoP9O2vQO3/82kiYHGlyP5w==
-X-Google-Smtp-Source: ADFU+vuvx4HnHO0hvtSOlMwQMQBrgQYOkwH/y5TjDGcYLA1l6gQGvtVy1A0STfXLgY8fOuyRtSObqclduiOLIK8p0pg=
-X-Received: by 2002:a6b:ed17:: with SMTP id n23mr24380151iog.165.1585063886297; 
- Tue, 24 Mar 2020 08:31:26 -0700 (PDT)
+ id 1jGlbE-0008Mc-0i
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:36:17 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id 6EEF388B;
+ Tue, 24 Mar 2020 11:36:13 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 24 Mar 2020 11:36:13 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=ey6ezPmPMaFgVvNxPoggC0JkyMH
+ IxDXhR6IcAX+U6aA=; b=fJ31mfSc7adxHOZK4W+MnOgd9hIgs5ks1T/cTcU5+4Y
+ Et3OI2qzFtjXZclKPQ/YbDrqfAJhz9McMFo5uLbFTTVDg346dhXcPuQfqeOKYfC8
+ xNX5PnLrbjlAAqfpDqaaHqwUcNJKUOccrdbq8xAfyeceQ49bafxI069u71znWNC0
+ /jCN3FCFjDic/etAR4RCPxL2MRuKoH8nJTBHONNyn5BUdlDymZTJ+C2gvbSxIKUI
+ qPzKC7C+tfv13S7t/lEkKZk4mHHQrK+Xz6cmqOHJERVnvrnuv04vLhWO7XsnTEEz
+ ZoTzNhgllnZcVKdlRLO1KrnsKw5j32dJ3KeHTaa27rg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ey6ezP
+ mPMaFgVvNxPoggC0JkyMHIxDXhR6IcAX+U6aA=; b=ovIGcrrCcsEyK2ppIfv5Uq
+ jik3pR9HU2lWBXmbmB1W9bXT/sZdqxIMiRuESBfXNWotpv8p2Ek6xuLhdxZf/+Nv
+ Evm6wcHEr1Eaa+X9DJriaJb6wygXstKQG929k+atlO6qKlsOVFqMkyt9Q5xbTkYi
+ MGCOBZrTXdV4QqmREXZ12JvjMOH6uf9ZtppuDQfsl7iv+KiCBrEr1thiVsuOrm4Y
+ 2NTDTjX5ODxiO0hsLLMNrx6+3skk9bB1PERr07atUGtrIk6XzdRI7Ju2rHoVdkPc
+ tCOjzJ8yhj/plcRB4NZl5P4AqCorymOMplmzbvVPJyLErjd6yffM0EdwDfJ0njng
+ ==
+X-ME-Sender: <xms:6ih6XtXVSOq43UO0FDOpgLJ18ttTtEIsM7QiB_QaILv4xodIpZBbIA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudehuddggeekucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:6ih6Xld0JyIQmOZpiwYz5EoM49Rx27fWfUcjbq0tXzW0Xhl5cXdQCw>
+ <xmx:6ih6XowSOmMeHITMFY9Dc62vLfOnwn4yygSHFRUC2rwjl7XXPVUYuQ>
+ <xmx:6ih6XoE1xQEBpYtGSZmlNG6Z0eE72hPN6OYQBHnHMXjpOF9GyHK5qA>
+ <xmx:7Sh6Xuz-u5DZ_tiu-AknL7VKYfMOUAVjvE67zNPWHtV7Lxw4Xj5QDg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9CCA2328005E;
+ Tue, 24 Mar 2020 11:36:10 -0400 (EDT)
+Date: Tue, 24 Mar 2020 16:36:08 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Roman Stratiienko <r.stratiienko@gmail.com>
+Subject: Re: [PATCH v4 4/4] RFC: drm/sun4i: Process alpha channel of most
+ bottom layer
+Message-ID: <20200324153608.6whowf2b77k75uhj@gilmour.lan>
+References: <.> <20200302103138.17916-1-r.stratiienko@gmail.com>
+ <20200302103138.17916-5-r.stratiienko@gmail.com>
 MIME-Version: 1.0
-References: <20200324042213.GA10452@asgard.redhat.com>
-In-Reply-To: <20200324042213.GA10452@asgard.redhat.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 24 Mar 2020 09:31:15 -0600
-Message-ID: <CANLsYkwVybRG9L6gDJTzZ=eXut66vJYfuEtOfLzaYaVpdybT1A@mail.gmail.com>
-Subject: Re: [PATCH] coresight: do not use the BIT() macro in the UAPI header
-To: Eugene Syromiatnikov <esyr@redhat.com>
+In-Reply-To: <20200302103138.17916-5-r.stratiienko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_083127_545065_E6C0ADF8 
-X-CRM114-Status: GOOD (  14.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_083616_292486_3886CFE1 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,64 +104,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Michael Williams <michael.williams@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <zhang.chunyan@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "Dmitry V. Levin" <ldv@altlinux.org>, Pratik Patel <pratikp@codeaurora.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jernej.skrabec@siol.net, airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6088834770520222600=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 23 Mar 2020 at 22:22, Eugene Syromiatnikov <esyr@redhat.com> wrote:
+
+--===============6088834770520222600==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="adiczxgoolyaz7j5"
+Content-Disposition: inline
+
+
+--adiczxgoolyaz7j5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Mar 02, 2020 at 12:31:38PM +0200, Roman Stratiienko wrote:
+> Allwinner display engine blender consists of 3 pipelined blending units.
 >
-> The BIT() macro definition is not available for the UAPI headers
-> (moreover, it can be defined differently in the user space); replace
-> its usage with the _BITUL() macro that is defined in <linux/const.h>.
+> PIPE0->\
+>         BLD0-\
+> PIPE1->/      BLD1-\
+> PIPE2->------/      BLD2->OUT
+> PIPE3->------------/
 >
-> Fixes: 237483aa5cf4 ("coresight: stm: adding driver for CoreSight STM component")
-> Signed-off-by: Eugene Syromiatnikov <esyr@redhat.com>
+> This pipeline produces incorrect composition if PIPE0 buffer has alpha.
+
+Why? What happens in that case?
+
+> Correct solution is to add one more blending step and mix PIPE0 with
+> background, but it is not supported by the hardware.
+>
+> Use premultiplied alpha buffer of PIPE0 overlay channel as is.
+> In this case we got same effect as mixing PIPE0 with black background.
+>
+> Signed-off-by: Roman Stratiienko <r.stratiienko@gmail.com>
+>
 > ---
->  include/uapi/linux/coresight-stm.h | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
 >
-> diff --git a/include/uapi/linux/coresight-stm.h b/include/uapi/linux/coresight-stm.h
-> index aac550a..8847dbf 100644
-> --- a/include/uapi/linux/coresight-stm.h
-> +++ b/include/uapi/linux/coresight-stm.h
-> @@ -2,8 +2,10 @@
->  #ifndef __UAPI_CORESIGHT_STM_H_
->  #define __UAPI_CORESIGHT_STM_H_
+> v4:
+> - Initial version, depends on other unmerged patches in the patchset.
+> ---
+>  drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 2 +-
+>  drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 2 +-
+>  2 files changed, 2 insertions(+), 2 deletions(-)
 >
-> -#define STM_FLAG_TIMESTAMPED   BIT(3)
-> -#define STM_FLAG_GUARANTEED    BIT(7)
-> +#include <linux/const.h>
-> +
-> +#define STM_FLAG_TIMESTAMPED   _BITUL(3)
-> +#define STM_FLAG_GUARANTEED    _BITUL(7)
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> index dd6145f80c36..d94f4d8b9128 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+> @@ -106,7 +106,7 @@ static void sun8i_ui_layer_update_alpha(struct sun8i_mixer *mixer, int channel,
+>  	regmap_update_bits(mixer->engine.regs,
+>  			   SUN8I_MIXER_BLEND_PREMULTIPLY(bld_base),
+>  			   SUN8I_MIXER_BLEND_PREMULTIPLY_EN(zpos),
+> -			   SUN8I_MIXER_BLEND_PREMULTIPLY_EN(zpos));
+> +			   zpos ? SUN8I_MIXER_BLEND_PREMULTIPLY_EN(zpos) : 0);
 
-Greg, if you want to pick this up right away:
+Can you really use the zpos here? What happens if the zpos doesn't
+match the pipe?
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Maxime
 
-Otherwise let me know and I'll add it to my next tree.
+--adiczxgoolyaz7j5
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Thanks,
-Mathieu
+-----BEGIN PGP SIGNATURE-----
 
->
->  /*
->   * The CoreSight STM supports guaranteed and invariant timing
-> --
-> 2.1.4
->
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXnoo6AAKCRDj7w1vZxhR
+xQ3qAQDi1pvffHHMR3iuY4S1QReEhrb2tXea5b4qGXQRNlFXLgEAoSrDjZzD7BFx
+uqqs3+pIlvIeZFNloU3TyvpOGtTEowo=
+=WfNJ
+-----END PGP SIGNATURE-----
+
+--adiczxgoolyaz7j5--
+
+
+--===============6088834770520222600==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6088834770520222600==--
+
