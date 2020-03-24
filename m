@@ -2,117 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20B89190B02
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:32:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1C5E190B1B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:34:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ync4EZgOzbwqaFhy3zdy7fdRoY5q48153dY7znCVkQ=; b=cjsonzqsbHZ+sU
-	tCgHZWhCJHjJq9xRLv4OHuwFKc/6QOjQWg3KYYAhFUtrwwDg3Tucd/OigKpj/ps9FKo6G9pFvQobx
-	YVE96YVMu/22lxl/9+QsVazNmMjvLMNHX5Q7IpvoGN6+tcN3ZCEqmUzj5rA7fyCRnRzSP1K3g9h05
-	cpFa7uoxASG11Hc6JLTiRfF1pg2wsZrr38aTjloBs5whCn7n6u1JcK4LI9E8E3TDvXvjldBotntry
-	V9VbgUwbQhqtBNL+X8bx/+dvf6RYeZiZ4aTKbqJ2bgJyOIq1p6DGcbOIQgrERl37munPIannuUUcu
-	+F1vzFCLd91CKM7pG1Cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oFAtfBrQ3HPpRr8g3tAcADF76oMT6TwGGskkydCGWBg=; b=E66GStnUIhqB4f
+	f/pCRMuYnN+p3MDsN+GShlvSV83Gq/lrrhkX7VkJg8lHVyQvwAQYLi5hXRRaJvwGSWg41r5MJuAtQ
+	tfSna/hcVirMRaDSwwuJ74LJm/Ywfk2pb4FOnZk7u5AjYVXBIm56Y1Y4BRDzpiKoFF43a33nQ4uuF
+	ZnI+N3rrh9uM6cuJMQO/92ROKldj1wbnv7HUtlGQZXREeq0Gn9hduVcpuTY7Gv7F4cyTt2uA4Kb91
+	7P7yd4xGMouWTCCHPVQc2ELher3lWIwy7RarwP4dQYGvfiVDzDl6qfXHFw+Khr/xHQ/ua+ZwiUnSU
+	6TWJngahVTSsU//8SGzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGgqy-0000dR-Ap; Tue, 24 Mar 2020 10:32:12 +0000
-Received: from mail-eopbgr150084.outbound.protection.outlook.com
- ([40.107.15.84] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1jGgsz-0000yX-WD; Tue, 24 Mar 2020 10:34:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGgqp-0000cx-Gh
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:32:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QCqnA29+8Mw1XctzHNpLAlogbjRHp2w+NJ4RMxbEGutHZfJHILHG0E0EtmeCu44jfQRF2KFCtEvHvHR4mVRjqZ3mLfVNLFh7nrBRZC1c5kT8j8hefgTqtkNvLoNm8WQcA4FTqHH2TAx5cDe++zQzXgs0mCOM9JrUX7Ln2OT35Z4pD0m8C9YM9eHZsMKQsyr0akRMVrzNuznZERAdInhG02JNRQRHCWk+P2nR+WyaF+z13QcLvtJR3EcesRMGhup1kfQhMmzmRwT9Gg2RMyDVsjGfeOSl/KNeBfvb8hYmEdJ/u48C7zByN8tgIPe1qBE0+egHznHVUGKIY2Rb90OrRQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oiVSQJeeOVejK2+8+q8JKOkFWkMeJMFSCttvrzQgawE=;
- b=miDfzIJCfgvsqJNBQfYm/wgdjXcWV1eUlaYetk9aMXAHg/GNi4uY2mNTbSYiYmHiy15DKOoDUcbtwc1J59cSWN/aS/vIuIXwZgcCQ2M5wMvgXxdtzfE99vH+EdtzDLyviT8o2JlsO5uVnk366YkyzLhWtvAynZLLZEOkFd29KEiRWrCemxijMhAm313u2Pyj4prg/pPvhp4hZ+CJXZHF7hzZd/3dKUeNkFVRFOp6vDyspigJ1fC1aQPc9KM4zUDQHXRoGBY1MsdhonCe+xtDw+zCas8lm9KxksoJazG9P+fIXhW8hvyo4Ki+vIJrHhg7QfBl83gw8OFzcMk56O6tOg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oiVSQJeeOVejK2+8+q8JKOkFWkMeJMFSCttvrzQgawE=;
- b=BEgL7BY9AnrZSvQQjj5tMVTaDVsYNqnUYdzDmLO2lZoC0gxr6dNluXT2u6hgomXiJnlvpM1JL3EL8mAG0Em7h9eIAc8INiGYVAl1Ch+Ptazp2VhsdIh+yN1F9TXmKPbCmaNmoC9L0Z+U2G5rkV+iJlXg+gRYvV82/4ds3AuQeQk=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=laurentiu.tudor@nxp.com; 
-Received: from AM6PR04MB5925.eurprd04.prod.outlook.com (20.179.2.147) by
- AM6PR04MB5285.eurprd04.prod.outlook.com (20.177.32.217) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.22; Tue, 24 Mar 2020 10:32:00 +0000
-Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
- ([fe80::dd71:5f33:1b21:cd9e]) by AM6PR04MB5925.eurprd04.prod.outlook.com
- ([fe80::dd71:5f33:1b21:cd9e%5]) with mapi id 15.20.2835.023; Tue, 24 Mar 2020
- 10:32:00 +0000
-Subject: Re: [PATCH 1/9] vfio/fsl-mc: Add VFIO framework skeleton for fsl-mc
- devices
-To: Diana Craciun <diana.craciun@oss.nxp.com>, kvm@vger.kernel.org,
- alex.williamson@redhat.com, linux-arm-kernel@lists.infradead.org,
- bharatb.yadav@gmail.com
-References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
- <20200323171911.27178-2-diana.craciun@oss.nxp.com>
-From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Message-ID: <4e766043-df91-31fc-e639-816c02f0ba03@nxp.com>
-Date: Tue, 24 Mar 2020 12:31:58 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-In-Reply-To: <20200323171911.27178-2-diana.craciun@oss.nxp.com>
-Content-Language: en-GB
-X-ClientProxiedBy: AM5PR04CA0021.eurprd04.prod.outlook.com
- (2603:10a6:206:1::34) To AM6PR04MB5925.eurprd04.prod.outlook.com
- (2603:10a6:20b:ab::19)
+ id 1jGgsi-0000xX-Qg
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:34:02 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4549620775;
+ Tue, 24 Mar 2020 10:34:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585046040;
+ bh=bYlBEjd/f1p/2lpvFc3jhEpDR9HQLFUZ/kLJ31B5CWc=;
+ h=From:To:Cc:Subject:Date:From;
+ b=0RrKWVxxqJHLXM6u84gaBr9v6otD8EJJEHV2pLdXJW4KlWoISLAFAHD93FfrSI5eY
+ +a19wUmSXRSfxWF0VILZPLNuekrclWG2p4pGHE/dey82+f2/S6Ax8ZVyzVv5LCTxXE
+ Rs5Xr4f7CNlNaJmR6827T9uEjKOg0d4sEVtLFMW0=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jGgsg-00FE8V-FA; Tue, 24 Mar 2020 10:33:58 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Subject: [PATCH v2 0/7] Removing support for 32bit KVM/arm host
+Date: Tue, 24 Mar 2020 10:33:43 +0000
+Message-Id: <20200324103350.138077-1-maz@kernel.org>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.1.107] (86.121.54.4) by
- AM5PR04CA0021.eurprd04.prod.outlook.com (2603:10a6:206:1::34) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.19 via Frontend Transport; Tue, 24 Mar 2020 10:31:59 +0000
-X-Originating-IP: [86.121.54.4]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 347843b0-a420-4763-d09c-08d7cfde95cc
-X-MS-TrafficTypeDiagnostic: AM6PR04MB5285:|AM6PR04MB5285:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB528586188B8F9B6A7750353DECF10@AM6PR04MB5285.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1728;
-X-Forefront-PRVS: 03524FBD26
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(39860400002)(396003)(346002)(136003)(366004)(6486002)(16576012)(316002)(186003)(16526019)(53546011)(26005)(36756003)(66476007)(66946007)(30864003)(66556008)(86362001)(31696002)(8676002)(44832011)(5660300002)(478600001)(8936002)(956004)(2616005)(4326008)(52116002)(81156014)(81166006)(2906002)(31686004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5285;
- H:AM6PR04MB5925.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 7rMiIPp1QPZXtKROwkq6wV+apuk1613O1W0ih/i2hrmMIhBRYHL+hrmaEajhwWszDYUnktgiI87LZOYSQbCB1BXSyUFL4c8e8JT6uEM2MAh7Ha89qw23xtJ+bYN8TaByf015PVFtD6AubbPVQ8N8khCcSP/P3SsqmMclmCzWAdWOV41DUXzH76PgZHmGMSd9GcboBfiTwwaeY9J2+frTQmWhs02lLVVk5XedhsdH47QQQD4dGReKQDXoi/MBfwtqHGz7q8/Gs8YDFNwOk484bdu4H8igs5bTlCMNonAuHblwn/uoS/GI6PQTsCcbozqWvN+yX0TAIeKTf9NJIkyamssQoAeqB9ge5Ix/HaguYK/So0tHNs3pvUBJfU5ZTR8XEbCfaxG6XYNeUxVo4QcbFm1MZuBqVl8SEE2mAEMzkj7780X2zy52E2Q/OneNqacb
-X-MS-Exchange-AntiSpam-MessageData: SvW8Msg4ir0fZLtnGylG4qwntzs/zsM4+ratl8yD/tw2ukSxwX0W1Fo0ihNZBQeBywvI4acWZ2V+yVnc3z4uqa/OHtisC5XGrXugbhXdsyLbILxcTmGFxi05kfKJbzwuGUjaA/FHFNpE+/4+JUsA1g==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 347843b0-a420-4763-d09c-08d7cfde95cc
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2020 10:32:00.0700 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: DoUPPGlOAMlVQnCxD1jmJ8BjxUjOn1ls+0KQFiHd4RkfYe+1/MRnjv/jVQsdg7qwFVMTmDG1y344t5huuzsTuA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5285
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, olof@lixom.net,
+ arnd@arndb.de, will@kernel.org, vladimir.murzin@arm.com,
+ catalin.marinas@arm.com, linus.walleij@linaro.org, christoffer.dall@arm.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ pbonzini@redhat.com, qperret@google.com, linux@arm.linux.org.uk,
+ stefan@agner.ch, jan.kiszka@siemens.com, krzk@kernel.org,
+ b.zolnierkie@samsung.com, m.szyprowski@samsung.com, takashi@yoshi.email,
+ daniel@makrotopia.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_033203_689863_972DDE71 
-X-CRM114-Status: GOOD (  31.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_033400_906305_54F728E4 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.84 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.84 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -120,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,345 +93,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bharat Bhushan <Bharat.Bhushan@nxp.com>, linux-kernel@vger.kernel.org
+Cc: Takashi Yoshi <takashi@yoshi.email>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Russell King <linux@arm.linux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Quentin Perret <qperret@google.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Daniel Golle <daniel@makrotopia.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ James Morse <james.morse@arm.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jan Kiszka <jan.kiszka@siemens.com>, Olof Johansson <olof@lixom.net>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+KVM/arm was merged just over 7 years ago, and has lived a very quiet
+life so far. It mostly works if you're prepared to deal with its
+limitations, it has been a good prototype for the arm64 version,
+but it suffers a few problems:
 
+- It is incomplete (no debug support, no PMU)
+- It hasn't followed any of the architectural evolutions
+- It has zero^W very few users (I don't count myself here)
+- It is more and more getting in the way of new arm64 developments
 
-On 3/23/2020 7:19 PM, Diana Craciun wrote:
-> From: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-> 
-> DPAA2 (Data Path Acceleration Architecture) consists in
-> mechanisms for processing Ethernet packets, queue management,
-> accelerators, etc.
-> 
-> The Management Complex (mc) is a hardware entity that manages the DPAA2
-> hardware resources. It provides an object-based abstraction for software
-> drivers to use the DPAA2 hardware. The MC mediates operations such as
-> create, discover, destroy of DPAA2 objects.
-> The MC provides memory-mapped I/O command interfaces (MC portals) which
-> DPAA2 software drivers use to operate on DPAA2 objects.
-> 
-> A DPRC is a container object that holds other types of DPAA2 objects.
-> Each object in the DPRC is a Linux device and bound to a driver.
-> The MC-bus driver is a platform driver (different from PCI or platform
-> bus). The DPRC driver does runtime management of a bus instance. It
-> performs the initial scan of the DPRC and handles changes in the DPRC
-> configuration (adding/removing objects).
-> 
-> All objects inside a container share the same hardware isolation
-> context, meaning that only an entire DPRC can be assigned to
-> a virtual machine.
-> When a container is assigned to a virtual machine, all the objects
-> within that container are assigned to that virtual machine.
-> The DPRC container assigned to the virtual machine is not allowed
-> to change contents (add/remove objects) by the guest. The restriction
-> is set by the host and enforced by the mc hardware.
-> 
-> The DPAA2 objects can be directly assigned to the guest. However
-> the MC portals (the memory mapped command interface to the MC) need
-> to be emulated because there are commands that configure the
-> interrupts and the isolation IDs which are virtual in the guest.
-> 
-> Example:
-> echo vfio-fsl-mc > /sys/bus/fsl-mc/devices/dprc.2/driver_override
-> echo dprc.2 > /sys/bus/fsl-mc/drivers/vfio-fsl-mc/bind
-> 
-> The dprc.2 is bound to the VFIO driver and all the objects within
-> dprc.2 are going to be bound to the VFIO driver.
-> 
-> This patch adds the infrastructure for VFIO support for fsl-mc
-> devices. Subsequent patches will add support for binding and secure
-> assigning these devices using VFIO.
-> 
-> More details about the DPAA2 objects can be found here:
-> Documentation/networking/device_drivers/freescale/dpaa2/overview.rst
-> 
-> Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
-> ---
->  MAINTAINERS                               |   6 +
->  drivers/vfio/Kconfig                      |   1 +
->  drivers/vfio/Makefile                     |   1 +
->  drivers/vfio/fsl-mc/Kconfig               |   9 ++
->  drivers/vfio/fsl-mc/Makefile              |   2 +
->  drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 161 ++++++++++++++++++++++
->  drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  14 ++
->  include/uapi/linux/vfio.h                 |   1 +
->  8 files changed, 195 insertions(+)
->  create mode 100644 drivers/vfio/fsl-mc/Kconfig
->  create mode 100644 drivers/vfio/fsl-mc/Makefile
->  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc.c
->  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index cc1d18cb5d18..fc547e6f5bf8 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -17566,6 +17566,12 @@ F:	drivers/vfio/
->  F:	include/linux/vfio.h
->  F:	include/uapi/linux/vfio.h
->  
-> +VFIO FSL-MC DRIVER
-> +M:	Diana Craciun <diana.craciun@oss.nxp.com>
-> +L:	kvm@vger.kernel.org
-> +S:	Maintained
-> +F:	drivers/vfio/fsl-mc/
-> +
->  VFIO MEDIATED DEVICE DRIVERS
->  M:	Kirti Wankhede <kwankhede@nvidia.com>
->  L:	kvm@vger.kernel.org
-> diff --git a/drivers/vfio/Kconfig b/drivers/vfio/Kconfig
-> index fd17db9b432f..5533df91b257 100644
-> --- a/drivers/vfio/Kconfig
-> +++ b/drivers/vfio/Kconfig
-> @@ -47,4 +47,5 @@ menuconfig VFIO_NOIOMMU
->  source "drivers/vfio/pci/Kconfig"
->  source "drivers/vfio/platform/Kconfig"
->  source "drivers/vfio/mdev/Kconfig"
-> +source "drivers/vfio/fsl-mc/Kconfig"
->  source "virt/lib/Kconfig"
-> diff --git a/drivers/vfio/Makefile b/drivers/vfio/Makefile
-> index de67c4725cce..fee73f3d9480 100644
-> --- a/drivers/vfio/Makefile
-> +++ b/drivers/vfio/Makefile
-> @@ -9,3 +9,4 @@ obj-$(CONFIG_VFIO_SPAPR_EEH) += vfio_spapr_eeh.o
->  obj-$(CONFIG_VFIO_PCI) += pci/
->  obj-$(CONFIG_VFIO_PLATFORM) += platform/
->  obj-$(CONFIG_VFIO_MDEV) += mdev/
-> +obj-$(CONFIG_VFIO_FSL_MC) += fsl-mc/
-> diff --git a/drivers/vfio/fsl-mc/Kconfig b/drivers/vfio/fsl-mc/Kconfig
-> new file mode 100644
-> index 000000000000..b1a527d6b6f2
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/Kconfig
-> @@ -0,0 +1,9 @@
-> +config VFIO_FSL_MC
-> +	tristate "VFIO support for QorIQ DPAA2 fsl-mc bus devices"
-> +	depends on VFIO && FSL_MC_BUS && EVENTFD
-> +	help
-> +	  Driver to enable support for the VFIO QorIQ DPAA2 fsl-mc
-> +	  (Management Complex) devices. This is required to passthrough
-> +	  fsl-mc bus devices using the VFIO framework.
-> +
-> +	  If you don't know what to do here, say N.
-> diff --git a/drivers/vfio/fsl-mc/Makefile b/drivers/vfio/fsl-mc/Makefile
-> new file mode 100644
-> index 000000000000..6f2b80645d5b
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/Makefile
-> @@ -0,0 +1,2 @@
-> +vfio-fsl_mc-y := vfio_fsl_mc.o
-> +obj-$(CONFIG_VFIO_FSL_MC) += vfio_fsl_mc.o
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> new file mode 100644
-> index 000000000000..320fb09b5691
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> @@ -0,0 +1,161 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-> +/*
-> + * Copyright 2013-2016 Freescale Semiconductor Inc.
-> + * Copyright 2016-2017,2019-2020 NXP
-> + */
-> +
-> +#include <linux/device.h>
-> +#include <linux/iommu.h>
-> +#include <linux/module.h>
-> +#include <linux/mutex.h>
-> +#include <linux/slab.h>
-> +#include <linux/types.h>
-> +#include <linux/vfio.h>
-> +#include <linux/fsl/mc.h>
-> +
-> +#include "vfio_fsl_mc_private.h"
-> +
-> +static int vfio_fsl_mc_open(void *device_data)
-> +{
-> +	if (!try_module_get(THIS_MODULE))
-> +		return -ENODEV;
-> +
-> +	return 0;
-> +}
-> +
-> +static void vfio_fsl_mc_release(void *device_data)
-> +{
-> +	module_put(THIS_MODULE);
-> +}
-> +
-> +static long vfio_fsl_mc_ioctl(void *device_data, unsigned int cmd,
-> +			      unsigned long arg)
-> +{
-> +	switch (cmd) {
-> +	case VFIO_DEVICE_GET_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_GET_REGION_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_GET_IRQ_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_SET_IRQS:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_RESET:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-> +
-> +static ssize_t vfio_fsl_mc_read(void *device_data, char __user *buf,
-> +				size_t count, loff_t *ppos)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static ssize_t vfio_fsl_mc_write(void *device_data, const char __user *buf,
-> +				 size_t count, loff_t *ppos)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static int vfio_fsl_mc_mmap(void *device_data, struct vm_area_struct *vma)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static const struct vfio_device_ops vfio_fsl_mc_ops = {
-> +	.name		= "vfio-fsl-mc",
-> +	.open		= vfio_fsl_mc_open,
-> +	.release	= vfio_fsl_mc_release,
-> +	.ioctl		= vfio_fsl_mc_ioctl,
-> +	.read		= vfio_fsl_mc_read,
-> +	.write		= vfio_fsl_mc_write,
-> +	.mmap		= vfio_fsl_mc_mmap,
-> +};
-> +
-> +static int vfio_fsl_mc_probe(struct fsl_mc_device *mc_dev)
-> +{
-> +	struct iommu_group *group;
-> +	struct vfio_fsl_mc_device *vdev;
-> +	struct device *dev = &mc_dev->dev;
-> +	int ret;
-> +
-> +	group = vfio_iommu_group_get(dev);
-> +	if (!group) {
-> +		dev_err(dev, "%s: VFIO: No IOMMU group\n", __func__);
-> +		return -EINVAL;
-> +	}
-> +
-> +	vdev = devm_kzalloc(dev, sizeof(*vdev), GFP_KERNEL);
-> +	if (!vdev) {
-> +		vfio_iommu_group_put(group, dev);
-> +		return -ENOMEM;
-> +	}
-> +
-> +	vdev->mc_dev = mc_dev;
-> +
-> +	ret = vfio_add_group_dev(dev, &vfio_fsl_mc_ops, vdev);
-> +	if (ret) {
-> +		dev_err(dev, "%s: Failed to add to vfio group\n", __func__);
-> +		vfio_iommu_group_put(group, dev);
-> +		return ret;
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int vfio_fsl_mc_remove(struct fsl_mc_device *mc_dev)
-> +{
-> +	struct vfio_fsl_mc_device *vdev;
-> +	struct device *dev = &mc_dev->dev;
-> +
-> +	vdev = vfio_del_group_dev(dev);
-> +	if (!vdev)
-> +		return -EINVAL;
-> +
-> +	vfio_iommu_group_put(mc_dev->dev.iommu_group, dev);
-> +	devm_kfree(dev, vdev);
-> +
-> +	return 0;
-> +}
-> +
-> +/*
-> + * vfio-fsl_mc is a meta-driver, so use driver_override interface to
-> + * bind a fsl_mc container with this driver and match_id_table is NULL.
-> + */
-> +static struct fsl_mc_driver vfio_fsl_mc_driver = {
-> +	.probe		= vfio_fsl_mc_probe,
-> +	.remove		= vfio_fsl_mc_remove,
-> +	.match_id_table = NULL,
-> +	.driver	= {
-> +		.name	= "vfio-fsl-mc",
-> +		.owner	= THIS_MODULE,
-> +	},
-> +};
-> +
-> +static int __init vfio_fsl_mc_driver_init(void)
-> +{
-> +	return fsl_mc_driver_register(&vfio_fsl_mc_driver);
-> +}
-> +
-> +static void __exit vfio_fsl_mc_driver_exit(void)
-> +{
-> +	fsl_mc_driver_unregister(&vfio_fsl_mc_driver);
-> +}
-> +
-> +module_init(vfio_fsl_mc_driver_init);
-> +module_exit(vfio_fsl_mc_driver_exit);
-> +
-> +MODULE_LICENSE("GPL v2");
-> +MODULE_DESCRIPTION("VFIO for FSL-MC devices - User Level meta-driver");
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> new file mode 100644
-> index 000000000000..b92858a003c0
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause) */
-> +/*
-> + * Copyright 2013-2016 Freescale Semiconductor Inc.
-> + * Copyright 2016,2019-2020 NXP
-> + */
-> +
-> +#ifndef VFIO_FSL_MC_PRIVATE_H
-> +#define VFIO_FSL_MC_PRIVATE_H
-> +
-> +struct vfio_fsl_mc_device {
-> +	struct fsl_mc_device		*mc_dev;
-> +};
-> +
-> +#endif /* VFIO_PCI_PRIVATE_H */
+There has been quite a bit of discussion (see [1]) on whether we were
+depriving users of something they were depending on. Most people
+didn't object, and actually supported the removal. A few people *did*
+object to the removal:
 
-This should be VFIO_FSL_MC_PRIVATE_H.
+- Takashi uses it on a regular basis for developments
+- Daniel uses it as well, although he doesn't depend on it
+- Marek and Bartlomiej said that Samsung use it internally, without
+  any description of their usage model
 
----
-Best Regards, Laurentiu
+Alghouth I can really sympathetize with people above, I still don't
+think we should keep the 32bit port artificially alive for the sake of
+it, specially considering that the whole of the 32bit architecture is
+in best effort, maintenance mode. I'd rather drop KVM support now,
+while it is still in a decent shape, rather than seeing it bit-rot
+like it happened for ia64. I also plan to keep maintaining it in the
+various stable kernels, up to (and including) 5.6.
 
-> diff --git a/include/uapi/linux/vfio.h b/include/uapi/linux/vfio.h
-> index 9e843a147ead..6d0a7a071ef4 100644
-> --- a/include/uapi/linux/vfio.h
-> +++ b/include/uapi/linux/vfio.h
-> @@ -201,6 +201,7 @@ struct vfio_device_info {
->  #define VFIO_DEVICE_FLAGS_AMBA  (1 << 3)	/* vfio-amba device */
->  #define VFIO_DEVICE_FLAGS_CCW	(1 << 4)	/* vfio-ccw device */
->  #define VFIO_DEVICE_FLAGS_AP	(1 << 5)	/* vfio-ap device */
-> +#define VFIO_DEVICE_FLAGS_FSL_MC (1 << 6)	/* vfio-fsl-mc device */
->  	__u32	num_regions;	/* Max region index + 1 */
->  	__u32	num_irqs;	/* Max IRQ index + 1 */
->  };
-> 
+To reiterate: 32bit guest support for arm64 stays, of course. Only
+32bit host goes. Once this is merged, I plan to move virt/kvm/arm to
+arm64, and cleanup all the now unnecessary abstractions.
+
+The patches have been generated with the -D option to avoid spamming
+everyone with huge diffs, and there is a kvm-arm/goodbye branch in
+my kernel.org repository.
+
+* From v1:
+  - Rebased on top of kvmarm/next
+  - Simplified the HYP vector replacement code
+  - Updated the MAINTAINERS file
+  - Collected Acks
+
+[1] https://lore.kernel.org/linux-arm-kernel/20200210141324.21090-1-maz@kernel.org/
+
+Marc Zyngier (7):
+  arm: Unplug KVM from the build system
+  arm: Remove KVM from config files
+  arm: Remove 32bit KVM host support
+  arm: Remove HYP/Stage-2 page-table support
+  arm: Remove GICv3 vgic compatibility macros
+  arm: Remove the ability to set HYP vectors outside of the decompressor
+  MAINTAINERS: RIP KVM/arm
+
+ Documentation/virt/kvm/arm/hyp-abi.rst |    5 +
+ MAINTAINERS                            |    5 +-
+ arch/arm/Kconfig                       |    2 -
+ arch/arm/Makefile                      |    1 -
+ arch/arm/configs/axm55xx_defconfig     |    2 -
+ arch/arm/include/asm/arch_gicv3.h      |  114 --
+ arch/arm/include/asm/kvm_arm.h         |  239 ----
+ arch/arm/include/asm/kvm_asm.h         |   77 --
+ arch/arm/include/asm/kvm_coproc.h      |   36 -
+ arch/arm/include/asm/kvm_emulate.h     |  372 ------
+ arch/arm/include/asm/kvm_host.h        |  457 --------
+ arch/arm/include/asm/kvm_hyp.h         |  127 ---
+ arch/arm/include/asm/kvm_mmu.h         |  435 -------
+ arch/arm/include/asm/kvm_ras.h         |   14 -
+ arch/arm/include/asm/pgtable-3level.h  |   20 -
+ arch/arm/include/asm/pgtable.h         |    9 -
+ arch/arm/include/asm/sections.h        |    6 +-
+ arch/arm/include/asm/stage2_pgtable.h  |   75 --
+ arch/arm/include/asm/virt.h            |   17 -
+ arch/arm/include/uapi/asm/kvm.h        |  314 -----
+ arch/arm/kernel/asm-offsets.c          |   11 -
+ arch/arm/kernel/hyp-stub.S             |   39 +-
+ arch/arm/kernel/vmlinux-xip.lds.S      |    8 -
+ arch/arm/kernel/vmlinux.lds.S          |    8 -
+ arch/arm/kernel/vmlinux.lds.h          |   10 -
+ arch/arm/kvm/Kconfig                   |   59 -
+ arch/arm/kvm/Makefile                  |   43 -
+ arch/arm/kvm/coproc.c                  | 1455 ------------------------
+ arch/arm/kvm/coproc.h                  |  130 ---
+ arch/arm/kvm/coproc_a15.c              |   39 -
+ arch/arm/kvm/coproc_a7.c               |   42 -
+ arch/arm/kvm/emulate.c                 |  166 ---
+ arch/arm/kvm/guest.c                   |  387 -------
+ arch/arm/kvm/handle_exit.c             |  175 ---
+ arch/arm/kvm/hyp/Makefile              |   34 -
+ arch/arm/kvm/hyp/banked-sr.c           |   70 --
+ arch/arm/kvm/hyp/cp15-sr.c             |   72 --
+ arch/arm/kvm/hyp/entry.S               |  121 --
+ arch/arm/kvm/hyp/hyp-entry.S           |  295 -----
+ arch/arm/kvm/hyp/s2-setup.c            |   22 -
+ arch/arm/kvm/hyp/switch.c              |  242 ----
+ arch/arm/kvm/hyp/tlb.c                 |   68 --
+ arch/arm/kvm/hyp/vfp.S                 |   57 -
+ arch/arm/kvm/init.S                    |  157 ---
+ arch/arm/kvm/interrupts.S              |   36 -
+ arch/arm/kvm/irq.h                     |   16 -
+ arch/arm/kvm/reset.c                   |   86 --
+ arch/arm/kvm/trace.h                   |   86 --
+ arch/arm/kvm/vgic-v3-coproc.c          |   27 -
+ arch/arm/mach-exynos/Kconfig           |    2 +-
+ arch/arm/mm/mmu.c                      |   26 -
+ 51 files changed, 16 insertions(+), 6300 deletions(-)
+ delete mode 100644 arch/arm/include/asm/kvm_arm.h
+ delete mode 100644 arch/arm/include/asm/kvm_asm.h
+ delete mode 100644 arch/arm/include/asm/kvm_coproc.h
+ delete mode 100644 arch/arm/include/asm/kvm_emulate.h
+ delete mode 100644 arch/arm/include/asm/kvm_host.h
+ delete mode 100644 arch/arm/include/asm/kvm_hyp.h
+ delete mode 100644 arch/arm/include/asm/kvm_mmu.h
+ delete mode 100644 arch/arm/include/asm/kvm_ras.h
+ delete mode 100644 arch/arm/include/asm/stage2_pgtable.h
+ delete mode 100644 arch/arm/include/uapi/asm/kvm.h
+ delete mode 100644 arch/arm/kvm/Kconfig
+ delete mode 100644 arch/arm/kvm/Makefile
+ delete mode 100644 arch/arm/kvm/coproc.c
+ delete mode 100644 arch/arm/kvm/coproc.h
+ delete mode 100644 arch/arm/kvm/coproc_a15.c
+ delete mode 100644 arch/arm/kvm/coproc_a7.c
+ delete mode 100644 arch/arm/kvm/emulate.c
+ delete mode 100644 arch/arm/kvm/guest.c
+ delete mode 100644 arch/arm/kvm/handle_exit.c
+ delete mode 100644 arch/arm/kvm/hyp/Makefile
+ delete mode 100644 arch/arm/kvm/hyp/banked-sr.c
+ delete mode 100644 arch/arm/kvm/hyp/cp15-sr.c
+ delete mode 100644 arch/arm/kvm/hyp/entry.S
+ delete mode 100644 arch/arm/kvm/hyp/hyp-entry.S
+ delete mode 100644 arch/arm/kvm/hyp/s2-setup.c
+ delete mode 100644 arch/arm/kvm/hyp/switch.c
+ delete mode 100644 arch/arm/kvm/hyp/tlb.c
+ delete mode 100644 arch/arm/kvm/hyp/vfp.S
+ delete mode 100644 arch/arm/kvm/init.S
+ delete mode 100644 arch/arm/kvm/interrupts.S
+ delete mode 100644 arch/arm/kvm/irq.h
+ delete mode 100644 arch/arm/kvm/reset.c
+ delete mode 100644 arch/arm/kvm/trace.h
+ delete mode 100644 arch/arm/kvm/vgic-v3-coproc.c
+
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
