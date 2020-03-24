@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 326B2190F72
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:27:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F33F190F75
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:28:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zEopoohePtywKvKIW6FOJ25eBGTgDMWgaZn+l4TT9tE=; b=oslUkU9gsKy6Hl5pC2M5FXpYtn
-	m9HT9v4Ai0BeNBaHEVpA88zhdgjg3zqrjD8TgDGF4ZgS3wIqf0vescZuieDGWPj8DWbT4vBhO8+Kl
-	f2NvicUX5HHF5wqj9nHmdQoOM5yAEx/3Diq0qZ2H9HXCxo/klkQfaF+CiopwebsLCaFFaw1VHOTIG
-	EcUihiuXFEig19XsiEeBj6r324OMfeE+8ZkZBeADmuiYVBlePgrd5796HeWBOwjx5xjSfbmN2832f
-	hyhiLLNg318YNnY6ygUtU/BFqsNCfzIIXenxbanSfpVGfmls5ud1lt3qOmotLjKZ/vbqQ12J5SAwj
-	K1cjUFkw==;
+	bh=kpyQEADBKM9NfO1gOaqIJ4PyAx5LwDTM/UY3tmPvyYs=; b=LVqtvLyxY8bbXXBRqPVZ5FbSJz
+	QmdSd3StYSp0NbQKpiDD68gn0+eCTTl6NqG72Tx5z80ElK6GPENN8tK+QDZDvnN8cTaAyCEC4DK4N
+	dBLD/6XpScrdh/QShCb6xdn28qqQzyMCncKGLLzyRC2iAEB+s6/YfVL2CStObViyswgsneOCB57eS
+	pFId8/RJqJ/oz9r+/RJv8k+CdB6I5IVAm7sWMGdiXPm4aAcPrNOwAK8pfaEDQfuC6DfUmtvfDb2MJ
+	Oniikb8ERdGNwoXVpov3pM3FDp9B665Pmwun+vJToVHmzWnLlU1lOny58Q0vrCLTUQ75znOjnDfnY
+	r1lkhivA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGjaU-00052J-1d; Tue, 24 Mar 2020 13:27:22 +0000
+	id 1jGjax-0005Xy-EX; Tue, 24 Mar 2020 13:27:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGjXT-00017V-59
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 13:24:17 +0000
+ id 1jGjXV-00018W-Gn
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 13:24:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 60701FEC;
- Tue, 24 Mar 2020 06:24:14 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E206F11B3;
+ Tue, 24 Mar 2020 06:24:15 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 121633F52E;
- Tue, 24 Mar 2020 06:24:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 93F153F52E;
+ Tue, 24 Mar 2020 06:24:14 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH v3 13/14] net: axienet: Autodetect 64-bit DMA capability
-Date: Tue, 24 Mar 2020 13:23:46 +0000
-Message-Id: <20200324132347.23709-14-andre.przywara@arm.com>
+Subject: [PATCH v3 14/14] net: axienet: Allow DMA to beyond 4GB
+Date: Tue, 24 Mar 2020 13:23:47 +0000
+Message-Id: <20200324132347.23709-15-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200324132347.23709-1-andre.przywara@arm.com>
 References: <20200324132347.23709-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_062415_304508_CA17AA6C 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20200324_062417_814663_CC125035 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,78 +73,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When newer revisions of the Axienet IP are configured for a 64-bit bus,
-we *need* to write to the MSB part of the an address registers,
-otherwise the IP won't recognise this as a DMA start condition.
-This is even true when the actual DMA address comes from the lower 4 GB.
+With all DMA address accesses wrapped, we can actually support 64-bit
+DMA if this option was chosen at IP integration time.
+If the IP has been configured for an address width greater than 32 bits,
+we assume the full 64 bit DMA width is working. In practise this will be
+limited by the actual system address bus width, which will ideally be the
+same as the DMA IP address width.
+If this is not the case, the actual width can still be configured using a
+dma-ranges property in the parent of the MAC node.
 
-To autodetect this configuration, at probe time we write all 1's to such
-an MSB register, and see if any bits stick. If this is configured for a
-32-bit bus, those MSB registers are RES0, so reading back 0 indicates
-that no MSB writes are necessary.
-On the other hands reading anything other than 0 indicated the need to
-write the MSB registers, so we set the respective flag.
-
-The actual DMA mask stays at 32-bit for now. To help bisecting, a
-separate patch will enable allocations from higher addresses.
+This increases the DMA mask on those systems to let the kernel choose
+buffers from memory at higher addresses.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- drivers/net/ethernet/xilinx/xilinx_axienet.h  |  1 +
- .../net/ethernet/xilinx/xilinx_axienet_main.c | 26 +++++++++++++++++++
- 2 files changed, 27 insertions(+)
+ drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet.h b/drivers/net/ethernet/xilinx/xilinx_axienet.h
-index 84c4c3655516..fbaf3c987d9c 100644
---- a/drivers/net/ethernet/xilinx/xilinx_axienet.h
-+++ b/drivers/net/ethernet/xilinx/xilinx_axienet.h
-@@ -161,6 +161,7 @@
- #define XAE_FCC_OFFSET		0x0000040C /* Flow Control Configuration */
- #define XAE_EMMC_OFFSET		0x00000410 /* EMAC mode configuration */
- #define XAE_PHYC_OFFSET		0x00000414 /* RGMII/SGMII configuration */
-+#define XAE_ID_OFFSET		0x000004F8 /* Identification register */
- #define XAE_MDIO_MC_OFFSET	0x00000500 /* MII Management Config */
- #define XAE_MDIO_MCR_OFFSET	0x00000504 /* MII Management Control */
- #define XAE_MDIO_MWD_OFFSET	0x00000508 /* MII Management Write Data */
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 6ecd1bb5f81d..a54a5c754da0 100644
+index a54a5c754da0..fa5dc2993520 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -151,6 +151,9 @@ static void axienet_dma_out_addr(struct axienet_local *lp, off_t reg,
- 				 dma_addr_t addr)
- {
- 	axienet_dma_out32(lp, reg, lower_32_bits(addr));
-+
-+	if (lp->features & XAE_FEATURE_DMA_64BIT)
-+		axienet_dma_out32(lp, reg + 4, upper_32_bits(addr));
- }
+@@ -1780,6 +1780,7 @@ static int axienet_probe(struct platform_device *pdev)
+ 	struct net_device *ndev;
+ 	const void *mac_addr;
+ 	struct resource *ethres;
++	int addr_width = 32;
+ 	u32 value;
  
- static void desc_set_phys_addr(struct axienet_local *lp, dma_addr_t addr,
-@@ -1928,6 +1931,29 @@ static int axienet_probe(struct platform_device *pdev)
- 		goto free_netdev;
+ 	ndev = alloc_etherdev(sizeof(*lp));
+@@ -1947,6 +1948,7 @@ static int axienet_probe(struct platform_device *pdev)
+ 			iowrite32(0xffffffff, desc);
+ 			if (ioread32(desc) > 0) {
+ 				lp->features |= XAE_FEATURE_DMA_64BIT;
++				addr_width = 64;
+ 				dev_info(&pdev->dev,
+ 					 "autodetected 64-bit DMA range\n");
+ 			}
+@@ -1954,6 +1956,12 @@ static int axienet_probe(struct platform_device *pdev)
+ 		}
  	}
  
-+	/* Autodetect the need for 64-bit DMA pointers.
-+	 * When the IP is configured for a bus width bigger than 32 bits,
-+	 * writing the MSB registers is mandatory, even if they are all 0.
-+	 * We can detect this case by writing all 1's to one such register
-+	 * and see if that sticks: when the IP is configured for 32 bits
-+	 * only, those registers are RES0.
-+	 * Those MSB registers were introduced in IP v7.1, which we check first.
-+	 */
-+	if ((axienet_ior(lp, XAE_ID_OFFSET) >> 24) >= 0x9) {
-+		void __iomem *desc = lp->dma_regs + XAXIDMA_TX_CDESC_OFFSET + 4;
-+
-+		iowrite32(0x0, desc);
-+		if (ioread32(desc) == 0) {	/* sanity check */
-+			iowrite32(0xffffffff, desc);
-+			if (ioread32(desc) > 0) {
-+				lp->features |= XAE_FEATURE_DMA_64BIT;
-+				dev_info(&pdev->dev,
-+					 "autodetected 64-bit DMA range\n");
-+			}
-+			iowrite32(0x0, desc);
-+		}
++	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(addr_width));
++	if (ret) {
++		dev_err(&pdev->dev, "No suitable DMA available\n");
++		goto free_netdev;
 +	}
 +
  	/* Check for Ethernet core IRQ (optional) */
