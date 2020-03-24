@@ -2,143 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33A1E191356
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 15:36:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDF91191366
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 15:39:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H6gxP5W2PuWSOeOF/yk6yMxSVtS7+c07Edz+rGEq9+k=; b=c7tQDVq3EcEQZU
-	P0M6oHBjUn3ri9Dxt/QWovFoD9esFbJ36uIdJnNIZkyC9IdSqVVUQGs5liEhTzd/XDLyvuPaiZEtW
-	sCcaBz5BtoGUYuhwQEQTK81JonJXuxnaJriMsReNJW3gp2TpkeNC8mBn1TI++0VTJdGJ0pMQROXwh
-	TIb10fifkb7dnylJIa8VtVUWePJGDF7MHmMsUJVM6oPWa4xdMGTodhaHAT9tzchGr9ZojRGAjNiCR
-	4vr4xKjqdIZWOO0r6KAC7FP3hmiQli3YLjVfq6zbzr+kMD5ZqOt1vC1fNrLPCjPSGyA6p5p9lsSGR
-	HOi4j+bC9wxKRKZ4pECw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c0Wd9F86AfRhriWtaHKNLEbonHaiNGrhqk4PQxVTKJc=; b=ZxJOwbhHNjbsLC
+	6JWNMEjkcbGau7K4iq2XJvis5J7U9STPBXkDZzrEbqZlR8sQRYrzMS6EOLXkpjSxhPtkcJRgEi9lw
+	E6jPigYjsoJEc9sxYNSrPMKh/mSU9sQpqF93MCXiXyBXSVHrTeGZBsbbykPT7GBETB7o9k/GYVZxF
+	UXI+VfILSv7kUd78KiAeUylx+0G4I+g2dYJP4EKBcgZuajW/cu/uWgrS4TCStZXeWOy1KWd/vY1BJ
+	HNIcDqxdGCWzFPgCIiTtKb8piw5Yuvpa9hHYCryGcMj0f2WKXGY94QYglDEmtbnPA39PRfBCgJE/+
+	0n732QcZk2H4uIygqNJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGkf2-0007x5-Sl; Tue, 24 Mar 2020 14:36:08 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jGkiC-0008PZ-Gs; Tue, 24 Mar 2020 14:39:24 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGkev-0007wR-GW
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 14:36:03 +0000
-Received: by mail-wr1-x443.google.com with SMTP id s1so21735655wrv.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 07:36:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=0Gevp5sNHQH6ntbIhc5KBRCvoT0lWeFA/LkmXeB8P9E=;
- b=QWEtnZvQ1iQRPlDbwUTeGiUrXB27aZockiWFe9Uw/f7RtYAuaq2WSvU7o/JvfzTE+r
- FILMMZHnhKpWeOXJ0NOOwmnvkpwsdIc2Z8zdBiyNI7yhDJ4oLv4UThW8q7WQ9CmWImqH
- t2RQB85pz7VK6/dKeSt+hq6X+OsVILksQ79wThA2rgb2G4jwjFIB8jKucq8RuJTp4ikW
- V8yN3DWK+gHLlOgSp+0560hKPoVmK4M9BpYZJmkfZH24SEOyAxzmkN2LaAnhRemyZQxv
- jxqkRUTqTU2vBJ6mFp/VFnXGkgwBNeL1kw69wnXKeM2cOR3qk28vqaLEtbTQauXnbLE+
- XPMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=0Gevp5sNHQH6ntbIhc5KBRCvoT0lWeFA/LkmXeB8P9E=;
- b=AA5FSUEgSIaAUjNlI06bdE6/JQDA/dKU8T9saUguCDGXmMhZL1nlZLRYvrsNmGQvWh
- n3AI1N+I4lgKXz2AXGnY5Az5BHwIJp22HUo8jQYszBR3dRSkQgPEyaz9YZvdrpcJj8A4
- NjhrvXFna/EpYcNvIw2/5YDaYhpJ5NMVqe0lstcV7JQfZC+6QdNyOob2318J71UNqgQ6
- fs5mtMwfd4iXLq+Kl+8SvfhGukswb6pJQCc99qXdhq8XT944DsvXs/n67lczRD8JLurK
- uLjpfaFRcRoUO83L4cw+eWf6I/ELgcBCkTy6CrMEhtWJ4KASzXYQU1a/vnCFetmQqb1l
- j7sA==
-X-Gm-Message-State: ANhLgQ1DjSuVNnqDk6eqZ7zGD+CepopZlmDz0xbz+iJJM+K0UIh4eoMY
- jLVUb9MNbDlUi/y9ypyAOyM4Udy3+pnSjA==
-X-Google-Smtp-Source: ADFU+vtAanKj3SwM60GzKfDQBA9hFthXHkws+CwWdcn/gkfYLeklLyNG7Gsfh5EBlF7lUncr2P4fZg==
-X-Received: by 2002:adf:f7cf:: with SMTP id a15mr32030001wrq.224.1585060560076; 
- Tue, 24 Mar 2020 07:36:00 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
- ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id s131sm4566887wmf.35.2020.03.24.07.35.58
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 24 Mar 2020 07:35:59 -0700 (PDT)
-Subject: Re: [PATCH 05/13] usb: dwc3: meson-g12a: refactor usb2 phy init
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20200324102030.31000-1-narmstrong@baylibre.com>
- <20200324102030.31000-6-narmstrong@baylibre.com>
- <CAFBinCDrycKy6sJfpUjoB3_jkHP-ssmwvr-Cab1-fOmz_i_bGQ@mail.gmail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <5e5a5a25-bd3e-e476-2ed1-635d9c4a7773@baylibre.com>
-Date: Tue, 24 Mar 2020 15:35:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <CAFBinCDrycKy6sJfpUjoB3_jkHP-ssmwvr-Cab1-fOmz_i_bGQ@mail.gmail.com>
+ id 1jGki4-0008P9-5I
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 14:39:17 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02OEcB7h016856; Tue, 24 Mar 2020 15:39:13 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=kRzE8Z9Ot2C1TxmUx6qJ78m1De9KC/+dd3UadNqDNkM=;
+ b=Bqq92K9vGhW7IVuaUO9DdT/u5hvTxj/RWLXbuJjvGjg5EZ07Q80oilTRvc0SB+lrDd6p
+ hUT/MrbZgg+Ru1buckoBXgqoK7xRogRshlvcWlB9YXN2KO2Ln06BFNGkQXDhpFKs63+m
+ cmexXy+zIEy1GoyAqo1Go1kmimynBgPozyxR6Cy/KFOFBxyGdt8+p/FLSCZ8DUDceSY8
+ Uo7i93XrLGTK2myXYkt4MKoOF26a+qqsmYNCVd9hLCRecGqSWAj3EHA2QrjFV09Mxf1y
+ lQGWkIOgVSSFl68Yj2LQ82oU1w6DvTTHcPEqJvInjWpkYlqz+hH+e/em+V+APwazvV2Q 2w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yw8xe06g9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 24 Mar 2020 15:39:13 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BF45610003A;
+ Tue, 24 Mar 2020 15:39:08 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B30482B0D7A;
+ Tue, 24 Mar 2020 15:39:08 +0100 (CET)
+Received: from SFHDAG3NODE2.st.com (10.75.127.8) by SFHDAG6NODE2.st.com
+ (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 24 Mar
+ 2020 15:39:08 +0100
+Received: from SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96]) by
+ SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96%20]) with mapi id
+ 15.00.1347.000; Tue, 24 Mar 2020 15:39:07 +0100
+From: Alexandre TORGUE <alexandre.torgue@st.com>
+To: Marek Vasut <marex@denx.de>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] [RFC] ARM: dts: stm32: Add DTs for STM32MP15x variants of
+ the DH SOM and PDK2
+Thread-Topic: [PATCH] [RFC] ARM: dts: stm32: Add DTs for STM32MP15x variants
+ of the DH SOM and PDK2
+Thread-Index: AQHWALs2LfG69gpjqEmAIxoy3YOcfahXuCeA///0JYCAAB1UgP//8W4AgAAUcwD///ANgAACP4/w
+Date: Tue, 24 Mar 2020 14:39:07 +0000
+Message-ID: <9492207e929c4185bda5a709ad879c15@SFHDAG3NODE2.st.com>
+References: <20200323023145.3345133-1-marex@denx.de>
+ <7f76ea73-122f-3761-a97b-57bdb99dc4fa@st.com>
+ <4ffd8b7c-eb7d-83a4-3f6e-e156d3600532@denx.de>
+ <c26637b2-7cf6-b7e2-3301-fafbbfde508e@st.com>
+ <028556ba-f088-bf04-4473-a69569157411@denx.de>
+ <792e11db-d345-03d4-6d8f-3f9b8ed40576@st.com>
+ <c399c8bb-3035-70e0-7499-71974f7c30f6@denx.de>
+In-Reply-To: <c399c8bb-3035-70e0-7499-71974f7c30f6@denx.de>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.46]
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-24_05:2020-03-23,
+ 2020-03-24 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_073601_552231_F198B427 
-X-CRM114-Status: GOOD (  16.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200324_073916_501347_110B9AA6 
+X-CRM114-Status: GOOD (  26.63  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,77 +111,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, khilman@baylibre.com, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, kishon@ti.com, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
+ Patrice CHOTARD <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24/03/2020 15:33, Martin Blumenstingl wrote:
-> Hi Neil,
-> 
-> On Tue, Mar 24, 2020 at 11:20 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
-> [...]
->> @@ -195,23 +239,9 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
->>                 if (!strstr(priv->drvdata->phy_names[i], "usb2"))
->>                         continue;
->>
->> -               regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->> -                                  U2P_R0_POWER_ON_RESET,
->> -                                  U2P_R0_POWER_ON_RESET);
->> -
->> -               if (priv->drvdata->otg_switch_supported && i == USB2_OTG_PHY) {
->> -                       regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->> -                               U2P_R0_ID_PULLUP | U2P_R0_DRV_VBUS,
->> -                               U2P_R0_ID_PULLUP | U2P_R0_DRV_VBUS);
->> -
->> -                       dwc3_meson_g12a_usb2_set_mode(priv, i,
->> -                                                     priv->otg_phy_mode);
->> -               } else
->> -                       dwc3_meson_g12a_usb2_set_mode(priv, i,
->> -                                                     PHY_MODE_USB_HOST);
->> -
->> -               regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->> -                                  U2P_R0_POWER_ON_RESET, 0);
->> +               ret = priv->drvdata->usb2_init_phy(priv, i, mode);
->> +               if (ret)
->> +                       return ret;
->>         }
-> this doesn't compile for me, it complains that mode is undefined
-> I believe we need something like the attached patch on top.
-
-I'll investigate
-
-> 
-> [...]
->> @@ -580,7 +612,9 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->>         /* Get dr_mode */
->>         priv->otg_mode = usb_get_dr_mode(dev);
->>
->> -       dwc3_meson_g12a_usb_init(priv);
->> +       ret = dwc3_meson_g12a_usb_init(priv);
->> +       if (ret)
->> +               goto err_disable_clks;
-> this looks like an unrelated fix, dwc3_meson_g12a_usb_init has always
-> returned int (as potential error)
-> also the same check is missing in dwc3_meson_g12a_resume
-> can you please move this to a separate patch with the appropriate tag:
-> Fixes: c99993376f72ca ("usb: dwc3: Add Amlogic G12A DWC3 glue")
-
-Ok
-
-Thanks,
-Neil
-
-> 
-> 
-> Martin
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogTWFyZWsgVmFzdXQgPG1h
+cmV4QGRlbnguZGU+DQo+IFNlbnQ6IG1hcmRpIDI0IG1hcnMgMjAyMCAxNTozMQ0KPiBUbzogQWxl
+eGFuZHJlIFRPUkdVRSA8YWxleGFuZHJlLnRvcmd1ZUBzdC5jb20+OyBsaW51eC1hcm0tDQo+IGtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnDQo+IENjOiBNYXhpbWUgQ29xdWVsaW4gPG1jb3F1ZWxp
+bi5zdG0zMkBnbWFpbC5jb20+OyBQYXRyaWNlIENIT1RBUkQNCj4gPHBhdHJpY2UuY2hvdGFyZEBz
+dC5jb20+OyBQYXRyaWNrIERFTEFVTkFZIDxwYXRyaWNrLmRlbGF1bmF5QHN0LmNvbT47IGxpbnV4
+LQ0KPiBzdG0zMkBzdC1tZC1tYWlsbWFuLnN0b3JtcmVwbHkuY29tDQo+IFN1YmplY3Q6IFJlOiBb
+UEFUQ0hdIFtSRkNdIEFSTTogZHRzOiBzdG0zMjogQWRkIERUcyBmb3IgU1RNMzJNUDE1eCB2YXJp
+YW50cw0KPiBvZiB0aGUgREggU09NIGFuZCBQREsyDQo+IA0KPiBPbiAzLzI0LzIwIDM6MjggUE0s
+IEFsZXhhbmRyZSBUb3JndWUgd3JvdGU6DQo+ID4NCj4gPg0KPiA+IE9uIDMvMjQvMjAgMzoxNSBQ
+TSwgTWFyZWsgVmFzdXQgd3JvdGU6DQo+ID4+IE9uIDMvMjQvMjAgMzowNyBQTSwgQWxleGFuZHJl
+IFRvcmd1ZSB3cm90ZToNCj4gPj4+DQo+ID4+Pg0KPiA+Pj4gT24gMy8yNC8yMCAyOjIyIFBNLCBN
+YXJlayBWYXN1dCB3cm90ZToNCj4gPj4+PiBPbiAzLzI0LzIwIDI6MDQgUE0sIEFsZXhhbmRyZSBU
+b3JndWUgd3JvdGU6DQo+ID4+Pj4+DQo+ID4+Pj4+DQo+ID4+Pj4+IE9uIDMvMjMvMjAgMzozMSBB
+TSwgTWFyZWsgVmFzdXQgd3JvdGU6DQo+ID4+Pj4+PiBUaGUgREggUERLMiBjYW4gYmUgcG9wdWxh
+dGVkIHdpdGggU29NIHdpdGggYW55IFNUTTMyTVAxNXggdmFyaWFudC4NCj4gPj4+Pj4+IEFkZCB0
+aGUgRFRzIGRlc2NyaWJpbmcgdGhlIHJlbWFpbmluZyBjb21iaW5hdGlvbnMuDQo+ID4+Pj4+Pg0K
+PiA+Pj4+Pj4gU2lnbmVkLW9mZi1ieTogTWFyZWsgVmFzdXQgPG1hcmV4QGRlbnguZGU+DQo+ID4+
+Pj4+PiBDYzogQWxleGFuZHJlIFRvcmd1ZSA8YWxleGFuZHJlLnRvcmd1ZUBzdC5jb20+DQo+ID4+
+Pj4+PiBDYzogTWF4aW1lIENvcXVlbGluIDxtY29xdWVsaW4uc3RtMzJAZ21haWwuY29tPg0KPiA+
+Pj4+Pj4gQ2M6IFBhdHJpY2UgQ2hvdGFyZCA8cGF0cmljZS5jaG90YXJkQHN0LmNvbT4NCj4gPj4+
+Pj4+IENjOiBQYXRyaWNrIERlbGF1bmF5IDxwYXRyaWNrLmRlbGF1bmF5QHN0LmNvbT4NCj4gPj4+
+Pj4+IENjOiBsaW51eC1zdG0zMkBzdC1tZC1tYWlsbWFuLnN0b3JtcmVwbHkuY29tDQo+ID4+Pj4+
+PiBUbzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnDQo+ID4+Pj4+PiAtLS0N
+Cj4gPj4+Pj4+IE5PVEU6IElzIHRoZXJlIGEgYmV0dGVyIHdheSB0byBkbyB0aGlzIHRoYW4gdG8g
+aGF2ZSB0aGlzIGtpbmQgb2YNCj4gPj4+Pj4+IGENCj4gPj4+Pj4+IMKgwqDCoMKgwqDCoGNvbWJp
+bmF0b3JpYWwgZXhwbG9zaW9uIG9mIERUcyA/DQo+ID4+Pj4+DQo+ID4+Pj4+IEkgaGF2ZSBubyBi
+ZXR0ZXIgaWRlYS4gUXVlc3Rpb24gd2FzIHRoZSBzYW1lIGZvciBzdG0zMiBib2FyZHMsIGFuZA0K
+PiA+Pj4+PiBJIGNob3NlIHRvIHRha2UgdGhpcyBvcHRpb24uDQo+ID4+Pj4NCj4gPj4+PiBPbmUg
+b3B0aW9uIHdvdWxkIGJlIHRvIGp1c3QgaGF2ZSBEVCBmb3IgdGhlIG1vc3QgZmVhdHVyZS1jb21w
+bGV0ZQ0KPiA+Pj4+IG9wdGlvbg0KPiA+Pj4+ICgxNTcpIGFuZCB0aGVuIGhhdmUgVS1Cb290IHJl
+bW92ZSB0aGUgbm9kZXMgZm9yIEhXIHdoaWNoIGlzIG5vdA0KPiA+Pj4+IHByZXNlbnQgb24gdGhl
+IHBhcnRpY3VsYXIgU29DIG9wdGlvbiBpZiBpdCdzIG9uZSBvZiB0aGUgbW9yZQ0KPiA+Pj4+IGxp
+bWl0ZWQgb25lcyAoMTUzLCAxNTEpLg0KPiA+Pj4+DQo+ID4+Pg0KPiA+Pj4gWWVzIGl0IHdhcyBh
+IHBvc3NpYmlsaXR5IHRoYXQgSSBkaXNjdXNzZWQgd2l0aCBrZXZpbiBILiBhdCB0aGUNCj4gPj4+
+IGxhdGVzdCBFTENFIGJ1dCBhdCB0aGUgZW5kIHRoZSBiZXN0IHdheSB0byBmb2xsb3cgd2FzIHRv
+IGVuaGFuY2UNCj4gPj4+IG51bWJlciBvZiBkdHMgZmlsZXMuIFRoZSBiZXN0IHdvdWxkIGJlIHRv
+IGhhdmUgZGVkaWNhdGVkIGZvbGRlcnMgYnV0DQo+ID4+PiBpdCBpcyBhbm90aGVyIHN0b3J5Lg0K
+PiA+Pg0KPiA+PiBPciB1c2UgRFQgb3ZlcmxheXMgc29tZWhvdyA/IFUtQm9vdCBjYW4gYXBwbHkg
+RFRPcyBvbnRvIERUIGJlZm9yZQ0KPiA+PiBib290aW5nIExpbnV4Lg0KPiA+Pg0KPiA+PiBIYXZp
+bmcgdG9ucyBvZiBEVHMgb24gYSBzeXN0ZW0gaXMgYSBsb3Qgb2YgZHVwbGljYXRpb24sIEkgZG9u
+J3QNCj4gPj4gcmVhbGx5IGxpa2UgdGhhdC4NCj4gPg0KPiA+IEkgYWdyZWUgdGhhdCB0byBtYWlu
+dGFpbiBpdCdzIGEgbmlnaHRtYXJlLCBidXQgaXQncyBhIHdheSB0byBoZWxwIERUIHVzZXJzLg0K
+PiA+DQo+ID4+DQo+ID4+IEJ1dCBmb3Igc3RhcnRlcnMsIGZlZWwgZnJlZSB0byByZXZpZXcgdGhp
+cyBwYXRjaC4NCj4gPj4NCj4gPg0KPiA+IFlvdXIgcGF0Y2ggc291bmRzIGdvb2QuDQo+IA0KPiBU
+aGVuIGZlZWwgZnJlZSB0byBhcHBseSBpdCwgdGhhbmtzLg0KPiANCj4gYnR3IGRvbid0IHlvdSBo
+YXZlIGEgIm5leHQiIHRyZWUgc29tZXdoZXJlIHdpdGggYWxsIHRoZSBwYXRjaGVzIHF1ZXVlZCB1
+cCBmb3INCj4gbmV4dCByZWxlYXNlID8gSWYgSSByZWJhc2Ugb24gbGludXggbmV4dCwgSSBzdGls
+bCBoYXZlIHF1aXRlIGEgZmV3IHN0bTMybXAxIERUDQo+IHBhdGNoZXMgaW4gbXkgdHJlZSB3aGlj
+aCBhcmUgcHJlc3VtYWJseSBhcHBsaWVkLCBidXQgSSBkb24ndCBzZWUgdGhlbSBpbiBsaW51eCBu
+ZXh0Lg0KDQoNClllcyBidXQgaXQgaXMgbm90IG1lcmdlZCBpbnRvIExpbnV4LW5leHQuIFNlZTog
+Z2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2F0b3JndWUvc3Rt
+MzIuZ2l0DQoNCkJyYW5jaCBzdG0zMi1uZXh0DQoNCg0KX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
