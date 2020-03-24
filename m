@@ -2,69 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD542191161
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:44:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FEEE191164
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 14:45:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gTcOZP56JG2re91x00wVHZJPV/QwQOo3WhK85OWLKXA=; b=szBFO3igKSrUFI
-	FkVA9w+dK9Gjd9UbvR85/2WZM0PpI7u+KmGqojBi4ejO6CuaaJGjSXzEw844emAUkeW7cHFifqWN9
-	d7gNIDhm7LD0GcdAHSflhxlkRmsrxB2Bjdybg3dKbeHc9iHDTULd8A38VFcBZdc/0sr1z/ZnklLKI
-	4T5tQCSW6O/ZYhlkSj4haopFpEiO7Lvk6oiyk8h6a7a1MyViTTkbm4laiDAE45eXbxqOXi9kh0WIX
-	ykKUGRWr+T/zTZ3KqNcbm+KkLEHJgsSeLRHvknhxsdgti/fXdaMZR7tDJVngSKIis1wsJ2mMMV1NG
-	2DBdtmQvI4/wJw2Alnhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bazdxb9DBsqmJYVCw9DLrzxGPrHsphuycwOGlOhIodM=; b=WZ1jDc1Xet2AbYDTnjkACTRmO
+	RhdtxXn/wbxVIwKbuexYGM6nHdZ8deEUvtN7qLjS7cXJujSMfmw7r1sl7uXtpurg6dXOZTkMhClMm
+	QktQXOiE5Uq3wW5yjpc5zgWB2YDgQSPHhooCdtpuY2kaeibQh6DFTYbOq0pzCRBF6bNGSM+WvE6me
+	Wlgh5ZYjRG6zWbXikygJf5D5IBO6US8vV6BeqyCT2XXL9g6uQwiz1sDMupnsc66e3sejS91y3f6WJ
+	/MHtRVy/KT++dofpur8WhjMcXnX12SAQc4+XVbV5ccdQobGXZzhqFmuDKkh48mml8Vu+WOV7gjfjD
+	oEdKW4+Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGjqZ-0004aD-2H; Tue, 24 Mar 2020 13:43:59 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGjqN-0004ZY-1N
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 13:43:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=PGTJ624xy37YPjUynlw4h0mO/vuLMxq5CI5b1l8BwNQ=; b=Zigr7ijlBlsCbjDqY2gBPfgJ5B
- 9NpdDRp1mpKob3tjOb3hJ91xItaccKePY5zYCNI7qw0mhN10pZPgqBq6gdfY2ALZJ0XDq8oWFTbBz
- oulDnAoomL3KCBwxFX6Z7cZ1pRfKOqHQpj8PQe54dF5f1B6VjomSzRDs+BL8el642XyI=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jGjqC-0002NK-Vj; Tue, 24 Mar 2020 14:43:36 +0100
-Date: Tue, 24 Mar 2020 14:43:36 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH v3 10/14] net: axienet: Add mii-tool support
-Message-ID: <20200324134336.GZ3819@lunn.ch>
-References: <20200324132347.23709-1-andre.przywara@arm.com>
- <20200324132347.23709-11-andre.przywara@arm.com>
+	id 1jGjrQ-00050s-3g; Tue, 24 Mar 2020 13:44:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGjrG-00050K-VR; Tue, 24 Mar 2020 13:44:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 547291FB;
+ Tue, 24 Mar 2020 06:44:42 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD68E3F52E;
+ Tue, 24 Mar 2020 06:44:41 -0700 (PDT)
+Date: Tue, 24 Mar 2020 13:44:40 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+Subject: Re: [PATCH v2 1/3] dt-bindings: sound: convert rockchip spdif
+ bindings to yaml
+Message-ID: <20200324134440.GD7039@sirena.org.uk>
+References: <20200324123155.11858-1-jbx6244@gmail.com>
+ <20200324133506.GC7039@sirena.org.uk> <2135168.SEOWuCda4h@diego>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200324132347.23709-11-andre.przywara@arm.com>
+In-Reply-To: <2135168.SEOWuCda4h@diego>
+X-Cookie: I feel ... JUGULAR ...
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_064347_082420_3FC3588B 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_064443_057026_54B131A9 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,29 +65,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- Robert Hancock <hancock@sedsystems.ca>,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5367584705171457504=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 24, 2020 at 01:23:43PM +0000, Andre Przywara wrote:
-> mii-tool is useful for debugging, and all it requires to work is to wire
-> up the ioctl ops function pointer.
-> Add this to the axienet driver to enable mii-tool.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 
-Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+--===============5367584705171457504==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="/unnNtmY43mpUSKx"
+Content-Disposition: inline
 
-    Andrew
+
+--/unnNtmY43mpUSKx
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Mar 24, 2020 at 02:39:56PM +0100, Heiko St=FCbner wrote:
+> Am Dienstag, 24. M=E4rz 2020, 14:35:06 CET schrieb Mark Brown:
+
+> > This is the second v2 you've sent of this today
+
+> hmm at least when looking at my inbox ... I got one series for
+> spdif in v2 (this one) and one for i2s in v2. And yes they do look
+> somewhat identical in what they do but of course handle binding
+> changes for different controllers.
+
+Ah, this is one reason why I complain about subject lines - the
+extra dt-bindings at the front hides the difference in subject lines for
+me.
+
+--/unnNtmY43mpUSKx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56DscACgkQJNaLcl1U
+h9AX1gf/aMYAaXz2aq59CMWwQKWFUEAhfQ7OLuhs5LSFsPlUBZXUMot13HRqsiKz
+uwZgsBhO7MErfMs6l85z52J7uQ56RYXkIdfdm0m0PUVVyZsUxDHMKmV6xnS3NpHm
+f1COnrZDwRLRrP4qWCipkWJFRTF/9PynetTfYX456+g6aeBI7mNlO+OdY+EWis3v
+lMI5+/zO0RCkIgKb3qYp4gknlqYz+1HtIgu8RBy3JaDQk1BGNP85KFxRmGPyOe2U
+8H+Tu1uO9iIGgP7XAMJFsusQTC2QmPfhGH2GG9S/R2k+gZEjELOhcGtlfOl9+S+E
+gpQaRpbPjoAKtCy9IPoiy6watAt2ZA==
+=WwdV
+-----END PGP SIGNATURE-----
+
+--/unnNtmY43mpUSKx--
+
+
+--===============5367584705171457504==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5367584705171457504==--
+
