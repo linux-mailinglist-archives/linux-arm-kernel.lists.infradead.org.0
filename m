@@ -2,56 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421971904B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 05:55:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B982C1904EB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 06:23:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dejVPQI4noejCxaeuJ10OWDC8FDA3RWY6yML730AqwE=; b=dao1B6I06WggM7
-	+SBDue+120v0Jkt95lFcq91hxsOcD8L7xvAXKpT5e7puZseJLPEuUFU42Ob+djdY5VV0JaCRsclpj
-	nnLJ07mpC/sqBDJSigdQLtYf0/cw/f3vHyDka5wR/orh6Rrj8U8HlH1eVEG3BzmtwZjNC1sk9zIqE
-	IBUoMlFp48O423qiz+EukU6cAAWIKYI6L2qkidd1L+u269Qq1KB4Klkw51YKwJYGE3zKT1LcLt9Sh
-	aVNpthxnPOwSPOk81IXggdxwYpYdfHYXWtY56cxKVQzylZR6haxOoC2sDbwIrM4qnG5scvyLJdWW+
-	WCx2UL+0s2i6UFlf1qaA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tLm9/WYkIToNdiP99Hu8BB2N/x/kLargc9uK2zOaRUw=; b=Ffk
+	AQeJV7B0NwKoOD1h6WBbrVj/QcgP/qxguEEez081fc5eaMYCFo0eA0SZ7rAFewKPhTDkNTdV0oKJm
+	T0YNxjyumGV9d2nexnIUXUq3EI9nV5lXzIXRCHk9MXeAvNWYQRd08N4w3UllByPPruz4pKP7C2yxE
+	j4AX/d+2o7/RZkmmcbiYpzd59rLbeuG9bDEEwPJjv42AZZLgyFCLHZeZlHNmj3lsMwG98AyUajLem
+	glmoWdFnblJaHmkV4/0xUG3rb40Dn1PLKMpCQqls/yHmVFcnxZmZ1ZAbQaE8pAhz60hEhKYOZaTp+
+	L/MOpPvcSJjWQsTTGRlU6EVSu/sVw+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGbaH-0008O5-85; Tue, 24 Mar 2020 04:54:37 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGba7-0008NH-9f
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 04:54:29 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 233D3157A5EBC;
- Mon, 23 Mar 2020 21:54:23 -0700 (PDT)
-Date: Mon, 23 Mar 2020 21:54:22 -0700 (PDT)
-Message-Id: <20200323.215422.456286022120023020.davem@davemloft.net>
-To: zhengzengkai@huawei.com
-Subject: Re: [PATCH net-next] net: thunderx: remove set but not used
- variable 'tail'
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200323065116.45399-1-zhengzengkai@huawei.com>
-References: <20200323065116.45399-1-zhengzengkai@huawei.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Mon, 23 Mar 2020 21:54:23 -0700 (PDT)
+	id 1jGc2L-0000Bh-4X; Tue, 24 Mar 2020 05:23:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGc26-0000AM-Qo; Tue, 24 Mar 2020 05:23:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CB3F30E;
+ Mon, 23 Mar 2020 22:23:19 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.1.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6AE573F7C3;
+ Mon, 23 Mar 2020 22:27:15 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
+Date: Tue, 24 Mar 2020 10:52:52 +0530
+Message-Id: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_215427_340074_A00FECE1 
-X-CRM114-Status: UNSURE (   6.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200323_222322_959567_B862EE05 
+X-CRM114-Status: GOOD (  12.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,32 +57,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, ast@kernel.org, linux-kernel@vger.kernel.org,
- rrichter@marvell.com, sgoutham@marvell.com, bpf@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Zheng Zengkai <zhengzengkai@huawei.com>
-Date: Mon, 23 Mar 2020 14:51:16 +0800
+This series adds more arch page table helper tests. The new tests here are
+either related to core memory functions and advanced arch pgtable helpers.
+This also creates a documentation file enlisting all expected semantics as
+suggested by Mike Rapoport (https://lkml.org/lkml/2020/1/30/40).
 
-> From: Zheng zengkai <zhengzengkai@huawei.com>
-> 
-> Fixes gcc '-Wunused-but-set-variable' warning:
-> 
-> drivers/net/ethernet/cavium/thunder/nicvf_queues.c: In function nicvf_sq_free_used_descs:
-> drivers/net/ethernet/cavium/thunder/nicvf_queues.c:1182:12: warning:
->  variable tail set but not used [-Wunused-but-set-variable]
-> 
-> It's not used since commit 4863dea3fab01("net: Adding support for Cavium ThunderX network controller"),
-> so remove it.
-> 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: Zheng zengkai <zhengzengkai@huawei.com>
+This series has been tested on arm64 and x86 platforms. There is just one
+expected failure on arm64 that will be fixed when we enable THP migration.
 
-Applied, thank you.
+[   21.741634] WARNING: CPU: 0 PID: 1 at mm/debug_vm_pgtable.c:782
+
+which corresponds to
+
+WARN_ON(!pmd_present(pmd_mknotpresent(pmd_mkhuge(pmd))))
+
+There are many TRANSPARENT_HUGEPAGE and ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD
+ifdefs scattered across the test. But consolidating all the fallback stubs
+is not very straight forward because ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD is
+not explicitly dependent on ARCH_HAS_TRANSPARENT_HUGEPAGE.
+
+This series has been build tested on many platforms including the ones that
+subscribe the test through ARCH_HAS_DEBUG_VM_PGTABLE.
+
+This series is based on v5.6-rc7 after applying these following patches.
+
+1. https://patchwork.kernel.org/patch/11431277/
+2. https://patchwork.kernel.org/patch/11452185/
+
+Changes in V2:
+
+- Dropped CONFIG_ARCH_HAS_PTE_SPECIAL per Christophe
+- Dropped CONFIG_NUMA_BALANCING per Christophe
+- Dropped CONFIG_HAVE_ARCH_SOFT_DIRTY per Christophe
+- Dropped CONFIG_MIGRATION per Christophe
+- Replaced CONFIG_S390 with __HAVE_ARCH_PMDP_INVALIDATE
+- Moved page allocation & free inside swap_migration_tests() per Christophe
+- Added CONFIG_TRANSPARENT_HUGEPAGE to protect pfn_pmd()
+- Added CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD to protect pfn_pud()
+- Added a patch for other arch advanced page table helper tests
+- Added a patch creating a documentation for page table helper semantics
+
+Changes in V1: (https://patchwork.kernel.org/patch/11408253/)
+
+Cc: Jonathan Corbet <corbet@lwn.net>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Mike Rapoport <rppt@linux.ibm.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: Vasily Gorbik <gor@linux.ibm.com>
+Cc: Christian Borntraeger <borntraeger@de.ibm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: "H. Peter Anvin" <hpa@zytor.com>
+Cc: Kirill A. Shutemov <kirill@shutemov.name>
+Cc: Paul Walmsley <paul.walmsley@sifive.com>
+Cc: Palmer Dabbelt <palmer@dabbelt.com>
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-riscv@lists.infradead.org
+Cc: x86@kernel.org
+Cc: linux-doc@vger.kernel.org
+Cc: linux-arch@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (3):
+  mm/debug: Add tests validating arch page table helpers for core features
+  mm/debug: Add tests validating arch advanced page table helpers
+  Documentation/mm: Add descriptions for arch page table helpers
+
+ Documentation/vm/arch_pgtable_helpers.rst | 256 ++++++++++
+ mm/debug_vm_pgtable.c                     | 594 +++++++++++++++++++++-
+ 2 files changed, 839 insertions(+), 11 deletions(-)
+ create mode 100644 Documentation/vm/arch_pgtable_helpers.rst
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
