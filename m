@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC51A191A48
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 20:48:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9475191A4A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 20:49:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DvTUu+rNcpolaEhMwwNFC9EPrADGbpTNw9dP0H+aq50=; b=E7946ruK1v5vfY
-	uebDFRKbkVc3W2fBLZmpNeRjeaUpbwLZuYWHMW2xbqEe8lCnJ3CPRZseScZIOw7S1zgCpSd+BDic0
-	17l2blBYyNS43B7lzNnPyD+/SRF1JCKk+RnjUi34DAmvmQuc/Ml3jlxF6oE4AL5ZMbcwKNRfXwbN5
-	WcQyk4ZA5wEw+kjNaCstOx3Eaj6oIxDDe2SMuaog+nXaNi5RakNTNYnyh049FXdbWoq+Boau6a/to
-	qPiZN4Fqxs0T9YtR3SuI4wzneuGaJcIGV5bUH/z7lcVx6Vs/ptHCyWw3qkCXDguqvTe4tWaFJdIgj
-	Isevci0wZejRIglykxFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hn6FTGsVqo7k+S/5gT4CFf9laak1sU0iEZARyUPsrGI=; b=rdn0NPFyhPdCqo
+	7vflGaeIh1j0WZl9Q86h1djS2ocR951ucTFRHF0EXcdiqwEYaZ0hxDgNwqWd0ckeL84f7BhcIdB0J
+	bVkVD1AykVTy3LkCeMu9aW6N7ULsOo9IXQNI1LCG3E22Smdu1QIP55e8Q7X1q7Cbgt20QHwGRrL6Z
+	RH5jEIx7RUHBRpaLgoHQMY4ESNcQ6bpJbk/2XZ+eOeg0C3ILiAMl8r9iM6PNgYCohOglHC2vgtObb
+	LLKAGlNFlRsFXY0X//icZnkpStiG8bmMq5Ss0Xj5iW4o2AdXgj+wdHelJhKd3rMdytrQSxJ9bKOx+
+	Iuu2asiUg43fRnYStA7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGpXV-0004tk-SN; Tue, 24 Mar 2020 19:48:41 +0000
+	id 1jGpXm-0005CD-5s; Tue, 24 Mar 2020 19:48:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGpXJ-0004sh-TW
+ id 1jGpXJ-0004so-TX
  for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 19:48:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9249D31B;
- Tue, 24 Mar 2020 12:48:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C715BFEC;
+ Tue, 24 Mar 2020 12:48:27 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13C2A3F71F;
- Tue, 24 Mar 2020 12:48:24 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4BEB03F71F;
+ Tue, 24 Mar 2020 12:48:27 -0700 (PDT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH 0/3] arm64: Make NOP handling a whitelist
-Date: Tue, 24 Mar 2020 19:48:19 +0000
-Message-Id: <20200324194822.15682-1-broonie@kernel.org>
+Subject: [PATCH 1/3] arm64: insn: Don't assume unrecognized HINTs are NOPs
+Date: Tue, 24 Mar 2020 19:48:20 +0000
+Message-Id: <20200324194822.15682-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200324194822.15682-1-broonie@kernel.org>
+References: <20200324194822.15682-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_124830_000799_B00BC17A 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200324_124829_997944_2AD4F95B 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -71,23 +72,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we default to assuming any unrecognized instruction in the
-hint space can be safely handled as a NOP.  This is not robust and any
-code that really wants a NOP should be using the explicitly defined NOP
-so let's instead invert this and whitelist those instructions which it
-is safe to handle as NOPs.
+Currently the kernel assumes that any HINT which it does not explicitly
+recognise is a NOP.  This is not robust as new instructions may be added
+which need special handling, including recent extensions like PAC, and
+in any case software should only be using explicit NOP instructions for
+deliberate NOPs.
 
-Mark Brown (3):
-  arm64: insn: Don't assume unrecognized HINTs are NOPs
-  arm64: insn: Add constants for PAC and BTI instruction decode
-  arm64: insn: Report PAC and BTI instructions as NOPs
+This has the effect of rendering PAC and BTI instructions unprobeable
+which means that probes can't be inserted on the first instruction of
+functions built with those features.
 
- arch/arm64/include/asm/insn.h | 22 ++++++++++++++++++++--
- arch/arm64/kernel/insn.c      | 32 ++++++++++++++++++++++++--------
- 2 files changed, 44 insertions(+), 10 deletions(-)
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/kernel/insn.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-
-base-commit: f8788d86ab28f61f7b46eb6be375f8a726783636
+diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+index 4a9e773a177f..535a3a7a053e 100644
+--- a/arch/arm64/kernel/insn.c
++++ b/arch/arm64/kernel/insn.c
+@@ -58,14 +58,10 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
+ 		return false;
+ 
+ 	switch (insn & 0xFE0) {
+-	case AARCH64_INSN_HINT_YIELD:
+-	case AARCH64_INSN_HINT_WFE:
+-	case AARCH64_INSN_HINT_WFI:
+-	case AARCH64_INSN_HINT_SEV:
+-	case AARCH64_INSN_HINT_SEVL:
+-		return false;
+-	default:
++	case AARCH64_INSN_HINT_NOP:
+ 		return true;
++	default:
++		return false;
+ 	}
+ }
+ 
 -- 
 2.20.1
 
