@@ -2,90 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9457190261
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 01:02:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A05D1902B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 01:18:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mXCDu893fAX5E3D9UMaz486VucYRGXcWc58cjkq8gJw=; b=IQghYKMvyKlLWf
-	ZQG5U5vRttLlLPWE8KVduhv4WWdMDFCHq5S8wcaxiLRoJbZX05gCtyO+JE0TYat6wErURFOukiAo+
-	s8LYS74h4ecVt6XMsj4Jk2IlFnsOGrq3A40obyKnmBk1hGTcXaBB9cDre0gCXhPyO9zyhH5wmbpvL
-	2wLUisNElna8B0KV8CmfaFkmKuJHCW9bF/+GAu8bg/kNmg4djZAnGsCHaDEHoPhgHQrxuUYTtK+4W
-	sSjydmDNGb2qco50LCsE1MYdR3U3vEDc9G6PRYKL9oXjBzNGV9EEQk4IkFz118d0L3x0rRLwGUJSX
-	CmOBuizOxU0Z5bWATRQw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=APsPnYbVS0aGfbdnyNRn6gxiMM2yUuQ76755CuZdAyo=; b=u29Sx+gWaX9X3u
+	+9g533/Terkg7nR3ja9I0Zj/AY3a67meJSuFsDZA0LvUMJmV4Fo25fAoCNzPGEw4evciP6YlnafTe
+	cP6wTpbyJ/M68gsPNyyQzZJnLjr4D5E7JPd6/Q7eRPFWsdcHC6k6XhCx8lEG8iG/WMElvSynzWQhB
+	RWyK0v2v3ZYxJDP+u5f4A18c1EdgqzZqnZMqH7CogR+u5SxF7r3uvjm0t1Wlfzny2M4zPfzMqWIvQ
+	lesO24a9Qr1UkdtQ32lp7k8vf0SjEwaGaLuw94YRrUgyA4eDlZHQz972n5Y16Goh2gIooKorqYTvD
+	0l52X7k2KAJvikRmFq5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGX1X-0001Z2-JH; Tue, 24 Mar 2020 00:02:27 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jGXGg-0006qi-Ap; Tue, 24 Mar 2020 00:18:06 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGX1P-0001YW-5a
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 00:02:20 +0000
-Received: by mail-pl1-x643.google.com with SMTP id g6so6640486plt.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Mar 2020 17:02:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=FMJ8LYsOHCuxBqPm4WnPrre6tQnfFkDx3c9qEXiQywU=;
- b=aO/UHxQdGJRQXfe0gajEMy3sGlCxXRCc3f+LSbVWpchMNbVtKZlSBDkpbbwIq1wKKB
- l5LEj159s+8HKvRrWNsXpJ4o9nzeKqe/Bwt2n2HOwnq6c6ea2JdA304hfC5uwxVTWY3s
- CvBgDzZy77UyIYQ6nDbajdddwlhO2KtcrgZ9gKvon0KDcq6Rq8l1KDNq1Fak+VeYN7vo
- rU3ZxVAI4/u+gyyF0rwE+TtBqUlRA4/zknSEDLxE/82GNcxCXf+oUQjbVj3Fj2wsZ5OY
- mEvRKcuBOyBREANNxCGGIDLP7tR7ggXVT38pM2wvgc6Td4ZMmMXjeIkGmVWRoNuZ9pP7
- l7fQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=FMJ8LYsOHCuxBqPm4WnPrre6tQnfFkDx3c9qEXiQywU=;
- b=KInyixwYiibb865/SthLmEXbTqzRPLvix7HEGn23ViOjrNw6NgcDl0IvN25akXprly
- z+Cmos9IAXWODc6MJJ82H1e6TduAzgfkfJ3p2stGUNqkE5TdKGqet4eND8zQpZfk6LkV
- 3ub9/lDLTSfpqKABx/z4gjiglQjOxb9g9Bys3LH5GnB/l/6SnQAQSMFPyr6FoAb0bQNp
- vL5RBdVB/Dnx+VDzpb5ATBCoWKG+QejWa698/QR7IVm0C+S8rV0rqgcMe81hH0YxZUBk
- yXex+Q++ukenUeCGW0swnhFv03UOCkF/Ji190fPW/UQcMRBHuaiQKIJXja6lSroEZjcM
- 1wJw==
-X-Gm-Message-State: ANhLgQ3YZ/WC0+iz0bS2kIPA7Cg44aaZETzKGwiP8VFAwe4L6dFGPOro
- 1O+ZIf+kA3L2bbbbei8cyLwAy2Ci
-X-Google-Smtp-Source: ADFU+vt4eSDrMXwiJThWBk2KCPEqmaH+a6P8AsrouFAy5qucFrUDbg4uFbP014TWoquAwITfNMAoIg==
-X-Received: by 2002:a17:902:a701:: with SMTP id
- w1mr21873666plq.165.1585008138501; 
- Mon, 23 Mar 2020 17:02:18 -0700 (PDT)
-Received: from mail.google.com ([149.248.10.52])
- by smtp.gmail.com with ESMTPSA id z63sm13434476pgd.12.2020.03.23.17.02.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 23 Mar 2020 17:02:17 -0700 (PDT)
-Date: Tue, 24 Mar 2020 00:02:15 +0000
-From: Changbin Du <changbin.du@gmail.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: Two questions about cache coherency on arm platforms
-Message-ID: <20200324000214.xl7aomdboyby3b4g@mail.google.com>
-References: <20200323123524.w67fici6oxzdo665@mail.google.com>
- <20200323131720.GE2597@C02TD0UTHF1T.local>
- <20200323161537.ptjrihqotgmon7tr@mail.google.com>
- <20200323164723.GA8652@lakrids.cambridge.arm.com>
+ id 1jGXGU-0006oj-Uz; Tue, 24 Mar 2020 00:17:56 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02O09YG8101123;
+ Tue, 24 Mar 2020 00:16:57 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=qucvghpoTdILPTGy1ayS/oGNuZVW39YLrBCxVQGMlkI=;
+ b=aqvpMirKBt1NJdtlsrSKhG0fCcNDi73oMY445HOPQD+iQDukide0Gq6NBKjUZ2dn9zUA
+ moSyOm1QxcZjgH/GkKKncTrzTpECJnoALJ7Zu1eGMPYX9OqD1CJJOX55NEDWgMGpm5rh
+ gv9qoNBF1/gVOpiIhxNFWUdF8eHT+5vcXg/Of8GzT1/ehfvJAsncLuNWSlubn/OxjzwC
+ iU7SxxMYR2MJLx8/26Ws0FrylblAoVfzLWJ88IGseK6X67t2WS6Bei/Lhk6oPBjFhEky
+ I30desApPc5awCny1pkMcA5X1oy9E/f+MhCdLYASjcAUKrO2ga1OrqnSfu4Cgk0uW5ka Wg== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2ywabr1hu4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 24 Mar 2020 00:16:57 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02O07oaW152173;
+ Tue, 24 Mar 2020 00:16:56 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2yxw6kj6yb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 24 Mar 2020 00:16:56 +0000
+Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 02O0Gh8a030687;
+ Tue, 24 Mar 2020 00:16:43 GMT
+Received: from [192.168.1.206] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 23 Mar 2020 17:16:43 -0700
+Subject: Re: [PATCH 3/4] hugetlbfs: remove hugetlb_add_hstate() warning for
+ existing hstate
+To: Mina Almasry <almasrymina@google.com>
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-4-mike.kravetz@oracle.com>
+ <CAHS8izN1Q+yiZq8zcU8hoojafcQ19W7XQx-HyFm3Ud8hSvN1Nw@mail.gmail.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <54fd7234-bdd9-de78-9351-16706bae2c08@oracle.com>
+Date: Mon, 23 Mar 2020 17:16:38 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323164723.GA8652@lakrids.cambridge.arm.com>
-User-Agent: NeoMutt/20180716-508-7c9a6d
+In-Reply-To: <CAHS8izN1Q+yiZq8zcU8hoojafcQ19W7XQx-HyFm3Ud8hSvN1Nw@mail.gmail.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9569
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ adultscore=0
+ malwarescore=0 mlxscore=0 spamscore=0 mlxlogscore=999 bulkscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003230120
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9569
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ suspectscore=0
+ lowpriorityscore=0 malwarescore=0 phishscore=0 priorityscore=1501
+ clxscore=1015 adultscore=0 mlxscore=0 mlxlogscore=999 bulkscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003230120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_170219_232872_5FD44D36 
-X-CRM114-Status: GOOD (  20.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_171755_045722_53DF8365 
+X-CRM114-Status: GOOD (  27.97  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [changbin.du[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +100,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,53 +112,225 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Changbin Du <changbin.du@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Linux-MM <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ open list <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S.Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBNYXIgMjMsIDIwMjAgYXQgMDQ6NDc6MjRQTSArMDAwMCwgTWFyayBSdXRsYW5kIHdy
-b3RlOgo+IE9uIE1vbiwgTWFyIDIzLCAyMDIwIGF0IDA0OjE1OjQwUE0gKzAwMDAsIENoYW5nYmlu
-IER1IHdyb3RlOgo+ID4gSGkgTWFyaywKPiA+IFRoYW5rcyBmb3IgeW91ciBhbnN3ZXIuIEkgc3Rp
-bGwgZG9uJ3QgdW5kZXJzdGFuZCB0aGUgZmlyc3QgcXVlc3Rpb24uCj4gPiAKPiA+IE9uIE1vbiwg
-TWFyIDIzLCAyMDIwIGF0IDAxOjE3OjIwUE0gKzAwMDAsIE1hcmsgUnV0bGFuZCB3cm90ZToKPiA+
-ID4gT24gTW9uLCBNYXIgMjMsIDIwMjAgYXQgMDg6MzU6MjZQTSArMDgwMCwgQ2hhbmdiaW4gRHUg
-d3JvdGU6Cj4gPiA+ID4gSGksIEFsbCwKPiA+ID4gPiBJIGFtIG5vdCB2ZXJ5IGZhbWlsaWFyIHdp
-dGggQVJNIHByb2Nlc3NvcnMuIEkgaGF2ZSB0d28gcXVlc3Rpb25zIGFib3V0Cj4gPiA+ID4gY2Fj
-aGUgY29oZXJlbmN5LiBDb3VsZCBhbnlvbmUgaGVscCBtZT8KPiA+ID4gPiAKPiA+ID4gPiAxLiBI
-b3cgaXMgY2FjaGUgY29oZXJlbmN5IG1haW50ZW5hbmNlZCBvbiBBUk12OCBiaWcuTElUVExFIHN5
-c3RlbT8KPiA+ID4gPiBBcyBmYXIgYXMgSSBrbm93LCBiaWcgY29yZXMgYW5kIGxpdHRsZSBjb3Jl
-cyBhcmUgaW4gc2VwZXJhdGUgY2x1c3RlcnMgb24KPiA+ID4gPiBiaWcuTElUVExFIHN5c3RlbS4K
-PiA+ID4gCj4gPiA+IFRoaXMgaXMgb2Z0ZW4gdHJ1ZSwgYnV0IG5vdCBhbHdheXMgdGhlIGNhc2Uu
-IEZvciBleGFtcGxlLCB3aXRoIERTVSBiaWcKPiA+ID4gYW5kIGxpdHRsZSBjb3JlcyBjYW4gYmUg
-cGxhY2VkIHdpdGhpbiB0aGUgc2FtZSBjbHVzdGVyLgo+ID4gCj4gPiBZZXMsIGl0IGlzIHR1cmUg
-Zm9yIER5bmFtSVEgdGhhdCBibCBjb3JlcyBjYW4gYmUgcGxhY2VkIHdpdGhpbiB0aGUgc2FtZSBj
-bHVzdGVyLgo+ID4gQnV0IEkgZG9uJ3QgdW5kZXJzdGFuZCBob3cgbGludXggc3VwcG9ydCBiaWcu
-TElUVExFIGJlZm9yZSBEeW5hbUlRLgo+IAo+IE11bHRpcGxlIGNsdXN0ZXJzIGNhbiBiZSBpbiB0
-aGUgc2FtZSBJbm5lciBTaGFyZWFibGUgZG9tYWluLCBhbmQgTGludXgKPiByZWxpZXMgb24gdGhp
-cyBiZWluZyB0aGUgY2FzZSBmb3Igc3lzdGVtcyBpdCBzdXBwb3J0cy4gSXQncyBwb3NzaWJsZSB0
-bwo+IGJ1aWxkIGEgc3lzdGVtIHdoZXJlIGNsdXN0ZXJzIGFyZSBpbiBkaXN0aW5jdCBJbm5lciBT
-aGFyZWFibGUgZG9tYWlucywKPiBidXQgTGludXggZG9lcyBub3Qgc3VwcG9ydCB1c2luZyBhbGwg
-Y29yZXMgb24gc3VjaCBhIHN5c3RlbS4KPiAKPiBFdmVuIHdpdGggQ0NJLCBDQ04sIENNTiwgZXRj
-LCBMaW51eCByZXF1aXJlcyB0aGF0IGFsbCBjb3JlcyAod2hpY2ggaXQgaXMKPiB0b2xkIGFib3V0
-KSBhcmUgaW4gdGhlIHNhbWUgSW5uZXIgU2hhcmVhYmxlIGRvbWFpbi4gVGhhdCBpcyB3aGF0IGlz
-Cj4gY29tbW9ubHkgYnVpbHQuCj4KVGhhbmsgeW91LCBJIHNlZSBub3cuIEkgdGhvdWdodCBjbHVz
-dGVycyBtdXN0IGJlIGluIGRpc3RpbmN0IElubmVyClNoYXJlYWJsZSBkb21haW5zLiBTbyBJIHdh
-cyB3cm9uZy4gVGhlIG1hbm51YWwgaXMgc29tZXdoYXQgbWlzbGVhZGluZy4KCj4gPiBJIHJlYWQg
-YmVsb3cgZGVzY3JpcHRpb24gaW4gQVJNIENvcnRleC1BIFNlcmllcyBQcm9ncmFtbWVy4oCZcyBH
-dWlkZSBmb3IKPiA+IEFSTXY4LUEuCj4gPiAgfCBiaWcuTElUVExFIHNvZnR3YXJlIG1vZGVscyBy
-ZXF1aXJlIHRyYW5zcGFyZW50IGFuZCBlZmZpY2llbnQgdHJhbnNmZXIgb2YgZGF0YSBiZXR3ZWVu
-IGJpZyBhbmQgTElUVExFIGNsdXN0ZXJzLgo+ID4gIHwgQ29oZXJlbmN5IGJldHdlZW4gY2x1c3Rl
-cnMgaXMgcHJvdmlkZWQgYnkgYSBjYWNoZS1jb2hlcmVudCBpbnRlcmNvbm5lY3Qgc3VjaCBhcyB0
-aGUgQVJNIENvcmVMaW5rIENDSS00MDAgZGVzY3JpYmVkIGluIENoYXB0ZXIgMTQuCj4gPiAKPiA+
-IFNvIEkgdGhpbmsgIGJpZyBjb3JlcyBhbmQgbGl0dGxlIGNvcmVzIGFyZSBpbiBkaWZmZXJlbnQg
-Y2x1c3RlcnMgaW4gdGhpcwo+ID4gY2FzZS4gVGhlbiB3ZSBhcmUgbm90IHdpdGhpbiB0aGUgc2Ft
-ZSBJbm5lciBTaGFyZWFibGUgZG9tYWluPwo+IAo+IExpbnV4IHJlcXVpcmVzIHRoYXQgdGhvc2Ug
-Y2x1c3RlcnMgYXJlIGluIHRoZSBzYW1lIElubmVyIFNoYXJlYWJsZQo+IGRvbWFpbiwgYW5kIHRo
-YXQncyB3aGF0IHBlb3BsZSAobW9zdGx5KSBidWlsZCB0b2RheS4KPiAKPiBUaGFua3MsCj4gTWFy
-ay4KCi0tIApDaGVlcnMsCkNoYW5nYmluIER1CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 3/23/20 5:01 PM, Mina Almasry wrote:
+> On Wed, Mar 18, 2020 at 3:07 PM Mike Kravetz <mike.kravetz@oracle.com> wrote:
+>>
+>> The routine hugetlb_add_hstate prints a warning if the hstate already
+>> exists.  This was originally done as part of kernel command line
+>> parsing.  If 'hugepagesz=' was specified more than once, the warning
+>>         pr_warn("hugepagesz= specified twice, ignoring\n");
+>> would be printed.
+>>
+>> Some architectures want to enable all huge page sizes.  They would
+>> call hugetlb_add_hstate for all supported sizes.  However, this was
+>> done after command line processing and as a result hstates could have
+>> already been created for some sizes.  To make sure no warning were
+>> printed, there would often be code like:
+>>         if (!size_to_hstate(size)
+>>                 hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT)
+>>
+>> The only time we want to print the warning is as the result of command
+>> line processing.  So, remove the warning from hugetlb_add_hstate and
+>> add it to the single arch independent routine processing "hugepagesz=".
+>> After this, calls to size_to_hstate() in arch specific code can be
+>> removed and hugetlb_add_hstate can be called without worrying about
+>> warning messages.
+>>
+>> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
+>> ---
+>>  arch/arm64/mm/hugetlbpage.c   | 16 ++++------------
+>>  arch/powerpc/mm/hugetlbpage.c |  3 +--
+>>  arch/riscv/mm/hugetlbpage.c   |  2 +-
+>>  arch/sparc/mm/init_64.c       | 19 ++++---------------
+>>  arch/x86/mm/hugetlbpage.c     |  2 +-
+>>  mm/hugetlb.c                  | 10 +++++++---
+>>  6 files changed, 18 insertions(+), 34 deletions(-)
+>>
+>> diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+>> index 4aa9534a45d7..050809e6f0a9 100644
+>> --- a/arch/arm64/mm/hugetlbpage.c
+>> +++ b/arch/arm64/mm/hugetlbpage.c
+>> @@ -441,22 +441,14 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
+>>         clear_flush(vma->vm_mm, addr, ptep, pgsize, ncontig);
+>>  }
+>>
+>> -static void __init add_huge_page_size(unsigned long size)
+>> -{
+>> -       if (size_to_hstate(size))
+>> -               return;
+>> -
+>> -       hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
+>> -}
+>> -
+>>  static int __init hugetlbpage_init(void)
+>>  {
+>>  #ifdef CONFIG_ARM64_4K_PAGES
+>> -       add_huge_page_size(PUD_SIZE);
+>> +       hugetlb_add_hstate(ilog2(PUD_SIZE) - PAGE_SHIFT);
+>>  #endif
+>> -       add_huge_page_size(CONT_PMD_SIZE);
+>> -       add_huge_page_size(PMD_SIZE);
+>> -       add_huge_page_size(CONT_PTE_SIZE);
+>> +       hugetlb_add_hstate(ilog2(CONT_PMD_SIZE) - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(PMD_SIZE) - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(ilog2(CONT_PTE_SIZE) - PAGE_SHIFT);
+>>
+>>         return 0;
+>>  }
+>> diff --git a/arch/powerpc/mm/hugetlbpage.c b/arch/powerpc/mm/hugetlbpage.c
+>> index 166960ba1236..f46464ba6fb4 100644
+>> --- a/arch/powerpc/mm/hugetlbpage.c
+>> +++ b/arch/powerpc/mm/hugetlbpage.c
+>> @@ -584,8 +584,7 @@ static int __init add_huge_page_size(unsigned long long size)
+>>         if (!arch_hugetlb_valid_size(size))
+>>                 return -EINVAL;
+>>
+>> -       if (!size_to_hstate(size))
+>> -               hugetlb_add_hstate(shift - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(shift - PAGE_SHIFT);
+>>         return 0;
+>>  }
+>>
+>> diff --git a/arch/riscv/mm/hugetlbpage.c b/arch/riscv/mm/hugetlbpage.c
+>> index bdf89d7eb714..beaa91941db8 100644
+>> --- a/arch/riscv/mm/hugetlbpage.c
+>> +++ b/arch/riscv/mm/hugetlbpage.c
+>> @@ -26,7 +26,7 @@ bool __init arch_hugetlb_valid_size(unsigned long long size)
+>>  static __init int gigantic_pages_init(void)
+>>  {
+>>         /* With CONTIG_ALLOC, we can allocate gigantic pages at runtime */
+>> -       if (IS_ENABLED(CONFIG_64BIT) && !size_to_hstate(1UL << PUD_SHIFT))
+>> +       if (IS_ENABLED(CONFIG_64BIT))
+>>                 hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
+>>         return 0;
+>>  }
+>> diff --git a/arch/sparc/mm/init_64.c b/arch/sparc/mm/init_64.c
+>> index 5c29203fd460..8f619edc8f8c 100644
+>> --- a/arch/sparc/mm/init_64.c
+>> +++ b/arch/sparc/mm/init_64.c
+>> @@ -325,23 +325,12 @@ static void __update_mmu_tsb_insert(struct mm_struct *mm, unsigned long tsb_inde
+>>  }
+>>
+>>  #ifdef CONFIG_HUGETLB_PAGE
+>> -static void __init add_huge_page_size(unsigned long size)
+>> -{
+>> -       unsigned int order;
+>> -
+>> -       if (size_to_hstate(size))
+>> -               return;
+>> -
+>> -       order = ilog2(size) - PAGE_SHIFT;
+>> -       hugetlb_add_hstate(order);
+>> -}
+>> -
+>>  static int __init hugetlbpage_init(void)
+>>  {
+>> -       add_huge_page_size(1UL << HPAGE_64K_SHIFT);
+>> -       add_huge_page_size(1UL << HPAGE_SHIFT);
+>> -       add_huge_page_size(1UL << HPAGE_256MB_SHIFT);
+>> -       add_huge_page_size(1UL << HPAGE_2GB_SHIFT);
+>> +       hugetlb_add_hstate(HPAGE_64K_SHIFT - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(HPAGE_SHIFT - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(HPAGE_256MB_SHIFT - PAGE_SHIFT);
+>> +       hugetlb_add_hstate(HPAGE_2GB_SHIFT - PAGE_SHIFT);
+>>
+>>         return 0;
+>>  }
+>> diff --git a/arch/x86/mm/hugetlbpage.c b/arch/x86/mm/hugetlbpage.c
+>> index dd3ed09f6c23..8a3f586e1217 100644
+>> --- a/arch/x86/mm/hugetlbpage.c
+>> +++ b/arch/x86/mm/hugetlbpage.c
+>> @@ -195,7 +195,7 @@ bool __init arch_hugetlb_valid_size(unsigned long long size)
+>>  static __init int gigantic_pages_init(void)
+>>  {
+>>         /* With compaction or CMA we can allocate gigantic pages at runtime */
+>> -       if (boot_cpu_has(X86_FEATURE_GBPAGES) && !size_to_hstate(1UL << PUD_SHIFT))
+>> +       if (boot_cpu_has(X86_FEATURE_GBPAGES))
+>>                 hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
+>>         return 0;
+>>  }
+>> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
+>> index cd4ec07080fb..cc85b4f156ca 100644
+>> --- a/mm/hugetlb.c
+>> +++ b/mm/hugetlb.c
+>> @@ -3116,8 +3116,7 @@ static int __init hugetlb_init(void)
+>>                 }
+>>
+>>                 default_hstate_size = HPAGE_SIZE;
+>> -               if (!size_to_hstate(default_hstate_size))
+>> -                       hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
+>> +               hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
+>>         }
+>>         default_hstate_idx = hstate_index(size_to_hstate(default_hstate_size));
+>>         if (default_hstate_max_huge_pages) {
+>> @@ -3155,7 +3154,6 @@ void __init hugetlb_add_hstate(unsigned int order)
+>>         unsigned long i;
+>>
+>>         if (size_to_hstate(PAGE_SIZE << order)) {
+>> -               pr_warn("hugepagesz= specified twice, ignoring\n");
+>>                 return;
+>>         }
+>>         BUG_ON(hugetlb_max_hstate >= HUGE_MAX_HSTATE);
+>> @@ -3231,6 +3229,12 @@ static int __init hugepagesz_setup(char *s)
+>>                 return 0;
+>>         }
+>>
+>> +       if (size_to_hstate(size)) {
+>> +               pr_warn("HugeTLB: hugepagesz %s specified twice, ignoring\n",
+>> +                       saved_s);
+>> +               return 0;
+>> +       }
+>> +
+> 
+> Not too familiar with the code but I'm a bit confused by this print.
+> AFAICT this prints the warning when hugepagesz= refers to a hugepage
+> that is already added via hugetlb_add_hstate, but there is a default
+> hstate added here without the user specifying hugepagesz, no?
+
+Correct.
+
+>                                                               Does
+> that mean the warning prints if you specify this size?
+
+The code which adds the default hstate (in hugetlb_init) runs after this
+code which is reading/processing command line options.  So, the case you
+are concerned with will not happen.
+
+Thanks for taking a look,
+-- 
+Mike Kravetz
+
+> 'HugeTLB: hugepage size already supported: xxxxx' or
+> 'HugeTLB: hugepage size xxxx specified twice or is default size, ignoring.'
+> 
+> Or don't print anything if it's the default size.
+> 
+>>         hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
+>>         return 1;
+>>  }
+>> --
+>> 2.24.1
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
