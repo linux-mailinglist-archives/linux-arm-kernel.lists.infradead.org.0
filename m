@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FF60191572
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:59:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6D7F191573
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y+C+3T05jzJ4jBV9DSEwPoeHy0CzXi2qa+gheVd765Y=; b=Jd/g3IUzH4DGEM
-	JqjC/0tCYJu2mseNdE4I4W5wew2RXooZi2BEusy0t3EDt99K7p2ZckpGsBxM+CG1iSQryp5+hqFT3
-	yiXe8Nueut+BnMB42okECds0aKPM24O5NkHnt3GF1alM7NUtFiJ4uWQbCd6wjT/IwmbJofyhkIubp
-	OeuNiOiNG8/YF7QHVOEmxmFDKYCCvfOFOa9HGSIK8A8A+j/R6IyXQV1waG/opJubEYQfF0Hf72OUD
-	5HwtxmpxDBDn1u+s7nbV5VDFu24D578aDJdydmlC8TLirMYQ5zgPW6UGkEpw2VhgvleZNriW4vPje
-	q3hexgAAAzUvnho45w4w==;
+	List-Owner; bh=lgzSG5/Bx+uLm+sRLs31UqM+nx3AofMZgtYxAGEowE0=; b=b3UvQXIJpw8QUT
+	5WnZRGzXiYg4nNfp2Vlf80+/wrMpUJ5rH9Pn0pAlrURmjF7y258Eh2ZJXyvFrGLDs8iMczIjCPndZ
+	BDpNSXzzvzJLgzV3VH2ZL0Sgs1Q7lwwkbyXVuqnW112UBEM/VIHJgAn+mw29L7S8OnyO5dtXynzUY
+	SYsIv86gm4rBegCuxmjY1gnxDH3oavJ9/h2ggZfCEegU1VBUAindXbXFx98dahBiy8M69x0VVIDDX
+	Lj/2SXr3GlKYHJL6DpwmLeiEEb15ulX12vH/95QQInw3y8Ohsf0xecuogg3sgF1bFZ3oPTO+o40b4
+	sDNA/owEPrhowhWwQz3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGlxd-0002CU-05; Tue, 24 Mar 2020 15:59:25 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jGlxr-0002T0-05; Tue, 24 Mar 2020 15:59:39 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGlx5-0001z7-VD
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:58:53 +0000
-Received: by mail-wm1-x344.google.com with SMTP id l20so4101155wmi.3
+ id 1jGlx7-0001zl-V6
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:58:55 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a81so4012361wmf.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 08:58:51 -0700 (PDT)
+ Tue, 24 Mar 2020 08:58:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=YPXTp5qjoojtUwOKaMWOgJgogwlThEl+Qmy36Dg38C4=;
- b=rpETRG8x+xc/5PfrYyKYVF+Ev/1UU28xWSwJ/lIdcjZeII+np4CR48UpGRcAW564Nu
- g3pDbDoAxM2+wDvnkry0RFVNjw3i64fcDBHOCDJIbc4RG807J7jhcEY3e5gcIF6crN8A
- t7OTB1nM/7LsLuPvJo/9VyADD141EJCIWQbEyLxOLHQw1FISRUx9gXJ1hu/sPxDtMla4
- uhlORhEcvmPjdGcuaKIcn47ZYhs1pghTucxRC8QfH/IFJBhaUaly6Pr4YMCPZm5A4ZNM
- /wtpy1R0YfUhOWoZLsOpOeI3NPGkK/jsr5yaJoVbiZhOMhgO5r99si0CijMm/skADJW9
- EXjw==
+ bh=XPYOl9OSvnlb7pbajpjD/KFcLeeFx7WRfchUdrcylgw=;
+ b=YHsHf9RCWJ9Rkt8w6oePRTlQPhaIlN8o9yI18GdZk6d549IZQI9P0+hsaofIYyEuYJ
+ Pu4WSGVwS4cBplZPuQ3WqdbIeCm+pJ8I7Q55t8f5yS57f49NCTL6DeIx97+mL4ijqlXM
+ Sy+4gHnjl43p9nDSLap7RJ3f7oMqOMH7TO1cruo0H8JyPGX9id6qeoDIJzaTjBskAav7
+ uQu6aJZCeEM/zClNuaDzR74lg++HuvFmB41duTI54392uEqAuGclZmUHHpfCUabph7fX
+ BFrXxCxj3bYBkmJuiK7X8NVRLWhBcm8zMQchXuJ3gpD9r3GZhHgLzqyaMcFTyTbxfKVf
+ ufJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=YPXTp5qjoojtUwOKaMWOgJgogwlThEl+Qmy36Dg38C4=;
- b=ZdQW3NwtRH1YXU/iP1l3EZDCY/y3TJLzRHXNy6AMeyUJ33WwfGlo45zYt7YjERHW/l
- k3ytd9PfOCIAYbROv1REEGBS2VhYO+7ldiRjpwJ5GpEHE0xVcqqhqN7IEIOXLHV/3HZj
- dwDt0xQfyFZVQaDUBWusZ28wJyd3SItCpqePnETlABMQbvCw1HItQrmvSDpgmZ2HiKKZ
- ehqPm8SRPOU0OsFgOeEI2tDFx1mApRhVkgcI7GH88EPKfEX7tFGVLRhgc+wydjSYy4I4
- 4oYeXgY5+QLuKhk8m6l+pnCNhoxTejGSF/fHj3T9Xy0yIzesfreXOneFUHd9nC74ocKv
- TxpQ==
-X-Gm-Message-State: ANhLgQ3UnEYJR7UmfqxXEgc+NNb7GAeb3vRTf7DCrmvcbVqSl0CSkR8L
- XUOodcOfi8Wz6NNnBYf+JO+z/g==
-X-Google-Smtp-Source: ADFU+vuRoADbG3q5yu8n7Ne4gC1B+yIMrcsW6YQOOMW3QmgdTv3+DZKX3n2h4/mdvGaZ4ajDaV5cpA==
-X-Received: by 2002:a7b:ca4e:: with SMTP id m14mr6099145wml.164.1585065530480; 
- Tue, 24 Mar 2020 08:58:50 -0700 (PDT)
+ bh=XPYOl9OSvnlb7pbajpjD/KFcLeeFx7WRfchUdrcylgw=;
+ b=hiDvvdUPPGxqyj5LSi9+CTi+rTQZdMCQYROby1oZD4CwvJ5b2n4ZZfRCHqiDvA3IGT
+ X4uP7oJgjiM5TVi/tRNUam+2EX9CAz3Up0kYbHtS6E++itUpQqqyTslF7Wgyq9+I3320
+ wOOvhIrAcY8TZSt9vt8sWQBO8Q0XHgZ2HtHdI82F1+iBPJFV2vb8RJ/opPCScPbRpE+6
+ 8Kz7YfsBMGaS7UHSaaMODZvgNia1c64ArahQSS0BM0HEQvpYHsU3tGrfsGioAiZnY+P1
+ 500AA2dBkYPfxYZ5GR/+7reQKluNlXDRcQAur+QEyeeGHVhcmODVz4o3bhIG8Z3Smdf6
+ UJdQ==
+X-Gm-Message-State: ANhLgQ2/sTbi8DmevoRbvMO/lz1HLhnvNEMxyWgMObuM699yjWNueT53
+ NWS/o8Uhy69sBOY476IsvqjNbw==
+X-Google-Smtp-Source: ADFU+vuZkUbQmRe+H1djjQ4pvSEQwOP24JfoxEbqOVwByz2BSkhjvCiifE7uaI//6oPP5ccMUuMJrA==
+X-Received: by 2002:a1c:9ecb:: with SMTP id h194mr6657099wme.49.1585065531892; 
+ Tue, 24 Mar 2020 08:58:51 -0700 (PDT)
 Received: from xps7590.local ([2a02:2450:102f:13b8:e15d:2127:89a:e5dc])
- by smtp.gmail.com with ESMTPSA id t124sm4993321wmg.13.2020.03.24.08.58.49
+ by smtp.gmail.com with ESMTPSA id t124sm4993321wmg.13.2020.03.24.08.58.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 08:58:49 -0700 (PDT)
+ Tue, 24 Mar 2020 08:58:51 -0700 (PDT)
 From: Robert Foss <robert.foss@linaro.org>
 To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
@@ -65,23 +65,23 @@ To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Loic Poulain <loic.poulain@linaro.org>, Luca Weiss <luca@z3ntu.xyz>
-Subject: [v3 1/6] arm64: dts: msm8916: Add i2c-qcom-cci node
-Date: Tue, 24 Mar 2020 16:58:37 +0100
-Message-Id: <20200324155843.10719-2-robert.foss@linaro.org>
+Subject: [v3 2/6] arm64: dts: apq8016-sbc: Add CCI/Sensor nodes
+Date: Tue, 24 Mar 2020 16:58:38 +0100
+Message-Id: <20200324155843.10719-3-robert.foss@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200324155843.10719-1-robert.foss@linaro.org>
 References: <20200324155843.10719-1-robert.foss@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_085852_003090_179E4F26 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200324_085854_000911_AB824AE0 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,7 +111,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Loic Poulain <loic.poulain@linaro.org>
 
-The msm8916 CCI controller provides one CCI/I2C bus.
+Add cci device to msm8916.dtsi.
+Add default 96boards camera node for db410c (apq8016-sbc).
 
 Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
 Signed-off-by: Robert Foss <robert.foss@linaro.org>
@@ -119,52 +120,112 @@ Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
 
 Changes since v1:
- - Add label to cci node
- - Sort cci node by address
- - Relabel cci0 i2c bus to cci-i2c0
+ - Reference CCI by label
+ - Don't use generic node names
+ - Move regulator nodes out of /soc
+ - Use CCI label and move node out of /soc
+ - Use reference for camss and move node out of /soc
+ - Use reference for cci-i2c0 and move out of /cci
+ - Disable camera_read by default, since no mezzanine board is guaranteed
 
 
- arch/arm64/boot/dts/qcom/msm8916.dtsi | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi | 76 +++++++++++++++++++++++
+ 1 file changed, 76 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-index 9f31064f2374..1d5cb3fef906 100644
---- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-@@ -1584,6 +1584,33 @@ ports {
- 		};
+diff --git a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
+index 037e26b3f8d5..d98c7e9e6eb9 100644
+--- a/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
++++ b/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi
+@@ -51,6 +51,30 @@ chosen {
+ 		stdout-path = "serial0";
  	};
  
-+	cci: cci@1b0c000 {
-+		compatible = "qcom,msm8916-cci";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x1b0c000 0x1000>;
-+		interrupts = <GIC_SPI 50 IRQ_TYPE_EDGE_RISING>;
-+		clocks = <&gcc GCC_CAMSS_TOP_AHB_CLK>,
-+			<&gcc GCC_CAMSS_CCI_AHB_CLK>,
-+			<&gcc GCC_CAMSS_CCI_CLK>,
-+			<&gcc GCC_CAMSS_AHB_CLK>;
-+		clock-names = "camss_top_ahb", "cci_ahb",
-+				  "cci", "camss_ahb";
-+		assigned-clocks = <&gcc GCC_CAMSS_CCI_AHB_CLK>,
-+				  <&gcc GCC_CAMSS_CCI_CLK>;
-+		assigned-clock-rates = <80000000>, <19200000>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&cci0_default>;
-+		status = "disabled";
-+
-+		cci_i2c0: i2c-bus@0 {
-+			reg = <0>;
-+			clock-frequency = <400000>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
++	camera_vdddo_1v8: camera_vdddo_1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "camera_vdddo";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-always-on;
 +	};
 +
- 	smd {
- 		compatible = "qcom,smd";
++	camera_vdda_2v8: camera_vdda_2v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "camera_vdda";
++		regulator-min-microvolt = <2800000>;
++		regulator-max-microvolt = <2800000>;
++		regulator-always-on;
++	};
++
++	camera_vddd_1v5: camera_vddd_1v5 {
++		compatible = "regulator-fixed";
++		regulator-name = "camera_vddd";
++		regulator-min-microvolt = <1500000>;
++		regulator-max-microvolt = <1500000>;
++		regulator-always-on;
++	};
++
+ 	reserved-memory {
+ 		ramoops@bff00000{
+ 			compatible = "ramoops";
+@@ -538,6 +562,58 @@ button@0 {
+ 	};
+ };
  
++&camss {
++	status = "ok";
++	ports {
++		#address-cells = <1>;
++		#size-cells = <0>;
++		port@0 {
++			reg = <0>;
++			csiphy0_ep: endpoint {
++				clock-lanes = <1>;
++				data-lanes = <0 2>;
++				remote-endpoint = <&ov5640_ep>;
++				status = "okay";
++			};
++		};
++	};
++};
++
++&cci {
++	status = "ok";
++};
++
++&cci_i2c0 {
++	camera_rear@3b {
++		compatible = "ovti,ov5640";
++		reg = <0x3b>;
++
++		enable-gpios = <&msmgpio 34 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_rear_default>;
++
++		clocks = <&gcc GCC_CAMSS_MCLK0_CLK>;
++		clock-names = "xclk";
++		clock-frequency = <23880000>;
++
++		vdddo-supply = <&camera_vdddo_1v8>;
++		vdda-supply = <&camera_vdda_2v8>;
++		vddd-supply = <&camera_vddd_1v5>;
++
++		/* No camera mezzanine by default */
++		status = "disabled";
++
++		port {
++			ov5640_ep: endpoint {
++				clock-lanes = <1>;
++				data-lanes = <0 2>;
++				remote-endpoint = <&csiphy0_ep>;
++			};
++		};
++	};
++};
++
+ &spmi_bus {
+ 	pm8916_0: pm8916@0 {
+ 		pon@800 {
 -- 
 2.25.1
 
