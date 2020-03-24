@@ -2,52 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EFD4191420
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:22:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC384191408
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 16:18:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fyt5nXZ32vuVKKNtmPIou12rujXSJn5VBn1ll9FqBwo=; b=XXPa5dOqUfQcMU
-	bAtTBCT1ueCZdENSIsdhy5ax2a+qY1BPN23lad3m+f3EQuLhnDexFM/sMe7IxpGaQ9+igTLsfD6pg
-	/tW09tX9qHEDvX62EEXpyvgSI+LtPs7G4cuZRyJCZlBfCnm4IU9Vz/khu128D5/6C8+KX1vlcMfNf
-	7BhZR+PnNq+y7hUonkLMCHsVdDM9ipV/9PyINfNhFFXUk9MFaXGIBIi3TQgF18gg9ZXBEp2kRITaN
-	0iKHTrVpPC+4fGq/frEjtR2ldcmf+ylm7HpkdKvxQKs4bTmdUuHKTl2Wha9NktDJKKc/qJryIayhW
-	VfA2bca3ZcMPX5Ia7erg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gXlWuoLnFgjb9E4vIXv2hkC+ofTm82yFoTrK/PKS5VQ=; b=sI4vSFjF2NaUef4q096M5Dn2J
+	fnWryWWdC4GEI0xqhC0sk8zrfXNoyoeHE7sWPEm5NXGWNdOTOQURrsaYqRtlDzv15yqLc5vlDrQQ4
+	ksqGY2cY13vOhqsEV7H99qu+KcNnmbBe96oU2RhKCjrlP0ID4WWVLlotCjO7eGAeiCQSHoE6/1vV5
+	U8i+YtBsMVSQcYN/EX6gweMoS8YYvOgT848gw68WKm7VmxbClkL4IqSiC7AaOjD0lhuzrRTRVQfHa
+	K0Ej0nfUCQmnAzgxfYHAutsxPxeR814P8hWhbl4r2LQ4JNqjyFzb0raoEpMGowv5wU/K1M+4hMcJQ
+	Bw1KAyJ9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGlNM-0000jV-Pm; Tue, 24 Mar 2020 15:21:56 +0000
-Received: from james.kirk.hungrycats.org ([174.142.39.145])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGlND-0000j6-Ty
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:21:49 +0000
-Received: by james.kirk.hungrycats.org (Postfix, from userid 1002)
- id B124562D6A8; Tue, 24 Mar 2020 11:13:59 -0400 (EDT)
-Date: Tue, 24 Mar 2020 11:13:59 -0400
-From: Zygo Blaxell <uixjjji1@umail.furryterror.org>
-To: Qian Cai <cai@lca.pw>
-Subject: dmesg -w regression in v5.4.22, bisected, was: Re: [PATCH]
- char/random: silence a lockdep splat with printk()
-Message-ID: <20200324151359.GF2693@hungrycats.org>
-References: <1573679785-21068-1-git-send-email-cai@lca.pw>
+	id 1jGlJq-0007FL-MR; Tue, 24 Mar 2020 15:18:18 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGlJi-0007Eu-7I
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 15:18:12 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02OF8ngr027069; Tue, 24 Mar 2020 16:18:04 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=kaCicy8uIssxryPATIF8cnJYg+6hF4DZRgmwqrvYHXo=;
+ b=JX+7PFmR9fqCBfLmgWnh/hm068+BXkF0TIgdVqmMQJxIOSPr1HBO/E+BTF8TCQEOZ/zT
+ MSgffJARDE+zJA7X2joqwI5ywvQgkDCgQtfpFe54HY/S8ZJPTqacOGHH81ik6jwpoxwE
+ Fh1AoZuhDpjxgjiQv4MSG31Zr3/NLH/FVBzjtKF9QWiDuLkKJWZ0uZBEN3tq1z1qReOJ
+ SxGayKNQ+g4lM74LsbieH090uFdQXuUb1b9CYUF/ymVyaPwAA0H5klm3eAK25oUJkviu
+ dNkh59nJfrqk+5zXlzNV7U23e+QhwAB51QlkjriN42BEkEZzG6YTKPfK/Xz5VnIOj8it QA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yw9k006tn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 24 Mar 2020 16:18:04 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 17DFA10002A;
+ Tue, 24 Mar 2020 16:18:04 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0340B2B252E;
+ Tue, 24 Mar 2020 16:18:04 +0100 (CET)
+Received: from lmecxl0912.tpe.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 24 Mar
+ 2020 16:18:00 +0100
+Subject: Re: [PATCH] [RFC] ARM: dts: stm32: Add DTs for STM32MP15x variants of
+ the DH SOM and PDK2
+To: Marek Vasut <marex@denx.de>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+References: <20200323023145.3345133-1-marex@denx.de>
+ <7f76ea73-122f-3761-a97b-57bdb99dc4fa@st.com>
+ <4ffd8b7c-eb7d-83a4-3f6e-e156d3600532@denx.de>
+ <c26637b2-7cf6-b7e2-3301-fafbbfde508e@st.com>
+ <028556ba-f088-bf04-4473-a69569157411@denx.de>
+ <792e11db-d345-03d4-6d8f-3f9b8ed40576@st.com>
+ <c399c8bb-3035-70e0-7499-71974f7c30f6@denx.de>
+ <9492207e929c4185bda5a709ad879c15@SFHDAG3NODE2.st.com>
+ <7723c340-067b-d780-0eb1-c47d50b11ee9@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <0706c0f7-fb7b-a8e7-5ff5-8765b3170a9e@st.com>
+Date: Tue, 24 Mar 2020 16:17:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1573679785-21068-1-git-send-email-cai@lca.pw>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <7723c340-067b-d780-0eb1-c47d50b11ee9@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-24_05:2020-03-23,
+ 2020-03-24 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_082148_124271_7E3BB5CF 
-X-CRM114-Status: GOOD (  21.17  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200324_081810_630495_47B7F4FC 
+X-CRM114-Status: GOOD (  19.71  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,309 +106,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, tytso@mit.edu, sergey.senozhatsky.work@gmail.com,
- arnd@arndb.de, peterz@infradead.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, linux-mm@kvack.org,
- catalin.marinas@arm.com, longman@redhat.com, dan.j.williams@intel.com,
- will@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
+ Patrice CHOTARD <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 13, 2019 at 04:16:25PM -0500, Qian Cai wrote:
-> From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-> 
-> Sergey didn't like the locking order,
-> 
-> uart_port->lock  ->  tty_port->lock
-> 
-> uart_write (uart_port->lock)
->   __uart_start
->     pl011_start_tx
->       pl011_tx_chars
->         uart_write_wakeup
->           tty_port_tty_wakeup
->             tty_port_default
->               tty_port_tty_get (tty_port->lock)
-> 
-> but those code is so old, and I have no clue how to de-couple it after
-> checking other locks in the splat. There is an onging effort to make all
-> printk() as deferred, so until that happens, workaround it for now as a
-> short-term fix.
-
-Starting with v5.4.22 I noticed 'dmesg -w' stopped working on some
-machines.  dmesg will follow console output for a few seconds, then it
-stops.  strace indicates dmesg is blocked in read() on the /dev/kmsg fd.
-If a new dmesg process starts, it gives messages for a few seconds,
-then also stops.  rsyslog's kernel logging is similarly affected.
-
-Bisection points to this patch (now known as
-1b710b1b10eff9d46666064ea25f079f70bc67a8 upstream).  I can't reproduce
-the problem on a test VM, and some machines are running v5.4.22..v5.4.26
-with no dmesg problems.  It seems there is some magic in the startup
-sequence of affected machines.  This code isn't executed after RNG is
-seeded, so it would have to get its bad stuff done before that happens.
-
-Reverting commit 1b710b1b10eff9d46666064ea25f079f70bc67a8 fixes the
-dmesg regression on 5.4.26.  It might put the original lockdep bug back,
-but on machines running stable kernels, I prefer randomly broken lockdep
-over repeatably broken dmesg.
-
-> LTP: starting iogen01 (export LTPROOT; rwtest -N iogen01 -i 120s -s
-> read,write -Da -Dv -n 2 500b:$TMPDIR/doio.f1.$$
-> 1000b:$TMPDIR/doio.f2.$$)
-> WARNING: possible circular locking dependency detected
-> ------------------------------------------------------
-> doio/49441 is trying to acquire lock:
-> ffff008b7cff7290 (&(&zone->lock)->rlock){..-.}, at: rmqueue+0x138/0x2050
-> 
-> but task is already holding lock:
-> 60ff000822352818 (&pool->lock/1){-.-.}, at: start_flush_work+0xd8/0x3f0
-> 
->   which lock already depends on the new lock.
-> 
->   the existing dependency chain (in reverse order) is:
-> 
->   -> #4 (&pool->lock/1){-.-.}:
->        lock_acquire+0x320/0x360
->        _raw_spin_lock+0x64/0x80
->        __queue_work+0x4b4/0xa10
->        queue_work_on+0xac/0x11c
->        tty_schedule_flip+0x84/0xbc
->        tty_flip_buffer_push+0x1c/0x28
->        pty_write+0x98/0xd0
->        n_tty_write+0x450/0x60c
->        tty_write+0x338/0x474
->        __vfs_write+0x88/0x214
->        vfs_write+0x12c/0x1a4
->        redirected_tty_write+0x90/0xdc
->        do_loop_readv_writev+0x140/0x180
->        do_iter_write+0xe0/0x10c
->        vfs_writev+0x134/0x1cc
->        do_writev+0xbc/0x130
->        __arm64_sys_writev+0x58/0x8c
->        el0_svc_handler+0x170/0x240
->        el0_sync_handler+0x150/0x250
->        el0_sync+0x164/0x180
-> 
->   -> #3 (&(&port->lock)->rlock){-.-.}:
->        lock_acquire+0x320/0x360
->        _raw_spin_lock_irqsave+0x7c/0x9c
->        tty_port_tty_get+0x24/0x60
->        tty_port_default_wakeup+0x1c/0x3c
->        tty_port_tty_wakeup+0x34/0x40
->        uart_write_wakeup+0x28/0x44
->        pl011_tx_chars+0x1b8/0x270
->        pl011_start_tx+0x24/0x70
->        __uart_start+0x5c/0x68
->        uart_write+0x164/0x1c8
->        do_output_char+0x33c/0x348
->        n_tty_write+0x4bc/0x60c
->        tty_write+0x338/0x474
->        redirected_tty_write+0xc0/0xdc
->        do_loop_readv_writev+0x140/0x180
->        do_iter_write+0xe0/0x10c
->        vfs_writev+0x134/0x1cc
->        do_writev+0xbc/0x130
->        __arm64_sys_writev+0x58/0x8c
->        el0_svc_handler+0x170/0x240
->        el0_sync_handler+0x150/0x250
->        el0_sync+0x164/0x180
-> 
->   -> #2 (&port_lock_key){-.-.}:
->        lock_acquire+0x320/0x360
->        _raw_spin_lock+0x64/0x80
->        pl011_console_write+0xec/0x2cc
->        console_unlock+0x794/0x96c
->        vprintk_emit+0x260/0x31c
->        vprintk_default+0x54/0x7c
->        vprintk_func+0x218/0x254
->        printk+0x7c/0xa4
->        register_console+0x734/0x7b0
->        uart_add_one_port+0x734/0x834
->        pl011_register_port+0x6c/0xac
->        sbsa_uart_probe+0x234/0x2ec
->        platform_drv_probe+0xd4/0x124
->        really_probe+0x250/0x71c
->        driver_probe_device+0xb4/0x200
->        __device_attach_driver+0xd8/0x188
->        bus_for_each_drv+0xbc/0x110
->        __device_attach+0x120/0x220
->        device_initial_probe+0x20/0x2c
->        bus_probe_device+0x54/0x100
->        device_add+0xae8/0xc2c
->        platform_device_add+0x278/0x3b8
->        platform_device_register_full+0x238/0x2ac
->        acpi_create_platform_device+0x2dc/0x3a8
->        acpi_bus_attach+0x390/0x3cc
->        acpi_bus_attach+0x108/0x3cc
->        acpi_bus_attach+0x108/0x3cc
->        acpi_bus_attach+0x108/0x3cc
->        acpi_bus_scan+0x7c/0xb0
->        acpi_scan_init+0xe4/0x304
->        acpi_init+0x100/0x114
->        do_one_initcall+0x348/0x6a0
->        do_initcall_level+0x190/0x1fc
->        do_basic_setup+0x34/0x4c
->        kernel_init_freeable+0x19c/0x260
->        kernel_init+0x18/0x338
->        ret_from_fork+0x10/0x18
-> 
->   -> #1 (console_owner){-...}:
->        lock_acquire+0x320/0x360
->        console_lock_spinning_enable+0x6c/0x7c
->        console_unlock+0x4f8/0x96c
->        vprintk_emit+0x260/0x31c
->        vprintk_default+0x54/0x7c
->        vprintk_func+0x218/0x254
->        printk+0x7c/0xa4
->        get_random_u64+0x1c4/0x1dc
->        shuffle_pick_tail+0x40/0xac
->        __free_one_page+0x424/0x710
->        free_one_page+0x70/0x120
->        __free_pages_ok+0x61c/0xa94
->        __free_pages_core+0x1bc/0x294
->        memblock_free_pages+0x38/0x48
->        __free_pages_memory+0xcc/0xfc
->        __free_memory_core+0x70/0x78
->        free_low_memory_core_early+0x148/0x18c
->        memblock_free_all+0x18/0x54
->        mem_init+0xb4/0x17c
->        mm_init+0x14/0x38
->        start_kernel+0x19c/0x530
-> 
->   -> #0 (&(&zone->lock)->rlock){..-.}:
->        validate_chain+0xf6c/0x2e2c
->        __lock_acquire+0x868/0xc2c
->        lock_acquire+0x320/0x360
->        _raw_spin_lock+0x64/0x80
->        rmqueue+0x138/0x2050
->        get_page_from_freelist+0x474/0x688
->        __alloc_pages_nodemask+0x3b4/0x18dc
->        alloc_pages_current+0xd0/0xe0
->        alloc_slab_page+0x2b4/0x5e0
->        new_slab+0xc8/0x6bc
->        ___slab_alloc+0x3b8/0x640
->        kmem_cache_alloc+0x4b4/0x588
->        __debug_object_init+0x778/0x8b4
->        debug_object_init_on_stack+0x40/0x50
->        start_flush_work+0x16c/0x3f0
->        __flush_work+0xb8/0x124
->        flush_work+0x20/0x30
->        xlog_cil_force_lsn+0x88/0x204 [xfs]
->        xfs_log_force_lsn+0x128/0x1b8 [xfs]
->        xfs_file_fsync+0x3c4/0x488 [xfs]
->        vfs_fsync_range+0xb0/0xd0
->        generic_write_sync+0x80/0xa0 [xfs]
->        xfs_file_buffered_aio_write+0x66c/0x6e4 [xfs]
->        xfs_file_write_iter+0x1a0/0x218 [xfs]
->        __vfs_write+0x1cc/0x214
->        vfs_write+0x12c/0x1a4
->        ksys_write+0xb0/0x120
->        __arm64_sys_write+0x54/0x88
->        el0_svc_handler+0x170/0x240
->        el0_sync_handler+0x150/0x250
->        el0_sync+0x164/0x180
-> 
->        other info that might help us debug this:
-> 
->  Chain exists of:
->    &(&zone->lock)->rlock --> &(&port->lock)->rlock --> &pool->lock/1
-> 
->  Possible unsafe locking scenario:
-> 
->        CPU0                    CPU1
->        ----                    ----
->   lock(&pool->lock/1);
->                                lock(&(&port->lock)->rlock);
->                                lock(&pool->lock/1);
->   lock(&(&zone->lock)->rlock);
-> 
->                 *** DEADLOCK ***
-> 
-> 4 locks held by doio/49441:
->  #0: a0ff00886fc27408 (sb_writers#8){.+.+}, at: vfs_write+0x118/0x1a4
->  #1: 8fff00080810dfe0 (&xfs_nondir_ilock_class){++++}, at:
-> xfs_ilock+0x2a8/0x300 [xfs]
->  #2: ffff9000129f2390 (rcu_read_lock){....}, at:
-> rcu_lock_acquire+0x8/0x38
->  #3: 60ff000822352818 (&pool->lock/1){-.-.}, at:
-> start_flush_work+0xd8/0x3f0
-> 
->                stack backtrace:
-> CPU: 48 PID: 49441 Comm: doio Tainted: G        W
-> Hardware name: HPE Apollo 70             /C01_APACHE_MB         , BIOS
-> L50_5.13_1.11 06/18/2019
-> Call trace:
->  dump_backtrace+0x0/0x248
->  show_stack+0x20/0x2c
->  dump_stack+0xe8/0x150
->  print_circular_bug+0x368/0x380
->  check_noncircular+0x28c/0x294
->  validate_chain+0xf6c/0x2e2c
->  __lock_acquire+0x868/0xc2c
->  lock_acquire+0x320/0x360
->  _raw_spin_lock+0x64/0x80
->  rmqueue+0x138/0x2050
->  get_page_from_freelist+0x474/0x688
->  __alloc_pages_nodemask+0x3b4/0x18dc
->  alloc_pages_current+0xd0/0xe0
->  alloc_slab_page+0x2b4/0x5e0
->  new_slab+0xc8/0x6bc
->  ___slab_alloc+0x3b8/0x640
->  kmem_cache_alloc+0x4b4/0x588
->  __debug_object_init+0x778/0x8b4
->  debug_object_init_on_stack+0x40/0x50
->  start_flush_work+0x16c/0x3f0
->  __flush_work+0xb8/0x124
->  flush_work+0x20/0x30
->  xlog_cil_force_lsn+0x88/0x204 [xfs]
->  xfs_log_force_lsn+0x128/0x1b8 [xfs]
->  xfs_file_fsync+0x3c4/0x488 [xfs]
->  vfs_fsync_range+0xb0/0xd0
->  generic_write_sync+0x80/0xa0 [xfs]
->  xfs_file_buffered_aio_write+0x66c/0x6e4 [xfs]
->  xfs_file_write_iter+0x1a0/0x218 [xfs]
->  __vfs_write+0x1cc/0x214
->  vfs_write+0x12c/0x1a4
->  ksys_write+0xb0/0x120
->  __arm64_sys_write+0x54/0x88
->  el0_svc_handler+0x170/0x240
->  el0_sync_handler+0x150/0x250
->  el0_sync+0x164/0x180
-> 
-> [cai@lca.pw: add a commit log.]
-> Signed-off-by: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-> Signed-off-by: Qian Cai <cai@lca.pw>
-> ---
-> 
-> Sergey, please let us know if you are fine with the Signed-off-by.
-> 
->  drivers/char/random.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/char/random.c b/drivers/char/random.c
-> index 46afd14facb7..b90086c9836f 100644
-> --- a/drivers/char/random.c
-> +++ b/drivers/char/random.c
-> @@ -1688,8 +1688,9 @@ static void _warn_unseeded_randomness(const char *func_name, void *caller,
->  	print_once = true;
->  #endif
->  	if (__ratelimit(&unseeded_warning))
-> -		pr_notice("random: %s called from %pS with crng_init=%d\n",
-> -			  func_name, caller, crng_init);
-> +		printk_deferred(KERN_NOTICE "random: %s called from %pS "
-> +				"with crng_init=%d\n", func_name, caller,
-> +				crng_init);
->  }
->  
->  /*
-> -- 
-> 1.8.3.1
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAzLzI0LzIwIDM6NTggUE0sIE1hcmVrIFZhc3V0IHdyb3RlOgo+IE9uIDMvMjQvMjAgMzoz
+OSBQTSwgQWxleGFuZHJlIFRPUkdVRSB3cm90ZToKPj4KPj4KPj4+IC0tLS0tT3JpZ2luYWwgTWVz
+c2FnZS0tLS0tCj4+PiBGcm9tOiBNYXJlayBWYXN1dCA8bWFyZXhAZGVueC5kZT4KPj4+IFNlbnQ6
+IG1hcmRpIDI0IG1hcnMgMjAyMCAxNTozMQo+Pj4gVG86IEFsZXhhbmRyZSBUT1JHVUUgPGFsZXhh
+bmRyZS50b3JndWVAc3QuY29tPjsgbGludXgtYXJtLQo+Pj4ga2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKPj4+IENjOiBNYXhpbWUgQ29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5jb20+
+OyBQYXRyaWNlIENIT1RBUkQKPj4+IDxwYXRyaWNlLmNob3RhcmRAc3QuY29tPjsgUGF0cmljayBE
+RUxBVU5BWSA8cGF0cmljay5kZWxhdW5heUBzdC5jb20+OyBsaW51eC0KPj4+IHN0bTMyQHN0LW1k
+LW1haWxtYW4uc3Rvcm1yZXBseS5jb20KPj4+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIFtSRkNdIEFS
+TTogZHRzOiBzdG0zMjogQWRkIERUcyBmb3IgU1RNMzJNUDE1eCB2YXJpYW50cwo+Pj4gb2YgdGhl
+IERIIFNPTSBhbmQgUERLMgo+Pj4KPj4+IE9uIDMvMjQvMjAgMzoyOCBQTSwgQWxleGFuZHJlIFRv
+cmd1ZSB3cm90ZToKPj4+Pgo+Pj4+Cj4+Pj4gT24gMy8yNC8yMCAzOjE1IFBNLCBNYXJlayBWYXN1
+dCB3cm90ZToKPj4+Pj4gT24gMy8yNC8yMCAzOjA3IFBNLCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3Rl
+Ogo+Pj4+Pj4KPj4+Pj4+Cj4+Pj4+PiBPbiAzLzI0LzIwIDI6MjIgUE0sIE1hcmVrIFZhc3V0IHdy
+b3RlOgo+Pj4+Pj4+IE9uIDMvMjQvMjAgMjowNCBQTSwgQWxleGFuZHJlIFRvcmd1ZSB3cm90ZToK
+Pj4+Pj4+Pj4KPj4+Pj4+Pj4KPj4+Pj4+Pj4gT24gMy8yMy8yMCAzOjMxIEFNLCBNYXJlayBWYXN1
+dCB3cm90ZToKPj4+Pj4+Pj4+IFRoZSBESCBQREsyIGNhbiBiZSBwb3B1bGF0ZWQgd2l0aCBTb00g
+d2l0aCBhbnkgU1RNMzJNUDE1eCB2YXJpYW50Lgo+Pj4+Pj4+Pj4gQWRkIHRoZSBEVHMgZGVzY3Jp
+YmluZyB0aGUgcmVtYWluaW5nIGNvbWJpbmF0aW9ucy4KPj4+Pj4+Pj4+Cj4+Pj4+Pj4+PiBTaWdu
+ZWQtb2ZmLWJ5OiBNYXJlayBWYXN1dCA8bWFyZXhAZGVueC5kZT4KPj4+Pj4+Pj4+IENjOiBBbGV4
+YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbT4KPj4+Pj4+Pj4+IENjOiBNYXhp
+bWUgQ29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5jb20+Cj4+Pj4+Pj4+PiBDYzogUGF0
+cmljZSBDaG90YXJkIDxwYXRyaWNlLmNob3RhcmRAc3QuY29tPgo+Pj4+Pj4+Pj4gQ2M6IFBhdHJp
+Y2sgRGVsYXVuYXkgPHBhdHJpY2suZGVsYXVuYXlAc3QuY29tPgo+Pj4+Pj4+Pj4gQ2M6IGxpbnV4
+LXN0bTMyQHN0LW1kLW1haWxtYW4uc3Rvcm1yZXBseS5jb20KPj4+Pj4+Pj4+IFRvOiBsaW51eC1h
+cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPj4+Pj4+Pj4+IC0tLQo+Pj4+Pj4+Pj4gTk9U
+RTogSXMgdGhlcmUgYSBiZXR0ZXIgd2F5IHRvIGRvIHRoaXMgdGhhbiB0byBoYXZlIHRoaXMga2lu
+ZCBvZgo+Pj4+Pj4+Pj4gYQo+Pj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoGNvbWJpbmF0b3JpYWwgZXhw
+bG9zaW9uIG9mIERUcyA/Cj4+Pj4+Pj4+Cj4+Pj4+Pj4+IEkgaGF2ZSBubyBiZXR0ZXIgaWRlYS4g
+UXVlc3Rpb24gd2FzIHRoZSBzYW1lIGZvciBzdG0zMiBib2FyZHMsIGFuZAo+Pj4+Pj4+PiBJIGNo
+b3NlIHRvIHRha2UgdGhpcyBvcHRpb24uCj4+Pj4+Pj4KPj4+Pj4+PiBPbmUgb3B0aW9uIHdvdWxk
+IGJlIHRvIGp1c3QgaGF2ZSBEVCBmb3IgdGhlIG1vc3QgZmVhdHVyZS1jb21wbGV0ZQo+Pj4+Pj4+
+IG9wdGlvbgo+Pj4+Pj4+ICgxNTcpIGFuZCB0aGVuIGhhdmUgVS1Cb290IHJlbW92ZSB0aGUgbm9k
+ZXMgZm9yIEhXIHdoaWNoIGlzIG5vdAo+Pj4+Pj4+IHByZXNlbnQgb24gdGhlIHBhcnRpY3VsYXIg
+U29DIG9wdGlvbiBpZiBpdCdzIG9uZSBvZiB0aGUgbW9yZQo+Pj4+Pj4+IGxpbWl0ZWQgb25lcyAo
+MTUzLCAxNTEpLgo+Pj4+Pj4+Cj4+Pj4+Pgo+Pj4+Pj4gWWVzIGl0IHdhcyBhIHBvc3NpYmlsaXR5
+IHRoYXQgSSBkaXNjdXNzZWQgd2l0aCBrZXZpbiBILiBhdCB0aGUKPj4+Pj4+IGxhdGVzdCBFTENF
+IGJ1dCBhdCB0aGUgZW5kIHRoZSBiZXN0IHdheSB0byBmb2xsb3cgd2FzIHRvIGVuaGFuY2UKPj4+
+Pj4+IG51bWJlciBvZiBkdHMgZmlsZXMuIFRoZSBiZXN0IHdvdWxkIGJlIHRvIGhhdmUgZGVkaWNh
+dGVkIGZvbGRlcnMgYnV0Cj4+Pj4+PiBpdCBpcyBhbm90aGVyIHN0b3J5Lgo+Pj4+Pgo+Pj4+PiBP
+ciB1c2UgRFQgb3ZlcmxheXMgc29tZWhvdyA/IFUtQm9vdCBjYW4gYXBwbHkgRFRPcyBvbnRvIERU
+IGJlZm9yZQo+Pj4+PiBib290aW5nIExpbnV4Lgo+Pj4+Pgo+Pj4+PiBIYXZpbmcgdG9ucyBvZiBE
+VHMgb24gYSBzeXN0ZW0gaXMgYSBsb3Qgb2YgZHVwbGljYXRpb24sIEkgZG9uJ3QKPj4+Pj4gcmVh
+bGx5IGxpa2UgdGhhdC4KPj4+Pgo+Pj4+IEkgYWdyZWUgdGhhdCB0byBtYWludGFpbiBpdCdzIGEg
+bmlnaHRtYXJlLCBidXQgaXQncyBhIHdheSB0byBoZWxwIERUIHVzZXJzLgo+Pj4+Cj4+Pj4+Cj4+
+Pj4+IEJ1dCBmb3Igc3RhcnRlcnMsIGZlZWwgZnJlZSB0byByZXZpZXcgdGhpcyBwYXRjaC4KPj4+
+Pj4KPj4+Pgo+Pj4+IFlvdXIgcGF0Y2ggc291bmRzIGdvb2QuCj4+Pgo+Pj4gVGhlbiBmZWVsIGZy
+ZWUgdG8gYXBwbHkgaXQsIHRoYW5rcy4KPj4+Cj4+PiBidHcgZG9uJ3QgeW91IGhhdmUgYSAibmV4
+dCIgdHJlZSBzb21ld2hlcmUgd2l0aCBhbGwgdGhlIHBhdGNoZXMgcXVldWVkIHVwIGZvcgo+Pj4g
+bmV4dCByZWxlYXNlID8gSWYgSSByZWJhc2Ugb24gbGludXggbmV4dCwgSSBzdGlsbCBoYXZlIHF1
+aXRlIGEgZmV3IHN0bTMybXAxIERUCj4+PiBwYXRjaGVzIGluIG15IHRyZWUgd2hpY2ggYXJlIHBy
+ZXN1bWFibHkgYXBwbGllZCwgYnV0IEkgZG9uJ3Qgc2VlIHRoZW0gaW4gbGludXggbmV4dC4KPj4K
+Pj4KPj4gWWVzIGJ1dCBpdCBpcyBub3QgbWVyZ2VkIGludG8gTGludXgtbmV4dC4gU2VlOiBnaXQ6
+Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXRvcmd1ZS9zdG0zMi5n
+aXQKPj4KPj4gQnJhbmNoIHN0bTMyLW5leHQKPiAKPiBUaGFua3MuIFdvdWxkbid0IGl0IGJlIG1v
+cmUgY29udmVuaWVudCBhbmQgcmVjZWl2ZSBtb3JlIHRlc3RpbmcgaWYgaXQKPiB3ZXJlIHRvIGJl
+IG1lcmdlZCBpbnRvIG5leHQsIGp1c3QgbGlrZSB0aGUgb3RoZXIgdHJlZXMgYXJlID8KPiAKSSBj
+b21wbGV0ZWx5IGFncmVlIHdpdGggeW91ISBPdGhlciBhcm0gdHJlZXMgYXJlIG1lcmdlZCA/Cgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
