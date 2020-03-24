@@ -2,124 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99EA2190A3D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:08:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2479190A5B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 11:13:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ujVaftjcbz5a/9Mwaj5pQQvKBWjoA9Zb/pASlcInAmw=; b=lE7MT97Ue7B9gO
-	mueGCFs2yGD5HhQuVKqSZsMav7h10+REzE0ERYH0oXJ1JxphNGaHyTyUAoJ2PWOGC1I91FSuo8X/x
-	KtGPQyuw+r3vm4784ZTPflI5IvSlRyGitNMuUDPtB7/YoJccJ7nsRn7hoy/gwinVuNTeM6nB1BZCy
-	soJPWwrqFt9A5E7JbTnAdLw1+CWuAHlJmlG3XWiJ6SI/t2LzKhn2Yc0JPJKicWs/C2bwkf/CFqePd
-	Z62aRtDNE3zjQOyPGJVRxCK2PZNkz0tMAng1lQWwqhZduM6Inp7+ZZFyw8Y9rvt25oP8uDvbJmlZF
-	KytVc5pXA3rdtHiViKNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=asamXdqb1QV5KrGZUxWrbKB7imdvBfeCiuAvf5gQsIc=; b=dYuOzR1+yz33iq
+	CXtpWGBye7PbW5td3gHv+7wIIvm8dLCk1QwifEEmK5NeE0AFmZUxcgk52gMMT/RsAJveDy7CQxZMB
+	ZgiYzpvT+tm7F1MMa1y2cvjjtMwLi+vX5NK2YzNLz/lLQhyVderyZajzP9/Dv+pVFzLy7maRAgKpB
+	WEbpuIAQkm4CxwgJdhLl7cHQIbbGXezuhDEKwFUuuEQPm1culhKbAuK6WPE70/+nTa2ZaiuTa7cN+
+	l3Esg+jrBjgzLL96xXrRb8Djm3WDvnHYYbfLAtRXU0b6m18O7GyqzKkqTGX1wQMc10u1s9jOVN9oc
+	TNs767cL9Fij3lTOhrOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGgUF-0004or-5J; Tue, 24 Mar 2020 10:08:43 +0000
-Received: from mail-eopbgr10064.outbound.protection.outlook.com ([40.107.1.64]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1jGgYU-0006xO-FP; Tue, 24 Mar 2020 10:13:06 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGgU4-0004mb-A3
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:08:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HMrSjQgMxKQXKZinBB7Gb5w093C+O2kDEkXkRynb4zuJWKVEAr5pocmQC4eyz60TIrsC69eXmoW6ZQKvtHNNXGc7tTNYnF+nBtobkOURTFreBuANN4Dx+D78xEfaoSPwL+OrklI2JtJBEsDZl7df8efFspepF/MUOTmbOmqsQ5Lvj1WKnf76aCD7Pa7wsb/nTlgYYgPKVyFZXS+JwJ4r68Ot6HFQx0hpxTGz/FYgHk7AotUM6rtH2pvSqvuuV4OCb7bBoAeZ0eIAC+2r7CTWT13hBgDqLNoYfMxfLfUezK26Tuol634JD/AhKCqe4O1io8yEKOfcnRvXxv9hxK/4lA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Bh/8FncJI9JkWPn9DHFptrgEWTDFct2oZx7h0spfon0=;
- b=FA6/LsbkJoKtgpClQ2Il5bNM2HaUNafd/87ShZyN/SpQfIvY/Ul3FnwnGwZ0jQ9oqrdQ12S7d02wk0n9YLqGxH6I6xUbji6inX2Uts3EebmX5Rt8aMLnhGKS86dZ6rGV7BRYdtIVASnjyhZo13JhJ6kRoMrvMSF6T8xZG6qbVRbBu41AxwQLcMAHwNIB03QE4Uzka3R72GYiRidBBfdsrHmXej5Yz9/j2JHn3xrdbGpym/fC7G0SrhzHG4yoW1Gjuqc5CMBPondnV/SKa8i4m0dPnzrR1ZPKw0xyDKxTpKDrIVaP1ru51K/QQR0/8S8bXP63Ub3WdfhX/tbxZbUhMA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Bh/8FncJI9JkWPn9DHFptrgEWTDFct2oZx7h0spfon0=;
- b=USNvVoW9ULOePXXh69d7IEJBugo8R8R+kHtEetteC7tsdRlYx6RmameVmMbavfN2NaerTV+RuPF9orcpiWuKxL8SfSAqwuY2Z9kwBaH+/7crtbGi3hrG+RpnjIFrU6jaegAzePN6gGcntJqcEqCkupMTFsU/7+LerMN1kEaotWo=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=laurentiu.tudor@nxp.com; 
-Received: from AM6PR04MB5925.eurprd04.prod.outlook.com (20.179.2.147) by
- AM6PR04MB4855.eurprd04.prod.outlook.com (20.177.33.142) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.22; Tue, 24 Mar 2020 10:08:29 +0000
-Received: from AM6PR04MB5925.eurprd04.prod.outlook.com
- ([fe80::dd71:5f33:1b21:cd9e]) by AM6PR04MB5925.eurprd04.prod.outlook.com
- ([fe80::dd71:5f33:1b21:cd9e%5]) with mapi id 15.20.2835.023; Tue, 24 Mar 2020
- 10:08:29 +0000
-Subject: Re: [PATCH 5/9] vfio/fsl-mc: Allow userspace to MMAP fsl-mc device
- MMIO regions
-To: Diana Craciun <diana.craciun@oss.nxp.com>, kvm@vger.kernel.org,
- alex.williamson@redhat.com, linux-arm-kernel@lists.infradead.org,
- bharatb.yadav@gmail.com
-References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
- <20200323171911.27178-6-diana.craciun@oss.nxp.com>
-From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Message-ID: <8610166d-fa6c-c324-be8e-c5e6df41dcc6@nxp.com>
-Date: Tue, 24 Mar 2020 12:08:27 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-In-Reply-To: <20200323171911.27178-6-diana.craciun@oss.nxp.com>
-Content-Language: en-GB
-X-ClientProxiedBy: AM5PR0201CA0020.eurprd02.prod.outlook.com
- (2603:10a6:203:3d::30) To AM6PR04MB5925.eurprd04.prod.outlook.com
- (2603:10a6:20b:ab::19)
+ id 1jGgYL-0006w3-Fo
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 10:12:58 +0000
+IronPort-SDR: 6o/dnVNWEbjJv/ZDbcbexfEpM2JGul86Ajs1rxlONFej3+GB404VJFAJIu8jHfE7llkrriQynm
+ OstCwqKTThlA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 24 Mar 2020 03:12:50 -0700
+IronPort-SDR: H1G/Zvt1jaTSGbi+Yl2JDyCmzkOd2vLqEQ+npdJn5EvBgeUUvy7jdmCw8AJIOFp+tVH24c7yXm
+ 69TYpwV1Ya4g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,300,1580803200"; d="scan'208";a="249996635"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga006.jf.intel.com with ESMTP; 24 Mar 2020 03:12:42 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jGgY7-00CUuU-F9; Tue, 24 Mar 2020 12:12:43 +0200
+Date: Tue, 24 Mar 2020 12:12:43 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Sergey Semin <Sergey.Semin@baikalelectronics.ru>
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200324101243.GG1922688@smile.fi.intel.com>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+ <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
+ <20200323135017.4vi5nwam2rlpepgn@ubsrv2.baikal.int>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.1.107] (86.121.54.4) by
- AM5PR0201CA0020.eurprd02.prod.outlook.com (2603:10a6:203:3d::30) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.15 via Frontend
- Transport; Tue, 24 Mar 2020 10:08:28 +0000
-X-Originating-IP: [86.121.54.4]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 71e310c6-bcf9-4768-0276-08d7cfdb4cc1
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4855:|AM6PR04MB4855:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB48556A17C3400EA4756C90E2ECF10@AM6PR04MB4855.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
-X-Forefront-PRVS: 03524FBD26
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(366004)(136003)(39860400002)(346002)(31696002)(52116002)(16576012)(2906002)(6486002)(8676002)(316002)(81166006)(8936002)(86362001)(81156014)(66476007)(31686004)(66556008)(956004)(478600001)(5660300002)(53546011)(186003)(16526019)(36756003)(2616005)(4326008)(66946007)(26005)(44832011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4855;
- H:AM6PR04MB5925.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: W+yyWmSnfwbmNny8cfTDj6H92gI7wkxQnAHdb/u1zqlTQPHdO54pciCUmqFRiFrdLss/qa5MWySMDPMqMqpABIJeI4NH2dQd0DPbMzqudHhhllGjwPC+7KkMV7hZBK8ZTGQXq+x7w2xWm4wYCJLvg+2YRo0JVCvjd6Y0AISp+32HwdZ/gZiUgnAwSZ5iuTkOZrpPNGIvkIK7IJv5iIvQQSeiynMP+8TjihUfZxVl8kKFw3qNCNUiwFMCnKJ4vFNLQv1lnwXTx+Zvwc3+joAx9+555mEJm7+L2JBYLFrPA+QPKh4GboSdewNa24+Gh7KqWQ6Ygn5U51NrO3HXqJNRi2837xXEX3DCjIspO03e5rhcW9ibzxGfCMBLzn0T/IGbygCCBMTJkam9Wt29/+HBbCOqc/X4nm4clYq4vqcWT0IRTTr29C/foGs2mJQOD5yS
-X-MS-Exchange-AntiSpam-MessageData: uJb9IORdQhVpBUbX2pvW+HPK2+Um8ocPpw8gFjDsMTfKBsiF13xxx8O/v1i3oZ+p4uDNeCCTUCM/iKAkQEWlPTVa7X6+Z1rbYT9CCv/Y/BllyvHdbbMiFThO1nfLnefVfA9d+wyv1DVtQlsK4sd6EQ==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 71e310c6-bcf9-4768-0276-08d7cfdb4cc1
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2020 10:08:29.1168 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Wa3cAFVJiu1Q675Xn6sYTDcN5URMvZUXoQV5FRGQqyfsdT3Q8JnBHQKEKVXxNXQrQFpp0NJULebc7MMGsrHuQA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4855
+Content-Disposition: inline
+In-Reply-To: <20200323135017.4vi5nwam2rlpepgn@ubsrv2.baikal.int>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_030832_414494_CFAEB2BB 
-X-CRM114-Status: GOOD (  18.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_031257_548077_79683817 
+X-CRM114-Status: GOOD (  35.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.64 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,128 +75,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bharat Bhushan <Bharat.Bhushan@nxp.com>, linux-kernel@vger.kernel.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ Maxime Ripard <maxime@cerno.tech>, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Mar 23, 2020 at 04:50:17PM +0300, Sergey Semin wrote:
+> On Mon, Mar 23, 2020 at 11:01:09AM +0100, Maxime Ripard wrote:
+> > On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
+> > > From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+> > >
+> > > There are races possible in the dw8250_set_termios() callback method
+> > > and while the device is in PM suspend state. A race condition may
+> > > happen if the baudrate clock source device is shared with some other
+> > > device (in our machine it's another DW UART port). In this case if that
+> > > device changes the clock rate while serial console is using it the
+> > > DW 8250 UART port might not only end up with an invalid uartclk value
+> > > saved, but may also experience a distorted output data since baud-clock
+> > > could have been changed. In order to fix this lets enable an exclusive
+> > > reference clock rate access in case if "baudclk" device is specified.
+> > >
+> > > So if some other device also acquires the rate exclusivity during the
+> > > time of a DW UART 8250 port being opened, then DW UART 8250 driver
+> > > won't be able to alter the baud-clock. It shall just use the available
+> > > clock rate. Similarly another device also won't manage to change the
+> > > rate at that time. If nothing else have the exclusive rate access
+> > > acquired except DW UART 8250 driver, then the driver will be able to
+> > > alter the rate as much as it needs to in accordance with the currently
+> > > implemented logic.
 
-
-On 3/23/2020 7:19 PM, Diana Craciun wrote:
-> Allow userspace to mmap device regions for direct access of
-> fsl-mc devices.
+> > clk_rate_exclusive_get is pretty intrusive, and due to the usual
+> > topology of clock trees, this will lock down 3-4 parent clocks to
+> > their current rate as well. In the Allwinner SoCs case for example,
+> > this will lock down the same PLL than the one used by the CPU,
+> > preventing cpufreq from running.
 > 
-> Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
-> ---
->  drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 64 ++++++++++++++++++++++-
->  drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  2 +
->  2 files changed, 64 insertions(+), 2 deletions(-)
+> Speaking about weak design of a SoC' clock tree. Our problems are nothing
+> with respect to the Allwinner SoC, in which case of changing the
+> CPU-frequency may cause the UART glitches subsequently causing data
+> transfer artefacts.) Moreover as I can see the same issue may raise for
+> I2C, QSPI, PWM devices there.
 > 
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> index 094df3aa3710..6625b7cb0a3e 100644
-> --- a/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> @@ -31,7 +31,11 @@ static int vfio_fsl_mc_regions_init(struct vfio_fsl_mc_device *vdev)
->  
->  		vdev->regions[i].addr = res->start;
->  		vdev->regions[i].size = PAGE_ALIGN((resource_size(res)));
-> -		vdev->regions[i].flags = 0;
-> +		vdev->regions[i].flags = VFIO_REGION_INFO_FLAG_MMAP;
-> +		vdev->regions[i].flags |= VFIO_REGION_INFO_FLAG_READ;
-> +		if (!(mc_dev->regions[i].flags & IORESOURCE_READONLY))
-> +			vdev->regions[i].flags |= VFIO_REGION_INFO_FLAG_WRITE;
-> +		vdev->regions[i].type = mc_dev->regions[i].flags & IORESOURCE_BITS;
->  	}
->  
->  	vdev->num_regions = mc_dev->obj_desc.region_count;
-> @@ -163,9 +167,65 @@ static ssize_t vfio_fsl_mc_write(void *device_data, const char __user *buf,
->  	return -EINVAL;
->  }
->  
-> +static int vfio_fsl_mc_mmap_mmio(struct vfio_fsl_mc_region region,
-> +				 struct vm_area_struct *vma)
-> +{
-> +	u64 size = vma->vm_end - vma->vm_start;
-> +	u64 pgoff, base;
-> +
-> +	pgoff = vma->vm_pgoff &
-> +		((1U << (VFIO_FSL_MC_OFFSET_SHIFT - PAGE_SHIFT)) - 1);
-> +	base = pgoff << PAGE_SHIFT;
-> +
-> +	if (region.size < PAGE_SIZE || base + size > region.size)
-> +		return -EINVAL;
-> +
-> +	if (!(region.type & VFIO_DPRC_REGION_CACHEABLE))
-> +		vma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);
-> +
-> +	vma->vm_pgoff = (region.addr >> PAGE_SHIFT) + pgoff;
-> +
-> +	return remap_pfn_range(vma, vma->vm_start, vma->vm_pgoff,
-> +			       size, vma->vm_page_prot);
-> +}
-> +
->  static int vfio_fsl_mc_mmap(void *device_data, struct vm_area_struct *vma)
->  {
-> -	return -EINVAL;
-> +	struct vfio_fsl_mc_device *vdev = device_data;
-> +	struct fsl_mc_device *mc_dev = vdev->mc_dev;
-> +	unsigned long size, addr;
-> +	int index;
-> +
-> +	index = vma->vm_pgoff >> (VFIO_FSL_MC_OFFSET_SHIFT - PAGE_SHIFT);
-> +
-> +	if (vma->vm_end < vma->vm_start)
-> +		return -EINVAL;
-> +	if (vma->vm_start & ~PAGE_MASK)
-> +		return -EINVAL;
-> +	if (vma->vm_end & ~PAGE_MASK)
-> +		return -EINVAL;
-> +	if (!(vma->vm_flags & VM_SHARED))
-> +		return -EINVAL;
-> +	if (index >= vdev->num_regions)
-> +		return -EINVAL;
-> +
-> +	if (!(vdev->regions[index].flags & VFIO_REGION_INFO_FLAG_MMAP))
-> +		return -EINVAL;
-> +
-> +	if (!(vdev->regions[index].flags & VFIO_REGION_INFO_FLAG_READ)
-> +			&& (vma->vm_flags & VM_READ))
-> +		return -EINVAL;
-> +
-> +	if (!(vdev->regions[index].flags & VFIO_REGION_INFO_FLAG_WRITE)
-> +			&& (vma->vm_flags & VM_WRITE))
-> +		return -EINVAL;
-> +
-> +	addr = vdev->regions[index].addr;
-> +	size = vdev->regions[index].size;
-
-These seem unused?
-
----
-Best Regards, Laurentiu
-
-> +	vma->vm_private_data = mc_dev;
-> +
-> +	return vfio_fsl_mc_mmap_mmio(vdev->regions[index], vma);
->  }
->  
->  static int vfio_fsl_mc_init_device(struct vfio_fsl_mc_device *vdev)
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> index 764e2cf2c70d..e2a0ccdd8242 100644
-> --- a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> @@ -15,6 +15,8 @@
->  #define VFIO_FSL_MC_INDEX_TO_OFFSET(index)	\
->  	((u64)(index) << VFIO_FSL_MC_OFFSET_SHIFT)
->  
-> +#define VFIO_DPRC_REGION_CACHEABLE	0x00000001
-> +
->  struct vfio_fsl_mc_region {
->  	u32			flags;
->  	u32			type;
+> Anyway your concern does make sense.
 > 
+> > However, the 8250 has a pretty wide range of dividers and can adapt to
+> > any reasonable parent clock rate, so we don't really need to lock the
+> > rate either, we can simply react to a parent clock rate change using
+> > the clock notifiers, just like the SiFive UART is doing.
+> > 
+> > I tried to do that, but given that I don't really have an extensive
+> > knowledge of the 8250, I couldn't find a way to stop the TX of chars
+> > while we change the clock rate. I'm not sure if this is a big deal or
+> > not, the SiFive UART doesn't seem to care.
+> 
+> Yes, your solution is also possible, but even in case of stopping Tx/Rx it
+> doesn't lack drawbacks. First of all AFAIK there is no easy way to just
+> pause the transfers. We'd have to first wait for the current transfers
+> to be completed, then somehow lock the port usage (both Tx and Rx
+> traffic), permit the reference clock rate change, accordingly adjust the
+> UART clock divider, and finally unlock the port. While if we don't mind
+> to occasionally have UART data glitches, we can just adjust the UART ref
+> divider synchronously with ref clock rate change as you and SiFive UART
+> driver suggest.
+> 
+> So we are now at a zugzwang - a fork to three not that good solutions:
+> 1) lock the whole clock branch and provide a glitchless interfaces. But
+> by doing so we may (in case of Allwinner SoCs we will) lockup some very
+> important functionality like CPU-frequency change while the UART port is
+> started up. In this case we won't have the data glitches.
+> 2) just adjust the UART clock divider in case of reference clock rate
+> change (use the SiFive UART driver approach). In this case we may have the
+> data corruption.
+> 3) somehow implement the algo: wait for the transfers to be completed,
+> lock UART interface (it's possible for Tx, but for Rx in case of no handshake
+> enabled it's simply impossible), permit the ref clock rate change,
+> adjust the UART divider, then unlock the UART interface. In this case the data
+> glitches still may happen (if no modem control is available or
+> handshakes are disabled).
+> 
+> As for the cases of Baikal-T1 UARTs the first solutions is the most suitable.
+> We don't lock anything valuable, since a base PLL output isn't directly
+> connected to any device and it's rate once setup isn't changed during the
+> system running. On the other hand I don't mind to implement the second
+> solution, even though it's prone to data glitches. Regarding the solution
+> 3) I won't even try. It's too complicated, I don't have time and
+> test-infrastructure for this.
+> 
+> So Andy what do you think?
+
+From Intel HW perspective the first two are okay, but since Maxime is against
+first, you have the only option from your list. Perhaps somebody may give
+option 4) here...
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
