@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3DD4191C80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 23:07:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 816A0191C84
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Mar 2020 23:07:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sguUzaIZ+HtGi6apf3I37+Pd9o7qbn6Ux1aKSKa5mPI=; b=rgy7LzNOps7Ha2
-	qPRsLWmBlGJGxV5M9/MDdrE9ITdXzHXOwlo80hq+umKVDkn5PsrfGek7SdRzzwIsEB18+mtOf0vat
-	L98Y+0Q6QwbyBFEryeAdYCmiChxLF1+5QWuePmv7I0vRAkVEbR0P4UztEC3L5iRSO2MoPN9S6+0ir
-	LdwjWt45dK+uInFvLpNlTwAn0+3Ds3lo8GwQC7BrlZNI0XDGLsx0T8i1OzRbwzROOIAFEMaNarYrC
-	GUAeUM1N5WOTpioNb5Bve5zcs8k4lc9qI4PYW7XdskreKWH2k8/HAOHPgge7on+xAw5sOmfOaaH1B
-	H9CGLcjFtvd9nh1dgj4Q==;
+	List-Owner; bh=QlTMezWVhvgnJpe0kjCeS6erpZNs0nxPGl515qbrWLM=; b=BD6KhpE6He2uHc
+	HC7iD+Xx0Eb9QR6M9IzMipPjGx3kb/z2AI3XHeA7PG1BaLfAY8uV82YS2G0zMft+hkuaQu7jj5BB6
+	aRRLunGoqe6gRMJFsmPb2NSH3hRiCC706U/YKdTyShTLQfj59I+22bnWP8keWy7zpI9w0ewhp+Luk
+	le/Jqg/YmjP8O3QR2yS+tHkZkrAOCljJ8NiWvwOyGxMT43asWFf4gkBw9h9DBJRLxqkEkoLjXzhSw
+	3389qV3Jnrb0Lq4w1Q6O+NumlaecA0ugNmrAkRrlaMJaP2BI0GNwhSdEuswFiHkEuJu2Ad2xZxKWb
+	eSfkflsp+6adWbDKh6hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGrhP-0007CC-5k; Tue, 24 Mar 2020 22:07:03 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jGrhu-0007W8-Lj; Tue, 24 Mar 2020 22:07:34 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGrh9-00077B-Nb
- for linux-arm-kernel@bombadil.infradead.org; Tue, 24 Mar 2020 22:06:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=RgOSv5leUzdh9drlvUWI/yMDTMMdqFPXz0ZLHcJ9Qrk=; b=aAS4Q+6sODIaHbIvnMNlQ5KsSS
- WQ6pOZIKF1v1HbpnjpTp0sEEqKotsv7YAX/6keV3jCJi4monNTYQgMJDjQc6zZgSJyWEoAJJxrCn6
- 2Wtau+W4MCGQhoG1DYaVOae5ieyPMQantZoA70LPpgA2d92YcmM9Opq94LM+64idGuHIarHnOa+fJ
- 8g/FtxwMBiYi5ljyGa6nG/AzrKDh3BPJpxrV/7Nn030GCm7jOEH3LpTrxhyQH2Gl6SJDFbCgh7/Yu
- EHVYqlnS6JEoOjv8O8HKtL1Xt5PUyZ3W+zgHvzKrF2zatGASlP9ApCKZ12nWFczNHgWiHpAVILumF
- lFViESkw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=worktop.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGrh5-0006JR-2q; Tue, 24 Mar 2020 22:06:43 +0000
-Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
- id 42090983502; Tue, 24 Mar 2020 23:06:41 +0100 (CET)
-Date: Tue, 24 Mar 2020 23:06:41 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v2 1/5] jump_label: Provide CONFIG-driven build state
- defaults
-Message-ID: <20200324220641.GT2452@worktop.programming.kicks-ass.net>
-References: <20200324203231.64324-1-keescook@chromium.org>
- <20200324203231.64324-2-keescook@chromium.org>
+ id 1jGrhj-0007UJ-0c
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Mar 2020 22:07:25 +0000
+Received: by mail-wr1-x441.google.com with SMTP id d5so564778wrn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Mar 2020 15:07:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=YusM14BzJIMDSHzMH5zdQjw9hhEPT3JITrKIkp7xEiM=;
+ b=U5oJgwJXEzInJbCIIllHCyQtoy/blNO5KYVVGHN+8SR+VKjULgmNBy/lH8MVbbmlkL
+ GPBooUKVyWq7vjqhlzRUKcA01z8NTBrvLB+e98zv7ais1jXQoW3t4CQ7mxYkL+gTucey
+ 2OB3m6uVI+l05dzTf7V0rJFPEpe9siDmry3VRO/wNAo4QVPTOvgDhTpNnhIWUAcDQoGB
+ QgqQ5eLI88p3/+p2/3h/WuZ+UPfBhCOmbPHIGFirtt1E9h4DRCjG1StIjOr5JdLZAwfA
+ +dIjEKOIgvfNhulzvawbwxR40c1oj51Y+fWYB4rHjY9Ui2T25TTQzDUWifCnWaF8VbJ3
+ Slhg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=YusM14BzJIMDSHzMH5zdQjw9hhEPT3JITrKIkp7xEiM=;
+ b=PfwNfHYhvyeSivQiXuwx45x1zJn70fwPP+HTSvEUvfUSdYiXY0JQSzG7x1soN0Dv7J
+ 3FFm1B/M1U/8hQ3SfVoNJ/jIUt1mb8iLXz+LHwPK5HvXclRaUzrwI5uPhj9+f3XymkIG
+ MCG8piirZL5ob3CXClCAoE3EEFZA41Einitaems/P+Zk1jY5JEHbj31ZpTNjOkTPxSun
+ GlaGJSe96p11PDtm9zJXS0XGLgMKCRklGAplk01PWp8uNGojUa7H4rRQKHr13UjrFZ9E
+ gP5F6pH56gNpGZlNk9QMjM/KVhQDByTWEk4i72xN1jUumlyAUTwZd/TZuNieIBhI8TVe
+ vVOQ==
+X-Gm-Message-State: ANhLgQ0AvCd4EQBUeELrk19oHAoTEPsKpesuE3VZYWh40JOSwDDvvnbx
+ heZxtWZ9l56f4mSMDJ3B9K3r3A==
+X-Google-Smtp-Source: ADFU+vuSxXw25QUR0nIAb5OLmIU6jTi7EWOtLxakEApqVuvh84HPZknVnAkiaJ2bxtodhoIEBc76bQ==
+X-Received: by 2002:a5d:5386:: with SMTP id d6mr32380863wrv.92.1585087641149; 
+ Tue, 24 Mar 2020 15:07:21 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id v11sm11963482wrm.43.2020.03.24.15.07.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 24 Mar 2020 15:07:20 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, daniel@ffwll.ch,
+ dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v3 0/7] drm/meson: add support for Amlogic Video FBC
+In-Reply-To: <20200324142016.31824-1-narmstrong@baylibre.com>
+References: <20200324142016.31824-1-narmstrong@baylibre.com>
+Date: Tue, 24 Mar 2020 15:07:17 -0700
+Message-ID: <7hsghx2yqy.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200324203231.64324-2-keescook@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200324_150723_196742_1A7CE5EA 
+X-CRM114-Status: GOOD (  11.90  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,32 +93,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jann Horn <jannh@google.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
- Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
+Cc: mjourdan@baylibre.com, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, ppaalanen@gmail.com,
+ linux-amlogic@lists.infradead.org, brian.starkey@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 24, 2020 at 01:32:27PM -0700, Kees Cook wrote:
-> Choosing the initial state of static branches changes the assembly
-> layout (if the condition is expected to be likely, inline, or unlikely,
-> out of line via a jump). A few places in the kernel use (or could be
-> using) a CONFIG to choose the default state, so provide the
-> infrastructure to do this and convert the existing cases (init_on_alloc
-> and init_on_free) to the new macros.
-> 
-> Signed-off-by: Kees Cook <keescook@chromium.org>
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-Cute,
+> Amlogic uses a proprietary lossless image compression protocol and format
+> for their hardware video codec accelerators, either video decoders or
+> video input encoders.
+>
+> It considerably reduces memory bandwidth while writing and reading
+> frames in memory.
+>
+> The underlying storage is considered to be 3 components, 8bit or 10-bit
+> per component, YCbCr 420, single plane :
+> - DRM_FORMAT_YUV420_8BIT
+> - DRM_FORMAT_YUV420_10BIT
+>
+> This modifier will be notably added to DMA-BUF frames imported from the V4L2
+> Amlogic VDEC decoder.
+>
+> At least two layout are supported :
+> - Basic: composed of a body and a header
+> - Scatter: the buffer is filled with a IOMMU scatter table referring
+>   to the encoder current memory layout. This mode if more efficient in terms
+>   of memory allocation but frames are not dumpable and only valid during until
+>   the buffer is freed and back in control of the encoder
+>
+> At least two options are supported :
+> - Memory saving: when the pixel bpp is 8b, the size of the superblock can
+>   be reduced, thus saving memory.
+>
+> This serie adds the missing register, updated the FBC decoder registers
+> content to be committed by the crtc code.
+>
+> The Amlogic FBC has been tested with compressed content from the Amlogic
+> HW VP9 decoder on S905X (GXL), S905D2 (G12A) and S905X3 (SM1) in 8bit
+> (Scatter+Mem Saving on G12A/SM1, Mem Saving on GXL) and 10bit
+> (Scatter on G12A/SM1, default on GXL).
 
-Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+Tested on meson-sm1-sei610 (VP9 60fps content).
+
+Tested-by: Kevin Hilman <khilman@baylibre.com>
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
