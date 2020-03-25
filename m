@@ -2,57 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4CF21926C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 12:09:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6502A1926ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 12:14:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zdh+HWcCCd9u8YRMxy+G78TkzIlf4auK1R2p335pKbA=; b=WZpQEfn66IOlw/
-	84ZkjOQfls7acnQGFEaPlP16cMBiaWJZ4oDqh2OF/aDTUAcIw7Io0ieVGAn1rrJWE0DlPvMzcwseY
-	VDw8d0yM393EvWZdxhGfbPuPX2XpssR0tioSLas/Tl25JG7l09vJ4qzHb12PQE4vYrGrhMJPve8C2
-	7l+i1vC+55DFXppx0IEqGDhP4YtE/xk5XE794gS3KMkJ1zYsvH+rpiEstnrGMbZHQBwDD7QSK7Br5
-	+EjJkwh20HKXXxqmKN8CIBce9w0HmnxMGAdodoQ1R+1SWSxGbASVAk5UeL8K3+QfQWIOaRUJ2dHx5
-	DY7u6+sHBIMYyqMGnAEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=38afgLrpbg3SejKGmpmlCG2gJNNc0DJem0UDzbjrWpQ=; b=gYTlkku6/Tox26
+	PlAHOGqHuhQrV+b5+vp5tTjvaEmJLRZtARhyb2IRPr2qDmv1sAg7lrGitJax4aFIHKpmAO63NBY5H
+	jQTrnx42b75YfchTBjsl+x+aiOSP0LHLcrdrp1vZ4fKZRD5TUojd4fcVkkAsZ8IC4wOhMfSi54ZvU
+	Ii2SmYdK/gyw2J0zTx4wOHsvDeCfb4ZHACzjEBgGqMfPy+cyrjNoiOEntqNsHpkoL3dXzmkV+9oOJ
+	e/vQZJENLPBONK2mHFkDDzpoQ1KntdwTkPQ+IJIchgIW3dMigPS9yDGRVahWD+c8yCiX0/etdlc+l
+	9pyMGoNjwSg2mifWfOMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH3uV-0004aH-01; Wed, 25 Mar 2020 11:09:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH3uJ-0004ZK-I5
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 11:09:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1C7F731B;
- Wed, 25 Mar 2020 04:09:11 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 60E6E3F71F;
- Wed, 25 Mar 2020 04:09:10 -0700 (PDT)
-Date: Wed, 25 Mar 2020 11:09:03 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] arm64: head: Convert install_el2_stub to SYM_INNER_LABEL
-Message-ID: <20200325110903.GL3901@mbp>
-References: <20200323123336.8728-1-broonie@kernel.org>
- <CAKv+Gu-wX+gN+2YiK+PmpLe=+wKBE08yXGDNpwrgcS+eS6hX4A@mail.gmail.com>
- <20200324183354.GI7039@sirena.org.uk>
+	id 1jH3z1-0006YD-UJ; Wed, 25 Mar 2020 11:14:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jH3yr-0006XQ-V7
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 11:13:55 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEA2B20714;
+ Wed, 25 Mar 2020 11:13:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585134832;
+ bh=BzCuAlwuxAGX3F005NMoJ1SQbjE8q7I0TQauHBZ+31o=;
+ h=From:To:Cc:Subject:Date:From;
+ b=YKnz9Hecl5fxuD2C7GFv4OgVyH5qObz8ssS4YRbT+X2qm4uFTkze2Xy/WOTKAIx4p
+ MbacL9p1KQ5APanJBD1/IcPOu7Ub8XAddFVr6IVWbskaNV8/HkmR6cCGJGgDkaVzFe
+ G5G4M+ftNeePFy0vNPDu5KMBY8SVoDgdZvQcZT4c=
+From: Will Deacon <will@kernel.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] mm/mremap: Add comment explaining the untagging behaviour of
+ mremap()
+Date: Wed, 25 Mar 2020 11:13:46 +0000
+Message-Id: <20200325111347.32553-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200324183354.GI7039@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_040911_645462_64FD0F82 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_041354_024391_55847D43 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,28 +76,53 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+ Linus Torvalds <torvalds@linux-foundation.org>, kernel-team@android.com,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 24, 2020 at 06:33:54PM +0000, Mark Brown wrote:
-> On Tue, Mar 24, 2020 at 07:19:56PM +0100, Ard Biesheuvel wrote:
-> > On Mon, 23 Mar 2020 at 13:33, Mark Brown <broonie@kernel.org> wrote:
-> 
-> > > -install_el2_stub:
-> > > +SYM_INNER_LABEL(install_el2_stub, SYM_L_GLOBAL)
-> 
-> > Shouldn't this be SYM_L_LOCAL?
-> 
-> I think it could be, yes.
+Commit dcde237319e6 ("mm: Avoid creating virtual address aliases in
+brk()/mmap()/mremap()") changed mremap() so that only the 'old' address
+is untagged, leaving the 'new' address in the form it was passed from
+userspace. This prevents the unexpected creation of aliasing virtual
+mappings in userspace, but looks a bit odd when you read the code.
 
-I fixed up the patch locally.
+Add a comment justifying the untagging behaviour in mremap().
 
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ mm/mremap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/mm/mremap.c b/mm/mremap.c
+index af363063ea23..d28f08a36b96 100644
+--- a/mm/mremap.c
++++ b/mm/mremap.c
+@@ -606,6 +606,16 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+ 	LIST_HEAD(uf_unmap_early);
+ 	LIST_HEAD(uf_unmap);
+ 
++	/*
++	 * There is a deliberate asymmetry here: we strip the pointer tag
++	 * from the old address but leave the new address alone. This is
++	 * for consistency with mmap(), where we prevent the creation of
++	 * aliasing mappings in userspace by leaving the tag bits of the
++	 * mapping address intact. A non-zero tag will cause the subsequent
++	 * range checks to reject the address as invalid.
++	 *
++	 * See Documentation/arm64/tagged-address-abi.rst for more information.
++	 */
+ 	addr = untagged_addr(addr);
+ 
+ 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
 -- 
-Catalin
+2.25.1.696.g5e7596f4ac-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
