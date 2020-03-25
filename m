@@ -2,57 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB5F8191F7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:59:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA9F7192027
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 05:27:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PgtdFV8Wd+j4nF6EW6RjkB9uXUI6ZaWaMupBP9bMLFE=; b=BAcXaA1RdCyVxl
-	gUZakqmi3Da9gnEIKpeLDsY5rp07/av8VOacpgHQJa95JGPK30NwieqY9tVb2M+66TtHy63tyIhTP
-	qSTs1RNk9cfmvf3Y1pq/kgPtZGE4lF3zVSn6ECbts0rpRe038Uncsv2RmLkp0E/qduh+owOZ3X/YM
-	k8tOOgYhOEBCVGrM4R1uJg3f0naq7HycFcbzteMf3E6/ofr/433r0pVrnSl9zjE7OeSBCtylatXzC
-	IiP0eGfjfZKD7ScNBo+bn/lo7S1ikwqxn4wFhWyjrsIl6FJgbq28x/IT2hlHB9dj9TfNX1qizQ4Cl
-	TsofbH9iGGWXowBGmY9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=syz/4Uj9qIy8uOSqF2jVgYiJob1cUk8yPd075Bljlpw=; b=TeC+qFUBrEBHfJ
+	mcrb0zkA5bNWmHhVKBHjqxrOmblTtirqA6vrW4IpVBLLPA5LmSIqbkalRCHR9MlC8EWDvsxLi74Mq
+	LVEel4LWsCv2vFAKPF7nfkmofTsAIUjddqIPGLsn7bKOYVTgZItC7PpU6j/QviqcqDwrZJG7nztEZ
+	22+oEJSKygpzeYLbIgVMgqRHto2LDM4KEICbG3+VyRStCS2KuxC5aovP6YII88mepVpuK+eowBk2J
+	xjfOA1+ykAbzpegBnqhjH7oUzGX4PLyxetiEdOpdpuOYxcana+18M/T5O1kMMqSkpVafVkBg+fHWF
+	/7MBR10j1KRJERn0GJ8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGwG2-000768-9P; Wed, 25 Mar 2020 02:59:06 +0000
+	id 1jGxdW-0001cb-Pc; Wed, 25 Mar 2020 04:27:26 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGwFr-00074k-Nq; Wed, 25 Mar 2020 02:58:57 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 2FC8EC61B4371320B3C4;
- Wed, 25 Mar 2020 10:58:52 +0800 (CST)
-Received: from [10.173.228.124] (10.173.228.124) by smtp.huawei.com
- (10.3.19.211) with Microsoft SMTP Server (TLS) id 14.3.487.0; Wed, 25 Mar
- 2020 10:58:47 +0800
-Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Mike Kravetz <mike.kravetz@oracle.com>, Dave Hansen
- <dave.hansen@intel.com>, <linux-mm@kvack.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linuxppc-dev@lists.ozlabs.org>, <linux-riscv@lists.infradead.org>,
- <linux-s390@vger.kernel.org>, <sparclinux@vger.kernel.org>,
- <linux-doc@vger.kernel.org>
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-2-mike.kravetz@oracle.com>
- <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
- <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
-From: "Longpeng (Mike, Cloud Infrastructure Service Product Dept.)"
- <longpeng2@huawei.com>
-Message-ID: <5ea6313e-ec4f-a043-632b-ef2901ce2cc9@huawei.com>
-Date: Wed, 25 Mar 2020 10:58:46 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1jGxd2-0001SK-MH
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 04:26:58 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id EBDB983B08E26A5DEBB8;
+ Wed, 25 Mar 2020 12:26:38 +0800 (CST)
+Received: from linux-kDCJWP.huawei.com (10.175.104.212) by
+ DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
+ 14.3.487.0; Wed, 25 Mar 2020 12:26:28 +0800
+From: Keqian Zhu <zhukeqian1@huawei.com>
+To: <kvm@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>
+Subject: [PATCH 0/3] KVM: arm64: Some optimizations about enabling dirty log
+Date: Wed, 25 Mar 2020 12:24:20 +0800
+Message-ID: <20200325042423.12181-1-zhukeqian1@huawei.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-In-Reply-To: <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
-Content-Language: en-US
-X-Originating-IP: [10.173.228.124]
+X-Originating-IP: [10.175.104.212]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_195855_947760_75767271 
-X-CRM114-Status: GOOD (  15.58  )
+X-CRM114-CacheID: sfid-20200324_212656_880018_718AC3C2 
+X-CRM114-Status: UNSURE (   6.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,93 +63,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Christian
- Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, "David S.Miller" <davem@davemloft.net>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Keqian Zhu <zhukeqian1@huawei.com>,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>, wanghaibin.wang@huawei.com,
+ Jay Zhou <jianjay.zhou@huawei.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch series is for "queue" branch of [1] and based on patches[2].
+It brings obvious time decreasement for migration with different page
+size.
 
+The QEMU counterpart will be sent out later, thanks.
 
-On 2020/3/19 6:52, Mike Kravetz wrote:
-> On 3/18/20 3:15 PM, Dave Hansen wrote:
->> Hi Mike,
->>
->> The series looks like a great idea to me.  One nit on the x86 bits,
->> though...
->>
->>> diff --git a/arch/x86/mm/hugetlbpage.c b/arch/x86/mm/hugetlbpage.c
->>> index 5bfd5aef5378..51e6208fdeec 100644
->>> --- a/arch/x86/mm/hugetlbpage.c
->>> +++ b/arch/x86/mm/hugetlbpage.c
->>> @@ -181,16 +181,25 @@ hugetlb_get_unmapped_area(struct file *file, unsigned long addr,
->>>  #endif /* CONFIG_HUGETLB_PAGE */
->>>  
->>>  #ifdef CONFIG_X86_64
->>> +bool __init arch_hugetlb_valid_size(unsigned long long size)
->>> +{
->>> +	if (size == PMD_SIZE)
->>> +		return true;
->>> +	else if (size == PUD_SIZE && boot_cpu_has(X86_FEATURE_GBPAGES))
->>> +		return true;
->>> +	else
->>> +		return false;
->>> +}
->>
->> I'm pretty sure it's possible to have a system without 2M/PMD page
->> support.  We even have a handy-dandy comment about it in
->> arch/x86/include/asm/required-features.h:
->>
->> 	#ifdef CONFIG_X86_64
->> 	#ifdef CONFIG_PARAVIRT
->> 	/* Paravirtualized systems may not have PSE or PGE available */
->> 	#define NEED_PSE        0
->> 	...
->>
->> I *think* you need an X86_FEATURE_PSE check here to be totally correct.
->>
->> 	if (size == PMD_SIZE && cpu_feature_enabled(X86_FEATURE_PSE))
->> 		return true;
->>
->> BTW, I prefer cpu_feature_enabled() to boot_cpu_has() because it
->> includes disabled-features checking.  I don't think any of it matters
->> for these specific features, but I generally prefer it on principle.
-> 
-> Sounds good.  I'll incorporate those changes into a v2, unless someone
-> else with has a different opinion.
-> 
-> BTW, this patch should not really change the way the code works today.
-> It is mostly a movement of code.  Unless I am missing something, the
-> existing code will always allow setup of PMD_SIZE hugetlb pages.
-> 
-Hi Mike,
+[1] git://git.kernel.org/pub/scm/virt/kvm/kvm.git
+[2] https://lore.kernel.org/kvm/20200227013227.1401-1-jianjay.zhou@huawei.com/
 
-Inspired by Dave's opinion, it seems the x86-specific hugepages_supported should
-also need to use cpu_feature_enabled instead.
+Keqian Zhu (3):
+  KVM/memslot: Move the initial set of dirty bitmap to arch
+  KVM/arm64: Support enabling dirty log graually in small chunks
+  KVM/arm64: Only set bits of dirty bitmap with valid translation
+    entries
 
-Also, I wonder if the hugepages_supported is correct ? There're two arch
-specific hugepages_supported:
-x86:
-#define hugepages_supported() boot_cpu_has(X86_FEATURE_PSE)
-and
-s390:
-#define hugepages_supported() (MACHINE_HAS_EDAT1)
+ Documentation/virt/kvm/api.rst    |   2 +-
+ arch/arm/include/asm/kvm_host.h   |   2 -
+ arch/arm64/include/asm/kvm_host.h |   5 +-
+ arch/x86/kvm/x86.c                |   3 +
+ virt/kvm/arm/mmu.c                | 175 +++++++++++++++++++++++++-----
+ virt/kvm/kvm_main.c               |   3 -
+ 6 files changed, 157 insertions(+), 33 deletions(-)
 
-Is it possible that x86 has X86_FEATURE_GBPAGES but hasn't X86_FEATURE_GBPAGES
-or s390 has MACHINE_HAS_EDAT2 but hasn't MACHINE_HAS_EDAT1 ?
+-- 
+2.19.1
 
----
-Regards,
-Longpeng(Mike)
 
 _______________________________________________
 linux-arm-kernel mailing list
