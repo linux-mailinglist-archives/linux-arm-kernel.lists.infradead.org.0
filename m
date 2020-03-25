@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A31F191EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:11:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD8F3191EEB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:20:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HKgINja70kK1NCcQWN5+eCJYQLWy1Ga9FNrCBjDNyEw=; b=HY7S5Xaufz3Hy+
-	CytpPSAQ8xyVqtYZAJNuz/teE892cCKczBdN64fcZB8sm6cG7L8bKVvErnCuxAxffBsDRDd+3txY4
-	91Mt58+9wtHCfkKXGOAf6nAWG/4mbip2lbwXbMK4qRYyjgljFk9vIN6bWn6S2B/4oK9P++FY269Jf
-	7m4S8gxguDzDrGP/wAzQyWfEQG7x5hlU8Tz56g+gDyJrm+agdDt3Riymp4QUktMcKCyP5r/QVYh5A
-	6YX1nRCP6gu7tHdlFAkKaVcB/nAe+hG8O4XBt7uVrUyXZkurRGhyTanXBP3Q4qK549hbifasq9qe8
-	VPWDr1T3wGD3nsp5k4rw==;
+	List-Owner; bh=iEDm6mVxwtsGRXACDWvqb+Fd3WDsaCCerVAV951l5V0=; b=a9OktkKhAsMof5
+	3bUYxt6X+wLZFqS+6PFJQyjG7xDUxVlvjk3r6UX6HFLteIgNZv2VCWcqFOPd85JOOmCWjoEx5nsaM
+	Uvecjk/pmjJeSBrLJTeBIGshTCKYJqPQn3lTh5MkaTq1SkJLLFS+ZI6ggBYpQVFRH1dJLACd1eDL2
+	obg9+vUan3kzy+Trww43JE+aGD3KpUIKZLapmftFhXZzUhzHMltICfyocBgglIVKs8eYzHxV6O+PY
+	hL9McSW8OkTgGZKs7UbYNtpIXe1/Oyml37JIuxWSrYBmE2FBJXOSnSBeFxnQgmfX8zmprCmw3/i+C
+	CH/LZMyvMY+muQMlA8bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGvVd-0004c5-GH; Wed, 25 Mar 2020 02:11:09 +0000
-Received: from szxga03-in.huawei.com ([45.249.212.189] helo=huawei.com)
+	id 1jGveu-0007sj-TA; Wed, 25 Mar 2020 02:20:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGvVV-0004b4-Ay
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:11:04 +0000
-Received: from dggeml405-hub.china.huawei.com (unknown [172.30.72.56])
- by Forcepoint Email with ESMTP id F278CAC235422688F1C5;
- Wed, 25 Mar 2020 10:10:47 +0800 (CST)
-Received: from DGGEML421-HUB.china.huawei.com (10.1.199.38) by
- dggeml405-hub.china.huawei.com (10.3.17.49) with Microsoft SMTP Server (TLS)
- id 14.3.487.0; Wed, 25 Mar 2020 10:10:47 +0800
-Received: from DGGEML533-MBS.china.huawei.com ([169.254.10.196]) by
- dggeml421-hub.china.huawei.com ([10.1.199.38]) with mapi id 14.03.0487.000;
- Wed, 25 Mar 2020 10:10:40 +0800
-From: "yezhenyu (A)" <yezhenyu2@huawei.com>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: RE: [RFC PATCH v4 4/6] mm: Add page table level flags to vm_flags
-Thread-Topic: [RFC PATCH v4 4/6] mm: Add page table level flags to vm_flags
-Thread-Index: AQHWAeKVXiq19lnJ+0q/54z19KSbo6hXjqYAgAD+HPA=
-Date: Wed, 25 Mar 2020 02:10:40 +0000
-Message-ID: <10338CF38D9A684EA38E1CF7D8D3411B045BA207@dggeml533-mbs.china.huawei.com>
-References: <20200324134534.1570-1-yezhenyu2@huawei.com>
- <20200324134534.1570-5-yezhenyu2@huawei.com>
- <20200324144436.043659c2@gandalf.local.home>
-In-Reply-To: <20200324144436.043659c2@gandalf.local.home>
-Accept-Language: en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.173.220.25]
+ id 1jGvel-0007rs-UM; Wed, 25 Mar 2020 02:20:37 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 040492072E;
+ Wed, 25 Mar 2020 02:20:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585102834;
+ bh=+57wLOzdrvfVY9oRgwlinhOdDYxWS98Ii68KfvWZAeE=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=HRLni0JDRk8bdJjwHaSbs4cTHqNClt8LAi7FFXx302v+o3W/j6lDNZbtadQwzVKhe
+ +1Nx7xlZ5T6dMRFDuTY5OXv5qoC3XAIvnKBrV61LtGEX4YrRuFvAnwnO4VPjSK9cAw
+ 6p4BBy3OkERRlTAanuh1/I0EtpqXul9kXHfexaNg=
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200323105616.kiwcyxxcb7eqqfsc@gilmour.lan>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <6dd6bd48e894c1e8ee85c29a30ba1b18041d83c4.1582533919.git-series.maxime@cerno.tech>
+ <158406125965.149997.13919203635322854760@swboyd.mtv.corp.google.com>
+ <20200323105616.kiwcyxxcb7eqqfsc@gilmour.lan>
+Subject: Re: [PATCH 27/89] clk: bcm: Add BCM2711 DVP driver
+From: Stephen Boyd <sboyd@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Date: Tue, 24 Mar 2020 19:20:33 -0700
+Message-ID: <158510283320.125146.11874786046657431725@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_191101_539118_8F65FBEC 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200324_192036_000791_A34E1E47 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.189 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,91 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "Guohanjun \(Hanjun Guo\)" <guohanjun@huawei.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "yuzhao@google.com" <yuzhao@google.com>, "maz@kernel.org" <maz@kernel.org>,
- "steven.price@arm.com" <steven.price@arm.com>,
- "arm@kernel.org" <arm@kernel.org>, "Dave.Martin@arm.com" <Dave.Martin@arm.com>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "npiggin@gmail.com" <npiggin@gmail.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- Xiexiangyou <xiexiangyou@huawei.com>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "aneesh.kumar@linux.ibm.com" <aneesh.kumar@linux.ibm.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steve,
-
-On Wed, 25 Mar 2020 2:45, Steve wrote:
-> On Tue, 24 Mar 2020 21:45:32 +0800
-> Zhenyu Ye <yezhenyu2@huawei.com> wrote:
+Quoting Maxime Ripard (2020-03-23 03:56:16)
+> Hi Stephen,
 > 
-> > --- a/include/trace/events/mmflags.h
-> > +++ b/include/trace/events/mmflags.h
-> > @@ -130,6 +130,16 @@ IF_HAVE_PG_IDLE(PG_idle,		"idle"		)
-> >  #define IF_HAVE_VM_SOFTDIRTY(flag,name)
-> >  #endif
+> On Thu, Mar 12, 2020 at 06:00:59PM -0700, Stephen Boyd wrote:
+> > > +       dvp->clks[1] = clk_register_gate(&pdev->dev, "hdmi1-108MHz",
+> > > +                                        parent, CLK_IS_CRITICAL,
+> > > +                                        base + DVP_HT_RPI_MISC_CONFIG, 4,
+> > > +                                        CLK_GATE_SET_TO_DISABLE, &dvp->reset.lock);
 > >
-> > +#ifdef CONFIG_64BIT
-> > +#define IF_HAVE_VM_LEVEL_PUD(flag,name)	{flag, name}
-> > +#define IF_HAVE_VM_LEVEL_PMD(flag,name)	{flag, name}
-> > +#define IF_HAVE_VM_LEVEL_PTE(flag,name)	{flag, name}
-> > +#else
-> > +#define IF_HAVE_VM_LEVEL_PUD(flag,name)
-> > +#define IF_HAVE_VM_LEVEL_PMD(flag,name)
-> > +#define IF_HAVE_VM_LEVEL_PTE(flag,name)
-> > +#endif
-> > +
-> >  #define __def_vmaflag_names						\
-> >  	{VM_READ,			"read"		},		\
-> >  	{VM_WRITE,			"write"		},		\
-> > @@ -161,7 +171,10 @@ IF_HAVE_VM_SOFTDIRTY(VM_SOFTDIRTY,
-> 	"softdirty"	)		\
-> >  	{VM_MIXEDMAP,			"mixedmap"	},		\
-> >  	{VM_HUGEPAGE,			"hugepage"	},		\
-> >  	{VM_NOHUGEPAGE,			"nohugepage"	},		\
-> > -	{VM_MERGEABLE,			"mergeable"	}		\
-> > +	{VM_MERGEABLE,			"mergeable"	},		\
-> > +IF_HAVE_VM_LEVEL_PUD(VM_LEVEL_PUD,	"pud-level"	),		\
-> > +IF_HAVE_VM_LEVEL_PMD(VM_LEVEL_PMD,	"pmd-level"	),		\
-> > +IF_HAVE_VM_LEVEL_PTE(VM_LEVEL_PTE,	"pte-level"	)		\
-> >
+> > Can we use clk_hw APIs, document why CLK_IS_CRITICAL, and use something
+> > like clk_hw_register_gate_parent_data() so that we don't have to use
+> > of_clk_get_parent_name() above?
 > 
-> Have you tested this on 32bit? It looks like you'll get empty commas there.
-> Perhaps the defines need to be:
+> That function is new to me, and I'm not sure how I'm supposed to use it?
 > 
-> #ifdef CONFIG_64BIT
-> #define IF_HAVE_VM_LEVEL_PUD(flag,name)	{flag, name},
-> #define IF_HAVE_VM_LEVEL_PMD(flag,name)	{flag, name},
-> #define IF_HAVE_VM_LEVEL_PTE(flag,name)	{flag, name}
-> #else
-> #define IF_HAVE_VM_LEVEL_PUD(flag,name)
-> #define IF_HAVE_VM_LEVEL_PMD(flag,name)
-> #define IF_HAVE_VM_LEVEL_PTE(flag,name)
-> #endif
+> It looks like clk_hw_register_gate, clk_hw_register_gate_parent_hw and
+> clk_hw_register_gate_parent_data all call __clk_hw_register_gate with
+> the same arguments, each expecting the parent_name, so they look
+> equivalent?
 > 
-> And leave out the commas in the list.
+> It looks like the original intent was to have the parent name, clk_hw
+> or clk_parent_data as argument, but the macro itself was copy pasted
+> without changing the arguments it's calling __clk_hw_register_gate
+> with?
 > 
-> -- Steve
 
-Thanks for your review. I will fix this in next version, if I could still use vm_flags
-at that time :).
-
-Zhenyu
+Yeah! It looks like nobody has tried to use it yet so you've come across
+that problem where nobody reviews things and I just merge it anyway.
+I'll send a fix shortly.
 
 _______________________________________________
 linux-arm-kernel mailing list
