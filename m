@@ -2,82 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C107192349
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:53:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E331E19234F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:53:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OYbdsFKQ9O3jaNQBxrUkzA9/ASPCV167SHYMpewCJpg=; b=nU7TQdUPmbPsOZ
-	Bb6ODzNYqhqQeyb6NzmUXXeuB9Uba1srAdaB9PaP0d/f5KuICEARzXKqX3ABrgNYynM58dJ6OEJjh
-	6OLWbSXkM/VEV2kLdUIKbHLBOCvID09RZqLbDFT9yPcU2hQLELllgjVmGxPmVsCpmggJGkpZxoDTF
-	HsFffBEGoodZOjhby2csUG8K9Eh9swsZWCjMj3DyCrCjREnFV5ojcyXGhMsV17Qf6rs4VrcG+NY4z
-	vUyBXE3kcS8Kl0ZYmS8jbkgVI+b2tEYjP+mAn1C/GK+RNw+5Mo3wjLTIv8zEatS3/vFpqXvw81PDF
-	iYWmCwD9Xq/+Lwn7t58A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VUP2XDMkpU85oKKEJxe/DQd5NpKBw/Tf95mS5uK6O0o=; b=VYrCm6yka4KC2d
+	0dBfcmEkVAMNFQQ8ZMoTF+YaJp+G+9hlSczBZRDi/TDxWMYmH+Bnpb/U5/Hyo045YzEfe/LVEQVDL
+	kxLJL/m6mh20aSsk5TGP35kAuHPsMyimDMISSq1VLVyqIzVtaFnlPCF7dEsFl83gRxqVlvtyWVAZA
+	ydxA0a8fFWQiWG18bBA4ZNVHMQ4Z7eXGQPu3qTgSEe8uid9xmpFFFeszQktgTfJHhIyNPliLw88vj
+	tv9y8+FLwtORlralHsBKP834YWho/hgcN/FoM6+l9Z1Exj6Wq0FgNbZLiUF9o6NGUmu4+H/FgjhrA
+	GRCJ+xwbyWoBR18r5U/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH1me-0005Yd-QB; Wed, 25 Mar 2020 08:53:08 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jH1nB-00066o-Ag; Wed, 25 Mar 2020 08:53:41 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH1kJ-0002vQ-6I
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:50:49 +0000
-Received: by mail-wr1-x444.google.com with SMTP id 65so1855805wrl.1
+ id 1jH1kb-0003WW-Pu
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:51:03 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c187so1407867wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 01:50:41 -0700 (PDT)
+ Wed, 25 Mar 2020 01:51:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=a7NBuU6BQz6Obl4bQL5kVXb4i/CiUVxXf3T2A6sy18g=;
- b=tYYkl7w2rkDL5ykaeimrPutSRwZHQ7iS+8kB1dUyydbsaydxVK4EY7ovdjecPrIWV6
- fCFrWdQKHfxHPezznmFrw+ujsYrqvjiHFIhrwak7CJuT6eSobyVh+eURDrS4zr7U7PZB
- Yc3oDiR511B/zVsLh/akZpKlEVlQmuU4L94xCTqrXS/QZxDnXNHZp2UVL8E04eOEsFy5
- J44RA9ejyor0TWODhxoRURdiZqSEVw3BG9uvO9+se9eB1duPcCb+MqXZBHAorsrvny4B
- ePR7M7E7oRNp3niOZ9M+xUyR02XEYgtvJIl5uHwOYYnDXxat3cOsS6dMf6rAaXA9LzKs
- KhmA==
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=trOP5InagGw762E6YSWA1kZAFx4Jh8EXHp5Y4Luzgh4=;
+ b=d0Tn3Oc1RyxOYQ8tbp/3qs3s9k8BlsggkSR5eTTpwzzpfToyFaZH4wSOe7vrAqqifK
+ NPDh2O+fLo4qZ5UECsZKZAHrudPErKoVF5Mtf0WXbh7L8KukB4KCrvqSyWSVZka7te/8
+ BPmOHIoD8ZQeFnPmp9WfBvFmiLvkOdRMt42cESOwgEImblw+q2KfBxVjr/PszBIqnG0c
+ qN2AF7Y0w+siAN5PQGDuf0vPRP4A9NhT4ov70TARTKh/ZXejn6NysOPtlS6vO5ltn/95
+ wwwwSR/2+ocTgx1XvtBtxGGO95akgnNUHgO3sCFqPQuiV7Qkd8EKy+gxBBrhFhDKgS+Y
+ Hklg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=a7NBuU6BQz6Obl4bQL5kVXb4i/CiUVxXf3T2A6sy18g=;
- b=Ivyp+5jsZLhBxluza1leOAeyyLK0L0Tts1i9OGpY1GgPHhtb1jvAASOFmwKYScOVI+
- O4LOdyHmkXsb84YLg6bfdH2/apD0ycAs5hxStlMRUzWQfPgQ0LRgnLN2Du8uDalGSzIl
- f5k3JTBcBrjXqDKycWXiJjNXOgrwnNLQ5Qp60BbhcgnSwYlRsg1dQLDYgNVVVnpJpcCB
- lL8ZE2E2lWcAEZmKgUgG9SIBxkoKdSS0dRz698Eqey02og66p3vjGXsYlILu090amdPp
- 5FsLJMN3kjcjnKdwRciM7urIAnuTYkdaTFOjC9xVLO2mV5HZaJVgnWFMBRwgmwFGQ0e1
- NzHQ==
-X-Gm-Message-State: ANhLgQ1Ho0UYd1Gc5zxO386tyb7Rm2m0g0gAx0B9Gmn1/FW2azH3CHFR
- HlVXFn71tjWnNvHZ+PDfRTshTw==
-X-Google-Smtp-Source: ADFU+vuou5X1eDZ972N84Mwzuo/ljyXvfQFfABfKOKpCvwoCetTua86kkxSrWVNvCj18ZaTj49gujg==
-X-Received: by 2002:adf:efc9:: with SMTP id i9mr2095608wrp.23.1585126239909;
- Wed, 25 Mar 2020 01:50:39 -0700 (PDT)
-Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 01:50:39 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=trOP5InagGw762E6YSWA1kZAFx4Jh8EXHp5Y4Luzgh4=;
+ b=mKHra8Nq0+M3smuX2rgWFsnWdfCIdF3l3xPQJuWnsyzAv/JLtjyCDC+oQBC+mYIuHD
+ fZ1aTl/m9Ysk3S/mAkHhUKEXuo2R27ttVYBIIUsZ/Jzk6wITTB4FzTKml7dSp6/CQQSP
+ YzsXmv1DmkC9pFEff2Xwdxa8jb08Xy+CrIQi7f+r3t9kg2jvzBFiDWwdvpY45bhsuqiY
+ 9AdcQLMg34Cm46xLAc5R5TydJQYQkcMVYI4B82EtxYQG3Dtmew491D1EWQ3soFohMOVf
+ 1jyXmEnPLZBjmLz6z52wQCRM2OMSbBxPmHClME1jztmfjR5uqUHxiUtUu7q+HSJ6Y4xz
+ yGyg==
+X-Gm-Message-State: ANhLgQ1dLC5617bCZCACiH3pT9MurPS2xx8eSs7/mPjO2a0ocNmFn1Td
+ rmBBX312a4IjteIB4N+CfUF82Q==
+X-Google-Smtp-Source: ADFU+vueJ7hWOgZnSkTyj2ezs0Mq16nYIUDMb5CaDP2hqa5pBUiEN9b6rtNA/BwN4rgty1z+Nm9OXQ==
+X-Received: by 2002:a7b:c010:: with SMTP id c16mr262546wmb.73.1585126259955;
+ Wed, 25 Mar 2020 01:50:59 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
+ ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
+ by smtp.gmail.com with ESMTPSA id f12sm8087115wmf.24.2020.03.25.01.50.58
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 25 Mar 2020 01:50:59 -0700 (PDT)
+Subject: Re: [PATCH v3 0/7] drm/meson: add support for Amlogic Video FBC
+To: daniel@ffwll.ch, dri-devel@lists.freedesktop.org
+References: <20200324142016.31824-1-narmstrong@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: daniel@ffwll.ch,
-	dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 8/8] drm/meson: overlay: setup overlay for Amlogic FBC
- Scatter Memory layout
-Date: Wed, 25 Mar 2020 09:50:25 +0100
-Message-Id: <20200325085025.30631-9-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200325085025.30631-1-narmstrong@baylibre.com>
-References: <20200325085025.30631-1-narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <bd6de1f9-66dc-e482-77c7-4d9f3d6afe6a@baylibre.com>
+Date: Wed, 25 Mar 2020 09:50:59 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200324142016.31824-1-narmstrong@baylibre.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_015043_293626_2772BAF8 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20200325_015102_006776_4A0A62B3 
+X-CRM114-Status: GOOD (  19.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,100 +148,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mjourdan@baylibre.com, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- ppaalanen@gmail.com, linux-amlogic@lists.infradead.org, brian.starkey@arm.com,
+Cc: mjourdan@baylibre.com, linux-kernel@vger.kernel.org, ppaalanen@gmail.com,
+ linux-amlogic@lists.infradead.org, brian.starkey@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Setup the Amlogic FBC decoder for the VD1 video overlay plane to use
-read the FBC header as Scatter Memory layout reference.
+On 24/03/2020 15:20, Neil Armstrong wrote:
+> Amlogic uses a proprietary lossless image compression protocol and format
+> for their hardware video codec accelerators, either video decoders or
+> video input encoders.
+> 
+> It considerably reduces memory bandwidth while writing and reading
+> frames in memory.
+> 
+> The underlying storage is considered to be 3 components, 8bit or 10-bit
+> per component, YCbCr 420, single plane :
+> - DRM_FORMAT_YUV420_8BIT
+> - DRM_FORMAT_YUV420_10BIT
+> 
+> This modifier will be notably added to DMA-BUF frames imported from the V4L2
+> Amlogic VDEC decoder.
+> 
+> At least two layout are supported :
+> - Basic: composed of a body and a header
+> - Scatter: the buffer is filled with a IOMMU scatter table referring
+>   to the encoder current memory layout. This mode if more efficient in terms
+>   of memory allocation but frames are not dumpable and only valid during until
+>   the buffer is freed and back in control of the encoder
+> 
+> At least two options are supported :
+> - Memory saving: when the pixel bpp is 8b, the size of the superblock can
+>   be reduced, thus saving memory.
+> 
+> This serie adds the missing register, updated the FBC decoder registers
+> content to be committed by the crtc code.
+> 
+> The Amlogic FBC has been tested with compressed content from the Amlogic
+> HW VP9 decoder on S905X (GXL), S905D2 (G12A) and S905X3 (SM1) in 8bit
+> (Scatter+Mem Saving on G12A/SM1, Mem Saving on GXL) and 10bit
+> (Scatter on G12A/SM1, default on GXL).
+> 
+> It's expected to work as-is on GXM and G12B SoCs.
+> 
+> Changes since v2 at [2]:
+> - Added "BASIC" layout and moved the SCATTER mode as layout, making
+>   BASIC and SCATTER layout exclusives
+> - Moved the Memory Saving at bit 8 for options fields
+> - Split fourcc and overlay patch to introduce basic, mem saving and then
+>   scatter in separate patches
+> - Added comment about "transferability" of the buffers
+> 
+> Changes since v1 at [1]:
+> - s/VD1_AXI_SEL_AFB/VD1_AXI_SEL_AFBC/ into meson_registers.h
+> 
+> [1] https://patchwork.freedesktop.org/series/73722/#rev1
+> [2] https://patchwork.freedesktop.org/series/73722/#rev2
+> 
+> Neil Armstrong (7):
+>   drm/fourcc: Add modifier definitions for describing Amlogic Video
+>     Framebuffer Compression
+>   drm/meson: add Amlogic Video FBC registers
+>   drm/meson: overlay: setup overlay for Amlogic FBC
+>   drm/meson: crtc: handle commit of Amlogic FBC frames
+>   drm/fourcc: amlogic: Add modifier definitions for Memory Saving option
+>   drm/meson: overlay: setup overlay for Amlogic FBC Memory Saving mode
+>   drm/meson: overlay: setup overlay for Amlogic FBC Scatter Memory
+>     layout
+> 
+>  drivers/gpu/drm/meson/meson_crtc.c      | 118 ++++++++---
+>  drivers/gpu/drm/meson/meson_drv.h       |  16 ++
+>  drivers/gpu/drm/meson/meson_overlay.c   | 257 +++++++++++++++++++++++-
+>  drivers/gpu/drm/meson/meson_registers.h |  22 ++
+>  include/uapi/drm/drm_fourcc.h           |  66 ++++++
+>  5 files changed, 441 insertions(+), 38 deletions(-)
+> 
 
-Tested-by: Kevin Hilman <khilman@baylibre.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/gpu/drm/meson/meson_overlay.c | 48 +++++++++++++++++----------
- 1 file changed, 31 insertions(+), 17 deletions(-)
+Please ignore this serie, v4 has been sent.
 
-diff --git a/drivers/gpu/drm/meson/meson_overlay.c b/drivers/gpu/drm/meson/meson_overlay.c
-index 8b9d4984b2a7..3c54135f53a0 100644
---- a/drivers/gpu/drm/meson/meson_overlay.c
-+++ b/drivers/gpu/drm/meson/meson_overlay.c
-@@ -487,6 +487,9 @@ static void meson_overlay_atomic_update(struct drm_plane *plane,
- 					  AFBC_HOLD_LINE_NUM(8) |
- 					  AFBC_BURST_LEN(2);
- 
-+		if (fb->modifier & DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_SCATTER)
-+			priv->viu.vd1_afbc_mode |= AFBC_SCATTER_MODE;
-+
- 		if (fb->modifier & DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING)
- 			priv->viu.vd1_afbc_mode |= AFBC_BLK_MEM_MODE;
- 
-@@ -675,23 +678,32 @@ static void meson_overlay_atomic_update(struct drm_plane *plane,
- 	}
- 
- 	if (priv->viu.vd1_afbc) {
--		/* Default mode is 4k per superblock */
--		unsigned long block_size = 4096;
--		unsigned long body_size;
--
--		/* 8bit mem saving mode is 3072bytes per superblock */
--		if (priv->viu.vd1_afbc_mode & AFBC_BLK_MEM_MODE)
--			block_size = 3072;
--
--		body_size = (ALIGN(priv->viu.vd1_stride0, 64) / 64) *
--			    (ALIGN(priv->viu.vd1_height0, 32) / 32) *
--			    block_size;
--
--		priv->viu.vd1_afbc_body_addr = priv->viu.vd1_addr0 >> 4;
--
--		/* Header is after body content */
--		priv->viu.vd1_afbc_head_addr = (priv->viu.vd1_addr0 +
--						body_size) >> 4;
-+		if (priv->viu.vd1_afbc_mode & AFBC_SCATTER_MODE) {
-+			/*
-+			 * In Scatter mode, the header contains the physical
-+			 * body content layout, thus the body content
-+			 * size isn't needed.
-+			 */
-+			priv->viu.vd1_afbc_head_addr = priv->viu.vd1_addr0 >> 4;
-+			priv->viu.vd1_afbc_body_addr = 0;
-+		} else {
-+			/* Default mode is 4k per superblock */
-+			unsigned long block_size = 4096;
-+			unsigned long body_size;
-+
-+			/* 8bit mem saving mode is 3072bytes per superblock */
-+			if (priv->viu.vd1_afbc_mode & AFBC_BLK_MEM_MODE)
-+				block_size = 3072;
-+
-+			body_size = (ALIGN(priv->viu.vd1_stride0, 64) / 64) *
-+				    (ALIGN(priv->viu.vd1_height0, 32) / 32) *
-+				    block_size;
-+
-+			priv->viu.vd1_afbc_body_addr = priv->viu.vd1_addr0 >> 4;
-+			/* Header is after body content */
-+			priv->viu.vd1_afbc_head_addr = (priv->viu.vd1_addr0 +
-+							body_size) >> 4;
-+		}
- 	}
- 
- 	priv->viu.vd1_enabled = true;
-@@ -771,6 +783,8 @@ static const uint32_t supported_drm_formats[] = {
- };
- 
- static const uint64_t format_modifiers[] = {
-+	DRM_FORMAT_MOD_AMLOGIC_FBC(DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_SCATTER |
-+				   DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING),
- 	DRM_FORMAT_MOD_AMLOGIC_FBC(DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC |
- 				   DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING),
- 	DRM_FORMAT_MOD_AMLOGIC_FBC(DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC),
--- 
-2.22.0
-
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
