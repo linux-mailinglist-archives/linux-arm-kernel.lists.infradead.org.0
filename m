@@ -2,70 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DBDB19221F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:07:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21B0619232D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:51:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ZTkpT9qVv5bOMYcYnpX/41dBngyw6WIzt8s7l0fur0=; b=JPLyondNdD48zQ
-	9JRINBCu+OIN/dHc84X8bw7hXbKBFz9b9WQ6v20kGg7h5Wm8PDv4gkTdZkwnvSV/92X/iua1imeWs
-	Ej+iDS/uJs1HTRYNtVxQvQvXTyS4gRZWowKFTplfyRkN+0VVaKNIUqDXeIlCph1CfYONPN0h7CPx8
-	RPb/Vn6t2Wj+JyzbkttMDGRdUeRIpLyXD6GmgL+aA8CLbwkA0p9Vgl0VQicR7R3CNJUeDVFb/DJ1e
-	m6egC1NCHHp2Jmyme235shZQLRjl3HEzALrbsgr7l2DzWgApm6VDG+GBpg9XULCPTtLNF8fiOzRmR
-	PXxjuEx0x+V5X3udsGQQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iRSS7beE/kjcOxoupF1zomJ4nCCGfzJj8XKHo3tISvU=; b=Wpn8dYPFm10z5s
+	jrwSfMr7jBRgoajLZ6fY+1TJUwFLVDA9wCWVKUDeDSuiHqUmAIyQFFqWOiBtYJfCe/eE0DZaDkb+d
+	GIqX+B71s2gNa/15gtIzd5BPJws+3I1nhgsAjI+JtH48Wxo8rXeASpvc70KHDPiaeyZFx0VAqO6Db
+	KZjdIpfTgxT4OKoJAY6dPOyW1/mswgjIN7Z048nzNuLJuegM9QGltrq3pPQfHJdeUSdqO0hWyNBv0
+	pZoy0z/Bbur/4y4x1YjQU0PNFB4Qs/Jhc+GmBpEjINe6JFCCoAqnAwot2PxkaW3TraHIPey4PBiIl
+	dcxrhCAagWc+3MWkaIOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH14F-0001r8-0Z; Wed, 25 Mar 2020 08:07:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jH1kV-0002rv-3g; Wed, 25 Mar 2020 08:50:55 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH146-0001qn-MN
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:07:07 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C033920772;
- Wed, 25 Mar 2020 08:07:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585123625;
- bh=Di1+nX0nRWiCO+NwcJ41e9Kj7h9HpdO/rolyGExbBBY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=h0QXQ0lViXQ2EXn1ONHaLlk5/Fev+SPNQcRxu3BjplSmp4qre0XwywWeXWtkQL1JG
- 2ow+GbTSKMiCAYtpfZlx76p4r9CEAyaD1fuHUtNi746NoOZH5c/5byhqSsYXdorJe3
- psYesybndRSz7rzZ1cTYcGR7HsFP2DH7qNlbIbAs=
-Date: Wed, 25 Mar 2020 08:07:01 +0000
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] arm64: bti: Document behaviour for dynamically linked
- binaries
-Message-ID: <20200325080700.GA30293@willie-the-truck>
-References: <20200323170119.12263-1-broonie@kernel.org>
+ id 1jH1kB-0002bl-7Q
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:50:37 +0000
+Received: by mail-wr1-x442.google.com with SMTP id 65so1855020wrl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Mar 2020 01:50:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WoXHfuXYzc7+p6uA7OR0OLG4JPoyNaGh9u2qRQoG7QA=;
+ b=klP7C+QxkpkwvekqXQb/Ju4yyTjbf+2WirsTFD+RvppuVSgw8RLF4oDkiJV5Vk4lMd
+ xqXSWWCekWRsLvvY6YJd8ek781hrgVRUnrwPML6G++2ZxVBfd7aiFZY/dnxdJCZ1Alz/
+ C3xF4AHS7bnfY5t5mSinwvd8ZGuwTBNPL142jGG5FwxBD6S0Mj0AhGVekurjgwDehbwx
+ wTAti/zk4YsU/j2wJHyfzaT8sKWSpFa4nF0dUBGhV5rwRSVH34qF7ROPfO/SZrYiB+Wj
+ SpjhV6zueQA3Spsi+OJoE82nK0zOOYF9+7m+1eEFFf6hIXTT0bQHCmzUzl3wcxdSVZEm
+ rQtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WoXHfuXYzc7+p6uA7OR0OLG4JPoyNaGh9u2qRQoG7QA=;
+ b=HVrNigmczM/cAVWkY4roxLzm7+bysdN1jWrmg4WqWMhkp/kIvXtMbR5Xcj8k1eKPBr
+ djxIpYIYqDDVeuwpNvU0lvxyqYVPYMP+/3FJg5L0JAtHroOEgOgJj1bXVskkM8O7PJ/m
+ pbUQ1cGU4gb9WkJLmiibGOcSeQ5fI4OUL3T01nDD4qDMndnROXJMTXgB3AxI88WJ2Iuz
+ dU2DSHAJ9Eez3H4H3K//urpGc2zH4LM55BQ/aJENZVCt9LQmclWtHTtVaoo02ZVr4Hrp
+ ekgPON0Mt1EuG7hPaG07cxswHJYOuoUaUBv4fx3eqo1wWzG3jzJgkobjhk/q/jo9s9zg
+ mitw==
+X-Gm-Message-State: ANhLgQ3KsIaLr0hINqjbAI1Bk/WNF+lYu79on9J8NQjZRQcP84ds4XkO
+ QuiqssTCbOogRzDlvqR4u1gjFQ==
+X-Google-Smtp-Source: ADFU+vvN8eNsV/lG7CyAMfmUF+xPvxc5unukjUQek0cvYyrrZYY7nWzlFjHzEeIz6hgWFSoiPKW9XA==
+X-Received: by 2002:a5d:630e:: with SMTP id i14mr2218077wru.260.1585126229049; 
+ Wed, 25 Mar 2020 01:50:29 -0700 (PDT)
+Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
+ by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Mar 2020 01:50:28 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: daniel@ffwll.ch,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH v4 0/8] drm/meson: add support for Amlogic Video FBC
+Date: Wed, 25 Mar 2020 09:50:17 +0100
+Message-Id: <20200325085025.30631-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323170119.12263-1-broonie@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_010706_750520_9F9664E2 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200325_015035_371776_68D81664 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,56 +93,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Mark Rutland <mark.rutland@arm.com>,
+Cc: mjourdan@baylibre.com, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, ppaalanen@gmail.com,
+ linux-amlogic@lists.infradead.org, brian.starkey@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 23, 2020 at 05:01:19PM +0000, Mark Brown wrote:
-> For dynamically linked binaries the interpreter is responsible for setting
-> PROT_BTI on everything except itself. The dynamic linker needs to be aware
-> of PROT_BTI, for example in order to avoid dropping that when marking
-> executable pages read only after doing relocations, and doing everything
-> in userspace ensures that we don't get any issues due to divergences in
-> behaviour between the kernel and dynamic linker within a single executable.
-> Add a comment indicating that this is intentional to the code to help
-> people trying to understand what's going on.
-> 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> ---
->  arch/arm64/kernel/process.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 24af13d7bde6..9b668565dd10 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -674,6 +674,11 @@ asmlinkage void __sched arm64_preempt_schedule_irq(void)
->  int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
->  			 bool has_interp, bool is_interp)
->  {
-> +	/*
-> +	 * For dynamicly linked executables the interpreter is
+Amlogic uses a proprietary lossless image compression protocol and format
+for their hardware video codec accelerators, either video decoders or
+video input encoders.
 
-dynamicly => dynamically
+It considerably reduces memory bandwidth while writing and reading
+frames in memory.
 
-> +	 * responsible for setting PROT_BTI on everything except
-> +	 * itself.
-> +	 */
->  	if (is_interp != has_interp)
->  		return prot;
+The underlying storage is considered to be 3 components, 8bit or 10-bit
+per component, YCbCr 420, single plane :
+- DRM_FORMAT_YUV420_8BIT
+- DRM_FORMAT_YUV420_10BIT
 
-Catalin: With the typo fixed, it's probably worth sticking this on
-for-next/bti so we don't lose it, but I don't think this is really 5.7
-material until the tools folks are happy with the ABI. It's pretty
-frustrating, but committing to something broken would be far worse and
-it's better to get these issues resolved *now* before anything hits
-mainline.
+This modifier will be notably added to DMA-BUF frames imported from the V4L2
+Amlogic VDEC decoder.
 
-Will
+At least two layout are supported :
+- Basic: composed of a body and a header
+- Scatter: the buffer is filled with a IOMMU scatter table referring
+  to the encoder current memory layout. This mode if more efficient in terms
+  of memory allocation but frames are not dumpable and only valid during until
+  the buffer is freed and back in control of the encoder
+
+At least two options are supported :
+- Memory saving: when the pixel bpp is 8b, the size of the superblock can
+  be reduced, thus saving memory.
+
+This serie adds the missing register, updated the FBC decoder registers
+content to be committed by the crtc code.
+
+The Amlogic FBC has been tested with compressed content from the Amlogic
+HW VP9 decoder on S905X (GXL), S905D2 (G12A) and S905X3 (SM1) in 8bit
+(Scatter+Mem Saving on G12A/SM1, Mem Saving on GXL) and 10bit
+(Scatter on G12A/SM1, default on GXL).
+
+It's expected to work as-is on GXM and G12B SoCs.
+
+Changes since v3 at [3]:
+- added dropped fourcc patch for scatter
+- fixed build of last patch
+
+Changes since v2 at [2]:
+- Added "BASIC" layout and moved the SCATTER mode as layout, making
+  BASIC and SCATTER layout exclusives
+- Moved the Memory Saving at bit 8 for options fields
+- Split fourcc and overlay patch to introduce basic, mem saving and then
+  scatter in separate patches
+- Added comment about "transferability" of the buffers
+
+Changes since v1 at [1]:
+- s/VD1_AXI_SEL_AFB/VD1_AXI_SEL_AFBC/ into meson_registers.h
+
+[1] https://patchwork.freedesktop.org/series/73722/#rev1
+[2] https://patchwork.freedesktop.org/series/73722/#rev2
+
+Neil Armstrong (8):
+  drm/fourcc: Add modifier definitions for describing Amlogic Video
+    Framebuffer Compression
+  drm/meson: add Amlogic Video FBC registers
+  drm/meson: overlay: setup overlay for Amlogic FBC
+  drm/meson: crtc: handle commit of Amlogic FBC frames
+  drm/fourcc: amlogic: Add modifier definitions for Memory Saving option
+  drm/meson: overlay: setup overlay for Amlogic FBC Memory Saving mode
+  drm/fourcc: amlogic: Add modifier definitions for the Scatter layout
+  drm/meson: overlay: setup overlay for Amlogic FBC Scatter Memory
+    layout
+
+ drivers/gpu/drm/meson/meson_crtc.c      | 118 ++++++++---
+ drivers/gpu/drm/meson/meson_drv.h       |  16 ++
+ drivers/gpu/drm/meson/meson_overlay.c   | 257 +++++++++++++++++++++++-
+ drivers/gpu/drm/meson/meson_registers.h |  22 ++
+ include/uapi/drm/drm_fourcc.h           |  66 ++++++
+ 5 files changed, 441 insertions(+), 38 deletions(-)
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
