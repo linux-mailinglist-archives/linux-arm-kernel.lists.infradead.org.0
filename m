@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AB39193381
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:06:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6614019337F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:06:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNTgIvMzXedxj/zPgGKH/sOr/eBROUQ5Ti4CqEK9Q+c=; b=X5WL1GqIx91J7l
-	zmVow7fUBzUGUFVYKyccvE47wUODAVZsYi1u4VJJcqwsD9XQucwafyo/uf0TG3p6FPyp3UgzNGJQw
-	nIoNGpblNnODHcVXldm9ibHAkf0whqcoc8Zo+opkPB93s2/6xvlAC2StuSj0RNwCrkeS76+GcL/ra
-	fOCAmmGHpaeba3/xQgJMcQpOI/5N3rFdSPuOIt8OsP5ywDG30ffRnloQaGYBh+dO92Qh7+qxirDA9
-	ZzXXAldkrJhBG469ztFta6+JYylPIcbLp3JG+F+T6tAU8BB/ZSD5YW97EsWuYFIz0hoC/Pw8UeGMm
-	Y9Jh/8twiQ6/MLjyw/vQ==;
+	List-Owner; bh=yJfa82WFF97hKhzK2ZdNKYPvlu4toZAsO9ezk4z5Keo=; b=FQJcSa4qtdudaS
+	g+0q7cbJdVMFb4UjzHnnu5CdMyi4qnwvnvtnSmwMVKT2bttv+yiLdSMWQCJUOEIrsB3JBDgWOlrs7
+	L0aerCrn+j/3/3a6YUUR1apTVcR2fLUmcFl8IbCrF6mnKMv6ixVzIbhhQ/hGpEJOOROKUcFFjqeMr
+	/E49DiDGlDv3p+w/2jwDhqae6cFsC2fHaV3HuNnKfsySdIm/6+IUl8F+e9yS4j0GBO0aFLdF29JQ5
+	e3Pkae4s1mojLRVWkh6vGrtDee3ezjET8Ip4Or2dGsDQR2VVRVsyPxY6mDmxZp6K/Tu1J8ZmVtXLo
+	fmevRLp1teR8lIktwx3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHEAa-00026B-Rn; Wed, 25 Mar 2020 22:06:40 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
+	id 1jHEAM-0001kf-L6; Wed, 25 Mar 2020 22:06:26 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHE9o-0001Tl-AY; Wed, 25 Mar 2020 22:05:53 +0000
-Received: by mail-il1-f194.google.com with SMTP id m7so3490390ilg.5;
- Wed, 25 Mar 2020 15:05:47 -0700 (PDT)
+ id 1jHE9n-0001Ts-9h; Wed, 25 Mar 2020 22:05:52 +0000
+Received: by mail-io1-f66.google.com with SMTP id k9so4013277iov.7;
+ Wed, 25 Mar 2020 15:05:49 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7Ulr9pBC4SUbqUU5FsVEbaY1gpVe/0DQ9QLWI1PPgfQ=;
- b=nv3+JTyJaZG120Ed7CWE6lwPNiAskNuyhOd9mL6Zir6GO3a0X1JsipiwnsgJ2inXor
- OIE/wg/Lvoqp/EPbiFsQX4wJUlQH7e4qVafzvL/WIWJdW3pAPahIOV6g8bqq7FEPYfze
- BGtCmT9y/gH+ym56YcwV8RBhh4R8kBBjv2CW90fzcQag1pGFk/6HsrQ6lkRMsWbPwNTk
- yULjlWUAO+FZJY4vQdwb3kIdgOcQC48OdIZEiVmIqdinPuewhNIaxhaP3CvrfIHbT8hS
- EtAoewR7mojaVbrHbLz0QOpr9geyl4mj8wVqvgcB8+1E/gfWepDfaf4DME/4ti1Iv2E/
- TzdQ==
-X-Gm-Message-State: ANhLgQ0/oYBdarnMe9YsCUSk5WKhjko6LLY/zxsIwj6aQ1WmRLEq73RY
- KCTlXOWEagIn9sfAZUZ31A==
-X-Google-Smtp-Source: ADFU+vue8Vxmky7PF9etOIHQcfy9dQqZ6AbqyS9J6TatHClhkfnl2UGT86/bcc6UGlxsmE61Cop/rw==
-X-Received: by 2002:a92:6e11:: with SMTP id j17mr5689060ilc.249.1585173946547; 
- Wed, 25 Mar 2020 15:05:46 -0700 (PDT)
+ bh=AwF7FEOUbNvNk4mSehe5GSFcN0+uDrOJWlHbrUm2jl4=;
+ b=O3jvzxHvT3EXhY64a8UhbwJvtZiSsvPQLdh8rWrHXCtr0EiL0yuBh05J6tAJyrE6CC
+ v+1cP/i03c2Ig1Bb+aQc/AS7XN/kTVRPobJ/SFjx+gcNQk3i5KR99flWC20OOphnrjBk
+ mW1GHIbljScISM8g9lZ9binI6ZnB6T7yApCMqHR3EbBAyUk3TN1rmNv0HyojQ8mL+guu
+ 6MzfLlulQTkQRm351fF1WIBnGCpkmYMCREvRSZHuxrQ9AYiVIKduZiAIebky30JegXhg
+ aQc/loIgxFLIXGkRoARQysIoupoTjtZuZfZMD/1bnfBxHioKskCXfMHDUY/sKoDcOeDd
+ WqYg==
+X-Gm-Message-State: ANhLgQ1nixcCnHpM0wqrOU/BG7vfxIoPiEMI5kR0kEzGLkOKnIgID5Lr
+ PjmnBGlzgOJ4ayi/IPsSRw==
+X-Google-Smtp-Source: ADFU+vsP1GIXWhv3Nn2746MnQvCz0PBygUKBaoaDtLTv4UJllArEZXEuLW2CGMWNrRni/irdN7azAg==
+X-Received: by 2002:a5e:8214:: with SMTP id l20mr5055871iom.54.1585173948584; 
+ Wed, 25 Mar 2020 15:05:48 -0700 (PDT)
 Received: from xps15.herring.priv ([64.188.179.250])
- by smtp.googlemail.com with ESMTPSA id v8sm102390ioh.40.2020.03.25.15.05.44
+ by smtp.googlemail.com with ESMTPSA id v8sm102390ioh.40.2020.03.25.15.05.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 15:05:45 -0700 (PDT)
+ Wed, 25 Mar 2020 15:05:48 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: devicetree@vger.kernel.org
-Subject: [PATCH 1/4] dt-bindings: iio/accel: Drop duplicate adi,
- adxl345/6 from trivial-devices.yaml
-Date: Wed, 25 Mar 2020 16:05:38 -0600
-Message-Id: <20200325220542.19189-2-robh@kernel.org>
+Subject: [PATCH 2/4] dt-bindings: sram: qcom: Clean-up 'ranges' and child node
+ names
+Date: Wed, 25 Mar 2020 16:05:39 -0600
+Message-Id: <20200325220542.19189-3-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200325220542.19189-1-robh@kernel.org>
 References: <20200325220542.19189-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_150552_382725_EFC0E50B 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20200325_150551_355485_19486857 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
@@ -73,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
+ [209.85.166.66 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -111,60 +111,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 'adi,adxl345' definition is a duplicate as there's a full binding in:
-Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+The regex for child nodes doesn't match the example. This wasn't flagged
+with 'additionalProperties: false' missing. The child node schema was also
+incorrect with 'ranges' property as it applies to child nodes and should
+be moved up to the parent node.
 
-The trivial-devices binding doesn't capture that 'adi,adxl346' has a
-fallback compatible 'adi,adxl345', so let's add it to adi,adxl345.yaml.
-
-Cc: Michael Hennerich <michael.hennerich@analog.com>
-Cc: Jonathan Cameron <jic23@kernel.org>
-Cc: Hartmut Knaack <knaack.h@gmx.de>
-Cc: Lars-Peter Clausen <lars@metafoo.de>
-Cc: Peter Meerwald-Stadler <pmeerw@pmeerw.net>
-Cc: linux-iio@vger.kernel.org
+Fixes: 957fd69d396b ("dt-bindings: soc: qcom: add On Chip MEMory (OCMEM) bindings")
+Cc: Brian Masney <masneyb@onstation.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/iio/accel/adi,adxl345.yaml     | 10 +++++++---
- Documentation/devicetree/bindings/trivial-devices.yaml |  4 ----
- 2 files changed, 7 insertions(+), 7 deletions(-)
+ .../devicetree/bindings/sram/qcom,ocmem.yaml         | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-index c602b6fe1c0c..d124eba1ce54 100644
---- a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-+++ b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-@@ -17,9 +17,13 @@ description: |
+diff --git a/Documentation/devicetree/bindings/sram/qcom,ocmem.yaml b/Documentation/devicetree/bindings/sram/qcom,ocmem.yaml
+index 222990f9923c..469cec133647 100644
+--- a/Documentation/devicetree/bindings/sram/qcom,ocmem.yaml
++++ b/Documentation/devicetree/bindings/sram/qcom,ocmem.yaml
+@@ -43,6 +43,9 @@ properties:
+   '#size-cells':
+     const: 1
  
- properties:
-   compatible:
--    enum:
--      - adi,adxl345
--      - adi,adxl375
-+    oneOf:
-+      - items:
-+          - const: adi,adxl346
-+          - const: adi,adxl345
-+      - enum:
-+          - adi,adxl345
-+          - adi,adxl375
++  ranges:
++    maxItems: 1
++
+ required:
+   - compatible
+   - reg
+@@ -51,9 +54,10 @@ required:
+   - clock-names
+   - '#address-cells'
+   - '#size-cells'
++  - ranges
  
-   reg:
-     maxItems: 1
-diff --git a/Documentation/devicetree/bindings/trivial-devices.yaml b/Documentation/devicetree/bindings/trivial-devices.yaml
-index 978de7d37c66..51d1f6e43c02 100644
---- a/Documentation/devicetree/bindings/trivial-devices.yaml
-+++ b/Documentation/devicetree/bindings/trivial-devices.yaml
-@@ -42,10 +42,6 @@ properties:
-           - adi,adt7476
-             # +/-1C TDM Extended Temp Range I.C
-           - adi,adt7490
--            # Three-Axis Digital Accelerometer
--          - adi,adxl345
--            # Three-Axis Digital Accelerometer (backward-compatibility value "adi,adxl345" must be listed too)
--          - adi,adxl346
-             # AMS iAQ-Core VOC Sensor
-           - ams,iaq-core
-             # i2c serial eeprom  (24cxx)
+ patternProperties:
+-  "^.+-sram$":
++  "-sram@[0-9a-f]+$":
+     type: object
+     description: A region of reserved memory.
+ 
+@@ -61,12 +65,8 @@ patternProperties:
+       reg:
+         maxItems: 1
+ 
+-      ranges:
+-        maxItems: 1
+-
+     required:
+       - reg
+-      - ranges
+ 
+ examples:
+   - |
+@@ -88,9 +88,9 @@ examples:
+ 
+         #address-cells = <1>;
+         #size-cells = <1>;
++        ranges = <0 0xfec00000 0x100000>;
+ 
+         gmu-sram@0 {
+                 reg = <0x0 0x100000>;
+-                ranges = <0 0 0xfec00000 0x100000>;
+         };
+       };
 -- 
 2.20.1
 
