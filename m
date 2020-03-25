@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ADAE192D15
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 16:42:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62B4B192D1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 16:42:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=s2hoJ9wZNoyf8Te1ZGlT7I3i76QyD884V3HEO/h3Xi8=; b=XDfmytB+Y6bkpsCOPNmyBaHTWX
-	SMqG7cXH5CadLbv7dozx1mq5lITll+8QPKkd1bbFq0TtG4CJUTgT/qll/42r114gYjjpNPnVUwjK3
-	cz1lu1lgqdAf7niIu6XuXpl2jeoIrHSIJbS6CUCHn6BJNtjOqxlpF2DebSZatb+QfFYqtXs/2CzwW
-	AbPjTPqML0TF46cxQe281qmlDqpRme2W6MQaN0BOM1Bv7U1m4EZXauhxAyzSz+lg/kOxbFjjyoyVp
-	ViIxJ++172/dUpPldKhKqUynurcYmxbAwd1LcsSOK6oiv8OEu1YjWiO/7U6azvbTCXxT9V3amxWls
-	WR7A484A==;
+	bh=Jno5VKlk+gnEX/WUt3l/ytMxJ1AkPAH1fpbC2OWLsEc=; b=THiiX61o4V+HujdieNLo7LQNj7
+	NnUtvbZLVu6Li15lBzWa7qg13WS4Mbcs8S5uRH72mYzduyRhD9kWKWTmq6bN6jselrp9nyBcdBRzj
+	XvgxDqK+/78w/vrRz2DsX/PZJ5TNYsy6RUSDowq83eR83ALB2XvaClj69Z4mgN0JXU3H0UigGitDb
+	6wHyScnDkIlGB9Mn5XDl7U37OGdV3JZPNL4RWqV5nAIdbXarnF6Kb6FT2S47xanS4UJ8V3RKoaujg
+	gsiQ6dEE1lC7PPnsCblPpzgGIrsID1LjVZGrJlr+gEOqY2xkpI+h4hCo2LdYwC087/ywIpsu+2Zuf
+	G3mLfa1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH8Ab-00024V-5P; Wed, 25 Mar 2020 15:42:17 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jH8Ap-0002JV-Ti; Wed, 25 Mar 2020 15:42:31 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH87w-00076A-Jx
+ id 1jH87x-00077J-EP
  for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 15:39:34 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3774C20055D;
- Wed, 25 Mar 2020 16:39:31 +0100 (CET)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 04D271A04EA;
+ Wed, 25 Mar 2020 16:39:32 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A3082000D4;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EB4781A00F9;
  Wed, 25 Mar 2020 16:39:31 +0100 (CET)
 Received: from fsr-ub1664-175.ea.freescale.net
  (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 6C0F8203CE;
- Wed, 25 Mar 2020 16:39:30 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 3928E203CE;
+ Wed, 25 Mar 2020 16:39:31 +0100 (CET)
 From: Abel Vesa <abel.vesa@nxp.com>
 To: Rob Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <kernel@pengutronix.de>,
@@ -43,17 +43,17 @@ To: Rob Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Lee Jones <lee.jones@linaro.org>, Anson Huang <anson.huang@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan <peng.fan@nxp.com>,
  Jacky Bai <ping.bai@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>
-Subject: [PATCH v2 10/13] arm64: dts: imx8mp: Add audiomix clock controller
- node
-Date: Wed, 25 Mar 2020 17:38:48 +0200
-Message-Id: <1585150731-3354-11-git-send-email-abel.vesa@nxp.com>
+Subject: [PATCH v2 11/13] dt-bindings: reset: imx8mp: Add ids for audiomix
+ reset
+Date: Wed, 25 Mar 2020 17:38:49 +0200
+Message-Id: <1585150731-3354-12-git-send-email-abel.vesa@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1585150731-3354-1-git-send-email-abel.vesa@nxp.com>
 References: <1585150731-3354-1-git-send-email-abel.vesa@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_083932_832268_EC90EB97 
-X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-CacheID: sfid-20200325_083933_655825_9E6C7CDE 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -61,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,35 +85,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the audiomix clock controller as part of the audiomix MFD.
+Add all the reset ids for the audiomix reset.
 
 Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mp.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ include/dt-bindings/reset/imx-audiomix-reset.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 include/dt-bindings/reset/imx-audiomix-reset.h
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-index 3e4c376..03ace7f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-@@ -659,6 +659,17 @@
- 			audiomix: audiomix@30e20000 {
- 				compatible = "fsl,imx8mp-mix";
- 				reg = <0x30e20000 0x10000>;
+diff --git a/include/dt-bindings/reset/imx-audiomix-reset.h b/include/dt-bindings/reset/imx-audiomix-reset.h
+new file mode 100644
+index 00000000..571cacf
+--- /dev/null
++++ b/include/dt-bindings/reset/imx-audiomix-reset.h
+@@ -0,0 +1,15 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright 2019 NXP.
++ */
 +
-+				audiomix_clk: clock-controller {
-+					compatible = "fsl,imx8mp-audiomix-clk";
-+					#clock-cells = <1>;
-+					clocks = <&clk IMX8MP_CLK_AUDIO_ROOT>,
-+						 <&clk IMX8MP_CLK_AUDIO_AHB>,
-+						 <&clk IMX8MP_CLK_AUDIO_AXI_DIV>;
-+					clock-names = "audio_root",
-+						      "audio_ahb",
-+						      "audio_axi_div";
-+				};
- 			};
- 		};
- 
++#ifndef DT_BINDING_RESET_IMX_AUDIOMIX_H
++#define DT_BINDING_RESET_IMX_AUDIOMIX_H
++
++#define IMX_AUDIOMIX_EARC_RESET		0x0
++#define IMX_AUDIOMIX_EARC_PHY_RESET	0x1
++
++#define IMX_AUDIOMIX_RESET_NUM		2
++
++#endif
++
 -- 
 2.7.4
 
