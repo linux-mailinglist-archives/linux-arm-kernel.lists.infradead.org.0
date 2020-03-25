@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BED6192340
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:52:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AF7E192342
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:52:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6RW7Z1fGuX/cmIXa6TzVHArwCV007mp3caXGqgiCP9M=; b=aQbyYYQx3Ir38F
-	WPR6+2foJ5Jx78LKffRLH86yCW910snfwtBkASpT+r4q4W9veV7Zi8laiXupajsvsnlJxHf1x/ysG
-	SN/nZUdKXnCBBO21WgTHzzv3ge0LHNpF2EMNvo944FrMrh6hz7TsNfwK0F16oNTS9qaYSbZhSweHC
-	w9uY33mT7mmYiuv98f4mMb8dQMgC77Q+r5QWf1QG1rQFp7pr3mOrSUgSfOYR4A0qRIJq9XmPQtcJE
-	7cQnb9vvnelK6S4zg5k4gEe87+Hprfvoyy/8HoRV+XhcIYiColBA1J5vJ7JYpw91DntnL0U5kLwTb
-	r9pwYAYocr9P8laPzynQ==;
+	List-Owner; bh=Lr2c4CFsM9OzT2IqjDMxIRuI8d+wNq/5IHpkJEEfkMo=; b=I3hlz1shWj+fC0
+	WsJksAoNJY0xt0kSajyn5zbP3h4RPFralIDmWNcXlVw9NwfblA7KYWWesJWcQFXFoOmHOOZt8v7j8
+	Ai9ntJqRa47H5A4VQcW8UIx5PPr5+CBCPTxbrRl6mnv8L5wjjeRrabceBj9BgItgAim6Cu16giKLy
+	rQLUiKcd55fD1jJQPR3SyKAUQYnhYHcOWm+nEhuMpw+uj/P6sDVoyCN0wP/sqH+OS8YipAlAd6tby
+	rSM8ATrn5YqeetgbvwSD8CfymRDr4/vfxZs2ry5WJ4GVxjuf9aNOKzEt/F2IKtWCxR5zMQ3jFNned
+	IO2+iVigIFGmY7XoNwxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH1lx-0004gL-CU; Wed, 25 Mar 2020 08:52:25 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jH1m7-0004u2-IE; Wed, 25 Mar 2020 08:52:35 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH1kD-0002kh-MU
+ id 1jH1kE-0002o6-TP
  for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:50:47 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c187so1406550wme.1
+Received: by mail-wm1-x341.google.com with SMTP id c187so1406620wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 01:50:37 -0700 (PDT)
+ Wed, 25 Mar 2020 01:50:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ANDOlCT1ZqrnKgx/+UtkXPnR52K04rx8cZE8y2hTCQU=;
- b=pgsyudR/D2KpBB4/CqRb3vU07WoAY4c5vp9glayeMsrR3uDiTPhmtEDK+AWoQqkzHQ
- bvypr/WDimmRzKQ48OxtHMcKAjTT6iIXBdLTWhlFb+93oRxsvpeczFkVeg4aKq/wQ/Je
- rfl4bK1txMY3ppAZIm4afopOmNjNpExwGRpAeB14dZhpkQZNQb4VbGA0ALzAiWLVotmU
- +UiL8ZI9SrjEu3Uucu2dCRVRqDazHya8qIot8dJIp1DRUN6vEj9i3TURcaiYWPdGPb7v
- OTSR7GbpUra2bCrJH7EkC9JQfY3865RiKJi4lJo1XeMHh9yhUeU3NBZvxqC8MdfvsC0R
- pc5A==
+ bh=fPJX5pxHatWlhsndvDxqYNXpPbJWSaIQ/yvG8JwAaPQ=;
+ b=aYBMrSDLGFsR9VGiA3afn25swSvBzlrBXb5UxObkLtHAfr5/+WOEvT0kDWgdi4FwZQ
+ zjXQdJNgPta9PL4WL8iKpMmwrCQUjzd7L5DroRcX2ImHVgy2LegXPtXrazdftqoeVc1x
+ 2JDqjdl6bhSvwuIox3qPuKmXyKjgduvx0k6LVHhGYu7wNyvXwXb8oxn2Wxep8JR3Hxmh
+ RNa4Dxv30pWkhHsYO3464gILGOeas27+J+86DpavRaAJ7e6k8QqAH9FkhtwLZQSBiRJ1
+ bFMxqGTXHot17KqkZH0jUGmqpKnDXFuM9gVBRsTp5fT56nLY0EtNYwRzcv0if1ux9Ukw
+ OuOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ANDOlCT1ZqrnKgx/+UtkXPnR52K04rx8cZE8y2hTCQU=;
- b=b/po8l49Kn58UMnCHbfMiLRT3021BLOwlIVrViXrAXgJlH+3PAHwzNqdRAxeR2tJwz
- w20sypeQGYDjMvFOEdNcNP1ZEHRfkLuWZH8O9f6j87FxA9QFB3TT+r3PCqzEQuyEuI/W
- 2rBm4FdLHgGYgSn1kWbMUmrIt3952nu4kl9Sg74icFpaRXGYR57b9AzppaK7b7opdiJZ
- 98yJ+bIodalSv9pGVWuvCy3JPNlRvZCBiPEUf7TSVrA14g27nWqoqI5Pcsb/00aDMUKO
- DIRmAGwNrcbPiH2LmArbtLyFt/i/2/XtwkgYgqXh95nq65mJBXlFdn9Q2sfbcCfZSqjm
- e0Uw==
-X-Gm-Message-State: ANhLgQ1gt6Xdaz/7iN9s64a3cw0vt9uR5xVmlqXW+cKhFL+Pj7CiadYE
- gJPAWTMA+FfeuZ3kY1husTp/qQ==
-X-Google-Smtp-Source: ADFU+vur2MxTtHCjMfpHGxgRx4ZUbLJ6QSkqLw6sapP5tKS8pwjf38c2XDZiJmEAsfp/QTuirs7tBQ==
-X-Received: by 2002:a1c:81:: with SMTP id 123mr2218819wma.97.1585126236258;
- Wed, 25 Mar 2020 01:50:36 -0700 (PDT)
+ bh=fPJX5pxHatWlhsndvDxqYNXpPbJWSaIQ/yvG8JwAaPQ=;
+ b=qoJx6+mKR7x+pe4VyMCl59h9Z9upWTIJiOAQGjE57nrdS7ikqWbTO06eiU2x2u3fUs
+ MYMNxZ6aaj2xHTr7o3vfN2Y+4K9zyI3Jbl8LMS3O68Oq4CJZmXqT/DvZa0fmsAXduFYF
+ b/n2z6DJPlDgT0KkZoBl4ZFwji9axdgl3iRyj7OpIPUIPvb4ADZEj0yD28wivLUwlFHj
+ BEh2vwqtmnA9+IT9+vm1deJu8+lbom9LFcvWTaK+YKvmuTiHQ3SeIb/oeLNBv7q7/VrD
+ 9y6Pm34OECtC+cIRkq4iVQLIW9Sqaua4jNtYzIz1NKOUhUJQQSZx8yN0QbVQWnq1q0uY
+ lhJg==
+X-Gm-Message-State: ANhLgQ3wbJCF7OSwKrllLj2CsktM2o2Jb1ejGgHwz5prfIKNi7h1dZgz
+ w26EE4/OImOVRiCcSRg2K5dDfg==
+X-Google-Smtp-Source: ADFU+vuYjdCM+0T2o7saCgezXhu9RnRogVZPN6H0/ZPkKnWZxBuY5GQnR1RGVO/FZ47BMHplkvQV5g==
+X-Received: by 2002:a1c:9a43:: with SMTP id c64mr2217618wme.173.1585126237494; 
+ Wed, 25 Mar 2020 01:50:37 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.34
+ by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 01:50:35 -0700 (PDT)
+ Wed, 25 Mar 2020 01:50:37 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: daniel@ffwll.ch,
 	dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 5/8] drm/fourcc: amlogic: Add modifier definitions for
- Memory Saving option
-Date: Wed, 25 Mar 2020 09:50:22 +0100
-Message-Id: <20200325085025.30631-6-narmstrong@baylibre.com>
+Subject: [PATCH v4 6/8] drm/meson: overlay: setup overlay for Amlogic FBC
+ Memory Saving mode
+Date: Wed, 25 Mar 2020 09:50:23 +0100
+Message-Id: <20200325085025.30631-7-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200325085025.30631-1-narmstrong@baylibre.com>
 References: <20200325085025.30631-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_015037_757380_3B2621CB 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20200325_015038_984831_E1713ADC 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,62 +104,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Amlogic uses a proprietary lossless image compression protocol and format
-for their hardware video codec accelerators, either video decoders or
-video input encoders.
-
-An option exist changing the layout superblock size to save memory when
-using 8bit components pixels size.
-
-The layout options starts at the 8th bit, keeping the first 8bits of the
-modifiers bits to define the layout.
+Setup the Amlogic FBC decoder for the VD1 video overlay plane to use
+a different superblock size for the Memory Saving mode.
 
 Tested-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- include/uapi/drm/drm_fourcc.h | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ drivers/gpu/drm/meson/meson_overlay.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
 
-diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
-index 6564813d2f7a..84edc5d69613 100644
---- a/include/uapi/drm/drm_fourcc.h
-+++ b/include/uapi/drm/drm_fourcc.h
-@@ -819,6 +819,12 @@ extern "C" {
-  * per component YCbCr 420, single plane :
-  * - DRM_FORMAT_YUV420_8BIT
-  * - DRM_FORMAT_YUV420_10BIT
-+ *
-+ * The first 8 bits of the mode defines the layout, then the following 8 bits
-+ * defined the options changing the layout.
-+ *
-+ * Not all combinations are valid, and different SoCs may support different
-+ * combinations of layout and options.
-  */
- #define DRM_FORMAT_MOD_AMLOGIC_FBC(__modes) fourcc_mod_code(AMLOGIC, __modes)
+diff --git a/drivers/gpu/drm/meson/meson_overlay.c b/drivers/gpu/drm/meson/meson_overlay.c
+index 51fa038ad5d7..8b9d4984b2a7 100644
+--- a/drivers/gpu/drm/meson/meson_overlay.c
++++ b/drivers/gpu/drm/meson/meson_overlay.c
+@@ -487,6 +487,9 @@ static void meson_overlay_atomic_update(struct drm_plane *plane,
+ 					  AFBC_HOLD_LINE_NUM(8) |
+ 					  AFBC_BURST_LEN(2);
  
-@@ -834,6 +840,22 @@ extern "C" {
-  */
- #define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC		(1ULL << 0)
++		if (fb->modifier & DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING)
++			priv->viu.vd1_afbc_mode |= AFBC_BLK_MEM_MODE;
++
+ 		priv->viu.vd1_afbc_en = 0x1600 | AFBC_DEC_ENABLE;
  
-+/*
-+ * Amlogic FBC Layout Options
-+ */
+ 		priv->viu.vd1_afbc_conv_ctrl = AFBC_CONV_LBUF_LEN(256);
+@@ -672,12 +675,17 @@ static void meson_overlay_atomic_update(struct drm_plane *plane,
+ 	}
+ 
+ 	if (priv->viu.vd1_afbc) {
++		/* Default mode is 4k per superblock */
++		unsigned long block_size = 4096;
+ 		unsigned long body_size;
+ 
+-		/* Default mode is 4k per superblock */
++		/* 8bit mem saving mode is 3072bytes per superblock */
++		if (priv->viu.vd1_afbc_mode & AFBC_BLK_MEM_MODE)
++			block_size = 3072;
 +
-+/*
-+ * Amlogic FBC Memory Saving mode
-+ *
-+ * Indicates the storage is packed when pixel size is multiple of word
-+ * boudaries, i.e. 8bit should be stored in this mode to save allocation
-+ * memory.
-+ *
-+ * This mode reduces body layout to 3072 bytes per 64x32 superblock with
-+ * the basic layout.
-+ */
-+#define DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING	(1ULL << 8)
-+
- #if defined(__cplusplus)
- }
- #endif
+ 		body_size = (ALIGN(priv->viu.vd1_stride0, 64) / 64) *
+ 			    (ALIGN(priv->viu.vd1_height0, 32) / 32) *
+-			    4096;
++			    block_size;
+ 
+ 		priv->viu.vd1_afbc_body_addr = priv->viu.vd1_addr0 >> 4;
+ 
+@@ -763,6 +771,8 @@ static const uint32_t supported_drm_formats[] = {
+ };
+ 
+ static const uint64_t format_modifiers[] = {
++	DRM_FORMAT_MOD_AMLOGIC_FBC(DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC |
++				   DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING),
+ 	DRM_FORMAT_MOD_AMLOGIC_FBC(DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC),
+ 	DRM_FORMAT_MOD_LINEAR,
+ 	DRM_FORMAT_MOD_INVALID,
 -- 
 2.22.0
 
