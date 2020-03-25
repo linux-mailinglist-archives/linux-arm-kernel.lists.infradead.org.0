@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66F52192738
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 12:35:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6712D19273A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 12:35:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P6XekkO+MtBIqfSNpdO5X3+x4xG3wzEYuWelhROrUis=; b=YbVBupZvmppeF5
-	U8sRj5gN3dSOtL2Y+UYrgmlDPbohqpsk+HW0F6VuqrwvqR5XyI/cRnJou7lYucKeTJqPXiV4F/CJM
-	Hu2INj6rRcgLy+JT9602fUj13Icq8etSY9ql4V+Lk9xv0lEtVJuPK+x+R3idJJ8SXv482381r5roV
-	WYbUbAodhygWulIAFzTJNIqSzvNNqiqxFhPPt7jTZjznalhhGR9YoMOZ68yXGn8L9eIQZwvvnVyTa
-	dCwIdiAIf1Jl1t56VrhJ7saZNg6cxQMUZtxaum6pU6UbC3+shKm+pmkeWLiivfIZ0Cm9LonWHZJ52
-	ig49R/xNuddu2VYfYEDg==;
+	List-Owner; bh=UoIDqN0eHcG/ClAH4hDqsSMrlgz6XSF4vNwp4xg9d0s=; b=hCznV4thUCAWoj
+	/dSB7WuhhS+fZpmWO1dCAmaM59I+D/GkbwaU8f7e7JD/Gzqc1pUbRKVBcy/zIW44jz0qY35rHP2n4
+	s/mg+aX2oTKkvCDiv2mWvJfDL16t3ifY5vryANHxTJpYfHNJQ5AwYq3wnCdRe5E2F1rpE7anX/yUo
+	B0e0vg0R0iJaTeWzthpy3fnjr8UE96z4iJtbdXQcL9rma/gZouZIYotq3yuL08JEDN0DHmeJNCXY8
+	at3kTWOctCMyVHSx80YRoBMU8frRrH/t1CkNERd8YFHWFYHeYy0yiJk9JfBT6+qtcNVSeH6cFh3Oa
+	w9lbejQcBqCq3XV4OhhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH4JE-00067Y-6c; Wed, 25 Mar 2020 11:34:56 +0000
+	id 1jH4Je-0006xD-49; Wed, 25 Mar 2020 11:35:22 +0000
 Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH4Io-0005tI-0p
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 11:34:31 +0000
-Received: by mail-lf1-x144.google.com with SMTP id v4so1436865lfo.12
+ id 1jH4Ip-0005u1-LQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 11:34:33 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j15so1460139lfk.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 04:34:29 -0700 (PDT)
+ Wed, 25 Mar 2020 04:34:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=QPegYuSfHcA3EBvl8rBN548IrIHva7Siiqx3+i9i/fk=;
- b=aXIfbdqkfrWHNMJxk7rgpfQnHosJstUgv+nPJg8nxRo+9pKouM26WAI5jitlKG5zYm
- dZx7N6OfzJ8B8lp5AR5Z/nKynJm5BIZo5mfsjpnAouFOVrITTq+MpsKOdTK1TnVZGr6J
- ZXD2xs25UMtjG5Seqi4Yh5xID9TbudX70og/9CFMxinK3V+PWmxJYgvnCCYaBfOylFDU
- sGLI80eAP38UiXXmS6eBcqtzZVijLUoii6AuDKzHfZGoxLxCvXIxIjGTYuwjdAwTyjxy
- RcJsKyFXDpgd4yPdbiI4DwWjQrdAE5T9nhViX9NpC7LDGEGvjepXCx2QLRJr9XWlR41n
- bh0g==
+ bh=O7KffvUQLvEtuKLuleQeJ202vBQLqQy9HV1Fxk0tNOM=;
+ b=HDfdSaRDnAglhBGm1Inpp4+PGlm69FgGVABJzD28TMp6tqeNsKiHMI777YCormOPzd
+ uObNsIFHV1Npk5ziYCXZ0cQLBNe4T8aZZKrc3tZBoKsfGViR+Ix/mqOLR4JsgIMcm9t1
+ vFdk3jktgqFH4Z/+GU/IydPzWVGMjeoANomk1rbXDkBKfC1ZsDPJLBW8K0DcZwll9C24
+ tp+m/Jzg8CN8lYauf5ETMIUTJ1rrRQ1tXDrgUnt6dLpzH8GpssHm3HOsSizAit60PbjS
+ Q/2MXBDO8MYvbDm058vsshlEfxsxUgbcDLCNaTtOnWlyOVawtVI6kXoNhDLMsh67bsk+
+ papQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=QPegYuSfHcA3EBvl8rBN548IrIHva7Siiqx3+i9i/fk=;
- b=bQ7rAxsn8LTgLWqIO3OjvndnhuTuytCgdS9VpQ+Jgl7eRaF8Zqq7IDyj2jDihJdbbi
- 29Oj7oQBdywSZ+TP1yxdE7PbsK3hwqSusRLr12BTLud+1TWJc/zlpxpajqN71GGCQbmq
- 58+PVUTf0CHnr53QNloaJWh1OyEcZZE6bgSbeYpb0gaoE8TorEq1y5cWFvTPkVWblaDg
- BJzkmMx1pmY4n280GZD58dA3cEGm3jvecKmSE+ijfsP8SuVZnIup+TcWgO0jq1BBhYr+
- igshVZQ/sViJNHJUp6mdiM6pdhZwn5FIv3DmyKXUt41cpeX4h+bThUG/mKs3rH/DyQj2
- Zj/w==
-X-Gm-Message-State: ANhLgQ2fQTMSud7oF0VWwGOtpGaH5uw89DX4liNBOWvCUgDI/f7CvEe3
- XQVVX3B7MSoPW/hos/i1ASVimKI0prY=
-X-Google-Smtp-Source: ADFU+vuRSm6/etAQz80VrEgGUDZc5VTTv9FpBEJTzRn3gDVEDfDCfTlInPIezeIUpXLoXiDhoHUYOw==
-X-Received: by 2002:a19:4cc2:: with SMTP id z185mr2098414lfa.0.1585136068643; 
- Wed, 25 Mar 2020 04:34:28 -0700 (PDT)
+ bh=O7KffvUQLvEtuKLuleQeJ202vBQLqQy9HV1Fxk0tNOM=;
+ b=Ik3OyC6qNY7Fk/uWelxdOKhwbe62Zt5HemKqNSpcYkT9R2spjrFOVvneoB3X+TxKfd
+ jGT6jfWkCyzXEUFOwx7N56j05+ZtXmw6BcUlDLZpaIoV46qDpq8CbF2/GWXqPyt/EPpI
+ i9GlY6wuZvdLPRqb5lgYXibJF9HQIVJc7dxOY4dfC905U9r7qtUGqjwmsNUcuQRElmF4
+ 4BXYPQMKVi2/M19AxZuSVn5+rhUjb6iP9P9J6HSLHtQZsYYFSH/viIWuY9s4g9LyfI5J
+ j11g4Ly0+MBBBO0Jg0c7TvqiTK5+GAn3ApdXVhHZBnGlkd5P95Y2e99bsTcVIMTEB/8U
+ WJ9w==
+X-Gm-Message-State: ANhLgQ2kWLo3XbibKzPxS7XNJfVV9/DukaJJGqxOx3r4sF+tElzBshjw
+ ZxCNTgkUCjZXoc0b72zwXhS9uA==
+X-Google-Smtp-Source: ADFU+vtF9WPanLG3a1vSHxs2lc6VyzDOkLrVTfTbQpdbdnZ4basqRFJVF+b7L4EKM0fI2K8g88uVuw==
+X-Received: by 2002:ac2:4116:: with SMTP id b22mr1933177lfi.172.1585136070290; 
+ Wed, 25 Mar 2020 04:34:30 -0700 (PDT)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id v22sm3920009ljc.79.2020.03.25.04.34.27
+ by smtp.gmail.com with ESMTPSA id v22sm3920009ljc.79.2020.03.25.04.34.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 04:34:28 -0700 (PDT)
+ Wed, 25 Mar 2020 04:34:29 -0700 (PDT)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "Rafael J . Wysocki" <rafael@kernel.org>, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] driver core: platform: Initialize dma_parms for platform
- devices
-Date: Wed, 25 Mar 2020 12:34:06 +0100
-Message-Id: <20200325113407.26996-2-ulf.hansson@linaro.org>
+Subject: [PATCH 2/2] amba: Initialize dma_parms for amba devices
+Date: Wed, 25 Mar 2020 12:34:07 +0100
+Message-Id: <20200325113407.26996-3-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200325113407.26996-1-ulf.hansson@linaro.org>
 References: <20200325113407.26996-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_043430_062472_7C088535 
-X-CRM114-Status: GOOD (  16.06  )
+X-CRM114-CacheID: sfid-20200325_043431_701056_280A546E 
+X-CRM114-Status: GOOD (  16.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,53 +109,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's currently the platform driver's responsibility to initialize the
-pointer, dma_parms, for its corresponding struct device. The benefit with
-this approach allows us to avoid the initialization and to not waste memory
-for the struct device_dma_parameters, as this can be decided on a case by
-case basis.
+It's currently the amba driver's responsibility to initialize the pointer,
+dma_parms, for its corresponding struct device. The benefit with this
+approach allows us to avoid the initialization and to not waste memory for
+the struct device_dma_parameters, as this can be decided on a case by case
+basis.
 
-However, it has turned out that this approach is not very practical.  Not
+However, it has turned out that this approach is not very practical. Not
 only does it lead to open coding, but also to real errors. In principle
 callers of dma_set_max_seg_size() doesn't check the error code, but just
 assumes it succeeds.
 
-For these reasons, let's do the initialization from the common platform bus
-at the device registration point. This also follows the way the PCI devices
+For these reasons, let's do the initialization from the common amba bus at
+the device registration point. This also follows the way the PCI devices
 are being managed, see pci_device_add().
 
 Suggested-by: Christoph Hellwig <hch@lst.de>
+Cc: Russell King <linux@armlinux.org.uk>
 Cc: <stable@vger.kernel.org>
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
- drivers/base/platform.c         | 1 +
- include/linux/platform_device.h | 1 +
- 2 files changed, 2 insertions(+)
+ drivers/amba/bus.c       | 2 ++
+ include/linux/amba/bus.h | 1 +
+ 2 files changed, 3 insertions(+)
 
-diff --git a/drivers/base/platform.c b/drivers/base/platform.c
-index b5ce7b085795..46abbfb52655 100644
---- a/drivers/base/platform.c
-+++ b/drivers/base/platform.c
-@@ -512,6 +512,7 @@ int platform_device_add(struct platform_device *pdev)
- 		pdev->dev.parent = &platform_bus;
+diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
+index fe1523664816..5e61783ce92d 100644
+--- a/drivers/amba/bus.c
++++ b/drivers/amba/bus.c
+@@ -374,6 +374,8 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
+ 	WARN_ON(dev->irq[0] == (unsigned int)-1);
+ 	WARN_ON(dev->irq[1] == (unsigned int)-1);
  
- 	pdev->dev.bus = &platform_bus_type;
-+	pdev->dev.dma_parms = &pdev->dma_parms;
- 
- 	switch (pdev->id) {
- 	default:
-diff --git a/include/linux/platform_device.h b/include/linux/platform_device.h
-index 041bfa412aa0..81900b3cbe37 100644
---- a/include/linux/platform_device.h
-+++ b/include/linux/platform_device.h
-@@ -25,6 +25,7 @@ struct platform_device {
- 	bool		id_auto;
- 	struct device	dev;
- 	u64		platform_dma_mask;
++	dev->dev.dma_parms = &dev->dma_parms;
++
+ 	ret = request_resource(parent, &dev->res);
+ 	if (ret)
+ 		goto err_out;
+diff --git a/include/linux/amba/bus.h b/include/linux/amba/bus.h
+index 26f0ecf401ea..0bbfd647f5c6 100644
+--- a/include/linux/amba/bus.h
++++ b/include/linux/amba/bus.h
+@@ -65,6 +65,7 @@ struct amba_device {
+ 	struct device		dev;
+ 	struct resource		res;
+ 	struct clk		*pclk;
 +	struct device_dma_parameters dma_parms;
- 	u32		num_resources;
- 	struct resource	*resource;
- 
+ 	unsigned int		periphid;
+ 	unsigned int		cid;
+ 	struct amba_cs_uci_id	uci;
 -- 
 2.20.1
 
