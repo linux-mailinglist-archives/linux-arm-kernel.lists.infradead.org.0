@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83E6E1928E8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 13:51:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B5D9192944
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 14:10:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r3URSMmHp6A950Zo2KNLDKSWN7cpL4Fz3+44Un9rywQ=; b=b+RzYILAGdhVUM
-	T3hl2tH4YeADXasSDn156nPSxGxN2g5pkN/hh1qGCodRX7HhZGyLlGD5ggsL6L39Xfm1Yj3OtXgFe
-	5kdpSsRVZoWUQAkpk0Z3S3XNbu7PAaWND2+jiRw3+olg61O84e04KTlAMQlnrSHmZKy4zI3hliswU
-	XV9HhLxYlqnGElFCAn/JVYV1smkqAinTfBrODhb3/eErQESnrHd0cAPV0O++AMVXJF+z6pNl7MJ0v
-	GfQpXhFyqOpc8yHLakQsTzPqjrZ4CXHvn7mn4/MSdjnrc3x/cum57vnbXEneB/es+HhUX6RIelUP7
-	XxrlBzW4AwMcfono8Tcw==;
+	List-Owner; bh=LdksPqoAn1QsUkWS8OUf71Rz1YKScrvK0zQp6NPCQh4=; b=LnrNz2zL3hJfMd
+	O4o2PW//VJX/ha4LNAukEMYuHmUvp8la6xq+afgHDhT3tGr5vxYS5woxU7GbSvXjWllHgjkJv/RQF
+	yvDHOoffy+kgNQIfZcWgYEd3PIeznC+pFr19KqlGfDa9O42iVTPEhdJkuzwmruRQlDbOLMEkWB3+y
+	JyMNBh3goRY7mZN0cqQw5Q9OrJCrkLENPtnwgMH2UI/BjNaLZxxtCTWYNc0TY2LWVpiBTdS1PGPn4
+	hV1jN8MCe+Pbd4W/Lw67VZ62p/nTg17e/3+jcXmT8iO0zUSd/ZeWVvR6VVY0cuSF9YQV7Ugj75V5G
+	nzU+K01ej2ZQEDecIkYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH5Va-0007EO-Mh; Wed, 25 Mar 2020 12:51:46 +0000
+	id 1jH5np-0005pG-V4; Wed, 25 Mar 2020 13:10:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH5VU-0007DZ-J1
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 12:51:42 +0000
+ id 1jH5ng-0005oY-KM
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 13:10:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 495FC31B;
- Wed, 25 Mar 2020 05:51:35 -0700 (PDT)
-Received: from red-moon.cambridge.arm.com (unknown [10.57.20.165])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F43B3F71F;
- Wed, 25 Mar 2020 05:51:30 -0700 (PDT)
-Date: Wed, 25 Mar 2020 12:51:18 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: laurentiu.tudor@nxp.com
-Subject: Re: [RFC PATCH 1/4] bus: fsl-mc: add custom .dma_configure
- implementation
-Message-ID: <20200325125109.GA5430@red-moon.cambridge.arm.com>
-References: <20200227100542.13819-1-laurentiu.tudor@nxp.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9EBF831B;
+ Wed, 25 Mar 2020 06:10:27 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 555003F71F;
+ Wed, 25 Mar 2020 06:10:26 -0700 (PDT)
+Date: Wed, 25 Mar 2020 13:10:23 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH] arm64: Expose original FAR_EL1 value in sigcontext
+Message-ID: <20200325131023.GN3901@mbp>
+References: <20200312171755.177743-1-pcc@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200227100542.13819-1-laurentiu.tudor@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200312171755.177743-1-pcc@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_055140_671308_99D32718 
-X-CRM114-Status: GOOD (  20.20  )
+X-CRM114-CacheID: sfid-20200325_061028_759349_B1C07011 
+X-CRM114-Status: GOOD (  15.86  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,90 +62,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, calvin.johnson@nxp.com, ard.biesheuvel@linaro.org,
- maz@kernel.org, pankaj.bansal@nxp.com, diana.craciun@oss.nxp.com,
- jon@solid-run.com, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- cristian.sovaiala@nxp.com, tglx@linutronix.de, makarand.pawagi@nxp.com,
- ioana.ciornei@nxp.com, Stuart.Yoder@arm.com, robin.murphy@arm.com,
- joro@8bytes.org, linux-arm-kernel@lists.infradead.org, V.Sethi@nxp.com
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Evgenii Stepanov <eugenis@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:05:39PM +0200, laurentiu.tudor@nxp.com wrote:
-> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> 
-> The devices on this bus are not discovered by way of device tree
-> but by queries to the firmware. It makes little sense to trick the
-> generic of layer into thinking that these devices are of related so
-> that we can get our dma configuration. Instead of doing that, add
-> our custom dma configuration implementation.
-> 
-> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> ---
->  drivers/bus/fsl-mc/fsl-mc-bus.c | 31 ++++++++++++++++++++++++++++++-
->  1 file changed, 30 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
-> index 36eb25f82c8e..eafaa0e0b906 100644
-> --- a/drivers/bus/fsl-mc/fsl-mc-bus.c
-> +++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
-> @@ -132,11 +132,40 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
->  static int fsl_mc_dma_configure(struct device *dev)
->  {
->  	struct device *dma_dev = dev;
-> +	struct iommu_fwspec *fwspec;
-> +	const struct iommu_ops *iommu_ops;
-> +	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
-> +	int ret;
-> +	u32 icid;
+Hi Peter,
+
+On Thu, Mar 12, 2020 at 10:17:55AM -0700, Peter Collingbourne wrote:
+> diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+> index fde59981445ca..290ea59c68b85 100644
+> --- a/arch/arm64/kernel/entry-common.c
+> +++ b/arch/arm64/kernel/entry-common.c
+> @@ -22,7 +22,6 @@ static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
+>  	unsigned long far = read_sysreg(far_el1);
 >  
->  	while (dev_is_fsl_mc(dma_dev))
->  		dma_dev = dma_dev->parent;
+>  	local_daif_inherit(regs);
+> -	far = untagged_addr(far);
+>  	do_mem_abort(far, esr, regs);
+>  }
+>  NOKPROBE_SYMBOL(el1_abort);
+
+Would we get a signal on faults triggered by the kernel? Anyway, I'm
+fine with this change for consistency and may help with the fault
+information printed by the kernel with khwasan or (later) MTE.
+
+> @@ -104,7 +103,6 @@ static void notrace el0_da(struct pt_regs *regs, unsigned long esr)
 >  
-> -	return of_dma_configure(dev, dma_dev->of_node, 0);
-> +	fwspec = dev_iommu_fwspec_get(dma_dev);
-> +	if (!fwspec)
-> +		return -ENODEV;
-> +	iommu_ops = iommu_ops_from_fwnode(fwspec->iommu_fwnode);
-> +	if (!iommu_ops)
-> +		return -ENODEV;
-> +
-> +	ret = iommu_fwspec_init(dev, fwspec->iommu_fwnode, iommu_ops);
-> +	if (ret)
-> +		return ret;
-> +
-> +	icid = mc_dev->icid;
-> +	ret = iommu_fwspec_add_ids(dev, &icid, 1);
-
-I see. So with this patch we would use the MC named component only to
-retrieve the iommu_ops - the streamid are injected directly here
-bypassing OF/IORT bindings translations altogether. Am I reading this
-code correctly ?
-
-Thanks,
-Lorenzo
-
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (!device_iommu_mapped(dev)) {
-> +		ret = iommu_probe_device(dev);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	arch_setup_dma_ops(dev, 0, *dma_dev->dma_mask + 1, iommu_ops, true);
-> +
-> +	return 0;
+>  	user_exit_irqoff();
+>  	local_daif_restore(DAIF_PROCCTX);
+> -	far = untagged_addr(far);
+>  	do_mem_abort(far, esr, regs);
+>  }
+>  NOKPROBE_SYMBOL(el0_da);
+> diff --git a/arch/arm64/kernel/hw_breakpoint.c b/arch/arm64/kernel/hw_breakpoint.c
+> index 0b727edf41046..985cd44decf62 100644
+> --- a/arch/arm64/kernel/hw_breakpoint.c
+> +++ b/arch/arm64/kernel/hw_breakpoint.c
+> @@ -730,7 +730,7 @@ static u64 get_distance_from_watchpoint(unsigned long addr, u64 val,
+>  		return 0;
 >  }
 >  
->  static ssize_t modalias_show(struct device *dev, struct device_attribute *attr,
-> -- 
-> 2.17.1
-> 
+> -static int watchpoint_handler(unsigned long addr, unsigned int esr,
+> +static int watchpoint_handler(unsigned long far, unsigned int esr,
+>  			      struct pt_regs *regs)
+>  {
+>  	int i, step = 0, *kernel_step, access, closest_match = 0;
+> @@ -741,6 +741,7 @@ static int watchpoint_handler(unsigned long addr, unsigned int esr,
+>  	struct debug_info *debug_info;
+>  	struct arch_hw_breakpoint *info;
+>  	struct arch_hw_breakpoint_ctrl ctrl;
+> +	unsigned long addr = untagged_addr(far);
+>  
+>  	slots = this_cpu_ptr(wp_on_reg);
+>  	debug_info = &current->thread.debug;
+
+Why do we need to untag this here? Have you hit any bug? This function
+gets the original FAR_EL1 value, untagged (via elX_dbg()), and we clear
+the tag further down in get_distance_from_watchpoint().
+
+> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+> index 339882db5a915..48e8b6c7b5369 100644
+> --- a/arch/arm64/kernel/signal.c
+> +++ b/arch/arm64/kernel/signal.c
+> @@ -55,6 +55,7 @@ struct rt_sigframe_user_layout {
+>  
+>  	unsigned long fpsimd_offset;
+>  	unsigned long esr_offset;
+> +	unsigned long far_offset;
+>  	unsigned long sve_offset;
+>  	unsigned long extra_offset;
+>  	unsigned long end_offset;
+> @@ -383,6 +384,7 @@ static int parse_user_sigframe(struct user_ctxs *user,
+>  			break;
+>  
+>  		case ESR_MAGIC:
+> +		case FAR_MAGIC:
+>  			/* ignore */
+>  			break;
+>  
+> @@ -581,6 +583,11 @@ static int setup_sigframe_layout(struct rt_sigframe_user_layout *user,
+>  				     sizeof(struct esr_context));
+>  		if (err)
+>  			return err;
+> +
+> +		err = sigframe_alloc(user, &user->far_offset,
+> +				     sizeof(struct far_context));
+> +		if (err)
+> +			return err;
+
+It looks fine, I think it makes sense to only expose the raw FAR_EL1
+when we also expose the ESR_EL1 (via set_thread_esr()).
+
+> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+> index 85566d32958f5..2ca2de1ff43be 100644
+> --- a/arch/arm64/mm/fault.c
+> +++ b/arch/arm64/mm/fault.c
+> @@ -41,7 +41,7 @@
+>  #include <asm/traps.h>
+>  
+>  struct fault_info {
+> -	int	(*fn)(unsigned long addr, unsigned int esr,
+> +	int	(*fn)(unsigned long far, unsigned int esr,
+>  		      struct pt_regs *regs);
+>  	int	sig;
+>  	int	code;
+> @@ -320,9 +320,11 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
+>  	die_kernel_fault(msg, addr, esr, regs);
+>  }
+>  
+> -static void set_thread_esr(unsigned long address, unsigned int esr)
+> +static void set_thread_esr(unsigned long far, unsigned int esr)
+
+We might as well rename this to set_thread_far_esr().
+
+Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
