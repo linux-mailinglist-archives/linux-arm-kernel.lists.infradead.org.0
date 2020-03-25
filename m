@@ -2,68 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F70B1933B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:24:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DC4519340D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:59:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=80jvA/JaB1pVIEtbVL6uAlnkJAhjE6NpVzPqYJua3wE=; b=S0diUHnyXMbch6
-	CMpTM0kD2Yk7nFedEnqnUUb3FefTsEw1F4268bKbX/zYsngMM2GZ5d0f5EyUv/N62ZxV8ypfe35HF
-	3tSKblJBC9/mLOUrbtwJE0Dk4hxK/jaYJLDzXa1FpYZE3MqssJUF+0Z9AWqa0Icnkq90YuY/ujICP
-	DFXOq6gV8adf7kmNbJrJNNSmA0373eT8Y6TBOFwrF+uYby4o05CfMOjEEDk+faEY1x15YNYzeZ3pL
-	S2yCvnx5wihaOBzoN76yRZwwRrl4xcxXYgDqv0hKp8ADjX2/ujbssWA/EZ5nv5JHokcKjDNsfcHsI
-	0xHiCKP5DT0P9jymMx/Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xaDyfz1l0f4RtPpUHo1+Vw7h12TcUiNqRC/+vL567iQ=; b=ZOA6ybOSHORZQz
+	tfltb0TCNH+MqM/8OX3l/Qg264cBGd2DYf1ITQ6GSlRu86Aci5vqW7Ewm6HR6VAlElDe8U+oBSTJk
+	NQNOfHFrNeMMkk8MS0Ii0IIXjsN2eMCSj7GBGRqb5Ty2XsebLU9xvBI/XnBf6VBt2+0UD/kyjlkTt
+	uQD7XzLdvC9Gb3IVnQGLBtLDyQflTS1KDUMoHmtjtnYEsiWoDCtTuMSBrkyiMrYubfAZj234mc7OP
+	yLHScd6Ol2i22/z2xIWvqK3omPYFcvTrDnuhGiMe3wDJm6s4JyzlblGZuRwOIc8n8JwWKRo9YfpQR
+	QQaR5rHG6VZ1LDpt5yzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHES5-0002F3-Nd; Wed, 25 Mar 2020 22:24:45 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jHEzl-0006Xg-UW; Wed, 25 Mar 2020 22:59:33 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHERv-0002E0-Sg
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 22:24:37 +0000
-IronPort-SDR: UKl0tYSLkpJsi5g9cgyyIapSYBww7nEwg+SK1ZcW/9cP8HPrr7sOOMIJO4z+IKSa8YDNk5R8Jm
- 2RmnJDV6aZQQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 25 Mar 2020 15:24:34 -0700
-IronPort-SDR: SAcurIhXyZyeeQeywGSbBG3CEsWpSpF2KUYJt6FN4BzId6Ftf5WmiV9ebLZvm/F5oURtkuDLFq
- bSHYie/RrCfw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,306,1580803200"; d="scan'208";a="293462258"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by FMSMGA003.fm.intel.com with ESMTP; 25 Mar 2020 15:24:32 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jHERs-00044Z-BV; Thu, 26 Mar 2020 06:24:32 +0800
-Date: Thu, 26 Mar 2020 06:24:21 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [arm-soc:arm/drivers] BUILD SUCCESS
- 36d94b4681db2ae2049e1d2dfd70d66d9f4d76ee
-Message-ID: <5e7bda15.8IM+aqGEsB6URIg8%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jHEzX-0006W8-EL; Wed, 25 Mar 2020 22:59:20 +0000
+X-UUID: 50c11041517841a5bfc86559cc444309-20200325
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Rwm8uk+VZBk+Tue2u7MEctjQsGy1qba7rFKBvQkm1A0=; 
+ b=i7boojxICfrjyewIWC+X1xbxvlH2IaBTv9AkbDdvDCpyVHtABq0wLj537y3B9jkvO+nQ9icTQZdHivcHeQ5LUaKLrihgdEXtJNsqsGTSTZPbqLD+3G/knMwR+c0dQIfsRcVPy2enuCgOc5Awsl28JYCE/nUviKT2VLkSxdZWOwk=;
+X-UUID: 50c11041517841a5bfc86559cc444309-20200325
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 453364106; Wed, 25 Mar 2020 14:59:11 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 25 Mar 2020 15:59:09 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Mar 2020 06:59:08 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 26 Mar 2020 06:59:06 +0800
+Message-ID: <1585177148.26117.0.camel@mtksdaap41>
+Subject: Re: [SPAM][PATCH] drm/mediatek: Remove debug messages for function
+ calls
+From: CK Hu <ck.hu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Thu, 26 Mar 2020 06:59:08 +0800
+In-Reply-To: <20200226112723.649954-1-enric.balletbo@collabora.com>
+References: <20200226112723.649954-1-enric.balletbo@collabora.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_152435_944275_CF03CE9B 
-X-CRM114-Status: UNSURE (   6.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -3.7 (---)
+X-CRM114-CacheID: sfid-20200325_155919_496031_3C9EE948 
+X-CRM114-Status: GOOD (  13.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,198 +83,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Philipp
+ Zabel <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/drivers
-branch HEAD: 36d94b4681db2ae2049e1d2dfd70d66d9f4d76ee  Merge tag 'omap-for-v5.7/ti-sysc-fix-signed' of git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into arm/drivers
+Hi, Enric:
 
-elapsed time: 484m
+On Wed, 2020-02-26 at 12:27 +0100, Enric Balletbo i Serra wrote:
+> Equivalent information can be nowadays obtained using function tracer.
+> 
 
-configs tested: 171
-configs skipped: 0
+Acked-by: CK Hu <ck.hu@mediatek.com>
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm                           efm32_defconfig
-arm                         at91_dt_defconfig
-arm                        shmobile_defconfig
-arm64                               defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                           sunxi_defconfig
-arm                        multi_v7_defconfig
-sparc                            allyesconfig
-powerpc                       ppc64_defconfig
-sh                            titan_defconfig
-um                             i386_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-nds32                               defconfig
-h8300                    h8300h-sim_defconfig
-i386                              allnoconfig
-i386                             alldefconfig
-i386                             allyesconfig
-i386                                defconfig
-ia64                             alldefconfig
-ia64                             allmodconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-ia64                                defconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-h8300                     edosk2674_defconfig
-h8300                       h8s-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-powerpc                           allnoconfig
-powerpc                             defconfig
-powerpc                          rhel-kconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-mips                             allyesconfig
-mips                         64r6el_defconfig
-mips                           32r2_defconfig
-parisc                            allnoconfig
-parisc                generic-64bit_defconfig
-parisc                generic-32bit_defconfig
-parisc                           allyesconfig
-x86_64               randconfig-a001-20200325
-x86_64               randconfig-a002-20200325
-x86_64               randconfig-a003-20200325
-i386                 randconfig-a001-20200325
-i386                 randconfig-a002-20200325
-i386                 randconfig-a003-20200325
-alpha                randconfig-a001-20200326
-m68k                 randconfig-a001-20200326
-mips                 randconfig-a001-20200326
-nds32                randconfig-a001-20200326
-parisc               randconfig-a001-20200326
-riscv                randconfig-a001-20200326
-alpha                randconfig-a001-20200325
-m68k                 randconfig-a001-20200325
-nds32                randconfig-a001-20200325
-parisc               randconfig-a001-20200325
-riscv                randconfig-a001-20200325
-mips                 randconfig-a001-20200325
-h8300                randconfig-a001-20200325
-nios2                randconfig-a001-20200325
-c6x                  randconfig-a001-20200325
-sparc64              randconfig-a001-20200325
-microblaze           randconfig-a001-20200325
-csky                 randconfig-a001-20200325
-openrisc             randconfig-a001-20200325
-s390                 randconfig-a001-20200325
-sh                   randconfig-a001-20200325
-xtensa               randconfig-a001-20200325
-csky                 randconfig-a001-20200326
-openrisc             randconfig-a001-20200326
-s390                 randconfig-a001-20200326
-xtensa               randconfig-a001-20200326
-x86_64               randconfig-b001-20200325
-x86_64               randconfig-b002-20200325
-x86_64               randconfig-b003-20200325
-i386                 randconfig-b001-20200325
-i386                 randconfig-b002-20200325
-i386                 randconfig-b003-20200325
-x86_64               randconfig-c001-20200325
-x86_64               randconfig-c002-20200325
-x86_64               randconfig-c003-20200325
-i386                 randconfig-c001-20200325
-i386                 randconfig-c002-20200325
-i386                 randconfig-c003-20200325
-x86_64               randconfig-d001-20200325
-x86_64               randconfig-d002-20200325
-x86_64               randconfig-d003-20200325
-i386                 randconfig-d001-20200325
-i386                 randconfig-d002-20200325
-i386                 randconfig-d003-20200325
-x86_64               randconfig-e001-20200325
-x86_64               randconfig-e002-20200325
-x86_64               randconfig-e003-20200325
-i386                 randconfig-e001-20200325
-i386                 randconfig-e002-20200325
-i386                 randconfig-e003-20200325
-x86_64               randconfig-f001-20200325
-x86_64               randconfig-f002-20200325
-x86_64               randconfig-f003-20200325
-i386                 randconfig-f001-20200325
-i386                 randconfig-f002-20200325
-i386                 randconfig-f003-20200325
-x86_64               randconfig-g001-20200325
-x86_64               randconfig-g002-20200325
-x86_64               randconfig-g003-20200325
-i386                 randconfig-g001-20200325
-i386                 randconfig-g002-20200325
-i386                 randconfig-g003-20200325
-x86_64               randconfig-h001-20200325
-x86_64               randconfig-h002-20200325
-x86_64               randconfig-h003-20200325
-i386                 randconfig-h001-20200325
-i386                 randconfig-h002-20200325
-i386                 randconfig-h003-20200325
-arc                  randconfig-a001-20200325
-arm                  randconfig-a001-20200325
-arm64                randconfig-a001-20200325
-ia64                 randconfig-a001-20200325
-powerpc              randconfig-a001-20200325
-sparc                randconfig-a001-20200325
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-riscv                            allmodconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-sh                          rsk7269_defconfig
-sh                               allmodconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                                allnoconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-um                                  defconfig
-um                           x86_64_defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> ---
+> 
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 5 -----
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 2 --
+>  2 files changed, 7 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index a236499123aa..882c690d3f13 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -192,7 +192,6 @@ static int mtk_crtc_ddp_clk_enable(struct mtk_drm_crtc *mtk_crtc)
+>  	int ret;
+>  	int i;
+>  
+> -	DRM_DEBUG_DRIVER("%s\n", __func__);
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+>  		ret = clk_prepare_enable(mtk_crtc->ddp_comp[i]->clk);
+>  		if (ret) {
+> @@ -212,7 +211,6 @@ static void mtk_crtc_ddp_clk_disable(struct mtk_drm_crtc *mtk_crtc)
+>  {
+>  	int i;
+>  
+> -	DRM_DEBUG_DRIVER("%s\n", __func__);
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+>  		clk_disable_unprepare(mtk_crtc->ddp_comp[i]->clk);
+>  }
+> @@ -257,7 +255,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  	int ret;
+>  	int i;
+>  
+> -	DRM_DEBUG_DRIVER("%s\n", __func__);
+>  	if (WARN_ON(!crtc->state))
+>  		return -EINVAL;
+>  
+> @@ -298,7 +295,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  		goto err_mutex_unprepare;
+>  	}
+>  
+> -	DRM_DEBUG_DRIVER("mediatek_ddp_ddp_path_setup\n");
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
+>  		mtk_ddp_add_comp_to_path(mtk_crtc->config_regs,
+>  					 mtk_crtc->ddp_comp[i]->id,
+> @@ -348,7 +344,6 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  	struct drm_crtc *crtc = &mtk_crtc->base;
+>  	int i;
+>  
+> -	DRM_DEBUG_DRIVER("%s\n", __func__);
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+>  		mtk_ddp_comp_stop(mtk_crtc->ddp_comp[i]);
+>  		if (i == 1)
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 17f118ee0e57..4934834977b3 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -570,7 +570,6 @@ static int mtk_drm_sys_suspend(struct device *dev)
+>  	int ret;
+>  
+>  	ret = drm_mode_config_helper_suspend(drm);
+> -	DRM_DEBUG_DRIVER("mtk_drm_sys_suspend\n");
+>  
+>  	return ret;
+>  }
+> @@ -582,7 +581,6 @@ static int mtk_drm_sys_resume(struct device *dev)
+>  	int ret;
+>  
+>  	ret = drm_mode_config_helper_resume(drm);
+> -	DRM_DEBUG_DRIVER("mtk_drm_sys_resume\n");
+>  
+>  	return ret;
+>  }
 
 _______________________________________________
 linux-arm-kernel mailing list
