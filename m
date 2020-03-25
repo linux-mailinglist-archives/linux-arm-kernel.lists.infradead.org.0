@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28CF0191F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:35:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD3D3191F44
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:35:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Subject:Message-ID:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rximhDETLEV/lEJM3IPyeZZr0fwHldN7bepajp+bhcg=; b=n3eLOFrYtLmq3+
-	4b0/3OxChQWWaCQfzN/R12vHA18PkY50MDra6xE3kuyEGOnxLOzi5mw0aHKan/ExrNOgqmTk5oLKs
-	R46CdLGreSQrt2/NK/hMpSjwCvOQJ8rJPgjdzMYZQE9Z4DDeAXefH8Gw4H2AqTT6s0HQfo8ws+zjr
-	qC/jbsT4o/ftk3/SVPjVqHERvxNlnMuZU4mpQpsLYVBLANoo5s2wIUTcjglKvXoYSEEEtC2JzfWeQ
-	NUy2en2KUSETrJ9CtHJ9ebHlIoMIcWiPKmYwaVaKf1fKC6FPXAoxQTuCJ8AJEPp98B88tidVM3gke
-	1RMo8WeiEImTYQ7Emt8Q==;
+	List-Owner; bh=2n4IatnXh7kDQKa3P9EkwLcf0GQGXjFTS7TyW51kryI=; b=gntKQqaL4R+k+b
+	VhBylJN3G2ssxujDaeFYYL5gidd3297GbtdJybgmtetNU2qDQq4A80as17ztBDGEM04L8Z7sfPeHU
+	wvuqoLXR2XMrct4TJ6eWE3rlU8FZGPgUu8YyDPmNhZTCwLUD1PSuGmZL0corzvDfKFE7lKh20l/zZ
+	afpX4Ho/BlBGgp9HQ5orE2rPQQwOVJqiYjp4926MsqWFlyM5/2ecFy140MRkshSeC4uJ3/nm72z8o
+	KIfC+eWOBzLLkgrZpQi5QBhZMPKL94Msp8O0Nwq8TOrL5jNdOI/kKzxIRs/NS0Ph0TrBFhAkbWPtx
+	/3S1uch81tBEVzWXkGKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGvsy-0005CD-Mw; Wed, 25 Mar 2020 02:35:16 +0000
-Received: from sender3-op-o12.zoho.com.cn ([124.251.121.243])
+	id 1jGvtO-0006iX-9H; Wed, 25 Mar 2020 02:35:42 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGvsg-0005Ad-CX; Wed, 25 Mar 2020 02:35:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1585103595; 
- s=mail; d=flygoat.com; i=jiaxun.yang@flygoat.com;
- h=From:To:Cc:Message-ID:Subject:Date:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type;
- bh=q3522WmCMcchsrcIlYC+4bPpCWTc6GzKb+1Lr0erI0g=;
- b=aow0CiwG/hBJpTXuR4X2GcdsbXYILhWzbR25pZEkKL1dnOVaDH2BRyez6/6r2dd2
- GjGJmQMVISsaLIHz0qfSOU8kCoB0KQMx+2rbtyEPtJLbhSVAONkI3SkFlJ/VTIJkPCT
- 907zcU85fxxghl04s5c2HjtqFr3yGfNUyXzMVASQ=
-Received: from localhost.localdomain (39.155.141.144 [39.155.141.144]) by
- mx.zoho.com.cn with SMTPS id 1585103593296580.9934269828649;
- Wed, 25 Mar 2020 10:33:13 +0800 (CST)
-From: Jiaxun Yang <jiaxun.yang@flygoat.com>
-To: linux-mips@vger.kernel.org
-Message-ID: <20200325022916.106641-6-jiaxun.yang@flygoat.com>
-Subject: [PATCH v7 03/12] dt-bindings: interrupt-controller: Add Loongson
- LIOINTC
-Date: Wed, 25 Mar 2020 10:28:21 +0800
-X-Mailer: git-send-email 2.26.0.rc2
-In-Reply-To: <20200325022916.106641-1-jiaxun.yang@flygoat.com>
-References: <20200325022916.106641-1-jiaxun.yang@flygoat.com>
+ id 1jGvsu-00066H-9n
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:35:14 +0000
+Received: by mail-pf1-x442.google.com with SMTP id z65so295820pfz.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Mar 2020 19:35:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=PCruq4yToUqxgi9otmka3R7GLNMHRYxm71De4g72dIE=;
+ b=jx4zznovkVe6XCYL16ne29yitgzvHvZ3wp/VniEpCswbagD3W2AoeE1MOXgpzOx7N8
+ XFIk69jjrSVZ4PwdB3sRyk4uCWw6L6xOdXQBCT/luaJa1bAYhaEhLo4iFZM8EPeMDPuS
+ EELCJXRdIICqaVkyHduO5Toie/9MNcDWref2p5Hh/JlNMmcm6ezHts2wONoIbJ2gl2U8
+ AslSM1Yy/pl6VukIPDvRQvQWKH8FTKGFSkXhkRVRPuMZ4c+CTPeCwU3D3k2HoWPPw0D7
+ ttdJk19L8qTikFSi5lYJaJHuBcEK0E9rgDfVH/vvd//b/6Ioubyw5AJUZCMA0Z5tstOo
+ vGXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=PCruq4yToUqxgi9otmka3R7GLNMHRYxm71De4g72dIE=;
+ b=M/Pau06lso8VoDaOgJ9zRZgNdD9kFswHM8XO5hZepDIq9CQKW3T1zw2ZyoKddRy69Y
+ lYkJfMfzaSXsNcUOkkavX1ntJENv8kR0H0K1LaYpE8n3nQ0AqUCvtf7PErcSGdEzM9MT
+ 6hBqR+clDT8XOLIoJgwcdSBrEV0SndkGFk1BvQwlMhkotF4u07kGonA0G7kRORckDs+B
+ lPcqKZoogisFjvSR1izotVE0KKN0d+rL832RFH3rlzXloHsbjGBXVRLdsiCr7aKOLAEQ
+ PESuxrPYIPucjvmyuFmRBXQ56BHW80HgcDrPQyk9zbpPLSDQruf5EXpziPedksH8+9qv
+ g0KA==
+X-Gm-Message-State: ANhLgQ3l6rR8GnxUU6d4HqaJ8iKv17tVXyWzcTO0yuw+ZFerJMbb5zkp
+ twrcJSofh/3lLEG8yV80gx4=
+X-Google-Smtp-Source: ADFU+vs7kd3EyY7fKPHuBdrX5g5pI/Ybft6HW4aFtGtcppaEVj9FPnWCiFFs5Fjuo2+92wn9FEcJvA==
+X-Received: by 2002:a62:7c15:: with SMTP id x21mr1028465pfc.132.1585103709526; 
+ Tue, 24 Mar 2020 19:35:09 -0700 (PDT)
+Received: from localhost ([2401:fa00:8f:203:5bbb:c872:f2b1:f53b])
+ by smtp.gmail.com with ESMTPSA id z17sm17198052pff.12.2020.03.24.19.35.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 24 Mar 2020 19:35:08 -0700 (PDT)
+Date: Wed, 25 Mar 2020 11:35:06 +0900
+From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+To: Zygo Blaxell <uixjjji1@umail.furryterror.org>
+Subject: Re: dmesg -w regression in v5.4.22, bisected, was: Re: [PATCH]
+ char/random: silence a lockdep splat with printk()
+Message-ID: <20200325023506.GB241329@google.com>
+References: <1573679785-21068-1-git-send-email-cai@lca.pw>
+ <20200324151359.GF2693@hungrycats.org>
 MIME-Version: 1.0
-X-ZohoCNMailClient: External
+Content-Disposition: inline
+In-Reply-To: <20200324151359.GF2693@hungrycats.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_193459_376591_A0982B25 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200324_193512_451209_AB3B52E7 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [124.251.121.243 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sergey.senozhatsky.work[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,149 +100,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-doc@vger.kernel.org,
- "H. Nikolaus Schaller" <hns@goldelico.com>, John Crispin <john@phrozen.org>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>, Paul Cercueil <paul@crapouillou.net>,
- linux-ide@vger.kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Huacai Chen <chenhc@lemote.com>, Tiezhu Yang <yangtiezhu@loongson.cn>,
- Rob Herring <robh@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Paul Burton <paulburton@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Yinglu Yang <yangyinglu@loongson.cn>, devicetree@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Jason Cooper <jason@lakedaemon.net>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Matt Redfearn <matt.redfearn@mips.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Serge Semin <fancer.lancer@gmail.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Manuel Lauss <manuel.lauss@gmail.com>, "David S. Miller" <davem@davemloft.net>
+Cc: pmladek@suse.com, tytso@mit.edu, sergey.senozhatsky.work@gmail.com,
+ arnd@arndb.de, peterz@infradead.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, rostedt@goodmis.org, linux-mm@kvack.org,
+ Qian Cai <cai@lca.pw>, catalin.marinas@arm.com, longman@redhat.com,
+ dan.j.williams@intel.com, will@kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document Loongson I/O Interrupt controller.
+On (20/03/24 11:13), Zygo Blaxell wrote:
+> On Wed, Nov 13, 2019 at 04:16:25PM -0500, Qian Cai wrote:
+> > From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+> > 
+> > Sergey didn't like the locking order,
+> > 
+> > uart_port->lock  ->  tty_port->lock
+> > 
+> > uart_write (uart_port->lock)
+> >   __uart_start
+> >     pl011_start_tx
+> >       pl011_tx_chars
+> >         uart_write_wakeup
+> >           tty_port_tty_wakeup
+> >             tty_port_default
+> >               tty_port_tty_get (tty_port->lock)
+> > 
+> > but those code is so old, and I have no clue how to de-couple it after
+> > checking other locks in the splat. There is an onging effort to make all
+> > printk() as deferred, so until that happens, workaround it for now as a
+> > short-term fix.
+> 
+> Starting with v5.4.22 I noticed 'dmesg -w' stopped working on some
+> machines.  dmesg will follow console output for a few seconds, then it
+> stops.  strace indicates dmesg is blocked in read() on the /dev/kmsg fd.
+> If a new dmesg process starts, it gives messages for a few seconds,
+> then also stops.  rsyslog's kernel logging is similarly affected.
+> 
+> Bisection points to this patch (now known as
+> 1b710b1b10eff9d46666064ea25f079f70bc67a8 upstream).  I can't reproduce
+> the problem on a test VM, and some machines are running v5.4.22..v5.4.26
+> with no dmesg problems.  It seems there is some magic in the startup
+> sequence of affected machines.  This code isn't executed after RNG is
+> seeded, so it would have to get its bad stuff done before that happens.
+> 
+> Reverting commit 1b710b1b10eff9d46666064ea25f079f70bc67a8 fixes the
+> dmesg regression on 5.4.26.  It might put the original lockdep bug back,
+> but on machines running stable kernels, I prefer randomly broken lockdep
+> over repeatably broken dmesg.
 
-Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Co-developed-by: Huacai Chen <chenhc@lemote.com>
-Signed-off-by: Huacai Chen <chenhc@lemote.com>
----
- .../loongson,liointc.yaml                     | 93 +++++++++++++++++++
- 1 file changed, 93 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/interrupt-controller/loongson,liointc.yaml
+This should fix the problem
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/loongson,liointc.yaml b/Documentation/devicetree/bindings/interrupt-controller/loongson,liointc.yaml
-new file mode 100644
-index 000000000000..9c6b91fee477
---- /dev/null
-+++ b/Documentation/devicetree/bindings/interrupt-controller/loongson,liointc.yaml
-@@ -0,0 +1,93 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/interrupt-controller/loongson,liointc.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: Loongson Local I/O Interrupt Controller
-+
-+maintainers:
-+  - Jiaxun Yang <jiaxun.yang@flygoat.com>
-+
-+description: |
-+  This interrupt controller is found in the Loongson-3 family of chips as the primary
-+  package interrupt controller which can route local I/O interrupt to interrupt lines
-+  of cores.
-+
-+allOf:
-+  - $ref: /schemas/interrupt-controller.yaml#
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: loongson,liointc-1.0
-+      - const: loongson,liointc-1.0a
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupt-controller: true
-+
-+  interrupts:
-+    description:
-+      Interrupt source of the CPU interrupts.
-+    minItems: 1
-+    maxItems: 4
-+
-+  interrupt-names:
-+    description: List of names for the parent interrupts.
-+    items:
-+      - const: int0
-+      - const: int1
-+      - const: int2
-+      - const: int3
-+    minItems: 1
-+    maxItems: 4
-+
-+  '#interrupt-cells':
-+    const: 2
-+
-+  'loongson,parent_int_map':
-+    description: |
-+      This property points how the children interrupts will be mapped into CPU
-+      interrupt lines. Each cell refers to a parent interrupt line from 0 to 3
-+      and each bit in the cell refers to a children interrupt fron 0 to 31.
-+      If a CPU interrupt line didn't connected with liointc, then keep it's
-+      cell with zero.
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32-array
-+      - items:
-+          minItems: 4
-+          maxItems: 4
-+
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - interrupt-controller
-+  - '#interrupt-cells'
-+  - 'loongson,parent_int_map'
-+
-+
-+examples:
-+  - |
-+    iointc: interrupt-controller@3ff01400 {
-+      compatible = "loongson,liointc-1.0";
-+      reg = <0x3ff01400 0x64>;
-+
-+      interrupt-controller;
-+      #interrupt-cells = <2>;
-+
-+      interrupt-parent = <&cpuintc>;
-+      interrupts = <2>, <3>;
-+      interrupt-names = "int0", "int1";
-+
-+      loongson,parent_int_map = <0xf0ffffff>, /* int0 */
-+                                <0x0f000000>, /* int1 */
-+                                <0x00000000>, /* int2 */
-+                                <0x00000000>; /* int3 */
-+
-+    };
-+
-+...
--- 
-2.26.0.rc2
+https://lore.kernel.org/lkml/20200303113002.63089-1-sergey.senozhatsky@gmail.com
 
-
+	-ss
 
 _______________________________________________
 linux-arm-kernel mailing list
