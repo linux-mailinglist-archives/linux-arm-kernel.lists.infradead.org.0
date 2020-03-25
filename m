@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C867D1931D2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 21:20:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48CF11931D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 21:22:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pz7+XnqNff1DKZUnksvYbpnf8/4fYKp9IcoDNYiF3fc=; b=n2ttB2VsLjw/6m
-	qFaMWvDMoaX0l2mnDDP4KJlVf128O/NoUua5m8I8YdtaLwxp/QPWNzbr3p2+ndVAMIOMnUMTnR5lk
-	BhUqvoms6hj2KgXDqaAwyoDR1Xhi1GdW56l3ys/YCs0n71VWNKbMAjZWPYRH0Ve8OqtrjI7kByV66
-	6GzV1LjsP9e5zFSy8gkyug8C+boIWkh16WBQPUsHfQdgalXkHsUT/9I+VWRB/qha7rg8QvblSNERd
-	5hMQwO9uque5YuoOrUUiQtgmSZxex9LPc399Q1P4Z/vYJtgdXzNyzv4LO347EaebOU85WWBwm4NZt
-	BVpv68Uqw9VxB0M9BcEg==;
+	List-Owner; bh=ySvctYWGieqJgICSNPWZv3/gFdRp4gRDP/jVnDmub0g=; b=SHIj1I+fTgufLS
+	ONyg/wZwmRq2ArKPWbzsVUc+xBvkmD6o8QtB1dvmNEigK5eYKp7TXLNjWgYO46fFS+CohSIUYMio4
+	wNivRHOmAj1eIWGBlCdAtV9om/Hj4XI6UqRJd6h7dtcEprsQRuJhFv68gMat4nJS7JYK063h8J1H8
+	3nfyke2ANPVlgRfLN9qLMmkaOTvhXcDnUqX8rk2KEyqK94iaF9+w81YdBL1DQ2wGSrtA9UwkFyFLJ
+	3l1QAwZijqD8H0+xjLeu1OEktdAMDLeQjYWy0ATlvzZ3rhJshVw77smSXHO5qk3mva/4mgWHbxYoM
+	4aM5k6UML5Idt1Epfb5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHCVI-0000oO-Eo; Wed, 25 Mar 2020 20:19:56 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jHCXd-0002bo-0b; Wed, 25 Mar 2020 20:22:21 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHCUI-0008WT-AB
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 20:18:57 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02PKInxn053430;
- Wed, 25 Mar 2020 15:18:49 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1585167529;
- bh=h6Y7kKyK0HpFuOURmmpiDpmaMkeTeq/m6EYhOH7YPZc=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=A372TIB2G5ZkXvyo7xBTZU1Zk7HYMLTJN1K7MEMmVnYkGCtZpoalqEfv6b4+2L6Ak
- /KCkZQe3iHabYULf9HIUIn7Vh9oqQZD8Iqk+Iy9lno8fEy+X3qYHI3WsgIA5CfFD74
- AaXtmPIFfkkhG2GqOPki9cKxNQPy4R8L16rlP8MY=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02PKIndn010823
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 25 Mar 2020 15:18:49 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 25
- Mar 2020 15:18:49 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 25 Mar 2020 15:18:48 -0500
-Received: from fllv0103.dal.design.ti.com (fllv0103.dal.design.ti.com
- [10.247.120.73])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02PKInIi064382;
- Wed, 25 Mar 2020 15:18:49 -0500
-Received: from localhost ([10.250.35.147])
- by fllv0103.dal.design.ti.com (8.14.7/8.14.7) with ESMTP id 02PKInUQ090870;
- Wed, 25 Mar 2020 15:18:49 -0500
-From: Suman Anna <s-anna@ti.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH 3/3] remoteproc/k3-dsp: Add support for L2RAM loading on C66x
- DSPs
-Date: Wed, 25 Mar 2020 15:18:39 -0500
-Message-ID: <20200325201839.15896-4-s-anna@ti.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20200325201839.15896-1-s-anna@ti.com>
-References: <20200325201839.15896-1-s-anna@ti.com>
+ id 1jHCXS-0002bT-R9
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 20:22:12 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id q16so2610259pje.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Mar 2020 13:22:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=PdpEIpQ/wKeSgsRAafJKurWryJo4Td2Yn8/4nS7DvLI=;
+ b=M3COaVcIwpKVfcCr80swHvdh9xXacj7eY2qC2ds0xZUIr0GOt4mzJLwb1ZwbVI9+Bg
+ XQEamHqFR+VeDMQ3FRvP7wohJct4eF4Q0yfFFLHyAiNgQdrXUvp5l3OBfu+dUDGlCeG8
+ TwUeNQNwBIaBtP7S7OlSpq0LgGwC0BvmnAp9E=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=PdpEIpQ/wKeSgsRAafJKurWryJo4Td2Yn8/4nS7DvLI=;
+ b=m3M/W3i+U3aeAUSzNpKgA5ckIiVGF4XA6rxG4P4E3Y60QGBl2HZ0lkKN7x+Z4MHJPv
+ KPd9eRiX6g5iMHwy4YZpKvwM9vEqDr1rjgVH+Z5fHE28jSF0ZKXHEZ2YE2+gCoHGZDw0
+ 021sALlvr7+tRGo95e0fDy6/8oNoNYQVr7vvMLHm8jb8X/RFB1TfMQNEllf5wA874vgr
+ kdnpW0+G4rz7cc1ee+wJ1T/R1ZMrI5DzfEo1O48QT4DfN8BdqhEum5BtFJwPshwhmqXn
+ k1+7AWoqz6mblWcqeeQ0/4fyhl4KfFDx5hMwvGE1qj+xj78afmXs1Iw7i0PELG8ZYkIu
+ bh7Q==
+X-Gm-Message-State: ANhLgQ0yKuHoXtGmji6Rvh1r+rFRYvyIhqRBR4MHaCM6gyB9SnCeY8Tm
+ icKootDyqeHger7Jx4/Yxct8sw==
+X-Google-Smtp-Source: ADFU+vs+9qXw30Y/gM8gDtnz4iYFAg0dyECDyKOna2Nf6+mD+qup1rem6mTHJ82584OyB/TSrpCOAg==
+X-Received: by 2002:a17:902:9889:: with SMTP id
+ s9mr4491897plp.252.1585167729772; 
+ Wed, 25 Mar 2020 13:22:09 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id q19sm8285835pgn.93.2020.03.25.13.22.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Mar 2020 13:22:08 -0700 (PDT)
+Date: Wed, 25 Mar 2020 13:22:07 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
+Message-ID: <202003251319.AECA788D63@keescook>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <20200324203231.64324-6-keescook@chromium.org>
+ <20200325132127.GB12236@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200325132127.GB12236@lakrids.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_131854_434484_9DE35977 
-X-CRM114-Status: GOOD (  23.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200325_132210_908002_B4E545BA 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,167 +97,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: Jann Horn <jannh@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
+ Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The resets for the DSP processors on K3 SoCs are managed through the
-Power and Sleep Controller (PSC) module. Each DSP typically has two
-resets - a global module reset for powering on the device, and a local
-reset that affects only the CPU while allowing access to the other
-sub-modules within the DSP processor sub-systems.
+On Wed, Mar 25, 2020 at 01:21:27PM +0000, Mark Rutland wrote:
+> On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
+> > Allow for a randomized stack offset on a per-syscall basis, with roughly
+> > 5 bits of entropy.
+> > 
+> > Signed-off-by: Kees Cook <keescook@chromium.org>
+> 
+> Just to check, do you have an idea of the impact on arm64? Patch 3 had
+> figures for x86 where it reads the TSC, and it's unclear to me how
+> get_random_int() compares to that.
 
-The C66x DSPs have two levels of internal RAMs that can be used to
-boot from, and the firmware loading into these RAMs require the
-local reset to be asserted with the device powered on/enabled using
-the module reset. Enhance the K3 DSP remoteproc driver to add support
-for loading into the internal RAMs. The local reset is deasserted on
-SoC power-on-reset, so logic has to be added in probe in remoteproc
-mode to balance the remoteproc state-machine.
+I didn't do a measurement on arm64 since I don't have a good bare-metal
+test environment. I know Andy Lutomirki has plans for making
+get_random_get() as fast as possible, so that's why I used it here. I
+couldn't figure out if there was a comparable instruction like rdtsc in
+aarch64 (it seems there's a cycle counter, but I found nothing in the
+kernel that seemed to actually use it)?
 
-Note that the local resets are a no-op on C71x cores, and the hardware
-does not supporting loading into its internal RAMs.
+> Otherwise, this looks sound to me; I'd jsut like to know whether the
+> overhead is in the same ballpark.
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
----
- drivers/remoteproc/ti_k3_dsp_remoteproc.c | 82 +++++++++++++++++++++++
- 1 file changed, 82 insertions(+)
+Thanks!
 
-diff --git a/drivers/remoteproc/ti_k3_dsp_remoteproc.c b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-index fd0d84f46f90..7b712ef74611 100644
---- a/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-+++ b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-@@ -175,6 +175,9 @@ static int k3_dsp_rproc_reset(struct k3_dsp_rproc *kproc)
- 		return ret;
- 	}
- 
-+	if (kproc->data->uses_lreset)
-+		return ret;
-+
- 	ret = kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
- 						    kproc->ti_sci_id);
- 	if (ret) {
-@@ -192,6 +195,9 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
- 	struct device *dev = kproc->dev;
- 	int ret;
- 
-+	if (kproc->data->uses_lreset)
-+		goto lreset;
-+
- 	ret = kproc->ti_sci->ops.dev_ops.get_device(kproc->ti_sci,
- 						   kproc->ti_sci_id);
- 	if (ret) {
-@@ -199,6 +205,7 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
- 		return ret;
- 	}
- 
-+lreset:
- 	ret = reset_control_deassert(kproc->reset);
- 	if (ret) {
- 		dev_err(dev, "local-reset deassert failed, ret = %d\n", ret);
-@@ -210,6 +217,63 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
- 	return ret;
- }
- 
-+/*
-+ * The C66x DSP cores have a local reset that affects only the CPU, and a
-+ * generic module reset that powers on the device and allows the DSP internal
-+ * memories to be accessed while the local reset is asserted. This function is
-+ * used to release the global reset on C66x DSPs to allow loading into the DSP
-+ * internal RAMs. The .prepare() ops is invoked by remoteproc core before any
-+ * firmware loading, and is followed by the .start() ops after loading to
-+ * actually let the C66x DSP cores run. The local reset on C71x cores is a
-+ * no-op and the global reset cannot be released on C71x cores until after
-+ * the firmware images are loaded, so this function does nothing for C71x cores.
-+ */
-+static int k3_dsp_rproc_prepare(struct rproc *rproc)
-+{
-+	struct k3_dsp_rproc *kproc = rproc->priv;
-+	struct device *dev = kproc->dev;
-+	int ret;
-+
-+	/* local reset is no-op on C71x processors */
-+	if (!kproc->data->uses_lreset)
-+		return 0;
-+
-+	ret = kproc->ti_sci->ops.dev_ops.get_device(kproc->ti_sci,
-+						    kproc->ti_sci_id);
-+	if (ret)
-+		dev_err(dev, "module-reset deassert failed, cannot enable internal RAM loading, ret = %d\n",
-+			ret);
-+
-+	return ret;
-+}
-+
-+/*
-+ * This function implements the .unprepare() ops and performs the complimentary
-+ * operations to that of the .prepare() ops. The function is used to assert the
-+ * global reset on applicable C66x cores. This completes the second portion of
-+ * powering down the C66x DSP cores. The cores themselves are only halted in the
-+ * .stop() callback through the local reset, and the .unprepare() ops is invoked
-+ * by the remoteproc core after the remoteproc is stopped to balance the global
-+ * reset.
-+ */
-+static int k3_dsp_rproc_unprepare(struct rproc *rproc)
-+{
-+	struct k3_dsp_rproc *kproc = rproc->priv;
-+	struct device *dev = kproc->dev;
-+	int ret;
-+
-+	/* local reset is no-op on C71x processors */
-+	if (!kproc->data->uses_lreset)
-+		return 0;
-+
-+	ret = kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
-+						    kproc->ti_sci_id);
-+	if (ret)
-+		dev_err(dev, "module-reset assert failed, ret = %d\n", ret);
-+
-+	return ret;
-+}
-+
- /*
-  * Power up the DSP remote processor.
-  *
-@@ -353,6 +417,8 @@ static void *k3_dsp_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
- }
- 
- static const struct rproc_ops k3_dsp_rproc_ops = {
-+	.prepare	= k3_dsp_rproc_prepare,
-+	.unprepare	= k3_dsp_rproc_unprepare,
- 	.start		= k3_dsp_rproc_start,
- 	.stop		= k3_dsp_rproc_stop,
- 	.kick		= k3_dsp_rproc_kick,
-@@ -644,6 +710,22 @@ static int k3_dsp_rproc_probe(struct platform_device *pdev)
- 		goto disable_clk;
- 	}
- 
-+	/*
-+	 * ensure the DSP local reset is asserted to ensure the DSP doesn't
-+	 * execute bogus code in .prepare() when the module reset is released.
-+	 */
-+	if (data->uses_lreset) {
-+		ret = reset_control_status(kproc->reset);
-+		if (ret < 0) {
-+			dev_err(dev, "failed to get reset status, status = %d\n",
-+				ret);
-+			goto release_mem;
-+		} else if (ret == 0) {
-+			dev_warn(dev, "local reset is deasserted for device\n");
-+			k3_dsp_rproc_reset(kproc);
-+		}
-+	}
-+
- 	ret = rproc_add(rproc);
- 	if (ret) {
- 		dev_err(dev, "failed to add register device with remoteproc core, status = %d\n",
+-Kees
+
 -- 
-2.23.0
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
