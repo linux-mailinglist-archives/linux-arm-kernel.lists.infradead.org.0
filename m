@@ -2,54 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68296191F4C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:37:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 374B7191F55
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:39:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3wlccCXRm6r9XKX5K5cPDt8OkIZTZhi7roDd2Cqglr0=; b=LOkqsVVt3DbfNN
-	fGov67pkFiSVBUwl+fpSA967NUXrioqdhJWCpLZhF0KlCw9DQeUXl+15rsWc/9hNq1MbgRDl4G59t
-	qif0SlPL7gWMjD+oyRGXUK2fVAD3IV6uICxBoY9+nylJ2be0Wc0QS+204qtmOyZJnE4GS5gh/Vyaf
-	3aImds1NV7DtbxYCcJADj2C+WZDflWiNgXOap1X7c3Pn4GulZOABEJmj0Vrs2fm/xxEcZsAUvwU44
-	KLlEf7adT1SJVIQqTo5I/PUFjqwsmxno9DXAa6TfA/KJ+v96eKLwXOsiH9QKgr3eVVpVU8eG3W1oB
-	pQsacA89ndhDdToOPDgw==;
+	List-Owner; bh=wrrKVUsiGcpF9bgALRHO70wb+gB2isaT7r5n60SV8gk=; b=d99yzrwhdiOlM/
+	ulQ9gL7hsn04N6UPawP8xuRRzJ7El15ZfnY3jw20i3khqaArK7j//rcAJegYoQ7wRcIUGEY7G8IgO
+	dcEvEQ1GkF3zF6kHtLK85vKv4MM09dZfa3SVhKBId9uHyMlAW79PNTa408gWtmv2qcetN2kQWQFNM
+	5ltYLoEjgWH5zieZela1YndNJ4GISbFBt9bIkr7uNGHY90fJqzTwquA7Rc64z2+rTQrSLnDRx3zLH
+	xx6Z+iUtPfix8w1790tH8Ng98RvANkN0yE6NKyXR4uYhKbDX1NKS3pgHc6hql8C568f+FhYjZfBqt
+	5ZIP1mWEutTAxpjY9gBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGvup-0007Lw-Nv; Wed, 25 Mar 2020 02:37:11 +0000
+	id 1jGvwT-0007lE-Tc; Wed, 25 Mar 2020 02:38:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGvue-0007LZ-9P
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:37:01 +0000
+ id 1jGvwH-0007in-EK
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:38:42 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C6A6620714;
- Wed, 25 Mar 2020 02:36:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0DD8B20724;
+ Wed, 25 Mar 2020 02:38:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585103819;
- bh=InTvH1FD+myof5xLImIsEz4YlekXxKWk3kYrJWkbr0Y=;
+ s=default; t=1585103921;
+ bh=REPPFvmAWeExSkY2NpzUI6zxo6aH5C1vRO5zrdUrnx0=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=1e3i8/DIhGo0HLqrkskon5km384KJf9SoZP1feyeC+ZJmg1QQcczK8/AqfuJsP2tk
- EBYKSQk298Cdgnw0WujZwTJNmtd/ibRkzqKFcdewrIjgTCDu512l/adogDsTsumzBU
- kX8saiVwdrg/QT/7rPNSFCpDDf1uue1ZDcdu182A=
+ b=Y0t3+bjTgmGfefRowdnStqQvqnUvz8jJU+N/Ly3V1x9mhvlL7LjZfygLAmtuI9yzp
+ XytbQ5C5Hh6j3ke5Jl5QLQ8IKI1a1f6+rxlxwp1kqKkNeu5RHQDyWh4SFEkcnsRnX2
+ j2hrDSxTP3xMrxHvfrq4lWdgtN/o1QWTFN4Fq0rI=
 MIME-Version: 1.0
-In-Reply-To: <20200323184501.5756-1-lukas.bulwahn@gmail.com>
-References: <20200323184501.5756-1-lukas.bulwahn@gmail.com>
-Subject: Re: [PATCH] MAINTAINERS: adjust entry to ICST clocks YAML schema
- creation
+In-Reply-To: <20200316064322.GI17221@dragon>
+References: <20200316064322.GI17221@dragon>
+Subject: Re: [GIT PULL] i.MX clock drivers update for 5.7
 From: Stephen Boyd <sboyd@kernel.org>
-To: Linus Walleij <linus.walleij@linaro.org>,
- Lukas Bulwahn <lukas.bulwahn@gmail.com>
-Date: Tue, 24 Mar 2020 19:36:58 -0700
-Message-ID: <158510381898.125146.5862992017032580482@swboyd.mtv.corp.google.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Date: Tue, 24 Mar 2020 19:38:40 -0700
+Message-ID: <158510392026.125146.1277266093057110288@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_193700_353360_6736DBB1 
-X-CRM114-Status: UNSURE (   7.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200324_193841_502670_E5774EDE 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,32 +75,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joe Perches <joe@perches.com>,
- Lukas Bulwahn <lukas.bulwahn@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lukas Bulwahn (2020-03-23 11:45:01)
-> Commit 78c7d8f96b6f ("dt-bindings: clock: Create YAML schema for ICST
-> clocks") transformed arm-integrator.txt into arm,syscon-icst.yaml, but did
-> not adjust the reference to that file in the ARM INTEGRATOR, VERSATILE AND
-> REALVIEW SUPPORT entry in MAINTAINERS.
+Quoting Shawn Guo (2020-03-15 23:43:23)
+> Hi Stephen,
 > 
-> Hence, since then, ./scripts/get_maintainer.pl --self-test complains:
+> This is i.MX clock driver update I collected for 5.7.  Please consider
+> to pull.  Also, 16e71d4da799 ("clk: imx8mn: add SNVS clock to clock tree")
+> was pulled into DT branch as dependency, so please keep it stable.
 > 
->   warning: no file matches \
->   F: Documentation/devicetree/bindings/clock/arm-integrator.txt
+> Thanks!
 > 
-> Update the file entry in MAINTAINERS to the new transformed yaml file.
+> Shawn
 > 
-> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+> 
+> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+> 
+>   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/clk-imx-5.7
+> 
+> for you to fetch changes up to b5881e8019e0d39c43a2da56c4ae616a50615e00:
+> 
+>   clk: imx: clk-gate2: Pass the device to the register function (2020-03-16 09:38:30 +0800)
+> 
+> ----------------------------------------------------------------
 
-Mauro got here already
-
- https://lkml.kernel.org/r/491d2928a47f59da3636bc63103a5f63fec72b1a.1584966325.git.mchehab+huawei@kernel.org
+Thanks. Pulled into clk-next
 
 _______________________________________________
 linux-arm-kernel mailing list
