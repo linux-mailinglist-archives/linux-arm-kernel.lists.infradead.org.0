@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45709193391
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:08:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A35A1933AA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 23:14:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GI2YihYsfMZ11ZH7yrZ1VTRiDTDc+4YlVjEHrOF/RnA=; b=ipVYhY3zqnPyF2OfpSrIIHPc1
-	KqiWml35cTo+fiKG2t6DnAGrLp+snvgo16/7W98flxW0WKOEJ8o/GU9cyiaYGV6pTXUxmfhB34NSR
-	2ErNbQkA1qSjWT0SpHVUPx+FsIqX7xf4Sb8bKAgR4GvBl40Q+pJXVkMeHLPQvnvXrq6urYKm6at3R
-	3obbxRjXKrD30niAGYkYNzMemOnCkKnmZxrDE3V+REhEx77W9uPsmAHmhDhZocR637xxweYeM1TR8
-	4xJlMODAqTkJpjt9nL0SoqBCHvU1raxbRI2WYsSaIsKohX0iWJVwjfo8wXvOqnq6LVfTeDJ8IfRR+
-	NltWqbhbw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wmKvuKz1Ewy9YI4tOyBF/B6wkhMzWb5D4j0BzXrDfy0=; b=ZykgFSwZhLpHwy
+	913Zi7bHXDLC4gDtADTCA017O1KW/ogrmKPdH22zH4qJ/oQiREm0/US42T4LGS+AfWlZ+IDTeb/iE
+	0JOMmYUeeMP1tTHgu+XSx9H2XTf4SUDkawgmN8B0Ex3DiWO5soy0ZLGXLn5uPRQWl6LkqzzsN9nzr
+	RG0oM0X8yIZPZYlOMAjO3QhhbWRIbz97AAw8OCgZxh/KP7cf6YUwPhEQW9garV17++z75yaKfZOXk
+	xZhF9T7rMy+4GdfO7H0ErxEbMlg6/TVOGTdD0aFVRFeclawZuiq2FwS+ZZz0TrljhKUyNw5gLb0Xd
+	J7zAxtcacL5/1vpcgajA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHEBv-0003Ir-W0; Wed, 25 Mar 2020 22:08:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHEBk-0003GH-GB; Wed, 25 Mar 2020 22:07:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F6641FB;
- Wed, 25 Mar 2020 15:07:51 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE6623F71E;
- Wed, 25 Mar 2020 15:07:50 -0700 (PDT)
-Date: Wed, 25 Mar 2020 22:07:49 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 4/4] dt-bindings: Add missing 'additionalProperties: false'
-Message-ID: <20200325220749.GF12169@sirena.org.uk>
-References: <20200325220542.19189-1-robh@kernel.org>
- <20200325220542.19189-5-robh@kernel.org>
+	id 1jHEHt-0005BC-P6; Wed, 25 Mar 2020 22:14:13 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHEHf-00057m-J4
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 22:14:01 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 2A2A580C;
+ Wed, 25 Mar 2020 23:13:47 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1585174427;
+ bh=IB7O8aa4VNcfC1dgaFkkyQUEh1Uo0S7fgHm/tTp/Rzw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=k+eIxOLzCABzUDjpVUK/E8KG/RSgc8yWrTju8ADYg0xy3GIaDS1rmGXYg3RbaqKcx
+ Xp8hwwKcZ13qg3Kw5AxibT6J2ZaYBE7wEzYEP3V4ASitmjZfmh19c4GM4KTg3HR80o
+ dL9LGj32lC8eoFuSZzCkWJLS3JsvElv8m/5gWYas=
+Date: Thu, 26 Mar 2020 00:13:43 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH 0/4] media Kconfig reorg - part 2
+Message-ID: <20200325221343.GW19171@pendragon.ideasonboard.com>
+References: <cover.1585151701.git.mchehab+huawei@kernel.org>
+ <6fadc6ea-8512-03ba-da30-43c64d7562f6@collabora.com>
+ <20200325223820.1c74aed3@coco.lan>
 MIME-Version: 1.0
-In-Reply-To: <20200325220542.19189-5-robh@kernel.org>
-X-Cookie: Do not stamp.
+Content-Disposition: inline
+In-Reply-To: <20200325223820.1c74aed3@coco.lan>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_150752_615318_5230FD2A 
-X-CRM114-Status: GOOD (  11.45  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200325_151359_780553_ABE80CA4 
+X-CRM114-Status: GOOD (  35.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,83 +74,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, linux-iio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Guillaume La Roque <glaroque@baylibre.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Lee Jones <lee.jones@linaro.org>,
- linux-clk@vger.kernel.org, Lars-Peter Clausen <lars@metafoo.de>,
- Kevin Hilman <khilman@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Zhang Rui <rui.zhang@intel.com>, Brian Masney <masneyb@onstation.org>,
- devicetree@vger.kernel.org, Michael Hennerich <michael.hennerich@analog.com>,
- linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab@kernel.org>, linux-gpio@vger.kernel.org,
- linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
- netdev@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
- Hartmut Knaack <knaack.h@gmx.de>, linux-media@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, Jonathan Cameron <jic23@kernel.org>
-Content-Type: multipart/mixed; boundary="===============1804997503463656631=="
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Michal Simek <michal.simek@xilinx.com>, "Lad,
+ Prabhakar" <prabhakar.csengg@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ Fabio Estevam <festevam@gmail.com>, devel@driverdev.osuosl.org,
+ linux-renesas-soc@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Steve Longerbeam <slongerbeam@gmail.com>, Bingbu Cao <bingbu.cao@intel.com>,
+ Tian Shu Qiu <tian.shu.qiu@intel.com>, Yong Zhi <yong.zhi@intel.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ Helen Koike <helen.koike@collabora.com>, Yong Deng <yong.deng@magewell.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ Hyun Kwon <hyun.kwon@xilinx.com>, Heungjun Kim <riverful.kim@samsung.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Mauro,
 
---===============1804997503463656631==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="sDKAb4OeUBrWWL6P"
-Content-Disposition: inline
+On Wed, Mar 25, 2020 at 10:38:20PM +0100, Mauro Carvalho Chehab wrote:
+> Em Wed, 25 Mar 2020 16:36:31 -0300 Helen Koike escreveu:
+> > On 3/25/20 1:03 PM, Mauro Carvalho Chehab wrote:
+> > > That's the second part of media Kconfig changes. The entire series is
+> > > at:
+> > > 
+> > > 	https://git.linuxtv.org/mchehab/experimental.git/log/?h=media-kconfig  
+> > 
+> > I made a quick experiment (using this branch) with someone who works with the kernel for his master degree, but doesn't have much experience in kernel development in general.
+> > I asked him to enable Vimc (from default configs, where multimedia starts disabled).
+> > He knows that Vimc is a virtual camera driver, and this is how he behaved:
+> > 
+> > === Start of experiment:
+> > 
+> > * He pressed '/' and searched for vimc to see the location path.
+> > * Then he enabled "Multimedia support" and went straight to "Media drivers" (which just shows USB and PCI).
+> > * He went back to "Multimedia support", entered "Media device types" and enabled "Test drivers".
+> > * He went back to "Media drivers" again and didn't find Vimc (nothing changed in this menu).
+> > * He seemed a bit lost, going back and forth in the menus a couple of times.
+> > * Then he pressed '/' again to search for vimc and see the location path, and he realized that there
+> > should be an option called "V4L test drivers" under "Media drivers" that is not showing up.
+> > * He went back to "Media device types" again and start re-reading the options.
+> > * He selected "Cameras and video grabbers" ant went back to "Media drivers".
+> > * He sees "V4L test drivers", selects it, and enter this menu.
+> > * He selects "Virtual Media Controller Driver".
+> > 
+> > I asked his impressions, and he mentioned that he thought that enabling just "Test drivers" would be enough, without need
+> > to combine "Test drivers" with "Cameras and video grabbers".
+> > He also asked me why virtual drivers should be hidden, and he mentioned that the word "Virtual" in front would be enough.
+> > 
+> > Then I showed him he could have disabled the option "Filter devices by their types" to see everything at one (which he didn't
+> > realized by himself until that moment, nor tried it out to see what would happen).
+> > 
+> > He mentioned that hiding is nice, because it shows less options, but not very nice to search for something.
+> > He also mentioned that if he had understood the filter mechanism from the start, he would have disabled "Filter devices by their types" sooner.
+> 
+> That's easy to solve: all it needs is to add something similar
+> to this at drivers/media/Kconfig:
+> 
+> 	+	comment "Drivers are filtered by MEDIA_SUPPORT_FILTER"
+> 	+		visible if MEDIA_SUPPORT_FILTER
+> 	+
+> 	+	comment "All available drivers are shown below"
+> 	+		visible if !MEDIA_SUPPORT_FILTER
+> 	+
+> 	menu "Media drivers"
+> 
+> 	source "drivers/media/usb/Kconfig"
+> 
+> > === End of experiment
+> > 
+> > This was just one experiment from one person, I'll see if I can get some other people from lkcamp.dev group to also check
+> > and send us their impressions. I think it would be nice to get more data about user experience, from people that are not used to
+> > kernel development (kernel dev newbies for instance).
+> > 
+> > Just another remark from me:
+> > 
+> > From the default config, "Media drivers" shows USB and PCI, 
+> 
+> Well, assuming that there are 2 billion computers, 1% with Linux
+> installed, and 10% of them have a media device (camera or TV),
+> we have about 2 millions of people running Linux. That excludes
+> Android and Embedded devices, where people usually don't touch.
+> 
+> During an entire year, there are about 4000 of Kernel developers 
+> that has at least one patch accepted upstream (this number
+> includes developers for Android and other SoCs). Also, the 
+> number of Kernel developers submitting patches upstream for the
+> media subsystem is around 20-40 people along an year.
 
+$ git log --since 2019-01-01 --until 2020-01-01 --no-merges -- drivers/media/ | grep '^Author: ' | sort | uniq -c | wc -l   
+215
 
---sDKAb4OeUBrWWL6P
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+There's some duplication of e-mail addresses, but it's still roughly an
+order or magnitude bigger (and it's not counting staging, headers or
+documentation).
 
-On Wed, Mar 25, 2020 at 04:05:41PM -0600, Rob Herring wrote:
-> Setting 'additionalProperties: false' is frequently omitted, but is
-> important in order to check that there aren't extra undocumented
-> properties in a binding.
->=20
-> Ideally, we'd just add this automatically and make this the default, but
-> there's some cases where it doesn't work. For example, if a common
-> schema is referenced, then properties in the common schema aren't part
-> of what's considered for 'additionalProperties'. Also, sometimes there
-> are bus specific properties such as 'spi-max-frequency' that go into
-> bus child nodes, but aren't defined in the child node's schema.
+> So, about 99,9998% of the users using the media subsystems aren't
+> Kernel hackers. I bet that almost all of those will either need
+> to enable USB or a PCI driver.
 
-Acked-by: Mark Brown <broonie@kernel.org>
+And the extremely vast majority of these will never enable a kernel
+option because they will never compile a kernel. They don't even know
+what a kernel is :-)
 
---sDKAb4OeUBrWWL6P
-Content-Type: application/pgp-signature; name="signature.asc"
+> Granted, 99,9998% seems too optimistic, but, assuming that this
+> would reduce to something like 80% (e. g. only 200 users
+> would ever try to build a media driver, with is a *very conservative*
+> number) this is still a lot more than the number of media Kernel
+> developers.
+> 
+> Also, a Kernel hacker will sooner or later find a way to enable it.
+> A normal user may find it a lot more trickier and will very likely
+> require more support, if the menus are too technical and the
+> default options are wrong.
 
------BEGIN PGP SIGNATURE-----
+I'm not sure to follow you. Are you implying that this patch series,
+which Helen has tested against a real user, not an experienced kernel
+hacker, may make the configuration options more difficult for kernel
+hackers, but improves the situation for users ?
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl571jQACgkQJNaLcl1U
-h9Afjwf/TlVFnvMm+meLOwlfTMDT7xvKv6i3g4S/t/OkkG/qfuDfUpRz0LarRYTg
-8163ZrHY0aAQmLzyxMQR2cBhzM1tfANuY93djQNhe1ac6MUdNxTGLm1n+m9xh/o8
-IsSrgrnEqXCNCgqkAvPcDY7qkeLi68p5VqJIfdOjjeJkusQL3Q0kQUv7kpi6cgXn
-5Y+PlKm4cxLmOxFeUmCLQKocDSMttTCjxA/jm7jX+CWzKJjObhgsoHP9rg+uIO+1
-VHCHKXwxl1a8dhfG9ZnUxXY9UqGqGINojiPmRtTBX5oZqY95zShlcNiJ2HNaRRsT
-oIsZgkZuypvPpKies+jaVF2IuoSbcA==
-=EzfV
------END PGP SIGNATURE-----
+> 
+> -
+> 
+> Even with that, based on your small experiment (of someone from the
+> area), I suspect that, if you had asked him to enable, for example,
+> em28xx or dvbsky (with are some of the most popular drivers
+> those days), he would be able to enable it a lot faster.
 
---sDKAb4OeUBrWWL6P--
+This is the *only* real piece of evidence we have, let's not assume we
+know better.
 
+> > and selecting those doesn't do anything, and people can even think
+> > that, if they want to enable an USB device, just enabling the USB option there is enough (which is not), since no drivers
+> > shows up.
+> 
+> It is hard to comment on individual experiments. In the past, our
+> Kconfig system were like that: written for technical people with
+> background on computer engineering and some experience building the
+> Kernel.
+> 
+> E.g. people that knows that "/" activates a search mechanism at
+> the Kernel building system.
+> 
+> We usually had to spend *a lot of time* both on IRC and on e-mail
+> explaining people that just want to have their card supported,
+> how to do that. After the reorg (with added those more user-faced
+> interfaces), the number of people with problems reduced a lot.
 
---===============1804997503463656631==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Don't you think that could come mainly from better support for media
+devices in distributions ?
+
+> Btw, if one tries to compile from media-build (with lots of users
+> do), this is even more relevant.
+
+Can you quantify "lots of users" ?
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1804997503463656631==--
-
