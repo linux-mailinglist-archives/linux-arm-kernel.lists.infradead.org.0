@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44B22192CFB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 16:40:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D26EF192D04
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 16:41:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KPWZVQiCW+41ECoSVrqY5NXGaWST+XiUpPAIe8NCOd0=; b=te+oyWpPuOvIf7FYfSXS+Hx9xe
-	g6d3E3w1zBD0zrKEZMYGioS4IZ8jHIv0VgGBHeY6lV0Lbpb6wj8jCnRtvBoEEJ2SX3mkU5a0SNTW9
-	unig3b93K9h5CfN715kKlWjFqW98z+ALYOZLh1pQpquLyp82Edc683EKg9uFSn+voacWXoG+nQdyE
-	t6+Whn9+KXxU/AhLHlbtQS97Vh8AZPCaE0HsHiCPOnpL5Nm5qQ3q9UNDvRe+VrQVGNFY2DeWVX/YN
-	oUTUoL/0JVXRt8aSOA6dW4eCg+n6MTxO8PT14DHrjuwu1miqb36gUNmSWTVluyOJha/ilZhnu5wjy
-	XKebKAxA==;
+	bh=vlyrJWD1nghDaK816ZzLron3wQR0v6D5xIMd3K1UahU=; b=sEpD0/kRXxhOkGAJXK3rAihjy3
+	CWnWVGkNzUOX/7Jq+QsH/Lgwk+uqtSNdlKEaUuSEjr0bo2q89HMILtYXW4cuxR1PkHfd/9VCecfBq
+	HG+Oze755bN5ZDzRxWk0cK0k9OnrMhEtHM8ssgfCtwVlQJCiC/vkYPgYBg1nFvEO/+XZk6HcEnWHZ
+	OqJxTqecP5dnb7Zt6nkjcmHD1oIXwdLTFH+3Vx1wx8UmsHsLd2ps5Q6YkodI8PFS27PLR9txOwJq/
+	tngR/3PIA1821xBKO47CK2DT2k9+XTYWPYh30YaTS5gmdssxraSaZPPJhTKrUCWfCNJaiYxuiB84v
+	5rianvFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH892-0007oq-8N; Wed, 25 Mar 2020 15:40:40 +0000
+	id 1jH89O-00084P-D3; Wed, 25 Mar 2020 15:41:02 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH87s-00072p-CD
+ id 1jH87t-00073W-4p
  for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 15:39:30 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 30559200561;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E7621200566;
  Wed, 25 Mar 2020 16:39:27 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2254120055D;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DA35920055D;
  Wed, 25 Mar 2020 16:39:27 +0100 (CET)
 Received: from fsr-ub1664-175.ea.freescale.net
  (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 6DA31203CE;
- Wed, 25 Mar 2020 16:39:26 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 3136A203CE;
+ Wed, 25 Mar 2020 16:39:27 +0100 (CET)
 From: Abel Vesa <abel.vesa@nxp.com>
 To: Rob Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <kernel@pengutronix.de>,
@@ -43,16 +43,17 @@ To: Rob Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Lee Jones <lee.jones@linaro.org>, Anson Huang <anson.huang@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan <peng.fan@nxp.com>,
  Jacky Bai <ping.bai@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>
-Subject: [PATCH v2 05/13] clk: imx: gate2: Allow single bit gating clock
-Date: Wed, 25 Mar 2020 17:38:43 +0200
-Message-Id: <1585150731-3354-6-git-send-email-abel.vesa@nxp.com>
+Subject: [PATCH v2 06/13] clk: imx: pll14xx: Add the device as argument when
+ registering
+Date: Wed, 25 Mar 2020 17:38:44 +0200
+Message-Id: <1585150731-3354-7-git-send-email-abel.vesa@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1585150731-3354-1-git-send-email-abel.vesa@nxp.com>
 References: <1585150731-3354-1-git-send-email-abel.vesa@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_083928_688105_715E5519 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20200325_083929_461711_ACF7D270 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,122 +84,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Audiomix on i.MX8MP registers two gates that share the same enable count
-but use the same bit to control the gate instead of two bits. By adding
-the flag IMX_CLK_GATE2_SINGLE_BIT we allow the gate2 to use the generic
-gate ops for enable, disable and is_enabled.
-For the disable_unused, nothing happens if this flag is specified.
+In order to allow runtime PM, the device needs to be passed on
+to the register function. Audiomix clock controller, used on
+i.MX8MP and future platforms, registers a pll14xx and has runtime
+PM support.
 
 Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 ---
- drivers/clk/imx/clk-gate2.c | 31 +++++++++++++++++++++++--------
- drivers/clk/imx/clk.h       | 13 +++++++++++++
- 2 files changed, 36 insertions(+), 8 deletions(-)
+ drivers/clk/imx/clk-pll14xx.c |  8 ++++----
+ drivers/clk/imx/clk.h         | 13 ++++++++++---
+ 2 files changed, 14 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-gate2.c b/drivers/clk/imx/clk-gate2.c
-index ce0060e..b87ab3c 100644
---- a/drivers/clk/imx/clk-gate2.c
-+++ b/drivers/clk/imx/clk-gate2.c
-@@ -41,21 +41,26 @@ static int clk_gate2_enable(struct clk_hw *hw)
- 	struct clk_gate2 *gate = to_clk_gate2(hw);
- 	u32 reg;
- 	unsigned long flags;
-+	int ret = 0;
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index a83bbbe..f9eb189 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -378,9 +378,9 @@ static const struct clk_ops clk_pll1443x_ops = {
+ 	.set_rate	= clk_pll1443x_set_rate,
+ };
  
- 	spin_lock_irqsave(gate->lock, flags);
- 
- 	if (gate->share_count && (*gate->share_count)++ > 0)
- 		goto out;
- 
--	reg = readl(gate->reg);
--	reg &= ~(3 << gate->bit_idx);
--	reg |= gate->cgr_val << gate->bit_idx;
--	writel(reg, gate->reg);
-+	if (gate->flags & IMX_CLK_GATE2_SINGLE_BIT) {
-+		ret = clk_gate_ops.enable(hw);
-+	} else {
-+		reg = readl(gate->reg);
-+		reg &= ~(3 << gate->bit_idx);
-+		reg |= gate->cgr_val << gate->bit_idx;
-+		writel(reg, gate->reg);
-+	}
- 
- out:
- 	spin_unlock_irqrestore(gate->lock, flags);
- 
--	return 0;
-+	return ret;
- }
- 
- static void clk_gate2_disable(struct clk_hw *hw)
-@@ -73,9 +78,13 @@ static void clk_gate2_disable(struct clk_hw *hw)
- 			goto out;
- 	}
- 
--	reg = readl(gate->reg);
--	reg &= ~(3 << gate->bit_idx);
--	writel(reg, gate->reg);
-+	if (gate->flags & IMX_CLK_GATE2_SINGLE_BIT) {
-+		clk_gate_ops.disable(hw);
-+	} else {
-+		reg = readl(gate->reg);
-+		reg &= ~(3 << gate->bit_idx);
-+		writel(reg, gate->reg);
-+	}
- 
- out:
- 	spin_unlock_irqrestore(gate->lock, flags);
-@@ -95,6 +104,9 @@ static int clk_gate2_is_enabled(struct clk_hw *hw)
+-struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
+-				  void __iomem *base,
+-				  const struct imx_pll14xx_clk *pll_clk)
++struct clk_hw *imx_dev_clk_hw_pll14xx(struct device *dev, const char *name,
++				const char *parent_name, void __iomem *base,
++				const struct imx_pll14xx_clk *pll_clk)
  {
- 	struct clk_gate2 *gate = to_clk_gate2(hw);
+ 	struct clk_pll14xx *pll;
+ 	struct clk_hw *hw;
+@@ -426,7 +426,7 @@ struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
  
-+	if (gate->flags & IMX_CLK_GATE2_SINGLE_BIT)
-+		return clk_gate_ops.is_enabled(hw);
-+
- 	return clk_gate2_reg_is_enabled(gate->reg, gate->bit_idx);
- }
+ 	hw = &pll->hw;
  
-@@ -104,6 +116,9 @@ static void clk_gate2_disable_unused(struct clk_hw *hw)
- 	unsigned long flags;
- 	u32 reg;
- 
-+	if (gate->flags & IMX_CLK_GATE2_SINGLE_BIT)
-+		return;
-+
- 	spin_lock_irqsave(gate->lock, flags);
- 
- 	if (!gate->share_count || *gate->share_count == 0) {
+-	ret = clk_hw_register(NULL, hw);
++	ret = clk_hw_register(dev, hw);
+ 	if (ret) {
+ 		pr_err("%s: failed to register pll %s %d\n",
+ 			__func__, name, ret);
 diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index f074dd8..01ff1db 100644
+index 01ff1db..fcd9952a 100644
 --- a/drivers/clk/imx/clk.h
 +++ b/drivers/clk/imx/clk.h
-@@ -5,6 +5,8 @@
- #include <linux/spinlock.h>
- #include <linux/clk-provider.h>
+@@ -133,9 +133,9 @@ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+ #define imx_clk_pll14xx(name, parent_name, base, pll_clk) \
+ 	to_clk(imx_clk_hw_pll14xx(name, parent_name, base, pll_clk))
  
-+#define IMX_CLK_GATE2_SINGLE_BIT	1
-+
- extern spinlock_t imx_ccm_lock;
+-struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
+-				  void __iomem *base,
+-				  const struct imx_pll14xx_clk *pll_clk);
++struct clk_hw *imx_dev_clk_hw_pll14xx(struct device *dev, const char *name,
++				const char *parent_name, void __iomem *base,
++				const struct imx_pll14xx_clk *pll_clk);
  
- void imx_check_clocks(struct clk *clks[], unsigned int count);
-@@ -355,6 +357,17 @@ static inline struct clk_hw *imx_clk_hw_gate2_shared2(const char *name,
- 				  &imx_ccm_lock, share_count);
+ struct clk_hw *imx_clk_hw_pllv1(enum imx_pllv1_type type, const char *name,
+ 		const char *parent, void __iomem *base);
+@@ -242,6 +242,13 @@ static inline struct clk *to_clk(struct clk_hw *hw)
+ 	return hw->clk;
  }
  
-+static inline struct clk_hw *imx_dev_clk_hw_gate_shared(struct device *dev,
-+				const char *name, const char *parent,
-+				void __iomem *reg, u8 shift,
-+				unsigned int *share_count)
++static inline struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
++				  void __iomem *base,
++				  const struct imx_pll14xx_clk *pll_clk)
 +{
-+	return clk_hw_register_gate2(NULL, name, parent, CLK_SET_RATE_PARENT |
-+					CLK_OPS_PARENT_ENABLE, reg, shift, 0x3,
-+					IMX_CLK_GATE2_SINGLE_BIT,
-+					&imx_ccm_lock, share_count);
++	return imx_dev_clk_hw_pll14xx(NULL, name, parent_name, base, pll_clk);
 +}
 +
- static inline struct clk *imx_clk_gate2_cgr(const char *name,
- 		const char *parent, void __iomem *reg, u8 shift, u8 cgr_val)
+ static inline struct clk_hw *imx_clk_hw_fixed(const char *name, int rate)
  {
+ 	return clk_hw_register_fixed_rate(NULL, name, NULL, 0, rate);
 -- 
 2.7.4
 
