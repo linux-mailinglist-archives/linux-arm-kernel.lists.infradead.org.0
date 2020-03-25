@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 082EB1925E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:39:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA0271925E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:39:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OshEdFkSGzpsxU1jVpWboXRWixSDab92s1w3qlMZUeE=; b=M63kxyQGFVkHJ+BEM/WP0E1LHr
-	tIDFn/59WZpDw34ZlAltovhKgt4HIRgYNANvO3Y83JPD+uV1803n/ZWBZXxobDx9GafX8dvYsMBf2
-	ZADhda/jcnfMlHzyuK+CAHAP6Xonlh2rIGq1WAzn0xqPURz46p0v6nGBHCr2QCzgT2IBayFtpuz6z
-	IUsdXMqK6gx6w65VaTMYDD3DHRtWCJ0PJZDJvHDrFs8lMZ611wlBssX0j2UPpbDiuiSUmJqN0lE1Q
-	xDlutwZiO+uo6jSqN7oK6slHl/9JCq2C71/WrqGutabxl/746s4CYZ/n+rUhnDLl63Udi64zeTO2C
-	Q0onXhIA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IqmBDPsGTIKHXLrgy0MFWn49ovFbJ+xdWSUsVENWpMg=; b=n3a//aiTh+zq6N
+	91AfDHFY0C44U5kjHZZlvnZooKX+AyEZp/JnG5k3ku5T5X4VM44r21YBdKaRcBxjKy1aQ8BhpUKKP
+	tjxt/HYjIigbS9lNmuoL4VZuf+23r18AEa3nEhdLahwMYEmJvjPiMNo6gU14pP/19QR3s9alCMBbS
+	PXn/B/gNh0BHcOoX1Vj9eP+F2Ox1ccPuO2R4UpMhGz+70iutMcEEIt1U5FthrdvNbVuBKXMmjZVo4
+	oMf6omIxCCFd9SJRAw50uLjRw1o1AVHgXH1nPEsYoL/6Ecczo2zjBO/JBh/KwvbaDLMcAICv6tq+l
+	tgjVSSYeJgRtZaiB+R9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH3RG-0007Sf-WE; Wed, 25 Mar 2020 10:39:11 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jH3Rk-0007zu-Fa; Wed, 25 Mar 2020 10:39:40 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH3Qk-0007I8-FH; Wed, 25 Mar 2020 10:38:39 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d5so2348184wrn.2;
- Wed, 25 Mar 2020 03:38:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/wgvz2lVpp5+P73ebkZ5cpJlG6NyplWSlH1ZFZco8LM=;
- b=eReNsT3/ql4XtBGPugbUGLIbqp4B391Ps/1xoYiR+OGIUAH8+B72MCrP2HlKPfoWaP
- pqYGsv0O8ZMQL6PQ+IalWVy372tw3azPRtzZgqDbyElePH+Tqh+q33JT2PdJ0HFxNGP5
- qRaT84ztZV1Oows1zWBxj5nUJUo4aoP26PcBpAec19SxZPm2MMk9Uq/svtyyxKJa3orv
- yvka7cvw1E52RdM4qI00bCg31CXx3lSjeUvvg7UbfjpHHVojeBhPr/W/FFRckGeye2FJ
- 15R/lKijLyeFma7tkjaxFYbz40cTthdWPkHJoqQNrVmFBJPB1baHaW6/959pOfdz/cVB
- JpJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/wgvz2lVpp5+P73ebkZ5cpJlG6NyplWSlH1ZFZco8LM=;
- b=V7PF4ylCI0RS7lq8ybiNXPlgWhC/d5OwaXFx2yb9COu3mJwEwLcAQrKAxV5jVrO8/P
- cCGddzOG8khpq1MP2fGnNYf5fYaObvEp6VoI50iSp7EWUKC38OOUvS2LfxPnSUQ2lvHQ
- 8iAxf7la13QJsASYBUSlOy8++G00GNY99kC8ve+q7aYrYGWmlE1ZJdMq7FTtTBQremq+
- 8hUpVcyND4Y4yxHzw7H2UdSymaL4QRKLQb6W4g8fG6wwl3dCl9JlqN93sWrvKr0gffsZ
- FJw/2BggrascmgH9jLdPJ/9zEtM3CqhJN6BdpzP/ts/hMYCnh1I6izxYGyCL6NPVZbr5
- C8qg==
-X-Gm-Message-State: ANhLgQ3yBmYAVdQUSTWB4axSY13AL91jBacEsoYwLkFxZSHsKDs5kPBM
- B1Vsz14VuSH7BoHo2QRxQsA=
-X-Google-Smtp-Source: ADFU+vt2Dw8Gg8y8PXMVIdEPTxwRM9hacRHxiTFN7DEjZdRm/qg5K+XBLFsyyZk6b1ZiLZCI4gwDuw==
-X-Received: by 2002:a5d:53d1:: with SMTP id a17mr2871409wrw.41.1585132716907; 
- Wed, 25 Mar 2020 03:38:36 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i21sm9163108wmb.23.2020.03.25.03.38.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 25 Mar 2020 03:38:36 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v4 2/2] dt-bindings: display: rockchip-vop: add additional
- properties
-Date: Wed, 25 Mar 2020 11:38:28 +0100
-Message-Id: <20200325103828.5422-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200325103828.5422-1-jbx6244@gmail.com>
-References: <20200325103828.5422-1-jbx6244@gmail.com>
+ id 1jH3Qw-0007QU-8G
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 10:38:51 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 7787C72ABDB49AE56E7A;
+ Wed, 25 Mar 2020 18:38:47 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0; Wed, 25 Mar 2020
+ 18:38:42 +0800
+Subject: Re: [PATCH v2 67/94] arm64: Add level-hinted TLB invalidation helper
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
+References: <20200211174938.27809-1-maz@kernel.org>
+ <20200211174938.27809-68-maz@kernel.org>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <b4120382-d175-0c2f-249e-cc77a09709db@huawei.com>
+Date: Wed, 25 Mar 2020 18:38:41 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
+MIME-Version: 1.0
+In-Reply-To: <20200211174938.27809-68-maz@kernel.org>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_033838_507109_3F9B61E3 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200325_033850_484971_71279E54 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,68 +66,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, James Morse <james.morse@arm.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>, Dave
+ Martin <Dave.Martin@arm.com>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like 'assigned-clocks' and
-'assigned-clock-rates' for rk3399 and 'power-domains' for most
-Rockchip Socs in 'vop' nodes, so add them to 'rockchip-vop.yaml'.
+Hi Marc,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- .../devicetree/bindings/display/rockchip/rockchip-vop.yaml    | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+On 2020/2/12 1:49, Marc Zyngier wrote:
+> Add a level-hinted TLB invalidation helper that only gets used if
+> ARMv8.4-TTL gets detected.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  arch/arm64/include/asm/tlbflush.h | 30 ++++++++++++++++++++++++++++++
+>  1 file changed, 30 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+> index bc3949064725..a3f70778a325 100644
+> --- a/arch/arm64/include/asm/tlbflush.h
+> +++ b/arch/arm64/include/asm/tlbflush.h
+> @@ -10,6 +10,7 @@
+>  
+>  #ifndef __ASSEMBLY__
+>  
+> +#include <linux/bitfield.h>
+>  #include <linux/mm_types.h>
+>  #include <linux/sched.h>
+>  #include <asm/cputype.h>
+> @@ -59,6 +60,35 @@
+>  		__ta;						\
+>  	})
+>  
+> +#define TLBI_TTL_MASK	GENMASK_ULL(47, 44)
+> +
+> +#define __tlbi_level(op, addr, level)					\
+> +	do {								\
+> +		u64 arg = addr;						\
+> +									\
+> +		if (cpus_have_const_cap(ARM64_HAS_ARMv8_4_TTL) &&	\
+> +		    level) {						\
+> +			u64 ttl = level;				\
+> +									\
+> +			switch (PAGE_SIZE) {				\
+> +			case SZ_4K:					\
+> +				ttl |= 1 << 2;				\
+> +				break;					\
+> +			case SZ_16K:					\
+> +				ttl |= 2 << 2;				\
+> +				break;					\
+> +			case SZ_64K:					\
+> +				ttl |= 3 << 2;				\
+> +				break;					\
+> +			}						\
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-index bc58c5132..497a9fb2d 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-@@ -75,9 +75,18 @@ properties:
-       A port node with endpoint definitions as defined in
-       Documentation/devicetree/bindings/media/video-interfaces.txt.
- 
-+  assigned-clocks:
-+    maxItems: 2
-+
-+  assigned-clock-rates:
-+    maxItems: 2
-+
-   iommus:
-     maxItems: 1
- 
-+  power-domains:
-+    maxItems: 1
-+
- required:
-   - compatible
-   - reg
-@@ -95,6 +104,7 @@ examples:
-     #include <dt-bindings/clock/rk3288-cru.h>
-     #include <dt-bindings/interrupt-controller/arm-gic.h>
-     #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/power/rk3288-power.h>
-     vopb: vopb@ff930000 {
-       compatible = "rockchip,rk3288-vop";
-       reg = <0x0 0xff930000 0x0 0x19c>,
-@@ -104,6 +114,7 @@ examples:
-                <&cru DCLK_VOP0>,
-                <&cru HCLK_VOP0>;
-       clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-+      power-domains = <&power RK3288_PD_VIO>;
-       resets = <&cru SRST_LCDC1_AXI>,
-                <&cru SRST_LCDC1_AHB>,
-                <&cru SRST_LCDC1_DCLK>;
--- 
-2.11.0
+Can we define a macro here to replace the switch? It will be more
+clearly and efficient. Such as:
+
+#define __TG ((PAGE_SHIFT - 12) / 2 + 1)
+ttl |= __TG << 2;
+
+> +									\
+> +			arg &= ~TLBI_TTL_MASK;				\
+> +			arg |= FIELD_PREP(TLBI_TTL_MASK, ttl);		\
+> +		}							\
+> +									\
+> +		__tlbi(op,  arg);					\
+> +	} while(0)
+> +
+>  /*
+>   *	TLB Invalidation
+>   *	================
+> 
+
+Thanks,
+Zhenyu
 
 
 _______________________________________________
