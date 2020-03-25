@@ -2,82 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 819BA1931E0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 21:27:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8EBE193223
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 21:48:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pxf+99ohQNE7199j/P6B7lw/d8CM5llngRWkHB1NaSA=; b=MmbfnPgjFaXrsM
-	LC1FB1ObJHfmpZlRNPccDPdzpja3E5zrbjQvBqisM34zEFmEUrUtM3SgPS9TFhF+OYvXe/AnF5/TQ
-	xowNd7LOaO6gtDdGRomqWR4csABLznd12k8IUGleN19M/PDIJp8sKP1BWCWY9menTQ8lfORG3QfGZ
-	oGT4EREvS0Pabn2NNWbH9GywxSB+9D8uxisIKvlHdE0AkJdS15gxhZr0p69OiX6404roB66kSZm0o
-	xN9gEK0Epxm3F52PkNY3LLwUhFQIEMXHZDWSdH6/APgXz8QVIR9xzh3GupLwp5IqykP8nBV1h3t2h
-	UwpZN987D4/jZ/AiYm7w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=thDEoXQdkEv/qcI+I0pxc8iKTgoPC/YrwDSS6C4pNnQ=; b=qPTKPjbnGpgs4R
+	lL6aLgCgCsSJyQ2HVaryt4vXsfTtWml0RC0qxZatSL6cd0CQwJtn8ctwGXsvle8/3u9VzFxvQ/HCY
+	VkX+TLnYf1ETNmBwDO9P+0p+6rPi+GSdnSFkVN7u5MHHqmB2/ePAAP7iR3b3W3bm/u1pkrJxRK02v
+	NMyh1Tkex8/qWIkXedXn5tmiSl2Y1+ZWkdDGJ64u4a/2YyWvykIYYZAl+SATu1bvd8SgDeI+B7MQm
+	cy0qk4ufPDVwDXBOlD5Zo/T0TJHaWRGhktxnyBT1tv/VC5ud6VDi8bLwe+Au7qFK01wtJ+tC4J2JQ
+	FlEkQsVb8DNAq0sLBlSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHCcM-0004Qh-E7; Wed, 25 Mar 2020 20:27:14 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jHCwV-0004HK-0q; Wed, 25 Mar 2020 20:48:03 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHCcD-0004QA-MS
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 20:27:06 +0000
-Received: by mail-pl1-x641.google.com with SMTP id h11so1242147plr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 13:27:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=6SzOvwdTQqkZQCjlviRpZUVdzAyX4BMCYO6WRGnsRMg=;
- b=V04eeOZmpXZz9+n2K8s89RAUlNtFI2i3/IBt6L+R3HaP2VRpUcKrX06reMGWIzc2c+
- XwtCJxYWfVvX423KhbuO1h44rQttz9YLq0WAz9cdrMlR19jmIZbXEYme+Erycyi1IU2U
- 88GPKoBsjo0xyDjf5T8gvQ6OIx9M3dosv2wAo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=6SzOvwdTQqkZQCjlviRpZUVdzAyX4BMCYO6WRGnsRMg=;
- b=qsw9XDvpb4HpphAbX6GgXxxKVW5D1h8mlH6Yb04MZoffc7KJyT/1gCNGHzQZw/VAKv
- mi/KojXfscY+P5sXLOMrmJGB3vpQ5EHlwlLMP02VUYJU/q7ZAScOkEecRM4RknI2SpAC
- wYnaNFiy8sq4yH6ZeF2KzxQsOgb018+gYVmBawdrQO4wqU9wY5d+EHMqv6Fa4Y0lsMKt
- IZSeoOyw+NUMo3+/EUc3LrtXIShaJ0lY238+ZR1REiodjqPjQ2Y+hSK7aCD8P3VHbHOL
- yPcxlDJhJYPwRIQxCft/D6zccs5NaRVr9FXYuFfzchceTSY7wu6n4PnC7HgbIh5gJFyk
- Bp8w==
-X-Gm-Message-State: ANhLgQ0kwlqUeQddb8pioQJ/uvFj15NZZlFLiYzYqYiPJlTIBmMK64RO
- r8cHwIhEY1BOgoXOxxlsjgNkwQ==
-X-Google-Smtp-Source: ADFU+vswtN+46ClgfmDrS2YQ0+gwH0oaxyACQpe8SmgU+n/NeZSp3mJwpEGmc/BXB2B7g4eNvcGW5w==
-X-Received: by 2002:a17:902:fe97:: with SMTP id
- x23mr4918671plm.167.1585168024550; 
- Wed, 25 Mar 2020 13:27:04 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id n22sm100777pjq.36.2020.03.25.13.27.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 13:27:03 -0700 (PDT)
-Date: Wed, 25 Mar 2020 13:27:02 -0700
-From: Kees Cook <keescook@chromium.org>
-To: "Reshetova, Elena" <elena.reshetova@intel.com>
-Subject: Re: [PATCH v2 0/5] Optionally randomize kernel stack offset each
- syscall
-Message-ID: <202003251322.180F2536E@keescook>
-References: <20200324203231.64324-1-keescook@chromium.org>
- <CAG48ez3yYkMdxEEW6sJzBC5BZSbzEZKnpWzco32p-TJx7y_srg@mail.gmail.com>
- <202003241604.7269C810B@keescook>
- <BL0PR11MB3281D8D615FA521401B8E320E7CE0@BL0PR11MB3281.namprd11.prod.outlook.com>
+ id 1jHCvr-0003pz-0O
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 20:47:25 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02PKl5SK077576;
+ Wed, 25 Mar 2020 15:47:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1585169225;
+ bh=w/UqBt2u20ALR9hXBqeGYXAKy3v6acQbksJMkudmy28=;
+ h=From:To:CC:Subject:Date;
+ b=yg49EB0pfGXzFBX1n8lzp8fA6mIDckMdl2JsVyoKeAQL+4kaexg8ZJMFSvZ7gknG3
+ h15YbvaBa1LTDmEo23XGYBNCpRnBEebwbZNSrhPmakHsX6eVZW0en7AlR2uC6BQdhV
+ 8c7tduJzmI4Hg3mww99/ixLKe0eGN/cQNqk2dSDg=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02PKl52c102381
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 25 Mar 2020 15:47:05 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 25
+ Mar 2020 15:47:05 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 25 Mar 2020 15:47:04 -0500
+Received: from lelv0597.itg.ti.com (lelv0597.itg.ti.com [10.181.64.32])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02PKl42h015387;
+ Wed, 25 Mar 2020 15:47:04 -0500
+Received: from localhost ([10.250.35.147])
+ by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 02PKl46k063366;
+ Wed, 25 Mar 2020 15:47:04 -0500
+From: Suman Anna <s-anna@ti.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: [PATCH 0/4] Update K3 DSP remoteproc driver for C71x DSPs
+Date: Wed, 25 Mar 2020 15:46:57 -0500
+Message-ID: <20200325204701.16862-1-s-anna@ti.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BL0PR11MB3281D8D615FA521401B8E320E7CE0@BL0PR11MB3281.namprd11.prod.outlook.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_132705_736050_850AF31A 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200325_134723_148287_EFE84700 
+X-CRM114-Status: GOOD (  13.06  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,38 +91,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Jann Horn <jannh@google.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- the arch/x86 maintainers <x86@kernel.org>,
- kernel list <linux-kernel@vger.kernel.org>, Linux-MM <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>, Andy Lutomirski <luto@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Loic Pallardy <loic.pallardy@st.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Clement Leger <cleger@kalray.eu>, Suman Anna <s-anna@ti.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 25, 2020 at 12:15:12PM +0000, Reshetova, Elena wrote:
-> > > Also, are you sure that it isn't possible to make the syscall that
-> > > leaked its stack pointer never return to userspace (via ptrace or
-> > > SIGSTOP or something like that), and therefore never realign its
-> > > stack, while keeping some controlled data present on the syscall's
-> > > stack?
-> 
-> How would you reliably detect that a stack pointer has been leaked
-> to userspace while it has been in a syscall? Does not seem to be a trivial
-> task to me. 
+Hi All,
 
-Well, my expectation is that folks using this defense are also using
-panic_on_warn sysctl, etc, so attackers don't get a chance to actually
-_use_ register values spilled to dmesg.
+This series adds support for a new next generation 64-bit TI DSP based on
+the TMS320C71x CorePac processor subsystem called the C71x. The support is
+enabled through couple of enhancements to the remoteproc core (primarily to
+support a 64-bit trace resource entry), and does depend on the K3 DSP
+remoteproc driver posted earlier today [1]. 
+
+The loading support leveraged the 64-bit ELF loader support code added by
+Clement and already staged on the rproc-next branch. I am posting this
+series separate from the C66x series because of the new 64-bit resource
+type enhancement needs (patches 2 and 3). I have leveraged the existing
+resource types as is by introducing a new version element, and am open to
+ideas if it is desired to just define it as a separate resource type.
+
+The C71x DSP boots using firmware segments loaded into the DDR with a 2 MB
+aligned address requirement on the boot vectors. There is no support for
+internal memory loading, and all internal memories shall be used as fast 
+RAMs/scatchpads by the firmware executing on the DSPs. IPC is through the
+virtio-rpmsg transport. There is no support for Error Recovery, Power
+Management or loading into on-chip SRAMs at present.
+
+Following is the patch summary:
+ - Patch 1 updates the K3 DSP bindings for C71x cores
+ - Patch 2 introduces a concept of version element into existing resource types
+ - Patch 3 adds support for a new 64-bit trace resource entry
+ - Patch 4 enhances the K3 DSP remoteproc driver for C71x
+
+regards
+Suman
+
+[1] https://patchwork.kernel.org/cover/11458573/
+
+Suman Anna (4):
+  dt-bindings: remoteproc: k3-dsp: Update bindings for C71x DSPs
+  remoteproc: introduce version element into resource type field
+  remoteproc: add support for a new 64-bit trace version
+  remoteproc/k3-dsp: Add support for C71x DSPs
+
+ .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 78 ++++++++++++++++---
+ drivers/remoteproc/remoteproc_core.c          | 65 +++++++++++-----
+ drivers/remoteproc/remoteproc_debugfs.c       | 50 ++++++++----
+ drivers/remoteproc/ti_k3_dsp_remoteproc.c     | 17 ++++
+ include/linux/remoteproc.h                    | 34 +++++++-
+ 5 files changed, 203 insertions(+), 41 deletions(-)
 
 -- 
-Kees Cook
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
