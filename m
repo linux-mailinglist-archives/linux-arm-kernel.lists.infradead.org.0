@@ -2,59 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA0271925E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:39:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B105B1925E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:39:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IqmBDPsGTIKHXLrgy0MFWn49ovFbJ+xdWSUsVENWpMg=; b=n3a//aiTh+zq6N
-	91AfDHFY0C44U5kjHZZlvnZooKX+AyEZp/JnG5k3ku5T5X4VM44r21YBdKaRcBxjKy1aQ8BhpUKKP
-	tjxt/HYjIigbS9lNmuoL4VZuf+23r18AEa3nEhdLahwMYEmJvjPiMNo6gU14pP/19QR3s9alCMBbS
-	PXn/B/gNh0BHcOoX1Vj9eP+F2Ox1ccPuO2R4UpMhGz+70iutMcEEIt1U5FthrdvNbVuBKXMmjZVo4
-	oMf6omIxCCFd9SJRAw50uLjRw1o1AVHgXH1nPEsYoL/6Ecczo2zjBO/JBh/KwvbaDLMcAICv6tq+l
-	tgjVSSYeJgRtZaiB+R9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dMtlJmiFsoZMVMEXTGt9++KCHKacjZd7iGth48LtgAs=; b=ZwuQ9qRCuBOlEf
+	dtWUwVgAmxDucgoQ00fBDw7L+no/yhgLWOlDjI52PRioZdubEY2E7u4tjHcK+H+x5dSv/OlEwsqhX
+	TRAD0uo71kel+yeMNCVUv3FeGLKlQ75TndQb2GmtinJy9MeO1wNRJi3cJqdqc3QhI3l3y2dmjDtE9
+	GHTzB8UO9/O/oMB7AceHeCn6ZwLs7hvmktYjDQDT5fUv7t6Her5uKiq9mJ2nQ+OjOECYBx3v0GG9+
+	zf+I7wFKVIhHAtAI4DyUyf4trhrrEUOh4JonPy2ZkKOA6pZElrYcK5fNr08e5Wylg4R3IcIea9ixj
+	6+JFryPmX+JICkBlywTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH3Rk-0007zu-Fa; Wed, 25 Mar 2020 10:39:40 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jH3RV-0007lm-1r; Wed, 25 Mar 2020 10:39:25 +0000
+Received: from mail-ed1-f42.google.com ([209.85.208.42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH3Qw-0007QU-8G
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 10:38:51 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 7787C72ABDB49AE56E7A;
- Wed, 25 Mar 2020 18:38:47 +0800 (CST)
-Received: from [127.0.0.1] (10.173.220.25) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0; Wed, 25 Mar 2020
- 18:38:42 +0800
-Subject: Re: [PATCH v2 67/94] arm64: Add level-hinted TLB invalidation helper
-To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
-References: <20200211174938.27809-1-maz@kernel.org>
- <20200211174938.27809-68-maz@kernel.org>
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-Message-ID: <b4120382-d175-0c2f-249e-cc77a09709db@huawei.com>
-Date: Wed, 25 Mar 2020 18:38:41 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1jH3Qv-0007Py-1m
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 10:38:50 +0000
+Received: by mail-ed1-f42.google.com with SMTP id b18so1728867edu.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Mar 2020 03:38:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rChnKt/buGlg4oMgDuHolFkSTfOBDmB/aUQmKVJ+Bu8=;
+ b=bRsjx6EdWorpN22jMmAsWkOJjbp2GjZj3ohBv7V6I3DIUAGAVjuop03xypcpIzae6L
+ M+lk4ZcU1RX+SIHkJrf+0RycLBkcPhqAcTMevNUEUomyVVDnuDd4dbtmcOKUuER1k52x
+ 2hmbCAB0OLjoqmaeNuhbmC41wFmmh6Gbdol503cIpndpAgd+FUVLP/KpkPHsCpn6jJyZ
+ j4i7E4RgMyKWTnwnt5zfEk+d9FFeYWq08i4pqmU1ewYUGZdLatcPvNTNkOTy2Az+1heG
+ 4zEimmcOcYdscifJVRG2Da1tpO2STYbMJIjUSWG9zePD9qquaTkSUvUOKk0WjOPJaG3T
+ YCDA==
+X-Gm-Message-State: ANhLgQ21MvNjo12+k1PU8QM/RPm16cUe+99w3eoKn+0UPEJaonzcYmI7
+ 2y0Jdidzd5bh7z/vF+lJq1jNMwwk
+X-Google-Smtp-Source: ADFU+vu6wOHo0Oo5RedHizV/zMZxQCP2qEaIJff3a9ZAD1Wu4ZYA7zr+gdDKh5A2BskBFG1jRYSWGw==
+X-Received: by 2002:aa7:c610:: with SMTP id h16mr2228662edq.348.1585132727057; 
+ Wed, 25 Mar 2020 03:38:47 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id s7sm1458659edr.15.2020.03.25.03.38.45
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 25 Mar 2020 03:38:46 -0700 (PDT)
+Date: Wed, 25 Mar 2020 11:38:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: Re: [GIT PULL 0/3] ARM: exynos: Pull for v5.7
+Message-ID: <20200325103843.GA17099@kozik-lap>
+References: <20200316175652.5604-1-krzk@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200211174938.27809-68-maz@kernel.org>
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200316175652.5604-1-krzk@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_033850_484971_71279E54 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_033849_149584_3D27017F 
+X-CRM114-Status: GOOD (  12.28  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.42 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,87 +88,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Jintack Lim <jintack@cs.columbia.edu>, James Morse <james.morse@arm.com>,
- Alexandru Elisei <alexandru.elisei@arm.com>, Dave
- Martin <Dave.Martin@arm.com>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2020/2/12 1:49, Marc Zyngier wrote:
-> Add a level-hinted TLB invalidation helper that only gets used if
-> ARMv8.4-TTL gets detected.
+On Mon, Mar 16, 2020 at 06:56:49PM +0100, Krzysztof Kozlowski wrote:
+> Hi,
 > 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  arch/arm64/include/asm/tlbflush.h | 30 ++++++++++++++++++++++++++++++
->  1 file changed, 30 insertions(+)
+> One patch for drivers at the end of these series. I also sent a fixes patch separately.
 > 
-> diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-> index bc3949064725..a3f70778a325 100644
-> --- a/arch/arm64/include/asm/tlbflush.h
-> +++ b/arch/arm64/include/asm/tlbflush.h
-> @@ -10,6 +10,7 @@
->  
->  #ifndef __ASSEMBLY__
->  
-> +#include <linux/bitfield.h>
->  #include <linux/mm_types.h>
->  #include <linux/sched.h>
->  #include <asm/cputype.h>
-> @@ -59,6 +60,35 @@
->  		__ta;						\
->  	})
->  
-> +#define TLBI_TTL_MASK	GENMASK_ULL(47, 44)
-> +
-> +#define __tlbi_level(op, addr, level)					\
-> +	do {								\
-> +		u64 arg = addr;						\
-> +									\
-> +		if (cpus_have_const_cap(ARM64_HAS_ARMv8_4_TTL) &&	\
-> +		    level) {						\
-> +			u64 ttl = level;				\
-> +									\
-> +			switch (PAGE_SIZE) {				\
-> +			case SZ_4K:					\
-> +				ttl |= 1 << 2;				\
-> +				break;					\
-> +			case SZ_16K:					\
-> +				ttl |= 2 << 2;				\
-> +				break;					\
-> +			case SZ_64K:					\
-> +				ttl |= 3 << 2;				\
-> +				break;					\
-> +			}						\
+> As you asked, I updated the Google Docs with Exynos entries.
 
-Can we define a macro here to replace the switch? It will be more
-clearly and efficient. Such as:
+Hi Arnd and Olof,
 
-#define __TG ((PAGE_SHIFT - 12) / 2 + 1)
-ttl |= __TG << 2;
+Any comments on this pull request?
 
-> +									\
-> +			arg &= ~TLBI_TTL_MASK;				\
-> +			arg |= FIELD_PREP(TLBI_TTL_MASK, ttl);		\
-> +		}							\
-> +									\
-> +		__tlbi(op,  arg);					\
-> +	} while(0)
-> +
->  /*
->   *	TLB Invalidation
->   *	================
-> 
-
-Thanks,
-Zhenyu
+Best regards,
+Krzysztof
 
 
 _______________________________________________
