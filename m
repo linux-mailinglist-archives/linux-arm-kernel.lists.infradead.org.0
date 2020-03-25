@@ -2,46 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B5D9192944
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 14:10:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18C3F19297F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 14:21:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LdksPqoAn1QsUkWS8OUf71Rz1YKScrvK0zQp6NPCQh4=; b=LnrNz2zL3hJfMd
-	O4o2PW//VJX/ha4LNAukEMYuHmUvp8la6xq+afgHDhT3tGr5vxYS5woxU7GbSvXjWllHgjkJv/RQF
-	yvDHOoffy+kgNQIfZcWgYEd3PIeznC+pFr19KqlGfDa9O42iVTPEhdJkuzwmruRQlDbOLMEkWB3+y
-	JyMNBh3goRY7mZN0cqQw5Q9OrJCrkLENPtnwgMH2UI/BjNaLZxxtCTWYNc0TY2LWVpiBTdS1PGPn4
-	hV1jN8MCe+Pbd4W/Lw67VZ62p/nTg17e/3+jcXmT8iO0zUSd/ZeWVvR6VVY0cuSF9YQV7Ugj75V5G
-	nzU+K01ej2ZQEDecIkYQ==;
+	List-Owner; bh=RbBzxm0U3CZ82JTw3R18xHPEzbTzllnAiEOykT40Lyg=; b=UrrbKD3Kc3apLC
+	8+m6CTkMvo1ZA2v3ueJQ057QXj9kQAfSVn/ARJ00ctJuW5vJ5JLX9nh9bkaxH13+XKNZPsJ0YC8hq
+	oea3jvsoPBOfWRXvpxY8ohmFwT0P9bkYkRfIhOg9L4GvmLmB6IGSaiP5BxHBKqdB0fepRPTyTiNCF
+	f8MDIMLsxtZi9uxuiO0iYYP4WMbribWEWguQbdrcaDwwatJ3KRZreJJgnI7uL8J2cfxz7kl3j6jWb
+	lH4R9mtlve4yTsij/YXX98eMXxYC3PlNqJXwMdM7TY6zT40+TWW5caRIAONFcRHgNdhyddbMfgkER
+	2xZ9SgXcAEdw2y14sZ7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH5np-0005pG-V4; Wed, 25 Mar 2020 13:10:37 +0000
+	id 1jH5yX-0002QD-Nw; Wed, 25 Mar 2020 13:21:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH5ng-0005oY-KM
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 13:10:30 +0000
+ id 1jH5yO-0002PV-R1
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 13:21:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9EBF831B;
- Wed, 25 Mar 2020 06:10:27 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 555003F71F;
- Wed, 25 Mar 2020 06:10:26 -0700 (PDT)
-Date: Wed, 25 Mar 2020 13:10:23 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Peter Collingbourne <pcc@google.com>
-Subject: Re: [PATCH] arm64: Expose original FAR_EL1 value in sigcontext
-Message-ID: <20200325131023.GN3901@mbp>
-References: <20200312171755.177743-1-pcc@google.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E442B31B;
+ Wed, 25 Mar 2020 06:21:31 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6D813F71F;
+ Wed, 25 Mar 2020 06:21:29 -0700 (PDT)
+Date: Wed, 25 Mar 2020 13:21:27 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
+Message-ID: <20200325132127.GB12236@lakrids.cambridge.arm.com>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <20200324203231.64324-6-keescook@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200312171755.177743-1-pcc@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200324203231.64324-6-keescook@chromium.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_061028_759349_B1C07011 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20200325_062134_035842_3DFAD2B5 
+X-CRM114-Status: GOOD (  19.82  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,130 +64,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Evgenii Stepanov <eugenis@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
+Cc: Jann Horn <jannh@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
+ Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
+On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
+> Allow for a randomized stack offset on a per-syscall basis, with roughly
+> 5 bits of entropy.
+> 
+> Signed-off-by: Kees Cook <keescook@chromium.org>
 
-On Thu, Mar 12, 2020 at 10:17:55AM -0700, Peter Collingbourne wrote:
-> diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-> index fde59981445ca..290ea59c68b85 100644
-> --- a/arch/arm64/kernel/entry-common.c
-> +++ b/arch/arm64/kernel/entry-common.c
-> @@ -22,7 +22,6 @@ static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
->  	unsigned long far = read_sysreg(far_el1);
->  
->  	local_daif_inherit(regs);
-> -	far = untagged_addr(far);
->  	do_mem_abort(far, esr, regs);
->  }
->  NOKPROBE_SYMBOL(el1_abort);
+Just to check, do you have an idea of the impact on arm64? Patch 3 had
+figures for x86 where it reads the TSC, and it's unclear to me how
+get_random_int() compares to that.
 
-Would we get a signal on faults triggered by the kernel? Anyway, I'm
-fine with this change for consistency and may help with the fault
-information printed by the kernel with khwasan or (later) MTE.
+Otherwise, this looks sound to me; I'd jsut like to know whether the
+overhead is in the same ballpark.
 
-> @@ -104,7 +103,6 @@ static void notrace el0_da(struct pt_regs *regs, unsigned long esr)
+Thanks
+Mark.
+
+> ---
+>  arch/arm64/Kconfig          |  1 +
+>  arch/arm64/kernel/syscall.c | 10 ++++++++++
+>  2 files changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 0b30e884e088..4d5aa4959f72 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -127,6 +127,7 @@ config ARM64
+>  	select HAVE_ARCH_MMAP_RND_BITS
+>  	select HAVE_ARCH_MMAP_RND_COMPAT_BITS if COMPAT
+>  	select HAVE_ARCH_PREL32_RELOCATIONS
+> +	select HAVE_ARCH_RANDOMIZE_KSTACK_OFFSET
+>  	select HAVE_ARCH_SECCOMP_FILTER
+>  	select HAVE_ARCH_STACKLEAK
+>  	select HAVE_ARCH_THREAD_STRUCT_WHITELIST
+> diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> index a12c0c88d345..238dbd753b44 100644
+> --- a/arch/arm64/kernel/syscall.c
+> +++ b/arch/arm64/kernel/syscall.c
+> @@ -5,6 +5,7 @@
+>  #include <linux/errno.h>
+>  #include <linux/nospec.h>
+>  #include <linux/ptrace.h>
+> +#include <linux/randomize_kstack.h>
+>  #include <linux/syscalls.h>
 >  
->  	user_exit_irqoff();
->  	local_daif_restore(DAIF_PROCCTX);
-> -	far = untagged_addr(far);
->  	do_mem_abort(far, esr, regs);
->  }
->  NOKPROBE_SYMBOL(el0_da);
-> diff --git a/arch/arm64/kernel/hw_breakpoint.c b/arch/arm64/kernel/hw_breakpoint.c
-> index 0b727edf41046..985cd44decf62 100644
-> --- a/arch/arm64/kernel/hw_breakpoint.c
-> +++ b/arch/arm64/kernel/hw_breakpoint.c
-> @@ -730,7 +730,7 @@ static u64 get_distance_from_watchpoint(unsigned long addr, u64 val,
->  		return 0;
->  }
->  
-> -static int watchpoint_handler(unsigned long addr, unsigned int esr,
-> +static int watchpoint_handler(unsigned long far, unsigned int esr,
->  			      struct pt_regs *regs)
+>  #include <asm/daifflags.h>
+> @@ -42,6 +43,8 @@ static void invoke_syscall(struct pt_regs *regs, unsigned int scno,
 >  {
->  	int i, step = 0, *kernel_step, access, closest_match = 0;
-> @@ -741,6 +741,7 @@ static int watchpoint_handler(unsigned long addr, unsigned int esr,
->  	struct debug_info *debug_info;
->  	struct arch_hw_breakpoint *info;
->  	struct arch_hw_breakpoint_ctrl ctrl;
-> +	unsigned long addr = untagged_addr(far);
+>  	long ret;
 >  
->  	slots = this_cpu_ptr(wp_on_reg);
->  	debug_info = &current->thread.debug;
-
-Why do we need to untag this here? Have you hit any bug? This function
-gets the original FAR_EL1 value, untagged (via elX_dbg()), and we clear
-the tag further down in get_distance_from_watchpoint().
-
-> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> index 339882db5a915..48e8b6c7b5369 100644
-> --- a/arch/arm64/kernel/signal.c
-> +++ b/arch/arm64/kernel/signal.c
-> @@ -55,6 +55,7 @@ struct rt_sigframe_user_layout {
->  
->  	unsigned long fpsimd_offset;
->  	unsigned long esr_offset;
-> +	unsigned long far_offset;
->  	unsigned long sve_offset;
->  	unsigned long extra_offset;
->  	unsigned long end_offset;
-> @@ -383,6 +384,7 @@ static int parse_user_sigframe(struct user_ctxs *user,
->  			break;
->  
->  		case ESR_MAGIC:
-> +		case FAR_MAGIC:
->  			/* ignore */
->  			break;
->  
-> @@ -581,6 +583,11 @@ static int setup_sigframe_layout(struct rt_sigframe_user_layout *user,
->  				     sizeof(struct esr_context));
->  		if (err)
->  			return err;
+> +	add_random_kstack_offset();
 > +
-> +		err = sigframe_alloc(user, &user->far_offset,
-> +				     sizeof(struct far_context));
-> +		if (err)
-> +			return err;
-
-It looks fine, I think it makes sense to only expose the raw FAR_EL1
-when we also expose the ESR_EL1 (via set_thread_esr()).
-
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 85566d32958f5..2ca2de1ff43be 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -41,7 +41,7 @@
->  #include <asm/traps.h>
+>  	if (scno < sc_nr) {
+>  		syscall_fn_t syscall_fn;
+>  		syscall_fn = syscall_table[array_index_nospec(scno, sc_nr)];
+> @@ -51,6 +54,13 @@ static void invoke_syscall(struct pt_regs *regs, unsigned int scno,
+>  	}
 >  
->  struct fault_info {
-> -	int	(*fn)(unsigned long addr, unsigned int esr,
-> +	int	(*fn)(unsigned long far, unsigned int esr,
->  		      struct pt_regs *regs);
->  	int	sig;
->  	int	code;
-> @@ -320,9 +320,11 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
->  	die_kernel_fault(msg, addr, esr, regs);
+>  	regs->regs[0] = ret;
+> +
+> +	/*
+> +	 * Since the compiler chooses a 4 bit alignment for the stack,
+> +	 * let's save one additional bit (9 total), which gets us up
+> +	 * near 5 bits of entropy.
+> +	 */
+> +	choose_random_kstack_offset(get_random_int() & 0x1FF);
 >  }
 >  
-> -static void set_thread_esr(unsigned long address, unsigned int esr)
-> +static void set_thread_esr(unsigned long far, unsigned int esr)
-
-We might as well rename this to set_thread_far_esr().
-
-Thanks.
-
--- 
-Catalin
+>  static inline bool has_syscall_work(unsigned long flags)
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
