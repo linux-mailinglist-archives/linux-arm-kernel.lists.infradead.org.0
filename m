@@ -2,82 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81BF4192B9B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 15:57:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CFC4192BBD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 16:04:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=by0xHtqLcUJjxsRjSPIjES3T1/PAG+c1F/JuXk4ptYI=; b=TTE3WX4nPFu2HT
-	wbVtzYR0AutyAmVLMOhmpVIpfw6DHW5A/xgf3MYID7xooj9wqfzsQ9IWFNUGA9vpqpVw86lKdCxKg
-	3/pmJ1eMXtCjJoDPfPDFr1Ax1jNPjqno6vX894N6JXzUVQMt1miJuLNf5kP/GkFZ9Z1z0wtL8lciY
-	yZZX0gsxhj/ZDZDG6Xw4iVHGRlPk9bxqkYNDHA7mnb6TMdOgrO2gi5c/zrPvIkftzAJIzlU0urEeJ
-	X70B09z0GpHaD/iwul1FWUJ8neyoGCq/43cK6ovNIRorHWy9vsgTk83uXyTpGG/YzQQASotuJqwzx
-	QiEy7arCoNUhnz7MKW2g==;
+	List-Owner; bh=O9GUUvToVIvgOmdpmPHD0Plu6FWeU+Kc2IK2AVAbyco=; b=HIojt0Ddt7pWbv
+	ww2d3gRkY1CXIQ9dJBDAb7LWBfq3H8NwYcfBRcev7H+M9rvm/mt/ip9R+B7QjyH797qdW7ChCGrv6
+	WkBpjohWdLrcOFzKEzmmjI2xqUEYQrnkRu5SkJPGGRLub1tMKxtwhD85WKzJlgOXS8jn0Gah44iyJ
+	UtvhF2jWKcBrQ4Hxz5wfTapXJviijmJnmWhrHVU3RidmqeVXE/P3KL2ZO90ni0EgYNkEAnb5KmAbB
+	WxIvm969XnPI0Ne9kYXZD9MFcCFHDqTYj+jgnXnZKRYgKiDaUR2R69UL+pgIBvfbMUpXvE/z6A57m
+	vUW71oDfTPWxNnGey1Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH7TR-0007dh-Ix; Wed, 25 Mar 2020 14:57:41 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jH7Zr-0001bz-Gl; Wed, 25 Mar 2020 15:04:19 +0000
+Received: from mail-eopbgr40090.outbound.protection.outlook.com ([40.107.4.90]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH7TH-0007cv-7L
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 14:57:32 +0000
-Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MY5wD-1ikq0h0TKn-00YSQh for <linux-arm-kernel@lists.infradead.org>; Wed,
- 25 Mar 2020 15:57:26 +0100
-Received: by mail-qk1-f174.google.com with SMTP id e11so2787732qkg.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 07:57:25 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0V//AYUluFsTMV0secXSAGozCIYSxHDqFqjOen+erojC8e34IP
- N3SmGR1Zet3tycrvBN2hA1too539LasppBz8ink=
-X-Google-Smtp-Source: ADFU+vuBFx+DrJ3HySHZKoMxE/V6Mizt9Ywp8c5Ep/YvQX3uhQp8zLzO0qxWoi2CE7aNDWQ0gsbBYuxtars/NoJ2USw=
-X-Received: by 2002:a37:b984:: with SMTP id j126mr3116067qkf.3.1585148244970; 
- Wed, 25 Mar 2020 07:57:24 -0700 (PDT)
+ id 1jH7Za-0001R5-GS
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 15:04:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V6YRUQccHDs5yoSJSGdwpsAHQeEr9OUrJXNkX3pllhu2HMCFGRzF8crfikqbn/an9gNo+crGhZHqAWkLURWsKxRZNfXOXeWegaXEYb+3PBm0nNNZHhdULSz2pb/lVsasksg6kqcPUCnPpo6wZHcD6JCT27XO4iKZKW2WRcf0I4RSW9mEglxkwocchEp/kQjzIfsfO3VDo4uZOlahJHdi2Jd2ZV9vZv6aTXM4EeYIEaQfudDY0zSgFJFPCrKqg20XwsvPAiirQGIT5bav3WnqeBXaoan1VbZu4x4ZitbSYyBh3rZrxMPbEalqjFyvsLgU+7GJhDlObxeAHEmKNtFyjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8caUUiO8lgJRPNXpzkKDk7dJR3pfkPToAl991QP+r2Y=;
+ b=UMCA02xwfKBczoSJBlBQqls6YWY0X12NFrCnIUMFigMxrh6m1F2LVfPN7NAfpUO7QU7tj/bR8EtFS6zY9uqxZpf6znx+ReExC1zYUdlqEF6UGQjuCHuUB5QaRebQfQIOSwmEfUwIQh6iZ0dzCqU2OXbmpV/ghR1lgg04rBZTmssZNzWbQSvse74U0kQCVFutXfIeXulaQxX/yBJznsSjnxsdrdlIKdShuovIXH3C/YmWGYLUPEkWQZh4louKb/mG+BT3DTZ4b71fqytC6BC+/O8enLXm4mFSSlo1WCIfxnWVRnTVeE2vq3W4oXc+0zjMrOcAavNZZi+U/1t29HDKnw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8caUUiO8lgJRPNXpzkKDk7dJR3pfkPToAl991QP+r2Y=;
+ b=ANSfrtEgNx8yIdffzNWNDWs3lpAgo3InHU8z9hSIkqJm8lKzEnGLnrqEYjFAx+f+hNMgp6P8tWf9EJlpZ4HjxHw7sES0epOX1JgCsFXaIfqtp0QwfA7pNGmpRqbM4xyH+jNXIytagkOEwz7P5yHEQjC3aFuzn0ggqClTkFdY+10=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=philippe.schenker@toradex.com; 
+Received: from AM6PR05MB6120.eurprd05.prod.outlook.com (20.179.1.217) by
+ AM6PR05MB6550.eurprd05.prod.outlook.com (20.179.6.77) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2835.20; Wed, 25 Mar 2020 15:03:46 +0000
+Received: from AM6PR05MB6120.eurprd05.prod.outlook.com
+ ([fe80::dee:ffa2:1d09:30e]) by AM6PR05MB6120.eurprd05.prod.outlook.com
+ ([fe80::dee:ffa2:1d09:30e%4]) with mapi id 15.20.2835.021; Wed, 25 Mar 2020
+ 15:03:46 +0000
+From: Philippe Schenker <philippe.schenker@toradex.com>
+To: andrew@lunn.ch, f.fainelli@gmail.com, hkallweit1@gmail.com,
+ linux@armlinux.org.uk, netdev@vger.kernel.org, robh+dt@kernel.org,
+ devicetree@vger.kernel.org, shawnguo@kernel.org, mark.rutland@arm.com
+Subject: [PATCH 2/2] ARM: dts: apalis-imx6qdl: use rgmii-id instead of rgmii
+Date: Wed, 25 Mar 2020 16:03:28 +0100
+Message-Id: <20200325150329.228329-2-philippe.schenker@toradex.com>
+X-Mailer: git-send-email 2.26.0
+In-Reply-To: <20200325150329.228329-1-philippe.schenker@toradex.com>
+References: <20200325150329.228329-1-philippe.schenker@toradex.com>
+X-ClientProxiedBy: PR0P264CA0215.FRAP264.PROD.OUTLOOK.COM
+ (2603:10a6:100:1f::35) To AM6PR05MB6120.eurprd05.prod.outlook.com
+ (2603:10a6:20b:a8::25)
 MIME-Version: 1.0
-References: <20200124092359.12429-1-peter.ujfalusi@ti.com>
- <20200124200811.ytgs66cg5qpugi5c@localhost>
- <12f40648-fec6-9179-1f62-0a648996ed20@ti.com>
- <CAOesGMiFw2V6fdbGCOfgsVq+WK-4ijdzivDdX3hbS2E=bO4zkg@mail.gmail.com>
- <a81fa6b0-811c-82af-4cf6-e2f4ac3c0ded@ti.com>
-In-Reply-To: <a81fa6b0-811c-82af-4cf6-e2f4ac3c0ded@ti.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 25 Mar 2020 15:57:08 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0Y2LAGPT8qtk51MxbsXjf8nHBbA7E1CvWcSgNi8UNNEA@mail.gmail.com>
-Message-ID: <CAK8P3a0Y2LAGPT8qtk51MxbsXjf8nHBbA7E1CvWcSgNi8UNNEA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: defconfig: Enable Texas Instruments UDMA driver
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-X-Provags-ID: V03:K1:9SNlCr7W+LpFGocYRaO/x/UvPtO1yx910UEvDKwyGgIyzqrgElw
- xoSAkNbmVUmMEYD4rR1kFSOVgJsUDgaAQpYKPq9IentKuPfyb9IIgQfqoyHArszTQ4l1KX+
- zjYpkWUQINgDswt9KNSuQQS/uhXtz+bvlTwVR2ayBGaDFOjpyxLIDZS64ow4xujhBQj3bod
- FyjJkPyHNb5qPPGYDvolg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:e7Xgg6Cs5II=:y170d/bx3tmrhuFoYucViG
- beikv4rGgkxa1Jr2EaVYNE5KSqjdW9BjOzG3WfNdzA1hfRncZhH+N42T+E6mPDkwRKMc7gQSo
- Oufd2xMacq8Y2khbQQONBBJFViYtZarMMvc3FSduwBB5on8n+E07L8EVSOnHo+uraa7QYEoqb
- I9zau9qbvQCA34SQmSZDpyGRQqzhX++NXXiILt6/KYod7cy+S64Y7P6tcHOoqCtRugrrgCt/9
- CPqc/a0zKotNbZeILCz0t/R6WUGbgGa1iw5IrkvKPUL0Pp+9sNEbMM3/65g6ALuxt8Gct+dkV
- b+BhE3uT5E7is3n4V7cH3kLC7Xdcq51zIljExwkyGYdW2eQaArUgX5eloaFHnXI6+wwUKQFq+
- XwwBwpBm6vQve+pqkkxHz6Y6+7ZliS1sKtTS7tXqC78sxcX7KCeGHdoaPN52/WYKVa650xsL7
- cVnOnVnOpKCOTxHVmfHJmjLODdWA7hOA6xM+JxPBFTZzQnL+Jkq8Kn8IwknwYQNE3/8dI5H+9
- ffe0hRr2cUG4g/Z57Hd/ZuZQdLBpYgP+RDBO6OKi+yRpYAXgA7e1QfTaNOnlN/Q83ndwaASIe
- El/zKZsHN6JHhlwL5Gx8KcRanxYqqIG4xJ0fwBfvG9PMkkvLRsYTwZVXiHv2HlZe+jp29Ks2a
- RBkp0K2TaIyDOrLHW5Vrie1DAapK3HOKb6nKFf9GnLlAl7W447k5VoOisVqVHVyXc9rIPzCCa
- c3EjL+QB3c2dTaRSCOR+CxTMrYyEI5FAdRHUf+n2T4/HQbZlWgcgB+HeQjLrQoYHLno3VPNZ0
- h4Vj9t4NvPFG7wVjjBvAf9dzsuVgSbvT/DNTsmnpEi0Y+o0g6k=
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from philippe-pc.toradex.int (31.10.206.125) by
+ PR0P264CA0215.FRAP264.PROD.OUTLOOK.COM (2603:10a6:100:1f::35) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.18 via Frontend Transport; Wed, 25 Mar 2020 15:03:44 +0000
+X-Mailer: git-send-email 2.26.0
+X-Originating-IP: [31.10.206.125]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: b38a5717-81bc-4adc-1b76-08d7d0cdb73e
+X-MS-TrafficTypeDiagnostic: AM6PR05MB6550:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR05MB6550B34A8CBAAB9032EB0751F4CE0@AM6PR05MB6550.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
+X-Forefront-PRVS: 0353563E2B
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(4636009)(376002)(366004)(346002)(39850400004)(396003)(136003)(5660300002)(316002)(66556008)(66476007)(52116002)(8676002)(54906003)(1076003)(86362001)(66946007)(6506007)(6666004)(81156014)(81166006)(36756003)(26005)(6486002)(16526019)(186003)(2616005)(956004)(2906002)(4744005)(7416002)(8936002)(478600001)(44832011)(6512007)(4326008)(16060500001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:AM6PR05MB6550;
+ H:AM6PR05MB6120.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; 
+Received-SPF: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: ZxmASxFj+/PkeYmhT5MSkvNEcCk7eHENOBfyC7qJaiKzX1mU29Asjm5XoLTopwnfEC2r21Nl070WF1J5EQIUpkAzLzl+LEMeWTjEbayeacKSn3gJp8gwwtIgxkzrsiyLI9HVSEWzXB4geukwPSgyz7oNzW5ygikGVkfay2sAqYxleDHlAus3ZU/AiOkkc7rV4e5udFYY7M3PWFt63vvpiA4l9Jya9cgpDALMzNlUQ4sQgy5q1xIhqE4dAbSpEXv9GHTylLwxYJ/5M13V/1sJYnfN+JPFn+CX0HlJM1busxuOib7izM6/yIDB2HDKW5CbHqbT92XBWHz3opDq1cUTZArYB3+gVDDqI4c8IJaXfTj6PfyBh2qVsLJVZ51D7+1A+2ohWlwlA+zPrzs7QNseX9QgdYZn1f6zkTODnZ02wuwuk6TTl3WAZiySjGd2IwhMoxIwpTvs85Ss5TQ0ASdmi4xmNgH0tSrBz20P0hDmPMsUEsHugLxN/Sbn2bqNE0qL
+X-MS-Exchange-AntiSpam-MessageData: qdXPhZteQntn9qgRnT8PDa80+9tAhoU3TQrrkmd9qQYTJylqg5dWWZ3D0l3TrVyjYbHUbYToDowytHpAm9H6zo88rLiLAqxO/RfGs7xhFj8aIDcK/b3mjlIQ6WkT7tfdefJCLlquPdDTwIzW5UAMhg==
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b38a5717-81bc-4adc-1b76-08d7d0cdb73e
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Mar 2020 15:03:45.9067 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: KrNmBGYc3oR2xER3Se17/g2Lq6b1/nHs/E/LAAqwSgT7r3/LRPB+BLTq1mqmSdl0LHiUHESAQPJVj3GJ5PDXYXR79zmUhVh/IeoNSKeyM54=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR05MB6550
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_075731_561143_C6831BE9 
-X-CRM114-Status: GOOD (  26.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200325_080402_556312_15973F0B 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [40.107.4.90 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,79 +128,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- SoC Team <soc@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Vinod Koul <vkoul@kernel.org>,
- Olof Johansson <olof@lixom.net>, Will Deacon <will@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: a.fatoum@pengutronix.de, silvan.murer@gmail.com,
+ Philippe Schenker <philippe.schenker@toradex.com>, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, o.rempel@pengutronix.de,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 28, 2020 at 9:20 AM Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
-> On 27/01/2020 17.30, Olof Johansson wrote:
-> >>> I also see that this is statically enabling this driver -- we try to keep as
-> >>> many drivers as possible as modules to avoid the static kernel from growing too
-> >>> large. Would that be a suitable approach here, or is the driver needed to reach
-> >>> rootfs for further module loading?
-> >>
-> >> We would need built in DMA for nfs rootfs, SD/MMC has it's own buit-in
-> >> ADMA. We do not have network drivers upstream as they depend on the DMA.
-> >
-> > Ok, so that can either be turned into a ramdisk argument, or into a
-> > "we really want to enable non-ramdisk rootfs boots on this hardware
-> > because it's a common use case".
->
-> SD/MMC does not need slave DMA, it is self containing with it's own
-> built-in DMA.
-> I'm not sure if it is enabled in defconfig. It is not enabled at all in
-> defconfig atm.
->
-> Normally I would use nfs rootfs, but we don't have network drivers
-> upstream for K3 platform.
->
-> I think having the UDMA stack as module should be fine when I have the
-> dependencies in to be able to build them as modules.
+Until now a PHY-fixup in mach-imx set our rgmii timing correctly. For
+the PHY KSZ9131 there is no PHY-fixup in mach-imx. To support this PHY
+too, use rgmii-id.
+For the now used KSZ9031 nothing will change, as rgmii-id is only
+implemented and supported by the KSZ9131.
 
-Picking up this thread as I noticed the patch is still marked as 'New'
-in patchwork.
+Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
-I see no problem making this driver built-in at all if you want to
-respin it.
+---
 
-> > but this particular driver is probably
-> > OK (it's also not large).
->
-> Well, it depends how you look at it ;)
->
-> UDMA stack is not enabled in defconfig (w/o this patch):
-> $ size vmlinux
-> text      data     bss     dec       hex      filename
-> 17853717  9221872  469288  27544877  1a44d2d  vmlinux
->
-> UDMA stack is enabled in defconfig (w this patch):
-> $ size vmlinux
-> text      data     bss     dec       hex      filename
-> 17890970  9237544  469288  27597802  1a51bea  vmlinux
->
-> It would be nice for other driver to enable the DMA if it is acceptable
-> to have it built in for start and when I can build it as module we can
-> switch it to module?
+ arch/arm/boot/dts/imx6qdl-apalis.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-In general, I'd prefer to avoid listing references to other drivers
-in Kconfig when those are only runtime dependencies rather than
-compile-time.
+diff --git a/arch/arm/boot/dts/imx6qdl-apalis.dtsi b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+index 1b5bc6b5e806..347a5edc6927 100644
+--- a/arch/arm/boot/dts/imx6qdl-apalis.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
+@@ -180,7 +180,7 @@ &ecspi2 {
+ &fec {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_enet>;
+-	phy-mode = "rgmii";
++	phy-mode = "rgmii-id";
+ 	phy-handle = <&ethphy>;
+ 	phy-reset-duration = <10>;
+ 	phy-reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
+-- 
+2.26.0
 
-If the network driver just uses the generic dma slave API, then
-I would not add a 'depends on' or 'select' for the particular DMA
-engine that it uses, unless it relies on nonstandard exported
-functions from that driver. Just enable both as modules and have
-the runtime module loading along with deferred probe figure out
-runtime dependency.
-
-       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
