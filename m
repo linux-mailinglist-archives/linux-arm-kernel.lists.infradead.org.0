@@ -2,60 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F15F192EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 18:08:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 235C8192EF8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 18:11:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUQHOVpHp5LOOP8cksxSLeqiK2QD+7Ce9ApkSV+GvWk=; b=ZpGBByy0WJuxGw
-	0kV+nIMsVfxrCezxY77hde4RUzjy66iJ1gOqSaIR3Qygpy3BBl8gOPZz99vXTxCt82zA6MeV6YBKJ
-	mfyfHj7HrW+L/culdhP51a+JtMFBhDYqkBn4vY+fc6Kw//BERaFS/y5vrHKMeK7mqYwBJwoWhpCKX
-	Oc4gIQXs4NCE2UImOan5NsNvYGxWQXgmnQfqqf1tsZn4BkNQbHbqtNJcX9fW9VnMPj1KKYqENu5cu
-	0npYyenfyPwSAczbHdGj+8YBySP40bgcJCzskDGIU8EcRna1A9YqgGfA6AQDWG0qwpmfwZAQiagXe
-	wuo2QmACxjNYAsU2Qtvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7Czse3/tgUeSJg2rQDEj7zgTWamHaV+I+RNXONTcgOA=; b=aGiOcubOaemWJX
+	J3xkxwyKd3ZvJfaFZbAhHRLC77NGrQN29/lE2jPVVAeRvvfDazWufSFMZmESqnGvlL6CmXtJg5mQb
+	N3DHzFXJC7DCsf/mp7ACrOzDbG8CrX7HJVaht0gOygoQ6tbRGvrAe1kyZZBMtzZJ6OlzjCTtDW0aK
+	hREr1MeeoqCZM1KAo0y6C3tiljmc/vYrZquGbGRaKvWjJeynErn+tadBX8BTD9Q269oNwwhFlwRT0
+	uASC2r3lciQpd//F9GlM0cao66llcza7Y4GcaHQHZm2zKlHyxH0FvpV5wiT1+49pVfppd6n5jhbrH
+	38Qn+QDTgvI9SVAcw5Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH9W5-0007WK-0v; Wed, 25 Mar 2020 17:08:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jH9Z5-00014b-9C; Wed, 25 Mar 2020 17:11:39 +0000
+Received: from mail.baikalelectronics.com ([87.245.175.226]
+ helo=mail.baikalelectronics.ru)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH9Vn-0007Sz-5e
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 17:08:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1CD81FB;
- Wed, 25 Mar 2020 10:08:13 -0700 (PDT)
-Received: from [172.16.1.108] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6CC683F52E;
- Wed, 25 Mar 2020 10:08:13 -0700 (PDT)
-Subject: Re: [RFC PATCH 3/3] arm64: hibernate: idmap the single page that
- holds the copy page routines
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20200115143322.214247-1-james.morse@arm.com>
- <20200115143322.214247-4-james.morse@arm.com>
- <CA+CK2bAEyp7Kcc_qEOfchNvyEHSVnjAXD-LB9NGbUOJ_xZV1AQ@mail.gmail.com>
- <b983dfbf-49e2-d32c-e3a5-781df4f9ea4e@arm.com>
- <CA+CK2bD1fEY-NY8rCYi3Se9VTTzU5PVmDZyk2tWoSNP6rGZmJA@mail.gmail.com>
-From: James Morse <james.morse@arm.com>
-Openpgp: preference=signencrypt
-Message-ID: <4b04e9d9-f2e4-2919-6501-a62b3b03dca2@arm.com>
-Date: Wed, 25 Mar 2020 17:08:15 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jH9Yv-00013D-3T
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 17:11:31 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 0127F80307C2;
+ Wed, 25 Mar 2020 17:11:21 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id Vflws-kvy9oy; Wed, 25 Mar 2020 20:11:20 +0300 (MSK)
+Date: Wed, 25 Mar 2020 20:11:09 +0300
+From: Sergey Semin <Sergey.Semin@baikalelectronics.ru>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200325171109.cohnsw3s57ckaqud@ubsrv2.baikal.int>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+ <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
+ <20200323135017.4vi5nwam2rlpepgn@ubsrv2.baikal.int>
+ <20200324101243.GG1922688@smile.fi.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+CK2bD1fEY-NY8rCYi3Se9VTTzU5PVmDZyk2tWoSNP6rGZmJA@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200324101243.GG1922688@smile.fi.intel.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_100815_274463_C8E253D3 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_101129_507084_1E012EA4 
+X-CRM114-Status: GOOD (  35.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,39 +66,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ Maxime Ripard <maxime@cerno.tech>, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
-
-On 3/25/20 1:29 PM, Pavel Tatashin wrote:
->> You keep coming back to this because you are trying to idmap all memory
->> on arm64. You do not need to do this.
+On Tue, Mar 24, 2020 at 12:12:43PM +0200, Andy Shevchenko wrote:
+> On Mon, Mar 23, 2020 at 04:50:17PM +0300, Sergey Semin wrote:
+> > On Mon, Mar 23, 2020 at 11:01:09AM +0100, Maxime Ripard wrote:
+> > > On Mon, Mar 23, 2020 at 05:46:09AM +0300, Sergey.Semin@baikalelectronics.ru wrote:
+> > > > From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+> > > >
+> > > > There are races possible in the dw8250_set_termios() callback method
+> > > > and while the device is in PM suspend state. A race condition may
+> > > > happen if the baudrate clock source device is shared with some other
+> > > > device (in our machine it's another DW UART port). In this case if that
+> > > > device changes the clock rate while serial console is using it the
+> > > > DW 8250 UART port might not only end up with an invalid uartclk value
+> > > > saved, but may also experience a distorted output data since baud-clock
+> > > > could have been changed. In order to fix this lets enable an exclusive
+> > > > reference clock rate access in case if "baudclk" device is specified.
+> > > >
+> > > > So if some other device also acquires the rate exclusivity during the
+> > > > time of a DW UART 8250 port being opened, then DW UART 8250 driver
+> > > > won't be able to alter the baud-clock. It shall just use the available
+> > > > clock rate. Similarly another device also won't manage to change the
+> > > > rate at that time. If nothing else have the exclusive rate access
+> > > > acquired except DW UART 8250 driver, then the driver will be able to
+> > > > alter the rate as much as it needs to in accordance with the currently
+> > > > implemented logic.
 > 
-> No, this is not what I am trying to do. That approach was done in my
-> first RFC, but I have since abandoned it,
-
-Ah, okay. These all merge into one!
-
-
->> You only need one page idmaped so you can switch TTBR1_EL1, and turn the
->> MMU off.
->>
->>
->> You can do the copy of memory using a copy of the linear map in
->> TTBR1_EL1. For an example: hibernate does exactly this.
+> > > clk_rate_exclusive_get is pretty intrusive, and due to the usual
+> > > topology of clock trees, this will lock down 3-4 parent clocks to
+> > > their current rate as well. In the Allwinner SoCs case for example,
+> > > this will lock down the same PLL than the one used by the CPU,
+> > > preventing cpufreq from running.
+> > 
+> > Speaking about weak design of a SoC' clock tree. Our problems are nothing
+> > with respect to the Allwinner SoC, in which case of changing the
+> > CPU-frequency may cause the UART glitches subsequently causing data
+> > transfer artefacts.) Moreover as I can see the same issue may raise for
+> > I2C, QSPI, PWM devices there.
+> > 
+> > Anyway your concern does make sense.
+> > 
+> > > However, the 8250 has a pretty wide range of dividers and can adapt to
+> > > any reasonable parent clock rate, so we don't really need to lock the
+> > > rate either, we can simply react to a parent clock rate change using
+> > > the clock notifiers, just like the SiFive UART is doing.
+> > > 
+> > > I tried to do that, but given that I don't really have an extensive
+> > > knowledge of the 8250, I couldn't find a way to stop the TX of chars
+> > > while we change the clock rate. I'm not sure if this is a big deal or
+> > > not, the SiFive UART doesn't seem to care.
+> > 
+> > Yes, your solution is also possible, but even in case of stopping Tx/Rx it
+> > doesn't lack drawbacks. First of all AFAIK there is no easy way to just
+> > pause the transfers. We'd have to first wait for the current transfers
+> > to be completed, then somehow lock the port usage (both Tx and Rx
+> > traffic), permit the reference clock rate change, accordingly adjust the
+> > UART clock divider, and finally unlock the port. While if we don't mind
+> > to occasionally have UART data glitches, we can just adjust the UART ref
+> > divider synchronously with ref clock rate change as you and SiFive UART
+> > driver suggest.
+> > 
+> > So we are now at a zugzwang - a fork to three not that good solutions:
+> > 1) lock the whole clock branch and provide a glitchless interfaces. But
+> > by doing so we may (in case of Allwinner SoCs we will) lockup some very
+> > important functionality like CPU-frequency change while the UART port is
+> > started up. In this case we won't have the data glitches.
+> > 2) just adjust the UART clock divider in case of reference clock rate
+> > change (use the SiFive UART driver approach). In this case we may have the
+> > data corruption.
+> > 3) somehow implement the algo: wait for the transfers to be completed,
+> > lock UART interface (it's possible for Tx, but for Rx in case of no handshake
+> > enabled it's simply impossible), permit the ref clock rate change,
+> > adjust the UART divider, then unlock the UART interface. In this case the data
+> > glitches still may happen (if no modem control is available or
+> > handshakes are disabled).
+> > 
+> > As for the cases of Baikal-T1 UARTs the first solutions is the most suitable.
+> > We don't lock anything valuable, since a base PLL output isn't directly
+> > connected to any device and it's rate once setup isn't changed during the
+> > system running. On the other hand I don't mind to implement the second
+> > solution, even though it's prone to data glitches. Regarding the solution
+> > 3) I won't even try. It's too complicated, I don't have time and
+> > test-infrastructure for this.
+> > 
+> > So Andy what do you think?
 > 
-> Yes, this is exactly what I am currently doing.
+> From Intel HW perspective the first two are okay, but since Maxime is against
+> first, you have the only option from your list. Perhaps somebody may give
+> option 4) here...
+> 
 
-Great!
+Ok then. I'll implement the option 2) in v3 if noone gives any alternatives
+before that.
 
+Regards,
+-Sergey
 
-Thanks,
-
-James
+> -- 
+> With Best Regards,
+> Andy Shevchenko
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
