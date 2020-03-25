@@ -2,58 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 374B7191F55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:39:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0500191F65
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:42:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wrrKVUsiGcpF9bgALRHO70wb+gB2isaT7r5n60SV8gk=; b=d99yzrwhdiOlM/
-	ulQ9gL7hsn04N6UPawP8xuRRzJ7El15ZfnY3jw20i3khqaArK7j//rcAJegYoQ7wRcIUGEY7G8IgO
-	dcEvEQ1GkF3zF6kHtLK85vKv4MM09dZfa3SVhKBId9uHyMlAW79PNTa408gWtmv2qcetN2kQWQFNM
-	5ltYLoEjgWH5zieZela1YndNJ4GISbFBt9bIkr7uNGHY90fJqzTwquA7Rc64z2+rTQrSLnDRx3zLH
-	xx6Z+iUtPfix8w1790tH8Ng98RvANkN0yE6NKyXR4uYhKbDX1NKS3pgHc6hql8C568f+FhYjZfBqt
-	5ZIP1mWEutTAxpjY9gBg==;
+	List-Owner; bh=qv9Ni9MI0FC9Me8wLGYHcogGcE5eonmnHOY0e5tiJRc=; b=qmvfQr4lKtSfW2
+	EU0ZowG269/peHzB0cllH3FL3YWBxoUiGI5ZbglvCzylFz5JHoWbCxusOo5pnHph9MA24RflQ1kiM
+	+4lhTky4FQL8aXXRyx6Adyms2KfF5d1gHFVyqT6NYjUtJIPKXh9184zlgxEpWeuMBAc7qMdcpmuys
+	XOrbpr3mnGMhyQYf5GOiz/wnwsL4F6gh9AT58qpyCGJy82AVlNV+4ORdspRv4gD3iMVJLt9dmjynZ
+	OB7oahy7yj/5hCDjGTTZNUhthaMMvELAcnCQD52zYRnMnULGf4kvDL0jEPttxkwxdJe1FGAuOaQwt
+	acqGK/S7tp2sOC/ZzZvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGvwT-0007lE-Tc; Wed, 25 Mar 2020 02:38:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jGw0E-0000wu-ET; Wed, 25 Mar 2020 02:42:46 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGvwH-0007in-EK
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:38:42 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0DD8B20724;
- Wed, 25 Mar 2020 02:38:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585103921;
- bh=REPPFvmAWeExSkY2NpzUI6zxo6aH5C1vRO5zrdUrnx0=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=Y0t3+bjTgmGfefRowdnStqQvqnUvz8jJU+N/Ly3V1x9mhvlL7LjZfygLAmtuI9yzp
- XytbQ5C5Hh6j3ke5Jl5QLQ8IKI1a1f6+rxlxwp1kqKkNeu5RHQDyWh4SFEkcnsRnX2
- j2hrDSxTP3xMrxHvfrq4lWdgtN/o1QWTFN4Fq0rI=
+ id 1jGvzv-0000vp-Dv
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:42:28 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id np9so397980pjb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Mar 2020 19:42:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:content-transfer-encoding:in-reply-to:references
+ :subject:from:cc:to:date:message-id:user-agent;
+ bh=tJVGZmmA1bFjoevn7/qDYyyvIJ/eyc0u4ubgnC7ziTY=;
+ b=H4706YZqf8/zScGoFg12vybnR9M2VsIQVJgSz3rS1dHY9dQHDGFEdxDFbUd7d1zTgX
+ a1SAGpNqJGQq66/k++qcyoET2sxmyH3emD3uXnYHai1yW2TdH35PONdQL7aDm0PfPzyp
+ tYlxhgWpkpR2jgcSCMS6Pg5GkhF65IhQxffKc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:content-transfer-encoding
+ :in-reply-to:references:subject:from:cc:to:date:message-id
+ :user-agent;
+ bh=tJVGZmmA1bFjoevn7/qDYyyvIJ/eyc0u4ubgnC7ziTY=;
+ b=AltNLmph8v2veKFcGTDjEuPBaT+JydpOZi/LvC0kMdeYIDcophkXmGc4ERyQkRLkQY
+ OyfFGnkpWROrYSxAKUYByQtxdjY8CQbfmWSDLgDpGgqpB51q0oPW2yv7GbhMopL2gZ+z
+ vCHkQQC8qpVzysJLvs6p6obuXSIE5qy7kouIuDYF9V+uRHE+tMGB+oRtLgQqP2CR3Jiy
+ SLqManQq2JyV8tI88YGsWQckPMJE0hRtQhL4GsSHiY9WbcnOMa5i1EnHX1Z88ddFM6FI
+ o5dZrzVT764GQR013OiQYIjLMKAvL7W1HLmWhcI5jFA8V2mWnJVs5XyjcJNX7M9WqrdS
+ qLkA==
+X-Gm-Message-State: ANhLgQ1owhmNFOHnuFqTh3CCB0kXBDjbdRDqNSaplFSpSk7dYSMwMd81
+ wQOdiaMo6qFROYtESfyNqTITdA==
+X-Google-Smtp-Source: ADFU+vtS5LbLrzS1jhzDwYVrTj6A9lZWX06g/Mga4Nlp7aFIrRyOCBB7aq2FIo/kyw4uUBQ1+JG/MQ==
+X-Received: by 2002:a17:90a:33d1:: with SMTP id
+ n75mr1033588pjb.167.1585104145832; 
+ Tue, 24 Mar 2020 19:42:25 -0700 (PDT)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id x4sm858194pgr.9.2020.03.24.19.42.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 24 Mar 2020 19:42:25 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200316064322.GI17221@dragon>
-References: <20200316064322.GI17221@dragon>
-Subject: Re: [GIT PULL] i.MX clock drivers update for 5.7
-From: Stephen Boyd <sboyd@kernel.org>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Tue, 24 Mar 2020 19:38:40 -0700
-Message-ID: <158510392026.125146.1277266093057110288@swboyd.mtv.corp.google.com>
+In-Reply-To: <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
+References: <cover.1582361737.git.mchehab+huawei@kernel.org>
+ <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
+Subject: Re: [PATCH 3/7] docs: fix broken references to text files
+From: Stephen Boyd <swboyd@chromium.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Date: Tue, 24 Mar 2020 19:42:24 -0700
+Message-ID: <158510414428.125146.17397141028775937874@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_193841_502670_E5774EDE 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200324_194227_473010_098C3105 
+X-CRM114-Status: GOOD (  11.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -75,41 +98,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-nfs@vger.kernel.org, kvm@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, netdev@vger.kernel.org,
+ linux-unionfs@vger.kernel.org, kvm-ppc@vger.kernel.org, linux-mm@kvack.org,
+ dri-devel@lists.freedesktop.org, linux-fsdevel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-rdma@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Shawn Guo (2020-03-15 23:43:23)
-> Hi Stephen,
+Quoting Mauro Carvalho Chehab (2020-02-22 01:00:03)
+> Several references got broken due to txt to ReST conversion.
 > 
-> This is i.MX clock driver update I collected for 5.7.  Please consider
-> to pull.  Also, 16e71d4da799 ("clk: imx8mn: add SNVS clock to clock tree")
-> was pulled into DT branch as dependency, so please keep it stable.
+> Several of them can be automatically fixed with:
 > 
-> Thanks!
+>         scripts/documentation-file-ref-check --fix
 > 
-> Shawn
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  drivers/hwtracing/coresight/Kconfig                  |  2 +-
 > 
-> 
-> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-> 
->   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/clk-imx-5.7
-> 
-> for you to fetch changes up to b5881e8019e0d39c43a2da56c4ae616a50615e00:
-> 
->   clk: imx: clk-gate2: Pass the device to the register function (2020-03-16 09:38:30 +0800)
-> 
-> ----------------------------------------------------------------
+> diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
+> index 6ff30e25af55..6d42a6d3766f 100644
+> --- a/drivers/hwtracing/coresight/Kconfig
+> +++ b/drivers/hwtracing/coresight/Kconfig
+> @@ -107,7 +107,7 @@ config CORESIGHT_CPU_DEBUG
+>           can quickly get to know program counter (PC), secure state,
+>           exception level, etc. Before use debugging functionality, platform
+>           needs to ensure the clock domain and power domain are enabled
+> -         properly, please refer Documentation/trace/coresight-cpu-debug.rst
+> +         properly, please refer Documentation/trace/coresight/coresight-cpu-debug.rst
+>           for detailed description and the example for usage.
+>  
+>  endif
 
-Thanks. Pulled into clk-next
+I ran into this today and almost sent a patch. Can you split this patch
+up into more pieces and send it off to the respective subsystem
+maintainers?
 
 _______________________________________________
 linux-arm-kernel mailing list
