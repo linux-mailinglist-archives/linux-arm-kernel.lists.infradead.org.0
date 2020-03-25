@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0500191F65
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:42:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17848191F6D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 03:48:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qv9Ni9MI0FC9Me8wLGYHcogGcE5eonmnHOY0e5tiJRc=; b=qmvfQr4lKtSfW2
-	EU0ZowG269/peHzB0cllH3FL3YWBxoUiGI5ZbglvCzylFz5JHoWbCxusOo5pnHph9MA24RflQ1kiM
-	+4lhTky4FQL8aXXRyx6Adyms2KfF5d1gHFVyqT6NYjUtJIPKXh9184zlgxEpWeuMBAc7qMdcpmuys
-	XOrbpr3mnGMhyQYf5GOiz/wnwsL4F6gh9AT58qpyCGJy82AVlNV+4ORdspRv4gD3iMVJLt9dmjynZ
-	OB7oahy7yj/5hCDjGTTZNUhthaMMvELAcnCQD52zYRnMnULGf4kvDL0jEPttxkwxdJe1FGAuOaQwt
-	acqGK/S7tp2sOC/ZzZvQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iHdpovoI1eemSI9kkQHM444jQDDgFe0nyoQrZkAOQME=; b=CsF6B2aba6zVJ1
+	YC/WAGNwfXMQDoPbfle6aMpFahtjEv3UJR/tPWwXo5ktRXbtUOiVdsWk0i6JdRsQ6823yTutioXv1
+	vCYu0cUF8agNrDHVTPLGYcwqx9x1xIt+M2sY0bMj3/MHzzDUIABpD8soRuH+wyhTZ75YCwvfr0oq3
+	CDOehM20E3/XRe2e2d+tQFCSWtaCcDxeekgpYR0TvXlqMYkOukZV/7tbYFJhIt79i/6pwefyR/GL+
+	9owJCwi4jAckyeHS8hWUZlzV7ySqNkbs4wbfphQc/NnnxVab+3hCnIa9p9Y+7PZ+/BO0j13TmuCUN
+	LNNurHT4a5/oHzaI33ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGw0E-0000wu-ET; Wed, 25 Mar 2020 02:42:46 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jGw5I-0002d7-7E; Wed, 25 Mar 2020 02:48:00 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGvzv-0000vp-Dv
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:42:28 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id np9so397980pjb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Mar 2020 19:42:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:content-transfer-encoding:in-reply-to:references
- :subject:from:cc:to:date:message-id:user-agent;
- bh=tJVGZmmA1bFjoevn7/qDYyyvIJ/eyc0u4ubgnC7ziTY=;
- b=H4706YZqf8/zScGoFg12vybnR9M2VsIQVJgSz3rS1dHY9dQHDGFEdxDFbUd7d1zTgX
- a1SAGpNqJGQq66/k++qcyoET2sxmyH3emD3uXnYHai1yW2TdH35PONdQL7aDm0PfPzyp
- tYlxhgWpkpR2jgcSCMS6Pg5GkhF65IhQxffKc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:content-transfer-encoding
- :in-reply-to:references:subject:from:cc:to:date:message-id
- :user-agent;
- bh=tJVGZmmA1bFjoevn7/qDYyyvIJ/eyc0u4ubgnC7ziTY=;
- b=AltNLmph8v2veKFcGTDjEuPBaT+JydpOZi/LvC0kMdeYIDcophkXmGc4ERyQkRLkQY
- OyfFGnkpWROrYSxAKUYByQtxdjY8CQbfmWSDLgDpGgqpB51q0oPW2yv7GbhMopL2gZ+z
- vCHkQQC8qpVzysJLvs6p6obuXSIE5qy7kouIuDYF9V+uRHE+tMGB+oRtLgQqP2CR3Jiy
- SLqManQq2JyV8tI88YGsWQckPMJE0hRtQhL4GsSHiY9WbcnOMa5i1EnHX1Z88ddFM6FI
- o5dZrzVT764GQR013OiQYIjLMKAvL7W1HLmWhcI5jFA8V2mWnJVs5XyjcJNX7M9WqrdS
- qLkA==
-X-Gm-Message-State: ANhLgQ1owhmNFOHnuFqTh3CCB0kXBDjbdRDqNSaplFSpSk7dYSMwMd81
- wQOdiaMo6qFROYtESfyNqTITdA==
-X-Google-Smtp-Source: ADFU+vtS5LbLrzS1jhzDwYVrTj6A9lZWX06g/Mga4Nlp7aFIrRyOCBB7aq2FIo/kyw4uUBQ1+JG/MQ==
-X-Received: by 2002:a17:90a:33d1:: with SMTP id
- n75mr1033588pjb.167.1585104145832; 
- Tue, 24 Mar 2020 19:42:25 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id x4sm858194pgr.9.2020.03.24.19.42.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Mar 2020 19:42:25 -0700 (PDT)
+ id 1jGw59-0002bl-9A
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 02:47:53 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id D916CC1B1F67DC29052A;
+ Wed, 25 Mar 2020 10:47:41 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.487.0; Wed, 25 Mar 2020
+ 10:47:32 +0800
+Subject: Re: [RFC PATCH v4 3/6] arm64: Add level-hinted TLB invalidation
+ helper to tlbi_user
+To: Marc Zyngier <maz@kernel.org>
+References: <20200324134534.1570-1-yezhenyu2@huawei.com>
+ <20200324134534.1570-4-yezhenyu2@huawei.com> <20200324141939.51917225@why>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <8cf6c576-f0e2-9a52-6919-cb5e27d2ffb5@huawei.com>
+Date: Wed, 25 Mar 2020 10:47:31 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
-References: <cover.1582361737.git.mchehab+huawei@kernel.org>
- <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 3/7] docs: fix broken references to text files
-From: Stephen Boyd <swboyd@chromium.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Date: Tue, 24 Mar 2020 19:42:24 -0700
-Message-ID: <158510414428.125146.17397141028775937874@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+In-Reply-To: <20200324141939.51917225@why>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_194227_473010_098C3105 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200324_194751_496990_65F46941 
+X-CRM114-Status: GOOD (  14.12  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,46 +66,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-nfs@vger.kernel.org, kvm@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, netdev@vger.kernel.org,
- linux-unionfs@vger.kernel.org, kvm-ppc@vger.kernel.org, linux-mm@kvack.org,
- dri-devel@lists.freedesktop.org, linux-fsdevel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-rdma@vger.kernel.org
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ linux-mm@kvack.org, guohanjun@huawei.com, will@kernel.org,
+ linux-arch@vger.kernel.org, yuzhao@google.com, aneesh.kumar@linux.ibm.com,
+ steven.price@arm.com, arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de,
+ suzuki.poulose@arm.com, npiggin@gmail.com, zhangshaokun@hisilicon.com,
+ broonie@kernel.org, rostedt@goodmis.org, prime.zeng@hisilicon.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ xiexiangyou@huawei.com, linux-kernel@vger.kernel.org,
+ akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Mauro Carvalho Chehab (2020-02-22 01:00:03)
-> Several references got broken due to txt to ReST conversion.
-> 
-> Several of them can be automatically fixed with:
-> 
->         scripts/documentation-file-ref-check --fix
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
->  drivers/hwtracing/coresight/Kconfig                  |  2 +-
-> 
-> diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
-> index 6ff30e25af55..6d42a6d3766f 100644
-> --- a/drivers/hwtracing/coresight/Kconfig
-> +++ b/drivers/hwtracing/coresight/Kconfig
-> @@ -107,7 +107,7 @@ config CORESIGHT_CPU_DEBUG
->           can quickly get to know program counter (PC), secure state,
->           exception level, etc. Before use debugging functionality, platform
->           needs to ensure the clock domain and power domain are enabled
-> -         properly, please refer Documentation/trace/coresight-cpu-debug.rst
-> +         properly, please refer Documentation/trace/coresight/coresight-cpu-debug.rst
->           for detailed description and the example for usage.
->  
->  endif
+Hi Marc,
 
-I ran into this today and almost sent a patch. Can you split this patch
-up into more pieces and send it off to the respective subsystem
-maintainers?
+On 2020/3/24 22:19, Marc Zyngier wrote:
+> On Tue, 24 Mar 2020 21:45:31 +0800
+> Zhenyu Ye <yezhenyu2@huawei.com> wrote:
+> 
+>> Add a level-hinted parameter to __tlbi_user, which only gets used
+>> if ARMv8.4-TTL gets detected.
+>>
+>> ARMv8.4-TTL provides the TTL field in tlbi instruction to indicate
+>> the level of translation table walk holding the leaf entry for the
+>> address that is being invalidated.
+>>
+>> This patch set the default level value to 0.
+>>
+>> Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+>> ---
+>>  arch/arm64/include/asm/tlbflush.h | 42 ++++++++++++++++++++++++++-----
+>>  1 file changed, 36 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+>> index a3f70778a325..d141c080e494 100644
+>> --- a/arch/arm64/include/asm/tlbflush.h
+>> +++ b/arch/arm64/include/asm/tlbflush.h
+>> @@ -89,6 +89,36 @@
+>>  		__tlbi(op,  arg);					\
+>>  	} while(0)
+>>  
+>> +#define __tlbi_user_level(op, addr, level)				\
+>> +	do {								\
+>> +		u64 arg = addr;						\
+>> +									\
+>> +		if (!arm64_kernel_unmapped_at_el0())			\
+>> +			break;						\
+>> +									\
+>> +		if (cpus_have_const_cap(ARM64_HAS_ARMv8_4_TTL) &&	\
+>> +		    level) {						\
+>> +			u64 ttl = level;				\
+>> +									\
+>> +			switch (PAGE_SIZE) {				\
+>> +			case SZ_4K:					\
+>> +				ttl |= 1 << 2;				\
+>> +				break;					\
+>> +			case SZ_16K:					\
+>> +				ttl |= 2 << 2;				\
+>> +				break;					\
+>> +			case SZ_64K:					\
+>> +				ttl |= 3 << 2;				\
+>> +				break;					\
+>> +			}						\
+>> +									\
+>> +			arg &= ~TLBI_TTL_MASK;				\
+>> +			arg |= FIELD_PREP(TLBI_TTL_MASK, ttl);		\
+>> +		}							\
+>> +									\
+>> +		__tlbi(op,  (arg) | USER_ASID_FLAG);
+>> 	\
+>> +	} while (0)
+>> +
+> 
+> Isn't this just:
+> 
+> define __tlbi_user_level(op, addr, level)			\
+> 	do {							\
+> 		if (!arm64_kernel_unmapped_at_el0())		\
+> 			break;					\
+> 								\
+> 		__tlbi_level(op, addr | USER_ASID_FLAG, level);	\
+> 	} while (0)
+> 
+> Thanks,
+> 
+> 	M.
+> 
+
+Yeah, your code is more clear!  I will take it in next version. ;-)
+
+Thanks,
+zhenyu
+
 
 _______________________________________________
 linux-arm-kernel mailing list
