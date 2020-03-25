@@ -2,84 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32FCD1927ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 13:14:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DB091927EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 13:15:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6wO2sDyWwpdXq+xZarnmCxoLjWnhyH6T+WxXH33AOcw=; b=Of1
-	zY6m02DoGJ5rnE3eO9uuzbEhufJwpKVBXLrHeR9eung/rktAXKJ3YumIKnPoBv8r1E0TH3w6gTMQj
-	9t/HswyiuHSLReydIeOaeZMG17oeskkiMU2y+5VnFzV/GNwws0rgJb+pW5JV8XXM20LA+pcxb8r4p
-	TBrA8Oq2XN6LxxbVx2AFRTkfediuxQ8xpcPF7pXaegwgjCtudqDWouxSRfDwK9zOZueK6HlWaCI0V
-	VNDp/5MGKgd19PnttG44J37S/3DiyG8cO3fsN46nlLZ0l52rBrNIrxLdF+DdNrrpRrOJPAmG9kt14
-	9u0fZfvzC7fNVzEL6TRJum1rRsjtrzQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=D1u7zJR9uEDVo+9voTOiG7NC2/208Vhw+CJnoRc+P9s=; b=SrzGSPnroHGP49
+	bJVBHTYmrj8MhYh9WeQyPyRhB6CyzmFGCfGcS5hhubweSH6ZLN7tzXvgZ9tqUvrAcWBaWTnReNOum
+	CSB4G+5GBkh+YHAjwvx4vcJCT1qQnjmWI8BZdKcV7jlvv+07PxwAON5zfIuNN8H5n7NoiJHcsl8oL
+	XtmuIMV5EwGsrxaMX5Bu4b87EwvRviVIH/TaAVEbb4fap7strBGtMqdGIurEArNNMoUnO62P8E8Jv
+	HAe/y7vZpnXA+XeCp5Ni3a5D12WUq6DM0re+0jnWBJhTeI1JqGyv8EOhO4ocrdcRDyzlcaGL4jMFc
+	mGlBjUdcx37K1qyDPRSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH4uy-0005qs-F4; Wed, 25 Mar 2020 12:13:56 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jH4wT-0006jx-Re; Wed, 25 Mar 2020 12:15:29 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH4ul-0005qE-Mw; Wed, 25 Mar 2020 12:13:45 +0000
-Received: by mail-wr1-x443.google.com with SMTP id 65so2802338wrl.1;
- Wed, 25 Mar 2020 05:13:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=hOl/owfaYb87sP9mVjhujvo/kAvWxhYs1nSOGilmW4A=;
- b=jeg4XdTKu/XvPZ1Xt3cF8yIQaKYs5aWC2NHt59RttrPbt0SqxL2nONJvUXDtWR3VsM
- he/pJZaKOoztPwWFclpqXDea5mIxyMAXnmrmQBRA3Lo1X2D0c9AtixK0wOl5PJVOKxsP
- dtrIBzMNlVI0yIXWPyGzcLXIg6VTsUTkqvOFD5AaYZZLdfWhWub+Ai197xzoUIYQdOiB
- U+EuUQvyxX0Cwf6/0k68URomy6Raj2+HVNMsmLdVBBVrJhxocwaam1YWoKzvZ3XSTdIn
- g4z0cAGsqFFqmCd0myDe/h4G3ntMr5OezQaQCanFHA92fGQDPU+iQbhOOfQ9I6iodafQ
- Zs+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hOl/owfaYb87sP9mVjhujvo/kAvWxhYs1nSOGilmW4A=;
- b=eWEvwlG7KB672Jh7jLSrHab3RDpHSd6K/QUzyijTDVAw1ASzAkT9/NdNJggdLCOjSf
- dke8hqvzi9BdllWF3u+Oo0ymbbJvKHawtSc3fdFZKX40WNp+2F5Lv7eyE8wCyFE55ivU
- 9N0Zxm3RtW6FtjMUA+w3HnWEtlDnJXwd61sbMyW4vKYfKyXXQ84DlDANmbGa2y/WtL67
- OK8Zn8XuNYb99T39nXiJcwkaaNqeVZuA/7KHpDFnKJeskDHiUrngdgPMPVSWAmZV7X/F
- NlTn3poI+g4dGUdp9RUY0Iar0QXuMZZVL1VoDWUByPuzDVH3fc6PBpMeQBx3it59x46x
- E8Vw==
-X-Gm-Message-State: ANhLgQ0/RbkLgyJ27baK7/o/fn6geqGDzLrjj6XBZGIf6UNOZT48E+8A
- ifkAz40KJbbfuY637dQWJyA=
-X-Google-Smtp-Source: ADFU+vsAfNfD810hUfVVo81ck+67IHCKX2XgtJjX/9gCIeuNFKMXkmYoMLeOykpyMlq1qsRO68Tlig==
-X-Received: by 2002:a5d:4e05:: with SMTP id p5mr3120806wrt.59.1585138421936;
- Wed, 25 Mar 2020 05:13:41 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id k9sm35010397wrd.74.2020.03.25.05.13.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 25 Mar 2020 05:13:41 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: kishon@ti.com
-Subject: [PATCH v3] dt-bindings: phy: convert phy-rockchip-inno-usb2 bindings
- to yaml
-Date: Wed, 25 Mar 2020 13:13:35 +0100
-Message-Id: <20200325121335.12249-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jH4wJ-0006BJ-6K
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 12:15:20 +0000
+IronPort-SDR: Nj6BmQnHuNvAx536H6jBHtITesYsFCHi0MLvrSPIO01RX5SZMrpAwv/QXHxuK+7P1KnIb86G1J
+ 4j6tpyQorayg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 25 Mar 2020 05:15:18 -0700
+IronPort-SDR: fshHeAjRpcY2QmeRHJ1oayCf+XifNxCDfJLwJiGn+cFX1tws7VlOKitEAEkmV6KGOdSn4NwC1R
+ g3rl1BhCgTCA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,304,1580803200"; d="scan'208";a="420294717"
+Received: from fmsmsx103.amr.corp.intel.com ([10.18.124.201])
+ by orsmga005.jf.intel.com with ESMTP; 25 Mar 2020 05:15:17 -0700
+Received: from fmsmsx609.amr.corp.intel.com (10.18.126.89) by
+ FMSMSX103.amr.corp.intel.com (10.18.124.201) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Wed, 25 Mar 2020 05:15:17 -0700
+Received: from fmsmsx609.amr.corp.intel.com (10.18.126.89) by
+ fmsmsx609.amr.corp.intel.com (10.18.126.89) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 25 Mar 2020 05:15:16 -0700
+Received: from FMSEDG001.ED.cps.intel.com (10.1.192.133) by
+ fmsmsx609.amr.corp.intel.com (10.18.126.89) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 25 Mar 2020 05:15:16 -0700
+Received: from NAM11-CO1-obe.outbound.protection.outlook.com (104.47.56.170)
+ by edgegateway.intel.com (192.55.55.68) with Microsoft SMTP Server (TLS) id
+ 14.3.439.0; Wed, 25 Mar 2020 05:15:14 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QrSSnE+xLd7T99TOEmQSdD8WXzwERX7NctpBhGfNGVyuGdsVE4cKTa8ME6JH/LRDsvlIxK7Hfw1gG/z2Y+486CY+D/vdfyZ+u3O1fomyMOMVwJTUVzqpSjUyogsxnREzgFbMrLcMNb1rwp6rbBCVYCc4w7lkEu2hzDPNCLZ3dwFRDXtdEPeal4ENH3mvwsJZWw3cMSqeTIbjBGnEBIWqOkLEWb3dYgTTyumgNB+nSPwftanfKUDuJkEDSWrb3dKVQPR3s7KTsi1Qffu6nu0LuLDILFkLdCwiV1fvTJt8KvHYvdudAjeT9JA6tNgTfyOQIgfPaTa++V+mOnka515kcw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YrAe+ZxIvMfxBdnhr2CijWf5vpWwbAXFuv2S6UTzOZQ=;
+ b=c7dkQtqz5QDI0tmn2NKblgeYmiIkfSw5FdmdhYPMIBfZD8Xb2HiiUbj/gmtIhb3s+hjKenhjNZAbdAxfU7cYR8cg2gAVYuCi8mrdmhqNWKw7nXAl8fbraoU9TGmgu3jwKiPbr/kpdZuz2EcvkCj9JA+25AbpOC6SbSk8Ig5Wq/sv1+1J21tVx2JHWx8bwvFUXEQ2umEOrHqEhTF4Rt9ogfUhq7eRuATOfYRr+R21XtyQU0gIerJscS6blOSW1v8fPA2+NOaTOxABzKY/i11whwZoU3APqSEEuMBVJAHzmIDZIGLdjoqZFcClTpr15efan7ewILdo6kWR+tnNT9Zeyg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
+ s=selector2-intel-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YrAe+ZxIvMfxBdnhr2CijWf5vpWwbAXFuv2S6UTzOZQ=;
+ b=CE6OPq90eYLysvXzc521yPqnRiYrLoaO6yr2Ws6wXY8PB76eWoe+FVF8+XbOlsqOixkHEgyrZpuWWTbh2t1f3EfgcsDSIsQxVIfu7pzhmf+ZnhmFNY33qPCpWVvLkr8Ban4AGixxmDgAUCBAsKUbzzXoGQ/ulEjid4VwxMFB+gU=
+Received: from BL0PR11MB3281.namprd11.prod.outlook.com (2603:10b6:208:66::33)
+ by BL0PR11MB3220.namprd11.prod.outlook.com (2603:10b6:208:2f::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.18; Wed, 25 Mar
+ 2020 12:15:13 +0000
+Received: from BL0PR11MB3281.namprd11.prod.outlook.com
+ ([fe80::e0a0:7b4b:3824:17e6]) by BL0PR11MB3281.namprd11.prod.outlook.com
+ ([fe80::e0a0:7b4b:3824:17e6%7]) with mapi id 15.20.2835.023; Wed, 25 Mar 2020
+ 12:15:13 +0000
+From: "Reshetova, Elena" <elena.reshetova@intel.com>
+To: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>
+Subject: RE: [PATCH v2 0/5] Optionally randomize kernel stack offset each
+ syscall
+Thread-Topic: [PATCH v2 0/5] Optionally randomize kernel stack offset each
+ syscall
+Thread-Index: AQHWAhtwq3buLIhNY0uHCAE/uJPRC6hYQiKAgAAbvoCAANt94A==
+Date: Wed, 25 Mar 2020 12:15:12 +0000
+Message-ID: <BL0PR11MB3281D8D615FA521401B8E320E7CE0@BL0PR11MB3281.namprd11.prod.outlook.com>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <CAG48ez3yYkMdxEEW6sJzBC5BZSbzEZKnpWzco32p-TJx7y_srg@mail.gmail.com>
+ <202003241604.7269C810B@keescook>
+In-Reply-To: <202003241604.7269C810B@keescook>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+dlp-version: 11.2.0.6
+dlp-product: dlpe-windows
+dlp-reaction: no-action
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=elena.reshetova@intel.com; 
+x-originating-ip: [193.210.230.89]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9b4fbd89-f70c-4462-79a3-08d7d0b62bb6
+x-ms-traffictypediagnostic: BL0PR11MB3220:
+x-microsoft-antispam-prvs: <BL0PR11MB32207DC9ABA2DCEAE8BEF60BE7CE0@BL0PR11MB3220.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 0353563E2B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(376002)(136003)(396003)(39860400002)(346002)(5660300002)(66946007)(6506007)(66476007)(7416002)(2906002)(26005)(52536014)(66556008)(64756008)(66446008)(33656002)(76116006)(55016002)(86362001)(81156014)(81166006)(8936002)(8676002)(9686003)(71200400001)(4326008)(478600001)(186003)(7696005)(54906003)(110136005)(316002)(4744005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR11MB3220;
+ H:BL0PR11MB3281.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: R0fHfiHe8IwDhu/PudqxvcDZ+HOwdID1+Ng9PLiwh0AO1XId7kD5n6/N6KkV53W4qA5fCWm1kMve7REZUR8b7tfsZ0qwzO1SbmzfzUQuTef3Q+RWQizkUkYOeFdNG9QLqnsGNyhhKpTeHHKHAoC4GFvWo4/fjB1EaC3+6oQRGRJcBSyXd9ZvKE2SnVVzKJZ7Zrd1BNOW8gk+0CDvQ1pE6PEAionQk/bCbpGWMP+cjfucQM5Iz8gOvPfOvt2jSzXH/ZVO2yeoHuhQzV8ijn20hPRMlKrV9A697E5gJICuCt6rqGUznVewzCHr1aUmYKoLmo3n21Xj6AA7+LQwriDcfqXX9+3uFAoupeeHwP8GgrAiYmz9N3XQHDgLpgpEqXlL2z+735Dt1q/0R88sYS8pxh9HILua5BGYthTXDBiP8bmt1Bi2Plg/wkUSdnnJenMP
+x-ms-exchange-antispam-messagedata: /CNCpOp659D172WBicTizC4uCv6sPoROncMCkc7ljYWplLv4kJ8C/Ss7dwBTKoPT+B9cN+1DoEN/AQPs7mMyIYvDkPMoQMYW4Gi/KGoDUcdz3XyyuTKwfhNpVkmCtSxcrVO1oEa6sESZV3nQbrXr5A==
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9b4fbd89-f70c-4462-79a3-08d7d0b62bb6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Mar 2020 12:15:12.9820 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9BUpkDalH6Xfnn9q/Z4fatBvI6iYdf5wUeTPr7aT+6vnesukWh+gAF4FEkKMS4KS4GMmteUqxdITni7Y6iZK8dHgLLKOWqP5PLikRjEu6Ew=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR11MB3220
+X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_051343_779473_47814CF5 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200325_051519_296436_9D4749E5 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,289 +148,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ kernel list <linux-kernel@vger.kernel.org>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>, Andy Lutomirski <luto@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files for Rockchip with 'usb2-phy' subnodes
-are manually verified. In order to automate this process
-phy-rockchip-inno-usb2.txt has to be converted to yaml.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-Changes v3:
-  Replace oneOf by enum
-  Remove allOf phy-provider.yaml
-  Add "#phy-cells"
-  Add additionalProperties: false
+> > Also, are you sure that it isn't possible to make the syscall that
+> > leaked its stack pointer never return to userspace (via ptrace or
+> > SIGSTOP or something like that), and therefore never realign its
+> > stack, while keeping some controlled data present on the syscall's
+> > stack?
 
-Changes v2:
-  Keep "rockchip,rk3366-usb2phy" support.
-  Add "#phy-cells" to example.
-  Add allOf phy-provider.yaml
----
- .../bindings/phy/phy-rockchip-inno-usb2.txt        |  81 -----------
- .../bindings/phy/phy-rockchip-inno-usb2.yaml       | 155 +++++++++++++++++++++
- 2 files changed, 155 insertions(+), 81 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
- create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
+How would you reliably detect that a stack pointer has been leaked
+to userspace while it has been in a syscall? Does not seem to be a trivial
+task to me. 
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-deleted file mode 100644
-index 541f52988..000000000
---- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-+++ /dev/null
-@@ -1,81 +0,0 @@
--ROCKCHIP USB2.0 PHY WITH INNO IP BLOCK
--
--Required properties (phy (parent) node):
-- - compatible : should be one of the listed compatibles:
--	* "rockchip,px30-usb2phy"
--	* "rockchip,rk3228-usb2phy"
--	* "rockchip,rk3328-usb2phy"
--	* "rockchip,rk3366-usb2phy"
--	* "rockchip,rk3399-usb2phy"
--	* "rockchip,rv1108-usb2phy"
-- - reg : the address offset of grf for usb-phy configuration.
-- - #clock-cells : should be 0.
-- - clock-output-names : specify the 480m output clock name.
--
--Optional properties:
-- - clocks : phandle + phy specifier pair, for the input clock of phy.
-- - clock-names : input clock name of phy, must be "phyclk".
-- - assigned-clocks : phandle of usb 480m clock.
-- - assigned-clock-parents : parent of usb 480m clock, select between
--		 usb-phy output 480m and xin24m.
--		 Refer to clk/clock-bindings.txt for generic clock
--		 consumer properties.
-- - rockchip,usbgrf : phandle to the syscon managing the "usb general
--		 register files". When set driver will request its
--		 phandle as one companion-grf for some special SoCs
--		 (e.g RV1108).
-- - extcon : phandle to the extcon device providing the cable state for
--		 the otg phy.
--
--Required nodes : a sub-node is required for each port the phy provides.
--		 The sub-node name is used to identify host or otg port,
--		 and shall be the following entries:
--	* "otg-port" : the name of otg port.
--	* "host-port" : the name of host port.
--
--Required properties (port (child) node):
-- - #phy-cells : must be 0. See ./phy-bindings.txt for details.
-- - interrupts : specify an interrupt for each entry in interrupt-names.
-- - interrupt-names : a list which should be one of the following cases:
--	Regular case:
--	* "otg-id" : for the otg id interrupt.
--	* "otg-bvalid" : for the otg vbus interrupt.
--	* "linestate" : for the host/otg linestate interrupt.
--	Some SoCs use one interrupt with the above muxed together, so for these
--	* "otg-mux" : otg-port interrupt, which mux otg-id/otg-bvalid/linestate
--		to one.
--
--Optional properties:
-- - phy-supply : phandle to a regulator that provides power to VBUS.
--		See ./phy-bindings.txt for details.
--
--Example:
--
--grf: syscon@ff770000 {
--	compatible = "rockchip,rk3366-grf", "syscon", "simple-mfd";
--	#address-cells = <1>;
--	#size-cells = <1>;
--
--...
--
--	u2phy: usb2-phy@700 {
--		compatible = "rockchip,rk3366-usb2phy";
--		reg = <0x700 0x2c>;
--		#clock-cells = <0>;
--		clock-output-names = "sclk_otgphy0_480m";
--
--		u2phy_otg: otg-port {
--			#phy-cells = <0>;
--			interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
--				     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "otg-id", "otg-bvalid", "linestate";
--		};
--
--		u2phy_host: host-port {
--			#phy-cells = <0>;
--			interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
--			interrupt-names = "linestate";
--		};
--	};
--};
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-new file mode 100644
-index 000000000..cb71561a2
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
-@@ -0,0 +1,155 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/phy-rockchip-inno-usb2.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip USB2.0 phy with inno IP block
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - rockchip,px30-usb2phy
-+      - rockchip,rk3228-usb2phy
-+      - rockchip,rk3328-usb2phy
-+      - rockchip,rk3366-usb2phy
-+      - rockchip,rk3399-usb2phy
-+      - rockchip,rv1108-usb2phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clock-output-names:
-+    description:
-+      The usb 480m output clock name.
-+
-+  "#clock-cells":
-+    const: 0
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: phyclk
-+
-+  assigned-clocks:
-+    description:
-+      Phandle of the usb 480m clock.
-+
-+  assigned-clock-parents:
-+    description:
-+      Parent of the usb 480m clock.
-+      Select between usb-phy output 480m and xin24m.
-+      Refer to clk/clock-bindings.txt for generic clock consumer properties.
-+
-+  extcon:
-+    description:
-+      Phandle to the extcon device providing the cable state for the otg phy.
-+
-+  rockchip,usbgrf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Phandle to the syscon managing the 'usb general register files'.
-+      When set the driver will request its phandle as one companion-grf
-+      for some special SoCs (e.g rv1108).
-+
-+  host-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+      interrupts:
-+        description: host linestate interrupt
-+
-+      interrupt-names:
-+        const: linestate
-+
-+      phy-supply:
-+        description:
-+          Phandle to a regulator that provides power to VBUS.
-+          See ./phy-bindings.txt for details.
-+
-+    required:
-+      - "#phy-cells"
-+      - interrupts
-+      - interrupt-names
-+
-+  otg-port:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      "#phy-cells":
-+        const: 0
-+
-+      interrupts:
-+        minItems: 1
-+        maxItems: 3
-+
-+      interrupt-names:
-+        oneOf:
-+          - const: linestate
-+          - const: otg-mux
-+          - items:
-+            - const: otg-bvalid
-+            - const: otg-id
-+            - const: linestate
-+
-+      phy-supply:
-+        description:
-+          Phandle to a regulator that provides power to VBUS.
-+          See ./phy-bindings.txt for details.
-+
-+    required:
-+      - "#phy-cells"
-+      - interrupts
-+      - interrupt-names
-+
-+required:
-+  - compatible
-+  - reg
-+  - clock-output-names
-+  - "#clock-cells"
-+  - "#phy-cells"
-+  - host-port
-+  - otg-port
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3399-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    u2phy0: usb2-phy@e450 {
-+      compatible = "rockchip,rk3399-usb2phy";
-+      reg = <0xe450 0x10>;
-+      clocks = <&cru SCLK_USB2PHY0_REF>;
-+      clock-names = "phyclk";
-+      clock-output-names = "clk_usbphy0_480m";
-+      #clock-cells = <0>;
-+      #phy-cells = <0>;
-+
-+      u2phy0_host: host-port {
-+        #phy-cells = <0>;
-+        interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH 0>;
-+        interrupt-names = "linestate";
-+      };
-+
-+      u2phy0_otg: otg-port {
-+        #phy-cells = <0>;
-+        interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH 0>,
-+                     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH 0>,
-+                     <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH 0>;
-+        interrupt-names = "otg-bvalid", "otg-id", "linestate";
-+      };
-+    };
--- 
-2.11.0
-
+Best Regards,
+Elena. 
 
 _______________________________________________
 linux-arm-kernel mailing list
