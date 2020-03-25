@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1AEC192654
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:57:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEF3119265A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 11:57:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gwtwiU3XYmRNB7/LScqfJoWQQnP/LykG3ZNRRJ1n2vo=; b=BZzioh5/ELMJ8g
-	OE+ihWTRSVTLksQqKwQXF3zofr6OXf6F+FwVaIcVZrN2CXIXKUO02SJG5NjhdJSkLnMwDlCf2YHTS
-	z7XqcyKirGjCSAEf3gjUC4lb7B4AUznAeAf6OZnKfP/ArhEAFJyci1wnXU2U7OmAtulROzV6Bj8qk
-	D2Gapfowf9NY8GU3gIhacCduYMWCWG4X0qUn5qVcXLxB0WV3HbilU2r2LVvF86MrsS+tvUVvFpIAa
-	9Wp0MD0AK8cw1mA1rzsFYHNBoJz66MNnHFdDZAE4VgRdWzKlSr+6abci/XEuPWQSIoXxT7Beblr9G
-	0alP7dJuDxJshGUZIM0w==;
+	List-Owner; bh=00lhXIK0OWrn8ajx6K3ucOTx44J33bIRfOAu98GAkw4=; b=o/TexwV37DU5P9
+	4IiKIEvcHUe3Fd19Uf2SK36YKd6CHctP7DbdahO+rvkeemwTIObC5bFxsSDBuD6j+c1qySWgwQAtM
+	ZvqLMR0h0+0lr+xRSXfgeJV/IRHd0BU8WnAbARd2wNfmqDcVJRppjdzpBScphhDEEVqeEYPwFPirV
+	3P0r0+VlNnhl7ABG6QlilXMT5CYm3BmZ5mEvwemCb4xsLkN8an+DDeVa7cPcVPIV7JgaLC04WRe11
+	5VAwpevmCxvv2dWAV7dDi7eYK18Pk0eH651eCfXhHezyePlRH8+6eebzd3Ab93Z3Hp61WmD7dOIlo
+	rqo9SNzudRwX0Ufe6f+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH3iP-0006Yj-Lc; Wed, 25 Mar 2020 10:56:53 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1jH3iy-0006zu-Cx; Wed, 25 Mar 2020 10:57:28 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH3iG-0006XF-Ni
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 10:56:46 +0000
-IronPort-SDR: sTHCVbld2obo40KlMDeQW7xI4D4SQBh2mx6aRX6vBYycubqtOYtLokZ523K/n2erHnSdcSKynh
- 5BQKmpY1W1Cg==
+ id 1jH3iH-0006XD-9f
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 10:56:47 +0000
+IronPort-SDR: vqoO02HGK5184HtFpl3eFrzytz+yKBt8BrAJVlRgRXVh6JxETXfvBcpZW4m5T3HVecPE5gaNrJ
+ ElW9wdAsFk3w==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
  25 Mar 2020 03:56:43 -0700
-IronPort-SDR: yO4hZWNNwCFbw9Pd0X+9N56gjZ1K5ojZuheAj7d0VDb3c1DFgeV5Guxi1BoMtpkgyojGs2U+Ix
- VeBIegGC6sBg==
+IronPort-SDR: hI+UVz3VTvOFe+u/CY5MUl6QXXQkV2G53hU1tnsEZLNE4Xnr59GuDK3nJk6lIJb8nfIXK16YNZ
+ gm5JUtkxOl9A==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,304,1580803200"; d="scan'208";a="235903898"
+X-IronPort-AV: E=Sophos;i="5.72,304,1580803200"; d="scan'208";a="293310039"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga007.jf.intel.com with ESMTP; 25 Mar 2020 03:56:42 -0700
+ by FMSMGA003.fm.intel.com with ESMTP; 25 Mar 2020 03:56:42 -0700
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1jH3iE-0004RH-4K; Wed, 25 Mar 2020 18:56:42 +0800
-Date: Wed, 25 Mar 2020 18:55:57 +0800
+ id 1jH3iE-0004Qn-2J; Wed, 25 Mar 2020 18:56:42 +0800
+Date: Wed, 25 Mar 2020 18:55:59 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: [PATCH] net: fix boolreturn.cocci warnings
-Message-ID: <20200325105557.GA4015@6d5c83dcba44>
+Subject: [PATCH] net: fix irqf_oneshot.cocci warnings
+Message-ID: <20200325105559.GA4092@6d5c83dcba44>
 References: <202003251849.wLfJ5mOC%lkp@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
@@ -51,20 +51,17 @@ In-Reply-To: <202003251849.wLfJ5mOC%lkp@intel.com>
 X-Patchwork-Hint: ignore
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_035644_823948_FD44B5C6 
-X-CRM114-Status: GOOD (  12.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_035645_461747_7F79C4F6 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,12 +81,15 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: kbuild test robot <lkp@intel.com>
 
-drivers/net/phy/qsfp.c:872:8-9: WARNING: return of 0/1 in function 'sfp_los_event_active' with return type bool
-drivers/net/phy/qsfp.c:877:8-9: WARNING: return of 0/1 in function 'sfp_los_event_inactive' with return type bool
+drivers/net/phy/qsfp.c:1750:8-33: ERROR: Threaded IRQ with no primary handler requested without IRQF_ONESHOT
 
- Return statements in functions returning bool should use
- true/false instead of 1/0.
-Generated by: scripts/coccinelle/misc/boolreturn.cocci
+ Since commit 1c6c69525b40 ("genirq: Reject bogus threaded irq requests")
+ threaded IRQs without a primary handler need to be requested with
+ IRQF_ONESHOT, otherwise the request will fail.
+
+ So pass the IRQF_ONESHOT flag in this case.
+
+Generated by: scripts/coccinelle/misc/irqf_oneshot.cocci
 
 Fixes: e409cdeab751 ("net: add qsfp support                              [*experimental*]")
 Signed-off-by: kbuild test robot <lkp@intel.com>
@@ -99,26 +99,23 @@ tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git cex7
 head:   6edfcc6e759c8dd593c9079525e610919d680ae5
 commit: e409cdeab75156478ac793528742274f6ad4be96 [142/143] net: add qsfp support                              [*experimental*]
 
- qsfp.c |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Please take the patch only if it's a positive warning. Thanks!
+
+ qsfp.c |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 --- a/drivers/net/phy/qsfp.c
 +++ b/drivers/net/phy/qsfp.c
-@@ -869,12 +869,12 @@ static void sfp_sm_link_check_los(struct
+@@ -1748,7 +1748,8 @@ static int qsfp_probe(struct platform_de
+ 		}
  
- static bool sfp_los_event_active(struct qsfp *sfp, unsigned int event)
- {
--	return 0;
-+	return false;
- }
- 
- static bool sfp_los_event_inactive(struct qsfp *sfp, unsigned int event)
- {
--	return 0;
-+	return false;
- }
- 
- static int qsfp_set_tx_disable(struct qsfp *qsfp, unsigned int val)
+ 		err = devm_request_threaded_irq(qsfp->dev, qsfp->gpio_irq[i],
+-						NULL, irq_handler, irq_flags,
++						NULL, irq_handler,
++						irq_flags | IRQF_ONESHOT,
+ 						dev_name(qsfp->dev), qsfp);
+ 		if (err) {
+ 			qsfp->gpio_irq[i] = 0;
 
 _______________________________________________
 linux-arm-kernel mailing list
