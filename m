@@ -2,78 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BF6A192E67
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 17:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56B76192E6F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 17:42:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5CZZ+YCj17sX3iEESHOEGfrT2fCvSufx6eQEhwZvzO4=; b=h1dxVz44Y6y07/
-	BQZimlYlgHH6OrnQPGCtRJiIjfbeER1owxB7YlzvAVDVxMSBq3Pj44lBCGlKo9tflyOEhKhk3lrZ6
-	SmFl0ayKcNXk0L8OId29s2JgowxwMhsUNMbUCDHcETUTti90uLoJHqwBVQs09TUSAXq3wW6+LpvIb
-	joZMKztdPFHkVsHkTREbO8M5ITvyaAUc5JZMoZpR07avJR7qxWlCTux2EwcxEOTsJjmY5BBhVi8aW
-	gGYKq4YGkugAfwoj22wvZ4DHmGqj/XcaLhWXa5i9FGP0XWzxhBPyN7q/iuYxBrhJn6m7VE2q2SPq5
-	whqSb1yccjaz9H6rhcCA==;
+	List-Owner; bh=wSMqSdKblEN7v9doekCOusaVwkUZVDNuntytEy+ko9I=; b=RUmsAATzS+ooX3
+	u7y3Vc3yVb7bmhGeELM5jQJNsvl3Mqmbwx935ZUkhjky7yuL4gvBY6LezhNehrOFGU1W/jnaxaayj
+	kJRXcYLMUVgYk9N8HCpKdAZ4O6TjBgUVRWfhiaBqlxHFluWymI2nFyvU6PI0HxCTU+HWKdOYnqjqK
+	vNsNgw/cVEzskMdCRlj4PFGgk3EDsXmv1+5Mg8tabz2jtTADkW9RZG+3Ns1KQXoXzws7vEkyS0cRd
+	HfJSFPPjUa/2wycGxOsuekEho2k+PEa8kxjiQl2AN7coDqIRcBGQ4WClzozGeJ30S94Ffg/eHV5F5
+	MhKViFSBNEUXkCk9p4cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH94l-000405-CM; Wed, 25 Mar 2020 16:40:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH94Z-0003hx-OB
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 16:40:10 +0000
-Received: from mail-wr1-f52.google.com (mail-wr1-f52.google.com
- [209.85.221.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0FC8920772
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 16:40:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585154407;
- bh=fxYynAVWmVygpq1s+ZOb7gMFUSD4ZayftuRvQKcWQGQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=b9p5mp1RWVp6G6y3hNqHRzmvHqDyo+ITm7MDLyD1o/kxP4GzME7+Wkal/1Ec/6UpS
- UsDt9FESRyDti++ZMuGawI2Y0dl1ogtLwIgml2sPWwyF6UXo1GwkGonzvxQWKWFkrY
- VdWQxzLJTZfGuYaxQ06N8Yl9nQJ+70OAQbaM5zx4=
-Received: by mail-wr1-f52.google.com with SMTP id h15so3962204wrx.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 09:40:06 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3Ebvka8gEJLRCldyxhF4NEWi7L9ORcYB5zgn3dUN07vFAORq6N
- Qyndf4vZNLWt815ZtzVYH7SseXnQT7BW6tCSuWPpBA==
-X-Google-Smtp-Source: ADFU+vtMnqhmFQYyazdHPinmCjVOzAWgVxdfCZVc3UV4oobnqHKJnbJX43L7+E3APqr8J3RlMLh22GXqmZikYmnkNOQ=
-X-Received: by 2002:adf:afdb:: with SMTP id y27mr4411706wrd.208.1585154405381; 
- Wed, 25 Mar 2020 09:40:05 -0700 (PDT)
+	id 1jH96J-0004Ta-UY; Wed, 25 Mar 2020 16:41:55 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jH96B-0004TC-6K; Wed, 25 Mar 2020 16:41:47 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 813823010CF;
+ Wed, 25 Mar 2020 17:41:44 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 665E829A7FACF; Wed, 25 Mar 2020 17:41:44 +0100 (CET)
+Date: Wed, 25 Mar 2020 17:41:44 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [RFC PATCH v4 0/6] arm64: tlb: add support for TTL feature
+Message-ID: <20200325164144.GB20696@hirez.programming.kicks-ass.net>
+References: <20200324134534.1570-1-yezhenyu2@huawei.com>
+ <aaf017a8-3658-fe4d-c0cf-2f45656020af@arm.com>
 MIME-Version: 1.0
-References: <20200320144348.12865-1-geert+renesas@glider.be>
-In-Reply-To: <20200320144348.12865-1-geert+renesas@glider.be>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 25 Mar 2020 17:39:54 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
-Message-ID: <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
-Subject: Re: [PATCH v4] ARM: boot: Obtain start of physical memory from DTB
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_094007_850868_1C52B461 
-X-CRM114-Status: GOOD (  28.19  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <aaf017a8-3658-fe4d-c0cf-2f45656020af@arm.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,233 +52,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
+ guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
+ yuzhao@google.com, maz@kernel.org, suzuki.poulose@arm.com,
+ steven.price@arm.com, arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de,
+ Zhenyu Ye <yezhenyu2@huawei.com>, npiggin@gmail.com,
+ zhangshaokun@hisilicon.com, broonie@kernel.org, rostedt@goodmis.org,
+ prime.zeng@hisilicon.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, xiexiangyou@huawei.com,
+ linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
+ akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 20 Mar 2020 at 15:43, Geert Uytterhoeven
-<geert+renesas@glider.be> wrote:
->
-> Currently, the start address of physical memory is obtained by masking
-> the program counter with a fixed mask of 0xf8000000.  This mask value
-> was chosen as a balance between the requirements of different platforms.
-> However, this does require that the start address of physical memory is
-> a multiple of 128 MiB, precluding booting Linux on platforms where this
-> requirement is not fulfilled.
->
-> Fix this limitation by obtaining the start address from the DTB instead,
-> if available (either explicitly passed, or appended to the kernel).
-> Fall back to the traditional method when needed.
->
-> This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> i.e. not at a multiple of 128 MiB.
->
-> Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
-> v4:
->   - Fix stack location after commit 184bf653a7a452c1 ("ARM:
->     decompressor: factor out routine to obtain the inflated image
->     size"),
->
+On Wed, Mar 25, 2020 at 04:15:58PM +0000, James Morse wrote:
+> Hi Zhenyu,
+> 
+> On 3/24/20 1:45 PM, Zhenyu Ye wrote:
+> > In order to reduce the cost of TLB invalidation, the ARMv8.4 TTL
+> > feature allows TLBs to be issued with a level allowing for quicker
+> > invalidation.  This series provide support for this feature. 
+> > 
+> > Patch 1 and Patch 2 was provided by Marc on his NV series[1] patches,
+> > which detect the TTL feature and add __tlbi_level interface.
+> 
+> How does this interact with THP?
+> (I don't see anything on that in the series.)
+> 
+> With THP, there is no one answer to the size of mapping in a VMA.
+> This is a problem because the arm-arm has in "Translation table level
+> hints" in D5.10.2 of DDI0487E.a:
+> | If an incorrect value for the entry being invalidated by the
+> | instruction is specified in the TTL field, then no entries are
+> | required by the architecture to be invalidated from the TLB.
+> 
+> If we get it wrong, not TLB maintenance occurs!
+> 
+> Unless THP leaves its fingerprints on the vma, I think you can only do
+> this for VMA types that THP can't mess with. (see
+> transparent_hugepage_enabled())
 
-Apologies for the breakage. I was aware of the existence of this
-patch, but I didn't realize it was accessing LC0 early on to find the
-stack pointer value.
+The convention way to deal with that is to issue the TBLI for all
+possible sizes.
 
-Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-
-> v3:
->   - Add Reviewed-by,
->   - Fix ATAGs with appended DTB,
->   - Add Tested-by,
->
-> v2:
->   - Use "cmp r0, #-1", instead of "cmn r0, #1",
->   - Add missing stack setup,
->   - Support appended DTB.
-> ---
->  arch/arm/boot/compressed/Makefile            |  6 ++-
->  arch/arm/boot/compressed/fdt_get_mem_start.c | 52 +++++++++++++++++++
->  arch/arm/boot/compressed/head.S              | 54 +++++++++++++++++++-
->  3 files changed, 110 insertions(+), 2 deletions(-)
->  create mode 100644 arch/arm/boot/compressed/fdt_get_mem_start.c
->
-> diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-> index 9c11e7490292f0e0..82e4cee97cb5d905 100644
-> --- a/arch/arm/boot/compressed/Makefile
-> +++ b/arch/arm/boot/compressed/Makefile
-> @@ -86,12 +86,15 @@ libfdt_objs := $(addsuffix .o, $(basename $(libfdt)))
->  $(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
->         $(call cmd,shipped)
->
-> -$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
-> +$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o fdt_get_mem_start.o): \
->         $(addprefix $(obj)/,$(libfdt_hdrs))
->
->  ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
->  OBJS   += $(libfdt_objs) atags_to_fdt.o
->  endif
-> +ifeq ($(CONFIG_USE_OF),y)
-> +OBJS   += $(libfdt_objs) fdt_get_mem_start.o
-> +endif
->
->  targets       := vmlinux vmlinux.lds piggy_data piggy.o \
->                  lib1funcs.o ashldi3.o bswapsdi2.o \
-> @@ -115,6 +118,7 @@ CFLAGS_fdt.o := $(nossp-flags-y)
->  CFLAGS_fdt_ro.o := $(nossp-flags-y)
->  CFLAGS_fdt_rw.o := $(nossp-flags-y)
->  CFLAGS_fdt_wip.o := $(nossp-flags-y)
-> +CFLAGS_fdt_get_mem_start.o := $(nossp-flags-y)
->
->  ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin \
->              -I$(obj) $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
-> diff --git a/arch/arm/boot/compressed/fdt_get_mem_start.c b/arch/arm/boot/compressed/fdt_get_mem_start.c
-> new file mode 100644
-> index 0000000000000000..2c5ac47f656317ee
-> --- /dev/null
-> +++ b/arch/arm/boot/compressed/fdt_get_mem_start.c
-> @@ -0,0 +1,52 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +
-> +#include <libfdt.h>
-> +
-> +static const void *getprop(const void *fdt, const char *node_path,
-> +                          const char *property)
-> +{
-> +       int offset = fdt_path_offset(fdt, node_path);
-> +
-> +       if (offset == -FDT_ERR_NOTFOUND)
-> +               return NULL;
-> +
-> +       return fdt_getprop(fdt, offset, property, NULL);
-> +}
-> +
-> +static uint32_t get_addr_size(const void *fdt)
-> +{
-> +       const __be32 *addr_len = getprop(fdt, "/", "#address-cells");
-> +
-> +       if (!addr_len) {
-> +               /* default */
-> +               return 1;
-> +       }
-> +
-> +       return fdt32_to_cpu(*addr_len);
-> +}
-> +
-> +/*
-> + * Get the start of physical memory
-> + */
-> +
-> +unsigned long fdt_get_mem_start(const void *fdt)
-> +{
-> +       const __be32 *memory;
-> +       uint32_t addr_size;
-> +
-> +       if (!fdt)
-> +               return -1;
-> +
-> +       if (*(__be32 *)fdt != cpu_to_fdt32(FDT_MAGIC))
-> +               return -1;
-> +
-> +       /* Find the first memory node */
-> +       memory = getprop(fdt, "/memory", "reg");
-> +       if (!memory)
-> +               return -1;
-> +
-> +       /* There may be multiple cells on LPAE platforms */
-> +       addr_size = get_addr_size(fdt);
-> +
-> +       return fdt32_to_cpu(memory[addr_size - 1]);
-> +}
-> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-> index 4f7c6145e31fdc25..e6c06ee19fef2e2d 100644
-> --- a/arch/arm/boot/compressed/head.S
-> +++ b/arch/arm/boot/compressed/head.S
-> @@ -254,8 +254,58 @@ not_angel:
->                 .text
->
->  #ifdef CONFIG_AUTO_ZRELADDR
-> +#ifdef CONFIG_USE_OF
->                 /*
-> -                * Find the start of physical memory.  As we are executing
-> +                * Find the start of physical memory.
-> +                * Try the DTB first, if available.
-> +                */
-> +               adr     r0, LC0
-> +               ldr     r1, [r0]        @ get absolute LC0
-> +               ldr     sp, [r0, #24]   @ get stack location
-> +               sub     r1, r0, r1      @ compute relocation offset
-> +               add     sp, sp, r1      @ apply relocation
-> +
-> +#ifdef CONFIG_ARM_APPENDED_DTB
-> +               /*
-> +                * Look for an appended DTB. If found, use it and
-> +                * move stack away from it.
-> +                */
-> +               ldr     r6, [r0, #12]   @ get &_edata
-> +               add     r6, r6, r1      @ relocate it
-> +               ldmia   r6, {r0, r5}    @ get DTB signature and size
-> +#ifndef __ARMEB__
-> +               ldr     r1, =0xedfe0dd0 @ sig is 0xd00dfeed big endian
-> +               /* convert DTB size to little endian */
-> +               eor     r2, r5, r5, ror #16
-> +               bic     r2, r2, #0x00ff0000
-> +               mov     r5, r5, ror #8
-> +               eor     r5, r5, r2, lsr #8
-> +#else
-> +               ldr     r1, =0xd00dfeed
-> +#endif
-> +               cmp     r0, r1          @ do we have a DTB there?
-> +               bne     1f
-> +
-> +               /* preserve 64-bit alignment */
-> +               add     r5, r5, #7
-> +               bic     r5, r5, #7
-> +               add     sp, sp, r5      @ if so, move stack above DTB
-> +               mov     r0, r6          @ and extract memory start from DTB
-> +               b       2f
-> +
-> +1:
-> +#endif /* CONFIG_ARM_APPENDED_DTB */
-> +
-> +               mov     r0, r8
-> +2:
-> +               bl      fdt_get_mem_start
-> +               mov     r4, r0
-> +               cmp     r0, #-1
-> +               bne     1f
-> +#endif /* CONFIG_USE_OF */
-> +
-> +               /*
-> +                * Fall back to the traditional method.  As we are executing
->                  * without the MMU on, we are in the physical address space.
->                  * We just need to get rid of any offset by aligning the
->                  * address.
-> @@ -273,6 +323,8 @@ not_angel:
->                  */
->                 mov     r4, pc
->                 and     r4, r4, #0xf8000000
-> +
-> +1:
->                 /* Determine final kernel image address. */
->                 add     r4, r4, #TEXT_OFFSET
->  #else
-> --
-> 2.17.1
->
+Power9 has all this, please look there.
 
 _______________________________________________
 linux-arm-kernel mailing list
