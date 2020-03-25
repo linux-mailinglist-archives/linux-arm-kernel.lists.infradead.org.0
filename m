@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D9A919233B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:52:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BED6192340
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Mar 2020 09:52:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P5QGZ4bj2x8LTzTBqPsCW+XVyvlLr9l4a7OHZtLqVA4=; b=AIs/fLIZSN8yQ6
-	EgbFh3WgnBeiXex2GnD5yIVd/bbe2E/0j9oTjD8ct4eRFS5VT9mzlYxUHePeK587TSnIch9Vjj1i/
-	ivJRz1dIgJaX6TjH38EhkGBmygij0vzMCTBuQIGE77KSXQOOop6l0mySNbMLe41B4+pwDdFtzkM3K
-	xIWh2WJUXnZyzs+V8ucGGlUUnNedB+iLq4MIKpAWmwz09VI6AjZ8C/ktszu6uK/tZcgxXN3b3gMez
-	iF2iDrlRePjflOS2yiwcvMVkh4bTNWWfm8Mryr5B/2khE7MWPQBeTqChqxIWp0jrA0BneAiSS/77+
-	PIC/wXn89HmgyiH5Upcg==;
+	List-Owner; bh=6RW7Z1fGuX/cmIXa6TzVHArwCV007mp3caXGqgiCP9M=; b=aQbyYYQx3Ir38F
+	WPR6+2foJ5Jx78LKffRLH86yCW910snfwtBkASpT+r4q4W9veV7Zi8laiXupajsvsnlJxHf1x/ysG
+	SN/nZUdKXnCBBO21WgTHzzv3ge0LHNpF2EMNvo944FrMrh6hz7TsNfwK0F16oNTS9qaYSbZhSweHC
+	w9uY33mT7mmYiuv98f4mMb8dQMgC77Q+r5QWf1QG1rQFp7pr3mOrSUgSfOYR4A0qRIJq9XmPQtcJE
+	7cQnb9vvnelK6S4zg5k4gEe87+Hprfvoyy/8HoRV+XhcIYiColBA1J5vJ7JYpw91DntnL0U5kLwTb
+	r9pwYAYocr9P8laPzynQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH1la-0004Ln-Ms; Wed, 25 Mar 2020 08:52:02 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jH1lx-0004gL-CU; Wed, 25 Mar 2020 08:52:25 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH1kB-0002i3-Va
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:50:44 +0000
-Received: by mail-wm1-x344.google.com with SMTP id a81so1487966wmf.5
+ id 1jH1kD-0002kh-MU
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Mar 2020 08:50:47 +0000
+Received: by mail-wm1-x343.google.com with SMTP id c187so1406550wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 01:50:35 -0700 (PDT)
+ Wed, 25 Mar 2020 01:50:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tEJnMkZw0RJ36/X+ECc1wDu3rwX96mNLlTRyC+ecg4U=;
- b=bLCvRhdgNUMT3Anw+ZukdEJY7tsTiML8vCscb4Bw8kZlknymFU0eZFB6Z7N+e42Aky
- RFni9+355MPUuI0n3O/yROSlTGUvl8joVFXgWfGQtI7+lc2/5QXga4GAN+JPOoOgsDoj
- 9XKnvnEgXuqZYPZBrgLq9TD99faTNJA9owig9SjjIS467wcRIR4oNTkCUkxn/UqkLWlY
- 5f920/fY2JRQgw7ACpU6zBKu//48snTBunQPJA2KH5uUyEyruyeGHMv7tqscX94bC6p1
- njwX2i84u+IU6LmFG7hAJGuXz6Qq6L7wyAYBivn92HY9Bbc/6bw1UQrOgs6FbSRExKq8
- kwwQ==
+ bh=ANDOlCT1ZqrnKgx/+UtkXPnR52K04rx8cZE8y2hTCQU=;
+ b=pgsyudR/D2KpBB4/CqRb3vU07WoAY4c5vp9glayeMsrR3uDiTPhmtEDK+AWoQqkzHQ
+ bvypr/WDimmRzKQ48OxtHMcKAjTT6iIXBdLTWhlFb+93oRxsvpeczFkVeg4aKq/wQ/Je
+ rfl4bK1txMY3ppAZIm4afopOmNjNpExwGRpAeB14dZhpkQZNQb4VbGA0ALzAiWLVotmU
+ +UiL8ZI9SrjEu3Uucu2dCRVRqDazHya8qIot8dJIp1DRUN6vEj9i3TURcaiYWPdGPb7v
+ OTSR7GbpUra2bCrJH7EkC9JQfY3865RiKJi4lJo1XeMHh9yhUeU3NBZvxqC8MdfvsC0R
+ pc5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tEJnMkZw0RJ36/X+ECc1wDu3rwX96mNLlTRyC+ecg4U=;
- b=r2Lba/bdPz9NmbaKEEkBYWM3fJpskAbtOmJBDlfjwHRUGnowPZorsYgb/dKkEDN7sF
- ZD6Jbes7s1tsllMhU/svCQxP+ms7bhozHZVN7SpRjK+XD+K/BpeaphtiVqcDzeJn2xMX
- 8K2cS+UQHSb8WhXLroSUgXrkFaFh8rGDX1Hn++lcwgHkqxrkrn28Go7spU1xgDzCnmyK
- 6PTaxrO8pfNr4zojb89SoaSuC84g2tl/dzvNnXsfjUKj2Oezj1MjhZ9j9VM25MDcwi1Q
- h3jpdiZjJyIOzTaJRX/JKi6ISpAHln2GzIVCdfRCbwIgpbRk1wmMkjKQN7vVk2uFsIAV
- G4Vg==
-X-Gm-Message-State: ANhLgQ0sgU/dGozOUV9VU0PYe0OEwgd22lQNFDqyqihu01W2Chwnq7RS
- yliumZuADx3VDsNIvPbV0wc67g==
-X-Google-Smtp-Source: ADFU+vvqKHVyOxY9TW3t5po58LCSxbmCyt+v7ALL7HAGzLOS3pQtx9Y1bFlqx8jsZeAObBhXZihU5Q==
-X-Received: by 2002:a1c:96cf:: with SMTP id y198mr2333342wmd.186.1585126234648; 
- Wed, 25 Mar 2020 01:50:34 -0700 (PDT)
+ bh=ANDOlCT1ZqrnKgx/+UtkXPnR52K04rx8cZE8y2hTCQU=;
+ b=b/po8l49Kn58UMnCHbfMiLRT3021BLOwlIVrViXrAXgJlH+3PAHwzNqdRAxeR2tJwz
+ w20sypeQGYDjMvFOEdNcNP1ZEHRfkLuWZH8O9f6j87FxA9QFB3TT+r3PCqzEQuyEuI/W
+ 2rBm4FdLHgGYgSn1kWbMUmrIt3952nu4kl9Sg74icFpaRXGYR57b9AzppaK7b7opdiJZ
+ 98yJ+bIodalSv9pGVWuvCy3JPNlRvZCBiPEUf7TSVrA14g27nWqoqI5Pcsb/00aDMUKO
+ DIRmAGwNrcbPiH2LmArbtLyFt/i/2/XtwkgYgqXh95nq65mJBXlFdn9Q2sfbcCfZSqjm
+ e0Uw==
+X-Gm-Message-State: ANhLgQ1gt6Xdaz/7iN9s64a3cw0vt9uR5xVmlqXW+cKhFL+Pj7CiadYE
+ gJPAWTMA+FfeuZ3kY1husTp/qQ==
+X-Google-Smtp-Source: ADFU+vur2MxTtHCjMfpHGxgRx4ZUbLJ6QSkqLw6sapP5tKS8pwjf38c2XDZiJmEAsfp/QTuirs7tBQ==
+X-Received: by 2002:a1c:81:: with SMTP id 123mr2218819wma.97.1585126236258;
+ Wed, 25 Mar 2020 01:50:36 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.33
+ by smtp.gmail.com with ESMTPSA id o16sm33892229wrs.44.2020.03.25.01.50.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 01:50:33 -0700 (PDT)
+ Wed, 25 Mar 2020 01:50:35 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: daniel@ffwll.ch,
 	dri-devel@lists.freedesktop.org
-Subject: [PATCH v4 4/8] drm/meson: crtc: handle commit of Amlogic FBC frames
-Date: Wed, 25 Mar 2020 09:50:21 +0100
-Message-Id: <20200325085025.30631-5-narmstrong@baylibre.com>
+Subject: [PATCH v4 5/8] drm/fourcc: amlogic: Add modifier definitions for
+ Memory Saving option
+Date: Wed, 25 Mar 2020 09:50:22 +0100
+Message-Id: <20200325085025.30631-6-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200325085025.30631-1-narmstrong@baylibre.com>
 References: <20200325085025.30631-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_015036_023779_81372281 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200325_015037_757380_3B2621CB 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,158 +104,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the VD1 Amlogic FBC decoder is now configured by the overlay driver,
-commit the right registers to decode the Amlogic FBC frame.
+Amlogic uses a proprietary lossless image compression protocol and format
+for their hardware video codec accelerators, either video decoders or
+video input encoders.
+
+An option exist changing the layout superblock size to save memory when
+using 8bit components pixels size.
+
+The layout options starts at the 8th bit, keeping the first 8bits of the
+modifiers bits to define the layout.
 
 Tested-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_crtc.c | 118 +++++++++++++++++++++--------
- 1 file changed, 88 insertions(+), 30 deletions(-)
+ include/uapi/drm/drm_fourcc.h | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/drivers/gpu/drm/meson/meson_crtc.c b/drivers/gpu/drm/meson/meson_crtc.c
-index e66b6271ff58..d6dcfd654e9c 100644
---- a/drivers/gpu/drm/meson/meson_crtc.c
-+++ b/drivers/gpu/drm/meson/meson_crtc.c
-@@ -291,6 +291,10 @@ static void meson_crtc_enable_vd1(struct meson_drm *priv)
- 			    VPP_VD1_PREBLEND | VPP_VD1_POSTBLEND |
- 			    VPP_COLOR_MNG_ENABLE,
- 			    priv->io_base + _REG(VPP_MISC));
+diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
+index 6564813d2f7a..84edc5d69613 100644
+--- a/include/uapi/drm/drm_fourcc.h
++++ b/include/uapi/drm/drm_fourcc.h
+@@ -819,6 +819,12 @@ extern "C" {
+  * per component YCbCr 420, single plane :
+  * - DRM_FORMAT_YUV420_8BIT
+  * - DRM_FORMAT_YUV420_10BIT
++ *
++ * The first 8 bits of the mode defines the layout, then the following 8 bits
++ * defined the options changing the layout.
++ *
++ * Not all combinations are valid, and different SoCs may support different
++ * combinations of layout and options.
+  */
+ #define DRM_FORMAT_MOD_AMLOGIC_FBC(__modes) fourcc_mod_code(AMLOGIC, __modes)
+ 
+@@ -834,6 +840,22 @@ extern "C" {
+  */
+ #define DRM_FORMAT_MOD_AMLOGIC_FBC_LAYOUT_BASIC		(1ULL << 0)
+ 
++/*
++ * Amlogic FBC Layout Options
++ */
 +
-+	writel_bits_relaxed(VIU_CTRL0_AFBC_TO_VD1,
-+			    priv->viu.vd1_afbc ? VIU_CTRL0_AFBC_TO_VD1 : 0,
-+			    priv->io_base + _REG(VIU_MISC_CTRL0));
++/*
++ * Amlogic FBC Memory Saving mode
++ *
++ * Indicates the storage is packed when pixel size is multiple of word
++ * boudaries, i.e. 8bit should be stored in this mode to save allocation
++ * memory.
++ *
++ * This mode reduces body layout to 3072 bytes per 64x32 superblock with
++ * the basic layout.
++ */
++#define DRM_FORMAT_MOD_AMLOGIC_FBC_MEM_SAVING	(1ULL << 8)
++
+ #if defined(__cplusplus)
  }
- 
- static void meson_g12a_crtc_enable_vd1(struct meson_drm *priv)
-@@ -300,6 +304,10 @@ static void meson_g12a_crtc_enable_vd1(struct meson_drm *priv)
- 		       VD_BLEND_POSTBLD_SRC_VD1 |
- 		       VD_BLEND_POSTBLD_PREMULT_EN,
- 		       priv->io_base + _REG(VD1_BLEND_SRC_CTRL));
-+
-+	writel_relaxed(priv->viu.vd1_afbc ?
-+		       (VD1_AXI_SEL_AFBC | AFBC_VD1_SEL) : 0,
-+		       priv->io_base + _REG(VD1_AFBCD0_MISC_CTRL));
- }
- 
- void meson_crtc_irq(struct meson_drm *priv)
-@@ -383,36 +391,86 @@ void meson_crtc_irq(struct meson_drm *priv)
- 	/* Update the VD1 registers */
- 	if (priv->viu.vd1_enabled && priv->viu.vd1_commit) {
- 
--		switch (priv->viu.vd1_planes) {
--		case 3:
--			meson_canvas_config(priv->canvas,
--					    priv->canvas_id_vd1_2,
--					    priv->viu.vd1_addr2,
--					    priv->viu.vd1_stride2,
--					    priv->viu.vd1_height2,
--					    MESON_CANVAS_WRAP_NONE,
--					    MESON_CANVAS_BLKMODE_LINEAR,
--					    MESON_CANVAS_ENDIAN_SWAP64);
--		/* fallthrough */
--		case 2:
--			meson_canvas_config(priv->canvas,
--					    priv->canvas_id_vd1_1,
--					    priv->viu.vd1_addr1,
--					    priv->viu.vd1_stride1,
--					    priv->viu.vd1_height1,
--					    MESON_CANVAS_WRAP_NONE,
--					    MESON_CANVAS_BLKMODE_LINEAR,
--					    MESON_CANVAS_ENDIAN_SWAP64);
--		/* fallthrough */
--		case 1:
--			meson_canvas_config(priv->canvas,
--					    priv->canvas_id_vd1_0,
--					    priv->viu.vd1_addr0,
--					    priv->viu.vd1_stride0,
--					    priv->viu.vd1_height0,
--					    MESON_CANVAS_WRAP_NONE,
--					    MESON_CANVAS_BLKMODE_LINEAR,
--					    MESON_CANVAS_ENDIAN_SWAP64);
-+		if (priv->viu.vd1_afbc) {
-+			writel_relaxed(priv->viu.vd1_afbc_head_addr,
-+				       priv->io_base +
-+				       _REG(AFBC_HEAD_BADDR));
-+			writel_relaxed(priv->viu.vd1_afbc_body_addr,
-+				       priv->io_base +
-+				       _REG(AFBC_BODY_BADDR));
-+			writel_relaxed(priv->viu.vd1_afbc_en,
-+				       priv->io_base +
-+				       _REG(AFBC_ENABLE));
-+			writel_relaxed(priv->viu.vd1_afbc_mode,
-+				       priv->io_base +
-+				       _REG(AFBC_MODE));
-+			writel_relaxed(priv->viu.vd1_afbc_size_in,
-+				       priv->io_base +
-+				       _REG(AFBC_SIZE_IN));
-+			writel_relaxed(priv->viu.vd1_afbc_dec_def_color,
-+				       priv->io_base +
-+				       _REG(AFBC_DEC_DEF_COLOR));
-+			writel_relaxed(priv->viu.vd1_afbc_conv_ctrl,
-+				       priv->io_base +
-+				       _REG(AFBC_CONV_CTRL));
-+			writel_relaxed(priv->viu.vd1_afbc_size_out,
-+				       priv->io_base +
-+				       _REG(AFBC_SIZE_OUT));
-+			writel_relaxed(priv->viu.vd1_afbc_vd_cfmt_ctrl,
-+				       priv->io_base +
-+				       _REG(AFBC_VD_CFMT_CTRL));
-+			writel_relaxed(priv->viu.vd1_afbc_vd_cfmt_w,
-+				       priv->io_base +
-+				       _REG(AFBC_VD_CFMT_W));
-+			writel_relaxed(priv->viu.vd1_afbc_mif_hor_scope,
-+				       priv->io_base +
-+				       _REG(AFBC_MIF_HOR_SCOPE));
-+			writel_relaxed(priv->viu.vd1_afbc_mif_ver_scope,
-+				       priv->io_base +
-+				       _REG(AFBC_MIF_VER_SCOPE));
-+			writel_relaxed(priv->viu.vd1_afbc_pixel_hor_scope,
-+				       priv->io_base+
-+				       _REG(AFBC_PIXEL_HOR_SCOPE));
-+			writel_relaxed(priv->viu.vd1_afbc_pixel_ver_scope,
-+				       priv->io_base +
-+				       _REG(AFBC_PIXEL_VER_SCOPE));
-+			writel_relaxed(priv->viu.vd1_afbc_vd_cfmt_h,
-+				       priv->io_base +
-+				       _REG(AFBC_VD_CFMT_H));
-+		} else {
-+			switch (priv->viu.vd1_planes) {
-+			case 3:
-+				meson_canvas_config(priv->canvas,
-+						    priv->canvas_id_vd1_2,
-+						    priv->viu.vd1_addr2,
-+						    priv->viu.vd1_stride2,
-+						    priv->viu.vd1_height2,
-+						    MESON_CANVAS_WRAP_NONE,
-+						    MESON_CANVAS_BLKMODE_LINEAR,
-+						    MESON_CANVAS_ENDIAN_SWAP64);
-+			/* fallthrough */
-+			case 2:
-+				meson_canvas_config(priv->canvas,
-+						    priv->canvas_id_vd1_1,
-+						    priv->viu.vd1_addr1,
-+						    priv->viu.vd1_stride1,
-+						    priv->viu.vd1_height1,
-+						    MESON_CANVAS_WRAP_NONE,
-+						    MESON_CANVAS_BLKMODE_LINEAR,
-+						    MESON_CANVAS_ENDIAN_SWAP64);
-+			/* fallthrough */
-+			case 1:
-+				meson_canvas_config(priv->canvas,
-+						    priv->canvas_id_vd1_0,
-+						    priv->viu.vd1_addr0,
-+						    priv->viu.vd1_stride0,
-+						    priv->viu.vd1_height0,
-+						    MESON_CANVAS_WRAP_NONE,
-+						    MESON_CANVAS_BLKMODE_LINEAR,
-+						    MESON_CANVAS_ENDIAN_SWAP64);
-+			}
-+
-+			writel_relaxed(0, priv->io_base + _REG(AFBC_ENABLE));
- 		}
- 
- 		writel_relaxed(priv->viu.vd1_if0_gen_reg,
+ #endif
 -- 
 2.22.0
 
