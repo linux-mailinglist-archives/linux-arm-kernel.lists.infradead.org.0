@@ -2,110 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB368194B34
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 23:05:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D44E1194B1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 23:03:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7+2KInTFvT3apRGkBrus/KiCekk5pFCypkXgl+xeXus=; b=gGyz1HccF5iyaW
-	eTTocpBnLarVsYrhbj4or7SVn0PEPM5E0+11bHGd69leSDNzl5ecCV5TrOYYaa6gRPLLg4Eosxwbs
-	0CoOUl25xuPacUZwV6LzM2HDqckTllSUQndOgqTT9hMSWVwMu0bm1WVj37N+PwYIN6L9c5yJiI62p
-	yZWnPNJwM23iFMQ6vNpuFRh51nqtna7Q1HKQ+uPvOqOY2O8keKDGDATRWzYKHE0nEpNJAtj3VGSij
-	2RrCkUM7/aFvmErLIs8UXZ+zEUoUj4AAkEPl1tC+XdXH++MezYOQAdrnce8HbvKQmaxpfAnOogj/N
-	FWaM7Ero03KGAfSSSJSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QZY6Zor3SBibetepAE6RiBtxwkQwUGVdycnVu9QnVoc=; b=jyJz6ArjWIWLJX
+	5QY88HY/E+h69rs3hoQgfarCqZ93RxXLVZ+HGN7lWENg1ckpqFQG9vlPVs2JGymLq63bosNCNr415
+	SNtDOiyYbI8FROBbJHQ7p1A8OV+6Uw67Hg/QFqbpBBEBnBLWkAJ+kdxLEC9H5d411qARo8Q/ZsyGT
+	3regX8Ywne8qEzqV7MyvaEZKg+UlPd25E7gLRfsTw4oYhVGipilfA2UlFNqXQmI71otNLBhe+zlJ0
+	bcX0XahtNt+quqZWMHmqxFqj7LUV8pQIye3FzBylesabDa9zBlWrbN1iW6cPqywyzLgayvx/QXMv1
+	7SSDFUEXyESP6WTofeYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHacn-0005Fc-My; Thu, 26 Mar 2020 22:05:17 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jHaai-0003Uq-6t; Thu, 26 Mar 2020 22:03:08 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHaby-0004qR-J2; Thu, 26 Mar 2020 22:04:28 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02QLn98F086088;
- Thu, 26 Mar 2020 21:56:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=jJlpHWqDgAaQnn+x/AibIAVJw425RNnEJVeE/H96C6Q=;
- b=DkZIPKkvMhi7MgJ7A6372ctDD6ur875QCwmr9LjM6f/gcN5OLsYztXi/9wp7FD338Eh1
- BcpAaYJlJsPca1+YzPWnvyZLl0/l9jzlAO26D9M2lRz/YnxIOtavH2bdzDl78rbNS7QS
- w/70j06rpqsxG+rvW1byAPFer6qmmn6ntz8ZtvxuNNNNHPQ6CcnDnqC0fhG48N9veZVg
- BCfsiKmD0CdRGaJja5RXf7JXI4W1+6Wfb9/4o4noftsF2yrL4eKSp0J70hpbbeGCvHbP
- j84RfZbN8C8lsTDgCFGpBO0ICKX/8T12IimZxxtb9mIqtc54TXgPLYw1Bv1mXgDOPyi2 vQ== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by aserp2120.oracle.com with ESMTP id 2ywavmjcja-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 26 Mar 2020 21:56:24 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02QLpI7M027652;
- Thu, 26 Mar 2020 21:56:24 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3030.oracle.com with ESMTP id 2yxw4ufgb2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 26 Mar 2020 21:56:23 +0000
-Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02QLuAlh008996;
- Thu, 26 Mar 2020 21:56:10 GMT
-Received: from [192.168.1.206] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 26 Mar 2020 14:56:10 -0700
-Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Dave Hansen <dave.hansen@intel.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-2-mike.kravetz@oracle.com>
- <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
- <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
- <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <530e6e11-ad1a-55bc-e61e-9da6eb7fea21@oracle.com>
-Date: Thu, 26 Mar 2020 14:56:07 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jHaaW-0003T6-Pi
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 22:02:58 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <afa@pengutronix.de>)
+ id 1jHaaP-0006Dh-MO; Thu, 26 Mar 2020 23:02:49 +0100
+Received: from afa by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <afa@pengutronix.de>)
+ id 1jHaaO-00088r-6A; Thu, 26 Mar 2020 23:02:48 +0100
+From: Ahmad Fatoum <a.fatoum@pengutronix.de>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2 1/8] ARM: dts: stm32: enable stm32mp157's &gpu by default
+Date: Thu, 26 Mar 2020 23:02:05 +0100
+Message-Id: <20200326220213.28632-1-a.fatoum@pengutronix.de>
+X-Mailer: git-send-email 2.26.0.rc2
 MIME-Version: 1.0
-In-Reply-To: <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- suspectscore=2
- spamscore=0 mlxlogscore=999 adultscore=0 phishscore=0 mlxscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2003260159
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- malwarescore=0
- priorityscore=1501 mlxscore=0 bulkscore=0 clxscore=1011 impostorscore=0
- phishscore=0 suspectscore=2 mlxlogscore=999 spamscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2003260159
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: afa@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_150426_747274_2E7B307D 
-X-CRM114-Status: GOOD (  19.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200326_150256_831966_17BF29BA 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,56 +66,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
- Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
- "David S.Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/18/20 4:36 PM, Dave Hansen wrote:
-> On 3/18/20 3:52 PM, Mike Kravetz wrote:
->> Sounds good.  I'll incorporate those changes into a v2, unless someone
->> else with has a different opinion.
->>
->> BTW, this patch should not really change the way the code works today.
->> It is mostly a movement of code.  Unless I am missing something, the
->> existing code will always allow setup of PMD_SIZE hugetlb pages.
-> 
-> Hah, I totally skipped over the old code in the diff.
-> 
-> It looks like we'll disable hugetblfs *entirely* if PSE isn't supported.
->  I think this is actually wrong, but nobody ever noticed.  I think you'd
-> have to be running as a guest under a hypervisor that's lying about PSE
-> not being supported *and* care about 1GB pages.  Nobody does that.
+In the original stm32mp157c.dtsi, the GPU was disabled as some SoC
+variants lacked a GPU. We now have separate a dtsi for each SoC
+variant and variants without a GPU lack the node altogether.
 
-Actually, !PSE will disable hugetlbfs a little later in the boot process.
-You are talking about hugepages_supported() correct?
+As we need no board support for using the GPU, enable it by default
+and while at it remove the now redundant status = "okay" in existing
+board device trees.
 
-I think something really bad could happen in this situation (!PSE and
-X86_FEATURE_GBPAGES).  When parsing 'hugepages=' for gigantic pages we
-immediately allocate from bootmem.  This happens before later checks in
-hugetlb_init for hugepages_supported().  So, I think we would end up
-allocating GB pages from bootmem and not be able to use or free them. :(
+Suggested-by: Lucas Stach <l.stach@pengutronix.de>
+Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
+---
+v1 -> v2:
+  - New Patch
+---
+ arch/arm/boot/dts/stm32mp157.dtsi            | 1 -
+ arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi | 4 ----
+ arch/arm/boot/dts/stm32mp157c-ed1.dts        | 1 -
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi       | 1 -
+ 4 files changed, 7 deletions(-)
 
-Perhaps it would be best to check hugepages_supported() when parsing
-hugetlb command line options.  If not enabled, throw an error.  This
-will be much easier to do after moving all command line parsing to
-arch independent code.
-
-Is that a sufficient way to address this concern?  I think it is a good
-change in any case.
+diff --git a/arch/arm/boot/dts/stm32mp157.dtsi b/arch/arm/boot/dts/stm32mp157.dtsi
+index 3f0a4a91cce6..5e733cd16ff9 100644
+--- a/arch/arm/boot/dts/stm32mp157.dtsi
++++ b/arch/arm/boot/dts/stm32mp157.dtsi
+@@ -15,7 +15,6 @@ gpu: gpu@59000000 {
+ 			clocks = <&rcc GPU>, <&rcc GPU_K>;
+ 			clock-names = "bus" ,"core";
+ 			resets = <&rcc GPU_R>;
+-			status = "disabled";
+ 		};
+ 
+ 		dsi: dsi@5a000000 {
+diff --git a/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
+index f81dc3134135..f97e0d2ecf17 100644
+--- a/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
++++ b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
+@@ -97,10 +97,6 @@ &dts {
+ 	status = "okay";
+ };
+ 
+-&gpu {
+-	status = "okay";
+-};
+-
+ &i2c4 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2c4_pins_a>;
+diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+index 9d2592db630c..e9aad3e101ac 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+@@ -126,7 +126,6 @@ &dts {
+ 
+ &gpu {
+ 	contiguous-area = <&gpu_reserved>;
+-	status = "okay";
+ };
+ 
+ &i2c4 {
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+index d946e0a02f5c..558a91a6962b 100644
+--- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+@@ -137,7 +137,6 @@ phy0: ethernet-phy@0 {
+ 
+ &gpu {
+ 	contiguous-area = <&gpu_reserved>;
+-	status = "okay";
+ };
+ 
+ &i2c1 {
 -- 
-Mike Kravetz
+2.26.0.rc2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
