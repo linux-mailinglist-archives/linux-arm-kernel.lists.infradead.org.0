@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE5DB194050
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:50:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64134194053
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:50:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KpLLY8annnWqfdb2E0uq5ps0dye3ADscp1YTuQQd+fo=; b=HqPkMsrgjdNNNb
-	aZodKhVOIHO7yhfYgM6GfwUME64P3U6B+0KKwAuUKXaKHTwgR5ZLpTCYWPTGPAhyLugtr2MqqhV9Q
-	Hvoj0/2kCH2XrAzgWPNDGB60QvsdF8FV94nGT7lz3ojOKlDOjpt7RX7B65spmo9HwrRtSTFGRiNWb
-	ake/zgldF1Qaw2Z459Ht57E0LUhy8lG1Asg+s5/ZNYDXkHUG5mKMcz+DYNfSzxMtnLCmZ40Q2opXq
-	PBG0ukM4vQ1+M2Pipj5E4kGiHslqyF1gd+88NK2F/HBGFsjt5AIBSDhJ/omXYNeifg02kV63QvwT7
-	2ZGUVvMwKL5cd+pefGdA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=f9abQXMCHJxxmTePyO/nERF7oweF+r+BEzxz4hMlVkU=; b=hVx
+	gLairYP3O+MvfMeZ0KWUaV8Qm4KByHN2RFtoehOq5j4gYC9I3V4FIWsPEppRzSulP9C+mIQlDp4FU
+	1emcGRrcbPokBiLSPhJoLtatQZh4fVxYl/tPek2jfaTVuBZPeElIEPNFBfTwWV9Wi3pokDE2sVBgx
+	6ZpA2k/IeSrjxa0s5UhTwWMGo4JpMP5SAv/OiJoBXIjPvplznEPGDF5AIpvr2e1b8X9tjputEEfzF
+	+VodpBmh1+IcwCsp2W+0RwNpTlJiHHs8JprrkDiCCi6iLpMSdJu4aib5EHzsffhvNJjQMPGqI0W8i
+	ssSREenRvoOeqWiBweVsFf4Rs6Ic36Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHStR-0001jo-Qz; Thu, 26 Mar 2020 13:49:57 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jHSts-0002ZL-Cg; Thu, 26 Mar 2020 13:50:24 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHSpA-0005rs-60
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 13:45:36 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a81so7049792wmf.5
+ id 1jHStZ-00025U-98
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 13:50:07 +0000
+Received: by mail-qk1-x744.google.com with SMTP id k13so6418401qki.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 06:45:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=67sFvVtkG1ivlSk+fGwbgHaYe6cmIRn/pWHBZ0lu9g4=;
- b=bLdXR/wJazPg41YLpiPbUokG5vLuO47L/bv5lHhqgJwrXrKPuoF0CfDbTzt/pL6oYN
- AZ9NRRYVws2mK6JuK8ESpJ17a5pZ64yHZJcKdREbVXQqnJ1fXHXuOkYPk0QCqIyv8R1T
- rwXFCFPgXp6K2IOjK5EZ9RuQ7rs90tLFLUbJtLEo5oPez3u9GZzC6jW2sVgDG7uhqc5Z
- YymYWEgfSOFN/aU0Vrgw/HxL+faw5cRtFrKVRbIfu/Sw9MZsx4wbUSomIWMWweLYd9VG
- SPCllFmJWsNce0I9nnmXjneBmPa3dFE1djhJ35yMnqVKWNXI37dnfjvlg3UeJBQgMbc6
- wkcQ==
+ Thu, 26 Mar 2020 06:50:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=0pLzXfJi9LlMFVE7Esy00Rw9tYZaCuA9gshtlzVvIO8=;
+ b=pwdhwqTW0zm4xEsc0DD/pfatsNZmIGb51Fmj3tDNgMnJAcJs5rkfgba1zlAeii4/v0
+ 8qV/lmOSsP3YQAyMYnJ1iUN2n9S+g1AAJ7mrtM3VLla5znt6WireWKphbV7AhgJC0ULj
+ mnZ2d2JoI4O7B0dUuX2ZdQ+b2DxToyTjEkn5ztyyDhhtvcUW6M6DDv6x032ROEnbsnR8
+ FobernUt1IvlIitbBipUECS5j5gszSd0rwZY6wrL1z/d2NFLMVpSEGDr9KlIJxTY624r
+ Mdjq5HBv7tu/yWOO310ZHREk8/TYZKqwcuFlwV0MpN/W7fC2iU5CbifqIueoKTv46qw0
+ 8a4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=67sFvVtkG1ivlSk+fGwbgHaYe6cmIRn/pWHBZ0lu9g4=;
- b=XQXh3cf+/Q6g44WXnwogBxIjWR9lFJSHLVtbLvF7EqAzRUIwOAyypS/prUlxz5vTJN
- O8mt9FdGiWLfhbEmrpLZQvflf08pmS6tQpAD3llbJDViDJzyQe381yI+yEsz/jiecyLE
- x/hCJby/uzD6GKXJV+Ib0C0II0lSsZ27YqP9psK0Zy5ZpJziN8q4BrptWQqPGjswOKGY
- byHiAVk4PuaorW3CN22a0CpiBlgvnSSpiljOJsTUJ/h9uCqvjzOd0EYv1CAZap8hCvMs
- sXkPjibNGQtKDWvm3JjB3MPfR6i4qWaxxrXFSgd80aR9Pq7/yLf+3DnaP77KKlhvablb
- gjgA==
-X-Gm-Message-State: ANhLgQ1iqlqqOqrVWyL5/yBkxDNNKNG32IE4xLKlwAqsO6uz9+J17JzM
- 2MQUMzuwEYiFOI4XIh/dP+V68Q==
-X-Google-Smtp-Source: ADFU+vuHF3B+GqiyYh0z892h7eeFlpwGJIfm9AgAVwf3x4ExWuzFRA51gjXfmXCgwh5Dcacvi6Cv/A==
-X-Received: by 2002:a7b:c20d:: with SMTP id x13mr65827wmi.52.1585230329464;
- Thu, 26 Mar 2020 06:45:29 -0700 (PDT)
-Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id h29sm4079617wrc.64.2020.03.26.06.45.28
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=0pLzXfJi9LlMFVE7Esy00Rw9tYZaCuA9gshtlzVvIO8=;
+ b=N+U4Rn/H10PM8Nl65qdBVjPRP9J3NDl7vPqcjREcXPYdwSm090LPT8cdHsTdwOIIeo
+ GrYeHyPmvEFE9qBMpXdlkZKrIoMeKvdrTZI18bxlpPsvs+bIgruqG6ieud597c7M01vp
+ lOiHK+3Y/mJUwqVtW/57luhdiC974lAc1TiDn7qaezKppvzplvQWl9sG7oISCLXUOUKL
+ pOaE8jAOGFHKn5C+b5YZMUH4944N7H6+XXLVEATDTH3xASXOiXuzFZRMVsO9pRa+G1FW
+ xpXxiEuWnfG4xTLAXzWXjzwqh5Sk95vFujeXJECqsRskDVNH+oxKeeRhPrBvtaOUE6yD
+ OV0A==
+X-Gm-Message-State: ANhLgQ3Tcz15BG6+/4dvU6uV9voI/WXGXQbyNMmhVzw4wMWGzWQwTUL4
+ VkI1OhDkFl7kVFkwtiX9R70=
+X-Google-Smtp-Source: ADFU+vseBqP6siqGIv0yNdlm3aVk0MlNbtsgKQL19TGLELcnCDWw9voSgDp4l+OshtnahGFYfOYmsg==
+X-Received: by 2002:ae9:edc4:: with SMTP id c187mr8266098qkg.369.1585230603621; 
+ Thu, 26 Mar 2020 06:50:03 -0700 (PDT)
+Received: from localhost.localdomain ([2804:14c:482:5bb::4])
+ by smtp.gmail.com with ESMTPSA id e2sm1353925qkb.112.2020.03.26.06.50.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 06:45:29 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: kishon@ti.com, balbi@kernel.org, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com, devicetree@vger.kernel.org
-Subject: [PATCH v2 14/14] dt-bindings: usb: dwc3: remove old DWC3 wrapper
-Date: Thu, 26 Mar 2020 14:45:06 +0100
-Message-Id: <20200326134507.4808-15-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200326134507.4808-1-narmstrong@baylibre.com>
-References: <20200326134507.4808-1-narmstrong@baylibre.com>
-MIME-Version: 1.0
+ Thu, 26 Mar 2020 06:50:02 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [RFC PATCH] ARM: dts: imx27-phytec-phycard-s-rdk: Fix the I2C1
+ pinctrl entries
+Date: Thu, 26 Mar 2020 10:49:56 -0300
+Message-Id: <20200326134956.21868-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_064533_827766_2B8D81C6 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_065005_385139_8D0A1E1B 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,76 +94,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ s.riedmueller@phytec.de, kernel@pengutronix.de, c.hemp@phytec.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+The I2C2 pins are already used and the following errors are seen:
 
-There is now an updated bindings for these SoCs making the old
-compatible obsolete.
+imx27-pinctrl 10015000.iomuxc: pin MX27_PAD_I2C2_SDA already requested by 10012000.i2c; cannot claim for 1001d000.i2c
+imx27-pinctrl 10015000.iomuxc: pin-69 (1001d000.i2c) status -22
+imx27-pinctrl 10015000.iomuxc: could not request pin 69 (MX27_PAD_I2C2_SDA) from group i2c2grp  on device 10015000.iomuxc
+imx-i2c 1001d000.i2c: Error applying setting, reverse things back
+imx-i2c: probe of 1001d000.i2c failed with error -22
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Fix it by adding the correct I2C1 IOMUX entries for the pinctrl_i2c1 group.
+
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- .../devicetree/bindings/usb/amlogic,dwc3.txt  | 42 -------------------
- 1 file changed, 42 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
+Hi,
 
-diff --git a/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt b/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
-deleted file mode 100644
-index 9a8b631904fd..000000000000
---- a/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
-+++ /dev/null
-@@ -1,42 +0,0 @@
--Amlogic Meson GX DWC3 USB SoC controller
--
--Required properties:
--- compatible:	depending on the SoC this should contain one of:
--			* amlogic,meson-axg-dwc3
--			* amlogic,meson-gxl-dwc3
--- clocks:	a handle for the "USB general" clock
--- clock-names:	must be "usb_general"
--- resets:	a handle for the shared "USB OTG" reset line
--- reset-names:	must be "usb_otg"
--
--Required child node:
--A child node must exist to represent the core DWC3 IP block. The name of
--the node is not important. The content of the node is defined in dwc3.txt.
--
--PHY documentation is provided in the following places:
--- Documentation/devicetree/bindings/phy/meson-gxl-usb2-phy.txt
--- Documentation/devicetree/bindings/phy/meson-gxl-usb3-phy.txt
--
--Example device nodes:
--		usb0: usb@ff500000 {
--			compatible = "amlogic,meson-axg-dwc3";
--			#address-cells = <2>;
--			#size-cells = <2>;
--			ranges;
--
--			clocks = <&clkc CLKID_USB>;
--			clock-names = "usb_general";
--			resets = <&reset RESET_USB_OTG>;
--			reset-names = "usb_otg";
--
--			dwc3: dwc3@ff500000 {
--				compatible = "snps,dwc3";
--				reg = <0x0 0xff500000 0x0 0x100000>;
--				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
--				dr_mode = "host";
--				maximum-speed = "high-speed";
--				snps,dis_u2_susphy_quirk;
--				phys = <&usb3_phy>, <&usb2_phy0>;
--				phy-names = "usb2-phy", "usb3-phy";
--			};
--		};
+I don't have access to this board, nor to its schematics to confirm.
+
+Noticed this error at:
+https://storage.kernelci.org/next/master/next-20200326/arm/imx_v4_v5_defconfig/gcc-8/lab-pengutronix/boot-imx27-phytec-phycard-s-rdk.html
+
+Please help to confirm.
+
+ arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+index 0cd75dadf292..188639738dc3 100644
+--- a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
++++ b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+@@ -75,8 +75,8 @@
+ 	imx27-phycard-s-rdk {
+ 		pinctrl_i2c1: i2c1grp {
+ 			fsl,pins = <
+-				MX27_PAD_I2C2_SDA__I2C2_SDA 0x0
+-				MX27_PAD_I2C2_SCL__I2C2_SCL 0x0
++				MX27_PAD_I2C_DATA__I2C_DATA 0x0
++				MX27_PAD_I2C_CLK__I2C_CLK 0x0
+ 			>;
+ 		};
+ 
 -- 
-2.22.0
+2.17.1
 
 
 _______________________________________________
