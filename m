@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2F6E1944B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 17:55:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48A391944BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 17:55:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F5IeDgfcHC2PSfxXrSWPZc8EVMFDGrS8e4+Y60YVg6A=; b=Ni0lj7jI33ujFd
-	lpaVjJYyQI/DIwUSj2sbdKonlNJOa9QbV9fZek2w7Nj1aVJ4VYva9Eb9Zz1OOBeEteq15DW13/Tvb
-	dg3d7pAdBbM/KuI/IvElRF6IxFdAbM9SNqWgFV3XvsVD/cDP/5sKZUxcYBwgERB4v6ikycAVXtdjZ
-	CwgIQurxmCkepQsnvrUeKeJmJDyn9eqwzzG58cwEg1J/DszwJh3tTjWki6ymvaiTwnYFuCDXULyWO
-	MZci3FRLc1Q+Svktf77/qdyQ9QQ5CsXbADmZznArDPxoLwQ7BcnM9wNyB1dk/bHx4T5lNdPUe+fle
-	+OYxjv/ixllpaHCijtpA==;
+	List-Owner; bh=FI77smWylW7bxy31Y5+HIGXeErHOnHO0/pW6sHOKhIQ=; b=mHWq+Tk64CbJXU
+	6NnodyxDfydWxf2Tt9R5W4kxsVrZJk7zoIe93PxPkOgi97JEbzNSn+UUSSuvKDtc12arQRXiA0M0L
+	eT90+/Ei7To1oJEvNrwOJmmmGlQzKWcmP4yeKCq5iNUiJlzc0zaNkVEtuU0IbfevsdMvIgUb64W/e
+	m6LCLr874IuAUZJ0zMvZEeLry2efg7c+422Twrh4+U1GK8ke2u+TUUuGDv/fmVhZuw0VFNDSXL2yR
+	cQqloAyCBP0VkcSjHTokmIMisR4gmCZDESTXUTYqs5IuwTvXYpcGXtI3EK3nHX0G2CG2L960pi5PN
+	WsbexKx6LTQEcFIgIoLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHVmK-0001dQ-6e; Thu, 26 Mar 2020 16:54:48 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHVmA-0001cI-4y
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 16:54:40 +0000
-Received: by mail-io1-f67.google.com with SMTP id m15so6798660iob.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 09:54:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=fxdkmv3rlaPbwnsIsqBG6/Y/pJQsCxLU/Fzk50NhJJc=;
- b=dC7+YgnjzfbRUuyJzwnbXhU5np1ehWOVzs1HWnBjQZK52fwEwMAkXbedBQ3bgVuzI5
- 1AbvGzQ1ASS81DvEv/CFNgO73zrwXWY3n/kqmuKH5ivnmi0OkGBbVn3lKJSoahSP66hA
- XnmLg7X08YV6bfYGSV7ULzfSNtWBDj84OGhwaBTrULNZU+kN7TOZRN/m525EPQUsdf8k
- t9UxC2YfZQAjE+krOWneXPi+rUZEojuSH93xm40zb+gQ4eYZQ4dVMJ9I6DoRsZlFLXRu
- oPAJRWKJJUKEpfYUkKxgosqAcoJMlTaB8MJYTKzPzqK68Y5EA5uwnH5t0vNJhufKLh+9
- ruNg==
-X-Gm-Message-State: ANhLgQ26JRRzxLlfreu1UCzzCt5SwkZzMJMoR2hlz7t5PwlB7uoIpg34
- w3LJdJAByA+8rlSlSBP0mQ==
-X-Google-Smtp-Source: ADFU+vuO1x11b+eItaisRygLwgmQjoZPmeoCqAv0nxDAmHAK8LsIIIpHg61uNH7cbhjdQGbjuNKgmQ==
-X-Received: by 2002:a6b:8d4c:: with SMTP id p73mr8471676iod.14.1585241677102; 
- Thu, 26 Mar 2020 09:54:37 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id f74sm969012ilh.77.2020.03.26.09.54.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 09:54:36 -0700 (PDT)
-Received: (nullmailer pid 10911 invoked by uid 1000);
- Thu, 26 Mar 2020 16:54:35 -0000
-Date: Thu, 26 Mar 2020 10:54:35 -0600
-From: Rob Herring <robh@kernel.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/3] dt-bindings: remoteproc: Add bindings for C66x DSPs
- on TI K3 SoCs
-Message-ID: <20200326165435.GA10370@bogus>
-References: <20200325201839.15896-1-s-anna@ti.com>
- <20200325201839.15896-2-s-anna@ti.com>
+	id 1jHVnC-0003DK-I4; Thu, 26 Mar 2020 16:55:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHVmu-0003Cj-8O
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 16:55:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CE947FA;
+ Thu, 26 Mar 2020 09:55:23 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D2F3E3F71E;
+ Thu, 26 Mar 2020 09:55:22 -0700 (PDT)
+Date: Thu, 26 Mar 2020 16:55:20 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Li Wang <li.wang@windriver.com>
+Subject: Re: [PATCH] arm64: mmu: no write cache for O_SYNC flag
+Message-ID: <20200326165520.GD26987@mbp>
+References: <20200326163625.30714-1-li.wang@windriver.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200325201839.15896-2-s-anna@ti.com>
+In-Reply-To: <20200326163625.30714-1-li.wang@windriver.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_095438_212683_16B905AC 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200326_095524_344867_09182B30 
+X-CRM114-Status: GOOD (  18.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,46 +62,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Suman Anna <s-anna@ti.com>,
+Cc: Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 25 Mar 2020 15:18:37 -0500, Suman Anna wrote:
-> Some Texas Instruments K3 family of SoCs have one of more Digital Signal
-> Processor (DSP) subsystems that are comprised of either a TMS320C66x
-> CorePac and/or a next-generation TMS320C71x CorePac processor subsystem.
-> Add the device tree bindings document for the C66x DSP devices on these
-> SoCs. The added example illustrates the DT nodes for the first C66x DSP
-> device present on the K3 J721E family of SoCs.
+On Thu, Mar 26, 2020 at 09:36:25AM -0700, Li Wang wrote:
+> reproduce steps:
+> 1.
+> disable CONFIG_STRICT_DEVMEM in linux kernel
+> 2.
+> Process A gets a Physical Address of global variable by
+> "/proc/self/pagemap".
+> 3.
+> Process B writes a value to the same Physical Address by mmap():
+> fd=open("/dev/mem",O_SYNC);
+> Virtual Address=mmap(fd);
 > 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
+> problem symptom:
+> after Process B write a value to the Physical Address,
+> Process A of the value of global variable does not change.
+> They both W/R the same Physical Address.
+> 
+> technical reason:
+> Process B writing the Physical Address is by the Virtual Address,
+> and the Virtual Address comes from "/dev/mem" and mmap().
+> In arm64 arch, the Virtual Address has write cache.
+> So, maybe the value is not written into Physical Address.
+> 
+> fix reason:
+> giving write cache flag in arm64 is in phys_mem_access_prot():
+> =====
+> arch/arm64/mm/mmu.c
+> phys_mem_access_prot()
+> {
+>   if (!pfn_valid(pfn))
+>     return pgprot_noncached(vma_prot);
+>   else if (file->f_flags & O_SYNC)
+>     return pgprot_writecombine(vma_prot);
+>   return vma_prot;
+> }
+> ====
+> the other arch and the share function drivers/char/mem.c of phys_mem_access_prot()
+> does not add write cache flag.
+> So, removing the flag to fix the issue
+
+Other architectures may have transparent caches and don't require
+different attributes.
+
+> Signed-off-by: Li Wang <li.wang@windriver.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
 > ---
->  .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 180 ++++++++++++++++++
->  1 file changed, 180 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+>  arch/arm64/mm/mmu.c | 2 --
+>  1 file changed, 2 deletions(-)
 > 
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 128f70852bf3..d7083965ca17 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -81,8 +81,6 @@ pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>  {
+>  	if (!pfn_valid(pfn))
+>  		return pgprot_noncached(vma_prot);
+> -	else if (file->f_flags & O_SYNC)
+> -		return pgprot_writecombine(vma_prot);
+>  	return vma_prot;
+>  }
+>  EXPORT_SYMBOL(phys_mem_access_prot);
 
-My bot found errors running 'make dt_binding_check' on your patch:
+A better solution is for user space not to pass O_SYNC when opening
+/dev/mem. We've had this ABI for a long time (arch/arm/ and several
+other architectures do the same), why change it now?
 
-Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.example.dts:23.13-20: Warning (ranges_format): /example-0/reserved-memory:ranges: empty "ranges" property but its #address-cells (2) differs from /example-0 (1)
-Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.example.dts:23.13-20: Warning (ranges_format): /example-0/reserved-memory:ranges: empty "ranges" property but its #size-cells (2) differs from /example-0 (1)
-Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.example.dts:42.13-43.72: Warning (ranges_format): /example-0/interconnect@100000:ranges: "ranges" property has invalid length (48 bytes) (parent #address-cells == 1, child #address-cells == 2, #size-cells == 2)
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.example.dt.yaml: interconnect@100000: $nodename:0: 'interconnect@100000' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-
-See https://patchwork.ozlabs.org/patch/1261640
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
-
-Please check and re-submit.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
