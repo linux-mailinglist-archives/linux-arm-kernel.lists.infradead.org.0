@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ADB11944ED
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:02:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1D01944F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:03:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HkU2NY0xPOXRdXgt9i1GdcZfoHXV5rnwoB3nKTIuPZs=; b=GmxhWngteHdIxc
-	mkrSYP2yVaMgZXK/EUhwxeJi64vUoaIFvRQMR8ApSpIN1A9zxryX6JjdHwf94SPhmJqFlQJZzscij
-	lXpGcN8oDlmjy7WOKzjN4zaKr3YZsxndUDP0me+MS/yjpLkls0hoXZH5cQRibYqYqkU0Lfepc6uZs
-	Ok1AmuB0CgxaO8+ODxCTslr2939Ha7AsoVAH3G4Yu5ByqJ+fC5bFlcW3vCVfQTsMPzehZOHrcw5uw
-	Ybhg8CMhcypVEmKOp4StVzEjnySg1Ieb1eP87bGWRQmCh3O+eawi1Sltbz32GfvA+O3mCxvF9CXM/
-	ZAmR5sLL91LLipWD+6Pg==;
+	List-Owner; bh=45qOzwqDm6weSvupy7boe0odwGLGo+96offouxcHUUQ=; b=C9IouvkhnKs9fG
+	X2jwNyUXKpV98yFoRQrR3i6RF9RxzVLGshZd+3tH+pDkncGXJRMJl4eCK7cn643C5R9Excb23bXA0
+	rdngtd7mRY/XBVNOw5VLtkRIaqGfYLICMjOEB/xLNw81E9a5Af897J5xHp95xpun7QhfhEDRPheic
+	NDx72/nI6UAoRJ88s+g52UptXff7AgLV6YiCp84XcdwKdPfDVL5l4Kf/NYd4FYlVfkNHWVe5QvTQM
+	6LPG7z340XIOAqL//tqliDk18CGtb2ZMTPQ3DWZiHelQb7ovOKRKdD7WkfDq80Vn6O9vqeY+z3fJx
+	j08q/6NBQgIZLVQ+lTOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHVti-0006ng-FI; Thu, 26 Mar 2020 17:02:26 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jHVtz-00074g-Jg; Thu, 26 Mar 2020 17:02:43 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHVrU-0004dZ-Jy
+ id 1jHVrW-0004kP-F7
  for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 17:00:18 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s1so8725297wrv.5
+Received: by mail-wr1-x444.google.com with SMTP id 31so8730723wrs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 10:00:08 -0700 (PDT)
+ Thu, 26 Mar 2020 10:00:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=C9+ngUpmkFwCrrCCNM5K1pYaDR7H/QYUrPj981ohJpA=;
- b=E0Av0gMBUOqV1dPvKF2FITdx8Rf0uAaobKa9Ln4rw+eC7JsGjCT057RazyNLToqdYH
- uDM362SfMEaE7zSr81m7UtJQ2xDDpsqsxmUGaVfeKZBeqvv/vEe2gsnqwKSv4np35TFW
- 8EFA1KJB9qJxQUbzq/UzRCCRMY4nBGQUaajRFRG9MMBwrp1LPEaDjWccAoThyaXXPfm+
- ZHpQR74vp4XXkR1gbn4lyQYMaZUHpO68kkbt/0dLeH/z8KMmdSSWBl/m09gMcbefsYKq
- 4hjpimLD5O3WfuEsmeJvI1MXq8AvpVQ8HKEBwpsxvofC/mt+BL9LfjlSdxxwVGPvaGpo
- qdVg==
+ bh=LxcKkp++L7yp/h9Hem5yr49+eGcTTPzuu5jvOWKTxmA=;
+ b=sfZU1l0CsD8lTrhTD4XPLlFmnial8LrAHG1mR+jpGFP/i1SKVl8zPCXQPjbF7cihJh
+ +A5dlLwmq9wcng6RiXhKVN6ZQPcEy+XekaY1TGo4OS+16+7A1kZ1/mbseAUOEqVQssGj
+ iJq4CS4ZFHiDNtO/bVOiImEFDtPYP/aTNNwXzFc6B6TA2zHjeNuH5jICglqU82vI5Q53
+ T6vDUfd/1Wqrwj7IVYbzuX9UZj2VhhC102ZjAxm/EY/wumUZBMHbGeTw0QXH6zTUZpfC
+ 29Eiz/WSLItxD1wbSw3oB9OHO/fCjYlfGcOhkNic3IyLT+teQHi7ww7K64o89DaBA1l7
+ PCUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=C9+ngUpmkFwCrrCCNM5K1pYaDR7H/QYUrPj981ohJpA=;
- b=uCSzk+28BAWKQHf5w7Ar4sDZuBhdRjpXP+e62nE6r7GNk3zarCqIRT/p3XnmXEeDSG
- sK//5/dVvhk7pQPXac8aFEyIbczUr50Qs9q68kGNMTTrBg+X1nZ+12u4a8pTpIhxIM8Y
- L8xis2bl7Nl9fRorN3t++39Nf+4ALLULu2/uu0qVNzC/Pn4JdN6TV6ifLYib4VKMRRi0
- mmvcDO9A8IA9IxldfDCy9YPYgH9717xVx1FCpE65zjIQenYg/f7O4zZgUdDeoB4t/zyB
- EimApgv037wo25Vz9Caa/ZkTqgPXm5TsOLpPYRwroz6Drc0KAZ9brHaCtFYnQ1W34onn
- OffQ==
-X-Gm-Message-State: ANhLgQ2w+QZkgRKlHR2PDL+Jx8eKNdNudRT+2W6V9wDcnppOkC34LcFN
- dcTtxC4fmSvY9TwOYP1ZmSNk4g==
-X-Google-Smtp-Source: ADFU+vseedUJg+qIi0p0xgZxO6cJSY/Je6ly7V3VTm6ALURObymwtKpKsQpPYy2rJDKVcOfhXF3N0A==
-X-Received: by 2002:adf:82b0:: with SMTP id 45mr10206215wrc.120.1585242006281; 
- Thu, 26 Mar 2020 10:00:06 -0700 (PDT)
+ bh=LxcKkp++L7yp/h9Hem5yr49+eGcTTPzuu5jvOWKTxmA=;
+ b=UEaXqXyER1P8sT/o+xLnnUagSZvVvefYIzdFkbsT6qUCOXAsR/rS+iUgPXu7Y0+7Rn
+ JlkfCPkVTlzKKDiim0wN3/uViO/Wkc3vzop+FEbCu3RKidAGlUGUj6dAryK67U7g8b1v
+ TvnQ0jTTvc2LBcuZ3/vx08nAYSDIqm1x3YbUT3q5iZzlpp5nYvIncueTRCRAC6MRuXjD
+ 9M5rGhGMqsGzAlW3UuKRznDtVoZ6RPflx+C2SFfcKD0ontFNZh32HulP1AXilZyrouje
+ euSjOgyOWnf1vGm2iFISS35avo2OhSNnbcB5gwa7+zWZtTlPLtZ5inUEosmQe+HjTYQf
+ vOcg==
+X-Gm-Message-State: ANhLgQ2gHfhvpaMf4IKsBIYug+3vqb+y8rpeK+y8nstpT5AB520rv03r
+ hLYLhkQW9OvMjyayyUZ1hlX1Tg==
+X-Google-Smtp-Source: ADFU+vt678Nhxx77VFoeY4pri/SUs/4tTh321n/fUb14KxYkkqXRV/VnCnyzTCIaRDHORBpwNgx1Jw==
+X-Received: by 2002:adf:dec3:: with SMTP id i3mr10862529wrn.351.1585242007735; 
+ Thu, 26 Mar 2020 10:00:07 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id r15sm4609823wra.19.2020.03.26.10.00.04
+ by smtp.gmail.com with ESMTPSA id r15sm4609823wra.19.2020.03.26.10.00.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 10:00:05 -0700 (PDT)
+ Thu, 26 Mar 2020 10:00:06 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com,
 	devicetree@vger.kernel.org
-Subject: [PATCH 2/5] arm64: dts: meson: fixup SCP sram nodes
-Date: Thu, 26 Mar 2020 17:59:55 +0100
-Message-Id: <20200326165958.19274-3-narmstrong@baylibre.com>
+Subject: [PATCH 3/5] arm64: dts: meson-g12b-ugoos-am6: fix board compatible
+Date: Thu, 26 Mar 2020 17:59:56 +0100
+Message-Id: <20200326165958.19274-4-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200326165958.19274-1-narmstrong@baylibre.com>
 References: <20200326165958.19274-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_100009_147955_BA4C45E8 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200326_100010_776536_44B0DBC6 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,76 +101,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GX and AXG SCP sram nodes were using invalid compatible and
-node names for the sram entries.
+Add missing amlogic,s922x in the board compatible list.
 
-Fixup the sram entries node names, and use proper compatible for them.
-
-It notably fixes:
-sram@c8000000: 'scp-shmem@0', 'scp-shmem@200' do not match any of the regexes: '^([a-z]*-)?sram(-section)?@[a-f0-9]+$', 'pinctrl-[0-9]+'
+It fixes:
+meson-g12b-ugoos-am6.dt.yaml: /: compatible: ['ugoos,am6', 'amlogic,g12b'] is not valid under any of the given schemas
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-axg.dtsi |  6 +++---
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi  | 10 +++++-----
- 2 files changed, 8 insertions(+), 8 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-index aace3d32a3df..8e6281c685fa 100644
---- a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-@@ -1735,18 +1735,18 @@
- 		};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+index 06c5430eb92d..fdaacfd96b97 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+@@ -14,7 +14,7 @@
+ #include <dt-bindings/sound/meson-g12a-tohdmitx.h>
  
- 		sram: sram@fffc0000 {
--			compatible = "amlogic,meson-axg-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xfffc0000 0x0 0x20000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xfffc0000 0x20000>;
+ / {
+-	compatible = "ugoos,am6", "amlogic,g12b";
++	compatible = "ugoos,am6", "amlogic,s922x", "amlogic,g12b";
+ 	model = "Ugoos AM6";
  
--			cpu_scp_lpri: scp-shmem@13000 {
-+			cpu_scp_lpri: scp-sram@13000 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
- 
--			cpu_scp_hpri: scp-shmem@13400 {
-+			cpu_scp_hpri: scp-sram@13400 {
- 				compatible = "amlogic,meson-axg-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index 03f79fe045b7..e2bb68ec8502 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -398,20 +398,20 @@
- 		};
- 
- 		sram: sram@c8000000 {
--			compatible = "amlogic,meson-gx-sram", "amlogic,meson-gxbb-sram", "mmio-sram";
-+			compatible = "mmio-sram";
- 			reg = <0x0 0xc8000000 0x0 0x14000>;
- 
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0 0x0 0xc8000000 0x14000>;
- 
--			cpu_scp_lpri: scp-shmem@0 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_lpri: scp-sram@0 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13000 0x400>;
- 			};
- 
--			cpu_scp_hpri: scp-shmem@200 {
--				compatible = "amlogic,meson-gx-scp-shmem", "amlogic,meson-gxbb-scp-shmem";
-+			cpu_scp_hpri: scp-sram@200 {
-+				compatible = "amlogic,meson-gxbb-scp-shmem";
- 				reg = <0x13400 0x400>;
- 			};
- 		};
+ 	aliases {
 -- 
 2.22.0
 
