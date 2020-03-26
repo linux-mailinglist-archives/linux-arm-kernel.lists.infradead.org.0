@@ -2,88 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B90FE193F20
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 13:45:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70238193F25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 13:46:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZYsvwRTRl2xaCWtK4orCdgIGDfnIiCLnI5Dd45WqtV4=; b=Ab7ZC/y/om8/nQ
-	v2SSALg8vjJCw2e9WfKawe7/M25TomGDpkIdykNXEmN0xehq+yatFBQQSuT8xptD9LLSwZXIWZ/Td
-	uiJ80phnEcG+Cz6pAzzavrsUwy6G2SfL46/zG53ii4YqcvnpXuLgadWPT9q0lBNzRFPvNHQHguJFF
-	qSw6MqNFPRg5ztCZJcME/eG1q9rBfiPukLESpmjfea+Io5m0RVj24jzCPDAnkvmPxIqkmLUiR63Hr
-	9aUW0tz2VV5ZTL5XeVZ5Ux/Ami8Y3u+AT0PtGn1s/WLTL7mMgOwP1DlQI6myw2H1Y2G50ZF3DpZ22
-	uckQdKvRF424WvCAQdUw==;
+	List-Owner; bh=cX37yuRkFNHjb2B6hV5nDrMLUzoGmw3eoWAVEz8etK0=; b=m/RcWQdaxkeEoS
+	qXNGtn/P1NPItydQndjBnoKam8xtK5J758GOYtprRguti129eHRqHVIT766FMTaB34H0kBflI8O6Z
+	jYmslCwgBg/BcY7h0M+z+xzq5uChHLtQEnOtytyrBVGxhOf15SHxRzno5RMBmi8NI1AX153V2Gnm/
+	eiYXp2+NkreI1NJeOAkjLRXdM2zYUXNvqcNrGpoQr/swWyX+E8pFgK8pW0NnYuhDlLkLyn+8rD/Wo
+	TJEcWgk1ib0j3etuKtgUxxJZraDjS3K5EjfJ9mNL6d1JJ85hjZSttyuGUQFbIILETe88VFE5THGc+
+	xzSKfOoEdOYjFLKY6awA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHRsw-00065V-RM; Thu, 26 Mar 2020 12:45:22 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jHRta-0007tP-EZ; Thu, 26 Mar 2020 12:46:02 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHRsK-0005tQ-KY
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 12:44:46 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02QCcP4Q019331; Thu, 26 Mar 2020 13:44:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=gNi/Hi4Hs/0naSvolT0AOaC20L9HkjflMMWQkzROhLw=;
- b=hJgDgytbbc12qx+kzIy5uNTv5NJqmi0S5HP9oHDvhl8L/Z/tSyfuv+Q1e3KMKVhVk9o1
- auLjKNrHyGUOEd20IQKh3yDNeaDZ+zPeA4UND2gfv2SlJiFlDYh4mqJPSi9Ja8vnnYFo
- Scsp7kwC+xyelbeY39+4u/yjNw+j6FBydTNkOotGS3IliwWhc869SUVYdM0jnFZEnkeE
- kZdOHgj2O92/6TFdIOBS1i9bwdenhoLDvGLQXLaBzI3TvvWtPGZ+MOkpcnQdFCHdMx6l
- XQx4vvizj3TyCN2hasl3llET+6ivFQDn58/qxPQHphBqgbZWYADYyyhej59r4PA1RkUY dQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yw8xec2cm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 26 Mar 2020 13:44:39 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1D33F100039;
- Thu, 26 Mar 2020 13:44:39 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0E1582AC69C;
- Thu, 26 Mar 2020 13:44:39 +0100 (CET)
-Received: from localhost (10.75.127.50) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 26 Mar 2020 13:44:38
- +0100
-From: Alain Volmat <alain.volmat@st.com>
-To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
-Subject: [PATCH v2 2/2] i2c: i2c-stm32f7: allows for any bus frequency
-Date: Thu, 26 Mar 2020 13:44:21 +0100
-Message-ID: <1585226661-26262-3-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1585226661-26262-1-git-send-email-alain.volmat@st.com>
-References: <1585226661-26262-1-git-send-email-alain.volmat@st.com>
+ id 1jHRst-0007Tf-Kp; Thu, 26 Mar 2020 12:45:22 +0000
+Received: from lhreml705-cah.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 0DAEA28515626089D084;
+ Thu, 26 Mar 2020 12:45:18 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml705-cah.china.huawei.com (10.201.108.46) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 26 Mar 2020 12:45:17 +0000
+Received: from localhost (10.47.88.85) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 26 Mar
+ 2020 12:45:16 +0000
+Date: Thu, 26 Mar 2020 12:45:08 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 3/4] dt-bindings: Clean-up schema errors due to missing
+ 'addtionalProperties: false'
+Message-ID: <20200326124508.00003a52@Huawei.com>
+In-Reply-To: <20200325220542.19189-4-robh@kernel.org>
+References: <20200325220542.19189-1-robh@kernel.org>
+ <20200325220542.19189-4-robh@kernel.org>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-26_03:2020-03-26,
- 2020-03-26 signatures=0
+X-Originating-IP: [10.47.88.85]
+X-ClientProxiedBy: lhreml739-chm.china.huawei.com (10.201.108.189) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_054445_039078_CA73C640 
-X-CRM114-Status: GOOD (  21.48  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200326_054520_288962_DB4BAF6A 
+X-CRM114-Status: GOOD (  16.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,336 +71,324 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, alain.volmat@st.com,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>, linux-iio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Masahiro
+ Yamada <yamada.masahiro@socionext.com>,
+ Guillaume La Roque <glaroque@baylibre.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Lee
+ Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org, Lars-Peter
+ Clausen <lars@metafoo.de>, Kevin Hilman <khilman@baylibre.com>, Daniel
+ Lezcano <daniel.lezcano@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Zhang Rui <rui.zhang@intel.com>, Brian Masney <masneyb@onstation.org>,
+ devicetree@vger.kernel.org, Michael Hennerich <michael.hennerich@analog.com>,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho
+ Chehab <mchehab@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, Hartmut
+ Knaack <knaack.h@gmx.de>, linux-media@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Do not limitate to the 3 (100KHz, 400KHz, 1MHz) bus frequency but
-instead allows any frequency (if it matches timing requirements).
-Depending on the requested frequency, use the spec data from either
-Standard, Fast or Fast Plus mode.
+On Wed, 25 Mar 2020 16:05:40 -0600
+Rob Herring <robh@kernel.org> wrote:
 
-Hardcoding of min/max bus frequencies is removed and is instead computed.
+> Numerous schemas are missing 'additionalProperties: false' statements which
+> ensures a binding doesn't have any extra undocumented properties or child
+> nodes. Fixing this reveals various missing properties, so let's fix all
+> those occurrences.
+> 
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: Jonathan Cameron <jic23@kernel.org>
+> Cc: Hartmut Knaack <knaack.h@gmx.de>
+> Cc: Lars-Peter Clausen <lars@metafoo.de>
+> Cc: Peter Meerwald-Stadler <pmeerw@pmeerw.net>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+> Cc: Kevin Hilman <khilman@baylibre.com>
+> Cc: Lee Jones <lee.jones@linaro.org>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Liam Girdwood <lgirdwood@gmail.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Guillaume La Roque <glaroque@baylibre.com>
+> Cc: Zhang Rui <rui.zhang@intel.com>
+> Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: linux-clk@vger.kernel.org
+> Cc: linux-gpio@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: dri-devel@lists.freedesktop.org
+> Cc: linux-iio@vger.kernel.org
+> Cc: linux-media@vger.kernel.org
+> Cc: linux-amlogic@lists.infradead.org
+> Cc: netdev@vger.kernel.org
+> Cc: linux-pm@vger.kernel.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com> #for-iio
 
-The driver do not use anymore speed identifier but instead handle
-directly the frequency and figure out the spec data (necessary
-for the computation of the timing register) based on the frequency.
+> ---
+>  .../devicetree/bindings/clock/fsl,plldig.yaml |  3 +++
+>  .../gpio/socionext,uniphier-gpio.yaml         |  2 ++
+>  .../bindings/gpu/arm,mali-bifrost.yaml        |  6 ++---
+>  .../bindings/gpu/arm,mali-midgard.yaml        |  3 +++
+>  .../bindings/iio/adc/adi,ad7192.yaml          |  1 -
+>  .../bindings/iio/pressure/bmp085.yaml         |  3 +++
+>  .../media/amlogic,meson-gx-ao-cec.yaml        |  9 +++++---
+>  .../bindings/mfd/rohm,bd71828-pmic.yaml       |  3 +++
+>  .../bindings/net/ti,cpsw-switch.yaml          | 23 ++++++++++++-------
+>  .../regulator/max77650-regulator.yaml         |  2 +-
+>  .../bindings/thermal/amlogic,thermal.yaml     |  2 ++
+>  .../bindings/timer/arm,arch_timer_mmio.yaml   |  2 ++
+>  12 files changed, 43 insertions(+), 16 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/clock/fsl,plldig.yaml b/Documentation/devicetree/bindings/clock/fsl,plldig.yaml
+> index c8350030b374..d1c040228cf7 100644
+> --- a/Documentation/devicetree/bindings/clock/fsl,plldig.yaml
+> +++ b/Documentation/devicetree/bindings/clock/fsl,plldig.yaml
+> @@ -21,6 +21,9 @@ properties:
+>    reg:
+>      maxItems: 1
+>  
+> +  clocks:
+> +    maxItems: 1
+> +
+>    '#clock-cells':
+>      const: 0
+>  
+> diff --git a/Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.yaml b/Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.yaml
+> index 580a39e09d39..c58ff9a94f45 100644
+> --- a/Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.yaml
+> +++ b/Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.yaml
+> @@ -41,6 +41,8 @@ properties:
+>      minimum: 0
+>      maximum: 512
+>  
+> +  gpio-ranges: true
+> +
+>    gpio-ranges-group-names:
+>      $ref: /schemas/types.yaml#/definitions/string-array
+>  
+> diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> index e8b99adcb1bd..05fd9a404ff7 100644
+> --- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> +++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> @@ -43,6 +43,9 @@ properties:
+>  
+>    operating-points-v2: true
+>  
+> +  resets:
+> +    maxItems: 2
+> +
+>  required:
+>    - compatible
+>    - reg
+> @@ -57,9 +60,6 @@ allOf:
+>            contains:
+>              const: amlogic,meson-g12a-mali
+>      then:
+> -      properties:
+> -        resets:
+> -          minItems: 2
+>        required:
+>          - resets
+>  
+> diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
+> index 8d966f3ff3db..6819cde050df 100644
+> --- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
+> +++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
+> @@ -75,6 +75,9 @@ properties:
+>  
+>    mali-supply: true
+>  
+> +  power-domains:
+> +    maxItems: 1
+> +
+>    resets:
+>      minItems: 1
+>      maxItems: 2
+> diff --git a/Documentation/devicetree/bindings/iio/adc/adi,ad7192.yaml b/Documentation/devicetree/bindings/iio/adc/adi,ad7192.yaml
+> index 84d25bd39488..d0913034b1d8 100644
+> --- a/Documentation/devicetree/bindings/iio/adc/adi,ad7192.yaml
+> +++ b/Documentation/devicetree/bindings/iio/adc/adi,ad7192.yaml
+> @@ -106,7 +106,6 @@ examples:
+>          spi-cpha;
+>          clocks = <&ad7192_mclk>;
+>          clock-names = "mclk";
+> -        #interrupt-cells = <2>;
+>          interrupts = <25 0x2>;
+>          interrupt-parent = <&gpio>;
+>          dvdd-supply = <&dvdd>;
+> diff --git a/Documentation/devicetree/bindings/iio/pressure/bmp085.yaml b/Documentation/devicetree/bindings/iio/pressure/bmp085.yaml
+> index 519137e5c170..5d4aec0e0d24 100644
+> --- a/Documentation/devicetree/bindings/iio/pressure/bmp085.yaml
+> +++ b/Documentation/devicetree/bindings/iio/pressure/bmp085.yaml
+> @@ -25,6 +25,9 @@ properties:
+>        - bosch,bmp280
+>        - bosch,bme280
+>  
+> +  reg:
+> +    maxItems: 1
+> +
+>    vddd-supply:
+>      description:
+>        digital voltage regulator (see regulator/regulator.txt)
+> diff --git a/Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml b/Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+> index 41197578f19a..e8ce37fcbfec 100644
+> --- a/Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+> +++ b/Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+> @@ -24,6 +24,12 @@ properties:
+>    reg:
+>      maxItems: 1
+>  
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    maxItems: 1
+> +
+>    interrupts:
+>      maxItems: 1
+>  
+> @@ -47,7 +53,6 @@ allOf:
+>              - description: AO-CEC clock
+>  
+>          clock-names:
+> -          maxItems: 1
+>            items:
+>              - const: core
+>  
+> @@ -66,7 +71,6 @@ allOf:
+>              - description: AO-CEC clock generator source
+>  
+>          clock-names:
+> -          maxItems: 1
+>            items:
+>              - const: oscin
+>  
+> @@ -88,4 +92,3 @@ examples:
+>          clock-names = "core";
+>          hdmi-phandle = <&hdmi_tx>;
+>      };
+> -
+> diff --git a/Documentation/devicetree/bindings/mfd/rohm,bd71828-pmic.yaml b/Documentation/devicetree/bindings/mfd/rohm,bd71828-pmic.yaml
+> index 4fbb9e734284..38dc4f8b0ceb 100644
+> --- a/Documentation/devicetree/bindings/mfd/rohm,bd71828-pmic.yaml
+> +++ b/Documentation/devicetree/bindings/mfd/rohm,bd71828-pmic.yaml
+> @@ -41,6 +41,9 @@ properties:
+>    "#clock-cells":
+>      const: 0
+>  
+> +  clock-output-names:
+> +    const: bd71828-32k-out
+> +
+>    rohm,charger-sense-resistor-ohms:
+>      minimum: 10000000
+>      maximum: 50000000
+> diff --git a/Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml b/Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml
+> index ac8c76369a86..b9e9696da5be 100644
+> --- a/Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml
+> +++ b/Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml
+> @@ -37,6 +37,12 @@ properties:
+>      description:
+>         The physical base address and size of full the CPSW module IO range
+>  
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 1
+> +
+>    ranges: true
+>  
+>    clocks:
+> @@ -111,13 +117,6 @@ properties:
+>              - reg
+>              - phys
+>  
+> -  mdio:
+> -    type: object
+> -    allOf:
+> -      - $ref: "ti,davinci-mdio.yaml#"
+> -    description:
+> -      CPSW MDIO bus.
+> -
+>    cpts:
+>      type: object
+>      description:
+> @@ -148,6 +147,15 @@ properties:
+>        - clocks
+>        - clock-names
+>  
+> +patternProperties:
+> +  "^mdio@":
+> +    type: object
+> +    allOf:
+> +      - $ref: "ti,davinci-mdio.yaml#"
+> +    description:
+> +      CPSW MDIO bus.
+> +
+> +
+>  required:
+>    - compatible
+>    - reg
+> @@ -174,7 +182,6 @@ examples:
+>          #address-cells = <1>;
+>          #size-cells = <1>;
+>          syscon = <&scm_conf>;
+> -        inctrl-names = "default", "sleep";
+>  
+>          interrupts = <GIC_SPI 334 IRQ_TYPE_LEVEL_HIGH>,
+>                       <GIC_SPI 335 IRQ_TYPE_LEVEL_HIGH>,
+> diff --git a/Documentation/devicetree/bindings/regulator/max77650-regulator.yaml b/Documentation/devicetree/bindings/regulator/max77650-regulator.yaml
+> index 7d724159f890..50690487edc8 100644
+> --- a/Documentation/devicetree/bindings/regulator/max77650-regulator.yaml
+> +++ b/Documentation/devicetree/bindings/regulator/max77650-regulator.yaml
+> @@ -24,7 +24,7 @@ properties:
+>      const: maxim,max77650-regulator
+>  
+>  patternProperties:
+> -  "^regulator@[0-3]$":
+> +  "^regulator-(ldo|sbb[0-2])$":
+>      $ref: "regulator.yaml#"
+>  
+>  required:
+> diff --git a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> index f761681e4c0d..93fe7b10a82e 100644
+> --- a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> +++ b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> @@ -32,6 +32,8 @@ properties:
+>      description: phandle to the ao-secure syscon
+>      $ref: '/schemas/types.yaml#/definitions/phandle'
+>  
+> +  '#thermal-sensor-cells':
+> +    const: 0
+>  
+>  required:
+>    - compatible
+> diff --git a/Documentation/devicetree/bindings/timer/arm,arch_timer_mmio.yaml b/Documentation/devicetree/bindings/timer/arm,arch_timer_mmio.yaml
+> index 102f319833d9..f7ef6646bade 100644
+> --- a/Documentation/devicetree/bindings/timer/arm,arch_timer_mmio.yaml
+> +++ b/Documentation/devicetree/bindings/timer/arm,arch_timer_mmio.yaml
+> @@ -32,6 +32,8 @@ properties:
+>    '#size-cells':
+>      const: 1
+>  
+> +  ranges: true
+> +
+>    clock-frequency:
+>      description: The frequency of the main counter, in Hz. Should be present
+>        only where necessary to work around broken firmware which does not configure
 
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
----
-v2: remove wrong "NOT REACHED" comment
-    simplify get_lower_rate function
-
- drivers/i2c/busses/i2c-stm32f7.c | 115 ++++++++++++++++---------------
- 1 file changed, 60 insertions(+), 55 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index 330ffed011e0..f369f086b9d0 100644
---- a/drivers/i2c/busses/i2c-stm32f7.c
-+++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -189,8 +189,6 @@ struct stm32f7_i2c_regs {
- /**
-  * struct stm32f7_i2c_spec - private i2c specification timing
-  * @rate: I2C bus speed (Hz)
-- * @rate_min: 80% of I2C bus speed (Hz)
-- * @rate_max: 100% of I2C bus speed (Hz)
-  * @fall_max: Max fall time of both SDA and SCL signals (ns)
-  * @rise_max: Max rise time of both SDA and SCL signals (ns)
-  * @hddat_min: Min data hold time (ns)
-@@ -201,8 +199,6 @@ struct stm32f7_i2c_regs {
-  */
- struct stm32f7_i2c_spec {
- 	u32 rate;
--	u32 rate_min;
--	u32 rate_max;
- 	u32 fall_max;
- 	u32 rise_max;
- 	u32 hddat_min;
-@@ -214,7 +210,6 @@ struct stm32f7_i2c_spec {
- 
- /**
-  * struct stm32f7_i2c_setup - private I2C timing setup parameters
-- * @speed: I2C speed mode (standard, Fast Plus)
-  * @speed_freq: I2C speed frequency  (Hz)
-  * @clock_src: I2C clock source frequency (Hz)
-  * @rise_time: Rise time (ns)
-@@ -224,7 +219,6 @@ struct stm32f7_i2c_spec {
-  * @fmp_clr_offset: Fast Mode Plus clear register offset from set register
-  */
- struct stm32f7_i2c_setup {
--	enum stm32_i2c_speed speed;
- 	u32 speed_freq;
- 	u32 clock_src;
- 	u32 rise_time;
-@@ -287,7 +281,7 @@ struct stm32f7_i2c_msg {
-  * @base: virtual memory area
-  * @complete: completion of I2C message
-  * @clk: hw i2c clock
-- * @speed: I2C clock frequency of the controller. Standard, Fast or Fast+
-+ * @bus_rate: I2C clock frequency of the controller
-  * @msg: Pointer to data to be written
-  * @msg_num: number of I2C messages to be executed
-  * @msg_id: message identifiant
-@@ -314,7 +308,7 @@ struct stm32f7_i2c_dev {
- 	void __iomem *base;
- 	struct completion complete;
- 	struct clk *clk;
--	int speed;
-+	unsigned int bus_rate;
- 	struct i2c_msg *msg;
- 	unsigned int msg_num;
- 	unsigned int msg_id;
-@@ -343,10 +337,8 @@ struct stm32f7_i2c_dev {
-  * and Fast-mode Plus I2C-bus devices
-  */
- static struct stm32f7_i2c_spec i2c_specs[] = {
--	[STM32_I2C_SPEED_STANDARD] = {
-+	{
- 		.rate = I2C_MAX_STANDARD_MODE_FREQ,
--		.rate_min = I2C_MAX_STANDARD_MODE_FREQ * 8 / 10,	/* 80% */
--		.rate_max = I2C_MAX_STANDARD_MODE_FREQ,
- 		.fall_max = 300,
- 		.rise_max = 1000,
- 		.hddat_min = 0,
-@@ -355,10 +347,8 @@ static struct stm32f7_i2c_spec i2c_specs[] = {
- 		.l_min = 4700,
- 		.h_min = 4000,
- 	},
--	[STM32_I2C_SPEED_FAST] = {
-+	{
- 		.rate = I2C_MAX_FAST_MODE_FREQ,
--		.rate_min = I2C_MAX_FAST_MODE_FREQ * 8 / 10,		/* 80% */
--		.rate_max = I2C_MAX_FAST_MODE_FREQ,
- 		.fall_max = 300,
- 		.rise_max = 300,
- 		.hddat_min = 0,
-@@ -367,10 +357,8 @@ static struct stm32f7_i2c_spec i2c_specs[] = {
- 		.l_min = 1300,
- 		.h_min = 600,
- 	},
--	[STM32_I2C_SPEED_FAST_PLUS] = {
-+	{
- 		.rate = I2C_MAX_FAST_MODE_PLUS_FREQ,
--		.rate_min = I2C_MAX_FAST_MODE_PLUS_FREQ * 8 / 10,	/* 80% */
--		.rate_max = I2C_MAX_FAST_MODE_PLUS_FREQ,
- 		.fall_max = 100,
- 		.rise_max = 120,
- 		.hddat_min = 0,
-@@ -411,10 +399,23 @@ static void stm32f7_i2c_disable_irq(struct stm32f7_i2c_dev *i2c_dev, u32 mask)
- 	stm32f7_i2c_clr_bits(i2c_dev->base + STM32F7_I2C_CR1, mask);
- }
- 
-+static struct stm32f7_i2c_spec *get_specs(u32 rate)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(i2c_specs); i++)
-+		if (rate <= i2c_specs[i].rate)
-+			return &i2c_specs[i];
-+
-+	return ERR_PTR(-EINVAL);
-+}
-+
-+#define	RATE_MIN(rate)	(rate * 8 / 10)
- static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 				      struct stm32f7_i2c_setup *setup,
- 				      struct stm32f7_i2c_timings *output)
- {
-+	struct stm32f7_i2c_spec *specs;
- 	u32 p_prev = STM32F7_PRESC_MAX;
- 	u32 i2cclk = DIV_ROUND_CLOSEST(NSEC_PER_SEC,
- 				       setup->clock_src);
-@@ -432,18 +433,19 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 	u16 p, l, a, h;
- 	int ret = 0;
- 
--	if (setup->speed >= STM32_I2C_SPEED_END) {
--		dev_err(i2c_dev->dev, "speed out of bound {%d/%d}\n",
--			setup->speed, STM32_I2C_SPEED_END - 1);
-+	specs = get_specs(setup->speed_freq);
-+	if (specs == ERR_PTR(-EINVAL)) {
-+		dev_err(i2c_dev->dev, "speed out of bound {%d}\n",
-+			setup->speed_freq);
- 		return -EINVAL;
- 	}
- 
--	if ((setup->rise_time > i2c_specs[setup->speed].rise_max) ||
--	    (setup->fall_time > i2c_specs[setup->speed].fall_max)) {
-+	if ((setup->rise_time > specs->rise_max) ||
-+	    (setup->fall_time > specs->fall_max)) {
- 		dev_err(i2c_dev->dev,
- 			"timings out of bound Rise{%d>%d}/Fall{%d>%d}\n",
--			setup->rise_time, i2c_specs[setup->speed].rise_max,
--			setup->fall_time, i2c_specs[setup->speed].fall_max);
-+			setup->rise_time, specs->rise_max,
-+			setup->fall_time, specs->fall_max);
- 		return -EINVAL;
- 	}
- 
-@@ -454,12 +456,6 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 		return -EINVAL;
- 	}
- 
--	if (setup->speed_freq > i2c_specs[setup->speed].rate) {
--		dev_err(i2c_dev->dev, "ERROR: Freq {%d/%d}\n",
--			setup->speed_freq, i2c_specs[setup->speed].rate);
--		return -EINVAL;
--	}
--
- 	/*  Analog and Digital Filters */
- 	af_delay_min =
- 		(setup->analog_filter ?
-@@ -469,13 +465,13 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 		 STM32F7_I2C_ANALOG_FILTER_DELAY_MAX : 0);
- 	dnf_delay = setup->dnf * i2cclk;
- 
--	sdadel_min = i2c_specs[setup->speed].hddat_min + setup->fall_time -
-+	sdadel_min = specs->hddat_min + setup->fall_time -
- 		af_delay_min - (setup->dnf + 3) * i2cclk;
- 
--	sdadel_max = i2c_specs[setup->speed].vddat_max - setup->rise_time -
-+	sdadel_max = specs->vddat_max - setup->rise_time -
- 		af_delay_max - (setup->dnf + 4) * i2cclk;
- 
--	scldel_min = setup->rise_time + i2c_specs[setup->speed].sudat_min;
-+	scldel_min = setup->rise_time + specs->sudat_min;
- 
- 	if (sdadel_min < 0)
- 		sdadel_min = 0;
-@@ -530,8 +526,8 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 
- 	tsync = af_delay_min + dnf_delay + (2 * i2cclk);
- 	s = NULL;
--	clk_max = NSEC_PER_SEC / i2c_specs[setup->speed].rate_min;
--	clk_min = NSEC_PER_SEC / i2c_specs[setup->speed].rate_max;
-+	clk_max = NSEC_PER_SEC / RATE_MIN(setup->speed_freq);
-+	clk_min = NSEC_PER_SEC / setup->speed_freq;
- 
- 	/*
- 	 * Among Prescaler possibilities discovered above figures out SCL Low
-@@ -549,7 +545,7 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 		for (l = 0; l < STM32F7_SCLL_MAX; l++) {
- 			u32 tscl_l = (l + 1) * prescaler + tsync;
- 
--			if ((tscl_l < i2c_specs[setup->speed].l_min) ||
-+			if ((tscl_l < specs->l_min) ||
- 			    (i2cclk >=
- 			     ((tscl_l - af_delay_min - dnf_delay) / 4))) {
- 				continue;
-@@ -561,7 +557,7 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 					setup->rise_time + setup->fall_time;
- 
- 				if ((tscl >= clk_min) && (tscl <= clk_max) &&
--				    (tscl_h >= i2c_specs[setup->speed].h_min) &&
-+				    (tscl_h >= specs->h_min) &&
- 				    (i2cclk < tscl_h)) {
- 					int clk_error = tscl - i2cbus;
- 
-@@ -607,6 +603,17 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
- 	return ret;
- }
- 
-+static u32 get_lower_rate(u32 rate)
-+{
-+	int i = ARRAY_SIZE(i2c_specs);
-+
-+	while (i--)
-+		if (i2c_specs[i].rate < rate)
-+			break;
-+
-+	return i2c_specs[i].rate;
-+}
-+
- static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
- 				    struct stm32f7_i2c_setup *setup)
- {
-@@ -619,18 +626,15 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
- 
- 	i2c_parse_fw_timings(i2c_dev->dev, t, false);
- 
--	if (t->bus_freq_hz >= I2C_MAX_FAST_MODE_PLUS_FREQ)
--		i2c_dev->speed = STM32_I2C_SPEED_FAST_PLUS;
--	else if (t->bus_freq_hz >= I2C_MAX_FAST_MODE_FREQ)
--		i2c_dev->speed = STM32_I2C_SPEED_FAST;
--	else
--		i2c_dev->speed = STM32_I2C_SPEED_STANDARD;
-+	if (t->bus_freq_hz > I2C_MAX_FAST_MODE_PLUS_FREQ) {
-+		dev_err(i2c_dev->dev, "Invalid bus speed (%i>%i)\n",
-+			t->bus_freq_hz, I2C_MAX_FAST_MODE_PLUS_FREQ);
-+		return -EINVAL;
-+	}
- 
-+	setup->speed_freq = t->bus_freq_hz;
- 	i2c_dev->setup.rise_time = t->scl_rise_ns;
- 	i2c_dev->setup.fall_time = t->scl_fall_ns;
--
--	setup->speed = i2c_dev->speed;
--	setup->speed_freq = i2c_specs[setup->speed].rate;
- 	setup->clock_src = clk_get_rate(i2c_dev->clk);
- 
- 	if (!setup->clock_src) {
-@@ -644,14 +648,12 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
- 		if (ret) {
- 			dev_err(i2c_dev->dev,
- 				"failed to compute I2C timings.\n");
--			if (i2c_dev->speed > STM32_I2C_SPEED_STANDARD) {
--				i2c_dev->speed--;
--				setup->speed = i2c_dev->speed;
-+			if (setup->speed_freq > I2C_MAX_STANDARD_MODE_FREQ) {
- 				setup->speed_freq =
--					i2c_specs[setup->speed].rate;
-+					get_lower_rate(setup->speed_freq);
- 				dev_warn(i2c_dev->dev,
- 					 "downgrade I2C Speed Freq to (%i)\n",
--					 i2c_specs[setup->speed].rate);
-+					 setup->speed_freq);
- 			} else {
- 				break;
- 			}
-@@ -663,13 +665,15 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
- 		return ret;
- 	}
- 
--	dev_dbg(i2c_dev->dev, "I2C Speed(%i), Freq(%i), Clk Source(%i)\n",
--		setup->speed, setup->speed_freq, setup->clock_src);
-+	dev_dbg(i2c_dev->dev, "I2C Speed(%i), Clk Source(%i)\n",
-+		setup->speed_freq, setup->clock_src);
- 	dev_dbg(i2c_dev->dev, "I2C Rise(%i) and Fall(%i) Time\n",
- 		setup->rise_time, setup->fall_time);
- 	dev_dbg(i2c_dev->dev, "I2C Analog Filter(%s), DNF(%i)\n",
- 		(setup->analog_filter ? "On" : "Off"), setup->dnf);
- 
-+	i2c_dev->bus_rate = setup->speed_freq;
-+
- 	return 0;
- }
- 
-@@ -1866,7 +1870,7 @@ static int stm32f7_i2c_write_fm_plus_bits(struct stm32f7_i2c_dev *i2c_dev,
- {
- 	int ret;
- 
--	if (i2c_dev->speed != STM32_I2C_SPEED_FAST_PLUS ||
-+	if (i2c_dev->bus_rate <= I2C_MAX_FAST_MODE_FREQ ||
- 	    IS_ERR_OR_NULL(i2c_dev->regmap))
- 		/* Optional */
- 		return 0;
-@@ -2020,7 +2024,8 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto clk_free;
- 
--	if (i2c_dev->speed == STM32_I2C_SPEED_FAST_PLUS) {
-+	/* Setup Fast mode plus if necessary */
-+	if (i2c_dev->bus_rate > I2C_MAX_FAST_MODE_FREQ) {
- 		ret = stm32f7_i2c_setup_fm_plus_bits(pdev, i2c_dev);
- 		if (ret)
- 			goto clk_free;
--- 
-2.17.1
 
 
 _______________________________________________
