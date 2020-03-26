@@ -2,83 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E33DE193EFB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 13:38:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D17AB193F07
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 13:44:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I5eimKDcUH6p0hB1Yt0Vc7sx9eX1Cynx00BfT2nwwNI=; b=lAJP9WtDoceAuZ
-	SiToGxueadSvmrZtZqBl6I91pYuxK+xNOdcgT4YQSyH0/5wCFyF3Mg2+IztBVP2H/wKa0V8MPAz4B
-	Dzn2bxWoIB3zETZ1i7ncrcxyPRvsTAS85xHN0wPEYt6Xp+28oU9KMvsyvjHESBtf0fgYsaFTUb35C
-	VBzqYvcCN5Sx4qYWKoH7BNdBGY3D82RgGl/HgZcwoTB3Mxl4c6BN1NHI9sqmJHFArd+y5bnlFDcui
-	roI8Nfs52y7jiEvvdyGpwLZVpsZfG9MTYwi4xf/v6i1ysmuM7KT0A6cvPlNT9+hD0C8uXREXHMJL+
-	Z0cDQ+zcsF1frJITJyaA==;
+	List-Owner; bh=jK/6S2Tn8ArxdKrHh0nPbfX9ckTgCG3oEyX2n2A44V0=; b=E8JiRl1micHwNL
+	GAIy/V58D+wUm4BHHX2aWhs3LBPivrnpIwrJ2Dz2Q5sFZ518qHPFomo4YlmkHFIGxz5Bl6IlAdNbI
+	sQTpomCCxC9UFTGyTR5uy6TK2XmP/4C7+sh94g0Yp9TKjoK65o3mKa9jgUUprxUQA4RxeAVE1i5Wn
+	oHGsYcHzqipAT957jAsAJqVnyqEZo8Npkm35z+uHBhnrZjodH7yAMnEuyMlxSxWYMeONXadVyc3Aw
+	NIURuM6BMZS0+A2YBZ0oZST1IIijbDXCmG0hQPRmQNhhwZPiQeMGY8fQbd+KyEvCzKSqTcy9Domds
+	1ubwZORSHWnXpFFFvDmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHRlo-0003kw-1F; Thu, 26 Mar 2020 12:38:00 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1jHRs1-0005d1-Se; Thu, 26 Mar 2020 12:44:25 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHRle-0003k2-AX
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 12:37:51 +0000
-Received: from mail-qk1-f173.google.com ([209.85.222.173]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MBmDy-1j5KI333LY-00CBxt for <linux-arm-kernel@lists.infradead.org>; Thu,
- 26 Mar 2020 13:37:47 +0100
-Received: by mail-qk1-f173.google.com with SMTP id i6so6139238qke.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 05:37:47 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0HgBozgTggXg4eXC2lfG42KbxLFAVYCPdqqconlqIlhqeezx4s
- NnL5c624pTd0kCqXVhxN1MmM1hWL8FU1rLsq28U=
-X-Google-Smtp-Source: ADFU+vvb7BIXY+D9glCcU91L9kO0tyFWP+EOFEhwVrFka5N8pk0bXgtM967EIkNgE0o5eeGQr3N7S8aDV2fUMF6iRbU=
-X-Received: by 2002:a37:6455:: with SMTP id y82mr7866531qkb.286.1585226266623; 
- Thu, 26 Mar 2020 05:37:46 -0700 (PDT)
+ id 1jHRrn-0005at-NA; Thu, 26 Mar 2020 12:44:13 +0000
+Received: from lhreml709-cah.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id DB07DE27201CDD85434C;
+ Thu, 26 Mar 2020 12:43:59 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml709-cah.china.huawei.com (10.201.108.32) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 26 Mar 2020 12:43:59 +0000
+Received: from localhost (10.47.88.85) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 26 Mar
+ 2020 12:43:58 +0000
+Date: Thu, 26 Mar 2020 12:43:49 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
+Subject: Re: [PATCH 1/4] dt-bindings: iio/accel: Drop duplicate adi,
+ adxl345/6 from trivial-devices.yaml
+Message-ID: <20200326124349.00001d32@Huawei.com>
+In-Reply-To: <ede75c098e3e354ff7e93e4e1d6191e35ea1fbd2.camel@analog.com>
+References: <20200325220542.19189-1-robh@kernel.org>
+ <20200325220542.19189-2-robh@kernel.org>
+ <ede75c098e3e354ff7e93e4e1d6191e35ea1fbd2.camel@analog.com>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-References: <1585205326-25326-1-git-send-email-srinath.mannam@broadcom.com>
- <1585205326-25326-2-git-send-email-srinath.mannam@broadcom.com>
-In-Reply-To: <1585205326-25326-2-git-send-email-srinath.mannam@broadcom.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 26 Mar 2020 13:37:30 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a1qJv-Euvh06fqFxn4Cx-wkh4gCMOf29DAmQzWKZJji-A@mail.gmail.com>
-Message-ID: <CAK8P3a1qJv-Euvh06fqFxn4Cx-wkh4gCMOf29DAmQzWKZJji-A@mail.gmail.com>
-Subject: Re: [PATCH v5 1/6] dt-bindings: pci: Update iProc PCI binding for
- INTx support
-To: Srinath Mannam <srinath.mannam@broadcom.com>
-X-Provags-ID: V03:K1:sETlawbqwEh3qB2XUQJ0hsUtM+GpvbYWusfqCK18PfrZuGg5ANr
- cZ7kYiECbmNsGnBj7ZINsqT1GumxSk89txW9XLY36f57Ktl7kcEGgFVf9k56Nyo9nNC4CyK
- 93E6i0Q1A/f87OljhZUweab1b9/dSHaqvx1g8l4G5xzy1FJUI3b8CRtl/PfMnyji3+SbHSD
- RSdYTWa1IhO7FFl+bf/4A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:52Aqo1TXBmc=:4hxybj8qL1hNcv5cbPzBnC
- quW4ib0LO9Ef1Yz3iKPTvC2MEJ2h19ziOqmp69pWu/qvUXWTHikJcBMSXXjn8k6ZeeZIr0qdN
- ymZYd88xp6dtMf363gSTjP6NA0i+43ysinJG3WvKeXA83U0NfdfMvp6NbcGoFdzddQbarOhbF
- fiSYaLqDVkSyAbemJKg1kLMGTCU8UYFihewpovLhjKqVzqMdNhglVj3zfCTWyNOW8IQDeIKTd
- 5PcvIhPIa/EP7Jyj43rT8gDMR0U7DcGwz1CZNzWcMjAH4THzOoi3aKUoTKHUf0iKMQ+Lt0joX
- 73ba0lWeqWz4dnAv56cOV3Ho442a7PlyTy/uGJLbVT5FTNjigTZqgsuFyAfzvS90Vt/WBC1ia
- wyh8itlTut13EMLuxkV/NIWLDXAQjKUe4kBBYXsbnNZBiMJm6eViKV3HjK866IjklH246kM+E
- 4i0Qnz0zGLJnpDcN0zCL5nistLrIquUiav2Eb/GFpVXoELvkCEqqPH9+FuMVVXC6GswIs5HZP
- cCoqN1/KEA1Min0aG4RCHW9aP1nHV7JtpM7asjHdo7Sy4wDHE5eivZ+VEebayB88qkj/Gs1aL
- eNaDc+DMWwAZxacODrdrCN+H5/ne6t/vAKCbudf40pCv3WfClECHazp079vQt/lp6BslcDMRr
- azDwT1AZEBIKFcZmREkah2DdFwyFdnM6PY6aKu7u4mm5Kj2EZ0GteKwT/tkiChO4sIZRhnHws
- v/MROIrQkqfigyYi4il5cPv8mw6Us1HMEzvskTIwYYOIyKTWtAeUa3V3e6lQS8QdHLTkA3fyR
- ZEsLOvFwxJbENrVuzQNtsXw7qgH+ViG7HC7pzS2daxBbWyVwbg=
+X-Originating-IP: [10.47.88.85]
+X-ClientProxiedBy: lhreml739-chm.china.huawei.com (10.201.108.189) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_053750_658497_896E70AD 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_054411_904196_11D5C8EA 
+X-CRM114-Status: GOOD (  14.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,34 +72,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Ray Jui <ray.jui@broadcom.com>,
+Cc: "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "yamada.masahiro@socionext.com" <yamada.masahiro@socionext.com>,
+ "glaroque@baylibre.com" <glaroque@baylibre.com>,
+ "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>, "lars@metafoo.de" <lars@metafoo.de>,
+ "khilman@baylibre.com" <khilman@baylibre.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "Hennerich, 
+ Michael" <Michael.Hennerich@analog.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Andy Shevchenko <andy.shevchenko@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- linux-pci <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "knaack.h@gmx.de" <knaack.h@gmx.de>,
+ "masneyb@onstation.org" <masneyb@onstation.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "jic23@kernel.org" <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 7:49 AM Srinath Mannam
-<srinath.mannam@broadcom.com> wrote:
->
-> From: Ray Jui <ray.jui@broadcom.com>
->
-> Update the iProc PCIe binding document for better modeling of the legacy
-> interrupt (INTx) support.
+On Thu, 26 Mar 2020 07:57:31 +0000
+"Ardelean, Alexandru" <alexandru.Ardelean@analog.com> wrote:
 
-Could you describe in the changelog what happens when you get an old dtb
-with a new kernel or vice versa? If any combination won't work, please make
-that very clear, and give a reason why you consider this not to be a problem.
+> On Wed, 2020-03-25 at 16:05 -0600, Rob Herring wrote:
+> > [External]
+> > 
+> > The 'adi,adxl345' definition is a duplicate as there's a full binding in:
+> > Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+> > 
+> > The trivial-devices binding doesn't capture that 'adi,adxl346' has a
+> > fallback compatible 'adi,adxl345', so let's add it to adi,adxl345.yaml.
+> >   
+> 
+> Acked-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
 
-      Arnd
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+
+> 
+> > Cc: Michael Hennerich <michael.hennerich@analog.com>
+> > Cc: Jonathan Cameron <jic23@kernel.org>
+> > Cc: Hartmut Knaack <knaack.h@gmx.de>
+> > Cc: Lars-Peter Clausen <lars@metafoo.de>
+> > Cc: Peter Meerwald-Stadler <pmeerw@pmeerw.net>
+> > Cc: linux-iio@vger.kernel.org
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> >  .../devicetree/bindings/iio/accel/adi,adxl345.yaml     | 10 +++++++---
+> >  Documentation/devicetree/bindings/trivial-devices.yaml |  4 ----
+> >  2 files changed, 7 insertions(+), 7 deletions(-)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+> > b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+> > index c602b6fe1c0c..d124eba1ce54 100644
+> > --- a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+> > +++ b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
+> > @@ -17,9 +17,13 @@ description: |
+> >  
+> >  properties:
+> >    compatible:
+> > -    enum:
+> > -      - adi,adxl345
+> > -      - adi,adxl375
+> > +    oneOf:
+> > +      - items:
+> > +          - const: adi,adxl346
+> > +          - const: adi,adxl345
+> > +      - enum:
+> > +          - adi,adxl345
+> > +          - adi,adxl375
+> >  
+> >    reg:
+> >      maxItems: 1
+> > diff --git a/Documentation/devicetree/bindings/trivial-devices.yaml
+> > b/Documentation/devicetree/bindings/trivial-devices.yaml
+> > index 978de7d37c66..51d1f6e43c02 100644
+> > --- a/Documentation/devicetree/bindings/trivial-devices.yaml
+> > +++ b/Documentation/devicetree/bindings/trivial-devices.yaml
+> > @@ -42,10 +42,6 @@ properties:
+> >            - adi,adt7476
+> >              # +/-1C TDM Extended Temp Range I.C
+> >            - adi,adt7490
+> > -            # Three-Axis Digital Accelerometer
+> > -          - adi,adxl345
+> > -            # Three-Axis Digital Accelerometer (backward-compatibility value
+> > "adi,adxl345" must be listed too)
+> > -          - adi,adxl346
+> >              # AMS iAQ-Core VOC Sensor
+> >            - ams,iaq-core
+> >              # i2c serial eeprom  (24cxx)  
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
