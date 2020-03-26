@@ -2,84 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13DCC193E4A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:50:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C578193E5F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:55:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kjryrElsUAA0g9RywHtAdK/eaxKS5ad9XMx/q8Lyxfs=; b=MbAKxsh3XBkRIj
-	yfNfHnJ7K6UZoHABkYX1VGHTyBMHqmgp7ue5SzqcU1w+OzRRKtXxpiSh9ja0Btk86ITy33Zr9ZgO/
-	cEybR72sG6jNRMUG7TQ+Hu6DpjodaqSI0kgMICwy/gXiuk4lTZ9ceWU+scF2AipnreGtYlf5zi+g8
-	N04pN2f7xyrTdWmr7zEtM/lzZC4N00VnMhkRlwxmJUA12XIGB6840O0eQQyBPn3AQGoMWtSqrcdPQ
-	Im+lIHGxLv27+tt782A5MqFZ4q3e2xvItLz4PjZdZG/aKVDUGlnfhx/FImgxryxR+Aos+eRXNPG+3
-	LoJWxrRv+5toMP6ZF6TA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+aKWn7NTDzZWma2wwxjkCy21GXvTqQ9Ao+aDAsSKM28=; b=gKTQOiWcTZEbLa
+	SsHRACsbFfxmW4oAKoR+wDtEDs7hxWaixMM6sAmYVFMNq1EbbskAiyQGsdQL8LmFDa6GJXMTvErdi
+	khcGcAg3bzZOKA5I2JRclvfRnzyuAHau4O2j6YizblVXi3X9OK+n5yq+Ifo6ev3/Q7D2LOexkwl2r
+	L2w193WXLjDOg5/qdPZyktS0LZKDcKDkqS8NDO5Xoa9NaBVwZKLmc8KaOhz3PizAH1KKdf7n5ndyz
+	pw4qFCXikvpjdlKfLjK7cJbW+/2+xzevTPiIgs5iRcdWkWBxlKMGp32zQo847ljk2VPYVbdSRAGML
+	2/6nAidHskA7ZQXZZ1/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHR20-0001oy-Ap; Thu, 26 Mar 2020 11:50:40 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jHR6A-0003FZ-S7; Thu, 26 Mar 2020 11:54:58 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHR1o-0001l6-CF
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:50:30 +0000
-Received: by mail-pg1-x542.google.com with SMTP id d37so2233642pgl.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 04:50:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=eahJs5G9Mdp7rh5p/I+k7vqH+FYkCW5jQz7h0JzvSYE=;
- b=ld2nwTE4rMisCwbNHb7yUIP2doQ7eYTtqakpMDUOWRL/3+bVkTn4LgPD3M4NsPc8O2
- U+LO9YmBiZT4owUtv4ids8kH8liDKBfo8YI3c8LHjcZv3+lz0PBtPKmFpb4vc0pdWS4c
- u7x0ozSNUV0Xsp9a8TkKhVhCVAxhTFSwUOULGhEA3bznCA4Ru8IDhFZuFs4NdDGLiipJ
- akXN84GrcHH9gkLN/jJcVtqFl9SbwFJdziIgKTlDq5fdBt/y7ypE64QswcY78DSzndDf
- WbuqnkRuGtuhqXnJ5KkaEcfXb7xIOXvRKQy2Mpog6yGNSdvg/R0PUKwJNaF/LWeg/yHU
- unFg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eahJs5G9Mdp7rh5p/I+k7vqH+FYkCW5jQz7h0JzvSYE=;
- b=USZYnLDsZHd2BUK5bJd52gEgn5NJyXNzmbXloQkT5J3VoAOK4LaGc1j+e3BmPOGptG
- wJf4asAjCt3xVm2hOMQ5F5ZHtkiTxm8unh+oBAWH2mkxgEZdTe4r+Vacql3xigVB7PNd
- UQLtnMJNWVH2xqsvluC+m3hWRaFpPkSpEzurhq6mdsDbt3EC8x9/Cnfi43TX9jxtf6+I
- MIgby+HEVAlclmHDJi4AvNUxQw3GmbfxY/E8jN0IdI56uGRAUJwGTrNIBQvWJMb3HtBz
- zexFNyhR4Y96hxgzrmKXTeUAZ9crNDZefTq9jVUg1c3Uf5m5oStcJHgrhw0n7bedRhmd
- tbdg==
-X-Gm-Message-State: ANhLgQ2gXR5e3pw/mg7Fr5oQWukgE001UgV3b1TmDZIqer3vFjnjiQ3G
- IwFRTLn5zMcMhJnk/1pCHRhaDw==
-X-Google-Smtp-Source: ADFU+vvprQ2//Xmt7vRhZyfPWsz4Wn3K6tH3zXOpvAnyFCnbpAFAq5YL7JRvr/M6BzqtQxC5bbcgxg==
-X-Received: by 2002:a63:8048:: with SMTP id j69mr8254402pgd.410.1585223426833; 
- Thu, 26 Mar 2020 04:50:26 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id 6sm1494245pfx.69.2020.03.26.04.50.25
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 26 Mar 2020 04:50:25 -0700 (PDT)
-Date: Thu, 26 Mar 2020 17:20:23 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sumit Gupta <sumitg@nvidia.com>
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-Message-ID: <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
+ id 1jHR5v-0003Cv-Qb; Thu, 26 Mar 2020 11:54:46 +0000
+X-UUID: bd8148f931b64186b4c0ceffd23d5edc-20200326
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=s12A0zWwSPFwWWL3hA7SUCBHPhMCTxane52Og4gdNx4=; 
+ b=DZV5q6701Z5tlZBX3aIj+NwrmPHB3/d4OOfg12lYyy7rGvgjI6u7+58RqVZaQnNq1s2Ev3SuKQCHbaab0RTLbuWeXZdXhp6z3qoaxg6TbE12S7reZaAkiZ9tUEnVCgNrBoVQQx8VMZEGHGm0/wleMnxEvWMpM1VjlBX8nNoFzZ4=;
+X-UUID: bd8148f931b64186b4c0ceffd23d5edc-20200326
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <qii.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1579982628; Thu, 26 Mar 2020 03:54:38 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Mar 2020 04:54:35 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Mar 2020 19:54:34 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 26 Mar 2020 19:54:33 +0800
+From: <qii.wang@mediatek.com>
+To: <wsa@the-dreams.de>
+Subject: [PATCH] i2c: mediatek: Add i2c ac-timing adjust support
+Date: Thu, 26 Mar 2020 19:54:36 +0800
+Message-ID: <1585223676-30809-1-git-send-email-qii.wang@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_045028_560907_7D157155 
-X-CRM114-Status: GOOD (  24.52  )
+X-CRM114-CacheID: sfid-20200326_045443_881283_104E7698 
+X-CRM114-Status: GOOD (  15.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,455 +84,502 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: qii.wang@mediatek.com, srv_heupstream@mediatek.com, leilk.liu@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03-12-19, 23:02, Sumit Gupta wrote:
-> diff --git a/drivers/cpufreq/tegra194-cpufreq.c b/drivers/cpufreq/tegra194-cpufreq.c
-> new file mode 100644
-> index 0000000..9df12f4
-> --- /dev/null
-> +++ b/drivers/cpufreq/tegra194-cpufreq.c
-> @@ -0,0 +1,423 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved
-> + */
-> +
-> +#include <linux/cpu.h>
-> +#include <linux/cpufreq.h>
-> +#include <linux/delay.h>
-> +#include <linux/dma-mapping.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/slab.h>
-> +
-> +#include <asm/smp_plat.h>
-> +
-> +#include <soc/tegra/bpmp.h>
-> +#include <soc/tegra/bpmp-abi.h>
-> +
-> +#define KHZ                     1000
-> +#define REF_CLK_MHZ             408 /* 408 MHz */
-> +#define US_DELAY                2000
-> +#define US_DELAY_MIN            2
-> +#define CPUFREQ_TBL_STEP_HZ     (50 * KHZ * KHZ)
-> +#define MAX_CNT                 ~0U
-> +
-> +/* cpufreq transisition latency */
-> +#define TEGRA_CPUFREQ_TRANSITION_LATENCY (300 * 1000) /* unit in nanoseconds */
-> +
-> +enum cluster {
-> +	CLUSTER0,
-> +	CLUSTER1,
-> +	CLUSTER2,
-> +	CLUSTER3,
+From: Qii Wang <qii.wang@mediatek.com>
 
-All these have same CPUs ? Or big little kind of stuff ? How come they
-have different frequency tables ?
+This patch adds a algorithm to calculate some ac-timing parameters
+which can fully meet I2C Spec.
 
-> +	MAX_CLUSTERS,
-> +};
-> +
-> +struct tegra194_cpufreq_data {
-> +	void __iomem *regs;
-> +	size_t num_clusters;
-> +	struct cpufreq_frequency_table **tables;
-> +};
-> +
-> +static DEFINE_MUTEX(cpufreq_lock);
-> +
-> +struct tegra_cpu_ctr {
-> +	u32 cpu;
-> +	u32 delay;
-> +	u32 coreclk_cnt, last_coreclk_cnt;
-> +	u32 refclk_cnt, last_refclk_cnt;
-> +};
-> +
-> +static struct workqueue_struct *read_counters_wq;
-> +struct read_counters_work {
-> +	struct work_struct work;
-> +	struct tegra_cpu_ctr c;
-> +};
-> +
-> +static enum cluster get_cpu_cluster(u8 cpu)
-> +{
-> +	return MPIDR_AFFINITY_LEVEL(cpu_logical_map(cpu), 1);
-> +}
-> +
-> +/*
-> + * Read per-core Read-only system register NVFREQ_FEEDBACK_EL1.
-> + * The register provides frequency feedback information to
-> + * determine the average actual frequency a core has run at over
-> + * a period of time.
-> + *	[31:0] PLLP counter: Counts at fixed frequency (408 MHz)
-> + *	[63:32] Core clock counter: counts on every core clock cycle
-> + *			where the core is architecturally clocking
-> + */
-> +static u64 read_freq_feedback(void)
-> +{
-> +	u64 val = 0;
-> +
-> +	asm volatile("mrs %0, s3_0_c15_c0_5" : "=r" (val) : );
-> +
-> +	return val;
-> +}
-> +
-> +u16 map_freq_to_ndiv(struct mrq_cpu_ndiv_limits_response *nltbl, u32 freq)
-> +{
-> +	return DIV_ROUND_UP(freq * nltbl->pdiv * nltbl->mdiv,
-> +			    nltbl->ref_clk_hz / KHZ);
-> +}
-> +
-> +static inline u32 map_ndiv_to_freq(struct mrq_cpu_ndiv_limits_response
-> +				   *nltbl, u16 ndiv)
-> +{
-> +	return nltbl->ref_clk_hz / KHZ * ndiv / (nltbl->pdiv * nltbl->mdiv);
-> +}
-> +
-> +static void tegra_read_counters(struct work_struct *work)
-> +{
-> +	struct read_counters_work *read_counters_work;
-> +	struct tegra_cpu_ctr *c;
-> +	u64 val;
-> +
-> +	/*
-> +	 * ref_clk_counter(32 bit counter) runs on constant clk,
-> +	 * pll_p(408MHz).
-> +	 * It will take = 2 ^ 32 / 408 MHz to overflow ref clk counter
-> +	 *              = 10526880 usec = 10.527 sec to overflow
-> +	 *
-> +	 * Like wise core_clk_counter(32 bit counter) runs on core clock.
-> +	 * It's synchronized to crab_clk (cpu_crab_clk) which runs at
-> +	 * freq of cluster. Assuming max cluster clock ~2000MHz,
-> +	 * It will take = 2 ^ 32 / 2000 MHz to overflow core clk counter
-> +	 *              = ~2.147 sec to overflow
-> +	 */
-> +	read_counters_work = container_of(work, struct read_counters_work,
-> +					  work);
-> +	c = &read_counters_work->c;
-> +
-> +	val = read_freq_feedback();
-> +	c->last_refclk_cnt = lower_32_bits(val);
-> +	c->last_coreclk_cnt = upper_32_bits(val);
-> +	udelay(c->delay);
-> +	val = read_freq_feedback();
-> +	c->refclk_cnt = lower_32_bits(val);
-> +	c->coreclk_cnt = upper_32_bits(val);
-> +}
-> +
-> +/*
-> + * Return instantaneous cpu speed
-> + * Instantaneous freq is calculated as -
-> + * -Takes sample on every query of getting the freq.
-> + *	- Read core and ref clock counters;
-> + *	- Delay for X us
-> + *	- Read above cycle counters again
-> + *	- Calculates freq by subtracting current and previous counters
-> + *	  divided by the delay time or eqv. of ref_clk_counter in delta time
-> + *	- Return Kcycles/second, freq in KHz
-> + *
-> + *	delta time period = x sec
-> + *			  = delta ref_clk_counter / (408 * 10^6) sec
-> + *	freq in Hz = cycles/sec
-> + *		   = (delta cycles / x sec
-> + *		   = (delta cycles * 408 * 10^6) / delta ref_clk_counter
-> + *	in KHz	   = (delta cycles * 408 * 10^3) / delta ref_clk_counter
-> + *
-> + * @cpu - logical cpu whose freq to be updated
-> + * Returns freq in KHz on success, 0 if cpu is offline
-> + */
-> +static unsigned int tegra194_get_speed_common(u32 cpu, u32 delay)
-> +{
-> +	struct read_counters_work read_counters_work;
-> +	struct tegra_cpu_ctr c;
-> +	u32 delta_refcnt;
-> +	u32 delta_ccnt;
-> +	u32 rate_mhz;
-> +
-> +	read_counters_work.c.cpu = cpu;
-> +	read_counters_work.c.delay = delay;
-> +	INIT_WORK_ONSTACK(&read_counters_work.work, tegra_read_counters);
-> +	queue_work_on(cpu, read_counters_wq, &read_counters_work.work);
-> +	flush_work(&read_counters_work.work);
+Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+---
+ drivers/i2c/busses/i2c-mt65xx.c | 332 ++++++++++++++++++++++++++++++++++------
+ 1 file changed, 281 insertions(+), 51 deletions(-)
 
-Why can't this be done in current context ?
-
-> +	c = read_counters_work.c;
-> +
-> +	if (c.coreclk_cnt < c.last_coreclk_cnt)
-> +		delta_ccnt = c.coreclk_cnt + (MAX_CNT - c.last_coreclk_cnt);
-> +	else
-> +		delta_ccnt = c.coreclk_cnt - c.last_coreclk_cnt;
-> +	if (!delta_ccnt)
-> +		return 0;
-> +
-> +	/* ref clock is 32 bits */
-> +	if (c.refclk_cnt < c.last_refclk_cnt)
-> +		delta_refcnt = c.refclk_cnt + (MAX_CNT - c.last_refclk_cnt);
-> +	else
-> +		delta_refcnt = c.refclk_cnt - c.last_refclk_cnt;
-> +	if (!delta_refcnt) {
-> +		pr_debug("cpufreq: %d is idle, delta_refcnt: 0\n", cpu);
-> +		return 0;
-> +	}
-> +	rate_mhz = ((unsigned long)(delta_ccnt * REF_CLK_MHZ)) / delta_refcnt;
-> +
-> +	return (rate_mhz * KHZ); /* in KHz */
-> +}
-> +
-> +static unsigned int tegra194_get_speed(u32 cpu)
-> +{
-> +	return tegra194_get_speed_common(cpu, US_DELAY);
-> +}
-> +
-> +static unsigned int tegra194_fast_get_speed(u32 cpu)
-> +{
-> +	return tegra194_get_speed_common(cpu, US_DELAY_MIN);
-
-Why is this required specially here ? Why can't you work with normal
-delay ?
-
-> +}
-> +
-> +static int tegra194_cpufreq_init(struct cpufreq_policy *policy)
-> +{
-> +	struct tegra194_cpufreq_data *data = cpufreq_get_driver_data();
-> +	int cluster = get_cpu_cluster(policy->cpu);
-> +
-> +	if (cluster >= data->num_clusters)
-> +		return -EINVAL;
-> +
-> +	policy->cur = tegra194_fast_get_speed(policy->cpu); /* boot freq */
-> +
-> +	/* set same policy for all cpus */
-> +	cpumask_copy(policy->cpus, cpu_possible_mask);
-
-You are copying cpu_possible_mask mask here, and so this routine will
-get called only once.
-
-I still don't understand the logic behind clusters and frequency
-tables.
-
-> +
-> +	policy->freq_table = data->tables[cluster];
-> +	policy->cpuinfo.transition_latency = TEGRA_CPUFREQ_TRANSITION_LATENCY;
-> +
-> +	return 0;
-> +}
-> +
-> +static void set_cpu_ndiv(void *data)
-> +{
-> +	struct cpufreq_frequency_table *tbl = data;
-> +	u64 ndiv_val = (u64)tbl->driver_data;
-> +
-> +	asm volatile("msr s3_0_c15_c0_4, %0" : : "r" (ndiv_val));
-> +}
-> +
-> +static int tegra194_cpufreq_set_target(struct cpufreq_policy *policy,
-> +				       unsigned int index)
-> +{
-> +	struct cpufreq_frequency_table *tbl = policy->freq_table + index;
-> +	static struct cpufreq_freqs freqs;
-> +
-> +	mutex_lock(&cpufreq_lock);
-
-No need of lock here.
-
-> +	freqs.old = policy->cur;
-> +	freqs.new = tbl->frequency;
-> +
-> +	cpufreq_freq_transition_begin(policy, &freqs);
-> +	on_each_cpu_mask(policy->cpus, set_cpu_ndiv, tbl, true);
-
-When CPUs share clock line, why is this required for every CPU ?
-
-> +	cpufreq_freq_transition_end(policy, &freqs, 0);
-> +
-> +	mutex_unlock(&cpufreq_lock);
-> +
-> +	return 0;
-> +}
-> +
-> +static struct cpufreq_driver tegra194_cpufreq_driver = {
-> +	.name = "tegra194",
-> +	.flags = CPUFREQ_STICKY | CPUFREQ_CONST_LOOPS |
-> +		CPUFREQ_NEED_INITIAL_FREQ_CHECK | CPUFREQ_ASYNC_NOTIFICATION,
-
-Why Async here ? I am really confused if I am not able to understand
-the driver or you :)
-
-> +	.verify = cpufreq_generic_frequency_table_verify,
-> +	.target_index = tegra194_cpufreq_set_target,
-> +	.get = tegra194_get_speed,
-> +	.init = tegra194_cpufreq_init,
-> +	.attr = cpufreq_generic_attr,
-> +};
-> +
-> +static void tegra194_cpufreq_free_resources(void)
-> +{
-> +	flush_workqueue(read_counters_wq);
-> +	destroy_workqueue(read_counters_wq);
-> +}
-> +
-> +static struct cpufreq_frequency_table *init_freq_table
-
-Don't break line here, rather break after above *.
-
-> +		(struct platform_device *pdev, struct tegra_bpmp *bpmp,
-> +		 unsigned int cluster_id)
-> +{
-> +	struct cpufreq_frequency_table *opp_table;
-
-Please name it freq_table :)
-
-> +	struct mrq_cpu_ndiv_limits_response resp;
-> +	unsigned int num_freqs, ndiv, delta_ndiv;
-> +	struct mrq_cpu_ndiv_limits_request req;
-> +	struct tegra_bpmp_message msg;
-> +	u16 freq_table_step_size;
-> +	int err, index;
-> +
-> +	memset(&req, 0, sizeof(req));
-> +	req.cluster_id = cluster_id;
-> +
-> +	memset(&msg, 0, sizeof(msg));
-> +	msg.mrq = MRQ_CPU_NDIV_LIMITS;
-> +	msg.tx.data = &req;
-> +	msg.tx.size = sizeof(req);
-> +	msg.rx.data = &resp;
-> +	msg.rx.size = sizeof(resp);
-> +
-> +	err = tegra_bpmp_transfer(bpmp, &msg);
-> +	if (err)
-> +		return ERR_PTR(err);
-> +
-> +	/*
-> +	 * Make sure frequency table step is a multiple of mdiv to match
-> +	 * vhint table granularity.
-> +	 */
-> +	freq_table_step_size = resp.mdiv *
-> +			DIV_ROUND_UP(CPUFREQ_TBL_STEP_HZ, resp.ref_clk_hz);
-> +
-> +	dev_dbg(&pdev->dev, "cluster %d: frequency table step size: %d\n",
-> +		cluster_id, freq_table_step_size);
-> +
-> +	delta_ndiv = resp.ndiv_max - resp.ndiv_min;
-> +
-> +	if (unlikely(delta_ndiv == 0))
-> +		num_freqs = 1;
-> +	else
-> +		/* We store both ndiv_min and ndiv_max hence the +1 */
-> +		num_freqs = delta_ndiv / freq_table_step_size + 1;
-> +
-> +	num_freqs += (delta_ndiv % freq_table_step_size) ? 1 : 0;
-> +
-> +	opp_table = devm_kcalloc(&pdev->dev, num_freqs + 1, sizeof(*opp_table),
-> +				 GFP_KERNEL);
-> +	if (!opp_table)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	for (index = 0, ndiv = resp.ndiv_min;
-> +			ndiv < resp.ndiv_max;
-> +			index++, ndiv += freq_table_step_size) {
-> +		opp_table[index].driver_data = ndiv;
-> +		opp_table[index].frequency = map_ndiv_to_freq(&resp, ndiv);
-> +	}
-> +
-> +	opp_table[index].driver_data = resp.ndiv_max;
-> +	opp_table[index++].frequency = map_ndiv_to_freq(&resp, resp.ndiv_max);
-> +	opp_table[index].frequency = CPUFREQ_TABLE_END;
-> +
-> +	return opp_table;
-> +}
-> +
-> +static int tegra194_cpufreq_probe(struct platform_device *pdev)
-> +{
-> +	struct tegra194_cpufreq_data *data;
-> +	struct tegra_bpmp *bpmp;
-> +	int err, i;
-> +
-> +	data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	data->num_clusters = MAX_CLUSTERS;
-> +	data->tables = devm_kcalloc(&pdev->dev, data->num_clusters,
-> +				    sizeof(*data->tables), GFP_KERNEL);
-> +	if (!data->tables)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, data);
-> +
-> +	read_counters_wq = alloc_workqueue("read_counters_wq", __WQ_LEGACY, 1);
-> +	if (!read_counters_wq) {
-> +		dev_err(&pdev->dev, "fail to create_workqueue\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	bpmp = of_tegra_bpmp_get();
-> +	if (IS_ERR(bpmp)) {
-> +		err = PTR_ERR(bpmp);
-> +		goto err_free_res;
-> +	}
-> +
-> +	for (i = 0; i < data->num_clusters; i++) {
-> +		data->tables[i] = init_freq_table(pdev, bpmp, i);
-> +		if (IS_ERR(data->tables[i])) {
-> +			err = PTR_ERR(data->tables[i]);
-> +			goto put_bpmp;
-> +		}
-> +	}
-> +
-> +	tegra_bpmp_put(bpmp);
-> +
-> +	tegra194_cpufreq_driver.driver_data = data;
-> +
-> +	err = cpufreq_register_driver(&tegra194_cpufreq_driver);
-> +	if (err)
-> +		goto err_free_res;
-> +
-> +	return err;
-> +
-> +put_bpmp:
-> +	tegra_bpmp_put(bpmp);
-> +err_free_res:
-> +	tegra194_cpufreq_free_resources();
-> +	return err;
-> +}
-> +
-> +static int tegra194_cpufreq_remove(struct platform_device *pdev)
-> +{
-> +	cpufreq_unregister_driver(&tegra194_cpufreq_driver);
-> +	tegra194_cpufreq_free_resources();
-> +
-> +	return 0;
-> +}
-> +
-> +static struct platform_driver tegra194_cpufreq_platform_driver = {
-> +	.driver = {
-> +		.name = "tegra194-cpufreq",
-> +	},
-> +	.probe = tegra194_cpufreq_probe,
-> +	.remove = tegra194_cpufreq_remove,
-> +};
-> +
-> +static int __init tegra_cpufreq_init(void)
-
-I seem to be forgetting this, but should we use __init with modules or
-not ?
-
+diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+index 2152ec5f..4da9aac 100644
+--- a/drivers/i2c/busses/i2c-mt65xx.c
++++ b/drivers/i2c/busses/i2c-mt65xx.c
+@@ -40,12 +40,11 @@
+ #define I2C_SOFT_RST			0x0001
+ #define I2C_FIFO_ADDR_CLR		0x0001
+ #define I2C_DELAY_LEN			0x0002
+-#define I2C_ST_START_CON		0x8001
+-#define I2C_FS_START_CON		0x1800
+ #define I2C_TIME_CLR_VALUE		0x0000
+ #define I2C_TIME_DEFAULT_VALUE		0x0003
+ #define I2C_WRRD_TRANAC_VALUE		0x0002
+ #define I2C_RD_TRANAC_VALUE		0x0001
++#define I2C_SCL_MIS_COMP_VALUE		0x0000
+ 
+ #define I2C_DMA_CON_TX			0x0000
+ #define I2C_DMA_CON_RX			0x0001
+@@ -55,13 +54,16 @@
+ #define I2C_DMA_HARD_RST		0x0002
+ #define I2C_DMA_4G_MODE			0x0001
+ 
+-#define I2C_DEFAULT_CLK_DIV		5
+ #define I2C_DEFAULT_SPEED		100000	/* hz */
+ #define MAX_FS_MODE_SPEED		400000
+ #define MAX_HS_MODE_SPEED		3400000
+ #define MAX_SAMPLE_CNT_DIV		8
+ #define MAX_STEP_CNT_DIV		64
++#define MAX_CLOCK_DIV			256
+ #define MAX_HS_STEP_CNT_DIV		8
++#define I2C_STANDARD_MODE_BUFFER	(1000 / 2)
++#define I2C_FAST_MODE_BUFFER		(300 / 2)
++#define I2C_FAST_MODE_PLUS_BUFFER	(20 / 2)
+ 
+ #define I2C_CONTROL_RS                  (0x1 << 1)
+ #define I2C_CONTROL_DMA_EN              (0x1 << 2)
+@@ -126,6 +128,12 @@ enum I2C_REGS_OFFSET {
+ 	OFFSET_TRANSFER_LEN_AUX,
+ 	OFFSET_CLOCK_DIV,
+ 	OFFSET_LTIMING,
++	OFFSET_SCL_HIGH_LOW_RATIO,
++	OFFSET_HS_SCL_HIGH_LOW_RATIO,
++	OFFSET_SCL_MIS_COMP_POINT,
++	OFFSET_STA_STO_AC_TIMING,
++	OFFSET_HS_STA_STO_AC_TIMING,
++	OFFSET_SDA_TIMING,
+ };
+ 
+ static const u16 mt_i2c_regs_v1[] = {
+@@ -153,6 +161,12 @@ enum I2C_REGS_OFFSET {
+ 	[OFFSET_DEBUGCTRL] = 0x68,
+ 	[OFFSET_TRANSFER_LEN_AUX] = 0x6c,
+ 	[OFFSET_CLOCK_DIV] = 0x70,
++	[OFFSET_SCL_HIGH_LOW_RATIO] = 0x74,
++	[OFFSET_HS_SCL_HIGH_LOW_RATIO] = 0x78,
++	[OFFSET_SCL_MIS_COMP_POINT] = 0x7C,
++	[OFFSET_STA_STO_AC_TIMING] = 0x80,
++	[OFFSET_HS_STA_STO_AC_TIMING] = 0x84,
++	[OFFSET_SDA_TIMING] = 0x88,
+ };
+ 
+ static const u16 mt_i2c_regs_v2[] = {
+@@ -171,9 +185,11 @@ enum I2C_REGS_OFFSET {
+ 	[OFFSET_HS] = 0x30,
+ 	[OFFSET_IO_CONFIG] = 0x34,
+ 	[OFFSET_FIFO_ADDR_CLR] = 0x38,
++	[OFFSET_SDA_TIMING] = 0x3c,
+ 	[OFFSET_TRANSFER_LEN_AUX] = 0x44,
+ 	[OFFSET_CLOCK_DIV] = 0x48,
+ 	[OFFSET_SOFTRESET] = 0x50,
++	[OFFSET_SCL_MIS_COMP_POINT] = 0x90,
+ 	[OFFSET_DEBUGSTAT] = 0xe0,
+ 	[OFFSET_DEBUGCTRL] = 0xe8,
+ 	[OFFSET_FIFO_STAT] = 0xf4,
+@@ -194,6 +210,19 @@ struct mtk_i2c_compatible {
+ 	unsigned char ltiming_adjust: 1;
+ };
+ 
++struct mtk_i2c_ac_timing {
++	u16 htiming;
++	u16 ltiming;
++	u16 hs;
++	u16 ext;
++	u16 inter_clk_div;
++	u16 scl_hl_ratio;
++	u16 hs_scl_hl_ratio;
++	u16 sta_stop;
++	u16 hs_sta_stop;
++	u16 sda_timing;
++};
++
+ struct mtk_i2c {
+ 	struct i2c_adapter adap;	/* i2c host adapter */
+ 	struct device *dev;
+@@ -218,9 +247,46 @@ struct mtk_i2c {
+ 	u16 ltiming_reg;
+ 	unsigned char auto_restart;
+ 	bool ignore_restart_irq;
++	struct mtk_i2c_ac_timing ac_timing;
+ 	const struct mtk_i2c_compatible *dev_comp;
+ };
+ 
++/**
++ * struct i2c_spec_values:
++ * min_low_ns: min LOW period of the SCL clock
++ * min_su_sta_ns: min set-up time for a repeated START condition
++ * max_hd_dat_ns: max data hold time
++ * min_su_dat_ns: min data set-up time
++ */
++struct i2c_spec_values {
++	unsigned int min_low_ns;
++	unsigned int min_high_ns;
++	unsigned int min_su_sta_ns;
++	unsigned int max_hd_dat_ns;
++	unsigned int min_su_dat_ns;
++};
++
++static const struct i2c_spec_values standard_mode_spec = {
++	.min_low_ns = 4700 + I2C_STANDARD_MODE_BUFFER,
++	.min_su_sta_ns = 4700 + I2C_STANDARD_MODE_BUFFER,
++	.max_hd_dat_ns = 3450 - I2C_STANDARD_MODE_BUFFER,
++	.min_su_dat_ns = 250 + I2C_STANDARD_MODE_BUFFER,
++};
++
++static const struct i2c_spec_values fast_mode_spec = {
++	.min_low_ns = 1300 + I2C_FAST_MODE_BUFFER,
++	.min_su_sta_ns = 600 + I2C_FAST_MODE_BUFFER,
++	.max_hd_dat_ns = 900 - I2C_FAST_MODE_BUFFER,
++	.min_su_dat_ns = 100 + I2C_FAST_MODE_BUFFER,
++};
++
++static const struct i2c_spec_values fast_mode_plus_spec = {
++	.min_low_ns = 500 + I2C_FAST_MODE_PLUS_BUFFER,
++	.min_su_sta_ns = 260 + I2C_FAST_MODE_PLUS_BUFFER,
++	.max_hd_dat_ns = 400 - I2C_FAST_MODE_PLUS_BUFFER,
++	.min_su_dat_ns = 50 + I2C_FAST_MODE_PLUS_BUFFER,
++};
++
+ static const struct i2c_adapter_quirks mt6577_i2c_quirks = {
+ 	.flags = I2C_AQ_COMB_WRITE_THEN_READ,
+ 	.max_num_msgs = 1,
+@@ -400,14 +466,38 @@ static void mtk_i2c_init_hw(struct mtk_i2c *i2c)
+ 	if (i2c->dev_comp->dcm)
+ 		mtk_i2c_writew(i2c, I2C_DCM_DISABLE, OFFSET_DCM_EN);
+ 
+-	if (i2c->dev_comp->timing_adjust)
+-		mtk_i2c_writew(i2c, I2C_DEFAULT_CLK_DIV - 1, OFFSET_CLOCK_DIV);
+-
+ 	mtk_i2c_writew(i2c, i2c->timing_reg, OFFSET_TIMING);
+ 	mtk_i2c_writew(i2c, i2c->high_speed_reg, OFFSET_HS);
+ 	if (i2c->dev_comp->ltiming_adjust)
+ 		mtk_i2c_writew(i2c, i2c->ltiming_reg, OFFSET_LTIMING);
+ 
++	if (i2c->dev_comp->timing_adjust) {
++		mtk_i2c_writew(i2c, i2c->ac_timing.ext, OFFSET_EXT_CONF);
++		mtk_i2c_writew(i2c, i2c->ac_timing.inter_clk_div,
++			       OFFSET_CLOCK_DIV);
++		mtk_i2c_writew(i2c, I2C_SCL_MIS_COMP_VALUE,
++			       OFFSET_SCL_MIS_COMP_POINT);
++		mtk_i2c_writew(i2c, i2c->ac_timing.sda_timing,
++			       OFFSET_SDA_TIMING);
++
++		if (i2c->dev_comp->ltiming_adjust) {
++			mtk_i2c_writew(i2c, i2c->ac_timing.htiming,
++				       OFFSET_TIMING);
++			mtk_i2c_writew(i2c, i2c->ac_timing.hs, OFFSET_HS);
++			mtk_i2c_writew(i2c, i2c->ac_timing.ltiming,
++				       OFFSET_LTIMING);
++		} else {
++			mtk_i2c_writew(i2c, i2c->ac_timing.scl_hl_ratio,
++				       OFFSET_SCL_HIGH_LOW_RATIO);
++			mtk_i2c_writew(i2c, i2c->ac_timing.hs_scl_hl_ratio,
++				       OFFSET_HS_SCL_HIGH_LOW_RATIO);
++			mtk_i2c_writew(i2c, i2c->ac_timing.sta_stop,
++				       OFFSET_STA_STO_AC_TIMING);
++			mtk_i2c_writew(i2c, i2c->ac_timing.hs_sta_stop,
++				       OFFSET_HS_STA_STO_AC_TIMING);
++		}
++	}
++
+ 	/* If use i2c pin from PMIC mt6397 side, need set PATH_DIR first */
+ 	if (i2c->have_pmic)
+ 		mtk_i2c_writew(i2c, I2C_CONTROL_WRAPPER, OFFSET_PATH_DIR);
+@@ -425,6 +515,129 @@ static void mtk_i2c_init_hw(struct mtk_i2c *i2c)
+ 	writel(I2C_DMA_CLR_FLAG, i2c->pdmabase + OFFSET_RST);
+ }
+ 
++static const struct i2c_spec_values *mtk_i2c_get_spec(unsigned int speed)
++{
++	if (speed <= I2C_DEFAULT_SPEED)
++		return &standard_mode_spec;
++	else if (speed <= MAX_FS_MODE_SPEED)
++		return &fast_mode_spec;
++	else
++		return &fast_mode_plus_spec;
++}
++
++static int mtk_i2c_max_step_cnt(unsigned int target_speed)
++{
++	if (target_speed > MAX_FS_MODE_SPEED)
++		return MAX_HS_STEP_CNT_DIV;
++	else
++		return MAX_STEP_CNT_DIV;
++}
++
++/*
++ * Check and Calculate i2c ac-timing
++ *
++ * Hardware design:
++ * sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src
++ * xxx_cnt_div =  spec->min_xxx_ns / sample_ns
++ *
++ * Sample_ns is rounded down for xxx_cnt_div would be greater
++ * than the smallest spec.
++ * The sda_timing is chosen as the middle value between
++ * the largest and smallest.
++ */
++static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
++				   unsigned int clk_src,
++				   unsigned int check_speed,
++				   unsigned int step_cnt,
++				   unsigned int sample_cnt)
++{
++	const struct i2c_spec_values *spec;
++	unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
++	unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
++	long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
++
++	if (!i2c->dev_comp->timing_adjust)
++		return 0;
++
++	if (i2c->dev_comp->ltiming_adjust)
++		max_sta_cnt = 0x100;
++
++	spec = mtk_i2c_get_spec(check_speed);
++
++	if (i2c->dev_comp->ltiming_adjust)
++		clk_ns = 1000000000 / clk_src;
++	else
++		clk_ns = sample_ns / 2;
++
++	su_sta_cnt = DIV_ROUND_UP(spec->min_su_sta_ns, clk_ns);
++	if (su_sta_cnt > max_sta_cnt)
++		return -1;
++
++	low_cnt = DIV_ROUND_UP(spec->min_low_ns, sample_ns);
++	max_step_cnt = mtk_i2c_max_step_cnt(check_speed);
++	if ((2 * step_cnt) > low_cnt && low_cnt < max_step_cnt) {
++		if (low_cnt > step_cnt) {
++			high_cnt = 2 * step_cnt - low_cnt;
++		} else {
++			high_cnt = step_cnt;
++			low_cnt = step_cnt;
++		}
++	} else {
++		return -2;
++	}
++
++	sda_max = spec->max_hd_dat_ns / sample_ns;
++	if (sda_max < low_cnt)
++		sda_max = sda_max;
++	else
++		sda_max = 0;
++
++	sda_min = DIV_ROUND_UP(spec->min_su_dat_ns, sample_ns);
++	if (sda_min > low_cnt)
++		sda_min = sda_min;
++	else
++		sda_min = 0;
++
++	if (sda_min > sda_max)
++		return -3;
++
++	if (check_speed > MAX_FS_MODE_SPEED) {
++		if (i2c->dev_comp->ltiming_adjust) {
++			i2c->ac_timing.hs = I2C_TIME_DEFAULT_VALUE |
++				(sample_cnt << 12) | (high_cnt << 8);
++			i2c->ac_timing.ltiming &= ~GENMASK(15, 9);
++			i2c->ac_timing.ltiming |= (sample_cnt << 12) |
++				(low_cnt << 9);
++			i2c->ac_timing.ext &= ~GENMASK(7, 1);
++			i2c->ac_timing.ext |= (su_sta_cnt << 1) | (1 << 0);
++		} else {
++			i2c->ac_timing.hs_scl_hl_ratio = (1 << 12) |
++				(high_cnt << 6) | low_cnt;
++			i2c->ac_timing.hs_sta_stop = (su_sta_cnt << 8) |
++				su_sta_cnt;
++		}
++		i2c->ac_timing.sda_timing &= ~GENMASK(11, 6);
++		i2c->ac_timing.sda_timing |= (1 << 12) |
++			((sda_max + sda_min) / 2) << 6;
++	} else {
++		if (i2c->dev_comp->ltiming_adjust) {
++			i2c->ac_timing.htiming = (sample_cnt << 8) | (high_cnt);
++			i2c->ac_timing.ltiming = (sample_cnt << 6) | (low_cnt);
++			i2c->ac_timing.ext = (su_sta_cnt << 8) | (1 << 0);
++		} else {
++			i2c->ac_timing.scl_hl_ratio = (1 << 12) |
++				(high_cnt << 6) | low_cnt;
++			i2c->ac_timing.sta_stop = (su_sta_cnt << 8) |
++				su_sta_cnt;
++		}
++
++		i2c->ac_timing.sda_timing = (1 << 12) |
++			(sda_max + sda_min) / 2;
++	}
++
++	return 0;
++}
++
+ /*
+  * Calculate i2c port speed
+  *
+@@ -449,15 +662,12 @@ static int mtk_i2c_calculate_speed(struct mtk_i2c *i2c, unsigned int clk_src,
+ 	unsigned int opt_div;
+ 	unsigned int best_mul;
+ 	unsigned int cnt_mul;
++	int ret = -EINVAL;
+ 
+ 	if (target_speed > MAX_HS_MODE_SPEED)
+ 		target_speed = MAX_HS_MODE_SPEED;
+ 
+-	if (target_speed > MAX_FS_MODE_SPEED)
+-		max_step_cnt = MAX_HS_STEP_CNT_DIV;
+-	else
+-		max_step_cnt = MAX_STEP_CNT_DIV;
+-
++	max_step_cnt = mtk_i2c_max_step_cnt(target_speed);
+ 	base_step_cnt = max_step_cnt;
+ 	/* Find the best combination */
+ 	opt_div = DIV_ROUND_UP(clk_src >> 1, target_speed);
+@@ -476,6 +686,11 @@ static int mtk_i2c_calculate_speed(struct mtk_i2c *i2c, unsigned int clk_src,
+ 			continue;
+ 
+ 		if (cnt_mul < best_mul) {
++			ret = mtk_i2c_check_ac_timing(i2c, clk_src,
++				target_speed, step_cnt - 1, sample_cnt - 1);
++			if (ret)
++				continue;
++
+ 			best_mul = cnt_mul;
+ 			base_sample_cnt = sample_cnt;
+ 			base_step_cnt = step_cnt;
+@@ -484,6 +699,9 @@ static int mtk_i2c_calculate_speed(struct mtk_i2c *i2c, unsigned int clk_src,
+ 		}
+ 	}
+ 
++	if (ret)
++		return -EINVAL;
++
+ 	sample_cnt = base_sample_cnt;
+ 	step_cnt = base_step_cnt;
+ 
+@@ -509,47 +727,68 @@ static int mtk_i2c_set_speed(struct mtk_i2c *i2c, unsigned int parent_clk)
+ 	unsigned int l_step_cnt;
+ 	unsigned int l_sample_cnt;
+ 	unsigned int target_speed;
++	unsigned int clk_div;
++	unsigned int max_clk_div;
+ 	int ret;
+ 
+-	clk_src = parent_clk / i2c->clk_src_div;
+ 	target_speed = i2c->speed_hz;
++	parent_clk /= i2c->clk_src_div;
+ 
+-	if (target_speed > MAX_FS_MODE_SPEED) {
+-		/* Set master code speed register */
+-		ret = mtk_i2c_calculate_speed(i2c, clk_src, MAX_FS_MODE_SPEED,
+-					      &l_step_cnt, &l_sample_cnt);
+-		if (ret < 0)
+-			return ret;
+-
+-		i2c->timing_reg = (l_sample_cnt << 8) | l_step_cnt;
+-
+-		/* Set the high speed mode register */
+-		ret = mtk_i2c_calculate_speed(i2c, clk_src, target_speed,
+-					      &step_cnt, &sample_cnt);
+-		if (ret < 0)
+-			return ret;
+-
+-		i2c->high_speed_reg = I2C_TIME_DEFAULT_VALUE |
+-			(sample_cnt << 12) | (step_cnt << 8);
++	if (i2c->dev_comp->timing_adjust)
++		max_clk_div = MAX_CLOCK_DIV;
++	else
++		max_clk_div = 1;
++
++	for (clk_div = 1; clk_div <= max_clk_div; clk_div++) {
++		clk_src = parent_clk / clk_div;
++
++		if (target_speed > MAX_FS_MODE_SPEED) {
++			/* Set master code speed register */
++			ret = mtk_i2c_calculate_speed(i2c, clk_src,
++						      MAX_FS_MODE_SPEED,
++						      &l_step_cnt,
++						      &l_sample_cnt);
++			if (ret < 0)
++				continue;
++
++			i2c->timing_reg = (l_sample_cnt << 8) | l_step_cnt;
++
++			/* Set the high speed mode register */
++			ret = mtk_i2c_calculate_speed(i2c, clk_src,
++						      target_speed, &step_cnt,
++						      &sample_cnt);
++			if (ret < 0)
++				continue;
++
++			i2c->high_speed_reg = I2C_TIME_DEFAULT_VALUE |
++					(sample_cnt << 12) | (step_cnt << 8);
++
++			if (i2c->dev_comp->ltiming_adjust)
++				i2c->ltiming_reg =
++					(l_sample_cnt << 6) | l_step_cnt |
++					(sample_cnt << 12) | (step_cnt << 9);
++		} else {
++			ret = mtk_i2c_calculate_speed(i2c, clk_src,
++						      target_speed, &l_step_cnt,
++						      &l_sample_cnt);
++			if (ret < 0)
++				continue;
+ 
+-		if (i2c->dev_comp->ltiming_adjust)
+-			i2c->ltiming_reg = (l_sample_cnt << 6) | l_step_cnt |
+-					   (sample_cnt << 12) | (step_cnt << 9);
+-	} else {
+-		ret = mtk_i2c_calculate_speed(i2c, clk_src, target_speed,
+-					      &step_cnt, &sample_cnt);
+-		if (ret < 0)
+-			return ret;
++			i2c->timing_reg = (l_sample_cnt << 8) | l_step_cnt;
+ 
+-		i2c->timing_reg = (sample_cnt << 8) | step_cnt;
++			/* Disable the high speed transaction */
++			i2c->high_speed_reg = I2C_TIME_CLR_VALUE;
+ 
+-		/* Disable the high speed transaction */
+-		i2c->high_speed_reg = I2C_TIME_CLR_VALUE;
++			if (i2c->dev_comp->ltiming_adjust)
++				i2c->ltiming_reg =
++					(l_sample_cnt << 6) | l_step_cnt;
++		}
+ 
+-		if (i2c->dev_comp->ltiming_adjust)
+-			i2c->ltiming_reg = (sample_cnt << 6) | step_cnt;
++		break;
+ 	}
+ 
++	i2c->ac_timing.inter_clk_div = clk_div - 1;
++
+ 	return 0;
+ }
+ 
+@@ -589,12 +828,6 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
+ 
+ 	mtk_i2c_writew(i2c, control_reg, OFFSET_CONTROL);
+ 
+-	/* set start condition */
+-	if (i2c->speed_hz <= I2C_DEFAULT_SPEED)
+-		mtk_i2c_writew(i2c, I2C_ST_START_CON, OFFSET_EXT_CONF);
+-	else
+-		mtk_i2c_writew(i2c, I2C_FS_START_CON, OFFSET_EXT_CONF);
+-
+ 	addr_reg = i2c_8bit_addr_from_msg(msgs);
+ 	mtk_i2c_writew(i2c, addr_reg, OFFSET_SLAVE_ADDR);
+ 
+@@ -951,9 +1184,6 @@ static int mtk_i2c_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return -EINVAL;
+ 
+-	if (i2c->dev_comp->timing_adjust)
+-		i2c->clk_src_div *= I2C_DEFAULT_CLK_DIV;
+-
+ 	if (i2c->have_pmic && !i2c->dev_comp->pmic_i2c)
+ 		return -EINVAL;
+ 
 -- 
-viresh
-
+1.9.1
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
