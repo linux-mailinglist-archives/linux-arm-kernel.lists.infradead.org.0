@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE6B31947B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 20:43:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C1831947D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 20:48:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nl7Rxy0BKQII0VVZ3x7+T6PikEuSzK7RYBTHMT4dXqM=; b=UEsmd+iMF/P8Oa
-	w9unT8iRfaKkpwlw1wKTHm7yqCaQZwpoZSogqw8Y9VEyV/AgLwWzH9CfWnR/MefW1AnDItZ5VXXla
-	kNb/Yv5MI6PIh2n7q+5PNeJOGZI565iLx1wIAaCb2XyfqCwOxzBy1kxjLjSaTt/T0MQal1ohMxRdS
-	+AQknydz9H5HY34nhmpEuuIf3QUcIGF1wvf6xqMUXeMNlIzKdsFenavbr45I8x7ASjX4zlPvObn5P
-	2oYkgD3WxU/R9AROZ5pHlg1apKGcDQuceGRDcERQQtTaPD/Gn7AXHD3MeJjU40Oc8dDVr31FfHw60
-	UhdLGM00NZc/8ChTP0OQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=48FGhd2QEQO6Op/QGr1ZMsr/o1D3vf6GJ3nsTCYHK+Y=; b=DyUOJdMuaL5NAP
+	ukQz8SMJJu7vwrVK14mW0hkPdWjuyE4rHx2EteD75K7/mSxBsOnWDcEVerPrVlc45vtw830tWu8L2
+	XD4X4FbwGSmt/zUBawKYdYXfV7En91LMSFlMA+RfvYR2ZiotsCMKI6b0i0w9+XtCoXeG8Thde3wQn
+	jrd9lP247EhRSuJqCEETegmQ7LuGAjyg2sWU5q4MIgoC/8aKrJyq2CrCaSBNXNgQO2yt24Bq2zHDo
+	bR5hVvwQ27ghexDx06cSYriev0EHaxWQMcofjIe4V7MrptuUoScf3V9lQAFQHXax9y4Es/un6J5n/
+	HHDRB7GdC4j+bGxuTxsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHYPP-0001VY-4z; Thu, 26 Mar 2020 19:43:19 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jHYUJ-0003ZD-NY; Thu, 26 Mar 2020 19:48:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHYPE-0001VD-CK
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 19:43:09 +0000
-Received: by mail-pf1-x442.google.com with SMTP id f206so3302806pfa.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 12:43:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=UGAInaue7GSFpt799maDJX4PnvgR4YSaBrw6mv4yOuk=;
- b=KguwooGsTz40f9cvcDxM2GNej0d6GxRAuvL6H5rS2U2v7SuftTKbyWwCoyrbVU3Ran
- VyD2YsLLg4xfZTRozdTd/JY90atjqoOpyPsEJjDzEgufF+wEMTpcE9MagelT/9cM8rva
- QrE54uxvU0eXm4LkVkrQl5WgpIwRwN69ZnuS/VeB9cIZ12+TL/6uHMUaz5OfwZH7g6gX
- YxxUMnphBeI2VAuIg77Dt7Xx2x+goewYVKpeBqxiX70yfRkUTuFEx1Bkcvfl4H8KhpYo
- 8xpDJePD6vF39IcomlmlCm4/vnfi0aW9XyeDzV0/RiS+yCNpFXy9NGbVAaLleQ8A+QFj
- zhbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=UGAInaue7GSFpt799maDJX4PnvgR4YSaBrw6mv4yOuk=;
- b=jfrtjtVvxmpQ9ZNMuhDlppupZRxd2ChDjMV2d53VFXcG5VhrhlE32JBroL4hemrfo6
- jy3smbG11zDalHQ/WRQesXEVMUBEsJdVorRJ4mrhEFBHEsbco7ZD8AFFE5jUfClYB8gR
- YT67Msjm3sci2VeU0ypkWLXy1hftQmw210ICRtaztD6nXjwxSh0ZBWiVJwLX5mID8nSX
- yEF32zJDk0WGvcjxE8qjIigjAr1reDRZwz0VUoUix6/gVgEy4fUokxoGNqSZ+ke+e4jD
- 28b+gJ1sI2P0G6aaw6DfpW6KreHeI3t10oEDpMfDm42In30RnYMmy1eDYxYLae6BeoJT
- BlqQ==
-X-Gm-Message-State: ANhLgQ2CqQTZgcTWRzSq2vJB9BxJAh0GSOJkWXDwhd8wzWGE07a3JYIi
- ZGCYLpN/YsVLb0N4XYeq9AN/7g==
-X-Google-Smtp-Source: ADFU+vv9sWxbnpeMRWqiM+cTYJKGzMXvNJsp7SDb2PVAVwCDDAyVZTC6Mxm+NU97kEdmTimNfqkYPw==
-X-Received: by 2002:a63:2e03:: with SMTP id u3mr9972910pgu.205.1585251787183; 
- Thu, 26 Mar 2020 12:43:07 -0700 (PDT)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 132sm2321984pfc.183.2020.03.26.12.43.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 12:43:06 -0700 (PDT)
-Date: Thu, 26 Mar 2020 12:43:04 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 2/7] remoteproc: use a local copy for the name field
-Message-ID: <20200326194304.GB59436@builder>
-References: <20200324201819.23095-1-s-anna@ti.com>
- <20200324201819.23095-3-s-anna@ti.com>
- <20200326054234.GA59436@builder>
- <2089a4a8-d5e4-e4f5-e7bc-7d053f654204@ti.com>
+ id 1jHYU9-0003Yt-1Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 19:48:14 +0000
+Received: from localhost (mobile-166-175-186-165.mycingular.net
+ [166.175.186.165])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C2EA206E6;
+ Thu, 26 Mar 2020 19:48:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585252092;
+ bh=b6FCW3WlxWo0SYwAFfFxDQ58Wf6zmyYpc8D2IBsWEnI=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=K1kqVHD4FztmdpVIGWhY64PJmspLsqkW0Yb2M0hRvb7pCoZB99w2U/rN06ORAoevq
+ +UpuIvl7wntDve6ws2txTDrE/fVyOZd9hxvd3XNh4WRWBOUDFWMrepgiHCUjfoZ1Na
+ a+gNhGdJ1R23BBScpzUtqGyduvcUAnqjgbP9h6iY=
+Date: Thu, 26 Mar 2020 14:48:10 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Srinath Mannam <srinath.mannam@broadcom.com>
+Subject: Re: [PATCH 1/3] PCI: iproc: fix out of bound array access
+Message-ID: <20200326194810.GA11112@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2089a4a8-d5e4-e4f5-e7bc-7d053f654204@ti.com>
+In-Reply-To: <1585206447-1363-2-git-send-email-srinath.mannam@broadcom.com>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_124308_433905_DF589921 
-X-CRM114-Status: GOOD (  26.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_124813_124720_9A4F607C 
+X-CRM114-Status: GOOD (  21.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,7 +63,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,122 +76,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Bharat Gooty <bharat.gooty@broadcom.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 26 Mar 07:01 PDT 2020, Suman Anna wrote:
+Change subject to match convention, e.g.,
 
-> Hi Bjorn,
-> 
-> On 3/26/20 12:42 AM, Bjorn Andersson wrote:
-> > On Tue 24 Mar 13:18 PDT 2020, Suman Anna wrote:
-> > 
-> >> The current name field used in the remoteproc structure is simply
-> >> a pointer to a name field supplied during the rproc_alloc() call.
-> >> The pointer passed in by remoteproc drivers during registration is
-> >> typically a dev_name pointer, but it is possible that the pointer
-> >> will no longer remain valid if the devices themselves were created
-> >> at runtime like in the case of of_platform_populate(), and were
-> >> deleted upon any failures within the respective remoteproc driver
-> >> probe function.
-> >>
-> >> So, allocate and maintain a local copy for this name field to
-> >> keep it agnostic of the logic used in the remoteproc drivers.
-> >>
-> >> Signed-off-by: Suman Anna <s-anna@ti.com>
-> >> ---
-> >>  drivers/remoteproc/remoteproc_core.c | 9 ++++++++-
-> >>  include/linux/remoteproc.h           | 2 +-
-> >>  2 files changed, 9 insertions(+), 2 deletions(-)
-> >>
-> >> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> >> index aca6d022901a..6e0b91fa6f11 100644
-> >> --- a/drivers/remoteproc/remoteproc_core.c
-> >> +++ b/drivers/remoteproc/remoteproc_core.c
-> >> @@ -1989,6 +1989,7 @@ static void rproc_type_release(struct device *dev)
-> >>  
-> >>  	kfree(rproc->firmware);
-> >>  	kfree(rproc->ops);
-> >> +	kfree(rproc->name);
-> >>  	kfree(rproc);
-> >>  }
-> >>  
-> >> @@ -2061,7 +2062,13 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
-> >>  	}
-> >>  
-> >>  	rproc->firmware = p;
-> >> -	rproc->name = name;
-> >> +	rproc->name = kstrdup(name, GFP_KERNEL);
-> > 
-> > Let's use kstrdup_const() instead here (and kfree_const() instead of
-> > kfree()), so that the cases where we are passed a constant we won't
-> > create a duplicate on the heap.
-> > 
-> > And the "name" in struct rproc can remain const.
-> 
-> Agreed, that's better functions to use for this.
-> 
-> > 
-> >> +	if (!rproc->name) {
-> >> +		kfree(p);
-> >> +		kfree(rproc->ops);
-> >> +		kfree(rproc);
-> >> +		return NULL;
-> > 
-> > Perhaps we can rearrange the hunks here slightly and get to a point
-> > where we can rely on the release function earlier?
-> 
-> Not sure I understand. I don't see any release function, all failure
-> paths in rproc_alloc() directly unwind the previous operations. You mean
-> move this to before the alloc for rproc structure, something similar to
-> what we are doing with firmware?
-> 
+  PCI: iproc: Fix out-of-bound array accesses
 
-Look at the failure for ida_simple_get(), there we're past the setup of
-rproc->dev.type, so the rproc_type->release function will be invoked as
-we call put_device().
-
-So if you move the initialization of rproc->dev up right after the
-allocation of rproc we should be able to rely on that to clean up all
-these for us.
-
-Regards,
-Bjorn
-
-> regards
-> Suman
+On Thu, Mar 26, 2020 at 12:37:25PM +0530, Srinath Mannam wrote:
+> From: Bharat Gooty <bharat.gooty@broadcom.com>
 > 
+> Declare the full size array for all revisions of PAX register sets
+> to avoid potentially out of bound access of the register array
+> when they are being initialized in the 'iproc_pcie_rev_init'
+> function.
+
+s/the 'iproc_pcie_rev_init' function/iproc_pcie_rev_init()/
+
+It's outside the scope of this patch, but I'm not really a fan of the
+pcie->reg_offsets[] scheme this driver uses to deal with these
+differences.  There usually seems to be *something* that keeps the
+driver from referencing registers that don't exist, but it doesn't
+seem like the mechanism is very consistent or robust:
+
+  - IPROC_PCIE_LINK_STATUS is implemented by PAXB but not PAXC.
+    iproc_pcie_check_link() avoids using it if "ep_is_internal", which
+    is set for PAXC and PAXC_V2.  Not an obvious connection.
+
+  - IPROC_PCIE_CLK_CTRL is implemented for PAXB and PAXC_V1, but not
+    PAXC_V2.  iproc_pcie_perst_ctrl() avoids using it ep_is_internal",
+    so it *doesn't* use it for PAXC_V1, which does implement it.
+    Maybe a bug, maybe intentional; I can't tell.
+
+  - IPROC_PCIE_INTX_EN is only implemented by PAXB (not PAXC), but
+    AFAICT, we always call iproc_pcie_enable() and rely on
+    iproc_pcie_write_reg() silently drop the write to it on PAXC.
+
+  - IPROC_PCIE_OARR0 is implemented by PAXB and PAXB_V2 and used by
+    iproc_pcie_map_ranges(), which is called if "need_ob_cfg", which
+    is set if there's a "brcm,pcie-ob" DT property.  No clear
+    connection to PAXB.
+
+I think it would be more readable if we used a single variant
+identifier consistently, e.g., the "pcie->type" already used in
+iproc_pcie_msi_steer(), or maybe a set of variant-specific function
+pointers as pcie-qcom.c does.
+
+> Fixes: 06324ede76cdf ("PCI: iproc: Improve core register population")
+> Signed-off-by: Bharat Gooty <bharat.gooty@broadcom.com>
+> ---
+>  drivers/pci/controller/pcie-iproc.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
 > 
-> > 
-> > Regards,
-> > Bjorn
-> > 
-> >> +	}
-> >>  	rproc->priv = &rproc[1];
-> >>  	rproc->auto_boot = true;
-> >>  	rproc->elf_class = ELFCLASS32;
-> >> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> >> index ddce7a7775d1..77788a4bb94e 100644
-> >> --- a/include/linux/remoteproc.h
-> >> +++ b/include/linux/remoteproc.h
-> >> @@ -490,7 +490,7 @@ struct rproc_dump_segment {
-> >>  struct rproc {
-> >>  	struct list_head node;
-> >>  	struct iommu_domain *domain;
-> >> -	const char *name;
-> >> +	char *name;
-> >>  	char *firmware;
-> >>  	void *priv;
-> >>  	struct rproc_ops *ops;
-> >> -- 
-> >> 2.23.0
-> >>
+> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+> index 0a468c7..6972ca4 100644
+> --- a/drivers/pci/controller/pcie-iproc.c
+> +++ b/drivers/pci/controller/pcie-iproc.c
+> @@ -307,7 +307,7 @@ enum iproc_pcie_reg {
+>  };
+>  
+>  /* iProc PCIe PAXB BCMA registers */
+> -static const u16 iproc_pcie_reg_paxb_bcma[] = {
+> +static const u16 iproc_pcie_reg_paxb_bcma[IPROC_PCIE_MAX_NUM_REG] = {
+>  	[IPROC_PCIE_CLK_CTRL]		= 0x000,
+>  	[IPROC_PCIE_CFG_IND_ADDR]	= 0x120,
+>  	[IPROC_PCIE_CFG_IND_DATA]	= 0x124,
+> @@ -318,7 +318,7 @@ static const u16 iproc_pcie_reg_paxb_bcma[] = {
+>  };
+>  
+>  /* iProc PCIe PAXB registers */
+> -static const u16 iproc_pcie_reg_paxb[] = {
+> +static const u16 iproc_pcie_reg_paxb[IPROC_PCIE_MAX_NUM_REG] = {
+>  	[IPROC_PCIE_CLK_CTRL]		= 0x000,
+>  	[IPROC_PCIE_CFG_IND_ADDR]	= 0x120,
+>  	[IPROC_PCIE_CFG_IND_DATA]	= 0x124,
+> @@ -334,7 +334,7 @@ static const u16 iproc_pcie_reg_paxb[] = {
+>  };
+>  
+>  /* iProc PCIe PAXB v2 registers */
+> -static const u16 iproc_pcie_reg_paxb_v2[] = {
+> +static const u16 iproc_pcie_reg_paxb_v2[IPROC_PCIE_MAX_NUM_REG] = {
+>  	[IPROC_PCIE_CLK_CTRL]		= 0x000,
+>  	[IPROC_PCIE_CFG_IND_ADDR]	= 0x120,
+>  	[IPROC_PCIE_CFG_IND_DATA]	= 0x124,
+> @@ -363,7 +363,7 @@ static const u16 iproc_pcie_reg_paxb_v2[] = {
+>  };
+>  
+>  /* iProc PCIe PAXC v1 registers */
+> -static const u16 iproc_pcie_reg_paxc[] = {
+> +static const u16 iproc_pcie_reg_paxc[IPROC_PCIE_MAX_NUM_REG] = {
+>  	[IPROC_PCIE_CLK_CTRL]		= 0x000,
+>  	[IPROC_PCIE_CFG_IND_ADDR]	= 0x1f0,
+>  	[IPROC_PCIE_CFG_IND_DATA]	= 0x1f4,
+> @@ -372,7 +372,7 @@ static const u16 iproc_pcie_reg_paxc[] = {
+>  };
+>  
+>  /* iProc PCIe PAXC v2 registers */
+> -static const u16 iproc_pcie_reg_paxc_v2[] = {
+> +static const u16 iproc_pcie_reg_paxc_v2[IPROC_PCIE_MAX_NUM_REG] = {
+>  	[IPROC_PCIE_MSI_GIC_MODE]	= 0x050,
+>  	[IPROC_PCIE_MSI_BASE_ADDR]	= 0x074,
+>  	[IPROC_PCIE_MSI_WINDOW_SIZE]	= 0x078,
+> -- 
+> 2.7.4
 > 
 
 _______________________________________________
