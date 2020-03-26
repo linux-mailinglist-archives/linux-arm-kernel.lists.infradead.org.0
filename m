@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF163193CC2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:14:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3239E193CC1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:14:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fThtBTAmzK072fr9PrTg+93Nh+I2c08WFHjpnPX+r94=; b=Wg0MRhMCqSbRy+
-	IwLLL1+BuPxYf+uVP2Fwd2T3WVu7YnPaBbxE1wsEhPAjGXhso6K9MD+a1b7dCi3lZVu5gKIhYdaoz
-	fRPmNrRUXN1LVCIjvDkUUXPHxS5OimnWceZdvd+iDV97nHXsyaEXfmW3mYwaTnVSkMmWBSlcxQMAG
-	47f4U0XenpHdHGbq4TOE0nxIvojfD2uE8Fuq+NFVQQ6VKtWpJefhbORfIq3/rvFStmJeBNNs+GOQW
-	mE1+xCAPoqa/qoWqBp+C0cdmiVNxWi5qMEHULUT/7/BpdqFUSR1IuY8yyWLm6E79clivxLVuixaIQ
-	arZV2SY/PswuZjlWY+Mg==;
+	List-Owner; bh=2SQ2SzZkXViWWESPI9yys3wVh3BnbrhCzPg6SGsLeiQ=; b=I3EDJmigShxeC2
+	ghjWYZ4ba3EW7HShQVkEBVRSoBkBWoHRrt9bCdcTohIauGg5p1LAhLBY8x3aENrqMbsmavSyHqSZt
+	cjGRChcfxtWwDIwiiM0u1V1egt4eynXXbjJcLmZV1MJSojvZxUOISE2Yv+aSNBOMxAFqKdh6bdEPa
+	jCa8OBsypwTqtwRXVRwYSlYZuZAzuR50R3WaSFoxnoTy2gU0q6JHTDCfOqDoqhjs+ec5kqk4SzShF
+	Bnk0NonlDS+7998XaJpm1A9vR+qgvlKKsYx/3qhJmVWW9zRuxkRDkyA46Sjtf7PFjTZNEbhPg0t7k
+	cWcdO2g9uECOIPumhcZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHPWk-0003gb-2s; Thu, 26 Mar 2020 10:14:18 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jHPWQ-0003Rs-9G; Thu, 26 Mar 2020 10:13:58 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHPWM-0003UG-NL
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:13:57 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id DA1FF2DC;
- Thu, 26 Mar 2020 11:13:36 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1585217617;
- bh=Ph6XOD3yl1HjeWfouB+OXNPerwxf190pXAsdWrIlQzA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SGXSWNzJk1R9eALqvJBwCFcxdASplyWDLeMJLJU6IKRg4fRnBE4pc4L/BzqSKZKa7
- ogRY+dUDucCSEqi7Ln649U6ke3ED5EGsYjfCCZK5b5u+jOLyrAzidKa7yCLiXjNZrL
- zp2UuUPdQwWLSI+mUReY8ICrS8hG0ridS6gPshSE=
-Date: Thu, 26 Mar 2020 12:13:33 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 0/4] media Kconfig reorg - part 2
-Message-ID: <20200326101333.GH20581@pendragon.ideasonboard.com>
-References: <cover.1585151701.git.mchehab+huawei@kernel.org>
- <6fadc6ea-8512-03ba-da30-43c64d7562f6@collabora.com>
- <20200325223820.1c74aed3@coco.lan>
- <20200325221343.GW19171@pendragon.ideasonboard.com>
- <20200326092832.069a4d17@coco.lan>
+ id 1jHPWF-0003R1-L8
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:13:49 +0000
+Received: by mail-oi1-f196.google.com with SMTP id p125so4948043oif.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Mar 2020 03:13:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KySq9vbRqSVaUMQfJYnT/cg7WphNRu+W69gTqNBjRGw=;
+ b=c2THFRIu6miLvIZZh7xLAHs/RKwTTajPjJL828pQM8doY2LAxw0mQ9IBRMovj/lIps
+ TSK5JpLrQAlunf7iyJStcobHm8aR9bhWQkPfXkMmqOv/Pr0j1/5qo3IPHrmW5s6Xt4aP
+ 7MH1YY1k4XjoCAovp3z5JHPmvL5ddlXTqyNH7oGLg5Ckxq+lE2tj7mFbWbgbHirexx2S
+ vi+hKsUAe9mcGq7Nmffp81m3JtVpG8tivlR6N7AK+L7EbPxkYpee3DLdLYuLHRNHaYn4
+ zjWiiKWSOyPCWqFeGyM4WERKR81L1z4SdNuFwk6JHAxypjd0oMy1pDNsXKjhRWq9CJsm
+ UBVw==
+X-Gm-Message-State: ANhLgQ2lLySfODkZre9L2riTxeJOMm4Ep0+yPYG9mQlKpDDveqHfmSxy
+ WlPMskEFbExTkm8gh6YZSXC5pK8hMlOxgR3tw+I=
+X-Google-Smtp-Source: ADFU+vuwkSL3YLUNjEl230qgAOyjrsI3Ea64++0TBk6yds46R859Jr71wp2CbhwqgI9v1S15Z50ms4LbGIcP2KOpVNI=
+X-Received: by 2002:aca:cdd1:: with SMTP id d200mr1168268oig.153.1585217625245; 
+ Thu, 26 Mar 2020 03:13:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200326092832.069a4d17@coco.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200320144348.12865-1-geert+renesas@glider.be>
+ <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
+In-Reply-To: <CAKv+Gu8q2bAVMRLSc-Ae=hxhg3sbvpfuaMJ_nx4FZFvegNZ+9w@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 26 Mar 2020 11:13:34 +0100
+Message-ID: <CAMuHMdVLA6aEzyudPkR=RP5MV9R4eiRUngAj9wymMv1hJ+uTuA@mail.gmail.com>
+Subject: Re: [PATCH v4] ARM: boot: Obtain start of physical memory from DTB
+To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_031354_932881_4BD99EA4 
-X-CRM114-Status: GOOD (  48.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_031347_695606_C3C6618B 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,236 +82,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Michal Simek <michal.simek@xilinx.com>, "Lad,
- Prabhakar" <prabhakar.csengg@gmail.com>, Pavel Machek <pavel@ucw.cz>,
- Fabio Estevam <festevam@gmail.com>, devel@driverdev.osuosl.org,
- linux-renesas-soc@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Steve Longerbeam <slongerbeam@gmail.com>, Bingbu Cao <bingbu.cao@intel.com>,
- Tian Shu Qiu <tian.shu.qiu@intel.com>, Yong Zhi <yong.zhi@intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- Helen Koike <helen.koike@collabora.com>, Yong Deng <yong.deng@magewell.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Hyun Kwon <hyun.kwon@xilinx.com>, Heungjun Kim <riverful.kim@samsung.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Chris Brandt <chris.brandt@renesas.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mauro,
+Hi Ard,
 
-On Thu, Mar 26, 2020 at 09:28:32AM +0100, Mauro Carvalho Chehab wrote:
-> Em Thu, 26 Mar 2020 00:13:43 +0200 Laurent Pinchart escreveu:
-> > On Wed, Mar 25, 2020 at 10:38:20PM +0100, Mauro Carvalho Chehab wrote:
-> > > Em Wed, 25 Mar 2020 16:36:31 -0300 Helen Koike escreveu:  
-> > > > On 3/25/20 1:03 PM, Mauro Carvalho Chehab wrote:  
-> > > > > That's the second part of media Kconfig changes. The entire series is
-> > > > > at:
-> > > > > 
-> > > > > 	https://git.linuxtv.org/mchehab/experimental.git/log/?h=media-kconfig    
-> > > > 
-> > > > I made a quick experiment (using this branch) with someone who works with the kernel for his master degree, but doesn't have much experience in kernel development in general.
-> > > > I asked him to enable Vimc (from default configs, where multimedia starts disabled).
-> > > > He knows that Vimc is a virtual camera driver, and this is how he behaved:
-> > > > 
-> > > > === Start of experiment:
-> > > > 
-> > > > * He pressed '/' and searched for vimc to see the location path.
-> > > > * Then he enabled "Multimedia support" and went straight to "Media drivers" (which just shows USB and PCI).
-> > > > * He went back to "Multimedia support", entered "Media device types" and enabled "Test drivers".
-> > > > * He went back to "Media drivers" again and didn't find Vimc (nothing changed in this menu).
-> > > > * He seemed a bit lost, going back and forth in the menus a couple of times.
-> > > > * Then he pressed '/' again to search for vimc and see the location path, and he realized that there
-> > > > should be an option called "V4L test drivers" under "Media drivers" that is not showing up.
-> > > > * He went back to "Media device types" again and start re-reading the options.
-> > > > * He selected "Cameras and video grabbers" ant went back to "Media drivers".
-> > > > * He sees "V4L test drivers", selects it, and enter this menu.
-> > > > * He selects "Virtual Media Controller Driver".
-> > > > 
-> > > > I asked his impressions, and he mentioned that he thought that enabling just "Test drivers" would be enough, without need
-> > > > to combine "Test drivers" with "Cameras and video grabbers".
-> > > > He also asked me why virtual drivers should be hidden, and he mentioned that the word "Virtual" in front would be enough.
-> > > > 
-> > > > Then I showed him he could have disabled the option "Filter devices by their types" to see everything at one (which he didn't
-> > > > realized by himself until that moment, nor tried it out to see what would happen).
-> > > > 
-> > > > He mentioned that hiding is nice, because it shows less options, but not very nice to search for something.
-> > > > He also mentioned that if he had understood the filter mechanism from the start, he would have disabled "Filter devices by their types" sooner.  
-> > > 
-> > > That's easy to solve: all it needs is to add something similar
-> > > to this at drivers/media/Kconfig:
-> > > 
-> > > 	+	comment "Drivers are filtered by MEDIA_SUPPORT_FILTER"
-> > > 	+		visible if MEDIA_SUPPORT_FILTER
-> > > 	+
-> > > 	+	comment "All available drivers are shown below"
-> > > 	+		visible if !MEDIA_SUPPORT_FILTER
-> > > 	+
-> > > 	menu "Media drivers"
-> > > 
-> > > 	source "drivers/media/usb/Kconfig"
-> > >   
-> > > > === End of experiment
-> > > > 
-> > > > This was just one experiment from one person, I'll see if I can get some other people from lkcamp.dev group to also check
-> > > > and send us their impressions. I think it would be nice to get more data about user experience, from people that are not used to
-> > > > kernel development (kernel dev newbies for instance).
-> > > > 
-> > > > Just another remark from me:
-> > > > 
-> > > > From the default config, "Media drivers" shows USB and PCI,   
-> > > 
-> > > Well, assuming that there are 2 billion computers, 1% with Linux
-> > > installed, and 10% of them have a media device (camera or TV),
-> > > we have about 2 millions of people running Linux. That excludes
-> > > Android and Embedded devices, where people usually don't touch.
-> > > 
-> > > During an entire year, there are about 4000 of Kernel developers 
-> > > that has at least one patch accepted upstream (this number
-> > > includes developers for Android and other SoCs). Also, the 
-> > > number of Kernel developers submitting patches upstream for the
-> > > media subsystem is around 20-40 people along an year.  
-> > 
-> > $ git log --since 2019-01-01 --until 2020-01-01 --no-merges -- drivers/media/ | grep '^Author: ' | sort | uniq -c | wc -l   
-> > 215
-> > 
-> > There's some duplication of e-mail addresses, but it's still roughly an
-> > order or magnitude bigger (and it's not counting staging, headers or
-> > documentation).
-> > 
-> > > So, about 99,9998% of the users using the media subsystems aren't
-> > > Kernel hackers. I bet that almost all of those will either need
-> > > to enable USB or a PCI driver.  
-> > 
-> > And the extremely vast majority of these will never enable a kernel
-> > option because they will never compile a kernel. They don't even know
-> > what a kernel is :-)
-> > 
-> > > Granted, 99,9998% seems too optimistic, but, assuming that this
-> > > would reduce to something like 80% (e. g. only 200 users
-> > > would ever try to build a media driver, with is a *very conservative*
-> > > number) this is still a lot more than the number of media Kernel
-> > > developers.
-> > > 
-> > > Also, a Kernel hacker will sooner or later find a way to enable it.
-> > > A normal user may find it a lot more trickier and will very likely
-> > > require more support, if the menus are too technical and the
-> > > default options are wrong.  
-> > 
-> > I'm not sure to follow you. Are you implying that this patch series,
-> > which Helen has tested against a real user, not an experienced kernel
-> > hacker, may make the configuration options more difficult for kernel
-> > hackers, but improves the situation for users ?
-> 
-> Come on, it is not harder for Kernel hackers. It is just different than
-> what it used to be before the changes.
+On Wed, Mar 25, 2020 at 5:40 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+> On Fri, 20 Mar 2020 at 15:43, Geert Uytterhoeven
+> <geert+renesas@glider.be> wrote:
+> > Currently, the start address of physical memory is obtained by masking
+> > the program counter with a fixed mask of 0xf8000000.  This mask value
+> > was chosen as a balance between the requirements of different platforms.
+> > However, this does require that the start address of physical memory is
+> > a multiple of 128 MiB, precluding booting Linux on platforms where this
+> > requirement is not fulfilled.
+> >
+> > Fix this limitation by obtaining the start address from the DTB instead,
+> > if available (either explicitly passed, or appended to the kernel).
+> > Fall back to the traditional method when needed.
+> >
+> > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
+> > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
+> > i.e. not at a multiple of 128 MiB.
+> >
+> > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
+> > Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> > ---
+> > v4:
+> >   - Fix stack location after commit 184bf653a7a452c1 ("ARM:
+> >     decompressor: factor out routine to obtain the inflated image
+> >     size"),
+> >
+>
+> Apologies for the breakage. I was aware of the existence of this
+> patch, but I didn't realize it was accessing LC0 early on to find the
+> stack pointer value.
 
-Sorry, I didn't meant to say it would be more complex for me (I mostly
-don't use menuconfig anyway, I edit the .config file manually :-)), but
-I was reading your e-mail as implying that, and was wondering if it was
-me misreading it.
+No problem, you sent your PR on the same day I posted v2, which was
+the first version to access LC0.
 
-> At the above experience, at the
-> very first time this Kernel hacker looked on it, it was able to figure
-> out how to enable the driver. I bet that, if you now repeat the experiment
-> with the same guy, he would be able to enable another driver a lot quicker.
-> 
-> My view is that, with the option of either enable or disable the
-> filtering mechanism, it will be easier for everybody:
-> 
-> - Distro maintainers for PCs can just disable platform and
->   test drivers, and keep the other drivers enabled;
-> 
-> - An experienced Kernel hacker will disable the filter and select
->   the needed drivers directly.
-> 
-> - An user wanting to test a driver with new patches (or a new driver)
->   use the filters to select the USB driver he needs (probably using the
->   media_tree.git, in order to see only the media options).
+> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
 
-My personal view is that this makes things more complex, and more
-complexity usually means less clarity. If we want to be serious about
-the usability of our Kconfig menu, we should get real users involved in
-the design, at least by testing it on them, and getting feedback.
-Otherwise we'll just be a bunch of kernel developers sitting in our
-ivory tower thinking we know better than our users what is good for
-them.
+Thanks!
 
-> > > -
-> > > 
-> > > Even with that, based on your small experiment (of someone from the
-> > > area), I suspect that, if you had asked him to enable, for example,
-> > > em28xx or dvbsky (with are some of the most popular drivers
-> > > those days), he would be able to enable it a lot faster.  
-> > 
-> > This is the *only* real piece of evidence we have, let's not assume we
-> > know better.
-> > 
-> > > > and selecting those doesn't do anything, and people can even think
-> > > > that, if they want to enable an USB device, just enabling the USB option there is enough (which is not), since no drivers
-> > > > shows up.  
-> > > 
-> > > It is hard to comment on individual experiments. In the past, our
-> > > Kconfig system were like that: written for technical people with
-> > > background on computer engineering and some experience building the
-> > > Kernel.
-> > > 
-> > > E.g. people that knows that "/" activates a search mechanism at
-> > > the Kernel building system.
-> > > 
-> > > We usually had to spend *a lot of time* both on IRC and on e-mail
-> > > explaining people that just want to have their card supported,
-> > > how to do that. After the reorg (with added those more user-faced
-> > > interfaces), the number of people with problems reduced a lot.  
-> > 
-> > Don't you think that could come mainly from better support for media
-> > devices in distributions ?
-> > 
-> > > Btw, if one tries to compile from media-build (with lots of users
-> > > do), this is even more relevant.  
-> > 
-> > Can you quantify "lots of users" ?
-> 
-> Enough to make us to decide that re-working the Kconfig menus and 
-> add the MEDIA_SUPPORT_* and MEDIA_SUBDRV_AUTOSELECT would worth the
-> efforts.
-> 
-> Guess what? The efforts were fully paid, as it reduced a lot the
-> amount of time we had to weekly spend helping people to build their
-> Kernels in order to test support for their new hardware.
-> 
-> It also helped a lot to set the right Kconfig options on distros.
-> I did my contributions on that time by improving Fedora and on RHEL,
-> making their build rely on MEDIA_SUPPORT_* and MEDIA_SUBDRV_AUTOSELECT.
-> 
-> See, for some random distro maintainer, new Kconfig symbols pops up
-> every time. Enabling all of them is usually a very bad idea. So, a
-> filtering mechanism that would, for example, hide test and skeleton
-> drivers to be built is a very nice feat, as it means a lot less
-> symbols for them to study and decide whether such new options should
-> be enabled or not
+Gr{oetje,eeting}s,
 
-The fact that test drivers are not shipped by some distros is annoying
-for developers ;-) But that's a very small minority, and out of topic.
+                        Geert
 
 -- 
-Regards,
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-Laurent Pinchart
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
