@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83F991937E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 06:34:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E023D193805
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 06:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=pi58RnRTFEU0xDmLGAWgpzM00qsev7GDGSXxX6zSGdw=; b=I36
-	rYktQ0Wbro2MHtkDyBE0pPkWbXyHakV7VJqwRxe6+D+b98Sr/5iIflFHzL+74RP2I599F+/qHzeMv
-	6xGjf5hg6bOtLBA2+yS3ahf/58R++G8CXvN90QEQtrJV1MyGtV8kMC7Xwiwx4JxSDJH9KpjFr+WdX
-	7ik5f7KhLx9RxIhUB2PVRbMraGDshh1Zsg5bm6BKEVE4qPE01B3PVimMqIG5vVtBXg1D+QRDtFjIG
-	FvTJFQQ1KMi2C/dwfNvuQotsstZ+KN7gYKnQebTkM+ZdEGs7IfGDzPk47p0PMDLPo0ayvMao/tT1m
-	XohKM7JpZKPGDjKdH16lb28F7p40Fwg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cKyQffgewysoyDpsRA19843h3ieAnJYrLVHNQLjHASw=; b=pYlnsY76E8zSqa
+	SkidLP7OuGM+vCnfwA7SGQ+c+VsrGz0uZtL0JU6o53IJBsydIJtr/m0QxquAGG+2P5mGQML10Qh+r
+	PCFJtp1XTLda3SC6csbwArbkQD4RVy2HVax71qYSzSztA88QSS71V1SZczr7AGD2FCSEslt6qchoM
+	ac6Am6QlDtnY9rGBYydEXb11/liFxbLBScrgMR8jO5hzpnSkMRyX4o1SVkTuIGEBfd8qmTbJX0sfn
+	SPmLLi0tnTZ5sRl7NcuGWREOen9+tqwrwLT9+Yxn5ec2kWRxWexAyNnnvRtcDzGD9llG6DDheQrGl
+	hPHuagC3/iswxg8HebOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHLAH-0007Ki-Sc; Thu, 26 Mar 2020 05:34:49 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jHLI2-0002I8-9Q; Thu, 26 Mar 2020 05:42:50 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHLAA-0007KH-GE
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 05:34:43 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 328CE1A0809;
- Thu, 26 Mar 2020 06:34:40 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 76FA41A0813;
- Thu, 26 Mar 2020 06:34:34 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4451A40294;
- Thu, 26 Mar 2020 13:34:27 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] thermal: imx: Add missing of_node_put()
-Date: Thu, 26 Mar 2020 13:27:25 +0800
-Message-Id: <1585200445-16461-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jHLHs-0002HF-7b
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 05:42:42 +0000
+Received: by mail-pf1-x443.google.com with SMTP id u68so2244137pfb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Mar 2020 22:42:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=lJBGxRctjvtRkYzCqhBiWXNr6fl3LKIu3bPffT4P37Q=;
+ b=xN/aZFC3ywkctbct64T9SINp67QHK9DwBCHBXcBs0FP40E5s+s9fCTok4tvNQCqDE+
+ L0HFx9UYuKYsHC5iz5cIrIYQCB/b9ETHQmgipbTr9oUNgSA/215Y3WoY6y+Uz92fPbSe
+ XrBwg14hsA3gUwlFIJub6Ocyn/qadeRov99TL3mNE3jLPT0wo1gaXP0XskUvd+pCmrvW
+ Tv4s9ChbrZ77NxWYJhGUQkbU+8kkUKJ0TleFtzpqxx7sEGDldoLR0V34KZlW2deIaF6k
+ 01wKAVnPQC0gM161neggvyqFe7HM28zTxM1mwd/YDCy4CsVV1MCJ943ffx9E4NNb1ZUC
+ cn4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lJBGxRctjvtRkYzCqhBiWXNr6fl3LKIu3bPffT4P37Q=;
+ b=DVERYKeADqIyqvsxa36D/pePV5p4wxFdJP0OiMNr5VGGQJDeiU82LOl1PoEph2tkGh
+ cR252RhuyFx+k4Pq5w7LlArA9O2uNMMXE+hy74vypTH5ZpVAlstxrXiWelVf136Reg9F
+ XJx8PygGD19CpDoTsLAO2bew3gMMF+uvhkBA08Tlb9qt8u/lHbzRSe1WVC4MqalvQgzZ
+ 10BLDdto7yf+MvlxYO2bh+I44DtGrz2fGS2LhKz3of2GO68VycUqRQoOebhFxVDYhDJe
+ OwtB+VO/D5YvN8qoAPAWD1KRxyQEY6vVSn0oaG2yN7u5ty2XoTM9D9znva90gre8jPe8
+ ZEzA==
+X-Gm-Message-State: ANhLgQ3AU5GVcXbXXsTic7vPGOu1QZZ/Kc76b2yB88GCkXVLDSZTamO2
+ ybty/wxbPE+wOVJej7ECVoXlvw==
+X-Google-Smtp-Source: ADFU+vv9QFRgclZ54bBY7BJnL7ZL1CHe2/kxdDOsKldUA/e7jUAzRpU6ZAtzDKz3uD4UzX/kxliB3w==
+X-Received: by 2002:a63:602:: with SMTP id 2mr6651318pgg.356.1585201357185;
+ Wed, 25 Mar 2020 22:42:37 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id y9sm751518pfo.135.2020.03.25.22.42.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Mar 2020 22:42:36 -0700 (PDT)
+Date: Wed, 25 Mar 2020 22:42:34 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Suman Anna <s-anna@ti.com>
+Subject: Re: [PATCH 2/7] remoteproc: use a local copy for the name field
+Message-ID: <20200326054234.GA59436@builder>
+References: <20200324201819.23095-1-s-anna@ti.com>
+ <20200324201819.23095-3-s-anna@ti.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200324201819.23095-3-s-anna@ti.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_223442_678741_153E2A41 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_224240_308528_C6972223 
+X-CRM114-Status: GOOD (  21.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,55 +99,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After finishing using cpu node got from of_get_cpu_node(), of_node_put()
-needs to be called.
+On Tue 24 Mar 13:18 PDT 2020, Suman Anna wrote:
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/thermal/imx_thermal.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+> The current name field used in the remoteproc structure is simply
+> a pointer to a name field supplied during the rproc_alloc() call.
+> The pointer passed in by remoteproc drivers during registration is
+> typically a dev_name pointer, but it is possible that the pointer
+> will no longer remain valid if the devices themselves were created
+> at runtime like in the case of of_platform_populate(), and were
+> deleted upon any failures within the respective remoteproc driver
+> probe function.
+> 
+> So, allocate and maintain a local copy for this name field to
+> keep it agnostic of the logic used in the remoteproc drivers.
+> 
+> Signed-off-by: Suman Anna <s-anna@ti.com>
+> ---
+>  drivers/remoteproc/remoteproc_core.c | 9 ++++++++-
+>  include/linux/remoteproc.h           | 2 +-
+>  2 files changed, 9 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index aca6d022901a..6e0b91fa6f11 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -1989,6 +1989,7 @@ static void rproc_type_release(struct device *dev)
+>  
+>  	kfree(rproc->firmware);
+>  	kfree(rproc->ops);
+> +	kfree(rproc->name);
+>  	kfree(rproc);
+>  }
+>  
+> @@ -2061,7 +2062,13 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+>  	}
+>  
+>  	rproc->firmware = p;
+> -	rproc->name = name;
+> +	rproc->name = kstrdup(name, GFP_KERNEL);
 
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index e761c9b..f7b970d 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -649,7 +649,7 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
- static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- {
- 	struct device_node *np;
--	int ret;
-+	int ret = 0;
- 
- 	data->policy = cpufreq_cpu_get(0);
- 	if (!data->policy) {
-@@ -664,11 +664,15 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- 		if (IS_ERR(data->cdev)) {
- 			ret = PTR_ERR(data->cdev);
- 			cpufreq_cpu_put(data->policy);
--			return ret;
-+			goto put_node;
- 		}
- 	}
- 
--	return 0;
-+put_node:
-+	if (np)
-+		of_node_put(np);
-+
-+	return ret;
- }
- 
- static void imx_thermal_unregister_legacy_cooling(struct imx_thermal_data *data)
--- 
-2.7.4
+Let's use kstrdup_const() instead here (and kfree_const() instead of
+kfree()), so that the cases where we are passed a constant we won't
+create a duplicate on the heap.
 
+And the "name" in struct rproc can remain const.
+
+> +	if (!rproc->name) {
+> +		kfree(p);
+> +		kfree(rproc->ops);
+> +		kfree(rproc);
+> +		return NULL;
+
+Perhaps we can rearrange the hunks here slightly and get to a point
+where we can rely on the release function earlier?
+
+Regards,
+Bjorn
+
+> +	}
+>  	rproc->priv = &rproc[1];
+>  	rproc->auto_boot = true;
+>  	rproc->elf_class = ELFCLASS32;
+> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> index ddce7a7775d1..77788a4bb94e 100644
+> --- a/include/linux/remoteproc.h
+> +++ b/include/linux/remoteproc.h
+> @@ -490,7 +490,7 @@ struct rproc_dump_segment {
+>  struct rproc {
+>  	struct list_head node;
+>  	struct iommu_domain *domain;
+> -	const char *name;
+> +	char *name;
+>  	char *firmware;
+>  	void *priv;
+>  	struct rproc_ops *ops;
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
