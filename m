@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A9B719370A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:32:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FA2D193714
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:32:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEURas9dYFlVlajBI7g4keRqLLFXHr1S2fHhHFwBJOU=; b=EZbfCjlN5WH2gn
-	5fN1scViCLy9tMHD0OybR6hDjx+ASiU/hVcMuvufix2LECwR1x9xZogAPrrsha0Qdu83AGq75TKzE
-	1h1/anZSHOdj3f1bqwa8Z9X+vPhY2GLX+tzcS4s/QhXIi++IErOu2kiGBsu2J8/Yb9+6fIZkuBZl+
-	z22SQh3hh0WhVeQ3uDiV054KnnwrY8eMDt9b6/NR7jvMDO96wOjJvhbgfeDaKz3RAG0MGHWEg0KXh
-	GX/ZbAryQlQFSIEchfDRoB5LJ99kzlbUI6feEkv2G/hYk/9dyBEeUBLZ7OH9HZ5agaf9GtiKItNYh
-	1prhWMa4xcze5ZcG7Fyw==;
+	List-Owner; bh=SPcq3PseI7RkuU7THYHFoVAFYpku7kYDKeCCSTmdHns=; b=iWeHsJc444Lu+f
+	x5jOYDd1nOLuZ/qmV6M08n4T0r0dIJiPaqk5yUjl3ucvQokYaX5L06VKTbkWYQaetgo0GvE8GwcD4
+	QtjsFihBE9gNglImAXO9sRFRaZPDzpFb6NpDbP8mk95YvbszPvPKkXCYcEXH7u1P9mVtgtmD1ww3u
+	RaVevXdvp+/Vmfbk0nn6EHPy73uOK6OLo5EBioaQkGLZ73vhnyYl9DvkRtWq/MDtGzpqHWlbUVb+q
+	bxBuF3pXWSTC1+ivq53s39dx+Xdhy7ZjVobBUYVUGqcvWxMJMews8qvG0Jcx+vffAgZpld2d91Via
+	s2MmQQn1Ojbd3kAB6tOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHJFZ-0003yf-Pz; Thu, 26 Mar 2020 03:32:09 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1jHJFw-0004H5-V5; Thu, 26 Mar 2020 03:32:33 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHJ8T-0004pZ-9I
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 03:24:55 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id g4so2250561qvo.12
+ id 1jHJ8U-0004r4-Ln
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 03:24:59 +0000
+Received: by mail-qk1-x741.google.com with SMTP id h14so5106546qke.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 20:24:48 -0700 (PDT)
+ Wed, 25 Mar 2020 20:24:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references;
- bh=CuDr5qYI6GlVY7shRkQ5EEeBFfzJFE9mbrZpS9eu2hQ=;
- b=k9Ab71XtQB4E3Bo3yPvSRsgc6cg7BdCEUZQt3yKAdiPxDjmADIKr8GdGF5S7Z3a5Ah
- rNYbsEruPq1t8nZXb0xuXVlx2JWWoe/a72sEW5hTQBaNY677SAb1LGa/f5l6BIqyeqgG
- eivitYpBTw3+tss381Da/ah6BbrepWmF+R118dYCkh/zXBrZiBMXTlPt3Fb8OIp6c0mu
- xfZdJN1JkoYMNNpPPERjqGte2DtVAtcsVsxd6/Eatw/TjCMTo29rL0YxqfMoerpQ73am
- XG5zeqNhqa2/0MqkudJRTb1yIkKTce404h2QZGyCAgfu0FyF9yl7XL0MtFu94R6xijCI
- 3EbA==
+ bh=rP301br3jLV2pUSTiXcOG3lk/+mfTC6rfo7zV+g52uE=;
+ b=SzpG8sLRK43gB03wiBjaqURB25QH24to71FZC+cBWqLbQmoXfEZPD1WOWSfQR/1gxb
+ E0qr9rjv8lKfW1SZyTS+U3Z+Q05ieRm2vqlN0HYUTm/w2f+sGKWeF8IfFcWyhDHIvrn2
+ u5E6vJMrPy1kmMGG00eioArrNW4Ij97gj1ZItasBymsaR+MS1bmC/tw58X3X7i60yK/7
+ JsAmx2qXgqlhZZ3CYRdKAN4QLkMKyMGPxxrXuev3OGl3QUKwu4D/6bj/uRuwOM0KRuyp
+ KHi1hAboB0XKc1WQWLSLoK73jsKCDOyxzHhjpNiX/KoYCC7WvueepeunrlcnUL+tt8Gt
+ LTOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references;
- bh=CuDr5qYI6GlVY7shRkQ5EEeBFfzJFE9mbrZpS9eu2hQ=;
- b=se4nSsJ6ZMll8JnKSJEGQ6SKp5NslOrjG93+8bggiVo5m+bIyiYcCy0f3014FBWgGJ
- Pf5Fb0r1lXltlftha+nSNbXP3lL1g0O52QeowraF/1nhefu4RtILOomsGFPLO0a+Prc2
- d3ufD36EHbvlotJAMPwgdfGHTZQIg5OOAihzwY9ZgRmaSzLb/J5UohyPI4r4XXCEX8cn
- T0key4gWcyc2Z7rnfaSjLLNJAwIl+9y1U1ll0UWb+1Bsy1OaVTScgfqA3UqLcIKeIhlv
- 6YmIkwrYdGEzuuXwfM3+hFWb422ehzqvF6dVccbhEV5c9A0pu1OLCLIHoAYC/YWelJDY
- BanQ==
-X-Gm-Message-State: ANhLgQ0urhZ/Wzc13vXhFXxBCkquguSVzVKhwnNlCnUXqiHAJdyo53Cz
- 5sVghF2SqY8w1Q0T4mYZbuSQdg==
-X-Google-Smtp-Source: ADFU+vt6UIEixLCExT8KxYiu1rT68zpEIs/PcykYXkt1mnb3MyWxWvCSpYV+q14Kv0orn+Tr3gtsYw==
-X-Received: by 2002:a0c:ac48:: with SMTP id m8mr6284600qvb.13.1585193087675;
- Wed, 25 Mar 2020 20:24:47 -0700 (PDT)
+ bh=rP301br3jLV2pUSTiXcOG3lk/+mfTC6rfo7zV+g52uE=;
+ b=fIVHwtqllhXqgs4z+YLAXKgzzDVfc0W5hIsbR6LjDE123HQjKba9gaCgdNJRENxiwI
+ HYwxd4rvD/6ZH44wEgmWqHwhZ5P9BdVxRTqaUSk0J6ouyrUQ8J3hR/PrQDnvy/l0u9kl
+ D5cYyed4MsTXQZoDOeE+2UodsXzCfRBRoiWi22tY497H9yz9VLedSKsW7offhBfi+Pw8
+ mlxNQQjBQaCePvGYW8aBkGdt80qAFygpbqdzIrf4jsKSoiEIn3iwEfTH2yg0CDJdUJIc
+ mWu2JkiS56EoioDg7XrObgc918JeZSqt6nzrd31hAIXy2oJMvLO7dnfwlHKn3QYnzJxH
+ oarA==
+X-Gm-Message-State: ANhLgQ0l/iEOLQbBH+OVl6WCoU/bqLvnx2oKk3vQercYYSHFR7OzWIBT
+ Z4u3ICwaW6UzwD7AlEJ0/wYfPA==
+X-Google-Smtp-Source: ADFU+vt/3OwGi00Krey3I6+4YSIATchoONx/f4HuqDlk6oplG5GN05ZeuCyfndKbFky+5rkucArSNg==
+X-Received: by 2002:a05:620a:1252:: with SMTP id
+ a18mr6235906qkl.204.1585193089294; 
+ Wed, 25 Mar 2020 20:24:49 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.45
+ by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 20:24:47 -0700 (PDT)
+ Wed, 25 Mar 2020 20:24:48 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -65,23 +66,22 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  bhsharma@redhat.com, linux-mm@kvack.org, mark.rutland@arm.com,
  steve.capper@arm.com, rfontana@redhat.com, tglx@linutronix.de,
  selindag@gmail.com
-Subject: [PATCH v9 16/18] arm64: kexec: configure trans_pgd page table for
- kexec
-Date: Wed, 25 Mar 2020 23:24:18 -0400
-Message-Id: <20200326032420.27220-17-pasha.tatashin@soleen.com>
+Subject: [PATCH v9 17/18] arm64: kexec: enable MMU during kexec relocation
+Date: Wed, 25 Mar 2020 23:24:19 -0400
+Message-Id: <20200326032420.27220-18-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_202449_483171_079F9B5C 
-X-CRM114-Status: GOOD (  16.36  )
+X-CRM114-CacheID: sfid-20200325_202450_873882_742F7F12 
+X-CRM114-Status: GOOD (  14.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,191 +109,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Configure a page table located in kexec-safe memory that has
-the following mappings:
+Now, that we have transitional page tables configured, temporarily enable
+MMU to allow faster relocation of segments to final destination.
 
-1. identity mapping for text of relocation function with executable
-   permission.
-2. linear mappings for all source ranges
-3. linear mappings for all destination ranges.
+The performance data: for a moderate size kernel + initramfs: 25M the
+relocation was taking 0.382s, with enabled MMU it now takes
+0.019s only or x20 improvement.
+
+The time is proportional to the size of relocation, therefore if initramfs
+is larger, 100M it could take over a second.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/kexec.h    | 12 ++++
- arch/arm64/kernel/asm-offsets.c   |  6 ++
- arch/arm64/kernel/machine_kexec.c | 92 ++++++++++++++++++++++++++++++-
- 3 files changed, 109 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/relocate_kernel.S | 144 ++++++++++++++++++----------
+ 1 file changed, 92 insertions(+), 52 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 0f758fd51518..8f4332ac607a 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -108,6 +108,12 @@ extern const unsigned long kexec_el2_vectors_offset;
-  * el2_vector	If present means that relocation routine will go to EL1
-  *		from EL2 to do the copy, and then back to EL2 to do the jump
-  *		to new world.
-+ * trans_ttbr0	idmap for relocation function and its argument
-+ * trans_ttbr1	linear map for source/destination addresses.
-+ * trans_t0sz	t0sz for idmap page in trans_ttbr0
-+ * src_addr	linear map for source pages.
-+ * dst_addr	linear map for destination pages.
-+ * copy_len	Number of bytes that need to be copied
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index 6fd2fc0ef373..430e7512ced5 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -4,6 +4,8 @@
+  *
+  * Copyright (C) Linaro.
+  * Copyright (C) Huawei Futurewei Technologies.
++ * Copyright (c) 2020, Microsoft Corporation.
++ * Pavel Tatashin <pasha.tatashin@soleen.com>
   */
- struct kern_reloc_arg {
- 	phys_addr_t head;
-@@ -117,6 +123,12 @@ struct kern_reloc_arg {
- 	phys_addr_t kern_arg2;
- 	phys_addr_t kern_arg3;
- 	phys_addr_t el2_vector;
-+	phys_addr_t trans_ttbr0;
-+	phys_addr_t trans_ttbr1;
-+	unsigned long trans_t0sz;
-+	unsigned long src_addr;
-+	unsigned long dst_addr;
-+	unsigned long copy_len;
- };
  
- #define ARCH_HAS_KIMAGE_ARCH
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index ff974b648347..58ad5b7816ab 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -137,6 +137,12 @@ int main(void)
-   DEFINE(KEXEC_KRELOC_KERN_ARG2,	offsetof(struct kern_reloc_arg, kern_arg2));
-   DEFINE(KEXEC_KRELOC_KERN_ARG3,	offsetof(struct kern_reloc_arg, kern_arg3));
-   DEFINE(KEXEC_KRELOC_EL2_VECTOR,	offsetof(struct kern_reloc_arg, el2_vector));
-+  DEFINE(KEXEC_KRELOC_TRANS_TTBR0,	offsetof(struct kern_reloc_arg, trans_ttbr0));
-+  DEFINE(KEXEC_KRELOC_TRANS_TTBR1,	offsetof(struct kern_reloc_arg, trans_ttbr1));
-+  DEFINE(KEXEC_KRELOC_TRANS_T0SZ,	offsetof(struct kern_reloc_arg, trans_t0sz));
-+  DEFINE(KEXEC_KRELOC_SRC_ADDR,	offsetof(struct kern_reloc_arg, src_addr));
-+  DEFINE(KEXEC_KRELOC_DST_ADDR,	offsetof(struct kern_reloc_arg, dst_addr));
-+  DEFINE(KEXEC_KRELOC_COPY_LEN,	offsetof(struct kern_reloc_arg, copy_len));
- #endif
-   return 0;
- }
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index bd398def7627..db96d2fab8b2 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -20,6 +20,7 @@
- #include <asm/mmu.h>
- #include <asm/mmu_context.h>
- #include <asm/page.h>
-+#include <asm/trans_pgd.h>
+ #include <linux/kexec.h>
+@@ -16,6 +18,56 @@
  
- #include "cpu-reset.h"
- 
-@@ -70,10 +71,90 @@ static void *kexec_page_alloc(void *arg)
- 	return page_address(page);
- }
- 
+ .globl kexec_relocate_code_start
+ kexec_relocate_code_start:
++/* Invalidae TLB */
++.macro tlb_invalidate
++	dsb	sy
++	dsb	ish
++	tlbi	vmalle1
++	dsb	ish
++	isb
++.endm
++
++/* Turn-off mmu at level specified by sctlr */
++.macro turn_off_mmu sctlr, tmp1, tmp2
++	mrs	\tmp1, \sctlr
++	ldr	\tmp2, =SCTLR_ELx_FLAGS
++	bic	\tmp1, \tmp1, \tmp2
++	pre_disable_mmu_workaround
++	msr	\sctlr, \tmp1
++	isb
++.endm
++
++/* Turn-on mmu at level specified by sctlr */
++.macro turn_on_mmu sctlr, tmp1, tmp2
++	mrs	\tmp1, \sctlr
++	ldr	\tmp2, =SCTLR_ELx_FLAGS
++	orr	\tmp1, \tmp1, \tmp2
++	msr	\sctlr, \tmp1
++	ic	iallu
++	dsb	nsh
++	isb
++.endm
++
 +/*
-+ * Map source segments starting from src_va, and map destination
-+ * segments starting from dst_va, and return size of copy in
-+ * *copy_len argument.
-+ * Relocation function essentially needs to do:
-+ * memcpy(dst_va, src_va, copy_len);
++ * Set ttbr0 and ttbr1, called while MMU is disabled, so no need to temporarily
++ * set zero_page table. Invalidate TLB after new tables are set.
 + */
-+static int map_segments(struct kimage *kimage, pgd_t *pgdp,
-+			struct trans_pgd_info *info,
-+			unsigned long src_va,
-+			unsigned long dst_va,
-+			unsigned long *copy_len)
-+{
-+	unsigned long *ptr = 0;
-+	unsigned long dest = 0;
-+	unsigned long len = 0;
-+	unsigned long entry, addr;
-+	int rc;
++.macro set_ttbr arg, tmp1, tmp2
++	ldr	\tmp1, [\arg, #KEXEC_KRELOC_TRANS_TTBR0]
++	msr	ttbr0_el1, \tmp1
++	ldr	\tmp1, [\arg, #KEXEC_KRELOC_TRANS_TTBR1]
++	offset_ttbr1 \tmp1, \tmp2
++	msr	ttbr1_el1, \tmp1
++	isb
++.endm
 +
-+	for (entry = kimage->head; !(entry & IND_DONE); entry = *ptr++) {
-+		addr = entry & PAGE_MASK;
-+
-+		switch (entry & IND_FLAGS) {
-+		case IND_DESTINATION:
-+			dest = addr;
-+			break;
-+		case IND_INDIRECTION:
-+			ptr = __va(addr);
-+			if (rc)
-+				return rc;
-+			break;
-+		case IND_SOURCE:
-+			rc = trans_pgd_map_page(info, pgdp, __va(addr),
-+						src_va, PAGE_KERNEL);
-+			if (rc)
-+				return rc;
-+			rc = trans_pgd_map_page(info, pgdp, __va(dest),
-+						dst_va, PAGE_KERNEL);
-+			if (rc)
-+				return rc;
-+			dest += PAGE_SIZE;
-+			src_va += PAGE_SIZE;
-+			dst_va += PAGE_SIZE;
-+			len += PAGE_SIZE;
-+		}
-+	}
-+	*copy_len = len;
-+
-+	return 0;
-+}
-+
-+static int mmu_relocate_setup(struct kimage *kimage, void *reloc_code,
-+			      struct kern_reloc_arg *kern_reloc_arg)
-+{
-+	struct trans_pgd_info info = {
-+		.trans_alloc_page	= kexec_page_alloc,
-+		.trans_alloc_arg	= kimage,
-+	};
-+	pgd_t *trans_pgd = kexec_page_alloc(kimage);
-+	int rc;
-+
-+	if (!trans_pgd)
-+		return -ENOMEM;
-+
-+	/* idmap relocation function */
-+	rc = trans_pgd_idmap_page(&info, &kern_reloc_arg->trans_ttbr0,
-+				  &kern_reloc_arg->trans_t0sz, reloc_code);
-+	if (rc)
-+		return rc;
-+
-+	kern_reloc_arg->src_addr = _PAGE_OFFSET(VA_BITS_MIN);
-+	kern_reloc_arg->dst_addr = _PAGE_OFFSET(VA_BITS_MIN - 1);
-+	kern_reloc_arg->trans_ttbr1 = phys_to_ttbr(__pa(trans_pgd));
-+
-+	rc = map_segments(kimage, trans_pgd, &info, kern_reloc_arg->src_addr,
-+			  kern_reloc_arg->dst_addr, &kern_reloc_arg->copy_len);
-+	return rc;
-+}
-+
- int machine_kexec_post_load(struct kimage *kimage)
- {
- 	void *reloc_code = page_to_virt(kimage->control_code_page);
- 	struct kern_reloc_arg *kern_reloc_arg = kexec_page_alloc(kimage);
-+	int rc = 0;
++/* Set T0SZ to match the requirements of idmap page */
++.macro set_tcr_t0sz arg, tmp1, tmp2
++	ldr	\tmp2, [\arg, #KEXEC_KRELOC_TRANS_T0SZ]
++	mrs	\tmp1, tcr_el1
++	bfi     \tmp1, \tmp2, TCR_T0SZ_OFFSET, TCR_TxSZ_WIDTH
++	msr	tcr_el1, \tmp1
++.endm
  
- 	if (!kern_reloc_arg)
- 		return -ENOMEM;
-@@ -89,9 +170,18 @@ int machine_kexec_post_load(struct kimage *kimage)
- 		kern_reloc_arg->el2_vector = __pa(reloc_code)
- 						+ kexec_el2_vectors_offset;
- 	}
-+
-+	/*
-+	 * If relocation is not needed, we do not need to enable MMU in
-+	 * relocation routine, therefore do not create page tables for
-+	 * scenarios such as crash kernel
-+	 */
-+	if (!(kimage->head & IND_DONE))
-+		rc = mmu_relocate_setup(kimage, reloc_code, kern_reloc_arg);
-+
- 	kexec_image_info(kimage);
+ /*
+  * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
+@@ -27,65 +79,53 @@ kexec_relocate_code_start:
+  * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
+  * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
+  * safe memory that has been set up to be preserved during the copy operation.
++ *
++ * This function temporarily enables MMU if kernel relocation is needed.
++ * Also, if we enter this function at EL2 on non-VHE kernel, we temporarily go
++ * to EL1 to enable MMU, and escalate back to EL2 at the end to do the jump to
++ * the new kernel. This is determined by presence of el2_vector.
+  */
+ ENTRY(arm64_relocate_new_kernel)
+-	/* Clear the sctlr_el2 flags. */
+-	mrs	x2, CurrentEL
+-	cmp	x2, #CurrentEL_EL2
++	mrs	x1, CurrentEL
++	cmp	x1, #CurrentEL_EL2
+ 	b.ne	1f
+-	mrs	x2, sctlr_el2
+-	ldr	x1, =SCTLR_ELx_FLAGS
+-	bic	x2, x2, x1
+-	pre_disable_mmu_workaround
+-	msr	sctlr_el2, x2
+-	isb
+-1:	/* Check if the new image needs relocation. */
+-	ldr	x16, [x0, #KEXEC_KRELOC_HEAD]	/* x16 = kimage_head */
+-	tbnz	x16, IND_DONE_BIT, .Ldone
+-	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
+-.Lloop:
+-	and	x12, x16, PAGE_MASK		/* x12 = addr */
+-	/* Test the entry flags. */
+-.Ltest_source:
+-	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
+-
+-	/* Invalidate dest page to PoC. */
+-	mov     x2, x13
+-	add     x20, x2, #PAGE_SIZE
+-	sub     x1, x15, #1
+-	bic     x2, x2, x1
+-2:	dc      ivac, x2
+-	add     x2, x2, x15
+-	cmp     x2, x20
+-	b.lo    2b
+-	dsb     sy
+-
+-	copy_page x13, x12, x1, x2, x3, x4, x5, x6, x7, x8
+-	b	.Lnext
+-.Ltest_indirection:
+-	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
+-	mov	x14, x12			/* ptr = addr */
+-	b	.Lnext
+-.Ltest_destination:
+-	tbz	x16, IND_DESTINATION_BIT, .Lnext
+-	mov	x13, x12			/* dest = addr */
+-.Lnext:
+-	ldr	x16, [x14], #8			/* entry = *ptr++ */
+-	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
+-.Ldone:
+-	/* wait for writes from copy_page to finish */
+-	dsb	nsh
+-	ic	iallu
+-	dsb	nsh
+-	isb
+-
+-	/* Start new image. */
+-	ldr	x4, [x0, #KEXEC_KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
++	turn_off_mmu sctlr_el2, x1, x2		/* Turn off MMU at EL2 */
++1:	mov	x20, xzr			/* x20 will hold vector value */
++	ldr	x11, [x0, #KEXEC_KRELOC_COPY_LEN]
++	cbz	x11, 5f				/* Check if need to relocate */
++	ldr	x20, [x0, #KEXEC_KRELOC_EL2_VECTOR]
++	cbz	x20, 2f				/* need to reduce to EL1? */
++	msr	vbar_el2, x20			/* el2_vector present, means */
++	adr	x1, 2f				/* we will do copy in el1 but */
++	msr	elr_el2, x1			/* do final jump from el2 */
++	eret					/* Reduce to EL1 */
++2:	set_tcr_t0sz x0, x1, x2			/* Set t0sz for idmaped page */
++	set_ttbr x0, x1, x2			/* Set our page tables */
++	tlb_invalidate
++	ldr	x1, [x0, #KEXEC_KRELOC_DST_ADDR]; /* arg is not idmapped so */
++	ldr	x2, [x0, #KEXEC_KRELOC_SRC_ADDR]; /* read before MMU is on */
++	turn_on_mmu sctlr_el1, x3, x4		/* Turn MMU back on */
++	mov	x12, x1				/* x12 dst backup */
++3:	copy_page x1, x2, x3, x4, x5, x6, x7, x8, x9, x10
++	sub	x11, x11, #PAGE_SIZE
++	cbnz	x11, 3b				/* page copy loop */
++	raw_dcache_line_size x2, x3		/* x2 = dcache line size */
++	sub	x3, x2, #1			/* x3 = dcache_size - 1 */
++	bic	x12, x12, x3
++4:	dc	cvau, x12			/* Flush D-cache */
++	add	x12, x12, x2
++	cmp	x12, x1				/* Compare to dst + len */
++	b.ne	4b				/* D-cache flush loop */
++	turn_off_mmu sctlr_el1, x1, x2		/* Turn off MMU */
++	tlb_invalidate				/* Invalidate TLB */
++5:	ldr	x4, [x0, #KEXEC_KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
+ 	ldr	x3, [x0, #KEXEC_KRELOC_KERN_ARG3]
+ 	ldr	x2, [x0, #KEXEC_KRELOC_KERN_ARG2]
+ 	ldr	x1, [x0, #KEXEC_KRELOC_KERN_ARG1]
+ 	ldr	x0, [x0, #KEXEC_KRELOC_KERN_ARG0]	/* x0 = dtb address */
+-	br	x4
++	cbnz	x20, 6f				/* need to escalate to el2? */
++	br	x4				/* Jump to new world */
++6:	hvc	#0				/* enters kexec_el1_sync */
+ .ltorg
+ END(arm64_relocate_new_kernel)
  
--	return 0;
-+	return rc;
- }
- 
- /**
 -- 
 2.17.1
 
