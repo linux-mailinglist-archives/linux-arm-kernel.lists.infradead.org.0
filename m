@@ -2,80 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B411D193C8A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:08:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA59E193CB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:13:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bnauBKp9p+zZhySNabJXAIBqE0lTGwV4kwnb9JNkh/o=; b=eXi32j2HIaNPcr
-	70Oy+bS5F2uz6d2NUzEQtMbHvM0u6DMaG5uiYoWx72ysEf9XC1J6PcUoA44sF5wO9odd91q8RKXQ2
-	sX1japGUyV5IJk+WT1MO+XXddu0X9FhJzF+XSUhweGrFBL1GLZzMAncwgwDooPp5T0/GHYMgy3v1W
-	GiSzTaQLJY6y5Io7qc1ySDmvMGQgPjM/UR6bszvWoi1MwCTNmpCzA2U/hUJhLv4NKHnAeQz/LbX78
-	oUe5qd8Md2ZoiYGcrSh7X/UPW8qddqJpzbAWW4SDrNUnjAtgJJCMR3MGRheys1HaEo0waZeH0lozc
-	CrUmZOhqiVMt1EFtnIXg==;
+	List-Owner; bh=Lt4H20Xiv7xDIKRsCRhDNkTH63dZgJh+svavgb8dNgU=; b=DMpzXuIcA39pd8
+	TO1qHbkDzbA3BhFADa7vKrTMQ5DDgoU8sT2b2a9MB0MRHrhjJjAdguzC/iqq13FvreLRAqe6WTvJn
+	gyj8FBvt2rAsYTiRZNw01jSZhq7kgWUqhz2dhX4zjTi/IovUIRVAM6R7wkWohNzZimpspWvLsE+m7
+	ig04zO1Z0W7FQYAM6HEWsuQGjvWk1H513O37M1DCNtNekpnX7AeS9KA3DwtXblEj5pwqF4uhAEDfU
+	u+2fDb7OhO9kOD+xzg9R0bs7nWZsDUNm8bIHYtiE1PVF4H9L5sWpQVrGS/Hx/t/dKEbX6pC8A1Tu7
+	5FdHMOCLAFxSIZclKGRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHPQb-0000Ug-L2; Thu, 26 Mar 2020 10:07:57 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jHPVL-0003A5-Nm; Thu, 26 Mar 2020 10:12:51 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHPQS-0000UC-P2
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:07:50 +0000
-Received: from mail-qt1-f179.google.com ([209.85.160.179]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N2Ujn-1jNklB0JqB-013wFg for <linux-arm-kernel@lists.infradead.org>; Thu,
- 26 Mar 2020 11:07:46 +0100
-Received: by mail-qt1-f179.google.com with SMTP id e14so4741831qts.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 03:07:45 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ1M+1rmAgiQAcVagf1l6fcEZegpcnV0UAoU7DCUemZd6S2qS5Bx
- FtpK1R0kMQZbH5YuoU3OrO1yNwYOUeYi68PEGsY=
-X-Google-Smtp-Source: ADFU+vtn4zzbgXz0JiR+4r/VnSMlC2pOUeyfguA66WQGjarHPZXvLUyw5ij+hMENKb2uojnLZ7CO+lHSprkkhHJr/VE=
-X-Received: by 2002:aed:20e3:: with SMTP id 90mr7165503qtb.142.1585217264913; 
- Thu, 26 Mar 2020 03:07:44 -0700 (PDT)
+ id 1jHPVD-00039e-Di
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:12:45 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02QACYnG032171; Thu, 26 Mar 2020 11:12:35 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=L85rZOpZxg375px3mWAwS/C7vybF5ftzlf5QE8rNbBw=;
+ b=ewiNc0NURcooa2CNZCnpwJ2/qcd5H7zKOVLl+rUFPuFDTR/ypJAFyy+I1XdX1HLCWyCx
+ gChVcjirmE+eEojq7dsgc3wEhu6qfIF2pPYZFHXM2qFp6P1bBUQEf68mfx4q5Xdt8n2/
+ HnyEuYLZD3WPUI+OM9reFz4sCxi1swXLLmbXuQG+q19pU6sgyu6qwmgwR6nR3ajXZ9Ys
+ E8rdXmNrRMZqGwlzOvvxalTnRUATrsxBdfFqhY+q2Ma/c3ni8ln0L+jNxKX8tQmB7lhF
+ xDvbggUkFql0Iq/wGT1jMIUxn+05hkPYokR5JDtgxD0L2mdqtrK0ocbcQ65CSNKlbApw Pw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yw8xeb99h-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 26 Mar 2020 11:12:35 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 07635100034;
+ Thu, 26 Mar 2020 11:12:25 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C354B22228D;
+ Thu, 26 Mar 2020 11:12:25 +0100 (CET)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 26 Mar
+ 2020 11:12:25 +0100
+Date: Thu, 26 Mar 2020 11:12:19 +0100
+From: Alain Volmat <alain.volmat@st.com>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Subject: Re: [PATCH 2/2] i2c: i2c-stm32f7: allows for any bus frequency
+Message-ID: <20200326101219.GA21190@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ linux-i2c <linux-i2c@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, 
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>
+References: <1585161361-3408-1-git-send-email-alain.volmat@st.com>
+ <1585161361-3408-3-git-send-email-alain.volmat@st.com>
+ <CAHp75VdPCWdpGo=2n9g0ivti-g2m4jZ=cG4BKHBLk8BVDzaCyg@mail.gmail.com>
 MIME-Version: 1.0
-References: <1576170032-3124-1-git-send-email-youri.querry_1@nxp.com>
- <1576170032-3124-3-git-send-email-youri.querry_1@nxp.com>
-In-Reply-To: <1576170032-3124-3-git-send-email-youri.querry_1@nxp.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 26 Mar 2020 11:07:28 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a11TJvNZ=uibXe8v6aHc3E8YTPeReN43=OW=3V7Rd7MNw@mail.gmail.com>
-Message-ID: <CAK8P3a11TJvNZ=uibXe8v6aHc3E8YTPeReN43=OW=3V7Rd7MNw@mail.gmail.com>
-Subject: Re: [PATCH 2/3] soc: fsl: dpio: QMAN performance improvement.
- Function pointer indirection.
-To: Youri Querry <youri.querry_1@nxp.com>
-X-Provags-ID: V03:K1:qEbz+AP7bmq2fFGv5NYcsuSyBbQoWgB+VzsUr5cFzS5HyGhHQ4s
- K+XEAVJ5l+MFl4UnIi1sKDjeqgmcoFkjRkGJhY/yF4hSfrNP+hzQ3/qUc1szFgIyfBX0kGH
- Gs8IX0QKa1ADLZxWJBb3WdYw6nfxrCFot8BPjVydY+xfMD3gynpb5GZpZtg6TdhCGo1nV0P
- f+Lp41+s2R4dafQUBom+Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Lm6YkAyfyKk=:XFDxCvkWfE9MN2ooa040yr
- L/D/v/yQZRH7QTrT7nwheTWiqeu11sFUlWwC2HyK09IzxzDY1ku9HupXiqgKJHg3C9dPk/SmL
- zMs+Lc1uMKR8SSSEQI4b1gX/bMeIxDlA5bFfl9nxMh4Ko6Lg0CefPHL81gRBhV4gGm2uGeTER
- 7g9FGvScK4WqUzJWDM1k1SVY/tojgu+ImHGeAHB6HIvJv3EbCHIbBotVvQRiZ8VoBluoIrKGw
- KyxFq/SwtnzJRaiEitIKb5ZeielvBD4JdJFRC+S0ZaZZEHJmftEP2JZga5j9+0oOhvpI8EbeZ
- 7EvFtdDLKx7lvi7R5ZKQaiDTDZ80XD+ca4smPqvufC8FL+Jvnp3at0npWUwAszoEJ0I5xCHax
- JnwguOPIdCk9XsOFMUYPwKuVTNu6jdI92Kz9snpGGZkPbaHeG1WLNjjkiBIDDm87iETbV5XRP
- yyXAc2mQpEeskWHYQeM4t0LriOWSMWNFduVmQl8cuPiVu5iXmRO3OFWNdbDF6Ws8oJjPWiVre
- NApZcSnaIU/ZaVAWIT5S+XVHeJ0e9PIlLHz1hJaT85EuvoHfi3clLyvbQIAwSfFKbpm5iqEA3
- jZlfLFbjjdjs9N493F1NTg3ijTPjnq4oJQ4+TcN9lgK00htExfHQWelCAUsIjAo9kpwguYW8f
- J03Ygvj4Hlq5im3KJhPFoFoBYS+hz/du1LJy6fHz3lqISp33yI5H2HO1giO73BpDo2ncBOphR
- 1HbqgcGgCPOduWRyLo0So/zsALFD0r0soOI1mH8w8xwdERHdtHJ9ABrQ4X5VUXT4fV8P0sDr5
- 9pYLYZyA0ILGEW7CpHO/P5Hgl/sGpqmq5hTDU/72MrXGBHuMMY=
+Content-Disposition: inline
+In-Reply-To: <CAHp75VdPCWdpGo=2n9g0ivti-g2m4jZ=cG4BKHBLk8BVDzaCyg@mail.gmail.com>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-26_02:2020-03-24,
+ 2020-03-26 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_030749_106154_ADCA4890 
-X-CRM114-Status: GOOD (  19.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_031243_824325_64230C43 
+X-CRM114-Status: GOOD (  21.84  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,95 +111,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roy Pledge <roy.pledge@nxp.com>,
- Alexandru Marginean <alexandru.marginean@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Ioana Ciornei <ioana.ciornei@nxp.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-i2c <linux-i2c@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 6:02 PM Youri Querry <youri.querry_1@nxp.com> wrote:
->
-> We are making the access decision in the initialization and
-> setting the function pointers accordingly.
->
-> Signed-off-by: Youri Querry <youri.querry_1@nxp.com>
-> ---
->  drivers/soc/fsl/dpio/qbman-portal.c | 451 +++++++++++++++++++++++++++++++-----
->  drivers/soc/fsl/dpio/qbman-portal.h | 129 ++++++++++-
->  2 files changed, 507 insertions(+), 73 deletions(-)
+Hi Andy,
 
-While merging pull requests, I came across some style issues with this driver.
-I'm pulling it anyway, but please have another look and fix these for the next
-release, or send a follow-up patch for the coming merge window.
+Thanks for the review.
 
->
-> diff --git a/drivers/soc/fsl/dpio/qbman-portal.c b/drivers/soc/fsl/dpio/qbman-portal.c
-> index 5a37ac8..0ffe018 100644
-> --- a/drivers/soc/fsl/dpio/qbman-portal.c
-> +++ b/drivers/soc/fsl/dpio/qbman-portal.c
-> @@ -83,6 +83,82 @@ enum qbman_sdqcr_fc {
->         qbman_sdqcr_fc_up_to_3 = 1
->  };
->
-> +/* Internal Function declaration */
-> +static int qbman_swp_enqueue_direct(struct qbman_swp *s,
-> +                                   const struct qbman_eq_desc *d,
-> +                                   const struct dpaa2_fd *fd);
-> +static int qbman_swp_enqueue_mem_back(struct qbman_swp *s,
-> +                                     const struct qbman_eq_desc *d,
-> +                                     const struct dpaa2_fd *fd);
-> +static int qbman_swp_enqueue_multiple_direct(struct qbman_swp *s,
-> +                                            const struct qbman_eq_desc *d,
-> +                                            const struct dpaa2_fd *fd,
-> +                                            uint32_t *flags,
-> +                                            int num_frames);
-> +static int qbman_swp_enqueue_multiple_mem_back(struct qbman_swp *s,
-> +                                              const struct qbman_eq_desc *d,
-> +                                              const struct dpaa2_fd *fd,
-> +                                              uint32_t *flags,
-> +                                              int num_frames);
+On Wed, Mar 25, 2020 at 06:53:45PM +0000, Andy Shevchenko wrote:
+> On Wed, Mar 25, 2020 at 8:38 PM Alain Volmat <alain.volmat@st.com> wrote:
+> >
+> > Do not limitate to the 3 (100KHz, 400KHz, 1MHz) bus frequency but
+> > instead allows any frequency (if it matches timing requirements).
+> > Depending on the requested frequency, use the spec data from either
+> > Standard, Fast or Fast Plus mode.
+> >
+> > Hardcoding of min/max bus frequencies is removed and is instead computed.
+> >
+> > The driver do not use anymore speed identifier but instead handle
+> > directly the frequency and figure out the spec data (necessary
+> > for the computation of the timing register) based on the frequency.
+> 
+> ...
+> 
+> > +static struct stm32f7_i2c_spec *get_specs(u32 rate)
+> > +{
+> > +       int i;
+> > +
+> > +       for (i = 0; i < ARRAY_SIZE(i2c_specs); i++)
+> > +               if (rate <= i2c_specs[i].rate)
+> > +                       return &i2c_specs[i];
+> > +
+> 
+> > +       /* NOT REACHED */
+> > +       return ERR_PTR(-EINVAL);
+> 
+> WARN_ONCE() ?
 
-Please try to avoid all static forward declarations. The coding style for the
-kernel generally mandates that you define the functions in the order they
-are used in, and have no such declarations, unless there is a recursion
-that requires it. If you do have recursion, then please add a comment that
-explains how you limit it to avoid overrunning the kernel stack.
+The comment should actually be removed. get_specs return value is
+properly checked in stm32f7_i2c_compute_timing and an error message
+is displayed in case of an error.
 
-> +const struct dpaa2_dq *qbman_swp_dqrr_next_direct(struct qbman_swp *s);
-> +const struct dpaa2_dq *qbman_swp_dqrr_next_mem_back(struct qbman_swp *s);
+> 
+> > +}
+> 
+> ...
+> 
+> > -                       if ((tscl_l < i2c_specs[setup->speed].l_min) ||
+> > +                       if ((tscl_l < specs->l_min) ||
+> 
+> >                             (i2cclk >=
+> >                              ((tscl_l - af_delay_min - dnf_delay) / 4))) {
+> 
+> Perhaps squash above two to one line at the same time?
 
-Forward declarations for non-static functions in C code are much
-worse, you should
-never need these. If a function is shared between files, then put the
-declaration
-into a header file that is included by both, to ensure the prototypes match, and
-if it's only used here, then make it 'static'.
+I agree that this is not very pretty to read now but that would lead to
+a line exceeding 80 characters. To fix that it'd be better to rework the code
+but in such case that should be done at a separate time to keep this commit
+as small / simpler to understand as possible. So I'd prefer leave this code
+for the time being.
 
-> +/* Function pointers */
-> +int (*qbman_swp_enqueue_ptr)(struct qbman_swp *s,
-> +                            const struct qbman_eq_desc *d,
-> +                            const struct dpaa2_fd *fd)
-> +       = qbman_swp_enqueue_direct;
-> +
-> +int (*qbman_swp_enqueue_multiple_ptr)(struct qbman_swp *s,
-> +                                     const struct qbman_eq_desc *d,
-> +                                     const struct dpaa2_fd *fd,
-> +                                     uint32_t *flags,
-> +                                            int num_frames)
-> +       = qbman_swp_enqueue_multiple_direct;
+> 
+> ...
+> 
+> > +       int i;
+> > +
+> > +       for (i = ARRAY_SIZE(i2c_specs) - 1; i >= 0; i--)
+> 
+> 
+> Perhaps
+> 
+>        int i = ARRAY_SIZE(i2c_specs);
+> 
+>        while(i--)
+> 
+> ?
 
-This looks like you just have an indirect function pointer with a
-single possible
-implementation. This is less of a problem, but until you have a way to safely
-override these at runtime, it may be better to simplify this by using direct
-function calls.
+I propose the following code to make it a bit easier to read/understand:
 
-       Arnd
+static u32 get_lower_rate(u32 rate)
+{
+        int i = ARRAY_SIZE(i2c_specs);
+
+        while (i--)
+                if (i2c_specs[i].rate < rate)
+                        break;
+
+        return i2c_specs[i].rate;
+}
+
+If you agree with that I'll push a v2.
+
+> 
+> > +               if (i2c_specs[i].rate < rate)
+> > +                       return i2c_specs[i].rate;
+> 
+> -- 
+> With Best Regards,
+> Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
