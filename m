@@ -2,41 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CBE21949E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 22:10:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B759A1949EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 22:10:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JIfbj4814LLeIi5upjJCWU4Yk8Ys+OlYcacpBDgTB0I=; b=mMyXoYPLVY8wt9
-	zu0oxl7ACWVf/BYSV/XGclZHMpbYpZUgC8f7wDU5GCSU3Ie1fdy0cJlBZLCSuBYBFfIS49E7Fr3vc
-	roQcnFGCgw0aS5Xnjx+/8RDQZy8cPf93y+HRC1Ood1NQ6v/62QTL3N52AQct+Tzz+t6a/Vu47t7bz
-	k9oB+HO1FGR5p4/5vAbXMQB89irE6g7cYqdYWRi+lgtSEg5ziOJl+r7rOIXqKnQ6Xu4YS6VQT8plH
-	R81RPC/iR3+JPAjA3k6inzNifLdPrNxr+xrrbWHM23vj7OJpbXnqKsWXxq4CsIYkjB/e9kG9jK0j7
-	+zbhpd+wGzpXPuJXZwbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x3Vije/NaE08LNGc4bnzhtOZlpGQOnFKNtKIf35cYUs=; b=rPEfWnY5pVuVig
+	kHCplD1ls5P1+1aSXSk93NfcwSTvgGYbYZjEK7Qd+tx41TyWzUfv6iy6zF2KXy6fyLvki2D+QxZQk
+	W4AG0+xM38x7UtDdH3LlS8JxOvQ4ivV9q4xMP1JTYxfmK3PNHdqkcPS7sXB7OGOFQnmaFGy/voiTW
+	eSC9L54v4mGX4LBmz7qznJ4N3VR/bTAMfRikSvNmKoYa8vj4rxHwiHnpaKWSMQRS5Sjt7D3K2Isv1
+	j+P+Uwx7FGv3NbW7NZsipBazlkasrW9aj0XPhW3BguCfImQnYZlG91+5NAPvH0opGb7Yzu3Ww81DK
+	Rb911pO0r9QXYNRbmsVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHZlk-0000kQ-G6; Thu, 26 Mar 2020 21:10:28 +0000
+	id 1jHZlz-0000wT-C4; Thu, 26 Mar 2020 21:10:43 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHZlT-0000jL-MR
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 21:10:13 +0000
+ id 1jHZlV-0000jl-33
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 21:10:14 +0000
 Received: from localhost (p54B3331F.dip0.t-ipconnect.de [84.179.51.31])
- by pokefinder.org (Postfix) with ESMTPSA id EDEC02C1F8B;
- Thu, 26 Mar 2020 22:10:10 +0100 (CET)
+ by pokefinder.org (Postfix) with ESMTPSA id 686792C1F8F;
+ Thu, 26 Mar 2020 22:10:12 +0100 (CET)
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-i2c@vger.kernel.org
-Subject: [PATCH 0/1] ASoC: convert to use new I2C API
-Date: Thu, 26 Mar 2020 22:10:09 +0100
-Message-Id: <20200326211010.13471-1-wsa+renesas@sang-engineering.com>
+Subject: [PATCH 1/1] ASoC: pxa: magician: convert to use
+ i2c_new_client_device()
+Date: Thu, 26 Mar 2020 22:10:10 +0100
+Message-Id: <20200326211010.13471-2-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200326211010.13471-1-wsa+renesas@sang-engineering.com>
+References: <20200326211010.13471-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_141011_940388_1CCFA43D 
-X-CRM114-Status: UNSURE (   5.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200326_141013_297533_E93A0CBA 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -58,24 +60,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We are deprecating calls which return NULL in favor of new variants which
-return an ERR_PTR. Only build tested.
+Move away from the deprecated API and return the shiny new ERRPTR where
+useful.
 
-
-Wolfram Sang (1):
-  ASoC: pxa: magician: convert to use i2c_new_client_device()
-
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+---
  sound/soc/pxa/magician.c | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
+diff --git a/sound/soc/pxa/magician.c b/sound/soc/pxa/magician.c
+index 6483cff5b73d..3bafd86bfb93 100644
+--- a/sound/soc/pxa/magician.c
++++ b/sound/soc/pxa/magician.c
+@@ -358,10 +358,10 @@ static int __init magician_init(void)
+ 	adapter = i2c_get_adapter(0);
+ 	if (!adapter)
+ 		return -ENODEV;
+-	client = i2c_new_device(adapter, i2c_board_info);
++	client = i2c_new_client_device(adapter, i2c_board_info);
+ 	i2c_put_adapter(adapter);
+-	if (!client)
+-		return -ENODEV;
++	if (IS_ERR(client))
++		return PTR_ERR(client);
+ 
+ 	ret = gpio_request(EGPIO_MAGICIAN_SPK_POWER, "SPK_POWER");
+ 	if (ret)
 -- 
 2.20.1
 
