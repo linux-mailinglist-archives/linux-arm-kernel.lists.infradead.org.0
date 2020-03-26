@@ -2,85 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1987194B7F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 23:27:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8974194B83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 23:28:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bnmYFIqgO0ydA42byWt4tWglXLIW7cBFo/TVbTG6Uxs=; b=Brb9rpibRlrTax
-	IkgKXWyx+RbmI7LQRWYACDoHH5QJv2O8Sm09OLP0D/HEkarMwVKK9ZCD5I1g727rUdBF2uDk7BKOa
-	BdCbGv85QOSySuzxeod/0AMBAc4D3x1jRHN9egP8Rd+xqr28EWOOE0aO/+U+Osu8cOCvUcx8xbhfe
-	6W7Va1MdxGkl4iNcc39xQI3cAI0JaxEF/GqInDOIRJjvQ5MUCVePkZOVFDq9ZHi1txoxhYJ24wN0k
-	2KTnGOjNG2UPvoWzTuRmLYAHlFPIcHcARsV8x1WP1tNp+K6oZ2mHYETxqqbozUwg66T8zPJlRA1Er
-	e20GfAEZ+YyAkeWo47Kg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SCFrs/FhE/i5gmdJYAlEYYww1UIzDrDTEIZwrKoYINE=; b=VdF
+	mBlrb3MSA7mmsHDj9AKgDDFXNyri1UwvNJUKmeXmN90pZEabwr/JGkVJpc47aN4n3DiLnyYyvU+ic
+	9ojFwlFaT+1DiEethR90EwqozWEM6uFqFF3ivq4XjbU13ohbIOeeIQ0ZtcVX92Be4MN5L5w7Z21gr
+	X/1FlPFO3gKBLUlFInGRHMm7+s4iSgPKrEp8I2yIMWBcKvhMm0IQIYBUpd1Y3m/jZjQRE11XCV1gS
+	YDnFZn2ggaHV7n7QHvrA+grbEWtj9sR0Yz1od4ZbVanBUC7S9EQ74igHmEh7nB1tryX+TXf8eGuVl
+	9wLF6sTmUVJQjBIgiUE9+AG3hKeDU9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHaxr-0006D0-Fw; Thu, 26 Mar 2020 22:27:03 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1jHayp-0006TM-76; Thu, 26 Mar 2020 22:28:03 +0000
+Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHaxg-0006CQ-OQ
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 22:26:54 +0000
-Received: by mail-lj1-x235.google.com with SMTP id i20so8198571ljn.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 15:26:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6xyO8FuvXE6CVE7oxQyeyjLYEzLOngOQh+aHZSRVeqs=;
- b=TmiYiXNP7nQUqlfsi7vWGm/1YJ9mVNkv+7A2lQ5GBRahuVUxV2EevaFmQKAy/8ROW7
- 6TIU2Zn1yEf3c74hQSJUhP1dmaTQ+WVpCgwptXlM57ijFCSuoeggCIi5yXBCRN2H9cZN
- dsFgKiZqHkBfLiLe3Z8rWqB6NDbfwSJ4XyM6C7zt8oy6cF8kmN586bAa5xGNodnrXUwj
- 3uKdP2DqLwToVsnH2BsAu5cFYe0ekKK7mDH4ZjI228Lct3j4WEwT8Fk5wl5nNVh+mA5G
- yyMAI0D7/7EUeR3tCQV8sHYnbgqHMnQHTWbGjNRiuDaqc/Og3n0Lo/AISDdQCmDmoIje
- QVbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6xyO8FuvXE6CVE7oxQyeyjLYEzLOngOQh+aHZSRVeqs=;
- b=De9dggx9f7vshHoaLZIwUdX7cbWInf6PKEdfJRw0KfE4/9QLqVQ7rtGDGmJp7ystbZ
- rXlaVARr6UIajGAhckXLFZGq4mmFTsvj1TA/g8kSx2toLbW+Q0HJXTB+JdZTUK0ACcS+
- coeNtICqpjBsCIDUhFsvd2pZN3DaSQZFW3oX9tPqy7LmxGezEM5l/ZLualawY/r+Ymhy
- AwXryKcv/m5HF00LYHb6Olug6Bm99hsphUOyisRgKTy1SueGbTiTaKIwEhBqOirwoku2
- Fr3C0MK5AeV7Gb0q02vsRqo9hk1LDkpGKdGErd1Rtlo6qU4lMRk9Lot8JtVRtYfJrkUa
- AFeQ==
-X-Gm-Message-State: AGi0PuZEe9rR5X9VtSObufg3e2szEmx7aBnC3GS14OtW6X37M1rkIr0q
- 9dxk0LO6m5xfKLDtY4apx6BCrR2LAYi0tBR+9hDzYA==
-X-Google-Smtp-Source: APiQypI1bGUF9gEfBjXFbywVo5PH6ckICPZnsBOMKF2v3rVwVlOySbJcm3WCYku6mrc7IeLpDIjfbVB2XmkriwZMhVU=
-X-Received: by 2002:a2e:5048:: with SMTP id v8mr6071530ljd.99.1585261610638;
- Thu, 26 Mar 2020 15:26:50 -0700 (PDT)
+ id 1jHayg-0006Sd-Bw
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 22:27:56 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 48pKPK1KNjz9sR4;
+ Fri, 27 Mar 2020 09:27:48 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1585261669;
+ bh=TTUfgK8iyycLNqBt/AiEmDKjm1TJOM+wT3Gze1ZAfoI=;
+ h=Date:From:To:Cc:Subject:From;
+ b=OBFeeCUk/cwaKUMd5zgGF1BMof6bjIeMzIguMLlyDQUAgtrQYbv7wQgcB2tW6AzkO
+ Bc2qT6DLLdb5LleF8cZSIUnNxwaDEHdN5Nn2vbxKNjZBe9Tffd87OYb+SPPoGmu0mr
+ AWBNfhD8GMhnQVQLUMWwsgWkrCOBF50UuhiR23So90sSt+kxM1GZ1soIFpj5IxKHog
+ Ba3iKBpNxbhF84yVjQUyeXrt6SwLZB+yTFFtewWpAGuyk6uD7i+9Zek1bgQ8YgqnXQ
+ PV1KQ1alBU53uPOABEEmzdztbRq+f6k3PMkf/IuBXP0JMLzDGVK45jl3u6gaOFfUT2
+ u5BHSSZWbUx8g==
+Date: Fri, 27 Mar 2020 09:27:41 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Colin Cross <ccross@android.com>, Olof Johansson <olof@lixom.net>,
+ Thierry Reding <treding@nvidia.com>, Arnd Bergmann <arnd@arndb.de>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: manual merge of the tegra tree with the arm-soc tree
+Message-ID: <20200327092741.1dbd3242@canb.auug.org.au>
 MIME-Version: 1.0
-References: <5e7cdaf9.1c69fb81.7b511.491d@mx.google.com>
- <CAK8P3a0eRw1rn3QzsO0omJHNJ8ftNFJkixBmdmUTGxenDZbZVw@mail.gmail.com>
- <CACRpkdajmVJTmkDjxyKzPW1N58CAP5HsDrc_zZozfqi5OaJo7Q@mail.gmail.com>
- <CAK8P3a3Rcxs-M64cUbHRyEWWS2kE7trrfwDB-iAr+pPDvH3Tig@mail.gmail.com>
- <CACRpkdbPNLdE43rnWNODuwcgnqjN8y0wsQ612G5XK-STPdsk5Q@mail.gmail.com>
-In-Reply-To: <CACRpkdbPNLdE43rnWNODuwcgnqjN8y0wsQ612G5XK-STPdsk5Q@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 26 Mar 2020 23:26:39 +0100
-Message-ID: <CACRpkdbyYwFhpJaRzBgr5Td=ELQT5dd7Mmx4VFO5Aa5frRvfmg@mail.gmail.com>
-Subject: Re: ux500 warnings, Re: soc build: 52 warnings 2 failures
- (soc/v5.6-rc6-845-ga9295ff5fc977)
-To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_152652_801783_1861DC5B 
-X-CRM114-Status: GOOD (  15.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_152754_956001_14C0C540 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:235 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -95,48 +74,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>,
- Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Olof's autobuilder <build@lixom.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: JC Kuo <jckuo@nvidia.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Nagarjuna Kristam <nkristam@nvidia.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Corentin Labbe <clabbe@baylibre.com>
+Content-Type: multipart/mixed; boundary="===============1423422618839868949=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 11:12 PM Linus Walleij <linus.walleij@linaro.org> wrote:
-> On Thu, Mar 26, 2020 at 10:57 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > On Thu, Mar 26, 2020 at 10:53 PM Linus Walleij <linus.walleij@linaro.org> wrote:
-> > >
-> > > On Thu, Mar 26, 2020 at 8:29 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > > > On Thu, Mar 26, 2020 at 5:42 PM Olof's autobuilder <build@lixom.net> wrote:
-> > > > >
-> > > > > DTS Warnings:
-> > > > >
-> > > > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:203.11-208.7: Warning (avoid_default_addr_size): /soc/mcde@a0350000/dsi@a0351000/panel: Relying on default #address-cells value
-> > > > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:203.11-208.7: Warning (avoid_default_addr_size): /soc/mcde@a0350000/dsi@a0351000/panel: Relying on default #size-cells value
-> > > > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:205.6-16: Warning (reg_format): /soc/mcde@a0350000/dsi@a0351000/panel:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
-> > > >
-> > > > These stick out to me (more below). Linus, have you seen them before?
-> > > > I just merged your ux500 DT series, which may have introduced the
-> > > > warnings (I have not checked older build logs yet).
-> > >
-> > > I think Rob recently turned on W=1 on the DTB builds so this is a bit all over
-> > > the place and we need to iron it out step by step.
-> >
-> > It's strange though that I only see the warnings for ux500 and none of
-> > the other platforms.
->
-> Hm maybe a bit of screwup here then ... I'll try to reproduce and send
-> a patch to fix it up on top of -next!
+--===============1423422618839868949==
+Content-Type: multipart/signed; boundary="Sig_/Tjrk3Z.A=gzsIRzl_glEECC";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-OK I found my silly mistakes and sent a patch to fix it up, should
-be landed in the patchwork as well when you see this.
+--Sig_/Tjrk3Z.A=gzsIRzl_glEECC
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Yours,
-Linus Walleij
+Hi all,
+
+Today's linux-next merge of the tegra tree got conflicts in:
+
+  drivers/phy/tegra/Kconfig
+  drivers/phy/tegra/xusb.c
+
+between commits:
+
+  5a00c7c7604f ("phy: tegra: xusb: Add usb-role-switch support")
+  23babe30fb45 ("phy: tegra: xusb: Add usb-phy support")
+  d74ce0954cb2 ("phy: tegra: xusb: Add support to get companion USB 3 port")
+  58e7bd08b569 ("phy: tegra: xusb: Add Tegra194 support")
+
+from the arm-soc tree and commit:
+
+  f67213cee2b3 ("phy: tegra: xusb: Add usb-role-switch support")
+  e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
+  5a40fc4b934c ("phy: tegra: xusb: Add support to get companion USB 3 port")
+  1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
+
+from the tegra tree.
+
+These are slightly different patches (the latter has been rebased).
+Also there are further commits affecting these files in the tegra tree.
+
+I fixed it up (I just used the version from the tegra tree) and can
+carry the fix as necessary. This is now fixed as far as linux-next is
+concerned, but any non trivial conflicts should be mentioned to your
+upstream maintainer when your tree is submitted for merging.  You may
+also want to consider cooperating with the maintainer of the conflicting
+tree to minimise any particularly complex conflicts.
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/Tjrk3Z.A=gzsIRzl_glEECC
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl59LF0ACgkQAVBC80lX
+0GwyAQf+I5kTj3T8nDJGpq9RC07WHcKa32mVQgkMo2yk0xHSeyeD/pVxCFFUTAGM
+Dbn3bOwyMiRP7eXlvvlMue8eIwqBa8iZefahef2i0CbV7nhKR8HLuvVJwspIilMP
+IwA9rlKRT+ESRlP6c76oHbV43qSY6Bg1RtOLPw8CgqzcVFriItgDSbApN+VWvQSY
+Fl8xpuqBhWajxLTjZULhQo/PpngggfPpTI2Z/PE2qBlh9HBQLAFYU/U2qcEaTah/
+86h1R29S1m7VEuHlmzKmwyhB/Z8tt4zXRwhoN5ZdvLB9vXfrqT3HA015xZrPK12Y
+/3jEJRBE5TZ4vM7QZ78S6h51LSEQsA==
+=oWYQ
+-----END PGP SIGNATURE-----
+
+--Sig_/Tjrk3Z.A=gzsIRzl_glEECC--
+
+
+--===============1423422618839868949==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1423422618839868949==--
+
