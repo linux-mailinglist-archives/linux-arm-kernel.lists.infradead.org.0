@@ -2,65 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E6919363B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:02:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02DAB19368E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:10:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eYUawbGH116mTjlJ76E4XN2QsUn0rDD9DK5nriJMo8c=; b=UrF6qKncyPcMvq
-	EXxwo+XhHc5Hv5X/iF9kzfaUUYE/BXwaQjpge+a7qa4R7eejCcRGfyzxHBUV1GBs4ExWoabTDaCtK
-	0TK5KqBt0ZZyVFIiZIF9bQDZDWVxRRub6RfnirMYbf/7UIR3o1YQL50Oax3ZNVWQPQzRjiolciUkO
-	UMLf7+TOHuvh2cxYNzRZr7Vy0ELZNlukTpKhLSGUuQEAPx5YCBDpkAIKNp0mmbPt7AhlqXIlDf5R/
-	BBqkWLrGBQklFGHz3iKy4PnL5yGzgtlM1OLi5eLIpiRHAYip0wzRMmvUz2jJrS20f6ocs28C5u927
-	iUVQeBQGryMlh6KvX1PA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ILwfXXgWwIgUNc5v6C/+IOABNi6juvELctaannTk+Tw=; b=X3L9MdUaMd0FRP
+	Q1PKp8YEofZ3Yw4LIn0qoPasW7DGFOQtR6cgtN0RcgMQwuBnw0ZObB5q1n1COW+QrA8NGRokxf/uy
+	HcAV741ekFArjKlKqAOoctlXiMKQovTGZ0xULYXf/1DmF3ir/Zq53SmVy7cpibt7fGhC8FWJO4Fx5
+	5Hhh+1WbwCNzO0TMq0Dr0uRMo2LjbW9ko7lxHbmFa/hsW+wqaAGm3xI0RFHGRpH5OyRpGZbIpps+A
+	Y2q0URynvqXvEnKupkSVmS8HftPVOI8ifYdhT7fnS6qjPfsUZpdup9HQ59IojOcWEOB79Qrpiosn0
+	3Cons6NefsBoiazUteQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHImi-0004m8-2D; Thu, 26 Mar 2020 03:02:20 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1jHIuC-0006wO-Ct; Thu, 26 Mar 2020 03:10:04 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHImX-0004lX-9e
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 03:02:10 +0000
-IronPort-SDR: zqxM8YbT4tM2sT/PJtxmRIsbhBrGePeiNWkIeHr877lZpm47db2aLB6vr0k6vlK1BbtUH51qnT
- Dv6/PJPTKfDA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 25 Mar 2020 20:02:08 -0700
-IronPort-SDR: yPBGoMrbjwcF6zwYISHvQKyEgh0A+8zZmqaYETbDQvUVqqqXLDvfI+4eKWDAyheWLXqJZ0OKNm
- T7KidLWVC1vQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,306,1580803200"; d="scan'208";a="293509672"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by FMSMGA003.fm.intel.com with ESMTP; 25 Mar 2020 20:02:07 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jHImU-0004tn-Lf; Thu, 26 Mar 2020 11:02:06 +0800
-Date: Thu, 26 Mar 2020 11:02:00 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [arm-soc:arm/defconfig] BUILD SUCCESS
- a0705d3c042ad39fb9c5609612bb39ef4bedd284
-Message-ID: <5e7c1b28.Ce5AapPCDw0FNALY%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jHItx-0006uu-2u; Thu, 26 Mar 2020 03:09:51 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 112EDC7C64946249E08A;
+ Thu, 26 Mar 2020 11:09:40 +0800 (CST)
+Received: from [127.0.0.1] (10.177.131.64) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0; Thu, 26 Mar 2020
+ 11:09:39 +0800
+Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
+ kdump
+To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
+ <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
+ <bhsharma@redhat.com>, <john.p.donnelly@oracle.com>, <pkushwaha@marvell.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+From: Chen Zhou <chenzhou10@huawei.com>
+Message-ID: <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
+Date: Thu, 26 Mar 2020 11:09:37 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
+In-Reply-To: <20191223152349.180172-1-chenzhou10@huawei.com>
+X-Originating-IP: [10.177.131.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_200209_349291_4B6A810D 
-X-CRM114-Status: UNSURE (   6.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20200325_200949_299967_164F431E 
+X-CRM114-Status: GOOD (  17.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,148 +66,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: horms@verge.net.au, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/defconfig
-branch HEAD: a0705d3c042ad39fb9c5609612bb39ef4bedd284  Merge tag 'at91-5.7-defconfig' of git://git.kernel.org/pub/scm/linux/kernel/git/at91/linux into arm/config
+Hi all,
 
-elapsed time: 485m
+Friendly ping...
 
-configs tested: 121
-configs skipped: 131
+On 2019/12/23 23:23, Chen Zhou wrote:
+> This patch series enable reserving crashkernel above 4G in arm64.
+> 
+> There are following issues in arm64 kdump:
+> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+> when there is no enough low memory.
+> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+> in this case, if swiotlb or DMA buffers are required, crash dump kernel
+> will boot failure because there is no low memory available for allocation.
+> 
+> To solve these issues, introduce crashkernel=X,low to reserve specified
+> size low memory.
+> Crashkernel=X tries to reserve memory for the crash dump kernel under
+> 4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
+> size low memory for crash kdump kernel devices firstly and then reserve
+> memory above 4G.
+> 
+> When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
+> is specified simultaneously, kernel should reserve specified size low memory
+> for crash dump kernel devices. So there may be two crash kernel regions, one
+> is below 4G, the other is above 4G.
+> In order to distinct from the high region and make no effect to the use of
+> kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
+> "linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
+> 
+> Besides, we need to modify kexec-tools:
+> arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
+> 
+> The previous changes and discussions can be retrieved from:
+> 
+> Changes since [v6]
+> - Fix build errors reported by kbuild test robot.
+> 
+> Changes since [v5]
+> - Move reserve_crashkernel_low() into kernel/crash_core.c.
+> - Delete crashkernel=X,high.
+> - Modify crashkernel=X,low.
+> If crashkernel=X,low is specified simultaneously, reserve spcified size low
+> memory for crash kdump kernel devices firstly and then reserve memory above 4G.
+> In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
+> pass to crash dump kernel by DT property "linux,low-memory-range".
+> - Update Documentation/admin-guide/kdump/kdump.rst.
+> 
+> Changes since [v4]
+> - Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+> 
+> Changes since [v3]
+> - Add memblock_cap_memory_ranges back for multiple ranges.
+> - Fix some compiling warnings.
+> 
+> Changes since [v2]
+> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+> two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+> patch.
+> 
+> Changes since [v1]:
+> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
+> in fdt_enforce_memory_region().
+> There are at most two crash kernel regions, for two crash kernel regions
+> case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+> and then remove the memory range in the middle.
+> 
+> [1]: http://lists.infradead.org/pipermail/kexec/2019-August/023569.html
+> [v1]: https://lkml.org/lkml/2019/4/2/1174
+> [v2]: https://lkml.org/lkml/2019/4/9/86
+> [v3]: https://lkml.org/lkml/2019/4/9/306
+> [v4]: https://lkml.org/lkml/2019/4/15/273
+> [v5]: https://lkml.org/lkml/2019/5/6/1360
+> [v6]: https://lkml.org/lkml/2019/8/30/142
+> 
+> Chen Zhou (4):
+>   x86: kdump: move reserve_crashkernel_low() into crash_core.c
+>   arm64: kdump: reserve crashkenel above 4G for crash dump kernel
+>   arm64: kdump: add memory for devices by DT property, low-memory-range
+>   kdump: update Documentation about crashkernel on arm64
+> 
+>  Documentation/admin-guide/kdump/kdump.rst       | 13 +++-
+>  Documentation/admin-guide/kernel-parameters.txt | 12 +++-
+>  arch/arm64/kernel/setup.c                       |  8 ++-
+>  arch/arm64/mm/init.c                            | 61 ++++++++++++++++-
+>  arch/x86/kernel/setup.c                         | 62 ++----------------
+>  include/linux/crash_core.h                      |  3 +
+>  include/linux/kexec.h                           |  2 -
+>  kernel/crash_core.c                             | 87 +++++++++++++++++++++++++
+>  kernel/kexec_core.c                             | 17 -----
+>  9 files changed, 183 insertions(+), 82 deletions(-)
+> 
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm                         at91_dt_defconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                               defconfig
-sparc                            allyesconfig
-i386                             alldefconfig
-i386                              allnoconfig
-i386                             allyesconfig
-i386                                defconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-nds32                               defconfig
-h8300                     edosk2674_defconfig
-h8300                    h8300h-sim_defconfig
-h8300                       h8s-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-powerpc                           allnoconfig
-powerpc                             defconfig
-powerpc                       ppc64_defconfig
-powerpc                          rhel-kconfig
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-parisc                            allnoconfig
-parisc                           allyesconfig
-parisc                generic-32bit_defconfig
-parisc                generic-64bit_defconfig
-x86_64               randconfig-a001-20200326
-x86_64               randconfig-a002-20200326
-x86_64               randconfig-a003-20200326
-i386                 randconfig-a001-20200326
-i386                 randconfig-a002-20200326
-i386                 randconfig-a003-20200326
-alpha                randconfig-a001-20200325
-m68k                 randconfig-a001-20200325
-nds32                randconfig-a001-20200325
-parisc               randconfig-a001-20200325
-riscv                randconfig-a001-20200325
-c6x                  randconfig-a001-20200325
-h8300                randconfig-a001-20200325
-microblaze           randconfig-a001-20200325
-nios2                randconfig-a001-20200325
-sparc64              randconfig-a001-20200325
-csky                 randconfig-a001-20200326
-openrisc             randconfig-a001-20200326
-s390                 randconfig-a001-20200326
-xtensa               randconfig-a001-20200326
-x86_64               randconfig-b001-20200325
-x86_64               randconfig-b002-20200325
-x86_64               randconfig-b003-20200325
-i386                 randconfig-b001-20200325
-i386                 randconfig-b002-20200325
-i386                 randconfig-b003-20200325
-arc                  randconfig-a001-20200325
-arm                  randconfig-a001-20200325
-arm64                randconfig-a001-20200325
-ia64                 randconfig-a001-20200325
-powerpc              randconfig-a001-20200325
-sparc                randconfig-a001-20200325
-riscv                            allmodconfig
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-sh                               allmodconfig
-sh                                allnoconfig
-sh                          rsk7269_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                            titan_defconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-um                                  defconfig
-um                             i386_defconfig
-um                           x86_64_defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
