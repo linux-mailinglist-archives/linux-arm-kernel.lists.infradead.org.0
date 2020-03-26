@@ -2,89 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2105019454C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:20:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D536D194565
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:25:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AqQq9Uzvr7BWSNyigWjq5VW+j2WbmN3uT7Yby7rPLA8=; b=p2gGm/OImHLbWk
-	45nsAZzK3Gh9gJeTfZpzgNcPkOngvEjyf2QDXGdkCODKZOB1bVvZ26D4Do+FB+9z7gapFfBJOTDbr
-	m2Asrz13mWzvq4mYWZQRo1c9GgQKrKT1ZMoiZ58Bq+VAkZcyS8lL5FAcW4d2vhA/RO9+vS2U3/mcU
-	TapLIspyK+5HpCchq7FjbZWhjkPrCVcZmAwguQxdYYMdEZ5HS6KpkWDy+Ts/VyqumNbu8QKuRZgJv
-	yZhlf5mwfBJVNDjzSjU9xnIzhXjp4LebxKIIF4YGjtT0fUchY5HlkAz/cqVyXUsPGcyGBwyodOIuk
-	OrBa074hK40mFUlacRMg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XzGPPDGVqf+tLt1GAPILOEvlWlcHgbfvX709fVvuHYo=; b=YjQSuD05wAeKB2
+	PM+kDksdZlVQ3WkYGGusHz8nrgVRSkyKxJgeKOql+o1d+FNCFdlzTpMSvT0Qoaz1ysZB2F/KYyEUk
+	FnaiRcaDTElsNacDLH8/HusL/prf9cUMvDZ+CaG7VSQxLOv2hZRlZMHRX+b0gI9XqPJB/23oxyj4N
+	4uu+fWq1nmm531aGKolHmBGIdNMPvRl6x6cbAhPt7207VmH+aR4i2hqZpynGVjP8TlfD6ZL3JqVTO
+	QUKd3PFHa1NZmHZyDUQCaP79dIKQZKvoI7G1yrx3TLJwMEvHoKrebDZoLtwxKZx/SCZqwJLhEfOSo
+	UwuGj1bxGvA/yrNPm4Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHWAb-0005du-5y; Thu, 26 Mar 2020 17:19:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jHWFn-0007QB-Ck; Thu, 26 Mar 2020 17:25:15 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHWAP-0005cv-D2; Thu, 26 Mar 2020 17:19:43 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED2CB20409;
- Thu, 26 Mar 2020 17:19:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585243181;
- bh=aJ9NJXpnt5Fa0hziaCIgDuAv2+spkXdDWZZ1jcChYeY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=STd8p92iP2OVVbQzAZzHuf6YS/EgtR0aO+v49Y2/uobX1U2pzF8g59iH/C+kFF93t
- XtzFco5+BvmWI88oWwKCXXaj0SC9q2TVTjjSvC8DGC/gTBaX4kQ2bgeqS4/LPNkM5N
- b5QgVVGxl+W1Q/Gw4fhZP5MTHhDUYuMSVs40jP5g=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jHWAN-00FwXL-9S; Thu, 26 Mar 2020 17:19:39 +0000
-Date: Thu, 26 Mar 2020 17:19:37 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: arm64: Getting continuous PCIe "CmpltTO" AER from network card
- in kdump kernel
-Message-ID: <20200326171937.44dba105@why>
-In-Reply-To: <CAJ2QiJJ8nB=2df2++1KahTD8Cqe7f5JY1tp=tZ07QomvgFwjnA@mail.gmail.com>
-References: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
- <e8a58616-aeae-ad78-d496-6dfcef4ddcaa@arm.com>
- <CAJ2QiJJ=NK2Piq_7i1kfeP1yB7vDNcTtKnXWOQ5Us2EE7ipXBA@mail.gmail.com>
- <150e513c-a017-ba7b-5a42-0243e632e62c@arm.com>
- <CAJ2QiJ+L+U_COiXO4uzCVQ-b5Ty=U3eDKh9Qmc1xbAsNdaavQg@mail.gmail.com>
- <81616336e3b8c5f083b26125bf47575c@kernel.org>
- <CAJ2QiJJ8nB=2df2++1KahTD8Cqe7f5JY1tp=tZ07QomvgFwjnA@mail.gmail.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jHWFO-0007Pf-D6; Thu, 26 Mar 2020 17:24:51 +0000
+Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1Mk178-1jfYT036uO-00kQMZ; Thu, 26 Mar 2020 18:24:46 +0100
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Eric Anholt <eric@anholt.net>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+ <24f850f64b5c71c71938110775e16caaec2811cc.camel@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <8c2bdd83-c8a9-7ba8-8d61-69594e6a2bde@i2se.com>
+Date: Thu, 26 Mar 2020 18:24:45 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: prabhakar.pkin@gmail.com, robin.murphy@arm.com,
- gkulkarni@marvell.com, kexec@lists.infradead.org, bhsharma@redhat.com,
- will.deacon@arm.com, helgaas@kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <24f850f64b5c71c71938110775e16caaec2811cc.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:Ac7dLnMcbgcgIHaNRY2OVn2AFh3p6JDdm2ydQ54cEcT2mSjqKa3
+ +NMdof+DtagSo61Cnlr/p19IyEN89nop7uW/8NunpYl26vTnQtbadf/RC5GZHbyID6qqbBU
+ 7QzOzEYomgGmUoiRjw+ROkj3LxUxcUMjMQCgVFMU+rNyO+DqTO5HatZ/gQMW/0yI2eOYvO2
+ W+bVC+5UyZqyE9hS+6Hrw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:cZABVwr5tBY=:d0bGNLa0oO/7atjaXzIj/Q
+ SXY5z+mQUIu8mc9ZUrmlD564A+EJxx+/VKSc1NpceSEivcaJmPOcYLDBEKnigO2QACkd3Loqm
+ MRK2bBhs9tb9TnYhWlAZ4rUHGBbxHogeGr7ny+amSDPgh04Gk9khk+iH5pkcOI+P5k+CDPZiF
+ TizQFAfG8w664he2Lass4hhohwHmn/wtJhQEolrZ/pnkJyAHJhRNBoiEaf6VoURj5qm0o2kP8
+ xcqAg1SFVqC/5HBpzVxLFngP34oUdG+KZPD8Z75CEeS+jaQeSfkkJTUa/op3mi9mdjdjnQU5J
+ NhpWwFiSuXsiaokWQ9rWwBzxsDbrdLowGYyuIl5DSjode7LxjL/2lf+b7v/sBQUxC3tTiVpgS
+ ci8UCxao4myngeF/X0CYBtlq7s8dtkL3iCmA3/74LrzqGNieMfy7Fu2O7FIxQbrlvzVUYjVDm
+ n5Pc4nvsxXScOvoXR8E8V1aIqaCDtEENUf+s62AsWugJpO7Q0v29toq5R5omtLYQkbyAxMAyc
+ vLzfZ3orvwt12t7M2HZGsqtSdtKuFN4m4WXkoSxjLaz7l+gWS4oNERt9bbBUPwe3mAg+mqdKB
+ bcdW7Gpzk4rc6ykgou6j3Bzhp7s8heXEKPiEOX2uzwmzbtXDd2bxiFTycWIvpoAUEufE45wIE
+ QOzaAsWhE+RCfXAk89LFNOFvVsxDdigHrSNco1oS4Ua6RPScGZBrc+BQtQue2q9k/eg0HX1Tz
+ mRRLXLCaJHqSa+Fq2PVGgpW6+cney67wUIF6XN90MreAz4C4C9/1yXJQyNIM1TCFaxMYdFrms
+ j2W6toqYG9BBMXrAit2vYJHsjL0gLvgioF1hJ1SjPHRq+L/8XLd5VuwkRwgiSlFC+sgtonQ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_101941_484360_F39C1E81 
-X-CRM114-Status: GOOD (  43.17  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200326_102450_747455_2F052442 
+X-CRM114-Status: GOOD (  13.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,201 +122,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>, will.deacon@arm.com,
- Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ wahrenst@gmx.net, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 26 Mar 2020 22:25:38 +0530
-Prabhakar Kushwaha <prabhakar.pkin@gmail.com> wrote:
+Am 26.03.20 um 13:24 schrieb Nicolas Saenz Julienne:
+> Hi Stefan and Florian,
+>
+> On Tue, 2020-03-03 at 18:32 +0100, Nicolas Saenz Julienne wrote:
+>> The register based driver turned out to be unstable, specially on RPi3a+
+>> but not limited to it. While a fix is being worked on, we roll back to
+>> using firmware based scheme.
+>>
+>> Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM driver
+>> instead of firmware")
+>> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>> ---
+> now that the problem Stefan was seeing is being taken care of, I think it's
+> fair to reconsider taking this patch. Maybe even adding a Tested-by by Stefan?
 
-> On Thu, Mar 26, 2020 at 9:43 PM Marc Zyngier <maz@kernel.org> wrote:
-> >
-> > On 2020-03-26 15:35, Prabhakar Kushwaha wrote:  
-> > > On Thu, Mar 26, 2020 at 7:49 PM Robin Murphy <robin.murphy@arm.com>
-> > > wrote:  
-> > >>
-> > >> On 2020-03-26 1:36 pm, Prabhakar Kushwaha wrote:  
-> > >> > On Mon, Mar 23, 2020 at 10:28 PM Robin Murphy <robin.murphy@arm.com> wrote:  
-> > >> >>
-> > >> >> On 2020-03-23 3:21 pm, Prabhakar Kushwaha wrote:  
-> > >> >>> Hi All,
-> > >> >>>
-> > >> >>> I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
-> > >> >>> Here network card is continuously giving following AER error
-> > >> >>> [  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-> > >> >>> aer_mask: 0x00000000
-> > >> >>> [  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> > >> >>> [  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> > >> >>> aer_agent=Requester ID
-> > >> >>> [  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> > >> >>>
-> > >> >>> This error is not 100% reproducible. It happens 1 out of 4 try.
-> > >> >>>
-> > >> >>> This error goes away in following two scenarios
-> > >> >>> A) Set iommu in bypass mode via bootargs iommu.passthrough=1
-> > >> >>> B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
-> > >> >>>           if (reg & CR0_SMMUEN) {
-> > >> >>>                   dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
-> > >> >>>                   WARN_ON(is_kdump_kernel() && !disable_bypass);
-> > >> >>>                   mdelay(100);  <-- Added delay
-> > >> >>>                   arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
-> > >> >>>           }
-> > >> >>>
-> > >> >>>   From A), it is clear that it is related to IOMMU
-> > >> >>>   From B), looks like during boot of kdump kernel, network card is still
-> > >> >>> active and it has sent some request over PCIe.
-> > >> >>> as GPBA_ABORT bit is set, no response/completion coming to PCIe
-> > >> >>> controller hence "CmpltTO" error.
-> > >> >>>
-> > >> >>> Ideally before setting GPBA_ABORT bit, there should be some check for
-> > >> >>> active transaction. if it is not possible, a wait should be done to
-> > >> >>> assure that no more pending transaction left.  
-> > >> >>
-> > >> >> In general there is no way to check for active transactions, and even if
-> > >> >> there were, waiting for them to finish could mean waiting forever (if,
-> > >> >> say, a device is continuously streaming to/from a ring buffer).
-> > >> >>  
-> > >> >>> why any such delay has not been considered?  
-> > >> >>
-> > >> >> The main aim here is to block any DMA left over from the crashed kernel
-> > >> >> as quickly as possible, to minimise any further potential corruption of
-> > >> >> memory (consider if a device was left writing to an IOMMU virtual
-> > >> >> address that happened to have the same value as some physical address in
-> > >> >> the crash kernel's reserved memory). The fact that an arbitrary delay
-> > >> >> happens to give a 'nicer' result in one particular situation on one
-> > >> >> particular platform is neither here nor there in general.
-> > >> >>  
-> > >> >
-> > >> > I agree.
-> > >> > But we are depending upon kdump boot time and expecting devices to
-> > >> > reach to idle state before setting GBPA_ABORT bit.  
-> > >>
-> > >> So (ideally) stop depending on that, because like I said it's fragile
-> > >> and doesn't generalise.
-> > >>  
-> > >> > adding a delay will be fair and make it independent of kdump boot time.  
-> > >>
-> > >> And what delay value is "fair" and appropriate for any device on any
-> > >> system in any circumstance?
-> > >>  
-> > >
-> > >  it is tough question.  1sec can be thought of.
-> > >  
-> > >> >> Besides, this is *crash* kernel, so yeah, expect errors - something's
-> > >> >> already gone badly wrong to get us here, and everything from then on is
-> > >> >> merely a best-effort attempt to salvage what we can. Does it even make
-> > >> >> sense to have AER enabled at this point?
-> > >> >>  
-> > >> >
-> > >> > i tried by disabling AER in kdump kernel. but it did not helped as
-> > >> > network device become out of sync with respect to tx unit causing it
-> > >> > to be hanged and it never recovered from there.  Same can happen with
-> > >> > other devices like SATA etc  
-> > >>
-> > >> Any devices that the kdump kernel wants to use need to be fully reset
-> > >> to
-> > >> get them into a sane state anyway, don't they? I mean, what if the
-> > >> crash
-> > >> was *caused* by once of those devices going wrong in the first place?
-> > >> Any devices that kdump *doesn't* care about shouldn't matter, since
-> > >> nothing should be unmasking their interrupts regardless of what state
-> > >> they're in.
-> > >>
-> > >> Assume some descriptor or pagetable entry got corrupted that caused
-> > >> your
-> > >> network device to access an invalid physical address downstream of the
-> > >> SMMU and get an abort from that *before* the kdump kernel starts - is
-> > >> waiting an extra 100ms at any point after that going to help?
-> > >>  
-> > > I agree with you. in above scenaro, where device if faulty or done
-> > > something wrong, waiting even hours is waste.
-> > >
-> > > I was just going through other iommu drivers as this problem is
-> > > generic one and i found following patch
-> > >
-> > > commit 091d42e43d21b6ca7ec39bf5f9e17bc0bd8d4312
-> > > Author: Joerg Roedel <jroedel@suse.de>
-> > > Date:   Fri Jun 12 11:56:10 2015 +0200
-> > >     iommu/vt-d: Copy translation tables from old kernel
-> > >
-> > >     If we are in a kdump kernel and find translation enabled in
-> > >     the iommu, try to copy the translation tables from the old
-> > >     kernel to preserve the mappings until the device driver
-> > >     takes over.
-> > >
-> > >     This supports old and the extended root-entry and
-> > >     context-table formats.
-> > >
-> > >     Tested-by: ZhenHua Li <zhen-hual@hp.com>
-> > >     Tested-by: Baoquan He <bhe@redhat.com>
-> > >     Signed-off-by: Joerg Roedel <jroedel@suse.de>
-> > >
-> > > I believe, similar kind of solution is required for SMMU also.  
-> >
-> > There's a much more general problem: how to preserve pre-boot DMA
-> > configurations because they are important to the new kernel (for
-> > whatever reason).
-> >
-> > And in a number of cases, it makes perfect sense: framebuffer
-> > scanning out boot animations, ongoing DMA for other *cough* agents
-> > *cough* in the system...
-> >
-> > But I really don't like the idea of preserving the page tables across
-> > a kdump kernel because for all we know, these page tables could be
-> > horribly corrupted and mostly only make sense in the context of
-> > the driver that created them.  
-> 
-> If I am correct, similar approach is used in GIC-ITS for LPI tables.
-> Probability of corruption is still there.
+after applying "drm/vc4: Fix HDMI mode validation" this commit doesn't
+cause any regression:
 
-You are incorrect.
+Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
 
-The memory is reused, in the sense that we cannot use another set of
-redistributor tables (which are *not* ITS tables) once LPIs are
-enabled. But none of the *data* is reused at all, and we happily
-reprogram everything. So we know for sure that nothing will be written
-outside of the pending tables, and nothing will be read outside of the
-property table. Also, this memory is *physical*, as the GIC is not
-translated by the SMMU.
+Thanks
 
-So no, there is no corruption in this case. Well tried though! ;-)
-
-> 
-> > Oh wait, this driver has long died,
-> > along with the rest of the original kernel.
-> >  
-> 
-> :(
-> if this is the case than chance of foolproof and generic solution is very less.
-
-You're missing the very point of kdump: We use it when everything else
-has failed. The system is in an unrecoverable situation, and we have no
-idea of what is going on. All we're trying to do is to snapshot whatever
-is left of it.
-
-How could it be foolproof?
-
-> At least a delay should be considered before setting SMMU_ABORT bit
-> for giving a chance of DMA getting completed.
-
-As Robin pointed out, there is no such delay. How long are you going to
-wait? Until the whole of the memory is corrupted? Also, how do you know
-when the DMA stops?  A framebuffer scans out the whole screen every
-60Hz (and that's a pretty bad display...). You could wait forever!
-
-The best thing to do for a screaming device is to shut it up as quickly
-as possible, and the SMMU is a good tool for that.
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+>
+> Regards,
+> Nicolas
 
 _______________________________________________
 linux-arm-kernel mailing list
