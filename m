@@ -2,52 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC3B7194D3B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 00:29:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 549C4194DF6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 01:25:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Bb1rjUjI6SQDxyMKQJ9Y1746wTtTKNjBdp9SNFzu2M=; b=Uf1/Fb0bYNULea
-	jt+Xq4vrsbBIC72C2k/05W6T/Bukcd3zqH2oUgsOuOb0mbUmuQ5V2l70htnYkGQwoz7s7CVe4ty5v
-	r7DBJ5qpXx5D8rJ39Urr9y4bhx6kGf3jsTP2aPHKoYyv5HQMboDOOvowobUeOQ6I5hV4/BQuoXP+X
-	WTe9clCu6hP0UpT4hqtkvhhm+Ul4BihWbC/xK1AuRNUDSnEImUi8i1js8Io2W7wZsL+/b71KHg86j
-	w4CObrKH0kC12P68rzvKoIeLtcAl/OTjkLtjVIvp6hzQt7XqATsGMYaQoGVhd2hU72VQAaWn7wHCv
-	ypJptGXS2RujAWrbkZZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:Subject:Reply-To:To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/Rga677xBufAw5X4tir4y5KG5c2ab2yU5ptog1i4KGc=; b=M0+deGM43iQHB3VQJeFg1WX1l
+	KgeLg/5e1uD6PuUCYL88CDDhjC0ib5gAC8/EqT9WCRmPrnJVQhExSk1x5wvgRanuNk4dIFsQ/tNNW
+	nnUsPVTkscwXX+IKF7fX/ObgC1xeNOaAQ51N4pyWeTOgXwYYJES0FTnqfqsNYSKo3zWK75wHwc8yu
+	iB4x6Fw9YSETOgTWiNY++DsBZK+4JDdK5RiYisTJVKY/eRQzIj5o3tNnLqEB5g72x2m2MWqVhJGlq
+	pDu9fxD0HHGA1EB2AnB+b3H62E06DBJ1plWm1YqirCeMFlS+dOLHZ042ADWDsZ7s5Gu167rq6FEYD
+	HoTN0L/cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHbwW-0004BX-5P; Thu, 26 Mar 2020 23:29:44 +0000
-Received: from namei.org ([65.99.196.166])
+	id 1jHcni-0005ia-6O; Fri, 27 Mar 2020 00:24:42 +0000
+Received: from mx.flatmax.org ([13.55.16.222])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHbwO-0004BA-OH
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 23:29:38 +0000
-Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 02QNSlWb015673;
- Thu, 26 Mar 2020 23:28:47 GMT
-Date: Fri, 27 Mar 2020 10:28:47 +1100 (AEDT)
-From: James Morris <jmorris@namei.org>
-To: Serge Hallyn <serge@hallyn.com>
-Subject: Re: [Intel-gfx] [PATCH v7 00/12] Introduce CAP_PERFMON to secure
- system performance monitoring and observability
-In-Reply-To: <20200302001913.GA21145@sl>
-Message-ID: <alpine.LRH.2.21.2003271026290.14767@namei.org>
-References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <3ae0bed5-204e-de81-7647-5f0d8106cd67@linux.intel.com>
- <20200302001913.GA21145@sl>
-User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
+ id 1jHcna-0005i7-PU; Fri, 27 Mar 2020 00:24:36 +0000
+Received: from 41.68.233.220.static.exetel.com.au ([220.233.68.41]
+ helo=[192.168.1.51])
+ by mx.flatmax.org with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <flatmax@flatmax.org>)
+ id 1jHcMl-0007WX-6U; Fri, 27 Mar 2020 10:56:51 +1100
+Subject: Re: [PATCH] ASoC: bcm2835-i2s: substream alignment now independent in
+ hwparams
+References: <20200324090823.20754-1-flatmax@flatmax.org>
+From: Matt Flax <flatmax@flatmax.org>
+Message-ID: <d0684926-3f7a-0b97-a298-4088925442a4@flatmax.org>
+Date: Fri, 27 Mar 2020 10:56:50 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
+In-Reply-To: <20200324090823.20754-1-flatmax@flatmax.org>
+Content-Language: en-US
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: Spam detection software, running on the system "mx.flatmax.org",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ @@CONTACT_ADDRESS@@ for details.
+ Content preview:  Should this patch be handled through the ALSA team the R.
+ Pi team or the BCM team ? thanks Matt 
+ Content analysis details:   (-1.9 points, 5.0 required)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: flatmax.org]
+ 1.0 MISSING_HEADERS        Missing To: header
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_162936_866827_E58A87B3 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_172434_971409_7943D4CC 
+X-CRM114-Status: GOOD (  14.27  )
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.2 MISSING_HEADERS        Missing To: header
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,71 +80,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-man@vger.kernel.org,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Alexei Starovoitov <ast@kernel.org>, Stephane Eranian <eranian@google.com>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- Igor Lubashev <ilubashe@akamai.com>, oprofile-list@lists.sf.net,
- Stephen Smalley <sds@tycho.nsa.gov>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- Helge Deller <deller@gmx.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Kate Stewart <kstewart@linuxfoundation.org>, alsa-devel@alsa-project.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Takashi Iwai <tiwai@suse.com>,
+ YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Mark Brown <broonie@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 1 Mar 2020, Serge Hallyn wrote:
 
-> Thanks, this looks good to me, in keeping with the CAP_SYSLOG break.
-> 
-> Acked-by: Serge E. Hallyn <serge@hallyn.com>
-> 
-> for the set.
-> 
-> James/Ingo/Peter, if noone has remaining objections, whose branch
-> should these go in through?
-> 
-> thanks,
-> -serge
-> 
-> On Tue, Feb 25, 2020 at 12:55:54PM +0300, Alexey Budankov wrote:
-> > 
-> > Hi,
-> > 
-> > Is there anything else I could do in order to move the changes forward
-> > or is something still missing from this patch set?
-> > Could you please share you mind?
-
-Alexey,
-
-It seems some of the previous Acks are not included in this patchset, e.g. 
-https://lkml.org/lkml/2020/1/22/655
-
-Every patch needs a Reviewed-by or Acked-by from maintainers of the code 
-being changed.
-
-You have enough from the security folk, but I can't see any included from 
-the perf folk.
+Should this patch be handled through the ALSA team the R. Pi team or the 
+BCM team ?
 
 
--- 
-James Morris
-<jmorris@namei.org>
+thanks
 
+Matt
+
+On 24/3/20 8:08 pm, Matt Flax wrote:
+> Substream sample alignment was being set in hwparams for both
+> substreams at the same time. This became a problem when	the Audio
+> Injector isolated sound card needed to offset sample alignment
+> for high sample	rates. The latency difference between playback
+> and capture occurs because of the digital isolation chip
+> propagation time, particularly when the codec is master and
+> the DAC return is twice delayed.
+>
+> This patch sets sample alignment registers  based on the substream
+> direction in hwparams. This gives the machine driver more control
+> over sample alignment in the bcm2835 i2s driver.
+>
+> Signed-off-by: Matt Flax <flatmax@flatmax.org>
+> ---
+>   sound/soc/bcm/bcm2835-i2s.c | 36 +++++++++++++++++++-----------------
+>   1 file changed, 19 insertions(+), 17 deletions(-)
+>
+> diff --git a/sound/soc/bcm/bcm2835-i2s.c b/sound/soc/bcm/bcm2835-i2s.c
+> index e6a12e271b07..9db542699a13 100644
+> --- a/sound/soc/bcm/bcm2835-i2s.c
+> +++ b/sound/soc/bcm/bcm2835-i2s.c
+> @@ -493,11 +493,6 @@ static int bcm2835_i2s_hw_params(struct snd_pcm_substream *substream,
+>   		return -EINVAL;
+>   	}
+>   
+> -	bcm2835_i2s_calc_channel_pos(&rx_ch1_pos, &rx_ch2_pos,
+> -		rx_mask, slot_width, data_delay, odd_slot_offset);
+> -	bcm2835_i2s_calc_channel_pos(&tx_ch1_pos, &tx_ch2_pos,
+> -		tx_mask, slot_width, data_delay, odd_slot_offset);
+> -
+>   	/*
+>   	 * Transmitting data immediately after frame start, eg
+>   	 * in left-justified or DSP mode A, only works stable
+> @@ -508,19 +503,26 @@ static int bcm2835_i2s_hw_params(struct snd_pcm_substream *substream,
+>   			"Unstable slave config detected, L/R may be swapped");
+>   
+>   	/*
+> -	 * Set format for both streams.
+> -	 * We cannot set another frame length
+> -	 * (and therefore word length) anyway,
+> -	 * so the format will be the same.
+> +	 * Set format on a per stream basis.
+> +	 * The alignment format can be different depending on direction.
+>   	 */
+> -	regmap_write(dev->i2s_regmap, BCM2835_I2S_RXC_A_REG,
+> -		  format
+> -		| BCM2835_I2S_CH1_POS(rx_ch1_pos)
+> -		| BCM2835_I2S_CH2_POS(rx_ch2_pos));
+> -	regmap_write(dev->i2s_regmap, BCM2835_I2S_TXC_A_REG,
+> -		  format
+> -		| BCM2835_I2S_CH1_POS(tx_ch1_pos)
+> -		| BCM2835_I2S_CH2_POS(tx_ch2_pos));
+> +	if (substream->stream == SNDRV_PCM_STREAM_CAPTURE) {
+> +		bcm2835_i2s_calc_channel_pos(&rx_ch1_pos, &rx_ch2_pos,
+> +			rx_mask, slot_width, data_delay, odd_slot_offset);
+> +		regmap_write(dev->i2s_regmap, BCM2835_I2S_RXC_A_REG,
+> +			  format
+> +			| BCM2835_I2S_CH1_POS(rx_ch1_pos)
+> +			| BCM2835_I2S_CH2_POS(rx_ch2_pos));
+> +	}
+> +
+> +	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
+> +		bcm2835_i2s_calc_channel_pos(&tx_ch1_pos, &tx_ch2_pos,
+> +			tx_mask, slot_width, data_delay, odd_slot_offset);
+> +		regmap_write(dev->i2s_regmap, BCM2835_I2S_TXC_A_REG,
+> +			  format
+> +			| BCM2835_I2S_CH1_POS(tx_ch1_pos)
+> +			| BCM2835_I2S_CH2_POS(tx_ch2_pos));
+> +	}
+>   
+>   	/* Setup the I2S mode */
+>   
 
 _______________________________________________
 linux-arm-kernel mailing list
