@@ -2,81 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE674194261
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 16:08:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5F1F1942BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 16:12:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nn2nZGOToJ39oH0UKwPeMzgjXvNLwQXLGz4gUOhDYg8=; b=abFqfeh9Hy+xHa
-	St0+1xNd9O6s3nEZUDkVopn6rgmA/WlZvuCiPlQwrvPdE+3oGFGzlPtkkTKBS43WvrwdR4cZutbpq
-	1IFlpc/zlWsM3Xl90H7BnoMzZ4g1hy3VFW+E7R6eo0FCCyADzPO+JhLCLPa/5s/rbDP/HG7S0hKz2
-	6Ea/N914kWgtW0HSl0ahb5/d8bUiVegkjdbiRqO0bgRZO9lfAbVedCF6CcTicGJjK47HnxiPRLmhL
-	dUXOJsc6Ga11Q06ThY2Xvzs3r3v70hfhfSEKA4XBjd3TANnEdRkj6PjZFMevDjWOAgf8HRrE5drsc
-	dM56UnXyNtzJn9vu37Iw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=jl183LDn9oB2ydjC5/+B0d64TcBHF3wafe217O7X7gM=; b=SmiZd+GapE9N0q
+	zIV/To2cPI84KlSRm9icsmobds6qsUXbtRcgoU6ComUVGFJuiGLK48Nf7ZisWog1VcnNMI1kqj1cV
+	730KyMe6j801kD7pyamJ4h2/ys3CEeNE7LfMjLmt4alAqsapmCeD9yd4ZUNxxr+IckmTBB1Dhz/lE
+	Bdx3tHsIUgX+VsWy3Cx7abtcqh3qRdHM7tTlNgoHFCv6FTZNfWIkew9CRbbxNxwiCFGouPrXHpSog
+	cJ5r8XeHafk4P7VX+1Ucg49FwN5r9JuOqT8QsKdWRaLZMmeT2Dx+LIQTiEJfRF+Sql5yzEI4NeZbJ
+	n4KWWQgqAW1jC4Iz4INg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHU7K-0003Y1-CU; Thu, 26 Mar 2020 15:08:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jHUB7-0006U8-O8; Thu, 26 Mar 2020 15:12:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHU70-0003Nc-PB; Thu, 26 Mar 2020 15:08:04 +0000
-X-UUID: 475b2721ddb8413ea0cc69399ba54374-20200326
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=yQugDcuRyb957RsLnPG3IKLpweXB8rZN0SNQlnD0C1s=; 
- b=smdJJXAy/w6mJDa9/kUHZJKAtzyfbBB4WcPniaADCleOLrHoLXqif3xBJU5NNCnqepxM0Sqya/uvSMS15eD1sSIkBI4IFRnMZSCJiQYJq7mdyPcAjN4HHZLIDi3i+tUBmTzRLYJyFMWpX3nKdbMe0Ujm7OM6yElTUKHH+NNClBE=;
-X-UUID: 475b2721ddb8413ea0cc69399ba54374-20200326
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 462161996; Thu, 26 Mar 2020 07:07:58 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 26 Mar 2020 08:07:56 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 26 Mar 2020 23:07:48 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 26 Mar 2020 23:07:48 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v2 2/2] scsi: ufs-mediatek: add error recovery for suspend and
- resume
-Date: Thu, 26 Mar 2020 23:07:47 +0800
-Message-ID: <20200326150747.11426-3-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200326150747.11426-1-stanley.chu@mediatek.com>
-References: <20200326150747.11426-1-stanley.chu@mediatek.com>
+ id 1jHUAy-0006TY-GT
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 15:12:09 +0000
+Received: from localhost (mobile-166-175-186-165.mycingular.net
+ [166.175.186.165])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9991E206F8;
+ Thu, 26 Mar 2020 15:12:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585235528;
+ bh=gNmb1UwpI1bot54AGT9LmV+Ay1kJtk9PvnEvdt7OJfc=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=HswQ9GU3pelOso6U3R+842+f+BEsJtKi+asi1ius/Kpn2ivVMGAkMxQdfx4AdmRWL
+ OXIpK3kwBDOOPY60j6YQgGoDi/R1l/B3W2qIVR2ZIZhJqacpgQuvx/Hur4AJIK+DoY
+ froEyzgClLoLaQL8Y/qmAtHqp2GIHJ1KQZMKnUFw=
+Date: Thu, 26 Mar 2020 10:12:05 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Srinath Mannam <srinath.mannam@broadcom.com>
+Subject: Re: [PATCH 3/3] PCI: iproc: Display PCIe Link information
+Message-ID: <20200326151205.GA6837@google.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1585206447-1363-4-git-send-email-srinath.mannam@broadcom.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_080802_826199_13D092C2 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_081208_563790_90EA2461 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ valid 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,71 +76,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
- andy.teng@mediatek.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Once fail happens during suspend and resume flow if the desired low
-power link state is H8, link recovery is required for MediaTek UFS
-controller.
+On Thu, Mar 26, 2020 at 12:37:27PM +0530, Srinath Mannam wrote:
+> Add more comprehensive information to show PCIe link speed and link
+> width to the console.
+> 
+> Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
+> ---
+>  drivers/pci/controller/pcie-iproc.c | 11 ++++++++++-
+>  1 file changed, 10 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+> index e7f0d58..ed41357 100644
+> --- a/drivers/pci/controller/pcie-iproc.c
+> +++ b/drivers/pci/controller/pcie-iproc.c
+> @@ -823,6 +823,8 @@ static int iproc_pcie_check_link(struct iproc_pcie *pcie)
+>  #define PCI_TARGET_LINK_SPEED_MASK	0xf
+>  #define PCI_TARGET_LINK_SPEED_GEN2	0x2
+>  #define PCI_TARGET_LINK_SPEED_GEN1	0x1
+> +#define PCI_TARGET_LINK_WIDTH_MASK	0x3f
+> +#define PCI_TARGET_LINK_WIDTH_OFFSET	0x4
+>  		iproc_pci_raw_config_read32(pcie, 0,
+>  					    IPROC_PCI_EXP_CAP + PCI_EXP_LNKCTL2,
+>  					    4, &link_ctrl);
+> @@ -843,7 +845,14 @@ static int iproc_pcie_check_link(struct iproc_pcie *pcie)
+>  		}
+>  	}
+>  
+> -	dev_info(dev, "link: %s\n", link_is_active ? "UP" : "DOWN");
+> +	if (link_is_active) {
+> +		dev_info(dev, "link UP @ Speed Gen-%d and width-x%d\n",
+> +			 link_status & PCI_TARGET_LINK_SPEED_MASK,
+> +			 (link_status >> PCI_TARGET_LINK_WIDTH_OFFSET) &
+> +			 PCI_TARGET_LINK_WIDTH_MASK);
 
-For resume flow, since power and clocks are already enabled before
-invoking vendor's resume callback, simply using ufshcd_link_recovery()
-inside callback is fine.
+Can you use pcie_print_link_status() or some variant here instead of
+rolling your own?
 
-For suspend flow, the device power enters low power mode or is disabled
-before suspend callback, thus ufshcd_link_recovery() can not be directly
-used in callback. To leverage host reset flow during ufshcd_suspend(),
-set link as off state enforcedly to let ufshcd_host_reset_and_restore()
-be executed by ufshcd_suspend().
+> +	} else {
+> +		dev_info(dev, "link DOWN\n");
+> +	}
+>  
+>  	return link_is_active ? 0 : -ENODEV;
+>  }
+> -- 
+> 2.7.4
+> 
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 3b0e575d7460..2384e35ac85f 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -486,8 +486,15 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 
- 	if (ufshcd_is_link_hibern8(hba)) {
- 		err = ufs_mtk_link_set_lpm(hba);
--		if (err)
-+		if (err) {
-+			/*
-+			 * Set link as off state enforcedly to trigger
-+			 * ufshcd_host_reset_and_restore() in ufshcd_suspend()
-+			 * for completed host reset.
-+			 */
-+			ufshcd_set_link_off(hba);
- 			return -EAGAIN;
-+		}
- 	}
- 
- 	if (!ufshcd_is_link_active(hba))
-@@ -506,8 +513,10 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 
- 	if (ufshcd_is_link_hibern8(hba)) {
- 		err = ufs_mtk_link_set_hpm(hba);
--		if (err)
-+		if (err) {
-+			err = ufshcd_link_recovery(hba);
- 			return err;
-+		}
- 	}
- 
- 	return 0;
--- 
-2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
