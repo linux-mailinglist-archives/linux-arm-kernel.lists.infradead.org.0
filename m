@@ -2,55 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E504D1938E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 07:49:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4788B1938F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 07:49:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=r5QhBas/yvlDS8+I1RAPvBajNHGqwz3ar/UyvBIOSHM=; b=lfI
-	jM9NXmiCfTiXcJMXlXGmnRfGbN0wzS/wN8unkXFQi43w53extdlUjxj7ihfzqsj5Z4khl9jw8BNIb
-	Prex6nTRsgA9V3sf9qV8PqtlgOdFITQJzl94KQa7yrLkufJjWcZiFof8AAs1UZskGx+7R4XQ4PYsP
-	WbZHhpQdd5XtTXUzR0pyIlYpj+A8Ga6WxtU5LKAhog1rdnd5bAzLA76V+k0hDBzlmW78qsm4qDoCE
-	Ai/fUvgYAN+pY0dZW7zPLkA36nZGjBxnCiduNvLuAnbzLc8Y8gil1IDA95Dd7ai6riOouPLhfUp4r
-	d04Wz/F4B9V7oAmteMoaumx9YUq6Pew==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eHGR05TZDvIg8qvAmeKSWTHA0k/iPwCcSE3ZBR2K/Bs=; b=VWQVMXQbMn9MkIdUD2wfs46SX0
+	+z/6vNW88aXyHwinBcGou1RMI45ZSs3P4aeYzhbroK6pWZYQ2XczINsXxuJ1/N4W06SHPwh8QVFRE
+	qn0J22ylp1EW4Lry38yw5Jztmi6QKg2KCeIz8ofN3NdSED8gAa5Zw5LEsjaMFG4safFkGIyKGCDHF
+	t6tLS69o9bg4tL7Sj3xzfXNzrnVIlgoo6NqVGtEUZ3A7FPPML4Olmd+h3FU4oBH6DoXASr2XslUa0
+	85/NcoLYLWVCkR+Jfg9DW2hjX8ti9RSL03tTQ1/19e6lVk1MTx8BVCj7z6HrzjDOxoxr4tV7s/hCw
+	JNIN7rQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHMKV-0007A9-2H; Thu, 26 Mar 2020 06:49:27 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jHMKn-0007Jm-Fo; Thu, 26 Mar 2020 06:49:45 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHMKK-00079K-L0
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 06:49:18 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c187so5289042wme.1
+ id 1jHMKP-0007Cp-Ps
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 06:49:23 +0000
+Received: by mail-wr1-x441.google.com with SMTP id u10so6341316wro.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 23:49:16 -0700 (PDT)
+ Wed, 25 Mar 2020 23:49:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=m/woP8JE+Q/g0ZO0DRvUNOSB5SWwhTVz0tFdoKMPxxo=;
- b=H2n3m3sRF0tHj/MR1yFPyawxFUsyiDdjYI76xB/dYLngYzS5i9nRuIe6/TKuYr9K3b
- 9XSVkH0w1gt5DG4rjqA7+RLeLVQO7jNxj6vCMLCFjjKy8E7CFj6W8kZKHkYqc7e8gM2i
- +SVTaotuowDSxAaMHR26QnJ+MFR8PwkRSQuxo=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=/dqPVl/H6tR+MiJPl05QKxIz0P0jfSZuaHPi1asTV90=;
+ b=WUHiihEUH0lElsZ9NJHrJqQ421HHol3h7BqdPKEKB4XM8ztXYl9yb9D44b7U5zQKtE
+ S7rLRKDtlmTJcFlhCcLPc7DoNWeXy7OWWlxbRROTuRdOZfXNyAyjQgHanlUbE6CVneDk
+ dITLx4EJK9UHLBpBweL8IWT+qJbZIOPYFkSOA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=m/woP8JE+Q/g0ZO0DRvUNOSB5SWwhTVz0tFdoKMPxxo=;
- b=mePx5ckx7es/E8btCHeHVDJtCcEI2cKkqhU6WKFpNFpzGWS59BLzDcH+hRoJekvtmn
- 6G7dH2fVH0JTzfG5Nig8qTpy89qnTOLnWa1om+hL1ec3e3xmDCs+Jhl/aRlhwj8HksV2
- TpxdHBSEhMme6TtFQBpRwWUzT/mDMG918jdA6JEJpiT0QhQgyb6Z+DDIdkYZuNId0oZR
- PPvE69t7r1RvVPJrMyWfJtquzkSluE+UtOhvLM3BhsB0Ifhota8MliW2niw/NdDRQHC+
- eRyd9zGFLBKt0wztRy8Oy+f5eBhu6aC1GXzpfFp68UD/vNUPk0fyI7YUgIa+MJ2F4Kd2
- 3uCQ==
-X-Gm-Message-State: ANhLgQ3O6T/GuJP4i39lrHipW2rhAuk8UD2KNG+kKGJoK4rLtopHCFGh
- Ty5y6Pd+3FRko5O0TBBCzkvnYQ==
-X-Google-Smtp-Source: ADFU+vvHarE2WZIQBKwJVOAl77q3js1Qw/P3PaTTHhN6tLddp/9YVShnhfUTAlEsbjewgdKGGOeB2Q==
-X-Received: by 2002:a1c:63c4:: with SMTP id x187mr1490010wmb.124.1585205354813; 
- Wed, 25 Mar 2020 23:49:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=/dqPVl/H6tR+MiJPl05QKxIz0P0jfSZuaHPi1asTV90=;
+ b=r9mPlHQLVP+ld/TUbkA5iVZ9ujY94KNzv5d/ecIlJroetmceTyjoEe3UhIqaDnxiED
+ xVWMNNgoQoeD6v8Ez5szqFeQhLxLa7CHktX/QiPsSCALg0w0Fb8jHTaAd1WKvJsWiHjX
+ 9twOsGl9dZTaN2SESC2xRUacGA1PGoHtr+pejpjbPopqFOay5Q3k0/Di6JU6mSP8LQeE
+ LDfKUhWbPibqk6OyIqEiJBX60meG7qea2ajWLqr+muZ9u2JFoCKM+2xd6tN6uYlTbDLg
+ PpMGP4i1qCdRTyGp6XG+SYwZsy5CtcPY3JRRj1P3DpRetepf5O5FDlyhP2/2Ml58xwwJ
+ cDvg==
+X-Gm-Message-State: ANhLgQ30E5frt6QHORo38/JBVHoCtDe+LN081DSzYiOACTArPoyHfOuh
+ C11kpO85y9mSVNyJq6B59EFl6g==
+X-Google-Smtp-Source: ADFU+vuaCkfq0b0wW8UmvZep91KWyv+2QNaLZlSlESaU3JAZep7YouX21pCUM8nvv5xBRVAzdtkeeg==
+X-Received: by 2002:adf:c64e:: with SMTP id u14mr6700306wrg.113.1585205360347; 
+ Wed, 25 Mar 2020 23:49:20 -0700 (PDT)
 Received: from mannams-OptiPlex-7010.dhcp.broadcom.net ([192.19.234.250])
- by smtp.gmail.com with ESMTPSA id v21sm2069137wmj.8.2020.03.25.23.49.09
+ by smtp.gmail.com with ESMTPSA id v21sm2069137wmj.8.2020.03.25.23.49.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 25 Mar 2020 23:49:13 -0700 (PDT)
+ Wed, 25 Mar 2020 23:49:19 -0700 (PDT)
 From: Srinath Mannam <srinath.mannam@broadcom.com>
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Bjorn Helgaas <bhelgaas@google.com>,
@@ -58,20 +60,23 @@ To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, Andrew Murray <andrew.murray@arm.com>,
  Mark Rutland <mark.rutland@arm.com>,
  Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH v5 0/6] PAXB INTx support with proper model
-Date: Thu, 26 Mar 2020 12:18:40 +0530
-Message-Id: <1585205326-25326-1-git-send-email-srinath.mannam@broadcom.com>
+Subject: [PATCH v5 1/6] dt-bindings: pci: Update iProc PCI binding for INTx
+ support
+Date: Thu, 26 Mar 2020 12:18:41 +0530
+Message-Id: <1585205326-25326-2-git-send-email-srinath.mannam@broadcom.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1585205326-25326-1-git-send-email-srinath.mannam@broadcom.com>
+References: <1585205326-25326-1-git-send-email-srinath.mannam@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_234916_688727_46A7F1D4 
-X-CRM114-Status: GOOD (  12.40  )
+X-CRM114-CacheID: sfid-20200325_234921_874678_428925FF 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,60 +100,119 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Srinath Mannam <srinath.mannam@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+ Srinath Mannam <srinath.mannam@broadcom.com>, linux-kernel@vger.kernel.org,
+ Ray Jui <ray.jui@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds PCIe legacy interrupt (INTx) support to the iProc
-PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
-INTB, INTC, INTD share the same interrupt line connected to the GIC
-in the system. This is now modeled by using its own IRQ domain.
+From: Ray Jui <ray.jui@broadcom.com>
 
-Also update all relevant devicetree files to adapt to the new model.
+Update the iProc PCIe binding document for better modeling of the legacy
+interrupt (INTx) support.
 
-This patch set is based on Linux-5.5-rc1.
+Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/pci/brcm,iproc-pcie.txt    | 48 ++++++++++++++++++----
+ 1 file changed, 41 insertions(+), 7 deletions(-)
 
-Changes from v4:
-  - Addressed Lorenzo's comments
-    - Add iProc irq chip descriptor in the place of dummy irq chip to
-      provide mask/un-mask and enable/disable handlers to configure
-      individual INTx.
-
-Changes from v3:
-  - Addressed Andrew Murray's comments
-  - Add change to dispose VIRQ when disabling INTx
-
-Changes from v2:
-  - Addressed Lorenzo's comments
-    - Corrected INTx to PIN mapping.
-
-Changes from v1:
-  - Addressed Rob, Lorenzo, Arnd's comments
-    - Used child node for interrupt controller.
-  - Addressed Andy Shevchenko's comments
-    - Replaced while loop with do-while.
-
-Ray Jui (6):
-  dt-bindings: pci: Update iProc PCI binding for INTx support
-  PCI: iproc: Add INTx support with better modeling
-  arm: dts: Change PCIe INTx mapping for Cygnus
-  arm: dts: Change PCIe INTx mapping for NSP
-  arm: dts: Change PCIe INTx mapping for HR2
-  arm64: dts: Change PCIe INTx mapping for NS2
-
- .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++-
- arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++-
- arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++-
- arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++-
- arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++-
- drivers/pci/controller/pcie-iproc.c                | 147 ++++++++++++++++++++-
- drivers/pci/controller/pcie-iproc.h                |   8 ++
- 7 files changed, 309 insertions(+), 27 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.txt b/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.txt
+index df065aa..d3f833a 100644
+--- a/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.txt
++++ b/Documentation/devicetree/bindings/pci/brcm,iproc-pcie.txt
+@@ -13,9 +13,6 @@ controller, used in Stingray
+   PAXB-based root complex is used for external endpoint devices. PAXC-based
+ root complex is connected to emulated endpoint devices internal to the ASIC
+ - reg: base address and length of the PCIe controller I/O register space
+-- #interrupt-cells: set to <1>
+-- interrupt-map-mask and interrupt-map, standard PCI properties to define the
+-  mapping of the PCIe interface to interrupt numbers
+ - linux,pci-domain: PCI domain ID. Should be unique for each host controller
+ - bus-range: PCI bus numbers covered
+ - #address-cells: set to <3>
+@@ -41,6 +38,21 @@ Required:
+ - brcm,pcie-ob-axi-offset: The offset from the AXI address to the internal
+ address used by the iProc PCIe core (not the PCIe address)
+ 
++Legacy interrupt (INTx) support (optional):
++
++Note INTx is for PAXB only.
++- interrupt-map-mask and interrupt-map, standard PCI properties to define
++the mapping of the PCIe interface to interrupt numbers
++
++In addition, a sub-node that describes the legacy interrupt controller built
++into the PCIe controller.
++This sub-node must have the following properties:
++ - compatible: must be "brcm,iproc-intc"
++ - interrupt-controller: claims itself as an interrupt controller for INTx
++ - #interrupt-cells: set to <1>
++ - interrupts: interrupt line wired to the generic GIC for INTx support
++ - interrupt-parent: Phandle to the parent interrupt controller
++
+ MSI support (optional):
+ 
+ For older platforms without MSI integrated in the GIC, iProc PCIe core provides
+@@ -77,8 +89,11 @@ Example:
+ 		reg = <0x18012000 0x1000>;
+ 
+ 		#interrupt-cells = <1>;
+-		interrupt-map-mask = <0 0 0 0>;
+-		interrupt-map = <0 0 0 0 &gic GIC_SPI 100 IRQ_TYPE_NONE>;
++		interrupt-map-mask = <0 0 0 7>;
++		interrupt-map = <0 0 0 1 &pcie0_intc 0>,
++				<0 0 0 2 &pcie0_intc 1>,
++				<0 0 0 3 &pcie0_intc 2>,
++				<0 0 0 4 &pcie0_intc 3>;
+ 
+ 		linux,pci-domain = <0>;
+ 
+@@ -98,6 +113,14 @@ Example:
+ 
+ 		msi-parent = <&msi0>;
+ 
++		pcie0_intc: interrupt-controller {
++			compatible = "brcm,iproc-intc";
++			interrupt-controller;
++			#interrupt-cells = <1>;
++			interrupt-parent = <&gic>;
++			interrupts = <GIC_SPI 100 IRQ_TYPE_NONE>;
++		};
++
+ 		/* iProc event queue based MSI */
+ 		msi0: msi@18012000 {
+ 			compatible = "brcm,iproc-msi";
+@@ -115,8 +138,11 @@ Example:
+ 		reg = <0x18013000 0x1000>;
+ 
+ 		#interrupt-cells = <1>;
+-		interrupt-map-mask = <0 0 0 0>;
+-		interrupt-map = <0 0 0 0 &gic GIC_SPI 106 IRQ_TYPE_NONE>;
++		interrupt-map-mask = <0 0 0 7>;
++		interrupt-map = <0 0 0 1 &pcie1_intc 0>,
++				<0 0 0 2 &pcie1_intc 1>,
++				<0 0 0 3 &pcie1_intc 2>,
++				<0 0 0 4 &pcie1_intc 3>;
+ 
+ 		linux,pci-domain = <1>;
+ 
+@@ -130,4 +156,12 @@ Example:
+ 
+ 		phys = <&phy 1 6>;
+ 		phy-names = "pcie-phy";
++
++		pcie1_intc: interrupt-controller {
++			compatible = "brcm,iproc-intc";
++			interrupt-controller;
++			#interrupt-cells = <1>;
++			interrupt-parent = <&gic>;
++			interrupts = <GIC_SPI 106 IRQ_TYPE_NONE>;
++		};
+ 	};
 -- 
 2.7.4
 
