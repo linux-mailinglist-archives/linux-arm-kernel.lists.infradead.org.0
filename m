@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DD2A193DCE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:23:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4B9C193DEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:34:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6NHjDJ0vfRVo65XhFmj0FecfCE6UtqzP7K+BW6Juc4=; b=iElU1vA/rGYQMC
-	ApF1wPl21T2pmWKtsB5W7RW0Nqqqq22atVHNQj122Usl9rnANi6X58fLJHkPr7S9SB9kW78Sz9T3K
-	IyKCeQWm9hdV45JB/DJ/M6WkfQNdcjwBTvkVyDLqVYL9U4ZyQFTO4J1zck3uyYQZqLRgefJgOaRRp
-	riExzpTh4rwinZd6W7nwSxYjDEqeC2Xug3MCdoybq0P8zmR+SCq/nV0LrnSAIEwhZaqy7hgtlla6v
-	vXz8H6kSxDbHpjY57XO7sBmXBWygb9l+fBsmX9YI6grw74zVtGwQ2HEYiOARV0iO+mi2z3JYnUbIG
-	vwV9woW13aANYyujMbrA==;
+	List-Owner; bh=G3HCeIP+nr8L1b3Nqy6Ee0SiO+iJUOLBIMXVfmu1xBg=; b=iCLS/GKfJIpA8z
+	s+UcM6Cz/S3RdLUCTQNyxPAQcdsFpxvhkljth6qNqMGS43/pZwLuwoM1Mj+QwbiwBAJTpNE5SJlMz
+	90l52uj/MaxwFjaxn4BI8GyaBNb4Uzas0qyDft3PnJk68ggBQ7bQYjDV00OwHtPARpeOwgXxkmeGC
+	+dADZwAlteyMJU5JAE+uXr3cFN5VTHGhECv4ABnzZe+XyxjeOAsOuGt38c3rICFgfP5OqrMpKPKcA
+	gdl3SBSnnDbPDOzSTlSKP+2tayxvGY7gkvqiekS1cPDq8rzuNqEFIEVpqB8Pcc2UO1Ffrm2tzkhEb
+	xYb/zrjH+1zoJ0+C6pJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHQbs-0006cP-MJ; Thu, 26 Mar 2020 11:23:40 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHQbi-0006bV-O6
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:23:32 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1585221811; h=Content-Transfer-Encoding: Content-Type:
- MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
- To: From: Sender; bh=V7U5JvFT204MJ8+8hEWOkXRat6eH6xB2Y/6EMB2A6vY=;
- b=O3rj+28HebTJ4zVXBj0km+r35F+4ZDVk9AKaJ33a77Uld+pell1zZ8VPsUeCLh7p1SCCG6g5
- gxEC0L1DZpQM4M8KRsigurINJ48gb5PAwbsBKPiuhXALfwbOh9ua7az6SqaGIMa+vm/leYhP
- jlJBr9F3X2KrnOVnFjV4E12mxVU=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e7c90a1.7fb8da2a1378-smtp-out-n03;
- Thu, 26 Mar 2020 11:23:13 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 08D50C433F2; Thu, 26 Mar 2020 11:23:13 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from Pillair (unknown [183.83.66.17])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: pillair)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 6C65AC433D2;
- Thu, 26 Mar 2020 11:23:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 6C65AC433D2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=pillair@codeaurora.org
-From: <pillair@codeaurora.org>
-To: "'Evan Green'" <evgreen@chromium.org>
-References: <1580822300-4491-1-git-send-email-pillair@codeaurora.org>
- <CAE=gft7EOALEMUWzoR3+pjoxCUTYWbiXoXY=dXH1BDhS3KwBzg@mail.gmail.com>
- <000901d60295$3acc79b0$b0656d10$@codeaurora.org>
- <CAE=gft7zqbUnx+BULDD+35z2p1=545=jF0=n6kFXZgo3ZTdCHQ@mail.gmail.com>
-In-Reply-To: <CAE=gft7zqbUnx+BULDD+35z2p1=545=jF0=n6kFXZgo3ZTdCHQ@mail.gmail.com>
-Subject: RE: [PATCH v6] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
- device node
-Date: Thu, 26 Mar 2020 16:53:05 +0530
-Message-ID: <000c01d60360$eea25c90$cbe715b0$@codeaurora.org>
+	id 1jHQm0-0001wg-7A; Thu, 26 Mar 2020 11:34:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHQln-0001vg-E6
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:33:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 221407FA;
+ Thu, 26 Mar 2020 04:33:53 -0700 (PDT)
+Received: from mbp (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48D713F71F;
+ Thu, 26 Mar 2020 04:33:52 -0700 (PDT)
+Date: Thu, 26 Mar 2020 11:33:49 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] mm/mremap: Add comment explaining the untagging
+ behaviour of mremap()
+Message-ID: <20200326113349.GB26987@mbp>
+References: <20200325111347.32553-1-will@kernel.org>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIr1eNiqDxek+JigOIeIUW3T4FxSwDFrKGDAq7vyx4BaNAawqeIIUVw
-Content-Language: en-us
+Content-Disposition: inline
+In-Reply-To: <20200325111347.32553-1-will@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_042331_420277_4162709E 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_043355_518795_0ECEFC30 
+X-CRM114-Status: GOOD (  10.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,51 +63,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "'open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS'"
- <devicetree@vger.kernel.org>, 'LKML' <linux-kernel@vger.kernel.org>,
- 'linux-arm Mailing List' <linux-arm-kernel@lists.infradead.org>,
- 'linux-arm-msm' <linux-arm-msm@vger.kernel.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, kernel-team@android.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Evan,
-
-I have sent out the v7 patch by marking a dependency on the below mentioned series
-https://patchwork.kernel.org/project/linux-wireless/list/?series=261367 
-
-> The clocks are missing:
-> clocks = <&rpmhcc RPMH_RF_CLK2>;
-> clock-names = "cxo_ref_clk_pin";
-These clocks are optional and were required for older firmware.
-It's not needed now.
-
-Thanks,
-Rakesh Pillai
-
-> -----Original Message-----
-> From: Evan Green <evgreen@chromium.org>
-> Sent: Wednesday, March 25, 2020 9:34 PM
-> To: pillair@codeaurora.org
-> Cc: open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS
-> <devicetree@vger.kernel.org>; linux-arm Mailing List <linux-arm-
-> kernel@lists.infradead.org>; LKML <linux-kernel@vger.kernel.org>; linux-
-> arm-msm <linux-arm-msm@vger.kernel.org>
-> Subject: Re: [PATCH v6] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
-> module device node
+On Wed, Mar 25, 2020 at 11:13:46AM +0000, Will Deacon wrote:
+> Commit dcde237319e6 ("mm: Avoid creating virtual address aliases in
+> brk()/mmap()/mremap()") changed mremap() so that only the 'old' address
+> is untagged, leaving the 'new' address in the form it was passed from
+> userspace. This prevents the unexpected creation of aliasing virtual
+> mappings in userspace, but looks a bit odd when you read the code.
 > 
-> On Wed, Mar 25, 2020 at 4:05 AM <pillair@codeaurora.org> wrote:
-> >
-> > Hi Evan,
-> >
-> > I will send out a v7 for this patchset.
-> > Since I have to configure the S2 SIDs, it is dependent on below ath10k
-> patchset.
-> > https://patchwork.kernel.org/project/linux-wireless/list/?series=261367
+> Add a comment justifying the untagging behaviour in mremap().
 > 
-> Ah, right. Thanks for the info, I'll check out that series as well.
-> -Evan
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+> Signed-off-by: Will Deacon <will@kernel.org>
+
+I queued this patch via the arm64 tree (for 5.7-rc1). Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
