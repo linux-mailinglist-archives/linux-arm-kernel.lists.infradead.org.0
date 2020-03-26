@@ -2,116 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34B33194BFC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 00:11:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1A79194C25
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 00:21:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x7jGYV4qfNZ8I+AR+ocq1CDhJwuLd8nplM+xf0wUhUo=; b=GKSwp77YKIfwpa
-	8nGo4jeB4r/A8eVAC3t+Sj6GLrTtsKs2u5yQD0A31PtG8BTqlsUe85zdA5Yfx22fBOA2zVyVYkDXd
-	TkzIZzG2Q8NH28Psp9Z0xp/k6OwKeS1adGe4oadxbP8SoGOxDXz42h1h7lFXvXRZYNlnK+Qm4ex1+
-	2UK1/RPxNPDCS5C9PkHEY7lel7PQDBNeuixPBjv0R2kAWm+0eQZ/AwfVsqxhdLr0l6UQx4bcxeBo3
-	a0z70UyVucE7wcWI+b29pHmiiVj/P20/HVJb9eXBRR3fmkH3EJaZJjAmWAMjx0+P0YBYr7ifiu8Tw
-	Qx18KHFvbdyZuhPjBsow==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X196SbpwUoAGNeQ0g20VkbVRkPKBr9iydqqONVSHPDs=; b=WwlEzc6nermn/i
+	5OMqRUsMMQcvhcesEcsFUHO5pUIpYmIjmNNWaniljZgnRteMMxWfz687M8cMfELVTLUT1IusXA+dC
+	oKCqnyrpAQGk/68lfwAuG6ThpNxhyNvZL4nDO4PRkDMt9ofEr+KpRHd+nyIH/Wjcpswe2PW31RHQX
+	kzfQteEQ+L+G+/QpYztMPSkrzVrxVHnadqaofecn3yILWv5J22BU501bQeRy49tv7ewuPcQQ5lwjm
+	a4ASlrT5NB1A83+bRjvBLEXgxuny/aODmSPZPjKtMF2VhRAwZ3pawoJt/v9fzbCYQM6uw5biJzpfJ
+	0cmZff5M4y8MIwYEPDQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHbea-0005Ec-Qt; Thu, 26 Mar 2020 23:11:12 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1jHboN-0000JU-F2; Thu, 26 Mar 2020 23:21:19 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHbeO-0005Dw-7O; Thu, 26 Mar 2020 23:11:01 +0000
-IronPort-SDR: PVpw+bGvzsqLGRCd/ShL0IqeKawXw5VE0MFmSaWiP47tA4vlBtnYJm6nedjp9eD+gaSOmjTEPD
- 4qUCtIst+p2Q==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 26 Mar 2020 16:10:58 -0700
-IronPort-SDR: mT6DgSbAS6BUtA3qPF3BNnsM7CA2xqJFL7clGUrlUWnMZnXGxQ1Ynx/BNWyjiuLWmS5cVYB3EF
- gKbtIFsOUblw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,310,1580803200"; d="scan'208";a="250952340"
-Received: from lirivera-mobl1.amr.corp.intel.com (HELO [10.251.8.87])
- ([10.251.8.87])
- by orsmga006.jf.intel.com with ESMTP; 26 Mar 2020 16:10:57 -0700
-Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
-To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20200318220634.32100-1-mike.kravetz@oracle.com>
- <20200318220634.32100-2-mike.kravetz@oracle.com>
- <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
- <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
- <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
- <530e6e11-ad1a-55bc-e61e-9da6eb7fea21@oracle.com>
-From: Dave Hansen <dave.hansen@intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <ae80063f-cef8-3141-3c6b-9130def5396a@intel.com>
-Date: Thu, 26 Mar 2020 16:10:56 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <530e6e11-ad1a-55bc-e61e-9da6eb7fea21@oracle.com>
-Content-Language: en-US
+ id 1jHbo6-0000BD-1i
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 23:21:04 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 3E0F95C0296;
+ Thu, 26 Mar 2020 19:20:56 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute3.internal (MEProxy); Thu, 26 Mar 2020 19:20:56 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=SPBez9eP4WUK7nuKDXBKLrvMRPHaZsR
+ cUIsM6kI098U=; b=gxK9Lq1U1ZxYWuJmDagu+BiWgP0UnweCyPcj1hQFPT3pqyB
+ LxatrOpz3FAEfvUd5qLkvi73gmsE81WE1yuXW3/+H2utlTJ700zpmigwBnng3LbP
+ Epw8/ZUwW//YNGi5vI5WP29M05ArTjZhgECYpIDLXpl6l0XutKGVK/TqH3kcZBdb
+ 3fSSnnl3RegVFPK/pIMZwfbrLHVDz3R6nOZICjfQBEfWu4mT5wdRt6V042RXxLmB
+ HkftvIlma412PclEU/x7QGDAcvIx6P6fK/P70Q67FDmPZhmfiGiC5mD8vTQus/wK
+ YbUFsrsiOCXjtwmYkz/tONJ9O56EGqCaNR+XSBg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=SPBez9
+ eP4WUK7nuKDXBKLrvMRPHaZsRcUIsM6kI098U=; b=w6pqPp7Ik+M1thZhT77paX
+ 0kTNlrTdUYnMQAcVrtDz0NnabndanpH5Kz7uitVjMAH0IawekET32chwxjx/QrAB
+ AI5EfDCNQ0ShnkOkID+8nHPKbHikhphmtXZIsHLlv2WNug7wH7+rQJVOYtlTdBUy
+ /I5OGMrmq66pb2tLup533nvm5ega0BzsX+qGUr9aHIGB8pen3wqOIAzVku6CGdr5
+ xIWIZvNyfoE7Wpw1QhVFQ+KvRMN7rQD1z/FJcERurYlNGq8E/FSzXocw+RRPxMX9
+ jEcJsfq855jiZVYtNqFIlqx/UDaUIpMMzgTwthXI2YV74airZKu9lhdGwLETBR3Q
+ ==
+X-ME-Sender: <xms:1zh9XiSSQNyIfR04Kthsm7UhzVRMzwkPn4FDqhKG-ph4JO8hrCG-fw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudehjedguddtkecutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enucfjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehn
+ ughrvgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlh
+ hushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfies
+ rghjrdhiugdrrghu
+X-ME-Proxy: <xmx:1zh9XufHtV7zdwoJoABA-XKbJMCRjPY8iHi8hsLe8a8Jb5SOWvmeYA>
+ <xmx:1zh9XhKzeexi5vEcv5EEK2-QJmy_wLjc9fAATGXS2oBd9NlFV8nS-w>
+ <xmx:1zh9Xj46U2c1B70fLh5hYzpKB_YaQ7-xS0qosaP_zzgI0y1FsQ5TFQ>
+ <xmx:2Dh9XmZVnS9kqIWj4sBS7nBGvNBOOGjDmrY1GIvL4Kj1IhMLrUY-hA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 02149E00EF; Thu, 26 Mar 2020 19:20:54 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-1021-g152deaf-fmstable-20200319v1
+Mime-Version: 1.0
+Message-Id: <294a52cd-2f60-41e5-a58f-a74151a83b08@www.fastmail.com>
+In-Reply-To: <20200306170218.79698-2-geissonator@yahoo.com>
+References: <20200306170218.79698-1-geissonator@yahoo.com>
+ <20200306170218.79698-2-geissonator@yahoo.com>
+Date: Fri, 27 Mar 2020 09:50:58 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Andrew Geissler" <geissonator@gmail.com>,
+ "Joel Stanley" <joel@jms.id.au>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/2] ARM: dts: aspeed: zaius: Add gpio line names
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_161100_280762_720B7BE4 
-X-CRM114-Status: GOOD (  11.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200326_162102_247044_206D17D0 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.28 listed in list.dnswl.org]
+ 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.28 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,44 +109,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, "Shutemov,
- Kirill" <kirill.shutemov@intel.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
- Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
- "David S.Miller" <davem@davemloft.net>
+Cc: linux-gpio@vger.kernel.org, openbmc@lists.ozlabs.org,
+ Andrew Geissler <geissonator@yahoo.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/26/20 2:56 PM, Mike Kravetz wrote:
-> Perhaps it would be best to check hugepages_supported() when parsing
-> hugetlb command line options.  If not enabled, throw an error.  This
-> will be much easier to do after moving all command line parsing to
-> arch independent code.
 
-Yeah, that sounds sane.
 
-> Is that a sufficient way to address this concern?  I think it is a good
-> change in any case.
+On Sat, 7 Mar 2020, at 03:32, Andrew Geissler wrote:
+> Name the GPIOs to help userspace work with them. The names describe the
+> functionality the lines provide, not the net or ball name. This makes it
+> easier to share userspace code across different systems and makes the
+> use of the lines more obvious.
+> 
+> Signed-off-by: Andrew Geissler <geissonator@yahoo.com>
 
-(Thanks to Kirill for pointing this out.)
+So we're creating a bit of an ad-hoc ABI here between the DT and userspace.
 
-So, it turns out the x86 huge page enumeration is totally buggered.
-X86_FEATURE_PSE is actually meaningless on 64-bit (and 32-bit PAE).  All
-CPUs architecturally support 2MB pages regardless of X86_FEATURE_PSE and
-the state of CR4.PSE.
+Where are we documenting it?
 
-So, on x86_64 at least, hugepages_supported() should *always* return 1.
+Generally I think the idea is good though, so:
 
-1GB page support can continue to be dependent on X86_FEATURE_GBPAGES.
+Acked-by: Andrew Jeffery <andrew@aj.id.au>
+
+> ---
+>  arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts | 37 +++++++++++++++++++---
+>  1 file changed, 33 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> index bc60ec291681..4bcc82046362 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> @@ -478,32 +478,61 @@
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_gpioh_unbiased>;
+>  
+> +	gpio-line-names =
+> +	/*A0-A7*/	"","cfam-reset","","","","","","",
+> +	/*B0-B7*/	"","","","","","","","",
+> +	/*C0-C7*/	"","","","","","","","",
+> +	/*D0-D7*/	"fsi-enable","","","","","led-sys-boot-status","led-attention",
+> +				"led-fault",
+> +	/*E0-E7*/	"","","","","","","","presence-pcie-e2b",
+> +	/*F0-F7*/	"","","","","","","","checkstop",
+> +	/*G0-G7*/	"fsi-clock","fsi-data","","","","","","",
+> +	/*H0-H7*/	"onewire0","onewire1","onewire2","onewire3","","","","",
+> +	/*I0-I7*/	"","","","power-button","","","","",
+> +	/*J0-J7*/	"","","","","","","","",
+> +	/*K0-K7*/	"","","","","","","","",
+> +	/*L0-L7*/	"","","","","","","","",
+> +	/*M0-M7*/	"","","","","","","","",
+> +	/*N0-N7*/	"","","","","","","","",
+> +	/*O0-O7*/	"","","","","iso_u164_en","","fsi-trans","",
+> +	/*P0-P7*/	"ncsi_mux_en_n","bmc_i2c2_sw_rst_n","","bmc_i2c5_sw_rst_n","",
+> +				"","fsi-mux","",
+> +	/*Q0-Q7*/	"","","","","","","","",
+> +	/*R0-R7*/	"","","","","","","","",
+> +	/*S0-S7*/	"","","","","","","","",
+> +	/*T0-T7*/	"","","","","","","","",
+> +	/*U0-U7*/	"","","","","","","","",
+> +	/*V0-V7*/	"","","","","","","","",
+> +	/*W0-W7*/	"","","","","","","","",
+> +	/*X0-X7*/	"","","","","","","","",
+> +	/*Y0-Y7*/	"","","","","","","","",
+> +	/*Z0-Z7*/	"","","","","","","","",
+> +	/*AA0-AA7*/	"","","led-hdd-fault","","","","","",
+> +	/*AB0-AB7*/	"","","","","","","","",
+> +	/*AC0-AC7*/	"","","","","","","","";
+> +
+>  	line_iso_u146_en {
+>  		gpio-hog;
+>  		gpios = <ASPEED_GPIO(O, 4) GPIO_ACTIVE_HIGH>;
+>  		output-high;
+> -		line-name = "iso_u164_en";
+>  	};
+>  
+>  	ncsi_mux_en_n {
+>  		gpio-hog;
+>  		gpios = <ASPEED_GPIO(P, 0) GPIO_ACTIVE_HIGH>;
+>  		output-low;
+> -		line-name = "ncsi_mux_en_n";
+>  	};
+>  
+>  	line_bmc_i2c2_sw_rst_n {
+>  		gpio-hog;
+>  		gpios = <ASPEED_GPIO(P, 1) GPIO_ACTIVE_HIGH>;
+>  		output-high;
+> -		line-name = "bmc_i2c2_sw_rst_n";
+>  	};
+>  
+>  	line_bmc_i2c5_sw_rst_n {
+>  		gpio-hog;
+>  		gpios = <ASPEED_GPIO(P, 3) GPIO_ACTIVE_HIGH>;
+>  		output-high;
+> -		line-name = "bmc_i2c5_sw_rst_n";
+>  	};
+>  };
+>  
+> -- 
+> 2.21.0 (Apple Git-122)
+> 
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
