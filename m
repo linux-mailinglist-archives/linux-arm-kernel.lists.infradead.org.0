@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5F1F1942BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 16:12:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B56A1942F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 16:22:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=jl183LDn9oB2ydjC5/+B0d64TcBHF3wafe217O7X7gM=; b=SmiZd+GapE9N0q
-	zIV/To2cPI84KlSRm9icsmobds6qsUXbtRcgoU6ComUVGFJuiGLK48Nf7ZisWog1VcnNMI1kqj1cV
-	730KyMe6j801kD7pyamJ4h2/ys3CEeNE7LfMjLmt4alAqsapmCeD9yd4ZUNxxr+IckmTBB1Dhz/lE
-	Bdx3tHsIUgX+VsWy3Cx7abtcqh3qRdHM7tTlNgoHFCv6FTZNfWIkew9CRbbxNxwiCFGouPrXHpSog
-	cJ5r8XeHafk4P7VX+1Ucg49FwN5r9JuOqT8QsKdWRaLZMmeT2Dx+LIQTiEJfRF+Sql5yzEI4NeZbJ
-	n4KWWQgqAW1jC4Iz4INg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3plgNc9LGltgMms4tqdPkPjiNKlqVO/yH8sy/gom9jA=; b=XuuHKGo9gD3Fte
+	7aAGlVHVPMyCWkRFk53aGIR/v6zB/PV8tJ9a9+pvxNq2r0n5KQ7ie4dboVEVQD9wqkXNbbbnh9kPM
+	RXezsSmUtE0WpIymvDCfJl/wFMHV0uoYuXv29shRZvEi1Ls8at3WWMJcdXfFG7a7zvZoekLWajHEr
+	ndwXQpB6T0SZW/II8+9Sev7AznlRwtfnAmkft6/ysVd1dCt9eRlsRsL5424SUOEcGUZHShTHYDnof
+	YP8vmDwhMaVfHkvdTOEBLkCpfitviuzwbby7qgXJR9QZoORAtktxZMh8QCWS/OSRZt0LxDsWVXzND
+	w5YBDI0CwSKqdPX63bog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHUB7-0006U8-O8; Thu, 26 Mar 2020 15:12:17 +0000
+	id 1jHUKU-0002O0-4m; Thu, 26 Mar 2020 15:21:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHUAy-0006TY-GT
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 15:12:09 +0000
-Received: from localhost (mobile-166-175-186-165.mycingular.net
- [166.175.186.165])
+ id 1jHUK7-0002EN-Vt
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 15:21:37 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9991E206F8;
- Thu, 26 Mar 2020 15:12:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 696AE2073E;
+ Thu, 26 Mar 2020 15:21:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585235528;
- bh=gNmb1UwpI1bot54AGT9LmV+Ay1kJtk9PvnEvdt7OJfc=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=HswQ9GU3pelOso6U3R+842+f+BEsJtKi+asi1ius/Kpn2ivVMGAkMxQdfx4AdmRWL
- OXIpK3kwBDOOPY60j6YQgGoDi/R1l/B3W2qIVR2ZIZhJqacpgQuvx/Hur4AJIK+DoY
- froEyzgClLoLaQL8Y/qmAtHqp2GIHJ1KQZMKnUFw=
-Date: Thu, 26 Mar 2020 10:12:05 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Srinath Mannam <srinath.mannam@broadcom.com>
-Subject: Re: [PATCH 3/3] PCI: iproc: Display PCIe Link information
-Message-ID: <20200326151205.GA6837@google.com>
+ s=default; t=1585236095;
+ bh=IrNjZ3rpXCLq0ROmJORSHoP5KphKizMWinfQJm/QS74=;
+ h=From:To:Cc:Subject:Date:From;
+ b=TsSIrKgUvl6/Im0yJnwtI4fCtipN2ZVFHVOx3XkozrGfmUb9RYzZw6UG34hL/bT/u
+ InVz3yx+C5ewSa2xKjm5A6yvcOr2iOruA9Byey6fhWgaUcfOR0Ac5JRyoU2AK2BrsW
+ lRPeCScCOG95BVrxP21qaqMJTBuNM4v1B1S24QDI=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jHUK5-003dib-K9; Thu, 26 Mar 2020 16:21:33 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Media Mailing List <linux-media@vger.kernel.org>
+Subject: [PATCH 0/7] media Kconfig reorg - part 3
+Date: Thu, 26 Mar 2020 16:21:25 +0100
+Message-Id: <cover.1585235736.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1585206447-1363-4-git-send-email-srinath.mannam@broadcom.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_081208_563790_90EA2461 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20200326_082136_067449_3854443A 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -63,7 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 FAKE_REPLY_C           No description available.
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -76,60 +77,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 12:37:27PM +0530, Srinath Mannam wrote:
-> Add more comprehensive information to show PCIe link speed and link
-> width to the console.
-> 
-> Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
-> ---
->  drivers/pci/controller/pcie-iproc.c | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> index e7f0d58..ed41357 100644
-> --- a/drivers/pci/controller/pcie-iproc.c
-> +++ b/drivers/pci/controller/pcie-iproc.c
-> @@ -823,6 +823,8 @@ static int iproc_pcie_check_link(struct iproc_pcie *pcie)
->  #define PCI_TARGET_LINK_SPEED_MASK	0xf
->  #define PCI_TARGET_LINK_SPEED_GEN2	0x2
->  #define PCI_TARGET_LINK_SPEED_GEN1	0x1
-> +#define PCI_TARGET_LINK_WIDTH_MASK	0x3f
-> +#define PCI_TARGET_LINK_WIDTH_OFFSET	0x4
->  		iproc_pci_raw_config_read32(pcie, 0,
->  					    IPROC_PCI_EXP_CAP + PCI_EXP_LNKCTL2,
->  					    4, &link_ctrl);
-> @@ -843,7 +845,14 @@ static int iproc_pcie_check_link(struct iproc_pcie *pcie)
->  		}
->  	}
->  
-> -	dev_info(dev, "link: %s\n", link_is_active ? "UP" : "DOWN");
-> +	if (link_is_active) {
-> +		dev_info(dev, "link UP @ Speed Gen-%d and width-x%d\n",
-> +			 link_status & PCI_TARGET_LINK_SPEED_MASK,
-> +			 (link_status >> PCI_TARGET_LINK_WIDTH_OFFSET) &
-> +			 PCI_TARGET_LINK_WIDTH_MASK);
+That's a third part of the patch series with improve the media Kconfig
+settings.
 
-Can you use pcie_print_link_status() or some variant here instead of
-rolling your own?
+The entire series is
+at:
 
-> +	} else {
-> +		dev_info(dev, "link DOWN\n");
-> +	}
->  
->  	return link_is_active ? 0 : -ENODEV;
->  }
-> -- 
-> 2.7.4
-> 
+	https://git.linuxtv.org/mchehab/experimental.git/log/?h=media-kconfig
+
+patch 1 addresses a report from Helen that an user might not notice
+that drivers are filtered. So, it adds an explicit message warning
+about that;
+
+patch 2 marks PCI skeleton and dvb-dummy-fe as test drivers too;
+
+patch 3-5 duplicates the dvb_dummy_fe driver into the ddbridge driver.
+The ddbridge driver is unique: it has a PCI bridge with some slots for
+frontends. When the slot is empty, it uses the dummy frontend. As we'll
+be soon changing the dummy frontend to make it a virtual driver, and no
+other real driver requires a dummy FE, place a simplified copy of it at
+the ddbridge directory;
+
+patch 6 fix several problems related to media test devices. Before
+such patch, one would need to build a real driver in order to select
+the needed cores for the test ones.
+
+patch 7 adds some missing SPDX headers at the media build system.
+
+Mauro Carvalho Chehab (7):
+  media: Kconfig: warn if drivers are filtered
+  media: Kconfig: mark other drivers as test drivers
+  media: ddbridge: copy the dvb_dummy_fe driver to ddbridge
+  media: ddbridge-dummy_fe: do some vars and function renames
+  media: ddbridge: use the ddbridge's own dummy fe driver
+  media: Kconfig: fix selection for test drivers
+  media: add SPDX headers on Kconfig and Makefile files
+
+ drivers/media/Kconfig                         |   7 +-
+ drivers/media/dvb-frontends/Kconfig           |  15 +-
+ drivers/media/mc/Kconfig                      |   2 +
+ drivers/media/pci/Kconfig                     |   9 +-
+ drivers/media/pci/ddbridge/Kconfig            |   1 -
+ drivers/media/pci/ddbridge/Makefile           |   2 +-
+ drivers/media/pci/ddbridge/ddbridge-core.c    |   4 +-
+ .../media/pci/ddbridge/ddbridge-dummy-fe.c    | 153 ++++++++++++++++++
+ .../media/pci/ddbridge/ddbridge-dummy-fe.h    |  16 ++
+ drivers/media/platform/sunxi/Kconfig          |   2 +
+ drivers/media/platform/sunxi/Makefile         |   2 +
+ .../media/platform/sunxi/sun4i-csi/Kconfig    |   2 +
+ .../media/platform/sunxi/sun4i-csi/Makefile   |   2 +
+ drivers/media/test_drivers/Kconfig            |   2 +-
+ drivers/staging/media/hantro/Makefile         |   2 +
+ drivers/staging/media/rkisp1/Makefile         |   2 +
+ 16 files changed, 210 insertions(+), 13 deletions(-)
+ create mode 100644 drivers/media/pci/ddbridge/ddbridge-dummy-fe.c
+ create mode 100644 drivers/media/pci/ddbridge/ddbridge-dummy-fe.h
+
+-- 
+2.25.1
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
