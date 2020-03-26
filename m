@@ -2,79 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EF4E193D9D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:08:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31D9E193DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:16:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jnlc7P8WwqkVU8aipsSFF39VxHj7WZi/WmRe8O88I2Y=; b=POzvth7gPLMRB9
-	F0ev4u8xxd3FbMf7TUjuRhH/r46tLVcxQqcThVLw6paqoccllrvJqIBxNkrxmmBZIMiE+7MtWEZz3
-	nNgX/cNCXxJZ4GWFJwhQ08vu2fNK2t+bSK6HkoUubawK8bX8Rv756mYxPoExezhVt/oS0sDBqB73w
-	Hurgfly/yGZP5fED9tIQ71MBkX2vyybv4zrzz2V+gEd7eGBLR65MgAox/i4pg3cbrD6oqgD9A4Pul
-	4VmJOL7R3d8olMW9WVs8oQcd703dpT+9ns57Tw29FUdP8sCcvlOJeHKxwWCcYDqQdUhQmdRWno03y
-	eDp5+jn/k7wb2XjbcOSw==;
+	List-Owner; bh=y/QmfSASf2mngkOihtsMz3JvVAcFn8f95iHaMPhWwsY=; b=e4SUG0fO6Yb7mw
+	EcjhLK+ixcOr9htNjqz0CXUGok9kjbU20RghTSPAVjU8BUdMgc29Q/TmLGXfB0MmA3xs48bQtIKVi
+	DVw+yygWFHTx2KjcJrAdh1rChSmH/FpsM+Ku5tX9WvVVx/TT0CZpIa2rREauTodqkBKMzxHPx6Rql
+	uPSuUuB4cErcctJ5UhFaBz1cjO47J9FDOgm8+mCNegkj/qPZPPTyy8vJo+YCn45yz4+cxSVo176Rw
+	sZ8ttieWAYCrFBjf/0U9NgbCXHv7XbI1Qndr35mKC+8ztKWtMWvdV1Cz58YyNn+SKVBZxSFTs1uVi
+	vNX/b0MsuWxSjgJrNxlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHQMY-0008OL-HB; Thu, 26 Mar 2020 11:07:50 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHQML-0008LP-73
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:07:38 +0000
-Received: from mail-qk1-f170.google.com ([209.85.222.170]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MtObA-1jWC1R2Zx8-00unJ0 for <linux-arm-kernel@lists.infradead.org>; Thu,
- 26 Mar 2020 12:07:35 +0100
-Received: by mail-qk1-f170.google.com with SMTP id c145so5828492qke.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 04:07:35 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3oV9T8rlcsAbLkxIbALFP5ACIQgMAx81bzviVWSEPrAngI3Vov
- 678OWT5z9uUzs4iA9AGFLTwFEUwv4hl9+Dp4wTI=
-X-Google-Smtp-Source: ADFU+vtGA4H8mWbkDm6gpTVbfvnOBJmqFtB227gJd/fzaEEWWXK9KVIZa3FUqSbrkQ+QzfbwJV3lxH63RATvQa45OLc=
-X-Received: by 2002:a37:6285:: with SMTP id w127mr7344230qkb.138.1585220854524; 
- Thu, 26 Mar 2020 04:07:34 -0700 (PDT)
+	id 1jHQUJ-0003rm-Uj; Thu, 26 Mar 2020 11:15:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHQU9-0003qq-SU
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:15:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD1087FA;
+ Thu, 26 Mar 2020 04:15:39 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 531823F71F;
+ Thu, 26 Mar 2020 04:15:36 -0700 (PDT)
+Date: Thu, 26 Mar 2020 11:15:21 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
+Message-ID: <20200326111521.GA72909@C02TD0UTHF1T.local>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <20200324203231.64324-6-keescook@chromium.org>
+ <20200325132127.GB12236@lakrids.cambridge.arm.com>
+ <202003251319.AECA788D63@keescook>
 MIME-Version: 1.0
-References: <20200325113407.26996-1-ulf.hansson@linaro.org>
- <20200325113407.26996-3-ulf.hansson@linaro.org>
-In-Reply-To: <20200325113407.26996-3-ulf.hansson@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 26 Mar 2020 12:07:18 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a39JrMrYrNeLCr-R6y-ivkVqRkxey_Z7R4N3++MA_qqCg@mail.gmail.com>
-Message-ID: <CAK8P3a39JrMrYrNeLCr-R6y-ivkVqRkxey_Z7R4N3++MA_qqCg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] amba: Initialize dma_parms for amba devices
-To: Ulf Hansson <ulf.hansson@linaro.org>
-X-Provags-ID: V03:K1:3As796uVVUSDxkya8TObuLlGbL966eRwV4nBGiMx7YLhBSchnuH
- Ss8N0m4eVz2X8UsQfiCI1GAGJMCbtIoHTbh0hRj6u1zsmopfPHMvi4j8sBWWNIvF4smmbFj
- GH2zngTAKBAnSWYCnjE2p6msfkI7gHqaYYJ76v/J5i714VVPaB267GVUcwAExln1/Letbdi
- f8+cNEMXRfoUDZShzAspQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mS+9Zq3yqi8=:N0EKVU522W0fbTyzwsXf+H
- AQHMnD2PeFwKdRnvy3c86WBCn5mU4bJ1nZgYdi50OtQrTUMmTOZkgZgr0B1whJETZgp7yPm9K
- qCq8lXj50595KADTMO9bXcVZOgB/y3esMPDUVLvOqD6H7mwzsFvniY+5F0BoYpo9PQCvkFz3M
- yJnVaWmLLuOhunzl129Gw32mGnLrQUOzUlWZrL3qfh1iUOroAjjyPAyYEky1wDyBncDyf7jm5
- qwdjp57QCTlqGlacfmvKBqgQ/cvdfA+giCmilKcSuqXJe2mrbsFJ/FYmMtrDbhxf6pvleiT6H
- lOpATWmv0RuGsDLogBu+NsAhgk/vrMdMx5y2qh0aW5/As4k/s6B4t7sbP0lxk6Ix7FUpf62z2
- ZFI29jlS+OM/8dglr5EuQ33QR/uwDgdzNG2D3RT2Nip8EGMpjocdjpg3CopX7HuHqbG5wBNQw
- n/1s6qlJzLJz2fo6ObMuKrYcALP1pova6EM6KpA7CJJJWLoNaIsjR1IdNzMbI/2+4yH5iiF9M
- LV0jI0AjIwNWhjqgSYTpqVQsML0u684TgLObbnP25zFStv0+r3hbfzOOQvKo4fO9FRF/cAHzQ
- s1aPmOtOHNW8UNwCk6ksY58dZPeB94FvMWRBsmiB4zmBpuq4CszU7OkkysaD62/BovUWXBVvl
- Mc5XhIaN7gQURXysxLiKtmI8r8ARzdQRVm4kwa9FxD2JUm9BCLn8HuVZNGQOZkgnulESnxFrF
- r3ruFoUN6s57TFz64PK2MS0MhG/UQFo6J9eSevj/jjEPZ40TB6oRakwLhqw5JN2KwEfWzEedO
- M4rxmzM25wfo4TvWi96xs2ZINtdYnRYD/1lO9HP2bl4d2AN2P4=
+Content-Disposition: inline
+In-Reply-To: <202003251319.AECA788D63@keescook>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_040737_545566_E8F71D1C 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_041541_968826_F3E10A4A 
+X-CRM114-Status: GOOD (  17.31  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,43 +65,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rafael@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Haibo Chen <haibo.chen@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, dmaengine@vger.kernel.org,
- "# 3.4.x" <stable@vger.kernel.org>, Christoph Hellwig <hch@lst.de>,
- Ludovic Barre <ludovic.barre@st.com>
+Cc: Jann Horn <jannh@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
+ Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 25, 2020 at 12:34 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> It's currently the amba driver's responsibility to initialize the pointer,
-> dma_parms, for its corresponding struct device. The benefit with this
-> approach allows us to avoid the initialization and to not waste memory for
-> the struct device_dma_parameters, as this can be decided on a case by case
-> basis.
->
-> However, it has turned out that this approach is not very practical. Not
-> only does it lead to open coding, but also to real errors. In principle
-> callers of dma_set_max_seg_size() doesn't check the error code, but just
-> assumes it succeeds.
->
-> For these reasons, let's do the initialization from the common amba bus at
-> the device registration point. This also follows the way the PCI devices
-> are being managed, see pci_device_add().
->
-> Suggested-by: Christoph Hellwig <hch@lst.de>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+On Wed, Mar 25, 2020 at 01:22:07PM -0700, Kees Cook wrote:
+> On Wed, Mar 25, 2020 at 01:21:27PM +0000, Mark Rutland wrote:
+> > On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
+> > > Allow for a randomized stack offset on a per-syscall basis, with roughly
+> > > 5 bits of entropy.
+> > > 
+> > > Signed-off-by: Kees Cook <keescook@chromium.org>
+> > 
+> > Just to check, do you have an idea of the impact on arm64? Patch 3 had
+> > figures for x86 where it reads the TSC, and it's unclear to me how
+> > get_random_int() compares to that.
+> 
+> I didn't do a measurement on arm64 since I don't have a good bare-metal
+> test environment. I know Andy Lutomirki has plans for making
+> get_random_get() as fast as possible, so that's why I used it here.
 
-Acked-by: Arnd Bergmann <arnd@arndb.de>
+Ok. I suspect I also won't get the chance to test that in the next few
+days, but if I do I'll try to share the results.
+
+My concern here was that, get_random_int() has to grab a spinlock and
+mess with IRQ masking, so has the potential to block for much longer,
+but that might not be an issue in practice, and I don't think that
+should block these patches.
+
+> I couldn't figure out if there was a comparable instruction like rdtsc
+> in aarch64 (it seems there's a cycle counter, but I found nothing in
+> the kernel that seemed to actually use it)?
+
+AArch64 doesn't have a direct equivalent. The generic counter
+(CNTxCT_EL0) is the closest thing, but its nominal frequency is
+typically much lower than the nominal CPU clock frequency (unlike TSC
+where they're the same). The cycle counter (PMCCNTR_EL0) is part of the
+PMU, and can't be relied on in the same way (e.g. as perf reprograms it
+to generate overflow events, and it can stop for things like WFI/WFE).
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
