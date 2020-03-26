@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFADD1936F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:29:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 225DE1936F4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 04:29:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pwsNZ5dg6/FkDSyNYeKWjblPZhmWh2508bmE9IktGk4=; b=UMbPveWjOI34K0
-	x0PbvGXCsvQW5MXdIA2oF1y7aZIqQIsZpDnI2UEKuwMx2l0YFk49Sm6ybtFsOelPML7qlO7CJqRbr
-	7RepxIDjd2YXo2HRKfFtsLo2lyPWkE+wwVkGdN6bwz4eGlCMA0gTL/XrKwuZOSNXh3aiW8dsrqp8o
-	1FlwPKY/ZRlgYj1+FvpBKiobTXz5p9JYVuL07iTq1eivd3ivr4rgFyMDKy1oswJ2xIZIfqPzEq2iW
-	iObPtY0OAQQtCPNSkUm2m+FdCSJCbAFeFWqueF9z/kinbSSBFf97kEpXatc8U2aUer7Py4299oGFT
-	a6g9TypKGBxfFAxsoKRQ==;
+	List-Owner; bh=jXc6v+FaqHRI8wChQJyraQGQ8bHmeGIOfE8NlqEV9BE=; b=tTgqOL9BbH9uEi
+	MgDMj2gt/uWQECgeQl+vNUknVTTrii1Ns1DbXJd2Pp8Sf5ZcRTnD+J8T7QlH4XmLhWuzBObiQ4Ehd
+	Z8c0JKWyO8+RX14bVTaZyNUZXacgiYF8lC0ql5YJi5XFlHB7E2fWS0Tz5/X+bUTRZtPxh52+Uex7K
+	LqevrYsFEXW9Wjh3XB9vuALhq0231STSRZDJpw9Pf2EX5GTsJa2Pxnhm/xwe7pyXi3od2V9+Lp1NF
+	Gp5lzf7WckmFdA/23nbkIHuvNGxspMEG1mTBX0jbCCu1Cpc2F2S4o+7TBKVIU/oT+HdJx/i+caL3k
+	hAENOzaZkUHQZUR1xb3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHJCR-0008Fu-NN; Thu, 26 Mar 2020 03:28:55 +0000
-Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
+	id 1jHJCq-0008Ut-CS; Thu, 26 Mar 2020 03:29:20 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHJ8F-0004bz-7i
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 03:24:37 +0000
-Received: by mail-qv1-xf41.google.com with SMTP id o18so2281327qvf.1
+ id 1jHJ8G-0004dZ-Kx
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 03:24:38 +0000
+Received: by mail-qt1-x841.google.com with SMTP id a5so4169596qtw.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Mar 2020 20:24:34 -0700 (PDT)
+ Wed, 25 Mar 2020 20:24:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references;
- bh=79vWRy0i2YzlhYfgfL3OtU1rYDrCPAZhCt4GY/kzDbU=;
- b=VAs1MfJjSDIrtNcFz+9Q8ZT25hpAwOX3ydp9C6411J1KeAiqQSaBJET61DnDYN3t65
- OYNb9gVZ28UO29s5RYt0qHgipHiOb3Q9omuV0F5AN7DLqWtLjlwf35lvcvQatExrmN3B
- ECWzq1uNVYMAPFYt/TdrccT/38W9l+FiHi9uhtiGQWz4gQWgRq/vCZV2OY2q/w4yxq++
- Htuzp2xVaiP3nnw5QfI2ieMT/G0YOppL9HfjhJgqkXGCyRXF913QC/od/grwE2IsXK8p
- dDwF1EwTWXoUCBsMKoSg+Sh2/EVFGkS5wI5qzfCpo3EK3pHi9rRNy09j9FGaLH3SIyq7
- +XXw==
+ bh=QhNz775VKRnk5y9bcc8c5HYbQNDUUf5cmSRr9I0ZSxg=;
+ b=a8sWRWxYc+7MDMvMTEM9/sXq9DGPEMdBEdB0YPEk0ZriOtW7/957gv/EmOOnZXedgr
+ wmJZXMMMPUhBteuPtM2M7iVfIGbzUKmsr2QuafhbN2axLwdDHRrVA4yVO4zJ3oYQrJ6o
+ tuKWzNBUUTh+Mnl6qtByzo0lWeIQmL87AQ1IND0UGfGBiwR2m9eZwbhWuR+rZeuZg972
+ tmml4/hrYoRrChsZKE1obNpDjGOOpL24yaRLbLxEJGDFtwRexNWZBlI0J6r18eXHrfp8
+ afChEfRAX/ZfCaJVzRZn/4QwLQ0/S5aAWuM/OFcR7828eDXTuaW3XbxlnjkO4smbWDBN
+ nhjQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references;
- bh=79vWRy0i2YzlhYfgfL3OtU1rYDrCPAZhCt4GY/kzDbU=;
- b=TFn1EZvF3SYyIU0xu5DbZ6cZ2Z0DW1ZWD0mxY3hhuiiTMFb3OddbAAZuLczYYLeNwx
- pew8y4me5DHtGoIbe2mU5wCGB8LiCIzsSd7IbvA63+cKg5DXCSEXQtk2YDj9AeGNQfh1
- bokq9PAFJDD5b2I54Q5FRZauBoIBQz3lRxXTVRmN/W59pEU2BGUi/Oro9OsLkTlRHr5e
- TTPaBbEDCvmxsvwvrzV7OlJ1tQyoacgnJLTNbtnFAFL4whWzUJU0sSWONrNVkII+yBk0
- asD9n2VVJmHPE2dBA6E8GovRinZbnLJvRYb7YU3Yt3wH3I6nzYGdbiyF2LU0s3MCZJF9
- Aa7g==
-X-Gm-Message-State: ANhLgQ0uLSWjEjk+HlS0luBOT2tHAsOTbCdBUEXavbkUT9dAUjOj47JV
- vbjDrpHKUtis9TnY0+3lQkxTSw==
-X-Google-Smtp-Source: ADFU+vs04jZQgyyzWnthBR9uVyhpJZVnOP1cEoH7ghqntqa9P123xXiIbPAEb81z75icBIeZHSMlHA==
-X-Received: by 2002:ad4:4862:: with SMTP id u2mr6360876qvy.67.1585193073744;
- Wed, 25 Mar 2020 20:24:33 -0700 (PDT)
+ bh=QhNz775VKRnk5y9bcc8c5HYbQNDUUf5cmSRr9I0ZSxg=;
+ b=Y9rNWchkCCS+OhyqrMiaBq4QTtH6Z8CIepzk/Rxb/s/yAjd4aQQYNWL0Z5m7Y0bHd/
+ Isj2m3tSE1AC+XtA7T3tChFMKcAAcjI5cmbl2cdoluOGdoE4uunHX3ISiCjZIpb96/o7
+ Lk4r0M3s4X7tiiUOpraBrYOGguW4kkTApLe12jm8SqLVypu5/CJnx+7WuWi8/+VogDJ7
+ YiDbNMSsaVOgdki6hVQ+/lg1sYuhy4dPfYkrIwE17FjSRipxnLiwC29b3l8GWGCXpxUT
+ 2ylM/SxC1m11DjcguWYRCuDWBs6IjO9MlKbR8zCbGktSl6gDPRZeEulEkBK/DsKu1bs7
+ zLvA==
+X-Gm-Message-State: ANhLgQ1PE1XN+Y091mPtVqGI8aCN8QcPX873lxmKwrzIPF451VROGGEI
+ lqZh8BSH8+UnyBtAajJu+FguCQ==
+X-Google-Smtp-Source: ADFU+vu69T1k3xDySQS9u2aotpb2qZ5XiyzNbLLTqTd9rKOnfFUHIbi50Tmyv1njzuyUGzMuj/ak5A==
+X-Received: by 2002:aed:3607:: with SMTP id e7mr5922168qtb.316.1585193075249; 
+ Wed, 25 Mar 2020 20:24:35 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.32
+ by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 20:24:33 -0700 (PDT)
+ Wed, 25 Mar 2020 20:24:34 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -65,23 +65,22 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  bhsharma@redhat.com, linux-mm@kvack.org, mark.rutland@arm.com,
  steve.capper@arm.com, rfontana@redhat.com, tglx@linutronix.de,
  selindag@gmail.com
-Subject: [PATCH v9 07/18] arm64: trans_pgd: hibernate: idmap the single page
- that holds the copy page routines
-Date: Wed, 25 Mar 2020 23:24:09 -0400
-Message-Id: <20200326032420.27220-8-pasha.tatashin@soleen.com>
+Subject: [PATCH v9 08/18] arm64: kexec: move relocation function setup
+Date: Wed, 25 Mar 2020 23:24:10 -0400
+Message-Id: <20200326032420.27220-9-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_202435_312662_1E3CFECA 
-X-CRM114-Status: GOOD (  22.97  )
+X-CRM114-CacheID: sfid-20200325_202437_012122_BA484E49 
+X-CRM114-Status: GOOD (  13.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,201 +108,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+Currently, kernel relocation function is configured in machine_kexec()
+at the time of kexec reboot by using control_code_page.
 
-To resume from hibernate, the contents of memory are restored from
-the swap image. This may overwrite any page, including the running
-kernel and its page tables.
+This operation, however, is more logical to be done during kexec_load,
+and thus remove from reboot time. Move, setup of this function to
+newly added machine_kexec_post_load().
 
-Hibernate copies the code it uses to do the restore into a single
-page that it knows won't be overwritten, and maps it with page tables
-built from pages that won't be overwritten.
+Because once MMU is enabled, kexec control page will contain more than
+relocation kernel, but also vector table, add pointer to the actual
+function within this page arch.kern_reloc. Currently, it equals to the
+beginning of page, we will add offsets later, when vector table is
+added.
 
-Today the address it uses for this mapping is arbitrary, but to allow
-kexec to reuse this code, it needs to be idmapped. To idmap the page
-we must avoid the kernel helpers that have VA_BITS baked in.
-
-Convert create_single_mapping() to take a single PA, and idmap it.
-The page tables are built in the reverse order to normal using
-pfn_pte() to stir in any bits between 52:48. T0SZ is always increased
-to cover 48bits, or 52 if the copy code has bits 52:48 in its PA.
-
-Pasha: The original patch from James
-inux-arm-kernel/20200115143322.214247-4-james.morse@arm.com
-Adopted it to trans_pgd, so it can be commonly used by both Kexec
-and Hibernate. Some minor clean-ups.
-
-Signed-off-by: James Morse <james.morse@arm.com>
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/trans_pgd.h |  3 ++
- arch/arm64/kernel/hibernate.c      | 32 +++++++------------
- arch/arm64/mm/trans_pgd.c          | 49 ++++++++++++++++++++++++++++++
- 3 files changed, 63 insertions(+), 21 deletions(-)
+ arch/arm64/include/asm/kexec.h    |  1 +
+ arch/arm64/kernel/machine_kexec.c | 27 ++++++++++++++-------------
+ 2 files changed, 15 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/include/asm/trans_pgd.h b/arch/arm64/include/asm/trans_pgd.h
-index 97a7ea73b289..4912d3caf0ca 100644
---- a/arch/arm64/include/asm/trans_pgd.h
-+++ b/arch/arm64/include/asm/trans_pgd.h
-@@ -32,4 +32,7 @@ int trans_pgd_create_copy(struct trans_pgd_info *info, pgd_t **trans_pgd,
- int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
- 		       void *page, unsigned long dst_addr, pgprot_t pgprot);
+diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
+index 61530ec3a9b1..9befcd87e9a8 100644
+--- a/arch/arm64/include/asm/kexec.h
++++ b/arch/arm64/include/asm/kexec.h
+@@ -95,6 +95,7 @@ static inline void crash_post_resume(void) {}
+ struct kimage_arch {
+ 	void *dtb;
+ 	phys_addr_t dtb_mem;
++	phys_addr_t kern_reloc;
+ 	/* Core ELF header buffer */
+ 	void *elf_headers;
+ 	unsigned long elf_headers_mem;
+diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+index ae1bad0156cd..ec71a153cc2d 100644
+--- a/arch/arm64/kernel/machine_kexec.c
++++ b/arch/arm64/kernel/machine_kexec.c
+@@ -42,6 +42,7 @@ static void _kexec_image_info(const char *func, int line,
+ 	pr_debug("    start:       %lx\n", kimage->start);
+ 	pr_debug("    head:        %lx\n", kimage->head);
+ 	pr_debug("    nr_segments: %lu\n", kimage->nr_segments);
++	pr_debug("    kern_reloc: %pa\n", &kimage->arch.kern_reloc);
  
-+int trans_pgd_idmap_page(struct trans_pgd_info *info, phys_addr_t *trans_ttbr0,
-+			 unsigned long *t0sz, void *page);
-+
- #endif /* _ASM_TRANS_TABLE_H */
-diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 95e00536aa67..784aa01bb4bd 100644
---- a/arch/arm64/kernel/hibernate.c
-+++ b/arch/arm64/kernel/hibernate.c
-@@ -197,7 +197,6 @@ static void *hibernate_page_alloc(void *arg)
-  * page system.
-  */
- static int create_safe_exec_page(void *src_start, size_t length,
--				 unsigned long dst_addr,
- 				 phys_addr_t *phys_dst_addr)
- {
- 	struct trans_pgd_info trans_info = {
-@@ -206,7 +205,8 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	};
- 
- 	void *page = (void *)get_safe_page(GFP_ATOMIC);
--	pgd_t *trans_pgd;
-+	phys_addr_t trans_ttbr0;
-+	unsigned long t0sz;
- 	int rc;
- 
- 	if (!page)
-@@ -214,13 +214,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 
- 	memcpy(page, src_start, length);
- 	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
--
--	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
--	if (!trans_pgd)
--		return -ENOMEM;
--
--	rc = trans_pgd_map_page(&trans_info, trans_pgd, page, dst_addr,
--				PAGE_KERNEL_EXEC);
-+	rc = trans_pgd_idmap_page(&trans_info, &trans_ttbr0, &t0sz, page);
- 	if (rc)
- 		return rc;
- 
-@@ -233,12 +227,15 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	 * page, but TLBs may contain stale ASID-tagged entries (e.g. for EFI
- 	 * runtime services), while for a userspace-driven test_resume cycle it
- 	 * points to userspace page tables (and we must point it at a zero page
--	 * ourselves). Elsewhere we only (un)install the idmap with preemption
--	 * disabled, so T0SZ should be as required regardless.
-+	 * ourselves).
-+	 *
-+	 * We change T0SZ as part of installing the idmap. This is undone by
-+	 * cpu_uninstall_idmap() in __cpu_suspend_exit().
- 	 */
- 	cpu_set_reserved_ttbr0();
- 	local_flush_tlb_all();
--	write_sysreg(phys_to_ttbr(virt_to_phys(trans_pgd)), ttbr0_el1);
-+	__cpu_set_tcr_t0sz(t0sz);
-+	write_sysreg(trans_ttbr0, ttbr0_el1);
- 	isb();
- 
- 	*phys_dst_addr = virt_to_phys(page);
-@@ -319,7 +316,6 @@ int swsusp_arch_resume(void)
- 	void *zero_page;
- 	size_t exit_size;
- 	pgd_t *tmp_pg_dir;
--	phys_addr_t phys_hibernate_exit;
- 	void __noreturn (*hibernate_exit)(phys_addr_t, phys_addr_t, void *,
- 					  void *, phys_addr_t, phys_addr_t);
- 	struct trans_pgd_info trans_info = {
-@@ -347,19 +343,13 @@ int swsusp_arch_resume(void)
- 		return -ENOMEM;
- 	}
- 
--	/*
--	 * Locate the exit code in the bottom-but-one page, so that *NULL
--	 * still has disastrous affects.
--	 */
--	hibernate_exit = (void *)PAGE_SIZE;
- 	exit_size = __hibernate_exit_text_end - __hibernate_exit_text_start;
- 	/*
- 	 * Copy swsusp_arch_suspend_exit() to a safe page. This will generate
- 	 * a new set of ttbr0 page tables and load them.
- 	 */
- 	rc = create_safe_exec_page(__hibernate_exit_text_start, exit_size,
--				   (unsigned long)hibernate_exit,
--				   &phys_hibernate_exit);
-+				   (phys_addr_t *)&hibernate_exit);
- 	if (rc) {
- 		pr_err("Failed to create safe executable page for hibernate_exit code.\n");
- 		return rc;
-@@ -378,7 +368,7 @@ int swsusp_arch_resume(void)
- 	 * We can skip this step if we booted at EL1, or are running with VHE.
- 	 */
- 	if (el2_reset_needed()) {
--		phys_addr_t el2_vectors = phys_hibernate_exit;  /* base */
-+		phys_addr_t el2_vectors = (phys_addr_t)hibernate_exit;
- 		el2_vectors += hibernate_el2_vectors -
- 			       __hibernate_exit_text_start;     /* offset */
- 
-diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
-index 37d7d1c60f65..c2517d1af2af 100644
---- a/arch/arm64/mm/trans_pgd.c
-+++ b/arch/arm64/mm/trans_pgd.c
-@@ -242,3 +242,52 @@ int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
- 
- 	return 0;
+ 	for (i = 0; i < kimage->nr_segments; i++) {
+ 		pr_debug("      segment[%lu]: %016lx - %016lx, 0x%lx bytes, %lu pages\n",
+@@ -58,6 +59,17 @@ void machine_kexec_cleanup(struct kimage *kimage)
+ 	/* Empty routine needed to avoid build errors. */
  }
-+
-+/*
-+ * The page we want to idmap may be outside the range covered by VA_BITS that
-+ * can be built using the kernel's p?d_populate() helpers. As a one off, for a
-+ * single page, we build these page tables bottom up and just assume that will
-+ * need the maximum T0SZ.
-+ *
-+ * Returns 0 on success, and -ENOMEM on failure.
-+ * On success trans_ttbr0 contains page table with idmapped page, t0sz is set to
-+ * maxumum T0SZ for this page.
-+ */
-+int trans_pgd_idmap_page(struct trans_pgd_info *info, phys_addr_t *trans_ttbr0,
-+			 unsigned long *t0sz, void *page)
+ 
++int machine_kexec_post_load(struct kimage *kimage)
 +{
-+	phys_addr_t dst_addr = virt_to_phys(page);
-+	unsigned long pfn = __phys_to_pfn(dst_addr);
-+	int max_msb = (dst_addr & GENMASK(52, 48)) ? 51 : 47;
-+	int bits_mapped = PAGE_SHIFT - 4;
-+	unsigned long level_mask, prev_level_entry, *levels[4];
-+	int this_level, index, level_lsb, level_msb;
++	void *reloc_code = page_to_virt(kimage->control_code_page);
 +
-+	dst_addr &= PAGE_MASK;
-+	prev_level_entry = pte_val(pfn_pte(pfn, PAGE_KERNEL_EXEC));
-+
-+	for (this_level = 3; this_level >= 0; this_level--) {
-+		levels[this_level] = trans_alloc(info);
-+		if (!levels[this_level])
-+			return -ENOMEM;
-+
-+		level_lsb = ARM64_HW_PGTABLE_LEVEL_SHIFT(this_level);
-+		level_msb = min(level_lsb + bits_mapped, max_msb);
-+		level_mask = GENMASK_ULL(level_msb, level_lsb);
-+
-+		index = (dst_addr & level_mask) >> level_lsb;
-+		*(levels[this_level] + index) = prev_level_entry;
-+
-+		pfn = virt_to_pfn(levels[this_level]);
-+		prev_level_entry = pte_val(pfn_pte(pfn,
-+						   __pgprot(PMD_TYPE_TABLE)));
-+
-+		if (level_msb == max_msb)
-+			break;
-+	}
-+
-+	*trans_ttbr0 = phys_to_ttbr(__pfn_to_phys(pfn));
-+	*t0sz = TCR_T0SZ(max_msb + 1);
++	memcpy(reloc_code, arm64_relocate_new_kernel,
++	       arm64_relocate_new_kernel_size);
++	kimage->arch.kern_reloc = __pa(reloc_code);
 +
 +	return 0;
 +}
++
+ /**
+  * machine_kexec_prepare - Prepare for a kexec reboot.
+  *
+@@ -143,8 +155,7 @@ static void kexec_segment_flush(const struct kimage *kimage)
+  */
+ void machine_kexec(struct kimage *kimage)
+ {
+-	phys_addr_t reboot_code_buffer_phys;
+-	void *reboot_code_buffer;
++	void *reboot_code_buffer = page_to_virt(kimage->control_code_page);
+ 	bool in_kexec_crash = (kimage == kexec_crash_image);
+ 	bool stuck_cpus = cpus_are_stuck_in_kernel();
+ 
+@@ -155,18 +166,8 @@ void machine_kexec(struct kimage *kimage)
+ 	WARN(in_kexec_crash && (stuck_cpus || smp_crash_stop_failed()),
+ 		"Some CPUs may be stale, kdump will be unreliable.\n");
+ 
+-	reboot_code_buffer_phys = page_to_phys(kimage->control_code_page);
+-	reboot_code_buffer = phys_to_virt(reboot_code_buffer_phys);
+-
+ 	kexec_image_info(kimage);
+ 
+-	/*
+-	 * Copy arm64_relocate_new_kernel to the reboot_code_buffer for use
+-	 * after the kernel is shut down.
+-	 */
+-	memcpy(reboot_code_buffer, arm64_relocate_new_kernel,
+-		arm64_relocate_new_kernel_size);
+-
+ 	/* Flush the reboot_code_buffer in preparation for its execution. */
+ 	__flush_dcache_area(reboot_code_buffer, arm64_relocate_new_kernel_size);
+ 
+@@ -202,7 +203,7 @@ void machine_kexec(struct kimage *kimage)
+ 	 * userspace (kexec-tools).
+ 	 * In kexec_file case, the kernel starts directly without purgatory.
+ 	 */
+-	cpu_soft_restart(reboot_code_buffer_phys, kimage->head, kimage->start,
++	cpu_soft_restart(kimage->arch.kern_reloc, kimage->head, kimage->start,
+ 			 kimage->arch.dtb_mem);
+ 
+ 	BUG(); /* Should never get here. */
 -- 
 2.17.1
 
