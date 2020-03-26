@@ -2,122 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45435194118
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 15:17:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8F10194121
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 15:19:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W7cztZUFpdQvzDiLorLTPhSuBLy0+RVlQ8gK5WbQ6QY=; b=KywTQ1HKWsSc27
-	qiz0Gn+6FKZNZcvdX7x8UrUOWKDHFRGHWKk0k35axqTEVbTPpu/plRl80ZmVgh4s6GvXotvRNCKt/
-	HQL6oPglWeFzN6pa2gnCcOv1CVQuMg0fsIMnvj9x/upGmNMfJY/VFLNR+aJnNemL3TdQhN0kDhOkD
-	aip9VAo1/50eNBZE8Nw3MJvlYtWBGOTmbAjVO6xnfr6q90IpMG1Scg5zTigWoeqLljCbiZIpZqxra
-	YJzHfx5OrolMapzentdVLlgfnaJ/Y/Fbh0ty4FDX5WHCpnGOhqEFfVWoxOj+0C0GhnM5qvC0jmHOt
-	gOEuizYJ0jMl+gF+++Qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=a6jFUOVs/JuZnumkUEBp2toNH6qyzZbe8qpi4VKeEa0=; b=j5cczFJ2ZWWPayyaRsPAj8JVQ
+	kAxbMR8fFcR8cqkQ2bD0NHi627NXvfIY0PmnXnrA9DPqWuOtPxURatdARhp1avTDtI3rscZjJfF/9
+	atQUS4YFxa0VH7y7UOzHQaJQ5rq6ww5Nos0pVmSko1zZNlwlh76zxTQL0GChYtGJFnkKe7gzypDT3
+	XwolcDneQqnI+77CbQ41rbM8JpsAM42IXEY7IbhScXoaEqaW0zOHiPE+ltdHWnS193ynRlMTYL4Pa
+	EJCSeflaWcaLZjeMFI85b6Gt8wCHzZRYm6wiX0XqMS0Wi4Rn0CbYcWDXycqJm2EhLEvFqlDqhi5v3
+	vVXp97rKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHTJx-0006ar-Th; Thu, 26 Mar 2020 14:17:21 +0000
-Received: from mail-eopbgr70048.outbound.protection.outlook.com ([40.107.7.48]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHTJn-0006ZJ-KE
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 14:17:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bjlQa9HgI+twreTv1Hv6oJmaNjbki1o2sjaxpm9de3dHOHNHO8hiHXZLXr6iPUWUSWmqcteY0WpnOJzDmgYVpVeRDP+Q5Unl/Za6dEm64C4KLnWDSKZqDwFoZE0K5w80I5pi3yaalRMmMNbkHoQJ0Cqr3j8Y24MsYROpJtpa2GIABlWz5ogKALfykt4OIsh7DlXTeSRIghzaSpkI5MukH0DWt4jIqXPx9GNNrpqfh+GsAsO8jTqdMgFh8+Cg1kOqLK0F75j9Sgf9JIMe0d3WtRBuie5Q3F78OsOF+rzoPYUIz3k3nL2OERpLKVtoNJOh1UaxL03j23wwAHvsXKmkrQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1xRMCs5XdbSctT6VGReAGpgj7mfw20McXX7MyGgey5c=;
- b=Z5UWfAPuenbdb/E2l0YmqgigiAxXQZXSYrisQtU22Gyu93/yrmLGD4mh9WBnrCzXy6KkCkM5HoUR6/Z2ridw1zUNu7u44MSnsaUOok2VniI7ly+wqLuL7cMSdT2nT47VoaepSuGt5MlfTuRw2biHYIHBnQwGicoQ71uVa812kHh4R3/A7yQEhaMtWPh8WkBJiclnlgBmUx9A24uEnogwE5844tl727T9yqokz8Ug+x8/N7DvQDb4Y7hx5CXW+C2c0+wCAyZeW0pZcqB0FYH+3E5YW7ihfGPjEOReHQhKu/8KJeP7FrzD86dB7v+BS21mj4sVsBS5M0i89aJbgEEUPw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1xRMCs5XdbSctT6VGReAGpgj7mfw20McXX7MyGgey5c=;
- b=pwpUmBWd1E60RkmOcXNYhJEPM1fneMG6ZMadb7VbVSMwtMQmE4y1wg0rSB1rwYyjtCqUUQMNLapmdU/SmGhdg3HXrpGBUo4NdbSWiPSMSk7p4HktaLzn+DuKFcplV9fji0g/L7YodWOKvSC01nnF5MnbMTaBHoggT62jOT/MpsQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3865.eurprd04.prod.outlook.com (52.134.73.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2835.22; Thu, 26 Mar 2020 14:17:05 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2835.023; Thu, 26 Mar 2020
- 14:17:05 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "rui.zhang@intel.com"
- <rui.zhang@intel.com>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] thermal: imx: Add missing of_node_put()
-Thread-Topic: [PATCH] thermal: imx: Add missing of_node_put()
-Thread-Index: AQHWAzBAgRLyKlHtTk2Dsujd2fCjGqha6SaAgAABlyA=
-Date: Thu, 26 Mar 2020 14:17:05 +0000
-Message-ID: <DB3PR0402MB3916F370C524F3F8CE590167F5CF0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1585200445-16461-1-git-send-email-Anson.Huang@nxp.com>
- <8325cde9-02f3-b913-b020-4c98d19936f4@linaro.org>
-In-Reply-To: <8325cde9-02f3-b913-b020-4c98d19936f4@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ba938f9a-0f00-4771-59fb-08d7d1905c86
-x-ms-traffictypediagnostic: DB3PR0402MB3865:|DB3PR0402MB3865:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3865D6D42F57C637AFD29BBDF5CF0@DB3PR0402MB3865.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1923;
-x-forefront-prvs: 0354B4BED2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(376002)(346002)(366004)(39860400002)(2906002)(66556008)(66476007)(66446008)(55016002)(8676002)(316002)(64756008)(66946007)(5660300002)(86362001)(7416002)(71200400001)(9686003)(110136005)(7696005)(33656002)(52536014)(26005)(81166006)(44832011)(478600001)(4326008)(76116006)(53546011)(81156014)(8936002)(6506007)(186003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3865;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: qSWLBoj/p6fNgEdU3KD7xRMF16qBlT+xNQkHhuae6EvlAvTEXzi6xZ8iT8K/SvYP71Q3aQco2MCmUdegW0nLQCoZlZPnGQ667GO3BqIlyafUHD9qmjSAlzKmXx82axKBF9qgQcn0F/3J0wJyssVhYSon0OZZ5Sj8cuvKM4Jpm3i5ofO7flgJTnKKRZOXgaTWgkrmYV70UpSrLVSzLUN0LJvLVb0lt2FD+1JkfzAZtM4cctco31K/qrDZIKDaQej4dTAXe2evut4b9DiQuCDSPDZILro7tKeRtcVbjTppUsUiSpLZHuklntis6TJGgnho0ZpjdYad1c0wl7a0IMmdUvXL/C+2Ig5iPrHlWNDRC6DNBN1eN2Sxt2d0pBPuoOp2WdCVrB1+RQmzc8avZgDdEujwDGwrEeeOZxwmvsHqafRokjGHyOgTguI8Kqv7t7WYm3GasKn0d6mHYgQZOPPWyOwUyeA+KqGpiMv14pQqsZKnrka0SY9d64bf0kxoudqW
-x-ms-exchange-antispam-messagedata: gE/0lHS7dG4g/Pamo49kCnc32z8NiJAq1jqQJ71iYRS122shG4KV32FCvtYQnocMXlwJmaVidBjAUIa/9xIDMIW1JLLSJMJiM8U5VmamuEfn1XgYffs4aqTfDwAqvjddIuHWYMAujFW71ejNw6k62A==
+	id 1jHTMC-00070u-6i; Thu, 26 Mar 2020 14:19:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHTM1-0006zc-4V; Thu, 26 Mar 2020 14:19:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12EFE7FA;
+ Thu, 26 Mar 2020 07:19:26 -0700 (PDT)
+Received: from [10.57.60.204] (unknown [10.57.60.204])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C8C773F71F;
+ Thu, 26 Mar 2020 07:19:24 -0700 (PDT)
+Subject: Re: arm64: Getting continuous PCIe "CmpltTO" AER from network card in
+ kdump kernel
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+References: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
+ <e8a58616-aeae-ad78-d496-6dfcef4ddcaa@arm.com>
+ <CAJ2QiJJ=NK2Piq_7i1kfeP1yB7vDNcTtKnXWOQ5Us2EE7ipXBA@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <150e513c-a017-ba7b-5a42-0243e632e62c@arm.com>
+Date: Thu, 26 Mar 2020 14:19:23 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ba938f9a-0f00-4771-59fb-08d7d1905c86
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Mar 2020 14:17:05.1840 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: PdiKLiBjDF0tPqWcat0h528FQDWxOa7XzkFRdS2vDhi9MUjAyRLFuQrWtjGggFYdqgZwb+5Qf36hHBV22s0i2A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3865
+In-Reply-To: <CAJ2QiJJ=NK2Piq_7i1kfeP1yB7vDNcTtKnXWOQ5Us2EE7ipXBA@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_071711_668716_EC821199 
-X-CRM114-Status: GOOD (  15.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_071929_267983_3DB2D80E 
+X-CRM114-Status: GOOD (  22.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.48 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,48 +65,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Bhupesh Sharma <bhsharma@redhat.com>, will.deacon@arm.com,
+ Bjorn Helgaas <helgaas@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
-
-> Subject: Re: [PATCH] thermal: imx: Add missing of_node_put()
+On 2020-03-26 1:36 pm, Prabhakar Kushwaha wrote:
+> On Mon, Mar 23, 2020 at 10:28 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>>
+>> On 2020-03-23 3:21 pm, Prabhakar Kushwaha wrote:
+>>> Hi All,
+>>>
+>>> I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
+>>> Here network card is continuously giving following AER error
+>>> [  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
+>>> aer_mask: 0x00000000
+>>> [  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
+>>> [  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
+>>> aer_agent=Requester ID
+>>> [  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
+>>>
+>>> This error is not 100% reproducible. It happens 1 out of 4 try.
+>>>
+>>> This error goes away in following two scenarios
+>>> A) Set iommu in bypass mode via bootargs iommu.passthrough=1
+>>> B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
+>>>           if (reg & CR0_SMMUEN) {
+>>>                   dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
+>>>                   WARN_ON(is_kdump_kernel() && !disable_bypass);
+>>>                   mdelay(100);  <-- Added delay
+>>>                   arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
+>>>           }
+>>>
+>>>   From A), it is clear that it is related to IOMMU
+>>>   From B), looks like during boot of kdump kernel, network card is still
+>>> active and it has sent some request over PCIe.
+>>> as GPBA_ABORT bit is set, no response/completion coming to PCIe
+>>> controller hence "CmpltTO" error.
+>>>
+>>> Ideally before setting GPBA_ABORT bit, there should be some check for
+>>> active transaction. if it is not possible, a wait should be done to
+>>> assure that no more pending transaction left.
+>>
+>> In general there is no way to check for active transactions, and even if
+>> there were, waiting for them to finish could mean waiting forever (if,
+>> say, a device is continuously streaming to/from a ring buffer).
+>>
+>>> why any such delay has not been considered?
+>>
+>> The main aim here is to block any DMA left over from the crashed kernel
+>> as quickly as possible, to minimise any further potential corruption of
+>> memory (consider if a device was left writing to an IOMMU virtual
+>> address that happened to have the same value as some physical address in
+>> the crash kernel's reserved memory). The fact that an arbitrary delay
+>> happens to give a 'nicer' result in one particular situation on one
+>> particular platform is neither here nor there in general.
+>>
 > 
-> On 26/03/2020 06:27, Anson Huang wrote:
-> > After finishing using cpu node got from of_get_cpu_node(),
-> > of_node_put() needs to be called.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com> ---
-> > drivers/thermal/imx_thermal.c | 10 +++++++--- 1 file changed, 7
-> > insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/thermal/imx_thermal.c
-> > b/drivers/thermal/imx_thermal.c index e761c9b..f7b970d 100644 ---
-> > a/drivers/thermal/imx_thermal.c +++ b/drivers/thermal/imx_thermal.c
-> @@
-> > -649,7 +649,7 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
-> static
-> > int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
-> > { struct device_node *np; -	int ret; +	int ret = 0;
-> >
-> > data->policy = cpufreq_cpu_get(0); if (!data->policy) { @@ -664,11
-> > +664,15 @@ static int imx_thermal_register_legacy_cooling(struct
-> > imx_thermal_data *data) if (IS_ERR(data->cdev)) { ret =
-> > PTR_ERR(data->cdev); cpufreq_cpu_put(data->policy); -
-> 	return
-> > ret; +			goto put_node; } }
-> >
-> > -	return 0; +put_node: +	if (np) +		of_node_put(np);
+> I agree.
+> But we are depending upon kdump boot time and expecting devices to
+> reach to idle state before setting GBPA_ABORT bit.
+
+So (ideally) stop depending on that, because like I said it's fragile 
+and doesn't generalise.
+
+> adding a delay will be fair and make it independent of kdump boot time.
+
+And what delay value is "fair" and appropriate for any device on any 
+system in any circumstance?
+
+>> Besides, this is *crash* kernel, so yeah, expect errors - something's
+>> already gone badly wrong to get us here, and everything from then on is
+>> merely a best-effort attempt to salvage what we can. Does it even make
+>> sense to have AER enabled at this point?
+>>
 > 
-> of_node_put() is already checking if 'np' is NULL.
+> i tried by disabling AER in kdump kernel. but it did not helped as
+> network device become out of sync with respect to tx unit causing it
+> to be hanged and it never recovered from there.  Same can happen with
+> other devices like SATA etc
 
-OK, I will remove the checking of if 'np' is NULL.
+Any devices that the kdump kernel wants to use need to be fully reset to 
+get them into a sane state anyway, don't they? I mean, what if the crash 
+was *caused* by once of those devices going wrong in the first place? 
+Any devices that kdump *doesn't* care about shouldn't matter, since 
+nothing should be unmasking their interrupts regardless of what state 
+they're in.
 
-Thanks,
-Anson
+Assume some descriptor or pagetable entry got corrupted that caused your 
+network device to access an invalid physical address downstream of the 
+SMMU and get an abort from that *before* the kdump kernel starts - is 
+waiting an extra 100ms at any point after that going to help?
+
+Robin.
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
