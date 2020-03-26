@@ -2,115 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D536D194565
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:25:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01C2B194593
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:38:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XzGPPDGVqf+tLt1GAPILOEvlWlcHgbfvX709fVvuHYo=; b=YjQSuD05wAeKB2
-	PM+kDksdZlVQ3WkYGGusHz8nrgVRSkyKxJgeKOql+o1d+FNCFdlzTpMSvT0Qoaz1ysZB2F/KYyEUk
-	FnaiRcaDTElsNacDLH8/HusL/prf9cUMvDZ+CaG7VSQxLOv2hZRlZMHRX+b0gI9XqPJB/23oxyj4N
-	4uu+fWq1nmm531aGKolHmBGIdNMPvRl6x6cbAhPt7207VmH+aR4i2hqZpynGVjP8TlfD6ZL3JqVTO
-	QUKd3PFHa1NZmHZyDUQCaP79dIKQZKvoI7G1yrx3TLJwMEvHoKrebDZoLtwxKZx/SCZqwJLhEfOSo
-	UwuGj1bxGvA/yrNPm4Ug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0dYJyzL6VxMzdF7qtQGDoSS4zXhQDl0Fb+in5YhCeP8=; b=uP97BwErpa/LgA
+	DZBkl00m60ydOeeATR2UA8WrYvUWrrYA8h61NAS6Az8nCuQTXxCHm41z4ualfKnLO9A8otUDeO77w
+	lMEMwt8kdTxRdZAcxkvM4sZCZ2xndVYOtG2akcbHFI1mweT8k9zXiN4UagVacMRPdAfPD+2+Piyzi
+	T8PXaTacpVevYdp0eXgDWMHsIfqrDZhpiLuRA9PlV25qAfdtmytOHyOHxV9J5I+8DWMZXLO3/oUfg
+	D6jeLH+SJU6qRKTVLB1aS0KW+FYMUuWuc0O6PftlHiZv9md3/DHrIbGgGVMt7VrFXjG7qiNXycy39
+	gmyUFKdE8/+pEZEFooRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHWFn-0007QB-Ck; Thu, 26 Mar 2020 17:25:15 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jHWRp-0003vi-Jq; Thu, 26 Mar 2020 17:37:41 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHWFO-0007Pf-D6; Thu, 26 Mar 2020 17:24:51 +0000
-Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1Mk178-1jfYT036uO-00kQMZ; Thu, 26 Mar 2020 18:24:46 +0100
-Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Eric Anholt <eric@anholt.net>
-References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
- <24f850f64b5c71c71938110775e16caaec2811cc.camel@suse.de>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <8c2bdd83-c8a9-7ba8-8d61-69594e6a2bde@i2se.com>
-Date: Thu, 26 Mar 2020 18:24:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jHWRg-0003vO-Hv
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 17:37:34 +0000
+IronPort-SDR: X2SGExLK0CHB8tYcidDbWUAgozC5h/qc2rzKnVrANTJ2XPkD/RJ2JovinEYGoHjO69UPRCh20h
+ pFtFX7M0E+ew==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 26 Mar 2020 10:37:31 -0700
+IronPort-SDR: 7iVomnqNbuE6kwDvFnmYMCQw2mNElq1y4kUOyX1VF10Td+jRzb9q5X4v/Q1Eddtftud1Vx9LvR
+ kxguxNps3CIg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,309,1580803200"; d="scan'208";a="238864499"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga007.fm.intel.com with ESMTP; 26 Mar 2020 10:37:30 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jHWRd-000EEe-CJ; Fri, 27 Mar 2020 01:37:29 +0800
+Date: Fri, 27 Mar 2020 01:36:37 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: [arm-soc:arm/dt] BUILD SUCCESS
+ b7e31b639e48a1bf610e50d76c79c7c363910184
+Message-ID: <5e7ce825.xVt/hp69JnoBE71n%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-In-Reply-To: <24f850f64b5c71c71938110775e16caaec2811cc.camel@suse.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:Ac7dLnMcbgcgIHaNRY2OVn2AFh3p6JDdm2ydQ54cEcT2mSjqKa3
- +NMdof+DtagSo61Cnlr/p19IyEN89nop7uW/8NunpYl26vTnQtbadf/RC5GZHbyID6qqbBU
- 7QzOzEYomgGmUoiRjw+ROkj3LxUxcUMjMQCgVFMU+rNyO+DqTO5HatZ/gQMW/0yI2eOYvO2
- W+bVC+5UyZqyE9hS+6Hrw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cZABVwr5tBY=:d0bGNLa0oO/7atjaXzIj/Q
- SXY5z+mQUIu8mc9ZUrmlD564A+EJxx+/VKSc1NpceSEivcaJmPOcYLDBEKnigO2QACkd3Loqm
- MRK2bBhs9tb9TnYhWlAZ4rUHGBbxHogeGr7ny+amSDPgh04Gk9khk+iH5pkcOI+P5k+CDPZiF
- TizQFAfG8w664he2Lass4hhohwHmn/wtJhQEolrZ/pnkJyAHJhRNBoiEaf6VoURj5qm0o2kP8
- xcqAg1SFVqC/5HBpzVxLFngP34oUdG+KZPD8Z75CEeS+jaQeSfkkJTUa/op3mi9mdjdjnQU5J
- NhpWwFiSuXsiaokWQ9rWwBzxsDbrdLowGYyuIl5DSjode7LxjL/2lf+b7v/sBQUxC3tTiVpgS
- ci8UCxao4myngeF/X0CYBtlq7s8dtkL3iCmA3/74LrzqGNieMfy7Fu2O7FIxQbrlvzVUYjVDm
- n5Pc4nvsxXScOvoXR8E8V1aIqaCDtEENUf+s62AsWugJpO7Q0v29toq5R5omtLYQkbyAxMAyc
- vLzfZ3orvwt12t7M2HZGsqtSdtKuFN4m4WXkoSxjLaz7l+gWS4oNERt9bbBUPwe3mAg+mqdKB
- bcdW7Gpzk4rc6ykgou6j3Bzhp7s8heXEKPiEOX2uzwmzbtXDd2bxiFTycWIvpoAUEufE45wIE
- QOzaAsWhE+RCfXAk89LFNOFvVsxDdigHrSNco1oS4Ua6RPScGZBrc+BQtQue2q9k/eg0HX1Tz
- mRRLXLCaJHqSa+Fq2PVGgpW6+cney67wUIF6XN90MreAz4C4C9/1yXJQyNIM1TCFaxMYdFrms
- j2W6toqYG9BBMXrAit2vYJHsjL0gLvgioF1hJ1SjPHRq+L/8XLd5VuwkRwgiSlFC+sgtonQ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_102450_747455_2F052442 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_103732_609387_A4049D97 
+X-CRM114-Status: UNSURE (   6.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,42 +72,242 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- wahrenst@gmx.net, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 26.03.20 um 13:24 schrieb Nicolas Saenz Julienne:
-> Hi Stefan and Florian,
->
-> On Tue, 2020-03-03 at 18:32 +0100, Nicolas Saenz Julienne wrote:
->> The register based driver turned out to be unstable, specially on RPi3a+
->> but not limited to it. While a fix is being worked on, we roll back to
->> using firmware based scheme.
->>
->> Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM driver
->> instead of firmware")
->> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->> ---
-> now that the problem Stefan was seeing is being taken care of, I think it's
-> fair to reconsider taking this patch. Maybe even adding a Tested-by by Stefan?
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/dt
+branch HEAD: b7e31b639e48a1bf610e50d76c79c7c363910184  Merge tag 'qcom-dts-for-5.7' of git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux into arm/dt
 
-after applying "drm/vc4: Fix HDMI mode validation" this commit doesn't
-cause any regression:
+elapsed time: 1083m
 
-Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
+configs tested: 215
+configs skipped: 0
 
-Thanks
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
->
-> Regards,
-> Nicolas
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+alpha                               defconfig
+xtensa                       common_defconfig
+c6x                        evmc6678_defconfig
+nds32                             allnoconfig
+i386                              allnoconfig
+i386                             alldefconfig
+i386                             allyesconfig
+i386                                defconfig
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+ia64                                defconfig
+c6x                              allyesconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                          iss_defconfig
+csky                                defconfig
+nds32                               defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+arc                                 defconfig
+arc                              allyesconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                            allnoconfig
+parisc                           allyesconfig
+parisc                generic-32bit_defconfig
+parisc                generic-64bit_defconfig
+x86_64               randconfig-a001-20200325
+x86_64               randconfig-a002-20200325
+x86_64               randconfig-a003-20200325
+i386                 randconfig-a001-20200325
+i386                 randconfig-a002-20200325
+i386                 randconfig-a003-20200325
+x86_64               randconfig-a001-20200326
+x86_64               randconfig-a002-20200326
+x86_64               randconfig-a003-20200326
+i386                 randconfig-a001-20200326
+i386                 randconfig-a002-20200326
+i386                 randconfig-a003-20200326
+alpha                randconfig-a001-20200326
+m68k                 randconfig-a001-20200326
+mips                 randconfig-a001-20200326
+nds32                randconfig-a001-20200326
+parisc               randconfig-a001-20200326
+riscv                randconfig-a001-20200326
+alpha                randconfig-a001-20200325
+m68k                 randconfig-a001-20200325
+nds32                randconfig-a001-20200325
+parisc               randconfig-a001-20200325
+riscv                randconfig-a001-20200325
+c6x                  randconfig-a001-20200326
+h8300                randconfig-a001-20200326
+microblaze           randconfig-a001-20200326
+nios2                randconfig-a001-20200326
+sparc64              randconfig-a001-20200326
+c6x                  randconfig-a001-20200325
+h8300                randconfig-a001-20200325
+microblaze           randconfig-a001-20200325
+nios2                randconfig-a001-20200325
+sparc64              randconfig-a001-20200325
+csky                 randconfig-a001-20200326
+openrisc             randconfig-a001-20200326
+s390                 randconfig-a001-20200326
+sh                   randconfig-a001-20200326
+xtensa               randconfig-a001-20200326
+csky                 randconfig-a001-20200325
+openrisc             randconfig-a001-20200325
+s390                 randconfig-a001-20200325
+sh                   randconfig-a001-20200325
+xtensa               randconfig-a001-20200325
+x86_64               randconfig-b001-20200325
+x86_64               randconfig-b002-20200325
+x86_64               randconfig-b003-20200325
+i386                 randconfig-b001-20200325
+i386                 randconfig-b002-20200325
+i386                 randconfig-b003-20200325
+x86_64               randconfig-c001-20200326
+x86_64               randconfig-c002-20200326
+x86_64               randconfig-c003-20200326
+i386                 randconfig-c001-20200326
+i386                 randconfig-c002-20200326
+i386                 randconfig-c003-20200326
+x86_64               randconfig-c001-20200325
+x86_64               randconfig-c002-20200325
+x86_64               randconfig-c003-20200325
+i386                 randconfig-c001-20200325
+i386                 randconfig-c002-20200325
+i386                 randconfig-c003-20200325
+x86_64               randconfig-d001-20200325
+x86_64               randconfig-d002-20200325
+x86_64               randconfig-d003-20200325
+i386                 randconfig-d001-20200325
+i386                 randconfig-d002-20200325
+i386                 randconfig-d003-20200325
+x86_64               randconfig-e001-20200326
+x86_64               randconfig-e002-20200326
+x86_64               randconfig-e003-20200326
+i386                 randconfig-e001-20200326
+i386                 randconfig-e002-20200326
+i386                 randconfig-e003-20200326
+x86_64               randconfig-e001-20200325
+x86_64               randconfig-e002-20200325
+x86_64               randconfig-e003-20200325
+i386                 randconfig-e001-20200325
+i386                 randconfig-e002-20200325
+i386                 randconfig-e003-20200325
+x86_64               randconfig-f001-20200326
+x86_64               randconfig-f002-20200326
+x86_64               randconfig-f003-20200326
+i386                 randconfig-f001-20200326
+i386                 randconfig-f002-20200326
+i386                 randconfig-f003-20200326
+x86_64               randconfig-f001-20200325
+x86_64               randconfig-f002-20200325
+x86_64               randconfig-f003-20200325
+i386                 randconfig-f001-20200325
+i386                 randconfig-f002-20200325
+i386                 randconfig-f003-20200325
+x86_64               randconfig-g001-20200326
+x86_64               randconfig-g002-20200326
+x86_64               randconfig-g003-20200326
+i386                 randconfig-g001-20200326
+i386                 randconfig-g002-20200326
+i386                 randconfig-g003-20200326
+x86_64               randconfig-h001-20200325
+x86_64               randconfig-h002-20200325
+x86_64               randconfig-h003-20200325
+i386                 randconfig-h001-20200325
+i386                 randconfig-h002-20200325
+i386                 randconfig-h003-20200325
+x86_64               randconfig-h001-20200326
+x86_64               randconfig-h002-20200326
+x86_64               randconfig-h003-20200326
+i386                 randconfig-h001-20200326
+i386                 randconfig-h002-20200326
+i386                 randconfig-h003-20200326
+arc                  randconfig-a001-20200325
+arm                  randconfig-a001-20200325
+arm64                randconfig-a001-20200325
+ia64                 randconfig-a001-20200325
+powerpc              randconfig-a001-20200325
+sparc                randconfig-a001-20200325
+arc                  randconfig-a001-20200326
+arm                  randconfig-a001-20200326
+arm64                randconfig-a001-20200326
+ia64                 randconfig-a001-20200326
+powerpc              randconfig-a001-20200326
+sparc                randconfig-a001-20200326
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+sh                          rsk7269_defconfig
+sh                               allmodconfig
+sh                            titan_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                                allnoconfig
+sparc                               defconfig
+sparc64                             defconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                          allmodconfig
+um                                  defconfig
+um                             i386_defconfig
+um                           x86_64_defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
