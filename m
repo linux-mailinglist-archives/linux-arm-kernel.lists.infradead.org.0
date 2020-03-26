@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95EB41938D4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 07:46:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E504D1938E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 07:49:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cUJkEQJI+JoWG6Md1M4LRg9jJ2Qvo/UwvsrH6zCyFOk=; b=Mn6S3EqLUsiGoh
-	jKCORyPY2SjyN8DhpgREDafrhC+DDpzNbbp6JKHxGOAjULaCThmZFvnFK1MFqtYS3Wx8jILm80IyT
-	NgYGENW6POOBfHcGuSPPHJQCKi4CCj4MCDIf2xVN5VMnRsQdRbEh2kE5yzxcHPKC2/z9AqNcf5XFh
-	UPPfSOOL2r7Wkc+FTBxQ0UapHenzG+BAa5Qww/hw/VlQKPGWQ93vwz1K46oqZS10V/GK+hxtBGCK2
-	rRlYXBsdSHWS70c7Oq1OazDQ2sFNAJEVOKmj7700F5wdEkLN+zjUktyaDOvnoGvie6XHmQu05ydQy
-	tiRM1X2M26VA8IsQYUMA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=r5QhBas/yvlDS8+I1RAPvBajNHGqwz3ar/UyvBIOSHM=; b=lfI
+	jM9NXmiCfTiXcJMXlXGmnRfGbN0wzS/wN8unkXFQi43w53extdlUjxj7ihfzqsj5Z4khl9jw8BNIb
+	Prex6nTRsgA9V3sf9qV8PqtlgOdFITQJzl94KQa7yrLkufJjWcZiFof8AAs1UZskGx+7R4XQ4PYsP
+	WbZHhpQdd5XtTXUzR0pyIlYpj+A8Ga6WxtU5LKAhog1rdnd5bAzLA76V+k0hDBzlmW78qsm4qDoCE
+	Ai/fUvgYAN+pY0dZW7zPLkA36nZGjBxnCiduNvLuAnbzLc8Y8gil1IDA95Dd7ai6riOouPLhfUp4r
+	d04Wz/F4B9V7oAmteMoaumx9YUq6Pew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHMHb-0006l8-4I; Thu, 26 Mar 2020 06:46:27 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jHMKV-0007A9-2H; Thu, 26 Mar 2020 06:49:27 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHMHS-0006jS-Lu
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 06:46:20 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id AB80A3012A2B4E7E1AE2;
- Thu, 26 Mar 2020 14:45:56 +0800 (CST)
-Received: from [127.0.0.1] (10.173.220.25) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.487.0; Thu, 26 Mar 2020
- 14:45:48 +0800
-Subject: Re: [RFC PATCH v4 0/6] arm64: tlb: add support for TTL feature
-To: James Morse <james.morse@arm.com>
-References: <20200324134534.1570-1-yezhenyu2@huawei.com>
- <aaf017a8-3658-fe4d-c0cf-2f45656020af@arm.com>
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-Message-ID: <7859561b-78b4-4a12-2642-3741d7d3e7b8@huawei.com>
-Date: Thu, 26 Mar 2020 14:45:46 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <aaf017a8-3658-fe4d-c0cf-2f45656020af@arm.com>
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+ id 1jHMKK-00079K-L0
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 06:49:18 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c187so5289042wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Mar 2020 23:49:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=m/woP8JE+Q/g0ZO0DRvUNOSB5SWwhTVz0tFdoKMPxxo=;
+ b=H2n3m3sRF0tHj/MR1yFPyawxFUsyiDdjYI76xB/dYLngYzS5i9nRuIe6/TKuYr9K3b
+ 9XSVkH0w1gt5DG4rjqA7+RLeLVQO7jNxj6vCMLCFjjKy8E7CFj6W8kZKHkYqc7e8gM2i
+ +SVTaotuowDSxAaMHR26QnJ+MFR8PwkRSQuxo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=m/woP8JE+Q/g0ZO0DRvUNOSB5SWwhTVz0tFdoKMPxxo=;
+ b=mePx5ckx7es/E8btCHeHVDJtCcEI2cKkqhU6WKFpNFpzGWS59BLzDcH+hRoJekvtmn
+ 6G7dH2fVH0JTzfG5Nig8qTpy89qnTOLnWa1om+hL1ec3e3xmDCs+Jhl/aRlhwj8HksV2
+ TpxdHBSEhMme6TtFQBpRwWUzT/mDMG918jdA6JEJpiT0QhQgyb6Z+DDIdkYZuNId0oZR
+ PPvE69t7r1RvVPJrMyWfJtquzkSluE+UtOhvLM3BhsB0Ifhota8MliW2niw/NdDRQHC+
+ eRyd9zGFLBKt0wztRy8Oy+f5eBhu6aC1GXzpfFp68UD/vNUPk0fyI7YUgIa+MJ2F4Kd2
+ 3uCQ==
+X-Gm-Message-State: ANhLgQ3O6T/GuJP4i39lrHipW2rhAuk8UD2KNG+kKGJoK4rLtopHCFGh
+ Ty5y6Pd+3FRko5O0TBBCzkvnYQ==
+X-Google-Smtp-Source: ADFU+vvHarE2WZIQBKwJVOAl77q3js1Qw/P3PaTTHhN6tLddp/9YVShnhfUTAlEsbjewgdKGGOeB2Q==
+X-Received: by 2002:a1c:63c4:: with SMTP id x187mr1490010wmb.124.1585205354813; 
+ Wed, 25 Mar 2020 23:49:14 -0700 (PDT)
+Received: from mannams-OptiPlex-7010.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id v21sm2069137wmj.8.2020.03.25.23.49.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 25 Mar 2020 23:49:13 -0700 (PDT)
+From: Srinath Mannam <srinath.mannam@broadcom.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, Andrew Murray <andrew.murray@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v5 0/6] PAXB INTx support with proper model
+Date: Thu, 26 Mar 2020 12:18:40 +0530
+Message-Id: <1585205326-25326-1-git-send-email-srinath.mannam@broadcom.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_234618_891278_6C6E36E4 
-X-CRM114-Status: GOOD (  16.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_234916_688727_46A7F1D4 
+X-CRM114-Status: GOOD (  12.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,68 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- linux-mm@kvack.org, guohanjun@huawei.com, will@kernel.org,
- linux-arch@vger.kernel.org, yuzhao@google.com, maz@kernel.org,
- steven.price@arm.com, arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de,
- suzuki.poulose@arm.com, npiggin@gmail.com, zhangshaokun@hisilicon.com,
- broonie@kernel.org, rostedt@goodmis.org, prime.zeng@hisilicon.com,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- xiexiangyou@huawei.com, linux-kernel@vger.kernel.org,
- aneesh.kumar@linux.ibm.com, akpm@linux-foundation.org
+Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Srinath Mannam <srinath.mannam@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+This patch series adds PCIe legacy interrupt (INTx) support to the iProc
+PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
+INTB, INTC, INTD share the same interrupt line connected to the GIC
+in the system. This is now modeled by using its own IRQ domain.
 
-On 2020/3/26 0:15, James Morse wrote:
-> Hi Zhenyu,
-> 
-> On 3/24/20 1:45 PM, Zhenyu Ye wrote:
->> In order to reduce the cost of TLB invalidation, the ARMv8.4 TTL
->> feature allows TLBs to be issued with a level allowing for quicker
->> invalidation.  This series provide support for this feature. 
->>
->> Patch 1 and Patch 2 was provided by Marc on his NV series[1] patches,
->> which detect the TTL feature and add __tlbi_level interface.
-> 
-> How does this interact with THP?
-> (I don't see anything on that in the series.)
-> 
-> With THP, there is no one answer to the size of mapping in a VMA.
-> This is a problem because the arm-arm has in "Translation table level
-> hints" in D5.10.2 of DDI0487E.a:
-> | If an incorrect value for the entry being invalidated by the
-> | instruction is specified in the TTL field, then no entries are
-> | required by the architecture to be invalidated from the TLB.
-> 
-> If we get it wrong, not TLB maintenance occurs!
-> 
+Also update all relevant devicetree files to adapt to the new model.
 
-Thanks for your review.  With THP, we should update the TTL value
-after the page collapse and merge.  If not sure what it should be,
-we can set it to 0 to avoid "no TLB maintenance occur" problem.
-The Table D5-53 in DDI0487E.a says:
-| when TTL[1:0] is 0b00:
-|   This value is reserved, and hardware should treat this as if TTL[3:2] is 0b00
-| when TTL[3:2] is 0b00:
-|   Hardware must assume that the entry can be from any level.
+This patch set is based on Linux-5.5-rc1.
 
-> Unless THP leaves its fingerprints on the vma, I think you can only do
-> this for VMA types that THP can't mess with. (see
-> transparent_hugepage_enabled())
-> 
+Changes from v4:
+  - Addressed Lorenzo's comments
+    - Add iProc irq chip descriptor in the place of dummy irq chip to
+      provide mask/un-mask and enable/disable handlers to configure
+      individual INTx.
 
-I will try to add struct mmu_gather to TLBI interfaces, which has enough
-info to track tlb's level.  See in next patch version!
+Changes from v3:
+  - Addressed Andrew Murray's comments
+  - Add change to dispose VIRQ when disabling INTx
 
+Changes from v2:
+  - Addressed Lorenzo's comments
+    - Corrected INTx to PIN mapping.
 
-Thanks,
-Zhenyu
+Changes from v1:
+  - Addressed Rob, Lorenzo, Arnd's comments
+    - Used child node for interrupt controller.
+  - Addressed Andy Shevchenko's comments
+    - Replaced while loop with do-while.
 
-.
+Ray Jui (6):
+  dt-bindings: pci: Update iProc PCI binding for INTx support
+  PCI: iproc: Add INTx support with better modeling
+  arm: dts: Change PCIe INTx mapping for Cygnus
+  arm: dts: Change PCIe INTx mapping for NSP
+  arm: dts: Change PCIe INTx mapping for HR2
+  arm64: dts: Change PCIe INTx mapping for NS2
+
+ .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++-
+ arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++-
+ arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++-
+ arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++-
+ arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++-
+ drivers/pci/controller/pcie-iproc.c                | 147 ++++++++++++++++++++-
+ drivers/pci/controller/pcie-iproc.h                |   8 ++
+ 7 files changed, 309 insertions(+), 27 deletions(-)
+
+-- 
+2.7.4
 
 
 _______________________________________________
