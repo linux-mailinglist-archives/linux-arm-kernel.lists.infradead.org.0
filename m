@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F7FE1949F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 22:11:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D6B91949FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 22:11:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xWMRZRwwwxl27bZMgqE5SQx3p4/Cs8z6z1umsYJ4Tfg=; b=XmTsrBSxD0DGse
-	5kFIp60CKN62EjgqACCNUdOFNVTIgjObmVsGR1d+ivhc2KknKvVPjXgel0LtdrUA6J/Q2QrBmykLC
-	Z2PUG+sVBiFo1aFDXK8pT9KSpF+FyJGBDBH+muNBmg+nrVxjnCm5XmPtbLgo1/tV3pzF5WmB4xi7x
-	AdPPXtclEEhVbCI2wcNmh3tWTUaqL2hGJm1jWcmwKpVjYxnrMKdTz3aB9ccUaMqqQowIiuFcy4LNw
-	oSXP5rtAMZx5n1lUqy9FeKxn1l5JZEwab+5e5Z89BjOjAVtEllswh6l8VRuw73f8n5Q1P8gTnNWyy
-	uau9Oo7aUrGDTFjHja+Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UBKf90vvH1ggxXC4qenS7x2rtmhkFX9HOgzaOVveta4=; b=a0djJuzOK9Q6rH
+	acK36sqamoaItABMs/pmRqCgDxJrWSK3H07NuAQxAggPsVIZ16Yx/NirQW4cGGZ2vs6ikj3Nr/4rN
+	vlDor1DR60kppGZ+37t9FAgN5nmtcQ8Qo7qrrurdWbB+dzQ7ak1mHshtWBPgCU4NkSrtS1H0ZjjYz
+	RzGSMXU9ZDOwkozL1WtyPCv2PIQ4TEBFfpljI5BWnJAxwd3Q1WrAsFvmgs6VE2rbWCmPTFze6giLC
+	Ft9xpiApFrFVBJU6ooqxpsF1ucSTHQ+/EBRIEF4htSvOOEdrbwKtgq5lFomUsywOrGDgg7i3e3zbi
+	RWdxn6SvNnNY8Kg/vjlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHZmB-0001A8-RS; Thu, 26 Mar 2020 21:10:55 +0000
+	id 1jHZmR-0001QI-UR; Thu, 26 Mar 2020 21:11:11 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHZlX-0000l8-Bj
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 21:10:16 +0000
+ id 1jHZlX-0000lg-U9
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 21:10:17 +0000
 Received: from localhost (p54B3331F.dip0.t-ipconnect.de [84.179.51.31])
- by pokefinder.org (Postfix) with ESMTPSA id 98E702C1F98;
- Thu, 26 Mar 2020 22:10:14 +0100 (CET)
+ by pokefinder.org (Postfix) with ESMTPSA id 3626F2C1F8B;
+ Thu, 26 Mar 2020 22:10:15 +0100 (CET)
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-i2c@vger.kernel.org
-Subject: [PATCH 0/1] ARM: convert to use new I2C API
-Date: Thu, 26 Mar 2020 22:10:13 +0100
-Message-Id: <20200326211014.13591-1-wsa+renesas@sang-engineering.com>
+Subject: [PATCH 1/1] ARM: mach-s3c64xx: convert to use i2c_new_client_device()
+Date: Thu, 26 Mar 2020 22:10:14 +0100
+Message-Id: <20200326211014.13591-2-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200326211014.13591-1-wsa+renesas@sang-engineering.com>
+References: <20200326211014.13591-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_141015_574120_5DF38CFD 
-X-CRM114-Status: UNSURE (   4.31  )
+X-CRM114-CacheID: sfid-20200326_141016_143995_9C9387E4 
+X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -58,24 +60,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, patches@opensource.cirrus.com
+Cc: linux-samsung-soc@vger.kernel.org, patches@opensource.cirrus.com,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org, Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We are deprecating calls which return NULL in favor of new variants which
-return an ERR_PTR. Only build tested.
+Move away from the deprecated API and remove printing a stale 'ret'
+value.
 
-
-Wolfram Sang (1):
-  ARM: mach-s3c64xx: convert to use i2c_new_client_device()
-
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+---
  arch/arm/mach-s3c64xx/mach-crag6410-module.c | 7 +++----
  1 file changed, 3 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm/mach-s3c64xx/mach-crag6410-module.c b/arch/arm/mach-s3c64xx/mach-crag6410-module.c
+index 937d0a83f8fd..34f1baa10c54 100644
+--- a/arch/arm/mach-s3c64xx/mach-crag6410-module.c
++++ b/arch/arm/mach-s3c64xx/mach-crag6410-module.c
+@@ -405,10 +405,9 @@ static int wlf_gf_module_probe(struct i2c_client *i2c,
+ 			 gf_mods[i].name, rev + 1);
+ 
+ 		for (j = 0; j < gf_mods[i].num_i2c_devs; j++) {
+-			if (!i2c_new_device(i2c->adapter,
+-					    &(gf_mods[i].i2c_devs[j])))
+-				dev_err(&i2c->dev,
+-					"Failed to register dev: %d\n", ret);
++			if (IS_ERR(i2c_new_client_device(i2c->adapter,
++							 &(gf_mods[i].i2c_devs[j]))))
++				dev_err(&i2c->dev, "Failed to register\n");
+ 		}
+ 
+ 		spi_register_board_info(gf_mods[i].spi_devs,
 -- 
 2.20.1
 
