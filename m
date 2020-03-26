@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FCA61944DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:01:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C31EF1944DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 18:01:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=h0co268DQdDsFIpkHG0hlwzQMNMCkE0qS/pEaHpK32U=; b=Lt/RTO5f32YBWnjfuIKP4Sz2DA
-	1yUjNwgz93yzZ3B4ciEQNJTD49MueTqwh79hSRqjfT5bRb8exdWcureaRCrWHGtGjUV/QdXWLRrro
-	P09bYKP9g3hwQLSVerCF1W6Uyjrdc+fKavSNviG2HWVcNI1OAH+QI45dVkCdBuHSKcNzaQhaVtMiC
-	wWy1JEjjZKfbceo1UZhawRz2FoCMsU06yn1jLxY+P3vP/pT9JUV0QKh9JKLNrvE2mAbUpYX5ug5IM
-	JqwZ6o38XEQDMVqYlppXUii7rmcbgJDudZNs7/zXyMSIJxcs5efO1bV5J+EckMpWL8wf75buR06L1
-	2izPNXxA==;
+	bh=GIdpbq3J/pv6MLGhgZqDDT/POBlF8fv2+2p8X7JUiYw=; b=UKoaBeo/QOVb7UdNY/+53B2Acu
+	qcgeDtrjqw8jwTiHsJ5rgtyoSVDvE/vJX1SDJvbzmxV1vTHnoQF1FW81IroO7BktIMxJRepVFOwai
+	b0Lyz14qz8Wa7AzPHeZbltSX7s7onRFuSB74MSqziFwqP47ANBilvT492PUyZLRqpiVpRo4SF8m/I
+	aQAc8VZi6oGLqcOvF8BeLOMKxdbFY6y+L1SRhow9IogpyZ6t69q3QpMvRX+nESWMilNTjrOOauyJx
+	wU89Us49I/FUgGvakX5TRUuJY3CrsRwYBT4Dm3u0/AaH5MCFOlWRcvvOVybBMlVGonqZmzbu6urDg
+	IDd+ziLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHVsP-0005bw-91; Thu, 26 Mar 2020 17:01:05 +0000
+	id 1jHVsn-0005ss-6C; Thu, 26 Mar 2020 17:01:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHVrI-00048q-Cb
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 16:59:57 +0000
+ id 1jHVrK-00049M-26
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 16:59:59 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C249A2076A;
- Thu, 26 Mar 2020 16:59:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 71EC820775;
+ Thu, 26 Mar 2020 16:59:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585241996;
- bh=WOxWjfDmGgg1+ZblWxXKQ7OejY4FNXMxB6c3NNDo23Y=;
+ s=default; t=1585241997;
+ bh=WqWf8eNck8zzklsL8CT7yC/cR29ZkC/4yp+5+cuQni8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=a5yS6UI+qIXaocfR3tO4kOzpDdfzRknly4fV8lN/Y+PTW38wpngB7+Kd9aHPD6wNf
- zpF/TOJg8TJ+YEla3iNTKBnNBcoPVTdzIDMrpikCjVr43EkanYnwZv+9HdSQPySgxF
- QtlG8IXCFTTfpDnQ48/jz68+2S8GYYvxaPl0dkHk=
+ b=z0JnADcL7reZbpz2hS+behuXijTSO5D3D6TN1XmyNf2f8lE/s4Ts8WVIsGRuOhfpq
+ 14b3oQo3fo+Wzr+Ie1w2FNxfrODOwCMqikbRV8BevLNapovPLZU6giqlJS37FXYl8D
+ W/fKY9ZhTiIBEitSv8SenlLeNGZi87vpRfCPeSv8=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] efi/libstub/arm64: avoid copying the kernel unnecessarily
-Date: Thu, 26 Mar 2020 17:59:04 +0100
-Message-Id: <20200326165905.2240-2-ardb@kernel.org>
+Subject: [PATCH 2/2] efi/arm64: increase the PE/COFF alignment so the kernel
+ can run in place
+Date: Thu, 26 Mar 2020 17:59:05 +0100
+Message-Id: <20200326165905.2240-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200326165905.2240-1-ardb@kernel.org>
 References: <20200326165905.2240-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_095956_452451_CC8E1831 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20200326_095958_144502_8C34F69B 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,36 +86,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the UEFI firmware has loaded the kernel at the right alignment, and
-we are running a relocatable kernel, there is no point in copying the
-kernel to a different place in memory, and instead, we can just run it
-in place.
+Update the PE/COFF metadata so that the UEFI image loader will load the
+kernel image at an offset that allows it to execute in place.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/firmware/efi/libstub/arm64-stub.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ arch/arm64/kernel/efi-header.S | 2 +-
+ arch/arm64/kernel/image-vars.h | 7 +++++++
+ 2 files changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-index 9254cd8ab2d3..d263f504dcf0 100644
---- a/drivers/firmware/efi/libstub/arm64-stub.c
-+++ b/drivers/firmware/efi/libstub/arm64-stub.c
-@@ -104,6 +104,15 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 					  (u32)phys_seed);
+diff --git a/arch/arm64/kernel/efi-header.S b/arch/arm64/kernel/efi-header.S
+index 914999ccaf8a..f9ee1c2a5fd6 100644
+--- a/arch/arm64/kernel/efi-header.S
++++ b/arch/arm64/kernel/efi-header.S
+@@ -32,7 +32,7 @@ optional_header:
  
- 		*image_addr = *reserve_addr + offset;
-+	} else if (IS_ENABLED(CONFIG_RELOCATABLE) &&
-+		   IS_ALIGNED((u64)_text - TEXT_OFFSET, EFI_KIMG_ALIGN)) {
-+		/*
-+		 * If we are relocatable and were loaded at a suitable offset,
-+		 * there is no need to do anything and we can just execute in
-+		 * place.
-+		 */
-+		*image_addr = (u64)_text;
-+		return EFI_SUCCESS;
- 	} else {
- 		/*
- 		 * Else, try a straight allocation at the preferred offset.
+ extra_header_fields:
+ 	.quad	0					// ImageBase
+-	.long	SZ_4K					// SectionAlignment
++	.long	PECOFF_SECTION_ALIGNMENT		// SectionAlignment
+ 	.long	PECOFF_FILE_ALIGNMENT			// FileAlignment
+ 	.short	0					// MajorOperatingSystemVersion
+ 	.short	0					// MinorOperatingSystemVersion
+diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+index be0a63ffed23..7a7fa3ba7b2f 100644
+--- a/arch/arm64/kernel/image-vars.h
++++ b/arch/arm64/kernel/image-vars.h
+@@ -15,6 +15,13 @@
+ __efistub_kernel_size		= _edata - _text;
+ __efistub_primary_entry_offset	= primary_entry - _text;
+ 
++#ifndef CONFIG_RELOCATABLE
++PECOFF_SECTION_ALIGNMENT = SZ_4K;
++#elif THREAD_ALIGN > SEGMENT_ALIGN
++PECOFF_SECTION_ALIGNMENT = THREAD_ALIGN;
++#else
++PECOFF_SECTION_ALIGNMENT = SEGMENT_ALIGN;
++#endif
+ 
+ /*
+  * The EFI stub has its own symbol namespace prefixed by __efistub_, to
 -- 
 2.17.1
 
