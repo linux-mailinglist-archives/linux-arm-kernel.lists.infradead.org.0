@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D637019403A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:47:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49CC419400C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:45:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MaNwb3gitXTyQ+w0p+cDeTEhQF0S8602DbLAH0DBcXQ=; b=U95MPycjBw0saQ
-	0HAleNTmgdCkaRI0LZrMDR6PyOnWiH4E24S7TiDBUGkp+Qfz/8P052B62HvTDyqi/m9PuOZdzCnPu
-	sLoPMdEcKhdT0EkbtrXOJgdekpGAhyUTk2XsPKQP0CzzkbuEribBLSoVaHBUxLm6g2JQUwFygt9T7
-	2IsUuBfbI2P/QdxmX12MNgoiT02TS2nFutF3yrj55YM+2C/R9bSy5AzTBtsxb6Oe/l2GW5nSqFVh5
-	kSDUWFeg68+6v6EDZlp0ymfgcvrbz6xX8A7O61JKpf5DCtLK2fhzDV7DefyoF9sV8lmlSQZs4bS96
-	SbtzWK3/w7KssydXtmJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xbgs0G6lHaVGmsyFPjvb3jPQo0FK/aD8Faz4aDLEt98=; b=GPyRxwQP+HN7aC
+	Eds1F7piV5q6DESFSmWVLo3647bZNzBPy2G2vP15kwI0U4A8ed3NrvQqoDNOuOLfoWzc92OaLShQv
+	7r3EvpzFVH1hCKz0YQFWcZJEsFYhsnZym5GGwQWfaip8XotMxoDt5YbPFgb8YznU/PrtBye2mZ1K/
+	HVbnhYB26rFuo0bffXPXVskVOKfrvep3t3OdfbQLIrXdnuBR/MZ1SNtud3vHJCZXtXJwgQH3Ers8l
+	m1znOdYZZ4/Fu3jTpTAK6iXzORlETiWLCB9HKF2AxZBJj3guZnbLHFIOiHezpbxlqWLh8AlXc/VpQ
+	G6loVxoFXcYI478f+LbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHSr7-0007PF-3J; Thu, 26 Mar 2020 13:47:33 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jHSpE-0005b9-Tw; Thu, 26 Mar 2020 13:45:36 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHSox-0005ff-TI
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 13:45:21 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a81so7049013wmf.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 06:45:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=E2Nej3PvIghRUOKzyBo4bIwNfTfqhNtg3/diQuBc7As=;
- b=EBSK+E9NDW6/g5NS8KEfKOXbeCyuAzwOTDTO1vQwh0l3zrv8Q2tyK/LrydSklc4JX+
- pqsTOR4naUDFKVaVpM1TqekGxLf2R03Yg30rMeFkiES78oulP5qC5aCOZ66Ku27ITvYq
- OVevZUCL3r8VcaWFHv9qIPfi5YBlHdnrk2HJiQGdHpq1h4T7m3VLpePVbjr5hM6yCWu6
- +w1U1yZCLQJt16R2im4++WMu1WiU7m2qkpA0eOum52mdnKyyjQqUWYrMxmxu3Yrs5dxt
- lxOFJOZmCbfFlS3sErPEPe/+Lj5XimXNaignHRINQQKQ5JzcTo6a4XJeC85hfOe0nsQ6
- E6dQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=E2Nej3PvIghRUOKzyBo4bIwNfTfqhNtg3/diQuBc7As=;
- b=TDSZchZmX/qQ+0F8TwTDRWnkkEGWlADbY9ErbTLbz8mf4KIB5DBxtldpWLpa98xCH/
- ithMyh5AzalxKnc15hhxqO2wjHVsInDQzRczwSjYsTLramkSU0CXErduuX9v4QHsn0hQ
- 9WY6w4eG+XiD6HJAn0QWOcH8tg5bR8chrwyYKXLDsq81LfMS6KKaI6QCxkW+XR9AmWd7
- Bwbxn8vfK2KtHZjLzZ/O8mYW4suyDsIIo4cU5YJ2zuqCIbPvseZYNJzkzCdOGvIOWkwn
- tOnRV7ZvhwUpf0VwYncnC9lUn+z9Tvh3kP/JpjhXS5rGJ3+tvJo/TGPhpTlodqkWEmcw
- HvAA==
-X-Gm-Message-State: ANhLgQ3zw21I7RKbVUtBKdOsxsGXB7RueiY8/Z+lGXqQo8g6A4dANGbP
- kEcEg2r2/SYsoHDG/SK3DthxFA==
-X-Google-Smtp-Source: ADFU+vvlZVniCdthaZ5Ps9LD3FGyRxckA9MDLoj9Ko1f8T/NE7VRmePqEkNAlyEGnn9joVshcbaFYQ==
-X-Received: by 2002:a7b:cb42:: with SMTP id v2mr43647wmj.170.1585230317388;
- Thu, 26 Mar 2020 06:45:17 -0700 (PDT)
-Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id h29sm4079617wrc.64.2020.03.26.06.45.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 06:45:16 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: kishon@ti.com, balbi@kernel.org, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com
-Subject: [PATCH v2 05/14] usb: dwc3: meson-g12a: check return of
- dwc3_meson_g12a_usb_init
+ id 1jHSop-0005ZY-6i; Thu, 26 Mar 2020 13:45:12 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id B1542AB3D;
+ Thu, 26 Mar 2020 13:45:09 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH] ARM: bcm2835_defconfig: Enable fixed-regulator
 Date: Thu, 26 Mar 2020 14:44:57 +0100
-Message-Id: <20200326134507.4808-6-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200326134507.4808-1-narmstrong@baylibre.com>
-References: <20200326134507.4808-1-narmstrong@baylibre.com>
+Message-Id: <20200326134458.13992-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_064519_980622_34905674 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_064511_439412_6C287DD5 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,39 +62,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The dwc3_meson_g12a_usb_init function can return an error, check it.
+This regulator is now used to control the SD card's power supply on the
+Raspberry Pi 4.
 
-Fixes: e3e716e6b889 ("usb: dwc3: Add Amlogic A1 DWC3 glue")
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Suggested-by: Stefan Wahren <stefan.wahren@i2se.com>
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/usb/dwc3/dwc3-meson-g12a.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm/configs/bcm2835_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-index 41bcbd31fe4e..69381c42a6d3 100644
---- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-+++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-@@ -588,7 +588,9 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
- 	/* Get dr_mode */
- 	priv->otg_mode = usb_get_dr_mode(dev);
- 
--	dwc3_meson_g12a_usb_init(priv);
-+	ret = dwc3_meson_g12a_usb_init(priv);
-+	if (ret)
-+		goto err_disable_clks;
- 
- 	/* Init PHYs */
- 	for (i = 0 ; i < PHY_COUNT ; ++i) {
+diff --git a/arch/arm/configs/bcm2835_defconfig b/arch/arm/configs/bcm2835_defconfig
+index 8e7a3ed2a4df..44ff9cd88d81 100644
+--- a/arch/arm/configs/bcm2835_defconfig
++++ b/arch/arm/configs/bcm2835_defconfig
+@@ -103,6 +103,7 @@ CONFIG_WATCHDOG=y
+ CONFIG_BCM2835_WDT=y
+ CONFIG_MFD_SYSCON=y
+ CONFIG_REGULATOR=y
++CONFIG_REGULATOR_FIXED_VOLTAGE=y
+ CONFIG_REGULATOR_GPIO=y
+ CONFIG_MEDIA_SUPPORT=y
+ CONFIG_MEDIA_CAMERA_SUPPORT=y
 -- 
-2.22.0
+2.25.1
 
 
 _______________________________________________
