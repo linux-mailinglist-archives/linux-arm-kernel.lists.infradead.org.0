@@ -2,71 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33890193AD3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 09:29:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1869F193B24
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 09:37:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FoGdCptgydE3TWdoo9W0vB+aKsQEwKVZVhJwhkaRLW8=; b=gQ4riKhSgGLfea
-	hnsWS3QDGhBVFn2lkYtACD8J+WiZ/g7OOdm5uP3pBK7E/ypp/eFoc7fSgiRYnDdge9b/4fgDm9kRd
-	lX8cwO5KpmQxu149usC2X53QSGPN4+2X0MAifpgBJE1Yr3JXhcKX+AnxpnM6d/k68Ns28t6XwU8NE
-	jtIXJzSsiAbgf/tj8/axX5wyx5eoEFEQ44B4ltMNSdYySceTIcknF2QoOA/mEyhx5Gl/kuM3bbwZ8
-	homg5mocMlrWEnaExe6DFrH1Uu7enGmOcem2dw2D1EnL6e9deBv2dscIYaonqhoA0p5Qp7X5553Gv
-	eB2UyOObd+RhD+p0Jvlw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Teq5h7Dn/FFGe0PjKE0svDVsBvbhj9v6ux/GTtslyNQ=; b=Fi7a9kZPl+KTxv
+	EGMVhIlDSCl407dZi+VDAxbmHAh7xPLNSwtz/R4IPSqsxuMZl21UQHbx6GMRFKOAvKlpFfVbZpCYY
+	8L5MyAbKGLVSkEeTa3ott8LypKkLE0FI20PjPaMMMZ+6870SVzN3Oi9UCnYp+JRuUWl6kyribMHuH
+	+q5Ne9UtaEFq/7f6XT0DvSeRVRZ31FaMdiJlMuOJc7qH5aEV42SpaUCZg41tSacTHVRVhW5knhJEd
+	npbpx9puBVhcmp/mdarH2S3Q1C6djhPUlOhBv0H85Pq8RV1jGSE2wYbpJ04X/SA5fPRkLN50JBjpi
+	lWmbfK1yXqy4Yzs0UuRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHNsl-0006JP-JX; Thu, 26 Mar 2020 08:28:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jHO18-0001hP-H7; Thu, 26 Mar 2020 08:37:34 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHNsb-0006Iv-OI
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 08:28:47 +0000
-Received: from coco.lan (x2f7f9e9.dyn.telefonica.de [2.247.249.233])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B6C32070A;
- Thu, 26 Mar 2020 08:28:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585211324;
- bh=ReDk69Qo37KGy5ASDUUx4h0c+v4mtaJXcZof+Spm6f8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=cEKU4NWO3blZyQDp6TDlbUH4YgHggIHDgjZhGXM9W+34CNHB6B+UmI9Ie5EYGBW2p
- bMBWfeoXZXL7xAQDrudpzEMD9rHD73/y5qEoyuMq6xsXcoC0aL/Zkj83aHRFE9lwO/
- 1ARof01IFCY54Qj2o3g1kW5vPx6rPRmAbqxCmQBo=
-Date: Thu, 26 Mar 2020 09:28:32 +0100
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH 0/4] media Kconfig reorg - part 2
-Message-ID: <20200326092832.069a4d17@coco.lan>
-In-Reply-To: <20200325221343.GW19171@pendragon.ideasonboard.com>
-References: <cover.1585151701.git.mchehab+huawei@kernel.org>
- <6fadc6ea-8512-03ba-da30-43c64d7562f6@collabora.com>
- <20200325223820.1c74aed3@coco.lan>
- <20200325221343.GW19171@pendragon.ideasonboard.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1jHO0y-0001gF-Cf
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 08:37:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w10so6660727wrm.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Mar 2020 01:37:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=pXR82osHIkK+BAujG1JZhhCQ8WhSN81meh6IAg+eIhY=;
+ b=Ub7Ye3VqwM2djDzizU6cSyxA3L3kJlmoDWEL3/sRxrgMsxi5ek3FWL5WuB2NSlh+Id
+ JgrPaNcjtBEDrM5M0SaZWt+201gkW10H+dcn9DxSzqjW5JOy84nF26gdbDAxFwZzCNTN
+ VtAA3u0ovxjRSkfvIgAVjUniM/avIaXnoHRb9XXGJUBLYC2YT2VUFsIYNNOps9OUZMeK
+ WGAAqlRaSMSU639OznxEdrHAr5lliv9tGj6li6m05s4Q88wrQ25TeqnsbXwXBPucnb+k
+ l0aCfXqU3QePgij9m+m119sYDTdRGYNR2xyIbWEHoHx0E/qJm2Po1jKd/oHGfcWYXeCn
+ QUMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=pXR82osHIkK+BAujG1JZhhCQ8WhSN81meh6IAg+eIhY=;
+ b=ApKXeqjDgXAwhsYif2T4TDfGaRmquFnckUq6/P0imUpVcBBQQeT2pMJKJI/QfL/ZVf
+ P18nKcnVC5Ml7vo/W9+KHz6Sj5Ve2QBEq3yThlL4U6wDuOM5RM5qMt5EIuccctXRt5ar
+ d23mYpeu6rvfsrPBbfx7Wiw9nRL4D/vKQlUrnL8VEQFKZtmIMxkwoc0iRwfV3uM5S4MW
+ DrjbqOP5PlTnoRNy6YgucimjOav1NWlCzlUnfBVQ+Rffo9lHQWSldCs4xTGq8iWIkhs5
+ nDGuPgn/2evYH3WoJAXYWwu7HtZ8bfYsDCwUKtBx1kgzwCVG+4AOW5AgVteCeLBEsPV9
+ CtEA==
+X-Gm-Message-State: ANhLgQ1cVn9nn4PBdCyf8jKcFZ33MVIR5yQ6V+wJYDLgjOowQnFReczZ
+ N4fTrE185HcGmyqmUI/XQKjBiw==
+X-Google-Smtp-Source: ADFU+vsYjTqfEWPknLjNwIub37ZfUBmR6EQVrktciDTTfd+VYo7Gj0t8gLB5S6/mFNn+5Z/4WT4x9A==
+X-Received: by 2002:a5d:574b:: with SMTP id q11mr7894476wrw.417.1585211839977; 
+ Thu, 26 Mar 2020 01:37:19 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
+ ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
+ by smtp.gmail.com with ESMTPSA id b67sm2492273wmh.29.2020.03.26.01.37.17
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 26 Mar 2020 01:37:19 -0700 (PDT)
+Subject: Re: [PATCH 4/4] dt-bindings: Add missing 'additionalProperties: false'
+To: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org
+References: <20200325220542.19189-1-robh@kernel.org>
+ <20200325220542.19189-5-robh@kernel.org>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <88deb8bb-718c-f8ce-885e-dbc122201f16@baylibre.com>
+Date: Thu, 26 Mar 2020 09:37:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200325220542.19189-5-robh@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_012845_835841_445C9BA5 
-X-CRM114-Status: GOOD (  44.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200326_013725_245727_214CE6F7 
+X-CRM114-Status: GOOD (  15.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,218 +149,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Michal Simek <michal.simek@xilinx.com>, "Lad,
- Prabhakar" <prabhakar.csengg@gmail.com>, Pavel Machek <pavel@ucw.cz>,
- Fabio Estevam <festevam@gmail.com>, devel@driverdev.osuosl.org,
- linux-renesas-soc@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Steve Longerbeam <slongerbeam@gmail.com>, Bingbu Cao <bingbu.cao@intel.com>,
- Tian Shu Qiu <tian.shu.qiu@intel.com>, Yong Zhi <yong.zhi@intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Niklas =?UTF-8?B?U8O2ZGVybHVuZA==?= <niklas.soderlund@ragnatech.se>,
- Helen Koike <helen.koike@collabora.com>, Yong Deng <yong.deng@magewell.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Hyun Kwon <hyun.kwon@xilinx.com>, Heungjun Kim <riverful.kim@samsung.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: linux-iio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Guillaume La Roque <glaroque@baylibre.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Lee Jones <lee.jones@linaro.org>,
+ linux-clk@vger.kernel.org, Lars-Peter Clausen <lars@metafoo.de>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Zhang Rui <rui.zhang@intel.com>, Brian Masney <masneyb@onstation.org>,
+ Michael Hennerich <michael.hennerich@analog.com>, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
+ netdev@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Hartmut Knaack <knaack.h@gmx.de>, linux-media@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Thu, 26 Mar 2020 00:13:43 +0200
-Laurent Pinchart <laurent.pinchart@ideasonboard.com> escreveu:
-
-> Hi Mauro,
+On 25/03/2020 23:05, Rob Herring wrote:
+> Setting 'additionalProperties: false' is frequently omitted, but is
+> important in order to check that there aren't extra undocumented
+> properties in a binding.
 > 
-> On Wed, Mar 25, 2020 at 10:38:20PM +0100, Mauro Carvalho Chehab wrote:
-> > Em Wed, 25 Mar 2020 16:36:31 -0300 Helen Koike escreveu:  
-> > > On 3/25/20 1:03 PM, Mauro Carvalho Chehab wrote:  
-> > > > That's the second part of media Kconfig changes. The entire series is
-> > > > at:
-> > > > 
-> > > > 	https://git.linuxtv.org/mchehab/experimental.git/log/?h=media-kconfig    
-> > > 
-> > > I made a quick experiment (using this branch) with someone who works with the kernel for his master degree, but doesn't have much experience in kernel development in general.
-> > > I asked him to enable Vimc (from default configs, where multimedia starts disabled).
-> > > He knows that Vimc is a virtual camera driver, and this is how he behaved:
-> > > 
-> > > === Start of experiment:
-> > > 
-> > > * He pressed '/' and searched for vimc to see the location path.
-> > > * Then he enabled "Multimedia support" and went straight to "Media drivers" (which just shows USB and PCI).
-> > > * He went back to "Multimedia support", entered "Media device types" and enabled "Test drivers".
-> > > * He went back to "Media drivers" again and didn't find Vimc (nothing changed in this menu).
-> > > * He seemed a bit lost, going back and forth in the menus a couple of times.
-> > > * Then he pressed '/' again to search for vimc and see the location path, and he realized that there
-> > > should be an option called "V4L test drivers" under "Media drivers" that is not showing up.
-> > > * He went back to "Media device types" again and start re-reading the options.
-> > > * He selected "Cameras and video grabbers" ant went back to "Media drivers".
-> > > * He sees "V4L test drivers", selects it, and enter this menu.
-> > > * He selects "Virtual Media Controller Driver".
-> > > 
-> > > I asked his impressions, and he mentioned that he thought that enabling just "Test drivers" would be enough, without need
-> > > to combine "Test drivers" with "Cameras and video grabbers".
-> > > He also asked me why virtual drivers should be hidden, and he mentioned that the word "Virtual" in front would be enough.
-> > > 
-> > > Then I showed him he could have disabled the option "Filter devices by their types" to see everything at one (which he didn't
-> > > realized by himself until that moment, nor tried it out to see what would happen).
-> > > 
-> > > He mentioned that hiding is nice, because it shows less options, but not very nice to search for something.
-> > > He also mentioned that if he had understood the filter mechanism from the start, he would have disabled "Filter devices by their types" sooner.  
-> > 
-> > That's easy to solve: all it needs is to add something similar
-> > to this at drivers/media/Kconfig:
-> > 
-> > 	+	comment "Drivers are filtered by MEDIA_SUPPORT_FILTER"
-> > 	+		visible if MEDIA_SUPPORT_FILTER
-> > 	+
-> > 	+	comment "All available drivers are shown below"
-> > 	+		visible if !MEDIA_SUPPORT_FILTER
-> > 	+
-> > 	menu "Media drivers"
-> > 
-> > 	source "drivers/media/usb/Kconfig"
-> >   
-> > > === End of experiment
-> > > 
-> > > This was just one experiment from one person, I'll see if I can get some other people from lkcamp.dev group to also check
-> > > and send us their impressions. I think it would be nice to get more data about user experience, from people that are not used to
-> > > kernel development (kernel dev newbies for instance).
-> > > 
-> > > Just another remark from me:
-> > > 
-> > > From the default config, "Media drivers" shows USB and PCI,   
-> > 
-> > Well, assuming that there are 2 billion computers, 1% with Linux
-> > installed, and 10% of them have a media device (camera or TV),
-> > we have about 2 millions of people running Linux. That excludes
-> > Android and Embedded devices, where people usually don't touch.
-> > 
-> > During an entire year, there are about 4000 of Kernel developers 
-> > that has at least one patch accepted upstream (this number
-> > includes developers for Android and other SoCs). Also, the 
-> > number of Kernel developers submitting patches upstream for the
-> > media subsystem is around 20-40 people along an year.  
+> Ideally, we'd just add this automatically and make this the default, but
+> there's some cases where it doesn't work. For example, if a common
+> schema is referenced, then properties in the common schema aren't part
+> of what's considered for 'additionalProperties'. Also, sometimes there
+> are bus specific properties such as 'spi-max-frequency' that go into
+> bus child nodes, but aren't defined in the child node's schema.
 > 
-> $ git log --since 2019-01-01 --until 2020-01-01 --no-merges -- drivers/media/ | grep '^Author: ' | sort | uniq -c | wc -l   
-> 215
+> So let's stick with the json-schema defined default and add
+> 'additionalProperties: false' where needed. This will be a continual
+> review comment and game of wack-a-mole.
 > 
-> There's some duplication of e-mail addresses, but it's still roughly an
-> order or magnitude bigger (and it's not counting staging, headers or
-> documentation).
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  .../devicetree/bindings/arm/altera/socfpga-clk-manager.yaml    | 2 ++
+>  .../bindings/arm/amlogic/amlogic,meson-gx-ao-secure.yaml       | 2 ++
+>  Documentation/devicetree/bindings/arm/msm/qcom,llcc.yaml       | 2 ++
+>  Documentation/devicetree/bindings/arm/renesas,prr.yaml         | 2 ++
+>  .../devicetree/bindings/arm/samsung/exynos-chipid.yaml         | 2 ++
+>  Documentation/devicetree/bindings/arm/samsung/pmu.yaml         | 2 ++
+>  .../bindings/arm/samsung/samsung-secure-firmware.yaml          | 2 ++
+>  .../devicetree/bindings/arm/stm32/st,stm32-syscon.yaml         | 2 ++
+>  Documentation/devicetree/bindings/clock/fsl,plldig.yaml        | 2 ++
+>  Documentation/devicetree/bindings/clock/imx8mn-clock.yaml      | 2 ++
+>  Documentation/devicetree/bindings/clock/imx8mp-clock.yaml      | 2 ++
+>  Documentation/devicetree/bindings/clock/milbeaut-clock.yaml    | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-apq8064.yaml  | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-ipq8074.yaml  | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-msm8996.yaml  | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-msm8998.yaml  | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-qcs404.yaml   | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-sc7180.yaml   | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc-sm8150.yaml   | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,gcc.yaml          | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,mmcc.yaml         | 2 ++
+>  .../devicetree/bindings/clock/qcom,msm8998-gpucc.yaml          | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,rpmhcc.yaml       | 2 ++
+>  .../devicetree/bindings/clock/qcom,sc7180-dispcc.yaml          | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,sc7180-gpucc.yaml | 2 ++
+>  .../devicetree/bindings/clock/qcom,sc7180-videocc.yaml         | 2 ++
+>  .../devicetree/bindings/clock/qcom,sdm845-dispcc.yaml          | 2 ++
+>  Documentation/devicetree/bindings/clock/qcom,sdm845-gpucc.yaml | 2 ++
+>  .../devicetree/bindings/clock/qcom,sdm845-videocc.yaml         | 2 ++
+>  .../devicetree/bindings/display/amlogic,meson-vpu.yaml         | 2 ++
+>  .../devicetree/bindings/dma/sifive,fu540-c000-pdma.yaml        | 2 ++
+>  Documentation/devicetree/bindings/dsp/fsl,dsp.yaml             | 2 ++
+>  Documentation/devicetree/bindings/eeprom/at24.yaml             | 2 ++
+>  .../firmware/intel,ixp4xx-network-processing-engine.yaml       | 3 +++
+>  .../devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml          | 2 ++
+>  .../devicetree/bindings/gpio/socionext,uniphier-gpio.yaml      | 2 ++
+>  Documentation/devicetree/bindings/gpio/xylon,logicvc-gpio.yaml | 2 ++
+>  Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml    | 2 ++
+>  Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml    | 2 ++
+>  Documentation/devicetree/bindings/gpu/arm,mali-utgard.yaml     | 2 ++
+>  Documentation/devicetree/bindings/gpu/samsung-rotator.yaml     | 2 ++
+>  Documentation/devicetree/bindings/hwmon/adi,adm1177.yaml       | 2 ++
+>  Documentation/devicetree/bindings/hwmon/adi,ltc2947.yaml       | 2 ++
+>  Documentation/devicetree/bindings/hwmon/pmbus/ti,ucd90320.yaml | 2 ++
+>  Documentation/devicetree/bindings/hwmon/ti,tmp513.yaml         | 2 ++
+>  Documentation/devicetree/bindings/iio/accel/bosch,bma400.yaml  | 2 ++
+>  Documentation/devicetree/bindings/iio/adc/adi,ad7780.yaml      | 2 ++
+>  Documentation/devicetree/bindings/iio/adc/avia-hx711.yaml      | 2 ++
+>  Documentation/devicetree/bindings/iio/adc/lltc,ltc2496.yaml    | 2 ++
+>  .../devicetree/bindings/iio/adc/microchip,mcp3911.yaml         | 2 ++
+>  .../devicetree/bindings/iio/adc/st,stm32-dfsdm-adc.yaml        | 2 ++
+>  .../devicetree/bindings/iio/chemical/plantower,pms7003.yaml    | 2 ++
+>  .../devicetree/bindings/iio/chemical/sensirion,sps30.yaml      | 2 ++
+>  Documentation/devicetree/bindings/iio/dac/lltc,ltc1660.yaml    | 2 ++
+>  Documentation/devicetree/bindings/iio/light/adux1020.yaml      | 2 ++
+>  Documentation/devicetree/bindings/iio/light/bh1750.yaml        | 2 ++
+>  Documentation/devicetree/bindings/iio/light/isl29018.yaml      | 2 ++
+>  Documentation/devicetree/bindings/iio/light/noa1305.yaml       | 2 ++
+>  Documentation/devicetree/bindings/iio/light/stk33xx.yaml       | 2 ++
+>  Documentation/devicetree/bindings/iio/light/tsl2583.yaml       | 2 ++
+>  Documentation/devicetree/bindings/iio/light/tsl2772.yaml       | 2 ++
+>  Documentation/devicetree/bindings/iio/light/veml6030.yaml      | 2 ++
+>  .../devicetree/bindings/iio/pressure/asc,dlhl60d.yaml          | 2 ++
+>  Documentation/devicetree/bindings/iio/pressure/bmp085.yaml     | 2 ++
+>  .../devicetree/bindings/iio/proximity/devantech-srf04.yaml     | 2 ++
+>  .../devicetree/bindings/iio/proximity/parallax-ping.yaml       | 2 ++
+>  .../devicetree/bindings/iio/temperature/adi,ltc2983.yaml       | 2 ++
+>  Documentation/devicetree/bindings/input/gpio-vibrator.yaml     | 2 ++
+>  Documentation/devicetree/bindings/input/max77650-onkey.yaml    | 3 +++
+>  .../bindings/interrupt-controller/intel,ixp4xx-interrupt.yaml  | 2 ++
+>  Documentation/devicetree/bindings/iommu/samsung,sysmmu.yaml    | 2 ++
+>  Documentation/devicetree/bindings/leds/leds-max77650.yaml      | 3 +++
+>  Documentation/devicetree/bindings/leds/rohm,bd71828-leds.yaml  | 3 +++
+>  .../devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml    | 2 ++
+>  Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml   | 2 ++
+>  .../devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml     | 2 ++
+>  Documentation/devicetree/bindings/media/renesas,ceu.yaml       | 2 ++
+>  Documentation/devicetree/bindings/mfd/max77650.yaml            | 2 ++
+>  Documentation/devicetree/bindings/mfd/rohm,bd71828-pmic.yaml   | 2 ++
+>  .../bindings/misc/intel,ixp4xx-ahb-queue-manager.yaml          | 2 ++
+>  Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml      | 2 ++
+>  .../devicetree/bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml  | 2 ++
+>  .../bindings/phy/amlogic,meson-g12a-usb3-pcie-phy.yaml         | 2 ++
+>  Documentation/devicetree/bindings/phy/intel,lgm-emmc-phy.yaml  | 2 ++
+>  .../devicetree/bindings/phy/marvell,mmp3-hsic-phy.yaml         | 2 ++
+>  Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml    | 2 ++
+>  .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml    | 2 ++
+>  .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml    | 2 ++
+>  .../devicetree/bindings/pinctrl/aspeed,ast2600-pinctrl.yaml    | 2 ++
+>  .../devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml          | 2 ++
+>  .../devicetree/bindings/power/amlogic,meson-ee-pwrc.yaml       | 2 ++
+>  .../devicetree/bindings/power/reset/syscon-poweroff.yaml       | 2 ++
+>  .../devicetree/bindings/power/reset/syscon-reboot.yaml         | 2 ++
+>  .../devicetree/bindings/power/supply/max77650-charger.yaml     | 3 +++
+>  Documentation/devicetree/bindings/ptp/ptp-idtcm.yaml           | 2 ++
+>  .../devicetree/bindings/regulator/max77650-regulator.yaml      | 3 +++
+>  .../devicetree/bindings/reset/amlogic,meson-reset.yaml         | 2 ++
+>  .../bindings/reset/brcm,bcm7216-pcie-sata-rescal.yaml          | 2 ++
+>  Documentation/devicetree/bindings/rng/amlogic,meson-rng.yaml   | 2 ++
+>  Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml        | 2 ++
+>  Documentation/devicetree/bindings/rtc/renesas,sh-rtc.yaml      | 2 ++
+>  Documentation/devicetree/bindings/rtc/st,stm32-rtc.yaml        | 2 ++
+>  .../devicetree/bindings/serial/amlogic,meson-uart.yaml         | 2 ++
+>  .../devicetree/bindings/soc/amlogic/amlogic,canvas.yaml        | 2 ++
+>  Documentation/devicetree/bindings/sound/adi,adau7118.yaml      | 2 ++
+>  Documentation/devicetree/bindings/sound/qcom,wcd934x.yaml      | 2 ++
+>  Documentation/devicetree/bindings/sound/renesas,fsi.yaml       | 2 ++
+>  Documentation/devicetree/bindings/sound/samsung,odroid.yaml    | 2 ++
+>  Documentation/devicetree/bindings/sound/samsung-i2s.yaml       | 2 ++
+>  Documentation/devicetree/bindings/sram/qcom,ocmem.yaml         | 2 ++
+>  Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml | 2 ++
+>  Documentation/devicetree/bindings/timer/arm,arch_timer.yaml    | 2 ++
+>  .../devicetree/bindings/timer/arm,arch_timer_mmio.yaml         | 2 ++
+>  Documentation/devicetree/bindings/timer/arm,global_timer.yaml  | 2 ++
+>  .../devicetree/bindings/timer/intel,ixp4xx-timer.yaml          | 2 ++
+>  .../devicetree/bindings/timer/samsung,exynos4210-mct.yaml      | 2 ++
+>  Documentation/devicetree/bindings/trivial-devices.yaml         | 2 ++
+>  117 files changed, 240 insertions(+)
 > 
-> > So, about 99,9998% of the users using the media subsystems aren't
-> > Kernel hackers. I bet that almost all of those will either need
-> > to enable USB or a PCI driver.  
-> 
-> And the extremely vast majority of these will never enable a kernel
-> option because they will never compile a kernel. They don't even know
-> what a kernel is :-)
-> 
-> > Granted, 99,9998% seems too optimistic, but, assuming that this
-> > would reduce to something like 80% (e. g. only 200 users
-> > would ever try to build a media driver, with is a *very conservative*
-> > number) this is still a lot more than the number of media Kernel
-> > developers.
-> > 
-> > Also, a Kernel hacker will sooner or later find a way to enable it.
-> > A normal user may find it a lot more trickier and will very likely
-> > require more support, if the menus are too technical and the
-> > default options are wrong.  
-> 
-> I'm not sure to follow you. Are you implying that this patch series,
-> which Helen has tested against a real user, not an experienced kernel
-> hacker, may make the configuration options more difficult for kernel
-> hackers, but improves the situation for users ?
 
-Come on, it is not harder for Kernel hackers. It is just different than
-what it used to be before the changes. At the above experience, at the
-very first time this Kernel hacker looked on it, it was able to figure
-out how to enable the driver. I bet that, if you now repeat the experiment
-with the same guy, he would be able to enable another driver a lot quicker.
+For:
+ .../bindings/arm/amlogic/amlogic,meson-gx-ao-secure.yaml       | 2 ++
+ .../devicetree/bindings/display/amlogic,meson-vpu.yaml         | 2 ++
+ .../devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml    | 2 ++
+ .../devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml     | 2 ++
+ Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml   | 2 ++
+ .../bindings/phy/amlogic,meson-g12a-usb3-pcie-phy.yaml         | 2 ++
+ .../devicetree/bindings/power/amlogic,meson-ee-pwrc.yaml       | 2 ++
+ .../devicetree/bindings/reset/amlogic,meson-reset.yaml         | 2 ++
+ Documentation/devicetree/bindings/rng/amlogic,meson-rng.yaml   | 2 ++
+ .../devicetree/bindings/serial/amlogic,meson-uart.yaml         | 2 ++
+ .../devicetree/bindings/soc/amlogic/amlogic,canvas.yaml        | 2 ++
+ Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml | 2 ++
 
-My view is that, with the option of either enable or disable the
-filtering mechanism, it will be easier for everybody:
-
-- Distro maintainers for PCs can just disable platform and
-  test drivers, and keep the other drivers enabled;
-
-- An experienced Kernel hacker will disable the filter and select
-  the needed drivers directly.
-
-- An user wanting to test a driver with new patches (or a new driver)
-  use the filters to select the USB driver he needs (probably using the
-  media_tree.git, in order to see only the media options).
-
-
-> > -
-> > 
-> > Even with that, based on your small experiment (of someone from the
-> > area), I suspect that, if you had asked him to enable, for example,
-> > em28xx or dvbsky (with are some of the most popular drivers
-> > those days), he would be able to enable it a lot faster.  
-> 
-> This is the *only* real piece of evidence we have, let's not assume we
-> know better.
-> 
-> > > and selecting those doesn't do anything, and people can even think
-> > > that, if they want to enable an USB device, just enabling the USB option there is enough (which is not), since no drivers
-> > > shows up.  
-> > 
-> > It is hard to comment on individual experiments. In the past, our
-> > Kconfig system were like that: written for technical people with
-> > background on computer engineering and some experience building the
-> > Kernel.
-> > 
-> > E.g. people that knows that "/" activates a search mechanism at
-> > the Kernel building system.
-> > 
-> > We usually had to spend *a lot of time* both on IRC and on e-mail
-> > explaining people that just want to have their card supported,
-> > how to do that. After the reorg (with added those more user-faced
-> > interfaces), the number of people with problems reduced a lot.  
-> 
-> Don't you think that could come mainly from better support for media
-> devices in distributions ?
-> 
-> > Btw, if one tries to compile from media-build (with lots of users
-> > do), this is even more relevant.  
-> 
-> Can you quantify "lots of users" ?
-
-Enough to make us to decide that re-working the Kconfig menus and 
-add the MEDIA_SUPPORT_* and MEDIA_SUBDRV_AUTOSELECT would worth the
-efforts.
-
-Guess what? The efforts were fully paid, as it reduced a lot the
-amount of time we had to weekly spend helping people to build their
-Kernels in order to test support for their new hardware.
-
-It also helped a lot to set the right Kconfig options on distros.
-I did my contributions on that time by improving Fedora and on RHEL,
-making their build rely on MEDIA_SUPPORT_* and MEDIA_SUBDRV_AUTOSELECT.
-
-See, for some random distro maintainer, new Kconfig symbols pops up
-every time. Enabling all of them is usually a very bad idea. So, a
-filtering mechanism that would, for example, hide test and skeleton
-drivers to be built is a very nice feat, as it means a lot less
-symbols for them to study and decide whether such new options should
-be enabled or not
-
-Thanks,
-Mauro
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
