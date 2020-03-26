@@ -2,83 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 761D9194B02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 22:57:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB368194B34
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 23:05:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NavBTPlD2f9IYINUKlmQ79gnPSU0SBfcqpPHzTitLIc=; b=YrdmhttHTa0B/3
-	auHiiowuS7I98r3t9k8u9s6iIbsT0L/dDMDLPP6MUfi7utHPjqLgrizf4Rirjh2QyEHF5dxHY2z1S
-	rbNN5QCafdPrymnTjXPTzwhUp8W3ySjGNR/Jt06tN4rfNzqAo0/OYMzAmYW1vqrxUj4LBevGTUU+4
-	fYjNBwrSHGjKgJmjacBjjbxCmoSZT3v3IBiQ4LLSOsMszfM4WSF+PDk+HJZslquj6b9y/O7Ak/3P2
-	B6sufK/oH+4YNrYKXJM872QTf1UPJHxaii384CcreBk2UMgKjksWlVNNbKT/XM2XQs5MDz+pxLyS5
-	IEXuctEXSolA9EOYy2OA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7+2KInTFvT3apRGkBrus/KiCekk5pFCypkXgl+xeXus=; b=gGyz1HccF5iyaW
+	eTTocpBnLarVsYrhbj4or7SVn0PEPM5E0+11bHGd69leSDNzl5ecCV5TrOYYaa6gRPLLg4Eosxwbs
+	0CoOUl25xuPacUZwV6LzM2HDqckTllSUQndOgqTT9hMSWVwMu0bm1WVj37N+PwYIN6L9c5yJiI62p
+	yZWnPNJwM23iFMQ6vNpuFRh51nqtna7Q1HKQ+uPvOqOY2O8keKDGDATRWzYKHE0nEpNJAtj3VGSij
+	2RrCkUM7/aFvmErLIs8UXZ+zEUoUj4AAkEPl1tC+XdXH++MezYOQAdrnce8HbvKQmaxpfAnOogj/N
+	FWaM7Ero03KGAfSSSJSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHaVT-0001g0-1v; Thu, 26 Mar 2020 21:57:43 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1jHacn-0005Fc-My; Thu, 26 Mar 2020 22:05:17 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHaVK-0001fd-B6
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 21:57:35 +0000
-Received: from mail-qk1-f177.google.com ([209.85.222.177]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MRCFu-1iuZRf3nds-00N7cC for <linux-arm-kernel@lists.infradead.org>; Thu,
- 26 Mar 2020 22:57:32 +0100
-Received: by mail-qk1-f177.google.com with SMTP id l25so8778405qki.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 14:57:31 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ1s0T/8J+8U/vBFU1r29Ncr1QE7HPP8dwR4q2cn9UvBdDZOxJVQ
- CaoeLZwbVykwmjj4gyG2OTnjD0tp9SlLprl5Kfg=
-X-Google-Smtp-Source: ADFU+vtpvGVQH+EbjmMJ7hsZrZnEe8BKQYMe1NHfk489VKt6CB6UKv1YKZCcjj5D1AW06fEE8kS/I2/nFiUcAer+8tA=
-X-Received: by 2002:a37:6285:: with SMTP id
- w127mr10710320qkb.138.1585259850643; 
- Thu, 26 Mar 2020 14:57:30 -0700 (PDT)
+ id 1jHaby-0004qR-J2; Thu, 26 Mar 2020 22:04:28 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02QLn98F086088;
+ Thu, 26 Mar 2020 21:56:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=jJlpHWqDgAaQnn+x/AibIAVJw425RNnEJVeE/H96C6Q=;
+ b=DkZIPKkvMhi7MgJ7A6372ctDD6ur875QCwmr9LjM6f/gcN5OLsYztXi/9wp7FD338Eh1
+ BcpAaYJlJsPca1+YzPWnvyZLl0/l9jzlAO26D9M2lRz/YnxIOtavH2bdzDl78rbNS7QS
+ w/70j06rpqsxG+rvW1byAPFer6qmmn6ntz8ZtvxuNNNNHPQ6CcnDnqC0fhG48N9veZVg
+ BCfsiKmD0CdRGaJja5RXf7JXI4W1+6Wfb9/4o4noftsF2yrL4eKSp0J70hpbbeGCvHbP
+ j84RfZbN8C8lsTDgCFGpBO0ICKX/8T12IimZxxtb9mIqtc54TXgPLYw1Bv1mXgDOPyi2 vQ== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 2ywavmjcja-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 26 Mar 2020 21:56:24 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02QLpI7M027652;
+ Thu, 26 Mar 2020 21:56:24 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2yxw4ufgb2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 26 Mar 2020 21:56:23 +0000
+Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02QLuAlh008996;
+ Thu, 26 Mar 2020 21:56:10 GMT
+Received: from [192.168.1.206] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 26 Mar 2020 14:56:10 -0700
+Subject: Re: [PATCH 1/4] hugetlbfs: add arch_hugetlb_valid_size
+To: Dave Hansen <dave.hansen@intel.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20200318220634.32100-1-mike.kravetz@oracle.com>
+ <20200318220634.32100-2-mike.kravetz@oracle.com>
+ <831a0773-1ba6-4d72-44b9-7472123b8528@intel.com>
+ <5aceea6a-8dc0-a44b-80c6-94511b5c75ca@oracle.com>
+ <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <530e6e11-ad1a-55bc-e61e-9da6eb7fea21@oracle.com>
+Date: Thu, 26 Mar 2020 14:56:07 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <5e7cdaf9.1c69fb81.7b511.491d@mx.google.com>
- <CAK8P3a0eRw1rn3QzsO0omJHNJ8ftNFJkixBmdmUTGxenDZbZVw@mail.gmail.com>
- <CACRpkdajmVJTmkDjxyKzPW1N58CAP5HsDrc_zZozfqi5OaJo7Q@mail.gmail.com>
-In-Reply-To: <CACRpkdajmVJTmkDjxyKzPW1N58CAP5HsDrc_zZozfqi5OaJo7Q@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 26 Mar 2020 22:57:14 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a3Rcxs-M64cUbHRyEWWS2kE7trrfwDB-iAr+pPDvH3Tig@mail.gmail.com>
-Message-ID: <CAK8P3a3Rcxs-M64cUbHRyEWWS2kE7trrfwDB-iAr+pPDvH3Tig@mail.gmail.com>
-Subject: Re: ux500 warnings, Re: soc build: 52 warnings 2 failures
- (soc/v5.6-rc6-845-ga9295ff5fc977)
-To: Linus Walleij <linus.walleij@linaro.org>
-X-Provags-ID: V03:K1:aYfKLkgkTNP4+U2ogRqjhVRUbaSq1xEUUpX/mTHQfRTO1HZXxfz
- TpZj29XB9XRG8qXmuAbdZX7p/Qk+QRabr3uioJ+MFWayE9gcES2MFcQH7k2P0gap7ddYkVY
- sWYuVjhiXosCkhRz3PDV/EPMp97aA9wj8sNhFdhGVSriKWUjREXnaj1xFJSuWsdOnuvwRR0
- mMMGzOj+L6hWPeKIxjwkQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:+ZDcXdkUPT8=:HJUlhZEW1rmO9vki0hSkw4
- 57mrhjOSYk4D4NZ4YfxYz1Z2iMU87Uu7nODBFqlw9TX+J76WXiiqizDJW7gR0mP0kmWGCcMV8
- c6qCQFCWEqDnGV4w7GR/lQcdoQmjSx4xfXaX0OBjjIq9bEuOcN1pL5/EnRfW1LL96OB3WrzQW
- pC9zcRlNHAk0voB2mj2s1kf3Q6xNuaZDfOA0pgPxfpfOeIZeC1fGwUAXezDLVY73MxtznTBLL
- 86/OA9sYd1ZENyNJsOeGsLSUOAym/3uELfhDyJSMHkDSGcpdtAUzzG+BUy3/K8cILUmAfBdpJ
- 1ybbAfZ6TxjgmE99ibLb/xob6nSjhsPFhZbWZ+s9REQfBJIWcF2p6YI93joNXvPNZ6JQE5b+B
- SOK7g0a43W6qeUhl2AA1vqovEaelt9QTNI0463CWOQGDji4ypsTQX6N1YpALIpVytKP9K7mPY
- juluItO6AQ+Q3UfRjFGNfSgu0Brap0FcX/mtKYfid8nwR7b8mkAUCO6pS4rGIcdTNB7qqgo3c
- DKX6K/Ux/SkUejgDrDSs91SdBnYq0lKHpBLgreFV85Hc4Hct7aNEmyBllf0IMJ8VT1jcbdXOD
- 5J2cEqrb9Q9jCPxVmh8QFQ0IqztvhtjnBMsjGBKX7+FxxTo+iKWjjza48JWwsdECuhuck2onc
- EII467d5JcGJ2Ut3obrGWCpbcFJkqIFJ7FwTofkbpygn7hPC+/SoJlGZhjo937RrIXrpvd9Db
- QbV2o6saBXlgjH3Kobqzsh2oqAdUQU2dohoBnnv7xlOr2k7lfpMsE7sFMJ4UqEtv0gH9KW+rU
- E9Z9jBFNcI2QSdPM58aCZvS6UJKnBuhRdw1lA6TGs4N6iRgUEA=
+In-Reply-To: <1c8b16c7-248e-b75f-96c6-eabc953c5066@intel.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ suspectscore=2
+ spamscore=0 mlxlogscore=999 adultscore=0 phishscore=0 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003260159
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ malwarescore=0
+ priorityscore=1501 mlxscore=0 bulkscore=0 clxscore=1011 impostorscore=0
+ phishscore=0 suspectscore=2 mlxlogscore=999 spamscore=0 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003260159
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_145734_673257_41E54E93 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20200326_150426_747274_2E7B307D 
+X-CRM114-Status: GOOD (  19.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,37 +117,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>,
- Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Olof's autobuilder <build@lixom.net>
+Cc: Albert Ou <aou@eecs.berkeley.edu>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
+ "David S.Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 10:53 PM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Thu, Mar 26, 2020 at 8:29 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > On Thu, Mar 26, 2020 at 5:42 PM Olof's autobuilder <build@lixom.net> wrote:
-> > >
-> > > DTS Warnings:
-> > >
-> > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:203.11-208.7: Warning (avoid_default_addr_size): /soc/mcde@a0350000/dsi@a0351000/panel: Relying on default #address-cells value
-> > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:203.11-208.7: Warning (avoid_default_addr_size): /soc/mcde@a0350000/dsi@a0351000/panel: Relying on default #size-cells value
-> > > /build/arch/arm/boot/dts/ste-href-stuib.dtsi:205.6-16: Warning (reg_format): /soc/mcde@a0350000/dsi@a0351000/panel:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
-> >
-> > These stick out to me (more below). Linus, have you seen them before?
-> > I just merged your ux500 DT series, which may have introduced the
-> > warnings (I have not checked older build logs yet).
->
-> I think Rob recently turned on W=1 on the DTB builds so this is a bit all over
-> the place and we need to iron it out step by step.
+On 3/18/20 4:36 PM, Dave Hansen wrote:
+> On 3/18/20 3:52 PM, Mike Kravetz wrote:
+>> Sounds good.  I'll incorporate those changes into a v2, unless someone
+>> else with has a different opinion.
+>>
+>> BTW, this patch should not really change the way the code works today.
+>> It is mostly a movement of code.  Unless I am missing something, the
+>> existing code will always allow setup of PMD_SIZE hugetlb pages.
+> 
+> Hah, I totally skipped over the old code in the diff.
+> 
+> It looks like we'll disable hugetblfs *entirely* if PSE isn't supported.
+>  I think this is actually wrong, but nobody ever noticed.  I think you'd
+> have to be running as a guest under a hypervisor that's lying about PSE
+> not being supported *and* care about 1GB pages.  Nobody does that.
 
-It's strange though that I only see the warnings for ux500 and none of
-the other platforms.
+Actually, !PSE will disable hugetlbfs a little later in the boot process.
+You are talking about hugepages_supported() correct?
 
-       Arnd
+I think something really bad could happen in this situation (!PSE and
+X86_FEATURE_GBPAGES).  When parsing 'hugepages=' for gigantic pages we
+immediately allocate from bootmem.  This happens before later checks in
+hugetlb_init for hugepages_supported().  So, I think we would end up
+allocating GB pages from bootmem and not be able to use or free them. :(
+
+Perhaps it would be best to check hugepages_supported() when parsing
+hugetlb command line options.  If not enabled, throw an error.  This
+will be much easier to do after moving all command line parsing to
+arch independent code.
+
+Is that a sufficient way to address this concern?  I think it is a good
+change in any case.
+-- 
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
