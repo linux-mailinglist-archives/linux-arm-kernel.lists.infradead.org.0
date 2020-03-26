@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31D9E193DBE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:16:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DD2A193DCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 12:23:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/QmfSASf2mngkOihtsMz3JvVAcFn8f95iHaMPhWwsY=; b=e4SUG0fO6Yb7mw
-	EcjhLK+ixcOr9htNjqz0CXUGok9kjbU20RghTSPAVjU8BUdMgc29Q/TmLGXfB0MmA3xs48bQtIKVi
-	DVw+yygWFHTx2KjcJrAdh1rChSmH/FpsM+Ku5tX9WvVVx/TT0CZpIa2rREauTodqkBKMzxHPx6Rql
-	uPSuUuB4cErcctJ5UhFaBz1cjO47J9FDOgm8+mCNegkj/qPZPPTyy8vJo+YCn45yz4+cxSVo176Rw
-	sZ8ttieWAYCrFBjf/0U9NgbCXHv7XbI1Qndr35mKC+8ztKWtMWvdV1Cz58YyNn+SKVBZxSFTs1uVi
-	vNX/b0MsuWxSjgJrNxlA==;
+	List-Owner; bh=r6NHjDJ0vfRVo65XhFmj0FecfCE6UtqzP7K+BW6Juc4=; b=iElU1vA/rGYQMC
+	ApF1wPl21T2pmWKtsB5W7RW0Nqqqq22atVHNQj122Usl9rnANi6X58fLJHkPr7S9SB9kW78Sz9T3K
+	IyKCeQWm9hdV45JB/DJ/M6WkfQNdcjwBTvkVyDLqVYL9U4ZyQFTO4J1zck3uyYQZqLRgefJgOaRRp
+	riExzpTh4rwinZd6W7nwSxYjDEqeC2Xug3MCdoybq0P8zmR+SCq/nV0LrnSAIEwhZaqy7hgtlla6v
+	vXz8H6kSxDbHpjY57XO7sBmXBWygb9l+fBsmX9YI6grw74zVtGwQ2HEYiOARV0iO+mi2z3JYnUbIG
+	vwV9woW13aANYyujMbrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHQUJ-0003rm-Uj; Thu, 26 Mar 2020 11:15:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHQU9-0003qq-SU
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:15:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD1087FA;
- Thu, 26 Mar 2020 04:15:39 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 531823F71F;
- Thu, 26 Mar 2020 04:15:36 -0700 (PDT)
-Date: Thu, 26 Mar 2020 11:15:21 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
-Message-ID: <20200326111521.GA72909@C02TD0UTHF1T.local>
-References: <20200324203231.64324-1-keescook@chromium.org>
- <20200324203231.64324-6-keescook@chromium.org>
- <20200325132127.GB12236@lakrids.cambridge.arm.com>
- <202003251319.AECA788D63@keescook>
+	id 1jHQbs-0006cP-MJ; Thu, 26 Mar 2020 11:23:40 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHQbi-0006bV-O6
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 11:23:32 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1585221811; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
+ To: From: Sender; bh=V7U5JvFT204MJ8+8hEWOkXRat6eH6xB2Y/6EMB2A6vY=;
+ b=O3rj+28HebTJ4zVXBj0km+r35F+4ZDVk9AKaJ33a77Uld+pell1zZ8VPsUeCLh7p1SCCG6g5
+ gxEC0L1DZpQM4M8KRsigurINJ48gb5PAwbsBKPiuhXALfwbOh9ua7az6SqaGIMa+vm/leYhP
+ jlJBr9F3X2KrnOVnFjV4E12mxVU=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e7c90a1.7fb8da2a1378-smtp-out-n03;
+ Thu, 26 Mar 2020 11:23:13 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 08D50C433F2; Thu, 26 Mar 2020 11:23:13 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from Pillair (unknown [183.83.66.17])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: pillair)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 6C65AC433D2;
+ Thu, 26 Mar 2020 11:23:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 6C65AC433D2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pillair@codeaurora.org
+From: <pillair@codeaurora.org>
+To: "'Evan Green'" <evgreen@chromium.org>
+References: <1580822300-4491-1-git-send-email-pillair@codeaurora.org>
+ <CAE=gft7EOALEMUWzoR3+pjoxCUTYWbiXoXY=dXH1BDhS3KwBzg@mail.gmail.com>
+ <000901d60295$3acc79b0$b0656d10$@codeaurora.org>
+ <CAE=gft7zqbUnx+BULDD+35z2p1=545=jF0=n6kFXZgo3ZTdCHQ@mail.gmail.com>
+In-Reply-To: <CAE=gft7zqbUnx+BULDD+35z2p1=545=jF0=n6kFXZgo3ZTdCHQ@mail.gmail.com>
+Subject: RE: [PATCH v6] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Date: Thu, 26 Mar 2020 16:53:05 +0530
+Message-ID: <000c01d60360$eea25c90$cbe715b0$@codeaurora.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202003251319.AECA788D63@keescook>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQIr1eNiqDxek+JigOIeIUW3T4FxSwDFrKGDAq7vyx4BaNAawqeIIUVw
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_041541_968826_F3E10A4A 
-X-CRM114-Status: GOOD (  17.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200326_042331_420277_4162709E 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,56 +95,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jann Horn <jannh@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
- Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
+Cc: "'open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS'"
+ <devicetree@vger.kernel.org>, 'LKML' <linux-kernel@vger.kernel.org>,
+ 'linux-arm Mailing List' <linux-arm-kernel@lists.infradead.org>,
+ 'linux-arm-msm' <linux-arm-msm@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 25, 2020 at 01:22:07PM -0700, Kees Cook wrote:
-> On Wed, Mar 25, 2020 at 01:21:27PM +0000, Mark Rutland wrote:
-> > On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
-> > > Allow for a randomized stack offset on a per-syscall basis, with roughly
-> > > 5 bits of entropy.
-> > > 
-> > > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > 
-> > Just to check, do you have an idea of the impact on arm64? Patch 3 had
-> > figures for x86 where it reads the TSC, and it's unclear to me how
-> > get_random_int() compares to that.
-> 
-> I didn't do a measurement on arm64 since I don't have a good bare-metal
-> test environment. I know Andy Lutomirki has plans for making
-> get_random_get() as fast as possible, so that's why I used it here.
+Hi Evan,
 
-Ok. I suspect I also won't get the chance to test that in the next few
-days, but if I do I'll try to share the results.
+I have sent out the v7 patch by marking a dependency on the below mentioned series
+https://patchwork.kernel.org/project/linux-wireless/list/?series=261367 
 
-My concern here was that, get_random_int() has to grab a spinlock and
-mess with IRQ masking, so has the potential to block for much longer,
-but that might not be an issue in practice, and I don't think that
-should block these patches.
-
-> I couldn't figure out if there was a comparable instruction like rdtsc
-> in aarch64 (it seems there's a cycle counter, but I found nothing in
-> the kernel that seemed to actually use it)?
-
-AArch64 doesn't have a direct equivalent. The generic counter
-(CNTxCT_EL0) is the closest thing, but its nominal frequency is
-typically much lower than the nominal CPU clock frequency (unlike TSC
-where they're the same). The cycle counter (PMCCNTR_EL0) is part of the
-PMU, and can't be relied on in the same way (e.g. as perf reprograms it
-to generate overflow events, and it can stop for things like WFI/WFE).
+> The clocks are missing:
+> clocks = <&rpmhcc RPMH_RF_CLK2>;
+> clock-names = "cxo_ref_clk_pin";
+These clocks are optional and were required for older firmware.
+It's not needed now.
 
 Thanks,
-Mark.
+Rakesh Pillai
+
+> -----Original Message-----
+> From: Evan Green <evgreen@chromium.org>
+> Sent: Wednesday, March 25, 2020 9:34 PM
+> To: pillair@codeaurora.org
+> Cc: open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS
+> <devicetree@vger.kernel.org>; linux-arm Mailing List <linux-arm-
+> kernel@lists.infradead.org>; LKML <linux-kernel@vger.kernel.org>; linux-
+> arm-msm <linux-arm-msm@vger.kernel.org>
+> Subject: Re: [PATCH v6] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> module device node
+> 
+> On Wed, Mar 25, 2020 at 4:05 AM <pillair@codeaurora.org> wrote:
+> >
+> > Hi Evan,
+> >
+> > I will send out a v7 for this patchset.
+> > Since I have to configure the S2 SIDs, it is dependent on below ath10k
+> patchset.
+> > https://patchwork.kernel.org/project/linux-wireless/list/?series=261367
+> 
+> Ah, right. Thanks for the info, I'll check out that series as well.
+> -Evan
 
 _______________________________________________
 linux-arm-kernel mailing list
