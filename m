@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80DDF193D63
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:57:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1AB3193D66
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:57:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TA441D8ESwKHyIdpYMGmyChYa/MQ+kFdQs/IGsjRbto=; b=duxMMeWLvpnJwv
-	zncCCQCtNpUlOTGc+MSxkwWWIhMJlGpGX5aalYSR5/Ks96EClqxXLMFyV6hTvfD2QtDOKUyleyHfO
-	uc17maLGGcbu/u8R9/AArACCo4JibwH/8YfyxPLencl2E2rHyxYwGGshwXHmqclY3a+b3P6ecyr5V
-	KE8DI6grxN27BsdrlFqbeQlVbev9VxRWeB/Ke3THZJcPsICdON7j6N/IdEzG9RIr+vNRJ8FU+IpZY
-	70LwXLxImO7O22qgEMm4vOK4PSIBKo4wFgksceeWihlndeA+OO1SkcgWpQE7aQdh4q3ckePgy9XjE
-	9eL/yGPHJnmcrA51Dclw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DtTRK5lgoPxaUY8s6F40qeu59h8iEdw7DgvvBTS2Cgo=; b=X42Gs7qlBXMUT2
+	Jz6VQLbMAO1bx7wAa4p8moRp6ApT5cE50KmEf/T4lrS9DZyZUXbJXCsVM4A4LRwCrwr8B0v+nfIDK
+	uqVdrPnQmGgLH1dqJFoZ3Fc9i3CEW2+Medp8/MV13LGXMlWr9Cat5gbRfdFDV+UPrnOrQM4j9c7En
+	bhuBn36SWIxnlOWi6q6BPtf+XuUDFyqaEzVPzcKYhm5HV3Dbck+0E7KessHDJwUqSxK/E1Z+aDRYx
+	iUqR/ntCYOVBhmbGWjJmzrOoIpCqTpOdAxIYTxv3uuAhVO5uBUhA6jZxYjXJyUgJSiBVJ6C42LviJ
+	fGty+lTNyUprG2ihUDdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHQBp-0003K5-MX; Thu, 26 Mar 2020 10:56:45 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1jHQC9-0003Se-P0; Thu, 26 Mar 2020 10:57:05 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHQBh-0003J1-2b
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:56:38 +0000
-Received: by mail-lf1-x136.google.com with SMTP id j11so4413577lfg.4
+ id 1jHQBh-0003J3-Sy
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:56:39 +0000
+Received: by mail-lj1-x243.google.com with SMTP id g27so5850540ljn.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 03:56:36 -0700 (PDT)
+ Thu, 26 Mar 2020 03:56:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=47qXZzwAbKRjmlZIR98ky/JOV75sfZwm8sWlwjShF8c=;
- b=EGCqvfJE6vR1DAd9s5QD9Lz37cQED2VqxH8++YisKkjfp+p7F8m2Y71LDftQBpb/2n
- i5VgyFZ9WS8uu99Tqbsk26tLxx8VfPW2OQl5zqQ8Y7AtEKez9H72KpmrpqdZ9HDTCCX4
- /7w+vI3ihA0ONx8vYXi6P9G41+zT2cquEvOCqPZhp1QKQcGeoXiYyDVE/vplychWsqje
- P79LblH0YEbwBPDoDKyXQd6hF8RY5vEk5YhEJ1efuYiLPVx4yd+X/chm+hWLcGnZ0BWN
- iVID2OyJ58JpmCSQjz4O+fKvPfnXg4za+xEf7Upx9Cx5aS+GNZRwLpNMFjJP14qQc5yU
- HIJw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=TuuxQjjiHA1MwNowGgc6IZfr8zLQ9maUJaFARjpxln4=;
+ b=hV+MlhyXKY0QLDls81FMrAiwg7WjsXZvFNFQpl2GZ/rfzLdj3av/7+1J0ptLNp+gzl
+ QbmKraoSSQviudWxJnYf0uzene7qz/a1lthvBy9lXmwaFz8FGa0P63JCqCUgMPg8TOvw
+ sie5B0tgIFW8DTK6G2OSw9IULaAYxRDsqQau3ubnC1FLHieQEEsTQtpeBPvkA10fE1A1
+ tNICUqoXP4fOY1uGOw2Nf2rscKjTfD0CEkyNQZrAiCOQUOtOKWd/Zu8Xk/JLwZbdXrDU
+ voFxWswR7S7twoZlfFLmDIzPJnPoGOCcEScswPEsOoF3SSexlMpcx2Zq96b5SBtiCJOb
+ wnNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=47qXZzwAbKRjmlZIR98ky/JOV75sfZwm8sWlwjShF8c=;
- b=GGgmYWhviVZBlY2eb3oNrd0FCxIO1SV//z/dquQqn65085rm1+VtvuZVflSRkSQ2Sn
- 2HPw1+31zR0iICTA/dh5VFxe502yuh4s9n0LuJU+AvJaZK3ph1mLlprxLjWfT0oPoxn8
- cS3JZKcjZDGflTf7C+2NXgwuVKFP+aKpZW/8uxTCVQdXecbqUbroimyoKZderEZ8FArx
- ulITdl3axt6zbk8elM/a3Y8T/qYPbEnzEQDtfcY4/aXbZM0zpIFMrz1uM2ZpHINNa6NV
- maEH8A/bSAYBSYYi6cLh1/EIZHJ3RB+C87K+TNcjyOR/1DaTmCR/yXEX7lG7429a5w1p
- HNjg==
-X-Gm-Message-State: ANhLgQ0s+yIPaZFbGdU0fDE4WagnZtuQNLseXqBpSv7tLUjir/4v5XLh
- kBKNVmPo4il+XpatIbhWCGr1Pw==
-X-Google-Smtp-Source: ADFU+vvS1OdyK1KZuc0v+FzxWV0LS3mwrT/slQOOveM59Ax919FAfDjO8Iw+zFw0NGknj1fhGBUQFg==
-X-Received: by 2002:a19:4cc2:: with SMTP id z185mr5441924lfa.0.1585220194880; 
- Thu, 26 Mar 2020 03:56:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=TuuxQjjiHA1MwNowGgc6IZfr8zLQ9maUJaFARjpxln4=;
+ b=Jkz0Tgz0JkScFc2DBzy61lacKI6upF3S2vc+UzfhSfKSa7GD/Sfo8Tb4I2gsa3EMAr
+ EqMj6GORyx+WDT5SmDC8hisKoyObc1vb4pbO0WJUGVx6E4DRfY2SN+oGMdXblpM5STO6
+ XM5HJiarddz74oWGCul9bZ4m3NeBq7VC3rk0LYS1uel+8DNVKm3GmKNVRaBmvVc1aYqR
+ CnTZGvnJTYTAPtBE/9vNdzflM4QN8w2vozi8g9mSk1e862jAJZn43lCUtvtZVVkMb3NK
+ tli8ORErLE7zPGx6W++a9aRdYUmxb5NUeoPx/pI1h4QLu72DlurffTYIII00hhXN9Rgk
+ Z4bg==
+X-Gm-Message-State: ANhLgQ1EkfIr/AHKXaQ7+vF3ndpfQT/4/8yn4LeeZ0KpMf/WY0fOrU42
+ oo1oj+/9N+r7i9Uy0Q9J93NrqQ==
+X-Google-Smtp-Source: APiQypIh0oKPTy0rPtj3JtcsUXTdtYTXgTC+JrTuULTRNCFGhf6dAq2avCL1mE/6d8eDRPImbNdr2A==
+X-Received: by 2002:a2e:9013:: with SMTP id h19mr4933294ljg.101.1585220196103; 
+ Thu, 26 Mar 2020 03:56:36 -0700 (PDT)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id z17sm1214653ljm.19.2020.03.26.03.56.33
+ by smtp.gmail.com with ESMTPSA id z17sm1214653ljm.19.2020.03.26.03.56.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 03:56:34 -0700 (PDT)
+ Thu, 26 Mar 2020 03:56:35 -0700 (PDT)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>,
 	devicetree@vger.kernel.org
-Subject: [PATCH 0/2] dt-bindings: A few updates to PSCI and power-domain
- bindings
-Date: Thu, 26 Mar 2020 11:56:24 +0100
-Message-Id: <20200326105626.6369-1-ulf.hansson@linaro.org>
+Subject: [PATCH 1/2] dt-bindings: arm: Add some constraints for PSCI nodes
+Date: Thu, 26 Mar 2020 11:56:25 +0100
+Message-Id: <20200326105626.6369-2-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200326105626.6369-1-ulf.hansson@linaro.org>
+References: <20200326105626.6369-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_035637_129535_9A728C10 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20200326_035637_932281_2CD72F3D 
+X-CRM114-Status: UNSURE (   9.59  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -76,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:136 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,17 +108,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Recent updates to the PSCI and the power-domain DT bindings, deserves some
-additional improvements on top. This series takes care of this.
+There's no point allowing anything else but "psci" for the corresponding
+nodename of the PSCI node, so let's make this an explicit requirement.
 
-Ulf Hansson (2):
-  dt-bindings: arm: Add some constraints for PSCI nodes
-  dt-bindings: power: Fix example for power-domain
+Moreover, let's also prevent additional properties, which also allows a
+better verification of the "patternProperties" bindings for subnodes.
 
- .../devicetree/bindings/arm/psci.yaml         |  5 ++++
- .../bindings/power/power-domain.yaml          | 28 +++++++++----------
- 2 files changed, 19 insertions(+), 14 deletions(-)
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+---
+ Documentation/devicetree/bindings/arm/psci.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
+diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+index 5e66934455bb..9247b58c26fc 100644
+--- a/Documentation/devicetree/bindings/arm/psci.yaml
++++ b/Documentation/devicetree/bindings/arm/psci.yaml
+@@ -32,6 +32,9 @@ description: |+
+     http://infocenter.arm.com/help/topic/com.arm.doc.den0022c/DEN0022C_Power_State_Coordination_Interface.pdf
+ 
+ properties:
++  $nodename:
++    const: psci
++
+   compatible:
+     oneOf:
+       - description:
+@@ -141,6 +144,8 @@ allOf:
+         - cpu_off
+         - cpu_on
+ 
++additionalProperties: false
++
+ examples:
+   - |+
+ 
 -- 
 2.20.1
 
