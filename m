@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D6E119402C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:46:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69E30194035
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 14:46:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vlI7PUhTaSJApz145PVIj5Fq8RbTPhtkx2+46f+hFGM=; b=jH2mQBAitbfW3i
-	L1N3q5au52cGiuBKpSM4q7XenjKwtVhLDIC5s3fg8tEiFKPYbwJ/Q5uHaFxYVb8xUkOwdX8WZ49MA
-	ZXjtdkArggvgJrMKDsnmZAWdmXRCDB7aKE1no18CeBfksc6uNbwst/Ps8obFSyk+26kRn2N4TDoMA
-	PBm47nenEIz5CAT5FQUyRj/PjP3TZB0C0TjEMHLGJMEDFbtBxq4I5fg90Ff/0pERwA16srqsNtrwH
-	5FJTvF/jC9b8pZr/x3RtYrK5bnqqr0+w1G8xdqKdd54/OKBu2B7ZqKRaUc6bPajbrvRozCOsogSIf
-	l+sa8sYElDfeyd24IzSQ==;
+	List-Owner; bh=5LnEcJyhFrYa3yTJHiHCxxNfzi1HcHQHdCGZmZgVp/8=; b=R/ilxRdR0X2+t8
+	jyNOW4SGi5e3G3DscGrcgsiwGNtVk+KAJKbWQoDLhQ/kKU6EBV0gWGnY5RaHJinfnKpeVrW1q3tfQ
+	IW3ekQDiXKDpPDtDIW4HUMD2cXZNN8xV9SzCJsMXRQg602COY/edXGB48CGSeiTEIq3nrJsjMfgyD
+	huRw/Tm7Qr3ODk71c9ww3Y8DIjWJ6r7mAcFGyLWafIiHqN/511spHY0nC7/QvqnmQBft69A/9vb3P
+	I01V/HGBbgjobMznzJyLhkfeCQN5DDdY29cfmhKhnNHjKoEJDjQ5qcGBwLRrIHDo65VwdgtkHdbHe
+	+hmwz2+s5J+fY0+opf3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHSpt-0006M1-D9; Thu, 26 Mar 2020 13:46:17 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jHSqE-0006Xj-QG; Thu, 26 Mar 2020 13:46:38 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHSor-0005Zq-1u
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 13:45:16 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j17so7787227wru.13
+ id 1jHSos-0005ap-B9
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 13:45:17 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w10so7890326wrm.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Mar 2020 06:45:12 -0700 (PDT)
+ Thu, 26 Mar 2020 06:45:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=aUt5da61uLANGwJFYYiA7zZjRTcSYMRB6icGf3vbU0k=;
- b=mFk1SjUOpWFCWV3w8NUixREHmK4vDmUPsSbxrhNEvoMQoUozHNBVhh/84MOqcYKSh4
- 7nnQSLIvwIGGnrge7xHSEy+jXUSNnfwpa6LhrX9eAMWzJjJiiFyCERkVmpWT/0X+IHJp
- hBP+BoSqsf+Q37GSlozIUGbJ+fEah8GfsiwgnpMN6JJ+K+5njBrV+P684va9X1vP3Jac
- OFWwYXyUQr/zClqzm2tBNy7zpw31A8oiD6cQiuvCPFaasRz4jET2QoPmVugn6+FCyGJp
- eVvBiQ7KakQsVkpFf5EDlE8/uLsoU/Jas0eIgTClWTl70sS13Y3YmZxoa1yS4wXFNUaw
- I3bA==
+ bh=K9eFb8D2phR1YQNJRTJuZvG3GmqU7Jbt0/WyqKmz+bw=;
+ b=oWILPA9p7zgoY1wf0zlh6GXe8ZRRFY/8EwWnOTVNji6p4fwPkPjwdQwSe4GxMkrUbM
+ +GghmZZnkWrN9amFiQ14DTU0Nu5rreLb3ZddKS9HH2fe8M66EYpbMux/z7vai3lW/DKn
+ TBQ0PQE6FMCLwLDtPvPz5JPQ1girW7B3m50WIBCdBoq/KYSYyszbVeuc3o1c2nuAoWFy
+ AS7dYqMPVnRUC2M6bWUM1qlUqc6aFIjPj4lT8voW3zk0KAXbSfNj1JIciPwcIDDTHcYk
+ qrhWxwz1pY6KIoKvdnQFcGAj3J5OEXI3b5kdxnhjeCx6FVahrrmpsZ4fA4xZBL+Xz7lR
+ SIkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=aUt5da61uLANGwJFYYiA7zZjRTcSYMRB6icGf3vbU0k=;
- b=beCxTuaAKCZS+fQ/RUBBXn3GORzAlPCeo+4ceR/ELVkeWJVI3sXlo8hjn36syzIbL1
- 2A15YqfK3sgQOL3BztUyc5JxAZUlw7/94YhHGR9Skvkk04syuCyZbws+gA5W2aOUVbgZ
- L8JWxfXYewh3FNWMzsTrKdv+nnxwbk0tbMuuh1DLP2tbtQFGRgR2KScMNVtsuQ2ps74m
- 9GvRpz6RP3CCrHvQRtIwtI3cYE7bxM5DbVsD/PSLIhtbHx9Mhc27KSVl6QiN+oBcQ8zd
- 1Q66y+BQoz1rof2/LrogQFCYn8rnl+XvaKt5TdvOJNuvaDU5Uwn88GcSNvCnyLXezl2E
- qSJw==
-X-Gm-Message-State: ANhLgQ3NGtYkTM68zrf5A99ICq/P9fPNkp64cqc0w+0M7w38xWV2LnI4
- vgbL+FLhfpQY/FYiEAbjPEB0Fw==
-X-Google-Smtp-Source: ADFU+vt66+XPqsyLeO+POW2yrcqbRJYseC7D+4t4IRvUw/9oFw1qz5OYThNV1WSSuwK+mezl4JqO8Q==
-X-Received: by 2002:a5d:4d07:: with SMTP id z7mr9105092wrt.89.1585230311563;
- Thu, 26 Mar 2020 06:45:11 -0700 (PDT)
+ bh=K9eFb8D2phR1YQNJRTJuZvG3GmqU7Jbt0/WyqKmz+bw=;
+ b=dcALKe2R1WiGRVAbLgEcs5ai/PqNH25D//+KUAajaX+JMMeVL70k/ZnqDvrVie256N
+ YVadPWPy9aLUm2FwExhY8EoLF+oOWtLbePc3iVJqN6Hzk7f7riO7f65/iHyRp2icq+1c
+ dW0jRzTeDQVOg0hwzGeKeaNFuMZkQsGygAhCHUiYe/2bekkGlIIQLF/JCnp40CaGmCZp
+ iDJ42MAMPcmV6QL36fbLIYJjNuGDJTImU5Hht40EzUqhHOIo4A+6hImFiRJqe+S/zJsA
+ Lb/LdA40ipb6XaZFDG2ejZAACHLVxZpiD8sNFAKOi/eT/jpQ/3rm3CNs3F8z/nxUDDVB
+ Cisw==
+X-Gm-Message-State: ANhLgQ1RSae+LX0dHma1BfhGNeLfn5IYxBP3JHMIrUY6z4oiRTMBMkiu
+ tv0UbLJyTgLV0bkHiPmVSA485Q==
+X-Google-Smtp-Source: ADFU+vtM0R7NzPeN50a5ioxfIdmokzaZSGvJW1Jh6vLjUU1awtkchisbAhgq+T3/5PhaKBK5GWOieg==
+X-Received: by 2002:adf:b35d:: with SMTP id k29mr9626299wrd.239.1585230312894; 
+ Thu, 26 Mar 2020 06:45:12 -0700 (PDT)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id h29sm4079617wrc.64.2020.03.26.06.45.10
+ by smtp.gmail.com with ESMTPSA id h29sm4079617wrc.64.2020.03.26.06.45.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Mar 2020 06:45:11 -0700 (PDT)
+ Thu, 26 Mar 2020 06:45:12 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: kishon@ti.com, balbi@kernel.org, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com, devicetree@vger.kernel.org
-Subject: [PATCH v2 01/14] dt-bindings: usb: amlogic,
- meson-g12a-usb-ctrl: add the Amlogic GXL and GXM Families USB Glue
- Bindings
-Date: Thu, 26 Mar 2020 14:44:53 +0100
-Message-Id: <20200326134507.4808-2-narmstrong@baylibre.com>
+ martin.blumenstingl@googlemail.com
+Subject: [PATCH v2 02/14] usb: dwc3: meson-g12a: specify phy names in soc data
+Date: Thu, 26 Mar 2020 14:44:54 +0100
+Message-Id: <20200326134507.4808-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200326134507.4808-1-narmstrong@baylibre.com>
 References: <20200326134507.4808-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_064513_094184_56AE8B73 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20200326_064514_408488_477CF328 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -96,140 +94,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Hanjie Lin <hanjie.lin@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Amlogic GXL and GXM is slightly different from the Amlogic G12A Glue.
-
-The GXL SoCs only embeds 2 USB2 PHYs and no USB3 PHYs, and the GXM SoCs
-embeds 3 USB2 PHYs.
+To handle the variable USB2 PHY counts on GXL and GXM SoCs, add the
+possible PHY names for each SoC in the compatible match data.
 
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Acked-by: Hanjie Lin <hanjie.lin@amlogic.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../usb/amlogic,meson-g12a-usb-ctrl.yaml      | 73 ++++++++++++++++++-
- 1 file changed, 69 insertions(+), 4 deletions(-)
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 47 +++++++++++++++++++++---------
+ 1 file changed, 33 insertions(+), 14 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
-index b0e5e0fe9386..b0af50a7c124 100644
---- a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
-+++ b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
-@@ -25,9 +25,13 @@ description: |
-   The Amlogic A1 embeds a DWC3 USB IP Core configured for USB2 in
-   host-only mode.
+diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+index 902553f39889..d97ead5aee4e 100644
+--- a/drivers/usb/dwc3/dwc3-meson-g12a.c
++++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+@@ -96,16 +96,8 @@
+ 	#define USB_R5_ID_DIG_TH_MASK				GENMASK(15, 8)
+ 	#define USB_R5_ID_DIG_CNT_MASK				GENMASK(23, 16)
  
-+  The Amlogic GXL & GXM SoCs doesn't embed an USB3 PHY.
+-enum {
+-	USB2_HOST_PHY = 0,
+-	USB2_OTG_PHY,
+-	USB3_HOST_PHY,
+-	PHY_COUNT,
+-};
+-
+-static const char *phy_names[PHY_COUNT] = {
+-	"usb2-phy0", "usb2-phy1", "usb3-phy0",
+-};
++#define PHY_COUNT						3
++#define USB2_OTG_PHY						1
+ 
+ static struct clk_bulk_data meson_g12a_clocks[] = {
+ 	{ .id = NULL },
+@@ -117,22 +109,44 @@ static struct clk_bulk_data meson_a1_clocks[] = {
+ 	{ .id = "xtal_usb_ctrl" },
+ };
+ 
++static const char *meson_g12a_phy_names[] = {
++	"usb2-phy0", "usb2-phy1", "usb3-phy0",
++};
 +
- properties:
-   compatible:
-     enum:
-+      - amlogic,meson-gxl-usb-ctrl
-+      - amlogic,meson-gxm-usb-ctrl
-       - amlogic,meson-g12a-usb-ctrl
-       - amlogic,meson-a1-usb-ctrl
- 
-@@ -41,6 +45,11 @@ properties:
- 
-   clocks:
-     minItems: 1
-+    maxItems: 3
++/*
++ * Amlogic A1 has a single physical PHY, in slot 1, but still has the
++ * two U2 PHY controls register blocks like G12A.
++ * Handling the first PHY on slot 1 would need a large amount of code
++ * changes, and the current management is generic enough to handle it
++ * correctly when only the "usb2-phy1" phy is specified on-par with the
++ * DT bindings.
++ */
++static const char *meson_a1_phy_names[] = {
++	"usb2-phy0", "usb2-phy1"
++};
 +
-+  clock-names:
-+    minItems: 1
-+    maxItems: 3
+ struct dwc3_meson_g12a_drvdata {
+ 	bool otg_switch_supported;
+ 	struct clk_bulk_data *clks;
+ 	int num_clks;
++	const char **phy_names;
++	int num_phys;
+ };
  
-   resets:
-     minItems: 1
-@@ -52,10 +61,8 @@ properties:
-     maxItems: 1
+ static struct dwc3_meson_g12a_drvdata g12a_drvdata = {
+ 	.otg_switch_supported = true,
+ 	.clks = meson_g12a_clocks,
+ 	.num_clks = ARRAY_SIZE(meson_g12a_clocks),
++	.phy_names = meson_g12a_phy_names,
++	.num_phys = ARRAY_SIZE(meson_g12a_phy_names),
+ };
  
-   phy-names:
--    items:
--      - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
--      - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
--      - const: usb3-phy0 # USB3 PHY if USB3_0 is used
-+    minItems: 1
-+    maxItems: 3
+ static struct dwc3_meson_g12a_drvdata a1_drvdata = {
+ 	.otg_switch_supported = false,
+ 	.clks = meson_a1_clocks,
+ 	.num_clks = ARRAY_SIZE(meson_a1_clocks),
++	.phy_names = meson_a1_phy_names,
++	.num_phys = ARRAY_SIZE(meson_a1_phy_names),
+ };
  
-   phys:
-     minItems: 1
-@@ -89,6 +96,61 @@ required:
-   - dr_mode
+ struct dwc3_meson_g12a {
+@@ -171,10 +185,13 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
+ 	else
+ 		priv->otg_phy_mode = PHY_MODE_USB_HOST;
  
- allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          enum:
-+            - amlogic,meson-g12a-usb-ctrl
+-	for (i = 0 ; i < USB3_HOST_PHY ; ++i) {
++	for (i = 0; i < priv->drvdata->num_phys; ++i) {
+ 		if (!priv->phys[i])
+ 			continue;
+ 
++		if (!strstr(priv->drvdata->phy_names[i], "usb2"))
++			continue;
 +
-+    then:
-+      properties:
-+        phy-names:
-+          items:
-+            - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
-+            - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
-+            - const: usb3-phy0 # USB3 PHY if USB3_0 is used
-+  - if:
-+      properties:
-+        compatible:
-+          enum:
-+            - amlogic,meson-gxl-usb-ctrl
-+
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 2
-+        clock-names:
-+          items:
-+            - const: usb_ctrl
-+            - const: ddr
-+        phy-names:
-+          items:
-+            - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
-+            - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
-+      required:
-+        - clock-names
-+  - if:
-+      properties:
-+        compatible:
-+          enum:
-+            - amlogic,meson-gxm-usb-ctrl
-+
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 2
-+        clock-names:
-+          items:
-+            - const: usb_ctrl
-+            - const: ddr
-+        phy-names:
-+          items:
-+            - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
-+            - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
-+            - const: usb2-phy2 # USB2 PHY2 if USBOTG_C port is used
-+
-+      required:
-+        - clock-names
-   - if:
-       properties:
-         compatible:
-@@ -97,6 +159,9 @@ allOf:
+ 		regmap_update_bits(priv->regmap, U2P_R0 + (U2P_REG_SIZE * i),
+ 				   U2P_R0_POWER_ON_RESET,
+ 				   U2P_R0_POWER_ON_RESET);
+@@ -284,17 +301,19 @@ static const struct regmap_config phy_meson_g12a_usb3_regmap_conf = {
  
-     then:
-       properties:
-+        phy-names:
-+          items:
-+            - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
-         clocks:
-           minItems: 3
-         clock-names:
+ static int dwc3_meson_g12a_get_phys(struct dwc3_meson_g12a *priv)
+ {
++	const char *phy_name;
+ 	int i;
+ 
+-	for (i = 0 ; i < PHY_COUNT ; ++i) {
+-		priv->phys[i] = devm_phy_optional_get(priv->dev, phy_names[i]);
++	for (i = 0 ; i < priv->drvdata->num_phys ; ++i) {
++		phy_name = priv->drvdata->phy_names[i];
++		priv->phys[i] = devm_phy_optional_get(priv->dev, phy_name);
+ 		if (!priv->phys[i])
+ 			continue;
+ 
+ 		if (IS_ERR(priv->phys[i]))
+ 			return PTR_ERR(priv->phys[i]);
+ 
+-		if (i == USB3_HOST_PHY)
++		if (strstr(phy_name, "usb3"))
+ 			priv->usb3_ports++;
+ 		else
+ 			priv->usb2_ports++;
 -- 
 2.22.0
 
