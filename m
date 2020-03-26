@@ -2,80 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52EEB193D3E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:49:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A705193D49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Mar 2020 11:51:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4u5a+ONfQG9ZMwl7uvxBFUyzEAwtn8SUczgSFam4vUs=; b=gkM
-	zoWDC3wBM79qMfLj0HhT4qsjs9YnrAlkS82wZYASgq2cRtGet09TDotYkJBVvs74qiyAm/lxskIZe
-	lZ1jMGJQ1zWHeP2zSpoqZ4pJvIrXcYb+tdIBCcYNYUrCauVuwCe260CicDTNe7mCrkG1rwwnRHgY/
-	DS/6g9BSmBsZAABfoKXlPC+oJ8fEB7gUbrm30fKEYxUBtmAfv9BvzOoqdxm2DY24f9wY6MDCoaP3u
-	LDTjGFT94R5AiLxPBzGjKX1lAEFE7f4SvSyYvEq9YVvlohFlbw6qXoNHKPgh6PtQLBJGBx5XKM9lA
-	DHmwY12oBoB0tgqzWf5oSgyMgdGpxrQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ToxhZG+0U6vxKIYMWAeRxHDr2/b3If1UZT/K5p4pO7w=; b=q5SZ6cirVTM7c/
+	d6b7jfYOxEW/5+KYR5kP/tN0CWv31R4h0k/s5nW5G72BJeKtYOrSDBRsUgDlZ5aV2pb9lEh/7dO9V
+	2qpddjidhXOGk7x/GCd7HeVW787Dj4+yJeqeKqjjyRIUEme13VEBe134NDyCDqrQQGfhsMExY6GZZ
+	Jkf9FZupd9lw9TEzyuVnqxk26yQtkAF/R2/acLFhXL60N0L2d05Vy6gd9BoKg5ihbO2Dhfb2uS5Xg
+	5xYMpfRD6+ZQh9+icL/OgwEvyiCEF0m8cZonj5EFkUT8KCd68kWLr93ckPN/3wtqFPheeT05G13qN
+	aGaUkR5In9Gqyf2z9RFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHQ4O-0007j5-AN; Thu, 26 Mar 2020 10:49:04 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jHQ6R-00011n-J2; Thu, 26 Mar 2020 10:51:11 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHQ4F-0007iA-Au
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:48:57 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1585219735; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=nWq7mGCCiLsuXbi/yM67WLfCeYpRQEJ7BwezHf5ePpg=;
- b=ItHBnnROvxCg5x6yPUpOdOhtcfbp1khcZ7QN6RVWtNcCJcpbZGWvEkoxFX3UmQFgRHI34MI3
- Il74ghNXTxAIc/Wj2Qjl2gJzLrWAqWRWC3GVkXJGYYJdMNSchKYgNW+vEfqP2t6h/IDZ0Mz6
- Vw+XNhTaZ1ZwmpEOIS+/0mCOnHs=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e7c8893.7ff8572c5260-smtp-out-n04;
- Thu, 26 Mar 2020 10:48:51 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 3F583C433D2; Thu, 26 Mar 2020 10:48:51 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from pillair-linux.qualcomm.com
- (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: pillair)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 4649BC433F2;
- Thu, 26 Mar 2020 10:48:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4649BC433F2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=pillair@codeaurora.org
-From: Rakesh Pillai <pillair@codeaurora.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
- node
-Date: Thu, 26 Mar 2020 16:18:43 +0530
-Message-Id: <1585219723-28323-1-git-send-email-pillair@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1jHQ6I-00011A-HV
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Mar 2020 10:51:04 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jHQ64-0000b3-DM; Thu, 26 Mar 2020 11:50:48 +0100
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jHQ63-0000Oo-BR; Thu, 26 Mar 2020 11:50:47 +0100
+Message-ID: <3e31d193605897bdfad3a3e7cde66bd03a3a8acd.camel@pengutronix.de>
+Subject: Re: [PATCH v2 12/13] reset: imx: Add audiomix reset controller support
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Abel Vesa <abel.vesa@nxp.com>, Rob Herring <robh@kernel.org>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam
+ <fabio.estevam@nxp.com>, Mike Turquette <mturquette@baylibre.com>, Stephen
+ Boyd <sboyd@kernel.org>, Lee Jones <lee.jones@linaro.org>, Anson Huang
+ <anson.huang@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>
+Date: Thu, 26 Mar 2020 11:50:47 +0100
+In-Reply-To: <1585150731-3354-13-git-send-email-abel.vesa@nxp.com>
+References: <1585150731-3354-1-git-send-email-abel.vesa@nxp.com>
+ <1585150731-3354-13-git-send-email-abel.vesa@nxp.com>
+User-Agent: Evolution 3.30.5-1.1 
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_034855_846834_4FFC8CEA 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20200326_035102_742285_6452F2E1 
+X-CRM114-Status: GOOD (  23.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,94 +73,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device node for the ath10k SNOC platform driver probe
-and add resources required for WCN3990 on sc7180 soc.
+Hi Abel,
 
-Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
----
+On Wed, 2020-03-25 at 17:38 +0200, Abel Vesa wrote:
+> The imx-mix MFD driver registers some devices, one of which, in case of
+> audiomix, maps correctly to a reset controller type. This driver registers
+> a reset controller for that. For now, only the EARC specific resets are added.
 
-Depends on https://patchwork.kernel.org/patch/11455345/
-The above patch adds the dt-bindings for wifi-firmware
-subnode
----
- arch/arm64/boot/dts/qcom/sc7180-idp.dts |  8 ++++++++
- arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27 +++++++++++++++++++++++++++
- 2 files changed, 35 insertions(+)
+I am still confused about what the runtime PM actually does. Maybe it
+would help me understand if you could point me to the EARC driver that
+is using this reset controller.
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-index 043c9b9..a6168a4 100644
---- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-+++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-@@ -327,6 +327,14 @@
- 	};
- };
- 
-+&wifi {
-+	status = "okay";
-+	qcom,msa-fixed-perm;
-+	wifi-firmware {
-+		iommus = <&apps_smmu 0xc2 0x1>;
-+	};
-+};
-+
- /* PINCTRL - additions to nodes defined in sc7180.dtsi */
- 
- &qspi_clk {
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index 998f101..2745128 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -83,6 +83,11 @@
- 			reg = <0 0x8f600000 0 0x500000>;
- 			no-map;
- 		};
-+
-+		wlan_fw_mem: memory@94104000 {
-+			reg = <0 0x94104000 0 0x200000>;
-+			no-map;
-+		};
- 	};
- 
- 	cpus {
-@@ -835,6 +840,28 @@
- 			};
- 		};
- 
-+		wifi: wifi@18800000 {
-+			compatible = "qcom,wcn3990-wifi";
-+			reg = <0 0x18800000 0 0x800000>;
-+			reg-names = "membase";
-+			iommus = <&apps_smmu 0xc0 0x1>;
-+			interrupts =
-+				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-+				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-+				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-+				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-+				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-+				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-+				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-+				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-+				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-+				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-+				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-+				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-+			memory-region = <&wlan_fw_mem>;
-+			status = "disabled";
-+		};
-+
- 		config_noc: interconnect@1500000 {
- 			compatible = "qcom,sc7180-config-noc";
- 			reg = <0 0x01500000 0 0x28000>;
--- 
-2.7.4
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> ---
+>  drivers/reset/Kconfig              |   7 +++
+>  drivers/reset/Makefile             |   1 +
+>  drivers/reset/reset-imx-audiomix.c | 122 +++++++++++++++++++++++++++++++++++++
+>  3 files changed, 130 insertions(+)
+>  create mode 100644 drivers/reset/reset-imx-audiomix.c
+> 
+> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
+> index d9efbfd..2f8d9b3 100644
+> --- a/drivers/reset/Kconfig
+> +++ b/drivers/reset/Kconfig
+> @@ -81,6 +81,13 @@ config RESET_INTEL_GW
+>  	  Say Y to control the reset signals provided by reset controller.
+>  	  Otherwise, say N.
+>  
+> +config RESET_IMX_AUDIOMIX
+> +	bool "i.MX Audiomix Reset Driver" if COMPILE_TEST
+> +	depends on HAS_IOMEM
+> +	default ARCH_MXC
+> +	help
+> +	  This enables the audiomix reset controller driver for i.MX SoCs.
+> +
+>  config RESET_LANTIQ
+>  	bool "Lantiq XWAY Reset Driver" if COMPILE_TEST
+>  	default SOC_TYPE_XWAY
+> diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
+> index 249ed35..cf23d38 100644
+> --- a/drivers/reset/Makefile
+> +++ b/drivers/reset/Makefile
+> @@ -12,6 +12,7 @@ obj-$(CONFIG_RESET_BRCMSTB_RESCAL) += reset-brcmstb-rescal.o
+>  obj-$(CONFIG_RESET_HSDK) += reset-hsdk.o
+>  obj-$(CONFIG_RESET_IMX7) += reset-imx7.o
+>  obj-$(CONFIG_RESET_INTEL_GW) += reset-intel-gw.o
+> +obj-$(CONFIG_RESET_IMX_AUDIOMIX) += reset-imx-audiomix.o
+
+The cover letter mentions hdmimix, dispmix and mediamix. Are there going
+to be a bunch of those mix reset drivers? How do they differ?
+
+>  obj-$(CONFIG_RESET_LANTIQ) += reset-lantiq.o
+>  obj-$(CONFIG_RESET_LPC18XX) += reset-lpc18xx.o
+>  obj-$(CONFIG_RESET_MESON) += reset-meson.o
+> diff --git a/drivers/reset/reset-imx-audiomix.c b/drivers/reset/reset-imx-audiomix.c
+> new file mode 100644
+> index 00000000..d1c62ef
+> --- /dev/null
+> +++ b/drivers/reset/reset-imx-audiomix.c
+> @@ -0,0 +1,122 @@
+> +// SPDX-License-Identifier: GPL-2.0
+
+I think GPL-2.0 has been deprecated in the SPDX license list, better use
+GPL-2.0-only for new files.
+
+> +/*
+> + * Copyright 2019 NXP.
+> + */
+> +
+> +#include <dt-bindings/reset/imx-audiomix-reset.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_address.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/reset-controller.h>
+> +
+> +#define IMX_AUDIOMIX_EARC_CTRL_REG	0x200
+> +
+> +#define IMX_AUDIOMIX_EARC_RESET_BIT	0x0
+> +#define IMX_AUDIOMIX_EARC_PHY_RESET_BIT	0x1
+> +
+> +struct imx_audiomix_reset_data {
+> +	void __iomem *base;
+> +	struct reset_controller_dev rcdev;
+> +	spinlock_t lock;
+> +};
+> +
+> +static int imx_audiomix_reset_set(struct reset_controller_dev *rcdev,
+> +			  unsigned long id, bool assert)
+> +{
+> +	struct imx_audiomix_reset_data *drvdata = container_of(rcdev,
+> +			struct imx_audiomix_reset_data, rcdev);
+> +	void __iomem *reg_addr = drvdata->base;
+> +	unsigned long flags;
+> +	unsigned int offset;
+> +	u32 reg;
+> +
+> +	switch (id) {
+> +	case IMX_AUDIOMIX_EARC_PHY_RESET:
+> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
+> +		offset = IMX_AUDIOMIX_EARC_PHY_RESET_BIT;
+> +		break;
+> +	case IMX_AUDIOMIX_EARC_RESET:
+> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
+> +		offset = IMX_AUDIOMIX_EARC_RESET_BIT;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (assert) {
+> +		pm_runtime_get_sync(rcdev->dev);
+
+This driver and the parent MFD driver do not implement runtime PM ops,
+and the device tree bindings do not specify any power domains. What does
+this actually do?
+
+> +		spin_lock_irqsave(&drvdata->lock, flags);
+> +		reg = readl(reg_addr);
+> +		writel(reg & ~BIT(offset), reg_addr);
+> +		spin_unlock_irqrestore(&drvdata->lock, flags);
+> +	} else {
+> +		spin_lock_irqsave(&drvdata->lock, flags);
+> +		reg = readl(reg_addr);
+> +		writel(reg | BIT(offset), reg_addr);
+> +		spin_unlock_irqrestore(&drvdata->lock, flags);
+> +		pm_runtime_put(rcdev->dev);
+
+Assuming this disables the power domain that powers the whole Audiomix,
+what happens to the reset lines in this case? Do they float? Are they
+guaranteed to stay deasserted?
+
+Note that the reset API does not require consumers to call
+reset_control_assert() on an exclusive reset control before calling
+reset_control_deassert(), so this could easily lead to issues with the
+device usage counter.
+
+Shared reset controls call deassert first, and assert after the last
+user is gone, so if the driver would start with deasserting both EARC
+and EARC_PHY reset lines via shared reset controls, this would underflow
+the device usage counter right away.
+
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int imx_audiomix_reset_assert(struct reset_controller_dev *rcdev,
+> +			     unsigned long id)
+> +{
+> +	return imx_audiomix_reset_set(rcdev, id, true);
+> +}
+> +
+> +static int imx_audiomix_reset_deassert(struct reset_controller_dev *rcdev,
+> +			       unsigned long id)
+> +{
+> +	return imx_audiomix_reset_set(rcdev, id, false);
+> +}
+> +
+> +static const struct reset_control_ops imx_audiomix_reset_ops = {
+> +	.assert		= imx_audiomix_reset_assert,
+> +	.deassert	= imx_audiomix_reset_deassert,
+> +};
+> +
+> +static int imx_audiomix_reset_probe(struct platform_device *pdev)
+> +{
+> +	struct imx_audiomix_reset_data *drvdata;
+> +	struct device *dev = &pdev->dev;
+> +
+> +	drvdata = devm_kzalloc(&pdev->dev, sizeof(*drvdata), GFP_KERNEL);
+> +	if (drvdata == NULL)
+> +		return -ENOMEM;
+> +
+> +	drvdata->base = dev_get_drvdata(dev->parent);
+> +
+> +	platform_set_drvdata(pdev, drvdata);
+> +
+> +	pm_runtime_enable(dev);
+> +
+> +	spin_lock_init(&drvdata->lock);
+> +
+> +	drvdata->rcdev.owner     = THIS_MODULE;
+> +	drvdata->rcdev.nr_resets = IMX_AUDIOMIX_RESET_NUM;
+> +	drvdata->rcdev.ops       = &imx_audiomix_reset_ops;
+> +	drvdata->rcdev.of_node   = dev->of_node;
+> +	drvdata->rcdev.dev	 = dev;
+> +
+> +	return devm_reset_controller_register(dev, &drvdata->rcdev);
+> +}
+> +
+> +static const struct of_device_id imx_audiomix_reset_dt_ids[] = {
+> +	{ .compatible = "fsl,imx8mp-audiomix-reset", },
+> +	{ /* sentinel */ },
+> +};
+> +
+> +static struct platform_driver imx_audiomix_reset_driver = {
+> +	.probe	= imx_audiomix_reset_probe,
+> +	.driver = {
+> +		.name		= KBUILD_MODNAME,
+> +		.of_match_table	= imx_audiomix_reset_dt_ids,
+> +	},
+> +};
+> +module_platform_driver(imx_audiomix_reset_driver);
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
