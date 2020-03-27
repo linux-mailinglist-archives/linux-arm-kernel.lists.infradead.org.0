@@ -2,68 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 357E9195489
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:55:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64AE2195490
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:57:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zLcqSv/DID4/8VosV+tioijWOTSrgqdo9dLbDTzKuDU=; b=rLLf8GwLZtQnbp
-	RvlLY310S1lYEX4D5Bgb5gFn0ozl3K3zprxhSqrVcP2+2cPna2GR/wvMEn/kVPg8GYXFeiRD9uysO
-	TVbmsnBTGeFn1TGWB2cdCH57F+8yoB054j420BoTeYMZGNW/VR6CydGyD4qr6KCQXcGPeK/Xipa6h
-	694FuA1dYePfdKKE7ZKCcBuNwcdQKccoqm7nBbQ/ZkpbSS9Lox2UnNT/FGkHJIf0+9N5RxkBmRO5d
-	l5doDAOJj2flRVkAtnyLlLxEWXtgDfs8CpV12iM/8lprKAKl22zZd3UVuDUrh4Z3RzNLqucBoGn6Z
-	onj1LuLelZHoIWnJ8EXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ENfG6hRUZ0RCMSG8Iwgq6nyb/XN+Wl44DUVBwndTxWg=; b=oPux8ZSJD25uzR
+	C7atyz8swjHmK8+/yxNTcNZVJS84auKeTQ/ACpspndJ6A7XflBB2fK59nGOzaqtTWyBgEBcrL850t
+	pYLk2Lc6R3nJ8SYJx2uW8vwG1yGpAnFOijRUieuOEPty7gz4UJxArKZQJHSFB/Qi3FNvc6AKfVYP/
+	kdy8bw/v9ZNUncnaBZZtVq8PF6ymTg1GyjuZcVJ+LX+w3AhQzK+RKt/rv4+Ha/KebJtfJ7YYsO9Vb
+	mqDPpFdlBiFdj3m5MoAZCV29xbJ7avo1gHfi5C+LU8Q1+r676h3sbIsCUhOJ26e5dl+MO/9SjRBE7
+	v9SkZJL5c9UepCizXs9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHlhx-00064x-8w; Fri, 27 Mar 2020 09:55:21 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jHljt-0006c7-8F; Fri, 27 Mar 2020 09:57:21 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHlhn-000648-9S; Fri, 27 Mar 2020 09:55:13 +0000
-X-UUID: b27bc94ba8cf4a4e8ac2bfbb379b4b3b-20200327
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=mhldOisu3DDCyVpCIZOg4fKzpce7E3Pq+4ZmOlXaB40=; 
- b=CC4qD8saT8cbcbSn6N+UrR+xOk3+pZ2+zXlyH63nEL132KY4vOmq8eXoD3BZDf0GblQgRoRG7Na30a3AP8GQxy6+RNzckyTuiXCSrx4IVbr533UHnCF6u9w56yf9QdN63+78jxZk8In1cUkGtibwpLWLQU7rPAJ+K75Tf7nwYrQ=;
-X-UUID: b27bc94ba8cf4a4e8ac2bfbb379b4b3b-20200327
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1291488049; Fri, 27 Mar 2020 01:55:07 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 02:55:05 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 17:54:55 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 27 Mar 2020 17:54:55 +0800
-Message-ID: <1585302896.4609.2.camel@mtksdccf07>
-Subject: RE: [PATCH v2 2/2] scsi: ufs-mediatek: add error recovery for
- suspend and resume
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Fri, 27 Mar 2020 17:54:56 +0800
-In-Reply-To: <SN6PR04MB4640191B1F648C3D43BD9AF8FCCC0@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200326150747.11426-1-stanley.chu@mediatek.com>
- <20200326150747.11426-3-stanley.chu@mediatek.com>
- <SN6PR04MB4640191B1F648C3D43BD9AF8FCCC0@SN6PR04MB4640.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jHljl-0006bF-5k
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 09:57:15 +0000
+Received: by mail-lf1-x142.google.com with SMTP id h6so1558699lfp.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 02:57:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dxMnZPx7ZOP/i1MY4HPIw99MqretVFofELnazmV9s8M=;
+ b=FiSWKVdv3ZebfphDlJuCD7J3uZBdOnPFA/urx+0HWfImxZIkMK7H/IdDaUN57/YOt9
+ d8X9OY95Hie/d+/LP1ElMVx8q0Ufz9LrN9cj4BOJpBZrM5LEIjRWO7ViPOykT/ndB4ji
+ 1Q4GQLjIWlpG4FktaryrG+xZSukiCfw3rwSQXHp1zp316rm4BtkV33msA1XSgUlgw3Ot
+ POhBAL5dHkIlKpBCYkzh0TIRB1EaRS0GUYhiH6YgPZ9Ur5flHTfuT3OTMGpi5qqsc8st
+ fm9/p+o4ejmdPehymdxPEY1fWDEr9C0SokIbTIz2aNaUSbfsdArfHF03x6HY1Wy0u0vm
+ cJNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dxMnZPx7ZOP/i1MY4HPIw99MqretVFofELnazmV9s8M=;
+ b=dz7tJYOPJuEMA77g3oNBifmKFWmVGL253YBn50w80qi2C6NKfyPUSFjiJyHT3z7IWv
+ GRXjF0SzvuSUIEGQGfuXN5xhtZ6eqcaOlKRugYGYsu4UqTWC0gBPBZ71GKWgZmlMBKLU
+ nzoSYjkBBO3g8BBYA/cmxfq2QqNI6YoM9gcPaGj6GhGsbJxAhvu7oZ2p5IcaIJ1jKbbV
+ KEDirZ7aUyai3PaByFBfeaIwCXW3K+wnC2yot4/ZwPpdyCDsekt3WkMGNOhs3Vwuspgs
+ moU6Zp5Uo9RyQ4VTszTmYCUGhZyhb0aK1cv+V7rqer5FYrJzClYQ3OoFgSxR5CoeUSeJ
+ r8nA==
+X-Gm-Message-State: ANhLgQ2BY656zedGJG9gcJVzI4zlZMGSe10XEuQzM7rtGgeqihgWmiJb
+ SHqNO06iKp+po9ZGfnOZXnFdvQ==
+X-Google-Smtp-Source: ADFU+vtkGs3QgJqZ35JeakVvXD76oNN6bsPLXBQzue+1DzzAqwNa3FqhmK+7S4kbPR6v4/BHo1wiuQ==
+X-Received: by 2002:a19:74c:: with SMTP id 73mr8275773lfh.56.1585303030318;
+ Fri, 27 Mar 2020 02:57:10 -0700 (PDT)
+Received: from localhost.localdomain (h-81-170-219-154.NA.cust.bahnhof.se.
+ [81.170.219.154])
+ by smtp.gmail.com with ESMTPSA id z5sm2711890lfq.71.2020.03.27.02.57.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 27 Mar 2020 02:57:09 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH] ARM: vexpress: Make schedutil governor available
+Date: Fri, 27 Mar 2020 10:57:03 +0100
+Message-Id: <20200327095703.93178-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B2902B3FD719266556EA2DD3FDCC2597BFDE148D1E39AB67CAC55E4472BE7D1A2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_025511_340083_4EB2EF57 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20200327_025713_225345_3F83A330 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,8 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,51 +96,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Cc: Viresh Kumar <viresh.kumar@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
+When building the kernel for Versatile Express we need to
+consider that some of these boards are big.LITTLE HMP
+systems.
 
-On Fri, 2020-03-27 at 09:23 +0000, Avri Altman wrote:
-> > 
-> > Once fail happens during suspend and resume flow if the desired low
-> > power link state is H8, link recovery is required for MediaTek UFS
-> > controller.
-> > 
-> > For resume flow, since power and clocks are already enabled before
-> > invoking vendor's resume callback, simply using ufshcd_link_recovery()
-> > inside callback is fine.
-> > 
-> > For suspend flow, the device power enters low power mode or is disabled
-> > before suspend callback, thus ufshcd_link_recovery() can not be directly
-> > used in callback. To leverage host reset flow during ufshcd_suspend(),
-> > set link as off state enforcedly 
-> Not sure this is a proper English, but I'm not sure.
-> 
-> to let ufshcd_host_reset_and_restore()
-> > be executed by ufshcd_suspend().
+As can be seen from kernel/sched/topology.c:
 
-Thanks for your review! I will fix this sentence in next version.
+"EAS can be used on a root domain if it meets all the following conditions:
+ 1. an Energy Model (EM) is available;
+ 2. the SD_ASYM_CPUCAPACITY flag is set in the sched_domain hierarchy.
+ 3. no SMT is detected.
+ 4. the EM complexity is low enough to keep scheduling overheads low;
+ 5. schedutil is driving the frequency of all CPUs of the rd;"
 
-Stanley Chu
+This means that at the very least, schedutil needs to be
+available as a scheduling policy for EAS to work on these
+systems. Make this explicit by selecting CPU_FREQ and
+CPU_FREQ_GOV_SCHEDUTIL from the Versatile Express
+machine.
+
+Currently users of the TC2 board (like me) has to figure these
+dependencies out themselves and it is not helpful.
+
+It is still necessary to configure in the schedutil as default
+governor manually to actually get a working b.L system, so this
+just makes the right governor available to b.L systems, it does
+not turn it on by default.
+
+Cc: Vincent Guittot <vincent.guittot@linaro.org>
+Cc: Viresh Kumar <viresh.kumar@linaro.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/mach-vexpress/Kconfig | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm/mach-vexpress/Kconfig b/arch/arm/mach-vexpress/Kconfig
+index 726a68085c3b..0a5a67448c94 100644
+--- a/arch/arm/mach-vexpress/Kconfig
++++ b/arch/arm/mach-vexpress/Kconfig
+@@ -8,6 +8,8 @@ menuconfig ARCH_VEXPRESS
+ 	select ARM_GLOBAL_TIMER
+ 	select ARM_TIMER_SP804
+ 	select COMMON_CLK_VERSATILE
++	select CPU_FREQ
++	select CPU_FREQ_GOV_SCHEDUTIL
+ 	select GPIOLIB
+ 	select HAVE_ARM_SCU if SMP
+ 	select HAVE_ARM_TWD if SMP
+-- 
+2.24.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
