@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E959D195AC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:12:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18ED4195ACB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:14:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6v0Rx3QoQGCU5PDWWWGaPIWQFTukW5TSWmxogF3ocU=; b=icKQU9QPT7IeOq
-	Ev86q/pa1Lv79M3ZJ5gphQNZAliAQhG8VSNMKX5txhVC4NhtRGik0BeiskmUy32y3MLlDz714tWH4
-	Ig+nDmIttPefwSKIOz99YT88dgsoyzV5inhO+G4ltT3iYBtl/IfwRV3fnFlqJPSa2s7enbFCVVsE5
-	EpcIDSftgy26GzkLJLAMEvI6pregrRCirskZLE9s2Pi4yg6nCcmozOcTxr9I2QLX/3jETKF1rxR5Y
-	IU+I6Tnwm2PDBqxELSLw2qGuBkk+XpGsP/gMy/rw4Jt7zusxJRLcXctwHdvi/rctcrxVIqXHRQG1N
-	hbY0pB57tSLf5JzOoM7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KxMv+YPva/6wjX5vgGoX9nGiyqoo3g8bnmSBF1uP8A4=; b=MkDFAZsDbRElto
+	Zs1aVQmr27fcoXK38ciZjwNTV1TkMU7h1D1qQQ/d4fJdcj9Il0mnRr4Y+aBnYvElNwGA6mbGmy7/S
+	cvj82M+ymD0rQt7WICZjDj2rDfg5zzpz4H8pB14OtDmf7JAKEnIWOgI9fGRovq6ABpidy7T+eu/ao
+	B6Mbb3d3hde3m28lITTNzK3kSv3C214VGKuSqTHZmk7fMGzGwEdYY6qsxQzNgnaKOWQcAh+Vg9ekE
+	sP3rTe7CA69f3KW7NhWSiCT0ey3nLzN/5QCHmt9yTttTnMBEBfmlVphOzPL3GOwkjEN7ZaCMNo734
+	hsrftsJWj7xtsXyFQFVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHrae-0004E7-Va; Fri, 27 Mar 2020 16:12:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHraS-0004DM-Ov
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:12:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B42E31FB;
- Fri, 27 Mar 2020 09:11:59 -0700 (PDT)
-Received: from [172.16.1.108] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42F6A3F71F;
- Fri, 27 Mar 2020 09:11:57 -0700 (PDT)
-Subject: Re: [RFC PATCH] arm64: unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
-To: Andrew Scull <ascull@google.com>
-References: <20200327143941.195626-1-ascull@google.com>
-From: James Morse <james.morse@arm.com>
-Openpgp: preference=signencrypt
-Message-ID: <a8cc7a17-cb84-3e52-15f4-87b27a01876b@arm.com>
-Date: Fri, 27 Mar 2020 16:11:56 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jHrcT-0004ap-Ef; Fri, 27 Mar 2020 16:14:05 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHrcL-0004a3-HD
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:13:59 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
+ by youngberry.canonical.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <colin.king@canonical.com>)
+ id 1jHrcE-0002xS-0M; Fri, 27 Mar 2020 16:13:50 +0000
+From: Colin King <colin.king@canonical.com>
+To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] soc: fsl: qe: clean up an indentation issue
+Date: Fri, 27 Mar 2020 16:13:49 +0000
+Message-Id: <20200327161349.284679-1-colin.king@canonical.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20200327143941.195626-1-ascull@google.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_091200_849357_F249101C 
-X-CRM114-Status: GOOD (  16.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200327_091357_706689_1042ECA1 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [91.189.89.112 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,71 +63,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: qwandor@google.com, qperret@google.com, Marc Zyngier <maz@kernel.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Steven Price <steven.price@arm.com>,
- Will Deacon <will@kernel.org>, wedsonaf@google.com,
- linux-arm-kernel@lists.infradead.org, dbrazdil@google.com,
- kernel-team@android.com, kvmarm@lists.cs.columbia.edu, tabba@google.com
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+From: Colin Ian King <colin.king@canonical.com>
 
-On 3/27/20 2:39 PM, Andrew Scull wrote:
-> Errata 1165522, 1319367 and 1530923 each allow TLB entries to be
-> allocated as a result of a speculative AT instruction. In order to
-> avoid mandating VHE on certain affected CPUs, apply the workaround to
-> both the nVHE and the VHE case for all affected CPUs.
+There is a statement that not indented correctly, remove the
+extraneous space.
 
-You're booting a VHE capable system without VHE, and need KVM?
-Do tell!
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
+---
+ drivers/soc/fsl/qe/ucc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Would enabling the nVHE workaround on a VHE capable part solve your problem?
-Merging the errata has some side effects...
+diff --git a/drivers/soc/fsl/qe/ucc.c b/drivers/soc/fsl/qe/ucc.c
+index d6c93970df4d..cac0fb7693a0 100644
+--- a/drivers/soc/fsl/qe/ucc.c
++++ b/drivers/soc/fsl/qe/ucc.c
+@@ -519,7 +519,7 @@ int ucc_set_tdm_rxtx_clk(u32 tdm_num, enum qe_clock clock,
+ 	int clock_bits;
+ 	u32 shift;
+ 	struct qe_mux __iomem *qe_mux_reg;
+-	 __be32 __iomem *cmxs1cr;
++	__be32 __iomem *cmxs1cr;
+ 
+ 	qe_mux_reg = &qe_immr->qmx;
+ 
+-- 
+2.25.1
 
-
-> ---
-> I'm not able to test the workarounds properly for the affected CPUs but
-> have built and booted under qemu configs with and without VHE as well as
-> the workaround being enabled and disabled.
-> 
-> As there exist work arounds for nVHE and VHE, it doesn't appear to be a
-> technical limitation that meant VHE was being mandated. Please correct
-> me if this understanding is inaccurate. Thanks!
-
-The affected VHE parts came first. Then came those that didn't have VHE at all.
-
-
-> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-> index 7672a978926c..2c1436fc0830 100644
-> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
-> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-> @@ -118,7 +118,7 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
->  	write_sysreg(ctxt->sys_regs[MPIDR_EL1],		vmpidr_el2);
->  	write_sysreg(ctxt->sys_regs[CSSELR_EL1],	csselr_el1);
->  
-> -	if (!cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
-> +	if (!cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT)) {
->  		write_sysreg_el1(ctxt->sys_regs[SCTLR_EL1],	SYS_SCTLR);
->  		write_sysreg_el1(ctxt->sys_regs[TCR_EL1],	SYS_TCR);
->  	} else	if (!ctxt->__hyp_running_vcpu) {
-
-The comment just below here:
-|		/*
-|		 * Must only be done for guest registers, hence the context
-|		 * test. We're coming from the host, so SCTLR.M is already
-|		 * set. Pairs with __activate_traps_nvhe().
-|		 */
-
-The VHE parts aren't going to run __activate_traps_nvhe(), so you skip restoring
-the guest's SCTLR_EL1 and TCR_EL1...
-
-
-Thanks,
-
-James
 
 _______________________________________________
 linux-arm-kernel mailing list
