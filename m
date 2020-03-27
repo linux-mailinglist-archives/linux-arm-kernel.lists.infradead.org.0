@@ -2,79 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E367B195352
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 09:52:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 963F61953AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:13:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNx6Petc+74+A1BCBDgcwpyeQUHdMXgyAJLYd0/deDY=; b=cEOEwzVfsT7N0d
-	LU9Ji/2MHuQubHyTZE42s25n4HJCnJHZEmWx2PLb9ZiWciksk1dR89mSI1MrNYw+SdXc04DY3/sjI
-	V1lqLcVJLNQ+bmEoXfCIgytNgTVch5tNIWqokANRARw71vnHs4YVHdEk0aI0ZYKNoraeqymRH8979
-	O5vXq9/Qc4bCkTH4sHMB4CCJyxzDQiSiQlf6YVtsN08v8bbDuQrsrdJa2pelA11dJG7ZxP66WqKfX
-	IL/RSR+HmRMtIWyqYBVSzwkrILCd/aewBQBStCYMSqcg8337xrDn6bV0Bukmg6JonyyKgwU+IJKcV
-	oAomedoS46tjA4RRBBJw==;
+	List-Owner; bh=xpTC2PNMSiRGliW3t/RSWouTfVps7jRWJmj5m4QEfls=; b=hK4gGiFyL/952d
+	XfsQKuHuY45NpX0oYfBOU400uH2mpGiMd7jLX1KZT36LRXu5KQoKRpmdVWXyzjg0SfFYLpH28neqG
+	kUN0oocrt1c6svlA6OrQyuWQsZNyk9O4wpWDHxZ4ggBd2LEHf+3q/6PskGyZ/GiKlgGNikgQ+dhdZ
+	dt02v9jX1wAN3p8SLD0xwrcTAUoP5GISdJss03AYUtxMksMCW1LD+kImKpkneI9UsOa4Qsj+h/Tkf
+	EIO0AikPNi2/NCbwpwL8EuVD+st8f7+TZpmCxme5NU6P++buaerDrLCqrNypj7UMHMpjf0OUKZCh+
+	xlz+z5+cIFAhEozWY0rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHkil-00083V-H4; Fri, 27 Mar 2020 08:52:07 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHkiL-0007oH-QX; Fri, 27 Mar 2020 08:51:43 +0000
-X-UUID: 7b44feb9cb454b419ab69fb0e90f8122-20200327
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=RTElbvSp69D6eg2X/2aEFPOteskF1Lk4j0eYNpyZIlc=; 
- b=g5kQspaskwNT4Xl27XcqPBa473/rVtQ1UsyC0YGTR+2HyzyTP1fqTlrVRb19PER/ILeveRziQJ5dNE4nUheqDmtV4grs61gQvaniC+pzWUDSKPMKvohPl4208WXw7zwbmpw6GmEHKr55YJzfZO7Nm1NP32ukFqFleuD0afRsGzo=;
-X-UUID: 7b44feb9cb454b419ab69fb0e90f8122-20200327
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.mao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 440690823; Fri, 27 Mar 2020 00:51:37 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 01:51:36 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 16:51:34 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 27 Mar 2020 16:51:33 +0800
-From: Yong Mao <yong.mao@mediatek.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH v2] mmc: mediatek: fix SDIO irq issue
-Date: Fri, 27 Mar 2020 16:51:37 +0800
-Message-ID: <1585299097-6897-2-git-send-email-yong.mao@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1585299097-6897-1-git-send-email-yong.mao@mediatek.com>
-References: <1585299097-6897-1-git-send-email-yong.mao@mediatek.com>
+	id 1jHl2n-00072g-U8; Fri, 27 Mar 2020 09:12:49 +0000
+Received: from mail.baikalelectronics.com ([87.245.175.226]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHl2f-00071n-Qo
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 09:12:44 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 6552B8030886;
+ Fri, 27 Mar 2020 09:12:34 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id e8trym8yYIyf; Fri, 27 Mar 2020 12:12:33 +0300 (MSK)
+Date: Fri, 27 Mar 2020 12:12:26 +0300
+From: Sergey Semin <Sergey.Semin@baikalelectronics.ru>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
+Message-ID: <20200327091226.7kgpum3td3blubsn@ubsrv2.baikal.int>
+References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
+ <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
+ <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
+ <20200323135017.4vi5nwam2rlpepgn@ubsrv2.baikal.int>
+ <20200324101243.GG1922688@smile.fi.intel.com>
+ <20200325171109.cohnsw3s57ckaqud@ubsrv2.baikal.int>
+ <158518709322.125146.10069235641747677647@swboyd.mtv.corp.google.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <158518709322.125146.10069235641747677647@swboyd.mtv.corp.google.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_015141_866328_7F10D759 
-X-CRM114-Status: GOOD (  12.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_021242_230163_5597D2FD 
+X-CRM114-Status: GOOD (  36.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,177 +68,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream@mediatek.com, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, yong mao <yong.mao@mediatek.com>,
- linux-mediatek@lists.infradead.org, Chaotian Jing <chaotian.jing@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Catalin Marina s <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
+ Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
+ Jiri Slaby <jslaby@suse.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
+ Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
+ Maxime Ripard <maxime@cerno.tech>, linux-serial@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
+ Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: yong mao <yong.mao@mediatek.com>
+Hello Stephen
 
-SDIO irq is not triggered by low level, but by falling edge in our
-previous IC. This mechanism only have one chance to catch the SDIO irq
-if a SDIO irq comes within the multiple block transmission. This SDIO
-irq may be easily lost, because falling edge appears only once within 2
-clock after data transmission is completed.
+Thanks for reply. My comment is below.
 
-SDIO irq recheck mechanism will make sure all irqs can be
-processed correctly.
+On Wed, Mar 25, 2020 at 06:44:53PM -0700, Stephen Boyd wrote:
+> Quoting Sergey Semin (2020-03-25 10:11:09)
+> > On Tue, Mar 24, 2020 at 12:12:43PM +0200, Andy Shevchenko wrote:
+> > > On Mon, Mar 23, 2020 at 04:50:17PM +0300, Sergey Semin wrote:
+> > > > On Mon, Mar 23, 2020 at 11:01:09AM +0100, Maxime Ripard wrote:
+> > > 
+> > > > > clk_rate_exclusive_get is pretty intrusive, and due to the usual
+> > > > > topology of clock trees, this will lock down 3-4 parent clocks to
+> > > > > their current rate as well. In the Allwinner SoCs case for example,
+> > > > > this will lock down the same PLL than the one used by the CPU,
+> > > > > preventing cpufreq from running.
+> > > > 
+> > > > Speaking about weak design of a SoC' clock tree. Our problems are nothing
+> > > > with respect to the Allwinner SoC, in which case of changing the
+> > > > CPU-frequency may cause the UART glitches subsequently causing data
+> > > > transfer artefacts.) Moreover as I can see the same issue may raise for
+> > > > I2C, QSPI, PWM devices there.
+> > > > 
+> > > > Anyway your concern does make sense.
+> > > > 
+> > > > > However, the 8250 has a pretty wide range of dividers and can adapt to
+> > > > > any reasonable parent clock rate, so we don't really need to lock the
+> > > > > rate either, we can simply react to a parent clock rate change using
+> > > > > the clock notifiers, just like the SiFive UART is doing.
+> > > > > 
+> > > > > I tried to do that, but given that I don't really have an extensive
+> > > > > knowledge of the 8250, I couldn't find a way to stop the TX of chars
+> > > > > while we change the clock rate. I'm not sure if this is a big deal or
+> > > > > not, the SiFive UART doesn't seem to care.
+> > > > 
+> > > > Yes, your solution is also possible, but even in case of stopping Tx/Rx it
+> > > > doesn't lack drawbacks. First of all AFAIK there is no easy way to just
+> > > > pause the transfers. We'd have to first wait for the current transfers
+> > > > to be completed, then somehow lock the port usage (both Tx and Rx
+> > > > traffic), permit the reference clock rate change, accordingly adjust the
+> > > > UART clock divider, and finally unlock the port. While if we don't mind
+> > > > to occasionally have UART data glitches, we can just adjust the UART ref
+> > > > divider synchronously with ref clock rate change as you and SiFive UART
+> > > > driver suggest.
+> > > > 
+> > > > So we are now at a zugzwang - a fork to three not that good solutions:
+> > > > 1) lock the whole clock branch and provide a glitchless interfaces. But
+> > > > by doing so we may (in case of Allwinner SoCs we will) lockup some very
+> > > > important functionality like CPU-frequency change while the UART port is
+> > > > started up. In this case we won't have the data glitches.
+> > > > 2) just adjust the UART clock divider in case of reference clock rate
+> > > > change (use the SiFive UART driver approach). In this case we may have the
+> > > > data corruption.
+> > > > 3) somehow implement the algo: wait for the transfers to be completed,
+> > > > lock UART interface (it's possible for Tx, but for Rx in case of no handshake
+> > > > enabled it's simply impossible), permit the ref clock rate change,
+> > > > adjust the UART divider, then unlock the UART interface. In this case the data
+> > > > glitches still may happen (if no modem control is available or
+> > > > handshakes are disabled).
+> > > > 
+> > > > As for the cases of Baikal-T1 UARTs the first solutions is the most suitable.
+> > > > We don't lock anything valuable, since a base PLL output isn't directly
+> > > > connected to any device and it's rate once setup isn't changed during the
+> > > > system running. On the other hand I don't mind to implement the second
+> > > > solution, even though it's prone to data glitches. Regarding the solution
+> > > > 3) I won't even try. It's too complicated, I don't have time and
+> > > > test-infrastructure for this.
+> > > > 
+> > > > So Andy what do you think?
+> > > 
+> > > From Intel HW perspective the first two are okay, but since Maxime is against
+> > > first, you have the only option from your list. Perhaps somebody may give
+> > > option 4) here...
+> > > 
+> > 
+> > Ok then. I'll implement the option 2) in v3 if noone gives any alternatives
+> > before that.
+> > 
+> 
+> Sorry, I haven't really read the thread but I'll quickly reply with
+> this.
+> 
+> Maybe option 4 is to make the uart driver a clk provider that consumes
+> the single reference clk like it is already doing today? Then when the
+> rate changes up above for the clk implemented here the clk set rate op
+> for the newly implemented clk can go poke the uart registers to maintain
+> the baud or whatever?
+> 
+> That is close to how the notifier design would work, but it avoids
+> keeping the notifiers around given that the notifiers are not preferred.
+> It is also closer to reality, the uart has a divider or mux internally
+> that we don't model as a clk, but we could just as easily model as such.
 
-Signed-off-by: Yong Mao <yong.mao@mediatek.com>
----
- drivers/mmc/host/mtk-sd.c | 41 +++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 41 insertions(+)
+AFAIU your suggestion is pretty similar to the option 2), but it concerns
+the fixup implementation. So instead of subscribing to the reference clock
+change event and directly adjusting the UART clock divider when the change
+happens, you suggest to convert the divisor setting code into a clock
+provider, which in case of the parental clocks rate change shall
+automatically cause the rate adjustment of the clocks hierarchy below.
 
-diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
-index 7726dcf..b221c02 100644
---- a/drivers/mmc/host/mtk-sd.c
-+++ b/drivers/mmc/host/mtk-sd.c
-@@ -128,6 +128,7 @@
- #define MSDC_PS_CDSTS           (0x1 << 1)	/* R  */
- #define MSDC_PS_CDDEBOUNCE      (0xf << 12)	/* RW */
- #define MSDC_PS_DAT             (0xff << 16)	/* R  */
-+#define MSDC_PS_DATA1           (0x1 << 17)	/* R  */
- #define MSDC_PS_CMD             (0x1 << 24)	/* R  */
- #define MSDC_PS_WP              (0x1 << 31)	/* R  */
- 
-@@ -361,6 +362,7 @@ struct msdc_save_para {
- 
- struct mtk_mmc_compatible {
- 	u8 clk_div_bits;
-+	bool recheck_sdio_irq;
- 	bool hs400_tune; /* only used for MT8173 */
- 	u32 pad_tune_reg;
- 	bool async_fifo;
-@@ -436,6 +438,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt8135_compat = {
- 	.clk_div_bits = 8,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE,
- 	.async_fifo = false,
-@@ -448,6 +451,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt8173_compat = {
- 	.clk_div_bits = 8,
-+	.recheck_sdio_irq = true,
- 	.hs400_tune = true,
- 	.pad_tune_reg = MSDC_PAD_TUNE,
- 	.async_fifo = false,
-@@ -460,6 +464,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt8183_compat = {
- 	.clk_div_bits = 12,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE0,
- 	.async_fifo = true,
-@@ -472,6 +477,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt2701_compat = {
- 	.clk_div_bits = 12,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE0,
- 	.async_fifo = true,
-@@ -484,6 +490,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt2712_compat = {
- 	.clk_div_bits = 12,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE0,
- 	.async_fifo = true,
-@@ -496,6 +503,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt7622_compat = {
- 	.clk_div_bits = 12,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE0,
- 	.async_fifo = true,
-@@ -508,6 +516,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt8516_compat = {
- 	.clk_div_bits = 12,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE0,
- 	.async_fifo = true,
-@@ -518,6 +527,7 @@ struct msdc_host {
- 
- static const struct mtk_mmc_compatible mt7620_compat = {
- 	.clk_div_bits = 8,
-+	.recheck_sdio_irq = false,
- 	.hs400_tune = false,
- 	.pad_tune_reg = MSDC_PAD_TUNE,
- 	.async_fifo = false,
-@@ -591,6 +601,7 @@ static void msdc_reset_hw(struct msdc_host *host)
- 
- static void msdc_cmd_next(struct msdc_host *host,
- 		struct mmc_request *mrq, struct mmc_command *cmd);
-+static void __msdc_enable_sdio_irq(struct msdc_host *host, int enb);
- 
- static const u32 cmd_ints_mask = MSDC_INTEN_CMDRDY | MSDC_INTEN_RSPCRCERR |
- 			MSDC_INTEN_CMDTMO | MSDC_INTEN_ACMDRDY |
-@@ -1007,6 +1018,32 @@ static int msdc_auto_cmd_done(struct msdc_host *host, int events,
- 	return cmd->error;
- }
- 
-+/**
-+ * msdc_recheck_sdio_irq - recheck whether the SDIO irq is lost
-+ *
-+ * Host controller may lost interrupt in some special case.
-+ * Add SDIO irq recheck mechanism to make sure all interrupts
-+ * can be processed immediately
-+ *
-+ */
-+static void msdc_recheck_sdio_irq(struct msdc_host *host)
-+{
-+	u32 reg_int, reg_inten, reg_ps;
-+
-+	if (host->mmc->caps & MMC_CAP_SDIO_IRQ) {
-+		reg_inten = readl(host->base + MSDC_INTEN);
-+		if (reg_inten & MSDC_INTEN_SDIOIRQ) {
-+			reg_int = readl(host->base + MSDC_INT);
-+			reg_ps = readl(host->base + MSDC_PS);
-+			if (!(reg_int & MSDC_INT_SDIOIRQ ||
-+			      reg_ps & MSDC_PS_DATA1)) {
-+				__msdc_enable_sdio_irq(host, 0);
-+				sdio_signal_irq(host->mmc);
-+			}
-+		}
-+	}
-+}
-+
- static void msdc_track_cmd_data(struct msdc_host *host,
- 				struct mmc_command *cmd, struct mmc_data *data)
- {
-@@ -1035,6 +1072,8 @@ static void msdc_request_done(struct msdc_host *host, struct mmc_request *mrq)
- 	if (host->error)
- 		msdc_reset_hw(host);
- 	mmc_request_done(host->mmc, mrq);
-+	if (host->dev_comp->recheck_sdio_irq)
-+		msdc_recheck_sdio_irq(host);
- }
- 
- /* returns true if command is fully handled; returns false otherwise */
-@@ -1393,6 +1432,8 @@ static void __msdc_enable_sdio_irq(struct msdc_host *host, int enb)
- 	if (enb) {
- 		sdr_set_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
- 		sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
-+		if (host->dev_comp->recheck_sdio_irq)
-+			msdc_recheck_sdio_irq(host);
- 	} else {
- 		sdr_clr_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
- 		sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
--- 
-1.9.1
+While your proposal looks neat and better suits a common approach of
+the drivers design, it won't be that easy to be implemented for the serial
+subsystem. As far as I can see serial and 8250 code is too coupled with
+manual divisor and reference clock settings. Common 8250 port code gets
+and sets the divisor and relies on the reference clock value. Similarly
+the 8250-compatible vendor specific devices may also have custom divisor
+settings. Moreover uartclk field, which indicates the reference clock rate
+value, is used in many placed over the serial code, so if we implemented
+your design we would have to update it value anyway, which means to
+subscribe to the reference clock rate change event.
+
+So in order to do what you said, the serial subsystem would have to be
+seriously refactored, which taking into account the subsystem age and
+number of driver, will be very painful.
+
+-Sergey
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
