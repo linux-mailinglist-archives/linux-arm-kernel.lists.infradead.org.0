@@ -2,82 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE62B195863
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:51:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF34E19586A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:56:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u19cNQZcpVQLs6AUnMQsDWVpXgjtLYdZxerc6KpS9ns=; b=QtpO5eCRTzVba8
-	8qCBSaEarAgfDGIDqfT4Rj0+wMe8QK8JCZ2nwtjCFTuxrmEhJI4gmk8lr6GAxBDoc8qW3d+zXcyiU
-	YU/Jjt5kyUN/aJpytXjumQnZkh51qbc3UTHcr9oncDNLg0fTJi7tcUexpCNqJXCSJ9ihN3KULwxZO
-	niaAS2x5HsknP7vt5PyaxxmR3VcV1Ve4YY7HALO2D5xzHtXfzz/18OqumYyLvQWgvL0i/2OwjL+bd
-	cgs3+FeWjXNeQDcmQWrqvkb4ftK6ZJp4P9AV+CP5MCqYLL8Nvs9RgA4+W2IM/dHT7TUHjp6+yTZiG
-	6S5lteoPar5tADCSwVKg==;
+	List-Owner; bh=1pqbnSizu074P96UYfBIaeP70a2dFvwLdbh01oicO1c=; b=AAvw1i8vvpGLt8
+	occMj9ZXcjKev3YTOIEN3Fio6LsuDGX5kT3C0ykXetetSJWw2yoz/crv+Rn4ku2MRihcLM4xYgRhW
+	S1PfaoyxBrzmKIRd1Ozl1sdiuOpTum7o1VYTD9KlKCli448ThPM/XZxFv1urtBRvJyD9aBocrKv6k
+	DM2WTq5sMOPd7P6B+e+y7lNgZxNpKGjN8HjskPj0SEKU2P/ne4rojB43Mzu7iBbGg9BcTi0HpjISq
+	Z/1n/FzOHPZ+u3gpbuFybU4BooXymAzF+jsEDXLGOYWVKqnqjVYfqdyH+r6P0X15HwT2OmWBFxVHa
+	DcTYL+gPtncBbNrAy58g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHpOC-0004aU-Ck; Fri, 27 Mar 2020 13:51:12 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHpO2-0004Zf-Sb
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:51:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	id 1jHpSz-0007CM-DO; Fri, 27 Mar 2020 13:56:09 +0000
+Received: from mickerik.phytec.de ([195.145.39.210])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHpSq-0007By-3I
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:56:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
+ q=dns/txt; i=@phytec.de; t=1585317359; x=1587909359;
+ h=From:Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=b0hEcgQ5tp7MdPMNYpy34qYWL9o4h0/35/w+XAeFTHg=; b=P6/Bxv6HKbU3vhlz81iMo5AeZ
- k6d/KMhTwADcMZKnzk3tloIZonnDrg2jxEioGtl/b6p/hP6ihBsMwotE6u19W+mGWjwaavhC43R/X
- dAQThqsdSQAgfoohLIWbvinP1aJxn+X0mOgyDe8NWUkU5D53nwcgUVjmuW3OSIWWSfCV+t1SmsBZF
- CpdYcNkaqljODfxZv1K6KqSxbS2FBiV3yPh4e4xVJCybvOTjoHibwicdHlQ1dTLu2SvxJyiDwjKLh
- E2dYhn9AWgH0tcdt92cN/fmZS02Urat4gRqI7Ymm8gQREKZePxATHPmj1H3nZmi819+ZuA8EnTSXz
- oXh/KrfiA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42074)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jHpNo-0001Ou-5t; Fri, 27 Mar 2020 13:50:48 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jHpNm-0004HG-RF; Fri, 27 Mar 2020 13:50:46 +0000
-Date: Fri, 27 Mar 2020 13:50:46 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
- types
-Message-ID: <20200327135046.GN25745@shell.armlinux.org.uk>
-References: <E1jHoHy-0002Ep-IY@rmk-PC.armlinux.org.uk>
- <20200327134319.GD11004@lunn.ch>
- <20200327134651.GM25745@shell.armlinux.org.uk>
+ bh=w/C/DGhy+XVpgJUliLirqFOfdwQNqUxARZ0xfZPOw/o=;
+ b=pRjFjC2CT1BOCxtWhQ4WqoOP4CBfGpVeLYqIaZyBlStdd/+spbrCGKi5HyjPKmKq
+ sPIRh1pgqBNREXH7K0jdkSkeP+HbdNWTH41OTsRygUi8lPPJHlmCgKMz4Q8rCJqA
+ N+8XsnO7Fg52sGiSRPO0x76jzHQb2/76VdEu/W7+j6M=;
+X-AuditID: c39127d2-583ff70000001db9-08-5e7e05efcfcf
+Received: from idefix.phytec.de (Unknown_Domain [172.16.0.10])
+ by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id A0.83.07609.FE50E7E5;
+ Fri, 27 Mar 2020 14:55:59 +0100 (CET)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200327134651.GM25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Disclaimed: 1
+Sensitivity: 
+Importance: Normal
+X-Priority: 3 (Normal)
+In-Reply-To: <20200327133624.26160-1-festevam@gmail.com>
+References: <20200327133624.26160-1-festevam@gmail.com>
+Subject: Antwort: [PATCH] ARM: dts: imx27-phytec-phycard-s-rdk: Fix the I2C1
+ pinctrl entries
+From: =?ISO-8859-1?Q?Stefan_Riedm=FCller?= <S.Riedmueller@phytec.de>
+To: Fabio Estevam <festevam@gmail.com>
+Message-ID: <OF690DE83F.5FD7A3A3-ONC1258538.004C346E-C1258538.004C8958@phytec.de>
+Date: Fri, 27 Mar 2020 14:55:58 +0100
+X-Mailer: Lotus Domino Web Server Release 9.0.1FP7 August  17, 2016
+X-MIMETrack: Serialize by HTTP Server on Idefix/Phytec(Release 9.0.1FP7|August
+ 17, 2016) at 27.03.2020 14:55:58,
+ Serialize complete at 27.03.2020 14:55:59,
+ Itemize by HTTP Server on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
+ 27.03.2020 14:55:59,
+ Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
+ 27.03.2020 14:55:59
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrALMWRmVeSWpSXmKPExsWyRoCBS/c9a12cwbwdHBYPr/pbrJq6k8Vi
+ 0+NrrBYvtohbLNj4iNGB1WPnrLvsHptWdbJ5bF5S79H/18Dj8ya5ANYoLpuU1JzMstQifbsE
+ rozlh64zFRzlr7j/YCpzA+Mm3i5GTg4JAROJGz1vmboYuTiEBLYySjxZN5EFJMErIChxcuYT
+ FogifolPf1rZQGxhAV6JTW9nM4LYnAJCEh1XO1khasQkJqz7xdzFyAEUt5BoOCUIEhYSMJf4
+ f38rO0RrnETHxE4wm03ARaK5axs7SLmIgJrE6Xn6ICcwC0xnlDj+9BITxAmBEmd3bgFbyyKg
+ KnHw+ksmiFXOEov/XGABaZAQeMUk0da/F+wGZgFtiWULXzND2HoS/3+eYpzAKDwLyTuzkJTN
+ QlK2gJF5FaNQbmZydmpRZrZeQUZlSWqyXkrqJkZgLByeqH5pB2PfHI9DjEwcjIcYJTiYlUR4
+ n0bWxAnxpiRWVqUW5ccXleakFh9ilOZgURLn3cBbEiYkkJ5YkpqdmlqQWgSTZeLglGpgFP0/
+ pZa5JXBWZaLnGY5/C05lJe/PSnuz2c3uxvl0RqX5/IzWay+zbmNNrb6x5EtCppOc36fZXYtT
+ BJQXqmw9ZGM58cXBaK/9b3lqZYLU/zK+crq/JZ/PUfjOQbVLlpf879cxJP2pE7RIjG0/dmBr
+ csgGlvLsHPWZH/2nT8+3Zo6V7hM//+O3EktxRqKhFnNRcSIANlITtnMCAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_065102_930019_17A8938E 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_065600_283595_0298554C 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [195.145.39.210 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,48 +96,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>,
- "Madalin Bucur \(OSS\)" <madalin.bucur@oss.nxp.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: stable@vger.kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
+ Christian Hemp <C.Hemp@phytec.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 01:46:52PM +0000, Russell King - ARM Linux admin wrote:
-> On Fri, Mar 27, 2020 at 02:43:19PM +0100, Andrew Lunn wrote:
-> > On Fri, Mar 27, 2020 at 12:40:42PM +0000, Russell King wrote:
-> > > Update the SolidRun Armada 8040 platforms phy interface types from the
-> > > old 10gbase-kr to the newer and more correct 10gbase-r.
-> > > 
-> > > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > 
-> > Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-> > 
-> > Can we add a fixes: tag to this? So it gets backported to the point
-> > 10gbase-r was added.
+Hi Fabio,
+
+-----Fabio Estevam <festevam@gmail.com> schrieb: -----
+
+>An: shawnguo@kernel.org
+>Von: Fabio Estevam <festevam@gmail.com>
+>Datum: 27.03.2020 14:36
+>Kopie: kernel@pengutronix.de, c.hemp@phytec.de,
+>s.riedmueller@phytec.de, linux-arm-kernel@lists.infradead.org, Fabio
+>Estevam <festevam@gmail.com>, stable@vger.kernel.org
+>Betreff: [PATCH] ARM: dts: imx27-phytec-phycard-s-rdk: Fix the I2C1
+>pinctrl entries
+>
+>The I2C2 pins are already used and the following errors are seen:
+>
+>imx27-pinctrl 10015000.iomuxc: pin MX27_PAD_I2C2_SDA already
+>requested by 10012000.i2c; cannot claim for 1001d000.i2c
+>imx27-pinctrl 10015000.iomuxc: pin-69 (1001d000.i2c) status -22
+>imx27-pinctrl 10015000.iomuxc: could not request pin 69
+>(MX27_PAD_I2C2_SDA) from group i2c2grp  on device 10015000.iomuxc
+>imx-i2c 1001d000.i2c: Error applying setting, reverse things back
+>imx-i2c: probe of 1001d000.i2c failed with error -22
+>
+>Fix it by adding the correct I2C1 IOMUX entries for the pinctrl_i2c1
+>group.
+>
+>Cc: <stable@vger.kernel.org> 
+>Fixes: 61664d0b432a ("ARM: dts: imx27 phyCARD-S pinctrl")
+>Signed-off-by: Fabio Estevam <festevam@gmail.com>
+>---
+> arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts | 4 ++--
+> 1 file changed, 2 insertions(+), 2 deletions(-)
+>
+>diff --git a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+>b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+>index 0cd75dadf292..188639738dc3 100644
+>--- a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+>+++ b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
+>@@ -75,8 +75,8 @@
+>  imx27-phycard-s-rdk {
+> 		pinctrl_i2c1: i2c1grp {
+> 			fsl,pins = <
+>-				MX27_PAD_I2C2_SDA__I2C2_SDA 0x0
+>-				MX27_PAD_I2C2_SCL__I2C2_SCL 0x0
+>+				MX27_PAD_I2C_DATA__I2C_DATA 0x0
+>+				MX27_PAD_I2C_CLK__I2C_CLK 0x0
+> 			>;
+> 		};
 > 
-> I think "carefully" is the answer.  It's not just the point where
-> 10gbase-r was added because there's a whole bunch of other patches
-> that are also required to the various ethernet and PHY drivers, SFP
-> and phylink.  It's probably going to take a bit to work that out,
-> get it wrong and stuff will break.
+>--
 
-... and actually there is no point.  It is _way_ too soon to even
-start thinking of using 10GKR for its true purpose - the patches
-to add 10GBASER were only merged for v5.6-rc1, so we're still waiting
-for a kernel with that update to be released.  In other words, there's
-no stable kernels to backport it to yet.
-
-Do we want it to go into -rc?  If so, it also needs to be thoroughly
-tested.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Reviewed-by: Stefan Riedmueller <s.riedmueller@phytec.de>
+ 
+>2.17.1
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
