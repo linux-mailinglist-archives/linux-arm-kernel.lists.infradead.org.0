@@ -2,124 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55A5E195DF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 19:53:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84E64195E0B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:02:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2RFSsAg7hdJciwTo7/Co+Tzi6Qzg3On0s1+Oadl8q9Q=; b=LXqPoPWTQLbkWD
-	bygoaIEI03L/SXwTp5qZ9zZwzk9ELGH2TiaLmkALWtRaYtwUT7NVir3xFz+b4rWuUvynaC/+eEFXs
-	HejvzJ+H27vsfaLCl4JPuDsSi/RvC7L1oy9zSaoAPQSv0xWOxjhKqZCMBe72KaXXnjvud6BPaeQzY
-	npIBST5wns9KeHLnG+1NEEbKUZPy+SurWHMfiQ8CAcd/f6gnY5tiNakKCRdFXGWvQHG7QdekwNYMZ
-	I2fimE/mnruRVhOd3ecOPBNXc0LQ+gjAzFbSimfLooCUj4RcBiyr7YSxvIdBk+lOKbxCn3vb2gRjB
-	BGY/8YznPk/mrrmTspVQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KDTaKdjNgRuDFksqZnC5Yy+a5GG6GVE4ny452p83pso=; b=poTkge114ZSpI8
+	vH38iIvQV2J/cNLwHefonJaeqk+vQ0Q2qgxfMbZyhb060QOq9qOlp8PBuEDyK5ozAg/buY9k2amAE
+	/p9K0761imwlJI9DYAvS222UryX1V2abOHHkRmF+jJPA/AqDwigNb1h+iJjSY4i9rZkadOKPvxbPQ
+	yCWTHo7RKBlvAKhuT+AD7slgtYbofrBglOAcdf4q/1O7SGNQD0ooWuoY2KwSt1CzHhLSywumWKabm
+	Junc2wZz6cVa0XQqK+zDKr+qEj59xDHicuHOGYrDhlvxQEYKkLmGsc9DS41cSyxpHxUa8DHpBWzee
+	01k0ix9uQAUJ+uIBJH1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHu6W-0005fA-DS; Fri, 27 Mar 2020 18:53:16 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jHuF4-0000sJ-FO; Fri, 27 Mar 2020 19:02:06 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHu6L-0005eK-PK
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 18:53:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585335184;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=txEf0iGAg57n1CQT9WASaoM403Qz9AV6Q5JbNyrOaE8=;
- b=hVpQCGs6VLQqG7/Z36+JiDPvQpLz2i5vOpGHCyFu39lRSfgXaoDlFB1ICGTMLa/Q/XakfL
- 6nczl2p+PgTGDpGA58pKgQ6eCGP733eIkk61VsK3A3SAJd1NWr9KC6/z2yeN3vvTObyaPb
- soePZ7AJSZih9kbH/DFSaXprMxatcZI=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-358-tF7bgkoVMviVZsRQ8b07nQ-1; Fri, 27 Mar 2020 14:52:59 -0400
-X-MC-Unique: tF7bgkoVMviVZsRQ8b07nQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 39AD1800D5C;
- Fri, 27 Mar 2020 18:52:58 +0000 (UTC)
-Received: from [10.36.112.108] (ovpn-112-108.ams2.redhat.com [10.36.112.108])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 937C05DA84;
- Fri, 27 Mar 2020 18:52:55 +0000 (UTC)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: James Morse <james.morse@arm.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
- <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
- <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
- <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
- dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
- QZLQMzNE74ap+GDK0wnacPQFpcG1AE9RMq3aeErY5tujekBS32jfC/7AnH7I0v1v1TbbK3Gp
- XNeiN4QroO+5qaSr0ID2sz5jtBLRb15RMre27E1ImpaIv2Jw8NJgW0k/D1RyKCwaTsgRdwuK
- Kx/Y91XuSBdz0uOyU/S8kM1+ag0wvsGlpBVxRR/xw/E8M7TEwuCZQArqqTCmkG6HGcXFT0V9
- PXFNNgV5jXMQRwU0O/ztJIQqsE5LsUomE//bLwzj9IVsaQpKDqW6TAPjcdBDPLHvriq7kGjt
- WhVhdl0qEYB8lkBEU7V2Yb+SYhmhpDrti9Fq1EsmhiHSkxJcGREoMK/63r9WLZYI3+4W2rAc
- UucZa4OT27U5ZISjNg3Ev0rxU5UH2/pT4wJCfxwocmqaRr6UYmrtZmND89X0KigoFD/XSeVv
- jwBRNjPAubK9/k5NoRrYqztM9W6sJqrH8+UWZ1Idd/DdmogJh0gNC0+N42Za9yBRURfIdKSb
- B3JfpUqcWwE7vUaYrHG1nw54pLUoPG6sAA7Mehl3nd4pZUALHwARAQABtCREYXZpZCBIaWxk
- ZW5icmFuZCA8ZGF2aWRAcmVkaGF0LmNvbT6JAlgEEwEIAEICGwMFCQlmAYAGCwkIBwMCBhUI
- AgkKCwQWAgMBAh4BAheAFiEEG9nKrXNcTDpGDfzKTd4Q9wD/g1oFAl3pImkCGQEACgkQTd4Q
- 9wD/g1o+VA//SFvIHUAvul05u6wKv/pIR6aICPdpF9EIgEU448g+7FfDgQwcEny1pbEzAmiw
- zAXIQ9H0NZh96lcq+yDLtONnXk/bEYWHHUA014A1wqcYNRY8RvY1+eVHb0uu0KYQoXkzvu+s
- Dncuguk470XPnscL27hs8PgOP6QjG4jt75K2LfZ0eAqTOUCZTJxA8A7E9+XTYuU0hs7QVrWJ
- jQdFxQbRMrYz7uP8KmTK9/Cnvqehgl4EzyRaZppshruKMeyheBgvgJd5On1wWq4ZUV5PFM4x
- II3QbD3EJfWbaJMR55jI9dMFa+vK7MFz3rhWOkEx/QR959lfdRSTXdxs8V3zDvChcmRVGN8U
- Vo93d1YNtWnA9w6oCW1dnDZ4kgQZZSBIjp6iHcA08apzh7DPi08jL7M9UQByeYGr8KuR4i6e
- RZI6xhlZerUScVzn35ONwOC91VdYiQgjemiVLq1WDDZ3B7DIzUZ4RQTOaIWdtXBWb8zWakt/
- ztGhsx0e39Gvt3391O1PgcA7ilhvqrBPemJrlb9xSPPRbaNAW39P8ws/UJnzSJqnHMVxbRZC
- Am4add/SM+OCP0w3xYss1jy9T+XdZa0lhUvJfLy7tNcjVG/sxkBXOaSC24MFPuwnoC9WvCVQ
- ZBxouph3kqc4Dt5X1EeXVLeba+466P1fe1rC8MbcwDkoUo65Ag0EVcufkQEQAOfX3n0g0fZz
- Bgm/S2zF/kxQKCEKP8ID+Vz8sy2GpDvveBq4H2Y34XWsT1zLJdvqPI4af4ZSMxuerWjXbVWb
- T6d4odQIG0fKx4F8NccDqbgHeZRNajXeeJ3R7gAzvWvQNLz4piHrO/B4tf8svmRBL0ZB5P5A
- 2uhdwLU3NZuK22zpNn4is87BPWF8HhY0L5fafgDMOqnf4guJVJPYNPhUFzXUbPqOKOkL8ojk
- CXxkOFHAbjstSK5Ca3fKquY3rdX3DNo+EL7FvAiw1mUtS+5GeYE+RMnDCsVFm/C7kY8c2d0G
- NWkB9pJM5+mnIoFNxy7YBcldYATVeOHoY4LyaUWNnAvFYWp08dHWfZo9WCiJMuTfgtH9tc75
- 7QanMVdPt6fDK8UUXIBLQ2TWr/sQKE9xtFuEmoQGlE1l6bGaDnnMLcYu+Asp3kDT0w4zYGsx
- 5r6XQVRH4+5N6eHZiaeYtFOujp5n+pjBaQK7wUUjDilPQ5QMzIuCL4YjVoylWiBNknvQWBXS
- lQCWmavOT9sttGQXdPCC5ynI+1ymZC1ORZKANLnRAb0NH/UCzcsstw2TAkFnMEbo9Zu9w7Kv
- AxBQXWeXhJI9XQssfrf4Gusdqx8nPEpfOqCtbbwJMATbHyqLt7/oz/5deGuwxgb65pWIzufa
- N7eop7uh+6bezi+rugUI+w6DABEBAAGJAiUEGAECAA8FAlXLn5ECGwwFCQlmAYAACgkQTd4Q
- 9wD/g1qA6w/+M+ggFv+JdVsz5+ZIc6MSyGUozASX+bmIuPeIecc9UsFRatc91LuJCKMkD9Uv
- GOcWSeFpLrSGRQ1Z7EMzFVU//qVs6uzhsNk0RYMyS0B6oloW3FpyQ+zOVylFWQCzoyyf227y
- GW8HnXunJSC+4PtlL2AY4yZjAVAPLK2l6mhgClVXTQ/S7cBoTQKP+jvVJOoYkpnFxWE9pn4t
- H5QIFk7Ip8TKr5k3fXVWk4lnUi9MTF/5L/mWqdyIO1s7cjharQCstfWCzWrVeVctpVoDfJWp
- 4LwTuQ5yEM2KcPeElLg5fR7WB2zH97oI6/Ko2DlovmfQqXh9xWozQt0iGy5tWzh6I0JrlcxJ
- ileZWLccC4XKD1037Hy2FLAjzfoWgwBLA6ULu0exOOdIa58H4PsXtkFPrUF980EEibUp0zFz
- GotRVekFAceUaRvAj7dh76cToeZkfsjAvBVb4COXuhgX6N4pofgNkW2AtgYu1nUsPAo+NftU
- CxrhjHtLn4QEBpkbErnXQyMjHpIatlYGutVMS91XTQXYydCh5crMPs7hYVsvnmGHIaB9ZMfB
- njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
- FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
-Organization: Red Hat GmbH
-Message-ID: <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
-Date: Fri, 27 Mar 2020 19:52:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jHuEw-0000rh-2h
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:01:59 +0000
+Received: by mail-lf1-x143.google.com with SMTP id t21so8756642lfe.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 12:01:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CooN/lA7d5yACqkmjNxbvElnXH9xWYc5D690cPagV5A=;
+ b=XzwTwOQ2tZqjO9DLphNswRW0Faz+tkI3lW4QKn8PnDodceq0s69XJc+EX+CaxLUZAc
+ DsmeaJdkg7faxGR2WlOr2Q2xOqCK3LhvO83UpvhTPjbrrDITVXe01nU0HW2zIBGLSdNK
+ x+SI4S2qeU3EY5SopL7X1UD90wHcT3WjJvLfVVsAO2U5Em5d1XWCXX0PRhRjUwlFbFjC
+ /RhNOl/qPgtup89fKy/XuqC10uHh8xb2p99SAbLCDPTbSVvO8tHFnVGOGXPs57VzLKHy
+ z3pNrxrHAv/ZVQFSEpVOjEocb4Os2eKubiclJ5LN8KBbJgdGF3NkBVCWlJGOm0DbvFTa
+ Y1mA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CooN/lA7d5yACqkmjNxbvElnXH9xWYc5D690cPagV5A=;
+ b=UBP51A9Z7ws3ImNDxeZ0HHPxb/xaKAR1UmtgeXSKSKKfdAwkWyHSCbuN5wLZKfdxIn
+ avb8ehlVGoup6ZFRYxMMykMTXugPLTlLbTZg0oxON5ccVg8ZtiiTQbG5Zqp4xjALcGdI
+ tnYfPJCmDZwX/U3s6AxmP8z4a/EVeLaiiqn40uL22Awv/9IB9+68ePTx0nPrdK4fC/yq
+ 6mIJcNtCZpePLZL+0Zl+1zBYVKulTdjrAyh3kfxbxeV5yB5OBcnRT7ncNzmtEUgg+Njc
+ N6s5vjw2PLx7vaaQ8UDhHAwmfXQcKX6qdAyo09RgIuQU7JPCHV9UQv6HZqRhtshanU7D
+ 2RqA==
+X-Gm-Message-State: AGi0PuZja/d9J3M5Dux61yV5M8IWwZe5XCGQzW/QuAq3PRnY229teny0
+ x7AmXunTUqomUy1zl6Mn2OLcWjnf7/pShUAyo/D/bw==
+X-Google-Smtp-Source: APiQypLD/fNDqtD4u7+uuQ8ZqMmHjJHk9/rbkJ2Ows6MzWRJlKEVAAUCTvzeqzTfoWN78XIJxBngK/onAWpgkIOJt00=
+X-Received: by 2002:ac2:5f7c:: with SMTP id c28mr457241lfc.4.1585335716191;
+ Fri, 27 Mar 2020 12:01:56 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+References: <20200317205017.28280-1-michael@walle.cc>
+ <20200317205017.28280-13-michael@walle.cc>
+ <CAMpxmJW770v6JLdveEe1hkgNEJByVyArhorSyUZBYOyFiVyOeg@mail.gmail.com>
+ <9c310f2a11913d4d089ef1b07671be00@walle.cc>
+ <CAMpxmJXmD-M+Wbj6=wgFgP2aDxbqDN=ceHi1XDun4iwdLm55Zg@mail.gmail.com>
+ <22944c9b62aa69da418de7766b7741bd@walle.cc>
+ <CACRpkdbJ3DBO+W4P0n-CfZ1T3L8d_L0Nizra8frkv92XPXR4WA@mail.gmail.com>
+ <4d8d3bc26bdf73eb5c0e5851589fe085@walle.cc>
+In-Reply-To: <4d8d3bc26bdf73eb5c0e5851589fe085@walle.cc>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 27 Mar 2020 20:01:44 +0100
+Message-ID: <CACRpkdYwqReW+UcY=4S3ZnC+jFeVr=e+Ns12A_CK6o7VBUXHbA@mail.gmail.com>
+Subject: Re: [PATCH 12/18] gpio: add support for the sl28cpld GPIO controller
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_115305_906776_D8B3FA46 
-X-CRM114-Status: GOOD (  30.48  )
+X-CRM114-CacheID: sfid-20200327_120158_658529_0A4EFE5D 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -129,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,222 +98,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-hwmon@vger.kernel.org, linux-devicetree <devicetree@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, Marc Zyngier <maz@kernel.org>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, linux-pwm@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, linux-gpio <linux-gpio@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Lee Jones <lee.jones@linaro.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Jason Cooper <jason@lakedaemon.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->> 2. You do the kexec. The kexec kernel will only operate on a reserved
->> memory region (reserved via e.g., kernel cmdline crashkernel=128M).
-> 
-> I think you are merging the kexec and kdump behaviours.
-> (Wrong terminology? The things behind 'kexec -l Image' and 'kexec -p Image')
+On Fri, Mar 27, 2020 at 4:28 PM Michael Walle <michael@walle.cc> wrote:
 
-Oh, I see - I think your example below clarifies things. Something like
-that should go in the cover letter if we end up in this patch being
-required :)
+> For starters, would that be a drivers/gpio/gpio-regmap.c or a
+> drivers/base/regmap/regmap-gpio.c? I would assume the first,
 
-(I missed that the problematic part is "random" addresses passed by user
-space to the kernel, where it wants data to be loaded to on kexec -e)
+Yeah I would name it like that. gpio-regmap.c.
 
-> 
-> For kdump, yes, the new kernel is loaded into the crashkernel reservation, and
-> confined to it.
-> 
-> 
-> For regular kexec, the new kernel can be loaded any where in memory. There might
-> be a difference with how this works on arm64....
-> 
-> The regular kexec kernel isn't stored in its final location when its loaded, its
-> relocated there when the image is executed. The target/destination memory may
-> have been removed in the meantime.
-> 
-> (an example recipe below should clarify this)
-> 
-> 
->> Is it that in 2., the reserved memory region (for the crashkernel) could
->> have been offlined in the meantime?
-> 
-> No, for kdump: the crashkernel reservation is PG_reserved, and its not something
-> mm knows how to move, so that region can't be taken offline.
-> 
-> (On arm64 we additionally prevent the boot-memory from being removed as it is
-> all described as present by UEFI. The crashkernel reservation would always be
-> from this type of memory)
-
-Right.
-
-> 
-> 
-> This is about a regular kexec, any crashdump reservation is irrelevant.
-> This kexec kernel is temporarily stored out of line, then relocated when executed.
-> 
-> A recipe so that we're at least on the same terminal! This is on a TX2 running
-> arm64's for-next/core using Qemu-TCG to emulate x86. (Sorry for the bizarre
-> config, its because Qemu supports hotremove on x86, but not yet on arm64).
-> 
-> 
-> Insert the memory:
-> (qemu) object_add memory-backend-ram,id=mem1,size=1G
-> (qemu) device_add pc-dimm,id=dimm1,memdev=mem1
-> 
-> | root@vm:~# free -m
-> |               total        used        free      shared  ...
-> | Mem:            918          52         814           0  ...
-> | Swap:             0           0           0
-> 
-> 
-> Bring it online:
-> | root@vm:~# cd /sys/devices/system/memory/
-> | root@vm:/sys/devices/system/memory# for F in memory3*; do echo \
-> | online_movable > $F/state; done
-> 
-> | Built 1 zonelists, mobility grouping on.  Total pages: 251049
-> | Policy zone: DMA32
-> 
-> | -bash: echo: write error: Invalid argument
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:           1942          53        1836           0  ...
-> | Swap:             0           0           0
-> 
-> 
-> Load kexec:
-> | root@vm:/sys/devices/system/memory# kexec -l /root/bzImage --reuse-cmdline
-> 
-
-I assume this will trigger
-
-kexec_load -> do_kexec_load -> kimage_load_segment ->
-kimage_load_normal_segment -> kimage_alloc_page -> kimage_alloc_pages
-
-Which will just allocate a bunch of pages and mark them reserved.
-
-Now, AFAIKs, all allocations will be unmovable. So none of the kexec
-segment allocations will actually end up on your DIMM (as it is onlined
-online_movable).
-
-So, the loaded image (with its segments) from user won't be problematic
-and not get placed on your DIMM.
-
-
-Now, the problematic part is (via man kexec_load) "mem and memsz specify
-a physical address range that is the target of the copy."
-
-So the place where the image will be "assembled" at when doing the
-reboot. Understood :)
-
-> Press the Attention button to request removal:
-> 
-> (qemu) device_del dimm1
-> 
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Built 1 zonelists, mobility grouping on.  Total pages: 233728
-> | Policy zone: DMA32
-> 
-> The memory is gone:
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:            918          89         769           0  ...
-> | Swap:             0           0           0
-> 
-> Trigger kexec:
-> | root@vm:/sys/devices/system/memory# kexec -e
-> 
-> [...]
-> 
-> | sd 0:0:0:0: [sda] Synchronizing SCSI cache
-> | kexec_core: Starting new kernel
-> 
-> ... and Qemu restarts the platform firmware instead of proceeding with kexec.
-> (I assume this is a triple fault)
-> 
-> You can use mem-min and mem-max to control where kexec's user space will place
-> the memory.
-> 
-> 
-> If you apply this patch, the above sequence will fail at the device remove step,
-> as the physical addresses match the loaded kexec image:
-> 
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | kexec_core: Memory region in use
-> | kexec_core: Memory region in use
-
-Okay, so I assume the kexec userspace tool provided target kernel
-addresses for segments that reside on the DIMM.
-
-
-> | memory memory39: Offline failed.
-> | Built 1 zonelists, mobility grouping on.  Total pages: 299212
-> | Policy zone: Normal
-> 
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:           1942          90        1793           0    ...
-> | Swap:             0           0           0
-> 
-> I can't remove the DIMM, because we failed to offline it:
-
-I wonder if we should instead make the "kexec -e" fail. It tries to
-touch random system memory.
-
-Denying to offline MOVABLE memory should be avoided - and what kexec
-does here sounds dangerous to me (allowing it to write random system
-memory).
-
-Roughly what I am thinking is this:
-
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index ba1d91e868ca..70c39a5307e5 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -1135,6 +1135,10 @@ int kernel_kexec(void)
-                error = -EINVAL;
-                goto Unlock;
-        }
-+       if (!kexec_image_validate()) {
-+               error = -EINVAL;
-+               goto Unlock;
-+       }
-
- #ifdef CONFIG_KEXEC_JUMP
-        if (kexec_image->preserve_context) {
-
-
-kexec_image_validate() would go over all segments and validate that the
-involved pages are actual valid memory (pfn_to_online_page()).
-
-All we have to do is protect from memory hotplug until we switch to the
-new kernel.
-
-Will probably need some thought. But it will actually also bail out when
-user space passes wrong physical memory addresses, instead of
-triple-faulting silently.
-
--- 
-Thanks,
-
-David / dhildenb
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
