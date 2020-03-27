@@ -2,78 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0377019550B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:21:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90348195523
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:25:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AI+pye7a2cByf44OZlQ+n6n2cDQ+aN7EUki0ao6X5oU=; b=KyhllI7qDWdvd7
-	URbB2uU/J8qZmcDrXfyNT/zWWBRdjumruGUgQG0XmTqLQ5RMeV16eVEEbOQD4UIOq09PxQmIfp3YQ
-	yufnu3rXWaHdHGOsJcf7Fsby44EFV74NxO/aaYVryEPwYIo+qzczrLUfBkdr2j0nXPr0ItLza1hrI
-	UJOkQ8ltBeO9kJ4vLs6UA8MkNLFKHuYKjHydN9xrtJqAp2TfSSzrzwVCa3Mn5P0ANxZ5vww21pyal
-	8QKttw1qbtYCOaLi4WyqYCZGTzJqyoApCnza39WAJVhgx5DAOEgfbVlu4m+yD46+vCcmHHaPCKrGR
-	fgowWBys/tGMVFnImreA==;
+	List-Owner; bh=gq0v6B9/9R0LLPyvFRyPHG605cai0RkwEBxulHMNwBs=; b=IggwgP6tUAkm1n
+	s1vr/GfWZswTuO0Q45sjJd0L7WvZEe31aQ8O0BKcn9Rfy5RJY2uxPhDNUC1Sn2qG5E2BWV1GR38x+
+	dzkAEgkobsJ9Cx73qOUG1UiTPxu5XLW2dTDgzXqGttw3LLkQAL9cEjTx1++CbSQFKOrAQKY2bRvni
+	VpQZyZSR6GWuGw8lbgAhTNtTmkzc6h3JRqDUYU8Yx5F2MUPGIr9yXDEpWxciS/3SLqvjeOpzRdZt3
+	YsjlTbHWzpwXGjNX3UvQCD6zk4/FXEqf1rdQlsY/ZRlLfbRWnZDdTzCEggzRIzvK2GvfgHytk6Nlx
+	9kfQriHKBfmBciTBZiQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHm7C-0000CF-1T; Fri, 27 Mar 2020 10:21:26 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jHmAw-0002Ap-9Z; Fri, 27 Mar 2020 10:25:18 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHm6z-0000BJ-N9
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:21:16 +0000
-Received: by mail-lf1-x144.google.com with SMTP id e7so7396503lfq.1
+ id 1jHmAi-0001KZ-4N
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:25:05 +0000
+Received: by mail-lj1-x241.google.com with SMTP id p14so9581867lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 03:21:09 -0700 (PDT)
+ Fri, 27 Mar 2020 03:25:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TuB8BNTEMS6Xu4xWKK0GTpM0KTFJDSPd7CoTH260LEY=;
- b=BWdcmcSOZAia9WokqOKv83FwargH+rfDXr2Mp0QwyZsT/mABCSd3y3ZMISvNsbmXhU
- gQMIR1duY1UxdvKr1tbHQzNudMLJvKqINJWtOlrbk9+kwOmXToR95IOMrI3yVrYmqYw4
- ERIXKr3kSqBiWHHSNhbcDl9Iko5A1Q0USZ7lVRGh7i4ZWuu8E4UBLvEJ0Rb7XNIkfIsy
- aw8uoNh4prsuenO/RPpdtz/llUkVRpSahQ6WFiqcc4YqGBOhRx5YxeATNzXZkpF5gRXs
- u9qzGndEeTvD5XvNeditQ2MMZ58/zYFaGXYoaCpP0AzoqV0GaxsvyztxFYEj52lAcoCH
- pBJw==
+ :cc; bh=7m4lWvk4//cGrxQhI0ltBzlijc7RgGiBhxq+4JikvIo=;
+ b=g5D4YyM74lsERyxVWEtSBIzcaGgdj91X+gvlZ19U9ZMi+fX9jzIbSx241hKH+2N10n
+ ziWkkfCA99BNAYxuSyr8N2yRDOb+CrAs3hUW9nWyYL+T1Zbdpimu14dpwEQ8u0ZgWorn
+ jSCE336+YRKMQoWrUu2H935e/YYhgLXs9uYqKbli4hJwXxKwIoSHMeuymqJgQkpQfZRQ
+ 2Yv0Je3RpW5WlNLbgou34/CGii2qNfxtnKZVPdAwGRM8dmO0AwU6kRISyRfEoQQtliQ0
+ PzSk/y9Z5dGPWAExpyKivHo6EP0AGCQljfldCXbcC+z3SspoLHj5TtF3Ff10dRFHFfY5
+ IkGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=TuB8BNTEMS6Xu4xWKK0GTpM0KTFJDSPd7CoTH260LEY=;
- b=qlCaHFbs/61rUNjZVPn+n+UoIw9jBBTdIanI1zkF/szpV1qPQ38BA/1ju27+xoZQuG
- 9fteszFlaxZmaaWo5nAp0npBAAywfqEaoz/qeFZyiktc+MtAupTm19TkH2CIKWVFWwtT
- jwk50XGC9XCj6VQcmbf1XHWHPM7f1aiMtlQo3LM+BDBJ3Wwm2xA2BSrqg6S2feXGm6rn
- DbzvKQPGplcYjQjIwfM+NGeae1GysfbieSeTmkosra0/WLJeOeJ7w4jMaMEc4+G99UeM
- B/HLMCmdfdyWYXXtgY1fPzVsyQgIzuOd7FJy+LCW+MTuQRj4dr6dSpLaFr/FQwsGkfvp
- zsnQ==
-X-Gm-Message-State: ANhLgQ0n0iY9l2zEkyH39U3frhHrQT4ldhvadEMVBd1H57cQZ8VCzjvj
- JlLt2YmdkmAhxJ810X6mxdTWeUbFTq5EfTqw835QNQ==
-X-Google-Smtp-Source: ADFU+vtsIgqK8FyZODtKNKWKI1HxhtKduwTybRXQvKGmxQLsPLeMOqx9p3y4gdOqstKYu6oc3bIWeFZeiamysR3lBHg=
-X-Received: by 2002:a19:ac8:: with SMTP id 191mr8675462lfk.77.1585304468041;
- Fri, 27 Mar 2020 03:21:08 -0700 (PDT)
+ bh=7m4lWvk4//cGrxQhI0ltBzlijc7RgGiBhxq+4JikvIo=;
+ b=mxv840AEHRNKwtg29VhqQfT/t56VPiddWI7uoZMQ6Bojs9Q4qBhKR6BZ6pBWww+N+x
+ HpyLQ9DT6MSF3FFFPXngLx44IYw8xLFoCAyQC0jeIzVP2okJOfhtZaLpng+1ySFe5MOb
+ ct8i/IxYLaMD1KxaFT2jfErcpo6fKw6hd2DgJ905U8y14HZPczbTl8XLkW3yaSxW7dXf
+ 1xKXrGlBYz6QOYmQ1efBLd425Dk7Y9PU6kis1o6qHlfYpaW3WUBf2pTQvAJAVv2GihOk
+ EEycue0x9q8+whSy6cYDB5r8EVehhDwii/v8YHkic91CVmo1WqRRJRu6i9uK2Bbz1/17
+ E5+g==
+X-Gm-Message-State: AGi0PuZrjgSYdZd2fUo3FFyZak2HUY77F5wvEflpOUttz8W4l6zpW37W
+ gtBqq0kIQAvRdcQVKWpkY3N9XYJs9fe91v98GU4qGw==
+X-Google-Smtp-Source: APiQypLGNjy+bso8fEQU1Rr+N9WpSOr49XJcW20+rl9/F0WHi6kN5XEtnL5MgahJRdxrpJS/UNceeTWkSa9YNVg/vb8=
+X-Received: by 2002:a2e:9c48:: with SMTP id t8mr2097823ljj.168.1585304702362; 
+ Fri, 27 Mar 2020 03:25:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200317205017.28280-1-michael@walle.cc>
- <20200317205017.28280-13-michael@walle.cc>
- <CAMpxmJW770v6JLdveEe1hkgNEJByVyArhorSyUZBYOyFiVyOeg@mail.gmail.com>
- <9c310f2a11913d4d089ef1b07671be00@walle.cc>
- <CAMpxmJXmD-M+Wbj6=wgFgP2aDxbqDN=ceHi1XDun4iwdLm55Zg@mail.gmail.com>
- <22944c9b62aa69da418de7766b7741bd@walle.cc>
-In-Reply-To: <22944c9b62aa69da418de7766b7741bd@walle.cc>
+References: <e6cd8adf-60df-437a-003f-58e3403e4697@linaro.org>
+ <20200318174131.20582-1-daniel.lezcano@linaro.org>
+ <20200318174131.20582-10-daniel.lezcano@linaro.org>
+In-Reply-To: <20200318174131.20582-10-daniel.lezcano@linaro.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 27 Mar 2020 11:20:56 +0100
-Message-ID: <CACRpkdbJ3DBO+W4P0n-CfZ1T3L8d_L0Nizra8frkv92XPXR4WA@mail.gmail.com>
-Subject: Re: [PATCH 12/18] gpio: add support for the sl28cpld GPIO controller
-To: Michael Walle <michael@walle.cc>
+Date: Fri, 27 Mar 2020 11:24:51 +0100
+Message-ID: <CACRpkdbt2yJ4-_82ZGrkgCat+Qywyy7HFLaqremzhc1rKTp+3w@mail.gmail.com>
+Subject: Re: [PATCH 10/21] clocksource: Replace setup_irq() by request_irq()
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_032114_345773_5A816960 
-X-CRM114-Status: GOOD (  15.40  )
+X-CRM114-CacheID: sfid-20200327_032504_207474_2B623384 
+X-CRM114-Status: GOOD (  14.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,48 +92,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, linux-devicetree <devicetree@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, Marc Zyngier <maz@kernel.org>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, linux-pwm@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, linux-gpio <linux-gpio@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>,
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>, NXP Linux Team <linux-imx@nxp.com>,
  =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Ray Jui <rjui@broadcom.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
+ <linux-samsung-soc@vger.kernel.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ "open list:ARM/Amlogic Meson SoC support" <linux-amlogic@lists.infradead.org>,
  Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Lee Jones <lee.jones@linaro.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Jason Cooper <jason@lakedaemon.net>
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Barry Song <baohua@kernel.org>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tony Prisk <linux@prisktech.co.nz>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Kevin Hilman <khilman@baylibre.com>, Enrico Weigelt <info@metux.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 9:06 PM Michael Walle <michael@walle.cc> wrote:
-> Am 2020-03-25 12:50, schrieb Bartosz Golaszewski:
+On Wed, Mar 18, 2020 at 6:42 PM Daniel Lezcano
+<daniel.lezcano@linaro.org> wrote:
 
-> > In that case maybe you should use the disable_locking option in
-> > regmap_config and provide your own callbacks that you can use in the
-> > irqchip code too?
+> From: afzal mohammed <afzal.mohd.ma@gmail.com>
 >
-> But how would that solve problem (1). And keep in mind, that the
-> reqmap_irqchip is actually used for the interrupt controller, which
-> is not this gpio controller.
+> request_irq() is preferred over setup_irq(). The early boot setup_irq()
+> invocations happen either via 'init_IRQ()' or 'time_init()', while
+> memory allocators are ready by 'mm_init()'.
 >
-> Ie. the interrupt controller of the sl28cpld uses the regmap_irqchip
-> and all interrupt phandles pointing to the interrupt controller will
-> reference the toplevel node. Any phandles pointing to the gpio
-> controller will reference the GPIO subnode.
+> Per tglx[1], setup_irq() existed in olden days when allocators were not
+> ready by the time early interrupts were initialized.
+>
+> Hence replace setup_irq() by request_irq().
+>
+> Seldom remove_irq() usage has been observed coupled with setup_irq(),
+> wherever that has been found, it too has been replaced by free_irq().
+>
+> A build error that was reported by kbuild test robot <lkp@intel.com>
+> in the previous version of the patch also has been fixed.
+>
+> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+>
+> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> Link: https://lore.kernel.org/r/91961c77c1cf93d41523f5e1ac52043f32f97077.1582799709.git.afzal.mohd.ma@gmail.com
 
-Ideally we would create something generic that has been on my
-mind for some time, like a generic GPIO regmap irqchip now that
-there are a few controllers like that.
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
-I don't know how feasible it is or how much work it would be. But
-as with GPIO_GENERIC (for MMIO) it would be helpful since we
-can then implement things like .set_multiple() and .get_multiple()
-for everyone.
+It is definitely the right thing to do, I cannot test it right now
+but if desired I can test it on my targets later in the following
+weeks.
 
 Yours,
 Linus Walleij
