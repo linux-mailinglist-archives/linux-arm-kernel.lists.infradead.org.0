@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB2119581F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:36:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93684195824
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:37:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kIJEyVmCXzX4OBaonScNioJF+JTRFbw7u+SLL4vyp5M=; b=C8I
-	VpGyr6f/EXufAIQcnbWqfeVssl3Oi0Vs2QUsqutx2tl+5GY2IBJ5Y23HlkX9fW3CD/HBAKkoaF2pc
-	nFbQKI7G43GAl20GSGl8fGKPldOvsgeMmlZ/J/1xA7ajPwYgpGVJ/4VQMcscdoH6x5XkJMG7+09Jr
-	reyQYmbyPDYuJAD5OmnShTlX4Z5u2ijiWKSth7DYOlI6vs04DlNZTdvBtcQ3oExx4dtET0tNR7xwi
-	/uk7SPt/nFp9u2a4YYaNKTOLFgmbeOaS6Ymcnyqp0dP5INGRh7YDIcnAQWS/tdvYTPEeB5MWaXhfV
-	JtWExwBOPo0tsJznpFw5dpPZ4aAmO4Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=znyZ8T/JB4fcBGmG2Q+ayuMmL7pVGZrXeh/bGadJeRk=; b=sNakNYe3wey8jk
+	Wx2/bBLglZY7NuMNS2TJDA6qvTb1VXmbOvncKDIWlLbK+ennqWjzgrLT2H0mUC8h0DSmk2QUYHzQf
+	p3+MNbXPyqiUyv5cYAWB80k/xaTbfbqzfRq806D4VctlqSsNj2UnFa9rga/h5PkM2lW2rSuLXSSDR
+	VbSF2M2R24jWUQxIDC68E3+urTw9A2PyHMH9OXIexxl79PctJIFIPb9LLQzqdb3u6BftnM1nBgGmX
+	/dqJmQc7BjLG8xeV1nld7rxT0T7ZtlT7uHf710tIidIT1STOwZcor4FLzdLkGkQ1nKE5j6w97FHAm
+	wZiLMaSgkbWV6pL72LVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHpAJ-0005tt-6K; Fri, 27 Mar 2020 13:36:51 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1jHpB5-0006BA-Nc; Fri, 27 Mar 2020 13:37:39 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHpAA-0005tJ-Eg
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:36:43 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id p19so4857648qve.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 06:36:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=AuD1hP2SDvNnMIeBCx2+xXnWwBrp0PFdSYPVHiYwolM=;
- b=Yig7/7eC9ibhdFRjmZ17yEFzyHzA1GJlwGQjbMB4byzLgR3/GjaH4+zxBeAi5lSSDW
- A2ulmJPwU57I1jLrxtqiiT2OgKleReKob+JJbRt67V/Y3EdaS4J62YHMoTGrHDuBd3wS
- a1SkZT3HiK51FQ2jRpP7onIYXfWInAAu5aOTi3lz1Sgol4ew/HJt+KdEBonSYVOW/uhg
- f7rpOj3oqrIsaV4/vlUpFQo4efnqSUW+NyLgk3qYAlVHr4cPmsqMZnT/kKik3fDUjze0
- jVgUB+mb3J46eVDHSQscBVC0sKu7sVcKbxBvwrSmWHECDEH8WxK+BV9rOVp0Lc3lWga/
- JO3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=AuD1hP2SDvNnMIeBCx2+xXnWwBrp0PFdSYPVHiYwolM=;
- b=ijb1I/LJie06LHTU+GSJIXkZcDryASOrWFrq4dDwIAEVRUStk4DiFCPy2/GkTW+oV+
- /mFA3ggVXqysYk1SVs82nldzKiuohgKuQENPO9oVJAFItr+KdGPv8S5CaQ6HR8YG5blX
- /L0ivxtV9GQjtHRyJJ/2B/kU20Y60zeUOoyxkesQG3UnlHzE6BaGTB0HF6s6+/TnNxBv
- LLHjSA1KqFq6SCwCC9Fc06tu7uTB5iXlBAtJPwtwbg7s6PKUmFZ/2VGi8OcbC+85zAdX
- K50CeVwrnUkmWXvl7+6F2yBqstNsCKzJO75hq25yRjJv+CmfbrzN9pW2kENo0LCY9BQH
- I3kA==
-X-Gm-Message-State: ANhLgQ1oJMEo35RV1A9k2yt9E2wMcrmbHsG4hh40H/WGHcNs4ymwrA7H
- stBiPdVWXVum771Nv0ryPQ8=
-X-Google-Smtp-Source: ADFU+vu30tmXNyfs+zodPVKegK0hqcQK8mHj/c7276G9aRecJQr7qGE3V6lHWUFeelkYTU0yt/NL2w==
-X-Received: by 2002:a0c:be08:: with SMTP id k8mr13727025qvg.62.1585316199854; 
- Fri, 27 Mar 2020 06:36:39 -0700 (PDT)
-Received: from localhost.localdomain ([2804:14c:482:5bb::4])
- by smtp.gmail.com with ESMTPSA id d141sm3665317qke.68.2020.03.27.06.36.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Mar 2020 06:36:38 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] ARM: dts: imx27-phytec-phycard-s-rdk: Fix the I2C1 pinctrl
- entries
-Date: Fri, 27 Mar 2020 10:36:24 -0300
-Message-Id: <20200327133624.26160-1-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jHpAv-0006AY-Rw
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:37:32 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 14E41634C90;
+ Fri, 27 Mar 2020 15:37:06 +0200 (EET)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1jHpAX-0000og-4s; Fri, 27 Mar 2020 15:37:05 +0200
+Date: Fri, 27 Mar 2020 15:37:05 +0200
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v2 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200327133705.GC2394@valkosipuli.retiisi.org.uk>
+References: <20200313110350.10864-1-robert.foss@linaro.org>
+ <20200313110350.10864-3-robert.foss@linaro.org>
+ <20200313121746.GC5730@valkosipuli.retiisi.org.uk>
+ <CAG3jFytpx8_+DKhUVZnUFeMYK82Z1hFWcEnbyD0=4a8p3ojteg@mail.gmail.com>
+ <20200326144725.GA2394@valkosipuli.retiisi.org.uk>
+ <CAG3jFyu=HOsWNeRFC2t4HjzYrFrLjsbXzAm4+zD50Xq48mqzcw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAG3jFyu=HOsWNeRFC2t4HjzYrFrLjsbXzAm4+zD50Xq48mqzcw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_063642_491077_8BA51C4C 
-X-CRM114-Status: GOOD (  10.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_063730_094664_F654FD13 
+X-CRM114-Status: GOOD (  18.44  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,50 +71,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.riedmueller@phytec.de, stable@vger.kernel.org, kernel@pengutronix.de,
- c.hemp@phytec.de, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The I2C2 pins are already used and the following errors are seen:
+Hi Robert,
 
-imx27-pinctrl 10015000.iomuxc: pin MX27_PAD_I2C2_SDA already requested by 10012000.i2c; cannot claim for 1001d000.i2c
-imx27-pinctrl 10015000.iomuxc: pin-69 (1001d000.i2c) status -22
-imx27-pinctrl 10015000.iomuxc: could not request pin 69 (MX27_PAD_I2C2_SDA) from group i2c2grp  on device 10015000.iomuxc
-imx-i2c 1001d000.i2c: Error applying setting, reverse things back
-imx-i2c: probe of 1001d000.i2c failed with error -22
+On Fri, Mar 27, 2020 at 11:32:29AM +0100, Robert Foss wrote:
+> On Thu, 26 Mar 2020 at 15:47, Sakari Ailus <sakari.ailus@iki.fi> wrote:
+> >
+> > Hi Robert,
+> >
+> > On Thu, Mar 26, 2020 at 12:56:37PM +0100, Robert Foss wrote:
+> > ...
+> > > > > +static int __ov8856_power_on(struct ov8856 *ov8856)
+> > > > > +{
+> > > > > +     struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> > > > > +     int ret;
+> > > > > +
+> > > > > +     ret = clk_prepare_enable(ov8856->xvclk);
+> > > > > +     if (ret < 0) {
+> > > > > +             dev_err(&client->dev, "failed to enable xvclk\n");
+> > > > > +             return ret;
+> > > > > +     }
+> > > > > +
+> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_HIGH);
+> > > > > +
+> > > > > +     ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
+> > > > > +                                 ov8856->supplies);
+> > > > > +     if (ret < 0) {
+> > > > > +             dev_err(&client->dev, "failed to enable regulators\n");
+> > > > > +             goto disable_clk;
+> > > > > +     }
+> > > > > +
+> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, GPIOD_OUT_LOW);
+> > > > > +
+> > > > > +     usleep_range(1500, 1800);
+> > > >
+> > > > I think you could omit the delay on ACPI based systems. Or just bail out
+> > > > early in that case.
+> > >
+> > > I'll add a check for reset_gpio being NULL, and skip the sleep for that case.
+> >
+> > There could also be a regulator but no GPIO.
+> >
+> > I think if you don't have either, then certainly there's no need for a
+> > delay.
+> 
+> Removing the delay if no action is taken makes sense, but I'm not sure
+> how best to do it.
+> If there are no regulators dummy ones are created automatically, which
+> makes distinguishing between a little bit cumbersome. The regulator
+> structs could of course all be inspected, and if all are dummy ones,
+> the delay could be skipped. But is there a neater way of doing this?
+> Manually inspecting the regs strikes me as a bit inelegant.
 
-Fix it by adding the correct I2C1 IOMUX entries for the pinctrl_i2c1 group.
+I guess the cleanest, easy way to make this right, albeit slightly
+unoptimal in very rare cases where you have none of the above resources in
+a DT system, is to bail out if you're running on an ACPI based system.
 
-Cc: <stable@vger.kernel.org> 
-Fixes: 61664d0b432a ("ARM: dts: imx27 phyCARD-S pinctrl")
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+I.e. checking for e.g. is_acpi_node(dev->fwnode).
 
-diff --git a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
-index 0cd75dadf292..188639738dc3 100644
---- a/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
-+++ b/arch/arm/boot/dts/imx27-phytec-phycard-s-rdk.dts
-@@ -75,8 +75,8 @@
- 	imx27-phycard-s-rdk {
- 		pinctrl_i2c1: i2c1grp {
- 			fsl,pins = <
--				MX27_PAD_I2C2_SDA__I2C2_SDA 0x0
--				MX27_PAD_I2C2_SCL__I2C2_SCL 0x0
-+				MX27_PAD_I2C_DATA__I2C_DATA 0x0
-+				MX27_PAD_I2C_CLK__I2C_CLK 0x0
- 			>;
- 		};
- 
 -- 
-2.17.1
-
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
