@@ -2,57 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 977981950B8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 06:39:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA6161950EF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 07:14:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KJnlH9j5sI6Mx1GHZN/kxRS5H/Jc8SqAvcnOvcjwkYc=; b=hYXDUDVauBhu3M
-	V6X+bpDaClLC1y0qMtjLIgK/jQF2jn0tRs84sKD3pD7SER7Jfbw8af4YW6K2doKDEcYX6VT4ETdqI
-	3J1DCRlfAd2rGI/B91X06oPIKMY1SBxZu0ZNfV/Cbi9tE74d5ow8xOg9bsLOevih5MJ33zll0ceob
-	+0xEU2B5N/H4RKhv5G5McAeZgr5Dm5Zc6hGeopuggs/QZZ7BBXTTWSPJi0MlO9UmhZuizcDmCc5b7
-	TMZs6vgdME98uKqJb4HReZX3b6AqqhuMFh9izDBgiqaYaHBAME+kaZaixmYRD0Vqw3Rlffr4oB9s/
-	8SzxGL6KJbP3VRCS/jvg==;
+	List-Owner; bh=CoqxyxWjN9tRjUsJ9jdavs4WHKbPxVr/tV9qmLbUbO4=; b=bPCKIzGGF5AwS3
+	DtTZaWyQSuJCL7TUlqZ4Lz/AT8TOyh/vDIg5uzvB/0o4l0KJeprLu30RIxAv/HRL8whVgOFoDdLS2
+	FbRQo03JWi3q744sOe8ALksH0BO8cjk0XDrnZxCbq23RZypBmpPxXFrgxLtuxZs3E/Nh1E+61AHk9
+	fZH0WEpw36ZZ160xi9ZzgKucM/y2fFLBN70iFGA5kLwcc0gbsrio0bymwRgXiMOkMua1YAzg5Nz03
+	r7YeXjcaMeZfBf8WvtjLrwYlhClCDqUnCQn1T820n9LVo7c5wkePiersPC29N77DWvuTTkQiLOD2X
+	lYZ7od592KAaGtCAH2bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHhhv-0003DT-Nc; Fri, 27 Mar 2020 05:39:03 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jHiGP-0005wu-1H; Fri, 27 Mar 2020 06:14:41 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHhho-0003Cs-U5
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 05:38:58 +0000
-Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jHhhk-00085G-Qu; Fri, 27 Mar 2020 06:38:52 +0100
-Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jHhhj-0001QA-LF; Fri, 27 Mar 2020 06:38:51 +0100
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Bin Liu <b-liu@ti.com>
-Subject: [PATCH v1] usb: musb: dsps: set MUSB_DA8XX quirk for AM335x
-Date: Fri, 27 Mar 2020 06:38:49 +0100
-Message-Id: <20200327053849.5348-1-o.rempel@pengutronix.de>
-X-Mailer: git-send-email 2.26.0.rc2
+ id 1jHiGI-0005wO-B9
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 06:14:36 +0000
+IronPort-SDR: tduCu7xiXiLGUtTQOXITgbXGaqUJjhwDcnAHriHYbheZBLsIy2cq+U+RS56WswBwexlnTY9xBG
+ 1uTZYydEQvKQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 26 Mar 2020 23:14:33 -0700
+IronPort-SDR: nwedRNb+1N85l/MnMkOmkUmi7fYaTSJ5C4IFXF2sJxaWfUcWYKdwYOKLOzmsgFi2Eqluxty1CQ
+ Ja4ilgdYyXQw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,311,1580803200"; d="scan'208";a="293849309"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by FMSMGA003.fm.intel.com with ESMTP; 26 Mar 2020 23:14:31 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jHiGE-000IgY-OG; Fri, 27 Mar 2020 14:14:30 +0800
+Date: Fri, 27 Mar 2020 14:14:24 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: [arm-soc:arm/late] BUILD SUCCESS
+ 56effbdd2cecd055aef547ed76da83df6fd68d3b
+Message-ID: <5e7d99c0.uiAgoaGiKLYcW5Vm%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_223856_971147_36C70D4B 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200326_231434_435434_59A30B3A 
+X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
+ 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,68 +72,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Grzeschik <m.grzeschik@pengutronix.de>, fercerpav@gmail.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- russell@personaltelco.net, Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Beagle Bone Black has different memory corruptions if kernel is
-configured with USB_TI_CPPI41_DMA=y. This issue is reproducible with
-ath9k-htc driver (ar9271 based wifi usb controller):
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/late
+branch HEAD: 56effbdd2cecd055aef547ed76da83df6fd68d3b  Merge tag 'qcom-arm64-for-5.7' of git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux into arm/late
 
-root@AccessBox:~ iw dev wlan0 set monitor  fcsfail otherbss
-root@AccessBox:~ ip l s dev wlan0 up
-kmemleak: Cannot insert 0xda577e40 into the object search tree (overlaps existing)
-CPU: 0 PID: 176 Comm: ip Not tainted 5.5.0 #7
-Hardware name: Generic AM33XX (Flattened Device Tree)
-[<c0112c14>] (unwind_backtrace) from [<c010dc98>] (show_stack+0x18/0x1c)
-[<c010dc98>] (show_stack) from [<c08c7c2c>] (dump_stack+0x84/0x98)
-[<c08c7c2c>] (dump_stack) from [<c02c75a8>] (create_object+0x2f8/0x324)
-[<c02c75a8>] (create_object) from [<c02b8928>] (kmem_cache_alloc+0x1a8/0x39c)
-[<c02b8928>] (kmem_cache_alloc) from [<c072fb68>] (__alloc_skb+0x60/0x174)
-[<c072fb68>] (__alloc_skb) from [<bf0c5c58>] (ath9k_wmi_cmd+0x50/0x184 [ath9k_htc])
-[<bf0c5c58>] (ath9k_wmi_cmd [ath9k_htc]) from [<bf0cb410>] (ath9k_regwrite_multi+0x54/0x84 [ath9k_htc])
-[<bf0cb410>] (ath9k_regwrite_multi [ath9k_htc]) from [<bf0cb7fc>] (ath9k_regwrite+0xf0/0xfc [ath9k_htc])
-[<bf0cb7fc>] (ath9k_regwrite [ath9k_htc]) from [<bf1aca78>] (ar5008_hw_process_ini+0x280/0x6c0 [ath9k_hw])
-[<bf1aca78>] (ar5008_hw_process_ini [ath9k_hw]) from [<bf1a66ac>] (ath9k_hw_reset+0x270/0x1458 [ath9k_hw])
-[<bf1a66ac>] (ath9k_hw_reset [ath9k_hw]) from [<bf0c9588>] (ath9k_htc_start+0xb0/0x22c [ath9k_htc])
-[<bf0c9588>] (ath9k_htc_start [ath9k_htc]) from [<bf0eb3c0>] (drv_start+0x4c/0x1e8 [mac80211])
-[<bf0eb3c0>] (drv_start [mac80211]) from [<bf104a84>] (ieee80211_do_open+0x480/0x954 [mac80211])
-[<bf104a84>] (ieee80211_do_open [mac80211]) from [<c075127c>] (__dev_open+0xdc/0x160)
-[<c075127c>] (__dev_open) from [<c07516a8>] (__dev_change_flags+0x1a4/0x204)
-[<c07516a8>] (__dev_change_flags) from [<c0751728>] (dev_change_flags+0x20/0x50)
-[<c0751728>] (dev_change_flags) from [<c076971c>] (do_setlink+0x2ac/0x978)
+elapsed time: 735m
 
-After applying this patch, the system is running in monitor mode without
-noticeable issues.
+configs tested: 162
+configs skipped: 0
 
-Suggested-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
-Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+ia64                             allyesconfig
+sh                            titan_defconfig
+powerpc                           allnoconfig
+h8300                       h8s-sim_defconfig
+i386                              allnoconfig
+i386                             alldefconfig
+i386                             allyesconfig
+i386                                defconfig
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                                defconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+arc                                 defconfig
+arc                              allyesconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                            allnoconfig
+parisc                           allyesconfig
+parisc                generic-32bit_defconfig
+parisc                generic-64bit_defconfig
+x86_64               randconfig-a001-20200326
+x86_64               randconfig-a002-20200326
+x86_64               randconfig-a003-20200326
+i386                 randconfig-a001-20200326
+i386                 randconfig-a002-20200326
+i386                 randconfig-a003-20200326
+alpha                randconfig-a001-20200326
+m68k                 randconfig-a001-20200326
+mips                 randconfig-a001-20200326
+nds32                randconfig-a001-20200326
+parisc               randconfig-a001-20200326
+riscv                randconfig-a001-20200326
+c6x                  randconfig-a001-20200327
+h8300                randconfig-a001-20200327
+microblaze           randconfig-a001-20200327
+nios2                randconfig-a001-20200327
+sparc64              randconfig-a001-20200327
+c6x                  randconfig-a001-20200326
+h8300                randconfig-a001-20200326
+microblaze           randconfig-a001-20200326
+nios2                randconfig-a001-20200326
+sparc64              randconfig-a001-20200326
+csky                 randconfig-a001-20200326
+openrisc             randconfig-a001-20200326
+s390                 randconfig-a001-20200326
+xtensa               randconfig-a001-20200326
+x86_64               randconfig-c001-20200326
+x86_64               randconfig-c002-20200326
+x86_64               randconfig-c003-20200326
+i386                 randconfig-c001-20200326
+i386                 randconfig-c002-20200326
+i386                 randconfig-c003-20200326
+x86_64               randconfig-e001-20200326
+x86_64               randconfig-e002-20200326
+x86_64               randconfig-e003-20200326
+i386                 randconfig-e001-20200326
+i386                 randconfig-e002-20200326
+i386                 randconfig-e003-20200326
+x86_64               randconfig-f001-20200326
+x86_64               randconfig-f002-20200326
+x86_64               randconfig-f003-20200326
+i386                 randconfig-f001-20200326
+i386                 randconfig-f002-20200326
+i386                 randconfig-f003-20200326
+x86_64               randconfig-g001-20200327
+x86_64               randconfig-g002-20200327
+x86_64               randconfig-g003-20200327
+i386                 randconfig-g001-20200327
+i386                 randconfig-g002-20200327
+i386                 randconfig-g003-20200327
+x86_64               randconfig-g001-20200326
+x86_64               randconfig-g002-20200326
+x86_64               randconfig-g003-20200326
+i386                 randconfig-g001-20200326
+i386                 randconfig-g002-20200326
+i386                 randconfig-g003-20200326
+x86_64               randconfig-h001-20200326
+x86_64               randconfig-h002-20200326
+x86_64               randconfig-h003-20200326
+i386                 randconfig-h001-20200326
+i386                 randconfig-h002-20200326
+i386                 randconfig-h003-20200326
+arc                  randconfig-a001-20200326
+arm                  randconfig-a001-20200326
+arm64                randconfig-a001-20200326
+ia64                 randconfig-a001-20200326
+powerpc              randconfig-a001-20200326
+sparc                randconfig-a001-20200326
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+riscv                            allmodconfig
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+um                           x86_64_defconfig
+um                             i386_defconfig
+um                                  defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
+
 ---
- drivers/usb/musb/musb_dsps.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/usb/musb/musb_dsps.c b/drivers/usb/musb/musb_dsps.c
-index 88923175f71e..c01f9e9e69f5 100644
---- a/drivers/usb/musb/musb_dsps.c
-+++ b/drivers/usb/musb/musb_dsps.c
-@@ -690,7 +690,7 @@ static void dsps_dma_controller_resume(struct dsps_glue *glue) {}
- #endif /* CONFIG_USB_TI_CPPI41_DMA */
- 
- static struct musb_platform_ops dsps_ops = {
--	.quirks		= MUSB_DMA_CPPI41 | MUSB_INDEXED_EP,
-+	.quirks		= MUSB_DMA_CPPI41 | MUSB_INDEXED_EP | MUSB_DA8XX,
- 	.init		= dsps_musb_init,
- 	.exit		= dsps_musb_exit,
- 
--- 
-2.26.0.rc2
-
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
