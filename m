@@ -2,65 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA6161950EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 07:14:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16E931950FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 07:20:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CoqxyxWjN9tRjUsJ9jdavs4WHKbPxVr/tV9qmLbUbO4=; b=bPCKIzGGF5AwS3
-	DtTZaWyQSuJCL7TUlqZ4Lz/AT8TOyh/vDIg5uzvB/0o4l0KJeprLu30RIxAv/HRL8whVgOFoDdLS2
-	FbRQo03JWi3q744sOe8ALksH0BO8cjk0XDrnZxCbq23RZypBmpPxXFrgxLtuxZs3E/Nh1E+61AHk9
-	fZH0WEpw36ZZ160xi9ZzgKucM/y2fFLBN70iFGA5kLwcc0gbsrio0bymwRgXiMOkMua1YAzg5Nz03
-	r7YeXjcaMeZfBf8WvtjLrwYlhClCDqUnCQn1T820n9LVo7c5wkePiersPC29N77DWvuTTkQiLOD2X
-	lYZ7od592KAaGtCAH2bQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Fmvzdw2D6WwKzjWytvjLruQ+tn+W4tAVbrSFt+WsfK8=; b=I1y6aUTK2xXRgfJ8nZhaYDh5I
+	R2KnaBNOqeH97bacsmDZ2IoduMvotabE6E+qAKS3FGBgzb0gtIg2rcWm4c1/ClHB+B8lcyITvvsEo
+	YmUBeSnLBdy5XMRsCRS8aLz1tHzv+qJpFVfV+R1vn6BxWvbZMJxxtbGywoenVPKErlKN9zPVdXeJR
+	WBMfFxbZhYvLhod4XsQdyVe4YfzzQ53zQNsrSOhArwWEHf3MUpyjgJTCH7yg1p0KdBx0OA64I5N56
+	ovhlmJw+V7AF2ojAZFtyb5hlCQmNDHf9bE7BMVbKJ2xbfj1hXqeymmVun00CD7mMGfMHyJbdzfD1b
+	372gcXQ1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHiGP-0005wu-1H; Fri, 27 Mar 2020 06:14:41 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1jHiLs-0000Oc-Oc; Fri, 27 Mar 2020 06:20:20 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHiGI-0005wO-B9
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 06:14:36 +0000
-IronPort-SDR: tduCu7xiXiLGUtTQOXITgbXGaqUJjhwDcnAHriHYbheZBLsIy2cq+U+RS56WswBwexlnTY9xBG
- 1uTZYydEQvKQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 26 Mar 2020 23:14:33 -0700
-IronPort-SDR: nwedRNb+1N85l/MnMkOmkUmi7fYaTSJ5C4IFXF2sJxaWfUcWYKdwYOKLOzmsgFi2Eqluxty1CQ
- Ja4ilgdYyXQw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,311,1580803200"; d="scan'208";a="293849309"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by FMSMGA003.fm.intel.com with ESMTP; 26 Mar 2020 23:14:31 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jHiGE-000IgY-OG; Fri, 27 Mar 2020 14:14:30 +0800
-Date: Fri, 27 Mar 2020 14:14:24 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [arm-soc:arm/late] BUILD SUCCESS
- 56effbdd2cecd055aef547ed76da83df6fd68d3b
-Message-ID: <5e7d99c0.uiAgoaGiKLYcW5Vm%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jHiLk-0000O7-1V; Fri, 27 Mar 2020 06:20:13 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: myjosserand) with ESMTPSA id 8D9F6290B99
+Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20200302155703.278421-1-mylene.josserand@collabora.com>
+ <20200302155703.278421-2-mylene.josserand@collabora.com>
+ <2221545.2vEflg7qi2@diego>
+ <CAMuHMdXJQqaCcMko9GUAeUiYQzmy3vnX42yVQNPzhj5ijtFuYA@mail.gmail.com>
+ <5802ec08-5e6a-8547-ee8e-dde630791235@collabora.com>
+ <CAMuHMdVKFT7eNK0RUi3miJ08O9FMAVs5Qz=YmbHH5-9UUzLNPw@mail.gmail.com>
+From: Mylene Josserand <mylene.josserand@collabora.com>
+Message-ID: <5efe50ad-a88e-bc8c-de08-3be355ad9e53@collabora.com>
+Date: Fri, 27 Mar 2020 07:20:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <CAMuHMdVKFT7eNK0RUi3miJ08O9FMAVs5Qz=YmbHH5-9UUzLNPw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_231434_435434_59A30B3A 
-X-CRM114-Status: UNSURE (   7.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20200326_232012_219394_6E18F5C4 
+X-CRM114-Status: GOOD (  17.54  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
- 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,191 +65,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/late
-branch HEAD: 56effbdd2cecd055aef547ed76da83df6fd68d3b  Merge tag 'qcom-arm64-for-5.7' of git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux into arm/late
-
-elapsed time: 735m
-
-configs tested: 162
-configs skipped: 0
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm                         at91_dt_defconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                               defconfig
-sparc                            allyesconfig
-ia64                             allyesconfig
-sh                            titan_defconfig
-powerpc                           allnoconfig
-h8300                       h8s-sim_defconfig
-i386                              allnoconfig
-i386                             alldefconfig
-i386                             allyesconfig
-i386                                defconfig
-ia64                             alldefconfig
-ia64                             allmodconfig
-ia64                              allnoconfig
-ia64                                defconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-nds32                               defconfig
-h8300                     edosk2674_defconfig
-h8300                    h8300h-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-arc                                 defconfig
-arc                              allyesconfig
-powerpc                             defconfig
-powerpc                       ppc64_defconfig
-powerpc                          rhel-kconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-parisc                            allnoconfig
-parisc                           allyesconfig
-parisc                generic-32bit_defconfig
-parisc                generic-64bit_defconfig
-x86_64               randconfig-a001-20200326
-x86_64               randconfig-a002-20200326
-x86_64               randconfig-a003-20200326
-i386                 randconfig-a001-20200326
-i386                 randconfig-a002-20200326
-i386                 randconfig-a003-20200326
-alpha                randconfig-a001-20200326
-m68k                 randconfig-a001-20200326
-mips                 randconfig-a001-20200326
-nds32                randconfig-a001-20200326
-parisc               randconfig-a001-20200326
-riscv                randconfig-a001-20200326
-c6x                  randconfig-a001-20200327
-h8300                randconfig-a001-20200327
-microblaze           randconfig-a001-20200327
-nios2                randconfig-a001-20200327
-sparc64              randconfig-a001-20200327
-c6x                  randconfig-a001-20200326
-h8300                randconfig-a001-20200326
-microblaze           randconfig-a001-20200326
-nios2                randconfig-a001-20200326
-sparc64              randconfig-a001-20200326
-csky                 randconfig-a001-20200326
-openrisc             randconfig-a001-20200326
-s390                 randconfig-a001-20200326
-xtensa               randconfig-a001-20200326
-x86_64               randconfig-c001-20200326
-x86_64               randconfig-c002-20200326
-x86_64               randconfig-c003-20200326
-i386                 randconfig-c001-20200326
-i386                 randconfig-c002-20200326
-i386                 randconfig-c003-20200326
-x86_64               randconfig-e001-20200326
-x86_64               randconfig-e002-20200326
-x86_64               randconfig-e003-20200326
-i386                 randconfig-e001-20200326
-i386                 randconfig-e002-20200326
-i386                 randconfig-e003-20200326
-x86_64               randconfig-f001-20200326
-x86_64               randconfig-f002-20200326
-x86_64               randconfig-f003-20200326
-i386                 randconfig-f001-20200326
-i386                 randconfig-f002-20200326
-i386                 randconfig-f003-20200326
-x86_64               randconfig-g001-20200327
-x86_64               randconfig-g002-20200327
-x86_64               randconfig-g003-20200327
-i386                 randconfig-g001-20200327
-i386                 randconfig-g002-20200327
-i386                 randconfig-g003-20200327
-x86_64               randconfig-g001-20200326
-x86_64               randconfig-g002-20200326
-x86_64               randconfig-g003-20200326
-i386                 randconfig-g001-20200326
-i386                 randconfig-g002-20200326
-i386                 randconfig-g003-20200326
-x86_64               randconfig-h001-20200326
-x86_64               randconfig-h002-20200326
-x86_64               randconfig-h003-20200326
-i386                 randconfig-h001-20200326
-i386                 randconfig-h002-20200326
-i386                 randconfig-h003-20200326
-arc                  randconfig-a001-20200326
-arm                  randconfig-a001-20200326
-arm64                randconfig-a001-20200326
-ia64                 randconfig-a001-20200326
-powerpc              randconfig-a001-20200326
-sparc                randconfig-a001-20200326
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-riscv                            allmodconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-sh                               allmodconfig
-sh                                allnoconfig
-sh                          rsk7269_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-um                           x86_64_defconfig
-um                             i386_defconfig
-um                                  defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgR2VlcnQsCgpPbiAzLzI2LzIwIDQ6MzEgUE0sIEdlZXJ0IFV5dHRlcmhvZXZlbiB3cm90ZToK
+PiBIaSBNeWxlbmUsCj4gCj4gT24gVGh1LCBNYXIgMjYsIDIwMjAgYXQgMjo1MCBQTSBNeWxlbmUg
+Sm9zc2VyYW5kCj4gPG15bGVuZS5qb3NzZXJhbmRAY29sbGFib3JhLmNvbT4gd3JvdGU6Cj4+IE9u
+IDMvNi8yMCAxMTo0NSBBTSwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+Pj4gT24gV2VkLCBN
+YXIgNCwgMjAyMCBhdCAxMjowMCBQTSBIZWlrbyBTdMO8Ym5lciA8aGVpa29Ac250ZWNoLmRlPiB3
+cm90ZToKPj4+PiBBbSBNb250YWcsIDIuIE3DpHJ6IDIwMjAsIDE2OjU3OjAyIENFVCBzY2hyaWVi
+IE15bMOobmUgSm9zc2VyYW5kOgo+Pj4+PiBEZXRlcm1pbmUgd2hpY2ggcmV2aXNpb24gb2Ygcmsz
+Mjg4IGJ5IGNoZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4+Pj4+IEFjY29yZGluZyB0byB0aGUg
+Um9ja2NoaXAgQlNQIGtlcm5lbCwgb24gcmszMjg4dywgdGhlIEhETUkKPj4+Pj4gcmV2aXNpb24g
+ZXF1YWxzIDB4MUEgd2hpY2ggaXMgbm90IHRoZSBjYXNlIGZvciB0aGUgcmszMjg4IFsxXS4KPj4+
+Pj4KPj4+Pj4gQXMgdGhlc2UgU09DIGhhdmUgc29tZSBkaWZmZXJlbmNlcywgdGhlIG5ldyBmdW5j
+dGlvbgo+Pj4+PiAnc29jX2lzX3JrMzI4OHcnIHdpbGwgaGVscCB1cyB0byBrbm93IG9uIHdoaWNo
+IHJldmlzaW9uCj4+Pj4+IHdlIGFyZS4KPj4+Pgo+Pj4+IHdoYXQgaGFwcGVuZWQgdG8ganVzdCBo
+YXZpbmcgYSBkaWZmZXJlbnQgY29tcGF0aWJsZSBpbiB0aGUgZHRzPwo+Pj4+IEFrYSBkb2luZyBh
+Cj4+Pj4KPj4+PiByazMyODh3LmR0c2kgd2l0aAo+Pj4+Cj4+Pj4gI2luY2x1ZGUgInJrMzI4OC5k
+dHNpIgo+Pj4+Cj4+Pj4gJmNydSB7Cj4+Pj4gICAgICAgICAgIGNvbXBhdGlibGUgPSAicm9ja2No
+aXAscmszMjg4dy1jcnUiOwo+Pj4+IH0KPj4+Pgo+Pj4+IEkgc29tZWhvdyBkb24ndCBleHBlY3Qg
+Ym9hcmRzIHRvIGp1c3Qgc3dpdGNoIGJldHdlZW4gc29jIHZhcmlhbnRzCj4+Pj4gb24gdGhlIGZs
+eS4KPj4+Pgo+Pj4+IEFsc28sIGRvaW5nIHRoaW5ncyBpbiBtYWNoLXJvY2tjaGlwIGlzIG5vdCB2
+ZXJ5IGZ1dHVyZS1wcm9vZjoKPj4+Pgo+Pj4+ICgxKSBoYXZpbmcgcmFuZG9tIHNvYy1zcGVjaWZp
+YyBBUElzIHNwYW5uaW5nIHRoZSBrZXJuZWwgZmVlbHMgd3JvbmcsCj4+Pj4gICAgICAgZXNwZWNp
+YWxseSBhcyBhdCBzb21lIHBvaW50IGl0IG1pZ2h0IG5vdCBiZSBjb250YWluZWQgdG8gb3VyIG93
+biBzcGVjaWFsCj4+Pj4gICAgICAgZHJpdmVycyBsaWtlIHRoZSBjcnUuIEkgY2Fubm90IHJlYWxs
+eSBzZWUgcGVvcGxlIGJlaW5nIGVudGh1c2lhc3RpYyBpZgo+Pj4+ICAgICAgIHNvbWV0aGluZyBs
+aWtlIHRoaXMgd291bGQgYmUgbmVlZGVkIGluIHNheSB0aGUgY29yZSBBbmFsb2dpeC1EUCBicmlk
+Z2UgOy0pCj4+Pgo+Pj4gSW5kZWVkLiAgWW91J3JlIGJldHRlciBvZiByZWdpc3RlcmluZyBhbiBz
+b2NfZGV2aWNlX2F0dHJpYnV0ZSB1c2luZwo+Pj4gc29jX2RldmljZV9yZWdpc3RlcigpLCBhZnRl
+ciB3aGljaCBhbnkgZHJpdmVyIGNhbiB1c2Ugc29jX2RldmljZV9tYXRjaCgpCj4+PiB0byBkaWZm
+ZXJlbnRpYXRlIGJhc2VkIG9uIHRoZSBTb0MgcmV2aXNpb24uCj4+Cj4+IFRoYW5rIHlvdSBmb3Ig
+dGhpcyBzdWdnZXN0aW9uLiBUaGUgaXNzdWUgaXMgdGhhdCBjbG9ja3MgYXJlIHJlZ2lzdGVyZWQK
+Pj4gYXQgYW4gZWFybHkgc3RhZ2Ugb2YgdGhlIGJvb3Qgc28gdXNpbmcgaW5pdGNhbGxzIGlzIHRv
+byBsYXRlIGZvciB0aGUKPj4gY2xvY2sgZGlmZmVyZW50aWF0aW9uIDooCj4gCj4gSUMsIHJrMzg4
+IGlzIHN0aWxsIHVzaW5nIENMS19PRl9ERUNMQVJFKCkuCj4gV2hhdCBhYm91dCBjb252ZXJ0aW5n
+IGl0IHRvIGEgcGxhdGZvcm0gZHJpdmVyLCByZWdpc3RlcmVkIGZyb20gZS5nLgo+IHN1YnN5c19p
+bml0Y2FsbCgpPwo+IElmIHlvdSBuZWVkIHNvbWUgY2xvY2tzIGVhcmx5IChlLmcuIGZvciB0aW1l
+cnMpLCB5b3UgY2FuIGRvIHNwbGl0Cj4gcmVnaXN0cmF0aW9uLCB3aXRoIHRoZSBlYXJseSBwYXJ0
+IHN0aWxsIHVzaW5nIENMS19PRl9ERUNMQVJFKCkuCj4gVGhhdCBzaG91bGQgd29yaywgYXNzdW1l
+ZCB0aGUgdGltZXIgY2xvY2tzIGRvbid0IG5lZWQgZGlmZmVyZW50aWF0aW9uLgo+IAo+IEdye29l
+dGplLGVldGluZ31zLAo+IAo+ICAgICAgICAgICAgICAgICAgICAgICAgICBHZWVydAo+IAoKb2gs
+IG5pY2UsIHRoYW5rcyBmb3IgdGhlIGhlbHAhCkkgd2lsbCB0cnkgdGhhdCBhbmQgc2VuZCBhIG5l
+dyB2ZXJzaW9uIGlmIGl0IGlzIHdvcmtpbmcgZmluZS4KCkJlc3QgcmVnYXJkcywKTXlsw6huZQoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
