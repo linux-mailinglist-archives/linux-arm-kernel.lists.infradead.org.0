@@ -2,78 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BB77194F47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 03:55:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2976E194F57
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 04:01:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4om/PVI435QUgxjQG2/o0okYkoJXDPtr4YNp30hfvPA=; b=BMCNFa4YYQ+C8P
-	rglhWjFvACalsBZ9DB1be5xjF0Dc7rmDkzBsx3I2OhkF4xSA0MVLOHHaWMBBatyWMTvsNF6VW3iR4
-	Jmez6eg02xEcE5JpAGs7FYA8gokioVGrTN0TnrItyFSzPmOE3LZgZK18Qy+i/PsHvhP3sDZhCoRrc
-	NdlZTl5sFm0/Syitt7PwyXbzWtYU+MX++pt5w+f/AcjmQ/4N2gDMrYDfz1KAH0S9fcHFyqaQY0dUA
-	Cl55AajCab2EPuE4Y3YeEYp5p3JSC6Qig7ipluQih6sDrbm1IQkoQ4orrTaQTtux8EtE/YHMONcSQ
-	okczXlRKjjrhR81E+kUg==;
+	List-Owner; bh=FW1EwXIvGWy5f62epkqBdZPdozqDp+4UFpXSTgrhBlc=; b=F/1OGofZBJxwL/
+	Fbl9/DjxNvliBKFAvGuVlccdX+TGuVcoOcypMWUliBAKN+rncu/wbzcg1jJHuc59t6sVwPp/AIZ5I
+	WkYN4p5znZs6jocxTAh5Wks6OSyQWAM9jru43vuMDgvuEsZ6WLFoOoxFb8Vc7+ek3OazXF12dbgiS
+	zO/KQYMIBbbQzlWywf2LH1WGOmjuvZes1X7p3MkqtgEGkUXhw6gLqvV1Dt7CaKH0/o6vJ3AEeIVOn
+	F7p/jaRY64hyzirXw7Q5AQrP7YVBweotMMQbbpDy4MtGsjyCUkFIihrAB6rBp3anxjaZQAHjmHZdq
+	zvy2lOKdEj/kPr7XCtgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHf9U-0000Z1-U8; Fri, 27 Mar 2020 02:55:20 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jHfEs-0002ta-PZ; Fri, 27 Mar 2020 03:00:54 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHf9L-0000Gw-56
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 02:55:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585277708;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=RXXhjv8XaV5MoXTlfuTHZa0hm43kWbxrZ9f07+CK+9c=;
- b=drFsBz8W10A/TjG0YwjEw2F8igDTqe4nv1KDigsHPEROeLV21twnlVLB7lJCDc6XwxgSe3
- AnBEEFzyK6PDm1ws1cHe+LkrUblaraxeYDCHR7+rY+GMqJgKaUyB9FWJIrXz8hUI2uB8lT
- n+ko59Wbc8i55Uqj5Qlc17eOcMxNKmk=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-366-f_uJsXkmO_i5WLjxFF676A-1; Thu, 26 Mar 2020 22:55:05 -0400
-X-MC-Unique: f_uJsXkmO_i5WLjxFF676A-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 977A7800EBD;
- Fri, 27 Mar 2020 02:55:03 +0000 (UTC)
-Received: from localhost (ovpn-12-80.pek2.redhat.com [10.72.12.80])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id CD4A360C18;
- Fri, 27 Mar 2020 02:55:02 +0000 (UTC)
-Date: Fri, 27 Mar 2020 10:54:59 +0800
-From: Baoquan He <bhe@redhat.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-Message-ID: <20200327025459.GP3039@MiWiFi-R3L-srv>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <c4764e40-96d5-e2e4-6479-dc8d167e25e0@arm.com>
+ id 1jHfEi-0002sM-Ib; Fri, 27 Mar 2020 03:00:45 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02R2rHX1004219;
+ Fri, 27 Mar 2020 03:00:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2020-01-29;
+ bh=/wkiygzUoOpQBZUiBLbZ9w4yqD+TzEh+mMQY5zK1otU=;
+ b=sIJbJpghTsia/bckgGbtItBDEBVkW9TRgAuZC7bFdltY1zbJLzeEiQOJv2dSHv6/jwSb
+ fCholSEZT/lkSRaaQ8cannQizUMbBtamdhViGb0E98zl7rcZpRZkc8RT8pUvTsPXU2dE
+ 8ycZ8S0GlFp0zq2Y8Yc0BTwJT3Mr7+wbyhO2zP03CvwfZsuP4KRNC1WC/QWzsWH/F5g+
+ 2eCJkjtJVb38yXu/ZySfDEJAf3+3tC9yTDgnut5RkiOpGRj6PCRBdUPVEgqIW/QY/3L4
+ 7lSSCEjBybBH11c2danVRGFX9BBu/K8N0jQuv7b+YD2VSNdbi3h/nskmNspjnCZzDBpP Ow== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 3014598rng-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 27 Mar 2020 03:00:27 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02R2qrxu127717;
+ Fri, 27 Mar 2020 02:58:27 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3030.oracle.com with ESMTP id 2yxw4uvbn1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 27 Mar 2020 02:58:27 +0000
+Received: from abhmp0008.oracle.com (abhmp0008.oracle.com [141.146.116.14])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 02R2wOrN014275;
+ Fri, 27 Mar 2020 02:58:24 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 26 Mar 2020 19:58:24 -0700
+To: Can Guo <cang@codeaurora.org>
+Subject: Re: [PATCH v6 2/2] scsi: ufs: Do not rely on prefetched data
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <1585214742-5466-1-git-send-email-cang@codeaurora.org>
+ <1585214742-5466-3-git-send-email-cang@codeaurora.org>
+Date: Thu, 26 Mar 2020 22:58:19 -0400
+In-Reply-To: <1585214742-5466-3-git-send-email-cang@codeaurora.org> (Can Guo's
+ message of "Thu, 26 Mar 2020 02:25:41 -0700")
+Message-ID: <yq1lfnmcxmc.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <c4764e40-96d5-e2e4-6479-dc8d167e25e0@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ suspectscore=0
+ spamscore=0 mlxlogscore=999 adultscore=0 phishscore=0 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003270023
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9572
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ phishscore=0
+ priorityscore=1501 bulkscore=0 lowpriorityscore=0 mlxlogscore=999
+ adultscore=0 suspectscore=0 impostorscore=0 mlxscore=0 spamscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003270023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_195511_279120_BA04194B 
-X-CRM114-Status: GOOD (  25.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_200044_704435_A4E91B71 
+X-CRM114-Status: GOOD (  11.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,6 +96,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,156 +112,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, James Morse <james.morse@arm.com>,
- Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: nguyenb@codeaurora.org, Alim Akhtar <alim.akhtar@samsung.com>,
+ Bean Huo <beanhuo@micron.com>, Stanley Chu <stanley.chu@mediatek.com>,
+ Bart Van Assche <bvanassche@acm.org>, saravanak@google.com,
+ Tomas Winkler <tomas.winkler@intel.com>, kernel-team@android.com,
+ salyzyn@google.com, "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ Avri Altman <avri.altman@wdc.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, rnayak@codeaurora.org,
+ linux-scsi@vger.kernel.org, "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Venkat Gopalakrishnan <venkatg@codeaurora.org>,
+ open list <linux-kernel@vger.kernel.org>, hongwus@codeaurora.org,
+ asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/27/20 at 06:13am, Anshuman Khandual wrote:
-> 
-> 
-> On 03/26/2020 11:37 PM, James Morse wrote:
-> > An image loaded for kexec is not stored in place, instead its segments
-> > are scattered through memory, and are re-assembled when needed. In the
-> > meantime, the target memory may have been removed.
-> > 
-> > Because mm is not aware that this memory is still in use, it allows it
-> > to be removed.
-> 
-> Why the isolation process does not fail when these pages are currently
-> being used by kexec ?
 
-That is trick of kexec implementaiton. When loading kexec-ed kernel, it
-just reads in the kenrel image in user space, then searches a place
-where it's going to put kernel image in the whole system RAM, but won't
-put kernel image in the searched region immediately, just book ahead a
-room. When you execute 'kexec -e' to trigger kexec jumping, it will copy
-kernel image into the booked room. So the booking is only recorded in
-kexec's own data structure.
+Can,
 
-> 
-> > 
-> > Add a memory notifier to prevent the removal of memory regions that
-> > overlap with a loaded kexec image segment. e.g., when triggered from the
-> > Qemu console:
-> > | kexec_core: memory region in use
-> > | memory memory32: Offline failed.
-> 
-> Yes this is definitely an added protection for these kexec loaded kernels
-> memory areas from being offlined but I would have expected the preceding
-> offlining to have failed as well.
-> 
-> > 
-> > Signed-off-by: James Morse <james.morse@arm.com>
-> > ---
-> >  kernel/kexec_core.c | 56 +++++++++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 56 insertions(+)
-> > 
-> > diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-> > index c19c0dad1ebe..ba1d91e868ca 100644
-> > --- a/kernel/kexec_core.c
-> > +++ b/kernel/kexec_core.c
-> > @@ -12,6 +12,7 @@
-> >  #include <linux/slab.h>
-> >  #include <linux/fs.h>
-> >  #include <linux/kexec.h>
-> > +#include <linux/memory.h>
-> >  #include <linux/mutex.h>
-> >  #include <linux/list.h>
-> >  #include <linux/highmem.h>
-> > @@ -22,10 +23,12 @@
-> >  #include <linux/elf.h>
-> >  #include <linux/elfcore.h>
-> >  #include <linux/utsname.h>
-> > +#include <linux/notifier.h>
-> >  #include <linux/numa.h>
-> >  #include <linux/suspend.h>
-> >  #include <linux/device.h>
-> >  #include <linux/freezer.h>
-> > +#include <linux/pfn.h>
-> >  #include <linux/pm.h>
-> >  #include <linux/cpu.h>
-> >  #include <linux/uaccess.h>
-> > @@ -1219,3 +1222,56 @@ void __weak arch_kexec_protect_crashkres(void)
-> >  
-> >  void __weak arch_kexec_unprotect_crashkres(void)
-> >  {}
-> > +
-> > +/*
-> > + * If user-space wants to offline memory that is in use by a loaded kexec
-> > + * image, it should unload the image first.
-> > + */
-> 
-> Probably this would need kexec user manual and related system call man pages
-> update as well.
-> 
-> > +static int mem_remove_cb(struct notifier_block *nb, unsigned long action,
-> > +			 void *data)
-> > +{
-> > +	int rv = NOTIFY_OK, i;
-> > +	struct memory_notify *arg = data;
-> > +	unsigned long pfn = arg->start_pfn;
-> > +	unsigned long nr_segments, sstart, send;
-> > +	unsigned long end_pfn = arg->start_pfn + arg->nr_pages;
-> > +
-> > +	might_sleep();
-> 
-> Required ?
-> 
-> > +
-> > +	if (action != MEM_GOING_OFFLINE)
-> > +		return NOTIFY_DONE;
-> > +
-> > +	mutex_lock(&kexec_mutex);
-> > +	if (kexec_image) {
-> > +		nr_segments = kexec_image->nr_segments;
-> > +
-> > +		for (i = 0; i < nr_segments; i++) {
-> > +			sstart = PFN_DOWN(kexec_image->segment[i].mem);
-> > +			send = PFN_UP(kexec_image->segment[i].mem +
-> > +				      kexec_image->segment[i].memsz);
-> > +
-> > +			if ((pfn <= sstart && sstart < end_pfn) ||
-> > +			    (pfn <= send && send < end_pfn)) {
-> > +				pr_warn("Memory region in use\n");
-> > +				rv = NOTIFY_BAD;
-> > +				break;
-> > +			}
-> > +		}
-> > +	}
-> > +	mutex_unlock(&kexec_mutex);
-> > +
-> > +	return rv;
-> 
-> Variable 'rv' is redundant, should use NOTIFY_[BAD|OK] directly instead.
-> 
-> > +}
-> > +
-> > +static struct notifier_block mem_remove_nb = {
-> > +	.notifier_call = mem_remove_cb,
-> > +};
-> > +
-> > +static int __init register_mem_remove_cb(void)
-> > +{
-> > +	if (IS_ENABLED(CONFIG_MEMORY_HOTPLUG))
-> 
-> Should not all these new code here be wrapped with CONFIG_MEMORY_HOTREMOVE
-> to reduce the scope as well as final code size when the config is disabled.
-> 
-> > +		return register_memory_notifier(&mem_remove_nb);
-> > +
-> > +	return 0;
-> > +}
-> > +device_initcall(register_mem_remove_cb);
-> > 
-> 
+> We were setting bActiveICCLevel attribute for UFS device only once but
+> type of this attribute has changed from persistent to volatile since
+> UFS device specification v2.1. This attribute is set to the default
+> value after power cycle or hardware reset event. It isn't safe to rely
+> on prefetched data (only used for bActiveICCLevel attribute
+> now). Hence this change removes the code related to data prefetching
+> and set this parameter on every attempt to probe the UFS device.
 
+Applied patch #2 to 5.7/scsi-queue. Awaiting Avri's feedback on patch
+#1. Thanks!
+
+-- 
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
