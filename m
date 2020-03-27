@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 535CE1958BF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:15:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 971541958C1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:16:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GtA5aFfomnX7P2NFZNH+9QkyBJ4KPbJ4GkMRPf6T8vo=; b=Jg0+FFEKDKeeBl
-	VZJyfdMd2h4npQtd/WsdmrfYlp/XkGLAZlrgPSruHa85awV6PUQtev9tFFWQgty6AKmSgV27BpqSF
-	4dpii+9+fYwzeMfJ2z+dlTAIwiE/B1L5cnBaEwg4KzDnPXqSJWO2NlYvWlT/+jA1fvmHpXsYLUWHP
-	ijcTg7Sdszca4YW11LD2C9GNNNViQgSXki0pWtnZoPApfl9AbkkdIcKgD8nBjtH+4uAFU4EMYqS/5
-	u5k6Ts3zmNXwySO36ksV9Q/1JZwUSkVSFSf/CmaqCwm2y9u2LCnj3iCUbDX6TO9YhO/H0zrBghVP/
-	DJoqBVdHchZw2XcRLcXQ==;
+	List-Owner; bh=9rahsjffphz28qv88KlMk4KkZLgdUk4AWUK0FDeNs5E=; b=cJabEfVtqby6bS
+	/dGXLyn0hCNhjJZ49AMiv967VrTsHVphZWIUum8dAteqntmSXkyFH0vxUteR4aL5fZ78+66n8AGUH
+	yOKIEAOdQEO/PGdWSoizMPi507fFsUhEjioE5RSLSgPdHgUh/b25lys3d/L8ws/yfHZ0xzncH+0n1
+	k2vld30aHN/7SAuq+9+5J1go2VldY2OaNIkEVw6KawZV+TRFPCnzEgyZq8Qi1nggYL0YJYACAAOuR
+	sUdDvBNRLpdTNQ5Hzkehb/sdag8Jt6dEVHLV2n47Z2IfZXNhgDzKJimJwmFCb6cbh63Ct8sMSeHeJ
+	DmryRUa2RMlQP/M6Ywcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHplu-0006E7-D4; Fri, 27 Mar 2020 14:15:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHplf-0006AL-I6
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:15:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8562A1FB;
- Fri, 27 Mar 2020 07:15:23 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E68C3F71F;
- Fri, 27 Mar 2020 07:15:21 -0700 (PDT)
-Date: Fri, 27 Mar 2020 14:15:15 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH] arm64: rename stext to primary_entry
-Message-ID: <20200327141515.GA94838@C02TD0UTHF1T.local>
-References: <20200326171423.3080-1-ardb@kernel.org>
+	id 1jHpmD-0006UI-4G; Fri, 27 Mar 2020 14:16:01 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHpm1-0006Sm-BM
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:15:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=s4i5KmLKfub8BBxXB3cWuYtKCz0ltkH5r8L+83ZwU2g=; b=3pJjhKfQTzZ1v9BAbUW+liAWeV
+ jGi6zab4lBOwxHobsVXn2SqI9PtZxqqUHrwC4uXyO1kc++9Aacb8/FYMcypIZehz7RTkWerfAMorA
+ yAB9sTv0D0ckDyxUZYHjgMQzJiXZkxXTXB0brbIGsDFGpSlhIrJV5d/ZSpzaPkd4Nzek=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jHplq-00027N-TP; Fri, 27 Mar 2020 15:15:38 +0100
+Date: Fri, 27 Mar 2020 15:15:38 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
+ types
+Message-ID: <20200327141538.GE11004@lunn.ch>
+References: <E1jHoHy-0002Ep-IY@rmk-PC.armlinux.org.uk>
+ <20200327134319.GD11004@lunn.ch>
+ <20200327134651.GM25745@shell.armlinux.org.uk>
+ <20200327135046.GN25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200326171423.3080-1-ardb@kernel.org>
+In-Reply-To: <20200327135046.GN25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_071527_698605_263FB784 
-X-CRM114-Status: GOOD (  19.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200327_071549_385764_F2554E87 
+X-CRM114-Status: UNSURE (   5.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,131 +79,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, broonie@kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>,
+ "Madalin Bucur \(OSS\)" <madalin.bucur@oss.nxp.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 06:14:23PM +0100, Ard Biesheuvel wrote:
-> For historical reasons, the primary entry routine living somewhere in
-> the inittext section is called stext(), which is confusing, given that
-> there is also a section marker called _stext which lives at a fixed
-> offset in the image (either 64 or 4096 bytes, depending on whether
-> CONFIG_EFI is enabled)
-> 
-> Let's rename stext to primary_entry(), which is a better description
-> and reflects the secondary_entry() routine that already exists for
-> SMP boot.
-> 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ... and actually there is no point.
 
-Makes sense to me.
+O.K. lets merge these as normal, not as fixes.  It is probably too
+late for ARM SoC, so i guess they will get merged next cycle.
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
-
-> ---
-> Note: this applies to linux-next currently, so this is v5.8 material
-> 
->  arch/arm64/kernel/efi-entry.S   |  2 +-
->  arch/arm64/kernel/head.S        | 19 +++++++++----------
->  arch/arm64/kernel/image-vars.h  |  2 +-
->  arch/arm64/kernel/vmlinux.lds.S |  4 ++--
->  4 files changed, 13 insertions(+), 14 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/efi-entry.S b/arch/arm64/kernel/efi-entry.S
-> index 1a03618df0df..303642975a93 100644
-> --- a/arch/arm64/kernel/efi-entry.S
-> +++ b/arch/arm64/kernel/efi-entry.S
-> @@ -19,7 +19,7 @@ SYM_CODE_START(efi_enter_kernel)
->  	 * point stored in x0. Save those values in registers which are
->  	 * callee preserved.
->  	 */
-> -	ldr	w2, =stext_offset
-> +	ldr	w2, =primary_entry_offset
->  	add	x19, x0, x2		// relocated Image entrypoint
->  	mov	x20, x1			// DTB address
->  
-> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> index 57a91032b4c2..01aa238c7b10 100644
-> --- a/arch/arm64/kernel/head.S
-> +++ b/arch/arm64/kernel/head.S
-> @@ -70,9 +70,9 @@ _head:
->  	 * its opcode forms the magic "MZ" signature required by UEFI.
->  	 */
->  	add	x13, x18, #0x16
-> -	b	stext
-> +	b	primary_entry
->  #else
-> -	b	stext				// branch to kernel start, magic
-> +	b	primary_entry			// branch to kernel start, magic
->  	.long	0				// reserved
->  #endif
->  	le64sym	_kernel_offset_le		// Image load offset from start of RAM, little-endian
-> @@ -98,14 +98,13 @@ pe_header:
->  	 * primary lowlevel boot path:
->  	 *
->  	 *  Register   Scope                      Purpose
-> -	 *  x21        stext() .. start_kernel()  FDT pointer passed at boot in x0
-> -	 *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
-> -	 *  x28        __create_page_tables()     callee preserved temp register
-> -	 *  x19/x20    __primary_switch()         callee preserved temp registers
-> -	 *  x24        __primary_switch() .. relocate_kernel()
-> -	 *                                        current RELR displacement
-> +	 *  x21        primary_entry() .. start_kernel()        FDT pointer passed at boot in x0
-> +	 *  x23        primary_entry() .. start_kernel()        physical misalignment/KASLR offset
-> +	 *  x28        __create_page_tables()                   callee preserved temp register
-> +	 *  x19/x20    __primary_switch()                       callee preserved temp registers
-> +	 *  x24        __primary_switch() .. relocate_kernel()  current RELR displacement
->  	 */
-> -SYM_CODE_START(stext)
-> +SYM_CODE_START(primary_entry)
->  	bl	preserve_boot_args
->  	bl	el2_setup			// Drop to EL1, w0=cpu_boot_mode
->  	adrp	x23, __PHYS_OFFSET
-> @@ -121,7 +120,7 @@ SYM_CODE_START(stext)
->  	mov	x0, #ARM64_CPU_BOOT_PRIMARY
->  	bl	__cpu_setup			// initialise processor
->  	b	__primary_switch
-> -SYM_CODE_END(stext)
-> +SYM_CODE_END(primary_entry)
->  
->  /*
->   * Preserve the arguments passed by the bootloader in x0 .. x3
-> diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
-> index 7f06ad93fc95..be0a63ffed23 100644
-> --- a/arch/arm64/kernel/image-vars.h
-> +++ b/arch/arm64/kernel/image-vars.h
-> @@ -13,7 +13,7 @@
->  #ifdef CONFIG_EFI
->  
->  __efistub_kernel_size		= _edata - _text;
-> -__efistub_stext_offset		= stext - _text;
-> +__efistub_primary_entry_offset	= primary_entry - _text;
->  
->  
->  /*
-> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-> index 497f9675071d..8bd825233580 100644
-> --- a/arch/arm64/kernel/vmlinux.lds.S
-> +++ b/arch/arm64/kernel/vmlinux.lds.S
-> @@ -72,8 +72,8 @@ jiffies = jiffies_64;
->  
->  /*
->   * The size of the PE/COFF section that covers the kernel image, which
-> - * runs from stext to _edata, must be a round multiple of the PE/COFF
-> - * FileAlignment, which we set to its minimum value of 0x200. 'stext'
-> + * runs from _stext to _edata, must be a round multiple of the PE/COFF
-> + * FileAlignment, which we set to its minimum value of 0x200. '_stext'
->   * itself is 4 KB aligned, so padding out _edata to a 0x200 aligned
->   * boundary should be sufficient.
->   */
-> -- 
-> 2.17.1
-> 
+     Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
