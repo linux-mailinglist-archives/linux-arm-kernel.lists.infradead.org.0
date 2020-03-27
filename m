@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EDF2195B48
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:38:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E845195B49
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:38:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=h5Od6GDt6qDyzO9v27rD6QUX/HXxfurjf2wl/bCa2fM=; b=iIzovfDxVJkOYoFDUWlU9MyhEO
-	9UY0X3DQRJ2St+pWXQdwNgHltdrYwP6xM/TeCiymjMtBQhYoyAlxtC/U+kUBTUsg3Oi5qriB0NZSQ
-	+LToJ/AZFWBjqxFifmp203mgdQ51lfeRCOYsBpGRdabXCTkuP/DxDuVKIEYZ/AIGQSvGwH0SIMNUj
-	tbPKkddAKVglbB4UwEvtUyiuf1bJ3WmNrIYVm0lj83PdefrLD/VzMVZL3txfj3pReNfNl7DNYJKAd
-	xj9VJ/h+T3GoBATUMvl643BLUqIDt6zQj+qUeQofxiTz1iVTZGTLdF2UjFvpYYuQXxWili6/OAtsx
-	dtSQNz8g==;
+	bh=Gk6/Cpd5pDDb56NjtYE7mdmxzLbS6vxRnb45fz9YfD0=; b=IWCtgEh0/bmihjCuwZlfqfIkSs
+	qCY+QbDOBSzxQPL75c7XTBBfUvwReaIYnmz7Eyu7rSr7rAj8ngJStZE+nTVjmZAvd7tVS27bmT04r
+	DXz5Xl+WvRUc3C0Nr1TGjm7faDkCo1HH9jDWQY25MCbNYRCYC95QbTTyi00q7213jyPYelQWcLypg
+	yzfni1/RlQRhz6khTj8OnuVxZFbBRtzK443P2txqaZu4g5sHmb7+ObpVK0FXo1AD6teHKfEU38sDe
+	RwA79dOzAr0azcXfSIKX3UKq4tbVSXdzdtcEWlKXNPYoaw4LZJnu+LchVaDfYrTPXyKUsjSk4YSEh
+	PqmuPfvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHrzg-0006Xk-9G; Fri, 27 Mar 2020 16:38:04 +0000
+	id 1jHrzv-0006o9-Nm; Fri, 27 Mar 2020 16:38:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHryp-0005wS-F1
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:37:13 +0000
+ id 1jHryq-0005yL-U4
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:37:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE34F1FB;
- Fri, 27 Mar 2020 09:37:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF9D331B;
+ Fri, 27 Mar 2020 09:37:11 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C1BCD3F71F;
- Fri, 27 Mar 2020 09:37:09 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E1FBA3F71F;
+ Fri, 27 Mar 2020 09:37:10 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  Peng Fan <peng.fan@nxp.com>
-Subject: [PATCH 3/4] firmware: arm_scmi: Check shmem property for channel
- availablity
-Date: Fri, 27 Mar 2020 16:36:53 +0000
-Message-Id: <20200327163654.13389-4-sudeep.holla@arm.com>
+Subject: [PATCH 4/4] firmware: arm_scmi: Drop checking for shmem property in
+ parent node
+Date: Fri, 27 Mar 2020 16:36:54 +0000
+Message-Id: <20200327163654.13389-5-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200327163654.13389-1-sudeep.holla@arm.com>
 References: <20200327163654.13389-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_093711_578442_AD80748F 
-X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-CacheID: sfid-20200327_093713_081781_1D200EA6 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,31 +72,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of declaring the channel availabilty unconditionally, let us
-check for the presence of "shmem" property and return the channel
-availablity accordingly.
+The scmi protocol core driver checks for the channel availability
+before evaluating the shmem property. If the individual protocols
+don't have separate channel assigned to them, the channel alloted
+for the BASE protocol is reused automatically.
+
+Therefore there is no need to check for the shmem property in the
+parent node if it is absent in the child protocol node.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/smc.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/firmware/arm_scmi/smc.c | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
-index dd4b54c29679..5929c668dc1d 100644
+index 5929c668dc1d..833e793b5391 100644
 --- a/drivers/firmware/arm_scmi/smc.c
 +++ b/drivers/firmware/arm_scmi/smc.c
-@@ -33,6 +33,11 @@ struct scmi_smc {
+@@ -60,8 +60,6 @@ static int smc_chan_setup(struct scmi_chan_info *cinfo, struct device *dev,
+ 		return -ENOMEM;
  
- static bool smc_chan_available(struct device *dev, int idx)
- {
-+	struct device_node *np = of_parse_phandle(dev->of_node, "shmem", 0);
-+	if (!np)
-+		return false;
-+
-+	of_node_put(np);
- 	return true;
- }
- 
+ 	np = of_parse_phandle(cdev->of_node, "shmem", 0);
+-	if (!np)
+-		np = of_parse_phandle(dev->of_node, "shmem", 0);
+ 	ret = of_address_to_resource(np, 0, &res);
+ 	of_node_put(np);
+ 	if (ret) {
 -- 
 2.17.1
 
