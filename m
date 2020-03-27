@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A165195E83
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:20:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1894E195E88
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:22:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=r73/Z+eFwpfrt57D7CKmcM8otoV5DEfTDjv46Iwo6gg=; b=HC7RlfWflr4RKz
-	uGk7P7IwKBU09FTwxs5YvI+xPrOe6jU8GdFE3HMJ4ZMc9Ml7P1rq5APQw/ujl+DkQyK68HpolQYbV
-	7A4z4UYJ3fkP6B8jYu+fbYPeoh2Pth8L88kwuKR58Wv2eDwp7Ov0dVz1QbNPavCUOuyroIifo47jU
-	P/FHAxpKW2e3vyih3sTsSksGPEzVT688kBcJ1WJGhMntgeg6vGRZsw8h8gmbYoGDIxSLGJQMRQc4L
-	+Q2zenk86vUhAoLNDykv6oMKTdqi9Hn2QPRbhCUOwxo9DVWec3Wn5+iOxbAdJDt893XZ7J1hKuk/i
-	jKlI4WLNpQveYcTFWYeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CGY9SVrA22u6b02YoEzZDh5bEU8X333DCoBSoOi0rTk=; b=j8QUpWDEskrDYM
+	RH34o9C4HxnpcMoOhL1suzzDfJhM+4xMb2xsJ8VO+7xvlxuTSDC8fkCGP3Gn0z1oKlQoUXURwB3ec
+	XNq1D5+GG0+Diihwb3zwHeyLj6WjnW6ZLZg90J8PA1X27Wa/AecqceF1lamZbnh/dj6r9cBSmIX3N
+	AKtrwQUgDd5T0Py+yS/xpIM2Ok5N9vJI7C35dzlYFGFLoIdttQamhCtU6186Cu7a/ZbFnYvc4UAs/
+	S34KLV/TGQNWQZkZTXl07jn8BwvqWZ9QNpfbHXI7b5OoS00WlcL2/vzLNrF9o/mldkjfNPmFOID/r
+	0b2lESKYYw9S6edZDFow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHuWW-0008WC-Pu; Fri, 27 Mar 2020 19:20:09 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHuWH-0008Ve-D5
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:19:55 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id e2so8593868pgb.17
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 12:19:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:subject:from:to:cc;
- bh=XpuhKqjVM8MK9kYWzBFirKIy6yK9tTpg5onfT2tp90w=;
- b=QLA/wpnt1y/a19Dvt+ePVbswxHJPr8yGu5n5clsZgQ55bMClr1z8T3Cq82e3oaTj8Q
- dPRELKGdNYK1jZv3dbn/mnwG5jFVWr2DcFCC/oBZQjGD5r0/QubkFME1P80Z8yAjNR28
- GZ4rAtXEMlSo9rt9x9FXOXU7FknNxOkwEZu50foccSv4ZWDTz3hoJkY4n3dOFn4InnDZ
- vOpLT9b6GIqh3BJ3L2GM4KQsqLsTvUDT6CsiIOVEs9N24D6E/kfxt5lrPLzbcFPIImXp
- aWZuZqwOGuyPJhDp1rov+EVNyr6zaS3LKn89mONTM1rQoTsxGzubBb26rLLYijZEMnnA
- cs+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version:subject
- :from:to:cc;
- bh=XpuhKqjVM8MK9kYWzBFirKIy6yK9tTpg5onfT2tp90w=;
- b=dsMFkhG96t90ZX9hOWiaqJP3GCC/zVcoT/NjysU3hsQqo4XRlJkdzH0b9qMK5AuOAh
- EEK8MTT17kN8QvaCKRmSKHFSOoIBZD8FNL5uILXsnEMkfgJ+Azu4RGVyk+bbb/BNr22Q
- +1crAfLp7LcN41B7T7Dy5UZHNf9DIfEycWbpoHZZxNKugSPpNvLCul7wumQIS2PakcBm
- Imktq6sp5NWCCI4NGKbA16VtqhDOg3cFiKWEUjYbPTpcTJxUl/u9oRMpOxe5w+srex+S
- KwL1JNcyIFMWlSnt6Gzrj/FhZbmYdk5IfxdebYx0Ud2EoSFKKRKg/Bh/xFrY6K8J8FtA
- zDJQ==
-X-Gm-Message-State: ANhLgQ0shzwibRm0vckAY8FrWSOXl9dWoJGPoRZ1+ZbkjFWAOqqwhX4z
- 1tx/s6YCLyMb5DgpKKMZ51FdzB0=
-X-Google-Smtp-Source: ADFU+vtAEoR3AnPXURCg12ZPCSHCxP/2EVf2wJVL7Os1RIRAhyiumuT7YUPsT6oMJYAoWzBvZjS/jLc=
-X-Received: by 2002:a63:8643:: with SMTP id x64mr811399pgd.108.1585336790806; 
- Fri, 27 Mar 2020 12:19:50 -0700 (PDT)
-Date: Fri, 27 Mar 2020 12:19:15 -0700
-In-Reply-To: <20200325174001.234803-1-pcc@google.com>
-Message-Id: <20200327191915.257116-1-pcc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.26.0.rc2.310.g2932bb562d-goog
-Subject: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
-From: Peter Collingbourne <pcc@google.com>
+	id 1jHuYT-0002Hs-0l; Fri, 27 Mar 2020 19:22:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHuXi-0001fH-QP
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:21:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5481D101E;
+ Fri, 27 Mar 2020 12:21:22 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C573A3F71E;
+ Fri, 27 Mar 2020 12:21:16 -0700 (PDT)
+From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>
+	Will Deacon <will@kernel.org>
+Subject: [PATCH 0/5] arm64: Initial BTI kernel support
+Date: Fri, 27 Mar 2020 19:21:02 +0000
+Message-Id: <20200327192107.18394-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_121953_472979_F3BC2A50 
-X-CRM114-Status: GOOD (  22.41  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200327_122122_893483_8EB0247E 
+X-CRM114-Status: GOOD (  12.33  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,381 +62,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Collingbourne <pcc@google.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
+Cc: Mark Brown <broonie@kernel.org>, Kees Cook <keescook@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-the tag bits may be needed by tools in order to accurately diagnose
-memory errors, such as HWASan [1] or future tools based on the Memory
-Tagging Extension (MTE).
+This patch series extends the use of BTI to most kernel executable
+code, it does not currently handle BPF or the VDSO - those will be
+handled by future updates.  It builds the kernel with annotations for
+BTI and then maps the kernel with GP based on the support on the boot
+CPU, rejecting secondaries that don't have BTI support.  If there is a
+need to handle big.LITTLE systems with mismatched BTI support we will
+have to revisit this but no implementations currently exist.
 
-We should not stop clearing these bits in the existing fault address
-fields, because there may be existing userspace applications that are
-expecting the tag bits to be cleared. Instead, create a far_context in
-sigcontext (similar to the existing esr_context), and store the original
-value of FAR_EL1 (including the tag bits) there.
+This is just for initial review, it obviously can't be applied until
+after the merge window.  It depends on the userspace BTI patches and the
+assembler annotation patches.
 
-[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+Since at least some versions of GCC appear to have an issue with
+generating incorrect BTI annotations when BTI is used in conjunction
+with pointer authentication for leaf functions this version of the
+series disables building with GCC entirely.  The issue is still under
+investigation, no issues have been seen with clang.
 
-Signed-off-by: Peter Collingbourne <pcc@google.com>
----
-v3:
-- add documentation to tagged-pointers.rst
-- update comments in sigcontext.h
+Mark Brown (5):
+  arm64: bti: Support building kernel C code using BTI
+  arm64: asm: Override SYM_FUNC_START when building the kernel with BTI
+  arm64: Set GP bit in kernel page tables to enable BTI for the kernel
+  arm64: mm: Mark module text as guarded pages
+  arm64: bti: Provide Kconfig for kernel mode BTI
 
-v2:
-- revert changes to hw_breakpoint.c
-- rename set_thread_esr to set_thread_far_esr
+ arch/arm64/Kconfig                    | 18 +++++++++++
+ arch/arm64/Makefile                   |  4 +++
+ arch/arm64/include/asm/linkage.h      | 46 +++++++++++++++++++++++++++
+ arch/arm64/include/asm/pgtable-prot.h |  5 +++
+ arch/arm64/kernel/cpufeature.c        |  4 +++
+ arch/arm64/mm/mmu.c                   | 24 ++++++++++++++
+ arch/arm64/mm/pageattr.c              |  4 +--
+ 7 files changed, 103 insertions(+), 2 deletions(-)
 
- Documentation/arm64/tagged-pointers.rst  | 17 +++++----
- arch/arm64/include/asm/exception.h       |  2 +-
- arch/arm64/include/asm/processor.h       |  2 +-
- arch/arm64/include/uapi/asm/sigcontext.h | 21 +++++++----
- arch/arm64/kernel/entry-common.c         |  2 --
- arch/arm64/kernel/signal.c               | 20 ++++++++++-
- arch/arm64/mm/fault.c                    | 45 ++++++++++++++----------
- 7 files changed, 74 insertions(+), 35 deletions(-)
-
-diff --git a/Documentation/arm64/tagged-pointers.rst b/Documentation/arm64/tagged-pointers.rst
-index eab4323609b9..9da7f6262fad 100644
---- a/Documentation/arm64/tagged-pointers.rst
-+++ b/Documentation/arm64/tagged-pointers.rst
-@@ -53,12 +53,17 @@ visibility.
- Preserving tags
- ---------------
- 
--Non-zero tags are not preserved when delivering signals. This means that
--signal handlers in applications making use of tags cannot rely on the
--tag information for user virtual addresses being maintained for fields
--inside siginfo_t. One exception to this rule is for signals raised in
--response to watchpoint debug exceptions, where the tag information will
--be preserved.
-+Non-zero tags are not preserved in the fault address fields
-+siginfo.si_addr or sigcontext.fault_address when delivering
-+signals. This means that signal handlers in applications making use
-+of tags cannot rely on the tag information for user virtual addresses
-+being maintained in these fields. One exception to this rule is for
-+signals raised in response to watchpoint debug exceptions, where the
-+tag information will be preserved.
-+
-+The fault address tag is preserved in the far field of the signal
-+frame record far_context, which is present for signals raised in
-+response to data aborts and instruction aborts.
- 
- The architecture prevents the use of a tagged PC, so the upper byte will
- be set to a sign-extension of bit 55 on exception return.
-diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
-index 7a6e81ca23a8..90e772d9b2cd 100644
---- a/arch/arm64/include/asm/exception.h
-+++ b/arch/arm64/include/asm/exception.h
-@@ -32,7 +32,7 @@ static inline u32 disr_to_esr(u64 disr)
- }
- 
- asmlinkage void enter_from_user_mode(void);
--void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
-+void do_mem_abort(unsigned long far, unsigned int esr, struct pt_regs *regs);
- void do_undefinstr(struct pt_regs *regs);
- asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr);
- void do_debug_exception(unsigned long addr_if_watchpoint, unsigned int esr,
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index 5ba63204d078..77d916c07531 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -142,7 +142,7 @@ struct thread_struct {
- 	void			*sve_state;	/* SVE registers, if any */
- 	unsigned int		sve_vl;		/* SVE vector length */
- 	unsigned int		sve_vl_onexec;	/* SVE vl after next exec */
--	unsigned long		fault_address;	/* fault info */
-+	unsigned long		fault_address;	/* FAR_EL1 value */
- 	unsigned long		fault_code;	/* ESR_EL1 value */
- 	struct debug_info	debug;		/* debugging */
- #ifdef CONFIG_ARM64_PTR_AUTH
-diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
-index 8b0ebce92427..6782394633cb 100644
---- a/arch/arm64/include/uapi/asm/sigcontext.h
-+++ b/arch/arm64/include/uapi/asm/sigcontext.h
-@@ -44,11 +44,12 @@ struct sigcontext {
-  *
-  *	0x210		fpsimd_context
-  *	 0x10		esr_context
-+ *	 0x10		far_context
-  *	0x8a0		sve_context (vl <= 64) (optional)
-  *	 0x20		extra_context (optional)
-  *	 0x10		terminator (null _aarch64_ctx)
-  *
-- *	0x510		(reserved for future allocation)
-+ *	0x500		(reserved for future allocation)
-  *
-  * New records that can exceed this space need to be opt-in for userspace, so
-  * that an expanded signal frame is not generated unexpectedly.  The mechanism
-@@ -94,17 +95,25 @@ struct esr_context {
- 	__u64 esr;
- };
- 
-+/* FAR_EL1 context */
-+#define FAR_MAGIC	0x46415201
-+
-+struct far_context {
-+	struct _aarch64_ctx head;
-+	__u64 far;
-+};
-+
- /*
-  * extra_context: describes extra space in the signal frame for
-  * additional structures that don't fit in sigcontext.__reserved[].
-  *
-  * Note:
-  *
-- * 1) fpsimd_context, esr_context and extra_context must be placed in
-- * sigcontext.__reserved[] if present.  They cannot be placed in the
-- * extra space.  Any other record can be placed either in the extra
-- * space or in sigcontext.__reserved[], unless otherwise specified in
-- * this file.
-+ * 1) fpsimd_context, esr_context, far_context and extra_context must be
-+ * placed in sigcontext.__reserved[] if present.  They cannot be placed
-+ * in the extra space.  Any other record can be placed either in the
-+ * extra space or in sigcontext.__reserved[], unless otherwise specified
-+ * in this file.
-  *
-  * 2) There must not be more than one extra_context.
-  *
-diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-index fde59981445c..290ea59c68b8 100644
---- a/arch/arm64/kernel/entry-common.c
-+++ b/arch/arm64/kernel/entry-common.c
-@@ -22,7 +22,6 @@ static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
- 	unsigned long far = read_sysreg(far_el1);
- 
- 	local_daif_inherit(regs);
--	far = untagged_addr(far);
- 	do_mem_abort(far, esr, regs);
- }
- NOKPROBE_SYMBOL(el1_abort);
-@@ -104,7 +103,6 @@ static void notrace el0_da(struct pt_regs *regs, unsigned long esr)
- 
- 	user_exit_irqoff();
- 	local_daif_restore(DAIF_PROCCTX);
--	far = untagged_addr(far);
- 	do_mem_abort(far, esr, regs);
- }
- NOKPROBE_SYMBOL(el0_da);
-diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-index 339882db5a91..48e8b6c7b536 100644
---- a/arch/arm64/kernel/signal.c
-+++ b/arch/arm64/kernel/signal.c
-@@ -55,6 +55,7 @@ struct rt_sigframe_user_layout {
- 
- 	unsigned long fpsimd_offset;
- 	unsigned long esr_offset;
-+	unsigned long far_offset;
- 	unsigned long sve_offset;
- 	unsigned long extra_offset;
- 	unsigned long end_offset;
-@@ -383,6 +384,7 @@ static int parse_user_sigframe(struct user_ctxs *user,
- 			break;
- 
- 		case ESR_MAGIC:
-+		case FAR_MAGIC:
- 			/* ignore */
- 			break;
- 
-@@ -581,6 +583,11 @@ static int setup_sigframe_layout(struct rt_sigframe_user_layout *user,
- 				     sizeof(struct esr_context));
- 		if (err)
- 			return err;
-+
-+		err = sigframe_alloc(user, &user->far_offset,
-+				     sizeof(struct far_context));
-+		if (err)
-+			return err;
- 	}
- 
- 	if (system_supports_sve()) {
-@@ -621,7 +628,8 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
- 	__put_user_error(regs->pc, &sf->uc.uc_mcontext.pc, err);
- 	__put_user_error(regs->pstate, &sf->uc.uc_mcontext.pstate, err);
- 
--	__put_user_error(current->thread.fault_address, &sf->uc.uc_mcontext.fault_address, err);
-+	__put_user_error(untagged_addr(current->thread.fault_address),
-+			 &sf->uc.uc_mcontext.fault_address, err);
- 
- 	err |= __copy_to_user(&sf->uc.uc_sigmask, set, sizeof(*set));
- 
-@@ -641,6 +649,16 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
- 		__put_user_error(current->thread.fault_code, &esr_ctx->esr, err);
- 	}
- 
-+	if (err == 0 && user->far_offset) {
-+		struct far_context __user *far_ctx =
-+			apply_user_offset(user, user->far_offset);
-+
-+		__put_user_error(FAR_MAGIC, &far_ctx->head.magic, err);
-+		__put_user_error(sizeof(*far_ctx), &far_ctx->head.size, err);
-+		__put_user_error(current->thread.fault_address, &far_ctx->far,
-+				 err);
-+	}
-+
- 	/* Scalable Vector Extension state, if present */
- 	if (system_supports_sve() && err == 0 && user->sve_offset) {
- 		struct sve_context __user *sve_ctx =
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 85566d32958f..738adc950012 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -41,7 +41,7 @@
- #include <asm/traps.h>
- 
- struct fault_info {
--	int	(*fn)(unsigned long addr, unsigned int esr,
-+	int	(*fn)(unsigned long far, unsigned int esr,
- 		      struct pt_regs *regs);
- 	int	sig;
- 	int	code;
-@@ -320,9 +320,11 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
- 	die_kernel_fault(msg, addr, esr, regs);
- }
- 
--static void set_thread_esr(unsigned long address, unsigned int esr)
-+static void set_thread_far_esr(unsigned long far, unsigned int esr)
- {
--	current->thread.fault_address = address;
-+	unsigned long addr = untagged_addr(far);
-+
-+	current->thread.fault_address = far;
- 
- 	/*
- 	 * If the faulting address is in the kernel, we must sanitize the ESR.
-@@ -336,7 +338,7 @@ static void set_thread_esr(unsigned long address, unsigned int esr)
- 	 * type", so we ignore this wrinkle and just return the translation
- 	 * fault.)
- 	 */
--	if (!is_ttbr0_addr(current->thread.fault_address)) {
-+	if (!is_ttbr0_addr(addr)) {
- 		switch (ESR_ELx_EC(esr)) {
- 		case ESR_ELx_EC_DABT_LOW:
- 			/*
-@@ -377,8 +379,11 @@ static void set_thread_esr(unsigned long address, unsigned int esr)
- 	current->thread.fault_code = esr;
- }
- 
--static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *regs)
-+static void do_bad_area(unsigned long far, unsigned int esr,
-+			struct pt_regs *regs)
- {
-+	unsigned long addr = untagged_addr(far);
-+
- 	/*
- 	 * If we are in kernel mode at this point, we have no context to
- 	 * handle this fault with.
-@@ -386,7 +391,7 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
- 	if (user_mode(regs)) {
- 		const struct fault_info *inf = esr_to_fault_info(esr);
- 
--		set_thread_esr(addr, esr);
-+		set_thread_far_esr(far, esr);
- 		arm64_force_sig_fault(inf->sig, inf->code, (void __user *)addr,
- 				      inf->name);
- 	} else {
-@@ -439,7 +444,7 @@ static bool is_write_abort(unsigned int esr)
- 	return (esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM);
- }
- 
--static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
-+static int __kprobes do_page_fault(unsigned long far, unsigned int esr,
- 				   struct pt_regs *regs)
- {
- 	const struct fault_info *inf;
-@@ -447,6 +452,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 	vm_fault_t fault, major = 0;
- 	unsigned long vm_flags = VM_READ | VM_WRITE | VM_EXEC;
- 	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
-+	unsigned long addr = untagged_addr(far);
- 
- 	if (kprobe_page_fault(regs, esr))
- 		return 0;
-@@ -580,7 +586,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 	}
- 
- 	inf = esr_to_fault_info(esr);
--	set_thread_esr(addr, esr);
-+	set_thread_far_esr(far, esr);
- 	if (fault & VM_FAULT_SIGBUS) {
- 		/*
- 		 * We had some memory, but were unable to successfully fix up
-@@ -615,30 +621,32 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 	return 0;
- }
- 
--static int __kprobes do_translation_fault(unsigned long addr,
-+static int __kprobes do_translation_fault(unsigned long far,
- 					  unsigned int esr,
- 					  struct pt_regs *regs)
- {
-+	unsigned long addr = untagged_addr(far);
-+
- 	if (is_ttbr0_addr(addr))
--		return do_page_fault(addr, esr, regs);
-+		return do_page_fault(far, esr, regs);
- 
--	do_bad_area(addr, esr, regs);
-+	do_bad_area(far, esr, regs);
- 	return 0;
- }
- 
--static int do_alignment_fault(unsigned long addr, unsigned int esr,
-+static int do_alignment_fault(unsigned long far, unsigned int esr,
- 			      struct pt_regs *regs)
- {
--	do_bad_area(addr, esr, regs);
-+	do_bad_area(far, esr, regs);
- 	return 0;
- }
- 
--static int do_bad(unsigned long addr, unsigned int esr, struct pt_regs *regs)
-+static int do_bad(unsigned long far, unsigned int esr, struct pt_regs *regs)
- {
- 	return 1; /* "fault" */
- }
- 
--static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
-+static int do_sea(unsigned long far, unsigned int esr, struct pt_regs *regs)
- {
- 	const struct fault_info *inf;
- 	void __user *siaddr;
-@@ -654,7 +662,7 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
- 	if (esr & ESR_ELx_FnV)
- 		siaddr = NULL;
- 	else
--		siaddr  = (void __user *)addr;
-+		siaddr  = (void __user *)untagged_addr(far);
- 	arm64_notify_die(inf->name, regs, inf->sig, inf->code, siaddr, esr);
- 
- 	return 0;
-@@ -727,11 +735,12 @@ static const struct fault_info fault_info[] = {
- 	{ do_bad,		SIGKILL, SI_KERNEL,	"unknown 63"			},
- };
- 
--void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs)
-+void do_mem_abort(unsigned long far, unsigned int esr, struct pt_regs *regs)
- {
- 	const struct fault_info *inf = esr_to_fault_info(esr);
-+	unsigned long addr = untagged_addr(far);
- 
--	if (!inf->fn(addr, esr, regs))
-+	if (!inf->fn(far, esr, regs))
- 		return;
- 
- 	if (!user_mode(regs)) {
 -- 
-2.26.0.rc2.310.g2932bb562d-goog
+2.20.1
 
 
 _______________________________________________
