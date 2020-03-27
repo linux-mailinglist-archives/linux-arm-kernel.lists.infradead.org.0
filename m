@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE14E195A19
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 16:43:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17C40195A39
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 16:47:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nMeyViq1BPrJOtphYAPv7sKNtYNq4Gju/qzLchWZtsw=; b=FQOJ4jcA4qsLaB
-	OubwIylS/4WxWDhsGSXK0+UkrkYRwYzcJXoDjaHUkYTsILfpETCpO+lYog3SL/Zfb5fJoDvPq5KY2
-	6g8H5+qz1QyESclHx7iSfOX1SXB0pbdcZNDoaIqcfB+9wvSlHvcdQgfgtcGfnGKWuvYafTfvVYdHC
-	FIBMP0oVAKG8vP397rSNRrNj2ghBoppK5saaknb8q9LAPdKyqsn5ImGbpZm/Me4bvrvmEAMl6u9l/
-	c0nbs8F4WZdAmp6DYcAx8S91itP20DQt5xtlz3gHcVR/fxcbZW/pUWuHqMyaCFZrmDmGYpJOo6uqN
-	tQo0K0jaWdUMoAgyf7lw==;
+	List-Owner; bh=YgXSlc1J+7VrB855i/vtu0jywvQ+D1li3Z03PsTb+K8=; b=LKb9h5ye8mBrsR
+	xbQEBWKlew427/+MLqBMkoExh8+ze924n7hcrwhCC76AObEBXE8o0KHbqX8e2jztKSLMGtGSMDeu6
+	aqHOvx8Z+vJYy4AUABZKxR1AFoJsHCQlinsYW0/ya67gUp/x4+AmFRg3KFmDfJ4UHw9Uap2C/beN+
+	kvzB7LAL2nAw3FoHJszmLRUazCkTakjhLICgAdLrk+NPTE6lvxAmvAVfBlc4Sbd9tnJ0pYZ711mu/
+	jTdBT0IB4UX66A1HyPva7lEYQCV8/UZvAumzxfHXcA9PmCnGE+MFCskYTMD/Ro/uFYdFkKZYbaPVe
+	5yA3V8vUTnBS7ywCizYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHr8Y-00006o-8G; Fri, 27 Mar 2020 15:43:10 +0000
+	id 1jHrCW-00023M-AY; Fri, 27 Mar 2020 15:47:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHr8K-00005N-I1; Fri, 27 Mar 2020 15:42:58 +0000
+ id 1jHrCJ-000227-PJ; Fri, 27 Mar 2020 15:47:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FAFA1FB;
- Fri, 27 Mar 2020 08:42:55 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E86051FB;
+ Fri, 27 Mar 2020 08:47:02 -0700 (PDT)
 Received: from [172.16.1.108] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AA2013F71F;
- Fri, 27 Mar 2020 08:42:53 -0700 (PDT)
-Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
- use
-To: David Hildenbrand <david@redhat.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6411E3F71F;
+ Fri, 27 Mar 2020 08:47:01 -0700 (PDT)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: Anshuman Khandual <anshuman.khandual@arm.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
- <6725543d-81ee-537f-e132-ef26fe62c452@redhat.com>
+ <20200326180730.4754-2-james.morse@arm.com>
+ <c4764e40-96d5-e2e4-6479-dc8d167e25e0@arm.com>
 From: James Morse <james.morse@arm.com>
 Openpgp: preference=signencrypt
-Message-ID: <0ee0556d-9903-1b17-8c58-e847f4c00816@arm.com>
-Date: Fri, 27 Mar 2020 15:42:56 +0000
+Message-ID: <edbaab77-8d89-46ed-a93e-5b76f457c1af@arm.com>
+Date: Fri, 27 Mar 2020 15:46:56 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <6725543d-81ee-537f-e132-ef26fe62c452@redhat.com>
+In-Reply-To: <c4764e40-96d5-e2e4-6479-dc8d167e25e0@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_084256_687261_12F6E815 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20200327_084703_911169_30B53218 
+X-CRM114-Status: GOOD (  25.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,8 +66,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
  linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
  Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
@@ -76,81 +76,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi David,
+Hi Anshuman,
 
-On 3/27/20 9:27 AM, David Hildenbrand wrote:
-> On 26.03.20 19:07, James Morse wrote:
->> arm64 recently queued support for memory hotremove, which led to some
->> new corner cases for kexec.
+On 3/27/20 12:43 AM, Anshuman Khandual wrote:
+> On 03/26/2020 11:37 PM, James Morse wrote:
+>> An image loaded for kexec is not stored in place, instead its segments
+>> are scattered through memory, and are re-assembled when needed. In the
+>> meantime, the target memory may have been removed.
 >>
->> If the kexec segments are loaded for a removable region, that region may
->> be removed before kexec actually occurs. This causes the first kernel to
->> lockup when applying the relocations. (I've triggered this on x86 too).
->>
->> The first patch adds a memory notifier for kexec so that it can refuse
->> to allow in-use regions to be taken offline.
+>> Because mm is not aware that this memory is still in use, it allows it
+>> to be removed.
 
-> IIRC other architectures handle that by setting the affected pages
-> PageReserved. Any reason why to not stick to the same?
+> Why the isolation process does not fail when these pages are currently
+> being used by kexec ?
 
-Hmm, I didn't spot this. How come core code doesn't do it if its needed?
-
-Doesn't PG_Reserved prevent the page from being used for regular allocations?
-(or is that only if its done early)
-
-I prefer the runtime check as the dmesg output gives the user some chance of
-knowing why their memory-offline failed, and doing something about it!
+Kexec isn't using them right now, but it will once kexec is triggered.
+Those physical addresses are held in some internal kexec data structures until
+kexec is triggered.
 
 
->> This doesn't solve the problem for arm64, where the new kernel must
->> initially rely on the data structures from the first boot to describe
->> memory. These don't describe hotpluggable memory.
->> If kexec places the kernel in one of these regions, it must also provide
->> a DT that describes the region in which the kernel was mapped as memory.
->> (and somehow ensure its always present in the future...)
->>
->> To prevent this from happening accidentally with unaware user-space,
->> patches two and three allow arm64 to give these regions a different
->> name.
->>
->> This is a change in behaviour for arm64 as memory hotadd and hotremove
->> were added separately.
->>
->>
->> I haven't tried kdump.
->> Unaware kdump from user-space probably won't describe the hotplug
->> regions if the name is different, which saves us from problems if
->> the memory is no longer present at kdump time, but means the vmcore
->> is incomplete.
+>> Add a memory notifier to prevent the removal of memory regions that
+>> overlap with a loaded kexec image segment. e.g., when triggered from the
+>> Qemu console:
+>> | kexec_core: memory region in use
+>> | memory memory32: Offline failed.
+> 
+> Yes this is definitely an added protection for these kexec loaded kernels
+> memory areas from being offlined but I would have expected the preceding
+> offlining to have failed as well.
 
-> Whenever memory is added/removed, kdump.service is to be restarted from
-> user space, which will fixup the data structures such that kdump will
-> not try to dump unplugged memory.
-
-Cunning.
+kexec hasn't allocate the memory, part of the regions user-space may specify for
+the next kernel may be in use. There is nothing to stop the memory being used in
+the meantime.
 
 
-> Also, makedumpfile will check if the
-> sections are still around IIRC.
-
-Curious. I thought the vmcore was virtually addressed, how does it know which
-linear-map portions correspond to sysfs memory nodes with KASLR?
+Any other way of doing this would prevent us saying why it failed.
+Like this, the user can spot the 'kexec: Memory region in use message', and
+unload kexec.
 
 
-> Not sure what you mean by "Unaware kdump from user-space".
+>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+>> index c19c0dad1ebe..ba1d91e868ca 100644
+>> --- a/kernel/kexec_core.c
+>> +++ b/kernel/kexec_core.c
+>> @@ -1219,3 +1222,56 @@ void __weak arch_kexec_protect_crashkres(void)
+>>  
+>>  void __weak arch_kexec_unprotect_crashkres(void)
+>>  {}
+>> +
+>> +/*
+>> + * If user-space wants to offline memory that is in use by a loaded kexec
+>> + * image, it should unload the image first.
+>> + */
 
-The existing kexec-tools binaries, that (I assume) don't go probing to find out
-if 'System RAM' is removable or not, loading a kdump kernel, along with the
-user-space generated blob that describes the first kernel's memory usage to the
-second kernel.
+> Probably this would need kexec user manual and related system call man pages
+> update as well.
 
-'user-space' here to distinguish all this from kexec_file_load().
+I can't see anything relevant under Documentation. (kdump yes, kexec no...)
 
+
+>> +static int mem_remove_cb(struct notifier_block *nb, unsigned long action,
+>> +			 void *data)
+>> +{
+>> +	int rv = NOTIFY_OK, i;
+>> +	struct memory_notify *arg = data;
+>> +	unsigned long pfn = arg->start_pfn;
+>> +	unsigned long nr_segments, sstart, send;
+>> +	unsigned long end_pfn = arg->start_pfn + arg->nr_pages;
+>> +
+>> +	might_sleep();
+> 
+> Required ?
+
+Habit, and I think best practice. We take a mutex, so might_sleep(), but we also
+conditionally return before lockdep would see the mutex. Having this annotation
+means a dangerous change to the way this is called triggers a warning without
+having to test memory hotplug explicitly.
+
+
+>> +
+>> +	if (action != MEM_GOING_OFFLINE)
+>> +		return NOTIFY_DONE;
+>> +
+>> +	mutex_lock(&kexec_mutex);
+>> +	if (kexec_image) {
+>> +		nr_segments = kexec_image->nr_segments;
+>> +
+>> +		for (i = 0; i < nr_segments; i++) {
+>> +			sstart = PFN_DOWN(kexec_image->segment[i].mem);
+>> +			send = PFN_UP(kexec_image->segment[i].mem +
+>> +				      kexec_image->segment[i].memsz);
+>> +
+>> +			if ((pfn <= sstart && sstart < end_pfn) ||
+>> +			    (pfn <= send && send < end_pfn)) {
+>> +				pr_warn("Memory region in use\n");
+>> +				rv = NOTIFY_BAD;
+>> +				break;
+>> +			}
+>> +		}
+>> +	}
+>> +	mutex_unlock(&kexec_mutex);
+>> +
+>> +	return rv;
+> 
+> Variable 'rv' is redundant, should use NOTIFY_[BAD|OK] directly instead.
+
+You'd prefer a mutex_unlock() in the middle of the loop? ... or goto?
+(I'm not convinced)
+
+>> +}
+>> +
+>> +static struct notifier_block mem_remove_nb = {
+>> +	.notifier_call = mem_remove_cb,
+>> +};
+>> +
+>> +static int __init register_mem_remove_cb(void)
+>> +{
+>> +	if (IS_ENABLED(CONFIG_MEMORY_HOTPLUG))
+> 
+> Should not all these new code here be wrapped with CONFIG_MEMORY_HOTREMOVE
+> to reduce the scope as well as final code size when the config is disabled.
+
+The compiler is really good at this. "if (false)" means this is all dead code,
+and static means its not exported, so the compiler is free to remove it.
+
+Not #ifdef-ing it makes it much more readable, and means the compiler checks its
+valid C before it removes it. This avoids weird header include problems that
+only show up on some rand-config builds.
 
 
 Thanks,
 
 James
+
+>> +		return register_memory_notifier(&mem_remove_nb);
+>> +
+>> +	return 0;
+>> +}
+>> +device_initcall(register_mem_remove_cb);
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
