@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A0FE1958E2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:22:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C1FF1958FB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:30:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=89tnm0gqSlG6FRavX9T54muL2IPEXwA/+6pTt/cKlc4=; b=DtVzM9qErX7qec
-	uHKw3l2R0Gg//4aptEaAFdRHaUPrdjSBc+ODYfbJglU3p3YJaTaHrJvwLIIdr8osPOKyhX0UmdY9p
-	TjejUp3+xFPFTzN7fax2fgV//n3AaRJDbn4woBUeiEmSouSCJJ3QFbC6SxBWCaF0H+Jd7Li2pcBt9
-	bzNnPlXTuM8H1xP9V2oW/HB0Jin60bMcmeDEh6l3pSiBiByEChPALDmJg4KPU31UH3zGfliZiar+z
-	8dWDvfv8na0rrn0TEnXcDbZLm425kZgwMSBI/bgKM7th+Vh56TX7AENMGMpYjvodQRS0kd+sdNoC7
-	hLVWANe75ai5wYBFXsRQ==;
+	List-Owner; bh=g48+0AWA0AACAL6iZEEti1hnErdbRTpAHqTYCb0OPic=; b=uKdSqW4Iqc50dE
+	d3h7X5aoPyro+1IpQlT2bUp9QDbOdyoGcuLVx/m/oaDE0oCM1BewJDOcq7LAeG1Kuge4JGLixqLQJ
+	YWcuhEvsNHbqI9xWqLAFRbkfCVGJT48uGXy2OiUMYPMSMergX9k2WxAVZyxVuUCpJVMvgrkM0r8JN
+	s8vxLQHTFq/62FlzR9auEmdNEhOr2Fv9ILY8Z3buWyNWIxIbM+uU41PmvO15+nkTUfcNxY2fc1/tz
+	eWFG8lugBACtFjh3GRiJu+yPOyJlKEtNizHfyUQvAIS1etCbQAV+I0rxMbqaF3vTjPDVUXT8kg1Oi
+	4psERlnOjzFkGY2xjZZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHpsg-0000G2-D9; Fri, 27 Mar 2020 14:22:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHpsW-0000FU-87; Fri, 27 Mar 2020 14:22:33 +0000
-Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com
- [209.85.221.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F7A320774;
- Fri, 27 Mar 2020 14:22:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585318951;
- bh=TYBu9ieERy+Ta4ICp1zRuWs/eR3KjO5IyGqncme6DJc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Qm0z3g39bQDBSrqz9++ujQKvtUBjNueacrWy37OBkqDntO3Gj19TmxguyvDh2QtRS
- KCzt2L26ha+faOp2qd9QYuW2Ul6gL70onVm2ixDr0UmbDwUXTW7mtAgqj+0mQZiHtZ
- ROBmTKm/m/ih1J4CnjeihLcTeQTZRL0j873B2/hU=
-Received: by mail-wr1-f53.google.com with SMTP id j17so11556301wru.13;
- Fri, 27 Mar 2020 07:22:31 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3OB640HrDek4ByoSME5+y86wV5IasYQZ/6OFGamRbjs6QrCoqb
- EikiBWcWhYuN1Rrj5PuGlTgzFusdnd/JV0XhsA==
-X-Google-Smtp-Source: ADFU+vsE0Iq/qOsJLgem/9N0N8fAV8mgme65RNUzQmeCYNSDoKObf/LG9fWjTq9gzXMdb7KBtsJZ1NeEF0NZuYo0Rmc=
-X-Received: by 2002:a5d:414f:: with SMTP id c15mr16766117wrq.60.1585318949779; 
- Fri, 27 Mar 2020 07:22:29 -0700 (PDT)
+	id 1jHpzc-0002RG-LK; Fri, 27 Mar 2020 14:29:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHpzS-0002QN-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:29:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 27B011FB;
+ Fri, 27 Mar 2020 07:29:41 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B719B3F71F;
+ Fri, 27 Mar 2020 07:29:39 -0700 (PDT)
+Date: Fri, 27 Mar 2020 14:29:37 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Li Wang <li.wang@windriver.com>
+Subject: Re: [PATCH] arm64: mmu: no write cache for O_SYNC flag
+Message-ID: <20200327142937.GB94838@C02TD0UTHF1T.local>
+References: <20200326163625.30714-1-li.wang@windriver.com>
 MIME-Version: 1.0
-References: <20200326182742.487026-1-enric.balletbo@collabora.com>
-In-Reply-To: <20200326182742.487026-1-enric.balletbo@collabora.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Fri, 27 Mar 2020 22:22:18 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_9vCtr6Y3Geg3wJ7FjTdo6iPc+bdwtJKDZahJAY3Tih8Q@mail.gmail.com>
-Message-ID: <CAAOTY_9vCtr6Y3Geg3wJ7FjTdo6iPc+bdwtJKDZahJAY3Tih8Q@mail.gmail.com>
-Subject: Re: [PATCH] soc: mediatek: mtk-mmsys: Export ddp_dis/connect symbols
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20200326163625.30714-1-li.wang@windriver.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_072232_336055_172BA80E 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200327_072942_596242_53BE53FF 
+X-CRM114-Status: GOOD (  21.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,50 +62,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Boichat <drinkcat@chromium.org>,
- Anders Roxell <anders.roxell@linaro.org>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEVucmljOgoKRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFi
-b3JhLmNvbT4g5pa8IDIwMjDlubQz5pyIMjfml6Ug6YCx5LqUIOS4iuWNiDI6Mjjlr6vpgZPvvJoK
-Pgo+IFdoZW4gYnVpbGRpbmcgb24gYXJtNjQgd2l0aCBhbGxtb2Rjb25maWcgb3IgQ09ORklHX0RS
-TV9NRURJQVRFSz1tIHdlIHNlZQo+IHRoZSBmb2xsb3dpbmcgZXJyb3IuCj4KPiAgIEVSUk9SOiBt
-b2Rwb3N0OiAibXRrX21tc3lzX2RkcF9kaXNjb25uZWN0Igo+ICAgW2RyaXZlcnMvZ3B1L2RybS9t
-ZWRpYXRlay9tZWRpYXRlay1kcm0ua29dIHVuZGVmaW5lZCEKPiAgIEVSUk9SOiBtb2Rwb3N0OiAi
-bXRrX21tc3lzX2RkcF9jb25uZWN0Igo+ICAgW2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tZWRp
-YXRlay1kcm0ua29dIHVuZGVmaW5lZCEKPgo+IEV4cG9ydCBtdGtfbW1zeXNfZGRwX2Nvbm5lY3Qg
-YW5kIG10a19tbXN5c19kZHBfZGlzY29ubmVjdCBzeW1ib2xzIHRvIGJlCj4gYWJsZSB0byBiZSB1
-c2VkIGZvciBvdGhlciBtb2R1bGVzLgo+CgpSZXZpZXdlZC1ieTogQ2h1bi1LdWFuZyBIdSA8Y2h1
-bmt1YW5nLmh1QGtlcm5lbC5vcmc+CgoKPiBGaXhlczogMzk2YzNmY2NhZjAzICgic29jIC8gZHJt
-OiBtZWRpYXRlazogTW92ZSByb3V0aW5nIGNvbnRyb2wgdG8gbW1zeXMgZGV2aWNlIikKPiBSZXBv
-cnRlZC1ieTogQW5kZXJzIFJveGVsbCA8YW5kZXJzLnJveGVsbEBsaW5hcm8ub3JnPgo+IFNpZ25l
-ZC1vZmYtYnk6IEVucmljIEJhbGxldGJvIGkgU2VycmEgPGVucmljLmJhbGxldGJvQGNvbGxhYm9y
-YS5jb20+Cj4gLS0tCj4KPiAgZHJpdmVycy9zb2MvbWVkaWF0ZWsvbXRrLW1tc3lzLmMgfCAyICsr
-Cj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKykKPgo+IGRpZmYgLS1naXQgYS9kcml2
-ZXJzL3NvYy9tZWRpYXRlay9tdGstbW1zeXMuYyBiL2RyaXZlcnMvc29jL21lZGlhdGVrL210ay1t
-bXN5cy5jCj4gaW5kZXggMzJhOTJlYzQ0N2M1Li4wNWUzMjJjOWMzMDEgMTAwNjQ0Cj4gLS0tIGEv
-ZHJpdmVycy9zb2MvbWVkaWF0ZWsvbXRrLW1tc3lzLmMKPiArKysgYi9kcml2ZXJzL3NvYy9tZWRp
-YXRlay9tdGstbW1zeXMuYwo+IEBAIC0yNTksNiArMjU5LDcgQEAgdm9pZCBtdGtfbW1zeXNfZGRw
-X2Nvbm5lY3Qoc3RydWN0IGRldmljZSAqZGV2LAo+ICAgICAgICAgICAgICAgICB3cml0ZWxfcmVs
-YXhlZChyZWcsIGNvbmZpZ19yZWdzICsgYWRkcik7Cj4gICAgICAgICB9Cj4gIH0KPiArRVhQT1JU
-X1NZTUJPTF9HUEwobXRrX21tc3lzX2RkcF9jb25uZWN0KTsKPgo+ICB2b2lkIG10a19tbXN5c19k
-ZHBfZGlzY29ubmVjdChzdHJ1Y3QgZGV2aWNlICpkZXYsCj4gICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgZW51bSBtdGtfZGRwX2NvbXBfaWQgY3VyLAo+IEBAIC0yNzksNiArMjgwLDcgQEAg
-dm9pZCBtdGtfbW1zeXNfZGRwX2Rpc2Nvbm5lY3Qoc3RydWN0IGRldmljZSAqZGV2LAo+ICAgICAg
-ICAgICAgICAgICB3cml0ZWxfcmVsYXhlZChyZWcsIGNvbmZpZ19yZWdzICsgYWRkcik7Cj4gICAg
-ICAgICB9Cj4gIH0KPiArRVhQT1JUX1NZTUJPTF9HUEwobXRrX21tc3lzX2RkcF9kaXNjb25uZWN0
-KTsKPgo+ICBzdGF0aWMgaW50IG10a19tbXN5c19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
-ICpwZGV2KQo+ICB7Cj4gLS0KPiAyLjI1LjEKPgo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KPiBMaW51eC1tZWRpYXRlayBtYWlsaW5nIGxpc3QKPiBM
-aW51eC1tZWRpYXRla0BsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1tZWRpYXRlawoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Mar 26, 2020 at 09:36:25AM -0700, Li Wang wrote:
+> reproduce steps:
+> 1.
+> disable CONFIG_STRICT_DEVMEM in linux kernel
+> 2.
+> Process A gets a Physical Address of global variable by
+> "/proc/self/pagemap".
+> 3.
+> Process B writes a value to the same Physical Address by mmap():
+> fd=open("/dev/mem",O_SYNC);
+> Virtual Address=mmap(fd);
+
+Is this just to demonstrate the behaviour, or is this meant to be
+indicative of a real use-case? I'm struggling to see the latter.
+
+> problem symptom:
+> after Process B write a value to the Physical Address,
+> Process A of the value of global variable does not change.
+> They both W/R the same Physical Address.
+
+If Process A is not using the same attributes as process B, there is no
+guarantee of coherency. How did process A map this memory?
+
+> technical reason:
+> Process B writing the Physical Address is by the Virtual Address,
+> and the Virtual Address comes from "/dev/mem" and mmap().
+> In arm64 arch, the Virtual Address has write cache.
+> So, maybe the value is not written into Physical Address.
+
+I don't think that's true. I think what's happening here is:
+
+* Process A has a Normal WBWA Cacheable mapping.
+* Process B as a Normal Non-cacheable mapping.
+* Process B's write does not snoop any caches, and goes straight to
+  memory.
+* Process A reads a value from cache, which does not include process B's
+  write.
+
+That's a natural result of using mismatched attributes, and is
+consistent with the O_SYNC flag meaning that the write "is transferred
+to the underlying hardware".
+
+> 
+> fix reason:
+> giving write cache flag in arm64 is in phys_mem_access_prot():
+> =====
+> arch/arm64/mm/mmu.c
+> phys_mem_access_prot()
+> {
+>   if (!pfn_valid(pfn))
+>     return pgprot_noncached(vma_prot);
+>   else if (file->f_flags & O_SYNC)
+>     return pgprot_writecombine(vma_prot);
+>   return vma_prot;
+> }
+> ====
+> the other arch and the share function drivers/char/mem.c of phys_mem_access_prot()
+> does not add write cache flag.
+> So, removing the flag to fix the issue
+
+This will change behaviour that other software may be relying upon, and
+as above I do not believe this actually solves the problem you describe.
+
+Thanks,
+Mark.
+
+> 
+> Signed-off-by: Li Wang <li.wang@windriver.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  arch/arm64/mm/mmu.c | 2 --
+>  1 file changed, 2 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 128f70852bf3..d7083965ca17 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -81,8 +81,6 @@ pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>  {
+>  	if (!pfn_valid(pfn))
+>  		return pgprot_noncached(vma_prot);
+> -	else if (file->f_flags & O_SYNC)
+> -		return pgprot_writecombine(vma_prot);
+>  	return vma_prot;
+>  }
+>  EXPORT_SYMBOL(phys_mem_access_prot);
+> -- 
+> 2.24.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
