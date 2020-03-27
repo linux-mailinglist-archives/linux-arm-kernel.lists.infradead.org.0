@@ -2,77 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91FE419599E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 16:17:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 901EA1959DA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 16:28:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x2QAc0FNVeN6wm2cwpB/8bmg0vuTS6qWz+vIYVa+3ZM=; b=a6PAo6y5lxSQf6
-	EG1reVMKemsWGbYjC3z8VVjneWNjJkzvaYL11+DXpyyiY+Uf4f5qOyefw8JPTS2xZW89sVdTZorts
-	1dJiuajaO/J1x8WjkxIxhinKm0kJ371a2unE4hiavwMKSBWqwgGj2/YQbRS0+ImU5H++vk4YS37TF
-	7zVvkJc71n128p3eAaA8ws3aOEF9birHokNwBf0LmzywgEMqbgk8CZ0+z5MvHF7X6+77l5IROOmu0
-	5naQjuw+cdg5eBruo0Vx/Haq9VyyZA/nKX8jHpfVfhvAnOIczZcEbFOjj/dsYwPVDaZriKhIdxnjU
-	+PFlVJGVQpIsDIgpFiMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5GFtYd+/CQQxNIg/EodhDNbdGb/3xOlmlaPdGXgxW1I=; b=b3PkUrCGEtP7JJBRe4WAPCjZr
+	S1SwOyoH0Mic0UcSJLZoVcOgrjZw08wdU1SwH2u+Meaa1BEKcOpK0ZlGleVCYS8vnfC9R6+9jecvI
+	YMKkEfasYZvRkAESyspjO0k2kDeiRetBgCBtxsT1ZhLuQqE9N/5hjBaTmfnqxT3QJohkd6G+GpYHk
+	560DQwFGQf9prMvUbsU1+GcRaQF9BHdSQb0BAezfwTJoyKNOC+GXm+qH7OgF1bnh7URRAIVobQ7TW
+	afAarMfWdBeDQ1pGJLf59nYlDnzutTFM0SagKCLMNH/ohEEZlbb3FaSHhFPerVYcLqH22DQQ300jU
+	5BWV5mH9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHqjr-0007OR-JR; Fri, 27 Mar 2020 15:17:39 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jHquM-0002fS-9M; Fri, 27 Mar 2020 15:28:30 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHqji-0007Nt-Su
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 15:17:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=i49b05giKAvuJdsFix/RQTI/KizwQbObzGwBctGXmQk=; b=VQGz0166n3sa4P4ziV7OV9IA/
- SuBxjVAQP79YeJkm6/8nwjnOBLBfRbUCMxBfkssnWPUIN32B3Ea7Y61Wa2NnY54O+gXIlvh7HkqaT
- 8WP9O1dQcrj3L6ctDxQbLr/+gM64zTpxrSFMFBMBLYqnKvcSxWYzbDIYHwWyLPIcrx7kB13y0RdtN
- eEmnQU7bdTwW127Tysj6BJH7GgvWlOb9l0yjp6BlgRDXj1j9IHjip+unGAGhW8ER5k1dO571SL0uo
- Py1ecgiyVI26z7ZiwsavuroSBzm55LNQPm0GZT+CBdFSFcQJXBo5JmubEBldoP0qr0yhytAWr1TNk
- sIne2wZKA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42100)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jHqjR-0001nO-2g; Fri, 27 Mar 2020 15:17:13 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jHqjO-0004KV-0x; Fri, 27 Mar 2020 15:17:10 +0000
-Date: Fri, 27 Mar 2020 15:17:09 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
- types
-Message-ID: <20200327151709.GO25745@shell.armlinux.org.uk>
-References: <E1jHoHy-0002Ep-IY@rmk-PC.armlinux.org.uk>
- <20200327134319.GD11004@lunn.ch>
- <20200327134651.GM25745@shell.armlinux.org.uk>
- <20200327135046.GN25745@shell.armlinux.org.uk>
- <20200327141538.GE11004@lunn.ch>
+ id 1jHqu6-0002d9-Iq
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 15:28:15 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id EB34922FEC;
+ Fri, 27 Mar 2020 16:28:11 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1585322892;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=eqUqITWsj9KDFGHrWeFv9QwKV40MUcbbCm0POjhjwys=;
+ b=NH9IOM80ezOu/xwgBZKQz57gkLeRbVpBO6uhULy0WRIQwRM6uLeXsXUIgRsya4g0GiBhLJ
+ V7nQFEI7obV92eVs8K0Ug7pHGzqpMHjtBP9MH2YUCHq5FqwNCeHAAxhU3Opxy1oqePUh8G
+ x9v49TPkEiJCurb1daDWtLGhW/jpfno=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200327141538.GE11004@lunn.ch>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Fri, 27 Mar 2020 16:28:11 +0100
+From: Michael Walle <michael@walle.cc>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 12/18] gpio: add support for the sl28cpld GPIO controller
+In-Reply-To: <CACRpkdbJ3DBO+W4P0n-CfZ1T3L8d_L0Nizra8frkv92XPXR4WA@mail.gmail.com>
+References: <20200317205017.28280-1-michael@walle.cc>
+ <20200317205017.28280-13-michael@walle.cc>
+ <CAMpxmJW770v6JLdveEe1hkgNEJByVyArhorSyUZBYOyFiVyOeg@mail.gmail.com>
+ <9c310f2a11913d4d089ef1b07671be00@walle.cc>
+ <CAMpxmJXmD-M+Wbj6=wgFgP2aDxbqDN=ceHi1XDun4iwdLm55Zg@mail.gmail.com>
+ <22944c9b62aa69da418de7766b7741bd@walle.cc>
+ <CACRpkdbJ3DBO+W4P0n-CfZ1T3L8d_L0Nizra8frkv92XPXR4WA@mail.gmail.com>
+Message-ID: <4d8d3bc26bdf73eb5c0e5851589fe085@walle.cc>
+X-Sender: michael@walle.cc
+User-Agent: Roundcube Webmail/1.3.10
+X-Spamd-Bar: +
+X-Spam-Level: *
+X-Rspamd-Server: web
+X-Spam-Status: No, score=1.40
+X-Spam-Score: 1.40
+X-Rspamd-Queue-Id: EB34922FEC
+X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_TWELVE(0.00)[21]; NEURAL_HAM(-0.00)[-0.548];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ FREEMAIL_CC(0.00)[baylibre.com,vger.kernel.org,lists.infradead.org,kernel.org,suse.com,roeck-us.net,linaro.org,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net];
+ MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_081731_106445_F71652CE 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_082814_771247_C71EE329 
+X-CRM114-Status: GOOD (  16.34  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,32 +99,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>,
- "Madalin Bucur \(OSS\)" <madalin.bucur@oss.nxp.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-hwmon@vger.kernel.org, linux-devicetree <devicetree@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, Marc Zyngier <maz@kernel.org>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, linux-pwm@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, linux-gpio <linux-gpio@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Lee Jones <lee.jones@linaro.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Jason Cooper <jason@lakedaemon.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 03:15:38PM +0100, Andrew Lunn wrote:
-> > ... and actually there is no point.
+Am 2020-03-27 11:20, schrieb Linus Walleij:
+> On Thu, Mar 26, 2020 at 9:06 PM Michael Walle <michael@walle.cc> wrote:
+>> Am 2020-03-25 12:50, schrieb Bartosz Golaszewski:
 > 
-> O.K. lets merge these as normal, not as fixes.  It is probably too
-> late for ARM SoC, so i guess they will get merged next cycle.
+>> > In that case maybe you should use the disable_locking option in
+>> > regmap_config and provide your own callbacks that you can use in the
+>> > irqchip code too?
+>> 
+>> But how would that solve problem (1). And keep in mind, that the
+>> reqmap_irqchip is actually used for the interrupt controller, which
+>> is not this gpio controller.
+>> 
+>> Ie. the interrupt controller of the sl28cpld uses the regmap_irqchip
+>> and all interrupt phandles pointing to the interrupt controller will
+>> reference the toplevel node. Any phandles pointing to the gpio
+>> controller will reference the GPIO subnode.
+> 
+> Ideally we would create something generic that has been on my
+> mind for some time, like a generic GPIO regmap irqchip now that
+> there are a few controllers like that.
+> 
+> I don't know how feasible it is or how much work it would be. But
+> as with GPIO_GENERIC (for MMIO) it would be helpful since we
+> can then implement things like .set_multiple() and .get_multiple()
+> for everyone.
 
-Yep, which means that the backplane patches from NXP will have to be
-delayed about 20 weeks (about 10 weeks in the arm64 tree before being
-merged into 5.8-rc1, and then another 10 weeks before 5.8 is released.)
-That's probably not a bad thing, as it'll let us hash out the conflicts
-between my PCS patch set and their backplane patches.
+For starters, would that be a drivers/gpio/gpio-regmap.c or a
+drivers/base/regmap/regmap-gpio.c? I would assume the first,
+because the stuff in drivers/base/regmap operates on a given
+regmap and we'd just be using one, correct? On the other hand
+there is also the reqmap-irq.c. But as pointed out before, it
+will add an interrupt controller to the regmap, not a device
+so to speak.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
