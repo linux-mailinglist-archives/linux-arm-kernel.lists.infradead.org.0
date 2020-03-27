@@ -2,144 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4476195AE6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:17:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91FF8195AED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:18:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0qM+bEM99+K3ANznLpo5m7oWvrMlnHOeu34CCInWR/A=; b=IfB9oHNE8wMAfF
-	+9tX42iowTO3Q5lS04VaiycTfsZTHutpFjKkZ2jaJv/ZG+jYIOmuY/YLIyTioc71dOP4IMEdmAHg5
-	DKvLqHVBmolnDTmaS0edpBCefN5NDkz700/FgBAOMc4y+mOnd4VWZzpTESsn2NXLA/zapBlYBi4pe
-	IjefaotOufMI1NJdLEFgAxGxBKJr7Cacs68GTQ96HF9TJKOJhmp2wWC9Q/rZijBS5woAWfsHN8qRz
-	rCbzJKYjJsOJLaK1KTRopptgWKjO10G0JnJRWbzsQxlyBTNpBgc2P1qq9mPBVtlY5+/zyc734gKml
-	+Vp18IXG/xPDCIsNpE6Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=otUoHLJ3PH1IEVaaf8l6tgjpxHZtr9DvPOsJYKikf48=; b=uRUoJ2V8yAQhpD
+	CQX0Ej891qZAQDPR06eLUp31sW4jhf2E8F7zErqQrcntIic71iPKJS5gR/8edyo9Wx+AXZp84nq9W
+	HlBOx3Z8ikik2XkPuMMHslTXabxwFRQKr8swVljgoPIKVKvj68La3USDYc6kCRvq090wxurBZBflX
+	MXIdIHVssVR16GuSoRfN2YzZk8CAlDwvD2OvmHSZOCw3kWe4EnknezLUlnLGJCRiLnl8wZIDbdzlh
+	qh52IfBP60cPqJfzXgNVT/rWBRCsSW6ANspPvqJFDDzfhOm1mB98iKoq7HdCXktYdm+mWnsxHWsYh
+	G+aPac9SL/zooRlK/mpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHrfa-0006g3-P6; Fri, 27 Mar 2020 16:17:18 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jHrgE-00070Y-PF; Fri, 27 Mar 2020 16:17:58 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHrfR-0006f7-W8; Fri, 27 Mar 2020 16:17:11 +0000
-Received: by mail-wm1-x341.google.com with SMTP id z18so12016469wmk.2;
- Fri, 27 Mar 2020 09:17:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dy2iif58QuMwtT65jopw+UG/sI+X05k6TZX5Cv7+05c=;
- b=YE1S1bRlec2eGE2r/W1gCLvA+Bv+SxcteNvYFMBvfiWIS1h1JGIq7v+nLoprPJrECJ
- bP/A/9UaZpE9hKry1/bTi6RiyRr7y3PSNb3sz4/SLaJ4zugieRI059ze1sXpZ7s178gJ
- 1lFPUW7HrZOeoI5Z+QB2OAOX3WRaTszZY3wbSbK1regcrODPnm4JTEN5OWWkAIeghhDc
- b+0SAhnd687PLr8XKjcKuGANgcwjWNn5HdBv/NRE2POhaIiXXxKxWAHkIFCaM6G9EhtO
- I37aG7dnO0/am4rcW/TATCHG6jofnrIDQ2nyWkuVcA3PpsPzdvYLGE7Uxb5Jkq25QdgQ
- 5M7A==
+ id 1jHrfz-0006zW-5O
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:17:46 +0000
+Received: by mail-pg1-x544.google.com with SMTP id b1so4788074pgm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 09:17:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=jhwYADhdGcLZbWIzbwxBzjxRAObWsK9tu6OvJnZhgK8=;
+ b=mjFVfqnvAEAdGQxoWYIHbYy0+wwJhPKkgVBXpuF+JLGBQHrARncYWjhkj60r3u/Ohy
+ gMlDZxixdo2YrheHdj9PypFdZMB4paHUWQ0Dysvo3Dh5fJaL5hUpsnIv/KsaI/XPQ6VC
+ mXRHbbwQqeOtFbCLT6H5JqwjEOKjI4zV1UzKrgYsI+otvfieN3FwQ4AwuDFr19uD/GnN
+ N/soZ2oeh19LWDzC3NqMTPMWCHm0v4z9h5ktH+BeEw37BkMO5xVf+2faWKp6mI/nLwa0
+ AbLTb8CrC0uhcaCKalPUaZC0OYxrZqF3/lI5W6+/LkIN0haEj7jwE5xbAQreuF2zG7qP
+ VHag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=dy2iif58QuMwtT65jopw+UG/sI+X05k6TZX5Cv7+05c=;
- b=scPUnYzZqhOLAPu65nxM5acHXHP/cTk7por5rPLmM3Sy4ydDJxC41Ty3RAw7Nda1Ye
- +tvQFD6eiQPb5FSrzMBgibBxXRF0GDumap0g/h95WNmOhd+pQNCe38ABBC4N431LuH86
- /P4SywvH0b8MV5DuVYyasjQDdJNajtnC4WiWgL1765fitzVNwDDL9QPRtTBH71HMPnLB
- mPLWXkAzWVQkAFbpPsZFoOvH43H/U2FRijzxrw2ieL/3gcQKGUC/hk3l+luqi9y3soEk
- GV+6aTbsNpZUKfcdEE1uDCH9TKlbQpXQ5jgYpe7TZ5liZX8YHKr6pmxBTTf3via3qEkN
- h4gw==
-X-Gm-Message-State: ANhLgQ3Kd3n1zMxF62Q07jK2hLhHyUe5fuJOBFEbf4pAS0F5l/n9pVsz
- 7D0b46EQZ2vQHWL24xow6e4=
-X-Google-Smtp-Source: ADFU+vvN1EJV/8LL/LI4r+EFKFLUipnY+/DDxirzySZQq/3WiBxJFYkHaffR+mWr7y59A8HV56B0hg==
-X-Received: by 2002:a1c:de87:: with SMTP id v129mr4944112wmg.68.1585325828435; 
- Fri, 27 Mar 2020 09:17:08 -0700 (PDT)
-Received: from [10.230.3.19] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id o67sm8763614wmo.5.2020.03.27.09.17.05
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 27 Mar 2020 09:17:07 -0700 (PDT)
-Subject: Re: [PATCH] ARM: dts: bcm283x: Add cells encoding format to firmware
- bus
-To: Matthias Brugger <matthias.bgg@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com
-References: <20200326134413.12298-1-nsaenzjulienne@suse.de>
- <015ad553-86a2-c6ac-e515-f14df83cec26@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <701084d1-d03d-8890-c2ca-16daaa3085d6@gmail.com>
-Date: Fri, 27 Mar 2020 09:17:03 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.6.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jhwYADhdGcLZbWIzbwxBzjxRAObWsK9tu6OvJnZhgK8=;
+ b=bF6t0fHOXUo6LpTiuqwhwg3xDaUWEmLY01FDVigo4Uugw6id00sh4EDU2QRVH3+vrF
+ VGK5/lKVxUgOom0NykELcSVUwXmI7csv0lk0WQyXqdxV0NWYXsnhlgjoTQelcQE4LbsK
+ 7u8sEAJq8wWMuDJ0a72Dg/zubFUpNMrrn4Acyzs4SkOiFm+Ly0XHf3x+1zo7PSmSCnoL
+ FOys54lkMKTwp5ejuy4b6Mqphups7XRfQmW837nUU7G301mMHvqRLsxrDkevKylTPAEN
+ aR9X3kbiA0/MPf1QPTqMU9vsLjGI3xvc6zRfA0i5ShH5UduOyFhrYpZGpup62cdnpS/O
+ 7qnw==
+X-Gm-Message-State: ANhLgQ1TUGVbbh1M4Qg+9AyKvY8+wviR0qs9JWeulM5f+8GYOU8m0vDm
+ muw5uYcc2lybaSK664HWLDssvg==
+X-Google-Smtp-Source: ADFU+vuHJjTwlUlAnTmVZwL7ukhLfqdQyllSGr+zoP1DUk27+DscTsfzu3LkM6z3KfW5PHAuL3zRCQ==
+X-Received: by 2002:a62:2cc3:: with SMTP id
+ s186mr15383429pfs.236.1585325856083; 
+ Fri, 27 Mar 2020 09:17:36 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id d3sm4136628pjz.2.2020.03.27.09.17.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 27 Mar 2020 09:17:35 -0700 (PDT)
+Date: Fri, 27 Mar 2020 10:17:33 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Clement Leger <cleger@kalray.eu>
+Subject: Re: [PATCH] remoteproc: remove rproc_elf32_sanity_check
+Message-ID: <20200327161733.GA18041@xps15>
+References: <20200327084939.8321-1-cleger@kalray.eu>
 MIME-Version: 1.0
-In-Reply-To: <015ad553-86a2-c6ac-e515-f14df83cec26@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200327084939.8321-1-cleger@kalray.eu>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_091710_039760_311A9C66 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20200327_091743_347779_498DEDF2 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -159,40 +98,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 3/27/2020 9:15 AM, Matthias Brugger wrote:
+On Fri, Mar 27, 2020 at 09:49:39AM +0100, Clement Leger wrote:
+> Since checks are present in the remoteproc elf loader before calling
+> da_to_va, loading a elf64 will work on 32bits flavors of kernel.
+> Indeed, if a segment size is larger than what size_t can hold, the
+> loader will return an error so the functionality is equivalent to
+> what exists today.
 > 
-> 
-> On 26/03/2020 14:44, Nicolas Saenz Julienne wrote:
->> With the introduction of 55c7c0621078 ("ARM: dts: bcm283x: Fix vc4's
->> firmware bus DMA limitations") the firmware bus has to comply with
->> /soc's DMA limitations. Ultimately linking both buses to a same
->> dma-ranges property. The patch (and author) missed the fact that a bus'
->> #address-cells and #size-cells properties are not inherited, but set to
->> a fixed value which, in this case, doesn't match /soc's. This, although
->> not breaking Linux's DMA mapping functionality, generates ugly dtc
->> warnings.
->>
->> Fix the issue by adding the correct address and size cells properties
->> under the firmware bus.
->>
->> Fixes: 55c7c0621078 ("ARM: dts: bcm283x: Fix vc4's firmware bus DMA limitations")
->> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> 
-> Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+> Signed-off-by: Clement Leger <cleger@kalray.eu>
+> ---
+>  drivers/remoteproc/remoteproc_core.c       |  2 +-
+>  drivers/remoteproc/remoteproc_elf_loader.c | 21 ---------------------
+>  drivers/remoteproc/remoteproc_internal.h   |  1 -
+>  drivers/remoteproc/st_remoteproc.c         |  2 +-
+>  drivers/remoteproc/st_slim_rproc.c         |  2 +-
+>  drivers/remoteproc/stm32_rproc.c           |  2 +-
+>  6 files changed, 4 insertions(+), 26 deletions(-)
 
-Should this be squashed into "ARM: dts: bcm283x: Fix vc4's firmware bus
-DMA limitations"? I have not gotten a response it has been accepted yet.
--- 
-Florian
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+
+> 
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index a9ac1d01e09b..02ff076b0122 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -2069,7 +2069,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+>  		rproc->ops->parse_fw = rproc_elf_load_rsc_table;
+>  		rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
+>  		if (!rproc->ops->sanity_check)
+> -			rproc->ops->sanity_check = rproc_elf32_sanity_check;
+> +			rproc->ops->sanity_check = rproc_elf_sanity_check;
+>  		rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
+>  	}
+>  
+> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+> index 16e2c496fd45..29034f99898d 100644
+> --- a/drivers/remoteproc/remoteproc_elf_loader.c
+> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
+> @@ -112,27 +112,6 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
+>  }
+>  EXPORT_SYMBOL(rproc_elf_sanity_check);
+>  
+> -/**
+> - * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
+> - * @rproc: the remote processor handle
+> - * @fw: the ELF32 firmware image
+> - *
+> - * Make sure this fw image is sane.
+> - */
+> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
+> -{
+> -	int ret = rproc_elf_sanity_check(rproc, fw);
+> -
+> -	if (ret)
+> -		return ret;
+> -
+> -	if (fw_elf_get_class(fw) == ELFCLASS32)
+> -		return 0;
+> -
+> -	return -EINVAL;
+> -}
+> -EXPORT_SYMBOL(rproc_elf32_sanity_check);
+> -
+>  /**
+>   * rproc_elf_get_boot_addr() - Get rproc's boot address.
+>   * @rproc: the remote processor handle
+> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+> index b389dc79da81..31994715fd43 100644
+> --- a/drivers/remoteproc/remoteproc_internal.h
+> +++ b/drivers/remoteproc/remoteproc_internal.h
+> @@ -54,7 +54,6 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
+>  phys_addr_t rproc_va_to_pa(void *cpu_addr);
+>  int rproc_trigger_recovery(struct rproc *rproc);
+>  
+> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>  int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>  u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
+>  int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
+> diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
+> index a6cbfa452764..a3268d95a50e 100644
+> --- a/drivers/remoteproc/st_remoteproc.c
+> +++ b/drivers/remoteproc/st_remoteproc.c
+> @@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
+>  	.parse_fw		= st_rproc_parse_fw,
+>  	.load			= rproc_elf_load_segments,
+>  	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
+> -	.sanity_check		= rproc_elf32_sanity_check,
+> +	.sanity_check		= rproc_elf_sanity_check,
+>  	.get_boot_addr		= rproc_elf_get_boot_addr,
+>  };
+>  
+> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+> index 3cca8b65a8db..09bcb4d8b9e0 100644
+> --- a/drivers/remoteproc/st_slim_rproc.c
+> +++ b/drivers/remoteproc/st_slim_rproc.c
+> @@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
+>  	.da_to_va       = slim_rproc_da_to_va,
+>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>  	.load		= rproc_elf_load_segments,
+> -	.sanity_check	= rproc_elf32_sanity_check,
+> +	.sanity_check	= rproc_elf_sanity_check,
+>  };
+>  
+>  /**
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 6a66dbf2df40..2e07a95439c8 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
+>  	.load		= rproc_elf_load_segments,
+>  	.parse_fw	= stm32_rproc_parse_fw,
+>  	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+> -	.sanity_check	= rproc_elf32_sanity_check,
+> +	.sanity_check	= rproc_elf_sanity_check,
+>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>  };
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
