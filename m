@@ -2,93 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2727F19533B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 09:47:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99AE5195347
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 09:50:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ODuU7tFGGZEJyt42cfj3Ky85X0iW4L3obdqc3+wg0qs=; b=LfX58H+M0KsJ6h
-	p9fOHldhEN2/XE/nG6UW77UxOszftfN0JNlX7QlzNv6wDkm/Z93D8wQatO3ggGKcmZ9bORQnBD/m+
-	x+tR4BNBJo6S0qiuDyZRT2G5s/doFp2qJf6PJWG6RKPc+NVHkJnU+9Eig6PzjzjzrQ6DKLO8fggZT
-	lp/YdC/3pgOOi/8ODKnzogDO6WN31idYjNd8xN3hk2fmbVyLJAyAwAJs0063kZzvI9wDGCtx+217I
-	x17DSI7K8NmJWo5hZrN5KUoVXp28y8tFCj2P5/c11jC2Qhj8XqNxoQkI4wAhz9m/VyrmeIiAdHuwd
-	5Ez4tNpgZL2s1f0pVxeA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=jWXAo3Gvjq0UkSTKew0EZ0lGzABC64xwFhBnNtiyuHY=; b=GYd
+	3rb4NKzfQ7LSMv261Ze3D60lJ3Ze1CnHtxv6k5IskaH/onaNwpOlWijY3EUDxhX1p1xrLbaAL4CE7
+	jbhaxPLhvPCRsnV5H5jyqXP+xMHQDH7aTnNGXGO8eQX/zljqIVh9a+74gQPLb6ixaFggh5yVETcCh
+	Lq4u2JlvR/1aMCvv4XxwhMfE2OLkQp01fhcGllt4LSAlp7dQvmxQRjZ/AZ5O+RZAxHJrtDerL6wjX
+	0Hw9liGUTcJVTm4pzQ5T9jqZOqHgWHcIOeYE9HFTHbuCoNre21HoTdmGX0RucV5OmmyD2gpkDEzBe
+	VKFgMoDhGCbIWP856Uxa7UpFePc2Lug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHke7-0005CO-Lo; Fri, 27 Mar 2020 08:47:19 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jHkh9-0007Sy-9Y; Fri, 27 Mar 2020 08:50:27 +0000
+Received: from zimbra2.kalray.eu ([92.103.151.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHkdv-00059P-Fp
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 08:47:09 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02R8gLtS031851; Fri, 27 Mar 2020 09:47:02 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=YJw8XoTO1v1PRGqYcjUGZSKR+X2/a6Uk4mv/NSHkJo8=;
- b=SnI+snLZWTU/DrJFlg1DOyaQQ0TcS9te3M3/UemSgMwEcK+W/YEWs45YsFX/iEMeZ8Th
- RVi63AgBytgWVMQpl0mXOmy1H8Vq3o8qdBful3gsK9VR7ABDne1VWwlWw6T2PFmi+h3z
- 2lxhYojVMu86AYcWR404xVcthmdBodsxAAT3JXns5rRdY4oTUX0fyKlt+bPfWaP3iRhb
- wehSPUNKi+7Hf4r+R3zhRTJbdT8COLEukz/Ifpqp5M9fE+frmTmsEAPhN30R3y4tRM0e
- H/vkrlbnoR5LvyfCOaMJiAzUH/aTyBoIUp5MC61QFtMibE3fBn3hBGN/eDQ0YqEAUl8V Og== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ywappgpfx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 27 Mar 2020 09:47:02 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BD9BF100034;
- Fri, 27 Mar 2020 09:47:01 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B138921F663;
- Fri, 27 Mar 2020 09:47:01 +0100 (CET)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 27 Mar
- 2020 09:47:01 +0100
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 27 Mar 2020 09:47:01 +0100
-From: Patrice CHOTARD <patrice.chotard@st.com>
-To: Alain Volmat <avolmat@me.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-i2c@vger.kernel.org"
- <linux-i2c@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] i2c: i2c-st: fix missing struct parameter description
-Thread-Topic: [PATCH] i2c: i2c-st: fix missing struct parameter description
-Thread-Index: AQHWA7S25N2xB719JUWj+X22ne9jPKhcEGIA
-Date: Fri, 27 Mar 2020 08:47:01 +0000
-Message-ID: <0b432170-8ae0-d5c3-7557-fe6d606782f7@st.com>
-References: <20200326212243.17363-1-avolmat@me.com>
-In-Reply-To: <20200326212243.17363-1-avolmat@me.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.51]
-Content-ID: <679754E3029C214598936C34C70CF6F2@st.com>
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-27_02:2020-03-26,
- 2020-03-27 signatures=0
+ id 1jHkgz-0007Qz-QJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 08:50:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTP id 5860A27E039A;
+ Fri, 27 Mar 2020 09:50:13 +0100 (CET)
+Received: from zimbra2.kalray.eu ([127.0.0.1])
+ by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id FpmscZvK2U_Z; Fri, 27 Mar 2020 09:50:12 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTP id CB6CC27E0AEB;
+ Fri, 27 Mar 2020 09:50:12 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu CB6CC27E0AEB
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
+ s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1585299012;
+ bh=SN/jDLRWylESkAt6QMekC/Tpe7ewfTl4FIMoaHWoEeE=;
+ h=From:To:Date:Message-Id;
+ b=cb1Ymu+VokqUrg5PAArt3L1fVzMSjaS8q1pFp8sQ05nvnbXNfsNMzoWTUAbeAWvc3
+ T/P28dcqbk3354ctudCjeii82CY8Td+j1cg/eCpWgvONCz0RYRSeUfYhJjTq1CU0SV
+ p0aPmDnS+ZuITE0P0BxkugItjSRiYYTy36K90D00=
+X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
+Received: from zimbra2.kalray.eu ([127.0.0.1])
+ by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id JMcNRfuSCV0B; Fri, 27 Mar 2020 09:50:12 +0100 (CET)
+Received: from triton.lin.mbt.kalray.eu (unknown [192.168.37.25])
+ by zimbra2.kalray.eu (Postfix) with ESMTPSA id AF16827E039A;
+ Fri, 27 Mar 2020 09:50:12 +0100 (CET)
+From: Clement Leger <cleger@kalray.eu>
+To: Ohad Ben-Cohen <ohad@wizery.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Subject: [PATCH] remoteproc: remove rproc_elf32_sanity_check
+Date: Fri, 27 Mar 2020 09:49:39 +0100
+Message-Id: <20200327084939.8321-1-cleger@kalray.eu>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_014707_981243_3A2458F3 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200327_015018_214336_9155A443 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [92.103.151.219 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,38 +88,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Clement Leger <cleger@kalray.eu>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alain
+Since checks are present in the remoteproc elf loader before calling
+da_to_va, loading a elf64 will work on 32bits flavors of kernel.
+Indeed, if a segment size is larger than what size_t can hold, the
+loader will return an error so the functionality is equivalent to
+what exists today.
 
-On 3/26/20 10:22 PM, Alain Volmat wrote:
-> Fix a missing struct parameter description to allow
-> warning free W=1 compilation.
->
-> Signed-off-by: Alain Volmat <avolmat@me.com>
-> ---
->  drivers/i2c/busses/i2c-st.c | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/i2c/busses/i2c-st.c b/drivers/i2c/busses/i2c-st.c
-> index 54e1fc8a495e..f7f7b5b64720 100644
-> --- a/drivers/i2c/busses/i2c-st.c
-> +++ b/drivers/i2c/busses/i2c-st.c
-> @@ -434,6 +434,7 @@ static void st_i2c_wr_fill_tx_fifo(struct st_i2c_dev *i2c_dev)
->  /**
->   * st_i2c_rd_fill_tx_fifo() - Fill the Tx FIFO in read mode
->   * @i2c_dev: Controller's private data
-> + * @max: Maximum amount of data to fill into the Tx FIFO
->   *
->   * This functions fills the Tx FIFO with fixed pattern when
->   * in read mode to trigger clock.
+Signed-off-by: Clement Leger <cleger@kalray.eu>
+---
+ drivers/remoteproc/remoteproc_core.c       |  2 +-
+ drivers/remoteproc/remoteproc_elf_loader.c | 21 ---------------------
+ drivers/remoteproc/remoteproc_internal.h   |  1 -
+ drivers/remoteproc/st_remoteproc.c         |  2 +-
+ drivers/remoteproc/st_slim_rproc.c         |  2 +-
+ drivers/remoteproc/stm32_rproc.c           |  2 +-
+ 6 files changed, 4 insertions(+), 26 deletions(-)
 
-Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index a9ac1d01e09b..02ff076b0122 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -2069,7 +2069,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+ 		rproc->ops->parse_fw = rproc_elf_load_rsc_table;
+ 		rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
+ 		if (!rproc->ops->sanity_check)
+-			rproc->ops->sanity_check = rproc_elf32_sanity_check;
++			rproc->ops->sanity_check = rproc_elf_sanity_check;
+ 		rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
+ 	}
+ 
+diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+index 16e2c496fd45..29034f99898d 100644
+--- a/drivers/remoteproc/remoteproc_elf_loader.c
++++ b/drivers/remoteproc/remoteproc_elf_loader.c
+@@ -112,27 +112,6 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
+ }
+ EXPORT_SYMBOL(rproc_elf_sanity_check);
+ 
+-/**
+- * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
+- * @rproc: the remote processor handle
+- * @fw: the ELF32 firmware image
+- *
+- * Make sure this fw image is sane.
+- */
+-int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
+-{
+-	int ret = rproc_elf_sanity_check(rproc, fw);
+-
+-	if (ret)
+-		return ret;
+-
+-	if (fw_elf_get_class(fw) == ELFCLASS32)
+-		return 0;
+-
+-	return -EINVAL;
+-}
+-EXPORT_SYMBOL(rproc_elf32_sanity_check);
+-
+ /**
+  * rproc_elf_get_boot_addr() - Get rproc's boot address.
+  * @rproc: the remote processor handle
+diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+index b389dc79da81..31994715fd43 100644
+--- a/drivers/remoteproc/remoteproc_internal.h
++++ b/drivers/remoteproc/remoteproc_internal.h
+@@ -54,7 +54,6 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
+ phys_addr_t rproc_va_to_pa(void *cpu_addr);
+ int rproc_trigger_recovery(struct rproc *rproc);
+ 
+-int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
+ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
+ u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
+ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
+diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
+index a6cbfa452764..a3268d95a50e 100644
+--- a/drivers/remoteproc/st_remoteproc.c
++++ b/drivers/remoteproc/st_remoteproc.c
+@@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
+ 	.parse_fw		= st_rproc_parse_fw,
+ 	.load			= rproc_elf_load_segments,
+ 	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
+-	.sanity_check		= rproc_elf32_sanity_check,
++	.sanity_check		= rproc_elf_sanity_check,
+ 	.get_boot_addr		= rproc_elf_get_boot_addr,
+ };
+ 
+diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+index 3cca8b65a8db..09bcb4d8b9e0 100644
+--- a/drivers/remoteproc/st_slim_rproc.c
++++ b/drivers/remoteproc/st_slim_rproc.c
+@@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
+ 	.da_to_va       = slim_rproc_da_to_va,
+ 	.get_boot_addr	= rproc_elf_get_boot_addr,
+ 	.load		= rproc_elf_load_segments,
+-	.sanity_check	= rproc_elf32_sanity_check,
++	.sanity_check	= rproc_elf_sanity_check,
+ };
+ 
+ /**
+diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+index 6a66dbf2df40..2e07a95439c8 100644
+--- a/drivers/remoteproc/stm32_rproc.c
++++ b/drivers/remoteproc/stm32_rproc.c
+@@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
+ 	.load		= rproc_elf_load_segments,
+ 	.parse_fw	= stm32_rproc_parse_fw,
+ 	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+-	.sanity_check	= rproc_elf32_sanity_check,
++	.sanity_check	= rproc_elf_sanity_check,
+ 	.get_boot_addr	= rproc_elf_get_boot_addr,
+ };
+ 
+-- 
+2.17.1
 
-Thanks
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
