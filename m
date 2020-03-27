@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAAEC19578E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 13:55:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D896619579B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 13:58:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ExKZfZpoqpqeSh9DrbI4wp8UPSyzhJT3IUsmtFi0l50=; b=BP0OKtU0iAYukX
-	evh6lmAn/zJJvJa4lgHEH02uGeP1RDL3aBAwKhP+8w+RCjBacGXGwWLmwTMII8IvwITPagERUPyE4
-	cUDEgHVAF2PdbMUKAskWbeOj8m+pFWbHJAIpjqs2iYga5qvOKh8n49vgUfRtpbL8+891H1MoOhVWY
-	I2PIUgSOHgGt7giDPDayuV+Rfx5NjyEviAUKcOT2iFZ/6JkpqWDTClgOwHtmWBt+paU6MIiKwTzFL
-	S4DhAQnn+s9o/vjyCPsQAQ3GinZAhwF1c9On0EqORsH4QQrj9c+/25EkkkRuGJuUdg5RQanQUfcKb
-	az8VRB5PI/Lll08d1A9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZJemRQlCtRCHD8al6fdqN76I5bzlNR30rZXW5TxLp48=; b=GXJgwc6UOEN2GIgwLgsjCOHqW
+	6esfwKhuy0TnBCe5Jt3puN21KC3WnJsrxpTg67rj/YpFDnyIj8OQBa+Kg7MMqUp2dsy3oPp/VoUFr
+	k51uv1DTip5HXj26/FC5YljlYHX2jdtErxd80Oyn/oPPmLD7pie9188ee6JYX7MbtsvjR1Ik6y6ww
+	Sk5vEB148rE7SADaQ0kjSLnBho0KZLN2eRmV3TcQW1p/xsPBj8ZLurVd3O/zyabwvq/HmO00MDFqY
+	fHCNPuVpr79D2DCThZjEn6sRy4Kxcr9VZ2Au1rcV9w+7QZMHO3ZSJRpZI9kPAoAq1WCY/5tg1vhdi
+	JvgjkXaJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHoWP-0004yT-T3; Fri, 27 Mar 2020 12:55:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHoWE-0004xl-TY
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 12:55:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 06E1C7FA;
- Fri, 27 Mar 2020 05:55:26 -0700 (PDT)
-Received: from mbp (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B2AF3F71F;
- Fri, 27 Mar 2020 05:55:25 -0700 (PDT)
-Date: Fri, 27 Mar 2020 12:55:22 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH 2/2] arm64: Kconfig: ptrauth: Add binutils version check
- to fix mismatch
-Message-ID: <20200327125522.GB18117@mbp>
-References: <1585236720-21819-1-git-send-email-amit.kachhap@arm.com>
- <1585236720-21819-2-git-send-email-amit.kachhap@arm.com>
+	id 1jHoZK-0005Lz-8O; Fri, 27 Mar 2020 12:58:38 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHoZ6-0005La-IS; Fri, 27 Mar 2020 12:58:26 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 7D2E6AC1D;
+ Fri, 27 Mar 2020 12:58:22 +0000 (UTC)
+Message-ID: <7b3f1bb70dd232a09851789fdaa5d7de957c9294.camel@suse.de>
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, 
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>, Scott
+ Branden <sbranden@broadcom.com>,  bcm-kernel-feedback-list@broadcom.com,
+ Stefan Wahren <stefan.wahren@i2se.com>,  Eric Anholt <eric@anholt.net>
+Date: Fri, 27 Mar 2020 13:58:20 +0100
+In-Reply-To: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1585236720-21819-2-git-send-email-amit.kachhap@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_055527_001067_AAB4B723 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20200327_055824_757083_57B52547 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +64,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, wahrenst@gmx.net,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5036711444719888176=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 09:02:00PM +0530, Amit Daniel Kachhap wrote:
-> Recent addition of ARM64_PTR_AUTH exposed a mismatch issue with binutils.
-> 9.1+ versions of gcc inserts a section note .note.gnu.property but this
-> can be used properly by binutils version greater than 2.33.1. If older
-> binutils are used then the following warnings are generated,
-> 
-> aarch64-linux-ld: warning: arch/arm64/kernel/vdso/vgettimeofday.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
-> aarch64-linux-objdump: warning: arch/arm64/lib/csum.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
-> aarch64-linux-nm: warning: .tmp_vmlinux1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
-> 
-> This patch enables ARM64_PTR_AUTH when gcc and binutils versions are
-> compatible with each other. Older gcc which do not insert such section
-> continue to work as before.
-> 
-> This scenario may not occur with clang as a recent commit 3b446c7d27ddd06
-> ("arm64: Kconfig: verify binutils support for ARM64_PTR_AUTH") masks
-> binutils version lesser then 2.34.
-> 
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Suggested-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+
+--===============5036711444719888176==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-sr8I0z5hMln8enfhNN+B"
+
+
+--=-sr8I0z5hMln8enfhNN+B
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2020-03-03 at 18:32 +0100, Nicolas Saenz Julienne wrote:
+> The register based driver turned out to be unstable, specially on RPi3a+
+> but not limited to it. While a fix is being worked on, we roll back to
+> using firmware based scheme.
+>=20
+> Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM drive=
+r
+> instead of firmware")
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > ---
->  arch/arm64/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index e6712b6..73135da 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1503,7 +1503,7 @@ config ARM64_PTR_AUTH
->  	default y
->  	depends on !KVM || ARM64_VHE
->  	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
-> -	depends on CC_IS_GCC || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
-> +	depends on (CC_IS_GCC && (GCC_VERSION < 90100 || LD_VERSION >= 233010000)) || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
 
-We should add some of the comments in the commit log to the Kconfig
-entry. I would also split this in two (equivalent to CC_IS_ implies):
+Applied for-next.
 
-	depends on !CC_IS_GCC || GCC_VERSION < 90100 || LD_VERSION >= 233010000
-	depends on !CC_IS_CLANG || AS_HAS_CFI_NEGATE_RA_STATE
+Regards,
+Nicolas
 
-and add a comment above the gcc/ld version checking.
 
-(not entirely identical to the original if CC is neither of them but I
-don't think we have this problem)
+--=-sr8I0z5hMln8enfhNN+B
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
 
--- 
-Catalin
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl59+GwACgkQlfZmHno8
+x/5IZAf+Jssc7zy9oVNz9NTe7OmnW+X4UFITXiDV15LXlQWZ+vYugWzUMnIsEMI+
+sIAy/LJlkVWDb6F0vhl5eUif4e1ESSBQv7oMSSWQPZMff/Te4KC6a4JvrgFaFoke
+N+PPj1mfQsFAEdCt3wpBu5DBk2G8C/XQJWdNyitc0N5s2GHjREZdi2m61fLnUgKq
+BCRCLAo3HJ9kJYX4qwA0o8e83y0zdVF7/s5BvA4QbINxlRiYejqxQK6mTSc5VOM7
+MpCiTYjQVEXFJbDtrc+Pl6RoT9zSt7mJ/iaV7dNweASW0s+qGmJyW11QpRfKRQzl
+AKo+l+GxgdBcmWN9rnZ2MY+yqP1ZMA==
+=Jnbv
+-----END PGP SIGNATURE-----
+
+--=-sr8I0z5hMln8enfhNN+B--
+
+
+
+--===============5036711444719888176==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5036711444719888176==--
+
+
