@@ -2,83 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A49F1957DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:18:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDF971957E1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:19:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hpFUZxIPoOdCc5VF67GfIT6CGm7SNK2dPahbs+82d3Q=; b=DK5PNmVW+KI+QTS3kC21ZF7Pj
-	VYV7UZZHHj9F00lihBzRT6JiP9nElnoNrENCw/cj5CKVdIR1DKZt/Il1+3ReuvV8tWLbYGmM0n0xb
-	UzJIJjnRmnEq6N6Lf6gljcTeXrH7ov6Rk2EEW9upAXHVHB1MIPbgSdrFxqxrY8R6AOFpWpIfBelgd
-	uInwAm04LH78a5/ZzUmROKL/VjX0TbYYy3tJC6lWpXDscd5m9JA3gjDxe3fSjJwdM71Co7SWwuW/C
-	kAlh7VXCX3afy7NcgwAK3EDy+3JSMHAeTVMochCDtwMTyvevMFWxnpdDHDhxFrokVQ31vLj3RG1eI
-	KD4Oc4B1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=em1Vi2q7rDwzaYrApF9ThyQJhBTIJi4NwT/ojsfNyTo=; b=S7mMMtOATJmJC/
+	7DxkD3OadmETJtV5LOO4O6/hgOZ2/j45o5u6oIqL+GFz+eVBiKWhvCKriX9KwZcXGY8e/Aedlt2g0
+	lzQeEY2Eb6CtKutp/jKfs1OwtEDBbPwdu8Ochr8VDLzJPYatjwt5XHsRp6FfjNEVHdIg8Ig4Vfn1a
+	fUDAp009ry5movAHzSxyPmnAFlF16KKrogXoD6bgM8lHdev30D3vbTApVtRy1MNOR2X751m7N3FQj
+	hhkyxfq225D1YyUfvAvt5ual1ZKwjs1hVTm7BuBUL0Ji6udshiE3GHP7bf7HFTe7TZ1rs5BaT/ejt
+	x1xzOshrjisDFOCthSYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHosm-0004FK-Kb; Fri, 27 Mar 2020 13:18:44 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1jHotZ-0004Vp-Bu; Fri, 27 Mar 2020 13:19:33 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHose-0004Ep-72
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:18:37 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e7dfccd0001>; Fri, 27 Mar 2020 06:17:01 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Fri, 27 Mar 2020 06:18:34 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Fri, 27 Mar 2020 06:18:34 -0700
-Received: from localhost (10.124.1.5) by HQMAIL107.nvidia.com (172.20.187.13)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Fri, 27 Mar 2020 13:18:33 +0000
-Date: Fri, 27 Mar 2020 14:18:31 +0100
-From: Thierry Reding <treding@nvidia.com>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>
-Subject: Re: linux-next: manual merge of the tegra tree with the arm-soc tree
-Message-ID: <20200327131831.GC2282366@ulmo>
-References: <20200327092741.1dbd3242@canb.auug.org.au>
+ id 1jHotN-0004V4-ES
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:19:25 +0000
+Received: from LHREML711-CAH.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id 202EF426DB9E39C1A150;
+ Fri, 27 Mar 2020 13:19:10 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ LHREML711-CAH.china.huawei.com (10.201.108.34) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 27 Mar 2020 13:19:09 +0000
+Received: from localhost (10.47.90.231) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 27 Mar
+ 2020 13:19:09 +0000
+Date: Fri, 27 Mar 2020 13:19:00 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 0/2] efi/arm64: execute the kernel in place if possible
+Message-ID: <20200327131900.000068aa@Huawei.com>
+In-Reply-To: <20200326165905.2240-1-ardb@kernel.org>
+References: <20200326165905.2240-1-ardb@kernel.org>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-In-Reply-To: <20200327092741.1dbd3242@canb.auug.org.au>
-X-NVConfidentiality: public
-User-Agent: Mutt/1.13.1 (2019-12-14)
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- HQMAIL107.nvidia.com (172.20.187.13)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1585315021; bh=Tpo3NqFxWgOJjyev4XqBDbAl2TDTNnyAFczdL+YC21g=;
- h=X-PGP-Universal:Date:From:To:CC:Subject:Message-ID:References:
- MIME-Version:In-Reply-To:X-NVConfidentiality:User-Agent:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:
- Content-Disposition;
- b=lfWDXAOR96Sjlm0y8L+D1ypT1+v1R9xGvPHeDtbELVHNFCjV1GaDYuazr2kJTBDxJ
- Teel8GiBjWyk1OJUGbAbQzOUUzLp1cloS+Sg30/xyn8ECTmamNs3AP6L94p2svkR3l
- g9g8eTGYP+0alfSdBm3rTgPOqay0fmkCtoJlBcUCsdwJq3j8B7sQ+ZKnnYozLFNCrI
- eo1Yjbxu38HEFqf3DZsEu3V69ebQj85GB7uKb/RlUNoQDDSKI/dKNWoAH5+VVJKiwj
- oflTlgPqfyXQPMAfv+4gJmYTaq9DSfd/MUvInfAoz7+aaJHE8gvXWdTHDOwnYvHh2K
- lvMIRiIECsfEw==
+X-Originating-IP: [10.47.90.231]
+X-ClientProxiedBy: lhreml739-chm.china.huawei.com (10.201.108.189) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_061836_266359_CD39DE2D 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200327_061921_788920_9563744D 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,116 +70,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, JC Kuo <jckuo@nvidia.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Nagarjuna Kristam <nkristam@nvidia.com>, Corentin Labbe <clabbe@baylibre.com>,
- Colin Cross <ccross@android.com>, ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4020506227012698584=="
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-efi@vger.kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4020506227012698584==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="aT9PWwzfKXlsBJM1"
-Content-Disposition: inline
+On Thu, 26 Mar 2020 17:59:03 +0100
+Ard Biesheuvel <ardb@kernel.org> wrote:
 
---aT9PWwzfKXlsBJM1
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> Update the relocation logic in the EFI stub for arm64 so it runs the
+> kernel in place if it was loaded by firmware at an address which allows
+> doing so. Then, update the PE/COFF header metadata and increase the
+> section alignment to force the UEFI image loader to honour the minimal
+> alignment requirement imposed by the kernel proper.
+> 
+> Ard Biesheuvel (2):
+>   efi/libstub/arm64: avoid copying the kernel unnecessarily
+>   efi/arm64: increase the PE/COFF alignment so the kernel can run in
+>     place
+> 
+>  arch/arm64/kernel/efi-header.S            | 2 +-
+>  arch/arm64/kernel/image-vars.h            | 7 +++++++
+>  drivers/firmware/efi/libstub/arm64-stub.c | 9 +++++++++
+>  3 files changed, 17 insertions(+), 1 deletion(-)
+> 
+Hi Ard.
 
-On Fri, Mar 27, 2020 at 09:27:41AM +1100, Stephen Rothwell wrote:
-> Hi all,
->=20
-> Today's linux-next merge of the tegra tree got conflicts in:
->=20
->   drivers/phy/tegra/Kconfig
->   drivers/phy/tegra/xusb.c
->=20
-> between commits:
->=20
->   5a00c7c7604f ("phy: tegra: xusb: Add usb-role-switch support")
->   23babe30fb45 ("phy: tegra: xusb: Add usb-phy support")
->   d74ce0954cb2 ("phy: tegra: xusb: Add support to get companion USB 3 por=
-t")
->   58e7bd08b569 ("phy: tegra: xusb: Add Tegra194 support")
->=20
-> from the arm-soc tree and commit:
->=20
->   f67213cee2b3 ("phy: tegra: xusb: Add usb-role-switch support")
->   e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
->   5a40fc4b934c ("phy: tegra: xusb: Add support to get companion USB 3 por=
-t")
->   1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
->=20
-> from the tegra tree.
->=20
-> These are slightly different patches (the latter has been rebased).
-> Also there are further commits affecting these files in the tegra tree.
->=20
-> I fixed it up (I just used the version from the tegra tree) and can
-> carry the fix as necessary. This is now fixed as far as linux-next is
-> concerned, but any non trivial conflicts should be mentioned to your
-> upstream maintainer when your tree is submitted for merging.  You may
-> also want to consider cooperating with the maintainer of the conflicting
-> tree to minimise any particularly complex conflicts.
+Seems sensible to me so I decided to give it a quick test.
+As things stand RELOCATABLE is only selectable by selecting
+RANDOMIZE_BASE.   Probably want to be able to configure it
+separately (needs some help text, or a specific option to
+select CONFIG_RELOCATABLE).
 
-Olof, Arnd,
+Otherwise, superficially seems to work good for me doing a
+boot via pxe/grub on a Kunpeng 920 with some prints added to
+make sure it's taking the right paths.
 
-There was a bit of back and forth on this because there happened to be a
-conflict with the USB tree. I tried to clarify this as replies to the PR
-request:
+Thanks,
 
-	http://patchwork.ozlabs.org/patch/1254523/
-
-But I suspect you may have missed those replies. The bottom line is,
-there is a v2 of the pull request that has the patches that are now in
-the Tegra tree. That's already part of a PR that went in through the USB
-tree as a dependency to resolve the conflict.
-
-So as a result there should be no need for ARM SoC to carry that PR. But
-if you still want to merge it, please pull v2, which is here:
-
-	git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-f=
-or-5.7-phy-v2
-
-Sorry for the confusion,
-Thierry
-
---aT9PWwzfKXlsBJM1
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl59/ScACgkQ3SOs138+
-s6FG7xAAtsFMFTXn2daJeAwduvHdzjYOHqDpnNb4BtG0GPNzYa972YzaOyVoDT/v
-7YxiIgLgXT8Nu1T4xA+CIJS9U9vtRv+Auvsd0knHCTAcU/plvVWf8E2eB7eITDaB
-k3HdW8shjJ9LO+P5juQiOnRX8gcUEXW8jrzB4maccsFnKPr2vN/xISm/zYAKYYX3
-pbZzGpl29ThP2hT/0MtWycK0NsXZM3GvAqsksnTScGRjRAg0LokpZiZxq2e9d+VE
-L3b0bWXqB6Bb7bqQX9oAKb0rS5nlg8im0y/cCapklk5UtfREAiIDtD4Y1yz91NwW
-y7gBiMJpjlk3eHPUv3Zf5KTNSArueFcz1qknm9UGYpSFw1oplLauGo15L8IkYQ83
-XYFqNuYlbel7AI68LZeurpMWBYSWDz4SjD7mz//WQ+Q/RwGNoSVS1+1YA4IezM60
-rrckIpHm9PuPtr4v21AqaFCeQ69TkRSY1rNg1h9yj1gPE65/BK7B8hg4ptIaQpCR
-Fgue7ST3LkGjmnLY4ke0kz6jm3q1rnAVt4nBb8AoV7YdWXgfI51XfyWTy1Fmp1U+
-jvg4TsYiPj5CEpG/dKfm5l9YrjTIHivMqUjTTQ90hL9HcYjmV+2UJOZwHsxQMr7r
-AxhSoQ4EJaqQgf0LV3RdkH18HKmz/pQaFecWKei9gj1Ck7wNCqU=
-=MO7Z
------END PGP SIGNATURE-----
-
---aT9PWwzfKXlsBJM1--
+Jonathan
 
 
---===============4020506227012698584==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4020506227012698584==--
-
