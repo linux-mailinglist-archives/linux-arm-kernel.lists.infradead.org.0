@@ -2,57 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC83D19517F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 07:47:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C476719518F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 07:49:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IryoTeDxUt2Z8MBKBd98yv51/BeY8L/HB3QrW3tT2p8=; b=DUnNSzbRgZXXyq
-	aT51DkoRUb4/qs1I/Ronkxce22W4G/zXCO5iGIBLTqiSkhJy5TXqIMX8gIk54EsPR3H5JaI1zRc+V
-	ckzjEZjOKWD69i7KbzF/ztYmv4fpWE3Bgi8rO1WLR4cF27w8HS7I6glRAUgDi1dVCs9/yqD/+im/D
-	d++G7Wqbr7B+HAW1m1R34tHSDqGgLNxEUt0xZJx0wDP7/mie+DnRIGt8PT6w/jvLXlDo/snvhthMa
-	zRi/KbDhGg+khldNbadmh4sIr/gp6xa80d1Vh2Gq/C7Qz1GYa5tptdFcmOLDWVQ8w7tLgVmguK8BB
-	tz6NJ+OzFPBJE0cSav7A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=D9csHh6G18T2h/vECCnpNdpj1vtH+OXPSCVDXxkKby4=; b=C1ni7/pdB58Fp4
+	IUn6OTPgLAjGRWtndMO4HxNAoUC8p5on2iNFEwIs4HvVbdl4XUwFY4Hpk2R4u1Cf9ZOUTPvYNFvvV
+	jxNzTbk1RuVXrTMrpJ4B32Obu2LZx4evfeqf/P7UU8mEVDcDKONF0KMv2yGR3OUXpwdSUmdSd8uaf
+	0ql0hexcOqHaBjc0aEf7AYIDCyIwuMgVzdx4jOlp6QDOEO3aPEYVGGdo+ojXNVu7WNerW1q+/dAnt
+	CxK0Yd/japXXLOifPQ7/JuZjrWLjXimLBm9wUdA/Xrdlrry5j+SQTffX6sB5G76u9Rdid16/TuToX
+	t9RFcIMltcwT3zMvCgjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHilj-0000bN-Jl; Fri, 27 Mar 2020 06:47:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHila-0000Zi-F9; Fri, 27 Mar 2020 06:46:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC7317FA;
- Thu, 26 Mar 2020 23:46:50 -0700 (PDT)
-Received: from [10.163.1.31] (unknown [10.163.1.31])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B53F3F71F;
- Thu, 26 Mar 2020 23:50:47 -0700 (PDT)
-Subject: Re: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
-To: Christophe Leroy <christophe.leroy@c-s.fr>, linux-mm@kvack.org
-References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
- <2bb4badc-2b7a-e15d-a99b-b1bd38c9d9bf@arm.com>
- <a46d18ed-8911-1ec3-c32f-58b6e0d959d7@c-s.fr>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <9675882f-0ec5-5e46-551f-dd3aa38bf8d8@arm.com>
-Date: Fri, 27 Mar 2020 12:16:34 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jHinu-0001Zk-E6; Fri, 27 Mar 2020 06:49:18 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHin4-000132-Na
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 06:48:28 +0000
+Received: by mail-pl1-x641.google.com with SMTP id e1so3098115plt.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Mar 2020 23:48:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e2pldkrhAni9nq8EyiG2WO78f/APBgebCGeZjhrmshQ=;
+ b=I5pLNO+fPogPHiacztpG1HxVvtnTLCdqXJT+PYXFAYy2wxLIwXNdmFqAS1I1f0M/jk
+ i7aiI8cdZcbouxeLQbQqZcLjULDiMw3oqCK7zfUVhtO0VEAHkOFMQ2tOJkveDwz0wuv6
+ pOsphc56mqYDnuZStj5ScZg0AFgtI8LBlfI3I=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e2pldkrhAni9nq8EyiG2WO78f/APBgebCGeZjhrmshQ=;
+ b=m78v6f9oqPOMI+jDSMmkQ/JXIJYpEJ0L1zHkTcNaSvrBc2iitpqkI9gKV19iY9gij6
+ NE7hzxlUXLmZCpuzqOqGaGwbw2OaSttO7APWHGhoec4tBTE6pLn20ejZxDy4Deas6HT0
+ zLkuW9eM78VjslpmcZRxTY7n+eL1z21Peo05nX5utRSvOjbAxK/KB8DbOsxpfUzO1LmS
+ rUb2bl7Q+qMzw2IX3rqqRcRcwNu4K5XzjNvWXs0o/66LzDX+dOTjzuM6ZQsB/8Ppl8ex
+ 4Gy9R/unJc91TX4l4ToPmgjElY3FLfz5Swvl82MBAXQfBaHWDcUMtKp2cxINwAOmHA4a
+ R6lQ==
+X-Gm-Message-State: ANhLgQ1Hxo7XuhOsAOLqojZn3ZaP2/EteZ8Loyf2FOgNonJ1IeYpgczA
+ L1NEcSETbCJRTBMbtpkd6v0NlA==
+X-Google-Smtp-Source: ADFU+vu33/tER7UbAE9saaXS5jjv8U5NDlXNrJgfePpmE/SLJRv4FbdKQSggX0D5kcr6Hk9V6uB9jw==
+X-Received: by 2002:a17:90a:bf18:: with SMTP id
+ c24mr4158631pjs.125.1585291706174; 
+ Thu, 26 Mar 2020 23:48:26 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id d7sm3308989pfa.106.2020.03.26.23.48.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 26 Mar 2020 23:48:23 -0700 (PDT)
+From: Kees Cook <keescook@chromium.org>
+To: Borislav Petkov <bp@alien8.de>
+Subject: [PATCH v5 0/6] binfmt_elf: Update READ_IMPLIES_EXEC logic for modern
+ CPUs
+Date: Thu, 26 Mar 2020 23:48:14 -0700
+Message-Id: <20200327064820.12602-1-keescook@chromium.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <a46d18ed-8911-1ec3-c32f-58b6e0d959d7@c-s.fr>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_234654_596930_8CFBCDF9 
-X-CRM114-Status: GOOD (  15.21  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200326_234826_763173_DC266D24 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,92 +94,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ Hector Marco-Gisbert <hecmargi@upv.es>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@ziepe.ca>,
+ kernel-hardening@lists.openwall.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDAzLzI2LzIwMjAgMDg6NTMgUE0sIENocmlzdG9waGUgTGVyb3kgd3JvdGU6Cj4gCj4gCj4g
-TGUgMjYvMDMvMjAyMCDDoCAwMzoyMywgQW5zaHVtYW4gS2hhbmR1YWwgYSDDqWNyaXTCoDoKPj4K
-Pj4KPj4gT24gMDMvMjQvMjAyMCAxMDo1MiBBTSwgQW5zaHVtYW4gS2hhbmR1YWwgd3JvdGU6Cj4+
-PiBUaGlzIHNlcmllcyBhZGRzIG1vcmUgYXJjaCBwYWdlIHRhYmxlIGhlbHBlciB0ZXN0cy4gVGhl
-IG5ldyB0ZXN0cyBoZXJlIGFyZQo+Pj4gZWl0aGVyIHJlbGF0ZWQgdG8gY29yZSBtZW1vcnkgZnVu
-Y3Rpb25zIGFuZCBhZHZhbmNlZCBhcmNoIHBndGFibGUgaGVscGVycy4KPj4+IFRoaXMgYWxzbyBj
-cmVhdGVzIGEgZG9jdW1lbnRhdGlvbiBmaWxlIGVubGlzdGluZyBhbGwgZXhwZWN0ZWQgc2VtYW50
-aWNzIGFzCj4+PiBzdWdnZXN0ZWQgYnkgTWlrZSBSYXBvcG9ydCAoaHR0cHM6Ly9sa21sLm9yZy9s
-a21sLzIwMjAvMS8zMC80MCkuCj4+Pgo+Pj4gVGhpcyBzZXJpZXMgaGFzIGJlZW4gdGVzdGVkIG9u
-IGFybTY0IGFuZCB4ODYgcGxhdGZvcm1zLgo+Pgo+PiBJZiBmb2xrcyBjYW4gdGVzdCB0aGVzZSBw
-YXRjaGVzIG91dCBvbiByZW1haW5pbmcgQVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRQo+PiBlbmFi
-bGVkIHBsYXRmb3JtcyBpLmUgczM5MCwgYXJjLCBwb3dlcnBjICgzMiBhbmQgNjQpLCB0aGF0IHdp
-bGwgYmUgcmVhbGx5Cj4+IGFwcHJlY2lhdGVkLiBUaGFuayB5b3UuCj4+Cj4gCj4gT24gcG93ZXJw
-YyA4eHggKFBQQzMyKSwgSSBnZXQ6Cj4gCj4gW8KgwqAgNTMuMzM4MzY4XSBkZWJ1Z192bV9wZ3Rh
-YmxlOiBkZWJ1Z192bV9wZ3RhYmxlOiBWYWxpZGF0aW5nIGFyY2hpdGVjdHVyZSBwYWdlIHRhYmxl
-IGhlbHBlcnMKPiBbwqDCoCA1My4zNDc0MDNdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0t
-LS0tLS0tLQo+IFvCoMKgIDUzLjM1MTgzMl0gV0FSTklORzogQ1BVOiAwIFBJRDogMSBhdCBtbS9k
-ZWJ1Z192bV9wZ3RhYmxlLmM6NjQ3IGRlYnVnX3ZtX3BndGFibGUrMHgyODAvMHgzZjQKCm1tL2Rl
-YnVnX3ZtX3BndGFibGUuYzo2NDcgPwoKV2l0aCB0aGUgZm9sbG93aW5nIGNvbW1pdHMgaW4gcGxh
-Y2UKCjUzYTgzMzhjZSAoSEVBRCkgRG9jdW1lbnRhdGlvbi9tbTogQWRkIGRlc2NyaXB0aW9ucyBm
-b3IgYXJjaCBwYWdlIHRhYmxlIGhlbHBlcgo1ZDQ5MTNmYzEgbW0vZGVidWc6IEFkZCB0ZXN0cyB2
-YWxpZGF0aW5nIGFyY2ggYWR2YW5jZWQgcGFnZSB0YWJsZSBoZWxwZXJzCmJjYWYxMjBhNyBtbS9k
-ZWJ1ZzogQWRkIHRlc3RzIHZhbGlkYXRpbmcgYXJjaCBwYWdlIHRhYmxlIGhlbHBlcnMgZm9yIGNv
-cmUgZmVhdHVyZXMKZDZlZDVhNGE1IHg4Ni9tZW1vcnk6IERyb3AgcHVkX21rbm90cHJlc2VudCgp
-CjA3MzlkMWY4ZCBtbS9kZWJ1ZzogQWRkIHRlc3RzIHZhbGlkYXRpbmcgYXJjaGl0ZWN0dXJlIHBh
-Z2UgdGFibGUgaGVscGVycwoxNmZiZjc5YjAgKHRhZzogdjUuNi1yYzcpIExpbnV4IDUuNi1yYzcK
-Cm1tL2RlYnVnX3ZtX3BndGFibGUuYzo2NDcgaXMgaGVyZS4KCiNpZmRlZiBDT05GSUdfQVJDSF9F
-TkFCTEVfVEhQX01JR1JBVElPTgpzdGF0aWMgdm9pZCBfX2luaXQgcG1kX3N3YXBfdGVzdHModW5z
-aWduZWQgbG9uZyBwZm4sIHBncHJvdF90IHByb3QpCnsKICAgICAgICBzd3BfZW50cnlfdCBzd3A7
-CiAgICAgICAgcG1kX3QgcG1kOyAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0+IExpbmUg
-IzY0NwoKICAgICAgICBwbWQgPSBwZm5fcG1kKHBmbiwgcHJvdCk7CiAgICAgICAgc3dwID0gX19w
-bWRfdG9fc3dwX2VudHJ5KHBtZCk7CiAgICAgICAgV0FSTl9PTighcG1kX3NhbWUocG1kLCBfX3N3
-cF9lbnRyeV90b19wbWQoc3dwKSkpOwp9CiNlbHNlCnN0YXRpYyB2b2lkIF9faW5pdCBwbWRfc3dh
-cF90ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwgcGdwcm90X3QgcHJvdCkgeyB9CiNlbmQKCkRpZCBJ
-IG1pc3Mgc29tZXRoaW5nID8KCj4gW8KgwqAgNTMuMzYwMTQwXSBDUFU6IDAgUElEOiAxIENvbW06
-IHN3YXBwZXIgTm90IHRhaW50ZWQgNS42LjAtcmM3LXMzay1kZXYtMDEwOTAtZzkyNzEwZTk5ODgx
-ZiAjMzU0NAo+IFvCoMKgIDUzLjM2ODcxOF0gTklQOsKgIGMwNzc3YzA0IExSOiBjMDc3N2JiOCBD
-VFI6IDAwMDAwMDAwCj4gW8KgwqAgNTMuMzczNzIwXSBSRUdTOiBjOTAyM2RmMCBUUkFQOiAwNzAw
-wqDCoCBOb3QgdGFpbnRlZCAoNS42LjAtcmM3LXMzay1kZXYtMDEwOTAtZzkyNzEwZTk5ODgxZikK
-PiBbwqDCoCA1My4zODIwNDJdIE1TUjrCoCAwMDAyOTAzMiA8RUUsTUUsSVIsRFIsUkk+wqAgQ1I6
-IDIyMDAwMjIywqAgWEVSOiAyMDAwMDAwMAo+IFvCoMKgIDUzLjM4ODY2N10KPiBbwqDCoCA1My4z
-ODg2NjddIEdQUjAwOiBjMDc3N2JiOCBjOTAyM2VhOCBjNjEyMDAwMCAwMDAwMDAwMSAxZTQxMDAw
-MCAwMDAwMDAwMCAwMDAwMDAwMCAwMDc2NDFjOQo+IFvCoMKgIDUzLjM4ODY2N10gR1BSMDg6IDAw
-MDAwMDAwIDAwMDAwMDAxIDAwMDAwMDAwIGZmZmZmZmZmIDgyMDAwMjIyIDAwMDAwMDAwIGMwMDAz
-OWI4IDAwMDAwMDAwCj4gW8KgwqAgNTMuMzg4NjY3XSBHUFIxNjogMDAwMDAwMDAgMDAwMDAwMDAg
-MDAwMDAwMDAgZmZmZmZmZjAgMDY1ZmMwMDAgMWU0MTAwMDAgYzY2MDAwMDAgMDAwMDAxZTQKPiBb
-wqDCoCA1My4zODg2NjddIEdQUjI0OiAwMDAwMDFkOSBjMDYyZDE0YyBjNjVmYzAwMCBjNjQyZDQ0
-OCAwMDAwMDZjOSAwMDAwMDAwMCBjNjVmODAwMCBjNjVmYzA0MAo+IFvCoMKgIDUzLjQyMzQwMF0g
-TklQIFtjMDc3N2MwNF0gZGVidWdfdm1fcGd0YWJsZSsweDI4MC8weDNmNAo+IFvCoMKgIDUzLjQy
-ODU1OV0gTFIgW2MwNzc3YmI4XSBkZWJ1Z192bV9wZ3RhYmxlKzB4MjM0LzB4M2Y0Cj4gW8KgwqAg
-NTMuNDMzNTkzXSBDYWxsIFRyYWNlOgo+IFvCoMKgIDUzLjQzNjA0OF0gW2M5MDIzZWE4XSBbYzA3
-NzdiYjhdIGRlYnVnX3ZtX3BndGFibGUrMHgyMzQvMHgzZjQgKHVucmVsaWFibGUpCj4gW8KgwqAg
-NTMuNDQyOTM2XSBbYzkwMjNmMjhdIFtjMDAwMzllMF0ga2VybmVsX2luaXQrMHgyOC8weDEyNAo+
-IFvCoMKgIDUzLjQ0ODE4NF0gW2M5MDIzZjM4XSBbYzAwMGYxNzRdIHJldF9mcm9tX2tlcm5lbF90
-aHJlYWQrMHgxNC8weDFjCj4gW8KgwqAgNTMuNDU0MjQ1XSBJbnN0cnVjdGlvbiBkdW1wOgo+IFvC
-oMKgIDUzLjQ1NzE4MF0gNDFhMjAwMDggNGJlYTNlZDkgNjI4OTAwMjEgN2QzNmI5MmUgN2QzNmI4
-MmUgNzEyOTBmZDAgMzE0OWZmZmYgN2QyYTQ5MTAKPiBbwqDCoCA1My40NjQ4MzhdIDBmMDkwMDAw
-IDU3ODkwNzdlIDMxNDlmZmZmIDdkMmE0OTEwIDwwZjA5MDAwMD4gMzhjMDAwMDAgMzhhMDAwMDAg
-Mzg4MDAwMDAKPiBbwqDCoCA1My40NzI2NzFdIC0tLVsgZW5kIHRyYWNlIGZkNWRkOTI3NDRkYzAw
-NjUgXS0tLQpDb3VsZCB5b3UgcGxlYXNlIHBvaW50IG1lIHRvIHRoZSBleGFjdCB0ZXN0IHdoaWNo
-IGlzIGZhaWxpbmcgPwoKPiBbwqDCoCA1My41MTk3NzhdIEZyZWVpbmcgdW51c2VkIGtlcm5lbCBt
-ZW1vcnk6IDYwOEsKPiAKPiAKU28gSSBhc3N1bWUgdGhhdCB0aGUgc3lzdGVtIHNob3VsZCBoYXZl
-IGNvbWUgdGlsbCBydW50aW1lIGp1c3QgZmluZSBhcGFydCBmcm9tCnRoZSBhYm92ZSB3YXJuaW5n
-IG1lc3NhZ2UgYmVjYXVzZS4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi,
+
+This continues my attempt to fix READ_IMPLIES_EXEC. :)
+
+This series is for x86, arm, and arm64; I'd like it to go via
+-tip, though, just to keep these changes together, as they're
+related. (Note that most other architectures don't suffer from this
+problem. e.g. powerpc's behavior appears to already be correct. MIPS may
+need adjusting but the history of CPU features and toolchain behavior
+is very unclear to me.)
+
+Repeating the commit log from later in the series:
+
+
+The READ_IMPLIES_EXEC work-around was designed for old toolchains that
+lacked the ELF PT_GNU_STACK marking under the assumption that toolchains
+that couldn't specify executable permission flags for the stack may not
+know how to do it correctly for any memory region.
+
+This logic is sensible for having ancient binaries coexist in a system
+with possibly NX memory, but was implemented in a way that equated having
+a PT_GNU_STACK marked executable as being as "broken" as lacking the
+PT_GNU_STACK marking entirely. Things like unmarked assembly and stack
+trampolines may cause PT_GNU_STACK to need an executable bit, but they
+do not imply all mappings must be executable.
+
+This confusion has led to situations where modern programs with explicitly
+marked executable stack are forced into the READ_IMPLIES_EXEC state when
+no such thing is needed. (And leads to unexpected failures when mmap()ing
+regions of device driver memory that wish to disallow VM_EXEC[1].)
+
+In looking for other reasons for the READ_IMPLIES_EXEC behavior, Jann
+Horn noted that glibc thread stacks have always been marked RWX (until
+2003 when they started tracking the PT_GNU_STACK flag instead[2]). And
+musl doesn't support executable stacks at all[3]. As such, no breakage
+for multithreaded applications is expected from this change.
+
+[1] https://lkml.kernel.org/r/20190418055759.GA3155@mellanox.com
+[2] https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=54ee14b3882
+[3] https://lkml.kernel.org/r/20190423192534.GN23599@brightrain.aerifal.cx
+
+
+Thanks!
+
+-Kees
+
+v5:
+ - re-align tables and use full name of PT_GNU_STACK (bp)
+v4: https://lore.kernel.org/lkml/20200225051307.6401-1-keescook@chromium.org
+v3: https://lore.kernel.org/lkml/20200210193049.64362-1-keescook@chromium.org
+v2: https://lore.kernel.org/lkml/20190424203408.GA11386@beast/
+v1: https://lore.kernel.org/lkml/20190423181210.GA2443@beast/
+
+Kees Cook (6):
+  x86/elf: Add table to document READ_IMPLIES_EXEC
+  x86/elf: Split READ_IMPLIES_EXEC from executable PT_GNU_STACK
+  x86/elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address spaces
+  arm32/64, elf: Add tables to document READ_IMPLIES_EXEC
+  arm32/64, elf: Split READ_IMPLIES_EXEC from executable PT_GNU_STACK
+  arm64, elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address
+    spaces
+
+ arch/arm/kernel/elf.c        | 27 +++++++++++++++++++++++----
+ arch/arm64/include/asm/elf.h | 23 ++++++++++++++++++++++-
+ arch/x86/include/asm/elf.h   | 22 +++++++++++++++++++++-
+ fs/compat_binfmt_elf.c       |  5 +++++
+ 4 files changed, 71 insertions(+), 6 deletions(-)
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
