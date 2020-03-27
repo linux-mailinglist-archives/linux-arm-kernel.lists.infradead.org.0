@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C6CF195B18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:30:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B613C195B23
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 17:33:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+hh+ABaZiTZ6vGCOdsBjBNFLa28EOjXpITZrFNmBtC8=; b=G0iyJsUgc142Mz
-	WGCNZHJnHyC6FmVL9g39TtXJoBVDhbOLrEaQ5K62HencuWjOtAueGSviAqLVlQ92QIeA2XxO1bZGI
-	JHcnNRpA6bMiNzolLdE1CbaptoTGZT4FOmV29BVNteM+8UalFAz4xMIMakx4HuuFBplSH+02wXBjF
-	vE+siWVp3apEmNbkxkAd91mQ/08pZacyz13GcLOFx5nVgeB+aULCP0Oqrgv2wVG7nEooed4mA8Ljh
-	aFyx4AAyg9/BbwCYhJcmkNS+xeRYnML3njTKYvdVkrYHP5cHR20CG3/D1DX5Fj48+jo9Pv8afaSKg
-	FFsMzM10gRSZV9YZH8PQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4akcVhD5vwiQov1qBK4laHttP2WRn35SBTaG5lneiQ0=; b=Z7lHdVHIFjcm4b
+	SS2ahDzbiRUf+9YxhZ/06c//4tT9EMDjMS89xcdOkobQ6Dpniz1U0fFeyo1+UoN4X7NfRXkMUTKKF
+	DA9iDYZJuxkybrdUU+XKJBfuhYgTXGF/cGIpjlCy0dP4mPs08SBSkG+s+qRLUUEGT8KKnTgZImTZw
+	USrXwbIzrO+jIClGs2BUsad8EnmollLO7UzH64mqRRTyv2eaTXei+CrBwSZl0t8Cu2IlbVphoazOI
+	Dg74b4rffHZ4/4Xsq+6y/ZKzHOMZadybrRyPGsuAWVq5GgoEw4KsSHzCrMIR77p17oGy7R/yOhbjl
+	KgkfDwCd6zozE27KVjIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHrs8-0002NS-AR; Fri, 27 Mar 2020 16:30:16 +0000
-Received: from mout.gmx.net ([212.227.15.18])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHrrr-0002Lr-9C
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:30:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1585326580;
- bh=1Em0LI/KVl1xxriM0SUJ9ct2bhqg2n0IpV9lkveMp00=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=VFK791c33sNkRSMGCC6CNnw4TjESkCF/FwFciz50fiUiWEs64KqatwrlDZHe+emQp
- rWNhqpucHDYR+D1pl8ySVMmJipSGdf9fIDSMZVSUOGmERFbpKWEA3ueQevXpV4nb84
- ontBHXKtafBRP0og9+BsQvmsbehQNJlQWDObOTOY=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([82.19.195.159]) by mail.gmx.com
- (mrgmx004 [212.227.17.184]) with ESMTPSA (Nemesis) id
- 1N7i8O-1jLuL343CU-014kxm; Fri, 27 Mar 2020 17:29:40 +0100
-From: Alex Dewar <alex.dewar@gmx.co.uk>
-To: 
-Subject: [PATCH] arm: dma-mapping: Remove unneeded NULL checks
-Date: Fri, 27 Mar 2020 16:29:13 +0000
-Message-Id: <20200327162914.24948-1-alex.dewar@gmx.co.uk>
-X-Mailer: git-send-email 2.26.0
+	id 1jHrv2-0003yp-KE; Fri, 27 Mar 2020 16:33:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHrur-0003y8-Em
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 16:33:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7607D1FB;
+ Fri, 27 Mar 2020 09:33:02 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.131])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65CD83F71F;
+ Fri, 27 Mar 2020 09:33:00 -0700 (PDT)
+Date: Fri, 27 Mar 2020 16:32:53 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH V5 0/2] firmware: arm_scmi: add smc/hvc transports support
+Message-ID: <20200327163253.GA32313@bogus>
+References: <1583673879-20714-1-git-send-email-peng.fan@nxp.com>
+ <AM0PR04MB4481F673F90C735F272C171F88F50@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Vflazi5to4WwXtKcR0FGBcrbXYZ36lA8poJ8iwEZ1rnQsK7j7s+
- vIXToVShPwP07aJxDadCHyZ17J4FxImijCtv9DLX+5kelt88bP010UqQ+tgUfqY4D+VrHqI
- edxmB2JsfLaq4YGG+FFW2MzZ6NZwsKBBU/dEVynpi98lDdFQC653JBhMwkP+LbPWGnahLkd
- vQAb2/t/ANGz4Otdqi45Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:f09u4bQ98iM=:Y494TvphxhbHLCNgofeeX+
- 1ZQxJ8nYdLhJBywlKG8jb6GRAVO6ZyGB+S+cp9/LFS5iCIyuXU8qlr3wMHr/c3YroRZPNXm2V
- DknnZTDhLb0uEt7Cc5w6Ko/ZoV6ZVvvC0l9KOWH0YBXGyAraQjTx3H/ov3yF/buELAGrboG9X
- hohBcPDICNMhzNBxXZC15AQlLrDa3fR8j4u/Adr/wJmu3Zyxk3wpzIoQM9cpEPB88ur32dBHy
- DY/99Nop+CHZuaqENdmmGHx+oJpuPPaN5IRHKgsFJTbDbp/Lbo0WHomEUdAv8fAyUaFaEamUX
- 8F/tgtE0QXSwjAVZ/ypSpveEVqR7I3LrOpdStLvahGaOYG8qK+6O+lorw1aECIvzYLtZjiBd8
- fOSTSvleyEd1J8JaSmNDbbYo6ooRddqB206p9Lb6z5i3K/wEsoqZZdWt7B+fjNHjH983cc8kl
- xjibT3NKIgIUrEt2nUHsKayIgtADr904PNlUqe0HrnvUc06ZyQuqyCEGGuhmpwtmO2lDBgSvm
- huAy9LE2wAkfwGkNLYJhEPlZWIEmJhHWJzf1uU6n9TxAwV/7LZekvuUAaMZWZxhN0qcE6F76D
- GZeAgWmG48SYkvateeah8GNwmK0ZSBc2IMoICM8rC7WVZypFQhHeGHZqc5At+6N5BfKj0s2wf
- Y81XFC3s6kozQbEtNECuWWZ9Oh43nplPvK43h3faIIeSeHo1qi+V6Zknzy1BqrO4YjwsY6fOP
- 3Eb5JbtGYNn7b4pqPnE/86ojXYQ+5dhns8W0hZFHGzEuTdnzh41lMmtW4EBjNseO3eUtd36+7
- cOZ/QN96cco9Q/G6AGiTEgYG8HYDFfenQ2RNAX15VeGXDP37GL1LB8/kjSZq0IOcd+muP8HZj
- ozgMVU1EFK5PxmsrO2Y3BixwA6B9HZ4RjYhU8gGHzez8ekxTCSm9r7WvEPgkyYD3d39ZTOL4y
- o/cpE6/qQfK2ZwcsWV9w2CESvlugL0sedgF+s2zMkm2PtWEfqO3SzAw5xiVaipO57J2sUWCjy
- m1Na9JCCikwA8F3rjS9oD+oYDzJPQ6fMOGDf+zoEP1JGZ7uejsbI54JqWmS6eiAbk+q0MYd/J
- qURvUgvRgd4inLTinChk+vhsFs2BI4liqzVbK8tVTQp8oSFxlEmglymz0VhqJpLcsp0kXsFFn
- H+b5MnjzP2LAL/b1S+w5gp86kYyCiWCbrnpQVu+hNj7+hOWikYUtqT2bP5IsoeCkq0MaE5BWT
- JTuqgtCMB1aqg4ouW
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB4481F673F90C735F272C171F88F50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_092959_656815_D24450F2 
-X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-CacheID: sfid-20200327_093305_541248_CD415066 
+X-CRM114-Status: UNSURE (   8.83  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.15.18 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,44 +64,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, alex.dewar@gmx.co.uk,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Allison Randal <allison@lohutok.net>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma_pool_destroy() already checks for NULL arguments, so the extra check
-is unnecessary.
+On Fri, Mar 20, 2020 at 08:27:47AM +0000, Peng Fan wrote:
+> Hi Sudeep,
+>
+> > Subject: [PATCH V5 0/2] firmware: arm_scmi: add smc/hvc transports support
+>
+> Are you fine with this patchset? Or You expect multi channel support?
+>
 
-Signed-off-by: Alex Dewar <alex.dewar@gmx.co.uk>
----
- arch/arm/common/dmabounce.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+I applied these patches[1]. I also looked at multi channel support and
+I think it should be simple. I have made changes and will post soon.
+I would like you to review and if possible test. I don't want to break
+the existing single channel, so please do test in your setup for single
+channel itself.
 
-diff --git a/arch/arm/common/dmabounce.c b/arch/arm/common/dmabounce.c
-index f4b719bde763..a7c776cdc38f 100644
---- a/arch/arm/common/dmabounce.c
-+++ b/arch/arm/common/dmabounce.c
-@@ -560,10 +560,8 @@ void dmabounce_unregister_dev(struct device *dev)
- 		BUG();
- 	}
-
--	if (device_info->small.pool)
--		dma_pool_destroy(device_info->small.pool);
--	if (device_info->large.pool)
--		dma_pool_destroy(device_info->large.pool);
-+	dma_pool_destroy(device_info->small.pool);
-+	dma_pool_destroy(device_info->large.pool);
-
- #ifdef STATS
- 	if (device_info->attr_res == 0)
 --
-2.26.0
+Regards,
+Sudeep
 
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git for-next/scmi
 
 _______________________________________________
 linux-arm-kernel mailing list
