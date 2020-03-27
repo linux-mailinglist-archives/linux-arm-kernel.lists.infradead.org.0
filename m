@@ -2,70 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31FF81955DD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:00:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE3D21955F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:04:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZVNaCASPqn9td9YsDhcK57tVHzt/xhPk4VXs44A+Ens=; b=Uv8slLEmObJoyXHxVwry9k6DxH
-	sJH47gV5HaBu+JMcMobckBgjq8Lyr0fO35tX3dbYB/Uo51JUX/7+LphwfWdpuJDIP9/Q1W6kfoI7o
-	ugzi+hgsOjpmxEw3bB9kTVTZtdhKpP7ttsr9EuFPy99BNdH5hjkk5isfz9KiwKJO88VQj8JKz6kK5
-	PRRj735Oy8hyBP4ajvfZYJDpRXX39E96PGzNraDCpNgdM6jSpns9YiKvJHRMtHu2f5wrL5pgj5gPh
-	nq9t2vu8uDVKtXxzNNrUcvCY9+QpLCcH3r3DI73ENUSxsol5iEjbXD44qE6qZqmYJhKIYvwCCXdUz
-	k5dKmFuA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G7qLyHW/OEHvNWp+oeFCKa+bXwJevvZkkdkRE2taneE=; b=i+p7bcVdjW8HlT
+	t7zTKdzM4yjfLG3SP+J3jrWwrYVZc46GGVN/1dab/SRV4z0X3qx/BMh4z86QDnG9LzLgB/gapV1W8
+	LBLcMUVwO8/d9rOoxkcDlqIGt4otZJANVeFuys4jfQrbVTBLJmfWLSeKgrcwiWEB4IsMn1K7EG924
+	bvR9YqAkJaOq5PdtaHEhx/9ab/WyMLAER/71HWRfwQd87uyf7thHkQXCtHI5AsDXXmU+eqd+KmDZC
+	kr1eRrv40uUxeEq1QjDg5B+Uq7mWAisAa/nVl6dPNAsDbRJgmU3UsP55jC3DZf+K/WMucTPlEFBIh
+	4zx2KG8aEeoNcqmVcVww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHmjM-0000HL-Vx; Fri, 27 Mar 2020 11:00:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jHmnB-0001wV-Q8; Fri, 27 Mar 2020 11:04:49 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHmi5-0006bV-9m
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:59:34 +0000
-Received: from e123331-lin.home
- (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 335C720714;
- Fri, 27 Mar 2020 10:59:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585306772;
- bh=wHJJRQYpjxiy7z/hgHgEbFQlvBzmOdy8fgnRugABDUU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nB8s87kZlzc4YMU6qtLFU8fNEyvjcS3iLaQtvrThCX64dv/kcGKpUu+0vapW6fU2u
- v5fLaYZiw3LbYhVeppQ0uC1CZR2zEzbqctJA2i5L+LG/Nywa2DSvdo/MInia6nc78v
- AlyEIVMHg8t9MchjHbecqT/HW8uInuQPUqdzzq8E=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] ARM: decompressor: run decompressor in place if loaded
- via UEFI
-Date: Fri, 27 Mar 2020 11:59:06 +0100
-Message-Id: <20200327105906.2665-6-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200327105906.2665-1-ardb@kernel.org>
-References: <20200327105906.2665-1-ardb@kernel.org>
+ id 1jHmmb-0001e5-3V
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:04:15 +0000
+Received: from mail-qv1-f51.google.com ([209.85.219.51]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MEC8L-1j7dlP39s5-00ADUA for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 27 Mar 2020 12:04:10 +0100
+Received: by mail-qv1-f51.google.com with SMTP id s18so186987qvn.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 04:04:10 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ2L5dAHbO8+Oj7WkiO+ljtE9bUBleYbvRdiF0fZkQD7X0iKbnOW
+ qlwZcQC3ieaeb/RM+GykGGknp1wc4gYgjiNU8qI=
+X-Google-Smtp-Source: ADFU+vtyyockII/trfpJrMLB986S3gEYej32rRjsVQDaw6dQ7V9ollrz9qYMTluqBJlIbGMlnb8od+yqbzWq3ZzwMSs=
+X-Received: by 2002:a0c:9e2f:: with SMTP id p47mr12191129qve.211.1585307049646; 
+ Fri, 27 Mar 2020 04:04:09 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200327095703.93178-1-linus.walleij@linaro.org>
+In-Reply-To: <20200327095703.93178-1-linus.walleij@linaro.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 27 Mar 2020 12:03:53 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2_4W9Cyxa8YgZBCkpgsRhp5A9fbXzNEanDPNHdNpuiaQ@mail.gmail.com>
+Message-ID: <CAK8P3a2_4W9Cyxa8YgZBCkpgsRhp5A9fbXzNEanDPNHdNpuiaQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: vexpress: Make schedutil governor available
+To: Linus Walleij <linus.walleij@linaro.org>
+X-Provags-ID: V03:K1:OTlqwo3f0PrU1BXrd3xKFLJ9uz4iRnHbFyYl/OhM7ylo66jeG+t
+ X4XEhM+GviKLVHOzzu7EVtcpED7+6vYisUgHJSxlirmPMRptx5MHT7bV6LELnKW3jqf3d5X
+ kd8ycWYb6C2a3RDuLGXSqDTCeJlCrGaftSJBbjkRHUCdjhj0g7w5cHanxLQB+hzVkce2Gj7
+ vDC+VpExMjLeb5X76QSQA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Cew0vpdjApY=:g5VGkjjwbRcEpJwBisLm/y
+ 2CWiJtaHLKXJ3i25Ve9kU3kX4ORCF+JlOynAcm5ii4D25ooTP0KDd0/Ho/5tSQMhYBQCslGib
+ 8xwQPuz+5nPu1NQL5E1dRIH6disTeBYzoqP18gU267uJ4+q/PenZgPt1uOaVg2F8RPtVpXB4x
+ zpgU6wnZMPaHqy7XsmDi2aSllMJMRBLb/CS9TvTMIcfu8Jn8YXve1Kf6/TJ/PJVcz8axOJdkw
+ NBDg55J8JV8pM2DNfOika3pLqyG3yxtPw/osIb6WEClO0bt29KfEBrUSyLZAjUmgc9QbVH8t9
+ 3Xb+Ff/ODBjwGoQEayez6/gDMuQgJMISjwgJK/LKzuELmfZHG1WpnNAduxGXHP3A6SIhhFpxv
+ cqPbpDV+Im6ecM1f7JPskRyRAFqgbUsdzvZg7sthzXHfRTwC2yssZuuI4Sdj5934KxKxLxV7h
+ Hl2fYXiQapq9M3R/bwgY+Vsq7kjFl2OIRG+iIZYShWnFbJ6aAzU20RtF0V32IQ9fzA6av1o2H
+ Z8xwnfvw2FYj32YaMWgLYO0tIptlBGkuiSdeFGrSkKZpBgTvV2xQwnOJ5tcJDDHTvGBCZh340
+ swOln1MjMs9QqwmdXuJG4NMsWpLiqa9IXdCDqi7KZJWDCFirwsRVecRxYolqDOKZ7HgkZjQXr
+ Mb2TMRiDVb2znnzpa5uuRooO7NPz/lYqKgln0+evqn+WSFddbMkBgIO6xp4kGzD1EJdmksKcU
+ uEqiXj21Rxsn4Y46+AOYdPsH3qkiPlfXVC7D0Bjb3a/30wimsAsCaiw/szcJExcEvBI1LHEBG
+ XicTX+B+HkCkguaM7uJOhgoxdUcbQOZPoY32IXO29zQmT3f/UA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_035933_391529_F7905012 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200327_040413_538001_845E1563 
+X-CRM114-Status: GOOD (  23.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,141 +85,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
- Nicolas Pitre <nico@fluxnic.net>, Linus Walleij <linus.walleij@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>
-MIME-Version: 1.0
+Cc: Viresh Kumar <viresh.kumar@linaro.org>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The decompressor can load from anywhere in memory, and the only reason
-the EFI stub code relocates it is to ensure it appears within the first
-128 MiB of memory, so that the uncompressed kernel appears at the right
-offset in memory.
+On Fri, Mar 27, 2020 at 10:57 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> When building the kernel for Versatile Express we need to
+> consider that some of these boards are big.LITTLE HMP
+> systems.
+>
+> As can be seen from kernel/sched/topology.c:
+>
+> "EAS can be used on a root domain if it meets all the following conditions:
+>  1. an Energy Model (EM) is available;
+>  2. the SD_ASYM_CPUCAPACITY flag is set in the sched_domain hierarchy.
+>  3. no SMT is detected.
+>  4. the EM complexity is low enough to keep scheduling overheads low;
+>  5. schedutil is driving the frequency of all CPUs of the rd;"
+>
+> This means that at the very least, schedutil needs to be
+> available as a scheduling policy for EAS to work on these
+> systems. Make this explicit by selecting CPU_FREQ and
+> CPU_FREQ_GOV_SCHEDUTIL from the Versatile Express
+> machine.
+>
+> Currently users of the TC2 board (like me) has to figure these
+> dependencies out themselves and it is not helpful.
+>
+> It is still necessary to configure in the schedutil as default
+> governor manually to actually get a working b.L system, so this
+> just makes the right governor available to b.L systems, it does
+> not turn it on by default.
+>
+> Cc: Vincent Guittot <vincent.guittot@linaro.org>
+> Cc: Viresh Kumar <viresh.kumar@linaro.org>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 
-We can short circuit this, and simply jump into the decompressor startup
-code at the point where it knows where the base of memory lives. This
-also means there is no need to disable the MMU and caches, create new
-page tables and re-enable them.
+Hi Linus,
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm/boot/compressed/head.S           | 34 ++++------------
- drivers/firmware/efi/libstub/arm32-stub.c | 41 +++-----------------
- 2 files changed, 12 insertions(+), 63 deletions(-)
+I agree we should make it available by default on platforms that need it
+for big.LITTLE, but I don't like the idea of selecting the governor from
+a platform Kconfig file, as generally speaking it leads to more problems
+when user-visible options are selected like this.
 
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 35d4db00eaf9..5558b25677f0 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -1478,37 +1478,17 @@ reloc_code_end:
- 
- #ifdef CONFIG_EFI_STUB
- ENTRY(efi_enter_kernel)
--		mov	r7, r0				@ preserve image base
--		mov	r4, r1				@ preserve DT pointer
-+		mov	r4, r0				@ preserve image base
-+		mov	r8, r1				@ preserve DT pointer
- 
--		mov	r0, r4				@ DT start
--		add	r1, r4, r2			@ DT end
-+		mov	r0, r8				@ DT start
-+		add	r1, r8, r2			@ DT end
- 		bl	cache_clean_flush
- 
--		mov	r0, r7				@ relocated zImage
--		ldr	r1, =_edata			@ size of zImage
--		add	r1, r1, r0			@ end of zImage
--		bl	cache_clean_flush
--
--		@ The PE/COFF loader might not have cleaned the code we are
--		@ running beyond the PoU, and so calling cache_off below from
--		@ inside the PE/COFF loader allocated region is unsafe unless
--		@ we explicitly clean it to the PoC.
--		adr	r0, call_cache_fn		@ region of code we will
--		adr	r1, 0f				@ run with MMU off
--		bl	cache_clean_flush
--		bl	cache_off
--
--		@ Set parameters for booting zImage according to boot protocol
--		@ put FDT address in r2, it was returned by efi_entry()
--		@ r1 is the machine type, and r0 needs to be 0
--		mov	r0, #0
--		mov	r1, #0xFFFFFFFF
--		mov	r2, r4
--		add	r7, r7, #(__efi_start - start)
--		mov	pc, r7				@ no mode switch
-+		mov	r5, #0				@ appended DTB size
-+		mov	r7, #0xFFFFFFFF			@ machine ID
-+		b	wont_overwrite
- ENDPROC(efi_enter_kernel)
--0:
- #endif
- 
- 		.align
-diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-index 7826553af2ba..c547dc75c276 100644
---- a/drivers/firmware/efi/libstub/arm32-stub.c
-+++ b/drivers/firmware/efi/libstub/arm32-stub.c
-@@ -199,14 +199,11 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 	unsigned long kernel_base;
- 	efi_status_t status;
- 
--	/*
--	 * Verify that the DRAM base address is compatible with the ARM
--	 * boot protocol, which determines the base of DRAM by masking
--	 * off the low 27 bits of the address at which the zImage is
--	 * loaded. These assumptions are made by the decompressor,
--	 * before any memory map is available.
--	 */
--	kernel_base = round_up(dram_base, SZ_128M);
-+	/* use a 16 MiB aligned base for the decompressed kernel */
-+	kernel_base = round_up(dram_base, SZ_16M);
-+
-+	*image_addr = kernel_base + TEXT_OFFSET;
-+	*image_size = 0;
- 
- 	/*
- 	 * Note that some platforms (notably, the Raspberry Pi 2) put
-@@ -223,33 +220,5 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 		return status;
- 	}
- 
--	/*
--	 * Relocate the zImage, so that it appears in the lowest 128 MB
--	 * memory window.
--	 */
--	*image_addr = (unsigned long)image->image_base;
--	*image_size = image->image_size;
--	status = efi_relocate_kernel(image_addr, *image_size, *image_size,
--				     kernel_base + MAX_UNCOMP_KERNEL_SIZE, 0, 0);
--	if (status != EFI_SUCCESS) {
--		pr_efi_err("Failed to relocate kernel.\n");
--		efi_free(*reserve_size, *reserve_addr);
--		*reserve_size = 0;
--		return status;
--	}
--
--	/*
--	 * Check to see if we were able to allocate memory low enough
--	 * in memory. The kernel determines the base of DRAM from the
--	 * address at which the zImage is loaded.
--	 */
--	if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
--		pr_efi_err("Failed to relocate kernel, no low memory available.\n");
--		efi_free(*reserve_size, *reserve_addr);
--		*reserve_size = 0;
--		efi_free(*image_size, *image_addr);
--		*image_size = 0;
--		return EFI_LOAD_ERROR;
--	}
- 	return EFI_SUCCESS;
- }
--- 
-2.17.1
+What I could imagine doing however would be to change the cpufreq
+selection to use schedutil by default if CONFIG_BIG_LITTLE is set, like:
 
+choice
+        prompt "Default CPUFreq governor"
+        default CPU_FREQ_DEFAULT_GOV_SCHEDUTIL if BIG_LITTLE
+        default CPU_FREQ_DEFAULT_GOV_USERSPACE if ARM_SA1100_CPUFREQ
+|| ARM_SA1110_CPUFREQ
+        default CPU_FREQ_DEFAULT_GOV_PERFORMANCE
+        help
+          This option sets which CPUFreq governor shall be loaded at
+          startup. If in doubt, select 'performance'.
+
+and then changing CONFIG_BIG_LITTLE to be enabled by default on
+any platform that uses that configuration. If CONFIG_BIG_LITTLE is
+too overloaded already (I can't tell exactly what this is used for), a new
+symbol could be added for what we want here.
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
