@@ -2,100 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC3D019560B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:10:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D08C195623
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:18:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p6zTQziNeSoFFb61kLrDcSsuHEkwA8MJ3g46wFWmOr4=; b=AHEJRdZY6/H3dK
-	HkJKuzaQX5yGedWz/rwnq1pSQlLIFxXwfCr2He8Xud0bC2m58eq+rQRM9F4YkcPOooHXGnYUjvuoE
-	X71N/WpRdmN/DUtpyCb2dz5rEAZh+6qq31As4qqOMA9Pj0QuAjm7IEI3t0ibZDO0kK5KqjjbWupMm
-	iDfbhaoXGehLC41CBHUrOXJSPmzBez1rEzVJ2AkndZOtx1al8oZZKm8sxXlVzY+pl7oMiYobdVK2h
-	nuLAXZOpgmD4ksKbXzDdC00VcPfc7EgyC0RyOvr2m3ulw/y8aVDgepYiZ+C/a04f/GrVpbrDJgPSx
-	V7KcB41elNvdQzHcPfKQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qR/7j6JLg80ew/4mO5CFe7ndyREMqJKLwHDnUXmNH5I=; b=nwakTgFdWlxd80h2ythZ9VdiL
+	lUX90ErN0NZ92OruNylUJegNJMSJCrV4BYFcZrvNREMLWagfW2REoMFzWLS0PqY9nv6We+3ZNrxsI
+	jRIrrFbRIH4Wc1kqkmEVTOHKl0vhb4TaaNFXTbePGhMrZ6M6BBlM3yvKG2htXxecDUEX74Pq7Ajuo
+	yXaaIj4sxe1uxWlP8LL+k5fiAcywYRrDtATpZVdr62+gqsIhrhc3r2vFSVPRV2qKRrVdqIZ+vuXPd
+	+b2h1YjuLO7S5eV2ztLZAsToMjZlR1tZ9U6Fkv2XW7AoTKiqTk9uk3UIFqiDdhjvHXs4e+pKXmnJq
+	yM9qSbmbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHmsb-0005OB-14; Fri, 27 Mar 2020 11:10:25 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jHn07-0007Bk-Sm; Fri, 27 Mar 2020 11:18:11 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHmsR-0005No-Rw
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:10:17 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c12so495335plz.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 04:10:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=TGLdq/U95WT3HxV3sUtO3DHH/5EDIKVtU9/EIJiiqA0=;
- b=ooDVIr/nQdq4AcQGTXHjjO6dJVbi51GdNjzGeNh99xO+1hi1/ufg/eevXiM9cQglkE
- bq8AimnGS9XIa3R5C7rGG27gevdg7jlS9Hfs/RnoGemFpecapjdhMLotbInDyaqB58v1
- dl3iwezCYpzJ+Esk/AZXIa4JyrK6WGhHYBr+H8zFm/cCgSF0Hu1k8PWJCpQjPQx8zMJa
- RVAo25zw5VyZo9g8lpSkqLIgWsqc1+i89AgE8K9FsIUu/81l/tnEu92fPH4gofuv5UyC
- cJDpds+OZCPwOeBH3FDRYuL/+sDCN5kQK/rBM6tfldSUKLENsnNKFOlG5Sfs4l2qAFJP
- 3yOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TGLdq/U95WT3HxV3sUtO3DHH/5EDIKVtU9/EIJiiqA0=;
- b=ETTkLBtLxp1XQ5DCRnbOLvy6qhp8xcBonboCG+dY59qfRQhcEP6TfNp1M3pal4KSPE
- Ahf0AaFRy+huIG47hMVS8tF1eglnJwFr+NC4Bpz7rL2IUm5HczjKvpBcjLAgBd2PN2Ld
- CQgTangSEEDz/Dep912thoTycf95p9O6/tMPXZjkG5IqcwOy9BUsRW08Bp+95dypy0Lp
- GLI9D5M31515Nj9FbZn67Tqn7ZV9Dvqhp+ug5Tlz1G6ncL0xmk0JjLOly1ZMV2uYAVdT
- E2k9eGyuQk7NmmUYmZGkttyMmjV2UXjo5CHqVUaVHpqbQFNrcWIFMA/4F1dLJhivDeip
- thPg==
-X-Gm-Message-State: ANhLgQ2XC86jqeq6svvqv7RVBPqopbYBaXBLTHsCgGDh+La5ltI6B5XP
- tnBmfFhAdaulzjySI2jviN8=
-X-Google-Smtp-Source: ADFU+vvx6xgRoCFobHljQubBlxi17gVHoQR1r82g3QG+ZJ1M3ewEJcTwpCSIhlcpqaaNY2cX9bcmNg==
-X-Received: by 2002:a17:902:8a81:: with SMTP id
- p1mr12498205plo.284.1585307415138; 
- Fri, 27 Mar 2020 04:10:15 -0700 (PDT)
-Received: from localhost ([183.82.181.40])
- by smtp.gmail.com with ESMTPSA id x24sm3866628pfn.140.2020.03.27.04.10.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 27 Mar 2020 04:10:14 -0700 (PDT)
-Date: Fri, 27 Mar 2020 16:40:12 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v3] ARM: replace setup_irq() by request_irq()
-Message-ID: <20200327111012.GA8355@afzalpc>
-References: <20200308161903.GA156645@furthur.local>
- <20200301122226.4068-1-afzal.mohd.ma@gmail.com>
- <m3ftepbtxm.fsf@t19.piap.pl>
- <51cebbbb-3ba4-b336-82a9-abcc22f9a69c@gmail.com>
- <20200304163412.GX37466@atomide.com>
- <20200313154520.GA5375@afzalpc> <20200317043702.GA5852@afzalpc>
- <20200325114332.GA6337@afzalpc> <20200327104635.GA7775@afzalpc>
- <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
+ id 1jHmzy-0007BC-Pg
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:18:04 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 3DA58AED2;
+ Fri, 27 Mar 2020 11:18:01 +0000 (UTC)
+Message-ID: <41607c9fc20afc6554d697daa7782de1e3281db7.camel@suse.de>
+Subject: Re: [PATCH] arm64: mm: make CONFIG_ZONE_DMA configurable without
+ EXPERT
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Peng Fan <peng.fan@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>
+Date: Fri, 27 Mar 2020 12:17:59 +0100
+In-Reply-To: <AM0PR04MB4481C3A233AB455BDC68736288CE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1583844526-24229-1-git-send-email-peng.fan@nxp.com>
+ <20200324174134.GH3901@mbp>
+ <AM0PR04MB44819E95EB1FABF09DEE682788CE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200325101652.GJ3901@mbp>
+ <AM0PR04MB4481C3A233AB455BDC68736288CE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_041015_904655_FFBD1DFA 
-X-CRM114-Status: GOOD (  10.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_041803_125158_6092546A 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,40 +67,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- Hartley Sweeten <hsweeten@visionengravers.com>,
- Tony Lindgren <tony@atomide.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
+Cc: Robin Murphy <robin.murphy@arm.com>, "will@kernel.org" <will@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Lubomir Rintel <lkundrak@v3.sk>, SoC Team <soc@kernel.org>,
- arm-soc <arm@kernel.org>, Krzysztof =?utf-8?Q?Ha=C5=82asa?= <khalasa@piap.pl>,
- Viresh Kumar <vireshk@kernel.org>, Olof Johansson <olof@lixom.net>,
- Thomas Gleixner <tglx@linutronix.de>,
- Alexander Sverdlin <alexander.sverdlin@gmail.com>,
- Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
+Content-Type: multipart/mixed; boundary="===============2379810287378372956=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
 
-On Fri, Mar 27, 2020 at 11:55:36AM +0100, Arnd Bergmann wrote:
+--===============2379810287378372956==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-gybhYNbk/O36qUlXjYkF"
 
-> To make sure I get the right ones, could you bounce all the patches that are
-> still missing to soc@kernel.org to let them show up in patchwork?
 
-Done.
+--=-gybhYNbk/O36qUlXjYkF
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-If it helps, i can send the same patches w/ tags received as well.
+Hi Peng,
 
-Regards
-afzal
+On Wed, 2020-03-25 at 12:30 +0000, Peng Fan wrote:
+> > > > I see a few potential options:
+> > > >=20
+> > > > a) Ensure the CMA is contained within a single zone.
+> > >=20
+> > > This will break legacy dts with new version kernel.
+> > >=20
+> > > > How large is it in your case?
+> > >=20
+> > > It is 1GB
+> > >=20
+> > > > Is it allocated by the kernel dynamically or a fixed start set by
+> > > > the boot loader?
+> > >=20
+> > > We use alloc-ranges and size in kernel dts.
+> > >=20
+> > > But there is only 2GB DRAM in the board.
+> >=20
+> > So I guess without changing the dts, option (a) doesn't really work.
+> >=20
+> > > > b) Change the CMA allocator to allow spanning multiple zones (last =
+time
+> > > >    I looked it wasn't trivial since it relied on some per-zone lock=
+).
+
+I like this as a solution, ultimately why should CMA be linked to a specifi=
+c
+zone. Also, crossing the ZONE_DMA/ZONE_DMA32 boundary shouldn't be an issue
+since we already default to ZONE_DMA32 as the default area for CMA.
+
+That said, easier said than done.
+
+> > > > c) Make ZONE_DMA dynamic on arm64 and only enable it if RPi4.
+> > >=20
+> > > Option c seems a bit easier to me :)
+> > >=20
+> > > I will try to explore both, but if you have time to help, that would
+> > > be appreciated.
+> >=20
+> > I don't have time but option (c) was already discussed and there are pa=
+tches
+> > from Nicolas on the list:
+> >=20
+> > https://eur01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flor=
+e.ke
+> > rnel.org%2Flinux-arm-kernel%2F20190820145821.27214-5-nsaenzjulienne%
+> > 40suse.de%2F&amp;data=3D02%7C01%7Cpeng.fan%40nxp.com%7C6403ddf37
+> > 89b452ae5ee08d7d0a5a659%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0
+> > %7C0%7C637207282191026738&amp;sdata=3Dt2cZ9HTCcRuaL9RO4kD%2BzN
+> > 2n4VqM%2F66zYNZIOComCVs%3D&amp;reserved=3D0
+> >=20
+> > The above series was checking whether the platform is RPi4 and limiting=
+ the
+> > ZONE_DMA size to 1GB (otherwise 4GB with ZONE_DMA32 empty). We
+> > ended up with a static 1GB for ZONE_DMA but we missed the fact that it =
+may
+> > break existing platforms.
+>=20
+> Thanks for the information. I'll check the patchset and work out somethin=
+g
+> proper to fix the issue I met.
+
+Just an FYI, I'm follwing the conversation, and will try to look into as so=
+on
+as I get some free time. In the meantime if you want me to test/review anyt=
+hing
+on the Raspberry Pi, I'll be happy to.
+
+Regards,
+Nicolas
+
+
+--=-gybhYNbk/O36qUlXjYkF
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl594OcACgkQlfZmHno8
+x/7e1gf/UtbHfYf9EO36liu7HDv+5r0zCa19nQ64rn/FN46GJbl++HyRBerEwig7
+L8pNRHFamul6BolfWHLJE1e4gSBAOlt5oJph7vK0/cGXoownZHGfjy4ygBgbj2Zc
+Tf8YTBV1bTWWSPEjsdBbjNUMrxqtVkr+13NXs5yb4hxnKX7OAFf9YLyNOiTSk3yU
+XgMIgwWuMQZ8FR290WAghA/wmBUfTEVJJ/rbi34xlQnBGaUZpwqR87SE/hGoNpoW
+qv4kci3ttdJ3yX7IvTqnsYEJ7ThMbYmhwH8Tk7tuKi2C/zqTpzgajvfDtA6MDMCN
+87b41meteMRHPKf+eqhUU2s+meQCYA==
+=hASN
+-----END PGP SIGNATURE-----
+
+--=-gybhYNbk/O36qUlXjYkF--
+
+
+
+--===============2379810287378372956==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2379810287378372956==--
+
+
