@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90348195523
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:25:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0DE195540
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:29:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gq0v6B9/9R0LLPyvFRyPHG605cai0RkwEBxulHMNwBs=; b=IggwgP6tUAkm1n
-	s1vr/GfWZswTuO0Q45sjJd0L7WvZEe31aQ8O0BKcn9Rfy5RJY2uxPhDNUC1Sn2qG5E2BWV1GR38x+
-	dzkAEgkobsJ9Cx73qOUG1UiTPxu5XLW2dTDgzXqGttw3LLkQAL9cEjTx1++CbSQFKOrAQKY2bRvni
-	VpQZyZSR6GWuGw8lbgAhTNtTmkzc6h3JRqDUYU8Yx5F2MUPGIr9yXDEpWxciS/3SLqvjeOpzRdZt3
-	YsjlTbHWzpwXGjNX3UvQCD6zk4/FXEqf1rdQlsY/ZRlLfbRWnZDdTzCEggzRIzvK2GvfgHytk6Nlx
-	9kfQriHKBfmBciTBZiQw==;
+	List-Owner; bh=g9P85q8z4iVS2d2+YnDw5JX6cEMgcYWPFQ1VnU4nF94=; b=fbQn5wWNyFfOpn
+	5rz8E6InMmMR3UuBoaTCARu0bUGi4sBpvn9jDircskWV9KwmriHRgoVB0tDqnkDp7+bMWFDqemf8N
+	IC4hW2KH4v8XT77DiTzlYeIY4qfyRHxIU6PsyokjjcvxJOHEFCI2HxPMQ22g/p9v7fPv58rMoNmtr
+	0FJlsz0UvVa7LALVaKCJqW+4J4tyGSVK6P/y0K3OQhlWibkEU504Zl2XNUlm7k8Qzh+EsfHwntUoZ
+	b/nQaJuA8bp4gw4L2ASEuHzFp0xmdY5ngtz7WIopUOvRW4O9KTMC+sRmA1zt2SYsFFA7k98jEeFwu
+	+uvdTtDqjrWJNDYLV9Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHmAw-0002Ap-9Z; Fri, 27 Mar 2020 10:25:18 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jHmEV-0003Dy-Gk; Fri, 27 Mar 2020 10:28:59 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHmAi-0001KZ-4N
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:25:05 +0000
-Received: by mail-lj1-x241.google.com with SMTP id p14so9581867lji.11
+ id 1jHmEN-0003Cy-UN
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:28:53 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n20so7371860lfl.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 03:25:03 -0700 (PDT)
+ Fri, 27 Mar 2020 03:28:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7m4lWvk4//cGrxQhI0ltBzlijc7RgGiBhxq+4JikvIo=;
- b=g5D4YyM74lsERyxVWEtSBIzcaGgdj91X+gvlZ19U9ZMi+fX9jzIbSx241hKH+2N10n
- ziWkkfCA99BNAYxuSyr8N2yRDOb+CrAs3hUW9nWyYL+T1Zbdpimu14dpwEQ8u0ZgWorn
- jSCE336+YRKMQoWrUu2H935e/YYhgLXs9uYqKbli4hJwXxKwIoSHMeuymqJgQkpQfZRQ
- 2Yv0Je3RpW5WlNLbgou34/CGii2qNfxtnKZVPdAwGRM8dmO0AwU6kRISyRfEoQQtliQ0
- PzSk/y9Z5dGPWAExpyKivHo6EP0AGCQljfldCXbcC+z3SspoLHj5TtF3Ff10dRFHFfY5
- IkGA==
+ :cc; bh=jxagbeVNh29/16YYCqUxcED/GWqaMY2FRZILhD+326E=;
+ b=pT7ZlF8+QDzNnMTTTXVJzakDoz3QhyP01pvtfVf0GteWt8Tf11MzXads6cx+Bxozvu
+ 7IwWHj/EYxLdmAYqXnu3Dzq90WiKIW1empmHvyFt/AijbOBlBUPhW9nmE2JZVehlJgbN
+ NTBGYVH9UGPZYUQvd1FVnU1m+KgpfMrj1zgXu57yRBx1DphOpbDs5CkZl7+u8sMvhhir
+ L0RR25GHO7Mz1GtSu1HvgZbbECv5HQq9Emo2s9Ikp/ipzszJO1hknf2CNh7MSQPqMofd
+ Wt5/puPA8rg9AyH248JalQ2H9s1xyFn7arWrt7jY9PjKFWBKQSS+Wfej7e4Z6HSZ+hVK
+ McaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=7m4lWvk4//cGrxQhI0ltBzlijc7RgGiBhxq+4JikvIo=;
- b=mxv840AEHRNKwtg29VhqQfT/t56VPiddWI7uoZMQ6Bojs9Q4qBhKR6BZ6pBWww+N+x
- HpyLQ9DT6MSF3FFFPXngLx44IYw8xLFoCAyQC0jeIzVP2okJOfhtZaLpng+1ySFe5MOb
- ct8i/IxYLaMD1KxaFT2jfErcpo6fKw6hd2DgJ905U8y14HZPczbTl8XLkW3yaSxW7dXf
- 1xKXrGlBYz6QOYmQ1efBLd425Dk7Y9PU6kis1o6qHlfYpaW3WUBf2pTQvAJAVv2GihOk
- EEycue0x9q8+whSy6cYDB5r8EVehhDwii/v8YHkic91CVmo1WqRRJRu6i9uK2Bbz1/17
- E5+g==
-X-Gm-Message-State: AGi0PuZrjgSYdZd2fUo3FFyZak2HUY77F5wvEflpOUttz8W4l6zpW37W
- gtBqq0kIQAvRdcQVKWpkY3N9XYJs9fe91v98GU4qGw==
-X-Google-Smtp-Source: APiQypLGNjy+bso8fEQU1Rr+N9WpSOr49XJcW20+rl9/F0WHi6kN5XEtnL5MgahJRdxrpJS/UNceeTWkSa9YNVg/vb8=
-X-Received: by 2002:a2e:9c48:: with SMTP id t8mr2097823ljj.168.1585304702362; 
- Fri, 27 Mar 2020 03:25:02 -0700 (PDT)
+ bh=jxagbeVNh29/16YYCqUxcED/GWqaMY2FRZILhD+326E=;
+ b=TSbevogIjs8boB5+xgiMAoNsXkB+ulsXCCLdzdyn8BGt3rcT/tVEurqhZ7qJZLzb9n
+ GgxV7lojoOSa7hSDrcOYLhBbADlpnDubkLKwdp1ZljmjN4ppghWZCJKTw4+FwDCMCs8j
+ GKh1728VHExvi0SY0prXCftcbHfvaVyjzyJ506EP/4GYLO5hNhsuc1P56tkPdSf+98IP
+ X2bIkk2hVnq2b/ytrHbVj8LIhRu4BZ827iBNB36CI7RRY7PhsVWpWY9BHSKJg3D2zsPL
+ avnxp7tqcFvbL5aTsPrD8QYNdUnqCZmh81L7WXS/lkPNtnf1A72ozVovPQdAE13aWdjY
+ 5rgw==
+X-Gm-Message-State: ANhLgQ3KFYFaZRETxIuZUk1UJ1DmiixGflzm712LHGL69h5qlhcAfl9E
+ VrYvZ1TfUQldD+rxckPiAKS+kCwJVDke/ZyFGF3MVR9vvHQ=
+X-Google-Smtp-Source: ADFU+vvZNwYjJkyVgssSDHPr3mydsb+13EqKSqnHmnCoyAtcRPGriExF6G69ogu4A5lq5aiiVUR+AM2Z+n1m+zil0U0=
+X-Received: by 2002:ac2:5b49:: with SMTP id i9mr8745710lfp.21.1585304929987;
+ Fri, 27 Mar 2020 03:28:49 -0700 (PDT)
 MIME-Version: 1.0
-References: <e6cd8adf-60df-437a-003f-58e3403e4697@linaro.org>
- <20200318174131.20582-1-daniel.lezcano@linaro.org>
- <20200318174131.20582-10-daniel.lezcano@linaro.org>
-In-Reply-To: <20200318174131.20582-10-daniel.lezcano@linaro.org>
+References: <002b72cab9896fa5ac76a52e0cb503ff@kernel.org>
+ <20200319023448.1479701-1-mans0n@gorani.run>
+In-Reply-To: <20200319023448.1479701-1-mans0n@gorani.run>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 27 Mar 2020 11:24:51 +0100
-Message-ID: <CACRpkdbt2yJ4-_82ZGrkgCat+Qywyy7HFLaqremzhc1rKTp+3w@mail.gmail.com>
-Subject: Re: [PATCH 10/21] clocksource: Replace setup_irq() by request_irq()
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Date: Fri, 27 Mar 2020 11:28:38 +0100
+Message-ID: <CACRpkdZZN9hfZ7ARRd+JbFKjfXDMa_M3wqYD1gPqUCiTpp=LNA@mail.gmail.com>
+Subject: Re: [PATCH v2] irqchip/versatile-fpga: Handle chained IRQs properly
+To: Sungbo Eo <mans0n@gorani.run>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_032504_207474_2B623384 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20200327_032851_991815_0ACE247A 
+X-CRM114-Status: GOOD (  11.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,66 +91,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- afzal mohammed <afzal.mohd.ma@gmail.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>, NXP Linux Team <linux-imx@nxp.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Ray Jui <rjui@broadcom.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-samsung-soc@vger.kernel.org>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- "open list:ARM/Amlogic Meson SoC support" <linux-amlogic@lists.infradead.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Barry Song <baohua@kernel.org>,
- Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: Jason Cooper <jason@lakedaemon.net>,
+ Neil Armstrong <narmstrong@baylibre.com>, Marc Zyngier <maz@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tony Prisk <linux@prisktech.co.nz>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Kevin Hilman <khilman@baylibre.com>, Enrico Weigelt <info@metux.net>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+ Thomas Gleixner <tglx@linutronix.de>, linux-oxnas@groups.io,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 18, 2020 at 6:42 PM Daniel Lezcano
-<daniel.lezcano@linaro.org> wrote:
+On Thu, Mar 19, 2020 at 3:36 AM Sungbo Eo <mans0n@gorani.run> wrote:
 
-> From: afzal mohammed <afzal.mohd.ma@gmail.com>
+> Enclose the chained handler with chained_irq_{enter,exit}(), so that the
+> muxed interrupts get properly acked.
 >
-> request_irq() is preferred over setup_irq(). The early boot setup_irq()
-> invocations happen either via 'init_IRQ()' or 'time_init()', while
-> memory allocators are ready by 'mm_init()'.
+> This patch also fixes a reboot bug on OX820 SoC, where the jiffies timer
+> interrupt is never acked. The kernel waits a clock tick forever in
+> calibrate_delay_converge(), which leads to a boot hang.
 >
-> Per tglx[1], setup_irq() existed in olden days when allocators were not
-> ready by the time early interrupts were initialized.
->
-> Hence replace setup_irq() by request_irq().
->
-> Seldom remove_irq() usage has been observed coupled with setup_irq(),
-> wherever that has been found, it too has been replaced by free_irq().
->
-> A build error that was reported by kbuild test robot <lkp@intel.com>
-> in the previous version of the patch also has been fixed.
->
-> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
->
-> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Link: https://lore.kernel.org/r/91961c77c1cf93d41523f5e1ac52043f32f97077.1582799709.git.afzal.mohd.ma@gmail.com
+> Fixes: c41b16f8c9d9 ("ARM: integrator/versatile: consolidate FPGA IRQ handling code")
+> Signed-off-by: Sungbo Eo <mans0n@gorani.run>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+> v2: moved readl below chained_irq_enter()
+>     added Fixes tag
 
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-It is definitely the right thing to do, I cannot test it right now
-but if desired I can test it on my targets later in the following
-weeks.
+I wonder how Integrator keeps working so well despite
+this. I can't test it right now but I'm sure it is fine.
 
 Yours,
 Linus Walleij
