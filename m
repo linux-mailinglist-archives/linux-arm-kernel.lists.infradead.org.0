@@ -2,61 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 963F61953AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:13:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDB8B1953DE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:23:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xpTC2PNMSiRGliW3t/RSWouTfVps7jRWJmj5m4QEfls=; b=hK4gGiFyL/952d
-	XfsQKuHuY45NpX0oYfBOU400uH2mpGiMd7jLX1KZT36LRXu5KQoKRpmdVWXyzjg0SfFYLpH28neqG
-	kUN0oocrt1c6svlA6OrQyuWQsZNyk9O4wpWDHxZ4ggBd2LEHf+3q/6PskGyZ/GiKlgGNikgQ+dhdZ
-	dt02v9jX1wAN3p8SLD0xwrcTAUoP5GISdJss03AYUtxMksMCW1LD+kImKpkneI9UsOa4Qsj+h/Tkf
-	EIO0AikPNi2/NCbwpwL8EuVD+st8f7+TZpmCxme5NU6P++buaerDrLCqrNypj7UMHMpjf0OUKZCh+
-	xlz+z5+cIFAhEozWY0rg==;
+	List-Owner; bh=wZ3YuY4lnOv33Der3x7PCKjRMJibuPSR4RkkCD6L7E8=; b=eVbqUfGYa/cgIS
+	zMfihFOx09EWQMdlxVPAHp7jCEIMFiV9eWN2mr+zJ0U9LTaVHxs3a59tzFv2d23GeSFq77HQo2nkg
+	ajc0mLO/mcKHK/OjH4PwP8dVIpQ0/WHy2sIgIfERq/vP3Z7cJxbmSycK/BbeHkWysnBsV5JWu3LAz
+	J1Yr2YZ14GHMUqEzj0Ait2uSS44ghYNIesYvySYGPNpx+OyeN6GrBEt1EPAW93YvIxWSPwIQF6c6t
+	2NpzkZliuh3X+H7vmQc9wFGriPQJhudl7ixErfBxOHy2JqEEkTYbHHdulfLKNfEvDt/l/iWihowzM
+	dk3qYRvTd2vnHyvbwT7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHl2n-00072g-U8; Fri, 27 Mar 2020 09:12:49 +0000
-Received: from mail.baikalelectronics.com ([87.245.175.226]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHl2f-00071n-Qo
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 09:12:44 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 6552B8030886;
- Fri, 27 Mar 2020 09:12:34 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id e8trym8yYIyf; Fri, 27 Mar 2020 12:12:33 +0300 (MSK)
-Date: Fri, 27 Mar 2020 12:12:26 +0300
-From: Sergey Semin <Sergey.Semin@baikalelectronics.ru>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2] serial: 8250_dw: Fix common clocks usage race condition
-Message-ID: <20200327091226.7kgpum3td3blubsn@ubsrv2.baikal.int>
-References: <20200306130231.05BBC8030795@mail.baikalelectronics.ru>
- <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
- <20200323100109.k2gckdyneyzo23fb@gilmour.lan>
- <20200323135017.4vi5nwam2rlpepgn@ubsrv2.baikal.int>
- <20200324101243.GG1922688@smile.fi.intel.com>
- <20200325171109.cohnsw3s57ckaqud@ubsrv2.baikal.int>
- <158518709322.125146.10069235641747677647@swboyd.mtv.corp.google.com>
+	id 1jHlD2-00025w-0r; Fri, 27 Mar 2020 09:23:24 +0000
+Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHlCp-00024S-HH; Fri, 27 Mar 2020 09:23:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1585301012; x=1616837012;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=mNQ1BYUdVc5K/V95K01VyKYqIl9Wxp3HozvKdePhMBU=;
+ b=U3g1ScWzuaPTVStaBW/B8M/lJyvh4PwI2k8vYq5LJv+7Zr/Q98tjwd60
+ xHD63/f6VDIrp4sIkMfGzKZSSXRw8CQKn2F7uwOVNsdkklt998Wx17edU
+ XUYMJHWaHMaZHwUf7rOQZygofFcqoh0NE2mmOmUMrodvtzJLUPLgwAuOt
+ tNCW5CGfT9gDNtgrlgvTAvnJJ/ouxKiyut+CRZc4ZZOKri3VmR7x9nCGm
+ lnwnYB1MBpDQQzmYOCq61IpN54uiUfGfBV76elcDhY58nosdE+Bbdy9WN
+ XhanNdHNVlJTvKhVAufciC6z8PIhBsbhmysCZOnwU/Fp/Jr25Eu/6Htvj g==;
+IronPort-SDR: SBohh3zQ8ZHpbHeKlods0yKvt0GOCuL/IZja0t9g54s2mcmkE6HpfgYILH9nyfQFvuG0vLQ5mh
+ tE6n3Foa2STlqo2ud8imr3wmlOYyB9LfmKUkuFxB7KDQzSDCFpy0dfLwsfRCMtcPQ4LtPAbAXa
+ r/ikkr7rtjOFnLCBIIcVzv0cCIwXqGNlbnULu8k5mfWakc0kTnX6o7upz0eTRUnSQwkSD1CU9y
+ 8Q0Vvt8oPG3e1AuVbQNL1obI8vSEI1vvbSLNvi8ye8vW/LmJVYbMoHmG0qExjLi4l/oEIXrtpN
+ aPw=
+X-IronPort-AV: E=Sophos;i="5.72,311,1580745600"; d="scan'208";a="235910982"
+Received: from mail-cys01nam02lp2055.outbound.protection.outlook.com (HELO
+ NAM02-CY1-obe.outbound.protection.outlook.com) ([104.47.37.55])
+ by ob1.hgst.iphmx.com with ESMTP; 27 Mar 2020 17:23:26 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZASq4tjdP7UgF3YzRG3BppYNqjGopjWq4Zlbq+gOdPTjzdY3dI+r6muQqL2IEdoEZgzV0Um9CXWPjm8GbW77xQ67crQoqQoHQAv8mZn1gAj3ZJnTRYU7uSubWXFm/0ODeW0lq3+bXNMIJa7Gr0rydrHJZis/OKbFvgAivNbx0wtcsrVIExeJqTIkhSvOTn2nb1ngGKArgFbTe34sQSNebL5cL9g94bBBUuP3TBTM/reLpdQ+PCFxJ5zUqKc4Rpu9MinmswSrJUQlmJkG9qIAM6BaSr0KX9APLPZL2Su7YAUCec/hNgyAkYG1yWh68jbWh26AT1uQPByjNscBgw9Adg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mNQ1BYUdVc5K/V95K01VyKYqIl9Wxp3HozvKdePhMBU=;
+ b=TuGty5oReKL9baFXWGdqYYIo5pVipJFf0zCcwVusO8Xz4h0XcfB3l9ljdoDWA4pIuYwmecKXbJUfeJUkKWZBg8nVN2322C7TatDknkOy/HIGk3d3YHmv5usHxGlvaD9yXZmdcqPa/VCbXWSk5cr/hE33m+Vo/gm3uKjNusopKLV5QwH7/l4BT/qGre2yMRYI9I1lISJXBCCFBX0G/BA4S56A75713udWxXPgjDrFfiYLjTy3uuOFs+JNAH9ki/NVTc3L/5H6eUQtxg0NustYnwgVZG3MMtSO6+rFSHGQ9gq064M9Y2KTcU6/9oJmB9zLAy27R5ir+IQxS/2L7mNemw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mNQ1BYUdVc5K/V95K01VyKYqIl9Wxp3HozvKdePhMBU=;
+ b=DxMuYOjuATdbzpYYx4WPYJUEE5SB0cynG/gSiZAeQF5R5D7GH8zC/5jgXyxk4mCZxVx2etQTa50/evkfNMGY3BGoqFtK301PSqnonRFQNIX2uyGeLfuISvWijjgWDrzyc2nqAqByJtu9LDoUiOUgrKCh9Z05FyuOSBscfi4gnt8=
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
+ by SN6PR04MB4061.namprd04.prod.outlook.com (2603:10b6:805:47::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.22; Fri, 27 Mar
+ 2020 09:23:06 +0000
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::3877:5e49:6cdd:c8b]) by SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::3877:5e49:6cdd:c8b%5]) with mapi id 15.20.2856.019; Fri, 27 Mar 2020
+ 09:23:06 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>
+Subject: RE: [PATCH v2 2/2] scsi: ufs-mediatek: add error recovery for suspend
+ and resume
+Thread-Topic: [PATCH v2 2/2] scsi: ufs-mediatek: add error recovery for
+ suspend and resume
+Thread-Index: AQHWA4BdOgNxOg5M0Ea6RKkNMXHuBKhcKyNg
+Date: Fri, 27 Mar 2020 09:23:05 +0000
+Message-ID: <SN6PR04MB4640191B1F648C3D43BD9AF8FCCC0@SN6PR04MB4640.namprd04.prod.outlook.com>
+References: <20200326150747.11426-1-stanley.chu@mediatek.com>
+ <20200326150747.11426-3-stanley.chu@mediatek.com>
+In-Reply-To: <20200326150747.11426-3-stanley.chu@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Avri.Altman@wdc.com; 
+x-originating-ip: [2a00:a040:188:9054:d519:d5ac:475d:740a]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 1cf26652-61a5-4582-82e3-08d7d230750c
+x-ms-traffictypediagnostic: SN6PR04MB4061:
+x-microsoft-antispam-prvs: <SN6PR04MB4061F9C8DA4602FFDE317B3BFCCC0@SN6PR04MB4061.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0355F3A3AE
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(346002)(366004)(39860400002)(376002)(396003)(136003)(6506007)(66476007)(9686003)(66946007)(66446008)(86362001)(4744005)(110136005)(52536014)(66556008)(186003)(64756008)(7696005)(316002)(5660300002)(76116006)(4326008)(2906002)(54906003)(55016002)(478600001)(8676002)(33656002)(81166006)(71200400001)(15650500001)(8936002)(7416002)(81156014);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: FB99npHAb/A/B0ZOhEgCDDOxIxrykPzJCMMlN0v03/DgkRKpqyMVqPbo9befSSpvunB8yLjEkxBCXdjrxUByIQEuwfw/EC3/CQmAEGxfV/Ol8bNZDHNkRmiyhL2jv02dW2Tqu5YMzPGqBa2a1F0qfMgxYqA3/F9G2xrgGS+5XZAvXxMhd/eodid/0g0SEuXYwyc6p1Pz4MZGwG1FnpxHaU0kbbzji9YHDUPJXY3REV5EfZx0h4nthxOtcGLNzdyW7H6AUsnVnjCNAEzmOTPV+9tMcLfdcnQm3TQNk8f9FnK8+R++jdMQVG3Z18oPty0jntdmwkSz5iP8td5DOHjuyi59O7tI2VLGDbRJ7FN5/PhLMzz8x9peMlWgxshpv0u0wFsqL5FD30DtRZaksEOL8m4T7fPGORm+COYFh/1x7fsTywTI5DcvSNaSMK8i9gwS
+x-ms-exchange-antispam-messagedata: 3aPsCig9xS1X1VouMycVfzyAPADgSiV6SuqBi3+MPoAA9J7IOkiCs80p3hs5jNeEkfKcz59kOcaeXi4No6rrcVS03oA5HzgH4RnqQnEr5/uJkoglqib9AAqe56PU7lCnfu2/zPHr0uika4pMCwAzG8mx04tbhPFOD1XCOKm9b7qWWTJE4UVg+bnazNI28nVcKNObnLacf30Oy2NGdjxCyQ==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <158518709322.125146.10069235641747677647@swboyd.mtv.corp.google.com>
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1cf26652-61a5-4582-82e3-08d7d230750c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2020 09:23:05.8802 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: prFj0KJF3ihxTNTmQ0HOUG5pj41snkO2ALLOrglxfzLk/q/jDXV5bPzi5bRAS/mONUL1WMD8HQOzkcSzSGOMNw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_021242_230163_5597D2FD 
-X-CRM114-Status: GOOD (  36.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200327_022311_701034_6566A031 
+X-CRM114-Status: GOOD (  11.54  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.143.124 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,153 +146,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Catalin Marina s <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>,
- Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
- Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>, Wei Xu <xuwei5@hisilicon.com>,
- Chen-Yu Tsai <wens@csie.org>,
- Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
- Jiri Slaby <jslaby@suse.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Ray Jui <rjui@broadcom.com>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- Maxime Ripard <maxime@cerno.tech>, linux-serial@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
- Paul Burton <paulburton@kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "beanhuo@micron.com" <beanhuo@micron.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Stephen
-
-Thanks for reply. My comment is below.
-
-On Wed, Mar 25, 2020 at 06:44:53PM -0700, Stephen Boyd wrote:
-> Quoting Sergey Semin (2020-03-25 10:11:09)
-> > On Tue, Mar 24, 2020 at 12:12:43PM +0200, Andy Shevchenko wrote:
-> > > On Mon, Mar 23, 2020 at 04:50:17PM +0300, Sergey Semin wrote:
-> > > > On Mon, Mar 23, 2020 at 11:01:09AM +0100, Maxime Ripard wrote:
-> > > 
-> > > > > clk_rate_exclusive_get is pretty intrusive, and due to the usual
-> > > > > topology of clock trees, this will lock down 3-4 parent clocks to
-> > > > > their current rate as well. In the Allwinner SoCs case for example,
-> > > > > this will lock down the same PLL than the one used by the CPU,
-> > > > > preventing cpufreq from running.
-> > > > 
-> > > > Speaking about weak design of a SoC' clock tree. Our problems are nothing
-> > > > with respect to the Allwinner SoC, in which case of changing the
-> > > > CPU-frequency may cause the UART glitches subsequently causing data
-> > > > transfer artefacts.) Moreover as I can see the same issue may raise for
-> > > > I2C, QSPI, PWM devices there.
-> > > > 
-> > > > Anyway your concern does make sense.
-> > > > 
-> > > > > However, the 8250 has a pretty wide range of dividers and can adapt to
-> > > > > any reasonable parent clock rate, so we don't really need to lock the
-> > > > > rate either, we can simply react to a parent clock rate change using
-> > > > > the clock notifiers, just like the SiFive UART is doing.
-> > > > > 
-> > > > > I tried to do that, but given that I don't really have an extensive
-> > > > > knowledge of the 8250, I couldn't find a way to stop the TX of chars
-> > > > > while we change the clock rate. I'm not sure if this is a big deal or
-> > > > > not, the SiFive UART doesn't seem to care.
-> > > > 
-> > > > Yes, your solution is also possible, but even in case of stopping Tx/Rx it
-> > > > doesn't lack drawbacks. First of all AFAIK there is no easy way to just
-> > > > pause the transfers. We'd have to first wait for the current transfers
-> > > > to be completed, then somehow lock the port usage (both Tx and Rx
-> > > > traffic), permit the reference clock rate change, accordingly adjust the
-> > > > UART clock divider, and finally unlock the port. While if we don't mind
-> > > > to occasionally have UART data glitches, we can just adjust the UART ref
-> > > > divider synchronously with ref clock rate change as you and SiFive UART
-> > > > driver suggest.
-> > > > 
-> > > > So we are now at a zugzwang - a fork to three not that good solutions:
-> > > > 1) lock the whole clock branch and provide a glitchless interfaces. But
-> > > > by doing so we may (in case of Allwinner SoCs we will) lockup some very
-> > > > important functionality like CPU-frequency change while the UART port is
-> > > > started up. In this case we won't have the data glitches.
-> > > > 2) just adjust the UART clock divider in case of reference clock rate
-> > > > change (use the SiFive UART driver approach). In this case we may have the
-> > > > data corruption.
-> > > > 3) somehow implement the algo: wait for the transfers to be completed,
-> > > > lock UART interface (it's possible for Tx, but for Rx in case of no handshake
-> > > > enabled it's simply impossible), permit the ref clock rate change,
-> > > > adjust the UART divider, then unlock the UART interface. In this case the data
-> > > > glitches still may happen (if no modem control is available or
-> > > > handshakes are disabled).
-> > > > 
-> > > > As for the cases of Baikal-T1 UARTs the first solutions is the most suitable.
-> > > > We don't lock anything valuable, since a base PLL output isn't directly
-> > > > connected to any device and it's rate once setup isn't changed during the
-> > > > system running. On the other hand I don't mind to implement the second
-> > > > solution, even though it's prone to data glitches. Regarding the solution
-> > > > 3) I won't even try. It's too complicated, I don't have time and
-> > > > test-infrastructure for this.
-> > > > 
-> > > > So Andy what do you think?
-> > > 
-> > > From Intel HW perspective the first two are okay, but since Maxime is against
-> > > first, you have the only option from your list. Perhaps somebody may give
-> > > option 4) here...
-> > > 
-> > 
-> > Ok then. I'll implement the option 2) in v3 if noone gives any alternatives
-> > before that.
-> > 
+ 
 > 
-> Sorry, I haven't really read the thread but I'll quickly reply with
-> this.
+> Once fail happens during suspend and resume flow if the desired low
+> power link state is H8, link recovery is required for MediaTek UFS
+> controller.
 > 
-> Maybe option 4 is to make the uart driver a clk provider that consumes
-> the single reference clk like it is already doing today? Then when the
-> rate changes up above for the clk implemented here the clk set rate op
-> for the newly implemented clk can go poke the uart registers to maintain
-> the baud or whatever?
+> For resume flow, since power and clocks are already enabled before
+> invoking vendor's resume callback, simply using ufshcd_link_recovery()
+> inside callback is fine.
 > 
-> That is close to how the notifier design would work, but it avoids
-> keeping the notifiers around given that the notifiers are not preferred.
-> It is also closer to reality, the uart has a divider or mux internally
-> that we don't model as a clk, but we could just as easily model as such.
+> For suspend flow, the device power enters low power mode or is disabled
+> before suspend callback, thus ufshcd_link_recovery() can not be directly
+> used in callback. To leverage host reset flow during ufshcd_suspend(),
+> set link as off state enforcedly 
+Not sure this is a proper English, but I'm not sure.
 
-AFAIU your suggestion is pretty similar to the option 2), but it concerns
-the fixup implementation. So instead of subscribing to the reference clock
-change event and directly adjusting the UART clock divider when the change
-happens, you suggest to convert the divisor setting code into a clock
-provider, which in case of the parental clocks rate change shall
-automatically cause the rate adjustment of the clocks hierarchy below.
-
-While your proposal looks neat and better suits a common approach of
-the drivers design, it won't be that easy to be implemented for the serial
-subsystem. As far as I can see serial and 8250 code is too coupled with
-manual divisor and reference clock settings. Common 8250 port code gets
-and sets the divisor and relies on the reference clock value. Similarly
-the 8250-compatible vendor specific devices may also have custom divisor
-settings. Moreover uartclk field, which indicates the reference clock rate
-value, is used in many placed over the serial code, so if we implemented
-your design we would have to update it value anyway, which means to
-subscribe to the reference clock rate change event.
-
-So in order to do what you said, the serial subsystem would have to be
-seriously refactored, which taking into account the subsystem age and
-number of driver, will be very painful.
-
--Sergey
-
+to let ufshcd_host_reset_and_restore()
+> be executed by ufshcd_suspend().
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
