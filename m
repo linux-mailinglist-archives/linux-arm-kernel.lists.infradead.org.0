@@ -2,46 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C1FF1958FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:30:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B3CF19591C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:35:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g48+0AWA0AACAL6iZEEti1hnErdbRTpAHqTYCb0OPic=; b=uKdSqW4Iqc50dE
-	d3h7X5aoPyro+1IpQlT2bUp9QDbOdyoGcuLVx/m/oaDE0oCM1BewJDOcq7LAeG1Kuge4JGLixqLQJ
-	YWcuhEvsNHbqI9xWqLAFRbkfCVGJT48uGXy2OiUMYPMSMergX9k2WxAVZyxVuUCpJVMvgrkM0r8JN
-	s8vxLQHTFq/62FlzR9auEmdNEhOr2Fv9ILY8Z3buWyNWIxIbM+uU41PmvO15+nkTUfcNxY2fc1/tz
-	eWFG8lugBACtFjh3GRiJu+yPOyJlKEtNizHfyUQvAIS1etCbQAV+I0rxMbqaF3vTjPDVUXT8kg1Oi
-	4psERlnOjzFkGY2xjZZA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=y3xjSyQ69p1RCKIWOyRduqV0jG+1bsLMk9egpDhKmlE=; b=SEt
+	I+BRI6pkB6Y+sUHsRO9U5pyLVW71PZgRydI1nCAVaswc0pv1JRoOOhN0Xh9B+DkkdXw1cFvHtjv3a
+	uJwhIf5QWV8qRVIuukZy9eFEyGdApIT12tYKqZQBwPgLLLSlaZewX+wO+XepMv0IUf+30uFcVhscC
+	iG4PtIoZnC8YACekH4Jk+Tc8iP4e0ESD+3Z6a7gUoosbtp+hZhJxOhdpDZZ8heohn2AGMfPdA0JVB
+	gOfOShozvc+iKvaSbadJBc4MzV2gaon/9nrEtjslr5WMttliUa+HoIuOlsUx7pG3+uw+rslHQH13J
+	6ulXUm8V41ktdYrNitJw81AIw/wiwZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHpzc-0002RG-LK; Fri, 27 Mar 2020 14:29:52 +0000
+	id 1jHq59-0005m3-7M; Fri, 27 Mar 2020 14:35:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHpzS-0002QN-Gm
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:29:43 +0000
+ id 1jHq4Q-0004H2-2u
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:34:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 27B011FB;
- Fri, 27 Mar 2020 07:29:41 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B719B3F71F;
- Fri, 27 Mar 2020 07:29:39 -0700 (PDT)
-Date: Fri, 27 Mar 2020 14:29:37 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Li Wang <li.wang@windriver.com>
-Subject: Re: [PATCH] arm64: mmu: no write cache for O_SYNC flag
-Message-ID: <20200327142937.GB94838@C02TD0UTHF1T.local>
-References: <20200326163625.30714-1-li.wang@windriver.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200326163625.30714-1-li.wang@windriver.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F4011FB;
+ Fri, 27 Mar 2020 07:34:46 -0700 (PDT)
+Received: from e120937-lin.home (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65F0D3F71F;
+ Fri, 27 Mar 2020 07:34:45 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v6 00/13] SCMI Notifications Core Support
+Date: Fri, 27 Mar 2020 14:34:25 +0000
+Message-Id: <20200327143438.5382-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_072942_596242_53BE53FF 
-X-CRM114-Status: GOOD (  21.51  )
+X-CRM114-CacheID: sfid-20200327_073450_215461_588372C2 
+X-CRM114-Status: GOOD (  14.80  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,105 +59,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Jonathan.Cameron@Huawei.com, cristian.marussi@arm.com,
+ james.quinlan@broadcom.com, lukasz.luba@arm.com, sudeep.holla@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 09:36:25AM -0700, Li Wang wrote:
-> reproduce steps:
-> 1.
-> disable CONFIG_STRICT_DEVMEM in linux kernel
-> 2.
-> Process A gets a Physical Address of global variable by
-> "/proc/self/pagemap".
-> 3.
-> Process B writes a value to the same Physical Address by mmap():
-> fd=open("/dev/mem",O_SYNC);
-> Virtual Address=mmap(fd);
+Hi all,
 
-Is this just to demonstrate the behaviour, or is this meant to be
-indicative of a real use-case? I'm struggling to see the latter.
+this series wants to introduce SCMI Notification Support, built on top of
+the standard Kernel notification chain subsystem.
 
-> problem symptom:
-> after Process B write a value to the Physical Address,
-> Process A of the value of global variable does not change.
-> They both W/R the same Physical Address.
+At initialization time each SCMI Protocol takes care to register with the
+new SCMI notification core the set of its own events which it intends to
+support.
 
-If Process A is not using the same attributes as process B, there is no
-guarantee of coherency. How did process A map this memory?
+Using the API exposed via scmi_handle.notify_ops a Kernel user can register
+its own notifier_t callback (via a notifier_block as usual) against any
+registered event as identified by the tuple:
 
-> technical reason:
-> Process B writing the Physical Address is by the Virtual Address,
-> and the Virtual Address comes from "/dev/mem" and mmap().
-> In arm64 arch, the Virtual Address has write cache.
-> So, maybe the value is not written into Physical Address.
+		(proto_id, event_id, src_id)
 
-I don't think that's true. I think what's happening here is:
+where src_id represents a generic source identifier which is protocol
+dependent like domain_id, performance_id, sensor_id and so forth.
+(users can anyway do NOT provide any src_id, and subscribe instead to ALL
+ the existing (if any) src_id sources for that proto_id/evt_id combination)
 
-* Process A has a Normal WBWA Cacheable mapping.
-* Process B as a Normal Non-cacheable mapping.
-* Process B's write does not snoop any caches, and goes straight to
-  memory.
-* Process A reads a value from cache, which does not include process B's
-  write.
+Each of the above tuple-specified event will be served on its own dedicated
+blocking notification chain, dynamically allocated on-demand when at least
+one user has shown interest on that event.
 
-That's a natural result of using mismatched attributes, and is
-consistent with the O_SYNC flag meaning that the write "is transferred
-to the underlying hardware".
+Upon a notification delivery all the users' registered notifier_t callbacks
+will be in turn invoked and fed with the event_id as @action param and a
+generated custom per-event struct _report as @data param.
+(as in include/linux/scmi_protocol.h)
 
-> 
-> fix reason:
-> giving write cache flag in arm64 is in phys_mem_access_prot():
-> =====
-> arch/arm64/mm/mmu.c
-> phys_mem_access_prot()
-> {
->   if (!pfn_valid(pfn))
->     return pgprot_noncached(vma_prot);
->   else if (file->f_flags & O_SYNC)
->     return pgprot_writecombine(vma_prot);
->   return vma_prot;
-> }
-> ====
-> the other arch and the share function drivers/char/mem.c of phys_mem_access_prot()
-> does not add write cache flag.
-> So, removing the flag to fix the issue
+The final step of notification delivery via users' callback invocation is
+instead delegated to a pool of deferred workers (Kernel cmwq): each
+SCMI protocol has its own dedicated worker and dedicated queue to push
+events from the rx ISR to the worker.
 
-This will change behaviour that other software may be relying upon, and
-as above I do not believe this actually solves the problem you describe.
+Based on scmi-next 5.6 [1], on top of:
 
-Thanks,
-Mark.
+commit 5c8a47a5a91d ("firmware: arm_scmi: Make scmi core independent of
+		      the transport type")
 
-> 
-> Signed-off-by: Li Wang <li.wang@windriver.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  arch/arm64/mm/mmu.c | 2 --
->  1 file changed, 2 deletions(-)
-> 
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 128f70852bf3..d7083965ca17 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -81,8 +81,6 @@ pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
->  {
->  	if (!pfn_valid(pfn))
->  		return pgprot_noncached(vma_prot);
-> -	else if (file->f_flags & O_SYNC)
-> -		return pgprot_writecombine(vma_prot);
->  	return vma_prot;
->  }
->  EXPORT_SYMBOL(phys_mem_access_prot);
-> -- 
-> 2.24.1
-> 
+This series has been tested on JUNO with an experimental firmware only
+supporting Perf Notifications.
+
+Thanks
+
+Cristian
+
+----
+v5 --> v6:
+- added handle argument to fill_custom_report() helper
+v4 --> v5:
+- fixed kernel-doc
+- added proper barriers around registered protocols and events
+  initialization
+- reviewed queues allocation using devm_add_action_or_reset
+- reviewed REVT_NOTIFY_ENABLE macro
+
+v3 --> v4:
+- dropped RFC tag
+- avoid one unneeded evt payload memcpy on the ISR RC code path by
+  redesigning dispatcher to handle partial queue-reads (in_flight events,
+  only header)
+- fixed the initialization issue exposed by late SCMI modules loading by
+  reviewing the init process to support possible late events registrations
+  by protocols and early callbacks registrations by users (pending)
+- cleanup/simplification of exit path: SCMI protocols are generally never
+  de-initialized after the initial device creation, so do not deinit
+  notification core either (we do halt the delivery, stop the wq and empty
+  the queues though)
+- reduced contention on regustered_events_handler to the minimum during
+  delivery by splitting the common registered_events_handlers hashtable
+  into a number of per-protocol tables
+- converted registered_protocols and registered_events hastable to
+  fixed size arrays: simpler and lockless in our usage scenario
+
+v2 --> v3:
+- added platform instance awareness to the notification core: a
+  notification instance is created for each known handle
+- reviewed notification core initialization and shutdown process
+- removed generic non-handle-rooted registration API
+- added WQ_SYSFS flag to workqueue instance
+
+v1 --> v2:
+- dropped anti-tampering patch
+- rebased on top of scmi-for-next-5.6, which includes Viresh series that
+  make SCMI core independent of transport (5c8a47a5a91d)
+- add a few new SCMI transport methods on top of Viresh patch to address
+  needs of SCMI Notifications
+- reviewed/renamed scmi_handle_xfer_delayed_resp()
+- split main SCMI Notification core patch (~1k lines) into three chunks:
+  protocol-registration / callbacks-registration / dispatch-and-delivery
+- removed awkward usage of IDR maps in favour of pure hashtables
+- added enable/disable refcounting in notification core (was broken in v1)
+- removed per-protocol candidate API: a single generic API is now proposed
+  instead of scmi_register_<proto>_event_notifier(evt_id, *src_id, *nb)
+- added handle->notify_ops as an alternative notification API
+  for scmi_driver
+- moved ALL_SRCIDs enabled handling from protocol code to core code
+- reviewed protocol registration/unregistration logic to use devres
+- reviewed cleanup phase on shutdown
+- fixed  ERROR: reference preceded by free as reported by kbuild test robot
+
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git
+
+
+Cristian Marussi (10):
+  firmware: arm_scmi: Add notifications support in transport layer
+  firmware: arm_scmi: Add notification protocol-registration
+  firmware: arm_scmi: Add notification callbacks-registration
+  firmware: arm_scmi: Add notification dispatch and delivery
+  firmware: arm_scmi: Enable notification core
+  firmware: arm_scmi: Add Power notifications support
+  firmware: arm_scmi: Add Perf notifications support
+  firmware: arm_scmi: Add Sensor notifications support
+  firmware: arm_scmi: Add Reset notifications support
+  firmware: arm_scmi: Add Base notifications support
+
+Sudeep Holla (3):
+  firmware: arm_scmi: Add receive buffer support for notifications
+  firmware: arm_scmi: Update protocol commands and notification list
+  firmware: arm_scmi: Add support for notifications message processing
+
+ drivers/firmware/arm_scmi/Makefile  |    2 +-
+ drivers/firmware/arm_scmi/base.c    |  117 +++
+ drivers/firmware/arm_scmi/common.h  |   12 +
+ drivers/firmware/arm_scmi/driver.c  |  118 ++-
+ drivers/firmware/arm_scmi/mailbox.c |   17 +
+ drivers/firmware/arm_scmi/notify.c  | 1461 +++++++++++++++++++++++++++
+ drivers/firmware/arm_scmi/notify.h  |   78 ++
+ drivers/firmware/arm_scmi/perf.c    |  136 +++
+ drivers/firmware/arm_scmi/power.c   |  130 +++
+ drivers/firmware/arm_scmi/reset.c   |   97 ++
+ drivers/firmware/arm_scmi/sensors.c |   74 ++
+ drivers/firmware/arm_scmi/shmem.c   |   15 +
+ include/linux/scmi_protocol.h       |  107 ++
+ 13 files changed, 2337 insertions(+), 27 deletions(-)
+ create mode 100644 drivers/firmware/arm_scmi/notify.c
+ create mode 100644 drivers/firmware/arm_scmi/notify.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
