@@ -2,131 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B21FD1953E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:24:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E15EE1953F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 10:28:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RjJ78e7CySSz9PduBwgKTO2dnO6+sJwmdgnUVvaR7gM=; b=mPLGL8g4iBUhy0
-	On9FQi8rMmaaWC3m87yAYWRX/0hcA0mVh7Zy0Nr6vTux7a3ED/ntyvJ6J19Ikbod82yMGLrxYwA7i
-	NhUSFeekc05FJ3o6eDQ3b1Q8dcmrtm5zroF3i3B8HP3INo4RgEkDy0SuVfLZ6Shi7qUailpYbp3b3
-	mncUBPd4qsZH0hiEJa17XM3rP3bFIcGj9QI4kyTyWUoFtgPnQv+ZJEJhqBrMI0aSev5hLuGdHuX8g
-	C3q+3RM5LcrUyZ+zgnXLada5zadE36rhIuqkeHMYgkms/DEsvaVCSmzy4N6qqcQuIln2gUWX/JSio
-	bue/xf5VYtxT/cuDAcWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ju5sU1Qax4GR4x2lRSDwuWKqr9nQJiE5Wj/SplRkQVQ=; b=K4UP9C35wJld7O
+	avaCisRMmJIZmwlKhwga6X5DwXwejATIdGVj8Zet1JFaYQ2TjkVKmM21MDZobwKTLQ1X5pHhf11xp
+	MKlsBZG42DHRTIbYYdA/AAc1vmg/65naZhNLagnwHnB0iqb9tfc8HjycOLeD0SU7UOKFll8Gkq647
+	v/Z7+cpQhmSc+/a/1PczK/yO2MqJPm4i4Xt10hCP4/xPc5KHb7CwiBiXUHXJiulYfKgXpSx3/A4Tj
+	dnhwiAtFG1Zfv0DRl8f05Awk0NgkNu1oAdKl3Sjt6oucaqbk5asySmtD9hKjoMYn+ePnac3PQpaZW
+	dVpqHJJp57lmZTgG282g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHlDs-0002PD-9e; Fri, 27 Mar 2020 09:24:16 +0000
-Received: from esa3.hgst.iphmx.com ([216.71.153.141])
+	id 1jHlHW-00043C-IQ; Fri, 27 Mar 2020 09:28:02 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHlDj-0002NY-T6; Fri, 27 Mar 2020 09:24:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1585301048; x=1616837048;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=lDo/TSlkBXUgR3cgb8CY95Hs7rhKZIA0K1QveVkZAcY=;
- b=AKmIrwlom69+QE4JkW88LS4a4wrz27HLXmlgGRPRQMXoGw+edg0RXB9m
- 8Hi2Ms64YHLdVvticRE6jNHYDE+otxMU7mirtm3mJdj4B1z/coGhvXPBw
- EuqHparyeNdLUwjsUtunHoJgq4an0UdEHhPOPtKeYGiACOlxmTn4Tiqdh
- r0a68dv/GL3xytdOCHAhGRlheuG/Fvy4ldzsFFYyH0K3OnXZ1AwzaohSh
- 5r0cemcWrDBo5bBmfBvxQnl214sKw7LEqluAwtOxtdAXIGGo2e/XJA4mz
- 9ebvV8YBZk+g5zGe4/YBpCl34erOrjTVq5Fsy0Bt7IHRPlLGecdW3FwdK w==;
-IronPort-SDR: TZfSMZhkqogl972qsRXk5w2y5PEqUeP/6Ap+7G/P4ovh6W+qFg+8AqjHscwY8NjNxDq3h0uM5P
- Bj3XA9QVc9nPp7KgsFWISKfpJwLJevgqeNxmXBAuYjB6gnRFFU3C/uh46VFsx8trdqsZMpaHIf
- RodDiiAzC/oWOX2kiueTJzQex0dEt8gZ3EUaZLdpTyW65llRDCGqNXSjgG641YoeT+NPYdlpvu
- 4w4jLjoji7qQ7QouACsqjPn+rfy1vMTCfouf0P9cb7xlVp6dcgNK6kOyI/r3OrZmsE43Z/XUKP
- Axw=
-X-IronPort-AV: E=Sophos;i="5.72,311,1580745600"; d="scan'208";a="138050358"
-Received: from mail-cys01nam02lp2053.outbound.protection.outlook.com (HELO
- NAM02-CY1-obe.outbound.protection.outlook.com) ([104.47.37.53])
- by ob1.hgst.iphmx.com with ESMTP; 27 Mar 2020 17:24:04 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YjVqbucOBoFFR3M51SeypvF6HEKTEDyU5Jr26GUSnpF2GjTYZdukDJbLH0ru7oFPwj0s+q1b8sjVj/sVR4ABwupT7Z6FuZnUyTRi6Zj9r2LIq2JMC0JtYQ9JPl/hsSX3v7jhXoww+UXPNcTyBj21nwdT7gMyjBKz2jfAgHcHKXjLjKzerF6qeiHyl4EeTS17o6RkvHZTdhA4+Zva4c29TUy+/1n+KYmM6n0kL0qNxjqH67ZiilbC8pFtqqZ0ig13kKop6iygQ5teMK7Yd5WDDZt80QydlaC8mTZ0O02sOnAr+bU5GTRsnLbFYRPNidn6uF2o3ENjfflfYFiGnEVP4w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lDo/TSlkBXUgR3cgb8CY95Hs7rhKZIA0K1QveVkZAcY=;
- b=S+W7Bl2k9nwdNU4FFCrlrlQnF5MapRvyUzU9vKD+68bjD5spvVONfz3RAq3mYZc1+Z0n6/9RogMjcApJzbA1V8ZN+osYRIhq9mxgsZLW819tOLCfh+J2+jUSoIL8pFyqT3Dl0G1vsvRY+NVDZ+gRhQ30ZX5pYDsUQLrFGHvVNgQAIOxe8YAYcQ2Pn2s0vqepHqOVx5/ID2QcpW4ORSUc4Rr1gAN2v/eI4ClXHge0oci6t4J57gKPxK4k0unDm3nQs+3VwTgnIeCJlAa+s7Jx5gJEpp38dkrgSs+jwIfVVLtsc+Y3B7GdnVIYjNOnuE/EUhMn2y8RH58gd2+RvY+Hwg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lDo/TSlkBXUgR3cgb8CY95Hs7rhKZIA0K1QveVkZAcY=;
- b=gtilrnv7bgbOXem8Dlc2pbYHtGwn61pXTQtXt6eSSTWo3QKwBwhmBjDLo7g3SUtvvUerqTKfwyrAgh0wZ2MsIaG88hyXdsoGCx6v1j0+nv7YSMDwQqe0bs8BqoplkN3/UESvuFkUjKeZQLQ7hGPmdm4mbMxx+5u0MsjSyCi0Ps4=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB4061.namprd04.prod.outlook.com (2603:10b6:805:47::15)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.22; Fri, 27 Mar
- 2020 09:24:03 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b%5]) with mapi id 15.20.2856.019; Fri, 27 Mar 2020
- 09:24:03 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>
-Subject: RE: [PATCH v2 1/2] scsi: ufs: export ufshcd_link_recovery for
- vendor's error recovery
-Thread-Topic: [PATCH v2 1/2] scsi: ufs: export ufshcd_link_recovery for
- vendor's error recovery
-Thread-Index: AQHWA4BerP2CIkNwMUiOubR0qnVvTqhcK6kg
-Date: Fri, 27 Mar 2020 09:24:03 +0000
-Message-ID: <SN6PR04MB4640DF2D1EA1B3D6AF6C804CFCCC0@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200326150747.11426-1-stanley.chu@mediatek.com>
- <20200326150747.11426-2-stanley.chu@mediatek.com>
-In-Reply-To: <20200326150747.11426-2-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [2a00:a040:188:9054:d519:d5ac:475d:740a]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: f1afb3aa-26f6-423f-27fb-08d7d2309715
-x-ms-traffictypediagnostic: SN6PR04MB4061:
-x-microsoft-antispam-prvs: <SN6PR04MB40616EB2B8B4221BA8D84555FCCC0@SN6PR04MB4061.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:2000;
-x-forefront-prvs: 0355F3A3AE
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(4636009)(346002)(366004)(39860400002)(376002)(396003)(136003)(6506007)(66476007)(9686003)(66946007)(66446008)(558084003)(86362001)(110136005)(52536014)(66556008)(186003)(64756008)(7696005)(316002)(5660300002)(76116006)(4326008)(2906002)(54906003)(55016002)(478600001)(8676002)(33656002)(81166006)(71200400001)(8936002)(7416002)(81156014);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wmyWZtH0CrmrsJwPIYvOblcQazCjJ1ACTRHmreSRkEZbDdOL8Pq10NRnKrWftlYE90yYyUddGHynhudfOECi9UjauLRcGTR3YvzmKZar7xadmNXOX6INTAJ188+53lO9HGh+lrZlFRz+scwxqmnTUTEiQ6PtjOJdS7/t8VPiKM/OI3YM9PuQ9zYPyRuRc8uW4qzPGtbo3jCbEmNJzx2Z2I0se6noFA97EKiczBKk8C/4fK3f8lipMcFQZXW76/TpHT9WTXHGyn1+C8uHPNNtDl2T1DcZS5yuFe299o/uYhxCjhHjfVjKejvRmbbvi1oNauj1M6InwpE0mznSKIQ2R5jnypOeSKCrWS/0Azb4+Q/TifO4mAb7LAzrHO4m51UpELGbPehwciGTlil/EZ3TN4eZ0hNFcAZoCWDC3yOumP56P4fS5oyEr4N880ya/iwn
-x-ms-exchange-antispam-messagedata: A6vVVzeczgErC+z0TsrQbbTXQ85Y2tUlToYOP1pvRogQkwV1jQRMNeXeLM4ohC3u01TnaT5RcaVcFohjzQZlAAIXCrTXR5EBW6XzAh0P563aPjS1n3b4RSykJ5VXvo6siWzDMyT8YjkLVleuYNhin9yxk93j65hGvZFB+01pAqtqt8YDHdXNPcC40MZ7EWNhdk2SmmAo2vHeoiH3t0bn7w==
-x-ms-exchange-transport-forked: True
+ id 1jHlHK-00042Q-Dv
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 09:27:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585301267;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=nKC44OFEmNirL7cicSnNBjxC/T40AKVedLO1E68PJqw=;
+ b=GZayOmQgwOEc9OmUreXJ1cJM/EKwz8mXbFlI7n29s7chZFOxw5zzLxoH2Q/sToM9EY4vHW
+ wYu0HB3euqOJQSVCzsjlzkE0AOCMTl7ed5RRU4zNO14BgvTXGtRxtCwj6d3vJQ02U90CBJ
+ lzY7KgfYxwx4fMrTnZk4NfcYaejdjkc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-147-mU6Y2daOMyiaNxV8AiyHXQ-1; Fri, 27 Mar 2020 05:27:46 -0400
+X-MC-Unique: mU6Y2daOMyiaNxV8AiyHXQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5978D1005512;
+ Fri, 27 Mar 2020 09:27:44 +0000 (UTC)
+Received: from [10.36.112.108] (ovpn-112-108.ams2.redhat.com [10.36.112.108])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A14785C1D6;
+ Fri, 27 Mar 2020 09:27:41 +0000 (UTC)
+Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
+ use
+To: James Morse <james.morse@arm.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
+References: <20200326180730.4754-1-james.morse@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
+ dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
+ QZLQMzNE74ap+GDK0wnacPQFpcG1AE9RMq3aeErY5tujekBS32jfC/7AnH7I0v1v1TbbK3Gp
+ XNeiN4QroO+5qaSr0ID2sz5jtBLRb15RMre27E1ImpaIv2Jw8NJgW0k/D1RyKCwaTsgRdwuK
+ Kx/Y91XuSBdz0uOyU/S8kM1+ag0wvsGlpBVxRR/xw/E8M7TEwuCZQArqqTCmkG6HGcXFT0V9
+ PXFNNgV5jXMQRwU0O/ztJIQqsE5LsUomE//bLwzj9IVsaQpKDqW6TAPjcdBDPLHvriq7kGjt
+ WhVhdl0qEYB8lkBEU7V2Yb+SYhmhpDrti9Fq1EsmhiHSkxJcGREoMK/63r9WLZYI3+4W2rAc
+ UucZa4OT27U5ZISjNg3Ev0rxU5UH2/pT4wJCfxwocmqaRr6UYmrtZmND89X0KigoFD/XSeVv
+ jwBRNjPAubK9/k5NoRrYqztM9W6sJqrH8+UWZ1Idd/DdmogJh0gNC0+N42Za9yBRURfIdKSb
+ B3JfpUqcWwE7vUaYrHG1nw54pLUoPG6sAA7Mehl3nd4pZUALHwARAQABtCREYXZpZCBIaWxk
+ ZW5icmFuZCA8ZGF2aWRAcmVkaGF0LmNvbT6JAlgEEwEIAEICGwMFCQlmAYAGCwkIBwMCBhUI
+ AgkKCwQWAgMBAh4BAheAFiEEG9nKrXNcTDpGDfzKTd4Q9wD/g1oFAl3pImkCGQEACgkQTd4Q
+ 9wD/g1o+VA//SFvIHUAvul05u6wKv/pIR6aICPdpF9EIgEU448g+7FfDgQwcEny1pbEzAmiw
+ zAXIQ9H0NZh96lcq+yDLtONnXk/bEYWHHUA014A1wqcYNRY8RvY1+eVHb0uu0KYQoXkzvu+s
+ Dncuguk470XPnscL27hs8PgOP6QjG4jt75K2LfZ0eAqTOUCZTJxA8A7E9+XTYuU0hs7QVrWJ
+ jQdFxQbRMrYz7uP8KmTK9/Cnvqehgl4EzyRaZppshruKMeyheBgvgJd5On1wWq4ZUV5PFM4x
+ II3QbD3EJfWbaJMR55jI9dMFa+vK7MFz3rhWOkEx/QR959lfdRSTXdxs8V3zDvChcmRVGN8U
+ Vo93d1YNtWnA9w6oCW1dnDZ4kgQZZSBIjp6iHcA08apzh7DPi08jL7M9UQByeYGr8KuR4i6e
+ RZI6xhlZerUScVzn35ONwOC91VdYiQgjemiVLq1WDDZ3B7DIzUZ4RQTOaIWdtXBWb8zWakt/
+ ztGhsx0e39Gvt3391O1PgcA7ilhvqrBPemJrlb9xSPPRbaNAW39P8ws/UJnzSJqnHMVxbRZC
+ Am4add/SM+OCP0w3xYss1jy9T+XdZa0lhUvJfLy7tNcjVG/sxkBXOaSC24MFPuwnoC9WvCVQ
+ ZBxouph3kqc4Dt5X1EeXVLeba+466P1fe1rC8MbcwDkoUo65Ag0EVcufkQEQAOfX3n0g0fZz
+ Bgm/S2zF/kxQKCEKP8ID+Vz8sy2GpDvveBq4H2Y34XWsT1zLJdvqPI4af4ZSMxuerWjXbVWb
+ T6d4odQIG0fKx4F8NccDqbgHeZRNajXeeJ3R7gAzvWvQNLz4piHrO/B4tf8svmRBL0ZB5P5A
+ 2uhdwLU3NZuK22zpNn4is87BPWF8HhY0L5fafgDMOqnf4guJVJPYNPhUFzXUbPqOKOkL8ojk
+ CXxkOFHAbjstSK5Ca3fKquY3rdX3DNo+EL7FvAiw1mUtS+5GeYE+RMnDCsVFm/C7kY8c2d0G
+ NWkB9pJM5+mnIoFNxy7YBcldYATVeOHoY4LyaUWNnAvFYWp08dHWfZo9WCiJMuTfgtH9tc75
+ 7QanMVdPt6fDK8UUXIBLQ2TWr/sQKE9xtFuEmoQGlE1l6bGaDnnMLcYu+Asp3kDT0w4zYGsx
+ 5r6XQVRH4+5N6eHZiaeYtFOujp5n+pjBaQK7wUUjDilPQ5QMzIuCL4YjVoylWiBNknvQWBXS
+ lQCWmavOT9sttGQXdPCC5ynI+1ymZC1ORZKANLnRAb0NH/UCzcsstw2TAkFnMEbo9Zu9w7Kv
+ AxBQXWeXhJI9XQssfrf4Gusdqx8nPEpfOqCtbbwJMATbHyqLt7/oz/5deGuwxgb65pWIzufa
+ N7eop7uh+6bezi+rugUI+w6DABEBAAGJAiUEGAECAA8FAlXLn5ECGwwFCQlmAYAACgkQTd4Q
+ 9wD/g1qA6w/+M+ggFv+JdVsz5+ZIc6MSyGUozASX+bmIuPeIecc9UsFRatc91LuJCKMkD9Uv
+ GOcWSeFpLrSGRQ1Z7EMzFVU//qVs6uzhsNk0RYMyS0B6oloW3FpyQ+zOVylFWQCzoyyf227y
+ GW8HnXunJSC+4PtlL2AY4yZjAVAPLK2l6mhgClVXTQ/S7cBoTQKP+jvVJOoYkpnFxWE9pn4t
+ H5QIFk7Ip8TKr5k3fXVWk4lnUi9MTF/5L/mWqdyIO1s7cjharQCstfWCzWrVeVctpVoDfJWp
+ 4LwTuQ5yEM2KcPeElLg5fR7WB2zH97oI6/Ko2DlovmfQqXh9xWozQt0iGy5tWzh6I0JrlcxJ
+ ileZWLccC4XKD1037Hy2FLAjzfoWgwBLA6ULu0exOOdIa58H4PsXtkFPrUF980EEibUp0zFz
+ GotRVekFAceUaRvAj7dh76cToeZkfsjAvBVb4COXuhgX6N4pofgNkW2AtgYu1nUsPAo+NftU
+ CxrhjHtLn4QEBpkbErnXQyMjHpIatlYGutVMS91XTQXYydCh5crMPs7hYVsvnmGHIaB9ZMfB
+ njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
+ FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
+Organization: Red Hat GmbH
+Message-ID: <6725543d-81ee-537f-e132-ef26fe62c452@redhat.com>
+Date: Fri, 27 Mar 2020 10:27:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f1afb3aa-26f6-423f-27fb-08d7d2309715
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2020 09:24:03.0384 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ffeGwl3cYM/qg0WVq0HENWD+B309QI3fBqPJqsNOG7pR5qOvKofoCamJ7fEdOwomz3C1qUozTZvOz+yiQsELUA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4061
+In-Reply-To: <20200326180730.4754-1-james.morse@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_022407_952286_DD309934 
-X-CRM114-Status: UNSURE (   8.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200327_022751_024155_497BC1A7 
+X-CRM114-Status: GOOD (  20.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.205.24.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -136,6 +125,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,29 +137,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-> export ufshcd_link_recovery to allow vendors to recover failed link
-> in vendor's callbacks.
+On 26.03.20 19:07, James Morse wrote:
+> Hello!
 > 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
+> arm64 recently queued support for memory hotremove, which led to some
+> new corner cases for kexec.
+> 
+> If the kexec segments are loaded for a removable region, that region may
+> be removed before kexec actually occurs. This causes the first kernel to
+> lockup when applying the relocations. (I've triggered this on x86 too).
+> 
+> The first patch adds a memory notifier for kexec so that it can refuse
+> to allow in-use regions to be taken offline.
+
+IIRC other architectures handle that by setting the affected pages
+PageReserved. Any reason why to not stick to the same?
+
+> 
+> 
+> This doesn't solve the problem for arm64, where the new kernel must
+> initially rely on the data structures from the first boot to describe
+> memory. These don't describe hotpluggable memory.
+> If kexec places the kernel in one of these regions, it must also provide
+> a DT that describes the region in which the kernel was mapped as memory.
+> (and somehow ensure its always present in the future...)
+> 
+> To prevent this from happening accidentally with unaware user-space,
+> patches two and three allow arm64 to give these regions a different
+> name.
+> 
+> This is a change in behaviour for arm64 as memory hotadd and hotremove
+> were added separately.
+> 
+> 
+> I haven't tried kdump.
+> Unaware kdump from user-space probably won't describe the hotplug
+> regions if the name is different, which saves us from problems if
+> the memory is no longer present at kdump time, but means the vmcore
+> is incomplete.
+
+Whenever memory is added/removed, kdump.service is to be restarted from
+user space, which will fixup the data structures such that kdump will
+not try to dump unplugged memory. Also, makedumpfile will check if the
+sections are still around IIRC.
+
+Not sure what you mean by "Unaware kdump from user-space".
+
+
+-- 
+Thanks,
+
+David / dhildenb
+
 
 _______________________________________________
 linux-arm-kernel mailing list
