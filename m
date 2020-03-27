@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F3B6194ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 03:12:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9F53194F15
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 03:33:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F7O7ymBgAV3wB5DYgtXGlSDD18/nl4nmiCvYElJrlN0=; b=hBlkdyVklKHIN1
-	7MxupWepxVQ/xKlH6+I9rsSmmKvKLTLSsMIe4asgou6zIr99nVhvrEke2Kckor5PVqOCa83CxjNin
-	llzdix2yXS40Diks7lnzOwDoI0jifiEoYBG0PtREs99SwgKCxZukuRWtqwo80n9pCayfqw1b8rtkD
-	vC4J57qt9/6jox6fCk1pxeMT1MYt6orUL4bvSM5TOBTfngm9joWRgFEpIQzze5GMI2A38yQIEiSAz
-	o445xS64ghPIQDG8/H0L1y7/+OZtPeac/zVqW9pAyl2cvcpC1iwxk53OMXKvl4hvYvRMECZG/XOA0
-	vhFvlUWyIvHZ1oVsmsxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AONKrpFjjBZ/PRxfNSyOUjmuHwU/nSlySUA+rooJioA=; b=Wk9+7lJxC9kxef
+	o5dJryfUKZU/lIsIPD1iTzKT89drtWUPfzaLs+rJZh4NEIxV/j9xM9ISGWhbsGvUOMKnwqcHrnMQ0
+	ddmrQXnbCXlWFD8S5JaLuyj/1ElnvYwLjv19JAeBgJ2FFgmirWDQ5PnYokin9bBPSdgUV5MmXncY5
+	ytduVSZC2RFynpPjSFCA56ndVt4NSWYzNsfESi9WEMwgEz6wsuADmdnbSp4HREPOXmtQK+EGDHRTL
+	UmVDIcyvIruDtgaVSEjwiiPaoN7Bqbw7NJhS4EVjFLjzZVG7y+wOTQSjZFa1NqckwMcbr950sB+7J
+	qTTEkNxaQFSaDfq5jEoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHeTU-0000B2-R0; Fri, 27 Mar 2020 02:11:56 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jHeoa-0007y2-2B; Fri, 27 Mar 2020 02:33:44 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHeTK-0000A0-Vo
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 02:11:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585275104;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=sbvFtCf85KjSulH0Bc2qbNSx5w8nx9pPYQwDbWgAZV8=;
- b=DLen94jUFGe/vuCI1+ez9DMw2F3xm8meCxswTrTjhCmmtShpYM+WhFdGaAFfcgnKJ0ljmb
- soei5Orkd43kfAD8guakJovqSsjvgTa4jWvrLLkFHYX4FZw0okfv+1Vxp/snaPFmnYHMDv
- poIAAwKju85P8uiRAUdbGAEUTvsJslo=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-142-NBt8rRX-MWGT0URuP-JueQ-1; Thu, 26 Mar 2020 22:11:40 -0400
-X-MC-Unique: NBt8rRX-MWGT0URuP-JueQ-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 36244107ACC7;
- Fri, 27 Mar 2020 02:11:39 +0000 (UTC)
-Received: from localhost (ovpn-12-80.pek2.redhat.com [10.72.12.80])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 6B1E619C70;
- Fri, 27 Mar 2020 02:11:38 +0000 (UTC)
-Date: Fri, 27 Mar 2020 10:11:35 +0800
-From: Baoquan He <bhe@redhat.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
- use
-Message-ID: <20200327021135.GN3039@MiWiFi-R3L-srv>
-References: <20200326180730.4754-1-james.morse@arm.com>
+ id 1jHeoO-0007xl-Bm
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 02:33:34 +0000
+IronPort-SDR: /7A8/YKcuSJXPXW729GDybwgpYQz/F9ZEYdyv68/6diMjVSWTSK+Xvv9+9/aXt3P9TXFXBWunX
+ OLPjF1lPUwpQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 26 Mar 2020 19:33:31 -0700
+IronPort-SDR: 05yf7IhXVv53KWRvXq7JoDeqQyj789+xjeNpSGjUUXXK02zff9YY1tbESeFAC0GrJrZ6clg2V3
+ E45Qf26QilZA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,310,1580803200"; d="scan'208";a="240845360"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga008.fm.intel.com with ESMTP; 26 Mar 2020 19:33:30 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jHeoL-00081Q-NJ; Fri, 27 Mar 2020 10:33:29 +0800
+Date: Fri, 27 Mar 2020 10:33:25 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: [arm-soc:arm/dt] BUILD SUCCESS
+ 0d69ac522587d3cb3ded511f5bdd8af968e60d8b
+Message-ID: <5e7d65f5.I8uK+O/4AZpFRzNx%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-In-Reply-To: <20200326180730.4754-1-james.morse@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_191147_096665_E841373B 
-X-CRM114-Status: GOOD (  22.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_193332_489582_3BF30C9D 
+X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,88 +72,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/26/20 at 06:07pm, James Morse wrote:
-> Hello!
-> 
-> arm64 recently queued support for memory hotremove, which led to some
-> new corner cases for kexec.
-> 
-> If the kexec segments are loaded for a removable region, that region may
-> be removed before kexec actually occurs. This causes the first kernel to
-> lockup when applying the relocations. (I've triggered this on x86 too).
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/dt
+branch HEAD: 0d69ac522587d3cb3ded511f5bdd8af968e60d8b  arm64: dts: Revert "specify console via command line"
 
-Do you mean you use 'kexec -l /boot/vmlinuz-xxxx --initrd ...' to load a
-kernel, next you hot remove some memory regions, then you execute
-'kexec -e' to trigger kexec reboot?
+elapsed time: 514m
 
-I may not get the point clearly, but we usually do the loading and
-triggering of kexec-ed kernel at the same time. 
+configs tested: 152
+configs skipped: 0
 
-> 
-> The first patch adds a memory notifier for kexec so that it can refuse
-> to allow in-use regions to be taken offline.
-> 
-> 
-> This doesn't solve the problem for arm64, where the new kernel must
-> initially rely on the data structures from the first boot to describe
-> memory. These don't describe hotpluggable memory.
-> If kexec places the kernel in one of these regions, it must also provide
-> a DT that describes the region in which the kernel was mapped as memory.
-> (and somehow ensure its always present in the future...)
-> 
-> To prevent this from happening accidentally with unaware user-space,
-> patches two and three allow arm64 to give these regions a different
-> name.
-> 
-> This is a change in behaviour for arm64 as memory hotadd and hotremove
-> were added separately.
-> 
-> 
-> I haven't tried kdump.
-> Unaware kdump from user-space probably won't describe the hotplug
-> regions if the name is different, which saves us from problems if
-> the memory is no longer present at kdump time, but means the vmcore
-> is incomplete.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Currently, we will monitor udev events of mem hot add/remove, then
-reload kdump kernel. That reloading is only update the elfcorehdr,
-because crashkernel has to be reserved during 1st kernel bootup. I don't
-think this will have problem.
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+s390                             allyesconfig
+h8300                       h8s-sim_defconfig
+i386                              allnoconfig
+i386                             alldefconfig
+i386                             allyesconfig
+i386                                defconfig
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+ia64                                defconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+nds32                               defconfig
+nds32                             allnoconfig
+csky                                defconfig
+alpha                               defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                            allnoconfig
+parisc                           allyesconfig
+parisc                generic-32bit_defconfig
+parisc                generic-64bit_defconfig
+x86_64               randconfig-a001-20200326
+x86_64               randconfig-a002-20200326
+x86_64               randconfig-a003-20200326
+i386                 randconfig-a001-20200326
+i386                 randconfig-a002-20200326
+i386                 randconfig-a003-20200326
+alpha                randconfig-a001-20200326
+m68k                 randconfig-a001-20200326
+mips                 randconfig-a001-20200326
+nds32                randconfig-a001-20200326
+parisc               randconfig-a001-20200326
+riscv                randconfig-a001-20200326
+c6x                  randconfig-a001-20200327
+h8300                randconfig-a001-20200327
+microblaze           randconfig-a001-20200327
+nios2                randconfig-a001-20200327
+sparc64              randconfig-a001-20200327
+csky                 randconfig-a001-20200326
+openrisc             randconfig-a001-20200326
+s390                 randconfig-a001-20200326
+xtensa               randconfig-a001-20200326
+sh                   randconfig-a001-20200326
+x86_64               randconfig-c001-20200326
+x86_64               randconfig-c002-20200326
+x86_64               randconfig-c003-20200326
+i386                 randconfig-c001-20200326
+i386                 randconfig-c002-20200326
+i386                 randconfig-c003-20200326
+x86_64               randconfig-e001-20200326
+x86_64               randconfig-e002-20200326
+x86_64               randconfig-e003-20200326
+i386                 randconfig-e001-20200326
+i386                 randconfig-e002-20200326
+i386                 randconfig-e003-20200326
+x86_64               randconfig-f001-20200326
+x86_64               randconfig-f002-20200326
+x86_64               randconfig-f003-20200326
+i386                 randconfig-f001-20200326
+i386                 randconfig-f002-20200326
+i386                 randconfig-f003-20200326
+x86_64               randconfig-g001-20200326
+x86_64               randconfig-g002-20200326
+x86_64               randconfig-g003-20200326
+i386                 randconfig-g001-20200326
+i386                 randconfig-g002-20200326
+i386                 randconfig-g003-20200326
+x86_64               randconfig-h001-20200326
+x86_64               randconfig-h002-20200326
+x86_64               randconfig-h003-20200326
+i386                 randconfig-h001-20200326
+i386                 randconfig-h002-20200326
+i386                 randconfig-h003-20200326
+arc                  randconfig-a001-20200326
+arm                  randconfig-a001-20200326
+arm64                randconfig-a001-20200326
+ia64                 randconfig-a001-20200326
+powerpc              randconfig-a001-20200326
+sparc                randconfig-a001-20200326
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+riscv                            allmodconfig
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+um                           x86_64_defconfig
+um                             i386_defconfig
+um                                  defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
 
-> 
-> 
-> These patches are based on arm64's for-next/core branch, but can all
-> be merged independently.
-> 
-> Thanks,
-> 
-> James Morse (3):
->   kexec: Prevent removal of memory in use by a loaded kexec image
->   mm/memory_hotplug: Allow arch override of non boot memory resource
->     names
->   arm64: memory: Give hotplug memory a different resource name
-> 
->  arch/arm64/include/asm/memory.h | 11 +++++++
->  kernel/kexec_core.c             | 56 +++++++++++++++++++++++++++++++++
->  mm/memory_hotplug.c             |  6 +++-
->  3 files changed, 72 insertions(+), 1 deletion(-)
-> 
-> -- 
-> 2.25.1
-> 
-> 
-
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
