@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7477B195E8E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:22:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEA16195E8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:22:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8LVpnq0LQe1m0wqKvsjNDy1HmfG5ek4vnyQTsuLvgzo=; b=n6RC/jJOBFdS/6
-	aoo/kOStsh1yMWMqq5jvYJMaHQef5bv0IedVp87SV7OgWIaJENRi7ldqyJtNqy+x+UeOJgHBchNPi
-	U2BGCh3Sbx2rW3i6SVfQQU9YRsvhQaKpgD7/J0JGkzDkfxzITDO9VF8uwqqkaaSVoR2slAZZxTGdg
-	4gRgr7vDVwJJKUbxRlEf4e21ngpNJOayXqDCKcZYXlAiZp3dJtCEYHL9OIOxIsyYEKzBzB84pmLiF
-	znw5xonD3gq5IslkXZWW9y7ol1+TXyLqsOhhp2u5C2qp2xGsKSUlwiDNw+9TRko9oFl5nTAGMrg8n
-	SpnFZqoMTzsvQ8CxQ0Tw==;
+	List-Owner; bh=VMqDkZ5v7VfPyjA21pxMLJSxo2bsUBRqRoM/SAkijFo=; b=MK/6Z5cH90yBoj
+	WpuS4GAtqYFIWLALL2WFOueMaszKfTxqzNuiswuB8GnZ5xtDbg3rcWte64n7QXoZvePVhOPPY13v6
+	6se9ywgneq1t64txQuAyCL8dYkpH9ySDhos8FVfuvrbGz565lzb85jIapeB2xR1i9XhJ6hP65EHU/
+	KMOWMZj0GfndhaZ/VaPzvLPn7YPd8DCTnpi0/jUFtpznAu6e6LBHGNESnt8WjWynepykwBaQbBWqr
+	eXpP4R+Kbb8i2QEzkwnr9v/6EZCc/FKCF2vx87j/itoR+NwQVbcP6P33fioWfFitS5GW+bfH6sxlg
+	W4yXlJHzjjLVdS93ut2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHuZ3-0002xM-JE; Fri, 27 Mar 2020 19:22:45 +0000
+	id 1jHuYq-0002kV-Jw; Fri, 27 Mar 2020 19:22:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHuXm-0001gI-J7
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:21:27 +0000
+ id 1jHuXq-0001p0-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:21:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 380C1101E;
- Fri, 27 Mar 2020 12:21:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6DE4D30E;
+ Fri, 27 Mar 2020 12:21:28 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE4443F71E;
- Fri, 27 Mar 2020 12:21:25 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E37DA3F71E;
+ Fri, 27 Mar 2020 12:21:27 -0700 (PDT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH 4/5] arm64: mm: Mark module text as guarded pages
-Date: Fri, 27 Mar 2020 19:21:06 +0000
-Message-Id: <20200327192107.18394-5-broonie@kernel.org>
+Subject: [PATCH 5/5] arm64: bti: Provide Kconfig for kernel mode BTI
+Date: Fri, 27 Mar 2020 19:21:07 +0000
+Message-Id: <20200327192107.18394-6-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200327192107.18394-1-broonie@kernel.org>
 References: <20200327192107.18394-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_122126_687514_053DF128 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20200327_122130_229294_0C7F9300 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -71,35 +71,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the kernel is built for BTI and running on a system which supports
-it extend guard page coverage to include executable code from loadable
-modules.
+Now that all the code is in place provide a Kconfig option allowing users
+to enable BTI for the kernel if their toolchain supports it, defaulting it
+on since this has security benefits. This is a separate configuration
+option since we currently don't support secondary CPUs that lack BTI if
+the boot CPU supports it.
+
+Current testing appears to show an issue with GCC which causes it to
+emit unsuitable landing pads for function entries in some cases, until
+this issue is understood and either our usage fixed or a suitable
+version of GCC is identified the feature is marked as incompatible with
+GCC.  No issues have been identified with clang.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/mm/pageattr.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/Kconfig | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
-index 250c49008d73..bde08090b838 100644
---- a/arch/arm64/mm/pageattr.c
-+++ b/arch/arm64/mm/pageattr.c
-@@ -126,13 +126,13 @@ int set_memory_nx(unsigned long addr, int numpages)
- {
- 	return change_memory_common(addr, numpages,
- 					__pgprot(PTE_PXN),
--					__pgprot(0));
-+					__pgprot(PTE_MAYBE_GP));
- }
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 00cb4db4beab..25bb0931b2ba 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1607,6 +1607,24 @@ config ARM64_BTI
+ 	  BTI, such binaries can still run, but you get no additional
+ 	  enforcement of branch destinations.
  
- int set_memory_x(unsigned long addr, int numpages)
- {
- 	return change_memory_common(addr, numpages,
--					__pgprot(0),
-+					__pgprot(PTE_MAYBE_GP),
- 					__pgprot(PTE_PXN));
- }
- 
++config ARM64_BTI_KERNEL
++	bool "Use Branch Target Identification for kernel"
++	default y
++	depends on ARM64_BTI
++	depends on ARM64_PTR_AUTH
++	depends on CC_HAS_BRANCH_PROT_PAC_RET_BTI
++	depends on !CC_IS_GCC
++	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
++	help
++	  Build the kernel with Branch Target Identification annotations
++	  and enable enforcement of this for kernel code. When this option
++	  is enabled and the system supports BTI all kernel code including
++	  modular code must have BTI enabled.
++
++config CC_HAS_BRANCH_PROT_PAC_RET_BTI
++	# GCC 9 or later, clang 8 or later
++	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf+bti)
++
+ config ARM64_E0PD
+ 	bool "Enable support for E0PD"
+ 	default y
 -- 
 2.20.1
 
