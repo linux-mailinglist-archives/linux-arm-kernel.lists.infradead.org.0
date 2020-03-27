@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41A4B1957F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:24:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AAEE1957F4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 14:24:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RH4T2bE7n7Yedfpw55dQNX6bxGU8fwDTr9tjyuaUoAo=; b=eJ8tvxZbSF+2WV
-	vM+5tS6LrIn5oXFGDJb96fyD08EN6KZeWeFUUYK0lK3VP0GIhRSKgD1a+8w3tv4QGJ2yCvm0Utz4R
-	yZKQHGY9mGXYOuXcIIOe0+uUITWowIuWMCSqDq3Tk6Ji5HEVpNB8BG2AZx1GwIwjwG3IDf8PoprCr
-	Bz2gm+y9lrDIWtYhc4KTSO1rkhlNWeHIjTtGrzZ5l8UnaLL86bngnCi1eWqx+WOpBWXsLn2TJHj8A
-	rTbYZw1zbShvY0l+1cQWSk/KSfafTi/EnBTeOzv06a7NKiNT7mgpUDEF+eTKWEzpkqQt26gYjJA17
-	Q7ockT7oTA29+ispkvQQ==;
+	List-Owner; bh=v3whQBFRp62RZWf0f/qJB4dDTSSmNOlhEpaRlKHScmc=; b=WvdBMbKHV8457w
+	JjklqRj17TRbhUZbGVkhmg3MEPxX9xSO+8LlbEFI37IRGgyvq/o5LwHcxZj+gtf503rpNGByLivza
+	wRhL1gswZcB27NSjmNQHPNiwM/7SyAho3Vx94c+wJCG2eS0CUbzkstuw6Bzfe+vjl/ZUgGg0OBfH/
+	PzNqpZCZ9UAz2zUK+gBy+OWTF2A5IcFNV992hVR/Hw7R4vJDxz23Cu8x2xOqJpJEDxPWnF0mvuqhg
+	2/XUZQo721WD9BcbWta8bu42rrgveWU6aMblxebAeP5WqdjAAay5NgjQz1Ln3XZ4Z7tOrvCKnyTl0
+	jqLGonSl5e7uy/O3wo0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHoy0-0006ot-D6; Fri, 27 Mar 2020 13:24:08 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1jHoyS-00074Z-48; Fri, 27 Mar 2020 13:24:36 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHoxp-0006oU-J6
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:23:58 +0000
-Received: by mail-oi1-f193.google.com with SMTP id l22so8689084oii.12
+ id 1jHoyI-000740-10
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 13:24:27 +0000
+Received: by mail-oi1-f195.google.com with SMTP id y71so8723000oia.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 06:23:57 -0700 (PDT)
+ Fri, 27 Mar 2020 06:24:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=m+WEAAjpFVGS5XNVSI7hGlF53hkZ5JzPMh1exX/nd7A=;
- b=Vh6gYZuonWdVpUOFqRKkeYEmEx8g6VeISNzdPZLYabrpDebMKS2NBPsFkXIenOUBhA
- +pXkDl6Ql/1upI3XHry8wDgo1TJ6dwHyV3jYd0l19FtlnX/XD7gxmNh5hy7E1Ehbfflr
- CezRBVJ9MWvbhknizmXlnQGGsnu2oF3b5GT7GkLKy3Orauo4TB9sGtDXjHcHZs7h8BT5
- Iqv+JAajHYOShNW/ufhXm0qkkjXdpy/XKAShQ2ddwiwreRXFhxijZ7hD2gwNfuutZkja
- jW6qUAgPjvPWyRFvT0wtY57wkQww2jAqPsIVUIrhbUjhe6XbPabTm7Psch8Q8Led7QLJ
- r4Ag==
-X-Gm-Message-State: ANhLgQ3X9a1bCBp3BnWliEWD42Vd7IZV7ek/t0p9HWtzYYcM/4+UnZCb
- 37BQOZ73/WymfS2UAQuBY0hlKJSC3dNlZJCvkDw=
-X-Google-Smtp-Source: ADFU+vveUylW7NUdtNIS6kGStAP/O+DSrZAqcOLTdjptfRqhLxllGNxMNINXKMIMb12Qh8NWKXA4jI04joDgV7yQ8mQ=
-X-Received: by 2002:aca:cdd1:: with SMTP id d200mr3706401oig.153.1585315437038; 
- Fri, 27 Mar 2020 06:23:57 -0700 (PDT)
+ bh=OKthXtFlNti0LSi4OUZW/5dQsmpNf9se60/riHk1XAk=;
+ b=hvQpWCOkNPo/jy17oybtQikGswv77HJlgvYW74ZA2AWyd/HgiUwFRyhTc0OKyvz34E
+ BggItdLPQdqHOj+5KM2hSLnkQ/ggHcqaZ6obs+/0vSQd675wPDFQnFvLIKVPtJcQoBf3
+ SPDD5K7/1eBhyVaWB2KHkZGQkXxQy6Cqhusrm7ixZ4uKKqco71u7LxYLT7oxTFzkWBXj
+ CBp/hx8zwx4C4qfI6sMtz565WlO9MpdoNGcCBmEYOlnARxuVtZG41PXwFKHuPsmYhoZB
+ LycOYo3CgJQHq9EjmRSanbPeyP3EjQQp51ZvLbZ9BC1Rjs1hDtPKaeFFDGZvM4oAk+jp
+ ddvQ==
+X-Gm-Message-State: ANhLgQ3linM8uqrQ1/hx2YfrnPM6TNhlOjA4r9/ICwl+HmhT0th4GWj7
+ WO8fTNKUKlYQW0gm3yOBS4d2k/kqMWTpu4swlzM=
+X-Google-Smtp-Source: ADFU+vswoFq/dDr3qtbsUGZVp2CzdOz0pAn3X10jnaCb7tmV/fihHKD+GJxSWHt9DZGsDGJs3HUQaf2OBy+b5vhI32o=
+X-Received: by 2002:aca:ad93:: with SMTP id w141mr4042623oie.54.1585315465084; 
+ Fri, 27 Mar 2020 06:24:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200327105906.2665-1-ardb@kernel.org>
- <20200327105906.2665-3-ardb@kernel.org>
-In-Reply-To: <20200327105906.2665-3-ardb@kernel.org>
+ <20200327105906.2665-4-ardb@kernel.org>
+In-Reply-To: <20200327105906.2665-4-ardb@kernel.org>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 27 Mar 2020 14:23:46 +0100
-Message-ID: <CAMuHMdWm-Q=B6JZz5VumdFfRcZOTRwT0niugEYrGHbv-id8dZw@mail.gmail.com>
-Subject: Re: [PATCH 2/5] ARM: decompressor: split off _edata and stack base
- into separate object
+Date: Fri, 27 Mar 2020 14:24:14 +0100
+Message-ID: <CAMuHMdW35FXXvCFY6euA2p5YqN36-Q4M-5kbAvhhypr1K20uLQ@mail.gmail.com>
+Subject: Re: [PATCH 3/5] ARM: decompressor: defer loading of the contents of
+ the LC0 structure
 To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_062357_623462_4866DD47 
-X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-CacheID: sfid-20200327_062426_368426_B949B9C9 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -62,15 +62,15 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,10 +94,12 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Fri, Mar 27, 2020 at 11:59 AM Ard Biesheuvel <ardb@kernel.org> wrote:
-> In preparation of moving the handling of the LC0 object to a later stage
-> in the decompressor startup code, move out _edata and the initial value
-> of the stack pointer, which are now used in two places, and are needed
-> earlier than the remaining contents of LC0.
+> The remaining contents of LC0 are only used after the point in the
+> decompressor startup code where we enter via 'wont_overwrite'. So
+> move the loading of the LC0 structure after it. This will allow us
+> to jump to wont_overwrite directly from the EFI stub, and execute
+> the decompressor in place at the offset it was loaded by the UEFI
+> firmware.
 >
 > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 
