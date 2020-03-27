@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D442A195931
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:38:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95F0019592E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 15:38:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OdPhSrbKCfv0EetD37orsbADOfQ/l1/ecmZkCZA83Wg=; b=LZq+KLO73j9f1gPCzDmhIDEg+E
-	r/7+GpBsVvkXEOgjokIMs1kX1GDLCerIWnYDoPSgHhuzXEx5g7nLT6t3yNy7cQ9JtB1Imzc2KRkNV
-	fUe2EM8yqDCKjYKo5zGTRTCZwGz8AhpC3hGqNcYDkWGUjDhFjrTF1mMpMkE5+9tqBTNcuX95UMTml
-	2unKyHPJob3G5wP9BR74QbvNxM7MlTOfTvOvVcqPL6V5483FzttSJR7EQjA5aN2u6y948QYcpUjJb
-	lKOzLSE+wOrMHWeVPKpvMUv238VAYgjGEeKdklpyk2z5Aun6OlK1h7aDwGri+z3KLsO1Nd6fvMa/Z
-	yj8PboQw==;
+	bh=rE92ueGPZpJ51iFl5kVPZg9d3hhfbAdBv80nLFkVoLw=; b=VdIHh50jPbuJ1FEKTKg3MZeiJv
+	2aszOx+XGxl2ZeOPnjMTHMzJvYaMAFq0ZoJzl6eIpzSZdVvdSDJfHHcMad59YEcjsBA/JazXeJ7gn
+	BGz1YmWL3M1iaGwM17A+jFOYzcvaxo+6dAGjJ0iXND/0xwd5S3gOFd7z7snI5YO6WgUFtXZQG+S4a
+	3k23Q+yhn9JjAYE7l4WfPN0g4D0Wu01+6wy7vUl/7EHDS0JO+umLCI9p5s5nJfVAKhWEuaZ0Z1qrz
+	sfwIcQNajk/vA9o6mVVwSkjszkPckn9dbRkFk0eQgYVaRiCQ7pYX83Y/j9ECkGZWsDZfUO720KbvQ
+	CH0f7m8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHq8H-00005z-0z; Fri, 27 Mar 2020 14:38:49 +0000
+	id 1jHq7o-00082w-5E; Fri, 27 Mar 2020 14:38:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHq4e-0004RR-2J
+ id 1jHq4d-0004IW-Tu
  for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 14:35:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 212E513A1;
- Fri, 27 Mar 2020 07:35:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F73913D5;
+ Fri, 27 Mar 2020 07:35:03 -0700 (PDT)
 Received: from e120937-lin.home (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FB293F71F;
- Fri, 27 Mar 2020 07:35:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56AF63F71F;
+ Fri, 27 Mar 2020 07:35:02 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v6 12/13] firmware: arm_scmi: Add Reset notifications support
-Date: Fri, 27 Mar 2020 14:34:37 +0000
-Message-Id: <20200327143438.5382-13-cristian.marussi@arm.com>
+Subject: [PATCH v6 13/13] firmware: arm_scmi: Add Base notifications support
+Date: Fri, 27 Mar 2020 14:34:38 +0000
+Message-Id: <20200327143438.5382-14-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200327143438.5382-1-cristian.marussi@arm.com>
 References: <20200327143438.5382-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_073504_470465_6DAAED95 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20200327_073504_202262_904B4304 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,7 +70,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make SCMI Reset protocol register with the notification core.
+Make SCMI Base protocol register with the notification core.
 
 Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
@@ -89,59 +89,61 @@ V1 --> V2
   notification core, together with proper reference counting of enables
 - switched to devres protocol-registration
 ---
- drivers/firmware/arm_scmi/reset.c | 97 +++++++++++++++++++++++++++++++
- include/linux/scmi_protocol.h     |  6 ++
- 2 files changed, 103 insertions(+)
+ drivers/firmware/arm_scmi/base.c | 110 +++++++++++++++++++++++++++++++
+ include/linux/scmi_protocol.h    |   8 +++
+ 2 files changed, 118 insertions(+)
 
-diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
-index de73054554f3..820907e1a503 100644
---- a/drivers/firmware/arm_scmi/reset.c
-+++ b/drivers/firmware/arm_scmi/reset.c
-@@ -6,6 +6,7 @@
+diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+index ce7d9203e41b..4eb892df90cd 100644
+--- a/drivers/firmware/arm_scmi/base.c
++++ b/drivers/firmware/arm_scmi/base.c
+@@ -6,6 +6,9 @@
   */
  
  #include "common.h"
 +#include "notify.h"
++
++#define SCMI_BASE_NUM_SOURCES	1
  
- enum scmi_reset_protocol_cmd {
- 	RESET_DOMAIN_ATTRIBUTES = 0x3,
-@@ -40,6 +41,17 @@ struct scmi_msg_reset_domain_reset {
- #define ARCH_COLD_RESET		(ARCH_RESET_TYPE | COLD_RESET_STATE)
+ enum scmi_base_protocol_cmd {
+ 	BASE_DISCOVER_VENDOR = 0x3,
+@@ -29,6 +32,19 @@ struct scmi_msg_resp_base_attributes {
+ 	__le16 reserved;
  };
  
-+struct scmi_msg_reset_notify {
-+	__le32 id;
++struct scmi_msg_base_error_notify {
 +	__le32 event_control;
-+#define RESET_TP_NOTIFY_ALL	BIT(0)
++#define BASE_TP_NOTIFY_ALL	BIT(0)
 +};
 +
-+struct scmi_reset_issued_notify_payld {
-+	__le32 domain_id;
-+	__le32 reset_state;
++struct scmi_base_error_notify_payld {
++	__le32 agent_id;
++	__le32 error_status;
++#define IS_FATAL_ERROR(x)	((x) & BIT(31))
++#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
++	__le64 msg_reports[8192];
 +};
 +
- struct reset_dom_info {
- 	bool async_reset;
- 	bool reset_notify;
-@@ -190,6 +202,85 @@ static struct scmi_reset_ops reset_ops = {
- 	.deassert = scmi_reset_domain_deassert,
- };
+ /**
+  * scmi_base_attributes_get() - gets the implementation details
+  *	that are associated with the base protocol.
+@@ -222,6 +238,94 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
+ 	return ret;
+ }
  
-+static int scmi_reset_notify(const struct scmi_handle *handle, u32 domain_id,
-+			     bool enable)
++static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
 +{
 +	int ret;
-+	u32 evt_cntl = enable ? RESET_TP_NOTIFY_ALL : 0;
++	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
 +	struct scmi_xfer *t;
-+	struct scmi_msg_reset_notify *cfg;
++	struct scmi_msg_base_error_notify *cfg;
 +
-+	ret = scmi_xfer_get_init(handle, RESET_NOTIFY,
-+				 SCMI_PROTOCOL_RESET, sizeof(*cfg), 0, &t);
++	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
++				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
 +	if (ret)
 +		return ret;
 +
 +	cfg = t->tx.buf;
-+	cfg->id = cpu_to_le32(domain_id);
 +	cfg->event_control = cpu_to_le32(evt_cntl);
 +
 +	ret = scmi_do_xfer(handle, t);
@@ -150,39 +152,50 @@ index de73054554f3..820907e1a503 100644
 +	return ret;
 +}
 +
-+static bool scmi_reset_set_notify_enabled(const struct scmi_handle *handle,
-+					  u8 evt_id, u32 src_id, bool enable)
++static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
++					 u8 evt_id, u32 src_id, bool enable)
 +{
 +	int ret;
 +
-+	ret = scmi_reset_notify(handle, src_id, enable);
++	ret = scmi_base_error_notify(handle, enable);
 +	if (ret)
-+		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] dom[%d] - ret:%d\n",
-+			SCMI_PROTOCOL_RESET, evt_id, src_id, ret);
++		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
++			SCMI_PROTOCOL_BASE, evt_id, ret);
 +
 +	return !ret;
 +}
 +
-+static void *scmi_reset_fill_custom_report(const struct scmi_handle *handle,
-+					   u8 evt_id, u64 timestamp,
-+					   const void *payld, size_t payld_sz,
-+					   void *report, u32 *src_id)
++static void *scmi_base_fill_custom_report(const struct scmi_handle *handle,
++					  u8 evt_id, u64 timestamp,
++					  const void *payld, size_t payld_sz,
++					  void *report, u32 *src_id)
 +{
 +	void *rep = NULL;
 +
 +	switch (evt_id) {
-+	case RESET_ISSUED:
++	case BASE_ERROR_EVENT:
 +	{
-+		const struct scmi_reset_issued_notify_payld *p = payld;
-+		struct scmi_reset_issued_report *r = report;
++		int i;
++		const struct scmi_base_error_notify_payld *p = payld;
++		struct scmi_base_error_report *r = report;
 +
-+		if (sizeof(*p) != payld_sz)
++		/*
++		 * BaseError notification payload is variable in size but
++		 * up to a maximum length determined by the struct ponted by p.
++		 * Instead payld_sz is the effective length of this notification
++		 * payload so cannot be greater of the maximum allowed size as
++		 * pointed by p.
++		 */
++		if (sizeof(*p) < payld_sz)
 +			break;
 +
 +		r->timestamp = timestamp;
-+		r->domain_id = le32_to_cpu(p->domain_id);
-+		r->reset_state = le32_to_cpu(p->reset_state);
-+		*src_id = r->domain_id;
++		r->agent_id = le32_to_cpu(p->agent_id);
++		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
++		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
++		for (i = 0; i < r->cmd_count; i++)
++			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
++		*src_id = 0;
 +		rep = r;
 +		break;
 +	}
@@ -193,47 +206,49 @@ index de73054554f3..820907e1a503 100644
 +	return rep;
 +}
 +
-+static const struct scmi_event reset_events[] = {
++static const struct scmi_event base_events[] = {
 +	{
-+		.id = RESET_NOTIFY,
-+		.max_payld_sz = 8,
-+		.max_report_sz = sizeof(struct scmi_reset_issued_report),
++		.id = BASE_ERROR_EVENT,
++		.max_payld_sz = 8192,
++		.max_report_sz = sizeof(struct scmi_base_error_report),
 +	},
 +};
 +
-+static const struct scmi_protocol_event_ops reset_event_ops = {
-+	.set_notify_enabled = scmi_reset_set_notify_enabled,
-+	.fill_custom_report = scmi_reset_fill_custom_report,
++static const struct scmi_protocol_event_ops base_event_ops = {
++	.set_notify_enabled = scmi_base_set_notify_enabled,
++	.fill_custom_report = scmi_base_fill_custom_report,
 +};
 +
- static int scmi_reset_protocol_init(struct scmi_handle *handle)
+ int scmi_base_protocol_init(struct scmi_handle *h)
  {
- 	int domain;
-@@ -218,6 +309,12 @@ static int scmi_reset_protocol_init(struct scmi_handle *handle)
- 		scmi_reset_domain_attributes_get(handle, domain, dom);
- 	}
+ 	int id, ret;
+@@ -256,6 +360,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
+ 	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
+ 		rev->num_agents);
  
 +	scmi_register_protocol_events(handle,
-+				      SCMI_PROTOCOL_RESET, PAGE_SIZE,
-+				      &reset_event_ops, reset_events,
-+				      ARRAY_SIZE(reset_events),
-+				      pinfo->num_domains);
++				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
++				      &base_event_ops, base_events,
++				      ARRAY_SIZE(base_events),
++				      SCMI_BASE_NUM_SOURCES);
 +
- 	pinfo->version = version;
- 	handle->reset_ops = &reset_ops;
- 	handle->reset_priv = pinfo;
+ 	for (id = 0; id < rev->num_agents; id++) {
+ 		scmi_base_discover_agent_get(handle, id, name);
+ 		dev_dbg(dev, "Agent %d: %s\n", id, name);
 diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 0f40ecd0609c..0afa945fd04b 100644
+index 0afa945fd04b..1a39cfd863e0 100644
 --- a/include/linux/scmi_protocol.h
 +++ b/include/linux/scmi_protocol.h
-@@ -411,4 +411,10 @@ struct scmi_sensor_trip_point_report {
- 	u32	trip_point_desc;
+@@ -417,4 +417,12 @@ struct scmi_reset_issued_report {
+ 	u32	reset_state;
  };
  
-+struct scmi_reset_issued_report {
++struct scmi_base_error_report {
 +	ktime_t	timestamp;
-+	u32	domain_id;
-+	u32	reset_state;
++	u32	agent_id;
++	bool	fatal;
++	u16	cmd_count;
++	u64	reports[8192];
 +};
 +
  #endif /* _LINUX_SCMI_PROTOCOL_H */
