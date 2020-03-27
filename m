@@ -2,71 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6D0E196043
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 22:13:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E47C196052
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 22:17:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MkcyiiWYXFbVbfbo+s0Ftru41mfXn7uIrTtq4c+lWW0=; b=CDm9RR9QxTEx0m
-	8Xktg27zSVTChVrR6AvYIOBMkO7Is2IynLUeCBGs7PB/VILkDjXbA7d5T/SJKAzZGdL5WJ6f5szLl
-	twHyWP1kkb7rVRtdxlfFTjeo9erpAYtgF4qaJPvZz+ydgtuFzuYaz4ndCNdfeWwTjcOVak3bkXoGN
-	Y/l0t4iONjtDgSIDUk10DklBrcFbtNLWaaS0amUHooq193nt/48jlVob8b2GnEP/kjXSyuClmOjSp
-	Vg9CukxPjyD+fi03Sb8/8A/PY7MHa8kDj4xSNksd3ALt/5vKmg9/cgJJNZT0yOIdad6irOrzR7Yzm
-	HVkIutToo8iZHyNmT8oA==;
+	List-Owner; bh=N8REibLtDwqyIHgPbX/9JVKrE0Eb5jj5UTihmmHdZ14=; b=pHChDd0ccq4huq
+	t+XY4YEipBLYop/Lbt8HXYNs9j9TpiFGfPL1jEvZJHBk+hjhdG+DdPCnfYY3XmRivDSWpOa506DBi
+	4fiTp6CRo+V6SlHgWwcTNINDKKZ5afB0l/GuyfHIJpTi5hAojKZMNxv1dYnqh1CsDp9mGmo9vniCL
+	3zfTGqVvKgRcpR0XWJA0E1NUWUYhsG3LBRBJNXbLLxXZZsq6XwrMljXt7Jz6dylpcXGStrmjfLvhg
+	eihQsH8VlO0dQkEoa1sChOJzj1SPsrVXzw7tF32CW179tZRjpv5bTcxykgEn5B/KqVNPb9OJIrLXt
+	OLCwVwDpxxWgRcQB8J+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHwHn-0000K8-S0; Fri, 27 Mar 2020 21:13:03 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
+	id 1jHwLm-0002bx-85; Fri, 27 Mar 2020 21:17:10 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHwHe-0000IC-7K
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 21:12:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585343567;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=D8lm5yoveVj8y3xXdJ7sx9MbLX7wtfmt5oe9dip1qmw=;
- b=P/gRuk2coWcQ6KQlucrt5P2VlSHVI7Fi1C0DoQhsvLl1Ro66e7Dmgp/5VJglTKk1f4LjPi
- fKM7aC0wJQ8OvoMgVqXdyt3a+LqWhKHQN3SBCbZ830lrQNikv5rNvhaomBfYowvnL8urpT
- SyPxttBOfRCKmg3sK6LkOYTaV4a3Wlo=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-15-zg0r05QhNaW2u3QMIi52MQ-1; Fri, 27 Mar 2020 17:12:45 -0400
-X-MC-Unique: zg0r05QhNaW2u3QMIi52MQ-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 706948017CC;
- Fri, 27 Mar 2020 21:12:43 +0000 (UTC)
-Received: from w520.home (ovpn-112-162.phx2.redhat.com [10.3.112.162])
- by smtp.corp.redhat.com (Postfix) with ESMTP id D90E560304;
- Fri, 27 Mar 2020 21:12:42 +0000 (UTC)
-Date: Fri, 27 Mar 2020 15:12:42 -0600
-From: Alex Williamson <alex.williamson@redhat.com>
-To: Diana Craciun <diana.craciun@oss.nxp.com>
-Subject: Re: [PATCH 1/9] vfio/fsl-mc: Add VFIO framework skeleton for fsl-mc
- devices
-Message-ID: <20200327151242.15afcc09@w520.home>
-In-Reply-To: <20200323171911.27178-2-diana.craciun@oss.nxp.com>
-References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
- <20200323171911.27178-2-diana.craciun@oss.nxp.com>
+ id 1jHwLF-0002O2-Ul
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 21:16:39 +0000
+Received: by mail-lf1-x141.google.com with SMTP id h6so3283011lfp.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 14:16:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=S6vOE3rGUMZ+RYsgdraJOYkRxgZu8t7KhB7vPevIess=;
+ b=Xsb0kWSBu1/GELNlY8DMO3whE9U5ls1xzzxwujutuRJy4RyZEhYqQlT2g2O72Yxxjy
+ hvGG210KRTiHoMqStYx99P8EVLDDXmRsdeT9VfDBVsb+9MGKChgBepOToXUfKTax9ZTu
+ qNI+AlEelBakzAoWaL8qruaq8wRdXQ951z8gKg9LQ4Dyr6lxLRHoV6SV86kmYKrUKCmu
+ 7UL+cMqdqJuI+HrR01zLvEsKF1ndlPbvMHLMkqZiZnYWutZBRQqHNPDRe6EqbbDDdTIo
+ b9exIwj/4EQR48eBctiMg5MmHwlIGPynSw9hoS+OCj9/u/dM4/8Gdabsq8ExWyzVjUlB
+ vkeQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=S6vOE3rGUMZ+RYsgdraJOYkRxgZu8t7KhB7vPevIess=;
+ b=cNmL6D9w4azF3lu8rgir2Ax37D4mhKI5fHsanKQY5vWpk07gQTgY+n6o2yp7PdpVvf
+ SgBnOzFNZ81nsNQMCzrESj4QblrUP7UffXW6wAsY2JlH+PP+UAe8qiAxrTSG86gd0mgO
+ uwYYE6ViS643mAzV2UxnMw6n9MBn0GQBLKfXtGXrUa1QIzBQdMzGFkmThuBU/ov4Osa7
+ Hfh1LVKnGSObrmFKd/z7SiIurkux/SvH826VJ1hoNvOVRS+m9r/JzgS+dyI66b0NAMpD
+ A/oa6k4208dlZAm0uAKsMB6g2ntHwx/h+2lSHL/7AOXV14iYxDJ5H9Q/TJyBHM6azcc1
+ P/Fg==
+X-Gm-Message-State: AGi0PuZTPiOrrY71H5WARZgkoOViOj6NS51kwc7n6cZBFmxCWdYvWOA/
+ QzIk3sqHYGzhsrXB4qfUQLGwKTDgG/VkAzjEY4agxA==
+X-Google-Smtp-Source: APiQypJwH6Wd0Xc0zpnuF09cr9xxid/TGq37k9HX/22XZx4EiL6OCU0Bz45xvuvX9r9OU2HGnp0Muk+VBucPpL8Rsrs=
+X-Received: by 2002:a19:be92:: with SMTP id o140mr706458lff.217.1585343796208; 
+ Fri, 27 Mar 2020 14:16:36 -0700 (PDT)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+References: <20200322112437.18070-1-linus.walleij@linaro.org>
+ <CAP245DXiU9XUwP-h1CAnORG=a+NAOcZiY7RvkOsgRQSAhSGG4Q@mail.gmail.com>
+ <CACRpkdZzMsq6fYv3QiKi-FnnNivnyXj7oKzMrvt3XvN2-6WnDw@mail.gmail.com>
+ <CAP245DW-D5EGFq0cpMNy2DSa6DNrYjehwCBzjKyOiaWGEZVpLw@mail.gmail.com>
+In-Reply-To: <CAP245DW-D5EGFq0cpMNy2DSa6DNrYjehwCBzjKyOiaWGEZVpLw@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 27 Mar 2020 22:16:24 +0100
+Message-ID: <CACRpkdaTMmOXeksTKgbqovC8MVfsabjzZDFQauALeZPkvuc+NA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: Fix leftover entry-methods for PSCI
+To: Amit Kucheria <amit.kucheria@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_141254_354902_EA5A3B9A 
-X-CRM114-Status: GOOD (  33.55  )
+X-CRM114-CacheID: sfid-20200327_141638_009861_3DC16253 
+X-CRM114-Status: GOOD (  16.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.205.24.74 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,354 +93,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-kernel@vger.kernel.org, laurentiu.tudor@nxp.com,
- Bharat Bhushan <Bharat.Bhushan@nxp.com>, linux-arm-kernel@lists.infradead.org,
- bharatb.yadav@gmail.com
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Lists LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 23 Mar 2020 19:19:03 +0200
-Diana Craciun <diana.craciun@oss.nxp.com> wrote:
-
-> From: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-> 
-> DPAA2 (Data Path Acceleration Architecture) consists in
-> mechanisms for processing Ethernet packets, queue management,
-> accelerators, etc.
-> 
-> The Management Complex (mc) is a hardware entity that manages the DPAA2
-> hardware resources. It provides an object-based abstraction for software
-> drivers to use the DPAA2 hardware. The MC mediates operations such as
-> create, discover, destroy of DPAA2 objects.
-> The MC provides memory-mapped I/O command interfaces (MC portals) which
-> DPAA2 software drivers use to operate on DPAA2 objects.
-> 
-> A DPRC is a container object that holds other types of DPAA2 objects.
-> Each object in the DPRC is a Linux device and bound to a driver.
-> The MC-bus driver is a platform driver (different from PCI or platform
-> bus). The DPRC driver does runtime management of a bus instance. It
-> performs the initial scan of the DPRC and handles changes in the DPRC
-> configuration (adding/removing objects).
-> 
-> All objects inside a container share the same hardware isolation
-> context, meaning that only an entire DPRC can be assigned to
-> a virtual machine.
-> When a container is assigned to a virtual machine, all the objects
-> within that container are assigned to that virtual machine.
-> The DPRC container assigned to the virtual machine is not allowed
-> to change contents (add/remove objects) by the guest. The restriction
-> is set by the host and enforced by the mc hardware.
-> 
-> The DPAA2 objects can be directly assigned to the guest. However
-> the MC portals (the memory mapped command interface to the MC) need
-> to be emulated because there are commands that configure the
-> interrupts and the isolation IDs which are virtual in the guest.
-> 
-> Example:
-> echo vfio-fsl-mc > /sys/bus/fsl-mc/devices/dprc.2/driver_override
-> echo dprc.2 > /sys/bus/fsl-mc/drivers/vfio-fsl-mc/bind
-> 
-> The dprc.2 is bound to the VFIO driver and all the objects within
-> dprc.2 are going to be bound to the VFIO driver.
+On Tue, Mar 24, 2020 at 6:56 AM Amit Kucheria <amit.kucheria@linaro.org> wrote:
+> On Sun, Mar 22, 2020 at 5:26 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+> > On Sun, Mar 22, 2020 at 12:49 PM Amit Kucheria <amit.kucheria@linaro.org> wrote:
+> >
+> > > My patch went in, in 4.18.
+> > >
+> > > The FSL entry went in, in 4.20 and the spreadtrum one in 5.5.
+> > >
+> > > > Fixes: commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to reflect documentation")
+> > >
+> > > So only minor comment is that it isn't really a fix.
+> >
+> > OK I'll resend a v2 without the Fixes and your reviewed-by.
+> >
+> > > We've tried
+> > > improving the text in the binding too but somehow people still get
+> > > confused. Converting the binding to YAML and enforcing it seems to be
+> > > the only course of action left now.
+> >
+> > Since nothing in the kernel checks for entry-method right now, maybe
+> > we could just add code to do that and warn in dmesg if entry-method
+> > is set to anything else than "psci"?
 >
-> This patch adds the infrastructure for VFIO support for fsl-mc
-> devices. Subsequent patches will add support for binding and secure
-> assigning these devices using VFIO.
-> 
-> More details about the DPAA2 objects can be found here:
-> Documentation/networking/device_drivers/freescale/dpaa2/overview.rst
-> 
-> Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
-> ---
->  MAINTAINERS                               |   6 +
->  drivers/vfio/Kconfig                      |   1 +
->  drivers/vfio/Makefile                     |   1 +
->  drivers/vfio/fsl-mc/Kconfig               |   9 ++
->  drivers/vfio/fsl-mc/Makefile              |   2 +
->  drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 161 ++++++++++++++++++++++
->  drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  14 ++
->  include/uapi/linux/vfio.h                 |   1 +
->  8 files changed, 195 insertions(+)
->  create mode 100644 drivers/vfio/fsl-mc/Kconfig
->  create mode 100644 drivers/vfio/fsl-mc/Makefile
->  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc.c
->  create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index cc1d18cb5d18..fc547e6f5bf8 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -17566,6 +17566,12 @@ F:	drivers/vfio/
->  F:	include/linux/vfio.h
->  F:	include/uapi/linux/vfio.h
->  
-> +VFIO FSL-MC DRIVER
-> +M:	Diana Craciun <diana.craciun@oss.nxp.com>
-> +L:	kvm@vger.kernel.org
-> +S:	Maintained
-> +F:	drivers/vfio/fsl-mc/
-> +
->  VFIO MEDIATED DEVICE DRIVERS
->  M:	Kirti Wankhede <kwankhede@nvidia.com>
->  L:	kvm@vger.kernel.org
-> diff --git a/drivers/vfio/Kconfig b/drivers/vfio/Kconfig
-> index fd17db9b432f..5533df91b257 100644
-> --- a/drivers/vfio/Kconfig
-> +++ b/drivers/vfio/Kconfig
-> @@ -47,4 +47,5 @@ menuconfig VFIO_NOIOMMU
->  source "drivers/vfio/pci/Kconfig"
->  source "drivers/vfio/platform/Kconfig"
->  source "drivers/vfio/mdev/Kconfig"
-> +source "drivers/vfio/fsl-mc/Kconfig"
->  source "virt/lib/Kconfig"
-> diff --git a/drivers/vfio/Makefile b/drivers/vfio/Makefile
-> index de67c4725cce..fee73f3d9480 100644
-> --- a/drivers/vfio/Makefile
-> +++ b/drivers/vfio/Makefile
-> @@ -9,3 +9,4 @@ obj-$(CONFIG_VFIO_SPAPR_EEH) += vfio_spapr_eeh.o
->  obj-$(CONFIG_VFIO_PCI) += pci/
->  obj-$(CONFIG_VFIO_PLATFORM) += platform/
->  obj-$(CONFIG_VFIO_MDEV) += mdev/
-> +obj-$(CONFIG_VFIO_FSL_MC) += fsl-mc/
-> diff --git a/drivers/vfio/fsl-mc/Kconfig b/drivers/vfio/fsl-mc/Kconfig
-> new file mode 100644
-> index 000000000000..b1a527d6b6f2
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/Kconfig
-> @@ -0,0 +1,9 @@
-> +config VFIO_FSL_MC
-> +	tristate "VFIO support for QorIQ DPAA2 fsl-mc bus devices"
-> +	depends on VFIO && FSL_MC_BUS && EVENTFD
-> +	help
-> +	  Driver to enable support for the VFIO QorIQ DPAA2 fsl-mc
-> +	  (Management Complex) devices. This is required to passthrough
-> +	  fsl-mc bus devices using the VFIO framework.
-> +
-> +	  If you don't know what to do here, say N.
-> diff --git a/drivers/vfio/fsl-mc/Makefile b/drivers/vfio/fsl-mc/Makefile
-> new file mode 100644
-> index 000000000000..6f2b80645d5b
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/Makefile
-> @@ -0,0 +1,2 @@
-> +vfio-fsl_mc-y := vfio_fsl_mc.o
-> +obj-$(CONFIG_VFIO_FSL_MC) += vfio_fsl_mc.o
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc.c b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> new file mode 100644
-> index 000000000000..320fb09b5691
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc.c
-> @@ -0,0 +1,161 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-> +/*
-> + * Copyright 2013-2016 Freescale Semiconductor Inc.
-> + * Copyright 2016-2017,2019-2020 NXP
-> + */
-> +
-> +#include <linux/device.h>
-> +#include <linux/iommu.h>
-> +#include <linux/module.h>
-> +#include <linux/mutex.h>
-> +#include <linux/slab.h>
-> +#include <linux/types.h>
-> +#include <linux/vfio.h>
-> +#include <linux/fsl/mc.h>
-> +
-> +#include "vfio_fsl_mc_private.h"
-> +
-> +static int vfio_fsl_mc_open(void *device_data)
-> +{
-> +	if (!try_module_get(THIS_MODULE))
-> +		return -ENODEV;
-> +
-> +	return 0;
-> +}
-> +
-> +static void vfio_fsl_mc_release(void *device_data)
-> +{
-> +	module_put(THIS_MODULE);
-> +}
-> +
-> +static long vfio_fsl_mc_ioctl(void *device_data, unsigned int cmd,
-> +			      unsigned long arg)
-> +{
-> +	switch (cmd) {
-> +	case VFIO_DEVICE_GET_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_GET_REGION_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_GET_IRQ_INFO:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_SET_IRQS:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	case VFIO_DEVICE_RESET:
-> +	{
-> +		return -EINVAL;
-> +	}
-> +	default:
-> +		return -EINVAL;
-> +	}
+> Hi Linus,
+>
+> Documentation/devicetree/bindings/arm/idle-states.yaml already
+> triggers an error on 'make dtbs_check'. Perhaps we just keep an eye on
+> these?
+>
+> db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dt.yaml:
+> idle-states: entry-method:0: 'psci' was expected
+> db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dt.yaml:
+> idle-states: entry-method:0: 'psci' was expected
+> db845c-check-2020-02-24-222456.log:/home/amit/work/builds/build-check/arch/arm64/boot/dts/sprd/sp9863a-1h10.dt.yaml:
+> idle-states: entry-method:0: 'psci' was expected
 
-We generally use -ENOTTY for unimplemented ioctls.  We could probably
-just implement the default case here and add each ioctl as it gets
-implemented, but we'll reach the same conclusion, so either way.
-  
-> +}
-> +
-> +static ssize_t vfio_fsl_mc_read(void *device_data, char __user *buf,
-> +				size_t count, loff_t *ppos)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static ssize_t vfio_fsl_mc_write(void *device_data, const char __user *buf,
-> +				 size_t count, loff_t *ppos)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static int vfio_fsl_mc_mmap(void *device_data, struct vm_area_struct *vma)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static const struct vfio_device_ops vfio_fsl_mc_ops = {
-> +	.name		= "vfio-fsl-mc",
-> +	.open		= vfio_fsl_mc_open,
-> +	.release	= vfio_fsl_mc_release,
-> +	.ioctl		= vfio_fsl_mc_ioctl,
-> +	.read		= vfio_fsl_mc_read,
-> +	.write		= vfio_fsl_mc_write,
-> +	.mmap		= vfio_fsl_mc_mmap,
-> +};
-> +
-> +static int vfio_fsl_mc_probe(struct fsl_mc_device *mc_dev)
-> +{
-> +	struct iommu_group *group;
-> +	struct vfio_fsl_mc_device *vdev;
-> +	struct device *dev = &mc_dev->dev;
-> +	int ret;
-> +
-> +	group = vfio_iommu_group_get(dev);
-> +	if (!group) {
-> +		dev_err(dev, "%s: VFIO: No IOMMU group\n", __func__);
-> +		return -EINVAL;
-> +	}
-> +
-> +	vdev = devm_kzalloc(dev, sizeof(*vdev), GFP_KERNEL);
-> +	if (!vdev) {
-> +		vfio_iommu_group_put(group, dev);
-> +		return -ENOMEM;
-> +	}
-> +
-> +	vdev->mc_dev = mc_dev;
-> +
-> +	ret = vfio_add_group_dev(dev, &vfio_fsl_mc_ops, vdev);
-> +	if (ret) {
-> +		dev_err(dev, "%s: Failed to add to vfio group\n", __func__);
-> +		vfio_iommu_group_put(group, dev);
-> +		return ret;
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int vfio_fsl_mc_remove(struct fsl_mc_device *mc_dev)
-> +{
-> +	struct vfio_fsl_mc_device *vdev;
-> +	struct device *dev = &mc_dev->dev;
-> +
-> +	vdev = vfio_del_group_dev(dev);
-> +	if (!vdev)
-> +		return -EINVAL;
-> +
-> +	vfio_iommu_group_put(mc_dev->dev.iommu_group, dev);
-> +	devm_kfree(dev, vdev);
+Aha that's pretty awesome actually.
 
-Isn't the purpose of using managed resources that we don't need this
-free?  AFAICT, devres_release_all() gets called after this, or on a
-failed .probe() above.  It's inconsistent to preemptively free here but
-not above.  Thanks,
+I think right now we have a bit too many warnings coming out of the
+YAML schema but sooner or later we'll actually start to plow through the
+backlog of warnings and fix stuff up... :)
 
-Alex
-
-> +
-> +	return 0;
-> +}
-> +
-> +/*
-> + * vfio-fsl_mc is a meta-driver, so use driver_override interface to
-> + * bind a fsl_mc container with this driver and match_id_table is NULL.
-> + */
-> +static struct fsl_mc_driver vfio_fsl_mc_driver = {
-> +	.probe		= vfio_fsl_mc_probe,
-> +	.remove		= vfio_fsl_mc_remove,
-> +	.match_id_table = NULL,
-> +	.driver	= {
-> +		.name	= "vfio-fsl-mc",
-> +		.owner	= THIS_MODULE,
-> +	},
-> +};
-> +
-> +static int __init vfio_fsl_mc_driver_init(void)
-> +{
-> +	return fsl_mc_driver_register(&vfio_fsl_mc_driver);
-> +}
-> +
-> +static void __exit vfio_fsl_mc_driver_exit(void)
-> +{
-> +	fsl_mc_driver_unregister(&vfio_fsl_mc_driver);
-> +}
-> +
-> +module_init(vfio_fsl_mc_driver_init);
-> +module_exit(vfio_fsl_mc_driver_exit);
-> +
-> +MODULE_LICENSE("GPL v2");
-> +MODULE_DESCRIPTION("VFIO for FSL-MC devices - User Level meta-driver");
-> diff --git a/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> new file mode 100644
-> index 000000000000..b92858a003c0
-> --- /dev/null
-> +++ b/drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause) */
-> +/*
-> + * Copyright 2013-2016 Freescale Semiconductor Inc.
-> + * Copyright 2016,2019-2020 NXP
-> + */
-> +
-> +#ifndef VFIO_FSL_MC_PRIVATE_H
-> +#define VFIO_FSL_MC_PRIVATE_H
-> +
-> +struct vfio_fsl_mc_device {
-> +	struct fsl_mc_device		*mc_dev;
-> +};
-> +
-> +#endif /* VFIO_PCI_PRIVATE_H */
-> diff --git a/include/uapi/linux/vfio.h b/include/uapi/linux/vfio.h
-> index 9e843a147ead..6d0a7a071ef4 100644
-> --- a/include/uapi/linux/vfio.h
-> +++ b/include/uapi/linux/vfio.h
-> @@ -201,6 +201,7 @@ struct vfio_device_info {
->  #define VFIO_DEVICE_FLAGS_AMBA  (1 << 3)	/* vfio-amba device */
->  #define VFIO_DEVICE_FLAGS_CCW	(1 << 4)	/* vfio-ccw device */
->  #define VFIO_DEVICE_FLAGS_AP	(1 << 5)	/* vfio-ap device */
-> +#define VFIO_DEVICE_FLAGS_FSL_MC (1 << 6)	/* vfio-fsl-mc device */
->  	__u32	num_regions;	/* Max region index + 1 */
->  	__u32	num_irqs;	/* Max IRQ index + 1 */
->  };
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
