@@ -2,66 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3112E1954B3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:01:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 003D61954DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:09:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C5u1cqZvRNO96a5xH/cVSdjJ6gmpVGVctDfUXZWNAoU=; b=KL95txOUb/1t/a
-	134dipcRMga7OBf5q0Fff4qOuZsqbD/o8Wt/nXuqNAb+3mt6u2nHGyhZmq/1SGfxG9fOHYSbxB8v2
-	JPdnPIg//aCePm1RHactkzH7whmTFuWHJfeSeOg4gqo1T5+mOBpyxw7AGiE7sc/9w8voThWFdrExb
-	059sz2SU3RR/AAYDg4te0UGWwfStWF3qkdG8X1n+ox5TeTxmoOYrE32itaL6b9JnDn9cqAy2n/C5u
-	IaYmHswoGgnY57/tGrpFk21yL/+d8N+RAqqysClTDQNlwzRcSDJDnPOb4hTC8sFCdzeHF5ESExZYt
-	b4vQW9LiDg9vBygKw44Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=E4NgyEibCuLexjnC2B1J+gbQ2gyhiajDmZD6Ueh0iE0=; b=HbYPV1LVyboTPq
+	Z3ePN7+VvKa27HlGRPPUtMiqCKFkRapZZk1uPBp6/54V0sgrTrA7FXvXZXFNji6kjPhBwScOyPoGS
+	y/1/0eQPgYoMbmBBSpD6YJOD+9p83Xoo1lhvWI9nH3ZE1QNXnJqpHyeh8NTrchwLcy/onG5vsApqN
+	Z0LOxh31UNZPy66oGmPvDHHB8JbswyIJk55le5M6LGqSuQzHecdAXwNZbw3BB3zH1Ns3oAvtGtIp2
+	VgymzHmRlf+0sctmax/65wS9QqPMf/04MTyAa6nkhCECue63iFZX+bN0mJTzQ48PG25jedQiC/D1J
+	9TjpOXqg1PiG551G9JnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHlnY-0000vl-LD; Fri, 27 Mar 2020 10:01:08 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jHlv8-0003Qs-87; Fri, 27 Mar 2020 10:08:58 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHlmc-0007zr-S1; Fri, 27 Mar 2020 10:00:15 +0000
-X-UUID: 5d1753f0dc3f4f1cb00a144f2a30bdfc-20200327
+ id 1jHluz-0003QR-CN; Fri, 27 Mar 2020 10:08:50 +0000
+X-UUID: b63c526b7d004feabeb3e0a5765a11f8-20200327
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=X65KhStxBXm6tC9CI8ImCK/G24gu+sDu1lPtIdSpMxY=; 
- b=KUG0oKg0QJqdYbm1dzR5NyuVycOTFoTvook9jaL7ZMTNzbr53I1f44sYBD5b2j50Tp2MbpG5TtYYzgou5UiCXcK99WZwvaDhSTG5L09jwFm/nek6dV6vNcOijW5j1KPYx4sKVsHueu28pEjNgAzuT+jsKSEvGx7lf0mV3DcbvXg=;
-X-UUID: 5d1753f0dc3f4f1cb00a144f2a30bdfc-20200327
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=XvMgTRarhYjvy31eOrL8qWKvV+LoDQUZ6Y/LzdVLi0s=; 
+ b=OssNNdmi8gzqWtSJCr29WTyaehWsUt2Pp6mP0ELQYndd1QNc/guloHxn2s/z8GQEhBnrZF9TVSOylIGO2ibCLvNF7vaCCWsllJwP9da3Sf0mExtlHU28Wrkfpnm9ukrGzDeIe9tay5g0TsslKz4PC5L3mi7mbM+TxcpvN7U39eo=;
+X-UUID: b63c526b7d004feabeb3e0a5765a11f8-20200327
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 500816332; Fri, 27 Mar 2020 02:00:05 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 02:53:44 -0700
+ with ESMTP id 1373330433; Fri, 27 Mar 2020 02:08:47 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 27 Mar 2020 02:58:44 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Mar 2020 17:53:30 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 27 Mar 2020 17:58:35 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 27 Mar 2020 17:53:30 +0800
+ Frontend Transport; Fri, 27 Mar 2020 17:58:35 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v3 2/2] scsi: ufs-mediatek: add error recovery for suspend and
- resume
-Date: Fri, 27 Mar 2020 17:53:29 +0800
-Message-ID: <20200327095329.10083-3-stanley.chu@mediatek.com>
+Subject: [PATCH v1 1/1] scsi: ufs: set device as active power mode after
+ resetting device
+Date: Fri, 27 Mar 2020 17:58:35 +0800
+Message-ID: <20200327095835.10293-1-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200327095329.10083-1-stanley.chu@mediatek.com>
-References: <20200327095329.10083-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 51B629C57321E8224197746DE299EA04D736E0A923D7FF8BAF8247DCEF92CBA82000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_030011_471346_2BB239D9 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20200327_030849_430525_04319106 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -97,58 +99,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Once fail happens during suspend and resume flow if the desired low
-power link state is H8, link recovery is required for MediaTek UFS
-controller.
+Currently ufshcd driver assumes that bInitPowerMode parameter
+is not changed by any vendors thus device power mode can be set as
+"Active" during initialization.
 
-For resume flow, since power and clocks are already enabled before
-invoking vendor's resume callback, simply using ufshcd_link_recovery()
-inside callback is fine.
+According to UFS JEDEC specification, device power mode shall be
+"Active" after HW Reset is triggered if the bInitPowerMode parameter
+in Device Descriptor is default value.
 
-For suspend flow, the device power enters low power mode or is disabled
-before suspend callback, thus ufshcd_link_recovery() can not be directly
-used in vendor callback. One solution is to set the link to off state
-and then ufshcd_host_reset_and_restore() will be executed by ufshcd_suspend().
+By above description, we can set device power mode as "Active" after
+device reset is triggered by vendor's callback. With this change,
+the link startup performance can be improved in some cases
+by not setting link_startup_again as true in ufshcd_link_startup().
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
 ---
- drivers/scsi/ufs/ufs-mediatek.c | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
+ drivers/scsi/ufs/ufshcd.c | 13 -------------
+ drivers/scsi/ufs/ufshcd.h | 14 ++++++++++++++
+ 2 files changed, 14 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 40a66b31b31f..673c16596fb2 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -499,8 +499,15 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 227660a1a446..f0a35b289b7c 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -171,19 +171,6 @@ enum {
+ #define ufshcd_clear_eh_in_progress(h) \
+ 	((h)->eh_flags &= ~UFSHCD_EH_IN_PROGRESS)
  
- 	if (ufshcd_is_link_hibern8(hba)) {
- 		err = ufs_mtk_link_set_lpm(hba);
--		if (err)
-+		if (err) {
-+			/*
-+			 * Set link as off state enforcedly to trigger
-+			 * ufshcd_host_reset_and_restore() in ufshcd_suspend()
-+			 * for completed host reset.
-+			 */
-+			ufshcd_set_link_off(hba);
- 			return -EAGAIN;
-+		}
+-#define ufshcd_set_ufs_dev_active(h) \
+-	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
+-#define ufshcd_set_ufs_dev_sleep(h) \
+-	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
+-#define ufshcd_set_ufs_dev_poweroff(h) \
+-	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
+-#define ufshcd_is_ufs_dev_active(h) \
+-	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
+-#define ufshcd_is_ufs_dev_sleep(h) \
+-	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
+-#define ufshcd_is_ufs_dev_poweroff(h) \
+-	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
+-
+ struct ufs_pm_lvl_states ufs_pm_lvl_states[] = {
+ 	{UFS_ACTIVE_PWR_MODE, UIC_LINK_ACTIVE_STATE},
+ 	{UFS_ACTIVE_PWR_MODE, UIC_LINK_HIBERN8_STATE},
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index b7bd81795c24..7a9d1d170719 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -129,6 +129,19 @@ enum uic_link_state {
+ #define ufshcd_set_link_hibern8(hba) ((hba)->uic_link_state = \
+ 				    UIC_LINK_HIBERN8_STATE)
+ 
++#define ufshcd_set_ufs_dev_active(h) \
++	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
++#define ufshcd_set_ufs_dev_sleep(h) \
++	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
++#define ufshcd_set_ufs_dev_poweroff(h) \
++	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
++#define ufshcd_is_ufs_dev_active(h) \
++	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
++#define ufshcd_is_ufs_dev_sleep(h) \
++	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
++#define ufshcd_is_ufs_dev_poweroff(h) \
++	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
++
+ /*
+  * UFS Power management levels.
+  * Each level is in increasing order of power savings.
+@@ -1091,6 +1104,7 @@ static inline void ufshcd_vops_device_reset(struct ufs_hba *hba)
+ {
+ 	if (hba->vops && hba->vops->device_reset) {
+ 		hba->vops->device_reset(hba);
++		ufshcd_set_ufs_dev_active(hba);
+ 		ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, 0);
  	}
- 
- 	if (!ufshcd_is_link_active(hba))
-@@ -519,8 +526,10 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 
- 	if (ufshcd_is_link_hibern8(hba)) {
- 		err = ufs_mtk_link_set_hpm(hba);
--		if (err)
-+		if (err) {
-+			err = ufshcd_link_recovery(hba);
- 			return err;
-+		}
- 	}
- 
- 	return 0;
+ }
 -- 
 2.18.0
 _______________________________________________
