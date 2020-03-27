@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF41A19562F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:21:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA688195634
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:22:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dd6IVPOGq0azrRJmQhUsrdaAqt6q02NdFPZzq4tUaSE=; b=tOhTGX54megX6v
-	DZOC2Fd/z7zC4Dj+tc1/9c9+NF9bwsS6rfuyWG+UreooUfnB2D3lH7a5yz5VEcjQBzL8I5a4YwaYA
-	2n6Ur76l+A+neJZQtZSH/lEhsc4ERwJ178MvRVG3JU87Fawie+NHsiJmhnQTt/iXg+EXl440dZSTw
-	+iWiN2QBVRiu0tq+R4ey3agkgfn2vFSCXEnv0ZqlLaRkGO/qPJIYAY3jkWeALJUkUEWa8NJNFzZKg
-	tV0kL9AMgUIKWnzRxt++SjlSQIqDL9WUEdL3GMR1xprw8R92P9MgNx6LaxLLqjhGnJHyAOoAGVBXk
-	YsyOE8QnwpKEI+2MWVvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9dg+vD8NHlDETHHHia6fXLYOVKPYmeSfkcxbIMXgp4o=; b=EsI8mSF36Pqq0GaZrfiNZ/Z8v
+	stP4Eg57vNaGwkl4BCa6Cu28UgvgfRmzOONYy4NNdg1Zk3GLxH2XMpU3hHpHIp7yy68IbUahWuv/9
+	5RPYrRKjEyo1YEMIXt2TwS7/x4xlaJNc7SAHuJH4Mr7bA3/BcYIPRft1/sgg4u03zmNO4M3mhC+Wh
+	0uwvs5Efr2OWdkWFmIukqVfTOeJ4xiDchX2n+KW2v/mOdscO13ZY7tcRS4BG0GE40zwO0WtsXQ/SB
+	Q8ehrl5Xm+V4oy11qBMu5ztMW4vCeRWnUC78lm50zAXrO61hp7u6BB9O3Oed0E+MJFJ6ZVtARFtlS
+	pd+Me8O7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHn3U-0000zX-5I; Fri, 27 Mar 2020 11:21:40 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jHn3w-0001Iv-AL; Fri, 27 Mar 2020 11:22:08 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHn3I-0000xn-1t
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:21:29 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <a.fatoum@pengutronix.de>)
- id 1jHn3E-0005sM-9k; Fri, 27 Mar 2020 12:21:24 +0100
-Subject: Re: [PATCH] ARM: imx: provide v7_cpu_resume() only on
- ARM_CPU_SUSPEND=y
-From: Ahmad Fatoum <a.fatoum@pengutronix.de>
-To: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Lucas Stach <l.stach@pengutronix.de>,
- Rouven Czerwinski <r.czerwinski@pengutronix.de>
-References: <20200323081933.31497-1-a.fatoum@pengutronix.de>
- <6ae60120-2b3e-2ce2-14cc-8c44889d49ee@pengutronix.de>
-Message-ID: <453f9aca-504a-6478-7e8d-5db646948c49@pengutronix.de>
-Date: Fri, 27 Mar 2020 12:21:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jHn3j-0001HO-Vv; Fri, 27 Mar 2020 11:21:57 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id A486FADF1;
+ Fri, 27 Mar 2020 11:21:54 +0000 (UTC)
+Message-ID: <a4c38810b7cb10dcfadd2844320d1c9e5b6bc6f6.camel@suse.de>
+Subject: Re: [PATCH v2 10/11] ARM: dts: bcm2711: Update expgpio's GPIO labels
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org, Rob Herring
+ <robh+dt@kernel.org>
+Date: Fri, 27 Mar 2020 12:21:53 +0100
+In-Reply-To: <20200306174413.20634-11-nsaenzjulienne@suse.de>
+References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
+ <20200306174413.20634-11-nsaenzjulienne@suse.de>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-In-Reply-To: <6ae60120-2b3e-2ce2-14cc-8c44889d49ee@pengutronix.de>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: a.fatoum@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_042128_096236_F9A19AED 
-X-CRM114-Status: GOOD (  11.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200327_042156_168885_17A937BE 
+X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,41 +64,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, Clemens Gruber <clemens.gruber@pqgruber.com>,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: stefan.wahren@i2se.com, devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ linux-mmc@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, phil@raspberrypi.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2150762826769031902=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Shawn,
 
-On 3/23/20 9:25 AM, Ahmad Fatoum wrote:
-> On 3/23/20 9:19 AM, Ahmad Fatoum wrote:
->> Fixes: 512a928affd5 ("ARM: imx: build v7_cpu_resume() unconditionally")
-> 
-> This commit is new in v5.6-rc5, so it would be great if the fix can land in
-> Linus' tree before v5.6.
+--===============2150762826769031902==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-6dBBE0GB6iAO/vrk1/4W"
 
-Gentle ping. I've received a few pings myself because it broke people's
-stable release builds and I would like to avoid that for v5.6 as well..
 
-Cheers
-Ahmad
+--=-6dBBE0GB6iAO/vrk1/4W
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-> 
-> Cheers
-> Ahmad
-> 
+On Fri, 2020-03-06 at 18:44 +0100, Nicolas Saenz Julienne wrote:
+> The 6th line of the GPIO expander is used to power the board's SD card.
+>=20
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
 
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Applied for-next.
+
+Regards,
+Nicolas
+
+
+--=-6dBBE0GB6iAO/vrk1/4W
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl594dEACgkQlfZmHno8
+x/6u+wgAoZAyf4EZVgmQpaGO9pvDTSICjk4v7Buc27vRC/dI7eee8lpEKtHySjxS
+ZFUZvrVtkH+1nI31qTADGEUvfLfGeZuhsl3PopdYT1L4Ajl8Wl/TgB2/jBwArPmT
+FYjuPGIYtBXg4m9qzo/hWE1gPXZOTESW5dnu6zC2KkIadq4FtZl06U7PZTbQAggH
+9REu3TOdgTvUwKmnOpTYRbfE2f5ei0Sjdem42mzLBDW5hy6i/I2zqL7qr+MT/v99
+WaE0jbqdcRsAP7HwZRF2JGP63WiFWjkfNSpGd2/AE+ETi3BK+m3iufCX8FJBrgrt
+Y+wvAAMZXkhGdHtI+fh9suxi1j+VKA==
+=5tFi
+-----END PGP SIGNATURE-----
+
+--=-6dBBE0GB6iAO/vrk1/4W--
+
+
+
+--===============2150762826769031902==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2150762826769031902==--
+
+
