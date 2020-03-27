@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED39F1955C3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:56:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 595341955D5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 11:59:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pqqRZEGe06G2NihkYKxBTGYF7Lo//xROgpghGTNV2Ns=; b=aqSA6XClnMCuET
-	9OJUnVUCj5mRh/bcuaqaq8UlTFLmE2B/oMbWfPQidtoOjDbHZ1cai13NztVKblC88/3ArpyjI1FGm
-	UK2tpkY3BEXxuz3vJIvAvklN/nQsLKEVfRiCgg0mRn5fP0dh6JSVeNBYBZRP1yICduSTJqBWQYQl3
-	uRIm+on2ewGqvMGM5XWm3UuadMyBGrV2dFaVNr+69ZELiHdVc78fgd2FkLamHokhzc0MOU/t0IRDb
-	/he8iEe+B56DKwaGZ5SyW/W93UuH8YCcZwgecqdxWo5A3kTCzUbPVqdzsdPlbr4iJdct3PPzdqdLs
-	L4CRsrwXDgUVsLQGEV2Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gvbX3cY6h0THlUAyjdZeT+vsvRsG3z0kptqakF+rmgc=; b=H01
+	tGb5is1ofa/nAEJR91m/IdcyD6EI8uDF7LVEYlXz9lSTENC72ZxnkjWObmYUM5lVCn1xaq5GCOyby
+	enE70K7HTQ/YdioOile0UqDqFE/wFT9NckwAsDyGhPxI553DYXZEiz4d6uvtDpG8nb3o14KleJK0z
+	0KhKXENcgIhCjEanGA4jYAS4+5ecXve3tQg9lPYkrO5db9k93/Z/ILxjg0pfnvxnTQoRHZ/YjwBVI
+	i+Lpl2XrdGaKDH+CdxqKMlpqlRzIPgmFrxTiz7xiRAF2OlCf6/ec6QhqJTdkFai8gCLf5dsyo/IVT
+	ir5hmGAlvp5NwpGJyxxYNUFtuJl0Hyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHmej-0005qH-QL; Fri, 27 Mar 2020 10:56:05 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1jHmi6-0006TO-0H; Fri, 27 Mar 2020 10:59:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHmeb-0005pR-Sv
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:55:59 +0000
-Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N14xe-1jOkZk0dsw-012aRz for <linux-arm-kernel@lists.infradead.org>; Fri,
- 27 Mar 2020 11:55:54 +0100
-Received: by mail-qk1-f182.google.com with SMTP id i6so10290349qke.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 03:55:53 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ04X02O4jRz2+heb7AUgVWew71vGeMZDZilTPO5nxEPDio5r5pY
- uCPDDvYz8OnC2aY6AgGqANw3X6/L+2cQ0+N38l4=
-X-Google-Smtp-Source: ADFU+vu/SBluPJe4SG/RVo/VOSCt5yg8qCa0C0hT1HJWo2MkHT9vfnjXTH3ldYZD2r/o7bjQOUlqAYVkLLzc9qdU5cI=
-X-Received: by 2002:a37:a4d6:: with SMTP id
- n205mr13487320qke.352.1585306552796; 
- Fri, 27 Mar 2020 03:55:52 -0700 (PDT)
-MIME-Version: 1.0
-References: <87mu8ppknv.fsf@FE-laptop>
- <20200302031736.5or4ww5a4l7zomfo@vireshk-i7>
- <20200308161903.GA156645@furthur.local>
- <20200301122226.4068-1-afzal.mohd.ma@gmail.com>
- <m3ftepbtxm.fsf@t19.piap.pl> <51cebbbb-3ba4-b336-82a9-abcc22f9a69c@gmail.com>
- <20200304163412.GX37466@atomide.com> <20200313154520.GA5375@afzalpc>
- <20200317043702.GA5852@afzalpc> <20200325114332.GA6337@afzalpc>
- <20200327104635.GA7775@afzalpc>
-In-Reply-To: <20200327104635.GA7775@afzalpc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 27 Mar 2020 11:55:36 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
-Message-ID: <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
-Subject: Re: [PATCH v3] ARM: replace setup_irq() by request_irq()
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-X-Provags-ID: V03:K1:dahVdVRXaCT8swgXjamQEBgcERzgXw53Qoap62/A82gW626dxJt
- g9vCer96BTpkSnPsKEfBGLIBePHIDIcUhVBdd1NynAwUrK/jCaCRyGkolYg1NIJzV1vbg86
- gN0TL3jC9Co4mdmeOJpw6mIujWggKKmvVUN83cw79zOO7GPAf1DT31I0giw63gz4Xi15iQp
- 8rvPEfoK2Z1BwWpyOJ0hw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:lQHnhdeXChI=:UPdP9DVrlPNawxwFh9Sos5
- Yw9TX2y8zKnE5r6CsagpgfqbUvUPWEkrlATZhcJYTuHJ5IFfVEh60gHzFI+QoXVEoffW0MEwl
- QrRkYmxVTjnkgdboTXISOKJnTkwa6adE6Sgl7xjXLQW0xuQ2JY3bpSS6Hgp1cnoaPllk9bGhR
- k1WrVzw40f5LjlIMmlsy0NU9jjoPj8dCiF0bNE2h6zGC69tc+9qcbuI6Ce7eV2GETlSinzMG1
- SFXbyZQgRS56X6rgEe0udWHrb6InCv1UaZgbVzUzj9Ow038z+7Bt+lrG9gxeh12i/RiNiPgZp
- 6ZGJG3TDUC5sV6RzQ93pj3iRi1w6rAGbDNjM0KeDQ1aFdUmQesr38U9BUy4sufBe6dptws09O
- dfYrD4X/na0907qIeEJ5sxAZpEm1vA4MSLGw/4zcHRjHpw44vM7d71mlSBV+zca0FBjd29MNa
- 8GxUFdWQ/G/8fi3kpOB3a8U7vpZgHkTs/lNeIL7ntPKsV1DmvfDD5hjGitMGhFirUA2UITV+I
- oM5rMwDjtGaXSeERTA79sYeKT/pWdh+xKibXJsPCsDWBxYPVGtpjGOtiDVGtfVnSWCZd/8UIg
- rRQjHw9//fckl6AkjwkTpBP1scwrUu6kQCLXw0X6W6h40LjsC5p+VsypQwHQvvy+njMQPEVcE
- DoCB3VEslF4cKeaZWF/LRotVEANO2vXOKsBnb2IBUcaYNjYXs4UY5hNQwx2Dekpt3Oaan0aFg
- rygrDjMHdrbdaQTfsa9Xm37hTxccWexS8RieDXviimEoie6Q7qS/LUdgD9IwVqiSuO4JOpU5W
- uBbWROUlzkcTCA6L0XRLsDmoxsf+oT9pWFHBCJgnXzf5KiCogU=
+ id 1jHmhv-0006Ss-9I
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 10:59:24 +0000
+Received: from e123331-lin.home
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 94EFB20705;
+ Fri, 27 Mar 2020 10:59:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585306762;
+ bh=90UfxI5OVQUnvcKw/oB6o3ZeklCir3nEiRKTl6IJlks=;
+ h=From:To:Cc:Subject:Date:From;
+ b=eXsrgFV/FedQh+Ab0iPY74W5JQKaPYaoZNLPZ9g2ELiuM4S84AsWvChXP+xKj/wNg
+ wIHTZHzCq7Q99xQVoBEt88aEiNRBeqckbDuMkHFPhH/cH9Fitk63iNCSd1Ko6lnn2p
+ hmYn0zRfSs2Y8zxZY6VQjwYex5qzecAKKrahmmoQ=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/5] ARM: simplify handover from UEFI to decompressor
+Date: Fri, 27 Mar 2020 11:59:01 +0100
+Message-Id: <20200327105906.2665-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_035558_224732_EC93E809 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200327_035923_348200_40A2B7DC 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,55 +74,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- Hartley Sweeten <hsweeten@visionengravers.com>,
- Tony Lindgren <tony@atomide.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Lubomir Rintel <lkundrak@v3.sk>, SoC Team <soc@kernel.org>,
- arm-soc <arm@kernel.org>, =?UTF-8?Q?Krzysztof_Ha=C5=82asa?= <khalasa@piap.pl>,
- Viresh Kumar <vireshk@kernel.org>, Olof Johansson <olof@lixom.net>,
- Thomas Gleixner <tglx@linutronix.de>,
- Alexander Sverdlin <alexander.sverdlin@gmail.com>,
- Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: linux-efi@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Nicolas Pitre <nico@fluxnic.net>, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 11:46 AM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
->
-> Hi Arnd,
->
-> On Wed, Mar 25, 2020 at 05:13:32PM +0530, afzal mohammed wrote:
-> > On Tue, Mar 17, 2020 at 10:07:02AM +0530, afzal mohammed wrote:
-> > > On Fri, Mar 13, 2020 at 09:15:20PM +0530, afzal mohammed wrote:
->
-> > > > Can you please include the patches 6-10 directly into the armsoc tree ?,
-> > > > Let me know if anything needs to be done from my side.
-> >
-> > Can you please consider for inclusion the above 5 patches.
-> >
-> > Sorry for pestering, i understand that none of the ARM SoC pull requests
-> > has been picked up as opposed to what happens normally by this time of
-> > development cycle.
->
-> i think you have pulled the ARM SoC pull requests, but above changes
-> doesn't seem to be applied, can you please respond on how to proceed ?
-> (of all the tree-wide changes, the above are the only ones in limbo)
+The EFI stub in the ARM kernel runs in the context of the firmware, which
+means it runs with the caches and MMU on. Currently, we relocate the zImage
+so it appears in the first 128 MiB, disable the MMU and caches and invoke
+the decompressor via its ordinary entry point. However, since we can pass
+the base of DRAM directly, there is no need to relocate the zImage, which
+also means there is no need to disable and re-enable the caches and create
+new page tables etc.
 
-Hi afzal,
+This simplification is implemented by patch #5. Patches #1 - #4 are
+prerequisite changes to permit the decompressor to execute from the
+offset chosen by the UEFI firmware.
 
-To make sure I get the right ones, could you bounce all the patches that are
-still missing to soc@kernel.org to let them show up in patchwork?
+Note that this applies onto linux-next with Geert's patch 'ARM: boot: Obtain
+start of physical memory from DTB' applied [0]
 
-I'll apply them right away after that. Sorry I forgot about them as I went
-through the patchwork backlog.
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Nicolas Pitre <nico@fluxnic.net>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Russell King <linux@armlinux.org.uk>
 
-       Arnd
+[0] https://lore.kernel.org/linux-arm-kernel/20200320144348.12865-1-geert+renesas@glider.be/
+
+Ard Biesheuvel (5):
+  ARM: decompressor: move headroom variable out of LC0
+  ARM: decompressor: split off _edata and stack base into separate
+    object
+  ARM: decompressor: defer loading of the contents of the LC0 structure
+  ARM: decompressor: move GOT into .data for EFI enabled builds
+  ARM: decompressor: run decompressor in place if loaded via UEFI
+
+ arch/arm/boot/compressed/head.S           | 84 +++++++-------------
+ arch/arm/boot/compressed/vmlinux.lds.S    |  5 ++
+ drivers/firmware/efi/libstub/arm32-stub.c | 41 ++--------
+ 3 files changed, 38 insertions(+), 92 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
