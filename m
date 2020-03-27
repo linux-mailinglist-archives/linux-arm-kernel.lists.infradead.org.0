@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F1F19604E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 22:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A281196054
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 22:17:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r0WdzmuCL5CGt4sknrrSf/tky9kdYr8C9zeSMYYaMG8=; b=XR1DB3k/GXnSu9
-	bSh1i4KyW5sCtzKp60lArHurcnVkoI5Bi9f20jcsKKD1BpyUl5PIy8Npmcu2tgZam/Rjy+RTMfTEI
-	tFQTBpnwGbifOPVD7nnXNiB2SkBF78g8Aeb+bniHWWC242OmMDhSvMttft49oYCWiA2Tii3yFh7I4
-	CssYF5v46lLqIWh9g9Xc3JIBjsKnMndx6Kl0RowCNOgVRRU6El2cdado/lyYYX4vwPK8L+qPj9u8c
-	MIKOAqV0lxIgh+gKUsRdSMhUg8KggcllbQ+6BRq2Z+LFkNJQ4sI72ZljqpzUYzUR6ICOibbHL2Koh
-	9E39tJBkHQjE667WNC8w==;
+	List-Owner; bh=Eui++SYtQUr48WmI8hNSIEhUczEpLyvoPxFwpn3HBCg=; b=Pp/79J7viaEK3Y
+	vpOHjyMFvPyECtCzJnVDs8eA97KoC999/9AyWVcqVdo2otzUrkTtgdbBwDxja1NaQE3dRJmX1LAQx
+	34YupkHx4t+25zg7Ma5atPkyUcRX4jGI9c86arJt0MZo6musI7lLLXvYRbtfhZ2fbx/HNYaXHTdPg
+	uDFtHv90hJ3plBtQa7vVTjk6WG1KKHC6UmUqS6ZyenEceMM26CeZxsBAS3u+MjEpCou8Lc3RV3Ygc
+	2e194K6ohIfFf0HVyY9bV3W+OcFmQfq4Vl5dx9BXEpbMR9IwIm5ksxIxZP1sgoWiqZ9LZ/gqweEZX
+	l7EEMgg4xeCEeI8LeJYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHwLO-0002Pw-L1; Fri, 27 Mar 2020 21:16:46 +0000
+	id 1jHwM0-0002sj-An; Fri, 27 Mar 2020 21:17:24 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHwLG-0002O5-8Z; Fri, 27 Mar 2020 21:16:39 +0000
+ id 1jHwLG-0002O6-9D; Fri, 27 Mar 2020 21:16:40 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 99DA0AC50;
- Fri, 27 Mar 2020 21:16:36 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 086C2AC53;
+ Fri, 27 Mar 2020 21:16:37 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: [GIT PULL 2/3] bcm2835-dt-next-2020-03-27
-Date: Fri, 27 Mar 2020 22:16:31 +0100
-Message-Id: <20200327211632.32346-2-nsaenzjulienne@suse.de>
+Subject: [GIT PULL 3/3] bcm2835-defconfig-next-2020-03-27
+Date: Fri, 27 Mar 2020 22:16:32 +0100
+Message-Id: <20200327211632.32346-3-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200327211632.32346-1-nsaenzjulienne@suse.de>
 References: <20200327211632.32346-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_141638_444259_60189986 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20200327_141638_463140_F6291B40 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -45,10 +46,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,41 +72,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Florian,
 
-The following changes since commit 14e1eb5a91a96d9e1ce8051f752b7b6645bc8e10:
+The following changes since commit 8068b7b63583764b46416a62856e42fb1f954ab6:
 
-  dt-bindings: arm: Document Broadcom SoCs 'secondary-boot-reg' (2020-03-10 12:43:15 -0700)
+  Merge tag 'tags/bcm2835-defconfig-next-2020-03-09' into defconfig/next (2020-03-10 11:13:21 -0700)
 
 are available in the Git repository at:
 
-  ssh://git@gitolite.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm2835-dt-next-2020-03-27
+  ssh://git@gitolite.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm2835-defconfig-next-2020-03-27
 
-for you to fetch changes up to 3ac395a5b3f3b678663fbb58381fdae2b1b57588:
+for you to fetch changes up to f06f924a65fb3991614fb23a783d4fef9c8d14ea:
 
-  ARM: dts: bcm283x: Use firmware PM driver for V3D (2020-03-27 21:25:35 +0100)
-
-----------------------------------------------------------------
-- First patch updates RPi4's expgpio's GPIO labels, adding the SD power rail.
-
-- Second patch adds a fixed regulator that controls the SD power and
-hooks it up with emmc2.
-
-- Third patch rolls back to the firmware based power driver as the MMIO
-version is unstable.
+  ARM: bcm2835_defconfig: Enable fixed-regulator (2020-03-27 21:27:47 +0100)
 
 ----------------------------------------------------------------
-Nicolas Saenz Julienne (3):
-      ARM: dts: bcm2711: Update expgpio's GPIO labels
-      ARM: dts: bcm2711: Add vmmc regulator in emmc2
-      ARM: dts: bcm283x: Use firmware PM driver for V3D
+Enables fixed regulator in bcm2835_defconfig
 
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts     | 13 ++++++++++++-
- arch/arm/boot/dts/bcm2835-common.dtsi     |  1 -
- arch/arm/boot/dts/bcm2835-rpi-common.dtsi | 12 ++++++++++++
- arch/arm/boot/dts/bcm2835.dtsi            |  1 +
- arch/arm/boot/dts/bcm2836.dtsi            |  1 +
- arch/arm/boot/dts/bcm2837.dtsi            |  1 +
- 6 files changed, 27 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+----------------------------------------------------------------
+Nicolas Saenz Julienne (1):
+      ARM: bcm2835_defconfig: Enable fixed-regulator
+
+ arch/arm/configs/bcm2835_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
