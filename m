@@ -2,61 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99AF519526D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 08:57:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44D5319528C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 09:06:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e4fnNTfklxgUbkYX+OswnVKdYx109Gh0JrPkfPN6GNk=; b=lwHCMy2BsHjLuT
-	blUT/rsa5Hh+uHEoks9GrYVXnQtWsv5ewIcjX4gYyA1LjMINSa4YwCvbcY6uI3OWfPj8p6CDzvu5K
-	LaIyeilESRMost0OJLKuf5CVGV0W60wHLHlUBvleo/GQdRoXod3nqTAFhxi18P6T+zhyVJufuLiBQ
-	+Yaa+RFlIcg7XV6Q9eM5oRvxz1zlluTiT8LYQApcthWC5hsi9zcIULwVS0ra3g+VblknA4o8OQHwp
-	/zxDQDV6oAyScdVV42UyXxoA6Ogs5zeLccRornd8ciwcLHfiXxyJZjzC1TTTlZ/wBZDBpn8J5t3Ju
-	pf4pJEOovVHltiL79iHw==;
+	List-Owner; bh=UsmZ8zx+gIxOGun7hwChwEilZf6GH1LNaTJQPX7RlYc=; b=pyKh/coKkCqkvO
+	wb4vDE+dn2IMbYBCVJEn3BSPJxrj/2zTf4J5VFWuUnd86ZjGqTIoZeURjbis0sExKFA+8nswVXiZQ
+	m+GVRf0Wn3YOtZXb9eDswEptSYdG7W5iIZiRqMwVRE+c2L98gji+GyZENDc2Tqc9tx1ojtvhc1/yz
+	PXl+OozZMEnBniFiIBX9czlX0R+gjZSkZ4AUE2xL/gW3Xie814Ae6d9IoXD8agBF6Ep3mT6vF79KJ
+	j07PbwULfY1hTppu+1H68b5H62EncKSLNG7NAZxlfnat9B/fmRDi3d7c1R9nHCXKIH5xfnt/T+GlB
+	ovCN6T5Rz0rXqUQ9jMxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHjrd-000326-VI; Fri, 27 Mar 2020 07:57:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jHk0j-0006Ci-BN; Fri, 27 Mar 2020 08:06:37 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHjrT-00031b-5L
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 07:57:04 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C48F720705;
- Fri, 27 Mar 2020 07:56:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585295821;
- bh=9BBoSkOWHW032cVKGTcrvJhhotZiT+ANj18ZoBrCpkg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=t9b1OtD3X/UpkIFwKYnNjPQq9u1VECA/E2qw4tC0xW2YLvb2ITdVJKQi+hPcKZKKd
- DBTPj/8X2RhhVYpBgOb+1eCUa/VljebF3l25VvGlJWsYWn91FENKSjzWGc8m1A3fg4
- 08biC9AumsRp46PYwk24V0nWqUobUrOFKRlJY6hU=
-Date: Fri, 27 Mar 2020 07:56:56 +0000
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v2] arm64: Expose original FAR_EL1 value in sigcontext
-Message-ID: <20200327075655.GA32241@willie-the-truck>
-References: <20200312171755.177743-1-pcc@google.com>
- <20200325174001.234803-1-pcc@google.com>
- <20200326164538.GC26987@mbp>
+ id 1jHk0a-0006C5-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 08:06:30 +0000
+Received: by mail-lf1-x143.google.com with SMTP id c5so7096849lfp.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 01:06:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=vvHlmRwYbjigywMVXIQw36DoJoPEU1iHfIwX/rrx4Tk=;
+ b=RGdQtOSG9W1yA9AW76iFiOea5j/ggU8mpWjFkFP46FMP6c0GIHT8C/C0JJQkMB6CdV
+ rpMW4pUppBSD2ip3f8aAKPU9qzyjO7Jl1i2mL2ZWVzBOYSIzr4C5FysR+Ao02CprgtE0
+ CMCQlmP8c9slHnXDoKUaSGvPDvXtDKjQJLWjSTibqRe4j8M7ArZrRqs0ZbWgE6SMBlTV
+ kwE1hQ3rUSCI5e71tOf1mLaaNFqaaw8Swbbce0FO+n5/qhAjQ0Av1l3O9eyc9F8teClb
+ zG+CtORIIjS/GmL0b4RREiW1CHGhQ1EAuv/KV3cRdyksHI44YgM70hFHxZOoHzea8+vw
+ 9tzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vvHlmRwYbjigywMVXIQw36DoJoPEU1iHfIwX/rrx4Tk=;
+ b=cLjJ2RdWHp1kOPmhNdprsNOwyeqihfHqKO5y7XkKf51X9NXbNJ6zRjQ4wleu1GRXI4
+ YUkA96n6/slBET1FDMDeIvqEHcWXaVyz9SU7+URBJXp8nVHYopkijfZ8CZJWE9VmezPO
+ pvmMIQKhwVS3CYBxdyiqajouODnl+ebX4cT+qv2wjjNd4ocOOUiTTFULnc3i4mmwpe/v
+ GOiBIEFKbT0gD/k+IBWrQl8+MLzrw1UFusrk6jF+czbQRWoOpVk2w03oWgN0h7XWzn72
+ drUvv3CnelsxhesvzfPgi/xV/wXn0UD5j0X4R/v4fXT4mxp4LTWSazjy6TJgIe0D3mAE
+ jj5Q==
+X-Gm-Message-State: ANhLgQ0x8R5bocvlqzYWXi9zQC/vAYnESdfsFql+njOzOSAPlghiReyc
+ Fj7+O9/4SU4QN4g/eULVjzDnpFt1wYLpUxffOlbMQA==
+X-Google-Smtp-Source: ADFU+vv4of0XzoIftpR/eMuHY/eLbaCa1oIV7Nacwuz9pc29WnUsFXNNkRMg7ZWa0hcSqBzi/v0PQBrfEUrIHYXSDbQ=
+X-Received: by 2002:ac2:5608:: with SMTP id v8mr8289766lfd.189.1585296384519; 
+ Fri, 27 Mar 2020 01:06:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200326164538.GC26987@mbp>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200229210225.173084-1-linus.walleij@linaro.org>
+ <20200302042205.tonnru7ysr46fht4@vireshk-i7>
+ <CAK8P3a3CkAfozaMMNsGk5VDib53veMhm7ExWZT+A2gc+J_GqWA@mail.gmail.com>
+ <CACRpkdaYo0w8Zy4MjxC9Hqhyv7rhOMzSf_t1ZqWnyXW=9Q7iJg@mail.gmail.com>
+In-Reply-To: <CACRpkdaYo0w8Zy4MjxC9Hqhyv7rhOMzSf_t1ZqWnyXW=9Q7iJg@mail.gmail.com>
+From: Vincent Guittot <vincent.guittot@linaro.org>
+Date: Fri, 27 Mar 2020 09:06:12 +0100
+Message-ID: <CAKfTPtDU9rOaq69YNMSSwQ3iK63jbROAUnSxETqqCyDOLFB-jA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: config: multi_v7 Use schedutil cpufreq
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_005703_231379_08864AC5 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200327_010628_210717_98E51503 
+X-CRM114-Status: GOOD (  16.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -66,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,45 +93,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Evgenii Stepanov <eugenis@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
+Cc: Arnd Bergmann <arnd@arndb.de>, Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 04:45:39PM +0000, Catalin Marinas wrote:
-> On Wed, Mar 25, 2020 at 10:40:01AM -0700, Peter Collingbourne wrote:
-> > The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-> > address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-> > the tag bits may be needed by tools in order to accurately diagnose
-> > memory errors, such as HWASan [1] or future tools based on the Memory
-> > Tagging Extension (MTE).
-> > 
-> > We should not stop clearing these bits in the existing fault address
-> > fields, because there may be existing userspace applications that are
-> > expecting the tag bits to be cleared. Instead, create a far_context in
-> > sigcontext (similar to the existing esr_context), and store the original
-> > value of FAR_EL1 (including the tag bits) there.
-> > 
-> > [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
-> > 
-> > Signed-off-by: Peter Collingbourne <pcc@google.com>
-> 
-> The patch looks fine. However, I wouldn't queue it for 5.7, it's too
-> close to the merging window and I'd like it to sit in linux-next for a
-> bit. Unless there are other comments, it looks fine to me for -rc8.
+On Thu, 26 Mar 2020 at 23:08, Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Wed, Mar 25, 2020 at 5:28 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > On Mon, Mar 2, 2020 at 5:22 AM Viresh Kumar <viresh.kumar@linaro.org> wrote:
+>
+> > > FWIW, I have tried something similar for arm64 earlier.
+> > >
+> > > https://lore.kernel.org/lkml/af12e002bc165844101830c0eb00e283b536a879.1510813288.git.viresh.kumar@linaro.org/
+> >
+> > I've dropped this one and not applied it for now after rereading the old thread.
+> > If there is a broader agreement on what the default should be, please
+> > collect more Acks and we can apply whatever you come up with.
+>
+> I think there is a more compelling argument: if I understand correctly
+> the energy aware scheduling and HMP on big.LITTLE only works
+> correctly if schedutil is used as cpufreq governor (correct Vincent, Viresh?)
 
-You mean 5.8? I'm also a bit surprised not to see a docs update, given that
-we talk about the general lack of tags in siginfo_t towards the end of
-Documentation/arm64/tagged-pointers.rst
+EAS is disabled while building scheduler toology if schedutil is not
+the cpufreq governor
 
-Will
+Quoting from kernel/sched/topology.c:
+/*
+ * EAS can be used on a root domain if it meets all the following conditions:
+ *    1. an Energy Model (EM) is available;
+ *    2. the SD_ASYM_CPUCAPACITY flag is set in the sched_domain hierarchy.
+ *    3. no SMT is detected.
+ *    4. the EM complexity is low enough to keep scheduling overheads low;
+ *    5. schedutil is driving the frequency of all CPUs of the rd;
+ *
+
+
+
+>
+> That would make the default multi_v7 unusable (or misbehaving)
+> on e.g. Vexpress TC2.
+>
+> Thus I suspect the Vexpress and other machines using HMP
+> and big.LITTLE should just select
+> CPU_FREQ_DEFAULT_GOV_SCHEDUTIL in their Kconfig.
+>
+> That will of course make it percolate up to multi_v7 by default
+> as well.
+>
+> If more magic configs are necessary to select to make a TC2
+> work properly I'd like to know these as well so we can just select
+> them all by default also for these targets.
+>
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
