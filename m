@@ -2,59 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBA83195E6F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:16:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A165195E83
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 20:20:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h+FOVCxPhNxVNfyNxgIITFUERTp5+K3v56FBjgQYsT4=; b=PMeZaUItOygRRY8kCrpcHDRT4
-	TrrFstVCrTsSztiS9MWeIMYRT6kCyFpjw+kIRhpjl7EnT6icGQlu7b10igbjJBG1cjoGoryQ78iWV
-	T8iNdGNfWRpV1lc/YpHzglZC09TlYBJQ0X+VaNPKUKY/eu1AlmyeTG/dloRrVRo/Pf/pATorxu+ws
-	DZrJQa7WW6ehDyTC4xoC3BYWKp8gQ+LU1DlHloZJskLJ7AcSfiM0UE35zi7XcKCFjh7CA6NOuTBhJ
-	/2WPjQtcqqn/msDDtksU8SkMkL42rzJ4WU4Aqh2oL0aPMYDwM3a0BPfWuFGivqmYjQuSzy+WMgZCV
-	oLRaATVsA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=r73/Z+eFwpfrt57D7CKmcM8otoV5DEfTDjv46Iwo6gg=; b=HC7RlfWflr4RKz
+	uGk7P7IwKBU09FTwxs5YvI+xPrOe6jU8GdFE3HMJ4ZMc9Ml7P1rq5APQw/ujl+DkQyK68HpolQYbV
+	7A4z4UYJ3fkP6B8jYu+fbYPeoh2Pth8L88kwuKR58Wv2eDwp7Ov0dVz1QbNPavCUOuyroIifo47jU
+	P/FHAxpKW2e3vyih3sTsSksGPEzVT688kBcJ1WJGhMntgeg6vGRZsw8h8gmbYoGDIxSLGJQMRQc4L
+	+Q2zenk86vUhAoLNDykv6oMKTdqi9Hn2QPRbhCUOwxo9DVWec3Wn5+iOxbAdJDt893XZ7J1hKuk/i
+	jKlI4WLNpQveYcTFWYeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHuSR-0007rv-1E; Fri, 27 Mar 2020 19:15:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHuSH-0007qq-C8
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:15:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8A9430E;
- Fri, 27 Mar 2020 12:15:40 -0700 (PDT)
-Received: from [10.57.60.204] (unknown [10.57.60.204])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF4563F71E;
- Fri, 27 Mar 2020 12:15:38 -0700 (PDT)
-Subject: Re: [PATCH 0/2] amba/platform: Initialize dma_parms at the bus level
-To: Ulf Hansson <ulf.hansson@linaro.org>, BOUGH CHEN <haibo.chen@nxp.com>
-References: <20200325113407.26996-1-ulf.hansson@linaro.org>
- <VI1PR04MB504097B40CE0B804FA60D67A90CF0@VI1PR04MB5040.eurprd04.prod.outlook.com>
- <VI1PR04MB5040FFADA4F780422E208AC390CC0@VI1PR04MB5040.eurprd04.prod.outlook.com>
- <CAPDyKFr_yOmZ2MMvp=1krHejCRDRfhC0B+1icYR5xuZfhKy_ag@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <2b2f1b1e-d186-e60f-baa9-3223ad4101f0@arm.com>
-Date: Fri, 27 Mar 2020 19:15:37 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <CAPDyKFr_yOmZ2MMvp=1krHejCRDRfhC0B+1icYR5xuZfhKy_ag@mail.gmail.com>
-Content-Language: en-GB
+	id 1jHuWW-0008WC-Pu; Fri, 27 Mar 2020 19:20:09 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHuWH-0008Ve-D5
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 19:19:55 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id e2so8593868pgb.17
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 12:19:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:subject:from:to:cc;
+ bh=XpuhKqjVM8MK9kYWzBFirKIy6yK9tTpg5onfT2tp90w=;
+ b=QLA/wpnt1y/a19Dvt+ePVbswxHJPr8yGu5n5clsZgQ55bMClr1z8T3Cq82e3oaTj8Q
+ dPRELKGdNYK1jZv3dbn/mnwG5jFVWr2DcFCC/oBZQjGD5r0/QubkFME1P80Z8yAjNR28
+ GZ4rAtXEMlSo9rt9x9FXOXU7FknNxOkwEZu50foccSv4ZWDTz3hoJkY4n3dOFn4InnDZ
+ vOpLT9b6GIqh3BJ3L2GM4KQsqLsTvUDT6CsiIOVEs9N24D6E/kfxt5lrPLzbcFPIImXp
+ aWZuZqwOGuyPJhDp1rov+EVNyr6zaS3LKn89mONTM1rQoTsxGzubBb26rLLYijZEMnnA
+ cs+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version:subject
+ :from:to:cc;
+ bh=XpuhKqjVM8MK9kYWzBFirKIy6yK9tTpg5onfT2tp90w=;
+ b=dsMFkhG96t90ZX9hOWiaqJP3GCC/zVcoT/NjysU3hsQqo4XRlJkdzH0b9qMK5AuOAh
+ EEK8MTT17kN8QvaCKRmSKHFSOoIBZD8FNL5uILXsnEMkfgJ+Azu4RGVyk+bbb/BNr22Q
+ +1crAfLp7LcN41B7T7Dy5UZHNf9DIfEycWbpoHZZxNKugSPpNvLCul7wumQIS2PakcBm
+ Imktq6sp5NWCCI4NGKbA16VtqhDOg3cFiKWEUjYbPTpcTJxUl/u9oRMpOxe5w+srex+S
+ KwL1JNcyIFMWlSnt6Gzrj/FhZbmYdk5IfxdebYx0Ud2EoSFKKRKg/Bh/xFrY6K8J8FtA
+ zDJQ==
+X-Gm-Message-State: ANhLgQ0shzwibRm0vckAY8FrWSOXl9dWoJGPoRZ1+ZbkjFWAOqqwhX4z
+ 1tx/s6YCLyMb5DgpKKMZ51FdzB0=
+X-Google-Smtp-Source: ADFU+vtAEoR3AnPXURCg12ZPCSHCxP/2EVf2wJVL7Os1RIRAhyiumuT7YUPsT6oMJYAoWzBvZjS/jLc=
+X-Received: by 2002:a63:8643:: with SMTP id x64mr811399pgd.108.1585336790806; 
+ Fri, 27 Mar 2020 12:19:50 -0700 (PDT)
+Date: Fri, 27 Mar 2020 12:19:15 -0700
+In-Reply-To: <20200325174001.234803-1-pcc@google.com>
+Message-Id: <20200327191915.257116-1-pcc@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.26.0.rc2.310.g2932bb562d-goog
+Subject: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
+From: Peter Collingbourne <pcc@google.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_121545_501352_10971BF6 
-X-CRM114-Status: GOOD (  27.27  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200327_121953_472979_F3BC2A50 
+X-CRM114-Status: GOOD (  22.41  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,133 +95,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, "Rafael J . Wysocki" <rafael@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Vinod Koul <vkoul@kernel.org>,
- Ludovic Barre <ludovic.barre@st.com>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- Christoph Hellwig <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Peter Collingbourne <pcc@google.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Richard Henderson <rth@twiddle.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wMy0yNyAzOjM0IHBtLCBVbGYgSGFuc3NvbiB3cm90ZToKPiBPbiBGcmksIDI3IE1h
-ciAyMDIwIGF0IDA0OjAyLCBCT1VHSCBDSEVOIDxoYWliby5jaGVuQG54cC5jb20+IHdyb3RlOgo+
-Pgo+Pgo+Pj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4+IEZyb206IEJPVUdIIENIRU4K
-Pj4+IFNlbnQ6IDIwMjDlubQz5pyIMjbml6UgMTI6NDEKPj4+IFRvOiBVbGYgSGFuc3NvbiA8dWxm
-LmhhbnNzb25AbGluYXJvLm9yZz47IEdyZWcgS3JvYWgtSGFydG1hbgo+Pj4gPGdyZWdraEBsaW51
-eGZvdW5kYXRpb24ub3JnPjsgUmFmYWVsIEogLiBXeXNvY2tpIDxyYWZhZWxAa2VybmVsLm9yZz47
-Cj4+PiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnCj4+PiBDYzogQXJuZCBCZXJnbWFubiA8
-YXJuZEBhcm5kYi5kZT47IENocmlzdG9waCBIZWxsd2lnIDxoY2hAbHN0LmRlPjsKPj4+IFJ1c3Nl
-bGwgS2luZyA8bGludXhAYXJtbGludXgub3JnLnVrPjsgTGludXMgV2FsbGVpaiA8bGludXMud2Fs
-bGVpakBsaW5hcm8ub3JnPjsKPj4+IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+OyBMdWRv
-dmljIEJhcnJlIDxsdWRvdmljLmJhcnJlQHN0LmNvbT47Cj4+PiBsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmc7IGRtYWVuZ2luZUB2Z2VyLmtlcm5lbC5vcmcKPj4+IFN1YmplY3Q6
-IFJFOiBbUEFUQ0ggMC8yXSBhbWJhL3BsYXRmb3JtOiBJbml0aWFsaXplIGRtYV9wYXJtcyBhdCB0
-aGUgYnVzIGxldmVsCj4+Pgo+Pj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+Pj4gRnJv
-bTogVWxmIEhhbnNzb24gPHVsZi5oYW5zc29uQGxpbmFyby5vcmc+Cj4+Pj4gU2VudDogMjAyMOW5
-tDPmnIgyNeaXpSAxOTozNAo+Pj4+IFRvOiBHcmVnIEtyb2FoLUhhcnRtYW4gPGdyZWdraEBsaW51
-eGZvdW5kYXRpb24ub3JnPjsgUmFmYWVsIEogLgo+Pj4+IFd5c29ja2kgPHJhZmFlbEBrZXJuZWwu
-b3JnPjsgbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwo+Pj4+IENjOiBBcm5kIEJlcmdtYW5u
-IDxhcm5kQGFybmRiLmRlPjsgQ2hyaXN0b3BoIEhlbGx3aWcgPGhjaEBsc3QuZGU+Owo+Pj4+IFJ1
-c3NlbGwgS2luZyA8bGludXhAYXJtbGludXgub3JnLnVrPjsgTGludXMgV2FsbGVpago+Pj4+IDxs
-aW51cy53YWxsZWlqQGxpbmFyby5vcmc+OyBWaW5vZCBLb3VsIDx2a291bEBrZXJuZWwub3JnPjsg
-Qk9VR0ggQ0hFTgo+Pj4+IDxoYWliby5jaGVuQG54cC5jb20+OyBMdWRvdmljIEJhcnJlIDxsdWRv
-dmljLmJhcnJlQHN0LmNvbT47Cj4+Pj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnOyBkbWFlbmdpbmVAdmdlci5rZXJuZWwub3JnOyBVbGYKPj4+PiBIYW5zc29uIDx1bGYuaGFu
-c3NvbkBsaW5hcm8ub3JnPgo+Pj4+IFN1YmplY3Q6IFtQQVRDSCAwLzJdIGFtYmEvcGxhdGZvcm06
-IEluaXRpYWxpemUgZG1hX3Bhcm1zIGF0IHRoZSBidXMKPj4+PiBsZXZlbAo+Pj4+Cj4+Pj4gSXQn
-cyBjdXJyZW50bHkgdGhlIGFtYmEvcGxhdGZvcm0gZHJpdmVyJ3MgcmVzcG9uc2liaWxpdHkgdG8g
-aW5pdGlhbGl6ZQo+Pj4+IHRoZSBwb2ludGVyLCBkbWFfcGFybXMsIGZvciBpdHMgY29ycmVzcG9u
-ZGluZyBzdHJ1Y3QgZGV2aWNlLiBUaGUKPj4+PiBiZW5lZml0IHdpdGggdGhpcyBhcHByb2FjaCBh
-bGxvd3MgdXMgdG8gYXZvaWQgdGhlIGluaXRpYWxpemF0aW9uIGFuZAo+Pj4+IHRvIG5vdCB3YXN0
-ZSBtZW1vcnkgZm9yIHRoZSBzdHJ1Y3QgZGV2aWNlX2RtYV9wYXJhbWV0ZXJzLCBhcyB0aGlzIGNh
-bgo+Pj4+IGJlIGRlY2lkZWQgb24gYSBjYXNlIGJ5IGNhc2UgYmFzaXMuCj4+Pj4KPj4+PiBIb3dl
-dmVyLCBpdCBoYXMgdHVybmVkIG91dCB0aGF0IHRoaXMgYXBwcm9hY2ggaXMgbm90IHZlcnkgcHJh
-Y3RpY2FsLgo+Pj4+IE5vdCBvbmx5IGRvZXMgaXQgbGVhZCB0byBvcGVuIGNvZGluZywgYnV0IGFs
-c28gdG8gcmVhbCBlcnJvcnMuIEluCj4+Pj4gcHJpbmNpcGxlIGNhbGxlcnMgb2YKPj4+PiBkbWFf
-c2V0X21heF9zZWdfc2l6ZSgpIGRvZXNuJ3QgY2hlY2sgdGhlIGVycm9yIGNvZGUsIGJ1dCBqdXN0
-IGFzc3VtZXMKPj4+PiBpdCBzdWNjZWVkcy4KPj4+Pgo+Pj4+IEZvciB0aGVzZSByZWFzb25zLCB0
-aGlzIHNlcmllcyBpbml0aWFsaXplcyB0aGUgZG1hX3Bhcm1zIGZyb20gdGhlCj4+Pj4gYW1iYS9w
-bGF0Zm9ybSBidXMgYXQgdGhlIGRldmljZSByZWdpc3RyYXRpb24gcG9pbnQuIFRoaXMgYWxzbyBm
-b2xsb3dzCj4+Pj4gdGhlIHdheSB0aGUgUENJIGRldmljZXMgYXJlIGJlaW5nIG1hbmFnZWQsIHNl
-ZSBwY2lfZGV2aWNlX2FkZCgpLgo+Pj4+Cj4+Pj4gSWYgaXQgdHVybnMgb3V0IHRoYXQgdGhpcyBp
-cyBhbiBhY2NlcHRhYmxlIHNvbHV0aW9uLCB3ZSBwcm9iYWJseSBhbHNvCj4+Pj4gd2FudCB0aGUg
-Y2hhbmdlcyBmb3Igc3RhYmxlLCBidXQgSSBhbSBub3Qgc3VyZSBpZiBpdCBhcHBsaWVzIHdpdGhv
-dXQgY29uZmxpY3RzLgo+Pj4+Cj4+Pj4gVGhlIHNlcmllcyBpcyBiYXNlZCBvbiB2NS42LXJjNy4K
-Pj4+Pgo+Pj4KPj4+IEhpIFVsZiwKPj4+Cj4+PiBTaW5jZSBpLk1YUU0gU01NVSByZWxhdGVkIGNv
-ZGUgc3RpbGwgbm90IHVwc3RyZWFtIHlldCwgc28gSSBhcHBseSB5b3VyCj4+PiBwYXRjaGVzIG9u
-IG91ciBpbnRlcm5hbCBMaW51eCBicmFuY2ggYmFzZWQgb24gdjUuNC4yNCwgYW5kIGZpbmQgaXQg
-ZG8gbm90IHdvcmsKPj4+IG9uIG15IHNpZGUuIE1heWJlIGZvciBwbGF0Zm9ybSBjb3JlIGRyaXZl
-cnMsIHRoZXJlIGlzIGEgZ2FwIGJldHdlZW4gdjUuNC4yNAo+Pj4gYW5kIHY1LjYtcmM3IHdoaWNo
-IGhhcyB0aGUgaW1wYWN0Lgo+Pj4gSSB3aWxsIHRyeSB0byBwdXQgb3VyIFNNTVUgcmVsYXRlZCBj
-b2RlIGludG8gdjUuNi1yYzcsIHRoZW4gZG8gdGhlIHRlc3QgYWdhaW4uCj4+Pgo+Pj4KPj4KPj4g
-SGkgVWxmLAo+Pgo+PiBPbiB0aGUgbGF0ZXN0IExpbnV4LW5leHQgYnJhbmNoLCB0aGUgdG9wIGNv
-bW1pdCA4OTI5NWM1OWMxZjA2M2I1MzNkMDcxY2E0OWQwZmEwYzA3ODNjYTZmICh0YWc6IG5leHQt
-MjAyMDAzMjYpLCBhZnRlciBhZGQgeW91ciB0d28gcGF0Y2hlcywgSSBqdXN0IGFkZCB0aGUgc2lt
-cGxlIGRlYnVnIGNvZGUgYXMgZm9sbG93aW5nIGluIHRoZSAvZHJpdmVyL21tYy9jb3JlL3F1ZXVl
-LmMsIGJ1dCBzZWVtcyBzdGlsbCBub3Qgd29yayBhcyBvdXIgZXhwZWN0LCBsb2dpY2FsbHksIGl0
-IHNob3VsZCB3b3JrLCBzbyBjYW4geW91IG9yIGFueW9uZSB0ZXN0IG9uIG90aGVyIHBsYXRmb3Jt
-PyBUaGlzIHNlZW1zIHdlaXJkLgo+IAo+IFlvdSBhcmUgcmlnaHQsIHRoaXMgZG9lc24ndCB3b3Jr
-IGZvciBwbGF0Zm9ybSBkZXZpY2VzIGJlaW5nIGFkZGVkCj4gdGhyb3VnaCB0aGUgT0YgcGF0aC4K
-PiAKPiBJbiBvdGhlciB3b3Jkcywgb2ZfcGxhdGZvcm1fZGV2aWNlX2NyZWF0ZV9wZGF0YSgpIG1h
-bnVhbGx5IGFsbG9jYXRlcwo+IHRoZSBwbGF0Zm9ybSBkZXZpY2UgYW5kIGFzc2lnbnMgaXQgdGhl
-ICZwbGF0Zm9ybV9idXNfdHlwZSwgYnV0IHdpdGhvdXQKPiBjYWxsaW5nIHBsYXRmb3JtX2Rldmlj
-ZV9hZGQoKS4KPiAKPiBGb3IgYW1iYSwgaXQgd29ya3MgZmluZSwgYXMgaW4gdGhhdCBPRiBwYXRo
-LCBhbWJhX2RldmljZV9hZGQoKSBpcyBjYWxsZWQuIEhtbS4KPiAKPiBJIHJlLXNwaW4gdGhpcywg
-dG8gYWRkcmVzcyB0aGUgcHJvYmxlbS4gUGVyaGFwcyB3ZSBzaW1wbHkgbmVlZCB0byB1c2UKPiB0
-aGUgLT5wcm9iZSgpIHBhdGguCgpGV0lXIHdlIGFscmVhZHkgaGF2ZSBzZXR1cF9wZGV2X2RtYV9t
-YXNrcygpLCBzbyBpdCBtaWdodCBiZSBsb2dpY2FsIHRvIAppbmNsdWRlIGRtYV9wYXJtcyBpbiB0
-aGVyZSB0b28uCgpSb2Jpbi4KCj4gCj4gS2luZCByZWdhcmRzCj4gVWZmZQo+IAo+Pgo+PiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9tbWMvY29yZS9xdWV1ZS5jIGIvZHJpdmVycy9tbWMvY29yZS9xdWV1
-ZS5jCj4+IGluZGV4IDI1YmVlM2RhZjllMi4uZjA5MTI4MGY3ZmZiIDEwMDY0NAo+PiAtLS0gYS9k
-cml2ZXJzL21tYy9jb3JlL3F1ZXVlLmMKPj4gKysrIGIvZHJpdmVycy9tbWMvY29yZS9xdWV1ZS5j
-Cj4+IEBAIC00MDMsNiArNDAzLDEzIEBAIHN0YXRpYyB2b2lkIG1tY19zZXR1cF9xdWV1ZShzdHJ1
-Y3QgbW1jX3F1ZXVlICptcSwgc3RydWN0IG1tY19jYXJkICpjYXJkKQo+PiAgICAgICAgICAgICAg
-ICAgIGJsa19xdWV1ZV9tYXhfc2VnbWVudF9zaXplKG1xLT5xdWV1ZSwKPj4gICAgICAgICAgICAg
-ICAgICAgICAgICAgIHJvdW5kX2Rvd24oaG9zdC0+bWF4X3NlZ19zaXplLCBibG9ja19zaXplKSk7
-Cj4+Cj4+ICsgICAgICAgcHJfZXJyKCIjIyMjIyMgdGhlIG1heCBzZWdtZW50IHNpemUgaXMgJWRc
-biIsIHF1ZXVlX21heF9zZWdtZW50X3NpemUobXEtPnF1ZXVlKSk7Cj4+ICsgICAgICAgaWYgKGhv
-c3QtPnBhcmVudC0+ZG1hX3Bhcm1zKSB7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgcHJfZXJy
-KCIjIyMjIyMjIyMgdGhlIGRtYSBwYXJtcyBoYXMgdmFsdWVcbiIpOwo+PiArICAgICAgIH0gZWxz
-ZSBpZiAoIShob3N0LT5wYXJlbnQtPmRtYV9wYXJtcykpIHsKPj4gKyAgICAgICAgICAgICAgICAg
-ICAgICBwcl9lcnIoIiMjIyMjIyMjIHRoZSBkbWEgcGFybXMgaXMgemVybyEhXG4iKTsKPj4gKyAg
-ICAgICB9Cj4+ICsKPj4gICAgICAgICAgZG1hX3NldF9tYXhfc2VnX3NpemUobW1jX2Rldihob3N0
-KSwgcXVldWVfbWF4X3NlZ21lbnRfc2l6ZShtcS0+cXVldWUpKTsKPj4KPj4gICAgICAgICAgSU5J
-VF9XT1JLKCZtcS0+cmVjb3Zlcnlfd29yaywgbW1jX21xX3JlY292ZXJ5X2hhbmRsZXIpOwo+Pgo+
-PiBIZXJlIGlzIHRoZSBsb2cgSSBnb3Qgd2hlbiBzeXN0ZW0gcnVuLCBldmVuIGFmdGVyIHlvdXIg
-cGF0Y2gsIHRoZSBkZXYtPmRtYV9wYXJtcyBpcyBzdGlsbCBOVUxMLgo+PiBbICAgIDAuOTg5ODUz
-XSBtbWMwOiBuZXcgSFM0MDAgTU1DIGNhcmQgYXQgYWRkcmVzcyAwMDAxCj4+IFsgICAgMC45OTU3
-MDhdIHNkaGNpLWVzZGhjLWlteCAzMGI1MDAwMC5tbWM6IEdvdCBDRCBHUElPCj4+IFsgICAgMC45
-OTkzNzRdICMjIyMjIyB0aGUgbWF4IHNlZ21lbnQgc2l6ZSBpcyA2NTAyNAo+PiBbICAgIDEuMDA4
-NTk0XSAjIyMjIyMjIyB0aGUgZG1hIHBhcm1zIGlzIHplcm8hIQo+PiBbICAgIDEuMDEyODc1XSBt
-bWNibGswOiBtbWMwOjAwMDEgSUIyOTMyIDI5LjIgR2lCCj4+IFsgICAgMS4wMTc1NjldICMjIyMj
-IyB0aGUgbWF4IHNlZ21lbnQgc2l6ZSBpcyA2NTAyNAo+PiBbICAgIDEuMDIyMTk1XSAjIyMjIyMj
-IyB0aGUgZG1hIHBhcm1zIGlzIHplcm8hIQo+PiBbICAgIDEuMDI2NDc5XSBtbWNibGswYm9vdDA6
-IG1tYzA6MDAwMSBJQjI5MzIgcGFydGl0aW9uIDEgNC4wMCBNaUIKPj4gWyAgICAxLjAzMjU0MV0g
-IyMjIyMjIHRoZSBtYXggc2VnbWVudCBzaXplIGlzIDY1MDI0Cj4+IFsgICAgMS4wMzUxOThdIG1t
-YzE6IFNESENJIGNvbnRyb2xsZXIgb24gMzBiNTAwMDAubW1jIFszMGI1MDAwMC5tbWNdIHVzaW5n
-IEFETUEKPj4gWyAgICAxLjAzNzE2OV0gIyMjIyMjIyMgdGhlIGRtYSBwYXJtcyBpcyB6ZXJvISEK
-Pj4gWyAgICAxLjA0ODQ5M10gbW1jYmxrMGJvb3QxOiBtbWMwOjAwMDEgSUIyOTMyIHBhcnRpdGlv
-biAyIDQuMDAgTWlCCj4+IFsgICAgMS4wNTQ1MzFdIG1tY2JsazBycG1iOiBtbWMwOjAwMDEgSUIy
-OTMyIHBhcnRpdGlvbiAzIDQuMDAgTWlCLCBjaGFyZGV2ICgyMzQ6MCkKPj4KPj4KPj4gUmVnYXJk
-cwo+PiBIYWlibyBDaGVuCj4+PiBCZXN0IFJlZ2FyZHMKPj4+IEhhaWJvIENoZW4KPj4+Cj4+Pj4g
-S2luZCByZWdhcmRzCj4+Pj4gVWxmIEhhbnNzb24KPj4+Pgo+Pj4+IFVsZiBIYW5zc29uICgyKToK
-Pj4+PiAgICBkcml2ZXIgY29yZTogcGxhdGZvcm06IEluaXRpYWxpemUgZG1hX3Bhcm1zIGZvciBw
-bGF0Zm9ybSBkZXZpY2VzCj4+Pj4gICAgYW1iYTogSW5pdGlhbGl6ZSBkbWFfcGFybXMgZm9yIGFt
-YmEgZGV2aWNlcwo+Pj4+Cj4+Pj4gICBkcml2ZXJzL2FtYmEvYnVzLmMgICAgICAgICAgICAgIHwg
-MiArKwo+Pj4+ICAgZHJpdmVycy9iYXNlL3BsYXRmb3JtLmMgICAgICAgICB8IDEgKwo+Pj4+ICAg
-aW5jbHVkZS9saW51eC9hbWJhL2J1cy5oICAgICAgICB8IDEgKwo+Pj4+ICAgaW5jbHVkZS9saW51
-eC9wbGF0Zm9ybV9kZXZpY2UuaCB8IDEgKwo+Pj4+ICAgNCBmaWxlcyBjaGFuZ2VkLCA1IGluc2Vy
-dGlvbnMoKykKPj4+Pgo+Pj4+IC0tCj4+Pj4gMi4yMC4xCj4+Cj4gCj4gX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo+IAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+the tag bits may be needed by tools in order to accurately diagnose
+memory errors, such as HWASan [1] or future tools based on the Memory
+Tagging Extension (MTE).
+
+We should not stop clearing these bits in the existing fault address
+fields, because there may be existing userspace applications that are
+expecting the tag bits to be cleared. Instead, create a far_context in
+sigcontext (similar to the existing esr_context), and store the original
+value of FAR_EL1 (including the tag bits) there.
+
+[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+
+Signed-off-by: Peter Collingbourne <pcc@google.com>
+---
+v3:
+- add documentation to tagged-pointers.rst
+- update comments in sigcontext.h
+
+v2:
+- revert changes to hw_breakpoint.c
+- rename set_thread_esr to set_thread_far_esr
+
+ Documentation/arm64/tagged-pointers.rst  | 17 +++++----
+ arch/arm64/include/asm/exception.h       |  2 +-
+ arch/arm64/include/asm/processor.h       |  2 +-
+ arch/arm64/include/uapi/asm/sigcontext.h | 21 +++++++----
+ arch/arm64/kernel/entry-common.c         |  2 --
+ arch/arm64/kernel/signal.c               | 20 ++++++++++-
+ arch/arm64/mm/fault.c                    | 45 ++++++++++++++----------
+ 7 files changed, 74 insertions(+), 35 deletions(-)
+
+diff --git a/Documentation/arm64/tagged-pointers.rst b/Documentation/arm64/tagged-pointers.rst
+index eab4323609b9..9da7f6262fad 100644
+--- a/Documentation/arm64/tagged-pointers.rst
++++ b/Documentation/arm64/tagged-pointers.rst
+@@ -53,12 +53,17 @@ visibility.
+ Preserving tags
+ ---------------
+ 
+-Non-zero tags are not preserved when delivering signals. This means that
+-signal handlers in applications making use of tags cannot rely on the
+-tag information for user virtual addresses being maintained for fields
+-inside siginfo_t. One exception to this rule is for signals raised in
+-response to watchpoint debug exceptions, where the tag information will
+-be preserved.
++Non-zero tags are not preserved in the fault address fields
++siginfo.si_addr or sigcontext.fault_address when delivering
++signals. This means that signal handlers in applications making use
++of tags cannot rely on the tag information for user virtual addresses
++being maintained in these fields. One exception to this rule is for
++signals raised in response to watchpoint debug exceptions, where the
++tag information will be preserved.
++
++The fault address tag is preserved in the far field of the signal
++frame record far_context, which is present for signals raised in
++response to data aborts and instruction aborts.
+ 
+ The architecture prevents the use of a tagged PC, so the upper byte will
+ be set to a sign-extension of bit 55 on exception return.
+diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+index 7a6e81ca23a8..90e772d9b2cd 100644
+--- a/arch/arm64/include/asm/exception.h
++++ b/arch/arm64/include/asm/exception.h
+@@ -32,7 +32,7 @@ static inline u32 disr_to_esr(u64 disr)
+ }
+ 
+ asmlinkage void enter_from_user_mode(void);
+-void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
++void do_mem_abort(unsigned long far, unsigned int esr, struct pt_regs *regs);
+ void do_undefinstr(struct pt_regs *regs);
+ asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr);
+ void do_debug_exception(unsigned long addr_if_watchpoint, unsigned int esr,
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index 5ba63204d078..77d916c07531 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -142,7 +142,7 @@ struct thread_struct {
+ 	void			*sve_state;	/* SVE registers, if any */
+ 	unsigned int		sve_vl;		/* SVE vector length */
+ 	unsigned int		sve_vl_onexec;	/* SVE vl after next exec */
+-	unsigned long		fault_address;	/* fault info */
++	unsigned long		fault_address;	/* FAR_EL1 value */
+ 	unsigned long		fault_code;	/* ESR_EL1 value */
+ 	struct debug_info	debug;		/* debugging */
+ #ifdef CONFIG_ARM64_PTR_AUTH
+diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
+index 8b0ebce92427..6782394633cb 100644
+--- a/arch/arm64/include/uapi/asm/sigcontext.h
++++ b/arch/arm64/include/uapi/asm/sigcontext.h
+@@ -44,11 +44,12 @@ struct sigcontext {
+  *
+  *	0x210		fpsimd_context
+  *	 0x10		esr_context
++ *	 0x10		far_context
+  *	0x8a0		sve_context (vl <= 64) (optional)
+  *	 0x20		extra_context (optional)
+  *	 0x10		terminator (null _aarch64_ctx)
+  *
+- *	0x510		(reserved for future allocation)
++ *	0x500		(reserved for future allocation)
+  *
+  * New records that can exceed this space need to be opt-in for userspace, so
+  * that an expanded signal frame is not generated unexpectedly.  The mechanism
+@@ -94,17 +95,25 @@ struct esr_context {
+ 	__u64 esr;
+ };
+ 
++/* FAR_EL1 context */
++#define FAR_MAGIC	0x46415201
++
++struct far_context {
++	struct _aarch64_ctx head;
++	__u64 far;
++};
++
+ /*
+  * extra_context: describes extra space in the signal frame for
+  * additional structures that don't fit in sigcontext.__reserved[].
+  *
+  * Note:
+  *
+- * 1) fpsimd_context, esr_context and extra_context must be placed in
+- * sigcontext.__reserved[] if present.  They cannot be placed in the
+- * extra space.  Any other record can be placed either in the extra
+- * space or in sigcontext.__reserved[], unless otherwise specified in
+- * this file.
++ * 1) fpsimd_context, esr_context, far_context and extra_context must be
++ * placed in sigcontext.__reserved[] if present.  They cannot be placed
++ * in the extra space.  Any other record can be placed either in the
++ * extra space or in sigcontext.__reserved[], unless otherwise specified
++ * in this file.
+  *
+  * 2) There must not be more than one extra_context.
+  *
+diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+index fde59981445c..290ea59c68b8 100644
+--- a/arch/arm64/kernel/entry-common.c
++++ b/arch/arm64/kernel/entry-common.c
+@@ -22,7 +22,6 @@ static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
+ 	unsigned long far = read_sysreg(far_el1);
+ 
+ 	local_daif_inherit(regs);
+-	far = untagged_addr(far);
+ 	do_mem_abort(far, esr, regs);
+ }
+ NOKPROBE_SYMBOL(el1_abort);
+@@ -104,7 +103,6 @@ static void notrace el0_da(struct pt_regs *regs, unsigned long esr)
+ 
+ 	user_exit_irqoff();
+ 	local_daif_restore(DAIF_PROCCTX);
+-	far = untagged_addr(far);
+ 	do_mem_abort(far, esr, regs);
+ }
+ NOKPROBE_SYMBOL(el0_da);
+diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+index 339882db5a91..48e8b6c7b536 100644
+--- a/arch/arm64/kernel/signal.c
++++ b/arch/arm64/kernel/signal.c
+@@ -55,6 +55,7 @@ struct rt_sigframe_user_layout {
+ 
+ 	unsigned long fpsimd_offset;
+ 	unsigned long esr_offset;
++	unsigned long far_offset;
+ 	unsigned long sve_offset;
+ 	unsigned long extra_offset;
+ 	unsigned long end_offset;
+@@ -383,6 +384,7 @@ static int parse_user_sigframe(struct user_ctxs *user,
+ 			break;
+ 
+ 		case ESR_MAGIC:
++		case FAR_MAGIC:
+ 			/* ignore */
+ 			break;
+ 
+@@ -581,6 +583,11 @@ static int setup_sigframe_layout(struct rt_sigframe_user_layout *user,
+ 				     sizeof(struct esr_context));
+ 		if (err)
+ 			return err;
++
++		err = sigframe_alloc(user, &user->far_offset,
++				     sizeof(struct far_context));
++		if (err)
++			return err;
+ 	}
+ 
+ 	if (system_supports_sve()) {
+@@ -621,7 +628,8 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
+ 	__put_user_error(regs->pc, &sf->uc.uc_mcontext.pc, err);
+ 	__put_user_error(regs->pstate, &sf->uc.uc_mcontext.pstate, err);
+ 
+-	__put_user_error(current->thread.fault_address, &sf->uc.uc_mcontext.fault_address, err);
++	__put_user_error(untagged_addr(current->thread.fault_address),
++			 &sf->uc.uc_mcontext.fault_address, err);
+ 
+ 	err |= __copy_to_user(&sf->uc.uc_sigmask, set, sizeof(*set));
+ 
+@@ -641,6 +649,16 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
+ 		__put_user_error(current->thread.fault_code, &esr_ctx->esr, err);
+ 	}
+ 
++	if (err == 0 && user->far_offset) {
++		struct far_context __user *far_ctx =
++			apply_user_offset(user, user->far_offset);
++
++		__put_user_error(FAR_MAGIC, &far_ctx->head.magic, err);
++		__put_user_error(sizeof(*far_ctx), &far_ctx->head.size, err);
++		__put_user_error(current->thread.fault_address, &far_ctx->far,
++				 err);
++	}
++
+ 	/* Scalable Vector Extension state, if present */
+ 	if (system_supports_sve() && err == 0 && user->sve_offset) {
+ 		struct sve_context __user *sve_ctx =
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 85566d32958f..738adc950012 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -41,7 +41,7 @@
+ #include <asm/traps.h>
+ 
+ struct fault_info {
+-	int	(*fn)(unsigned long addr, unsigned int esr,
++	int	(*fn)(unsigned long far, unsigned int esr,
+ 		      struct pt_regs *regs);
+ 	int	sig;
+ 	int	code;
+@@ -320,9 +320,11 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
+ 	die_kernel_fault(msg, addr, esr, regs);
+ }
+ 
+-static void set_thread_esr(unsigned long address, unsigned int esr)
++static void set_thread_far_esr(unsigned long far, unsigned int esr)
+ {
+-	current->thread.fault_address = address;
++	unsigned long addr = untagged_addr(far);
++
++	current->thread.fault_address = far;
+ 
+ 	/*
+ 	 * If the faulting address is in the kernel, we must sanitize the ESR.
+@@ -336,7 +338,7 @@ static void set_thread_esr(unsigned long address, unsigned int esr)
+ 	 * type", so we ignore this wrinkle and just return the translation
+ 	 * fault.)
+ 	 */
+-	if (!is_ttbr0_addr(current->thread.fault_address)) {
++	if (!is_ttbr0_addr(addr)) {
+ 		switch (ESR_ELx_EC(esr)) {
+ 		case ESR_ELx_EC_DABT_LOW:
+ 			/*
+@@ -377,8 +379,11 @@ static void set_thread_esr(unsigned long address, unsigned int esr)
+ 	current->thread.fault_code = esr;
+ }
+ 
+-static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *regs)
++static void do_bad_area(unsigned long far, unsigned int esr,
++			struct pt_regs *regs)
+ {
++	unsigned long addr = untagged_addr(far);
++
+ 	/*
+ 	 * If we are in kernel mode at this point, we have no context to
+ 	 * handle this fault with.
+@@ -386,7 +391,7 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
+ 	if (user_mode(regs)) {
+ 		const struct fault_info *inf = esr_to_fault_info(esr);
+ 
+-		set_thread_esr(addr, esr);
++		set_thread_far_esr(far, esr);
+ 		arm64_force_sig_fault(inf->sig, inf->code, (void __user *)addr,
+ 				      inf->name);
+ 	} else {
+@@ -439,7 +444,7 @@ static bool is_write_abort(unsigned int esr)
+ 	return (esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM);
+ }
+ 
+-static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
++static int __kprobes do_page_fault(unsigned long far, unsigned int esr,
+ 				   struct pt_regs *regs)
+ {
+ 	const struct fault_info *inf;
+@@ -447,6 +452,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	vm_fault_t fault, major = 0;
+ 	unsigned long vm_flags = VM_READ | VM_WRITE | VM_EXEC;
+ 	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
++	unsigned long addr = untagged_addr(far);
+ 
+ 	if (kprobe_page_fault(regs, esr))
+ 		return 0;
+@@ -580,7 +586,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	}
+ 
+ 	inf = esr_to_fault_info(esr);
+-	set_thread_esr(addr, esr);
++	set_thread_far_esr(far, esr);
+ 	if (fault & VM_FAULT_SIGBUS) {
+ 		/*
+ 		 * We had some memory, but were unable to successfully fix up
+@@ -615,30 +621,32 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	return 0;
+ }
+ 
+-static int __kprobes do_translation_fault(unsigned long addr,
++static int __kprobes do_translation_fault(unsigned long far,
+ 					  unsigned int esr,
+ 					  struct pt_regs *regs)
+ {
++	unsigned long addr = untagged_addr(far);
++
+ 	if (is_ttbr0_addr(addr))
+-		return do_page_fault(addr, esr, regs);
++		return do_page_fault(far, esr, regs);
+ 
+-	do_bad_area(addr, esr, regs);
++	do_bad_area(far, esr, regs);
+ 	return 0;
+ }
+ 
+-static int do_alignment_fault(unsigned long addr, unsigned int esr,
++static int do_alignment_fault(unsigned long far, unsigned int esr,
+ 			      struct pt_regs *regs)
+ {
+-	do_bad_area(addr, esr, regs);
++	do_bad_area(far, esr, regs);
+ 	return 0;
+ }
+ 
+-static int do_bad(unsigned long addr, unsigned int esr, struct pt_regs *regs)
++static int do_bad(unsigned long far, unsigned int esr, struct pt_regs *regs)
+ {
+ 	return 1; /* "fault" */
+ }
+ 
+-static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
++static int do_sea(unsigned long far, unsigned int esr, struct pt_regs *regs)
+ {
+ 	const struct fault_info *inf;
+ 	void __user *siaddr;
+@@ -654,7 +662,7 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
+ 	if (esr & ESR_ELx_FnV)
+ 		siaddr = NULL;
+ 	else
+-		siaddr  = (void __user *)addr;
++		siaddr  = (void __user *)untagged_addr(far);
+ 	arm64_notify_die(inf->name, regs, inf->sig, inf->code, siaddr, esr);
+ 
+ 	return 0;
+@@ -727,11 +735,12 @@ static const struct fault_info fault_info[] = {
+ 	{ do_bad,		SIGKILL, SI_KERNEL,	"unknown 63"			},
+ };
+ 
+-void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs)
++void do_mem_abort(unsigned long far, unsigned int esr, struct pt_regs *regs)
+ {
+ 	const struct fault_info *inf = esr_to_fault_info(esr);
++	unsigned long addr = untagged_addr(far);
+ 
+-	if (!inf->fn(addr, esr, regs))
++	if (!inf->fn(far, esr, regs))
+ 		return;
+ 
+ 	if (!user_mode(regs)) {
+-- 
+2.26.0.rc2.310.g2932bb562d-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
