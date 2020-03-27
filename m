@@ -2,98 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87908195D21
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 18:49:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7C75195D2D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 18:53:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oHVktoxO2MVb+qER4yfy8pyluIUMth+7rjxu1NssDL4=; b=ipf4fG3aUlAFjH
-	6Nf4WKnS2TRkKjWoOJ9r/WPy0+GIl1Syh4fr8mI82zlbwykq/3Xr/30yWXO6ejcr8+iuuQufDCiit
-	lWoRKjO/0WBnq/Vw/rJHDOUrFRwgWjfpUACU6Cf4eHNDvhD/8Z69PMh/b9x9RzY78CRd6Bcvxzq8u
-	GR2m4TGccHDLpKxVLC8WtUhI3DC0zxa79husYh1x5CL5yZNvBvjwrnYldE3S5smKPrSYK2x0i7VAD
-	0Lt/HR3AWtcCYbwCv5/uFSwGELaFtiRRgDSt6qBfNxBl5Bb8JSoDEjIoE+s0uwR6U16wpbIrttDZK
-	Uwxpgvmc0x0lI+AUS2pA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=raS2+9Yo7hqJhsBLP7j4i7yjcjK+/6YwQbfrJgTA9ss=; b=kRA3C5h5K27oQBA/Y2yo5CZXm
+	9XgzwvCNfXpHKtZ3v073BtHt2eZAoniA25DEqB85nTEZ9hE8HH7LtDm4mIMNo76eXIpBsukqyRR2C
+	rvQ/RdnWi8q6pPrefbmlu3ZTat1V+gbGUTiZY5fxyM7ZJAlI2nhSpEPZlAk8GE/lXW/HIs+Q5NThw
+	/HAfur36fm3O4Dk8OD6WN2XdS0nuM2ca6XHQ9rsYuPvQEpjPHnAmGsgmZCwL8QvG1k9io7u+8wetW
+	tKgfs1b5vkW73BM58ULklMqEwqWOPb9t7g3Z1WhKhCWlv95AxMS6E96ZZ/3TdUVD2s7B1vpLuHlf4
+	lkgqUf0TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHt6G-0000O6-Jq; Fri, 27 Mar 2020 17:48:56 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jHtAF-0002G9-2v; Fri, 27 Mar 2020 17:53:03 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHt68-0000Ng-Kb
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 17:48:49 +0000
-Received: by mail-wm1-x344.google.com with SMTP id d1so13300923wmb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 10:48:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ahItD5ciKQlH35hkuZa9rsjTTheAXpNOZVWcDd0E20Y=;
- b=Nhep4Mv0Ct5wh4tYFff+xDjvhfee2zYaRMnPgSPjcib1z6wOJALzhhNrSp7vtOSzim
- /50aB9L7BEsDjtBO6dCXY50uEsqW9IZGMoyu0t+TJ3yZyz38Yeh5mfOruWQW3MSn6luC
- Cak3tRDx1n5xrS4Gi0PyJpLugknQEBeGaHr5jmJxLJknJJw5T0TfSb5ZrXHV4kHqWawj
- q40zxiOcKCG+tcrmmuwiPVmb4yZNZtGh6pDowziZfZ8cfFrzoqW1Yqg8f+Y+QfYl7nn0
- dcbsAzGu6wVFHdWHjCjsrInt/OqECzACb2Mp12aGBHO8yaaLjIHdr4ZESrP22powmxB8
- 74UQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ahItD5ciKQlH35hkuZa9rsjTTheAXpNOZVWcDd0E20Y=;
- b=jgHpx5qFEdB/eT9IND2W1qdGOdB+fUgFAuEz/EzHPPr5LZVm0gFhvU9BZY/Tdf+B4H
- 2Sm7joMHGew9H/cRN7mRBFtJtpy9q1/5gFbYYb4ro02PXQ0jlY1Qj/SwwxxARqriv/QL
- LQ/XbGPufx1SsLTbVek16PR2Dy/Xzyg6/+nHpCgGvmXTm9X54xI86HAq8jPGk9K7TMzi
- gbvkRN44h4VbLlgvOrs49lJ1O/aMBP1Q3tZlHq1PvWSsnvhYwFH/WcH13S2xO/yzNY6U
- bw56o6etDgIoep3Zw77KyAGQHCQ4mITVQTk2sBeqHfF+NveQv9d51zUnCJyiqIXsYSdi
- ryPg==
-X-Gm-Message-State: ANhLgQ1UAn6zlb9H2DtOdZeSwaAAhmsCk4UoGEOjt3s585WZ6cPgYPxt
- SjAI399s1izWqw36dRX1+7Njqw==
-X-Google-Smtp-Source: ADFU+vuj6jzPUh/Z88x9sm8cEUTuPhAXo/pdaIEKP0x+19gSf3BxmtaPc3dTBP0v3lRurwkOFeOKKg==
-X-Received: by 2002:a1c:2c85:: with SMTP id s127mr6493410wms.18.1585331323915; 
- Fri, 27 Mar 2020 10:48:43 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:109:355c:447d:ad3d:ac5c])
- by smtp.gmail.com with ESMTPSA id p10sm9508117wrm.6.2020.03.27.10.48.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Mar 2020 10:48:43 -0700 (PDT)
-Date: Fri, 27 Mar 2020 17:48:38 +0000
-From: Andrew Scull <ascull@google.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [RFC PATCH] arm64: unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
-Message-ID: <20200327174838.GD178422@google.com>
-References: <20200327143941.195626-1-ascull@google.com>
- <1705907b-234c-6f56-1360-f598c8047d1d@arm.com>
+ id 1jHtA1-0002FG-SZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 17:52:51 +0000
+Received: from lhreml706-cah.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id F1561EC14A638CABF194;
+ Fri, 27 Mar 2020 17:52:44 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ lhreml706-cah.china.huawei.com (10.201.108.47) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 27 Mar 2020 17:52:44 +0000
+Received: from [127.0.0.1] (10.47.10.23) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Fri, 27 Mar
+ 2020 17:52:43 +0000
+Subject: Re: [PATCH v3 2/2] irqchip/gic-v3-its: Balance initial LPI affinity
+ across CPUs
+To: Marc Zyngier <maz@kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+References: <20200316115433.9017-1-maz@kernel.org>
+ <20200316115433.9017-3-maz@kernel.org>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <7ea4e410-72cb-db3f-f141-a2f3c70b801d@huawei.com>
+Date: Fri, 27 Mar 2020 17:52:28 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1705907b-234c-6f56-1360-f598c8047d1d@arm.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20200316115433.9017-3-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.47.10.23]
+X-ClientProxiedBy: lhreml703-chm.china.huawei.com (10.201.108.52) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_104848_701766_FA1CC14C 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200327_105250_075301_0B216D7C 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,28 +74,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "qwandor@google.com" <qwandor@google.com>,
- "qperret@google.com" <qperret@google.com>, Marc Zyngier <maz@kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Will Deacon <will@kernel.org>,
- "wedsonaf@google.com" <wedsonaf@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- James Morse <James.Morse@arm.com>, "dbrazdil@google.com" <dbrazdil@google.com>,
- "kernel-team@android.com" <kernel-team@android.com>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "tabba@google.com" <tabba@google.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Jason Cooper <jason@lakedaemon.net>, chenxiang <chenxiang66@hisilicon.com>,
+ "luojiaxing@huawei.com" <luojiaxing@huawei.com>,
+ Ming Lei <ming.lei@redhat.com>, Zhou Wang <wangzhou1@hisilicon.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks, Steven. Could we look into the EPD* caching microarch details
-Marc was referring to for these A55 and A76 cores?
+> +
+> +/*
+> + * As suggested by Thomas Gleixner in:
+> + * https://lore.kernel.org/r/87h80q2aoc.fsf@nanos.tec.linutronix.de
+> + */
+> +static int its_select_cpu(struct irq_data *d,
+> +			  const struct cpumask *aff_mask)
+> +{
+> +	struct its_device *its_dev = irq_data_get_irq_chip_data(d);
+> +	cpumask_var_t tmpmask;
+> +	int cpu, node;
+> +
+> +	if (!alloc_cpumask_var(&tmpmask, GFP_KERNEL))
+> +		return -ENOMEM;
+> +
+> +	node = its_dev->its->numa_node;
+> +
+> +	if (!irqd_affinity_is_managed(d)) {
+> +		/* First try the NUMA node */
+> +		if (node != NUMA_NO_NODE) {
+> +			/*
+> +			 * Try the intersection of the affinity mask and the
+> +			 * node mask (and the online mask, just to be safe).
+> +			 */
+> +			cpumask_and(tmpmask, cpumask_of_node(node), aff_mask);
+> +			cpumask_and(tmpmask, tmpmask, cpu_online_mask);
+> +
+> +			/* If that doesn't work, try the nodemask itself */
+> +			if (cpumask_empty(tmpmask))
+> +				cpumask_and(tmpmask, cpumask_of_node(node), cpu_online_mask);
+> +
+> +			cpu = cpumask_pick_least_loaded(d, tmpmask);
+> +			if (cpu < nr_cpu_ids)
+> +				goto out;
+> +
+> +			/* If we can't cross sockets, give up */
+> +			if ((its_dev->its->flags & ITS_FLAGS_WORKAROUND_CAVIUM_23144))
+> +				goto out;
+> +
+> +			/* If the above failed, expand the search */
+> +		}
+> +
+> +		/* Try the intersection of the affinity and online masks */
+> +		cpumask_and(tmpmask, aff_mask, cpu_online_mask);
+> +
+> +		/* If that doesn't fly, the online mask is the last resort */
+> +		if (cpumask_empty(tmpmask))
+> +			cpumask_copy(tmpmask, cpu_online_mask);
+> +
+> +		cpu = cpumask_pick_least_loaded(d, tmpmask);
+> +	} else {
 
-If the behaviour is the same as A57/A72 then it sounds safe. Otherwise,
-there'll need to be some invalidation to avoid that issue.
 
-And thanks for the pointer to your previous patch, it's a very helpful
-reference.
+Hi Marc,
+
+
+> +		cpumask_and(tmpmask, irq_data_get_affinity_mask(d), cpu_online_mask);
+> +
+
+Please consider this flow:
+
+- in its_irq_domain_activate()->its_select_cpu(), for a managed 
+interrupt we select the target cpu from the interrupt affin mask
+
+- then in its_set_affinity() call for the same interrupt, we may 
+needlessly reselect the target cpu. This is because in the 
+its_set_affinity()->its_select_cpu() call, we account for that interrupt 
+in the load for the current target cpu, and may find a lesser loaded cpu 
+in the mask and switch.
+
+For example, from mask 0-5 we select cpu0 initially. Then on the 2nd 
+call, we find cpu0 has a greater load (1) then cpu1 (0), and switch to cpu1.
+
+Cheers,
+John
+
+
+> +		/* If we cannot cross sockets, limit the search to that node */
+> +		if ((its_dev->its->flags & ITS_FLAGS_WORKAROUND_CAVIUM_23144) &&
+> +		    node != NUMA_NO_NODE)
+> +			cpumask_and(tmpmask, tmpmask, cpumask_of_node(node));
+> +
+> +		cpu = cpumask_pick_least_loaded(d, tmpmask);
+> +	}
+> +out:
+> +	free_cpumask_var(tmpmask);
+> +
+> +	pr_debug("IRQ%d -> %*pbl CPU%d\n", d->irq, cpumask_pr_args(aff_mask), cpu);
+> +	return cpu;
+> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
