@@ -2,115 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38C56195754
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 13:42:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93E0B195761
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 13:44:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPrGSXWKzP4OCBpQDuPtuj1r3KkG8GVpgzUTy5i2bZo=; b=lzBL2pjazeIDrX
-	9fJ2sW/UhLtlde2XXZKcr+F9KcyGdvtDHpvEQnmAIIT9CG27EyQtSV7bfwAHG2U/jCcB8UBtlykdX
-	MpYalOdawutMbgMxU+mcN82fP0jMT4Ezx55aj5jV5iiVvCSbu8+Ome1CsxynRXOqo2RbFqSuKy089
-	m9bTV1EtbggsimVnvxnUTpAAZvqlObtvhtoCs3/8nIkzfBxapwwxB/sn2h0HuqeBfTwDtzLl2Sbaz
-	mmO2fIUvc0jwOMhCX4SK0Jhnn7vimbSUIHk+jOkj/vu6O5ZEs7HpbZo84R8q7woJi+lBj16qNdcds
-	JtfFShmnDP4CL1r9RWjg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=iirGiSwrTrohFAVu2WjTWa4E4zilt03atoG94TscRS0=; b=YH3KOm0W0v50HlxT9hH7U2HdZ/
+	QYD5+9oG+4xXPIXJ3vWQAih9dvQkMpv4o3Ghv0T3LSyZtf1C+koChLihev2oEJeMNwhM2w+PE41im
+	0UVRUwllr/f5WMGIbF3RYd3n4NicR7XfNtpPTlV3aXQnNA78VQKc0clKkcerAVdPhamX4EuVdH+K/
+	dEtcjEurpN/udc+ldF4WQ141nIo4RYBctb4lir92quZwDZdmgkXPurxaA1NZtLLAtgyuz4xXhpxcB
+	wuCDKft1shCT7E2Z/sF+fmFU16oeopoksbv1XNUoYoshghAzly1ZIuHzu5kcDbY95Ulb1n4i9zsjY
+	keRxlfqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHoK0-0006i4-UU; Fri, 27 Mar 2020 12:42:48 +0000
-Received: from mail-eopbgr70052.outbound.protection.outlook.com ([40.107.7.52]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jHoLc-0007JM-77; Fri, 27 Mar 2020 12:44:28 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHoJk-0006ct-Fu
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 12:42:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RuVAWgyaWr3RZO9mKbO//nzHmwYllK0h+QMsDzsSsEegkMje61tXBscM6py/KCGJh54f6Nx6kbF68JaAGrbWEcUJCC+iOU+x+GuYq/Rf21B1lMSRG/3AAiJjc3QMJjIDEgTNlRqf7zCbEuwEgJflh1Jv9BniEnKzEdz/0HhTL/cpL5GMD2CIkBqCb5fKY8KkRhoyYa2D6xTA3/RAmZTiQAWuVgto37UAiFBvtIUvqir7uLK7CcXq7xpsP5B05qklXDhbuwmlEVzFMbznHAOXFMFJCouHfN4LP2ZvT8dvBY88KsJlvxRay2QXX7LVgl8uacpat45nAcJrFok0H6n+8g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lAnzobjsmNeRj0OyBzYbwQTCOVWXUzOO97iBTsqzQng=;
- b=Lo4H3A8eT39K8Q97la0AEdZ9PFzRoJsROAxuofJQbjBYwOey4hvaN6n4ImwRbxL4nifgLYleqvEzeL0eGi5t5AkYByGe2SlF1YhaFs1sJuS9W01huCyOEMkZzdVeYZofbi1BVFerJLOZvKlH2H5AQQTRgIBs/Y3RQWiKI2g/0Z36r3ZKPGCztJppNy5sXWhq09Iv9gruxCyt05d5B+8D4S9y9xqZYlMkcPY76vcO5xPFMWc2jHMgyFDnjvPuVlmlrJDpbC8jvAGi7D/TBO9pn/TrA/RIIxwwFmMsk6AN6fSJSKeiILPUQL6kUNRFL2Ns0MHaeH3wz79eKKq0RKI9fg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lAnzobjsmNeRj0OyBzYbwQTCOVWXUzOO97iBTsqzQng=;
- b=UN7ARo85RvKCyonjvSSa5UHDpvSLYoxoYJjTNhPytcMhOUrZ8KzKu+oLO3k2jpG2BNXkooMLe/YYEFoSrQO12qUOW53KWApbhluX2C4QAkq89p5XiSxlzwbvWErLzSGRMU9Zf7zStX9E4hLGrIYuo0D6onRcia/tWeHENRnfy1s=
-Received: from AM0PR04MB6980.eurprd04.prod.outlook.com (52.132.212.87) by
- AM0PR04MB6401.eurprd04.prod.outlook.com (20.179.254.97) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2856.20; Fri, 27 Mar 2020 12:42:26 +0000
-Received: from AM0PR04MB6980.eurprd04.prod.outlook.com
- ([fe80::182f:6b6f:c5de:a768]) by AM0PR04MB6980.eurprd04.prod.outlook.com
- ([fe80::182f:6b6f:c5de:a768%7]) with mapi id 15.20.2856.019; Fri, 27 Mar 2020
- 12:42:26 +0000
-From: "Madalin Bucur (OSS)" <madalin.bucur@oss.nxp.com>
-To: Russell King <rmk+kernel@armlinux.org.uk>, Gregory Clement
- <gregory.clement@bootlin.com>
-Subject: RE: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
- types
-Thread-Topic: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
- types
-Thread-Index: AQHWBDTyUzEK8LImG02YfxFpCaWEmqhcYb9A
-Date: Fri, 27 Mar 2020 12:42:26 +0000
-Message-ID: <AM0PR04MB6980057E53639ACFA656F498ECCC0@AM0PR04MB6980.eurprd04.prod.outlook.com>
-References: <E1jHoHy-0002Ep-IY@rmk-PC.armlinux.org.uk>
-In-Reply-To: <E1jHoHy-0002Ep-IY@rmk-PC.armlinux.org.uk>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=madalin.bucur@oss.nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [79.115.171.113]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8f8aa931-b3d5-4868-b67b-08d7d24c4e27
-x-ms-traffictypediagnostic: AM0PR04MB6401:|AM0PR04MB6401:
-x-ms-exchange-sharedmailbox-routingagent-processed: True
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB6401F6A9EC3C1D289DAE48D4ADCC0@AM0PR04MB6401.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 0355F3A3AE
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB6980.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(396003)(39860400002)(366004)(136003)(346002)(376002)(53546011)(76116006)(66946007)(478600001)(316002)(15650500001)(71200400001)(33656002)(8936002)(6506007)(7696005)(81166006)(81156014)(8676002)(5660300002)(66476007)(52536014)(186003)(26005)(64756008)(66556008)(2906002)(86362001)(54906003)(110136005)(4326008)(9686003)(66446008)(55016002);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +57ud0brKkrOpCejptbGK9QjXvB5nUtppO5gNyAenyfeJxMT8Wn+iWpBvqizbdu2eBUx+UXFoXAIlIOdE85347b1CWCUXifZ2s6zM1bozkHQLOJZiQPKoPyZ/kpCzq5+V8Q4Q9dgRlrwiNXo7ZEh5JqLGWJQINtfdsKq1cmVKrrZKZbRso4ym5J2Z0eALZe37NuAxblP3zTtPQWP+RAK0Qg0vLrw4eiljViznyF/fIWLV64MPzj2yprabWTB6C4P5qBiHDP9X949tcxR9RI7ppADM2xuIV2ZCY7lk6WMBd70+jdOVE2sUcXEESOvc4o+ahBIcljwoFGIYwmN86e6191qdOzFFJ91SJTNtnHrXRXUPULYGfY1q2/6NUOQxPmkuwLMGwGPrmLcCUb9hZTdDIgutwU7s0GlIBTXV8TPTiweslHNnlpW9XERuduYkQML
-x-ms-exchange-antispam-messagedata: z5tNcDdKvp4TS+0oauMgnLpqbLC8L1+wARTuRNkTrqIrjKgvk8Dm4SqX/Jxb2zehXhwKeTKhr6Fk7dAEJztyMkZoTgBqD5UuFrfhYSgDnrEA2lsUbW5SHqWYMwkmUSUctgj1kidh+gr4tC4GDZJYZg==
-MIME-Version: 1.0
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8f8aa931-b3d5-4868-b67b-08d7d24c4e27
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Mar 2020 12:42:26.6429 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: fFowLfCHidV4OA8ZFiFmlkrPN2P0KrFDKuZ7ji7HyhwQLYvDjKdQ817XsqiE+VbtH5A0whhR+LRlhe/k8ShULw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6401
+ id 1jHoLP-0007J2-Qq
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 12:44:17 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id v13so3815588pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 05:44:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Fsqy8TfQMOxnl1SbG7WxWf+f3gEqGelUnglQJSOP4Ds=;
+ b=Q2Otw0ipFM9So8sggRAQgCgojzHVsLtIWn5ukWMxPAJdhOBRRO8zrGPlbCo0y2GA6f
+ sfSVJRy6ndUByUc0Y3zWpTCLkaYG1RKjr/IHeNTv1R/Pb2gMLXbg9ioX4QgQHzRY5cps
+ N3G1ayLdmVxwy4ZjqYlozMN1h34Utvi7fqBiojTRK0pIWMPWvGE0LkUWFA7kqgJuJxja
+ rKlEgcXH3J6jBX59IpTWHjzmjQIIBmiyOt5i1v4tca9ZWxogZVM6CDRSdBnOmpGpFEth
+ pjmUsrvDUdhO3Bv5CYeCGEspT8IqMcwpli64OnZGn6JM6hBdUYfCQ86yCN7labB76D8d
+ c4Aw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=Fsqy8TfQMOxnl1SbG7WxWf+f3gEqGelUnglQJSOP4Ds=;
+ b=XHOOMajX7zO2fLI5SK/FVPM5DDlrnxCoHq5UoB92anWXXo064U61X+k1GvSOa/3nQK
+ vkoodlm5POTqfo73NDoisMPkx6Yu78+sQRJG2GFZyrI99/rWTQtdVREhqS4FkTlQPV48
+ ObKtiIVrzvXGTf2Z4DUHZdBl9cbxpd/RQ4RkFtL1B8yxpBDM9Xn00OLRqPWR0fIxM02n
+ RlNC0a3fsZFDfPJn/JIvteMqUfq3CBRQ1PNo+SuQkYE8odSe1n2qUoybdz2A1x4/QPKr
+ N2mmV8yxpn0d6VhePdVVo7I8Hz3mSbqne+aIpScl/LLjZ+LyNc42ycIdsTybVrgu1L0A
+ dJlA==
+X-Gm-Message-State: ANhLgQ1zzbX1V4s1WTzR1A3HhYIpbGCq0kH2p9331GD/1UWRnKAYkEYR
+ /DLA1UFCbPjNBPg3Dzr+spo=
+X-Google-Smtp-Source: ADFU+vsoujK+muRM6+KaBCVLLvd9JnFa4Q3MxDpF532ov0b1AY3yVciRuMclmYx+K3BcdM08YjVIlA==
+X-Received: by 2002:a17:90a:1b22:: with SMTP id
+ q31mr5878074pjq.109.1585313055028; 
+ Fri, 27 Mar 2020 05:44:15 -0700 (PDT)
+Received: from localhost.localdomain ([49.207.51.33])
+ by smtp.gmail.com with ESMTPSA id v26sm4056641pfn.51.2020.03.27.05.44.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 27 Mar 2020 05:44:14 -0700 (PDT)
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>,
+	SoC Team <soc@kernel.org>
+Subject: [PATCH v4 2/5] ARM: spear: replace setup_irq() by request_irq()
+Date: Fri, 27 Mar 2020 18:14:06 +0530
+Message-Id: <20200327124406.4123-1-afzal.mohd.ma@gmail.com>
+X-Mailer: git-send-email 2.18.0
+In-Reply-To: <CAK8P3a2sqika7=3D6Zgkz+v8HtGEc0q0+skWG8mSKuL+qSoYLw@mail.gmail.com>
+References: <CAK8P3a2sqika7=3D6Zgkz+v8HtGEc0q0+skWG8mSKuL+qSoYLw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_054232_538721_E838E306 
-X-CRM114-Status: GOOD (  14.84  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200327_054415_868237_C7BFE564 
+X-CRM114-Status: GOOD (  11.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.52 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,103 +99,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "Madalin Bucur \(OSS\)" <madalin.bucur@oss.nxp.com>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Hartley Sweeten <hsweeten@visionengravers.com>,
+ Tony Lindgren <tony@atomide.com>, afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, arm-soc <arm@kernel.org>,
+ =?UTF-8?q?Krzysztof=20Ha=C5=82asa?= <khalasa@piap.pl>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Olof Johansson <olof@lixom.net>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Alexander Sverdlin <alexander.sverdlin@gmail.com>,
+ Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Viresh Kumar <vireshk@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Russell King,,, <rmk@armlinux.org.uk> On Behalf Of Russell King
-> Sent: Friday, March 27, 2020 2:41 PM
-> To: Gregory Clement <gregory.clement@bootlin.com>
-> Cc: Madalin Bucur (OSS) <madalin.bucur@oss.nxp.com>; Jason Cooper
-> <jason@lakedaemon.net>; Andrew Lunn <andrew@lunn.ch>; Sebastian
-> Hesselbarth <sebastian.hesselbarth@gmail.com>; Rob Herring
-> <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; linux-arm-
-> kernel@lists.infradead.org; devicetree@vger.kernel.org
-> Subject: [PATCH] arm64: dts: update SolidRun Armada 8040 phy interface
-> types
-> 
-> Update the SolidRun Armada 8040 platforms phy interface types from the
-> old 10gbase-kr to the newer and more correct 10gbase-r.
-> 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+request_irq() is preferred over setup_irq(). Invocations of setup_irq()
+occur after memory allocators are ready.
 
-Reviewed-by: Madalin Bucur <madalin.bucur@oss.nxp.com>
+Per tglx[1], setup_irq() existed in olden days when allocators were not
+ready by the time early interrupts were initialized.
 
-> ---
->  arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts   | 2 +-
->  arch/arm64/boot/dts/marvell/armada-8040-mcbin-singleshot.dts | 4 ++--
->  arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts            | 4 ++--
->  3 files changed, 5 insertions(+), 5 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> index 1e7b47affe26..006666272489 100644
-> --- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> +++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-> @@ -401,7 +401,7 @@
->  /* SFP */
->  &cp0_eth0 {
->  	status = "okay";
-> -	phy-mode = "10gbase-kr";
-> +	phy-mode = "10gbase-r";
->  	managed = "in-band-status";
->  	phys = <&cp0_comphy2 0>;
->  	sfp = <&sfp_cp0_eth0>;
-> diff --git a/arch/arm64/boot/dts/marvell/armada-8040-mcbin-singleshot.dts
-> b/arch/arm64/boot/dts/marvell/armada-8040-mcbin-singleshot.dts
-> index 26114d96d637..b44f4c029b78 100644
-> --- a/arch/arm64/boot/dts/marvell/armada-8040-mcbin-singleshot.dts
-> +++ b/arch/arm64/boot/dts/marvell/armada-8040-mcbin-singleshot.dts
-> @@ -16,14 +16,14 @@
-> 
->  &cp0_eth0 {
->  	status = "okay";
-> -	phy-mode = "10gbase-kr";
-> +	phy-mode = "10gbase-r";
->  	managed = "in-band-status";
->  	sfp = <&sfp_eth0>;
->  };
-> 
->  &cp1_eth0 {
->  	status = "okay";
-> -	phy-mode = "10gbase-kr";
-> +	phy-mode = "10gbase-r";
->  	managed = "in-band-status";
->  	sfp = <&sfp_eth1>;
->  };
-> diff --git a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-> b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-> index 087a5502631e..42741adf867b 100644
-> --- a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-> +++ b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-> @@ -63,14 +63,14 @@
->  	status = "okay";
->  	/* Network PHY */
->  	phy = <&phy0>;
-> -	phy-mode = "10gbase-kr";
-> +	phy-mode = "10gbase-r";
->  };
-> 
->  &cp1_eth0 {
->  	status = "okay";
->  	/* Network PHY */
->  	phy = <&phy8>;
-> -	phy-mode = "10gbase-kr";
-> +	phy-mode = "10gbase-r";
->  };
-> 
->  &cp1_pinctrl {
-> --
-> 2.20.1
+Hence replace setup_irq() by request_irq().
+
+[1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+
+Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+---
+
+v4:
+ * Add received tags
+
+v3:
+ * Split out from series, also split out from ARM patch to subarch level
+	as Thomas suggested to take it thr' respective maintainers
+ * Modify string displayed in case of error as suggested by Thomas
+ * Re-arrange code as required to improve readability
+ * Remove irrelevant parts from commit message & improve
+ 
+v2:
+ * Replace pr_err("request_irq() on %s failed" by
+           pr_err("%s: request_irq() failed"
+ * Commit message massage
+
+ arch/arm/mach-spear/time.c | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm/mach-spear/time.c b/arch/arm/mach-spear/time.c
+index 289e036c9c30..d1fdb6066f7b 100644
+--- a/arch/arm/mach-spear/time.c
++++ b/arch/arm/mach-spear/time.c
+@@ -181,12 +181,6 @@ static irqreturn_t spear_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction spear_timer_irq = {
+-	.name = "timer",
+-	.flags = IRQF_TIMER,
+-	.handler = spear_timer_interrupt
+-};
+-
+ static void __init spear_clockevent_init(int irq)
+ {
+ 	u32 tick_rate;
+@@ -201,7 +195,8 @@ static void __init spear_clockevent_init(int irq)
+ 
+ 	clockevents_config_and_register(&clkevt, tick_rate, 3, 0xfff0);
+ 
+-	setup_irq(irq, &spear_timer_irq);
++	if (request_irq(irq, spear_timer_interrupt, IRQF_TIMER, "timer", NULL))
++		pr_err("Failed to request irq %d (timer)\n", irq);
+ }
+ 
+ static const struct of_device_id timer_of_match[] __initconst = {
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
