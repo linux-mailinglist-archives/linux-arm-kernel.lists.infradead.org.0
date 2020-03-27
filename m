@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F669194F7F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 04:06:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14402194F73
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 04:05:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dw7T+0XCS0pEcisU2xFHurSuGrL/mEHUxbTdF8c8sAs=; b=ozBzwxqt9L7SMv
-	48Oo/yqpN+P3S2WU/8Q4+8TODJK2bQ6BWBSztu0z9SrQen7Q4sS3k/GZCmLtDayZkt8P2H2aSoa6W
-	zYz0QqDh44aAtpWQ9pFidPgZimMvjJe841YQrQTrYtvYqKrpZuqy7VCA1yBr2Z99pct96Rwb2WHtJ
-	bJGes/mnamPMnm3YT1q5XiuOfb7R4DA2xzIszk/OIlGYTwoiwjZV0KNdHMtVc050sR8e+8cZc80ho
-	amHC5TtsKL6NoXTxxXr+PI0VhDmHLidiTwfFQZ1oYyHt0zzTC2to4O3cSrYG/6LANmYXrtHCTjpPi
-	B23Cw50Q4MiDR8DXBq8Q==;
+	List-Owner; bh=Z6lnpJ3/6f0u7GgWO+H+zWKeet8dPX8GAbBXX0+hk4A=; b=nBunNaMlA4cyJ2
+	1AtqxjPUFFv5ZrO3w8uCXncqJAF5PEscL2tmlPIr9OqNkOWCgPpXWSvUtP85MUkjWifIhdp9mWbDz
+	RXlAYZhW6WGrGGthLHXpphNL5i+X8NpeHDtXQqmElBHQgC+lOqyLds07SmBMqEoC/bl1yT9kVIC5N
+	Dk+jaNoxl2zPjF/hUBd5PAlw6YLYg289Os0ZeDSmNfqK/4Ubt5B6s8D6y6LPsnKviK5q965jvinXS
+	si6q1WSl0iVwcIKuwOPWL1xCr0ZOZskNpjcpbb49ckgnSPK40LNzOEt//YS09ywB3Gda0HmdCd3Fd
+	4FxsMGQnI+F523q6h3bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHfJj-0006Nj-Lq; Fri, 27 Mar 2020 03:05:55 +0000
+	id 1jHfIt-0004L3-5g; Fri, 27 Mar 2020 03:05:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHfIO-0004A2-2w; Fri, 27 Mar 2020 03:04:34 +0000
+ id 1jHfIN-0004A1-W3; Fri, 27 Mar 2020 03:04:33 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3AA86208E4;
+ by mail.kernel.org (Postfix) with ESMTPSA id 24EC22083E;
  Fri, 27 Mar 2020 03:04:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1585278271;
- bh=WXqxkgQ1ud/hiEzSNH14Fo3ArHlfptlNHM75xEEiT1Y=;
+ bh=rpJytZ8i0tDwoRppmzgTSdMo9ejo2KY0026ChofTs+Q=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EVCsOvyapeqvkz2F2L7G6l7j024IAawq2lRTvlyHOyFOzqq/s9SzOsin71Oq4pCDy
- 8ADjdoyaRtv+OBPEvLLsG0nIwgZUzVC/gkcksm12eFG1EpC0tdi2o9xxbkoYc3x6VK
- 4bNYSxbnvZq/Ee797B0wJzOFUTBrU+7TGYaO0Xlo=
+ b=bjTG3YO5hV4R1Ed554ydsqpZa5tYxdVW9IwOHqW/C5L8MDQrHNOY+CuofIY3f90sb
+ 5KMN9g9x4jB8aFhVV2CB+kr/FDUR/+udwQeAaLbIPk25ZNVbCZmucr0sgr7ZpOM/tn
+ ku9StHmqZf7tftyM3HcGS1Sy8p3iq/Y/MqpaleYs=
 Received: by wens.tw (Postfix, from userid 1000)
- id 3B3905FBBF; Fri, 27 Mar 2020 11:04:26 +0800 (CST)
+ id 3F2BF5FD8C; Fri, 27 Mar 2020 11:04:26 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 1/6] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC numbering
- for LED triggers
-Date: Fri, 27 Mar 2020 11:04:09 +0800
-Message-Id: <20200327030414.5903-2-wens@kernel.org>
+Subject: [PATCH 2/6] arm64: dts: rockchip: rk3328: Replace RK805 PMIC node
+ name with "pmic"
+Date: Fri, 27 Mar 2020 11:04:10 +0800
+Message-Id: <20200327030414.5903-3-wens@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200327030414.5903-1-wens@kernel.org>
 References: <20200327030414.5903-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_200432_164510_C5F2231B 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20200326_200432_054993_45A63D9E 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,62 +87,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-With SDIO now enabled, the numbering of the existing MMC host controllers
-gets incremented by 1, as the SDIO host is the first one.
+In some board device tree files, "rk805" was used for the RK805 PMIC's
+node name. However the policy for device trees is that generic names
+should be used.
 
-Increment the numbering of the MMC LED triggers to match.
+Replace the "rk805" node name with the generic "pmic" name.
 
-Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
+Fixes: 1e28037ec88e ("arm64: dts: rockchip: add rk805 node for rk3328-evb")
+Fixes: 955bebde057e ("arm64: dts: rockchip: add rk3328-rock64 board")
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
- 2 files changed, 10 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts    | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-index 2acb3d500fb9..f0686fc276be 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-@@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
- 	};
- };
- 
-+&diy_led {
-+	linux,default-trigger = "mmc2";
-+};
-+
- &pcie_phy {
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+index 49c4b96da3d4..6abc6f4a86cf 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+@@ -92,7 +92,7 @@ &gmac2phy {
+ &i2c1 {
  	status = "okay";
- };
-@@ -91,3 +95,7 @@ &uart0 {
- 	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+ 
+-	rk805: rk805@18 {
++	rk805: pmic@18 {
+ 		compatible = "rockchip,rk805";
+ 		reg = <0x18>;
+ 		interrupt-parent = <&gpio2>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+index bf3e546f5266..ebf3eb222e1f 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -170,7 +170,7 @@ &hdmiphy {
+ &i2c1 {
  	status = "okay";
- };
-+
-+&yellow_led {
-+	linux,default-trigger = "mmc1";
-+};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index 9f225e9c3d54..bc060ac7972d 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -70,14 +70,14 @@ work-led {
- 			linux,default-trigger = "heartbeat";
- 		};
  
--		diy-led {
-+		diy_led: diy-led {
- 			label = "red:diy";
- 			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
- 			default-state = "off";
- 			linux,default-trigger = "mmc1";
- 		};
- 
--		yellow-led {
-+		yellow_led: yellow-led {
- 			label = "yellow:yellow-led";
- 			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
- 			default-state = "off";
+-	rk805: rk805@18 {
++	rk805: pmic@18 {
+ 		compatible = "rockchip,rk805";
+ 		reg = <0x18>;
+ 		interrupt-parent = <&gpio2>;
 -- 
 2.25.1
 
