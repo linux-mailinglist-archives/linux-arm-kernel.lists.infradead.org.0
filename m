@@ -2,82 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D80C81955F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:05:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC3D019560B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Mar 2020 12:10:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sPaVU0kD3TVFLUGYkcQ8yeyenI6z4H1RWFPyCFY/pHM=; b=bWyk7BqDDaWmEF
-	shKztZtJrEXosS/eQVwxPRmxgoxak6Yg+OQVK30ROlEWF0tuMIL4pvueDD6Vciuu7lJBRnAYUw0cU
-	EqIOsPX6g2KmtGWyTYOaGr89oEkyWN/jqX6QByeHFfFP/AG5r7CCd4J7lRADtKRB0EVO3n6sGNaZe
-	XXus7kjNDLsYC/kWB0Dz930BH4sIfHZE/2guJrPuyJ+BQFW3IbbHC7WXXH/X7P65KL/UJezcJxXF8
-	17C8HZhqCnrf1jiNO1qXU76fceLyouTW0zSa6yKNQ+jlaqFyHFB6hFo33QPDKgYGrA2aadYFf60Rj
-	dgPuOm/dTBvUUyYYgCUw==;
+	List-Owner; bh=p6zTQziNeSoFFb61kLrDcSsuHEkwA8MJ3g46wFWmOr4=; b=AHEJRdZY6/H3dK
+	HkJKuzaQX5yGedWz/rwnq1pSQlLIFxXwfCr2He8Xud0bC2m58eq+rQRM9F4YkcPOooHXGnYUjvuoE
+	X71N/WpRdmN/DUtpyCb2dz5rEAZh+6qq31As4qqOMA9Pj0QuAjm7IEI3t0ibZDO0kK5KqjjbWupMm
+	iDfbhaoXGehLC41CBHUrOXJSPmzBez1rEzVJ2AkndZOtx1al8oZZKm8sxXlVzY+pl7oMiYobdVK2h
+	nuLAXZOpgmD4ksKbXzDdC00VcPfc7EgyC0RyOvr2m3ulw/y8aVDgepYiZ+C/a04f/GrVpbrDJgPSx
+	V7KcB41elNvdQzHcPfKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHmnX-0002Ct-1Q; Fri, 27 Mar 2020 11:05:11 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jHmsb-0005OB-14; Fri, 27 Mar 2020 11:10:25 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHmmu-0001zR-Br
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:04:34 +0000
-Received: by mail-pg1-x541.google.com with SMTP id h8so4411502pgs.9
+ id 1jHmsR-0005No-Rw
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Mar 2020 11:10:17 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c12so495335plz.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Mar 2020 04:04:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 27 Mar 2020 04:10:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=y2amsUrIjKqvUce583HPq0+BeWvAWHFZuVky7Akg4Fs=;
- b=IQL8GY5O4b0Hpen7S3DwJ4mI2egXxZznnc8twSHeVqzdDR0AI21cY7yx3tw8lpOffm
- DPwFuLeVmfRB61Zr9MkkruNgldTuXumWcTb+mbmpR/uqLdnkcLreC8lbOZWUl59RFP2O
- RqjwlN4usvTv9EztfZKmeHiJ6Ac0zeMyAVy64/TQ6ozliPT+9KRcapaXg7IfGnHR8H9V
- hQqcuweDICT2w6ufCtr+D/LF3mFulr7NH0ks5/I2gaA+KYoJjQKN072OC9PQ92fWQIjo
- FND27fRIkw7v6ww45C+ARXJz0rZXFWrxkyS/g7xU4Vn6m3WfbUkZZjgHX4eVkKkTjNAG
- 2EYg==
+ bh=TGLdq/U95WT3HxV3sUtO3DHH/5EDIKVtU9/EIJiiqA0=;
+ b=ooDVIr/nQdq4AcQGTXHjjO6dJVbi51GdNjzGeNh99xO+1hi1/ufg/eevXiM9cQglkE
+ bq8AimnGS9XIa3R5C7rGG27gevdg7jlS9Hfs/RnoGemFpecapjdhMLotbInDyaqB58v1
+ dl3iwezCYpzJ+Esk/AZXIa4JyrK6WGhHYBr+H8zFm/cCgSF0Hu1k8PWJCpQjPQx8zMJa
+ RVAo25zw5VyZo9g8lpSkqLIgWsqc1+i89AgE8K9FsIUu/81l/tnEu92fPH4gofuv5UyC
+ cJDpds+OZCPwOeBH3FDRYuL/+sDCN5kQK/rBM6tfldSUKLENsnNKFOlG5Sfs4l2qAFJP
+ 3yOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=y2amsUrIjKqvUce583HPq0+BeWvAWHFZuVky7Akg4Fs=;
- b=dx/3mcW5gPsukhnTg65Fxh/1LQjO0Wk1IsQymN/CoQdo5+99zetXNrHiwXvK9atw9C
- 21HZHdJ6wBr3WC5cA0noKq9ZaFu2RmYsyesbAm4Rkcset2y1L/dAR42uhqV4Ao+sR6l5
- WQF+63pyJBN5VMaK5U+4tWxaTJx20eCn+OZGUgAITtjQx1+SfTYqIhs71DXNEDqPiscg
- MzRPqUW2VAk2CVS7tve62xInLuM4bUW5Z87G9o8fg86doAU4IBpkw5dXv6AqHayaosIp
- yKaLCvhtI+TXfMscv+9UDvmlk6GGCPqmo8LG5DM8cfTlRognXjy95MzL7cTz812P3hlS
- vHIA==
-X-Gm-Message-State: ANhLgQ1eEfrAaJjgQSPYvU7I1Ef4i0UW1zRXontwiEnbB0QmkE0n67nK
- 5ASde44OGd9mpm5loH1BWHxsaa8lHeI=
-X-Google-Smtp-Source: ADFU+vvPWJ9J/gEH/XjswwsXZmjR9gxjBbPlEIc+ePxLpI4Rm93dz7bBSmy7T1iPgK6/qweZsyeKwA==
-X-Received: by 2002:a65:42c5:: with SMTP id l5mr13125490pgp.152.1585307071307; 
- Fri, 27 Mar 2020 04:04:31 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id t186sm3622766pgd.43.2020.03.27.04.04.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 27 Mar 2020 04:04:30 -0700 (PDT)
-Date: Fri, 27 Mar 2020 16:34:28 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH] ARM: vexpress: Make schedutil governor available
-Message-ID: <20200327110428.xo6i7gcs67wb5weh@vireshk-i7>
-References: <20200327095703.93178-1-linus.walleij@linaro.org>
+ bh=TGLdq/U95WT3HxV3sUtO3DHH/5EDIKVtU9/EIJiiqA0=;
+ b=ETTkLBtLxp1XQ5DCRnbOLvy6qhp8xcBonboCG+dY59qfRQhcEP6TfNp1M3pal4KSPE
+ Ahf0AaFRy+huIG47hMVS8tF1eglnJwFr+NC4Bpz7rL2IUm5HczjKvpBcjLAgBd2PN2Ld
+ CQgTangSEEDz/Dep912thoTycf95p9O6/tMPXZjkG5IqcwOy9BUsRW08Bp+95dypy0Lp
+ GLI9D5M31515Nj9FbZn67Tqn7ZV9Dvqhp+ug5Tlz1G6ncL0xmk0JjLOly1ZMV2uYAVdT
+ E2k9eGyuQk7NmmUYmZGkttyMmjV2UXjo5CHqVUaVHpqbQFNrcWIFMA/4F1dLJhivDeip
+ thPg==
+X-Gm-Message-State: ANhLgQ2XC86jqeq6svvqv7RVBPqopbYBaXBLTHsCgGDh+La5ltI6B5XP
+ tnBmfFhAdaulzjySI2jviN8=
+X-Google-Smtp-Source: ADFU+vvx6xgRoCFobHljQubBlxi17gVHoQR1r82g3QG+ZJ1M3ewEJcTwpCSIhlcpqaaNY2cX9bcmNg==
+X-Received: by 2002:a17:902:8a81:: with SMTP id
+ p1mr12498205plo.284.1585307415138; 
+ Fri, 27 Mar 2020 04:10:15 -0700 (PDT)
+Received: from localhost ([183.82.181.40])
+ by smtp.gmail.com with ESMTPSA id x24sm3866628pfn.140.2020.03.27.04.10.14
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 27 Mar 2020 04:10:14 -0700 (PDT)
+Date: Fri, 27 Mar 2020 16:40:12 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v3] ARM: replace setup_irq() by request_irq()
+Message-ID: <20200327111012.GA8355@afzalpc>
+References: <20200308161903.GA156645@furthur.local>
+ <20200301122226.4068-1-afzal.mohd.ma@gmail.com>
+ <m3ftepbtxm.fsf@t19.piap.pl>
+ <51cebbbb-3ba4-b336-82a9-abcc22f9a69c@gmail.com>
+ <20200304163412.GX37466@atomide.com>
+ <20200313154520.GA5375@afzalpc> <20200317043702.GA5852@afzalpc>
+ <20200325114332.GA6337@afzalpc> <20200327104635.GA7775@afzalpc>
+ <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200327095703.93178-1-linus.walleij@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <CAK8P3a0kVvkCW+2eiyZTkfS=LqqnbeQS+S-os=vxhaYXCwLK+A@mail.gmail.com>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_040432_454633_7B064870 
-X-CRM114-Status: GOOD (  21.57  )
+X-CRM114-CacheID: sfid-20200327_041015_904655_FFBD1DFA 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,67 +107,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Hartley Sweeten <hsweeten@visionengravers.com>,
+ Tony Lindgren <tony@atomide.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Lubomir Rintel <lkundrak@v3.sk>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Krzysztof =?utf-8?Q?Ha=C5=82asa?= <khalasa@piap.pl>,
+ Viresh Kumar <vireshk@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Alexander Sverdlin <alexander.sverdlin@gmail.com>,
+ Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27-03-20, 10:57, Linus Walleij wrote:
-> When building the kernel for Versatile Express we need to
-> consider that some of these boards are big.LITTLE HMP
-> systems.
-> 
-> As can be seen from kernel/sched/topology.c:
-> 
-> "EAS can be used on a root domain if it meets all the following conditions:
->  1. an Energy Model (EM) is available;
->  2. the SD_ASYM_CPUCAPACITY flag is set in the sched_domain hierarchy.
->  3. no SMT is detected.
->  4. the EM complexity is low enough to keep scheduling overheads low;
->  5. schedutil is driving the frequency of all CPUs of the rd;"
-> 
-> This means that at the very least, schedutil needs to be
-> available as a scheduling policy for EAS to work on these
-> systems. Make this explicit by selecting CPU_FREQ and
-> CPU_FREQ_GOV_SCHEDUTIL from the Versatile Express
-> machine.
-> 
-> Currently users of the TC2 board (like me) has to figure these
-> dependencies out themselves and it is not helpful.
-> 
-> It is still necessary to configure in the schedutil as default
-> governor manually to actually get a working b.L system, so this
-> just makes the right governor available to b.L systems, it does
-> not turn it on by default.
-> 
-> Cc: Vincent Guittot <vincent.guittot@linaro.org>
-> Cc: Viresh Kumar <viresh.kumar@linaro.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
->  arch/arm/mach-vexpress/Kconfig | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm/mach-vexpress/Kconfig b/arch/arm/mach-vexpress/Kconfig
-> index 726a68085c3b..0a5a67448c94 100644
-> --- a/arch/arm/mach-vexpress/Kconfig
-> +++ b/arch/arm/mach-vexpress/Kconfig
-> @@ -8,6 +8,8 @@ menuconfig ARCH_VEXPRESS
->  	select ARM_GLOBAL_TIMER
->  	select ARM_TIMER_SP804
->  	select COMMON_CLK_VERSATILE
-> +	select CPU_FREQ
-> +	select CPU_FREQ_GOV_SCHEDUTIL
->  	select GPIOLIB
->  	select HAVE_ARM_SCU if SMP
->  	select HAVE_ARM_TWD if SMP
+Hi Arnd,
 
-Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+On Fri, Mar 27, 2020 at 11:55:36AM +0100, Arnd Bergmann wrote:
 
--- 
-viresh
+> To make sure I get the right ones, could you bounce all the patches that are
+> still missing to soc@kernel.org to let them show up in patchwork?
+
+Done.
+
+If it helps, i can send the same patches w/ tags received as well.
+
+Regards
+afzal
 
 _______________________________________________
 linux-arm-kernel mailing list
