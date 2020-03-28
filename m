@@ -2,68 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11117196775
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 17:43:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C53A21967F1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:12:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A+WUPTVWJf43MeMjEy1b+f+sAayPxTyz/9MB3BYEjJQ=; b=qb4apR/4VAwY60
-	pKNdfc6f4zi4/mHbvN/lqW9kQ/pYFvRN52G+yTpmX0zlAqiw98ct2YswGtBA8p+jvzZrqlAZZE0Cd
-	MoD5AYQYCzUloYmJcWiKlPejBefkezsHs+b6Oo0o9jiDgi+OienRYFCLlJvdygGcxF/O7qhRMcx1c
-	Ggpc5vjqH9GwjmdhRipl9e1XKfMPWTvCMffaGobOMnAsEuBguAL2pVAmLbYEMFSQp/tkB1MzQdxTA
-	UguAlAfwAkMRs7O1Zpy3dMQN5Bv0seEmQoQZ3kSq1omJvb+zXcwtIw8Kzd3NSFsk2vy+W2g/KT6sV
-	66Xe7z1oXls1XkMpMZRw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=swGFZU0eAZydCPefUcOzEQcvwpqOsneEPQSWPf8Mm8s=; b=XktFTucsEgfbnq
+	Dtdqb1LF7WU6YN5Y6FuXzjbVkvjyVlH4xZlcSfruhRuwq27JsnYiR+gh7irHKzXQL3QswqrpmR/4t
+	bTbZ7V69wDBZ9w7gsE2zCj7LhK8Wi8IYiIszv2dVlgwMyPsB9wtH/QiHoCupEs98ELJGY1fOOL5lf
+	lvMvqYSKT+58ZEoGpna2aOJRoYtTZ9xnxtLCeqioClABaG/Go65Mm1ljt4yCGzY1sALZ+spJVXl7G
+	loEn+obTmBThWhAXLrwRffhwoOyLIHAUb/alwuOsSPzuv9gsN3ayOMhmd78t2h3KFKM6KdU0bK+oQ
+	wqFs/n3LX0Jir+rgT7Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIEYS-0004JP-BN; Sat, 28 Mar 2020 16:43:28 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jIF0e-00073m-CO; Sat, 28 Mar 2020 17:12:36 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIEYJ-0004IW-06
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 16:43:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=1Dbsy/kBm6+qvsST4SSxjt43oO5Fkj5lOWIv2fyfVrk=; b=dfGmZhNxCTICMh8W8G7h4MSCAb
- a82aZd1awengfua7BMTNT3mRTiEqxhng8wHS5QF1b4iGJs4HcS97NgND3E1uNRXzEz+Hb8rqfMd1S
- 4r3u/HqntRn99rFJHZGJz0xiujS92/Jp+H9UvWZ6A2Nnko8r52MAUCxmXAzgwKrWHUjQ=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jIEYG-0004Mu-5k; Sat, 28 Mar 2020 17:43:16 +0100
-Date: Sat, 28 Mar 2020 17:43:16 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: SError handling vs. SIGSEGV
-Message-ID: <20200328164316.GZ3819@lunn.ch>
-References: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
+ id 1jIF00-0006t5-UK
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:11:58 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48qQHr2LdVz1rqRZ;
+ Sat, 28 Mar 2020 18:11:52 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48qQHr1nxFz1qqlF;
+ Sat, 28 Mar 2020 18:11:52 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id CdjNhKfK-NNw; Sat, 28 Mar 2020 18:11:51 +0100 (CET)
+X-Auth-Info: Te50Bh1g08Gv2yuVLFcsa8g/Pfgc6S1JqTv7e1AoLxQ=
+Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Sat, 28 Mar 2020 18:11:51 +0100 (CET)
+From: Marek Vasut <marex@denx.de>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 00/22] ARM: dts: stm32: Repair AV96 board
+Date: Sat, 28 Mar 2020 18:11:22 +0100
+Message-Id: <20200328171144.51888-1-marex@denx.de>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_094319_046979_CC4A9C05 
-X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-CacheID: sfid-20200328_101157_124855_5FEF56EF 
+X-CRM114-Status: UNSURE (   8.00  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,29 +71,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Doug Berger <opendmb@gmail.com>,
- Scott Branden <sbranden@broadcom.com>,
- Catalin Marinas <catalin.marinas@arm.com>, james.morse@arm.com,
- Ray Jui <rjui@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
- Will Deacon <will@kernel.org>, Dave.Martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> As it stands today, I see no way to have a self hosted test case that
-> exercises that our GISB bus arbiter blocking works correctly because the
-> whole kernel is taken down when the test is successful :/
+The AV96 board device tree is completely broken and does not match the
+hardware. This series fixes it up.
 
-Hi Florian
+Marek Vasut (22):
+  ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
+  ARM: dts: stm32: Repair ethernet operation on AV96
+  ARM: dts: stm32: Add missing ethernet PHY reset on AV96
+  ARM: dts: stm32: Add missing ethernet PHY skews on AV96
+  ARM: dts: stm32: Add alternate pinmux for SDMMC1 direction pins
+  ARM: dts: stm32: Repair SDMMC1 operation on AV96
+  ARM: dts: stm32: Add alternate pinmux for SDMMC2 pins 4-7
+  ARM: dts: stm32: Add eMMC attached to SDMMC2 on AV96
+  ARM: dts: stm32: Repair PMIC configuration on AV96
+  ARM: dts: stm32: Repair PMIC interrupt on AV96
+  ARM: dts: stm32: Add QSPI NOR on AV96
+  ARM: dts: stm32: Add configuration EEPROM on AV96
+  ARM: dts: stm32: Enable GPU on AV96
+  ARM: dts: stm32: Add alternate pinmux for SDMMC3 pins
+  ARM: dts: stm32: Enable WiFi on AV96
+  ARM: dts: stm32: Add alternate pinmux for USART2 pins
+  ARM: dts: stm32: Enable Bluetooth on AV96
+  ARM: dts: stm32: Add alternate pinmux for LTDC pins
+  ARM: dts: stm32: Add bindings for HDMI video on AV96
+  ARM: dts: stm32: Add bindings for audio on AV96
+  ARM: dts: stm32: Add bindings for USB on AV96
+  ARM: dts: stm32: Rename LEDs to match silkscreen on AV96
 
-Isn't that just the new definition of test success :-)
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi    | 248 +++++++++++++++
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 316 ++++++++++++++++++--
+ 2 files changed, 532 insertions(+), 32 deletions(-)
 
-Yes, your testing will be slower, you have to wait for the watchdog to
-reboot your machine after each successful test.
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Patrice Chotard <patrice.chotard@st.com>
+Cc: Patrick Delaunay <patrick.delaunay@st.com>
+Cc: linux-stm32@st-md-mailman.stormreply.com
+To: linux-arm-kernel@lists.infradead.org
 
-      Andrew
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
