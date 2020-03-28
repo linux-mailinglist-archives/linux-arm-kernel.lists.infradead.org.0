@@ -2,90 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C9DB196331
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 03:49:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5BB196334
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 03:50:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	Subject:In-Reply-To:References:To:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z+uXNWOjzlg3ffXJIcoE1eOsW/6hxlFtVBLEwuoaaxY=; b=SliCrckbOAG1Wu
-	XoyfLTGv8Uaz5Fde7CEABjqK8ZmyzEHS0amCN5xoV4nTDPJs8wpuy8nTGzrIYeaOA5Bh1RjkwOzDO
-	UKuJ8Ul+kv/O52PDj7EW5Inr9qq91wcdhSCgkAkHjzN1OoVYfuy3o75FoWGFVbsu2mLiXNDtLmIzU
-	ApsVAXhx0tweki+9J3eBd6kyizHNM2pJDt3p9K5UdTAcMthZKPXYJp17SibiaHCuwCzhvA+tuFhdP
-	4Tk+smfza9N+PMka3m8tzWLykj/vRK7f6ds7Kd0O4+Dx6QDjdvq3jy1Z15mhwBDWG1uKHaWD9bcun
-	NxWN8ZzWrFigOn5KWA3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=onYEeOAJLqH9sRhVgcr8kTriAOQhFqtGFB9sLLKqQuo=; b=FeU5hxo6kEVqmf
+	UW1yzVlE/RbaxKI16UROrU+9Kaq9ivGF3ZT3LPu1MNEVZn7xTnYsUn3Kr1Pf8fvWwqfYhOHO2K20A
+	rGbhLtJTQ9SrNKypJ+Ina80btCjsvIdg7SFwx1vRq3+yaB7bEC5ByfEPgtjgWhqO4k8+gmJ3GmRDC
+	p5k34XdrfJuh4gC2K3cJtOXrV5CZobHWgVEcjNf+8b1KiKCqyh3XlunKXAaA2FnSnY0W9dMB40AiE
+	nbPwYLRdkpOckgmsM4CAuQz2OwNv3WB4RIlScyyxIozH/5o23+q1PxuPSFhMDs6vb0Wrfwi2kvGdO
+	Vwe/tfxs4aggh7qH+Iew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI1Wp-0006DL-OA; Sat, 28 Mar 2020 02:48:55 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jI1Y8-0006r3-9a; Sat, 28 Mar 2020 02:50:16 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI1Wg-0006D3-Lp
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 02:48:48 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1585363727; h=Content-Transfer-Encoding: Content-Type:
- MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
- To: From: Reply-To: Sender;
- bh=+WpPnB0uFYRHxbJdTSXbZ3CsA3rPO9kHVEIdO35S7As=;
- b=ESwcKj3vwkCnso6wo1WRq/Q5sn1hqVCiEleSCsgR6loBPSShfWgKKSrGNTCPrNih0XvzT7BA
- I7mG5VlpkRKFzsRQO1dJlvwS1bTaswd4OPhtQ7A+0uhSI8KNTjEi/EgoqsvkiUc/1moJaZTR
- FZbRhxOfBVkZ9lMNSJHOdnDVacg=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e7ebb0a.7fe187bf9340-smtp-out-n02;
- Sat, 28 Mar 2020 02:48:42 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 09C80C433F2; Sat, 28 Mar 2020 02:48:41 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: *
-X-Spam-Status: No, score=1.5 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- SUSPICIOUS_RECIPS autolearn=no autolearn_force=no version=3.4.0
-Received: from BCAIN (104-54-226-75.lightspeed.austtx.sbcglobal.net
- [104.54.226.75])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: bcain)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id A7892C433F2;
- Sat, 28 Mar 2020 02:48:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org A7892C433F2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=bcain@codeaurora.org
-From: "Brian Cain" <bcain@codeaurora.org>
-To: "'afzal mohammed'" <afzal.mohd.ma@gmail.com>,
- "'Thomas Gleixner'" <tglx@linutronix.de>
-References: <20200321174303.GA7930@afzalpc>
- <cover.1585320721.git.afzal.mohd.ma@gmail.com>
-In-Reply-To: <cover.1585320721.git.afzal.mohd.ma@gmail.com>
-Subject: RE: [PATCH 0/6] Kill setup_irq()
-Date: Fri, 27 Mar 2020 21:48:38 -0500
-Message-ID: <059b01d604ab$637355b0$2a5a0110$@codeaurora.org>
+ id 1jI1Xu-0006Tp-HN
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 02:50:03 +0000
+Received: by mail-il1-x144.google.com with SMTP id j69so10666610ila.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 19:50:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=2T7espawJMH0SyrBBNkM4sZK6EGCQt+cUAnkbw8X+q8=;
+ b=UIYixAiAO44c3MPcDqJ+yFWSoFESPl38VStvTMjsrJOy0IsBwRiHeMEbR5nA/3TkAg
+ j5FovwdcFdK/ogckuQB6gKawnyfESHbFW6VGUGyCT+Jm/N/Ja40F9iCjMfnlWvkhh8sc
+ UPhr+945c8/GdnIHfxCEboQPtjRttgswyyivqG2/rw64ZPTqZRGxUuu8j1MR/Llz98E9
+ CEZUD6JHiiSYUlLoMTn2q2GOb6VIwlnQ6Wvyq2Ha7h0u3v5PH4Vbbh7sNjjU5mPSkCt4
+ ii9lTJ71OByT/yOGVXXJ1c1ElQ9V+IezHQOhkWQv7JrSKaVcpZKmqR9zbE7VSUMtzPhl
+ 9EnA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=2T7espawJMH0SyrBBNkM4sZK6EGCQt+cUAnkbw8X+q8=;
+ b=c2hJwC2GfDrXhw/ppZIKQiguGQnMm3guDzyEEnh1ukYWObNZdd4IMinV4kN5+uJ82E
+ i99s7rZyhy9zY7KLj8K5EopLAJOWXk554FVWtfDWsngxLcKdwT2VBBn5y7YUU2qtpsMk
+ Ed1QRx+89bYVpdc2utbK7R9dpYS+F4uu9FQQYXe5CpXpkeNz4tC01JgaCYKbVmM0M2Jd
+ pPGIiK5IXppf6QHFCy56nm416dOo5tfuRCDwVfzINI2YxQwhFBv3M/4AmVvZ4FB8phHc
+ se7rJLTI+0z5KcymrwMZ/M3wcDhfHvQwV067dP098+DUTYLmwi02FWK48z2Zvv0LKCAp
+ C9bw==
+X-Gm-Message-State: ANhLgQ3h+VOxbgxEKN8InEDlkXbrB6UbK9v8veDr6wwSYZiBBTjw6vrY
+ 6eE4SWoDG06Tpfz5CAHXd02oucQgEYkyl77gO7vDBkK6
+X-Google-Smtp-Source: ADFU+vu8brBOHjvUSXAejafUKJHfvGYcC5rvGqgefCeljGY9rSiNBTTc1qwA3lZCs0Mmew94vFBCEXJbPO00Gh/fpLA=
+X-Received: by 2002:a92:4896:: with SMTP id j22mr2016718ilg.158.1585363799665; 
+ Fri, 27 Mar 2020 19:49:59 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: en-us
-Thread-Index: AQH+2owB65JuA03jeOLwO39OK5TmSwJQWNztp/kerbA=
+From: Adam Ford <aford173@gmail.com>
+Date: Fri, 27 Mar 2020 21:49:48 -0500
+Message-ID: <CAHCN7xJSKH-gXA5ncFS3h6_2R28rn70O3HfT=ActS1XVgCFSeg@mail.gmail.com>
+Subject: i.MX8MN Errors on 5.6-RC7
+To: arm-soc <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_194847_627705_6C593336 
-X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-CacheID: sfid-20200327_195002_647409_6EF83578 
+X-CRM114-Status: UNSURE (   7.79  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.5 (++)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aford173[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,50 +92,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: bcain@codeaurora.org
-Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
- linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-hexagon@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- linux-alpha@vger.kernel.org, linux-omap@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Adam Ford <aford173@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Adam Ford-BE <aford@beaconembedded.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: linux-hexagon-owner@vger.kernel.org <linux-hexagon-
-> owner@vger.kernel.org> On Behalf Of afzal mohammed
-> Sent: Friday, March 27, 2020 11:08 AM
-> To: Thomas Gleixner <tglx@linutronix.de>
-> Cc: linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> linux-samsung-soc@vger.kernel.org; x86@kernel.org; linux-
-> sh@vger.kernel.org; linux-s390@vger.kernel.org; linuxppc-
-> dev@lists.ozlabs.org; linux-parisc@vger.kernel.org; linux-
-> mips@vger.kernel.org; linux-m68k@lists.linux-m68k.org; linux-
-> ia64@vger.kernel.org; linux-hexagon@vger.kernel.org; linux-c6x-dev@linux-
-> c6x.org; linux-omap@vger.kernel.org; linux-alpha@vger.kernel.org
-> Subject: [PATCH 0/6] Kill setup_irq()
-...
-> Note 1: sh toolchain is available, but that will not make the  relevant
-changes
-> compile as it has dependency of 64bit arch toolchain,  did try a Kconfig
-hack
-> to make it compile w/ 32bit sh toolchain, but it  failed due to other
-reasons
-> (unknown operands), so gave up on that.
-> Note 2: hexagon final image creation fails even w/o my patch, but it  has
-> been ensured that w/ my changes relevant object files are getting  built
-w/o
-> warnings.
+I am getting a few errors on the i.MX8MN:
 
-Afzal,
+[    0.000368] Failed to get clock for /timer@306a0000
+[    0.000380] Failed to initialize '/timer@306a0000': -22
+[    7.203447] caam 30900000.caam: Failed to get clk 'ipg': -2
+[    7.334741] caam 30900000.caam: Failed to request all necessary clocks
+[    7.438651] caam: probe of 30900000.caam failed with error -2
+[    7.854193] imx-cpufreq-dt: probe of imx-cpufreq-dt failed with error -2
 
-	What's the nature of the failure in "Note 2"?
+I was curious to know if anyone else is seeing similar errors.  I
+already submitted a proposed fix for a DMA timeout (not shown here)
+which matched work already done on i.MX8MQ and i.MX8MM.
 
--Brian
+I am not seeing huge differences between 8MM and 8MN in the nodes
+which address the timer, caam or imx-cpufreq-dt.
+
+If anyone has any suggestions, I'd love to try them.
+
+adam
 
 _______________________________________________
 linux-arm-kernel mailing list
