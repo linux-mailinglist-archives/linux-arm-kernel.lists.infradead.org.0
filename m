@@ -2,89 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77067196666
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 14:43:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4B02196686
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 15:07:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=juyEc48SHAS2lBLupMBt17NjfmjiQKkqEcu2K9DkE2M=; b=cDH
-	XNC8Ma09+b3jgfyKTQrFBdiD8xfn4wWVzNzxPGEElP23QFDlhSXWUMZxPFJsTohThB2sbMGYbx4LB
-	a+BgOEllmykXMgSyo8IzOC3s8iRZab66QMEyyG0sk/phb1OlEtU6YREyzzn7THNeSDfarTjQdK2KF
-	+BmR6rckynRAvSbFlO3EzO/4hgNthowq2GUFbRnhVcrSF8zOIz4TCOxAzSqQs3OysiTTVYXL606Si
-	pqA/smvZh156LPXLFJC9/Jb53QzaiTXdP9FYvVml2jDoXl68nsDB3rrHK2z/9jejfhocRYGCRpPTK
-	aHOi6qD9uELyC8qHzp1usiWiFHT5oww==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=584hVBJFrF1PKhrXTsTHrrnaOiOSY23Yw9lMoyjDuwI=; b=MGn0P57Ap3+EMh
+	8L+YCs0aykGiFDVK95OC67scMep3nSupKjVFDvxxOmvvp5mggyi18qkTgMAHaffgS4i91w4TyM+OU
+	eoxpB/14uxT2RErasm2KWbUYUxwOXGJY9qwJ9rg7wPOeXaNvrf8pk0v3LA4wHsCQI5xl8SwgKK0pH
+	BLsun/e1akJNga7shMuS86H9uo1qRU5zoilBM8g0dX5ugmxHKdlCZZceEjBFMwtERBvQZhDTrF4GS
+	LlpU9htd28Q+5CzDAQYCNQ/ZZcOYt4KLz1YZAqJsVsSf516auCQjnIGSee64K4W+JuOJYWOZLHG98
+	F5giwlqkgVn/ok8RZlNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIBkA-0003Hw-Dd; Sat, 28 Mar 2020 13:43:22 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jIC75-0002y8-JA; Sat, 28 Mar 2020 14:07:03 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIBk3-0003HV-Tb
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 13:43:17 +0000
-Received: by mail-wr1-x444.google.com with SMTP id m11so9262150wrx.10
+ id 1jIC6x-0002xg-Mg
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 14:06:57 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id ca9so6443308qvb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Mar 2020 06:43:15 -0700 (PDT)
+ Sat, 28 Mar 2020 07:06:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=UskpCEE5TUQheW2HfAHjtymRH8q/A2y17+Pe+kWt7r8=;
- b=I6vPkonjI1vmCLWrBbdBoShliZoMh2Q0CP1gRdVhAMsW1q/U5UeFVxKasJ6haMM8vg
- MmHM+eFI0T9PqRASKHYBxuCRzcVTnPEjn5ehRY09aiuBMv0Z5a2YF/HdeSeMYaAq7w4C
- fs6HKV8UGQ/oWYUMdz9ErBoML7qBrhSoXEL2gG8uWkxf6gcHBPcv7nQjq28bzOGNrTg6
- hpo2BRgAFChXpRjKqFfi6809WhdkanGteLp6KPH/K6+sr7juGPENz4KJHfDsJR8zyYC+
- ZVQCJMnhTgkPi/8G5U22gJyJFmpsoNbAwzWb4R05Ou4ipJE9YZ6GxMaTujlI8kS6+WbF
- NqKg==
+ h=sender:from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=fGsxLmh5pI9jvRewegPjPIfMEi2hmilikFGOfTAF5n0=;
+ b=IOO3tBQGnquvTK7I5PcGhVPWgR1i1JQM8vZDTxeBnMynSeT3Tj5qUkdsBGWoypkwH6
+ VNYAJ3Lav0AcTEpIVlVn6OKSoqtewxs/6oGA7p4w077LydglVR+IBqKUqvJOqHNHfM1Q
+ woHY3D8XZxUm9Zy9kmmNnpVgxTrsVQp7Z3H90vH+RLg3HxI2XZka30IbHogQ3M0GvikK
+ o90X+Q4DQuCS7Rh+ZdytIlZ/NL9iSH6nUFIWS0FjVF8pjrjLLKSb9pFkF3r5PYpQFfM5
+ 1crvEzaNmXIvNMqNI6Vt8QjxB8n95bpXqznPg7IJmhwkd/YVdgvvOLrLTj4iPBz8ETPU
+ k3yQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=UskpCEE5TUQheW2HfAHjtymRH8q/A2y17+Pe+kWt7r8=;
- b=Xk7J1ICmRyIMs5HuZnyQdHPNAjYIdoNFRqbjKYjG0jhBMCYGiPi1RQW/CNyBnOzi1n
- +HiD8jZFQ9k1exyWfIbgSiR6bcqPy0gt6dCcoiLX46FvBUjWZMwJPSH4EywhGFeo8vOK
- dzyW/zVqp+Hw3gjq3huTrlIz+vNWWnxpPoSTsBKJwbz7xXcoe+8GkzwjMFlhoRJZhcFw
- IUP6/TjxnMhAjcs7DH1Z8o3M4E8ozs8oGqZnLJFHdcxivjbV5RA217TEZK2o+biAsTGf
- +fXR7GlkWw2RbwzhOu1SzbmuWtOtunMRKL3GhGwb+62B5t6OKWkRBahYZlyX4e6eCM73
- wgNA==
-X-Gm-Message-State: ANhLgQ1JgYlWqOZnfsjKOyiCfN73PztKoMK7smpzw2F3wXSW6qg1TyuR
- OuuUXpoAC6iZEDfUxJBfDhI=
-X-Google-Smtp-Source: ADFU+vu2jQ5CPsH2nB+2wu8Fp2D/gjd/7NJkKh2i8aKtFr+9rflUKnTWCv7i56dVnn7DBT/CUl6oRw==
-X-Received: by 2002:adf:cd12:: with SMTP id w18mr4841366wrm.311.1585402994449; 
- Sat, 28 Mar 2020 06:43:14 -0700 (PDT)
-Received: from felia.fritz.box ([2001:16b8:2dbb:cb00:7d36:e5ed:6ff6:44e4])
- by smtp.gmail.com with ESMTPSA id 23sm11515974wmj.34.2020.03.28.06.43.12
+ h=x-gm-message-state:sender:from:date:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=fGsxLmh5pI9jvRewegPjPIfMEi2hmilikFGOfTAF5n0=;
+ b=M2fGtl6Wo3opjOdGr00vYB2WWg2Wrw58oEUsi7WvxC4KIpNRt0O6CRf3rFN1FjGyhd
+ 8S1VlWqRE6GTOqpTYs0cxbVQO69LQT6KlpBgkVcw/n3Tt0NAhoUeP0J9L0W+0ZtFc2KG
+ rHBDFcCEeBQux9araMEzGzO2Zhh5mhvLB3eOLy9KLpw9ZRoPrOI+ysf4O3XQ9NXqUi9s
+ Im9NmJyR+uNHsv4Ieoj3KWa2NSS2gZTS9h3qIp7uMO55ujYtMxECRLEMC0AwHysOr8/M
+ 0MzGVd53VwrM+sJRKBop9MfyOBGcgZk3gQxyJoUqj9BJ+zqRM5N/3SefX4KPYXFsT8xu
+ Qqkw==
+X-Gm-Message-State: ANhLgQ3m4BbsyZl1oZUSJXRgUBKJ391uyOUM5SpQL8SsL4L71kz29Qfd
+ b0DYTWPTG8Epz1I/y5mvAIY=
+X-Google-Smtp-Source: ADFU+vvDhFVr8QcLMkylqFmHCvdb9E2vpDpaAVlxWGhCU5iJIINJbAUGk2ScwdB+6LDE7TQWnuqsQw==
+X-Received: by 2002:ad4:4468:: with SMTP id s8mr3875503qvt.115.1585404412066; 
+ Sat, 28 Mar 2020 07:06:52 -0700 (PDT)
+Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
+ by smtp.gmail.com with ESMTPSA id p9sm6171497qtu.3.2020.03.28.07.06.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 28 Mar 2020 06:43:13 -0700 (PDT)
-From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-To: Russell King <rmk+kernel@arm.linux.org.uk>,
- Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>
-Subject: [PATCH] MAINTAINERS: clarify maintenance of ARM Dove drivers
-Date: Sat, 28 Mar 2020 14:43:04 +0100
-Message-Id: <20200328134304.7317-1-lukas.bulwahn@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ Sat, 28 Mar 2020 07:06:51 -0700 (PDT)
+From: Arvind Sankar <nivedita@alum.mit.edu>
+X-Google-Original-From: Arvind Sankar <arvind@rani.riverdale.lan>
+Date: Sat, 28 Mar 2020 10:06:50 -0400
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 2/2] efi/arm64: increase the PE/COFF alignment so the
+ kernel can run in place
+Message-ID: <20200328140648.GA234129@rani.riverdale.lan>
+References: <20200326165905.2240-1-ardb@kernel.org>
+ <20200326165905.2240-3-ardb@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200326165905.2240-3-ardb@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_064315_979825_2943F738 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200328_070655_743453_B656AAB6 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [niveditas98[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lukas.bulwahn[at]gmail.com]
+ provider [niveditas98[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,60 +106,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joe Perches <joe@perches.com>, Lukas Bulwahn <lukas.bulwahn@gmail.com>,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-efi@vger.kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 44e259ac909f ("ARM: dove: create a proper PMU driver for power
-domains, PMU IRQs and resets") introduced new drivers for the ARM Dove SOC,
-but did not add those drivers to the existing entry ARM/Marvell
-Dove/MV78xx0/Orion SOC support in MAINTAINERS. Hence, these drivers were
-considered to be part of "THE REST".
+On Thu, Mar 26, 2020 at 05:59:05PM +0100, Ard Biesheuvel wrote:
+> Update the PE/COFF metadata so that the UEFI image loader will load the
+> kernel image at an offset that allows it to execute in place.
+> 
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  arch/arm64/kernel/efi-header.S | 2 +-
+>  arch/arm64/kernel/image-vars.h | 7 +++++++
+>  2 files changed, 8 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/kernel/efi-header.S b/arch/arm64/kernel/efi-header.S
+> index 914999ccaf8a..f9ee1c2a5fd6 100644
+> --- a/arch/arm64/kernel/efi-header.S
+> +++ b/arch/arm64/kernel/efi-header.S
+> @@ -32,7 +32,7 @@ optional_header:
+>  
+>  extra_header_fields:
+>  	.quad	0					// ImageBase
+> -	.long	SZ_4K					// SectionAlignment
+> +	.long	PECOFF_SECTION_ALIGNMENT		// SectionAlignment
+>  	.long	PECOFF_FILE_ALIGNMENT			// FileAlignment
+>  	.short	0					// MajorOperatingSystemVersion
+>  	.short	0					// MinorOperatingSystemVersion
+> diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+> index be0a63ffed23..7a7fa3ba7b2f 100644
+> --- a/arch/arm64/kernel/image-vars.h
+> +++ b/arch/arm64/kernel/image-vars.h
+> @@ -15,6 +15,13 @@
+>  __efistub_kernel_size		= _edata - _text;
+>  __efistub_primary_entry_offset	= primary_entry - _text;
+>  
+> +#ifndef CONFIG_RELOCATABLE
+> +PECOFF_SECTION_ALIGNMENT = SZ_4K;
+> +#elif THREAD_ALIGN > SEGMENT_ALIGN
+> +PECOFF_SECTION_ALIGNMENT = THREAD_ALIGN;
+> +#else
+> +PECOFF_SECTION_ALIGNMENT = SEGMENT_ALIGN;
+> +#endif
+>  
+>  /*
+>   * The EFI stub has its own symbol namespace prefixed by __efistub_, to
+> -- 
+> 2.17.1
+> 
 
-Clarify now that these drivers are maintained by the ARM/Marvell
-Dove/MV78xx0/Orion SOC support maintainers. Also order the T: entry to the
-place it belongs to, while at it.
-
-This was identified with a small script that finds all files only belonging
-to "THE REST" according to the current MAINTAINERS file, and I acted upon
-its output.
-
-Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
----
-applies cleanly on current master and on next-20200327
-
- MAINTAINERS | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 8b8abe756ae0..38fff0374082 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1979,6 +1979,7 @@ M:	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
- M:	Gregory Clement <gregory.clement@bootlin.com>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
-+T:	git git://git.infradead.org/linux-mvebu.git
- F:	Documentation/devicetree/bindings/soc/dove/
- F:	arch/arm/mach-dove/
- F:	arch/arm/mach-mv78xx0/
-@@ -1986,7 +1987,7 @@ F:	arch/arm/mach-orion5x/
- F:	arch/arm/plat-orion/
- F:	arch/arm/boot/dts/dove*
- F:	arch/arm/boot/dts/orion5x*
--T:	git git://git.infradead.org/linux-mvebu.git
-+F:	drivers/soc/dove/
- 
- ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K, CN9130 SOC support
- M:	Jason Cooper <jason@lakedaemon.net>
--- 
-2.17.1
-
+The section virtual addresses and (possibly) size of image need to be
+updated to be a multiple of PECOFF_SECTION_ALIGNMENT, no?
 
 _______________________________________________
 linux-arm-kernel mailing list
