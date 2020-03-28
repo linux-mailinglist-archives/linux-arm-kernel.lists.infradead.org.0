@@ -2,65 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC84A19648D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 09:49:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 810F71964BC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 10:16:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ttZdIdWQyoe4DraQgnmjwXJFBKq0J2RNh+PMkOZ0qW4=; b=hJM4aI7sVoyAKa
-	Ih+iE1n8FS87MHWJa3DBxqnNvSK4LU+fV3CmXfXt6k6+cLeuq6EX4lNX6Afs75N2cLlJtZlSOQioG
-	s8IG7knfoectLA8VYcciaBlbEFIy4SPLd7RtJMhZ9FmLr1WPvxuR7T5GhQGlNAMY2tLgcv2PxkfPY
-	ffz/m2aGq2/T2Z/ZpAsLkRbqOlzoyQN6GfNT58xnufzDqr9LfaXEWiQNeibuxeM7ERWsXX/QewC6k
-	LtBXJeNFLBpAyKzYpk5uvtSNnEEHoTkOPtgm6CXuMXJU2geCq3uc/Fz/rc1+/HGtaZu17E3TQ8BLi
-	ZCxluzLRZh/1eFXbIxmw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=josdazKeCRAa1nx9KKI+dg+r7llsxNJJWX1Iecjhj4I=; b=C6jTT0R3sMoxCg
+	CB0BY3+XmshdRI5+uWRaExFXbCVLaidwi9gpqa0cNpc0oWMaRldqwd6AK8yT5A1dIYhVBTuWKdtOJ
+	atqJZwa0SBVNgACPPT95UC7BZvgDaEWDOn5MpUBS3Krc3j+qY2ePGgJesMQiWtC1WR+iBD0BORHU4
+	pX+C0J6KjXz3Ul1/i0BFVCk6BhqvmytgN/fwOYp7Gfqg/X6letd5iRC//hv033IutoylRj21yayUO
+	aoY+Lr0aet8/KhiCYO65FsTmjc4O42LgiqqDgjZVG003BqIrT38HthMhRjzHihB0kaf+tqMWeXPfc
+	Oejnag5yKOL10IlI5cPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI79F-0003BR-2k; Sat, 28 Mar 2020 08:48:57 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jI7ZS-0004hM-TO; Sat, 28 Mar 2020 09:16:02 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI78z-0003Av-39
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 08:48:43 +0000
-IronPort-SDR: TAkhMtcwyzrfeubQ585gKvY3r4INPrtmPNAtAEaXO8dLF+5YQoFGd8EFTv8qEDMlcnYAyhaw5j
- dYh6S+rONx5Q==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 28 Mar 2020 01:48:38 -0700
-IronPort-SDR: 9eVh1X5H5acINJebkr3pHZNS+fgzjtxyyDpKvTFEjbURhxS9QUM3+dVZifTaFyRxUl/p4JR3lH
- pvXnoGzVITUQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,315,1580803200"; d="scan'208";a="358710450"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga001.fm.intel.com with ESMTP; 28 Mar 2020 01:48:37 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jI78u-0006nr-Nu; Sat, 28 Mar 2020 16:48:36 +0800
-Date: Sat, 28 Mar 2020 16:48:15 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [arm-soc:arm/drivers] BUILD SUCCESS
- cedb414aa8c31ce2f178ea9dc29b6c0200b9893f
-Message-ID: <5e7f0f4f.PwYcOpRihRBH/EUg%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jI7ZK-0004h3-7P
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 09:15:55 +0000
+Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mnq4Q-1jbXEC1ifa-00pJWR for <linux-arm-kernel@lists.infradead.org>; Sat,
+ 28 Mar 2020 10:15:50 +0100
+Received: by mail-qk1-f180.google.com with SMTP id u4so13526040qkj.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 28 Mar 2020 02:15:49 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ0g8Na00cHeyyCknJjSGc82l2wNO5LBqhE/KqV2hxEpFgF/xiLG
+ XiET0fH8hD2oDuTLH1d42kew5hbc+NLZOBMhPHc=
+X-Google-Smtp-Source: ADFU+vsEwsZ6iJg1C4TSE1cMWb+UnTTxhSDojVw/L0OAefIFglRrWD4E/aTUDz6YJYnZmNCawfDP+EZ7VusIyFa5cpQ=
+X-Received: by 2002:a37:6455:: with SMTP id y82mr3167433qkb.286.1585386949004; 
+ Sat, 28 Mar 2020 02:15:49 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200106135715.1159420-1-robert.marko@sartura.hr>
+ <CA+HBbNHEetusFNH-8Qmva=2-_HQRRJ33qfBRSudZBVW+vK0tnw@mail.gmail.com>
+ <20200327220545.GC5063@builder>
+In-Reply-To: <20200327220545.GC5063@builder>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 28 Mar 2020 10:15:32 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a1_eyVSTgKDk+qph6CCKswWFWhPfX=yi3=jAeUf4uWC6w@mail.gmail.com>
+Message-ID: <CAK8P3a1_eyVSTgKDk+qph6CCKswWFWhPfX=yi3=jAeUf4uWC6w@mail.gmail.com>
+Subject: Re: [PATCH] ARM: qcom: Add support for IPQ40xx
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+X-Provags-ID: V03:K1:Ohu82QLzsaHkp+90ZAo0MRp9EQ4fOP++zkm9LD/a9ZUJJPBStTu
+ O7MS66umQXwcQ0k2z0mAgvLrEGig5QU9mW8K3sThddFinm9dpxnlk4yKAUPZyLbY4Bdnfrm
+ m8BY2qw4iQzvw0tS3Bfb5+IL6oszaLNtOxrXbgZdwAq+TnM3zD3mANjBMZbBvPUsMh3rpNK
+ yJLzqinr6rsiqZ+Os7grQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:xNGlIb+Q/To=:otmm8IwqSphhDseVCsPwZw
+ 1fbdpuWThOnzcEwLnb9qKIv5rTPkRA7YEXeHWn5NwXntX49Mp/91OyorVFRK9E3uT312+M0MI
+ TjyoxihvxWL8809oYTmnQbjwW+LeTnU8a3+/yAwE1K4jhJn6rMrgJDR+ha/fGeiLfOX/bPfYp
+ cBdy8r/L4G8OnRdFnqI+KbXY26nzIzYxfEABMf+dMZ56ztT9oPf7rw0O0e9YGiM+C8/SKxnsV
+ hbItstHP4AJQ7MrpdG00ZCxgjoW+fh8BD+yXx0IGwLrlREsF3tSY27VsDxKhZ0uuGtu+lDfjN
+ JXdw3RYRuE9SsSf7qykt/P8l8zXABidYo6k1gnIYSDeoAv2CPqfJuqOdNd/Mg9FLGkzyCk+2a
+ R9w1cjFRalS0RkNzNm+HXbgV96l2vqvPnaDvpQWRPXvoQZVF0yeqyMKUwJ8PpB+BqDVnebkHr
+ JY8zISHAjEUsoPZrGV07rUakkU3XxyREqschvcl1aKGRcuHeTlsa3ptCE5TMI7UbQMsFbT+LT
+ aqYewxVYcxX/ltkN+/mY+KMq4eqECGYgpUQv+0HxQwolLSdURrfFwk69oOyc51ce3FsvFf7SZ
+ j81b/Xsvop7julZzwu0NxF8cCiJVdZOh4QtNTSjoK8YK9g0pGBd4EFVv+nLlyOGQonGrl7vVH
+ dh6HlhkLWZyGspG+MzO+56qVuk4RFLDfLm3tBW1zUSpNLDhlZqNa4gzjjh4dJbQOjmtqIPcN7
+ bt5DDX0eiL2ETxBwRiO5V0yL46+GGiGECObHx+u14R4yxnNiXsDrcdULYt/6btYAIV2YJFPb+
+ 3OFQQWZ10xPxVf0ipblX0phGhtExeUx8CHY5WFeN8eX2DWNWYY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_014841_153421_9DFD9DFC 
-X-CRM114-Status: UNSURE (   6.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -3.7 (---)
+X-CRM114-CacheID: sfid-20200328_021554_560616_D30CE0A2 
+X-CRM114-Status: GOOD (  14.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,194 +87,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Luka Perkov <luka.perkov@sartura.hr>,
+ Christian Lamparter <chunkeey@gmail.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Andy Gross <agross@kernel.org>, John Crispin <john@phrozen.org>,
+ Robert Marko <robert.marko@sartura.hr>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/drivers
-branch HEAD: cedb414aa8c31ce2f178ea9dc29b6c0200b9893f  Merge tag 'scmi-updates-5.7' of git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux into arm/drivers
+On Fri, Mar 27, 2020 at 11:05 PM Bjorn Andersson
+<bjorn.andersson@linaro.org> wrote:
+>
+> On Wed 25 Mar 03:25 PDT 2020, Robert Marko wrote:
+>
+> > On Mon, Jan 6, 2020 at 2:57 PM Robert Marko <robert.marko@sartura.hr> wrote:
+> > >
+> > > From: Christian Lamparter <chunkeey@gmail.com>
+> > >
+> > > Add support for the Qualcomm IPQ40xx SoC in Kconfig.
+> > > Also add its appropriate textofs.
+> > Any blockers on this patch?
+> >
+>
+> No, I must have missed it in the past. I've picked it up for 5.8.
+>
 
-elapsed time: 682m
+If we only need these few lines, I can still squeeze it in for v5.7 last minute,
+just forward that patch to soc@kernel.org. If other things are still needed,
+let's wait until v5.8.
 
-configs tested: 167
-configs skipped: 0
-
-The following configs have been built successfully.
-More configs may be tested in the coming days.
-
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm                         at91_dt_defconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                               defconfig
-sparc                            allyesconfig
-mips                              allnoconfig
-nds32                               defconfig
-sh                          rsk7269_defconfig
-s390                       zfcpdump_defconfig
-powerpc                       ppc64_defconfig
-ia64                             allmodconfig
-sparc                               defconfig
-i386                              allnoconfig
-i386                             alldefconfig
-i386                             allyesconfig
-i386                                defconfig
-ia64                             alldefconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-ia64                                defconfig
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-h8300                       h8s-sim_defconfig
-h8300                     edosk2674_defconfig
-m68k                       m5475evb_defconfig
-m68k                             allmodconfig
-h8300                    h8300h-sim_defconfig
-m68k                           sun3_defconfig
-m68k                          multi_defconfig
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-powerpc                           allnoconfig
-powerpc                             defconfig
-powerpc                          rhel-kconfig
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-parisc                            allnoconfig
-parisc                           allyesconfig
-parisc                generic-32bit_defconfig
-parisc                generic-64bit_defconfig
-x86_64               randconfig-a001-20200327
-x86_64               randconfig-a002-20200327
-x86_64               randconfig-a003-20200327
-i386                 randconfig-a001-20200327
-i386                 randconfig-a002-20200327
-i386                 randconfig-a003-20200327
-alpha                randconfig-a001-20200327
-m68k                 randconfig-a001-20200327
-mips                 randconfig-a001-20200327
-nds32                randconfig-a001-20200327
-parisc               randconfig-a001-20200327
-c6x                  randconfig-a001-20200327
-h8300                randconfig-a001-20200327
-microblaze           randconfig-a001-20200327
-nios2                randconfig-a001-20200327
-sparc64              randconfig-a001-20200327
-csky                 randconfig-a001-20200327
-openrisc             randconfig-a001-20200327
-s390                 randconfig-a001-20200327
-sh                   randconfig-a001-20200327
-xtensa               randconfig-a001-20200327
-x86_64               randconfig-b001-20200327
-x86_64               randconfig-b002-20200327
-x86_64               randconfig-b003-20200327
-i386                 randconfig-b001-20200327
-i386                 randconfig-b002-20200327
-i386                 randconfig-b003-20200327
-x86_64               randconfig-c001-20200327
-x86_64               randconfig-c002-20200327
-x86_64               randconfig-c003-20200327
-i386                 randconfig-c001-20200327
-i386                 randconfig-c002-20200327
-i386                 randconfig-c003-20200327
-x86_64               randconfig-d001-20200327
-x86_64               randconfig-d002-20200327
-x86_64               randconfig-d003-20200327
-i386                 randconfig-d001-20200327
-i386                 randconfig-d002-20200327
-i386                 randconfig-d003-20200327
-x86_64               randconfig-e001-20200328
-x86_64               randconfig-e002-20200328
-x86_64               randconfig-e003-20200328
-i386                 randconfig-e001-20200328
-i386                 randconfig-e002-20200328
-i386                 randconfig-e003-20200328
-x86_64               randconfig-e001-20200327
-x86_64               randconfig-e002-20200327
-x86_64               randconfig-e003-20200327
-i386                 randconfig-e001-20200327
-i386                 randconfig-e002-20200327
-i386                 randconfig-e003-20200327
-x86_64               randconfig-f001-20200327
-x86_64               randconfig-f002-20200327
-x86_64               randconfig-f003-20200327
-i386                 randconfig-f001-20200327
-i386                 randconfig-f002-20200327
-i386                 randconfig-f003-20200327
-x86_64               randconfig-g001-20200327
-x86_64               randconfig-g002-20200327
-x86_64               randconfig-g003-20200327
-i386                 randconfig-g001-20200327
-i386                 randconfig-g002-20200327
-i386                 randconfig-g003-20200327
-x86_64               randconfig-h001-20200327
-x86_64               randconfig-h002-20200327
-x86_64               randconfig-h003-20200327
-i386                 randconfig-h001-20200327
-i386                 randconfig-h002-20200327
-i386                 randconfig-h003-20200327
-arm                  randconfig-a001-20200327
-arm64                randconfig-a001-20200327
-ia64                 randconfig-a001-20200327
-powerpc              randconfig-a001-20200327
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-riscv                            allmodconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-sh                               allmodconfig
-sh                            titan_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                                allnoconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-um                                  defconfig
-um                             i386_defconfig
-um                           x86_64_defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
