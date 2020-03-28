@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02B6D196809
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:16:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5597219680F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:17:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XlOI/FatNlcaO6k4ssbOagciy9KfWtASQ5saHIbE7CM=; b=tfXVEtV+mFs3Fw
-	0oBF9qTuZhONQiJ2iiCDdXR/MgTzvuwLlVoQ+M6x0okKslhczmIlexTcMvM/rT6rT3zLXGk7K+GxX
-	Z8BgV/DDuWgkZGUSQV9FPV34WDM1jcRhOxJABLOABBJAS5mclogBfHcH5+ZwPZqqDIuZCpH+VW6kV
-	2eJEImrUb0Kd5Ou6gieFl+4fcI3YBYljpafWZQtzb9YqpaVzLkPLrbC/B4uIA235HMHxkLU3mrvEL
-	rtdxvNstkGlJNl94Tg7a6VX5Wjhq86YA2IknqEwqjPQDJI96xIGfngypZmIZrm162GnIw2dMFp5tO
-	11CzNWYZtXNaY4AGwA3Q==;
+	List-Owner; bh=aodvNInEY16GTQOSwCAPY2TGRLQKlEyGz5pfSPaUTxE=; b=Uw+rujF+WumAI2
+	JvK+J+TbkFxWhOf3P2t+MHlK+4NpxjDi17KNkcGKRQmogFQCuYWmxdUAeKMA6adrFH128Qki7z88H
+	kEK8wsJ91oHkAMWeFjycJaVtonTbvchQLlr5ruAG9z7nD4WSp7rcI4kHrC2Z3kDsnTJxtIBqcvn3h
+	6rLQELrHbrxb/RdZ8EUru7RIdoQ1jvSBrbUG0xtDE4Rc3JqrE4PKWaFduOsD89gdRxnHpZ55IbIDi
+	leNfLtOEv3mEOUGjMN4GmVfdvVokxiP0/TOWX2sa69x21RydJNcoNe7NtovoyCxKUrABKp68pITi9
+	KDRlaTTU6G5WOjy/wkyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIF4a-0003X8-Tp; Sat, 28 Mar 2020 17:16:40 +0000
+	id 1jIF5b-0004Rf-Dn; Sat, 28 Mar 2020 17:17:43 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIF0Q-0007Es-EO
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:12:24 +0000
+ id 1jIF0S-0007GJ-8W
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:12:25 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48qQJM2ndqz1qrLT;
- Sat, 28 Mar 2020 18:12:19 +0100 (CET)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48qQJN4l8Mz1qrLq;
+ Sat, 28 Mar 2020 18:12:20 +0100 (CET)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48qQJM2X20z1qqlF;
- Sat, 28 Mar 2020 18:12:19 +0100 (CET)
+ by mail.m-online.net (Postfix) with ESMTP id 48qQJN4QW8z1qqlF;
+ Sat, 28 Mar 2020 18:12:20 +0100 (CET)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id Tps8MBEydX0c; Sat, 28 Mar 2020 18:12:18 +0100 (CET)
-X-Auth-Info: vRZ+wN9m5C+ZEXM97HMANZA3ry+go7ZUKBgcr3mTp0g=
+ with ESMTP id 4hKN7oml1FPE; Sat, 28 Mar 2020 18:12:19 +0100 (CET)
+X-Auth-Info: NPa6icNoJgCOPGp3UDjQb2nu/BBu4m6FSFOoooNKCDQ=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sat, 28 Mar 2020 18:12:18 +0100 (CET)
+ Sat, 28 Mar 2020 18:12:19 +0100 (CET)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 19/22] ARM: dts: stm32: Add bindings for HDMI video on AV96
-Date: Sat, 28 Mar 2020 18:11:41 +0100
-Message-Id: <20200328171144.51888-20-marex@denx.de>
+Subject: [PATCH 20/22] ARM: dts: stm32: Add bindings for audio on AV96
+Date: Sat, 28 Mar 2020 18:11:42 +0100
+Message-Id: <20200328171144.51888-21-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200328171144.51888-1-marex@denx.de>
 References: <20200328171144.51888-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_101222_817809_D25849B7 
-X-CRM114-Status: GOOD (  11.13  )
+X-CRM114-CacheID: sfid-20200328_101224_495503_A4F221CB 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -85,7 +85,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fill in the HDMI video pipeline from AV96 into the DT.
+Fill in the bindings for HDMI audio on AV96, this permits audio playback
+via attached HDMI device if such device supports it.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -95,117 +96,73 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 79 +++++++++++++++++++++
- 1 file changed, 79 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 39 +++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index dc1f59239042..f0f723558be7 100644
+index f0f723558be7..4a61b5263ad3 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -25,10 +25,28 @@ aliases {
- 		spi0 = &qspi;
+@@ -98,6 +98,13 @@ sd_switch: regulator-sd_switch {
+ 			 <2900000 0x0>;
  	};
  
-+	/* XTal Q1 */
-+	cec_clock: clk-cec-fixed {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <24000000>;
++	sound {
++		compatible = "audio-graph-card";
++		label = "STM32MP1-AV96-HDMI";
++		dais = <&sai2a_port>;
++		status = "okay";
 +	};
 +
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
+ 	wlan_pwr: regulator-wlan {
+ 		compatible = "regulator-fixed";
  
-+	hdmi-out {
-+		compatible = "hdmi-connector";
-+		type = "a";
+@@ -353,6 +360,13 @@ adv7513_out: endpoint {
+ 					remote-endpoint = <&hdmi_con>;
+ 				};
+ 			};
 +
-+		port {
-+			hdmi_con: endpoint {
-+				remote-endpoint = <&adv7513_out>;
++			port@2 {
++				reg = <2>;
++				adv7513_i2s0: endpoint {
++					remote-endpoint = <&sai2a_endpoint>;
++				};
 +			};
-+		};
-+	};
-+
- 	memory@c0000000 {
- 		device_type = "memory";
- 		reg = <0xc0000000 0x40000000>;
-@@ -294,6 +312,50 @@ watchdog {
  		};
  	};
  
-+	hdmi-transmitter@3d {
-+		compatible = "adi,adv7513";
-+		reg = <0x3d>, <0x2d>, <0x4d>, <0x5d>;
-+		reg-names = "main", "cec", "edid", "packet";
-+		clocks = <&cec_clock>;
-+		clock-names = "cec";
-+
-+		avdd-supply = <&v3v3>;
-+		dvdd-supply = <&v3v3>;
-+		pvdd-supply = <&v3v3>;
-+		dvdd-3v-supply = <&v3v3>;
-+		bgvdd-supply = <&v3v3>;
-+
-+		interrupts = <9 IRQ_TYPE_EDGE_FALLING>;
-+		interrupt-parent = <&gpiog>;
-+
-+		status = "okay";
-+
-+		adi,input-depth = <8>;
-+		adi,input-colorspace = "rgb";
-+		adi,input-clock = "1x";
-+		adi,input-style = <1>;
-+		adi,input-justification = "evenly";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+				adv7513_in: endpoint {
-+					remote-endpoint = <&ltdc_ep0_out>;
-+				};
-+			};
-+
-+			port@1 {
-+				reg = <1>;
-+				adv7513_out: endpoint {
-+					remote-endpoint = <&hdmi_con>;
-+				};
-+			};
-+		};
-+	};
-+
- 	eeprom@53 {
- 		compatible = "atmel,24c02";
- 		reg = <0x53>;
-@@ -306,6 +368,23 @@ &iwdg2 {
+@@ -417,6 +431,31 @@ &rtc {
  	status = "okay";
  };
  
-+&ltdc {
++&sai2 {
++	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
 +	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&ltdc_pins_c>;
-+	pinctrl-1 = <&ltdc_pins_sleep_c>;
++	pinctrl-0 = <&sai2a_pins_c>;
++	pinctrl-1 = <&sai2a_sleep_pins_c>;
++	clock-names = "pclk", "x8k", "x11k";
 +	status = "okay";
 +
-+	port {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
++	sai2a: audio-controller@4400b004 {
++		#clock-cells = <0>;
++		dma-names = "tx";
++		clocks = <&rcc SAI2_K>;
++		clock-names = "sai_ck";
++		status = "okay";
 +
-+		ltdc_ep0_out: endpoint@0 {
-+			reg = <0>;
-+			remote-endpoint = <&adv7513_in>;
++		sai2a_port: port {
++			sai2a_endpoint: endpoint {
++				remote-endpoint = <&adv7513_i2s0>;
++				format = "i2s";
++				mclk-fs = <256>;
++			};
 +		};
 +	};
 +};
 +
- &pwr_regulators {
- 	vdd-supply = <&vdd>;
- 	vdd_3v3_usbfs-supply = <&vdd_usb>;
+ &sdmmc1 {
+ 	pinctrl-names = "default", "opendrain", "sleep";
+ 	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
 -- 
 2.25.1
 
