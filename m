@@ -2,74 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC5141962A9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 01:42:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FEE91962F9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 02:54:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=n0u2f+AUjl3RGC74fD1hyDrpzdOygMiz+NZ8Kt55OXg=; b=BuXq70yfcN7UnP
-	poobr7XuJAVB5OWOsWup78jad8Z169K4aIqgXIgQc6NNeOU6vO02nvyJW8egeTg4BUcidnaFE1Etl
-	Vnr/d5gwjPfdWFvEajwlLyTL4/5vFvwOVRZf9JwqmA8GZH+iuVF7FuktHTqxpo/hhh2BWCvFnfccq
-	E7327m7vDXkKYAIxIF0jjjp0mKRQ41Mg03qujlTZ3D1KErOIbzKqT/YAiqzhE0eJMLurOBM05C4kI
-	XUipudfpGU/tObkm6l1gdKfIN5sEsM3td3vy7dpScOkVZo6XQkLe/WyJS7ZzNQjJRkHwTyLNW47rN
-	Llu/HtJymjLSBBXMqJnA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1ZfhPrfCcL4so7IjH39R8KcZqiIZhPr+s7AupDZm+5s=; b=gR7FyXJnueAC/0
+	Hiipo8SMif5vIActEBMWsuwck2tu5AQw5mk5NlibsjTMaWfAhz/D5H2m34ix2XKiBdKmFYFV4wL3v
+	iLyjrB+TqhSd40rOiZayTHbt3ZFtMFptylCjONJKxZY8SxWKxg0ongf2+98q3SRZ6+LflR+HxAOA/
+	VG2HksTWE4iNSCMdp7ztv/o6QJBS4XpIbm5ogxVEeZl8o1aBaNoJASLb1xWSOoa3H48JeINWcmEbU
+	PPmTL0/2PAgpZiVFs2OVJ+qRjJmq/s7zCvEFTYb9swrWkxWwGd5leugS1JXnG0aVFtImeoIF/G5Zt
+	zIOPaIEUoAUVR7PzkIkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHzYS-0001FS-1y; Sat, 28 Mar 2020 00:42:28 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jI0fn-0006MM-8v; Sat, 28 Mar 2020 01:54:07 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHzYG-0001EB-O2; Sat, 28 Mar 2020 00:42:18 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f74so3746739wmf.0;
- Fri, 27 Mar 2020 17:42:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CyGjashJridaD7EOncRRtljYVEVx0U+lNGZaPp2V68Y=;
- b=IptMWCxZLROI05RPdivzL/MiF45cGIjZgNtc4RWBqeNsCIeOsisxtfQTPTt8Frvkew
- GN/AxvkeF6atRjS6S3g9JimBi6e+6Bk82g8Kht9L/S2NyD5pdcnOoFcg6aMxUMN7S7/u
- 9DmgWye5ERHiBSRmiJVyop0S9l/19iYR7YoPc5B/PmaQbJROP7HSsMhoD8qFkmqU7SI+
- +9J1dr3mbTpX/ha7onANt5lsOl1GTqzf1YdcHKEgMCx4uvTtHWNiSVf7Urvn53nWD4uL
- vkx8ECR9Qg+8tqrr/FJk/rLzrqcjuIG3FB9/ejW24U2df8cK+RUZkhLP3bARtDZUy+ex
- HboA==
+ id 1jI0fe-0006Lw-IN
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 01:53:59 +0000
+Received: by mail-ed1-x543.google.com with SMTP id u59so13637220edc.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 18:53:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Pi7H1Ajr6bMiyo1A76OQeaQ+kStGGuPp2rRUkY34J+0=;
+ b=dKsVu3U9Skfh/V4Y98tY+UkG1iu89G7w6W9xFiKgbBH3J2WA0eww4U645YJSvJwPjc
+ ijE+oCEEyaDqLAUTNvpl+CO1dW4pFL1bYPy3A5qOdn4UNK9IApTJ5s9fR/IUROkb0y1C
+ vpNG3Up050LqakRSWF5PSrR89lwpt1o2QSRr1x7tqY2o/kK6WkdhDW249USC2hj15dAB
+ ebft4/PvcrtmvNJImcuq1mOnLT25mo6D2VOaHf3Yrli2brGv8kX4733/eXFEh4Jjdg8m
+ zNq2hVAAYdSUOw05O5ZeAtVcPPWK7Xio5WdMHXTwmjEKmf2AUvtcjjcyPk19lFMEHuVp
+ WgKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CyGjashJridaD7EOncRRtljYVEVx0U+lNGZaPp2V68Y=;
- b=RuBLHuhUE6dMn9k+SPlz2hdhrAuXoalvtSKaH9US5L56EV+uo/BZO508aE1leor6Ic
- Xci9dzkjxfcsjq5kJgFGbAI1KZPMk9RUmULz/l4drx5jBoEun3aTnKpHlB9Isl47FR8E
- MrYzSsSSV4hr9eHYd/geJyULlvPI2zWtrUc7HG7CWtta3SZeQol7zkDfHadq62D0LwRu
- QD5YX+30CwDiwEs1qmEGgrVYAo4CClaVdVV4vHJyj5otjESAINbNgZDBfxv9Pcm7a0UL
- zLzz0bhAqt0HX4oQcJ6mcEWaiK6mCLDjO0sVu7BW6GDVA1wv6rVoFcwGh89ySKhHy3Tn
- dXxA==
-X-Gm-Message-State: ANhLgQ2iPpk9bK3QUBCAxuhw4hROY2d6VUycctPfAuOn+ygEM3dSunm2
- reg75MNbC+ZTOeUgDh4LMOfI1dI3
-X-Google-Smtp-Source: ADFU+vvlJnYzsX+ao1dSJir0qYJy7B2HfzwRuyqzEeXskD58u19UIKeamdohRQLTKyIpvAMohyf5Ng==
-X-Received: by 2002:a1c:96d1:: with SMTP id y200mr1376296wmd.114.1585356135213; 
- Fri, 27 Mar 2020 17:42:15 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F13710ED00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:3710:ed00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id p21sm10783857wma.0.2020.03.27.17.42.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Mar 2020 17:42:14 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: narmstrong@baylibre.com, robh+dt@kernel.org,
- dri-devel@lists.freedesktop.org, linux-amlogic@lists.infradead.org,
- devicetree@vger.kernel.org
-Subject: [PATCH] dt-bindings: display: meson-vpu: fix indentation of
- reg-names' "items"
-Date: Sat, 28 Mar 2020 01:41:57 +0100
-Message-Id: <20200328004157.1259385-1-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.26.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Pi7H1Ajr6bMiyo1A76OQeaQ+kStGGuPp2rRUkY34J+0=;
+ b=fhQMmevaYFUWSfAQ65yw3chkPDkJ1YOwLLDh5btZO2JX9aQDoCI827IZ/sIX2rjj0n
+ waNtg+APp8sMk5YsJ+x+OHCBxMsz3KHU/9SKetTWOWK9WspVJwGipEBu2yioO8kic6Ag
+ pQxR/GBaYv85jNpzfunYpPsV282Zpk+VFtuCSGV6e/5jgROyFnymDEopir9DRPhMstyb
+ DR/Hsg+r6msJgkqaZxBBZVzPeiDAVcQ+KjUrZcyw31r3bfLwbzyT/lu6nOYdXB1cg9sl
+ lztndf5UfH3f/Ju5KInkG1r2UGuBmBlWNLB/H+K28ktK/Pe8oDOWGbc41Nd2j5+ARFWz
+ im7Q==
+X-Gm-Message-State: ANhLgQ0kt1PLZqWYhFSWaL7bvmFuSo8YDvRfA9qKGvV7j79T6F9VeqPA
+ QUKMVX/X+lT0ThpvHLK1gnu8BRU2w5m7nbkcnoE=
+X-Google-Smtp-Source: ADFU+vsvILa3PT8XxzuSZHQ/kr7rcKC6H72nvPxy3U9RYV/qYBFlLjgvVfwmeqbbemT53KphYXqjasieKh843Fbf4d0=
+X-Received: by 2002:aa7:dcc9:: with SMTP id w9mr1925720edu.145.1585360434676; 
+ Fri, 27 Mar 2020 18:53:54 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200323225254.12759-1-grygorii.strashko@ti.com>
+ <20200326.200136.1601946994817303021.davem@davemloft.net>
+In-Reply-To: <20200326.200136.1601946994817303021.davem@davemloft.net>
+From: Vladimir Oltean <olteanv@gmail.com>
+Date: Sat, 28 Mar 2020 03:53:43 +0200
+Message-ID: <CA+h21hr8G24ddEgAbU_TfoNAe0fqUJ0_Uyp54Gxn5cvPrM6u9g@mail.gmail.com>
+Subject: Re: [PATCH net-next v6 00/11] net: ethernet: ti: add networking
+ support for k3 am65x/j721e soc
+To: David Miller <davem@davemloft.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_174216_807922_0A5C2CBA 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20200327_185358_634601_C48A1310 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,11 +71,11 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ provider [olteanv[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,43 +95,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ devicetree@vger.kernel.org, t-kristo@ti.com, nsekhar@ti.com,
+ lkml <linux-kernel@vger.kernel.org>, kishon@ti.com, peter.ujfalusi@ti.com,
+ Murali Karicheri <m-karicheri2@ti.com>, netdev <netdev@vger.kernel.org>,
+ Jakub Kicinski <kuba@kernel.org>, "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, rogerq@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use two spaces for indentation instead of one to be consistent with the
-rest of the file. No functional changes.
+Hi David,
 
-Fixes: 6b9ebf1e0e678b ("dt-bindings: display: amlogic, meson-vpu: convert to yaml")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- .../devicetree/bindings/display/amlogic,meson-vpu.yaml      | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+On Fri, 27 Mar 2020 at 05:02, David Miller <davem@davemloft.net> wrote:
+>
+> From: Grygorii Strashko <grygorii.strashko@ti.com>
+> Date: Tue, 24 Mar 2020 00:52:43 +0200
+>
+> > This v6 series adds basic networking support support TI K3 AM654x/J721E SoC which
+> > have integrated Gigabit Ethernet MAC (Media Access Controller) into device MCU
+> > domain and named MCU_CPSW0 (CPSW2G NUSS).
+>  ...
+>
+> Series applied, thank you.
 
-diff --git a/Documentation/devicetree/bindings/display/amlogic,meson-vpu.yaml b/Documentation/devicetree/bindings/display/amlogic,meson-vpu.yaml
-index d1205a6697a0..cd8ad2af52c9 100644
---- a/Documentation/devicetree/bindings/display/amlogic,meson-vpu.yaml
-+++ b/Documentation/devicetree/bindings/display/amlogic,meson-vpu.yaml
-@@ -71,9 +71,9 @@ properties:
-     maxItems: 2
- 
-   reg-names:
--   items:
--     - const: vpu
--     - const: hhi
-+    items:
-+      - const: vpu
-+      - const: hhi
- 
-   interrupts:
-     maxItems: 1
--- 
-2.26.0
+The build is now broken on net-next:
 
+arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi:303.23-309.6: ERROR
+(phandle_references):
+/interconnect@100000/interconnect@28380000/ethernet@46000000/ethernet-ports/port@1:
+Reference to non-existent node
+or label "mcu_conf"
+
+  also defined at
+arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts:471.13-474.3
+arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi:303.23-309.6: ERROR
+(phandle_references):
+/interconnect@100000/interconnect@28380000/ethernet@46000000/ethernet-ports/port@1:
+Reference to non-existent node
+or label "phy_gmii_sel"
+
+  also defined at
+arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts:471.13-474.3
+
+As Grygorii said:
+
+Patches 1-6 are intended for netdev, Patches 7-11 are intended for K3 Platform
+tree and provided here for testing purposes.
+
+Regards,
+-Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
