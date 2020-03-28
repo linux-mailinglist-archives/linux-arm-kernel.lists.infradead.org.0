@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B11196838
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:47:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4835F196875
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 19:31:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ykkxh62HXRdXtEC4bSJzUnFV/e3cogcL113okjAyWGo=; b=loKD23t/5J4ge0
-	jPj0fpwA7CuuxUsODR+Jc7vjX9ZPw1Ul8VwiC62BI5DYwM7ikaMSUizsrFs3rAyOMfcdcpsjSXcep
-	8wVanwI+YEkjqzli3nh/PLEa0RRBv1ZtbZDu3Ulv+E79eDeYC05hPyyrNNL7i2lGhhN5J1FJ0hHkR
-	i669PJ6SGvmfRAHLisMvZ61/iIBfJNwtjoB3UbTzHW8g+HIcFTG7h/9QsdJeOtAO3FTkgK8HJ3/QK
-	lrqboVeHM7uHN+HBGjZTSI4f7Bu0IBBrvi7saT4T2cZSKoCNFBg1iSaYVdel2Pm/F/SFdylXkvXvC
-	Cm8TCo0bvZeaFzHwjKRQ==;
+	List-Owner; bh=NCsolNxj4KutXfv8Pu70HWjJAL6N/0eQzFGXKfCK694=; b=O8iMmrLCGUeSPs
+	UdJnYhGJBtQftKhRVyGE78svOa6Y+lKzuyx19ixqvdhUPEwFP/Hxi7O0Dk5iP8aY/P2nz6ztgbRj3
+	KKoO0YveIYxYvLy4kS7jrcI/kAc4qDA58g8SXU6/pNRcj7VYvaYYTEMr6AEamVE69xQTtaQiFrlwN
+	Wi2XFexlCcqEFHkW76ao96g11O+Eq+EgG+DQTtpPPWMQ5ECIXAPSalbqoV/cU8I0rWdIWd9I2TuzH
+	tq+/W44IHdsvG0f4E8RD6rH/1tEmVDBGfpkSMcpm4oX7nSL0wFxzsUT48fIo+twLIbSsISYHq16BS
+	tbDKOXAw7MPxI0xyoS7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIFXu-0006gS-1G; Sat, 28 Mar 2020 17:46:58 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jIGEg-00045N-PL; Sat, 28 Mar 2020 18:31:10 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIFXj-0006ft-HI
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:46:49 +0000
-Received: by mail-lj1-x242.google.com with SMTP id t17so13525318ljc.12
+ id 1jIGEX-00044R-Aw
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 18:31:03 +0000
+Received: by mail-pf1-x442.google.com with SMTP id c21so5645868pfo.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Mar 2020 10:46:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :user-agent:mime-version:content-transfer-encoding;
- bh=eK2xMlkSWwsuoup1xvKWf+yPR2CEQQ2vN7P0h9G7Y7A=;
- b=E5uMGh0+4kyqfkZTdjNe39L6qj3St9yarWA0+4O08SdZ6MTraqjXxE5EwwccSq+WQ5
- Ix6cyX8LRqGxc4EEfXWxi3UMkSakPNRv1JqJR3rKq7spWvSbEzTyqNRsKCmQ0zkoqZhp
- 3zAuT0uagqpWFYZ1cb9uW/hZFGg2zB6EVnNOpbyMtmkq1jzkiv6Jz36Kkr0VJmqsofoX
- MoM4mdoIhqT19pHIsulSqLKL8na4Z8toXyJh7R0Ad8kp2ZpYabmJNVFoTRR+pr5vo0h+
- J1mnD2HT3RBLCgdhBhzawPFR/fZVqpmQhPYvoSyEEX1wWKdsWpKSYKt4I1GINukfhTN9
- abCA==
+ Sat, 28 Mar 2020 11:30:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=+mVck/pOJv55KYF3ZzMyTGWgs0RFVKHx1LKbGb8RbSs=;
+ b=bj4M59RKtnKKUaVQsWvI4u4nhhvyXqBegUEMmfvGKXIBT/mika1RpNwaWwGdABjLzu
+ PeSQC2Yl7lqu+IJJl8x6vzppsEG8QEMztXC0LIAjp1v9FU2NPx+XdMCJw+jmd61ds2Nl
+ iqzOUHjLA2yTibgvFUBRLUYtzTKkbmCHs/u57EqL332uswGIi+iTTmNCOAotm68VVlbd
+ VfRuNm949tV4tyVoq+ouNy1HbzLKzDE4rM6qHY5mS7PKnK64W3GrNA8geQzMiOk/BupI
+ aUBhsFQsxGhS7vjn9/PCWhe1j2VzrBOCgHUk1bGK9XJgJGBK9TyvwyNN31JojGWzluUB
+ YKEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version:content-transfer-encoding;
- bh=eK2xMlkSWwsuoup1xvKWf+yPR2CEQQ2vN7P0h9G7Y7A=;
- b=WXLif8VQvCCZnp5adI9zBEB9ltBC+gBcz2+GDL7qc8ZhC1EeUbzczbx7aHtnCnwYQX
- UbK8LcOdsb+a3r1rDgdV1O7zWcbVKTiPTtaTTf4SpXoxyYRx1NgIdg2j5VB8ersq6BXG
- nOQtL914MfzgOR5TBSNpSvphwuFTWsK2J4NLwpj8HPMEy2T75+5831Zyq0Q2dnNHgpYX
- 0Sq/uvc9PZmVUFu8n7wj/vcuk1t2Ja3yr5Vn5Y9CYQXkWZHuODpSOMS2fQ0jyRVsgzv4
- 9tV4DY4uWhR0k4iXTvTUr5gCD9qUX5c9p9Su1Iu7ejMKpIc8HzyMfTOKXFkRfr6etVZ8
- K6fQ==
-X-Gm-Message-State: AGi0PuZjuICWYTi73HqCBCH22+j84xxEyvnAd1bvB7JpQJku/DklFfqx
- tI70iG0nIsYst05u9emgVuo=
-X-Google-Smtp-Source: APiQypLFzEddHHaJzorgKc18UscDVl6cJm94rT1S69oiZIu+3ev0M1QL9NrUonSfP2069pj5gqclRQ==
-X-Received: by 2002:a2e:8914:: with SMTP id d20mr2612659lji.148.1585417604581; 
- Sat, 28 Mar 2020 10:46:44 -0700 (PDT)
-Received: from pablo-laptop ([2a02:a315:5445:5300:4882:9b4e:5eda:ceec])
- by smtp.googlemail.com with ESMTPSA id i18sm4801119lfe.15.2020.03.28.10.46.42
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=+mVck/pOJv55KYF3ZzMyTGWgs0RFVKHx1LKbGb8RbSs=;
+ b=LZNCJ8zk5kztWdeFiklcJoU3nxzlHz6I5tnUxAJknn2fmjIlRBR3YMo9REn++1x7b4
+ qHMg+9JGsXpzEmsEq7qUvv1nXEZyQiQvJxZh4G2vsDdIfDnCEtTNS3pyEGLS4KFhPx2r
+ 9z5oZ0UiQpBw5c52S1fRehxBXUC4ct876Ci0u3YLMrMY4c1JYhWIye5ocql62Q9vn1Wh
+ gANDZPZyTJl5FLEJwKXLVoHMpKnjdR3e55WKkdzjJpg9v5sLwqxlVOJcdXhWs2Df45IH
+ Qe94/32JPhhkt7F2rBzBIQNuTiv6xe4kwI484L4uuYz41UqOagaHBSA3QFbkqB2hLfyR
+ z5OA==
+X-Gm-Message-State: ANhLgQ2x4L2bA+XsaD3Wqup2nHMXTeSn5dOtFGj+/aAgZUD9w+Sp2t4R
+ ojUrDKy72RLCdnqzrqTylclQAA==
+X-Google-Smtp-Source: ADFU+vvaKrpy0yv4Pq6rQuQ4KMnEp88icJyuuxyYhbQEtG7ooH+mR8DMcc8VezWIPH5TZPc9M4fJiA==
+X-Received: by 2002:a63:7f05:: with SMTP id a5mr5336763pgd.327.1585420258811; 
+ Sat, 28 Mar 2020 11:30:58 -0700 (PDT)
+Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id 79sm6691688pfz.23.2020.03.28.11.30.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 28 Mar 2020 10:46:43 -0700 (PDT)
-Message-ID: <838a17416b4ed59903ae153e09842ac62584616f.camel@gmail.com>
-Subject: Re: [PATCH v4 5/5] arm64: dts: Add node for ufs exynos7
-From: =?UTF-8?Q?Pawe=C5=82?= Chmiel <pawel.mikolaj.chmiel@gmail.com>
-To: Alim Akhtar <alim.akhtar@samsung.com>, robh+dt@kernel.org, 
- devicetree@vger.kernel.org, linux-scsi@vger.kernel.org
-Date: Sat, 28 Mar 2020 18:46:42 +0100
-In-Reply-To: <000801d60516$823fd890$86bf89b0$@samsung.com>
-References: <20200327170638.17670-1-alim.akhtar@samsung.com>
- <CGME20200327171423epcas5p485d227f19e45999ad9b42b21d2864e4a@epcas5p4.samsung.com>
- <20200327170638.17670-6-alim.akhtar@samsung.com>
- <ac67cfc3736cf50c716b823a59af878d59b7198f.camel@gmail.com>
- <000801d60516$823fd890$86bf89b0$@samsung.com>
-User-Agent: Evolution 3.34.1-2 
+ Sat, 28 Mar 2020 11:30:58 -0700 (PDT)
+Date: Sat, 28 Mar 2020 11:30:55 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: pillair@codeaurora.org
+Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Message-ID: <20200328183055.GA663905@yoga>
+References: <1585219723-28323-1-git-send-email-pillair@codeaurora.org>
+ <20200327230025.GJ5063@builder>
+ <000101d604f8$afc48220$0f4d8660$@codeaurora.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <000101d604f8$afc48220$0f4d8660$@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_104647_605478_66EC8E6F 
-X-CRM114-Status: GOOD (  23.03  )
+X-CRM114-CacheID: sfid-20200328_113101_900257_BE7C890C 
+X-CRM114-Status: GOOD (  23.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [pawel.mikolaj.chmiel[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,123 +100,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, martin.petersen@oracle.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCAyMDIwLTAzLTI4IGF0IDIxOjA1ICswNTMwLCBBbGltIEFraHRhciB3cm90ZToKPiBI
-aSBQYXdlbAo+IAo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206IFBhd2XF
-giBDaG1pZWwgPHBhd2VsLm1pa29sYWouY2htaWVsQGdtYWlsLmNvbT4KPiA+IFNlbnQ6IDI4IE1h
-cmNoIDIwMjAgMTk6MDAKPiA+IFRvOiBBbGltIEFraHRhciA8YWxpbS5ha2h0YXJAc2Ftc3VuZy5j
-b20+OyByb2JoK2R0QGtlcm5lbC5vcmc7Cj4gPiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsg
-bGludXgtc2NzaUB2Z2VyLmtlcm5lbC5vcmcKPiA+IENjOiBrcnprQGtlcm5lbC5vcmc7IGF2cmku
-YWx0bWFuQHdkYy5jb207IG1hcnRpbi5wZXRlcnNlbkBvcmFjbGUuY29tOwo+ID4ga3dtYWQua2lt
-QHNhbXN1bmcuY29tOyBzdGFubGV5LmNodUBtZWRpYXRlay5jb207Cj4gPiBjYW5nQGNvZGVhdXJv
-cmEub3JnOyBsaW51eC1zYW1zdW5nLXNvY0B2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFybS0KPiA+
-IGtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3Jn
-Cj4gPiBTdWJqZWN0OiBSZTogW1BBVENIIHY0IDUvNV0gYXJtNjQ6IGR0czogQWRkIG5vZGUgZm9y
-IHVmcyBleHlub3M3Cj4gPiAKPiA+IE9uIEZyaSwgMjAyMC0wMy0yNyBhdCAyMjozNiArMDUzMCwg
-QWxpbSBBa2h0YXIgd3JvdGU6Cj4gPiA+IEFkZGluZyBkdCBub2RlIGZvZSBVRlMgYW5kIFVGUy1Q
-SFkgZm9yIGV4eW5vczcgU29DLgo+ID4gPiAKPiA+ID4gU2lnbmVkLW9mZi1ieTogQWxpbSBBa2h0
-YXIgPGFsaW0uYWtodGFyQHNhbXN1bmcuY29tPgo+ID4gPiAtLS0KPiA+ID4gIC4uLi9ib290L2R0
-cy9leHlub3MvZXh5bm9zNy1lc3ByZXNzby5kdHMgICAgICB8IDE2ICsrKysrKysKPiA+ID4gIGFy
-Y2gvYXJtNjQvYm9vdC9kdHMvZXh5bm9zL2V4eW5vczcuZHRzaSAgICAgICB8IDQzICsrKysrKysr
-KysrKysrKysrKy0KPiA+ID4gIDIgZmlsZXMgY2hhbmdlZCwgNTcgaW5zZXJ0aW9ucygrKSwgMiBk
-ZWxldGlvbnMoLSkKPiA+ID4gCj4gPiA+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRz
-L2V4eW5vcy9leHlub3M3LWVzcHJlc3NvLmR0cwo+ID4gPiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-ZXh5bm9zL2V4eW5vczctZXNwcmVzc28uZHRzCj4gPiA+IGluZGV4IDdhZjI4OGZhOTQ3NS4uYjU5
-YTBhMzI2MjBhIDEwMDY0NAo+ID4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2V4eW5vcy9l
-eHlub3M3LWVzcHJlc3NvLmR0cwo+ID4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2V4eW5v
-cy9leHlub3M3LWVzcHJlc3NvLmR0cwo+ID4gPiBAQCAtNDA2LDYgKzQwNiwyMiBAQAo+ID4gPiAg
-CX07Cj4gPiA+ICB9Owo+ID4gPiAKPiA+ID4gKyZ1ZnMgewo+ID4gPiArCXN0YXR1cyA9ICJva2F5
-IjsKPiA+ID4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+ID4gPiArCXBpbmN0cmwtMCA9
-IDwmdWZzX3JzdF9uICZ1ZnNfcmVmY2xrX291dD47Cj4gPiA+ICsJdWZzLHB3ci1hdHRyLW1vZGUg
-PSAiRkFTVCI7Cj4gPiA+ICsJdWZzLHB3ci1hdHRyLWxhbmUgPSA8Mj47Cj4gPiA+ICsJdWZzLHB3
-ci1hdHRyLWdlYXIgPSA8Mj47Cj4gPiA+ICsJdWZzLHB3ci1hdHRyLWhzLXNlcmllcyA9ICJIU19y
-YXRlX2IiOwo+ID4gPiArCXVmcy1yeC1hZHYtZmluZS1ncmFuLXN1cF9lbiA9IDwxPjsKPiA+ID4g
-Kwl1ZnMtcngtYWR2LWZpbmUtZ3Jhbi1zdGVwID0gPDM+Owo+ID4gPiArCXVmcy1yeC1hZHYtbWlu
-LWFjdGl2YXRlLXRpbWUtY2FwID0gPDk+Owo+ID4gPiArCXVmcy1wYS1ncmFudWxhcml0eSA9IDw2
-PjsKPiA+ID4gKwl1ZnMtcGEtdGFjY3RpdmF0ZSA9IDwzPjsKPiA+ID4gKwl1ZnMtcGEtaGliZXJu
-OHRpbWUgPSA8MjA+Owo+ID4gPiArfTsKPiA+ID4gKwo+ID4gPiAgJnVzYmRyZF9waHkgewo+ID4g
-PiAgCXZidXMtc3VwcGx5ID0gPCZ1c2IzMF92YnVzX3JlZz47Cj4gPiA+ICAJdmJ1cy1ib29zdC1z
-dXBwbHkgPSA8JnVzYjNkcmRfYm9vc3RfNXY+OyBkaWZmIC0tZ2l0Cj4gPiA+IGEvYXJjaC9hcm02
-NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy5kdHNpCj4gPiA+IGIvYXJjaC9hcm02NC9ib290L2R0
-cy9leHlub3MvZXh5bm9zNy5kdHNpCj4gPiA+IGluZGV4IDU1NTgwNDU2MzdhYy4uOWQxNmM5MGVk
-ZDA3IDEwMDY0NAo+ID4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2V4eW5vcy9leHlub3M3
-LmR0c2kKPiA+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy5kdHNp
-Cj4gPiA+IEBAIC0yMjAsOSArMjIwLDE0IEBACj4gPiA+ICAJCQkjY2xvY2stY2VsbHMgPSA8MT47
-Cj4gPiA+ICAJCQljbG9ja3MgPSA8JmZpbl9wbGw+LCA8JmNsb2NrX3RvcDEKPiA+IERPVVRfQUNM
-S19GU1lTMV8yMDA+LAo+ID4gPiAgCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX01NQzA+LAo+
-ID4gPiAtCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX01NQzE+Owo+ID4gPiArCQkJCSA8JmNs
-b2NrX3RvcDEgRE9VVF9TQ0xLX01NQzE+LAo+ID4gPiArCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9T
-Q0xLX1VGU1VOSVBSTzIwPiwKPiA+ID4gKwkJCQkgPCZjbG9ja190b3AxIERPVVRfU0NMS19QSFlf
-RlNZUzE+LAo+ID4gPiArCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX1BIWV9GU1lTMV8yNk0+
-Owo+ID4gPiAgCQkJY2xvY2stbmFtZXMgPSAiZmluX3BsbCIsICJkb3V0X2FjbGtfZnN5czFfMjAw
-IiwKPiA+ID4gLQkJCQkgICAgICAiZG91dF9zY2xrX21tYzAiLCAiZG91dF9zY2xrX21tYzEiOwo+
-ID4gPiArCQkJCSAgICAgICJkb3V0X3NjbGtfbW1jMCIsICJkb3V0X3NjbGtfbW1jMSIsCj4gPiA+
-ICsJCQkJICAgICAgImRvdXRfc2Nsa191ZnN1bmlwcm8yMCIsCj4gPiAiZG91dF9zY2xrX3BoeV9m
-c3lzMSIsCj4gPiA+ICsJCQkJICAgICAgImRvdXRfc2Nsa19waHlfZnN5czFfMjZtIjsKPiA+ID4g
-IAkJfTsKPiA+ID4gCj4gPiA+ICAJCXNlcmlhbF8wOiBzZXJpYWxAMTM2MzAwMDAgewo+ID4gPiBA
-QCAtNjAxLDYgKzYwNiw0MCBAQAo+ID4gPiAgCQkJfTsKPiA+ID4gIAkJfTsKPiA+ID4gCj4gPiA+
-ICsJCXVmczogdWZzQDE1NTcwMDAwIHsKPiA+ID4gKwkJCWNvbXBhdGlibGUgPSAic2Ftc3VuZyxl
-eHlub3M3LXVmcyI7Cj4gPiA+ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiA+ID4gKwkJCSNz
-aXplLWNlbGxzID0gPDE+Owo+ID4gPiArCQkJcmFuZ2VzOwo+ID4gPiArCQkJcmVnID0gPDB4MTU1
-NzAwMDAgMHgxMDA+LCAgLyogMDogSENJIHN0YW5kYXJkICovCj4gPiA+ICsJCQkJPDB4MTU1NzAx
-MDAgMHgxMDA+LCAgLyogMTogVmVuZG9yIHNwZWNpZmljZWQKPiA+ICovCj4gPiA+ICsJCQkJPDB4
-MTU1NzEwMDAgMHgyMDA+LCAgLyogMjogVU5JUFJPICovCj4gPiA+ICsJCQkJPDB4MTU1NzIwMDAg
-MHgzMDA+OyAgLyogMzogVUZTIHByb3RlY3RvciAqLwo+ID4gPiArCQkJcmVnLW5hbWVzID0gImhj
-aSIsICJ2c19oY2kiLCAidW5pcHJvIiwgInVmc3AiOwo+ID4gPiArCQkJaW50ZXJydXB0cyA9IDxH
-SUNfU1BJIDIwMCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKPiA+ID4gKwkJCWNsb2NrcyA9IDwmY2xv
-Y2tfZnN5czEgQUNMS19VRlMyMF9MSU5LPiwKPiA+ID4gKwkJCQk8JmNsb2NrX2ZzeXMxIFNDTEtf
-VUZTVU5JUFJPMjBfVVNFUj47Cj4gPiA+ICsJCQljbG9jay1uYW1lcyA9ICJjb3JlX2NsayIsICJz
-Y2xrX3VuaXByb19tYWluIjsKPiA+ID4gKwkJCWZyZXEtdGFibGUtaHogPSA8MCAwPiwgPDAgMD47
-Cj4gPiA+ICsJCQlwY2xrLWZyZXEtYXZhaWwtcmFuZ2UgPSA8NzAwMDAwMDAgMTMzMDAwMDAwPjsK
-PiA+ID4gKwkJCXVmcyxwd3ItbG9jYWwtbDItdGltZXIgPSA8ODAwMCAyODAwMCAyMDAwMD47Cj4g
-PiA+ICsJCQl1ZnMscHdyLXJlbW90ZS1sMi10aW1lciA9IDwxMjAwMCAzMjAwMCAxNjAwMD47Cj4g
-PiA+ICsJCQlwaHlzID0gPCZ1ZnNfcGh5PjsKPiA+ID4gKwkJCXBoeS1uYW1lcyA9ICJ1ZnMtcGh5
-IjsKPiA+ID4gKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gPiA+ICsJCX07Cj4gPiA+ICsKPiA+
-ID4gKwkJdWZzX3BoeTogdWZzLXBoeUAweDE1NTcxODAwIHsKPiA+ID4gKwkJCWNvbXBhdGlibGUg
-PSAic2Ftc3VuZyxleHlub3M3LXVmcy1waHkiOwo+ID4gPiArCQkJcmVnID0gPDB4MTU1NzE4MDAg
-MHgyNDA+Owo+ID4gPiArCQkJcmVnLW5hbWVzID0gInBoeS1wbWEiOwo+ID4gPiArCQkJc2Ftc3Vu
-ZyxwbXUtc3lzY29uID0gPCZwbXVfc3lzdGVtX2NvbnRyb2xsZXI+Owo+ID4gPiArCQkJI3BoeS1j
-ZWxscyA9IDwwPjsKPiA+ID4gKwkJCWNsb2NrcyA9IDwmY2xvY2tfZnN5czEgTU9VVF9GU1lTMV9Q
-SFlDTEtfU0VMMT4sCj4gPiA+ICsJCQkJPCZjbG9ja190b3AxIENMS19TQ0xLX1BIWV9GU1lTMV8y
-Nk0+Owo+ID4gPiArCQkJY2xvY2stbmFtZXMgPSAicmVmX2Nsa19wYXJlbnQiLCAicmVmX2NsayI7
-Cj4gPiBIaQo+ID4gSXMgdGhpcyBjb3JyZWN0IChhcmVuJ3QgY2hpbGQgYW5kIHBhcmVudCBjbG9j
-ayBzd2FwcGVkKT8KPiA+IFRoaXMgd2lsbCBzZXQgTU9VVF9GU1lTMV9QSFlDTEtfU0VMMSB0byBi
-ZSBwYXJlbnQgY2xvY2sgb2YKPiA+IENMS19TQ0xLX1BIWV9GU1lTMV8yNk0uCj4gCj4gTG9va3Mg
-bGlrZSBpbiBvbmUgb2YgbXkgcmViYXNlIGl0IGdvdCBzd2FwLCB3aWxsIGNvcnJlY3QgaXQuICBU
-aGFua3MgZm9yIHBvaW50aW5nIG91dC4KPiAKPiA+IEkndmUgdGVzdGVkIHRoaXMgb24gRXh5bm9z
-NzQyMCAod2hpY2ggbG9va3MgbGlrZSBjYW4gdXNlIHRoZSBzYW1lIGNsb2NrIGRyaXZlciBhcwo+
-ID4gZXh5bm9zNykgYW5kIGFmdGVyIGFkZGluZyBzb21lIGRlYnVnIGNvZGUgKGJlY2F1c2UgY3Vy
-cmVudGx5IHdlJ3JlIG5vdAo+ID4gaGFuZGxpbmcgcmVzdWx0IG9mIHNhbXN1bmdfdWZzX3BoeV9j
-bGtzX2luaXQpIGkgZ290Cj4gPiAKPiA+IHNhbXN1bmctdWZzLXBoeSAxNTU3MTgwMC51ZnMtcGh5
-OiBjbGtfc2V0X3BhcmVudCByZXN1bHQ6IC0yMgo+ID4gCj4gSSB3aWxsIGNoZWNrIGlmIEkgb3Zl
-cmxvb2tlZCB0aGlzIGVycm9yLgo+ID4gT24gdmVuZG9yIHNvdXJjZXMgZm9yIHRoaXMgZGV2aWNl
-LCBkcml2ZXIgd2FzIHNldHRpbmcgQ0xLX1NDTEtfUEhZX0ZTWVMxXzI2TQo+ID4gdG8gYmUgcGFy
-ZW50IG9mIE1PVVRfRlNZUzFfUEhZQ0xLX1NFTDEsIGFuZCB0aGVuIGl0IGRpZCBydW4gd2l0aG91
-dCBlcnJvci4KPiA+IAo+ID4gc2Ftc3VuZy11ZnMtcGh5IDE1NTcxODAwLnVmcy1waHk6IGNsa19z
-ZXRfcGFyZW50IHJlc3VsdDogMAo+ID4gCj4gV2l0aCB0aGlzIGNoYW5nZSwgZG9lcyBsaW5rdXAg
-d29ya2VkIGZvciB5b3U/CkhpClNhZGx5IG5vdCB5ZXQsIHNvIHNvbWVvbmUgbmVlZHMgdG8gY2hl
-Y2sgaXQgb24gZGlmZmVyZW50IGh3LgoKSSd2ZSBhZGRlZCBzb21lIGRlYnVnIGNvZGUgdG8gdWZz
-aGNkIGFuZCBpdCBsb29rcyBsaWtlIGl0IGZhaWxzIChpbiBteQpjYXNlKSBhdCB1ZnNoY2RfZG1l
-X2xpbmtfc3RhcnR1cCB3aGljaCByZXR1cm5zIDEgKGJlY2F1c2UKdWZzaGNkX3dhaXRfZm9yX3Vp
-Y19jbWQgcmV0dXJucyAxKS4gVGhlIHNhbWUgZm9yIHNlY29uZCByZXRyeSBhbmQgYXQKdGhpcmQg
-cmV0cnkgaXQncyBnZXR0aW5nIC0xMTAgZnJvbSB1ZnNoY2Rfd2FpdF9mb3JfdWljX2NtZC4KCk5l
-ZWQgdG8gY2hlY2s6Ci0gaW4gdmVuZG9yIHRoZXJlIHdhcyAxMCBjbG9ja3MgdXNlZCBieSB1ZnMv
-dWZzLXBoeSAod2hlcmUgdGhpcyBkcml2ZXIKdXNlcyA0KQotIGlmIGNhbGlicmF0aW9uIGlzIHRo
-ZSBzYW1lIGluIHRoaXMgZHJpdmVyIHZzIHZlbmRvcgoKTWF5YmUgaXQncyBiZWNhdXNlIG9mIG1p
-c3NpbmcgRVhZTk9TIEZNUCBEcml2ZXIgKG15IGRldmljZSBoYXMKc2VjdXJlb3MpIGFuZC9vciBz
-b21lIG1pc3Npbmcgc21jIGNhbGxzIChsaWtlIGluIGNhc2Ugb2Ygc211IGNvbmZpZyk/Cj4gCj4g
-PiBBbHNvIGxvb2tpbmcgYXQgY2xrLWV4eW5vczcgZHJpdmVyIHNlZW1zIHRvIGNvbmZpcm0gdGhp
-cy4KPiA+IAo+ID4gPiArCQl9Owo+ID4gPiArCj4gPiA+ICAJCXVzYmRyZF9waHk6IHBoeUAxNTUw
-MDAwMCB7Cj4gPiA+ICAJCQljb21wYXRpYmxlID0gInNhbXN1bmcsZXh5bm9zNy11c2JkcmQtcGh5
-IjsKPiA+ID4gIAkJCXJlZyA9IDwweDE1NTAwMDAwIDB4MTAwPjsKPiAKPiAKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Sat 28 Mar 05:01 PDT 2020, pillair@codeaurora.org wrote:
+
+> Hi Bjorn,
+>  Comments inline.
+> 
+> 
+> > -----Original Message-----
+> > From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > Sent: Saturday, March 28, 2020 4:30 AM
+> > To: Rakesh Pillai <pillair@codeaurora.org>
+> > Cc: devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> linux-
+> > kernel@vger.kernel.org; linux-arm-msm@vger.kernel.org
+> > Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> > module device node
+> > 
+> > On Thu 26 Mar 03:48 PDT 2020, Rakesh Pillai wrote:
+> > 
+> > > Add device node for the ath10k SNOC platform driver probe
+> > > and add resources required for WCN3990 on sc7180 soc.
+> > >
+> > > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+> > > ---
+> > >
+> > > Depends on https://patchwork.kernel.org/patch/11455345/
+> > > The above patch adds the dt-bindings for wifi-firmware
+> > > subnode
+> > > ---
+> > >  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  8 ++++++++
+> > >  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27
+> > +++++++++++++++++++++++++++
+> > >  2 files changed, 35 insertions(+)
+> > >
+> > > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > index 043c9b9..a6168a4 100644
+> > > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > @@ -327,6 +327,14 @@
+> > >  	};
+> > >  };
+> > >
+> > > +&wifi {
+> > > +	status = "okay";
+> > > +	qcom,msa-fixed-perm;
+> > > +	wifi-firmware {
+> > > +		iommus = <&apps_smmu 0xc2 0x1>;
+> > 
+> > How is sc7180 different from sdm845, where the iommus property goes
+> > directly in the &wifi node?
+> 
+> Sc7180 IDP is a target without TrustZone support and also with S2 IOMMU
+> enabled.
+> Since in Trustzone based targets, the iommu SID configuration was done by
+> TZ, there was nothing required to be done by driver.
+> But in non-TZ based targets, the IOMMU mappings need to be done by the
+> driver.
+> Since this is the mapping of the firmware memory and to keep it different
+> from the driver memory access, a different device has been created for
+> firmware and these SIDs are configured.
+> 
+
+I see, I missed the fact that 0xc0:1 is used in the &wifi node itself.
+
+So to confirm, we have streams 0xc0 and 0xc1 for data pipes and 0xc2 and
+0xc3 for some form of firmware access? And in the normal Qualcomm design
+implementation the 0c2/0xc3 stream mapping is setup by TZ, and hidden
+from Linux using the SMMU virtualisation?
+
+
+Would have been nice to have some better mechanism for describing
+multi-connected hardware block, than to sprinkle dummy nodes all over
+the DT...
+
+Regards,
+Bjorn
+
+> The below ath10k series brings-in this support.
+> https://patchwork.kernel.org/project/linux-wireless/list/?series=261367&stat
+> e=* 
+> 
+> Thanks,
+> Rakesh Pillai.
+> 
+> > 
+> > Regards,
+> > Bjorn
+> > 
+> > > +	};
+> > > +};
+> > > +
+> > >  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+> > >
+> > >  &qspi_clk {
+> > > diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > > index 998f101..2745128 100644
+> > > --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > > +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > > @@ -83,6 +83,11 @@
+> > >  			reg = <0 0x8f600000 0 0x500000>;
+> > >  			no-map;
+> > >  		};
+> > > +
+> > > +		wlan_fw_mem: memory@94104000 {
+> > > +			reg = <0 0x94104000 0 0x200000>;
+> > > +			no-map;
+> > > +		};
+> > >  	};
+> > >
+> > >  	cpus {
+> > > @@ -835,6 +840,28 @@
+> > >  			};
+> > >  		};
+> > >
+> > > +		wifi: wifi@18800000 {
+> > > +			compatible = "qcom,wcn3990-wifi";
+> > > +			reg = <0 0x18800000 0 0x800000>;
+> > > +			reg-names = "membase";
+> > > +			iommus = <&apps_smmu 0xc0 0x1>;
+> > > +			interrupts =
+> > > +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0
+> > */ >,
+> > > +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1
+> > */ >,
+> > > +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2
+> > */ >,
+> > > +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3
+> > */ >,
+> > > +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4
+> > */ >,
+> > > +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5
+> > */ >,
+> > > +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6
+> > */ >,
+> > > +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7
+> > */ >,
+> > > +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8
+> > */ >,
+> > > +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9
+> > */ >,
+> > > +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10
+> > */>,
+> > > +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11
+> > */>;
+> > > +			memory-region = <&wlan_fw_mem>;
+> > > +			status = "disabled";
+> > > +		};
+> > > +
+> > >  		config_noc: interconnect@1500000 {
+> > >  			compatible = "qcom,sc7180-config-noc";
+> > >  			reg = <0 0x01500000 0 0x28000>;
+> > > --
+> > > 2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
