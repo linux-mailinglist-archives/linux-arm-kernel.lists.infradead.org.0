@@ -2,54 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9802E1967A9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 17:46:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11117196775
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 17:43:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Date:
-	From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=B4e7EIeWjkzklHd/blRRvS5qAkEAMOczLd8Dem1cYFo=; b=mey
-	jObDVHxmyK9ZtmMskHjrcpZTIb2nok3qoeZGGIQDYP+TXquMD7CMWHUu7vxjV3bWwbnbTLeH+vUSZ
-	iwBGA4VeRJWt6R7wisGornaUn18c7VslLWRzdd/+WOpIlZGnNKblbOk1cYCyKEoKIXBpmkW6L5S+m
-	3/LSopcbo5r9mbkBV7vLqOKXCry7UScYEZhIHv342yOMRku5zO1AaTAWHww6wt9Ppt2SNLCCpWNlW
-	yU/Bbk9yzusQbJL2Vduo3M8ZxyrD44HNwwHsXgQz3xmD66I8uYr6vob/Pc2ME3J/e2Z+qcDtKvCgz
-	ZuuPebMpjNAI3VbkK5lWlPqTlMb9bFA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A+WUPTVWJf43MeMjEy1b+f+sAayPxTyz/9MB3BYEjJQ=; b=qb4apR/4VAwY60
+	pKNdfc6f4zi4/mHbvN/lqW9kQ/pYFvRN52G+yTpmX0zlAqiw98ct2YswGtBA8p+jvzZrqlAZZE0Cd
+	MoD5AYQYCzUloYmJcWiKlPejBefkezsHs+b6Oo0o9jiDgi+OienRYFCLlJvdygGcxF/O7qhRMcx1c
+	Ggpc5vjqH9GwjmdhRipl9e1XKfMPWTvCMffaGobOMnAsEuBguAL2pVAmLbYEMFSQp/tkB1MzQdxTA
+	UguAlAfwAkMRs7O1Zpy3dMQN5Bv0seEmQoQZ3kSq1omJvb+zXcwtIw8Kzd3NSFsk2vy+W2g/KT6sV
+	66Xe7z1oXls1XkMpMZRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIEb0-0006Vo-PI; Sat, 28 Mar 2020 16:46:06 +0000
-Received: from mx.sdf.org ([205.166.94.20])
+	id 1jIEYS-0004JP-BN; Sat, 28 Mar 2020 16:43:28 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIEah-0006Ox-VM
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 16:45:50 +0000
-Received: from sdf.org (IDENT:lkml@sdf.lonestar.org [205.166.94.16])
- by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02SGhMAI029531
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits) verified NO);
- Sat, 28 Mar 2020 16:43:22 GMT
-Received: (from lkml@localhost)
- by sdf.org (8.15.2/8.12.8/Submit) id 02SGhMtr029198;
- Sat, 28 Mar 2020 16:43:22 GMT
-Message-Id: <202003281643.02SGhMtr029198@sdf.org>
-From: George Spelvin <lkml@sdf.org>
-Date: Tue, 10 Dec 2019 10:45:27 -0500
-Subject: [RFC PATCH v1 39/50] arm: kexec_file: Avoid temp buffer for RNG seed
-To: linux-kernel@vger.kernel.org, lkml@sdf.org
+ id 1jIEYJ-0004IW-06
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 16:43:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=1Dbsy/kBm6+qvsST4SSxjt43oO5Fkj5lOWIv2fyfVrk=; b=dfGmZhNxCTICMh8W8G7h4MSCAb
+ a82aZd1awengfua7BMTNT3mRTiEqxhng8wHS5QF1b4iGJs4HcS97NgND3E1uNRXzEz+Hb8rqfMd1S
+ 4r3u/HqntRn99rFJHZGJz0xiujS92/Jp+H9UvWZ6A2Nnko8r52MAUCxmXAzgwKrWHUjQ=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jIEYG-0004Mu-5k; Sat, 28 Mar 2020 17:43:16 +0100
+Date: Sat, 28 Mar 2020 17:43:16 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: SError handling vs. SIGSEGV
+Message-ID: <20200328164316.GZ3819@lunn.ch>
+References: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_094548_102662_E3305CD7 
-X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-CacheID: sfid-20200328_094319_046979_CC4A9C05 
+X-CRM114-Status: UNSURE (   6.71  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.1 (++)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.166.94.20 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 2.1 DATE_IN_PAST_96_XX     Date: is 96 hours or more before Received:
- date
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,55 +75,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Hsin-Yi Wang <hsinyi@chromium.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Doug Berger <opendmb@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, james.morse@arm.com,
+ Ray Jui <rjui@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
+ Will Deacon <will@kernel.org>, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After using get_random_bytes(), you want to wipe the buffer
-afterward so the seed remains secret.
+> As it stands today, I see no way to have a self hosted test case that
+> exercises that our GISB bus arbiter blocking works correctly because the
+> whole kernel is taken down when the test is successful :/
 
-In this case, we can eliminate the temporary buffer entirely.
-fdt_setprop_placeholder returns a pointer to the property value
-buffer, allowing us to put the random data directy in there without
-using a temporary buffer at all.  Faster and less stack all in one.
+Hi Florian
 
-Signed-off-by: George Spelvin <lkml@sdf.org>
-Cc: Hsin-Yi Wang <hsinyi@chromium.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
----
- arch/arm64/kernel/machine_kexec_file.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+Isn't that just the new definition of test success :-)
 
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 7b08bf9499b6b..69e25bb96e3fb 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -106,12 +106,12 @@ static int setup_dtb(struct kimage *image,
- 
- 	/* add rng-seed */
- 	if (rng_is_initialized()) {
--		u8 rng_seed[RNG_SEED_SIZE];
--		get_random_bytes(rng_seed, RNG_SEED_SIZE);
--		ret = fdt_setprop(dtb, off, FDT_PROP_RNG_SEED, rng_seed,
--				RNG_SEED_SIZE);
-+		void *rng_seed;
-+		ret = fdt_setprop_placeholder(dtb, off, FDT_PROP_RNG_SEED,
-+				RNG_SEED_SIZE, &rng_seed);
- 		if (ret)
- 			goto out;
-+		get_random_bytes(rng_seed, RNG_SEED_SIZE);
- 	} else {
- 		pr_notice("RNG is not initialised: omitting \"%s\" property\n",
- 				FDT_PROP_RNG_SEED);
--- 
-2.26.0
+Yes, your testing will be slower, you have to wait for the watchdog to
+reboot your machine after each successful test.
 
+      Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
