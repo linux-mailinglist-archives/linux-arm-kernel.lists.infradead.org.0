@@ -2,59 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B76519695F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 21:58:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EEE0196963
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 22:14:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=D/0k8h8OzHH0ecc4fdBWtqX9wuOEj7mj8wW29HTwDMk=; b=nUd
-	KSqSaoCgd1yETjICH9XtIBK50vm6aFtKwt+4/RGnRnOW+B84Q8B8ajQeGh1w1FxkJR78Jl/F0lUdx
-	vngT4iOQTxY41eUY2Jb2jXbMVx/FkNoLrz0p+AJt5N05/NNp2zOAeAldke5WCJvQ+l3/3E4Ywo2rH
-	pAOzcprN2V2SdkBk1kSYForpRLTpR/XbHJ9HRE5twSMdk+JMZ2CSUwWICezYq5HNdN+aMpLDXMoMX
-	x3eBbC3uzwG7nWj7TTp0JtKs2Sobsg9VWpe3fFPbHN9ci1BzwZL6OMgChGgC98G09S3GqchSBNLci
-	DpnDjLDoDe/P9ga9s0hJ+rBG64BkBXg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5zyDParbKk6klA6XQ/hM5GgZxFTUWG0ZKmBCSGQHojc=; b=HcMNVlDs1IrsCa
+	aAFV6R+twMeb3wYJbmEwrLT3+WCPl1C804xuBi6PkdzBDkueMArZY1YjflC35ohZAWyS0fXmwi1qx
+	Ie9M5sKrWExtphE7FtTC9CFZZsFVIYrBZgRG1nCOBO1S4j1p86Y1+APZ5HHRUKDfQRfPoNtxbkNAP
+	ssSR6iGq9/EHwyqNvilrLhywQpmb6eR/WpQ1httSycZennr2O9FJpZyBUaAmutowyykR9adVA33AD
+	JHVUXexiPRj7XTR2led9+E/acPtAU7EdkTyjNnx64fQaoLGfR2xLW+KTL0FMsJ5XfpdooMH8o8qFB
+	MhIdNeBTQcrpNvNFMSKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIIX9-0002C8-Uu; Sat, 28 Mar 2020 20:58:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jIImd-0007DX-51; Sat, 28 Mar 2020 21:14:23 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIIX2-0002BU-HW
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 20:58:18 +0000
-Received: from e123331-lin.home
- (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 471B320714;
- Sat, 28 Mar 2020 20:58:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585429095;
- bh=Wu4f1OnYj/QRZ0sdavFX0f/+cR088OEXn5AlxBMtMz8=;
- h=From:To:Cc:Subject:Date:From;
- b=dh4KGrgzdL5yTx1XuHjUoCMQJFxrBr+KcCzkDPyt1vPlYL3M29TnFZ96Q5Sg/wVH5
- LzPspshFNInQYvUsLZXjDVL5VQtZf+nVMMjd75m/vlL4xmSoo/C6xLwqbzHAUmGg1u
- dl14tB6hykH/VhACWO/nxOm9f3endQrrFQCFRXYo=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-Date: Sat, 28 Mar 2020 21:58:09 +0100
-Message-Id: <20200328205809.23825-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1jIImT-0007DA-Be
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 21:14:15 +0000
+Received: by mail-pl1-x643.google.com with SMTP id k18so196159pll.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 28 Mar 2020 14:14:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=z8v8EP+EOuu6etgVH1mWef9Fm4YlWBkx6O/gV189yIA=;
+ b=atQH2/kVrmRo1avo8osWsCCDrWXH4w1eZEgh6hIEKN7+OACzYgaUyjhXmvEjjclRFn
+ YkT9CHJYIB2bHm1SMPhZdRKAtBgb4Y1iQqRO4GUF8D4tEw33+98xvi1QoWoPTzXuJEVo
+ JIOaM6E3jbbXCUe/1u4vZVr7SN9mv+6B5Z6Cs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=z8v8EP+EOuu6etgVH1mWef9Fm4YlWBkx6O/gV189yIA=;
+ b=s6S+cPBltJasdex6XJKeCnSVJc+bFewN+QTF6BvEfKcbPu/Ym5UPH+gsAucwC4dOo7
+ 0/xk7rCFdIyDHYXrDxLu0K5GoYjd0cB2k7EXDMW5sepeYkNlFLO7oWrUQtrm+wSODrGf
+ kxOOIJV04ig5NOdxWvjwkp15A934nJ67khdmD0eZu6sSNI7YBDq5lnggx86jIorOCCy8
+ nLsZ+WSjzy/4hqLU1pvPasNq9heoE0maFyKlpAiGFC4WThaIAy1kZw/zWj2NrFzucWbv
+ mfuqalfCYEhRtXUUJrum/VupRCGrsgRDhXGOlJ2XY3Dxhubuds3M+Qv0zBAPsGNscVuk
+ TOTg==
+X-Gm-Message-State: ANhLgQ0sf2IugQXBGsXmUoyXspmKVXI/KgO0hLrjBRJXZKorWxfxRgsf
+ Mtqt1xWB2E9aE37UpNsjFt2V2g==
+X-Google-Smtp-Source: ADFU+vtAYu2Pfl62zP1XJFLpXMLJ5pQg7uiNOmuv//0Lm56m56Qp5Wz4TJmmM9wQ+sN+njH/eeUCrg==
+X-Received: by 2002:a17:902:507:: with SMTP id 7mr5514900plf.42.1585430050968; 
+ Sat, 28 Mar 2020 14:14:10 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id x27sm6881000pfj.74.2020.03.28.14.14.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 28 Mar 2020 14:14:10 -0700 (PDT)
+Date: Sat, 28 Mar 2020 14:14:09 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 1/5] arm64: bti: Support building kernel C code using BTI
+Message-ID: <202003281348.B5ECC9DB2@keescook>
+References: <20200327192107.18394-1-broonie@kernel.org>
+ <20200327192107.18394-2-broonie@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200327192107.18394-2-broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_135816_602998_A40C4C8B 
-X-CRM114-Status: GOOD (  11.80  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200328_141413_425726_BB0BB163 
+X-CRM114-Status: GOOD (  15.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,68 +95,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Boqun.Feng@microsoft.com, leif@nuviainc.com, linux-efi@vger.kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, mikelley@microsoft.com
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
-PE/COFF entrypoint") did some code refactoring to get rid of the
-EFI entry point assembler code, and in the process, it got rid of the
-assignment of image_addr to the value of _text. Instead, it switched
-to using the image_base field of the efi_loaded_image struct provided
-by UEFI, which should contain the same value.
+On Fri, Mar 27, 2020 at 07:21:03PM +0000, Mark Brown wrote:
+> When running with BTI enabled we need to ask the compiler to enable
+> generation of BTI landing pads beyond those generated as a result of
+> pointer authentication instructions being landing pads. Since the two
+> features are practically speaking unlikely to be used separately we
+> will make kernel mode BTI depend on pointer authentication in order
+> to simplify the Makefile.
 
-However, Michael reports that this is not the case: older GRUB builds
-corrupt this value in some way, and since we can easily switch back to
-referring to _text to discover this value, let's simply do that.
+Some vendors have been making chips with weird combinations of features.
+Is there a better justification to use beyond "unlikely"?
 
-While at it, fix another issue in commit 9f9223778ef3, which may result
-in the unassigned image_addr to be misidentified as the preferred load
-offset of the kernel, which is unlikely but will cause a boot crash if
-it does occur.
+> 
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
+>  arch/arm64/Makefile | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index f15f92ba53e6..12f942531f32 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -67,7 +67,11 @@ endif
+>  
+>  ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>  branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+> +ifeq ($(CONFIG_ARM64_BTI_KERNEL),y)
+> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET_BTI) := -mbranch-protection=pac-ret+leaf+bti
+> +else
+>  branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+> +endif
 
-Finally, let's add a warning if the _text vs. image_base discrepancy is
-detected, so we can tell more easily how widespread this issue actually
-is.
+The compiler appears to accept a leading +, so how about:
 
-Reported-by: Michael Kelley <mikelley@microsoft.com>
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- drivers/firmware/efi/libstub/arm64-stub.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+__branch-prot-opts-y =
 
-diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-index 9254cd8ab2d3..db0c1a9c1699 100644
---- a/drivers/firmware/efi/libstub/arm64-stub.c
-+++ b/drivers/firmware/efi/libstub/arm64-stub.c
-@@ -116,6 +116,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 		 * Mustang), we can still place the kernel at the address
- 		 * 'dram_base + TEXT_OFFSET'.
- 		 */
-+		*image_addr = (unsigned long)_text;
- 		if (*image_addr == preferred_offset)
- 			return EFI_SUCCESS;
- 
-@@ -140,7 +141,11 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 		}
- 		*image_addr = *reserve_addr + TEXT_OFFSET;
- 	}
--	memcpy((void *)*image_addr, image->image_base, kernel_size);
-+
-+	if (image->image_base != _text)
-+		pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
-+
-+	memcpy((void *)*image_addr, _text, kernel_size);
- 
- 	return EFI_SUCCESS;
- }
+ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+__branch-prot-opts-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) += +pac-ret+leaf
+# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the
+# compiler to generate them and consequently to break the single image contract
+# we pass it only to the assembler. This option is utilized only in case of non
+# integrated assemblers.
+branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+endif
+
+if ($(CONFIG_ARM64_BTI_KERNEL),y)
+__branch-prot-opts-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET_BTI) += +bti
+endif
+
+ifneq ($(___branch-prot-opts-y),)
+KBUILD_CFLAGS += -mbranch-protection=$(__branch-prot-opts-y) $(branch-prot-flags-y)
+endif
+
+
+Or, this is all overkill. :)
+
+-Kees
+
+>  # -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the
+>  # compiler to generate them and consequently to break the single image contract
+>  # we pass it only to the assembler. This option is utilized only in case of non
+> -- 
+> 2.20.1
+> 
+
 -- 
-2.17.1
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
