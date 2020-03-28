@@ -2,140 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C79D61965C1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 12:28:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F0121965F2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 13:02:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QQ16K3hqu5p7JDPMfeFUJfYEViG6LTpmfOVMqPDUsEo=; b=R40C+hcmChVkut
-	u/3ew32l4KVsur0yQWbwPBjzqtn3LeX4Z7VEAaP2plfN7gmGtnm0MJ1t7178ERsr2DWvZVT+QCH/7
-	89fzBrXmvjYx6ELBONsPpgUQ1mBrZH00vkaJcUYB7Sc568Hjyu04FWIyeldQcVs8G/v6NSa62FBHq
-	G5x2orf3wm2UZh61YDZGsnTuC5Qu5BB8CNUKQ9Vd9mi34x5aL9SscyG8Bd9q0zHbhNFcTSf66SHxa
-	QGZLMfz0dH2OdWPhPY/zJgD1hx8xu370dfcm3hgOKUWEEYTkt8ChYjIQ4c+MEp8SXAb/ZtDa2Qvj+
-	j9veNi9mFfLF1QI92NwA==;
+	List-Owner; bh=QsHwv7kVEe2D5SySEcPzt0mFgkCIm4LADY546d6c/ZI=; b=PBA9UKWy2ssOUI
+	9hA5o+VZ6OpobXBqFCbJ7LbhpjjzR0PnaY8xwx/4xvFQl0UleQgQ5JOp+I5et90vLJHW0S6EjNHML
+	/UJ1uG4FXFBW1F+CHRpmJf15mD2qAJPrrCQwsBvNCyUIdfl8wnE9pEu+MIkeqQQU5jl3cmzBhZoS9
+	7/KslR4PuCGRpyMP8I15dAOo5NMx548mfLKw7LJeaf2NjuhYpmQNmRS+HhpB7W2FQlJYYRUhQKWYW
+	ffSdqIPzSeeHpfMAi5hyXwLUS+k1YlvrTb0GM0IcSVzyqWgpPph48840cmmoIbH1kdmehx8vwiNT/
+	v80tH4tbfmSEybs1PeAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI9dr-0006SR-Nc; Sat, 28 Mar 2020 11:28:43 +0000
-Received: from esa6.hgst.iphmx.com ([216.71.154.45])
+	id 1jIAAo-0000mV-Hd; Sat, 28 Mar 2020 12:02:46 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI9df-0006Ri-Sb
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 11:28:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1585394912; x=1616930912;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=daDgnQ/Jir+PSWgC6qnWAUkygxH6pfgK259ujqAGMl8=;
- b=feaMWnPX4+Hz3IFMoIRuditB6ZzmyOj3aS7/0efoXXX6WXVlC4LhA+s6
- Y1TEW5mJTYLwAKTqHvva4X9e1WRtQ2vW1ipsWS8PHg4u65hkLTeEWcNTM
- g5aX3Pl4cHaKAvDlDY1fS+RCq9HHaECCtxaKLIZ8gFJGfTlBFWnJslcbN
- TmP0dk2oneRhB4kn0pVhQ696RLlr2+eysieRj5B45ohTAlVTrzW2pa3S9
- 7VuYpzoEN9U1qcLRvzNfviAoT4PAN0sVpLPOXsIeUtmcgKuUjkvhUwehH
- brKYx4qQgVvmUqPto5YvFyLStSZhIfPCNr7fNxhX+yS0SbjMxu7uPJQM1 A==;
-IronPort-SDR: DtfdMPfIUsnaUtCfaRo87d0PJdhi2obIG+5C5SBWG60R2fNIZ81LTVnXgfpNcBFFKpx0gnLqn+
- U7BXKSVLq5As6fZ+46MUSYb6hoir17Vvfs8Awc+hysdf7rSaKim39KWbTAMqubRLdDtPkW7ZBw
- 3/QZt3Zl4ZWTbtU4qNfSi8A+qXBw3KGsEwGGx9PNTpKDHqYlxiEMCqkI6ZFPNZlrvl2mGCt9Uy
- XjybEHQyxIt9/AOGnVeylXBdun9NDk9OIBoTxPqYB+IzqlSW+fkqwqHyGPM6iFI8MRvIJCB612
- PuA=
-X-IronPort-AV: E=Sophos;i="5.72,316,1580745600"; d="scan'208";a="135193001"
-Received: from mail-cys01nam02lp2055.outbound.protection.outlook.com (HELO
- NAM02-CY1-obe.outbound.protection.outlook.com) ([104.47.37.55])
- by ob1.hgst.iphmx.com with ESMTP; 28 Mar 2020 19:28:29 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DsGge+/YsJ+Xp6WkKiPGiLFZvSJ+qhFbGBxyV8m+dcveBCZe8n3XflUyONFmYbnxLpgap7L1CPziJjDP8YWB5xeLYZ2/PRQkwpKi86/6ClwcW2PQnohK5/NDgnwDqrwimN3NOVfScm2zrCT8DiWum8Q3XeLTuHgYY+pr4N9B2Xvb+uvynaQDM5b9cD0BM1Pjv3H3Bn6k6Kvs5gv2CYFZ7uA6y6SgrTjTD6hhgsTHb8No1ENUectZoxIkmxk5n6kp4tJQ04aG43/1WakkpHH3TJGJTPAwW7sXivYcacjM77bb48D8t6cm7sbWY/Sz73oiwi2lBJ3DpFmhZ9ToquadVg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=daDgnQ/Jir+PSWgC6qnWAUkygxH6pfgK259ujqAGMl8=;
- b=NPYTzme1kDb6RqCd6TCM/JxQ3yi48SASK7Sg3czT4Yh/4MGIwiZXKuTtlzgOTuK51NyeOd20dfAQiZV3toMSZEWwmtQEZiqczWRxFnq1+M+S7xLZJNPUL3wXdAhi1jBgwxScuAj0tTMzy7n0FhIk9A132dI+72DSe0mOCaIOvcZVtS5kEaqLkkf6oR9Kg0l76yg69btzZvkiUq065osxpS3pexPYlgOETG7iA/N2dAX5tdxjaoHZGbZlZvRkZ3hPCViqaMzUw4RNkfobr9IqpfMKWeX6wP88ZSQDCSqsxd44Xj4yF0cN0R8CwEMO5o5hmNbsTl9uSM2bOw7/QlUOiQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=daDgnQ/Jir+PSWgC6qnWAUkygxH6pfgK259ujqAGMl8=;
- b=mcn4Kab0X3Z3AIqfPfajmA51F9VIbssFBmPKnBYsdXMmnEdNStHAiMG0oNh6r9kOyDuSFneoa56U4Ydzepx9sGEKvsfw1QdTQdgf59qxz3lV2mjh3Jzr6VXkxJ9ZZ5VjUrze0UneCkVulcuH9gyVMPol/A7LihOEsMSPjCcmzNU=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB5293.namprd04.prod.outlook.com (2603:10b6:805:f9::23)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.19; Sat, 28 Mar
- 2020 11:28:27 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::3877:5e49:6cdd:c8b%5]) with mapi id 15.20.2856.019; Sat, 28 Mar 2020
- 11:28:27 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Alim Akhtar <alim.akhtar@samsung.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>
-Subject: RE: [PATCH v4 4/5] scsi: ufs-exynos: add UFS host support for Exynos
- SoCs
-Thread-Topic: [PATCH v4 4/5] scsi: ufs-exynos: add UFS host support for Exynos
- SoCs
-Thread-Index: AQHWBFstXCevzUCX9UuieWMryrlIrKhd3W9g
-Date: Sat, 28 Mar 2020 11:28:26 +0000
-Message-ID: <SN6PR04MB4640B92BC9EA5CFEB74BE5EAFCCD0@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200327170638.17670-1-alim.akhtar@samsung.com>
- <CGME20200327171420epcas5p490e1e6d090a540eaf050e0728a39ba25@epcas5p4.samsung.com>
- <20200327170638.17670-5-alim.akhtar@samsung.com>
-In-Reply-To: <20200327170638.17670-5-alim.akhtar@samsung.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [77.138.4.172]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8609f09c-199b-4596-ffc0-08d7d30b2258
-x-ms-traffictypediagnostic: SN6PR04MB5293:
-x-microsoft-antispam-prvs: <SN6PR04MB5293C79F985799E5F0DDFDCAFCCD0@SN6PR04MB5293.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 03569407CC
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(6029001)(4636009)(39860400002)(136003)(366004)(346002)(376002)(396003)(8676002)(81156014)(81166006)(9686003)(7416002)(4744005)(33656002)(6506007)(316002)(54906003)(55016002)(110136005)(7696005)(8936002)(86362001)(71200400001)(5660300002)(26005)(186003)(64756008)(66556008)(76116006)(4326008)(2906002)(66946007)(478600001)(52536014)(66476007)(66446008);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 0yBrWRq6frY6Q+Kcjn4/LtZX7t4ZYx6KE+z53Jtw/7+014kcFPgJB7EoOn2PfbqKXmMlJdvzZFXpf87IwZIfRPZWHkWwLy2oOqzLN9J/tKhdxirsi1LXctwDEW/9KsNDK2v4NTf3ABFbW2dgpaCoqQgXLlyeCLrtF7Pb5A3fqzLk7T4IsOEpWY0/5NK4URpqi/lmU7tKQ6BQOe7n6uKXAm3PUfQLXJTrUkaTtBPWU2i8mPbC812VtLVEGBiNbTF+S2WL86iEM7tr/gVyNEJgrUKUY2bsctAbpKx2lBAIUq+PM4NU2Mqc4EgC1D8ArPqUnhY5ykPpqm2+/qfcjKXaftoJJ00/Pbl3q59EQQI0teTg/+PGHFl5T/u44TjE97M0WTLnTdLA+tYEvbZUUvTiHMZ1U9Y8ZenpO+VAAK7fbN0RmG2ssIIlr40Tteud5Ncm
-x-ms-exchange-antispam-messagedata: ZPdY8PnW7+3iIIkuttKirQZ6sdZg2aq9g1cZO0aSDlqophy88nacBLZ6sSw1r6hnZ5c42u7E9wfi/qvxpc8Mg+MlgnQKpcGRFYj+Uz9HfCrqJvIOWP9vGVFYi3ZRueMWAwGth137OwUBcrA7+QyKFw==
-x-ms-exchange-transport-forked: True
+ id 1jIAAg-0000m0-C4
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 12:02:41 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1585396959; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
+ To: From: Sender; bh=zzBLtQ+//D0bBXPqSlcrMZohpTUdmpgajv0NPqBclSs=;
+ b=eijlXx60EXH6EaRqQHfeYEtDuGQicPHuuH0tjjuncFzBqW2XtQpGb7V4LGQt0HM/T3Uu+boS
+ jSGcY/H1jkKe6nmA4XeleLcI/3PT0V7021P49dxDsrsOmVPt6YaVT25ajp8SY+DwLXC3Svvq
+ Q5pYWTSzENPqvN/aTPQoaNYdRT4=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e7f3cba.7f9b3a196c38-smtp-out-n03;
+ Sat, 28 Mar 2020 12:02:02 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id CD5C0C433BA; Sat, 28 Mar 2020 12:02:02 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from Pillair (unknown [183.83.66.17])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: pillair)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 86CE5C433D2;
+ Sat, 28 Mar 2020 12:01:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 86CE5C433D2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pillair@codeaurora.org
+From: <pillair@codeaurora.org>
+To: "'Bjorn Andersson'" <bjorn.andersson@linaro.org>
+References: <1585219723-28323-1-git-send-email-pillair@codeaurora.org>
+ <20200327230025.GJ5063@builder>
+In-Reply-To: <20200327230025.GJ5063@builder>
+Subject: RE: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Date: Sat, 28 Mar 2020 17:31:52 +0530
+Message-ID: <000101d604f8$afc48220$0f4d8660$@codeaurora.org>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8609f09c-199b-4596-ffc0-08d7d30b2258
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Mar 2020 11:28:26.7565 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Y0beeGRxkwUGS9mzr3mu/Rg4OtSdliwt9x8P1ZrS8z126yilMDJmdVo3I0p4UX+RutxL0DCmUzL1bPcy0M6ttw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB5293
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQFGsu5WNDBp+FP/TOeyoiVSrY11cwGGydAyqXBTCQA=
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_042832_038545_0A584D88 
-X-CRM114-Status: GOOD (  11.72  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200328_050240_140678_D3D267DF 
+X-CRM114-Status: GOOD (  19.87  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.45 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -148,38 +93,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "krzk@kernel.org" <krzk@kernel.org>,
- "kwmad.kim@samsung.com" <kwmad.kim@samsung.com>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "stanley.chu@mediatek.com" <stanley.chu@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Bjorn,
+ Comments inline.
 
-> +
-> +long exynos_ufs_calc_time_cntr(struct exynos_ufs *ufs, long period)
-> +{
-> +       const int precise = 10;
-> +       long pclk_rate = ufs->pclk_rate;
-> +       long clk_period, fraction;
-> +
-> +       clk_period = UNIPRO_PCLK_PERIOD(ufs);
-> +       fraction = ((NSEC_PER_SEC % pclk_rate) * precise) / pclk_rate;
-> +
-> +       return (period * precise) / ((clk_period * precise) + fraction);
-> +}
-This helper essentially calculates a factor f, and returns period x f.
-Why not do that regardless of period?
 
-> +extern long exynos_ufs_calc_time_cntr(struct exynos_ufs *, long);
-Why this factor needed to be exported?
+> -----Original Message-----
+> From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Sent: Saturday, March 28, 2020 4:30 AM
+> To: Rakesh Pillai <pillair@codeaurora.org>
+> Cc: devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+linux-
+> kernel@vger.kernel.org; linux-arm-msm@vger.kernel.org
+> Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> module device node
+> 
+> On Thu 26 Mar 03:48 PDT 2020, Rakesh Pillai wrote:
+> 
+> > Add device node for the ath10k SNOC platform driver probe
+> > and add resources required for WCN3990 on sc7180 soc.
+> >
+> > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+> > ---
+> >
+> > Depends on https://patchwork.kernel.org/patch/11455345/
+> > The above patch adds the dt-bindings for wifi-firmware
+> > subnode
+> > ---
+> >  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  8 ++++++++
+> >  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27
+> +++++++++++++++++++++++++++
+> >  2 files changed, 35 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > index 043c9b9..a6168a4 100644
+> > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > @@ -327,6 +327,14 @@
+> >  	};
+> >  };
+> >
+> > +&wifi {
+> > +	status = "okay";
+> > +	qcom,msa-fixed-perm;
+> > +	wifi-firmware {
+> > +		iommus = <&apps_smmu 0xc2 0x1>;
+> 
+> How is sc7180 different from sdm845, where the iommus property goes
+> directly in the &wifi node?
+
+Sc7180 IDP is a target without TrustZone support and also with S2 IOMMU
+enabled.
+Since in Trustzone based targets, the iommu SID configuration was done by
+TZ, there was nothing required to be done by driver.
+But in non-TZ based targets, the IOMMU mappings need to be done by the
+driver.
+Since this is the mapping of the firmware memory and to keep it different
+from the driver memory access, a different device has been created for
+firmware and these SIDs are configured.
+
+The below ath10k series brings-in this support.
+https://patchwork.kernel.org/project/linux-wireless/list/?series=261367&stat
+e=* 
+
+Thanks,
+Rakesh Pillai.
+
+> 
+> Regards,
+> Bjorn
+> 
+> > +	};
+> > +};
+> > +
+> >  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+> >
+> >  &qspi_clk {
+> > diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > index 998f101..2745128 100644
+> > --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> > @@ -83,6 +83,11 @@
+> >  			reg = <0 0x8f600000 0 0x500000>;
+> >  			no-map;
+> >  		};
+> > +
+> > +		wlan_fw_mem: memory@94104000 {
+> > +			reg = <0 0x94104000 0 0x200000>;
+> > +			no-map;
+> > +		};
+> >  	};
+> >
+> >  	cpus {
+> > @@ -835,6 +840,28 @@
+> >  			};
+> >  		};
+> >
+> > +		wifi: wifi@18800000 {
+> > +			compatible = "qcom,wcn3990-wifi";
+> > +			reg = <0 0x18800000 0 0x800000>;
+> > +			reg-names = "membase";
+> > +			iommus = <&apps_smmu 0xc0 0x1>;
+> > +			interrupts =
+> > +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0
+> */ >,
+> > +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1
+> */ >,
+> > +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2
+> */ >,
+> > +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3
+> */ >,
+> > +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4
+> */ >,
+> > +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5
+> */ >,
+> > +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6
+> */ >,
+> > +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7
+> */ >,
+> > +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8
+> */ >,
+> > +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9
+> */ >,
+> > +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10
+> */>,
+> > +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11
+> */>;
+> > +			memory-region = <&wlan_fw_mem>;
+> > +			status = "disabled";
+> > +		};
+> > +
+> >  		config_noc: interconnect@1500000 {
+> >  			compatible = "qcom,sc7180-config-noc";
+> >  			reg = <0 0x01500000 0 0x28000>;
+> > --
+> > 2.7.4
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
