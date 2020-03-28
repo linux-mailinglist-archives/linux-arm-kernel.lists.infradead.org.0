@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BD891967F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:13:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08B631967ED
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:12:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0gtX/RVFfJjSjbSheykn07hHSAF6BRT8eOIeJQMkyEg=; b=X+PQ0iCwRzzqer
-	ZrQa5rNpvCukvznTRWzQWGA6mQQTTD0eg58hVY/KkUl0nZmw0mIIK7l2bQO3hJh/FFfthKDMfAxmk
-	S6lu2Sx5wO9B9+5khFUQSbpjwJx8KrAPJNsLB2+zAnaNaXeBzuddOB4OEjdrmG+sFVSQcSYEA74pJ
-	VJCaS1alfa/UkuWsuwZ5y5R+DcR08NK+/wFkxm7Vi1pA6qxiCBCHsQO9zssQtpP6I1zjABIJ6lo23
-	lQzk4a5CR94QEln2H+dmyNVHLpW9nUYK5pVAQ3IIvYdcp48Pc5jVpy5WRWfCKs75rSa8d5CmM8B/w
-	w36bT9OW/l977464da+A==;
+	List-Owner; bh=gfEOg9dFTH5JO2doVBYDDRaT4QShIWjo01e2E9k/NE0=; b=QL7OzRo/MUgE8V
+	/EyuYhiF90k32mp2J6GhAE4woW17v6JiYJbJEHU07/rGMmN20fA4JJBVCK0ol6dV2aRsomjwWRBER
+	ceX5/6lUDdWGOjCbQ8UH6Jp8Tia27ToSYIkPO7kFdnNvCJKsBvWe7ge51BYywKqGrkx6iBDQz0rts
+	f/r5blFhgh5tObfJu/ej7e2iXBRw6ko6y3MURXNMWLuIxhh+cgXDttsfgIIlNiE101kJAOLg8K0cb
+	bjonCk8NXnV1gQrXeIER98+PatpmdRHMRfT8WqdO9L/4njLUm5DQy8BkuHWtMeqvjseNNALmVVtgB
+	fTEbxzc1x4zLb5akyKyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIF1C-0007dT-KM; Sat, 28 Mar 2020 17:13:10 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jIF0B-0006ul-7B; Sat, 28 Mar 2020 17:12:07 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIF00-0006t8-Te
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:11:59 +0000
+ id 1jIF00-0006tC-Vr
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:11:58 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48qQHs5RyKz1rqRg;
- Sat, 28 Mar 2020 18:11:53 +0100 (CET)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48qQHv09f1z1qrLP;
+ Sat, 28 Mar 2020 18:11:55 +0100 (CET)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48qQHs4pm7z1qv4n;
- Sat, 28 Mar 2020 18:11:53 +0100 (CET)
+ by mail.m-online.net (Postfix) with ESMTP id 48qQHt74pbz1qv4m;
+ Sat, 28 Mar 2020 18:11:54 +0100 (CET)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id BpiAUQxtKnvB; Sat, 28 Mar 2020 18:11:52 +0100 (CET)
-X-Auth-Info: SHsZ9Segp3JTbDt47EVSyzWCC/Pxk52U37nmFDVH00A=
+ with ESMTP id bz-46L39rROg; Sat, 28 Mar 2020 18:11:53 +0100 (CET)
+X-Auth-Info: uSvmlTK0BOOpghuGRFoQbNIc4eSpodjkkEVXIEyokyw=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sat, 28 Mar 2020 18:11:52 +0100 (CET)
+ Sat, 28 Mar 2020 18:11:53 +0100 (CET)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 01/22] ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
-Date: Sat, 28 Mar 2020 18:11:23 +0100
-Message-Id: <20200328171144.51888-2-marex@denx.de>
+Subject: [PATCH 02/22] ARM: dts: stm32: Repair ethernet operation on AV96
+Date: Sat, 28 Mar 2020 18:11:24 +0100
+Message-Id: <20200328171144.51888-3-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200328171144.51888-1-marex@denx.de>
 References: <20200328171144.51888-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_101157_256541_86383AE2 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20200328_101157_170829_A8C2B8D1 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
+ low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -85,7 +85,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add another mux option for DWMAC RGMII, this is used on AV96 board.
+The AV96 RGMII uses different pinmux for ETH_RGMII_TXD0, ETH_RGMII_RXD2
+and ETH_RGMII_TX_CTL. Use the correct pinmux to make ethernet operational.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -95,71 +96,24 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 51 ++++++++++++++++++++++++
- 1 file changed, 51 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-index 73c07f0dfad2..4569dc16e5a1 100644
---- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-@@ -196,6 +196,57 @@ pins1 {
- 		};
- 	};
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index 425175f7d83c..1d15b745feeb 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -81,8 +81,8 @@ led6 {
  
-+	ethernet0_rgmii_pins_b: rgmii-1 {
-+		pins1 {
-+			pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
-+				 <STM32_PINMUX('G', 4, AF11)>, /* ETH_RGMII_GTX_CLK */
-+				 <STM32_PINMUX('B', 12, AF11)>, /* ETH_RGMII_TXD0 */
-+				 <STM32_PINMUX('G', 14, AF11)>, /* ETH_RGMII_TXD1 */
-+				 <STM32_PINMUX('C', 2, AF11)>, /* ETH_RGMII_TXD2 */
-+				 <STM32_PINMUX('E', 2, AF11)>, /* ETH_RGMII_TXD3 */
-+				 <STM32_PINMUX('G', 11, AF11)>, /* ETH_RGMII_TX_CTL */
-+				 <STM32_PINMUX('C', 1, AF11)>; /* ETH_MDC */
-+			bias-disable;
-+			drive-push-pull;
-+			slew-rate = <2>;
-+		};
-+		pins2 {
-+			pinmux = <STM32_PINMUX('A', 2, AF11)>; /* ETH_MDIO */
-+			bias-disable;
-+			drive-push-pull;
-+			slew-rate = <0>;
-+		};
-+		pins3 {
-+			pinmux = <STM32_PINMUX('C', 4, AF11)>, /* ETH_RGMII_RXD0 */
-+				 <STM32_PINMUX('C', 5, AF11)>, /* ETH_RGMII_RXD1 */
-+				 <STM32_PINMUX('H', 6, AF11)>, /* ETH_RGMII_RXD2 */
-+				 <STM32_PINMUX('B', 1, AF11)>, /* ETH_RGMII_RXD3 */
-+				 <STM32_PINMUX('A', 1, AF11)>, /* ETH_RGMII_RX_CLK */
-+				 <STM32_PINMUX('A', 7, AF11)>; /* ETH_RGMII_RX_CTL */
-+			bias-disable;
-+		};
-+	};
-+
-+	ethernet0_rgmii_pins_sleep_b: rgmii-sleep-1 {
-+		pins1 {
-+			pinmux = <STM32_PINMUX('G', 5, ANALOG)>, /* ETH_RGMII_CLK125 */
-+				 <STM32_PINMUX('G', 4, ANALOG)>, /* ETH_RGMII_GTX_CLK */
-+				 <STM32_PINMUX('B', 12, ANALOG)>, /* ETH_RGMII_TXD0 */
-+				 <STM32_PINMUX('G', 14, ANALOG)>, /* ETH_RGMII_TXD1 */
-+				 <STM32_PINMUX('C', 2, ANALOG)>, /* ETH_RGMII_TXD2 */
-+				 <STM32_PINMUX('E', 2, ANALOG)>, /* ETH_RGMII_TXD3 */
-+				 <STM32_PINMUX('G', 11, ANALOG)>, /* ETH_RGMII_TX_CTL */
-+				 <STM32_PINMUX('A', 2, ANALOG)>, /* ETH_MDIO */
-+				 <STM32_PINMUX('C', 1, ANALOG)>, /* ETH_MDC */
-+				 <STM32_PINMUX('C', 4, ANALOG)>, /* ETH_RGMII_RXD0 */
-+				 <STM32_PINMUX('C', 5, ANALOG)>, /* ETH_RGMII_RXD1 */
-+				 <STM32_PINMUX('H', 6, ANALOG)>, /* ETH_RGMII_RXD2 */
-+				 <STM32_PINMUX('B', 1, ANALOG)>, /* ETH_RGMII_RXD3 */
-+				 <STM32_PINMUX('A', 1, ANALOG)>, /* ETH_RGMII_RX_CLK */
-+				 <STM32_PINMUX('A', 7, ANALOG)>; /* ETH_RGMII_RX_CTL */
-+		};
-+	};
-+
- 	fmc_pins_a: fmc-0 {
- 		pins1 {
- 			pinmux = <STM32_PINMUX('D', 4, AF12)>, /* FMC_NOE */
+ &ethernet0 {
+ 	status = "okay";
+-	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
+-	pinctrl-1 = <&ethernet0_rgmii_pins_sleep_a>;
++	pinctrl-0 = <&ethernet0_rgmii_pins_b>;
++	pinctrl-1 = <&ethernet0_rgmii_pins_sleep_b>;
+ 	pinctrl-names = "default", "sleep";
+ 	phy-mode = "rgmii";
+ 	max-speed = <1000>;
 -- 
 2.25.1
 
