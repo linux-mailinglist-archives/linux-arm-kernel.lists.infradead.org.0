@@ -2,80 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 810F71964BC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 10:16:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1740E1964C0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 10:17:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=josdazKeCRAa1nx9KKI+dg+r7llsxNJJWX1Iecjhj4I=; b=C6jTT0R3sMoxCg
-	CB0BY3+XmshdRI5+uWRaExFXbCVLaidwi9gpqa0cNpc0oWMaRldqwd6AK8yT5A1dIYhVBTuWKdtOJ
-	atqJZwa0SBVNgACPPT95UC7BZvgDaEWDOn5MpUBS3Krc3j+qY2ePGgJesMQiWtC1WR+iBD0BORHU4
-	pX+C0J6KjXz3Ul1/i0BFVCk6BhqvmytgN/fwOYp7Gfqg/X6letd5iRC//hv033IutoylRj21yayUO
-	aoY+Lr0aet8/KhiCYO65FsTmjc4O42LgiqqDgjZVG003BqIrT38HthMhRjzHihB0kaf+tqMWeXPfc
-	Oejnag5yKOL10IlI5cPA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QwcZjzZSazPSmJYkQLlTrXxYsaJNbuBz4D+i4DRLngc=; b=INa
+	IFjlrNf1TB1MB/h+zzY1lvSJTlDAQh6Zlr+BP1JhtJGJIJQsKXZeAf1PBT0s6AcNYeneSRjrLDvKl
+	f3eT8IZAN5/ZjAmWFxuKBlkF+/eIwiF4u5FtoE0cY3ljWfrNgBCJL2zP3d4X+A8zJ9MO7v1S/fdLD
+	oRIt4cMSyoNnRRpz75ArjRoKbEvt1BKDQlvNhNL1Jlu/33Bd28s098eExbXODYqHHXiqaccmaVGq/
+	2O0p6d2oVieUx+AWyNR0rBlJcQk2KcZKwL1cLnw3rfnajADu8NRVzAx36H6PYX8Obzxbqqlk8EWds
+	8bHrHzda3BCiMMg3i+xhHg9qNTcFRYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI7ZS-0004hM-TO; Sat, 28 Mar 2020 09:16:02 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jI7aR-0004zC-Q8; Sat, 28 Mar 2020 09:17:03 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI7ZK-0004h3-7P
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 09:15:55 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1Mnq4Q-1jbXEC1ifa-00pJWR for <linux-arm-kernel@lists.infradead.org>; Sat,
- 28 Mar 2020 10:15:50 +0100
-Received: by mail-qk1-f180.google.com with SMTP id u4so13526040qkj.13
+ id 1jI7aJ-0004yB-6S
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 09:16:56 +0000
+Received: by mail-pg1-x544.google.com with SMTP id d37so5386410pgl.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 28 Mar 2020 02:15:49 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0g8Na00cHeyyCknJjSGc82l2wNO5LBqhE/KqV2hxEpFgF/xiLG
- XiET0fH8hD2oDuTLH1d42kew5hbc+NLZOBMhPHc=
-X-Google-Smtp-Source: ADFU+vsEwsZ6iJg1C4TSE1cMWb+UnTTxhSDojVw/L0OAefIFglRrWD4E/aTUDz6YJYnZmNCawfDP+EZ7VusIyFa5cpQ=
-X-Received: by 2002:a37:6455:: with SMTP id y82mr3167433qkb.286.1585386949004; 
- Sat, 28 Mar 2020 02:15:49 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200106135715.1159420-1-robert.marko@sartura.hr>
- <CA+HBbNHEetusFNH-8Qmva=2-_HQRRJ33qfBRSudZBVW+vK0tnw@mail.gmail.com>
- <20200327220545.GC5063@builder>
-In-Reply-To: <20200327220545.GC5063@builder>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sat, 28 Mar 2020 10:15:32 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a1_eyVSTgKDk+qph6CCKswWFWhPfX=yi3=jAeUf4uWC6w@mail.gmail.com>
-Message-ID: <CAK8P3a1_eyVSTgKDk+qph6CCKswWFWhPfX=yi3=jAeUf4uWC6w@mail.gmail.com>
-Subject: Re: [PATCH] ARM: qcom: Add support for IPQ40xx
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-X-Provags-ID: V03:K1:Ohu82QLzsaHkp+90ZAo0MRp9EQ4fOP++zkm9LD/a9ZUJJPBStTu
- O7MS66umQXwcQ0k2z0mAgvLrEGig5QU9mW8K3sThddFinm9dpxnlk4yKAUPZyLbY4Bdnfrm
- m8BY2qw4iQzvw0tS3Bfb5+IL6oszaLNtOxrXbgZdwAq+TnM3zD3mANjBMZbBvPUsMh3rpNK
- yJLzqinr6rsiqZ+Os7grQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:xNGlIb+Q/To=:otmm8IwqSphhDseVCsPwZw
- 1fbdpuWThOnzcEwLnb9qKIv5rTPkRA7YEXeHWn5NwXntX49Mp/91OyorVFRK9E3uT312+M0MI
- TjyoxihvxWL8809oYTmnQbjwW+LeTnU8a3+/yAwE1K4jhJn6rMrgJDR+ha/fGeiLfOX/bPfYp
- cBdy8r/L4G8OnRdFnqI+KbXY26nzIzYxfEABMf+dMZ56ztT9oPf7rw0O0e9YGiM+C8/SKxnsV
- hbItstHP4AJQ7MrpdG00ZCxgjoW+fh8BD+yXx0IGwLrlREsF3tSY27VsDxKhZ0uuGtu+lDfjN
- JXdw3RYRuE9SsSf7qykt/P8l8zXABidYo6k1gnIYSDeoAv2CPqfJuqOdNd/Mg9FLGkzyCk+2a
- R9w1cjFRalS0RkNzNm+HXbgV96l2vqvPnaDvpQWRPXvoQZVF0yeqyMKUwJ8PpB+BqDVnebkHr
- JY8zISHAjEUsoPZrGV07rUakkU3XxyREqschvcl1aKGRcuHeTlsa3ptCE5TMI7UbQMsFbT+LT
- aqYewxVYcxX/ltkN+/mY+KMq4eqECGYgpUQv+0HxQwolLSdURrfFwk69oOyc51ce3FsvFf7SZ
- j81b/Xsvop7julZzwu0NxF8cCiJVdZOh4QtNTSjoK8YK9g0pGBd4EFVv+nLlyOGQonGrl7vVH
- dh6HlhkLWZyGspG+MzO+56qVuk4RFLDfLm3tBW1zUSpNLDhlZqNa4gzjjh4dJbQOjmtqIPcN7
- bt5DDX0eiL2ETxBwRiO5V0yL46+GGiGECObHx+u14R4yxnNiXsDrcdULYt/6btYAIV2YJFPb+
- 3OFQQWZ10xPxVf0ipblX0phGhtExeUx8CHY5WFeN8eX2DWNWYY=
+ Sat, 28 Mar 2020 02:16:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=dbt64BOHdGBEqZICW7xFrVv85mRzXdLFYOBZsB2adHc=;
+ b=QMpe31hxR6ssU1HeoeZaHjFlpVz/ckdZelGkF46XlV3hdtUy/KMe3YJ9X0jbMwy5CX
+ ru49qZasvJXvMFQvVty1rttigU5qxAZFFaykPJEu8BsDFfL63yuF431z0Lx2tyUTSpcC
+ TPOesZM3CBISd8Hvco3LSRT3bedlBvxwUeJMl1LllOEbahabbk6n8yMPxqp5EJVR2U/j
+ 6JTTEYBEQdBIgzUeUX75PwuH9TpKPQS+emDDGbhWgQQR0YHW0auhcyhFVW1gusXmpITR
+ GbIsnt5CMH8dVs+frtgx7VKoWMrSkN0RgtwJEkndw/nrK/OpHvGqLQJxpANuN7NDQvsQ
+ OF3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=dbt64BOHdGBEqZICW7xFrVv85mRzXdLFYOBZsB2adHc=;
+ b=nc5BXxq95BY/KdXYYsQAf6FKUYOJAror0YwFY3GKw/vpx6SyKnIHyIC5fQ4Kio4s/f
+ wfubzFzLGa8KlVUueDEAWMyHc6iY2Dt34Dh0H3miKq9gm7yfxquOCUsCpUcZXYYbLPMz
+ LHGESoUXzAxlec3FUeTiabtzArdqigW4IAhl7Qxf4TBFBBJaqHiyJxDLQKsv+y+chmhi
+ G19v6NDND96+BIehlGOud8gxVSUH/MigolGkJedVyHZzOucBvFtU2jZkZka7jWD5U5Vh
+ NfDvfzk5xaDX21DCAF0DyuQiimL2BCypJAmEak7xGwL7YvVXe07/X0hG+d/ZkpUwg+Pn
+ sa2A==
+X-Gm-Message-State: ANhLgQ18e2mqA9wlMN87UnMwPu3MiEXJJtcrRXg1Ry8lBcd8ZAufzchq
+ fojYUojwRGIMVIi/lUjnIUU=
+X-Google-Smtp-Source: ADFU+vv47AMVwTFPLDTJTzrIVuokO5+kgV9NngI7TCqKN2EMx0eiYE7QkqrmD4xpiBL9zEJPDInnkw==
+X-Received: by 2002:a63:1c4d:: with SMTP id c13mr3447030pgm.4.1585387014579;
+ Sat, 28 Mar 2020 02:16:54 -0700 (PDT)
+Received: from localhost.localdomain (li2017-195.members.linode.com.
+ [172.105.124.195])
+ by smtp.gmail.com with ESMTPSA id f129sm5796176pfb.190.2020.03.28.02.16.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 28 Mar 2020 02:16:53 -0700 (PDT)
+From: Qiang Yu <yuq825@gmail.com>
+To: devicetree@vger.kernel.org,
+	linux-sunxi@googlegroups.com
+Subject: [PATCH] ARM: dts: sun8i-h3: add opp table for mali gpu
+Date: Sat, 28 Mar 2020 17:16:32 +0800
+Message-Id: <20200328091632.12837-1-yuq825@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_021554_560616_D30CE0A2 
-X-CRM114-Status: GOOD (  14.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200328_021655_239430_9EAEF517 
+X-CRM114-Status: GOOD (  10.63  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [yuq825[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [yuq825[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,40 +97,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Luka Perkov <luka.perkov@sartura.hr>,
- Christian Lamparter <chunkeey@gmail.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Andy Gross <agross@kernel.org>, John Crispin <john@phrozen.org>,
- Robert Marko <robert.marko@sartura.hr>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, lima@lists.freedesktop.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Qiang Yu <yuq825@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 11:05 PM Bjorn Andersson
-<bjorn.andersson@linaro.org> wrote:
->
-> On Wed 25 Mar 03:25 PDT 2020, Robert Marko wrote:
->
-> > On Mon, Jan 6, 2020 at 2:57 PM Robert Marko <robert.marko@sartura.hr> wrote:
-> > >
-> > > From: Christian Lamparter <chunkeey@gmail.com>
-> > >
-> > > Add support for the Qualcomm IPQ40xx SoC in Kconfig.
-> > > Also add its appropriate textofs.
-> > Any blockers on this patch?
-> >
->
-> No, I must have missed it in the past. I've picked it up for 5.8.
->
+OPP table vaule is get from orangepi lichee linux-3.4
+kernel driver.
 
-If we only need these few lines, I can still squeeze it in for v5.7 last minute,
-just forward that patch to soc@kernel.org. If other things are still needed,
-let's wait until v5.8.
+Signed-off-by: Qiang Yu <yuq825@gmail.com>
+---
+ arch/arm/boot/dts/sun8i-h3.dtsi | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
-      Arnd
+diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+index 20217e2ca4d3..53ef9a18e953 100644
+--- a/arch/arm/boot/dts/sun8i-h3.dtsi
++++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+@@ -128,6 +128,23 @@
+ 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+ 	};
+ 
++	gpu_opp_table: gpu-opp-table {
++		compatible = "operating-points-v2";
++
++		opp-120000000 {
++			opp-hz = /bits/ 64 <120000000>;
++		};
++		opp-312000000 {
++			opp-hz = /bits/ 64 <312000000>;
++		};
++		opp-432000000 {
++			opp-hz = /bits/ 64 <432000000>;
++		};
++		opp-576000000 {
++			opp-hz = /bits/ 64 <576000000>;
++		};
++	};
++
+ 	soc {
+ 		deinterlace: deinterlace@1400000 {
+ 			compatible = "allwinner,sun8i-h3-deinterlace";
+@@ -205,8 +222,7 @@
+ 			clock-names = "bus", "core";
+ 			resets = <&ccu RST_BUS_GPU>;
+ 
+-			assigned-clocks = <&ccu CLK_GPU>;
+-			assigned-clock-rates = <384000000>;
++			operating-points-v2 = <&gpu_opp_table>;
+ 		};
+ 
+ 		ths: thermal-sensor@1c25000 {
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
