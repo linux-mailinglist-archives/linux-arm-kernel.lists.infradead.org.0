@@ -2,49 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 692B11969EB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 23:58:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77D60196A1F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 00:56:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a9FrNouTI7PFx7m3ChdpY0vp38ost1HHYMGB7EwR9xI=; b=EHvTXR751M6y53
-	IiW7l74Qi6ILEmJ8m2kdPoDl63UHvKj3SN6IVHb5wsNKIGy5NTnzF8bJ2wielpPBr9WdKoYEFCXJD
-	6oThc9eeK/9C5Alt9fVsBXo82DXXKEMWFBxqibhOVvGDQqUrqAyxX+631GvGaFJlVg9g6uDJEXqUI
-	m2UCsWy7ntWSAUbrIOJkN5KOq+NcUpbDAXYG+ibnoVTw+J1Eds1d4m0c6Zt4c/wXHGW7RdbJ4l6ve
-	KGicdHVItBixiMtfN4/mKzIx2HiSxMEFCiuuqvOZRAJKI54ER8471IUChA8cZdrkMWl+oFRlIcdoV
-	IUtSunGzVzvXOgTMpHTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3s+ScencP+I1fSF797OlJryDMHNhqzwgykjxd11kglI=; b=ttqOhai/Z8rieA
+	BqLmXq8Sk1y3oUfAwfA7yjaff3+sIY2jCfUDG98nshJUfVQssU6h91z8GT72zo2SRo2ZIW8t/k9ob
+	D9e9XR2TwgvhaLFuvsVnpT2q4P1xbuAPgfdh7cHH2DJZOVvEWvV91CH8keqri6Ig6mFiRvOA0P1Wp
+	6Bsb7if6z7m3vsY7t0nc5DQjF3mhCffKC7t4rY06fbBNl6mkKJnIzufuRRwMlt42dw3fJfxMJYaDV
+	+bSR9PXBO8OwZgRKMI5Ev0VYBLsjHtuZIm6ylwe/nCAGrKXbK7j0d/9afe5VTt/hwjILvGvsZvfI2
+	uFo7PtgPTdmm+yjIobTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIKOw-0005Ra-C2; Sat, 28 Mar 2020 22:58:02 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1jILIx-0006pP-J3; Sat, 28 Mar 2020 23:55:55 +0000
+Received: from mail-mw2nam12on2129.outbound.protection.outlook.com
+ ([40.107.244.129] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIKOn-0005Qy-6I
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 22:57:55 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.3) (envelope-from <daniel@makrotopia.org>)
- id 1jIKOZ-0002cv-QV; Sat, 28 Mar 2020 23:57:41 +0100
-Date: Sat, 28 Mar 2020 22:57:19 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Neil Armstrong <narmstrong@baylibre.com>, linux-oxnas@groups.io,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH resend] power: reset: introduce oxnas-restart
-Message-ID: <20200328225719.GA463417@makrotopia.org>
+ id 1jILIn-0006oo-KA
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 23:55:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cKIshp/prg32YhIplH3vBiCCpRa4qBKR1FDBPh6PyDObXVtaI6MJ08aSHRqsgFwedMNJKyDNtEhd1NGL2KmmS2rPW5iMwuQsebVa0pK0e4NL5yYxaRMimH6QVA2vchrW9DgAg5DQMposxujeZ37V/Dqrua+57RBxzzyOOn4nO9kYYfr2+YIMiNeBasJMo2KzVEnSBGzTRKpajdSkhjF1luDbfChTfV29CorAURI59euFZpUI7P8DNi0fz4ub5POBG3OVgu42I/me+6DwqXgpXJdAPMpZeIpnyTjIG9F9Mv9ERdFF7Y90X1mpjc6AUw/vG0rqgvp15NN15EWFi6Z9JA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4lRhy5H+eHseY8vvcQdIkPICe08jxD0kIjq67yQDt78=;
+ b=Tg0SLhszEZyKB4rKMaaLJ5HeiKf/sjKAo07lwDW3k4t/CH330h3hYbVnQT9At8fcIPtiusyVKJve/q92nnSe8NYfeqABkS/RQxGDzfiTvuq/4Cahftzztz95Hh52XWhaH8ZPriI0DzSQSQ28NozWwsk/XOUiHJ60PZMaQ6Cl6+y/lAJp0aSan0/SCRBye1kltQgNZm/vnfiIBoPizV1wBtCbJ5B6I9kqMvJHt1PQXSbJRNk8csojIDf6VhRUTd3QEo+8OWzQunTuWNIl5cymN7RedIKTzBVCXzEXDKD4u0JyYQcJ3sN3leaQPpY0f60fuguebjS400nq1ExYYIDFLA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microsoft.com; dmarc=pass action=none
+ header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4lRhy5H+eHseY8vvcQdIkPICe08jxD0kIjq67yQDt78=;
+ b=Fy05FEHa/aK096tDwG6oUZolkaLVQnFBwLhNDtQ/yth7gPcAB3qSfpvbCgisYCTzgA4/hq710MlhDCimnHAleFTpH7svVSzccO3O4hc6KC8hQhmScAWOw3RVq5ZNr0hg1YePvA8K3+AsBAsDLFSZra2eP6C+Rzh4z4DNsAdrLls=
+Received: from MW2PR2101MB1052.namprd21.prod.outlook.com (2603:10b6:302:a::16)
+ by MW2PR2101MB0907.namprd21.prod.outlook.com (2603:10b6:302:10::27)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.11; Sat, 28 Mar
+ 2020 23:55:22 +0000
+Received: from MW2PR2101MB1052.namprd21.prod.outlook.com
+ ([fe80::71ee:121:71bd:6156]) by MW2PR2101MB1052.namprd21.prod.outlook.com
+ ([fe80::71ee:121:71bd:6156%8]) with mapi id 15.20.2878.007; Sat, 28 Mar 2020
+ 23:55:22 +0000
+From: Michael Kelley <mikelley@microsoft.com>
+To: Ard Biesheuvel <ardb@kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] efi/libstub/arm64: avoid image_base value from
+ efi_loaded_image
+Thread-Topic: [PATCH] efi/libstub/arm64: avoid image_base value from
+ efi_loaded_image
+Thread-Index: AQHWBUObXv2MTW3u/Ue45F8yahNJA6herKsQ
+Date: Sat, 28 Mar 2020 23:55:20 +0000
+Message-ID: <MW2PR2101MB10525BAFA3880DD27216C4DCD7CD0@MW2PR2101MB1052.namprd21.prod.outlook.com>
+References: <20200328205809.23825-1-ardb@kernel.org>
+In-Reply-To: <20200328205809.23825-1-ardb@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2020-03-28T23:55:18.6548410Z;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=9532f6a0-0497-412b-9431-a84c828d4b73;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=mikelley@microsoft.com; 
+x-originating-ip: [24.22.167.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: f036d26e-6d83-4e6b-52a0-08d7d3737a69
+x-ms-traffictypediagnostic: MW2PR2101MB0907:|MW2PR2101MB0907:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MW2PR2101MB09073218C9DE3EE808F08D67D7CD0@MW2PR2101MB0907.namprd21.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 03569407CC
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW2PR2101MB1052.namprd21.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(346002)(366004)(376002)(39860400002)(136003)(396003)(66476007)(76116006)(66946007)(66446008)(110136005)(478600001)(2906002)(33656002)(107886003)(71200400001)(9686003)(54906003)(10290500003)(26005)(8936002)(52536014)(82950400001)(4326008)(81166006)(186003)(64756008)(5660300002)(316002)(66556008)(82960400001)(81156014)(7696005)(86362001)(8990500004)(55016002)(6506007)(8676002);
+ DIR:OUT; SFP:1102; 
+received-spf: None (protection.outlook.com: microsoft.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: r1PrlkUx9RAwSoKajjM3B7Lc7iFeIYtOaNy7C70Ha4zpMY9/LFy/avSfo+b2ov5N2/WJgLP591OXCIfd8K2pFwFZn6msLthcDHsXqUr3bl5xVok5i0k8VTHnw6MM0X7PqlcHZgT+CFMc20nomqyeGZQBeTBsWDaz86D9Sqn7vgipu+09p6s19SM5h3CM9d4QVZcZ9LWyDAz5jcWsY4EDGKZpEDxtqE0WlRfg/aky3L4B43xZVF51eRv/bkRCAzqDIrN0/yzUljxeXUXm8v1T43n+b4cYurmO9iU6mPmbNyxC22SCs47hzVP1pVZiSWjqs/5CpOwmNkEYtebIyIj5xJLot2TTVS/xzp6fFNVtZKxZcN68lmkNtr5NcD4KbEPqY1FbwkgVqnAFuQasNzBCB7o/VADJtnsoV7IP+Z4pnCIZs0XBv6Tz4LkJMVuKryLs
+x-ms-exchange-antispam-messagedata: 7EXXnLqfx299yVQbfNOot6iWHAWwdOQpwRg5dDO7arV+EamouwOpE84sMYl4hKeSWNCKxR+/F0axbKyeN6QI5bnN6sF2CN5H7pwFhesB+HnLIEl5x4AyJUvFdCgUfBOiRDcC80BSkiUsvs03/ZjHmg==
 MIME-Version: 1.0
-Content-Disposition: inline
+X-OriginatorOrg: microsoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f036d26e-6d83-4e6b-52a0-08d7d3737a69
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Mar 2020 23:55:20.9145 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: dM26I7bjVh1uiTeDGSjPVU3jy4neeujgpT2kouBLfcCZCsOKsxCQEWKc+d0ZfIRSItNz8Dt5s8WY3oZBIMT1fzAAPVmYPJwgAzcMBJ1BcG8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW2PR2101MB0907
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_155753_389109_9229D217 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200328_165545_750880_67EB2BB0 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.244.129 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.244.129 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,291 +137,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sungbo Eo <mans0n@gorani.run>
+Cc: Boqun Feng <Boqun.Feng@microsoft.com>,
+ "leif@nuviainc.com" <leif@nuviainc.com>,
+ "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add reboot handler for OXNAS OX820 chips as reboot currenly hangs on
-those boards. Code is based on ox820_assert_system_reset() found in
-https://github.com/kref/linux-oxnas/blob/master/arch/arm/mach-oxnas/mach-ox820.c#L181
+From: Ard Biesheuvel <ardb@kernel.org> Sent: Saturday, March 28, 2020 1:58 PM
+> 
+> Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
+> PE/COFF entrypoint") did some code refactoring to get rid of the
+> EFI entry point assembler code, and in the process, it got rid of the
+> assignment of image_addr to the value of _text. Instead, it switched
+> to using the image_base field of the efi_loaded_image struct provided
+> by UEFI, which should contain the same value.
+> 
+> However, Michael reports that this is not the case: older GRUB builds
+> corrupt this value in some way, and since we can easily switch back to
+> referring to _text to discover this value, let's simply do that.
+> 
+> While at it, fix another issue in commit 9f9223778ef3, which may result
+> in the unassigned image_addr to be misidentified as the preferred load
+> offset of the kernel, which is unlikely but will cause a boot crash if
+> it does occur.
+> 
+> Finally, let's add a warning if the _text vs. image_base discrepancy is
+> detected, so we can tell more easily how widespread this issue actually
+> is.
+> 
+> Reported-by: Michael Kelley <mikelley@microsoft.com>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  drivers/firmware/efi/libstub/arm64-stub.c | 7 ++++++-
+>  1 file changed, 6 insertions(+), 1 deletion(-)
 
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
----
- drivers/power/reset/Kconfig         |   7 +
- drivers/power/reset/Makefile        |   1 +
- drivers/power/reset/oxnas-restart.c | 229 ++++++++++++++++++++++++++++
- 3 files changed, 237 insertions(+)
- create mode 100644 drivers/power/reset/oxnas-restart.c
+Tested in a Hyper-V VM.  With the 2.02~beta2 version of grub,
+the FIRMWARE BUG message is output and then Linux correctly
+boots.  With the 2.04-4 version of grub, Linux correctly boots with
+no error messages.
 
-diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-index 890380302080..6163c52e7eb4 100644
---- a/drivers/power/reset/Kconfig
-+++ b/drivers/power/reset/Kconfig
-@@ -123,6 +123,13 @@ config POWER_RESET_OCELOT_RESET
- 	help
- 	  This driver supports restart for Microsemi Ocelot SoC.
- 
-+config POWER_RESET_OXNAS
-+	bool "OXNAS SoC restart driver"
-+	depends on ARCH_OXNAS
-+	default MACH_OX820
-+	help
-+	  Restart support for OXNAS OX820 boards.
-+
- config POWER_RESET_PIIX4_POWEROFF
- 	tristate "Intel PIIX4 power-off driver"
- 	depends on PCI
-diff --git a/drivers/power/reset/Makefile b/drivers/power/reset/Makefile
-index da37f8b851dc..5710ca469517 100644
---- a/drivers/power/reset/Makefile
-+++ b/drivers/power/reset/Makefile
-@@ -12,6 +12,7 @@ obj-$(CONFIG_POWER_RESET_GPIO_RESTART) += gpio-restart.o
- obj-$(CONFIG_POWER_RESET_HISI) += hisi-reboot.o
- obj-$(CONFIG_POWER_RESET_MSM) += msm-poweroff.o
- obj-$(CONFIG_POWER_RESET_MT6323) += mt6323-poweroff.o
-+obj-$(CONFIG_POWER_RESET_OXNAS) += oxnas-restart.o
- obj-$(CONFIG_POWER_RESET_QCOM_PON) += qcom-pon.o
- obj-$(CONFIG_POWER_RESET_OCELOT_RESET) += ocelot-reset.o
- obj-$(CONFIG_POWER_RESET_PIIX4_POWEROFF) += piix4-poweroff.o
-diff --git a/drivers/power/reset/oxnas-restart.c b/drivers/power/reset/oxnas-restart.c
-new file mode 100644
-index 000000000000..e0c126eae0f5
---- /dev/null
-+++ b/drivers/power/reset/oxnas-restart.c
-@@ -0,0 +1,229 @@
-+// SPDX-License-Identifier: (GPL-2.0)
-+/*
-+ * oxnas SoC reset driver
-+ * based on:
-+ * Microsemi MIPS SoC reset driver
-+ * and ox820_assert_system_reset() written by Ma Hajun <mahaijuns@gmail.com>
-+ *
-+ * License: GPL
-+ * Copyright (c) 2013 Ma Hajun <mahaijuns@gmail.com>
-+ * Copyright (c) 2017 Microsemi Corporation
-+ * Copyright (c) 2019 Daniel Golle <daniel@makrotopia.org>
-+ */
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/notifier.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/of_address.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/reboot.h>
-+#include <linux/regmap.h>
-+
-+/* bit numbers of reset control register */
-+#define OX820_SYS_CTRL_RST_SCU                0
-+#define OX820_SYS_CTRL_RST_COPRO              1
-+#define OX820_SYS_CTRL_RST_ARM0               2
-+#define OX820_SYS_CTRL_RST_ARM1               3
-+#define OX820_SYS_CTRL_RST_USBHS              4
-+#define OX820_SYS_CTRL_RST_USBHSPHYA          5
-+#define OX820_SYS_CTRL_RST_MACA               6
-+#define OX820_SYS_CTRL_RST_MAC                OX820_SYS_CTRL_RST_MACA
-+#define OX820_SYS_CTRL_RST_PCIEA              7
-+#define OX820_SYS_CTRL_RST_SGDMA              8
-+#define OX820_SYS_CTRL_RST_CIPHER             9
-+#define OX820_SYS_CTRL_RST_DDR                10
-+#define OX820_SYS_CTRL_RST_SATA               11
-+#define OX820_SYS_CTRL_RST_SATA_LINK          12
-+#define OX820_SYS_CTRL_RST_SATA_PHY           13
-+#define OX820_SYS_CTRL_RST_PCIEPHY            14
-+#define OX820_SYS_CTRL_RST_STATIC             15
-+#define OX820_SYS_CTRL_RST_GPIO               16
-+#define OX820_SYS_CTRL_RST_UART1              17
-+#define OX820_SYS_CTRL_RST_UART2              18
-+#define OX820_SYS_CTRL_RST_MISC               19
-+#define OX820_SYS_CTRL_RST_I2S                20
-+#define OX820_SYS_CTRL_RST_SD                 21
-+#define OX820_SYS_CTRL_RST_MACB               22
-+#define OX820_SYS_CTRL_RST_PCIEB              23
-+#define OX820_SYS_CTRL_RST_VIDEO              24
-+#define OX820_SYS_CTRL_RST_DDR_PHY            25
-+#define OX820_SYS_CTRL_RST_USBHSPHYB          26
-+#define OX820_SYS_CTRL_RST_USBDEV             27
-+#define OX820_SYS_CTRL_RST_ARMDBG             29
-+#define OX820_SYS_CTRL_RST_PLLA               30
-+#define OX820_SYS_CTRL_RST_PLLB               31
-+
-+/* bit numbers of clock control register */
-+#define OX820_SYS_CTRL_CLK_COPRO              0
-+#define OX820_SYS_CTRL_CLK_DMA                1
-+#define OX820_SYS_CTRL_CLK_CIPHER             2
-+#define OX820_SYS_CTRL_CLK_SD                 3
-+#define OX820_SYS_CTRL_CLK_SATA               4
-+#define OX820_SYS_CTRL_CLK_I2S                5
-+#define OX820_SYS_CTRL_CLK_USBHS              6
-+#define OX820_SYS_CTRL_CLK_MACA               7
-+#define OX820_SYS_CTRL_CLK_MAC                OX820_SYS_CTRL_CLK_MACA
-+#define OX820_SYS_CTRL_CLK_PCIEA              8
-+#define OX820_SYS_CTRL_CLK_STATIC             9
-+#define OX820_SYS_CTRL_CLK_MACB               10
-+#define OX820_SYS_CTRL_CLK_PCIEB              11
-+#define OX820_SYS_CTRL_CLK_REF600             12
-+#define OX820_SYS_CTRL_CLK_USBDEV             13
-+#define OX820_SYS_CTRL_CLK_DDR                14
-+#define OX820_SYS_CTRL_CLK_DDRPHY             15
-+#define OX820_SYS_CTRL_CLK_DDRCK              16
-+
-+/* Regmap offsets */
-+#define OX820_CLK_SET_REGOFFSET               0x2c
-+#define OX820_CLK_CLR_REGOFFSET               0x30
-+#define OX820_RST_SET_REGOFFSET               0x34
-+#define OX820_RST_CLR_REGOFFSET               0x38
-+#define OX820_SECONDARY_SEL_REGOFFSET         0x14
-+#define OX820_TERTIARY_SEL_REGOFFSET          0x8c
-+#define OX820_QUATERNARY_SEL_REGOFFSET        0x94
-+#define OX820_DEBUG_SEL_REGOFFSET             0x9c
-+#define OX820_ALTERNATIVE_SEL_REGOFFSET       0xa4
-+#define OX820_PULLUP_SEL_REGOFFSET            0xac
-+#define OX820_SEC_SECONDARY_SEL_REGOFFSET     0x100014
-+#define OX820_SEC_TERTIARY_SEL_REGOFFSET      0x10008c
-+#define OX820_SEC_QUATERNARY_SEL_REGOFFSET    0x100094
-+#define OX820_SEC_DEBUG_SEL_REGOFFSET         0x10009c
-+#define OX820_SEC_ALTERNATIVE_SEL_REGOFFSET   0x1000a4
-+#define OX820_SEC_PULLUP_SEL_REGOFFSET        0x1000ac
-+
-+
-+struct oxnas_restart_context {
-+	struct regmap *sys_ctrl;
-+	struct notifier_block restart_handler;
-+};
-+
-+static int ox820_restart_handle(struct notifier_block *this,
-+				 unsigned long mode, void *cmd)
-+{
-+	struct oxnas_restart_context *ctx = container_of(this, struct
-+							oxnas_restart_context,
-+							restart_handler);
-+	u32 value;
-+
-+	/* Assert reset to cores as per power on defaults
-+	 * Don't touch the DDR interface as things will come to an impromptu stop
-+	 * NB Possibly should be asserting reset for PLLB, but there are timing
-+	 *    concerns here according to the docs */
-+	value = BIT(OX820_SYS_CTRL_RST_COPRO)		|
-+		BIT(OX820_SYS_CTRL_RST_USBHS)		|
-+		BIT(OX820_SYS_CTRL_RST_USBHSPHYA)	|
-+		BIT(OX820_SYS_CTRL_RST_MACA)		|
-+		BIT(OX820_SYS_CTRL_RST_PCIEA)		|
-+		BIT(OX820_SYS_CTRL_RST_SGDMA)		|
-+		BIT(OX820_SYS_CTRL_RST_CIPHER)		|
-+		BIT(OX820_SYS_CTRL_RST_SATA)		|
-+		BIT(OX820_SYS_CTRL_RST_SATA_LINK)	|
-+		BIT(OX820_SYS_CTRL_RST_SATA_PHY)	|
-+		BIT(OX820_SYS_CTRL_RST_PCIEPHY)		|
-+		BIT(OX820_SYS_CTRL_RST_STATIC)		|
-+		BIT(OX820_SYS_CTRL_RST_UART1)		|
-+		BIT(OX820_SYS_CTRL_RST_UART2)		|
-+		BIT(OX820_SYS_CTRL_RST_MISC)		|
-+		BIT(OX820_SYS_CTRL_RST_I2S)		|
-+		BIT(OX820_SYS_CTRL_RST_SD)		|
-+		BIT(OX820_SYS_CTRL_RST_MACB)		|
-+		BIT(OX820_SYS_CTRL_RST_PCIEB)		|
-+		BIT(OX820_SYS_CTRL_RST_VIDEO)		|
-+		BIT(OX820_SYS_CTRL_RST_USBHSPHYB)	|
-+		BIT(OX820_SYS_CTRL_RST_USBDEV);
-+
-+	regmap_write(ctx->sys_ctrl, OX820_RST_SET_REGOFFSET, value);
-+
-+	/* Release reset to cores as per power on defaults */
-+	regmap_write(ctx->sys_ctrl, OX820_RST_CLR_REGOFFSET, BIT(OX820_SYS_CTRL_RST_GPIO));
-+
-+	/* Disable clocks to cores as per power-on defaults - must leave DDR
-+	 * related clocks enabled otherwise we'll stop rather abruptly. */
-+	value =
-+		BIT(OX820_SYS_CTRL_CLK_COPRO)		|
-+		BIT(OX820_SYS_CTRL_CLK_DMA)		|
-+		BIT(OX820_SYS_CTRL_CLK_CIPHER)		|
-+		BIT(OX820_SYS_CTRL_CLK_SD)		|
-+		BIT(OX820_SYS_CTRL_CLK_SATA)		|
-+		BIT(OX820_SYS_CTRL_CLK_I2S)		|
-+		BIT(OX820_SYS_CTRL_CLK_USBHS)		|
-+		BIT(OX820_SYS_CTRL_CLK_MAC)		|
-+		BIT(OX820_SYS_CTRL_CLK_PCIEA)		|
-+		BIT(OX820_SYS_CTRL_CLK_STATIC)		|
-+		BIT(OX820_SYS_CTRL_CLK_MACB)		|
-+		BIT(OX820_SYS_CTRL_CLK_PCIEB)		|
-+		BIT(OX820_SYS_CTRL_CLK_REF600)		|
-+		BIT(OX820_SYS_CTRL_CLK_USBDEV);
-+
-+	regmap_write(ctx->sys_ctrl, OX820_CLK_CLR_REGOFFSET, value);
-+
-+	/* Enable clocks to cores as per power-on defaults */
-+
-+	/* Set sys-control pin mux'ing as per power-on defaults */
-+	regmap_write(ctx->sys_ctrl, OX820_SECONDARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_TERTIARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_QUATERNARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_DEBUG_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_ALTERNATIVE_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_PULLUP_SEL_REGOFFSET, 0);
-+
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_SECONDARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_TERTIARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_QUATERNARY_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_DEBUG_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_ALTERNATIVE_SEL_REGOFFSET, 0);
-+	regmap_write(ctx->sys_ctrl, OX820_SEC_PULLUP_SEL_REGOFFSET, 0);
-+
-+	/* No need to save any state, as the ROM loader can determine whether
-+	 * reset is due to power cycling or programatic action, just hit the
-+	 * (self-clearing) CPU reset bit of the block reset register */
-+	value =
-+		BIT(OX820_SYS_CTRL_RST_SCU) |
-+		BIT(OX820_SYS_CTRL_RST_ARM0) |
-+		BIT(OX820_SYS_CTRL_RST_ARM1);
-+
-+	regmap_write(ctx->sys_ctrl, OX820_RST_SET_REGOFFSET, value);
-+
-+	pr_emerg("Unable to restart system\n");
-+	return NOTIFY_DONE;
-+}
-+
-+static int ox820_restart_probe(struct platform_device *pdev)
-+{
-+	struct oxnas_restart_context *ctx;
-+	struct regmap *sys_ctrl;
-+	struct device *dev = &pdev->dev;
-+	int err = 0;
-+
-+	sys_ctrl = syscon_node_to_regmap(pdev->dev.of_node);
-+	if (IS_ERR(sys_ctrl))
-+		return PTR_ERR(sys_ctrl);
-+
-+	ctx = devm_kzalloc(&pdev->dev, sizeof(*ctx), GFP_KERNEL);
-+	if (!ctx)
-+		return -ENOMEM;
-+
-+	ctx->sys_ctrl = sys_ctrl;
-+	ctx->restart_handler.notifier_call = ox820_restart_handle;
-+	ctx->restart_handler.priority = 192;
-+	err = register_restart_handler(&ctx->restart_handler);
-+	if (err)
-+		dev_err(dev, "can't register restart notifier (err=%d)\n", err);
-+
-+	return err;
-+}
-+
-+static const struct of_device_id ox820_restart_of_match[] = {
-+	{ .compatible = "oxsemi,ox820-sys-ctrl" },
-+	{}
-+};
-+
-+static struct platform_driver ox820_restart_driver = {
-+	.probe = ox820_restart_probe,
-+	.driver = {
-+		.name = "ox820-chip-reset",
-+		.of_match_table = ox820_restart_of_match,
-+	},
-+};
-+builtin_platform_driver(ox820_restart_driver);
--- 
-2.26.0
+Tested-by: Michael Kelley <mikelley@microsoft.com>
+
+> 
+> diff --git a/drivers/firmware/efi/libstub/arm64-stub.c
+> b/drivers/firmware/efi/libstub/arm64-stub.c
+> index 9254cd8ab2d3..db0c1a9c1699 100644
+> --- a/drivers/firmware/efi/libstub/arm64-stub.c
+> +++ b/drivers/firmware/efi/libstub/arm64-stub.c
+> @@ -116,6 +116,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+>  		 * Mustang), we can still place the kernel at the address
+>  		 * 'dram_base + TEXT_OFFSET'.
+>  		 */
+> +		*image_addr = (unsigned long)_text;
+>  		if (*image_addr == preferred_offset)
+>  			return EFI_SUCCESS;
+> 
+> @@ -140,7 +141,11 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+>  		}
+>  		*image_addr = *reserve_addr + TEXT_OFFSET;
+>  	}
+> -	memcpy((void *)*image_addr, image->image_base, kernel_size);
+> +
+> +	if (image->image_base != _text)
+> +		pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus
+> value\n");
+> +
+> +	memcpy((void *)*image_addr, _text, kernel_size);
+> 
+>  	return EFI_SUCCESS;
+>  }
+> --
+> 2.17.1
 
 
 _______________________________________________
