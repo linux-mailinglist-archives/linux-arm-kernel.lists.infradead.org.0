@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F70F1965AB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 12:22:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADCC11965A8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 12:21:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=IvVueIjxenWhiVcqMP6vNiHwn4Two8gppi7j4vdTWaM=; b=ank
-	OBAYNgHLizECCVZfG3iBi1930beBd31qhb8QIhSOJFooETO6EBqgHJ6aGTl8d5EPbChFiwgm2kCNA
-	cyMZMJ71Ql7pqWzCDO0Z5KPzZh7T4btQ4k7zlwcZfv0TSfT0hY7PyMA7Uv1mxdiTs53Za8MQsEtNQ
-	Bw/IQRRSq7PoUIUvIUQTiVr7wB3eVuNsTBbo30qhZItrQQIf7lGGE/JkYaE4b14e0WtpBMGBPIJ4b
-	hS2aoOgRXalCJ0BmCvtVzvx3M0utg2sJSDi2AKmMDCdfpfatVT1cBWRnXupS7ps80OXwjgp8IWowS
-	E3IpaZcvWM3o3Az8o1raczepm3yogmw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=EnbmAK/80w79fvMxiyO/k1s0zo9yJZw5st1EsPw/wDk=; b=l6IC/LWlFcIqjelyIo2N7++9iz
+	6iiol2BlrFtWic2LmhlLqictaIm+WrFB8WGsqs+QxPER+jiylCbO3Xj0RWo3ZRNY5CtJG1nlcwyoi
+	OEVnOq7xa2iWL2fZ9Xv7TkE0LZr0z3jX2VJZXf+tSQFrI/hR4sB0T5gFJtvLIdavaY4x/p2up+zGj
+	RCcewpDm4N0TEctm/6vvgImHsmn1V8ey9JiqGlau7GJyf9k+9NmrW1l0gxjvpsLlVVgw6IKqyGD2S
+	5GKDgi1dofXv96m/um1oj56bk2vel+HPI7NrELCqfQ21dEq67GDZ58ngfS7gdNt2zvM4HtJQdOntG
+	FDfeaOTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI9XB-0004Kz-Uy; Sat, 28 Mar 2020 11:21:49 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jI9Wh-0003yJ-Ly; Sat, 28 Mar 2020 11:21:19 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI9WW-0003wa-SD
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 11:21:13 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DE6B61A0F68;
- Sat, 28 Mar 2020 12:21:04 +0100 (CET)
+ id 1jI9WX-0003wb-MN
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 11:21:11 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 38802201130;
+ Sat, 28 Mar 2020 12:21:06 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 815A31A0EF7;
- Sat, 28 Mar 2020 12:20:55 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1C264200EA0;
+ Sat, 28 Mar 2020 12:20:57 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A769B4028F;
- Sat, 28 Mar 2020 19:20:44 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 42B43402A5;
+ Sat, 28 Mar 2020 19:20:46 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, andrew.smirnov@gmail.com,
@@ -42,21 +43,23 @@ To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  jon@solid-run.com, cosmin.stoica@nxp.com, l.stach@pengutronix.de,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/3] arm64: dts: imx: Add imx8dxl support
-Date: Sat, 28 Mar 2020 19:13:33 +0800
-Message-Id: <1585394015-27825-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/3] arm64: dts: imx8dxl: Add i.MX8DXL evk board support
+Date: Sat, 28 Mar 2020 19:13:34 +0800
+Message-Id: <1585394015-27825-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1585394015-27825-1-git-send-email-Anson.Huang@nxp.com>
+References: <1585394015-27825-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_042109_190231_149856E5 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20200328_042110_004986_165DC2CA 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,438 +80,202 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8DXL is a dual Cortex-A35 proccessor with Cortex-M4 system controller
-inside. Add the SoC dtsi file support.
+Add i.MX8DXL EVK board support, currently ONLY supports lpuart0,
+usdhc1, usdhc2 and scu power key drivers.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 This patch needs pads-imx8dxl.h which is in below patch series:
 	https://patchwork.kernel.org/patch/11462211/
 ---
- arch/arm64/boot/dts/freescale/imx8dxl.dtsi | 416 +++++++++++++++++++++++++++++
- 1 file changed, 416 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/imx8dxl.dtsi
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ arch/arm64/boot/dts/freescale/imx8dxl-evk.dts | 167 ++++++++++++++++++++++++++
+ 2 files changed, 168 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8dxl-evk.dts
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8dxl.dtsi b/arch/arm64/boot/dts/freescale/imx8dxl.dtsi
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index a39f0a1..425ca44 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -28,6 +28,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-honeycomb.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-qds.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-rdb.dtb
+ 
++dtb-$(CONFIG_ARCH_MXC) += imx8dxl-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mn-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mn-ddr4-evk.dtb
+diff --git a/arch/arm64/boot/dts/freescale/imx8dxl-evk.dts b/arch/arm64/boot/dts/freescale/imx8dxl-evk.dts
 new file mode 100644
-index 0000000..4d4b287
+index 0000000..1200b70
 --- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/imx8dxl.dtsi
-@@ -0,0 +1,416 @@
++++ b/arch/arm64/boot/dts/freescale/imx8dxl-evk.dts
+@@ -0,0 +1,167 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Copyright 2019~2020 NXP
 + */
 +
-+#include <dt-bindings/clock/imx8-clock.h>
-+#include <dt-bindings/firmware/imx/rsrc.h>
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/pinctrl/pads-imx8dxl.h>
-+#include <dt-bindings/thermal/thermal.h>
++/dts-v1/;
++
++#include "imx8dxl.dtsi"
 +
 +/ {
-+	interrupt-parent = <&gic>;
-+	#address-cells = <2>;
-+	#size-cells = <2>;
++	model = "Freescale i.MX8DXL EVK";
++	compatible = "fsl,imx8dxl-evk", "fsl,imx8dxl";
 +
-+	aliases {
-+		gpio0 = &lsio_gpio0;
-+		gpio1 = &lsio_gpio1;
-+		gpio2 = &lsio_gpio2;
-+		gpio3 = &lsio_gpio3;
-+		gpio4 = &lsio_gpio4;
-+		gpio5 = &lsio_gpio5;
-+		gpio6 = &lsio_gpio6;
-+		gpio7 = &lsio_gpio7;
-+		mmc0 = &usdhc1;
-+		mmc1 = &usdhc2;
-+		mu1 = &lsio_mu1;
-+		serial0 = &adma_lpuart0;
++	chosen {
++		stdout-path = &adma_lpuart0;
 +	};
 +
-+	cpus {
-+		#address-cells = <2>;
-+		#size-cells = <0>;
-+
-+		/* We have 1 clusters with 2 Cortex-A35 cores */
-+		A35_0: cpu@0 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a35";
-+			reg = <0x0 0x0>;
-+			enable-method = "psci";
-+			next-level-cache = <&A35_L2>;
-+			clocks = <&clk IMX_A35_CLK>;
-+			operating-points-v2 = <&a35_opp_table>;
-+			#cooling-cells = <2>;
-+		};
-+
-+		A35_1: cpu@1 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a35";
-+			reg = <0x0 0x1>;
-+			enable-method = "psci";
-+			next-level-cache = <&A35_L2>;
-+			clocks = <&clk IMX_A35_CLK>;
-+			operating-points-v2 = <&a35_opp_table>;
-+			#cooling-cells = <2>;
-+		};
-+
-+		A35_L2: l2-cache0 {
-+			compatible = "cache";
-+		};
++	memory@80000000 {
++		device_type = "memory";
++		reg = <0x00000000 0x80000000 0 0x40000000>;
 +	};
 +
-+	a35_opp_table: opp-table {
-+		compatible = "operating-points-v2";
-+		opp-shared;
++	reg_usdhc2_vmmc: usdhc2-vmmc {
++		compatible = "regulator-fixed";
++		regulator-name = "SD1_SPWR";
++		regulator-min-microvolt = <3000000>;
++		regulator-max-microvolt = <3000000>;
++		gpio = <&lsio_gpio4 30 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		off-on-delay-us = <3480>;
++	};
++};
 +
-+		opp-900000000 {
-+			opp-hz = /bits/ 64 <900000000>;
-+			opp-microvolt = <1000000>;
-+			clock-latency-ns = <150000>;
-+		};
++&adma_lpuart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_lpuart0>;
++	status = "okay";
++};
 +
-+		opp-1200000000 {
-+			opp-hz = /bits/ 64 <1200000000>;
-+			opp-microvolt = <1100000>;
-+			clock-latency-ns = <150000>;
-+			opp-suspend;
-+		};
++&scu_key {
++	status = "okay";
++};
++
++&usdhc1 {
++	pinctrl-names = "default", "state_100mhz", "state_200mhz";
++	pinctrl-0 = <&pinctrl_usdhc1>;
++	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
++	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
++	bus-width = <8>;
++	no-sd;
++	no-sdio;
++	non-removable;
++	status = "okay";
++};
++
++&usdhc2 {
++	assigned-clocks = <&clk IMX_CONN_SDHC1_CLK>;
++	assigned-clock-rates = <200000000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usdhc2>;
++	bus-width = <4>;
++	vmmc-supply = <&reg_usdhc2_vmmc>;
++	cd-gpios = <&lsio_gpio5 1 GPIO_ACTIVE_LOW>;
++	wp-gpios = <&lsio_gpio5 0 GPIO_ACTIVE_HIGH>;
++	status = "okay";
++};
++
++&iomuxc {
++	pinctrl_lpuart0: lpuart0grp {
++		fsl,pins = <
++			IMX8DXL_UART0_RX_ADMA_UART0_RX		0x0600004c
++			IMX8DXL_UART0_TX_ADMA_UART0_TX		0x0600004c
++		>;
 +	};
 +
-+	gic: interrupt-controller@51a00000 {
-+		compatible = "arm,gic-v3";
-+		reg = <0x0 0x51a00000 0 0x10000>, /* GIC Dist */
-+		      <0x0 0x51b00000 0 0xc0000>; /* GICR (RD_base + SGI_base) */
-+		#interrupt-cells = <3>;
-+		interrupt-controller;
-+		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
++	pinctrl_usdhc1: usdhc1grp {
++		fsl,pins = <
++			IMX8DXL_EMMC0_CLK_CONN_EMMC0_CLK	0x06000041
++			IMX8DXL_EMMC0_CMD_CONN_EMMC0_CMD	0x00000021
++			IMX8DXL_EMMC0_DATA0_CONN_EMMC0_DATA0	0x00000021
++			IMX8DXL_EMMC0_DATA1_CONN_EMMC0_DATA1	0x00000021
++			IMX8DXL_EMMC0_DATA2_CONN_EMMC0_DATA2	0x00000021
++			IMX8DXL_EMMC0_DATA3_CONN_EMMC0_DATA3	0x00000021
++			IMX8DXL_EMMC0_DATA4_CONN_EMMC0_DATA4	0x00000021
++			IMX8DXL_EMMC0_DATA5_CONN_EMMC0_DATA5	0x00000021
++			IMX8DXL_EMMC0_DATA6_CONN_EMMC0_DATA6	0x00000021
++			IMX8DXL_EMMC0_DATA7_CONN_EMMC0_DATA7	0x00000021
++			IMX8DXL_EMMC0_STROBE_CONN_EMMC0_STROBE	0x00000041
++		>;
 +	};
 +
-+	pmu {
-+		compatible = "arm,armv8-pmuv3";
-+		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
++	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
++		fsl,pins = <
++			IMX8DXL_EMMC0_CLK_CONN_EMMC0_CLK	0x06000041
++			IMX8DXL_EMMC0_CMD_CONN_EMMC0_CMD	0x00000021
++			IMX8DXL_EMMC0_DATA0_CONN_EMMC0_DATA0	0x00000021
++			IMX8DXL_EMMC0_DATA1_CONN_EMMC0_DATA1	0x00000021
++			IMX8DXL_EMMC0_DATA2_CONN_EMMC0_DATA2	0x00000021
++			IMX8DXL_EMMC0_DATA3_CONN_EMMC0_DATA3	0x00000021
++			IMX8DXL_EMMC0_DATA4_CONN_EMMC0_DATA4	0x00000021
++			IMX8DXL_EMMC0_DATA5_CONN_EMMC0_DATA5	0x00000021
++			IMX8DXL_EMMC0_DATA6_CONN_EMMC0_DATA6	0x00000021
++			IMX8DXL_EMMC0_DATA7_CONN_EMMC0_DATA7	0x00000021
++			IMX8DXL_EMMC0_STROBE_CONN_EMMC0_STROBE	0x00000041
++		>;
 +	};
 +
-+	psci {
-+		compatible = "arm,psci-1.0";
-+		method = "smc";
++	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
++		fsl,pins = <
++			IMX8DXL_EMMC0_CLK_CONN_EMMC0_CLK	0x06000041
++			IMX8DXL_EMMC0_CMD_CONN_EMMC0_CMD	0x00000021
++			IMX8DXL_EMMC0_DATA0_CONN_EMMC0_DATA0	0x00000021
++			IMX8DXL_EMMC0_DATA1_CONN_EMMC0_DATA1	0x00000021
++			IMX8DXL_EMMC0_DATA2_CONN_EMMC0_DATA2	0x00000021
++			IMX8DXL_EMMC0_DATA3_CONN_EMMC0_DATA3	0x00000021
++			IMX8DXL_EMMC0_DATA4_CONN_EMMC0_DATA4	0x00000021
++			IMX8DXL_EMMC0_DATA5_CONN_EMMC0_DATA5	0x00000021
++			IMX8DXL_EMMC0_DATA6_CONN_EMMC0_DATA6	0x00000021
++			IMX8DXL_EMMC0_DATA7_CONN_EMMC0_DATA7	0x00000021
++			IMX8DXL_EMMC0_STROBE_CONN_EMMC0_STROBE	0x00000041
++		>;
 +	};
 +
-+	scu {
-+		compatible = "fsl,imx-scu";
-+		mbox-names = "tx0", "tx1", "tx2", "tx3",
-+			     "rx0", "rx1", "rx2", "rx3",
-+			     "gip3";
-+		mboxes = <&lsio_mu1 0 0
-+			  &lsio_mu1 0 1
-+			  &lsio_mu1 0 2
-+			  &lsio_mu1 0 3
-+			  &lsio_mu1 1 0
-+			  &lsio_mu1 1 1
-+			  &lsio_mu1 1 2
-+			  &lsio_mu1 1 3
-+			  &lsio_mu1 3 3>;
-+
-+		clk: clock-controller {
-+			compatible = "fsl,imx8dxl-clk", "fsl,imx8qxp-clk";
-+			#clock-cells = <1>;
-+			clocks = <&xtal32k &xtal24m>;
-+			clock-names = "xtal_32KHz", "xtal_24Mhz";
-+		};
-+
-+		iomuxc: pinctrl {
-+			compatible = "fsl,imx8dxl-iomuxc";
-+		};
-+
-+		ocotp: imx8qx-ocotp {
-+			compatible = "fsl,imx8dxl-scu-ocotp", "fsl,imx8qxp-scu-ocotp";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+
-+		pd: imx8qx-pd {
-+			compatible = "fsl,imx8dxl-scu-pd", "fsl,imx8qxp-scu-pd";
-+			#power-domain-cells = <1>;
-+		};
-+
-+		scu_key: scu-key {
-+			compatible = "fsl,imx8dxl-sc-key", "fsl,imx-sc-key";
-+			linux,keycodes = <KEY_POWER>;
-+			status = "disabled";
-+		};
-+
-+		rtc: rtc {
-+			compatible = "fsl,imx8dxl-sc-wdt", "fsl,imx8qxp-sc-rtc";
-+		};
-+
-+		tsens: thermal-sensor {
-+			compatible = "fsl,imx8dxl-sc-thermal", "fsl,imx-sc-thermal";
-+			#thermal-sensor-cells = <1>;
-+		};
-+
-+		watchdog {
-+			compatible = "fsl,imx8dxl-sc-wdt", "fsl,imx-sc-wdt";
-+			timeout-sec = <60>;
-+		};
++	pinctrl_usdhc2_gpio: usdhc2gpiogrp {
++		fsl,pins = <
++			IMX8DXL_ENET0_RGMII_TX_CTL_LSIO_GPIO4_IO30	0x00000040
++			IMX8DXL_ENET0_RGMII_TXD1_LSIO_GPIO5_IO00	0x00000021
++			IMX8DXL_ENET0_RGMII_TXD2_LSIO_GPIO5_IO01	0x00000021
++		>;
 +	};
 +
-+	timer {
-+		compatible = "arm,armv8-timer";
-+		interrupts = <GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>, /* Physical Secure */
-+			     <GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>, /* Physical Non-Secure */
-+			     <GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>, /* Virtual */
-+			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>; /* Hypervisor */
++	pinctrl_usdhc2: usdhc2grp {
++		fsl,pins = <
++			IMX8DXL_ENET0_RGMII_RXC_CONN_USDHC1_CLK		0x06000041
++			IMX8DXL_ENET0_RGMII_RX_CTL_CONN_USDHC1_CMD	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD0_CONN_USDHC1_DATA0	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD1_CONN_USDHC1_DATA1	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD2_CONN_USDHC1_DATA2	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD3_CONN_USDHC1_DATA3	0x00000021
++			IMX8DXL_ENET0_RGMII_TXD0_CONN_USDHC1_VSELECT	0x00000021
++		>;
 +	};
 +
-+	xtal32k: clock-xtal32k {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <32768>;
-+		clock-output-names = "xtal_32KHz";
++	pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
++		fsl,pins = <
++			IMX8DXL_ENET0_RGMII_RXC_CONN_USDHC1_CLK		0x06000041
++			IMX8DXL_ENET0_RGMII_RX_CTL_CONN_USDHC1_CMD	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD0_CONN_USDHC1_DATA0	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD1_CONN_USDHC1_DATA1	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD2_CONN_USDHC1_DATA2	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD3_CONN_USDHC1_DATA3	0x00000021
++			IMX8DXL_ENET0_RGMII_TXD0_CONN_USDHC1_VSELECT	0x00000021
++		>;
 +	};
 +
-+	xtal24m: clock-xtal24m {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+		clock-output-names = "xtal_24MHz";
-+	};
-+
-+	adma_subsys: bus@59000000 {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0x59000000 0x0 0x59000000 0x2000000>;
-+
-+		adma_lpcg: clock-controller@59000000 {
-+			compatible = "fsl,imx8dxl-lpcg-adma", "fsl,imx8qxp-lpcg-adma";
-+			reg = <0x59000000 0x2000000>;
-+			#clock-cells = <1>;
-+		};
-+
-+		adma_lpuart0: serial@5a060000 {
-+			compatible = "fsl,imx8dxl-lpuart", "fsl,imx8qxp-lpuart";
-+			reg = <0x5a060000 0x1000>;
-+			interrupts = <GIC_SPI 228 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&adma_lpcg IMX_ADMA_LPCG_UART0_IPG_CLK>,
-+				 <&adma_lpcg IMX_ADMA_LPCG_UART0_BAUD_CLK>;
-+			clock-names = "ipg", "baud";
-+			power-domains = <&pd IMX_SC_R_UART_0>;
-+			status = "disabled";
-+		};
-+	};
-+
-+	conn_subsys: bus@5b000000 {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0x5b000000 0x0 0x5b000000 0x1000000>;
-+
-+		conn_lpcg: clock-controller@5b200000 {
-+			compatible = "fsl,imx8dxl-lpcg-conn", "fsl,imx8qxp-lpcg-conn";
-+			reg = <0x5b200000 0xb0000>;
-+			#clock-cells = <1>;
-+		};
-+
-+		usdhc1: mmc@5b010000 {
-+			compatible = "fsl,imx8dxl-usdhc", "fsl,imx7d-usdhc";
-+			interrupts = <GIC_SPI 138 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x5b010000 0x10000>;
-+			clocks = <&conn_lpcg IMX_CONN_LPCG_SDHC0_IPG_CLK>,
-+				 <&conn_lpcg IMX_CONN_LPCG_SDHC0_PER_CLK>,
-+				 <&conn_lpcg IMX_CONN_LPCG_SDHC0_HCLK>;
-+			clock-names = "ipg", "per", "ahb";
-+			power-domains = <&pd IMX_SC_R_SDHC_0>;
-+			status = "disabled";
-+		};
-+
-+		usdhc2: mmc@5b020000 {
-+			compatible = "fsl,imx8dxl-usdhc", "fsl,imx7d-usdhc";
-+			interrupts = <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x5b020000 0x10000>;
-+			clocks = <&conn_lpcg IMX_CONN_LPCG_SDHC1_IPG_CLK>,
-+				 <&conn_lpcg IMX_CONN_LPCG_SDHC1_PER_CLK>,
-+				 <&conn_lpcg IMX_CONN_LPCG_SDHC1_HCLK>;
-+			clock-names = "ipg", "per", "ahb";
-+			power-domains = <&pd IMX_SC_R_SDHC_1>;
-+			fsl,tuning-start-tap = <20>;
-+			fsl,tuning-step= <2>;
-+			status = "disabled";
-+		};
-+	};
-+
-+	lsio_subsys: bus@5d000000 {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0x5d000000 0x0 0x5d000000 0x1000000>;
-+
-+		lsio_gpio0: gpio@5d080000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d080000 0x10000>;
-+			interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_0>;
-+		};
-+
-+		lsio_gpio1: gpio@5d090000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d090000 0x10000>;
-+			interrupts = <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_1>;
-+		};
-+
-+		lsio_gpio2: gpio@5d0a0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0a0000 0x10000>;
-+			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_2>;
-+		};
-+
-+		lsio_gpio3: gpio@5d0b0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0b0000 0x10000>;
-+			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_3>;
-+		};
-+
-+		lsio_gpio4: gpio@5d0c0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0c0000 0x10000>;
-+			interrupts = <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_4>;
-+		};
-+
-+		lsio_gpio5: gpio@5d0d0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0d0000 0x10000>;
-+			interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_5>;
-+		};
-+
-+		lsio_gpio6: gpio@5d0e0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0e0000 0x10000>;
-+			interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_6>;
-+		};
-+
-+		lsio_gpio7: gpio@5d0f0000 {
-+			compatible = "fsl,imx8dxl-gpio", "fsl,imx35-gpio";
-+			reg = <0x5d0f0000 0x10000>;
-+			interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_GPIO_7>;
-+		};
-+
-+		lsio_mu0: mailbox@5d1b0000 {
-+			compatible = "fsl,imx8dxl-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d1b0000 0x10000>;
-+			interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		lsio_mu1: mailbox@5d1c0000 {
-+			compatible = "fsl,imx8dxl-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d1c0000 0x10000>;
-+			interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+		};
-+
-+		lsio_mu2: mailbox@5d1d0000 {
-+			compatible = "fsl,imx8dxl-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d1d0000 0x10000>;
-+			interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		lsio_mu3: mailbox@5d1e0000 {
-+			compatible = "fsl,imx8dxl-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d1e0000 0x10000>;
-+			interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		lsio_mu4: mailbox@5d1f0000 {
-+			compatible = "fsl,imx8dxl-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d1f0000 0x10000>;
-+			interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+			status = "disabled";
-+		};
-+
-+		lsio_lpcg: clock-controller@5d400000 {
-+			compatible = "fsl,imx8dxl-lpcg-lsio", "fsl,imx8qxp-lpcg-lsio";
-+			reg = <0x5d400000 0x400000>;
-+			#clock-cells = <1>;
-+		};
-+	};
-+
-+	thermal_zones: thermal-zones {
-+		cpu-thermal0 {
-+			polling-delay-passive = <250>;
-+			polling-delay = <2000>;
-+			thermal-sensors = <&tsens IMX_SC_R_SYSTEM>;
-+
-+			trips {
-+				cpu_alert0: trip0 {
-+					temperature = <107000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				cpu_crit0: trip1 {
-+					temperature = <127000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
-+
-+			cooling-maps {
-+				map0 {
-+					trip = <&cpu_alert0>;
-+					cooling-device =
-+						<&A35_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A35_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
-+		};
++	pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
++		fsl,pins = <
++			IMX8DXL_ENET0_RGMII_RXC_CONN_USDHC1_CLK		0x06000041
++			IMX8DXL_ENET0_RGMII_RX_CTL_CONN_USDHC1_CMD	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD0_CONN_USDHC1_DATA0	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD1_CONN_USDHC1_DATA1	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD2_CONN_USDHC1_DATA2	0x00000021
++			IMX8DXL_ENET0_RGMII_RXD3_CONN_USDHC1_DATA3	0x00000021
++			IMX8DXL_ENET0_RGMII_TXD0_CONN_USDHC1_VSELECT	0x00000021
++		>;
 +	};
 +};
 -- 
