@@ -2,72 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E0AC1965FD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 13:06:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2256196601
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 13:07:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Subject:To:From:Message-ID:
-	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	 bh=6DfeFOYHvcHk4JXd1hBtIfqL3FcJUYUdvS/3ugnXLiU=; b=pM2MaWu1z6Qevvp1m2B/d2QcC
-	A/FwauPj20hGL2Dsv2GA6Hw5RFP/KDaruAmWOaTW0c4RjSFEkYSF9RBp+j7RFsRAomMzoD/tTxAsC
-	Gi5CafTMGPVnFzkkH/Vx7n3c7hsY+Xqfnvp/hRRcIyp1N5BOtcJItXizEAlWQQdUwNKUgm1xdD4y/
-	xYrY9dGibnAoGHs+LADD6M7spXamarFZqaKl9NvUm3nAkEfU2yDc0lhOduSaVrrFCPcRCMVOpf/zP
-	oo/kCQRk/nO54cnBy84wi1GddACalhNKef1ffTAhE9Cd8XNgzWr9crR+eeFuenf8fT325SP/UHxpj
-	jSB589BkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Huw9vEalpii6CUfUfdwJ/fJgPFvx0zkgHFGqSItaHAU=; b=DSGw5nsGQ8uTCX
+	Z1mKLVd3FkbRrrObvNBI7LnG3M3qOsHPiWjqyNf1J55OhViuZUVXCRczCTUYvPIgYHezdInUGA26O
+	LEYDxfKX/NNysyLgBf3/Aw+YMa3VdiBMIbMxzQg2YrPk/BdrGCjkGYE6egu0wrBJcLowTFvZ3V3T9
+	SMCnSHDosCJP5OWfUudERcBpsoYR3jjVMpm/8qSxrLqTibtQ0yp/NeROjKrAU7lycGbofjztU36ji
+	J+SiiqEwQI1udKPR9Kv8MnvZFgKwhH9RKpcWwtoks7o7/rVLobL6u78Rh6Tgvn83XfQXEn6Jlzi7V
+	i4yf267VLtuoDZ4Gr/tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIAEh-0002gr-MZ; Sat, 28 Mar 2020 12:06:47 +0000
-Received: from mx.0dd.nl ([2a04:52c0:101:921::25])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIAEV-0002g8-UR; Sat, 28 Mar 2020 12:06:37 +0000
-Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by mx.0dd.nl (Postfix) with ESMTPS id D991D5FA80;
- Sat, 28 Mar 2020 13:06:32 +0100 (CET)
-Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
- secure) header.d=vdorst.com header.i=@vdorst.com header.b="d5KhzrfD"; 
- dkim-atps=neutral
-Received: from www (www.vdorst.com [192.168.2.222])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.vdorst.com (Postfix) with ESMTPSA id 8898B26BF2F;
- Sat, 28 Mar 2020 13:06:32 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com 8898B26BF2F
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
- s=default; t=1585397192;
- bh=SkFKJkY8E//tW+Dis4BsAeTtpnp5rok+icUiekyoMqY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=d5KhzrfDV2pYn4v8aUb10YcAM5RgQx4nRdo3rJTCOeAHtq8+6pxf3L4f3HVGG+axo
- 87VMnC2QH6MLM8mWm1brykFfcIHKmoCbVhvhZZ4uLXX2q2L0B21VUotG56b6W5tQOm
- snd531SrzZjkzmZtFscmkYbSRTP4tGlJxp4E64sbbAm1mrWJuhQ8ogHP84WvLu+ljr
- dNApJyDYX2qHBUW5acnQkuWfQ6AJohK5YTDs+kPno9UYpbTZrcO9uNMGdFcxgY6HhO
- SmRoSc1JJhadIm+XFXwqHYJEm50RdF1GPRWrdgtueOKGdXRNt8iO5MB7EDqOS67foq
- w65Q3uLdPs25A==
-Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) by
- www.vdorst.com (Horde Framework) with HTTPS; Sat, 28 Mar 2020 12:06:32 +0000
-Date: Sat, 28 Mar 2020 12:06:32 +0000
-Message-ID: <20200328120632.Horde.u68iv-GbxRgnXZTYfkNn0hr@www.vdorst.com>
-From: =?utf-8?b?UmVuw6k=?= van Dorst <opensource@vdorst.com>
-To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: Re: [PATCH] MIPS: ralink: mt7621: Fix soc_device introduction
-In-Reply-To: <20200328102715.8309-1-tsbogend@alpha.franken.de>
-User-Agent: Horde Application Framework 5
+	id 1jIAFO-0003AL-LA; Sat, 28 Mar 2020 12:07:30 +0000
+Received: from mail-eopbgr60050.outbound.protection.outlook.com ([40.107.6.50]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIAFD-00039n-Do
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 12:07:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hezhyDnLO38uHZV3MdhooTdwRAGJmI5vgQfYIh1JLFYfBumcpCii59J/KZtSPzXZignmXtJmhatjFtDOs1yQNveHKIIaSX2qNGdfSjn9r8NQ2+3KR8wFaHZhaOp5L/OEwMhDCcTCpLPYwRDQztVmPdeTv69IKskTD5AJ0R0i6M1sEWC51Pg2+abUUvwjyDTRvHU29HdMQ0EGl8ISH2iyCELNdmNo39WnrrWJfcC8lWg5Rb+jr2st6K6JZlpSIRefGea/gCdi6nLeLU9oevB0Xr4nvtGOFZORqCbcnyiZ7b7/hhRN23ZqBE+LGr97kt1UkiJWZhJqqBv/HbIK0IKQ4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BoY8QAaOpmt3mDdPHl2rTvWl0qAUsZFv0J/msLhRr3A=;
+ b=Zasc2GUuhZFstEX1rJrAUk8CiGVMvd2r0iH/br+immwlJxW4Bu/q1z6OezWWO68vGenOgwyMi1Wi3mGUpq6+qBFQh/h5RPhPR8K1oOOF+h20fsntoOZw2OoUz5SzSe2xlVnUIDSTBJd7SEtfZIeqKIjSzpK6+dJEi3FG7U2N3kzOgh1Kj/CFFkMbD0Zt3sRz5dBa4lBnw8C7JsX1+GxnQ4mb641GaKlsZEV1s6JE4dscE8mCnFFUgPndHTV1faoYI1glocfHcMyXt5ecQgd0flFyYuQ4/Pp/6zxDXJgNLoodrjvrofbqnYab7hRZ0Uh4iu9l3G84+V2N3fw5LUkwOQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BoY8QAaOpmt3mDdPHl2rTvWl0qAUsZFv0J/msLhRr3A=;
+ b=O/IzdN/kHQZ11GtFU59/Wq6bSg20mmqsKAyV1GFZ68bpHMX6LN+zy+MqIrnEpA20CLxSCpJZoBdraDjH5PxHBgrHl5pC39bw/UF/3kvnRlZyKJKPRwhZ1ClcUt+Uc3OM4DePU1zu2cdNIN4iLXHoWbwEXahIkpWhTZtPdcjO1go=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3884.eurprd04.prod.outlook.com (52.134.71.151) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.20; Sat, 28 Mar 2020 12:07:15 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2835.025; Sat, 28 Mar 2020
+ 12:07:15 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Adam Ford <aford173@gmail.com>, arm-soc
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: i.MX8MN Errors on 5.6-RC7
+Thread-Topic: i.MX8MN Errors on 5.6-RC7
+Thread-Index: AQHWBKuViOa/vuBTwkqHT9gRBvnGdKhd5Ing
+Date: Sat, 28 Mar 2020 12:07:15 +0000
+Message-ID: <DB3PR0402MB39160D3F0D03B968B7CBE25AF5CD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <CAHCN7xJSKH-gXA5ncFS3h6_2R28rn70O3HfT=ActS1XVgCFSeg@mail.gmail.com>
+In-Reply-To: <CAHCN7xJSKH-gXA5ncFS3h6_2R28rn70O3HfT=ActS1XVgCFSeg@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: e78e4010-d7bb-4138-715d-08d7d3108e1d
+x-ms-traffictypediagnostic: DB3PR0402MB3884:|DB3PR0402MB3884:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3884BDA6638183E4D779C1B8F5CD0@DB3PR0402MB3884.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 03569407CC
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(346002)(136003)(376002)(39860400002)(366004)(396003)(55016002)(44832011)(5660300002)(33656002)(54906003)(316002)(186003)(26005)(7416002)(110136005)(64756008)(66446008)(86362001)(81166006)(66556008)(9686003)(8676002)(76116006)(2906002)(81156014)(52536014)(6506007)(8936002)(66946007)(4326008)(66476007)(478600001)(7696005)(71200400001);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: YvrRvq2UzBcbXsHUVsuJucIn+I/Cq22m2o2303aS0NmGBNkktt+omi/Xl6uSa9bYeHdQwPv0CVLgP5FSgTITDwbecSuHcgvfvo/tDuAzV82khrWsPTw5tk2sLT1LqNPp9IktXFGgc4VMMM4lZeEmVd04IPAJ/x7/+exL12/BVHx6CjWgvmIy1RQduj6mTvEc1jjKtQtYwpBsXC/fJLD0rCn0d9U+vDr32Awp3anOIkjJkwegRn5Nsp6wbnLX/WRj6I2qG80CmUSFJI69HfYn3K2YYXxDJ05gJhjzqsZG2Di2RN/HVKiug8NOIje//oaJibSk9mQElEJ++xGsRo3AwYaiuWw/ee+UbyYzKGo33tF7Dbw2f9xZa4smc8pXpLw/4j9LJO4c+xV8YVHd/n1ekQmy0W1DsFpShEfvB79W8tn6mNQ8kr7D7N25burYpaBh
+x-ms-exchange-antispam-messagedata: 6oa+mqmV4zWy4pMUk59U580Ssj//YMaVilnJzBMbHK8B2T+ALBuBPsznjsW1+Yq09AeMXdXHkFSyQWw1Jn1LP1WqVMm1BdNF8+5o/b0i9eX/CNiGWvzDWuy3NB986U3LRWUyiyXMqfhbH5v08C36Ew==
 MIME-Version: 1.0
-Content-Disposition: inline
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e78e4010-d7bb-4138-715d-08d7d3108e1d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Mar 2020 12:07:15.1157 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: JDKSVam23zX7JnsJD8wMR9wtfA4Frlf+3NgWEbEU2yLRUyyU3CnjAWBw6RhFW+xU5ceNgDQJdHIhyPNSHGVHtA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3884
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_050636_255910_259EA618 
-X-CRM114-Status: GOOD (  13.31  )
+X-CRM114-CacheID: sfid-20200328_050719_650408_E33DDDFC 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.6.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,43 +121,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- Sergio Paracuellos <sergio.paracuellos@gmail.com>,
- linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"; DelSp="Yes"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Adam Ford-BE <aford@beaconembedded.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVGhvbWFzLAoKVGhhbmtzIGZvciBmaXhpbmcgdGhlIGNvbXBpbGUgaXNzdWUgZm9yIG1lLgpO
-b3cgSSBjYW4gbWFrZSBhIGtlcm5lbCBhZ2Fpbi4KClRlc3RlZC1ieTogUmVuw6kgdmFuIERvcnN0
-IDxvcGVuc291cmNlQHZkb3JzdC5jb20+CgpHcmVhdHMsCgpSZW7DqQoKUXVvdGluZyBUaG9tYXMg
-Qm9nZW5kb2VyZmVyIDx0c2JvZ2VuZEBhbHBoYS5mcmFua2VuLmRlPjoKCj4gRGVwZW5kaW5nIG9u
-IHNlbGVjdGVkIFNNUCBjb25maWcgb3B0aW9ucyBzb2NfZGV2aWNlIGRpZG4ndCBnZXQKPiBpbml0
-aWFsaXNlZCBhdCBhbGwuIFdpdGggVVAgY29uZmlnIHZtbGludXggZGlkbid0IGxpbmsgYmVjYXVz
-ZQo+IG9mIG1pc3Npbmcgc29jIGJ1cy4KPgo+IEZpeGVzOiA3MWI5YjVlMDEzMGQgKCJNSVBTOiBy
-YWxpbms6IG10NzYyMTogaW50cm9kdWNlICdzb2NfZGV2aWNlJyAgCj4gaW5pdGlhbGl6YXRpb24i
-KQo+IFNpZ25lZC1vZmYtYnk6IFRob21hcyBCb2dlbmRvZXJmZXIgPHRzYm9nZW5kQGFscGhhLmZy
-YW5rZW4uZGU+Cj4gLS0tCj4gIGFyY2gvbWlwcy9yYWxpbmsvS2NvbmZpZyAgfCAxICsKPiAgYXJj
-aC9taXBzL3JhbGluay9tdDc2MjEuYyB8IDQgKystLQo+ICAyIGZpbGVzIGNoYW5nZWQsIDMgaW5z
-ZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9hcmNoL21pcHMvcmFs
-aW5rL0tjb25maWcgYi9hcmNoL21pcHMvcmFsaW5rL0tjb25maWcKPiBpbmRleCA5NGU5Y2U5OTQ0
-OTQuLjM1YzJlYmQ4ZjA5NCAxMDA2NDQKPiAtLS0gYS9hcmNoL21pcHMvcmFsaW5rL0tjb25maWcK
-PiArKysgYi9hcmNoL21pcHMvcmFsaW5rL0tjb25maWcKPiBAQCAtNTIsNiArNTIsNyBAQCBjaG9p
-Y2UKPiAgCQlzZWxlY3QgQ09NTU9OX0NMSwo+ICAJCXNlbGVjdCBDTEtTUkNfTUlQU19HSUMKPiAg
-CQlzZWxlY3QgSEFWRV9QQ0kgaWYgUENJX01UNzYyMQo+ICsJCXNlbGVjdCBTT0NfQlVTCj4gIGVu
-ZGNob2ljZQo+Cj4gIGNob2ljZQo+IGRpZmYgLS1naXQgYS9hcmNoL21pcHMvcmFsaW5rL210NzYy
-MS5jIGIvYXJjaC9taXBzL3JhbGluay9tdDc2MjEuYwo+IGluZGV4IDkwNTQ2MGFlZWIxZi4uMGFj
-Y2I4MGRiNzA5IDEwMDY0NAo+IC0tLSBhL2FyY2gvbWlwcy9yYWxpbmsvbXQ3NjIxLmMKPiArKysg
-Yi9hcmNoL21pcHMvcmFsaW5rL210NzYyMS5jCj4gQEAgLTI0MywxMiArMjQzLDEyIEBAIHZvaWQg
-cHJvbV9zb2NfaW5pdChzdHJ1Y3QgcmFsaW5rX3NvY19pbmZvICpzb2NfaW5mbykKPgo+ICAJcnQy
-ODgwX3Bpbm11eF9kYXRhID0gbXQ3NjIxX3Bpbm11eF9kYXRhOwo+Cj4gKwlzb2NfZGV2X2luaXQo
-c29jX2luZm8sIHJldik7Cj4gKwo+ICAJaWYgKCFyZWdpc3Rlcl9jcHNfc21wX29wcygpKQo+ICAJ
-CXJldHVybjsKPiAgCWlmICghcmVnaXN0ZXJfY21wX3NtcF9vcHMoKSkKPiAgCQlyZXR1cm47Cj4g
-IAlpZiAoIXJlZ2lzdGVyX3ZzbXBfc21wX29wcygpKQo+ICAJCXJldHVybjsKPiAtCj4gLQlzb2Nf
-ZGV2X2luaXQoc29jX2luZm8sIHJldik7Cj4gIH0KPiAtLQo+IDIuMTYuNAoKCgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi, Adam
+
+> Subject: i.MX8MN Errors on 5.6-RC7
+> 
+> I am getting a few errors on the i.MX8MN:
+> 
+> [    0.000368] Failed to get clock for /timer@306a0000
+> [    0.000380] Failed to initialize '/timer@306a0000': -22
+> [    7.203447] caam 30900000.caam: Failed to get clk 'ipg': -2
+> [    7.334741] caam 30900000.caam: Failed to request all necessary clocks
+> [    7.438651] caam: probe of 30900000.caam failed with error -2
+> [    7.854193] imx-cpufreq-dt: probe of imx-cpufreq-dt failed with error -2
+> 
+> I was curious to know if anyone else is seeing similar errors.  I already
+> submitted a proposed fix for a DMA timeout (not shown here) which
+> matched work already done on i.MX8MQ and i.MX8MM.
+> 
+> I am not seeing huge differences between 8MM and 8MN in the nodes which
+> address the timer, caam or imx-cpufreq-dt.
+> 
+> If anyone has any suggestions, I'd love to try them.
+
+Which board did you try? I just run it on i.MX8MN-EVK board, no such failure:
+
+root@imx8mnevk:~# uname -a
+Linux imx8mnevk 5.6.0-rc7 #621 SMP PREEMPT Sat Mar 28 19:56:30 CST 2020 aarch64 aarch64 aarch64 GNU/Linux
+root@imx8mnevk:~# dmesg | grep fail
+[    0.719353] imx-sdma 302b0000.dma-controller: Direct firmware load for imx/sdma/sdma-imx7d.bin failed with error -2
+[    0.941304] calling  net_failover_init+0x0/0x8 @ 1
+[    0.941310] initcall net_failover_init+0x0/0x8 returned 0 after 0 usecs
+[    1.135885] calling  failover_init+0x0/0x24 @ 1
+[    1.135897] initcall failover_init+0x0/0x24 returned 0 after 6 usecs
+root@imx8mnevk:~#
+
+Thanks,
+Anson
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
