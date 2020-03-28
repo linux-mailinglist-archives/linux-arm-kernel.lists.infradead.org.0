@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90C5019680B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:17:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D25E419680D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 18:17:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qSkcS6OphKdsvxHrs0Y+A93HU2l+n6ZHiGMPUj0adEw=; b=gBZKvVEi4Swc29
-	5yGV6dMWYH0SLMgt1ivUcPpYQ2ygoY2uyKLaZJKcN9ArKJkuNsp0qWJjTZ3A3+Ngsr+XtauJNHc4z
-	EMJFzH3u/IKv5ygdbcCYMXx5BTbBs1e1Y2MdEKT5FYqkZ7ldPjFWOv11+GkEhBPwM0qn4PowxGGW6
-	pDWEBSUKLPmMACo3g9NEKgViS3ERduyaq5x8EXweKNUQaoIYjcjBb3HeNq+3NY6RbpYCm9dLSPAT7
-	++1KUxzrij94hcWkVFPF+CxHmsvczS02ka35Dd6v+MXosEU6svOSv1zC1UuQY8vP4uT2dofJDOpnz
-	PlER2dg8gxw6AaFoVVqw==;
+	List-Owner; bh=qmFvKGXR1ko+xRrofEw299CZa04ob50C28MU8fk2eMA=; b=ZAWvkdl817T4xK
+	ynyMYENUZKvf46RMwleodXl9M5mpPkzDwb3xHItzvgYGYRGrrnfJvEPbEj5ZSLY7z2w/AHhC7AlZR
+	ZaCPZBEHnYkE7ZXCx0P8KoyQQc4xCC5m6F2w9lYSfEjee8laWFxIbiu12BcOMQxkKclax1gf55wwH
+	py8MHARcOIWY0gE2+5dagxiXN0aZSDKmRipMZTQpGoZA00UPxwH1MxtDvNz1Rbu+dREcQ+QZEQTcA
+	y2gZZshhXKBK/p2JVY7aPDET2sc9JGj+a4Ij0mnhOr0a0Ym5978qR1nWMI7bgdSBP6JVRUUUqVOQ4
+	v5oWihpqkQtpJcx6exTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIF4r-0003k9-Ks; Sat, 28 Mar 2020 17:16:57 +0000
+	id 1jIF5M-0004C1-Jk; Sat, 28 Mar 2020 17:17:28 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIF0M-0007Bm-Qw
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:12:20 +0000
+ id 1jIF0O-0007CU-5Q
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 17:12:22 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48qQJJ67Pxz1qrLn;
- Sat, 28 Mar 2020 18:12:16 +0100 (CET)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48qQJL0wN3z1qrLP;
+ Sat, 28 Mar 2020 18:12:18 +0100 (CET)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48qQJJ5xmQz1qqlF;
- Sat, 28 Mar 2020 18:12:16 +0100 (CET)
+ by mail.m-online.net (Postfix) with ESMTP id 48qQJL0dCjz1qqlF;
+ Sat, 28 Mar 2020 18:12:18 +0100 (CET)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id Jos11o47sjBm; Sat, 28 Mar 2020 18:12:15 +0100 (CET)
-X-Auth-Info: So2Cv2WZmuCgWVNtS4eMHwikk7tBICeYBWkieF4qXxM=
+ with ESMTP id JqKN62uOOCDE; Sat, 28 Mar 2020 18:12:16 +0100 (CET)
+X-Auth-Info: Rb1vCFgQlNIEprSyGRApIvfFcr+3Ou+CdsUJEphM1vI=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sat, 28 Mar 2020 18:12:15 +0100 (CET)
+ Sat, 28 Mar 2020 18:12:16 +0100 (CET)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 17/22] ARM: dts: stm32: Enable Bluetooth on AV96
-Date: Sat, 28 Mar 2020 18:11:39 +0100
-Message-Id: <20200328171144.51888-18-marex@denx.de>
+Subject: [PATCH 18/22] ARM: dts: stm32: Add alternate pinmux for LTDC pins
+Date: Sat, 28 Mar 2020 18:11:40 +0100
+Message-Id: <20200328171144.51888-19-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200328171144.51888-1-marex@denx.de>
 References: <20200328171144.51888-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_101219_091092_F694E332 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200328_101220_535626_D22B01DF 
+X-CRM114-Status: GOOD (  10.33  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
@@ -63,6 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  [212.18.0.9 listed in wl.mailspike.net]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -85,10 +86,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The WiFi/Bluetooth chip is attached to USART2 on AV96 as well, describe
-it in DT to make it available. Remove BT LED and turn it into a shutdown
-GPIO, because the GPIO line controls the BT_REG_ON signal. The LED is just
-an indicator connected to the same line, but not the primary function.
+Add new mux option for LTDC pins, this is used on AV96 board.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -98,54 +96,94 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 23 ++++++++++++++-------
- 1 file changed, 16 insertions(+), 7 deletions(-)
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 74 ++++++++++++++++++++++++
+ 1 file changed, 74 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 7b273d0c6385..dc1f59239042 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -21,6 +21,7 @@ aliases {
- 		mmc0 = &sdmmc1;
- 		serial0 = &uart4;
- 		serial1 = &uart7;
-+		serial2 = &usart2;
- 		spi0 = &qspi;
- 	};
- 
-@@ -63,13 +64,6 @@ led4 {
- 			default-state = "off";
- 			panic-indicator;
+diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+index 38ebd1a94577..66ad4f122eb1 100644
+--- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+@@ -532,6 +532,80 @@ pins {
  		};
--
--		led5 {
--			label = "blue:bt";
--			gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "bluetooth-power";
--			default-state = "off";
--		};
  	};
  
- 	sd_switch: regulator-sd_switch {
-@@ -411,3 +405,18 @@ &uart7 {
- 	pinctrl-0 = <&uart7_pins_a>;
- 	status = "okay";
- };
-+
-+/* Bluetooth */
-+&usart2 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&usart2_pins_a>;
-+	pinctrl-1 = <&usart2_sleep_pins_a>;
-+	st,hw-flow-ctrl;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		max-speed = <3000000>;
-+		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
++	ltdc_pins_c: ltdc-c-0 {
++		pins1 {
++			pinmux = <STM32_PINMUX('G',  7, AF14)>; /* LCD_CLK */
++			bias-disable;
++			drive-push-pull;
++			slew-rate = <3>;
++		};
++		pins2 {
++			pinmux = <STM32_PINMUX('I', 10, AF14)>, /* LCD_HSYNC */
++				 <STM32_PINMUX('I',  9, AF14)>, /* LCD_VSYNC */
++				 <STM32_PINMUX('E', 13, AF14)>, /* LCD_DE */
++				 <STM32_PINMUX('G', 13, AF14)>, /* LCD_R0 */
++				 <STM32_PINMUX('H',  3, AF14)>, /* LCD_R1 */
++				 <STM32_PINMUX('H',  8, AF14)>, /* LCD_R2 */
++				 <STM32_PINMUX('H',  9, AF14)>, /* LCD_R3 */
++				 <STM32_PINMUX('A',  5, AF14)>, /* LCD_R4 */
++				 <STM32_PINMUX('H', 11, AF14)>, /* LCD_R5 */
++				 <STM32_PINMUX('H', 12, AF14)>, /* LCD_R6 */
++				 <STM32_PINMUX('E', 15, AF14)>, /* LCD_R7 */
++				 <STM32_PINMUX('E',  5, AF14)>, /* LCD_G0 */
++				 <STM32_PINMUX('B',  0, AF14)>, /* LCD_G1 */
++				 <STM32_PINMUX('H', 13, AF14)>, /* LCD_G2 */
++				 <STM32_PINMUX('E', 11, AF14)>, /* LCD_G3 */
++				 <STM32_PINMUX('H', 15, AF14)>, /* LCD_G4 */
++				 <STM32_PINMUX('H',  4,  AF9)>, /* LCD_G5 */
++				 <STM32_PINMUX('I', 11,  AF9)>, /* LCD_G6 */
++				 <STM32_PINMUX('G',  8, AF14)>, /* LCD_G7 */
++				 <STM32_PINMUX('D',  9, AF14)>, /* LCD_B0 */
++				 <STM32_PINMUX('G', 12, AF14)>, /* LCD_B1 */
++				 <STM32_PINMUX('G', 10, AF14)>, /* LCD_B2 */
++				 <STM32_PINMUX('D', 10, AF14)>, /* LCD_B3 */
++				 <STM32_PINMUX('E', 12, AF14)>, /* LCD_B4 */
++				 <STM32_PINMUX('A',  3, AF14)>, /* LCD_B5 */
++				 <STM32_PINMUX('B',  8, AF14)>, /* LCD_B6 */
++				 <STM32_PINMUX('I',  7, AF14)>; /* LCD_B7 */
++			bias-disable;
++			drive-push-pull;
++			slew-rate = <2>;
++		};
 +	};
-+};
++
++	ltdc_pins_sleep_c: ltdc-c-1 {
++		pins {
++			pinmux = <STM32_PINMUX('G',  7, ANALOG)>, /* LCD_CLK */
++				 <STM32_PINMUX('I', 10, ANALOG)>, /* LCD_HSYNC */
++				 <STM32_PINMUX('I',  9, ANALOG)>, /* LCD_VSYNC */
++				 <STM32_PINMUX('E', 13, ANALOG)>, /* LCD_DE */
++				 <STM32_PINMUX('G', 13, ANALOG)>, /* LCD_R0 */
++				 <STM32_PINMUX('H',  3, ANALOG)>, /* LCD_R1 */
++				 <STM32_PINMUX('H',  8, ANALOG)>, /* LCD_R2 */
++				 <STM32_PINMUX('H',  9, ANALOG)>, /* LCD_R3 */
++				 <STM32_PINMUX('A',  5, ANALOG)>, /* LCD_R4 */
++				 <STM32_PINMUX('H', 11, ANALOG)>, /* LCD_R5 */
++				 <STM32_PINMUX('H', 12, ANALOG)>, /* LCD_R6 */
++				 <STM32_PINMUX('E', 15, ANALOG)>, /* LCD_R7 */
++				 <STM32_PINMUX('E',  5, ANALOG)>, /* LCD_G0 */
++				 <STM32_PINMUX('B',  0, ANALOG)>, /* LCD_G1 */
++				 <STM32_PINMUX('H', 13, ANALOG)>, /* LCD_G2 */
++				 <STM32_PINMUX('E', 11, ANALOG)>, /* LCD_G3 */
++				 <STM32_PINMUX('H', 15, ANALOG)>, /* LCD_G4 */
++				 <STM32_PINMUX('H',  4, ANALOG)>, /* LCD_G5 */
++				 <STM32_PINMUX('I', 11, ANALOG)>, /* LCD_G6 */
++				 <STM32_PINMUX('G',  8, ANALOG)>, /* LCD_G7 */
++				 <STM32_PINMUX('D',  9, ANALOG)>, /* LCD_B0 */
++				 <STM32_PINMUX('G', 12, ANALOG)>, /* LCD_B1 */
++				 <STM32_PINMUX('G', 10, ANALOG)>, /* LCD_B2 */
++				 <STM32_PINMUX('D', 10, ANALOG)>, /* LCD_B3 */
++				 <STM32_PINMUX('E', 12, ANALOG)>, /* LCD_B4 */
++				 <STM32_PINMUX('A',  3, ANALOG)>, /* LCD_B5 */
++				 <STM32_PINMUX('B',  8, ANALOG)>, /* LCD_B6 */
++				 <STM32_PINMUX('I',  7, ANALOG)>; /* LCD_B7 */
++		};
++	};
++
+ 	m_can1_pins_a: m-can1-0 {
+ 		pins1 {
+ 			pinmux = <STM32_PINMUX('H', 13, AF9)>; /* CAN1_TX */
 -- 
 2.25.1
 
