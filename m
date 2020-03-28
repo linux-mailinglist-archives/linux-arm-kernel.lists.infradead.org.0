@@ -2,80 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A985519631D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 03:31:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BC71196323
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 03:34:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=O1BTD9buFlrefijqKHgJ//hxw6akoDei6iX33BCsBRo=; b=dC4lFbyjTpWwE85bH0htTMNqA
-	VztZVy2GwKagfTwFmDtxSXSSJA9xtVrCA01EMDeEHciopkGYrL8TtnMVGYZiapvTwhVOp2SZ9D2jI
-	WQ3YDis+0MZhj4hPquLxbTTXGO+0BiPGBlvWO4IxeXOQuSSwo9fViVRUe+WKR6F2Ws6wLSmpYlhFU
-	DSkI99Icav5kCTfTc+mIlbw5OFJ78lge1IwGV7teQs2y6HQMF1u7VHO1AVOT30ucrxo6gOc0UNdqf
-	KCKTFTEEQQjLLggj5lIV5PQqxOxcvzLH1jsr1gp9UtcV5GcnX5ve9w9+Upwgf/SDjO1T4cAWZGkfx
-	vmzrVT46Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1xJY8F5IjZum6VMplq75ZWN+YX94FakVjRlhjQxIvMQ=; b=T+sbjym1vmNpTW
+	1cLFoa1RuQnlfqUkVUS151VNw8zdkZefyqRO8DxEhkMuaiqRfDaTWkEqfs8rITRr9EVDIwVe07b+K
+	4Ebo6kTsP00OFT6kmvweek+7TO3BIwJ8WjeaTtoDWbI45+wYlj7uTwCR+hBWhuR863mkUakqiwCpj
+	ks+OVYxiUrEzywwGfN3UBT9xFbbGmrSt66Ck0JkouKKWToJg2hTpU5GQaN5s74f9TpX0toO6cbfg1
+	RXmiaK/8zx5mQx3WSY6YLFLBwnEZvkBLuJS2k7JTh43EIagPUSmvGnMOa5xckCegpIgTo65T+3txd
+	F3TqiQxhJYgul0VRClYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI1G2-0001PY-8x; Sat, 28 Mar 2020 02:31:34 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jI1In-0001pi-MA; Sat, 28 Mar 2020 02:34:25 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI1Fr-0001Ot-Rf
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 02:31:28 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1585362686; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=Of5ocX2I8A4I7iRsteJ/OLVXwTCgwzzL3AIvQdlsXYI=;
- b=Hq3jHHmPXTvLI3zzKF/DAWkZmVDeHVA5y1iMEgqFvkEgkP7uOWz7G+u0OM9g84DM2YnhY8c+
- J8aGow8WuacUNUOSK23d0a5NQXTeyTuxZadmmNxLwXyxMBCS7eAIzn3USjAnz2hSjLoGWupa
- tTp2GeaelSVWmImXb0JfmgcJcE4=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e7eb6e1.7fcbd6496960-smtp-out-n04;
- Sat, 28 Mar 2020 02:30:57 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 86A4AC44788; Sat, 28 Mar 2020 02:30:56 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id EA983C433D2;
- Sat, 28 Mar 2020 02:30:54 +0000 (UTC)
+ id 1jI1If-0001oG-6q
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 02:34:18 +0000
+Received: by mail-qt1-x841.google.com with SMTP id t9so10356804qto.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 27 Mar 2020 19:34:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h9FUiJnnr5PX2/0tdiYpKEU/w0yDcw3x3MQa3IPxCF8=;
+ b=dw8jxJiID7bRFJDPdTiFwwqJqlfjX8HMUqDHr9GcqNPu75kEYsuaXT2+KaS0/6++f4
+ LZOvHSW2v/zvknpClBWQM7Zwx2+FNLjxlA8T4OzUs+ZspSE8yczmu1lZzpfUnrd1JIpN
+ jHB0qR5Byz+lihhGJomIy1bm6TjbuT8BXUq1FJgWjArqYzbhn+0j3Uif6epT2udRORX1
+ 2bp26WjVxHi4lry9YPi/tjIjiuneeEAkvp+T4qGJsaizPBQmQzmyuP4nLjEfNMTz1XNl
+ /nRYEEPf8u62CGK78uTIo+0C3WvACle7rdEmQk0xSmvSgiOuwY19xNY33f9WPYr6OpRH
+ vjJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h9FUiJnnr5PX2/0tdiYpKEU/w0yDcw3x3MQa3IPxCF8=;
+ b=MQDQFnbcjS0wepUUTAEic6Xh5ZtFVp2SIiQYPoPV5V6JGKNGr6+ZnWXDjqIzNgPiG8
+ UACf8zqWdS2svM0IV3ixDVEb0tnnBtlNrldgGQTGGUv7boGBT5+JFpvkGsE9NQxC/u9/
+ 3l2Zq0YTsqmNcabXsVRveGw1gGSyA1NsScHKDGDwxCgMHZadYDHmHOBPCuzY3HBuz88X
+ PVPh/m84CHZ/95Wa+Lz3cfjE1fiKsrh/0r/dQbX8twl1sQurQPjcpsD0SczMIwo1d/OS
+ Bno31cXPjMaPfbIi/MwZ7gCki1H23H1wbIRQivTlhrTLnv1MDgGIW3Kw1rRZOOQLP32n
+ 6Wgg==
+X-Gm-Message-State: ANhLgQ1N4IQuX3xcOCmg6aoBcgYLo83vAu5daj0Sl81RtIPTjFwv/NaK
+ mx5c/igzTjqTgGMaSsIhTRF0LBRFsUg=
+X-Google-Smtp-Source: ADFU+vv8zDTvr87UFUjjRLpX/3/jOQn9JKQUGc8o7COhSoa7xaMmmQ5xMhKlPTxhG/DT6jD+iHVfxg==
+X-Received: by 2002:ac8:3565:: with SMTP id z34mr2390096qtb.168.1585362853420; 
+ Fri, 27 Mar 2020 19:34:13 -0700 (PDT)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id p191sm5069913qke.6.2020.03.27.19.34.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 27 Mar 2020 19:34:12 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: dts: imx8mn: Change SDMA1 ahb clock for imx8mn
+Date: Fri, 27 Mar 2020 21:33:53 -0500
+Message-Id: <20200328023353.156929-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Date: Sat, 28 Mar 2020 10:30:54 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v1 1/1] scsi: ufs: set device as active power mode after
- resetting device
-In-Reply-To: <d5096a58cce94669fef459834134ffab@codeaurora.org>
-References: <20200327095835.10293-1-stanley.chu@mediatek.com>
- <d5096a58cce94669fef459834134ffab@codeaurora.org>
-Message-ID: <354de5d2a3bc4d19d2972885fa9189d1@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_193126_692533_03E9C5FB 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200327_193417_276631_3F1A225F 
+X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aford173[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,108 +100,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Adam Ford <aford173@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ aford@beaconembedded.com, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stanley,
+Using SDMA1 with UART1 is causing a "Timeout waiting for CH0" error.
+This patch changes to ahb clock from SDMA1_ROOT to AHB which fixes the
+timeout error.
 
-On 2020-03-28 10:14, Can Guo wrote:
-> On 2020-03-27 17:58, Stanley Chu wrote:
->> Currently ufshcd driver assumes that bInitPowerMode parameter
->> is not changed by any vendors thus device power mode can be set as
->> "Active" during initialization.
->> 
->> According to UFS JEDEC specification, device power mode shall be
->> "Active" after HW Reset is triggered if the bInitPowerMode parameter
->> in Device Descriptor is default value.
->> 
->> By above description, we can set device power mode as "Active" after
->> device reset is triggered by vendor's callback. With this change,
->> the link startup performance can be improved in some cases
->> by not setting link_startup_again as true in ufshcd_link_startup().
->> 
->> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
->> ---
->>  drivers/scsi/ufs/ufshcd.c | 13 -------------
->>  drivers/scsi/ufs/ufshcd.h | 14 ++++++++++++++
->>  2 files changed, 14 insertions(+), 13 deletions(-)
->> 
->> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
->> index 227660a1a446..f0a35b289b7c 100644
->> --- a/drivers/scsi/ufs/ufshcd.c
->> +++ b/drivers/scsi/ufs/ufshcd.c
->> @@ -171,19 +171,6 @@ enum {
->>  #define ufshcd_clear_eh_in_progress(h) \
->>  	((h)->eh_flags &= ~UFSHCD_EH_IN_PROGRESS)
->> 
->> -#define ufshcd_set_ufs_dev_active(h) \
->> -	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
->> -#define ufshcd_set_ufs_dev_sleep(h) \
->> -	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
->> -#define ufshcd_set_ufs_dev_poweroff(h) \
->> -	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
->> -#define ufshcd_is_ufs_dev_active(h) \
->> -	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
->> -#define ufshcd_is_ufs_dev_sleep(h) \
->> -	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
->> -#define ufshcd_is_ufs_dev_poweroff(h) \
->> -	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
->> -
->>  struct ufs_pm_lvl_states ufs_pm_lvl_states[] = {
->>  	{UFS_ACTIVE_PWR_MODE, UIC_LINK_ACTIVE_STATE},
->>  	{UFS_ACTIVE_PWR_MODE, UIC_LINK_HIBERN8_STATE},
->> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
->> index b7bd81795c24..7a9d1d170719 100644
->> --- a/drivers/scsi/ufs/ufshcd.h
->> +++ b/drivers/scsi/ufs/ufshcd.h
->> @@ -129,6 +129,19 @@ enum uic_link_state {
->>  #define ufshcd_set_link_hibern8(hba) ((hba)->uic_link_state = \
->>  				    UIC_LINK_HIBERN8_STATE)
->> 
->> +#define ufshcd_set_ufs_dev_active(h) \
->> +	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
->> +#define ufshcd_set_ufs_dev_sleep(h) \
->> +	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
->> +#define ufshcd_set_ufs_dev_poweroff(h) \
->> +	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
->> +#define ufshcd_is_ufs_dev_active(h) \
->> +	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
->> +#define ufshcd_is_ufs_dev_sleep(h) \
->> +	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
->> +#define ufshcd_is_ufs_dev_poweroff(h) \
->> +	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
->> +
->>  /*
->>   * UFS Power management levels.
->>   * Each level is in increasing order of power savings.
->> @@ -1091,6 +1104,7 @@ static inline void
->> ufshcd_vops_device_reset(struct ufs_hba *hba)
->>  {
->>  	if (hba->vops && hba->vops->device_reset) {
->>  		hba->vops->device_reset(hba);
->> +		ufshcd_set_ufs_dev_active(hba);
->>  		ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, 0);
->>  	}
->>  }
-> 
-> Reviewed-by: Can Guo <cang@codeaurora.org>
+Fixes: 6c3debcbae47 ("arm64: dts: freescale: Add i.MX8MN dtsi support")
 
-I guess what you also want my patch -
+Signed-off-by: Adam Ford <aford173@gmail.com>
 
-"scsi: ufs: full reinit upon resume if link was off"
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+index a44b5438e842..882e913436ca 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+@@ -661,7 +661,7 @@ sdma1: dma-controller@30bd0000 {
+ 				reg = <0x30bd0000 0x10000>;
+ 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clk IMX8MN_CLK_SDMA1_ROOT>,
+-					 <&clk IMX8MN_CLK_SDMA1_ROOT>;
++					 <&clk IMX8MN_CLK_AHB>;
+ 				clock-names = "ipg", "ahb";
+ 				#dma-cells = <3>;
+ 				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
+-- 
+2.25.1
 
-Please help review it, thanks.
-
-Best regard,
-Can Guo.
 
 _______________________________________________
 linux-arm-kernel mailing list
