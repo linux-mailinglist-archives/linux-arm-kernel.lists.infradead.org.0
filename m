@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C28BD19688A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 19:32:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7478119688B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 19:32:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+eMpYigXj7Mx3VNSruhA6ie0LTHdqiUTJhwF9DSlWuY=; b=lNKW7FxaalSgew
-	dzFxKs7TjSU3ghZIR5w4kscIKlEr+DVTtWfQVgM6rd/lLkR1BY57yTZTn+8woamgM3OeyqFD3D8dL
-	sBhF4kqpkMU5X3RKOgxNdXnyXrTJK5tTtqKJd8biWsSJrdAO+6GSqJp0XHwIdZdsR3Uh0GmHq5Cc+
-	y9eHGAJ2NY76myNELQDviBBFGtjxY9NKSn4nXBVBJJCaRxHy9e55eVp3zZUHzVmkDOk6luAZYaqSz
-	EeYIhWV+3UEJcYU3vD53RiX4GmshZyo5+0DJ+3PjS46irKEz2RB9hRMGCjU9rV+t2UYi+oGVL1rQj
-	4EiPGXZP61p0+Mw7HFvQ==;
+	List-Owner; bh=MJ5zir79lsm3L4szA8vg3F7YbGxdg3xYgrewICGrGeI=; b=ngRXAq1Lvd7/Lw
+	CBFcPSeXAQrFc2xI/BcVW9zoJypTewxZToqWO/lYsJxfdsYksnlBthH0qA+wGw8mxKxeKOktwHqZa
+	yFKnXe2rGkMsMDFAnJ3RObOEXgkA4IjfgOY4tAWmHxVBh0Zg6Tk0TaBEi1PA2htejZ8gXlc+XprzL
+	oO9shnqDsj2qViQDAycwTwqnfjsHAVpfP3udiV3jXW8EpjwLx/cwILZwehVCAPWWWx4bW4O3u3mDp
+	DUjkb6z8ra994jGeLd/QBOAc5765GQzAy4nz2Dy2/wpjtqDnaGmh6m0CR4OrIxMKXsAvtS46+BDc3
+	7HZDoIQ2GTBZ9MX4O5Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIGFz-0004tv-1a; Sat, 28 Mar 2020 18:32:31 +0000
-Received: from mail-co1nam11on2096.outbound.protection.outlook.com
- ([40.107.220.96] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1jIGGE-00056q-Ne; Sat, 28 Mar 2020 18:32:46 +0000
+Received: from mail-co1nam11on2092.outbound.protection.outlook.com
+ ([40.107.220.92] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIGF8-0004Kb-7Q
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 18:31:39 +0000
+ id 1jIGFA-0004MF-EN
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 18:31:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EDWcLUiYdVbmmk9244F99Yej5dzQ3VqUFptkMkx3JPAGxSlZKc6ICpImnvzf4YGiY3gNGFzFOvNwj9cGgWSJUIZgnbLTzHMLQ4nHoGsjb8xa4NOC0/oGuBKTXTg/tlquNbYMBkP2g/1Ep89kGyOOJRJLx+nrTbye2l1Syilpze/79Y6oQCtpRJ0QGacWMQKE1mfGI2kiioA+3jTqS4ZRHypuj8QT+2bIG1aRhUKbNgx8zVvQHEavRu5ji8rqQe+lyPYulBjBABhuKTXRhySmqpXeboS55+sSnEzwaApHKXQd/e3c90J1cnC6sxy4kHpzdVxZzdq5eUx5ACp40zD6qQ==
+ b=C7wllvL8E4KTet3K+0qgYvvmRLPbMSSFFwLhWIvNIpgqZNV5HhunCR9XP8u+DFmFpf0AQNzggwmq+j+2QBGHX+KQdZcwPcQ5I2GbAq4tqeKNsezHZ63G88hrjyXenN3bPct82g1YwL+qs1tx0EJKHp891J3LQNYI2oUbi6J3lNmFaE/kBip0tuZjORdbiWhklzZIAWPrhL/6+ghLJV63Iken4LTgrCx2spuCHjhqREHyr0ctrNSFySRAbgmqt8Z4OzndQ9tRGjURWO1UBye+WBrgt/dxmLSxSHohxf9j2YAGGsWbcRc6z+/NfMm4P+FvYxX98B2C/RDdjeTwMSNNXA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FjVQ/uaBIJ19PqNoBkM7nhlQleLo1yXyrpNO385VDjc=;
- b=bMz0fgWecoJKyoSJFrdhnbFbY8Y1z8ye58eiVylI3S7ty3yuss5OryPXyneJ4chClcKTHh65dL8u3lHeTQzQoqjpk9MPbQ7/4J8fB1x1MruImw66fz/fi8iTIFpWvaB/z7LuIYV+gS4N1LoCM9sRjvA2SwmbYPMdAD5xJHL8jK3l43iK1pgCFDxuiHNE+Wb0CrrNu8ngRs2hGD2cvXKPoYkCSwC+MT7ubY3w5kT8tU5CGF6sZHy150d/2431gP58RFAgClgMGcxVKWQwGYDM127cWkqMbB0c5tfaPndYvv39V4UXlVoNaA1Ddme6pkXdhdwiJA784GCNXs5OK1TPcg==
+ bh=E/gkBkcFa6a+S7Gw0WirIGQRifjfKk9azTENeVmvEq0=;
+ b=hE7a7qc5qHb8ol9gCi50H6/WulWmZtNkLd/r+vdbeQ3SVzmNxkKY4gaJ/zUxafsCI+zCcgAwIR70t5GP0dexi7jTsZs3cszFEubderW8nYFXVq4W/jwp0b3ZKo/DM/BTaU4i5TONVocrZPIiEeE9zGTWV5XYDVoMlE8P55fBcQcv+Kd6iUcnwIGhMKXHAO1r3IUrury3IXngsHbgvDjtDqhd80aGGDrS8ZSNCnX51D9b3sZp9FBiuYtIdoiUUqq5A5BYJ69r6z+jE2D9P6S1mVrWTJKUi+bX+N9gkduNc7ax+VVxvX87O1F4Md1An3gLNjgRBLTlf52U3RrBp+NVQA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
  header.from=os.amperecomputing.com; dkim=pass
@@ -38,19 +38,19 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=os.amperecomputing.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FjVQ/uaBIJ19PqNoBkM7nhlQleLo1yXyrpNO385VDjc=;
- b=bJhpgXxRmmrmqdaLdauM2xUEHeid5rb45EeWULqNWCGET4gH1VABsgrzO9yvVyJPI+fgVdj0Fp0O9MI97+T7C3I0TNpbtRvQtZRVhOE4VTYjBYcDdLmMEJTqndPxuRHRwPZm33WN88DnlnG8I35eM8TruvFLWS8KWGC3muCteI4=
+ bh=E/gkBkcFa6a+S7Gw0WirIGQRifjfKk9azTENeVmvEq0=;
+ b=PhQhSw4xWAm+ylZb2i3S+XUNhlCRk2z09CYkPcEoAd9iTbuM04cFagbqv8OHSwT8XBmjCQ4UiEOWoeiVPYojZhV1OWTNTarylluzMYHwiBvQhIEoU45JZPKty+K1wGULi4YLiQPvGvLrE7rypnkY67cKbw4mbMJgUUNwQvOV8Wo=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=hoan@os.amperecomputing.com; 
 Received: from BYAPR01MB5494.prod.exchangelabs.com (2603:10b6:a03:127::30) by
  BYAPR01MB5205.prod.exchangelabs.com (2603:10b6:a03:7f::23) with
  Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2856.19; Sat, 28 Mar 2020 18:31:37 +0000
+ 15.20.2856.19; Sat, 28 Mar 2020 18:31:39 +0000
 Received: from BYAPR01MB5494.prod.exchangelabs.com
  ([fe80::a979:b2e2:fdaf:1ccb]) by BYAPR01MB5494.prod.exchangelabs.com
  ([fe80::a979:b2e2:fdaf:1ccb%6]) with mapi id 15.20.2835.026; Sat, 28 Mar 2020
- 18:31:37 +0000
+ 18:31:39 +0000
 From: Hoan Tran <Hoan@os.amperecomputing.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>,
@@ -67,9 +67,9 @@ To: Catalin Marinas <catalin.marinas@arm.com>,
  Heiko Carstens <heiko.carstens@de.ibm.com>,
  Vasily Gorbik <gor@linux.ibm.com>,
  Christian Borntraeger <borntraeger@de.ibm.com>
-Subject: [PATCH v3 2/5] powerpc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
-Date: Sat, 28 Mar 2020 11:31:19 -0700
-Message-Id: <1585420282-25630-3-git-send-email-Hoan@os.amperecomputing.com>
+Subject: [PATCH v3 3/5] x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+Date: Sat, 28 Mar 2020 11:31:20 -0700
+Message-Id: <1585420282-25630-4-git-send-email-Hoan@os.amperecomputing.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
 References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
@@ -81,46 +81,45 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from engdev037.mustanglab.us.amcc (4.28.12.214) by
  CY4PR13CA0013.namprd13.prod.outlook.com (2603:10b6:903:32::23) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2878.9 via Frontend Transport; Sat, 28 Mar 2020 18:31:34 +0000
+ 15.20.2878.9 via Frontend Transport; Sat, 28 Mar 2020 18:31:37 +0000
 X-Mailer: git-send-email 1.8.3.1
 X-Originating-IP: [4.28.12.214]
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: ea46e873-041f-48b0-164f-08d7d3463f98
+X-MS-Office365-Filtering-Correlation-Id: f8d6d229-6332-44f9-8341-08d7d3464113
 X-MS-TrafficTypeDiagnostic: BYAPR01MB5205:|BYAPR01MB5205:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <BYAPR01MB52050A0B9C2CDAF1C5B773AAF1CD0@BYAPR01MB5205.prod.exchangelabs.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:3383;
+X-Microsoft-Antispam-PRVS: <BYAPR01MB5205DA9091ABEB7C4C27C4CFF1CD0@BYAPR01MB5205.prod.exchangelabs.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
 X-Forefront-PRVS: 03569407CC
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:BYAPR01MB5494.prod.exchangelabs.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10019020)(4636009)(376002)(396003)(136003)(39840400004)(366004)(346002)(6512007)(7416002)(107886003)(16526019)(6486002)(26005)(81166006)(4326008)(8936002)(2616005)(6666004)(186003)(956004)(8676002)(81156014)(316002)(66476007)(52116002)(6506007)(66946007)(66556008)(86362001)(478600001)(5660300002)(110136005)(2906002)(4744005)(921003)(1121003);
+ SFS:(10019020)(4636009)(376002)(396003)(136003)(39840400004)(366004)(346002)(6512007)(7416002)(107886003)(16526019)(6486002)(26005)(81166006)(4326008)(8936002)(2616005)(6666004)(186003)(956004)(8676002)(81156014)(316002)(66476007)(52116002)(6506007)(66946007)(66556008)(86362001)(478600001)(5660300002)(110136005)(2906002)(921003)(1121003);
  DIR:OUT; SFP:1102; 
 Received-SPF: None (protection.outlook.com: os.amperecomputing.com does not
  designate permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: nnQ9O4/9RaN+55U7qI3FtQuurwZ2oheTnrJySffzSG1DGVMxszQGp+E7QLRJwb6clHUSa70oal4ziiStljmuLaosuKlQry5EZ3Ky1Ny9frgEmbNpABtRzhTWFIRuqVcrM15F7PF5mN49Jzty0EDA4nYFwim8JhoZicd+R5/xhpq/8/gp66V6uceErbN1GbQHtJgHFvbNU2hFcgo/AOWPE41RCSGhK+f2vogVqV4ZOp08KNr9XqUhTsAwSGxKTwaMoPw8kZz3KgNFPpmmMGBKe5Re938vDdu0KfULXERfhgi55wBV9NqbFw05WfUzCmdihWk4rbjkqPfj1GbXwjacIo+9RpkU77Fv8dTSg/jJ2mShasaM8JYePiaksIdRkmKq3JHMkXjudZd0RlAAkJEmSacKAXzY1NWm1jJ4/6H65xFGZGSP6dYB5ejzygrXnV9VCj3nKT1sUr6Hd+tcG1wYNhoY6bghWxaeepcfatG5uBYM9GHVnNpXjdhDEL68KHZg
-X-MS-Exchange-AntiSpam-MessageData: 9mIHvr08bz9lai7JZ8QsGYMRdIa10iPgkLj96ciZMDJqBliKcSHqIWAG4MwXiHDUqZUiFVgell4ZfI+L+R4h7asghi1xtFVMfEDGibgpUnsjcJiKwSuUdOl6a38YrC1wow49o/7AkXJRvtHKkm6yDg==
+X-Microsoft-Antispam-Message-Info: GVKo0fNEyEQjMd0nAUq29RkKT+yjJWFOoVRc4doSzt/FZRdTJMiMtNJJLpzNavGZnAt5mZAU0G2n01kxyD0Ai6B5LYiolpjudVwpO9NfdnClP3mozWQYtvGy86LP+DfouusLc4eIfpCQSK5yv7Ihp/IKNSD6kJnIPn01pzL89UPN10ZZ5mc69LRikmHATlUH5DkxpHysMsRUWplSsbyE/xAZ6hisdo76A1kaMcUor0FXxUI3WwaVCC8TkYftZQH8FeskunLKEETQS/k/ydhL6va/5xSaa5I4p8CqmybDiwQsrDKGiaWu8V3olbS0ES3R4by5rBrMoTAkw9+BOeT2Wj/zTyS0IBORH/bdqLM1vqn5nD5KxK8RgjdEtlh5YEVdPlohoL3WOsMqLNQlR5JGo8YAp3y3hmMnUMAV7CH+RwLPdDJoN1OPlwrZstA0yQ8xp/B7aF0VkM2tjQP/N9z/1O5Bmm3qYrKULi+673kuHqZRUSU5Q1EF+RNQGUX5GgUf
+X-MS-Exchange-AntiSpam-MessageData: ti6mu5uqT1IczkB/3/V/ZTlz+i0K/DXXcpm3OdnR36fSoW2d0j+JcVwfYId9HoUnyl6UwCXVtx+nPuXaH5XEKNblFXLi5Ll1snFM53H4U+r9hixP2z+r/6kk0wdO+Y4OiguK7/lo0OanevI39Uz/qg==
 X-OriginatorOrg: os.amperecomputing.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ea46e873-041f-48b0-164f-08d7d3463f98
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Mar 2020 18:31:36.7805 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f8d6d229-6332-44f9-8341-08d7d3464113
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Mar 2020 18:31:39.2721 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kSxY5CrOZ2+MVvfPQwfaaD0CgWIOuLYUbiRJ3iHoCsk5/knbW4wHO9sinbRW3irFsmTk8HIRZUYbSUuhtRWV2LFpPleZlXdvfS3jju8X+QI=
+X-MS-Exchange-CrossTenant-UserPrincipalName: fUYFwzkNh7CMfPLX+4RfDiZyB6NR0GUcf2MtHSJrAax7kM5urrIbhcZM7/jvr+hwZqQxqUw8jCBk/jBsMOxF81O5mzFz/aZtsphyccB4+KU=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB5205
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_113138_282566_7EA9E9AB 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200328_113140_515918_CEA9A16F 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.220.96 listed in list.dnswl.org]
+ no trust [40.107.220.92 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -150,21 +149,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove CONFIG_NODES_SPAN_OTHER_NODES as it's enabled by
-default with NUMA.
+Remove CONFIG_NODES_SPAN_OTHER_NODES as it's enabled
+by default. It is now enabled for x86(32 bit) configurations
+and do not depend on X64_64_ACPI_NUMA config.
+Because of that, on NUMA enabled system, early_pfn_in_nid() 
+function is called by memmap_init_zone() during boot-time.
+It doesn't affect the performance at run-time.
 
 Signed-off-by: Hoan Tran <Hoan@os.amperecomputing.com>
 ---
- arch/powerpc/Kconfig | 9 ---------
+ arch/x86/Kconfig | 9 ---------
  1 file changed, 9 deletions(-)
 
-diff --git a/arch/powerpc/Kconfig b/arch/powerpc/Kconfig
-index e2a4121..4af2699 100644
---- a/arch/powerpc/Kconfig
-+++ b/arch/powerpc/Kconfig
-@@ -686,15 +686,6 @@ config ARCH_MEMORY_PROBE
- 	def_bool y
- 	depends on MEMORY_HOTPLUG
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index 5e89499..a938738 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -1581,15 +1581,6 @@ config X86_64_ACPI_NUMA
+ 	---help---
+ 	  Enable ACPI SRAT based node topology detection.
  
 -# Some NUMA nodes have memory ranges that span
 -# other nodes.  Even though a pfn is valid and
@@ -173,11 +176,11 @@ index e2a4121..4af2699 100644
 -# for details.
 -config NODES_SPAN_OTHER_NODES
 -	def_bool y
--	depends on NEED_MULTIPLE_NODES
+-	depends on X86_64_ACPI_NUMA
 -
- config STDBINUTILS
- 	bool "Using standard binutils settings"
- 	depends on 44x
+ config NUMA_EMU
+ 	bool "NUMA emulation"
+ 	depends on NUMA
 -- 
 1.8.3.1
 
