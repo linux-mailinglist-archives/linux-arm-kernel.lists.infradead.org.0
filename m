@@ -2,55 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A484196DB9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 15:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D5DF196DD8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 16:14:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S73IRjvRj5mksrURfHRLIPD/D/gO4rt4YAa5JTIglFw=; b=hjXyBIuYkV6r50
-	H3xdWy6/Tc9W4ecMoqQriUcFwH9DC+7EqE2UNR67A/igV58Ku9VJiNc3o0otDWOpm59GC6MDPKP+X
-	eUU5Lf5ypRiqBM2zcUD9ioQW9tDALc+OSrG5CICdCdB4bfSTfeCuB/u1oX5NX0pzM6NJILR+CLZg9
-	eP2MZL16J7Y8Qqtq9e+GwFI25VEwhU/hmPyiHIfDJ1pheJ8tM3hdnG0EGidlMpq79Fqu2VuE8ryzD
-	J0H3z86ylPq3cgDK3prC03BKGx7Dt528gQontXM63B40hheVsMIeoanAbD/Ayyrhprt5SkkCa1nXz
-	/4gUmSPbbbSyl1rLkaLA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mf/vhGxy3PpetwlNphTJN0npRQshD9lGhT6TYkI9dkw=; b=hpg
+	yIdGhE+HtnFMcH8E+TpsubJA7Ry2z7WXbFguZmNmODwYWRzze3/LF798gCuo2AfYJkVqwr3X7Fs36
+	/HmpbDQYnYLrPt61buT1SVBPKsnP1fSrPuXnulqi/UFCfGUtuxRwFdZqPNOw0sllwKoV3L6Pn4NbM
+	aZ8Kom/ahrQNQJjjasuO8Fbzh8bgK27LB9HjDPNwlUAj0UZUpZcxC8uuYSbxMyiPzuVMweA225/dt
+	YghqyPXGCC9l9TEtv4Dz65/ctR1A0qmFS41CXudK5b01oET4lhoTLEC1zVtELn22M0jZqAjqFz+M9
+	+iyCBEDU3qlFpQXAIRnK7t6lCs5fhUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIYDT-00021H-3R; Sun, 29 Mar 2020 13:43:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIYDF-00020V-Ca; Sun, 29 Mar 2020 13:42:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B302231B;
- Sun, 29 Mar 2020 06:42:50 -0700 (PDT)
-Received: from [10.163.1.70] (unknown [10.163.1.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5731E3F71F;
- Sun, 29 Mar 2020 06:42:43 -0700 (PDT)
-Subject: Re: [PATCH 0/2] mm/thp: Rename pmd_mknotpresent() as pmd_mknotvalid()
-To: linux-mm@kvack.org
-References: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <2e67f1b8-d196-89e4-aee1-f552db1433a0@arm.com>
-Date: Sun, 29 Mar 2020 19:12:35 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <1584680057-13753-1-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
+	id 1jIYhZ-0002rE-6K; Sun, 29 Mar 2020 14:14:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIYhQ-0002qt-TC
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 14:14:06 +0000
+Received: from e123331-lin.home
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 43EDA2073E;
+ Sun, 29 Mar 2020 14:14:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585491243;
+ bh=4XpHVvC8TcjRHMXA07MsHC1KMbRM57UlVFxVOGGaVZQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=faOX4sSFauxZrAmlwYEdXcv9jA5gJ1oyD12Tkd2n7uqk4ze2vIMaI0GvBGeYgLOLA
+ Q0Kx9A6pErdgIP0IUF2D0F/q2cYf47TDuxHtUswHjSlbtHB3q5jgAQ5sXI91Hr8hhJ
+ KJmqJIY04zTZsNR/SGMsNjpGSe2IC8woM8oEyo+Q=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
+Date: Sun, 29 Mar 2020 16:12:58 +0200
+Message-Id: <20200329141258.31172-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_064253_471357_6BEA77A1 
-X-CRM114-Status: GOOD (  13.52  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200329_071404_985943_9C7858CF 
+X-CRM114-Status: GOOD (  13.04  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,45 +73,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Will Deacon <will@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linux-snps-arc@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- nouveau@lists.freedesktop.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Vineet Gupta <vgupta@synopsys.com>, linux-mips@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ Ard Biesheuvel <ardb@kernel.org>, kernel-hardening@lists.openwall.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
+different permissions (r-x for .text, r-- for .rodata, rw- for .data,
+etc) are rounded up to 2 MiB so they can be mapped more efficiently.
+In particular, it permits the segments to be mapped using level 2
+block entries when using 4k pages, which is expected to result in less
+TLB pressure.
 
+However, the mappings for the bulk of the kernel will use level 2
+entries anyway, and the misaligned fringes are organized such that they
+can take advantage of the contiguous bit, and use far fewer level 3
+entries than would be needed otherwise.
 
-On 03/20/2020 10:24 AM, Anshuman Khandual wrote:
-> This series renames pmd_mknotpresent() as pmd_mknotvalid(). Before that it
-> drops an existing pmd_mknotpresent() definition from powerpc platform which
-> was never required as it defines it's pmdp_invalidate() through subscribing
-> __HAVE_ARCH_PMDP_INVALIDATE. This does not create any functional change.
-> 
-> This rename was suggested by Catalin during a previous discussion while we
-> were trying to change the THP helpers on arm64 platform for migration.
-> 
-> https://patchwork.kernel.org/patch/11019637/
-> 
-> This series is based on v5.6-rc6.
-> 
-> Boot tested on arm64 and x86 platforms.
-> Built tested on many other platforms including the ones changed here.
+This makes the value of this feature dubious at best, and since it is not
+enabled in defconfig or in the distro configs, it does not appear to be
+in wide use either. So let's just remove it.
 
-Gentle ping, any updates regarding this ?
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm64/Kconfig.debug                  | 13 -------------
+ arch/arm64/include/asm/memory.h           | 12 +-----------
+ drivers/firmware/efi/libstub/arm64-stub.c |  8 +++-----
+ 3 files changed, 4 insertions(+), 29 deletions(-)
+
+diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
+index 1c906d932d6b..a1efa246c9ed 100644
+--- a/arch/arm64/Kconfig.debug
++++ b/arch/arm64/Kconfig.debug
+@@ -52,19 +52,6 @@ config DEBUG_WX
+ 
+ 	  If in doubt, say "Y".
+ 
+-config DEBUG_ALIGN_RODATA
+-	depends on STRICT_KERNEL_RWX
+-	bool "Align linker sections up to SECTION_SIZE"
+-	help
+-	  If this option is enabled, sections that may potentially be marked as
+-	  read only or non-executable will be aligned up to the section size of
+-	  the kernel. This prevents sections from being split into pages and
+-	  avoids a potential TLB penalty. The downside is an increase in
+-	  alignment and potentially wasted space. Turn on this option if
+-	  performance is more important than memory pressure.
+-
+-	  If in doubt, say N.
+-
+ config DEBUG_EFI
+ 	depends on EFI && DEBUG_INFO
+ 	bool "UEFI debugging"
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index 4d94676e5a8b..3b34f7bde2f2 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -119,22 +119,12 @@
+ 
+ /*
+  * Alignment of kernel segments (e.g. .text, .data).
+- */
+-#if defined(CONFIG_DEBUG_ALIGN_RODATA)
+-/*
+- *  4 KB granule:   1 level 2 entry
+- * 16 KB granule: 128 level 3 entries, with contiguous bit
+- * 64 KB granule:  32 level 3 entries, with contiguous bit
+- */
+-#define SEGMENT_ALIGN		SZ_2M
+-#else
+-/*
++ *
+  *  4 KB granule:  16 level 3 entries, with contiguous bit
+  * 16 KB granule:   4 level 3 entries, without contiguous bit
+  * 64 KB granule:   1 level 3 entry
+  */
+ #define SEGMENT_ALIGN		SZ_64K
+-#endif
+ 
+ /*
+  * Memory types available.
+diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
+index db0c1a9c1699..fc9f8ab533a7 100644
+--- a/drivers/firmware/efi/libstub/arm64-stub.c
++++ b/drivers/firmware/efi/libstub/arm64-stub.c
+@@ -75,14 +75,12 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 
+ 	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && phys_seed != 0) {
+ 		/*
+-		 * If CONFIG_DEBUG_ALIGN_RODATA is not set, produce a
+-		 * displacement in the interval [0, MIN_KIMG_ALIGN) that
+-		 * doesn't violate this kernel's de-facto alignment
++		 * Produce a displacement in the interval [0, MIN_KIMG_ALIGN)
++		 * that doesn't violate this kernel's de-facto alignment
+ 		 * constraints.
+ 		 */
+ 		u32 mask = (MIN_KIMG_ALIGN - 1) & ~(EFI_KIMG_ALIGN - 1);
+-		u32 offset = !IS_ENABLED(CONFIG_DEBUG_ALIGN_RODATA) ?
+-			     (phys_seed >> 32) & mask : TEXT_OFFSET;
++		u32 offset = (phys_seed >> 32) & mask;
+ 
+ 		/*
+ 		 * With CONFIG_RANDOMIZE_TEXT_OFFSET=y, TEXT_OFFSET may not
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
