@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B33E196BD1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 10:06:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5575196BD2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 10:06:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=N+OB3valEMpCBvrkRc6E6X10uSOwJT8ikdAx7f6vwMM=; b=ebH
-	w21cxJNrA4vKCKVlzUnNqHs+6UJz3//GAzSo1Wvi9IKnT50cCvzDYxXLwaEgy/kSuCWw/NTzFFmbe
-	1X0f4zZVF7bmn+/Bk1rG1T/7xWHvlLBD6qKL4vmBp7x/Jm9gT8gc1Eg3Li2jlyQo1K3H9kIzMc4hA
-	GzEWE7ixpPSBplSUxjb9aOouafz4gza6ybQD2BcGpbWEN/+I60IgHYc9YewbDp1zHKHz/pidUixtG
-	w1pYcuSQm5oGEiC0jHUxL4CV3CSC+BTvrlAjeOxb9+KGC93gSKONJ4ZWslJQm2vJVJE4Iy/CfEsRb
-	G0DwXVQRLt0CoeGj0Vf+BVcLNyxj4Sw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=WcGaEl87K042/MtrdICWqUpP1FLYrfym7DVuAA7QYHA=; b=i2AGMpBJEYBFvHPWylhdc+wFSR
+	WbylygaxVSvWNRb/YhZ7RYYqzwfH0Na3t37SjgYWtfecJ8IOX25ZUme4ig/FtMhLsYWP+WKjQbOPj
+	/WFb/KB2pSSZhvjWGQLFJWHmp3JEJdTDxXl+k2Mne8SH/g1pIa13J9l39jDZ5gQWfkdAHWsge010l
+	IHDY8ksc9qBWvD6bL/HC0UgjGWRdKG9y/YCmVHJDvHEzVep8EoTBeZM9tamPf4BP8ltEkzGkqXYP5
+	8vd8uiWfSWlvbiuh+lvAq6xBowpCrBgdaj4FUqXt6bxWSL/KCMq6r35gTVpQWKX91b/Qa4IVB6yLI
+	08YsndGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jISxM-0002OP-G2; Sun, 29 Mar 2020 08:06:08 +0000
+	id 1jISxe-0002UE-85; Sun, 29 Mar 2020 08:06:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jISxD-0002Nj-Hl
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 08:06:01 +0000
+ id 1jISxF-0002O4-7d
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 08:06:02 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9640120714;
- Sun, 29 Mar 2020 08:05:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 96A2120732;
+ Sun, 29 Mar 2020 08:05:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585469159;
- bh=XtKxxKStYvAuyHKcLIj+Sw19XKUh1BKFz9RqPo1YXxc=;
- h=From:To:Cc:Subject:Date:From;
- b=tnaNOdfV3yNZp6iQ96Fx4BNewK/leQWezZwhCD9Ju2cb4b1ZqlBF8rN1k14dKToaj
- Kue0PkXrwL9qdIEr7f7rIhrjk2Ram1Gf9dkTuzdd0EWLn1hHwD7s6LCln+Dx3gqkch
- tRjpv7O+RUOqxYw+V21QgH/nvgmG/C5OvH4rz1r0=
+ s=default; t=1585469161;
+ bh=GbZAaOXgR3jz+8nkwefkR612DbLVdMAnKZhYHRnkl8s=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=zk/uI30qXFimglH5Ti+VIiM5pUoCKU5NADoPlxz396SSOsDLncaK3L1SSgO/yGKMN
+ G38KT4Fr3VvufkJb8o5kNls+WlZSHVkPn5kPqrUOIpQrM/iUaiiC7VXMIzGkN1GMvJ
+ YVZaBGhQgRdISXjwx2V6SlgFyJcp9mna5T1F0Wj4=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org, Ingo Molnar <mingo@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [GIT PULL 0/2] EFI touchups for v5.7
-Date: Sun, 29 Mar 2020 10:05:42 +0200
-Message-Id: <20200329080544.25715-1-ardb@kernel.org>
+Subject: [PATCH 1/2] efi/libstub/arm64: avoid image_base value from
+ efi_loaded_image
+Date: Sun, 29 Mar 2020 10:05:43 +0200
+Message-Id: <20200329080544.25715-2-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200329080544.25715-1-ardb@kernel.org>
+References: <20200329080544.25715-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_010559_610081_2F7F361E 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200329_010601_291462_0AA73D2D 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -82,40 +85,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Ingo, Thomas,
+Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
+PE/COFF entrypoint") did some code refactoring to get rid of the
+EFI entry point assembler code, and in the process, it got rid of the
+assignment of image_addr to the value of _text. Instead, it switched
+to using the image_base field of the efi_loaded_image struct provided
+by UEFI, which should contain the same value.
 
-Please pull the below into tip:efi/core - it is a pair of fixes for the
-code that has been queued up for v5.7
+However, Michael reports that this is not the case: older GRUB builds
+corrupt this value in some way, and since we can easily switch back to
+referring to _text to discover this value, let's simply do that.
 
-Thanks,
-Ard.
+While at it, fix another issue in commit 9f9223778ef3, which may result
+in the unassigned image_addr to be misidentified as the preferred load
+offset of the kernel, which is unlikely but will cause a boot crash if
+it does occur.
 
+Finally, let's add a warning if the _text vs. image_base discrepancy is
+detected, so we can tell more easily how widespread this issue actually
+is.
 
-The following changes since commit d5528d5e91041e68e8eab9792ce627705a0ed273:
-
-  partitions/efi: Fix partition name parsing in GUID partition entry (2020-03-08 10:00:09 +0100)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/efi/efi.git efi-next
-
-for you to fetch changes up to c6987a415f71352fe1483b09d8b0027ccf3b2175:
-
-  efi/libstub/arm: fix spurious message that an initrd was loaded (2020-03-29 09:48:42 +0200)
-
-----------------------------------------------------------------
-Some EFI followup fixes for v5.7:
-- fix arm64 boot regression on broken, older versions of GRUB
-- suppress spurious 'initrd loaded from command line' print
-
-----------------------------------------------------------------
-Ard Biesheuvel (2):
-      efi/libstub/arm64: avoid image_base value from efi_loaded_image
-      efi/libstub/arm: fix spurious message that an initrd was loaded
-
- drivers/firmware/efi/libstub/arm-stub.c   | 2 +-
+Reported-by: Michael Kelley <mikelley@microsoft.com>
+Tested-by: Michael Kelley <mikelley@microsoft.com>
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
  drivers/firmware/efi/libstub/arm64-stub.c | 7 ++++++-
- 2 files changed, 7 insertions(+), 2 deletions(-)
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
+index 9254cd8ab2d3..db0c1a9c1699 100644
+--- a/drivers/firmware/efi/libstub/arm64-stub.c
++++ b/drivers/firmware/efi/libstub/arm64-stub.c
+@@ -116,6 +116,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 		 * Mustang), we can still place the kernel at the address
+ 		 * 'dram_base + TEXT_OFFSET'.
+ 		 */
++		*image_addr = (unsigned long)_text;
+ 		if (*image_addr == preferred_offset)
+ 			return EFI_SUCCESS;
+ 
+@@ -140,7 +141,11 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 		}
+ 		*image_addr = *reserve_addr + TEXT_OFFSET;
+ 	}
+-	memcpy((void *)*image_addr, image->image_base, kernel_size);
++
++	if (image->image_base != _text)
++		pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
++
++	memcpy((void *)*image_addr, _text, kernel_size);
+ 
+ 	return EFI_SUCCESS;
+ }
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
