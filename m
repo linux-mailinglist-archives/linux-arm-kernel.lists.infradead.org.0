@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5575196BD2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 10:06:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F326196BD3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 10:06:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WcGaEl87K042/MtrdICWqUpP1FLYrfym7DVuAA7QYHA=; b=i2AGMpBJEYBFvHPWylhdc+wFSR
-	WbylygaxVSvWNRb/YhZ7RYYqzwfH0Na3t37SjgYWtfecJ8IOX25ZUme4ig/FtMhLsYWP+WKjQbOPj
-	/WFb/KB2pSSZhvjWGQLFJWHmp3JEJdTDxXl+k2Mne8SH/g1pIa13J9l39jDZ5gQWfkdAHWsge010l
-	IHDY8ksc9qBWvD6bL/HC0UgjGWRdKG9y/YCmVHJDvHEzVep8EoTBeZM9tamPf4BP8ltEkzGkqXYP5
-	8vd8uiWfSWlvbiuh+lvAq6xBowpCrBgdaj4FUqXt6bxWSL/KCMq6r35gTVpQWKX91b/Qa4IVB6yLI
-	08YsndGw==;
+	bh=PYwGlOntfiP/l/xnr+Pl9mjGgSC/89puxcPWy0NiAZQ=; b=c4+Ho6+agDysv178TP3OmWHVKA
+	vlGNZp+jLw1wW2F9ie+AngFbCKAlfiUHew/QxSB6vOWMvVsyoiGRgKHKB/lvLo0WO1u8HsCYPPf1C
+	EqK36jVAF3y/MMn5yRYI9KgHly9LVgXOH00VQOhKN57GkvAtGag+cI19ROzlC5zR+Q6jnpf2RHxEf
+	0rtoNP1KWgRwunAlmG3l7IMXldl3Ke8XRTjeZtiFZoHbKz77/uNI5mw8lvnjL0r1cDRp2GPK/2ITC
+	lE5e6xEzHp6FWTTUv8Qz6JWrqIUAf1hGYYF54ENVxLXIZMbKcsHzYwa5RINM0Dj+6XQT/1G4wSMW7
+	+dXU9TwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jISxe-0002UE-85; Sun, 29 Mar 2020 08:06:26 +0000
+	id 1jISxq-0002jt-GB; Sun, 29 Mar 2020 08:06:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jISxF-0002O4-7d
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 08:06:02 +0000
+ id 1jISxG-0002OO-WF
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 08:06:04 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 96A2120732;
- Sun, 29 Mar 2020 08:05:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5FECF20781;
+ Sun, 29 Mar 2020 08:06:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585469161;
- bh=GbZAaOXgR3jz+8nkwefkR612DbLVdMAnKZhYHRnkl8s=;
+ s=default; t=1585469162;
+ bh=X5cIBfHwpsTFUJFdIop7vTAf2qO10L+TXiiakFrcIl0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zk/uI30qXFimglH5Ti+VIiM5pUoCKU5NADoPlxz396SSOsDLncaK3L1SSgO/yGKMN
- G38KT4Fr3VvufkJb8o5kNls+WlZSHVkPn5kPqrUOIpQrM/iUaiiC7VXMIzGkN1GMvJ
- YVZaBGhQgRdISXjwx2V6SlgFyJcp9mna5T1F0Wj4=
+ b=OKiSF8ptWTp9+s+Vp9JqSSPuQHeB4QIuiIYEceG2aPi6uMxXcT3C4imf+vsqRaGoE
+ XjQAR//8EzT+Dezb7fkQ9aX9Hz9CrHZxDmfNVtwsT4Z8KamEBzV2MucB2JEBIbbE7A
+ DK7E6g6ghMG7SH7QdmSEl/2rck0num4fh1p7tI2g=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org, Ingo Molnar <mingo@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 1/2] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-Date: Sun, 29 Mar 2020 10:05:43 +0200
-Message-Id: <20200329080544.25715-2-ardb@kernel.org>
+Subject: [PATCH 2/2] efi/libstub/arm: fix spurious message that an initrd was
+ loaded
+Date: Sun, 29 Mar 2020 10:05:44 +0200
+Message-Id: <20200329080544.25715-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200329080544.25715-1-ardb@kernel.org>
 References: <20200329080544.25715-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_010601_291462_0AA73D2D 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20200329_010603_055324_D60A2FAB 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -85,58 +85,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
-PE/COFF entrypoint") did some code refactoring to get rid of the
-EFI entry point assembler code, and in the process, it got rid of the
-assignment of image_addr to the value of _text. Instead, it switched
-to using the image_base field of the efi_loaded_image struct provided
-by UEFI, which should contain the same value.
+Commit ec93fc371f014a6f ("efi/libstub: Add support for loading the initrd
+from a device path") added a diagnostic print to the ARM version of the
+EFI stub that reports whether an initrd has been loaded that was passed
+via the command line using initrd=. However, it failed to take into
+account that, for historical reasons, the file loading routines return
+EFI_SUCCESS when no file was found, and the only way to decide whether
+a file was loaded is to inspect the 'size' argument that is passed by
+reference. So let's inspect this returned size, to prevent the print
+from being emitted even if no initrd was loaded at all.
 
-However, Michael reports that this is not the case: older GRUB builds
-corrupt this value in some way, and since we can easily switch back to
-referring to _text to discover this value, let's simply do that.
-
-While at it, fix another issue in commit 9f9223778ef3, which may result
-in the unassigned image_addr to be misidentified as the preferred load
-offset of the kernel, which is unlikely but will cause a boot crash if
-it does occur.
-
-Finally, let's add a warning if the _text vs. image_base discrepancy is
-detected, so we can tell more easily how widespread this issue actually
-is.
-
-Reported-by: Michael Kelley <mikelley@microsoft.com>
-Tested-by: Michael Kelley <mikelley@microsoft.com>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/firmware/efi/libstub/arm64-stub.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ drivers/firmware/efi/libstub/arm-stub.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-index 9254cd8ab2d3..db0c1a9c1699 100644
---- a/drivers/firmware/efi/libstub/arm64-stub.c
-+++ b/drivers/firmware/efi/libstub/arm64-stub.c
-@@ -116,6 +116,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 		 * Mustang), we can still place the kernel at the address
- 		 * 'dram_base + TEXT_OFFSET'.
- 		 */
-+		*image_addr = (unsigned long)_text;
- 		if (*image_addr == preferred_offset)
- 			return EFI_SUCCESS;
- 
-@@ -140,7 +141,11 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+diff --git a/drivers/firmware/efi/libstub/arm-stub.c b/drivers/firmware/efi/libstub/arm-stub.c
+index 13559c7e6643..99a5cde7c2d8 100644
+--- a/drivers/firmware/efi/libstub/arm-stub.c
++++ b/drivers/firmware/efi/libstub/arm-stub.c
+@@ -277,7 +277,7 @@ efi_status_t efi_entry(efi_handle_t handle, efi_system_table_t *sys_table_arg)
+ 		} else if (status == EFI_NOT_FOUND) {
+ 			status = efi_load_initrd(image, &initrd_addr, &initrd_size,
+ 						 ULONG_MAX, max_addr);
+-			if (status == EFI_SUCCESS)
++			if (status == EFI_SUCCESS && initrd_size > 0)
+ 				pr_efi("Loaded initrd from command line option\n");
  		}
- 		*image_addr = *reserve_addr + TEXT_OFFSET;
- 	}
--	memcpy((void *)*image_addr, image->image_base, kernel_size);
-+
-+	if (image->image_base != _text)
-+		pr_efi_err("FIRMWARE BUG: efi_loaded_image_t::image_base has bogus value\n");
-+
-+	memcpy((void *)*image_addr, _text, kernel_size);
- 
- 	return EFI_SUCCESS;
- }
+ 		if (status != EFI_SUCCESS)
 -- 
 2.17.1
 
