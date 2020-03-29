@@ -2,95 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84F86196C0B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 11:21:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B377D196C5C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 12:09:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LzfBLT/tqYPMg2U/VRFwbmJb+/9oGsX/D4D02DYXtkg=; b=HGN2T3KmU/RoOL
-	Zk3IvCRR0C8Utjq+Wgi/VZFvX+B+JrfHKBfl/SR/ZIhgDhKGuQk2coRa/BPJM4ikwO00b0JdGSPeh
-	0s432IL+k18vXKCdJSFjmsiLT9KPIbIq+f0P8l45Zv8JskryL8tkxzWLhrKyobvMAk/9lgG1O74Ab
-	sJXM1ZJazXf+f7TSyo6l0TE+b23Udz03x0waWpg1cXKPUueCFXL3apixcEj8zAdFAWgKK7OUSvGLK
-	tRq9OzrytVKqTwYZLKctSyq0tJ+6vAa7XPNGCV6HjT6Xl6YDVYtr6WoSzh5lEdml+nUJRP6NKja+v
-	BBEv7JKEyVMBe0LEg22A==;
+	List-Owner; bh=a8rk3paAf+LopgAWMGcoxZeOakzyZfsRYxLz/CCZNg4=; b=e5yEotw77PAG8d
+	FOPLIxuJkVcSAyNItfeRBRo4sp/k4FttV2dM4sH7kb08geQT5K1M9s406tIUrC+n4Y5r1dBQIRKJZ
+	Zok4AzyP8qItrVqyUteyAjUBWoonbR8S9lvjoSvEG7r/YxwTB7QXmBAYs/nLS76sjq0TCM6GT1jSF
+	4TOCly6yV6ywjTJeJo7m7jXs7z0x0ZAExdVEWcgu/QARGnQcEsTkmgKkW/68jdwSny5lX+Hen6KMg
+	dgl6T67AxCahng3z+RuGXFnQOFY5AQwKJiXvIF8rbclUmu6VG+TvHD7w7UOici1zTkxsKkdrdVulE
+	fplb5zLRU4y/qjhheh+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIU8B-0002Fq-7h; Sun, 29 Mar 2020 09:21:23 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jIUsJ-00009l-4a; Sun, 29 Mar 2020 10:09:03 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIU84-0002Ev-ML
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 09:21:18 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g62so17778708wme.1
+ id 1jIUsA-00009M-7t
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 10:08:55 +0000
+Received: by mail-wr1-x432.google.com with SMTP id h15so17300659wrx.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Mar 2020 02:21:15 -0700 (PDT)
+ Sun, 29 Mar 2020 03:08:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=x53chI72Z4A5z3wT784xdPISVx+MMGzvobvSOBptE6g=;
- b=FnIrRA8BoFYj2RWpJ93LBznjfYgaBi8gS487V11zI073uv6ZjT6fmm2u9BwonL5VUY
- 1lGpxYjz+TIxyNeexabK4v9UKbHKki3PAxlmGGSGPym4tXG6GL1sgKoUPvHghFBMX7JM
- cPrLvxLtKm6Jm6ODZv4owOGZOISVkpaMaKg4C3KjcC4DVJl04WBoljGuF7CgjTWMSWjm
- mzddCajS+9G3olNXVUMPSs0AN5m2ylu5FhOkM1Bj843r3zZQ6Z/oswLxMm66QsiRVlKF
- dpKQiYNzboWBbY2lPXnN7hqU3YhEoeBT8TojL85NRefvN2VUSAQgdxyNfcC5t8nG+zIy
- m1WA==
+ bh=I9LZfTAUvj4l0VFm3AzcLI9QplZWD2P9UnW3NXnGF9M=;
+ b=IRmzCr7QdBPOyGuZ5M1RkAwJpRbbix79U7fIQ6ghXzQ7pguJ/22GcCaC344QywSAOo
+ hrHpccMZXSsfsQsQENVBc6hNyq8f9rpaKDh2WKMLKwNyYjGjx+Jz9tWGvg93kMyCYvXj
+ eCA6sgxw95beYHYE2+B259K7y5jGeumGkvto/RHp9tUQ2k24zPtewI6nUR/OWfq0/z2X
+ pyaIjv+9cooPvqucta+HJC7jCMH6V8tINdE+dQNlgbJD4exMQOx0IlJzGtpdnzNy7mlz
+ WX18RLh7eOIi0P9Zk5wFJNlOU52lLbcGmXBfGw6lVeYm6M0o+4vI0aGp027y9NwAtL5W
+ Vnxg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=x53chI72Z4A5z3wT784xdPISVx+MMGzvobvSOBptE6g=;
- b=PncveKmIpXem5d1jEskiM2YeKiMNfXf3SD/LaFbYAovnWW4mflOE7sDGToF6fFF5cu
- lurHEOxIB4hwX9uyVsNGLnBHkQcDgk1YEUumGvVDPyQkchF1ApWqxpX8eZgbIq6qt5sH
- 0CLE7995QMkrh/wcPfPU4csPk83JCZ+SdSe/ODIXwBlR4UpdDEhFHGvWMEYbYw+nBFcU
- eDQPLY9goJUS9L/D+w7Ma7fJnTMOYCKVjPwUQWGoDLHogqiFmCv58dG7L49fahBvXDAi
- WCCrG9a/eVdGtalwY1j+tXzwVo2I4zuRMkmH6O+3U/rzINcF61xtKbtLq1wiR/fSWDFD
- wwLg==
-X-Gm-Message-State: ANhLgQ1/6cEAgfaEBI66pektgbw4K7Rt6kmX3K+lh2y7jrXURIm/awS3
- y5BUZ2zHE6snfUwMJCbryM8=
-X-Google-Smtp-Source: ADFU+vtjvZzrvTpz+nRmLxc2pCZraCHS4XlmLXYuXqI1Tsm2DenOisGvZgfCT5iEiIBT6h0G/5Oq0g==
-X-Received: by 2002:a1c:b7c2:: with SMTP id h185mr7752149wmf.67.1585473673928; 
- Sun, 29 Mar 2020 02:21:13 -0700 (PDT)
-Received: from eichest-laptop (77-57-203-148.dclient.hispeed.ch.
- [77.57.203.148])
- by smtp.gmail.com with ESMTPSA id x1sm9392665wmj.24.2020.03.29.02.21.13
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=I9LZfTAUvj4l0VFm3AzcLI9QplZWD2P9UnW3NXnGF9M=;
+ b=rDQGeQ+JDz63xedAJLZFjbDTCPp+nXxfVjmkdLMhvd8KW5RRDs/6hykUWvv5BVxWRQ
+ 7QNpXWODXg1DOCcF9smg2JthmMOTXFstKHUSo+CZUao4g9JotceMluP5Dc0sGtP1d3EB
+ /JIPQRLvQQBr3K8NvjqCGiLyA60GDvN1rlFo74NifO09wHIDhoKh19ibi3/rNPOZw386
+ f4VjoPTXVhb57M4ZTo+0zBox4sj15EWgl6qT6s2hqPXEjghX92MVRbjgpWjWp/DbsnHV
+ eiPvmEnEvRTb/ok4T4iHK3lWG6jyLtectnuAFVvrm26if6rg2xGIfMRZCGcqul5MZD11
+ ml/Q==
+X-Gm-Message-State: ANhLgQ1j4XOIa2CeMX3or8+0beLgiuqewbqAzKFIAjoYkZl9XZrZiROB
+ njcVAHNu98rg/3t//oN59t4=
+X-Google-Smtp-Source: ADFU+vtLoYmfS50rmRhDXGJyAsseWR8u6C6stoPJ0RB3K2Qwq2KscVn83d0QVWvlOEyONyM+l7KebQ==
+X-Received: by 2002:adf:8182:: with SMTP id 2mr8689172wra.37.1585476531346;
+ Sun, 29 Mar 2020 03:08:51 -0700 (PDT)
+Received: from gmail.com (54033286.catv.pool.telekom.hu. [84.3.50.134])
+ by smtp.gmail.com with ESMTPSA id k3sm17517162wrw.61.2020.03.29.03.08.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Mar 2020 02:21:13 -0700 (PDT)
-Date: Sun, 29 Mar 2020 11:20:33 +0200
-From: Stefan Eichenberger <eichest@gmail.com>
-To: Rabeeh Khoury <rabeeh@solid-run.com>
-Subject: Re: [PATCH] arm64: dts: clearfog-gt-8k: fix ge phy reset pin
-Message-ID: <20200329092032.GA4620@eichest-laptop>
-References: <20200328212115.12477-1-eichest@gmail.com>
- <877dz3el4k.fsf@tarshish>
- <CA+j0otmO9QEKuYGk54wO_su0Kyzdxaf9ZB34SMBXQEih+46qRw@mail.gmail.com>
+ Sun, 29 Mar 2020 03:08:50 -0700 (PDT)
+Date: Sun, 29 Mar 2020 12:08:49 +0200
+From: Ingo Molnar <mingo@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [GIT PULL 0/2] EFI touchups for v5.7
+Message-ID: <20200329100848.GC93574@gmail.com>
+References: <20200329080544.25715-1-ardb@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+j0otmO9QEKuYGk54wO_su0Kyzdxaf9ZB34SMBXQEih+46qRw@mail.gmail.com>
+In-Reply-To: <20200329080544.25715-1-ardb@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_022116_755837_272F5BE3 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200329_030854_287726_C3E36F4C 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:432 listed in]
+ [list.dnswl.org]
+ 0.0 FSL_HELO_FAKE          No description available.
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eichest[at]gmail.com]
+ provider [mingo.kernel.org[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,61 +103,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Baruch Siach <baruch@tkos.co.il>,
- Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
- Gregory Clement <gregory.clement@bootlin.com>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>, linux-efi@vger.kernel.org,
+ Borislav Petkov <bp@alien8.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rabeeh and Baruch
 
-On Sun, Mar 29, 2020 at 11:42:35AM +0300, Rabeeh Khoury wrote:
-> On Sun, Mar 29, 2020 at 9:22 AM Baruch Siach <baruch@tkos.co.il> wrote:
-> >
-> > Hi Stefan,
-> >
-> > On Sun, Mar 29 2020, eichest@gmail.com wrote:
-> > > From: Stefan Eichenberger <eichest@gmail.com>
-> > >
-> > > According to the ClearFog-GT-8K-rev-1_1-Simplified-Schematic the reset
-> > > pin for the gigabit phy is MPP62 and not MPP43.
-> >
-> > Have you tested that on real hardware?
-> >
-> > The 1Gb PHY reset on my Clearfog GT-8K is connected to MPP43. Russell's
-> > commit 46f94c7818e7 ("arm64: dts: clearfog-gt-8k: set gigabit PHY reset
-> > deassert delay") indicates that this is the case on his board as well.
-> >
-> > In case there was a hardware change between board revisions, we need
-> > another dtb for that revision.
+* Ard Biesheuvel <ardb@kernel.org> wrote:
+
+> Hello Ingo, Thomas,
 > 
-> It's a bug in the simplified schematics since that schematics is based
-> on rev 1.0 and not rev 1.1 as claimed.
+> Please pull the below into tip:efi/core - it is a pair of fixes for the
+> code that has been queued up for v5.7
 > 
-> In rev 1.0; the 1Gbps phy reset was connected to MPP62; but that MPP
-> is not functional as a GPIO when selecting MPP[56:61] as SD card.
-> Due to that we manually rewired ALL rev 1.0 PCBs 1Gbps phy to be
-> connected to MPP43 via R8038 pads.
-> 
-> Rev 1.1 fixes this by that by disconnecting 1Gbps phy reset from MPP62
-> and wiring it to MPP43.
-> So basically rev 1.0 and rev 1.1 are compatible software wise. We will
-> fix the schematics.
+> Thanks,
+> Ard.
 
-Ahh now I see, I didn't enable the phy driver when I did the test with
-the default devicetree and then when I changed the devicetree I also
-enabled the driver, that's my fault.
+Applied to tip:efi/core, thanks Ard!
 
-Sorry for the confusion... I can confirm that it works with MPP43.
-Thanks for the clarification!
-
-Regards,
-Stefan
+	Ingo
 
 _______________________________________________
 linux-arm-kernel mailing list
