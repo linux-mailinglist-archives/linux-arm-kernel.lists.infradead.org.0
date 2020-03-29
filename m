@@ -2,126 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5FDF196E31
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 17:36:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C02AD196E80
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 18:37:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dEdy1jugfC0TYAIQbMyLmo9IFrCEd13pNSd2uJyqnEw=; b=SGcqMGh1ZHMohZ
-	IYrcUDall6Bc7X+Wxi6RpXbxHw82LXEJbPKmJu7Ci8CPei8vjVTClHXD3tU6m7AwMNxmXO06tIK4L
-	A6zOSDK0pCaqHBlxJbZ4gNSOoW3i9Dg0Kc2QWYEVfWfz/V0tFjbI2ZPXFU5K75JsTmZhhFJeuOBiU
-	P9DrBAteYA2AdLmv+DUjR8C44wyHvaeRI2ZAEr7PZsGKqOHbLa2V7g9eh4aD7Q6uwme3wj8e3r/Us
-	ISaOFrIvRaVqnaeGBsOIgIyc7ZliOY40TTebbLlhcFeshJkrvmAag9460ECXHeJW5ST0ZZWA+5jU3
-	//l8OcJlS7ILDRP1y7uQ==;
+	List-Owner; bh=Ejlrcuvc7x5dh19UlHs8RlnIXcCpOr1W2GSlzT0Anmc=; b=QTzRzisj49f3dP
+	W9SBv4k32UW61PhV1NwpX2IV5bX2u9lBOdA4BUgsQF/AM6FZBioptmBsWd9N2Rv7G0FlFJ4G2njUb
+	oeKhkViL7M9AmsknP8Py8S/trMBosLrKVnCbLJ53bKSocud0UgURDlDfiV979vx0ZKNjdNVXZeD/U
+	DRizXWR4ey6E9mk4cjXj3tJdcyXsG0lhYdYe5+ybhNy9Wuxl4R1kUsLH7NAuBsazMAl30+BsKD9Pd
+	D72X+CDlNP74HeBOhWntPCPU9ubp73irKHwqQ8VdwrEGmkr//OguDheT6TVYtwdf7qKT4J2ulzIeB
+	cdYEdIgeTIMeUnI3tgwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIZyV-0006IX-KQ; Sun, 29 Mar 2020 15:35:47 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1jIavl-0007kV-VJ; Sun, 29 Mar 2020 16:37:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIZyN-0006Hw-IB
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Mar 2020 15:35:42 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20200329153535epoutp02f5ee98205c3a9605d46d356562a8716a~A0FXM6j6_2708227082epoutp02Y
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Mar 2020 15:35:35 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20200329153535epoutp02f5ee98205c3a9605d46d356562a8716a~A0FXM6j6_2708227082epoutp02Y
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1585496135;
- bh=QfVFy3V+TocdE8wuBSk9yn+H5ODsvQGcuH2qZqFPEP4=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=ALCITEzkq5kUg9hQqMD+X3G+96mqtFiM2hT9zJ38q4FW6y5ac7bJ1tjc9gSC2+hgy
- V6mUDLT1sF6hrli1TgWGZct7bXgjp1jvUy/tgvd39l93HD5rAtT8n4Hb5ci+kf0D7H
- 22QZQEmPbq6SlfYBGZygskWl/Tz9ix4mDLYAGOg0=
-Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p2.samsung.com (KnoxPortal) with ESMTP id
- 20200329153535epcas5p2b6f4c1a6fa03705a4a85816d95702a56~A0FWrzTMi0092600926epcas5p2I;
- Sun, 29 Mar 2020 15:35:35 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
- epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 19.16.04736.740C08E5; Mon, 30 Mar 2020 00:35:35 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
- 20200329153533epcas5p48d684874dee790f42f71cb36cd51953b~A0FVUYXWm1696016960epcas5p49;
- Sun, 29 Mar 2020 15:35:33 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200329153533epsmtrp1cbdda9f314cfaea0f52c5686ebffc1c6~A0FVTc-3F1818818188epsmtrp1K;
- Sun, 29 Mar 2020 15:35:33 +0000 (GMT)
-X-AuditID: b6c32a4b-ae3ff70000001280-8e-5e80c0472d8b
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 3E.8C.04158.540C08E5; Mon, 30 Mar 2020 00:35:33 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200329153530epsmtip2ca8a44bfaa42ef5fc7e692ae7d56a30d~A0FSTyiY31000010000epsmtip2y;
- Sun, 29 Mar 2020 15:35:30 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: =?UTF-8?Q?'Pawe=C5=82_Chmiel'?= <pawel.mikolaj.chmiel@gmail.com>,
- <robh+dt@kernel.org>, <devicetree@vger.kernel.org>,
- <linux-scsi@vger.kernel.org>
-In-Reply-To: <838a17416b4ed59903ae153e09842ac62584616f.camel@gmail.com>
-Subject: RE: [PATCH v4 5/5] arm64: dts: Add node for ufs exynos7
-Date: Sun, 29 Mar 2020 21:05:28 +0530
-Message-ID: <002e01d605df$af658440$0e308cc0$@samsung.com>
+ id 1jIavf-0007ja-Ph; Sun, 29 Mar 2020 16:36:57 +0000
+Received: from mail-wr1-f48.google.com (mail-wr1-f48.google.com
+ [209.85.221.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD9852073E;
+ Sun, 29 Mar 2020 16:36:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585499812;
+ bh=FMzyHZQaNh9rSSnGoV0uK9HGlBSqJz8wecfpivb2vYg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=hogt6nvF+ZaFYDAazFk65Zjw5Up7FM+iupEhANbB/cOf98Ud9e79zXQJp/NYMgKBq
+ 0/iYCjBFXpTiTIyvSCzh5Ct6xwLR4N1VOozp/2EAYOrUFmIkYJkhVBKHefY0+DOgIb
+ GFkyGPC5J8BvcRMRwOOc7RatjFHsjxjFc+RzCgcI=
+Received: by mail-wr1-f48.google.com with SMTP id h9so18036249wrc.8;
+ Sun, 29 Mar 2020 09:36:51 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3f/dIudYA+F9k4dc5YaM7V0+5ilfeHMbd3V1VZbZx+/tGq4w+9
+ HKcSw+jE/uJ5SqGskBeAa1xptIlzlcw8tkMg/2o=
+X-Google-Smtp-Source: ADFU+vuus+o0GpiyX8baecbejTCjcCtvVBUtlbFTDdt2Qa53S2dQx5EulLtLeeYPyI20IUp/svWt9yF+mHdeaiQGGpo=
+X-Received: by 2002:a5d:6906:: with SMTP id t6mr5654950wru.64.1585499810267;
+ Sun, 29 Mar 2020 09:36:50 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQKI+vJzlUBp7WIi19k8pRZBKIHK2gKUSzVAA7h3SyUCe2DDmwIWY0ZDAq0rcFCmjWWzAA==
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrPKsWRmVeSWpSXmKPExsWy7bCmhq77gYY4g8YTrBYvf15ls/i0fhmr
- xfwj51gtzp/fwG5xc8tRFotNj6+xWlzeNYfNYsb5fUwW3dd3sFksP/6PyeLH8T5mi9a9R9gt
- lm69yejA63G5r5fJY+esu+wem1Z1snlsXlLv0XJyP4vHx6e3WDz6tqxi9Pi8Sc6j/UA3UwBn
- FJdNSmpOZllqkb5dAlfGonWLWQuuxFdMuLWGuYGxN7aLkZNDQsBEYsqvHSxdjFwcQgK7GSWm
- TLwA5XxilDjZvpsNwvnGKPF39iR2mJa/UzdCJfYySmw99QzKecMo0bBoGgtIFZuArsSOxW1g
- CRGBWYwSy//9BhvMLNDJJLFm/hRmkCpOAXeJGY0HweYKCzhIPFyxnwnEZhFQlWi/0MUGYvMK
- WEp83b6PHcIWlDg58wnYBmYBbYllC18zQ9ykIPHz6TJWEFtEIEzi0Y897BA14hJHf/YwgyyW
- ENjELrHg8UyoJ1wkZq1ZBtUsLPHq+BaouJTEy/42IJsDyM6W6NllDBGukVg67xgLhG0vceDK
- HBaQEmYBTYn1u/QhVvFJ9P5+wgTRySvR0SYEUa0q0fzuKlSntMTE7m5WCNtDYtvqC6wTGBVn
- IXlsFpLHZiF5YBbCsgWMLKsYJVMLinPTU4tNC4zzUsv1ihNzi0vz0vWS83M3MYKTnZb3DsZN
- 53wOMQpwMCrx8H7Y3hAnxJpYVlyZe4hRgoNZSYSXzR8oxJuSWFmVWpQfX1Sak1p8iFGag0VJ
- nHcS69UYIYH0xJLU7NTUgtQimCwTB6dUA2NCcMx9C4l1V5qznVdFHbqr1jvvft3PSjvD5hvT
- 7739s8/81A/7FSU19+b+WXzpbWl0VZxcfUKVU5h6il9S4Vcj7Wjuw+l6fp2/g3becBDwrrSw
- PLNwwobJSeqWZVOCnkb9v+3beb/KMcjNni//a3L6Nu9NZzgfzXwnHGkfNU94VdO2NYZXOpRY
- ijMSDbWYi4oTAYeLUJRyAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrMIsWRmVeSWpSXmKPExsWy7bCSvK7rgYY4g38T1S1e/rzKZvFp/TJW
- i/lHzrFanD+/gd3i5pajLBabHl9jtbi8aw6bxYzz+5gsuq/vYLNYfvwfk8WP433MFq17j7Bb
- LN16k9GB1+NyXy+Tx85Zd9k9Nq3qZPPYvKTeo+XkfhaPj09vsXj0bVnF6PF5k5xH+4FupgDO
- KC6blNSczLLUIn27BK6MczNmMxdMta9oan7M2sC4zbCLkZNDQsBE4u/UjWxdjFwcQgK7GSV+
- vNnBCpGQlri+cQI7hC0ssfLfc3aIoleMErtXHgYrYhPQldixuA2sW0RgDqPErm0rwTqYBSYz
- SSy9yQ/R8ZhJ4vD5E8wgCU4Bd4kZjQfBioQFHCQertjPBGKzCKhKtF/oYgOxeQUsJb5u38cO
- YQtKnJz5hAViqLZE78NWRhh72cLXzBDnKUj8fLoM7CIRgTCJRz/2QB0hLnH0Zw/zBEbhWUhG
- zUIyahaSUbOQtCxgZFnFKJlaUJybnltsWGCUl1quV5yYW1yal66XnJ+7iREctVpaOxhPnIg/
- xCjAwajEw/the0OcEGtiWXFl7iFGCQ5mJRFeNn+gEG9KYmVValF+fFFpTmrxIUZpDhYlcV75
- /GORQgLpiSWp2ampBalFMFkmDk6pBkbtJ9nzdr0rkXx/waTw+2npK2+WzGwSiLX88OX/BNNm
- Xk6HyMkG531t7b7tFd13mqV7VsrRbfHXJ/Blbi6dfeTmLF0DgcmFdVLtTzezzcjjP3haVKiw
- OMwmpfTaBY7Lko1br2yJv5IivGHCOm//Z/e4ZbIeXbRc5v/WfM0tzh8h6XG5N/cF38hSYinO
- SDTUYi4qTgQAdMjxrNYCAAA=
-X-CMS-MailID: 20200329153533epcas5p48d684874dee790f42f71cb36cd51953b
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200327171423epcas5p485d227f19e45999ad9b42b21d2864e4a
-References: <20200327170638.17670-1-alim.akhtar@samsung.com>
- <CGME20200327171423epcas5p485d227f19e45999ad9b42b21d2864e4a@epcas5p4.samsung.com>
- <20200327170638.17670-6-alim.akhtar@samsung.com>
- <ac67cfc3736cf50c716b823a59af878d59b7198f.camel@gmail.com>
- <000801d60516$823fd890$86bf89b0$@samsung.com>
- <838a17416b4ed59903ae153e09842ac62584616f.camel@gmail.com>
+References: <20200327030414.5903-2-wens@kernel.org>
+ <684a08e6-7dfe-4cb1-2ae5-c1fb4128976b@gmail.com>
+In-Reply-To: <684a08e6-7dfe-4cb1-2ae5-c1fb4128976b@gmail.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Mon, 30 Mar 2020 00:36:37 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65ayZwN14S-Pzu2ip1K=fgzTbNB=ZzUcpou-jtv8m6vBA@mail.gmail.com>
+Message-ID: <CAGb2v65ayZwN14S-Pzu2ip1K=fgzTbNB=ZzUcpou-jtv8m6vBA@mail.gmail.com>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
+ numbering for LED triggers
+To: Johan Jonker <jbx6244@gmail.com>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_083540_143261_3E0AD64E 
-X-CRM114-Status: UNSURE (   6.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200329_093655_875201_79CAB7E2 
+X-CRM114-Status: GOOD (  19.79  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -142,155 +85,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, martin.petersen@oracle.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGF3ZWwKCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiBGcm9tOiBQYXdlxYIgQ2ht
-aWVsIDxwYXdlbC5taWtvbGFqLmNobWllbEBnbWFpbC5jb20+DQo+IFNlbnQ6IDI4IE1hcmNoIDIw
-MjAgMjM6MTcNCj4gVG86IEFsaW0gQWtodGFyIDxhbGltLmFraHRhckBzYW1zdW5nLmNvbT47IHJv
-YmgrZHRAa2VybmVsLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LXNj
-c2lAdmdlci5rZXJuZWwub3JnDQo+IENjOiBrcnprQGtlcm5lbC5vcmc7IGF2cmkuYWx0bWFuQHdk
-Yy5jb207IG1hcnRpbi5wZXRlcnNlbkBvcmFjbGUuY29tOw0KPiBrd21hZC5raW1Ac2Ftc3VuZy5j
-b207IHN0YW5sZXkuY2h1QG1lZGlhdGVrLmNvbTsNCj4gY2FuZ0Bjb2RlYXVyb3JhLm9yZzsgbGlu
-dXgtc2Ftc3VuZy1zb2NAdmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0tDQo+IGtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnDQo+IFN1YmplY3Q6
-IFJlOiBbUEFUQ0ggdjQgNS81XSBhcm02NDogZHRzOiBBZGQgbm9kZSBmb3IgdWZzIGV4eW5vczcN
-Cj4gDQo+IE9uIFNhdCwgMjAyMC0wMy0yOCBhdCAyMTowNSArMDUzMCwgQWxpbSBBa2h0YXIgd3Jv
-dGU6DQo+ID4gSGkgUGF3ZWwNCj4gPg0KPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0N
-Cj4gPiA+IEZyb206IFBhd2XFgiBDaG1pZWwgPHBhd2VsLm1pa29sYWouY2htaWVsQGdtYWlsLmNv
-bT4NCj4gPiA+IFNlbnQ6IDI4IE1hcmNoIDIwMjAgMTk6MDANCj4gPiA+IFRvOiBBbGltIEFraHRh
-ciA8YWxpbS5ha2h0YXJAc2Ftc3VuZy5jb20+OyByb2JoK2R0QGtlcm5lbC5vcmc7DQo+ID4gPiBk
-ZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsgbGludXgtc2NzaUB2Z2VyLmtlcm5lbC5vcmcNCj4g
-PiA+IENjOiBrcnprQGtlcm5lbC5vcmc7IGF2cmkuYWx0bWFuQHdkYy5jb207DQo+ID4gPiBtYXJ0
-aW4ucGV0ZXJzZW5Ab3JhY2xlLmNvbTsga3dtYWQua2ltQHNhbXN1bmcuY29tOw0KPiA+ID4gc3Rh
-bmxleS5jaHVAbWVkaWF0ZWsuY29tOyBjYW5nQGNvZGVhdXJvcmEub3JnOw0KPiA+ID4gbGludXgt
-c2Ftc3VuZy1zb2NAdmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0tDQo+ID4gPiBrZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZzsgbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZw0KPiA+ID4gU3Vi
-amVjdDogUmU6IFtQQVRDSCB2NCA1LzVdIGFybTY0OiBkdHM6IEFkZCBub2RlIGZvciB1ZnMgZXh5
-bm9zNw0KPiA+ID4NCj4gPiA+IE9uIEZyaSwgMjAyMC0wMy0yNyBhdCAyMjozNiArMDUzMCwgQWxp
-bSBBa2h0YXIgd3JvdGU6DQo+ID4gPiA+IEFkZGluZyBkdCBub2RlIGZvZSBVRlMgYW5kIFVGUy1Q
-SFkgZm9yIGV4eW5vczcgU29DLg0KPiA+ID4gPg0KPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBBbGlt
-IEFraHRhciA8YWxpbS5ha2h0YXJAc2Ftc3VuZy5jb20+DQo+ID4gPiA+IC0tLQ0KPiA+ID4gPiAg
-Li4uL2Jvb3QvZHRzL2V4eW5vcy9leHlub3M3LWVzcHJlc3NvLmR0cyAgICAgIHwgMTYgKysrKysr
-Kw0KPiA+ID4gPiAgYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy5kdHNpICAgICAg
-IHwgNDMgKysrKysrKysrKysrKysrKysrLQ0KPiA+ID4gPiAgMiBmaWxlcyBjaGFuZ2VkLCA1NyBp
-bnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQ0KPiA+ID4gPg0KPiA+ID4gPiBkaWZmIC0tZ2l0
-IGEvYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy1lc3ByZXNzby5kdHMNCj4gPiA+
-ID4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2V4eW5vcy9leHlub3M3LWVzcHJlc3NvLmR0cw0KPiA+
-ID4gPiBpbmRleCA3YWYyODhmYTk0NzUuLmI1OWEwYTMyNjIwYSAxMDA2NDQNCj4gPiA+ID4gLS0t
-IGEvYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy1lc3ByZXNzby5kdHMNCj4gPiA+
-ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy1lc3ByZXNzby5kdHMN
-Cj4gPiA+ID4gQEAgLTQwNiw2ICs0MDYsMjIgQEANCj4gPiA+ID4gIAl9Ow0KPiA+ID4gPiAgfTsN
-Cj4gPiA+ID4NCj4gPiA+ID4gKyZ1ZnMgew0KPiA+ID4gPiArCXN0YXR1cyA9ICJva2F5IjsNCj4g
-PiA+ID4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOw0KPiA+ID4gPiArCXBpbmN0cmwtMCA9
-IDwmdWZzX3JzdF9uICZ1ZnNfcmVmY2xrX291dD47DQo+ID4gPiA+ICsJdWZzLHB3ci1hdHRyLW1v
-ZGUgPSAiRkFTVCI7DQo+ID4gPiA+ICsJdWZzLHB3ci1hdHRyLWxhbmUgPSA8Mj47DQo+ID4gPiA+
-ICsJdWZzLHB3ci1hdHRyLWdlYXIgPSA8Mj47DQo+ID4gPiA+ICsJdWZzLHB3ci1hdHRyLWhzLXNl
-cmllcyA9ICJIU19yYXRlX2IiOw0KPiA+ID4gPiArCXVmcy1yeC1hZHYtZmluZS1ncmFuLXN1cF9l
-biA9IDwxPjsNCj4gPiA+ID4gKwl1ZnMtcngtYWR2LWZpbmUtZ3Jhbi1zdGVwID0gPDM+Ow0KPiA+
-ID4gPiArCXVmcy1yeC1hZHYtbWluLWFjdGl2YXRlLXRpbWUtY2FwID0gPDk+Ow0KPiA+ID4gPiAr
-CXVmcy1wYS1ncmFudWxhcml0eSA9IDw2PjsNCj4gPiA+ID4gKwl1ZnMtcGEtdGFjY3RpdmF0ZSA9
-IDwzPjsNCj4gPiA+ID4gKwl1ZnMtcGEtaGliZXJuOHRpbWUgPSA8MjA+Ow0KPiA+ID4gPiArfTsN
-Cj4gPiA+ID4gKw0KPiA+ID4gPiAgJnVzYmRyZF9waHkgew0KPiA+ID4gPiAgCXZidXMtc3VwcGx5
-ID0gPCZ1c2IzMF92YnVzX3JlZz47DQo+ID4gPiA+ICAJdmJ1cy1ib29zdC1zdXBwbHkgPSA8JnVz
-YjNkcmRfYm9vc3RfNXY+OyBkaWZmIC0tZ2l0DQo+ID4gPiA+IGEvYXJjaC9hcm02NC9ib290L2R0
-cy9leHlub3MvZXh5bm9zNy5kdHNpDQo+ID4gPiA+IGIvYXJjaC9hcm02NC9ib290L2R0cy9leHlu
-b3MvZXh5bm9zNy5kdHNpDQo+ID4gPiA+IGluZGV4IDU1NTgwNDU2MzdhYy4uOWQxNmM5MGVkZDA3
-IDEwMDY0NA0KPiA+ID4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2V4eW5vcy9leHlub3M3
-LmR0c2kNCj4gPiA+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9leHlub3MvZXh5bm9zNy5k
-dHNpDQo+ID4gPiA+IEBAIC0yMjAsOSArMjIwLDE0IEBADQo+ID4gPiA+ICAJCQkjY2xvY2stY2Vs
-bHMgPSA8MT47DQo+ID4gPiA+ICAJCQljbG9ja3MgPSA8JmZpbl9wbGw+LCA8JmNsb2NrX3RvcDEN
-Cj4gPiA+IERPVVRfQUNMS19GU1lTMV8yMDA+LA0KPiA+ID4gPiAgCQkJCSA8JmNsb2NrX3RvcDEg
-RE9VVF9TQ0xLX01NQzA+LA0KPiA+ID4gPiAtCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX01N
-QzE+Ow0KPiA+ID4gPiArCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX01NQzE+LA0KPiA+ID4g
-PiArCQkJCSA8JmNsb2NrX3RvcDEgRE9VVF9TQ0xLX1VGU1VOSVBSTzIwPiwNCj4gPiA+ID4gKwkJ
-CQkgPCZjbG9ja190b3AxIERPVVRfU0NMS19QSFlfRlNZUzE+LA0KPiA+ID4gPiArCQkJCSA8JmNs
-b2NrX3RvcDEgRE9VVF9TQ0xLX1BIWV9GU1lTMV8yNk0+Ow0KPiA+ID4gPiAgCQkJY2xvY2stbmFt
-ZXMgPSAiZmluX3BsbCIsICJkb3V0X2FjbGtfZnN5czFfMjAwIiwNCj4gPiA+ID4gLQkJCQkgICAg
-ICAiZG91dF9zY2xrX21tYzAiLCAiZG91dF9zY2xrX21tYzEiOw0KPiA+ID4gPiArCQkJCSAgICAg
-ICJkb3V0X3NjbGtfbW1jMCIsICJkb3V0X3NjbGtfbW1jMSIsDQo+ID4gPiA+ICsJCQkJICAgICAg
-ImRvdXRfc2Nsa191ZnN1bmlwcm8yMCIsDQo+ID4gPiAiZG91dF9zY2xrX3BoeV9mc3lzMSIsDQo+
-ID4gPiA+ICsJCQkJICAgICAgImRvdXRfc2Nsa19waHlfZnN5czFfMjZtIjsNCj4gPiA+ID4gIAkJ
-fTsNCj4gPiA+ID4NCj4gPiA+ID4gIAkJc2VyaWFsXzA6IHNlcmlhbEAxMzYzMDAwMCB7DQo+ID4g
-PiA+IEBAIC02MDEsNiArNjA2LDQwIEBADQo+ID4gPiA+ICAJCQl9Ow0KPiA+ID4gPiAgCQl9Ow0K
-PiA+ID4gPg0KPiA+ID4gPiArCQl1ZnM6IHVmc0AxNTU3MDAwMCB7DQo+ID4gPiA+ICsJCQljb21w
-YXRpYmxlID0gInNhbXN1bmcsZXh5bm9zNy11ZnMiOw0KPiA+ID4gPiArCQkJI2FkZHJlc3MtY2Vs
-bHMgPSA8MT47DQo+ID4gPiA+ICsJCQkjc2l6ZS1jZWxscyA9IDwxPjsNCj4gPiA+ID4gKwkJCXJh
-bmdlczsNCj4gPiA+ID4gKwkJCXJlZyA9IDwweDE1NTcwMDAwIDB4MTAwPiwgIC8qIDA6IEhDSSBz
-dGFuZGFyZCAqLw0KPiA+ID4gPiArCQkJCTwweDE1NTcwMTAwIDB4MTAwPiwgIC8qIDE6IFZlbmRv
-ciBzcGVjaWZpY2VkDQo+ID4gPiAqLw0KPiA+ID4gPiArCQkJCTwweDE1NTcxMDAwIDB4MjAwPiwg
-IC8qIDI6IFVOSVBSTyAqLw0KPiA+ID4gPiArCQkJCTwweDE1NTcyMDAwIDB4MzAwPjsgIC8qIDM6
-IFVGUyBwcm90ZWN0b3IgKi8NCj4gPiA+ID4gKwkJCXJlZy1uYW1lcyA9ICJoY2kiLCAidnNfaGNp
-IiwgInVuaXBybyIsICJ1ZnNwIjsNCj4gPiA+ID4gKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSAy
-MDAgSVJRX1RZUEVfTEVWRUxfSElHSD47DQo+ID4gPiA+ICsJCQljbG9ja3MgPSA8JmNsb2NrX2Zz
-eXMxIEFDTEtfVUZTMjBfTElOSz4sDQo+ID4gPiA+ICsJCQkJPCZjbG9ja19mc3lzMSBTQ0xLX1VG
-U1VOSVBSTzIwX1VTRVI+Ow0KPiA+ID4gPiArCQkJY2xvY2stbmFtZXMgPSAiY29yZV9jbGsiLCAi
-c2Nsa191bmlwcm9fbWFpbiI7DQo+ID4gPiA+ICsJCQlmcmVxLXRhYmxlLWh6ID0gPDAgMD4sIDww
-IDA+Ow0KPiA+ID4gPiArCQkJcGNsay1mcmVxLWF2YWlsLXJhbmdlID0gPDcwMDAwMDAwIDEzMzAw
-MDAwMD47DQo+ID4gPiA+ICsJCQl1ZnMscHdyLWxvY2FsLWwyLXRpbWVyID0gPDgwMDAgMjgwMDAg
-MjAwMDA+Ow0KPiA+ID4gPiArCQkJdWZzLHB3ci1yZW1vdGUtbDItdGltZXIgPSA8MTIwMDAgMzIw
-MDAgMTYwMDA+Ow0KPiA+ID4gPiArCQkJcGh5cyA9IDwmdWZzX3BoeT47DQo+ID4gPiA+ICsJCQlw
-aHktbmFtZXMgPSAidWZzLXBoeSI7DQo+ID4gPiA+ICsJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOw0K
-PiA+ID4gPiArCQl9Ow0KPiA+ID4gPiArDQo+ID4gPiA+ICsJCXVmc19waHk6IHVmcy1waHlAMHgx
-NTU3MTgwMCB7DQo+ID4gPiA+ICsJCQljb21wYXRpYmxlID0gInNhbXN1bmcsZXh5bm9zNy11ZnMt
-cGh5IjsNCj4gPiA+ID4gKwkJCXJlZyA9IDwweDE1NTcxODAwIDB4MjQwPjsNCj4gPiA+ID4gKwkJ
-CXJlZy1uYW1lcyA9ICJwaHktcG1hIjsNCj4gPiA+ID4gKwkJCXNhbXN1bmcscG11LXN5c2NvbiA9
-IDwmcG11X3N5c3RlbV9jb250cm9sbGVyPjsNCj4gPiA+ID4gKwkJCSNwaHktY2VsbHMgPSA8MD47
-DQo+ID4gPiA+ICsJCQljbG9ja3MgPSA8JmNsb2NrX2ZzeXMxIE1PVVRfRlNZUzFfUEhZQ0xLX1NF
-TDE+LA0KPiA+ID4gPiArCQkJCTwmY2xvY2tfdG9wMSBDTEtfU0NMS19QSFlfRlNZUzFfMjZNPjsN
-Cj4gPiA+ID4gKwkJCWNsb2NrLW5hbWVzID0gInJlZl9jbGtfcGFyZW50IiwgInJlZl9jbGsiOw0K
-PiA+ID4gSGkNCj4gPiA+IElzIHRoaXMgY29ycmVjdCAoYXJlbid0IGNoaWxkIGFuZCBwYXJlbnQg
-Y2xvY2sgc3dhcHBlZCk/DQo+ID4gPiBUaGlzIHdpbGwgc2V0IE1PVVRfRlNZUzFfUEhZQ0xLX1NF
-TDEgdG8gYmUgcGFyZW50IGNsb2NrIG9mDQo+ID4gPiBDTEtfU0NMS19QSFlfRlNZUzFfMjZNLg0K
-PiA+DQo+ID4gTG9va3MgbGlrZSBpbiBvbmUgb2YgbXkgcmViYXNlIGl0IGdvdCBzd2FwLCB3aWxs
-IGNvcnJlY3QgaXQuICBUaGFua3MgZm9yIHBvaW50aW5nDQo+IG91dC4NCj4gPg0KPiA+ID4gSSd2
-ZSB0ZXN0ZWQgdGhpcyBvbiBFeHlub3M3NDIwICh3aGljaCBsb29rcyBsaWtlIGNhbiB1c2UgdGhl
-IHNhbWUNCj4gPiA+IGNsb2NrIGRyaXZlciBhcw0KPiA+ID4gZXh5bm9zNykgYW5kIGFmdGVyIGFk
-ZGluZyBzb21lIGRlYnVnIGNvZGUgKGJlY2F1c2UgY3VycmVudGx5IHdlJ3JlDQo+ID4gPiBub3Qg
-aGFuZGxpbmcgcmVzdWx0IG9mIHNhbXN1bmdfdWZzX3BoeV9jbGtzX2luaXQpIGkgZ290DQo+ID4g
-Pg0KPiA+ID4gc2Ftc3VuZy11ZnMtcGh5IDE1NTcxODAwLnVmcy1waHk6IGNsa19zZXRfcGFyZW50
-IHJlc3VsdDogLTIyDQo+ID4gPg0KPiA+IEkgd2lsbCBjaGVjayBpZiBJIG92ZXJsb29rZWQgdGhp
-cyBlcnJvci4NCj4gPiA+IE9uIHZlbmRvciBzb3VyY2VzIGZvciB0aGlzIGRldmljZSwgZHJpdmVy
-IHdhcyBzZXR0aW5nDQo+ID4gPiBDTEtfU0NMS19QSFlfRlNZUzFfMjZNIHRvIGJlIHBhcmVudCBv
-ZiBNT1VUX0ZTWVMxX1BIWUNMS19TRUwxLA0KPiBhbmQgdGhlbiBpdCBkaWQgcnVuIHdpdGhvdXQg
-ZXJyb3IuDQo+ID4gPg0KPiA+ID4gc2Ftc3VuZy11ZnMtcGh5IDE1NTcxODAwLnVmcy1waHk6IGNs
-a19zZXRfcGFyZW50IHJlc3VsdDogMA0KPiA+ID4NCj4gPiBXaXRoIHRoaXMgY2hhbmdlLCBkb2Vz
-IGxpbmt1cCB3b3JrZWQgZm9yIHlvdT8NCj4gSGkNCj4gU2FkbHkgbm90IHlldCwgc28gc29tZW9u
-ZSBuZWVkcyB0byBjaGVjayBpdCBvbiBkaWZmZXJlbnQgaHcuDQo+IA0KPiBJJ3ZlIGFkZGVkIHNv
-bWUgZGVidWcgY29kZSB0byB1ZnNoY2QgYW5kIGl0IGxvb2tzIGxpa2UgaXQgZmFpbHMgKGluIG15
-DQo+IGNhc2UpIGF0IHVmc2hjZF9kbWVfbGlua19zdGFydHVwIHdoaWNoIHJldHVybnMgMSAoYmVj
-YXVzZQ0KPiB1ZnNoY2Rfd2FpdF9mb3JfdWljX2NtZCByZXR1cm5zIDEpLiBUaGUgc2FtZSBmb3Ig
-c2Vjb25kIHJldHJ5IGFuZCBhdCB0aGlyZA0KPiByZXRyeSBpdCdzIGdldHRpbmcgLTExMCBmcm9t
-IHVmc2hjZF93YWl0X2Zvcl91aWNfY21kLg0KPiANCk1vc3RseSBkZXZpY2UgaXMgbm90IHJlc3Bv
-bmRpbmcgdG8gYW55IFVJQyBjb21tYW5kcy4NCg0KPiBOZWVkIHRvIGNoZWNrOg0KPiAtIGluIHZl
-bmRvciB0aGVyZSB3YXMgMTAgY2xvY2tzIHVzZWQgYnkgdWZzL3Vmcy1waHkgKHdoZXJlIHRoaXMg
-ZHJpdmVyIHVzZXMgNCkNCj4gLSBpZiBjYWxpYnJhdGlvbiBpcyB0aGUgc2FtZSBpbiB0aGlzIGRy
-aXZlciB2cyB2ZW5kb3INCj4gDQpBbGwgY2xvY2tzIGFyZSBub3QgbWFuZGF0b3J5LCB3aGF0IEkg
-aGF2ZSBtZW50aW9uZWQgaXMgb25seSBVRlMgSENJIGNvcmUgY2xvY2ssIHVuaXBybyBjbG9jayBh
-bmQgTVBIWSBjbG9ja3MuDQoNCj4gTWF5YmUgaXQncyBiZWNhdXNlIG9mIG1pc3NpbmcgRVhZTk9T
-IEZNUCBEcml2ZXIgKG15IGRldmljZSBoYXMNCj4gc2VjdXJlb3MpIGFuZC9vciBzb21lIG1pc3Np
-bmcgc21jIGNhbGxzIChsaWtlIGluIGNhc2Ugb2Ygc211IGNvbmZpZyk/DQpGTVAgd2lsbCBjb21l
-IGludG8gcGljdHVyZSBhIGxpdHRsZSBsYXRlciwgaXQgZG9lcyBub3QgYWZmZWN0IF9saW5rX3N0
-YXJ0dXAgdGhvdWdoLg0KU01VIGRvZXMgbWF0dGVyLCBzbyBtYWtlIHN1cmUgU01VIGlzIGJ5IHBh
-c3NlZCBpbml0aWFsbHkuDQoNCkFub3RoZXIgdGhpbmsgdGhhdCBjb21lcyBpbnRvIG15IG1pbmQg
-aXMsIGlmIHBvc3NpYmxlIGp1c3QgZGlzYWJsZWQgUE1JQyAoaW50ZW5zaW9uIGlzIHRvIGtlZXAg
-YWxsIHRoZSByYWlscyBfX2Fsd2F5c19vbl9fKQ0KVGhlIHJlYXNvbiBpcyBzb21ldGltZSBVRlNf
-UlNUX04gd2hpY2ggaXMgaG9va2VkIHRvIFJFU0VUX04gb2YgdGhlIFVGUyBkZXZpY2UgaXMgYWxz
-byBjb250cm9sbGVkIHZpYSBvbmUgb2YgdGhlIFBNSUMgTERPLg0KKEluIHlvdXIgY2FzZSBJIGRv
-bid0IGtub3cgd2hpY2ggTERPLCBzbyBrZWVwIGFsbCB0aGUgcmFpbHMgYWx3YXlzIE9OKS4NCkFs
-c28gY3Jvc3MgY2hlY2sgaWYgeW91IGhhdmUgdGhlc2UgZ3Bpb3MgY29uZmlndXJlZCBwcm9wZXJs
-eS4NCnBpbmN0cmwtMCA9IDwmdWZzX3JzdF9uICZ1ZnNfcmVmY2xrX291dD47DQpHaXZlIGl0IGEg
-dHJ5Lg0KDQoNCj4gPg0KPiA+ID4gQWxzbyBsb29raW5nIGF0IGNsay1leHlub3M3IGRyaXZlciBz
-ZWVtcyB0byBjb25maXJtIHRoaXMuDQo+ID4gPg0KPiA+ID4gPiArCQl9Ow0KPiA+ID4gPiArDQo+
-ID4gPiA+ICAJCXVzYmRyZF9waHk6IHBoeUAxNTUwMDAwMCB7DQo+ID4gPiA+ICAJCQljb21wYXRp
-YmxlID0gInNhbXN1bmcsZXh5bm9zNy11c2JkcmQtcGh5IjsNCj4gPiA+ID4gIAkJCXJlZyA9IDww
-eDE1NTAwMDAwIDB4MTAwPjsNCj4gPg0KPiA+DQoNCg0KCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, Mar 27, 2020 at 5:58 PM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> Hi Chen-Yu Tsai,
+>
+> The led node names need some changes.
+> 'linux,default-trigger' value does not fit.
+>
+> From leds-gpio.yaml:
+>
+> patternProperties:
+>   # The first form is preferred, but fall back to just 'led' anywhere in the
+>   # node name to at least catch some child nodes.
+>   "(^led-[0-9a-f]$|led)":
+>     type: object
+>
+> Rename led nodenames to 'led-0' form
+>
+> Also include all mail lists found with:
+> ./scripts/get_maintainer.pl --nogit-fallback --nogit
+>
+> devicetree@vger.kernel.org
+
+Oops...
+
+> If you like change the rest of dts with leds as well...
+>
+>   DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
+>   CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
+> arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
+> yellow-led:linux,default-trigger:0: 'mmc0' is not one of ['backlight',
+> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+> arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
+> diy-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
+> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+>   DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
+>   CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
+> arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
+> diy-led:linux,default-trigger:0: 'mmc2' is not one of ['backlight',
+> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+> arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
+> yellow-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
+> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+
+Maybe we should just get rid of linux,default-trigger then?
+
+Heiko?
+
+ChenYu
+
+> make -k ARCH=arm64 dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
+>
+> > From: Chen-Yu Tsai <wens@csie.org>
+> >
+> > With SDIO now enabled, the numbering of the existing MMC host controllers
+> > gets incremented by 1, as the SDIO host is the first one.
+> >
+> > Increment the numbering of the MMC LED triggers to match.
+> >
+> > Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
+> > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> > ---
+> >  arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
+> >  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
+> >  2 files changed, 10 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> > index 2acb3d500fb9..f0686fc276be 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> > @@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
+> >       };
+> >  };
+> >
+> > +&diy_led {
+> > +     linux,default-trigger = "mmc2";
+> > +};
+> > +
+> >  &pcie_phy {
+> >       status = "okay";
+> >  };
+> > @@ -91,3 +95,7 @@ &uart0 {
+> >       pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+> >       status = "okay";
+> >  };
+> > +
+> > +&yellow_led {
+> > +     linux,default-trigger = "mmc1";
+> > +};
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> > index 9f225e9c3d54..bc060ac7972d 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> > @@ -70,14 +70,14 @@ work-led {
+> >                       linux,default-trigger = "heartbeat";
+> >               };
+> >
+> > -             diy-led {
+> > +             diy_led: diy-led {
+> >                       label = "red:diy";
+> >                       gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
+> >                       default-state = "off";
+> >                       linux,default-trigger = "mmc1";
+> >               };
+> >
+> > -             yellow-led {
+> > +             yellow_led: yellow-led {
+> >                       label = "yellow:yellow-led";
+> >                       gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+> >                       default-state = "off";
+> > --
+> > 2.25.1
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
