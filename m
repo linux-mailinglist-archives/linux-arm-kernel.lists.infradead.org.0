@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C702D196C73
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 12:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85742196C7C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Mar 2020 12:35:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2wz2PMDQmUO2yhiNhRkNyZfkz1fcZCreaKlyEChMqzc=; b=W6Pqi8vPSDOnxjZU8o3ZvhPHK
-	8lmRtLFaoUvTjVLe9LjVC7+13tp4fVryYuX4oi46bFOO1cGAORiTto2LG/zLDM+PRJRiqNcsrkDTu
-	nFd5LOxAG/eHG1+Kmd0Xapa/tvomG+W+Nd+hzfs8cfjqAelxpQtaXbVODatVudHLIQb/yj55gW5Ad
-	yScAL3qpSOkbY3hl08QkrNPnr8KfB4qRDjhZB/gIbSVjqmzCd2BVqTbzAPRPRSkOtCjUE+ixokXip
-	SntMrMZ9bHz0Y8/Yd8dI8Rj2+X5rx27zyiVa9BJpHvqzfMf5JCReoS/OZ6k3em6Mj/735ASm8Qd2k
-	rGWE2//cg==;
+	 bh=H9geCHA5DG6Yoty+L/g4jHpgBZ6j+kyYNQE/wZ1t5Uo=; b=o/6yeeTQmazqUqTygSg2dx2r4
+	VOCWN50re3MDJLMefhREB1Uy02FaAVsYr60AZNxALzcRxvJzuDuqBBFaylbAbNwj3y6GC29LDaqKO
+	3ETeXLEuPw8hUV06srpc5JTsJa8m9kwGk1YBzhlY+r6XYtEvqN04TsMSz+Aq4wmOY0YtH3CZNrMYU
+	ypbFHMsPMSOgXF1pt9zRSspknaPBXoQOWIz2nHbw3MKEjzGvuVrVYNwrE87FiMqr2/R+4ki4GVtpB
+	yR3Mf7GKoaEpjzsLZRBzpPhdUhV28Xy39XhEGzxYRoZNwQuQOC+yWiFJxDLTYryC0NLjUOLsb5rzw
+	fJv/JrQzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIVCy-0007b2-BG; Sun, 29 Mar 2020 10:30:24 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jIVHn-0000tQ-Mj; Sun, 29 Mar 2020 10:35:23 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIVCo-0007Zo-SF; Sun, 29 Mar 2020 10:30:17 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k21so14747145ljh.2;
- Sun, 29 Mar 2020 03:30:12 -0700 (PDT)
+ id 1jIVHa-0000sN-OJ; Sun, 29 Mar 2020 10:35:15 +0000
+Received: by mail-lj1-x244.google.com with SMTP id p10so14501323ljn.1;
+ Sun, 29 Mar 2020 03:35:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=N3NqZnJ/CxQz+vgNsvaAHWGkQWp4JEs+xGk3PJVLusw=;
- b=W+6jrG6CBhLnlYGkAOJDbZ7SHq4ouY7T1YUPiP9PcofJuFJgtKpaaFWbkA6mhqr3w5
- wXhxJcdc+ZOSitnxl3+MEfB5kQHpDvIZuX8O3OfvkCmtxAUBgR6LnCh+0fpxuhcDIs5P
- QI1r+lSrE9ONAI2VwG86GljK+V0i+afoN+uI4Yg8rjIjdskpBqE2HcAwyLDhRWeYKWNP
- waa4sRGz04xikLcM5l5fgiptWD1YkkL80G8q2RI8iHvkN563BB+d3uVhst6G3CPAZSvn
- WLQvNalAXxnUfrGm5flsL94DudT1AjPE0XUPY678Ck0S9IguY0hdAc6KkBoy7oe6kkA/
- Z5NA==
+ :mime-version; bh=VZb1AfKfLRj9i2noeV282Qx0noCiipydqn+qVo/7/5Q=;
+ b=nDMkANrF8lq0pvR1cZw6m71QuW1v/Qsxgva5CcrRtYJk2EdRpv23zGxomyVfvelanZ
+ qGne3mDHTHhNLXrKWO0eFjqOnshQZBlgY4vM4pD8j2LvMt1BpYaqn6rAFPKqjao7rXsv
+ dYrzqolHS6zxy8VKsb534noN/lrMMf2CdEWeNLbpmNG2GOXQOd5Pe+ZyA/qkEs3u/wOw
+ pYd4r+jmI0W5CiZeyJJ143JlO5sDSNBKKWklcw5xzeB2whyYT/NNl7DxrhKvoNK26Rx/
+ xQSLWCv7yR1hD0SrJ6H8QPawPf8nudVVVedtZFhp9KaF4vT8jwz47XI1IpWwyORH3nQr
+ HTUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:in-reply-to:references
  :date:message-id:mime-version;
- bh=N3NqZnJ/CxQz+vgNsvaAHWGkQWp4JEs+xGk3PJVLusw=;
- b=s9V2yIHDsOnaaJuV3+RbH3E0X6+n6H2NIqX0RafjGEKWZhl92dhZx/igEnxw8UhGqP
- qZZFwmWZqRQ+k5jZphzQEs1xIVwGmZbO1BgamsplF2+yvgtc1m+7EBSTkBS/WQ+lqp3J
- a+RIunxXRGZitcqhOBw6DHM5L7WKK3Sh9yrf0gvpFg9Coz0uO9lsr6dK31b53UOERUFO
- kJX4/Uk9CiXzohcOky3RexDM5/rZ1TUvAVq1WvZUI51ELPxRMBZbKGMg5xWJEi5K83uw
- 7qicNCQuTSjEf8vDsVKPbg/PE8JUiMqyA5mAGo+P1QReodthb7ZFb9cYjn2txtsDKkhc
- zecA==
-X-Gm-Message-State: AGi0PubNK1rPTxBQxHT8hiJsMsVyVRBKSrQlxvLiyOZPRJcxG8RjltuM
- tpMBGk1UV7ZsR+RvCX9ciUo=
-X-Google-Smtp-Source: APiQypL26pRPoTg8hmK0zo9sxRXo65MAqpvyF6aUMysm+aHZ4u2UZCTAa1IwphYZOi+xJmhaZznDkw==
-X-Received: by 2002:a2e:9146:: with SMTP id q6mr4211254ljg.240.1585477810916; 
- Sun, 29 Mar 2020 03:30:10 -0700 (PDT)
+ bh=VZb1AfKfLRj9i2noeV282Qx0noCiipydqn+qVo/7/5Q=;
+ b=rrdud3ZW5XkwExntJQ0lP3L3hKm/zksoV6UrpjkxwYPmgSosE6Kn5dg1Y/ivUgJpHX
+ gC07eq5ERcEhkio1KZ8Js2koP3/VMgJJogJEgTAe6i3/3XiGqyLPoAxj8fFOnOrT7a0G
+ 6OU5NExY5WaKB5S1SgzKNSoR7xetq7zspsDEUh6fmho7R6OK6fjAsfvOCP3lfQQUNqr1
+ /F8pY8GoW6VFkxMlqw2Y//5PO2ekWD4YkDOrl9MwUqKTXCRjYA272CBkXk2C+NbHik76
+ ZcgJZsq4a3JX1eyVuspDFC4g4G87Wixl2doHYGtMJD3hMouLe8nLDQbD7m+AYccmokWT
+ GHxw==
+X-Gm-Message-State: AGi0PuZNQHQbC55ZfvOJslG1iyRABiHFWTMEktCH9Sn8YRiaGZrTaqpT
+ 6Y5wNdr/vgUIiWZjyvnMMPezHs7jpN/AEA==
+X-Google-Smtp-Source: APiQypKBx3zbW5qwWIsqD9EM1rU4FvVNPAUSElOJ5CRSofQwV9r0M7sICdD307OhFZzVsNJNPXTzlA==
+X-Received: by 2002:a2e:9586:: with SMTP id w6mr4373232ljh.133.1585478109014; 
+ Sun, 29 Mar 2020 03:35:09 -0700 (PDT)
 Received: from saruman (91-155-214-58.elisa-laajakaista.fi. [91.155.214.58])
- by smtp.gmail.com with ESMTPSA id r10sm5229827ljk.13.2020.03.29.03.30.09
+ by smtp.gmail.com with ESMTPSA id z1sm1514968lfe.49.2020.03.29.03.35.08
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Mar 2020 03:30:10 -0700 (PDT)
+ Sun, 29 Mar 2020 03:35:08 -0700 (PDT)
 From: Felipe Balbi <balbi@kernel.org>
-To: Neil Armstrong <narmstrong@baylibre.com>, kishon@ti.com,
- khilman@baylibre.com, martin.blumenstingl@googlemail.com
-Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
-In-Reply-To: <20200324102030.31000-1-narmstrong@baylibre.com>
-References: <20200324102030.31000-1-narmstrong@baylibre.com>
-Date: Sun, 29 Mar 2020 13:30:06 +0300
-Message-ID: <87369rfo7l.fsf@kernel.org>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2 06/14] usb: dwc3: meson-g12a: refactor usb2 phy init
+In-Reply-To: <CAFBinCCVTP+MrLq1O0m1pcvLo6WSXyXpTtWMEQQxOuraN+yA0w@mail.gmail.com>
+References: <20200326134507.4808-1-narmstrong@baylibre.com>
+ <20200326134507.4808-7-narmstrong@baylibre.com>
+ <CAFBinCCVTP+MrLq1O0m1pcvLo6WSXyXpTtWMEQQxOuraN+yA0w@mail.gmail.com>
+Date: Sun, 29 Mar 2020 13:35:04 +0300
+Message-ID: <87zhbze9ev.fsf@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_033015_912855_35B6B6A6 
-X-CRM114-Status: GOOD (  15.66  )
+X-CRM114-CacheID: sfid-20200329_033510_795492_5E23AACE 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -97,14 +100,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
-Content-Type: multipart/mixed; boundary="===============8486216490503520535=="
+Cc: khilman@baylibre.com, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2846941696366707353=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============8486216490503520535==
+--===============2846941696366707353==
 Content-Type: multipart/signed; boundary="=-=-=";
 	micalg=pgp-sha256; protocol="application/pgp-signature"
 
@@ -112,51 +115,34 @@ Content-Type: multipart/signed; boundary="=-=-=";
 Content-Type: text/plain
 Content-Transfer-Encoding: quoted-printable
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> The USB support was initialy done with a set of PHYs and dwc3-of-simple
-> because the architecture of the USB complex was not understood correctly
-> at the time (and proper documentation was missing...).
->
-> But with the G12A family, the USB complex was correctly understood and
-> implemented correctly.
-> But seems the G12A architecture was derived for the GXL USB architecture,
-> with minor differences and looks we can share most of the USB DWC3 glue
-> driver.
->
-> This patchset refactors and adds callbacks to handle the architecture
-> difference while keeping the main code shared.
->
-> The main difference is that on GXL/GXM the USB2 PHY control registers
-> are mixed with the PHY registers (we already handle correctly), and
-> the GLUE registers are allmost (99%) the same as G12A.
->
-> But, the GXL/GXM HW is buggy, here are the quirks :
-> - for the DWC2 controller to reset correctly, the GLUE mux must be switch=
-ed
->   to peripheral when the DWC2 controlle probes. For now it's handled by s=
-imply
->   switching to device when probing the subnodes, but it may be not enough
-> - when manually switching from Host to Device when the USB port is not
->   populated (should not happen with proper Micro-USB/USB-C OTG switch), it
->   makes the DWC3 to crash. The only way to avoid that is to use the Host
->   Disconnect bit to disconnect the DWC3 controller from the port, but we =
-can't
->   recover the Host functionnality unless resetting the DWC3 controller.
->   This bit is set when only manual switch is done, and a warning is print=
-ed
->   on manual switching.
->
-> The patches 1-8 should be applied first, then either waiting the next rel=
-ease
-> or if the usb maintainer can provide us a stable tag, we can use it to me=
-rge
-> the DT and bindings.
+Hi,
 
-it's unclear to me if this series is ready to be merged. Can someone
-confirm? If it is, can you resend with all reviewed by tags in place?
+Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
 
-Thanks
+> Hi Neil,
+>
+> On Thu, Mar 26, 2020 at 2:45 PM Neil Armstrong <narmstrong@baylibre.com> =
+wrote:
+>>
+>> Refactor the USB2 PHY init code patch to handle the Amlogic GXL/GXM
+>> not having the PHY mode control registers in the Glue but in the PHY
+>> registers.
+>>
+>> The Amlogic GXL/GXM will call phy_set_mode() instead of programming the
+>> PHY mode control registers, thus add two new callbacks to the SoC match
+>> data.
+>>
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> checkpatch reports that five lines need to be checked.
+> these all look valid (for example: "Alignment should match open parenthes=
+is")
+>
+> with these addressed:
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+That's a CHECK, only shows with --strict. drivers/usb/ ignores those for
+the most part.
 
 =2D-=20
 balbi
@@ -166,24 +152,24 @@ Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl6AeK4ACgkQzL64meEa
-mQaBrg/9HlcRQjYQsutKmZuRscMQWwFrkkYrNIRYUYOM13FibjrTl8YEv/ocy2Gk
-huJi0X7JUcERQoCZsvkP6aORdnZ7LNdc/qLJ8uuaBGWCYcIy1uHZnMbqLsESrIXr
-VaSBjW9v4Qon/YAKnQbb3JTo2sa9yBOdaJx4B/t0g0ke4QD2zaF9g+8UsAgU8HQX
-DyE89wAn92AC399gPwF4U6xIPEXSHesRH4dSFcFajiaIEfG/rTleN+gZZYy/1Jag
-owp+mE38Gr3nvNeYRUNsW5vJVibvVKv8pTv6CO4CZj3ZuACLqAm/zHmHZS1ML/pV
-QoU02X9uK8O6hLl/coAvDQwwou9fvJ9c68dbgdkRMGC9M4Y0QqDkjYEWdyAHgdZN
-TE0wmGkOZvVTrEorWSyrUDQGDSwp/mFJinYnAVMuZZPfLEHala6uUpojD1dvuCvj
-A7Ljwj5ya84mbY+D5RbAoWfFayeDMoJcla7HHtz0wb9g+WzV6JwhZVJP4vaLbDDw
-EeeSt6vBXOuh24lFVcGeKwrACbT38z9c+ZrbBKujrkYERR3zC5jQsoudxI2nSgb9
-U/dew4yKRT1VUbK8y+mbneesrFSDcPDZO+uTkoKzSdW6NnbWM0Lnc2klmt1iYrYa
-aplBe2DwyMcCIBFfqQo4NYj0HMzFzGqeG7qxX2E+0vI661nDE+k=
-=LsIt
+iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl6AedgACgkQzL64meEa
+mQbodA//VwUAbPvOPF986Bz7VX5RkvL58wf09qnwm0ENuJKT1UA8iwdt+72lvoa9
+Nbj1TYTd3d4wT3Hd5MDRgPGb3HaOKUQ6ouQr6mSnWD9Qq2NbODKighWGl3UDYwCx
+6cbe9lllE6yoenGtJ9R4VUMa+UnlHetdg14ukiEMLFipgcmPALUkaghD38aZ0Fxo
+/ARman65bgvoKBpJtD4KBzggm1Y93e3ckojM8FKiVFTrixq28hiZC2PqCLRnJ5SG
+GfB9YSxJ5ONvrWeb8ReBd4LGCZvXOmniJtDbUGC7OAuAt6Aced5aGwT/xyQDJyCc
+fGveU2syqx16Eb7kiIQ2ViQUZidpl78fQo0FNXz+vDRfg9s2cRKafgpnYEV+BG8G
+WNiKVdLmB9tu+oRlSy2om0uxU3JcvpoVrWwIYivvppu7j+xgQM0ryzIgAMZ6Dz1z
+H9F/7ttjyn0VbrkvIpzcRdS9Vkp+JYOch0zP/Ym7IePXD2N5WVsoWLECAgpnFitJ
+cQvn3BX7zgJ+ZNTrMFkNqzuzUczAKXfKYMyfhfFtmG7IPvgmheABnLihkTQ4ezOQ
++zi58Uzewg6i+JYTNN2Myg9GaR34PoXT4/9iisjqvEv0hzF8Y8zpw07nqV3X7G6T
+u0EP1/sS82rRixzko/l5L1JKJCspyUwdyyq7NZNHQ8usUhNrAa8=
+=MQ9G
 -----END PGP SIGNATURE-----
 --=-=-=--
 
 
---===============8486216490503520535==
+--===============2846941696366707353==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -194,5 +180,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8486216490503520535==--
+--===============2846941696366707353==--
 
