@@ -2,78 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64FE119792E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 12:22:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A178197947
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 12:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
-	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6nMB+Wn7mHtqz32l459ZFJOjLvG9emzAr6lwYJbXKHY=; b=tjLxDh5FgewmGvc7TPeWXuiUi
-	sZMoRvy0f2fN4pzlU64p5z3VK/zOUe7hxmExHyO/Meb5Wr4A51l9IctTTaof6d5l9rCWwqMfnZl/q
-	72RJo8SNY6XjRPN2aef11/4DRc1PyvP2NCFYHDiVxOaIVbo2UEn/h98rxjziCaXXPYyQHmxs6sloh
-	3rA1rBWYK6de/jfmYT18Uw6dSZTcLR+27DYemBZ35ckIyvVQohxOgzTt1MnKq0I37gm42ylO4x0oI
-	0AAVJYHcyYTlKUnfS+Oa3y7ufWxKIpTnbY3j+X9nWDc2HZmFmiSFC4jKVPHHSCq+cWhhG/6Fkpdaq
-	SrenBFD/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Kqy5FGvRlDZ4EiRJcNEWS7/rFsyNSZqd0j0Modc34t8=; b=llLB+FxDZuHAwB
+	p9jzYiv3+IPBKgTR1ZF3fo3F25thPExSai6k1fP8Z7Evdbfvv9ZyfjXl+OXLN0aZDxGgusaTmQqy+
+	qJ36GEW7OJsOUrvFplAnf1ZwSO9AXz8oEr8T771KlMWS3Z1eqbhJbHqyniYVld27Bua14adnuCD9k
+	DV/UN69f26SC3A0ErMWpxSfdhA7IxI9VKAs0wBCMWXoK4Vod+pEFJ0mcNUMV8R9Qq4xo8uoL/H71V
+	tMc48BTBnHcv1/cyUn89Ornfidynw7S0aWl0x0IQqdPWH5E51hJmgtKTx6a+qQz9YmTtskl4gQr5J
+	6CoGVMxbYdm9o8uAe9BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIrYG-0000ix-B4; Mon, 30 Mar 2020 10:21:52 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
+	id 1jIrd2-0002ui-4z; Mon, 30 Mar 2020 10:26:48 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIrY7-0000gT-6F
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 10:21:45 +0000
-Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com
- [209.85.222.47]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id 02UALCn8007690
- for <linux-arm-kernel@lists.infradead.org>; Mon, 30 Mar 2020 19:21:12 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 02UALCn8007690
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1585563673;
- bh=age6B3Q1YALNVXTjtXbWA6xegYm+dQCmImhIvDBLFFI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=AHmRqT3iiWkdvGRwePu36ChTwTWyvMFo1mfBOU+QxPuIfMuovfCK4N5gtD5Eo1UPc
- O4T6pSYwtE/JBNeR2bsl3vYs5jIVRVdmopiwzhFKLoDDOzRL/pLX1F8BIH6NwtgNrn
- 8Jt/87YJX8xx0MjkXjJ/xbx30yrGeAH9uZuONwKUoBL8jSnRZ/p/I6UgxEMt/zkC1D
- pwAO/e/I5ciHuJxEoOtxprJE4GBVtEZjjISTVqoYdWFiCpf2Adicd/C8AtxpCbM45l
- c4ANedeZh+hNaT0RXD4XwYRNzdVa3Im+u8JdnXEvuUnEyKsXeb7p3TdG4l97/t3hXl
- O+EiZ6xVZqm0A==
-X-Nifty-SrcIP: [209.85.222.47]
-Received: by mail-ua1-f47.google.com with SMTP id d23so5820009uak.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 03:21:12 -0700 (PDT)
-X-Gm-Message-State: AGi0Puar2TFxi5fIAoPkuCM9pT8fVKjhZRvP/FzO7tg4d91nxQeni7Lz
- voZNam5u3dR8Z7wY9XSjvFpdzuQHYSuVEGunwyk=
-X-Google-Smtp-Source: APiQypJXUnkK3NbFFLynQq+coARG1pdTbgPXjSysDqi6EwFK5zY3vAtWK3OAUXZ3/tyle00gwJkiE4vSM2k31pS/bVg=
-X-Received: by 2002:a9f:28c5:: with SMTP id d63mr7166320uad.25.1585563671565; 
- Mon, 30 Mar 2020 03:21:11 -0700 (PDT)
+ id 1jIrcs-0002te-Ls
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 10:26:40 +0000
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02UA4HeB100300
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 30 Mar 2020 06:26:36 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 302344crbs-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 30 Mar 2020 06:26:35 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Mon, 30 Mar 2020 11:26:20 +0100
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Mon, 30 Mar 2020 11:26:13 +0100
+Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
+ [9.149.105.232])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 02UAQOFg59113556
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 30 Mar 2020 10:26:24 GMT
+Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 2D3E952050;
+ Mon, 30 Mar 2020 10:26:24 +0000 (GMT)
+Received: from linux.ibm.com (unknown [9.148.206.230])
+ by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id B189B5204F;
+ Mon, 30 Mar 2020 10:26:21 +0000 (GMT)
+Date: Mon, 30 Mar 2020 13:26:19 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20200330074246.GA14243@dhcp22.suse.cz>
+ <20200330092127.GB30942@linux.ibm.com>
+ <20200330095843.GF14243@dhcp22.suse.cz>
 MIME-Version: 1.0
-References: <1584955970-8162-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1584955970-8162-2-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1584955970-8162-2-git-send-email-hayashi.kunihiko@socionext.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Mon, 30 Mar 2020 19:20:35 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARyRcxR0nhPWo9mY=tahGtwY2E8A50X_Tv4VhFfM-WLGQ@mail.gmail.com>
-Message-ID: <CAK7LNARyRcxR0nhPWo9mY=tahGtwY2E8A50X_Tv4VhFfM-WLGQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/6] dt-bindings: dma: uniphier-xdmac: Consolidate
- register region description
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Content-Type: multipart/mixed; boundary="00000000000069e9ff05a20fcfb1"
+Content-Disposition: inline
+In-Reply-To: <20200330095843.GF14243@dhcp22.suse.cz>
+X-TM-AS-GCONF: 00
+x-cbid: 20033010-0020-0000-0000-000003BE2E3C
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 20033010-0021-0000-0000-00002216C92E
+Message-Id: <20200330102619.GC30942@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
+ definitions=2020-03-30_01:2020-03-27,
+ 2020-03-30 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 bulkscore=0
+ impostorscore=0 lowpriorityscore=0 suspectscore=1 mlxlogscore=739
+ adultscore=0 malwarescore=0 mlxscore=0 priorityscore=1501 spamscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2003300091
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_032143_571793_9D884BFC 
-X-CRM114-Status: GOOD (  23.28  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200330_032638_722521_8BFBEEFC 
+X-CRM114-Status: GOOD (  38.28  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,154 +102,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jassi Brar <jaswinder.singh@linaro.org>
+Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
+ Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---00000000000069e9ff05a20fcfb1
-Content-Type: text/plain; charset="UTF-8"
+On Mon, Mar 30, 2020 at 11:58:43AM +0200, Michal Hocko wrote:
+> On Mon 30-03-20 12:21:27, Mike Rapoport wrote:
+> > On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
+> > > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
+> > > > In NUMA layout which nodes have memory ranges that span across other nodes,
+> > > > the mm driver can detect the memory node id incorrectly.
+> > > > 
+> > > > For example, with layout below
+> > > > Node 0 address: 0000 xxxx 0000 xxxx
+> > > > Node 1 address: xxxx 1111 xxxx 1111
+> > > > 
+> > > > Note:
+> > > >  - Memory from low to high
+> > > >  - 0/1: Node id
+> > > >  - x: Invalid memory of a node
+> > > > 
+> > > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> > > > config, mm only checks the memory validity but not the node id.
+> > > > Because of that, Node 1 also detects the memory from node 0 as below
+> > > > when it scans from the start address to the end address of node 1.
+> > > > 
+> > > > Node 0 address: 0000 xxxx xxxx xxxx
+> > > > Node 1 address: xxxx 1111 1111 1111
+> > > > 
+> > > > This layout could occur on any architecture. Most of them enables
+> > > > this config by default with CONFIG_NUMA. This patch, by default, enables
+> > > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
+> > > 
+> > > I am not opposed to this at all. It reduces the config space and that is
+> > > a good thing on its own. The history has shown that meory layout might
+> > > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
+> > > which is clearly an overkill.
+> > > 
+> > > Your description doesn't really explain why this is safe though. The
+> > > history of this config is somehow messy, though. Mike has tried
+> > > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
+> > > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
+> > > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
+> > > reasoning what so ever. This doesn't make it really easy see whether
+> > > reasons for reintroduction are still there. Maybe there are some subtle
+> > > dependencies. I do not see any TBH but that might be burried deep in an
+> > > arch specific code.
+> > 
+> > Well, back then early_pfn_in_nid() was arch-dependant, today everyone
+> > except ia64 rely on HAVE_MEMBLOCK_NODE_MAP.
+> 
+> What would it take to make ia64 use HAVE_MEMBLOCK_NODE_MAP? I would
+> really love to see that thing go away. It is causing problems when
+> people try to use memblock api.
 
-On Mon, Mar 23, 2020 at 6:33 PM Kunihiko Hayashi
-<hayashi.kunihiko@socionext.com> wrote:
->
-> The extension register region isn't currently referred from the driver, so
-> this consolidates the extension register region description into the base
-> register region, and spreads the region size in example.
+Sorry, my bad, ia64 does not have NODES_SPAN_OTHER_NODES, but it does have
+HAVE_MEMBLOCK_NODE_MAP.
 
+I remember I've tried killing HAVE_MEMBLOCK_NODE_MAP, but I've run into
+some problems and then I've got distracted. I too would like to have
+HAVE_MEMBLOCK_NODE_MAP go away, maybe I'll take another look at it.
+ 
+> > So, if the memblock node map
+> > is correct, that using CONFIG_NUMA instead of CONFIG_NODES_SPAN_OTHER_NODES
+> > would only mean that early_pfn_in_nid() will cost several cycles more on
+> > architectures that didn't select CONFIG_NODES_SPAN_OTHER_NODES (i.e. arm64
+> > and sh).
+> 
+> Do we have any idea on how much of an overhead that is? Because this is
+> per each pfn so it can accumulate a lot! 
 
-You should not say this in the commit log.
-
-The DT binding is hardware description.
-Whether it is used or not in the driver is not a primary reason.
-
-
-
-I recommend you to read this:
-
-
-Documentation/devicetree/bindings/writing-bindings.txt:
-
-- DON'T refer to Linux or "device driver" in bindings. Bindings should be
-  based on what the hardware has, not what an OS and driver currently support.
-
-
-
-
-> Fixes: b9fb56b6ba8a ("dt-bindings: dmaengine: Add UniPhier external DMA controller bindings")
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
-> index 86cfb59..830cd88 100644
-> --- a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
-> +++ b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
-> @@ -23,8 +23,7 @@ properties:
->
->    reg:
->      items:
-> -      - description: XDMAC base register region (offset and length)
-> -      - description: XDMAC extension register region (offset and length)
-> +      - description: XDMAC register region (offset and length)
-
-Now that the reg is a single tuple,
-the "items" is unneeded.
-
-
-
->    interrupts:
->      maxItems: 1
-> @@ -54,7 +53,7 @@ examples:
->    - |
->      xdmac: dma-controller@5fc10000 {
->          compatible = "socionext,uniphier-xdmac";
-> -        reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
-> +        reg = <0x5fc10000 0x5100>;
-
-
-Checking the datasheet (LD20), this seems still wrong.
-
-The last register is XDMAID3 : 0x5fc1520c
-
-So, reg = <0x5fc10000 0x5300>;
-
-
-I attached a patch, which I think more correct.
-Please check it, and I will send it to the correct ML.
-
-
-
->          interrupts = <0 188 4>;
->          #dma-cells = <2>;
->          dma-channels = <16>;
-> --
-> 2.7.4
->
+It's O(log(N)) where N is the amount of the memory banks (ie. memblock.memory.cnt)
+ 
+> > Agian, ia64 is an exception here.
+> 
+> Thanks for the clarification!
+> -- 
+> Michal Hocko
+> SUSE Labs
 
 -- 
-Best Regards
-Masahiro Yamada
+Sincerely yours,
+Mike.
 
---00000000000069e9ff05a20fcfb1
-Content-Type: text/x-patch; charset="US-ASCII"; 
-	name="0001-dt-bindings-dma-uniphier-xdmac-switch-to-single-reg-.patch"
-Content-Disposition: attachment; 
-	filename="0001-dt-bindings-dma-uniphier-xdmac-switch-to-single-reg-.patch"
-Content-Transfer-Encoding: base64
-Content-ID: <f_k8ebl7qt0>
-X-Attachment-Id: f_k8ebl7qt0
-
-RnJvbSA5NDY0MmIwZmM3OTc2YmU1MTRhY2M3MGEwOTVlZTNlZmVhYzNkOGUzIE1vbiBTZXAgMTcg
-MDA6MDA6MDAgMjAwMQpGcm9tOiBNYXNhaGlybyBZYW1hZGEgPHlhbWFkYS5tYXNhaGlyb0Bzb2Np
-b25leHQuY29tPgpEYXRlOiBNb24sIDMwIE1hciAyMDIwIDE4OjMxOjE4ICswOTAwClN1YmplY3Q6
-IFtQQVRDSF0gZHQtYmluZGluZ3M6IGRtYTogdW5pcGhpZXIteGRtYWM6IHN3aXRjaCB0byBzaW5n
-bGUgcmVnIHJlZ2lvbgoKVGhlIHJlZyBpbiB0aGUgZXhhbXBsZSAiPDB4NWZjMTAwMDAgMHgxMDAw
-PiwgPDB4NWZjMjAwMDAgMHg4MDA+IgppcyB3cm9uZy4gVGhlIHJlZ2lzdGVyIHJlZ2lvbiBvZiB0
-aGlzIGNvbnRyb2xsZXIgaXMgbXVjaCBzbWFsbGVyLAphbmQgdGhlcmUgaXMgbm8gb3RoZXIgaGFy
-ZHdhcmUgcmVnaXN0ZXIgaW50ZXJsZWF2ZWQuIFRoZXJlIGlzCm5vIGdvb2QgcmVhc29uIHRvIHNw
-bGl0IGl0IGludG8gdHdvIHJlZ2lvbnMuCgpKdXN0IHVzZSBhIHNpbmdsZSwgY29udGlndW91cyBy
-ZWdpc3RlciByZWdpb24uCgpXaGlsZSBJIGFtIGhlcmUsIEkgbWFkZSB0aGUgJ2RtYS1jaGFubmVs
-cycgcHJvcGVydHkgbWFuZGF0b3J5IGJlY2F1c2UKb3RoZXJ3aXNlIHRoZXJlIGlzIG5vIHdheSB0
-byBkZXRlcm1pbmUgdGhlIG51bWJlciBvZiB0aGUgY2hhbm5lbHMuCgpQbGVhc2Ugbm90ZSB0aGUg
-b3JpZ2luYWwgYmluZGluZyB3YXMgbWVyZ2VkIHJlY2VudGx5LiBTaW5jZSB0aGVyZQppcyBubyB1
-c2VyIHlldCwgdGhpcyBjaGFuZ2UgaGFzIG5vIGFjdHVhbCBpbXBhY3QuCgpGaXhlczogYjlmYjU2
-YjZiYThhICgiZHQtYmluZGluZ3M6IGRtYWVuZ2luZTogQWRkIFVuaVBoaWVyIGV4dGVybmFsIERN
-QSBjb250cm9sbGVyIGJpbmRpbmdzIikKU2lnbmVkLW9mZi1ieTogTWFzYWhpcm8gWWFtYWRhIDx5
-YW1hZGEubWFzYWhpcm9Ac29jaW9uZXh0LmNvbT4KLS0tCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5n
-cy9kbWEvc29jaW9uZXh0LHVuaXBoaWVyLXhkbWFjLnlhbWwgIHwgNyArKystLS0tCiAxIGZpbGUg
-Y2hhbmdlZCwgMyBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL0Rv
-Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kbWEvc29jaW9uZXh0LHVuaXBoaWVyLXhk
-bWFjLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3NvY2lvbmV4
-dCx1bmlwaGllci14ZG1hYy55YW1sCmluZGV4IDg2Y2ZiNTk5MjU2ZS4uMzcxZjE4NzczMTk4IDEw
-MDY0NAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3NvY2lvbmV4
-dCx1bmlwaGllci14ZG1hYy55YW1sCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
-aW5ncy9kbWEvc29jaW9uZXh0LHVuaXBoaWVyLXhkbWFjLnlhbWwKQEAgLTIyLDkgKzIyLDcgQEAg
-cHJvcGVydGllczoKICAgICBjb25zdDogc29jaW9uZXh0LHVuaXBoaWVyLXhkbWFjCiAKICAgcmVn
-OgotICAgIGl0ZW1zOgotICAgICAgLSBkZXNjcmlwdGlvbjogWERNQUMgYmFzZSByZWdpc3RlciBy
-ZWdpb24gKG9mZnNldCBhbmQgbGVuZ3RoKQotICAgICAgLSBkZXNjcmlwdGlvbjogWERNQUMgZXh0
-ZW5zaW9uIHJlZ2lzdGVyIHJlZ2lvbiAob2Zmc2V0IGFuZCBsZW5ndGgpCisgICAgbWF4SXRlbXM6
-IDEKIAogICBpbnRlcnJ1cHRzOgogICAgIG1heEl0ZW1zOiAxCkBAIC00OSwxMiArNDcsMTMgQEAg
-cmVxdWlyZWQ6CiAgIC0gcmVnCiAgIC0gaW50ZXJydXB0cwogICAtICIjZG1hLWNlbGxzIgorICAt
-IGRtYS1jaGFubmVscwogCiBleGFtcGxlczoKICAgLSB8CiAgICAgeGRtYWM6IGRtYS1jb250cm9s
-bGVyQDVmYzEwMDAwIHsKICAgICAgICAgY29tcGF0aWJsZSA9ICJzb2Npb25leHQsdW5pcGhpZXIt
-eGRtYWMiOwotICAgICAgICByZWcgPSA8MHg1ZmMxMDAwMCAweDEwMDA+LCA8MHg1ZmMyMDAwMCAw
-eDgwMD47CisgICAgICAgIHJlZyA9IDwweDVmYzEwMDAwIDB4NTMwMD47CiAgICAgICAgIGludGVy
-cnVwdHMgPSA8MCAxODggND47CiAgICAgICAgICNkbWEtY2VsbHMgPSA8Mj47CiAgICAgICAgIGRt
-YS1jaGFubmVscyA9IDwxNj47Ci0tIAoyLjE3LjEKCg==
---00000000000069e9ff05a20fcfb1
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---00000000000069e9ff05a20fcfb1--
-
