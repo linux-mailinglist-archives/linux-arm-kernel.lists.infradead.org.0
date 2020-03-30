@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43764197AFF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:42:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A88E7197B00
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:42:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aNwNeb24GRpjCCYr/m8swlg4I4LVR0KkXG4+QwDW2sE=; b=Dw8
-	A96j+sBcstyMgKZ5BgkIzmPbupmhp725yyPEQ5eABA7qdbqBCehJXTNeCe4lQ1sgkIBQThS+IbC9i
-	y+fuS6u5JJPLAR0l4mqyFES2aXLhrfA9wMT0o0a2b6FKDvA+IQkGXgy/hcPtNccDZgV5tsvF8ZONB
-	Awqq2/0sqxT7NqzynHPT41FUAOPnYDVuMspE6xGdR54MYBt5T7cUXxmG5Za8ROWQ8MjNHAOdWOsAF
-	e+AxwnEQbhu6N//lEF4t/Hx8oVjmsQ3Frb2IEqiiqmWDZ5nfEn/+rdT1oYwCU1MRX/Cgov2508aZP
-	vO0ehz4m9FCiBi63LD8umtlfE/F6yNg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=M6y8GOeniizyrr3RtxsbKhvL9Yp8bSFJcUMILVIKVu4=; b=c5L88nx1SI/98Av/wnodAsIHbB
+	CbhpP4pk0cKqyIQyrCNlJXK7HqGV2SKk4GZii3/Q3dgcxKEMlSu21D4dR1gkI1Rvimc4Z33Udy8kj
+	xSHin460ez/5rdOfu32M9gIPy5ddYE+NOmc5dQRo/ElTkzLUli1ALBtaf/V/zOuLi7kPRWSZm72yW
+	I7gFgo1gVK3RD2pce+ZPtT+iQ6tRP18kXbCRTz1tiDxYwusFKoznmud45FE2gLRMfDcnM/KebRb7Y
+	EVr4eOePWPtNzZAJRed4L7zAPl5J9xzZbi0APPCrBVdGsl0Pb3lTYmwKk+xFxSr4bMhMVmvmOWscq
+	w5Hdr5AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIso4-0004Tr-PQ; Mon, 30 Mar 2020 11:42:16 +0000
+	id 1jIsoI-0004fB-3J; Mon, 30 Mar 2020 11:42:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsnr-0004Sp-3a
+ id 1jIsnr-0004Ss-4A
  for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:42:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 484FD31B;
- Mon, 30 Mar 2020 04:42:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CA73101E;
+ Mon, 30 Mar 2020 04:42:02 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5997C3F52E;
- Mon, 30 Mar 2020 04:41:58 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B84253F52E;
+ Mon, 30 Mar 2020 04:42:00 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/2] init/kconfig: Add LD_VERSION Kconfig
-Date: Mon, 30 Mar 2020 17:11:38 +0530
-Message-Id: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v2 2/2] arm64: Kconfig: ptrauth: Add binutils version check to
+ fix mismatch
+Date: Mon, 30 Mar 2020 17:11:39 +0530
+Message-Id: <1585568499-21585-2-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+References: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_044203_198974_78D259D9 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200330_044203_208088_1DC392A5 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,41 +72,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This option can be used in Kconfig files to compare the ld version
-and enable/disable incompatible config options if required.
+Recent addition of ARM64_PTR_AUTH exposed a mismatch issue with binutils.
+9.1+ versions of gcc inserts a section note .note.gnu.property but this
+can be used properly by binutils version greater than 2.33.1. If older
+binutils are used then the following warnings are generated,
 
-This option is used in the subsequent patch along with GCC_VERSION to
-filter out an incompatible feature.
+aarch64-linux-ld: warning: arch/arm64/kernel/vdso/vgettimeofday.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
+aarch64-linux-objdump: warning: arch/arm64/lib/csum.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
+aarch64-linux-nm: warning: .tmp_vmlinux1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0000000
 
+This patch enables ARM64_PTR_AUTH when gcc and binutils versions are
+compatible with each other. Older gcc which do not insert such section
+continue to work as before.
+
+This scenario may not occur with clang as a recent commit 3b446c7d27ddd06
+("arm64: Kconfig: verify binutils support for ARM64_PTR_AUTH") masks
+binutils version lesser then 2.34.
+
+Reported-by: kbuild test robot <lkp@intel.com>
+Suggested-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
-Changes since v1:
-* None.
+Changes since v1[1]:
+ * Separated GCC and CLANG checks as suggested by Catalin.
+ * Added comments in Kconfig entry.
 
-This patch series is based on Linux arm64 for-next tree [1]. More details
-of this work can be found in the thread [2].
+[1]: https://lkml.org/lkml/2020/3/26/626 
 
-[1]: https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
-[2]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-March/720257.html
+ arch/arm64/Kconfig | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
- init/Kconfig | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/init/Kconfig b/init/Kconfig
-index 452bc18..68ddbcd 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -17,6 +17,10 @@ config GCC_VERSION
- 	default $(shell,$(srctree)/scripts/gcc-version.sh $(CC)) if CC_IS_GCC
- 	default 0
- 
-+config LD_VERSION
-+	int
-+	default $(shell,$(LD) --version | $(srctree)/scripts/ld-version.sh)
-+
- config CC_IS_CLANG
- 	def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
- 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index e6712b6..4391a4f 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1503,7 +1503,10 @@ config ARM64_PTR_AUTH
+ 	default y
+ 	depends on !KVM || ARM64_VHE
+ 	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
+-	depends on CC_IS_GCC || (CC_IS_CLANG && AS_HAS_CFI_NEGATE_RA_STATE)
++	# GCC 9.1 version inserts a section note .note.gnu.property for PAC
++	# which can be used properly by binutils version 2.33.1 and higher.
++	depends on !CC_IS_GCC || GCC_VERSION < 90100 || LD_VERSION >= 233010000
++	depends on !CC_IS_CLANG || AS_HAS_CFI_NEGATE_RA_STATE
+ 	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
+ 	help
+ 	  Pointer authentication (part of the ARMv8.3 Extensions) provides
 -- 
 2.7.4
 
