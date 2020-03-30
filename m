@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53D61197601
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 09:51:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78B9019762B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 10:05:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5sgP6zdru/ZnJW7AmjOVIBSprITdyRNrn//AWLgwXrA=; b=Utl7sNTuDQ8GIu
-	5w10CWNNZlgNzeZoB3+g3Yr2nGQ1V9Lt0CKnVbyfFy4BjtkgkeCBoasjJCCE8Nyn1i1cBt803ZOEO
-	ECGtq5DL1TuRiCbuY6mgWzqfT/6pEfpr/Roy/31APXzYuvuGTooCnmBbrno3u5xpmrc5UmmhRLsRA
-	g0r8sP7qV9jhjB0iVFwxDWGKgJnTt/JNHmptQWNiZ7B96Ek47rAlFlsw18yj7lDi74Szb+0ZORsct
-	RDn7UShzmh3DxaEkTT16DUBlHo2emOUFASu8OINF26tpsQhzY1RabddajR+q/K1FWUyQewAbPezFl
-	EQjnP38FdMgYpjNUx0lA==;
+	List-Owner; bh=4aXytUPhVbQTGNViZQ8N4brdn+WU8vqTokx86CqdKZI=; b=tu1U3LgfZDpwav
+	/3RPf6T1biF8j2skd/LJoGhg3b6uejw/wSOANWumgoWLejnqbwPA9MBwFjMGgyEfRgYPlvOIqwE6x
+	VgQNl77QfDai2Lus//TMmuBx/bBdui5ALJV0Pt3p0snPzRCRXueUX4IgJTd6w9I1igy+K+GtsmNQu
+	vi1WCXTaSUiI/dl193SYpS7+yK5bK/iHq5AauYLTmRYmyWx5cLQ9pgIag12CtpPaEW6rh/b5sehIw
+	/LsPqRt0YWAQTfj1Ibn2Um+x1nELDuUW+RVoAvzvIUkaYJhWr2j8f2C1Qbk6VUluZX3VM+VKE/ev7
+	/XcUzMLOtmhU3zyzUvBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIpCr-0002ih-BB; Mon, 30 Mar 2020 07:51:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jIpQ9-0000Xv-NL; Mon, 30 Mar 2020 08:05:21 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIpCe-0002iD-OU
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 07:51:26 +0000
-Received: from mail-io1-f41.google.com (mail-io1-f41.google.com
- [209.85.166.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jIpQ0-0000Tm-JQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 08:05:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585555509;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=nVwRo6XO9WRKmSULb4OWrX5slFKDiMD/LCNJjQ0boIs=;
+ b=IIzrUg8jPgrmEVQPxsZ35B7nHXAckKB4sQbtembRyfrd9dS+PE4dbkMsnv8lzdGV/uAXgF
+ hBnc/TLm1PKNWueF9CWHY+BisQlmhKhDBbH1nYsyV1t2P1SBP+PF4N6Vq3Mg2y21nb6mgP
+ mK1NpybUWmUdLBJJ0505XPT8Ofvp/rU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-468-l4TLxabQO2KtEB9hP7eswA-1; Mon, 30 Mar 2020 04:05:04 -0400
+X-MC-Unique: l4TLxabQO2KtEB9hP7eswA-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 649BC2073B
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 07:51:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585554684;
- bh=Y8iozU+3Uxa2Bhwk87vv3a4C+Xj6+XHJpWVgFKneD3w=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OG0SSX0NEbTTX+RjrsSju52zT65Alrient5Pcy7VznCyf2tnAOmJbWbPD9FFHOjQz
- qjXNdCXkSRxdy8peqmT0E5/CG9tVaBr7zhcWkzz9StuxUeW39J1A2+OYKP+d619ZbW
- VlozX+T30/3hMhj9PFAwjZOQgNFk+DuFM/ARFJ90=
-Received: by mail-io1-f41.google.com with SMTP id b12so494983ion.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 00:51:24 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0rEQZGeFGsypvuURJupbhlBf/sbyNyZoGR/+xDN8gF5OdyyVRc
- a6ypSokOQX6OuWyI7VANUXDNbniSLB4MHeziNkY=
-X-Google-Smtp-Source: ADFU+vtM6+Nn+/IjEoVFqOuexbxH6OIOgiutPqTBcyosryYk8TDDw3LTxT6L93nYf9LVEPa+uut3+OR1ktd8ljcCycE=
-X-Received: by 2002:a02:a1c2:: with SMTP id o2mr9476970jah.98.1585554683858;
- Mon, 30 Mar 2020 00:51:23 -0700 (PDT)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F135A801E5C;
+ Mon, 30 Mar 2020 08:05:00 +0000 (UTC)
+Received: from localhost (ovpn-12-53.pek2.redhat.com [10.72.12.53])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 27E25953DB;
+ Mon, 30 Mar 2020 08:04:59 +0000 (UTC)
+Date: Mon, 30 Mar 2020 16:04:56 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20200330080456.GJ9942@MiWiFi-R3L-srv>
+References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20200329001924.GS3039@MiWiFi-R3L-srv>
+ <20200330074426.GB14243@dhcp22.suse.cz>
 MIME-Version: 1.0
-References: <20200328205809.23825-1-ardb@kernel.org>
- <20200330074721.GV22097@bivouac.eciton.net>
- <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
-In-Reply-To: <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 30 Mar 2020 09:51:12 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
-Message-ID: <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
-Subject: Re: [PATCH] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-To: Leif Lindholm <leif@nuviainc.com>
+Content-Disposition: inline
+In-Reply-To: <20200330074426.GB14243@dhcp22.suse.cz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_005124_817436_49FBF7D2 
-X-CRM114-Status: GOOD (  18.88  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200330_010512_720788_624B1E53 
+X-CRM114-Status: GOOD (  15.27  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,47 +90,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Boqun Feng <Boqun.Feng@microsoft.com>,
- linux-efi <linux-efi@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michael Kelley <mikelley@microsoft.com>
+Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Hoan Tran <Hoan@os.amperecomputing.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
+ Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Mar 2020 at 09:50, Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> On Mon, 30 Mar 2020 at 09:47, Leif Lindholm <leif@nuviainc.com> wrote:
-> >
-> > On Sat, Mar 28, 2020 at 21:58:09 +0100, Ard Biesheuvel wrote:
-> > > Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
-> > > PE/COFF entrypoint") did some code refactoring to get rid of the
-> > > EFI entry point assembler code, and in the process, it got rid of the
-> > > assignment of image_addr to the value of _text. Instead, it switched
-> > > to using the image_base field of the efi_loaded_image struct provided
-> > > by UEFI, which should contain the same value.
-> > >
-> > > However, Michael reports that this is not the case: older GRUB builds
-> > > corrupt this value in some way, and since we can easily switch back to
-> > > referring to _text to discover this value, let's simply do that.
-> >
-> > It is not clear to me how "older GRUB builds" would differ here.
-> > I think more investigation is needed before making that claim.
-> > My suspicion is that some (old) version of non-upstream, shim-enabled
-> > distro-specific build is playing a part.
-> >
-> > So, do we have the option for more detailed investigations, or can we
-> > vague the claim up to say "some GRUB builds seen in the wild, based
-> > on an upstream 2.02" or suchlike?
-> >
->
-> I've queued a fix that prints a nastygram if the value deviates from
-> the expected one. Let's see if this triggers any reports.
+On 03/30/20 at 09:44am, Michal Hocko wrote:
+> On Sun 29-03-20 08:19:24, Baoquan He wrote:
+> > On 03/28/20 at 11:31am, Hoan Tran wrote:
+> > > In NUMA layout which nodes have memory ranges that span across other nodes,
+> > > the mm driver can detect the memory node id incorrectly.
+> > > 
+> > > For example, with layout below
+> > > Node 0 address: 0000 xxxx 0000 xxxx
+> > > Node 1 address: xxxx 1111 xxxx 1111
+> > 
+> > Sorry, I read this example several times, but still don't get what it
+> > means. Can it be given with real hex number address as an exmaple? I
+> > mean just using the memory layout you have seen from some systems. The
+> > change looks interesting though.
+> 
+> Does this make it more clear?
+>            physical address range and its node associaion
+>          [0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1]
 
-(/me looks at context)
+I later read it again, have got what Hoan is trying to say, thanks.
 
-*This* is the fix that prints a nastygram.
+I think the change in this patchset makes sense, still have some concern
+though, let me add comment in other thread.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
