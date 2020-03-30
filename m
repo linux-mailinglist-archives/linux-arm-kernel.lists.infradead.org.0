@@ -2,62 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45712197AF3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43764197AFF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:42:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z1dm5CinXnAMsfRRJHH59n5z4dypdITfLQvnee6twBQ=; b=KFWZ7akhJpOkVw
-	JCc84I6Y5MzDYienmxBbHE3gQBLmAwKauoNwjEkHJR7ObvlZkJpB+Xepu5+58RxZBXdUQnbQbwn9z
-	nNSjFYYjEiIkjfsqoNhCA4DZjWf3LA3mgUpLrVpHXTKK+R+B2FgxHAzNpjJXKwVBmedYiCb+YQaI7
-	keDF+UKHCZH0NlrRN3Vfr8h/fouWdUNew0QwiY1Wm7ryPXv2XUOdoFhTuVyu1Y5uJKQFCbg01EeyV
-	Oa/1rhOddjjxhNDsULiTWKH7H9XuGRHIw2GfFNOM7WRKihWWw+nBeCm1GltgZA6utYy+268ThW1y5
-	S+3ZHbWJpelSZrDJt9Uw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aNwNeb24GRpjCCYr/m8swlg4I4LVR0KkXG4+QwDW2sE=; b=Dw8
+	A96j+sBcstyMgKZ5BgkIzmPbupmhp725yyPEQ5eABA7qdbqBCehJXTNeCe4lQ1sgkIBQThS+IbC9i
+	y+fuS6u5JJPLAR0l4mqyFES2aXLhrfA9wMT0o0a2b6FKDvA+IQkGXgy/hcPtNccDZgV5tsvF8ZONB
+	Awqq2/0sqxT7NqzynHPT41FUAOPnYDVuMspE6xGdR54MYBt5T7cUXxmG5Za8ROWQ8MjNHAOdWOsAF
+	e+AxwnEQbhu6N//lEF4t/Hx8oVjmsQ3Frb2IEqiiqmWDZ5nfEn/+rdT1oYwCU1MRX/Cgov2508aZP
+	vO0ehz4m9FCiBi63LD8umtlfE/F6yNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsju-0002c8-Vl; Mon, 30 Mar 2020 11:37:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsjk-0002a9-0E
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:37:49 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <a.fatoum@pengutronix.de>)
- id 1jIsji-0006mx-40; Mon, 30 Mar 2020 13:37:46 +0200
-Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
- for SDMMC2 pins 4-7
-To: Marek Vasut <marex@denx.de>, Patrice CHOTARD <patrice.chotard@st.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20200328171144.51888-1-marex@denx.de>
- <20200328171144.51888-8-marex@denx.de>
- <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
- <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
- <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
-From: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Message-ID: <310aa3a3-09ce-42ef-d1ea-b653163d1d72@pengutronix.de>
-Date: Mon, 30 Mar 2020 13:37:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: a.fatoum@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+	id 1jIso4-0004Tr-PQ; Mon, 30 Mar 2020 11:42:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIsnr-0004Sp-3a
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:42:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 484FD31B;
+ Mon, 30 Mar 2020 04:42:00 -0700 (PDT)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5997C3F52E;
+ Mon, 30 Mar 2020 04:41:58 -0700 (PDT)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 1/2] init/kconfig: Add LD_VERSION Kconfig
+Date: Mon, 30 Mar 2020 17:11:38 +0530
+Message-Id: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_043748_043128_528F6CA4 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200330_044203_198974_78D259D9 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,66 +59,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Patrick DELAUNAY <patrick.delaunay@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>
+Cc: Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek,
+This option can be used in Kconfig files to compare the ld version
+and enable/disable incompatible config options if required.
 
-On 3/30/20 1:22 PM, Marek Vasut wrote:
-> On 3/30/20 1:17 PM, Ahmad Fatoum wrote:
->> Hello Patrice,
-> 
-> Hi,
-> 
->> On 3/30/20 1:11 PM, Patrice CHOTARD wrote:
->>> For your information, another submitted patch uses the same pinctrl sdmmc2_d47_pins_b node with different muxing (SDMMC2_D5)
->>>
->>> see https://lore.kernel.org/patchwork/patch/1216452/
->>>
->>> I haven't checked other muxing if there are other conflict.
->>
->> (author of linked patch here)
->>
->> I don't like the central stm32mp15-pinctrl.dtsi. I'd have preferred if each
->> file defined the pinctrl groups it is using.
-> 
-> I'm not a big fan of that either, because this is gonna be a
-> combinatorial explosion of various pinmux options. But if you have each
-> board define it's pinmux, it's also gonna become a massive amount of
-> duplication (like iMX). So I cannot tell which one is better ...
+This option is used in the subsequent patch along with GCC_VERSION to
+filter out an incompatible feature.
 
-Mhm. A middle ground could be keeping stm32mp15-pinctrl, but only for the
-official ST eval kits as HW designers are expected to copy off those and have
-board specifics in the board/SoM device tree?
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+Changes since v1:
+* None.
 
-If it has to be either one or the other, I prefer duplication in the device
-tree. When the HW misses pull ups or needs to adjust slew rates, you probably
-don't want a new, slightly different, pinctrl group in the stm32mp15-pinctrl.dtsi
-for each variant.
+This patch series is based on Linux arm64 for-next tree [1]. More details
+of this work can be found in the thread [2].
 
-So you are left with doctoring around with overrides and /delete-property/,
-while just duplicating the node with the correct properties would've been
-better for readability IMO.
+[1]: https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
+[2]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-March/720257.html
 
-> So, just apply one patch or the other, let me know what got applied and
-> I'll rebase on top of that and resubmit if needed.
+ init/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Same.
-
-Cheers
-Ahmad
-
+diff --git a/init/Kconfig b/init/Kconfig
+index 452bc18..68ddbcd 100644
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -17,6 +17,10 @@ config GCC_VERSION
+ 	default $(shell,$(srctree)/scripts/gcc-version.sh $(CC)) if CC_IS_GCC
+ 	default 0
+ 
++config LD_VERSION
++	int
++	default $(shell,$(LD) --version | $(srctree)/scripts/ld-version.sh)
++
+ config CC_IS_CLANG
+ 	def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
+ 
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
