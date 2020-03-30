@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D9AD1981CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 19:01:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFAAA1981D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 19:05:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2SPC4/ySTjY+qG6Yi5ka/gOj6sMc2N1mVmvjDg9hotU=; b=nJzcPrIuSY4rJ5eYbfNdWNAKE
-	n546fNaGjJBGa5qKFUm4EsUqzpC40pSJyhuVyKRbI6Kq1h754ThV5U21sj33ourACiMb6xsB9LUde
-	SjSScjII22QnWup5niI3IudeT1SpV0pFaLVNRyHj9FWzRXLnKVBfKcABq1+MfOoScaYh12wLb2Js0
-	4SYLI5ApHtnXq8upiNQ00SV5kDxzg6ow28a1u8YeikIFHjogXGqKg//3aAqS+/6qspAF/mLGGdKdm
-	HiqfURQbu97QpZzSPjoJA26hXN6iQ/M7OPavScGkphhmE+dFA1knxxWXVekinvymy88mV3m76D3c5
-	199gC8HXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zb/0ZAvJP7xJkBZPvwGD00PGWVEAeo0GWl9NMqe6u8I=; b=V7lJattN1UrtBZ
+	fYqRcBsM1OhsoW5uiUYXsJwxo3Uful3We8OqNzYHkJOnZ7S0qWeE393ZhNJOdj1ExSuwjhh/RUqEM
+	9lTjcwC9QN96ay+yF314Y5pHSwA257HCYDM4LCzXH5ZNpneHcCr2INY0es6ibDXd05dsHWMBUsZlg
+	TiGXNN9LawgvRe89gGtdk43X3wFMQvdWHnl9QNAsE+aIsX006w9OwI+vojaBYdWTzQuVX1ZoAYlqM
+	xJMh6FqBF9UYsU61Pjf5lIrWqlkRbjet33g9afpPVZPm3/bqBKag9bCxcE9I9RCez005CjKETXLuG
+	cAOrqz8yThsGtDIrdjVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIxmY-00066H-PO; Mon, 30 Mar 2020 17:01:02 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jIxqI-0006dt-NH; Mon, 30 Mar 2020 17:04:54 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIxmL-00064D-Ls
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 17:00:54 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1585587653; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=1d8KTbgt/iCLQW3VVzDGNmfmBuqcJpPIW3cjwTeucPA=;
- b=UeQUIj36qzmEPr0ZxebF2wGrMTC5EMqJdd8XDMP4wD77mooaaXeHh9dkWm7cszT786Mlk5gm
- ggXnvQihqPV6cUaRJ+LBeWqpaNdCrXCYCGe6N6mu9JZPANf+WoVwYhTq/+VcE61ekMYKjTXa
- 3eL9S6jLUwlztIroWPDDPHltqTA=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e8225b3.7f577fd473b0-smtp-out-n02;
- Mon, 30 Mar 2020 17:00:35 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id B2F23C4478C; Mon, 30 Mar 2020 17:00:35 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [192.168.8.111] (cpe-70-95-153-89.san.res.rr.com [70.95.153.89])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 795AAC433D2;
- Mon, 30 Mar 2020 17:00:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 795AAC433D2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v1 1/1] scsi: ufs: set device as active power mode after
- resetting device
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- jejb@linux.ibm.com
-References: <20200327095835.10293-1-stanley.chu@mediatek.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <ae5747c1-fd33-2588-b838-d88d21bcb267@codeaurora.org>
-Date: Mon, 30 Mar 2020 10:00:32 -0700
+ id 1jIxq8-0006cm-Rd
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 17:04:46 +0000
+Received: by mail-wm1-x344.google.com with SMTP id j19so4028583wmi.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Mar 2020 10:04:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=qqStv1Lo1qg4gRg7lDrcQqRCTc9QZc+NG4mrfiQbFjE=;
+ b=Uh4bVVfaNPgqBDf14A/tNlnFlIMgcAjfpCWcb+Uzrx//iiYZNWzYxkVZtoxnnBGNE7
+ JUng1z3YWhf3Ee4gCS+2rK3YV4eaABGB5nQVH/R8tVtdVZInAAMkT1GD+hjo00JOuZqN
+ FvOAi1z1lfK4wW+rdBnYnyco/ZYm94ggobg0Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=qqStv1Lo1qg4gRg7lDrcQqRCTc9QZc+NG4mrfiQbFjE=;
+ b=Asn2CaDJN0quXb7eIz1RyFKGVytHD21QLtqsxPoWy1gFPVx0Jho+WNj8uW8LeruFKc
+ ZvNbenOFdPiaT7C09mhgQavo/MnWZaInpsrqkc47hmjG9zACvaG8c9l5Jh9k9FhI16u0
+ d9D+dqau56xv3wZ8gz60zF6asJsY+9UzqAM1Wac5lZTOBAZK2KzIoCUaKDaX+sY0NxgR
+ lrrrwhSacfH0nxFMjrN2jmZM2NV6arA2ys7qsKz5o2g/vrXwl3c0SKTRyMCW0QmnFyeY
+ CSBwb3pcM/IIOse7nBlhtD8W6gcznExcNtfWHgDaSIgkSq/yBuEBJwZmMz9VDyvXQdNa
+ E0Ew==
+X-Gm-Message-State: ANhLgQ02u+bM4WFlSNFUh2DvYJIk0MGV3Ddd02vMWcxvmL5XQd5nUH10
+ gE4a9LJyGfUYXG+BnZnzh2x8oQ==
+X-Google-Smtp-Source: ADFU+vvo+5kRarlX8ncgn7tFCSQDq8v2Ad0Bb+4DKkjHRYgiSGCpdbHJ7aZZkfTIo2aaSImThdshhg==
+X-Received: by 2002:a05:600c:2202:: with SMTP id
+ z2mr263068wml.64.1585587881418; 
+ Mon, 30 Mar 2020 10:04:41 -0700 (PDT)
+Received: from [10.230.26.36] ([192.19.224.250])
+ by smtp.gmail.com with ESMTPSA id t126sm192175wmb.27.2020.03.30.10.04.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 30 Mar 2020 10:04:40 -0700 (PDT)
+Subject: Re: [PATCH 1/3] PCI: iproc: fix out of bound array access
+To: Bjorn Helgaas <helgaas@kernel.org>
+References: <20200326204807.GA87784@google.com>
+From: Ray Jui <ray.jui@broadcom.com>
+Message-ID: <0fec2db0-fb56-615d-eed4-d702d1bc37fb@broadcom.com>
+Date: Mon, 30 Mar 2020 10:04:35 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200327095835.10293-1-stanley.chu@mediatek.com>
+In-Reply-To: <20200326204807.GA87784@google.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_100053_253010_D7AD9458 
-X-CRM114-Status: GOOD (  21.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200330_100444_899696_8A17A959 
+X-CRM114-Status: GOOD (  27.84  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,103 +98,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: Srinath Mannam <srinath.mannam@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Bharat Gooty <bharat.gooty@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-pci@vger.kernel.org,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 3/27/2020 2:58 AM, Stanley Chu wrote:
-> Currently ufshcd driver assumes that bInitPowerMode parameter
-> is not changed by any vendors thus device power mode can be set as
-> "Active" during initialization.
-> 
-> According to UFS JEDEC specification, device power mode shall be
-> "Active" after HW Reset is triggered if the bInitPowerMode parameter
-> in Device Descriptor is default value.
-> 
-> By above description, we can set device power mode as "Active" after
-> device reset is triggered by vendor's callback. With this change,
-> the link startup performance can be improved in some cases
-> by not setting link_startup_again as true in ufshcd_link_startup().
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
-
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-
->   drivers/scsi/ufs/ufshcd.c | 13 -------------
->   drivers/scsi/ufs/ufshcd.h | 14 ++++++++++++++
->   2 files changed, 14 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index 227660a1a446..f0a35b289b7c 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -171,19 +171,6 @@ enum {
->   #define ufshcd_clear_eh_in_progress(h) \
->   	((h)->eh_flags &= ~UFSHCD_EH_IN_PROGRESS)
->   
-> -#define ufshcd_set_ufs_dev_active(h) \
-> -	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
-> -#define ufshcd_set_ufs_dev_sleep(h) \
-> -	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
-> -#define ufshcd_set_ufs_dev_poweroff(h) \
-> -	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
-> -#define ufshcd_is_ufs_dev_active(h) \
-> -	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
-> -#define ufshcd_is_ufs_dev_sleep(h) \
-> -	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
-> -#define ufshcd_is_ufs_dev_poweroff(h) \
-> -	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
-> -
->   struct ufs_pm_lvl_states ufs_pm_lvl_states[] = {
->   	{UFS_ACTIVE_PWR_MODE, UIC_LINK_ACTIVE_STATE},
->   	{UFS_ACTIVE_PWR_MODE, UIC_LINK_HIBERN8_STATE},
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index b7bd81795c24..7a9d1d170719 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -129,6 +129,19 @@ enum uic_link_state {
->   #define ufshcd_set_link_hibern8(hba) ((hba)->uic_link_state = \
->   				    UIC_LINK_HIBERN8_STATE)
->   
-> +#define ufshcd_set_ufs_dev_active(h) \
-> +	((h)->curr_dev_pwr_mode = UFS_ACTIVE_PWR_MODE)
-> +#define ufshcd_set_ufs_dev_sleep(h) \
-> +	((h)->curr_dev_pwr_mode = UFS_SLEEP_PWR_MODE)
-> +#define ufshcd_set_ufs_dev_poweroff(h) \
-> +	((h)->curr_dev_pwr_mode = UFS_POWERDOWN_PWR_MODE)
-> +#define ufshcd_is_ufs_dev_active(h) \
-> +	((h)->curr_dev_pwr_mode == UFS_ACTIVE_PWR_MODE)
-> +#define ufshcd_is_ufs_dev_sleep(h) \
-> +	((h)->curr_dev_pwr_mode == UFS_SLEEP_PWR_MODE)
-> +#define ufshcd_is_ufs_dev_poweroff(h) \
-> +	((h)->curr_dev_pwr_mode == UFS_POWERDOWN_PWR_MODE)
-> +
->   /*
->    * UFS Power management levels.
->    * Each level is in increasing order of power savings.
-> @@ -1091,6 +1104,7 @@ static inline void ufshcd_vops_device_reset(struct ufs_hba *hba)
->   {
->   	if (hba->vops && hba->vops->device_reset) {
->   		hba->vops->device_reset(hba);
-> +		ufshcd_set_ufs_dev_active(hba);
->   		ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, 0);
->   	}
->   }
-> 
 
 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+On 3/26/2020 1:48 PM, Bjorn Helgaas wrote:
+> On Thu, Mar 26, 2020 at 01:27:36PM -0700, Ray Jui wrote:
+>> On 3/26/2020 12:48 PM, Bjorn Helgaas wrote:
+>>> ...
+>>> It's outside the scope of this patch, but I'm not really a fan of the
+>>> pcie->reg_offsets[] scheme this driver uses to deal with these
+>>> differences.  There usually seems to be *something* that keeps the
+>>> driver from referencing registers that don't exist, but it doesn't
+>>> seem like the mechanism is very consistent or robust:
+>>>
+>>>   - IPROC_PCIE_LINK_STATUS is implemented by PAXB but not PAXC.
+>>>     iproc_pcie_check_link() avoids using it if "ep_is_internal", which
+>>>     is set for PAXC and PAXC_V2.  Not an obvious connection.
+>>>
+>>>   - IPROC_PCIE_CLK_CTRL is implemented for PAXB and PAXC_V1, but not
+>>>     PAXC_V2.  iproc_pcie_perst_ctrl() avoids using it ep_is_internal",
+>>>     so it *doesn't* use it for PAXC_V1, which does implement it.
+>>>     Maybe a bug, maybe intentional; I can't tell.
+>>>
+>>>   - IPROC_PCIE_INTX_EN is only implemented by PAXB (not PAXC), but
+>>>     AFAICT, we always call iproc_pcie_enable() and rely on
+>>>     iproc_pcie_write_reg() silently drop the write to it on PAXC.
+>>>
+>>>   - IPROC_PCIE_OARR0 is implemented by PAXB and PAXB_V2 and used by
+>>>     iproc_pcie_map_ranges(), which is called if "need_ob_cfg", which
+>>>     is set if there's a "brcm,pcie-ob" DT property.  No clear
+>>>     connection to PAXB.
+>>>
+>>> I think it would be more readable if we used a single variant
+>>> identifier consistently, e.g., the "pcie->type" already used in
+>>> iproc_pcie_msi_steer(), or maybe a set of variant-specific function
+>>> pointers as pcie-qcom.c does.
+>>
+>> It is not possible to use a single variant identifier consistently,
+>> i.e., 'pcie->type'. Many of these features are controller revision
+>> specific, and certain revisions of the controllers may all have a
+>> certain feature, while other revisions of the controllers do not. In
+>> addition, there are overlap in features across different controllers.
+>>
+>> IMO, it makes sense to have feature specific flags or booleans, and have
+>> those features enabled or disabled based on 'pcie->type', which is what
+>> the current driver does, but like you pointed out, what the driver
+>> failed is to do this consistently.
+> 
+> There are several drivers that have the same problem of dealing with
+> different revisions of hardware.  It would be nice to do it in a
+> consistent style, whatever that is.
+> 
+
+Sure, agree with you that it should be handled in a consistent way
+within this driver, and the current driver is not handling this
+consistently.
+
+>> The IPROC_PCIE_INTX_EN example you pointed out is a good example. I
+>> agree with you that we shouldn't rely on iproc_pcie_write_reg to
+>> silently drop the operation for PAXC. We should add code to make it
+>> explictly obvious that legacy interrupt is not supported in all PAXC
+>> controllers.
+>>
+>> pcie->pcie->reg_offsets[] scheme was not intended to be used to silently
+>> drop register access that are activated based on features. It's a
+>> mistake that should be fixed if some code in the driver is done that
+>> way, as you pointed out.
+> 
+> That's actually why I dug into this a bit -- the
+> iproc_pcie_reg_is_invalid() case is really a design-time error, so it
+> seemed like there should be a WARN() there instead of silently
+> returning 0 or ignoring a write.
+> 
+
+I think 'iproc_pcie_reg_is_invalid' is a fall back protection. We should
+aim to prevent this from happening in the first place using whatever
+means we determined appropriate, and do that consistently. In addition,
+I also agree with you that there should be a WARN instead of silently
+returning zero (for reads) and dropping the writes.
+
+We'll be looking into improving this as you suggested when we have a
+chance. In the mean time, I think both of us agree this is out of the
+scope of the issue that this patch is trying to fix, which is actually a
+pretty critical issue that can cause potential corruption of memory and
+the fix should be picked up ASAP (and for older LTS kernels too).
+
+Thanks,
+
+Ray
+
+> Bjorn
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
