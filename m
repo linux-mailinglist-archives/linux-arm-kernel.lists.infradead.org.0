@@ -2,69 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6858F197D92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:53:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA6FF197DA6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UYVgQ523JlQS7AvEmeOLBEp8WrZqBy8rrEf6uLhTHg=; b=cmkvjl0+f5XwOJ
-	kGPTYw7p+OWztx98998iJAsH9M6NrSbkAraSgHVKMLKbLbIfpCktIl2elQlmCfU2eYofkJUriAgTn
-	3a6wBBOmRy0Nn3FV52ifNa3q7lk9qt2FKN/HvCjQ0jcVJ7dA3Ummjrfkl24V8xVoSsYWWz+aFJk39
-	A0I1kRJJ2a+RkdttbqIDAbh2AwVT+9Ow0cQyJP7R6DvmsmRiDvOSA424fLLj2N+V+TAicbYuZI3a1
-	8Pa3nyOO1P1NZHUGWijQGWyAVFxWhos8kxweU62NrMCXN2xWlxTc0dgaxBgoy1f9dwY1sSM9SlRho
-	80Ykx+cqYJnzYTPuCAUA==;
+	List-Owner; bh=VxDj6gyNeoIKokMzXjjUjuK9IFqX9hKUf+UXckIV1rk=; b=FRyX2oi+BuUQ+t
+	1DPmDKf8b7UhbPw3hbseu0i1ZDCDvlPMPPbc/jw+Waay++vLCNhzluwbhmN0q3hNsTq10U2ULhRHC
+	6wLxVrUC5pkGAR4cpYfGUuzNgVl4r5fNcO66IA3xv6sprL2oN/Pns82V5PWcMpJ7qA75gToPJePpI
+	sgrp/IPbEYmhTkhjhrb6AAi+BteQChJ25Sujp12IBZSBYKYgqk1QoGHX3bFq+u1+hfIVBRN3s9s+K
+	S8MNAjYJUkMMDMzn4l9MPvBvKi41WCd8FJuL/vQN/Ol++w8BGiKPj3BGoItVpuJmMrLc2Pu/DNo0q
+	Rq0sPBZ1GX98yWkYD/yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIuqz-0004eS-Nw; Mon, 30 Mar 2020 13:53:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jIutG-0006On-GE; Mon, 30 Mar 2020 13:55:46 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIuqq-0004e5-1o
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:53:17 +0000
-Received: from mail-io1-f50.google.com (mail-io1-f50.google.com
- [209.85.166.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jIut3-0006NC-4H
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:55:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585576532;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=/bPyyHPD42Xo1KBAiP96rTz8WoxuyBufsYOURf5PPKo=;
+ b=HaMoB1hWot9cQVTNlRBlbheZ39eEDLcVr/k7ZE3/Sk5wVWA6XT3tbDFRDfiT6TK2Hm8MBJ
+ l0jJPC8PkOIFMRlfiXPL1N3xmUrdCiA6+iXPi33+J+uxPLgMUB5kB5SMfUgDDBbVqJuQwM
+ Fld1nnZ/nLrhWuFBfBqbsyvWZ6KfsoE=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-4-MeV-U7rFPPWINPzB6xX6AQ-1; Mon, 30 Mar 2020 09:55:28 -0400
+X-MC-Unique: MeV-U7rFPPWINPzB6xX6AQ-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AAC682073B
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 13:53:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585576395;
- bh=ONKwrHl7PRNYbGE3vDjqEA9ngR/ho+h+Qjs3WXBioJg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=RwDATGOo24Ug60FYKAe4BLJJhOZNp82vnf51zyUDWRwsgU/zwavJ7EflUnlS1H7bv
- zICNNHGK9tp6ZvBfSF4OX0qjKGQsOlC/7iaq+L2vxLlwEgxavdKKIIqW0sQ5ndwE9m
- jTokLeDbrvwLKDK+s1p4pjgvKdizW8smUWGRykRg=
-Received: by mail-io1-f50.google.com with SMTP id h131so17806245iof.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 06:53:15 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ0xSAZnqKZmf8ivMbBKizAf0j98C1JImfvL16JcPa07imBpfy/c
- 2OhsLO7O24/wLgusq5Nunm9Q2ZpOCpK+I06gktE=
-X-Google-Smtp-Source: ADFU+vud5/bwSP0P8Z4nRqYNPnqG7tW9neq7l6CbvUZRPDpQXWdEc4NhcV2Nge4yz56zQ52JEFc8FRA4SKpa8KSSZJA=
-X-Received: by 2002:a6b:f413:: with SMTP id i19mr2031584iog.203.1585576395032; 
- Mon, 30 Mar 2020 06:53:15 -0700 (PDT)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A07FA18A5505;
+ Mon, 30 Mar 2020 13:55:26 +0000 (UTC)
+Received: from localhost (ovpn-12-192.pek2.redhat.com [10.72.12.192])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id DB60FA0A91;
+ Mon, 30 Mar 2020 13:55:25 +0000 (UTC)
+Date: Mon, 30 Mar 2020 21:55:22 +0800
+From: Baoquan He <bhe@redhat.com>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
+ use
+Message-ID: <20200330135522.GE6352@MiWiFi-R3L-srv>
+References: <20200326180730.4754-1-james.morse@arm.com>
 MIME-Version: 1.0
-References: <20200329141258.31172-1-ardb@kernel.org>
- <20200330135121.GD10633@willie-the-truck>
-In-Reply-To: <20200330135121.GD10633@willie-the-truck>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 30 Mar 2020 15:53:04 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEZARZ1FYZFt4CZ33b-A64zj1JswR0OAHw-eZdzkxiEOQ@mail.gmail.com>
-Message-ID: <CAMj1kXEZARZ1FYZFt4CZ33b-A64zj1JswR0OAHw-eZdzkxiEOQ@mail.gmail.com>
-Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
-To: Will Deacon <will@kernel.org>
+In-Reply-To: <20200326180730.4754-1-james.morse@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_065316_118175_69B530D0 
-X-CRM114-Status: GOOD (  18.69  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200330_065533_255027_392E664A 
+X-CRM114-Status: GOOD (  23.30  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,51 +91,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- kernel-hardening@lists.openwall.com
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Mar 2020 at 15:51, Will Deacon <will@kernel.org> wrote:
->
-> On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
-> > When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
-> > different permissions (r-x for .text, r-- for .rodata, rw- for .data,
-> > etc) are rounded up to 2 MiB so they can be mapped more efficiently.
-> > In particular, it permits the segments to be mapped using level 2
-> > block entries when using 4k pages, which is expected to result in less
-> > TLB pressure.
-> >
-> > However, the mappings for the bulk of the kernel will use level 2
-> > entries anyway, and the misaligned fringes are organized such that they
-> > can take advantage of the contiguous bit, and use far fewer level 3
-> > entries than would be needed otherwise.
-> >
-> > This makes the value of this feature dubious at best, and since it is not
-> > enabled in defconfig or in the distro configs, it does not appear to be
-> > in wide use either. So let's just remove it.
-> >
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > ---
-> >  arch/arm64/Kconfig.debug                  | 13 -------------
-> >  arch/arm64/include/asm/memory.h           | 12 +-----------
-> >  drivers/firmware/efi/libstub/arm64-stub.c |  8 +++-----
-> >  3 files changed, 4 insertions(+), 29 deletions(-)
->
-> Acked-by: Will Deacon <will@kernel.org>
->
-> But I would really like to go a step further and rip out the block mapping
-> support altogether so that we can fix non-coherent DMA aliases:
->
-> https://lore.kernel.org/lkml/20200224194446.690816-1-hch@lst.de
->
+Hi James,
 
-I'm not sure I follow - is this about mapping parts of the static
-kernel Image for non-coherent DMA?
+On 03/26/20 at 06:07pm, James Morse wrote:
+> Hello!
+> 
+> arm64 recently queued support for memory hotremove, which led to some
+> new corner cases for kexec.
+> 
+> If the kexec segments are loaded for a removable region, that region may
+> be removed before kexec actually occurs. This causes the first kernel to
+> lockup when applying the relocations. (I've triggered this on x86 too).
+> 
+> The first patch adds a memory notifier for kexec so that it can refuse
+> to allow in-use regions to be taken offline.
+
+I talked about this with Dave Young. Currently, we tend to use
+kexec_file_load more in the future since most of its implementation is
+in kernel, we can get information about kernel more easilier. For the
+kexec kernel loaded into hotpluggable area, we can fix it in
+kexec_file_load side, we know the MOVABLE zone's start and end. As for
+the old kexec_load, we would like to keep it for back compatibility. At
+least in our distros, we have switched to kexec_file_load, will
+gradually obsolete kexec_load. So for this one, I suggest avoiding those
+MOVZBLE memory region when searching place for kexec kernel.
+
+Not sure if arm64 will still have difficulty.
+
+> 
+> 
+> This doesn't solve the problem for arm64, where the new kernel must
+> initially rely on the data structures from the first boot to describe
+> memory. These don't describe hotpluggable memory.
+> If kexec places the kernel in one of these regions, it must also provide
+> a DT that describes the region in which the kernel was mapped as memory.
+> (and somehow ensure its always present in the future...)
+> 
+> To prevent this from happening accidentally with unaware user-space,
+> patches two and three allow arm64 to give these regions a different
+> name.
+> 
+> This is a change in behaviour for arm64 as memory hotadd and hotremove
+> were added separately.
+> 
+> 
+> I haven't tried kdump.
+> Unaware kdump from user-space probably won't describe the hotplug
+> regions if the name is different, which saves us from problems if
+> the memory is no longer present at kdump time, but means the vmcore
+> is incomplete.
+> 
+> 
+> These patches are based on arm64's for-next/core branch, but can all
+> be merged independently.
+> 
+> Thanks,
+> 
+> James Morse (3):
+>   kexec: Prevent removal of memory in use by a loaded kexec image
+>   mm/memory_hotplug: Allow arch override of non boot memory resource
+>     names
+>   arm64: memory: Give hotplug memory a different resource name
+> 
+>  arch/arm64/include/asm/memory.h | 11 +++++++
+>  kernel/kexec_core.c             | 56 +++++++++++++++++++++++++++++++++
+>  mm/memory_hotplug.c             |  6 +++-
+>  3 files changed, 72 insertions(+), 1 deletion(-)
+> 
+> -- 
+> 2.25.1
+> 
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
