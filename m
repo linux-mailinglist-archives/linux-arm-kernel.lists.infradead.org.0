@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55256198814
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 01:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E4019881B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 01:21:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NiWS39eBWEPWx+zFV4gbA3RbtvHDk0MXvCMoeyUlK8M=; b=vAYu7A8issEfu3
-	Ghko49hUEGQ2OcIBSWLAQBOn4zjhDvNIqZyoMAv5RKkFPnvqEFsphrX2M691M6LdbpueG74R34rXk
-	i+RTbYpE85MxnL7w1W/75mYVgj+yxgNR35N6/BD2Vci74vYX9dVUHMMxnSKvOP6KyIGVtvYC07fVw
-	csjifnCebaXmdB3aMTe1iM3O+GEuChpXIs7jSYOY9Os1PeGc6lCdb9YdAbVjd9R+yyDBrfw8GNgTr
-	7tUeXY/web1sGHPFOhpxXHeycMVtp0PH/DnfR4zt+P4m50m/OOky5KPakx9wXLiHwuxH1bElc5DwL
-	Yvd7hWxse8pFMLK5X7yw==;
+	List-Owner; bh=/TYWQFWT5MJXq8q5CvGd1tP8DqjGb5xU3wNoh7lVjWw=; b=pCa7+jE0XWrEZP
+	Q+jBSZFyZKaWN8XCRbCzf0PbOa1T6NEePyBUY3cyLMc/fL/CiUsO1b8BNzmecJlYqACSTR8L/2bDa
+	DlKtci+tL6uqmJjTd2QOLe3IFbJYGmYJiKqA3XURLCYAtomP9fuxoDqK22BbD5TOnqEZPw7ESjABJ
+	LdQWXp1dW+sWPTSACsA8RijwetF8qSbPhP9f2scqQ2nRpIZBxAeY/B6DKSrF1xzxS7AJ6t2qzcVMt
+	jJ+jqE68/YUnIICdMpZCppX96xJjJ9L9v5U2AMcMgWSo0ooVk3zuVtVDCRQUH2GaYYr3PLRbmoTdJ
+	rrecYqv/9u5drXJGJF8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ3i8-00039L-NA; Mon, 30 Mar 2020 23:20:52 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jJ3ij-0003Os-Hk; Mon, 30 Mar 2020 23:21:29 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ3hz-00038h-I2
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 23:20:44 +0000
-Received: by mail-il1-f196.google.com with SMTP id x16so17632600ilp.12
+ id 1jJ3iY-0003OF-Ei
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 23:21:19 +0000
+Received: by mail-il1-f195.google.com with SMTP id i75so10343736ild.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 16:20:43 -0700 (PDT)
+ Mon, 30 Mar 2020 16:21:17 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RBOl7Iekk96c/AIshrO/3RWqL8uoE2wDrX33YLwOSfA=;
- b=GAl3yF/U9du2hjnohwAw2erJfOdFafKUqEgve2jUmCNBj5MFhuvBsB8ic25hu1g+b9
- LpDX7K8oqLwwNY0FxoGEf6Au04bJkCg1jQQ6VClPZpGVVfRMJQQDwlq8TTete0VVJKVP
- HFp8aCY2+7DFB4SMuIPBQroybYHg9I24MiSCi4oAosHHElfBR+moMZznEImJUomldOJO
- Q2Vy+v4sn/S0Lye22KmmOAwJDvj0IcDi/6jIRlT03s7zmnL7SH3czkmCmNTA6HQZBeRJ
- wtB8OVctfi8EJ87e7/MZzPE4MQC0J5z5BypFxdzwZJGuqT3joz6l/TLF1K4vPNmFhxJs
- 2clA==
-X-Gm-Message-State: ANhLgQ2WqZbYLdtqk/g/mOPXX76+Dd3pw89UXaS1nwNlaXxd9K8Y+QjA
- XxlA5BoxaIpqfwLJ9pBl/V2B1AM=
-X-Google-Smtp-Source: ADFU+vuWSuZ4f9YO6jw06I9AgPXOM3ftiwikw3P3ryqZHCbuD8iOLBgqAHDz4IGWRDg4StG2CP/baQ==
-X-Received: by 2002:a92:91c3:: with SMTP id e64mr6471514ill.68.1585610442647; 
- Mon, 30 Mar 2020 16:20:42 -0700 (PDT)
+ bh=J6CtYXa3sClSqnbvBiuHvvlUuxEGfNZdWolqywsT7lk=;
+ b=heM2/2bqqe+qlrgB8+x8alRJYUdAvtKrTTDzqwR4QN49YSLlSjV+gjIeSkgEXLfqI0
+ W9JHWZuLqTubRt6eLxKjmqMLKxj1cFQTCjnfl+EyUwO3lP0uEMKLNp3v1y459JDj+X0T
+ ltF1DTXRge/f+tX6tA+RHaK1d+6LENrIiPk/rR+wOaunF+ahKyaTCNSSLSOjUTvVoNJm
+ Rql3qRUDclqN4gkZ/goBtc0/hML/zk+eVswoHnmIGKE4cIivX91STgmvehRP94QhD2QG
+ YgjiVvzKxtI3XvE1qPBl10BQuFXhArV/xwXn/EtR7xPeGVjSYe/Uptiuzk3yVBTWn527
+ XLoQ==
+X-Gm-Message-State: ANhLgQ1Msb4GRu8z4pt1YW0KQCnMfxDoEjLV6xqPURNvXg6lEMqQ1ZS5
+ sYQw3+L/ueENErDGoamLsBXlDH8=
+X-Google-Smtp-Source: ADFU+vuaKs6BtYALVaqgUXUnIFTShETJESYag2YrRrycS+2I8mzQdSm2bGh9kir55sPT0pkBtVUhBA==
+X-Received: by 2002:a05:6e02:be7:: with SMTP id
+ d7mr14208948ilu.238.1585610477255; 
+ Mon, 30 Mar 2020 16:21:17 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id s25sm5336349ilb.37.2020.03.30.16.20.41
+ by smtp.gmail.com with ESMTPSA id t5sm3578511iom.3.2020.03.30.16.21.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 16:20:41 -0700 (PDT)
-Received: (nullmailer pid 16658 invoked by uid 1000);
- Mon, 30 Mar 2020 23:20:40 -0000
-Date: Mon, 30 Mar 2020 17:20:40 -0600
+ Mon, 30 Mar 2020 16:21:16 -0700 (PDT)
+Received: (nullmailer pid 17537 invoked by uid 1000);
+ Mon, 30 Mar 2020 23:21:15 -0000
+Date: Mon, 30 Mar 2020 17:21:15 -0600
 From: Rob Herring <robh@kernel.org>
 To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH v2] dt-bindings: iio: dac: stm32-dac: convert bindings to
- json-schema
-Message-ID: <20200330232040.GA16570@bogus>
-References: <1584639983-31098-1-git-send-email-fabrice.gasnier@st.com>
+Subject: Re: [PATCH] dt-bindings: iio: adc: stm32-adc: fix id relative path
+Message-ID: <20200330232115.GA17380@bogus>
+References: <1584641907-8228-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1584639983-31098-1-git-send-email-fabrice.gasnier@st.com>
+In-Reply-To: <1584641907-8228-1-git-send-email-fabrice.gasnier@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_162043_597058_B0ED3704 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20200330_162118_490923_7B553945 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [209.85.166.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
+ [209.85.166.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,19 +103,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 19 Mar 2020 18:46:23 +0100, Fabrice Gasnier wrote:
-> Convert the STM32 DAC binding to DT schema format using json-schema
+On Thu, 19 Mar 2020 19:18:27 +0100, Fabrice Gasnier wrote:
+> Fix id relative path that shouldn't contain 'bindings', as pointed out
+> when submitting st,stm32-dac bindings conversion to json-schema [1].
+> [1] https://patchwork.ozlabs.org/patch/1257568/
+> 
+> Fixes: a8cf1723c4b7 ("dt-bindings: iio: adc: stm32-adc: convert bindings to json-schema")
 > 
 > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 > ---
-> Changes in v2:
-> - Fix id relative path/filename as detected by Rob's bot
-> ---
->  .../devicetree/bindings/iio/dac/st,stm32-dac.txt   |  63 ------------
->  .../devicetree/bindings/iio/dac/st,stm32-dac.yaml  | 110 +++++++++++++++++++++
->  2 files changed, 110 insertions(+), 63 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/iio/dac/st,stm32-dac.txt
->  create mode 100644 Documentation/devicetree/bindings/iio/dac/st,stm32-dac.yaml
+>  Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
