@@ -2,89 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A6321975D7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 09:37:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAE101975E3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 09:43:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xm7IeM6hUbeIpuKFKR6ms3XJHJs7LapP8AlNxYbx88c=; b=E/22462YTpWm76
-	fU5/zqRAGSkGE0XT+b9gs3fL4/bXIcHTbB5k1RLzg1YiUxpykdLy4qwZRFVkOgeSN3XAANU4cq/jN
-	UVF5IeAc/XGG4Hl7HDuw9u1LyDbRyRYHKOHLL5q4iEHPLVp8IZb4g8mfT7MLc/UFCCKa/+SOZhm0W
-	VDWD68xCpzNQL0y0KtwhvaqqbVJINZdWt8cg9il8THfLMUOsprKRzP3sdRGgO88UD9cmfkbrU3S2p
-	Qnfn/21Mu9+jab/ZAR9nEZfGByVGNAjc8SEIXLABBUTf+9blri/Y5/hKHLHGfAAsVZ/mnFbTuuy+Z
-	tHeZKWE+u29NWp00+pWg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nzMl1/cRZhGErUma6Zg7kxqk2wBjzUPQExcltLLLt+E=; b=G8ORaxXtPju058
+	FDbS6NEqvEaESzkrjLNAROMfJhwl1q3IjkmKRT+GHwzpIaPYTJENhU4Js3rQYgimMLH/7X6IQ6f0d
+	FlyqWpfcnagv9IODYylbGw8p4lpE1MHaO93JeDgJ0C069OtNkfyqNvzYJulhPGuEuTjb8UxRu4pE9
+	vYhX19SDnNBBM2tcE4S26DsSds+uoXL06gfXGQlMrtZeDwbySp9uhLVJYgMeqhquosqa1gO+PUWYv
+	hqW+Cudv9Ct8pra1Ov7tm4wHvh9PSIJ6AUbjRgubah0B18khxDF7jNtYgdzi7l+DTGae8faK9f/Td
+	j7/3uDn5xEFhS9rhfSlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIoyy-0004kl-88; Mon, 30 Mar 2020 07:37:16 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jIp4W-0006x5-G6; Mon, 30 Mar 2020 07:43:00 +0000
+Received: from mail-wm1-f66.google.com ([209.85.128.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIoyn-0004kS-74
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 07:37:06 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02U7avtO076750;
- Mon, 30 Mar 2020 02:36:57 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1585553818;
- bh=voYQW80EDvQkOlSfgnq9c/dTJexZ26VOrA18YkmsPTw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=EoXO05vQBMtq0tom/g/Fbz6SZPBShTbVdsPJ4+iOQlEjDowyGWB1hDXOUzYbr4BE/
- ua9Cn8M1pnrkq97+Jp0+ERZ16Lej0LWhkw80kgiPcM8lWJhrHTN+0Lgb2sCW9L5E2o
- J5cfY5e4wbDZ1Fy2BTB7wPn+rs7beppbGEgVK+Ts=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02U7avrb068349
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 30 Mar 2020 02:36:57 -0500
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 30
- Mar 2020 02:36:57 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 30 Mar 2020 02:36:57 -0500
-Received: from [10.24.69.198] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02U7aq7w094270;
- Mon, 30 Mar 2020 02:36:53 -0500
-Subject: Re: [PATCH net-next v6 00/11] net: ethernet: ti: add networking
- support for k3 am65x/j721e soc
-To: Tero Kristo <t-kristo@ti.com>, Vladimir Oltean <olteanv@gmail.com>, David
- Miller <davem@davemloft.net>
-References: <20200323225254.12759-1-grygorii.strashko@ti.com>
- <20200326.200136.1601946994817303021.davem@davemloft.net>
- <CA+h21hr8G24ddEgAbU_TfoNAe0fqUJ0_Uyp54Gxn5cvPrM6u9g@mail.gmail.com>
- <8f5e981a-193c-0c1e-1e0a-b0380b2e6a9c@ti.com>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <2d305c89-601c-5dee-06be-30257a26a392@ti.com>
-Date: Mon, 30 Mar 2020 13:06:52 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jIp4M-0006wD-Lq
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 07:42:52 +0000
+Received: by mail-wm1-f66.google.com with SMTP id b12so18862131wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Mar 2020 00:42:49 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=G2GbSd8nfrGqlF2CTXpVag+1XrsMr3qO8HlwnrY50kI=;
+ b=dhKY0p0L5zytb/B1nd1IiGOPBuuLwLcjzQh4f4WYTOPu7MFEVbohExAlr17BLiR7q1
+ WQ5ZIEKS16hUX6x/LK0I6Xf64fT++4rBDElL4R7Sb4r0wD0z6wheb2MwN9StcfYO0gL7
+ 3B9g1r/uHGq/S0Yc8OQjgztm0z/lYnjbovasPt+3eYuDOnakHtuoQGOpwppx01fO+Nju
+ RaoOdvBcwQ/MwBGnD1PdEubLWz/Jy1RXo6UKFHQkWgWDJclO/xrwonmiQZRsmT8pyV0I
+ k8oMNWFlIYcw6Es7DqRu3QVRPOV/heSWN0srEw3p58x2+IQaLpW4zrWwMWYeyOoz1CP5
+ /4tA==
+X-Gm-Message-State: ANhLgQ2JwYyyC4xexOWMKvpwq1jHZ7ZoYam7cbG6n1CeSsBTStJpF5Kl
+ uR4VZR+KTM65LE8CvXfp0r8=
+X-Google-Smtp-Source: ADFU+vtTO40ug73YLnNFJoExcCn1PsdhzxCpQLzjsmdgJmi+fsq6hPq9O7t9QjqmLmc+CwVgWIwn6A==
+X-Received: by 2002:a05:600c:4145:: with SMTP id
+ h5mr11604265wmm.3.1585554168707; 
+ Mon, 30 Mar 2020 00:42:48 -0700 (PDT)
+Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
+ by smtp.gmail.com with ESMTPSA id 98sm21456009wrk.52.2020.03.30.00.42.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Mar 2020 00:42:47 -0700 (PDT)
+Date: Mon, 30 Mar 2020 09:42:46 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Hoan Tran <Hoan@os.amperecomputing.com>
+Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20200330074246.GA14243@dhcp22.suse.cz>
+References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
 MIME-Version: 1.0
-In-Reply-To: <8f5e981a-193c-0c1e-1e0a-b0380b2e6a9c@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_003705_344204_E5F8F35A 
-X-CRM114-Status: GOOD (  14.71  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200330_004250_719233_86179856 
+X-CRM114-Status: GOOD (  17.73  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mstsxfx[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,57 +88,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Grygorii Strashko <grygorii.strashko@ti.com>,
- Arnd Bergmann <arnd@arndb.de>, devicetree@vger.kernel.org,
- netdev <netdev@vger.kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- kishon@ti.com, peter.ujfalusi@ti.com, Murali Karicheri <m-karicheri2@ti.com>,
- Olof Johansson <olof@lixom.net>, Jakub Kicinski <kuba@kernel.org>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, rogerq@ti.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Vlastimil Babka <vbabka@suse.cz>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
+ linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMzAvMDMvMjAgMTI6NDUgUE0sIFRlcm8gS3Jpc3RvIHdyb3RlOgo+IE9uIDI4LzAzLzIwMjAg
-MDM6NTMsIFZsYWRpbWlyIE9sdGVhbiB3cm90ZToKPj4gSGkgRGF2aWQsCj4+Cj4+IE9uIEZyaSwg
-MjcgTWFyIDIwMjAgYXQgMDU6MDIsIERhdmlkIE1pbGxlciA8ZGF2ZW1AZGF2ZW1sb2Z0Lm5ldD4g
-d3JvdGU6Cj4+Pgo+Pj4gRnJvbTogR3J5Z29yaWkgU3RyYXNoa28gPGdyeWdvcmlpLnN0cmFzaGtv
-QHRpLmNvbT4KPj4+IERhdGU6IFR1ZSwgMjQgTWFyIDIwMjAgMDA6NTI6NDMgKzAyMDAKPj4+Cj4+
-Pj4gVGhpcyB2NiBzZXJpZXMgYWRkcyBiYXNpYyBuZXR3b3JraW5nIHN1cHBvcnQgc3VwcG9ydCBU
-SSBLMwo+Pj4+IEFNNjU0eC9KNzIxRSBTb0Mgd2hpY2gKPj4+PiBoYXZlIGludGVncmF0ZWQgR2ln
-YWJpdCBFdGhlcm5ldCBNQUMgKE1lZGlhIEFjY2VzcyBDb250cm9sbGVyKSBpbnRvCj4+Pj4gZGV2
-aWNlIE1DVQo+Pj4+IGRvbWFpbiBhbmQgbmFtZWQgTUNVX0NQU1cwIChDUFNXMkcgTlVTUykuCj4+
-PiDCoCAuLi4KPj4+Cj4+PiBTZXJpZXMgYXBwbGllZCwgdGhhbmsgeW91Lgo+Pgo+PiBUaGUgYnVp
-bGQgaXMgbm93IGJyb2tlbiBvbiBuZXQtbmV4dDoKPj4KPj4gYXJjaC9hcm02NC9ib290L2R0cy90
-aS9rMy1qNzIxZS1tY3Utd2FrZXVwLmR0c2k6MzAzLjIzLTMwOS42OiBFUlJPUgo+PiAocGhhbmRs
-ZV9yZWZlcmVuY2VzKToKPj4gL2ludGVyY29ubmVjdEAxMDAwMDAvaW50ZXJjb25uZWN0QDI4Mzgw
-MDAwL2V0aGVybmV0QDQ2MDAwMDAwL2V0aGVybmV0LXBvcnRzL3BvcnRAMToKPj4KPj4gUmVmZXJl
-bmNlIHRvIG5vbi1leGlzdGVudCBub2RlCj4+IG9yIGxhYmVsICJtY3VfY29uZiIKPj4KPj4gwqDC
-oCBhbHNvIGRlZmluZWQgYXQKPj4gYXJjaC9hcm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1jb21t
-b24tcHJvYy1ib2FyZC5kdHM6NDcxLjEzLTQ3NC4zCj4+IGFyY2gvYXJtNjQvYm9vdC9kdHMvdGkv
-azMtajcyMWUtbWN1LXdha2V1cC5kdHNpOjMwMy4yMy0zMDkuNjogRVJST1IKPj4gKHBoYW5kbGVf
-cmVmZXJlbmNlcyk6Cj4+IC9pbnRlcmNvbm5lY3RAMTAwMDAwL2ludGVyY29ubmVjdEAyODM4MDAw
-MC9ldGhlcm5ldEA0NjAwMDAwMC9ldGhlcm5ldC1wb3J0cy9wb3J0QDE6Cj4+Cj4+IFJlZmVyZW5j
-ZSB0byBub24tZXhpc3RlbnQgbm9kZQo+PiBvciBsYWJlbCAicGh5X2dtaWlfc2VsIgo+Pgo+PiDC
-oMKgIGFsc28gZGVmaW5lZCBhdAo+PiBhcmNoL2FybTY0L2Jvb3QvZHRzL3RpL2szLWo3MjFlLWNv
-bW1vbi1wcm9jLWJvYXJkLmR0czo0NzEuMTMtNDc0LjMKPj4KPj4gQXMgR3J5Z29yaWkgc2FpZDoK
-Pj4KPj4gUGF0Y2hlcyAxLTYgYXJlIGludGVuZGVkIGZvciBuZXRkZXYsIFBhdGNoZXMgNy0xMSBh
-cmUgaW50ZW5kZWQgZm9yIEszCj4+IFBsYXRmb3JtCj4+IHRyZWUgYW5kIHByb3ZpZGVkIGhlcmUg
-Zm9yIHRlc3RpbmcgcHVycG9zZXMuCj4gCj4gWWVhaCwgSSB0aGluayB5b3UgYXJlIG1pc3Npbmcg
-YSBkZXBlbmRlbmN5IHRoYXQgd2FzIGFwcGxpZWQgdmlhIHRoZSBLMwo+IGJyYW5jaCBlYXJsaWVy
-LiBUaGV5IGFyZSBpbiBsaW51eC1uZXh0IG5vdywgYnV0IEkgYW0gbm90IHNvIHN1cmUgaG93Cj4g
-bXVjaCB0aGF0IGlzIGdvaW5nIHRvIGhlbHAgeW91Lgo+IAo+IFlvdSBjb3VsZCBqdXN0IGRyb3Ag
-dGhlIERUIHBhdGNoZXMgZnJvbSB0aGlzIG1lcmdlIGFuZCBsZXQgbWUgYXBwbHkgdGhlbQo+IHZp
-YSB0aGUgcGxhdGZvcm0gYnJhbmNoLgoKT25lIG90aGVyIG9wdGlvbiB3b3VsZCBiZSB0aGF0IERh
-dmUgbWVyZ2VzIHlvdXIgSzMgdGFnIHdoaWNoIHdhcyBzZW50IHRvCkFSTSBTb0MgdG8gbmV0LW5l
-eHQuIEl0cyBiYXNlZCBvbiB2NS42LXJjMSwgaGFzIG5vIG90aGVyIGRlcGVuZGVuY2llcywKaXMg
-YWxyZWFkeSBpbiBsaW51eC1uZXh0LCBzaG91bGQgYmUgaW1tdXRhYmxlIGFuZCBzYWZlIHRvIG1l
-cmdlLiBUaGlzCmhhcyB0aGUgYWR2YW50YWdlIHRoYXQgbm8gcmViYXNlIGlzIG5lY2Vzc2FyeSBv
-biBuZXQtbmV4dC4KCmdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
-dC9rcmlzdG8vbGludXgKdGFncy90aS1rMy1zb2MtZm9yLXY1LjcKCisgQVJNIFNvQyBtYWludGFp
-bmVycyBmb3IgdGhlaXIgaW5mb3JtYXRpb24gYW5kIGFueSBhZHZpc2UuCgpUaGFua3MsClNla2hh
-cgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On Sat 28-03-20 11:31:17, Hoan Tran wrote:
+> In NUMA layout which nodes have memory ranges that span across other nodes,
+> the mm driver can detect the memory node id incorrectly.
+> 
+> For example, with layout below
+> Node 0 address: 0000 xxxx 0000 xxxx
+> Node 1 address: xxxx 1111 xxxx 1111
+> 
+> Note:
+>  - Memory from low to high
+>  - 0/1: Node id
+>  - x: Invalid memory of a node
+> 
+> When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> config, mm only checks the memory validity but not the node id.
+> Because of that, Node 1 also detects the memory from node 0 as below
+> when it scans from the start address to the end address of node 1.
+> 
+> Node 0 address: 0000 xxxx xxxx xxxx
+> Node 1 address: xxxx 1111 1111 1111
+> 
+> This layout could occur on any architecture. Most of them enables
+> this config by default with CONFIG_NUMA. This patch, by default, enables
+> CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
+
+I am not opposed to this at all. It reduces the config space and that is
+a good thing on its own. The history has shown that meory layout might
+be really wild wrt NUMA. The config is only used for early_pfn_in_nid
+which is clearly an overkill.
+
+Your description doesn't really explain why this is safe though. The
+history of this config is somehow messy, though. Mike has tried
+to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
+NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
+("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
+reasoning what so ever. This doesn't make it really easy see whether
+reasons for reintroduction are still there. Maybe there are some subtle
+dependencies. I do not see any TBH but that might be burried deep in an
+arch specific code.
+
+> v3:
+>  * Revise the patch description
+> 
+> V2:
+>  * Revise the patch description
+> 
+> Hoan Tran (5):
+>   mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA
+>   powerpc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+>   x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+>   sparc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+>   s390: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+> 
+>  arch/powerpc/Kconfig | 9 ---------
+>  arch/s390/Kconfig    | 8 --------
+>  arch/sparc/Kconfig   | 9 ---------
+>  arch/x86/Kconfig     | 9 ---------
+>  mm/page_alloc.c      | 2 +-
+>  5 files changed, 1 insertion(+), 36 deletions(-)
+> 
+> -- 
+> 1.8.3.1
+> 
+
+-- 
+Michal Hocko
+SUSE Labs
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
