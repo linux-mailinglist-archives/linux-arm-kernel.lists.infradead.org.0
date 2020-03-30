@@ -2,84 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8903197E38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 16:17:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D566197E45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 16:23:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4mFBfndy1BzbysIw08MEtSrW3pkhuFJb7Pbd/6e+dRg=; b=eM9+Tj8rxPumChjnc7BuTsDCc
-	UHmeWb2MMmGXRDWICFX99tOrAw0rXHcme3UBa1t1VmSy5apxMb7zLOMtKAczgFDSfwdrgGYug6UY1
-	SN1dRn2p+JnV2uA7LwmDACASiUdwqjMo9RhBeeq/QhICxD0ZikZrUiGRvmtuIXBJkLZokEuIlYSs5
-	a5Dauv81QIDM6Xi2XC7vMc7/vzJC6u3mTrClKHZJ5BoCU1UtlxSL6b4ZpBslGrTF1KSIJALzoAPrT
-	M8uoLDpSTvAHoJg99FNjIjdfvCDCqPxhflW8yUeodUmRQwfG5e1qBMB0HOXDuXLwDX1MVQq2q2+f5
-	YxSMgJUYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DjIY4TTeXad8tHGZxdUH9bqN5c2wgHid22hP/Ln5igI=; b=egesdNgk/cDiIb
+	/k6UNmmON7j/8iKy808mx64MbByoZDaSvpcsNZWzzVEIfvKiuDiqeoiQCFxS9glvpmRvJWbHYYtKu
+	8HmY5lDeBZhnDu6PYAmQYkkxYJZQga+3GM8Y1zPN0kRrTNRIJCeCf7tGQyNq9kkas6vjAF/Tk6Yii
+	vzri90VDkuNLfvwTL9oO6SjzPOu9ttu8s5F3f2D0rxXy1nVX2KvFGhjTi/yHUkoAFlg2ImitUMkKm
+	vWA4EinMnwvt+7SZVbnWZY9CU3pOXC4lvbLBPLtIjHfc5PtGsSS568bRphHDsZv50iel6HpMDnIg0
+	ptq/P0z7SM93x5/CImKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIvE4-0008Dy-O8; Mon, 30 Mar 2020 14:17:16 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jIvJR-0001qg-F6; Mon, 30 Mar 2020 14:22:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIvDs-0008D3-FY
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 14:17:05 +0000
-Received: by mail-wr1-x444.google.com with SMTP id m17so21794664wrw.11
+ id 1jIvJF-0001qG-ET
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 14:22:39 +0000
+Received: from mail-il1-f181.google.com (mail-il1-f181.google.com
+ [209.85.166.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEEE52073B
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 07:17:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=pBQqZVEq9iQY3TkOskST4uSFuna+gg54Ys7RpapkQWM=;
- b=lujtqJdPJb/psrSlD2NuWhPp2R7EnCRb96e3qZY71byvANMzufsCgACW8htq/HTCNw
- q0qQGFneoyuYvJ17HsXw/bBpOcHGlCHJok2zU+eoZo509R++/5sqTQ58Sd2L9eODY1bF
- 4g6b5WYlbADl5u6U7OsvEXy4AtNSNH4vOifUzBZYTsWPJtL0XlFMcXJYMDFlwixmkdy5
- TStl8BrOSoXRHfXSWLTAg1MEVzRWEb/21Gi826VIVxddtDh8kQ/3ccceI2zRYNQ+Si1r
- EWzyox7gf1XVfJVlJJlToMXN06+cDec+KhNbqgpH4KzBKRVrGjtkABoTVx4XhF80ICL5
- d0nQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=pBQqZVEq9iQY3TkOskST4uSFuna+gg54Ys7RpapkQWM=;
- b=ECGnsrqSFFJ9O22Z6SzVG/CWuVOMB924duvuBgRoYNFHNa9iN+lSH6SPcrpjZYs2yQ
- mjIemrquoSnGIN5btDMs+w9nTyDI9jzVimGxuPPu2riiZLOga9cPH4FFfrhL3OBS6Zv9
- XYI1c+7KCOvrDNKtSA/mPBp59Uztb134+UNKNJsZs850cGKYlwJUA6K7QJ0bsE25FVbB
- eoZIaIU3xYEyc68OnfuwdtZWmONCgYENIUmiRJeSul4RQ1spp85fGNLG1d6YlcVin7EF
- D9873S0a/hUt/T3flouaP1P5nGsZAYOB7RZpuMDFPx2wv5kRUTTtTWDJc8RIEw6jG0lD
- jKSg==
-X-Gm-Message-State: ANhLgQ1EFSiO0lZfoVgavLCrbnz73KxiP3++hzkcgupgtpym0pdKzmX0
- GyTjarwQhqJt4l/sush+KOU=
-X-Google-Smtp-Source: ADFU+vtKQ6aYSmXN4bQziwMlCpsmcaXBaCgjvE5/V9oWoSrehpWwu/MsMEXXPUfNybIGUJX+7pY0Zg==
-X-Received: by 2002:adf:f8cd:: with SMTP id f13mr14712693wrq.119.1585577820845; 
- Mon, 30 Mar 2020 07:17:00 -0700 (PDT)
-Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
- by smtp.gmail.com with ESMTPSA id v26sm23272574wra.7.2020.03.30.07.16.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 07:16:59 -0700 (PDT)
-Date: Mon, 30 Mar 2020 16:16:57 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Pascal Roeleven <dev@pascalroeleven.nl>
-Subject: Re: [RFC PATCH 1/4] pwm: sun4i: Remove redundant needs_delay
-Message-ID: <20200330141657.GH2431644@ulmo>
-References: <20200317155906.31288-1-dev@pascalroeleven.nl>
- <20200317155906.31288-2-dev@pascalroeleven.nl>
+ Mon, 30 Mar 2020 14:22:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585578156;
+ bh=fH7O1vnjJxt1ac2Uw547xPsBs770Wu4tiOEFMUs8fgs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=1fTwnb52eSdhf1TKT27NkYpGKuGWid0DZw/SpeJLLT13q7Y1GwoD9LTsy0q0LYKm2
+ YDbuBDguYis/56tGqTrCljezz7KcU9a7UaC73IrcOGEDqe5BPs21lXRcMl0SavOcq1
+ kb6EazJh5c/9AG2aAa1454uk1oFuEN5YNqXwL4vE=
+Received: by mail-il1-f181.google.com with SMTP id t11so15960184ils.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Mar 2020 07:22:36 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ0OBW/nFf/muu2EhWtwkpd59N7QjDpaLEI18hI5eew1cMpKbFvB
+ 9G1KJVCfM1FxDGkNpa5ABHOj6doiO7tfbP1u4+k=
+X-Google-Smtp-Source: ADFU+vsBE+eYBN7ONQHfkbpPTJJjzLBOfC/5ATB/ZyqB2kdDKT6wjPZkUjI8BLqP0y4fIZLpb9MVnNVe/FiUefRdU+g=
+X-Received: by 2002:a05:6e02:551:: with SMTP id
+ i17mr10463790ils.218.1585578156088; 
+ Mon, 30 Mar 2020 07:22:36 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200317155906.31288-2-dev@pascalroeleven.nl>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+References: <20200329141258.31172-1-ardb@kernel.org>
+ <20200330135121.GD10633@willie-the-truck>
+ <CAMj1kXEZARZ1FYZFt4CZ33b-A64zj1JswR0OAHw-eZdzkxiEOQ@mail.gmail.com>
+ <20200330140441.GE10633@willie-the-truck>
+In-Reply-To: <20200330140441.GE10633@willie-the-truck>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Mon, 30 Mar 2020 16:22:24 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXHJ5n-EZMgGSYm+ekO-e7XTp7fv-FZ2NJ1EttJ=-kc8fw@mail.gmail.com>
+Message-ID: <CAMj1kXHJ5n-EZMgGSYm+ekO-e7XTp7fv-FZ2NJ1EttJ=-kc8fw@mail.gmail.com>
+Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_071704_520917_F35BCCF2 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200330_072237_530998_32AE8573 
+X-CRM114-Status: GOOD (  23.21  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,75 +89,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0244971059238626947=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ kernel-hardening@lists.openwall.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 30 Mar 2020 at 16:04, Will Deacon <will@kernel.org> wrote:
+>
+> On Mon, Mar 30, 2020 at 03:53:04PM +0200, Ard Biesheuvel wrote:
+> > On Mon, 30 Mar 2020 at 15:51, Will Deacon <will@kernel.org> wrote:
+> > >
+> > > On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
+> > > > When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
+> > > > different permissions (r-x for .text, r-- for .rodata, rw- for .data,
+> > > > etc) are rounded up to 2 MiB so they can be mapped more efficiently.
+> > > > In particular, it permits the segments to be mapped using level 2
+> > > > block entries when using 4k pages, which is expected to result in less
+> > > > TLB pressure.
+> > > >
+> > > > However, the mappings for the bulk of the kernel will use level 2
+> > > > entries anyway, and the misaligned fringes are organized such that they
+> > > > can take advantage of the contiguous bit, and use far fewer level 3
+> > > > entries than would be needed otherwise.
+> > > >
+> > > > This makes the value of this feature dubious at best, and since it is not
+> > > > enabled in defconfig or in the distro configs, it does not appear to be
+> > > > in wide use either. So let's just remove it.
+> > > >
+> > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > > > ---
+> > > >  arch/arm64/Kconfig.debug                  | 13 -------------
+> > > >  arch/arm64/include/asm/memory.h           | 12 +-----------
+> > > >  drivers/firmware/efi/libstub/arm64-stub.c |  8 +++-----
+> > > >  3 files changed, 4 insertions(+), 29 deletions(-)
+> > >
+> > > Acked-by: Will Deacon <will@kernel.org>
+> > >
+> > > But I would really like to go a step further and rip out the block mapping
+> > > support altogether so that we can fix non-coherent DMA aliases:
+> > >
+> > > https://lore.kernel.org/lkml/20200224194446.690816-1-hch@lst.de
+> > >
+> >
+> > I'm not sure I follow - is this about mapping parts of the static
+> > kernel Image for non-coherent DMA?
+>
+> Sorry, it's not directly related to your patch, just that if we're removing
+> options relating to kernel mappings then I'd be quite keen on effectively
+> forcing page-granularity on the linear map, as is currently done by default
+> thanks to RODATA_FULL_DEFAULT_ENABLED, so that we can nobble cacheable
+> aliases for non-coherent streaming DMA mappings by hooking into Christoph's
+> series above.
+>
 
---===============0244971059238626947==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="v2Uk6McLiE8OV1El"
-Content-Disposition: inline
+Right. I don't remember seeing any complaints about
+RODATA_FULL_DEFAULT_ENABLED, but maybe it's too early for that.
 
+> This series just reminded me of it because it's another
+> "off-by-default-behaviour-for-block-mappings-probably-because-of-performance-
+> but-never-actually-measured" type of thing which really just gets in the
+> way.
+>
 
---v2Uk6McLiE8OV1El
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Mar 17, 2020 at 04:59:03PM +0100, Pascal Roeleven wrote:
-> 'needs_delay' does now always evaluate to true, so remove all
-> occurrences.
->=20
-> Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
-> ---
->  drivers/pwm/pwm-sun4i.c | 13 ++-----------
->  1 file changed, 2 insertions(+), 11 deletions(-)
-
-I've applied this one since it's obviously correct. I'll hold off on the
-others until it can be more broadly tested. Hopefully Maxime or Chen-Yu
-can help review the remainder of this series as well.
-
-Thierry
-
---v2Uk6McLiE8OV1El
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6B/1kACgkQ3SOs138+
-s6FuiA//cx1ke/G8okfRZ3jdGF2EHHZNYra6C9bHQDNUFuqoqfLNoWCZ2vGlYDpm
-gpE9BAX7AWFq5BkD41Im+NeWH5Z63iQaR3H/+aMW/yiyaR0+bt8wlbmQzFLzUltZ
-HP/nEIeM3weYrlNLMJx2t9UGXH7m+jjR9/d/rmfweJPNMfxgWl2b4bbq4nnQFUDN
-KQMds94x3Hrzn04CzB+00E7TYIUh75bxBYQnTAnRfASN+F/Tg1tSrCgCamz3WjF8
-ry8LFyg3WT/pbZaI+Yv3dq6C5NT04VuJC3qyhQaqH+vHbOK5iIUBUWCsJbkBybXY
-+ZguKG2/07rMx6wC/e/NzL/7ChmPVym/O5di3TTtf6T5f8ZkuVwTqacf0V6etOxJ
-tYWFG6Yxf97olwc4MhdUqK1SgT3D+0HsKaEZ2R9FCQvSMNByWesHjan7ZpldHjU7
-I/xJqQlP6jahCEQYR2sWDw1bcpY4X251V6Mp/07jvks4JWvU2fHDy/CqJKIOWynO
-tv2tr0GssCK3ZHt5Olv3mI3wHfkvHIKfI2LWF4kYkkpVcEkVRL2joQuUL0x70Miv
-KcickysSrgI9DW24l1NGJe5ZUq6EE/18QETvurlORS7S087RHcwUwXu2Vg7G4s7V
-CFTY/EHKeRL638QPV+MvSMudI9DhDRBiCwmGdOVYy7B6rVImsdM=
-=LA4s
------END PGP SIGNATURE-----
-
---v2Uk6McLiE8OV1El--
-
-
---===============0244971059238626947==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Well, even though I agree that the lack of actual numbers is a bit
+disturbing here, I'd hate to penalize all systems even more than they
+already are (due to ARCH_KMALLOC_MINALIGN == ARCH_DMA_MINALIGN) by
+adding another workaround that is only needed on devices that have
+non-coherent masters.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0244971059238626947==--
-
