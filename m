@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDA4B197AA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:25:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F33A197AAA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:26:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NCVsNAATmeutP3qPUciC4WQxAV425ztkWwsTJCPmsNg=; b=hb2nt4ahoq46NV
-	qqaHqiKeZEuHk34g1e9ZFxSTtAYuWS7GJkjQT/FJibDAE0pjr9LoWjv/brQ4eJENFP3R07AN+u6w5
-	hw6knW/NTaqa7gcgHSqfYKZdSu4Fv5q1swXwS/juAAE49rK5SFgW40EmcjljMv+haY6qkYV//W7jH
-	h0tBkA7ckpOTJOhoFEM+eRBsRJe+87Bgcu10Ajhyo32RoHYt4s97Ily97HA9+4x3bNUUfTeM3gTY+
-	M82ZfTIFmVZdakWF/Lhw9rWHS7GkzPAJCVhmYwf080HJLdYVbClC8VCrM3v68RRsCA77xUrYjngwW
-	3clqK0JlHgs286VCkMRg==;
+	List-Owner; bh=cfR5/Tamtr8VfnnyvYAqPnu+5SG4LOehxefzunTGKgY=; b=GS1p/7eP/BTuNT
+	tSSE67UKBcIQxlugsQye/5e/5nQanX5vJpJo8mFafZ2bYsdAQjrKqeq5B1L3fmYovORqcdaSLsw0p
+	gXs8RfV2eDCl45F+Ft3UQXvs5m7B5IV+nXSDsa+RpFGnUUSuKqFks17i0ETnuopGdf75I7WtfNon4
+	BkaG82FEFG43wavyOiQ0AOP3kDRoflNrsZewpZjtnpvNE4Ci3ofnGeuloK5u0WAArt649ddvsZ+7t
+	6ALnWlTFJ3LOtv5cln6QZMK6ULS8fiM5i10sphn+xw+30bpSsiF5q/d4Pi89/ktt9UTmBuA1L4WkS
+	RnFTYZAgCkqbAeHrMYcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsYE-00030d-7w; Mon, 30 Mar 2020 11:25:54 +0000
+	id 1jIsYw-0003x9-Rj; Mon, 30 Mar 2020 11:26:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsY3-00030B-7i
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:25:44 +0000
+ id 1jIsYk-0003wJ-OV
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:26:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38EAE31B;
- Mon, 30 Mar 2020 04:25:42 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E980531B;
+ Mon, 30 Mar 2020 04:26:25 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E626F3F52E;
- Mon, 30 Mar 2020 04:25:38 -0700 (PDT)
-Date: Mon, 30 Mar 2020 12:25:36 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9111A3F52E;
+ Mon, 30 Mar 2020 04:26:22 -0700 (PDT)
+Date: Mon, 30 Mar 2020 12:26:19 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v2 3/5] stack: Optionally randomize kernel stack offset
- each syscall
-Message-ID: <20200330112536.GD1309@C02TD0UTHF1T.local>
+Subject: Re: [PATCH v2 5/5] arm64: entry: Enable random_kstack_offset support
+Message-ID: <20200330112619.GE1309@C02TD0UTHF1T.local>
 References: <20200324203231.64324-1-keescook@chromium.org>
- <20200324203231.64324-4-keescook@chromium.org>
+ <20200324203231.64324-6-keescook@chromium.org>
+ <20200325132127.GB12236@lakrids.cambridge.arm.com>
+ <202003251319.AECA788D63@keescook>
+ <20200326111521.GA72909@C02TD0UTHF1T.local>
+ <202003260926.83BC44B@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200324203231.64324-4-keescook@chromium.org>
+In-Reply-To: <202003260926.83BC44B@keescook>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_042543_322229_2D179DAF 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20200330_042626_882725_FFB85F58 
+X-CRM114-Status: GOOD (  24.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,27 +80,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 24, 2020 at 01:32:29PM -0700, Kees Cook wrote:
-> +/*
-> + * Do not use this anywhere else in the kernel. This is used here because
-> + * it provides an arch-agnostic way to grow the stack with correct
-> + * alignment. Also, since this use is being explicitly masked to a max of
-> + * 10 bits, stack-clash style attacks are unlikely. For more details see
-> + * "VLAs" in Documentation/process/deprecated.rst
-> + */
-> +void *__builtin_alloca(size_t size);
-> +
-> +#define add_random_kstack_offset() do {					\
-> +	if (static_branch_maybe(CONFIG_RANDOMIZE_KSTACK_OFFSET_DEFAULT,	\
-> +				&randomize_kstack_offset)) {		\
-> +		u32 offset = this_cpu_read(kstack_offset);		\
-> +		char *ptr = __builtin_alloca(offset & 0x3FF);		\
-> +		asm volatile("" : "=m"(*ptr));				\
+On Thu, Mar 26, 2020 at 09:31:32AM -0700, Kees Cook wrote:
+> On Thu, Mar 26, 2020 at 11:15:21AM +0000, Mark Rutland wrote:
+> > On Wed, Mar 25, 2020 at 01:22:07PM -0700, Kees Cook wrote:
+> > > On Wed, Mar 25, 2020 at 01:21:27PM +0000, Mark Rutland wrote:
+> > > > On Tue, Mar 24, 2020 at 01:32:31PM -0700, Kees Cook wrote:
+> > > > > Allow for a randomized stack offset on a per-syscall basis, with roughly
+> > > > > 5 bits of entropy.
+> > > > > 
+> > > > > Signed-off-by: Kees Cook <keescook@chromium.org>
+> > > > 
+> > > > Just to check, do you have an idea of the impact on arm64? Patch 3 had
+> > > > figures for x86 where it reads the TSC, and it's unclear to me how
+> > > > get_random_int() compares to that.
+> > > 
+> > > I didn't do a measurement on arm64 since I don't have a good bare-metal
+> > > test environment. I know Andy Lutomirki has plans for making
+> > > get_random_get() as fast as possible, so that's why I used it here.
+> > 
+> > Ok. I suspect I also won't get the chance to test that in the next few
+> > days, but if I do I'll try to share the results.
+> 
+> Okay, thanks! I can try a rough estimate under emulation, but I assume
+> that'll be mostly useless. :)
+> 
+> > My concern here was that, get_random_int() has to grab a spinlock and
+> > mess with IRQ masking, so has the potential to block for much longer,
+> > but that might not be an issue in practice, and I don't think that
+> > should block these patches.
+> 
+> Gotcha. I was already surprised by how "heavy" the per-cpu access was
+> when I looked at the resulting assembly (there looked to be preempt
+> stuff, etc). But my hope was that this is configurable so people can
+> measure for themselves if they want it, and most people who want this
+> feature have a high tolerance for performance trade-offs. ;)
+> 
+> > > I couldn't figure out if there was a comparable instruction like rdtsc
+> > > in aarch64 (it seems there's a cycle counter, but I found nothing in
+> > > the kernel that seemed to actually use it)?
+> > 
+> > AArch64 doesn't have a direct equivalent. The generic counter
+> > (CNTxCT_EL0) is the closest thing, but its nominal frequency is
+> > typically much lower than the nominal CPU clock frequency (unlike TSC
+> > where they're the same). The cycle counter (PMCCNTR_EL0) is part of the
+> > PMU, and can't be relied on in the same way (e.g. as perf reprograms it
+> > to generate overflow events, and it can stop for things like WFI/WFE).
+> 
+> Okay, cool; thanks for the details! It's always nice to confirm I didn't
+> miss some glaringly obvious solution. ;)
+> 
+> For a potential v2, should I add your reviewed-by or wait for your
+> timing analysis, etc?
 
-Is this asm() a homebrew OPTIMIZER_HIDE_VAR(*ptr)? If the asm
-constraints generate metter code, could we add those as alternative
-constraints in OPTIMIZER_HIDE_VAR() ?
+I'd rather not give an R-b until I've seen numbers, but please don't
+block waiting for that. For the moment, feel free to add:
 
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+... and it's down to Will and Catalin to make the call for arm64.
+
+Thanks,
 Mark.
 
 _______________________________________________
