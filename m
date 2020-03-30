@@ -2,69 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82007197D89
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:51:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71987197D8B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:52:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MzotcLTGQ3+SebXFNoJ/6LH34ozCXeSC61OWmVOx9V4=; b=p/n0ZYvFHe9bn5
-	9rSn0wToy2R2HGXonaZL0ZUAsVYquAuNGg9UO3tiij8IfsMWvgnzUXSBexP/hkEGZpA7fBNmqLBF/
-	Zjs+XZpU4i1+Urnkzlg8tcqNnS4e9CP3QN+KZrByaTGcCvmmf2QetpINJtW9uRbpChtclLF6LT369
-	uOLK8crY64tU9UiQ8KY+J8pdsdpGAe4xWk4wrdz7rcSNOEqj7SsiT23F/nfgwJdSE+qOQ9u8LQ04J
-	68tiSGRLSAAyF5hy8hQWrQI8xr6l+JpfmNQjgRHO7eQ3ail3k8YXWyjiiLrpuYRO8IQHb+Y4Ddtv2
-	vRKWEQDKPSQBZcZVX6nw==;
+	List-Owner; bh=KMwQEIXnB5y6fxq6v385Qf84L5J3CAyO4e9NQiGypag=; b=gvncnsHIR53mzH
+	IQiPoczuD4U1g1XAwmVr6d8GtGHLerRe/o+jRM5cRsSeMlON6eR4z+43oekyTDXuYN/O0IdTvmPam
+	PTEIkLvwD1URrhD/Y9x5jgo+ddh78n7l/IlUStSDQzpf9KQOq2NlR+p0vxoYTV42A/d8rjkSj2IE/
+	aKmGDV6eglJW2aB7n5gADhhVOJD4ATIWiKC/uiWVAY37La+QW95HTFHEYPyhSJcfSxV0nwkGvT8kz
+	pN6mfwPITPRYMi4HujTRpGPMXY+RPU9TU3HlCLntXLavnlAO0pUz6cZn43Uzlzli1/5d0XaMzuqML
+	42kpDVpc2W6XEKXkic5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIupD-0003lU-NK; Mon, 30 Mar 2020 13:51:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jIupS-0003wE-R8; Mon, 30 Mar 2020 13:51:50 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIup4-0003kv-Cd
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:51:27 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0B8D3206CC;
- Mon, 30 Mar 2020 13:51:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585576286;
- bh=shRxHPO6TNubPsJ8Kjm+VBtKtgZ9LoE0ypNOsjrhlXw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TVppmMOSXAOdk3sfXijAOW160toaPEfSbfuCM5nMPwj/I3zOVURZQDOSEZuSPsYYy
- kqP/py9AFaPG8DnYkTKU1srHzS+4+sedlU3OhdM4pJaipPpH+n4oNZtKNI7ilOgM3T
- 9HiPi2kWUIqDGyNDy4oebEE3SwMtrpR/lsMZf0PE=
-Date: Mon, 30 Mar 2020 14:51:21 +0100
-From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
-Message-ID: <20200330135121.GD10633@willie-the-truck>
-References: <20200329141258.31172-1-ardb@kernel.org>
+ id 1jIupE-0003sM-5E; Mon, 30 Mar 2020 13:51:37 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 36C842965EC
+Message-ID: <4a9d2d6e5cecbe296c14119d27a8793a7dbed7b2.camel@collabora.com>
+Subject: Re: [PATCH v5 4/5] drm: imx: Add i.MX 6 MIPI DSI host platform driver
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Fabio Estevam <festevam@gmail.com>, Adrian Ratiu
+ <adrian.ratiu@collabora.com>
+Date: Mon, 30 Mar 2020 10:51:23 -0300
+In-Reply-To: <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
+References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+ <20200330113542.181752-5-adrian.ratiu@collabora.com>
+ <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
+Organization: Collabora
+User-Agent: Evolution 3.36.0-1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200329141258.31172-1-ardb@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_065126_454624_5297169C 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200330_065136_339950_DB312C13 
+X-CRM114-Status: GOOD (  15.50  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,45 +60,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-hardening@lists.openwall.com
+Cc: "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
+ Andrzej Hajda <a.hajda@samsung.com>, Martyn Welch <martyn.welch@collabora.com>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Emil Velikov <emil.velikov@collabora.com>, linux-rockchip@lists.infradead.org,
+ NXP Linux Team <linux-imx@nxp.com>, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
-> When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
-> different permissions (r-x for .text, r-- for .rodata, rw- for .data,
-> etc) are rounded up to 2 MiB so they can be mapped more efficiently.
-> In particular, it permits the segments to be mapped using level 2
-> block entries when using 4k pages, which is expected to result in less
-> TLB pressure.
+Hello Fabio, Adrian:
+
+On Mon, 2020-03-30 at 08:49 -0300, Fabio Estevam wrote:
+> Hi Adrian,
 > 
-> However, the mappings for the bulk of the kernel will use level 2
-> entries anyway, and the misaligned fringes are organized such that they
-> can take advantage of the contiguous bit, and use far fewer level 3
-> entries than would be needed otherwise.
+> On Mon, Mar 30, 2020 at 8:34 AM Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
+> > This adds support for the Synopsis DesignWare MIPI DSI v1.01 host
+> > controller which is embedded in i.MX 6 SoCs.
+> > 
+> > Based on following patches, but updated/extended to work with existing
+> > support found in the kernel:
+> > 
+> > - drm: imx: Support Synopsys DesignWare MIPI DSI host controller
+> >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
+> > 
+> > - ARM: dtsi: imx6qdl: Add support for MIPI DSI host controller
+> >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
 > 
-> This makes the value of this feature dubious at best, and since it is not
-> enabled in defconfig or in the distro configs, it does not appear to be
-> in wide use either. So let's just remove it.
+> This one looks like a devicetree patch, but this patch does not touch
+> devicetree.
 > 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> ---
->  arch/arm64/Kconfig.debug                  | 13 -------------
->  arch/arm64/include/asm/memory.h           | 12 +-----------
->  drivers/firmware/efi/libstub/arm64-stub.c |  8 +++-----
->  3 files changed, 4 insertions(+), 29 deletions(-)
+> > +       ret = clk_prepare_enable(dsi->pllref_clk);
+> > +       if (ret) {
+> > +               dev_err(dev, "%s: Failed to enable pllref_clk\n", __func__);
+> > +               return ret;
+> > +       }
+> > +
+> > +       dsi->mux_sel = syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr");
+> > +       if (IS_ERR(dsi->mux_sel)) {
+> > +               ret = PTR_ERR(dsi->mux_sel);
+> > +               dev_err(dev, "%s: Failed to get GPR regmap: %d\n",
+> > +                       __func__, ret);
+> > +               return ret;
+> 
+> You should disable the dsi->pllref_clk clock prior to returning the error.
+> 
 
-Acked-by: Will Deacon <will@kernel.org>
+Another approach could be moving the clock on and off to
+to component_ops.{bind,unbind} (as rockhip driver does).
 
-But I would really like to go a step further and rip out the block mapping
-support altogether so that we can fix non-coherent DMA aliases:
+What exactly is the PLL clock needed for? Would it make sense
+to move it some of the PHY power on/off? (Maybe not, but it's worthing
+checking).
 
-https://lore.kernel.org/lkml/20200224194446.690816-1-hch@lst.de
+Also, it seems the other IP blocks have this PLL clock, so maybe
+it could be moved to the dw_mipi_dsi core? This could be something
+for a follow-up, to avoid creeping this series.
 
-Will
+Thanks,
+Ezequiel
+
 
 _______________________________________________
 linux-arm-kernel mailing list
