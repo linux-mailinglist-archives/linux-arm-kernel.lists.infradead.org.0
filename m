@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4742519834C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:23:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EAB3198354
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:24:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XH9Iz6dhqG8BK2BxU922nMQIC6sVxsIqMH2/lqC5uww=; b=tGQ5uJygy6URxJ
-	DTQo1EDPDpMNU2kpfaF89EVhC/ivPrKVlAOzVQl0jDMWThvoht57vENJaGuthB86+nlvw+2ctg4dQ
-	7bi6bPCwipDgZVmaNsDiv5s1N0Ywcd5EdLXHy14IDUXWojV9RmtklAK7kmP3ek20lRLsdZ5PlQx/H
-	5A/vikEpN6T7BTzrJvVyFFakEvj1BM9xgBuqWVcvJYAZZE6QmfALn6b2i4LcdQ+y9Yz8BMv6R6SPC
-	oDf3PQvAGyWRKaeE2F87vfJJFi1rPAerwSGITxiIK3EDFZzqGJ+HZ/3OI/UCoN2Zy5S40pdlX2MSV
-	CuHaVUGJoo20xdQ945NA==;
+	List-Owner; bh=5VGuYCcSmd9pYovKYboCejTcE3TR8FQCWjrQY4dK34U=; b=YUagoAcVboOvn9
+	xKTr0/o8mgdwLRxT4HNQKZTdJyZcf7sSYLMK5RBf3JzkOF7hdnCvNfGpM3L066Cq9lb5YlcvF0Cpb
+	VFhhvO5/isx+uqF3xeLx1Jv8Sg7xHhvCzRpheoPp13SQ+CZTWLREf9PZDdxJ59cnjsi6KlQbZ1uri
+	mxjZWTwJaPLnazU+giaMu+nHMHBpz8Qloz5OmQZu4OJSI77ZnwYUPICdfag3Xi/+lRTkhtv+vf+iO
+	MieAkM8i4WuDDr+kgx82Q6GSUgwgsvO3IpakHQbYJ4nl+f71bxVBaMTRlVY/GkP/Ij3Y/gjUimHmL
+	0eF73851qCFl/QYZgW5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIz47-0003uT-JS; Mon, 30 Mar 2020 18:23:15 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1jIz5S-0004Mb-FF; Mon, 30 Mar 2020 18:24:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIz3w-0003rL-MN
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:23:06 +0000
-Received: by mail-wr1-f66.google.com with SMTP id a25so22951712wrd.0
+ id 1jIz5I-0004M6-A0
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:24:30 +0000
+Received: from mail-il1-f169.google.com (mail-il1-f169.google.com
+ [209.85.166.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9AF3D20780
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 11:23:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=0jhRFYVkza+qJU3Il8/iXGVhPGBzX8dkXPD9i1bwSag=;
- b=ivA14OmGxELXw3INOvHFdnkBOOLRjqgMBJstXMt3+kvgfEmCZ2+dzPljVe7nu1CWxd
- Pw91ZbNv3EiiUbzTak02hBjPcYq7rfrk0oEPSDn/9JQGJAw6Mc54eFYs9PbcSWUGvz8/
- orl4rMfN3pjiLAfKWLI5hvvLLx5vJBErDiCxZ1RHzvkWKv5eqCT87hBJruWq4TN8Iy85
- NwMIPI2uNynosOdpapryQaU0SVmukJnRJfGfAFO1DgwFBO1Z5+AM/eetaZVPxtiCKpHx
- l9aOLCSHDAD6Zs2vYeLCL9vWYIAjaoRmgmOP90ApSfbzQaw5deucRFqtkEcdDEjwxmdI
- 3CbA==
-X-Gm-Message-State: ANhLgQ3icHUCqGWptirXHy4qc6f1RRvkSN9rUjc+B+vD+0gbJ9cIszLS
- BxSPe+4leSF9lLjrECkPrU8=
-X-Google-Smtp-Source: ADFU+vv5K/FBYjKeTVX0F/L19lDVfm50dWVM5MaRN4MeyMqOqGnWTdxnNM7cmfvlZTzDum9SAd0OPg==
-X-Received: by 2002:adf:d849:: with SMTP id k9mr15996160wrl.108.1585592583199; 
- Mon, 30 Mar 2020 11:23:03 -0700 (PDT)
-Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
- by smtp.gmail.com with ESMTPSA id f187sm474696wme.9.2020.03.30.11.23.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 11:23:02 -0700 (PDT)
-Date: Mon, 30 Mar 2020 20:23:01 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Message-ID: <20200330182301.GM14243@dhcp22.suse.cz>
-References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
- <20200330074246.GA14243@dhcp22.suse.cz>
- <20200330175100.GD30942@linux.ibm.com>
+ Mon, 30 Mar 2020 18:24:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585592667;
+ bh=Wkie03bXlY41aXmWMwYz096DPJxmDgVWSOlX5xhknQ8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=qnYSKrSoqtH4x1YxqzOKEfSBQp/75o3w9EMthWB5+/1QFAzhU5R5SoxbZ5eX9TEFu
+ qKHlul7HJLfU460kpteJmsxC6SNRb5c7RFbjZ83MO0uk8BHomB+LZxBLQy3wcHU+c2
+ exA8Jum0+A/DJtmTo0Ap5VSBNAiw0L3WNITjYgWY=
+Received: by mail-il1-f169.google.com with SMTP id n13so9496182ilm.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Mar 2020 11:24:27 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3BYEZ62OjcbooImXEeoL9BaWhy/LK+y4a7xf/p8LsFoneUXSz3
+ P1vvAU2yKnz8Tm2JNuK3kxyIKYWb6zsLDEFlc9Q=
+X-Google-Smtp-Source: ADFU+vsaZjL3J/yqUJii1Uij9v7w0q1F0mSzDAkZ4jlY4fnKq/UYR7/t00GosOhDVfcrxNaf81i83DWVwCzLcrKPgHM=
+X-Received: by 2002:a92:dcd1:: with SMTP id b17mr12647169ilr.80.1585592667024; 
+ Mon, 30 Mar 2020 11:24:27 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200330175100.GD30942@linux.ibm.com>
+References: <20200328205809.23825-1-ardb@kernel.org>
+ <20200330074721.GV22097@bivouac.eciton.net>
+ <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
+ <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
+ <DM5PR2101MB104760D03E632DD4DBE99AE1D7CB0@DM5PR2101MB1047.namprd21.prod.outlook.com>
+In-Reply-To: <DM5PR2101MB104760D03E632DD4DBE99AE1D7CB0@DM5PR2101MB1047.namprd21.prod.outlook.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Mon, 30 Mar 2020 20:24:15 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXF+2O5cDC9zuNp9Lx9Oe6WyxRghPqSi63CnF+KCcGUZyw@mail.gmail.com>
+Message-ID: <CAMj1kXF+2O5cDC9zuNp9Lx9Oe6WyxRghPqSi63CnF+KCcGUZyw@mail.gmail.com>
+Subject: Re: [PATCH] efi/libstub/arm64: avoid image_base value from
+ efi_loaded_image
+To: Michael Kelley <mikelley@microsoft.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_112304_732339_D8124ED8 
-X-CRM114-Status: GOOD (  25.03  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200330_112429_119573_36FBDB3F 
+X-CRM114-Status: GOOD (  22.88  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mstsxfx[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,86 +90,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
- Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
- Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-efi <linux-efi@vger.kernel.org>,
+ Boqun Feng <Boqun.Feng@microsoft.com>, Leif Lindholm <leif@nuviainc.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 30-03-20 20:51:00, Mike Rapoport wrote:
-> On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
-> > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
-> > > In NUMA layout which nodes have memory ranges that span across other nodes,
-> > > the mm driver can detect the memory node id incorrectly.
-> > > 
-> > > For example, with layout below
-> > > Node 0 address: 0000 xxxx 0000 xxxx
-> > > Node 1 address: xxxx 1111 xxxx 1111
-> > > 
-> > > Note:
-> > >  - Memory from low to high
-> > >  - 0/1: Node id
-> > >  - x: Invalid memory of a node
-> > > 
-> > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
-> > > config, mm only checks the memory validity but not the node id.
-> > > Because of that, Node 1 also detects the memory from node 0 as below
-> > > when it scans from the start address to the end address of node 1.
-> > > 
-> > > Node 0 address: 0000 xxxx xxxx xxxx
-> > > Node 1 address: xxxx 1111 1111 1111
-> > > 
-> > > This layout could occur on any architecture. Most of them enables
-> > > this config by default with CONFIG_NUMA. This patch, by default, enables
-> > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
-> > 
-> > I am not opposed to this at all. It reduces the config space and that is
-> > a good thing on its own. The history has shown that meory layout might
-> > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
-> > which is clearly an overkill.
-> > 
-> > Your description doesn't really explain why this is safe though. The
-> > history of this config is somehow messy, though. Mike has tried
-> > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
-> > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
-> > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
-> > reasoning what so ever. This doesn't make it really easy see whether
-> > reasons for reintroduction are still there. Maybe there are some subtle
-> > dependencies. I do not see any TBH but that might be burried deep in an
-> > arch specific code.
-> 
-> I've looked at this a bit more and it seems that the check for
-> early_pfn_in_nid() in memmap_init_zone() can be simply removed.
-> 
-> The commits you've mentioned were way before the addition of
-> HAVE_MEMBLOCK_NODE_MAP and the whole infrastructure that calculates zone
-> sizes and boundaries based on the memblock node map.
-> So, the memmap_init_zone() is called when zone boundaries are already
-> within a node.
+On Mon, 30 Mar 2020 at 20:12, Michael Kelley <mikelley@microsoft.com> wrote:
+>
+> From: Ard Biesheuvel <ardb@kernel.org>  Sent: Monday, March 30, 2020 12:51 AM
+> >
+> > On Mon, 30 Mar 2020 at 09:50, Ard Biesheuvel <ardb@kernel.org> wrote:
+> > >
+> > > On Mon, 30 Mar 2020 at 09:47, Leif Lindholm <leif@nuviainc.com> wrote:
+> > > >
+> > > > On Sat, Mar 28, 2020 at 21:58:09 +0100, Ard Biesheuvel wrote:
+> > > > > Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
+> > > > > PE/COFF entrypoint") did some code refactoring to get rid of the
+> > > > > EFI entry point assembler code, and in the process, it got rid of the
+> > > > > assignment of image_addr to the value of _text. Instead, it switched
+> > > > > to using the image_base field of the efi_loaded_image struct provided
+> > > > > by UEFI, which should contain the same value.
+> > > > >
+> > > > > However, Michael reports that this is not the case: older GRUB builds
+> > > > > corrupt this value in some way, and since we can easily switch back to
+> > > > > referring to _text to discover this value, let's simply do that.
+> > > >
+> > > > It is not clear to me how "older GRUB builds" would differ here.
+> > > > I think more investigation is needed before making that claim.
+> > > > My suspicion is that some (old) version of non-upstream, shim-enabled
+> > > > distro-specific build is playing a part.
+> > > >
+> > > > So, do we have the option for more detailed investigations, or can we
+> > > > vague the claim up to say "some GRUB builds seen in the wild, based
+> > > > on an upstream 2.02" or suchlike?
+> > > >
+> > >
+> > > I've queued a fix that prints a nastygram if the value deviates from
+> > > the expected one. Let's see if this triggers any reports.
+> >
+> > (/me looks at context)
+> >
+> > *This* is the fix that prints a nastygram.
+>
+> FWIW, I pulled the BOOTAA64.EFI and grubaa64.efi files from CentOS 7.6
+> and CentOS 8.0 binary packages and tested both in my Hyper-V VM.
+> Using strings | grep '2\.' to get version info, the CentOS 7.6 grubaa64.efi
+> shows:
+>
+>         User-Agent: GRUB 2.02~beta2
+>
+> The CentOS 8.0 grubaa64.efi shows:
+>
+>         User-Agent: GRUB 2.03
+>
+> Both versions produce the FIRMWARE BUG warning when using Ard's
+> latest patch.  I'll assume the equivalent RHEL versions are the same.
+> So we've got official distro releases that show the problem.
+>
+> As reported earlier, the BOOTAA64.EFI and grubaa64.efi from a
+> Debian release (not exactly sure which one) do not produce the
+> FIRMWARE BUG warning.  The grubaa64.efi reports as 2.04-4.
+>
 
-But zones from different nodes might overlap in the pfn range. And this
-check is there to skip over those overlapping areas. The only way to
-skip over this check I can see is to do a different pfn walk and go
-through memblock ranges which are guaranteed to belong to a single node.
--- 
-Michal Hocko
-SUSE Labs
+Thanks a lot Michael, that is really helpful.
 
 _______________________________________________
 linux-arm-kernel mailing list
