@@ -2,91 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D93197EB3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 16:43:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78FD6197FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 17:33:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=26NH2AAHrfHaQujsTyNXhW0ZQao4xvNogg9tTS3AnUs=; b=IBwb4N7+BCDEhc
-	kxtrB6uIvQjlArf4aS/gvluPWB4fhfELVK4eosonRgr7Owfy/UozEb1StgTSBeAyralNDEaB+46tz
-	AdCAPNQYUL0zcIDydaodXKGCjWK4UZlqqRKJ/bI54ZPdOERhNMkKlQkt0aF1DsDx4a+H1l6QFZbaa
-	DuP4wxpVwF8kqei+Rw+PZAx5lP2Z5WhDDudPv2U25xxWX6rs90pMRXjL+gK/1dpLIUP8Q/4fW7SkP
-	cNsNQwIpAnM/g0wLSubqi7hMzKlXtU80xpYkPXJjddC2i0dax0+rgpm+JaObT17cvg8qRVyLVvDOD
-	WWMWrAhRwi0V3w6D4aSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=N7o1enAdwc0MvaoSiN7eX8eaYgwG6JaESZLsAie+EGU=; b=Xb4ZF5Dhs5hUaUf4lWfA/EQJI
+	eB0xwUqfR5avBcVvesDuomXy/a46WvFCMwcYfztn7CU/orPX4eXR42pcSPRveo8IqXaE4CiDrGWS6
+	S0FENGFg6ap6MLj/KaF52+caj2NuWd0msap/8i4/niwK22fp4dd3EqXiDwcvzoId4KKdgCT6Fasgz
+	BRhe4R9oQgh7BDUKojbmsu47xyPdC++/vQ5FaRYBWhzCEe5zJlpq7m9h62W9fGPi/m4AI5r+IUr0W
+	Q3vF5UxbJ+/GUS+MphHQSUF/4ynB5Jx2u6XHCpVnwkb5x5mmfsxyl38R8Hk9XOPJtyRg2ldMCaubd
+	WGw1aqTUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIvdc-0002qV-Fj; Mon, 30 Mar 2020 14:43:40 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1jIwPg-00062c-0Y; Mon, 30 Mar 2020 15:33:20 +0000
+Received: from mail-am6eur05on2068.outbound.protection.outlook.com
+ ([40.107.22.68] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIvdO-0002pT-T9
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 14:43:28 +0000
-Received: by mail-qk1-x743.google.com with SMTP id b62so19175135qkf.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 07:43:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/xd6A0GRMLxn1sVuQYx0dEBJI+Khi8SI9odnvPdKtNY=;
- b=FTWBKZRrTY7rIbYSEHIeQyYd/hQy3dy/WbWyJ53h/4ujanI+6I4pNvflj4owXW+N04
- oC6K/P4sqqCc/rguk39sjD6Fe5JiZYEAmdN2yn7pLjnLMJG+7oXjPdhOSoYQ+BvIgGSM
- Q4zAdxPn0RxAhmdoTAD9wcqQpEFkw9pguzEkYkDNcrFIoiY1vaEx+WXbddFH3HBYL/ho
- bTBWu7Pe2G5jWxzJCENHqVLB+mdO/sowRNWHrr1OyMBa3i1p+v2MUTw0gxLC9i1/5x2i
- cH+W4uQdJ2OkSYQdUzFJ4YrM8q1ygoKxpscSWbMkUfCR7uidpixhz5ymo5nDFILSERbJ
- cqTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/xd6A0GRMLxn1sVuQYx0dEBJI+Khi8SI9odnvPdKtNY=;
- b=efqTtRHCTA6aV5ABReUSX85FfeZb3LxgmBs2UAlRLEu+k3+nU6K+rGbllFLgIFZh7o
- ec6w7Aot3wyFwEyUKV3VeEcIfZTa+knEfzelaNzegCZPItliYnx8XnA25KASZx07IxPR
- y7x2LAMyG0GxbVvH73n2EPa8p5uvHYgpJYnzkrMkUoYfle7X+Eey56yio7A9oHTWnNIh
- mSaPwndTDUsoe4dsNzQK6uKsRvMis/ZWd/vRoZ45WyR5kv/OXTTI458OKqhsxH59Um2c
- Y9uU4UpL0TRkRbiwjED4vA9VL66NcRkj2WBi5VsqZBC3sk9U0xo0Op5K2UNSounWaAFD
- u6+w==
-X-Gm-Message-State: ANhLgQ0IQ5P7hj5shNr6fkaLeyJQTTs9xY1f+jOOOLZow+UiqnVRyGs5
- ca7bEgujg2f5/HUaa9T6cOobvTUzLBeuH8hGd+q9+A==
-X-Google-Smtp-Source: ADFU+vuymU3G8a3jV7LmEUAfjyIdqXBPWPBMl5AwN06QHiZOh2xfhQmjAC1mgENLp2N8QlZhOnnv8bbgUHqtFsBLWsU=
-X-Received: by 2002:a37:a93:: with SMTP id 141mr303468qkk.244.1585579402278;
- Mon, 30 Mar 2020 07:43:22 -0700 (PDT)
+ id 1jIwPW-0005rd-FG
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 15:33:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GuF1YpIClzBRooLd0w2t5brlvaZY6mp1mp+fDhnuF4A+hC4oRfr/87NOjDmS7cX71QDNrnbGWeWoXG9DC0Gy/dKLpPlNR5Bxl9pL0b0PJVrOcU4vA2ms6VgY0NK1oiO5I6zNF9AbwEuBzUfOHlBtfKfUqCeSQvj/zBGEORNp6n8tSS2DmDwWQTtxiWbC3mTsFYHK3uyO/7JPM7Nwj9asneg6lj6/MUrxDNO53KS+p8jMKws5A6DuKprA4PapX8+QAr3LvQ2JgNcdFVSJYI/GtY1gV1QrOWrBhsN7dFEWdLM19ecb8iy0C6UW+UlxQ/2x6YBoi/ONz2C0iqptFoTYhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BoITmax99CDU8wUZqZXrSXofThQs1ZjlzTqxNvmQNng=;
+ b=CWjJujsfwv3qbq/xIwlwqwAZro3mGUY8szcOHwU6509nekwymdrLtwKAGgygpgRV2Yx467edrzfc9LQkl8krfwfyIOK9Fek5ItLoea8cBMw1opXjwykyn5NLL6oIwJ+bz4y8mlh592EX3sCNtlbzZUsTXorji7rCMnICQWKzoizf1EI2kuQclKX/mPnLXQloM4TVup2JVSeL4UoL8lfeHCTsWp80ob/vzH3v9giUAn1qjRb6FvFhsn95UKJk9ttLDTlHsIwj4XZFc5/syxJYfzG+9l7dfPKXwsFXSywo1QmIc5a4QbUzBlmlyLj785MkFOx24aborq5tCAdRrD4mng==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BoITmax99CDU8wUZqZXrSXofThQs1ZjlzTqxNvmQNng=;
+ b=KMzUp6mT4QJ3nNWhSDgEwKzR1hMUIkSBpJZojGuWfN4fm77VFpEdEAuaXcyKv+PoRyORb2osbpO5s+Z44CtfNKp8FSMDoAKLSCGIP0DmJikAzQz36FFYF8F2QN/vYdKQtDxNGVtGYTNz2VuU6K/tZNNN7R8eHc4JZqW74+7wR30=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=diana.craciun@oss.nxp.com; 
+Received: from VI1PR0402MB2815.eurprd04.prod.outlook.com (10.172.255.144) by
+ VI1PR0402MB2749.eurprd04.prod.outlook.com (10.175.23.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.19; Mon, 30 Mar 2020 15:33:04 +0000
+Received: from VI1PR0402MB2815.eurprd04.prod.outlook.com
+ ([fe80::24fb:6b3f:f0e6:bd9a]) by VI1PR0402MB2815.eurprd04.prod.outlook.com
+ ([fe80::24fb:6b3f:f0e6:bd9a%8]) with mapi id 15.20.2856.019; Mon, 30 Mar 2020
+ 15:33:04 +0000
+Subject: Re: [PATCH 0/9] vfio/fsl-mc: VFIO support for FSL-MC devices
+To: Alex Williamson <alex.williamson@redhat.com>
+References: <20200323171911.27178-1-diana.craciun@oss.nxp.com>
+ <20200327151142.79dd2554@w520.home>
+From: Diana Craciun OSS <diana.craciun@oss.nxp.com>
+Message-ID: <6d5c2028-1c6a-05ec-ec71-0de1887eb772@oss.nxp.com>
+Date: Mon, 30 Mar 2020 18:32:05 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+In-Reply-To: <20200327151142.79dd2554@w520.home>
+Content-Language: en-US
+X-ClientProxiedBy: AM0PR01CA0051.eurprd01.prod.exchangelabs.com
+ (2603:10a6:208:e6::28) To VI1PR0402MB2815.eurprd04.prod.outlook.com
+ (2603:10a6:800:ae::16)
 MIME-Version: 1.0
-References: <BL0PR06MB45481A385F546CF5B6855C16E5CA0@BL0PR06MB4548.namprd06.prod.outlook.com>
- <d694432d-a3f2-4aa1-b9ee-f99f18ee2d99@www.fastmail.com>
-In-Reply-To: <d694432d-a3f2-4aa1-b9ee-f99f18ee2d99@www.fastmail.com>
-From: Patrick Venture <venture@google.com>
-Date: Mon, 30 Mar 2020 07:43:11 -0700
-Message-ID: <CAO=notwsjF3fVhY6gFVqsxTXYs=D7LHoOUDhcHSJLzRrsA7rGw@mail.gmail.com>
-Subject: Re: [Bug Report] soc/aspeed: integer error in
- aspeed_p2a_region_acquire
-To: Andrew Jeffery <andrew@aj.id.au>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.1.122] (86.127.44.112) by
+ AM0PR01CA0051.eurprd01.prod.exchangelabs.com (2603:10a6:208:e6::28) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.20 via Frontend
+ Transport; Mon, 30 Mar 2020 15:33:02 +0000
+X-Originating-IP: [86.127.44.112]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 3ab1e5e5-dfe2-4fbe-0c81-08d7d4bfa2eb
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB2749:|VI1PR0402MB2749:
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB2749332E3C239EF059C242CBBECB0@VI1PR0402MB2749.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Forefront-PRVS: 0358535363
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR0402MB2815.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(376002)(39860400002)(136003)(346002)(366004)(396003)(316002)(6486002)(81156014)(81166006)(8676002)(6916009)(8936002)(478600001)(16576012)(16526019)(2616005)(956004)(26005)(186003)(52116002)(66476007)(66946007)(66556008)(2906002)(31686004)(5660300002)(86362001)(966005)(31696002)(53546011)(4326008);
+ DIR:OUT; SFP:1101; 
+Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: QR0BuceKNTKLhZZwjrmSBUIQW3pE6N936Mnz6RcprJ6tZ2J688L05n8mhndFm5jWF67Fw1EQLvvWXHh6UD2ZYYhq/Jw0FZYdlj7dBekVezP3sEdSMiO5GFKXiM8U+SVKqaa0q0X2SNRk+p0Sp41ImV6NmOCsyFWzfpUg+UdLoaz02X+E9thu19MTh253MWhYS9rNB06H/gLY7HFEy+R53v9VPGBxGdl2mNHCGvgMgSWMYdNvBKt105JuRanzbaS9f/AyLfEGKn/dr+KrVfBm7ddQoUxv2Mjg0EEuWzXeJoVv66IRm8SoF/vwJJSX7rFw66or0Pzz7IMfYAFPfiTmGWu5nrElnGaciLCQr/CaF0qqzCNTxtn5g2f3CUHf9t4LKqHU1VaRMLK4OiOU1w4uL+M5ewep2T3PJNrEgMXDlEkSlrRXgvc2FuFIFjwVQqoV3nbZiHITvIsCVVzOlkiMqlloD7NLgcVTnGMI7KECJzNvjgifZwA9aq0F5cwLVb3WvfQ9iFc0lBXA029tGX1/1g==
+X-MS-Exchange-AntiSpam-MessageData: wVNFF+inTrAOPbyEPirUatszdxjPmVQpVTzrtWcafDUd8wFXrhkhzhVISB0lvlcUQv3kez4YIFw6sLSe+jqLxesBcDXbT+sxbzvFjL+/1Vp88kYWFMqna4JJqq6+Jav/K/3xsruI9t3GbzsgjOiM7Q==
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3ab1e5e5-dfe2-4fbe-0c81-08d7d4bfa2eb
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2020 15:33:04.2215 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: GRn7x8Iy5XrkHZzq8K+c5JFnLzFEnzkuUDdCLNSK/qfWC9Cprtwq9i6rVkWkYBvE8SrbP6BCVfAk0PYTuAy+lQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB2749
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_074326_968641_4D8ADFCC 
-X-CRM114-Status: GOOD (  29.29  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200330_083310_574730_3F67E2AA 
+X-CRM114-Status: GOOD (  20.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ no trust [40.107.22.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.68 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,100 +128,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Changming Liu <liu.changm@northeastern.edu>, Joel Stanley <joel@jms.id.au>,
- "yaohway@gmail.com" <yaohway@gmail.com>, "Lu, Long" <l.lu@northeastern.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-kernel@vger.kernel.org, bharatb.yadav@gmail.com,
+ linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org,
+ laurentiu.tudor@nxp.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 29, 2020 at 5:37 PM Andrew Jeffery <andrew@aj.id.au> wrote:
->
-> Hi Changming Liu,
->
-> I've added Patrick to the thread, who authored the driver.
->
-> On Mon, 30 Mar 2020, at 06:07, Changming Liu wrote:
-> > Hi Joel and Andrew,
-> >
-> > Greetings, I'm a first year PhD student who is interested in the usage
-> > of UBSan in the linux kernel, and with some experiments I found that in
-> > drivers/soc/aspeed/aspeed-p2a-ctrl.c function
-> > aspeed_p2a_region_acquire, there is an unsigned integer error which
-> > might cause unexpected behavior.
-> >
-> > More specifically, the map structure, after the execution of
-> > copy_from_user at line 180 in function aspeed_p2a_ioctl, is filled with
-> > data from user space.  So the code at line 136 that is
-> >
-> > end = map->addr + (map->length - 1);
-> >
-> > the subtraction could underflow when map->length equals zero, also,
-> > this sum could overflow. As a consequence, the check at line 149 could
-> > be bypassed and the following code could be executed.
-> >
-> > Although the fact that map->addr is a 64-bit unsigned integer and
-> > map->length is 32-bit makes the overflow less likely to happen, it
-> > seems doesn't eliminate the possibility entirely. I guess a access_ok
-> > could do?
+Thanks for looking into this.
 
-I'll take a look, but certainly adding a 32-bit value to a 64-bit
-value has the possibility of overflow given a contrived attack
-scenario.
+On 3/27/2020 11:11 PM, Alex Williamson wrote:
+> On Mon, 23 Mar 2020 19:19:02 +0200
+> Diana Craciun <diana.craciun@oss.nxp.com> wrote:
+>
+>> DPAA2 (Data Path Acceleration Architecture) consists in
+>> mechanisms for processing Ethernet packets, queue management,
+>> accelerators, etc.
+>>
+>> The Management Complex (mc) is a hardware entity that manages the DPAA2
+>> hardware resources. It provides an object-based abstraction for software
+>> drivers to use the DPAA2 hardware. The MC mediates operations such as
+>> create, discover, destroy of DPAA2 objects.
+>> The MC provides memory-mapped I/O command interfaces (MC portals) which
+>> DPAA2 software drivers use to operate on DPAA2 objects.
+>>
+>> A DPRC is a container object that holds other types of DPAA2 objects.
+>> Each object in the DPRC is a Linux device and bound to a driver.
+>> The MC-bus driver is a platform driver (different from PCI or platform
+>> bus). The DPRC driver does runtime management of a bus instance. It
+>> performs the initial scan of the DPRC and handles changes in the DPRC
+>> configuration (adding/removing objects).
+>>
+>> All objects inside a container share the same hardware isolation
+>> context, meaning that only an entire DPRC can be assigned to
+>> a virtual machine.
+>> When a container is assigned to a virtual machine, all the objects
+>> within that container are assigned to that virtual machine.
+>> The DPRC container assigned to the virtual machine is not allowed
+>> to change contents (add/remove objects) by the guest. The restriction
+>> is set by the host and enforced by the mc hardware.
+>>
+>> The DPAA2 objects can be directly assigned to the guest. However
+>> the MC portals (the memory mapped command interface to the MC) need
+>> to be emulated because there are commands that configure the
+>> interrupts and the isolation IDs which are virtual in the guest.
+>>
+>> Example:
+>> echo vfio-fsl-mc > /sys/bus/fsl-mc/devices/dprc.2/driver_override
+>> echo dprc.2 > /sys/bus/fsl-mc/drivers/vfio-fsl-mc/bind
+>>
+>> The dprc.2 is bound to the VFIO driver and all the objects within
+>> dprc.2 are going to be bound to the VFIO driver.
+> What's the composition of the IOMMU group, does it start with the DPRC
+> and each of the objects within the container are added to the same
+> group as they're created?
 
-> >
-> > Due to the lack of knowledge of the interaction between this module and
-> > the user space, I'm not able to assess if this is security-related
-> > problem. I'd appreciate it very much to hear your valuable opinion on
-> > why this could not cause any trouble if it's indeed the case, this will
-> > help me under linux and UBSAN a lot! and I'm more than happy to provide
-> > more information if needed.
->
-> It's certainly not expected behaviour and should be fixed :) We need to check
-> if the `end` calculation overflowed, but not using `access_ok()`, as the value of
-> `end` is an address in the physical address space of the SoC.
->
-> The current behaviour does have a security impact, though probably not in
-> the way you're expecting, as the driver itself is a means to violate the SoC's
-> security. The SoC is a BMC and exposes several PCIe devices to its host
-> (a VGA graphics device and a "BMC" device). Both devices expose
-> functionality that allows the host to perform arbitrary reads and writes to the
-> BMC's physical address space _if_ the BMC has allowed it to do so. This
-> driver controls whether the capability is exposed to the host (disabling
-> denies the read capability) and what regions of the SoC's physical address
-> space can be written. Regions are roughly broken up into memory-mapped
-> flash, BMC MMIO, BMC RAM and BMC LPC host controller.
->
-> Practically, enabling any region for write is to some degree unsafe: for instance
-> exposing the BMC's RAM to writes doesn't in any way restrict what areas of RAM
-> can be written, allowing e.g. arbitrary code injection into the kernel or running
-> processes on the BMC. Enabling writes to the BMC MMIO region allows arbitrary
-> control of the BMC and its peripherals without having to gain code-execution
-> (including escalating by removing write protection for other regions).
->
-> The driver exists to assist a trusted firmware update process used on some
-> platforms where the host can request (e.g. via IPMI) that BMC RAM be made
-> writable, then drop its firmware update payload into a predetermined location
-> in physical memory, and finally complete the transfer by requesting that RAM
-> region be returned to at least read-only mode.
->
-> To unlock unexpected regions of the BMC's address space in this scenario the
-> host would also have to exploit IPMI to craft an ioctl() payload with the properties
-> to trigger the overflow. Given that it already has complete write access to RAM it
-> may be easier to just exploit the BMC kernel directly rather than chain an exploit
-> through at least one other userspace process.
->
-> Anyway, enough background :) Thanks for the bug report and for analyzing the
-> driver. Hopefully Patrick can take a look and cook up a fix.
-
-Yeah, this driver was deliberately written to enable accessing the
-memory regions controlled by the BMC, opening a security hole in the
-BMC.  It's part of the design.
+Yes, the IOMMU group starts with the DPRC and the other objects are then 
+added to that group.
 
 >
-> Andrew
+> For an alternative to the driver_override mechanism used in this series
+> of passing the override through various scan/create callbacks, you
+> might consider something like I did for PCI SR-IOV:
+>
+> https://lore.kernel.org/lkml/158396395214.5601.11207416598267070486.stgit@gimli.home/
+>
+> ie. using the bus notifier to setup the driver_override before driver
+> matching is done.  Thanks,
+
+Thanks, I like your approach. I will give it a try.
+
+Diana
+
+
+>
+> Alex
+>
+>> More details about the DPAA2 objects can be found here:
+>> Documentation/networking/device_drivers/freescale/dpaa2/overview.rst
+>>
+>> The patches are dependent on some changes in the mc-bus (bus/fsl-mc)
+>> driver. The changes were needed in order to re-use code and to export
+>> some more functions that are needed by the VFIO driver.
+>> Currenlty the mc-bus patches are under review:
+>> https://www.spinics.net/lists/kernel/msg3447567.html
+>>
+>> Bharat Bhushan (1):
+>>    vfio/fsl-mc: Add VFIO framework skeleton for fsl-mc devices
+>>
+>> Diana Craciun (8):
+>>    vfio/fsl-mc: Scan DPRC objects on vfio-fsl-mc driver bind
+>>    vfio/fsl-mc: Implement VFIO_DEVICE_GET_INFO ioctl
+>>    vfio/fsl-mc: Implement VFIO_DEVICE_GET_REGION_INFO ioctl call
+>>    vfio/fsl-mc: Allow userspace to MMAP fsl-mc device MMIO regions
+>>    vfio/fsl-mc: Added lock support in preparation for interrupt handling
+>>    vfio/fsl-mc: Add irq infrastructure for fsl-mc devices
+>>    vfio/fsl-mc: trigger an interrupt via eventfd
+>>    vfio/fsl-mc: Add read/write support for fsl-mc devices
+>>
+>>   MAINTAINERS                               |   6 +
+>>   drivers/vfio/Kconfig                      |   1 +
+>>   drivers/vfio/Makefile                     |   1 +
+>>   drivers/vfio/fsl-mc/Kconfig               |   9 +
+>>   drivers/vfio/fsl-mc/Makefile              |   4 +
+>>   drivers/vfio/fsl-mc/vfio_fsl_mc.c         | 660 ++++++++++++++++++++++
+>>   drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c    | 221 ++++++++
+>>   drivers/vfio/fsl-mc/vfio_fsl_mc_private.h |  56 ++
+>>   include/uapi/linux/vfio.h                 |   1 +
+>>   9 files changed, 959 insertions(+)
+>>   create mode 100644 drivers/vfio/fsl-mc/Kconfig
+>>   create mode 100644 drivers/vfio/fsl-mc/Makefile
+>>   create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc.c
+>>   create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_intr.c
+>>   create mode 100644 drivers/vfio/fsl-mc/vfio_fsl_mc_private.h
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
