@@ -2,83 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97CCB1976EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 10:48:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5DB9197715
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 10:53:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C99nRNFybsPOsQ3KCXJp9YZrc+nm3RBQpEEcUjiz0uk=; b=NBlwWsyjK+oer/
-	4IDHpN7kOUa/XniJS1Y9RLPO/QFqV2hFsmtDs2bjjLepAt2Gb/G/uZR9bhY8vEtmn35T0oRl8YqtY
-	VLTd+yhR940OAAXMuxBOxd26rpxUpBppKVC2Pn57jcsnH/v/N695sF0JPrdT/4P7nJdYAWh4cTJ0H
-	trjC0tnsRWC/ONC37pBNqRnUQs5C2hF0j6H6Uo7vSkDfyL0bKq9v50WNzi216gjlD5z36nJFhqGNx
-	xYSFjzlGb+ensadspfPu7pIrsUb2wPliTrV1BVZ8iVqj+h0H70h+9956obq189AFqLroLpnpCTOdO
-	UNHF3XwzHav2twguv+RA==;
+	List-Owner; bh=EXORriIEQTE1DVQCAhsSMQ1/fAdy2mWhCO2Q/GE9ehU=; b=a0XDHysil41INE
+	eaaE5/tiyzLvK93ofwsPl5qZEhsyQoal4YWvFrEj2lr39lQOh96g/GArsbLqP4W44y0TUDJXfFFNN
+	5nzdne1eizbOkhiU6H+TsiQzEeJqh6uaomkJvGnxKd7wp6j48Ia9IXQvbHCjA98D9jz7KsYOnEHgW
+	Pck/IDkNzk7hDqTkqzHPKCQK9OP6i/+36eKNddNhTx6trUdRiSDBNR+09gXx+6hi5PPn1e+CbYVmB
+	4d/snxM1BdW+gSdMhamlMHjC14CdSUW+tncfFgeFVnTEVahm6Wu5reo9UyqaWyuM8EY4u5lAXU9vd
+	O3EzPYJrrkJpK5Gcmi1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIq5s-0008Ts-J8; Mon, 30 Mar 2020 08:48:28 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jIqAa-00028T-KG; Mon, 30 Mar 2020 08:53:20 +0000
+Received: from mout02.posteo.de ([185.67.36.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIq5i-0008Su-Fo
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 08:48:20 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02U8h3Ox024505; Mon, 30 Mar 2020 10:48:13 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=vTy92sv00CxuFV+cNS/2Kf+W70cjMIce9Yb3a+cK9pI=;
- b=T+WsUN/ROngylVJApuHtDTDgnYiCKPjyoiIRdq6H1MDwE9AKoVPV2FO/i4LefMO/jLSe
- pmbEED76M2HyQnV3diBCoS1Au+PTv+3Ft2PpqYXHTjIK1rANUHCYWG47950JGOQ5q530
- ZooHTYu7SW18FBOv2132l1w9L6PqyI6Dm7TkcvggTLMWfBFOAnZmyfrEglZHhdMEaSiR
- 13m4VPzkCA9FOtrcH1Z9v1zuteNcrDqpxJZYfxc4ekPlx1YjzU6lU4Qk4fqOIMwM4V7V
- TLt0JnEukvOqA2P+DwA+HSeGTsIV1BIypTHdR3rHrmyna1VKQf91pZ58yXJ0x63RIo1u wg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 301vkdgtge-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 30 Mar 2020 10:48:13 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 34C0A100038;
- Mon, 30 Mar 2020 10:48:09 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 198342A553C;
- Mon, 30 Mar 2020 10:48:09 +0200 (CEST)
-Received: from [10.131.224.211] (10.75.127.51) by SFHDAG5NODE2.st.com
- (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 30 Mar
- 2020 10:48:07 +0200
-Subject: Re: [PATCH v2 2/2] i2c: i2c-stm32f7: allows for any bus frequency
-To: Alain Volmat <alain.volmat@st.com>, <wsa@the-dreams.de>,
- <robh+dt@kernel.org>
-References: <1585226661-26262-1-git-send-email-alain.volmat@st.com>
- <1585226661-26262-3-git-send-email-alain.volmat@st.com>
-From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
-Message-ID: <7f9fe76a-92b0-11a0-3674-ee9354940b39@st.com>
-Date: Mon, 30 Mar 2020 10:48:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jIqAQ-00026W-Qn
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 08:53:12 +0000
+Received: from submission (posteo.de [89.146.220.130]) 
+ by mout02.posteo.de (Postfix) with ESMTPS id E80042400FC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Mar 2020 10:52:52 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
+ t=1585558379; bh=n1xuKh66a44kQlniYMujMKktHlgYIiJ0zyokYI/9oDo=;
+ h=From:Subject:To:Cc:Autocrypt:Date:From;
+ b=ThGXuoJ05R0xoQclMwxeME6mfuANGbFqKulsj8Obzsqq2/IGLzAfBt8J1HySdTtFU
+ ERZFd/I3ynrU6G93a2Ag11iPTQ40CbTkzPAuGcgntlMWSca6ktkP46KfCGCQUC4syt
+ 0lxHLopNrDcS9DwqeafBU/KkkjcssWTOc1M4pl44FlUD4RTBgcHyygQJMrfsQ5taWA
+ wx2m5o7G5s/P37TdH+7f6MZz7zI6AU3SknZ6LjL68ZercgEshddUM8jwniWxKZvX03
+ sTXYw/7sBCEM6I/MbirQkfPjD64lGllTnXR48GzLvh4zEio9HywQvLyhyxM5czPGC9
+ jvTOubQv/HHhw==
+Received: from customer (localhost [127.0.0.1])
+ by submission (posteo.de) with ESMTPSA id 48rR722jKyz9rxP;
+ Mon, 30 Mar 2020 10:52:46 +0200 (CEST)
+From: Martin Kepplinger <martink@posteo.de>
+Subject: Re: [PATCH 0/8] interconnect: Add imx support via devfreq
+To: =?UTF-8?Q?Guido_G=c3=bcnther?= <agx@sigxcpu.org>
+References: <cover.1585188174.git.leonard.crestez@nxp.com>
+ <1ae21355-df95-44e5-b8f6-14af7aa4fcc3@posteo.de>
+ <20200327113646.GA93181@bogon.m.sigxcpu.org>
+Autocrypt: addr=martink@posteo.de; keydata=
+ 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
+Message-ID: <9a84e745-3560-cb8a-4b1a-139b914c5a95@posteo.de>
+Date: Mon, 30 Mar 2020 10:52:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <1585226661-26262-3-git-send-email-alain.volmat@st.com>
+In-Reply-To: <20200327113646.GA93181@bogon.m.sigxcpu.org>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG5NODE2.st.com
- (10.75.127.14)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.645
- definitions=2020-03-30_01:2020-03-27,
- 2020-03-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_014818_824097_EDFEAC0E 
-X-CRM114-Status: GOOD (  27.58  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200330_015311_159747_EAC3E78E 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.67.36.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,344 +155,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
+ linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Silvano di Ninno <silvano.dininno@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
+ Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ Alexandre Bailon <abailon@baylibre.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello guys
-
-Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
-
-Thanks
-
-On 3/26/20 1:44 PM, Alain Volmat wrote:
-> Do not limitate to the 3 (100KHz, 400KHz, 1MHz) bus frequency but
-> instead allows any frequency (if it matches timing requirements).
-> Depending on the requested frequency, use the spec data from either
-> Standard, Fast or Fast Plus mode.
-> 
-> Hardcoding of min/max bus frequencies is removed and is instead computed.
-> 
-> The driver do not use anymore speed identifier but instead handle
-> directly the frequency and figure out the spec data (necessary
-> for the computation of the timing register) based on the frequency.
-> 
-> Signed-off-by: Alain Volmat <alain.volmat@st.com>
-> ---
-> v2: remove wrong "NOT REACHED" comment
->     simplify get_lower_rate function
-> 
->  drivers/i2c/busses/i2c-stm32f7.c | 115 ++++++++++++++++---------------
->  1 file changed, 60 insertions(+), 55 deletions(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-> index 330ffed011e0..f369f086b9d0 100644
-> --- a/drivers/i2c/busses/i2c-stm32f7.c
-> +++ b/drivers/i2c/busses/i2c-stm32f7.c
-> @@ -189,8 +189,6 @@ struct stm32f7_i2c_regs {
->  /**
->   * struct stm32f7_i2c_spec - private i2c specification timing
->   * @rate: I2C bus speed (Hz)
-> - * @rate_min: 80% of I2C bus speed (Hz)
-> - * @rate_max: 100% of I2C bus speed (Hz)
->   * @fall_max: Max fall time of both SDA and SCL signals (ns)
->   * @rise_max: Max rise time of both SDA and SCL signals (ns)
->   * @hddat_min: Min data hold time (ns)
-> @@ -201,8 +199,6 @@ struct stm32f7_i2c_regs {
->   */
->  struct stm32f7_i2c_spec {
->  	u32 rate;
-> -	u32 rate_min;
-> -	u32 rate_max;
->  	u32 fall_max;
->  	u32 rise_max;
->  	u32 hddat_min;
-> @@ -214,7 +210,6 @@ struct stm32f7_i2c_spec {
->  
->  /**
->   * struct stm32f7_i2c_setup - private I2C timing setup parameters
-> - * @speed: I2C speed mode (standard, Fast Plus)
->   * @speed_freq: I2C speed frequency  (Hz)
->   * @clock_src: I2C clock source frequency (Hz)
->   * @rise_time: Rise time (ns)
-> @@ -224,7 +219,6 @@ struct stm32f7_i2c_spec {
->   * @fmp_clr_offset: Fast Mode Plus clear register offset from set register
->   */
->  struct stm32f7_i2c_setup {
-> -	enum stm32_i2c_speed speed;
->  	u32 speed_freq;
->  	u32 clock_src;
->  	u32 rise_time;
-> @@ -287,7 +281,7 @@ struct stm32f7_i2c_msg {
->   * @base: virtual memory area
->   * @complete: completion of I2C message
->   * @clk: hw i2c clock
-> - * @speed: I2C clock frequency of the controller. Standard, Fast or Fast+
-> + * @bus_rate: I2C clock frequency of the controller
->   * @msg: Pointer to data to be written
->   * @msg_num: number of I2C messages to be executed
->   * @msg_id: message identifiant
-> @@ -314,7 +308,7 @@ struct stm32f7_i2c_dev {
->  	void __iomem *base;
->  	struct completion complete;
->  	struct clk *clk;
-> -	int speed;
-> +	unsigned int bus_rate;
->  	struct i2c_msg *msg;
->  	unsigned int msg_num;
->  	unsigned int msg_id;
-> @@ -343,10 +337,8 @@ struct stm32f7_i2c_dev {
->   * and Fast-mode Plus I2C-bus devices
->   */
->  static struct stm32f7_i2c_spec i2c_specs[] = {
-> -	[STM32_I2C_SPEED_STANDARD] = {
-> +	{
->  		.rate = I2C_MAX_STANDARD_MODE_FREQ,
-> -		.rate_min = I2C_MAX_STANDARD_MODE_FREQ * 8 / 10,	/* 80% */
-> -		.rate_max = I2C_MAX_STANDARD_MODE_FREQ,
->  		.fall_max = 300,
->  		.rise_max = 1000,
->  		.hddat_min = 0,
-> @@ -355,10 +347,8 @@ static struct stm32f7_i2c_spec i2c_specs[] = {
->  		.l_min = 4700,
->  		.h_min = 4000,
->  	},
-> -	[STM32_I2C_SPEED_FAST] = {
-> +	{
->  		.rate = I2C_MAX_FAST_MODE_FREQ,
-> -		.rate_min = I2C_MAX_FAST_MODE_FREQ * 8 / 10,		/* 80% */
-> -		.rate_max = I2C_MAX_FAST_MODE_FREQ,
->  		.fall_max = 300,
->  		.rise_max = 300,
->  		.hddat_min = 0,
-> @@ -367,10 +357,8 @@ static struct stm32f7_i2c_spec i2c_specs[] = {
->  		.l_min = 1300,
->  		.h_min = 600,
->  	},
-> -	[STM32_I2C_SPEED_FAST_PLUS] = {
-> +	{
->  		.rate = I2C_MAX_FAST_MODE_PLUS_FREQ,
-> -		.rate_min = I2C_MAX_FAST_MODE_PLUS_FREQ * 8 / 10,	/* 80% */
-> -		.rate_max = I2C_MAX_FAST_MODE_PLUS_FREQ,
->  		.fall_max = 100,
->  		.rise_max = 120,
->  		.hddat_min = 0,
-> @@ -411,10 +399,23 @@ static void stm32f7_i2c_disable_irq(struct stm32f7_i2c_dev *i2c_dev, u32 mask)
->  	stm32f7_i2c_clr_bits(i2c_dev->base + STM32F7_I2C_CR1, mask);
->  }
->  
-> +static struct stm32f7_i2c_spec *get_specs(u32 rate)
-> +{
-> +	int i;
-> +
-> +	for (i = 0; i < ARRAY_SIZE(i2c_specs); i++)
-> +		if (rate <= i2c_specs[i].rate)
-> +			return &i2c_specs[i];
-> +
-> +	return ERR_PTR(-EINVAL);
-> +}
-> +
-> +#define	RATE_MIN(rate)	(rate * 8 / 10)
->  static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  				      struct stm32f7_i2c_setup *setup,
->  				      struct stm32f7_i2c_timings *output)
->  {
-> +	struct stm32f7_i2c_spec *specs;
->  	u32 p_prev = STM32F7_PRESC_MAX;
->  	u32 i2cclk = DIV_ROUND_CLOSEST(NSEC_PER_SEC,
->  				       setup->clock_src);
-> @@ -432,18 +433,19 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  	u16 p, l, a, h;
->  	int ret = 0;
->  
-> -	if (setup->speed >= STM32_I2C_SPEED_END) {
-> -		dev_err(i2c_dev->dev, "speed out of bound {%d/%d}\n",
-> -			setup->speed, STM32_I2C_SPEED_END - 1);
-> +	specs = get_specs(setup->speed_freq);
-> +	if (specs == ERR_PTR(-EINVAL)) {
-> +		dev_err(i2c_dev->dev, "speed out of bound {%d}\n",
-> +			setup->speed_freq);
->  		return -EINVAL;
->  	}
->  
-> -	if ((setup->rise_time > i2c_specs[setup->speed].rise_max) ||
-> -	    (setup->fall_time > i2c_specs[setup->speed].fall_max)) {
-> +	if ((setup->rise_time > specs->rise_max) ||
-> +	    (setup->fall_time > specs->fall_max)) {
->  		dev_err(i2c_dev->dev,
->  			"timings out of bound Rise{%d>%d}/Fall{%d>%d}\n",
-> -			setup->rise_time, i2c_specs[setup->speed].rise_max,
-> -			setup->fall_time, i2c_specs[setup->speed].fall_max);
-> +			setup->rise_time, specs->rise_max,
-> +			setup->fall_time, specs->fall_max);
->  		return -EINVAL;
->  	}
->  
-> @@ -454,12 +456,6 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  		return -EINVAL;
->  	}
->  
-> -	if (setup->speed_freq > i2c_specs[setup->speed].rate) {
-> -		dev_err(i2c_dev->dev, "ERROR: Freq {%d/%d}\n",
-> -			setup->speed_freq, i2c_specs[setup->speed].rate);
-> -		return -EINVAL;
-> -	}
-> -
->  	/*  Analog and Digital Filters */
->  	af_delay_min =
->  		(setup->analog_filter ?
-> @@ -469,13 +465,13 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  		 STM32F7_I2C_ANALOG_FILTER_DELAY_MAX : 0);
->  	dnf_delay = setup->dnf * i2cclk;
->  
-> -	sdadel_min = i2c_specs[setup->speed].hddat_min + setup->fall_time -
-> +	sdadel_min = specs->hddat_min + setup->fall_time -
->  		af_delay_min - (setup->dnf + 3) * i2cclk;
->  
-> -	sdadel_max = i2c_specs[setup->speed].vddat_max - setup->rise_time -
-> +	sdadel_max = specs->vddat_max - setup->rise_time -
->  		af_delay_max - (setup->dnf + 4) * i2cclk;
->  
-> -	scldel_min = setup->rise_time + i2c_specs[setup->speed].sudat_min;
-> +	scldel_min = setup->rise_time + specs->sudat_min;
->  
->  	if (sdadel_min < 0)
->  		sdadel_min = 0;
-> @@ -530,8 +526,8 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  
->  	tsync = af_delay_min + dnf_delay + (2 * i2cclk);
->  	s = NULL;
-> -	clk_max = NSEC_PER_SEC / i2c_specs[setup->speed].rate_min;
-> -	clk_min = NSEC_PER_SEC / i2c_specs[setup->speed].rate_max;
-> +	clk_max = NSEC_PER_SEC / RATE_MIN(setup->speed_freq);
-> +	clk_min = NSEC_PER_SEC / setup->speed_freq;
->  
->  	/*
->  	 * Among Prescaler possibilities discovered above figures out SCL Low
-> @@ -549,7 +545,7 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  		for (l = 0; l < STM32F7_SCLL_MAX; l++) {
->  			u32 tscl_l = (l + 1) * prescaler + tsync;
->  
-> -			if ((tscl_l < i2c_specs[setup->speed].l_min) ||
-> +			if ((tscl_l < specs->l_min) ||
->  			    (i2cclk >=
->  			     ((tscl_l - af_delay_min - dnf_delay) / 4))) {
->  				continue;
-> @@ -561,7 +557,7 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  					setup->rise_time + setup->fall_time;
->  
->  				if ((tscl >= clk_min) && (tscl <= clk_max) &&
-> -				    (tscl_h >= i2c_specs[setup->speed].h_min) &&
-> +				    (tscl_h >= specs->h_min) &&
->  				    (i2cclk < tscl_h)) {
->  					int clk_error = tscl - i2cbus;
->  
-> @@ -607,6 +603,17 @@ static int stm32f7_i2c_compute_timing(struct stm32f7_i2c_dev *i2c_dev,
->  	return ret;
->  }
->  
-> +static u32 get_lower_rate(u32 rate)
-> +{
-> +	int i = ARRAY_SIZE(i2c_specs);
-> +
-> +	while (i--)
-> +		if (i2c_specs[i].rate < rate)
-> +			break;
-> +
-> +	return i2c_specs[i].rate;
-> +}
-> +
->  static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
->  				    struct stm32f7_i2c_setup *setup)
->  {
-> @@ -619,18 +626,15 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
->  
->  	i2c_parse_fw_timings(i2c_dev->dev, t, false);
->  
-> -	if (t->bus_freq_hz >= I2C_MAX_FAST_MODE_PLUS_FREQ)
-> -		i2c_dev->speed = STM32_I2C_SPEED_FAST_PLUS;
-> -	else if (t->bus_freq_hz >= I2C_MAX_FAST_MODE_FREQ)
-> -		i2c_dev->speed = STM32_I2C_SPEED_FAST;
-> -	else
-> -		i2c_dev->speed = STM32_I2C_SPEED_STANDARD;
-> +	if (t->bus_freq_hz > I2C_MAX_FAST_MODE_PLUS_FREQ) {
-> +		dev_err(i2c_dev->dev, "Invalid bus speed (%i>%i)\n",
-> +			t->bus_freq_hz, I2C_MAX_FAST_MODE_PLUS_FREQ);
-> +		return -EINVAL;
-> +	}
->  
-> +	setup->speed_freq = t->bus_freq_hz;
->  	i2c_dev->setup.rise_time = t->scl_rise_ns;
->  	i2c_dev->setup.fall_time = t->scl_fall_ns;
-> -
-> -	setup->speed = i2c_dev->speed;
-> -	setup->speed_freq = i2c_specs[setup->speed].rate;
->  	setup->clock_src = clk_get_rate(i2c_dev->clk);
->  
->  	if (!setup->clock_src) {
-> @@ -644,14 +648,12 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
->  		if (ret) {
->  			dev_err(i2c_dev->dev,
->  				"failed to compute I2C timings.\n");
-> -			if (i2c_dev->speed > STM32_I2C_SPEED_STANDARD) {
-> -				i2c_dev->speed--;
-> -				setup->speed = i2c_dev->speed;
-> +			if (setup->speed_freq > I2C_MAX_STANDARD_MODE_FREQ) {
->  				setup->speed_freq =
-> -					i2c_specs[setup->speed].rate;
-> +					get_lower_rate(setup->speed_freq);
->  				dev_warn(i2c_dev->dev,
->  					 "downgrade I2C Speed Freq to (%i)\n",
-> -					 i2c_specs[setup->speed].rate);
-> +					 setup->speed_freq);
->  			} else {
->  				break;
->  			}
-> @@ -663,13 +665,15 @@ static int stm32f7_i2c_setup_timing(struct stm32f7_i2c_dev *i2c_dev,
->  		return ret;
->  	}
->  
-> -	dev_dbg(i2c_dev->dev, "I2C Speed(%i), Freq(%i), Clk Source(%i)\n",
-> -		setup->speed, setup->speed_freq, setup->clock_src);
-> +	dev_dbg(i2c_dev->dev, "I2C Speed(%i), Clk Source(%i)\n",
-> +		setup->speed_freq, setup->clock_src);
->  	dev_dbg(i2c_dev->dev, "I2C Rise(%i) and Fall(%i) Time\n",
->  		setup->rise_time, setup->fall_time);
->  	dev_dbg(i2c_dev->dev, "I2C Analog Filter(%s), DNF(%i)\n",
->  		(setup->analog_filter ? "On" : "Off"), setup->dnf);
->  
-> +	i2c_dev->bus_rate = setup->speed_freq;
-> +
->  	return 0;
->  }
->  
-> @@ -1866,7 +1870,7 @@ static int stm32f7_i2c_write_fm_plus_bits(struct stm32f7_i2c_dev *i2c_dev,
->  {
->  	int ret;
->  
-> -	if (i2c_dev->speed != STM32_I2C_SPEED_FAST_PLUS ||
-> +	if (i2c_dev->bus_rate <= I2C_MAX_FAST_MODE_FREQ ||
->  	    IS_ERR_OR_NULL(i2c_dev->regmap))
->  		/* Optional */
->  		return 0;
-> @@ -2020,7 +2024,8 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
->  	if (ret)
->  		goto clk_free;
->  
-> -	if (i2c_dev->speed == STM32_I2C_SPEED_FAST_PLUS) {
-> +	/* Setup Fast mode plus if necessary */
-> +	if (i2c_dev->bus_rate > I2C_MAX_FAST_MODE_FREQ) {
->  		ret = stm32f7_i2c_setup_fm_plus_bits(pdev, i2c_dev);
->  		if (ret)
->  			goto clk_free;
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjcuMDMuMjAgMTI6MzYsIEd1aWRvIEfDvG50aGVyIHdyb3RlOgo+IEhpIE1hcnRpbiwKPiBP
+biBUaHUsIE1hciAyNiwgMjAyMCBhdCAwMjo1NToyN1BNICswMTAwLCBNYXJ0aW4gS2VwcGxpbmdl
+ciB3cm90ZToKPj4gT24gMjYuMDMuMjAgMDM6MTYsIExlb25hcmQgQ3Jlc3RleiB3cm90ZToKPj4+
+IFRoaXMgc2VyaWVzIGFkZHMgaW50ZXJjb25uZWN0IHNjYWxpbmcgc3VwcG9ydCBmb3IgaW14OG0g
+c2VyaWVzIGNoaXBzLiBJdCB1c2VzIGEKPj4+IHBlci1TT0MgaW50ZXJjb25uZWN0IHByb3ZpZGVy
+IGxheWVyZWQgb24gdG9wIG9mIG11bHRpcGxlIGluc3RhbmNlcyBvZiBkZXZmcmVxCj4+PiBmb3Ig
+c2NhbGFibGUgbm9kZXMgYWxvbmcgdGhlIGludGVyY29ubmVjdC4KPj4+Cj4+PiBFeGlzdGluZyBx
+Y29tIGludGVyY29ubmVjdCBwcm92aWRlcnMgbW9zdGx5IHRyYW5zbGF0ZSBiYW5kd2lkdGggcmVx
+dWVzdHMgaW50bwo+Pj4gZmlybXdhcmUgY2FsbHMgYnV0IGVxdWl2YWxlbnQgZmlybXdhcmUgb24g
+aW14OG0gaXMgbXVjaCB0aGlubmVyLiBTY2FsaW5nCj4+PiBzdXBwb3J0IGZvciBpbmRpdmlkdWFs
+IG5vZGVzIGlzIGltcGxlbWVudGVkIGFzIGRpc3RpbmN0IGRldmZyZXEgZHJpdmVycwo+Pj4gaW5z
+dGVhZC4KPj4+Cj4+PiBUaGUgaW14IGludGVyY29ubmVjdCBwcm92aWRlciBkb2Vzbid0IGNvbW11
+bmljYXRlIHdpdGggZGV2ZnJlcSBkaXJlY3RseQo+Pj4gYnV0IHJhdGhlciBjb21wdXRlcyAibWlu
+aW11bSBmcmVxdWVuY2llcyIgZm9yIG5vZGVzIGFsb25nIHRoZSBwYXRoIGFuZAo+Pj4gY3JlYXRl
+cyBkZXZfcG1fcW9zIHJlcXVlc3RzLgo+Pj4KPj4+IFNpbmNlIHRoZXJlIGlzIG5vIHNpbmdsZSBk
+ZXZpY2V0cmVlIG5vZGUgdGhhdCBjYW4gcmVwcmVzZW50IHRoZQo+Pj4gImludGVyY29ubmVjdCIg
+dGhlIG1haW4gTk9DIGlzIHBpY2tlZCBhcyB0aGUgImludGVyY29ubmVjdCBwcm92aWRlciIgYW5k
+Cj4+PiB3aWxsIHByb2JlIHRoZSBpbnRlcmNvbm5lY3QgcGxhdGZvcm0gZGV2aWNlIGlmICNpbnRl
+cmNvbm5lY3QtY2VsbHMgaXMKPj4+IHByZXNlbnQuIFRoaXMgYXZvaWRzIGludHJvZHVjaW5nICJ2
+aXJ0dWFsIiBkZXZpY2VzIGJ1dCBpdCBtZWFucyB0aGF0IERUCj4+PiBiaW5kaW5ncyBvZiBtYWlu
+IE5PQyBpbmNsdWRlcyBwcm9wZXJ0aWVzIGZvciBib3RoIGRldmZyZXEgYW5kCj4+PiBpbnRlcmNv
+bm5lY3QuCj4+Pgo+Pj4gT25seSB0aGUgZGRyYyBhbmQgbWFpbiBub2MgYXJlIHNjYWxhYmxlIHJp
+Z2h0IG5vdyBidXQgbW9yZSBjYW4gYmUgYWRkZWQuCj4+Pgo+Pj4gQWxzbyBhdmFpbGFibGUgb24g
+YSBnaXRodWIgYnJhbmNoICh3aXRoIHZhcmlvdXMgdW5yZWxhdGVkIGNoYW5nZXMpOgo+Pj4gCWh0
+dHBzOi8vZ2l0aHViLmNvbS9jZGxlb25hcmQvbGludXgvdHJlZS9uZXh0Cj4+PiBUZXN0aW5nIGN1
+cnJlbnRseSByZXF1aXJlcyBOWFAgYnJhbmNoIG9mIGF0Zit1Ym9vdAo+Pj4KPj4+IE1hcnRpbjog
+SSBiZWxpZXZlIHlvdSBzaG91bGQgYmUgYWJsZSB0byB1c2UgdGhpcyB0byBjb250cm9sIERSQU0K
+Pj4+IGZyZXF1ZW5jeSBmcm9tIHZpZGVvIGJ5IGp1c3QgYWRkaW5nIGludGVyY29ubmVjdCBjb25z
+dW1lciBjb2RlIHRvCj4+PiBud2wtZHNpLiBTYW1wbGUgY29kZToKPj4+IAlodHRwczovL2dpdGh1
+Yi5jb20vY2RsZW9uYXJkL2xpbnV4L2NvbW1pdC80Mzc3Mjc2MmFhNTA0NWYxY2U1NjIzNzQwZjlh
+NGJhZWY5ODhkMDgzCj4+PiAJaHR0cHM6Ly9naXRodWIuY29tL2NkbGVvbmFyZC9saW51eC9jb21t
+aXQvN2I2MDFlOTgxYjFmNTE3YjVkOThiNDNiZGUyOTI5NzJkZWQxMzA4Ngo+Pj4KPj4KPj4gVGhh
+bmtzIGZvciB1cGRhdGluZyB0aGlzIHNlcmllcyBMZW9uYXJkISBBIGZldyBxdWVzdGlvbnMgZm9y
+IG15Cj4+IHVuZGVyc3RhbmRpbmcgYmVmb3JlIHRyeWluZyB0byB0ZXN0Ogo+Pgo+PiBJc24ndCB0
+aGUgZGRyY19vcHBfdGFibGUgbWlzc2luZyBpbiB0aGVzZSBhZGRpdGlvbnMgdG8gdGhlIERUPyBU
+aGF0J3MKPj4gd2hhdCBJIHdhbnQgdG8gc2NhbGUgYWZ0ZXIgYWxsLgo+Pgo+PiBJZiBJIHdhbnQg
+dG8ga2VlcCBjYWxsaW5nIHRoZSAicmVxdWVzdCIsIG5vdyBpY2Nfc2V0X2J3KCksIGluIG53bC1k
+c2k6Cj4+IEknZCBhZGQgYW4gImludGVyY29ubmVjdHMiIHByb3BlcnR5IHRvIHRoZSBub2RlLCBi
+dXQgd2hhdCB3b3VsZCBiZSBteQo+PiBpbnRlcmNvbm5lY3QgbWFzdGVyPyBpLmUuOiBpbnRlcmNv
+bm5lY3RzID0gPCZub2MgbWFzdGVyPyAmbm9jCj4+IElNWDhNUV9JQ1NfRFJBTT47IEF0IGxlYXN0
+IGl0J3Mgbm90IG9idmlvdXMgdG8gbWUgZnJvbQo+PiBpbnRlcmNvbm5lY3QvaW14L2lteDhtcS5j
+Cj4gCj4gVGhlIE5XTCBEU0kgaG9zdCBjb250cm9sbGVyIGlzIGZlZCBieSBEQ1NTIG9yIG14c2Zi
+IHNvIGFueSBiYW5kd2lkdGgKPiByZXF1aXJlbWVudHMgc2hvdWxkIChhcyBmYXIgYXMgSSB1bmRl
+cnN0YW5kIHRoaW5ncykgZ28gaW50byB0aGUgZGlzcGxheQo+IGNvbnRyb2xsZXIgZHJpdmVyIHNp
+bmNlIHRoYXQncyB3aGF0IGZldGNoZXMgZnJvbSBSQU0uCj4gQ2hlZXJzLAo+ICAtLSBHdWlkbwo+
+IAoKSGksCgpUaGFua3MgYSBsb3QgTGVvbmFyZCBhbmQgR3VpZG8hIEhlcmUncyB0aGUgdHJlZSBJ
+J20gcnVubmluZywgd2hpY2ggaXMKeW91ciBwYXRjaGVzIGJhc2VkIG9uIExpbnVzJyB0cmVlLCB3
+aXRoIGljYyByZXF1ZXN0IGluIG14c2ZiOgoKaHR0cHM6Ly9zb3VyY2UucHVyaS5zbS9tYXJ0aW4u
+a2VwcGxpbmdlci9saW51eC1uZXh0L2NvbW1pdHMvNS42LXJjNy9saWJyZW01X19pbnRlZ3JhdGlv
+bl9kZXZmcmVxMQoKVGhlIHBhdGggZnJvbSBpY2MgdmlhIHBtX3FvcyB0byBkZXZmcmVxIGRvZXMg
+d29yayAod2hpY2ggaXMgZ3JlYXQpIC0KaG93ZXZlciBvbmx5IGFmdGVyIHNldHRpbmcgdGhlIG1p
+bmltdW0gZnJlcXVlbmNpZXMgdmlhIGEgZ292ZXJub3IgLSBJCnNldCB0aGUgInBvd2Vyc2F2ZSIg
+Z292ZXJub3IuCgpBZnRlciB0aGF0LCBmcmVxdWVuY2llcyBhcmUgYm90aCBzZXQgdG8gaGlnaCAv
+IGxvdyBjb3JyZWN0bHkuCgpNeSBpbXByZXNzaW9uIHdhcyB0aGF0IEkgc2hvdWxkIGJlIGFibGUg
+dG8gdXNlIHRoZSAicGFzc2l2ZSIgZ292ZXJub3IgKGEKcGFzc2l2ZSBkZXZmcmVxIGRldmljZT8p
+LiBXaGF0IGFtIEkgbWlzc2luZyB3aXRoIHVzaW5nIGRldmZyZXEKY29ycmVjdGx5PyBPciBkbyBJ
+IGFscmVhZHk/CgpvdGhlciB0aGFuIHRoZSBhYm92ZSB1bmNlcnRhaW50eToKClRlc3RlZC1ieTog
+TWFydGluIEtlcHBsaW5nZXIgPG1hcnRpbi5rZXBwbGluZ2VyQHB1cmkuc20+Cgp0aGFua3Mgc28g
+ZmFyIQoKICAgICAgICAgICAgICAgICAgICAgICAgICBtYXJ0aW4KCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
