@@ -2,89 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C4101981A0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 18:48:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 927A51981A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 18:49:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cj+e6luFjg1uBeTuMdPzuBkyPgobFn3WBk5LsiF0PAo=; b=mOQA1HNNipaon3
-	hdqJkeV/b2nPMVYjzlX1q8hPHXGdeWnliYc+K7ERXTV63owpkzN0AkvTMUBpPoecOv5yvQUWPQLaL
-	g9/oqpGMBonJnqWwBycIUuI2ixIoGw5AiUQrvfu+9Qe+O1u1Cd4CSOtqWHA63HUhloyh9zZaI/nLo
-	Dcyc4xUSYqvdd540PSbZb3z96xNiNrtHx8oBPf86+9HQvRmttj5bLEVb/aQFeWAsMP5lNexfNpJB2
-	yRTXzRJg9h4i5sgoYjN0bhev+zpNbtl6J+/g+/cGKOmcG57M23mfRZiCek2MHdR4DgvZlhhSPetbL
-	C9gQ+ZjUSQpD3vxFvflw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kyGZmoypmBL4yUbNAKJF0qhSecHX6lYJSkqJNBm0RHI=; b=EnhQmrtIhguyYX
+	ivpEyEHFj9R9mXSNLHnal9Ds2fCqEYo9sFJCtk/c0rEu91nu5x0ekTb8R/Ruba5aC18L+Qypb5fpE
+	SlGTHbHfqQvpUcgkCG4HVrBN9MEe4RSKgM90ULTqd3kTeqEIvtsGPRTHm6iq+0EA4k3z+X913m001
+	2YtLGFKKkExL/daqrVKDTgb0JoCgZnRwjtjTOpmI+K4kdr8Vy0SH8kWh5EogwH5yYwE5QrEaIFQIm
+	/i2Bi+vUqxl1gVePwJHx7t3fpEvl6kV/3tRYapJaZRI3rDPDkxLgfJx5LX3fD96y3QLnaC+BiadH+
+	55NTxxVkQkXpUd7JvJNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIxaQ-00019C-27; Mon, 30 Mar 2020 16:48:30 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIxaI-00017y-NP
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 16:48:24 +0000
-Received: by mail-pg1-x543.google.com with SMTP id o26so8912894pgc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 09:48:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xILmCXBrlxgCXlypA1VxqpUiVu1uQ5MP80zGKCZ/XFo=;
- b=EfJ05alJ+PSOBVvnx/SndsN/62Lik+lUYdgqoSbZm1dfE4FuIESt6rxZHaxGXjH/U9
- +d4l7cVHmOjuD4J1o3mjDNAKHB3ToTh41KtnFF37XPu06WUI/Iw83xS3w5cJeXenY3rX
- uS/72YpxbbrJB/T9eo4LEZm4ebLSiI47xcAogZpS8iufGqlLGddOUHPq9l5Cs09jWxQW
- S4g8U4KV5y0IdNUvJGwaAbWKRJSI34pQFZAVT7EVrdzNEIrphgEGVmcuLw+mgdje+B20
- V37vak2nUZbO8RraT8fSZtYeItV70ljo0es3rOjE085Mu4d6l2aYmA58ScNmr5odYjbP
- foxw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xILmCXBrlxgCXlypA1VxqpUiVu1uQ5MP80zGKCZ/XFo=;
- b=BAQYXEYb2MnBLA8/EaqyKaYeecdVduIv+6mXgfGO+1OU57fPFnf5D2GZ5z16Gc0kfF
- AkAv5YzXMuYeRp+cSlAyhrFxj6gzNhVipQ1H/D/9y1V03CdeX9istZlsuYuzzqLPH26+
- ETG6zU1tviprdoZL4kHY0Cn2fZOotaPughEqoVDu+BWRj+Pn0/36symsS4LTJfPhmKYs
- VrSZTAz9XtCdzMUdrKZhoZ8mPTF7YpZivlMERXIrIwlVmJw+J2IYiMG6uCJnnJmvAsF8
- 5k8cnN1+iCIJKs/8DBF2zIm4e47gLgmpsbgze5MZLC5PLbACFkAxmTbEBzQPyB0pV3fq
- zcnA==
-X-Gm-Message-State: ANhLgQ3scrWa/c28Npk+SPdxx7Uwrh663O6AH+YzrbaH7dDaCN7WI4R/
- 4D98JPbn7xHNrClqXTRBIOW2UEUDENezEoV8f7TkTg==
-X-Google-Smtp-Source: ADFU+vuE0dYbf2hIpTmjKgH9JUJJ9vpNHTYnzEQlhr0Cr+zru6/CN2o72hgQNvyT3rdvuGOmqLgGUd7pqrvfUv+fSow=
-X-Received: by 2002:a63:4e22:: with SMTP id c34mr13917544pgb.263.1585586898655; 
- Mon, 30 Mar 2020 09:48:18 -0700 (PDT)
+	id 1jIxbA-0001PQ-E7; Mon, 30 Mar 2020 16:49:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIxb1-0001Op-9G
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 16:49:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 028671042;
+ Mon, 30 Mar 2020 09:49:05 -0700 (PDT)
+Received: from [172.16.1.108] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ACA423F68F;
+ Mon, 30 Mar 2020 09:48:58 -0700 (PDT)
+Subject: Re: Question about SEA handling process happened in user space
+To: Xiaofei Tan <tanxiaofei@huawei.com>
+References: <5E81EFCD.6020605@huawei.com>
+From: James Morse <james.morse@arm.com>
+Openpgp: preference=signencrypt
+Message-ID: <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com>
+Date: Mon, 30 Mar 2020 17:49:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <a651d5eaf312c771c9d2e0160ddd905550bbd4e3.1585507235.git.stefan@agner.ch>
-In-Reply-To: <a651d5eaf312c771c9d2e0160ddd905550bbd4e3.1585507235.git.stefan@agner.ch>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 30 Mar 2020 09:48:07 -0700
-Message-ID: <CAKwvOdkJLROtbMSf1pOV2XMV7LB0TTnLx-43WMt34wiT2VEMew@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: warn if pre-UAL assembler syntax is used
-To: Stefan Agner <stefan@agner.ch>
+In-Reply-To: <5E81EFCD.6020605@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_094822_792936_6AA6248D 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200330_094907_406033_4058BBA0 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,93 +64,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
- Jian Cai <jiancai@google.com>, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Manoj Gupta <manojgupta@google.com>, Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 29, 2020 at 11:43 AM Stefan Agner <stefan@agner.ch> wrote:
->
-> Remove the -mno-warn-deprecated assembler flag to make sure the GNU
-> assembler warns in case non-unified syntax is used.
->
-> This also prevents a warning when building with Clang and enabling its
-> integrated assembler:
-> clang-10: error: unsupported argument '-mno-warn-deprecated' to option 'Wa,'
->
-> GCC before 5.1 emits pre-UAL assembler. This can lead to warnings if
-> inline assembler explicitly switches to unified syntax by using the
-> ".syntax unified" directive (e.g. arch/arm/include/asm/unified.h).
-> Hence keep the flag for GCC versions before 5.1.
->
-> This is a second attempt of commit e8c24bbda7d5 ("ARM: 8846/1: warn if
-> divided syntax assembler is used") which has subsequently been reverted
-> with commit b752bb405a13 ("Revert "ARM: 8846/1: warn if divided syntax
-> assembler is used"").
->
-> Signed-off-by: Stefan Agner <stefan@agner.ch>
+Hi Xiaofei,
 
-Thanks for the added context.
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+On 3/30/20 2:10 PM, Xiaofei Tan wrote:
+> I'm a little confused about the handling process of SEA happened in user space.
 
-> ---
-> Changes in v2:
-> - Reference revert commit b752bb405a13 ("Revert "ARM: 8846/1: warn if
->   divided syntax assembler is used"")
-> - Reword commit message
->
->  arch/arm/Makefile | 14 +++++++++-----
->  1 file changed, 9 insertions(+), 5 deletions(-)
->
-> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-> index 1fc32b611f8a..b37bb985a3c2 100644
-> --- a/arch/arm/Makefile
-> +++ b/arch/arm/Makefile
-> @@ -119,21 +119,25 @@ ifeq ($(CONFIG_CC_IS_CLANG),y)
->  CFLAGS_ABI     += -meabi gnu
->  endif
->
-> -# Accept old syntax despite ".syntax unified"
-> -AFLAGS_NOWARN  :=$(call as-option,-Wa$(comma)-mno-warn-deprecated,-Wa$(comma)-W)
-> -
->  ifeq ($(CONFIG_THUMB2_KERNEL),y)
-> -CFLAGS_ISA     :=-mthumb -Wa,-mimplicit-it=always $(AFLAGS_NOWARN)
-> +CFLAGS_ISA     :=-mthumb -Wa,-mimplicit-it=always
->  AFLAGS_ISA     :=$(CFLAGS_ISA) -Wa$(comma)-mthumb
->  # Work around buggy relocation from gas if requested:
->  ifeq ($(CONFIG_THUMB2_AVOID_R_ARM_THM_JUMP11),y)
->  KBUILD_CFLAGS_MODULE   +=-fno-optimize-sibling-calls
->  endif
->  else
-> -CFLAGS_ISA     :=$(call cc-option,-marm,) $(AFLAGS_NOWARN)
-> +CFLAGS_ISA     :=$(call cc-option,-marm,)
->  AFLAGS_ISA     :=$(CFLAGS_ISA)
->  endif
->
-> +ifeq ($(CONFIG_CC_IS_GCC),y)
-> +ifeq ($(call cc-ifversion, -lt, 0501, y), y)
-> +# GCC <5.1 emits pre-UAL code and causes assembler warnings, suppress them
-> +CFLAGS_ISA     +=$(call as-option,-Wa$(comma)-mno-warn-deprecated,-Wa$(comma)-W)
-> +endif
-> +endif
-> +
->  # Need -Uarm for gcc < 3.x
->  KBUILD_CFLAGS  +=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
->  KBUILD_AFLAGS  +=$(CFLAGS_ABI) $(AFLAGS_ISA) $(arch-y) $(tune-y) -include asm/unified.h -msoft-float
-> --
-> 2.25.1
->
+> Following the description of FnV bit of register ESR_ELx in ARMv8.4 SPEC,FAR is
+> valid only for synchronous External abort on a translation table walk.
+
+> But for this FAR valid scenario(attached code from line 684 to 687),
+> we send signal SIGKILL to kill process. For some other scenario, such as line 680,
+> FAR is not valid, but we send SIGBUS and transfer error address to process to try to do some recovery.
+
+'FAR is not valid': its optional. The ESR_EL1.FnV bit can be set for the 'catch
+all' external abort fault-status-code. This lets the CPU tell us that it doesn't
+know what the faulting virtual address is.
+
+do_sea() checks for this:
+|	if (esr & ESR_ELx_FnV)
+|		siaddr = NULL;
+|	else
+|		siaddr  = (void __user *)addr;
+
+If we can't know the address, there isn't much we can do.
+(This check is really making sure we don't pass junk to user-space when FnV is set)
 
 
--- 
+> should it be an problem ?
+
+I'm not quite sure what your question is.
+
+If the CPU doesn't tell us the address, we can't tell user-space what it is. The
+alternative is to upgrade to SIGKILL in that case.
+
+
+If you see this instead of the address provided via firmware-first, there is a
+series to improve that here:
+https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
+
+(We skip this signal code of APEI promises it did all the work. This lets you
+take the signal from memory_failure() instead, which may have better information.)
+
+
+If its the SIGKILL entries: these are for the translation table walk.
+There is no point telling user-space about corruption in its page tables as it
+can't do anything about it. The kernel's handling of this is to kill the
+process. (page tables make up a very small amount of memory, so this should be
+rarer than the regular 'external abort' case)
+
+
 Thanks,
-~Nick Desaulniers
+
+James
+
+
+
+> 680         { do_sea,               SIGBUS,  BUS_OBJERR,    "synchronous external abort"    },
+> 684         { do_sea,               SIGKILL, SI_KERNEL,     "level 0 (translation table walk)"      },
+> 685         { do_sea,               SIGKILL, SI_KERNEL,     "level 1 (translation table walk)"      },
+> 686         { do_sea,               SIGKILL, SI_KERNEL,     "level 2 (translation table walk)"      },
+> 687         { do_sea,               SIGKILL, SI_KERNEL,     "level 3 (translation table walk)"      },
+> 688         { do_sea,               SIGBUS,  BUS_OBJERR,    "synchronous parity or ECC error" },    // Reserved when RAS is implemented
+> 692         { do_sea,               SIGKILL, SI_KERNEL,     "level 0 synchronous parity error (translation table walk)"     },      // Reserved when RAS is implemented
+> 693         { do_sea,               SIGKILL, SI_KERNEL,     "level 1 synchronous parity error (translation table walk)"     },      // Reserved when RAS is implemented
+> 694         { do_sea,               SIGKILL, SI_KERNEL,     "level 2 synchronous parity error (translation table walk)"     },      // Reserved when RAS is implemented
+> 695         { do_sea,               SIGKILL, SI_KERNEL,     "level 3 synchronous parity error (translation table walk)"     },      // Reserved when RAS is implemented
+> 696         { do_bad,               SIGKILL, SI_KERNEL,     "unknown 32"                    },
 
 _______________________________________________
 linux-arm-kernel mailing list
