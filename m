@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66A25197BFF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 14:37:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B857197BFC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 14:37:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fUXliSSMxXoXFRVK7EphQ5NfvJvpqLy6YY/LHOPUpj4=; b=rVVPlP7XsmamEW
-	Iw59YjJyhVmYOLREHjLpwRzz4j2LYNj8iY7Mh0E1MIX5Zomlff+d+vzwBgbN70lxZn10pHQw9iPB0
-	Rgai5FCRUFYUBdG7P4hqaNWuHKgTZukWSfD1d/Oz42ithQj9CwAMNx0QTWdgCX8btW6Bx4CCQlTBA
-	ZK+FQ6bRXdLaz8N7KUzEjU9MSs44LIa5X0v0y98SFYggQThlhubcm1GLtgySIda6LF4PTa54AAhW6
-	vlSbEVQt9SumFGMtT1JJOmUy0xcfgDps1Ri5d4mcEuUDhftd+Zjfrvr52oEDN6hTeuTq7cp/Igl6Y
-	vsB63y9SObhr0vqJv7SQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kRTY/kocaXy+DJsn4zIhmKulLFGCrWB9k6fCh4CicuU=; b=IwUhzkRD+Ebjjf
+	aOe0tqBBg/xQcISsOzsV5OoXh3M5vsJVFNncOGNZMhPtfXIMI4VDG5SraW0UIRJqZ+36CQ+WdKqu1
+	sXmpyPbvYsLMvs3nMkEA7BZR0Zl7P/VWRLFG/GKhvRmYqt4HxmHheQG3fEr8eJZ0jK3Xc4yRv2HOm
+	BiGiPOmdvskp7VBBWFyQl19KHoVZSK8lSgkfLPog/5+3sC+3Hz1jlNrvslK/Gxm/goXHTkGdfsqtJ
+	GStrpzIpEEXa6oqA15ECQ202DJlEIDJ8q8Dr51QgeQ0qO6eBaRQV6CXSVh5BWnefXF1WFsBS6i6f4
+	TErfiHsb8PkcPqO9JIZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jItfB-0004Tw-9c; Mon, 30 Mar 2020 12:37:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jIteq-0004M7-4e; Mon, 30 Mar 2020 12:36:48 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIteg-0004Kc-S5
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 12:36:40 +0000
-Received: from mail-il1-f171.google.com (mail-il1-f171.google.com
- [209.85.166.171])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0814C20757
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 12:36:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585571797;
- bh=2AXyU8ugSagURCiFbOUooLN6U3MB2Le88crw+QxGb3A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kiRebQh6/SNukeXGGn2kVD6aMiKE2/3WRKskk20FCu3wU6X+73j81DEKO1aYBp1P2
- fp9euWyCVQlT8Fnl2Uo93mtGUrR4w2BILnZNa93/pfNXs+QrPNlrj/rhMc0z4eKumM
- k02o3dwN7oA2JUt7g1LvsYD9LdQGYQxqO45BSUn4=
-Received: by mail-il1-f171.google.com with SMTP id n13so8234993ilm.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 05:36:37 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ36hMCX81K/LI9tI61/pUPUgOk4otmmj2GPxP3uZ9SFRhrrPyzI
- +mnpG9vWjDlXG3yT509GaCG+1gTxJIJBZXDMreI=
-X-Google-Smtp-Source: ADFU+vvy1OWSGhQQBJgVLP0RN+6n6610P4wShb1xm2SjioY07N2JppE8S+F+09WE5GZa9LNN8RMgYkDNI7Va6rJLKo8=
-X-Received: by 2002:a05:6e02:551:: with SMTP id
- i17mr10003944ils.218.1585571796432; 
- Mon, 30 Mar 2020 05:36:36 -0700 (PDT)
+ id 1jIteg-0004Kb-DE; Mon, 30 Mar 2020 12:36:39 +0000
+X-UUID: b319726c80a3426298678c524a7a1956-20200330
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=5fynngkcfVP3y4nuFrJ+FfItuj0F2ovwQT443e47vAM=; 
+ b=S36tuLp5A9vckFlGPARidf9un053JVOXrFCQQFK2npj2KBo+afhhf8Kb3ajMyXf2MvThc9uV9YX6o38N77ucL7YKEAI7zzgr9DxdlUYHMmjhA3P+TBSgvdnRIyuhBFwnYOOFnOb9hGY3MeVgACzohMhcnSuCM89vOzo77uW7TkI=;
+X-UUID: b319726c80a3426298678c524a7a1956-20200330
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2114219133; Mon, 30 Mar 2020 04:36:37 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Mar 2020 05:36:31 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Mar 2020 20:36:27 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 30 Mar 2020 20:36:26 +0800
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
+ <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
+ <bingbu.cao@intel.com>
+Subject: [V4, 0/2] media: i2c: add support for DW9768 VCM driver
+Date: Mon, 30 Mar 2020 20:36:32 +0800
+Message-ID: <20200330123634.363-1-dongchun.zhu@mediatek.com>
+X-Mailer: git-send-email 2.9.2
 MIME-Version: 1.0
-References: <20200329141258.31172-1-ardb@kernel.org>
- <20200330093641.GA25920@C02TD0UTHF1T.local>
-In-Reply-To: <20200330093641.GA25920@C02TD0UTHF1T.local>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 30 Mar 2020 14:36:25 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGYYGRMXAa+k+ysDmfbW2XsTF56yEr8=3Q__mw_Jt4j8Q@mail.gmail.com>
-Message-ID: <CAMj1kXGYYGRMXAa+k+ysDmfbW2XsTF56yEr8=3Q__mw_Jt4j8Q@mail.gmail.com>
-Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
-To: Mark Rutland <mark.rutland@arm.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_053638_924688_9368F896 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200330_053638_458328_6D9E7B2C 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,7 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,59 +88,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- kernel-hardening@lists.openwall.com
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ shengnan.wang@mediatek.com, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Mar 2020 at 13:29, Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
-> > When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
-> > different permissions (r-x for .text, r-- for .rodata, rw- for .data,
-> > etc) are rounded up to 2 MiB so they can be mapped more efficiently.
-> > In particular, it permits the segments to be mapped using level 2
-> > block entries when using 4k pages, which is expected to result in less
-> > TLB pressure.
-> >
-> > However, the mappings for the bulk of the kernel will use level 2
-> > entries anyway, and the misaligned fringes are organized such that they
-> > can take advantage of the contiguous bit, and use far fewer level 3
-> > entries than would be needed otherwise.
-> >
-> > This makes the value of this feature dubious at best, and since it is not
-> > enabled in defconfig or in the distro configs, it does not appear to be
-> > in wide use either. So let's just remove it.
-> >
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
->
-> No strong feelings either way, but getting rid of code is usually good,
-> so:
->
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
->
+Hello,
 
-Thanks Mark.
+Here is the updated version of the changes to add DT bindings in YAML
+and V4L2 driver for the DW9768 lens voicee coil motor.
+This is a 10-bit DAC with 100mA output current sink capability from Dongwoon,
+designed for linear control of voice coil motor, and controlled via
+I2C serial interface to set the desired focus.
 
-This is related to [0], which increases the PE/COFF section alignment
-to 64k so that a KASLR enabled kernel always lands at an address at
-which it can execute without being moved around first. This is an
-improvement in itself, but also provides 5 bits (log2(2M / 64k)) of
-wiggle room for the virtual as well as the physical placement of the
-kernel. CONFIG_DEBUG_ALIGN_RODATA kind of interferes with that, so I'd
-like to get rid of it.
+The DW9768 controls the position with 10-bit DAC data D[9:0] and seperates
+two 8-bit registers to control the VCM position as belows.
+DAC_MSB: D[9:8](ADDR: 0x03):
+     +---+---+---+---+---+---+---+---+
+     |---|---|---|---|---|---|D09|D08|
+     +---+---+---+---+---+---+---+---+
+DAC_LSB: D[7:0](ADDR: 0x04):
+     +---+---+---+---+---+---+---+---+
+     |D07|D06|D05|D04|D03|D02|D01|D00|
+     +---+---+---+---+---+---+---+---+
 
-Catalin, Will: if you have no objections, I can include this in my
-series for v5.8 and take it via the EFI tree.
+This driver supports:
+ - set DW9768 to standby mode once suspend and turn it back to active if resume
+ - set the desired focus via V4L2_CID_FOCUS_ABSOLUTE ctrl
 
-Thanks,
-Ard.
+Previous versions of this patch-set can be found here:
+v3: https://patchwork.kernel.org/cover/11412719/
+v2: https://patchwork.kernel.org/cover/11132299/
+v1: https://patchwork.kernel.org/cover/11034797/
 
-[0] https://lore.kernel.org/linux-efi/20200326165905.2240-1-ardb@kernel.org/
+Mainly changes of v4 are addressing comments from Rob, Andy, Sakari, Tomasz.
+Compared to v3:
+ - Fix DT bindings and MAINTAINERS checking errors
+ - Use i2c_smbus_write_word_swapped() to replace of i2c_smbus_write_word_data()
+ - Refine driver more simply and clear
+ - Add a dependency to CONFIG_PM
 
+Please review.
+Thanks.
+
+Dongchun Zhu (2):
+  media: i2c: dw9768: Add DT support and MAINTAINERS entry
+  media: i2c: Add DW9768 VCM driver
+
+ .../bindings/media/i2c/dongwoon,dw9768.yaml        |  62 +++
+ MAINTAINERS                                        |   8 +
+ drivers/media/i2c/Kconfig                          |  11 +
+ drivers/media/i2c/Makefile                         |   1 +
+ drivers/media/i2c/dw9768.c                         | 432 +++++++++++++++++++++
+ 5 files changed, 514 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+ create mode 100644 drivers/media/i2c/dw9768.c
+
+-- 
+2.9.2
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
