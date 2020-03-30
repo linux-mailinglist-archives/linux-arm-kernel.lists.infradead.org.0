@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAE101975E3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 09:43:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0F21975F0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 09:44:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nzMl1/cRZhGErUma6Zg7kxqk2wBjzUPQExcltLLLt+E=; b=G8ORaxXtPju058
-	FDbS6NEqvEaESzkrjLNAROMfJhwl1q3IjkmKRT+GHwzpIaPYTJENhU4Js3rQYgimMLH/7X6IQ6f0d
-	FlyqWpfcnagv9IODYylbGw8p4lpE1MHaO93JeDgJ0C069OtNkfyqNvzYJulhPGuEuTjb8UxRu4pE9
-	vYhX19SDnNBBM2tcE4S26DsSds+uoXL06gfXGQlMrtZeDwbySp9uhLVJYgMeqhquosqa1gO+PUWYv
-	hqW+Cudv9Ct8pra1Ov7tm4wHvh9PSIJ6AUbjRgubah0B18khxDF7jNtYgdzi7l+DTGae8faK9f/Td
-	j7/3uDn5xEFhS9rhfSlQ==;
+	List-Owner; bh=Be5s4tJCM4nncUWPvhh68S7ESfnHA9Pp1HSwoeMQedA=; b=uyhoCPFgVYN8Qn
+	tlvSB3pHaD67zqn0FzvVmHdIP/b7raqh6I72CPaM+h4VxgMvzSGceZAtozQBCZ+ogbvmhjDDs4VVM
+	DkN6RWZtIr2tzs8Hoz8dQRtf9v7djo3/oKy0Xs2WnZGb3XPuq04/CBEQ5pMjc8nsF/xNED28XaUSb
+	I2vFD5nDleIftBHpVrjq9KURTV1+9bw4mIKbpEC9eO38qabSyQjGC3ZGZp77yAlYWmAQvtWQUgg+6
+	QC0Ewu4XE3QO6I97BaSiNbphLQ8DWLmmmMgKGzWGIZgHHogHcnbbq9xOtGdorBuC/yDi4WOSjZLPX
+	B6z9sp0pNSraHkI56UYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIp4W-0006x5-G6; Mon, 30 Mar 2020 07:43:00 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1jIp6B-0007VH-Cn; Mon, 30 Mar 2020 07:44:43 +0000
+Received: from mail-wm1-f68.google.com ([209.85.128.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIp4M-0006wD-Lq
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 07:42:52 +0000
-Received: by mail-wm1-f66.google.com with SMTP id b12so18862131wmj.3
+ id 1jIp5x-0007UA-Px
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 07:44:31 +0000
+Received: by mail-wm1-f68.google.com with SMTP id g62so20753806wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 00:42:49 -0700 (PDT)
+ Mon, 30 Mar 2020 00:44:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=G2GbSd8nfrGqlF2CTXpVag+1XrsMr3qO8HlwnrY50kI=;
- b=dhKY0p0L5zytb/B1nd1IiGOPBuuLwLcjzQh4f4WYTOPu7MFEVbohExAlr17BLiR7q1
- WQ5ZIEKS16hUX6x/LK0I6Xf64fT++4rBDElL4R7Sb4r0wD0z6wheb2MwN9StcfYO0gL7
- 3B9g1r/uHGq/S0Yc8OQjgztm0z/lYnjbovasPt+3eYuDOnakHtuoQGOpwppx01fO+Nju
- RaoOdvBcwQ/MwBGnD1PdEubLWz/Jy1RXo6UKFHQkWgWDJclO/xrwonmiQZRsmT8pyV0I
- k8oMNWFlIYcw6Es7DqRu3QVRPOV/heSWN0srEw3p58x2+IQaLpW4zrWwMWYeyOoz1CP5
- /4tA==
-X-Gm-Message-State: ANhLgQ2JwYyyC4xexOWMKvpwq1jHZ7ZoYam7cbG6n1CeSsBTStJpF5Kl
- uR4VZR+KTM65LE8CvXfp0r8=
-X-Google-Smtp-Source: ADFU+vtTO40ug73YLnNFJoExcCn1PsdhzxCpQLzjsmdgJmi+fsq6hPq9O7t9QjqmLmc+CwVgWIwn6A==
-X-Received: by 2002:a05:600c:4145:: with SMTP id
- h5mr11604265wmm.3.1585554168707; 
- Mon, 30 Mar 2020 00:42:48 -0700 (PDT)
+ bh=+lQxT4rOXYS7igvmWe+aSLt8H9b/hooDSaFj9dpIoBo=;
+ b=GWlysO9poOwt3kNMABMuxpaumpcMPs8oyR9v9DTCCc6Uau0cVyVvyogKH5p8FiUVZj
+ +7UO68FeBO8xusWaGYV1IIqwFkR7eOxYHKyOGpPUT00QyJLP5uGwvUvLLGEQisOBspFJ
+ WaNrcpuE2JJxwI5N73LfMPqXlxMWrBvzE5PUTjN25oOgUF5RWXnsFc6vbhPCjExObWpz
+ MiN9BX1AV4Vx4JhRH50IM7l29OloU+Lsbu7RInxqLtPFAHbrjndKD5cpd5wRBWvPLela
+ +8WE/BqYPxhV2xLTo5MIqPyYV+J/E/1XpNkxo2eCRJv1jsIliJFO1OFGcUsHsKJtqR/g
+ asEg==
+X-Gm-Message-State: ANhLgQ3sD2iyXV8PV4e4+SGmo88TL92sG5I93fitUrUORs2mk99AGLB3
+ aO5AuYYqs3j9xkA+jqUCltY=
+X-Google-Smtp-Source: ADFU+vv5zPfvR6n12LY62/oTKOim3ahnJoTy88I5ftZ61ckUgrrKlF39ljyabbjxRYuNzhw3oecv9w==
+X-Received: by 2002:a7b:cc06:: with SMTP id f6mr11831239wmh.65.1585554268222; 
+ Mon, 30 Mar 2020 00:44:28 -0700 (PDT)
 Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
- by smtp.gmail.com with ESMTPSA id 98sm21456009wrk.52.2020.03.30.00.42.47
+ by smtp.gmail.com with ESMTPSA id p16sm20037964wmi.40.2020.03.30.00.44.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 00:42:47 -0700 (PDT)
-Date: Mon, 30 Mar 2020 09:42:46 +0200
+ Mon, 30 Mar 2020 00:44:27 -0700 (PDT)
+Date: Mon, 30 Mar 2020 09:44:26 +0200
 From: Michal Hocko <mhocko@kernel.org>
-To: Hoan Tran <Hoan@os.amperecomputing.com>
+To: Baoquan He <bhe@redhat.com>
 Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
  default for NUMA
-Message-ID: <20200330074246.GA14243@dhcp22.suse.cz>
+Message-ID: <20200330074426.GB14243@dhcp22.suse.cz>
 References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20200329001924.GS3039@MiWiFi-R3L-srv>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+In-Reply-To: <20200329001924.GS3039@MiWiFi-R3L-srv>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_004250_719233_86179856 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20200330_004429_861092_3A002760 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
+ no trust [209.85.128.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mstsxfx[at]gmail.com]
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
+ [209.85.128.68 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -97,83 +97,37 @@ Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
  linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
  x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
  Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Vlastimil Babka <vbabka@suse.cz>,
+ Hoan Tran <Hoan@os.amperecomputing.com>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+ Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat 28-03-20 11:31:17, Hoan Tran wrote:
-> In NUMA layout which nodes have memory ranges that span across other nodes,
-> the mm driver can detect the memory node id incorrectly.
+On Sun 29-03-20 08:19:24, Baoquan He wrote:
+> On 03/28/20 at 11:31am, Hoan Tran wrote:
+> > In NUMA layout which nodes have memory ranges that span across other nodes,
+> > the mm driver can detect the memory node id incorrectly.
+> > 
+> > For example, with layout below
+> > Node 0 address: 0000 xxxx 0000 xxxx
+> > Node 1 address: xxxx 1111 xxxx 1111
 > 
-> For example, with layout below
-> Node 0 address: 0000 xxxx 0000 xxxx
-> Node 1 address: xxxx 1111 xxxx 1111
-> 
-> Note:
->  - Memory from low to high
->  - 0/1: Node id
->  - x: Invalid memory of a node
-> 
-> When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
-> config, mm only checks the memory validity but not the node id.
-> Because of that, Node 1 also detects the memory from node 0 as below
-> when it scans from the start address to the end address of node 1.
-> 
-> Node 0 address: 0000 xxxx xxxx xxxx
-> Node 1 address: xxxx 1111 1111 1111
-> 
-> This layout could occur on any architecture. Most of them enables
-> this config by default with CONFIG_NUMA. This patch, by default, enables
-> CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
+> Sorry, I read this example several times, but still don't get what it
+> means. Can it be given with real hex number address as an exmaple? I
+> mean just using the memory layout you have seen from some systems. The
+> change looks interesting though.
 
-I am not opposed to this at all. It reduces the config space and that is
-a good thing on its own. The history has shown that meory layout might
-be really wild wrt NUMA. The config is only used for early_pfn_in_nid
-which is clearly an overkill.
-
-Your description doesn't really explain why this is safe though. The
-history of this config is somehow messy, though. Mike has tried
-to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
-NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
-("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
-reasoning what so ever. This doesn't make it really easy see whether
-reasons for reintroduction are still there. Maybe there are some subtle
-dependencies. I do not see any TBH but that might be burried deep in an
-arch specific code.
-
-> v3:
->  * Revise the patch description
-> 
-> V2:
->  * Revise the patch description
-> 
-> Hoan Tran (5):
->   mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA
->   powerpc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
->   x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
->   sparc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
->   s390: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
-> 
->  arch/powerpc/Kconfig | 9 ---------
->  arch/s390/Kconfig    | 8 --------
->  arch/sparc/Kconfig   | 9 ---------
->  arch/x86/Kconfig     | 9 ---------
->  mm/page_alloc.c      | 2 +-
->  5 files changed, 1 insertion(+), 36 deletions(-)
-> 
-> -- 
-> 1.8.3.1
-> 
-
+Does this make it more clear?
+           physical address range and its node associaion
+         [0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1]
 -- 
 Michal Hocko
 SUSE Labs
