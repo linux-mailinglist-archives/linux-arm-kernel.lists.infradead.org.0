@@ -2,66 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74BB4198038
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 17:52:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 012F9198050
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 17:59:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=eO3LmAZlF7E3M5sk5BQB/7Brn9JOnW9UH3EK9v9R+Aw=; b=qb/
-	hLDbId9MVlcpT4dhJFadUFewHTvd7qRvNIDSElqP9epVnNs8veNFLS6+jmjrrN95KVCpFW4rz8saW
-	TYU5rfR25Zv/ksCdkq4Z4ReAFH7cDHSPhkudgG5DPQaUklMPiu1BhPunelraYtIGhadFysOXH4iFs
-	21qtiSht78srw4Zxf9OrVVm8kyNhvToQeINyzyleK14tu0iALjqirqmxa8Tz6HVRgYn7udJb1rlav
-	JsMmSUHATcVywNyn0DDKWcXYOvrPZ+QM8wglLie//139lU3FsbVbCpvd4Cg+0pQ+0DRMxmsmbw7oD
-	Qx/tOUjrEoCcTXiYHJyhiqvcT/EGWrQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XUu5COeThdlb40kygMH/bc5Waa5tdzAgw3ZcYWwRUw0=; b=aOxPFXG7rd41a8
+	7GwLB6MyHD2p9Cu9U67hUeMBI6Fs/0/0QpcvE0Mzg9xwmCgKDFADuInBMqe69W4XfayqjIkK5da6a
+	XdySvS0R/yXwVXdZYyclX2wLJYvLO6+h5wp37ZbkSeQSWf6KbaAevvDAs2AoMBk77EaszwbpKgHQW
+	xVW/1EPB3hb0Tt8p+W8pCqt1ZmmB/6uos8COf4T8qpq/KSwmRMrUidpoCVLyOx1fsr/mkxkOc+KXf
+	XeABzFDAFQcHd44Iv3YmI9l4GFZHB2Twq+i+t4pJZiQr36suKwV2ra6a147EKU9S2lYnhJPa3irDm
+	izYAuSbsGlvltz/AgXnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIwhd-0004yN-AR; Mon, 30 Mar 2020 15:51:53 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1jIwoR-0006v5-Bd; Mon, 30 Mar 2020 15:58:55 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIwhT-0004y0-UK
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 15:51:45 +0000
-IronPort-SDR: LMaQ1i0AvlPBpMqvaaZ85Sx1htk4ty+cy0soiiI+Ve6vr8YCd62jtt1LEH7ZQgFIJghhQSvTPH
- Uy8U7/gGgsPA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 30 Mar 2020 08:51:42 -0700
-IronPort-SDR: UVQlzVYmDmYaJXaXKKmWePMvxHpkBTmir33xTUQDuCRFX5F0PFiGpd+p2aGsF2SpHz561ML+UD
- o5dB8ieono9g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,324,1580803200"; d="scan'208";a="241656689"
-Received: from glass.png.intel.com ([172.30.181.92])
- by fmsmga008.fm.intel.com with ESMTP; 30 Mar 2020 08:51:39 -0700
-From: Wong Vee Khee <vee.khee.wong@intel.com>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jose Abreu <joabreu@synopsys.com>,
- "David S . Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH net-next 1/1] net: stmmac: Add support for VLAN Rx filtering
-Date: Mon, 30 Mar 2020 23:53:57 +0800
-Message-Id: <20200330155357.732-1-vee.khee.wong@intel.com>
-X-Mailer: git-send-email 2.17.0
+ id 1jIwoE-0006uE-Rx; Mon, 30 Mar 2020 15:58:45 +0000
+Received: by mail-ed1-x543.google.com with SMTP id u59so21226961edc.12;
+ Mon, 30 Mar 2020 08:58:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FqbSzpD4MYn/wR7kIycH4odqLd0xa3PoBlR54IFOvnU=;
+ b=L5kGrnj2qqPWhGtTuy1rOReNQQ8QBZaAgUJh/tG5iU7P5P9CO0bqQKtXcsxcZswKbg
+ oomov45aveYiMUgyGI15LG0b1ba2LbCL0uvUnkKIQxbLsVoq/EyMrdGUkqQN8FpTnO5N
+ uoPvPBdbE0a+23p/mAMBzHuIiVHX5UFOIe1E6Gyu9QZTSmHcYWoWlOrwq2XKiKBSBF0r
+ rFC+/Sf1M8/WBfPoIveQ1Ji/NazNn/d87RXRmhGxBLWlEHRGOQvOwggvq2uForc1J1JU
+ t3nxRyo6jUN/duczCvKGAsfIDRkul4pjMQ3WRr0fEytfsgYdPFxmzLRabY54fDmMYQPZ
+ bjRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FqbSzpD4MYn/wR7kIycH4odqLd0xa3PoBlR54IFOvnU=;
+ b=P4xkuDCHHYtLtdKaqiuB8hGdtqg9wENqjHfQornEAR7nm0Q5xqOCjv9ZK8VVWjtcon
+ HPrOx0Lacd2y/c1jjuWDQT/SCVCcJuktir8qRoSAPHzr6iqXARdxVn+p5DOulcavIRlT
+ ZHDRJwpn3AihV2zwPI/sYgxv+mRzGDHX90i12YHLCJrJ285OQWweYBL0twTcHKvkD8QN
+ MyIohq2lT0HLShg7dRIj7gpbJFPoVwTWejRRMPMBMRBmg4SfhciQtGOpks6lY3FLtNl3
+ gqM+rw9nJXE3iLrXA2Oow2eczSZLoJENAdXzM4FCInkv7u83nHv99N3E0BTLdi/WhIbz
+ afUA==
+X-Gm-Message-State: ANhLgQ291ohlEaKKO9oJpPuIAaWsEqZ9xQgq180CF8S6tHlHCJ8BbiT+
+ 6WlVoLxxUFhEkZK56zy9xdIVtZAsjQ3LPydL800=
+X-Google-Smtp-Source: ADFU+vu9AgOHwBVmanr9cYo5Dj/N/6BQSmannMEIEaE6zVcN0BHKtl6bbckObfJnjGuBieVwlW1VZfgqQxrHc3iwMPM=
+X-Received: by 2002:a17:906:69d1:: with SMTP id
+ g17mr11225776ejs.32.1585583915511; 
+ Mon, 30 Mar 2020 08:58:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+ <20200330113542.181752-2-adrian.ratiu@collabora.com>
+In-Reply-To: <20200330113542.181752-2-adrian.ratiu@collabora.com>
+From: adrian61 <pop.adrian61@gmail.com>
+Date: Mon, 30 Mar 2020 18:58:23 +0300
+Message-ID: <CAP-HsdRE=6b4v+MH64WVF1bExuC3MeDNiJFWgXTY0k34woP_Gg@mail.gmail.com>
+Subject: Re: [PATCH v5 1/5] drm: bridge: dw_mipi_dsi: add initial regmap
+ infrastructure
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_085144_030731_11B0C537 
-X-CRM114-Status: GOOD (  17.46  )
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20200330_085842_936337_6C28BA51 
+X-CRM114-Status: GOOD (  23.67  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pop.adrian61[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 2.6 AC_FROM_MANY_DOTS      Multiple periods in From user name
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [pop.adrian61[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,410 +95,509 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Voon Wei Feng <weifeng.voon@intel.com>,
- Wong Vee Khee <vee.khee.wong@intel.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ong Boon Leong <boon.leong.ong@intel.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for VLAN ID-based filtering by the MAC controller for MAC
-drivers that support it. Only the 12-bit VID field is used.
+Hello Adrian,
 
-Signed-off-by: Chuah Kim Tatt <kim.tatt.chuah@intel.com>
-Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
-Signed-off-by: Wong Vee Khee <vee.khee.wong@intel.com>
----
- drivers/net/ethernet/stmicro/stmmac/common.h  |   2 +
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h  |  25 +++
- .../net/ethernet/stmicro/stmmac/dwmac4_core.c | 195 ++++++++++++++++++
- drivers/net/ethernet/stmicro/stmmac/hwif.h    |  14 ++
- .../net/ethernet/stmicro/stmmac/stmmac_main.c |   9 +
- 5 files changed, 245 insertions(+)
+I am testing hese changes on my STM32F769-DISCO and i found that:
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 386663208c23..6208a68a331d 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -471,6 +471,8 @@ struct mac_device_info {
- 	unsigned int pmt;
- 	unsigned int ps;
- 	unsigned int xlgmac;
-+	unsigned int num_vlan;
-+	u32 vlan_filter[32];
- };
- 
- struct stmmac_rx_routing {
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-index af50af27550b..28cac28253b8 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-@@ -18,6 +18,7 @@
- #define GMAC_PACKET_FILTER		0x00000008
- #define GMAC_HASH_TAB(x)		(0x10 + (x) * 4)
- #define GMAC_VLAN_TAG			0x00000050
-+#define GMAC_VLAN_TAG_DATA		0x00000054
- #define GMAC_VLAN_HASH_TABLE		0x00000058
- #define GMAC_RX_FLOW_CTRL		0x00000090
- #define GMAC_VLAN_INCL			0x00000060
-@@ -90,6 +91,29 @@
- #define GMAC_VLAN_VLC			GENMASK(17, 16)
- #define GMAC_VLAN_VLC_SHIFT		16
- 
-+/* MAC VLAN Tag */
-+#define GMAC_VLAN_TAG_VID		GENMASK(15, 0)
-+#define GMAC_VLAN_TAG_ETV		BIT(16)
-+
-+/* MAC VLAN Tag Control */
-+#define GMAC_VLAN_TAG_CTRL_OB		BIT(0)
-+#define GMAC_VLAN_TAG_CTRL_CT		BIT(1)
-+#define GMAC_VLAN_TAG_CTRL_OFS_MASK	GENMASK(6, 2)
-+#define GMAC_VLAN_TAG_CTRL_OFS_SHIFT	2
-+#define GMAC_VLAN_TAG_CTRL_EVLS_MASK	GENMASK(22, 21)
-+#define GMAC_VLAN_TAG_CTRL_EVLS_SHIFT	21
-+#define GMAC_VLAN_TAG_CTRL_EVLRXS	BIT(24)
-+
-+#define GMAC_VLAN_TAG_STRIP_NONE	(0x0 << GMAC_VLAN_TAG_CTRL_EVLS_SHIFT)
-+#define GMAC_VLAN_TAG_STRIP_PASS	(0x1 << GMAC_VLAN_TAG_CTRL_EVLS_SHIFT)
-+#define GMAC_VLAN_TAG_STRIP_FAIL	(0x2 << GMAC_VLAN_TAG_CTRL_EVLS_SHIFT)
-+#define GMAC_VLAN_TAG_STRIP_ALL		(0x3 << GMAC_VLAN_TAG_CTRL_EVLS_SHIFT)
-+
-+/* MAC VLAN Tag Data/Filter */
-+#define GMAC_VLAN_TAG_DATA_VID		GENMASK(15, 0)
-+#define GMAC_VLAN_TAG_DATA_VEN		BIT(16)
-+#define GMAC_VLAN_TAG_DATA_ETV		BIT(17)
-+
- /* MAC RX Queue Enable */
- #define GMAC_RX_QUEUE_CLEAR(queue)	~(GENMASK(1, 0) << ((queue) * 2))
- #define GMAC_RX_AV_QUEUE_ENABLE(queue)	BIT((queue) * 2)
-@@ -248,6 +272,7 @@ enum power_event {
- #define GMAC_HW_FEAT_FRPBS		GENMASK(12, 11)
- #define GMAC_HW_FEAT_FRPSEL		BIT(10)
- #define GMAC_HW_FEAT_DVLAN		BIT(5)
-+#define GMAC_HW_FEAT_NRVF		GENMASK(2, 0)
- 
- /* MAC HW ADDR regs */
- #define GMAC_HI_DCS			GENMASK(18, 16)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index dc09d2131e40..39692d15d80c 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -394,6 +394,156 @@ static void dwmac4_set_eee_timer(struct mac_device_info *hw, int ls, int tw)
- 	writel(value, ioaddr + GMAC4_LPI_TIMER_CTRL);
- }
- 
-+static void dwmac4_write_single_vlan(struct net_device *dev, u16 vid)
-+{
-+	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
-+	u32 val;
-+
-+	val = readl(ioaddr + GMAC_VLAN_TAG);
-+	val &= ~GMAC_VLAN_TAG_VID;
-+	val |= GMAC_VLAN_TAG_ETV | vid;
-+
-+	writel(val, ioaddr + GMAC_VLAN_TAG);
-+}
-+
-+static int dwmac4_write_vlan_filter(struct net_device *dev,
-+				    struct mac_device_info *hw,
-+				    u8 index, u32 data)
-+{
-+	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
-+	int i, timeout = 10;
-+	u32 val;
-+
-+	if (index >= hw->num_vlan)
-+		return -EINVAL;
-+
-+	writel(data, ioaddr + GMAC_VLAN_TAG_DATA);
-+
-+	val = readl(ioaddr + GMAC_VLAN_TAG);
-+	val &= ~(GMAC_VLAN_TAG_CTRL_OFS_MASK |
-+		GMAC_VLAN_TAG_CTRL_CT |
-+		GMAC_VLAN_TAG_CTRL_OB);
-+	val |= (index << GMAC_VLAN_TAG_CTRL_OFS_SHIFT) | GMAC_VLAN_TAG_CTRL_OB;
-+
-+	writel(val, ioaddr + GMAC_VLAN_TAG);
-+
-+	for (i = 0; i < timeout; i++) {
-+		val = readl(ioaddr + GMAC_VLAN_TAG);
-+		if (!(val & GMAC_VLAN_TAG_CTRL_OB))
-+			return 0;
-+		udelay(1);
-+	}
-+
-+	netdev_err(dev, "Timeout accessing MAC_VLAN_Tag_Filter\n");
-+
-+	return -EBUSY;
-+}
-+
-+static int dwmac4_add_hw_vlan_rx_fltr(struct net_device *dev,
-+				      struct mac_device_info *hw,
-+				      __be16 proto, u16 vid)
-+{
-+	int index = -1;
-+	u32 val = 0;
-+	int i, ret;
-+
-+	if (vid > 4095)
-+		return -EINVAL;
-+
-+	/* Single Rx VLAN Filter */
-+	if (hw->num_vlan == 1) {
-+		/* For single VLAN filter, VID 0 means VLAN promiscuous */
-+		if (vid == 0) {
-+			netdev_warn(dev, "Adding VLAN ID 0 is not supported\n");
-+			return -EPERM;
-+		}
-+
-+		if (hw->vlan_filter[0] & GMAC_VLAN_TAG_VID) {
-+			netdev_err(dev, "Only single VLAN ID supported\n");
-+			return -EPERM;
-+		}
-+
-+		hw->vlan_filter[0] = vid;
-+		dwmac4_write_single_vlan(dev, vid);
-+
-+		return 0;
-+	}
-+
-+	/* Extended Rx VLAN Filter Enable */
-+	val |= GMAC_VLAN_TAG_DATA_ETV | GMAC_VLAN_TAG_DATA_VEN | vid;
-+
-+	for (i = 0; i < hw->num_vlan; i++) {
-+		if (hw->vlan_filter[i] == val)
-+			return 0;
-+		else if (!(hw->vlan_filter[i] & GMAC_VLAN_TAG_DATA_VEN))
-+			index = i;
-+	}
-+
-+	if (index == -1) {
-+		netdev_err(dev, "MAC_VLAN_Tag_Filter full (size: %0u)\n",
-+			   hw->num_vlan);
-+		return -EPERM;
-+	}
-+
-+	ret = dwmac4_write_vlan_filter(dev, hw, index, val);
-+
-+	if (!ret)
-+		hw->vlan_filter[index] = val;
-+
-+	return ret;
-+}
-+
-+static int dwmac4_del_hw_vlan_rx_fltr(struct net_device *dev,
-+				      struct mac_device_info *hw,
-+				      __be16 proto, u16 vid)
-+{
-+	int i, ret = 0;
-+
-+	/* Single Rx VLAN Filter */
-+	if (hw->num_vlan == 1) {
-+		if ((hw->vlan_filter[0] & GMAC_VLAN_TAG_VID) == vid) {
-+			hw->vlan_filter[0] = 0;
-+			dwmac4_write_single_vlan(dev, 0);
-+		}
-+		return 0;
-+	}
-+
-+	/* Extended Rx VLAN Filter Enable */
-+	for (i = 0; i < hw->num_vlan; i++) {
-+		if ((hw->vlan_filter[i] & GMAC_VLAN_TAG_DATA_VID) == vid) {
-+			ret = dwmac4_write_vlan_filter(dev, hw, i, 0);
-+
-+			if (!ret)
-+				hw->vlan_filter[i] = 0;
-+			else
-+				return ret;
-+		}
-+	}
-+
-+	return ret;
-+}
-+
-+static void dwmac4_restore_hw_vlan_rx_fltr(struct net_device *dev,
-+					   struct mac_device_info *hw)
-+{
-+	u32 val;
-+	int i;
-+
-+	/* Single Rx VLAN Filter */
-+	if (hw->num_vlan == 1) {
-+		dwmac4_write_single_vlan(dev, hw->vlan_filter[0]);
-+		return;
-+	}
-+
-+	/* Extended Rx VLAN Filter Enable */
-+	for (i = 0; i < hw->num_vlan; i++) {
-+		if (hw->vlan_filter[i] & GMAC_VLAN_TAG_DATA_VEN) {
-+			val = hw->vlan_filter[i];
-+			dwmac4_write_vlan_filter(dev, hw, i, val);
-+		}
-+	}
-+}
-+
- static void dwmac4_set_filter(struct mac_device_info *hw,
- 			      struct net_device *dev)
- {
-@@ -469,6 +619,10 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 		}
- 	}
- 
-+	/* VLAN filtering */
-+	if (dev->features & NETIF_F_HW_VLAN_CTAG_FILTER)
-+		value |= GMAC_PACKET_FILTER_VTFE;
-+
- 	writel(value, ioaddr + GMAC_PACKET_FILTER);
- }
- 
-@@ -947,6 +1101,9 @@ const struct stmmac_ops dwmac4_ops = {
- 	.set_arp_offload = dwmac4_set_arp_offload,
- 	.config_l3_filter = dwmac4_config_l3_filter,
- 	.config_l4_filter = dwmac4_config_l4_filter,
-+	.add_hw_vlan_rx_fltr = dwmac4_add_hw_vlan_rx_fltr,
-+	.del_hw_vlan_rx_fltr = dwmac4_del_hw_vlan_rx_fltr,
-+	.restore_hw_vlan_rx_fltr = dwmac4_restore_hw_vlan_rx_fltr,
- };
- 
- const struct stmmac_ops dwmac410_ops = {
-@@ -987,6 +1144,9 @@ const struct stmmac_ops dwmac410_ops = {
- 	.config_l4_filter = dwmac4_config_l4_filter,
- 	.est_configure = dwmac5_est_configure,
- 	.fpe_configure = dwmac5_fpe_configure,
-+	.add_hw_vlan_rx_fltr = dwmac4_add_hw_vlan_rx_fltr,
-+	.del_hw_vlan_rx_fltr = dwmac4_del_hw_vlan_rx_fltr,
-+	.restore_hw_vlan_rx_fltr = dwmac4_restore_hw_vlan_rx_fltr,
- };
- 
- const struct stmmac_ops dwmac510_ops = {
-@@ -1032,8 +1192,42 @@ const struct stmmac_ops dwmac510_ops = {
- 	.config_l4_filter = dwmac4_config_l4_filter,
- 	.est_configure = dwmac5_est_configure,
- 	.fpe_configure = dwmac5_fpe_configure,
-+	.add_hw_vlan_rx_fltr = dwmac4_add_hw_vlan_rx_fltr,
-+	.del_hw_vlan_rx_fltr = dwmac4_del_hw_vlan_rx_fltr,
-+	.restore_hw_vlan_rx_fltr = dwmac4_restore_hw_vlan_rx_fltr,
- };
- 
-+static u32 dwmac4_get_num_vlan(void __iomem *ioaddr)
-+{
-+	u32 val, num_vlan;
-+
-+	val = readl(ioaddr + GMAC_HW_FEATURE3);
-+	switch (val & GMAC_HW_FEAT_NRVF) {
-+	case 0:
-+		num_vlan = 1;
-+		break;
-+	case 1:
-+		num_vlan = 4;
-+		break;
-+	case 2:
-+		num_vlan = 8;
-+		break;
-+	case 3:
-+		num_vlan = 16;
-+		break;
-+	case 4:
-+		num_vlan = 24;
-+		break;
-+	case 5:
-+		num_vlan = 32;
-+		break;
-+	default:
-+		num_vlan = 1;
-+	}
-+
-+	return num_vlan;
-+}
-+
- int dwmac4_setup(struct stmmac_priv *priv)
- {
- 	struct mac_device_info *mac = priv->hw;
-@@ -1062,6 +1256,7 @@ int dwmac4_setup(struct stmmac_priv *priv)
- 	mac->mii.reg_mask = GENMASK(20, 16);
- 	mac->mii.clk_csr_shift = 8;
- 	mac->mii.clk_csr_mask = GENMASK(11, 8);
-+	mac->num_vlan = dwmac4_get_num_vlan(priv->ioaddr);
- 
- 	return 0;
- }
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.h b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-index fc350149ba34..ffe2d63389b8 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-@@ -369,6 +369,14 @@ struct stmmac_ops {
- 	void (*update_vlan_hash)(struct mac_device_info *hw, u32 hash,
- 				 __le16 perfect_match, bool is_double);
- 	void (*enable_vlan)(struct mac_device_info *hw, u32 type);
-+	int (*add_hw_vlan_rx_fltr)(struct net_device *dev,
-+				   struct mac_device_info *hw,
-+				   __be16 proto, u16 vid);
-+	int (*del_hw_vlan_rx_fltr)(struct net_device *dev,
-+				   struct mac_device_info *hw,
-+				   __be16 proto, u16 vid);
-+	void (*restore_hw_vlan_rx_fltr)(struct net_device *dev,
-+					struct mac_device_info *hw);
- 	/* TX Timestamp */
- 	int (*get_mac_tx_timestamp)(struct mac_device_info *hw, u64 *ts);
- 	/* Source Address Insertion / Replacement */
-@@ -461,6 +469,12 @@ struct stmmac_ops {
- 	stmmac_do_void_callback(__priv, mac, update_vlan_hash, __args)
- #define stmmac_enable_vlan(__priv, __args...) \
- 	stmmac_do_void_callback(__priv, mac, enable_vlan, __args)
-+#define stmmac_add_hw_vlan_rx_fltr(__priv, __args...) \
-+	stmmac_do_callback(__priv, mac, add_hw_vlan_rx_fltr, __args)
-+#define stmmac_del_hw_vlan_rx_fltr(__priv, __args...) \
-+	stmmac_do_callback(__priv, mac, del_hw_vlan_rx_fltr, __args)
-+#define stmmac_restore_hw_vlan_rx_fltr(__priv, __args...) \
-+	stmmac_do_void_callback(__priv, mac, restore_hw_vlan_rx_fltr, __args)
- #define stmmac_get_mac_tx_timestamp(__priv, __args...) \
- 	stmmac_do_callback(__priv, mac, get_mac_tx_timestamp, __args)
- #define stmmac_sarc_configure(__priv, __args...) \
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 0e8c80f23557..2fb671e61ee8 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4566,6 +4566,8 @@ static int stmmac_vlan_rx_add_vid(struct net_device *ndev, __be16 proto, u16 vid
- 		return ret;
- 	}
- 
-+	ret = stmmac_add_hw_vlan_rx_fltr(priv, ndev, priv->hw, proto, vid);
-+
- 	return ret;
- }
- 
-@@ -4573,11 +4575,16 @@ static int stmmac_vlan_rx_kill_vid(struct net_device *ndev, __be16 proto, u16 vi
- {
- 	struct stmmac_priv *priv = netdev_priv(ndev);
- 	bool is_double = false;
-+	int ret;
- 
- 	if (be16_to_cpu(proto) == ETH_P_8021AD)
- 		is_double = true;
- 
- 	clear_bit(vid, priv->active_vlans);
-+	ret = stmmac_del_hw_vlan_rx_fltr(priv, ndev, priv->hw, proto, vid);
-+	if (ret)
-+		return ret;
-+
- 	return stmmac_vlan_update(priv, is_double);
- }
- 
-@@ -5168,6 +5175,8 @@ int stmmac_resume(struct device *dev)
- 	stmmac_init_coalesce(priv);
- 	stmmac_set_rx_mode(ndev);
- 
-+	stmmac_restore_hw_vlan_rx_fltr(priv, ndev, priv->hw);
-+
- 	stmmac_enable_all_queues(priv);
- 
- 	stmmac_start_all_queues(priv);
--- 
-2.17.0
+On Mon, Mar 30, 2020 at 2:35 PM Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
+>
+> In order to support multiple versions of the Synopsis MIPI DSI host
+> controller, which have different register layouts but almost identical
+> HW protocols, we add a regmap infrastructure which can abstract away
+> register accesses for platform drivers using the bridge.
+>
+> The controller HW revision is detected during bridge probe which will
+> be used in future commits to load the relevant register layout which
+> the bridge will use transparently to the platform drivers.
+>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> New in v5.
+> ---
+>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 208 ++++++++++--------
+>  1 file changed, 117 insertions(+), 91 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> index 5ef0f154aa7b..6d9e2f21c9cc 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> @@ -15,6 +15,7 @@
+>  #include <linux/module.h>
+>  #include <linux/of_device.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/regmap.h>
+>  #include <linux/reset.h>
+>
+>  #include <video/mipi_display.h>
+> @@ -227,6 +228,7 @@ struct dw_mipi_dsi {
+>         struct drm_bridge *panel_bridge;
+>         struct device *dev;
+>         void __iomem *base;
+> +       struct regmap *regs;
+>
+>         struct clk *pclk;
+>
+> @@ -235,6 +237,7 @@ struct dw_mipi_dsi {
+>         u32 lanes;
+>         u32 format;
+>         unsigned long mode_flags;
+> +       u32 hw_version;
+>
+>  #ifdef CONFIG_DEBUG_FS
+>         struct dentry *debugfs;
+> @@ -249,6 +252,13 @@ struct dw_mipi_dsi {
+>         const struct dw_mipi_dsi_plat_data *plat_data;
+>  };
+>
+> +static const struct regmap_config dw_mipi_dsi_regmap_cfg = {
+> +       .reg_bits = 32,
+> +       .val_bits = 32,
+> +       .reg_stride = 4,
+> +       .name = "dw-mipi-dsi",
+> +};
+> +
+>  /*
+>   * Check if either a link to a master or slave is present
+>   */
+> @@ -280,16 +290,6 @@ static inline struct dw_mipi_dsi *bridge_to_dsi(struct drm_bridge *bridge)
+>         return container_of(bridge, struct dw_mipi_dsi, bridge);
+>  }
+>
+> -static inline void dsi_write(struct dw_mipi_dsi *dsi, u32 reg, u32 val)
+> -{
+> -       writel(val, dsi->base + reg);
+> -}
+> -
+> -static inline u32 dsi_read(struct dw_mipi_dsi *dsi, u32 reg)
+> -{
+> -       return readl(dsi->base + reg);
+> -}
+> -
+>  static int dw_mipi_dsi_host_attach(struct mipi_dsi_host *host,
+>                                    struct mipi_dsi_device *device)
+>  {
+> @@ -366,29 +366,29 @@ static void dw_mipi_message_config(struct dw_mipi_dsi *dsi,
+>         if (lpm)
+>                 val |= CMD_MODE_ALL_LP;
+>
+> -       dsi_write(dsi, DSI_LPCLK_CTRL, lpm ? 0 : PHY_TXREQUESTCLKHS);
+> -       dsi_write(dsi, DSI_CMD_MODE_CFG, val);
+> +       regmap_write(dsi->regs, DSI_LPCLK_CTRL, lpm ? 0 : PHY_TXREQUESTCLKHS);
+> +       regmap_write(dsi->regs, DSI_CMD_MODE_CFG, val);
+>  }
+>
+>  static int dw_mipi_dsi_gen_pkt_hdr_write(struct dw_mipi_dsi *dsi, u32 hdr_val)
+>  {
+>         int ret;
+> -       u32 val, mask;
+> +       u32 val = 0, mask;
+>
+> -       ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -                                val, !(val & GEN_CMD_FULL), 1000,
+> -                                CMD_PKT_STATUS_TIMEOUT_US);
+> +       ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +                                      val, !(val & GEN_CMD_FULL), 1000,
+> +                                      CMD_PKT_STATUS_TIMEOUT_US);
+>         if (ret) {
+>                 dev_err(dsi->dev, "failed to get available command FIFO\n");
+>                 return ret;
+>         }
+>
+> -       dsi_write(dsi, DSI_GEN_HDR, hdr_val);
+> +       regmap_write(dsi->regs, DSI_GEN_HDR, hdr_val);
+>
+>         mask = GEN_CMD_EMPTY | GEN_PLD_W_EMPTY;
+> -       ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -                                val, (val & mask) == mask,
+> -                                1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +       ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +                                      val, (val & mask) == mask,
+> +                                      1000, CMD_PKT_STATUS_TIMEOUT_US);
+>         if (ret) {
+>                 dev_err(dsi->dev, "failed to write command FIFO\n");
+>                 return ret;
+> @@ -403,24 +403,26 @@ static int dw_mipi_dsi_write(struct dw_mipi_dsi *dsi,
+>         const u8 *tx_buf = packet->payload;
+>         int len = packet->payload_length, pld_data_bytes = sizeof(u32), ret;
+>         __le32 word;
+> -       u32 val;
+> +       u32 val = 0;
+>
+>         while (len) {
+>                 if (len < pld_data_bytes) {
+>                         word = 0;
+>                         memcpy(&word, tx_buf, len);
+> -                       dsi_write(dsi, DSI_GEN_PLD_DATA, le32_to_cpu(word));
+> +                       regmap_write(dsi->regs, DSI_GEN_PLD_DATA,
+> +                                    le32_to_cpu(word));
+>                         len = 0;
+>                 } else {
+>                         memcpy(&word, tx_buf, pld_data_bytes);
+> -                       dsi_write(dsi, DSI_GEN_PLD_DATA, le32_to_cpu(word));
+> +                       regmap_write(dsi->regs, DSI_GEN_PLD_DATA,
+> +                                    le32_to_cpu(word));
+>                         tx_buf += pld_data_bytes;
+>                         len -= pld_data_bytes;
+>                 }
+>
+> -               ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -                                        val, !(val & GEN_PLD_W_FULL), 1000,
+> -                                        CMD_PKT_STATUS_TIMEOUT_US);
+> +               ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +                                              val, !(val & GEN_PLD_W_FULL),
+> +                                              1000, CMD_PKT_STATUS_TIMEOUT_US);
+>                 if (ret) {
+>                         dev_err(dsi->dev,
+>                                 "failed to get available write payload FIFO\n");
+> @@ -438,12 +440,12 @@ static int dw_mipi_dsi_read(struct dw_mipi_dsi *dsi,
+>  {
+>         int i, j, ret, len = msg->rx_len;
+>         u8 *buf = msg->rx_buf;
+> -       u32 val;
+> +       u32 val = 0;
+>
+>         /* Wait end of the read operation */
+> -       ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -                                val, !(val & GEN_RD_CMD_BUSY),
+> -                                1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +       ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +                                      val, !(val & GEN_RD_CMD_BUSY),
+> +                                      1000, CMD_PKT_STATUS_TIMEOUT_US);
+>         if (ret) {
+>                 dev_err(dsi->dev, "Timeout during read operation\n");
+>                 return ret;
+> @@ -451,15 +453,15 @@ static int dw_mipi_dsi_read(struct dw_mipi_dsi *dsi,
+>
+>         for (i = 0; i < len; i += 4) {
+>                 /* Read fifo must not be empty before all bytes are read */
+> -               ret = readl_poll_timeout(dsi->base + DSI_CMD_PKT_STATUS,
+> -                                        val, !(val & GEN_PLD_R_EMPTY),
+> -                                        1000, CMD_PKT_STATUS_TIMEOUT_US);
+> +               ret = regmap_read_poll_timeout(dsi->regs, DSI_CMD_PKT_STATUS,
+> +                                              val, !(val & GEN_PLD_R_EMPTY),
+> +                                              1000, CMD_PKT_STATUS_TIMEOUT_US);
+>                 if (ret) {
+>                         dev_err(dsi->dev, "Read payload FIFO is empty\n");
+>                         return ret;
+>                 }
+>
+> -               val = dsi_read(dsi, DSI_GEN_PLD_DATA);
+> +               regmap_read(dsi->regs, DSI_GEN_PLD_DATA, &val);
+>                 for (j = 0; j < 4 && j + i < len; j++)
+>                         buf[i + j] = val >> (8 * j);
+>         }
+> @@ -536,29 +538,29 @@ static void dw_mipi_dsi_video_mode_config(struct dw_mipi_dsi *dsi)
+>         }
+>  #endif /* CONFIG_DEBUG_FS */
+>
+> -       dsi_write(dsi, DSI_VID_MODE_CFG, val);
+> +       regmap_write(dsi->regs, DSI_VID_MODE_CFG, val);
+>  }
+>
+>  static void dw_mipi_dsi_set_mode(struct dw_mipi_dsi *dsi,
+>                                  unsigned long mode_flags)
+>  {
+> -       dsi_write(dsi, DSI_PWR_UP, RESET);
+> +       regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+>
+>         if (mode_flags & MIPI_DSI_MODE_VIDEO) {
+> -               dsi_write(dsi, DSI_MODE_CFG, ENABLE_VIDEO_MODE);
+> +               regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_VIDEO_MODE);
+>                 dw_mipi_dsi_video_mode_config(dsi);
+> -               dsi_write(dsi, DSI_LPCLK_CTRL, PHY_TXREQUESTCLKHS);
+> +               regmap_write(dsi->regs, DSI_LPCLK_CTRL, PHY_TXREQUESTCLKHS);
+>         } else {
+> -               dsi_write(dsi, DSI_MODE_CFG, ENABLE_CMD_MODE);
+> +               regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_CMD_MODE);
+>         }
+>
+> -       dsi_write(dsi, DSI_PWR_UP, POWERUP);
+> +       regmap_write(dsi->regs, DSI_PWR_UP, POWERUP);
+>  }
+>
+>  static void dw_mipi_dsi_disable(struct dw_mipi_dsi *dsi)
+>  {
+> -       dsi_write(dsi, DSI_PWR_UP, RESET);
+> -       dsi_write(dsi, DSI_PHY_RSTZ, PHY_RSTZ);
+> +       regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+> +       regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_RSTZ);
+>  }
+>
+>  static void dw_mipi_dsi_init(struct dw_mipi_dsi *dsi)
+> @@ -573,14 +575,14 @@ static void dw_mipi_dsi_init(struct dw_mipi_dsi *dsi)
+>          */
+>         u32 esc_clk_division = (dsi->lane_mbps >> 3) / 20 + 1;
+>
+> -       dsi_write(dsi, DSI_PWR_UP, RESET);
+> +       regmap_write(dsi->regs, DSI_PWR_UP, RESET);
+>
+>         /*
+>          * TODO dw drv improvements
+>          * timeout clock division should be computed with the
+>          * high speed transmission counter timeout and byte lane...
+>          */
+> -       dsi_write(dsi, DSI_CLKMGR_CFG, TO_CLK_DIVISION(10) |
+> +       regmap_write(dsi->regs, DSI_CLKMGR_CFG, TO_CLK_DIVISION(10) |
+>                   TX_ESC_CLK_DIVISION(esc_clk_division));
+>  }
+>
+> @@ -609,22 +611,22 @@ static void dw_mipi_dsi_dpi_config(struct dw_mipi_dsi *dsi,
+>         if (mode->flags & DRM_MODE_FLAG_NHSYNC)
+>                 val |= HSYNC_ACTIVE_LOW;
+>
+> -       dsi_write(dsi, DSI_DPI_VCID, DPI_VCID(dsi->channel));
+> -       dsi_write(dsi, DSI_DPI_COLOR_CODING, color);
+> -       dsi_write(dsi, DSI_DPI_CFG_POL, val);
+> +       regmap_write(dsi->regs, DSI_DPI_VCID, DPI_VCID(dsi->channel));
+> +       regmap_write(dsi->regs, DSI_DPI_COLOR_CODING, color);
+> +       regmap_write(dsi->regs, DSI_DPI_CFG_POL, val);
+>         /*
+>          * TODO dw drv improvements
+>          * largest packet sizes during hfp or during vsa/vpb/vfp
+>          * should be computed according to byte lane, lane number and only
+>          * if sending lp cmds in high speed is enable (PHY_TXREQUESTCLKHS)
+>          */
+> -       dsi_write(dsi, DSI_DPI_LP_CMD_TIM, OUTVACT_LPCMD_TIME(4)
+> +       regmap_write(dsi->regs, DSI_DPI_LP_CMD_TIM, OUTVACT_LPCMD_TIME(4)
+>                   | INVACT_LPCMD_TIME(4));
+>  }
+>
+>  static void dw_mipi_dsi_packet_handler_config(struct dw_mipi_dsi *dsi)
+>  {
+> -       dsi_write(dsi, DSI_PCKHDL_CFG, CRC_RX_EN | ECC_RX_EN | BTA_EN);
+> +       regmap_write(dsi->regs, DSI_PCKHDL_CFG, CRC_RX_EN | ECC_RX_EN | BTA_EN);
+>  }
+>
+>  static void dw_mipi_dsi_video_packet_config(struct dw_mipi_dsi *dsi,
+> @@ -638,7 +640,7 @@ static void dw_mipi_dsi_video_packet_config(struct dw_mipi_dsi *dsi,
+>          * non-burst video modes, see dw_mipi_dsi_video_mode_config()...
+>          */
+>
+> -       dsi_write(dsi, DSI_VID_PKT_SIZE,
+> +       regmap_write(dsi->regs, DSI_VID_PKT_SIZE,
+>                        dw_mipi_is_dual_mode(dsi) ?
+>                                 VID_PKT_SIZE(mode->hdisplay / 2) :
+>                                 VID_PKT_SIZE(mode->hdisplay));
+> @@ -651,14 +653,15 @@ static void dw_mipi_dsi_command_mode_config(struct dw_mipi_dsi *dsi)
+>          * compute high speed transmission counter timeout according
+>          * to the timeout clock division (TO_CLK_DIVISION) and byte lane...
+>          */
+> -       dsi_write(dsi, DSI_TO_CNT_CFG, HSTX_TO_CNT(1000) | LPRX_TO_CNT(1000));
+> +       regmap_write(dsi->regs, DSI_TO_CNT_CFG,
+> +                    HSTX_TO_CNT(1000) | LPRX_TO_CNT(1000));
+>         /*
+>          * TODO dw drv improvements
+>          * the Bus-Turn-Around Timeout Counter should be computed
+>          * according to byte lane...
+>          */
+> -       dsi_write(dsi, DSI_BTA_TO_CNT, 0xd00);
+> -       dsi_write(dsi, DSI_MODE_CFG, ENABLE_CMD_MODE);
+> +       regmap_write(dsi->regs, DSI_BTA_TO_CNT, 0xd00);
+> +       regmap_write(dsi->regs, DSI_MODE_CFG, ENABLE_CMD_MODE);
+>  }
+>
+>  /* Get lane byte clock cycles. */
+> @@ -692,13 +695,13 @@ static void dw_mipi_dsi_line_timer_config(struct dw_mipi_dsi *dsi,
+>          * computations below may be improved...
+>          */
+>         lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, htotal);
+> -       dsi_write(dsi, DSI_VID_HLINE_TIME, lbcc);
+> +       regmap_write(dsi->regs, DSI_VID_HLINE_TIME, lbcc);
+>
+>         lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, hsa);
+> -       dsi_write(dsi, DSI_VID_HSA_TIME, lbcc);
+> +       regmap_write(dsi->regs, DSI_VID_HSA_TIME, lbcc);
+>
+>         lbcc = dw_mipi_dsi_get_hcomponent_lbcc(dsi, mode, hbp);
+> -       dsi_write(dsi, DSI_VID_HBP_TIME, lbcc);
+> +       regmap_write(dsi->regs, DSI_VID_HBP_TIME, lbcc);
+>  }
+>
+>  static void dw_mipi_dsi_vertical_timing_config(struct dw_mipi_dsi *dsi,
+> @@ -711,10 +714,10 @@ static void dw_mipi_dsi_vertical_timing_config(struct dw_mipi_dsi *dsi,
+>         vfp = mode->vsync_start - mode->vdisplay;
+>         vbp = mode->vtotal - mode->vsync_end;
+>
+> -       dsi_write(dsi, DSI_VID_VACTIVE_LINES, vactive);
+> -       dsi_write(dsi, DSI_VID_VSA_LINES, vsa);
+> -       dsi_write(dsi, DSI_VID_VFP_LINES, vfp);
+> -       dsi_write(dsi, DSI_VID_VBP_LINES, vbp);
+> +       regmap_write(dsi->regs, DSI_VID_VACTIVE_LINES, vactive);
+> +       regmap_write(dsi->regs, DSI_VID_VSA_LINES, vsa);
+> +       regmap_write(dsi->regs, DSI_VID_VFP_LINES, vfp);
+> +       regmap_write(dsi->regs, DSI_VID_VBP_LINES, vbp);
+>  }
+>
+>  static void dw_mipi_dsi_dphy_timing_config(struct dw_mipi_dsi *dsi)
+> @@ -737,23 +740,25 @@ static void dw_mipi_dsi_dphy_timing_config(struct dw_mipi_dsi *dsi)
+>          * DSI_CMD_MODE_CFG.MAX_RD_PKT_SIZE_LP (see CMD_MODE_ALL_LP)
+>          */
+>
+> -       hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> +       regmap_read(dsi->regs, DSI_VERSION, &hw_version);
+> +       hw_version &= VERSION;
+>
+>         if (hw_version >= HWVER_131) {
+> -               dsi_write(dsi, DSI_PHY_TMR_CFG,
+> -                         PHY_HS2LP_TIME_V131(timing.data_hs2lp) |
+> -                         PHY_LP2HS_TIME_V131(timing.data_lp2hs));
+> -               dsi_write(dsi, DSI_PHY_TMR_RD_CFG, MAX_RD_TIME_V131(10000));
+> +               regmap_write(dsi->regs, DSI_PHY_TMR_CFG,
+> +                            PHY_HS2LP_TIME_V131(timing.data_hs2lp) |
+> +                            PHY_LP2HS_TIME_V131(timing.data_lp2hs));
+> +               regmap_write(dsi->regs, DSI_PHY_TMR_RD_CFG,
+> +                            MAX_RD_TIME_V131(10000));
+>         } else {
+> -               dsi_write(dsi, DSI_PHY_TMR_CFG,
+> -                         PHY_HS2LP_TIME(timing.data_hs2lp) |
+> -                         PHY_LP2HS_TIME(timing.data_lp2hs) |
+> -                         MAX_RD_TIME(10000));
+> +               regmap_write(dsi->regs, DSI_PHY_TMR_CFG,
+> +                            PHY_HS2LP_TIME(timing.data_hs2lp) |
+> +                            PHY_LP2HS_TIME(timing.data_lp2hs) |
+> +                            MAX_RD_TIME(10000));
+>         }
+>
+> -       dsi_write(dsi, DSI_PHY_TMR_LPCLK_CFG,
+> -                 PHY_CLKHS2LP_TIME(timing.clk_hs2lp) |
+> -                 PHY_CLKLP2HS_TIME(timing.clk_lp2hs));
+> +       regmap_write(dsi->regs, DSI_PHY_TMR_LPCLK_CFG,
+> +                    PHY_CLKHS2LP_TIME(timing.clk_hs2lp) |
+> +                    PHY_CLKLP2HS_TIME(timing.clk_lp2hs));
+>  }
+>
+>  static void dw_mipi_dsi_dphy_interface_config(struct dw_mipi_dsi *dsi)
+> @@ -763,46 +768,49 @@ static void dw_mipi_dsi_dphy_interface_config(struct dw_mipi_dsi *dsi)
+>          * stop wait time should be the maximum between host dsi
+>          * and panel stop wait times
+>          */
+> -       dsi_write(dsi, DSI_PHY_IF_CFG, PHY_STOP_WAIT_TIME(0x20) |
+> -                 N_LANES(dsi->lanes));
+> +       regmap_write(dsi->regs, DSI_PHY_IF_CFG,
+> +                    PHY_STOP_WAIT_TIME(0x20) | N_LANES(dsi->lanes));
+>  }
+>
+>  static void dw_mipi_dsi_dphy_init(struct dw_mipi_dsi *dsi)
+>  {
+>         /* Clear PHY state */
+> -       dsi_write(dsi, DSI_PHY_RSTZ, PHY_DISFORCEPLL | PHY_DISABLECLK
+> -                 | PHY_RSTZ | PHY_SHUTDOWNZ);
+> -       dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> -       dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_TESTCLR);
+> -       dsi_write(dsi, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> +       regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_DISFORCEPLL | PHY_DISABLECLK
+> +                    | PHY_RSTZ | PHY_SHUTDOWNZ);
+> +       regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+> +       regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_TESTCLR);
+> +       regmap_write(dsi->regs, DSI_PHY_TST_CTRL0, PHY_UNTESTCLR);
+>  }
+>
+>  static void dw_mipi_dsi_dphy_enable(struct dw_mipi_dsi *dsi)
+>  {
+> -       u32 val;
+> +       u32 val = 0;
+>         int ret;
+>
+> -       dsi_write(dsi, DSI_PHY_RSTZ, PHY_ENFORCEPLL | PHY_ENABLECLK |
+> -                 PHY_UNRSTZ | PHY_UNSHUTDOWNZ);
+> +       regmap_write(dsi->regs, DSI_PHY_RSTZ, PHY_ENFORCEPLL | PHY_ENABLECLK |
+> +                    PHY_UNRSTZ | PHY_UNSHUTDOWNZ);
+>
+> -       ret = readl_poll_timeout(dsi->base + DSI_PHY_STATUS, val,
+> -                                val & PHY_LOCK, 1000, PHY_STATUS_TIMEOUT_US);
+> +       ret = regmap_read_poll_timeout(dsi->regs, DSI_PHY_STATUS,
+> +                                      val, val & PHY_LOCK,
+> +                                      1000, PHY_STATUS_TIMEOUT_US);
+>         if (ret)
+>                 DRM_DEBUG_DRIVER("failed to wait phy lock state\n");
+>
+> -       ret = readl_poll_timeout(dsi->base + DSI_PHY_STATUS,
+> -                                val, val & PHY_STOP_STATE_CLK_LANE, 1000,
+> -                                PHY_STATUS_TIMEOUT_US);
+> +       ret = regmap_read_poll_timeout(dsi->regs, DSI_PHY_STATUS,
+> +                                      val, val & PHY_STOP_STATE_CLK_LANE, 1000,
+> +                                      PHY_STATUS_TIMEOUT_US);
+>         if (ret)
+>                 DRM_DEBUG_DRIVER("failed to wait phy clk lane stop state\n");
+>  }
+>
+>  static void dw_mipi_dsi_clear_err(struct dw_mipi_dsi *dsi)
+>  {
+> -       dsi_read(dsi, DSI_INT_ST0);
+> -       dsi_read(dsi, DSI_INT_ST1);
+> -       dsi_write(dsi, DSI_INT_MSK0, 0);
+> -       dsi_write(dsi, DSI_INT_MSK1, 0);
+> +       u32 val;
+> +
+> +       regmap_read(dsi->regs, DSI_INT_ST0, &val);
+> +       regmap_read(dsi->regs, DSI_INT_ST1, &val);
+> +       regmap_write(dsi->regs, DSI_INT_MSK0, 0);
+> +       regmap_write(dsi->regs, DSI_INT_MSK1, 0);
+>  }
+>
+>  static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
+> @@ -989,6 +997,14 @@ static void dw_mipi_dsi_debugfs_remove(struct dw_mipi_dsi *dsi) { }
+>
+>  #endif /* CONFIG_DEBUG_FS */
+>
+> +static void dw_mipi_dsi_get_hw_version(struct dw_mipi_dsi *dsi)
+> +{
+> +       regmap_read(dsi->regs, DSI_VERSION, &dsi->hw_version);
+> +       dsi->hw_version &= VERSION;
+> +       if (!dsi->hw_version)
+Here, this is 0 on my board.
+> +               dev_err(dsi->dev, "Failed to read DSI hw version register\n");
+> +}
+> +
+>  static struct dw_mipi_dsi *
+>  __dw_mipi_dsi_probe(struct platform_device *pdev,
+>                     const struct dw_mipi_dsi_plat_data *plat_data)
+> @@ -1020,6 +1036,14 @@ __dw_mipi_dsi_probe(struct platform_device *pdev,
+>                 dsi->base = plat_data->base;
+>         }
+>
+> +       dsi->regs = devm_regmap_init_mmio(dev, dsi->base,
+> +                                         &dw_mipi_dsi_regmap_cfg);
+> +       if (IS_ERR(dsi->regs)) {
+> +               ret = PTR_ERR(dsi->regs);
+> +               DRM_ERROR("Failed to create DW MIPI DSI regmap: %d\n", ret);
+> +               return ERR_PTR(ret);
+> +       }
+> +
+>         dsi->pclk = devm_clk_get(dev, "pclk");
+>         if (IS_ERR(dsi->pclk)) {
+>                 ret = PTR_ERR(dsi->pclk);
+> @@ -1055,6 +1079,8 @@ __dw_mipi_dsi_probe(struct platform_device *pdev,
+>                 clk_disable_unprepare(dsi->pclk);
+>         }
+>
+> +       dw_mipi_dsi_get_hw_version(dsi);
+> +
+>         dw_mipi_dsi_debugfs_init(dsi);
+>         pm_runtime_enable(dev);
+>
+> --
+> 2.26.0
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
+Best regards,
+Adrian
 
 _______________________________________________
 linux-arm-kernel mailing list
