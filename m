@@ -2,121 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C7021983D7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 21:01:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D61D1983F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 21:11:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zbsQOHjaE7121p3a6IHMjMgmdccVE5VYSs0ocKpXB/Y=; b=EtY/9+v4DeUJvo
-	9ELdVMVYAkn8Bf1+8/8YpdD3pStGMWlwQMQVMqdzMFSc6el7szo7uJ5WwG3igheNNB2D9IaQBQAje
-	cxZDzxPB1GIa0mBI+QMy4FRZI+y2vS096L2l1e+Nw9Z0dQKv0qoUyXIw2XUpKThVaRO6VBvs6+VTI
-	8OFzlzB8zX9UI8GRutq4o+iJEbpyIwMyJWNm6KU0oo6usEcUE1nZnXoiBz9kib+vD/YqSxjp02hwI
-	X5Z8QpfkGagudPYUOd9kN5/Dy2s1HKDz9SNasl08J/Bpu9Ndo6zA6d1A7ZJVWv3nZLZLT4v69XKwa
-	OqrHW/bGvoeYFKEmcZwA==;
+	List-Owner; bh=wB3EAxEmqyFP+NTeewtPG/80eDSgHx7sShlzWVa+ubo=; b=CXdubu+9zT0Ytx
+	GhCZyR6rdWQrYGlv9Z1guSetW30QfB44agmi0WqhmoWL9X7wRoE0QRJUYnyCCRwZ0RVhk2GVSG23k
+	jRQrsDUd/N/t+33S2jjZC+nBt0FMylnZF5Yf3+7DPN008KJcE/7Hr6E/93vnrWNpFGzZKuetylJJW
+	YCQR8kqmgA+0whcvoTP77YZINiKa8LMgMKwBfWaiavm/QRNXEMPSlBvI3mi4xzLCil+U9/mQZVXo4
+	F05Qgm/vuteNE5oV8d5zt9g0YoZUV2rStUv2BU5aS/pWJzVzIk4RlA6Mb8P0azmKGjHxS8ZR+OlQj
+	RQEwtxStoqHDg95UbMRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIzf0-0000TC-R2; Mon, 30 Mar 2020 19:01:22 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jIzp1-00046K-Q9; Mon, 30 Mar 2020 19:11:43 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIzeq-0000S3-7R
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 19:01:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585594871;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=chkS3S8ljEOhtRq2m6BkfMDC2R3t0tMB1XLngS2T5wA=;
- b=QGt611zq+f9ykDc4+4nScnpJCSF51z2K9anvja0yln2VIRPwqhJxL24MCncTA2zsI9mXDY
- YldfrcL1PMvUBEaVU5JxnE/5XPgyPsMqgkQbGzrBBnuBXa45lQL4t2foKp5lOmIEmJkWiu
- +ylCet40UAOipVB165vIx6p2rF6y/PU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-390-eO3wIOreOWSMl6IRn89klw-1; Mon, 30 Mar 2020 15:01:07 -0400
-X-MC-Unique: eO3wIOreOWSMl6IRn89klw-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D6CD018C43C3;
- Mon, 30 Mar 2020 19:01:05 +0000 (UTC)
-Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 9B0DBD7665;
- Mon, 30 Mar 2020 19:01:02 +0000 (UTC)
-Subject: Re: [PATCH 3/3] arm64: memory: Give hotplug memory a different
- resource name
-To: James Morse <james.morse@arm.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-4-james.morse@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <25e2f1ea-412a-f03e-7544-1b217fdc8160@redhat.com>
-Date: Mon, 30 Mar 2020 21:01:01 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jIzoq-00045j-8k
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 19:11:33 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02UJBJV0008882;
+ Mon, 30 Mar 2020 14:11:19 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1585595479;
+ bh=OrBnsE/3/0anybmi3bMddb1VVqlFWSwjkIBSJYVW05Y=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=RjKlM4R00TJm33VjHZMQzMYAxJIEzrBtJlG3fN+/D2y/niBX7vQ/+aAgI6rQBLVlt
+ bgvW7cGD7SlvNHjelAKjDqY5FcH9mHDOrZdTJ0ArTO3Co9UxodXGh8e7IG8SYkgZCG
+ /1y5qfspLXncuzF6bxU0yN454DjEQbv9sVxhEuvk=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02UJBI1s059606;
+ Mon, 30 Mar 2020 14:11:19 -0500
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 30
+ Mar 2020 14:11:18 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 30 Mar 2020 14:11:18 -0500
+Received: from [10.250.86.212] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02UJBH2Y126560;
+ Mon, 30 Mar 2020 14:11:18 -0500
+Subject: Re: [PATCH] remoteproc: remove rproc_elf32_sanity_check
+To: Mathieu Poirier <mathieu.poirier@linaro.org>, Clement Leger
+ <cleger@kalray.eu>
+References: <20200327084939.8321-1-cleger@kalray.eu>
+ <20200327161733.GA18041@xps15>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <23fc7800-4ba4-07d0-de15-d81498f04d3c@ti.com>
+Date: Mon, 30 Mar 2020 14:11:17 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20200326180730.4754-4-james.morse@arm.com>
+In-Reply-To: <20200327161733.GA18041@xps15>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_120112_348559_26389322 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200330_121132_404576_30B78B1D 
+X-CRM114-Status: GOOD (  15.45  )
+X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -138,86 +92,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26.03.20 19:07, James Morse wrote:
-> If kexec chooses to place the kernel in a memory region that was
-> added after boot, we fail to boot as the kernel is running from a
-> location that is not described as memory by the UEFI memory map or
-> the original DT.
+Hi Clement,
+
+On 3/27/20 11:17 AM, Mathieu Poirier wrote:
+> On Fri, Mar 27, 2020 at 09:49:39AM +0100, Clement Leger wrote:
+>> Since checks are present in the remoteproc elf loader before calling
+>> da_to_va, loading a elf64 will work on 32bits flavors of kernel.
+>> Indeed, if a segment size is larger than what size_t can hold, the
+>> loader will return an error so the functionality is equivalent to
+>> what exists today.
+>>
+>> Signed-off-by: Clement Leger <cleger@kalray.eu>
+>> ---
+>>  drivers/remoteproc/remoteproc_core.c       |  2 +-
+>>  drivers/remoteproc/remoteproc_elf_loader.c | 21 ---------------------
+>>  drivers/remoteproc/remoteproc_internal.h   |  1 -
+>>  drivers/remoteproc/st_remoteproc.c         |  2 +-
+>>  drivers/remoteproc/st_slim_rproc.c         |  2 +-
+>>  drivers/remoteproc/stm32_rproc.c           |  2 +-
+>>  6 files changed, 4 insertions(+), 26 deletions(-)
 > 
-> To prevent unaware user-space kexec from doing this accidentally,
-> give these regions a different name.
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> ---
-> This is a change in behaviour as seen by user-space, because memory hot-add
-> has already been merged.
-> 
->  arch/arm64/include/asm/memory.h | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> index 2be67b232499..ef1686518469 100644
-> --- a/arch/arm64/include/asm/memory.h
-> +++ b/arch/arm64/include/asm/memory.h
-> @@ -166,6 +166,17 @@
->  #define IOREMAP_MAX_ORDER	(PMD_SHIFT)
->  #endif
->  
-> +/*
-> + * Memory hotplug allows new regions of 'System RAM' to be added to the system.
-> + * These aren't described as memory by the UEFI memory map, or DT memory node.
-> + * If we kexec from one of these regions, the new kernel boots from a location
-> + * that isn't described as RAM.
-> + *
-> + * Give these resources a different name, so unaware kexec doesn't do this by
-> + * accident.
-> + */
-> +#define MEMORY_HOTPLUG_RES_NAME "System RAM (hotplug)"
-> +
->  #ifndef __ASSEMBLY__
->  extern u64			vabits_actual;
->  #define PAGE_END		(_PAGE_END(vabits_actual))
-> 
+>>
+>> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+>> index a9ac1d01e09b..02ff076b0122 100644
+>> --- a/drivers/remoteproc/remoteproc_core.c
+>> +++ b/drivers/remoteproc/remoteproc_core.c
+>> @@ -2069,7 +2069,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+>>  		rproc->ops->parse_fw = rproc_elf_load_rsc_table;
+>>  		rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
+>>  		if (!rproc->ops->sanity_check)
+>> -			rproc->ops->sanity_check = rproc_elf32_sanity_check;
+>> +			rproc->ops->sanity_check = rproc_elf_sanity_check;
 
-(While I am familiar with makedumpfile in the crash kernel, I am not yet
-familiar with kexec, so bare with me)
+Do you still need the capability to override the sanity_check? As I
+understand, you introduced this to allow platform drivers to use the
+appropriate elf32 or elf64 one during the ELF64 loader support series.
 
+regards
+Suman
 
-Looking at kexec:arch/arm64/crashdump-arm64.c
-
-load_crashdump_segments() -> crash_get_memory_ranges() ->
-kexec_iomem_for_each_line() -> iomem_range_callback()
-
-
-#define SYSTEM_RAM "System RAM\n"
-
-...
-} else if (strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) == 0) {
-	return mem_regions_add(&system_memory_rgns, ...);
-}
-
-
-The hotplugged memory will no longer be detected as a crashdump segment,
-consequently (AFAIU) not be described in the elf header, and therefore
-also no longer dumped (e.g., by makedumpfile).
-
-I assume you'll have to adapt kexec-tools to still consider this memory
-for dumping, correct? Or am I missing something?
-
-
--- 
-Thanks,
-
-David / dhildenb
+>>  		rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
+>>  	}
+>>  
+>> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+>> index 16e2c496fd45..29034f99898d 100644
+>> --- a/drivers/remoteproc/remoteproc_elf_loader.c
+>> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
+>> @@ -112,27 +112,6 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
+>>  }
+>>  EXPORT_SYMBOL(rproc_elf_sanity_check);
+>>  
+>> -/**
+>> - * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
+>> - * @rproc: the remote processor handle
+>> - * @fw: the ELF32 firmware image
+>> - *
+>> - * Make sure this fw image is sane.
+>> - */
+>> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
+>> -{
+>> -	int ret = rproc_elf_sanity_check(rproc, fw);
+>> -
+>> -	if (ret)
+>> -		return ret;
+>> -
+>> -	if (fw_elf_get_class(fw) == ELFCLASS32)
+>> -		return 0;
+>> -
+>> -	return -EINVAL;
+>> -}
+>> -EXPORT_SYMBOL(rproc_elf32_sanity_check);
+>> -
+>>  /**
+>>   * rproc_elf_get_boot_addr() - Get rproc's boot address.
+>>   * @rproc: the remote processor handle
+>> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+>> index b389dc79da81..31994715fd43 100644
+>> --- a/drivers/remoteproc/remoteproc_internal.h
+>> +++ b/drivers/remoteproc/remoteproc_internal.h
+>> @@ -54,7 +54,6 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
+>>  phys_addr_t rproc_va_to_pa(void *cpu_addr);
+>>  int rproc_trigger_recovery(struct rproc *rproc);
+>>  
+>> -int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>>  int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
+>>  u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
+>>  int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
+>> diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
+>> index a6cbfa452764..a3268d95a50e 100644
+>> --- a/drivers/remoteproc/st_remoteproc.c
+>> +++ b/drivers/remoteproc/st_remoteproc.c
+>> @@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
+>>  	.parse_fw		= st_rproc_parse_fw,
+>>  	.load			= rproc_elf_load_segments,
+>>  	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
+>> -	.sanity_check		= rproc_elf32_sanity_check,
+>> +	.sanity_check		= rproc_elf_sanity_check,
+>>  	.get_boot_addr		= rproc_elf_get_boot_addr,
+>>  };
+>>  
+>> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+>> index 3cca8b65a8db..09bcb4d8b9e0 100644
+>> --- a/drivers/remoteproc/st_slim_rproc.c
+>> +++ b/drivers/remoteproc/st_slim_rproc.c
+>> @@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
+>>  	.da_to_va       = slim_rproc_da_to_va,
+>>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>>  	.load		= rproc_elf_load_segments,
+>> -	.sanity_check	= rproc_elf32_sanity_check,
+>> +	.sanity_check	= rproc_elf_sanity_check,
+>>  };
+>>  
+>>  /**
+>> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+>> index 6a66dbf2df40..2e07a95439c8 100644
+>> --- a/drivers/remoteproc/stm32_rproc.c
+>> +++ b/drivers/remoteproc/stm32_rproc.c
+>> @@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
+>>  	.load		= rproc_elf_load_segments,
+>>  	.parse_fw	= stm32_rproc_parse_fw,
+>>  	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+>> -	.sanity_check	= rproc_elf32_sanity_check,
+>> +	.sanity_check	= rproc_elf_sanity_check,
+>>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>>  };
+>>  
+>> -- 
+>> 2.17.1
+>>
 
 
 _______________________________________________
