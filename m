@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BF58197FD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 17:39:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28E0D19800D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 17:44:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3XwnWNhQXgpZJfAJUiYtGb7zTz3aexCVtndqsyJs+Ug=; b=eUorTHCDbAEVGQ
-	w1aSt0iQrdKgPJ5qAKWB+v7jREXUxla6rwvhLEtemC+/RQnrDKVJOA8f9wUeMsHVaSmeLkKSHHvla
-	8Cu0peHWatVFoxqolKEjHpK85QH0Kjkk2cJyJzcvEZ4wicFpQm1wx6sm7IzL8q4hXJagKbowupE51
-	JCdwHQYns+43M1mx8G7FO+I65/mghDVf7MXtUjI3ajAGF692ySDRDVa0/eh7wSN7rYLGLyfRyNWf2
-	OAZO/us9K4aG7jr0WDlVvZ9l6qClLfZBWhDCn6SurCnWPyFgiBRFn8dFZamHbNhcjpZs87+/VV+z6
-	5Qvrho+ndvDWHeMqLWPg==;
+	List-Owner; bh=qdi9TWHCWqHgKo77iRnaQiOan4EmqEO4EVwLYPfk1pk=; b=BCR15Mn0scoV91
+	1RUjT2+hop1TEp2RVC8gdKCauybvC7okSYFc+RJVmjYKX//uAmvwAXIIjy6g3Y5yA/W7wymJ26VCG
+	+yLjpVPE+vK/kn2f9Elda1AL6TExzT2cO+cYrVtht8bDKCuP7rNVv/EF5JatY1XcKMeqK3BWAiMzK
+	kvQO5OzxbTaUBt4AuDBueWSVwAZlOEqQAX3kM6zpvRdlFVgNurCYQsqB5bFF4RifOW0FbbbvM/Vgu
+	4eBpbM077bYdZPGBEvHV2/oNNKtmnMMtypjjVimU9TWn7699R45gknO865sN4GXBUy7Zyd2fepCHF
+	hKus9P4OYJzNWBk29bLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIwVa-0007za-6e; Mon, 30 Mar 2020 15:39:26 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+	id 1jIwaG-0001Wv-KU; Mon, 30 Mar 2020 15:44:16 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIwVR-0007z5-Pz
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 15:39:19 +0000
-Received: by mail-io1-f67.google.com with SMTP id n10so4163275iom.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 08:39:17 -0700 (PDT)
+ id 1jIwa7-0001W8-DB; Mon, 30 Mar 2020 15:44:09 +0000
+Received: by mail-il1-f196.google.com with SMTP id k29so16231156ilg.0;
+ Mon, 30 Mar 2020 08:44:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=EZ1nff7YVijHzSQUa7ruR5O25OH0APmgrgDxrtZq5h4=;
- b=iERuQV4/6wwKhHbZUdZs7CfFlDEoSLM0uroE1238CyoTJXfe1ci88ufTz/MI8xSeMT
- VRKCvBn023bPFhcu0EpbAwDpzwro2+GEWSFZabUMZ7secvKMYi51mOyyPIdfr0fGjC+l
- XZvvAASFAbCPfJ2+qlYabacjRPq1gq9NSdRGcQxMQuIaX/uDh8SfB2DOLoIXMhkIpEag
- qSqzuSrsanJ2I8XyE/j08IlGqBtDW1vXB+L484/mp7pO+xemtTzvOYaMMhM13CZjyoet
- yeQiZEnQkMx6eTWoXYr1sNFU3Y5Xs0ORQ0ADFXRIdPvzN8LeZf1OLn1WsblN74aayJWA
- QXDg==
-X-Gm-Message-State: ANhLgQ2iiI7yWSrNPDOcSI3I2xyJak+oG/DzHnBI+kx3Yd0p42G0I0kV
- 7wePGXtZ8mEOat+dSeQXbg==
-X-Google-Smtp-Source: ADFU+vtAbJIIRWynygDv7+bYMc+vjWB5ZJKEe6w3jC9R106pug4ci8qV3wN4dQNxIjcAu3fiI/HPww==
-X-Received: by 2002:a5d:9a06:: with SMTP id s6mr8991926iol.165.1585582756185; 
- Mon, 30 Mar 2020 08:39:16 -0700 (PDT)
+ bh=6L0zwcu6TJpBy8ROIw82e95a8IhAis774QnwFUUDei4=;
+ b=PhjUnwer6ysG1oz9PQVaXiKkfawqnx1fD961yqsZxYsOTlcceIhqQin2g7iBFAfG6e
+ GO/9orMy4NCxQRuwVk2IU9/b2IzLAbzq1AtNVn8jWkryA8AUkeQbGSX2/8fXS/B08lRX
+ EoNavWXHIZ/ooSAc5YZohjtx9Alk+U3bJDXaWW85F4ZHELWh3bh6nk1jXzEuzprS4QGy
+ 3RRE2nWVFLcz8L5PyVlrO7ToC46ztRZrmLfW5Zv++gr6mNTyULJQ61GZ2RexCByHbo9j
+ /ritmH28tDjWb9QCD3Vb6Kg/FOwNapmSpra5FFdfuzSSKMSy9l4Z2cbeYIS8fplnXtZk
+ aIxg==
+X-Gm-Message-State: ANhLgQ0vwr9pD1VvPBnvvo6DeLc/KhHQAmwFHlesW2nktPTP9vNHPv5E
+ WBtX5Ya6yIbwkNYPwcodeQ==
+X-Google-Smtp-Source: ADFU+vtLzoK7bLF3KNLPQffJzUbWf20WdfYgGwLo68WhEGLJBcEYEu+x/FRUoIOGhBcqWrVUOHXMcg==
+X-Received: by 2002:a92:8d0e:: with SMTP id s14mr11505607ild.117.1585583046446; 
+ Mon, 30 Mar 2020 08:44:06 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id u77sm5012485ili.35.2020.03.30.08.39.13
+ by smtp.gmail.com with ESMTPSA id c88sm4970096ill.15.2020.03.30.08.44.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 08:39:15 -0700 (PDT)
-Received: (nullmailer pid 20530 invoked by uid 1000);
- Mon, 30 Mar 2020 15:39:12 -0000
-Date: Mon, 30 Mar 2020 09:39:12 -0600
+ Mon, 30 Mar 2020 08:44:05 -0700 (PDT)
+Received: (nullmailer pid 27458 invoked by uid 1000);
+ Mon, 30 Mar 2020 15:44:04 -0000
+Date: Mon, 30 Mar 2020 09:44:04 -0600
 From: Rob Herring <robh@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH 1/8] dt-bindings: interconnect: Add bindings for imx8m noc
-Message-ID: <20200330153912.GA20064@bogus>
-References: <cover.1585188174.git.leonard.crestez@nxp.com>
- <b7a93b75a3ea57aadeeda766a0b729a4bc97ccc9.1585188174.git.leonard.crestez@nxp.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v5 5/5] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+Message-ID: <20200330154404.GA26389@bogus>
+References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+ <20200330113542.181752-6-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b7a93b75a3ea57aadeeda766a0b729a4bc97ccc9.1585188174.git.leonard.crestez@nxp.com>
+In-Reply-To: <20200330113542.181752-6-adrian.ratiu@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_083917_841826_EC81B171 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20200330_084407_447656_0488FF50 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -78,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
+ [209.85.166.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,60 +91,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- Alexandre Bailon <abailon@baylibre.com>
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
+ Andrzej Hajda <a.hajda@samsung.com>, Martyn Welch <martyn.welch@collabora.com>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-rockchip@lists.infradead.org, linux-imx@nxp.com, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 26 Mar 2020 04:16:13 +0200, Leonard Crestez wrote:
-> Add initial dt bindings for the interconnects inside i.MX chips.
-> Multiple external IPs are involved but SOC integration means the
-> software controllable interfaces are very similar.
+On Mon, 30 Mar 2020 14:35:42 +0300, Adrian Ratiu wrote:
+> This provides an example DT binding for the MIPI DSI host controller
+> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
 > 
-> Main NOC node acts as interconnect provider if #interconnect-cells is
-> present. Currently there is a single imx interconnect provider for the
-> whole SOC.
-> 
-> Other pieces of scalable interconnects can be present, each with their
-> own OPP table.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
+> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
 > ---
->  .../bindings/interconnect/fsl,imx8m-noc.yaml  | 138 ++++++++++++++++++
->  1 file changed, 138 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/interconnect/fsl,imx8m-noc.yaml
+> Changes since v4:
+>   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
+>   and addressed received binding feedback (Rob)
+> 
+> Changes since v3:
+>   - Added commit message (Neil)
+>   - Converted to yaml format (Neil)
+>   - Minor dt node + driver fixes (Rob)
+>   - Added small panel example to the host controller binding
+> 
+> Changes since v2:
+>   - Fixed commit tags (Emil)
+> ---
+>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 134 ++++++++++++++++++
+>  1 file changed, 134 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
 > 
 
 My bot found errors running 'make dt_binding_check' on your patch:
 
-Documentation/devicetree/bindings/interconnect/fsl,imx8m-noc.yaml:  while parsing a block mapping
-  in "<unicode string>", line 4, column 1
-did not find expected key
-  in "<unicode string>", line 79, column 9
-Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/interconnect/fsl,imx8m-noc.example.dts' failed
-make[1]: *** [Documentation/devicetree/bindings/interconnect/fsl,imx8m-noc.example.dts] Error 1
-make[1]: *** Waiting for unfinished jobs....
-Makefile:1262: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:34.21-31: Warning (reg_format): /example-0/dsi@21e0000/ports/port@1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (avoid_default_addr_size): /example-0/dsi@21e0000/ports/port@1: Relying on default #address-cells value
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (avoid_default_addr_size): /example-0/dsi@21e0000/ports/port@1: Relying on default #size-cells value
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (graph_port): /example-0/dsi@21e0000/ports/port@1: graph node '#address-cells' is -1, must be 1
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (graph_port): /example-0/dsi@21e0000/ports/port@1: graph node '#size-cells' is -1, must be 0
 
-See https://patchwork.ozlabs.org/patch/1261720
+See https://patchwork.ozlabs.org/patch/1263893
 
 If you already ran 'make dt_binding_check' and didn't see the above
 error(s), then make sure dt-schema is up to date:
