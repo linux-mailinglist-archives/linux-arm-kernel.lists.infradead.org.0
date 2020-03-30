@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EF491973F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 07:42:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21AC1973FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 07:42:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jiEqy/qBnOWi13e1KRFXL/ZTv+jLcxu3wNGrbjQDr90=; b=Lpr/9Jzmz0wcYB
-	mrbRaIiFb0dqn+/OrGC10rDJKijQqvpE3SAVaiQcn/NMB9vqrpEQaBgoUE/Jg6Tj9BbRCkoi4syQ7
-	oajPs7NTm16NZemvbEh85jEyM/q62lr2g55uu1toypcCBX09tp6F4T6Rc+HrZfl/KMugMr7SpXQhB
-	Lh63cBUMLvFf86GW3W4p4DZJWlJ/716JkyzGDHNxKK1OH9G3vOJvssivB+JoT0fEu52nMwjFbgwjp
-	CYgQ2kQjh4hY2Mc8LH0ZkYdFQJ0sIH62mbz0C654HkkSh/YzaPYKkd8r5afwK/62WeJyh3g56GOuC
-	Ol2qIqVWtCybyvN2I9xQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3boiV41fZ/55tkLmooS6NaJJtCRspkHgNal1GByIpoA=; b=VjusOjlSGYRosw
+	vCDH0l3hPGnEr+hGoirZnAHMYyp5q+cDZFJfEhQNlGP9AKSpn4alxSLp6579esC8Jipkmun6lte9W
+	pHIyDHQhbYVYIKzsQQMcSRSzJv21SNO/SBCslfdL5lakAvmeUGZ1DCbjp55BYTTKtxYpx2uS+D0/Z
+	jD9+Ql1xKH/0tag1FZjenoEYsOQ+820vCzhMDZic/JvfcYFNTFta+lQzhTean/I0hw5E4jpjCS+5q
+	E7zWS4cz38YuZGWgknE1zarxYDm0+sPLpp4rRQ5Dl656UKHhxl6TjowuH9a/XnB0EKvcXabszpFe5
+	4+lts0m04M8EqWugtCRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jInBK-0002QL-Rs; Mon, 30 Mar 2020 05:41:54 +0000
-Received: from mail-eopbgr700080.outbound.protection.outlook.com
- ([40.107.70.80] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1jInBj-0002Yh-R2; Mon, 30 Mar 2020 05:42:19 +0000
+Received: from mail-bn7nam10on2060.outbound.protection.outlook.com
+ ([40.107.92.60] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jInBA-0002Pu-7Z
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 05:41:45 +0000
+ id 1jInBH-0002TO-Ma
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 05:41:53 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nr6QoQxEO7f016Qx5yICPgByQn4vUBKGcVJfT0tJR7Qg8UFpdSgbWDwBHmfNdHnzg7l5W0B+kGWwt1viMxiCuHVfaNFMqlQyJZgwXr4T3a2g22fs8F7oWHmE/6WJQTge8JzBAIOMDm/iKJJPGW9PLS6d0TB39K/gb4xX034dUVJElRQPBPywKQfC+j4f1mjxeBCezk/aIooHaT2gRBW4au9YhWkCaUf9ZpqYv0Hmkve5ck5Prn82awVB5hwt0Y9XbwLg+agGn3SbsaW1bVIqhMRiodZWqdZucvjnCmnwaoKuLxMBs6oWvLZhyrvqbPkLXGMiOvYyt6tNP5yJ3/KnKw==
+ b=ijfyynB4kZWVuMMcsT5Azq5D77pRFOE9FiVOi20du9jdjUPzpjlDTAIgTZ8Rtr4Iv7nMKY51QWrRBsI3tstFSigW46Hy44+zWi+Nbnt6mnnZOUcwRIfvOtJI0NrRpls45lpWnt86sqKk5i+mWgvLCxDEyxHkyEdQ5TAmpiJbS1QpJ1LgxXNVZnQO+GRC2W5/UaoRn3qgQ8e2W9TGnvl9A5PDtL0VbCeAsuSNebzoy12YcixWBXkWRyBCrkSYA9/ddgsiHr6VagabYhk1IusjReY/ROdt6eW8iFAPY6KCifdmDu4ZVWgZknAM47f0OX34IZT7xc0+/6Kj2zOGNWfmlQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=12AN7TBBvRxGaNwfMhxG4pxwd9twOMSP+/RvRJldvrA=;
- b=krHYrTcbrAr37dqSGxgBOcCt+i2/GQT3d21K28wZqnwtwvEA28bz0oSEfUDmyjBM0dxWBJpCHJwXwfzpgq8aAntD3/WXS5AKLbIznvfxCQxqtMO2yHTYSXy51XuLiX3CTgKXgXgx5jcsf09oKcyinno9WXBv+GrCM+A4AbAVVB2Zb8shq9+RyaNW4O1Js3ehqnrSltAVJkq7GgoAi+FJcI0aWsl2yl1WIuzDTZyTDn1LI3FqVBJVGZPhXnhEJRC1FvoiLgWN8oZlbnVWzuNw8PwEl0oX1gWujYZWBz8/ctRo/grulpqziRRloHV9OuA65q74+QONs1DUCM+IHp8x1A==
+ bh=mEdBKRucfupAhW/34/J+1/Qe4wKbYKRn5Z+iT6ZNhJ8=;
+ b=ZhXqQPL/ggF220eiaG8eIXifYq0tju0qNv2ZgiuqA+uRzvrihYxiIcbE7LDpI1jBx9XLiiI0ZpnQ577+quGpPs6fniJDpZQVrEFVu1ov+yijwThIHxjEzUAse0D37qSMj1Ci/kASPvLT8HwnOFhJ5myI2LjqfWWBZMAnQBtql1G5G68A7pChvj/MPs7sMsDThkm/F5RJUI09sBBA950WwYFv2VQBl3spz8wwKv/u+fNaLuYQmK4Dt6C9kykOk5W+DM+x/KhTvM1W+yyClciISUB1PPgnTIMB4hj1BMHX08McD+MYbqz+T93OfGF+25qPJp0RChSUDy8ujGBvKo6JjA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=arm.com smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=12AN7TBBvRxGaNwfMhxG4pxwd9twOMSP+/RvRJldvrA=;
- b=tcS1zyAWQGGj/WpC756DbJlx0Bky5uChoKTYHDyzVOxpr3VX6vnHhdiEf8ABjTfttuv1W6VgHL4FX0euAdvTBMhEvWAEhJ1ongW7E/lDiPeSjevtUUSjFmx1DPHeJQpoRFlGl/rfNU+dwFlFWXdwWYravKYcKXyvyT+Yf0SrIcU=
-Received: from SN4PR0701CA0038.namprd07.prod.outlook.com
- (2603:10b6:803:2d::31) by BN7PR02MB3955.namprd02.prod.outlook.com
- (2603:10b6:406:f0::14) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.20; Mon, 30 Mar
- 2020 05:41:39 +0000
-Received: from SN1NAM02FT012.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:2d:cafe::4c) by SN4PR0701CA0038.outlook.office365.com
- (2603:10b6:803:2d::31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.19 via Frontend
- Transport; Mon, 30 Mar 2020 05:41:39 +0000
+ bh=mEdBKRucfupAhW/34/J+1/Qe4wKbYKRn5Z+iT6ZNhJ8=;
+ b=Lvnre4Q29i+w3BEwevrc13ppC5uySm353IMA4ARebFwYTjsolbc1TgpoZP76jTjEAFksE5N9lrhmlYMl93EB0d9UQjW7mfPmkQXPFYP/2sXjaA9hY8KZdsJPwWlLqVTacxn5R7XQONAh6+t2fkNA+QZXynj6kyzgGJuztfUJ5/Y=
+Received: from CY4PR02CA0019.namprd02.prod.outlook.com (2603:10b6:903:18::29)
+ by DM6PR02MB5498.namprd02.prod.outlook.com (2603:10b6:5:7d::30) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.19; Mon, 30 Mar
+ 2020 05:41:49 +0000
+Received: from CY1NAM02FT007.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:903:18:cafe::7b) by CY4PR02CA0019.outlook.office365.com
+ (2603:10b6:903:18::29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2856.20 via Frontend
+ Transport; Mon, 30 Mar 2020 05:41:49 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; arm.com; dkim=none (message not signed)
  header.d=none;arm.com; dmarc=bestguesspass action=none
@@ -58,30 +58,33 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT012.mail.protection.outlook.com (10.152.72.95) with Microsoft SMTP
+ CY1NAM02FT007.mail.protection.outlook.com (10.152.75.5) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2856.17
- via Frontend Transport; Mon, 30 Mar 2020 05:41:38 +0000
+ via Frontend Transport; Mon, 30 Mar 2020 05:41:49 +0000
 Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <manish.narani@xilinx.com>)
- id 1jInB4-0005gm-Hk; Sun, 29 Mar 2020 22:41:38 -0700
+ id 1jInBE-0005gy-MX; Sun, 29 Mar 2020 22:41:48 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <manish.narani@xilinx.com>)
- id 1jInAz-0003FY-EB; Sun, 29 Mar 2020 22:41:33 -0700
+ id 1jInB9-0003I4-JK; Sun, 29 Mar 2020 22:41:43 -0700
 Received: from [172.23.64.106] (helo=xhdvnc125.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <mnarani@xilinx.com>)
- id 1jInAp-0003Cp-Li; Sun, 29 Mar 2020 22:41:23 -0700
+ id 1jInB2-0003GK-6w; Sun, 29 Mar 2020 22:41:36 -0700
 Received: by xhdvnc125.xilinx.com (Postfix, from userid 16987)
- id D7087121267; Mon, 30 Mar 2020 11:11:22 +0530 (IST)
+ id B2878121267; Mon, 30 Mar 2020 11:11:24 +0530 (IST)
 From: Manish Narani <manish.narani@xilinx.com>
 To: ulf.hansson@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
  adrian.hunter@intel.com, michal.simek@xilinx.com
-Subject: [PATCH v2 0/4] Add support for Xilinx Versal SDHCI in Arasan driver
-Date: Mon, 30 Mar 2020 11:11:15 +0530
-Message-Id: <1585546879-91037-1-git-send-email-manish.narani@xilinx.com>
+Subject: [PATCH v2 1/4] dt-bindings: mmc: arasan: Document 'xlnx,
+ versal-8.9a' controller
+Date: Mon, 30 Mar 2020 11:11:16 +0530
+Message-Id: <1585546879-91037-2-git-send-email-manish.narani@xilinx.com>
 X-Mailer: git-send-email 2.1.1
+In-Reply-To: <1585546879-91037-1-git-send-email-manish.narani@xilinx.com>
+References: <1585546879-91037-1-git-send-email-manish.narani@xilinx.com>
 X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
 X-TM-AS-User-Approved-Sender: Yes;Yes
 X-EOPAttributedMessage: 0
@@ -89,30 +92,30 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(10009020)(4636009)(376002)(396003)(136003)(346002)(39850400004)(46966005)(6666004)(6266002)(356004)(316002)(2616005)(42186006)(336012)(426003)(8936002)(107886003)(186003)(4326008)(4744005)(6636002)(44832011)(81166006)(81156014)(5660300002)(36756003)(82740400003)(70206006)(478600001)(70586007)(2906002)(47076004)(26005)(8676002);
+ SFS:(10009020)(4636009)(376002)(136003)(396003)(39850400004)(346002)(46966005)(356004)(478600001)(2906002)(4326008)(2616005)(8936002)(82740400003)(426003)(5660300002)(47076004)(42186006)(26005)(70206006)(336012)(6666004)(70586007)(44832011)(6266002)(8676002)(81156014)(186003)(316002)(107886003)(6636002)(81166006)(36756003)(142933001);
  DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: bf1f576d-198c-4eac-a033-08d7d46d049f
-X-MS-TrafficTypeDiagnostic: BN7PR02MB3955:
-X-Microsoft-Antispam-PRVS: <BN7PR02MB39554C40DA157847897DF52CC1CB0@BN7PR02MB3955.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: e1467ff4-32e6-4f05-d84a-08d7d46d0ab7
+X-MS-TrafficTypeDiagnostic: DM6PR02MB5498:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB5498B1CAF0B1C46CAEC8269BC1CB0@DM6PR02MB5498.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
+X-MS-Oob-TLC-OOBClassifiers: OLM:4125;
 X-Forefront-PRVS: 0358535363
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: wh4VNKvFtAg6A8D38vzgP+LC83hNcyQf3TzeUj5p+2jCw21ULYULXXH4ZSHCVBVz3rVrHb9P5GgQLCa4LS4QWHnI7LMmALIBjOEgJzn9oXEbu6+gKLRISXjoooqBrxIea4NnkJQ5CnsZY/lv+luQykm359NQiInsMTf9x3SjaP143c5BjSrMSEFn3HFaeB0Qh5SVUJoJpD4lPHq43UC0PV9/Tz2xPTJfrglhoWMHQPfHIA896kwtDNJtCn5/T3ZTTBUaiQ/nSiH05H5o06Ir9Lcu30ANk/RkmDfWh1PivdMo5u4cm0TyWGFSydWYO8OtJ0U9gYr19wjlxMDjKj0r/srqlwQkaL5QEPBtGRC75HC3x3xmwuwtzrLAQFfovOof9RO+InyBujiHSeTQFw54tlmXJmCZqTnN1BDtHPvDBKRt8TjyRYFPnL60gfmlgu3QHXzzHoolMLn1yFAGvbOEpYeySZurtyk+8AVOD2fkvQ+68tClDqE66Pw/UNlNiiCXqIEaqC9bCT61z2xDuXofeQ==
+X-Microsoft-Antispam-Message-Info: PL98bvVW9G6PHfvmigQ73T31+LSkbECnNhPOZcMZRIXTA5w2rTWiPfQrtFvwQ69+K0+jMVWVhXZJS6sIMY6s951UJN/Y4wkdxe8Rl520PylVbTj+74iGCoHS+m3z5XQGhmNplB6LIWeftdVIvRZMajeGsMzYoq2nPGlZgip5VOB0Yg4PsLI2y1NSIEUswshjrMWiqWcjHXdKiF3XTB7Ym6DQTVaQht1DbVCsMA/ZKwrS4E3rDzuN1a6i4f6e4k3urBVDoCF1S/GgWjAVTSjm49sxKI6XM7bU7PVjj8aRwqHnzFRIPiIo8WSa3fULSetUTbZJ5M9tt7FbY27q98nvBH0gN6Xuh4SFL3u58oS8KDgxSFNhTCU5cgDvsUEB5QUq16pkM/xnUDlHtR2sPD4sRenLpiv6JlOgnCMlrCF/Eq78ltdk9JeY9OOqMaAUZq2zjQV28LiyplLm02u7qjn5HdRjx+8gtWHcMk8qBiII/xNZBVAoIcSxr5Vq1F7crbtTd66DRT2bzPu7KM0VeEigxA4Ctp8j8DX5IjxcDtgIqTg=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2020 05:41:38.9188 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bf1f576d-198c-4eac-a033-08d7d46d049f
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2020 05:41:49.1269 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e1467ff4-32e6-4f05-d84a-08d7d46d0ab7
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB3955
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB5498
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_224144_276239_705250F5 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20200329_224151_840424_8460503E 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -120,9 +123,11 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.80 listed in list.dnswl.org]
+ no trust [40.107.92.60 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.92.60 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -145,27 +150,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series includes:
- -> Document the Xilinx Versal SD controller
- -> Add support for Versal SD Tap Delays
- -> Reorganizing the clock operations handling
- -> Resolve kernel-doc warnings
+Add documentation for 'xlnx,versal-8.9a' SDHCI controller followed by
+example.
 
-Changes in v2:
-	- Addressed review comments given in v1
-	- Changed clock operation handling for better modularity.
-	- Changed comments to fix kernel-doc warnings
+Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/mmc/arasan,sdhci.txt      | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-Manish Narani (4):
-  dt-bindings: mmc: arasan: Document 'xlnx,versal-8.9a' controller
-  sdhci: arasan: Add support for Versal Tap Delays
-  mmc: sdhci-of-arasan: Modify clock operations handling
-  mmc: sdhci-of-arasan: Fix kernel-doc warnings
-
- .../devicetree/bindings/mmc/arasan,sdhci.txt  |  15 +
- drivers/mmc/host/sdhci-of-arasan.c            | 473 +++++++++++++-----
- 2 files changed, 361 insertions(+), 127 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+index 428685eb2ded..630fe707f5c4 100644
+--- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
++++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+@@ -18,6 +18,9 @@ Required Properties:
+     - "xlnx,zynqmp-8.9a": ZynqMP SDHCI 8.9a PHY
+       For this device it is strongly suggested to include clock-output-names and
+       #clock-cells.
++    - "xlnx,versal-8.9a": Versal SDHCI 8.9a PHY
++      For this device it is strongly suggested to include clock-output-names and
++      #clock-cells.
+     - "ti,am654-sdhci-5.1", "arasan,sdhci-5.1": TI AM654 MMC PHY
+ 	Note: This binding has been deprecated and moved to [5].
+     - "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1": Intel LGM eMMC PHY
+@@ -104,6 +107,18 @@ Example:
+ 		clk-phase-sd-hs = <63>, <72>;
+ 	};
+ 
++	sdhci: mmc@f1040000 {
++		compatible = "xlnx,versal-8.9a", "arasan,sdhci-8.9a";
++		interrupt-parent = <&gic>;
++		interrupts = <0 126 4>;
++		reg = <0x0 0xf1040000 0x0 0x10000>;
++		clocks = <&clk200>, <&clk200>;
++		clock-names = "clk_xin", "clk_ahb";
++		clock-output-names = "clk_out_sd0", "clk_in_sd0";
++		#clock-cells = <1>;
++		clk-phase-sd-hs = <132>, <60>;
++	};
++
+ 	emmc: sdhci@ec700000 {
+ 		compatible = "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1";
+ 		reg = <0xec700000 0x300>;
 -- 
 2.17.1
 
