@@ -2,46 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5147F197AB0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:29:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2B41197AB3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZUlCa6MiNC+NwCGvUD1or1xC5SC+gCmJ5ivsVzajAc=; b=QWK/HdEJ9JUEUG
-	8Q2AYaHrYLasZftC4a7Ab02wgoeKFzAvVZZY2+Frw/Aqw4CHeVIFB0B4Ih4aKSVmsX3R4GsxwI55L
-	3nuFrXHrW/lF/sNnJBJWDPRVfnTG6ow49oTs17FXZakdZfnrHjO8qjnaeayAcZF5akBgihMcOTP7e
-	LRCe9cJ5ur9tvmrkKaOPf1p4oEzJZmNpjhBdpMnsXDEsMVxKPWIMV7ya2em0te6oSChpxPW5tE+mw
-	oYt3gPm4zYKhZzfp77N+m/v1eZxAYjM50d5PiSEujMNfQb8Rs14fyawrd4aI+ZMN1ZE71KE3qDNYe
-	BP65AzKa5Y7fj5pd6hzw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=08nvWlDVXvm+8RNM1VyZbjCo0K4J+WVbO1VHCpgidLU=; b=TZe7nggxKAE3Lr
+	kZ9cykBSF18LkaNbv9FMT7MEJZKmrGPIQfV5pRXTASQJM2TCl9bZbx5/9AOZM4i3qnrUoT8cbXzp1
+	bF0cFehhvXmPBxsrdKztwP8eQgolzgmKyJbiYSLkP7np2cC0EvEWQpteVFVa+KcJ8B3IlOOwJilPh
+	GCI7iO9y+GGfW6Zn8r7l+OwFbyVLOd4f6rHESENngiddPKWu0Sb6pl1avTWbURXMNLcNLqcrF9WpH
+	toO4a3dtdRpwl+oAJ6MG6KafRAbQ1RzlQmwxrxQ7WSuZIjseurOM6Er6oDX1IAV7im7dlTgMPZB8m
+	FYp12JD+ot6dkWKTEmug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsbz-0004kw-Bk; Mon, 30 Mar 2020 11:29:47 +0000
+	id 1jIscg-0006al-FU; Mon, 30 Mar 2020 11:30:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsbl-0004dG-9s
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:29:34 +0000
+ id 1jIscU-0006aB-Es
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:30:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9A4B331B;
- Mon, 30 Mar 2020 04:29:32 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A20893F52E;
- Mon, 30 Mar 2020 04:29:31 -0700 (PDT)
-Date: Mon, 30 Mar 2020 12:29:28 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
-Message-ID: <20200330093641.GA25920@C02TD0UTHF1T.local>
-References: <20200329141258.31172-1-ardb@kernel.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EAFE31B;
+ Mon, 30 Mar 2020 04:30:16 -0700 (PDT)
+Received: from [172.16.1.108] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 95A3A3F52E;
+ Mon, 30 Mar 2020 04:30:14 -0700 (PDT)
+Subject: Re: SError handling vs. SIGSEGV
+To: Florian Fainelli <f.fainelli@gmail.com>
+References: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
+From: James Morse <james.morse@arm.com>
+Openpgp: preference=signencrypt
+Message-ID: <68580476-eba8-2615-c25f-f3f1b53118e0@arm.com>
+Date: Mon, 30 Mar 2020 12:30:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200329141258.31172-1-ardb@kernel.org>
+In-Reply-To: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_042933_427454_BCBA696D 
-X-CRM114-Status: GOOD (  23.42  )
+X-CRM114-CacheID: sfid-20200330_043018_586529_9D4A3156 
+X-CRM114-Status: GOOD (  22.82  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,122 +64,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel-hardening@lists.openwall.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Doug Berger <opendmb@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
+ Will Deacon <will@kernel.org>, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
-> When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
-> different permissions (r-x for .text, r-- for .rodata, rw- for .data,
-> etc) are rounded up to 2 MiB so they can be mapped more efficiently.
-> In particular, it permits the segments to be mapped using level 2
-> block entries when using 4k pages, which is expected to result in less
-> TLB pressure.
-> 
-> However, the mappings for the bulk of the kernel will use level 2
-> entries anyway, and the misaligned fringes are organized such that they
-> can take advantage of the contiguous bit, and use far fewer level 3
-> entries than would be needed otherwise.
-> 
-> This makes the value of this feature dubious at best, and since it is not
-> enabled in defconfig or in the distro configs, it does not appear to be
-> in wide use either. So let's just remove it.
-> 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+Hi Florian,
 
-No strong feelings either way, but getting rid of code is usually good,
-so:
+(I assume this is all on some pre-v8.2 system)
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+On 3/28/20 4:31 AM, Florian Fainelli wrote:
+> Up until commit e4ba15debcfd27f60d43da940a58108783bff2a6 ("arm64:
+> fix for bad_mode() handler to always result in panic") we had been
+> getting SIGSEGV delivered to applications running on Broadcom STB
+> platforms which access register holes or registers for which we have
+> purposely blocked the access via the GISB (proprietary bus for control
+> registers) bus arbiter used on those SoCs.
 
-Mark.
+User-space has access to this? Not good.
 
-> ---
->  arch/arm64/Kconfig.debug                  | 13 -------------
->  arch/arm64/include/asm/memory.h           | 12 +-----------
->  drivers/firmware/efi/libstub/arm64-stub.c |  8 +++-----
->  3 files changed, 4 insertions(+), 29 deletions(-)
-> 
-> diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
-> index 1c906d932d6b..a1efa246c9ed 100644
-> --- a/arch/arm64/Kconfig.debug
-> +++ b/arch/arm64/Kconfig.debug
-> @@ -52,19 +52,6 @@ config DEBUG_WX
->  
->  	  If in doubt, say "Y".
->  
-> -config DEBUG_ALIGN_RODATA
-> -	depends on STRICT_KERNEL_RWX
-> -	bool "Align linker sections up to SECTION_SIZE"
-> -	help
-> -	  If this option is enabled, sections that may potentially be marked as
-> -	  read only or non-executable will be aligned up to the section size of
-> -	  the kernel. This prevents sections from being split into pages and
-> -	  avoids a potential TLB penalty. The downside is an increase in
-> -	  alignment and potentially wasted space. Turn on this option if
-> -	  performance is more important than memory pressure.
-> -
-> -	  If in doubt, say N.
-> -
->  config DEBUG_EFI
->  	depends on EFI && DEBUG_INFO
->  	bool "UEFI debugging"
-> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> index 4d94676e5a8b..3b34f7bde2f2 100644
-> --- a/arch/arm64/include/asm/memory.h
-> +++ b/arch/arm64/include/asm/memory.h
-> @@ -119,22 +119,12 @@
->  
->  /*
->   * Alignment of kernel segments (e.g. .text, .data).
-> - */
-> -#if defined(CONFIG_DEBUG_ALIGN_RODATA)
-> -/*
-> - *  4 KB granule:   1 level 2 entry
-> - * 16 KB granule: 128 level 3 entries, with contiguous bit
-> - * 64 KB granule:  32 level 3 entries, with contiguous bit
-> - */
-> -#define SEGMENT_ALIGN		SZ_2M
-> -#else
-> -/*
-> + *
->   *  4 KB granule:  16 level 3 entries, with contiguous bit
->   * 16 KB granule:   4 level 3 entries, without contiguous bit
->   * 64 KB granule:   1 level 3 entry
->   */
->  #define SEGMENT_ALIGN		SZ_64K
-> -#endif
->  
->  /*
->   * Memory types available.
-> diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-> index db0c1a9c1699..fc9f8ab533a7 100644
-> --- a/drivers/firmware/efi/libstub/arm64-stub.c
-> +++ b/drivers/firmware/efi/libstub/arm64-stub.c
-> @@ -75,14 +75,12 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
->  
->  	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && phys_seed != 0) {
->  		/*
-> -		 * If CONFIG_DEBUG_ALIGN_RODATA is not set, produce a
-> -		 * displacement in the interval [0, MIN_KIMG_ALIGN) that
-> -		 * doesn't violate this kernel's de-facto alignment
-> +		 * Produce a displacement in the interval [0, MIN_KIMG_ALIGN)
-> +		 * that doesn't violate this kernel's de-facto alignment
->  		 * constraints.
->  		 */
->  		u32 mask = (MIN_KIMG_ALIGN - 1) & ~(EFI_KIMG_ALIGN - 1);
-> -		u32 offset = !IS_ENABLED(CONFIG_DEBUG_ALIGN_RODATA) ?
-> -			     (phys_seed >> 32) & mask : TEXT_OFFSET;
-> +		u32 offset = (phys_seed >> 32) & mask;
->  
->  		/*
->  		 * With CONFIG_RANDOMIZE_TEXT_OFFSET=y, TEXT_OFFSET may not
-> -- 
-> 2.17.1
-> 
+
+> That commit arguably plugged
+> a hole in that scheduling was possible when panic() was intended, so
+> this is not really the only culprit.
+
+> We are actually relying on this
+> behavior to pass a number of tests that specifically exercise that
+> register blocking is effective without taking down the whole system.
+
+... but this isn't actually possible ...
+
+The abort is asynchronous, the CPU may be doing something else when it arrives.
+It may have taken an IRQ. Taking a (pre-v8.2) SError out of IRQ context has to
+fatal.
+
+
+> Due to our SoC integration all of those register access errors are
+> SErrors with the signature at the bottom.
+
+Do you trust user-space not to access them?
+
+If not, don't give user-space access to those pages!
+
+
+> Doug had tried to submit a patch series that allowed a given platform to
+> install custom abort handlers, similar to what ARM 32-bit permits, but
+> this got shot down:
+
+For good reason. You cannot know that the abort was caused by your broken
+hardware, and not an ECC error for the stack memory...
+
+Getting this wrong leads to data corruption, and you have no reliable
+information to base the decision on. (see below). The RAS extensions added the
+CPU and system bits to improve this.
+
+
+> I understand that such a SError is deemed catastrophic and
+> unrecoverable, but taking down the whole system for something we could
+> possibly resolve with a SIGSEGV provided the platform is known and hooks
+> are in place would be more desirable IMHO, otherwise we have nice DoS
+> lurking around and hard to debug systems in production, too.
+
+SError is asynchronous. The ELR_EL1 value is meaningless.
+The CPU can change exception level between the access that triggers the
+external-abort being sent, and the result received. You can't even rely on
+'while my process is running'.
+
+SError can also be imprecise so you can't return from an SError exception. The
+CPU is not obliged to put the world back in order before taking the exception.
+
+precise/imprecise isn't commonly described. The arm-arm has: G1.3.4 "Definition
+of a precise exception":
+| An exception is described as precise when the exception handler receives the
+| PE state and memory system state that is consistent with the PE having
+| executed all of the instructions up to but not including the point in the
+| instruction stream where the exception was taken, and none afterwards.
+| Other than the SError interrupt all exceptions that are taken to AArch32 state
+| are required to be precise. For each occurrence of an SError interrupt,
+| whether the interrupt is precise or imprecise is IMPLEMENTATION DEFINED.
+
+
+> As it stands today, I see no way to have a self hosted test case that
+> exercises that our GISB bus arbiter blocking works correctly because the
+> whole kernel is taken down when the test is successful :/
+
+Sorry, it looks like your hardware people have given you something you can't
+reliably work with.
+
+Don't give user-space access to devices, they can take the system down.
+Don't punch holes in page mappings, the CPU can't map anything smaller.
+Don't respond with an abort unless you are prepared for the OS to die.
+
+
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
