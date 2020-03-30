@@ -2,61 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 459E8197C92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:14:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3511197CB2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:18:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4kZ2uES/JOsNvlCyoqxnRoV5trNR109re+vvfmEry+8=; b=rG1F8MgLyRNoeS
-	oXFOx7+j4nXU4cf6YUsAdg/2IJf1IPqWE1/tSGyNelpwA5reNaVenh4g4fTa1/mz52VpKIXCwo9/n
-	6jS7vfMHRzTaI/YryFVlRfpI42glVKt/5V3Ctg51KmrMLqzsSDQv/3QF4yD9U+WW5ohOVJ6g49Nko
-	yjXlMXmz6HrTNDtex830nAWCV+hAmaciK6jSqA8Mw7XPl/bI28JrS1Gqv7DavMfVGy4TW++ZlB3sQ
-	/dSC52J0aYJtY11W/+waLsmuq2yXbe6CtTq2ObZMMwAlMJP51OKEExk+dk5W/F6wW79OClSOVS5z1
-	lBH9CtiJrX6VlRNfYLEg==;
+	List-Owner; bh=7kuliynD1/VV+bInh6TzpKSa+gGDBBP9Hxz8mVbhO/Q=; b=Vk9+pMajjbzbHu
+	jG9VZhM0v42K6BdCRBPXe+TT+b35JSzX+LaO4zEjUZymaGzGukLkYkFhaRZXFrmlDUVDoQ85rXVc7
+	me3CJNIG9ELdWKw0vHsEhZ8OSa4RybIgYu0kugnzj7Z/AiclrymIjLASDaP58siYhJ9lZfWFO5ofz
+	4IbofxNkfVuoXdGTWWTxfMVQQv2+mtj3OsXLoE23xo36KjFJiJdr2GmuDrk7WzxAqm/xJXtBHpqei
+	WrJ/zXMvj2jsBl6LVPONucWZUJuWUzDcUVylX8rOgQMueiviLXxKpBbI9tWujap9lr1dcJP9DL6Yw
+	qBgb+0y07jvltynoVUlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIuEk-0003JH-53; Mon, 30 Mar 2020 13:13:54 +0000
+	id 1jIuJI-0005Ig-I6; Mon, 30 Mar 2020 13:18:36 +0000
 Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIuET-0003HL-JH
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:13:39 +0000
+ id 1jIuJ5-0005Hi-K6
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:18:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585574016;
+ s=mimecast20190719; t=1585574302;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=Ao3zXk94r5n1r1NdUT1EgWM2jGWvojEWgL79T2zxRjI=;
- b=E/ZXW1Fkio6gNWffAODkgmahBc7j5hiY7NQNPSMTZ4l7/lcSmnscllcO7DlQyX07tOVmRw
- 4ex16xCfX2oYhA0UmzswGeekSnqoGUpgbDhUpjNT3b5vosvyrksXm12k2BBRWhca5q2fyT
- Zxdz64kCBgqPaICcpIiAXWftLwEOTgU=
+ bh=BGWvgqrMPaCiFH31frMNGQyTrYjG46OYLM4AqOI1CBI=;
+ b=Kf8bq659XgepmKpqFkWB9ZpLKyN7WIefwbAUI303u8FfWUqrxMxKo9PN6yqj0gPuyDai8t
+ bwvN4FUULPqYE81Z1HBER8Aw/hAm9xnsosCEQRGvZ5Xovnd3fihBahwHn66yXwwTIJd1PL
+ 8J8PAT/c1U4WkONqTosIcM0XXxSIuTE=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-76-cDskFl0hPaKRYJuBxlagJA-1; Mon, 30 Mar 2020 09:13:33 -0400
-X-MC-Unique: cDskFl0hPaKRYJuBxlagJA-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-102-ReqDw5CoNxWViHo975ARaw-1; Mon, 30 Mar 2020 09:18:21 -0400
+X-MC-Unique: ReqDw5CoNxWViHo975ARaw-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5EFD1107ACCD;
- Mon, 30 Mar 2020 13:13:31 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8AD7918AB2C0;
+ Mon, 30 Mar 2020 13:18:19 +0000 (UTC)
 Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 3C9295C1B5;
- Mon, 30 Mar 2020 13:13:29 +0000 (UTC)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6EF5696B72;
+ Mon, 30 Mar 2020 13:18:14 +0000 (UTC)
+Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
+ use
 To: James Morse <james.morse@arm.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
- <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
- <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
- <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
- <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
- <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
+ <6725543d-81ee-537f-e132-ef26fe62c452@redhat.com>
+ <0ee0556d-9903-1b17-8c58-e847f4c00816@arm.com>
 From: David Hildenbrand <david@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
@@ -102,19 +97,19 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
-Date: Mon, 30 Mar 2020 15:13:28 +0200
+Message-ID: <fd6434ca-0af2-ef75-a83a-2ef3d2deefda@redhat.com>
+Date: Mon, 30 Mar 2020 15:18:13 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
+In-Reply-To: <0ee0556d-9903-1b17-8c58-e847f4c00816@arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_061337_709830_F2786EE7 
-X-CRM114-Status: GOOD (  23.84  )
+X-CRM114-CacheID: sfid-20200330_061823_740889_0CC76AF6 
+X-CRM114-Status: GOOD (  18.98  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
@@ -154,112 +149,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Adding a sentence about the way kexec load works may help, the first paragraph
-> would read:
+On 27.03.20 16:42, James Morse wrote:
+> Hi David,
 > 
-> | Kexec allows user-space to specify the address that the kexec image should be
-> | loaded to. Because this memory may be in use, an image loaded for kexec is not
-> | stored in place, instead its segments are scattered through memory, and are
-> | re-assembled when needed. In the meantime, the target memory may have been
-> | removed.
-> 
-> Do you think thats clearer?
-
-Yes, very much. Maybe add, that the target is described by user space
-during kexec_load() and that user space - right now - parses /proc/iomem
-to find applicable system memory.
-
-> [...]
-> 
->>> Load kexec:
->>> | root@vm:/sys/devices/system/memory# kexec -l /root/bzImage --reuse-cmdline
+> On 3/27/20 9:27 AM, David Hildenbrand wrote:
+>> On 26.03.20 19:07, James Morse wrote:
+>>> arm64 recently queued support for memory hotremove, which led to some
+>>> new corner cases for kexec.
 >>>
->>
->> I assume this will trigger
->>
->> kexec_load -> do_kexec_load -> kimage_load_segment ->
->> kimage_load_normal_segment -> kimage_alloc_page -> kimage_alloc_pages
->>
->> Which will just allocate a bunch of pages and mark them reserved.
->>
->> Now, AFAIKs, all allocations will be unmovable. So none of the kexec
->> segment allocations will actually end up on your DIMM (as it is onlined
->> online_movable).
->>
->> So, the loaded image (with its segments) from user won't be problematic
->> and not get placed on your DIMM.
->>
->>
->> Now, the problematic part is (via man kexec_load) "mem and memsz specify
->> a physical address range that is the target of the copy."
->>
->> So the place where the image will be "assembled" at when doing the
->> reboot. Understood :)
+>>> If the kexec segments are loaded for a removable region, that region may
+>>> be removed before kexec actually occurs. This causes the first kernel to
+>>> lockup when applying the relocations. (I've triggered this on x86 too).
+>>>
+>>> The first patch adds a memory notifier for kexec so that it can refuse
+>>> to allow in-use regions to be taken offline.
 > 
-> Yup.
+>> IIRC other architectures handle that by setting the affected pages
+>> PageReserved. Any reason why to not stick to the same?
 > 
-> [...]
+> Hmm, I didn't spot this. How come core code doesn't do it if its needed?
 > 
->> I wonder if we should instead make the "kexec -e" fail. It tries to
->> touch random system memory.
+> Doesn't PG_Reserved prevent the page from being used for regular allocations?
+> (or is that only if its done early)
 > 
-> Heh, isn't touching random system memory what kexec does?!
+> I prefer the runtime check as the dmesg output gives the user some chance of
+> knowing why their memory-offline failed, and doing something about it!
 
-Having a racy user interface that can trigger kernel crashes feels very
-wrong. We should limit the impact.
-
-> 
-> Its all described to user-space as 'System RAM'. Teaching it to probe
-> /sys/devices/memory/... would require a user-space change.
-
-I think we should really rename hotplugged memory on all architectures.
-
-Especially also relevant for virtio-mem/hyper-v balloon, where some
-pieces of (hotplugged )memory blocks are partially unavailable and
-should not be touched - accessing them results in unpredictable behavior
-(e.g., crashes or discarded writes).
+I was confused which memory we are trying to protect. Understood now,
+that you are dealing with the target physical memory described during
+described during kexec_load.
 
 [...]
 
->> Will probably need some thought. But it will actually also bail out when
->> user space passes wrong physical memory addresses, instead of
->> triple-faulting silently.
 > 
-> With this change, the reboot(LINUX_REBOOT_CMD_KEXEC), call would fail. This
-> thing doesn't usually return, so we're likely to trigger error-handling that has
-> never run before.
+>> Also, makedumpfile will check if the
+>> sections are still around IIRC.
 > 
-> (Last time I debugged one of these, it turned out kexec had taken the network
-> interfaces down, meaning the nfsroot was no longer accessible)
-> 
-> How can user-space know whether kexec is going to succeed, or fail like this?
-> Any loaded kexec kernel could secretly be in this broken state.
-> 
-> Can user-space know what caused this to become unreliable? (without reading the
-> kernel source)
-> 
-> 
-> Given kexec can be unloaded by user-space, I think its better to prevent us
-> getting into the broken state, preferably giving the hint that kexec us using
-> that memory. The user can 'kexec -u', then retry removing the memory.
-> 
-> I think forbidding the memory-offline is simpler for user-space to deal with.
+> Curious. I thought the vmcore was virtually addressed, how does it know which
+> linear-map portions correspond to sysfs memory nodes with KASLR?
 
-I thought about this over the weekend, and I don't think it's the right
-approach.
+That's a very interesting question. I remember there was KASLR support
+being implemented specifically for that - but I don't know any details.
 
-1. It's racy. If memory is getting offlined/unplugged just while user
-space is about to trigger the kexec_load(), you end up with the very
-same triple-fault.
+>> Not sure what you mean by "Unaware kdump from user-space".
+> 
+> The existing kexec-tools binaries, that (I assume) don't go probing to find out
+> if 'System RAM' is removable or not, loading a kdump kernel, along with the
+> user-space generated blob that describes the first kernel's memory usage to the
+> second kernel.
 
-2. It's semantically wrong. kexec does not need online memory ("managed
-by the buddy"), but still you disallow offlining memory.
-
-
-I would really much rather want to see user-space choosing boot memory
-(e.g., renaming hotplugged memory on all architectures), and checking
-during "kexec -e" if the selected memory is actually "there", before
-trying to write to it.
+Finally understood how kexec without kdump works, thanks.
 
 -- 
 Thanks,
