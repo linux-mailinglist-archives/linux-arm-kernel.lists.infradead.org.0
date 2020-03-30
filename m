@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DF82197AB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:31:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9394197ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1Lls81fMYcx980mwQE0/f3umAitj692tOYgiBbvF50=; b=MCqmQeiDpmJYwL
-	lM96zWK3TXGaMnQGE7XXxOTS1vfeVfLYxV5HgGyRMnhCGUGeKKSQNhbRtHefQaqVeYTs64oGppRxv
-	o83tolQPxSQy83zZGVM5dksgtvOaO+ELXIj0cftwL5ydYYuk2AiKMuWxvrni2XK3iG9O8afdzdpdt
-	Tt0xuA8Q6WmRgwNIeqOfEWdtfH5JpAYyvMj/ao8KjO3W5+o2xes9S7zm6Fuj9Iaa9P0Dk/JiBsvRD
-	q3405m0VKuh681QS7k3zojZM0Cc7Glg6OgFSRMYbFSkF5NR/939jOzHTKmAnT8wo3zqjzhQVg4e7B
-	KZfqZF1JXxN0QkHM9N4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9EePArAeIQGlkW7ol/ZnrL994YtcisiZusOcAXa3ESo=; b=USNNLOx/edWekplNaEy7Z7ckt
+	lVC8pUzhDPjQdUSnF1bqNzNlC7zkUEW/EKiQA108U6EeTgZemqwop6E3FcC/fx8JOnUjCOzrqgsaU
+	LgS4gYYDCNVQBMjSpoipWz5tNeC7tTkQXBl+UFmCenXcyvBCw+GDnowaEnDkXvzSofg1tkb6YJN5V
+	Iqat5fmh56Fp7QKT+po2+teUPT+RnqxOWM/IzNqQCF8Q5MenYtv0A9QKDL4sMyP8jqbTr8s508olE
+	uVXYjZrgY65SUNht5Xho+JGIf0uXYROSURqzNbimbKsfYUjFdfE5jSUaPyW0nIK8cArN/ZP+r0OkT
+	OPAKOnzEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsdc-0006ri-QE; Mon, 30 Mar 2020 11:31:28 +0000
+	id 1jIsfU-0007Bb-NS; Mon, 30 Mar 2020 11:33:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsdQ-0006rP-Oy
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:31:18 +0000
+ id 1jIsfE-0007Ah-M7
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:33:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1218731B;
- Mon, 30 Mar 2020 04:31:16 -0700 (PDT)
-Received: from [172.16.1.108] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5E05F3F52E;
- Mon, 30 Mar 2020 04:31:14 -0700 (PDT)
-Subject: Re: SError handling vs. SIGSEGV
-To: Florian Fainelli <florian.fainelli@broadcom.com>
-References: <3da89354-78f7-5f48-9eec-75c74270fa3e@gmail.com>
- <20200328164316.GZ3819@lunn.ch>
- <ccb24fd4-b96a-3c02-80f3-4fea3dc2a989@broadcom.com>
-From: James Morse <james.morse@arm.com>
-Openpgp: preference=signencrypt
-Message-ID: <d5390eef-edd1-360b-5a26-ff100cafc056@arm.com>
-Date: Mon, 30 Mar 2020 12:31:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D940A31B;
+ Mon, 30 Mar 2020 04:33:02 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B5EE3F52E;
+ Mon, 30 Mar 2020 04:33:02 -0700 (PDT)
+Date: Mon, 30 Mar 2020 12:33:00 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH 1/5] arm64: bti: Support building kernel C code using BTI
+Message-ID: <20200330113300.GD4792@sirena.org.uk>
+References: <20200327192107.18394-1-broonie@kernel.org>
+ <20200327192107.18394-2-broonie@kernel.org>
+ <202003281348.B5ECC9DB2@keescook>
 MIME-Version: 1.0
-In-Reply-To: <ccb24fd4-b96a-3c02-80f3-4fea3dc2a989@broadcom.com>
-Content-Language: en-US
+In-Reply-To: <202003281348.B5ECC9DB2@keescook>
+X-Cookie: Ahead warp factor one, Mr. Sulu.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_043116_857855_8B5A0B9D 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200330_043308_767898_6377DE3F 
+X-CRM114-Status: GOOD (  14.29  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,51 +66,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Doug Berger <opendmb@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
- Will Deacon <will@kernel.org>, Dave.Martin@arm.com,
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5061787018348439053=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys,
 
-On 3/28/20 7:41 PM, Florian Fainelli wrote:
-> On 3/28/2020 9:43 AM, Andrew Lunn wrote:
->>> As it stands today, I see no way to have a self hosted test case that
->>> exercises that our GISB bus arbiter blocking works correctly because the
->>> whole kernel is taken down when the test is successful :/
->>
->> Hi Florian
->>
->> Isn't that just the new definition of test success :-)
->>
->> Yes, your testing will be slower, you have to wait for the watchdog to
->> reboot your machine after each successful test.
-
-> I would be fine with this behavior if the exception was taken from EL1,
-> but it is taken from EL0, killing the whole machine because of that
-> sounds like a great way to DDoS your machine without having much
-> valuable information to debug your problem if it exists.
-
-And what if the exception was triggered by an access at EL0, but the CPU had
-switched to EL1 before the response arrived, and the exception was taken?!
+--===============5061787018348439053==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="vni90+aGYgRvsTuO"
+Content-Disposition: inline
 
 
-To 'handle' an SError you need it to be restartable at the CPU and you need to
-know what caused it, so you can fix the error instead of it remaining latent.
-Before the v8.2 RAS extensions you certainly don't have the CPU bits of this.
+--vni90+aGYgRvsTuO
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sat, Mar 28, 2020 at 02:14:09PM -0700, Kees Cook wrote:
+> On Fri, Mar 27, 2020 at 07:21:03PM +0000, Mark Brown wrote:
+
+> > When running with BTI enabled we need to ask the compiler to enable
+> > generation of BTI landing pads beyond those generated as a result of
+> > pointer authentication instructions being landing pads. Since the two
+> > features are practically speaking unlikely to be used separately we
+> > will make kernel mode BTI depend on pointer authentication in order
+> > to simplify the Makefile.
+
+> Some vendors have been making chips with weird combinations of features.
+> Is there a better justification to use beyond "unlikely"?
+
+The design intent is that BTI is complementary to PAC so it would be a
+peculiar implementation choice to do BTI without also doing PAC but yes,
+implementors and system integrators have the freedom to innovate in ways
+that we cannot always forsee.  The other bit of it is that there's
+fairly limited overhead from running PAC enabled code on hardware
+without the support.
+
+> The compiler appears to accept a leading +, so how about:
+
+...
+
+> Or, this is all overkill. :)
+
+I feel better about adding the extra dependency than feeding an option
+to the compiler that looks wrong like -mbranch-protection=+bti (more
+BTI!) but ultimately I don't have strong feelings either way so whatever
+Catalin and Will prefer.
+
+--vni90+aGYgRvsTuO
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6B2OwACgkQJNaLcl1U
+h9APIgf/cISGK7SQjDmMhVW5kKagg9IJoJaSpsZe5tippg/qIhoVJzRdIswLy0fR
+HJmu1IH5b7vtK4oMzkOmrpC/xczRJkGqQ8fuK0mWuq3Lzwn20+l1s62CBvmsFe7C
+HqvcH3/UDbWFE7UyUvRQYfzYOQTERiIXPPTXbiq9kNTb7BacZidu3gAEpvPhY3MA
+/Qq/i1rIBGSXRoEOyZNz0/kxmDJmFyLYzuZuIYWrJqOsxYvKyPYBlmClt4Sm6xpg
+zCauDL3Zo5rkQP6K916/kAIsbohhsvr/Lse8BY7w0CCYWjBWUC0lYJX6sIU/xoC2
+6MxleaN0Fy0J4kQDubbVceEMAuo7Gw==
+=iX3m
+-----END PGP SIGNATURE-----
+
+--vni90+aGYgRvsTuO--
 
 
-Thanks,
-
-James
+--===============5061787018348439053==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5061787018348439053==--
+
