@@ -2,76 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06AA2197AA0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:22:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDA4B197AA5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:25:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFcFX3DA729vjTCRuhz1D6y6w1Fi2LAUR/eNdGlqUTw=; b=aCjJwXK41/cXBH
-	WRonEbJfhFr5b16USGyfCUlfasdHSwH0pzV5CHVAaSOmwCyHtw5Qq4g4BBgaEh9jgYE2lmkmV//zi
-	CEmdrvK3P/TQtTYgk+w5A3dKuaGp7si1ieP3IzgOPMJWVZtB+G8d/kxztUDI3CXctbkl9skG6ORT+
-	nDbGUYcjyX4QxLusVcZspLqRM/1nXbQWaOLyNRXd+5vc6MkeE6mLOa2wQJvoYCPhemZ5r/k0nr92i
-	/fodSenIfW/uaii4xYLYYaA8Vu8WuvcdVWdrqze7usHoJjMcfe5gzW04RrHY6PCzDoE/t/Kq21MBB
-	3Suh3sRFeOGwoDNf/bSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NCVsNAATmeutP3qPUciC4WQxAV425ztkWwsTJCPmsNg=; b=hb2nt4ahoq46NV
+	qqaHqiKeZEuHk34g1e9ZFxSTtAYuWS7GJkjQT/FJibDAE0pjr9LoWjv/brQ4eJENFP3R07AN+u6w5
+	hw6knW/NTaqa7gcgHSqfYKZdSu4Fv5q1swXwS/juAAE49rK5SFgW40EmcjljMv+haY6qkYV//W7jH
+	h0tBkA7ckpOTJOhoFEM+eRBsRJe+87Bgcu10Ajhyo32RoHYt4s97Ily97HA9+4x3bNUUfTeM3gTY+
+	M82ZfTIFmVZdakWF/Lhw9rWHS7GkzPAJCVhmYwf080HJLdYVbClC8VCrM3v68RRsCA77xUrYjngwW
+	3clqK0JlHgs286VCkMRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsUy-0001NY-Fg; Mon, 30 Mar 2020 11:22:32 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsUi-0001J2-4B
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:22:18 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48rVRT66tdz1rx85;
- Mon, 30 Mar 2020 13:22:13 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48rVRT5d3Hz1qqkP;
- Mon, 30 Mar 2020 13:22:13 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id mS2VEcFxqWVX; Mon, 30 Mar 2020 13:22:11 +0200 (CEST)
-X-Auth-Info: 6DQo6+2Jt/0Ys0iyC4ho2lD1FIRPcxTsElASb30D0Cg=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Mon, 30 Mar 2020 13:22:11 +0200 (CEST)
-Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
- for SDMMC2 pins 4-7
-To: Ahmad Fatoum <a.fatoum@pengutronix.de>,
- Patrice CHOTARD <patrice.chotard@st.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20200328171144.51888-1-marex@denx.de>
- <20200328171144.51888-8-marex@denx.de>
- <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
- <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
-Date: Mon, 30 Mar 2020 13:22:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+	id 1jIsYE-00030d-7w; Mon, 30 Mar 2020 11:25:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIsY3-00030B-7i
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 11:25:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38EAE31B;
+ Mon, 30 Mar 2020 04:25:42 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E626F3F52E;
+ Mon, 30 Mar 2020 04:25:38 -0700 (PDT)
+Date: Mon, 30 Mar 2020 12:25:36 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v2 3/5] stack: Optionally randomize kernel stack offset
+ each syscall
+Message-ID: <20200330112536.GD1309@C02TD0UTHF1T.local>
+References: <20200324203231.64324-1-keescook@chromium.org>
+ <20200324203231.64324-4-keescook@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200324203231.64324-4-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_042216_322959_BE7F5229 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200330_042543_322229_2D179DAF 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,39 +64,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Patrick DELAUNAY <patrick.delaunay@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>
+Cc: Jann Horn <jannh@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, kernel-hardening@lists.openwall.com, "Perla,
+ Enrico" <enrico.perla@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Elena Reshetova <elena.reshetova@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/30/20 1:17 PM, Ahmad Fatoum wrote:
-> Hello Patrice,
+On Tue, Mar 24, 2020 at 01:32:29PM -0700, Kees Cook wrote:
+> +/*
+> + * Do not use this anywhere else in the kernel. This is used here because
+> + * it provides an arch-agnostic way to grow the stack with correct
+> + * alignment. Also, since this use is being explicitly masked to a max of
+> + * 10 bits, stack-clash style attacks are unlikely. For more details see
+> + * "VLAs" in Documentation/process/deprecated.rst
+> + */
+> +void *__builtin_alloca(size_t size);
+> +
+> +#define add_random_kstack_offset() do {					\
+> +	if (static_branch_maybe(CONFIG_RANDOMIZE_KSTACK_OFFSET_DEFAULT,	\
+> +				&randomize_kstack_offset)) {		\
+> +		u32 offset = this_cpu_read(kstack_offset);		\
+> +		char *ptr = __builtin_alloca(offset & 0x3FF);		\
+> +		asm volatile("" : "=m"(*ptr));				\
 
-Hi,
+Is this asm() a homebrew OPTIMIZER_HIDE_VAR(*ptr)? If the asm
+constraints generate metter code, could we add those as alternative
+constraints in OPTIMIZER_HIDE_VAR() ?
 
-> On 3/30/20 1:11 PM, Patrice CHOTARD wrote:
->> For your information, another submitted patch uses the same pinctrl sdmmc2_d47_pins_b node with different muxing (SDMMC2_D5)
->>
->> see https://lore.kernel.org/patchwork/patch/1216452/
->>
->> I haven't checked other muxing if there are other conflict.
-> 
-> (author of linked patch here)
-> 
-> I don't like the central stm32mp15-pinctrl.dtsi. I'd have preferred if each
-> file defined the pinctrl groups it is using.
-
-I'm not a big fan of that either, because this is gonna be a
-combinatorial explosion of various pinmux options. But if you have each
-board define it's pinmux, it's also gonna become a massive amount of
-duplication (like iMX). So I cannot tell which one is better ...
-
-So, just apply one patch or the other, let me know what got applied and
-I'll rebase on top of that and resubmit if needed.
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
