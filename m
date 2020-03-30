@@ -2,81 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84680198323
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:15:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B540198322
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:14:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=00oSs9Dh0sjuXfpRHbDUryY3xBBORSg0tFC178SSz6k=; b=RT/qQxdy5jtyNF2sCW7ZYZfqo
-	Mdre0u07NmWMPhcvFWfwExbVEc4I12evCcAOU1/vh00s3NXmnSnH4Msh+jvwfKlkaQXmjF4SUI5dW
-	WFKworF/z+dNdsL8IEkPVieBGy3w2eSVuBhzmww0gZfU2ToFVzXd50ny7S4SVB3UQx788c4cqGG2S
-	8jTNQKRzpHaBBXyPn+TBtWckATnPC+v3L6rdSeHVvR6qSKT4/514nzISwvDLoZJhLOFiQX+4NVD5g
-	obFu6oef9/MeA6r86/ILD8s8cGEufEZ2qdunLa4hzEVzwXk92zJBYH9KvH2suu0iHXHK5YrDDJXIE
-	m+VZz9Q9w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wZr0HRWx37YM9SgkhHkzYd2d8uJROmeHNluhoe8HOfM=; b=BD6qtmjYe/2S/B
+	0nD69g4FXmg7KzwZIYgrkdcKMu7Gu++RtnOSvyufkQjGpHfMOMzbppaV6PsfcfHIwS1pVXl9Ijp/2
+	JZ6VlDLZ3YHTxt5TH/IG1/TnOIVUjrDen+cahz5LtvxfhbxIErDfJs2+hQQNoZFRGLa6SGKbrEGRC
+	OAp6SMwCuAp06DR9u+JLGkZtHqM8u2cRNrwrpRjxf+L29SaCum+g6JQkpqdOL3KnJhOWEdwhtWcfV
+	WvoGrv9FB/KirVegGIBLZLWFjIc9JLcQ1A7KwxRjmwNip+19VG6wv0XfuI486rcxdl9lu/ma4TZ8x
+	oeCBMXnuaKAb6BZ00YfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIyvy-000075-A2; Mon, 30 Mar 2020 18:14:50 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jIyvc-0008EI-9T; Mon, 30 Mar 2020 18:14:28 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIyvR-0008Dd-Ay
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:14:19 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02UIE7X5124911;
- Mon, 30 Mar 2020 13:14:07 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1585592047;
- bh=Ysd2CfzoUryMv7olffzf/9E4mY3hhWXojGKfYzHOL6k=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Rjwo3vpUSjlp3mC2/WZM64s6nB/dhQIu6GTBHE/cLhtJTNoeDbutDwTjPzepHr0LV
- 3J/LRavtV0Ew/ZhxyM+qMfpIAVS+C14TCGYL/Y0LhYJ5ASohgsnmsj6Shmh8AUN6Hw
- twDGupg6w8UITkOoJAq8YNqKbBNPxxLNnNrFrDJ4=
-Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02UIE71J099822
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 30 Mar 2020 13:14:07 -0500
-Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 30
- Mar 2020 13:14:06 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 30 Mar 2020 13:14:06 -0500
-Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02UIE0Qg044169;
- Mon, 30 Mar 2020 13:14:02 -0500
-Subject: Re: [PATCH net-next v6 00/11] net: ethernet: ti: add networking
- support for k3 am65x/j721e soc
-To: Sekhar Nori <nsekhar@ti.com>, Tero Kristo <t-kristo@ti.com>, Vladimir
- Oltean <olteanv@gmail.com>, David Miller <davem@davemloft.net>
-References: <20200323225254.12759-1-grygorii.strashko@ti.com>
- <20200326.200136.1601946994817303021.davem@davemloft.net>
- <CA+h21hr8G24ddEgAbU_TfoNAe0fqUJ0_Uyp54Gxn5cvPrM6u9g@mail.gmail.com>
- <8f5e981a-193c-0c1e-1e0a-b0380b2e6a9c@ti.com>
- <2d305c89-601c-5dee-06be-30257a26a392@ti.com>
- <cac3d501-cc36-73c5-eea8-aaa2d10105b0@ti.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <590f9865-ace7-fc12-05e7-0c8579785f96@ti.com>
-Date: Mon, 30 Mar 2020 21:14:01 +0300
+ id 1jIyvM-0008D3-8s
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:14:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585592051;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=WSSOiFHOZwW6Akj9RYyMY2jtCBIFW/zVvB8W9MGVsm8=;
+ b=fyVKzhpwreYgHrkfeiu0+lVGR1OuyuLfnmdUBndqJlaxjKLQE964BcQjN33QPn3+tFN8uf
+ L4Ftm+8Rf10BYgCjrypu8IEyfaMm8fOF5t2IFs7Y3E3e4MpEryDuncFejYaqZwdjJswFk9
+ 65CgSgjYnHRd0TDerZYHrLDPgn57j0Q=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-144-SvP_wE0yN56mWXsOdFH-og-1; Mon, 30 Mar 2020 14:14:08 -0400
+X-MC-Unique: SvP_wE0yN56mWXsOdFH-og-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6B7C6149C3;
+ Mon, 30 Mar 2020 18:14:06 +0000 (UTC)
+Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id EA6BA10016EB;
+ Mon, 30 Mar 2020 18:14:03 +0000 (UTC)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: James Morse <james.morse@arm.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-2-james.morse@arm.com>
+ <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
+ <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
+ <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
+ <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
+ <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
+ <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
+ <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
+ <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: Red Hat GmbH
+Message-ID: <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
+Date: Mon, 30 Mar 2020 20:14:03 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <cac3d501-cc36-73c5-eea8-aaa2d10105b0@ti.com>
+In-Reply-To: <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_111417_579029_B1D8975A 
-X-CRM114-Status: GOOD (  16.70  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200330_111412_421401_0798BF2C 
+X-CRM114-Status: GOOD (  30.83  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,67 +145,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- devicetree@vger.kernel.org, netdev <netdev@vger.kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, kishon@ti.com, peter.ujfalusi@ti.com,
- Murali Karicheri <m-karicheri2@ti.com>, Olof Johansson <olof@lixom.net>,
- Jakub Kicinski <kuba@kernel.org>, "moderated
- list:ARM/Mediatek SoC support" <linux-arm-kernel@lists.infradead.org>,
- rogerq@ti.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkKCk9uIDMwLzAzLzIwMjAgMTE6MjgsIFNla2hhciBOb3JpIHdyb3RlOgo+IE9uIDMwLzAzLzIw
-IDE6MDYgUE0sIFNla2hhciBOb3JpIHdyb3RlOgo+PiBPbiAzMC8wMy8yMCAxMjo0NSBQTSwgVGVy
-byBLcmlzdG8gd3JvdGU6Cj4+PiBPbiAyOC8wMy8yMDIwIDAzOjUzLCBWbGFkaW1pciBPbHRlYW4g
-d3JvdGU6Cj4+Pj4gSGkgRGF2aWQsCj4+Pj4KPj4+PiBPbiBGcmksIDI3IE1hciAyMDIwIGF0IDA1
-OjAyLCBEYXZpZCBNaWxsZXIgPGRhdmVtQGRhdmVtbG9mdC5uZXQ+IHdyb3RlOgo+Pj4+Pgo+Pj4+
-PiBGcm9tOiBHcnlnb3JpaSBTdHJhc2hrbyA8Z3J5Z29yaWkuc3RyYXNoa29AdGkuY29tPgo+Pj4+
-PiBEYXRlOiBUdWUsIDI0IE1hciAyMDIwIDAwOjUyOjQzICswMjAwCj4+Pj4+Cj4+Pj4+PiBUaGlz
-IHY2IHNlcmllcyBhZGRzIGJhc2ljIG5ldHdvcmtpbmcgc3VwcG9ydCBzdXBwb3J0IFRJIEszCj4+
-Pj4+PiBBTTY1NHgvSjcyMUUgU29DIHdoaWNoCj4+Pj4+PiBoYXZlIGludGVncmF0ZWQgR2lnYWJp
-dCBFdGhlcm5ldCBNQUMgKE1lZGlhIEFjY2VzcyBDb250cm9sbGVyKSBpbnRvCj4+Pj4+PiBkZXZp
-Y2UgTUNVCj4+Pj4+PiBkb21haW4gYW5kIG5hbWVkIE1DVV9DUFNXMCAoQ1BTVzJHIE5VU1MpLgo+
-Pj4+PiAgwqAgLi4uCj4+Pj4+Cj4+Pj4+IFNlcmllcyBhcHBsaWVkLCB0aGFuayB5b3UuCj4+Pj4K
-Pj4+PiBUaGUgYnVpbGQgaXMgbm93IGJyb2tlbiBvbiBuZXQtbmV4dDoKPj4+Pgo+Pj4+IGFyY2gv
-YXJtNjQvYm9vdC9kdHMvdGkvazMtajcyMWUtbWN1LXdha2V1cC5kdHNpOjMwMy4yMy0zMDkuNjog
-RVJST1IKPj4+PiAocGhhbmRsZV9yZWZlcmVuY2VzKToKPj4+PiAvaW50ZXJjb25uZWN0QDEwMDAw
-MC9pbnRlcmNvbm5lY3RAMjgzODAwMDAvZXRoZXJuZXRANDYwMDAwMDAvZXRoZXJuZXQtcG9ydHMv
-cG9ydEAxOgo+Pj4+Cj4+Pj4gUmVmZXJlbmNlIHRvIG5vbi1leGlzdGVudCBub2RlCj4+Pj4gb3Ig
-bGFiZWwgIm1jdV9jb25mIgo+Pj4+Cj4+Pj4gIMKgwqAgYWxzbyBkZWZpbmVkIGF0Cj4+Pj4gYXJj
-aC9hcm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1jb21tb24tcHJvYy1ib2FyZC5kdHM6NDcxLjEz
-LTQ3NC4zCj4+Pj4gYXJjaC9hcm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1tY3Utd2FrZXVwLmR0
-c2k6MzAzLjIzLTMwOS42OiBFUlJPUgo+Pj4+IChwaGFuZGxlX3JlZmVyZW5jZXMpOgo+Pj4+IC9p
-bnRlcmNvbm5lY3RAMTAwMDAwL2ludGVyY29ubmVjdEAyODM4MDAwMC9ldGhlcm5ldEA0NjAwMDAw
-MC9ldGhlcm5ldC1wb3J0cy9wb3J0QDE6Cj4+Pj4KPj4+PiBSZWZlcmVuY2UgdG8gbm9uLWV4aXN0
-ZW50IG5vZGUKPj4+PiBvciBsYWJlbCAicGh5X2dtaWlfc2VsIgo+Pj4+Cj4+Pj4gIMKgwqAgYWxz
-byBkZWZpbmVkIGF0Cj4+Pj4gYXJjaC9hcm02NC9ib290L2R0cy90aS9rMy1qNzIxZS1jb21tb24t
-cHJvYy1ib2FyZC5kdHM6NDcxLjEzLTQ3NC4zCj4+Pj4KPj4+PiBBcyBHcnlnb3JpaSBzYWlkOgo+
-Pj4+Cj4+Pj4gUGF0Y2hlcyAxLTYgYXJlIGludGVuZGVkIGZvciBuZXRkZXYsIFBhdGNoZXMgNy0x
-MSBhcmUgaW50ZW5kZWQgZm9yIEszCj4+Pj4gUGxhdGZvcm0KPj4+PiB0cmVlIGFuZCBwcm92aWRl
-ZCBoZXJlIGZvciB0ZXN0aW5nIHB1cnBvc2VzLgo+Pj4KPj4+IFllYWgsIEkgdGhpbmsgeW91IGFy
-ZSBtaXNzaW5nIGEgZGVwZW5kZW5jeSB0aGF0IHdhcyBhcHBsaWVkIHZpYSB0aGUgSzMKPj4+IGJy
-YW5jaCBlYXJsaWVyLiBUaGV5IGFyZSBpbiBsaW51eC1uZXh0IG5vdywgYnV0IEkgYW0gbm90IHNv
-IHN1cmUgaG93Cj4+PiBtdWNoIHRoYXQgaXMgZ29pbmcgdG8gaGVscCB5b3UuCj4+Pgo+Pj4gWW91
-IGNvdWxkIGp1c3QgZHJvcCB0aGUgRFQgcGF0Y2hlcyBmcm9tIHRoaXMgbWVyZ2UgYW5kIGxldCBt
-ZSBhcHBseSB0aGVtCj4+PiB2aWEgdGhlIHBsYXRmb3JtIGJyYW5jaC4KPj4KPj4gT25lIG90aGVy
-IG9wdGlvbiB3b3VsZCBiZSB0aGF0IERhdmUgbWVyZ2VzIHlvdXIgSzMgdGFnIHdoaWNoIHdhcyBz
-ZW50IHRvCj4+IEFSTSBTb0MgdG8gbmV0LW5leHQuIEl0cyBiYXNlZCBvbiB2NS42LXJjMSwgaGFz
-IG5vIG90aGVyIGRlcGVuZGVuY2llcywKPj4gaXMgYWxyZWFkeSBpbiBsaW51eC1uZXh0LCBzaG91
-bGQgYmUgaW1tdXRhYmxlIGFuZCBzYWZlIHRvIG1lcmdlLiBUaGlzCj4+IGhhcyB0aGUgYWR2YW50
-YWdlIHRoYXQgbm8gcmViYXNlIGlzIG5lY2Vzc2FyeSBvbiBuZXQtbmV4dC4KPj4KPj4gZ2l0Oi8v
-Z2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2tyaXN0by9saW51eAo+PiB0
-YWdzL3RpLWszLXNvYy1mb3ItdjUuNwo+IAo+IEZXSVcsIEkgd2FzIGFibGUgdG8gcmVwcm9kdWNl
-IHRoZSBidWlsZCBmYWlsdXJlIHJlcG9ydGVkIGJ5IFZsYWRpbWlyIG9uCj4gbmV0LW5leHQsIG1l
-cmdlIFRlcm8ncyB0YWcgKGFib3ZlKSBjbGVhbmx5IGludG8gaXQsIGFuZCBzZWUgdGhhdCBBUk02
-NAo+IGRlZmNvbmZpZyBidWlsZCBvbiBuZXQtbmV4dCBzdWNjZWVkcyBhZnRlciB0aGUgbWVyZ2Uu
-CgpUaGFuayB5b3UgU2VraGFyIGZvciBjaGVja2luZyB0aGlzLgoKSSdtIHZlcnkgc29ycnkgZm9y
-IGludHJvZHVjaW5nIHRoaXMgaXNzdWUuIEkndmUgdHJpZWQgaGFyZCB0byBhdm9pZCBzdWNoIGlz
-c3VlLApidXQgc3RpbGwgbWlzc2VkIGl0IChwcm9iYWJseSBJIGhhdmUgaGFkIHRvIGRyb3AgRFQg
-cGF0Y2hlcyBmcm9tIGxhc3Qgc3VibWlzc2lvbgphbmQgc2VuZCB0aGVtIHNlcGFyYXRlbHkpLgoK
-U29ycnkgYWdhaW4uCgotLSAKQmVzdCByZWdhcmRzLApncnlnb3JpaQoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 30.03.20 19:17, James Morse wrote:
+> Hi David,
+> 
+> On 3/30/20 2:13 PM, David Hildenbrand wrote:
+>>> Adding a sentence about the way kexec load works may help, the first paragraph
+>>> would read:
+>>>
+>>> | Kexec allows user-space to specify the address that the kexec image should be
+>>> | loaded to. Because this memory may be in use, an image loaded for kexec is not
+>>> | stored in place, instead its segments are scattered through memory, and are
+>>> | re-assembled when needed. In the meantime, the target memory may have been
+>>> | removed.
+>>>
+>>> Do you think thats clearer?
+>>
+>> Yes, very much. Maybe add, that the target is described by user space
+>> during kexec_load() and that user space - right now - parses /proc/iomem
+>> to find applicable system memory.
+> 
+> (I don't think x86 parses /proc/iomem anymore). I'll repost this patch with that
+> expanded commit message, once we've agreed this is the right thing to do!
+
+Right, I can see kexec-tools parsing /sys/firmware/memmap first.
+Unfortunately, all hotplugged memory (via add_memory()) is indicated
+there as System RAM ... including memory added by virtio-mem.
+
+I think we should adapt the type there as well. (in your patch #2)
+
+	firmware_map_add_hotplug(start, start + size, "System RAM");
+
+> 
+> 
+>>>> I wonder if we should instead make the "kexec -e" fail. It tries to
+>>>> touch random system memory.
+>>>
+>>> Heh, isn't touching random system memory what kexec does?!
+>>
+>> Having a racy user interface that can trigger kernel crashes feels very
+>> wrong. We should limit the impact.
+> 
+> 
+>>> Its all described to user-space as 'System RAM'. Teaching it to probe
+>>> /sys/devices/memory/... would require a user-space change.
+>>
+>> I think we should really rename hotplugged memory on all architectures.
+>>
+>> Especially also relevant for virtio-mem/hyper-v balloon, where some
+>> pieces of (hotplugged )memory blocks are partially unavailable and
+>> should not be touched - accessing them results in unpredictable behavior
+>> (e.g., crashes or discarded writes).
+> 
+> I'll need to look into these. I'd assume for KVM that virtio-mem can be brought
+> back when its accessed ... its just going to be slow.
+
+Touching unplugged virtio-mem memory can result in unpredictable
+behavior. Touching (some) unplugged Hyper-V memory will be handled
+similarly AFAIK.
+
+[...]
+
+>> 1. It's racy. If memory is getting offlined/unplugged just while user
+>> space is about to trigger the kexec_load(), you end up with the very
+>> same triple-fault.
+> 
+> load? How is this different to user-space providing a bogus address?
+
+I guess it's not different. It's just racy because user space with good
+intend could crash the system :)
+
+> 
+> Sure, user-space may take a nap between parsing /proc/iomem and calling
+> kexec_load(), but the kernel should reject these as they would never work.
+> 
+> (I can't see where sanity_check_segment_list() considers the platform's memory.
+> If it doesn't, we should fix it)
+
+Right, that's what I meant. I was not able to find any sanity checks.
+Maybe they are in place but I was not able to spot them.
+
+> 
+> Once the image is loaded, and clashes with a request to remove the memory there
+> are two choices: secretly unload the image, or prevent the memory being taken
+> offline.
+
+Exactly. Or make "kexec -e" fail.
+
+> 
+> 
+>> 2. It's semantically wrong. kexec does not need online memory ("managed
+>> by the buddy"), but still you disallow offlining memory.
+> 
+> It does need the memory if you want 'kexec -e' to succeed.
+> If there were any sanity tests, they should have happened at load time.
+
+Offlining != removing. That's the point I was trying to make. (and we
+don't want to block removing of memory in the kernel any other way)
+
+> 
+> The memory is effectively in use by the loaded kexec image. User-space told the
+> kernel to use this memory, you should not be able to then remove it, without
+> unloading the kexec image first.
+
+It's not in use before you do the "kexec -e" IMHO.
+
+> Are you saying feeding bogus addresses to kexec_load() is _expected_ to blow up
+> like this?
+
+No, not at all. I think this should be fixed if this is possible.
+
+> 
+>> I would really much rather want to see user-space choosing boot memory
+>> (e.g., renaming hotplugged memory on all architectures), and checking
+>> during "kexec -e" if the selected memory is actually "there", before
+>> trying to write to it.
+> 
+> How does 'kexec -e' know where the kexec kernel was loaded? You'd need to pass
+> something between 'load' and 'exec'. How do you keep existing user-space working
+> as much as possible?
+
+If we use new types (e.g., "System RAM (hotplugged)"), looks like most
+of kexec will continue working (memory will be treated like
+RANGE_RESERVED or ignored).
+
+I guess we would still have to teach kexec-tools the new types,
+primarily to keep the crash memory ranges from getting detected
+properly. (no idea how they are used, will have to take a closer look)
+
+> 
+> What do you do if the memory isn't there? User-space just called reboot(), it
+> would be better to avoid getting into the situation where we have to fail that call.
+
+In kernel_kexec() we already fail if there is no kernel image loaded, so
+we can similarly simply fail if the kernel image cannot be moved to the
+target memory IMHO.
+
+-- 
+Thanks,
+
+David / dhildenb
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
