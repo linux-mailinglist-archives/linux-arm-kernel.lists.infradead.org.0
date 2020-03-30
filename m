@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18FA9197B41
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 13:52:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC390197B8D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 14:08:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UG1ku73p5J28KClzrs4+AE+git/t1e3ebdCsejx1rtI=; b=GChBiVxnJ6hXe7
-	S0+azaEBvt0QmGx6tSqH3Mh57VWCKflLBdtq5T2JjYqPdHA0lsruu0gfqG3VD4puHCG6qyfYo2dFe
-	ax0QuROCQpb185pRc6ZKZiabpu2jGXRtOJEdClfDSuSJyqZnqPPC40VGXALFmcC0JdAn7moeNutZZ
-	bYd4SZjfgskVSu3erWyXAEozj9fKIXAGehjk4tIMi6jSsMr7EJf0rTvHiaeN5vKQoAtLOJ5bu4gGF
-	U7yTGXJCK0uEirRO35mTYOt2wgZmJ74ee6OGxN7DqUiKrgLDLWD38sIAoXQWWi7X/+ubn9TIf8sHM
-	92VaLtlK0rMFkvbR0btQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=G+sZaC//hIfwG2hXYPp+U0923C/GUMvOk0al2UrlVcw=; b=puoF3fTEiQJHVr
+	+XYzsSaTQ0PmFkdEcIc3GfBgnesOcM3pBMCcOl3aZZMN7BYoZa/CGDOl0htOZA24Wop6YpvQZGMK8
+	thpUfcOi4vR8TzRl2HlV6xh8YKKl7i+5pZlOzgMfCtvfha5ZTR7VpTHf2h5WPeUrKTqqcAlGq6uLh
+	LzAKjMGo5NGggqJiSx5YDQiZDf9oEki+UErWCv5XmpG9BOFZ8Ejp7ORp+Jsjqk4s9FeWDtxcDKpjb
+	PZufb7X1mCv7Hv8g3DWY9Bzm06b1zknqN4DzX9av65icotFG3YRBE82j3YoJZRO+mruaObv9gyflj
+	PyUVffkMjOY44OyjcmGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIsxt-0001Fg-B8; Mon, 30 Mar 2020 11:52:25 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jItDA-0000Q1-JK; Mon, 30 Mar 2020 12:08:12 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIsxf-0001Em-FH; Mon, 30 Mar 2020 11:52:12 +0000
-Received: by mail-lf1-x143.google.com with SMTP id c5so13897437lfp.5;
- Mon, 30 Mar 2020 04:52:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oUxAOgz8NXHq1Pf5is4saO0kcIUnQRpCo7D1rQX9etA=;
- b=RvTFD7FfX+RF2ea4gaF0j0B2FI534aB0tSVvis0sLeVy4mJcjjSl4QzkrKQxQrs/Lc
- HnSvgz2uPVhL0YBxzkToXX0ETdvrkXkTatxWl5GYZ3Et+xaXK4x9aPAdTDpdFdBHu3LF
- PMXP9o1RYCtkWmFsczRDmvIF/BzwpyQjLk2sSc3ltABf097AdbHhRrcgijhcCicFh6aR
- T0JGsIhIFKx7DyT2mBRoaK6iaHLQKAK+gC/Vv15Z5kpoiAku3KSocHewLR2j8Fd3QtvF
- t0OOgv/I94yviCfCMx7/4Wv5e9qp/KbKw9qXFzvEADHzUn0Nfjrt2u4S0sjQoIEyB6Mz
- 8r8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oUxAOgz8NXHq1Pf5is4saO0kcIUnQRpCo7D1rQX9etA=;
- b=fDHmZqfXoCNrammWceT2s9jC9doxOwP+044Iy3NuwanBU3nGS5fYIAfwtfBjo5AfCe
- qRPrz6r5acDqqtqxQmlgzhx6qEnidCq/st5Jjubh3LQ7b2eAfzxOo3AL+H/rsXAXUuNA
- lbyVFo51SqUjMe2yrCTp3Jx6TK7q0hrpRkApWobG2pL3885aBrlhnmzUsFGfK/OKRodj
- iGsORq5xZxHzYganXYuO8nuEiLfnnEtr+5yadiKSp6w4WQR25aK4NW/eO6Iy2pi13dZN
- HC3f32RmQ4Tjet39QvI5IkZiQ1cDZBqWDBX/P1S/252mf32lsC7HhsEkffcdJ548FrUr
- BpuA==
-X-Gm-Message-State: AGi0PubMKLnH5Wa28F3JkX+464uajViVoebfxAQcevk5ztayhTwE1244
- CYwuu/VJRPLF+VVK9HOEeEk6qUrAh1VCeem6HVeagrfFXBA=
-X-Google-Smtp-Source: APiQypIs6reaMQbUKLAdY3KvxuAlR9R0M+IDM0rH838tBggLkO5g/vojQtpptaZ+TdidZCUDxI0stG9ysPseXJpdgfM=
-X-Received: by 2002:a19:4cc3:: with SMTP id z186mr7582516lfa.69.1585569129458; 
- Mon, 30 Mar 2020 04:52:09 -0700 (PDT)
+ id 1jItCB-0007x3-KB
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 12:07:13 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jItBj-0001OI-Sk; Mon, 30 Mar 2020 14:06:43 +0200
+Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jItBi-0002ZE-Hm; Mon, 30 Mar 2020 14:06:42 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH v4 0/5] mainline Protonic boards
+Date: Mon, 30 Mar 2020 14:06:35 +0200
+Message-Id: <20200330120640.9810-1-o.rempel@pengutronix.de>
+X-Mailer: git-send-email 2.26.0.rc2
 MIME-Version: 1.0
-References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
- <20200330113542.181752-6-adrian.ratiu@collabora.com>
-In-Reply-To: <20200330113542.181752-6-adrian.ratiu@collabora.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 30 Mar 2020 08:52:00 -0300
-Message-ID: <CAOMZO5CKr7hSUFtb9b05rpRtpp9mb9ZyeSVqqiDXvppHJEWu5w@mail.gmail.com>
-Subject: Re: [PATCH v5 5/5] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_045211_521601_4EC9D13D 
-X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-CacheID: sfid-20200330_050711_798656_9F6C1AE7 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,34 +66,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Jonas Karlman <jonas@kwiboo.se>, Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Andrzej Hajda <a.hajda@samsung.com>,
- NXP Linux Team <linux-imx@nxp.com>, linux-rockchip@lists.infradead.org,
- kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 30, 2020 at 8:35 AM Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
+changes v4:
+- VT7: fix typo
 
-> +        panel@0 {
-> +            compatible = "sharp,ls032b3sx01";
-> +            reg = <0>;
-> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
-> +            ports {
-> +                port@0 {
+changes v3:
+- move compatible to the start of node
+- move status to the end
+- use generic names in compatible
+- refactor dts/dtsi
+- use alphabet order for pinctrl and phandels
+- remove unused or currently not supported nodes
 
-There is a unit address here without a corresponding reg property.
-This gives warning with 'make dt_binding_check'
+changes v2:
+- squash PRTI6Q patches
+
+Oleksij Rempel (5):
+  dt-bindings: vendor-prefixes: Add an entry for Protonic Holland
+  ARM: dts: add Protonic PRTI6Q board
+  ARM: dts: add Protonic WD2 board
+  ARM: dts: add Protonic VT7 board
+  ARM: dts: add Protonic RVT board
+
+ .../devicetree/bindings/arm/fsl.yaml          |   4 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ arch/arm/boot/dts/Makefile                    |   4 +
+ arch/arm/boot/dts/imx6dl-prtrvt.dts           | 203 +++++++
+ arch/arm/boot/dts/imx6dl-prtvt7.dts           | 473 +++++++++++++++
+ arch/arm/boot/dts/imx6q-prti6q.dts            | 551 ++++++++++++++++++
+ arch/arm/boot/dts/imx6q-prtwd2.dts            | 188 ++++++
+ arch/arm/boot/dts/imx6qdl-prti6q.dtsi         | 185 ++++++
+ 8 files changed, 1610 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtrvt.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtvt7.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prti6q.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prtwd2.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-prti6q.dtsi
+
+-- 
+2.26.0.rc2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
