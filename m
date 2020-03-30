@@ -2,96 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FDDE1982CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 19:54:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 873E3198312
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:11:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tZt8Zb1FMnvG95dXpVjusrySrInxUbeyQqRn6dJVnFQ=; b=BYr98GmXIdprtzUPkyrjFTa3j
-	xwznbZCKMuvKejwHCFZmiV8cdzX6rbMWuyCFD3ohQ8f7TkoXt3RsxR3Feky3l6R+A3IzbEBzrp25i
-	VUk9S8oWSt2+1gceNDsqaR7jJQVMIJ7psVM5jSzasPzi41v/Dg1eDWAfp9bTPrAHI5MGnUPGPHXWH
-	PDz5BdkEj7bI8uJknCRx5KNhXr88Wmoszr1L4WSYzxX2fogYwyE6DnhHktz4tiwHcI/jBlOHSv3lh
-	Iv8IjEf2hwrHLdQenkzXrrv5WuBatkuo5aslyiM4sEqW86ykp47q0zFWsuxR5/VrHReR4queTfbMA
-	FVx9E0wcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TmtDyUhmwm+zj2hk2rCF6LSj4We+BV7yR6cadc6WEe0=; b=lwuNzhslIMfCSe
+	JCyTebkp9sgjhh22UBOMAd7AXM3SGTcZFs818rbisgHps9i1bzCKw9NTf4a1RrWC8z+R+BVCx50yq
+	FuY3XhJ3t4N/e7Wa+8uQevVqERLDa0eORaO/95bONcAkK8fhlSmvb1pr6zAUrT6HdQGdLHVCBoy24
+	b7I4nw4iSONw3ZvVsrruUrWT292W8WXg6SExSCN66r4To/8XFC2M6eCSB2U64G/A2XwMEMG6s1+VY
+	tuJnhzc5iUTE3UZF53gAwaBay7PNyTBPGz6aBLlbjzGk+70uJgwsiD5A0SxvInjdhVGcaYltbkuW/
+	rawuFhkJw0IZ5z8Lao1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIybu-0008KB-Es; Mon, 30 Mar 2020 17:54:06 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1jIysM-0006JE-Nw; Mon, 30 Mar 2020 18:11:06 +0000
+Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIybe-0008F2-Sm
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 17:53:52 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id CEF555C0156;
- Mon, 30 Mar 2020 13:53:49 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Mon, 30 Mar 2020 13:53:49 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=CO/QIjk6nVgu5l6xwmRAbGjYJII
- JyujEhdRtGQKC0yE=; b=WDPNg7gjzTvVo7d+rIGUCh5Q+yydtxODX3VC2EbKStl
- l8HDIRZLUTl3O831dUMZEC/1GrKL8CFx0BdqMcKNMgiv+MQLc87HmlX2iX7H4FYq
- 15azSmdvBc4FBn3eNMFlSixNbxYyRA1BaVvZVlCRW+SWYSi6qeHnd6yURHIH0Wm1
- dCsTdOghvAo+cFxuWNpq63AX2lZWphfkq4zYE5e5/lhERtwYQPQQakNqZHWbiS/K
- LI/h0UxifIw8thUWg1m1u77S7nNQK2BAW5FoIlBUUqIpMPyiPZGT3E8WmtPT4ySZ
- cl+5S+zDpLBkD0GhuNDz4ASSDrfXj6cfXmvQFQkcWXQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=CO/QIj
- k6nVgu5l6xwmRAbGjYJIIJyujEhdRtGQKC0yE=; b=NSrzvOuU7xZY7KjoQZaek9
- QKirBMApR5sbHK6sByJvBcJby3HAsNE+xCGVmWqAIWuhNv79adbpcyehrdEEk8ne
- 5dqft9smcmI5ief3RdWQhly9sHK07X/FZtiQBREC99HDQF9hkZ55H0Ely0fM1blu
- ZVPt5k/UlMnmFB7C3cg+jgVucKc7usy9bM5glkMtYXyAyEIFsluL2j6PsGeV4qOg
- QvmvYnRRf0NwNsROHyQVLrJGV8GcAu67ThtDdHXeWkHNAOIFgLCMPalNp/AeBMMo
- 0ldgHtNrW0Os9PxSah4jIUpnLvlrgXIw+8OHUQhXkWOJBq1duIe+FA2ggfINO2CQ
- ==
-X-ME-Sender: <xms:LTKCXvlC9v0ufYkzn3wmyUvw4StGhSJNYPPGh95j174wXGtFz01XGQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrudeihedguddukecutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihi
- mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkpheple
- dtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgr
- ihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:LTKCXu9SAXFkJ4gGPB073ikDj8R8hAVTuqRrRFKmUtHz3kBX-nDRlw>
- <xmx:LTKCXrHoetWILzt06Wtg1Cy1xk_wOmF8D70AT8QaAVq96XawU7D83g>
- <xmx:LTKCXm0GepNm5MEIzYtsyxjLuVl53wvhdJuE7vUfCTYi0CgEJ4Ecjw>
- <xmx:LTKCXk5uQMWH-EwF-EBHfQDTtDuKlvHCtSp6v_2mv5dXl-8F6TH6sA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 3B89D306CA01;
- Mon, 30 Mar 2020 13:53:49 -0400 (EDT)
-Date: Mon, 30 Mar 2020 19:53:47 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: olinuxino: add user red LED
-Message-ID: <20200330175347.r4uam7cybvuxlgog@gilmour.lan>
-References: <20200325205924.30736-1-ynezz@true.cz>
+ id 1jIysC-0006IY-5o; Mon, 30 Mar 2020 18:10:57 +0000
+Received: by mail-io1-f67.google.com with SMTP id x9so12373574iom.10;
+ Mon, 30 Mar 2020 11:10:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=IclrqcW8ysqtuVmS55rZcOs0qoTX1+BcxJZ+I1k0oLs=;
+ b=jy7k4WRn29vUNxMMJsQIepMrrPSX32XcmSGxE90PMK6Xi1P4jz4WtVStpa6/05FNI5
+ pUHncQt9xAa2eeXa4gtN0tmaUvLwlbvy6OeqNyQvxsyWBf2oS61zTqZ86IfksBxCFj8x
+ FoTpMyJDiG1qJWU01FJIJ87a/Ytho9ODzXdOze9JMkoraK18vP2HBt77yD/ccwpU13aD
+ 0ENkCzUUZlyqufBLnLLDsGa6T3IWt+RH6ZzAl+hgjn5IfeTPXOkuQBG0yuQzY6qxe6wV
+ g22fA4bDtbXbvp63UjKfslJ1tzk11CIv+v52JHlijD1NNX1CJ88XlgfAus+QSFvrlXH4
+ NNvQ==
+X-Gm-Message-State: ANhLgQ2bopbKT43PyJIonDTwEoy+T1DLiwrhEOU8TVRVukpHt6E5apeU
+ hhYDn2ZDvyBOkSzxF1gHzQ==
+X-Google-Smtp-Source: ADFU+vtRD5i4b5WuUylbDfvEsPS/m7kyJL1kE9fsXtKCkDqfbgwFrDee2r1oGdFUeVl9G7yiIgiu4A==
+X-Received: by 2002:a6b:d808:: with SMTP id y8mr11628918iob.121.1585591855212; 
+ Mon, 30 Mar 2020 11:10:55 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id j23sm4248204ioa.10.2020.03.30.11.10.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Mar 2020 11:10:54 -0700 (PDT)
+Received: (nullmailer pid 7604 invoked by uid 1000);
+ Mon, 30 Mar 2020 18:10:52 -0000
+Date: Mon, 30 Mar 2020 12:10:52 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v1 1/3] dt-bindings: iio: adc: convert rockchip saradc
+ bindings to yaml
+Message-ID: <20200330181052.GA7527@bogus>
+References: <20200313132926.10543-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200325205924.30736-1-ynezz@true.cz>
+Content-Disposition: inline
+In-Reply-To: <20200313132926.10543-1-jbx6244@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_105351_124910_CEBD18AE 
-X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-CacheID: sfid-20200330_111056_221586_93A5D606 
+X-CRM114-Status: UNSURE (   9.49  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.67 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,59 +91,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5958276407151018012=="
+Cc: devicetree@vger.kernel.org, lars@metafoo.de, heiko@sntech.de,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
+ jic23@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 13 Mar 2020 14:29:24 +0100, Johan Jonker wrote:
+> Current dts files with 'saradc' nodes are manually verified.
+> In order to automate this process rockchip-saradc.txt
+> has to be converted to yaml.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/iio/adc/rockchip-saradc.txt           | 37 ----------
+>  .../bindings/iio/adc/rockchip-saradc.yaml          | 79 ++++++++++++++++++++++
+>  2 files changed, 79 insertions(+), 37 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+>  create mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+> 
 
---===============5958276407151018012==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="nwt6gyfwcuq2byho"
-Content-Disposition: inline
-
-
---nwt6gyfwcuq2byho
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Mar 25, 2020 at 09:59:24PM +0100, Petr =C5=A0tetiar wrote:
-> There is a red LED marked as `GPIO_LED1` on the silkscreen and connected
-> to PE17 by default. So lets add this missing bit in the current hardware
-> description.
->
-> Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
-
-QUeued for 5.8, thanks!
-Maxime
-
---nwt6gyfwcuq2byho
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXoIyKwAKCRDj7w1vZxhR
-xd6FAQDYqWDZm020M4w5o+B3FOfze/BkzqWC4OhCWE+zV1F8MwD8DpZYBKfNcDSq
-p4b9HbGJU/Wpobkc5NXQmfPwF+viIww=
-=v6rS
------END PGP SIGNATURE-----
-
---nwt6gyfwcuq2byho--
-
-
---===============5958276407151018012==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5958276407151018012==--
-
