@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3511197CB2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:18:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52DB5197CC4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 15:23:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7kuliynD1/VV+bInh6TzpKSa+gGDBBP9Hxz8mVbhO/Q=; b=Vk9+pMajjbzbHu
-	jG9VZhM0v42K6BdCRBPXe+TT+b35JSzX+LaO4zEjUZymaGzGukLkYkFhaRZXFrmlDUVDoQ85rXVc7
-	me3CJNIG9ELdWKw0vHsEhZ8OSa4RybIgYu0kugnzj7Z/AiclrymIjLASDaP58siYhJ9lZfWFO5ofz
-	4IbofxNkfVuoXdGTWWTxfMVQQv2+mtj3OsXLoE23xo36KjFJiJdr2GmuDrk7WzxAqm/xJXtBHpqei
-	WrJ/zXMvj2jsBl6LVPONucWZUJuWUzDcUVylX8rOgQMueiviLXxKpBbI9tWujap9lr1dcJP9DL6Yw
-	qBgb+0y07jvltynoVUlQ==;
+	List-Owner; bh=AV+jrowtEqKZ8oWb4s37T5govFRK2A/FgC6ofnKzixg=; b=UYLOaG5SCYH57/
+	VUxPNqoM5h7c3sZ3znOfCwo438YEC/nAok1XdRLaYCIEBIyK9q9yA9gbJEPG/a5U/UOCv2Pi27idp
+	wVMGerLWmid/DR/cGDaqcGfx+UWcXif0XayxmIGytjADWst5ds2w05Jc5qy8Gfphoj9fwMFpzZ6lV
+	dKer6sYrEG8PgsuL8dSt6sZoktgc6UC2Io0GJLp2b/GqmJkpk0BlULml20vMkqDA/i40jdUtDsH1j
+	k3ZtkszDKL+AGfjv7kxAj0TYMITnxtk4DFhVtWz/ZAqCYBGIOZuGHqCWFqONg49++opgSqlff6/hu
+	+UQHiFomK5C9H+hHuCEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIuJI-0005Ig-I6; Mon, 30 Mar 2020 13:18:36 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jIuNt-0007M9-E2; Mon, 30 Mar 2020 13:23:21 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIuJ5-0005Hi-K6
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:18:25 +0000
+ id 1jIuNj-0007LE-JM
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 13:23:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585574302;
+ s=mimecast20190719; t=1585574588;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=BGWvgqrMPaCiFH31frMNGQyTrYjG46OYLM4AqOI1CBI=;
- b=Kf8bq659XgepmKpqFkWB9ZpLKyN7WIefwbAUI303u8FfWUqrxMxKo9PN6yqj0gPuyDai8t
- bwvN4FUULPqYE81Z1HBER8Aw/hAm9xnsosCEQRGvZ5Xovnd3fihBahwHn66yXwwTIJd1PL
- 8J8PAT/c1U4WkONqTosIcM0XXxSIuTE=
+ bh=Eid6OBsQUr6r79q1JxaE3tCuJ1rMkgtkgbFto8J/T0k=;
+ b=Vn1FIaFWKstj4tH4hykx9F4k9TBYMTIK9+RvgvH8JeZ45izTKa/oJ3wl6jOqNSoK6LmdvS
+ yChOQb78puzcEGve1vGRVFlaDVIgIfeqK/1ZaSr22LIBoD/c6BSSoLnU7r41GSyVznWDpl
+ LUpNotJfn/nqfubOyV1P6kuU3atxdtk=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-102-ReqDw5CoNxWViHo975ARaw-1; Mon, 30 Mar 2020 09:18:21 -0400
-X-MC-Unique: ReqDw5CoNxWViHo975ARaw-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
+ us-mta-445-rr6hxadNNJKHonAYS-CmIA-1; Mon, 30 Mar 2020 09:23:06 -0400
+X-MC-Unique: rr6hxadNNJKHonAYS-CmIA-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8AD7918AB2C0;
- Mon, 30 Mar 2020 13:18:19 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0BD9B13F7;
+ Mon, 30 Mar 2020 13:23:05 +0000 (UTC)
 Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6EF5696B72;
- Mon, 30 Mar 2020 13:18:14 +0000 (UTC)
-Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
- use
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A10835C1B5;
+ Mon, 30 Mar 2020 13:23:02 +0000 (UTC)
+Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
+ memory resource names
 To: James Morse <james.morse@arm.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
- <6725543d-81ee-537f-e132-ef26fe62c452@redhat.com>
- <0ee0556d-9903-1b17-8c58-e847f4c00816@arm.com>
+ <20200326180730.4754-3-james.morse@arm.com>
+ <52d6fd33-c15d-b842-84ed-b4a74265199f@redhat.com>
+ <25aa3f43-5aa9-653f-0910-dd7b75527e08@arm.com>
 From: David Hildenbrand <david@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
@@ -97,26 +98,26 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <fd6434ca-0af2-ef75-a83a-2ef3d2deefda@redhat.com>
-Date: Mon, 30 Mar 2020 15:18:13 +0200
+Message-ID: <1090cc16-fa6b-8dd2-8c41-22136f733f00@redhat.com>
+Date: Mon, 30 Mar 2020 15:23:01 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <0ee0556d-9903-1b17-8c58-e847f4c00816@arm.com>
+In-Reply-To: <25aa3f43-5aa9-653f-0910-dd7b75527e08@arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_061823_740889_0CC76AF6 
-X-CRM114-Status: GOOD (  18.98  )
+X-CRM114-CacheID: sfid-20200330_062311_729395_6829F350 
+X-CRM114-Status: GOOD (  19.86  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ no trust [216.205.24.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -143,62 +144,72 @@ Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
  linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
  Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+ Vitaly Kuznetsov <vkuznets@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27.03.20 16:42, James Morse wrote:
-> Hi David,
+>>> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+>>> index 0a54ffac8c68..69b03dd7fc74 100644
+>>> --- a/mm/memory_hotplug.c
+>>> +++ b/mm/memory_hotplug.c
+>>> @@ -42,6 +42,10 @@
+>>>  #include "internal.h"
+>>>  #include "shuffle.h"
+>>>  
+>>> +#ifndef MEMORY_HOTPLUG_RES_NAME
+>>> +#define MEMORY_HOTPLUG_RES_NAME "System RAM"
+>>> +#endif
+>>
+>> So I assume changing this for all architectures would result in some
+>> user space tool breaking? Are we aware of any?
 > 
-> On 3/27/20 9:27 AM, David Hildenbrand wrote:
->> On 26.03.20 19:07, James Morse wrote:
->>> arm64 recently queued support for memory hotremove, which led to some
->>> new corner cases for kexec.
->>>
->>> If the kexec segments are loaded for a removable region, that region may
->>> be removed before kexec actually occurs. This causes the first kernel to
->>> lockup when applying the relocations. (I've triggered this on x86 too).
->>>
->>> The first patch adds a memory notifier for kexec so that it can refuse
->>> to allow in-use regions to be taken offline.
+> Last time we had to touch arm64's /proc/iomem strings I went through debian's
+> codesearch for stuff that reads it, kexec-tools was the only thing that parsed
+> it in anger. (From memory, the other tools were looking for PCIe windows to do
+> firmware flashing..)
 > 
->> IIRC other architectures handle that by setting the affected pages
->> PageReserved. Any reason why to not stick to the same?
-> 
-> Hmm, I didn't spot this. How come core code doesn't do it if its needed?
-> 
-> Doesn't PG_Reserved prevent the page from being used for regular allocations?
-> (or is that only if its done early)
-> 
-> I prefer the runtime check as the dmesg output gives the user some chance of
-> knowing why their memory-offline failed, and doing something about it!
+> Looking again, having qualifiers on the end of 'System RAM' looks like it could
+> confuse 's390-tools's detect_mem_chunks parser.
 
-I was confused which memory we are trying to protect. Understood now,
-that you are dealing with the target physical memory described during
-described during kexec_load.
-
-[...]
+Good to know, we should find out if this could work.
 
 > 
->> Also, makedumpfile will check if the
->> sections are still around IIRC.
+> It looks like the strings that come out of 'FIRMWARE_MEMMAP' are a duplicate set.
 > 
-> Curious. I thought the vmcore was virtually addressed, how does it know which
-> linear-map portions correspond to sysfs memory nodes with KASLR?
-
-That's a very interesting question. I remember there was KASLR support
-being implemented specifically for that - but I don't know any details.
-
->> Not sure what you mean by "Unaware kdump from user-space".
 > 
-> The existing kexec-tools binaries, that (I assume) don't go probing to find out
-> if 'System RAM' is removable or not, loading a kdump kernel, along with the
-> user-space generated blob that describes the first kernel's memory usage to the
-> second kernel.
+>> I do wonder if we should simply change it for all architectures if possible.
+> 
+> If its possible that would be great. But I suspect that ship has sailed,
+> changing it on other architectures could break some fragile parsing code.
 
-Finally understood how kexec without kdump works, thanks.
+I assume any parser has to be prepared for new types showing up.
+Otherwise these would not be future proof. The question is if a common
+prefix is problematic.
+
+E.g., Use "Hotplugged System RAM" instead of "System RAM (hotplug)"
+
+> 
+> I'm wary of changing it on arm64, the only thing that makes it tolerable is that
+> memory hot-add was relatively recently merged, and we don't anticipate it being
+> widely used until you can remove memory as well.
+> 
+> Changing it on arm64 is to prevent today's versions of kexec-tools from
+> accidentally placing the new kernel in memory that wasn't described at boot.
+> This leads to an unhandled exception during boot[0] because the kernel can't
+> access itself via the mapping of all memory. (hotpluggable regions are only
+> discovered by suitably configured ACPI systems much later)
+
+I want the very same for virtio-mem (initially x86-only, but later open
+for all archs). Can also be interesting for Hyper-V. kexec should not
+try to use hotplugged memory as kexec target, as memory blocks can be
+partially inaccessible.
+
+Of course, I can provide an interface to override the name via
+add_memory(), but having it on all architectures handled in a similar
+way right from the start would be nicer.
+
 
 -- 
 Thanks,
