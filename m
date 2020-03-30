@@ -2,96 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61EF619832F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:16:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4742519834C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 20:23:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ytJWW8o9beaxpZKHZUu7mDe20XO+uTFkQekHj1hyMk=; b=BFZ+JBmRw8jzfm
-	i5S9DdhO2qJGWfRYzPHKAPeOobo/iR2IhDUEmSajgr+eEAin5xNr/01vAlnpiIbV8cocYBh4ItIGd
-	G17vszmFZwODg/k88o+kZWHyJgEDWxwTajBwzl1NgtA+hP12PfCYZOCnfxc21GYODyKluxAPKKR6N
-	4Hho60M8C1YCmuVZIqMuy3mmQ2Lm12CqNHOfUsmfbUU6GcFTcNGw6QHsrTeCuuUYx+AKkYYCQ5quR
-	VwktNVyD/tiCXE7F0GaOuhXN4usP9eMllY7nOZx/2QpNIN2DCncm00Yi1wqM1e2U1SHjV8AabczNC
-	huo3qbmDPNN4VktGdaaw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XH9Iz6dhqG8BK2BxU922nMQIC6sVxsIqMH2/lqC5uww=; b=tGQ5uJygy6URxJ
+	DTQo1EDPDpMNU2kpfaF89EVhC/ivPrKVlAOzVQl0jDMWThvoht57vENJaGuthB86+nlvw+2ctg4dQ
+	7bi6bPCwipDgZVmaNsDiv5s1N0Ywcd5EdLXHy14IDUXWojV9RmtklAK7kmP3ek20lRLsdZ5PlQx/H
+	5A/vikEpN6T7BTzrJvVyFFakEvj1BM9xgBuqWVcvJYAZZE6QmfALn6b2i4LcdQ+y9Yz8BMv6R6SPC
+	oDf3PQvAGyWRKaeE2F87vfJJFi1rPAerwSGITxiIK3EDFZzqGJ+HZ/3OI/UCoN2Zy5S40pdlX2MSV
+	CuHaVUGJoo20xdQ945NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIyxX-0001l0-Vp; Mon, 30 Mar 2020 18:16:28 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jIz47-0003uT-JS; Mon, 30 Mar 2020 18:23:15 +0000
+Received: from mail-wr1-f66.google.com ([209.85.221.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIyxP-0001kf-Iw
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:16:21 +0000
-Received: by mail-ot1-x341.google.com with SMTP id 22so19143575otf.0
+ id 1jIz3w-0003rL-MN
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 18:23:06 +0000
+Received: by mail-wr1-f66.google.com with SMTP id a25so22951712wrd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 11:16:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=hc3WCyyOJyVb1bVm2+erTwMdDqb8JOvqNVevK3r7VwI=;
- b=ai6wI+ycqrkzpl/S2YJzZdSui/OqHxW+zs9NCXGh7U6Ao8RzV+b6ZH92pP+mJSeMDg
- 3zFsBbaW5dHtjdptA2ZKynOAnrY/IFF/rbTO3di295t+BhXrNfSP1TZfcKFLzaaoOfUV
- bVKuFgdn0MvaqJSHswPZS+XldoySduiB80LONN0NvR4dSXufP5iF9jGiXSGWYDD9cBxG
- xAJILj6xA/q3qaZGqm/kdv34TUUojc70Ogmsn38uo995wLI4LwNDS5srJoxLtqNTnQ0w
- U9IlzFhfaJqL2AEjBt3teQ6hoVJOurZOyN+6s5i5g5RZL39LrAlRA3Usk0jJOm4IPLXJ
- aPDg==
+ Mon, 30 Mar 2020 11:23:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=hc3WCyyOJyVb1bVm2+erTwMdDqb8JOvqNVevK3r7VwI=;
- b=JFBt5B+YHYM6t5r+IiPLjdYSeQqbsvxWWpwpy55rRZB7vKD+GzFQcEDQU3ZhAaQ4a3
- +1cyEbfBv+qFe/2Ui7sFsRIvHn6/C44usWNAbbg2FdsngM2qc8tx20ngtQ2Dx72MI4jk
- ly2uMTQxQSACFTm2/xC6U1cR6dkrFCnodYz9szMtdXvZ4AIDuZSThEyAOEOCFIk32MP8
- bDi15aBpqpeFnwVlS6Fa2B+jw0jIOJnzQsnImc9wgIxulqstCs/LYvlnRRw2thAX4VJY
- YDlSm8awFH0Bi3yi/j4LWZ79tU38SmlNbBytyWr+I/aRvYAlXy/RBK96hMaUxcgYnYxu
- DiOA==
-X-Gm-Message-State: ANhLgQ0c1mMBkeYHVV6YIlXJZCzN1gDAh7wbZBs8PwVchv5nyHqzT+bQ
- KN9GTv5zHay7u4cym4vR0KU=
-X-Google-Smtp-Source: ADFU+vvlSpRwHKn4r6g703Ne60gh2l2x19YSD2cUdpHUPeweDs5ZyHaHm8b4wc+Bl5wfRYsNGn1JCA==
-X-Received: by 2002:a05:6830:10a:: with SMTP id
- i10mr10498831otp.190.1585592178291; 
- Mon, 30 Mar 2020 11:16:18 -0700 (PDT)
-Received: from andrews-mbp-2.attlocal.net
- ([2600:1700:19e0:3310:81db:d33f:7ec:a679])
- by smtp.gmail.com with ESMTPSA id o1sm4480246otl.49.2020.03.30.11.16.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 30 Mar 2020 11:16:17 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.60.0.2.5\))
-Subject: Re: [PATCH 2/2] ARM: dts: aspeed: zaius: Add gpio line names
-From: Andrew Geissler <geissonator@gmail.com>
-In-Reply-To: <294a52cd-2f60-41e5-a58f-a74151a83b08@www.fastmail.com>
-Date: Mon, 30 Mar 2020 13:16:16 -0500
-Message-Id: <9360D2B2-8242-4BA1-BF06-8916E87EDE67@gmail.com>
-References: <20200306170218.79698-1-geissonator@yahoo.com>
- <20200306170218.79698-2-geissonator@yahoo.com>
- <294a52cd-2f60-41e5-a58f-a74151a83b08@www.fastmail.com>
-To: Andrew Jeffery <andrew@aj.id.au>
-X-Mailer: Apple Mail (2.3608.60.0.2.5)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=0jhRFYVkza+qJU3Il8/iXGVhPGBzX8dkXPD9i1bwSag=;
+ b=ivA14OmGxELXw3INOvHFdnkBOOLRjqgMBJstXMt3+kvgfEmCZ2+dzPljVe7nu1CWxd
+ Pw91ZbNv3EiiUbzTak02hBjPcYq7rfrk0oEPSDn/9JQGJAw6Mc54eFYs9PbcSWUGvz8/
+ orl4rMfN3pjiLAfKWLI5hvvLLx5vJBErDiCxZ1RHzvkWKv5eqCT87hBJruWq4TN8Iy85
+ NwMIPI2uNynosOdpapryQaU0SVmukJnRJfGfAFO1DgwFBO1Z5+AM/eetaZVPxtiCKpHx
+ l9aOLCSHDAD6Zs2vYeLCL9vWYIAjaoRmgmOP90ApSfbzQaw5deucRFqtkEcdDEjwxmdI
+ 3CbA==
+X-Gm-Message-State: ANhLgQ3icHUCqGWptirXHy4qc6f1RRvkSN9rUjc+B+vD+0gbJ9cIszLS
+ BxSPe+4leSF9lLjrECkPrU8=
+X-Google-Smtp-Source: ADFU+vv5K/FBYjKeTVX0F/L19lDVfm50dWVM5MaRN4MeyMqOqGnWTdxnNM7cmfvlZTzDum9SAd0OPg==
+X-Received: by 2002:adf:d849:: with SMTP id k9mr15996160wrl.108.1585592583199; 
+ Mon, 30 Mar 2020 11:23:03 -0700 (PDT)
+Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
+ by smtp.gmail.com with ESMTPSA id f187sm474696wme.9.2020.03.30.11.23.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Mar 2020 11:23:02 -0700 (PDT)
+Date: Mon, 30 Mar 2020 20:23:01 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Mike Rapoport <rppt@linux.ibm.com>
+Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20200330182301.GM14243@dhcp22.suse.cz>
+References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20200330074246.GA14243@dhcp22.suse.cz>
+ <20200330175100.GD30942@linux.ibm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200330175100.GD30942@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_111619_650717_0B9A7330 
-X-CRM114-Status: GOOD (  15.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200330_112304_732339_D8124ED8 
+X-CRM114-Status: GOOD (  25.03  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.221.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geissonator[at]gmail.com]
+ provider [mstsxfx[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,78 +89,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
- openbmc@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
+ Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE1hciAyNiwgMjAyMCwgYXQgNjoyMCBQTSwgQW5kcmV3IEplZmZlcnkgPGFuZHJld0Bh
-ai5pZC5hdT4gd3JvdGU6Cj4gCj4gCj4gCj4gT24gU2F0LCA3IE1hciAyMDIwLCBhdCAwMzozMiwg
-QW5kcmV3IEdlaXNzbGVyIHdyb3RlOgo+PiBOYW1lIHRoZSBHUElPcyB0byBoZWxwIHVzZXJzcGFj
-ZSB3b3JrIHdpdGggdGhlbS4gVGhlIG5hbWVzIGRlc2NyaWJlIHRoZQo+PiBmdW5jdGlvbmFsaXR5
-IHRoZSBsaW5lcyBwcm92aWRlLCBub3QgdGhlIG5ldCBvciBiYWxsIG5hbWUuIFRoaXMgbWFrZXMg
-aXQKPj4gZWFzaWVyIHRvIHNoYXJlIHVzZXJzcGFjZSBjb2RlIGFjcm9zcyBkaWZmZXJlbnQgc3lz
-dGVtcyBhbmQgbWFrZXMgdGhlCj4+IHVzZSBvZiB0aGUgbGluZXMgbW9yZSBvYnZpb3VzLgo+PiAK
-Pj4gU2lnbmVkLW9mZi1ieTogQW5kcmV3IEdlaXNzbGVyIDxnZWlzc29uYXRvckB5YWhvby5jb20+
-Cj4gCj4gU28gd2UncmUgY3JlYXRpbmcgYSBiaXQgb2YgYW4gYWQtaG9jIEFCSSBoZXJlIGJldHdl
-ZW4gdGhlIERUIGFuZCB1c2Vyc3BhY2UuCj4gCj4gV2hlcmUgYXJlIHdlIGRvY3VtZW50aW5nIGl0
-PwoKWWVhaCwgc28gZmFyIGl04oCZcyBiYXNpY2FsbHkgZGVzaWduIGJ5IHByZWNlZGVudC4gSWYg
-eW91IHdhbnQgeW91ciBPcGVuQk1DCmZ1bmN0aW9uIHRvIHdvcmsgdGhlbiBmb2xsb3cgdGhlIHN0
-YW5kYXJkcyB3ZSdyZSBzZXR0aW5nIGluIG90aGVyIGR0c+KAmXMuCgpJcyB0aGVyZSBhIGdvb2Qg
-cGxhY2UgdG8gZG9jdW1lbnQgdGhpcz8gSSBjb3VsZCBjcmVhdGUgYSBPcGVuQk1DIGRlc2lnbgpk
-b2MgYnV0IHRoYXQgd291bGQgbm90IGFkZHJlc3Mgbm9uLU9wZW5CTUMgYXJlYXMuCgo+IAo+IEdl
-bmVyYWxseSBJIHRoaW5rIHRoZSBpZGVhIGlzIGdvb2QgdGhvdWdoLCBzbzoKPiAKPiBBY2tlZC1i
-eTogQW5kcmV3IEplZmZlcnkgPGFuZHJld0Bhai5pZC5hdT4KClRoYW5rcwoKPiAKPj4gLS0tCj4+
-IGFyY2gvYXJtL2Jvb3QvZHRzL2FzcGVlZC1ibWMtb3BwLXphaXVzLmR0cyB8IDM3ICsrKysrKysr
-KysrKysrKysrKystLS0KPj4gMSBmaWxlIGNoYW5nZWQsIDMzIGluc2VydGlvbnMoKyksIDQgZGVs
-ZXRpb25zKC0pCj4+IAo+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvYXNwZWVkLWJt
-Yy1vcHAtemFpdXMuZHRzIAo+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL2FzcGVlZC1ibWMtb3BwLXph
-aXVzLmR0cwo+PiBpbmRleCBiYzYwZWMyOTE2ODEuLjRiY2M4MjA0NjM2MiAxMDA2NDQKPj4gLS0t
-IGEvYXJjaC9hcm0vYm9vdC9kdHMvYXNwZWVkLWJtYy1vcHAtemFpdXMuZHRzCj4+ICsrKyBiL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL2FzcGVlZC1ibWMtb3BwLXphaXVzLmR0cwo+PiBAQCAtNDc4LDMyICs0
-NzgsNjEgQEAKPj4gCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+IAlwaW5jdHJsLTAgPSA8
-JnBpbmN0cmxfZ3Bpb2hfdW5iaWFzZWQ+Owo+PiAKPj4gKwlncGlvLWxpbmUtbmFtZXMgPQo+PiAr
-CS8qQTAtQTcqLwkiIiwiY2ZhbS1yZXNldCIsIiIsIiIsIiIsIiIsIiIsIiIsCj4+ICsJLypCMC1C
-NyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qQzAtQzcqLwkiIiwiIiwiIiwiIiwi
-IiwiIiwiIiwiIiwKPj4gKwkvKkQwLUQ3Ki8JImZzaS1lbmFibGUiLCIiLCIiLCIiLCIiLCJsZWQt
-c3lzLWJvb3Qtc3RhdHVzIiwibGVkLWF0dGVudGlvbiIsCj4+ICsJCQkJImxlZC1mYXVsdCIsCj4+
-ICsJLypFMC1FNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCJwcmVzZW5jZS1wY2llLWUyYiIsCj4+
-ICsJLypGMC1GNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCJjaGVja3N0b3AiLAo+PiArCS8qRzAt
-RzcqLwkiZnNpLWNsb2NrIiwiZnNpLWRhdGEiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qSDAt
-SDcqLwkib25ld2lyZTAiLCJvbmV3aXJlMSIsIm9uZXdpcmUyIiwib25ld2lyZTMiLCIiLCIiLCIi
-LCIiLAo+PiArCS8qSTAtSTcqLwkiIiwiIiwiIiwicG93ZXItYnV0dG9uIiwiIiwiIiwiIiwiIiwK
-Pj4gKwkvKkowLUo3Ki8JIiIsIiIsIiIsIiIsIiIsIiIsIiIsIiIsCj4+ICsJLypLMC1LNyovCSIi
-LCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qTDAtTDcqLwkiIiwiIiwiIiwiIiwiIiwiIiwi
-IiwiIiwKPj4gKwkvKk0wLU03Ki8JIiIsIiIsIiIsIiIsIiIsIiIsIiIsIiIsCj4+ICsJLypOMC1O
-NyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qTzAtTzcqLwkiIiwiIiwiIiwiIiwi
-aXNvX3UxNjRfZW4iLCIiLCJmc2ktdHJhbnMiLCIiLAo+PiArCS8qUDAtUDcqLwkibmNzaV9tdXhf
-ZW5fbiIsImJtY19pMmMyX3N3X3JzdF9uIiwiIiwiYm1jX2kyYzVfc3dfcnN0X24iLCIiLAo+PiAr
-CQkJCSIiLCJmc2ktbXV4IiwiIiwKPj4gKwkvKlEwLVE3Ki8JIiIsIiIsIiIsIiIsIiIsIiIsIiIs
-IiIsCj4+ICsJLypSMC1SNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qUzAtUzcq
-LwkiIiwiIiwiIiwiIiwiIiwiIiwiIiwiIiwKPj4gKwkvKlQwLVQ3Ki8JIiIsIiIsIiIsIiIsIiIs
-IiIsIiIsIiIsCj4+ICsJLypVMC1VNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8q
-VjAtVjcqLwkiIiwiIiwiIiwiIiwiIiwiIiwiIiwiIiwKPj4gKwkvKlcwLVc3Ki8JIiIsIiIsIiIs
-IiIsIiIsIiIsIiIsIiIsCj4+ICsJLypYMC1YNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiLAo+
-PiArCS8qWTAtWTcqLwkiIiwiIiwiIiwiIiwiIiwiIiwiIiwiIiwKPj4gKwkvKlowLVo3Ki8JIiIs
-IiIsIiIsIiIsIiIsIiIsIiIsIiIsCj4+ICsJLypBQTAtQUE3Ki8JIiIsIiIsImxlZC1oZGQtZmF1
-bHQiLCIiLCIiLCIiLCIiLCIiLAo+PiArCS8qQUIwLUFCNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIi
-LCIiLAo+PiArCS8qQUMwLUFDNyovCSIiLCIiLCIiLCIiLCIiLCIiLCIiLCIiOwo+PiArCj4+IAls
-aW5lX2lzb191MTQ2X2VuIHsKPj4gCQlncGlvLWhvZzsKPj4gCQlncGlvcyA9IDxBU1BFRURfR1BJ
-TyhPLCA0KSBHUElPX0FDVElWRV9ISUdIPjsKPj4gCQlvdXRwdXQtaGlnaDsKPj4gLQkJbGluZS1u
-YW1lID0gImlzb191MTY0X2VuIjsKPj4gCX07Cj4+IAo+PiAJbmNzaV9tdXhfZW5fbiB7Cj4+IAkJ
-Z3Bpby1ob2c7Cj4+IAkJZ3Bpb3MgPSA8QVNQRUVEX0dQSU8oUCwgMCkgR1BJT19BQ1RJVkVfSElH
-SD47Cj4+IAkJb3V0cHV0LWxvdzsKPj4gLQkJbGluZS1uYW1lID0gIm5jc2lfbXV4X2VuX24iOwo+
-PiAJfTsKPj4gCj4+IAlsaW5lX2JtY19pMmMyX3N3X3JzdF9uIHsKPj4gCQlncGlvLWhvZzsKPj4g
-CQlncGlvcyA9IDxBU1BFRURfR1BJTyhQLCAxKSBHUElPX0FDVElWRV9ISUdIPjsKPj4gCQlvdXRw
-dXQtaGlnaDsKPj4gLQkJbGluZS1uYW1lID0gImJtY19pMmMyX3N3X3JzdF9uIjsKPj4gCX07Cj4+
-IAo+PiAJbGluZV9ibWNfaTJjNV9zd19yc3RfbiB7Cj4+IAkJZ3Bpby1ob2c7Cj4+IAkJZ3Bpb3Mg
-PSA8QVNQRUVEX0dQSU8oUCwgMykgR1BJT19BQ1RJVkVfSElHSD47Cj4+IAkJb3V0cHV0LWhpZ2g7
-Cj4+IC0JCWxpbmUtbmFtZSA9ICJibWNfaTJjNV9zd19yc3RfbiI7Cj4+IAl9Owo+PiB9Owo+PiAK
-Pj4gLS0gCj4+IDIuMjEuMCAoQXBwbGUgR2l0LTEyMikKPj4gCj4+IAoKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon 30-03-20 20:51:00, Mike Rapoport wrote:
+> On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
+> > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
+> > > In NUMA layout which nodes have memory ranges that span across other nodes,
+> > > the mm driver can detect the memory node id incorrectly.
+> > > 
+> > > For example, with layout below
+> > > Node 0 address: 0000 xxxx 0000 xxxx
+> > > Node 1 address: xxxx 1111 xxxx 1111
+> > > 
+> > > Note:
+> > >  - Memory from low to high
+> > >  - 0/1: Node id
+> > >  - x: Invalid memory of a node
+> > > 
+> > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> > > config, mm only checks the memory validity but not the node id.
+> > > Because of that, Node 1 also detects the memory from node 0 as below
+> > > when it scans from the start address to the end address of node 1.
+> > > 
+> > > Node 0 address: 0000 xxxx xxxx xxxx
+> > > Node 1 address: xxxx 1111 1111 1111
+> > > 
+> > > This layout could occur on any architecture. Most of them enables
+> > > this config by default with CONFIG_NUMA. This patch, by default, enables
+> > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
+> > 
+> > I am not opposed to this at all. It reduces the config space and that is
+> > a good thing on its own. The history has shown that meory layout might
+> > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
+> > which is clearly an overkill.
+> > 
+> > Your description doesn't really explain why this is safe though. The
+> > history of this config is somehow messy, though. Mike has tried
+> > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
+> > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
+> > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
+> > reasoning what so ever. This doesn't make it really easy see whether
+> > reasons for reintroduction are still there. Maybe there are some subtle
+> > dependencies. I do not see any TBH but that might be burried deep in an
+> > arch specific code.
+> 
+> I've looked at this a bit more and it seems that the check for
+> early_pfn_in_nid() in memmap_init_zone() can be simply removed.
+> 
+> The commits you've mentioned were way before the addition of
+> HAVE_MEMBLOCK_NODE_MAP and the whole infrastructure that calculates zone
+> sizes and boundaries based on the memblock node map.
+> So, the memmap_init_zone() is called when zone boundaries are already
+> within a node.
+
+But zones from different nodes might overlap in the pfn range. And this
+check is there to skip over those overlapping areas. The only way to
+skip over this check I can see is to do a different pfn walk and go
+through memblock ranges which are guaranteed to belong to a single node.
+-- 
+Michal Hocko
+SUSE Labs
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
