@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52B82197376
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 06:32:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DB0E19738A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Mar 2020 06:45:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Ymxx96JHN0/1Rfb8ZzAu94j/V3jmXMsfpRlbBvebW0=; b=APWPw/2GziNhdS
-	ow80Z8zlQpaL8/3y70x8CMuYeDJJLyKqQufUaUZjhD+DlZwrRsCgrnuQmIYqQlLmke4Uy2MvCL3ki
-	R9J2QAoWIyve+mM/9eCBrKfIyUMQaIeFCdgGgbDc27Kp1gNYpVTCqs6FSv9JO1RYwYwHR+YtxT08P
-	zS6E8lEqeddAa9ROMoiWviNUnZ5wsSRYT+9JWc4XELCgCCX5p4YaVFfRMD7Yn3oUJGf6UO9c9XnDT
-	c68PnZm4mRofwMewWr9b3urfT6AVhuwgrtHTd4DX4+iO+JsiVq+peS6+Fe0l31THxXawj9jvmf/JT
-	dxH0qB/n70Pow1d2YuxQ==;
+	List-Owner; bh=saPDqX9BxY9YSbaeN4W2PPaMSOPzhIABvwnWT4BepTE=; b=m5v10f6dYFTuVM
+	MO1Uqwbf7IIg+4S6kE+2MEJVe0oPPi9o5kDieCvF2OtbRrOk4RcaEG80D9N64cAcZ4KCBa9XSbevf
+	cgIKHOfdjPxHy9NoOT6+WeNrlLf7BTSXomE1agGsUpzfcnzHwgYAAWp8/hP3GHMzSl3WFmkHmPUi+
+	0Gdch3aoeeBduM+LPAt/tu1Haj3R2cEoavK7GrTNJ7Tft/9CGFW+ZyBYhOqkDchxoLZ9oGak3uk7B
+	toMLulTDDRxOeBCkCs+WvB3ev1quvMbKkEOkYg8YDieC9rWf1ZyEUXeO/HPrD5n0msGqIE2x1P6p6
+	4dSSHpx4cPFY2xVHTMzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIm6H-0004K9-5K; Mon, 30 Mar 2020 04:32:37 +0000
+	id 1jImIU-0008Bu-5Q; Mon, 30 Mar 2020 04:45:14 +0000
 Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIm6A-0004Ji-Ct
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 04:32:32 +0000
+ id 1jImI1-00083b-3U
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Mar 2020 04:44:46 +0000
 Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
  (using TLSv1 with cipher AES256-SHA (256/256 bits))
  (Client did not present a certificate)
  (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 09BE315C50FA6;
- Sun, 29 Mar 2020 21:32:23 -0700 (PDT)
-Date: Sun, 29 Mar 2020 21:32:23 -0700 (PDT)
-Message-Id: <20200329.213223.1902716730875032247.davem@davemloft.net>
-To: vee.khee.wong@intel.com
-Subject: Re: [PATCH 1/1] net: stmmac: Add support for VLAN Rx filtering
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id A906415C5482C;
+ Sun, 29 Mar 2020 21:44:43 -0700 (PDT)
+Date: Sun, 29 Mar 2020 21:44:43 -0700 (PDT)
+Message-Id: <20200329.214443.1573923323943355565.davem@davemloft.net>
+To: philippe.schenker@toradex.com
+Subject: Re: [PATCH net-next v2 2/2] ARM: dts: apalis-imx6qdl: use rgmii-id
+ instead of rgmii
 From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200325005632.6626-1-vee.khee.wong@intel.com>
-References: <20200325005632.6626-1-vee.khee.wong@intel.com>
+In-Reply-To: <20200325173425.306802-2-philippe.schenker@toradex.com>
+References: <20200325173425.306802-1-philippe.schenker@toradex.com>
+ <20200325173425.306802-2-philippe.schenker@toradex.com>
 X-Mailer: Mew version 6.8 on Emacs 26.1
 Mime-Version: 1.0
 X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
  (shards.monkeyblade.net [149.20.54.216]);
- Sun, 29 Mar 2020 21:32:24 -0700 (PDT)
+ Sun, 29 Mar 2020 21:44:44 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_213230_436974_26852D17 
-X-CRM114-Status: UNSURE (   6.57  )
+X-CRM114-CacheID: sfid-20200329_214445_206432_55410C18 
+X-CRM114-Status: UNSURE (   7.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -63,29 +65,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, weifeng.voon@intel.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- boon.leong.ong@intel.com, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, andrew@lunn.ch, f.fainelli@gmail.com,
+ a.fatoum@pengutronix.de, silvan.murer@gmail.com, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, s.hauer@pengutronix.de, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, o.rempel@pengutronix.de, robh+dt@kernel.org,
+ linux-imx@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: vee.khee.wong@intel.com
-Date: Wed, 25 Mar 2020 08:56:32 +0800
+From: Philippe Schenker <philippe.schenker@toradex.com>
+Date: Wed, 25 Mar 2020 18:34:25 +0100
 
-> From: "Chuah, Kim Tatt" <kim.tatt.chuah@intel.com>
+> Until now a PHY-fixup in mach-imx set our rgmii timing correctly. For
+> the PHY KSZ9131 there is no PHY-fixup in mach-imx. To support this PHY
+> too, use rgmii-id.
+> For the now used KSZ9031 nothing will change, as rgmii-id is only
+> implemented and supported by the KSZ9131.
 > 
-> Add support for VLAN ID-based filtering by the MAC controller for MAC
-> drivers that support it. Only the 12-bit VID field is used.
-> 
-> Signed-off-by: Chuah, Kim Tatt <kim.tatt.chuah@intel.com>
-> Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
-> Signed-off-by: Wong, Vee Khee <vee.khee.wong@intel.com>
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
-This doesn't apply cleanly to the current net-next tree, please
-respin.
+Applied.
 
 _______________________________________________
 linux-arm-kernel mailing list
