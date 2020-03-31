@@ -2,144 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06F9B198D4A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 09:45:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74506198D56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 09:47:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+mc7kHeY0sCWDGoN53ndqrFUUg3k3bBcGkY85uZE474=; b=QlG36+cd2+7+fi
-	f5QcphFUe7ERTz0PR6MEssoKzBGyVnssNf05ZZherOKyLgNuMFzha57wuCq/dV782i2pZN4KXxumI
-	Sid0BqcrxIpjmUpV4cRrHaZ2RkESanNEqMVPpqW63jK1blKSddHEfoir8XDsVL4BHRR9yMRyrt9W2
-	zIdViyTMEm+IJALbSA7a5klfHmGfjfY5Xcy/HxZGXoBVdvcjYLnZwY5QkuQsnkxpGLQ1poMpIEKSG
-	8PFYug+X6ZphtB0xsNfXsRF+KIQfbd3OVJZya/ulOAW2vVbsDmb7XMRombUdobkDRe5gz6420ZUqd
-	hnujg4022i4SLK3kgwkQ==;
+	List-Owner; bh=gBDFaizWALGWQJ28TZCBpIdcG1aSjw30d69oCCfZFTM=; b=eMEuHRt1D5o0B3
+	sSkInFnUSAIuH/sEVFz03+Yjr00zSSMK0Pb4Xt+HFamNtLX2ElZ0hMYPjzlHIeOEIXHzLzAgy8DxG
+	KvZLEk2zZPpySCtvKkBOHtg4mE0YaM5t5FWixrtqJi4da3iA1AltaPQVYm90p6CHFHKLBA0UJbgNq
+	P8ymS5j401BcGYaNxNTBtKJmrawFpLSW1qqIOcJYfXHwvR4O3Nh6JTcXgrvDeNRgRJet8RzhokxdX
+	BhoojElowfK7rHFYuF6idywI1hTOZEweqjmbmXqEroQqUGmpBGmPGdIlEw4fGjOqCgzLNXs0LvzFP
+	2MIstXg9QZqugSaC667Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJBaF-0003Iv-Be; Tue, 31 Mar 2020 07:45:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jJBcg-0004yZ-OC; Tue, 31 Mar 2020 07:47:46 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJBZy-0003Ht-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 07:45:00 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g62so1433699wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 00:44:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Mle85YP+rDckZryHYT1DsaIY/T30NdXKh8r9XNQQ1KM=;
- b=HMPl0nI9TzPcawnrnoiN5u0qufpBFwSXdRw5WNqgnuqr+t+BbwwHI5jFJkfZgS026L
- /xN0/4B0PiwQh7xRM7aIhj66zdVJoRfncXIJ7PC9CNXV5SApHuzKGmaZvKiouoMfq3rk
- R+V+QAHEgAWHbbLkqcLZzZhUWFu34ry4d9J/MAHErZLlpQpUU2Eiw/xtfZTagYKW4LkZ
- gBtRZO4Ol/u9nK5AwZld17YKt8QYDYx+SPhNBO664lQHI/7B9PUfQpwFtQKqXu7oO36g
- TlGHo1ctiRJGxpYYMEIWuZmo50MUz/EroCi8TQZt/UQh0a8aGlKWAniS3Kp0oqTqRci2
- dzew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Mle85YP+rDckZryHYT1DsaIY/T30NdXKh8r9XNQQ1KM=;
- b=qEigb+/NVDUvqt8n9TQqrZe43unjT4qc7pY2C/+oYLYnkc9Nh91Q8P79/hOiTrzKr2
- 82Hw/rifyHxqJlgxxXYtNjAREyV7bzD3IK//Q84vuMVVOUazjHXIq5zsH9lZJI2CxGjX
- XWCKZFsMp7DcMPGBbzj9JUykg/fLM0KWVVZ6hRnyigVU8oDSjjDFx0ANHoo8LPzk4b2s
- JGTbCXr4KRz0V6/86HT0y2Prw0/PX+TVqJIuf6N87fCA22nRYTvhBApvhv7kBCxABPyo
- v0MvyJDV1kGBMT6Wh19YSL+Q96xLul2aKlG5vENtJmXOVFSQ8Z6Z1o7lrMTpg0Avb0nD
- BpTg==
-X-Gm-Message-State: ANhLgQ3CoEIYBkyRWONybxnAJSkBcvKNTFlVsqOmd+KzfuZOHm//Q+x0
- UmQ4BvF6vbEyHvichHBuS47EGA==
-X-Google-Smtp-Source: ADFU+vsD8LfwcGS5334AtS4GaZsZiNiMDvsXvl5GX4AHw2tuxAat2LUN+GwURQUspYtgY5st5oix9A==
-X-Received: by 2002:a1c:7707:: with SMTP id t7mr1969720wmi.173.1585640696624; 
- Tue, 31 Mar 2020 00:44:56 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
- ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
- by smtp.gmail.com with ESMTPSA id y189sm2767742wmb.26.2020.03.31.00.44.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 31 Mar 2020 00:44:56 -0700 (PDT)
-Subject: Re: [RFC v1 3/5] arm64: dts: amlogic: meson-gx: add the Mali-450 OPP
- table and use DVFS
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, khilman@baylibre.com, jbrunet@baylibre.com
-References: <20200330221104.3163788-1-martin.blumenstingl@googlemail.com>
- <20200330221104.3163788-4-martin.blumenstingl@googlemail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <05c15e30-3e20-6fce-d2ca-87b8762d0fef@baylibre.com>
-Date: Tue, 31 Mar 2020 09:44:54 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jJBcW-0004y2-Da
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 07:47:37 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1jJBcO-0004m4-Me; Tue, 31 Mar 2020 09:47:28 +0200
+Received: from [IPv6:2a03:f580:87bc:d400:9c00:37c7:b172:db58] (unknown
+ [IPv6:2a03:f580:87bc:d400:9c00:37c7:b172:db58])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 060294D8C3A;
+ Tue, 31 Mar 2020 07:47:25 +0000 (UTC)
+Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Florian Fainelli <f.fainelli@gmail.com>
+References: <20200329110457.4113-1-o.rempel@pengutronix.de>
+ <20200329150854.GA31812@lunn.ch>
+ <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
+ <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
+ <20200330174114.GG25745@shell.armlinux.org.uk>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
+ zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
+ QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
+ 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
+ Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
+ XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
+ nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
+ Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
+ eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
+ kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
+ ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
+ CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
+ iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
+ Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
+ Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
+ tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
+ yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
+ BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
+ mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
+ 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
+ Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
+ 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXz
+Message-ID: <5ae5c0de-f05c-5e3f-86e1-a9afdd3e1ef1@pengutronix.de>
+Date: Tue, 31 Mar 2020 09:47:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200330221104.3163788-4-martin.blumenstingl@googlemail.com>
-Content-Language: en-US
+In-Reply-To: <20200330174114.GG25745@shell.armlinux.org.uk>
+Content-Language: de-DE
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_004458_416881_16C93129 
-X-CRM114-Status: GOOD (  20.95  )
+X-CRM114-CacheID: sfid-20200331_004736_461490_6C73AD88 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,241 +105,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Fabio Estevam <festevam@gmail.com>,
+ netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
+ linux-imx@nxp.com, kernel@pengutronix.de, David Jander <david@protonic.nl>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 31/03/2020 00:11, Martin Blumenstingl wrote:
-> Add the OPP table for the Mali-450 GPU and drop the hardcoded initial
-> clock configuration. This enables GPU DVFS and thus saves power when the
-> GPU is not in use while still being able switch to a higher clock on
-> demand.
+On 3/30/20 7:41 PM, Russell King - ARM Linux admin wrote:
+>>> arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
+>>> arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
+>>> arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
+>>> arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,
 > 
-> While here, make most of meson-gxl-mali re-usable to reduce the amount
-> of duplicate code between GXBB and GXL. This is more important now as we
-> don't want to duplicate the GPU OPP table.
+> As far as I'm concerned, the AR8035 fixup is there with good reason.
+> It's not just "random" but is required to make the AR8035 usable with
+> the iMX6 SoCs.  Not because of a board level thing, but because it's
+> required for the AR8035 to be usable with an iMX6 SoC.
 
-Looks good, but please add comment about the CLKID_GP0_PLL assigned clock rate.
+Is this still ture, if the AR8035 is attached to a switch behind an iMX6?
 
-I'll ask LibreELEC people to have a run on these patches (including the clk changes) with Kodi.
+regards,
+Marc
 
-Neil
-
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  .../boot/dts/amlogic/meson-gx-mali450.dtsi    | 61 +++++++++++++++++++
->  arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi   | 51 ++++------------
->  .../boot/dts/amlogic/meson-gxl-mali.dtsi      | 46 +++-----------
->  3 files changed, 81 insertions(+), 77 deletions(-)
->  create mode 100644 arch/arm64/boot/dts/amlogic/meson-gx-mali450.dtsi
-> 
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gx-mali450.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx-mali450.dtsi
-> new file mode 100644
-> index 000000000000..f9771b51c852
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gx-mali450.dtsi
-> @@ -0,0 +1,61 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2017 BayLibre SAS
-> + * Author: Neil Armstrong <narmstrong@baylibre.com>
-> + */
-> +
-> +/ {
-> +	gpu_opp_table: opp-table {
-> +		compatible = "operating-points-v2";
-> +
-> +		opp-125000000 {
-> +			opp-hz = /bits/ 64 <125000000>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-250000000 {
-> +			opp-hz = /bits/ 64 <250000000>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-285714285 {
-> +			opp-hz = /bits/ 64 <285714285>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-400000000 {
-> +			opp-hz = /bits/ 64 <400000000>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-500000000 {
-> +			opp-hz = /bits/ 64 <500000000>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-666666666 {
-> +			opp-hz = /bits/ 64 <666666666>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +		opp-744000000 {
-> +			opp-hz = /bits/ 64 <744000000>;
-> +			opp-microvolt = <950000>;
-> +		};
-> +	};
-> +};
-> +
-> +&apb {
-> +	mali: gpu@c0000 {
-> +		compatible = "arm,mali-450";
-> +		reg = <0x0 0xc0000 0x0 0x40000>;
-> +		interrupts = <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 161 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 162 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 165 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>,
-> +			     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
-> +		interrupt-names = "gp", "gpmmu", "pp", "pmu",
-> +			"pp0", "ppmmu0", "pp1", "ppmmu1",
-> +			"pp2", "ppmmu2";
-> +		operating-points-v2 = <&gpu_opp_table>;
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-> index 0cb40326b0d3..e43b330129c7 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-> @@ -4,6 +4,7 @@
->   */
->  
->  #include "meson-gx.dtsi"
-> +#include "meson-gx-mali450.dtsi"
->  #include <dt-bindings/gpio/meson-gxbb-gpio.h>
->  #include <dt-bindings/reset/amlogic,meson-gxbb-reset.h>
->  #include <dt-bindings/clock/gxbb-clkc.h>
-> @@ -241,46 +242,6 @@ mux {
->  	};
->  };
->  
-> -&apb {
-> -	mali: gpu@c0000 {
-> -		compatible = "amlogic,meson-gxbb-mali", "arm,mali-450";
-> -		reg = <0x0 0xc0000 0x0 0x40000>;
-> -		interrupts = <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 161 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 162 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 165 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
-> -		interrupt-names = "gp", "gpmmu", "pp", "pmu",
-> -			"pp0", "ppmmu0", "pp1", "ppmmu1",
-> -			"pp2", "ppmmu2";
-> -		clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_MALI>;
-> -		clock-names = "bus", "core";
-> -
-> -		/*
-> -		 * Mali clocking is provided by two identical clock paths
-> -		 * MALI_0 and MALI_1 muxed to a single clock by a glitch
-> -		 * free mux to safely change frequency while running.
-> -		 */
-> -		assigned-clocks = <&clkc CLKID_GP0_PLL>,
-> -				  <&clkc CLKID_MALI_0_SEL>,
-> -				  <&clkc CLKID_MALI_0>,
-> -				  <&clkc CLKID_MALI>; /* Glitch free mux */
-> -		assigned-clock-parents = <0>, /* Do Nothing */
-> -					 <&clkc CLKID_GP0_PLL>,
-> -					 <0>, /* Do Nothing */
-> -					 <&clkc CLKID_MALI_0>;
-> -		assigned-clock-rates = <744000000>,
-> -				       <0>, /* Do Nothing */
-> -				       <744000000>,
-> -				       <0>; /* Do Nothing */
-> -	};
-> -};
-> -
->  &cbus {
->  	spifc: spi@8c80 {
->  		compatible = "amlogic,meson-gxbb-spifc";
-> @@ -362,6 +323,16 @@ &i2c_C {
->  	clocks = <&clkc CLKID_I2C>;
->  };
->  
-> +&mali {
-> +	compatible = "amlogic,meson-gxbb-mali", "arm,mali-450";
-> +
-> +	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_MALI>;
-> +	clock-names = "bus", "core";
-> +
-> +	assigned-clocks = <&clkc CLKID_GP0_PLL>;
-> +	assigned-clock-rates = <744000000>;
-> +};
-> +
->  &periphs {
->  	pinctrl_periphs: pinctrl@4b0 {
->  		compatible = "amlogic,meson-gxbb-periphs-pinctrl";
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-mali.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl-mali.dtsi
-> index 6aaafff674f9..478e755cc87c 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxl-mali.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-mali.dtsi
-> @@ -4,42 +4,14 @@
->   * Author: Neil Armstrong <narmstrong@baylibre.com>
->   */
->  
-> -&apb {
-> -	mali: gpu@c0000 {
-> -		compatible = "amlogic,meson-gxl-mali", "arm,mali-450";
-> -		reg = <0x0 0xc0000 0x0 0x40000>;
-> -		interrupts = <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 161 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 162 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 165 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>,
-> -			     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
-> -		interrupt-names = "gp", "gpmmu", "pp", "pmu",
-> -			"pp0", "ppmmu0", "pp1", "ppmmu1",
-> -			"pp2", "ppmmu2";
-> -		clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_MALI>;
-> -		clock-names = "bus", "core";
-> +#include "meson-gx-mali450.dtsi"
->  
-> -		/*
-> -		 * Mali clocking is provided by two identical clock paths
-> -		 * MALI_0 and MALI_1 muxed to a single clock by a glitch
-> -		 * free mux to safely change frequency while running.
-> -		 */
-> -		assigned-clocks = <&clkc CLKID_GP0_PLL>,
-> -				  <&clkc CLKID_MALI_0_SEL>,
-> -				  <&clkc CLKID_MALI_0>,
-> -				  <&clkc CLKID_MALI>; /* Glitch free mux */
-> -		assigned-clock-parents = <0>, /* Do Nothing */
-> -					 <&clkc CLKID_GP0_PLL>,
-> -					 <0>, /* Do Nothing */
-> -					 <&clkc CLKID_MALI_0>;
-> -		assigned-clock-rates = <744000000>,
-> -				       <0>, /* Do Nothing */
-> -				       <744000000>,
-> -				       <0>; /* Do Nothing */
-> -	};
-> +&mali {
-> +	compatible = "amlogic,meson-gxl-mali", "arm,mali-450";
-> +
-> +	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_MALI>;
-> +	clock-names = "bus", "core";
-> +
-> +	assigned-clocks = <&clkc CLKID_GP0_PLL>;
-> +	assigned-clock-rates = <744000000>;
->  };
-> 
-
+-- 
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
