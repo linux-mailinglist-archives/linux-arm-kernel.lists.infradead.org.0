@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01AF4198E93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:33:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 459C0198E99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:34:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rb64b3iDT4McSOeSf7cPtEbqeL5KbPqFKa4akBCG2Uc=; b=ISx018Av9ZWYIX
-	EXJirqFIDQhuOSvbGfyGtes3ePhemoDXvMVJ5zQgvWkzVKaX8sZ/u/F7wQqMcwR9nwXF0gRsmVJ3e
-	ChWvRynoLOLkVoH89FKcBjnpi8WMUHQkOhPwItxtfxdta5s3Fm5qL6hvPe4fcdYcGbhb961ndE5ll
-	nWI8CX3d/9/SOJIZ6NvR9KQJ/8Km39N6KoHpcV4428EcmRvFlmtOXj6o2b0hWihszvw2pXHh+4jkF
-	AoK9+QlYA5NmlUFOJfNnIUG4W8EPMMSIoBM+LCgMyolcg0wfTw3JRBhAiX0lWxvIeJEJ5oL0ze7L5
-	lMNRyDQWJqX5LDZ7BGbA==;
+	List-Owner; bh=bpEaU+T2cn2pshUTjjzlDhd7lpm06EIFpLviv1OVdts=; b=K/4FDYEPBCUkAp
+	KAr3f47xi2G51E3MyjR57cH3zZvLQtRfhHjWyoXcRGobTZxwnDso4peVKKOoXL8Suyr/5rZv22WTp
+	s24GLouk4oZ4Pt9TVwW66NHnW43vkiLgHDFJYYNyqSFtPK5wQ+mcTZUuAj41+9hLxQz3eTBepTYWZ
+	rts+ALxLrv/xL65RfJvF83C+KUBdTM04FjZbF7PWjI1NIKBuCjP4ROfSeXxBI+4qnH05qDaIRiJaX
+	Q2yqzY6gSi88dKjyyMdzbkEll4kCaQiGCJQcYu1Hv6k244OjxYAfQU4Hyyw6Dd2MtSwJJKHumWsJr
+	hzR2DAohftg88gCJ8w3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJCKw-0001J5-Pz; Tue, 31 Mar 2020 08:33:30 +0000
+	id 1jJCLn-00021T-Rh; Tue, 31 Mar 2020 08:34:23 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJCJm-0000WA-Nl
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:32:21 +0000
+ id 1jJCJp-0000Xo-7F
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:32:22 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02V8Rq9q026602; Tue, 31 Mar 2020 10:32:07 +0200
+ 02V8RqFb026609; Tue, 31 Mar 2020 10:32:09 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=KJed4itK3GE9DEf4/bmMThYy8yNOhWZeSguhyOUpsWg=;
- b=xQrrVmdKGoSZsCM7R5Add8rDA1lT8LUtxtiZWl5rQtsKnpKzY0CdN7iY8aIzN0GEK8T1
- IYpqgjoqxqRaPCi5Kw2CGCRxTlrzYrz0CtifVrYUYAcwM2v4+sMJjLd50w6crk4TWnGU
- EjOgrNuPTCtwKqq2BEkCzs//D0Qqqt/8rtOOcmIxyqcYlPvWGchmR4rJSUtj+fdNRNrM
- 2/LgmApgbK9VqLAzddCybAxgBKU+3B4TBKNAAZ9Xj6rUwEcKSnX/yhEiqaeGtXzDwlRz
- J3SaPVbOJPgQMWBFQYs8MIpB7s1N0SHU2mQRpIgQlyAu7etkVC1qU2cyEc00boDgSrXg fQ== 
+ bh=AXPGvtsGWLkKS+I+Kb5oNNnn9+C77me7iOpHlW+3zcQ=;
+ b=Ik2dFwaCIuvyFsWAJweQXa25LSe/sQYl16/nENEW6qp/+KQHEr3/U1+MHTrx2yXyA9T5
+ QeEdY06WYdtG5Zo5Vfki1OTmtqZe1yKLYVj1PyHuLwDEqwakJ0WrM0ywWVlHyahoZ1k1
+ YQDT3hFJg3QxcVrC7Zrf8z+vUfIzfhDEyugF5v335QiAVto1NEDSUOQq1HAji/PDUBtk
+ ks2j4Ay1BJPHhHGE7LCd3dLLWReOLNzKezWK9eA7xP8404jZQWb92yAzp+ZJjLTC+IPy
+ SgxhuRbUnyXs5YQdCjvkWfndIc2hGy1qu8EuE749JeSce2CYHtHcF73YsDXLXxGWhB1H yA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 301w80wtq1-1
+ by mx07-00178001.pphosted.com with ESMTP id 301w80wtq5-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 31 Mar 2020 10:32:07 +0200
+ Tue, 31 Mar 2020 10:32:09 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 11D1D10002A;
- Tue, 31 Mar 2020 10:32:07 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 74832100034;
+ Tue, 31 Mar 2020 10:32:08 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 011EB21E676;
- Tue, 31 Mar 2020 10:32:07 +0200 (CEST)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 31 Mar 2020 10:32:06
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 65D6A21E675;
+ Tue, 31 Mar 2020 10:32:08 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 31 Mar 2020 10:32:07
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <daniel.lezcano@linaro.org>,
  <tglx@linutronix.de>
-Subject: [PATCH v5 5/6] clocksource: Add Low Power STM32 timers driver
-Date: Tue, 31 Mar 2020 10:31:45 +0200
-Message-ID: <20200331083146.10462-6-benjamin.gaignard@st.com>
+Subject: [PATCH v5 6/6] ARM: mach-stm32: select low power timer for STM32MP157
+Date: Tue, 31 Mar 2020 10:31:46 +0200
+Message-ID: <20200331083146.10462-7-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200331083146.10462-1-benjamin.gaignard@st.com>
 References: <20200331083146.10462-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
  definitions=2020-03-31_03:2020-03-30,
  2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_013219_064709_BFD31D6D 
-X-CRM114-Status: GOOD (  22.13  )
+X-CRM114-CacheID: sfid-20200331_013221_586761_04820116 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -97,313 +97,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Pascal Paillet <p.paillet@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Make MACH_STM32MP157 select CLKSRC_STM32_LP to get a broadcast timer.
 
-Implement clock event driver using low power STM32 timers.
-Low power timer counters running even when CPUs are stopped.
-It could be used as clock event broadcaster to wake up CPUs but not like
-a clocksource because each it rise an interrupt the counter restart from 0.
-
-Low power timers have a 16 bits counter and a prescaler which allow to
-divide the clock per power of 2 to up 128 to target a 32KHz rate.
-
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Signed-off-by: Pascal Paillet <p.paillet@st.com>
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
-version 5:
-- use a dedicated wake up interrupt
+ arch/arm/mach-stm32/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-version 4:
-- move defines in mfd/stm32-lptimer.h
-- change compatiblename
-- reword commit message
-- make driver Kconfig depends of MFD_STM32_LPTIMER
-- remove useless include
-- remove rate and clk fields from the private structure
-- to add comments about the registers sequence in stm32_clkevent_lp_set_timer
-- rework probe function and use devm_request_irq()
-- do not allow module to be removed
-- make sure that wakeup interrupt is set
-
- drivers/clocksource/Kconfig          |   4 +
- drivers/clocksource/Makefile         |   1 +
- drivers/clocksource/timer-stm32-lp.c | 231 +++++++++++++++++++++++++++++++++++
- 3 files changed, 236 insertions(+)
- create mode 100644 drivers/clocksource/timer-stm32-lp.c
-
-diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
-index cc909e465823..f340a64286ef 100644
---- a/drivers/clocksource/Kconfig
-+++ b/drivers/clocksource/Kconfig
-@@ -292,6 +292,10 @@ config CLKSRC_STM32
- 	select CLKSRC_MMIO
- 	select TIMER_OF
+diff --git a/arch/arm/mach-stm32/Kconfig b/arch/arm/mach-stm32/Kconfig
+index 57699bd8f107..d78f55b7b1d0 100644
+--- a/arch/arm/mach-stm32/Kconfig
++++ b/arch/arm/mach-stm32/Kconfig
+@@ -46,6 +46,7 @@ if ARCH_MULTI_V7
+ config MACH_STM32MP157
+ 	bool "STMicroelectronics STM32MP157"
+ 	select ARM_ERRATA_814220
++	select CLKSRC_STM32_LP
+ 	default y
  
-+config CLKSRC_STM32_LP
-+	bool "Low power clocksource for STM32 SoCs"
-+	depends on MFD_STM32_LPTIMER || COMPILE_TEST
-+
- config CLKSRC_MPS2
- 	bool "Clocksource for MPS2 SoCs" if COMPILE_TEST
- 	depends on GENERIC_SCHED_CLOCK
-diff --git a/drivers/clocksource/Makefile b/drivers/clocksource/Makefile
-index 713686faa549..c00fffbd4769 100644
---- a/drivers/clocksource/Makefile
-+++ b/drivers/clocksource/Makefile
-@@ -44,6 +44,7 @@ obj-$(CONFIG_BCM_KONA_TIMER)	+= bcm_kona_timer.o
- obj-$(CONFIG_CADENCE_TTC_TIMER)	+= timer-cadence-ttc.o
- obj-$(CONFIG_CLKSRC_EFM32)	+= timer-efm32.o
- obj-$(CONFIG_CLKSRC_STM32)	+= timer-stm32.o
-+obj-$(CONFIG_CLKSRC_STM32_LP)	+= timer-stm32-lp.o
- obj-$(CONFIG_CLKSRC_EXYNOS_MCT)	+= exynos_mct.o
- obj-$(CONFIG_CLKSRC_LPC32XX)	+= timer-lpc32xx.o
- obj-$(CONFIG_CLKSRC_MPS2)	+= mps2-timer.o
-diff --git a/drivers/clocksource/timer-stm32-lp.c b/drivers/clocksource/timer-stm32-lp.c
-new file mode 100644
-index 000000000000..6235ea35f1fe
---- /dev/null
-+++ b/drivers/clocksource/timer-stm32-lp.c
-@@ -0,0 +1,231 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-+ * Authors: Benjamin Gaignard <benjamin.gaignard@st.com> for STMicroelectronics.
-+ *	    Pascal Paillet <p.paillet@st.com> for STMicroelectronics.
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/clockchips.h>
-+#include <linux/interrupt.h>
-+#include <linux/mfd/stm32-lptimer.h>
-+#include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of_irq.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_wakeirq.h>
-+
-+#define CFGR_PSC_OFFSET		9
-+#define STM32_LP_RATING		400
-+#define STM32_TARGET_CLKRATE	(32000 * HZ)
-+#define STM32_LP_MAX_PSC	7
-+
-+struct stm32_lp_private {
-+	struct regmap *reg;
-+	struct clock_event_device clkevt;
-+	unsigned long period;
-+	struct device *dev;
-+};
-+
-+static struct stm32_lp_private*
-+to_priv(struct clock_event_device *clkevt)
-+{
-+	return container_of(clkevt, struct stm32_lp_private, clkevt);
-+}
-+
-+static int stm32_clkevent_lp_shutdown(struct clock_event_device *clkevt)
-+{
-+	struct stm32_lp_private *priv = to_priv(clkevt);
-+
-+	regmap_write(priv->reg, STM32_LPTIM_CR, 0);
-+	regmap_write(priv->reg, STM32_LPTIM_IER, 0);
-+	/* clear pending flags */
-+	regmap_write(priv->reg, STM32_LPTIM_ICR, STM32_LPTIM_ARRMCF);
-+
-+	return 0;
-+}
-+
-+static int stm32_clkevent_lp_set_timer(unsigned long evt,
-+				       struct clock_event_device *clkevt,
-+				       int is_periodic)
-+{
-+	struct stm32_lp_private *priv = to_priv(clkevt);
-+
-+	/* disable LPTIMER to be able to write into IER register*/
-+	regmap_write(priv->reg, STM32_LPTIM_CR, 0);
-+	/* enable ARR interrupt */
-+	regmap_write(priv->reg, STM32_LPTIM_IER, STM32_LPTIM_ARRMIE);
-+	/* enable LPTIMER to be able to write into ARR register */
-+	regmap_write(priv->reg, STM32_LPTIM_CR, STM32_LPTIM_ENABLE);
-+	/* set next event counter */
-+	regmap_write(priv->reg, STM32_LPTIM_ARR, evt);
-+
-+	/* start counter */
-+	if (is_periodic)
-+		regmap_write(priv->reg, STM32_LPTIM_CR,
-+			     STM32_LPTIM_CNTSTRT | STM32_LPTIM_ENABLE);
-+	else
-+		regmap_write(priv->reg, STM32_LPTIM_CR,
-+			     STM32_LPTIM_SNGSTRT | STM32_LPTIM_ENABLE);
-+
-+	return 0;
-+}
-+
-+static int stm32_clkevent_lp_set_next_event(unsigned long evt,
-+					    struct clock_event_device *clkevt)
-+{
-+	return stm32_clkevent_lp_set_timer(evt, clkevt,
-+					   clockevent_state_periodic(clkevt));
-+}
-+
-+static int stm32_clkevent_lp_set_periodic(struct clock_event_device *clkevt)
-+{
-+	struct stm32_lp_private *priv = to_priv(clkevt);
-+
-+	return stm32_clkevent_lp_set_timer(priv->period, clkevt, true);
-+}
-+
-+static int stm32_clkevent_lp_set_oneshot(struct clock_event_device *clkevt)
-+{
-+	struct stm32_lp_private *priv = to_priv(clkevt);
-+
-+	return stm32_clkevent_lp_set_timer(priv->period, clkevt, false);
-+}
-+
-+static irqreturn_t stm32_clkevent_lp_irq_handler(int irq, void *dev_id)
-+{
-+	struct clock_event_device *clkevt = (struct clock_event_device *)dev_id;
-+	struct stm32_lp_private *priv = to_priv(clkevt);
-+
-+	regmap_write(priv->reg, STM32_LPTIM_ICR, STM32_LPTIM_ARRMCF);
-+
-+	if (clkevt->event_handler)
-+		clkevt->event_handler(clkevt);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static void stm32_clkevent_lp_set_prescaler(struct stm32_lp_private *priv,
-+					    unsigned long *rate)
-+{
-+	int i;
-+
-+	for (i = 0; i <= STM32_LP_MAX_PSC; i++) {
-+		if (DIV_ROUND_CLOSEST(*rate, 1 << i) < STM32_TARGET_CLKRATE)
-+			break;
-+	}
-+
-+	regmap_write(priv->reg, STM32_LPTIM_CFGR, i << CFGR_PSC_OFFSET);
-+
-+	/* Adjust rate and period given the prescaler value */
-+	*rate = DIV_ROUND_CLOSEST(*rate, (1 << i));
-+	priv->period = DIV_ROUND_UP(*rate, HZ);
-+}
-+
-+static void stm32_clkevent_lp_init(struct stm32_lp_private *priv,
-+				  struct device_node *np, unsigned long rate)
-+{
-+	priv->clkevt.name = np->full_name;
-+	priv->clkevt.cpumask = cpu_possible_mask;
-+	priv->clkevt.features = CLOCK_EVT_FEAT_PERIODIC |
-+				CLOCK_EVT_FEAT_ONESHOT;
-+	priv->clkevt.set_state_shutdown = stm32_clkevent_lp_shutdown;
-+	priv->clkevt.set_state_periodic = stm32_clkevent_lp_set_periodic;
-+	priv->clkevt.set_state_oneshot = stm32_clkevent_lp_set_oneshot;
-+	priv->clkevt.set_next_event = stm32_clkevent_lp_set_next_event;
-+	priv->clkevt.rating = STM32_LP_RATING;
-+
-+	clockevents_config_and_register(&priv->clkevt, rate, 0x1,
-+					STM32_LPTIM_MAX_ARR);
-+}
-+
-+static int stm32_clkevent_lp_probe(struct platform_device *pdev)
-+{
-+	struct stm32_lptimer *ddata = dev_get_drvdata(pdev->dev.parent);
-+	struct stm32_lp_private *priv;
-+	unsigned long rate;
-+	int ret, irq;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->reg = ddata->regmap;
-+	ret = clk_prepare_enable(ddata->clk);
-+	if (ret)
-+		return -EINVAL;
-+
-+	rate = clk_get_rate(ddata->clk);
-+	if (!rate) {
-+		ret = -EINVAL;
-+		goto out_clk_disable;
-+	}
-+
-+	irq = platform_get_irq_byname(to_platform_device(pdev->dev.parent),
-+				      "event");
-+	if (irq <= 0) {
-+		ret = irq;
-+		goto out_clk_disable;
-+	}
-+
-+	if (of_property_read_bool(pdev->dev.parent->of_node, "wakeup-source")) {
-+		int wakeup = platform_get_irq_byname(
-+				to_platform_device(pdev->dev.parent),
-+				"wakeup");
-+
-+		if (wakeup <= 0) {
-+			ret = wakeup;
-+			goto out_clk_disable;
-+		}
-+
-+		ret = device_init_wakeup(&pdev->dev, true);
-+		if (ret)
-+			goto out_clk_disable;
-+
-+		ret = dev_pm_set_wake_irq(&pdev->dev, wakeup);
-+		if (ret)
-+			goto out_clk_disable;
-+	}
-+
-+	ret = devm_request_irq(&pdev->dev, irq, stm32_clkevent_lp_irq_handler,
-+			       IRQF_TIMER, pdev->name, &priv->clkevt);
-+	if (ret)
-+		goto out_clk_disable;
-+
-+	stm32_clkevent_lp_set_prescaler(priv, &rate);
-+
-+	stm32_clkevent_lp_init(priv, pdev->dev.parent->of_node, rate);
-+
-+	priv->dev = &pdev->dev;
-+
-+	return 0;
-+
-+out_clk_disable:
-+	clk_disable_unprepare(ddata->clk);
-+	return ret;
-+}
-+
-+static int stm32_clkevent_lp_remove(struct platform_device *pdev)
-+{
-+	return -EBUSY; /* cannot unregister clockevent */
-+}
-+
-+static const struct of_device_id stm32_clkevent_lp_of_match[] = {
-+	{ .compatible = "st,stm32-lptimer-timer", },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, stm32_clkevent_lp_of_match);
-+
-+static struct platform_driver stm32_clkevent_lp_driver = {
-+	.probe	= stm32_clkevent_lp_probe,
-+	.remove = stm32_clkevent_lp_remove,
-+	.driver	= {
-+		.name = "stm32-lptimer-timer",
-+		.of_match_table = of_match_ptr(stm32_clkevent_lp_of_match),
-+	},
-+};
-+module_platform_driver(stm32_clkevent_lp_driver);
-+
-+MODULE_ALIAS("platform:stm32-lptimer-timer");
-+MODULE_DESCRIPTION("STMicroelectronics STM32 clockevent low power driver");
-+MODULE_LICENSE("GPL v2");
+ endif # ARMv7-A
 -- 
 2.15.0
 
