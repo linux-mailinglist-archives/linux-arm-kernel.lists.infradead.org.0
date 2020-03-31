@@ -2,77 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70487198CC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 09:15:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 840B6198CD0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 09:18:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7RM8Z0WdCiB9ozSvRi3ab2OXj7ZuNN/AyTjfeYtt6Lg=; b=kP0z32KXA2q3FJ
-	Pt3BBEbetlOPFSlLaaLNgzrg2DJfIT00EvfS3u0NTJbXKdGskkVSWQJHqCN5uV4lco5aRhJMArd1o
-	9VTSMNo2zR3cpAU8i+WLYO29bqHbmC5MrE/r2+tzncBbwyTgTqPG6ri/B4JMDmKQAIueGT4A6W3po
-	hpTwPHE2HHUhJLjhd6uPavtkjh05IJc5CbzPowBcaXDdmxRW1IsSnUixcuNsvOvjq4MV6J4zpC0Yy
-	tfShAzOlCdLxS5Y0GtUL8OrQbeHFyqKiEa7Tr0LJeTG5Ko8I4WVKU6Qig7obGTyiydaqkWM4seMxv
-	DP1rRDBQRFqaCWO01fwQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=i+P8tws5xXWrXzTJ1E07P0+11zEznfvmCKzJZpsI1N4=; b=P9sxnESjO+MZBrCbyR44ZApIv
+	WkOzzocW5HjvvvMpvAEDslc+xFI1JUAMLbXOPazciB1yEiJDKfb6bmrPUQSM/YNMRbS+JNDUOm3jl
+	vOxAx4l3Wo+vBOrBvaDZrhKx2/ud5pkFQezAgwlGybRjIYbH/8EK1rxWAf9q6nqGpG01KgoM16P3M
+	VcMRF9R3pNbjxFWbW/dh5tDFdWBsG4n/SldOT6icCrMz44doCyZhbvtAd5N+zFdG+B7sVsfFFyUxv
+	lN2WSwglHDcEtDGS7AvMgZVzfO3ejk0DZqt4T2gWFr2hhkC0I/V2th+E270JjTxzTlfnV7dwx78Pl
+	pHw1/cmrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJB6o-0007CL-DI; Tue, 31 Mar 2020 07:14:50 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jJB9w-0000WF-LC; Tue, 31 Mar 2020 07:18:04 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJB6f-0007B0-Gs; Tue, 31 Mar 2020 07:14:42 +0000
-X-UUID: a70682b87b90401490f67ace37cdcaa7-20200330
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=tjPRKJwv3JpOCljaRUaL4xSBagZpOnRqSFRVswzw7Gs=; 
- b=pl3sFafDlzdqzPr2tiyYdnfDuM8e2VR5yyrpb56+s6YCZInYGQz7eFVwID0N/vWNuiQfSKrJ16r2al4CpLWqtCbiNnMbhtayoyFDENSBlRIOj8n088F93u2WgR7jJ774noNjnV32YfBnGiZbOJFLeJ9X+2IurBI/yb5Et7QgAoA=;
-X-UUID: a70682b87b90401490f67ace37cdcaa7-20200330
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 954705506; Mon, 30 Mar 2020 23:14:21 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 31 Mar 2020 00:10:25 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
- (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 31 Mar 2020 15:10:21 +0800
-Received: from [10.16.6.141] (10.16.6.141) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 31 Mar 2020 15:10:19 +0800
-Message-ID: <1585638593.31955.5.camel@mszsdaap41>
-Subject: Re: [PATCH v3 1/4] dt-bindings: display: mediatek: add property to
- control mipi tx drive current
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Tue, 31 Mar 2020 15:09:53 +0800
-In-Reply-To: <20200323220033.GA29463@bogus>
-References: <20200311074032.119481-1-jitao.shi@mediatek.com>
- <20200311074032.119481-2-jitao.shi@mediatek.com>
- <20200323220033.GA29463@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jJB9n-0000VF-Ue; Tue, 31 Mar 2020 07:17:57 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 867CC296952
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v5 4/5] drm: imx: Add i.MX 6 MIPI DSI host platform driver
+In-Reply-To: <246bf7c71620021258355c2fc32dd38ac6b0cc45.camel@collabora.com>
+References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+ <20200330113542.181752-5-adrian.ratiu@collabora.com>
+ <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
+ <4a9d2d6e5cecbe296c14119d27a8793a7dbed7b2.camel@collabora.com>
+ <877dz134xf.fsf@collabora.com>
+ <246bf7c71620021258355c2fc32dd38ac6b0cc45.camel@collabora.com>
+Date: Tue, 31 Mar 2020 10:19:00 +0300
+Message-ID: <874ku52dqz.fsf@collabora.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 518E88426F51400BDCEE41B35C4881984A15EE42DB8BBE274CDC847E3BBA18762000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_001441_564481_8BEE517A 
-X-CRM114-Status: GOOD (  14.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_001756_118303_4D8ADCBE 
+X-CRM114-Status: GOOD (  22.49  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,67 +60,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Martyn Welch <martyn.welch@collabora.com>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE
+ IMX / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Emil Velikov <emil.velikov@collabora.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On Mon, 2020-03-23 at 16:00 -0600, Rob Herring wrote:
-> On Wed, Mar 11, 2020 at 03:40:29PM +0800, Jitao Shi wrote:
-> > Add a property to control mipi tx drive current:
-> > "drive-strength-microamp"
-> > 
-> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> > ---
-> >  .../devicetree/bindings/display/mediatek/mediatek,dsi.txt     | 4 ++++
-> >  1 file changed, 4 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> > index a19a6cc375ed..d501f9ff4b1f 100644
-> > --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> > @@ -33,6 +33,9 @@ Required properties:
-> >  - #clock-cells: must be <0>;
-> >  - #phy-cells: must be <0>.
-> >  
-> > +Optional properties:
-> > +- drive-strength-microamp: adjust driving current, should be 1 ~ 0xF
+On Tue, 31 Mar 2020, Ezequiel Garcia <ezequiel@collabora.com> 
+wrote:
+> On Tue, 2020-03-31 at 00:31 +0300, Adrian Ratiu wrote: 
+>> On Mon, 30 Mar 2020, Ezequiel Garcia <ezequiel@collabora.com> 
+>> wrote: 
+>> > Hello Fabio, Adrian:   On Mon, 2020-03-30 at 08:49 -0300, 
+>> > Fabio Estevam wrote:  
+>> > > Hi Adrian,  On Mon, Mar 30, 2020 at 8:34 AM Adrian Ratiu 
+>> > > <adrian.ratiu@collabora.com> wrote:  
+>> > > > This adds support for the Synopsis DesignWare MIPI DSI 
+>> > > > v1.01  host controller which is embedded in i.MX 6 SoCs. 
+>> > > > Based on  following patches, but updated/extended to work 
+>> > > > with existing  support found in the kernel:  - drm: imx: 
+>> > > > Support Synopsys  DesignWare MIPI DSI host controller  
+>> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>  
+>> > > >  - ARM: dtsi: imx6qdl: Add support for MIPI DSI host  
+>> > > > controller  
+>> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>  
+>> > >  This one looks like a devicetree patch, but this patch 
+>> > >  does  
+>> > > not touch devicetree.   
+>> > > > +       ret = clk_prepare_enable(dsi->pllref_clk); + 
+>> > > > if  (ret) { +               dev_err(dev, "%s: Failed to 
+>> > > > enable  pllref_clk\n", __func__); +               return 
+>> > > > ret; +  } + +       dsi->mux_sel = 
+>> > > > syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr"); 
+>> > > > +  if (IS_ERR(dsi->mux_sel)) { +               ret = 
+>> > > > PTR_ERR(dsi->mux_sel); +               dev_err(dev, "%s: 
+>> > > > Failed to get GPR regmap: %d\n", +  __func__, ret); + 
+>> > > > return ret;  
+>> > >  You should disable the dsi->pllref_clk clock prior to  
+>> > > returning the error.   
+>> >  Another approach could be moving the clock on and off to to 
+>> > component_ops.{bind,unbind} (as rockhip driver does).    What 
+>> > exactly is the PLL clock needed for? Would it make sense to 
+>> > move it some of the PHY power on/off? (Maybe not, but it's 
+>> > worthing checking).    Also, it seems the other IP blocks 
+>> > have this PLL clock, so maybe  it could be moved to the 
+>> > dw_mipi_dsi core? This could be  something for a follow-up, 
+>> > to avoid creeping this series. 
+>>  Hi Ezequiel,  pll is the video reference clock which drives 
+>> the data lanes and  yes all drivers have it as it's a basic 
+>> requirement, so moving it  to the common bridge is indeed a 
+>> good idea, however this kind of  driver refactoring is out of 
+>> scope for this specific patch series,  because, for now, I'd 
+>> like to get the regmap and the imx6 driver  in, once that is 
+>> done we can think how to further abstract away  common logic 
+>> and slim down the existing drivers further.   Basically I just 
+>> want to avoid feature creep as I expect v6 to be  ~ 8 patches 
+>> big and the series is already over 1200 lines.  
 > 
-> TBC, 1-0xf is in units of microamps? So a max drive strength of 15uA? 
-> Seems a bit low.
+> Oh, absolutely: if there's one thing I try to avoid is feature 
+> creep -- together with bikeshedding! 
 > 
+> Do note however, that you could move the PLL clock handling to 
+> component_ops.{bind,unbind} and maybe simplify the error 
+> handling. 
+> 
+> (BTW, great work!)
 
-The minimum amp is 3000 macroamps,  step is 200macroamps.
-So the drive current is 3000 + 200 * drive-strength-microamp amps.
+Thanks! I'll do the bind/unbind move for the new imx6 driver which 
+I'm
+adding in this series to make it resemble the existing rockchip 
+driver a bit more, then I'll stop short of further driver 
+refactorings.
 
-I will update "drive-strength-microamp" define next version.
-
-BR
-Jitao
-> > +
-> >  Example:
-> >  
-> >  mipi_tx0: mipi-dphy@10215000 {
-> > @@ -42,6 +45,7 @@ mipi_tx0: mipi-dphy@10215000 {
-> >  	clock-output-names = "mipi_tx0_pll";
-> >  	#clock-cells = <0>;
-> >  	#phy-cells = <0>;
-> > +	drive-strength-microamp = <0x8>;
-> >  };
-> >  
-> >  dsi0: dsi@1401b000 {
-> > -- 
-> > 2.21.0
-
+>
+> Cheers,
+> Ezequiel
 
 _______________________________________________
 linux-arm-kernel mailing list
