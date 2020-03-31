@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE049199DA7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:04:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A96B1199DA8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:04:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UQflA6AcLO/yv501FoKGR5b224W0o9sUqGzKRXWjC3I=; b=eiwkPcY79zau68
-	KTSQkbf1vVJj2e2imhyMYvuB0rTyTeqjdWMy8ohQIxTZ45dx16s+oHAW++U3We7F6AgrzmJhXbut5
-	omHPniS9vq862PUcU9NukwIB+8+8UciUp/vS7JeU8gfSkC0ol0pKrK1QjDiZFyeNPuSHL0RSe6pDo
-	pk29dbMjfxD3WQiGAB0LQoCpHlw11SsESaubohWIKlOjECwL2tumQS0PA8Ani696sy3fGIAbn7S3w
-	/ftc51ppUUKKiI4QUKmpWMnikb7IvOStcvOmZOhzRkjxHto2v3/M9eYoYROCOkPhVlqlOfYm7zFk5
-	iXYd7dGTf7iB2kf+7xHg==;
+	List-Owner; bh=V5aQ1IGQsiN7mRQnBfHDTld00O4C8pkoii74Oz6VZKQ=; b=LneAfTTaf0Rzma
+	uSZD09lsVzK+sMcL/+QhlV1ap9FpYGHra1b2tHeGqRw/KXz8/Ht4t2lpjja0KeAMsjs3uIgrObDGb
+	jY4wIkjyrOxPiXCQQ6350WA3xUjse9HSPAwH32QSqv3xIqUEU88L15tt0LxeBfwEPbQk2oNRy5fSX
+	kAxAFwZEqj4j+fPJRN6NaWflpMTwDblsqCbj4vtgJz7JKoCES5srBxT0oOVdiw5Mvbfj7q4ZQnF6W
+	rOK1E3LXOniABENEGnO1pexjpVMOil6ttoFRvhN+eP62bBlNMALSWAYrXI5Y0334PHHK3tBD29CcF
+	1Xhax4LBOBRfua2AzLbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJLFB-0007Pv-9Z; Tue, 31 Mar 2020 18:04:09 +0000
+	id 1jJLFR-0007eK-Mw; Tue, 31 Mar 2020 18:04:25 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJLAZ-0001SF-4C
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:59:25 +0000
+ id 1jJLAa-0001Tf-TY
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:59:26 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sHCD0nH6z1qrMc;
- Tue, 31 Mar 2020 19:59:20 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sHCF32cNz1qrfP;
+ Tue, 31 Mar 2020 19:59:21 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sHCD0WKzz1qqkQ;
- Tue, 31 Mar 2020 19:59:20 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sHCF2k23z1qqkQ;
+ Tue, 31 Mar 2020 19:59:21 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id GP5zFvCp9OhA; Tue, 31 Mar 2020 19:59:18 +0200 (CEST)
-X-Auth-Info: A8hOULHRniEKicHqar823G/aC6KY3UAdVUOy3O8MlVM=
+ with ESMTP id CiVlU1I9g-n0; Tue, 31 Mar 2020 19:59:20 +0200 (CEST)
+X-Auth-Info: w1BxQYRcwvR5wNi7qJaV6uJ84l79CKaZ4j9wI8kA8JU=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 31 Mar 2020 19:59:18 +0200 (CEST)
+ Tue, 31 Mar 2020 19:59:20 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 15/22] ARM: dts: stm32: Enable WiFi on AV96
-Date: Tue, 31 Mar 2020 19:58:04 +0200
-Message-Id: <20200331175811.205153-16-marex@denx.de>
+Subject: [PATCH V3 16/22] ARM: dts: stm32: Add alternate pinmux for USART2 pins
+Date: Tue, 31 Mar 2020 19:58:05 +0200
+Message-Id: <20200331175811.205153-17-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200331175811.205153-1-marex@denx.de>
 References: <20200331175811.205153-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_105923_470216_34EC33F0 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20200331_105925_210008_B3B0D0C7 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -86,11 +86,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The WiFi/Bluetooth SDIO chip is attached to SDMMC3 on AV96, describe it
-in DT to make it available. Remove WiFi LED and turn it into a regulator,
-because it is a GPIO controlling the WL_REG_ON input of the WiFi chip.
-The LED is just an indicator connected to the same line, but not the
-primary function.
+Add mux option for USART2 pins, this is used on AV96 board.
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Marek Vasut <marex@denx.de>
@@ -105,72 +101,44 @@ To: linux-arm-kernel@lists.infradead.org
 V2: No change
 V3: No change
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 38 +++++++++++++++++----
- 1 file changed, 31 insertions(+), 7 deletions(-)
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 19a7a130b148..19676ff0efed 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -65,13 +65,6 @@ led4 {
+diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+index f3f9fc4a3503..4f3b40d5751f 100644
+--- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+@@ -1204,6 +1204,30 @@ pins {
  		};
- 
- 		led5 {
--			label = "yellow:wifi";
--			gpios = <&gpioz 3 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "phy0tx";
--			default-state = "off";
--		};
--
--		led6 {
- 			label = "blue:bt";
- 			gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "bluetooth-power";
-@@ -103,6 +96,17 @@ vdd_io: regulator-buck-io {
- 		regulator-boot-on;
- 		vin-supply = <&vdd>;
  	};
-+
-+	wlan_pwr: regulator-wlan {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "wl-reg";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		gpios = <&gpioz 3 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
- };
  
- &ethernet0 {
-@@ -382,6 +386,26 @@ &sdmmc2 {
- 	status = "okay";
- };
- 
-+&sdmmc3 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc3_b4_pins_b>;
-+	pinctrl-1 = <&sdmmc3_b4_od_pins_b>;
-+	pinctrl-2 = <&sdmmc3_b4_sleep_pins_b>;
-+	broken-cd;
-+	non-removable;
-+	st,neg-edge;
-+	bus-width = <4>;
-+	vmmc-supply = <&wlan_pwr>;
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	brcmf: bcrmf@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
++	usart2_pins_a: usart2-0 {
++		pins1 {
++			pinmux = <STM32_PINMUX('F', 5, AF7)>, /* USART2_TX */
++				 <STM32_PINMUX('D', 4, AF7)>; /* USART2_RTS */
++			bias-disable;
++			drive-push-pull;
++			slew-rate = <0>;
++		};
++		pins2 {
++			pinmux = <STM32_PINMUX('D', 6, AF7)>, /* USART2_RX */
++				 <STM32_PINMUX('D', 3, AF7)>; /* USART2_CTS_NSS */
++			bias-disable;
++		};
 +	};
-+};
 +
- &uart4 {
- 	/* On Low speed expansion header */
- 	label = "LS-UART1";
++	usart2_sleep_pins_a: usart2-sleep-0 {
++		pins {
++			pinmux = <STM32_PINMUX('F', 5, ANALOG)>, /* USART2_TX */
++				 <STM32_PINMUX('D', 4, ANALOG)>, /* USART2_RTS */
++				 <STM32_PINMUX('D', 6, ANALOG)>, /* USART2_RX */
++				 <STM32_PINMUX('D', 3, ANALOG)>; /* USART2_CTS_NSS */
++		};
++	};
++
+ 	usart3_pins_a: usart3-0 {
+ 		pins1 {
+ 			pinmux = <STM32_PINMUX('B', 10, AF7)>; /* USART3_TX */
 -- 
 2.25.1
 
