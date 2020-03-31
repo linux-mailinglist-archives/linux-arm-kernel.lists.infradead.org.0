@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 121A119A173
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 23:57:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4420A19A197
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 00:05:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WKSrFS5oC02/123J5N1DFE+ZU5EUUMFX1KFSQHyta44=; b=VmuDmWcTgs2b3T
-	TGEimXdJQtMoFL0RpdqUW5H3XG7MBn1/auyoJJoZevJ10jXXOiGKAofgB4cpc62WiHZJccEr+P4PA
-	oofddl0QoQuw49814ADZjOq9fmu6Cx/SSwMtQzyXGRMF5AYPgcxHFpIP1XZgGwyOmukiVi1IAoZ0p
-	uZQ+hf01ulhD2WPQob1HZrTDfsdL38mBowkFuzxIih+GQZKQrrCeoCEFAAjUqliT1XxjeAPSHpiwh
-	d3Pr2Y/5T4OEmUP0VyukMTLHoRC+h8Zg6nv2mi3YilRR6nwRgT8MWch17am0Wh2ZRcr/DxM3SugRL
-	+EmTd7VZ9td0AMSASh5g==;
+	List-Owner; bh=YYu3t1JwVDpTNI2qJ6vPJeEU9k5ShPiMqkzgfFajLW0=; b=bjZ/zq+qjP4UiP
+	gfdKUrW149Jklbzaj6henYaVzWob7PIm2nklB+vEeJn56p/9yZXi18U8Ng00wiOgwzGqfQUDxC3YZ
+	wP8/4HMYhuVfMtq4L//BuNs0HYHPfa2ra7j+gPv6hD9ebubhNqGSsIhsoIhGK7QtxJQdu4BIOshLw
+	HFyVXmnQ4uUkqIbEUrOnUQIIsyv5rlZ2At51RvbdOUPj8mZwZmJdEK20xJp2eo8mAd+FaxIq27px4
+	dtToQrcCj2S2CZxrd2vawSBfj1B7hJuXh+JrEYSKiguyr7HfcNUvgsvDrCGrf0hXYf2JjzZnMR6W7
+	iPLrUjRstapDlBHJFwHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJOsh-0001Gk-0U; Tue, 31 Mar 2020 21:57:11 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1jJP0q-0007vP-1B; Tue, 31 Mar 2020 22:05:36 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJOsR-0001Fb-M9
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 21:56:57 +0000
-Received: by mail-io1-f66.google.com with SMTP id c16so9039189iod.6
+ id 1jJP0g-0007ur-B3
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 22:05:28 +0000
+Received: by mail-io1-f65.google.com with SMTP id q9so23494675iod.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 14:56:55 -0700 (PDT)
+ Tue, 31 Mar 2020 15:05:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4WUJcrPXs22r9JdeLAnm70kiB0BphSPIJzUg0VapEbY=;
- b=gjDNbI9vyZj11fXWKdSpO36xeKKrXK3G80Qx8Ek345ob0I4xJePKDwJIfbtM7NfwIS
- V0gAsZ29Zm6IN2YWsITNcORvrm8HCXFg48UPrW/Km7fUljGxIZkOiSIulAA8Ck99kS0/
- E/3HDYj0KUoj17r9Seh4LdBUoYZWtCLzfAzEb9enS8RFyJOVNwwZxRaZRRuOsq0x8OnD
- F4U1eNIy6F6p0CNr82JL68vHENl2qHDuQG757BinvkP0OHVmtydFRRK9Ga/oGe0nSCVW
- BaoOtTWcy1krCPa6P6mz7qrL5WOhTBg4ARODM2ZD8sgtEDHU6FUC8XfgUPoXPxG/ul7R
- gKWQ==
-X-Gm-Message-State: ANhLgQ3zKM+q7hk1nCTlebkAJSMomWJzFhN0pA/JTG50lby81f2APJ/+
- 3pL/5Gts0V/3ZUtpNZiC5g==
-X-Google-Smtp-Source: ADFU+vv0OawzkBUN9BFAdbkSWK1TqBslM3XoIY17+04sBZBRJwhn+CB96C91SkkB2ucf9uoqAPGiyA==
-X-Received: by 2002:a02:8798:: with SMTP id t24mr17150645jai.119.1585691814748; 
- Tue, 31 Mar 2020 14:56:54 -0700 (PDT)
+ bh=7gyHDuCCObLbwOhDgDLIB3IBv9q5ANpOPQTizzDSzp0=;
+ b=czKKAbv3YviLBr+G0slx4ABwXhFvJnhasQIvsCSBZ9xbcQmUA2Zd8XOPLBOLFf5y3U
+ WYwVGW137R0H8ZjWOVVMNrzaBrO9XO2sa4371qdp/ptx8K3Us9htET61uYMO74GeCV0/
+ meWqq8VUOquZJ7QfeOArxFIai0COPecCtWBFxN6pORqi3deAKePnOEPFB6AbnTndoV8Q
+ w+G5pd5ocLl8jGTJZzx4wyGsFANahKV4cvM0cHmCwMEN0yYtLvGzDuCX0Dq+c/y848e6
+ OLDkMbcff3XBjehCeZ7ZPUKRZiWlKMu2GMGuihErCu9Fb9sp1t3q8a6ukG4WuxT+VL9w
+ RCiA==
+X-Gm-Message-State: ANhLgQ3OtB9GMht1PM3NwPp1GOBnq0mlP/CLg+JNl8XdhNIJiiQ308oN
+ 3Vytcb56Jdq1E8qIo/WooA==
+X-Google-Smtp-Source: ADFU+vsSpOsZ8Wc5swgJ7BDjH/PlcggrqpxIHsrUj7g2brTbnTX5zZ608Wo6F6HlLOic/Op0/GNsQQ==
+X-Received: by 2002:a02:dc6:: with SMTP id 189mr17932359jax.100.1585692325439; 
+ Tue, 31 Mar 2020 15:05:25 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id e73sm42029ilg.39.2020.03.31.14.56.53
+ by smtp.gmail.com with ESMTPSA id r5sm48089ioc.6.2020.03.31.15.05.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 14:56:53 -0700 (PDT)
-Received: (nullmailer pid 10981 invoked by uid 1000);
- Tue, 31 Mar 2020 21:56:52 -0000
-Date: Tue, 31 Mar 2020 15:56:52 -0600
+ Tue, 31 Mar 2020 15:05:24 -0700 (PDT)
+Received: (nullmailer pid 28953 invoked by uid 1000);
+ Tue, 31 Mar 2020 22:05:23 -0000
+Date: Tue, 31 Mar 2020 16:05:23 -0600
 From: Rob Herring <robh@kernel.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/4] dt-bindings: remoteproc: k3-dsp: Update bindings for
- C71x DSPs
-Message-ID: <20200331215652.GA10923@bogus>
-References: <20200325204701.16862-1-s-anna@ti.com>
- <20200325204701.16862-2-s-anna@ti.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 1/2] dt-bindings: arm: Add some constraints for PSCI nodes
+Message-ID: <20200331220523.GA28810@bogus>
+References: <20200326105626.6369-1-ulf.hansson@linaro.org>
+ <20200326105626.6369-2-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200325204701.16862-2-s-anna@ti.com>
+In-Reply-To: <20200326105626.6369-2-ulf.hansson@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_145655_732473_21526997 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20200331_150526_384501_A7B876E1 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [209.85.166.65 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -79,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
+ [209.85.166.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,33 +92,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Loic Pallardy <loic.pallardy@st.com>, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Clement Leger <cleger@kalray.eu>, Rob Herring <robh+dt@kernel.org>,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 25 Mar 2020 15:46:58 -0500, Suman Anna wrote:
-> Some Texas Instruments K3 family of SoCs have one of more newer
-> generation TMS320C71x CorePac processor subsystem in addition to
-> the existing TMS320C66x CorePac processor subsystems. Update the
-> device tree bindings document for the C71x DSP devices.
+On Thu, 26 Mar 2020 11:56:25 +0100, Ulf Hansson wrote:
+> There's no point allowing anything else but "psci" for the corresponding
+> nodename of the PSCI node, so let's make this an explicit requirement.
 > 
-> The example is also updated to show the single C71 DSP present
-> on J721E SoCs.
+> Moreover, let's also prevent additional properties, which also allows a
+> better verification of the "patternProperties" bindings for subnodes.
 > 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 > ---
->  .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 78 ++++++++++++++++---
->  1 file changed, 69 insertions(+), 9 deletions(-)
+>  Documentation/devicetree/bindings/arm/psci.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Applied, thanks.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
