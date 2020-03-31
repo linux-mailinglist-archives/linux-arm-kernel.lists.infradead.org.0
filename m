@@ -2,54 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD486198AD3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:06:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A850198AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:09:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0CQvDlGSMZKt5CN9+ny5OS2QU8PuK6/AWM0AXVmf+ys=; b=dijZAq1okeNBjj
-	+Cc+Z/wNArnUQPY+k9ExJB7uB19V/j6Ii2R0LKUuAic14hip+mPlSG2jtLe/pBZgZW2/Gu2bFhxth
-	SCZs0TOjelW9I5gxavnzAhdRXGyfalkZsrs1BuOWQ37+Vq+iSCci9kQ65n1kZ9OzzqrlQOJtru5xX
-	WriRa0w197OTnNOsZ9DyFMbMA5P2oQ5K2WnHYoE8dWKPJONKooi0yudw1YGaMccGLTdrfDXOyS9HU
-	I3rHsDnEiN9FPI88ze4syJP2G3RtKU3ASjbGrmOeaP6Qo+Nnh0916juor6uXCoIZ/SgoX7NhnIQD1
-	xQdelnB/nmKC2+SCO03Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mXNt6I3mtwpGCSLEvk/sebiiwcYwWc0coZ52LS3sPi4=; b=E3HmtJ733CHKxk
+	2ONJO9rNqkhY2EsRFJYriKAszIlvKfCxqgpyGdXhmiqQh107fbJ8YkZAWdqZtPiMwwVlOIhlLq6hn
+	CSXy0tSeyermPYdzOowgj89mL7t6U4XqPdJxrv/IFbykzfJmvVkZJvGE0LIjUQZVfPSwR3UjIKZWi
+	Vh0t06HdnkvFjwmhxh16GRJa7VCKpPLRvTAe2yBkWGeL4ml6pwNnCBQqWWYdPa7wKQW2BTZ7rZtql
+	obYAH/sa7eoBQVMZ4RxvhTXDv9g5YiHSRNRA0US2H62q0YKICJWe6lk9o7cAzJ+1Q3imKQf434OJO
+	LjYvmo0t08aBo+4TCoTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ8AC-0003Pb-Pn; Tue, 31 Mar 2020 04:06:08 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jJ8DN-0004xP-4B; Tue, 31 Mar 2020 04:09:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ8A1-0003Oa-6M; Tue, 31 Mar 2020 04:05:58 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 614BC29497A
-Message-ID: <246bf7c71620021258355c2fc32dd38ac6b0cc45.camel@collabora.com>
-Subject: Re: [PATCH v5 4/5] drm: imx: Add i.MX 6 MIPI DSI host platform driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
-Date: Tue, 31 Mar 2020 01:05:39 -0300
-In-Reply-To: <877dz134xf.fsf@collabora.com>
-References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
- <20200330113542.181752-5-adrian.ratiu@collabora.com>
- <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
- <4a9d2d6e5cecbe296c14119d27a8793a7dbed7b2.camel@collabora.com>
- <877dz134xf.fsf@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ id 1jJ8Bu-0003lo-Id; Tue, 31 Mar 2020 04:07:57 +0000
+X-UUID: f61af26c5c994eaea6ee35fda5a8e254-20200330
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=6cH/NQKcPKqnVf6a6IZggs62m/KD6ANc8osyacauays=; 
+ b=RkYymceH5y8wC9hochkfJHq0IFVxYoenjUvKysEHZVQRRWVUdmPxSLKt/gk5RMe7u4BrUxxpnjA916NFu27kf3eHRriCUe2SP5QwnOIwDABjBNbqMKXv8FwUncNX/98WyQ2wibPrl5j5bSPOCiUmZknmAAtZzPQHOC8VcRxk9pc=;
+X-UUID: f61af26c5c994eaea6ee35fda5a8e254-20200330
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <hsin-hsiung.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 791870598; Mon, 30 Mar 2020 20:07:36 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Mar 2020 21:07:46 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 31 Mar 2020 12:07:34 +0800
+Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Tue, 31 Mar 2020 12:07:39 +0800
+From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>
+Subject: [PATCH v11 0/5] Add Support for MediaTek PMIC MT6358
+Date: Tue, 31 Mar 2020 12:07:32 +0800
+Message-ID: <1585627657-3265-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+X-Mailer: git-send-email 2.6.4
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 9478A9E60E7CEAB7CD3D185E20460CD264C9B82EE337357E728FF91007D8EDDE2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_210557_368172_2A435CCD 
-X-CRM114-Status: GOOD (  23.67  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200330_210754_680769_08592058 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,95 +87,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX
- / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Emil Velikov <emil.velikov@collabora.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>, Ran Bi <ran.bi@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, linux-rtc@vger.kernel.org,
+ Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org, Richard
+ Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ linux-mediatek@lists.infradead.org,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-pm@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2020-03-31 at 00:31 +0300, Adrian Ratiu wrote:
-> On Mon, 30 Mar 2020, Ezequiel Garcia <ezequiel@collabora.com> 
-> wrote:
-> > Hello Fabio, Adrian: 
-> > 
-> > On Mon, 2020-03-30 at 08:49 -0300, Fabio Estevam wrote: 
-> > > Hi Adrian,  On Mon, Mar 30, 2020 at 8:34 AM Adrian Ratiu 
-> > > <adrian.ratiu@collabora.com> wrote: 
-> > > > This adds support for the Synopsis DesignWare MIPI DSI v1.01 
-> > > > host controller which is embedded in i.MX 6 SoCs.   Based on 
-> > > > following patches, but updated/extended to work with existing 
-> > > > support found in the kernel:  - drm: imx: Support Synopsys 
-> > > > DesignWare MIPI DSI host controller 
-> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com> 
-> > > >  - ARM: dtsi: imx6qdl: Add support for MIPI DSI host 
-> > > > controller 
-> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com> 
-> > >  This one looks like a devicetree patch, but this patch does 
-> > > not touch devicetree.  
-> > > > +       ret = clk_prepare_enable(dsi->pllref_clk); +       if 
-> > > > (ret) { +               dev_err(dev, "%s: Failed to enable 
-> > > > pllref_clk\n", __func__); +               return ret; + 
-> > > > } + +       dsi->mux_sel = 
-> > > > syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr"); + 
-> > > > if (IS_ERR(dsi->mux_sel)) { +               ret = 
-> > > > PTR_ERR(dsi->mux_sel); +               dev_err(dev, "%s: 
-> > > > Failed to get GPR regmap: %d\n", + 
-> > > > __func__, ret); +               return ret; 
-> > >  You should disable the dsi->pllref_clk clock prior to 
-> > > returning the error.  
-> > 
-> > Another approach could be moving the clock on and off to to 
-> > component_ops.{bind,unbind} (as rockhip driver does). 
-> > 
-> > What exactly is the PLL clock needed for? Would it make sense to 
-> > move it some of the PHY power on/off? (Maybe not, but it's 
-> > worthing checking). 
-> > 
-> > Also, it seems the other IP blocks have this PLL clock, so maybe 
-> > it could be moved to the dw_mipi_dsi core? This could be 
-> > something for a follow-up, to avoid creeping this series.
-> 
-> Hi Ezequiel,
-> 
-> pll is the video reference clock which drives the data lanes and 
-> yes all drivers have it as it's a basic requirement, so moving it 
-> to the common bridge is indeed a good idea, however this kind of 
-> driver refactoring is out of scope for this specific patch series, 
-> because, for now, I'd like to get the regmap and the imx6 driver 
-> in, once that is done we can think how to further abstract away 
-> common logic and slim down the existing drivers further.
-> 
-> Basically I just want to avoid feature creep as I expect v6 to be 
-> ~ 8 patches big and the series is already over 1200 lines.
-> 
+This patchset including modifying suspend/resume behavior add support to MT6358 PMIC.
+MT6358 is the primary PMIC for MT8183 platform.
 
-Oh, absolutely: if there's one thing I try to avoid is
-feature creep -- together with bikeshedding!
+changes since v10:
+- get match data without cast in the rtc driver.
+- move MODULE_DEVICE_TABLE to the bottom of the file in the rtc driver.
 
-Do note however, that you could move the PLL clock handling
-to component_ops.{bind,unbind} and maybe simplify the error
-handling.
+Hsin-Hsiung Wang (4):
+  mfd: mt6397: modify suspend/resume behavior
+  dt-bindings: mfd: Add compatible for the MediaTek MT6358 PMIC
+  mfd: Add support for the MediaTek MT6358 PMIC
+  arm64: dts: mt6358: add PMIC MT6358 related nodes
 
-(BTW, great work!)
+Ran Bi (1):
+  rtc: mt6397: Add support for the MediaTek MT6358 RTC
 
-Cheers,
-Ezequiel
+ Documentation/devicetree/bindings/mfd/mt6397.txt |  14 +-
+ arch/arm64/boot/dts/mediatek/mt6358.dtsi         | 358 +++++++++++++++++++++++
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts      |   1 +
+ drivers/mfd/Makefile                             |   2 +-
+ drivers/mfd/mt6358-irq.c                         | 236 +++++++++++++++
+ drivers/mfd/mt6397-core.c                        |  85 +++---
+ drivers/mfd/mt6397-irq.c                         |  33 +++
+ drivers/power/reset/mt6323-poweroff.c            |   2 +-
+ drivers/rtc/rtc-mt6397.c                         |  23 +-
+ include/linux/mfd/mt6358/core.h                  | 158 ++++++++++
+ include/linux/mfd/mt6358/registers.h             | 282 ++++++++++++++++++
+ include/linux/mfd/mt6397/core.h                  |   5 +
+ include/linux/mfd/mt6397/rtc.h                   |   9 +-
+ 13 files changed, 1163 insertions(+), 45 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt6358.dtsi
+ create mode 100644 drivers/mfd/mt6358-irq.c
+ create mode 100644 include/linux/mfd/mt6358/core.h
+ create mode 100644 include/linux/mfd/mt6358/registers.h
 
-
-
-
+-- 
+2.6.4
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
