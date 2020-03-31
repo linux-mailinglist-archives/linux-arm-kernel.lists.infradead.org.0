@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C25E199F23
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 21:32:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77089199F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 21:45:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0XOcqOvhcakeWKtI0mqpWubEk1ddei/2cdMoQJHKQUw=; b=T2To1WDFz86t1z
-	l959jAlbm2msHvHXCJfFpGd+m8xPLZvbPUT9EIW8YTaRO+xKEZKk1oulUB88K47iEU54uXo36iEgH
-	80V6CkFILmDPV0JSkC9txplUFxtUCyRT70+3ZLyxJqvlBWEB8/REH/NTZTxdZbSfrqOjiQ9hzL2hb
-	J86fuJGqfHQ4qVlaB/A63zwlQ4oT67aFHpWlKZ+BEov3J05UAribVSE+o7bhMkj6gioRCGnaBRgG+
-	Ap9VOZv7JgGMt2sobyPQn8tb/x8NYXiIBd6Xw0FaBsVdfU4zK9MFvPHjWcHr2W/We3sXgdhQTfNzg
-	7vn55u8E6qxJ975yrjBA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fwAd+jmtyw1BbB/gvnYUbXBvz2dbqqhLyf/r33pvUyM=; b=rd4t5BA5e7tjQ/
+	Yd0KBxSgUE9PZWNNz4dxJCkBxwbUrR6YCMEzeMX7BDq8yKc0Q0tFPvJ1uZL+KZPqxnBABKqWB98/c
+	1AAWGUMMJAADXELm7jSGoMWqr7zzGsBmskp6WwuIBeZUhfhTVay/UwI+SF1Q9FM/5cRbWcaDtdyxN
+	RMqTyClBtmkEht/35vkvqyw/ycJNoxUQJv+6h9JJ2jAs6oeZ3o3CU/TezzE6ZNW376Zwe3/OELicc
+	X93peOxxc55AlIPtCX87JTsIkKs5KnnZLHBzkPO6Hdv9NsOWgJ8yvGKzEVY5Zxe6SJsXGPrBrOLI9
+	5AYmOMo35+yqjVArH4Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJMcX-0001Ic-AK; Tue, 31 Mar 2020 19:32:21 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJMcN-0001I2-RH; Tue, 31 Mar 2020 19:32:12 +0000
-Received: by mail-il1-f194.google.com with SMTP id j69so20598874ila.11;
- Tue, 31 Mar 2020 12:32:11 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ffyuJBft5eRj0uXoExB7KaHT1VC+KdBgrEZukPCp/jk=;
- b=gh0+1LQK18eA9x8vPKybP/V+zfcPGjXIqFk+GwMl3Ht96R6SVSH5tw7vXw4RALAPiz
- XDYQRrfZX6CJ8soQPV1Jfgfq6ozJ7wsDCNnQClgIDia3t4+WK6ANlJvVBKKC0tkAzb8a
- b2FqvpJdARFiINrbP4h4EvD1Eadl8D3ARmKAcpHf2r922HI5Wu/R4SD4oLROJ1exsHR+
- BiVPC7zX/l5IAtJ1TE6nMbGIMe75hW+SjzN31X4b5qtRgZNKWk3FuLETvC9tnZOVoB3C
- NQeX3RzB9M0yVnwJIXf0qjT7cypxWttiC0cDZBbSYmc54Pbw5TNkiPok5/5RLMaLtfQL
- PQHw==
-X-Gm-Message-State: ANhLgQ2ihnbegqRX9EruxEGBVBDb6ubFaqYVG5jjaE72sw17kq1oc4Vs
- ZMRkILGA33ez/0Tkjx1BiJvoicLekQ==
-X-Google-Smtp-Source: ADFU+vs20F/WPfwobCVQDiWAIDI6LL0zgRgv9YyT1gwXPo5RofbdAd8avWmVDPg2Lg2rbY31XKH7RA==
-X-Received: by 2002:a92:48cb:: with SMTP id j72mr18224637ilg.162.1585683130347; 
- Tue, 31 Mar 2020 12:32:10 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id d70sm6197008ill.57.2020.03.31.12.32.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 12:32:09 -0700 (PDT)
-Received: (nullmailer pid 30593 invoked by uid 1000);
- Tue, 31 Mar 2020 19:32:08 -0000
-Date: Tue, 31 Mar 2020 13:32:08 -0600
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 3/3] dt-bindings: sound: rockchip-i2s: add
- power-domains property
-Message-ID: <20200331193208.GA30530@bogus>
-References: <20200324094149.6904-1-jbx6244@gmail.com>
- <20200324094149.6904-3-jbx6244@gmail.com>
+	id 1jJMp3-0001ll-Jg; Tue, 31 Mar 2020 19:45:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJMos-0008Mu-6M
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 19:45:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D3D430E;
+ Tue, 31 Mar 2020 12:45:02 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1C283F68F;
+ Tue, 31 Mar 2020 12:45:01 -0700 (PDT)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: Always force a branch protection mode when the
+ compiler has one
+Date: Tue, 31 Mar 2020 20:44:59 +0100
+Message-Id: <20200331194459.54740-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200324094149.6904-3-jbx6244@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_123211_881827_79A907A5 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200331_124506_287082_309ACE36 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,28 +63,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, stable@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Mar 2020 10:41:49 +0100, Johan Jonker wrote:
-> In the old txt situation we add/describe only properties that are used
-> by the driver/hardware itself. With yaml it also filters things in a
-> node that are used by other drivers like 'power-domains' for rk3399,
-> so add it to 'rockchip-i2s.yaml'.
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+Compilers with branch protection support can be configured to enable it by
+default, it is likely that distributions will do this as part of deploying
+branch protection system wide. As well as the slight overhead from having
+some extra NOPs for unused branch protection features this can cause more
+serious problems when the kernel is providing pointer authentication to
+userspace but not built for pointer authentication itself. In that case our
+switching of keys for userspace can affect the kernel unexpectedly, causing
+pointer authentication instructions in the kernel to corrupt addresses.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+To ensure that we get consistent and reliable behaviour always explicitly
+initialise the branch protection mode, ensuring that the kernel is built
+the same way regardless of the compiler defaults.
+
+Fixes: 7503197562567 (arm64: add basic pointer authentication support)
+Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+Cc: stable@vger.kernel.org
+---
+ arch/arm64/Kconfig  | 4 ++++
+ arch/arm64/Makefile | 7 ++++++-
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index d3efdc095a17..1e46746e8392 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1537,6 +1537,10 @@ config ARM64_PTR_AUTH
+ 	  This feature works with FUNCTION_GRAPH_TRACER option only if
+ 	  DYNAMIC_FTRACE_WITH_REGS is enabled.
+ 
++config CC_HAS_BRANCH_PROT_NONE
++	# GCC 9 or later, clang 8 or later
++	def_bool $(cc-option,-mbranch-protection=none)
++
+ config CC_HAS_BRANCH_PROT_PAC_RET
+ 	# GCC 9 or later, clang 8 or later
+ 	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index f15f92ba53e6..370fca6663c8 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -65,6 +65,10 @@ stack_protector_prepare: prepare0
+ 					include/generated/asm-offsets.h))
+ endif
+ 
++# Ensure that if the compiler supports branch protection we default it
++# off, this will be overridden if we are using branch protection.
++branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_NONE) := -mbranch-protection=none
++
+ ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+ branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+ branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+@@ -73,9 +77,10 @@ branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pa
+ # we pass it only to the assembler. This option is utilized only in case of non
+ # integrated assemblers.
+ branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+-KBUILD_CFLAGS += $(branch-prot-flags-y)
+ endif
+ 
++KBUILD_CFLAGS += $(branch-prot-flags-y)
++
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
