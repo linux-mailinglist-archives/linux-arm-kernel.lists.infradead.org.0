@@ -2,69 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3164C198EB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:39:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 333E6198E94
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:33:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jXOPzqCeijoLwyj1VU5jMP46v25DZiLmwJRmPNrklMk=; b=Hw0IOYPkb5W+du
-	2pa8I5eEi1D8Ew9OuLkZYjgbL9YlqknmCWx8hyfzErSGqAzYklTh7Omwkf5iQeWw/r0phJ42Ri1bW
-	RcF2dTLk49GQnZbLA1AygFZ3/kWuWI9HCWeEyA0UmQriGrf+F77o5PNynRhdjR+CXBxH9uVqH2DwC
-	VF+2eY39TbDqasUwLKYb7P2CVidkZ59elcV2BCy1Y5FSh02YHLFV1J7s0M0HaQyUGsDt6TAC0MPT5
-	wfKm7N4bjQfzAWqyP8o2+3mcTclxdA3liIJzZpap8pQTyNjK3N0NIS+eozGgYxY+eZH4gJT5PiqmR
-	iSQSzyplTZ8pzjzmeSMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tDIdXp9gKeFannuGcnRZ6vVQ4wBteXGjSJb0W8i0Ul8=; b=GWii3ixa19porw
+	EnfT3hVgkhpCaebY7wvM2RgrJlZ8cJgqE6tTA4tPCthIsQGKGumrMnfXmIl7BOEKASD5H1H6Mk+OY
+	S7QZusKS5LQy8Uz7t0vHaUNZaFLie1vHHLEMDou2yGrv7IKPX+OXWLCAV/sOxNDKiVerN/vKsoz5v
+	+gmccvWB5ZE+4XXo0gO7wA3RKIDjPVhUDgzpi88eLChgA8oDilBaULwXN6omtpBdGkkuWu2NpCcQr
+	Ru0KoTdJuoyLFUFgutnHOd3PO8luFoyFBM8VwDMHFoF/5o6FGVX7TKeBk35p2h54GkYFRf1hXBq3u
+	95S/osnlxEa2DDE+fbvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJCQJ-0004b0-H9; Tue, 31 Mar 2020 08:39:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jJCLE-0001Xn-67; Tue, 31 Mar 2020 08:33:48 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJCQA-0004aN-0w; Tue, 31 Mar 2020 08:38:55 +0000
-X-UUID: 4d79a4d49900408097338868bdf78403-20200331
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=lct8ONGAtomUDA235lfpqdPWwE+ccWyMYtlhfefuNEw=; 
- b=JaRiIpDi9s8Qv/D8OtHQr/Y4VYttUuzZSOYfwrALm5A8nj7KFOzrSYUQ/K8DMP73XwTvjMRMWo6+Vpq00R8HY+ZKYWVtZhO7GYW0FyseJXW2LXH/6VvQe+gwP8pE0dzTAoac9WGO3eBmsWbyWK/2HhHa3MsoyKALLoMNyndzhDA=;
-X-UUID: 4d79a4d49900408097338868bdf78403-20200331
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <hsin-hsiung.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2034879984; Tue, 31 Mar 2020 00:38:32 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 31 Mar 2020 01:28:45 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 31 Mar 2020 16:28:41 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 31 Mar 2020 16:28:40 +0800
-Message-ID: <1585643322.27082.3.camel@mtksdaap41>
-Subject: Re: [PATCH v11 3/5] mfd: Add support for the MediaTek MT6358 PMIC
-From: Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>, Lee Jones <lee.jones@linaro.org>
-Date: Tue, 31 Mar 2020 16:28:42 +0800
-In-Reply-To: <CANMq1KBqeUHj0gKcknPDvgzRzGMt26pq-_rt_ZM89phCHO9jqQ@mail.gmail.com>
-References: <1585627657-3265-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1585627657-3265-4-git-send-email-hsin-hsiung.wang@mediatek.com>
- <CANMq1KBqeUHj0gKcknPDvgzRzGMt26pq-_rt_ZM89phCHO9jqQ@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jJCJl-0000W8-TY
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:32:21 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02V8SjZ2011728; Tue, 31 Mar 2020 10:32:06 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=3duVQKRlkCqQDo1E3CRZnFiVn5ck9hvVRKVRTqMhtbc=;
+ b=CCaNM200syr4N0AsSmvYKxV5CIzQW/3KUTGVbqCzRe/U3y7ipCZXyxEXCdw1A6tqkqh0
+ m3gihbFetmxgIqeVlQlyh76HiLGSvZkvtekvr/udTkijCzUQF+o/N0Zbx829N3or/BH4
+ tCgcZlrPH6u/LKAOI5zKvISb8U1I/KvTUw4alrKh7OFNmd9xaHR2IS/bGzQjjsn/ho14
+ FoRYx0k9T8Lj/5sP3JRO92vuUUsVi9g93qOtWr+sLRUhQGl5qxyfuop3Y74Y7mobJs9R
+ WzkXN9JB2obsFVCL3X2/SByQjmSZgbnem15naeCdQZrWC5sHvHFmWLArUkwGvTHiJVm2 Dg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 301xbmdsun-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 31 Mar 2020 10:32:05 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6ED0F10002A;
+ Tue, 31 Mar 2020 10:32:00 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5283021E677;
+ Tue, 31 Mar 2020 10:32:00 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 31 Mar 2020 10:31:59
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <daniel.lezcano@linaro.org>,
+ <tglx@linutronix.de>
+Subject: [PATCH v5 0/6] clockevent: add low power STM32 timer
+Date: Tue, 31 Mar 2020 10:31:40 +0200
+Message-ID: <20200331083146.10462-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 66156411AC7C6987A565DE837C979D90C593ABB3BD713E9063DE777D8BE22B722000:8
-X-MTK: N
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-03-31_03:2020-03-30,
+ 2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_013854_086410_EE26A3ED 
-X-CRM114-Status: GOOD (  25.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_013218_283216_7F7DE79A 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,236 +95,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- srv_heupstream <srv_heupstream@mediatek.com>, Frank
- Wunderlich <frank-w@public-files.de>, Josef Friedl <josef.friedl@speed.at>,
- Ran Bi <ran.bi@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
- Sebastian Reichel <sre@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- Richard Fontana <rfontana@redhat.com>,
- Devicetree List <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Kate Stewart <kstewart@linuxfoundation.org>, linux-rtc@vger.kernel.org
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Sirs
+This series add low power timer as boadcast clockevent device.
+Low power timer could runs even when CPUs are in idle mode and 
+could wakeup them.
 
-On Tue, 2020-03-31 at 15:36 +0800, Nicolas Boichat wrote:
-> On Tue, Mar 31, 2020 at 12:07 PM Hsin-Hsiung Wang
-> <hsin-hsiung.wang@mediatek.com> wrote:
-> >
-> > This adds support for the MediaTek MT6358 PMIC. This is a
-> > multifunction device with the following sub modules:
-> >
-> > - Regulator
-> > - RTC
-> > - Codec
-> > - Interrupt
-> >
-> > It is interfaced to the host controller using SPI interface
-> > by a proprietary hardware called PMIC wrapper or pwrap.
-> > MT6358 MFD is a child device of the pwrap.
-> >
-> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-> > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
-> 
-> This is missing a few comments from Lee Jones on v10, actually, repeated below:
-> https://patchwork.kernel.org/patch/11431239/#23244041
-> 
+version 5:
+- document interrupts and interrupt-names bindings
+- use a different wake up interrupt
+- add device-tree patch
+- make STM32MP157 select low power timer configuration flag
+- enable fast_io in regmap configuration
 
-So sorry for missing this comment.I will reply it later.
-Thanks a lot.
+version 4:
+- move defines in mfd/stm32-lptimer.h
+- change compatible and subnode names
+- document wakeup-source property
+- reword commit message
+- make driver Kconfig depends of MFD_STM32_LPTIMER
+- remove useless include
+- remove rate and clk fields from the private structure
+- to add comments about the registers sequence in stm32_clkevent_lp_set_timer
+- rework probe function and use devm_request_irq()
+- do not allow module to be removed
 
-> > ---
-> >  drivers/mfd/Makefile                 |   2 +-
-> >  drivers/mfd/mt6358-irq.c             | 236 +++++++++++++++++++++++++++++
-> >  drivers/mfd/mt6397-core.c            |  55 ++++++-
-> >  include/linux/mfd/mt6358/core.h      | 158 ++++++++++++++++++++
-> >  include/linux/mfd/mt6358/registers.h | 282 +++++++++++++++++++++++++++++++++++
-> >  include/linux/mfd/mt6397/core.h      |   3 +
-> >  6 files changed, 731 insertions(+), 5 deletions(-)
-> >  create mode 100644 drivers/mfd/mt6358-irq.c
-> >  create mode 100644 include/linux/mfd/mt6358/core.h
-> >  create mode 100644 include/linux/mfd/mt6358/registers.h
-> >
-> > diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
-> > index b83f172..9af1414 100644
-> > --- a/drivers/mfd/Makefile
-> > +++ b/drivers/mfd/Makefile
-> > @@ -238,7 +238,7 @@ obj-$(CONFIG_INTEL_SOC_PMIC)        += intel-soc-pmic.o
-> >  obj-$(CONFIG_INTEL_SOC_PMIC_BXTWC)     += intel_soc_pmic_bxtwc.o
-> >  obj-$(CONFIG_INTEL_SOC_PMIC_CHTWC)     += intel_soc_pmic_chtwc.o
-> >  obj-$(CONFIG_INTEL_SOC_PMIC_CHTDC_TI)  += intel_soc_pmic_chtdc_ti.o
-> > -mt6397-objs    := mt6397-core.o mt6397-irq.o
-> > +mt6397-objs                    := mt6397-core.o mt6397-irq.o mt6358-irq.o
-> >  obj-$(CONFIG_MFD_MT6397)       += mt6397.o
-> >  obj-$(CONFIG_INTEL_SOC_PMIC_MRFLD)     += intel_soc_pmic_mrfld.o
-> >
-> > diff --git a/drivers/mfd/mt6358-irq.c b/drivers/mfd/mt6358-irq.c
-> > new file mode 100644
-> > index 0000000..022e5f5
-> > --- /dev/null
-> > +++ b/drivers/mfd/mt6358-irq.c
-> > @@ -0,0 +1,236 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +//
-> > +// Copyright (c) 2019 MediaTek Inc.
-> 
-> 2020
-> 
-> > +
-> > +#include <linux/interrupt.h>
-> > +#include <linux/mfd/mt6358/core.h>
-> > +#include <linux/mfd/mt6358/registers.h>
-> > +#include <linux/mfd/mt6397/core.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/of_irq.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +
-> > +static struct irq_top_t mt6358_ints[] = {
-> > +       MT6358_TOP_GEN(BUCK),
-> > +       MT6358_TOP_GEN(LDO),
-> > +       MT6358_TOP_GEN(PSC),
-> > +       MT6358_TOP_GEN(SCK),
-> > +       MT6358_TOP_GEN(BM),
-> > +       MT6358_TOP_GEN(HK),
-> > +       MT6358_TOP_GEN(AUD),
-> > +       MT6358_TOP_GEN(MISC),
-> > +};
-> > +
-> > +static void pmic_irq_enable(struct irq_data *data)
-> > +{
-> > +       unsigned int hwirq = irqd_to_hwirq(data);
-> > +       struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
-> > +       struct pmic_irq_data *irqd = chip->irq_data;
-> > +
-> > +       irqd->enable_hwirq[hwirq] = true;
-> > +}
-> > +
-> > +static void pmic_irq_disable(struct irq_data *data)
-> > +{
-> > +       unsigned int hwirq = irqd_to_hwirq(data);
-> > +       struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
-> > +       struct pmic_irq_data *irqd = chip->irq_data;
-> > +
-> > +       irqd->enable_hwirq[hwirq] = false;
-> > +}
-> > +
-> > +static void pmic_irq_lock(struct irq_data *data)
-> > +{
-> > +       struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
-> > +
-> > +       mutex_lock(&chip->irqlock);
-> > +}
-> > +
-> > +static void pmic_irq_sync_unlock(struct irq_data *data)
-> > +{
-> > +       unsigned int i, top_gp, gp_offset, en_reg, int_regs, shift;
-> > +       struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
-> > +       struct pmic_irq_data *irqd = chip->irq_data;
-> > +
-> > +       for (i = 0; i < irqd->num_pmic_irqs; i++) {
-> > +               if (irqd->enable_hwirq[i] == irqd->cache_hwirq[i])
-> > +                       continue;
-> > +
-> > +               /* Find out the IRQ group */
-> > +               top_gp = 0;
-> > +               while ((top_gp + 1) < irqd->num_top &&
-> > +                      i >= mt6358_ints[top_gp + 1].hwirq_base)
-> > +                       top_gp++;
-> > +
-> > +               /* Find the irq registers */
-> 
-> From Lee Jones: 'Nit: "IRQ"'
-> 
-> > +               gp_offset = i - mt6358_ints[top_gp].hwirq_base;
-> > +               int_regs = gp_offset / MT6358_REG_WIDTH;
-> > +               shift = gp_offset % MT6358_REG_WIDTH;
-> > +               en_reg = mt6358_ints[top_gp].en_reg +
-> > +                        (mt6358_ints[top_gp].en_reg_shift * int_regs);
-> > +
-> [...]
-> > +static const struct irq_domain_ops mt6358_irq_domain_ops = {
-> > +       .map = pmic_irq_domain_map,
-> > +       .xlate = irq_domain_xlate_twocell,
-> > +};
-> > +
-> > +int mt6358_irq_init(struct mt6397_chip *chip)
-> > +{
-> > +       int i, j, ret;
-> > +       struct pmic_irq_data *irqd;
-> > +
-> > +       irqd = devm_kzalloc(chip->dev, sizeof(struct pmic_irq_data *),
-> 
-> From Lee Jones: 'sizeof(*irqd)'
-> 
-> > +                           GFP_KERNEL);
-> > +       if (!irqd)
-> > +               return -ENOMEM;
-> > +
-> > +       chip->irq_data = irqd;
-> > +
-> [...]
-> > @@ -154,19 +184,33 @@ static int mt6397_probe(struct platform_device *pdev)
-> >         if (pmic->irq <= 0)
-> >                 return pmic->irq;
-> >
-> > -       ret = mt6397_irq_init(pmic);
-> > -       if (ret)
-> > -               return ret;
-> > -
-> >         switch (pmic->chip_id) {
-> >         case MT6323_CHIP_ID:
-> > +               ret = mt6397_irq_init(pmic);
-> > +               if (ret)
-> > +                       return ret;
-> > +
-> >                 ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> >                                            mt6323_devs, ARRAY_SIZE(mt6323_devs),
-> >                                            NULL, 0, pmic->irq_domain);
-> >                 break;
-> >
-> > +       case MT6358_CHIP_ID:
-> > +               ret = mt6358_irq_init(pmic);
-> > +               if (ret)
-> > +                       return ret;
-> > +
-> > +               ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> > +                                          mt6358_devs, ARRAY_SIZE(mt6358_devs),
-> > +                                          NULL, 0, pmic->irq_domain);
-> > +               break;
-> 
-> From Lee Jones: "In a subsequent patch you can choose the correct
-> mtXXXX_devs structure to pass and call devm_mfd_add_devices() only
-> once below the switch()."
-> 
-> Can you look into that as a follow-up patch?
-> 
-> 
-> > +
-> >         case MT6391_CHIP_ID:
-> >         case MT6397_CHIP_ID:
-> > +               ret = mt6397_irq_init(pmic);
-> > +               if (ret)
-> > +                       return ret;
-> > +
-> >                 ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> >                                            mt6397_devs, ARRAY_SIZE(mt6397_devs),
-> >                                            NULL, 0, pmic->irq_domain);
-> 
-> [snip]
+version 3:
+- fix timer set sequence
+- don't forget to free irq on remove function
+- use devm_kzalloc to simplify errors handling in probe function
+
+version 2:
+- stm32 clkevent driver is now a child of the stm32 lp timer node
+- add a probe function and adpat the driver to use regmap provide
+  by it parent
+- stop using timer_of helpers
+
+Benjamin Gaignard (6):
+  dt-bindings: mfd: Document STM32 low power timer bindings
+  ARM: dts: stm32: Add timer subnodes on stm32mp15 SoCs
+  mfd: stm32: Add defines to be used for clkevent purpose
+  mfd: stm32: enable regmap fast_io for stm32-lptimer
+  clocksource: Add Low Power STM32 timers driver
+  ARM: mach-stm32: select low power timer for STM32MP157
+
+ .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  |  34 +++
+ arch/arm/boot/dts/stm32mp151.dtsi                  |  45 ++++
+ arch/arm/mach-stm32/Kconfig                        |   1 +
+ drivers/clocksource/Kconfig                        |   4 +
+ drivers/clocksource/Makefile                       |   1 +
+ drivers/clocksource/timer-stm32-lp.c               | 231 +++++++++++++++++++++
+ drivers/mfd/stm32-lptimer.c                        |   1 +
+ include/linux/mfd/stm32-lptimer.h                  |   5 +
+ 8 files changed, 322 insertions(+)
+ create mode 100644 drivers/clocksource/timer-stm32-lp.c
+
+-- 
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
