@@ -2,60 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60AFB199072
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 11:12:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2813F199260
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 11:37:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZD01eh8u+KU2PAlXQbpJxXcvxqBS9g0QFp1XhIaTuT8=; b=uPUFLFR9+DiZRZleVcIXc3zKM
-	aFJMN7+7n9CyaXDprZmwgbUzjSHVI3T9Vq6V1MJnb7Ci7tkj1YO6ZWRvBhlNPVy8eRDDplRG2GNCu
-	mq8z2i1e3RKLm7zOIu5gM2tLa8Sitf3lTw3l9tfMoNLP0aB1TcoDMXm+pQ4x0NLeDFOROOT0AWnQw
-	SatO6bckLPmx9YGBi7obNrBXpZsov4Ww4IZIwbPgJrvOAo+h7fyPqwXX4pjycCM3jJ5lJk6cMVD/m
-	tvFkTlVZzTIbC2NUUm1qlFZ9njNYA0URdK0R7sOBqBgCg8UR4nEtbZLUWAJriOoOYEY1MrMIZR2qX
-	rOgTLMrFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cOEKztGlfnTz8a4yW458F8YDOlHnKqzhHgiJydMqork=; b=sypbNr13G1rbdv
+	LpYXd1mPeYjcdD2jnWLMf7+i7QkcltRXRzk0jGPRiJMMFFzIs4CT3bFJoTQvAtKssvbctWFC8NGBT
+	4WlMCvDBqC4OTl6w1iMutK2R7kZd6t+mQPfYY8elzZpjvJsHgqnICMz8OILQp7JgM71Ufdxb9f+L/
+	ke2g+PaQyhAkq8WhOTyu4eWoiJOTwvwxPBZQcXHxLQskJzPzVhs1ruLc0mc14je5EM9RtJQodKJaR
+	MekEOUg/2f+vNRoQV/piYpeHc5GUqbcbHUK/em1zti+dmt18agr2CjHtjZny9OM/ToaAGe+dMJRO8
+	/DX2kTQO6gN7SMAe2kXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJCwC-0002Qp-8c; Tue, 31 Mar 2020 09:12:00 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jJDL2-0005P8-R1; Tue, 31 Mar 2020 09:37:40 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJCw3-0002Q2-S4
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 09:11:53 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id B173E165DEDBC9925135;
- Tue, 31 Mar 2020 17:11:47 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.487.0; Tue, 31 Mar 2020
- 17:11:38 +0800
-Subject: Re: [PATCH] KVM: arm64: vgic-v3: Clear pending bit in guest memory
- after synchronization
-To: Marc Zyngier <maz@kernel.org>
-References: <20200331031245.1562-1-yuzenghui@huawei.com>
- <20200331090709.17d2087d@why>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <fe30a834-fdb0-e1ca-5e4a-0c7863236c5f@huawei.com>
-Date: Tue, 31 Mar 2020 17:11:37 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1jJDKq-0005NQ-JV
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 09:37:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=z6TICUyxsa+QCefFyRg36rmk8KM37Y26ejkrOIJDzxQ=; b=O3Ad90Olkh1rswAXTYRjuhTkW
+ pzR4t5J0iMM1/xtB0+uv9qoRNdymg3U29Ljer0555W6PyWDEYqsTp4w0AmGSo8OyeIPi9QcbQprep
+ Yii3N9E14mPuUpllf8SNJcm3Kyycf5PlKiwr43wNFD/avEb5989bbK8ZmbntdViVPzNwZ4szN04DW
+ OnC6magogHF6LsYVKNYhW6ujk9ImtL1C2IZ7hA9uwxjonDnp5/UtBNRlwsx0H/ua+XKhXOCcmo1VS
+ HZiS89jOCPMY6v/dZTzFhjEpi13iLbjjvFrysRATMOzDpdqV5Vhj8gI/VDhhhjDeP/+9vwrnMIBmy
+ AcN6Z7AVQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:60310)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jJDKP-0007W4-G7; Tue, 31 Mar 2020 10:37:01 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jJDKD-00080m-3L; Tue, 31 Mar 2020 10:36:49 +0100
+Date: Tue, 31 Mar 2020 10:36:49 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: David Jander <david@protonic.nl>
+Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
+Message-ID: <20200331093648.GL25745@shell.armlinux.org.uk>
+References: <20200329110457.4113-1-o.rempel@pengutronix.de>
+ <20200329150854.GA31812@lunn.ch>
+ <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
+ <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
+ <20200330174114.GG25745@shell.armlinux.org.uk>
+ <20200331104459.6857474e@erd988>
 MIME-Version: 1.0
-In-Reply-To: <20200331090709.17d2087d@why>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200331104459.6857474e@erd988>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_021152_096902_4758E375 
-X-CRM114-Status: GOOD (  21.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200331_023728_657014_D0F91BB1 
+X-CRM114-Status: GOOD (  31.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,126 +91,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, andre.przywara@arm.com,
- linux-kernel@vger.kernel.org, eric.auger@redhat.com, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, wanghaibin.wang@huawei.com,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
+ linux-imx@nxp.com, kernel@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2020/3/31 16:07, Marc Zyngier wrote:
-> Hi Zenghui,
+On Tue, Mar 31, 2020 at 10:44:59AM +0200, David Jander wrote:
+> On Mon, 30 Mar 2020 18:41:14 +0100
+> Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
 > 
-> On Tue, 31 Mar 2020 11:12:45 +0800
-> Zenghui Yu <yuzenghui@huawei.com> wrote:
+> > On Mon, Mar 30, 2020 at 10:33:03AM -0700, Florian Fainelli wrote:
+> > > 
+> > > 
+> > > On 3/29/2020 10:26 PM, Oleksij Rempel wrote:  
+> > > > Hi Andrew,
+> > > > 
+> > > > On Sun, Mar 29, 2020 at 05:08:54PM +0200, Andrew Lunn wrote:  
+> > > >> On Sun, Mar 29, 2020 at 01:04:57PM +0200, Oleksij Rempel wrote:
+> > > >>
+> > > >> Hi Oleksij
+> > > >>  
+> > > >>> +config DEPRECATED_PHY_FIXUPS
+> > > >>> +	bool "Enable deprecated PHY fixups"
+> > > >>> +	default y
+> > > >>> +	---help---
+> > > >>> +	  In the early days it was common practice to configure PHYs by adding a
+> > > >>> +	  phy_register_fixup*() in the machine code. This practice turned out to
+> > > >>> +	  be potentially dangerous, because:
+> > > >>> +	  - it affects all PHYs in the system
+> > > >>> +	  - these register changes are usually not preserved during PHY reset
+> > > >>> +	    or suspend/resume cycle.
+> > > >>> +	  - it complicates debugging, since these configuration changes were not
+> > > >>> +	    done by the actual PHY driver.
+> > > >>> +	  This option allows to disable all fixups which are identified as
+> > > >>> +	  potentially harmful and give the developers a chance to implement the
+> > > >>> +	  proper configuration via the device tree (e.g.: phy-mode) and/or the
+> > > >>> +	  related PHY drivers.  
+> > > >>
+> > > >> This appears to be an IMX only problem. Everybody else seems to of got
+> > > >> this right. There is no need to bother everybody with this new
+> > > >> option. Please put this in arch/arm/mach-mxs/Kconfig and have IMX in
+> > > >> the name.  
+> > > > 
+> > > > Actually, all fixups seems to do wring thing:
+> > > > arch/arm/mach-davinci/board-dm644x-evm.c:915:		phy_register_fixup_for_uid(LXT971_PHY_ID, LXT971_PHY_MASK,
+> > > > 
+> > > > Increased MII drive strength. Should be probably enabled by the PHY
+> > > > driver.
+> > > > 
+> > > > arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
+> > > > arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
+> > > > arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
+> > > > arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,  
+> > 
+> > As far as I'm concerned, the AR8035 fixup is there with good reason.
+> > It's not just "random" but is required to make the AR8035 usable with
+> > the iMX6 SoCs.  Not because of a board level thing, but because it's
+> > required for the AR8035 to be usable with an iMX6 SoC.
 > 
->> When LPI support is enabled at redistributor level, VGIC will potentially
->> load the correspond LPI penging table and sync it into the pending_latch.
->> To avoid keeping the 'consumed' pending bits lying around in guest memory
->> (though they're not used), let's clear them after synchronization.
->>
->> The similar work had been done in vgic_v3_lpi_sync_pending_status().
->>
->> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
->> ---
->>   virt/kvm/arm/vgic/vgic-its.c | 23 +++++++++++++++++------
->>   1 file changed, 17 insertions(+), 6 deletions(-)
->>
->> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->> index d53d34a33e35..905760bfa404 100644
->> --- a/virt/kvm/arm/vgic/vgic-its.c
->> +++ b/virt/kvm/arm/vgic/vgic-its.c
->> @@ -435,6 +435,7 @@ static int its_sync_lpi_pending_table(struct kvm_vcpu *vcpu)
->>   
->>   	for (i = 0; i < nr_irqs; i++) {
->>   		int byte_offset, bit_nr;
->> +		bool status;
->>   
->>   		byte_offset = intids[i] / BITS_PER_BYTE;
->>   		bit_nr = intids[i] % BITS_PER_BYTE;
->> @@ -447,22 +448,32 @@ static int its_sync_lpi_pending_table(struct kvm_vcpu *vcpu)
->>   			ret = kvm_read_guest_lock(vcpu->kvm,
->>   						  pendbase + byte_offset,
->>   						  &pendmask, 1);
->> -			if (ret) {
->> -				kfree(intids);
->> -				return ret;
->> -			}
->> +			if (ret)
->> +				goto out;
->>   			last_byte_offset = byte_offset;
->>   		}
->>   
->> +		status = pendmask & (1 << bit_nr);
->> +
->>   		irq = vgic_get_irq(vcpu->kvm, NULL, intids[i]);
->>   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
->> -		irq->pending_latch = pendmask & (1U << bit_nr);
->> +		irq->pending_latch = status;
->>   		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
->>   		vgic_put_irq(vcpu->kvm, irq);
->> +
->> +		if (status) {
->> +			/* clear consumed data */
->> +			pendmask &= ~(1 << bit_nr);
->> +			ret = kvm_write_guest_lock(vcpu->kvm,
->> +						   pendbase + byte_offset,
->> +						   &pendmask, 1);
->> +			if (ret)
->> +				goto out;
->> +		}
->>   	}
->>   
->> +out:
->>   	kfree(intids);
->> -
->>   	return ret;
->>   }
->>   
+> I have checked with the datasheet of the AR8035, and AFAICS, what the code
+> does is this:
 > 
-> I've been thinking about this, and I wonder why we don't simply clear
-> the whole pending table instead of carefully wiping it one bit at a
-> time. My reasoning is that if a LPI isn't mapped, then it cannot be made
-> pending the first place.
-
-A writing to GICR_CTLR.EnableLPIs can happen in parallel with MAPTI/INT
-command sequence, where the new LPI is mapped to *this* vcpu and made
-pending, wrong? I think commit 7d8b44c54e0c had described it in detail.
-
-But thinking that we cache the pending bit in pending_latch (instead of
-writing the corresponding bit in guest memory) when a LPI is made
-pending, it seems to be safe to clear the whole pending table here.
-
+>  - Disable the SmartEEE feature of the phy. The comment in the code implies
+>    that for some reason it doesn't work, but the reason itself is not given.
+>    Anyway, disabling SmartEEE should IMHO opinion be controlled by a DT
+>    setting. There is no reason to believe this problem is specific to the
+>    i.MX6. Besides, it is a feature of the phy, so it seems logical to expose
+>    that via the DT. Once that is done, it has no place here.
 > 
-> And I think there is a similar issue in vgic_v3_lpi_sync_pending_status().
-> Why sync something back from the pending table when the LPI wasn't
-> mapped yet?
-
-vgic_v3_lpi_sync_pending_status() can be called on the ITE restore path:
-vgic_its_restore_ite/vgic_add_lpi/vgic_v3_lpi_sync_pending_status.
-We should rely on it to sync the pending bit from guest memory (which
-was saved on the source side).
-
-> This seems pretty bizarre, as the GITS_TRANSLATER spec says
-> that the write to this register is ignored when:
+>  - Set the external clock output to 125MHz. This is needed because the i.MX6
+>    needs a 125MHz reference clock input. But it is not a requirement to use
+>    this output. It is perfectly fine and possible to design a board that uses
+>    an external oscillator for this. It is also possible that an i.MX6 design
+>    has such a phy connected to a MAC behind a switch or some other interface.
+>    Independent of i.MX6 this setting can also be necessary for other hardware
+>    designs, based on different SoC's. In summary, this is a feature of the
+>    specific hardware design at hand, and has nothing to do with the i.MX6
+>    specifically. This should definitely be exposed through the DT and not be
+>    here.
 > 
-> "- The EventID is mapped to an Interrupt Translation Table and the
-> EventID is within the range specified by MAPD on page 5-107, but the
-> EventID is unmapped."
+>  - Enable TXC delay. To clarify, the RGMII specification version 1 specified
+>    that the RXC and TXC traces should be routed long enough to introduce a
+>    certain delay to the clock signal, or the delay should be introduced via
+>    other means. In a later version of the spec, a provision was given for MAC
+>    or PHY devices to generate this delay internally. The i.MX6 MAC interface
+>    is unable to generate the required delay internally, so it has to be taken
+>    care of either by the board layout, or by the PHY device. This is the
+>    crucial point: The amount of delay set by the PHY delay register depends on
+>    the board layout. It should NEVER be hard-coded in SoC setup code. The
+>    correct way is to specify it in the DT. Needless to say that this too,
+>    isn't i.MX6-specific.
 > 
-> (with the added bonus in the form of a type: the first instance of
-> "EventID" here should obviously be "DeviceID").
+> > So, having it registered by the iMX6 SoC code is entirely logical and
+> > correct.
+> 
+> I'm afraid I don't agree. See above. This code really should never have been
+> here. It is not i.MX6-specific as I pointed out above, nor is it necessarily
+> applicable to all i.MX6 boards that use those phy devices.
 
-;-)
+Then we will have to agree to disagree, sorry.
 
-
-Thanks,
-Zenghui
-
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
