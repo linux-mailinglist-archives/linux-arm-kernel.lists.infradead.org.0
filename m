@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E71199BBC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:36:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9944E199BAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:34:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=66SSV5oa4Yy9ZoksZl/HfuCNeTgSpluCGOseDibaMF8=; b=Zf27j+Fwi+0gqE
-	iKIbK7TuRLKAhFcBr1ISSngUQVSiUMco0nruZ7xlAouVzTlT/ABzECvr8p1eXBvNoXX3NvHMluwup
-	87gR8McFbJCSPtfF72TXVEY8r6+icOZCpto/sn2fcZ4OCwu5+zzmEVQ+T8iDotQPYvxITp2x2s2B0
-	xXfh1yw4+XDsoZiqydX1BWMezfPC/ocC0n/lGgnhEutrP02p0hOdGAIO/ayR0lDm692FbY73wUPZf
-	5ynWBlZ/GNMFmGJ/PKLDg67oyI0VgX82WCMajXi14HOf6E3qAD4NN5eORi3cBuVEG5x0hhIkkRsAL
-	0W9Yvl7s5ZgYztJa6QqQ==;
+	List-Owner; bh=HzWNTGCbHrJ/hJ43ecbEoaHFx0DOeycTgXuG7cYDhQ4=; b=NCu4hOr5yg5Jho
+	JkxrJ3oqWldufNmuMCCQkeKAYlaNKjN9XT/HtlBrdC3CX29TV/AVJNgO2fwavGijguHKrxug1tEP2
+	xcsCxIaITVQ2mBoJlOtd9sOKyhXZV6DlqjcX9Kg2pS9yg4QjUT4+61QvYV6jztK9UvQHGN8p+Nij3
+	bgnZJTla6krg8kfQfwsa4N4MpiUGYNAWFiK1+IfbmZDbpBdfaJWpGnTSXWXH8bHNzaLneHcoke3v4
+	SRIXXlFza1SFRzhaB7t5TNdSvSRqc1ExKmWusT3VnDeK+XindGbmKya6VBmtbw0FXQKzzE76fnW+q
+	Uem34BfFBbMtsSQgGA7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJru-0002G4-1Y; Tue, 31 Mar 2020 16:36:02 +0000
+	id 1jJJpr-0006Qx-Hs; Tue, 31 Mar 2020 16:33:55 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJo7-0005Ky-Cn
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:32:07 +0000
+ id 1jJJnv-0005Cg-O7
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:31:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=tgMYUvZg7+nE9oal1imsSfUDa0kPj5uOzU/nQFtRAe0=; b=XYTOlpSKrDJrWUHUbAj633LtBJ
- bXIyubeFHemix4CN5OuVcZrpexh2on0USDeJUrkWi9cwLKuu4XitHC0C21kYmfM65EW9X9567ZWMf
- vZqso/le6BP0d+PYOe/JvKLvm6+4AxaQILLidduD/YjUlQO5M8S69xZ6CRZNDoB+ejXCA07GWavFb
- CQ7dSMLWFNqu/Noki9Bf7dJUwbAmK7BMYJ61fjauRjdowEyVeuDQbIl4Yi/4AoBy+L9pXfRlV2mYa
- jXRvRhiPmNVPHpzHWqw3v8Sy//Iafm12z5S9uhPrJl1AXKZY1F0eX0w5ZhzFMk9vk1BQ8C49cdDMt
- zV2H5MVA==;
+ bh=XtyMCNCqjUP+yeOspBQZrVAQHo3HJdirS3YjMhWpBWE=; b=qLsJDcBuAPmQQQQ+RKoKPhVqWe
+ TFSGSDnqperK7s4IAfLmmFgBEjZJKl5IxmfwuPez5GV/WlyjrwhiPYewyPCPbWsWWwyaaWpPVy3fi
+ tGr2goM+3LOeP6jPBpCMrYaokM1jG5UJl3+m7QL/qJVfoyDDJKYq7uTCYXXt+sEnOtOryx/udpE1Q
+ 7PqoTTGRK2Vs9rJSonyWbw9+BH3AoB/wZm0Tc59+xyBZkNZx7oTNdlVjot6RVTQ+2cBBy0CnmemzO
+ rUaKirEXgzWLPCg3Bm5Z41qVChdLnwQYrpHGXpY6bmZ4GHYNifOhVxoTo1rD/LGnHPX5RaVq/us3Z
+ ACMZ6jWg==;
 Received: from mail.kernel.org ([198.145.29.99])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJFtC-00085i-JC
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:21:09 +0000
+ id 1jJFtG-000862-90
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:21:13 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DAC2E20838;
- Tue, 31 Mar 2020 12:21:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BC32F207FF;
+ Tue, 31 Mar 2020 12:21:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585657265;
- bh=XFgOGztNav7cLSwhDbDR0xm2oUHbC/mKjfQIQOkZAm8=;
+ s=default; t=1585657268;
+ bh=N1TsQ/SSL8Ukeod7/KD06v4z0Pwe7ugfiFASWxX8oxY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=P4k3ALl7Bq4/5arvR6Y3KeSJ4X8G3hJtyl9J5kneyq29I9g6eCbD4yS+Lke3j/s8Z
- IrRqz3ov3FaNtcGX75C6ZcN1tLvN0HQtjueEoXjCNnehdm7mE/dJcz1isfi6Kc2MpX
- tATR2r/5NHkKSSSXZivg+I0erqNS9ty1QDOCyYvk=
+ b=1sJSK/06AC9cGONQFpKroIIHVRpxWhkyYKLDWuKl2L6fDdv/ot+h5aVL8esMXuEuo
+ mbh7JeytvSENyRQ3PNb8mWZ30kFy8cKDr8PcXpRj0YCud3hfNYIwjpVp1thGxkzhy/
+ WwuxYdyMdESYkR24lDU9N78xwOMYWGoxKiyg0duw=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jJFpY-00HBlI-Fz; Tue, 31 Mar 2020 13:17:20 +0100
+ id 1jJFpZ-00HBlI-LZ; Tue, 31 Mar 2020 13:17:22 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 12/15] KVM: arm64: GICv4.1: Plumb SGI implementation selection
- in the distributor
-Date: Tue, 31 Mar 2020 13:16:42 +0100
-Message-Id: <20200331121645.388250-13-maz@kernel.org>
+Subject: [PATCH 13/15] KVM: arm64: GICv4.1: Reload VLPI configuration on
+ distributor enable/disable
+Date: Tue, 31 Mar 2020 13:16:43 +0100
+Message-Id: <20200331121645.388250-14-maz@kernel.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200331121645.388250-1-maz@kernel.org>
 References: <20200331121645.388250-1-maz@kernel.org>
@@ -77,8 +77,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_132106_999306_FDF6262C 
-X-CRM114-Status: GOOD (  19.77  )
+X-CRM114-CacheID: sfid-20200331_132110_757821_E6D50DEB 
+X-CRM114-Status: GOOD (  16.20  )
 X-Spam-Score: -7.3 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
  Content analysis details:   (-7.3 points, 5.0 required)
@@ -124,141 +124,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GICv4.1 architecture gives the hypervisor the option to let
-the guest choose whether it wants the good old SGIs with an
-active state, or the new, HW-based ones that do not have one.
+Each time a Group-enable bit gets flipped, the state of these bits
+needs to be forwarded to the hardware. This is a pretty heavy
+handed operation, requiring all vcpus to reload their GICv4
+configuration. It is thus implemented as a new request type.
 
-For this, plumb the configuration of SGIs into the GICv3 MMIO
-handling, present the GICD_TYPER2.nASSGIcap to the guest,
-and handle the GICD_CTLR.nASSGIreq setting.
+These enable bits are programmed into the HW by setting the VGrp{0,1}En
+fields of GICR_VPENDBASER when the vPEs are made resident again.
 
-In order to be able to deal with the restore of a guest, also
-apply the GICD_CTLR.nASSGIreq setting at first run so that we
-can move the restored SGIs to the HW if that's what the guest
-had selected in a previous life.
+Of course, we only support Group-1 for now...
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
-Link: https://lore.kernel.org/r/20200304203330.4967-21-maz@kernel.org
+Link: https://lore.kernel.org/r/20200304203330.4967-22-maz@kernel.org
 ---
- virt/kvm/arm/vgic/vgic-mmio-v3.c | 49 ++++++++++++++++++++++++++++++--
- virt/kvm/arm/vgic/vgic-v3.c      |  2 ++
- 2 files changed, 49 insertions(+), 2 deletions(-)
+ arch/arm/include/asm/kvm_host.h   | 1 +
+ arch/arm64/include/asm/kvm_host.h | 1 +
+ virt/kvm/arm/arm.c                | 8 ++++++++
+ virt/kvm/arm/vgic/vgic-mmio-v3.c  | 5 ++++-
+ 4 files changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-index f4da9d1a6bff..905032a03886 100644
---- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-@@ -3,6 +3,7 @@
-  * VGICv3 MMIO handling functions
-  */
+diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+index a827b4d60d38..3da57e863df6 100644
+--- a/arch/arm/include/asm/kvm_host.h
++++ b/arch/arm/include/asm/kvm_host.h
+@@ -39,6 +39,7 @@
+ #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+ #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+ #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
++#define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
  
-+#include <linux/bitfield.h>
- #include <linux/irqchip/arm-gic-v3.h>
- #include <linux/kvm.h>
- #include <linux/kvm_host.h>
-@@ -70,6 +71,8 @@ static unsigned long vgic_mmio_read_v3_misc(struct kvm_vcpu *vcpu,
- 		if (vgic->enabled)
- 			value |= GICD_CTLR_ENABLE_SS_G1;
- 		value |= GICD_CTLR_ARE_NS | GICD_CTLR_DS;
-+		if (vgic->nassgireq)
-+			value |= GICD_CTLR_nASSGIreq;
- 		break;
- 	case GICD_TYPER:
- 		value = vgic->nr_spis + VGIC_NR_PRIVATE_IRQS;
-@@ -81,6 +84,10 @@ static unsigned long vgic_mmio_read_v3_misc(struct kvm_vcpu *vcpu,
- 			value |= (INTERRUPT_ID_BITS_SPIS - 1) << 19;
- 		}
- 		break;
-+	case GICD_TYPER2:
-+		if (kvm_vgic_global_state.has_gicv4_1)
-+			value = GICD_TYPER2_nASSGIcap;
-+		break;
- 	case GICD_IIDR:
- 		value = (PRODUCT_ID_KVM << GICD_IIDR_PRODUCT_ID_SHIFT) |
- 			(vgic->implementation_rev << GICD_IIDR_REVISION_SHIFT) |
-@@ -98,17 +105,43 @@ static void vgic_mmio_write_v3_misc(struct kvm_vcpu *vcpu,
- 				    unsigned long val)
- {
- 	struct vgic_dist *dist = &vcpu->kvm->arch.vgic;
--	bool was_enabled = dist->enabled;
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
  
- 	switch (addr & 0x0c) {
--	case GICD_CTLR:
-+	case GICD_CTLR: {
-+		bool was_enabled, is_hwsgi;
-+
-+		mutex_lock(&vcpu->kvm->lock);
-+
-+		was_enabled = dist->enabled;
-+		is_hwsgi = dist->nassgireq;
-+
- 		dist->enabled = val & GICD_CTLR_ENABLE_SS_G1;
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 57fd46acd058..32c8a675e5a4 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -44,6 +44,7 @@
+ #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+ #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+ #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
++#define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
  
-+		/* Not a GICv4.1? No HW SGIs */
-+		if (!kvm_vgic_global_state.has_gicv4_1)
-+			val &= ~GICD_CTLR_nASSGIreq;
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+ 
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index eda7b624eab8..4d864f857ac8 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -625,6 +625,14 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
+ 
+ 		if (kvm_check_request(KVM_REQ_RECORD_STEAL, vcpu))
+ 			kvm_update_stolen_time(vcpu);
 +
-+		/* Dist stays enabled? nASSGIreq is RO */
-+		if (was_enabled && dist->enabled) {
-+			val &= ~GICD_CTLR_nASSGIreq;
-+			val |= FIELD_PREP(GICD_CTLR_nASSGIreq, is_hwsgi);
++		if (kvm_check_request(KVM_REQ_RELOAD_GICv4, vcpu)) {
++			/* The distributor enable bits were changed */
++			preempt_disable();
++			vgic_v4_put(vcpu, false);
++			vgic_v4_load(vcpu);
++			preempt_enable();
 +		}
-+
-+		/* Switching HW SGIs? */
-+		dist->nassgireq = val & GICD_CTLR_nASSGIreq;
-+		if (is_hwsgi != dist->nassgireq)
-+			vgic_v4_configure_vsgis(vcpu->kvm);
-+
- 		if (!was_enabled && dist->enabled)
- 			vgic_kick_vcpus(vcpu->kvm);
-+
-+		mutex_unlock(&vcpu->kvm->lock);
- 		break;
-+	}
- 	case GICD_TYPER:
-+	case GICD_TYPER2:
- 	case GICD_IIDR:
-+		/* This is at best for documentation purposes... */
- 		return;
  	}
  }
-@@ -117,10 +150,22 @@ static int vgic_mmio_uaccess_write_v3_misc(struct kvm_vcpu *vcpu,
- 					   gpa_t addr, unsigned int len,
- 					   unsigned long val)
- {
-+	struct vgic_dist *dist = &vcpu->kvm->arch.vgic;
-+
- 	switch (addr & 0x0c) {
-+	case GICD_TYPER2:
- 	case GICD_IIDR:
- 		if (val != vgic_mmio_read_v3_misc(vcpu, addr, len))
- 			return -EINVAL;
-+		return 0;
-+	case GICD_CTLR:
-+		/* Not a GICv4.1? No HW SGIs */
-+		if (!kvm_vgic_global_state.has_gicv4_1)
-+			val &= ~GICD_CTLR_nASSGIreq;
-+
-+		dist->enabled = val & GICD_CTLR_ENABLE_SS_G1;
-+		dist->nassgireq = val & GICD_CTLR_nASSGIreq;
-+		return 0;
- 	}
  
- 	vgic_mmio_write_v3_misc(vcpu, addr, len, val);
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index 1bc09b523486..2c9fc13e2c59 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -540,6 +540,8 @@ int vgic_v3_map_resources(struct kvm *kvm)
- 		goto out;
- 	}
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 905032a03886..e72dcc454247 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -132,7 +132,10 @@ static void vgic_mmio_write_v3_misc(struct kvm_vcpu *vcpu,
+ 		if (is_hwsgi != dist->nassgireq)
+ 			vgic_v4_configure_vsgis(vcpu->kvm);
  
-+	if (kvm_vgic_global_state.has_gicv4_1)
-+		vgic_v4_configure_vsgis(kvm);
- 	dist->ready = true;
+-		if (!was_enabled && dist->enabled)
++		if (kvm_vgic_global_state.has_gicv4_1 &&
++		    was_enabled != dist->enabled)
++			kvm_make_all_cpus_request(vcpu->kvm, KVM_REQ_RELOAD_GICv4);
++		else if (!was_enabled && dist->enabled)
+ 			vgic_kick_vcpus(vcpu->kvm);
  
- out:
+ 		mutex_unlock(&vcpu->kvm->lock);
 -- 
 2.25.0
 
