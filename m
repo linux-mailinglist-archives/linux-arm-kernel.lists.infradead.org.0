@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA377199FB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26B51199FB7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L9I7UrP8bN0NH+jssU81QigBUlXSkNgc9D2FIR1YyWA=; b=XKu++LI5silYmA
-	FQFhZ+IRQeuSW1frjnekhsQ7ABubCjzqvC5Da4PiwjRbE5nBsBlThyZmvlwRy601M46ihtmJdTChx
-	aXf+U6YoeHJKFwwed/3Eyg4jpM2a5vB0mNF6WThds+gZJexyGo1oH8Qputvs1dG5B07Ndmyy73eqz
-	Qx+u9TGmg67wxETSYbSNLA4UHWQk9IsHMkEeArI8odD4tdquQIeFZ2LzBtHU29f9FKiMAXaHRIbMA
-	rHT84K31e8/TmoQ4fIfmLbu9VYSzBPi4/DuE/ty2/UR9bDvCu6eDTKGYE7rlhAi/svr5Uhi4OaGFA
-	f2ckxQR6WvIlAZqz/gDA==;
+	List-Owner; bh=n0YAVtVsP3e7480hx7L6j+aA587GqkdQyf7OUy4Cjt8=; b=tPzStjtkkJv9e8
+	42Q3CPmkOxIddG1fWN0i0u1HGK8CE+KBwhvmV4LkSMUWM3VV28WtQedtQt3L8Lh7UP11WVlKw0F5M
+	3SNfehNPlmivdSrE9ociWyk4fVlyxOUERA/k3Wh5Ktb8dWn+XvS3I0GLlZJlaU0QHV9swnyuZsBax
+	BGSnHFQM8wvrR8rryngG9svXqwww0qyoTXNpUXbgw97Ug64066k/04Rd3ckK0WsIdm4ryf7W0COjE
+	DhRcdmBKL1JYNY4JWAN36n7lZIkPyFHTaEZBRaf1sx4wNlZKIgM5FN72u0tBB8T6woQHfbcW1Z7n3
+	Pcx5n8PXWKF/UiMaT5Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJN5U-0004bX-1h; Tue, 31 Mar 2020 20:02:16 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jJN62-00058C-GD; Tue, 31 Mar 2020 20:02:51 +0000
+Received: from mail-il1-f180.google.com ([209.85.166.180])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJN5E-0004ZP-4b; Tue, 31 Mar 2020 20:02:02 +0000
-Received: by mail-il1-f195.google.com with SMTP id i75so13425639ild.13;
- Tue, 31 Mar 2020 13:02:00 -0700 (PDT)
+ id 1jJN5q-00057L-HD
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 20:02:39 +0000
+Received: by mail-il1-f180.google.com with SMTP id k29so20702225ilg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 13:02:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=inn69R6pXVv7tn5IiOj3WCmHSXEzB0bu6RYjdj4+w9I=;
- b=VvCJSKcB5hK3oNjmw5KiKtutcUkqJYf4oDU/8ncPDjp/Rxrsz+vHSKiieiyGQSbiIX
- mMCenIa6OWfotltoHtBwlbxfaVxPUTFILxPZNejJbNDUF+6qCUdg9fJK2DKnF2+ofFD+
- vfG3hm6BBN+8B7IkGH2stZ9s6kAV2ipYwNvY3xHe6VeN+Ic3RbY2yZJShg+bmRXv1aWC
- MORlk1aYrv6/7Xr9ZF5NcNwg4Y97c4LwfxOA1/sabGAhoFheUPgdAIcY7RtM053j96z/
- NRIzlCawc7eoh7pnMD1EiCOUGgJRgwgC57yWNsMyswhtN/QgA1t5FcyQJHytMcVjE1Nx
- Icow==
-X-Gm-Message-State: ANhLgQ207OkMWzuUXkBNjvH9fh4wevdKxXjkK7lpTXA2cnM4TTyHuaZ3
- DdFb/2Rg+QD4sB8jSBlqOg==
-X-Google-Smtp-Source: ADFU+vsICc4DhBvaBEO5MjNBpVjmJPABPfazkSQ87pqZhrYedeNGTExxSKz2gZT+RvOxqRGZ9E7szA==
-X-Received: by 2002:a92:9c54:: with SMTP id h81mr18455056ili.109.1585684919454; 
- Tue, 31 Mar 2020 13:01:59 -0700 (PDT)
+ bh=upP4G73Ul2SBmEIEQRpdxDJ/Oi/LqfJPjjsfAUlUCuA=;
+ b=EzPZtKoaccK/ycdJgKkksOmm7qJv7o8JTZcs4ZJ796NeV/rvA+8oKavT/yr91FR4vP
+ ZtWyhEgjN11KqGW2uIx1NhUvjt2J9s8CU6hM6PdXGA2AtMkhnx627ubge9EuxYN1Dnzq
+ 3XFBngW+LhZupOEBqpXYdIK3L/dK9NCjJSn7NNOsMveE4Q24oLKDFFH3ANXy8lvpJSr2
+ VPeUZtL7kPMaDVr0dmJgui4y4Z1LaTne833/5bO++/wbzYZxkw+7Zq/rJLMrBeYcwnPb
+ t6oczOltzoCeWvFi0/r8hArWJaI7fJbcwWhouu5NxwAROs61DHFF/mvD1voWB3tNuXb2
+ C0FA==
+X-Gm-Message-State: ANhLgQ3uT4IOrBxFUE4ctAQmsfWt5d2myQlIs7RXlOIkZOYDcbcicgvP
+ gPEmu4b3Qe7cWrSCn3GwAA==
+X-Google-Smtp-Source: ADFU+vsJ21NZsBEEqm7Lb7K1Azezc2Df6E2CAGi6OWzLR6nfUVM5t4Rj0udq+sSnbbVAaPxyxLYSJA==
+X-Received: by 2002:a92:b68d:: with SMTP id m13mr18155314ill.152.1585684957653; 
+ Tue, 31 Mar 2020 13:02:37 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id r29sm6263789ilk.76.2020.03.31.13.01.57
+ by smtp.gmail.com with ESMTPSA id o23sm6237099ild.33.2020.03.31.13.02.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 13:01:58 -0700 (PDT)
-Received: (nullmailer pid 7245 invoked by uid 1000);
- Tue, 31 Mar 2020 20:01:56 -0000
-Date: Tue, 31 Mar 2020 14:01:56 -0600
+ Tue, 31 Mar 2020 13:02:37 -0700 (PDT)
+Received: (nullmailer pid 8303 invoked by uid 1000);
+ Tue, 31 Mar 2020 20:02:36 -0000
+Date: Tue, 31 Mar 2020 14:02:36 -0600
 From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 3/3] dt-bindings: sound: rockchip-spdif: add
- power-domains property
-Message-ID: <20200331200156.GA7186@bogus>
-References: <20200324123155.11858-1-jbx6244@gmail.com>
- <20200324123155.11858-3-jbx6244@gmail.com>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: vendor-prefixes: Add Beacon vendor prefix
+Message-ID: <20200331200236.GA8247@bogus>
+References: <20200324144324.21178-1-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200324123155.11858-3-jbx6244@gmail.com>
+In-Reply-To: <20200324144324.21178-1-aford173@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_130200_175164_464DE63F 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20200331_130238_569598_AF55A7B8 
+X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
+ no trust [209.85.166.180 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -91,28 +90,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Adam Ford <aford173@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, aford@beaconembedded.com,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Mar 2020 13:31:55 +0100, Johan Jonker wrote:
-> In the old txt situation we add/describe only properties that are used
-> by the driver/hardware itself. With yaml it also filters things in a
-> node that are used by other drivers like 'power-domains' for rk3399,
-> so add it to 'rockchip-spdif.yaml'.
+On Tue, 24 Mar 2020 09:43:22 -0500, Adam Ford wrote:
+> Beacon EmebeddedWorks is the brand owned by Compass Electronics Group,
+> LLC based out of the United States.
+> https://beaconembedded.com/
 > 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 3 +++
->  1 file changed, 3 insertions(+)
+> Signed-off-by: Adam Ford <aford173@gmail.com>
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Applied, thanks.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
