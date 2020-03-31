@@ -2,83 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C66F199ED8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 21:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 787E3199F0C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 21:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ixD/CQW0wGG+o0lW8TBnGql8wUmiCEPeH2KIO7qp7UI=; b=n9U+t+n6UISEiq
-	06+eeUIAEgNcmsZ68g96yIRfF0FnEIng86FBBCImJLlsMGZKHoW2VadRdSugomo2ekWJKtJJc3J7m
-	Cxk6jdm1tdG41bTHhvK9aVtcmytFIqBiN3VXB58gpNoKj3/7iMTPnesGm2P03TctqGhdZH0LuNM9p
-	bn4cdbgiFK4DqYBdDAkPfKbN1jAo+denUEeVIjTYp1v/dX1KYAGwrzleqFH0oDVJAZ2armPl9jrWF
-	2aGMAMtEDw4RdsMD2zfzoeyp/uDjf5x4icX3svkbzyN5mBSEzHn5pfbjLLJUCgTbkrexyhoQJb3O3
-	XhhnfyJvlWQiUcxiNcnQ==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YIg11/uzRyWv+sMbiNlinnzt/cY4y1UNfRrWlH1bVEM=; b=aasllTZprHp7Qd
+	V3HZvgM7HM4i0x49kVu2ESofM8hv1wvTkcj2LEMi66nAhNFGZV+xjIlNquab7+JlmgcAR8qfTv3xk
+	ERuh8UWjyqUD7ylkY+3KfJ6OaWRX2jeEJJgozyqpZKejMkTrhQ72Q0dTm0Di5ZGpGT3tHpxtZUin4
+	+prsTXni8WF8B/nxFKfrzUMhLYuhuwEFp1WUdXNH8g9XQRVUJsI02dytWm5kQg1M9bT9VFDfC9g/E
+	yn9aWcycSd0TBCX1mV9WT6zPY4rReNA9d9g+0TSbN8ynGPCKjg4Nof4ZM23zjzw8Y/NYj8xUBGf1w
+	4k2AV5a+x4bIYNpQZFUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJMTG-0003EN-24; Tue, 31 Mar 2020 19:22:46 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jJMZy-0006kU-J3; Tue, 31 Mar 2020 19:29:42 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJMT6-0003DK-V9
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 19:22:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585682554;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=EePuS6hJnpigKkKFfbeY5lY7BtvEx2PU+2Avp7mwnxU=;
- b=VmlFJx9RjbhOt1eipL/XQ/cBg3jHbh54O06rH/TUinfW9/j0pCUwvZ2xy8GjQdiznxOIej
- Clb3IbbpcN24NdUmPxO3TiNd8hM0Ch/HQy/l0Jf01DoRRXgmN3SL3hiz252I+qFZBaJTh3
- fZUzqA6fDGxZO3Q+we4wqWMaHKcN2CQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-145-i2TYWn2eM76Y66Yn5Kyc8g-1; Tue, 31 Mar 2020 15:20:34 -0400
-X-MC-Unique: i2TYWn2eM76Y66Yn5Kyc8g-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9593C149FB;
- Tue, 31 Mar 2020 19:20:09 +0000 (UTC)
-Received: from lacos-laptop-7.usersys.redhat.com (ovpn-115-131.ams2.redhat.com
- [10.36.115.131])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 03838DA0E0;
- Tue, 31 Mar 2020 19:20:07 +0000 (UTC)
-Subject: Re: [PATCH] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-To: Ard Biesheuvel <ardb@kernel.org>, Michael Kelley <mikelley@microsoft.com>
-References: <20200328205809.23825-1-ardb@kernel.org>
- <20200330074721.GV22097@bivouac.eciton.net>
- <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
- <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
- <DM5PR2101MB104760D03E632DD4DBE99AE1D7CB0@DM5PR2101MB1047.namprd21.prod.outlook.com>
- <CAMj1kXF+2O5cDC9zuNp9Lx9Oe6WyxRghPqSi63CnF+KCcGUZyw@mail.gmail.com>
- <CAMj1kXFJB9ciJ41V2tpQNX_mN7S8BweV9_ME3sDxKjwnR2Jwbg@mail.gmail.com>
-From: Laszlo Ersek <lersek@redhat.com>
-Message-ID: <91ce0460-ae47-8092-0dfa-4b7ff6edc283@redhat.com>
-Date: Tue, 31 Mar 2020 21:20:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ id 1jJMZo-0006jM-Oc
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 19:29:35 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200331192930euoutp0219baaa26feb0f157586d2bbe2b302c8a~BekKg4nI40240302403euoutp02k
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 19:29:30 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200331192930euoutp0219baaa26feb0f157586d2bbe2b302c8a~BekKg4nI40240302403euoutp02k
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1585682970;
+ bh=5TcLSchSxIf6i45hOrft2Axtz8VMmsYHHtpuwr3TN4U=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=jMR1MNmstoKwLnMD+nt7V3BE2skvMfqgtk5JZ2zi6HcLcDZnx3iCJbu110aeEobgy
+ YaHhaNiQSesXFg7vngVpeq4jlWlOHSJ1J04VsfLc4/mGmjaEiZvKGp2X8UCmlK9r82
+ 03rkbNI26dZ9YCSCP9KrPHGpfdoti6D3q2SnHdQ4=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200331192929eucas1p2504d40d75aa7c063b5a79836ecb7c41d~BekJZ9lfG0078800788eucas1p2Z;
+ Tue, 31 Mar 2020 19:29:29 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id DF.DA.61286.91A938E5; Tue, 31
+ Mar 2020 20:29:29 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200331192928eucas1p20327aab9f22430820b066fe05e310b51~BekJDHR090078100781eucas1p2h;
+ Tue, 31 Mar 2020 19:29:28 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200331192928eusmtrp2577689e1a37335c321c15922ee7664ac~BekJCekFb2625726257eusmtrp2m;
+ Tue, 31 Mar 2020 19:29:28 +0000 (GMT)
+X-AuditID: cbfec7f2-ef1ff7000001ef66-e3-5e839a19d4d7
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 6B.D6.08375.81A938E5; Tue, 31
+ Mar 2020 20:29:28 +0100 (BST)
+Received: from [106.210.88.143] (unknown [106.210.88.143]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200331192928eusmtip19e05c1cd467a4331da0d5e959570b545~BekIVZxgy0318503185eusmtip1V;
+ Tue, 31 Mar 2020 19:29:28 +0000 (GMT)
+Subject: Re: [PATCH 2/2] ARM: DTS: Add devicetree file for the Galaxy S2
+To: =?UTF-8?Q?Pawe=c5=82_Chmiel?= <pawel.mikolaj.chmiel@gmail.com>, Paul
+ Cercueil <paul@crapouillou.net>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <da888000-52b6-b0c6-76ac-8fc535d07a5d@samsung.com>
+Date: Tue, 31 Mar 2020 21:29:24 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <CAMj1kXFJB9ciJ41V2tpQNX_mN7S8BweV9_ME3sDxKjwnR2Jwbg@mail.gmail.com>
+In-Reply-To: <d9fe575926342b355f76e1f38fef62f0d7d38075.camel@gmail.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrIKsWRmVeSWpSXmKPExsWy7djPc7qSs5rjDJ7+5bCYf+Qcq0X/49fM
+ FufPb2C32PT4GqvF5V1z2CxmnN/HZLH0+kUmi/7Fl1gsfhzvY7Zo3XuE3WLKkpnsDtwea+at
+ YfRYfamdzWPnrLvsHptWdbJ5bF5S7/F5k1wAWxSXTUpqTmZZapG+XQJXxoJrd9gK2sUqzs9a
+ zNbAuFiwi5GTQ0LARGLDsS7GLkYuDiGBFYwSU1Z+YoVwvjBKvLo/lwXC+cwo0Tj9CVAZB1jL
+ wxd6EPHljBJH7qxig3DeM0o8XvSIBaRIWMBDYv/zZJAVIgJZEs3/usGmMgtsZ5Jo/riPHSTB
+ JmAo0fW2iw3E5hWwk1i/9wYLiM0ioCqxftUcJhBbVCBG4uLhflaIGkGJkzOfgNVwCrhLfOzb
+ B1bDLCAv0bx1NjOELS5x68l8JojfbrFLHH3gDWG7SHybeZENwhaWeHV8CzuELSPxfydIPReQ
+ 3cwo8fDcWnYIp4dR4nLTDEaIKmuJO+d+sYF8xiygKbF+lz4kJBwl3t6UgDD5JG68FYQ4gU9i
+ 0rbpzBBhXomONiGIGWoSs46vg9t68MIl5gmMSrOQPDYLyTOzkDwzC2HtAkaWVYziqaXFuemp
+ xYZ5qeV6xYm5xaV56XrJ+bmbGIEJ6/S/4592MH69lHSIUYCDUYmHt8KmOU6INbGsuDL3EKME
+ B7OSCC+bf0OcEG9KYmVValF+fFFpTmrxIUZpDhYlcV7jRS9jhQTSE0tSs1NTC1KLYLJMHJxS
+ DYzs+s1LHx7xc1ddEKG2vyi4NPNUXNOmhM1P+uZPNQjb83LnUpsNk/e5flpuzOocOV8qJCA2
+ sV/SJmS+iF7u8vJ/kxiTol7cFFy09Omt1vD7G2+zPN3fs/P+rVKnXsm/dRWfXWt3GyoEhDMG
+ rWmq/DpbWXON9ZLClUu9+14JPnXK/utwM/nh/BAlluKMREMt5qLiRABB9k9WVAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrCIsWRmVeSWpSXmKPExsVy+t/xu7oSs5rjDDb+1beYf+Qcq0X/49fM
+ FufPb2C32PT4GqvF5V1z2CxmnN/HZLH0+kUmi/7Fl1gsfhzvY7Zo3XuE3WLKkpnsDtwea+at
+ YfRYfamdzWPnrLvsHptWdbJ5bF5S7/F5k1wAW5SeTVF+aUmqQkZ+cYmtUrShhZGeoaWFnpGJ
+ pZ6hsXmslZGpkr6dTUpqTmZZapG+XYJexoJrd9gK2sUqzs9azNbAuFiwi5GDQ0LAROLhC70u
+ Ri4OIYGljBLrDlxh7WLkBIrLSJyc1gBlC0v8udbFBlH0llGis3ETG0izsICHxP7nySA1IgJZ
+ Ejuef2cCqWEW2M4ksXbTOmaQhJDALWaJvq2MIDabgKFE11uQQZwcvAJ2Euv33mABsVkEVCXW
+ r5rDBGKLCsRI/NzTxQJRIyhxcuYTMJtTwF3iY98+sBpmATOJeZsfMkPY8hLNW2dD2eISt57M
+ Z5rAKDQLSfssJC2zkLTMQtKygJFlFaNIamlxbnpusaFecWJucWleul5yfu4mRmCMbjv2c/MO
+ xksbgw8xCnAwKvHwVtg0xwmxJpYVV+YeYpTgYFYS4WXzb4gT4k1JrKxKLcqPLyrNSS0+xGgK
+ 9NxEZinR5Hxg+sgriTc0NTS3sDQ0NzY3NrNQEuftEDgYIySQnliSmp2aWpBaBNPHxMEp1cCo
+ 41Z7aBKLf5Ifh6jK9ZURW84xvo6pfnG7p6rY5qCi0MJftduEqt+frJ5ZMu3B8e/HtsdU/z2w
+ ptRz113N/9e0vpxTcDz499Err80hPfvO+QQuKN9lp7hku1TwnE/WnQ49Nq1dRztXbPDZeuWd
+ jufnwz1+/JqzZqhGbnirwPDlytp9fpYmc849V2Ipzkg01GIuKk4EAESzMbnnAgAA
+X-CMS-MailID: 20200331192928eucas1p20327aab9f22430820b066fe05e310b51
+X-Msg-Generator: CA
+X-RootMTR: 20200318142549eucas1p1793027850923ebad20b4691cba676671
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200318142549eucas1p1793027850923ebad20b4691cba676671
+References: <20200312153411.13535-1-paul@crapouillou.net>
+ <20200312153411.13535-2-paul@crapouillou.net> <20200313090011.GB7416@pi3>
+ <CGME20200318142549eucas1p1793027850923ebad20b4691cba676671@eucas1p1.samsung.com>
+ <D6.31.03891.A6F227E5@epmailinsp8.samsung.com>
+ <6c549058-00f9-8526-a272-48c538166ccf@samsung.com>
+ <X7728Q.UX8A28S31JO92@crapouillou.net>
+ <6ca59c1b-2676-e69d-e4eb-4667a81d155f@samsung.com>
+ <d9fe575926342b355f76e1f38fef62f0d7d38075.camel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_122237_181343_9CF661F5 
-X-CRM114-Status: GOOD (  21.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_122933_000980_7C894C75 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +133,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,103 +146,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>,
- Boqun Feng <Boqun.Feng@microsoft.com>, Leif Lindholm <leif@nuviainc.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Stenkin Evgeniy <stenkinevgeniy@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/31/20 09:56, Ard Biesheuvel wrote:
-> On Mon, 30 Mar 2020 at 20:24, Ard Biesheuvel <ardb@kernel.org> wrote:
->>
->> On Mon, 30 Mar 2020 at 20:12, Michael Kelley <mikelley@microsoft.com> wrote:
->>>
->>> From: Ard Biesheuvel <ardb@kernel.org>  Sent: Monday, March 30, 2020 12:51 AM
->>>>
->>>> On Mon, 30 Mar 2020 at 09:50, Ard Biesheuvel <ardb@kernel.org> wrote:
->>>>>
->>>>> On Mon, 30 Mar 2020 at 09:47, Leif Lindholm <leif@nuviainc.com> wrote:
->>>>>>
->>>>>> On Sat, Mar 28, 2020 at 21:58:09 +0100, Ard Biesheuvel wrote:
->>>>>>> Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
->>>>>>> PE/COFF entrypoint") did some code refactoring to get rid of the
->>>>>>> EFI entry point assembler code, and in the process, it got rid of the
->>>>>>> assignment of image_addr to the value of _text. Instead, it switched
->>>>>>> to using the image_base field of the efi_loaded_image struct provided
->>>>>>> by UEFI, which should contain the same value.
->>>>>>>
->>>>>>> However, Michael reports that this is not the case: older GRUB builds
->>>>>>> corrupt this value in some way, and since we can easily switch back to
->>>>>>> referring to _text to discover this value, let's simply do that.
->>>>>>
->>>>>> It is not clear to me how "older GRUB builds" would differ here.
->>>>>> I think more investigation is needed before making that claim.
->>>>>> My suspicion is that some (old) version of non-upstream, shim-enabled
->>>>>> distro-specific build is playing a part.
->>>>>>
->>>>>> So, do we have the option for more detailed investigations, or can we
->>>>>> vague the claim up to say "some GRUB builds seen in the wild, based
->>>>>> on an upstream 2.02" or suchlike?
->>>>>>
->>>>>
->>>>> I've queued a fix that prints a nastygram if the value deviates from
->>>>> the expected one. Let's see if this triggers any reports.
->>>>
->>>> (/me looks at context)
->>>>
->>>> *This* is the fix that prints a nastygram.
->>>
->>> FWIW, I pulled the BOOTAA64.EFI and grubaa64.efi files from CentOS 7.6
->>> and CentOS 8.0 binary packages and tested both in my Hyper-V VM.
->>> Using strings | grep '2\.' to get version info, the CentOS 7.6 grubaa64.efi
->>> shows:
->>>
->>>         User-Agent: GRUB 2.02~beta2
->>>
->>> The CentOS 8.0 grubaa64.efi shows:
->>>
->>>         User-Agent: GRUB 2.03
->>>
->>> Both versions produce the FIRMWARE BUG warning when using Ard's
->>> latest patch.  I'll assume the equivalent RHEL versions are the same.
->>> So we've got official distro releases that show the problem.
->>>
->>> As reported earlier, the BOOTAA64.EFI and grubaa64.efi from a
->>> Debian release (not exactly sure which one) do not produce the
->>> FIRMWARE BUG warning.  The grubaa64.efi reports as 2.04-4.
->>>
->>
->> Thanks a lot Michael, that is really helpful.
-> 
-> I could not reproduce the issue with Debian Stretch's
-> 2.02~beta3-5+deb9u2, so it does appear to be RedHat's value add that
-> is to blame here.
-> 
-> @Laszlo: TL;DR RedHat's GRUB for arm64 appears to clobber the
-> image_base field of the efi_loaded_image struct passed to the kernel.
-> Could you please recommend a way to report this?
-
-Yes. I seem to recall that you already have an account at
-<https://bugzilla.redhat.com/>. Please log in, then go to the following
-link:
-
-https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20Enterprise%20Linux%208
-
-In the "Component" field, please enter "grub2", then fill in Summary /
-Description / etc.
-
-Please be thorough, as if you wanted me to reproduce the issue :)
-
-After filing the bug, please send the BZ link to me (or add me to the
-bug's CC list), so I can ping some RH bootloader folks directly.
-
-Thanks!
-Laszlo
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkKCk9uIDIwMjAtMDMtMzEgMTc6MjksIFBhd2XFgiBDaG1pZWwgd3JvdGU6Cj4gT24gVHVlLCAy
+MDIwLTAzLTMxIGF0IDE1OjU1ICswMjAwLCBNYXJlayBTenlwcm93c2tpIHdyb3RlOgo+PiBIaSBQ
+YXVsLAo+Pgo+PiBPbiAyMDIwLTAzLTMxIDE1OjA5LCBQYXVsIENlcmN1ZWlsIHdyb3RlOgo+Pj4g
+Q2M6IFBhd2XFgiBDaG1pZWwgPHBhd2VsLm1pa29sYWouY2htaWVsQGdtYWlsLmNvbT4KPj4+Cj4+
+PiBIaSBNYXJlaywKPj4+Cj4+PiBMZSBtYXIuIDMxIG1hcnMgMjAyMCDDoCA3OjM2LCBNYXJlayBT
+enlwcm93c2tpCj4+PiA8bS5zenlwcm93c2tpQHNhbXN1bmcuY29tPiBhIMOpY3JpdCA6Cj4+Pj4g
+SGkgUGF1bCwKPj4+Pgo+Pj4+IE9uIDIwMjAtMDMtMTggMTU6MjUsIFBhdWwgQ2VyY3VlaWwgd3Jv
+dGU6Cj4+Pj4+Pj4gICAgKyAgICB9Owo+Pj4+Pj4+ICAgICsKPj4+Pj4+PiAgICArICAgIHRzcF9y
+ZWc6IHJlZ3VsYXRvci0xIHsKPj4+Pj4+PiAgICArICAgICAgICBjb21wYXRpYmxlID0gInJlZ3Vs
+YXRvci1maXhlZCI7Cj4+Pj4+Pj4gICAgKyAgICAgICAgcmVndWxhdG9yLW5hbWUgPSAiVFNQX0ZJ
+WEVEX1ZPTFRBR0VTIjsKPj4+Pj4+PiAgICArICAgICAgICByZWd1bGF0b3ItbWluLW1pY3Jvdm9s
+dCA9IDwzMzAwMDAwPjsKPj4+Pj4+PiAgICArICAgICAgICByZWd1bGF0b3ItbWF4LW1pY3Jvdm9s
+dCA9IDwzMzAwMDAwPjsKPj4+Pj4+PiAgICArICAgICAgICBncGlvID0gPCZncGwwIDMgR1BJT19B
+Q1RJVkVfSElHSD47Cj4+Pj4+Pj4gICAgKyAgICAgICAgc3RhcnR1cC1kZWxheS11cyA9IDw3MDAw
+MD47Cj4+Pj4+Pj4gICAgKyAgICAgICAgZW5hYmxlLWFjdGl2ZS1oaWdoOwo+Pj4+Pj4+ICAgICsg
+ICAgICAgIHJlZ3VsYXRvci1ib290LW9uOwo+Pj4+Pj4+ICAgICsgICAgICAgIHJlZ3VsYXRvci1h
+bHdheXMtb247Cj4+Pj4+PiAgIGFsd2F5cy1vbiBhbmQgYm9vdC1vbiBzaG91bGQgbm90IGJlIG5l
+ZWRlZC4gWW91IGhhdmUgYSBjb25zdW1lcgo+Pj4+Pj4gZm9yIHRoaXMKPj4+Pj4+ICAgcmVndWxh
+dG9yLgo+Pj4+PiAgIEFib3V0IHRoaXM6IHRoZSB0b3VjaHNjcmVlbiBkcml2ZXIgZG9lcyBub3Qg
+dXNlIGEgcmVndWxhdG9yLCBzbyBJCj4+Pj4+ICAgYmVsaWV2ZSB0aGF0J3Mgd2h5IHRoZXNlIHBy
+b3BlcnRpZXMgd2VyZSBoZXJlLgo+Pj4+Pgo+Pj4+PiAgIEkgc2VudCBwYXRjaGVzIHVwc3RyZWFt
+IHRvIGFkZHJlc3MgdGhlIGlzc3VlOgo+Pj4+PiAgIGh0dHBzOi8vcHJvdGVjdDIuZmlyZWV5ZS5j
+b20vdXJsP2s9ZThhZWRjMjktYjUzMDcyYjMtZThhZjU3NjYtMGNjNDdhMzM2ZmFlLTc1OTU3OWZk
+NTc2ZDgzODImdT1odHRwczovL2xrbWwub3JnL2xrbWwvMjAyMC8zLzE1Lzk0Cj4+Pj4+Cj4+Pj4+
+Cj4+Pj4+ICAgSSBiZWxpZXZlIHRoaXMgbWVhbnMgSSBjYW5ub3QgbWVyZ2UgdGhlIGk5MTAwIGRl
+dmljZXRyZWUgdW50aWwgaXQgaXMKPj4+Pj4gICBhY2tlZC4KPj4+PiBPbmUgbW9yZSBpbmZvcm1h
+dGlvbiAtIHNpbWlsYXIgY2hhbmdlIGhhcyBiZWVuIGFscmVhZHkgcG9zdGVkLCBidXQgaXQKPj4+
+PiBsb29rcyBpdCBnb3QgbG9zdCB0aGVuOiBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3Bh
+dGNoLzEwNTUwOTAzLwo+Pj4gSSB3YXMgYXdhcmUgb2YgdGhpcyBwYXRjaCwgYnV0IGRpZG4ndCBr
+bm93IGl0IHdhcyBzZW50IHVwc3RyZWFtLgo+Pj4KPj4+IFRoaXMgb3RoZXIgcGF0Y2ggdXNlcyB0
+d28gcmVndWxhdG9ycywgdmRkL2F2ZGQgYnV0IGRvZXNuJ3QgZ2l2ZSBhbnkKPj4+IHJlYXNvbiB3
+aHkuCj4+Pgo+PiBJJ3ZlIGNoZWNrZWQgdGhlIFVuaXZlcnNhbEMyMTAgc2NoZW1hdGljLCB3aGlj
+aCB1c2VzIHRoZSBzYW1lCj4+IHRvdWNoc2NyZWVuIGNoaXAuIFRoZXJlIGFyZSAyIHN1cHBsaWVz
+IHRvIHRoZSB0b3VjaHNjcmVlbiBjaGlwOiAyLjhWIFZERAo+PiBhbmQgMy4zViBBVkRELiBCb3Ro
+IGFyZSBlbmFibGVkIGJ5IHRoZSBzYW1lIEdQSU8gcGluIHRob3VnaC4gVGhlcmUgaXMKPj4gaG93
+ZXZlciBubyByZXNldCBHUElPIHBpbiB0aGVyZS4KPiBIaQo+IERvbid0IHJlbWVtYmVyIG5vdyBo
+b3cgaXQgd29ya2VkIG9uIEdhbGF4eSBTMSwgYnV0IGl0IGxvb2tzIGxpa2UgaXQgaGFzCj4gdGhl
+IHNhbWUgc2V0dXAgLSB0d28gcmVndWxhdG9ycyBlbmFibGVkIGJ5IG9uZSBHUElPIHBpbi4KCkl0
+IGlzIHF1aXRlIGNvbW1vbiBmb3IgdGhlIHJlZ3VsYXRvcnMgdG8gc2hhcmUgdGhlIGVuYWJsZSBH
+UElPIGxpbmUsIHNvIAp0aGlzIGlzIG5vdCBhbiBpc3N1ZS4gUmVndWxhdG9yIGZyYW1ld29yayBz
+dXBwb3J0cyBzdWNoIGNvbmZpZ3VyYXRpb24gCmZvciBhZ2VzLiBJJ20gY3VyaW91cyBhYm91dCB0
+aGUgcmVzZXQgR1BJTyBsaW5lLCB3aGljaCB3ZXJlIG1hZGUgCm1hbmRhdG9yeSBmb3IgdGhlIHJl
+Z3VsYXRvcnMgY29udHJvbCBpbiB5b3VyIHBhdGNoLiBJIGRpZG4ndCBmaW5kIGl0IG9uIAphbnkg
+c2NoZW1hdGljIG9mIHRoZSBkZXZpY2VzIHdpdGggdGhpcyB0b3VjaCBzY3JlZW4sIGJ1dCBJIGRv
+bid0IGhhdmUgYSAKc2NoZW1hdGljIG9mIHRoZSBHYWxheHkgUzEuIElNSE8gdGhlIHJlc2V0IHNp
+Z25hbCBpcyBzaW1wbHkgZGVyaXZlZCBmcm9tIAp0aGUgc3VwcGx5IHJlZ3VsYXRvcnMgd2l0aCBz
+b21lIHNpbXBsZSBjaXJjdWl0LCBidXQgSSBkb24ndCBoYXZlIApzY2hlbWF0aWMgb2YgdGhhdCBw
+YXJ0LgoKQmVzdCByZWdhcmRzCi0tIApNYXJlayBTenlwcm93c2tpLCBQaEQKU2Ftc3VuZyBSJkQg
+SW5zdGl0dXRlIFBvbGFuZAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
