@@ -2,78 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56DC7199ADE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:05:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9E7A199B4E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:21:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BtPVq8Uvyn8DiB68DaDLAdqYjoY21/yONFy5CMtQmuk=; b=XwS
-	aOmS0FIatMS0F+XGnFZMlEdiGLvBzgRi/nER+mwHSURXGSpGynziCQ25MZggxaoRGxNaI1s2rdSS6
-	MkPBUaP/+9ooeEh0G228CeVfBNIJlYcGgPvx9A6wyH+SgcmizIUsHUdZBVKm4Vjxr7usrkMz12FZt
-	V0VJ32OkYDLQV/IQxgOIX0PR9eCpb2mJBxaC1HiJs/gSz092Jl3E5X45/zVmj0WArj5S8+9xWk7Q9
-	20a1J04DxbRgdOmtChkPXq2sm0P936kVXXK1BMsfseDIPQIYyZsDPV8ydnJXZvR/4/N3iaNhJimIZ
-	saDwdyxkFgtY+z/oPvnaTFKGAecMHHw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IXoTbeSdg0t+fElG7kWPm1Y+jXvVergELEo5gb1SEVk=; b=ROTtxSaj2pOcrU
+	1oesg/Ik+HviyEoI8VJx12qS60V0euVp/5VICxYBNBf3B9xjdDAJ7u5UuBGKDs4bbsgV7BL81QbmE
+	0T9AkHzL3XKU772NKYxfB40jDZy6zzka7PzFx0WuiO/8v/V4J6UcBUiVpZrn2ELiayBe9/33H2TTW
+	RQ1y6wfYN5EiznF0pDLP8g5qHW1aDJV+IGX2qDpILoa0BjkZQy0CK+6a+pQ9cM3c+PpxOJPiSJVT9
+	tVYV9q3U0BW1wH+8u23VQQBCoDJTbIApZK5ajRxxafbc18wW6k0Cc0qpfLLLYckzh9PiE2cVctSG/
+	dW+tionyqo62NfEgeocA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJOA-0005ZX-2h; Tue, 31 Mar 2020 16:05:18 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jJJdw-00011F-3X; Tue, 31 Mar 2020 16:21:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJNp-0005YG-Ef; Tue, 31 Mar 2020 16:04:59 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r16so3109608wmg.5;
- Tue, 31 Mar 2020 09:04:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=4VKI9AuPhMvUgqTj7z2yAveanc53o7XusIgD/wUX0qM=;
- b=q0agAYmm/VmDdDcewOukFSDP029eE+dPAyRe1UJebG980+mCCXFDfpDZYsJGXffTI9
- by1tNoD5G+i/Ffh4pvhmWX3TLLoAMEzIL0+NsQ/Q3ngv8BdhSX5kl5sX/ldWDTuEITlf
- 4CfG/ggwB2NZs56lKww74VrGuLbMtYMZR5wmzOaipMmiozrTIBjFgLAaueoy7F4JYT9l
- pR+UOHuggwL6Zq3a6PHNYd6Ty+JXTKndlizKODM4acD6ZV1+Agcxn1jadBN0WycrsLqH
- NtNIirApMeePMh0wQNM4RLnxVBzfURMBSPQ25wes250TigM7rSn830EOpLFZKsTr+BHQ
- gDWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4VKI9AuPhMvUgqTj7z2yAveanc53o7XusIgD/wUX0qM=;
- b=PdcD8SpWLjdbc3pC7VbTCf5lT2VfBFrPXylQKy+zjFSmYkJwZTpFbeQ5hE1/fmOoqF
- 4DmlUHQ2vJm4Eqtk7C8uB6pXMkyvCHnNjomseJ+yIbsjMFQQy6skzL8ZSYOcdx4I47fj
- T5TIj5MpJ0V2r6u8AzHpq3xMbJ4rIiPnBPz6TGvKk82s5+LIDWxD+4hnOtiVBsXKkhrO
- uSsNWzN+9whYp1S1MmtagvOuDhCwPKgSJXVz8IMo36M4XBBPoKssCTXlRW08a+RdBIMo
- bqkBOIpksRpLVeW79az7Zg/MN73p+4zGeVNYuehavYAnlako+rNhzITATP0Q2lrhsTKo
- /34g==
-X-Gm-Message-State: ANhLgQ0XpWyNQyzyOD0LDwWPuCXUNHSuj/L+ZDDpug2AxUDCAdTjUGcC
- YQf1hNh22J2VlVP7SGsX85o=
-X-Google-Smtp-Source: ADFU+vuRA91pE+w4+dgBDghI6jnabCDYF3dXfWt06pUcEiVsl2Z3RjgW5I01mlHajMa+eP/KDc8jMw==
-X-Received: by 2002:a1c:4987:: with SMTP id w129mr4406106wma.168.1585670696219; 
- Tue, 31 Mar 2020 09:04:56 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id p17sm1651433wmb.30.2020.03.31.09.04.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 31 Mar 2020 09:04:55 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v1] dt-bindings: display: convert rockchip rk3066 hdmi
- bindings to yaml
-Date: Tue, 31 Mar 2020 18:04:48 +0200
-Message-Id: <20200331160448.15331-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jJJdi-00010k-OH
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:21:24 +0000
+Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
+ [209.85.160.177])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF619212CC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 16:21:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585671682;
+ bh=YHNMT5j8Euq0n+mseKfPA6cKBa4Jew7v+YKTKPRHb/4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=gNLQBrPcq3oyN2Ogv+oTJyFfBNekyyJFE8OMY+ksIRuIUm4Epp9KM6Y1F/8vi0HEK
+ 10SfgtgPdKeKpsdZiqQ2ixSx9HcCCrFep4hoh/CePpyQATN8UU/WSDZC0IVmvAP2LT
+ v14r3TcSkQKemqZJ9R1yludBCEJye3nWX1UaBApI=
+Received: by mail-qt1-f177.google.com with SMTP id f20so18844003qtq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 09:21:21 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3AvXF9v76mCFfms/Xqquunj3lLK+my1vYyoON/cHxGTkit5JCp
+ MbKH5eZLQf2fveb9QRI89Y6VvbwJDBf+tMAlAw==
+X-Google-Smtp-Source: ADFU+vtynyRBpHK1zGlgHy3HIyDVqOtqkMP9vtFANRwUVhPPv/eanwLrG9DiWcusvM2HxEgWHSF1cMX0wltfSbKtWIU=
+X-Received: by 2002:ac8:1611:: with SMTP id p17mr5993804qtj.300.1585671680921; 
+ Tue, 31 Mar 2020 09:21:20 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200315191632.12536-1-rentao.bupt@gmail.com>
+ <20200315191632.12536-7-rentao.bupt@gmail.com>
+ <20200330192347.GA6388@bogus>
+ <4dc3ac910c79dcca398eb5161dde44e1cc50baca.camel@kernel.crashing.org>
+In-Reply-To: <4dc3ac910c79dcca398eb5161dde44e1cc50baca.camel@kernel.crashing.org>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 31 Mar 2020 10:21:10 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKZeCC352TKFGDNRRogSefF9vq+J=WqCEeg59PBsSOW1w@mail.gmail.com>
+Message-ID: <CAL_JsqKZeCC352TKFGDNRRogSefF9vq+J=WqCEeg59PBsSOW1w@mail.gmail.com>
+Subject: Re: [PATCH v2 6/6] dt-bindings: usb: document aspeed vhub device
+ ID/string properties
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_090457_490261_F0194FD0 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200331_092122_826289_50764ED1 
+X-CRM114-Status: GOOD (  30.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,256 +89,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux USB List <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Joel Stanley <joel@jms.id.au>, Tao Ren <taoren@fb.com>, rentao.bupt@gmail.com,
+ Colin Ian King <colin.king@canonical.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files with 'hdmi' nodes for rk3066 are manually verified.
-In order to automate this process rockchip,rk3066-hdmi.txt
-has to be converted to yaml.
+On Mon, Mar 30, 2020 at 6:14 PM Benjamin Herrenschmidt
+<benh@kernel.crashing.org> wrote:
+>
+> On Mon, 2020-03-30 at 13:23 -0600, Rob Herring wrote:
+> > On Sun, Mar 15, 2020 at 12:16:32PM -0700, rentao.bupt@gmail.com wrote:
+> > > From: Tao Ren <rentao.bupt@gmail.com>
+> > >
+> > > Update device tree binding document for aspeed vhub's device IDs and
+> > > string properties.
+> > >
+> > > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+> > > ---
+> > >  No change in v2:
+> > >    - the patch is added into the series since v2.
+> > >
+> > >  .../bindings/usb/aspeed,usb-vhub.yaml         | 68 +++++++++++++++++++
+> > >  1 file changed, 68 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> > > index 06399ba0d9e4..5b2e8d867219 100644
+> > > --- a/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> > > +++ b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> > > @@ -52,6 +52,59 @@ properties:
+> > >          minimum: 1
+> > >          maximum: 21
+> > >
+> > > +  vhub-vendor-id:
+> > > +    description: vhub Vendor ID
+> > > +    allOf:
+> > > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > > +      - maximum: 65535
+> > > +
+> > > +  vhub-product-id:
+> > > +    description: vhub Product ID
+> > > +    allOf:
+> > > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > > +      - maximum: 65535
+> >
+> > There's already standard 'vendor-id' and 'device-id' properties. Use
+> > those.
+>
+> So yes and no... I don't fundamentally object but keep in mind that
+> traditionally, the properties are about matching with a physical
+> hardware.
+>
+> In this case however, we are describing a virtual piece of HW and so
+> those IDs are going to be picked up to be exposed as the USB
+> vendor/device of the vhub on the USB bus.
+>
+> Not necessarily an issue but it's more "configuration" than "matching"
+> and as such, it might make sense to expose that with a prefix, though I
+> would prefer something like usb-vendor-id or usb,vendor-id...
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- .../display/rockchip/rockchip,rk3066-hdmi.txt      |  72 -----------
- .../display/rockchip/rockchip,rk3066-hdmi.yaml     | 141 +++++++++++++++++++++
- 2 files changed, 141 insertions(+), 72 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
- create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
+For FDT uses, it's pretty much been configuration. It's mostly been
+for PCI that I've seen these properties used.
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
-deleted file mode 100644
-index d1ad31bca..000000000
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
-+++ /dev/null
-@@ -1,72 +0,0 @@
--Rockchip specific extensions for rk3066 HDMI
--============================================
--
--Required properties:
--- compatible:
--	"rockchip,rk3066-hdmi";
--- reg:
--	Physical base address and length of the controller's registers.
--- clocks, clock-names:
--	Phandle to HDMI controller clock, name should be "hclk".
--- interrupts:
--	HDMI interrupt number.
--- power-domains:
--	Phandle to the RK3066_PD_VIO power domain.
--- rockchip,grf:
--	This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
--- ports:
--	Contains one port node with two endpoints, numbered 0 and 1,
--	connected respectively to vop0 and vop1.
--	Contains one port node with one endpoint
--	connected to a hdmi-connector node.
--- pinctrl-0, pinctrl-name:
--	Switch the iomux for the HPD/I2C pins to HDMI function.
--
--Example:
--	hdmi: hdmi@10116000 {
--		compatible = "rockchip,rk3066-hdmi";
--		reg = <0x10116000 0x2000>;
--		interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
--		clocks = <&cru HCLK_HDMI>;
--		clock-names = "hclk";
--		power-domains = <&power RK3066_PD_VIO>;
--		rockchip,grf = <&grf>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
--
--		ports {
--			#address-cells = <1>;
--			#size-cells = <0>;
--			hdmi_in: port@0 {
--				reg = <0>;
--				#address-cells = <1>;
--				#size-cells = <0>;
--				hdmi_in_vop0: endpoint@0 {
--					reg = <0>;
--					remote-endpoint = <&vop0_out_hdmi>;
--				};
--				hdmi_in_vop1: endpoint@1 {
--					reg = <1>;
--					remote-endpoint = <&vop1_out_hdmi>;
--				};
--			};
--			hdmi_out: port@1 {
--				reg = <1>;
--				hdmi_out_con: endpoint {
--					remote-endpoint = <&hdmi_con_in>;
--				};
--			};
--		};
--	};
--
--&pinctrl {
--		hdmi {
--			hdmi_hpd: hdmi-hpd {
--				rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
--			};
--			hdmii2c_xfer: hdmii2c-xfer {
--				rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
--						<0 RK_PA2 1 &pcfg_pull_none>;
--			};
--		};
--};
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
-new file mode 100644
-index 000000000..8f4acf707
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
-@@ -0,0 +1,141 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3066-hdmi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip rk3066 HDMI controller
-+
-+maintainers:
-+  - Sandy Huang <hjc@rock-chips.com>
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    const: rockchip,rk3066-hdmi
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: hclk
-+
-+  pinctrl-0:
-+    maxItems: 2
-+
-+  pinctrl-names:
-+    const: default
-+    description:
-+      Switch the iomux for the HPD/I2C pins to HDMI function.
-+
-+  power-domains:
-+    maxItems: 1
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
-+
-+  ports:
-+    type: object
-+
-+    properties:
-+      "#address-cells":
-+        const: 1
-+
-+      "#size-cells":
-+        const: 0
-+
-+      port@0:
-+        type: object
-+        description:
-+          Port node with two endpoints, numbered 0 and 1,
-+          connected respectively to vop0 and vop1.
-+
-+      port@1:
-+        type: object
-+        description:
-+          Port node with one endpoint connected to a hdmi-connector node.
-+
-+    required:
-+      - "#address-cells"
-+      - "#size-cells"
-+      - port@0
-+      - port@1
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - pinctrl-0
-+  - pinctrl-names
-+  - power-domains
-+  - rockchip,grf
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3066a-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/pinctrl/rockchip.h>
-+    #include <dt-bindings/power/rk3066-power.h>
-+    hdmi: hdmi@10116000 {
-+      compatible = "rockchip,rk3066-hdmi";
-+      reg = <0x10116000 0x2000>;
-+      interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru HCLK_HDMI>;
-+      clock-names = "hclk";
-+      pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
-+      pinctrl-names = "default";
-+      power-domains = <&power RK3066_PD_VIO>;
-+      rockchip,grf = <&grf>;
-+
-+      ports {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        hdmi_in: port@0 {
-+          reg = <0>;
-+          #address-cells = <1>;
-+          #size-cells = <0>;
-+          hdmi_in_vop0: endpoint@0 {
-+            reg = <0>;
-+            remote-endpoint = <&vop0_out_hdmi>;
-+          };
-+          hdmi_in_vop1: endpoint@1 {
-+            reg = <1>;
-+            remote-endpoint = <&vop1_out_hdmi>;
-+          };
-+        };
-+        hdmi_out: port@1 {
-+          reg = <1>;
-+          hdmi_out_con: endpoint {
-+            remote-endpoint = <&hdmi_con_in>;
-+          };
-+        };
-+      };
-+    };
-+
-+    pinctrl {
-+      hdmi {
-+        hdmi_hpd: hdmi-hpd {
-+          rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
-+        };
-+        hdmii2c_xfer: hdmii2c-xfer {
-+          rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
-+                          <0 RK_PA2 1 &pcfg_pull_none>;
-+        };
-+      };
-+    };
--- 
-2.11.0
+> > > +
+> > > +  vhub-device-revision:
+> >
+> > Specific to USB, not vhub.
+>
+> Same as the above.
+>
+> > > +    description: vhub Device Revision in binary-coded decimal
+> > > +    allOf:
+> > > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > > +      - maximum: 65535
+> > > +
+> > > +  vhub-strings:
+> > > +    type: object
+> > > +
+> > > +    properties:
+> > > +      '#address-cells':
+> > > +        const: 1
+> > > +
+> > > +      '#size-cells':
+> > > +        const: 0
+> > > +
+> > > +    patternProperties:
+> > > +      '^string@[0-9a-f]+$':
+> > > +        type: object
+> > > +        description: string descriptors of the specific language
+> > > +
+> > > +        properties:
+> > > +          reg:
+> > > +            maxItems: 1
+> > > +            description: 16-bit Language Identifier defined by USB-IF
+> > > +
+> > > +          manufacturer:
+> > > +            description: vhub manufacturer
+> > > +            allOf:
+> > > +              - $ref: /schemas/types.yaml#/definitions/string
+> > > +
+> > > +          product:
+> > > +            description: vhub product name
+> > > +            allOf:
+> > > +              - $ref: /schemas/types.yaml#/definitions/string
+> > > +
+> > > +          serial-number:
+> > > +            description: vhub device serial number
+> > > +            allOf:
+> > > +              - $ref: /schemas/types.yaml#/definitions/string
+> >
+> > For all of this, it's USB specific, not vhub specific. I'm not sure this
+> > is the right approach. It might be better to just define properties
+> > which are just raw USB descriptors rather than inventing some DT format
+> > that then has to be converted into USB descriptors.
+>
+> Raw blob in the DT is rather annoying and leads to hard to parse stuff
+> for both humans and scripts. The main strenght of the DT is it's easy
+> to read and manipulate.
 
+True, and I'd certainly agree when we're talking about some vendor
+specific blob. but there's already code/tools to parse USB
+descriptors.
+
+> Also not the entire descriptor is configurable this way.
+>
+> That said, it could be that using  the DT for the above is overkill and
+> instead, we should consider a configfs like the rest of USB gadget.
+> Though it isn't obvious how to do that, the current gadget stuff
+> doesn't really "fit" what we need here.
+
+Surely the descriptor building code can be shared at a minimum.
+
+Regardless of whether gadget configfs fits, usually it is pretty clear
+whether something belongs in DT or userspace. That should be decided
+first.
+
+> Maybe we could expose the port as UDCs but not actually expose them on
+> the bus until the hub is "activated" via a special configfs entry...
+
+If control of the hub is done by userspace, I'd think configuration
+should be there too.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
