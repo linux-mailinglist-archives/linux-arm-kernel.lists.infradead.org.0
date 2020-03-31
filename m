@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F2C9199BB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10F32199BA4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fm7PkCizwtoqMNcPkT3giboKNmZq7Y1rlBctFjybhvU=; b=eiCVufSR8wGw1v
-	ss0JhH7UCJmSl76dhKx/P+TQWSbAamnkBvtzMXS3Oj2Dvmw97iNPh+3byGCWsNssIcy395qEkhZuJ
-	MlyE9kUp6K2yGd8Pzyl96vvZ0lGj1MW9M6zM8HL/3EDO1/tubdsWD2y6S3VLRrqYdm7UwhvL8Sku7
-	LUToXULQ6Yvp8Q2nUgr4gGGO+NiC0YEqSTDhbM4T0dkbDd+nC5NbHWcMPNfVS5Xm6umJXnCCf/0Wy
-	aWnICvNOdeX7GfaTFVyecRt1IMCN5TYTEJvldW8w7M3EzCB3uqq5UyxVhX8QEu7qb87EI7Tx+Z4ig
-	x82ziD99+r9h24XWUwfQ==;
+	List-Owner; bh=iehhXEL47gV1KSMrmMXB6TLHsXBWE4HmbBUc99EPYzc=; b=a5RhReRAEe1jqX
+	+XCw0hZmTq1fVJ3+IjHqFrkESWrGsPIVV/D0SzeSJKePWM2QCG3tc8Qe5YEtS0iMGtT+wUszrPWZv
+	KH/pd3kf26umziCYMWmRlXClSX7G7xr3OG56KsjqvCWPVgGNit3J50w4kqaLPry99J8M+xkIbGx3R
+	+7lomT3pqFZYOlXe50D6TveTSqGmYXyvDiCJ+UmM5k1HapHL4l/v0wenpbLrYFZOfNpoEpnY6NdhO
+	P7hHuaL+oki+CplZgetnWe5uLJIryylNM31oUef/gzyGrp49Cr3cpZSEas1WXBH4CdUQNlEAk2rAi
+	epFR3CzGegRUf65xoF8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJrJ-0007i0-O4; Tue, 31 Mar 2020 16:35:25 +0000
+	id 1jJJok-0005bV-Vg; Tue, 31 Mar 2020 16:32:47 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJo3-0005Iv-Va
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:32:04 +0000
+ id 1jJJns-0005AX-LF
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:31:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=K7aqGMbFlpzGivYPTYffa+zYZwz7WZL6wKhJkX1NkgQ=; b=qmX6O7P35SmKqqe8BFL4jHJH7W
- lnmCzy7PrFesSKP6XTbo3SA7UFmKPzzwco5CIttThEJbm2WiYf6cJx6DkuD0hTfAqiGWIKX7qkt7d
- x0O55uVVhmZJxGrmeiGUyRkf7sYubYulLYqbhsh08z6Drkk+UKB4A/M1b0gmVUQL2qryeKm324HER
- mFL+n5NzOGWhgyiavjnM8rxDrayv7gnvhTguXZ0E3g/v/2ag8hoViyzPsDfpxkyg2JoBSIxHk2TS6
- bh/lvlHT7x1dzZ1Qwyh5NBE6B68ogH5MVR1IdgvfAwoFYiinS8nPsZOJdxz1qZW8ZjnMRS6p4YtHL
- r1XZ+2rw==;
+ bh=HJouIh+gtbOa4/NEfFaDWqJDG9uWWV2FdHTxhjN0X/w=; b=gBba9ibBKV+Kas57Y1ek+7MV7/
+ SA46C3e2MaAsaaLULcMiQYfMAXCVwv/WSwyG1xsPpDauAUyfa12zpQEEiRt9ftFvejCfMsAgMfv9y
+ vKn9Tv+cLH25MvkD42GbslrzXqq+DCUjc4vflujYC/0hPcyx+iM+fxE/EIXaIXN3e3sPJ5lBWFmbp
+ WO1aTcfPCAQMluPiqtYVfLNW3NP8tJLIyd5x8rH1cnbmVK+jgA/oK8WaTgcbEnvZXkoqfLEuGs73E
+ Ltv0Iqhs0iUPS4n/eTd28qOWZHXznGtoV9QFzviF2AP0vtHgILyB+oRYDjteo3gJEsakHablHmI0u
+ dnTi5cUw==;
 Received: from mail.kernel.org ([198.145.29.99])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJFpW-00080E-TZ
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:17:25 +0000
+ id 1jJFpX-00080W-RK
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:17:24 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6140120714;
- Tue, 31 Mar 2020 12:17:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5465220838;
+ Tue, 31 Mar 2020 12:17:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585657037;
- bh=uFQ//zmRylro3EhbpN2ECpSH3uEqWDKkifUv85qs7S4=;
+ s=default; t=1585657038;
+ bh=/G1FsF/xAq6LA4+vlGRopU41c40Jo/k3MSVldBBWBqk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iQJbrnsR1chnjthV1ZKBdOCr7YCVeF4m666WUD1FJozkgYzupxMMDYQBGO2lqs9sA
- ViH//EZb51dn/j/DTLU8hjsQ3mO9ImZx7gdlDiUSRhn5fwxJD9APRbECogfuTfdaVn
- yiIi+F80vyHYDPlQO++Ov1SSpk12uQWJW0OvAWiU=
+ b=Ulh7YDCfhdwEa+BcT3Nbcx2jbGR8r5bsa20eUBd7s6q7NAnd+NKS7LkitoHxHlQbj
+ JfLaHFQwUyevjcub3cZQxsOZu1ya9bXqOG7i51B9aMRt5LIY+MntyfCPpMaBwBk6DV
+ 15uTOPRrG4AYrUGa97pvXRw4zgt97pOIoXitQTTs=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jJFpT-00HBlI-FB; Tue, 31 Mar 2020 13:17:15 +0100
+ id 1jJFpU-00HBlI-Jn; Tue, 31 Mar 2020 13:17:16 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 07/15] arm: Remove the ability to set HYP vectors outside of
- the decompressor
-Date: Tue, 31 Mar 2020 13:16:37 +0100
-Message-Id: <20200331121645.388250-8-maz@kernel.org>
+Subject: [PATCH 08/15] MAINTAINERS: RIP KVM/arm
+Date: Tue, 31 Mar 2020 13:16:38 +0100
+Message-Id: <20200331121645.388250-9-maz@kernel.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200331121645.388250-1-maz@kernel.org>
 References: <20200331121645.388250-1-maz@kernel.org>
@@ -77,8 +76,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_131719_379142_AA7CEB92 
-X-CRM114-Status: GOOD (  22.23  )
+X-CRM114-CacheID: sfid-20200331_131720_407273_39BE1106 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -7.3 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
  Content analysis details:   (-7.3 points, 5.0 required)
@@ -124,115 +123,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Although we have to bounce between HYP and SVC to decompress and
-relocate the kernel, we don't need to be able to use it in the
-kernel itself. So let's drop the functionnality.
-
-Since the vectors are never changed, there is no need to reset them
-either, and nobody calls that stub anyway. The last function
-(SOFT_RESTART) is still present in order to support kexec.
+Drop the KVM/arm entries from the MAINTAINERS file.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm/include/asm/virt.h |  5 -----
- arch/arm/kernel/hyp-stub.S  | 39 ++++++++-----------------------------
- 2 files changed, 8 insertions(+), 36 deletions(-)
+ MAINTAINERS | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/arch/arm/include/asm/virt.h b/arch/arm/include/asm/virt.h
-index 47600a5894b1..dd9697b2bde8 100644
---- a/arch/arm/include/asm/virt.h
-+++ b/arch/arm/include/asm/virt.h
-@@ -39,8 +39,6 @@ static inline void sync_boot_mode(void)
- 	sync_cache_r(&__boot_cpu_mode);
- }
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6158a143a13e..e84a94e5a336 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -9164,7 +9164,7 @@ F:	virt/kvm/*
+ F:	tools/kvm/
+ F:	tools/testing/selftests/kvm/
  
--void __hyp_set_vectors(unsigned long phys_vector_base);
--void __hyp_reset_vectors(void);
- #else
- #define __boot_cpu_mode	(SVC_MODE)
- #define sync_boot_mode()
-@@ -75,9 +73,6 @@ static inline bool is_kernel_in_hyp_mode(void)
- 
- #define HVC_SET_VECTORS 0
- #define HVC_SOFT_RESTART 1
--#define HVC_RESET_VECTORS 2
--
--#define HVC_STUB_HCALL_NR 3
- 
- #endif /* __ASSEMBLY__ */
- 
-diff --git a/arch/arm/kernel/hyp-stub.S b/arch/arm/kernel/hyp-stub.S
-index 6607fa817bba..26d8e03b1dd3 100644
---- a/arch/arm/kernel/hyp-stub.S
-+++ b/arch/arm/kernel/hyp-stub.S
-@@ -189,19 +189,19 @@ ARM_BE8(orr	r7, r7, #(1 << 25))     @ HSCTLR.EE
- ENDPROC(__hyp_stub_install_secondary)
- 
- __hyp_stub_do_trap:
-+#ifdef ZIMAGE
- 	teq	r0, #HVC_SET_VECTORS
- 	bne	1f
-+	/* Only the ZIMAGE stubs can change the HYP vectors */
- 	mcr	p15, 4, r1, c12, c0, 0	@ set HVBAR
- 	b	__hyp_stub_exit
-+#endif
- 
- 1:	teq	r0, #HVC_SOFT_RESTART
--	bne	1f
-+	bne	2f
- 	bx	r1
- 
--1:	teq	r0, #HVC_RESET_VECTORS
--	beq	__hyp_stub_exit
--
--	ldr	r0, =HVC_STUB_ERR
-+2:	ldr	r0, =HVC_STUB_ERR
- 	__ERET
- 
- __hyp_stub_exit:
-@@ -210,26 +210,9 @@ __hyp_stub_exit:
- ENDPROC(__hyp_stub_do_trap)
- 
- /*
-- * __hyp_set_vectors: Call this after boot to set the initial hypervisor
-- * vectors as part of hypervisor installation.  On an SMP system, this should
-- * be called on each CPU.
-- *
-- * r0 must be the physical address of the new vector table (which must lie in
-- * the bottom 4GB of physical address space.
-- *
-- * r0 must be 32-byte aligned.
-- *
-- * Before calling this, you must check that the stub hypervisor is installed
-- * everywhere, by waiting for any secondary CPUs to be brought up and then
-- * checking that BOOT_CPU_MODE_HAVE_HYP(__boot_cpu_mode) is true.
-- *
-- * If not, there is a pre-existing hypervisor, some CPUs failed to boot, or
-- * something else went wrong... in such cases, trying to install a new
-- * hypervisor is unlikely to work as desired.
-- *
-- * When you call into your shiny new hypervisor, sp_hyp will contain junk,
-- * so you will need to set that to something sensible at the new hypervisor's
-- * initialisation entry point.
-+ * __hyp_set_vectors is only used when ZIMAGE must bounce between HYP
-+ * and SVC. For the kernel itself, the vectors are set once and for
-+ * all by the stubs.
-  */
- ENTRY(__hyp_set_vectors)
- 	mov	r1, r0
-@@ -245,12 +228,6 @@ ENTRY(__hyp_soft_restart)
- 	ret	lr
- ENDPROC(__hyp_soft_restart)
- 
--ENTRY(__hyp_reset_vectors)
--	mov	r0, #HVC_RESET_VECTORS
--	__HVC(0)
--	ret	lr
--ENDPROC(__hyp_reset_vectors)
--
- #ifndef ZIMAGE
- .align 2
- .L__boot_cpu_mode_offset:
+-KERNEL VIRTUAL MACHINE FOR ARM/ARM64 (KVM/arm, KVM/arm64)
++KERNEL VIRTUAL MACHINE FOR ARM64 (KVM/arm64)
+ M:	Marc Zyngier <maz@kernel.org>
+ R:	James Morse <james.morse@arm.com>
+ R:	Julien Thierry <julien.thierry.kdev@gmail.com>
+@@ -9173,9 +9173,6 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	kvmarm@lists.cs.columbia.edu
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git
+ S:	Maintained
+-F:	arch/arm/include/uapi/asm/kvm*
+-F:	arch/arm/include/asm/kvm*
+-F:	arch/arm/kvm/
+ F:	arch/arm64/include/uapi/asm/kvm*
+ F:	arch/arm64/include/asm/kvm*
+ F:	arch/arm64/kvm/
 -- 
 2.25.0
 
