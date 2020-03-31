@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DF57198B93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 07:11:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55B3C198B94
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 07:11:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Xq62EKbuiK0f7qZOJOWFxfbXW+rfUFsjQ+wnM3rUi/c=; b=ZqbpWAXd943lUH7THIXyU99pKg
-	18p0RaoJRgBMV7ve2kjQ8GPGFDjhdZd0JMAOi6niWjSaJFz0DJR3WvkU0ARKQfdPF5X12Wr/HK9wZ
-	r4F03XvK+PZdNNvTNX66MARSbUOBsd3cawa7TnM3qui2aSsaWSRgXNhzQAYS0ZlEt41MJm5hhI0J6
-	L2Rp6X2pzb6502ZdW4+vg1HUdPMGa8mNucQKqGj2Lr6cnDJNlRiXOQiANKROijQ5tb7Sf5TRhJmBn
-	uqQpJa60XNAkdEmESO/sEOb0BB8jI/LuuFsIhByzpJ+zEoXenrMuYfSqnSa9HvrBDtcUHBOLgXVPu
-	jmlOuw3Q==;
+	bh=zuk8wJEmUmH70R6lQxPu551z7/YP1SZVlXTCysnJpyw=; b=GFMjn2gxoiQOhltJMesl/9C67Q
+	4TI0Rh1UC0mz+vmtoS56EOcgclj4bf2UCvd9fPqIQQ3hrdeq41MnM5T8JrfdDVmupR3OLkMe9vKZy
+	oypCPqO3UZIorhJMihcZOgS4riCNABEIFee8xZc+r9T7KFmgCqvcgyF/I2St/jx+Ez6dkTczwzr/C
+	DWAREUbh8KRf7sL7/bjULV9kXBNrpuyghRKT81+1LytSWq+md84iNZ39Oz+saawYLE9vXFgWyczYz
+	iObry6LuO2scJ/AKsOaIeVBn1MNmT5zR0pZZz8EsFK73t8pWIYZoIwIHY1gybvQN9337iSe1mUfZD
+	8+yQbdQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ9BP-0004nA-BC; Tue, 31 Mar 2020 05:11:27 +0000
+	id 1jJ9Bh-0004zb-Md; Tue, 31 Mar 2020 05:11:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ9Ao-0004Rd-LB
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 05:10:52 +0000
+ id 1jJ9B3-0004ey-CY
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 05:11:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F354B1FB;
- Mon, 30 Mar 2020 22:10:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D9371FB;
+ Mon, 30 Mar 2020 22:11:04 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CA48B3F71E;
- Mon, 30 Mar 2020 22:10:38 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 611A73F71E;
+ Mon, 30 Mar 2020 22:10:50 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH V3 2/3] mm/sparsemem: Enable vmem_altmap support in
- vmemmap_alloc_block_buf()
-Date: Tue, 31 Mar 2020 10:39:46 +0530
-Message-Id: <1585631387-18819-3-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V3 3/3] arm64/mm: Enable vmem_altmap support for vmemmap
+ mappings
+Date: Tue, 31 Mar 2020 10:39:47 +0530
+Message-Id: <1585631387-18819-4-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
 References: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_221050_825243_A5545302 
-X-CRM114-Status: GOOD (  16.82  )
+X-CRM114-CacheID: sfid-20200330_221105_552845_259F3805 
+X-CRM114-Status: GOOD (  16.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,187 +62,219 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Will Deacon <will@kernel.org>,
- jgg@mellanox.com, aneesh.kumar@linux.ibm.com, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
- rcampbell@nvidia.com, Anshuman Khandual <anshuman.khandual@arm.com>,
- jglisse@redhat.com, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Andrew Morton <akpm@linux-foundation.org>, robin.murphy@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>, rcampbell@nvidia.com,
+ Yu Zhao <yuzhao@google.com>, Will Deacon <will@kernel.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, aneesh.kumar@linux.ibm.com,
+ Steve Capper <steve.capper@arm.com>, David Hildenbrand <david@redhat.com>,
+ linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, jglisse@redhat.com, jgg@mellanox.com,
+ Catalin Marinas <catalin.marinas@arm.com>, dan.j.williams@intel.com,
+ robin.murphy@arm.com, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are many instances where vmemap allocation is often switched between
-regular memory and device memory just based on whether altmap is available
-or not. vmemmap_alloc_block_buf() is used in various platforms to allocate
-vmemmap mappings. Lets also enable it to handle altmap based device memory
-allocation along with existing regular memory allocations. This will help
-in avoiding the altmap based allocation switch in many places.
+Device memory ranges when getting hot added into ZONE_DEVICE, might require
+their vmemmap mapping's backing memory to be allocated from their own range
+instead of consuming system memory. This prevents large system memory usage
+for potentially large device memory ranges. Device driver communicates this
+request via vmem_altmap structure. Architecture needs to take this request
+into account while creating and tearing down vemmmap mappings.
 
-While here also implement a regular memory allocation fallback mechanism
-when the first preferred device memory allocation fails. This will ensure
-preserving the existing semantics on powerpc platform. To summarize there
-are three different methods to call vmemmap_alloc_block_buf().
-
-(., NULL,   false) /* Allocate from system RAM */
-(., altmap, false) /* Allocate from altmap without any fallback */
-(., altmap, true)  /* Allocate from altmap with fallback (system RAM) */
+This enables vmem_altmap support in vmemmap_populate() and vmemmap_free()
+which includes vmemmap_populate_basepages() used for ARM64_16K_PAGES and
+ARM64_64K_PAGES configs.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: David Hildenbrand <david@redhat.com>
+Cc: Yu Zhao <yuzhao@google.com>
+Cc: Hsin-Yi Wang <hsinyi@chromium.org>
 Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H. Peter Anvin" <hpa@zytor.com>
 Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: x86@kernel.org
 Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-mm@kvack.org
 Cc: linux-kernel@vger.kernel.org
 
-Suggested-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm64/mm/mmu.c       |  3 ++-
- arch/powerpc/mm/init_64.c | 10 +++++-----
- arch/x86/mm/init_64.c     |  6 ++----
- include/linux/mm.h        |  3 ++-
- mm/sparse-vmemmap.c       | 30 ++++++++++++++++++++++++------
- 5 files changed, 35 insertions(+), 17 deletions(-)
+ arch/arm64/mm/mmu.c | 58 +++++++++++++++++++++++++++++----------------
+ 1 file changed, 38 insertions(+), 20 deletions(-)
 
 diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 2feed38106d6..81f88c88484f 100644
+index 81f88c88484f..511a69a501b6 100644
 --- a/arch/arm64/mm/mmu.c
 +++ b/arch/arm64/mm/mmu.c
-@@ -1063,7 +1063,8 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- 		if (pmd_none(READ_ONCE(*pmdp))) {
+@@ -727,15 +727,20 @@ int kern_addr_valid(unsigned long addr)
+ }
+ 
+ #ifdef CONFIG_MEMORY_HOTPLUG
+-static void free_hotplug_page_range(struct page *page, size_t size)
++static void free_hotplug_page_range(struct page *page, size_t size,
++				    struct vmem_altmap *altmap)
+ {
+-	WARN_ON(PageReserved(page));
+-	free_pages((unsigned long)page_address(page), get_order(size));
++	if (altmap) {
++		vmem_altmap_free(altmap, size >> PAGE_SHIFT);
++	} else {
++		WARN_ON(PageReserved(page));
++		free_pages((unsigned long)page_address(page), get_order(size));
++	}
+ }
+ 
+ static void free_hotplug_pgtable_page(struct page *page)
+ {
+-	free_hotplug_page_range(page, PAGE_SIZE);
++	free_hotplug_page_range(page, PAGE_SIZE, NULL);
+ }
+ 
+ static bool pgtable_range_aligned(unsigned long start, unsigned long end,
+@@ -758,7 +763,8 @@ static bool pgtable_range_aligned(unsigned long start, unsigned long end,
+ }
+ 
+ static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
+-				    unsigned long end, bool free_mapped)
++				    unsigned long end, bool free_mapped,
++				    struct vmem_altmap *altmap)
+ {
+ 	pte_t *ptep, pte;
+ 
+@@ -772,12 +778,14 @@ static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
+ 		pte_clear(&init_mm, addr, ptep);
+ 		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+ 		if (free_mapped)
+-			free_hotplug_page_range(pte_page(pte), PAGE_SIZE);
++			free_hotplug_page_range(pte_page(pte),
++						PAGE_SIZE, altmap);
+ 	} while (addr += PAGE_SIZE, addr < end);
+ }
+ 
+ static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
+-				    unsigned long end, bool free_mapped)
++				    unsigned long end, bool free_mapped,
++				    struct vmem_altmap *altmap)
+ {
+ 	unsigned long next;
+ 	pmd_t *pmdp, pmd;
+@@ -800,16 +808,17 @@ static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
+ 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+ 			if (free_mapped)
+ 				free_hotplug_page_range(pmd_page(pmd),
+-							PMD_SIZE);
++							PMD_SIZE, altmap);
+ 			continue;
+ 		}
+ 		WARN_ON(!pmd_table(pmd));
+-		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped);
++		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped, altmap);
+ 	} while (addr = next, addr < end);
+ }
+ 
+ static void unmap_hotplug_pud_range(p4d_t *p4dp, unsigned long addr,
+-				    unsigned long end, bool free_mapped)
++				    unsigned long end, bool free_mapped,
++				    struct vmem_altmap *altmap)
+ {
+ 	unsigned long next;
+ 	pud_t *pudp, pud;
+@@ -832,16 +841,17 @@ static void unmap_hotplug_pud_range(p4d_t *p4dp, unsigned long addr,
+ 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+ 			if (free_mapped)
+ 				free_hotplug_page_range(pud_page(pud),
+-							PUD_SIZE);
++							PUD_SIZE, altmap);
+ 			continue;
+ 		}
+ 		WARN_ON(!pud_table(pud));
+-		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped);
++		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped, altmap);
+ 	} while (addr = next, addr < end);
+ }
+ 
+ static void unmap_hotplug_p4d_range(pgd_t *pgdp, unsigned long addr,
+-				    unsigned long end, bool free_mapped)
++				    unsigned long end, bool free_mapped,
++				    struct vmem_altmap *altmap)
+ {
+ 	unsigned long next;
+ 	p4d_t *p4dp, p4d;
+@@ -854,16 +864,24 @@ static void unmap_hotplug_p4d_range(pgd_t *pgdp, unsigned long addr,
+ 			continue;
+ 
+ 		WARN_ON(!p4d_present(p4d));
+-		unmap_hotplug_pud_range(p4dp, addr, next, free_mapped);
++		unmap_hotplug_pud_range(p4dp, addr, next, free_mapped, altmap);
+ 	} while (addr = next, addr < end);
+ }
+ 
+ static void unmap_hotplug_range(unsigned long addr, unsigned long end,
+-				bool free_mapped)
++				bool free_mapped, struct vmem_altmap *altmap)
+ {
+ 	unsigned long next;
+ 	pgd_t *pgdp, pgd;
+ 
++	/*
++	 * altmap can only be used as vmemmap mapping backing memory.
++	 * In case the backing memory itself is not being freed, then
++	 * altmap is irrelevant. Warn about this inconsistency when
++	 * encountered.
++	 */
++	WARN_ON(!free_mapped && altmap);
++
+ 	do {
+ 		next = pgd_addr_end(addr, end);
+ 		pgdp = pgd_offset_k(addr);
+@@ -872,7 +890,7 @@ static void unmap_hotplug_range(unsigned long addr, unsigned long end,
+ 			continue;
+ 
+ 		WARN_ON(!pgd_present(pgd));
+-		unmap_hotplug_p4d_range(pgdp, addr, next, free_mapped);
++		unmap_hotplug_p4d_range(pgdp, addr, next, free_mapped, altmap);
+ 	} while (addr = next, addr < end);
+ }
+ 
+@@ -1036,7 +1054,7 @@ static void free_empty_tables(unsigned long addr, unsigned long end,
+ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
+ 		struct vmem_altmap *altmap)
+ {
+-	return vmemmap_populate_basepages(start, end, node, NULL);
++	return vmemmap_populate_basepages(start, end, node, altmap);
+ }
+ #else	/* !ARM64_SWAPPER_USES_SECTION_MAPS */
+ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
+@@ -1064,7 +1082,7 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
  			void *p = NULL;
  
--			p = vmemmap_alloc_block_buf(PMD_SIZE, node);
-+			p = vmemmap_alloc_block_buf(PMD_SIZE, node,
-+						    NULL, false);
+ 			p = vmemmap_alloc_block_buf(PMD_SIZE, node,
+-						    NULL, false);
++						    altmap, false);
  			if (!p)
  				return -ENOMEM;
  
-diff --git a/arch/powerpc/mm/init_64.c b/arch/powerpc/mm/init_64.c
-index 4002ced3596f..f67f2b909fe5 100644
---- a/arch/powerpc/mm/init_64.c
-+++ b/arch/powerpc/mm/init_64.c
-@@ -226,12 +226,12 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- 		 * fall back to system memory if the altmap allocation fail.
- 		 */
- 		if (altmap && !altmap_cross_boundary(altmap, start, page_size)) {
--			p = altmap_alloc_block_buf(page_size, altmap);
--			if (!p)
--				pr_debug("altmap block allocation failed, falling back to system memory");
-+			p = vmemmap_alloc_block_buf(page_size, node,
-+						    altmap, true);
-+		} else {
-+			p = vmemmap_alloc_block_buf(page_size, node,
-+						    NULL, false);
- 		}
--		if (!p)
--			p = vmemmap_alloc_block_buf(page_size, node);
- 		if (!p)
- 			return -ENOMEM;
+@@ -1082,7 +1100,7 @@ void vmemmap_free(unsigned long start, unsigned long end,
+ #ifdef CONFIG_MEMORY_HOTPLUG
+ 	WARN_ON((start < VMEMMAP_START) || (end > VMEMMAP_END));
  
-diff --git a/arch/x86/mm/init_64.c b/arch/x86/mm/init_64.c
-index c22677571619..35cc0c9d9578 100644
---- a/arch/x86/mm/init_64.c
-+++ b/arch/x86/mm/init_64.c
-@@ -1444,10 +1444,8 @@ static int __meminit vmemmap_populate_hugepages(unsigned long start,
- 		if (pmd_none(*pmd)) {
- 			void *p;
+-	unmap_hotplug_range(start, end, true);
++	unmap_hotplug_range(start, end, true, altmap);
+ 	free_empty_tables(start, end, VMEMMAP_START, VMEMMAP_END);
+ #endif
+ }
+@@ -1370,7 +1388,7 @@ static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
+ 	WARN_ON(pgdir != init_mm.pgd);
+ 	WARN_ON((start < PAGE_OFFSET) || (end > PAGE_END));
  
--			if (altmap)
--				p = altmap_alloc_block_buf(PMD_SIZE, altmap);
--			else
--				p = vmemmap_alloc_block_buf(PMD_SIZE, node);
-+			p = vmemmap_alloc_block_buf(PMD_SIZE, node,
-+						    altmap, false);
- 			if (p) {
- 				pte_t entry;
- 
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 955be0331833..b8d3d90c9c47 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -2991,7 +2991,8 @@ pte_t *vmemmap_pte_populate(pmd_t *pmd, unsigned long addr, int node,
- 			    struct vmem_altmap *altmap);
- void *vmemmap_alloc_block(unsigned long size, int node);
- struct vmem_altmap;
--void *vmemmap_alloc_block_buf(unsigned long size, int node);
-+void *vmemmap_alloc_block_buf(unsigned long size, int node,
-+			      struct vmem_altmap *altmap, bool sysram_fallback);
- void *altmap_alloc_block_buf(unsigned long size, struct vmem_altmap *altmap);
- void vmemmap_verify(pte_t *, int, unsigned long, unsigned long);
- int vmemmap_populate_basepages(unsigned long start, unsigned long end,
-diff --git a/mm/sparse-vmemmap.c b/mm/sparse-vmemmap.c
-index a407abc9b46c..ff5adc233e38 100644
---- a/mm/sparse-vmemmap.c
-+++ b/mm/sparse-vmemmap.c
-@@ -71,10 +71,31 @@ void * __meminit vmemmap_alloc_block(unsigned long size, int node)
+-	unmap_hotplug_range(start, end, false);
++	unmap_hotplug_range(start, end, false, NULL);
+ 	free_empty_tables(start, end, PAGE_OFFSET, PAGE_END);
  }
  
- /* need to make sure size is all the same during early stage */
--void * __meminit vmemmap_alloc_block_buf(unsigned long size, int node)
-+void * __meminit vmemmap_alloc_block_buf(unsigned long size, int node,
-+					 struct vmem_altmap *altmap,
-+					 bool sysram_fallback)
- {
--	void *ptr = sparse_buffer_alloc(size);
-+	void *ptr;
- 
-+	/*
-+	 * There is no point in asking for sysram fallback
-+	 * without an altmap request to begin with. So just
-+	 * warn here to catch potential call sites that may
-+	 * be violating this.
-+	 */
-+	WARN_ON(!altmap && sysram_fallback);
-+
-+	if (altmap) {
-+		ptr = altmap_alloc_block_buf(size, altmap);
-+		if (ptr)
-+			return ptr;
-+		pr_debug("altmap block allocation failed\n");
-+		if (!sysram_fallback)
-+			return NULL;
-+		pr_debug("falling back to system memory\n");
-+	}
-+
-+	ptr = sparse_buffer_alloc(size);
- 	if (!ptr)
- 		ptr = vmemmap_alloc_block(size, node);
- 	return ptr;
-@@ -148,10 +169,7 @@ pte_t * __meminit vmemmap_pte_populate(pmd_t *pmd, unsigned long addr, int node,
- 		pte_t entry;
- 		void *p;
- 
--		if (altmap)
--			p = altmap_alloc_block_buf(PAGE_SIZE, altmap);
--		else
--			p = vmemmap_alloc_block_buf(PAGE_SIZE, node);
-+		p = vmemmap_alloc_block_buf(PAGE_SIZE, node, altmap, false);
- 		if (!p)
- 			return NULL;
- 		entry = pfn_pte(__pa(p) >> PAGE_SHIFT, PAGE_KERNEL);
 -- 
 2.20.1
 
