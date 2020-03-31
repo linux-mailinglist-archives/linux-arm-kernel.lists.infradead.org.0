@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E75D3199FAD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:01:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA377199FB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:02:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=75UsFh5zLJ17R3Ps8MMp/7N6J9VbLLlS6izGTsPmr3k=; b=aiM3ZAa7d2Ngug
-	XJ3ka6FrV6I4/ZqFAAfT7M9M3LZa5BFmlLUUPObhwEF2y36rn4bryNYl2zzi/iwOYhQY/uJd84Dzk
-	+MmucaOv4MStjxLlBxS5C+Mve/TnJ9C5gQPsMDgorol8o7HJus3PFPqMzYWM6bAUuKcqir+0PSqfu
-	pl/zY/aNezi4lZ4c8GfBkTb4IcchflU7mprSC3r64K3uOlZyvzH3e5+Bj6JEXSLPPcMKHUbpctNtC
-	gKUq15SZkQGH6J+tX2dL0QGTFrSyOwrJ1mBluMUpv+MDGe7YtLwMNM+LSCqpsWWDZ4V0HCaDotAs7
-	3qKSmZCYMuHmcRI9emWQ==;
+	List-Owner; bh=L9I7UrP8bN0NH+jssU81QigBUlXSkNgc9D2FIR1YyWA=; b=XKu++LI5silYmA
+	FQFhZ+IRQeuSW1frjnekhsQ7ABubCjzqvC5Da4PiwjRbE5nBsBlThyZmvlwRy601M46ihtmJdTChx
+	aXf+U6YoeHJKFwwed/3Eyg4jpM2a5vB0mNF6WThds+gZJexyGo1oH8Qputvs1dG5B07Ndmyy73eqz
+	Qx+u9TGmg67wxETSYbSNLA4UHWQk9IsHMkEeArI8odD4tdquQIeFZ2LzBtHU29f9FKiMAXaHRIbMA
+	rHT84K31e8/TmoQ4fIfmLbu9VYSzBPi4/DuE/ty2/UR9bDvCu6eDTKGYE7rlhAi/svr5Uhi4OaGFA
+	f2ckxQR6WvIlAZqz/gDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJN58-0004Jq-0L; Tue, 31 Mar 2020 20:01:54 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1jJN5U-0004bX-1h; Tue, 31 Mar 2020 20:02:16 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJN4m-0004IS-NU; Tue, 31 Mar 2020 20:01:35 +0000
-Received: by mail-io1-f65.google.com with SMTP id y14so6015115iol.12;
- Tue, 31 Mar 2020 13:01:32 -0700 (PDT)
+ id 1jJN5E-0004ZP-4b; Tue, 31 Mar 2020 20:02:02 +0000
+Received: by mail-il1-f195.google.com with SMTP id i75so13425639ild.13;
+ Tue, 31 Mar 2020 13:02:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vkxxip8s1ZW0GnbenbnFeoJyggUhdVdybES6+NRkTls=;
- b=KJweKYKpYNR4yKPVQQxuTTelZWr7Q/ezEPJbtDAQe8VntX6UCowdBICe4mHVzsHVS7
- Tdw2ilpBObFPUTCmRbFFEPovnHNh/0hyuAOZNoiEmPpQqSVOmzNL2T8JCfmW/FwVnzBa
- WOMNIMAu2tgTkyVNTtbyXXp7NlM4Ub8xwYJEBmyKwh6UoRaPQLuJIGPecHkOu0JUuehg
- zOdoyfpni8y00omqH7PrdSQpTCXjN5PnfkZ+Ic9x2ObK5iu9+cPy2W+7qlUolbpKIU4c
- CToOkYGwgOa++ebr0hLxr7v6BoU0RFyXskyxQcSO3uVhJsHE1P7dKY0mALNTtVg2OVot
- AA+Q==
-X-Gm-Message-State: ANhLgQ0HRRVaJqcVoaGNsSR5JIU/8B0MH1Dss1Cr/pxreZMgPcfdMxlZ
- 8IuAHhm9O7zmAMxoyLTGkQ==
-X-Google-Smtp-Source: ADFU+vvBejlhKFx9aVEK9Es2UC6IoLSf1k2SdAYxRxDFr5MBW3pEn/d1O633AZt6lRcbhYJICsvimw==
-X-Received: by 2002:a02:2505:: with SMTP id g5mr15167286jag.114.1585684891883; 
- Tue, 31 Mar 2020 13:01:31 -0700 (PDT)
+ bh=inn69R6pXVv7tn5IiOj3WCmHSXEzB0bu6RYjdj4+w9I=;
+ b=VvCJSKcB5hK3oNjmw5KiKtutcUkqJYf4oDU/8ncPDjp/Rxrsz+vHSKiieiyGQSbiIX
+ mMCenIa6OWfotltoHtBwlbxfaVxPUTFILxPZNejJbNDUF+6qCUdg9fJK2DKnF2+ofFD+
+ vfG3hm6BBN+8B7IkGH2stZ9s6kAV2ipYwNvY3xHe6VeN+Ic3RbY2yZJShg+bmRXv1aWC
+ MORlk1aYrv6/7Xr9ZF5NcNwg4Y97c4LwfxOA1/sabGAhoFheUPgdAIcY7RtM053j96z/
+ NRIzlCawc7eoh7pnMD1EiCOUGgJRgwgC57yWNsMyswhtN/QgA1t5FcyQJHytMcVjE1Nx
+ Icow==
+X-Gm-Message-State: ANhLgQ207OkMWzuUXkBNjvH9fh4wevdKxXjkK7lpTXA2cnM4TTyHuaZ3
+ DdFb/2Rg+QD4sB8jSBlqOg==
+X-Google-Smtp-Source: ADFU+vsICc4DhBvaBEO5MjNBpVjmJPABPfazkSQ87pqZhrYedeNGTExxSKz2gZT+RvOxqRGZ9E7szA==
+X-Received: by 2002:a92:9c54:: with SMTP id h81mr18455056ili.109.1585684919454; 
+ Tue, 31 Mar 2020 13:01:59 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id h29sm6197193ili.19.2020.03.31.13.01.30
+ by smtp.gmail.com with ESMTPSA id r29sm6263789ilk.76.2020.03.31.13.01.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 13:01:30 -0700 (PDT)
-Received: (nullmailer pid 6517 invoked by uid 1000);
- Tue, 31 Mar 2020 20:01:29 -0000
-Date: Tue, 31 Mar 2020 14:01:29 -0600
+ Tue, 31 Mar 2020 13:01:58 -0700 (PDT)
+Received: (nullmailer pid 7245 invoked by uid 1000);
+ Tue, 31 Mar 2020 20:01:56 -0000
+Date: Tue, 31 Mar 2020 14:01:56 -0600
 From: Rob Herring <robh@kernel.org>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 2/3] dt-bindings: sound: rockchip-spdif: add
- #sound-dai-cells property
-Message-ID: <20200331200129.GA6458@bogus>
+Subject: Re: [PATCH v2 3/3] dt-bindings: sound: rockchip-spdif: add
+ power-domains property
+Message-ID: <20200331200156.GA7186@bogus>
 References: <20200324123155.11858-1-jbx6244@gmail.com>
- <20200324123155.11858-2-jbx6244@gmail.com>
+ <20200324123155.11858-3-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200324123155.11858-2-jbx6244@gmail.com>
+In-Reply-To: <20200324123155.11858-3-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_130132_763697_B80CB7E1 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200331_130200_175164_464DE63F 
+X-CRM114-Status: GOOD (  11.25  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
+ no trust [209.85.166.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.195 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -77,8 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,15 +100,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Mar 2020 13:31:54 +0100, Johan Jonker wrote:
-> '#sound-dai-cells' is required to properly interpret
-> the list of DAI specified in the 'sound-dai' property,
-> so add them to 'rockchip-spdif.yaml'
+On Tue, 24 Mar 2020 13:31:55 +0100, Johan Jonker wrote:
+> In the old txt situation we add/describe only properties that are used
+> by the driver/hardware itself. With yaml it also filters things in a
+> node that are used by other drivers like 'power-domains' for rk3399,
+> so add it to 'rockchip-spdif.yaml'.
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
+>  Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
