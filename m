@@ -2,84 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4CE7198EE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:55:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D487B198EFE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:59:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SWrfFgCpa6gz45Nw3rrRrrVXns3OYZ4orQbD/dn95iw=; b=r+S4KnPc/nR1F0
-	pripIxOQxxKsRmrlC5VK+HMbI7xMtn2MM/PYo4kOePxthKXhqQyIJGlEduywNv1nmBJquloNwlxrz
-	P7dL28Odt1qOSZIrZ6QxpFosY62wtNjG/DKBkH0OKpeNpkR+h7xroj+mQhPx8XpJxwoFnzs7S41rM
-	SAw6BWqjzJT0n3Lh6sD6KsA7/hS12wE9IGxA/rloHS5uknUwmALvQ14WpQrlsrdRZwlVjyWFupmH4
-	GUwkBPKSQr5nwovc9tC//C/jG1rMXNoZH2xwRmGghZeS10uIk7fEE8gxLm2dAHblkxMfb/Tqxx4yh
-	ZUOsp5uDz6J9286BcxsA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2KbOSZGxqLkv1LT440g/iwf1epFb841b30kz4KvLJG4=; b=CrfrKkmsZ3YfECWw5XwPz7XH9
+	G14Sw6bk9gTS5593gF6LhUyBlh73lljqTk/A1nNSTrUxwo4UNxUaI036YcLmCWUki0r8neUtgxI8d
+	8JCDTCE1KfRiq4dFngOPk0RTh9YxxmATqng4vCuQfSyWQMumI4Btou7UuS+rJfaqaWgueaGYmEzq2
+	aWu3k8T1ZALkz+eZfCEBH52TQwtEMIEB2g6wdf6HEhrjJrJnOte14r6QQmTFenPHbekGFRUv2CRs4
+	kR51CUj/old+A6g7/LAo/3bUKLpRMypJkTuYxajB69uD8kUDvGmYGE4flyxKIpGRMJiG0toBiBmhs
+	92HNTiyNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJCg9-0003yC-7X; Tue, 31 Mar 2020 08:55:25 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1jJCk6-0004ey-Vw; Tue, 31 Mar 2020 08:59:31 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJCg1-0003ou-1g
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:55:18 +0000
-Received: by mail-wm1-f66.google.com with SMTP id 11so428660wmi.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 01:55:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=rTdu7oh4JjjFUdNyXovYxN1QmbRl7JqIGXsfhw5Wa0c=;
- b=PE+60nY8ugljeD/4IjX296UmT17AI0mKDRnXUz0Wj83857wU4dUjFkZZnEhK8o9QX5
- e34qaiz3fq3wyVj8Q/APdXTKFspctxrBkqkCc6l6/jtVKe7bIGYN5HAGbnej3KaQ2dgD
- 5q6DWkR1TKL4JaXGvBTYh2Kzd+cwiBFNZm0JtzMyZCdTa2v48AA592LCYdZBwvVjADY+
- vWlPhw5MnIBCG+sY2D8zM3wHvdeaTjpYF72vg9Y2/3Vm7cNinGFU+JuhswLD8iUr2qis
- jWAkfJcxaKBjTGDm9rpLWUfbP+cs8TDb6Bp61nRvtchvMIRRgZB3NWCkUp+lXb5hk98g
- ikOg==
-X-Gm-Message-State: ANhLgQ3Qnc5+rX/VB1org89Vfjc5WpyKF3zt9dDb0Uredhg9H3K3p/Tl
- lwFU8gli+wpnd9nO5QMz7OU=
-X-Google-Smtp-Source: ADFU+vuscSRwsLwXmVoQv1xnwhJFZnnlCFmntVIImf+p0Rb3SHZnEYoHiIxLd4qO4YJEIRanvIyR4Q==
-X-Received: by 2002:a1c:b60b:: with SMTP id g11mr2406590wmf.175.1585644915034; 
- Tue, 31 Mar 2020 01:55:15 -0700 (PDT)
-Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
- by smtp.gmail.com with ESMTPSA id v11sm26003208wrm.43.2020.03.31.01.55.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 01:55:14 -0700 (PDT)
-Date: Tue, 31 Mar 2020 10:55:13 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Message-ID: <20200331085513.GE30449@dhcp22.suse.cz>
-References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
- <20200330074246.GA14243@dhcp22.suse.cz>
- <20200330175100.GD30942@linux.ibm.com>
- <20200330182301.GM14243@dhcp22.suse.cz>
- <20200331081423.GE30942@linux.ibm.com>
+ id 1jJCjs-0004eR-8y
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:59:18 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02V8vn9p028292; Tue, 31 Mar 2020 10:59:10 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=enLBbt0Ek5Ca0JE4O/ZSJ5BdliQ9BhlyvG3WkAYK41U=;
+ b=vCEyFWgDtGKYeRcKCSAzaehc0WakXOv4PxA3emG4ASqzrr+aEkKXyuYbi07/b63Kcn50
+ DZSN/YOADtIIJprFGocl8c7fSJ5Xep9g//Y0mMbilEw4hE2JC33+b7iyxKWtSBnQX8x/
+ HeLi+7r0poAhnA5d7uxJsxw+wiyjjZ1/KUedeYEGBTiURtp0gViFHkih+aOoCv1kA8z/
+ 0nQ0o0hGz2lU6OmHYTdkt6Nm5tnfIu4BXN/2qw+kOf0Gw0nAqnnCiXlw1uNNKAnIc/B+
+ NF0WXmb+nPmTb6mYiSiZ3tN7UK48rH6L0XWjsZan6I9t5yYFJoLTZTzXbYc8U7A3W0Bq IQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 301w80wxx7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 31 Mar 2020 10:59:10 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3D6CF100039;
+ Tue, 31 Mar 2020 10:59:09 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1800B21F668;
+ Tue, 31 Mar 2020 10:59:09 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 31 Mar
+ 2020 10:58:58 +0200
+Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
+ for SDMMC2 pins 4-7
+To: Marek Vasut <marex@denx.de>, Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ Patrice CHOTARD <patrice.chotard@st.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+References: <20200328171144.51888-1-marex@denx.de>
+ <20200328171144.51888-8-marex@denx.de>
+ <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
+ <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
+ <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
+ <310aa3a3-09ce-42ef-d1ea-b653163d1d72@pengutronix.de>
+ <97d13a84-8220-aa7f-3ee6-df474cca3882@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <43e88a1b-f3e4-df1d-38a6-0bb281a2f786@st.com>
+Date: Tue, 31 Mar 2020 10:58:57 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200331081423.GE30942@linux.ibm.com>
+In-Reply-To: <97d13a84-8220-aa7f-3ee6-df474cca3882@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-03-31_03:2020-03-30,
+ 2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_015517_097077_DA1CEFD5 
-X-CRM114-Status: GOOD (  28.26  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200331_015916_682056_24B29C57 
+X-CRM114-Status: GOOD (  20.86  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mstsxfx[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,106 +105,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
- Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
- Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 31-03-20 11:14:23, Mike Rapoport wrote:
-> On Mon, Mar 30, 2020 at 08:23:01PM +0200, Michal Hocko wrote:
-> > On Mon 30-03-20 20:51:00, Mike Rapoport wrote:
-> > > On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
-> > > > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
-> > > > > In NUMA layout which nodes have memory ranges that span across other nodes,
-> > > > > the mm driver can detect the memory node id incorrectly.
-> > > > > 
-> > > > > For example, with layout below
-> > > > > Node 0 address: 0000 xxxx 0000 xxxx
-> > > > > Node 1 address: xxxx 1111 xxxx 1111
-> > > > > 
-> > > > > Note:
-> > > > >  - Memory from low to high
-> > > > >  - 0/1: Node id
-> > > > >  - x: Invalid memory of a node
-> > > > > 
-> > > > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
-> > > > > config, mm only checks the memory validity but not the node id.
-> > > > > Because of that, Node 1 also detects the memory from node 0 as below
-> > > > > when it scans from the start address to the end address of node 1.
-> > > > > 
-> > > > > Node 0 address: 0000 xxxx xxxx xxxx
-> > > > > Node 1 address: xxxx 1111 1111 1111
-> > > > > 
-> > > > > This layout could occur on any architecture. Most of them enables
-> > > > > this config by default with CONFIG_NUMA. This patch, by default, enables
-> > > > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
-> > > > 
-> > > > I am not opposed to this at all. It reduces the config space and that is
-> > > > a good thing on its own. The history has shown that meory layout might
-> > > > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
-> > > > which is clearly an overkill.
-> > > > 
-> > > > Your description doesn't really explain why this is safe though. The
-> > > > history of this config is somehow messy, though. Mike has tried
-> > > > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
-> > > > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
-> > > > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
-> > > > reasoning what so ever. This doesn't make it really easy see whether
-> > > > reasons for reintroduction are still there. Maybe there are some subtle
-> > > > dependencies. I do not see any TBH but that might be burried deep in an
-> > > > arch specific code.
-> > > 
-> > > I've looked at this a bit more and it seems that the check for
-> > > early_pfn_in_nid() in memmap_init_zone() can be simply removed.
-> > > 
-> > > The commits you've mentioned were way before the addition of
-> > > HAVE_MEMBLOCK_NODE_MAP and the whole infrastructure that calculates zone
-> > > sizes and boundaries based on the memblock node map.
-> > > So, the memmap_init_zone() is called when zone boundaries are already
-> > > within a node.
-> > 
-> > But zones from different nodes might overlap in the pfn range. And this
-> > check is there to skip over those overlapping areas.
+
+
+On 3/30/20 1:45 PM, Marek Vasut wrote:
+> On 3/30/20 1:37 PM, Ahmad Fatoum wrote:
+>> Hi Marek,
 > 
-> Maybe I mis-read the code, but I don't see how this could happen. In the
-> HAVE_MEMBLOCK_NODE_MAP=y case, free_area_init_node() calls
-> calculate_node_totalpages() that ensures that node->node_zones are entirely
-> within the node because this is checked in zone_spanned_pages_in_node().
+> Hi,
+> 
+>> On 3/30/20 1:22 PM, Marek Vasut wrote:
+>>> On 3/30/20 1:17 PM, Ahmad Fatoum wrote:
+>>>> Hello Patrice,
+>>>
+>>> Hi,
+>>>
+>>>> On 3/30/20 1:11 PM, Patrice CHOTARD wrote:
+>>>>> For your information, another submitted patch uses the same pinctrl sdmmc2_d47_pins_b node with different muxing (SDMMC2_D5)
+>>>>>
+>>>>> see https://lore.kernel.org/patchwork/patch/1216452/
+>>>>>
+>>>>> I haven't checked other muxing if there are other conflict.
+>>>>
+>>>> (author of linked patch here)
+>>>>
+>>>> I don't like the central stm32mp15-pinctrl.dtsi. I'd have preferred if each
+>>>> file defined the pinctrl groups it is using.
+>>>
+>>> I'm not a big fan of that either, because this is gonna be a
+>>> combinatorial explosion of various pinmux options. But if you have each
+>>> board define it's pinmux, it's also gonna become a massive amount of
+>>> duplication (like iMX). So I cannot tell which one is better ...
+>>
+>> Mhm. A middle ground could be keeping stm32mp15-pinctrl, but only for the
+>> official ST eval kits as HW designers are expected to copy off those and have
+>> board specifics in the board/SoM device tree?
+> 
+> Then you should call it stm32mp1-something-st-eval-pinmux.dtsi ,
+> otherwise it's gonna be confusing.
+> 
+>> If it has to be either one or the other, I prefer duplication in the device
+>> tree. When the HW misses pull ups or needs to adjust slew rates, you probably
+>> don't want a new, slightly different, pinctrl group in the stm32mp15-pinctrl.dtsi
+>> for each variant.
+> 
+> That's a valid point, but then you can override those in the boards'
+> pinmux node for a specific pinmux entry too.
+> 
+>> So you are left with doctoring around with overrides and /delete-property/,
+>> while just duplicating the node with the correct properties would've been
+>> better for readability IMO.
+> 
+> That is true, but how many of such cases do we have so far ? Maybe it's
+> better to cross that bridge when (if) we come to it.
+>
 
-zone_spanned_pages_in_node does chech the zone boundaries are within the
-node boundaries. But that doesn't really tell anything about other
-potential zones interleaving with the physical memory range.
-zone->spanned_pages simply gives the physical range for the zone
-including holes. Interleaving nodes are essentially a hole
-(__absent_pages_in_range is going to skip those).
+I agree, and I prefer to keep pins groups definition in 
+stm32mp15-pinctrl.dtsi file. IMO, it is easier for users to find them in 
+only one file. Actually, I already had this discussions with some guys 
+"where pins groups have to be defined ?". For me (and maybe only for 
+me), muxing is SOC dependent, I mean SoC provides a bunch a possible 
+pinmux for each IPs. If we got enough memory spaces (and time to waste 
+also) we could define all possible pinmux (AFx....) for each devices and 
+let board users chose the good one (using stm32mp15-pictrl.dtsi as a 
+database). In board file, you select one possible pin configuration 
+(provided by the SoC) for your device according to your schematic. 
+However you could append pin groups in board file to update bias, 
+slewrate ...
+If your concern it to embed a bunch of not used pin configuration for a 
+board, we could use /omit-if-no-ref/ tag on pin groups.
 
-That means that when free_area_init_core simply goes over the whole
-physical zone range including holes and that is why we need to check
-both for physical and logical holes (aka other nodes).
+regards
+alex
 
-The life would be so much easier if the whole thing would simply iterate
-over memblocks...
-
--- 
-Michal Hocko
-SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
