@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2884F199D9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:02:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72B68199D9B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:02:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=se5YJkGgpzcscTrlYrHq5aijPm0so5HYj1aGJ1E+rSo=; b=CETBgSCQFmi2DX
-	Ss0kggPWPecPJkfNGuesg6xW4MWBa2GF/7LrVUuAm9434ML2vbpCugRZE7vhY19NHyFKyvkigr/vd
-	ZnmmtrKJkcE160g4gguEHw6pQW97c/DxtXeHa07qKDKXsU8LZNQ1y+560IyseRDhc+Z2/W7qHl7ZG
-	gy0PmhdnjqfvqirWradIIKlMBamIfBrFylJ9hARVK/sV7MbFVeguUJTE2/PCYLvtfyTeq9YJH8KHU
-	dlATGsEuvEFFZV1OWhght1Wh4bxkn2MmHwJsnAge6YeO9v9OFapkqahduWsJ7Llzi/i7t166azdGo
-	7ZoM/aNYD0FKVc6WvKWQ==;
+	List-Owner; bh=st+Rdxac+EKCAtS5h+xiCM3O/d/MwQEgnFaWJJM17Go=; b=uPjj78pXhpA8IZ
+	CAu6JHmrKweTkCSGqZ+ftWwYZ9uxyd0TwGyVvQDoyBEUtEdPcKXHLbOI1USMa+gDWUAWgc8Yb9yW4
+	t5megnj4m/TzQqDg13mj+1DLZsIoxUXR7cIUFvITuQwZO5r93sT/KHzcWyy0kgyV9kaJR1jJAniXj
+	6OHN9O0ULEuTo57DFeWCEJiUVmGn1ZHrLvIoxO7Vbv+iG3hFWOxfirSJAjJX57427l1tBmGm+pxs5
+	6pEr/AFj1bBqHtFyFBOAVlDcND/BLjxqTQhhv5Wq752E3G7qTVOTcD730U3auce2aeRaa9+BFESAv
+	LSLGu7xIpzXaeXcn9sYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJLD4-0005TG-EB; Tue, 31 Mar 2020 18:01:58 +0000
+	id 1jJLDU-0005mp-DF; Tue, 31 Mar 2020 18:02:24 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJLAM-0001Fg-Vs
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:59:12 +0000
+ id 1jJLAO-0001Gw-8V
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:59:13 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sHC13tYZz1qrGV;
- Tue, 31 Mar 2020 19:59:09 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sHC26brNz1qrMH;
+ Tue, 31 Mar 2020 19:59:10 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sHC13Klmz1qqkQ;
- Tue, 31 Mar 2020 19:59:09 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sHC26GhLz1qqkQ;
+ Tue, 31 Mar 2020 19:59:10 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id 8C-BHPqFybQl; Tue, 31 Mar 2020 19:59:08 +0200 (CEST)
-X-Auth-Info: //jfSA/S8+Mt5Dz5PHIjP2vZlPSBxsei7E5x/h3/x5A=
+ with ESMTP id gwtNjxNNEYZc; Tue, 31 Mar 2020 19:59:09 +0200 (CEST)
+X-Auth-Info: w8254XfcO3UmOpCPKCyXI36gte/WkPLObjH46e6xYag=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 31 Mar 2020 19:59:08 +0200 (CEST)
+ Tue, 31 Mar 2020 19:59:09 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 07/22] ARM: dts: stm32: Repair PMIC configuration on AV96
-Date: Tue, 31 Mar 2020 19:57:56 +0200
-Message-Id: <20200331175811.205153-8-marex@denx.de>
+Subject: [PATCH V3 08/22] ARM: dts: stm32: Repair PMIC interrupt on AV96
+Date: Tue, 31 Mar 2020 19:57:57 +0200
+Message-Id: <20200331175811.205153-9-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200331175811.205153-1-marex@denx.de>
 References: <20200331175811.205153-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_105911_361951_7595EBF6 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20200331_105912_599517_598E7CA8 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -86,9 +86,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The core and vdd PMIC buck regulators were misconfigured, which caused
-instability of the board and malfunction of high-speed interfaces, like
-the RGMII. Configure the PMIC correctly to repair these problems.
+The PMIC interrupt line is connected to PA0 on the DHCOR SoM, fix it.
+This makes the POWER button on the AV96 working, and also all the other
+PMIC interrupts. Furthermore, scrub the bogus interrupt-parent props.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -99,71 +99,86 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
-V2: Model the Enpirion EP53A8LQI on the DHCOR SoM as a fixed regulator
-V3: Move this before the SDMMC2 patch, as there is now a dependency
+V2: No change
+V3: Move this before the SDMMC2 patch
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 20 ++++++++++++++++----
- 1 file changed, 16 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 73dd655543e8..4fedc36f1c66 100644
+index 4fedc36f1c66..37cff8801bf2 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -91,6 +91,17 @@ sd_switch: regulator-sd_switch {
- 		states = <1800000 0x1>,
- 			 <2900000 0x0>;
- 	};
-+
-+	/* Enpirion EP3A8LQI U2 on the DHCOR */
-+	vdd_io: regulator-buck-io {
-+		compatible = "regulator-fixed";
-+		regulator-name = "buck-io";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vdd>;
-+	};
- };
+@@ -170,7 +170,7 @@ &i2c4 {
+ 	pmic: stpmic@33 {
+ 		compatible = "st,stpmic1";
+ 		reg = <0x33>;
+-		interrupts-extended = <&exti 55 IRQ_TYPE_EDGE_FALLING>;
++		interrupts-extended = <&gpioa 0 IRQ_TYPE_EDGE_FALLING>;
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;
+ 		status = "okay";
+@@ -227,7 +227,6 @@ vdda: ldo1 {
+ 				regulator-min-microvolt = <2900000>;
+ 				regulator-max-microvolt = <2900000>;
+ 				interrupts = <IT_CURLIM_LDO1 0>;
+-				interrupt-parent = <&pmic>;
+ 			};
  
- &ethernet0 {
-@@ -177,7 +188,7 @@ regulators {
+ 			v2v8: ldo2 {
+@@ -235,7 +234,6 @@ v2v8: ldo2 {
+ 				regulator-min-microvolt = <2800000>;
+ 				regulator-max-microvolt = <2800000>;
+ 				interrupts = <IT_CURLIM_LDO2 0>;
+-				interrupt-parent = <&pmic>;
+ 			};
  
- 			vddcore: buck1 {
- 				regulator-name = "vddcore";
--				regulator-min-microvolt = <1200000>;
-+				regulator-min-microvolt = <800000>;
- 				regulator-max-microvolt = <1350000>;
- 				regulator-always-on;
- 				regulator-initial-mode = <0>;
-@@ -195,8 +206,8 @@ vdd_ddr: buck2 {
+ 			vtt_ddr: ldo3 {
+@@ -249,7 +247,6 @@ vtt_ddr: ldo3 {
+ 			vdd_usb: ldo4 {
+ 				regulator-name = "vdd_usb";
+ 				interrupts = <IT_CURLIM_LDO4 0>;
+-				interrupt-parent = <&pmic>;
+ 			};
  
- 			vdd: buck3 {
- 				regulator-name = "vdd";
--				regulator-min-microvolt = <3300000>;
--				regulator-max-microvolt = <3300000>;
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <2900000>;
- 				regulator-always-on;
- 				regulator-initial-mode = <0>;
- 				regulator-over-current-protection;
-@@ -274,6 +285,7 @@ vbus_otg: pwr_sw1 {
+ 			vdd_sd: ldo5 {
+@@ -257,7 +254,6 @@ vdd_sd: ldo5 {
+ 				regulator-min-microvolt = <2900000>;
+ 				regulator-max-microvolt = <2900000>;
+ 				interrupts = <IT_CURLIM_LDO5 0>;
+-				interrupt-parent = <&pmic>;
+ 				regulator-boot-on;
+ 			};
+ 
+@@ -266,7 +262,6 @@ v1v8: ldo6 {
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
+ 				interrupts = <IT_CURLIM_LDO6 0>;
+-				interrupt-parent = <&pmic>;
+ 				regulator-enable-ramp-delay = <300000>;
+ 			};
+ 
+@@ -278,20 +273,17 @@ vref_ddr: vref_ddr {
+ 			bst_out: boost {
+ 				regulator-name = "bst_out";
+ 				interrupts = <IT_OCP_BOOST 0>;
+-				interrupt-parent = <&pmic>;
+ 			};
+ 
+ 			vbus_otg: pwr_sw1 {
  				regulator-name = "vbus_otg";
  				interrupts = <IT_OCP_OTG 0>;
- 				interrupt-parent = <&pmic>;
-+				regulator-active-discharge = <1>;
+-				interrupt-parent = <&pmic>;
+ 				regulator-active-discharge = <1>;
  			};
  
  			vbus_sw: pwr_sw2 {
-@@ -304,7 +316,7 @@ &iwdg2 {
- };
- 
- &pwr_regulators {
--	vdd-supply = <&vdd>;
-+	vdd-supply = <&vdd_io>;
- 	vdd_3v3_usbfs-supply = <&vdd_usb>;
- };
- 
+ 				regulator-name = "vbus_sw";
+ 				interrupts = <IT_OCP_SWOUT 0>;
+-				interrupt-parent = <&pmic>;
+ 				regulator-active-discharge = <1>;
+ 			};
+ 		};
 -- 
 2.25.1
 
