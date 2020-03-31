@@ -2,66 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BBD5199B91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:30:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91735199BDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:40:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xpYB8xi4Laq9xf7oWrB1a1aDG0UEU9C4o0Wjjnw2GdE=; b=k2uWwiwkkf6j/c
-	I9FK6pwvWC5CcLnUAuQ69g4MjRiBKgoUbvQVWlHsDu1/BfRANhstAoXVRe9JVoMw4PahoiSzimlr2
-	ny/UDNnZRqGDrN1O7cvcnBjBN0SMyuP5Edc24t0uVTwQZLP5n97xGkobjtRPwOo4+Rrhsv7K9a7Ls
-	gHmht7RX11awWYXmFqyRz0M0gLFHdRglxXKEIFXQyDaQUX6yXI8VZnggWVCtOG8XWuaofsPQreQ6C
-	uv0uf4QW6/YWpxrAEIGsVyrWGn31ydCcaxoz3fT1iOfzYx11R4mtZrf8nP+sykNic3+/E1yWd3bE1
-	uN76DE8p4QJhq5mBlIUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d3AXnp5MqZAPVrJh/OsIcWWOknABx007b4vWnnK0b1M=; b=EUuRl5GzLDYPfBV6XX+rNlR8p
+	6+eo3wOR/EJ8WNEWBgEUMBZnFSXdnEXXDBJxM996pcCI5acCGjZZtJmtgyDHGS7MkUA1EueChq8O2
+	0rNOpCZVgthllh/iV9A6cXpQ6h06TcDbd3qK+RaMXtIHrLUtWVaWnHHPkjaUDX/dT/0OgRsJ3bTm+
+	Qec8HYDlHPw7VnmlDlyHrYzFlrWfhCFSaWqnOBlzw/G7EIhq4KVXp01SEwO1/rgYnwhwY4X88rJuP
+	JxRX3FLSuiaqqch/7VtzwAddIY/ZDOcK9RkbFnYpuEhoPi4LcJJlj7YD/+JN3ZxQde+bgCkxYFMqa
+	HXHaKwNkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJmS-0001a6-3N; Tue, 31 Mar 2020 16:30:24 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jJJvy-0003eX-UC; Tue, 31 Mar 2020 16:40:14 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJlf-0001A6-46
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:29:37 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jJJlN-0007Xk-7h; Tue, 31 Mar 2020 18:29:17 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jJJlK-0005tF-Br; Tue, 31 Mar 2020 18:29:14 +0200
-Date: Tue, 31 Mar 2020 18:29:14 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH RFC 2/6] gpio: mvebu: honour EPROBE_DEFER for
- devm_clk_get()
-Message-ID: <20200331162914.h65jnclbsmlzpzti@pengutronix.de>
-References: <20200329104549.GX25745@shell.armlinux.org.uk>
- <E1jIVU9-0005h4-QU@rmk-PC.armlinux.org.uk>
- <20200329131659.4hbshjst4ccvje2n@pengutronix.de>
- <20200329133400.GA25745@shell.armlinux.org.uk>
- <20200329180056.cwju3zqviwnwwjd6@pengutronix.de>
- <20200329182236.GC25745@shell.armlinux.org.uk>
+ id 1jJJvZ-0003de-6B
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:39:51 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 02VGRlJS015329; Tue, 31 Mar 2020 18:39:44 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=sT2vh+CbNLLwsyoUu1PxJ6qH6vi8z4QoKbbZsolQmk8=;
+ b=BLUTq+CN428fn52XotvWhK4/i0mk316vQOcVChaqSre8T0r0/BouN0R/vVlttvjJ3+Mz
+ 7atRMqHZlJWtAoS4PFRQozGP9GRqkhZjZjHSkUSLvNWcDM0q3b767fDdlPtCP+/pDmku
+ g0dHiWXwqG33deUQBBy/ClAD/0Zsg9KhpDsLdn93nTuo/ldv+c7bmMaMu3nyS8/FwD5o
+ AKdYqHbmize4Jl9fLYzxQP+QpEa9iFgEbweLkym9eZ8GZQHU35IywcqrLKTfqissXMOY
+ ZGq8iF1w+nthKlI1b+XBNoD/0ELHI+VhVEgJsSgCZSE83dej6jUaRloxuL3e96mxxRy1 rA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 301w8105f1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 31 Mar 2020 18:39:44 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3C95510002A;
+ Tue, 31 Mar 2020 18:39:39 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 230E12BF9DD;
+ Tue, 31 Mar 2020 18:39:39 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 31 Mar
+ 2020 18:39:34 +0200
+Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
+ for SDMMC2 pins 4-7
+To: Marek Vasut <marex@denx.de>, Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ Patrice CHOTARD <patrice.chotard@st.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+References: <20200328171144.51888-1-marex@denx.de>
+ <20200328171144.51888-8-marex@denx.de>
+ <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
+ <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
+ <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
+ <310aa3a3-09ce-42ef-d1ea-b653163d1d72@pengutronix.de>
+ <97d13a84-8220-aa7f-3ee6-df474cca3882@denx.de>
+ <43e88a1b-f3e4-df1d-38a6-0bb281a2f786@st.com>
+ <871a5cc2-615d-b9e5-0eed-9a5a38be4f6c@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <69bce6d4-129e-b9ea-8fa6-f33d9047e3c3@st.com>
+Date: Tue, 31 Mar 2020 18:39:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200329182236.GC25745@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <871a5cc2-615d-b9e5-0eed-9a5a38be4f6c@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-03-31_05:2020-03-31,
+ 2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_092935_168548_AD143B34 
-X-CRM114-Status: GOOD (  24.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200331_093949_585954_A69E2176 
+X-CRM114-Status: GOOD (  18.42  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,97 +107,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>, linux-pwm@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- linux-gpio@vger.kernel.org, kernel@pengutronix.de,
- Gregory Clement <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Russell,
 
-On Sun, Mar 29, 2020 at 07:22:36PM +0100, Russell King - ARM Linux admin wr=
-ote:
-> On Sun, Mar 29, 2020 at 08:00:56PM +0200, Uwe Kleine-K=F6nig wrote:
-> > On Sun, Mar 29, 2020 at 02:34:00PM +0100, Russell King - ARM Linux admi=
-n wrote:
-> > > On Sun, Mar 29, 2020 at 03:16:59PM +0200, Uwe Kleine-K=F6nig wrote:
-> > > > On Sun, Mar 29, 2020 at 11:48:09AM +0100, Russell King wrote:
-> > > > > diff --git a/drivers/gpio/gpio-mvebu.c b/drivers/gpio/gpio-mvebu.c
-> > > > > index fa5641615db6..ee13b11c5298 100644
-> > > > > --- a/drivers/gpio/gpio-mvebu.c
-> > > > > +++ b/drivers/gpio/gpio-mvebu.c
-> > > > > @@ -1132,6 +1132,9 @@ static int mvebu_gpio_probe(struct platform=
-_device *pdev)
-> > > > >  	}
-> > > > >  =
 
-> > > > >  	mvchip->clk =3D devm_clk_get(&pdev->dev, NULL);
-> > > > > +	if (mvchip->clk =3D=3D ERR_PTR(-EPROBE_DEFER))
-> > > > > +		return -EPROBE_DEFER;
-> > > > > +
-> > > > >  	/* Not all SoCs require a clock.*/
-> > > > >  	if (!IS_ERR(mvchip->clk))
-> > > > >  		clk_prepare_enable(mvchip->clk);
-> > > > =
+On 3/31/20 3:38 PM, Marek Vasut wrote:
+> On 3/31/20 10:58 AM, Alexandre Torgue wrote:
+>>
+>>
+>> On 3/30/20 1:45 PM, Marek Vasut wrote:
+>>> On 3/30/20 1:37 PM, Ahmad Fatoum wrote:
+>>>> Hi Marek,
+>>>
+>>> Hi,
+>>>
+>>>> On 3/30/20 1:22 PM, Marek Vasut wrote:
+>>>>> On 3/30/20 1:17 PM, Ahmad Fatoum wrote:
+>>>>>> Hello Patrice,
+>>>>>
+>>>>> Hi,
+>>>>>
+>>>>>> On 3/30/20 1:11 PM, Patrice CHOTARD wrote:
+>>>>>>> For your information, another submitted patch uses the same
+>>>>>>> pinctrl sdmmc2_d47_pins_b node with different muxing (SDMMC2_D5)
+>>>>>>>
+>>>>>>> see https://lore.kernel.org/patchwork/patch/1216452/
+>>>>>>>
+>>>>>>> I haven't checked other muxing if there are other conflict.
+>>>>>>
+>>>>>> (author of linked patch here)
+>>>>>>
+>>>>>> I don't like the central stm32mp15-pinctrl.dtsi. I'd have preferred
+>>>>>> if each
+>>>>>> file defined the pinctrl groups it is using.
+>>>>>
+>>>>> I'm not a big fan of that either, because this is gonna be a
+>>>>> combinatorial explosion of various pinmux options. But if you have each
+>>>>> board define it's pinmux, it's also gonna become a massive amount of
+>>>>> duplication (like iMX). So I cannot tell which one is better ...
+>>>>
+>>>> Mhm. A middle ground could be keeping stm32mp15-pinctrl, but only for
+>>>> the
+>>>> official ST eval kits as HW designers are expected to copy off those
+>>>> and have
+>>>> board specifics in the board/SoM device tree?
+>>>
+>>> Then you should call it stm32mp1-something-st-eval-pinmux.dtsi ,
+>>> otherwise it's gonna be confusing.
+>>>
+>>>> If it has to be either one or the other, I prefer duplication in the
+>>>> device
+>>>> tree. When the HW misses pull ups or needs to adjust slew rates, you
+>>>> probably
+>>>> don't want a new, slightly different, pinctrl group in the
+>>>> stm32mp15-pinctrl.dtsi
+>>>> for each variant.
+>>>
+>>> That's a valid point, but then you can override those in the boards'
+>>> pinmux node for a specific pinmux entry too.
+>>>
+>>>> So you are left with doctoring around with overrides and
+>>>> /delete-property/,
+>>>> while just duplicating the node with the correct properties would've
+>>>> been
+>>>> better for readability IMO.
+>>>
+>>> That is true, but how many of such cases do we have so far ? Maybe it's
+>>> better to cross that bridge when (if) we come to it.
+>>>
+>>
+>> I agree, and I prefer to keep pins groups definition in
+>> stm32mp15-pinctrl.dtsi file. IMO, it is easier for users to find them in
+>> only one file. Actually, I already had this discussions with some guys
+>> "where pins groups have to be defined ?". For me (and maybe only for
+>> me), muxing is SOC dependent, I mean SoC provides a bunch a possible
+>> pinmux for each IPs. If we got enough memory spaces (and time to waste
+>> also) we could define all possible pinmux (AFx....) for each devices and
+>> let board users chose the good one (using stm32mp15-pictrl.dtsi as a
+>> database). In board file, you select one possible pin configuration
+>> (provided by the SoC) for your device according to your schematic.
+>> However you could append pin groups in board file to update bias,
+>> slewrate ...
+>> If your concern it to embed a bunch of not used pin configuration for a
+>> board, we could use /omit-if-no-ref/ tag on pin groups.
+> 
+> Can we instead define pinmux the way e.g. iMX6 does , as separate pins ,
+> instead of pinmux groups ?
+> 
 
-> > > > I'd say the following is the right thing to do here:
-> > > > =
-
-> > > > 	mvchip->clk =3D devm_clk_get_optional(...);
-> > > > 	if (IS_ERR(mvchip->clk))
-> > > > 		return ...
-> > > =
-
-> > > It's not that simple.  The clock is required for Armada 370, and is
-> > > optional for Armada 8040.
-> > =
-
-> > I'd say it is still the right approach here. On Armada 370 the dtb then
-> > has a clk and on Armada 8040 it doesn't. So if with
-> > devm_clk_get_optional() something goes wrong that's because the dtb is
-> > wrong. And in fact the handling is even better than with your suggested
-> > patch as every error (but EPROBE_DEFER) is ignored instead of passed to
-> > the caller with your (and the existing) approach.
-> =
-
-> Sort of.  Every error is currently treated as "no clock", and only
-> later does such an error become fatal in the driver _if_ PWM is
-> configured into the kernel and we're running on Armada 370.  If PWM
-> is disabled in the kernel, or on some other SoC, then the driver
-> doesn't care whether getting the clock reported any kind of error.
-> =
-
-> Your proposal is to always treat any error getting the clock,
-> irrespective of whether there is PWM or not, as a fatal error for
-> the driver.
-
-Is this clock (assuming it's available) needed for GPIO operation? If
-not, I'd say the call to devm_clk_get should go into mvebu_pwm_probe().
-And if yes, then use devm_clk_get_optional in mvebu_gpio_probe() and
-either request it once more in mvebu_pwm_probe() (without _optional) or
-test for mvchip->clk =3D=3D NULL. (Or maybe just don't check and let the
-driver fail when clk_get_rate(mvchip->clk) returns zero.)
-
-> That is an entirely seperate functional change.
-
-This is still different to what you do, but it is (IMHO) cleaner and
-fixes the problem you want to solve en passant.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Sorry but what would the advantage to do so ?
 
 _______________________________________________
 linux-arm-kernel mailing list
