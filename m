@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5548198C67
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 08:37:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D883E198C72
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 08:41:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J75P2CA2B0jxM+JRIIMtKcHYwF7yzae9+/fBGcWStqM=; b=HbFag8QbltV42G
-	9IVpybHhetCrvlpniK9nuRvjF29hJ7S1yL2+tQXgtW3i4itDIZJNZrneRlRI78f6fHRhwRcydcGWf
-	oPZMPlKu0bWGFZcSCXko6HNOta6oXO7A1+VemWFefJquSo/ZpVmxL+pcAFMYnyAOmgk1KwhgdMWyT
-	mb+JQoXkgxCm2WaF+4alpIWfbD4a++AE5f6v+BmKxzaj3GFL1Fth92mIChYWnIdTfkTSvWWSQSpOq
-	UOqUJOR43QIw86Oj0/Hfme1oNlBzG0R1f01du5ITiNAEgI9ZuZJ/UV5v0NhcFlwXVI/2iECxLVnjd
-	+3wkfKwNG8DWeD5pYdMA==;
+	List-Owner; bh=wrp3qL7uBff4lDNEdk7HpjZLQNCeP5COI7Jup6ELwfg=; b=dW09gP0gLwc6tU
+	ikAIlZmLyJ7+r63Ai6+9Fy32pyCO+3TGLZl9rKv4aji2i7WXq6KczkgxFsZY5ar78vje/zLUce+61
+	IelMarq+8Cvvcka5nxC9UnXaHka9ZuNABvzJuoyLIC8dJFy7WrIl5aFPEUOcYDs2bXC/IYtKzTTN8
+	OSUuUPSbP4MLctk+3gz8VbVT+EVlqe1goF2HLqAGJpcmFRS3/b3FHvqSxRshCBxu/KiGnPiih0ODH
+	ELV3z4RatlXEjmSyXGcivX9uy9jHhEe1wrZlAWVuhSjva0ugifVVvt0g4lZFbGWpaddLEsW8LspS2
+	f3IDQq94ySi1f4PBVn0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJAWN-00028x-MB; Tue, 31 Mar 2020 06:37:11 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jJAa7-0004EV-Hn; Tue, 31 Mar 2020 06:41:03 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJAWD-00028X-Ak
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 06:37:02 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 22so9865402pfa.9
+ id 1jJAZy-0004Ds-UF
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 06:40:56 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id w9so667669pjh.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 23:37:01 -0700 (PDT)
+ Mon, 30 Mar 2020 23:40:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=i+kZ1kB/oiPs26tQOXEu+SZlkkg0fl6X4bH+/zZzR/Y=;
- b=b0K14d1rtzslnDocfYlmGWDEoIFOYQrE9NfVQ12Fo8M2JNq2nTaCht0NJ2QV3EKTMA
- 7xtrHz458av4TvoX8oZpmQpt4yt13/cKUHKEM7og+JfhABP0tKccYb96kdYtpGzj6oUg
- ezYIHsaouZQBMx++516zKtN8PJExU48jKvBsfc8UOAhC9bsvlLlC8wINSVb+2IE5TtXq
- wjNYAhLDm4sg98weDYq38lZ2rlR9nZtGJB8QEgIxSeArvtt2hrqy/L/HNejtnB1sJ16G
- hOm18EFStMwHCdSHkoTpNFoUk+nSPo3wmE4+uw1AC5DL7aJ77JQu8FT3NQQYfBJVCbjD
- x4Cg==
+ bh=NMixT5EyaYc59LtBYv/IS9+oVWN+dyQvKFglLW9hNR8=;
+ b=PrNSmbVf32WLlENs27teTJaSQfj1vc/sbohunckkJp9nTim8JjO3nHFo9BSawhBL2S
+ zclu+fux4K2RVn+D05aK4GziYUlYU4VjvpUAlEE8u6nqipiTT7cwPjd6eXV6RTRK0X2M
+ u62oZ841WNHdbnh0QdCTqn9HZTP6m4WVOr5LsgN4FUj/9GxuYqhPdCu621JxKjZIak8e
+ qaB5t+HhxPcBJCw4M5Au2lBHjDW0FZZrkQqkB0tfSTKe06+BZqBtkyG5QlMHCb5dNVI9
+ s+vWTcwT9hhvV1hE/5AIUmLd2PjmoAUphX5jUEOvZttQHjqlqKFzEso/dE+taTXHxLPL
+ FPjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=i+kZ1kB/oiPs26tQOXEu+SZlkkg0fl6X4bH+/zZzR/Y=;
- b=SXQkKnJoOxos18q9KuFlcN5EMkBhfVJOUjQX17hnYNbbtljg8bBUFQHiLnWCWVuT0S
- k1FoMeYPX6Vqn6SQ2LtandjaJnAr4wd3+fkU/r5ERXUe2uA2T737bDQwIkOydZa/IU9v
- 8jI55bdWbar19unf0eXKvZBSCVfgkGkVquoAAZftjH830nNJ9D+wN3agBRK7YBsqUNMH
- XzpH8JFdQ7PmIEawJmm6AdwXepbFisgTAPd2RBD2nIhyfNIxGJLrUNiOgz+0SOIc6www
- FJsxQUwRxHjYeR3EsKyPasMBWnGJknXPnArxMDbR1/eAV5ybLOnls9PbPq720JnbfaIc
- izfA==
-X-Gm-Message-State: ANhLgQ27kf8yM5tKdFyvtdX7lAfde1qRn4Ob2GfoEbOVlgdiWOmhHsWX
- gNyoEw+atC+1x56EUqJdea94
-X-Google-Smtp-Source: ADFU+vv7XyfV7ZrcsfD6d7bNSgeyCQGLaj+Go1NGZpWxtxuDBxUW9f7eq4YjFDviWXwlUHKYPcmIqQ==
-X-Received: by 2002:a63:9043:: with SMTP id a64mr16654345pge.308.1585636620523; 
- Mon, 30 Mar 2020 23:37:00 -0700 (PDT)
+ bh=NMixT5EyaYc59LtBYv/IS9+oVWN+dyQvKFglLW9hNR8=;
+ b=eRIgkKuLxlUCNWQwCNQKN+USSOSZMYlH2scpZAFZP2NcWIXtAYZ1GwjTecR2bweIm3
+ Jx9cf3aJNWqs7S7UMHfJ6jajEgnxYQinzRYRrw7NNe1XOsJ4y7emJTnvIZFAuEyp5+si
+ UiHkBNKl7I1hnmAJullfwFvJGpcoGXC8P5FMKRWh3erzjO9iUuctrZTX7i+pJkOgIrKJ
+ qqMnicsh8/Zo+76S2eI0ziB4YZ3MUF4CMlJP6ylPEe2cDqsaO+Wlb580Z3gDPeW+Cibi
+ he5NpnQoSY6BWErTbmYyFuEimYI4bbrx1kCL7RnRwjUV+eGuipqxZyObf0Gr+wR53Ii3
+ EfUw==
+X-Gm-Message-State: AGi0PuYBHQlMz9SSOoKroCz7zoB1vv8YbqU0Y84SSIhN7fWZD4nM3paI
+ UFJ5V+yIkrj0cravMuWUNojD
+X-Google-Smtp-Source: APiQypINjHafIOsXhyHeCgBp4iX7F7FlFDW8eO+YYZJby8ZiKp5j6fUGl1wRfmCmgCq9cp/Q2gPwlA==
+X-Received: by 2002:a17:90a:4d43:: with SMTP id
+ l3mr2013351pjh.165.1585636854015; 
+ Mon, 30 Mar 2020 23:40:54 -0700 (PDT)
 Received: from Mani-XPS-13-9360 ([2409:4072:630f:1337:c28:2530:7bf4:e941])
- by smtp.gmail.com with ESMTPSA id f5sm12136243pfq.63.2020.03.30.23.36.56
+ by smtp.gmail.com with ESMTPSA id s22sm658195pfh.18.2020.03.30.23.40.50
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Mar 2020 23:36:59 -0700 (PDT)
-Date: Tue, 31 Mar 2020 12:06:53 +0530
+ Mon, 30 Mar 2020 23:40:53 -0700 (PDT)
+Date: Tue, 31 Mar 2020 12:10:47 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH V2 13/22] ARM: dts: stm32: Enable GPU on AV96
-Message-ID: <20200331063653.GB17400@Mani-XPS-13-9360>
+Subject: Re: [PATCH V2 14/22] ARM: dts: stm32: Add alternate pinmux for
+ SDMMC3 pins
+Message-ID: <20200331064047.GC17400@Mani-XPS-13-9360>
 References: <20200331005701.283998-1-marex@denx.de>
- <20200331005701.283998-14-marex@denx.de>
+ <20200331005701.283998-15-marex@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331005701.283998-14-marex@denx.de>
+In-Reply-To: <20200331005701.283998-15-marex@denx.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_233701_384244_179998C1 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20200330_234054_986543_30C758AF 
+X-CRM114-Status: GOOD (  15.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,8 +110,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 02:56:52AM +0200, Marek Vasut wrote:
-> Enable the GPU present on the STM32MP1 populated on AV96.
+On Tue, Mar 31, 2020 at 02:56:53AM +0200, Marek Vasut wrote:
+> Add another mux option for SDMMC3 pins, in particular PD5_SDMMC3_D2 and
+> PD0_SDMMC3_CMD, this is used on AV96 board.
 > 
 > Signed-off-by: Marek Vasut <marex@denx.de>
 
@@ -128,24 +131,74 @@ Mani
 > ---
 > V2: No change
 > ---
->  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 4 ++++
->  1 file changed, 4 insertions(+)
+>  arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 54 ++++++++++++++++++++++++
+>  1 file changed, 54 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> index 3dfc51f65709..3aeb3afa37d9 100644
-> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> @@ -140,6 +140,10 @@ phy0: ethernet-phy@7 {
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index ec3621e0ff08..f3f9fc4a3503 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -1137,6 +1137,60 @@ pins {
+>  		};
 >  	};
->  };
 >  
-> +&gpu {
-> +	status = "okay";
-> +};
+> +	sdmmc3_b4_pins_b: sdmmc3-b4-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('F', 0, AF9)>, /* SDMMC3_D0 */
+> +				 <STM32_PINMUX('F', 4, AF9)>, /* SDMMC3_D1 */
+> +				 <STM32_PINMUX('D', 5, AF10)>, /* SDMMC3_D2 */
+> +				 <STM32_PINMUX('D', 7, AF10)>, /* SDMMC3_D3 */
+> +				 <STM32_PINMUX('D', 0, AF10)>; /* SDMMC3_CMD */
+> +			slew-rate = <1>;
+> +			drive-push-pull;
+> +			bias-pull-up;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('G', 15, AF10)>; /* SDMMC3_CK */
+> +			slew-rate = <2>;
+> +			drive-push-pull;
+> +			bias-pull-up;
+> +		};
+> +	};
 > +
->  &i2c1 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&i2c1_pins_b>;
+> +	sdmmc3_b4_od_pins_b: sdmmc3-b4-od-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('F', 0, AF9)>, /* SDMMC3_D0 */
+> +				 <STM32_PINMUX('F', 4, AF9)>, /* SDMMC3_D1 */
+> +				 <STM32_PINMUX('D', 5, AF10)>, /* SDMMC3_D2 */
+> +				 <STM32_PINMUX('D', 7, AF10)>; /* SDMMC3_D3 */
+> +			slew-rate = <1>;
+> +			drive-push-pull;
+> +			bias-pull-up;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('G', 15, AF10)>; /* SDMMC3_CK */
+> +			slew-rate = <2>;
+> +			drive-push-pull;
+> +			bias-pull-up;
+> +		};
+> +		pins3 {
+> +			pinmux = <STM32_PINMUX('D', 0, AF10)>; /* SDMMC2_CMD */
+> +			slew-rate = <1>;
+> +			drive-open-drain;
+> +			bias-pull-up;
+> +		};
+> +	};
+> +
+> +	sdmmc3_b4_sleep_pins_b: sdmmc3-b4-sleep-1 {
+> +		pins {
+> +			pinmux = <STM32_PINMUX('F', 0, ANALOG)>, /* SDMMC3_D0 */
+> +				 <STM32_PINMUX('F', 4, ANALOG)>, /* SDMMC3_D1 */
+> +				 <STM32_PINMUX('D', 5, ANALOG)>, /* SDMMC3_D2 */
+> +				 <STM32_PINMUX('D', 7, ANALOG)>, /* SDMMC3_D3 */
+> +				 <STM32_PINMUX('G', 15, ANALOG)>, /* SDMMC3_CK */
+> +				 <STM32_PINMUX('D', 0, ANALOG)>; /* SDMMC3_CMD */
+> +		};
+> +	};
+> +
+>  	spdifrx_pins_a: spdifrx-0 {
+>  		pins {
+>  			pinmux = <STM32_PINMUX('G', 12, AF8)>; /* SPDIF_IN1 */
 > -- 
 > 2.25.1
 > 
