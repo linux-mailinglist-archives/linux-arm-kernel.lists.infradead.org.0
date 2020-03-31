@@ -2,99 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83AA1198E14
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:14:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9FEF198E1F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PKWOTW/mY34uaAu40Lg36C0kGsmz9lv8cF7oDfRDX5Y=; b=O/xmn/8sYeBNdI
-	Cfbg3J64x/EVvyiZ02v/a7Ee9TocbzwMAo+/v8DUHnLUXhIGFU7wgfNccYKkUVVMAOYf26xKksrDD
-	cItSupdWI8eFjeFbtcFDyxYRm0Arb0cuTkXXKG8+i5hi7d0syJy4rd2UlTgzAEcfr8iMiOsyb5SuZ
-	GfHgTX1pEGJeF1R3EXTjL/20gncWiWN1UOwqCye5sEvoOsra+5jr1Ygz95PYgHq0Wsc47P7fVlMYd
-	3AFS5L99P0BAq6rTZY1X/4XaKSIROoQnKjK8qrD8BQI70SsVCizJfvWnT5t3oZ67LYIEfliGUmbAP
-	aOAFEwA4dU0flGV7ENSQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Q+Pu6uHm15BkVCD/pEoNfotaME00Vxo9AzNz7JSwrI=; b=lIP1BQcOUpQd6w
+	K/2EJJTLAoIjkOnSIV93/gPC9oAysb3qOOfZi+HIeJcZq8L0eThTTAG8NYLe7MAXYGD0cMDBNy8NX
+	f1ylov1BfmITatYiEnHGQOmTOqCpQh+SL2dGscDCp/8uhrzkuompuuyRv9mA2eXgJfB1wcb1pLhtH
+	OejWtKGHq0wqP37tfuAbJSUaHx7EqTplLfLQ+iHoWqq70voEtN/u8j58oxZcjTIz1Nx0HVPABV12X
+	vAFp7Z2PuVbLZ1lQjNiYhnIicCKGNCiOg7yVmu20E+N94wD0i4B8AAanjFKZjaU2cH6Hwpxi0G3sC
+	nntl5xm0YOAQTb0q1R6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJC2t-0008K0-64; Tue, 31 Mar 2020 08:14:51 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jJC4O-0001be-9I; Tue, 31 Mar 2020 08:16:24 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJC2h-0008Ja-66
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:14:40 +0000
-Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02V8638j140641
- for <linux-arm-kernel@lists.infradead.org>; Tue, 31 Mar 2020 04:14:38 -0400
-Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
- by mx0b-001b2d01.pphosted.com with ESMTP id 303vwhyeub-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 31 Mar 2020 04:14:37 -0400
-Received: from localhost
- by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Tue, 31 Mar 2020 09:14:29 +0100
-Received: from b06avi18626390.portsmouth.uk.ibm.com (9.149.26.192)
- by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 31 Mar 2020 09:14:22 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 02V8DOkE50790826
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 31 Mar 2020 08:13:24 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 982FCA405C;
- Tue, 31 Mar 2020 08:14:27 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 211B9A405B;
- Tue, 31 Mar 2020 08:14:25 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.207.69])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Tue, 31 Mar 2020 08:14:25 +0000 (GMT)
-Date: Tue, 31 Mar 2020 11:14:23 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
- <20200330074246.GA14243@dhcp22.suse.cz>
- <20200330175100.GD30942@linux.ibm.com>
- <20200330182301.GM14243@dhcp22.suse.cz>
+ id 1jJC4D-0001ZX-Pc
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:16:15 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id F16CE5E95C5B64C7B4DB;
+ Tue, 31 Mar 2020 16:16:00 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Tue, 31 Mar 2020
+ 16:15:51 +0800
+Subject: Re: [RFC][Qusetion] the value of cleared_(ptes|pmds|puds|p4ds) in
+ struct mmu_gather
+To: Peter Zijlstra <peterz@infradead.org>, <schwidefsky@de.ibm.com>
+References: <fbb00ac0-9104-8d25-f225-7b3d1b17a01f@huawei.com>
+ <20200330121654.GL20696@hirez.programming.kicks-ass.net>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <9c75a85e-5d80-0286-1ce5-89479d49170e@huawei.com>
+Date: Tue, 31 Mar 2020 16:15:49 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200330182301.GM14243@dhcp22.suse.cz>
-X-TM-AS-GCONF: 00
-x-cbid: 20033108-0012-0000-0000-0000039B78A8
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20033108-0013-0000-0000-000021D883D5
-Message-Id: <20200331081423.GE30942@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-03-31_02:2020-03-30,
- 2020-03-31 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 adultscore=0
- clxscore=1015 priorityscore=1501 lowpriorityscore=0 spamscore=0
- malwarescore=0 impostorscore=0 suspectscore=5 bulkscore=0 mlxlogscore=855
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2003310067
+In-Reply-To: <20200330121654.GL20696@hirez.programming.kicks-ass.net>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_011439_350407_A671C188 
-X-CRM114-Status: GOOD (  37.48  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200331_011614_030386_E49F8CB1 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,101 +66,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
- Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
- Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, npiggin@gmail.com,
+ arm@kernel.org, bp@alien8.de, xiexiangyou@huawei.com, luto@kernel.org,
+ akpm@linux-foundation.org, torvalds@linux-foundation.org, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 30, 2020 at 08:23:01PM +0200, Michal Hocko wrote:
-> On Mon 30-03-20 20:51:00, Mike Rapoport wrote:
-> > On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
-> > > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
-> > > > In NUMA layout which nodes have memory ranges that span across other nodes,
-> > > > the mm driver can detect the memory node id incorrectly.
-> > > > 
-> > > > For example, with layout below
-> > > > Node 0 address: 0000 xxxx 0000 xxxx
-> > > > Node 1 address: xxxx 1111 xxxx 1111
-> > > > 
-> > > > Note:
-> > > >  - Memory from low to high
-> > > >  - 0/1: Node id
-> > > >  - x: Invalid memory of a node
-> > > > 
-> > > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
-> > > > config, mm only checks the memory validity but not the node id.
-> > > > Because of that, Node 1 also detects the memory from node 0 as below
-> > > > when it scans from the start address to the end address of node 1.
-> > > > 
-> > > > Node 0 address: 0000 xxxx xxxx xxxx
-> > > > Node 1 address: xxxx 1111 1111 1111
-> > > > 
-> > > > This layout could occur on any architecture. Most of them enables
-> > > > this config by default with CONFIG_NUMA. This patch, by default, enables
-> > > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
-> > > 
-> > > I am not opposed to this at all. It reduces the config space and that is
-> > > a good thing on its own. The history has shown that meory layout might
-> > > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
-> > > which is clearly an overkill.
-> > > 
-> > > Your description doesn't really explain why this is safe though. The
-> > > history of this config is somehow messy, though. Mike has tried
-> > > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
-> > > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
-> > > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
-> > > reasoning what so ever. This doesn't make it really easy see whether
-> > > reasons for reintroduction are still there. Maybe there are some subtle
-> > > dependencies. I do not see any TBH but that might be burried deep in an
-> > > arch specific code.
-> > 
-> > I've looked at this a bit more and it seems that the check for
-> > early_pfn_in_nid() in memmap_init_zone() can be simply removed.
-> > 
-> > The commits you've mentioned were way before the addition of
-> > HAVE_MEMBLOCK_NODE_MAP and the whole infrastructure that calculates zone
-> > sizes and boundaries based on the memblock node map.
-> > So, the memmap_init_zone() is called when zone boundaries are already
-> > within a node.
+Hi Peter,
+
+On 2020/3/30 20:16, Peter Zijlstra wrote:
+> On Sat, Mar 28, 2020 at 12:30:50PM +0800, Zhenyu Ye wrote:
+>> Hi all,
+>>
+>> commit a6d60245 "Track which levels of the page tables have been cleared"
+>> added cleared_(ptes|pmds|puds|p4ds) in struct mmu_gather, and the values
+>> of them are set in some places. For example:
+>>
+>> In include/asm-generic/tlb.h, pte_free_tlb() set the tlb->cleared_pmds:
+>> ---8<---
+>> #ifndef pte_free_tlb
+>> #define pte_free_tlb(tlb, ptep, address)			\
+>> 	do {							\
+>> 		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
+>> 		tlb->freed_tables = 1;				\
+>> 		tlb->cleared_pmds = 1;				\
+>> 		__pte_free_tlb(tlb, ptep, address);		\
+>> 	} while (0)
+>> #endif
+>> ---8<---
+>>
+>>
+>> However, in arch/s390/include/asm/tlb.h, pte_free_tlb() set the tlb->cleared_ptes:
+>> ---8<---
+>> static inline void pte_free_tlb(struct mmu_gather *tlb, pgtable_t pte,
+>>                                 unsigned long address)
+>> {
+>> 	__tlb_adjust_range(tlb, address, PAGE_SIZE);
+>> 	tlb->mm->context.flush_mm = 1;
+>> 	tlb->freed_tables = 1;
+>> 	tlb->cleared_ptes = 1;
+>> 	/*
+>> 	 * page_table_free_rcu takes care of the allocation bit masks
+>> 	 * of the 2K table fragments in the 4K page table page,
+>> 	 * then calls tlb_remove_table.
+>> 	 */
+>> 	page_table_free_rcu(tlb, (unsigned long *) pte, address);
+>> }
+>> ---8<---
+>>
+>>
+>> In my view, the cleared_(ptes|pmds|puds) and (pte|pmd|pud)_free_tlb
+>> correspond one-to-one.  So we should set cleared_ptes in pte_free_tlb(),
+>> then use it when needed.
 > 
-> But zones from different nodes might overlap in the pfn range. And this
-> check is there to skip over those overlapping areas.
+> So pte_free_tlb() clears a table of PTE entries, or a PMD level entity,
+> also see free_pte_range(). So the generic code makes sense to me. The
+> PTE level invalidations will have happened on tlb_remove_tlb_entry().
+> 
 
-Maybe I mis-read the code, but I don't see how this could happen. In the
-HAVE_MEMBLOCK_NODE_MAP=y case, free_area_init_node() calls
-calculate_node_totalpages() that ensures that node->node_zones are entirely
-within the node because this is checked in zone_spanned_pages_in_node().
-So, for zones from different nodes to overlap in the pfn range the nodes
-themself should overlap. Is this even possible?
+Thanks for your explanation. I can understand now.
 
+>> I'm very confused about this. Which is wrong? Or is there something
+>> I understand wrong?
+> 
+> I agree the s390 case is puzzling, Martin does s390 need a PTE level
+> invalidate for removing a PTE table or was this a mistake?
+> 
 
-> The only way to skip over this check I can see is to do a different pfn
-> walk and go through memblock ranges which are guaranteed to belong to a
-> single node.
-> -- 
-> Michal Hocko
-> SUSE Labs
+Then we should wait for @ Martin's reply.  Though s390 has never used
+this value, I think we still should correct it if this is a mistake.
 
--- 
-Sincerely yours,
-Mike.
+Thanks,
+Zhenyu
+
 
 
 _______________________________________________
