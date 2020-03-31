@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B72DC198AFD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:10:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C016B198B04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:13:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RIIbSrmB2v2v07V3w7tKoyesd41y40yyZZjGXmeCQHc=; b=OvJrxvRDe810fF
-	a9qnC0HVsT/sNFFcdleWYykLm8CGDJI+qM9dP6QktPJQK8A+74bKm1LelBLjLA1aNJSNAih/N9tVp
-	7FHEi+W+xT3ahU1ZgTZzXQ4WrUQZdqEVTnCH1LcNaDLvw0PQlqnvtEpWnF07WZfi0X6PFwMDiddHy
-	pDiROlR6R40jVKoc9Cs3x4DkEJnwbHAFw5awVKJj9LEfhZdlycu3PuWv7F8AByY/tS8qA1BNFsEKG
-	bW2WT1o6DZ5WC1pNRA5aH7khHjAlbwC2xEr0GX4NOxmkH97/holaBT/x+gVuzX9+54SibpRjm4ete
-	2OvifwsntJwewinF/+ng==;
+	List-Owner; bh=z2tGcSZkzYA/17P5KCNCg37DVE8tVDnBlZ742gVDVzo=; b=fHDOfDRBxMTULn
+	U+Y22aNAxGbb8Pxo9yP/QFg7kgR5Yv4fR2FCqnyEiaSCte3b6I0VlNrgBvqwJV/v9yyjHT6+Tm9DW
+	Qe3MlIz4sZt8R0SduBFOT9HmiGGjyxoiCGnZ8f0r8njXuDzH02Yg+QQe4GcDSA3DULYOuVRx3TjoX
+	vQjM2MK+JiwrQnPzJpsKXzbIWLspwAAz84sq5UltC2TgN6BNluQbaWnOadr5GhtTUxjVy82DAiL82
+	ENXKtwFNwjlYgIPU5/paQR5ncO01QzK93OIwhSb7oz5+Po5FMBDg7uS1/CLVQbbcbS4/4xEFF2J9b
+	jH9bPX41iX1F/JpBSWBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ8Ej-0007Pf-6U; Tue, 31 Mar 2020 04:10:49 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jJ8HO-0007sW-EJ; Tue, 31 Mar 2020 04:13:34 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ8De-0005YG-Gq
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 04:09:44 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id fh8so525206pjb.5
+ id 1jJ8HB-0007s1-BR
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 04:13:22 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t24so9746220pgj.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 21:09:42 -0700 (PDT)
+ Mon, 30 Mar 2020 21:13:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Ob7R2tyj6Le9Ag0UNt/tDhzAJi2KJtq2sjdVNkJwIEk=;
- b=j4b8WaDIvsftb0lwtK4le7R/u+VUpClHpWO56JPV3PMUz4RMn18487PRG3URvvNDt7
- 5JvbIm6+qWZjhAqzT46p6S285lS+01Ila8n8so4C5U4pHYyzGNkqDKHhxXqQoWecF6Vx
- wNGnnRGA0TJgKKH7qDxOVYEvo1fkg/m56mglkQlncTUMoogBsRQizmQ517KfVUicxXWu
- kFc962zpvKQfmj0bUbyv1JtZWuDlKc2kvE0Osd4xlBamJefrQ6Kp+E2xbgGX5NvOlMlR
- J2Jskom4D0YagXX7Mhh27LCHjFZR+VQadCCVD2hF/cjgzMXCcPojTKr22H/LKIowYLn5
- JOuA==
+ bh=+OJAcK9vuUh2eZ2xf+ImnOd/B9bsqmjxoIB8uGrB1fk=;
+ b=K+xdyeFAzZknu1SssKl0JANLQ0AEz4lbBWnDWdU+OxTib+3PfH6PsQNOTPcVkxFVKR
+ QtH902B7EDp/tGu6f6ynjV7Hmv8l9vEIrtIerBLjFu2+CH5E6s4T7nfZS6WEl4TaT92h
+ Y44XfZKAbBAo3KHREO9V8DWy81Wpb58BXjpWY7yuS+oiI2H8eEDyKeHeRWxDj7IAYwRu
+ qq5ApLlaZRMcmKpxt2Mo/whCGjTbybkMVSk1wtKxZ3dJEVSL2xpyx0tLFaMvaTLff0z8
+ PTopuEJ8C/VZ2m233haN7N1bIjIs/UzqoCPfAuEi3PeuqgalvITXn+rB8GAhfx4lnaHt
+ GoUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Ob7R2tyj6Le9Ag0UNt/tDhzAJi2KJtq2sjdVNkJwIEk=;
- b=LRyI2sPcsclXdyeEsxWiZ0JXOS2uVKr9tq1X7raLGWj7b9iuC8Y3u+e5BIgpJ8k+P/
- YszkgcA2KwwlENSvVVe35r2OP7V0FmBEgdNTtqu84L3EY1Ib5QDic2IEKkwxBVe9Qvt/
- hCSmH6fx99gFXBonqNWHPyTIUdTaActgLur07POrKBAefeb/Osx/Xhi45gRbdCiGZ1LY
- l7wwshz5oz6rwNqqHhio/OuuiBNjBrnCWzGD+LbopZNbOsGY8vH/CkT2wFC+ID8Lic7v
- QmESjvnKpQpV1QauKPHuNpGAs8t98Q+leeHU+5lbBXPe1bvMJZP2u/pKfVDMRLD6xPPM
- CSMw==
-X-Gm-Message-State: AGi0PuZyxjvtQ1nc0/SK9Qb7FMiDLr+uw5dSyvLO2fmZWfJYKbXwuWR7
- LeNVueXKe5sIBwK8IVr/o2P6
-X-Google-Smtp-Source: APiQypLh0XhUTHvCgvzJXfbCv95toTr56iDmTAVPFVwF1XuqI/P2vEGs0oilL2j7wT2xaJ3hsnXyQg==
-X-Received: by 2002:a17:90a:1a03:: with SMTP id
- 3mr1625344pjk.136.1585627781350; 
- Mon, 30 Mar 2020 21:09:41 -0700 (PDT)
+ bh=+OJAcK9vuUh2eZ2xf+ImnOd/B9bsqmjxoIB8uGrB1fk=;
+ b=MAJc/JTmWUqsCfa19kra+xIPcakRie5vbpoprEriCrbuSGZNLR3q0u4ayzrSyq7HXf
+ dO9s3Olz4X7ivPqenAQY0DPdizx6laAZW67yUNEVErEsfF8SBtt8lfgytosPcRg2hyGp
+ SxIK1MsBJFAcCboAvgYYaSJmEPlYXWOt6ChYzu/8vnCyDNhvDk4JOj1PxWCJyaYGy3Hf
+ 8HP5ZYG5dZHUzIauBOq7uGIKABBTSRnPyNItCh42oLnRWIPawJIpYcfy6kBIeCWQo50Y
+ qtB8C7VmSzeeCroOBtlIhWpU01wHvex8Xiwu6ZqkV99pCA4adHvfGVk8L6ebp1Gzuro1
+ hFXw==
+X-Gm-Message-State: ANhLgQ1iT5PdHAKiSMnlwzHnxjRiW0fS9q57Z3+S85js/ct41By4ETcM
+ JgQyVy+YXeCmDFsKhbDnn58D3ROpLQ==
+X-Google-Smtp-Source: ADFU+vsrIFyboLyg57kEr85d9ydwcsSitFBjLAdRWZuBGBNejWStZ3jPNdFjzU2++hmb84cKG5LASg==
+X-Received: by 2002:a62:ed19:: with SMTP id u25mr16220469pfh.114.1585628000578; 
+ Mon, 30 Mar 2020 21:13:20 -0700 (PDT)
 Received: from Mani-XPS-13-9360 ([2409:4072:630f:1337:c28:2530:7bf4:e941])
- by smtp.gmail.com with ESMTPSA id y9sm11891159pfo.135.2020.03.30.21.09.37
+ by smtp.gmail.com with ESMTPSA id j126sm11097325pfg.60.2020.03.30.21.13.16
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Mar 2020 21:09:40 -0700 (PDT)
-Date: Tue, 31 Mar 2020 09:39:35 +0530
+ Mon, 30 Mar 2020 21:13:20 -0700 (PDT)
+Date: Tue, 31 Mar 2020 09:43:13 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH V2 22/22] ARM: dts: stm32: Rename LEDs to match
- silkscreen on AV96
-Message-ID: <20200331040935.GB14274@Mani-XPS-13-9360>
+Subject: Re: [PATCH V2 01/22] ARM: dts: stm32: Add alternate pinmux for
+ ethernet RGMII
+Message-ID: <20200331041313.GC14274@Mani-XPS-13-9360>
 References: <20200331005701.283998-1-marex@denx.de>
- <20200331005701.283998-23-marex@denx.de>
+ <20200331005701.283998-2-marex@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331005701.283998-23-marex@denx.de>
+In-Reply-To: <20200331005701.283998-2-marex@denx.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_210942_574371_A800D582 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20200330_211321_406146_F80B3A53 
+X-CRM114-Status: GOOD (  15.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,18 +109,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 02:57:01AM +0200, Marek Vasut wrote:
-> The LED labels do not match the silkscreen on the board, fix it.
+On Tue, Mar 31, 2020 at 02:56:40AM +0200, Marek Vasut wrote:
+> Add another mux option for DWMAC RGMII, this is used on AV96 board.
 > 
-
-Yikes, sorry for missing this earlier.
+> Signed-off-by: Marek Vasut <marex@denx.de>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
 Thanks,
 Mani
 
-> Signed-off-by: Marek Vasut <marex@denx.de>
 > Cc: Alexandre Torgue <alexandre.torgue@st.com>
 > Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
@@ -132,38 +129,71 @@ Mani
 > ---
 > V2: No change
 > ---
->  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 51 ++++++++++++++++++++++++
+>  1 file changed, 51 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> index b6cb3b2d8c78..4291a97cc05f 100644
-> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> @@ -55,21 +55,21 @@ memory@c0000000 {
->  	led {
->  		compatible = "gpio-leds";
->  		led1 {
-> -			label = "green:user1";
-> +			label = "green:user0";
->  			gpios = <&gpioz 7 GPIO_ACTIVE_HIGH>;
->  			linux,default-trigger = "heartbeat";
->  			default-state = "off";
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index 73c07f0dfad2..4569dc16e5a1 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -196,6 +196,57 @@ pins1 {
 >  		};
+>  	};
 >  
->  		led2 {
-> -			label = "green:user2";
-> +			label = "green:user1";
->  			gpios = <&gpiof 3 GPIO_ACTIVE_HIGH>;
->  			linux,default-trigger = "mmc0";
->  			default-state = "off";
->  		};
->  
->  		led3 {
-> -			label = "green:user3";
-> +			label = "green:user2";
->  			gpios = <&gpiog 0 GPIO_ACTIVE_HIGH>;
->  			linux,default-trigger = "mmc1";
->  			default-state = "off";
+> +	ethernet0_rgmii_pins_b: rgmii-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
+> +				 <STM32_PINMUX('G', 4, AF11)>, /* ETH_RGMII_GTX_CLK */
+> +				 <STM32_PINMUX('B', 12, AF11)>, /* ETH_RGMII_TXD0 */
+> +				 <STM32_PINMUX('G', 14, AF11)>, /* ETH_RGMII_TXD1 */
+> +				 <STM32_PINMUX('C', 2, AF11)>, /* ETH_RGMII_TXD2 */
+> +				 <STM32_PINMUX('E', 2, AF11)>, /* ETH_RGMII_TXD3 */
+> +				 <STM32_PINMUX('G', 11, AF11)>, /* ETH_RGMII_TX_CTL */
+> +				 <STM32_PINMUX('C', 1, AF11)>; /* ETH_MDC */
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <2>;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('A', 2, AF11)>; /* ETH_MDIO */
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <0>;
+> +		};
+> +		pins3 {
+> +			pinmux = <STM32_PINMUX('C', 4, AF11)>, /* ETH_RGMII_RXD0 */
+> +				 <STM32_PINMUX('C', 5, AF11)>, /* ETH_RGMII_RXD1 */
+> +				 <STM32_PINMUX('H', 6, AF11)>, /* ETH_RGMII_RXD2 */
+> +				 <STM32_PINMUX('B', 1, AF11)>, /* ETH_RGMII_RXD3 */
+> +				 <STM32_PINMUX('A', 1, AF11)>, /* ETH_RGMII_RX_CLK */
+> +				 <STM32_PINMUX('A', 7, AF11)>; /* ETH_RGMII_RX_CTL */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	ethernet0_rgmii_pins_sleep_b: rgmii-sleep-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('G', 5, ANALOG)>, /* ETH_RGMII_CLK125 */
+> +				 <STM32_PINMUX('G', 4, ANALOG)>, /* ETH_RGMII_GTX_CLK */
+> +				 <STM32_PINMUX('B', 12, ANALOG)>, /* ETH_RGMII_TXD0 */
+> +				 <STM32_PINMUX('G', 14, ANALOG)>, /* ETH_RGMII_TXD1 */
+> +				 <STM32_PINMUX('C', 2, ANALOG)>, /* ETH_RGMII_TXD2 */
+> +				 <STM32_PINMUX('E', 2, ANALOG)>, /* ETH_RGMII_TXD3 */
+> +				 <STM32_PINMUX('G', 11, ANALOG)>, /* ETH_RGMII_TX_CTL */
+> +				 <STM32_PINMUX('A', 2, ANALOG)>, /* ETH_MDIO */
+> +				 <STM32_PINMUX('C', 1, ANALOG)>, /* ETH_MDC */
+> +				 <STM32_PINMUX('C', 4, ANALOG)>, /* ETH_RGMII_RXD0 */
+> +				 <STM32_PINMUX('C', 5, ANALOG)>, /* ETH_RGMII_RXD1 */
+> +				 <STM32_PINMUX('H', 6, ANALOG)>, /* ETH_RGMII_RXD2 */
+> +				 <STM32_PINMUX('B', 1, ANALOG)>, /* ETH_RGMII_RXD3 */
+> +				 <STM32_PINMUX('A', 1, ANALOG)>, /* ETH_RGMII_RX_CLK */
+> +				 <STM32_PINMUX('A', 7, ANALOG)>; /* ETH_RGMII_RX_CTL */
+> +		};
+> +	};
+> +
+>  	fmc_pins_a: fmc-0 {
+>  		pins1 {
+>  			pinmux = <STM32_PINMUX('D', 4, AF12)>, /* FMC_NOE */
 > -- 
 > 2.25.1
 > 
