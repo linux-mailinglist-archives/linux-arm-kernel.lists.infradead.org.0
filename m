@@ -2,117 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ACB3199AE0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:06:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB5FF199B5F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:24:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eFU9AHO7WHKvwxTdDBVPtb7LFlPt6Zl5ud5lgtqC7ko=; b=Ek+FvDDM8ZahkB
-	iko3KisxONNjv5SeotNpT4qsGExigxVEYbqPF0p3iv3uCYalM2E90IANXX9wfuLg+Y6mi98hOUoqK
-	UNLfdXZ8wN9tdjHvvA7evH+/PTovDQLRf5EHtoE/wOqxOFdSRzdDSUxRfuUzSDxiek7PzXprMNK0Z
-	0TA1sUPlLFpdsxemUSKc4RdsHUapuuRUEgwUwDhk7MO0RCyTMMowUBhLxbniVp4682bRtsZrHEUcN
-	oQo3WfBgbGFYCSuKLsnJqF/Sdn2fGgsAu+K7xHsHuy0jC6RUWvFEV27KAiv+tcOcMeT/Zu7d6XIWG
-	VsuIsoP7MUdayiNR5UJw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Kzcb8m8JSxU8xZ1PTB9RdM/BrLDkaJmzb1D9Caw1ebQ=; b=CZ3e+eXLhxRGxT
+	dre3LLtNjaZLiMQsaBYpsSxgaoUo9O0kV3/+xwSZmzolRaFDtXEvVSDepx5HXp9svnoMfkM4YLtqU
+	RRvyBiHvCXvVyhVDtxu68r+/K3gnyb3iI9gEacowSwg7ROz5M/pp2cB7Lxh1jxqho/IUGv776kjGg
+	MYTXxRIR6WPvPTszYM0cpoI2YWcCp9idtzAwha8oY+qGNKWTPsDuPq6OG1nZpXy12K9mvJw1w0qYb
+	BI025OYu47ZF+De2penq7yCcr9iaQbE776k5VzcsUI3+0TsZf0cpyHhEIgqYGbp9a9kA3WR0RO0Yz
+	cssd4HvICvvvXmSL01BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJOd-0008Il-FX; Tue, 31 Mar 2020 16:05:47 +0000
-Received: from mail-eopbgr80042.outbound.protection.outlook.com ([40.107.8.42]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jJJgP-0002mx-9R; Tue, 31 Mar 2020 16:24:09 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJOU-0008I4-07
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:05:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ex9SXIDjfYjWVHHqUmEXe3SZbghmn7h4jpsd3WR1StSU6dDUXZXZ5Pak3YG1f5mDYt4ztrGZuRI44UATmA+YDEYi0yUVFcYHe1KP6DzgScIS3UGLgp0wjR4HSnQyVf6sXsm3NPPgCmNM6RsW2KSfZTvTYX2gtv1LptmKnGZ+tKCXdSbQswawRw3RzDLLkPCBYLmU7w9WsFJ/hqNEXJ6kMXKSRC4NuVS3lKDrKfiq8kFJ9YjZGPohChswwAvJjXQe48bYP4Bpc37pnKbYCXdjnHqzAHFxg4jiTiL1CrsH/TMrtujb2wZh8sjzMqyJYcjE0k0wI4gGzE57rv31Y/30ow==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yD7B2H06Szm00r020+lb0A/YC73HjDQjw0pW0D8jGZU=;
- b=Wc7tMPgXU/oP14uwzYoF7RDH5e0Iu4jaHgV2D7MZnhDf4/u9VKpabRT10gvm2xeaZqAH05RF/cj9REIInBJGFHw0rECKKZDCKLZuhRpaeNVFT6NgpNdsuqF76PMshLBKvePCMCLHt99bfg90Mf6weNMSkeuBSWbnO1q9OL5ZrsJruwqfl/oU55SOpjBYVvgudQ+CqwJHlAkcM07YOHc/zdjUXmzanXhT+OXx9iobeYloeOXMOwq7ZxtzJ0xQK+wJtPwdh9yutiBK717eR05jxtGCHbeGGe6DAhJ0G3jhEQC0BCVujpKf0oOO1Xd76AvQEXOXMOlIpphJZ35kk324ZQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yD7B2H06Szm00r020+lb0A/YC73HjDQjw0pW0D8jGZU=;
- b=RCsqIan5IAOSng57+ExHChtp2BQI2vzojmvnT27iA+exiHpyUw84rTZj9TrHy3Y05eRTsnNfhDYCfN5dK60Xc/Be+XLzKrJYqoFWIYuJ7Qib/LUmWGEwQR5QUDINNFlDU5Y5kDH0u6kpYfEgS5CKsWlGJy0ozjSDjKXdkBkCfVE=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2856.20; Tue, 31 Mar 2020 13:34:42 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2856.019; Tue, 31 Mar 2020
- 13:34:42 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "jassisinghbrar@gmail.com"
- <jassisinghbrar@gmail.com>, "o.rempel@pengutronix.de"
- <o.rempel@pengutronix.de>, Leonard Crestez <leonard.crestez@nxp.com>
-Subject: RE: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel type
-Thread-Topic: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel type
-Thread-Index: AQHV/cQDu85ufqDAx06lOMhNtamjbahaF9Qw
-Date: Tue, 31 Mar 2020 13:34:41 +0000
-Message-ID: <AM0PR04MB44812577EF272CA1D457A1F788C80@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1584604193-2945-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1584604193-2945-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [180.107.26.236]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 39770401-7a45-4acb-bcc3-08d7d57844a1
-x-ms-traffictypediagnostic: AM0PR04MB4481:|AM0PR04MB4481:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB44814CFA2266BCB32121EC3C88C80@AM0PR04MB4481.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 0359162B6D
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(136003)(346002)(376002)(39860400002)(366004)(396003)(33656002)(9686003)(86362001)(55016002)(66446008)(66556008)(7696005)(76116006)(4326008)(66946007)(316002)(66476007)(64756008)(6506007)(966005)(478600001)(52536014)(8676002)(54906003)(5660300002)(186003)(44832011)(6636002)(81156014)(81166006)(8936002)(26005)(15650500001)(110136005)(71200400001)(2906002);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: J8AgW0++3BMcOmkRUeGp6G51KiZwn3sMtJZpNeTZAINRuKI+9HNO+tTU9xVupf6LrblJZIAmIKNthycgDWPjBo1x1tmvBhxFXA/26z5bSjkbzaEDoU0a/qBJijp5KcNKOsCmZKMfu5ADpmMoCQk61/SPIhkjyDmSeyDTJZa1LcoVpKfzUsCmi25zu4dNTYqnBWLUjRQCXM9xTNvi6v+oBeI+ya8TS5+42nBCLNnoNjipfcZfPzDsp9A2SMr3C/6Hpb7epVv0bifug/FBB1Vx3sne1xSvueFrfFSPMUJ9nPmlAGG8eDXqn8nHds5BcGaqRjN8x52iFBOhaWKUSSB+cPiBiCycRPloAT0Kakut7X41kly2ocILSBPWk5UYl+GT/g8hV9R1zKrQ2rspcmgP8zuhE75lCpam96tp1ZKE4Z5C86+bVhHGLaul/TMI7FyuQkjhZWM9jB3tnMTWj2DCPHEGSBpGOAXaLYNlDdBdBcZTPEOeaG6O5EY4z1jhQxUlfQOwnVZPVZ+wLpkCV1pKiA==
-x-ms-exchange-antispam-messagedata: PN4i72DwulORkmzulB8AUVdQhoN4L2p4pE2doxuiFDlpPI7sKPN+b+J5LhQ6BUgsdhdu1XcnKzNjrqca+itLR/1jP6ULL3+z2HbeVtchLE3kd+HoiaEsINZ06lBQVuiISDnaSEys7BI48BlpqV20xw==
+ id 1jJJfN-00023o-JS
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:23:07 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48s9b13PvNz1rtyc;
+ Tue, 31 Mar 2020 15:46:05 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48s9b12qp3z1r0cN;
+ Tue, 31 Mar 2020 15:46:05 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id XUAJaH3lkYL2; Tue, 31 Mar 2020 15:46:04 +0200 (CEST)
+X-Auth-Info: ZVbdu5Qzn76v1M7Q1xWo1DkSqlrVUTmBJBtwhqZErt8=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Tue, 31 Mar 2020 15:46:04 +0200 (CEST)
+Subject: Re: [PATCH V2 06/22] ARM: dts: stm32: Repair SDMMC1 operation on AV96
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+References: <20200331005701.283998-1-marex@denx.de>
+ <20200331005701.283998-7-marex@denx.de>
+ <20200331043338.GH14274@Mani-XPS-13-9360>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <4936af1c-6bdf-de5a-c86e-07e52417cdec@denx.de>
+Date: Tue, 31 Mar 2020 15:36:34 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 39770401-7a45-4acb-bcc3-08d7d57844a1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 31 Mar 2020 13:34:41.9307 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 5O/h3SlPHCTvRVJmch8M5WJ828dm9mRLsCnfe34UMaUfZ9MmwFyj7RrxNvqJ7oCndGzL7msBZK6upQc0lCdrjw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4481
+In-Reply-To: <20200331043338.GH14274@Mani-XPS-13-9360>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_090538_158699_ECA5876A 
-X-CRM114-Status: GOOD (  17.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_092305_965685_D2CE9B0D 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.42 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.10 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.10 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,98 +79,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jassi,
+On 3/31/20 6:33 AM, Manivannan Sadhasivam wrote:
+> On Tue, Mar 31, 2020 at 02:56:45AM +0200, Marek Vasut wrote:
+>> The SD uses different pinmux for the D123DIRline, use such a pinmux,
+>> otherwise there is a pinmux collision on the AV96. Add missing SD
+>> voltage regulator switch.
+>>
+>> Signed-off-by: Marek Vasut <marex@denx.de>
+>> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+>> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+>> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+>> Cc: Patrice Chotard <patrice.chotard@st.com>
+>> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+>> Cc: linux-stm32@st-md-mailman.stormreply.com
+>> To: linux-arm-kernel@lists.infradead.org
+>> ---
+>> V2: Disable SDR104, it seems unstable thus far
+>> ---
+>>  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 21 ++++++++++++++++++---
+>>  1 file changed, 18 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> index e58653ccb60f..04280353fdbe 100644
+>> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> @@ -77,6 +77,20 @@ led6 {
+>>  			default-state = "off";
+>>  		};
+>>  	};
+>> +
+>> +	sd_switch: regulator-sd_switch {
+>> +		compatible = "regulator-gpio";
+>> +		regulator-name = "sd_switch";
+>> +		regulator-min-microvolt = <1800000>;
+>> +		regulator-max-microvolt = <2900000>;
+>> +		regulator-type = "voltage";
+>> +		regulator-always-on;
+>> +
+>> +		gpios = <&gpioi 5 GPIO_ACTIVE_HIGH>;
+>> +		gpios-states = <0>;
+>> +		states = <1800000 0x1>,
+>> +			 <2900000 0x0>;
+>> +	};
+>>  };
+>>  
+>>  &ethernet0 {
+>> @@ -305,9 +319,9 @@ &rtc {
+>>  
+>>  &sdmmc1 {
+>>  	pinctrl-names = "default", "opendrain", "sleep";
+>> -	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
+>> -	pinctrl-1 = <&sdmmc1_b4_od_pins_a>;
+>> -	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a>;
+>> +	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
+>> +	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_b>;
+>> +	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_b>;
+>>  	cd-gpios = <&gpioi 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+> 
+> The "cd-gpios" change is not present in mainline. I think you can add it to
+> this patch as well with relevant commit description.
 
-> Subject: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel type
-
-Are you ok with the mailbox part?
-
-Thanks,
-Peng.
-
-> 
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> V7:
->  Per Leonard's comments, added check for TE/RE  Passed test from
-> Leonard's https://github.com/cdleonard/imx-scu-test
-> 
-> V6:
->  Add Oleksij's R-b tag
->  Patch 3/4, per
-> https://www.kernel.org/doc/Documentation/printk-formats.txt
->  should use %zu for printk sizeof
-> 
-> V5:
->  Move imx_mu_dcfg below imx_mu_priv
->  Add init hooks to imx_mu_dcfg
->  drop __packed __aligned
->  Add more debug msg
->  code style cleanup
-> 
-> V4:
->  Drop IMX_MU_TYPE_[GENERIC, SCU]
->  Pack MU chans init to separate function  Add separate function for SCU
-> chans init and xlate  Add santity check to msg hdr.size  Limit SCU MU chans
-> to 6, TX0/RX0/RXDB[0-3]
-> 
-> V3:
->  Rebase to Shawn's for-next
->  Include fsl,imx8-mu-scu compatible
->  Per Oleksij's comments, introduce generic tx/rx and added scu mu type
-> Check fsl,imx8-mu-scu in firmware driver for fast_ipc
-> 
-> V2:
->  Drop patch 1/3 which added fsl,scu property  Force to use scu channel type
-> when machine has node compatible "fsl,imx-scu"
->  Force imx-scu to use fast_ipc
-> 
->  I not found a generic method to make SCFW message generic enough, SCFW
-> message is not fixed length including TX and RX. And it use TR0/RR0
-> interrupt.
-> 
-> V1:
-> Sorry to bind the mailbox/firmware patch together. This is make it to
-> understand what changed to support using 1 TX and 1 RX channel for SCFW
-> message.
-> 
-> Per i.MX8QXP Reference mannual, there are several message using examples.
-> One of them is:
-> Passing short messages: Transmit register(s) can be used to pass short
-> messages from one to four words in length. For example, when a four-word
-> message is desired, only one of the registers needs to have its corresponding
-> interrupt enable bit set at the receiver side.
-> 
-> This patchset is to using this for SCFW message to replace four TX and four RX
-> method.
-> 
-> Peng Fan (4):
->   dt-bindings: mailbox: imx-mu: add SCU MU support
->   mailbox: imx: restructure code to make easy for new MU
->   mailbox: imx: add SCU MU support
->   firmware: imx-scu: Support one TX and one RX
-> 
->  .../devicetree/bindings/mailbox/fsl,mu.txt         |   2 +
->  drivers/firmware/imx/imx-scu.c                     |  54 +++-
->  drivers/mailbox/imx-mailbox.c                      | 288
-> +++++++++++++++++----
->  3 files changed, 281 insertions(+), 63 deletions(-)
-> 
-> 
-> base-commit: e506dba69a5e9aaff20fd73a108639f84e2c39d9
-> --
-> 2.16.4
+What change to cd-gpios ? This patch doesn't change cd-gpios.
 
 _______________________________________________
 linux-arm-kernel mailing list
