@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D12D2199A74
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 17:56:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56DC7199ADE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xaPq468ikyey/N22cvN6FcRovTqHT4rqyAlmiVR4qCY=; b=D5MrAD+Nzm2+j9
-	G7JO0mOIK7RzBLNV+HiWJl2kfpdbZ3PaW13F/gMEt1qUfcjD+6COvQEUA0JcX+hTsKsjJIKJxA2mp
-	uHH/H++HVhM606xpkYqWG64fH7uQ0gOoEfzB5RlWnEFtUnt0EpNG/n0+EmMkJocb+JJ2L+Wcgczuh
-	luFVfDlSSBlQ86tThWrVr56XyvMt7FLuLoKtHHu/MCROiIyYRMDemqjetEZNwTfu5q/tN2b78gBm5
-	/BG6S4ribOoIuWWm0fPMZq+YbXESN4aw3/Hxt0tjCS0TGBTUqmJrqsrS/1McLQK1VVxyY9iu09mDO
-	LIAOgROpsieHf3Cxfl6g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BtPVq8Uvyn8DiB68DaDLAdqYjoY21/yONFy5CMtQmuk=; b=XwS
+	aOmS0FIatMS0F+XGnFZMlEdiGLvBzgRi/nER+mwHSURXGSpGynziCQ25MZggxaoRGxNaI1s2rdSS6
+	MkPBUaP/+9ooeEh0G228CeVfBNIJlYcGgPvx9A6wyH+SgcmizIUsHUdZBVKm4Vjxr7usrkMz12FZt
+	V0VJ32OkYDLQV/IQxgOIX0PR9eCpb2mJBxaC1HiJs/gSz092Jl3E5X45/zVmj0WArj5S8+9xWk7Q9
+	20a1J04DxbRgdOmtChkPXq2sm0P936kVXXK1BMsfseDIPQIYyZsDPV8ydnJXZvR/4/N3iaNhJimIZ
+	saDwdyxkFgtY+z/oPvnaTFKGAecMHHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJFn-0000NG-1I; Tue, 31 Mar 2020 15:56:39 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jJJOA-0005ZX-2h; Tue, 31 Mar 2020 16:05:18 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJDb-0004m6-8i
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 15:54:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Xbao8KSLFnhUJRMeq0hTDteAoWcuNhiygQmHVbCKMDM=; b=YexFoZsyYEuDb1fxJg7z7vUf7
- qVgp8yDkyCqRvbgqnPpz4d/Dk6VhnmO40ISGRlv4/aVpY2rjMCG98iBp/dO7f6bjhzwvGrUUKJasj
- TTg8HXBtITNqM9oEq+GskI5imueF/JW4fAcQZzS5Hq9Z1wZ7GkvwP7jSYba1Z7kAZ/vFrpwehrkan
- lCRLyoJKkft8YP9hQqoO3I7NtNbOkp3EOhIbkiT+5TaeqvNIRasry/0JaaWrLWsoyzbAfUDx/W7pT
- wdKnGcS1rBBGf4LhwAcSRx6NaC/4hlLdSL6ecDyKMbyZOZsHNeknedEHJ2IWynIDJbVqv5L5COMNW
- edNv35deA==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:60426)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jJJD6-0000g4-7a; Tue, 31 Mar 2020 16:53:52 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jJJD4-0008Ex-9p; Tue, 31 Mar 2020 16:53:50 +0100
-Date: Tue, 31 Mar 2020 16:53:50 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: David Jander <david@protonic.nl>
-Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
-Message-ID: <20200331155350.GP25745@shell.armlinux.org.uk>
-References: <20200329110457.4113-1-o.rempel@pengutronix.de>
- <20200329150854.GA31812@lunn.ch>
- <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
- <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
- <20200330174114.GG25745@shell.armlinux.org.uk>
- <20200331104459.6857474e@erd988>
- <20200331093648.GL25745@shell.armlinux.org.uk>
- <20200331174103.6c8f5a43@erd988>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200331174103.6c8f5a43@erd988>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jJJNp-0005YG-Ef; Tue, 31 Mar 2020 16:04:59 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r16so3109608wmg.5;
+ Tue, 31 Mar 2020 09:04:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=4VKI9AuPhMvUgqTj7z2yAveanc53o7XusIgD/wUX0qM=;
+ b=q0agAYmm/VmDdDcewOukFSDP029eE+dPAyRe1UJebG980+mCCXFDfpDZYsJGXffTI9
+ by1tNoD5G+i/Ffh4pvhmWX3TLLoAMEzIL0+NsQ/Q3ngv8BdhSX5kl5sX/ldWDTuEITlf
+ 4CfG/ggwB2NZs56lKww74VrGuLbMtYMZR5wmzOaipMmiozrTIBjFgLAaueoy7F4JYT9l
+ pR+UOHuggwL6Zq3a6PHNYd6Ty+JXTKndlizKODM4acD6ZV1+Agcxn1jadBN0WycrsLqH
+ NtNIirApMeePMh0wQNM4RLnxVBzfURMBSPQ25wes250TigM7rSn830EOpLFZKsTr+BHQ
+ gDWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4VKI9AuPhMvUgqTj7z2yAveanc53o7XusIgD/wUX0qM=;
+ b=PdcD8SpWLjdbc3pC7VbTCf5lT2VfBFrPXylQKy+zjFSmYkJwZTpFbeQ5hE1/fmOoqF
+ 4DmlUHQ2vJm4Eqtk7C8uB6pXMkyvCHnNjomseJ+yIbsjMFQQy6skzL8ZSYOcdx4I47fj
+ T5TIj5MpJ0V2r6u8AzHpq3xMbJ4rIiPnBPz6TGvKk82s5+LIDWxD+4hnOtiVBsXKkhrO
+ uSsNWzN+9whYp1S1MmtagvOuDhCwPKgSJXVz8IMo36M4XBBPoKssCTXlRW08a+RdBIMo
+ bqkBOIpksRpLVeW79az7Zg/MN73p+4zGeVNYuehavYAnlako+rNhzITATP0Q2lrhsTKo
+ /34g==
+X-Gm-Message-State: ANhLgQ0XpWyNQyzyOD0LDwWPuCXUNHSuj/L+ZDDpug2AxUDCAdTjUGcC
+ YQf1hNh22J2VlVP7SGsX85o=
+X-Google-Smtp-Source: ADFU+vuRA91pE+w4+dgBDghI6jnabCDYF3dXfWt06pUcEiVsl2Z3RjgW5I01mlHajMa+eP/KDc8jMw==
+X-Received: by 2002:a1c:4987:: with SMTP id w129mr4406106wma.168.1585670696219; 
+ Tue, 31 Mar 2020 09:04:56 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id p17sm1651433wmb.30.2020.03.31.09.04.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 31 Mar 2020 09:04:55 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v1] dt-bindings: display: convert rockchip rk3066 hdmi
+ bindings to yaml
+Date: Tue, 31 Mar 2020 18:04:48 +0200
+Message-Id: <20200331160448.15331-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_085423_621237_966D4571 
-X-CRM114-Status: GOOD (  38.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_090457_490261_F0194FD0 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,143 +94,256 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- linux-imx@nxp.com, kernel@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 05:41:03PM +0200, David Jander wrote:
-> 
-> Dear Russell,
-> 
-> On Tue, 31 Mar 2020 10:36:49 +0100
-> Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-> 
-> > On Tue, Mar 31, 2020 at 10:44:59AM +0200, David Jander wrote:
-> > > On Mon, 30 Mar 2020 18:41:14 +0100
-> > > Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-> > >   
-> > > > On Mon, Mar 30, 2020 at 10:33:03AM -0700, Florian Fainelli wrote:  
-> > > > > 
-> > > > > 
-> > > > > On 3/29/2020 10:26 PM, Oleksij Rempel wrote:    
-> > > > > > Hi Andrew,
-> > > > > > 
-> > > > > > On Sun, Mar 29, 2020 at 05:08:54PM +0200, Andrew Lunn wrote:    
-> > > > > >> On Sun, Mar 29, 2020 at 01:04:57PM +0200, Oleksij Rempel wrote:
-> > > > > >>
-> > > > > >> Hi Oleksij
-> > > > > >>    
-> > > > > >>> +config DEPRECATED_PHY_FIXUPS
-> > > > > >>> +	bool "Enable deprecated PHY fixups"
-> > > > > >>> +	default y
-> > > > > >>> +	---help---
-> > > > > >>> +	  In the early days it was common practice to configure PHYs by adding a
-> > > > > >>> +	  phy_register_fixup*() in the machine code. This practice turned out to
-> > > > > >>> +	  be potentially dangerous, because:
-> > > > > >>> +	  - it affects all PHYs in the system
-> > > > > >>> +	  - these register changes are usually not preserved during PHY reset
-> > > > > >>> +	    or suspend/resume cycle.
-> > > > > >>> +	  - it complicates debugging, since these configuration changes were not
-> > > > > >>> +	    done by the actual PHY driver.
-> > > > > >>> +	  This option allows to disable all fixups which are identified as
-> > > > > >>> +	  potentially harmful and give the developers a chance to implement the
-> > > > > >>> +	  proper configuration via the device tree (e.g.: phy-mode) and/or the
-> > > > > >>> +	  related PHY drivers.    
-> > > > > >>
-> > > > > >> This appears to be an IMX only problem. Everybody else seems to of got
-> > > > > >> this right. There is no need to bother everybody with this new
-> > > > > >> option. Please put this in arch/arm/mach-mxs/Kconfig and have IMX in
-> > > > > >> the name.    
-> > > > > > 
-> > > > > > Actually, all fixups seems to do wring thing:
-> > > > > > arch/arm/mach-davinci/board-dm644x-evm.c:915:		phy_register_fixup_for_uid(LXT971_PHY_ID, LXT971_PHY_MASK,
-> > > > > > 
-> > > > > > Increased MII drive strength. Should be probably enabled by the PHY
-> > > > > > driver.
-> > > > > > 
-> > > > > > arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
-> > > > > > arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
-> > > > > > arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
-> > > > > > arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,    
-> > > > 
-> > > > As far as I'm concerned, the AR8035 fixup is there with good reason.
-> > > > It's not just "random" but is required to make the AR8035 usable with
-> > > > the iMX6 SoCs.  Not because of a board level thing, but because it's
-> > > > required for the AR8035 to be usable with an iMX6 SoC.  
-> > > 
-> > > I have checked with the datasheet of the AR8035, and AFAICS, what the code
-> > > does is this:
-> > > 
-> > >  - Disable the SmartEEE feature of the phy. The comment in the code implies
-> > >    that for some reason it doesn't work, but the reason itself is not given.
-> > >    Anyway, disabling SmartEEE should IMHO opinion be controlled by a DT
-> > >    setting. There is no reason to believe this problem is specific to the
-> > >    i.MX6. Besides, it is a feature of the phy, so it seems logical to expose
-> > >    that via the DT. Once that is done, it has no place here.
-> > > 
-> > >  - Set the external clock output to 125MHz. This is needed because the i.MX6
-> > >    needs a 125MHz reference clock input. But it is not a requirement to use
-> > >    this output. It is perfectly fine and possible to design a board that uses
-> > >    an external oscillator for this. It is also possible that an i.MX6 design
-> > >    has such a phy connected to a MAC behind a switch or some other interface.
-> > >    Independent of i.MX6 this setting can also be necessary for other hardware
-> > >    designs, based on different SoC's. In summary, this is a feature of the
-> > >    specific hardware design at hand, and has nothing to do with the i.MX6
-> > >    specifically. This should definitely be exposed through the DT and not be
-> > >    here.
-> > > 
-> > >  - Enable TXC delay. To clarify, the RGMII specification version 1 specified
-> > >    that the RXC and TXC traces should be routed long enough to introduce a
-> > >    certain delay to the clock signal, or the delay should be introduced via
-> > >    other means. In a later version of the spec, a provision was given for MAC
-> > >    or PHY devices to generate this delay internally. The i.MX6 MAC interface
-> > >    is unable to generate the required delay internally, so it has to be taken
-> > >    care of either by the board layout, or by the PHY device. This is the
-> > >    crucial point: The amount of delay set by the PHY delay register depends on
-> > >    the board layout. It should NEVER be hard-coded in SoC setup code. The
-> > >    correct way is to specify it in the DT. Needless to say that this too,
-> > >    isn't i.MX6-specific.
-> > >   
-> > > > So, having it registered by the iMX6 SoC code is entirely logical and
-> > > > correct.  
-> > > 
-> > > I'm afraid I don't agree. See above. This code really should never have been
-> > > here. It is not i.MX6-specific as I pointed out above, nor is it necessarily
-> > > applicable to all i.MX6 boards that use those phy devices.  
-> > 
-> > Then we will have to agree to disagree, sorry.
-> 
-> Please forgive me if I am appearing a bit stubborn.
-> If it is not too much to ask, I would really like to know where my reasoning
-> is wrong?
-> Maybe you can explain to me how to solve the following real-life conflict that
-> this introduces:
-> 
-> Suppose we have a board with an i.MX6Q and a KSZ9031 connected to it. Suppose
-> I now take a USB stick with a LAN7800 ethernet chip and a KSZ9031 PHY. These
-> USB sticks do exist, and it does not seem unthinkable to me that one would
-> connect them to such an i.MX6 system in order to get a second LAN port.
+Current dts files with 'hdmi' nodes for rk3066 are manually verified.
+In order to automate this process rockchip,rk3066-hdmi.txt
+has to be converted to yaml.
 
-Thanks.  I've already covered how this can be delt with in some code
-I've posted in this thread.  Therefore, I have nothing further to add
-to this point, apart from pointing out that I've provided a solution
-so as far as I'm concerned, it's entirely solvable, and warrants no
-further argument.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../display/rockchip/rockchip,rk3066-hdmi.txt      |  72 -----------
+ .../display/rockchip/rockchip,rk3066-hdmi.yaml     | 141 +++++++++++++++++++++
+ 2 files changed, 141 insertions(+), 72 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
 
-Maybe a discussion about solutions would be appropriate, but merely
-re-raising the same point while ignoring proposed solutions is not
-a productive way forward.
-
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
+deleted file mode 100644
+index d1ad31bca..000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
++++ /dev/null
+@@ -1,72 +0,0 @@
+-Rockchip specific extensions for rk3066 HDMI
+-============================================
+-
+-Required properties:
+-- compatible:
+-	"rockchip,rk3066-hdmi";
+-- reg:
+-	Physical base address and length of the controller's registers.
+-- clocks, clock-names:
+-	Phandle to HDMI controller clock, name should be "hclk".
+-- interrupts:
+-	HDMI interrupt number.
+-- power-domains:
+-	Phandle to the RK3066_PD_VIO power domain.
+-- rockchip,grf:
+-	This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
+-- ports:
+-	Contains one port node with two endpoints, numbered 0 and 1,
+-	connected respectively to vop0 and vop1.
+-	Contains one port node with one endpoint
+-	connected to a hdmi-connector node.
+-- pinctrl-0, pinctrl-name:
+-	Switch the iomux for the HPD/I2C pins to HDMI function.
+-
+-Example:
+-	hdmi: hdmi@10116000 {
+-		compatible = "rockchip,rk3066-hdmi";
+-		reg = <0x10116000 0x2000>;
+-		interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru HCLK_HDMI>;
+-		clock-names = "hclk";
+-		power-domains = <&power RK3066_PD_VIO>;
+-		rockchip,grf = <&grf>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
+-
+-		ports {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			hdmi_in: port@0 {
+-				reg = <0>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-				hdmi_in_vop0: endpoint@0 {
+-					reg = <0>;
+-					remote-endpoint = <&vop0_out_hdmi>;
+-				};
+-				hdmi_in_vop1: endpoint@1 {
+-					reg = <1>;
+-					remote-endpoint = <&vop1_out_hdmi>;
+-				};
+-			};
+-			hdmi_out: port@1 {
+-				reg = <1>;
+-				hdmi_out_con: endpoint {
+-					remote-endpoint = <&hdmi_con_in>;
+-				};
+-			};
+-		};
+-	};
+-
+-&pinctrl {
+-		hdmi {
+-			hdmi_hpd: hdmi-hpd {
+-				rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
+-			};
+-			hdmii2c_xfer: hdmii2c-xfer {
+-				rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
+-						<0 RK_PA2 1 &pcfg_pull_none>;
+-			};
+-		};
+-};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
+new file mode 100644
+index 000000000..8f4acf707
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
+@@ -0,0 +1,141 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3066-hdmi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip rk3066 HDMI controller
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com>
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3066-hdmi
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: hclk
++
++  pinctrl-0:
++    maxItems: 2
++
++  pinctrl-names:
++    const: default
++    description:
++      Switch the iomux for the HPD/I2C pins to HDMI function.
++
++  power-domains:
++    maxItems: 1
++
++  rockchip,grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
++
++  ports:
++    type: object
++
++    properties:
++      "#address-cells":
++        const: 1
++
++      "#size-cells":
++        const: 0
++
++      port@0:
++        type: object
++        description:
++          Port node with two endpoints, numbered 0 and 1,
++          connected respectively to vop0 and vop1.
++
++      port@1:
++        type: object
++        description:
++          Port node with one endpoint connected to a hdmi-connector node.
++
++    required:
++      - "#address-cells"
++      - "#size-cells"
++      - port@0
++      - port@1
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - pinctrl-0
++  - pinctrl-names
++  - power-domains
++  - rockchip,grf
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3066a-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    #include <dt-bindings/pinctrl/rockchip.h>
++    #include <dt-bindings/power/rk3066-power.h>
++    hdmi: hdmi@10116000 {
++      compatible = "rockchip,rk3066-hdmi";
++      reg = <0x10116000 0x2000>;
++      interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru HCLK_HDMI>;
++      clock-names = "hclk";
++      pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
++      pinctrl-names = "default";
++      power-domains = <&power RK3066_PD_VIO>;
++      rockchip,grf = <&grf>;
++
++      ports {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        hdmi_in: port@0 {
++          reg = <0>;
++          #address-cells = <1>;
++          #size-cells = <0>;
++          hdmi_in_vop0: endpoint@0 {
++            reg = <0>;
++            remote-endpoint = <&vop0_out_hdmi>;
++          };
++          hdmi_in_vop1: endpoint@1 {
++            reg = <1>;
++            remote-endpoint = <&vop1_out_hdmi>;
++          };
++        };
++        hdmi_out: port@1 {
++          reg = <1>;
++          hdmi_out_con: endpoint {
++            remote-endpoint = <&hdmi_con_in>;
++          };
++        };
++      };
++    };
++
++    pinctrl {
++      hdmi {
++        hdmi_hpd: hdmi-hpd {
++          rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
++        };
++        hdmii2c_xfer: hdmii2c-xfer {
++          rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
++                          <0 RK_PA2 1 &pcfg_pull_none>;
++        };
++      };
++    };
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
