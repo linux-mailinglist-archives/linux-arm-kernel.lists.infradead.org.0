@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E66B199E37
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:39:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E9D4199E3B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:40:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OyljqWOpdex6nCb6GltSbVka8gWY61Ue/lVn5aTIIl4=; b=VEq0FLZPM/Msq1
-	8JI8rmSSeLTKdANcbF0nHxTftA1kZivdmY4+ygQADQurml8CaLopRvCKqX5JYGj+JNLBtwbXSvSKr
-	DnrrDzzQu02UjQknWH0FmpGfNX++EYYKw5z1ouHm+rQ8PHRJGjZhAw/8Pulvbj5p5GEiZsz3YoUCn
-	f2GUa+sqyYPEwhocOYPuTrYIXE9R6ZUgS5qgbq099xytel7HPEhNNR6F3lMNPs1U7Ll3XNtYxnkYY
-	7XF1yfr6FChA+UO0fDXyaBQbLtrCwcYPi5yiRzegrEAr2xOFoYRov+Qk518mfrsrLgMFQ0SSKu8MW
-	yUM0b4QydEbWmE1yqbDQ==;
+	List-Owner; bh=LJiPYOH7ZO2+1tTUY3SBbOe2/UBtkXQUyDMffe71Fug=; b=cNTIgi1lY27auf
+	xKE9gdatBHAFhja86bN3krKYqF09YoA5O1flQcnIS08JXBiXuIJZynlX38ayAjnVY2Pz5fuogQS8w
+	M+Y7zb7oEG3gOoJOcDP9D0qcUM1ZBIXsZun0LiqfbmrSECRSKYA0dnqZAQk4VTWqUBuodaRz5aDn0
+	cI1zxfJcZBDRkkpnkKvYNfFQ8Kg5tjCXuN/3FBuODc+UHh9MAHSlMdECd2e3FOp59sUXkMNj3Sf8u
+	z440c1UTpi0EfETwtJGnGF62rYFh3g9dcKQPjmNt0uFs4yEVgkIIpBVyPNADLKsbJWPXTi/i12FUs
+	LEO+hNZHaCTUocFkkpCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJLnU-000846-T8; Tue, 31 Mar 2020 18:39:36 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jJLoW-0002SL-T3; Tue, 31 Mar 2020 18:40:40 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJLms-0007dF-5Q
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 18:38:59 +0000
-Received: by mail-lf1-x143.google.com with SMTP id u15so9106050lfi.3
+ id 1jJLoJ-0002Rm-H6
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 18:40:29 +0000
+Received: by mail-pf1-x444.google.com with SMTP id u65so515380pfb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 11:38:53 -0700 (PDT)
+ Tue, 31 Mar 2020 11:40:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=KW3Lbde0NrLlMFOPBVL9VFr/xqlRRv5C9s8T2uV/EC8=;
- b=YAzpmToCHjPKwhVBcWenpASCnFKvzdesYgGqqYMRCP6llJmlm7Y0lj5BXG7cxcVRIl
- 1fQhsBHrIpdVSutqQJVbpCEti0sA06lsT2dwQTcMRT/nIwMMC4O94hZhauz+WI9GJO6p
- 12WAtAAApshg2SASKYHsA3S/db71nblcaq3R52IYHCxiGj7rIDzrt1M+tKgLtq7iTSFU
- aODeaHftNj89LL0xeI0W+Hei2+iJIAT2joCgO2P38SQDfWP6+Ktk5uEgbg+CJVvx4E49
- ZrGqhnUVONAeEWgjWrVaZ3BhXiqrh+R/IFaUyAlqH2Zjkgh2qY9Z0AkIAL6AblS6MrhU
- Y3sQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=BiFlrx2jci6UF/44wjMJRVvmGi3zYDtbTuZw76ofS9M=;
+ b=vTD9J09LOf7YaKpipJJDrND2YBBqrJCrokT+YirTJiDmBCrXSEte4ecos/ucAha3yU
+ Gg8STR6sCIRMljfMemjURNJ7wDHYDK6srFfQMLyVAoe7cH2R5XV25criDj6PpGB+DQDP
+ gTFjnucSamy6DZk8q/6MJ/WNjs5N1oSqTdng6KM9E+GKLjrcb27i0CddZhEDygJVLS6H
+ 5LuChaiCe53Ho9X/DZtDglzHhPdz0aFauosokOuLsa941Xk659PoHyaMmNLUk7NRpzvy
+ ZQ23pmTUl9qKF5NprxcAYwfyhaxDpAVjba1eucGXDIxg1HVnVXqa3uZ4moml+KHZ91iC
+ ta8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=KW3Lbde0NrLlMFOPBVL9VFr/xqlRRv5C9s8T2uV/EC8=;
- b=XmQJe2FypQH0PsbWspXLi55YqZp9N0rvsC/sCmOsxu4OfT4abpWtALGuV61izRNH//
- Tgr0O4dI1GdmWIhEd4nSeNJj8uszLr4UqZo4rNzpX5IRUCUwHyxtSn3Dus5ZpUY+62kg
- pj45enGQPTXtV7NNbVQGM3cO+hmWEbv0JqIlez6hknVUDfAWxcU/1c5tni4rWAadBxBD
- iUnuO19T06VFmW83ng3frqPcINITGi05Wf2rWh9jsKNvPOW6sSbPX2jjXV2y0isbgziS
- bRG3sxzmkbi+WVuXk+d7Lrg5e4JzdihwiN63S3TTi8Y2N6nRcImOnBO7IRvQMRf+P+e/
- z/cQ==
-X-Gm-Message-State: AGi0PuY5kT/CvNqFVw0wyF1RW/g0vxDeuCAv/sgaKG5Lmq14N40lLC2K
- Gf3dWCQEWbpBtf6Rj9/w1BYuhg==
-X-Google-Smtp-Source: APiQypJ8E6I5iZxeoPH0TWIB8ALP7NCLvCUGTgJRpQtCJG/xvf6AdHVA3ceds7R25cl2FPBp6aBIHA==
-X-Received: by 2002:a05:6512:3091:: with SMTP id
- z17mr12711035lfd.42.1585679932325; 
- Tue, 31 Mar 2020 11:38:52 -0700 (PDT)
-Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
- [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id b28sm10331849ljp.90.2020.03.31.11.38.50
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=BiFlrx2jci6UF/44wjMJRVvmGi3zYDtbTuZw76ofS9M=;
+ b=Z6JGA9ZmvCsUO9/FQHfVuDkYMztQ8hARazFdKNKRY4QJMnBomeYv/j3fhtJ/0A0w6i
+ Z/CV4jDH8QB42c9lcIaTHJ1P1q9KoY4jcWfbGUpgdUr6ZoW4mDkqNvjKeebgoAihqU/G
+ fobK8wVh60qkGPUH+S+d8w3pfIIWf/PKew5+MENhysb6h+FuIateUnUaoo2QX37YrE8x
+ Y0k3xCdvK0hrCbTGyHGJY5isqIWvmWTJs6qOml0k+cAHfBo+C4xk3CwtbMIPqES+wtb1
+ MF5eL7RVZ6uyX6j6h3pNjIW/3yEzn37urElbMiPP/f85CNu7xvK8edXpWJGmj8qlQqQl
+ V6uA==
+X-Gm-Message-State: AGi0PuZFt36Xavt7SYt+CEnTPjAHS56nIvCFKg3yUomlGstrRK/LFXxd
+ SHG7inCaBHNW/ftZZosAFexfOCQYhQI=
+X-Google-Smtp-Source: APiQypKUNpAzOq4pKgWQBvZIXbKQl122MMmvgDMFQ7moe2HCfS52TO3xMq7di1tLyj/TuRnpFvvq6A==
+X-Received: by 2002:a62:ee15:: with SMTP id e21mr6219077pfi.90.1585680026497; 
+ Tue, 31 Mar 2020 11:40:26 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id g7sm5951509pfo.85.2020.03.31.11.40.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 11:38:51 -0700 (PDT)
-From: Ulf Hansson <ulf.hansson@linaro.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J . Wysocki" <rafael@kernel.org>, linux-kernel@vger.kernel.org
-Subject: [PATCH v2 2/2] amba: Initialize dma_parms for amba devices
-Date: Tue, 31 Mar 2020 20:38:44 +0200
-Message-Id: <20200331183844.30488-3-ulf.hansson@linaro.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200331183844.30488-1-ulf.hansson@linaro.org>
-References: <20200331183844.30488-1-ulf.hansson@linaro.org>
+ Tue, 31 Mar 2020 11:40:25 -0700 (PDT)
+Date: Tue, 31 Mar 2020 11:40:23 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: pillair@codeaurora.org
+Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Message-ID: <20200331184023.GB267644@minitux>
+References: <1585219723-28323-1-git-send-email-pillair@codeaurora.org>
+ <20200327230025.GJ5063@builder>
+ <000101d604f8$afc48220$0f4d8660$@codeaurora.org>
+ <20200328183055.GA663905@yoga>
+ <000301d605ba$3d034a10$b709de30$@codeaurora.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <000301d605ba$3d034a10$b709de30$@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_113858_218280_64BF2019 
-X-CRM114-Status: GOOD (  16.51  )
+X-CRM114-CacheID: sfid-20200331_114027_578297_363B6AC7 
+X-CRM114-Status: GOOD (  26.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,74 +102,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Haibo Chen <haibo.chen@nxp.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-kernel@lists.infradead.org, dmaengine@vger.kernel.org,
- stable@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>, Ludovic Barre <ludovic.barre@st.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's currently the amba driver's responsibility to initialize the pointer,
-dma_parms, for its corresponding struct device. The benefit with this
-approach allows us to avoid the initialization and to not waste memory for
-the struct device_dma_parameters, as this can be decided on a case by case
-basis.
+On Sun 29 Mar 04:07 PDT 2020, pillair@codeaurora.org wrote:
 
-However, it has turned out that this approach is not very practical. Not
-only does it lead to open coding, but also to real errors. In principle
-callers of dma_set_max_seg_size() doesn't check the error code, but just
-assumes it succeeds.
+> Hi Bjorn,
+> 
+> > -----Original Message-----
+> > From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > Sent: Sunday, March 29, 2020 12:01 AM
+> > To: pillair@codeaurora.org
+> > Cc: devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> linux-
+> > kernel@vger.kernel.org; linux-arm-msm@vger.kernel.org
+> > Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> > module device node
+> > 
+> > On Sat 28 Mar 05:01 PDT 2020, pillair@codeaurora.org wrote:
+> > 
+> > > Hi Bjorn,
+> > >  Comments inline.
+> > >
+> > >
+> > > > -----Original Message-----
+> > > > From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > > > Sent: Saturday, March 28, 2020 4:30 AM
+> > > > To: Rakesh Pillai <pillair@codeaurora.org>
+> > > > Cc: devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> > > linux-
+> > > > kernel@vger.kernel.org; linux-arm-msm@vger.kernel.org
+> > > > Subject: Re: [PATCH v7] arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+> > > > module device node
+> > > >
+> > > > On Thu 26 Mar 03:48 PDT 2020, Rakesh Pillai wrote:
+> > > >
+> > > > > Add device node for the ath10k SNOC platform driver probe
+> > > > > and add resources required for WCN3990 on sc7180 soc.
+> > > > >
+> > > > > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+> > > > > ---
+> > > > >
+> > > > > Depends on https://patchwork.kernel.org/patch/11455345/
+> > > > > The above patch adds the dt-bindings for wifi-firmware
+> > > > > subnode
+> > > > > ---
+> > > > >  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  8 ++++++++
+> > > > >  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27
+> > > > +++++++++++++++++++++++++++
+> > > > >  2 files changed, 35 insertions(+)
+> > > > >
+> > > > > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > > b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > > > index 043c9b9..a6168a4 100644
+> > > > > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > > > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > > > > @@ -327,6 +327,14 @@
+> > > > >  	};
+> > > > >  };
+> > > > >
+> > > > > +&wifi {
+> > > > > +	status = "okay";
+> > > > > +	qcom,msa-fixed-perm;
+> > > > > +	wifi-firmware {
+> > > > > +		iommus = <&apps_smmu 0xc2 0x1>;
+> > > >
+> > > > How is sc7180 different from sdm845, where the iommus property goes
+> > > > directly in the &wifi node?
+> > >
+> > > Sc7180 IDP is a target without TrustZone support and also with S2 IOMMU
+> > > enabled.
+> > > Since in Trustzone based targets, the iommu SID configuration was done
+> by
+> > > TZ, there was nothing required to be done by driver.
+> > > But in non-TZ based targets, the IOMMU mappings need to be done by the
+> > > driver.
+> > > Since this is the mapping of the firmware memory and to keep it
+> different
+> > > from the driver memory access, a different device has been created for
+> > > firmware and these SIDs are configured.
+> > >
+> > 
+> > I see, I missed the fact that 0xc0:1 is used in the &wifi node itself.
+> > 
+> > So to confirm, we have streams 0xc0 and 0xc1 for data pipes and 0xc2 and
+> > 0xc3 for some form of firmware access? And in the normal Qualcomm design
+> > implementation the 0c2/0xc3 stream mapping is setup by TZ, and hidden
+> > from Linux using the SMMU virtualisation?
+> > 
+> > 
+> > Would have been nice to have some better mechanism for describing
+> > multi-connected hardware block, than to sprinkle dummy nodes all over
+> > the DT...
+> 
+> Yes, this is the firmware memory. This method is followed in the venus video
+> driver
+> https://patchwork.kernel.org/patch/11315765/
+> 
+> Do you suggest following some other mechanism ?
+> 
 
-For these reasons, let's do the initialization from the common amba bus at
-the device registration point. This also follows the way the PCI devices
-are being managed, see pci_device_add().
+After considering this some more, and having a quick chat with Arnd
+yesterday, I don't have any other suggestions.
 
-Suggested-by: Christoph Hellwig <hch@lst.de>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
----
+So I will pick up your v8.
 
-Changes in v2:
-	- Move initialization to amba_device_initialize() to be more consistent
-	with how we manage platform devices.
-
----
- drivers/amba/bus.c       | 1 +
- include/linux/amba/bus.h | 1 +
- 2 files changed, 2 insertions(+)
-
-diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
-index fe1523664816..8558b629880b 100644
---- a/drivers/amba/bus.c
-+++ b/drivers/amba/bus.c
-@@ -645,6 +645,7 @@ static void amba_device_initialize(struct amba_device *dev, const char *name)
- 	dev->dev.release = amba_device_release;
- 	dev->dev.bus = &amba_bustype;
- 	dev->dev.dma_mask = &dev->dev.coherent_dma_mask;
-+	dev->dev.dma_parms = &dev->dma_parms;
- 	dev->res.name = dev_name(&dev->dev);
- }
- 
-diff --git a/include/linux/amba/bus.h b/include/linux/amba/bus.h
-index 26f0ecf401ea..0bbfd647f5c6 100644
---- a/include/linux/amba/bus.h
-+++ b/include/linux/amba/bus.h
-@@ -65,6 +65,7 @@ struct amba_device {
- 	struct device		dev;
- 	struct resource		res;
- 	struct clk		*pclk;
-+	struct device_dma_parameters dma_parms;
- 	unsigned int		periphid;
- 	unsigned int		cid;
- 	struct amba_cs_uci_id	uci;
--- 
-2.20.1
-
+Thanks,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
