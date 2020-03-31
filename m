@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF6CC198B25
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:22:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1B9E198B52
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 06:29:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8NuvEJp6B64cKgVvyz/T1ul7eDyGdFUIhY9Yi0CrRDg=; b=axAG3dKMwvRXpK
-	5iWtz2SoRibTFamwWFgw4Na6euO0qtBb4xvYW4jdCxvi7MExr4TZ8bPrxvVVkKRsQ3lgVSHlVL5mB
-	f3nFRG1BmjrgxNcFflHbJv+VIPma3J2ybonyntERMZf4MBq99ayCQjQeJdYtcdhaSTV7kCHzIPc1d
-	MHOEg2uggc5qb+n6PUShpqW8nMuDETUX0L39vc3SYK/Iz1sEenwqeDwD3owF94c/Yd1WDuz/ojlwU
-	2uQKwA2ddmf5Ef915IEpb7JVPsgRytWHUebIZivnHnhsLe9ewoS2tGo+Nhh/rhWsprWVuvdvXxtW1
-	IAje9E9RM63H7UVgcw3g==;
+	List-Owner; bh=jaqOBoaMYHCOoY2hG0fvWTFko4hVQDJCG0nOyoj9UMc=; b=QchfZlVU9cZozp
+	8JzDu9r9E/5kSHiwTojAEywNGYV68N4lYGbmizY+TuZiIpvk2AFMERVoBDvv63KHJ+fEkOcQ5/fC3
+	8FhapNyAKWMIJBaybwHkHCkvDIBjZ06/82g37xP4GMJl24nZmyglqNC8Z7WwPEarwfPtXlY5hDd1G
+	LrysX5OhWvY0T1Dl+041FjNg6FCBoLR19cKv8vu/jzXpVY2OtCifj9ZNonj9NSsF7nu2DZXK+6lVB
+	oJqxUjWV4O5+ScCG02IFK2cBYbwJLXjkzxsAsXh+gaJ8SebL9ClNj2TcfHf/HTMZvQ7awhWHFZ9rb
+	pWk0kSjfIeWOvRRyxQnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ8QG-0003Kd-8u; Tue, 31 Mar 2020 04:22:44 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jJ8WZ-0005cE-1Q; Tue, 31 Mar 2020 04:29:15 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ8Q5-0003K8-Nh
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 04:22:35 +0000
-Received: by mail-pg1-x543.google.com with SMTP id a32so9762877pga.4
+ id 1jJ8WM-0005b0-2R
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 04:29:03 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id z3so539728pjr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 21:22:33 -0700 (PDT)
+ Mon, 30 Mar 2020 21:29:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=K25kdwUJcBgot3xI/Fo/RXxUOUW30/HWq7xi5HWBpBg=;
- b=VG9Myz+HLLWJWNvFmKQbCzAFHo6AGuGzzU2zoN/qW/wvqUHc2AEiSlM/JX1oDzIbCK
- Yr1pkNrD6NClX6ffF2LkgYQf52zvGzxugc0X1j1CZJKXhxb4K4t6OmAcSw4Lx/wvKGPz
- BAP9/+Rmr4xaGo4JWqY6kIGYfKhKuKjHV4WpQ6Gvrdnh4Y9JO2dB4JazhElwji5z2TPX
- tmhLO59cdHIP68iRlkVYGTUmgTreNzHBSjBtE3dZrJUahtS/G9G4xTolscrMSJ5eKg/h
- 5RL+1CKY7tFq1395IRNi0OU76VBvRU5bldubCOnEi8ghYAzTcOjnX9c7xH3Ku7uDN9C7
- x+6Q==
+ bh=5+VD0VICqUDZ03RMPOJuD7+hulAAX+AM3uc7ye10aKA=;
+ b=GsimS701sIzESQKuziB6u9ixVUwAmnldR4qeoklJbr0E8sJx2719bbNv+QUdDND4oR
+ srlPN3NAC0gQaTuo5XKI08fZONnJjzT0BfXFRzXiQMUsPhKdNzm2Ih6DWWNqujxZsXnw
+ QVPvHRu50ZYRFqUFJKuzdWBCN6zTvzg2QCopKyGlx6DsyVitx/OSbWIejNWwDqqwScLt
+ pFNt/P2i+sZ1Ff0VKHaU1NntDtDoDNLfu7EBz4FbL+Qu6AlIKwmdzDG//Tv6AyzNor5i
+ IMSnju/Jmje5HIU6QcM0cG4BQNpHQH1L3XGE3RtG6/AohUEAlBLyJ3nS7nZlOIuLC/XN
+ l89A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=K25kdwUJcBgot3xI/Fo/RXxUOUW30/HWq7xi5HWBpBg=;
- b=QKKucEYi/Ay+fRceRSl5XTqWvf99ZAVqNyKxni4UPm7MlVZyhwDM/klCB6Dt1mxNX3
- Yzgk1PSKaccFQmz4PDlWBlBTKEn3VZr6HrJmKo1ykqABZMdL6XN/3BTdlYSlsD5K1kK4
- PPwGJYauSxlpWq/aQ4w0DR5ERrVjkx8X7/sBfSrl8sBvoGM+scexgi7mmScu/qdCkQ9A
- /k7bcVwU2K64FfPllKV6tEtPf6q9TPE3vAqNeAPKrTtZXko7KmICGu8Uwibi+0QAjH6A
- d9ubwM/w0yovjhlSnOTu14sJhr2yZEb1MD0jiAVeNZCT+7TjxUt/knX0qQXn/Ci1D5EY
- NdpQ==
-X-Gm-Message-State: AGi0PuYu4/antqJMMl+Ztx/8BoyjejZaq6LTIZu5JcMWLBYj5n1SzYMU
- fqTnSv+4pAoWrbGThY76mSIQ
-X-Google-Smtp-Source: APiQypKyrcd55/sX4Gjlmr+UJBnz2TCP2GbWTtQzYH+HuxEM9tpEkD71MNKqLnCPpe4Ud+wmCXOppA==
-X-Received: by 2002:a63:2263:: with SMTP id t35mr12545007pgm.253.1585628553100; 
- Mon, 30 Mar 2020 21:22:33 -0700 (PDT)
+ bh=5+VD0VICqUDZ03RMPOJuD7+hulAAX+AM3uc7ye10aKA=;
+ b=CD/qtyjP9q0+jQRMkLqxvpkAhMuwRYjdDOVYee1+KULeQULlfDrwfasGFkIJNNHFO8
+ ys77Fz6uP7+8LbP/houTZ6KTwiaYc8mXBilnpN93IeS88+Hx4PyBGZmeYIFxHDCI+6n+
+ 8mRYSwyarqZjgqQc65ttrrJ7FF0RLEXsj/UpX0mIzdzkl1gEkEQsjJE3L/BZ3MQxPgyZ
+ s2Onx6YhHuVGLtfLMixORMB/QJU6LlChn7kICu0bFS3GHfx8SHxxRDGRxaF85Vm5d9dC
+ BzllosQ1WmvLuJPho187GflzXw758L6i9LMgZDZoOMD4czW+Bo/Iz3Cu8ead21oBhtsp
+ VDVQ==
+X-Gm-Message-State: AGi0PuZQbIKYvTmwC02B7CAmtrd0NtCWaLhXFYmgXWwBhGNId0I9VXmZ
+ 5DdTitdpnM/M60BN3mIDXoo0
+X-Google-Smtp-Source: APiQypLlBEVTSevpSbON9G/e7tnribMpmdu34SknCXBWtlzGH9m9Giq4JH+LY9Z256zMD9nqb7pfKA==
+X-Received: by 2002:a17:902:b682:: with SMTP id
+ c2mr2415794pls.36.1585628941054; 
+ Mon, 30 Mar 2020 21:29:01 -0700 (PDT)
 Received: from Mani-XPS-13-9360 ([2409:4072:630f:1337:c28:2530:7bf4:e941])
- by smtp.gmail.com with ESMTPSA id x4sm831960pjf.23.2020.03.30.21.22.29
+ by smtp.gmail.com with ESMTPSA id 21sm10837668pgf.41.2020.03.30.21.28.56
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Mar 2020 21:22:32 -0700 (PDT)
-Date: Tue, 31 Mar 2020 09:52:26 +0530
+ Mon, 30 Mar 2020 21:29:00 -0700 (PDT)
+Date: Tue, 31 Mar 2020 09:58:53 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH V2 04/22] ARM: dts: stm32: Add missing ethernet PHY skews
- on AV96
-Message-ID: <20200331042226.GF14274@Mani-XPS-13-9360>
+Subject: Re: [PATCH V2 05/22] ARM: dts: stm32: Add alternate pinmux for
+ SDMMC1 direction pins
+Message-ID: <20200331042853.GG14274@Mani-XPS-13-9360>
 References: <20200331005701.283998-1-marex@denx.de>
- <20200331005701.283998-5-marex@denx.de>
+ <20200331005701.283998-6-marex@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331005701.283998-5-marex@denx.de>
+In-Reply-To: <20200331005701.283998-6-marex@denx.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_212233_773524_66810EAD 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20200330_212902_128222_69319B48 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,9 +110,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 02:56:43AM +0200, Marek Vasut wrote:
-> The KS9031 PHY supports configurable PHY skews to compensate for
-> the board routing. Fill in the correct values.
+On Tue, Mar 31, 2020 at 02:56:44AM +0200, Marek Vasut wrote:
+> Add another mux option for SDMMC1 direction pins, in particular
+> SDMMC1_D123DIR, this is used on AV96 board.
 > 
 > Signed-off-by: Marek Vasut <marex@denx.de>
 
@@ -128,36 +129,46 @@ Mani
 > Cc: linux-stm32@st-md-mailman.stormreply.com
 > To: linux-arm-kernel@lists.infradead.org
 > ---
-> V2: No change
+> V2: Fix SDMMC1_D123DIR AF, should be AF11
 > ---
->  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 24 ++++++++++++++++++++++++
+>  1 file changed, 24 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> index a568d3824cb0..e58653ccb60f 100644
-> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> @@ -96,6 +96,20 @@ mdio0 {
->  		compatible = "snps,dwmac-mdio";
->  		phy0: ethernet-phy@7 {
->  			reg = <7>;
-> +
-> +			rxc-skew-ps = <1500>;
-> +			rxdv-skew-ps = <540>;
-> +			rxd0-skew-ps = <420>;
-> +			rxd1-skew-ps = <420>;
-> +			rxd2-skew-ps = <420>;
-> +			rxd3-skew-ps = <420>;
-> +
-> +			txc-skew-ps = <1440>;
-> +			txen-skew-ps = <540>;
-> +			txd0-skew-ps = <420>;
-> +			txd1-skew-ps = <420>;
-> +			txd2-skew-ps = <420>;
-> +			txd3-skew-ps = <420>;
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index 4569dc16e5a1..8ac534c5bdf6 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -920,6 +920,30 @@ pins {
 >  		};
 >  	};
->  };
+>  
+> +	sdmmc1_dir_pins_b: sdmmc1-dir-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('F', 2, AF11)>, /* SDMMC1_D0DIR */
+> +				 <STM32_PINMUX('E', 14, AF11)>, /* SDMMC1_D123DIR */
+> +				 <STM32_PINMUX('B', 9, AF11)>; /* SDMMC1_CDIR */
+> +			slew-rate = <1>;
+> +			drive-push-pull;
+> +			bias-pull-up;
+> +		};
+> +		pins2{
+> +			pinmux = <STM32_PINMUX('E', 4, AF8)>; /* SDMMC1_CKIN */
+> +			bias-pull-up;
+> +		};
+> +	};
+> +
+> +	sdmmc1_dir_sleep_pins_b: sdmmc1-dir-sleep-1 {
+> +		pins {
+> +			pinmux = <STM32_PINMUX('F', 2, ANALOG)>, /* SDMMC1_D0DIR */
+> +				 <STM32_PINMUX('E', 14, ANALOG)>, /* SDMMC1_D123DIR */
+> +				 <STM32_PINMUX('B', 9, ANALOG)>, /* SDMMC1_CDIR */
+> +				 <STM32_PINMUX('E', 4, ANALOG)>; /* SDMMC1_CKIN */
+> +		};
+> +	};
+> +
+>  	sdmmc2_b4_pins_a: sdmmc2-b4-0 {
+>  		pins1 {
+>  			pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
 > -- 
 > 2.25.1
 > 
