@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C041989E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 04:22:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 342FA198A12
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 04:40:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5R27JUJF0WljHgoDN9PQ5ptXceBph9g3ctjDE1EP3wY=; b=Y0JXnpp4ON2kgS
-	G8Fj9Z2NSbfx0UMic6xRkOf5A2oD0vJUgyIfM5yQEYNQOhcNQX93tdMihH/9f5qX6I95+jfW/aCfe
-	pE3CS3AYvVvf79LqYqidd2okIx8yMRxd95Z8xaC3b1FoqhIMeAE6mv9mudjzA139hB3hQieaZRUUE
-	mXzRTvOM00Ja7p+Rz5OCxnKIyJlRvIKNAzPt9BTi0p5zhb4+7rFYoqvN4SzPLe0pM3NW3diLd/r8l
-	s+3RXSILDgArZvzg7V9SMZIZ6clmPp0nRUbUaRKbvOMp0f5+Zo1N5TjUXONhIphZ/NnBAueXRVs36
-	vTiF3Xu8e7UoSAkTiP2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gKacfQkWJgOGsweoGyng23mL6T2B1wJ0xqrj3jNQO/U=; b=naStuifggZPUIvWzqIKj/qDhR
+	WhbsvlGhhgH+eSi52pVkwleYupCsbK5m1vakVB9b8BHP5ksIALyHIsNZsfQLmFOZT8l3XS9Fej74Q
+	N8qhHehUNrpRwI/9pfRujWH3F+R3RGfMCoddRewjqoz2h0tgEAnEXJpXe/Zn6rQjxPMClklJTfCHz
+	s3kFRVEBt/Wo+xENi9J+gvWALu/FLwriTQAZ+tLGmq5iABHRTts+QwdbxBj9oHcQZ4OBqc0vNQhpE
+	p5S9ZEJdNQKVCzE7JdkoQk7if9R1bXHTt4Sl34CJPEje9l8BI15gmtHIeoZnr2HCzDUFYaeag3L1I
+	z0o9SwEFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ6Xk-0001pW-3y; Tue, 31 Mar 2020 02:22:20 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jJ6p3-00078X-W1; Tue, 31 Mar 2020 02:40:13 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ6XX-0001ob-Tk; Tue, 31 Mar 2020 02:22:09 +0000
-X-UUID: b8824937dcbf4c9d8adb35e561586801-20200330
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Pi2gmU7gUHGbZuSoj+0wP9cb73MBtHR0fEjpiake8os=; 
- b=GMdHIBZw5IMWn6sQD7pbCNChTp5zKhE7hbHaMyfK8fyV/GrD3w+7aIfGZRqQN7ouclwJCGnCqdKXDEH8ZG04TdBss9yFTzgCYEyvxNMqzDgCcpHblbuJQ2U+zAi5X5mJgEttueYPwKWXsI4sHzEsAnqt1J+MlVzrOOoAbwF3lGk=;
-X-UUID: b8824937dcbf4c9d8adb35e561586801-20200330
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1962512452; Mon, 30 Mar 2020 18:21:52 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 30 Mar 2020 19:16:15 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 31 Mar 2020 10:16:12 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 31 Mar 2020 10:16:10 +0800
-Message-ID: <1585620980.5781.80.camel@mhfsdcap03>
-Subject: Re: [V4, 2/2] media: i2c: Add DW9768 VCM driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Tue, 31 Mar 2020 10:16:20 +0800
-In-Reply-To: <20200330135751.GQ1922688@smile.fi.intel.com>
-References: <20200330123634.363-1-dongchun.zhu@mediatek.com>
- <20200330123634.363-3-dongchun.zhu@mediatek.com>
- <20200330135751.GQ1922688@smile.fi.intel.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jJ6om-000780-E8
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 02:39:58 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1585622396; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=F0cnuHPPoBwL4ZXyaNpltI2ZJBgY3zhLpDoVyFkzMWU=;
+ b=pn7qrjZChiPaIAdWQvB58KJpnSMoxYfHt7eXxbcHMzSjjmuBlBSaYvFpmq/97iJr9vWzQl63
+ 2/Nl5zPl70BO9ohZ8J8kecm3wha+fUptIeYuX9EF8QI55uo30T2b0XQzQysMJOUvNqp26AWG
+ uMMuMzZQCOymDh1RwQrwve1aeSE=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e82ad6e.7feaa9c41148-smtp-out-n01;
+ Tue, 31 Mar 2020 02:39:42 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id B0642C433BA; Tue, 31 Mar 2020 02:39:42 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: tingwei)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 36F9BC433D2;
+ Tue, 31 Mar 2020 02:39:42 +0000 (UTC)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B146E5EF035629031CDCFBF9CF89F0AFC588A22BD4E14778C43D5F924A3AA11C2000:8
-X-MTK: N
+Date: Tue, 31 Mar 2020 10:39:42 +0800
+From: tingwei@codeaurora.org
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: hw_breakpoint: don't clear debug registers in halt
+ mode
+In-Reply-To: <20200330134218.GB10633@willie-the-truck>
+References: <20200328083209.21793-1-tingwei@codeaurora.org>
+ <20200330123946.GH1309@C02TD0UTHF1T.local>
+ <20200330134218.GB10633@willie-the-truck>
+Message-ID: <2f4d076b2b21de3908f0821126d0c61e@codeaurora.org>
+X-Sender: tingwei@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_192207_988577_8F09FD04 
-X-CRM114-Status: GOOD (  11.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200330_193956_541000_A0C227B8 
+X-CRM114-Status: GOOD (  18.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,64 +88,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andy,
-
-Thanks for the review.
-
-On Mon, 2020-03-30 at 16:57 +0300, Andy Shevchenko wrote:
-> On Mon, Mar 30, 2020 at 08:36:34PM +0800, Dongchun Zhu wrote:
-> > This patch adds a V4L2 sub-device driver for DW9768 voice coil moter,
-> > providing control to set the desired focus via I2C serial interface.
-> 
-> ...
-> 
-> > +static const struct dev_pm_ops dw9768_pm_ops = {
-> > +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-> > +				pm_runtime_force_resume)
-> > +	SET_RUNTIME_PM_OPS(dw9768_runtime_suspend, dw9768_runtime_resume, NULL)
-> > +};
-> > +
-> > +static struct i2c_driver dw9768_i2c_driver = {
-> > +	.driver = {
-> > +		.name = DW9768_NAME,
-> 
-> > +		.pm = IS_ENABLED(CONFIG_PM) ? &dw9768_pm_ops : NULL,
-> 
-> What is this conditional for?
-> 
-
-For the dw9768_pm_ops, here my idea is to use an IS_ENABLED() check to
-avoid defining the structure when CONFIG_PM is not set.
-
-> > +		.of_match_table = dw9768_of_table,
-> > +	},
-> > +	.probe_new  = dw9768_probe,
-> > +	.remove = dw9768_remove,
-> > +};
-> 
-> > +
-> 
-> Extra blank line.
-> 
-
-Weird, most V4L2 driver(I2C client) seems to keep this blank line.
-Sakari, is it still the case or am I mistaken?
-
-> > +module_i2c_driver(dw9768_i2c_driver);
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+5ZyoIDIwMjAtMDMtMzAgMjE6NDLvvIxXaWxsIERlYWNvbiDlhpnpgZPvvJoKPiBPbiBNb24sIE1h
+ciAzMCwgMjAyMCBhdCAwMTozOTo0NlBNICswMTAwLCBNYXJrIFJ1dGxhbmQgd3JvdGU6Cj4+IE9u
+IFNhdCwgTWFyIDI4LCAyMDIwIGF0IDA0OjMyOjA5UE0gKzA4MDAsIFRpbmd3ZWkgWmhhbmcgd3Jv
+dGU6Cj4+ID4gSWYgZXh0ZXJuYWwgZGVidWdnZXIgc2V0cyBhIGJyZWFrcG9pbnQgZm9yIG9uZSBL
+ZXJuZWwgZnVuY3Rpb24KPj4gPiB3aGVuIGRldmljZSBpcyBpbiBib290bG9hZGVyIG1vZGUgYW5k
+IGxvYWRzIEtlcm5lbCwgdGhpcyBicmVha3BvaW50Cj4+ID4gd2lsbCBiZSB3aXBlZCBvdXQgaW4g
+aHdfYnJlYWtwb2ludF9yZXNldCgpLiBUbyBmaXggdGhpcywgY2hlY2sKPj4gPiBNRFNDUl9FTDEu
+SERFIGluIGh3X2JyZWFrcG9pbnRfcmVzZXQoKS4gV2hlbiBNRFNDUl9FTDEuSERFIGlzCj4+ID4g
+MGIxLCBoYWx0aW5nIGRlYnVnIGlzIGVuYWJsZWQuIERvbid0IHJlc2V0IGRlYnVnIHJlZ2lzdGVy
+cyBpbiB0aGlzCj4gY2FzZS4KPj4gCj4+IEkgZG9uJ3QgdGhpbmsgdGhpcyBpcyBzdWZmaWNpZW50
+LCBiZWNhdXNlIHRoZSBrZXJuZWwgY2FuIHN0aWxsCj4+IHN1YnNlcXVlbnRseSBtZXNzIHdpdGgg
+YnJlYWtwb2ludHMsIGFuZCB0aGUgSFcgZGVidWdnZXIgbWlnaHQgbm90IGJlCj4+IGF0dGFjaGVk
+IGF0IHRoaXMgcG9pbnQgaW4gdGltZSBhbnlob3cuCj4+IAo+PiBJIHJlY2tvbiB0aGlzIHNob3Vs
+ZCBoYW5nIG9mZiB0aGUgZXhpc3RpbmcgIm5vZGVidW1vbiIgY29tbWFuZCBsaW5lCj4+IG9wdGlv
+biwgYW5kIHdlIHNob3VsZG4ndCB1c2UgSFcgYnJlYWtwb2ludHMgYXQgYWxsIHdoZW4gdGhhdCBp
+cyAKPj4gcGFzc2VkLgo+PiBUaGVuIHlvdSBjYW4gcGFzcyB0aGF0IHRvIHByZXZlbnQgdGhlIGtl
+cm5lbCBzdG9tcGluZyBvbiB0aGUgZXh0ZXJuYWwKPj4gZGVidWdnZXIuCj4+IAo+PiBXaWxsLCB0
+aG91Z2h0cz8KPiAKPiBJIHdhcyBnb2luZyB0byBzdWdnZXN0IHRoZSBzYW1lIHRoaW5nLCBhbHRo
+b3VnaCB3ZSB3aWxsIGFsc28gbmVlZCB0byAKPiB0YWtlCj4gY2FyZSB0byByZXNldCB0aGUgcmVn
+aXN0ZXJzIGlmICJub2RlYnVnbW9uIiBpcyB0b2dnbGVkIGF0IHJ1bnRpbWUgdmlhIAo+IHRoZQo+
+ICJkZWJ1Z19lbmFibGVkIiBmaWxlIGluIGRlYnVnZnMuCj4gCj4gV2lsbAoKVGhhbmtzIGZvciB0
+aGUgc3VnZ2VzdGlvbiwgTWFyayBhbmQgV2lsbC4gSXQncyBhIGdyZWF0IGlkZWEgdG8gdXNlCiJu
+b2RlYnVnbW9uIi4gV2hlbiAibm9kZWJ1Z21vbiIgaXMgc2V0LCBLZXJuZWwgd29uJ3QgY2hhbmdl
+IEhXIApicmVha3BvaW50cy4KCkZvciByZXNldCB0aGUgcmVnaXN0ZXJzIGFmdGVyICJkZWJ1Z19l
+bmFibGVkIiBpcyB0b2dnbGVkLCBJJ20gdGhpbmtpbmcgCmlmCndlIGFyZSBhZGRpbmcgdW5uZWNl
+c3NhcnkgY29tcGxleGl0eSBoZXJlLklmIHdlIHRha2UgdGhhdCBhcHByb2FjaCwgd2UgCndpbGwK
+aG9vayAiZGVidWdfZW5hYmxlZCIgaW50ZXJmYWNlIGFuZCB1c2Ugc21wX2NhbGxfZnVuY3Rpb25f
+c2luZ2xlKCkgdG8gCmNhbGwKaHdfYnJlYWtwb2ludF9yZXNldCgpIG9uIGVhY2ggQ1BVLiBXYWl0
+IGZvciBhbGwgQ1BVcycgZXhlY3V0aW9uIGRvbmUgYW5kCmNoYW5nZSAiZGVidWdfZW5hYmxlZCIu
+IEV4dGVybmFsIGRlYnVnZ2VyIHdvdWxkIGNsZWFyIHRoZSBicmVha3BvaW50cyAKd2hlbgppdCBk
+ZXRhY2hlcyB0aGUgZGV2aWNlIGFuZCByZXN0b3JlcyBpdHMgYnJlYWtwb2ludHMgd2hlbiBhdHRh
+Y2hlcyB0aGUgCmRldmljZS4KQXNzdW1lIGRlYnVnX2VuYWJsZWQgaXMgY2hhbmdlZCB0byBvbmUg
+YWZ0ZXIgZXh0ZXJuYWwgZGVidWdnZXIgZGV0YWNoZXMgCnRoZQpkZXZpY2UuIERlYnVnZ2VyIHdv
+dWxkIGFscmVhZHkgY2xlYXIgdGhlIGJyZWFrcG9pbnQgcmVnaXN0ZXJzLiBJZiAKZGViZ2dlciBp
+cwpzdGlsbCBhdHRhY2hlZCwgdGhlcmUncyBub3RoaW5nIEtlcm5lbCBjYW4gZG8gdG8gc3RvcCBp
+dCAKcmVzdG9yZXMvcHJvZ3JhbXMKdGhlIGJyZWFrcG9pbnQgcmVnaXN0ZXJzLgoKV2hhdCBkbyB5
+b3UgdGhpbmsgb2YgdGhpcz8KClRoYW5rcywKVGluZ3dlaQoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
