@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36725199E20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:38:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79FC9199E31
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 20:39:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=e9GG3Ti3uAtl9K9TacsgX8Wifh3hcO/S5saIs/SCXZM=; b=ulX
-	6iuZUoipXHKJN+Zfyo6K9bxZgrQaotdjJ1nQo5VrLV1kuFcjAtZa728K042MsQwrYWC2Wy+MbxHvo
-	mKip6tJkShLmFkQXcQhUfhGxb/yagYokrYHgI19S6sTA8o6Zdx6wKK8HKOTbY2DtMiavBXqQAhIC9
-	u1SkuHFR3NgFi2BGKKgIUdDIMkOPWaCpC2GcgljKec89gbqttjJaLiAnuUod9VzGX0udvGk8UNik3
-	+/j2gl9OqiWKhR83PW4vDf8bw9rSPp1HC45Uwbl3enlZ+gjvgpwUwytoiEK7UpkyWNeuKgvu0gBAM
-	iNyMl73XxUNrYTVrrFQDYQgJUnjzTJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3gF4nrA5suMR5gJiroLmN2uoEd02xHOJuyXz+eb1RP4=; b=rsT7BeKJf3RePP
+	/KgyOfJ+MW4fkHzuOElezMl4x0Zm7zsxZvnwPZ2FMyBiLYNBARzXLX0G497w3ALGuMs0FHCqqFYzJ
+	9moie3B/3dDNjj49fHme4NkdeywxVZ3DHbwmMQRKCsbDAunciODS0vpRTG4JhVkthL6t5wCd1YeTe
+	gmgulmsbEobpZ4p8ZusCmbFO83B+vwLciVU+hImds8kTvXWtZ3l340lvevaR2DOq9Wdu03fzE/8GB
+	wj1ysDqA7krLsztOOOe7iA2Er0lAcRI+mgUhGW0EdnyQgnzNFquIcbswHrSBr/sDXeDeBN/PehmnP
+	q6jY2nUbjBWvjgYcNjyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJLlo-0007Gt-D2; Tue, 31 Mar 2020 18:37:52 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jJLmz-0007eU-AA; Tue, 31 Mar 2020 18:39:05 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJLlf-0007GQ-2p
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 18:37:44 +0000
-Received: by mail-qk1-x744.google.com with SMTP id o10so24123197qki.10
+ id 1jJLmn-0007co-30
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 18:38:56 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x200so11040742lff.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 11:37:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=6bo50showiDDZymkVwcrzZUnNVACXf2piseIaZpnpDc=;
- b=SaBW4VKJMe0E2qjcW8tep8L7AtKIbKOI3PwHv7sEu73TfC+gycMQ/geVK1jDDIi1DP
- rih4oMkWd1qZ2gQmHh7IuvGqQj2Rme6a624fSZlalypsTMkFojle70D1Oi5ewYc7tzhy
- Wk3FekAZMG7wV9yT/+MhupkLufJPJONC4DD1afgcZ99n/3mVZAMmZygSd7E+93sPzmMT
- cU0pbdQEuCAA+/+zPfb8BlhVdY2L9uXSWCSWa11bJjQsL1dRIn2Yg4PaA75aXCCmfl5T
- gnQuHLJqr8WnDEoCa+8evXtGEyHP08u8aD06dOE/egDtG56/igxneLy7MvrgpLfhcns/
- ExJA==
+ Tue, 31 Mar 2020 11:38:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A1iR82JLy2QBCOT69varWy2T5A5xF9bW9JJAjBNZYtw=;
+ b=AgqKOg0Xlsg+qGXoQ+t9zCBNScJcIVnuGn7QUcnP5aj8K6e742Rcu/EaX9dFEgNWBB
+ vLt6fu6VOygerOifBdA6nnhB4ysDtUoC0P1DJFSqfuuPpywvC25BwJBpffeJCIkJh8dG
+ tLUkc/jZQ3hFDfS/dw7P10lHqjs5yx7744a4h8kR+4682zw7JntAP1hQJza4+5Ku02jb
+ dNvog8Zyo5wsM5AASjRnI3cy5WnI9Gu7ncfLGtjv7HYWKTm2pQkdxBZaLHwLhXV4Ye05
+ 5DmXFtwrhnbuUCpWEJdx7hpJvwEYTEu/5k+jNUlVf3VrzgCLx9kpqwanVLH5BWTzIS1P
+ mdIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=6bo50showiDDZymkVwcrzZUnNVACXf2piseIaZpnpDc=;
- b=X9f3wM3Jwtkz2OREYE39gcoKcqi9Pp6b3ppuRfRXdXRpl3B4tne6uuuvQ3oENamVau
- SeMrIi4bYvwv1Og136B7M4AB7Uf1EwbBsl8zSk1ei1VZJ3jUmVTFO1Nmkx7wGshwKVis
- n0cF+P7K/5F1BHYuFVlK0Xn7p0oYB/6/4XraKQ+4IQR4JNUBzno2q9JLDaHlgqDkgvS5
- +DXnPEmqc6KaUw23SzGwL4RYlflqn1cQs2q6/OIfx8J8lx//5bxwwaDxeiQjlwiR2xbC
- GUqG1CN05KRRIGpLWndArcp1JhL0vDyfDU6fZe06k0DJVRza/Sdq+LXQpHYEhBFImq7n
- uwJw==
-X-Gm-Message-State: ANhLgQ1peLgSsB7ZV11UhoG4nsUkVepr1/4qsLtxCxUkopMUJx2EF3FU
- e3sFWqu/sZEKw4aQW2PvCt4=
-X-Google-Smtp-Source: ADFU+vvEVPUXk9miWqKlR4xK/YHvMHFYmYN1HBOSW37JSD9DBLvt5Xv8gwqOQU2qHc8Y8b4En9YOuA==
-X-Received: by 2002:a37:9d4a:: with SMTP id g71mr5471980qke.54.1585679861295; 
- Tue, 31 Mar 2020 11:37:41 -0700 (PDT)
-Received: from localhost.localdomain ([2804:14c:482:5bb::4])
- by smtp.gmail.com with ESMTPSA id f21sm14285243qtc.97.2020.03.31.11.37.37
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A1iR82JLy2QBCOT69varWy2T5A5xF9bW9JJAjBNZYtw=;
+ b=FsLNxkclIeyaR6AglQjl2BlYfJzyj526ViUN+GMPbepS63+MATj1sgUofAYcxkPuq7
+ LtUd4J0+nvgzcf13koJPyf6AlQPKMG8ZXNxEKJGWtng3CsCrL7dMe3ArUBPmbUCA1h06
+ NxVA/cuKaAEc861jyKjOwHbRC3nOnAxiP026gLQrQzCn5GuKpJd+pSu8orwxS45opjtv
+ NN8v1o/Bg1Ge8+8GMjDcplXFkOyPSU3rrPKuL6qQ1g2C92RpRRNU7LQ6n4nYGyHLBTUs
+ PBpf+qI+fiUQJstQkTlDFrt32XJPxO2EfBOtfYtwXoSK+Vva6cAV8euzycCbCa1ZMxkw
+ srag==
+X-Gm-Message-State: AGi0PubRCoRSpHLdwlHZ6RjDo8nD7WovSZvFJWZWEJ4Lpw0IR9LHoxma
+ FEW+BAwyjOOvYvoENztZ8UdwmA==
+X-Google-Smtp-Source: APiQypKRx83jRA3vthxlvydh1YZb4WXvAun13NnHXa386ryuuWqw8NWW/Vu8GQtNCFg8UW/MxqPqog==
+X-Received: by 2002:a19:a409:: with SMTP id q9mr12183993lfc.71.1585679928748; 
+ Tue, 31 Mar 2020 11:38:48 -0700 (PDT)
+Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
+ [158.174.22.210])
+ by smtp.gmail.com with ESMTPSA id b28sm10331849ljp.90.2020.03.31.11.38.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 31 Mar 2020 11:37:40 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] arm64: dts: imx8m: Fix AIPS reg properties
-Date: Tue, 31 Mar 2020 15:37:25 -0300
-Message-Id: <20200331183725.25255-1-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ Tue, 31 Mar 2020 11:38:47 -0700 (PDT)
+From: Ulf Hansson <ulf.hansson@linaro.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J . Wysocki" <rafael@kernel.org>, linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] amba/platform: Initialize dma_parms at the bus level
+Date: Tue, 31 Mar 2020 20:38:42 +0200
+Message-Id: <20200331183844.30488-1-ulf.hansson@linaro.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_113743_148426_59CD19BA 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20200331_113854_537024_7EF7FCD4 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,188 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, peng.fan@nxp.com, robh+dt@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
+ Haibo Chen <haibo.chen@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, dmaengine@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Ludovic Barre <ludovic.barre@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit dc3efc6ff0d5 ("arm64: dts: imx8m: fix aips dts node") caused several
-dtc warnings like these when building with W=1:
+It's currently the amba/platform driver's responsibility to initialize the
+pointer, dma_parms, for its corresponding struct device. The benefit with this
+approach allows us to avoid the initialization and to not waste memory for the
+struct device_dma_parameters, as this can be decided on a case by case basis.
+    
+However, it has turned out that this approach is not very practical. Not only
+does it lead to open coding, but also to real errors. In principle callers of
+dma_set_max_seg_size() doesn't check the error code, but just assumes it
+succeeds.
+    
+For these reasons, this series initializes the dma_parms from the amba/platform
+bus at the device registration point. This also follows the way the PCI devices
+are being managed, see pci_device_add().
 
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:265.23-542.5: Warning (simple_bus_reg): /soc@0/bus@30000000: simple-bus unit address format error, expected "301f0000"
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:544.23-602.5: Warning (simple_bus_reg): /soc@0/bus@30400000: simple-bus unit address format error, expected "305f0000"
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:604.23-862.5: Warning (simple_bus_reg): /soc@0/bus@30800000: simple-bus unit address format error, expected "309f0000"
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:864.23-909.5: Warning (simple_bus_reg): /soc@0/bus@32c00000: simple-bus unit address format error, expected "32df0000"
+If it turns out that this is an acceptable solution, we probably also want the
+changes for stable, but I am not sure if it applies without conflicts.
 
-Fix them by using the correct address base and size in the AIPS reg
-properties.
+The series is based on v5.6.
 
-Fixes: dc3efc6ff0d5 ("arm64: dts: imx8m: fix aips dts node")
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 8 ++++----
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 8 ++++----
- arch/arm64/boot/dts/freescale/imx8mp.dtsi | 6 +++---
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 8 ++++----
- 4 files changed, 15 insertions(+), 15 deletions(-)
+Kind regards
+Ulf Hansson
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index cc7152ecedd9..8829628f757a 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -264,7 +264,7 @@
- 
- 		aips1: bus@30000000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x301f0000 0x10000>;
-+			reg = <0x30000000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30000000 0x30000000 0x400000>;
-@@ -543,7 +543,7 @@
- 
- 		aips2: bus@30400000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x305f0000 0x10000>;
-+			reg = <0x30400000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30400000 0x30400000 0x400000>;
-@@ -603,7 +603,7 @@
- 
- 		aips3: bus@30800000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x309f0000 0x10000>;
-+			reg = <0x30800000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30800000 0x30800000 0x400000>,
-@@ -863,7 +863,7 @@
- 
- 		aips4: bus@32c00000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x32df0000 0x10000>;
-+			reg = <0x32c00000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x32c00000 0x32c00000 0x400000>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index fa78f0163270..e62d4146cebc 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -241,7 +241,7 @@
- 
- 		aips1: bus@30000000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x301f0000 0x10000>;
-+			reg = <0x30000000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-@@ -448,7 +448,7 @@
- 
- 		aips2: bus@30400000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x305f0000 0x10000>;
-+			reg = <0x30400000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-@@ -508,7 +508,7 @@
- 
- 		aips3: bus@30800000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x309f0000 0x10000>;
-+			reg = <0x30800000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-@@ -754,7 +754,7 @@
- 
- 		aips4: bus@32c00000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x32df0000 0x10000>;
-+			reg = <0x32c00000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-index 9b1616e59d58..9f6ba763238d 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-@@ -145,7 +145,7 @@
- 
- 		aips1: bus@30000000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x301f0000 0x10000>;
-+			reg = <0x30000000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-@@ -318,7 +318,7 @@
- 
- 		aips2: bus@30400000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x305f0000 0x400000>;
-+			reg = <0x30400000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-@@ -378,7 +378,7 @@
- 
- 		aips3: bus@30800000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x309f0000 0x400000>;
-+			reg = <0x30800000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 75b384217a23..bab88369be1b 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -291,7 +291,7 @@
- 
- 		bus@30000000 { /* AIPS1 */
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x301f0000 0x10000>;
-+			reg = <0x30000000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30000000 0x30000000 0x400000>;
-@@ -696,7 +696,7 @@
- 
- 		bus@30400000 { /* AIPS2 */
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x305f0000 0x10000>;
-+			reg = <0x30400000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30400000 0x30400000 0x400000>;
-@@ -756,7 +756,7 @@
- 
- 		bus@30800000 { /* AIPS3 */
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x309f0000 0x10000>;
-+			reg = <0x30800000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30800000 0x30800000 0x400000>,
-@@ -1029,7 +1029,7 @@
- 
- 		bus@32c00000 { /* AIPS4 */
- 			compatible = "fsl,aips-bus", "simple-bus";
--			reg = <0x32df0000 0x10000>;
-+			reg = <0x32c00000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x32c00000 0x32c00000 0x400000>;
+
+Ulf Hansson (2):
+  driver core: platform: Initialize dma_parms for platform devices
+  amba: Initialize dma_parms for amba devices
+
+ drivers/amba/bus.c              | 1 +
+ drivers/base/platform.c         | 2 ++
+ include/linux/amba/bus.h        | 1 +
+ include/linux/platform_device.h | 1 +
+ 4 files changed, 5 insertions(+)
+
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
