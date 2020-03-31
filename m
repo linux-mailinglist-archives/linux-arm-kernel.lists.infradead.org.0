@@ -2,56 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7843E1999FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 17:41:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1B6C199A13
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 17:45:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G8X4whR5lPsHr5uAPDPig1yW9XoaXY1O4bPfRGPDZtc=; b=uKQhY6/4nHhyG+
-	BzeGJ7lNr29IgsqwU+wBKRAwBNLlnwkdqLH4qBt18pxCNYA2XZrlxf9p/wC7HbfbzxPt1ySVSbg3C
-	koKisrRZNDJWOD0bGRVZ/FbbaiDD25dXqUqI0/04NTHVSfJVF74M0xEF92USZfKIQxu2hP29g/9VA
-	1KCZep2WqOoh25hjy7LAY+XqacJqNdbNrdf0vh/g2WVhdyE0MtL2/9qx+358wtV952Fj1pzfHedQu
-	JRhex/tCoAqTC5C394oNhnajGgjy5Mv2MyBGhSt8o0VJ+DkYfjoi4JtnGuexwyLgWG/lc9FJ/SB4k
-	ewuY3k/0NspOH/riiXQg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:From:
+	Message-Id:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WFZNGetBnmobbnL4ISp1hPFCTO6z9llqJnndCWi21js=; b=AkK
+	Et1mYMScdvj1L2ZepLbJ4BOOt/j0eyM5qt0yh1xp0pSmcWpFRybZ4Wbrb8rU0JowxfxfCNbtfhPWp
+	mSmDYGmNyIEAlpaMQHL/V6RZj+HGKt1JXjKGjl7OPBZ+T1xZZN209tnD1fAaiPVE3FSYeJPC0jX72
+	IBBlGSe6j0gQx0x6nnN62FZPyNzp+F2OgZbZUWIXaHS13qwussGtJ9gf5zZ+igJxzdcJux9VJdlnv
+	mZL5i3ghCrbrj4X6LrlsFI9Xi0nG1Wnq+k8in49g2v7dnzVxvmmeJj19jf3AzrqYh9zikIvrDK+hz
+	BzBLXYQP7ICcfy/fUooJ0WClpV1/3cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJ0x-0007DS-PN; Tue, 31 Mar 2020 15:41:19 +0000
-Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJ0l-0007C8-S7
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 15:41:10 +0000
-Received: from erd988 (erd988.prtnl [192.168.224.30])
- by sparta.prtnl (Postfix) with ESMTP id DCF0944A024D;
- Tue, 31 Mar 2020 17:41:03 +0200 (CEST)
-Date: Tue, 31 Mar 2020 17:41:03 +0200
-From: David Jander <david@protonic.nl>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
-Message-ID: <20200331174103.6c8f5a43@erd988>
-In-Reply-To: <20200331093648.GL25745@shell.armlinux.org.uk>
-References: <20200329110457.4113-1-o.rempel@pengutronix.de>
- <20200329150854.GA31812@lunn.ch>
- <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
- <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
- <20200330174114.GG25745@shell.armlinux.org.uk>
- <20200331104459.6857474e@erd988>
- <20200331093648.GL25745@shell.armlinux.org.uk>
-Organization: Protonic Holland
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+	id 1jJJ53-00049S-Ef; Tue, 31 Mar 2020 15:45:33 +0000
+Received: from mx.sdf.org ([205.166.94.20])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJJ3r-000103-HY
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 15:44:26 +0000
+Received: from sdf.org (IDENT:lkml@sdf.lonestar.org [205.166.94.16])
+ by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02VFiCPn012439
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits) verified NO);
+ Tue, 31 Mar 2020 15:44:12 GMT
+Received: (from lkml@localhost)
+ by sdf.org (8.15.2/8.12.8/Submit) id 02VFiClP011630;
+ Tue, 31 Mar 2020 15:44:12 GMT
+Date: Tue, 31 Mar 2020 15:44:12 GMT
+Message-Id: <202003311544.02VFiClP011630@sdf.org>
+From: George Spelvin <lkml@sdf.org>
+Subject: [PATCH v2] arm64: ptr auth: Use get_random_u64 instead of _bytes
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_084108_263484_6A97D209 
-X-CRM114-Status: GOOD (  38.10  )
+X-CRM114-CacheID: sfid-20200331_084419_631275_4656D4BB 
+X-CRM114-Status: UNSURE (   7.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [83.163.252.89 listed in list.dnswl.org]
+ no trust [205.166.94.20 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,171 +59,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- linux-imx@nxp.com, kernel@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, George Spelvin <lkml@sdf.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+get_random_bytes() is approximately 4x the cost of two
+get_random_u64() calls, because the former implements
+anti-backtracking.
 
-Dear Russell,
+Because these are authentication keys, useless to an attacker
+as soon as the kernel stops using them, there is no security
+benefit from anti-backtracking.
 
-On Tue, 31 Mar 2020 10:36:49 +0100
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+Signed-off-by: George Spelvin <lkml@sdf.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+---
+v2: Took out all the clever bitmap-based stuff and made a simple
+    boring helper function to replace get_random_bytes(&key, 16).
 
-> On Tue, Mar 31, 2020 at 10:44:59AM +0200, David Jander wrote:
-> > On Mon, 30 Mar 2020 18:41:14 +0100
-> > Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-> >   
-> > > On Mon, Mar 30, 2020 at 10:33:03AM -0700, Florian Fainelli wrote:  
-> > > > 
-> > > > 
-> > > > On 3/29/2020 10:26 PM, Oleksij Rempel wrote:    
-> > > > > Hi Andrew,
-> > > > > 
-> > > > > On Sun, Mar 29, 2020 at 05:08:54PM +0200, Andrew Lunn wrote:    
-> > > > >> On Sun, Mar 29, 2020 at 01:04:57PM +0200, Oleksij Rempel wrote:
-> > > > >>
-> > > > >> Hi Oleksij
-> > > > >>    
-> > > > >>> +config DEPRECATED_PHY_FIXUPS
-> > > > >>> +	bool "Enable deprecated PHY fixups"
-> > > > >>> +	default y
-> > > > >>> +	---help---
-> > > > >>> +	  In the early days it was common practice to configure PHYs by adding a
-> > > > >>> +	  phy_register_fixup*() in the machine code. This practice turned out to
-> > > > >>> +	  be potentially dangerous, because:
-> > > > >>> +	  - it affects all PHYs in the system
-> > > > >>> +	  - these register changes are usually not preserved during PHY reset
-> > > > >>> +	    or suspend/resume cycle.
-> > > > >>> +	  - it complicates debugging, since these configuration changes were not
-> > > > >>> +	    done by the actual PHY driver.
-> > > > >>> +	  This option allows to disable all fixups which are identified as
-> > > > >>> +	  potentially harmful and give the developers a chance to implement the
-> > > > >>> +	  proper configuration via the device tree (e.g.: phy-mode) and/or the
-> > > > >>> +	  related PHY drivers.    
-> > > > >>
-> > > > >> This appears to be an IMX only problem. Everybody else seems to of got
-> > > > >> this right. There is no need to bother everybody with this new
-> > > > >> option. Please put this in arch/arm/mach-mxs/Kconfig and have IMX in
-> > > > >> the name.    
-> > > > > 
-> > > > > Actually, all fixups seems to do wring thing:
-> > > > > arch/arm/mach-davinci/board-dm644x-evm.c:915:		phy_register_fixup_for_uid(LXT971_PHY_ID, LXT971_PHY_MASK,
-> > > > > 
-> > > > > Increased MII drive strength. Should be probably enabled by the PHY
-> > > > > driver.
-> > > > > 
-> > > > > arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
-> > > > > arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
-> > > > > arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
-> > > > > arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,    
-> > > 
-> > > As far as I'm concerned, the AR8035 fixup is there with good reason.
-> > > It's not just "random" but is required to make the AR8035 usable with
-> > > the iMX6 SoCs.  Not because of a board level thing, but because it's
-> > > required for the AR8035 to be usable with an iMX6 SoC.  
-> > 
-> > I have checked with the datasheet of the AR8035, and AFAICS, what the code
-> > does is this:
-> > 
-> >  - Disable the SmartEEE feature of the phy. The comment in the code implies
-> >    that for some reason it doesn't work, but the reason itself is not given.
-> >    Anyway, disabling SmartEEE should IMHO opinion be controlled by a DT
-> >    setting. There is no reason to believe this problem is specific to the
-> >    i.MX6. Besides, it is a feature of the phy, so it seems logical to expose
-> >    that via the DT. Once that is done, it has no place here.
-> > 
-> >  - Set the external clock output to 125MHz. This is needed because the i.MX6
-> >    needs a 125MHz reference clock input. But it is not a requirement to use
-> >    this output. It is perfectly fine and possible to design a board that uses
-> >    an external oscillator for this. It is also possible that an i.MX6 design
-> >    has such a phy connected to a MAC behind a switch or some other interface.
-> >    Independent of i.MX6 this setting can also be necessary for other hardware
-> >    designs, based on different SoC's. In summary, this is a feature of the
-> >    specific hardware design at hand, and has nothing to do with the i.MX6
-> >    specifically. This should definitely be exposed through the DT and not be
-> >    here.
-> > 
-> >  - Enable TXC delay. To clarify, the RGMII specification version 1 specified
-> >    that the RXC and TXC traces should be routed long enough to introduce a
-> >    certain delay to the clock signal, or the delay should be introduced via
-> >    other means. In a later version of the spec, a provision was given for MAC
-> >    or PHY devices to generate this delay internally. The i.MX6 MAC interface
-> >    is unable to generate the required delay internally, so it has to be taken
-> >    care of either by the board layout, or by the PHY device. This is the
-> >    crucial point: The amount of delay set by the PHY delay register depends on
-> >    the board layout. It should NEVER be hard-coded in SoC setup code. The
-> >    correct way is to specify it in the DT. Needless to say that this too,
-> >    isn't i.MX6-specific.
-> >   
-> > > So, having it registered by the iMX6 SoC code is entirely logical and
-> > > correct.  
-> > 
-> > I'm afraid I don't agree. See above. This code really should never have been
-> > here. It is not i.MX6-specific as I pointed out above, nor is it necessarily
-> > applicable to all i.MX6 boards that use those phy devices.  
-> 
-> Then we will have to agree to disagree, sorry.
+ arch/arm64/include/asm/pointer_auth.h | 16 +++++++++++-----
+ arch/arm64/kernel/pointer_auth.c      | 10 +++++-----
+ 2 files changed, 16 insertions(+), 10 deletions(-)
 
-Please forgive me if I am appearing a bit stubborn.
-If it is not too much to ask, I would really like to know where my reasoning
-is wrong?
-Maybe you can explain to me how to solve the following real-life conflict that
-this introduces:
-
-Suppose we have a board with an i.MX6Q and a KSZ9031 connected to it. Suppose
-I now take a USB stick with a LAN7800 ethernet chip and a KSZ9031 PHY. These
-USB sticks do exist, and it does not seem unthinkable to me that one would
-connect them to such an i.MX6 system in order to get a second LAN port.
-
-AFAICS there is a reasonable chance this combination might not work, and for
-some very obscure reason on top of that:
-
-There are two places a fixup gets registered for the phy:
-
- drivers/net/usb/lan78xx.c:2019
-
-and:
-
- arch/arm/mach-imx/mach-imx6q.c:64
-
-Both of these fix-ups write different clock- and signal pad skews to any
-ksz9031 phy... but there are now two.
-
-So there is one driver, one set of fixups (one overwrites the other) but two
-different instances of hardware requiring different settings.
-
-I get that it is possibly harder to repair the USB case, but for SoC's we have
-platform drivers that support device-trees almost everywhere nowadays.
-Device-tree nodes are unique for each instance of a device, so there would be
-the most logical place to fix these cases. In fact, the needed definitions are
-already in place. The only thing that needs to be done is remove the fixup
-from the SoC code and patch the affected DTS files. If the USB driver cannot
-be repaired or will be repaired at a later time, apply fixups only for non-DT
-devices. Problem solved. Right?
-
-Maybe, if the kernel is modular and the lan7800 driver is actually a module
-loaded much later than the SoC FEC driver, it will work fine if the fixups are
-applied only once per device (I must admit that I don't know that for sure).
-But if they are both built-in drivers, it may cause hardware to malfunction in
-hard to debug ways.
-
-I must also admit that I don't have the required USB stick to test my
-hypothesis, so I cannot provide any hard proof that it will malfunction. Maybe
-I am making a mistake in this reasoning, in which case I am sorry. Would be
-cool to have an explanation as to why I am wrong here though...
-
-Best regards,
-
+diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+index 7a24bad1a58b8..1a4590d05785e 100644
+--- a/arch/arm64/include/asm/pointer_auth.h
++++ b/arch/arm64/include/asm/pointer_auth.h
+@@ -30,17 +30,23 @@ struct ptrauth_keys {
+ 	struct ptrauth_key apga;
+ };
+ 
++static inline void __ptrauth_key_init(struct ptrauth_key *key)
++{
++	key->lo = get_random_u64();
++	key->hi = get_random_u64();
++}
++
+ static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
+ {
+ 	if (system_supports_address_auth()) {
+-		get_random_bytes(&keys->apia, sizeof(keys->apia));
+-		get_random_bytes(&keys->apib, sizeof(keys->apib));
+-		get_random_bytes(&keys->apda, sizeof(keys->apda));
+-		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
++		__ptrauth_key_init(&keys->apia);
++		__ptrauth_key_init(&keys->apib);
++		__ptrauth_key_init(&keys->apda);
++		__ptrauth_key_init(&keys->apdb);
+ 	}
+ 
+ 	if (system_supports_generic_auth())
+-		get_random_bytes(&keys->apga, sizeof(keys->apga));
++		__ptrauth_key_init(&keys->apga);
+ }
+ 
+ #define __ptrauth_key_install(k, v)				\
+diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
+index c507b584259d0..05e2e3d174010 100644
+--- a/arch/arm64/kernel/pointer_auth.c
++++ b/arch/arm64/kernel/pointer_auth.c
+@@ -31,15 +31,15 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ 		return -EINVAL;
+ 
+ 	if (arg & PR_PAC_APIAKEY)
+-		get_random_bytes(&keys->apia, sizeof(keys->apia));
++		__ptrauth_key_init(&keys->apia);
+ 	if (arg & PR_PAC_APIBKEY)
+-		get_random_bytes(&keys->apib, sizeof(keys->apib));
++		__ptrauth_key_init(&keys->apib);
+ 	if (arg & PR_PAC_APDAKEY)
+-		get_random_bytes(&keys->apda, sizeof(keys->apda));
++		__ptrauth_key_init(&keys->apda);
+ 	if (arg & PR_PAC_APDBKEY)
+-		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
++		__ptrauth_key_init(&keys->apdb);
+ 	if (arg & PR_PAC_APGAKEY)
+-		get_random_bytes(&keys->apga, sizeof(keys->apga));
++		__ptrauth_key_init(&keys->apga);
+ 
+ 	ptrauth_keys_switch(keys);
+ 
 -- 
-David Jander
-Protonic Holland.
+2.26.0
 
 _______________________________________________
 linux-arm-kernel mailing list
