@@ -2,89 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20DCD199B04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:10:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 436A8199B20
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:15:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bLVZIA2vuC9HAC3UcBgFoAsT5Z+ZoJDOhpb4SayxI0Y=; b=fpAuZ3a+NG1RW6
-	R9aMEkQ3L8p0o0PUgsA64Opiup/mxwIwA3Y4/vTkf1P8ml64d02HMYD+CWMpP8DNU5EixDzEsVGYc
-	b3yoAsbiyV/WIc1tMhPQwbreyKfVn3nFJilL0op383cmuZsaLee0s8WpVgdyQJjqQKMDde0gDv4dz
-	OnvfbtWzeS8izXAcQz7JonJGQlpDEFgnk7doK4J9688iD53gPJRiimRykvFy1ae9TAEdiGjgY+uID
-	uWSahLyR2MPxFjOC8/R80sLyq/AurFlBYT6V/LzvsyxIMnttStGGtNSHElDB/Ice2bdYRfzygGDZi
-	uY2DLOwF56SdobNsJSlg==;
+	List-Owner; bh=+XAVdts30RCPYbT1vkODx5jxbCxlPWzPlRnEy8feCWY=; b=UacX8ZtMrncQ/m
+	qz66rpFwCjmty6yNxs4mHnu3Ijx3FHpzWJedntRmk1sXu6PAu9Fehfh8Zz6Lt5NS6UWaUnELlJG7G
+	CsW5UTHmjS9O82Rm0J3gIOHRqSTKEvY/tIStzXRAovXNtmneL/YckFqUebi/j7AU0cHcX9guZs2wd
+	iwdA5mb0sNBFXE7FamwktKzP1tmr4ypt0+TTK6PXWMBCQuBFW/CERYHjg0JO5tz77bevgQF5KXpHG
+	IYYdZZ8imWlcNT8P+OvM5ZYhkHeLMFwiYMALOFKVle7KlpuPeNheRZu+97fETNaAv+48JaQYpiSow
+	C4Ak6+Cx4L3iXiLA1kYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJT3-000266-Qe; Tue, 31 Mar 2020 16:10:21 +0000
+	id 1jJJXS-0007sB-8o; Tue, 31 Mar 2020 16:14:54 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJSE-0001ox-W6; Tue, 31 Mar 2020 16:09:31 +0000
+ id 1jJJXA-0007p1-G9
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:14:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
- Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=4YMjUqvn1g16RkZxnamj/llluRX/Zmwc24eVst39m28=; b=DuCn1jb5ejgWXlMFOsZqpCvNio
- 92aCdzkTbkMpP32gJFPD1oBfB+vt6JDjuXXNWcfk715CUpGuQ8nRKZHbWEtZqQlA8mxs+M7hKDhP1
- hGOwWvGL2xp5z0MLDYmFRrUNHBwZYPcm1Zh16Gaie6LI9wfSelTk9D8h/6iGgXcn2DKUlVh1gEyET
- cZgkh+FaeDSXVFo7VzizkDIVTs2CGax3na+PII35L7Ze3hM2M6A3JmX6QMkUiYTy+OC/01Wkeg7Vw
- dVA8vIoNIMrssMaraToY/OMYd8OldNW2Tx3lRJjoord0+VSOTZf6tG4sw4JynNJwV1ecHZJ8uIQqV
- E+UrYmpQ==;
-Received: from mail.kernel.org ([198.145.29.99])
+ bh=jIyjvWD0oZEzo4xCEedu4Z+6hX5HqofKUKUwriiXxpM=; b=Rjl2HVS3CLrMFerjOp+QZSu1QF
+ 0q6lAHR1NIoSJanl6Cme+gyWJFeWb+QArawos+Td5eDNdWIIKPhE8DctO6m67ZFDuLs/p9RoRgjkI
+ 12gUy/qoqdQ5jEnERwqzEWYLVeLX+E+sSCfd1MC15RNK1n3sgL/xG9yZhd1O5a88nAz+WnaavtYey
+ 6OYuXYufVmwaVgucuPQQN/qbur1WkCWrPuSrOxj3FJ3zQ2GntH+ONzq4ke2SXmhpgI9w5GE6naoNV
+ MVEEroo0XfGQhVEtmo+WrUZu0X+FVyAyqORDxOJtVHQO6YDC1Ex3dwP81Z7HFRZN2QL53SyR/Pj+f
+ 50v5Epng==;
+Received: from mx.sdf.org ([205.166.94.20])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJIC9-0004Tt-BG; Tue, 31 Mar 2020 14:48:50 +0000
-Received: from mail-qv1-f49.google.com (mail-qv1-f49.google.com
- [209.85.219.49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 800BA20848;
- Tue, 31 Mar 2020 14:48:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585666128;
- bh=e/7jTSv5Ln/7N2erMxSAhTPfQO0mGgov7i4pB0Kxz8M=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=EbrJxT9+qQ4vbmfQodNUZ75MqmrVy3/2NQDxPg4GsBywCzjeqIw2fq6lj3s7435X2
- NIM+7Ydop9wv5/4CkHGw9c7dOJtPBA/zSDJDrPe+DungVFsSYeZaSpNvpWfCUq24L2
- R+q388+xL8Vgv6ukYJr671hgBiLOn4kma+Cvp9Ro=
-Received: by mail-qv1-f49.google.com with SMTP id t4so6778724qvz.8;
- Tue, 31 Mar 2020 07:48:48 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ1M5VssF55xxp0BYiiWZwq03NJJCAk2mkz4Oq+8Tasw5AkSra3O
- m4G4aPSk8Ck1eKrM7MnQQwYMoUvtfZIdkoWAHg==
-X-Google-Smtp-Source: ADFU+vsm7QnLg9VC47OO+I8GiU3/k2tefVEY+Sy39Kwt/VBNT1kmLS6ih/sV4b6JI7vayYbVNykmFae5IwQbSwKy9fk=
-X-Received: by 2002:ad4:4bc3:: with SMTP id l3mr16286378qvw.79.1585666127545; 
- Tue, 31 Mar 2020 07:48:47 -0700 (PDT)
+ id 1jJIDB-0004VI-LU
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 14:50:00 +0000
+Received: from sdf.org (IDENT:lkml@sdf.lonestar.org [205.166.94.16])
+ by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02VEnFEj010261
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits) verified NO);
+ Tue, 31 Mar 2020 14:49:16 GMT
+Received: (from lkml@localhost)
+ by sdf.org (8.15.2/8.12.8/Submit) id 02VEnFfb002103;
+ Tue, 31 Mar 2020 14:49:15 GMT
+Date: Tue, 31 Mar 2020 14:49:15 +0000
+From: George Spelvin <lkml@SDF.ORG>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [RFC PATCH v1 44/50] arm64: ptr auth: Use get_random_u64 instead
+ of _bytes
+Message-ID: <20200331144915.GA4303@SDF.ORG>
+References: <202003281643.02SGhOi3016886@sdf.org>
+ <20200330105745.GA1309@C02TD0UTHF1T.local>
+ <20200330193237.GC9199@SDF.ORG>
+ <20200331101412.GA1490@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-References: <20200325220542.19189-1-robh@kernel.org>
- <20200325220542.19189-2-robh@kernel.org>
- <20200327202159.GA12749@ravnborg.org>
-In-Reply-To: <20200327202159.GA12749@ravnborg.org>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 31 Mar 2020 08:48:36 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+zFGvJ+3CmKw3OzgEWi-p4Uz9+nmnS5ax0J9ewoz5qZg@mail.gmail.com>
-Message-ID: <CAL_Jsq+zFGvJ+3CmKw3OzgEWi-p4Uz9+nmnS5ax0J9ewoz5qZg@mail.gmail.com>
-Subject: Re: [PATCH 1/4] dt-bindings: iio/accel: Drop duplicate adi, adxl345/6
- from trivial-devices.yaml
-To: Sam Ravnborg <sam@ravnborg.org>
+Content-Disposition: inline
+In-Reply-To: <20200331101412.GA1490@C02TD0UTHF1T.local>
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -5.4 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.166.94.20 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,97 +78,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- "open list:IIO SUBSYSTEM AND DRIVERS" <linux-iio@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Guillaume La Roque <glaroque@baylibre.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Lee Jones <lee.jones@linaro.org>,
- linux-clk <linux-clk@vger.kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Zhang Rui <rui.zhang@intel.com>, Brian Masney <masneyb@onstation.org>,
- devicetree@vger.kernel.org, Michael Hennerich <michael.hennerich@analog.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Stephen Boyd <sboyd@kernel.org>, netdev <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Hartmut Knaack <knaack.h@gmx.de>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, Jonathan Cameron <jic23@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ lkml@sdf.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 2:22 PM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Rob.
->
-> On Wed, Mar 25, 2020 at 04:05:38PM -0600, Rob Herring wrote:
-> > The 'adi,adxl345' definition is a duplicate as there's a full binding in:
-> > Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-> >
-> > The trivial-devices binding doesn't capture that 'adi,adxl346' has a
-> > fallback compatible 'adi,adxl345', so let's add it to adi,adxl345.yaml.
-> >
-> > Cc: Michael Hennerich <michael.hennerich@analog.com>
-> > Cc: Jonathan Cameron <jic23@kernel.org>
-> > Cc: Hartmut Knaack <knaack.h@gmx.de>
-> > Cc: Lars-Peter Clausen <lars@metafoo.de>
-> > Cc: Peter Meerwald-Stadler <pmeerw@pmeerw.net>
-> > Cc: linux-iio@vger.kernel.org
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> >  .../devicetree/bindings/iio/accel/adi,adxl345.yaml     | 10 +++++++---
-> >  Documentation/devicetree/bindings/trivial-devices.yaml |  4 ----
-> >  2 files changed, 7 insertions(+), 7 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-> > index c602b6fe1c0c..d124eba1ce54 100644
-> > --- a/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-> > +++ b/Documentation/devicetree/bindings/iio/accel/adi,adxl345.yaml
-> > @@ -17,9 +17,13 @@ description: |
-> >
-> >  properties:
-> >    compatible:
-> > -    enum:
-> > -      - adi,adxl345
-> > -      - adi,adxl375
-> > +    oneOf:
-> > +      - items:
-> > +          - const: adi,adxl346
-> > +          - const: adi,adxl345
-> > +      - enum:
-> > +          - adi,adxl345
-> > +          - adi,adxl375
->
-> I assume it is my schema understanding that is poor.
-> But I cannot parse the above.
->
-> The mix of items, enum and const confuses me.
+On Tue, Mar 31, 2020 at 11:14:12AM +0100, Mark Rutland wrote:
+> On Mon, Mar 30, 2020 at 07:32:37PM +0000, George Spelvin wrote:
+>> On Mon, Mar 30, 2020 at 11:57:45AM +0100, Mark Rutland wrote:
+>>> As I am unaware, how does the cost of get_random_bytes() compare to the
+>>> cost of get_random_u64()?
+>> 
+>> It's approximately 8 times the cost.  [Of *one* get_random_u64()
+>> call; 4x the cost of the two needed to generate a 128-bit key.]
+>> 
+>> Because get_random_bytes() implements anti-backtracking, it's a minimum 
+>> of one global lock and one ChaCha20 operation per call.  Even though 
+>> chacha_block_generic() returns 64 bytes, for anti-backtracking we use 
+>> 32 of them to generate a new key and discard the remainder.
+>> 
+>> get_random_u64() uses the exact same generator, but amortizes the cost by 
+>> storing the output in a per-CPU buffer which it only has to refill every 
+>> 64 bytes generated.  7/8 of the time, it's just a fetch from a per-CPU 
+>> data structure.
+> 
+> I see; thanks for this explanation. It would be helpful to mention the
+> backtracking distinction explicitly in the commit message, since it
+> currently only alludes to it in the first sentence.
 
-compatible can be one of 3 possibilities:
-"adi,adxl346", "adi,adxl345"
-"adi,adxl345"
-"adi,adxl375"
+Easily done, but I need to find a centralized place to say it, or
+I'd be repeating myself a *lot* in the series.
 
-For a single entry, 'items' can be omitted.
+That said, thanks for prompting me to quantify the cost ratio.
+I knew it, but never actually wrote it down.
 
-> I guess that if I am confused then others may end in the same situation.
-> Can we improve readability here or amybe add a comment?
+> It's worth noting that the key values *can* be exposed to userspace when
+> CONFIG_CHECKPOINT_RESTORE is selected. On such kernels, a user could
+> regenerate and read the keys an arbitrary number of times on a CPU of
+> their choice. From my limited understanding I presume backtracking may
+> be a concern there?
 
-example-schema.yaml explains this to some extent. I'd rather improve that.
+No.  Backtracking is an issue if the keys must remain secret *after*
+they are wiped from kernel memory.  This applies to session
+*encryption* keys (assuming the plaintext should remain secret
+after the session is over), and to any long-lived keys which are
+stored encrypted or otherwise inaccessible (e.g. in dedicated
+hardware).  The latter includes most asymmetric private keys.
 
-Rob
+Since the pointer authentication keys are authentication keys,
+and valueless to an attacker once the kernel is done using them,
+there is no need for backtracking protetion.
+
+Basically, do you need to wipe the key (with memzero_explicit) when
+you are done with it?  If that is important, you also want to
+know that the key cannot be reconstructed from the CRNG state.
+
+>> Yes, I went overboard, and your proposed change below is perfectly
+>> fine with me.
+> 
+> Great. That's what I'd prefer due to clarity of the code, and I'm not
+> too concerned by the figures below given it only adds 12 bytes to the
+> contemporary text size.
+
+A modified patch will follow.  Thanks for your patience.
 
 _______________________________________________
 linux-arm-kernel mailing list
