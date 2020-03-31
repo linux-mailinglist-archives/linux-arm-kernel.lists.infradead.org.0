@@ -2,84 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C5C3199B7D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:29:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163C3199BBE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:36:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jMa5W0sIO2XOwYzE+k8ziYu1dIQiZM8O8x/Z4CV+nAg=; b=ipHti3ypAKsOIz
-	3RCds1bNbi0qDjS3YD/6A66SEYpGF1Z/yXNEKlGE2v3wu9M0C+9XG/N4ImLLXTsaiaZAbwK4NpdA3
-	k/SeTh68I1siEDya/RY8ga47AhZaY0WLNJNr/mikpGBEP/d+2hvUCvbILyk5YAGYNCGirOEBzetzJ
-	1GnDB6mdR9H1i+Q29B2BVs0RuY52T0Q/MHqymYIoZdsjYV2LStG+/XTDrBRkl66oYrmrKkXjj/BG2
-	rjvpq84LzyyfVsMCLIcGpLNnagT4wMttpZ3OloK3zR45padZORFiYsC98BeRtP+SuZNA+V30bcRpY
-	vDbY9743uqOBNQSIVqgA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PrgGmQDRacxGGVwkMAsoKLAm+Ibm76mHEYxvVqSPCfA=; b=eg2bW//VAybLWkxEufEueDnoc
+	Hb6pN5USxf6/TPnovk4dfocs613jPvOGlIbWdktrxmdQcgoWoA1w/s42nKvwcMLh5O75v4NWyvqI3
+	Vhh0/bPcxCWjVyAnqhluzJ1mawOBey7Y/A0gPJyxkGMX+C7TH5q/FnFJsZ/vXmhTbe+TWB8mJ/INr
+	O7NRhGm7zuEIJ7j+jgr2A+8ayiiNPUhxP1gxkVbD1GqxuVvCI9qarZ4JQBPnyn1/27irB/0dIgrfz
+	hxjioSityDF0u+9xCynI1FA2aEiQp7IopgMHOJJAsjQe9FiNM6LRO3SOH646z9j7M+EFwABD/rAGb
+	HyKs82YBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJl6-0000Kk-0g; Tue, 31 Mar 2020 16:29:00 +0000
-Received: from merlin.infradead.org ([205.233.59.134])
+	id 1jJJsN-0002hj-Fu; Tue, 31 Mar 2020 16:36:31 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJke-0008Vr-93
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:28:32 +0000
+ id 1jJJo9-0005Lv-4K
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:32:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=r0AJPSf8r8qp+BalfPA6Bpq2XK/td5V0wFPsnuZhIPc=; b=R26I6KKB8Xc2je8xFtV7oFswD8
- VotNk059B0BTZ5875zIVzbdMBsqhLXPp2O3v4n1S7qekWbvbpo+jQs4hir70Ngu3WRIPi+Kn0Be4+
- CoTNWpY6KtLTl2OZpC8uTG4sIqkG+tKjI/MFfZ46S3fjF2b1B1ynzfkddi3OshrLXH9ygIfgl6t3x
- +ylsI1x6L4IZ2pipX4G/SKwj8SojOI3mrB1buzMwi1klJzgauVknGhsIoo3s6b3D/upZSuQbTZnYU
- eYbi59FvHCqAtqP5HC745c9NZnr6uGOEBp3+8x/PrRbgwE5XxvuV76yWkQTfnNulbfIs7WAZpw/HB
- MwjBYamg==;
-Received: from vps0.lunn.ch ([185.16.172.187])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJGPz-0001FP-O1
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:55:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=r0AJPSf8r8qp+BalfPA6Bpq2XK/td5V0wFPsnuZhIPc=; b=CO3dujQgQCXxwkhIn1tgWxG/5d
- 5yb5cQsEgmfDWDTvLVAIhSXYZrINlwKCv6QQUStYlGGl36aTjI5p7Pj3HEctHNnD0vINgBPxPw4Pm
- rgHWDeDPB1Ym8HJOBiXNgrmayzL/bgE0zdWLDeLnMFuna0b5BrlhuvvCsTHky6bNOkPo=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jJGPZ-000Cws-3h; Tue, 31 Mar 2020 14:54:33 +0200
-Date: Tue, 31 Mar 2020 14:54:33 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: David Jander <david@protonic.nl>
-Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
-Message-ID: <20200331125433.GA24486@lunn.ch>
-References: <20200329110457.4113-1-o.rempel@pengutronix.de>
- <20200329150854.GA31812@lunn.ch>
- <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
- <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
- <20200330174114.GG25745@shell.armlinux.org.uk>
- <20200331104459.6857474e@erd988>
+ bh=EnBQqz1Zs0ivzG+fg1aNTGdyXL/Kj1Ictb4w4EVq7W4=; b=rGTjR2j7vZXxGAo20BgdV5rrBa
+ Djy5P+XSZlDgOmSIHnUVe87lmh/2xRwMN/0hxsEIdbd3fFJiY/2F7vLXrjBNH/xV4ijg9G8PJapDh
+ dLBEw8L/ATsmRvF6e2Dv9WXvsFCX7NrWbNY56Kc3g+YxoHbumlLdfd9TTOKSmuUihgqOnIVbBqYZI
+ sSLMSSXSXv4PU/EXgayY/YR6T6kLu6ANHNLiwZDI03/vfUqgKL1dvVrC2vCxOjHsai2iine7hM0hz
+ CwnFaEjaOFJ9Qf5Ilq0V2tvVKJXYdc4eCjQnUyUqL5NvLufTu30yo5BTcEe3W82aFKUUl/esrVTd3
+ qiSP2Hfg==;
+Received: from foss.arm.com ([217.140.110.172])
+ by casper.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJGYH-00019W-Ud
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 13:03:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38C5D31B;
+ Tue, 31 Mar 2020 06:03:29 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AA9483F71E;
+ Tue, 31 Mar 2020 06:03:28 -0700 (PDT)
+Date: Tue, 31 Mar 2020 14:03:27 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Daniel Baluta <daniel.baluta@gmail.com>
+Subject: Re: [PATCH 2/5] ASoC: SOF: imx: fix undefined reference issue
+Message-ID: <20200331130327.GE4802@sirena.org.uk>
+References: <20200319194957.9569-1-daniel.baluta@oss.nxp.com>
+ <20200319194957.9569-3-daniel.baluta@oss.nxp.com>
+ <20200331122540.GD4802@sirena.org.uk>
+ <CAEnQRZD_Hjp2vsouUURuZ_zgAnnUXynq_L5YgCZAN4pFkcmGWQ@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200331104459.6857474e@erd988>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+In-Reply-To: <CAEnQRZD_Hjp2vsouUURuZ_zgAnnUXynq_L5YgCZAN4pFkcmGWQ@mail.gmail.com>
+X-Cookie: It's later than you think.
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200331_140334_360545_1B068F1A 
+X-CRM114-Status: GOOD (  15.97  )
+X-Spam-Score: -4.0 (----)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-4.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,75 +83,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, netdev@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- linux-imx@nxp.com, kernel@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, kai.vehmanen@linux.intel.com,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Baluta <daniel.baluta@oss.nxp.com>, Yue Haibing <yuehaibing@huawei.com>,
+ Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ sound-open-firmware@alsa-project.org
+Content-Type: multipart/mixed; boundary="===============6277946942233777135=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->  - Disable the SmartEEE feature of the phy. The comment in the code implies
->    that for some reason it doesn't work, but the reason itself is not given.
->    Anyway, disabling SmartEEE should IMHO opinion be controlled by a DT
->    setting. There is no reason to believe this problem is specific to the
->    i.MX6. Besides, it is a feature of the phy, so it seems logical to expose
->    that via the DT. Once that is done, it has no place here.
 
-The device tree properties are defined:
+--===============6277946942233777135==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="7CZp05NP8/gJM8Cl"
+Content-Disposition: inline
 
-bindings/net/ethernet-phy.yaml:  eee-broken-100tx:
-bindings/net/ethernet-phy.yaml:  eee-broken-1000t:
-bindings/net/ethernet-phy.yaml:  eee-broken-10gt:
-bindings/net/ethernet-phy.yaml:  eee-broken-1000kx:
-bindings/net/ethernet-phy.yaml:  eee-broken-10gkx4:
-bindings/net/ethernet-phy.yaml:  eee-broken-10gkr:
 
-And there is a helper:
+--7CZp05NP8/gJM8Cl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-void of_set_phy_eee_broken(struct phy_device *phydev)
+On Tue, Mar 31, 2020 at 03:41:57PM +0300, Daniel Baluta wrote:
+> On Tue, Mar 31, 2020 at 3:25 PM Mark Brown <broonie@kernel.org> wrote:
 
->  - Enable TXC delay. To clarify, the RGMII specification version 1 specified
->    that the RXC and TXC traces should be routed long enough to introduce a
->    certain delay to the clock signal, or the delay should be introduced via
->    other means. In a later version of the spec, a provision was given for MAC
->    or PHY devices to generate this delay internally. The i.MX6 MAC interface
->    is unable to generate the required delay internally, so it has to be taken
->    care of either by the board layout, or by the PHY device. This is the
->    crucial point: The amount of delay set by the PHY delay register depends on
->    the board layout. It should NEVER be hard-coded in SoC setup code. The
->    correct way is to specify it in the DT. Needless to say that this too,
->    isn't i.MX6-specific.
+> > This has you as the author but you list a signoff by Pierre before you?
 
-Correct:
+> Patch was initially designed by Pierre [1] when in the internal SOF
+> tree we already had the I.MX8M patches.
+> Whereas, in the current patch series I firstly fix the i.MX8 then I
+> add support for i.MX8M.
 
-      # RX and TX delays are added by the MAC when required
-      - rgmii
+> Should I go back and put Pierre as original author?
 
-      # RGMII with internal RX and TX delays provided by the PHY,
-      # the MAC should not add the RX or TX delays in this case
-      - rgmii-id
+Yes, if you're forwarding a patch someone else wrote you should keep
+their authorship.
 
-      # RGMII with internal RX delay provided by the PHY, the MAC
-      # should not add an RX delay in this case
-      - rgmii-rxid
+--7CZp05NP8/gJM8Cl
+Content-Type: application/pgp-signature; name="signature.asc"
 
-      # RGMII with internal TX delay provided by the PHY, the MAC
-      # should not add an TX delay in this case
-      - rgmii-txid
+-----BEGIN PGP SIGNATURE-----
 
-The needed properties exist.
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6DP54ACgkQJNaLcl1U
+h9BNCwf8DKshKqaUb3H081iRZrUHWAJSZU+DnmiD5ENcYbns3F/gJNUhdt8nItvh
+VRWzN4wsKM2ELUd0ktdzcRaxxQS52CBuw0JkJAsVMlOZ2UxE3hYBSe6HrT6gAvpf
+BKcnouJmHOot/rGlw/Z+NtyCxEDQkqz24/+Jv63z6PRrnwb3DHDBJLhP8+FlJ2We
+cKTS1TR290aRfdmPaXyPTiwxGolcGzf5ulXnmgi/0/ytRGd59Yi8IwbC/Cm1sbh7
+rG+PE9vO5P2oHG8TBUUBAcGqO0nLtzn2UdkF6EVzM7IqcPr+QWeIdv9Fgo1b4BN8
+h44Bx4448w4dpDXA6nidWLq33Zbe6Q==
+=Aux6
+-----END PGP SIGNATURE-----
 
-I think part of the issue is that there are iMX6 board which are not
-device tree?
+--7CZp05NP8/gJM8Cl--
 
-       Andrew
+
+--===============6277946942233777135==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6277946942233777135==--
+
