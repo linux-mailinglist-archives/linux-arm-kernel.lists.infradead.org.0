@@ -2,80 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 397D1199CFF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 19:36:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8FBC199D1B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 19:41:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-ID:In-Reply-To:
-	Date:MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=I9WbZqizMrEsGWFgedG2BarmnuCx9KDocPrq9+e4fOI=; b=KMsGkw0xVxJQwu
-	Uokn+aJTA1nvoa9F8N3MiThAG/+Gg9sj95/ZkE8l1ZsBIMqB4Dz7MfXDR4AoXUYqITMfcsKvy1RSt
-	Ot0u1+AiHRNrWIwb8VSAXq7JMYYW6NiO+gRAdt3Qk8tzCktlulzHHBxiay9iSkKxswG1REHlt5ZXS
-	Huw1/4q7JrjF9BdZ03OFE+D/dkEx0wYw+tdFS5MRHg2A+dmAWwv7MU8VFu4hMTVIjz3YgBtm6xaVd
-	t1oOtHpoFZJhnDaoCEo+SY+Zk/JlERBN+FS6weHCABB8sSnHlJO/aGlR5wU2TyuTyWRTvI/o0a8WA
-	KeZxPIh8X9FHjGcUS6ZA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wIXDPFIv/NYpFnqbCqzXeBYSvSG0OlgjfJ5iTZDS244=; b=PNfYLpv96Wtpme
+	OJJi+eZFkJuiOYmwpmNwzCeh7yRmtVEZUwICMNvcRRZvIkbB4CHrKpyriP+8FR8LP4Ly4tDY1mKum
+	z3UxuMcw2+sWARUrhMSbFpyM6xPSmJbtrhJBxnrEKTHxs5FyrMKXqun7hSjD5W/DSlKCSTmmzp4rP
+	euhHi4BbmQjj3EIvyr5lQsgQDvk3sy3WGIFL6ps45lBNfYgOVbv0tMauNgKb8futf0Ju3PTXDuocW
+	xqBr7jcSoTD2ZsOj3vUmqbVuI+HFd1enpRfyqLRcFGvwXJzxm6MujM4p7t2TqNU/yO+xcgfHE27TQ
+	Z9T0KaldHp/+pPm2Zm9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJKoB-0005eE-7Z; Tue, 31 Mar 2020 17:36:15 +0000
-Received: from mail-io1-f71.google.com ([209.85.166.71])
+	id 1jJKtE-00007u-76; Tue, 31 Mar 2020 17:41:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJKnz-0005dC-VF
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:36:07 +0000
-Received: by mail-io1-f71.google.com with SMTP id p4so19843825ioo.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 10:36:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:in-reply-to:message-id:subject
- :from:to;
- bh=EkBmF5uXCWrM6aOPYLh3R3gAH7wKc57Bigw1PTLooMY=;
- b=JP2IYoKFVhQejsI3Komho73vvU5jtcZF0yOWXGGBSEBqyn7KxoohG3zVYhWkOg5pQp
- jj5xBXMccwvOiadPdw3IpjgIiMwnx+RqwXcvXPKbXmjcQtXMHpVG2GcjXr3HkmG+z376
- n5WZQMJhuZGvxIcnUkG4iAKONqbN2MKqxdNR+vKRuBW/j5fh9u2B69ktk1xYwuQN88vr
- QZ9ew7l0StBB3sHJE5625Q+zy6ELrGlhhXMdMb/U0n6EzWr0iZAvlSG7WsS3uz4o1nz8
- A3qRuuTIOcqWdhtk+gHbmpsNKGH8xH08nA4BCz5MSXHsbucNLO5Psmyu1XJbXulk6dfQ
- AtEQ==
-X-Gm-Message-State: ANhLgQ1RqHfnqcnbDAozC0SKaCXd5dV2jL7Lv+nL0dGBkQ+daQ5v635y
- 7wjeZtLDW7uP8MHAI+pruoBjEhCN+Heh8LXeY34FRhz+xORM
-X-Google-Smtp-Source: ADFU+vvHwabh6/XT3HQsMvsns9bvDqN3/9G4mkXHM92526jZauR7yd6nL/ccsz/Mvu+hTOSZfNJXAFtWrHfa8tJOTfHuhC7B/BNp
-MIME-Version: 1.0
-X-Received: by 2002:a5e:880e:: with SMTP id l14mr15608634ioj.8.1585676161841; 
- Tue, 31 Mar 2020 10:36:01 -0700 (PDT)
-Date: Tue, 31 Mar 2020 10:36:01 -0700
-In-Reply-To: <000000000000da6059059fcfdcf9@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000005b022005a22a0050@google.com>
+ id 1jJKt5-00007b-AJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 17:41:20 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C987820BED;
+ Tue, 31 Mar 2020 17:41:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585676478;
+ bh=SNoQUVCjCkooeA8cu157MJg11jvVTYE1Wq5nD+SAOt8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=l0TzQFv49ZtbVWvHeK30LQ5TJJS1xON3Eh0FdMYTf784spIdbnyxArUevTGYwiRg7
+ xDtnBb5qIzwDOhOzngke9jfyWVI8OAvh6FPLLCieOEgn/yjDEbw+v0rDptNNpvWjU4
+ RZBYSJkOatgocnrYQMdivvqcQAdw8vl3CtQFuR4c=
+Date: Tue, 31 Mar 2020 19:41:16 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: syzbot <syzbot+a66a7c2e996797bb4acb@syzkaller.appspotmail.com>
 Subject: Re: KASAN: use-after-free Read in skb_release_data (2)
-From: syzbot <syzbot+a66a7c2e996797bb4acb@syzkaller.appspotmail.com>
-To: davem@davemloft.net, festevam@gmail.com, gregkh@linuxfoundation.org, 
- grundler@chromium.org, hayeswang@realtek.com, johan.hedberg@gmail.com, 
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org, 
- linux-bluetooth@vger.kernel.org, linux-imx@nxp.com, 
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, marcel@holtmann.org, 
- nishadkamdar@gmail.com, peter.chen@nxp.com, pmalani@chromium.org, 
- s.hauer@pengutronix.de, shawnguo@kernel.org, syzkaller-bugs@googlegroups.com
+Message-ID: <20200331174116.GA1844017@kroah.com>
+References: <000000000000da6059059fcfdcf9@google.com>
+ <0000000000005b022005a22a0050@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <0000000000005b022005a22a0050@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_103604_001087_208AE7A0 
-X-CRM114-Status: UNSURE (   4.00  )
+X-CRM114-CacheID: sfid-20200331_104119_373565_C27C742A 
+X-CRM114-Status: UNSURE (   7.23  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.71 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.71 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,31 +75,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: peter.chen@nxp.com, s.hauer@pengutronix.de, johan.hedberg@gmail.com,
+ nishadkamdar@gmail.com, grundler@chromium.org, shawnguo@kernel.org,
+ marcel@holtmann.org, linux-usb@vger.kernel.org,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, pmalani@chromium.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org, hayeswang@realtek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-syzbot suspects this bug was fixed by commit:
+On Tue, Mar 31, 2020 at 10:36:01AM -0700, syzbot wrote:
+> syzbot suspects this bug was fixed by commit:
+> 
+> commit d9958306d4be14f4c7466242b38ed3893a7b1386
+> Author: Nishad Kamdar <nishadkamdar@gmail.com>
+> Date:   Sun Mar 15 10:55:07 2020 +0000
+> 
+>     USB: chipidea: Use the correct style for SPDX License Identifier
+> 
+> bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=16d4940be00000
+> start commit:   63623fd4 Merge tag 'for-linus' of git://git.kernel.org/pub..
+> git tree:       upstream
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=5d2e033af114153f
+> dashboard link: https://syzkaller.appspot.com/bug?extid=a66a7c2e996797bb4acb
+> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13c25a81e00000
+> 
+> If the result looks correct, please mark the bug fixed by replying with:
+> 
+> #syz fix: USB: chipidea: Use the correct style for SPDX License Identifier
 
-commit d9958306d4be14f4c7466242b38ed3893a7b1386
-Author: Nishad Kamdar <nishadkamdar@gmail.com>
-Date:   Sun Mar 15 10:55:07 2020 +0000
-
-    USB: chipidea: Use the correct style for SPDX License Identifier
-
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=16d4940be00000
-start commit:   63623fd4 Merge tag 'for-linus' of git://git.kernel.org/pub..
-git tree:       upstream
-kernel config:  https://syzkaller.appspot.com/x/.config?x=5d2e033af114153f
-dashboard link: https://syzkaller.appspot.com/bug?extid=a66a7c2e996797bb4acb
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13c25a81e00000
-
-If the result looks correct, please mark the bug fixed by replying with:
-
-#syz fix: USB: chipidea: Use the correct style for SPDX License Identifier
-
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+I really doubt a comment change fixed a syzbot bug :)
 
 _______________________________________________
 linux-arm-kernel mailing list
