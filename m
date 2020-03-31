@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10F32199BA4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:33:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7EB4199BAF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:34:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iehhXEL47gV1KSMrmMXB6TLHsXBWE4HmbBUc99EPYzc=; b=a5RhReRAEe1jqX
-	+XCw0hZmTq1fVJ3+IjHqFrkESWrGsPIVV/D0SzeSJKePWM2QCG3tc8Qe5YEtS0iMGtT+wUszrPWZv
-	KH/pd3kf26umziCYMWmRlXClSX7G7xr3OG56KsjqvCWPVgGNit3J50w4kqaLPry99J8M+xkIbGx3R
-	+7lomT3pqFZYOlXe50D6TveTSqGmYXyvDiCJ+UmM5k1HapHL4l/v0wenpbLrYFZOfNpoEpnY6NdhO
-	P7hHuaL+oki+CplZgetnWe5uLJIryylNM31oUef/gzyGrp49Cr3cpZSEas1WXBH4CdUQNlEAk2rAi
-	epFR3CzGegRUf65xoF8A==;
+	List-Owner; bh=CxbaGky3m/9pJGkK+p+JjgrxSqBrOkgkft3kyAZ7sOU=; b=HZv1W0iwBectWb
+	V56CYV0k/0u3JF3etjelB+gchc8sAt3iWIzETTrAlBVjGdo50qMUMdIdTxa30nQYQQWUKbJdjjbaE
+	+CrHboQVAKCr+vOHdJfTULNGrACBEuQkj9v8ov5uLoaySZtcHPVtY4rHtvR6vBq5Q/qxXOSt0oV3G
+	kv+8WUNQuwqFXTccEHAo5kJ0f/2kBFYqzhIl0tc9Pd/wSeeuKpCrnh5ZmYNf8djc+I5sW7vA4AbzG
+	ucRiQqp/DACx3ZFHPAcbjelWpvC8UmjIyGb5/aZbc1fNEgMYa2rq+mv/1TfwDwH4A6LbbHJuxRxDR
+	7B27zywB9f/viTy3aO7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJok-0005bV-Vg; Tue, 31 Mar 2020 16:32:47 +0000
+	id 1jJJq9-0006c9-HK; Tue, 31 Mar 2020 16:34:13 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJns-0005AX-LF
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:31:52 +0000
+ id 1jJJnx-0005EI-PK
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:31:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=HJouIh+gtbOa4/NEfFaDWqJDG9uWWV2FdHTxhjN0X/w=; b=gBba9ibBKV+Kas57Y1ek+7MV7/
- SA46C3e2MaAsaaLULcMiQYfMAXCVwv/WSwyG1xsPpDauAUyfa12zpQEEiRt9ftFvejCfMsAgMfv9y
- vKn9Tv+cLH25MvkD42GbslrzXqq+DCUjc4vflujYC/0hPcyx+iM+fxE/EIXaIXN3e3sPJ5lBWFmbp
- WO1aTcfPCAQMluPiqtYVfLNW3NP8tJLIyd5x8rH1cnbmVK+jgA/oK8WaTgcbEnvZXkoqfLEuGs73E
- Ltv0Iqhs0iUPS4n/eTd28qOWZHXznGtoV9QFzviF2AP0vtHgILyB+oRYDjteo3gJEsakHablHmI0u
- dnTi5cUw==;
+ bh=zWw1PBkLKZO/1SCUrEYPQIjuKXzFwwaGl7kJUKQancE=; b=jDhhz7qNa/3wzR7TcB8xBjUSPL
+ Sw8BARxdLcEQBRlD69RABSMzPcRNNkDu+7Vs0EXhuOUVc8czBZHwsUpMDcMFAtu9Hy8fD6LjHmTjq
+ TRgqkxN7IezzOl2AIXGVWv4zaTbKq2pqUaCCIW/7svDMRzWHNlmllK5WbnPd33km7Wd/sVQRw2/mM
+ r9VD5E2dEugQ+r4vicuVPjWk9f9K2LE9ReN+t2FZ8ddQwSwE2xsVQm0aSXDWS8hHhIYy5sRmzmHdW
+ X8mMHqlpOieVihHz7zL0mg+nqwInxGpAWquz6C8la+sVKs3v4zbZOMC0b0ZfLlCxd+AhQz7bLo+O0
+ KZbJkXrQ==;
 Received: from mail.kernel.org ([198.145.29.99])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJFpX-00080W-RK
+ id 1jJFpZ-00080k-6l
  for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 12:17:24 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5465220838;
- Tue, 31 Mar 2020 12:17:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 99D2D21473;
+ Tue, 31 Mar 2020 12:17:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585657038;
- bh=/G1FsF/xAq6LA4+vlGRopU41c40Jo/k3MSVldBBWBqk=;
+ s=default; t=1585657039;
+ bh=pF5jIxK97ltdsCKXvkyp8u1t0qhyes9Mxr4id4nqWic=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ulh7YDCfhdwEa+BcT3Nbcx2jbGR8r5bsa20eUBd7s6q7NAnd+NKS7LkitoHxHlQbj
- JfLaHFQwUyevjcub3cZQxsOZu1ya9bXqOG7i51B9aMRt5LIY+MntyfCPpMaBwBk6DV
- 15uTOPRrG4AYrUGa97pvXRw4zgt97pOIoXitQTTs=
+ b=sC7NV47OGjr9KdjEnicTNouF55gGuNcFUtaG23ZR3MEcZ0cPVKrGmlo0ljSY8oArx
+ i2UTyEPBf7BIbZH+omivfofAgGwxqBcNPrrdaeE/pHgROC4pdbKo7GIB7c0uB+MMrA
+ vtZV9fj5OE/KeM5H9jl1MleuLQ7EPu13MtF79J6w=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jJFpU-00HBlI-Jn; Tue, 31 Mar 2020 13:17:16 +0100
+ id 1jJFpV-00HBlI-Gt; Tue, 31 Mar 2020 13:17:17 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 08/15] MAINTAINERS: RIP KVM/arm
-Date: Tue, 31 Mar 2020 13:16:38 +0100
-Message-Id: <20200331121645.388250-9-maz@kernel.org>
+Subject: [PATCH 09/15] KVM: arm64: GICv4.1: Let doorbells be auto-enabled
+Date: Tue, 31 Mar 2020 13:16:39 +0100
+Message-Id: <20200331121645.388250-10-maz@kernel.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200331121645.388250-1-maz@kernel.org>
 References: <20200331121645.388250-1-maz@kernel.org>
@@ -76,8 +76,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_131720_407273_39BE1106 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20200331_131721_609954_ACF158B9 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -7.3 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
  Content analysis details:   (-7.3 points, 5.0 required)
@@ -123,36 +123,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Drop the KVM/arm entries from the MAINTAINERS file.
+As GICv4.1 understands the life cycle of doorbells (instead of
+just randomly firing them at the most inconvenient time), just
+enable them at irq_request time, and be done with it.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Link: https://lore.kernel.org/r/20200304203330.4967-18-maz@kernel.org
 ---
- MAINTAINERS | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ virt/kvm/arm/vgic/vgic-v4.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 6158a143a13e..e84a94e5a336 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9164,7 +9164,7 @@ F:	virt/kvm/*
- F:	tools/kvm/
- F:	tools/testing/selftests/kvm/
+diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
+index 1eb0f8c76219..c2fcde104ea2 100644
+--- a/virt/kvm/arm/vgic/vgic-v4.c
++++ b/virt/kvm/arm/vgic/vgic-v4.c
+@@ -141,6 +141,7 @@ int vgic_v4_init(struct kvm *kvm)
  
--KERNEL VIRTUAL MACHINE FOR ARM/ARM64 (KVM/arm, KVM/arm64)
-+KERNEL VIRTUAL MACHINE FOR ARM64 (KVM/arm64)
- M:	Marc Zyngier <maz@kernel.org>
- R:	James Morse <james.morse@arm.com>
- R:	Julien Thierry <julien.thierry.kdev@gmail.com>
-@@ -9173,9 +9173,6 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- L:	kvmarm@lists.cs.columbia.edu
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git
- S:	Maintained
--F:	arch/arm/include/uapi/asm/kvm*
--F:	arch/arm/include/asm/kvm*
--F:	arch/arm/kvm/
- F:	arch/arm64/include/uapi/asm/kvm*
- F:	arch/arm64/include/asm/kvm*
- F:	arch/arm64/kvm/
+ 	kvm_for_each_vcpu(i, vcpu, kvm) {
+ 		int irq = dist->its_vm.vpes[i]->irq;
++		unsigned long irq_flags = DB_IRQ_FLAGS;
+ 
+ 		/*
+ 		 * Don't automatically enable the doorbell, as we're
+@@ -148,8 +149,14 @@ int vgic_v4_init(struct kvm *kvm)
+ 		 * blocked. Also disable the lazy disabling, as the
+ 		 * doorbell could kick us out of the guest too
+ 		 * early...
++		 *
++		 * On GICv4.1, the doorbell is managed in HW and must
++		 * be left enabled.
+ 		 */
+-		irq_set_status_flags(irq, DB_IRQ_FLAGS);
++		if (kvm_vgic_global_state.has_gicv4_1)
++			irq_flags &= ~IRQ_NOAUTOEN;
++		irq_set_status_flags(irq, irq_flags);
++
+ 		ret = request_irq(irq, vgic_v4_doorbell_handler,
+ 				  0, "vcpu", vcpu);
+ 		if (ret) {
 -- 
 2.25.0
 
