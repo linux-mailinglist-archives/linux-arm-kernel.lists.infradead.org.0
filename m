@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 981B6199ABE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:04:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5336199B0F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:12:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RqPlme2592oAEWMtxlxIirKhmtNnSVwnIim8uaIbNgw=; b=IGG
-	f4ua2gvstvfxn4lgyHq5w8pQGnT8Y+soxvdPzVwzYimPssialtCsUhCQbUTpYT5vMZHSD8+xA1kvo
-	L3Y6M/CCR+4fW6SMPM0S1+fX/hlCI/6RcepIteSAiV8yaToMTKoKyQ05WinVxqub33KLMheR1Toa5
-	YmN0R6ob82cTgKJm8u1Ff/1Ytx5pHcl/T87IdnPRGZaS97n935s/GrYwHePJVF7VWVZdD8pjj5JUh
-	mP9T9Us+sb+bCb2dR1sbe5Wh8iXYY2pJaS/N/te1hw+n26kp9W7cBDW+S1U/a3B3kWSJ5oBYUEllr
-	xiLxNnBxjxLZzdLdkcqZPDtIHQGkDDw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=OZ9ZV27raeEOFfvHta51UJxYgFQSFIeiTSQC8UkCZXE=; b=FXGdUWvCK9oMZEmhJv1kXkCivW
+	nDH6jxCvVxlyguRc0oo+zqwR0XCNutOnynQnQOg4fa2jjYfsklBcSb+58uuJ0Ypb5D8fYxhjBE3bE
+	bHw5rSU5kQt8LZyYyym8NOPBAULKvozUeNHLGy8RYss9RG8b3OWmpOlWqBfCRvRo+LFJv5G+aj+2+
+	c/7NvByZPZVVrOvDsrflRyUEJij8ppdIDRvENgPqL50+IaGS198Gxc2ra+g/PPNuW4kkadTmdHWVa
+	rGCsNpzM//yyJpCvdjwfwO8FjQw+IMUKtbUmvHBKvTGyVeZmMCtPRt95nK0A6EwczycDkAKUMpivJ
+	VaHPc37Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJN1-0005DN-QY; Tue, 31 Mar 2020 16:04:07 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jJJUn-0005hr-1z; Tue, 31 Mar 2020 16:12:09 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJMq-0005By-Al; Tue, 31 Mar 2020 16:03:57 +0000
-Received: by mail-ed1-x541.google.com with SMTP id a43so25753459edf.6;
- Tue, 31 Mar 2020 09:03:54 -0700 (PDT)
+ id 1jJJUW-0005bT-Ga; Tue, 31 Mar 2020 16:11:54 +0000
+Received: by mail-lf1-x143.google.com with SMTP id t16so16950349lfl.2;
+ Tue, 31 Mar 2020 09:11:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=RaTwRr96LXp/hTXZkNHh+ephRC8ostasbFPkQNr4Hb8=;
- b=rgtwhkzGGRUXYxeH5bHrhNHBc+JNY4l8GMVg4YFEl5L/oeNrTK+SSQvLvLYuMs0BHU
- /pDfG/JQYKRApYpuFaeQy9dioDlkxtTiqMM1RHkwJs5DUoEAKpq1nHUD+2Eg622wyGqu
- KUUvLmJc8kAcsQl9D51OEqcaVKE6WU1Ie3+r9DhE+wJabKtrCaAaEXEk1KAaLNpIMnKc
- LkNokC22Zxi2QcQxaDKXzQJfzK0ls+pE2UY5xuRCNmULNT4TvWajX6TiB/dO4bSyGxdd
- FgAhD2+fcm+3CyUmxIYmRGemPJialzqSLq4ZUZ5K3SE8RZfeKzLFCUSPIIMFH6f75se3
- 3pMw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=o49PLtczjrvnDvwyYGD9D+ZfmKnK23dv8VxdMQjHLQo=;
+ b=GcBI+VTxX4A3aVLmPkgITDWYoC2Han02vraisjcoDy6dieWJWqK7aSepeeBupCGFgQ
+ ha+cEwrNujyV0gQQIpmvWoHL8bZxiS/HVBgNLhX4JuyVLXMBlp+8Om4/GZUPb1f1rgbZ
+ d+5LVd54abHb4j9SRHvr/5Zhja9h0dbPkgmCgfHWA0lL/PB4XKfJFk0StUfIO886iYxG
+ wfKrwaINP5VIYI2c3gC1GhqraRZJNiaRAz4hyRIn0foos/63M0K/2ZP1+2izbIoBNh6x
+ 8ZIWMZsFqGurcUbLTezggmynH/BiIPxgJDIlD/YT+KsKlPoMgh8dIX3B2gFvpntRZ2Ku
+ 9nCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RaTwRr96LXp/hTXZkNHh+ephRC8ostasbFPkQNr4Hb8=;
- b=kT3nWwAN5f7Z4DY4p2iocwQK8XZCtf4NVtzvjiq4i0m7RdB1swjQjg/m8Ze75+M9Ao
- a3pJKDRIYX86+Iq7cNgYl5ciCVpdJTZaHUIRnY1bhvdDZJq4kVTz3wxEXsDLSkMoIsqV
- 96NSDBdX0bEHNiipC3Rq0X4nV4aPKow+MOsLoPL+ZDhuJZZAb5Aw42VJ/DUJrXcg/qIB
- LKnIhngADCiYQvDv7HsKHKodFI61EpjDmFYzcB4u6StdTb6YFkQGLfWQ10ZhiK+x+0dI
- dZrIxmpqAlCF/OtHwb6EdFNuMyPBRIWoVZW6Lm/phcFKhgQomXhMVRlfD1uEgVnO91FS
- 38og==
-X-Gm-Message-State: ANhLgQ0C0qbDzOAUT9zTU0TjFySWRZYR3QKAwtYm7slqikS/CG7lHtoP
- hf+7uXiP77ocswmJMp0y2qhq4P1a
-X-Google-Smtp-Source: ADFU+vszFwYArrRRDeb7hvjW6c2dFE+s6oWpyrtFll1nJHKll+cyfkE5fWhk8+23o8wRsxRkmz8U1g==
-X-Received: by 2002:adf:b1d8:: with SMTP id r24mr20580572wra.266.1585656839738; 
- Tue, 31 Mar 2020 05:13:59 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=o49PLtczjrvnDvwyYGD9D+ZfmKnK23dv8VxdMQjHLQo=;
+ b=QaezlnvJf+nLoWE5h8oEMbv9wK49y1LSQnGb3z5dBTQJixtQUtNAtHF3D36ueOjL+M
+ I9hU9WujP5/Su4ot5C8+0aZhxgvwPYLgCTpZRNOZ2fy9lEnIkmzuw23wC0+qWe557dLj
+ o0youGMMSt2zMJPCx9hiSfHo2RBqqiP7lanuIiE1dGK8Ed4KV1t2td1O/iBSpfEdE+55
+ L3HrZ0EIxa9kYla8MgqTIcG96AlJoE+NWQKUAGbf2W5+WsqmmTZwb35gu/+/YPnEFDzm
+ CQt8jm4+c9G/NeT2FWTxMPresQvDHURuV0QqSFHOvgiB54d32rlZpj/CAjgZHJptpye0
+ a1hw==
+X-Gm-Message-State: AGi0PuaHmbg221SrcJ7U/EEuCOct2SLg7vnVUlZASQJKovmaJiXcXz91
+ rsEKV4rtPJzQJcvb2T00Tnx6cKjS
+X-Google-Smtp-Source: ADFU+vuz27mAc1lNVPQfLWPm/LTORsy6muqNkMdbp2qKAPkgBcrIlks83Udd1Fa6w5TPOn0as3gJjg==
+X-Received: by 2002:a5d:4cc4:: with SMTP id c4mr19884904wrt.346.1585656840655; 
+ Tue, 31 Mar 2020 05:14:00 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 127sm3754936wmd.38.2020.03.31.05.13.58
+ by smtp.gmail.com with ESMTPSA id 127sm3754936wmd.38.2020.03.31.05.13.59
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 31 Mar 2020 05:13:59 -0700 (PDT)
+ Tue, 31 Mar 2020 05:14:00 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [RFC PATCH v3 1/2] dt-bindings: sram: convert rockchip-pmu-sram
- bindings to yaml
-Date: Tue, 31 Mar 2020 14:13:51 +0200
-Message-Id: <20200331121352.3825-1-jbx6244@gmail.com>
+Subject: [RFC PATCH v3 2/2] ARM: dts: rockchip: fix yaml warnings for
+ rk3288-pmu-sram compatible nodes
+Date: Tue, 31 Mar 2020 14:13:52 +0200
+Message-Id: <20200331121352.3825-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200331121352.3825-1-jbx6244@gmail.com>
+References: <20200331121352.3825-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_090356_399000_A8F99F13 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20200331_091152_621016_045628D0 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jbx6244[at]gmail.com]
@@ -103,80 +107,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files with 'rockchip-pmu-sram' compatible nodes
-are now verified with sram.yaml, although the original
-text document still exists. Merge rockchip-pmu-sram.txt
-with sram.yaml by adding it as description with an example.
+A test with the command below gives for example these warnings:
+
+arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
+'#size-cells' is a required property
+arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
+'ranges' is a required property
+
+Fix this error by adding '#address-cells', '#size-cells' and
+'ranges' to the 'rockchip,rk3288-pmu-sram' compatible node
+in rk3288.dtsi.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/sram.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
 Not tested with hardware.
 
-Changes v3:
-  Document the compatible
-
 Changed v2:
-  Merge with sram.yaml
+  Fix dtsi.
 ---
- .../devicetree/bindings/sram/rockchip-pmu-sram.txt       | 16 ----------------
- Documentation/devicetree/bindings/sram/sram.yaml         | 14 ++++++++++++++
- 2 files changed, 14 insertions(+), 16 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+ arch/arm/boot/dts/rk3288.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
-deleted file mode 100644
-index 6b42fda30..000000000
---- a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
-+++ /dev/null
-@@ -1,16 +0,0 @@
--Rockchip SRAM for pmu:
--------------------------------
--
--The sram of pmu is used to store the function of resume from maskrom(the 1st
--level loader). This is a common use of the "pmu-sram" because it keeps power
--even in low power states in the system.
--
--Required node properties:
--- compatible : should be "rockchip,rk3288-pmu-sram"
--- reg : physical base address and the size of the registers window
--
--Example:
--	sram@ff720000 {
--		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
--		reg = <0xff720000 0x1000>;
--	};
-diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-index 7b83cc6c9..605eb1460 100644
---- a/Documentation/devicetree/bindings/sram/sram.yaml
-+++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -29,6 +29,7 @@ properties:
-       enum:
-         - mmio-sram
-         - atmel,sama5d2-securam
-+        - rockchip,rk3288-pmu-sram
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 9c8741bb1..f102fec69 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -730,6 +730,9 @@
+ 	pmu_sram: sram@ff720000 {
+ 		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+ 		reg = <0x0 0xff720000 0x0 0x1000>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0 0x0 0xff720000 0x1000>;
+ 	};
  
-   reg:
-     maxItems: 1
-@@ -224,6 +225,19 @@ examples:
-     };
- 
-   - |
-+    // Rockchip's rk3288 SoC uses the sram of pmu to store the function of
-+    // resume from maskrom(the 1st level loader). This is a common use of
-+    // the "pmu-sram" because it keeps power even in low power states
-+    // in the system.
-+    sram@ff720000 {
-+      compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
-+      reg = <0xff720000 0x1000>;
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      ranges = <0 0xff720000 0x1000>;
-+    };
-+
-+  - |
-     // Allwinner's A80 SoC uses part of the secure sram for hotplugging of the
-     // primary core (cpu0). Once the core gets powered up it checks if a magic
-     // value is set at a specific location. If it is then the BROM will jump
+ 	pmu: power-management@ff730000 {
 -- 
 2.11.0
 
