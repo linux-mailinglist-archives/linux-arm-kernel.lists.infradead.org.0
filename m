@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ADBE199A3F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 17:49:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5FCD199A49
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 17:51:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6f167xCubs2FKTfgGNfoggzEf0hJOs59PLKYK9dpck=; b=r0UuuVcZlL2ZUx
-	q3T6qY84Z4yN+3cAGHS/SWyAjp7t5ZXVXWF1N6vZvqeXhwz3YCblM2z5r4wb9zFNq/l9LkAJN5qQq
-	5zuZu7l/lFVtdjP0F/xyw3AS6cfWitxMM2BXunJfkqB7e8mmnUeo8wkWkPEWuxOrPJQnlMXQClFp2
-	8TPMrUxWwx5Jcz90XVGi38rIqCcDfiTt8TVB1xY0bml5xQ0S0hQVtwulAlhCdo77LnOE/PXE09cqg
-	ERqJRY+Ib1D7QCK67UdMwjTXVKPq/f4sO/yqSVBvJyxgNkO8vJKQtqYTzx7NATFSpoD+jbrgVh03V
-	XTtTw+CUW6A/Gk72bHbw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qz9G+3iuC+D0fUoxSQRPkoFhZlQ3hXBA0KOAtpZkeus=; b=iFsmAXqWpAHsi1
+	Exp0TfnpAtU1LWg3dVkmDl/flgThHAy7ufGU4Am8X3p1j5Mzu2AbKuNDY0T30d64FDR4opXowVbxN
+	hT6r1PYDRp+bZm+3BQtif3HzlTgnloXvpQRAyZ8mgQlRSAMf+kGCPyH8BIlYPxmjDyBSSrd6cPsi9
+	VOCdHhFyzSVC+Gpw/brOeY2BPg6MqNTmQcarwPr9PPZ5SSN6IRbUh3puvtmdHyl1rM/488sCzAnrz
+	Q8+xk1z9Sb2SGePbS8xNKT2UpQ3nNNDojgIfCC1QVSf46P+Ds/RPcko8P0bCJUBt3FccMWUuUkwvw
+	YxMCzaj7j1FcleNdQTxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJ8w-0007FU-2j; Tue, 31 Mar 2020 15:49:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jJJAe-0002Iu-P7; Tue, 31 Mar 2020 15:51:20 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJ8j-0007ED-Hh; Tue, 31 Mar 2020 15:49:23 +0000
-Received: from coco.lan (ip5f5ad4d8.dynamic.kabel-deutschland.de
- [95.90.212.216])
+ id 1jJJAR-0002IB-Qb
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 15:51:09 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sDMG08zRz1qrLq;
+ Tue, 31 Mar 2020 17:51:06 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48sDMF6Z0Zz1qqkQ;
+ Tue, 31 Mar 2020 17:51:05 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id XNJmiJ7bzyC6; Tue, 31 Mar 2020 17:51:04 +0200 (CEST)
+X-Auth-Info: MJiEhPpU0Kddc5/OUrVPfOS2uVhs/G486Aox8qI/K8w=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1BAA820714;
- Tue, 31 Mar 2020 15:49:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585669761;
- bh=cKeBnZ340s/3Wc8cYt7l64sbcQ/n5gd0b1gXKRjgmNE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=izv08sg0h7mu5Q67SxYzpInzivHyMXQgCJmjriTyA5M+yN9kIKLtMMz5m0pwqjMyP
- Co3XN1kwF5Hm+QRdHZMabF2mQOOXk+jKicqGsxvZMYUwP78rv5FOvL04PqWbuV9FpS
- J7bcmM/s3z5tL9db5p6M0e2eJ7yANt3L7add1dGg=
-Date: Tue, 31 Mar 2020 17:49:14 +0200
-From: Mauro Carvalho Chehab <mchehab@kernel.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: SPDX headers - Was: Re: [PATCH v4 17/33] media: add SPDX headers on
- Kconfig and Makefile files
-Message-ID: <20200331174914.2789865e@coco.lan>
-In-Reply-To: <20200331120608.GB4767@pendragon.ideasonboard.com>
-References: <cover.1585651678.git.mchehab+huawei@kernel.org>
- <981eea64742859c63d8ab88c24b1b3380ee32dd2.1585651678.git.mchehab+huawei@kernel.org>
- <20200331120608.GB4767@pendragon.ideasonboard.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Tue, 31 Mar 2020 17:51:04 +0200 (CEST)
+Subject: Re: [PATCH V2 00/22] ARM: dts: stm32: Repair AV96 board
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+References: <20200331005701.283998-1-marex@denx.de>
+ <20200331040736.GA14274@Mani-XPS-13-9360>
+ <7dc86fa9-504c-cbc3-9a24-29644d66f9e3@denx.de>
+ <20200331140900.GC17755@Mani-XPS-13-9360>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <2595fc00-e3f0-fe38-995a-b0028819e47a@denx.de>
+Date: Tue, 31 Mar 2020 17:51:04 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200331140900.GC17755@Mani-XPS-13-9360>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_084921_624923_95CE5392 
-X-CRM114-Status: GOOD (  14.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200331_085108_155563_DC00F1AC 
+X-CRM114-Status: GOOD (  20.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,81 +80,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Helen Koike <helen.koike@collabora.com>, Maxime Ripard <mripard@kernel.org>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Tue, 31 Mar 2020 15:06:08 +0300
-Laurent Pinchart <laurent.pinchart@ideasonboard.com> escreveu:
+On 3/31/20 4:09 PM, Manivannan Sadhasivam wrote:
+> On Tue, Mar 31, 2020 at 03:44:52PM +0200, Marek Vasut wrote:
+>> On 3/31/20 6:07 AM, Manivannan Sadhasivam wrote:
+>>> Hi Marek,
+>>
+>> Hi,
+>>
+>>> Thanks for the series. 
+>>>
+>>> On Tue, Mar 31, 2020 at 02:56:39AM +0200, Marek Vasut wrote:
+>>>> The AV96 board device tree is completely broken and does not match the
+>>>> hardware. This series fixes it up.
+>>>>
+>>>
+>>> Completely broken?
+>>
+>> The board didn't even boot.
+>>
+> 
+> Hmm. I think you're using a new revision of AV96. I added the board support
+> with an old version of it (might be an evaluation one). I don't have the delta
+> or changeset so can't compare. Anyway, DH started selling new boards and I
+> think the old ones were discontinued or not made available for purchase so we
+> don't have to worry about breaking the old one.
 
-> I've however been thinking about licenses for
-> build system files recently, and I'll hijack this thread a bit to ask a
-> question :-)
+I'm sure we can/should support both, lemme ask about this. The baseboard
+I have is 588-200 (silkscreen next to barrel jack) and SoM 586-100.
 
-Ok, I'll change the subject, as the answers won't be related to the
-Kernel :-)
+>>> The patch submitted previously was an initial one and there
+>>> were many interfaces not enabled. I agree that there are few _obvious_ things
+>>> like SDMMC1/Ethernet pinmux, LED naming were wrong. This was due to the fact the
+>>> board was on early bringup stage and I couldn't test Ethernet due to my setup
+>>> issue at that time (yeah I know it is bad). Also, I don't get access to DHCOR
+>>> schematics as well for things like PMIC. Do you have access to it?
+>>
+>> Yes, I do have access.
+>>
+>>> If possible can you share a link to that if available publicly?
+>>
+>> The SoM schematic is not available in public, no, sorry.
+>>
+> 
+> Fine. Just wanted to verify the PMIC part. But I got the information from
+> DH guy offline.
 
-> For a project like the Linux kernel, and especially for subsystems that
-> are covered by a single license, the choice is easy, we can apply the
-> same license to the build files. However, for a project that contains
-> components covered by different licenses (such as, for instance, an LGPL
-> library, a GPL application and a BSD plugin), how should the license
-> covering the build system files be selected ? I searched a bit for
-> guidance on this topic, and couldn't find much.
+Yep, I saw that, good.
 
-Then everything becomes a way more complex :-)
+>>> I will test this series and also the uboot one on my board and give my
+>>> Tested-by tag soon.
+>>>
+>>> Anyway, I think the patchset subject could be something like,
+>>> "Improve AV96 support" :)
+>>
+>> I think if something doesn't work, "Repair" is the right word for it.
+> 
+> Right. Didn't know that it doesn't boot on newer boards. I do have one but
+> haven't tried mainline kernel on it, just vendor image for some demos. But
+> feel free to keep it as it is.
 
-I guess nobody has a clear answer for that. Also, IANAL.
+Do you have the Enpirion regulator on the SoM ? It's between the
+STPMIC1A and the SPI NOR.
 
-What I can tell is what it would makes sense for me.
-
-The big impact of a complex licenses model would be for the ones
-packaging it on some distro, and for the users of such distros.
-
-The distros need to know if they have the rights to redistribute,
-and need to notify their usages about each package's license.
-
-Let's assume a project "foo-utils" that has such complexity.
-
-Assuming a project that started on a green field (like libcamera),
-and such project doesn't use stuff from external libraries, what
-one could do would be to design it in a way that different licenses
-would be packaged differently. For instance:
-
-	foo-libs	# everything here is under LGPL
-	foo-bsd-plugin	# everything here is under BSD
-	foo-utils	# everything here is under GPLv3
-
-Then, on each of them, a COPYING.foo file (or whatever other way
-distros would use to identify the per-package license) would contain
-the license with applied to it.
-
-Btw, if you want to take a look on a real-case scenario, see, for
-example:
-
-	https://build.opensuse.org/package/view_file/devel:libraries:c_c++/v4l-utils/v4l-utils.spec?rev=a250bff0f849e8c2fa7e476a1f2849a8
-
-	%package -n libv4l-devel
-	License:        LGPLv2+
-	
-	...
-
-	%package -n     qv4l2
-	License:        GPLv2+
-
-Btw, GStreamer actually follows a similar approach, but they even split
-those into different git trees (core, good, bad and ugly plugins).
-
-Thanks,
-Mauro
+I'll be sending a V3 shortly (few hours), apply it on next/master if you
+want to test:
+git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
 
 _______________________________________________
 linux-arm-kernel mailing list
