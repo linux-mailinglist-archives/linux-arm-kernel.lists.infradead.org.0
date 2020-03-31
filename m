@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F568199340
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 12:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43344199362
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 12:29:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8/UzWeyPqAvCJZ5667wfGyvv3EZwHRLGk9IkNXFs+A=; b=oYcXH2Mgdi0N1Y
-	Z5k9UTU3O44jayDUQquK/rusZ54+KFbIcZ/SLj822UjmwcPzCf2A2cmBNGgvIKRzEgAYmoRHArJuv
-	j+JXUvwSXnwBW2QGAmWK3nzEX6nmHcfMLnn0YEUMjJ1aYMm8vMrB9Eo3ngNhJ+HXejn9Vu0osp2ut
-	ly3zsNgeev4fmlIduvWqmhUm5hBRRIYnYH/2FgurngRSQEMJZywsxrRL20D3Mcm3tbBdzecWim28L
-	5LpVqiawJGxI8C6N2mAtNgTh6dppHd7EidlR9YnBwBmo2OJGvEqK7Ts2Hn2J9gPsY8e1rgd5iCSAZ
-	79oiSTjkeVBoz7rCakYw==;
+	List-Owner; bh=/rc332lONX8atZm7csJm4Dxogve/nyaBpgF/U1tLaoE=; b=FlBp9QHg/kVOgh
+	tMm7g2vZcpONYmvLRKfxauihY42pre3uK6gZbvJjslm3hE8NLFVeTYbLXGkm/lw7fz5r4s0BtDOi9
+	atLdMw4V1pRHSHWl0QfWAKlIdyuvD1PwJLUre4YofgCESqZmaOslIMkMwvraEw5tMZiSyiBZ3j/aF
+	O7jTW66XZL+F3qOpKHlHUGv6C6e0JXTfvpCyhB8ppY3SZ4bblU48PghlG8GwhflqOSCQ5P/0G81JD
+	vmTIa8JS+0/L5I2yK1QqAkn++WM3C0O2v4pMoqSb2ryEoNYfyx9viS/aVVj+n7l2cD9BM4JwUHyN4
+	1sMPfetl/S1Y7aCToiJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJDvP-0003tS-FC; Tue, 31 Mar 2020 10:15:15 +0000
-Received: from mga04.intel.com ([192.55.52.120])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJDv7-0003sy-VJ; Tue, 31 Mar 2020 10:14:59 +0000
-IronPort-SDR: PDuqrSpYaQHsSUb7M7jHTmu6WD3lFVx1Gf1ZiYYFa41SDwBlBFqAKitb0zuqh4zbFuggH2JIJy
- NlMKKtpg6Cyg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 31 Mar 2020 03:14:57 -0700
-IronPort-SDR: xPCffzS9PbMWyCOuBM5F+UBfUSZP3WxETeayPQ8cYvYjCbEKXZqAJcpvXtk/wk5/CqL85my64e
- SlhEiGKl3dZg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,327,1580803200"; d="scan'208";a="241873299"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga008.fm.intel.com with ESMTP; 31 Mar 2020 03:14:54 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jJDv6-00ESFD-3H; Tue, 31 Mar 2020 13:14:56 +0300
-Date: Tue, 31 Mar 2020 13:14:56 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V4, 2/2] media: i2c: Add DW9768 VCM driver
-Message-ID: <20200331101456.GG1922688@smile.fi.intel.com>
-References: <20200330123634.363-1-dongchun.zhu@mediatek.com>
- <20200330123634.363-3-dongchun.zhu@mediatek.com>
- <20200330135751.GQ1922688@smile.fi.intel.com>
- <1585620980.5781.80.camel@mhfsdcap03>
+	id 1jJE8v-00016g-Qw; Tue, 31 Mar 2020 10:29:13 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJE8i-00016K-Dh
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 10:29:02 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 31 Mar 2020 19:28:57 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id C3E3F60057;
+ Tue, 31 Mar 2020 19:28:57 +0900 (JST)
+Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
+ Tue, 31 Mar 2020 19:28:57 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by iyokan.css.socionext.com (Postfix) with ESMTP id 6A380403AF;
+ Tue, 31 Mar 2020 19:28:57 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 481BA12013D;
+ Tue, 31 Mar 2020 19:28:57 +0900 (JST)
+Date: Tue, 31 Mar 2020 19:28:57 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v3 1/6] dt-bindings: dma: uniphier-xdmac: Consolidate
+ register region description
+In-Reply-To: <CAK7LNARyRcxR0nhPWo9mY=tahGtwY2E8A50X_Tv4VhFfM-WLGQ@mail.gmail.com>
+References: <1584955970-8162-2-git-send-email-hayashi.kunihiko@socionext.com>
+ <CAK7LNARyRcxR0nhPWo9mY=tahGtwY2E8A50X_Tv4VhFfM-WLGQ@mail.gmail.com>
+Message-Id: <20200331192856.1B77.4A936039@socionext.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1585620980.5781.80.camel@mhfsdcap03>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_031458_017092_34316798 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200331_032900_691722_D69954BB 
+X-CRM114-Status: GOOD (  27.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,52 +70,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 10:16:20AM +0800, Dongchun Zhu wrote:
-> On Mon, 2020-03-30 at 16:57 +0300, Andy Shevchenko wrote:
-> > On Mon, Mar 30, 2020 at 08:36:34PM +0800, Dongchun Zhu wrote:
-> > > This patch adds a V4L2 sub-device driver for DW9768 voice coil moter,
-> > > providing control to set the desired focus via I2C serial interface.
-> > 
-> > ...
-> > 
-> > > +static const struct dev_pm_ops dw9768_pm_ops = {
-> > > +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-> > > +				pm_runtime_force_resume)
-> > > +	SET_RUNTIME_PM_OPS(dw9768_runtime_suspend, dw9768_runtime_resume, NULL)
-> > > +};
-> > > +
-> > > +static struct i2c_driver dw9768_i2c_driver = {
-> > > +	.driver = {
-> > > +		.name = DW9768_NAME,
-> > 
-> > > +		.pm = IS_ENABLED(CONFIG_PM) ? &dw9768_pm_ops : NULL,
-> > 
-> > What is this conditional for?
-> > 
+On Mon, 30 Mar 2020 19:20:35 +0900 <yamada.masahiro@socionext.com> wrote:
+
+> On Mon, Mar 23, 2020 at 6:33 PM Kunihiko Hayashi
+> <hayashi.kunihiko@socionext.com> wrote:
+> >
+> > The extension register region isn't currently referred from the driver, so
+> > this consolidates the extension register region description into the base
+> > register region, and spreads the region size in example.
 > 
-> For the dw9768_pm_ops, here my idea is to use an IS_ENABLED() check to
-> avoid defining the structure when CONFIG_PM is not set.
+> 
+> You should not say this in the commit log.
+> 
+> The DT binding is hardware description.
+> Whether it is used or not in the driver is not a primary reason.
 
-Have you looked at the implementation of SET_SYSTEM_SLEEP_OPS() and another one?
+I see. I forgot that this also applies to commit logs.
 
-Have you tried to actually compile with !CONFIG_PM? In your case the warning
-should be issued.
+>
+> I recommend you to read this:
+> 
+> 
+> Documentation/devicetree/bindings/writing-bindings.txt:
+> 
+> - DON'T refer to Linux or "device driver" in bindings. Bindings should be
+>   based on what the hardware has, not what an OS and driver currently support.
 
--- 
-With Best Regards,
-Andy Shevchenko
+Thanks for your suggestion.
 
+> 
+> > Fixes: b9fb56b6ba8a ("dt-bindings: dmaengine: Add UniPhier external DMA controller bindings")
+> > Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> > ---
+> >  Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml | 5 ++---
+> >  1 file changed, 2 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> > index 86cfb59..830cd88 100644
+> > --- a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> > +++ b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> > @@ -23,8 +23,7 @@ properties:
+> >
+> >    reg:
+> >      items:
+> > -      - description: XDMAC base register region (offset and length)
+> > -      - description: XDMAC extension register region (offset and length)
+> > +      - description: XDMAC register region (offset and length)
+> 
+> Now that the reg is a single tuple,
+> the "items" is unneeded.
+
+Okay, I'll notice it.
+
+> 
+> >    interrupts:
+> >      maxItems: 1
+> > @@ -54,7 +53,7 @@ examples:
+> >    - |
+> >      xdmac: dma-controller@5fc10000 {
+> >          compatible = "socionext,uniphier-xdmac";
+> > -        reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
+> > +        reg = <0x5fc10000 0x5100>;
+> 
+> 
+> Checking the datasheet (LD20), this seems still wrong.
+> 
+> The last register is XDMAID3 : 0x5fc1520c
+> 
+> So, reg = <0x5fc10000 0x5300>;
+
+Hmm, You're right.
+I missed the information somewhere.
+
+> 
+> I attached a patch, which I think more correct.
+> Please check it, and I will send it to the correct ML.
+
+I checked it. This looks good to me and thanks for your help.
+I'll fix the remaining patches next.
+
+Thank you,
+
+---
+Best Regards,
+Kunihiko Hayashi
 
 
 _______________________________________________
