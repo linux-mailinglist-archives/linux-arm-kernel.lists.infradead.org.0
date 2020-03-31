@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 436A8199B20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:15:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8669199AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:08:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+XAVdts30RCPYbT1vkODx5jxbCxlPWzPlRnEy8feCWY=; b=UacX8ZtMrncQ/m
-	qz66rpFwCjmty6yNxs4mHnu3Ijx3FHpzWJedntRmk1sXu6PAu9Fehfh8Zz6Lt5NS6UWaUnELlJG7G
-	CsW5UTHmjS9O82Rm0J3gIOHRqSTKEvY/tIStzXRAovXNtmneL/YckFqUebi/j7AU0cHcX9guZs2wd
-	iwdA5mb0sNBFXE7FamwktKzP1tmr4ypt0+TTK6PXWMBCQuBFW/CERYHjg0JO5tz77bevgQF5KXpHG
-	IYYdZZ8imWlcNT8P+OvM5ZYhkHeLMFwiYMALOFKVle7KlpuPeNheRZu+97fETNaAv+48JaQYpiSow
-	C4Ak6+Cx4L3iXiLA1kYw==;
+	List-Owner; bh=WpL0p4u/E+dYGs0cWMErJcG5IZ9sKEHc/CqTLG2oq4c=; b=H4KgnuqgsptNmd
+	NoYhBS43TjgSEWR1r2vCjFCHTYBoddlim/b183ryr476I/A4koOWWaY9+QEcJiW4vee7kxWEgZYvX
+	OPN/+hH1Z8QOcT+FAWatZDJIPJCci0GKCuLQTCz84c0vMRluuJiyGWwrH1hF2E2pAi71cNi6gFVcL
+	nXN0kSZzeRXmkEbaJWNRThxBLNPti6U74TTKv29F1EAMIaIRY1vOHkFPjz7c3WSV0l4kBE8R+yqGC
+	kYts/fewmfWHrg3i7oq3rDYK8B0s3fUHSQA7kZBBBsfciTvvQReXyDxnTxdnQQPGbaLMtoDAkhhOf
+	XsdVBoT+13VbzSTxgCKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJXS-0007sB-8o; Tue, 31 Mar 2020 16:14:54 +0000
+	id 1jJJQi-0000uk-J4; Tue, 31 Mar 2020 16:07:56 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJXA-0007p1-G9
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:14:36 +0000
+ id 1jJJQY-0000ub-EF
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:07:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=jIyjvWD0oZEzo4xCEedu4Z+6hX5HqofKUKUwriiXxpM=; b=Rjl2HVS3CLrMFerjOp+QZSu1QF
- 0q6lAHR1NIoSJanl6Cme+gyWJFeWb+QArawos+Td5eDNdWIIKPhE8DctO6m67ZFDuLs/p9RoRgjkI
- 12gUy/qoqdQ5jEnERwqzEWYLVeLX+E+sSCfd1MC15RNK1n3sgL/xG9yZhd1O5a88nAz+WnaavtYey
- 6OYuXYufVmwaVgucuPQQN/qbur1WkCWrPuSrOxj3FJ3zQ2GntH+ONzq4ke2SXmhpgI9w5GE6naoNV
- MVEEroo0XfGQhVEtmo+WrUZu0X+FVyAyqORDxOJtVHQO6YDC1Ex3dwP81Z7HFRZN2QL53SyR/Pj+f
- 50v5Epng==;
-Received: from mx.sdf.org ([205.166.94.20])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJIDB-0004VI-LU
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 14:50:00 +0000
-Received: from sdf.org (IDENT:lkml@sdf.lonestar.org [205.166.94.16])
- by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02VEnFEj010261
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits) verified NO);
- Tue, 31 Mar 2020 14:49:16 GMT
-Received: (from lkml@localhost)
- by sdf.org (8.15.2/8.12.8/Submit) id 02VEnFfb002103;
- Tue, 31 Mar 2020 14:49:15 GMT
-Date: Tue, 31 Mar 2020 14:49:15 +0000
-From: George Spelvin <lkml@SDF.ORG>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [RFC PATCH v1 44/50] arm64: ptr auth: Use get_random_u64 instead
- of _bytes
-Message-ID: <20200331144915.GA4303@SDF.ORG>
-References: <202003281643.02SGhOi3016886@sdf.org>
- <20200330105745.GA1309@C02TD0UTHF1T.local>
- <20200330193237.GC9199@SDF.ORG>
- <20200331101412.GA1490@C02TD0UTHF1T.local>
+ bh=M3iZZ9XdnTzC9WaVpzkUyV5Li5vQ/KX3VC2mSf/zdQE=; b=jmmwHcaYqgkxezlT63UqFj8jQN
+ Jq5a66LpEzj55rRgY8448z4pMuI260o+A+kSF96xVJCsqePAY0p+8qqA9P03KHmcCzCTuQCRi1a9B
+ eh+qXVPULKX2Kw4sgj3yhsc5M0OPrycrBafN27k+c86R/pbQ+D8yTtXZH9LxT5OdYtATIWD83F1mR
+ XdaNCR4jIsl0+RaqEctpsVDZnXwmZcIi2+pr2fYjHUz9iLUmeV7q3rlo0QKT7Ny3BHOKojAzWpXLJ
+ rJRy/U05ZtvxnIyaw5BR5YzSTlKG3vi9WYEXOywOetThW5Hhxv31SH9zwC2mD3C7Q+oiTlmDsNl1D
+ KJSkKs3g==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJIIR-0004dd-9g; Tue, 31 Mar 2020 14:55:19 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id E4E9C304DB2;
+ Tue, 31 Mar 2020 16:55:15 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id C570A29D71B7A; Tue, 31 Mar 2020 16:55:15 +0200 (CEST)
+Date: Tue, 31 Mar 2020 16:55:15 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH 6/9] lockdep: Introduce wait-type checks
+Message-ID: <20200331145515.GR20730@hirez.programming.kicks-ass.net>
+References: <20200313174701.148376-1-bigeasy@linutronix.de>
+ <20200313174701.148376-7-bigeasy@linutronix.de>
+ <CAMuHMdU6s1F=DnaguZXrV4sWzEO-EqTaGQ=N7zyhgGq1M+Q1Ug@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331101412.GA1490@C02TD0UTHF1T.local>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.166.94.20 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+In-Reply-To: <CAMuHMdU6s1F=DnaguZXrV4sWzEO-EqTaGQ=N7zyhgGq1M+Q1Ug@mail.gmail.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,72 +67,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- lkml@sdf.org
+Cc: "Paul E . McKenney" <paulmck@kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>, Frederic Weisbecker <fweisbec@gmail.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Joel Fernandes <joel@joelfernandes.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 11:14:12AM +0100, Mark Rutland wrote:
-> On Mon, Mar 30, 2020 at 07:32:37PM +0000, George Spelvin wrote:
->> On Mon, Mar 30, 2020 at 11:57:45AM +0100, Mark Rutland wrote:
->>> As I am unaware, how does the cost of get_random_bytes() compare to the
->>> cost of get_random_u64()?
->> 
->> It's approximately 8 times the cost.  [Of *one* get_random_u64()
->> call; 4x the cost of the two needed to generate a 128-bit key.]
->> 
->> Because get_random_bytes() implements anti-backtracking, it's a minimum 
->> of one global lock and one ChaCha20 operation per call.  Even though 
->> chacha_block_generic() returns 64 bytes, for anti-backtracking we use 
->> 32 of them to generate a new key and discard the remainder.
->> 
->> get_random_u64() uses the exact same generator, but amortizes the cost by 
->> storing the output in a per-CPU buffer which it only has to refill every 
->> 64 bytes generated.  7/8 of the time, it's just a fetch from a per-CPU 
->> data structure.
+On Tue, Mar 31, 2020 at 03:25:21PM +0200, Geert Uytterhoeven wrote:
+> On arm64 (e.g. R-Car H3 ES2.0):
 > 
-> I see; thanks for this explanation. It would be helpful to mention the
-> backtracking distinction explicitly in the commit message, since it
-> currently only alludes to it in the first sentence.
+> +=============================
+> +[ BUG: Invalid wait context ]
+> +5.6.0-salvator-x-09423-gb29514ba13a9c459-dirty #679 Not tainted
+> +-----------------------------
+> +swapper/5/0 is trying to lock:
+> +ffffff86ff76f398 (&pool->lock){..-.}-{3:3}, at: __queue_work+0x134/0x430
+> +other info that might help us debug this:
+> +1 lock held by swapper/5/0:
+> + #0: ffffffc01103a4a0 (rcu_read_lock){....}-{1:3}, at:
+> rcu_lock_acquire.constprop.59+0x0/0x38
+> +stack backtrace:
+> +CPU: 5 PID: 0 Comm: swapper/5 Not tainted
+> 5.6.0-salvator-x-09423-gb29514ba13a9c459-dirty #679
+> +Hardware name: Renesas Salvator-X 2nd version board based on r8a77951 (DT)
+> +Call trace:
+> + dump_backtrace+0x0/0x180
+> + show_stack+0x14/0x1c
+> + dump_stack+0xdc/0x12c
+> + __lock_acquire+0x37c/0xf9c
+> + lock_acquire+0x258/0x288
+> + _raw_spin_lock+0x34/0x48
+> + __queue_work+0x134/0x430
+> + queue_work_on+0x48/0x8c
+> + timers_update_nohz+0x24/0x2c
+> + tick_nohz_activate.isra.15.part.16+0x5c/0x80
+> + tick_setup_sched_timer+0xe0/0xf0
+> + hrtimer_run_queues+0x88/0xf8
 
-Easily done, but I need to find a centralized place to say it, or
-I'd be repeating myself a *lot* in the series.
+So this is complaining that it cannot take pool->lock, which is
+WAIT_CONFIG while holding RCU, which presents a WAIT_CONFIG context.
 
-That said, thanks for prompting me to quantify the cost ratio.
-I knew it, but never actually wrote it down.
+This seems to implicate something is amiss, because that should be
+allowed. The thing it doesn't print is the context, which in the above
+case is a (hrtimer) interrupt.
 
-> It's worth noting that the key values *can* be exposed to userspace when
-> CONFIG_CHECKPOINT_RESTORE is selected. On such kernels, a user could
-> regenerate and read the keys an arbitrary number of times on a CPU of
-> their choice. From my limited understanding I presume backtracking may
-> be a concern there?
+I suspect this really is a hardirq context and the next patch won't cure
+things. It looks nohz (full?) related.
 
-No.  Backtracking is an issue if the keys must remain secret *after*
-they are wiped from kernel memory.  This applies to session
-*encryption* keys (assuming the plaintext should remain secret
-after the session is over), and to any long-lived keys which are
-stored encrypted or otherwise inaccessible (e.g. in dedicated
-hardware).  The latter includes most asymmetric private keys.
+Frederic, can you untangle this?
 
-Since the pointer authentication keys are authentication keys,
-and valueless to an attacker once the kernel is done using them,
-there is no need for backtracking protetion.
+---
 
-Basically, do you need to wipe the key (with memzero_explicit) when
-you are done with it?  If that is important, you also want to
-know that the key cannot be reconstructed from the CRNG state.
-
->> Yes, I went overboard, and your proposed change below is perfectly
->> fine with me.
-> 
-> Great. That's what I'd prefer due to clarity of the code, and I'm not
-> too concerned by the figures below given it only adds 12 bytes to the
-> contemporary text size.
-
-A modified patch will follow.  Thanks for your patience.
+diff --git a/kernel/locking/lockdep.c b/kernel/locking/lockdep.c
+index 1511690e4de7..ac10db66cc63 100644
+--- a/kernel/locking/lockdep.c
++++ b/kernel/locking/lockdep.c
+@@ -3952,10 +3952,36 @@ static int mark_lock(struct task_struct *curr, struct held_lock *this,
+ 	return ret;
+ }
+ 
++static inline short task_wait_context(struct task_struct *curr)
++{
++	/*
++	 * Set appropriate wait type for the context; for IRQs we have to take
++	 * into account force_irqthread as that is implied by PREEMPT_RT.
++	 */
++	if (curr->hardirq_context) {
++		/*
++		 * Check if force_irqthreads will run us threaded.
++		 */
++		if (curr->hardirq_threaded || curr->irq_config)
++			return LD_WAIT_CONFIG;
++
++		return LD_WAIT_SPIN;
++	} else if (curr->softirq_context) {
++		/*
++		 * Softirqs are always threaded.
++		 */
++		return LD_WAIT_CONFIG;
++	}
++
++	return LD_WAIT_MAX;
++}
++
+ static int
+ print_lock_invalid_wait_context(struct task_struct *curr,
+ 				struct held_lock *hlock)
+ {
++	short curr_inner;
++
+ 	if (!debug_locks_off())
+ 		return 0;
+ 	if (debug_locks_silent)
+@@ -3971,6 +3997,10 @@ print_lock_invalid_wait_context(struct task_struct *curr,
+ 	print_lock(hlock);
+ 
+ 	pr_warn("other info that might help us debug this:\n");
++
++	curr_inner = task_wait_context(curr);
++	pr_warn("context-{%d:%d}\n", curr_inner, curr_inner);
++
+ 	lockdep_print_held_locks(curr);
+ 
+ 	pr_warn("stack backtrace:\n");
+@@ -4017,26 +4047,7 @@ static int check_wait_context(struct task_struct *curr, struct held_lock *next)
+ 	}
+ 	depth++;
+ 
+-	/*
+-	 * Set appropriate wait type for the context; for IRQs we have to take
+-	 * into account force_irqthread as that is implied by PREEMPT_RT.
+-	 */
+-	if (curr->hardirq_context) {
+-		/*
+-		 * Check if force_irqthreads will run us threaded.
+-		 */
+-		if (curr->hardirq_threaded || curr->irq_config)
+-			curr_inner = LD_WAIT_CONFIG;
+-		else
+-			curr_inner = LD_WAIT_SPIN;
+-	} else if (curr->softirq_context) {
+-		/*
+-		 * Softirqs are always threaded.
+-		 */
+-		curr_inner = LD_WAIT_CONFIG;
+-	} else {
+-		curr_inner = LD_WAIT_MAX;
+-	}
++	curr_inner = task_wait_context(curr);
+ 
+ 	for (; depth < curr->lockdep_depth; depth++) {
+ 		struct held_lock *prev = curr->held_locks + depth;
 
 _______________________________________________
 linux-arm-kernel mailing list
