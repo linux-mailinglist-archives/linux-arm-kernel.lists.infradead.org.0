@@ -2,56 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39476198EC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:45:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4CE7198EE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 10:55:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+SnfaHf6kclTse4z49rHYhIK56rC8ekYyLJ+/le+MVc=; b=ABUTKFhz/MbX8z
-	Sp3KTAS6PcOCOT7qdOl47sNrgB7JoVbaGCATI4ToDIGQTKLDETJ/NjYgxJPwB13HSSFepYmqfapQx
-	MxXMxRdf4frO2aPxAu1KRr1atA9FZnAqBVXBbwuLcIW8abLXKlrPTgLQZiQ80P2bzXo8+m14L+Roz
-	Ew7nJ74qV65Dnku984OLq2Qazo31P2wGhPrW9HQVsJuFRtimwEpIwCYJWsewvAHccjlD8vytzbcRr
-	UoquI0mZYcglHeatyfHQz8XzwRTJDRtMRZgERH62U2bBCZk4PU/oSu9hc/u2mgMa+7Q12M6BUV0wH
-	LQ1t3XB2TU2GR0ljWLsg==;
+	List-Owner; bh=SWrfFgCpa6gz45Nw3rrRrrVXns3OYZ4orQbD/dn95iw=; b=r+S4KnPc/nR1F0
+	pripIxOQxxKsRmrlC5VK+HMbI7xMtn2MM/PYo4kOePxthKXhqQyIJGlEduywNv1nmBJquloNwlxrz
+	P7dL28Odt1qOSZIrZ6QxpFosY62wtNjG/DKBkH0OKpeNpkR+h7xroj+mQhPx8XpJxwoFnzs7S41rM
+	SAw6BWqjzJT0n3Lh6sD6KsA7/hS12wE9IGxA/rloHS5uknUwmALvQ14WpQrlsrdRZwlVjyWFupmH4
+	GUwkBPKSQr5nwovc9tC//C/jG1rMXNoZH2xwRmGghZeS10uIk7fEE8gxLm2dAHblkxMfb/Tqxx4yh
+	ZUOsp5uDz6J9286BcxsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJCWX-00087g-Gw; Tue, 31 Mar 2020 08:45:29 +0000
-Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJCWD-0006m2-3Z
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:45:11 +0000
-Received: from erd988 (erd988.prtnl [192.168.224.30])
- by sparta.prtnl (Postfix) with ESMTP id 7038644A024D;
- Tue, 31 Mar 2020 10:45:00 +0200 (CEST)
-Date: Tue, 31 Mar 2020 10:44:59 +0200
-From: David Jander <david@protonic.nl>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
-Message-ID: <20200331104459.6857474e@erd988>
-In-Reply-To: <20200330174114.GG25745@shell.armlinux.org.uk>
-References: <20200329110457.4113-1-o.rempel@pengutronix.de>
- <20200329150854.GA31812@lunn.ch>
- <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
- <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
- <20200330174114.GG25745@shell.armlinux.org.uk>
-Organization: Protonic Holland
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+	id 1jJCg9-0003yC-7X; Tue, 31 Mar 2020 08:55:25 +0000
+Received: from mail-wm1-f66.google.com ([209.85.128.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJCg1-0003ou-1g
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 08:55:18 +0000
+Received: by mail-wm1-f66.google.com with SMTP id 11so428660wmi.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 01:55:16 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=rTdu7oh4JjjFUdNyXovYxN1QmbRl7JqIGXsfhw5Wa0c=;
+ b=PE+60nY8ugljeD/4IjX296UmT17AI0mKDRnXUz0Wj83857wU4dUjFkZZnEhK8o9QX5
+ e34qaiz3fq3wyVj8Q/APdXTKFspctxrBkqkCc6l6/jtVKe7bIGYN5HAGbnej3KaQ2dgD
+ 5q6DWkR1TKL4JaXGvBTYh2Kzd+cwiBFNZm0JtzMyZCdTa2v48AA592LCYdZBwvVjADY+
+ vWlPhw5MnIBCG+sY2D8zM3wHvdeaTjpYF72vg9Y2/3Vm7cNinGFU+JuhswLD8iUr2qis
+ jWAkfJcxaKBjTGDm9rpLWUfbP+cs8TDb6Bp61nRvtchvMIRRgZB3NWCkUp+lXb5hk98g
+ ikOg==
+X-Gm-Message-State: ANhLgQ3Qnc5+rX/VB1org89Vfjc5WpyKF3zt9dDb0Uredhg9H3K3p/Tl
+ lwFU8gli+wpnd9nO5QMz7OU=
+X-Google-Smtp-Source: ADFU+vuscSRwsLwXmVoQv1xnwhJFZnnlCFmntVIImf+p0Rb3SHZnEYoHiIxLd4qO4YJEIRanvIyR4Q==
+X-Received: by 2002:a1c:b60b:: with SMTP id g11mr2406590wmf.175.1585644915034; 
+ Tue, 31 Mar 2020 01:55:15 -0700 (PDT)
+Received: from localhost (ip-37-188-180-223.eurotel.cz. [37.188.180.223])
+ by smtp.gmail.com with ESMTPSA id v11sm26003208wrm.43.2020.03.31.01.55.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 31 Mar 2020 01:55:14 -0700 (PDT)
+Date: Tue, 31 Mar 2020 10:55:13 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Mike Rapoport <rppt@linux.ibm.com>
+Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20200331085513.GE30449@dhcp22.suse.cz>
+References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20200330074246.GA14243@dhcp22.suse.cz>
+ <20200330175100.GD30942@linux.ibm.com>
+ <20200330182301.GM14243@dhcp22.suse.cz>
+ <20200331081423.GE30942@linux.ibm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200331081423.GE30942@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_014509_555079_5A92E574 
-X-CRM114-Status: GOOD (  26.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200331_015517_097077_DA1CEFD5 
+X-CRM114-Status: GOOD (  28.26  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [83.163.252.89 listed in list.dnswl.org]
+ no trust [209.85.128.66 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mstsxfx[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,119 +91,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- linux-imx@nxp.com, kernel@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Ingo Molnar <mingo@redhat.com>, Hoan Tran <Hoan@os.amperecomputing.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
+ Vasily Gorbik <gor@linux.ibm.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Will Deacon <will.deacon@arm.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Mar 2020 18:41:14 +0100
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-
-> On Mon, Mar 30, 2020 at 10:33:03AM -0700, Florian Fainelli wrote:
+On Tue 31-03-20 11:14:23, Mike Rapoport wrote:
+> On Mon, Mar 30, 2020 at 08:23:01PM +0200, Michal Hocko wrote:
+> > On Mon 30-03-20 20:51:00, Mike Rapoport wrote:
+> > > On Mon, Mar 30, 2020 at 09:42:46AM +0200, Michal Hocko wrote:
+> > > > On Sat 28-03-20 11:31:17, Hoan Tran wrote:
+> > > > > In NUMA layout which nodes have memory ranges that span across other nodes,
+> > > > > the mm driver can detect the memory node id incorrectly.
+> > > > > 
+> > > > > For example, with layout below
+> > > > > Node 0 address: 0000 xxxx 0000 xxxx
+> > > > > Node 1 address: xxxx 1111 xxxx 1111
+> > > > > 
+> > > > > Note:
+> > > > >  - Memory from low to high
+> > > > >  - 0/1: Node id
+> > > > >  - x: Invalid memory of a node
+> > > > > 
+> > > > > When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> > > > > config, mm only checks the memory validity but not the node id.
+> > > > > Because of that, Node 1 also detects the memory from node 0 as below
+> > > > > when it scans from the start address to the end address of node 1.
+> > > > > 
+> > > > > Node 0 address: 0000 xxxx xxxx xxxx
+> > > > > Node 1 address: xxxx 1111 1111 1111
+> > > > > 
+> > > > > This layout could occur on any architecture. Most of them enables
+> > > > > this config by default with CONFIG_NUMA. This patch, by default, enables
+> > > > > CONFIG_NODES_SPAN_OTHER_NODES or uses early_pfn_in_nid() for NUMA.
+> > > > 
+> > > > I am not opposed to this at all. It reduces the config space and that is
+> > > > a good thing on its own. The history has shown that meory layout might
+> > > > be really wild wrt NUMA. The config is only used for early_pfn_in_nid
+> > > > which is clearly an overkill.
+> > > > 
+> > > > Your description doesn't really explain why this is safe though. The
+> > > > history of this config is somehow messy, though. Mike has tried
+> > > > to remove it a94b3ab7eab4 ("[PATCH] mm: remove arch independent
+> > > > NODES_SPAN_OTHER_NODES") just to be reintroduced by 7516795739bd
+> > > > ("[PATCH] Reintroduce NODES_SPAN_OTHER_NODES for powerpc") without any
+> > > > reasoning what so ever. This doesn't make it really easy see whether
+> > > > reasons for reintroduction are still there. Maybe there are some subtle
+> > > > dependencies. I do not see any TBH but that might be burried deep in an
+> > > > arch specific code.
+> > > 
+> > > I've looked at this a bit more and it seems that the check for
+> > > early_pfn_in_nid() in memmap_init_zone() can be simply removed.
+> > > 
+> > > The commits you've mentioned were way before the addition of
+> > > HAVE_MEMBLOCK_NODE_MAP and the whole infrastructure that calculates zone
+> > > sizes and boundaries based on the memblock node map.
+> > > So, the memmap_init_zone() is called when zone boundaries are already
+> > > within a node.
 > > 
-> > 
-> > On 3/29/2020 10:26 PM, Oleksij Rempel wrote:  
-> > > Hi Andrew,
-> > > 
-> > > On Sun, Mar 29, 2020 at 05:08:54PM +0200, Andrew Lunn wrote:  
-> > >> On Sun, Mar 29, 2020 at 01:04:57PM +0200, Oleksij Rempel wrote:
-> > >>
-> > >> Hi Oleksij
-> > >>  
-> > >>> +config DEPRECATED_PHY_FIXUPS
-> > >>> +	bool "Enable deprecated PHY fixups"
-> > >>> +	default y
-> > >>> +	---help---
-> > >>> +	  In the early days it was common practice to configure PHYs by adding a
-> > >>> +	  phy_register_fixup*() in the machine code. This practice turned out to
-> > >>> +	  be potentially dangerous, because:
-> > >>> +	  - it affects all PHYs in the system
-> > >>> +	  - these register changes are usually not preserved during PHY reset
-> > >>> +	    or suspend/resume cycle.
-> > >>> +	  - it complicates debugging, since these configuration changes were not
-> > >>> +	    done by the actual PHY driver.
-> > >>> +	  This option allows to disable all fixups which are identified as
-> > >>> +	  potentially harmful and give the developers a chance to implement the
-> > >>> +	  proper configuration via the device tree (e.g.: phy-mode) and/or the
-> > >>> +	  related PHY drivers.  
-> > >>
-> > >> This appears to be an IMX only problem. Everybody else seems to of got
-> > >> this right. There is no need to bother everybody with this new
-> > >> option. Please put this in arch/arm/mach-mxs/Kconfig and have IMX in
-> > >> the name.  
-> > > 
-> > > Actually, all fixups seems to do wring thing:
-> > > arch/arm/mach-davinci/board-dm644x-evm.c:915:		phy_register_fixup_for_uid(LXT971_PHY_ID, LXT971_PHY_MASK,
-> > > 
-> > > Increased MII drive strength. Should be probably enabled by the PHY
-> > > driver.
-> > > 
-> > > arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
-> > > arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
-> > > arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
-> > > arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,  
+> > But zones from different nodes might overlap in the pfn range. And this
+> > check is there to skip over those overlapping areas.
 > 
-> As far as I'm concerned, the AR8035 fixup is there with good reason.
-> It's not just "random" but is required to make the AR8035 usable with
-> the iMX6 SoCs.  Not because of a board level thing, but because it's
-> required for the AR8035 to be usable with an iMX6 SoC.
+> Maybe I mis-read the code, but I don't see how this could happen. In the
+> HAVE_MEMBLOCK_NODE_MAP=y case, free_area_init_node() calls
+> calculate_node_totalpages() that ensures that node->node_zones are entirely
+> within the node because this is checked in zone_spanned_pages_in_node().
 
-I have checked with the datasheet of the AR8035, and AFAICS, what the code
-does is this:
+zone_spanned_pages_in_node does chech the zone boundaries are within the
+node boundaries. But that doesn't really tell anything about other
+potential zones interleaving with the physical memory range.
+zone->spanned_pages simply gives the physical range for the zone
+including holes. Interleaving nodes are essentially a hole
+(__absent_pages_in_range is going to skip those).
 
- - Disable the SmartEEE feature of the phy. The comment in the code implies
-   that for some reason it doesn't work, but the reason itself is not given.
-   Anyway, disabling SmartEEE should IMHO opinion be controlled by a DT
-   setting. There is no reason to believe this problem is specific to the
-   i.MX6. Besides, it is a feature of the phy, so it seems logical to expose
-   that via the DT. Once that is done, it has no place here.
+That means that when free_area_init_core simply goes over the whole
+physical zone range including holes and that is why we need to check
+both for physical and logical holes (aka other nodes).
 
- - Set the external clock output to 125MHz. This is needed because the i.MX6
-   needs a 125MHz reference clock input. But it is not a requirement to use
-   this output. It is perfectly fine and possible to design a board that uses
-   an external oscillator for this. It is also possible that an i.MX6 design
-   has such a phy connected to a MAC behind a switch or some other interface.
-   Independent of i.MX6 this setting can also be necessary for other hardware
-   designs, based on different SoC's. In summary, this is a feature of the
-   specific hardware design at hand, and has nothing to do with the i.MX6
-   specifically. This should definitely be exposed through the DT and not be
-   here.
-
- - Enable TXC delay. To clarify, the RGMII specification version 1 specified
-   that the RXC and TXC traces should be routed long enough to introduce a
-   certain delay to the clock signal, or the delay should be introduced via
-   other means. In a later version of the spec, a provision was given for MAC
-   or PHY devices to generate this delay internally. The i.MX6 MAC interface
-   is unable to generate the required delay internally, so it has to be taken
-   care of either by the board layout, or by the PHY device. This is the
-   crucial point: The amount of delay set by the PHY delay register depends on
-   the board layout. It should NEVER be hard-coded in SoC setup code. The
-   correct way is to specify it in the DT. Needless to say that this too,
-   isn't i.MX6-specific.
-
-> So, having it registered by the iMX6 SoC code is entirely logical and
-> correct.
-
-I'm afraid I don't agree. See above. This code really should never have been
-here. It is not i.MX6-specific as I pointed out above, nor is it necessarily
-applicable to all i.MX6 boards that use those phy devices.
-
-> That's likely true of the AR8031 situation as well.
-> 
-> I can't speak for any of the others.
-
-Best regards,
+The life would be so much easier if the whole thing would simply iterate
+over memblocks...
 
 -- 
-David Jander
-Protonic Holland.
-
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
