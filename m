@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D60091994BA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 13:07:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66E6B199523
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 13:13:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AQowy6wzgEoZG2qXExBtjWmvS0zOpZtoTAgG8lXUSps=; b=O7u8H2EyXO4y/m1JbzLioaEVk
-	IcxtI/0GBlb3jfO1/BlyQG+xLiISBqVgMSeVcEmGrXxW0XMEppvHEeGuGyifXMjRy2KK6VOC615Y4
-	THPGKSuT0gjyRap8ThAe//FFup0KZhNLUmKcWbZwuVJYiKwSm1UqOBq89ia7DIM8h/pqD3jXJzCQJ
-	NCkwX/0rHv743+O8QiyUpJw3nTSVLvBfbHAXq4mKBzVM7y38zFdf/08/ziYAwI9uVG3NGIrIOu36M
-	DNDwrQTYJGvfNMaich7KsnTl7qAzx/Gydfelpfo0RvhaM6wQ877e+k4kLDLKW74vw/4m6KummhTYg
-	gDvJh7kBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BWHO5wtbhvm01v8XbMqstMCSKiZrcCYEnTGhUHqyg98=; b=FGmZUuT2qp+l+N
+	MUOjKw2PUBGRurA23YwC3wwECtQYe/4ScgyOxH2fJnvW0ySYMcMDBEqvlxIaMPDE4kZcSJa1yqGSt
+	DzPnIf4ATjljABRosiCQrR7IBku7sTeFOaWZBhy5QWcbwtiJlM8b9LF7kTGrwHgf5kbu/5BRUs3Mm
+	OWrfmgNU2AvWu7hlAOTjt7srSsr68WImYKqxgOmHXJgHZk3CqZK1VmqvoT0bTbM0oZMDnYL59WdcS
+	nQn16A9UDHOFpnB4yCxhhLBX4qfHXMVpLGwYGFneyNnvrpZ0ouhAOEVmL9tL4+rFEfmOwKXHKRkOb
+	FPoYjlwUMKNmEAsTvQ3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJEjs-0006rX-1n; Tue, 31 Mar 2020 11:07:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJEjf-0006oZ-2q; Tue, 31 Mar 2020 11:07:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0AFBF1FB;
- Tue, 31 Mar 2020 04:07:10 -0700 (PDT)
-Received: from [10.57.60.204] (unknown [10.57.60.204])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 77EEE3F52E;
- Tue, 31 Mar 2020 04:07:08 -0700 (PDT)
-Subject: Re: [PATCH 1/6] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
- numbering for LED triggers
-To: Chen-Yu Tsai <wens@kernel.org>, Johan Jonker <jbx6244@gmail.com>,
- =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <20200327030414.5903-2-wens@kernel.org>
- <684a08e6-7dfe-4cb1-2ae5-c1fb4128976b@gmail.com>
- <CAGb2v65ayZwN14S-Pzu2ip1K=fgzTbNB=ZzUcpou-jtv8m6vBA@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <ccf35a92-7005-9c6d-a8a2-c17b714a60bc@arm.com>
-Date: Tue, 31 Mar 2020 12:07:07 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jJEp7-0000gS-Is; Tue, 31 Mar 2020 11:12:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJEoY-0000Q5-98; Tue, 31 Mar 2020 11:12:16 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4375B20838;
+ Tue, 31 Mar 2020 11:12:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585653133;
+ bh=G1rKh20PNlZcrxj0bxu7OOVq4n7E9ZdfbkM1U0Pfy5o=;
+ h=From:To:Cc:Subject:Date:From;
+ b=jMAH8T3JQt43zBzG4nQRWAScKIhZLvgP7nGREPtHt0KGxCEAxfzTjGbeICtbGWS/S
+ 3rS/HRfVk33Ss7ts+utriBE3afmyScZfXqd28Bh5Gv2VzyPI2qVB2ayy4+QUXJtxjC
+ mBpHaG0Xk0Ku4tcuWIjLEkyxxN+zyPdHEUM8HmVQ=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jJEoU-002bpp-Vs; Tue, 31 Mar 2020 13:12:10 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Media Mailing List <linux-media@vger.kernel.org>
+Subject: [PATCH v4 00/33] Media Kconfig menu reorg and improvements
+Date: Tue, 31 Mar 2020 13:11:36 +0200
+Message-Id: <cover.1585651678.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v65ayZwN14S-Pzu2ip1K=fgzTbNB=ZzUcpou-jtv8m6vBA@mail.gmail.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_040711_210584_6B27D110 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200331_041214_374467_B5478163 
+X-CRM114-Status: GOOD (  19.16  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,154 +76,332 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, jacek.anaszewski@gmail.com, pavel@ucw.cz,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, linux-samsung-soc@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux1394-devel@lists.sourceforge.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ +cc LED binding maintainers]
+The media Kconfig menu is complex. From time to time, it requires some
+improvements.
 
-On 2020-03-29 5:36 pm, Chen-Yu Tsai wrote:
-> On Fri, Mar 27, 2020 at 5:58 PM Johan Jonker <jbx6244@gmail.com> wrote:
->>
->> Hi Chen-Yu Tsai,
->>
->> The led node names need some changes.
->> 'linux,default-trigger' value does not fit.
->>
->>  From leds-gpio.yaml:
->>
->> patternProperties:
->>    # The first form is preferred, but fall back to just 'led' anywhere in the
->>    # node name to at least catch some child nodes.
->>    "(^led-[0-9a-f]$|led)":
->>      type: object
->>
->> Rename led nodenames to 'led-0' form
->>
->> Also include all mail lists found with:
->> ./scripts/get_maintainer.pl --nogit-fallback --nogit
->>
->> devicetree@vger.kernel.org
-> 
-> Oops...
-> 
->> If you like change the rest of dts with leds as well...
->>
->>    DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
->>    CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
->> arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
->> yellow-led:linux,default-trigger:0: 'mmc0' is not one of ['backlight',
->> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
->> arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
->> diy-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
->> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
->>    DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
->>    CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
->> arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
->> diy-led:linux,default-trigger:0: 'mmc2' is not one of ['backlight',
->> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
->> arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
->> yellow-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
->> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
-> 
-> Maybe we should just get rid of linux,default-trigger then?
+This series is organized on two parts:
 
-In this particular case, I'd say it's probably time to reevaluate the 
-rather out-of-date binding. The apparent intent of the 
-"linux,default-trigger" property seems to be to describe any trigger 
-supported by Linux, so either the binding wants to be kept in sync with 
-all the triggers Linux actually supports, or perhaps it should just be 
-redefined as a free-form string. FWIW I'd be slightly inclined towards 
-the latter, since the schema validator can't know whether the given 
-trigger actually corresponds to the correct thing for whatever the LED 
-is physically labelled on the board/case, nor whether the version(s) of 
-Linux that people intend to use actually support that trigger (since it 
-doesn't have to be the version contemporary with the schema definition), 
-so strict validation of this particular property seems to be of limited 
-value.
+1. Patches 1 to 19: cleanups and improvements;
 
-Robin.
+- Try to be smarter when selecting features. So, auto-select
+  Cypress firmware support on drivers that use it.
+  Also, auto-select Media Controller and V4L2 subdevice
+  API for devices that won't work without such features.
 
-> 
-> Heiko?
-> 
-> ChenYu
-> 
->> make -k ARCH=arm64 dtbs_check
->> DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
->>
->>> From: Chen-Yu Tsai <wens@csie.org>
->>>
->>> With SDIO now enabled, the numbering of the existing MMC host controllers
->>> gets incremented by 1, as the SDIO host is the first one.
->>>
->>> Increment the numbering of the MMC LED triggers to match.
->>>
->>> Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
->>> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
->>> ---
->>>   arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
->>>   arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
->>>   2 files changed, 10 insertions(+), 2 deletions(-)
->>>
->>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
->>> index 2acb3d500fb9..f0686fc276be 100644
->>> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
->>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
->>> @@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
->>>        };
->>>   };
->>>
->>> +&diy_led {
->>> +     linux,default-trigger = "mmc2";
->>> +};
->>> +
->>>   &pcie_phy {
->>>        status = "okay";
->>>   };
->>> @@ -91,3 +95,7 @@ &uart0 {
->>>        pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
->>>        status = "okay";
->>>   };
->>> +
->>> +&yellow_led {
->>> +     linux,default-trigger = "mmc1";
->>> +};
->>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
->>> index 9f225e9c3d54..bc060ac7972d 100644
->>> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
->>> @@ -70,14 +70,14 @@ work-led {
->>>                        linux,default-trigger = "heartbeat";
->>>                };
->>>
->>> -             diy-led {
->>> +             diy_led: diy-led {
->>>                        label = "red:diy";
->>>                        gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
->>>                        default-state = "off";
->>>                        linux,default-trigger = "mmc1";
->>>                };
->>>
->>> -             yellow-led {
->>> +             yellow_led: yellow-led {
->>>                        label = "yellow:yellow-led";
->>>                        gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
->>>                        default-state = "off";
->>> --
->>> 2.25.1
->>
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
+  Please notice that some drivers have can work optionally
+  with those features enabled (or not). For those, users
+  should still explicitly enable such features.
+
+- Platform and test drivers have now an option at the device
+  support selection;
+
+- The test drivers are not platform drivers. They deserve
+  their own directory.  When a test driver is selected, the
+  needed API support will be automatically selected.
+
+- Do some Kconfig reorg, in order to keep the main media
+  Kconfig as clean as possible.
+
+- The help messafe for media support was outdated;
+
+- The ddbridge driver was abusing at the dvb dummy frontend
+  driver (meant to be just an example). It will now have its
+  own internal dummy driver, as the original one will soon receive
+  more code and become a virtual driver.
+
+- There's a longstanding issue with hybrid TV devices: for
+  an hybrid device to work, *both* analog and digital TV
+  would need to be selected. As the Kconfig language 
+  improved, we can now address it. So, selecting either
+  analog or digital TV support should display all hybrid
+  devices. When an hybrid driver is selected, both V4L2
+  and DVB core will be available.
+
+2. Patches 20 to 33: visual changes.
+
+- At the beginning, media had just "technical" options to
+  enable/disable each feature. However, that leads into
+  hundreds of different options, being a nightmare for a
+  mortal to set it up.
+
+  So, the Kconfig menu options were re-designed in order
+  to bring a more user-oriented view:
+
+  The initial items select the type of devices (analog TV,
+  digital TV, cameras, ...). Selecting it would auto-select
+  the core drivers.  The next step would be to select
+  either PCI or USB, and the needed driver.
+
+  While this makes life simpler, now there are many
+  embedded developers. Most seem to prefer to be
+  able of seeing everything without filters.
+
+  The main focus of this part is to make everybody
+  happy: it is now possible to unselect the filters, making
+  all options visible. Also, now, when the filter is enabled,
+  the media drivers menu will show a message warning
+  that the filter is active.
+
+  Hopefully, this should make both embedded developers
+  and normal users happy.
+
+- The media menus now have a more modern visual, grouping
+  options in a way that it is now clearer about what they do.
+
+  So, the Media support menu is now:
+
+	--- Media support
+	[ ] Filter media drivers
+	[ ] Autoselect ancillary drivers
+	    Media device types --->
+	    Media core support --->
+	    Video4Linux options --->
+	    Media controller options --->
+	    Digital TV options --->
+	    HDMI CEC options --->
+	    Media drivers --->
+	    Media ancillary drivers --->
+
+Mauro Carvalho Chehab (33):
+  media: dvb-usb: auto-select CYPRESS_FIRMWARE
+  media: Kconfig: add an option to filter in/out platform drivers
+  media: Kconfig: not all V4L2 platform drivers are for camera
+  media: pci: move VIDEO_PCI_SKELETON to a different Kconfig
+  media: Kconfig: update the MEDIA_SUPPORT help message
+  media: split test drivers from platform directory
+  media: Kconfig: move comment to siano include
+  media: Kconfig: move drivers-specific TTPCI_EEPROM Kconfig var
+  media: Kconfig: mode firewire comment to firewire/Kconfig
+  media: ddbridge: copy the dvb_dummy_fe driver to ddbridge
+  media: ddbridge-dummy_fe: do some vars and function renames
+  media: ddbridge: use the ddbridge's own dummy fe driver
+  media: Kconfig: mark other drivers as test drivers
+  media: Kconfig: simplify some dependencies
+  media: Kconfig: better support hybrid TV devices
+  media: Kconfig: fix selection for test drivers
+  media: add SPDX headers on Kconfig and Makefile files
+  media: dvb-core: Kconfig: default to use dynamic minors
+  media: Kconfig files: use select for V4L2 subdevs and MC
+  media: Kconfig: reorganize the drivers menu options
+  media: Kconfig: use a sub-menu to select supported devices
+  media: Kconfig: make filtering devices optional
+  media: Kconfig: warn if drivers are filtered
+  media: Kconfig: move CEC-specific options to cec/Kconfig
+  media: Kconfig: move DVB-specific options to dvb-core/Kconfig
+  media: Kconfig: move V4L2 subdev API to v4l2-core/Kconfig
+  media: Kconfig: move media controller core select to main Kconfig
+  media: Kconfig: place all options under a sub-menu
+  media: Kconfig: move the position of sub-driver autoselection
+  media: Kconfig: on !EMBEDDED && !EXPERT, enable driver filtering
+  media: Kconfig: Better organize the per-API options
+  media: i2c/Kconfig: reorganize items there
+  media: Kconfig: don't use visible for device type select
+
+ drivers/media/Kconfig                         | 262 ++++++-----
+ drivers/media/cec/Kconfig                     |  10 +
+ drivers/media/common/Kconfig                  |   2 +-
+ drivers/media/dvb-core/Kconfig                |  27 ++
+ drivers/media/dvb-frontends/Kconfig           |  15 +-
+ drivers/media/firewire/Kconfig                |   5 +-
+ drivers/media/i2c/Kconfig                     | 406 +++++++++++-------
+ drivers/media/i2c/et8ek8/Kconfig              |   4 +-
+ drivers/media/i2c/m5mols/Kconfig              |   5 +-
+ drivers/media/i2c/smiapp/Kconfig              |   5 +-
+ drivers/media/mc/Kconfig                      |  11 +-
+ drivers/media/mmc/Kconfig                     |   1 -
+ drivers/media/mmc/siano/Kconfig               |   2 +
+ drivers/media/pci/Kconfig                     |  24 +-
+ drivers/media/pci/bt8xx/Kconfig               |   5 +-
+ drivers/media/pci/cobalt/Kconfig              |   4 +-
+ drivers/media/pci/cx18/Kconfig                |   2 +-
+ drivers/media/pci/cx23885/Kconfig             |   4 +-
+ drivers/media/pci/cx88/Kconfig                |   4 +-
+ drivers/media/pci/ddbridge/Kconfig            |   1 -
+ drivers/media/pci/ddbridge/Makefile           |   2 +-
+ drivers/media/pci/ddbridge/ddbridge-core.c    |   4 +-
+ .../media/pci/ddbridge/ddbridge-dummy-fe.c    | 153 +++++++
+ .../media/pci/ddbridge/ddbridge-dummy-fe.h    |  16 +
+ drivers/media/pci/intel/ipu3/Kconfig          |   4 +-
+ drivers/media/pci/saa7134/Kconfig             |   4 +-
+ drivers/media/pci/saa7164/Kconfig             |   2 +-
+ drivers/media/pci/sta2x11/Kconfig             |   6 +-
+ drivers/media/platform/Kconfig                |  56 +--
+ drivers/media/platform/Makefile               |   5 -
+ drivers/media/platform/am437x/Kconfig         |   4 +-
+ drivers/media/platform/atmel/Kconfig          |   4 +-
+ drivers/media/platform/cadence/Kconfig        |   8 +-
+ drivers/media/platform/exynos4-is/Kconfig     |   5 +-
+ drivers/media/platform/rcar-vin/Kconfig       |   8 +-
+ drivers/media/platform/sunxi/Kconfig          |   2 +
+ drivers/media/platform/sunxi/Makefile         |   2 +
+ .../media/platform/sunxi/sun4i-csi/Kconfig    |   6 +-
+ .../media/platform/sunxi/sun4i-csi/Makefile   |   2 +
+ .../media/platform/sunxi/sun6i-csi/Kconfig    |   4 +-
+ drivers/media/platform/xilinx/Kconfig         |   4 +-
+ drivers/media/spi/Kconfig                     |   4 +-
+ drivers/media/test_drivers/Kconfig            |  28 ++
+ drivers/media/test_drivers/Makefile           |   9 +
+ .../vicodec/Kconfig                           |   0
+ .../vicodec/Makefile                          |   0
+ .../vicodec/codec-fwht.c                      |   0
+ .../vicodec/codec-fwht.h                      |   0
+ .../vicodec/codec-v4l2-fwht.c                 |   0
+ .../vicodec/codec-v4l2-fwht.h                 |   0
+ .../vicodec/vicodec-core.c                    |   0
+ .../media/{platform => test_drivers}/vim2m.c  |   0
+ .../{platform => test_drivers}/vimc/Kconfig   |   4 +-
+ .../{platform => test_drivers}/vimc/Makefile  |   0
+ .../vimc/vimc-capture.c                       |   0
+ .../vimc/vimc-common.c                        |   0
+ .../vimc/vimc-common.h                        |   0
+ .../vimc/vimc-core.c                          |   0
+ .../vimc/vimc-debayer.c                       |   0
+ .../vimc/vimc-scaler.c                        |   0
+ .../vimc/vimc-sensor.c                        |   0
+ .../vimc/vimc-streamer.c                      |   0
+ .../vimc/vimc-streamer.h                      |   0
+ .../{platform => test_drivers}/vivid/Kconfig  |   0
+ .../{platform => test_drivers}/vivid/Makefile |   0
+ .../vivid/vivid-cec.c                         |   0
+ .../vivid/vivid-cec.h                         |   0
+ .../vivid/vivid-core.c                        |   0
+ .../vivid/vivid-core.h                        |   0
+ .../vivid/vivid-ctrls.c                       |   0
+ .../vivid/vivid-ctrls.h                       |   0
+ .../vivid/vivid-kthread-cap.c                 |   0
+ .../vivid/vivid-kthread-cap.h                 |   0
+ .../vivid/vivid-kthread-out.c                 |   0
+ .../vivid/vivid-kthread-out.h                 |   0
+ .../vivid/vivid-kthread-touch.c               |   0
+ .../vivid/vivid-kthread-touch.h               |   0
+ .../vivid/vivid-meta-cap.c                    |   0
+ .../vivid/vivid-meta-cap.h                    |   0
+ .../vivid/vivid-meta-out.c                    |   0
+ .../vivid/vivid-meta-out.h                    |   0
+ .../vivid/vivid-osd.c                         |   0
+ .../vivid/vivid-osd.h                         |   0
+ .../vivid/vivid-radio-common.c                |   0
+ .../vivid/vivid-radio-common.h                |   0
+ .../vivid/vivid-radio-rx.c                    |   0
+ .../vivid/vivid-radio-rx.h                    |   0
+ .../vivid/vivid-radio-tx.c                    |   0
+ .../vivid/vivid-radio-tx.h                    |   0
+ .../vivid/vivid-rds-gen.c                     |   0
+ .../vivid/vivid-rds-gen.h                     |   0
+ .../vivid/vivid-sdr-cap.c                     |   0
+ .../vivid/vivid-sdr-cap.h                     |   0
+ .../vivid/vivid-touch-cap.c                   |   0
+ .../vivid/vivid-touch-cap.h                   |   0
+ .../vivid/vivid-vbi-cap.c                     |   0
+ .../vivid/vivid-vbi-cap.h                     |   0
+ .../vivid/vivid-vbi-gen.c                     |   0
+ .../vivid/vivid-vbi-gen.h                     |   0
+ .../vivid/vivid-vbi-out.c                     |   0
+ .../vivid/vivid-vbi-out.h                     |   0
+ .../vivid/vivid-vid-cap.c                     |   0
+ .../vivid/vivid-vid-cap.h                     |   0
+ .../vivid/vivid-vid-common.c                  |   0
+ .../vivid/vivid-vid-common.h                  |   0
+ .../vivid/vivid-vid-out.c                     |   0
+ .../vivid/vivid-vid-out.h                     |   0
+ drivers/media/usb/Kconfig                     |  14 +-
+ drivers/media/usb/au0828/Kconfig              |   6 +-
+ drivers/media/usb/cx231xx/Kconfig             |   4 +-
+ drivers/media/usb/dvb-usb/Kconfig             |   1 +
+ drivers/media/usb/pvrusb2/Kconfig             |   4 +-
+ drivers/media/usb/tm6000/Kconfig              |   4 +-
+ drivers/media/v4l2-core/Kconfig               |  19 +-
+ drivers/staging/media/hantro/Kconfig          |   5 +-
+ drivers/staging/media/hantro/Makefile         |   2 +
+ drivers/staging/media/imx/Kconfig             |   5 +-
+ drivers/staging/media/ipu3/Kconfig            |   3 +-
+ drivers/staging/media/omap4iss/Kconfig        |   4 +-
+ drivers/staging/media/rkisp1/Kconfig          |   4 +-
+ drivers/staging/media/rkisp1/Makefile         |   2 +
+ drivers/staging/media/sunxi/cedrus/Kconfig    |   5 +-
+ 122 files changed, 829 insertions(+), 398 deletions(-)
+ create mode 100644 drivers/media/pci/ddbridge/ddbridge-dummy-fe.c
+ create mode 100644 drivers/media/pci/ddbridge/ddbridge-dummy-fe.h
+ create mode 100644 drivers/media/test_drivers/Kconfig
+ create mode 100644 drivers/media/test_drivers/Makefile
+ rename drivers/media/{platform => test_drivers}/vicodec/Kconfig (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/Makefile (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/codec-fwht.c (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/codec-fwht.h (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/codec-v4l2-fwht.c (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/codec-v4l2-fwht.h (100%)
+ rename drivers/media/{platform => test_drivers}/vicodec/vicodec-core.c (100%)
+ rename drivers/media/{platform => test_drivers}/vim2m.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/Kconfig (83%)
+ rename drivers/media/{platform => test_drivers}/vimc/Makefile (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-capture.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-common.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-common.h (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-core.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-debayer.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-scaler.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-sensor.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-streamer.c (100%)
+ rename drivers/media/{platform => test_drivers}/vimc/vimc-streamer.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/Kconfig (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/Makefile (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-cec.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-cec.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-core.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-core.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-ctrls.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-ctrls.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-out.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-out.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-touch.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-kthread-touch.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-meta-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-meta-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-meta-out.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-meta-out.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-osd.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-osd.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-common.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-common.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-rx.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-rx.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-tx.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-radio-tx.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-rds-gen.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-rds-gen.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-sdr-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-sdr-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-touch-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-touch-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-gen.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-gen.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-out.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vbi-out.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-cap.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-cap.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-common.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-common.h (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-out.c (100%)
+ rename drivers/media/{platform => test_drivers}/vivid/vivid-vid-out.h (100%)
+
+-- 
+2.25.1
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
