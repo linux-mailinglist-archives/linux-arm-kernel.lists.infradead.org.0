@@ -2,55 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47633199B52
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:22:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54AA6199B71
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hXkKZbDFJrn/OY+KyO4CnPZgjbun9pgo7EWuSmevFlY=; b=AhTF3/mVGlYjJp
-	GNKF3WHK/zrEjE6LMIJobqHaAJWawG0mU/9uvrXwDdL/b7hn8gIHTTt7Du1PQve3qsJhgvQOvWAFA
-	mXW345H00/xABF+ml96ZfzihJ12i6zKXO92jWnoQ7x0a6CrURzxX0YuOM//ryMcV7om5PaZk9zgEx
-	vdKXTBH2XWsLViX6ugMrECM9+oem62gG+YZsXoSvpDkIadJTNfSsgdF784uTUfEb0KhnSGZTyvr3O
-	M5y8ni7+klpUAiu5gkeZ8LhISyvOWnRE3BDDzYB1xc7SEu5X1vYWr//BOeey4PT0km+JmpcsDZ026
-	4cgHNc781fqkIJl3gjMw==;
+	List-Owner; bh=m2xfbE+qPjzHQ4TZIrxyeIhEXsb8AYDVt6SFg+vP5bk=; b=JNuiYCHS73Ndxo
+	snRhgb9khu02Pvi4wrJN9GrIWyjNdFILfQjKJza/oOewpoKkUcCk3P/WJyhgWCz1IGFxLO+a0rBfL
+	34AZO3hSljCnULV868ba1cyyzQWZ9izWjsrimYziLlfQNH1ekBGSlPmleCo8e4p5oi70nUnydWGRz
+	iYEpH1E+ZP0wXMdIzpg45LlD4hKgxnDgzPTHCJe7YhwaMJvxLImTyIcUE8lo78uNJqhNlTcV/597D
+	PdohL6W6etEF93QtZbzSFavVhj35aruVYlUxKpUVcix6X+/hxlSO2noyxTTolqfhMNqwHWpaeKZE5
+	em5hNWbP58Y0jjKD6ciA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJf0-0001ei-Je; Tue, 31 Mar 2020 16:22:42 +0000
+	id 1jJJk2-0007XX-Hw; Tue, 31 Mar 2020 16:27:54 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJJjD-000751-Ss
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:27:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=zWR4v1Y/PT9AoMNC7fg0rgrQ2zY2gV7PSXBqhFyk+kA=; b=AOU6rQD9Yv7aYRPp1ZYFzTAHT8
+ Pd+6yXZfUlGGS5eQ9oJ1uV96r1JF/LejsiubmejQJVX6L+9RvQVwOt5K0YKEm5F8aUOYSUTE0ayLS
+ LmcyS8B1HngfdUkiUfN5JDHOF2q88ss62hIUIO5MWXxp8iVG+EPBp8vs0672VmL8pDeZW5wwzD3PY
+ 3/vKnstByR7FjakLfiLEaLMwAPv2R0VrJ5F6rt+T9xoEHGvw2LohX7dr6K1hAO5ceSpzR/8tOoEdA
+ 7aIBT8l5smQ61mSvuJpZF7ifpIISh5K3viuvpLoy6g6oT6Q2Lwj9auPDpGqU9z1rFGY/f/obpSs3i
+ gTe+P+Sw==;
 Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJen-0001dZ-Fm
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:22:31 +0000
+ by casper.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJJjA-00077Y-5O
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:27:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7565530E;
- Tue, 31 Mar 2020 09:22:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2BAB330E;
+ Tue, 31 Mar 2020 09:26:54 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D68D3F71E;
- Tue, 31 Mar 2020 09:22:25 -0700 (PDT)
-Date: Tue, 31 Mar 2020 17:22:19 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E3F903F71E;
+ Tue, 31 Mar 2020 09:26:52 -0700 (PDT)
+Date: Tue, 31 Mar 2020 17:26:50 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: George Spelvin <lkml@sdf.org>
-Subject: Re: [PATCH v2] arm64: ptr auth: Use get_random_u64 instead of _bytes
-Message-ID: <20200331162219.GA4400@C02TD0UTHF1T.local>
-References: <202003311544.02VFiClP011630@sdf.org>
+To: George Spelvin <lkml@SDF.ORG>
+Subject: Re: [RFC PATCH v1 44/50] arm64: ptr auth: Use get_random_u64 instead
+ of _bytes
+Message-ID: <20200331162650.GB4400@C02TD0UTHF1T.local>
+References: <202003281643.02SGhOi3016886@sdf.org>
+ <20200330105745.GA1309@C02TD0UTHF1T.local>
+ <20200330193237.GC9199@SDF.ORG>
+ <20200331101412.GA1490@C02TD0UTHF1T.local>
+ <20200331144915.GA4303@SDF.ORG>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202003311544.02VFiClP011630@sdf.org>
+In-Reply-To: <20200331144915.GA4303@SDF.ORG>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_092229_626635_D07C6B08 
-X-CRM114-Status: GOOD (  18.94  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+X-CRM114-CacheID: sfid-20200331_172700_456296_C47E8129 
+X-CRM114-Status: GOOD (  28.10  )
+X-Spam-Score: -4.2 (----)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-4.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,109 +84,65 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This seems to have been sent twice, so I'm replying to the latest
-copy.
-
-On Tue, Mar 31, 2020 at 03:44:12PM +0000, George Spelvin wrote:
-> get_random_bytes() is approximately 4x the cost of two
-> get_random_u64() calls, because the former implements
-> anti-backtracking.
+On Tue, Mar 31, 2020 at 02:49:15PM +0000, George Spelvin wrote:
+> On Tue, Mar 31, 2020 at 11:14:12AM +0100, Mark Rutland wrote:
+> > On Mon, Mar 30, 2020 at 07:32:37PM +0000, George Spelvin wrote:
+> >> On Mon, Mar 30, 2020 at 11:57:45AM +0100, Mark Rutland wrote:
+> >> Because get_random_bytes() implements anti-backtracking, it's a minimum 
+> >> of one global lock and one ChaCha20 operation per call.  Even though 
+> >> chacha_block_generic() returns 64 bytes, for anti-backtracking we use 
+> >> 32 of them to generate a new key and discard the remainder.
+> >> 
+> >> get_random_u64() uses the exact same generator, but amortizes the cost by 
+> >> storing the output in a per-CPU buffer which it only has to refill every 
+> >> 64 bytes generated.  7/8 of the time, it's just a fetch from a per-CPU 
+> >> data structure.
+> > 
+> > I see; thanks for this explanation. It would be helpful to mention the
+> > backtracking distinction explicitly in the commit message, since it
+> > currently only alludes to it in the first sentence.
 > 
-> Because these are authentication keys, useless to an attacker
-> as soon as the kernel stops using them, there is no security
-> benefit from anti-backtracking.
+> Easily done, but I need to find a centralized place to say it, or
+> I'd be repeating myself a *lot* in the series.
+
+Sure, but in the interests of optimizing for review, it's worth doing a
+copy+paste of the key detail into each commit. That way, even if the
+reviewer only looks at the patch in isolation they have all the
+necessary context, and you don't have to reply to the same question on
+each patch.
+
+> > It's worth noting that the key values *can* be exposed to userspace when
+> > CONFIG_CHECKPOINT_RESTORE is selected. On such kernels, a user could
+> > regenerate and read the keys an arbitrary number of times on a CPU of
+> > their choice. From my limited understanding I presume backtracking may
+> > be a concern there?
 > 
-> Signed-off-by: George Spelvin <lkml@sdf.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: linux-arm-kernel@lists.infradead.org
+> No.  Backtracking is an issue if the keys must remain secret *after*
+> they are wiped from kernel memory.  This applies to session
+> *encryption* keys (assuming the plaintext should remain secret
+> after the session is over), and to any long-lived keys which are
+> stored encrypted or otherwise inaccessible (e.g. in dedicated
+> hardware).  The latter includes most asymmetric private keys.
 
-Given my understanding from discussion on the prior version the
-conversion is sound, it doesn't matter that we expose the keys via
-ptrace, and the code looks nicer, so:
+> Basically, do you need to wipe the key (with memzero_explicit) when
+> you are done with it?  If that is important, you also want to
+> know that the key cannot be reconstructed from the CRNG state.
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+I see, thanks for the explanation. I had misunderstood the what
+backtracking was in this context.
 
-I assume Will or Catalin will pick this up when they next pick up
-patches.
+> A modified patch will follow.  Thanks for your patience.
 
+I've given that an Ack as it looked sound to me.
+
+Thanks,
 Mark.
-
-> ---
-> v2: Took out all the clever bitmap-based stuff and made a simple
->     boring helper function to replace get_random_bytes(&key, 16).
-> 
->  arch/arm64/include/asm/pointer_auth.h | 16 +++++++++++-----
->  arch/arm64/kernel/pointer_auth.c      | 10 +++++-----
->  2 files changed, 16 insertions(+), 10 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-> index 7a24bad1a58b8..1a4590d05785e 100644
-> --- a/arch/arm64/include/asm/pointer_auth.h
-> +++ b/arch/arm64/include/asm/pointer_auth.h
-> @@ -30,17 +30,23 @@ struct ptrauth_keys {
->  	struct ptrauth_key apga;
->  };
->  
-> +static inline void __ptrauth_key_init(struct ptrauth_key *key)
-> +{
-> +	key->lo = get_random_u64();
-> +	key->hi = get_random_u64();
-> +}
-> +
->  static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
->  {
->  	if (system_supports_address_auth()) {
-> -		get_random_bytes(&keys->apia, sizeof(keys->apia));
-> -		get_random_bytes(&keys->apib, sizeof(keys->apib));
-> -		get_random_bytes(&keys->apda, sizeof(keys->apda));
-> -		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
-> +		__ptrauth_key_init(&keys->apia);
-> +		__ptrauth_key_init(&keys->apib);
-> +		__ptrauth_key_init(&keys->apda);
-> +		__ptrauth_key_init(&keys->apdb);
->  	}
->  
->  	if (system_supports_generic_auth())
-> -		get_random_bytes(&keys->apga, sizeof(keys->apga));
-> +		__ptrauth_key_init(&keys->apga);
->  }
->  
->  #define __ptrauth_key_install(k, v)				\
-> diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
-> index c507b584259d0..05e2e3d174010 100644
-> --- a/arch/arm64/kernel/pointer_auth.c
-> +++ b/arch/arm64/kernel/pointer_auth.c
-> @@ -31,15 +31,15 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
->  		return -EINVAL;
->  
->  	if (arg & PR_PAC_APIAKEY)
-> -		get_random_bytes(&keys->apia, sizeof(keys->apia));
-> +		__ptrauth_key_init(&keys->apia);
->  	if (arg & PR_PAC_APIBKEY)
-> -		get_random_bytes(&keys->apib, sizeof(keys->apib));
-> +		__ptrauth_key_init(&keys->apib);
->  	if (arg & PR_PAC_APDAKEY)
-> -		get_random_bytes(&keys->apda, sizeof(keys->apda));
-> +		__ptrauth_key_init(&keys->apda);
->  	if (arg & PR_PAC_APDBKEY)
-> -		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
-> +		__ptrauth_key_init(&keys->apdb);
->  	if (arg & PR_PAC_APGAKEY)
-> -		get_random_bytes(&keys->apga, sizeof(keys->apga));
-> +		__ptrauth_key_init(&keys->apga);
->  
->  	ptrauth_keys_switch(keys);
->  
-> -- 
-> 2.26.0
 
 _______________________________________________
 linux-arm-kernel mailing list
