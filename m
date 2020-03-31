@@ -2,80 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 060E7199BFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:45:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33D07199C11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:50:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hDuOfeU2sSvlEwONm2v1xc5yaeGXGIe7ZHy+dJOTnp4=; b=Nu1YaqGHD3x5qf
-	wEZZzbgNRGvqZDFaZF9tgSQ+Dq7oEpcnfev6LWAJjZk+k+gBe4/VLedb/Sc3mfaWMVpEjImQksYo9
-	4045wJkEaA5jpeCYUeYMWJUL47mZi7NyUS9OkhdP1ol9pF14OcUtVTu5QNkY/LMCNQJh2H9YlB+yU
-	YQ/jGkgdRtyx/Lk35bGER9XAoQVSxOqhRcYtiw5eRSsckRv57TdZFLnoP3CP4lhFZ648ZctA1INtX
-	oPbda6fPsDTI4hZb4mKeflOVwK/jo4seJz3tuGfVkPbVRZtV/s346Cx+lDw/C1Nih+wTeoEEMQTqL
-	VvF5tAuoBlgxDEAW05hg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=reUfEx5yukzCnwwwATGtKq+9V569iXD6VWajtDGlpr0=; b=RY0jHtX+AkqP8h
+	2QO2h7COav44FKAFP57k/6pMJmxTetg//r1acmDf6Ffl/dtR3ZEipNcsESgijUYQnkysnExn+3WPr
+	idRVWHQzdk30bmhiQ9uDZr6ELpGaVjcnVS9ylMN+sQAYkyXKT/LQv9LQXbDjzq9fVFolr1T470bRa
+	v3FpctKAiDX2az0AbMShhtUP9CxupQis495Ly+3ioee7R0qQJLp0RClXrIsDXJGO/QqOajiOIMqBQ
+	bG4cAwLvYqvrOKIQIJue4mcGSx4T3VqaJeTMwU4yIpnt5AelylTI2Rv2g/PyCGsRUQ7NE4/xdWkIO
+	bZfATqTmAOzNsO0FbTAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJK0v-0007qd-83; Tue, 31 Mar 2020 16:45:21 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1jJK5C-0001ao-Ui; Tue, 31 Mar 2020 16:49:46 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJK0d-0006uQ-Av
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:45:05 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sFYS5J9Nz1rqRR;
- Tue, 31 Mar 2020 18:45:00 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sFYS4R8qz1qqkQ;
- Tue, 31 Mar 2020 18:45:00 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id 6hgpObiLdNkB; Tue, 31 Mar 2020 18:44:59 +0200 (CEST)
-X-Auth-Info: psRQkpEs988+okZlJyNRpw83Kb11sIX32mkOCebJUTA=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 31 Mar 2020 18:44:59 +0200 (CEST)
-Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
- for SDMMC2 pins 4-7
-To: Alexandre Torgue <alexandre.torgue@st.com>,
- Ahmad Fatoum <a.fatoum@pengutronix.de>,
- Patrice CHOTARD <patrice.chotard@st.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20200328171144.51888-1-marex@denx.de>
- <20200328171144.51888-8-marex@denx.de>
- <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
- <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
- <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
- <310aa3a3-09ce-42ef-d1ea-b653163d1d72@pengutronix.de>
- <97d13a84-8220-aa7f-3ee6-df474cca3882@denx.de>
- <43e88a1b-f3e4-df1d-38a6-0bb281a2f786@st.com>
- <871a5cc2-615d-b9e5-0eed-9a5a38be4f6c@denx.de>
- <69bce6d4-129e-b9ea-8fa6-f33d9047e3c3@st.com>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <9fb131ad-552e-61ad-75c2-5ebec501f356@denx.de>
-Date: Tue, 31 Mar 2020 18:44:58 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jJK56-0001aU-MH
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:49:41 +0000
+Received: by mail-io1-f65.google.com with SMTP id o127so22449087iof.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 09:49:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3QwrQutvISOdwRt5xFRlvMoy4S4i7e5APKKFlmWfPlI=;
+ b=IMqvva88eqleSmrEuyLltVylc0qsC5Yjga10LL71EEwzcNk+nRt3kYJeQQq3We1+Zl
+ I9XZn0ma2hWKVXWgnQb43Sy13nQqdoJkPn8Sh+8zoc8ylr3dsl3eWGeR3khC6u76RQcT
+ C2y5SzmoxKDpZ6BE3e0e5qXcsR1sJh92NmbNhtq8K0/TF1pjTv98AhdFVSbRiHM7mv/5
+ lBfs+if7rlnQ9a0kwXPqPd3GUOdQv5IIOFG2R9eb/hFTI6x4CyiV1px2zA5ZQ8ytSuQi
+ rtJ/801W4X9PUCAFxFx1mOy//sj5JUUpfFbXzYfVhNKBCGkGSVOl7sK2oJCBo+MW8Nkx
+ Pjvw==
+X-Gm-Message-State: ANhLgQ1uhmXS3o/mAvBBXMwXN2KM7at6EXjVPbV8RM5K1I6QhtqTNqC1
+ 1RO9yOSjIxj4Asbh5+ytRA==
+X-Google-Smtp-Source: ADFU+vu0uvJu27akUkqWds8x0YrvgBWePU3mk/Nwbnw0BEYSzZyw5fX/kIW3WxqJWs3yGGKUbPvnEA==
+X-Received: by 2002:a02:5a82:: with SMTP id v124mr8013603jaa.132.1585673378445; 
+ Tue, 31 Mar 2020 09:49:38 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id l17sm6133742ilf.28.2020.03.31.09.49.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 31 Mar 2020 09:49:37 -0700 (PDT)
+Received: (nullmailer pid 20383 invoked by uid 1000);
+ Tue, 31 Mar 2020 16:49:36 -0000
+Date: Tue, 31 Mar 2020 10:49:36 -0600
+From: Rob Herring <robh@kernel.org>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH v5 1/6] dt-bindings: mfd: Document STM32 low power timer
+ bindings
+Message-ID: <20200331164936.GA18783@bogus>
+References: <20200331083146.10462-1-benjamin.gaignard@st.com>
+ <20200331083146.10462-2-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-In-Reply-To: <69bce6d4-129e-b9ea-8fa6-f33d9047e3c3@st.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200331083146.10462-2-benjamin.gaignard@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_094503_528964_801BC539 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200331_094940_723599_C8F6218E 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.166.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,50 +93,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, tglx@linutronix.de, fabrice.gasnier@st.com,
+ lee.jones@linaro.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/31/20 6:39 PM, Alexandre Torgue wrote:
-
-Hi,
-
-[...]
-
->>> I agree, and I prefer to keep pins groups definition in
->>> stm32mp15-pinctrl.dtsi file. IMO, it is easier for users to find them in
->>> only one file. Actually, I already had this discussions with some guys
->>> "where pins groups have to be defined ?". For me (and maybe only for
->>> me), muxing is SOC dependent, I mean SoC provides a bunch a possible
->>> pinmux for each IPs. If we got enough memory spaces (and time to waste
->>> also) we could define all possible pinmux (AFx....) for each devices and
->>> let board users chose the good one (using stm32mp15-pictrl.dtsi as a
->>> database). In board file, you select one possible pin configuration
->>> (provided by the SoC) for your device according to your schematic.
->>> However you could append pin groups in board file to update bias,
->>> slewrate ...
->>> If your concern it to embed a bunch of not used pin configuration for a
->>> board, we could use /omit-if-no-ref/ tag on pin groups.
->>
->> Can we instead define pinmux the way e.g. iMX6 does , as separate pins ,
->> instead of pinmux groups ?
->>
+On Tue, Mar 31, 2020 at 10:31:41AM +0200, Benjamin Gaignard wrote:
+> Add a subnode to STM low power timer bindings to support timer driver
 > 
-> Sorry but what would the advantage to do so ?
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+> version 5:
+> - the previous has been acked-by Rob but since I have docummented
+>   interrupts and interrupt-names properties I haven't applied it here.
+> 
+> version 4:
+> - change compatible and subnode names
+> - document wakeup-source property
+> 
+>  .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  | 34 ++++++++++++++++++++++
+>  1 file changed, 34 insertions(+)
 
-You'd have per-board pinmux which would be perfect fit for that board,
-without potentially affecting other boards with changes, without hacking
-various things like drive-strengths in board files, and without having
-the combinatorial explosion of the current single pinmux file.
-
--- 
-Best regards,
-Marek Vasut
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
