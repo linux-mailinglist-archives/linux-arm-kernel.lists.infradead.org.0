@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDC2F198C80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 08:47:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9BBB198C84
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 08:48:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lPm73af24VgtVPE/hiwS6kg5TbXUpUKXFR0GUFXZVXE=; b=nwq31WjGQyHlMG
-	LcRMN32EfPXj77I5ToqpYCjxC51+ZB558nukCl5lnKo0ET6lAkmlPLVMRedGgo4lUhNglOGs2OgeE
-	AWoY1sMLvnYkvPZ6YwgDdV2OVl8+om4/E2GJWoPm2PSMXjcAyY+j3/sTkFzWMW9oxWiZ7xUpkeCZs
-	91LPUasebt5XXNcfMt2D4VdWEFB9c9RxnD/hYeXa00wrATBfCKXd6U+sapKvIxkBixkVr0/N8VMy/
-	WnX9i4S1GgvCC3lGra+3yo4ltbPOuhVjnHbED6bc5lCs01E1tAVnf/oBEDmTag4+nfxgUHaNCJ+EZ
-	a3czdXiGR6jRhy6/wisA==;
+	List-Owner; bh=aWEAvzB3QkIikKygaKAWP5EtSmdSb5ZYMgYgp8Tupkw=; b=Lnuv2mPN/iFuTE
+	SROl0pIU0PKlaQimAcaJCrzZhtDCNPyCnp4PMyXl1UBVycL/Xj9cMMVYcTORueaqO8k7PEpHDI0m5
+	CJM5RgRe0TjG+hoDwQ8xLQDJPZ8wmKoCoFCESFXZpwbkTLzUG+E0M2bYdxTDSWEC1KeHyPFBJ778O
+	1ybB4pvDUp6IFtfrVX/XjmGF4yrMFmnfCaS23BGUyq6gYgqDFqt6DmrlnE4QNVmsOTXjNydGNWq7+
+	izxtvy79WUL5WsU7+xMbVOQyXh5o0EUekyoWJKlYSgVFqaNiCmUR9uAP8ZZ0M+DfWUmib8P1wGKhg
+	57fSlAy4qGtCJgchbkZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJAfn-0006dg-O7; Tue, 31 Mar 2020 06:46:55 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jJAgv-0006ts-RJ; Tue, 31 Mar 2020 06:48:05 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJAfe-0006d7-Bv
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 06:46:47 +0000
-Received: by mail-pl1-x641.google.com with SMTP id w3so7758206plz.5
+ id 1jJAgm-0006tZ-Hr
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 06:47:57 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q3so9862571pff.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Mar 2020 23:46:46 -0700 (PDT)
+ Mon, 30 Mar 2020 23:47:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=ozvP2af89tauDdl3uwnfBwoXG01io6pHPiam1L9z8h0=;
- b=joKWJfXn0RRBCCYer0QQpI5clTHBMrOBU81FoGWbvYbTztY9663GnwVeTNOWbjukiN
- pT1xT8xuMA1a8oPVgqshm+GFz+MSKuf0u8oj9j2kgqIKKqhrIWfZFzkJZeXqEJowmkdI
- ByQ3YUogfrpOdaZyySGP8KkXZtFyq11iuz640qeJg0mg9JZih7Sg2aZCDjPHaviua5d/
- V54oWU/nMHrGvRFab0joFjvLkLgd5R/Hed0pnHNEnAXiON/vCitkoEHQucLku7UkyFya
- LaNWAojX8AGC7+j/zS3iP+/iEGR3lcmR5ohdl+KvE8LB+kbmOvdDXWB4vXSoTkiaHsDp
- Jpwg==
+ bh=xzBzTtyv/ik/5EBBE5B9QBIPXEM25PMpqUtEZkO+j2o=;
+ b=YWiJoWdxOokr0IV/cq7x5S7oImQ3xpSnBWJaj/CnjT9pp1xdd61+UWDi4ViiQoAXeC
+ RIk6lzC2DdfPIEjFecCeaTAk3EHi9Ivm30yknHCQUtMXrC+gmtxNKep1BuDiBX2MbBDe
+ v/KaqM9xH/cOJv38hF6Wfgx6IJMQiklpPy1fv/QRIWXaBbj/q6JEvJB5lmPBbx+dJgzz
+ SEa3LZlJ3FGT7zIrO6uFSAFN3O8ncCy0ARu+niB3CeiEEmsrsbkBHiSi1atwPNptN5zy
+ 8La0T84o34UgCrlbYm649ZDPs37IqnM0gtSJHoAChDFAG3GfoOqpPjv2vGAgmJW2VCNJ
+ 0qjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ozvP2af89tauDdl3uwnfBwoXG01io6pHPiam1L9z8h0=;
- b=a3wrl72Xh3yVJxj4qpiQRS2TH5s5F1O66ZaDsrlZnrGxJQ9OiVXuRZ3iBjjuqK4qMR
- MMAf+N3CV5aqEysZlGibL2V9TSUHBSL3y2X0JhaEtIyY2r7Ao4TkCwPj+SSv+fupvmye
- w0MwEY3Bks9wfVRiKOMcH86JuejhXHjWjar1whFmN5p8mH3acFuaQVLfjx5xT4hnOqPc
- 1sziMl0H665uLJjDyX6AKUOJSku0TDFP0KzhCCkBJ6cg4kxjtDLV5wO/o8ACa7WqqxRh
- CQQ1dK7UwJi8Qgj3p2UhGk1SQDgq496/FbdebiB01+oRiSYXUGPdDvgDJ+2lIgi8gFDQ
- I/Gw==
-X-Gm-Message-State: ANhLgQ1D/HNDiTTNfou8vefpc8Hmu4zRmiZVNW36pSThgaYlgvk7z4so
- 1AZkex5xn1xbdLcB8NCV1OW5
-X-Google-Smtp-Source: ADFU+vvgBzkgIbpFBd6cy7s7oA9i/Y2hvnVHA/LEq2oeOUqVKEAGpbz9kF7MFwbhGRlCmXwub+2Xkg==
-X-Received: by 2002:a17:902:b113:: with SMTP id
- q19mr15697950plr.202.1585637205753; 
- Mon, 30 Mar 2020 23:46:45 -0700 (PDT)
+ bh=xzBzTtyv/ik/5EBBE5B9QBIPXEM25PMpqUtEZkO+j2o=;
+ b=M501fCgX5ao6zHN/SJ5hdEHcV/GdGkyL3Fefus5NmvaRZGPw+C638TmkgbPCLBvqxp
+ ij2pSig6Ly5KeV9cnXtYvDukDGce+dMNRf2aarkXasLCMy6S5vRCQvT/NuUvmPSZqgv8
+ XNVY+vAKJoisa6fhid881tN7cQRvQOEI26H77Cy64uizwKMXNZJdzz8FGc2BoslHGKrv
+ H4yaFNcN4Ad5Q6AiSBnZI+EHETMkhWT6Ai42p/mgEV8D0IlTSwEuztyDQtOMH9Ll9qIF
+ hsjWO+dowyyL+HuRDHJofg71IOeGqF7LZOyXhIov8aBlNPBLdmeV4K/1vX7HjoptE9+r
+ jpWw==
+X-Gm-Message-State: AGi0PuYijb9JUcC3lzRrwcLfEqnLr+FWdCpAY2j+B5X2S7+vJxxpTTQ4
+ 6mSpy3Vni11XxgHqU2IPbtBq
+X-Google-Smtp-Source: APiQypIEAbi6y8ZieLWWZV5hNFsKxVPMpUpaUafWP3vaBcDMbP+sPBBj/4VNd+xWoSMenMebveeTjQ==
+X-Received: by 2002:a63:1053:: with SMTP id 19mr2930152pgq.60.1585637276025;
+ Mon, 30 Mar 2020 23:47:56 -0700 (PDT)
 Received: from Mani-XPS-13-9360 ([2409:4072:630f:1337:c28:2530:7bf4:e941])
- by smtp.gmail.com with ESMTPSA id d26sm11641709pfo.37.2020.03.30.23.46.41
+ by smtp.gmail.com with ESMTPSA id h11sm11741855pfq.56.2020.03.30.23.47.51
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Mar 2020 23:46:44 -0700 (PDT)
-Date: Tue, 31 Mar 2020 12:16:38 +0530
+ Mon, 30 Mar 2020 23:47:55 -0700 (PDT)
+Date: Tue, 31 Mar 2020 12:17:49 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH V2 16/22] ARM: dts: stm32: Add alternate pinmux for
- USART2 pins
-Message-ID: <20200331064638.GE17400@Mani-XPS-13-9360>
+Subject: Re: [PATCH V2 17/22] ARM: dts: stm32: Enable Bluetooth on AV96
+Message-ID: <20200331064749.GF17400@Mani-XPS-13-9360>
 References: <20200331005701.283998-1-marex@denx.de>
- <20200331005701.283998-17-marex@denx.de>
+ <20200331005701.283998-18-marex@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331005701.283998-17-marex@denx.de>
+In-Reply-To: <20200331005701.283998-18-marex@denx.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_234646_416801_72249A1E 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20200330_234756_605667_773FBF27 
+X-CRM114-Status: GOOD (  17.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,8 +108,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 02:56:55AM +0200, Marek Vasut wrote:
-> Add mux option for USART2 pins, this is used on AV96 board.
+On Tue, Mar 31, 2020 at 02:56:56AM +0200, Marek Vasut wrote:
+> The WiFi/Bluetooth chip is attached to USART2 on AV96 as well, describe
+> it in DT to make it available. Remove BT LED and turn it into a shutdown
+> GPIO, because the GPIO line controls the BT_REG_ON signal. The LED is just
+> an indicator connected to the same line, but not the primary function.
 > 
 > Signed-off-by: Marek Vasut <marex@denx.de>
 
@@ -130,44 +131,54 @@ Mani
 > ---
 > V2: No change
 > ---
->  arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 24 ++++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
+>  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 23 ++++++++++++++-------
+>  1 file changed, 16 insertions(+), 7 deletions(-)
 > 
-> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> index f3f9fc4a3503..4f3b40d5751f 100644
-> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-> @@ -1204,6 +1204,30 @@ pins {
->  		};
+> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+> index 12ee95d5adb1..29af5ed2ebb3 100644
+> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+> @@ -21,6 +21,7 @@ aliases {
+>  		mmc0 = &sdmmc1;
+>  		serial0 = &uart4;
+>  		serial1 = &uart7;
+> +		serial2 = &usart2;
+>  		spi0 = &qspi;
 >  	};
 >  
-> +	usart2_pins_a: usart2-0 {
-> +		pins1 {
-> +			pinmux = <STM32_PINMUX('F', 5, AF7)>, /* USART2_TX */
-> +				 <STM32_PINMUX('D', 4, AF7)>; /* USART2_RTS */
-> +			bias-disable;
-> +			drive-push-pull;
-> +			slew-rate = <0>;
-> +		};
-> +		pins2 {
-> +			pinmux = <STM32_PINMUX('D', 6, AF7)>, /* USART2_RX */
-> +				 <STM32_PINMUX('D', 3, AF7)>; /* USART2_CTS_NSS */
-> +			bias-disable;
-> +		};
-> +	};
+> @@ -63,13 +64,6 @@ led4 {
+>  			default-state = "off";
+>  			panic-indicator;
+>  		};
+> -
+> -		led5 {
+> -			label = "blue:bt";
+> -			gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
+> -			linux,default-trigger = "bluetooth-power";
+> -			default-state = "off";
+> -		};
+>  	};
+>  
+>  	sd_switch: regulator-sd_switch {
+> @@ -421,3 +415,18 @@ &uart7 {
+>  	pinctrl-0 = <&uart7_pins_a>;
+>  	status = "okay";
+>  };
 > +
-> +	usart2_sleep_pins_a: usart2-sleep-0 {
-> +		pins {
-> +			pinmux = <STM32_PINMUX('F', 5, ANALOG)>, /* USART2_TX */
-> +				 <STM32_PINMUX('D', 4, ANALOG)>, /* USART2_RTS */
-> +				 <STM32_PINMUX('D', 6, ANALOG)>, /* USART2_RX */
-> +				 <STM32_PINMUX('D', 3, ANALOG)>; /* USART2_CTS_NSS */
-> +		};
-> +	};
+> +/* Bluetooth */
+> +&usart2 {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <&usart2_pins_a>;
+> +	pinctrl-1 = <&usart2_sleep_pins_a>;
+> +	st,hw-flow-ctrl;
+> +	status = "okay";
 > +
->  	usart3_pins_a: usart3-0 {
->  		pins1 {
->  			pinmux = <STM32_PINMUX('B', 10, AF7)>; /* USART3_TX */
+> +	bluetooth {
+> +		compatible = "brcm,bcm43438-bt";
+> +		max-speed = <3000000>;
+> +		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
+> +	};
+> +};
 > -- 
 > 2.25.1
 > 
