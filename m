@@ -2,80 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69269199FFB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:33:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21D84199FFF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 22:36:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5EBFw5sC9JWkOnR2hJJzjF3l2WsFiYqOMqh0Ap4dRmc=; b=fw1HGqmA+AEyh5
-	Ri/WMqAvEMSeF4NONU/YIXGqwRO5ostIk70G91MZAaa2L3JAMArqTbpAuYA/ChQU6IZreAsWagpBb
-	Ho52VBOsJZ6cxwScdlCbODxjQta9/XXdFe74bxjdF/6UKK21k7bp5kbJ0GNVgEDQnm9yAfYRrKINV
-	MmEUSFwmWhm1DJn2cswGrhWiIMhKeMdguQ3rEOGqCXDdQkXdanEyyeAKPjDDcWLm7uCtt2RMFLT2m
-	gPwAKHL7qajlFntJfKH8EOSXHQxMBJCiz6ojygLfdgOWSUrjcA/O3fyArW4fRz73HZ+Ca8tUDjjIQ
-	F9ofn8mYgRQ49OIZLSRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BAd9zb74VM4eY7VG3t/3hHlg+b/LtcMMo61pR00leUM=; b=O0UhZ7pkbdhEXK
+	myirO36wDGOAdjw1FK2M5E79YTCW7OJIiGWHu9iU1/yKPXdWBl2AJNvlsv3KWSjULceD2KBNEYiUY
+	3jxVF6bm9zZwxUMMlLnwCiSAhq6Muw8lz54CRK+TP1ydzq365VvLVM7c3FV3WTI/SEqo+z8wFmR98
+	M2HcP/77mcRKqmKCGhLhJIt6z/kTm5Qp/P7Z59BtRPID+tyc7z/qU8FnpWEIclykbvmMrVJjPdmbv
+	d9aHeAfxeyYGb3Vae0/xAOFOtKVyxo7N9HcqwLyrPWeoaH+sspNPN9orscIB8hid0Yub8pRxOHP2H
+	COUf7HLLbW0r1me7JBNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJNZf-0006Fe-7s; Tue, 31 Mar 2020 20:33:27 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1jJNcI-0000gT-IT; Tue, 31 Mar 2020 20:36:10 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJNZT-0006FB-H3
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 20:33:16 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id p10so23211629ljn.1
+ id 1jJNc7-0000fq-6t
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 20:36:00 +0000
+Received: by mail-qk1-x742.google.com with SMTP id c145so24589912qke.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 13:33:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lShPZxhYmYKIxn9HZ21opBqSt/h6p0BHD/YYoVt0O6Y=;
- b=RQBKvhc3u0Nhb2lLvppi4N79yYa944hBQPGlB+L4hj0AEKhvZNVA42PVGAhWv564+d
- mbM+VCg1x+Wg314JZ0Og11zqSX9EjL1C4ZI/EF/hfm5idRjBecq1sw8eztp1/PGItaeG
- /mRJwLHzXjtsIITo/Yuh/K4BWeORJddez2OSwuw8912AN2Fw0xJ8yf13CZaSQ76WbPpf
- +vIvX4Vgho++utEkWjcQkmOeP4ZoxyivL8Qyy98hw0HeDJdpEGa9kZJeWf/gz8lfPFI2
- OpAY/EOuJkq+8SUhhaXUBVWzjd+phDD1LTX9H8E297XvE+l5vncJnPE5OYdAUnk/yhiT
- hkvw==
+ Tue, 31 Mar 2020 13:35:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pWtGUXK2zzrPXg+mdinua6CvQBln6b8yVtBovLhZQBM=;
+ b=UHKH84LZwqr0bTdSwOk8VIsZ6AYBEPPO9nInCQAu3ZSyBdpWRCbIrt21I54J3efqMH
+ CRcRLuraIHpJJr+2PxYTCHgAKLK/nrHYseyTVaXpZ8W75RGfZ4wESFS1GHlVOnD4rr2x
+ Kh/x0msbStYMQNWZDhu8YQSyALwBDH9TsChu8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lShPZxhYmYKIxn9HZ21opBqSt/h6p0BHD/YYoVt0O6Y=;
- b=WjTST89sIoKAb0v9iloSD+XkBqZ7/WMbzPrebPCAMgfnmRsNllFm8ERjEcP9n2UWdD
- AKAjq5N4ovhVBtO4WpKLHphAOfVCe4aMIAGuvGIl+EwMY/HgmGAeyp4LoOnze3f/O3zP
- 3cJFunAna4K4cbY/daPa5OUvD0nVmxVlm2YSv451bejwQNyfTqWIm019JlvK8QlayTRa
- Indds46NR/5sP06vEAnuuzhU3gP7RZVtC4u/CGXANL6lEZMk8wqCJF2ODf7b5dq6GNpF
- rgZkI44+bPk1kmbLZ+26YzZRDrkcgfcYEXONO3ZAIa3GDCCbf0SU3pqKj+/xWL35LBHk
- IGrw==
-X-Gm-Message-State: AGi0PuZU7hNAJgcZnoQ2WN6UuEUAGwugCZRtEw4YgBG853Bwrzx3s5o1
- D1X5MmIKpf1l0Z6lg4UGqLEFtjB+qp+qHb9X1sw=
-X-Google-Smtp-Source: APiQypL9Ipre8TYKspmzX1YW+qdEGC4l1xDR2LSmRhJqreBFH4Gh/aHgcWcKDbJlMwBaSFTyNRo9JoQb/vDfy2wjpWc=
-X-Received: by 2002:a2e:b1c2:: with SMTP id e2mr11666246lja.288.1585686793666; 
- Tue, 31 Mar 2020 13:33:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pWtGUXK2zzrPXg+mdinua6CvQBln6b8yVtBovLhZQBM=;
+ b=d9Zo1aweWcOr8RGiagc6FEJWN5Eqti970deCjZUKo2ZHL4+FYzuNSQELiLBQohZY74
+ 91YwtloSHMsvCJXqAH31/xL8yTkjooOs2RvHkHr/95CaIW5VGJFF2KKutmZT9x4buQhc
+ x3HnWnoLAAI2Nq9ZRcLw0/axt5uEwCz7bI6iRZGP26PLeOpsbvbbTESaN6dku1A49dRo
+ /oe3AI1ovZzx5iZEYkJECxXI78Yeiab49ucRmJ4yLlsnsi76Iwo+IXR67POkTpDO6B40
+ hcujT8+df58EzzvO9q83zJ164m8/bJAKYgMjS1X6hrjT2qpZUxwstOawWcrH8Nr5PUMB
+ L1dg==
+X-Gm-Message-State: ANhLgQ3Z1gzzeqG4B+qxri/lxRXSayXU2zVrXT7E6ts5oj2ueGUaxf8v
+ t6EmFiAI2sWYTvRIR/jVeU1Qig==
+X-Google-Smtp-Source: ADFU+vtvRN6McKV5WGRyQGrJqQFKIHQwBHa5/AK61/BtydHPYOQvzA5pNrN2Yuj49YvxZmk9U7GEOQ==
+X-Received: by 2002:a37:30f:: with SMTP id 15mr6246456qkd.44.1585686957509;
+ Tue, 31 Mar 2020 13:35:57 -0700 (PDT)
+Received: from bacon.ohporter.com ([2605:a000:1234:6170:a2c3:e83:a1a:a4b])
+ by smtp.gmail.com with ESMTPSA id i20sm16566qkl.135.2020.03.31.13.35.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 31 Mar 2020 13:35:56 -0700 (PDT)
+From: Matt Porter <mporter@konsulko.com>
+To: Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] arm64: dts: imx8mm: fix dma peripheral type for SAI nodes
+Date: Tue, 31 Mar 2020 16:35:51 -0400
+Message-Id: <20200331203551.20914-1-mporter@konsulko.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <CAHCN7xJSKH-gXA5ncFS3h6_2R28rn70O3HfT=ActS1XVgCFSeg@mail.gmail.com>
- <DB3PR0402MB39160D3F0D03B968B7CBE25AF5CD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <CAHCN7xJ2m3LRB3oGBb5QKbacYyTBQK1CdzGcTh3w=hj18H=4Pw@mail.gmail.com>
- <DB3PR0402MB3916B68A1B0F37EA34825F69F5CA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB3916B68A1B0F37EA34825F69F5CA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 31 Mar 2020 17:33:03 -0300
-Message-ID: <CAOMZO5ABmK9LLOafmChFeDnTzrDTKgqfwLNe08bR1Yo8iA1G0g@mail.gmail.com>
-Subject: Re: i.MX8MN Errors on 5.6-RC7
-To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_133315_561829_1F08C57C 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200331_133559_268369_948BFAF1 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,29 +93,77 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Adam Ford-BE <aford@beaconembedded.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Anson Huang <Anson.Huang@nxp.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+ Rob Herring <robh+dt@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adam,
+The peripheral type specified in the dma phandle for each SAI node
+is incorrect. Change it to specify the SAI peripheral.
 
-On Sun, Mar 29, 2020 at 12:29 AM Anson Huang <anson.huang@nxp.com> wrote:
+Signed-off-by: Matt Porter <mporter@konsulko.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-> I am using our latest u-boot and ATF in NXP internal tree, maybe you can get the
-> latest release to have a try.
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 1e5e11592f7b..ddc93fc4817a 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -240,7 +240,7 @@
+ 					 <&clk IMX8MM_CLK_SAI1_ROOT>,
+ 					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
+ 				clock-names = "bus", "mclk1", "mclk2", "mclk3";
+-				dmas = <&sdma2 0 2 0>, <&sdma2 1 2 0>;
++				dmas = <&sdma2 0 24 0>, <&sdma2 1 24 0>;
+ 				dma-names = "rx", "tx";
+ 				status = "disabled";
+ 			};
+@@ -253,7 +253,7 @@
+ 					<&clk IMX8MM_CLK_SAI2_ROOT>,
+ 					<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
+ 				clock-names = "bus", "mclk1", "mclk2", "mclk3";
+-				dmas = <&sdma2 2 2 0>, <&sdma2 3 2 0>;
++				dmas = <&sdma2 2 24 0>, <&sdma2 3 24 0>;
+ 				dma-names = "rx", "tx";
+ 				status = "disabled";
+ 			};
+@@ -267,7 +267,7 @@
+ 					 <&clk IMX8MM_CLK_SAI3_ROOT>,
+ 					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
+ 				clock-names = "bus", "mclk1", "mclk2", "mclk3";
+-				dmas = <&sdma2 4 2 0>, <&sdma2 5 2 0>;
++				dmas = <&sdma2 4 24 0>, <&sdma2 5 24 0>;
+ 				dma-names = "rx", "tx";
+ 				status = "disabled";
+ 			};
+@@ -280,7 +280,7 @@
+ 					 <&clk IMX8MM_CLK_SAI5_ROOT>,
+ 					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
+ 				clock-names = "bus", "mclk1", "mclk2", "mclk3";
+-				dmas = <&sdma2 8 2 0>, <&sdma2 9 2 0>;
++				dmas = <&sdma2 8 24 0>, <&sdma2 9 24 0>;
+ 				dma-names = "rx", "tx";
+ 				status = "disabled";
+ 			};
+@@ -293,7 +293,7 @@
+ 					 <&clk IMX8MM_CLK_SAI6_ROOT>,
+ 					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
+ 				clock-names = "bus", "mclk1", "mclk2", "mclk3";
+-				dmas = <&sdma2 10 2 0>, <&sdma2 11 2 0>;
++				dmas = <&sdma2 10 24 0>, <&sdma2 11 24 0>;
+ 				dma-names = "rx", "tx";
+ 				status = "disabled";
+ 			};
+-- 
+2.20.1
 
-Here is a complete log that shows U-Boot/ATF version being used.
-
-It successfully boots imx8mn-evk running linux-next:
-https://storage.kernelci.org/next/master/next-20200331/arm64/defconfig/gcc-8/lab-baylibre/boot-imx8mn-ddr4-evk.html
 
 _______________________________________________
 linux-arm-kernel mailing list
