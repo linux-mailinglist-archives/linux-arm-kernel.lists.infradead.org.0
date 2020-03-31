@@ -2,76 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54AA6199B71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:28:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BBD5199B91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 31 Mar 2020 18:30:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m2xfbE+qPjzHQ4TZIrxyeIhEXsb8AYDVt6SFg+vP5bk=; b=JNuiYCHS73Ndxo
-	snRhgb9khu02Pvi4wrJN9GrIWyjNdFILfQjKJza/oOewpoKkUcCk3P/WJyhgWCz1IGFxLO+a0rBfL
-	34AZO3hSljCnULV868ba1cyyzQWZ9izWjsrimYziLlfQNH1ekBGSlPmleCo8e4p5oi70nUnydWGRz
-	iYEpH1E+ZP0wXMdIzpg45LlD4hKgxnDgzPTHCJe7YhwaMJvxLImTyIcUE8lo78uNJqhNlTcV/597D
-	PdohL6W6etEF93QtZbzSFavVhj35aruVYlUxKpUVcix6X+/hxlSO2noyxTTolqfhMNqwHWpaeKZE5
-	em5hNWbP58Y0jjKD6ciA==;
+	List-Owner; bh=xpYB8xi4Laq9xf7oWrB1a1aDG0UEU9C4o0Wjjnw2GdE=; b=k2uWwiwkkf6j/c
+	I9FK6pwvWC5CcLnUAuQ69g4MjRiBKgoUbvQVWlHsDu1/BfRANhstAoXVRe9JVoMw4PahoiSzimlr2
+	ny/UDNnZRqGDrN1O7cvcnBjBN0SMyuP5Edc24t0uVTwQZLP5n97xGkobjtRPwOo4+Rrhsv7K9a7Ls
+	gHmht7RX11awWYXmFqyRz0M0gLFHdRglxXKEIFXQyDaQUX6yXI8VZnggWVCtOG8XWuaofsPQreQ6C
+	uv0uf4QW6/YWpxrAEIGsVyrWGn31ydCcaxoz3fT1iOfzYx11R4mtZrf8nP+sykNic3+/E1yWd3bE1
+	uN76DE8p4QJhq5mBlIUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJk2-0007XX-Hw; Tue, 31 Mar 2020 16:27:54 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jJJmS-0001a6-3N; Tue, 31 Mar 2020 16:30:24 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJjD-000751-Ss
- for linux-arm-kernel@bombadil.infradead.org; Tue, 31 Mar 2020 16:27:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=zWR4v1Y/PT9AoMNC7fg0rgrQ2zY2gV7PSXBqhFyk+kA=; b=AOU6rQD9Yv7aYRPp1ZYFzTAHT8
- Pd+6yXZfUlGGS5eQ9oJ1uV96r1JF/LejsiubmejQJVX6L+9RvQVwOt5K0YKEm5F8aUOYSUTE0ayLS
- LmcyS8B1HngfdUkiUfN5JDHOF2q88ss62hIUIO5MWXxp8iVG+EPBp8vs0672VmL8pDeZW5wwzD3PY
- 3/vKnstByR7FjakLfiLEaLMwAPv2R0VrJ5F6rt+T9xoEHGvw2LohX7dr6K1hAO5ceSpzR/8tOoEdA
- 7aIBT8l5smQ61mSvuJpZF7ifpIISh5K3viuvpLoy6g6oT6Q2Lwj9auPDpGqU9z1rFGY/f/obpSs3i
- gTe+P+Sw==;
-Received: from foss.arm.com ([217.140.110.172])
- by casper.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJjA-00077Y-5O
- for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:27:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2BAB330E;
- Tue, 31 Mar 2020 09:26:54 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E3F903F71E;
- Tue, 31 Mar 2020 09:26:52 -0700 (PDT)
-Date: Tue, 31 Mar 2020 17:26:50 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: George Spelvin <lkml@SDF.ORG>
-Subject: Re: [RFC PATCH v1 44/50] arm64: ptr auth: Use get_random_u64 instead
- of _bytes
-Message-ID: <20200331162650.GB4400@C02TD0UTHF1T.local>
-References: <202003281643.02SGhOi3016886@sdf.org>
- <20200330105745.GA1309@C02TD0UTHF1T.local>
- <20200330193237.GC9199@SDF.ORG>
- <20200331101412.GA1490@C02TD0UTHF1T.local>
- <20200331144915.GA4303@SDF.ORG>
+ id 1jJJlf-0001A6-46
+ for linux-arm-kernel@lists.infradead.org; Tue, 31 Mar 2020 16:29:37 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jJJlN-0007Xk-7h; Tue, 31 Mar 2020 18:29:17 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jJJlK-0005tF-Br; Tue, 31 Mar 2020 18:29:14 +0200
+Date: Tue, 31 Mar 2020 18:29:14 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH RFC 2/6] gpio: mvebu: honour EPROBE_DEFER for
+ devm_clk_get()
+Message-ID: <20200331162914.h65jnclbsmlzpzti@pengutronix.de>
+References: <20200329104549.GX25745@shell.armlinux.org.uk>
+ <E1jIVU9-0005h4-QU@rmk-PC.armlinux.org.uk>
+ <20200329131659.4hbshjst4ccvje2n@pengutronix.de>
+ <20200329133400.GA25745@shell.armlinux.org.uk>
+ <20200329180056.cwju3zqviwnwwjd6@pengutronix.de>
+ <20200329182236.GC25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331144915.GA4303@SDF.ORG>
+In-Reply-To: <20200329182236.GC25745@shell.armlinux.org.uk>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_172700_456296_C47E8129 
-X-CRM114-Status: GOOD (  28.10  )
-X-Spam-Score: -4.2 (----)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-4.2 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200331_092935_168548_AD143B34 
+X-CRM114-Status: GOOD (  24.86  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,66 +73,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Jason Cooper <jason@lakedaemon.net>, linux-pwm@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-gpio@vger.kernel.org, kernel@pengutronix.de,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 02:49:15PM +0000, George Spelvin wrote:
-> On Tue, Mar 31, 2020 at 11:14:12AM +0100, Mark Rutland wrote:
-> > On Mon, Mar 30, 2020 at 07:32:37PM +0000, George Spelvin wrote:
-> >> On Mon, Mar 30, 2020 at 11:57:45AM +0100, Mark Rutland wrote:
-> >> Because get_random_bytes() implements anti-backtracking, it's a minimum 
-> >> of one global lock and one ChaCha20 operation per call.  Even though 
-> >> chacha_block_generic() returns 64 bytes, for anti-backtracking we use 
-> >> 32 of them to generate a new key and discard the remainder.
-> >> 
-> >> get_random_u64() uses the exact same generator, but amortizes the cost by 
-> >> storing the output in a per-CPU buffer which it only has to refill every 
-> >> 64 bytes generated.  7/8 of the time, it's just a fetch from a per-CPU 
-> >> data structure.
-> > 
-> > I see; thanks for this explanation. It would be helpful to mention the
-> > backtracking distinction explicitly in the commit message, since it
-> > currently only alludes to it in the first sentence.
-> 
-> Easily done, but I need to find a centralized place to say it, or
-> I'd be repeating myself a *lot* in the series.
+Hello Russell,
 
-Sure, but in the interests of optimizing for review, it's worth doing a
-copy+paste of the key detail into each commit. That way, even if the
-reviewer only looks at the patch in isolation they have all the
-necessary context, and you don't have to reply to the same question on
-each patch.
+On Sun, Mar 29, 2020 at 07:22:36PM +0100, Russell King - ARM Linux admin wr=
+ote:
+> On Sun, Mar 29, 2020 at 08:00:56PM +0200, Uwe Kleine-K=F6nig wrote:
+> > On Sun, Mar 29, 2020 at 02:34:00PM +0100, Russell King - ARM Linux admi=
+n wrote:
+> > > On Sun, Mar 29, 2020 at 03:16:59PM +0200, Uwe Kleine-K=F6nig wrote:
+> > > > On Sun, Mar 29, 2020 at 11:48:09AM +0100, Russell King wrote:
+> > > > > diff --git a/drivers/gpio/gpio-mvebu.c b/drivers/gpio/gpio-mvebu.c
+> > > > > index fa5641615db6..ee13b11c5298 100644
+> > > > > --- a/drivers/gpio/gpio-mvebu.c
+> > > > > +++ b/drivers/gpio/gpio-mvebu.c
+> > > > > @@ -1132,6 +1132,9 @@ static int mvebu_gpio_probe(struct platform=
+_device *pdev)
+> > > > >  	}
+> > > > >  =
 
-> > It's worth noting that the key values *can* be exposed to userspace when
-> > CONFIG_CHECKPOINT_RESTORE is selected. On such kernels, a user could
-> > regenerate and read the keys an arbitrary number of times on a CPU of
-> > their choice. From my limited understanding I presume backtracking may
-> > be a concern there?
-> 
-> No.  Backtracking is an issue if the keys must remain secret *after*
-> they are wiped from kernel memory.  This applies to session
-> *encryption* keys (assuming the plaintext should remain secret
-> after the session is over), and to any long-lived keys which are
-> stored encrypted or otherwise inaccessible (e.g. in dedicated
-> hardware).  The latter includes most asymmetric private keys.
+> > > > >  	mvchip->clk =3D devm_clk_get(&pdev->dev, NULL);
+> > > > > +	if (mvchip->clk =3D=3D ERR_PTR(-EPROBE_DEFER))
+> > > > > +		return -EPROBE_DEFER;
+> > > > > +
+> > > > >  	/* Not all SoCs require a clock.*/
+> > > > >  	if (!IS_ERR(mvchip->clk))
+> > > > >  		clk_prepare_enable(mvchip->clk);
+> > > > =
 
-> Basically, do you need to wipe the key (with memzero_explicit) when
-> you are done with it?  If that is important, you also want to
-> know that the key cannot be reconstructed from the CRNG state.
+> > > > I'd say the following is the right thing to do here:
+> > > > =
 
-I see, thanks for the explanation. I had misunderstood the what
-backtracking was in this context.
+> > > > 	mvchip->clk =3D devm_clk_get_optional(...);
+> > > > 	if (IS_ERR(mvchip->clk))
+> > > > 		return ...
+> > > =
 
-> A modified patch will follow.  Thanks for your patience.
+> > > It's not that simple.  The clock is required for Armada 370, and is
+> > > optional for Armada 8040.
+> > =
 
-I've given that an Ack as it looked sound to me.
+> > I'd say it is still the right approach here. On Armada 370 the dtb then
+> > has a clk and on Armada 8040 it doesn't. So if with
+> > devm_clk_get_optional() something goes wrong that's because the dtb is
+> > wrong. And in fact the handling is even better than with your suggested
+> > patch as every error (but EPROBE_DEFER) is ignored instead of passed to
+> > the caller with your (and the existing) approach.
+> =
 
-Thanks,
-Mark.
+> Sort of.  Every error is currently treated as "no clock", and only
+> later does such an error become fatal in the driver _if_ PWM is
+> configured into the kernel and we're running on Armada 370.  If PWM
+> is disabled in the kernel, or on some other SoC, then the driver
+> doesn't care whether getting the clock reported any kind of error.
+> =
+
+> Your proposal is to always treat any error getting the clock,
+> irrespective of whether there is PWM or not, as a fatal error for
+> the driver.
+
+Is this clock (assuming it's available) needed for GPIO operation? If
+not, I'd say the call to devm_clk_get should go into mvebu_pwm_probe().
+And if yes, then use devm_clk_get_optional in mvebu_gpio_probe() and
+either request it once more in mvebu_pwm_probe() (without _optional) or
+test for mvchip->clk =3D=3D NULL. (Or maybe just don't check and let the
+driver fail when clk_get_rate(mvchip->clk) returns zero.)
+
+> That is an entirely seperate functional change.
+
+This is still different to what you do, but it is (IMHO) cleaner and
+fixes the problem you want to solve en passant.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
