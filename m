@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE89119B54C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 20:21:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 148FC19B567
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 20:25:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtH9z4NfHnxsGXhKKaHa+vOh23X7QvyTcU2bEzpuiVE=; b=MjXi2A9ZiShhHz
-	xoZeOH4UALikJP1TtEN2gZrSQMCjXvwn17pFVt7UPc/GgBDmOEesYgeVCPeyfQLK0PdqKtr6bucQD
-	DdaiBnwc1YVQ6n3iLh5pyxtVG0iE7L8rOZjRANQ9GM5bzAcDez1l7LQ/446uYyZEF96p/tgnmC/d/
-	qX3d3hKzsLDIhUEvj92dhn0X2ocZcnoqBQHWsY3SzoW52xlEab1/XAPdg5WYYi+WEbWK95UA+atN8
-	izBnxq6pN4rbj4AZE9YiOYpnbh8xMB8w4NNHMpnq8knV05NbTxWBRWePLX5+RS0McWcz4NKSmm1zF
-	OV6rMO1lCmI3yxbKWCoA==;
+	List-Owner; bh=bL0VwkPK/0xmpmyoq0G3m6XwsJb9LFbYZUg9/hhAyjw=; b=ZX/IIkuZUA7sw3
+	BCBtFsZHKk0pWYytI7agluyYzH1baC+gYIvUyTMt5zAE3Quiz6Xpj/UNYtZyJj96aZ4KeIhZhG3mZ
+	kw1X/i78tCcu41+tIttKTYft47qoSZCx8ESzuYfTdCZxygh3tp7OMjKlQWe+ZS+W1LfdWHe8kbAsi
+	6wGsK5cCulyeMw4NGJEe1yfcf1URWk8/GLz0iJBKQqV1chk5ILRIp3+qZO5nlpZNaRSLlJBrFa5E2
+	FkUmS2CyalKq5PSQsRfdn/UFPiUo85Jpd/MHKwXNuT9kUbLkTnN3Rz5gVqfm7D7gggptHdx/UB0zc
+	Boxog9+lQJ7wK6p4YpnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJhzq-0000BI-DK; Wed, 01 Apr 2020 18:21:50 +0000
+	id 1jJi3h-00035v-Rh; Wed, 01 Apr 2020 18:25:49 +0000
 Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJhzl-0000Ae-DE
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 18:21:46 +0000
+ id 1jJi3b-00035K-NA
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 18:25:44 +0000
 Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
  (using TLSv1 with cipher AES256-SHA (256/256 bits))
  (Client did not present a certificate)
  (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 209BC11D69C3E;
- Wed,  1 Apr 2020 11:21:37 -0700 (PDT)
-Date: Wed, 01 Apr 2020 11:21:36 -0700 (PDT)
-Message-Id: <20200401.112136.685481342101422062.davem@davemloft.net>
-To: o.rempel@pengutronix.de
-Subject: Re: [PATCH] net: phy: at803x: fix clock sink configuration on
- ATH8030 and ATH8035
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 20FEE120F5284;
+ Wed,  1 Apr 2020 11:25:43 -0700 (PDT)
+Date: Wed, 01 Apr 2020 11:25:42 -0700 (PDT)
+Message-Id: <20200401.112542.1191455491464437178.davem@davemloft.net>
+To: Jose.Abreu@synopsys.com
+Subject: Re: [PATCH net-next] net: stmmac: Fix VLAN filtering when HW does
+ not support it
 From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200401095732.23197-1-o.rempel@pengutronix.de>
-References: <20200401095732.23197-1-o.rempel@pengutronix.de>
+In-Reply-To: <42e493820f707c5a5d3375676ef6b6a96988f846.1585762111.git.Jose.Abreu@synopsys.com>
+References: <42e493820f707c5a5d3375676ef6b6a96988f846.1585762111.git.Jose.Abreu@synopsys.com>
 X-Mailer: Mew version 6.8 on Emacs 26.1
 Mime-Version: 1.0
 X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
  (shards.monkeyblade.net [149.20.54.216]);
- Wed, 01 Apr 2020 11:21:38 -0700 (PDT)
+ Wed, 01 Apr 2020 11:25:43 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_112145_445461_4EEC2B43 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20200401_112543_753736_DAFBCAE7 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -64,35 +64,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, andrew@lunn.ch, f.fainelli@gmail.com,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, festevam@gmail.com,
- s.hauer@pengutronix.de, linux@armlinux.org.uk, lgirdwood@gmail.com,
- philippe.schenker@toradex.com, robh+dt@kernel.org, broonie@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, david@protonic.nl,
- shawnguo@kernel.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
+Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-Date: Wed,  1 Apr 2020 11:57:32 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+Date: Wed,  1 Apr 2020 19:29:03 +0200
 
-> The masks in priv->clk_25m_reg and priv->clk_25m_mask are one-bits-set
-> for the values that comprise the fields, not zero-bits-set.
+> If we don't have any filters available we can't rely upon the return
+> code of stmmac_add_hw_vlan_rx_fltr() / stmmac_del_hw_vlan_rx_fltr(). Add
+> a check for this.
 > 
-> This patch fixes the clock frequency configuration for ATH8030 and
-> ATH8035 Atheros PHYs by removing the erroneous "~".
-> 
-> To reproduce this bug, configure the PHY  with the device tree binding
-> "qca,clk-out-frequency" and remove the machine specific PHY fixups.
-> 
-> Fixes: 2f664823a47021 ("net: phy: at803x: add device tree binding")
-> Reported-by: Russell King <linux@armlinux.org.uk>
-> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> Fixes: ed64639bc1e0 ("net: stmmac: Add support for VLAN Rx filtering")
+> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
-Applied with Reported-by: fixed and queued up for -stable, thanks.
+Applied.
 
 _______________________________________________
 linux-arm-kernel mailing list
