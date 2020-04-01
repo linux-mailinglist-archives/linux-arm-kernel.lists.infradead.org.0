@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0869219A65A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 09:37:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E1A19A65D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 09:38:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=SUQOeW18wma2gqXTe1kAEJbGtON2j2IXel7owhacZUI=; b=haX
-	zCwe6ryZ85T2yAYab79L/AEVhzueiZDkySXIN7g1fTiaRUq5QlvAtpVuWC/T6LHrNy7SUz5NSDGBy
-	fUl0HX38EBBRhulhCU0SE2Tb0fI8Mw5fInPAkmPcpfMlXvthSJvcUINn76e2rLGQVp7/i+aAu2hNA
-	R5T8ZQbB2wTUZq8v7eeUnU+DM/vPnLn9Bm2MHPN1Z1mRlE2s3MdXiBQVaf1cCSVPSvA4+9WadtlFW
-	fyKwRGyq28/SZGsVL+ROV1d7jJfcz4JNGNZ0SAIxsN8jXVxCPXitCp6L9B+dZgv25scg10YMQfMZR
-	N57lFp6AID8P+b5Z7U5wOhDu+7vxtPQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Nr2gUFiGKE0SvT+g+Ho0SuQLxULcaAdaFQSDxKcNp4A=; b=SjowcQyQ70IqoEKpaPfll13YnX
+	AmNuXu3RZajDNJkmwLnhYhG7OecNIn+zay3Js2TRg0BXVGxU9BmbN6gY+KXqL6DCzAXzj0A2UKNNZ
+	SiJyub4Aikd7/ldaiM6WZ6GL1kaPlo1huqewsTqtmUBTKIJ5izk9Csd2cOLKCsG87hlVRJYNv6ULX
+	+fSVDNKMBfOV+8cb8z9X4dYIX1PrikWH6/eCzFuqlKry/6jQsXqhuQR8IaioiskaHgWPjAaPJ/V70
+	bixHbGA1nndY9GF6rgtXPbio9t8NINtLnjyqkxuQ4TlTX1aGcOZ/O7aF6P558kwn4opLP3nM6aBGz
+	b+zGdF/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJXwU-0006PD-OK; Wed, 01 Apr 2020 07:37:42 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jJXwm-0006Wl-GY; Wed, 01 Apr 2020 07:38:00 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJXwO-0006OL-Ta; Wed, 01 Apr 2020 07:37:38 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w10so29365167wrm.4;
+ id 1jJXwP-0006ON-B1; Wed, 01 Apr 2020 07:37:38 +0000
+Received: by mail-wm1-x343.google.com with SMTP id z7so2750607wmk.1;
  Wed, 01 Apr 2020 00:37:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=UL9L/CyBrVCzEQgwvr+OzrzI0iM1qlY+IPc8B3d54Uk=;
- b=F4xGsdFAsV/TIjXPGAqXfSqlyGmZ30mfw39njgikMjE0/4qVNARRKCUhFTNcvs5HTH
- T+5J2BSmhrESB3sIoug/Kk/Lli0CDqNb5OIY8Pd5dDr6u1eoZ77RASNtvfEdxMKsV9iy
- cdXc0U/K7p1q07UqMx1aYS7oC4w0sh+XExOKCFBNaA7LshlaKCgIk1RZAOYTFGae5ibD
- dPtgg7Y4itEheuRdbUSPwWfS+/dQJ8qVC/BkFPKEoGHPENaPDtSjfSIFwTlHRgUk9ZXL
- r28d/c/wmK8UhrOP42pbzm3SA8mOV7J2bR8O0O/DX52LrxT+uuNX7iEEg9OmP8Q3JU0h
- oyBw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=0Y6Wj9TjOPkwLscHBPA5Cfe2j0fMXJtpZJ9SAqxrysY=;
+ b=gLIfnCa9RtFY4bg+BQkrVUO4Rvy87KxQjWbI4NQsRQAzQL0j7izLckcgIVc92kpaIC
+ xqfFVmbpVbso5u+xZy9+UrR6XKHdhiFyWltAqmDbM2rzuZLhLJVuH2NiPb5Z1MWAH88r
+ i9ocprWSufx8F2X7UhYwELcDpu5DwChiP80XwBruxSesGs8H9BwuFhDO4uTL/2sRJAsO
+ 2OgSzLfNkoKmgtbn5Np6X7TqKUDOmWuTNl6Ej4D9PfKmZE2wX0V3cmWoxAN4vsz0EmaK
+ y8LoUpmUhQ4VOgyL7wxa0ALaHJABHW/scbpQl9TEhsNSVYHhxdd5qD9OTVmND9jgR1U7
+ QAEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=UL9L/CyBrVCzEQgwvr+OzrzI0iM1qlY+IPc8B3d54Uk=;
- b=L0TGogxawR6ZI1pwqYg9sxruuwTS8RDjcaWt7iCY9aOALzRO/npYYznmxfQrZPXYxx
- KDHXUIwYLWpanNk1UywNJaIFVEUOA75zovxPVtP6lUCCRiJ7w2POCvfV6TRwaZ9FNXXE
- xpCAKRzRAjrnVYBg/Uwq4SZUVGdulVFeO2LsGQef7pC05IrYD/Ls74pH50D+VHhvWw8y
- aKVraHDViZJq0Gjvgm82RWCVqd92dNDVLf5zNU/WpHU7zM/IfQrZraS3VlS8BLHEHkuJ
- FUFgVzGpr2cjps/6LKRDu0iTt6F7S2FFl7hS4qluXanAlK8ScHtKEvzv4x9a4swkoNnU
- ikWw==
-X-Gm-Message-State: ANhLgQ2v5rnDZmzbMURhgqtHc9l24H9guuYnFcOMKAkF413MEAzndX0l
- fq5x2mUwJNg9A9Wpuy2S10s=
-X-Google-Smtp-Source: ADFU+vtwdLJ3roDKyKh7gH+Nq4Ettv7bI9BNPrDCjycpvqCdmWj6VAchRJw+IPzp8foaVLPgtOHruQ==
-X-Received: by 2002:adf:decf:: with SMTP id i15mr25756408wrn.277.1585726654815; 
- Wed, 01 Apr 2020 00:37:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=0Y6Wj9TjOPkwLscHBPA5Cfe2j0fMXJtpZJ9SAqxrysY=;
+ b=iMJ7EMTLOJXrFLY3GTKJbHu5g5DGj35ao/t8Y35wEtMXga0ryZ5IBLAvrC9sb9hArv
+ NuPuNzF8tiPcDiN/I55zhynRbOBsGI3RD6xaiLLef572no/Zavm7h1Rz1k97p04lNHzi
+ BhFpNLU7aaNWdHDsdgswCe9YOoqpVkv0gzIx4n501f+gbjS3mvKyvgdjR3DGT3kqmuUd
+ 2cRf4wUl0mB2ONcGTj4yQlLKlKcsQo5owCqyHQ7SIRi2jC8XlwEYziMqAuvNLN+nyAqa
+ MS3m4IVVX8CQzvUw+DI5fq6voNdy8ElaQkx9TmE4mNNcnCOfzfS+JLa9QlIFCU2KXRHK
+ n1pw==
+X-Gm-Message-State: AGi0PuaFkl2MVHevzl/3vGjY5fYnNfWkVdgz4tRxauHJ/WGB09VypGeK
+ 1BValZEFNgUGuBH/cIwlZsw=
+X-Google-Smtp-Source: APiQypIo6BlXDVUAujJm5bjFl9PFx10seyVOAuO+YssZ1j2o9iXGGnPhJ3AFEfXIPfLYVm9Tx24sew==
+X-Received: by 2002:a1c:dd8b:: with SMTP id u133mr2754794wmg.109.1585726655777; 
+ Wed, 01 Apr 2020 00:37:35 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g3sm1793431wrm.66.2020.04.01.00.37.32
+ by smtp.gmail.com with ESMTPSA id g3sm1793431wrm.66.2020.04.01.00.37.34
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 Apr 2020 00:37:33 -0700 (PDT)
+ Wed, 01 Apr 2020 00:37:35 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH v1 1/2] ARM: dts: rockchip: add #phy-cells to all usb2-phy
+Subject: [PATCH v1 2/2] arm64: dts: rockchip: add #phy-cells to all usb2-phy
  nodes
-Date: Wed,  1 Apr 2020 09:37:24 +0200
-Message-Id: <20200401073725.6063-1-jbx6244@gmail.com>
+Date: Wed,  1 Apr 2020 09:37:25 +0200
+Message-Id: <20200401073725.6063-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200401073725.6063-1-jbx6244@gmail.com>
+References: <20200401073725.6063-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_003736_953386_ABF8B3F0 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20200401_003737_373063_7076BB96 
+X-CRM114-Status: GOOD (  15.65  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jbx6244[at]gmail.com]
@@ -111,52 +115,77 @@ phy-rockchip-inno-usb2.txt has been converted to yaml.
 '#phy-cells' is now required for all usb2-phy nodes,
 so add them.
 
-make -k ARCH=arm dtbs_check
+make -k ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/
 phy/phy-rockchip-inno-usb2.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rk322x.dtsi | 2 ++
- arch/arm/boot/dts/rv1108.dtsi | 3 ++-
- 2 files changed, 4 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/px30.dtsi   | 5 +++--
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 ++-
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++--
+ 3 files changed, 9 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 06172ebbf..9ad32651a 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -214,6 +214,7 @@
- 			clock-names = "phyclk";
- 			clock-output-names = "usb480m_phy0";
- 			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy0_otg: otg-port {
-@@ -241,6 +242,7 @@
- 			clock-names = "phyclk";
- 			clock-output-names = "usb480m_phy1";
- 			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy1_otg: otg-port {
-diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
-index f9cfe2c80..b453f8d0f 100644
---- a/arch/arm/boot/dts/rv1108.dtsi
-+++ b/arch/arm/boot/dts/rv1108.dtsi
-@@ -269,9 +269,10 @@
- 			reg = <0x100 0x0c>;
- 			clocks = <&cru SCLK_USBPHY>;
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index bd5f51d23..6f7171290 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -822,10 +822,11 @@
+ 			reg = <0x100 0x20>;
+ 			clocks = <&pmucru SCLK_USBPHY_REF>;
  			clock-names = "phyclk";
 -			#clock-cells = <0>;
- 			clock-output-names = "usbphy";
- 			rockchip,usbgrf = <&usbgrf>;
++			clock-output-names = "usb480m_phy";
+ 			assigned-clocks = <&cru USB480M>;
+ 			assigned-clock-parents = <&u2phy>;
+-			clock-output-names = "usb480m_phy";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
+ 			status = "disabled";
+ 
+ 			u2phy_host: host-port {
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+index 8976c869f..470783a48 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+@@ -830,9 +830,10 @@
+ 			clocks = <&xin24m>;
+ 			clock-names = "phyclk";
+ 			clock-output-names = "usb480m_phy";
+-			#clock-cells = <0>;
+ 			assigned-clocks = <&cru USB480M>;
+ 			assigned-clock-parents = <&u2phy>;
 +			#clock-cells = <0>;
 +			#phy-cells = <0>;
  			status = "disabled";
  
  			u2phy_otg: otg-port {
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 3dc8fe620..a7ee5aa65 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1391,8 +1391,9 @@
+ 			reg = <0xe450 0x10>;
+ 			clocks = <&cru SCLK_USB2PHY0_REF>;
+ 			clock-names = "phyclk";
+-			#clock-cells = <0>;
+ 			clock-output-names = "clk_usbphy0_480m";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
+ 			status = "disabled";
+ 
+ 			u2phy0_host: host-port {
+@@ -1418,8 +1419,9 @@
+ 			reg = <0xe460 0x10>;
+ 			clocks = <&cru SCLK_USB2PHY1_REF>;
+ 			clock-names = "phyclk";
+-			#clock-cells = <0>;
+ 			clock-output-names = "clk_usbphy1_480m";
++			#clock-cells = <0>;
++			#phy-cells = <0>;
+ 			status = "disabled";
+ 
+ 			u2phy1_host: host-port {
 -- 
 2.11.0
 
