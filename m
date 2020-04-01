@@ -2,59 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FC2519A407
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 05:50:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4299C19A428
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 06:07:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+clVTiKk9W9RpDbNqi4R/wTxwlIUyXHwng+nxbMEdF0=; b=QDkrcw8bAHMoBK
-	NW4S6sq1VFXW85wLk+wZ4x6qJtAnmRTPZOJJfq6ReGN4RW+laTrtHZz0B8UjxUrty05A+9FZGqPn4
-	fKwZPRuWr1P8a6EMc4piCz1p1awCBgwU/DjkkwyfeldKbixAkPTpQL34IhthYjMlFbYbV7wpHVcTw
-	GgPLIrtS7R5oT/aerV29qbVyTVTDeLpjMkgjmRDaA7Z4tw1OZVsK1WZVeTPWaWMH+CDSa6Ay0A3EP
-	VrBCXGYp0li27SiBJo8NaFwOZQNpw0+IXmO3yZU88gnQ40KoukKxtiDsozAVCh8vQURn2k/3KQbcj
-	DgoB50Q+/tkejkpao7FQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tKOyu0bqCT8xVy/R7TI5HLe6zmkZR8uAl3gjYC3etQA=; b=E7ER6qchDptjHh
+	75ChsulTGATohiafJDhdmviWmUvxRj4waxhK2NqsfRyLC7dwPy8kwS8wfDyg5gh8drBXieyarSfAV
+	oowLfvg9S64UtqeaFVz+v3KzK/IKTy78tOZ0B5SPYRz5tBZ1MldGeocbMGT2ox5mRzOfe8qSvRa4T
+	UYqDH4HfQqk0qxQlSr9Vt0j+zYQEZ3vjosjwcCwubPbKwtn26WUq/j7pFu2QvYeiO0a0flyY5Uv82
+	n6Pdb42LUB/vWJgZOUyBs+/tqM2qUeDymhnA+tFYyJ2CZ9sle19rCnR/EFkAvMLFBrh6StCW1mO5B
+	YzROz8y0msLtP1vLjJ+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJUNy-0004cZ-OV; Wed, 01 Apr 2020 03:49:50 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jJUex-0007Zz-Q8; Wed, 01 Apr 2020 04:07:23 +0000
+Received: from mail-eopbgr30086.outbound.protection.outlook.com ([40.107.3.86]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJUNp-0004bu-Lv
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 03:49:43 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 21949870C77692B5C964;
- Wed,  1 Apr 2020 11:49:23 +0800 (CST)
-Received: from [127.0.0.1] (10.74.184.86) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.487.0; Wed, 1 Apr 2020
- 11:49:16 +0800
-Subject: Re: Question about SEA handling process happened in user space
-To: James Morse <james.morse@arm.com>
-References: <5E81EFCD.6020605@huawei.com>
- <2b0e5507-ad75-9af1-6afe-aa87d8cf597f@arm.com> <5E83104A.7020803@huawei.com>
- <f9732852-046c-347c-21e1-7690e6b84a50@arm.com>
-From: Xiaofei Tan <tanxiaofei@huawei.com>
-Message-ID: <5E840F3B.6040803@huawei.com>
-Date: Wed, 1 Apr 2020 11:49:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.5.1
+ id 1jJUep-0007ZD-IJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 04:07:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TzAJiB5i0GDBSFFdkbcVLcDS1rKrNE2YqEfbBytrLpTPNhxp/gzgbXvOAaCJZ/gyFgcPOhegOsXl9QydGcCFfWqTj+qgXLP/YqDYdDUwUTvnZmfguMkYRy7KW2PFDxf0aSVA7sJwi97QsyefSB7CeRcv26UeFueSTLh6U+oSHlRpeybDix0YtIBZunzTI0L/kha0jRH8rQn7C41XUiPNWtR+qcGTinf2Wvs4+g86k3fy8kw+5cTzRjnq7mTe7rnZOOOcoxuqEAhGCjQMkImMbsP/MCVQg8gMhpFfrjv9j1/2g7XZKWDeke1QJDYA+0WgVon2oBR84p/fhBI5zT1Hig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wvr9TbU36NK3TsgNjNaZCfb+FQhEpZKxaRxPHRszHT4=;
+ b=ErZr8VfVTV0dK4onUaNdG8XggsFSL6Nk0V++ikZ4MHnqtpoTNqPVvJgQ2kwuhbq7cu26XsqWqcxADroR4QA1kvxbZsYZ++5V+wjH7rf/ixMfg+4LuQFlQ06Tkfd+GkJ3BUL7Gfr2fYDVawdwBLqF7cxPkINahFHd3mCZWqldhx+blVIdl83jKrHCwGg7slJuZBhT855HTKnKqdkwXr7yO+h3KMrgIlOgs8WA0kLRECA3EcyC3I8oXw759gHyp0heDV+WqgYTlAl2fP3Epr06NaHnajG2XPlzPaax1APGWyxLvd6ZH9YRs6dGs12+TNOm4EhFcMfLfR3eF/WuudwGPw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wvr9TbU36NK3TsgNjNaZCfb+FQhEpZKxaRxPHRszHT4=;
+ b=XF+UX6H9SbxCbgVOgun8GwKfqlqpwqaG+XyASU3utcN2ItihaIaVgRafw02ZMkt/SMA8O/Sce2xlJZpx329AnLrrxq4VJUt26xQOVR8O+4Oxp81oArEmVz8mJKOkq3l3zsNwITgNNS1I3jrMuokw0XYeMLWk/Q9/kWmJ/rrsCWU=
+Received: from VI1PR04MB5040.eurprd04.prod.outlook.com (20.177.52.24) by
+ VI1PR04MB6126.eurprd04.prod.outlook.com (20.179.28.141) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.20; Wed, 1 Apr 2020 04:06:58 +0000
+Received: from VI1PR04MB5040.eurprd04.prod.outlook.com
+ ([fe80::154e:421d:dd21:3fc3]) by VI1PR04MB5040.eurprd04.prod.outlook.com
+ ([fe80::154e:421d:dd21:3fc3%5]) with mapi id 15.20.2856.019; Wed, 1 Apr 2020
+ 04:06:58 +0000
+From: BOUGH CHEN <haibo.chen@nxp.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, "Rafael J . Wysocki" <rafael@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH v2 1/2] driver core: platform: Initialize dma_parms for
+ platform devices
+Thread-Topic: [PATCH v2 1/2] driver core: platform: Initialize dma_parms for
+ platform devices
+Thread-Index: AQHWB4ugpHkRdkKAZ0OBnkBClhitmahjpWFw
+Date: Wed, 1 Apr 2020 04:06:58 +0000
+Message-ID: <VI1PR04MB50405B4010B4EBE7078FAA8690C90@VI1PR04MB5040.eurprd04.prod.outlook.com>
+References: <20200331183844.30488-1-ulf.hansson@linaro.org>
+ <20200331183844.30488-2-ulf.hansson@linaro.org>
+In-Reply-To: <20200331183844.30488-2-ulf.hansson@linaro.org>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=haibo.chen@nxp.com; 
+x-originating-ip: [122.194.1.172]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 9481ba9b-f46f-45a1-6b80-08d7d5f21fdd
+x-ms-traffictypediagnostic: VI1PR04MB6126:
+x-microsoft-antispam-prvs: <VI1PR04MB612660A508B954ACC83230A090C90@VI1PR04MB6126.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 03607C04F0
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR04MB5040.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(136003)(346002)(376002)(366004)(396003)(39860400002)(53546011)(55016002)(33656002)(8936002)(71200400001)(7696005)(26005)(81156014)(8676002)(2906002)(81166006)(9686003)(186003)(6506007)(5660300002)(7416002)(4326008)(316002)(54906003)(86362001)(478600001)(76116006)(110136005)(66946007)(66556008)(64756008)(66446008)(52536014)(66476007);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: l5GB2wAWdA9fkJJ8tGG9YNZLZGb3LRyJsN2qXR8Hbxi+9XOMweXfGQAI+1oM3Nt2cmrrj2jthucMsf7HfRQGSA61ZMBBGW6dOkcHDRBgzNq259krBHwpQcHsx9dn9z3qH3SW4a44wIlwrDBqSh80dH4gB5a9Wrv9znBBoImzhGujRwoxKSAo4GtwOoQd0n/XvpXd9+hv4lkGg4SlneJ92kdD0zyJ/t8aXvFuZULiNNviCSsLNdrdx2Ytv3rYagOHkBk32+6L8Q8ol8oyRKZSKr601Q6z7bamNV1DtWPE3XGNQUWMWhGg0KemmFfvQs7oV0B8r2pgKqRuzXkzPRxNOzwZCMEVP8gpRBIhIuhITKIdH2/+VsrmrMgnqrh8n00abfi1JrhL1N14K24IqGblye5ahXhVM2hdjftmW5LrG813A3h6bNagvWXk66RqvY47
+x-ms-exchange-antispam-messagedata: ldqfigzoay+0yFWGwKD6RQ5lKdRq6/nJAKDSN2UprYzjkMWWiNUqpWXpskZMFNfA8wjWg5ljaFqaG+K+uVLwUytOcpF3IJfyUTRHmdGywgCWaRpSb6l8AhAhmKNTSZ23WFIZWO4tzi6r6fUXhOWeTw==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-In-Reply-To: <f9732852-046c-347c-21e1-7690e6b84a50@arm.com>
-X-Originating-IP: [10.74.184.86]
-X-CFilter-Loop: Reflected
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9481ba9b-f46f-45a1-6b80-08d7d5f21fdd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Apr 2020 04:06:58.8421 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BZ7956OvA9toogT7idtdLzl6KWYMKvsfYMgBr7lpLC25t7UDw5DYoYV5U6q+ioPe1d8N9sCn7SjZbQ1r3lqcKg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_204941_884066_BBFE8549 
-X-CRM114-Status: GOOD (  27.66  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200331_210715_902661_421D8DB6 
+X-CRM114-Status: GOOD (  21.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.86 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,156 +125,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org, Shiju Jose <shiju.jose@huawei.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@armlinux.org.uk>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Ludovic Barre <ludovic.barre@st.com>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James
-
-On 2020/4/1 1:00, James Morse wrote:
-> On 3/31/20 10:41 AM, Xiaofei Tan wrote:
->> On 2020/3/31 0:49, James Morse wrote:
->>> On 3/30/20 2:10 PM, Xiaofei Tan wrote:
->>>> I'm a little confused about the handling process of SEA happened in user space.
->>>
->>>> Following the description of FnV bit of register ESR_ELx in ARMv8.4 SPEC,FAR is
->>>> valid only for synchronous External abort on a translation table walk.
->>>
->>>> But for this FAR valid scenario(attached code from line 684 to 687),
->>>> we send signal SIGKILL to kill process. For some other scenario, such as line 680,
->>>> FAR is not valid, but we send SIGBUS and transfer error address to process to try to do some recovery.
->>>
->>> 'FAR is not valid': its optional. The ESR_EL1.FnV bit can be set for the 'catch
->>> all' external abort fault-status-code. This lets the CPU tell us that it doesn't
->>> know what the faulting virtual address is.
-> 
->>> I'm not quite sure what your question is.
->>>
->>> If the CPU doesn't tell us the address, we can't tell user-space what it is. The
->>> alternative is to upgrade to SIGKILL in that case.
-> 
->> Got it. May be the description of FnV bit of register ESR_ELx is not quite exactly. Because
->> following the code, CPU may still have an chance to tell the address for SEA, not on translation table walk.
-> 
-> Its up to the CPU. If it has a VA for this fault, it can store it in FAR_EL1. If
-> it doesn't, it can set ESR_EL1.FnV to say the value in FAR_EL1 is UNKNOWN.
-> 
-> (these are some made up examples, I don't know how any particular CPU does this...)
-> For example, the address translation may be the last thing the CPU does. When it
-> gets an error, it still has the VA address on hand, and can report it in FAR_EL1.
-> Another CPU may do all the address translation early, when it gets an error, all
-> it has is the physical address, which it can't put in FAR_EL1.
-> 
-
-OK.
-
-> For the translation table walks, the CPU obviously has to have the VA on hand to
-> do the walk, so its expected to report it.
-> 
-
-OK.
-
-> 
->>> If you see this instead of the address provided via firmware-first, there is a
->>> series to improve that here:
->>> https://lore.kernel.org/linux-acpi/20200228174817.74278-1-james.morse@arm.com/
->>>
->>> (We skip this signal code of APEI promises it did all the work. This lets you
->>> take the signal from memory_failure() instead, which may have better information.)
-> 
->> This should be an great direction.
->> I have two concerns.
->> 1.memory_failure() is only called for "memory error section" record. Then
->> should we use this memory record for ghes sea report? Our platform is
->> using "ARM processor error section".
-> 
-> For what classes of error?
-> 
-
-Both processor cache ecc error and memory error (marked by poison) can lead to SEA.
-
-> If memory has become corrupted, you should tell the OS about the memory error.
-> 
->>From (my) memory: linux will just print out 'processor errors', and panic() if
-> they are marked as fatal. I don't think you can use these to convey a memory
-> error...
-> 
-
-OK. Then firmware should detect error source. If it is processor cache error,
-we use "ARM processor error section", else if it is memory error, we use "memory error section".
-
-Normally, we report memory error only from RAS node of DDRC or HHA module. For SEA,
-It is a little strange to report as memory error when collect errors from processor RAS node.
-
-> 
->> 2.Should we define an error source structure for each cpu core in HEST table?
->> If not, there may be conflict if more than one cpu core fall into SEA.
-> 
-> This is a question for the people who wrote your firmware.
-> For firmware first, you must have set SCR_EL3.EA. What does your firmware do if
-> two CPUs take an external abort at the same time?
-
-Will block the second one until first SEA finished and error source of HEST table free.
-
-> 
-> Each CPU having its own area to read/write CPER would mean you need one
-> NOTIFY_SEA entry in the HEST for each area ... but how does the OS know which
-> CPU is which?
-
-Yes, OS don't know this.
-So, it is ok to share the only one area for all CPUs.
-
-> 
-> I think its better for there to be one area for CPER. If a second CPU takes an
-> external abort while the first is processing it, it has to be held in firmware
-> until the GHESv2 ACK says the area is no longer in use.
-> This way firmware guarantees the CPU taking the emulated external abort, will
-> always find its records in the CPER area.
-> 
-
-Agree.
-
-> 
->>> If its the SIGKILL entries: these are for the translation table walk.
->>> There is no point telling user-space about corruption in its page tables as it
->>> can't do anything about it. The kernel's handling of this is to kill the
->>> process. (page tables make up a very small amount of memory, so this should be
->>> rarer than the regular 'external abort' case)
-> 
->> Hmm, then it is useless that CPU record address for this entries.
-> 
-> An OS that is better than linux may use FAR_EL1 to handle these errors!
-> 
-> Linux doesn't because user-space memory can be re-mapped by another CPU. We need
-> to know the affected physical-address in order to handle the error, but can't
-> know what that was if a remote CPU remapped the page between us taking the
-> external abort, and do_sea() starting to walk the page-tables with FAR_EL1.
-> 
-> Firmware-first's memory-error description gives us the physical address if
-> firmware can learn it by imp-def means. v8.2 RAS extensions gives us an ERRxADDR
-> register that holds the physical-address.
-> 
-
-Got it, thanks.
-
-> 
-> Thanks,
-> 
-> James
-> 
-> .
-> 
-
--- 
- thanks
-tanxiaofei
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IFVsZiBIYW5zc29uIDx1bGYu
+aGFuc3NvbkBsaW5hcm8ub3JnPg0KPiBTZW50OiAyMDIwxOo01MIxyNUgMjozOQ0KPiBUbzogR3Jl
+ZyBLcm9haC1IYXJ0bWFuIDxncmVna2hAbGludXhmb3VuZGF0aW9uLm9yZz47IFJhZmFlbCBKIC4g
+V3lzb2NraQ0KPiA8cmFmYWVsQGtlcm5lbC5vcmc+OyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwu
+b3JnDQo+IENjOiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPjsgQ2hyaXN0b3BoIEhlbGx3
+aWcgPGhjaEBsc3QuZGU+Ow0KPiBSdXNzZWxsIEtpbmcgPGxpbnV4QGFybWxpbnV4Lm9yZy51az47
+IExpbnVzIFdhbGxlaWoNCj4gPGxpbnVzLndhbGxlaWpAbGluYXJvLm9yZz47IFJvYmluIE11cnBo
+eSA8cm9iaW4ubXVycGh5QGFybS5jb20+OyBWaW5vZA0KPiBLb3VsIDx2a291bEBrZXJuZWwub3Jn
+PjsgQk9VR0ggQ0hFTiA8aGFpYm8uY2hlbkBueHAuY29tPjsgTHVkb3ZpYw0KPiBCYXJyZSA8bHVk
+b3ZpYy5iYXJyZUBzdC5jb20+OyBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7
+DQo+IGRtYWVuZ2luZUB2Z2VyLmtlcm5lbC5vcmc7IFVsZiBIYW5zc29uIDx1bGYuaGFuc3NvbkBs
+aW5hcm8ub3JnPjsNCj4gc3RhYmxlQHZnZXIua2VybmVsLm9yZw0KPiBTdWJqZWN0OiBbUEFUQ0gg
+djIgMS8yXSBkcml2ZXIgY29yZTogcGxhdGZvcm06IEluaXRpYWxpemUgZG1hX3Bhcm1zIGZvcg0K
+PiBwbGF0Zm9ybSBkZXZpY2VzDQo+IA0KPiBJdCdzIGN1cnJlbnRseSB0aGUgcGxhdGZvcm0gZHJp
+dmVyJ3MgcmVzcG9uc2liaWxpdHkgdG8gaW5pdGlhbGl6ZSB0aGUgcG9pbnRlciwNCj4gZG1hX3Bh
+cm1zLCBmb3IgaXRzIGNvcnJlc3BvbmRpbmcgc3RydWN0IGRldmljZS4gVGhlIGJlbmVmaXQgd2l0
+aCB0aGlzDQo+IGFwcHJvYWNoIGFsbG93cyB1cyB0byBhdm9pZCB0aGUgaW5pdGlhbGl6YXRpb24g
+YW5kIHRvIG5vdCB3YXN0ZSBtZW1vcnkgZm9yDQo+IHRoZSBzdHJ1Y3QgZGV2aWNlX2RtYV9wYXJh
+bWV0ZXJzLCBhcyB0aGlzIGNhbiBiZSBkZWNpZGVkIG9uIGEgY2FzZSBieSBjYXNlDQo+IGJhc2lz
+Lg0KPiANCj4gSG93ZXZlciwgaXQgaGFzIHR1cm5lZCBvdXQgdGhhdCB0aGlzIGFwcHJvYWNoIGlz
+IG5vdCB2ZXJ5IHByYWN0aWNhbC4gIE5vdA0KPiBvbmx5IGRvZXMgaXQgbGVhZCB0byBvcGVuIGNv
+ZGluZywgYnV0IGFsc28gdG8gcmVhbCBlcnJvcnMuIEluIHByaW5jaXBsZSBjYWxsZXJzIG9mDQo+
+IGRtYV9zZXRfbWF4X3NlZ19zaXplKCkgZG9lc24ndCBjaGVjayB0aGUgZXJyb3IgY29kZSwgYnV0
+IGp1c3QgYXNzdW1lcyBpdA0KPiBzdWNjZWVkcy4NCj4gDQo+IEZvciB0aGVzZSByZWFzb25zLCBs
+ZXQncyBkbyB0aGUgaW5pdGlhbGl6YXRpb24gZnJvbSB0aGUgY29tbW9uIHBsYXRmb3JtIGJ1cw0K
+PiBhdCB0aGUgZGV2aWNlIHJlZ2lzdHJhdGlvbiBwb2ludC4gVGhpcyBhbHNvIGZvbGxvd3MgdGhl
+IHdheSB0aGUgUENJIGRldmljZXMgYXJlDQo+IGJlaW5nIG1hbmFnZWQsIHNlZSBwY2lfZGV2aWNl
+X2FkZCgpLg0KPiANCj4gU3VnZ2VzdGVkLWJ5OiBDaHJpc3RvcGggSGVsbHdpZyA8aGNoQGxzdC5k
+ZT4NCj4gQ2M6IDxzdGFibGVAdmdlci5rZXJuZWwub3JnPg0KPiBTaWduZWQtb2ZmLWJ5OiBVbGYg
+SGFuc3NvbiA8dWxmLmhhbnNzb25AbGluYXJvLm9yZz4NCj4gDQoNCkhpIFVsZiwNCg0KSSB0ZXN0
+IGJvdGggb24gb3VyIGxvY2FsIDUuNC4yNCBicmFuY2ggYW5kIHRoZSBsYXRlc3QgTGludXgtbmV4
+dCwgYm90aCB3b3JrcyBmaW5lLg0KDQpUZXN0ZWQtYnk6IEhhaWJvIENoZW4gPGhhaWJvLmNoZW5A
+bnhwLmNvbT4NCg0KQmVzdCBSZWdhcmRzDQpIYWlibyBDaGVuDQoNCj4gLS0tDQo+IA0KPiBDaGFu
+Z2VzIGluIHYyOg0KPiAJLSBNb3ZlIGluaXRpYWxpemF0aW9uIHRvIHNldHVwX3BkZXZfZG1hX21h
+c2tzKCkuIFRoaXMgbWVhbnMgdGhlDQo+IAlpbml0aWFsaXphdGlvbiBpcyBkb25lIGFsc28gaW4g
+dGhlIE9GIHBhdGguDQo+IA0KPiAtLS0NCj4gIGRyaXZlcnMvYmFzZS9wbGF0Zm9ybS5jICAgICAg
+ICAgfCAyICsrDQo+ICBpbmNsdWRlL2xpbnV4L3BsYXRmb3JtX2RldmljZS5oIHwgMSArDQo+ICAy
+IGZpbGVzIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKQ0KPiANCj4gZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvYmFzZS9wbGF0Zm9ybS5jIGIvZHJpdmVycy9iYXNlL3BsYXRmb3JtLmMgaW5kZXgNCj4gYjVj
+ZTdiMDg1Nzk1Li5jODFiNjhkNWQ2NmQgMTAwNjQ0DQo+IC0tLSBhL2RyaXZlcnMvYmFzZS9wbGF0
+Zm9ybS5jDQo+ICsrKyBiL2RyaXZlcnMvYmFzZS9wbGF0Zm9ybS5jDQo+IEBAIC0zNjEsNiArMzYx
+LDggQEAgc3RydWN0IHBsYXRmb3JtX29iamVjdCB7DQo+ICAgKi8NCj4gIHN0YXRpYyB2b2lkIHNl
+dHVwX3BkZXZfZG1hX21hc2tzKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpICB7DQo+ICsJ
+cGRldi0+ZGV2LmRtYV9wYXJtcyA9ICZwZGV2LT5kbWFfcGFybXM7DQo+ICsNCj4gIAlpZiAoIXBk
+ZXYtPmRldi5jb2hlcmVudF9kbWFfbWFzaykNCj4gIAkJcGRldi0+ZGV2LmNvaGVyZW50X2RtYV9t
+YXNrID0gRE1BX0JJVF9NQVNLKDMyKTsNCj4gIAlpZiAoIXBkZXYtPmRldi5kbWFfbWFzaykgew0K
+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9wbGF0Zm9ybV9kZXZpY2UuaA0KPiBiL2luY2x1
+ZGUvbGludXgvcGxhdGZvcm1fZGV2aWNlLmggaW5kZXggMDQxYmZhNDEyYWEwLi44MTkwMGIzY2Jl
+MzcNCj4gMTAwNjQ0DQo+IC0tLSBhL2luY2x1ZGUvbGludXgvcGxhdGZvcm1fZGV2aWNlLmgNCj4g
+KysrIGIvaW5jbHVkZS9saW51eC9wbGF0Zm9ybV9kZXZpY2UuaA0KPiBAQCAtMjUsNiArMjUsNyBA
+QCBzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlIHsNCj4gIAlib29sCQlpZF9hdXRvOw0KPiAgCXN0cnVj
+dCBkZXZpY2UJZGV2Ow0KPiAgCXU2NAkJcGxhdGZvcm1fZG1hX21hc2s7DQo+ICsJc3RydWN0IGRl
+dmljZV9kbWFfcGFyYW1ldGVycyBkbWFfcGFybXM7DQo+ICAJdTMyCQludW1fcmVzb3VyY2VzOw0K
+PiAgCXN0cnVjdCByZXNvdXJjZQkqcmVzb3VyY2U7DQo+IA0KPiAtLQ0KPiAyLjIwLjENCg0KX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
