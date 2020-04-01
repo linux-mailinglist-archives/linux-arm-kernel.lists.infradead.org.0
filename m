@@ -2,136 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D35419AE93
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 17:09:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 439CD19AED7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 17:36:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WFztUNUiitTFgpBbGukq6QC1C/L/kJ6jEQCif41s1CM=; b=uccFrnBZTe83W4
-	M7EkG8wPZhlKs8gOH/6d/O0B+RZvL4/HjMmVyTJm7RDhta20jL4f0SCxlJw0bdEUizty83WHsC0U4
-	qO2tmsHL/OaFmL6zitvkNRIi5kugFNpo6cd0HCFEsFZOatUwbOakJh4OumKQkHZUu78wF/tDAjNX5
-	eIrPloNiEf0ToG+oBjdQNGaPBUjDm/i09tMmHJDcbHjJ3UyzoFYOCYAMNxksy8i0WFVEUuAvBqjDN
-	BDhSqYkh94vC28jEasvPvAM8clmZrsoJ3NCmr/zFDBIpSU01mnIK4An6P/MQdmm6cnVfA1rlGeKIr
-	oHLIb1v551iLKW/VwXpg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b2JzO1y9226qJqsEuXxbyq69WdlNCGr3t4sO9UsLwWg=; b=NtWpBphGcQ3yW1
+	GSP9VPAu7RAOjVi17Zpmn2LAwRvBPfylb4dgTBGr8y3Lcbo2WWWgmD+94Z2g8IcsjKTXH4tIzCwpI
+	0FoWPlxsxeIut/uLNxkJKklF19aR6lGlVW35s0jNTSTBkxOaHOc4Qn2fckPNNRebU36M1lJl5Gb2b
+	NliETjFyrnQn3I14kIbmJajQ0oj1ke4NZ9s3KOa9gF2r4zjY/4skWQBAAZtPjIypWqlvnboY3/ll2
+	0p8mNVlAo/p9Lz8RRBmLiXHu2tcC0msDG/rZEFb/PGO2u8jBG/++j8wiXsr/Jjphzv8GXZBczO3Dj
+	U7nyHiAQiofEZvB81pww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJeze-0003Ad-LV; Wed, 01 Apr 2020 15:09:26 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jJfP6-0003bB-JF; Wed, 01 Apr 2020 15:35:44 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJezT-00038Z-QK
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 15:09:17 +0000
-Received: by mail-wm1-x341.google.com with SMTP id d77so52171wmd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 Apr 2020 08:09:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=QsyC5XbpdA/rmlnfYe4iva3k7o6K19W7aGVX/8LE71s=;
- b=drXfHyn/Sgn/OQv1If63LxfC2slBajC0r8s8otOEk+FQczecih3n6j44CKfWyCZPc8
- rK3gbuRyGSnRn188TuhWL1ESm1LdOcRtYLwwkpi4AVRqxzdsDFr14JIeE0ZQ15cqMBxn
- 2hVkkUWjIsVivWqAEwQS513sfDOGRlL/Jkr+k7h15OIMMJi5CtVSCw7HddnIp9CHFXqP
- yxY9ZOXj26HvIa3rm5udKyFVzdihal6q+oJgyuprERWuh3NPKBjxKinCiCp0AlBgsRvw
- 1ldlE5eF+RwYGcFHTSXCqEH9VD2YHC76OYah5Vq3yannF6Maz9YB613bJdG3n3N312/R
- TwEQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QsyC5XbpdA/rmlnfYe4iva3k7o6K19W7aGVX/8LE71s=;
- b=X7XH8OapEJtrxCDcgdzg7pDO5i16Onhxbp+WSyMloXMOzBEyncd8V7Iamxcs7aSZOl
- HGp1Crde+drZVXq94Jq+CC3mdefBmEsjD8xcSHzrRNjykx+nFskfp5XtzqBlpzMrQlvU
- obGY66GySx5XKr7rSSBlTsFQ3gjbWU5T5fPdJEy8wpM/aVZo4+QoRCXopzkJ93YxzNXi
- EWcgXwX7fBG8moV8DDG0GJqg3h+SE/3MoF2P9KhRep0XdW7WBhEGF+tWVEmgo0KFP4yP
- hlmm5k3RdKJGn59ODB+kLddfwu79rpjHD9EZBrpjAbWZFiekceHqgTwNtJsxQ/qI6vWy
- SU4w==
-X-Gm-Message-State: AGi0PuaCo1aVeIvzvZlZa6oL67LU7SrOZZBaqkceTPJ8J5C97A/WchuH
- mCzFoylJfJQzSKIf/aE0rSpjYQ==
-X-Google-Smtp-Source: APiQypJaF4faY8l/5iAT9eY/9dKjhFsuJY2Qtseh5JoQOXF3ILTEkl8vRYMSOY5CmJmhoXVeWiwtvA==
-X-Received: by 2002:a05:600c:4145:: with SMTP id
- h5mr4648989wmm.3.1585753753742; 
- Wed, 01 Apr 2020 08:09:13 -0700 (PDT)
-Received: from [192.168.0.136] ([87.120.218.65])
- by smtp.googlemail.com with ESMTPSA id d1sm3361008wrm.86.2020.04.01.08.09.11
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 Apr 2020 08:09:12 -0700 (PDT)
-Subject: Re: [PATCH V4 00/13] Add driver for dvfsrc, support for active state
- of scpsys
-To: Henry Chen <henryc.chen@mediatek.com>
-References: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
-From: Georgi Djakov <georgi.djakov@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=georgi.djakov@linaro.org; prefer-encrypt=mutual; keydata=
- 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
- KEmKjLDvB0pePJkdTw==
-Message-ID: <2737cc5c-3876-6861-c44f-fc9f552bbdb9@linaro.org>
-Date: Wed, 1 Apr 2020 18:09:11 +0300
+ id 1jJfOz-0003a7-Hj; Wed, 01 Apr 2020 15:35:39 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: myjosserand) with ESMTPSA id 7831A283D19
+From: =?UTF-8?q?Myl=C3=A8ne=20Josserand?= <mylene.josserand@collabora.com>
+To: heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ mturquette@baylibre.com, sboyd@kernel.org
+Subject: [PATCH v2 0/2] ARM: Add Rockchip rk3288w support
+Date: Wed,  1 Apr 2020 17:35:11 +0200
+Message-Id: <20200401153513.423683-1-mylene.josserand@collabora.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_080915_865638_B9404CF4 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200401_083537_753636_BF51B00F 
+X-CRM114-Status: GOOD (  14.67  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,73 +57,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Mike Turquette <mturquette@linaro.org>, srv_heupstream@mediatek.com,
- James Liao <jamesjj.liao@mediatek.com>, Viresh Kumar <vireshk@kernel.org>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Stephen Boyd <swboyd@chromium.org>,
- Fan Chen <fan.chen@mediatek.com>, devicetree@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Ryan Case <ryandcase@chromium.org>,
- Arvin Wang <arvin.wang@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mylene.josserand@collabora.com, kever.yang@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ geert@linux-m68k.org, kernel@collabora.com, linux-clk@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Henry,
-
-On 3/13/20 11:34, Henry Chen wrote:
-> The patchsets add support for MediaTek hardware module named DVFSRC
-> (dynamic voltage and frequency scaling resource collector). The DVFSRC is
-> a HW module which is used to collect all the requests from both software
-> and hardware and turn into the decision of minimum operating voltage and
-> minimum DRAM frequency to fulfill those requests.
-> 
-> So, This series is to implement the dvfsrc driver to collect all the
-> requests of operating voltage or DRAM bandwidth from other device drivers
-> likes GPU/Camera through 3 frameworks basically:
-> 
-> 1. interconnect framework: to aggregate the bandwidth
->    requirements from different clients
-> 
-> [1] https://patchwork.kernel.org/cover/10766329/
-> 
-> Below is the emi bandwidth map of mt8183. There has a hw module "DRAM scheduler"
-> which used to control the throughput. The DVFSRC will collect forecast data
-> of dram bandwidth from SW consumers(camera/gpu...), and according the forecast
-> to change the DRAM frequency
-> 
->            ICC provider         ICC Nodes
->                             ----          ----
->            ---------       |CPU |   |--->|VPU |
->   -----   |         |-----> ----    |     ----
->  |DRAM |--|DRAM     |       ----    |     ----
->  |     |--|scheduler|----->|GPU |   |--->|DISP|
->  |     |--|(EMI)    |       ----    |     ----
->  |     |--|         |       -----   |     ----
->   -----   |         |----->|MMSYS|--|--->|VDEC|
->            ---------        -----   |     ----
->              /|\                    |     ----
->               |change DRAM freq     |--->|VENC|
->            ----------               |     ----
->           |  DVFSR   |              |
->           |          |              |     ----
->            ----------               |--->|IMG |
->                                     |     ----
->                                     |     ----
->                                     |--->|CAM |
->                                           ----
-
-It would be useful to also add the above diagram into the commit text of
-patch 09/13. By doing so, it will be saved into the history, as cover letters
-are discarded.
-
-Thanks,
-Georgi
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8gZXZlcnlvbmUsCgpIZXJlIGlzIG15IFYyIG9mIG15IHBhdGNoZXMgdGhhdCBhZGQgdGhl
+IHN1cHBvcnQgZm9yIHRoZSBSb2NrY2hpcApSSzMyODh3IHdoaWNoIGlzIGEgcmV2aXNpb24gb2Yg
+dGhlIFJLMzI4OC4gSXQgaXMgbW9zdGx5IHRoZSBzYW1lIFNPQwpleGNlcHQgZm9yLCBhdCBsZWFz
+dCwgb25lIGNsb2NrIHRyZWUgd2hpY2ggaXMgZGlmZmVyZW50LgpUaGlzIGRpZmZlcmVuY2UgaXMg
+b25seSBrbm93biBieSBsb29raW5nIGF0IHRoZSBCU1Aga2VybmVsIFsxXS4KCkN1cnJlbnRseSwg
+dGhlIG1haW5saW5lIGtlcm5lbCB3aWxsIG5vdCBoYW5nIG9uIHJrMzI4OHcgYnV0IGl0IGlzCnBy
+b2JhYmx5IGJ5ICJjaGFuY2UiIGJlY2F1c2Ugd2UgZ290IGFuIGlzc3VlIG9uIGEgbG93ZXIga2Vy
+bmVsIHZlcnNpb24uCgpBY2NvcmRpbmcgdG8gUm9ja2NoaXAncyBVLUJvb3QgWzJdLCB0aGUgcmsz
+Mjg4dyBjYW4gYmUgZGV0ZWN0ZWQgdXNpbmcKdGhlIEhETUkgcmV2aXNpb24gbnVtYmVyICg9IDB4
+MUEpIGluIHRoaXMgdmVyc2lvbiBvZiB0aGUgU09DLgpOb3QgdG8gcmVseSBvbiBVLUJvb3QgYWJv
+dXQgdGhlIGNvbXBhdGlibGUsIHRoZSBwYXRjaCAwMSB3aWxsIGhhbmRsZQp0aGUgZGV0ZWN0aW9u
+IG9mIHRoZSBIRE1JIHZlcnNpb24uCgpJbiB0aGlzIFYyLCB0aGUgcmV2aXNpb24ncyBkZXRlY3Rp
+b24gaXMgZG9uZSB1c2luZyBzb2NfZGV2aWNlCnJlZ2lzdHJhdGlvbi4gVGhhbmtzIHRvIHRoYXQs
+IGluIGNhc2Ugb2Ygb3RoZXIgZGlmZmVyZW5jZXMgdGhhbiB0aGUgY2xvY2sKdHJlZSwgaXQgd2ls
+bCBiZSBwb3NzaWJsZSB0byBkZXRlY3QgcmszMjg4L3JrMzI4OHcgdXNpbmcgdGhlICdzb2NfZGV2
+aWNlX21hdGNoJwpmdW5jdGlvbi4KVGhlIG1haW4gaXNzdWUgd2FzIGFuIG9yZGVyaW5nIGlzc3Vl
+OiBteSByazMyODggZHJpdmVyIHdhcwpyZWdpc3RlcmVkIHRvbyBsYXRlIHRvIGJlIGFibGUgdG8g
+YWN0IG9uIHRoZSBjbG9jayB0cmVlLiBUaGlzIGlzIGZpeGVkCmJ5IHVzaW5nIGFuIGluaXRjYWxs
+IGluIHRoZSBjbG9jayBkcml2ZXIuIE9uZSBwb3NzaWJsZSB3YXkgd291bGQgYmUgdG8KY29udmVy
+dCB0aGUgY2xvY2sgZHJpdmVyIGludG8gcGxhdGZvcm1fZHJpdmVyIGJ1dCwgYXMgaXQgaXMgdXNp
+bmcKc29tZSBjb21tb24gZnVuY3Rpb25zIHRvIGFsbCBSb2NrY2hpcCdzIGRyaXZlcnMsIGl0IHdv
+dWxkIGhhdmUgYmVlbgpuZWNlc3NhcnkgdG8gdXBkYXRlIGFsbCBvdGhlcnMuIEluc3RlYWQsIHVz
+aW5nIGFuIGluaXRjYWxsIHRvIHBvc3QtcG9uZQpoY2xrdmlvIGNsb2NrJ3MgcmVnaXN0cmF0aW9u
+IGlzIGVub3VnaCB0byBtYWtlIGV2ZXJ5dGhpbmcgd29yayBjb3JyZWN0bHkKd2l0aG91dCBhIGJp
+ZyBjaGFuZ2Ugb24gdGhlIGNsb2NrIGRyaXZlci4KCkNoYW5nZXMgc2luY2UgdjE6CiAgIC0gQXMg
+c3VnZ2VzdGVkIGJ5IEdlZXJ0LCB1cGRhdGUgdGhlIEhETUkgZGV0ZWN0aW9uIGJ5IHVzaW5nIGFs
+bAogICAnc29jX2RldmljZScgZnVuY3Rpb25zCiAgIC0gVXNlICdzb2NfZGV2aWNlX21hdGNoJyBm
+dW5jdGlvbiB0byBkZXRlY3QgdGhlIHJldmlzaW9uIGluIHRoZQogICBjbG9jayBkcml2ZXIKICAg
+LSBDcmVhdGUgYSBmdW5jdGlvbiB0aGF0IHJlZ2lzdGVycyBoY2xrdmlvIGNsb2NrcyBsYXRlciB0
+aGFuIG90aGVycwogICB0byBiZSBzdXJlIHRoYXQgUkszMjg4IHJldmlzaW9uIGlzIHJlYWQuCgpC
+ZXN0IHJlZ2FyZHMsCk15bMOobmUgSm9zc2VyYW5kCgpbMV0gaHR0cHM6Ly9naXRodWIuY29tL3Jv
+Y2tjaGlwLWxpbnV4L2tlcm5lbC9ibG9iL2RldmVsb3AtNC40L2RyaXZlcnMvY2xrL3JvY2tjaGlw
+L2Nsay1yazMyODguYyNMOTYwLi5MOTY0ClsyXSBodHRwczovL2dpdGh1Yi5jb20vcm9ja2NoaXAt
+bGludXgvdS1ib290L2Jsb2IvbmV4dC1kZXYvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yazMyODgv
+cmszMjg4LmMjTDM3OC4uTDM4OAoKTXlsw6huZSBKb3NzZXJhbmQgKDIpOgogIHNvYzogcm9ja2No
+aXA6IFJlZ2lzdGVyIGEgc29jX2RldmljZSB0byByZXRyaWV2ZSByZXZpc2lvbgogIGNsazogcm9j
+a2NoaXA6IHJrMzI4ODogSGFuZGxlIGNsb2NrIHRyZWUgZm9yIHJrMzI4OHcKCiBkcml2ZXJzL2Ns
+ay9yb2NrY2hpcC9jbGstcmszMjg4LmMgfCAgMzYgKysrKysrKystCiBkcml2ZXJzL3NvYy9yb2Nr
+Y2hpcC9NYWtlZmlsZSAgICAgfCAgIDEgKwogZHJpdmVycy9zb2Mvcm9ja2NoaXAvcmszMjg4LmMg
+ICAgIHwgMTI1ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwogMyBmaWxlcyBjaGFuZ2Vk
+LCAxNTggaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKIGNyZWF0ZSBtb2RlIDEwMDY0NCBk
+cml2ZXJzL3NvYy9yb2NrY2hpcC9yazMyODguYwoKLS0gCjIuMjUuMQoKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
