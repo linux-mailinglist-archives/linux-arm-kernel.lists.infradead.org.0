@@ -2,75 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A51519A566
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 08:34:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C62CF19A5A5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 08:50:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=plyzbGAqCKvLAwdiGZoHZFEkophu5MBa6jsm6YuwJyw=; b=i2X6iFX32skWF6
-	yXCuoQeBPDiDhM72ilI8S/njxYmMNm9b0AJJ6pul0eO1RRI52UsgoQUhMwtLDjmrXsjhHbrdJOe/P
-	X9QHvNyXoNt9qmyUy5fNHqiLCKAE/YJmr4StAPfwqgs3rFdwXS6stkhhB65610R1MSIZEIjNJn/bN
-	6ODo+kgTtGknEMnZyX2lAF2ReMqafcsfbkBPPFg/RjBTRw5D9ddUdZOD9k7IBh4Y+vcPd1NMswrBD
-	8xBkqZbzFANOYbxgNpcSMt9qLf8+lrogfYNehjL9rcpklNBl4Hx02TT5l2ltTG5z9T+5hvXzqM69s
-	GkWDSRAOPc9ToZzVNIvA==;
+	List-Owner; bh=RDclr8AWYX2fO2kppssxDbS1B6F+58SYE//A6By1vZ4=; b=cl3EDCMhqlJ8gC
+	0ZLCvosL2v8X8wc002M4C/HSQFlFVb2oSv9L1tl2sS+3aqB6o7TJMOjia9wXsalh76EhfPoQ+y2ZE
+	yXphFf9S+jLTiDbUOSxpp3FpVryj5maF0J05mLCxAozGufXjHntvsNyoQWEUJZnyOU4odfx7I6Wid
+	rRwBkHm/Ro9odu0bxlFKXHy7vm/VM42TE/YC/V+kB6vHlOXk95Lk297HbOsjLiMnkogRREBAS1rrV
+	ADpirygi9MoowhmW0r0De/fxnsUBB/zkOnDyW/QsZF1xIyeENSpEEIV53QuP6V/G0GyjDNrwNSjdP
+	ee9Af23+kjInJsH6D4jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJWwp-0008S3-3V; Wed, 01 Apr 2020 06:33:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jJXCh-0004K7-7L; Wed, 01 Apr 2020 06:50:23 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJWwY-0008NS-Tq
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 06:33:44 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1jJWwJ-0004Mk-Ei; Wed, 01 Apr 2020 08:33:27 +0200
-Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ore@pengutronix.de>)
- id 1jJWw5-00053m-3n; Wed, 01 Apr 2020 08:33:13 +0200
-Date: Wed, 1 Apr 2020 08:33:13 +0200
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2] ARM: imx: allow to disable board specific PHY fixups
-Message-ID: <20200401063313.5e5r7jm6fjzdqpdg@pengutronix.de>
-References: <20200329110457.4113-1-o.rempel@pengutronix.de>
- <20200329150854.GA31812@lunn.ch>
- <20200330052611.2bgu7x4nmimf7pru@pengutronix.de>
- <40209d08-4acb-75c5-1766-6d39bb826ff9@gmail.com>
- <20200330174114.GG25745@shell.armlinux.org.uk>
- <5ae5c0de-f05c-5e3f-86e1-a9afdd3e1ef1@pengutronix.de>
- <20200331075457.GJ25745@shell.armlinux.org.uk>
- <f1352a82-be3a-cd0a-7cba-6f338f205098@pengutronix.de>
- <20200331081918.GK25745@shell.armlinux.org.uk>
+ id 1jJXCV-000479-HX
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 06:50:12 +0000
+Received: by mail-pg1-x543.google.com with SMTP id g32so5615655pgb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 31 Mar 2020 23:50:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=8wSuFvt8m/ubZdKRPF3ipeuvHEeQbwu0Gagfi6R4CDM=;
+ b=UWA1KeKzvpkEB7y4nYsgfXDNSyIHXnMCZWhsXMVwfKjxjQG3AJ/PugziQjJldAs/I5
+ W6maa6RpkTHLFl4D/+8Lty3Np/m/6rqKOBsulXpKxLtAR219t00NBDnebPXdbAlL5NM+
+ YNYxAbKVHCKAz8Yc+thEtr9Ay2ekSCFQvHpW2P+lUMp9sXrXbdoKRlC5+o07nbMV+7h9
+ x+GODXa4if+sQTGnivm9VRIo+7ZAs2km9yzkYzrS96DIrQV6f+H3klU1WAs9hxJvpHtC
+ AAFLFY9R4Uet8NvyAB0TMIW8VCEzwM420KXc2smk0gN7h2C3hooajTMTfjDuCTQW5lQd
+ HiFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=8wSuFvt8m/ubZdKRPF3ipeuvHEeQbwu0Gagfi6R4CDM=;
+ b=uS0cJ00AdMJmmESDaC/APds2K1ZEwrsQhyDcdNxU7+hfMMENXkFYRw5/EfRrEvjlkR
+ LEV4UhynUfBsod8YZCNXv/HDjp4+GJWWPKbsnPbP6s8xUJ9zHVDHol40SnLnPADFNgTo
+ eIvrSxIEo87LB29xcEWy4/2hkn4MO4jN3Wz9TtYHHJA7UNSMBIrdkdZuN941kR4gh7A2
+ 1J1nz9zFyTfm2Fl2+rBhaXCoodRfESXlh0dEUI2g3vK00RYLpJZpAxA1iSb7O9fTb2Tv
+ xgGhiV6LJwmuOWibjwHSfcij/VHhYPO9lA6afqrB+lho1w1wkSWAjqma0rqgNy66qoSg
+ K1+A==
+X-Gm-Message-State: ANhLgQ2pvkdptL60BNP2SQkeEf9KDtk1SJuD4AV7lau3N5wBAUKXmjfS
+ jxr5mUv6PMMTWrKepZsH7Trz3PY3tPE=
+X-Google-Smtp-Source: ADFU+vsYSHCKcYWLeSQimgdMc1jwH+iCRfbwon/W1SL0diideITSA/Zy2KD0bJVvq6EgA6N8Vn1+Cw==
+X-Received: by 2002:aa7:9588:: with SMTP id z8mr20712539pfj.240.1585723809640; 
+ Tue, 31 Mar 2020 23:50:09 -0700 (PDT)
+Received: from gmail.com ([2601:600:817f:a132:df3e:521d:99d5:710d])
+ by smtp.gmail.com with ESMTPSA id e8sm816515pjt.26.2020.03.31.23.50.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 31 Mar 2020 23:50:08 -0700 (PDT)
+Date: Tue, 31 Mar 2020 23:50:05 -0700
+From: Andrei Vagin <avagin@gmail.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v2 0/6] arm64: add the time namespace support
+Message-ID: <20200401065005.GA413115@gmail.com>
+References: <20200225073731.465270-1-avagin@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331081918.GK25745@shell.armlinux.org.uk>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:28:42 up 137 days, 21:47, 155 users,  load average: 0.00, 0.03,
- 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200225073731.465270-1-avagin@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_233342_964757_5996613C 
-X-CRM114-Status: GOOD (  18.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200331_235011_584362_6BC0E2A0 
+X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FSL_HELO_FAKE          No description available.
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [avagin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,93 +100,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Marc Kleine-Budde <mkl@pengutronix.de>,
- linux-imx@nxp.com, kernel@pengutronix.de, David Jander <david@protonic.nl>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Dmitry Safonov <dima@arista.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 09:19:18AM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Mar 31, 2020 at 10:00:12AM +0200, Marc Kleine-Budde wrote:
-> > On 3/31/20 9:54 AM, Russell King - ARM Linux admin wrote:
-> > > On Tue, Mar 31, 2020 at 09:47:19AM +0200, Marc Kleine-Budde wrote:
-> > >> On 3/30/20 7:41 PM, Russell King - ARM Linux admin wrote:
-> > >>>>> arch/arm/mach-imx/mach-imx6q.c:167:		phy_register_fixup_for_uid(PHY_ID_KSZ9021, MICREL_PHY_ID_MASK,
-> > >>>>> arch/arm/mach-imx/mach-imx6q.c:169:		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
-> > >>>>> arch/arm/mach-imx/mach-imx6q.c:171:		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
-> > >>>>> arch/arm/mach-imx/mach-imx6q.c:173:		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,
-> > >>>
-> > >>> As far as I'm concerned, the AR8035 fixup is there with good reason.
-> > >>> It's not just "random" but is required to make the AR8035 usable with
-> > >>> the iMX6 SoCs.  Not because of a board level thing, but because it's
-> > >>> required for the AR8035 to be usable with an iMX6 SoC.
-> > >>
-> > >> Is this still ture, if the AR8035 is attached to a switch behind an iMX6?
-> > > 
-> > > Do you know of such a setup, or are you talking about theoretical
-> > > situations?
-> > 
-> > Granted, not for the AR8035, but for one of the KSZ Phys. This is why
-> > Oleksij started looking into this issue in the first place.
-> 
-> Maybe there's an easy solution to this - check whether the PHY being
-> fixed up is connected to the iMX6 SoC:
-> 
-> static bool phy_connected_to(struct phy_device *phydev,
-> 			     const struct of_device_id *matches)
-> {
-> 	struct device_node *np, *phy_np;
-> 
-> 	for_each_matching_node(np, matches) {
-> 		phy_np = of_parse_phandle(np, "phy-handle", 0);
-> 		if (!phy_np)
-> 			phy_np = of_parse_phandle(np, "phy", 0);
-> 		if (!phy_np)
-> 			phy_np = of_parse_phandle(np, "phy-device", 0);
-> 		if (phy_np && phydev->mdio.dev.of_node == phy_np) {
-> 			of_node_put(phy_np);
-> 			of_node_put(np);
-> 			return true;
-> 		}
-> 		of_node_put(phy_np);
-> 	}
-> 	return false;
-> }
-> 
-> static struct of_device_id imx_fec_ids[] = {
-> 	{ .compatible = "fsl,imx6q-fec", },
-> 	...
-> 	{ },
-> };
-> 
-> static bool phy_connected_to_fec(struct phy_device *phydev)
-> {
-> 	return phy_connected_to(phydev, imx_fec_ids);
-> }
-> 
-> and then in the fixups:
-> 
-> 	if (!phy_connected_to_fec(phydev))
-> 		return 0;
-> 
+Hi Vincenzo,
 
-Ok, i see. We will limit fixup impact to some specific devicetree nodes.
-And if we wont to disable fixup completely, some special devicetree binding will
-be needed. Correct? Is this acceptable mainline way?
-For the usb ethernet fixups we will need some thing similar.
+Have you had a chance to look at this series? Let me know if I need to
+rebase this patch set and resend it again.
 
-Regards,
-Oleksij
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Thanks,
+Andrei
+
 
 _______________________________________________
 linux-arm-kernel mailing list
