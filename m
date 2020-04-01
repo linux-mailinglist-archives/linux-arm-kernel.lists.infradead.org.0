@@ -2,104 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E437B19A9E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 13:01:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2B5D19A9F3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 13:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qCG1N6dHk/F44k/G4uIPhLtl3pbFOAmWcg42wFd4ys=; b=a0M32ANI+AiwY8
-	+BO9LNq8XoufHmCjtYppuHyVY2i5hvMydM80RiVHt9M4F7XPOUe2Q3T3rvgKnCP0ZL6uSmMZvcePv
-	V3xp/fJLKmSnP/CQUAAbfmxz9X6+smLJdEvYH1GjdY7toC0Psv5NkT3TjD7Y75wrfoo3OuTPW+rI0
-	yj01EeiWHHJ4IkCCxfX+3bhowvz4jNSMksNSC3wgnjprCzNIyDOqjJP57l0PqJ5sROMgwHEyLn9KL
-	eckPHCYL/ndMqapygGF6nAmU7s6ZICpoJwud00M76iwJ99jg5tdOZk/CSZQutE4bPnIaT9RD/Ln1l
-	tgcoo0sE3rhPJR3yfIEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hoJ/fDHBUXsQI2Yrt2f+wcNZjzr2BfoO4BAvDzlpZHA=; b=hcVzOsXI6VqUGF
+	KzdGdI0AkPLBwZpk6Q1LMxUU6uoQGJre3ufbCpMHINI5r1qiBsjNzbsul+NEO4kG+B5qRGUHrpWM2
+	/AUk/C2eyRfh3Hy8RsN+VO1leSq8A7Eg13BHCTxfCav1hIBG0ePQahzdl7/j/BaCcXUNAqGUJ818J
+	rDzvI5ytvzHLDeTFarPRwYGqfQ96hA1vnwocfy5T0xQH9o+ajnny/qPATXhlm1JBEAzXK8119BuDI
+	62fxJtcPeq+b08wKIfuZxP8nu+ACOp+s2HmyyF4LnW8WycxV0v8UfmMCT0r9+dpm5SJHPn3baNxd8
+	jmW2D6JMB5s7R2sWI/gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJb77-0000BN-MU; Wed, 01 Apr 2020 11:00:53 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jJbAj-0000qa-Hr; Wed, 01 Apr 2020 11:04:37 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJb70-0000At-7I
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 11:00:47 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 031Aqijs155882;
- Wed, 1 Apr 2020 11:00:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=k/zLhrZsADjqzq+3QwgvoWL1MmcxznVBM92vxIE2puw=;
- b=ONdjM18avmW5dE+LLNFwYJoAAf8ZcTTxtrswiZj9Chf4Ukg35sdE5LaQNyZPIdnF57su
- rNKvBN5B8oAGEUdJBq6uMPAyIVRYctUKe+0FKp7+7y/tFbqasY/4kTGVUJKvY2yHN9j1
- DozpO8Yibrjf7wtChKBzlmYDAipeGswqfWSUMN2qQuUwtppVwbg3mft5tX5fQimrTV1I
- Hzl6BEm73VTbikMd7HxqnIabVego5iqh4N/YbE0oPL0pjj5FFAw2/8ilVAQrRGjreYAv
- 1Vuek17GiklF0NZBBKNvbUMVAyhDY12/j938imRsUalvfbg0PRDnkQvrExOJvQb6Ozll Kg== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 303aqhn75f-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 01 Apr 2020 11:00:18 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 031Ar08g045201;
- Wed, 1 Apr 2020 11:00:18 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3020.oracle.com with ESMTP id 304sjk0hsg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 01 Apr 2020 11:00:17 +0000
-Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 031B07RP031187;
- Wed, 1 Apr 2020 11:00:07 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 01 Apr 2020 04:00:06 -0700
-Date: Wed, 1 Apr 2020 13:59:49 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH 0/4] media Kconfig reorg - part 2
-Message-ID: <20200401105949.GB2001@kadam>
-References: <cover.1585151701.git.mchehab+huawei@kernel.org>
- <6fadc6ea-8512-03ba-da30-43c64d7562f6@collabora.com>
+ id 1jJbAb-0000ph-Tz
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 11:04:32 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sjy05ZH8z1rtM7;
+ Wed,  1 Apr 2020 13:04:24 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48sjy04sNZz1r0cS;
+ Wed,  1 Apr 2020 13:04:24 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id dryn0hDFTdTa; Wed,  1 Apr 2020 13:04:22 +0200 (CEST)
+X-Auth-Info: P13QGhQEKyjD9t8OKEs8nxx7eM+buhDn3ECmbptOyz0=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed,  1 Apr 2020 13:04:22 +0200 (CEST)
+Subject: Re: [PATCH V3 01/22] ARM: dts: stm32: Add alternate pinmux for
+ ethernet RGMII
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200331175811.205153-1-marex@denx.de>
+ <20200331175811.205153-2-marex@denx.de>
+ <06ad9a40-3118-7336-056d-b115aef66599@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <86a4957a-dddd-08b9-e920-2943548610d1@denx.de>
+Date: Wed, 1 Apr 2020 13:04:21 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6fadc6ea-8512-03ba-da30-43c64d7562f6@collabora.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9577
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- adultscore=0 mlxscore=0
- malwarescore=0 phishscore=0 suspectscore=0 mlxlogscore=999 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004010100
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9577
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- phishscore=0 clxscore=1011
- malwarescore=0 impostorscore=0 mlxlogscore=999 spamscore=0 mlxscore=0
- priorityscore=1501 lowpriorityscore=0 adultscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2004010100
+In-Reply-To: <06ad9a40-3118-7336-056d-b115aef66599@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_040046_352208_33E546A5 
-X-CRM114-Status: GOOD (  21.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200401_040430_263365_19DC91CF 
+X-CRM114-Status: GOOD (  12.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,70 +78,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, "Lad,
- Prabhakar" <prabhakar.csengg@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Pavel Machek <pavel@ucw.cz>, devel@driverdev.osuosl.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-samsung-soc@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Steve Longerbeam <slongerbeam@gmail.com>, Bingbu Cao <bingbu.cao@intel.com>,
- Tian Shu Qiu <tian.shu.qiu@intel.com>, Yong Zhi <yong.zhi@intel.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, Yong Deng <yong.deng@magewell.com>,
- Chen-Yu Tsai <wens@csie.org>, Ezequiel Garcia <ezequiel@collabora.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, Hyun Kwon <hyun.kwon@xilinx.com>,
- Heungjun Kim <riverful.kim@samsung.com>, linux-renesas-soc@vger.kernel.org,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 25, 2020 at 04:36:31PM -0300, Helen Koike wrote:
-> Hello,
-> 
-> On 3/25/20 1:03 PM, Mauro Carvalho Chehab wrote:
-> > That's the second part of media Kconfig changes. The entire series is
-> > at:
-> > 
-> > 	https://git.linuxtv.org/mchehab/experimental.git/log/?h=media-kconfig
-> 
-> I made a quick experiment (using this branch) with someone who works
-> with the kernel for his master degree, but doesn't have much experience in kernel development in general.
-> I asked him to enable Vimc (from default configs, where multimedia starts disabled).
-
-The whole config system is really outdated.
-
-It should be that this task was done with a command like "kconfig enable
-vimc".  It would ask necessary questions and pull in the dependencies
-automatically.
-
-Twenty years ago it made sense to go through the menus and select things
-one by one.  Does anyone really start from defconfig any more?  Surely
-everyone starts with a known working config and just enables specific
-options.
-
-I started to hack together some code to create a kconfig program to
-enable and disable options.  The problem is that all library code
-assumes we want to display menus so it was a lot of work and I gave up.
-
-regards,
-dan carpenter
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNC8xLzIwIDExOjUyIEFNLCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+IEhpIE1hcmVrCgpI
+aSwKClsuLi5dCgo+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTUtcGluY3RybC5k
+dHNpCj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNS1waW5jdHJsLmR0c2kKPj4g
+QEAgLTE5Niw2ICsxOTYsNTcgQEAgcGluczEgewo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4g
+wqDCoMKgwqDCoCB9Owo+PiDCoCArwqDCoMKgIGV0aGVybmV0MF9yZ21paV9waW5zX2I6IHJnbWlp
+LTEgewo+PiArwqDCoMKgwqDCoMKgwqAgcGluczEgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBwaW5tdXggPSA8U1RNMzJfUElOTVVYKCdHJywgNSwgQUYxMSk+LCAvKgo+PiBFVEhfUkdNSUlf
+Q0xLMTI1ICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8U1RNMzJfUElO
+TVVYKCdHJywgNCwgQUYxMSk+LCAvKiBFVEhfUkdNSUlfR1RYX0NMSyAqLwo+PiArwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPFNUTTMyX1BJTk1VWCgnQicsIDEyLCBBRjExKT4sIC8q
+IEVUSF9SR01JSV9UWEQwICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8
+U1RNMzJfUElOTVVYKCdHJywgMTQsIEFGMTEpPiwgLyogRVRIX1JHTUlJX1RYRDEgKi8KPj4gK8Kg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDxTVE0zMl9QSU5NVVgoJ0MnLCAyLCBBRjEx
+KT4sIC8qIEVUSF9SR01JSV9UWEQyICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCA8U1RNMzJfUElOTVVYKCdFJywgMiwgQUYxMSk+LCAvKiBFVEhfUkdNSUlfVFhEMyAqLwo+
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPFNUTTMyX1BJTk1VWCgnRycsIDEx
+LCBBRjExKT4sIC8qIEVUSF9SR01JSV9UWF9DVEwgKi8KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIDxTVE0zMl9QSU5NVVgoJ0MnLCAxLCBBRjExKT47IC8qIEVUSF9NREMgKi8K
+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYmlhcy1kaXNhYmxlOwo+PiArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBkcml2ZS1wdXNoLXB1bGw7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNs
+ZXctcmF0ZSA9IDwyPjsKPj4gK8KgwqDCoMKgwqDCoMKgIH07Cj4+ICvCoMKgwqDCoMKgwqDCoCBw
+aW5zMiB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBpbm11eCA9IDxTVE0zMl9QSU5NVVgo
+J0EnLCAyLCBBRjExKT47IC8qIEVUSF9NRElPICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IGJpYXMtZGlzYWJsZTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZHJpdmUtcHVzaC1wdWxs
+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzbGV3LXJhdGUgPSA8MD47Cj4+ICvCoMKgwqDC
+oMKgwqDCoCB9Owo+PiArwqDCoMKgwqDCoMKgwqAgcGluczMgewo+PiArwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCBwaW5tdXggPSA8U1RNMzJfUElOTVVYKCdDJywgNCwgQUYxMSk+LCAvKiBFVEhfUkdN
+SUlfUlhEMCAqLwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPFNUTTMyX1BJ
+Tk1VWCgnQycsIDUsIEFGMTEpPiwgLyogRVRIX1JHTUlJX1JYRDEgKi8KPj4gK8KgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgIDxTVE0zMl9QSU5NVVgoJ0gnLCA2LCBBRjExKT4sIC8qIEVU
+SF9SR01JSV9SWEQyICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8U1RN
+MzJfUElOTVVYKCdCJywgMSwgQUYxMSk+LCAvKiBFVEhfUkdNSUlfUlhEMyAqLwo+PiArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPFNUTTMyX1BJTk1VWCgnQScsIDEsIEFGMTEpPiwg
+LyogRVRIX1JHTUlJX1JYX0NMSyAqLwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgPFNUTTMyX1BJTk1VWCgnQScsIDcsIEFGMTEpPjsgLyogRVRIX1JHTUlJX1JYX0NUTCAqLwo+
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBiaWFzLWRpc2FibGU7Cj4+ICvCoMKgwqDCoMKgwqDC
+oCB9Owo+PiArwqDCoMKgIH07Cj4+ICsKPj4gK8KgwqDCoCBldGhlcm5ldDBfcmdtaWlfcGluc19z
+bGVlcF9iOiByZ21paS1zbGVlcC0xIHsKPiAKPiBJIGp1c3QgbWVyZ2VkIGEgc2VyaWVzIGZyb20g
+QWhtYWQgdGhhdCB1bmlmeSBwaW5zIGdyb3VwIG5hbWUuIFNvIGl0Cj4gc2hvdWxkIGJlIGV0aGVy
+bmV0MF9yZ21paV9zbGVlcF9waW5zX2IuIEFzIGEgbG90IGNoYW5nZSBoYXZlIGJlZW4gZG9uZQo+
+IGluIHBpbmN0cmwgZHRzaSBkaWxlcywgY2FuIHlvdSByZWJhc2Ugb24gdG9wIG9mIHN0bTMyLW5l
+dCBwbGVhc2U/CgpHcmVhdC4gRG8geW91IGhhdmUgYSBsaW5rIHRvIHRoaXMgdHJlZSB3aXRoIHRo
+aXMgYnJhbmNoID8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
