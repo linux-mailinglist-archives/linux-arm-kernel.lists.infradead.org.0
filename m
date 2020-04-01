@@ -2,76 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5BE619A732
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 10:24:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A7BF19A73D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 10:26:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fr3eRHQ5yC4DEU39UAWG65CqJuj3VQO6zUMsNV5VYcQ=; b=VBagyct+uYBtBb
-	56HVJmk9aVEpgrvAcuiBv4s1N+8HBkCK0oDcr0gvZM7IKBUwUjxkKL2OZyCnYFMIDaz65ILxEWGmm
-	ZShlG/vSjVWA/BblsGOmGs9+4bYYZlXLleHA/neKdSeRZmQCJD7Mv3/2QYGBTViiHiWh80ySJNqGB
-	NuTJW9Ue1jOvNzTP40qR4/i/09jZNg/e0waOoGP0x8c9CZQsjPoZpXrhxiA/fw4P4qmB5mHdiyKX/
-	Gc1EW7kkBtWWiiug7Vsxnqzkxe9Qg02UU9gEar1SSqXNJp+YvC3PyPDNCneDZWE8d0JJs0wMRfk2u
-	Wr3UAPCYOC1LRFqvSy6Q==;
+	List-Owner; bh=4aQntXYZGIaRTmck6gLPb7bzzYVorg0rNarwW9C7i2w=; b=D/spW1uMo6uWlS
+	GGEaFgs33mEcdQhJ2jgzbUqhdzFxmGZUa3r1bMZkWFBYrQYK+M3s8SkziOT5j1kvYrkLkzpP2JkVo
+	37onV/pthrCd3qgAwjXMjiYmh1fvgzLolVTHNaR7VFWOjbW2yoL5/kwyNYiDphEat547SVogkMQUr
+	XK4hA1yxE4sGrD+Y/kPfWFB2qRTPq2Yng586N6eER0VvPTSJQjlheEWJjacvwOYSrmiKycaWabw//
+	RYU8Fsj4PVzI5TvkNX79sMQHCNd7SDR0nvSdc7UDcBp4R3aLh/5bcwFFvOh79S24PGDcMPluSOcaP
+	ywxbXfR1ojSt7sx+Z4nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJYft-0003Vp-RE; Wed, 01 Apr 2020 08:24:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jJYhl-0006mJ-G9; Wed, 01 Apr 2020 08:26:33 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJYfl-0003VN-6E
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 08:24:30 +0000
-Received: from mail-il1-f174.google.com (mail-il1-f174.google.com
- [209.85.166.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B535120719
- for <linux-arm-kernel@lists.infradead.org>;
- Wed,  1 Apr 2020 08:24:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585729468;
- bh=V5x/x4MbVefuY6wx9HFlrk7OXqOTT4JyHZcqRaFiDz4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cw3kE7u1veX+S9VUtSsu2rV+MFziVC5RRl4AF3OiwENqpq/Es9etfopNPePx5zyyK
- bTUp9zcsFiT33cHJCygaMny7XTpGXGHueeXWIpKqnAskXhjK57JAVZXWpVqLEzjola
- 4Ip+biwM1Cb2E94/OkB7MTdjpl418zOTZjUjg+MM=
-Received: by mail-il1-f174.google.com with SMTP id n13so14889529ilm.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 Apr 2020 01:24:28 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3PxvsWILgtancbDMgP7+ez5E8BAwypxF0iuIBW4TjjkZrSHb2c
- DNlhRgOwhlAyrXSpxNLsqcJFyiGXhLxQCR3/aBg=
-X-Google-Smtp-Source: ADFU+vuu19pu3DkAKvKxS9a0XFO+W0wk/Cfi6foPKgJepI6csCSn0IK81sSqPV/b7DE+x18bq8/hSiQroW/4BtLI0OI=
-X-Received: by 2002:a92:4849:: with SMTP id v70mr19780446ila.279.1585729468128; 
- Wed, 01 Apr 2020 01:24:28 -0700 (PDT)
+ id 1jJYhf-0006lW-1O; Wed, 01 Apr 2020 08:26:28 +0000
+X-UUID: 1aba86798d5a48c6897f4a718828a260-20200401
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=KAc2JVwQuKcaNBn24f4yGzswCmaLnRG+W1Uvy/qyynU=; 
+ b=a1l0Kn60T951eePkQkVfwHCdndZk0Mqx1kqtdJJKYulkQ6UYDie0B87rdD/3hRIHzIfUHU7zhLxWCLL9ztfMSGeLlYs7uhaiWrIjOi6vvqRzqw1Ze8dGjLvT8Y9ii4EhO9cpM79P1wd6glknZyhstmLOqaMpRhduqgHVFXp8xZA=;
+X-UUID: 1aba86798d5a48c6897f4a718828a260-20200401
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <hsin-hsiung.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1769463170; Wed, 01 Apr 2020 00:26:19 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 1 Apr 2020 01:26:22 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 1 Apr 2020 16:26:19 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 1 Apr 2020 16:26:20 +0800
+Message-ID: <1585729581.2029.2.camel@mtksdaap41>
+Subject: Re: [PATCH v10 3/5] mfd: Add support for the MediaTek MT6358 PMIC
+From: Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>
+Date: Wed, 1 Apr 2020 16:26:21 +0800
+In-Reply-To: <20200325094326.GH442973@dell>
+References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1583918223-22506-4-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <20200325094326.GH442973@dell>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20200328205809.23825-1-ardb@kernel.org>
- <20200330074721.GV22097@bivouac.eciton.net>
- <CAMj1kXFPtY20afbAZgXT3As4TUuAqi3=pG8u19hjMjFxgN6HWA@mail.gmail.com>
- <CAMj1kXEf5rT1pmDNQoOd5Tx9xQ=fUMT0xo4JXZNfz=VDY9268Q@mail.gmail.com>
- <DM5PR2101MB104760D03E632DD4DBE99AE1D7CB0@DM5PR2101MB1047.namprd21.prod.outlook.com>
- <CAMj1kXF+2O5cDC9zuNp9Lx9Oe6WyxRghPqSi63CnF+KCcGUZyw@mail.gmail.com>
- <CAMj1kXFJB9ciJ41V2tpQNX_mN7S8BweV9_ME3sDxKjwnR2Jwbg@mail.gmail.com>
- <91ce0460-ae47-8092-0dfa-4b7ff6edc283@redhat.com>
-In-Reply-To: <91ce0460-ae47-8092-0dfa-4b7ff6edc283@redhat.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 1 Apr 2020 10:24:17 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXFkZLCHD+35_FL-fZWH=y9HfCCUAKE357WF5i9De0x_7w@mail.gmail.com>
-Message-ID: <CAMj1kXFkZLCHD+35_FL-fZWH=y9HfCCUAKE357WF5i9De0x_7w@mail.gmail.com>
-Subject: Re: [PATCH] efi/libstub/arm64: avoid image_base value from
- efi_loaded_image
-To: Laszlo Ersek <lersek@redhat.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_012429_273249_3A59ABAC 
-X-CRM114-Status: GOOD (  26.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200401_012627_087658_3E9C916C 
+X-CRM114-Status: GOOD (  28.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,105 +84,246 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>,
- Boqun Feng <Boqun.Feng@microsoft.com>, Leif Lindholm <leif@nuviainc.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michael Kelley <mikelley@microsoft.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Josef Friedl <josef.friedl@speed.at>, Ran Bi <ran.bi@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
+ linux-kernel@vger.kernel.org, Richard
+ Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-pm@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 31 Mar 2020 at 21:20, Laszlo Ersek <lersek@redhat.com> wrote:
->
-> On 03/31/20 09:56, Ard Biesheuvel wrote:
-> > On Mon, 30 Mar 2020 at 20:24, Ard Biesheuvel <ardb@kernel.org> wrote:
-> >>
-> >> On Mon, 30 Mar 2020 at 20:12, Michael Kelley <mikelley@microsoft.com> wrote:
-> >>>
-> >>> From: Ard Biesheuvel <ardb@kernel.org>  Sent: Monday, March 30, 2020 12:51 AM
-> >>>>
-> >>>> On Mon, 30 Mar 2020 at 09:50, Ard Biesheuvel <ardb@kernel.org> wrote:
-> >>>>>
-> >>>>> On Mon, 30 Mar 2020 at 09:47, Leif Lindholm <leif@nuviainc.com> wrote:
-> >>>>>>
-> >>>>>> On Sat, Mar 28, 2020 at 21:58:09 +0100, Ard Biesheuvel wrote:
-> >>>>>>> Commit 9f9223778ef3 ("efi/libstub/arm: Make efi_entry() an ordinary
-> >>>>>>> PE/COFF entrypoint") did some code refactoring to get rid of the
-> >>>>>>> EFI entry point assembler code, and in the process, it got rid of the
-> >>>>>>> assignment of image_addr to the value of _text. Instead, it switched
-> >>>>>>> to using the image_base field of the efi_loaded_image struct provided
-> >>>>>>> by UEFI, which should contain the same value.
-> >>>>>>>
-> >>>>>>> However, Michael reports that this is not the case: older GRUB builds
-> >>>>>>> corrupt this value in some way, and since we can easily switch back to
-> >>>>>>> referring to _text to discover this value, let's simply do that.
-> >>>>>>
-> >>>>>> It is not clear to me how "older GRUB builds" would differ here.
-> >>>>>> I think more investigation is needed before making that claim.
-> >>>>>> My suspicion is that some (old) version of non-upstream, shim-enabled
-> >>>>>> distro-specific build is playing a part.
-> >>>>>>
-> >>>>>> So, do we have the option for more detailed investigations, or can we
-> >>>>>> vague the claim up to say "some GRUB builds seen in the wild, based
-> >>>>>> on an upstream 2.02" or suchlike?
-> >>>>>>
-> >>>>>
-> >>>>> I've queued a fix that prints a nastygram if the value deviates from
-> >>>>> the expected one. Let's see if this triggers any reports.
-> >>>>
-> >>>> (/me looks at context)
-> >>>>
-> >>>> *This* is the fix that prints a nastygram.
-> >>>
-> >>> FWIW, I pulled the BOOTAA64.EFI and grubaa64.efi files from CentOS 7.6
-> >>> and CentOS 8.0 binary packages and tested both in my Hyper-V VM.
-> >>> Using strings | grep '2\.' to get version info, the CentOS 7.6 grubaa64.efi
-> >>> shows:
-> >>>
-> >>>         User-Agent: GRUB 2.02~beta2
-> >>>
-> >>> The CentOS 8.0 grubaa64.efi shows:
-> >>>
-> >>>         User-Agent: GRUB 2.03
-> >>>
-> >>> Both versions produce the FIRMWARE BUG warning when using Ard's
-> >>> latest patch.  I'll assume the equivalent RHEL versions are the same.
-> >>> So we've got official distro releases that show the problem.
-> >>>
-> >>> As reported earlier, the BOOTAA64.EFI and grubaa64.efi from a
-> >>> Debian release (not exactly sure which one) do not produce the
-> >>> FIRMWARE BUG warning.  The grubaa64.efi reports as 2.04-4.
-> >>>
-> >>
-> >> Thanks a lot Michael, that is really helpful.
-> >
-> > I could not reproduce the issue with Debian Stretch's
-> > 2.02~beta3-5+deb9u2, so it does appear to be RedHat's value add that
-> > is to blame here.
-> >
-> > @Laszlo: TL;DR RedHat's GRUB for arm64 appears to clobber the
-> > image_base field of the efi_loaded_image struct passed to the kernel.
-> > Could you please recommend a way to report this?
->
-> Yes. I seem to recall that you already have an account at
-> <https://bugzilla.redhat.com/>. Please log in, then go to the following
-> link:
->
-> https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20Enterprise%20Linux%208
->
-> In the "Component" field, please enter "grub2", then fill in Summary /
-> Description / etc.
->
-> Please be thorough, as if you wanted me to reproduce the issue :)
->
-> After filing the bug, please send the BZ link to me (or add me to the
-> bug's CC list), so I can ping some RH bootloader folks directly.
->
+Hi,
 
-https://bugzilla.redhat.com/show_bug.cgi?id=1819624
+On Wed, 2020-03-25 at 09:43 +0000, Lee Jones wrote:
+> On Wed, 11 Mar 2020, Hsin-Hsiung Wang wrote:
+> 
+> > This adds support for the MediaTek MT6358 PMIC. This is a
+> > multifunction device with the following sub modules:
+> > 
+> > - Regulator
+> > - RTC
+> > - Codec
+> > - Interrupt
+> > 
+> > It is interfaced to the host controller using SPI interface
+> > by a proprietary hardware called PMIC wrapper or pwrap.
+> > MT6358 MFD is a child device of the pwrap.
+> > 
+> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> > ---
+> >  drivers/mfd/Makefile                 |   2 +-
+> >  drivers/mfd/mt6358-irq.c             | 236 +++++++++++++++++++++++++++++
+> >  drivers/mfd/mt6397-core.c            |  55 ++++++-
+> >  include/linux/mfd/mt6358/core.h      | 158 ++++++++++++++++++++
+> >  include/linux/mfd/mt6358/registers.h | 282 +++++++++++++++++++++++++++++++++++
+> >  include/linux/mfd/mt6397/core.h      |   3 +
+> >  6 files changed, 731 insertions(+), 5 deletions(-)
+> >  create mode 100644 drivers/mfd/mt6358-irq.c
+> >  create mode 100644 include/linux/mfd/mt6358/core.h
+> >  create mode 100644 include/linux/mfd/mt6358/registers.h
+> > 
+> > diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> > index b83f172..9af1414 100644
+> > --- a/drivers/mfd/Makefile
+> > +++ b/drivers/mfd/Makefile
+> > @@ -238,7 +238,7 @@ obj-$(CONFIG_INTEL_SOC_PMIC)	+= intel-soc-pmic.o
+> >  obj-$(CONFIG_INTEL_SOC_PMIC_BXTWC)	+= intel_soc_pmic_bxtwc.o
+> >  obj-$(CONFIG_INTEL_SOC_PMIC_CHTWC)	+= intel_soc_pmic_chtwc.o
+> >  obj-$(CONFIG_INTEL_SOC_PMIC_CHTDC_TI)	+= intel_soc_pmic_chtdc_ti.o
+> > -mt6397-objs	:= mt6397-core.o mt6397-irq.o
+> > +mt6397-objs			:= mt6397-core.o mt6397-irq.o mt6358-irq.o
+> >  obj-$(CONFIG_MFD_MT6397)	+= mt6397.o
+> >  obj-$(CONFIG_INTEL_SOC_PMIC_MRFLD)	+= intel_soc_pmic_mrfld.o
+> >  
+> > diff --git a/drivers/mfd/mt6358-irq.c b/drivers/mfd/mt6358-irq.c
+> > new file mode 100644
+> > index 0000000..022e5f5
+> > --- /dev/null
+> > +++ b/drivers/mfd/mt6358-irq.c
+> > @@ -0,0 +1,236 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +//
+> > +// Copyright (c) 2019 MediaTek Inc.
+> 
+> This is out of date.
+> 
 
-Thanks.
+Thanks. I will update it in the next patch.
+
+> > +#include <linux/interrupt.h>
+> > +#include <linux/mfd/mt6358/core.h>
+> > +#include <linux/mfd/mt6358/registers.h>
+> > +#include <linux/mfd/mt6397/core.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_device.h>
+> > +#include <linux/of_irq.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/regmap.h>
+> > +
+> > +static struct irq_top_t mt6358_ints[] = {
+> > +	MT6358_TOP_GEN(BUCK),
+> > +	MT6358_TOP_GEN(LDO),
+> > +	MT6358_TOP_GEN(PSC),
+> > +	MT6358_TOP_GEN(SCK),
+> > +	MT6358_TOP_GEN(BM),
+> > +	MT6358_TOP_GEN(HK),
+> > +	MT6358_TOP_GEN(AUD),
+> > +	MT6358_TOP_GEN(MISC),
+> > +};
+> > +
+> > +static void pmic_irq_enable(struct irq_data *data)
+> > +{
+> > +	unsigned int hwirq = irqd_to_hwirq(data);
+> > +	struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
+> 
+> 6397?
+> 
+> This does make me wonder how different this file is to the existing
+> support for the MT6397.  What is the justification for not extending
+> that instead of creating a brand new file?
+> 
+
+MT6358 is similar to MT6397 for mfd driver except the hardware design of
+interrupt which provides more interrupts than MT6397.
+I think MT6358 can reuse the other part of MT6397 mfd driver, so I only
+add the interrupt part of MT6358.
+
+> > +	struct pmic_irq_data *irqd = chip->irq_data;
+> > +
+> > +	irqd->enable_hwirq[hwirq] = true;
+> > +}
+> > +
+> > +static void pmic_irq_disable(struct irq_data *data)
+> > +{
+> > +	unsigned int hwirq = irqd_to_hwirq(data);
+> > +	struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
+> > +	struct pmic_irq_data *irqd = chip->irq_data;
+> > +
+> > +	irqd->enable_hwirq[hwirq] = false;
+> > +}
+> > +
+> > +static void pmic_irq_lock(struct irq_data *data)
+> > +{
+> > +	struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
+> > +
+> > +	mutex_lock(&chip->irqlock);
+> > +}
+> > +
+> > +static void pmic_irq_sync_unlock(struct irq_data *data)
+> > +{
+> > +	unsigned int i, top_gp, gp_offset, en_reg, int_regs, shift;
+> > +	struct mt6397_chip *chip = irq_data_get_irq_chip_data(data);
+> > +	struct pmic_irq_data *irqd = chip->irq_data;
+> > +
+> > +	for (i = 0; i < irqd->num_pmic_irqs; i++) {
+> > +		if (irqd->enable_hwirq[i] == irqd->cache_hwirq[i])
+> > +			continue;
+> > +
+> > +		/* Find out the IRQ group */
+> > +		top_gp = 0;
+> > +		while ((top_gp + 1) < irqd->num_top &&
+> > +		       i >= mt6358_ints[top_gp + 1].hwirq_base)
+> > +			top_gp++;
+> > +
+> > +		/* Find the irq registers */
+> 
+> Nit: "IRQ"
+> 
+
+Thanks. I will update it in the next patch.
+
+> > +		gp_offset = i - mt6358_ints[top_gp].hwirq_base;
+> > +		int_regs = gp_offset / MT6358_REG_WIDTH;
+> > +		shift = gp_offset % MT6358_REG_WIDTH;
+> > +		en_reg = mt6358_ints[top_gp].en_reg +
+> > +			 (mt6358_ints[top_gp].en_reg_shift * int_regs);
+> > +
+> > +		regmap_update_bits(chip->regmap, en_reg, BIT(shift),
+> > +				   irqd->enable_hwirq[i] << shift);
+> > +
+> > +		irqd->cache_hwirq[i] = irqd->enable_hwirq[i];
+> > +	}
+> > +	mutex_unlock(&chip->irqlock);
+> > +}
+> 
+> [...]
+> 
+> > +int mt6358_irq_init(struct mt6397_chip *chip)
+> > +{
+> > +	int i, j, ret;
+> > +	struct pmic_irq_data *irqd;
+> > +
+> > +	irqd = devm_kzalloc(chip->dev, sizeof(struct pmic_irq_data *),
+> 
+> sizeof(*irqd)
+> 
+
+Thanks. I will update it in the next patch.
+
+> [...]
+> 
+> >  static const struct chip_data mt6397_core = {
+> >  	.cid_addr = MT6397_CID,
+> >  	.cid_shift = 0,
+> > @@ -154,19 +184,33 @@ static int mt6397_probe(struct platform_device *pdev)
+> >  	if (pmic->irq <= 0)
+> >  		return pmic->irq;
+> >  
+> > -	ret = mt6397_irq_init(pmic);
+> > -	if (ret)
+> > -		return ret;
+> > -
+> >  	switch (pmic->chip_id) {
+> >  	case MT6323_CHIP_ID:
+> > +		ret = mt6397_irq_init(pmic);
+> > +		if (ret)
+> > +			return ret;
+> > +
+> >  		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
+> >  					   mt6323_devs, ARRAY_SIZE(mt6323_devs),
+> >  					   NULL, 0, pmic->irq_domain);
+> >  		break;
+> >  
+> > +	case MT6358_CHIP_ID:
+> > +		ret = mt6358_irq_init(pmic);
+> > +		if (ret)
+> > +			return ret;
+> > +
+> > +		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
+> > +					   mt6358_devs, ARRAY_SIZE(mt6358_devs),
+> > +					   NULL, 0, pmic->irq_domain);
+> 
+> In a subsequent patch you can choose the correct mtXXXX_devs structure
+> to pass and call devm_mfd_add_devices() only once below the switch().
+> 
+
+Thanks for your comment. I will rewrite this in the next patch.
+
+> > +		break;
+> > +
+> >  	case MT6391_CHIP_ID:
+> >  	case MT6397_CHIP_ID:
+> > +		ret = mt6397_irq_init(pmic);
+> > +		if (ret)
+> > +			return ret;
+> > +
+> >  		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
+> >  					   mt6397_devs, ARRAY_SIZE(mt6397_devs),
+> >  					   NULL, 0, pmic->irq_domain);
+> 
+> [...]
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
