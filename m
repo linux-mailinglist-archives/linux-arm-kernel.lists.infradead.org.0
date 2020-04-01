@@ -2,51 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6016219B13B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 18:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81EE219B422
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 18:55:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4nCCOAugD3WGrKY67t1iHAUB1QAhJgknvOogGjod51o=; b=RMgYRLRNml+n9R
-	aW4HKwP8mjnCucgX6qtI/T1aOfWYf7zrZlJN1p6/yYbzRAfp4/dGu3iB12khrDkN/9uWQOGPLz3lJ
-	VBJj91ie2onQ/p9sB3nbx05/dQfaW/rgSQbzdN7/QGZyLM+SgOzBMwE8vTxnslPOnBYWFDVGjZiJi
-	R1tpkzLA3CYOmYU19S2Y3GuxX/NUuzkN7S2H7xNLXLHvT9TKKx5FZ2Dxc+nzktWD5XxtGemUH5Edg
-	SXoHlWgN51fbQItSEsDrboaLI/mk6VMVM7rfDWICKEh4Ee1q1N1hcQoyWmOKRVIqDfx71FevVGZrj
-	ZV3wzfDsd7w8N/SLRgng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y2kU9JvXehD5j3Vs3x1intbtjEopXdJTG3H98s04/70=; b=K7vc+YphAP1GDY
+	8Qvia2NutLTKPN/57WzQwCqwSxsfGN0b37t5EryDtZdH4uWE2wU84wNFXTsfTDZdoHGX6rWLBks+P
+	fag4lpi3ohCVA3CjJuYR0vPhFAa4/S/N1jZ8iTL7qYvAf9xTAa7P3WX/HiSjX7JvpmZaLLrWF8KbR
+	rY9XOQGDo50+WGeZZSBvjHpp86RcIA2dUDNlSfKyHp7s765fPSTlyoTqdrm+hc1fivb0Q2R80xBb1
+	onTSEVrYy0U0IEqWSLCLfsTGW9Raf49laZI+IdZoMApG5JeIAbVsKbzK/9rbBkzYOgQhy7KQyJ7am
+	4iSzATWpo8uJFLEMHXJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJgK0-0006To-LG; Wed, 01 Apr 2020 16:34:32 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jJgeY-00068y-H8; Wed, 01 Apr 2020 16:55:46 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJgJu-0006SX-D8; Wed, 01 Apr 2020 16:34:28 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jJgJl-0003TS-Fj; Wed, 01 Apr 2020 18:34:17 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: =?ISO-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@collabora.com>
-Subject: Re: [PATCH v2 1/2] soc: rockchip: Register a soc_device to retrieve
- revision
-Date: Wed, 01 Apr 2020 18:34:16 +0200
-Message-ID: <5143930.cPWVAAQKI9@diego>
-In-Reply-To: <20200401153513.423683-2-mylene.josserand@collabora.com>
-References: <20200401153513.423683-1-mylene.josserand@collabora.com>
- <20200401153513.423683-2-mylene.josserand@collabora.com>
+ id 1jJgeT-00067k-6R
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 16:55:42 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id A2F2C5800E4;
+ Wed,  1 Apr 2020 12:55:36 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Wed, 01 Apr 2020 12:55:36 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=1
+ HvVrQVgf8h1xwI4xlSisY5uAmH78ioNToEd5ZqROGo=; b=dLRSLCXF4QI/ZvstT
+ RTK/iKO7vJFrPwPmtUOFhf71BqNsFb9xL5thVfMoFcY8Z1KdDJrtiBN9x0XDxX6R
+ WDYmkfZ0VtyLDjfvKrF0t6rRZ3TUVu9kU0i2UzUWfKhSSIFbDnraFtPppKAJB7be
+ kiYF8FWjEAQR3qeifFoLajBSPF43EP0JqkTXcOq6rDlRn7s5fC1SzUIfVzVargsI
+ iuF9dj8uYJhodSktI7ajo2LwysdyM/5iDLWJhT6Ykzp5EkJef8qAR57TafoLwAuW
+ EJo5wDMk8sinT6vK9NIZcTGJ68eH8PvkpnKd1mYYwgB2p62neUW+7rpbqnU+S4Sn
+ I5vvw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=1HvVrQVgf8h1xwI4xlSisY5uAmH78ioNToEd5ZqRO
+ Go=; b=pV/3AZI7xio9jPNP/fQsHuqkYqEftJWH2VRcjCrZpmJ5hn7/JJ1nXZj0U
+ zxQq6KAnO+Dx/QIbe4KTTMGLw0OJKJ2zrwoJlHTOOhHKvWOhWPbM4t4t27hCXvBJ
+ pyd6NLuCV82QXwlN57vspRGKjTXNGtMtAxnvD24VXi9LxaKvVxM/h6rWkZ/QFiZn
+ QVvCWY8+3wP40ns/o7yt7etVkCHQ1RCk6keyLgywj1DVnd9jt3zhrPiHkBisYqNK
+ n/laYmia4QoMeAOCmU6tNTwsl2o2uVjszN6aBFwOyPE0n5oOD42i1cA6WLtvVtIF
+ x+om72uu9LgFVzPzURFYCtuScpbOg==
+X-ME-Sender: <xms:h8eEXi_AC7cBT8VflyA_pQ4vzWVbRahRqpTXNfmfILTHnHsDFFJS1g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrtddvgddutdeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepuffvfhfhkffffgggjggtgfesthejredttdefjeenucfhrhhomhepufgrmhhu
+ vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecuff
+ homhgrihhnpehkvghrnhgvlhdrohhrghenucfkphepjedtrddufeehrddugeekrdduhedu
+ necuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepshgrmh
+ huvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:h8eEXjA83Kbeeuchm-TFfZ-_rgepSDMLFcq6TLmo-TQ6RkH4jBXvfg>
+ <xmx:h8eEXvqjowOwm8XxVq6BQhy3O4iesWDDdywZyitqcrxONwrF05ZIow>
+ <xmx:h8eEXlEfqVLVCSou99VtCYzV9opFB3iwNNE99Q3kmsEEQolVgonZGA>
+ <xmx:iMeEXhRRLxhty-Sm4IOQ0Odd5b6pnsFRi6C9HwCwbRdbaPBi-OpyJA>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id DF8CD3280065;
+ Wed,  1 Apr 2020 12:55:34 -0400 (EDT)
+Subject: Re: [PATCH v7 0/6] Allwinner sun6i message box support
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
+References: <20200223040853.2658-1-samuel@sholland.org>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <59dc1ee9-a369-7cf9-df6a-4b5b99e24324@sholland.org>
+Date: Wed, 1 Apr 2020 11:55:34 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
+In-Reply-To: <20200223040853.2658-1-samuel@sholland.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_093426_595527_DC694538 
-X-CRM114-Status: GOOD (  23.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200401_095541_445460_0E59C800 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,226 +107,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- kever.yang@rock-chips.com, linux-rockchip@lists.infradead.org,
- geert@linux-m68k.org, kernel@collabora.com, linux-clk@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
+ devicetree@vger.kernel.org, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Myl=E8ne,
+On 2/22/20 10:08 PM, Samuel Holland wrote:
+> Samuel Holland (6):
+>   dt-bindings: mailbox: Add a binding for the sun6i msgbox
+>   mailbox: sun6i-msgbox: Add a new mailbox driver
 
-Am Mittwoch, 1. April 2020, 17:35:12 CEST schrieb Myl=E8ne Josserand:
-> Determine which revision of rk3288 by checking the HDMI version.
-> According to the Rockchip BSP kernel/u-boot, on rk3288w, the HDMI
-> revision equals 0x1A which is not the case for the rk3288.
-> =
+These two patches have been applied for 5.7[1], so the DTS changes should be
+ready to apply as well.
 
-> As these SOC have some differences, this driver will help us
-> to know on which revision we are by using 'soc_device' registration
-> to be able to use 'soc_device_match' to detect rk3288/rk3288w.
-> =
+[1]:
+https://lore.kernel.org/lkml/CABb+yY0-q+5+pqP-rBHCYpw-LmT+h80+OU26XL34fTrXhO+T3Q@mail.gmail.com/
 
-> Signed-off-by: Myl=E8ne Josserand <mylene.josserand@collabora.com>
+Cheers,
+Samuel
 
-I like your new approach quite a lot :-)
-
-There are some things we need to take into account though, see below.
-
-
-> ---
->  drivers/soc/rockchip/Makefile |   1 +
->  drivers/soc/rockchip/rk3288.c | 125 ++++++++++++++++++++++++++++++++++
->  2 files changed, 126 insertions(+)
->  create mode 100644 drivers/soc/rockchip/rk3288.c
-> =
-
-> diff --git a/drivers/soc/rockchip/Makefile b/drivers/soc/rockchip/Makefile
-> index afca0a4c4b72..9dbf12913512 100644
-> --- a/drivers/soc/rockchip/Makefile
-> +++ b/drivers/soc/rockchip/Makefile
-> @@ -2,5 +2,6 @@
->  #
->  # Rockchip Soc drivers
->  #
-> +obj-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3288.o
->  obj-$(CONFIG_ROCKCHIP_GRF) +=3D grf.o
->  obj-$(CONFIG_ROCKCHIP_PM_DOMAINS) +=3D pm_domains.o
-> diff --git a/drivers/soc/rockchip/rk3288.c b/drivers/soc/rockchip/rk3288.c
-
-I'd really like this to be a soc.c instead of rk3288.c ;-)
-
-
-> new file mode 100644
-> index 000000000000..83379ba2b31b
-> --- /dev/null
-> +++ b/drivers/soc/rockchip/rk3288.c
-> @@ -0,0 +1,125 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2020 Collabora Ltd
-> + * Author: Mylene Josserand <mylene.josserand@collabora.com>
-> + */
-> +
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/of_address.h>
-> +#include <linux/sys_soc.h>
-> +#include <linux/slab.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of.h>
-> +
-> +#define RK3288_HDMI_REV_REG	0x04
-> +#define RK3288W_HDMI_REV	0x1A
-> +
-> +enum rk3288_soc_rev {
-> +	RK3288_SOC_REV_NOT_DETECT,
-> +	RK3288_SOC_REV_RK3288,
-> +	RK3288_SOC_REV_RK3288W,
-> +};
-> +
-> +static int rk3288_revision(void)
-> +{
-> +	static int revision =3D RK3288_SOC_REV_NOT_DETECT;
-> +	struct device_node *dn;
-> +	void __iomem *hdmi_base;
-> +
-> +	if (revision !=3D RK3288_SOC_REV_NOT_DETECT)
-> +		return revision;
-> +
-> +	dn =3D of_find_compatible_node(NULL, NULL, "rockchip,rk3288-dw-hdmi");
-> +	if (!dn) {
-> +		pr_err("%s: Couldn't find HDMI node\n", __func__);
-> +		return -EINVAL;
-> +	}
-> +
-> +	hdmi_base =3D of_iomap(dn, 0);
-> +	of_node_put(dn);
-> +
-> +	if (!hdmi_base) {
-> +		pr_err("%s: Couldn't map %pOF regs\n", __func__,
-> +		       hdmi_base);
-> +		return -ENXIO;
-> +	}
-
-The possible problem I see here is clocking and power-domain of the hdmi
-controller in corner-cases. In the past we already had a lot of fun with
-kexec, which also indicates that people actually use kexec productively.
-
-So while all clocks are ungated and all power-domains are powered on first
-boot, on a system without graphics the pclk+power-domain could be off when
-doing a kexec into a second kernel, which then would probably hang here.
-
-
-Of course with the hdmi-pclk being sourced from hclk_vio we run into a
-chicken-egg-problem, as we need pclk_hdmi_ctrl to register hclk_vio at all.
-
-So I guess one way out of this could be to
-- amend rk3288_clk_shutdown() to also ungate the hdmi-pclk on shutdown
-- add a shutdown mechanism to the power-domain driver so that it can
-  enable PD_VIO on shutdown
-
-> +
-> +	if (readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG)
-> +	    =3D=3D RK3288W_HDMI_REV)
-
-nit: a nicer look would be something like
-	val =3D readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG);
-	if (val =3D=3D RK3288W_HDMI_REV)
-
-> +		revision =3D RK3288_SOC_REV_RK3288W;
-> +	else
-> +		revision =3D RK3288_SOC_REV_RK3288;
-> +
-> +	iounmap(hdmi_base);
-> +
-> +	return revision;
-> +}
-> +
-> +static const char *rk3288_socinfo_revision(u32 rev)
-> +{
-> +	const char *soc_rev;
-> +
-> +	switch (rev) {
-> +	case RK3288_SOC_REV_RK3288:
-> +		soc_rev =3D "RK3288";
-> +		break;
-> +
-> +	case RK3288_SOC_REV_RK3288W:
-> +		soc_rev =3D "RK3288w";
-
-can we maybe use lower-case letters for all here?
-
-> +		break;
-> +
-> +	case RK3288_SOC_REV_NOT_DETECT:
-> +		soc_rev =3D "";
-> +		break;
-> +
-> +	default:
-> +		soc_rev =3D "unknown";
-> +		break;
-> +	}
-> +
-> +	return kstrdup_const(soc_rev, GFP_KERNEL);
-> +}
-> +
-> +static const struct of_device_id rk3288_soc_match[] =3D {
-> +	{ .compatible =3D "rockchip,rk3288", },
-> +	{ }
-> +};
-> +
-> +static int __init rk3288_soc_init(void)
-
-as noted at the top, I'd really like to see this more generalized so that
-other socs can just hook in there with a revision callback in a
-rockchip_soc_data struct.
-
-
-> +{
-> +	struct soc_device_attribute *soc_dev_attr;
-> +	struct soc_device *soc_dev;
-> +	struct device_node *np;
-> +
-> +	np =3D of_find_matching_node(NULL, rk3288_soc_match);
-> +	if (!np)
-> +		return -ENODEV;
-> +
-> +	soc_dev_attr =3D kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
-> +	if (!soc_dev_attr)
-> +		return -ENOMEM;
-> +
-> +	soc_dev_attr->family =3D "Rockchip";
-> +	soc_dev_attr->soc_id =3D "RK32xx";
-
-nit: rk3288 instead of "32xx" please
-
-> +
-> +	np =3D of_find_node_by_path("/");
-> +	of_property_read_string(np, "model", &soc_dev_attr->machine);
-> +	of_node_put(np);
-> +
-> +	soc_dev_attr->revision =3D rk3288_socinfo_revision(rk3288_revision());
-> +
-> +	soc_dev =3D soc_device_register(soc_dev_attr);
-> +	if (IS_ERR(soc_dev)) {
-> +		kfree_const(soc_dev_attr->revision);
-> +		kfree_const(soc_dev_attr->soc_id);
-> +		kfree(soc_dev_attr);
-> +		return PTR_ERR(soc_dev);
-> +	}
-> +
-> +	dev_info(soc_device_to_device(soc_dev), "Rockchip %s %s detected\n",
-> +		 soc_dev_attr->soc_id, soc_dev_attr->revision);
-
-nit: dev_dbg should be enough, that information doesn't really matter for
-most people, as it's only relevant to clock internals.
-
-
-Heiko
-
+>   ARM: dts: sunxi: a83t: Add msgbox node
+>   ARM: dts: sunxi: h3/h5: Add msgbox node
+>   arm64: dts: allwinner: a64: Add msgbox node
+>   arm64: dts: allwinner: h6: Add msgbox node
+> 
+>  .../mailbox/allwinner,sun6i-a31-msgbox.yaml   |  80 +++++
+>  arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
+>  arch/arm/boot/dts/sunxi-h3-h5.dtsi            |  10 +
+>  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  10 +
+>  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  10 +
+>  drivers/mailbox/Kconfig                       |   9 +
+>  drivers/mailbox/Makefile                      |   2 +
+>  drivers/mailbox/sun6i-msgbox.c                | 326 ++++++++++++++++++
+>  8 files changed, 457 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+>  create mode 100644 drivers/mailbox/sun6i-msgbox.c
+> 
 
 
 _______________________________________________
