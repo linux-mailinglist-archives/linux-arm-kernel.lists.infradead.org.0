@@ -2,68 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5876019A27A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 01:28:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F72819A9B0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 12:38:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8oJRtGIuON3KWmAeSunqSUx9AGOVaII5MvhG+rFviZI=; b=mtRd1HTLNiZyYs
-	tlVfPBBYwQpvpgfoQPXPH+BWX+rId0Jb/FTaR7DLR4U+kKX7NW5pwHw+RDaQZ8oiuszuW2AF3Jo3q
-	cTSB+s6eix5fHFYLrLIeoNQAHxUJk3v9jcNnrNz50s6SxOE7iqowBPtC8HBPE7UoBUbTWTC+aSlAQ
-	3QPt+B+WTjd/JmC2riLomr8qWOrdLdwEYDnEWp+RLiHPlga5CEFGa6RyzJAGa0ZpAsZYblxuWdr/7
-	Gp6Jd2NhMCa+jdLzS6Ekofz/SbU4Z8Cn8cWgBRg1QHostW8w0oWo7L6MYKAOwJmDX//2oBxFo239h
-	0SCo51ZjEnyOonRodsXQ==;
+	List-Owner; bh=tnvMXr8BYcLC7dRRWw7Qruq9rfpjcReqUo0BAvqXbc4=; b=FWzUqBqW5Vw3Np
+	g0GYpfyEQHjLCxx42ZTIJE5yQOYAo6fEY3e/y5aC1S5c9K+EIhvTmgR07qiSF0NpWhKrRYn9tKtj2
+	nauXzbYDwPt5rpfmIUy5ApL9jn9vkf6JMv2FWnXl77VpR2+pQ7ScKTqjZ3z8Zj2+qUoDWafp5RB9T
+	vC7myejqTscGjtqHFhzWUEbuiQp+gVyyoCF5M6QL6B7ccfCRaL0n9gYixK8F87LVpOGvuv4lhFEpp
+	uTpTRg6/EESf/2x3vnJzy5qyNzLcieHUc6jgoDCz4UAXiFj/YgSllcJAGbBFenqTu4xZUAJKUYASc
+	AYAyQrJL3iLQNcquOBlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJQJG-0003Yb-KN; Tue, 31 Mar 2020 23:28:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jJakt-0001nt-FA; Wed, 01 Apr 2020 10:37:55 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJQJ5-0003Xk-OR; Tue, 31 Mar 2020 23:28:33 +0000
-Received: from mail-ed1-f41.google.com (mail-ed1-f41.google.com
- [209.85.208.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jJaki-0001it-AU
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 10:37:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585737460;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=RUpxmRN4twru0bIi7VknK4K+lKRCP04ScEp4cAJ17Oo=;
+ b=cU337rV9yoMGb2tSr7T5HmsEJdlIpm1Wx8SWKjE4MaXDqOM6ifdXYELAuNHy9Wrwzr1yJx
+ IjWRJ3CaCnbVFCD1Hg9/tvu8Bicg39zJvqFoq90I0ZYvr2AhG87twUtqaJ3h2it1YYJTsg
+ mOz/DCYVZkgCZSybqzJSobbCXxsVyzY=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-328-OTHgpj1UNlCNqO1lIN--sg-1; Wed, 01 Apr 2020 06:37:36 -0400
+X-MC-Unique: OTHgpj1UNlCNqO1lIN--sg-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B43B21707;
- Tue, 31 Mar 2020 23:28:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585697311;
- bh=l7zMYSntV7hVq8rfpu63wjGejX5IPF+uFcD9Vs6O3I8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=MUvJi6wRPlDITY6PDh0q/OLcS+7pn4GJTp71mf2egrupLmdVom35B4dl/FNfYMSL9
- jvuFOF66rSY6u/g+qJ+tdnewpVmwV4npcvCkbIEEJWd7iaq1I5cAeVEpwD4jZxO/Cs
- hA9NxsSqQJa8j8pW9q2zjQp8YdQnPB3oIcVKIFO8=
-Received: by mail-ed1-f41.google.com with SMTP id w26so27445719edu.7;
- Tue, 31 Mar 2020 16:28:31 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ00PqpGUaWZjDyhymn5MUL2BdecUMdwOgBdWnAvgP2J/SX4pG2V
- NgTE+N1pzl7X9albp4J+uwQBBs8uqFjmsAZHOg==
-X-Google-Smtp-Source: ADFU+vs8xTP/4fNCKc/Lkxq6axyfNY0WeUUpH6PAk0Z4p/Dm89IelQXjsghn8yHY1mTBx4UE/MzCvvq1r5Omz1grjaY=
-X-Received: by 2002:a05:6402:b70:: with SMTP id
- cb16mr6166633edb.48.1585697309577; 
- Tue, 31 Mar 2020 16:28:29 -0700 (PDT)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4EAE18018C8;
+ Wed,  1 Apr 2020 10:37:34 +0000 (UTC)
+Received: from mail (ovpn-112-247.rdu2.redhat.com [10.10.112.247])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 6778F5D9CD;
+ Wed,  1 Apr 2020 10:37:31 +0000 (UTC)
+Date: Tue, 31 Mar 2020 20:32:03 -0400
+From: Andrea Arcangeli <aarcange@redhat.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 3/3] arm64: tlb: skip tlbi broadcast
+Message-ID: <20200401003203.GA12536@redhat.com>
+References: <20200223192520.20808-1-aarcange@redhat.com>
+ <20200223192520.20808-4-aarcange@redhat.com>
+ <20200309112242.GB2487@mbp> <20200314031609.GB2250@redhat.com>
+ <20200316140906.GA6220@lakrids.cambridge.arm.com>
+ <20200331094034.GA1131@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-References: <20200331214609.1742152-1-enric.balletbo@collabora.com>
- <20200331214609.1742152-3-enric.balletbo@collabora.com>
-In-Reply-To: <20200331214609.1742152-3-enric.balletbo@collabora.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Wed, 1 Apr 2020 07:28:19 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_-wt1shM7RGTquTmej3VeCNXUy9ByxN+T56qDYG-MeJeA@mail.gmail.com>
-Message-ID: <CAAOTY_-wt1shM7RGTquTmej3VeCNXUy9ByxN+T56qDYG-MeJeA@mail.gmail.com>
-Subject: Re: [PATCH 3/4] clk / soc: mediatek: Bind clock and gpu driver for
- mt2701
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20200331094034.GA1131@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.13.4 (2020-02-15)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_162831_832799_14386CA9 
-X-CRM114-Status: GOOD (  17.80  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200401_033744_452254_DA3235F9 
+X-CRM114-Status: GOOD (  24.42  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,73 +93,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Matthias Brugger <mbrugger@suse.com>, Richard Fontana <rfontana@redhat.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michael Turquette <mturquette@baylibre.com>, matthias.bgg@kernel.org,
- linux-kernel@vger.kernel.org, ulrich.hecht+renesas@gmail.com,
- Nicolas Boichat <drinkcat@chromium.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, hsinyi@chromium.org,
- CK Hu <ck.hu@mediatek.com>, Thomas Gleixner <tglx@linutronix.de>,
- Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
- Allison Randal <allison@lohutok.net>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: QI Fuli <qi.fuli@fujitsu.com>, Rafael Aquini <aquini@redhat.com>,
+ Jon Masters <jcm@jonmasters.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Mark Salter <msalter@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEVucmljOgoKRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFi
-b3JhLmNvbT4g5pa8IDIwMjDlubQ05pyIMeaXpSDpgLHkuIkg5LiK5Y2INTo0N+Wvq+mBk++8mgo+
-Cj4gTm93IHRoYXQgdGhlIG1tc3lzIGRyaXZlciBpcyB0aGUgdG9wLWxldmVsIGVudHJ5IHBvaW50
-IGZvciB0aGUKPiBtdWx0aW1lZGlhIHN1YnN5c3RlbSwgd2UgY291bGQgYmluZCB0aGUgY2xvY2sg
-YW5kIHRoZSBncHUgZHJpdmVyIG9uCj4gdGhvc2UgZGV2aWNlcyB0aGF0IGlzIGV4cGVjdGVkIHRv
-IHdvcmssIHNvIHRoZSBkcm0gZHJpdmVyIGlzCj4gaW50YW50aWF0ZWQgYnkgdGhlIG1tc3lzIGRy
-aXZlciBhbmQgZGlzcGxheSwgaG9wZWZ1bGx5LCB3b3JraW5nIGFnYWluLgoKUmV2aWV3ZWQtYnk6
-IENodW4tS3VhbmcgSHUgPGNodW5rdWFuZy5odUBrZXJuZWwub3JnPgoKPgo+IFNpZ25lZC1vZmYt
-Ynk6IEVucmljIEJhbGxldGJvIGkgU2VycmEgPGVucmljLmJhbGxldGJvQGNvbGxhYm9yYS5jb20+
-Cj4gLS0tCj4gSWYgeW91IGhhdmUgdGhpcyBoYXJkd2FyZSwgcGxlYXNlIGtpbmRseSBwcm92aWRl
-IHlvdXIgdGVzdGVkIHRhZy4gT25seQo+IGJ1aWxkIHRlc3RlZC4KPgo+ICBkcml2ZXJzL2Nsay9t
-ZWRpYXRlay9jbGstbXQyNzAxLW1tLmMgfCA4ICsrLS0tLS0tCj4gIGRyaXZlcnMvc29jL21lZGlh
-dGVrL210ay1tbXN5cy5jICAgICB8IDggKysrKysrKysKPiAgMiBmaWxlcyBjaGFuZ2VkLCAxMCBp
-bnNlcnRpb25zKCspLCA2IGRlbGV0aW9ucygtKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xr
-L21lZGlhdGVrL2Nsay1tdDI3MDEtbW0uYyBiL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDI3
-MDEtbW0uYwo+IGluZGV4IDA1NGI1OTdkNGE3My4uM2E0ZTg5NWEzZDBmIDEwMDY0NAo+IC0tLSBh
-L2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDI3MDEtbW0uYwo+ICsrKyBiL2RyaXZlcnMvY2xr
-L21lZGlhdGVrL2Nsay1tdDI3MDEtbW0uYwo+IEBAIC03OSwxNiArNzksMTIgQEAgc3RhdGljIGNv
-bnN0IHN0cnVjdCBtdGtfZ2F0ZSBtbV9jbGtzW10gPSB7Cj4gICAgICAgICBHQVRFX0RJU1AxKENM
-S19NTV9UVkVfRk1NLCAibW1fdHZlX2ZtbSIsICJtbV9zZWwiLCAxNCksCj4gIH07Cj4KPiAtc3Rh
-dGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgb2ZfbWF0Y2hfY2xrX210MjcwMV9tbVtdID0g
-ewo+IC0gICAgICAgeyAuY29tcGF0aWJsZSA9ICJtZWRpYXRlayxtdDI3MDEtbW1zeXMiLCB9LAo+
-IC0gICAgICAge30KPiAtfTsKPiAtCj4gIHN0YXRpYyBpbnQgY2xrX210MjcwMV9tbV9wcm9iZShz
-dHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICB7Cj4gKyAgICAgICBzdHJ1Y3QgZGV2aWNl
-ICpkZXYgPSAmcGRldi0+ZGV2Owo+ICsgICAgICAgc3RydWN0IGRldmljZV9ub2RlICpub2RlID0g
-ZGV2LT5wYXJlbnQtPm9mX25vZGU7Cj4gICAgICAgICBzdHJ1Y3QgY2xrX29uZWNlbGxfZGF0YSAq
-Y2xrX2RhdGE7Cj4gICAgICAgICBpbnQgcjsKPiAtICAgICAgIHN0cnVjdCBkZXZpY2Vfbm9kZSAq
-bm9kZSA9IHBkZXYtPmRldi5vZl9ub2RlOwo+Cj4gICAgICAgICBjbGtfZGF0YSA9IG10a19hbGxv
-Y19jbGtfZGF0YShDTEtfTU1fTlIpOwo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc29jL21lZGlh
-dGVrL210ay1tbXN5cy5jIGIvZHJpdmVycy9zb2MvbWVkaWF0ZWsvbXRrLW1tc3lzLmMKPiBpbmRl
-eCBjN2QzYjdiY2ZhMzIuLmNhY2FmZTIzYzgyMyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3NvYy9t
-ZWRpYXRlay9tdGstbW1zeXMuYwo+ICsrKyBiL2RyaXZlcnMvc29jL21lZGlhdGVrL210ay1tbXN5
-cy5jCj4gQEAgLTgwLDYgKzgwLDEwIEBAIHN0cnVjdCBtdGtfbW1zeXNfZHJpdmVyX2RhdGEgewo+
-ICAgICAgICAgY29uc3QgY2hhciAqY2xrX2RyaXZlcjsKPiAgfTsKPgo+ICtzdGF0aWMgY29uc3Qg
-c3RydWN0IG10a19tbXN5c19kcml2ZXJfZGF0YSBtdDI3MDFfbW1zeXNfZHJpdmVyX2RhdGEgPSB7
-Cj4gKyAgICAgICAuY2xrX2RyaXZlciA9ICJjbGstbXQyNzAxLW1tIiwKPiArfTsKPiArCj4gIHN0
-YXRpYyBjb25zdCBzdHJ1Y3QgbXRrX21tc3lzX2RyaXZlcl9kYXRhIG10MjcxMl9tbXN5c19kcml2
-ZXJfZGF0YSA9IHsKPiAgICAgICAgIC5jbGtfZHJpdmVyID0gImNsay1tdDI3MTItbW0iLAo+ICB9
-Owo+IEBAIC0zMjMsNiArMzI3LDEwIEBAIHN0YXRpYyBpbnQgbXRrX21tc3lzX3Byb2JlKHN0cnVj
-dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIH0KPgo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IG9m
-X2RldmljZV9pZCBvZl9tYXRjaF9tdGtfbW1zeXNbXSA9IHsKPiArICAgICAgIHsKPiArICAgICAg
-ICAgICAgICAgLmNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQyNzAxLW1tc3lzIiwKPiArICAgICAg
-ICAgICAgICAgLmRhdGEgPSAmbXQyNzAxX21tc3lzX2RyaXZlcl9kYXRhLAo+ICsgICAgICAgfSwK
-PiAgICAgICAgIHsKPiAgICAgICAgICAgICAgICAgLmNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQy
-NzEyLW1tc3lzIiwKPiAgICAgICAgICAgICAgICAgLmRhdGEgPSAmbXQyNzEyX21tc3lzX2RyaXZl
-cl9kYXRhLAo+IC0tCj4gMi4yNS4xCj4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCj4gTGludXgtbWVkaWF0ZWsgbWFpbGluZyBsaXN0Cj4gTGludXgt
-bWVkaWF0ZWtAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtbWVkaWF0ZWsKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hello Mark,
+
+On Tue, Mar 31, 2020 at 10:45:11AM +0100, Mark Rutland wrote:
+> Hi Andrea,
+> 
+> On Mon, Mar 16, 2020 at 02:09:07PM +0000, Mark Rutland wrote:
+> > AFAICT, this series relies on:
+> > 
+> > * An ISB completing prior page table walks when updating TTBR. I don't
+> >   believe this is necessarily the case, given how things work for an
+> >   EL1->EL2 transition where there can be ongoing EL1 walks.
+> 
+> I've had confirmation that a DSB is necessary (after the MSR and ISB) to
+> complete any ongoing translation table walks for the stale context.
+> 
+> Without a DSB, those walks can observe subsequent stores and encounter
+> the usual set of CONSTRAINED UNPREDICTABLE behaviours (e.g. walking into
+> MMIO with side-effects, continuing from amalgamted entries, etc). Those
+> issues are purely to do with the walk, and apply regardless of whether
+> the resulting translations are architecturally consumed.
+
+Ok, sorry I didn't get it earlier... I attempted a quick fix below.
+
+From ab30d8082be62fe24a97eceec5dbfeea8e278511 Mon Sep 17 00:00:00 2001
+From: Andrea Arcangeli <aarcange@redhat.com>
+Date: Tue, 31 Mar 2020 20:03:43 -0400
+Subject: [PATCH 1/1] arm64: tlb: skip tlbi broadcast, fix speculative tlb
+ lookups
+
+Without DSB in between "MSR; ISB" and "atomic_dec(&nr_active_mm)"
+there's the risk a speculative pagecache lookup may still be walking
+pagetables of the unloaded asid after nr_active_mm has been
+decreased. In such case the remote CPU could free the pagetables and
+reuse the memory without first issuing a tlbi broadcast, while the
+speculative tlb lookup still runs on the unloaded asid. For this
+reason the speculative pagetable walks needs to be flushed before
+decreasing nr_active_mm.
+
+Signed-off-by: Andrea Arcangeli <aarcange@redhat.com>
+---
+ arch/arm64/include/asm/mmu_context.h | 20 +++++++++++++++++++-
+ 1 file changed, 19 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/include/asm/mmu_context.h b/arch/arm64/include/asm/mmu_context.h
+index 9c66fe317e2f..d821ea3ce839 100644
+--- a/arch/arm64/include/asm/mmu_context.h
++++ b/arch/arm64/include/asm/mmu_context.h
+@@ -210,8 +210,18 @@ enter_lazy_tlb(struct mm_struct *mm, struct task_struct *tsk)
+ 	if (per_cpu(cpu_not_lazy_tlb, cpu) &&
+ 	    is_idle_task(tsk)) {
+ 		per_cpu(cpu_not_lazy_tlb, cpu) = false;
+-		if (!system_uses_ttbr0_pan())
++		if (!system_uses_ttbr0_pan()) {
+ 			cpu_set_reserved_ttbr0();
++			/*
++			 * DSB will flush the speculative pagetable
++			 * walks on the old asid. It's required before
++			 * decreasing nr_active_mm because after
++			 * decreasing nr_active_mm the tlbi broadcast
++			 * may not happen on the unloaded asid before
++			 * the pagetables are freed.
++			 */
++			dsb(ish);
++		}
+ 		atomic_dec(&mm->context.nr_active_mm);
+ 	}
+ 	VM_WARN_ON(atomic_read(&mm->context.nr_active_mm) < 0);
+@@ -249,6 +259,14 @@ switch_mm(struct mm_struct *prev, struct mm_struct *next,
+ 	} else if (prev != next) {
+ 		atomic_inc(&next->context.nr_active_mm);
+ 		__switch_mm(next, cpu);
++		/*
++		 * DSB will flush the speculative pagetable walks on the old
++		 * asid. It's required before decreasing nr_active_mm because
++		 * after decreasing nr_active_mm the tlbi broadcast may not
++		 * happen on the unloaded asid before the pagetables are
++		 * freed.
++		 */
++		dsb(ish);
+ 		atomic_dec(&prev->context.nr_active_mm);
+ 	}
+ 	VM_WARN_ON(!atomic_read(&next->context.nr_active_mm));
+
+
+I didn't test it yet, because this being a theoretical issue it is
+better reviewed in the source.
+
+> > * Walks never being initiated for `inactive` contexts within the current
+> >   translation regime. e.g. while ASID x is installed, never starting a
+> >   walk for ASID y. I can imagine that the architecture may permit a form
+> >   of this starting with intermediate walk entries in the TLBs.
+> 
+> I'm still chasing this point.
+
+Appreciated! I'll cross fingers you don't find the speculative lookups
+can randomly start on unloaded ASID. That would also imply that it
+would be impossible on arm64 to use different asid on different CPUs
+as it is normally done on other arches.
+
+Thanks,
+Andrea
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
