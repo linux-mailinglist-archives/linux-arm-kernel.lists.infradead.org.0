@@ -2,103 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98B8719A8DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 11:49:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1DC319A8EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 11:52:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zFjj3kC4OQtAfrVHva/+dQutsqoHoP9Z5bjVgoClzAg=; b=D0ha+bFNiULqa9sjYwvuC1c+Q
-	epvIYZPkvczd2G3cjj2sicRSoQpiQ4JxB1koPrwTAQz4DoyJKU7QZCVZK3t50sL6iF/9Owk2mhrwJ
-	MFTrILMcyTRuDF6bFnjBnHJkiBf5kk2tVYTBzHtXSdm1CH0PjcE5nAS55ErWmKqUQ4spfqyzlWDuB
-	6OL2U+8YHRNi+/aNrqtIrZjg+mjUE3MWtTkETPgYIQDMdPjZf3IKiDNu+0DUYwySp3uchdn19lvGu
-	0jm1PjATwi18JvbVo77bCHXLZmg49gClxbQ4uD4Evkt/3KbHgcWAiwjnci1L0QP5gSb0eQJOXa18i
-	3m2hci1MA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hFLnhcC06wVAVME5yUA4mrD6e3DxdomLpiCYjg516/U=; b=KA1RWbaTOlaFEl
+	dVB+7Pau1Ic//iCZb8zhfDlvJ9DDcqRuZELnbFXEcR2P8R0HkIFyPHH+prDMlET83rr9HmA64vH5Q
+	Se6IKLu+oSLuHyp97DmtA4xisqlvvKNdzIXVm1JD1RRxWPqWZi8TTvZpLcIHb3TjE++YkxEQE7nsC
+	ku80qlGYpOcCaN9lOMVelx28Fd5S0Lf4XRPZiD13eS1wweR6yDFRHHZTVr3Bt2wOf0uURKOieYNZV
+	zuZq1aeYpsuTwre4SEWIHos3BOJTwrVf0JaxEaE6nZNZr78bRVzfzylrrRvUOK3WUxOUB7ugIdQdd
+	kAyMn2AnCTKYzKSokqMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJa05-00035k-2P; Wed, 01 Apr 2020 09:49:33 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJZzy-00035G-QX
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 09:49:28 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0319mro0030891; Wed, 1 Apr 2020 11:49:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=OxCsrs2Z8qSU8tHehwSe7HoIcLyBN+97Ma4z/koHBpE=;
- b=eZuZ711drjOuybzFjIgHBZxOpy1+oiZZWsV08Kw97SXpl5T1y59RSAP0rXaRynfTDo6C
- MCixDvNSB203SM5+C3lUR/DqYpop6a1B2C7yt1QZuk2TD9LA51YpLUIrH1+m8mQypUD0
- TzzKCJ3rrOdG6AUrFalKNwnxx1nV1ZRkIdJtF9eToz6JI7oGow8THwu8uX+K4I15L0zC
- vmpbdbdYIch0ctS1W+Slom3NME3ialPrLpoG0nVyOOkx9e8B6iT9uIO44VGctA+5Jb9U
- R6V/PfrNlz3SHTXQEIneeotGFHrrx/kJrWMODGOZdtXG/BuXJbJIxDXE/AuUMPPSsthV kA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 301xbmmapq-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 01 Apr 2020 11:49:20 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 142F9100034;
- Wed,  1 Apr 2020 11:49:20 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 05D5821F684;
- Wed,  1 Apr 2020 11:49:20 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.46) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 1 Apr
- 2020 11:49:16 +0200
-Subject: Re: [Linux-stm32] [PATCH 07/22] ARM: dts: stm32: Add alternate pinmux
- for SDMMC2 pins 4-7
-To: Marek Vasut <marex@denx.de>, Ahmad Fatoum <a.fatoum@pengutronix.de>,
- Patrice CHOTARD <patrice.chotard@st.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20200328171144.51888-1-marex@denx.de>
- <20200328171144.51888-8-marex@denx.de>
- <0fb89d25-feb0-2eb0-9e83-d7f8c76f8b9e@st.com>
- <82dcf412-119b-0de2-0c50-f6877a82a812@pengutronix.de>
- <fcf49298-a36c-e80e-e62b-1fb9c07f0d6e@denx.de>
- <310aa3a3-09ce-42ef-d1ea-b653163d1d72@pengutronix.de>
- <97d13a84-8220-aa7f-3ee6-df474cca3882@denx.de>
- <43e88a1b-f3e4-df1d-38a6-0bb281a2f786@st.com>
- <871a5cc2-615d-b9e5-0eed-9a5a38be4f6c@denx.de>
- <69bce6d4-129e-b9ea-8fa6-f33d9047e3c3@st.com>
- <9fb131ad-552e-61ad-75c2-5ebec501f356@denx.de>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <9ec743e5-5141-017b-eb11-4986c0ab4af8@st.com>
-Date: Wed, 1 Apr 2020 11:49:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1jJa39-0006Ch-MN; Wed, 01 Apr 2020 09:52:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJa32-0006CA-M7
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 09:52:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDB611FB;
+ Wed,  1 Apr 2020 02:52:35 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 96DBF3F52E;
+ Wed,  1 Apr 2020 02:52:34 -0700 (PDT)
+Date: Wed, 1 Apr 2020 10:52:26 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
+Subject: Re: [PATCH] driver/perf: Add PMU driver for the ARM DMC-620 memory
+ controller.
+Message-ID: <20200401095226.GA17163@C02TD0UTHF1T.local>
+References: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
+ <20200319151646.GC4876@lakrids.cambridge.arm.com>
+ <23AD5E45-15E3-4487-9B0D-0D9554DD9DE8@amperemail.onmicrosoft.com>
+ <20200320105315.GA35932@C02TD0UTHF1T.local>
+ <A50AA800-3F65-4761-9BCF-F86A028E107D@amperemail.onmicrosoft.com>
 MIME-Version: 1.0
-In-Reply-To: <9fb131ad-552e-61ad-75c2-5ebec501f356@denx.de>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-03-31_07:2020-03-31,
- 2020-03-31 signatures=0
+Content-Disposition: inline
+In-Reply-To: <A50AA800-3F65-4761-9BCF-F86A028E107D@amperemail.onmicrosoft.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_024927_335048_A2E5611C 
-X-CRM114-Status: GOOD (  17.80  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200401_025236_767790_80948610 
+X-CRM114-Status: GOOD (  17.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,57 +67,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Patrick DELAUNAY <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>
+Cc: Tuan Phan <tuanphan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Mar 31, 2020 at 03:14:59PM -0700, Tuan Phan wrote:
+> > On Mar 20, 2020, at 4:25 AM, Mark Rutland <mark.rutland@arm.com> wrote:
+> > On Thu, Mar 19, 2020 at 12:03:43PM -0700, Tuan Phan wrote:
+> >>> On Mar 19, 2020, at 8:16 AM, Mark Rutland <mark.rutland@arm.com> wrote:
+> >>> On Tue, Mar 17, 2020 at 05:29:38PM -0700, Tuan Phan wrote:
+> >>>> +static int arm_dmc620_pmu_dev_init(struct arm_dmc620_pmu *dmc620_pmu)
+> >>>> +{
+> >>>> +	struct platform_device *pdev = dmc620_pmu->pdev;
+> >>>> +	int ret;
+> >>>> +
+> >>>> +	ret = devm_request_irq(&pdev->dev, dmc620_pmu->irq,
+> >>>> +				arm_dmc620_pmu_handle_irq,
+> >>>> +				IRQF_SHARED,
+> >>>> +				dev_name(&pdev->dev), dmc620_pmu);
+> >>> 
+> >>> This should have IRQF_NOBALANCING | IRQF_NO_THREAD. I don't think we
+> >>> should have IRQF_SHARED.
+> >> => I agree on having IRQF_NOBALANCING and IRQF_NO_THREAD. But
+> >> IRQF_SHARED is needed. In our platform all DMC620s share same IRQs and
+> >> any cpus can access the pmu registers.
+> > 
+> > Linux needs to ensure that the same instance is concistently accessed
+> > from the same CPU, and needs to migrate the IRQ to handle that. Given we
+> > do that on a per-instance basis, we cannot share the IRQ with another
+> > instance.
+> > 
+> > Please feed back to you HW designers that muxing IRQs like this causes
+> > significant problems for software.
+> 
+> I looked at the SMMUv3 PMU driver and it also uses IRQF_SHARED. SMMUv3
+> PMU and DMC620 PMU are very much similar in which counters can be
+> accessed by any cores using memory map. Any special reasons
+> IRQF_SHARED works with SMMUv3 PMU driver?
 
+No; I believe that is a bug in the SMMUv3 PMU driver. If the IRQ were
+shared, and another driver that held the IRQ changed the affinity,
+things would go very wrong.
 
-On 3/31/20 6:44 PM, Marek Vasut wrote:
-> On 3/31/20 6:39 PM, Alexandre Torgue wrote:
-> 
-> Hi,
-> 
-> [...]
-> 
->>>> I agree, and I prefer to keep pins groups definition in
->>>> stm32mp15-pinctrl.dtsi file. IMO, it is easier for users to find them in
->>>> only one file. Actually, I already had this discussions with some guys
->>>> "where pins groups have to be defined ?". For me (and maybe only for
->>>> me), muxing is SOC dependent, I mean SoC provides a bunch a possible
->>>> pinmux for each IPs. If we got enough memory spaces (and time to waste
->>>> also) we could define all possible pinmux (AFx....) for each devices and
->>>> let board users chose the good one (using stm32mp15-pictrl.dtsi as a
->>>> database). In board file, you select one possible pin configuration
->>>> (provided by the SoC) for your device according to your schematic.
->>>> However you could append pin groups in board file to update bias,
->>>> slewrate ...
->>>> If your concern it to embed a bunch of not used pin configuration for a
->>>> board, we could use /omit-if-no-ref/ tag on pin groups.
->>>
->>> Can we instead define pinmux the way e.g. iMX6 does , as separate pins ,
->>> instead of pinmux groups ?
->>>
->>
->> Sorry but what would the advantage to do so ?
-> 
-> You'd have per-board pinmux which would be perfect fit for that board,
-> without potentially affecting other boards with changes, without hacking
-> various things like drive-strengths in board files, and without having
-> the combinatorial explosion of the current single pinmux file.
-> 
+Note that it's also missing IRQF_NOBALANCING, which is also necessary to
+avoid such issues.
 
-It is something that we could analysis. Let's follow the way we 
-currently use. I'll let u know, when I have a better view on your 
-proposition.
-
-thanks
-alex
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
