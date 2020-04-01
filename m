@@ -2,91 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A9E19B804
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 23:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ACD819B848
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 00:15:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DSq5RaShLWRTaaANQFxStp4TbmYjtgSHlRgjZspv0W8=; b=LS12DT748gktXG
-	LtBgH2WjX5eZmud59HBwtHlkToWzN2mnoNP54/55dOWijJy1ZMofUurCFwZMSTFSnt6KUE9/S4v6b
-	NlQtvMaWub77o11J+83X9Adv78Vbn/zfjQVUkjT/56hJV7wSqkkL0bD+jorOASR0pHmT3VmHGK+c/
-	Wi6W2tsO9TmCQFHE0jMupW17GACElCgJuGlec68LZ2ey85NB4fA1oxIa44AjxZ6V6XHNdknr8ylVX
-	c0zafDEWAcToKudtWhzgTR3O3ND59+hAqCc086O3hSgA59gnFqEk4CIM7XfkHuYkhDFVIIkaKzzYS
-	v4/C9L3T7FtE7ntewkkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7s+ADlAYrmYvh11OJEjhz28Bp5QjL1NmSlxOCVTk3ks=; b=UHLDtTbgRQz9kU
+	Mv03IenrlcAmixfxCAWiW6QyzagGxCKhW2/lIFwPjlNHn29zQD+AyFWXvjvuimaWT8FHuYX/hZ9dl
+	2P8GbngvARlan9T+k80Akg48O+m0oQA7jydpNabUmsjBIpKwM2qX8LSfAfr/DvqHT6vI5WuDttDQg
+	dGJeB7lxy90K786wqvnPA/R3LUHrNoMiJ7Fgr8ctjmtiXho5jl7U+sd/M3Tet+90A4HCw9rZAagr6
+	pJUMxDwo3q8zzt7Lqod9RY9TOLr8Ln7QNUi1iRgqPGg1kn+C4e9fuTe1csi4bGskFQEAK02QFxX+s
+	B1YSlWE2uoUcaQI3Iypg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJlNk-0007pE-0S; Wed, 01 Apr 2020 21:58:44 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jJle1-00061l-FM; Wed, 01 Apr 2020 22:15:33 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJlNc-0007oT-Rp
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 21:58:38 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d17so823319pgo.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 Apr 2020 14:58:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=T6l/yr6Cjt15a6YDL3tI21z3eGbnhRLGQpcGGdkH3G0=;
- b=Aug+9ANMwfqMqTPoXflHoLnWAPyOIweS23iswm7clSDXgqDQCTiLRSSoMNZ0io2ytz
- 4kmqK7K8TsoX8Oa1qCNIKmfyfFCeASbGk09hbmJT9JzSZOyO7y+qxD+tj+NEFilvfBwD
- Pkv6lnNNptyY6BsU/XB8/PfyksA6Z9Xm2tp++boXtgRMNr0fUMtwTmaeW6aqhqgBxxzh
- T3T/9LrClkN4dUYuEDANTY429B46thKNnNF8CWPF0AWe3YNUzg+3U1nhKB6vWT5uoZ9P
- z8TEIs2da5LgN87NKawCzRGQZ9m5Isbl8/I1AM+wuDNKZL4b1/4vZvFmT2cR6NyhM9bK
- U/2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=T6l/yr6Cjt15a6YDL3tI21z3eGbnhRLGQpcGGdkH3G0=;
- b=C4GEud5QINa5fjts99JCadtoqRnY7EiMX7Jq6YdAlZU+QLxtQTJl8RIbCIH/p0VXIO
- Eqis4qiLPg2ApSKcUaLuBXCTvkD0tquhxrruJWsGiX+7ABVGhP4WajQMiYkGjFbXb4ui
- 381wRef5IDZjzRaKkDAwMp3gWlH2F8yMIMfRArN388aYF1cRQuNACfvw4fcZ2dZtplej
- 16Nd7jw0ZRr/6yHg4bWpYbJaSh0Yh4CXCLQqemDnLEVoCztOTQY5mmymbRmKZ2ceO+VT
- 7RJIbI/Xls+SW0UEFam5OoTtiVO/5hRlijaPIqEwQz4pTtrgWJu39DHpTKz9YQJok/Ia
- rnwA==
-X-Gm-Message-State: AGi0PuYMHEgaLUqcV/l5Dl6wzk01MNwyVotXZJzcAqNqoCymOPEe74dZ
- +aCgrZ3akDUK1B/DS//QLhE=
-X-Google-Smtp-Source: APiQypKQLNXXWccupxCJd6/Wi/Nq14WhOAQB8ADTtsp5VWa5/Aot0+vBabx18lkkpwOAaRkoEYxr3g==
-X-Received: by 2002:a63:134e:: with SMTP id 14mr288009pgt.380.1585778314374;
- Wed, 01 Apr 2020 14:58:34 -0700 (PDT)
-Received: from taoren-ubuntu-R90MNF91 (c-73-252-146-110.hsd1.ca.comcast.net.
- [73.252.146.110])
- by smtp.gmail.com with ESMTPSA id q71sm2378551pjb.5.2020.04.01.14.58.33
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 01 Apr 2020 14:58:33 -0700 (PDT)
-Date: Wed, 1 Apr 2020 14:58:27 -0700
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Stephen Boyd <swboyd@chromium.org>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: Re: [PATCH v3] usb: gadget: aspeed: improve vhub port irq handling
-Message-ID: <20200401215826.GA8248@taoren-ubuntu-R90MNF91>
-References: <20200315191430.12379-1-rentao.bupt@gmail.com>
+ id 1jJldk-0005m4-JD
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 22:15:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1585779316; x=1617315316;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=pNTIwQ1CqOZCjXOldRhyWpBfPZeO+eg3UOXWN3Y4ZhM=;
+ b=EbMv1WRxRfmuD1fqGa1TN5IhV2YMHuGPshy5kt3104mNf3bnn4642whc
+ 7wPfXraI8P1A6UuFvcWFR8Dx2HDfkLyen9FcfeUL8iEEoJFH0AkFWmUDT
+ cer4CoPjxF6Z+dTXo6YnoZvQs+y+iBPb4lSLz9QWXyBL6WNILePxkEebg
+ 69YTmPS8X+3i4svCoAbFloa79uczqwcbt/wSixV9Xd7y03JcqcTCnnV1r
+ 14zHH1X31KcrVp++YQkbucyuvpT/nTuSHsSvtpJJPwEaZ1kgtc3eWppnm
+ e/Tj0gHUSJfgBsRuQVLN2dpO1ZZH2+UNzlpN90XWI8a0Q68yzMzlyTA+k A==;
+IronPort-SDR: qqE3wNJ1NKBF4wpf0zWePNhEAnobjp7/iTV/I5QY/VUA3NjQLZAoAXsRNEV8MseWD6qlejj0Xi
+ K3Dg1lQCWf6OyBJ26oZ9uq7AgzMEnDmJN9UcjN3LLKmmcOVgr3owYq395RoEVvrTKdgv9XeGYA
+ ysKExkPDqAsLKitmjRYVuuE3zEFv47TsyAsC5kqRotNHT2nleIhE6L5eppUAPbKD82k/9eOhhq
+ W0TyUMTOT2xn0x40LfyWjpqneTgz9cKPjhCwZex3lgCGHrtSPTjLkVTAl53KwpfcqumhQl4SGH
+ XkQ=
+X-IronPort-AV: E=Sophos;i="5.72,333,1580799600"; d="scan'208";a="70956400"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 01 Apr 2020 15:15:12 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 1 Apr 2020 15:15:12 -0700
+Received: from sekiro.microchip.com (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 1 Apr 2020 15:15:15 -0700
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <robh+dt@kernel.org>
+Subject: [PATCH 1/5] ARM: dts: at91: sama5d2_ptc_ek: fix sdmmc0 node
+ description
+Date: Thu, 2 Apr 2020 00:15:00 +0200
+Message-ID: <20200401221504.41196-1-ludovic.desroches@microchip.com>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200315191430.12379-1-rentao.bupt@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_145836_902558_C6CCC9CF 
-X-CRM114-Status: GOOD (  19.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200401_151516_693081_15B727BB 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,103 +92,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, Tudor.Ambarus@microchip.com,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, Ludovic
+ Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, Codrin.Ciubotariu@microchip.com,
+ Cristian.Birsan@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ben,
+Remove non-removable and mmc-ddr-1_8v properties from the sdmmc0
+node which come probably from an unchecked copy/paste.
 
-Any further comments on the patch?
+Signed-off-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+Fixes:42ed535595ec "ARM: dts: at91: introduce the sama5d2 ptc ek board"
+Cc: stable@vger.kernel.org # 4.19 and later
+---
+ arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
+diff --git a/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts b/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
+index 1c24ac8019ba7..772809c54c1f3 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
+@@ -125,8 +125,6 @@ sdmmc0: sdio-host@a0000000 {
+ 			bus-width = <8>;
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&pinctrl_sdmmc0_default>;
+-			non-removable;
+-			mmc-ddr-1_8v;
+ 			status = "okay";
+ 		};
+ 
+-- 
+2.26.0
 
-Cheers,
-
-Tao
-
-On Sun, Mar 15, 2020 at 12:14:30PM -0700, rentao.bupt@gmail.com wrote:
-> From: Tao Ren <rentao.bupt@gmail.com>
-> 
-> This patch evaluates vhub ports' irq mask before going through per-port
-> irq handling one by one, which helps to speed up irq handling in case
-> there is no port interrupt.
-> 
-> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
-> ---
->  Changes in v3:
->    - assign istat to (unsigned long) bitmap before calling
->      "for_each_set_bit_from".
->  Changes in v2:
->    - use "for_each_set_bit" to speed up port irq handling.
-> 
->  drivers/usb/gadget/udc/aspeed-vhub/core.c | 12 +++++++++---
->  drivers/usb/gadget/udc/aspeed-vhub/vhub.h |  8 +++-----
->  2 files changed, 12 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> index f8d35dd60c34..555e8645fb1e 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> @@ -134,11 +134,15 @@ static irqreturn_t ast_vhub_irq(int irq, void *data)
->  	}
->  
->  	/* Handle device interrupts */
-> -	for (i = 0; i < vhub->max_ports; i++) {
-> -		u32 dev_mask = VHUB_IRQ_DEVICE1 << i;
-> +	if (istat & vhub->port_irq_mask) {
-> +		unsigned long bitmap = istat;
-> +		int offset = VHUB_IRQ_DEV1_BIT;
-> +		int size = VHUB_IRQ_DEV1_BIT + vhub->max_ports;
->  
-> -		if (istat & dev_mask)
-> +		for_each_set_bit_from(offset, &bitmap, size) {
-> +			i = offset - VHUB_IRQ_DEV1_BIT;
->  			ast_vhub_dev_irq(&vhub->ports[i].dev);
-> +		}
->  	}
->  
->  	/* Handle top-level vHub EP0 interrupts */
-> @@ -332,6 +336,8 @@ static int ast_vhub_probe(struct platform_device *pdev)
->  
->  	spin_lock_init(&vhub->lock);
->  	vhub->pdev = pdev;
-> +	vhub->port_irq_mask = GENMASK(VHUB_IRQ_DEV1_BIT + vhub->max_ports - 1,
-> +				      VHUB_IRQ_DEV1_BIT);
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	vhub->regs = devm_ioremap_resource(&pdev->dev, res);
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> index fac79ef6d669..23a1ac91f8d2 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> @@ -51,14 +51,11 @@
->  #define VHUB_CTRL_UPSTREAM_CONNECT		(1 << 0)
->  
->  /* IER & ISR */
-> +#define VHUB_IRQ_DEV1_BIT			9
->  #define VHUB_IRQ_USB_CMD_DEADLOCK		(1 << 18)
->  #define VHUB_IRQ_EP_POOL_NAK			(1 << 17)
->  #define VHUB_IRQ_EP_POOL_ACK_STALL		(1 << 16)
-> -#define VHUB_IRQ_DEVICE5			(1 << 13)
-> -#define VHUB_IRQ_DEVICE4			(1 << 12)
-> -#define VHUB_IRQ_DEVICE3			(1 << 11)
-> -#define VHUB_IRQ_DEVICE2			(1 << 10)
-> -#define VHUB_IRQ_DEVICE1			(1 << 9)
-> +#define VHUB_IRQ_DEVICE1			(1 << (VHUB_IRQ_DEV1_BIT))
->  #define VHUB_IRQ_BUS_RESUME			(1 << 8)
->  #define VHUB_IRQ_BUS_SUSPEND 			(1 << 7)
->  #define VHUB_IRQ_BUS_RESET 			(1 << 6)
-> @@ -402,6 +399,7 @@ struct ast_vhub {
->  	/* Per-port info */
->  	struct ast_vhub_port		*ports;
->  	u32				max_ports;
-> +	u32				port_irq_mask;
->  
->  	/* Generic EP data structures */
->  	struct ast_vhub_ep		*epns;
-> -- 
-> 2.17.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
