@@ -2,60 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1DC319A8EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 11:52:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D955A19A8F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 11:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hFLnhcC06wVAVME5yUA4mrD6e3DxdomLpiCYjg516/U=; b=KA1RWbaTOlaFEl
-	dVB+7Pau1Ic//iCZb8zhfDlvJ9DDcqRuZELnbFXEcR2P8R0HkIFyPHH+prDMlET83rr9HmA64vH5Q
-	Se6IKLu+oSLuHyp97DmtA4xisqlvvKNdzIXVm1JD1RRxWPqWZi8TTvZpLcIHb3TjE++YkxEQE7nsC
-	ku80qlGYpOcCaN9lOMVelx28Fd5S0Lf4XRPZiD13eS1wweR6yDFRHHZTVr3Bt2wOf0uURKOieYNZV
-	zuZq1aeYpsuTwre4SEWIHos3BOJTwrVf0JaxEaE6nZNZr78bRVzfzylrrRvUOK3WUxOUB7ugIdQdd
-	kAyMn2AnCTKYzKSokqMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QlV6rWNwUFTgmtdnDRa0wHA34QeVNjvW9bFRrWJ8B9I=; b=tWYQE+7BArebXJT5LQ53eDJ+F
+	CvPl7wERJwGjU6GHJoay1vULVNlJdpIED0f3POU0X+u2tFu5L/kDVRG1NerVCBqFBsalNqFJ0rJbt
+	oloINbksVRU+bx9UfbE7Q0Oegtuq+t2qkA/Fg3d4vk0k7H3sXYRLfPKQRWOflDrq5zHO+9OVgNfIy
+	lQ9eJaJKIMy+73hfMz0r+q/2OL7NmwN5Vm4fF7nLNjzY1P8jlVU7IwkPzgZLaYeRqvIMFAD1n8ZoR
+	x9EW512DYO3dev6iSlkr6ltsBcW+5BDDQFUsDyTkfif7dlBIIrJBvZPHTtUtX7A83J6vevtihu4S7
+	nW/kTebBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJa39-0006Ch-MN; Wed, 01 Apr 2020 09:52:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJa32-0006CA-M7
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 09:52:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDB611FB;
- Wed,  1 Apr 2020 02:52:35 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 96DBF3F52E;
- Wed,  1 Apr 2020 02:52:34 -0700 (PDT)
-Date: Wed, 1 Apr 2020 10:52:26 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
-Subject: Re: [PATCH] driver/perf: Add PMU driver for the ARM DMC-620 memory
- controller.
-Message-ID: <20200401095226.GA17163@C02TD0UTHF1T.local>
-References: <1584491381-31492-1-git-send-email-tuanphan@os.amperecomputing.com>
- <20200319151646.GC4876@lakrids.cambridge.arm.com>
- <23AD5E45-15E3-4487-9B0D-0D9554DD9DE8@amperemail.onmicrosoft.com>
- <20200320105315.GA35932@C02TD0UTHF1T.local>
- <A50AA800-3F65-4761-9BCF-F86A028E107D@amperemail.onmicrosoft.com>
+	id 1jJa3W-0006RN-46; Wed, 01 Apr 2020 09:53:06 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJa3M-0006QX-A9
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 09:52:59 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0319mtHG030915; Wed, 1 Apr 2020 11:52:53 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=OcoxKwl0YMkRJbpTgRA6E6/dPYePve5cafkXLgAkCcc=;
+ b=ceE1wCZi9dwn9BVL/OuBNQCuOmiW26kYObYDYqH3/OkVcVflaGPat5AHFlSX9dP68f2H
+ Bw4DS0qw8q4JJvmyauGtxg3w68Wojj91B4+C8tNoQbqGasZh6OqD3U9ocrrIFo7l3BRD
+ tWW4dwqFzWFWToZPn25jzIDht+S+dEa+eS3EbSxQMv498P3s0UXj+UHHGT1zvDzeBDhd
+ znypGaANyWoh64moFICs7WVQHXOuOzMrJleV3IhqfkhkRHikDLMdXDcHduTrhT5KZO1i
+ FCPAz7zJf/eq8NWfEjP4uVi5IOoJNCgiiCtUKbGty9oxqLU3RgAxE9LF00rYLJwV/kKq sA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 301xbmmbcs-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 01 Apr 2020 11:52:53 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 989EF10002A;
+ Wed,  1 Apr 2020 11:52:48 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 88E0A21F68F;
+ Wed,  1 Apr 2020 11:52:48 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 1 Apr
+ 2020 11:52:44 +0200
+Subject: Re: [PATCH V3 01/22] ARM: dts: stm32: Add alternate pinmux for
+ ethernet RGMII
+To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
+References: <20200331175811.205153-1-marex@denx.de>
+ <20200331175811.205153-2-marex@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <06ad9a40-3118-7336-056d-b115aef66599@st.com>
+Date: Wed, 1 Apr 2020 11:52:36 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <A50AA800-3F65-4761-9BCF-F86A028E107D@amperemail.onmicrosoft.com>
+In-Reply-To: <20200331175811.205153-2-marex@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-03-31_07:2020-03-31,
+ 2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_025236_767790_80948610 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200401_025256_648437_927CC6AE 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,56 +99,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tuan Phan <tuanphan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 03:14:59PM -0700, Tuan Phan wrote:
-> > On Mar 20, 2020, at 4:25 AM, Mark Rutland <mark.rutland@arm.com> wrote:
-> > On Thu, Mar 19, 2020 at 12:03:43PM -0700, Tuan Phan wrote:
-> >>> On Mar 19, 2020, at 8:16 AM, Mark Rutland <mark.rutland@arm.com> wrote:
-> >>> On Tue, Mar 17, 2020 at 05:29:38PM -0700, Tuan Phan wrote:
-> >>>> +static int arm_dmc620_pmu_dev_init(struct arm_dmc620_pmu *dmc620_pmu)
-> >>>> +{
-> >>>> +	struct platform_device *pdev = dmc620_pmu->pdev;
-> >>>> +	int ret;
-> >>>> +
-> >>>> +	ret = devm_request_irq(&pdev->dev, dmc620_pmu->irq,
-> >>>> +				arm_dmc620_pmu_handle_irq,
-> >>>> +				IRQF_SHARED,
-> >>>> +				dev_name(&pdev->dev), dmc620_pmu);
-> >>> 
-> >>> This should have IRQF_NOBALANCING | IRQF_NO_THREAD. I don't think we
-> >>> should have IRQF_SHARED.
-> >> => I agree on having IRQF_NOBALANCING and IRQF_NO_THREAD. But
-> >> IRQF_SHARED is needed. In our platform all DMC620s share same IRQs and
-> >> any cpus can access the pmu registers.
-> > 
-> > Linux needs to ensure that the same instance is concistently accessed
-> > from the same CPU, and needs to migrate the IRQ to handle that. Given we
-> > do that on a per-instance basis, we cannot share the IRQ with another
-> > instance.
-> > 
-> > Please feed back to you HW designers that muxing IRQs like this causes
-> > significant problems for software.
+Hi Marek
+
+On 3/31/20 7:57 PM, Marek Vasut wrote:
+> Add another mux option for DWMAC RGMII, this is used on AV96 board.
 > 
-> I looked at the SMMUv3 PMU driver and it also uses IRQF_SHARED. SMMUv3
-> PMU and DMC620 PMU are very much similar in which counters can be
-> accessed by any cores using memory map. Any special reasons
-> IRQF_SHARED works with SMMUv3 PMU driver?
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Signed-off-by: Marek Vasut <marex@denx.de>
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Patrice Chotard <patrice.chotard@st.com>
+> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> To: linux-arm-kernel@lists.infradead.org
+> ---
+> V2: No change
+> V3: No change
+> ---
+>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 51 ++++++++++++++++++++++++
+>   1 file changed, 51 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index 73c07f0dfad2..4569dc16e5a1 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -196,6 +196,57 @@ pins1 {
+>   		};
+>   	};
+>   
+> +	ethernet0_rgmii_pins_b: rgmii-1 {
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
+> +				 <STM32_PINMUX('G', 4, AF11)>, /* ETH_RGMII_GTX_CLK */
+> +				 <STM32_PINMUX('B', 12, AF11)>, /* ETH_RGMII_TXD0 */
+> +				 <STM32_PINMUX('G', 14, AF11)>, /* ETH_RGMII_TXD1 */
+> +				 <STM32_PINMUX('C', 2, AF11)>, /* ETH_RGMII_TXD2 */
+> +				 <STM32_PINMUX('E', 2, AF11)>, /* ETH_RGMII_TXD3 */
+> +				 <STM32_PINMUX('G', 11, AF11)>, /* ETH_RGMII_TX_CTL */
+> +				 <STM32_PINMUX('C', 1, AF11)>; /* ETH_MDC */
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <2>;
+> +		};
+> +		pins2 {
+> +			pinmux = <STM32_PINMUX('A', 2, AF11)>; /* ETH_MDIO */
+> +			bias-disable;
+> +			drive-push-pull;
+> +			slew-rate = <0>;
+> +		};
+> +		pins3 {
+> +			pinmux = <STM32_PINMUX('C', 4, AF11)>, /* ETH_RGMII_RXD0 */
+> +				 <STM32_PINMUX('C', 5, AF11)>, /* ETH_RGMII_RXD1 */
+> +				 <STM32_PINMUX('H', 6, AF11)>, /* ETH_RGMII_RXD2 */
+> +				 <STM32_PINMUX('B', 1, AF11)>, /* ETH_RGMII_RXD3 */
+> +				 <STM32_PINMUX('A', 1, AF11)>, /* ETH_RGMII_RX_CLK */
+> +				 <STM32_PINMUX('A', 7, AF11)>; /* ETH_RGMII_RX_CTL */
+> +			bias-disable;
+> +		};
+> +	};
+> +
+> +	ethernet0_rgmii_pins_sleep_b: rgmii-sleep-1 {
 
-No; I believe that is a bug in the SMMUv3 PMU driver. If the IRQ were
-shared, and another driver that held the IRQ changed the affinity,
-things would go very wrong.
+I just merged a series from Ahmad that unify pins group name. So it 
+should be ethernet0_rgmii_sleep_pins_b. As a lot change have been done 
+in pinctrl dtsi diles, can you rebase on top of stm32-net please?
 
-Note that it's also missing IRQF_NOBALANCING, which is also necessary to
-avoid such issues.
-
-Thanks,
-Mark.
+> +		pins1 {
+> +			pinmux = <STM32_PINMUX('G', 5, ANALOG)>, /* ETH_RGMII_CLK125 */
+> +				 <STM32_PINMUX('G', 4, ANALOG)>, /* ETH_RGMII_GTX_CLK */
+> +				 <STM32_PINMUX('B', 12, ANALOG)>, /* ETH_RGMII_TXD0 */
+> +				 <STM32_PINMUX('G', 14, ANALOG)>, /* ETH_RGMII_TXD1 */
+> +				 <STM32_PINMUX('C', 2, ANALOG)>, /* ETH_RGMII_TXD2 */
+> +				 <STM32_PINMUX('E', 2, ANALOG)>, /* ETH_RGMII_TXD3 */
+> +				 <STM32_PINMUX('G', 11, ANALOG)>, /* ETH_RGMII_TX_CTL */
+> +				 <STM32_PINMUX('A', 2, ANALOG)>, /* ETH_MDIO */
+> +				 <STM32_PINMUX('C', 1, ANALOG)>, /* ETH_MDC */
+> +				 <STM32_PINMUX('C', 4, ANALOG)>, /* ETH_RGMII_RXD0 */
+> +				 <STM32_PINMUX('C', 5, ANALOG)>, /* ETH_RGMII_RXD1 */
+> +				 <STM32_PINMUX('H', 6, ANALOG)>, /* ETH_RGMII_RXD2 */
+> +				 <STM32_PINMUX('B', 1, ANALOG)>, /* ETH_RGMII_RXD3 */
+> +				 <STM32_PINMUX('A', 1, ANALOG)>, /* ETH_RGMII_RX_CLK */
+> +				 <STM32_PINMUX('A', 7, ANALOG)>; /* ETH_RGMII_RX_CTL */
+> +		};
+> +	};
+> +
+>   	fmc_pins_a: fmc-0 {
+>   		pins1 {
+>   			pinmux = <STM32_PINMUX('D', 4, AF12)>, /* FMC_NOE */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
