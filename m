@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E920219ACC6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:24:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C54AD19ACC7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:25:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dxJVM9XZC5Th++Ch2PdegFJgope8txYxIm5Zz3KpgOU=; b=gWPdJjKsNGwfYZ
-	08bhI2RDDW6jBtOglkBRuN3rQeSFmilp+BEvz1LW4SkrrJhMZyj8qf737pQm21Twvtl9YGYPWoTJ0
-	Wm3To4K2FGKYqA5ULcC3arW9uourA59uUO4yOJVX6aYmb0Xl5/dTlj93iM+J8/5UQRQdHuBZWIwql
-	+56W/BoE39ZHENh3OUBHkLYJtuP2jPoUAo1/Z9adHfVd+iBFAhPHNxpSX7S5w/lnDc74jB+8S3Nvp
-	g5P2L5aNy1vX4Og3Z+I7qCFyJMRfE6OGYHgMQd/nVET0KyE8lPfdcEzeEN0L1/KgZl1lMzAkp+vrZ
-	5K6GU4LjFn2KP3Mb2T/g==;
+	List-Owner; bh=UNSN7HyZaE21OtOfbxR15eUUKLGFLiy3YANHuIF5EjI=; b=F3iNrsc8aqFsIa
+	+T7uyGLLExfT/tBACVH3921Fbh8cSYa0gK3wgcQoHlAzXNY1vx/ZwaUF+6OEQ/a/hNbumYAk9ktI2
+	OjxbIx4K8AeGut5nV0RDyTywfHIXntrhFdH55v7vBzXLFw4JN3mRWoU7JKbzEZFbUB2bhUmDVK+3T
+	EOjFEX7PZD+gdxup9GYvf8KFh476bCvznnKtIjzhaTZra3UjPEupQNiJ+1M0iCQxJiOSwb2v6wikP
+	VPGbS95ohwyRD7ABKTeOLA+Vo7hI1kY+clBPRnVqyPHRdR/MBqfrz4aKZK4D1O8LVN9190I3xpodS
+	uRlwKbf0SiMQmZStK97g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJdMJ-0006M8-JW; Wed, 01 Apr 2020 13:24:43 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1jJdMW-0006am-Ao; Wed, 01 Apr 2020 13:24:56 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJdKl-0004jM-26
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:08 +0000
+ id 1jJdKm-0004nV-D9
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:10 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sn214Gmqz1rpF7;
- Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sn230Sy9z1qs0H;
+ Wed,  1 Apr 2020 15:23:07 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sn213ZMTz1r0cS;
- Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sn226zLdz1r0cS;
+ Wed,  1 Apr 2020 15:23:06 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id 2D2BMBjQ1JHA; Wed,  1 Apr 2020 15:23:04 +0200 (CEST)
-X-Auth-Info: fxMqJ8KEUY5az3pdjbplMyxNSHH/5F1Y7sQKKqxQRyA=
+ with ESMTP id I2HL9L54_M-R; Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
+X-Auth-Info: MxncF29Z9c8Pz+M4eXBSQkC5RU5OHA7QpnjDpy9N6is=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  1 Apr 2020 15:23:04 +0200 (CEST)
+ Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V4 06/22] ARM: dts: stm32: Repair SDMMC1 operation on AV96
-Date: Wed,  1 Apr 2020 15:22:21 +0200
-Message-Id: <20200401132237.60880-7-marex@denx.de>
+Subject: [PATCH V4 07/22] ARM: dts: stm32: Repair PMIC configuration on AV96
+Date: Wed,  1 Apr 2020 15:22:22 +0200
+Message-Id: <20200401132237.60880-8-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200401132237.60880-1-marex@denx.de>
 References: <20200401132237.60880-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_062307_283440_2E63D0EE 
+X-CRM114-CacheID: sfid-20200401_062308_756996_188B1BB4 
 X-CRM114-Status: GOOD (  11.73  )
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,9 +86,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SD uses different pinmux for the D123DIRline, use such a pinmux,
-otherwise there is a pinmux collision on the AV96. Add missing SD
-voltage regulator switch.
+The core and vdd PMIC buck regulators were misconfigured, which caused
+instability of the board and malfunction of high-speed interfaces, like
+the RGMII. Configure the PMIC correctly to repair these problems.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -96,57 +99,70 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
-V2: Disable SDR104, it seems unstable thus far
-V3: No change
+V2: Model the Enpirion EP53A8LQI on the DHCOR SoM as a fixed regulator
+V3: Move this before the SDMMC2 patch, as there is now a dependency
 V4: Rebase on stm32-next
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 21 ++++++++++++++++++---
- 1 file changed, 18 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index edcc57864495..a6f21ac5a94a 100644
+index a6f21ac5a94a..260410461dc8 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -77,6 +77,20 @@ led6 {
- 			default-state = "off";
- 		};
+@@ -91,6 +91,17 @@ sd_switch: regulator-sd_switch {
+ 		states = <1800000 0x1>,
+ 			 <2900000 0x0>;
  	};
 +
-+	sd_switch: regulator-sd_switch {
-+		compatible = "regulator-gpio";
-+		regulator-name = "sd_switch";
++	/* Enpirion EP3A8LQI U2 on the DHCOR */
++	vdd_io: regulator-buck-io {
++		compatible = "regulator-fixed";
++		regulator-name = "buck-io";
 +		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <2900000>;
-+		regulator-type = "voltage";
++		regulator-max-microvolt = <1800000>;
 +		regulator-always-on;
-+
-+		gpios = <&gpioi 5 GPIO_ACTIVE_HIGH>;
-+		gpios-states = <0>;
-+		states = <1800000 0x1>,
-+			 <2900000 0x0>;
++		regulator-boot-on;
++		vin-supply = <&vdd>;
 +	};
  };
  
  &ethernet0 {
-@@ -304,9 +318,9 @@ &rtc {
+@@ -177,7 +188,7 @@ regulators {
  
- &sdmmc1 {
- 	pinctrl-names = "default", "opendrain", "sleep";
--	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
--	pinctrl-1 = <&sdmmc1_b4_od_pins_a>;
--	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a>;
-+	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
-+	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_b>;
-+	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_b>;
- 	cd-gpios = <&gpioi 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
- 	disable-wp;
- 	st,sig-dir;
-@@ -314,6 +328,7 @@ &sdmmc1 {
- 	st,use-ckin;
- 	bus-width = <4>;
- 	vmmc-supply = <&vdd_sd>;
-+	vqmmc-supply = <&sd_switch>;
- 	status = "okay";
+ 			vddcore: buck1 {
+ 				regulator-name = "vddcore";
+-				regulator-min-microvolt = <1200000>;
++				regulator-min-microvolt = <800000>;
+ 				regulator-max-microvolt = <1350000>;
+ 				regulator-always-on;
+ 				regulator-initial-mode = <0>;
+@@ -195,8 +206,8 @@ vdd_ddr: buck2 {
+ 
+ 			vdd: buck3 {
+ 				regulator-name = "vdd";
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
++				regulator-min-microvolt = <2900000>;
++				regulator-max-microvolt = <2900000>;
+ 				regulator-always-on;
+ 				regulator-initial-mode = <0>;
+ 				regulator-over-current-protection;
+@@ -274,6 +285,7 @@ vbus_otg: pwr_sw1 {
+ 				regulator-name = "vbus_otg";
+ 				interrupts = <IT_OCP_OTG 0>;
+ 				interrupt-parent = <&pmic>;
++				regulator-active-discharge = <1>;
+ 			};
+ 
+ 			vbus_sw: pwr_sw2 {
+@@ -304,7 +316,7 @@ &iwdg2 {
+ };
+ 
+ &pwr_regulators {
+-	vdd-supply = <&vdd>;
++	vdd-supply = <&vdd_io>;
+ 	vdd_3v3_usbfs-supply = <&vdd_usb>;
  };
  
 -- 
