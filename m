@@ -2,67 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB80919A5B3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 08:57:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BE8619A628
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 09:19:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Qc+9M5afFiq4Eioc+XPV56IoV58XXWPfvi2mvcnyn0s=; b=V5X
-	a9fE1PN53wQpyQPkZbWscxRDHY9Mp3gRen0qs1uEMwsQnk9dUpWKKfgthJ8fXSrPi8DRSCnCZYG7E
-	Z7e6jJsPVqG8kZUqhKA0zuLAgWVFHz8rT7j0W1ITYmplocKjXlF6/uUNShFCu/cPewUJQxqf0ZVBO
-	Ne8UXaKDDWP4s2OmjPkjwGoua046SZO+r22nlJQ1LQmNSzM6NVeAjoxZGbiNBz/ha+zGqL34GmYK6
-	7CN5JszrU68wk0nKweIpwyVGhh1AiXmG5NiZ26H9CMK7EsNiLqsUnQnTgKD4/bFiGuxMt0EZg6KPA
-	F4dOdCGV47tw0Z06pkhNsy4JT9IXERw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0STLkqaOXneqXFIyamVX7Eb5W1VKLvl1QyS5kMKzGDs=; b=NUZl5mGbwEsE8RNEfKV5kAGn8
+	5F2wZndGB5a7Q7yMOPlRS5ObpFMU3Jn/pNck8RfmG6hS93QQyowjX6MIzAQ7Lz0e0jHCL+uf0IukE
+	8iwRYzJAFSIRjrn+Rij6sX2PATvognWUU5wG1evK65WSTI2UQ6LJxtTsQYTEQ563ndwVAwPj9j+jb
+	+9k3SrDfhgCttxswdbdq/PC97EYQfDKHF9xSR8Nnx/FY4vim0tdk0hbKiqp6AMrZ/7LUnymGmWIiU
+	djIKcOWz7d1EWOYBOMIz6RY0rsmsicZEFKtC0oxDtQAULOhx5uj67XPdw2/mpyyI2t2usi412wJQ8
+	8QXYbM0/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJXJB-0007UW-8V; Wed, 01 Apr 2020 06:57:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJXJ2-0007UC-Qx
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 06:56:58 +0000
-Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
- [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 54E2D206F6;
- Wed,  1 Apr 2020 06:56:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585724215;
- bh=CZbxvJyiVhKcQRNbjNgFwexA6EyXuI2oSzY7v+IGUAg=;
- h=From:To:Cc:Subject:Date:From;
- b=PQ7J3wd34oSrEPZctQP//N8g7iqsV+15Nro0OO7A0z1b6nlyv/Mc6E7979TMRruJK
- TFi+JLOxasxR54hUOo07v/ajUV2nbDEa3PDhbH2wn8+JVp+FrYbQAElorAbjwfaAis
- NXGRKcPKwEPI7UJ3ceKofqRss4FE2+FOjuXqYHQI=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: bring Image header in line with latest Arm brand
- guidelines
-Date: Wed,  1 Apr 2020 08:56:36 +0200
-Message-Id: <20200401065636.1751-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
+	id 1jJXf3-0002fc-2b; Wed, 01 Apr 2020 07:19:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJXev-0002eb-7o; Wed, 01 Apr 2020 07:19:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAD1831B;
+ Wed,  1 Apr 2020 00:19:28 -0700 (PDT)
+Received: from [10.37.12.63] (unknown [10.37.12.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69E453F52E;
+ Wed,  1 Apr 2020 00:23:27 -0700 (PDT)
+Subject: Re: [PATCH v5 2/5] OPP: refactor dev_pm_opp_of_register_em() and
+ update related drivers
+To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com, viresh.kumar@linaro.org
+References: <20200318114548.19916-1-lukasz.luba@arm.com>
+ <20200318114548.19916-3-lukasz.luba@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <4326bd75-e892-63ca-5757-5befd9bbac14@arm.com>
+Date: Wed, 1 Apr 2020 08:19:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20200318114548.19916-3-lukasz.luba@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_235656_932160_8B790223 
-X-CRM114-Status: GOOD (  10.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200401_001933_328653_8113BE03 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,60 +67,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, Ard Biesheuvel <ardb@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org, liviu.dudau@arm.com,
+ bjorn.andersson@linaro.org, bsegall@google.com, festevam@gmail.com,
+ Morten.Rasmussen@arm.com, robh@kernel.org, amit.kucheria@verdurent.com,
+ lorenzo.pieralisi@arm.com, khilman@kernel.org, daniel.lezcano@linaro.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de,
+ rui.zhang@intel.com, alyssa.rosenzweig@collabora.com, orjan.eide@arm.com,
+ daniel@ffwll.ch, b.zolnierkie@samsung.com, s.hauer@pengutronix.de,
+ rostedt@goodmis.org, matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com,
+ airlied@linux.ie, javi.merino@arm.com, tomeu.vizoso@collabora.com,
+ qperret@google.com, sboyd@kernel.org, mka@chromium.org, rdunlap@infradead.org,
+ rjw@rjwysocki.net, agross@kernel.org, kernel@pengutronix.de,
+ sudeep.holla@arm.com, patrick.bellasi@matbug.net, shawnguo@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Arm brand guidelines are pretty clear when it comes to the way
-the brand name 'arm' should be displayed: it should be all lowercase,
-and there should be sufficient whitespace around it on all sides.
 
-Let's use the reserved space we have available in the Image header to
-bring it in compliance with this.
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm64/include/asm/image.h | 2 +-
- arch/arm64/kernel/head.S       | 7 +++----
- 2 files changed, 4 insertions(+), 5 deletions(-)
+On 3/18/20 11:45 AM, Lukasz Luba wrote:
+> The Energy Model framework supports both: CPUs and devfreq devices. Drop
+> the CPU specific interface with cpumask and add struct device. Add also a
+> return value. This new interface provides easy way to create a simple
+> Energy Model, which then might be used in i.e. thermal subsystem.
+> 
+> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+> ---
+>   drivers/cpufreq/cpufreq-dt.c           |  2 +-
+>   drivers/cpufreq/imx6q-cpufreq.c        |  2 +-
+>   drivers/cpufreq/mediatek-cpufreq.c     |  2 +-
+>   drivers/cpufreq/omap-cpufreq.c         |  2 +-
+>   drivers/cpufreq/qcom-cpufreq-hw.c      |  2 +-
+>   drivers/cpufreq/scpi-cpufreq.c         |  2 +-
+>   drivers/cpufreq/vexpress-spc-cpufreq.c |  2 +-
+>   drivers/opp/of.c                       | 71 ++++++++++++++++----------
+>   include/linux/pm_opp.h                 | 15 +++++-
+>   9 files changed, 65 insertions(+), 35 deletions(-)
 
-diff --git a/arch/arm64/include/asm/image.h b/arch/arm64/include/asm/image.h
-index c2b13213c720..a52e6eca8118 100644
---- a/arch/arm64/include/asm/image.h
-+++ b/arch/arm64/include/asm/image.h
-@@ -3,7 +3,7 @@
- #ifndef __ASM_IMAGE_H
- #define __ASM_IMAGE_H
- 
--#define ARM64_IMAGE_MAGIC	"ARM\x64"
-+#define ARM64_IMAGE_MAGIC	"arm\x64"
- 
- #define ARM64_IMAGE_FLAG_BE_SHIFT		0
- #define ARM64_IMAGE_FLAG_PAGE_SIZE_SHIFT	(ARM64_IMAGE_FLAG_BE_SHIFT + 1)
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 57a91032b4c2..e70d3f96dfe4 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -78,10 +78,9 @@ _head:
- 	le64sym	_kernel_offset_le		// Image load offset from start of RAM, little-endian
- 	le64sym	_kernel_size_le			// Effective size of kernel image, little-endian
- 	le64sym	_kernel_flags_le		// Informative flags, little-endian
--	.quad	0				// reserved
--	.quad	0				// reserved
--	.quad	0				// reserved
--	.ascii	ARM64_IMAGE_MAGIC		// Magic number
-+	.ascii		 "         "
-+	.ascii	"   " ARM64_IMAGE_MAGIC "   "	// Magic number
-+	.ascii		 "         "
- #ifdef CONFIG_EFI
- 	.long	pe_header - _head		// Offset to the PE header.
- 
--- 
-2.17.1
 
+Gentle ping.
+
+Viresh could you have a look at it?
+
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
