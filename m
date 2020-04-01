@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6197B19ACCB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60CD919ACD0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:26:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y73pZB627Q2AHwwGt7ufISRsaITLpLCJ+6/1iPjS9lA=; b=mCuQIsp/QoknF4
-	Wtka4iy6w9ttuSpwITvT0jSsMj33CGFmj1Z57OiWvMMuNmPLLq20pGfCwqIL25C9HbEX86Jb5RU7V
-	Sf+wUuB09swu42eND+4DtacSlP26sFSK3mlN06wZHl14qj/6vMRsX3lCyYr1le6Zfbx0vKMGoZvEX
-	oDghzeuTb2I6tGKy0icHgz2vsxP8wBJJ4cvQAMj1Ooo1bdSpAQ2IZKI9X7dw83c+vjSe8d9k6FQwb
-	GSOQdvDuBxmzlNwtYPWfsWJZa0DSMdAD5vYqtFqGdh2uVge3qCX/i4SyDGhChYuGBGdjBN7ctfsOS
-	daR1YR4pqKcaKNCiZAcw==;
+	List-Owner; bh=czrbAP+CCdhfFWrwoGv8GuJW1qHGzD2t636pU7t1WnA=; b=XdKn14vd3r69uE
+	x5IQcydQtvJS1RblEvaOXKeLCPbIM6sSwHvkc+HMmHqhHCYWr2q7rAZRWgr67o8wDxg9okOFHApx8
+	9KtPXNlJZjt/jcqCPQSKw4NbADBO5coBzyv2UE3+ZKDsSmGNCb36/MljBgTzogyFfXCy2Etscl5gQ
+	c9ayVqqqrDoU0iETBX7/6dBVt6eS9cTKZL92zXiQysIaw5JQ3QSHtTDs7B8J+TuN/2zrc7TkcYiLn
+	aQstRZHx53tcY3iG6bKjpZYQ2f2la5nmDl7Tc3bexoQXrkwRnhFLPaiMWZ+TH8boDCh/hAQaUvASe
+	zHJdj2XzbuF9Pl9R4ZQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJdNM-0001Ja-Ck; Wed, 01 Apr 2020 13:25:48 +0000
+	id 1jJdNw-0001vA-NJ; Wed, 01 Apr 2020 13:26:24 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJdKt-00054V-HP
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:17 +0000
+ id 1jJdKu-00055X-VP
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:19 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sn2B0GHDz1qs0h;
- Wed,  1 Apr 2020 15:23:14 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sn2C3T7jz1qs0x;
+ Wed,  1 Apr 2020 15:23:15 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sn2B00mDz1r0cV;
- Wed,  1 Apr 2020 15:23:13 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sn2C36tHz1r0cV;
+ Wed,  1 Apr 2020 15:23:15 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id HyPgzeKaBbrI; Wed,  1 Apr 2020 15:23:11 +0200 (CEST)
-X-Auth-Info: 4XIt7xUJc4Q4FZNJo47GAGF5Ox+8fO1rkwr0L5rU/YA=
+ with ESMTP id 7enNa_BIK8Uo; Wed,  1 Apr 2020 15:23:14 +0200 (CEST)
+X-Auth-Info: Gf5yZ8puembqpYOWh/4bbVoKV5hC0MtArZzDNLbmCnQ=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  1 Apr 2020 15:23:11 +0200 (CEST)
+ Wed,  1 Apr 2020 15:23:14 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V4 11/22] ARM: dts: stm32: Add QSPI NOR on AV96
-Date: Wed,  1 Apr 2020 15:22:26 +0200
-Message-Id: <20200401132237.60880-12-marex@denx.de>
+Subject: [PATCH V4 12/22] ARM: dts: stm32: Add configuration EEPROM on AV96
+Date: Wed,  1 Apr 2020 15:22:27 +0200
+Message-Id: <20200401132237.60880-13-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200401132237.60880-1-marex@denx.de>
 References: <20200401132237.60880-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_062315_954913_6D4B4E9D 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20200401_062317_293092_600EDB9B 
+X-CRM114-Status: GOOD (  10.56  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -86,9 +86,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DH Electronics DHCOR SOM has QSPI NOR on the SoM itself, add it
-into the DT.
+The board has an EEPROM on the same I2C bus as PMIC, at address 0x53.
+The EEPROM contains the board MAC address.
 
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
 Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
@@ -98,51 +99,30 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
-V2: Use spi-flash in the DT node instead of explicit model name
-V3: Reduce the SPI controller window to 2 MiB, which is the flash size
+V2: No change
+V3: No change
 V4: Rebase on stm32-next
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index df68768e8a12..5831280f78ee 100644
+index 5831280f78ee..b29e26eedbea 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -21,6 +21,7 @@ aliases {
- 		mmc0 = &sdmmc1;
- 		serial0 = &uart4;
- 		serial1 = &uart7;
-+		spi0 = &qspi;
+@@ -301,6 +301,12 @@ watchdog {
+ 			status = "disabled";
+ 		};
  	};
- 
- 	chosen {
-@@ -312,6 +313,25 @@ &pwr_regulators {
- 	vdd_3v3_usbfs-supply = <&vdd_usb>;
- };
- 
-+&qspi {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a>;
-+	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a>;
-+	reg = <0x58003000 0x1000>, <0x70000000 0x200000>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
 +
-+	flash0: spi-flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-rx-bus-width = <4>;
-+		spi-max-frequency = <108000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
++	eeprom@53 {
++		compatible = "atmel,24c02";
++		reg = <0x53>;
++		pagesize = <16>;
 +	};
-+};
-+
- &rng1 {
- 	status = "okay";
  };
+ 
+ &iwdg2 {
 -- 
 2.25.1
 
