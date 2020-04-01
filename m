@@ -2,85 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DCC919A4C0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 07:36:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88D3C19A4D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 07:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XGNmJI1l6siHDZwh0e52O7bCI2M9MdZzODbjWBmlNV0=; b=US2ftqwRTBEV2O
-	LwMeM63gzGTAxfi/li8TCmyjvM4cTIuA+ehzBhgHV+hz1UjVNnzo2EKolDQk61gjAHhVvGnW5v4Ac
-	R8jZr8Vw1uDpQNe+51A8jnOOevrpWZT1k08ZqcptkOD/mOR5CKanyEwBTRKWEkBEEgk2XnAfhG/sL
-	U7etj9b9UPbfUIGb9glWoRcUGvrRoV35d1ULpUKrTcvSiYioUoPVBAAnN04rrtxXtI49Dp+ddSvGY
-	NK0nqi7v9OyG3k2TiRZIMGs15gXsfPoYWcKYuHkVONYDtqAS4ERh2tmi08KIx8ZSLAfw6SZ7haiVM
-	7n6JgNTrrGSCc6uIJtLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wm5vdfHEKyiVjHYFB9M3uIO5ojk20j1Y7KVK9l+N0qk=; b=NOsQPBjox13txy
+	gNlJWaE/SLI2f6bEO3dyVDvE4V86RiEblXcMYd7xJa7ZUSGq+w5p/aEiUIurxhT/rYRxhCZw88MyI
+	Dd/Q08iRs5J/XNhzdnJCvpkgjHtUn6fv1FVZjQtmJaju2W7RE6605ePMSdIMXZHcjcs2rGPJiQePV
+	+ot1ZaKnBBY3nAlJR/CWkJ47zYc/uNaiCqRPhGiqCMgYuNsp2eDgmZkUnRcorejg75p3PwiS9Q0y8
+	k1KheUvzsUtoqFPmmf2jCJfiFHlyBxzLJBNUtyIs9TZdyiLe17y72pslUZMOCBTYEGz0lYSiBJ13t
+	9UTizJu0Xtul86/mrmVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJW3J-0007kR-Sx; Wed, 01 Apr 2020 05:36:37 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jJW8v-0002hE-CN; Wed, 01 Apr 2020 05:42:25 +0000
+Received: from mail-eopbgr140054.outbound.protection.outlook.com
+ ([40.107.14.54] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJW3C-0007jm-Vm
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 05:36:33 +0000
-Received: by mail-qk1-x744.google.com with SMTP id u4so25835139qkj.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 31 Mar 2020 22:36:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dTLHd+ljprL9Sw57RX/KQS0sSljDmATmVTa7Eftn9nY=;
- b=jqUmzHSbQy960O0bj19LoLcZ7Vi0soTgVr7Az1EyLkPnJIXeuPiQ51LKCcGUS8t6Oy
- x1Ov/s4gKt99lbV4rCsR3AK34IU2owK9aqigORy+kfaw318K8+FGPW3UNex2x+uI/iA0
- /OfzM27g9+Ad29SMxal3k96S943mHbT80l5ANMKDeF0XyeIVWoSEDq0n4R0CAz3CiSvJ
- EO9nc5+XMGe3K6FSKlQ0X7bAUSYL4R1pmXTCjrWYXDJUIxvkAssx4xY0VGxKc2wHBDxz
- 2963A0W/R73XcZTbvWq0hj3lGfLx4jOBrTtewYICtwMlsn+EXj3Cyz+/Jzqzg7UbLYTY
- 1fFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dTLHd+ljprL9Sw57RX/KQS0sSljDmATmVTa7Eftn9nY=;
- b=mxhbhF6NEH6F6p03t7EBsgGcL7qEvI2U78F695NliPWcLPteyDHHr50cf3rmIPCKUC
- wlN/HWcfYJQSOknWtBsD9r1lwmXR3zL6K72ZZAOqM3NnJjxwbs/Xv1uqIqYVtEZy/rl3
- zwwbPnoqLeh0pv0s+XMPhkXZw5eICJuS8Z5e+FudzvPYcBy8cC6JeMYww5CyKVBes7LX
- BhP9JbKftuK3cVNPbYq9zq9HvTeYh9r8oVm93ErvLJQx0Uvr8/ltYeixbwiJRxpLyktp
- IncGMW3Yw2wU+5RwAux9lVQdtXAvGssf+yCGkDD3T9KynWNqG6BRfAEUJD7vuNzWHCPX
- QRqA==
-X-Gm-Message-State: ANhLgQ1LP0US4wH2jy42LtPh9eDWiWjg7IXusytm/DKPnPdGj8qlQQrZ
- zk/9fS+PTe56iEOjPKCQNeki5Osrw9U=
-X-Google-Smtp-Source: ADFU+vuIJq8HSxb/csZ+DvwOyrAqqFgYrIpa62vJPWdMGcbUUxFPeHgWVpcqVEclqT7tX+TMgkGQ2Q==
-X-Received: by 2002:a05:620a:1282:: with SMTP id
- w2mr7948339qki.444.1585719389204; 
- Tue, 31 Mar 2020 22:36:29 -0700 (PDT)
-Received: from pek-lpggp6.wrs.com (unknown-105-123.windriver.com.
- [147.11.105.123])
- by smtp.gmail.com with ESMTPSA id c14sm811944qtv.32.2020.03.31.22.36.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 31 Mar 2020 22:36:28 -0700 (PDT)
-From: Kevin Hao <haokexin@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: entry: Update the IRQ tracing before debug exception
- unmasked
-Date: Wed,  1 Apr 2020 13:21:07 +0800
-Message-Id: <20200401052107.36076-1-haokexin@gmail.com>
-X-Mailer: git-send-email 2.25.1.377.g2d2118b814c1
+ id 1jJW8m-0002gO-GL
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 05:42:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MdvqT+ixkmgo+hbkpr27su93iJ6/Lsurl5X3kHzKwsrhTBjgk9Ve/DnoflP7uGec7yDrtqt5ACAXXxRGcRoY2U/L5QBdV4Owe/+2nRhXOfeR2QAxKrdcupbWuIlXxNlVLKCpcRG7Yzjw9jgCv/OfDvauJHDWnrz9TWHdwnPg6O8tQo2LpDm+2w0+PRjQ9QnC42M1SvC5PAC3OoVufvpo1nnD73Plhtdis+1G767jcVRPYqTNHjRvmmhYotShUHkGF2h4lD8leNKU1xygoaq3q4/ALzsytHis45Obm3iAmHAotl2YLDRoNgVwF4P53TWVYkddkKKREi6k6QwbxZCptw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hp1BpGfMM3aK5fdHC6m5G8efLg+rP5j9ptCbNB/Eyek=;
+ b=m0IRHov00S41WNHvq2DSyZDJ2by24j/GePcRsO3E82aS2y89wh8B0wK28Rzy0SoT2jwDWAtQGPxnnbOZnfKnnlp8RwxNcgUV/BHO/b2/HFY4ZjZ1hE3GhAx0hWJ/Qo8EFmH/rOYVwoO5oqr2alBAAVbzrbaJDJz5teCZtVoQanio6zyS25Ow/x9uO7wHMtTYuS63NKpfYrNvDtufv18tlGaY0uvfscyzGO8FaUWALU0qrN9ArpHm7J+ihXbI3lS+7NLbgUItW9tsYZyftdeSD+hnOlT1C60X0TsX4Zc3G6OCaeRCfySjwBtMGk/hUyYiPC+xy8T9G6ri7Uvkt8BDZA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hp1BpGfMM3aK5fdHC6m5G8efLg+rP5j9ptCbNB/Eyek=;
+ b=UEv/A/0Jjs1YmAelcVoo4dSpU7S1DUEIUz9M5HlGHRL99XuDHvYthGBqiO4d5boRJJ1VK5prRDbMgJkrauQO+Y8FB/+3HJz6ltrTzX2oqo6gfq/bzo6mpr5aE10FOThewAB0HBm+Biy/3GLYx4Siqt38JXZT0Ly7qyCMniSoCb4=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4931.eurprd04.prod.outlook.com (20.176.214.206) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.18; Wed, 1 Apr 2020 05:42:13 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::ad44:6b0d:205d:f8fc%7]) with mapi id 15.20.2856.019; Wed, 1 Apr 2020
+ 05:42:13 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>
+Subject: RE: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel type
+Thread-Topic: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel type
+Thread-Index: AQHV/cQDu85ufqDAx06lOMhNtamjbahaF9QwgAmnWACAABWP0A==
+Date: Wed, 1 Apr 2020 05:42:13 +0000
+Message-ID: <AM0PR04MB4481F99E13F6ED8F2ED9A35A88C90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1584604193-2945-1-git-send-email-peng.fan@nxp.com>
+ <AM0PR04MB44812577EF272CA1D457A1F788C80@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CABb+yY3jqhQpDf3eBMrGRfYeS2-Gj7o3YfZJVkb7Tp+4i-QZ4g@mail.gmail.com>
+In-Reply-To: <CABb+yY3jqhQpDf3eBMrGRfYeS2-Gj7o3YfZJVkb7Tp+4i-QZ4g@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 9242672c-628a-4a9d-4256-08d7d5ff6e0c
+x-ms-traffictypediagnostic: AM0PR04MB4931:|AM0PR04MB4931:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB493152AB4CAF7F0F21D6F97D88C90@AM0PR04MB4931.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 03607C04F0
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR04MB4481.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(39860400002)(346002)(376002)(136003)(366004)(396003)(7696005)(44832011)(15650500001)(8676002)(64756008)(54906003)(4326008)(5660300002)(66946007)(4744005)(52536014)(66556008)(81156014)(53546011)(81166006)(76116006)(6506007)(66446008)(316002)(55016002)(478600001)(66476007)(26005)(33656002)(9686003)(6916009)(2906002)(71200400001)(8936002)(186003)(86362001);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: pV6Mr6gKoB0IaLRpf9yorfWur9ds44dmGk+7ArPksDCH1x4CHTksYl5Yw1+WVHlAMxKKppFs0F+aD7zJMUrXlwUbr+ZEaN+CcQbV8vaWWj5k9C+Hb0/EGDRJLJ3gJZ0pxvLF7qtlfJZKbrO1a20NKNs1FWekiuqxiVBnUN+e7di0yUKqHxkxj8jbQypu4fxLu8miwp4IiM/nY1DCbrXLLeYL5TzJWv8JKJ5F3jFIY2umrBP9x4Dryb/a34d1DbAp9O50rk1TbTlYhB4gwAkqYrfAp3lZUEdx1h9KLLH8fBwlZUxdYnubGHF4p4XJl7bB6AxLhVAH1NN06Xi6HjVLTNQz5we47DA8xow1nq2VGGmnVghcOaxLHQr1JBsOhg+AGFX4Vgii+dTNXoZ+egVQw7r3+7Wkji9DGlWGeWushzbobXwYWbmW9huf+Qj2eWPM
+x-ms-exchange-antispam-messagedata: b8k2FSu8dtCoce8eiWFSHhl/2TcGW7o5q7ZQIL73OZRa3ajCvla1/hSUHzwrCpTUGtcRzJGhALi3NXGP7g9hAuU7vh++dSAkpOZ4G/BK47CfB2PLmnXaBP/XSIm6qLNcHC6a02tLCQaFGQyRZqTgjg==
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9242672c-628a-4a9d-4256-08d7d5ff6e0c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Apr 2020 05:42:13.4659 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: m0w6ct6CRGTVWvNIh9Qgu2b5vu0sNdVaW6TkJSUKvsHxQgFrnhhygAQlOC7SAHJvz9ycKFc4OB9jnFceInlJ0w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4931
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_223631_047227_B3C08C44 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20200331_224216_735979_1666B139 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [haokexin[at]gmail.com]
+ no trust [40.107.14.54 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,108 +123,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When running the kgdb test suite, we get the following call trace:
-  # echo kgdbts=V1 > /sys/module/kgdbts/parameters/kgdbts
+> Subject: Re: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel
+> type
+> 
+> On Tue, Mar 31, 2020 at 8:34 AM Peng Fan <peng.fan@nxp.com> wrote:
+> >
+> > Hi Jassi,
+> >
+> > > Subject: [PATCH V7 0/4] mailbox/firmware: imx: support SCU channel
+> type
+> >
+> > Are you ok with the mailbox part?
+> >
+> Is there anything you think I might have overlooked?
+> I already queued the three patches...
+>   dt-bindings: mailbox: imx-mu: add SCU MU support
+>   mailbox: imx: restructure code to make easy for new MU
+>   mailbox: imx: add SCU MU support
 
-  DEBUG_LOCKS_WARN_ON(current->hardirqs_enabled)
-  WARNING: CPU: 10 PID: 697 at kernel/locking/lockdep.c:4793 check_flags.part.0+0x15c/0x180
-  Modules linked in:
-  CPU: 10 PID: 697 Comm: sh Not tainted 5.6.0-next-20200331-yoctodev-standard+ #341
-  Hardware name: Marvell OcteonTX CN96XX board (DT)
-  pstate: 604003c9 (nZCv DAIF +PAN -UAO)
-  pc : check_flags.part.0+0x15c/0x180
-  lr : check_flags.part.0+0x15c/0x180
-  sp : ffff800017d0f830
-  x29: ffff800017d0f830 x28: ffff000b936c0000
-  x27: 00000000c28f5c29 x26: 00000000ffffffff
-  x25: 00000000000003c0 x24: ffff800011af8dd0
-  x23: 0000000000000000 x22: ffff8000119afdc0
-  x21: ffff80001198bbe8 x20: ffff800011400018
-  x19: ffff800012655000 x18: 0000000000000001
-  x17: 0000000000000000 x16: 0000000000000000
-  x15: ffff000b936c0470 x14: ffffffffffffffff
-  x13: 0000000000000000 x12: ffff800012655000
-  x11: ffff800017d0f830 x10: ffff800017d0f830
-  x9 : 00000000000003c0 x8 : 6e655f7371726964
-  x7 : 7261683e2d746e65 x6 : ffff8000126552fe
-  x5 : 0000000000000000 x4 : 0000000000000000
-  x3 : 00000000ffffffff x2 : 0000000000000000
-  x1 : bbf8ef1cf7dda200 x0 : 0000000000000000
-  Call trace:
-   check_flags.part.0+0x15c/0x180
-   lock_is_held_type+0xf0/0x120
-   rcu_read_lock_sched_held+0x74/0x98
-   trace_rcu_dyntick+0x1b8/0x1e0
-   rcu_nmi_enter+0x7c/0xb8
-   debug_exception_enter+0x68/0xe8
-   do_debug_exception+0x60/0x150
-   el1_sync_handler+0xd8/0xf8
-   el1_sync+0x7c/0x100
-   el1_irq+0x78/0x180
-   kgdbts_break_test+0x0/0x40
-   param_set_kgdbts_var+0x68/0xe8
-   param_attr_store+0xb8/0x120
-   module_attr_store+0x2c/0x48
-   sysfs_kf_write+0x54/0x80
-   kernfs_fop_write+0x154/0x248
-   __vfs_write+0x24/0x50
-   vfs_write+0xec/0x1d8
-   ksys_write+0x74/0x100
-   __arm64_sys_write+0x24/0x30
-   do_el0_svc+0x8c/0x1e8
-   el0_sync_handler+0x11c/0x198
-   el0_sync+0x158/0x180
-  irq event stamp: 76505
-  hardirqs last  enabled at (76505): [<ffff80001009f9ec>] debug_exception_exit+0x54/0x68
-  hardirqs last disabled at (76504): [<ffff80001009fb04>] debug_exception_enter+0xac/0xe8
-  softirqs last  enabled at (76498): [<ffff8000100817b4>] __do_softirq+0x5a4/0x5ec
-  softirqs last disabled at (76439): [<ffff8000100b6ff4>] irq_exit+0x13c/0x150
+Sorry, I forgot to check your tree before ask.
 
-The reason is that an IRQ is emitted when doing the single step debug,
-but in the IRQ handler we would enable the debug exception before
-updating the IRQ tracing flags. This will cause the debug exception
-running in an context which the IRQ state and IRQ tracing flags are
-mismatched. And the debug exception handler only update the IRQ tracing
-flag to off when it think that the debug emit in a IRQ enabled context.
-Then we would get the above call trace if any code like check_flags()
-is called in the debug exception handler's path. So we have to update
-the IRQ tracing to the correct status before the debug exception unmasked.
+Thanks,
+Peng.
 
-Signed-off-by: Kevin Hao <haokexin@gmail.com>
----
- arch/arm64/kernel/entry.S | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index ddcde093c433..0cc65b7b9e1a 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -592,7 +592,6 @@ SYM_CODE_END(el1_sync)
- SYM_CODE_START_LOCAL_NOALIGN(el1_irq)
- 	kernel_entry 1
- 	gic_prio_irq_setup pmr=x20, tmp=x1
--	enable_da_f
- 
- #ifdef CONFIG_ARM64_PSEUDO_NMI
- 	test_irqs_unmasked	res=x0, pmr=x20
-@@ -605,6 +604,7 @@ SYM_CODE_START_LOCAL_NOALIGN(el1_irq)
- 	bl	trace_hardirqs_off
- #endif
- 
-+	enable_da_f
- 	irq_handler
- 
- #ifdef CONFIG_PREEMPTION
--- 
-2.25.1.377.g2d2118b814c1
-
-
+> 
+> Cheers!
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
