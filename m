@@ -2,42 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1888719B605
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 20:55:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A40219B62E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 21:05:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzIJ2UYfjtUurvc9slM+kuPBUoFm/GwJiNdtUwLibvQ=; b=s3V8U9upqgeiUy
-	BjXtU7n5MCdWKKuFF8DDWhu2w29eswUtupBTSO3OFp4tmPAqq/J4u++ugAGwc3VS6diRDwvMesvTI
-	s9lqxH8vWUGQSKxpcq3Fbuf7quxCjEClgHBTUYEm7raaFdY6txTTYIW91Ayqk/DW+lo3nAeYu8i9g
-	ZN3cZMkUpZQlletVEqHGWxt+ukYu3nu+gSMj6IPqEDRMpcGJimbMVcGpV1kxiCjOe2rQrxjz0ylwO
-	eok6+vbWk3E3O+nMv0gHFZieFHSNEoHU4fA+35GZ2yRH5qqwJcD/pFz457cP8F1mfGq1Q8BhNGlDl
-	/Tzc8vT1ujM6nQwM3IBw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5pQDbKKBd0JSBNn2zmaAM4jEmV/jZ36wt1USIQKskOs=; b=QlnAz6QxomWGMa
+	+gY28FI2PgrDZsZrGKFPMFmv7cjK1K++KV5Fi0lrsIlR0b+qc0FZ0H2ZTUnwEZGEADADj18VJQ0a5
+	DmGiibCmV8gqzohxYjRTx0/FcBjFV5MBqW2lbWIJVyulMhlo3HgcG2tmkrcgoz6MJz6rHSOGa1Y08
+	A9zsUE88TFxQ/ESWRblt0S3pPfvEiZu6VXFoUvup25B3Ei6NAFBQhkgLrPqUBKudbh05RyC77OBu8
+	hVKqci8VuN9NqqFFs5ni40WOPzhyd9jQ5o1uyYdBWsLJjpzN9VFkOg+m16iihhRvU3+LN1Cks3Fmv
+	xsTOg4/JOwuwnjcgjLhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJiWD-0005zh-GY; Wed, 01 Apr 2020 18:55:17 +0000
-Received: from [2601:1c0:6280:3f0:897c:6038:c71d:ecac]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJiVz-0003u7-Lp; Wed, 01 Apr 2020 18:55:03 +0000
-Subject: Re: [PATCH v2 4/4] hugetlbfs: clean up command line processing
-To: Mike Kravetz <mike.kravetz@oracle.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-s390@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20200401183819.20647-1-mike.kravetz@oracle.com>
- <20200401183819.20647-5-mike.kravetz@oracle.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <a80f530d-e803-3952-e714-705a8589f50a@infradead.org>
-Date: Wed, 1 Apr 2020 11:55:01 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jJifc-0001xu-3Y; Wed, 01 Apr 2020 19:05:00 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJifW-0001xC-71
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 19:04:55 +0000
+Received: by mail-lj1-x244.google.com with SMTP id b1so662007ljp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 01 Apr 2020 12:04:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/DxqfuTxuKlaH8Gn/MYKo4lOdwXZcw5v1ups67QyOqE=;
+ b=YQJ3Gf2bufH1xWuvLDsGp1wDWIMDVWgOmOSEapDwKOQ2ajyjZb85owf6rtc4/3PMdK
+ pdWwZ+Wfchw8fgnIhqRcqBiSgnFU1jUPaZBeOAPWUIUO0LHqDFa1fAegRx74lit66Tu+
+ T5a76uJtxArs+8ucTSGY412VKUjgxC1rxYBWDTKk/lrPXQsn6suQauhON8RSw2+Yuqm+
+ /zEFuf9d59SzRi6TjrNO8qbWnhsaW8dgMbLvGuXgZEaNyOB3RaL+cjd9j54oz/MLKKH0
+ /tprCxaTL/FV5PH/Ii4T5+MS1kSTM3Uz0RFg9uwUJ35gNozNXoAypN073hjuxC4A2gv3
+ vSvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/DxqfuTxuKlaH8Gn/MYKo4lOdwXZcw5v1ups67QyOqE=;
+ b=X+4nfpRLJb83/BdXylJcutp68p1wiredkBqAKCqIcCKg8PQUOWTXLkIY4tQ7yra1DC
+ HeCkc3r+5RMIHmuAo76YFpmFryiBocpsDATBEPKdq13v9HctyGgUGF7/p/9Pc7OSV5Ma
+ GL3AJdbhV/kykapJA1dovaaCzTL5doqS6m7cW0neCgT3AYVr1GKDd3ysmJJ85ApIHnVj
+ StLZtvGyglab0KC5NSGcvkxu4QS23LY3IiWQggrz/CEE34SrXCiu3Z41cpPSJW1o1xnp
+ cQqLQE0N8nYVWO5aEbdr1w6LhRhhvPweI0PcDU3mJFtyJYqBiVVQmNvEEMQxjiJ9PXMS
+ 8O7Q==
+X-Gm-Message-State: AGi0PuaLMno5qeVNvrwWR2Fuzjv+fG2vKCGcRb8MfzvMMEDxnLGLEzMt
+ dAntDoF7uW/YzCL4qthAoKlkPP9HXWqZb/M1tuWMOh39
+X-Google-Smtp-Source: APiQypJaC+dBtoqJLvNc6uc/ifBPIF/2Yb0O/FFaaksX9WonGEIYgQOnVz4aOKPZbpZobomOTPl3nLr98rIpkartQYc=
+X-Received: by 2002:a05:651c:30b:: with SMTP id
+ a11mr13626475ljp.164.1585767891570; 
+ Wed, 01 Apr 2020 12:04:51 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200401183819.20647-5-mike.kravetz@oracle.com>
-Content-Language: en-US
+References: <20200331183725.25255-1-festevam@gmail.com>
+ <AM0PR04MB448118DFFFBA1C1119D257F588C90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB448118DFFFBA1C1119D257F588C90@AM0PR04MB4481.eurprd04.prod.outlook.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 1 Apr 2020 16:04:40 -0300
+Message-ID: <CAOMZO5AAcwjLCYtGX4LRPqbbZQmr=OsZXyc7b0Kf0D9WQfLNWA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: imx8m: Fix AIPS reg properties
+To: Peng Fan <peng.fan@nxp.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200401_120454_276389_DB895598 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -49,77 +94,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
- Mina Almasry <almasrymina@google.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andrew Morton <akpm@linux-foundation.org>, Vasily Gorbik <gor@linux.ibm.com>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Paul Mackerras <paulus@samba.org>, Thomas Gleixner <tglx@linutronix.de>,
- Longpeng <longpeng2@huawei.com>, Will Deacon <will@kernel.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/1/20 11:38 AM, Mike Kravetz wrote:
-> With all hugetlb page processing done in a single file clean up code.
-> - Make code match desired semantics
->   - Update documentation with semantics
-> - Make all warnings and errors messages start with 'HugeTLB:'.
-> - Consistently name command line parsing routines.
-> - Check for hugepages_supported() before processing parameters.
-> - Add comments to code
->   - Describe some of the subtle interactions
->   - Describe semantics of command line arguments
-> 
-> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
-> ---
+Hi Peng,
 
-Hi Mike,
-One nit, please see below:
+On Wed, Apr 1, 2020 at 3:51 AM Peng Fan <peng.fan@nxp.com> wrote:
 
->  .../admin-guide/kernel-parameters.txt         | 35 ++++---
->  Documentation/admin-guide/mm/hugetlbpage.rst  | 44 +++++++++
->  mm/hugetlb.c                                  | 96 +++++++++++++++----
->  3 files changed, 142 insertions(+), 33 deletions(-)
-> 
-> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> index 1bd5454b5e5f..de653cfe1726 100644
-> --- a/Documentation/admin-guide/kernel-parameters.txt
-> +++ b/Documentation/admin-guide/kernel-parameters.txt
-> @@ -832,12 +832,15 @@
->  			See also Documentation/networking/decnet.txt.
->  
->  	default_hugepagesz=
-> -			[same as hugepagesz=] The size of the default
-> -			HugeTLB page size. This is the size represented by
-> -			the legacy /proc/ hugepages APIs, used for SHM, and
-> -			default size when mounting hugetlbfs filesystems.
-> -			Defaults to the default architecture's huge page size
-> -			if not specified.
-> +			[HW] The size of the default HugeTLB page size. This
+> >               aips1: bus@30000000 {
+> >                       compatible = "fsl,aips-bus", "simple-bus";
+> > -                     reg = <0x301f0000 0x10000>;
+> > +                     reg = <0x30000000 0x400000>;
+>
+> Should the node name changed to bus@0x301f0000, but not
+> change reg?
 
-			Drop one "size" above?
+I don't think so. I have just adjusted the reg property to the AIPS
+range as per the i.MX8M Reference Manuals.
 
-> +			is the size represented by the legacy /proc/ hugepages
-> +			APIs.  In addition, this is the default hugetlb size
-> +			used for shmget(), mmap() and mounting hugetlbfs
-> +			filesystems.  If not specified, defaults to the
-> +			architecture's default huge page size.  Huge page
-> +			sizes are architecture dependent.  See also
-> +			Documentation/admin-guide/mm/hugetlbpage.rst.
-> +			Format: size[KMG]
+> The 0x301f0000 is the correct aips configuration space.
 
+I don't see any of this AIPS configuration space mentioned in the
+Reference Manual.
 
+Also, we use the same approach on the other i.MX SoC dtsi files. Why
+i.MX8M dtsi needs to be different in this aspect?
 
--- 
-~Randy
+Regards,
 
+Fabio Estevam
 
 _______________________________________________
 linux-arm-kernel mailing list
