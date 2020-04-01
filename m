@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5961D19ACC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:24:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E920219ACC6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zlpWj+fM0R7J7TxEQkAtaxeNSJp2IrnViroDMkv29lI=; b=BdfdZZQqfiZQkh
-	yqRwLpxpnaYWdT2fp5wnY/thYhIuVUEnsMBjK7Rr9m/GPxpwGkQeziyqaq5g2MrfZBAsdM8Q9UOE5
-	tC9uEqdESHH4aMC+gmCjJTAS4kcf6h+sjs9BCl5xhdFaKLkyVZNG9QzY1n1xkqjkXHwIdwp4p6CgE
-	Wyp80a9CxuE/J1dqp+WwoWFrcvDTo4yeBc/L0DMdRcetFlJPmkevq+5V1xb7Z6D/1XhCx5UEMuL5Q
-	0WtYdMerwjN539V1RiQI/Gmfp033Hpfvj/Aru89SoKg4h835kQEXavKdOlDnCbWHXbcJyxpQBLii+
-	w/iEI4VGSk5y7KKwUjxQ==;
+	List-Owner; bh=dxJVM9XZC5Th++Ch2PdegFJgope8txYxIm5Zz3KpgOU=; b=gWPdJjKsNGwfYZ
+	08bhI2RDDW6jBtOglkBRuN3rQeSFmilp+BEvz1LW4SkrrJhMZyj8qf737pQm21Twvtl9YGYPWoTJ0
+	Wm3To4K2FGKYqA5ULcC3arW9uourA59uUO4yOJVX6aYmb0Xl5/dTlj93iM+J8/5UQRQdHuBZWIwql
+	+56W/BoE39ZHENh3OUBHkLYJtuP2jPoUAo1/Z9adHfVd+iBFAhPHNxpSX7S5w/lnDc74jB+8S3Nvp
+	g5P2L5aNy1vX4Og3Z+I7qCFyJMRfE6OGYHgMQd/nVET0KyE8lPfdcEzeEN0L1/KgZl1lMzAkp+vrZ
+	5K6GU4LjFn2KP3Mb2T/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJdM4-00065O-MF; Wed, 01 Apr 2020 13:24:28 +0000
+	id 1jJdMJ-0006M8-JW; Wed, 01 Apr 2020 13:24:43 +0000
 Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJdKj-0004h0-Op
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:07 +0000
+ id 1jJdKl-0004jM-26
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:08 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sn1z6ccCz1rm9S;
- Wed,  1 Apr 2020 15:23:03 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sn214Gmqz1rpF7;
+ Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sn1z5tNwz1r0cS;
- Wed,  1 Apr 2020 15:23:03 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sn213ZMTz1r0cS;
+ Wed,  1 Apr 2020 15:23:05 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id wv-ba7vzVc4d; Wed,  1 Apr 2020 15:23:02 +0200 (CEST)
-X-Auth-Info: V2hUMZn3KAgRre0ETaG2Pu2CHhqypi2R/pNLh7dNnms=
+ with ESMTP id 2D2BMBjQ1JHA; Wed,  1 Apr 2020 15:23:04 +0200 (CEST)
+X-Auth-Info: fxMqJ8KEUY5az3pdjbplMyxNSHH/5F1Y7sQKKqxQRyA=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  1 Apr 2020 15:23:02 +0200 (CEST)
+ Wed,  1 Apr 2020 15:23:04 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V4 05/22] ARM: dts: stm32: Add alternate pinmux for SDMMC1
- direction pins
-Date: Wed,  1 Apr 2020 15:22:20 +0200
-Message-Id: <20200401132237.60880-6-marex@denx.de>
+Subject: [PATCH V4 06/22] ARM: dts: stm32: Repair SDMMC1 operation on AV96
+Date: Wed,  1 Apr 2020 15:22:21 +0200
+Message-Id: <20200401132237.60880-7-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200401132237.60880-1-marex@denx.de>
 References: <20200401132237.60880-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_062305_961635_BDFF9598 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200401_062307_283440_2E63D0EE 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -84,10 +83,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add another mux option for SDMMC1 direction pins, in particular
-SDMMC1_D123DIR, this is used on AV96 board.
+The SD uses different pinmux for the D123DIRline, use such a pinmux,
+otherwise there is a pinmux collision on the AV96. Add missing SD
+voltage regulator switch.
 
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
 Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
@@ -97,48 +96,59 @@ Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
-V2: Fix SDMMC1_D123DIR AF, should be AF11
+V2: Disable SDR104, it seems unstable thus far
 V3: No change
 V4: Rebase on stm32-next
 ---
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 21 ++++++++++++++++++---
+ 1 file changed, 18 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-index 6fce6133d644..fadf09f04f53 100644
---- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-@@ -1084,6 +1084,30 @@ pins {
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index edcc57864495..a6f21ac5a94a 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -77,6 +77,20 @@ led6 {
+ 			default-state = "off";
  		};
  	};
++
++	sd_switch: regulator-sd_switch {
++		compatible = "regulator-gpio";
++		regulator-name = "sd_switch";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <2900000>;
++		regulator-type = "voltage";
++		regulator-always-on;
++
++		gpios = <&gpioi 5 GPIO_ACTIVE_HIGH>;
++		gpios-states = <0>;
++		states = <1800000 0x1>,
++			 <2900000 0x0>;
++	};
+ };
  
-+	sdmmc1_dir_pins_b: sdmmc1-dir-1 {
-+		pins1 {
-+			pinmux = <STM32_PINMUX('F', 2, AF11)>, /* SDMMC1_D0DIR */
-+				 <STM32_PINMUX('E', 14, AF11)>, /* SDMMC1_D123DIR */
-+				 <STM32_PINMUX('B', 9, AF11)>; /* SDMMC1_CDIR */
-+			slew-rate = <1>;
-+			drive-push-pull;
-+			bias-pull-up;
-+		};
-+		pins2{
-+			pinmux = <STM32_PINMUX('E', 4, AF8)>; /* SDMMC1_CKIN */
-+			bias-pull-up;
-+		};
-+	};
-+
-+	sdmmc1_dir_sleep_pins_b: sdmmc1-dir-sleep-1 {
-+		pins {
-+			pinmux = <STM32_PINMUX('F', 2, ANALOG)>, /* SDMMC1_D0DIR */
-+				 <STM32_PINMUX('E', 14, ANALOG)>, /* SDMMC1_D123DIR */
-+				 <STM32_PINMUX('B', 9, ANALOG)>, /* SDMMC1_CDIR */
-+				 <STM32_PINMUX('E', 4, ANALOG)>; /* SDMMC1_CKIN */
-+		};
-+	};
-+
- 	sdmmc2_b4_pins_a: sdmmc2-b4-0 {
- 		pins1 {
- 			pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
+ &ethernet0 {
+@@ -304,9 +318,9 @@ &rtc {
+ 
+ &sdmmc1 {
+ 	pinctrl-names = "default", "opendrain", "sleep";
+-	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
+-	pinctrl-1 = <&sdmmc1_b4_od_pins_a>;
+-	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a>;
++	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
++	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_b>;
++	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_b>;
+ 	cd-gpios = <&gpioi 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+ 	disable-wp;
+ 	st,sig-dir;
+@@ -314,6 +328,7 @@ &sdmmc1 {
+ 	st,use-ckin;
+ 	bus-width = <4>;
+ 	vmmc-supply = <&vdd_sd>;
++	vqmmc-supply = <&sd_switch>;
+ 	status = "okay";
+ };
+ 
 -- 
 2.25.1
 
