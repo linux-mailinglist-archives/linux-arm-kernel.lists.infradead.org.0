@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D2B19ACDE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E847B19ACDF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 15:29:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oVazbUK2f6Mu4p8BjmmLlT1du7kO3y9/KvbYEHicR+g=; b=tgZ0AYbwDmCff7
-	dAvtUuoWNyxMkIEtBVnOXh00YbTnO5xM8C81GyFtB9Lfynso9kA0olLMq0xkIjBMdEEJgmZfS8eGC
-	2b+JUhZvhguAln4li3aUxVbK+YOAALzoM5y5/XmrJrMupVkvoO6EGdXsPM8quOfVtoK1MDzRRr0SN
-	Bcvym+IBxSEAoO9xu5cO5tNTJfYXI4Ch1tWH0HdLZmvZZhkM7Wyf+0x/fkkNJMHGWL/RU0PiprAe4
-	m/t8g/u6JxiaH6f5ZG9Agm2e1d+XGI0D/pJwpJCTqXMN6gkGhuuHJEC3MB2z0TFuoHYTRpfG4ZSBa
-	2YjW6WhVTUnmJ3R4ol3g==;
+	List-Owner; bh=I4Vo0AReW6meBw4uEiDn4UgwBQmTBSYOYNAUK4MXQkY=; b=EsEQiTlzBvFyMJ
+	kfR7IEwAMPBqKn+2MGLuRq0IY5piopdhpLqv189QgZ4iaWvxh7gzhZrES+HWlU9iYPZigtTwAIkCj
+	khxahhqzyo55c+3QZH6PcqaSmI1Jg5zefos/NJl/8AekOIFAaVpccwiSuciQMMQyKI+IKYxN4IEYS
+	XvX8owlzxwmt7K9xzsYUZUjGJ7xwJE9hrSPaxmOxzJmuJ0TJZVusrqZIfRWQnaldYkDTWeya/EwHx
+	24inLbyzOlD+/XYBjlYiDtPFj1PZnGXa2V4rOvaxZ98JHplbafHGDRG/sIGq3v8YvliWWiAyAOel7
+	QZyAWAi4fZZmNqAXEVNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJdQC-0004CP-4R; Wed, 01 Apr 2020 13:28:44 +0000
+	id 1jJdQO-0004Qq-0M; Wed, 01 Apr 2020 13:28:56 +0000
 Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJdL7-0005Io-FJ
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:30 +0000
+ id 1jJdL9-0005L5-8d
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 13:23:32 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48sn2S1YnFz1qs07;
- Wed,  1 Apr 2020 15:23:28 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 48sn2T2WZDz1qs13;
+ Wed,  1 Apr 2020 15:23:29 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48sn2S0kHbz1r0cW;
- Wed,  1 Apr 2020 15:23:28 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 48sn2T2GKlz1r0cS;
+ Wed,  1 Apr 2020 15:23:29 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id zX_t8Qm21bBW; Wed,  1 Apr 2020 15:23:26 +0200 (CEST)
-X-Auth-Info: Q/JLpjZeFwW10iv95S4LC/OIVLU6F2EmkILqFJlVjss=
+ with ESMTP id dOIOf7GAIh03; Wed,  1 Apr 2020 15:23:28 +0200 (CEST)
+X-Auth-Info: nrXnPWiGks1a0DaCBZoTFkletW+TWKRhCUq7Rp+F8ok=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  1 Apr 2020 15:23:26 +0200 (CEST)
+ Wed,  1 Apr 2020 15:23:28 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V4 21/22] ARM: dts: stm32: Add bindings for USB on AV96
-Date: Wed,  1 Apr 2020 15:22:36 +0200
-Message-Id: <20200401132237.60880-22-marex@denx.de>
+Subject: [PATCH V4 22/22] ARM: dts: stm32: Rename LEDs to match silkscreen on
+ AV96
+Date: Wed,  1 Apr 2020 15:22:37 +0200
+Message-Id: <20200401132237.60880-23-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200401132237.60880-1-marex@denx.de>
 References: <20200401132237.60880-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_062329_675027_EABF445F 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200401_062331_461605_954BD45E 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -86,7 +87,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fill in the bindings for USB host and gadget on AV96.
+The LED labels do not match the silkscreen on the board, fix it.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
@@ -100,48 +101,38 @@ To: linux-arm-kernel@lists.infradead.org
 V2: No change
 V3: No change
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 31 +++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 2f5a53e1b50d..31f23e60629f 100644
+index 31f23e60629f..9fcc15b6e76d 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -544,3 +544,34 @@ bluetooth {
- 		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
- 	};
- };
-+
-+&usbh_ehci {
-+	phys = <&usbphyc_port0>;
-+	phy-names = "usb";
-+	status = "okay";
-+};
-+
-+&usbotg_hs {
-+	pinctrl-0 = <&usbotg_hs_pins_a>;
-+	pinctrl-names = "default";
-+	phy-names = "usb2-phy";
-+	phys = <&usbphyc_port1 0>;
-+	status = "okay";
-+	vbus-supply = <&vbus_otg>;
-+};
-+
-+&usbphyc {
-+	status = "okay";
-+};
-+
-+&usbphyc_port0 {
-+	phy-supply = <&vdd_usb>;
-+	vdda1v1-supply = <&reg11>;
-+	vdda1v8-supply = <&reg18>;
-+};
-+
-+&usbphyc_port1 {
-+	phy-supply = <&vdd_usb>;
-+	vdda1v1-supply = <&reg11>;
-+	vdda1v8-supply = <&reg18>;
-+};
+@@ -55,21 +55,21 @@ memory@c0000000 {
+ 	led {
+ 		compatible = "gpio-leds";
+ 		led1 {
+-			label = "green:user1";
++			label = "green:user0";
+ 			gpios = <&gpioz 7 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "heartbeat";
+ 			default-state = "off";
+ 		};
+ 
+ 		led2 {
+-			label = "green:user2";
++			label = "green:user1";
+ 			gpios = <&gpiof 3 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "mmc0";
+ 			default-state = "off";
+ 		};
+ 
+ 		led3 {
+-			label = "green:user3";
++			label = "green:user2";
+ 			gpios = <&gpiog 0 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "mmc1";
+ 			default-state = "off";
 -- 
 2.25.1
 
