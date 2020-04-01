@@ -2,122 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4F1419A74C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 10:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 821C819A782
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 Apr 2020 10:39:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:List-Owner; bh=etq2n/TPrBQr66BxfM+cX6LHJa4a57HsA1CUFtCWi0k=; b=lf
-	Cu2vZz5pp/s/n+zpkIASSbf7UuM+4boFAQtovwdwZLN/rP/3hgnBDgMLzsila1fomwFPkqH7oy73o
-	X0MI+rPpn3YhyTiXTunW9gfazNWm9BrIXOujhH8b3sdCZ9dneIpjqIO/2BlaKqoFQLUzPgvwSt5eE
-	yJJ9zES6G5rbMccvxCCIO6MIib5XJqxGR0RkiOQWgUIhJ95sTDWyRR/MO0jOYxU2X3KsT9bacL5wE
-	oa3ali+sOczaz3EyvWg77gpuISxzvIKRkdeQdDN+wpNDkp8LcK5H0KWFw9zz7375/9bfIhmLtMCT9
-	9XOiAVYkN8d/vxdsA/qvkOohzH07D0lw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S1N3SHXEQYI9LqsnI3chtoY19W6+JAG+dCpaoCq8DAs=; b=tmCiFznHbkPadP
+	kAFtQeJwjUo5UNT1Gz+LgK786M9SwOF0CVWRB1vjFCb19OUCPpu/JicVgkIEkmI1UPahgrz/IuGL7
+	WxA8jmEV+8N+D3b0vuZoBCwmPWUnhKgnRn6fZeGLJNwXLrSvg2PHZz1TJeilnjTo4XDu3YkIEHuSc
+	1ANy54gH4OauTU8WBA9eEH5CdbqTwoaoVBbEuIL33QFtj0Tv3wGHxC77k1VXFdH2VpJjVg360pWdV
+	pAkxk/wD8g3KkxHDA4kW51trMx/z4/syS89rOR5N65GRWs+X1liqUjjd0nXzW4oQefQWeSkc6qnjh
+	azuLqsM2c2AkIWwqfvNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJYjJ-0007NF-5Q; Wed, 01 Apr 2020 08:28:09 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jJYuY-0005bW-Ol; Wed, 01 Apr 2020 08:39:46 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJYj5-0007M7-UZ
- for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 08:27:58 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200401082752epoutp04fd220f6bc4412787ed9182db7a8a7930~BpLxlhYdy2657126571epoutp04Q
- for <linux-arm-kernel@lists.infradead.org>;
- Wed,  1 Apr 2020 08:27:52 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200401082752epoutp04fd220f6bc4412787ed9182db7a8a7930~BpLxlhYdy2657126571epoutp04Q
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1585729672;
- bh=4RnmtdyIh8SjY39KWfynOF/n6bcJzOBW6178U5uJrUw=;
- h=From:To:Cc:Subject:Date:References:From;
- b=kM1PrNZ4I1KOT0y68Gw2XLsV1LCL1AeedO7QB6TXktQuGn2BTM05wvaDLCDeE0XwN
- Hsw9i/hbB3sRZnVbZvWxJ8KGZJJyQl5Lf6Yn4Ogyv3bSFrJ2A0xSVz/8fm62i1mVKV
- 0BYJZc9wWdlqN8HgKQ2gDlRJ9ihVub2/Rl3307K8=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas2p1.samsung.com (KnoxPortal) with ESMTP id
- 20200401082752epcas2p14bdde14707f6585fad78443fc7bc07c5~BpLxKw-jF0972709727epcas2p1s;
- Wed,  1 Apr 2020 08:27:52 +0000 (GMT)
-Received: from epsmges2p2.samsung.com (unknown [182.195.40.184]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 48sfTL1bxNzMqYkp; Wed,  1 Apr
- 2020 08:27:50 +0000 (GMT)
-Received: from epcas2p3.samsung.com ( [182.195.41.55]) by
- epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- A0.B5.04142.580548E5; Wed,  1 Apr 2020 17:27:49 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas2p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200401082749epcas2p2a774da515805bc3f761b6b5a8dc9e3d2~BpLuGvQl51301413014epcas2p2Y;
- Wed,  1 Apr 2020 08:27:49 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200401082749epsmtrp23fead6d7c96f9108080f2e7c27e8b676~BpLuF4hQ41893818938epsmtrp2H;
- Wed,  1 Apr 2020 08:27:49 +0000 (GMT)
-X-AuditID: b6c32a46-3f9ff7000000102e-98-5e845085f5cf
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 66.49.04158.580548E5; Wed,  1 Apr 2020 17:27:49 +0900 (KST)
-Received: from ishtar.dsn.sec.samsung.com (unknown [12.36.155.159]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200401082748epsmtip24cdc2c348186edfadcf42541b019e045~BpLt7osjy0747007470epsmtip20;
- Wed,  1 Apr 2020 08:27:48 +0000 (GMT)
-From: Hyunki Koo <hyunki00.koo@samsung.com>
-To: 
-Subject: [PATCH] tty: samsung_tty: 32-bit access for TX/RX hold registers
-Date: Wed,  1 Apr 2020 17:27:20 +0900
-Message-Id: <20200401082721.19431-1-hyunki00.koo@samsung.com>
-X-Mailer: git-send-email 2.15.0.rc1
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SfUgTYRzmvdvuTm11TKuX0ce4MNA0d6vpWa2ETK60WkSQUq7LHc7ax7Hb
- og8qq2UWWQkFaoaRympY2hQzwYRphRRqiKVBQYxKM0waaN+06xb13/N7fs/zPu/7e38Eqg4r
- NUSJw827HJyNwmIV7T1JGamnTd5C3T2fnjlV34wxwyc/YYy/cQRlLrdMIczF0ATKDAy04Ewg
- 9FzJDHXWYkzVwAOEeVpfgWfFsvdrXuFswH8WY7uvNeFsa8Nx9kKbH7DNbcMKNhxYZMILbGus
- PGfhXVreUeS0lDiKjVTudvN6syFdR6fSmUwGpXVwdt5IZeeZUnNKbJHrUdoDnM0ToUycKFJp
- a9e4nB43r7U6RbeR4gWLTaBpYbnI2UWPo3h5kdO+itbp9IaIco/N+qz2BxA6kw+29WWVghB1
- DsQQkFwJ/Teu4OdALKEmOwCcHApFi88A/nr0HZGLaQCnSn2Kv5bX3ruYhNVkF4CN7Vtk0RcA
- q557lVIDI5fBjzPVqIQTSAW8NTOjkEQoGULgxGBTxE0Q8eRGeMW3WtIoyERYUe1DJFpFGuHZ
- rwVy1hI4ONmglKyQvInBvltlSrmRDXsnniAyjocfHrfhMtbA8GQXJuPj8EFZJS6bzwP4dept
- 1LwC1rw7A6QwlEyCzZ1pEpTCel/+eSNKzoblPT9xmVbB8jK1bFwK70yPRVMXwKa3ndFUFg5N
- NkZHshuWh08gl8DCmn/nXwfAD+bxgmgv5kW9oP//iwLgz8Il53SAhv68ICAJQM1SaVedKlQr
- uQPiIXsQQAKlElRXs72FapWFO3SYdznNLo+NF4PAEJldJaqZW+SMrK/DbaYN+vR0XaaBMaTr
- GWq+KhA3uktNFnNufj/PC7zrrw8hYjSloLDO8MZz//aPkwuE293jvXEW7GVP3WY+aBlraV3n
- W8yqiEyNd3FfVuwL3Wh+fShtT4pDQJjvtVNNxLcqw82ku++d2n3TDRvmWXMTtuVvM/dvSTWt
- Dtd0dS+Zs2nkyMMbx+ikvhMVWx9927vdZjka3DG+9qmxg6yjwcb+xI7WnSmUQrRydDLqErnf
- t6mExYYDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrELMWRmVeSWpSXmKPExsWy7bCSvG5rQEucwcS/TBbNi9ezWVxtes9m
- sWrpDWaLKRs+MFn0P37NbHH+/AZ2i02Pr7FaXN41h81ixvl9TBZnFveyO3B57Jx1l91j06pO
- No/9c9ewe2xeUu/Rt2UVo8f6LVdZPD5vkgtgj+KySUnNySxLLdK3S+DKuDjnD2PBLq2KLScd
- GhgfK3UxcnJICJhI3GvZyNbFyMUhJLCbUWLdxWmsEAkZiQkvljBD2MIS91uOsEIUfWOUuLZs
- GxtIgk1AW+LN95lgRSICLBIrv39nASliFnjLJNHZthoowcEhLOApMXW5NUgNi4CqRO/M5Uwg
- YV4BW4nOn1EQ85UlLrxbwjqBkWcBI8MqRsnUguLc9NxiwwKjvNRyveLE3OLSvHS95PzcTYzg
- kNPS2sF44kT8IUYBDkYlHl5Fq+Y4IdbEsuLK3EOMEhzMSiK8s11a4oR4UxIrq1KL8uOLSnNS
- iw8xSnOwKInzyucfixQSSE8sSc1OTS1ILYLJMnFwSjUwsiTelTgQeCTlSL1K/qy59uKV33fa
- S/Yd3t6peGTjRKWtL57GHuZ35vZm2LyRaUFZqJmpVeaXuHDF+hurTpr/Xr27lG2u4NuliaIl
- 6fZBFY+lJs1aa6C4Zony0bXnDE0aZnan6B5ct65nrparz46JJzq51lQuvZd+5f/F6blr1/sc
- y5rUkF5yUYmlOCPRUIu5qDgRAFutons1AgAA
-X-CMS-MailID: 20200401082749epcas2p2a774da515805bc3f761b6b5a8dc9e3d2
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20200401082749epcas2p2a774da515805bc3f761b6b5a8dc9e3d2
-References: <CGME20200401082749epcas2p2a774da515805bc3f761b6b5a8dc9e3d2@epcas2p2.samsung.com>
+ id 1jJYuQ-0005az-It
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 Apr 2020 08:39:40 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0318buli010433; Wed, 1 Apr 2020 10:39:22 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=lzzw7FXM0MO9eFzpIxeWfpnrQEPQjgWmRDZU797bXb8=;
+ b=xtrcxr1EAvv7HnNqNv9zC+wI60OE8e8OmAvMRjfnYxqkn8Xaphz9JIFc/mU1K1LkZmMh
+ 5ihsorr2LVId7ONlbCmT05Jy7DYRYYNWXmleCIqweN+XizU/EOr24WuxhBW6/36YBUay
+ aN0hchzyNFAW92C7SjqCJR2a4Ke+gZUilqdwUIzYyUehmlkuJbOs7kBwJQqEM1tOT56x
+ TrRaYgUEgRnc5aNGW3bXnqHK5JvJuaSvvfHFSU9/owDtNddT6nCzKhjV2It591+wbno5
+ 3ajHWBVZba9hszEmi6E6PIj6xN8s0Mf14b35GwxkfQMX7f0Q2lUuVT5NmULsYEiY3mdK Vg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 301w813w5g-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 01 Apr 2020 10:39:22 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A386510002A;
+ Wed,  1 Apr 2020 10:39:21 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8BADA21CA86;
+ Wed,  1 Apr 2020 10:39:21 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 1 Apr 2020 10:39:21
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <fabrice.gasnier@st.com>, <lee.jones@linaro.org>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <daniel.lezcano@linaro.org>,
+ <tglx@linutronix.de>
+Subject: [PATCH v6 0/6] clockevent: add low power STM32 timer
+Date: Wed, 1 Apr 2020 10:39:03 +0200
+Message-ID: <20200401083909.18886-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
+MIME-Version: 1.0
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-03-31_07:2020-03-31,
+ 2020-03-31 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_012756_413103_53C7130D 
-X-CRM114-Status: GOOD (  17.79  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200401_013938_978501_F454BF50 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -125,8 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,192 +94,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, hyunki00.koo@gmail.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, Hyunki Koo <hyunki00.koo@samsung.com>
-MIME-Version: 1.0
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support 32-bit access for the TX/RX hold registers UTXH and URXH.
+This series add low power timer as boadcast clockevent device.
+Low power timer could runs even when CPUs are in idle mode and 
+could wakeup them.
 
-This is required for some newer SoCs.
+version 6:
+- simplify binding, DT and code to use only one interrupt
 
-Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
----
- drivers/tty/serial/samsung_tty.c | 76 +++++++++++++++++++++++++++++++++-------
- 1 file changed, 64 insertions(+), 12 deletions(-)
+version 5:
+- document interrupts and interrupt-names bindings
+- use a different wake up interrupt
+- add device-tree patch
+- make STM32MP157 select low power timer configuration flag
+- enable fast_io in regmap configuration
 
-diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
-index 73f951d65b93..17d2ead7cfe2 100644
---- a/drivers/tty/serial/samsung_tty.c
-+++ b/drivers/tty/serial/samsung_tty.c
-@@ -154,12 +154,47 @@ struct s3c24xx_uart_port {
- #define portaddrl(port, reg) \
- 	((unsigned long *)(unsigned long)((port)->membase + (reg)))
- 
--#define rd_regb(port, reg) (readb_relaxed(portaddr(port, reg)))
-+static unsigned int rd_reg(struct uart_port *port, int reg)
-+{
-+	switch (port->iotype) {
-+	case UPIO_MEM:
-+		return readb_relaxed(portaddr(port, reg));
-+	case UPIO_MEM32:
-+		return readl_relaxed(portaddr(port, reg));
-+	default:
-+		return 0;
-+	}
-+	return 0;
-+}
-+
- #define rd_regl(port, reg) (readl_relaxed(portaddr(port, reg)))
- 
--#define wr_regb(port, reg, val) writeb_relaxed(val, portaddr(port, reg))
-+static void wr_reg(struct uart_port *port, int reg, int val)
-+{
-+	switch (port->iotype) {
-+	case UPIO_MEM:
-+		writeb_relaxed(val, portaddr(port, reg));
-+		break;
-+	case UPIO_MEM32:
-+		writel_relaxed(val, portaddr(port, reg));
-+		break;
-+	}
-+}
-+
- #define wr_regl(port, reg, val) writel_relaxed(val, portaddr(port, reg))
- 
-+static void write_buf(struct uart_port *port, int reg, int val)
-+{
-+	switch (port->iotype) {
-+	case UPIO_MEM:
-+		writeb(val, portaddr(port, reg));
-+		break;
-+	case UPIO_MEM32:
-+		writel(val, portaddr(port, reg));
-+		break;
-+	}
-+}
-+
- /* Byte-order aware bit setting/clearing functions. */
- 
- static inline void s3c24xx_set_bit(struct uart_port *port, int idx,
-@@ -714,7 +749,7 @@ static void s3c24xx_serial_rx_drain_fifo(struct s3c24xx_uart_port *ourport)
- 		fifocnt--;
- 
- 		uerstat = rd_regl(port, S3C2410_UERSTAT);
--		ch = rd_regb(port, S3C2410_URXH);
-+		ch = rd_reg(port, S3C2410_URXH);
- 
- 		if (port->flags & UPF_CONS_FLOW) {
- 			int txe = s3c24xx_serial_txempty_nofifo(port);
-@@ -826,7 +861,7 @@ static irqreturn_t s3c24xx_serial_tx_chars(int irq, void *id)
- 	}
- 
- 	if (port->x_char) {
--		wr_regb(port, S3C2410_UTXH, port->x_char);
-+		wr_reg(port, S3C2410_UTXH, port->x_char);
- 		port->icount.tx++;
- 		port->x_char = 0;
- 		goto out;
-@@ -852,7 +887,7 @@ static irqreturn_t s3c24xx_serial_tx_chars(int irq, void *id)
- 		if (rd_regl(port, S3C2410_UFSTAT) & ourport->info->tx_fifofull)
- 			break;
- 
--		wr_regb(port, S3C2410_UTXH, xmit->buf[xmit->tail]);
-+		wr_reg(port, S3C2410_UTXH, xmit->buf[xmit->tail]);
- 		xmit->tail = (xmit->tail + 1) & (UART_XMIT_SIZE - 1);
- 		port->icount.tx++;
- 		count--;
-@@ -916,7 +951,7 @@ static unsigned int s3c24xx_serial_tx_empty(struct uart_port *port)
- /* no modem control lines */
- static unsigned int s3c24xx_serial_get_mctrl(struct uart_port *port)
- {
--	unsigned int umstat = rd_regb(port, S3C2410_UMSTAT);
-+	unsigned int umstat = rd_regl(port, S3C2410_UMSTAT);
- 
- 	if (umstat & S3C2410_UMSTAT_CTS)
- 		return TIOCM_CAR | TIOCM_DSR | TIOCM_CTS;
-@@ -1974,7 +2009,7 @@ static int s3c24xx_serial_probe(struct platform_device *pdev)
- 	struct device_node *np = pdev->dev.of_node;
- 	struct s3c24xx_uart_port *ourport;
- 	int index = probe_index;
--	int ret;
-+	int ret, prop = 0;
- 
- 	if (np) {
- 		ret = of_alias_get_id(np, "serial");
-@@ -2000,10 +2035,27 @@ static int s3c24xx_serial_probe(struct platform_device *pdev)
- 			dev_get_platdata(&pdev->dev) :
- 			ourport->drv_data->def_cfg;
- 
--	if (np)
-+	if (np) {
- 		of_property_read_u32(np,
- 			"samsung,uart-fifosize", &ourport->port.fifosize);
- 
-+		if (of_property_read_u32(np, "reg-io-width", &prop) == 0) {
-+			switch (prop) {
-+			case 1:
-+				ourport->port.iotype = UPIO_MEM;
-+				break;
-+			case 4:
-+				ourport->port.iotype = UPIO_MEM32;
-+				break;
-+			default:
-+				dev_warn(&pdev->dev, "unsupported reg-io-width (%d)\n",
-+						prop);
-+				ret = -EINVAL;
-+				break;
-+			}
-+		}
-+	}
-+
- 	if (ourport->drv_data->fifosize[index])
- 		ourport->port.fifosize = ourport->drv_data->fifosize[index];
- 	else if (ourport->info->fifosize)
-@@ -2185,7 +2237,7 @@ static int s3c24xx_serial_get_poll_char(struct uart_port *port)
- 	if (s3c24xx_serial_rx_fifocnt(ourport, ufstat) == 0)
- 		return NO_POLL_CHAR;
- 
--	return rd_regb(port, S3C2410_URXH);
-+	return rd_reg(port, S3C2410_URXH);
- }
- 
- static void s3c24xx_serial_put_poll_char(struct uart_port *port,
-@@ -2200,7 +2252,7 @@ static void s3c24xx_serial_put_poll_char(struct uart_port *port,
- 
- 	while (!s3c24xx_serial_console_txrdy(port, ufcon))
- 		cpu_relax();
--	wr_regb(port, S3C2410_UTXH, c);
-+	wr_reg(port, S3C2410_UTXH, c);
- }
- 
- #endif /* CONFIG_CONSOLE_POLL */
-@@ -2212,7 +2264,7 @@ s3c24xx_serial_console_putchar(struct uart_port *port, int ch)
- 
- 	while (!s3c24xx_serial_console_txrdy(port, ufcon))
- 		cpu_relax();
--	wr_regb(port, S3C2410_UTXH, ch);
-+	wr_reg(port, S3C2410_UTXH, ch);
- }
- 
- static void
-@@ -2612,7 +2664,7 @@ static void samsung_early_putc(struct uart_port *port, int c)
- 	else
- 		samsung_early_busyuart(port);
- 
--	writeb(c, port->membase + S3C2410_UTXH);
-+	write_buf(port, S3C2410_UTXH, c);
- }
- 
- static void samsung_early_write(struct console *con, const char *s,
+version 4:
+- move defines in mfd/stm32-lptimer.h
+- change compatible and subnode names
+- document wakeup-source property
+- reword commit message
+- make driver Kconfig depends of MFD_STM32_LPTIMER
+- remove useless include
+- remove rate and clk fields from the private structure
+- to add comments about the registers sequence in stm32_clkevent_lp_set_timer
+- rework probe function and use devm_request_irq()
+- do not allow module to be removed
+
+version 3:
+- fix timer set sequence
+- don't forget to free irq on remove function
+- use devm_kzalloc to simplify errors handling in probe function
+
+version 2:
+- stm32 clkevent driver is now a child of the stm32 lp timer node
+- add a probe function and adpat the driver to use regmap provide
+  by it parent
+- stop using timer_of helpers
+
+
+
+Benjamin Gaignard (6):
+  dt-bindings: mfd: Document STM32 low power timer bindings
+  ARM: dts: stm32: Add timer subnodes on stm32mp15 SoCs
+  mfd: stm32: Add defines to be used for clkevent purpose
+  mfd: stm32: enable regmap fast_io for stm32-lptimer
+  clocksource: Add Low Power STM32 timers driver
+  ARM: mach-stm32: select low power timer for STM32MP157
+
+ .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  |  21 ++
+ arch/arm/boot/dts/stm32mp151.dtsi                  |  35 ++++
+ arch/arm/mach-stm32/Kconfig                        |   1 +
+ drivers/clocksource/Kconfig                        |   4 +
+ drivers/clocksource/Makefile                       |   1 +
+ drivers/clocksource/timer-stm32-lp.c               | 221 +++++++++++++++++++++
+ drivers/mfd/stm32-lptimer.c                        |   1 +
+ include/linux/mfd/stm32-lptimer.h                  |   5 +
+ 8 files changed, 289 insertions(+)
+ create mode 100644 drivers/clocksource/timer-stm32-lp.c
+
 -- 
-2.15.0.rc1
+2.15.0
 
 
 _______________________________________________
