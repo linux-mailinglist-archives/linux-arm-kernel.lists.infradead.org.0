@@ -2,60 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFA6E19BA67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 04:44:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BE6A19BA7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 04:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uOC3xn4c5dagpm4CovIuIyO1jk3qgGOM8iUNwXYIUYI=; b=LqXujvfnDKiWlM
-	o6wfw0U1c4vfZTRyGwRJU/AtYwDj98u3XUMuu6FW4LKialC/yiPamkuQSLbp2jaGOVPEjfzLWnYX/
-	pUvZlwWjdPs984C1cC1pYt1govemqQs1G8VJb5fxH8EE3xVVtONkQfAf2ax4ukRvjGaFjIiN8wdL6
-	NB1zsGD21c5lzKCg7gGfcxFOEE36ud2HVmNx9s+ddP23d6GCaFI1uZBzHMTKLqgquT7JDwA2lMzbY
-	GNuu4KOboiGOQmgjgAxBnWT39Nx9Byn9PsJjLHO0X0n2vRr4Tz332es/HosLgD/aFIwxVPhFh5QQm
-	RKR/T5zR0Mdskkj7g3vA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w9E/Z+bm/KvlVO1KiHpdMmHEQsstEzSFmA3WjKuZjho=; b=pXJRfpyauDjGn4
+	5krtW6K8IoEbB5kVdTsBUHkTPQwkMd6CyrJGzBWMWUTEIyDk/CeTFLXZh2z1dmq9dgV0C4rAPJqpY
+	jymT6qcbWntwtN1vmoEMKXYmHl6MbRIz00JWhJDlvPfs4kaSX9tTSCbyiomLOxcGD014G2pR6qHRL
+	UiD5K/dFG3FcR14ARj72LeQylVr6gkveKe5ERZyDGUfO3Rsg4I5Z+V1ffKVOGCI//BdV1P1Jb8n/C
+	E43IhX6CCW2zmgjsrgbLWSJL3kDL/czDJYTgpAuXRH6OPVoHJBD9BjznNSvI5J9+KcSU3acH1PwAi
+	MYAnEKInE1VT10+2iMEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJpqc-0002Ei-3l; Thu, 02 Apr 2020 02:44:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJpqV-0002EF-PX
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 02:44:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 268E330E;
- Wed,  1 Apr 2020 19:44:42 -0700 (PDT)
-Received: from [10.163.1.8] (unknown [10.163.1.8])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE6F93F71E;
- Wed,  1 Apr 2020 19:44:39 -0700 (PDT)
-Subject: Re: [PATCH 6/6] arm64/cpufeature: Replace all open bits shift
- encodings with macros
-To: Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1580215149-21492-1-git-send-email-anshuman.khandual@arm.com>
- <1580215149-21492-7-git-send-email-anshuman.khandual@arm.com>
- <caea646f-2a74-115b-ab03-fb1325ed101f@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <5d331165-6d3f-55d3-8994-d736d5fdb3ef@arm.com>
-Date: Thu, 2 Apr 2020 08:14:32 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jJpu3-0006BG-FX; Thu, 02 Apr 2020 02:48:23 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJptv-00069k-7u; Thu, 02 Apr 2020 02:48:17 +0000
+X-UUID: 4978751b305c43288bc536d9d312d835-20200401
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=yvxzSL3ARjPlbxPt4EEaC22R2omEz1sQZS0v7fH05E4=; 
+ b=u3T4NKUWv4tEmEkOaFb2nHIDu78K0tPcU9jPPax6/n3BQicoLEra64FOdCU/Eas9W0g8VsrQGQSi3Z45KqAycsWzoYxXU3e/vKc38VFhzMmIHDNwluCwtiuNduRZOXV5S9NUn5q1WjmoeFehF+gUnIf2Z1tnDS5JdqFX+wpS7VQ=;
+X-UUID: 4978751b305c43288bc536d9d312d835-20200401
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <henryc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1494658489; Wed, 01 Apr 2020 18:48:04 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 1 Apr 2020 19:48:02 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 2 Apr 2020 10:48:02 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 2 Apr 2020 10:48:01 +0800
+Message-ID: <1585795682.27527.12.camel@mtksdaap41>
+Subject: Re: [PATCH V4 00/13] Add driver for dvfsrc, support for active
+ state of scpsys
+From: Henry Chen <henryc.chen@mediatek.com>
+To: Georgi Djakov <georgi.djakov@linaro.org>
+Date: Thu, 2 Apr 2020 10:48:02 +0800
+In-Reply-To: <2737cc5c-3876-6861-c44f-fc9f552bbdb9@linaro.org>
+References: <1584092066-24425-1-git-send-email-henryc.chen@mediatek.com>
+ <2737cc5c-3876-6861-c44f-fc9f552bbdb9@linaro.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <caea646f-2a74-115b-ab03-fb1325ed101f@arm.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_194443_916137_2B6ABCB4 
-X-CRM114-Status: GOOD (  16.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200401_194815_283010_A15B99DE 
+X-CRM114-Status: GOOD (  17.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,81 +86,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, maz@kernel.org, will@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
+ Mike Turquette <mturquette@linaro.org>, srv_heupstream@mediatek.com,
+ James Liao <jamesjj.liao@mediatek.com>, Viresh Kumar <vireshk@kernel.org>,
+ Mark Brown <broonie@kernel.org>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Stephen
+ Boyd <swboyd@chromium.org>, Fan Chen <fan.chen@mediatek.com>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Ryan Case <ryandcase@chromium.org>, Arvin Wang <arvin.wang@mediatek.com>,
+ Matthias
+ Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAwMy8yMS8yMDIwIDEyOjEwIEFNLCBTdXp1a2kgSyBQb3Vsb3NlIHdyb3RlOgo+IE9uIDAx
-LzI4LzIwMjAgMTI6MzkgUE0sIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+PiBUaGVyZSBhcmUg
-bWFueSBvcGVuIGJpdHMgc2hpZnQgZW5jb2RpbmdzIGZvciB2YXJpb3VzIENQVSBJRCByZWdpc3Rl
-cnMgdGhhdAo+PiBhcmUgc2NhdHRlcmVkIGFjcm9zcyBjcHVmZWF0dXJlLiBUaGlzIHJlcGxhY2Vz
-IHRoZW0gd2l0aCByZWdpc3RlciBzcGVjaWZpYwo+PiBzZW5zaWJsZSBtYWNybyBkZWZpbml0aW9u
-cy4gVGhpcyBzaG91bGQgbm90IGhhdmUgYW55IGZ1bmN0aW9uYWwgY2hhbmdlLgo+Pgo+PiBDYzog
-Q2F0YWxpbiBNYXJpbmFzIDxjYXRhbGluLm1hcmluYXNAYXJtLmNvbT4KPj4gQ2M6IFdpbGwgRGVh
-Y29uIDx3aWxsQGtlcm5lbC5vcmc+Cj4+IENjOiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwub3Jn
-Pgo+PiBDYzogTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KPj4gQ2M6IEphbWVz
-IE1vcnNlIDxqYW1lcy5tb3JzZUBhcm0uY29tPgo+PiBDYzogU3V6dWtpIEsgUG91bG9zZSA8c3V6
-dWtpLnBvdWxvc2VAYXJtLmNvbT4KPj4gQ2M6IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmcK
-Pj4gU2lnbmVkLW9mZi1ieTogQW5zaHVtYW4gS2hhbmR1YWwgPGFuc2h1bWFuLmtoYW5kdWFsQGFy
-bS5jb20+Cj4+IC0tLQo+IAo+IAo+PiAtLS0gYS9hcmNoL2FybTY0L2tlcm5lbC9jcHVmZWF0dXJl
-LmMKPj4gKysrIGIvYXJjaC9hcm02NC9rZXJuZWwvY3B1ZmVhdHVyZS5jCj4+IEBAIC0yNjMsNyAr
-MjYzLDcgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBhcm02NF9mdHJfYml0cyBmdHJfY3RyW10gPSB7
-Cj4+IMKgwqDCoMKgwqDCoCAqIG1ha2UgdXNlIG9mICptaW5MaW5lLgo+PiDCoMKgwqDCoMKgwqAg
-KiBJZiB3ZSBoYXZlIGRpZmZlcmluZyBJLWNhY2hlIHBvbGljaWVzLCByZXBvcnQgaXQgYXMgdGhl
-IHdlYWtlc3QgLSBWSVBULgo+PiDCoMKgwqDCoMKgwqAgKi8KPj4gLcKgwqDCoCBBUk02NF9GVFJf
-QklUUyhGVFJfVklTSUJMRSwgRlRSX05PTlNUUklDVCwgRlRSX0VYQUNULCAxNCwgMiwgSUNBQ0hF
-X1BPTElDWV9WSVBUKSzCoMKgwqAgLyogTDFJcCAqLwo+PiArwqDCoMKgIEFSTTY0X0ZUUl9CSVRT
-KEZUUl9WSVNJQkxFLCBGVFJfTk9OU1RSSUNULCBGVFJfRVhBQ1QsIENUUl9MMUlQX1NISUZULCAy
-LCBJQ0FDSEVfUE9MSUNZX1ZJUFQpLMKgwqDCoCAvKiBMMUlwICovCj4+IMKgwqDCoMKgwqAgQVJN
-NjRfRlRSX0JJVFMoRlRSX1ZJU0lCTEUsIEZUUl9TVFJJQ1QsIEZUUl9MT1dFUl9TQUZFLCBDVFJf
-SU1JTkxJTkVfU0hJRlQsIDQsIDApLAo+PiDCoMKgwqDCoMKgIEFSTTY0X0ZUUl9FTkQsCj4+IMKg
-IH07Cj4+IEBAIC0yNzQsMTkgKzI3NCwxOSBAQCBzdHJ1Y3QgYXJtNjRfZnRyX3JlZyBhcm02NF9m
-dHJfcmVnX2N0cmVsMCA9IHsKPj4gwqAgfTsKPj4gwqAgwqAgc3RhdGljIGNvbnN0IHN0cnVjdCBh
-cm02NF9mdHJfYml0cyBmdHJfaXQgd2lsbCBub3QgYmUgYSBnb29kIGlkZWEgdG8gaWRfbW1mcjBb
-XSA9IHsKPj4gLcKgwqDCoCBTX0FSTTY0X0ZUUl9CSVRTKEZUUl9ISURERU4sIEZUUl9TVFJJQ1Qs
-IEZUUl9MT1dFUl9TQUZFLCAyOCwgNCwgMHhmKSzCoMKgwqAgLyogSW5uZXJTaHIgKi8KPj4gLcKg
-wqDCoCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FG
-RSwgMjQsIDQsIDApLMKgwqDCoCAvKiBGQ1NFICovCj4+IC3CoMKgwqAgQVJNNjRfRlRSX0JJVFMo
-RlRSX0hJRERFTiwgRlRSX05PTlNUUklDVCwgRlRSX0xPV0VSX1NBRkUsIDIwLCA0LCAwKSzCoMKg
-wqAgLyogQXV4UmVnICovCj4+IC3CoMKgwqAgQVJNNjRfRlRSX0JJVFMoRlRSX0hJRERFTiwgRlRS
-X1NUUklDVCwgRlRSX0xPV0VSX1NBRkUsIDE2LCA0LCAwKSzCoMKgwqAgLyogVENNICovCj4+IC3C
-oMKgwqAgQVJNNjRfRlRSX0JJVFMoRlRSX0hJRERFTiwgRlRSX1NUUklDVCwgRlRSX0xPV0VSX1NB
-RkUsIDEyLCA0LCAwKSzCoMKgwqAgLyogU2hhcmVMdmwgKi8KPj4gLcKgwqDCoCBTX0FSTTY0X0ZU
-Ul9CSVRTKEZUUl9ISURERU4sIEZUUl9TVFJJQ1QsIEZUUl9MT1dFUl9TQUZFLCA4LCA0LCAweGYp
-LMKgwqDCoCAvKiBPdXRlclNociAqLwo+PiAtwqDCoMKgIEFSTTY0X0ZUUl9CSVRTKEZUUl9ISURE
-RU4sIEZUUl9TVFJJQ1QsIEZUUl9MT1dFUl9TQUZFLCA0LCA0LCAwKSzCoMKgwqAgLyogUE1TQSAq
-Lwo+PiAtwqDCoMKgIEFSTTY0X0ZUUl9CSVRTKEZUUl9ISURERU4sIEZUUl9TVFJJQ1QsIEZUUl9M
-T1dFUl9TQUZFLCAwLCA0LCAwKSzCoMKgwqAgLyogVk1TQSAqLwo+PiArwqDCoMKgIFNfQVJNNjRf
-RlRSX0JJVFMoRlRSX0hJRERFTiwgRlRSX1NUUklDVCwgRlRSX0xPV0VSX1NBRkUsIElEX01NRlIw
-X0lOTkVSU0hSX1NISUZULCA0LCAweGYpLAo+PiArwqDCoMKgIEFSTTY0X0ZUUl9CSVRTKEZUUl9I
-SURERU4sIEZUUl9TVFJJQ1QsIEZUUl9MT1dFUl9TQUZFLCBJRF9NTUZSMF9GQ1NFX1NISUZULCA0
-LCAwKSwKPj4gK8KgwqDCoCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBGVFJfTk9OU1RSSUNU
-LCBGVFJfTE9XRVJfU0FGRSwgSURfTU1GUjBfQVVYUkVHX1NISUZULCA0LCAwKSwKPj4gK8KgwqDC
-oCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FGRSwg
-SURfTU1GUjBfVENNX1NISUZULCA0LCAwKSwKPj4gK8KgwqDCoCBBUk02NF9GVFJfQklUUyhGVFJf
-SElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FGRSwgSURfTU1GUjBfU0hBUkVMVkxfU0hJ
-RlQsIDQsIDApLAo+PiArwqDCoMKgIFNfQVJNNjRfRlRSX0JJVFMoRlRSX0hJRERFTiwgRlRSX1NU
-UklDVCwgRlRSX0xPV0VSX1NBRkUsIElEX01NRlIwX09VVEVSU0hSX1NISUZULCA0LCAweGYpLAo+
-PiArwqDCoMKgIEFSTTY0X0ZUUl9CSVRTKEZUUl9ISURERU4sIEZUUl9TVFJJQ1QsIEZUUl9MT1dF
-Ul9TQUZFLCBJRF9NTUZSMF9QTVNBX1NISUZULCA0LCAwKSwKPj4gK8KgwqDCoCBBUk02NF9GVFJf
-QklUUyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FGRSwgSURfTU1GUjBfVk1T
-QV9TSElGVCwgNCwgMCksCj4+IMKgwqDCoMKgwqAgQVJNNjRfRlRSX0VORCwKPj4gwqAgfTsKPj4g
-wqAgwqAgc3RhdGljIGNvbnN0IHN0cnVjdCBhcm02NF9mdHJfYml0cyBmdHJfaWRfYWE2NGRmcjBb
-XSA9IHsKPj4gLcKgwqDCoCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBG
-VFJfRVhBQ1QsIDM2LCAyOCwgMCksCj4+ICvCoMKgwqAgQVJNNjRfRlRSX0JJVFMoRlRSX0hJRERF
-TiwgRlRSX1NUUklDVCwgRlRSX0VYQUNULCBJRF9BQTY0REZSMF9ET1VCTEVMT0NLX1NISUZULCAy
-OCwgMCksCj4gCj4gVGhpcyBtdXN0IGJlIGEgc2lnbmVkIGZlYXR1cmUsIGFzIHdlIGhhdmUgdGhl
-IGZvbGxvd2luZyBwb3NzaWJsZSB2YWx1ZXMgOgo+IAo+IMKgwqDCoMKgMGIwMDAwIC0gRG91Ymxl
-IGxvY2sgaW1wbGVtZW50ZWQKPiDCoMKgwqDCoDBiMTExMSAtIERvdWJsZSBsb2NrIG5vdCBpbXBs
-ZW1lbnRlZC4KPiAKPiBTbywgaW4gY2FzZSBvZiBhIGNvbmZsaWN0IHdlIHdhbnQgdGhlIHNhZmUg
-dmFsdWUgYXMgMGIxMTExLgo+IAo+IFBsZWFzZSBjb3VsZCB5b3UgZml4IHRoaXMgYXMgd2VsbCA/
-CgpTdXJlIGJ1dCBpbiBhIHNlcGFyYXRlIHBhdGNoLCBhcyB3b3VsZCBsaWtlIHRvIHByZXZlbnQg
-bWl4aW5nIGFueQphY3R1YWwgY29kZSBjaGFuZ2UgZnJvbSBtYWNybyByZXBsYWNlbWVudC4KCj4g
-Cj4gCj4gVGhpcyBwYXRjaCBhcyBzdWNoIGxvb2tzIGZpbmUgdG8gbWUuCj4gCj4gUmV2aWV3ZWQt
-Ynk6IFN1enVraSBLIFBvdWxvc2UgPHN1enVraS5wb3Vsb3NlQGFybS5jb20+Cj4gCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Georgi,
+
+On Wed, 2020-04-01 at 18:09 +0300, Georgi Djakov wrote:
+> Hi Henry,
+> 
+> On 3/13/20 11:34, Henry Chen wrote:
+> > The patchsets add support for MediaTek hardware module named DVFSRC
+> > (dynamic voltage and frequency scaling resource collector). The DVFSRC is
+> > a HW module which is used to collect all the requests from both software
+> > and hardware and turn into the decision of minimum operating voltage and
+> > minimum DRAM frequency to fulfill those requests.
+> > 
+> > So, This series is to implement the dvfsrc driver to collect all the
+> > requests of operating voltage or DRAM bandwidth from other device drivers
+> > likes GPU/Camera through 3 frameworks basically:
+> > 
+> > 1. interconnect framework: to aggregate the bandwidth
+> >    requirements from different clients
+> > 
+> > [1] https://patchwork.kernel.org/cover/10766329/
+> > 
+> > Below is the emi bandwidth map of mt8183. There has a hw module "DRAM scheduler"
+> > which used to control the throughput. The DVFSRC will collect forecast data
+> > of dram bandwidth from SW consumers(camera/gpu...), and according the forecast
+> > to change the DRAM frequency
+> > 
+> >            ICC provider         ICC Nodes
+> >                             ----          ----
+> >            ---------       |CPU |   |--->|VPU |
+> >   -----   |         |-----> ----    |     ----
+> >  |DRAM |--|DRAM     |       ----    |     ----
+> >  |     |--|scheduler|----->|GPU |   |--->|DISP|
+> >  |     |--|(EMI)    |       ----    |     ----
+> >  |     |--|         |       -----   |     ----
+> >   -----   |         |----->|MMSYS|--|--->|VDEC|
+> >            ---------        -----   |     ----
+> >              /|\                    |     ----
+> >               |change DRAM freq     |--->|VENC|
+> >            ----------               |     ----
+> >           |  DVFSR   |              |
+> >           |          |              |     ----
+> >            ----------               |--->|IMG |
+> >                                     |     ----
+> >                                     |     ----
+> >                                     |--->|CAM |
+> >                                           ----
+> 
+> It would be useful to also add the above diagram into the commit text of
+> patch 09/13. By doing so, it will be saved into the history, as cover letters
+> are discarded.
+OK, thanks.
+> 
+> Thanks,
+> Georgi
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
