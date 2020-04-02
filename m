@@ -2,69 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE96219C358
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 15:57:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EDBD19C35D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 15:58:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rLTLLW0aWNNhyxgHFwHWzOBNfUvw0p4r+5MZWr5ABSY=; b=OPr
-	GFRxRICnVXUF2lvl+bBGbXkHGcBO4OIxT90e2zk9hcneNLmMT81lCiZp/PEGri2nLKrKPBFKwI8Q2
-	anl+d4q3mFk7uWLR4J5nO42NtH0Tlej7yfngcNfbSWndLLpnhFVv87Cg/qLHCEF6jRu/AqVlTCQSV
-	g/wFy9KU522ajH0JaAjVEEqLsRqtbywcKoBWStNWV8wzNFWzFXuZo5thEfWZ++yPOw3BoDuKBJwsU
-	o38lisUWROmUbDzPbrdT8RJ70tTMI1BvrCT3fnxYhzXlnoH0RENL4n7uH8N1UwmkHuVjUFKq41Hkg
-	PXf0pNFrvQ/cD5hDcggcGMTAo8KWu0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Dg+cjrW3Ol3f/SgV4VYf5wzXIVInAOKoK3W3sAdNCRQ=; b=GT5UoTnLXWqH0mt0wgHUItMXe
+	x3URqNB70pKshV6GDPphq0g4UF/8JeHWOH/zvZolQAoQLc8fjAmmHAcuRQR1qtSbZAWhktY0yZSxn
+	AbHYGWZ6PuiXOc1O+Hze/QL7mk4ROHhTPjPneA48eqZDgFTzqGdw68FwmPVCVr0BdOXI0wkIXwUrl
+	AHUfAtNMftOjOqpB++wMoxn7ivssA1Fb7fN1XM+VkmFyV6CzaFJ2OvCU/eDScwWwZ7yItbIokoFVc
+	wcCbnWSZE5dcCXN6tfAxwHbX1E7NsxQlpEjYlCtDHrMbsafjiViT+CBkZzcST9JGyChSxGXjdRW8j
+	Yyc3Fb7Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK0LU-0001pQ-Rn; Thu, 02 Apr 2020 13:57:24 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
+	id 1jK0Lu-00025D-Ts; Thu, 02 Apr 2020 13:57:50 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK0LN-0001nS-UF
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 13:57:19 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D0ABB43BB0;
- Thu,  2 Apr 2020 13:57:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1585835834; bh=WxB9gfK7GgZCSSdeiOrOcAWKApS/sOPCGGGM63tiPEQ=;
- h=From:To:Cc:Subject:Date:From;
- b=SExtHH2/3uXBmmuJPIQIqhFRsoYdNajCJQ1pS2JGL7z5jnl3R/dZNe6/0He/izxdO
- v+zCqA/rU8SvFWnQcfbsO/vyzcNwleriVnxioC+RGwbza21xF1XC3U721RWJXkBWRm
- IL6AEBis1v/gyRaBVsEEDbXpLrSIz+thlhyyiAOGUpOsJVjK8/jKfIyn9op/WO66xq
- 5lMNl0X/lQnw5BPXsRqTmMZ1m1pnlCITIQj4LxdU1hqqzXG58qRPKE++lvBQFIt46o
- C1GY4XqJ8Ku7z04idUbEWry9734w2OeXZlGEE8EZm6cQT3wpdQu4eb2XqR8HYfYjel
- mmSmWFe6x0Wjw==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 93E62A005B;
- Thu,  2 Apr 2020 13:57:11 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net] net: stmmac: xgmac: Fix VLAN register handling
-Date: Thu,  2 Apr 2020 15:57:07 +0200
-Message-Id: <daf6d10d679c24e9b33b758b249b9b70e5eb1f01.1585835790.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jK0Ll-00022p-Mx
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 13:57:43 +0000
+X-Originating-IP: 93.29.109.196
+Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id E40DB6000D;
+ Thu,  2 Apr 2020 13:57:31 +0000 (UTC)
+Date: Thu, 2 Apr 2020 15:57:31 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH 2/2] rtc: sun6i: switch to
+ rtc_time64_to_tm/rtc_tm_to_time64
+Message-ID: <20200402135731.GA625345@aptenodytes>
+References: <20200330201510.861217-1-alexandre.belloni@bootlin.com>
+ <20200330201510.861217-3-alexandre.belloni@bootlin.com>
+MIME-Version: 1.0
+In-Reply-To: <20200330201510.861217-3-alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_065717_983888_DA94814D 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200402_065741_881813_03600416 
+X-CRM114-Status: GOOD (  17.93  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,84 +64,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5515629973468492489=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 907a076881f1, forgot that we need to clear old values of
-XGMAC_VLAN_TAG register when we switch from VLAN perfect matching to
-HASH matching.
 
-Fix it.
+--===============5515629973468492489==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fUYQa+Pmc3FrFX/N"
+Content-Disposition: inline
 
-Fixes: 907a076881f1 ("net: stmmac: xgmac: fix incorrect XGMAC_VLAN_TAG register writting")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+--fUYQa+Pmc3FrFX/N
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-index 0e4575f7bedb..ad4df9bddcf3 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-@@ -577,8 +577,13 @@ static void dwxgmac2_update_vlan_hash(struct mac_device_info *hw, u32 hash,
- 			value |= XGMAC_VLAN_EDVLP;
- 			value |= XGMAC_VLAN_ESVL;
- 			value |= XGMAC_VLAN_DOVLTC;
-+		} else {
-+			value &= ~XGMAC_VLAN_EDVLP;
-+			value &= ~XGMAC_VLAN_ESVL;
-+			value &= ~XGMAC_VLAN_DOVLTC;
- 		}
- 
-+		value &= ~XGMAC_VLAN_VID;
- 		writel(value, ioaddr + XGMAC_VLAN_TAG);
- 	} else if (perfect_match) {
- 		u32 value = readl(ioaddr + XGMAC_PACKET_FILTER);
-@@ -589,13 +594,19 @@ static void dwxgmac2_update_vlan_hash(struct mac_device_info *hw, u32 hash,
- 
- 		value = readl(ioaddr + XGMAC_VLAN_TAG);
- 
-+		value &= ~XGMAC_VLAN_VTHM;
- 		value |= XGMAC_VLAN_ETV;
- 		if (is_double) {
- 			value |= XGMAC_VLAN_EDVLP;
- 			value |= XGMAC_VLAN_ESVL;
- 			value |= XGMAC_VLAN_DOVLTC;
-+		} else {
-+			value &= ~XGMAC_VLAN_EDVLP;
-+			value &= ~XGMAC_VLAN_ESVL;
-+			value &= ~XGMAC_VLAN_DOVLTC;
- 		}
- 
-+		value &= ~XGMAC_VLAN_VID;
- 		writel(value | perfect_match, ioaddr + XGMAC_VLAN_TAG);
- 	} else {
- 		u32 value = readl(ioaddr + XGMAC_PACKET_FILTER);
--- 
-2.7.4
+Hi,
 
+On Mon 30 Mar 20, 22:15, Alexandre Belloni wrote:
+> Call the 64bit versions of rtc_tm time conversion.
+>=20
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+
+This was successfully:
+Tested-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Cheers,
+
+Paul
+
+> ---
+>  drivers/rtc/rtc-sun6i.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>=20
+> diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
+> index 446ce38c1592..e2b8b150bcb4 100644
+> --- a/drivers/rtc/rtc-sun6i.c
+> +++ b/drivers/rtc/rtc-sun6i.c
+> @@ -498,7 +498,7 @@ static int sun6i_rtc_getalarm(struct device *dev, str=
+uct rtc_wkalrm *wkalrm)
+> =20
+>  	wkalrm->enabled =3D !!(alrm_en & SUN6I_ALRM_EN_CNT_EN);
+>  	wkalrm->pending =3D !!(alrm_st & SUN6I_ALRM_EN_CNT_EN);
+> -	rtc_time_to_tm(chip->alarm, &wkalrm->time);
+> +	rtc_time64_to_tm(chip->alarm, &wkalrm->time);
+> =20
+>  	return 0;
+>  }
+> @@ -519,8 +519,8 @@ static int sun6i_rtc_setalarm(struct device *dev, str=
+uct rtc_wkalrm *wkalrm)
+>  		return -EINVAL;
+>  	}
+> =20
+> -	rtc_tm_to_time(alrm_tm, &time_set);
+> -	rtc_tm_to_time(&tm_now, &time_now);
+> +	time_set =3D rtc_tm_to_time64(alrm_tm);
+> +	time_now =3D rtc_tm_to_time64(&tm_now);
+>  	if (time_set <=3D time_now) {
+>  		dev_err(dev, "Date to set in the past\n");
+>  		return -EINVAL;
+> --=20
+> 2.25.1
+>=20
+>=20
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--fUYQa+Pmc3FrFX/N
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6F70sACgkQ3cLmz3+f
+v9FADgf/Z8x/NG6rzW4iNYoe/p42n/FIn4dXr7WV1OAzVj+G2wBINasXpLZtHsOI
+yOoKl5GNGQXF85p1b6sQaZ+FVwA0YqZsGfzum93w0s0YeoQpBSMjhYjUuneHarB0
+hsQR0LWjcgTe2/FmvBKgsjZ+iAo+6M+iB0R0M/qVLpFl3vzNltJFPcLTABAbdFOX
+WLy84aeTTrwWnvjPkxIZpMQGXkAnEfYe+NlejO/KqlvUZVvOsbVVokqmCk2/4iib
+oOV+35FTm8Bg0jwD7VORvp8CcMbNRTDT3dIivW+SzG4qnx2Q1kGyRKxYDpMSdgyc
+M+gTvQcwLkm5zpwNxP85+Y0aIqBYxA==
+=/1Dq
+-----END PGP SIGNATURE-----
+
+--fUYQa+Pmc3FrFX/N--
+
+
+--===============5515629973468492489==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5515629973468492489==--
+
