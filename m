@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC80C19CCE9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 00:33:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1741D19CCE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 00:33:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=J1gNd2j57kd4z0s3/ppkvYz3z1NysITNKObPWusaLtE=; b=s86
-	23fs+xYfYsk2tSNYP4g+5ja+mM5o4BjGpT6CLVql5DlrImLatQijeHMCW/rArYdDxQNjvBI0/iIvh
-	AcjQ+I+HDCUYMVuny+mB0K6Dt6ETSrKMXQYmCEOcoRGC/lO789JsrffG39QDkNnI4E5r/oynMjqD1
-	8AZo4r6E7SnGdcS8S4JT7iqzotNglvfPYv3A/WVQjtBkUyMj/OTOUyB31XD89ifLNk8FwZMv8uOXm
-	UtRGv1iPPmGxTOQcrpdgPYVSuYQZJNSg11PtJpprf0gcYyi2y4eMypE89P9IIgq/t/hGdS390kwxe
-	jPl18jW6B1o1KdUnYXhiSOr1eNcrMfQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=QEL9rpBvCPmo5a9B+ExVrudMBg+V9tyYVgXJDZzYAlc=; b=utVYsHrMcaVW5XQ4j6vc3uUxrx
+	JmdclwbVfs7+lLU2TkmTTnZkBLjKOs06+iFJEZ7GAtVkLCXVo8Qwnq9uQHtIJr0a/bbIKOtIXxevR
+	UIBhHaQOgBBTWqWNb7JWsFrRPQAsbRq4AQqhO8M04WUlQi1+rhjh8rV0vMooxubORXqH9zOa/PNOw
+	oeYriYNnObwTI57XdHKwwUE8LNJCYTezIwB/AwTiB7VLHeXlyXlnC6OfSMR6G4002EEEJzZw5msV7
+	GIUx0sA/CZWTXyKUeZIRYxLnZYTHSWRloyv9X1LXKkrHxEzfeeyg91G23Gycy2LuJOc5gNbKxsabE
+	8ZfG16cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK8PF-00073s-PE; Thu, 02 Apr 2020 22:33:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jK8P0-0006wV-98; Thu, 02 Apr 2020 22:33:34 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK8Os-0006vF-6A; Thu, 02 Apr 2020 22:33:27 +0000
-Received: by mail-wm1-x344.google.com with SMTP id t8so5177513wmi.2;
- Thu, 02 Apr 2020 15:33:25 -0700 (PDT)
+ id 1jK8Os-0006vT-L0; Thu, 02 Apr 2020 22:33:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id 91so4253243wri.10;
+ Thu, 02 Apr 2020 15:33:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=OmDjT9copZDYM4pmPAbt/TsexMujcYzhtWf1bez84nA=;
- b=mIuef1iE5HqYFwoNjZRieAmjV7htv0wNmJV5Nta79Yast/o20W8VW9esTccDprQhUQ
- KD6JJtaxj1gK8iAA9S7/cyP0umJ5H3LDjtk2Oc2JvVQ7drV1Pk1CzoQ5IU90fdu6sos0
- gQ4MuCkSaD7LFJcJ/t8V/oxEs8dC7zpifdYO6OsCU1MlCMShn6Hr8sDvcrOnmIdAEkTG
- oCNNYzCrEYeHpQfyHK98EbApZ2PJhN7a3flWeJnwC+8hH+4p6DgKkMSiKXwz7wXVbL5C
- OCywYSxs5/mw10ZGlFA2EWsn8JYUWoNz3n0XPeitUXL+7kxD35TNLiXnLxfnERx9hXpE
- UGoQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=4SOzz1DmBA7mljFUWMggCDnfrvoqqdJY//N8mPAQhYE=;
+ b=t1HKdcbKty17TKBnfpHl9npkiUav5NHVZLIc1xKNUBA5d7dKzmU/xIGPzs5ednbGGd
+ XBAWp+f+UzLLgxY0lGOe63/h5U4+ZjL74YC4CLYQpwgekrVMBrdc48g/LMuCvAohXz8i
+ 2H2b7sueZ57tIvgGVF27yr7Vmf94+RdRcJXkveoqt89D75MzkbuysqCcFLwIm3NrfH2M
+ jcJcLvsi/FyfidJB56IDME0T3gXtqOxFqDoGEEtyqR9GNeLxaxz70REq7bfKRbbioGN0
+ AemGYKtlsIZjDw5GDhGwbs5S5bs8r5wE5Ho0at2yPap3x/klIjCWLzA4lDgdi0sZWyn4
+ 6w5w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=OmDjT9copZDYM4pmPAbt/TsexMujcYzhtWf1bez84nA=;
- b=g+QCFRUvA5kzYHt0D82ppO9AlVBRXGhTObwyRg4VNRyDeFXxoJpDBsFI0dSqj9HGaq
- jz6bgCfrTn3IPj5rfMNwpKz0MgDAND/yJpcBURbD/sCwS6M703xrv+UpBrTJKb+rEPaf
- YslcKhGMFPJ1Va4nUZlSgOeYjY0HTqOggwITIb4vxIeyX+SC//OY6EgZXbib4z6BhYyi
- O8e5zEboXG7pRMw83SKffK423zMuhTcXpa3FoFQpoB+pNje6SaZXvhfRwbaGYdm3ud4l
- AaHb6nTK8NF0ekPjVVR1/pRWN7ePUIOR5/k0P5xSObjmjupINfh2i1kWUGbslS/ycGYJ
- GJGQ==
-X-Gm-Message-State: AGi0Puaoj7gjhsHVU8JP3kjYnOP2ApZ1XJnmBLwbcsmSGyBNAgGolzqA
- bTnZ2E7ptc1UCFSas2iigIo=
-X-Google-Smtp-Source: APiQypI6KSN4jgb1ptryf1N/48uD/v7HmEuB61QFUUzsXobb6C4PD97FmDdsZpsVoXI7Qu9xSfwqwQ==
-X-Received: by 2002:a05:600c:218d:: with SMTP id
- e13mr5504068wme.148.1585866804335; 
- Thu, 02 Apr 2020 15:33:24 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=4SOzz1DmBA7mljFUWMggCDnfrvoqqdJY//N8mPAQhYE=;
+ b=IRg1nsq3Xr4qexN8YVQ5Rr7V9q0xFU8tttDdpAkh1hgyBAs/jU5wbnUWt9BFietplF
+ F+8ujBE0zJtHOwYel13hBs+RranVyx8EC2LCbjtz5+jeiOcz0q42huK37JQSnCvRBHje
+ aCtnxYNxxTyBL9Jme6gRNrLs3j7EvOy7WrSLtntPWtQV26sy8ckJWfEa5rubI2z44XCS
+ g8KsSWPT/G1VghriIKk1gWC1EK3ZJ3ojf7FtjS5ShsUAoLK143xLtKVK7ISNnFd+Nkgv
+ Q0d3QA9vNOdh6zetplEPyk9zzkD51xk7syQJ+LtuzcoG1NiL/amAu+kniZ8XTQOUg5ko
+ thmA==
+X-Gm-Message-State: AGi0PubNrr5cB6dB32oY4jbt5Ax5HNk7t+/ouSPUjBnZ7F9h1NiPDyp+
+ CG5Yta+5iHcOU4/+EKpNwZY=
+X-Google-Smtp-Source: APiQypIZt8F4WTEtOcpr3GqFL8NVQOdrHJWExW7CZcX1Qg3fbPjjurB+yXpmAacN7vVbPadI4hsFJw==
+X-Received: by 2002:a5d:45c7:: with SMTP id b7mr5291373wrs.44.1585866805442;
+ Thu, 02 Apr 2020 15:33:25 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g186sm9267729wmg.36.2020.04.02.15.33.23
+ by smtp.gmail.com with ESMTPSA id g186sm9267729wmg.36.2020.04.02.15.33.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 Apr 2020 15:33:23 -0700 (PDT)
+ Thu, 02 Apr 2020 15:33:24 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: jacob-chen@iotwrt.com
-Subject: [PATCH v1 1/2] dt-bindings: media: convert rockchip rga bindings to
- yaml
-Date: Fri,  3 Apr 2020 00:33:14 +0200
-Message-Id: <20200402223315.12260-1-jbx6244@gmail.com>
+Subject: [PATCH v1 2/2] dt-bindings: media: rockchip-rga: add power-domains
+ property
+Date: Fri,  3 Apr 2020 00:33:15 +0200
+Message-Id: <20200402223315.12260-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200402223315.12260-1-jbx6244@gmail.com>
+References: <20200402223315.12260-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_153326_254057_EA38C068 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20200402_153326_682805_AE433F4E 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,145 +108,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files for Rockchip with 'rga' nodes
-are manually verified. In order to automate this process
-rockchip-rga.txt has to be converted to yaml.
-
-Changed:
-  Add missing reg property
+In the old txt situation we add/describe only properties that are used
+by the driver/hardware itself. With yaml it also filters things in a
+node that are used by other drivers like 'power-domains' for rk3399,
+so add it to 'rockchip-rga.yaml'.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- .../devicetree/bindings/media/rockchip-rga.txt     | 34 ----------
- .../devicetree/bindings/media/rockchip-rga.yaml    | 78 ++++++++++++++++++++++
- 2 files changed, 78 insertions(+), 34 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/media/rockchip-rga.txt
- create mode 100644 Documentation/devicetree/bindings/media/rockchip-rga.yaml
+ Documentation/devicetree/bindings/media/rockchip-rga.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.txt b/Documentation/devicetree/bindings/media/rockchip-rga.txt
-deleted file mode 100644
-index c53a8e513..000000000
---- a/Documentation/devicetree/bindings/media/rockchip-rga.txt
-+++ /dev/null
-@@ -1,34 +0,0 @@
--device-tree bindings for rockchip 2D raster graphic acceleration controller (RGA)
--
--RGA is a standalone 2D raster graphic acceleration unit. It accelerates 2D
--graphics operations, such as point/line drawing, image scaling, rotation,
--BitBLT, alpha blending and image blur/sharpness.
--
--Required properties:
--- compatible: value should be one of the following
--  "rockchip,rk3228-rga", "rockchip,rk3288-rga": for Rockchip RK3228
--  "rockchip,rk3288-rga": for Rockchip RK3288
--  "rockchip,rk3399-rga": for Rockchip RK3399
--
--- interrupts: RGA interrupt specifier.
--
--- clocks: phandle to RGA sclk/hclk/aclk clocks
--
--- clock-names: should be "aclk", "hclk" and "sclk"
--
--- resets: Must contain an entry for each entry in reset-names.
--  See ../reset/reset.txt for details.
--- reset-names: should be "core", "axi" and "ahb"
--
--Example:
--SoC-specific DT entry:
--	rga: rga@ff680000 {
--		compatible = "rockchip,rk3399-rga";
--		reg = <0xff680000 0x10000>;
--		interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
--		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
--		clock-names = "aclk", "hclk", "sclk";
--
--		resets = <&cru SRST_RGA_CORE>, <&cru SRST_A_RGA>, <&cru SRST_H_RGA>;
--		reset-names = "core, "axi", "ahb";
--	};
 diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-new file mode 100644
-index 000000000..3b110b574
---- /dev/null
+index 3b110b574..dd645ddcc 100644
+--- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
 +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-@@ -0,0 +1,78 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/media/rockchip-rga.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip 2D raster graphic acceleration controller (RGA)
-+
-+description:
-+  RGA is a standalone 2D raster graphic acceleration unit. It accelerates 2D
-+  graphics operations, such as point/line drawing, image scaling, rotation,
-+  BitBLT, alpha blending and image blur/sharpness.
-+
-+maintainers:
-+  - Jacob Chen <jacob-chen@iotwrt.com>
-+  - Ezequiel Garcia <ezequiel@collabora.com>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3288-rga
-+      - const: rockchip,rk3399-rga
-+      - items:
-+          - const: rockchip,rk3228-rga
-+          - const: rockchip,rk3288-rga
-+
-+  reg:
+@@ -39,6 +39,9 @@ properties:
+       - const: hclk
+       - const: sclk
+ 
++  power-domains:
 +    maxItems: 1
 +
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 3
-+
-+  clock-names:
-+    items:
-+      - const: aclk
-+      - const: hclk
-+      - const: sclk
-+
-+  resets:
-+    maxItems: 3
-+
-+  reset-names:
-+    items:
-+      - const: core
-+      - const: axi
-+      - const: ahb
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3399-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    rga: rga@ff680000 {
-+      compatible = "rockchip,rk3399-rga";
-+      reg = <0xff680000 0x10000>;
-+      interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru ACLK_RGA>,
-+               <&cru HCLK_RGA>,
-+               <&cru SCLK_RGA_CORE>;
-+      clock-names = "aclk", "hclk", "sclk";
-+      resets = <&cru SRST_RGA_CORE>,
-+               <&cru SRST_A_RGA>,
-+               <&cru SRST_H_RGA>;
-+      reset-names = "core", "axi", "ahb";
-+    };
+   resets:
+     maxItems: 3
+ 
+@@ -63,6 +66,7 @@ examples:
+   - |
+     #include <dt-bindings/clock/rk3399-cru.h>
+     #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/power/rk3399-power.h>
+     rga: rga@ff680000 {
+       compatible = "rockchip,rk3399-rga";
+       reg = <0xff680000 0x10000>;
+@@ -71,6 +75,7 @@ examples:
+                <&cru HCLK_RGA>,
+                <&cru SCLK_RGA_CORE>;
+       clock-names = "aclk", "hclk", "sclk";
++      power-domains = <&power RK3399_PD_RGA>;
+       resets = <&cru SRST_RGA_CORE>,
+                <&cru SRST_A_RGA>,
+                <&cru SRST_H_RGA>;
 -- 
 2.11.0
 
