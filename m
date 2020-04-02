@@ -2,50 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEF9919C735
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 18:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0880E19C7F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 19:27:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/1F6Kv42p1FZkh//6IFhTAMh7LDadCTgQAQTkH8nnmI=; b=XBnfkt6B155fr9
-	Rsx8cToX2Tv+kJQXnQIHIzf8FSlbmcWyuUyO0313su2ob7YAnP5bTty2Sz0SVpafGsE0JRufAA+Pp
-	MBNCQTYlPmAbE5h+bXH9KfE3RujL5qxRyZ5rS5b3z1aC5RiCrx724ncZFw3mQdE5cc+OwextQR99H
-	TPinEWoGSsNFksVL9gfvuNUgaCeA96e71auWNLa6H+M6im4S/sYzGVHo6cHU9RLwPwBDOZthBVSLC
-	UMComik2MKp3sOAdNUwpwubabl0EjCJc5mVsMPONBm12fbpdB7YNX2MOhDE0smP6bhrJqpTlyOu6z
-	LtHOASTptUCNO/MPddtw==;
+	List-Owner; bh=p0+oKjomq7d2YR5Za0i31cklbYVd9hG8Yx9XVxZ/9bQ=; b=HbyHiBG6N5DomV
+	NDnNUIcLXO79V2stShwWDuQ5x7yAuU/hKKCBr+Rm9sw3OsMbFv1NAFl/FLcH5sqzbh1580Y1F7Xsl
+	+i6pj+Zs5457GqZCaQvj0Y5pgLbSOh+0/N0aAfeneBqRJAJ/j6OK9k9RhB3cDqJA/Mclt1J+l0foy
+	qRQ4su+ZZAY6IsuwLMQvbUzY9jxDkNIkm5TAXE+dYw06Cz9srQsYShplLB59IPll/I0MVwVc3EmOU
+	PSlSik5+MWIOBYU1FNOrADVs14znIlorXQX0QkUaffT7s7g0f79jX5UVU6iFBO+Q+VrjQb9EHRTTv
+	zBf5BCweNHTPaaQOWftA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK2ru-0007ba-8p; Thu, 02 Apr 2020 16:39:02 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK2rk-0007bD-EF; Thu, 02 Apr 2020 16:38:52 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 7F0B03056DE;
- Thu,  2 Apr 2020 18:38:49 +0200 (CEST)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 423372B0DE293; Thu,  2 Apr 2020 18:38:49 +0200 (CEST)
-Date: Thu, 2 Apr 2020 18:38:49 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Zhenyu Ye <yezhenyu2@huawei.com>
-Subject: Re: [RFC PATCH v5 4/8] mm: tlb: Pass struct mmu_gather to
- flush_pmd_tlb_range
-Message-ID: <20200402163849.GM20713@hirez.programming.kicks-ass.net>
-References: <20200331142927.1237-1-yezhenyu2@huawei.com>
- <20200331142927.1237-5-yezhenyu2@huawei.com>
- <20200331151331.GS20730@hirez.programming.kicks-ass.net>
- <fe12101e-8efe-22ad-0258-e6aeafc798cc@huawei.com>
- <20200401122004.GE20713@hirez.programming.kicks-ass.net>
- <53675fb9-21c7-5309-07b8-1bbc1e775f9b@huawei.com>
+	id 1jK3c7-0002xB-Pq; Thu, 02 Apr 2020 17:26:47 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jK3c1-0002wP-N3
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 17:26:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id k191so2121309pgc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Apr 2020 10:26:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=H5lB7pAvXIGYlFSVzFQn+Y4Z8wDMSG1ZSww0VcSBoT8=;
+ b=gKNvgOy8hc6wCQvlSge37MBqulJCBRagCkj447Qm1o8xx2FINMhQg5yknXEoUR6m+Z
+ ULQfZI01R/Qh6BD8443+HVRJj3c4uKax+LRFJqInEv1IolAfai65y4GBiay60zRG7BpJ
+ TCadjYWSD4d+eJ6tLlRgQ4de9aCNzq574JQwM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=H5lB7pAvXIGYlFSVzFQn+Y4Z8wDMSG1ZSww0VcSBoT8=;
+ b=O+UDBepoj4hdJeYs8FPS8L859xW3ZsNJ5zK7TUPD622pZuGzFeVKVI+tt/JwqNuSfE
+ 8AWKQI2RzrhTWj+HdjClB3n/1FQ/hYWhzoGWxLRfxqbP0qz2XXiDHIibKVM9qrMSC6Pw
+ Qw8miy5nJZweQo2V0zGbduKSCtLeB9HXg7UiBaca2QDT6jxojYsbJdywKinOo+eWld3L
+ u6WG+2NjxonNESs0BPTiBj2UQc3QTzumemrJRLl3iEhfmv92uE5svZvIDSWgmFh66zFn
+ Ow0V3BNs8rwkYVRFs5EiKcdCm8u3G1+yLnvdO9F4u/S5+8+UO7d+v89KmgZKsBoDZAgN
+ G7sQ==
+X-Gm-Message-State: AGi0PubnOkF2ycr8jz1sxORYZWAJ4PT7A/RBn/9nOdII2ZdccifuhNgc
+ vfj5R4z1rqo2dBv9TVS+cYxCHw==
+X-Google-Smtp-Source: APiQypJ2hmcB7ZLOhajLAuwgEV7uDtr5aTLCSP2mbBo/qg5FkMdgwdaJkp+Be18iVsLhUUcAH8dMmA==
+X-Received: by 2002:a05:6a00:2cf:: with SMTP id
+ b15mr4105568pft.174.1585848400117; 
+ Thu, 02 Apr 2020 10:26:40 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id p1sm4171243pjr.40.2020.04.02.10.26.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 02 Apr 2020 10:26:39 -0700 (PDT)
+Date: Thu, 2 Apr 2020 10:26:38 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Sedat Dilek <sedat.dilek@gmail.com>
+Subject: Re: [PATCH 0/9] Enable orphan section warning
+Message-ID: <202004021023.D3D8AA3BE@keescook>
+References: <20200228002244.15240-1-keescook@chromium.org>
+ <CA+icZUWTnP8DYfbaMwKtJbG30v7bB4w6=ywo8gn8fvwr731mUQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <53675fb9-21c7-5309-07b8-1bbc1e775f9b@huawei.com>
+In-Reply-To: <CA+icZUWTnP8DYfbaMwKtJbG30v7bB4w6=ywo8gn8fvwr731mUQ@mail.gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200402_102641_751087_0B62801F 
+X-CRM114-Status: GOOD (  21.61  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,59 +96,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
- guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
- yuzhao@google.com, corbet@lwn.net, maz@kernel.org, steven.price@arm.com,
- arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com,
- npiggin@gmail.com, zhangshaokun@hisilicon.com, broonie@kernel.org,
- rostedt@goodmis.org, prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- xiexiangyou@huawei.com, tony.luck@intel.com, vgupta@synopsys.com,
- linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
- akpm@linux-foundation.org
+Cc: Mark Rutland <mark.rutland@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Peter Collingbourne <pcc@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Clang-Built-Linux ML <clang-built-linux@googlegroups.com>,
+ James Morse <james.morse@arm.com>, linux-arch@vger.kernel.org,
+ Borislav Petkov <bp@suse.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 02, 2020 at 07:24:04PM +0800, Zhenyu Ye wrote:
-> Thanks for your detailed explanation.  I notice that you used
-> `tlb_end_vma` replace `flush_tlb_range`, which will call `tlb_flush`,
-> then finally call `flush_tlb_range` in generic code.  However, some
-> architectures define tlb_end_vma|tlb_flush|flush_tlb_range themselves,
-> so this may cause problems.
+On Thu, Apr 02, 2020 at 06:20:57PM +0200, Sedat Dilek wrote:
+> On Fri, Feb 28, 2020 at 1:22 AM Kees Cook <keescook@chromium.org> wrote:
+> >
+> > Hi!
+> >
+> > A recent bug was solved for builds linked with ld.lld, and tracking
+> > it down took way longer than it needed to (a year). Ultimately, it
+> > boiled down to differences between ld.bfd and ld.lld's handling of
+> > orphan sections. Similarly, the recent FGKASLR series brough up orphan
+> > section handling too[2]. In both cases, it would have been nice if the
+> > linker was running with --orphan-handling=warn so that surprise sections
+> > wouldn't silently get mapped into the kernel image at locations up to
+> > the whim of the linker's orphan handling logic. Instead, all desired
+> > sections should be explicitly identified in the linker script (to be
+> > either kept or discarded) with any orphans throwing a warning. The
+> > powerpc architecture actually already does this, so this series seeks
+> > to extend this coverage to x86, arm64, and arm.
+> >
+> > This series depends on tip/x86/boot (where recent .eh_frame fixes[3]
+> > landed), and has a minor conflict[4] with the ARM tree (related to
+> > the earlier mentioned bug). As it uses refactorings in the asm-generic
+> > linker script, and makes changes to kbuild, I think the cleanest place
+> > for this series to land would also be through -tip. Once again (like
+> > my READ_IMPLIES_EXEC series), I'm looking to get maintainer Acks so
+> > this can go all together with the least disruption. Splitting it up by
+> > architecture seems needlessly difficult.
+> >
+> > Thanks!
+> >
 > 
-> For example, in s390, it defines:
+> Hi Kees,
 > 
-> #define tlb_end_vma(tlb, vma)			do { } while (0)
-> 
-> And it doesn't define it's own flush_pmd_tlb_range().  So there will be
-> a mistake if we changed flush_pmd_tlb_range() using tlb_end_vma().
-> 
-> Is this really a problem or something I understand wrong ?
+> what is the status of this patchset?
+> Looks like it is not in tip or linux-next Git.
 
-If tlb_end_vma() is a no-op, then tlb_finish_mmu() will do:
-tlb_flush_mmu() -> tlb_flush_mmu_tlbonly() -> tlb_flush()
+Based on the feedback, I have 3 TODO items:
 
-And s390 has tlb_flush().
+- track down and eliminate (or explain) the source of the .got.plt on arm64
+- enable orphan warnings for _all_ architectures
+- refactor final link logic to perform the orphan warning in a clean way
 
-If tlb_end_vma() is not a no-op and it calls tlb_flush_mmu_tlbonly(),
-then tlb_finish_mmu()'s invocation of tlb_flush_mmu_tlbonly() will
-terniate early due o no flags set.
+I'm working through these (and other work) still. I'm hoping to have
+another version up some time next week.
 
-IOW, it should all just work.
-
-
-FYI the whole tlb_{start,end}_vma() thing is a only needed when the
-architecture doesn't implement tlb_flush() and instead default to using
-flush_tlb_range(), at which point we need to provide a 'fake' vma.
-
-At the time I audited all architectures and they only look at VM_EXEC
-(to do $I invalidation) and VM_HUGETLB (for pmd level invalidations),
-but I forgot which architectures that were.
-
-But that is all legacy code; eventually we'll get all archs a native
-tlb_flush() and this can go away.
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
