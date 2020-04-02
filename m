@@ -2,126 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA64819C589
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 17:08:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61C5419C63E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 17:45:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iUS00WRGiqR4ZVfMtOjpl832taqF8bl2Z75f4CFpKE8=; b=HMH4nm2diOuGwU
-	lbRAO7TraPk7S3K8pD9tccQ72G2JpDVS9aDw5mTmb+9xVHP9IG+mkjcjSh/BhE1a7ftuOug15feQ1
-	/LEFMAfDGm6iEUa+VU96Xz9t+FciCWfPWfj4i4CgABptPfb3PG/42L4h5mcZ7lPNAnexqc8aPuoVz
-	1AlmlEu5L6Zw4BJYIPmlwx9mSZHfMUehRkXmxtjUPfMxPxnlKinFtvepEu2WCfIiPECt1L4TYRecN
-	D2frjob6VxWUtJiBFf0HKjpfxs4cUi+jIqmEiGhAZsV+AICOMR+WUQxOHyJ4qJOcr1U2UUZRRcUsc
-	6ujlheP0aW0MvF3lQt4w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MIgqHBUq5gZM0k0HYu7RtZNk7UTWL/95rYhzIVKo8bI=; b=IaxiaxVs4plGC2
+	qoE5yr7UG+3kNF8MOZCxgRVkEB9Wsh9gDppyO+QMwVp/45o0gZizsSYN/Y5S2ohkUjlqKBT5xdxLk
+	jFVhAJgAcTaO8ZvTtTRNeZ5thmc4ZHDeTSBvqiNS5iuDhy1MQkXMP++2LE5RgNhtUA1LW34ykSvH4
+	YWVIg5uvBxjnGJrSqrJ/yjPZiOguyGBVsqO195eeEeeZQJIvTUd8CmIcMMVGN2Pn80rHM14jKUD2X
+	7/iU2A9o7JiEzcpUCtLIs39AgHH8ls1vmfLK2MepNPiNNSRSYg5fDyB+FX2BMYg43ZwkiSKuI/CMQ
+	tKw9D3LDfVBZLHyX9c6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK1SL-0007HK-7D; Thu, 02 Apr 2020 15:08:33 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1jK22E-0006jn-MK; Thu, 02 Apr 2020 15:45:38 +0000
+Received: from [192.19.232.150] (helo=rnd-relay.smtp.broadcom.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK1SD-00079G-0M
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 15:08:27 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20200402150821epoutp0332baa113d88d947d48f3effd7d4a5d37~CCSuPOeyV1292712927epoutp03g
- for <linux-arm-kernel@lists.infradead.org>;
- Thu,  2 Apr 2020 15:08:21 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20200402150821epoutp0332baa113d88d947d48f3effd7d4a5d37~CCSuPOeyV1292712927epoutp03g
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1585840101;
- bh=6n/U4UXr1sadm5NpMP9GqwT5rx5fOlWjC/IaV5L6yFI=;
- h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=VOSnjOU3F90aQgXc10Zr3lnSf7D5vupy1FNDL5CHZ9DimK21wm1JldHQrPtSZZo05
- ILBvL3TWhlFsabG3rJydz27e4qqmZNp5PIidZ2ZBA+MkcgysDec8AWLn8azUPFw/lv
- UD6SrBHMU3HG22/MYJzVDgFHYrabT4pTypeswQ5s=
-Received: from epsmges5p1new.samsung.com (unknown [182.195.42.73]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTP id
- 20200402150820epcas5p3de6c9f31537388707edabd8a4a12df73~CCStqQfdI3224332243epcas5p3p;
- Thu,  2 Apr 2020 15:08:20 +0000 (GMT)
-Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
- epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 54.91.04782.4EFF58E5; Fri,  3 Apr 2020 00:08:20 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200402150820epcas5p1d7438cd324271c43d54bd446e239f108~CCStIGjxQ2767827678epcas5p1g;
- Thu,  2 Apr 2020 15:08:20 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200402150820epsmtrp26e18ee8b63dda67bfd570c016d798f08~CCStHTQBJ2842128421epsmtrp2Z;
- Thu,  2 Apr 2020 15:08:20 +0000 (GMT)
-X-AuditID: b6c32a49-89bff700000012ae-a1-5e85ffe49d7c
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- E8.1F.04024.4EFF58E5; Fri,  3 Apr 2020 00:08:20 +0900 (KST)
-Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200402150817epsmtip2bc01951f013328dcb2a8973e30a4a8cd~CCSqSFhsN0906209062epsmtip2I;
- Thu,  2 Apr 2020 15:08:17 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Avri Altman'" <Avri.Altman@wdc.com>, <robh+dt@kernel.org>,
- <devicetree@vger.kernel.org>, <linux-scsi@vger.kernel.org>
-In-Reply-To: <SN6PR04MB4640B92BC9EA5CFEB74BE5EAFCCD0@SN6PR04MB4640.namprd04.prod.outlook.com>
-Subject: RE: [PATCH v4 4/5] scsi: ufs-exynos: add UFS host support for
- Exynos SoCs
-Date: Thu, 2 Apr 2020 20:38:15 +0530
-Message-ID: <000001d60900$8b6f5e70$a24e1b50$@samsung.com>
+ id 1jK228-0006j9-Vt
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 15:45:34 +0000
+Received: from localhost.localdomain (unknown [10.230.10.169])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTPS id 2E8AC1A0003;
+ Thu,  2 Apr 2020 08:39:09 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 2E8AC1A0003
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1585841949;
+ bh=Seb9VQpgJDnwcPpoReSekHFLFfvXrZV9urKMws4HNcQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=kHPVY2PuVcZfO6c6fny3/1ZJSxqV7JoS1oXwp4/52le+QTYcUHg2VF2+gHRKUCy8q
+ Z459cPsdRkzXUFBCg+otDDoxKYtzqXqWfLIli0gUv2cmrK2iYIOGG6RC5CfFIf8WfI
+ /dZlWDax0kzkHNUexuZ5acuyW3kNNeP3p2qjtN/I=
+From: Kursad Oney <kursad.oney@broadcom.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: 32-bit arm unwind info for PLTs
+Date: Thu,  2 Apr 2020 11:38:45 -0400
+Message-Id: <20200402153845.30985-1-kursad.oney@broadcom.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQKI+vJzlUBp7WIi19k8pRZBKIHK2gGl+w7dArc8+ogCfXKHn6bJNFzg
-Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrEKsWRmVeSWpSXmKPExsWy7bCmlu6T/61xBh/nGFq8/HmVzeLT+mWs
- FvOPnGO1OH9+A7vFzS1HWSw2Pb7GanF51xw2ixnn9zFZdF/fwWax/Pg/JovWvUfYLZZuvcno
- wONxua+XyWPTqk42j81L6j1aTu5n8fj49BaLR9+WVYwenzfJebQf6GYK4IjisklJzcksSy3S
- t0vgyliw2LngOU/F1Jf3mBsYV3F1MXJySAiYSOxZ9YKpi5GLQ0hgN6PE6h332SGcT4wS5589
- ZwGpEhL4xigxfakqTEfn/l6oor2MEu+/voFy3jBKLJqzjxWkik1AV2LH4jY2EFtEoFZi8eQO
- VpAiZpCx3/ZOBhvLKRAr8fPJNEYQW1ggROLG6+VgzSwCKhKrHt9iBrF5BSwl9i+7wAphC0qc
- nPkErJdZQFti2cLXzBAnKUj8fLqMFWKZm8T7exOYIGrEJY7+7GEGWSwhsIxd4tO1dawQDS4S
- lzadY4SwhSVeHd/CDmFLSXx+txfoag4gO1uiZ5cxRLhGYum8YywQtr3EgStzWEBKmAU0Jdbv
- 0odYxSfR+/sJE0Qnr0RHmxBEtapE87urUJ3SEhO7u6EO8JD423uIaQKj4iwkj81C8tgsJA/M
- Qli2gJFlFaNkakFxbnpqsWmBYV5quV5xYm5xaV66XnJ+7iZGcErT8tzBOOuczyFGAQ5GJR5e
- hoOtcUKsiWXFlbmHGCU4mJVEeB1nAIV4UxIrq1KL8uOLSnNSiw8xSnOwKInzTmK9GiMkkJ5Y
- kpqdmlqQWgSTZeLglGpgDOdqszdfoWPp0h3DErrd+tVh3pR3G/m6YrX91nXt7MvcpeFblaNZ
- s9jcaMN574ipu8S44meWpm0te7XQ/+qFuWfrvnsd/3f+74Nj4r/2/97Iozo5+k/RqSMZonuq
- +7u5eCJPz2/pnvxm/5/7HMnXOvpaKib9rPoQabrr5JTnR4o+TvFzcd70QYmlOCPRUIu5qDgR
- AF51hTZlAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrFIsWRmVeSWpSXmKPExsWy7bCSvO6T/61xBi3nuS1e/rzKZvFp/TJW
- i/lHzrFanD+/gd3i5pajLBabHl9jtbi8aw6bxYzz+5gsuq/vYLNYfvwfk0Xr3iPsFku33mR0
- 4PG43NfL5LFpVSebx+Yl9R4tJ/ezeHx8eovFo2/LKkaPz5vkPNoPdDMFcERx2aSk5mSWpRbp
- 2yVwZTSe7GcrOMpT8enmN/YGxg6uLkZODgkBE4nO/b3sXYxcHEICuxklpq94ywKRkJa4vnEC
- O4QtLLHy33OooleMEms6TjOBJNgEdCV2LG5jA0mICDQySiz+t4QRxGEW+MUo8WTtQyaIlglM
- En8vLmUEaeEUiJX4+WQamC0sECTx/8RGNhCbRUBFYtXjW8wgNq+ApcT+ZRdYIWxBiZMzn4Dd
- xCygLfH05lM4e9nC18wQ9ylI/Hy6DKxeRMBN4v29CUwQNeISR3/2ME9gFJ6FZNQsJKNmIRk1
- C0nLAkaWVYySqQXFuem5xYYFhnmp5XrFibnFpXnpesn5uZsYwTGqpbmD8fKS+EOMAhyMSjy8
- DAdb44RYE8uKK3MPMUpwMCuJ8DrOAArxpiRWVqUW5ccXleakFh9ilOZgURLnfZp3LFJIID2x
- JDU7NbUgtQgmy8TBKdXAmMgiJcbzOX79dEt9Z8O3K5LP/Y+z3OGR8khQxdOunufQouN7LiZ3
- OrQcm14nurfNs/xx4owcp52dnacO9uRXehVP+N/n1hC4OXq/auNPtuZJk8QOHtHWf/dr25Rn
- 8gzzr004/uqL0r1wj3RzsU79HQENrm7rzy2OerWQ042573KEtN/WaoYYJZbijERDLeai4kQA
- sutWFs0CAAA=
-X-CMS-MailID: 20200402150820epcas5p1d7438cd324271c43d54bd446e239f108
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-X-CMS-RootMailID: 20200327171420epcas5p490e1e6d090a540eaf050e0728a39ba25
-References: <20200327170638.17670-1-alim.akhtar@samsung.com>
- <CGME20200327171420epcas5p490e1e6d090a540eaf050e0728a39ba25@epcas5p4.samsung.com>
- <20200327170638.17670-5-alim.akhtar@samsung.com>
- <SN6PR04MB4640B92BC9EA5CFEB74BE5EAFCCD0@SN6PR04MB4640.namprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_080825_474349_7D9402EB 
-X-CRM114-Status: GOOD (  11.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200402_084533_119690_EFF66BB8 
+X-CRM114-Status: UNSURE (   6.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.33 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -129,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -142,52 +74,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, martin.petersen@oracle.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- cang@codeaurora.org, stanley.chu@mediatek.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Kursad Oney <kursad.oney@broadcom.com>, florian.fainelli@broadcom.com,
+ ard.biesheuvel@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri
+Hi,
 
-> -----Original Message-----
-> From: Avri Altman <Avri.Altman@wdc.com>
-> Sent: 28 March 2020 16:58
-> To: Alim Akhtar <alim.akhtar@samsung.com>; robh+dt@kernel.org;
-> devicetree@vger.kernel.org; linux-scsi@vger.kernel.org
-> Cc: krzk@kernel.org; martin.petersen@oracle.com; kwmad.kim@samsung.com;
-> stanley.chu@mediatek.com; cang@codeaurora.org; linux-samsung-
-> soc@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> kernel@vger.kernel.org
-> Subject: RE: [PATCH v4 4/5] scsi: ufs-exynos: add UFS host support for Exynos
-> SoCs
-> 
-> Hi,
-> 
-> > +
-> > +long exynos_ufs_calc_time_cntr(struct exynos_ufs *ufs, long period) {
-> > +       const int precise = 10;
-> > +       long pclk_rate = ufs->pclk_rate;
-> > +       long clk_period, fraction;
-> > +
-> > +       clk_period = UNIPRO_PCLK_PERIOD(ufs);
-> > +       fraction = ((NSEC_PER_SEC % pclk_rate) * precise) / pclk_rate;
-> > +
-> > +       return (period * precise) / ((clk_period * precise) +
-> > +fraction); }
-> This helper essentially calculates a factor f, and returns period x f.
-> Why not do that regardless of period?
-> 
-The period can be different for different timing attributes, so this helper function takes the period and returns the timer counter value based on the pclk_rate. 
+I have a large kernel module that gets loaded to vmalloc via
+ARM_MODULE_PLTS. When I either use perf, or enable (yet unmerged)
+KASAN-arm changes, I see occasional warnings like this:
 
-> > +extern long exynos_ufs_calc_time_cntr(struct exynos_ufs *, long);
-> Why this factor needed to be exported?
-Yes, not needed, will correct this in next version, which I am planning to post soon.
-Thanks for your time and review, let me know if you have more inputs.
+unwind: Index not found pc:f3aa8d6c
 
+The address f3aa8d6c is in the .plt section. I printed the backtrace
+in unwind_frame where the warning is printed, and the backtrace looks
+like this:
+
+NMI backtrace for cpu 0
+CPU: 0 PID: 7193 Comm: hostapd Tainted: P                  4.19.100 #7
+Hardware name: Generic DT based system
+[<c02144b8>] (unwind_backtrace) from [<c020dac8>] (show_stack+0x10/0x14)
+[<c020dac8>] (show_stack) from [<c083b238>] (dump_stack+0x9c/0xb0)
+[<c083b238>] (dump_stack) from [<c0842dfc>] (nmi_cpu_backtrace+0xb4/0xe8)
+[<c0842dfc>] (nmi_cpu_backtrace) from [<c0842fb0>] (nmi_trigger_cpumask_backtrace+0x180/0x1d4)
+[<c0842fb0>] (nmi_trigger_cpumask_backtrace) from [<c0214428>] (unwind_frame+0x650/0x6e0)
+[<c0214428>] (unwind_frame) from [<c020d53c>] (walk_stackframe+0x30/0x3c)
+[<c020d53c>] (walk_stackframe) from [<c020d778>] (__save_stack_trace+0x100/0x108)
+[<c020d778>] (__save_stack_trace) from [<c03369ec>] (__kasan_slab_free+0x124/0x1f8)
+[<c03369ec>] (__kasan_slab_free) from [<c033396c>] (kmem_cache_free+0x5c/0x19c)
+[<c033396c>] (kmem_cache_free) from [<c029138c>] (rcu_process_callbacks+0x360/0x604)
+[<c029138c>] (rcu_process_callbacks) from [<c020295c>] (__do_softirq+0x174/0x374)
+[<c020295c>] (__do_softirq) from [<c022b07c>] (irq_exit+0xd0/0xf8)
+[<c022b07c>] (irq_exit) from [<c027ce3c>] (__handle_domain_irq+0x7c/0xd4)
+[<c027ce3c>] (__handle_domain_irq) from [<c04dfc00>] (gic_handle_irq+0x4c/0x90)
+[<c04dfc00>] (gic_handle_irq) from [<c02020cc>] (__irq_svc+0x6c/0xac)
+Exception stack(0xe4c3b400 to 0xe4c3b448)
+b400: dca01404 f3d63a80 bd7ac750 00000000 f3d63a84 f0b6c164 f3bb6434 dca0126c
+b420: f3d665d0 dca01408 dca01404 0c002c24 00000000 e4c3b450 f37ed5a4 f3aa8d6c
+b440: 600b0013 ffffffff
+[<c02020cc>] (__irq_svc) from [<f3aa8d6c>] (wl_module_exit+0xf64/0x21f8 [wl])
+
+To me it looks like while the CPU is executing an instruction in the
+PLT, it gets an interrupt. If we call save_stack_trace() or any
+function that eventually gets to unwind_frame() from that context,
+then the unwinder doesn't know how to unwind the PLT. Does this sound
+right? Any idea how the unwinder code should deal with this situation?
+
+Thanks!
+kursad
 
 _______________________________________________
 linux-arm-kernel mailing list
