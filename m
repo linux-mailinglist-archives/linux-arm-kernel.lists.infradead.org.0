@@ -2,63 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96F5119CA66
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 21:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9293319CA62
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 21:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GSGZ86WFCh2eCYnlkUk6Ugb7CXen+da4g5G4ZcbVNP4=; b=XClrOmexj7deSWmbSFh355SN9o
-	ZH+VRwBnruoQfhghRHpzCBZLnGAfj9MrbhSlTizdc4t5217T45WAigURdh8yjC67UMMdzSIVc465N
-	0w9ngYAaTBpXnQNTlpFjFj3UmqWiQvvNG0CSIbM6krtFdWmYFZetsrR//n6UXHa/Ca8Mn0NjGudtB
-	mnd9JsEciy9+igqZKlGlM7p6dkPvPoDN1KlRJmUsBzS6Zm4f+0uFTB6EZj63Y+8IAFAwPbcynHBf0
-	we/wcXF1IikRmZL0DxXp55BKXC7QRoUQr5vzvY5haT+AY6FsNNnlrhHzoZK36ufk1yxnJwq8hDdQ0
-	IovcktpA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=MxLMocEuAIMJRqUpfyLvtLYjSoQFfSTYPpc93hjhfvw=; b=bsUJcyiicUSNrJ
+	JFDXe0A8TnikeEzO93SRnPEDmDM8iFIQluhZa4i/STpUNP+elf7kEehdUVllNYEn2Og9Es6LVHZBr
+	cZer6skNrEasg9n4D78bXkssmQuiBwHBLPNNT79z6xYnKYNcyJVXAS4FDXsWsxMACNx27wLujVzUg
+	wH3HUgpBNo0sG1+UQOLQNlRlKsD7NVnD8GkUwERU9eU8X2oUN6Sq6B3PF4FFGF45aKbCN/bzdpQL5
+	4puZ4mKNUFUaM3Z3vjGYQ5mgKwyOcMPVxmMnOjEv9DgmBQbpK8zYLpGwVSx69ktXmHllFQuAlcvId
+	Rk56aZLrl3ENZm1SkLjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK5kR-0002su-TX; Thu, 02 Apr 2020 19:43:32 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171]
- helo=relmlie5.idc.renesas.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK5hD-0006Ta-DM; Thu, 02 Apr 2020 19:40:15 +0000
-X-IronPort-AV: E=Sophos;i="5.72,336,1580742000"; d="scan'208";a="43555725"
-Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie5.idc.renesas.com with ESMTP; 03 Apr 2020 04:40:10 +0900
-Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id 251FD40C4F75;
- Fri,  3 Apr 2020 04:40:03 +0900 (JST)
-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci@vger.kernel.org
-Subject: [PATCH v6 11/11] MAINTAINERS: Add file patterns for rcar PCI device
- tree bindings
-Date: Thu,  2 Apr 2020 20:38:39 +0100
-Message-Id: <1585856319-4380-12-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+	id 1jK5kC-0002fE-A1; Thu, 02 Apr 2020 19:43:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jK5hB-0007Ds-Nx; Thu, 02 Apr 2020 19:40:16 +0000
+Received: from localhost (mobile-166-170-223-166.mycingular.net
+ [166.170.223.166])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E83F0206F8;
+ Thu,  2 Apr 2020 19:40:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585856408;
+ bh=pverSPU32ehzvi/6uILs11ZGZuyU/iubPLzeloiCKC0=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=s8H6rbB+0cPjjF5RR95Zz0MFmgQ/FSphxeIxljYSsXH5VvAYsqo0yX2qnPYhqXbui
+ JwdQvYu/tBhNTZYcqXPlyY1s4LxRkbNqjq4SM+omvnmst0p29AD9e3zm1pmDacaTK5
+ A14Caex2L5sCS6AcEIbHuuLcn2lVDwteMVY0adsc=
+Date: Thu, 2 Apr 2020 14:40:05 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v6 2/4] firmware: raspberrypi: Introduce vl805 init routine
+Message-ID: <20200402194005.GA35725@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <88456b80396331814fca9c929c2129861aaa35bd.camel@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_124011_599885_B42A1CCA 
-X-CRM114-Status: GOOD (  10.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200402_124009_995480_4FCDC91A 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.171 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,48 +74,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- linux-kernel@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Florian Fainelli <f.fainelli@gmail.com>, sergei.shtylyov@cogentembedded.com,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ linux-usb@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, tim.gover@raspberrypi.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ gregkh@linuxfoundation.org, linux-arm-kernel@lists.infradead.org,
+ wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add file pattern entry for rcar PCI devicetree binding, so that when
-people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
-be listed.
+On Thu, Apr 02, 2020 at 01:32:35PM +0200, Nicolas Saenz Julienne wrote:
+> On Wed, 2020-04-01 at 15:37 -0500, Bjorn Helgaas wrote:
+> > On Tue, Mar 24, 2020 at 07:28:10PM +0100, Nicolas Saenz Julienne wrote:
+> > > On the Raspberry Pi 4, after a PCI reset, VL805's firmware may
+> > > either be loaded directly from an EEPROM or, if not present, by
+> > > the SoC's VideCore. The function informs VideCore that VL805 was
+> > > just reset, or requests for a probe defer.
 
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+Is VL805 the XHCI USB device?  A hint here would help non-RPi experts
+know how this fits into the topology.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 3f0f2ee2af32..87df2d31a54b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12933,6 +12933,7 @@ L:	linux-pci@vger.kernel.org
- L:	linux-renesas-soc@vger.kernel.org
- S:	Maintained
- F:	drivers/pci/controller/*rcar*
-+F:	Documentation/devicetree/bindings/pci/*rcar*
- 
- PCI DRIVER FOR SAMSUNG EXYNOS
- M:	Jingoo Han <jingoohan1@gmail.com>
--- 
-2.20.1
+> > > Based on Tim Gover's downstream implementation.
+> >
+> > Maybe a URL?
+> 
+> I was under the impression that adding links in the commit log that
+> are likely to be short-lived was frowned upon. That said I could've
+> added it into the cover letter. For reference here it is:
+> 
+> https://github.com/raspberrypi/linux/commit/9935b4c7e360b4494b4cb6e3ce797238a1ab78bd
+
+I think your impression is correct.  If this was posted to a mailing
+list archived on lore.kernel.org, a link to the cover letter would be
+ideal.
+
+> To pass messages down the mailbox, you call rpi_firmware_property(),
+> which takes care of contention, formating and DMA issues, before
+> passing it into the actual mailbox interface and beyond.
+
+OK.  The "rpi_firmware_property" name doesn't give much of a hint that
+it is sending messages.  It sounds like it might be a lookup function.
+But that's an existing thing, not something you're changing here.
+
+> > > + */
+> > > +int rpi_firmware_init_vl805(struct pci_dev *pdev)
+> > > +{
+> > > +	struct device_node *fw_np;
+> > > +	struct rpi_firmware *fw;
+> > > +	u32 dev_addr;
+> > > +	int ret;
+> > > +
+> > > +	fw_np = of_find_compatible_node(NULL, NULL,
+> > > +					"raspberrypi,bcm2835-firmware");
+> > > +	if (!fw_np)
+> > > +		return 0;
+> > > +
+> > > +	fw = rpi_firmware_get(fw_np);
+> > > +	of_node_put(fw_np);
+> > > +	if (!fw)
+> > > +		return -EPROBE_DEFER;
+> > > +
+> > > +	dev_addr = pdev->bus->number << 20 | PCI_SLOT(pdev->devfn) << 15 |
+> > > +		   PCI_FUNC(pdev->devfn) << 12;
+> > > +
+> > > +	ret = rpi_firmware_property(fw, RPI_FIRMWARE_NOTIFY_XHCI_RESET,
+> > > +				    &dev_addr, sizeof(dev_addr));
+> > > +	if (ret)
+> > > +		return ret;
+> > > +
+> > > +	dev_dbg(&pdev->dev, "loaded Raspberry Pi's VL805 firmware\n");
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +EXPORT_SYMBOL_GPL(rpi_firmware_init_vl805);
+> > > +
+> > >  static const struct of_device_id rpi_firmware_of_match[] = {
+> > >  	{ .compatible = "raspberrypi,bcm2835-firmware", },
+> > >  	{},
+> 
+> [...]
+> 
+> Regards,
+> Nicolas
+> 
+
 
 
 _______________________________________________
