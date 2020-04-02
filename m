@@ -2,83 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51A1C19C460
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 16:36:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EB9A19C565
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 17:03:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	Subject:In-Reply-To:References:To:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0jgumBUT9ZxDxkk0Dila/kYKhZmm7yEt8paUy3+7YQ=; b=eAJq0pTOC/28bI
-	y0e19tZek2ek2L4XdVgcuhZv34h+qzxKzFmrjxxR9MTe8gEFXw6vmFWySPrGLlj1rWB3mtKPkbyK0
-	KbcDeWmPJvPjhTr75VF8yhWdfzbN5jnMUJAZ5nOCMCSPuYU5NoMVjEhjgGRqk+M09vyQQvAaFZlc8
-	IzGXBnb7gwBtc+5u4iF/Dd+sbBweCXP4RlpLv8gjt6j7p3BsM3srJ+OztRpb64LgZGgHtu+WN1716
-	xMxypqmkcM+tJo8fmdJ4SqxNy2X3bwALi0khB3Ag8Po45JFMSxfI51YQOmFob/KENiqnYSfFKU0b2
-	fgvVImQdWSfJLhY8Mz3Q==;
+	List-Owner; bh=1/eQAqcK+de0WVrN8hZ8/btJCjZM5JAPExQcIWHk75U=; b=ZqnPo3RNMrQlRv
+	wSjmbCHWULPM9AgcJoKGsxtTqGUeTntJEdnjQTJZi++j7/8xSFRtdC0Qj5FlinoV0HfAZz20DFw2o
+	uYGb8fKHM1KZinOo0FbDieyHqK20YSnsmO4QwEOPR2KtIZ9QBLcPl+Kkzj6M4qBeETaRk/aAauw2Q
+	XxHh40wVGWn9Jua75M+yG8UjbVx/Hcln/3pmrby4So7EmjkNYHM2NL2eGpOPltsuggYlgmzPdMgtV
+	BodF3RBdxtiNgO5er5czt2kBvHLnohMVZGmBtVLcObY+raVkwftcoh+uIprREH4+JvKVHUdKC2Yqx
+	kL7K930WOYIUg1B99rOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK0xM-0003Tj-TY; Thu, 02 Apr 2020 14:36:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jK1Ni-0003ii-Bk; Thu, 02 Apr 2020 15:03:46 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK0xA-0003R4-LO
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 14:36:22 +0000
-Received: from mail-il1-f173.google.com (mail-il1-f173.google.com
- [209.85.166.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D7EE220787
- for <linux-arm-kernel@lists.infradead.org>;
- Thu,  2 Apr 2020 14:36:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585838179;
- bh=hgqNTt2kKMNGHqP+Km3jz9TvPzM2T4GaVOuSBURhUvs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Xea48Y7rVx7bKJXai1/rCZV02PKwdZb4NtyEvbGgM3eK43U6ZAC4N4R5Dzhu/tpgZ
- Ix/acFtoFs6RiiUvxog1xUiHsMKNCC4kJfqpbdKlGwGBb87JV6h20pa2q195oUMJoZ
- hsriSvjosxbqeD+R/0eO72SAMOgSI4V4mocJgaho=
-Received: by mail-il1-f173.google.com with SMTP id i75so3749676ild.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 Apr 2020 07:36:19 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYVLAqU5NgbFQutrVU1hZHTTrm3HrsMM9vpls7gvP5SgEjLFb4H
- sJIZAcMEYJdCOvBta8GFh/7X2n/zMPnbplObp+g=
-X-Google-Smtp-Source: APiQypK/ccv9NRSETRVTWozAv5jSrWGxRlqM/ygFo4EjfN+UAGVGv17+NG3gieCqXQN2oci7WqN0P+0T4tCB/gk2P3w=
-X-Received: by 2002:a92:dcd1:: with SMTP id b17mr3620113ilr.80.1585838179188; 
- Thu, 02 Apr 2020 07:36:19 -0700 (PDT)
+ id 1jK1Nc-0003hj-QS
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 15:03:42 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1585839816; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
+ To: From: Reply-To: Sender;
+ bh=MFdcBokfw79s+7lRCHgLw9NzMSmYZr6xzGhOl6ZSO68=;
+ b=O+qZ+0XT/VNx85XDDQKVd9E/PF/Qj9ZL5S4USNm6135Qafq59uD+h6LlanihMfOlsp/WpWPc
+ NyeMu9UA6t4DbxBkbMnhbInhtmFuPkU8OmSe96CvmVqirhnTp34o+yKs3SoFOI8u4cjStD26
+ 55H5vullorlhHKYacPS75l066JE=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e85fec4.7fbf5478ae68-smtp-out-n03;
+ Thu, 02 Apr 2020 15:03:32 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 46F94C44791; Thu,  2 Apr 2020 15:03:31 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: *
+X-Spam-Status: No, score=1.5 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ SUSPICIOUS_RECIPS autolearn=no autolearn_force=no version=3.4.0
+Received: from BCAIN (104-54-226-75.lightspeed.austtx.sbcglobal.net
+ [104.54.226.75])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bcain)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 866DFC43636;
+ Thu,  2 Apr 2020 15:03:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 866DFC43636
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=bcain@codeaurora.org
+From: "Brian Cain" <bcain@codeaurora.org>
+To: "'afzal mohammed'" <afzal.mohd.ma@gmail.com>
+References: <20200321174303.GA7930@afzalpc>
+ <cover.1585320721.git.afzal.mohd.ma@gmail.com>
+ <059b01d604ab$637355b0$2a5a0110$@codeaurora.org>
+ <20200328073253.GA5250@afzalpc>
+In-Reply-To: <20200328073253.GA5250@afzalpc>
+Subject: RE: [PATCH 0/6] Kill setup_irq()
+Date: Thu, 2 Apr 2020 10:03:28 -0500
+Message-ID: <0fc601d608ff$df0ea550$9d2beff0$@codeaurora.org>
 MIME-Version: 1.0
-References: <5a6807f19fd69f2de6622c794639cc5d70b9563a.1585513949.git.stefan@agner.ch>
- <CAKwvOdkyOW6RXTOCt1xMp2H+uH28ofByQOjyx776t8RDxTED2w@mail.gmail.com>
- <CAMj1kXGYiMobkue642iDRdOjEHQK=KXpp=Urrgik9UU-eWWibQ@mail.gmail.com>
- <DBBPR08MB4823129E272220712B470716F8C60@DBBPR08MB4823.eurprd08.prod.outlook.com>
- <CAMj1kXEQ4v9e6386ogPdy+s+++9H02DMPnDpTq0WSY2e78ts+Q@mail.gmail.com>
- <e0c125ea492670c7069c407b6b0c5958@agner.ch>
-In-Reply-To: <e0c125ea492670c7069c407b6b0c5958@agner.ch>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Thu, 2 Apr 2020 16:36:08 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEe835GbXU5qgX-QQ5n4SmwQO1nAoAZw5pUVCbR=J8XmQ@mail.gmail.com>
-Message-ID: <CAMj1kXEe835GbXU5qgX-QQ5n4SmwQO1nAoAZw5pUVCbR=J8XmQ@mail.gmail.com>
-Subject: Re: [PATCH] ARM: OMAP2+: drop unnecessary adrl
-To: Stefan Agner <stefan@agner.ch>
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AQH+2owB65JuA03jeOLwO39OK5TmSwJQWNztApEZe3IB1U/c2KfelGEA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_073620_740083_97241EF5 
-X-CRM114-Status: GOOD (  22.08  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200402_080340_917608_D91FC979 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,58 +98,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nd <nd@arm.com>, Tony Lindgren <tony@atomide.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Peter Smith <Peter.Smith@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Russell King <linux@armlinux.org.uk>, linux-omap@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Reply-To: bcain@codeaurora.org
+Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linux-mips@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ linux-alpha@vger.kernel.org, 'Thomas Gleixner' <tglx@linutronix.de>,
+ linux-omap@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2 Apr 2020 at 16:34, Stefan Agner <stefan@agner.ch> wrote:
->
-> On 2020-04-02 14:05, Ard Biesheuvel wrote:
-> > On Thu, 2 Apr 2020 at 13:50, Peter Smith <Peter.Smith@arm.com> wrote:
-> >>
-> >> > I take it this implies that the LLVM linker does not support the
-> >> > R_ARM_ALU_PC_Gn relocations? Since otherwise, adrl could simply be
-> >> > expanded to a pair of adds with the appropriate relocations, letting
-> >> > the linker fix up the immediates (and the ADD vs SUB bits)
-> >>
-> >> Not at the moment. I have a patch in review to add the G0 variants for these in Arm state at reviews.llvm.org/D75349 . As far as I know LLVM MC does not have support for generating the relocations either. This could be added though. I agree that using the G* relocations with a pair of add/sub instructions would be the ideal solution. The adrl psuedo is essentially that but implemented at assembly time. I think it would be possible to implement in LLVM but at the time (4+ years ago) I wasn't confident in finding someone that would think that adrl support was worth the disruption, for example the current Arm assembly backend can only produce 1 instruction as output and adrl requires two.
-> >>
-> >> I'd be happy to look at group relocation support in LLD, I haven't got a lot of spare time so progress is likely to be slow though.
-> >>
-> >
-> > For Linux, I have proposed another approach in the past, which is to
-> > define a (Linux-local) adr_l macro with unlimited range [0], which
-> > basically comes down to place relative movw/movt pairs for v7+, and
-> > something along the lines of
-> >
-> >         ldr <reg>, 222f
-> > 111:    add <reg>, <reg>, pc
-> >         .subsection 1
-> > 222:    .long <sym> - (111b + 8)
-> >         .previous
->
-> Just to confirm: The instance at hand today seems to be working fine
-> without adrl, so I guess we are fine here, do you agree?
->
+> -----Original Message-----
+> From: linux-hexagon-owner@vger.kernel.org <linux-hexagon-
+> owner@vger.kernel.org> On Behalf Of afzal mohammed
+...
+> On Fri, Mar 27, 2020 at 09:48:38PM -0500, Brian Cain wrote:
+> 
+> > > Note 2: hexagon final image creation fails even w/o my patch
+> 
+> > 	What's the nature of the failure in "Note 2"?
+> 
+> drivers/base/firmware_loader/main.o: In function `fw_is_builtin_firmware':
+> /devel/src/kernel6/drivers/base/firmware_loader/main.c:132:(.text+0xc8):
+> relocation truncated to fit: R_HEX_16_X against symbol
+`__start_builtin_fw'
+> defined in .modinfo section in .tmp_vmlinux1
+> Makefile:1077: recipe for target 'vmlinux' failed
+> make: *** [vmlinux] Error 1
 
-I agree. Apologies for hijacking the thread :-)
+Thanks for reporting it -- I will make a patch to fix it.
 
-> There are a couple more instances of adrl in arch/arm/crypto/, maybe
-> that is where the adr_l macro could come in.
->
-
-There are various places in the arch code that could be cleaned up
-along these lines.
-
-But you're right - this is a separate discussion that deserves a
-thread of its own. I was just satisfying my own curiosity.
+-Brian
 
 _______________________________________________
 linux-arm-kernel mailing list
