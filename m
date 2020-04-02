@@ -2,55 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E92419C362
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 15:58:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D788219C36C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 15:59:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aGJqGl9QAXpISgwhkHDuNe5En1gdfdRHRvgBkS3toUw=; b=M23qpm3EmPUM8KuEntvoKVDox
-	IQdipS6g6SHJ9x9+XDFfGlSAjjHFjHeqPf3sR4cWyRjFeqt/dAD2QaAMvmPrPQy1CA9MbeWF2mm5r
-	NKimB2mhfvsMkBi697OsSEd+L4pdbwMUNBa1GTJdcXgzL5L9eKmuXhpMdTLEy+KHmi/0cHNMEvOWG
-	G4rsoh1NUle/jOlAgJhAdqwrDOGsrGro6K44Wf8kTK2JhXKwjKBsLW3l9QZ68ao3AzPISyXdyfD4J
-	R7vuA7Tua7+CncOh0XusLvnk9qBLSyk1XhJ4kprBniLhBsE0bkXq9MI0DeMMIOoGWBzAjfpL7Efmr
-	O7ktv4t3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kcvHBK2EG0xunrxhYAzBZK7hcDyWjsTEctNpwlmzQog=; b=ekkH2VZ3EOfiPM
+	QhNWdLicQYEHyov7WI8uEv2yPgfEmU6wPNsIWUbf//UQqE+SK+sZmwYg6zP4yBzew04E4bisbVUQ6
+	CAgtHQWfhPkogn8yJrQ02y/g/CJJWJTkaq5ta+4v/alYjUSZTcuPzX3HTGCs1xCoIwC5P6r8a0Bpq
+	D0vPx64VjeNy/KXtEuAE0NGLF56pVlVJ5oyhqwI9C/ra+JoKtI0sLVnsUk++yaIFYvzWMkMr+16fA
+	A1kRVd6yyG9gxNT9spIWfZ/NPoIOaTgyr+EZxbciIaEwF+jbe+/G7sw7XrpdHJpiqpdlNWd/Il24Q
+	vAg98vgyThDYLVZ5CdZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK0MA-0002K8-SA; Thu, 02 Apr 2020 13:58:06 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1jK0NM-00031c-AJ; Thu, 02 Apr 2020 13:59:20 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK0M0-0002FA-BX
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 13:57:58 +0000
-X-Originating-IP: 93.29.109.196
-Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 66E12E0007;
- Thu,  2 Apr 2020 13:57:50 +0000 (UTC)
-Date: Thu, 2 Apr 2020 15:57:50 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 1/2] rtc: sun6i: let the core handle rtc range
-Message-ID: <20200402135750.GB625345@aptenodytes>
-References: <20200330201226.860967-1-alexandre.belloni@bootlin.com>
+ id 1jK0N9-00030Y-TB
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 13:59:09 +0000
+Received: by mail-ed1-f68.google.com with SMTP id i16so4185068edy.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Apr 2020 06:59:07 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=FG8YtufMkodYHyo0Cjo7XgVdXtJaBvxft8gScddvk0g=;
+ b=JSv9S29nhHMlyqhgLpxNMohPwITNuT/qNxuwftupoiOw4rv9JoGR/sidnwzrAasmCo
+ z+Tct7DqAQCBOEwEbDpmiZpMDlTSkg+89fOdLc9LbTwkYOnDjyc+qAqNEnfRul6q6EwJ
+ U1BoDKJ4u2JlYpHvnfH8Nyu0kiEobievVzSJoUPdZN/suLeSoXP/5zMWC5Ey8ybrHSWh
+ Qy0THu6ER2bSHmsuK2dlyjaYnVXX/IVRHh8ncQhIdt0vzAKdyVasUe7E0gZJ7jDiAgMC
+ l0t+U6Dy8lLkrNtW4fEtQkHzXhanmXbp/VVl4EbHQGf6MURse/S54rS461UBwIhI4ylO
+ x9yw==
+X-Gm-Message-State: AGi0Puao4t5MTabBD+/dfFQPkNQOtLG7q/WhsuQ8zuMkDYaoTxVbdqKs
+ Rx5zQw5Ffr2sEiASYYaxqf8=
+X-Google-Smtp-Source: APiQypJZiYA4+kO7+JETns8DlnM+JC+pL4k5yzrzry0SWjVI/A+wLBOeGJc99+87ubrsog7lCOCCkw==
+X-Received: by 2002:a50:af85:: with SMTP id h5mr3071705edd.300.1585835945843; 
+ Thu, 02 Apr 2020 06:59:05 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id n18sm950462edv.93.2020.04.02.06.59.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 02 Apr 2020 06:59:05 -0700 (PDT)
+Date: Thu, 2 Apr 2020 15:59:03 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Hyunki Koo <hyunki00.koo@samsung.com>
+Subject: Re: [PATCH v2] tty: samsung_tty: 32-bit access for TX/RX hold
+ registers
+Message-ID: <20200402135903.GA14861@kozik-lap>
+References: <20200401082721.19431-1-hyunki00.koo@samsung.com>
+ <CGME20200402110609epcas2p4a5ec1fb3a5eaa3b12c20cfc2060162f3@epcas2p4.samsung.com>
+ <20200402110430.31156-1-hyunki00.koo@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <20200330201226.860967-1-alexandre.belloni@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20200402110430.31156-1-hyunki00.koo@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_065756_664405_4A0E26DB 
-X-CRM114-Status: GOOD (  19.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200402_065907_944575_F9847F92 
+X-CRM114-Status: GOOD (  20.49  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,146 +90,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5164750693492482110=="
+Cc: linux-samsung-soc@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5164750693492482110==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="V0207lvV8h4k8FAm"
-Content-Disposition: inline
-
-
---V0207lvV8h4k8FAm
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Mon 30 Mar 20, 22:12, Alexandre Belloni wrote:
-> Let the rtc core check the date/time against the RTC range.
->=20
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-
-This was successfully:
-Tested-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-
-Cheers,
-
-Paul
-
+On Thu, Apr 02, 2020 at 08:04:29PM +0900, Hyunki Koo wrote:
+> Support 32-bit access for the TX/RX hold registers UTXH and URXH.
+> 
+> This is required for some newer SoCs.
+> 
+> Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
 > ---
->  drivers/rtc/rtc-sun6i.c | 25 ++++++++++---------------
->  1 file changed, 10 insertions(+), 15 deletions(-)
->=20
-> diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-> index 415a20a936e4..446ce38c1592 100644
-> --- a/drivers/rtc/rtc-sun6i.c
-> +++ b/drivers/rtc/rtc-sun6i.c
-> @@ -108,7 +108,6 @@
->   * driver, even though it is somewhat limited.
->   */
->  #define SUN6I_YEAR_MIN				1970
-> -#define SUN6I_YEAR_MAX				2033
->  #define SUN6I_YEAR_OFF				(SUN6I_YEAR_MIN - 1900)
-> =20
->  /*
-> @@ -569,14 +568,6 @@ static int sun6i_rtc_settime(struct device *dev, str=
-uct rtc_time *rtc_tm)
->  	struct sun6i_rtc_dev *chip =3D dev_get_drvdata(dev);
->  	u32 date =3D 0;
->  	u32 time =3D 0;
-> -	int year;
-> -
-> -	year =3D rtc_tm->tm_year + 1900;
-> -	if (year < SUN6I_YEAR_MIN || year > SUN6I_YEAR_MAX) {
-> -		dev_err(dev, "rtc only supports year in range %d - %d\n",
-> -			SUN6I_YEAR_MIN, SUN6I_YEAR_MAX);
-> -		return -EINVAL;
-> -	}
-> =20
->  	rtc_tm->tm_year -=3D SUN6I_YEAR_OFF;
->  	rtc_tm->tm_mon +=3D 1;
-> @@ -585,7 +576,7 @@ static int sun6i_rtc_settime(struct device *dev, stru=
-ct rtc_time *rtc_tm)
->  		SUN6I_DATE_SET_MON_VALUE(rtc_tm->tm_mon)  |
->  		SUN6I_DATE_SET_YEAR_VALUE(rtc_tm->tm_year);
-> =20
-> -	if (is_leap_year(year))
-> +	if (is_leap_year(rtc_tm->tm_year + SUN6I_YEAR_MIN))
->  		date |=3D SUN6I_LEAP_SET_VALUE(1);
-> =20
->  	time =3D SUN6I_TIME_SET_SEC_VALUE(rtc_tm->tm_sec)  |
-> @@ -726,12 +717,16 @@ static int sun6i_rtc_probe(struct platform_device *=
-pdev)
-> =20
->  	device_init_wakeup(&pdev->dev, 1);
-> =20
-> -	chip->rtc =3D devm_rtc_device_register(&pdev->dev, "rtc-sun6i",
-> -					     &sun6i_rtc_ops, THIS_MODULE);
-> -	if (IS_ERR(chip->rtc)) {
-> -		dev_err(&pdev->dev, "unable to register device\n");
-> +	chip->rtc =3D devm_rtc_allocate_device(&pdev->dev);
-> +	if (IS_ERR(chip->rtc))
->  		return PTR_ERR(chip->rtc);
-> -	}
+>  drivers/tty/serial/samsung_tty.c | 78 +++++++++++++++++++++++++++++++++-------
+>  1 file changed, 66 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
+> index 73f951d65b93..826d8c5846a6 100644
+> --- a/drivers/tty/serial/samsung_tty.c
+> +++ b/drivers/tty/serial/samsung_tty.c
+> @@ -154,12 +154,47 @@ struct s3c24xx_uart_port {
+>  #define portaddrl(port, reg) \
+>  	((unsigned long *)(unsigned long)((port)->membase + (reg)))
+>  
+> -#define rd_regb(port, reg) (readb_relaxed(portaddr(port, reg)))
+> +static unsigned int rd_reg(struct uart_port *port, int reg)
+> +{
+> +	switch (port->iotype) {
+> +	case UPIO_MEM:
+> +		return readb_relaxed(portaddr(port, reg));
+> +	case UPIO_MEM32:
+> +		return readl_relaxed(portaddr(port, reg));
+> +	default:
+> +		return 0;
+> +	}
+> +	return 0;
+> +}
 > +
-> +	chip->rtc->ops =3D &sun6i_rtc_ops;
-> +	chip->rtc->range_max =3D 2019686399LL; /* 2033-12-31 23:59:59 */
+>  #define rd_regl(port, reg) (readl_relaxed(portaddr(port, reg)))
+>  
+> -#define wr_regb(port, reg, val) writeb_relaxed(val, portaddr(port, reg))
+> +static void wr_reg(struct uart_port *port, int reg, int val)
+> +{
+> +	switch (port->iotype) {
+> +	case UPIO_MEM:
+> +		writeb_relaxed(val, portaddr(port, reg));
+> +		break;
+> +	case UPIO_MEM32:
+> +		writel_relaxed(val, portaddr(port, reg));
+> +		break;
+> +	}
+> +}
 > +
-> +	ret =3D rtc_register_device(chip->rtc);
-> +	if (ret)
-> +		return ret;
-> =20
->  	dev_info(&pdev->dev, "RTC enabled\n");
-> =20
-> --=20
-> 2.25.1
->=20
->=20
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>  #define wr_regl(port, reg, val) writel_relaxed(val, portaddr(port, reg))
+>  
+> +static void write_buf(struct uart_port *port, int reg, int val)
+> +{
+> +	switch (port->iotype) {
+> +	case UPIO_MEM:
+> +		writeb(val, portaddr(port, reg));
+> +		break;
+> +	case UPIO_MEM32:
+> +		writel(val, portaddr(port, reg));
+> +		break;
+> +	}
+> +}
+> +
+>  /* Byte-order aware bit setting/clearing functions. */
+>  
+>  static inline void s3c24xx_set_bit(struct uart_port *port, int idx,
+> @@ -714,7 +749,7 @@ static void s3c24xx_serial_rx_drain_fifo(struct s3c24xx_uart_port *ourport)
+>  		fifocnt--;
+>  
+>  		uerstat = rd_regl(port, S3C2410_UERSTAT);
+> -		ch = rd_regb(port, S3C2410_URXH);
+> +		ch = rd_reg(port, S3C2410_URXH);
+>  
+>  		if (port->flags & UPF_CONS_FLOW) {
+>  			int txe = s3c24xx_serial_txempty_nofifo(port);
+> @@ -826,7 +861,7 @@ static irqreturn_t s3c24xx_serial_tx_chars(int irq, void *id)
+>  	}
+>  
+>  	if (port->x_char) {
+> -		wr_regb(port, S3C2410_UTXH, port->x_char);
+> +		wr_reg(port, S3C2410_UTXH, port->x_char);
+>  		port->icount.tx++;
+>  		port->x_char = 0;
+>  		goto out;
+> @@ -852,7 +887,7 @@ static irqreturn_t s3c24xx_serial_tx_chars(int irq, void *id)
+>  		if (rd_regl(port, S3C2410_UFSTAT) & ourport->info->tx_fifofull)
+>  			break;
+>  
+> -		wr_regb(port, S3C2410_UTXH, xmit->buf[xmit->tail]);
+> +		wr_reg(port, S3C2410_UTXH, xmit->buf[xmit->tail]);
+>  		xmit->tail = (xmit->tail + 1) & (UART_XMIT_SIZE - 1);
+>  		port->icount.tx++;
+>  		count--;
+> @@ -916,7 +951,7 @@ static unsigned int s3c24xx_serial_tx_empty(struct uart_port *port)
+>  /* no modem control lines */
+>  static unsigned int s3c24xx_serial_get_mctrl(struct uart_port *port)
+>  {
+> -	unsigned int umstat = rd_regb(port, S3C2410_UMSTAT);
+> +	unsigned int umstat = rd_reg(port, S3C2410_UMSTAT);
+>  
+>  	if (umstat & S3C2410_UMSTAT_CTS)
+>  		return TIOCM_CAR | TIOCM_DSR | TIOCM_CTS;
+> @@ -1974,7 +2009,7 @@ static int s3c24xx_serial_probe(struct platform_device *pdev)
+>  	struct device_node *np = pdev->dev.of_node;
+>  	struct s3c24xx_uart_port *ourport;
+>  	int index = probe_index;
+> -	int ret;
+> +	int ret, prop = 0;
+>  
+>  	if (np) {
+>  		ret = of_alias_get_id(np, "serial");
+> @@ -2000,10 +2035,29 @@ static int s3c24xx_serial_probe(struct platform_device *pdev)
+>  			dev_get_platdata(&pdev->dev) :
+>  			ourport->drv_data->def_cfg;
+>  
+> -	if (np)
+> +	if (np) {
+>  		of_property_read_u32(np,
+>  			"samsung,uart-fifosize", &ourport->port.fifosize);
+>  
+> +		if (of_property_read_u32(np, "reg-io-width", &prop) == 0) {
+> +			switch (prop) {
+> +			case 1:
+> +				ourport->port.iotype = UPIO_MEM;
+> +				break;
+> +			case 4:
+> +				ourport->port.iotype = UPIO_MEM32;
+> +				break;
+> +			default:
+> +				dev_warn(&pdev->dev, "unsupported reg-io-width (%d)\n",
+> +						prop);
+> +				ret = -EINVAL;
+> +				break;
+> +			}
+> +		} else {
+> +			ourport->port.iotype = UPIO_MEM;
+> +		}
+> +	}
 
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+I think this still breaks all non-DT platforms (e.g. s3c).
 
---V0207lvV8h4k8FAm
-Content-Type: application/pgp-signature; name="signature.asc"
+Best regards,
+Krzysztof
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6F710ACgkQ3cLmz3+f
-v9Gq1wf/eZuw4SqfApdh/ne7KCouiVqi0dVgGBxHtJS+Ri7ubxxKPy6gL4uvjq4b
-mWk8NTgQS9SQR+tcPxT54JBoN/PlYiB8yaI8ZUBOsHTMl2F3HZfvvaVNWlqiLqd0
-hDt+aw6lO0j1q48VDR55EcjxocBCDrEGrpnM65lZc6qg7FWtxgSRWSxMUWm/AKiD
-YHzNzP2gjWEyQ5a34KoYZK64bTJcWS7F+hqh7gUWs33hzT4qtL3BlSGJf5Dz4dFN
-Z82A5GkA9WVDULUgO7VmaFDsg8VRGZpzg3OOXFRpMnXOprILikTU6zKuJqfb+0+F
-znTn9YNLLJYbRsAgJ2Hr9/oJCIlnZw==
-=sjtj
------END PGP SIGNATURE-----
-
---V0207lvV8h4k8FAm--
-
-
---===============5164750693492482110==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5164750693492482110==--
-
