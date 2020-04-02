@@ -2,62 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DE4319C01B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 13:24:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4425019C01C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 13:24:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mlq3KO54DATGanJ+lhdyR+YV6e1wETIZZrWNByLyp+E=; b=EoZ07FWG2bEn3J
-	Er4K4Uw/k0Ng52PhYp6cTKRvcdO8wgynOGkTb2ccTBH7deiocnJ+itlsyRhWhils7e+2RhmvCu45l
-	fp6WPLkKmk8+oY/Cqfu2DP71MHVQ+P3irC9jiVtVNL7aByAFSb833wcRACD9ymQlN8lyN990nkjDR
-	QgSBj7fEYLPbdbMPJR6mpah1Si2GRQj4aBb35g2zWjz19TNM6dLBwZXWvo9JtIrpGvY00fhsFi9MN
-	pz1A3r/DV8IW+wUcSNHL4Rbk02ODFKT/+KeCpJWU0SYIB/Who8PQO3bsJfxRg5JLE1OYhYhQWdIUK
-	C51KA3TOLuNQ3Re1RYdA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qyOmXhJO3vZQaNGRVf4zhEMg/Tryvz+tmx4qr5TF9H0=; b=Rt5p0nuQcl+pOH
+	2EpUhY4YkwroJfVuT+RTW8WXWp48dEqjYejlnfPodxriJ2RzFIPvhk4YNXWOyQdsg8UXX8FQnA3QL
+	PQnESpbhjU8blJAeD7iN2RFUvK3qRttsYlJfjCcnhTG/InR91RByvvwE9kSX5dBi5/omK194k9i4H
+	Sb8dDog66ZwO0pc3bXNNjoNUN2Hrsm/7uTJ0CduUpA6BZ6nltZh3xprshbt6Kmk5bKyG3iP1YW15j
+	YKdzrsflZsB0TYR0FLdCefXwHLC4oiX10Vn8B2hE5hCiRImr4kBIm9pmkbGKne6dATw34hxEflPR5
+	RGI+QILe1C7UevvfQt0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJxxV-0005y3-Hu; Thu, 02 Apr 2020 11:24:29 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jJxxi-00065L-8s; Thu, 02 Apr 2020 11:24:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJxxM-0005wn-Lb
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 11:24:22 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 30743A876D0C1A482D0C;
- Thu,  2 Apr 2020 19:24:13 +0800 (CST)
-Received: from [127.0.0.1] (10.173.220.25) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Thu, 2 Apr 2020
- 19:24:06 +0800
-Subject: Re: [RFC PATCH v5 4/8] mm: tlb: Pass struct mmu_gather to
- flush_pmd_tlb_range
-To: Peter Zijlstra <peterz@infradead.org>
-References: <20200331142927.1237-1-yezhenyu2@huawei.com>
- <20200331142927.1237-5-yezhenyu2@huawei.com>
- <20200331151331.GS20730@hirez.programming.kicks-ass.net>
- <fe12101e-8efe-22ad-0258-e6aeafc798cc@huawei.com>
- <20200401122004.GE20713@hirez.programming.kicks-ass.net>
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-Message-ID: <53675fb9-21c7-5309-07b8-1bbc1e775f9b@huawei.com>
-Date: Thu, 2 Apr 2020 19:24:04 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1jJxxO-0005xQ-AU
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 11:24:23 +0000
+Received: from mail-io1-f41.google.com (mail-io1-f41.google.com
+ [209.85.166.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4A05C2078E
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  2 Apr 2020 11:24:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585826661;
+ bh=/T9PKpOsqkG6k9SDIldwzv8zPCYWoDaXHjHgeVFb4nM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WqKQxAEQJcb0Y8B6c/brLQqu7z26a4AWVIOnBH6hst0XYKrpnqSPctRPLxvBbJx1T
+ K+GrF3WWgA2LuQMVoeNcHHXCYMfcP1kmTfV7M6XLEsG3cdtSkpNc+LYB95a79a/UNZ
+ LLyAwqt9NELgCw3AazG9YJhMgszChb+SK296WGMU=
+Received: by mail-io1-f41.google.com with SMTP id m15so3193323iob.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 Apr 2020 04:24:21 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYKgtfZG1vcC9k1/Bt9mUxLY2KETSmDqQm0skqHkHSs2DGMkskF
+ gSDUUjrE66Q34FKThW7fx+7ff/Bn8x4CMchvcXY=
+X-Google-Smtp-Source: APiQypJHMEeM/iwsXUykwckvb2/MexzqNtnc3JITmwdvurwhg/ZxuCdS12G9sOMN03deRyuepi8qA8BHF3yMJqLCXLE=
+X-Received: by 2002:a05:6602:2439:: with SMTP id
+ g25mr2369114iob.142.1585826660620; 
+ Thu, 02 Apr 2020 04:24:20 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200401122004.GE20713@hirez.programming.kicks-ass.net>
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+References: <20200329141258.31172-1-ardb@kernel.org>
+ <20200402111502.GC21087@mbp>
+In-Reply-To: <20200402111502.GC21087@mbp>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Thu, 2 Apr 2020 13:24:09 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFTnqZHWZX5yhkG4+pd04JzGriFW6gjBrAnQ-LQQmEi3Q@mail.gmail.com>
+Message-ID: <CAMj1kXFTnqZHWZX5yhkG4+pd04JzGriFW6gjBrAnQ-LQQmEi3Q@mail.gmail.com>
+Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_042421_057833_6C86137D 
-X-CRM114-Status: GOOD (  22.91  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200402_042422_381790_353AA2EB 
+X-CRM114-Status: GOOD (  17.64  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,230 +87,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
- guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
- yuzhao@google.com, corbet@lwn.net, maz@kernel.org, steven.price@arm.com,
- arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com,
- npiggin@gmail.com, zhangshaokun@hisilicon.com, broonie@kernel.org,
- rostedt@goodmis.org, prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- xiexiangyou@huawei.com, tony.luck@intel.com, vgupta@synopsys.com,
- linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
- akpm@linux-foundation.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ kernel-hardening@lists.openwall.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
+On Thu, 2 Apr 2020 at 13:15, Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> On Sun, Mar 29, 2020 at 04:12:58PM +0200, Ard Biesheuvel wrote:
+> > When CONFIG_DEBUG_ALIGN_RODATA is enabled, kernel segments mapped with
+> > different permissions (r-x for .text, r-- for .rodata, rw- for .data,
+> > etc) are rounded up to 2 MiB so they can be mapped more efficiently.
+> > In particular, it permits the segments to be mapped using level 2
+> > block entries when using 4k pages, which is expected to result in less
+> > TLB pressure.
+> >
+> > However, the mappings for the bulk of the kernel will use level 2
+> > entries anyway, and the misaligned fringes are organized such that they
+> > can take advantage of the contiguous bit, and use far fewer level 3
+> > entries than would be needed otherwise.
+> >
+> > This makes the value of this feature dubious at best, and since it is not
+> > enabled in defconfig or in the distro configs, it does not appear to be
+> > in wide use either. So let's just remove it.
+> >
+> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+>
+> Happy to take this patch via the arm64 tree for 5.7 (no new
+> functionality), unless you want it to go with your other relocation
+> login in the EFI stub patches.
+>
 
-On 2020/4/1 20:20, Peter Zijlstra wrote:
-> On Wed, Apr 01, 2020 at 04:51:15PM +0800, Zhenyu Ye wrote:
->> On 2020/3/31 23:13, Peter Zijlstra wrote:
-> 
->>> Instead of trying to retro-fit flush_*tlb_range() to take an mmu_gather
->>> parameter, please replace them out-right.
->>>
->>
->> I'm sorry that I'm not sure what "replace them out-right" means.  Do you
->> mean that I should define flush_*_tlb_range like this?
->>
->> #define flush_pmd_tlb_range(vma, addr, end)				\
->> 	do {								\
->> 		struct mmu_gather tlb;					\
->> 		tlb_gather_mmu(&tlb, (vma)->vm_mm, addr, end);		\
->> 		tlba.cleared_pmds = 1;					\
->> 		flush_tlb_range(&tlb, vma, addr, end);			\
->> 		tlb_finish_mmu(&tlb, addr, end);			\
->> 	} while (0)
->>
-> 
-> I was thinking to remove flush_*tlb_range() entirely (from generic
-> code).
-> 
-> And specifically to not use them like the above; instead extend the
-> mmu_gather API.
-> 
-> Specifically, if you wanted to express flush_pmd_tlb_range() in mmu
-> gather, you'd write it like:
-> 
-> static inline void flush_pmd_tlb_range(struct vm_area_struct *vma, unsigned long addr, unsigned long end)
-> {
-> 	struct mmu_gather tlb;
-> 
-> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-> 	tlb_start_vma(&tlb, vma);
-> 	tlb.cleared_pmds = 1;
-> 	__tlb_adjust_range(addr, end - addr);
-> 	tlb_end_vma(&tlb, vma);
-> 	tlb_finish_mmu(&tlb, addr, end);
-> }
-> 
-> Except of course, that the code between start_vma and end_vma is not a
-> proper mmu_gather API.
-> 
-> So maybe add:
-> 
->   tlb_flush_{pte,pmd,pud,p4d}_range()
-> 
-> Then we can write:
-> 
-> static inline void flush_XXX_tlb_range(struct vm_area_struct *vma, unsigned long addr, unsigned long end)
-> {
-> 	struct mmu_gather tlb;
-> 
-> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-> 	tlb_start_vma(&tlb, vma);
-> 	tlb_flush_XXX_range(&tlb, addr, end - addr);
-> 	tlb_end_vma(&tlb, vma);
-> 	tlb_finish_mmu(&tlb, addr, end);
-> }
-> 
-> But when I look at the output of:
-> 
->   git grep flush_.*tlb_range -- :^arch/
-> 
-> I doubt it makes sense to provide wrappers like the above.
-> 
-
-Thanks for your detailed explanation.  I notice that you used
-`tlb_end_vma` replace `flush_tlb_range`, which will call `tlb_flush`,
-then finally call `flush_tlb_range` in generic code.  However, some
-architectures define tlb_end_vma|tlb_flush|flush_tlb_range themselves,
-so this may cause problems.
-
-For example, in s390, it defines:
-
-#define tlb_end_vma(tlb, vma)			do { } while (0)
-
-And it doesn't define it's own flush_pmd_tlb_range().  So there will be
-a mistake if we changed flush_pmd_tlb_range() using tlb_end_vma().
-
-Is this really a problem or something I understand wrong ?
-
-
-
-If true, I think there are three ways to solve this problem:
-
-1. use `flush_tlb_range` rather than `tlb_end_vma` in flush_XXX_tlb_range;
-   In this way, we still need retro-fit `flush_tlb_range` to take an mmu_gather
-parameter.
-
-2. use `tlb_flush` rather than `tlb_end_vma`.
-   There is a constraint such like:
-
-	#ifndef tlb_flush
-	#if defined(tlb_start_vma) || defined(tlb_end_vma)
-	#error Default tlb_flush() relies on default tlb_start_vma() and tlb_end_vma()
-	#endif
-
-   So all architectures that define tlb_{start|end}_vma have defined tlb_flush.
-Also, we can add a constraint to flush_XXX_tlb_range such like:
-
-	#ifndef flush_XXX_tlb_range
-	#if defined(tlb_start_vma) || defined(tlb_end_vma)
-	#error Default flush_XXX_tlb_range() relies on default tlb_start/end_vma()
-	#endif
-
-3. Define flush_XXX_tlb_range() architecture-self, and keep original define in
-generic code, such as:
-
-In arm64:
-	#define flush_XXX_tlb_range flush_XXX_tlb_range
-
-In generic:
-	#ifndef flush_XXX_tlb_range
-	#define flush_XXX_tlb_range flush_tlb_range
-
-
-Which do you think is more appropriate?
-
-
-> ( Also, we should probably remove the (addr, end) arguments from
-> tlb_finish_mmu(), Will? )
-> 
-
-This can be changed quickly. If you want I can do this with a
-separate patch.
-
-> ---
-> diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
-> index f391f6b500b4..be5452a8efaa 100644
-> --- a/include/asm-generic/tlb.h
-> +++ b/include/asm-generic/tlb.h
-> @@ -511,6 +511,34 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
->  }
->  #endif
->  
-> +static inline void tlb_flush_pte_range(struct mmu_gather *tlb,
-> +				       unsigned long address, unsigned long size)
-> +{
-> +	__tlb_adjust_range(tlb, address, size);
-> +	tlb->cleared_ptes = 1;
-> +}
-> +
-> +static inline void tlb_flush_pmd_range(struct mmu_gather *tlb,
-> +				       unsigned long address, unsigned long size)
-> +{
-> +	__tlb_adjust_range(tlb, address, size);
-> +	tlb->cleared_pmds = 1;
-> +}
-> +
-> +static inline void tlb_flush_pud_range(struct mmu_gather *tlb,
-> +				       unsigned long address, unsigned long size)
-> +{
-> +	__tlb_adjust_range(tlb, address, size);
-> +	tlb->cleared_puds = 1;
-> +}
-> +
-> +static inline void tlb_flush_p4d_range(struct mmu_gather *tlb,
-> +				       unsigned long address, unsigned long size)
-> +{
-> +	__tlb_adjust_range(tlb, address, size);
-> +	tlb->cleared_p4ds = 1;
-> +}
-> +
-
-By the way, I think the name of tlb_set_XXX_range() is more suitable, because
-we don't do actual flush there.
-
->  #ifndef __tlb_remove_tlb_entry
->  #define __tlb_remove_tlb_entry(tlb, ptep, address) do { } while (0)
->  #endif
-> @@ -524,8 +552,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
->   */
->  #define tlb_remove_tlb_entry(tlb, ptep, address)		\
->  	do {							\
-> -		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
-> -		tlb->cleared_ptes = 1;				\
-> +		tlb_flush_pte_range(tlb, address, PAGE_SIZE);	\
->  		__tlb_remove_tlb_entry(tlb, ptep, address);	\
->  	} while (0)
->  
-> @@ -550,8 +577,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
->  
->  #define tlb_remove_pmd_tlb_entry(tlb, pmdp, address)			\
->  	do {								\
-> -		__tlb_adjust_range(tlb, address, HPAGE_PMD_SIZE);	\
-> -		tlb->cleared_pmds = 1;					\
-> +		tlb_flush_pmd_range(tlb, address, HPAGE_PMD_SIZE);	\
->  		__tlb_remove_pmd_tlb_entry(tlb, pmdp, address);		\
->  	} while (0)
->  
-> @@ -565,8 +591,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
->  
->  #define tlb_remove_pud_tlb_entry(tlb, pudp, address)			\
->  	do {								\
-> -		__tlb_adjust_range(tlb, address, HPAGE_PUD_SIZE);	\
-> -		tlb->cleared_puds = 1;					\
-> +		tlb_flush_pud_range(tlb, address, HPAGE_PUD_SIZE);	\
->  		__tlb_remove_pud_tlb_entry(tlb, pudp, address);		\
->  	} while (0)
->  
-> 
-> .
-> 
-
+If you don't mind taking it for v5.7, please go ahead.
 
 _______________________________________________
 linux-arm-kernel mailing list
