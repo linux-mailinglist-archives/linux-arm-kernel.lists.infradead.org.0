@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE2DE19BA57
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 04:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2606419BA61
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 04:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dojfXH1xOQViQn2QWHevtFbZnc8S/bPuGrn544sCEk8=; b=JCBTbT2Vr0zF5u
-	R1TPIOVyLeVAC1yVJsGCP5fxg3HlTqUAILO51rZBP1VnbltzH6e+HE//S+bGb3mP96BderZ+pgFJZ
-	f9TDbntp9y8BGqFwJbPiyAKTGtY/OAnxq6QZRIKmNnm4Fgz4ueNIvNCjfTFqGtJpIYsT5IhgjDH37
-	WGIABl0LgM4Sb5eVppcARMAASWC5APJE0se3qrqDU49jEYDfZLCgr/N6Zj8wYm9ADy3Fi4uK8seBP
-	QgWf9AaIyzQ1/nPA/7utVBvXkmTQLO1R5S7QIO5xnkPvavYyimonW7KM43r3lJb5BGhAYqz1VAEAW
-	0aJ+fUKkmpdnMQhYpYgQ==;
+	List-Owner; bh=JAJP+SFRmb+Th7C2yOgh96f8RmIlCvf0feSJlajhZDs=; b=V1+zDzemCikcPq
+	r8xQ6U2I4voLw6m0XqCbJ1TAxpDMi4V6V8KhXuYqkaIWDgbmRYNUj0g78gV9Ns0SagYKY0vz0PHTP
+	CnnG1cRrVpweRLlkancv/OFlcglCLjqQqKYe7SejQGQgRjxFh0UKvPaJv8CFv2kkjVha6u49uH65w
+	EnG/L9yjXIQDLs3jj62mQgyzvfpcAHwzqjZmwteZGNLxwgx6/xtcIChePxyuaK76YvYKmyrjFz/Ld
+	l9D25pryXu15UeSSmoTS8pUGP4leNmRAEFO6Vkh69Ezjaq4rymeqmcXmPMcXyoZkMC3MGxwpdkcOM
+	/MpWFCst/DQERRBVp1nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJpfd-0004Pj-4D; Thu, 02 Apr 2020 02:33:29 +0000
+	id 1jJpkL-0007KD-RV; Thu, 02 Apr 2020 02:38:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJpfX-0004OP-38
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 02:33:24 +0000
+ id 1jJpkF-0007Ja-7u
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 02:38:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5664F30E;
- Wed,  1 Apr 2020 19:33:19 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 57FA430E;
+ Wed,  1 Apr 2020 19:38:14 -0700 (PDT)
 Received: from [10.163.1.8] (unknown [10.163.1.8])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D50E93F71E;
- Wed,  1 Apr 2020 19:33:16 -0700 (PDT)
-Subject: Re: [PATCH 0/6] Introduce ID_PFR2 and other CPU feature changes
-To: Peter Maydell <peter.maydell@linaro.org>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 481723F71E;
+ Wed,  1 Apr 2020 19:38:11 -0700 (PDT)
+Subject: Re: [PATCH 2/6] arm64/cpufeature: Add DIT and CSV2 feature bits in
+ ID_PFR0 register
+To: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 References: <1580215149-21492-1-git-send-email-anshuman.khandual@arm.com>
- <45ce930c-81b3-3161-ced6-34a8c8623ac8@arm.com>
- <CAFEAcA_yZ55rOD1x+FE9wYO8HXx9seK72ZCmnWjtDVr_95-whg@mail.gmail.com>
+ <1580215149-21492-3-git-send-email-anshuman.khandual@arm.com>
+ <fc6a3044-4ca7-8a37-d948-498d0d89a426@arm.com>
 From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <c2b672ca-9b74-89f8-388c-555bbcbd57ba@arm.com>
-Date: Thu, 2 Apr 2020 08:03:09 +0530
+Message-ID: <428968f6-d4ba-7b64-a2b0-59177c6a6be7@arm.com>
+Date: Thu, 2 Apr 2020 08:08:05 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <CAFEAcA_yZ55rOD1x+FE9wYO8HXx9seK72ZCmnWjtDVr_95-whg@mail.gmail.com>
+In-Reply-To: <fc6a3044-4ca7-8a37-d948-498d0d89a426@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_193323_176880_CC341F60 
-X-CRM114-Status: GOOD (  17.90  )
+X-CRM114-CacheID: sfid-20200401_193815_323472_AC1D9231 
+X-CRM114-Status: GOOD (  14.10  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,69 +67,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- lkml - Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/14/2020 09:28 PM, Peter Maydell wrote:
-> On Fri, 14 Feb 2020 at 04:23, Anshuman Khandual
-> <anshuman.khandual@arm.com> wrote:
->>
->>
->>
->> On 01/28/2020 06:09 PM, Anshuman Khandual wrote:
->>> This series is primarily motivated from an adhoc list from Mark Rutland
->>> during our ID_ISAR6 discussion [1]. Besides, it also includes a patch
->>> which does macro replacement for various open bits shift encodings in
->>> various CPU ID registers. This series is based on linux-next 20200124.
->>>
->>> [1] https://patchwork.kernel.org/patch/11287805/
->>>
->>> Is there anything else apart from these changes which can be accommodated
->>> in this series, please do let me know. Thank you.
->>
->> Just a gentle ping. Any updates, does this series looks okay ? Is there
->> anything else related to CPU ID register feature bits, which can be added
->> up here. FWIW, the series still applies on v5.6-rc1.
-
-Sorry for the delay in response, was distracted on some other patches.
-
-> 
-> I just ran into some "32-bit KVM doesn't expose all the ID
-> registers to userspace via the ONE_REG API" issues today.
-> I don't know if they'd be reasonable as something to include
-> in this patchset or if they're unrelated.
-
-IMHO, they are bit unrelated.
-
-> 
-> Anyway, missing stuff I have noticed specifically:
->  * MVFR2
->  * ID_MMFR4
->  * ID_ISAR6
-> 
-> More generally I would have expected all these 32-bit registers
-> to exist and read-as-zero for the purpose of the ONE_REG APIs,
-> because that's what the architecture says is supposed to happen
-> and it means we have compatibility and QEMU doesn't gradually
-> build up lots of "kernel doesn't support this yet" conditionals...
-> I think we get this right for 64-bit KVM, but can we do it for
-> 32-bit as well?
-
-I am not very familiar with 32-bit KVM but will definitely keep these
-suggestions noted for later, also try and accommodate if possible.
-
-> thanks
-> -- PMM
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwMy8yMC8yMDIwIDExOjM3IFBNLCBTdXp1a2kgSyBQb3Vsb3NlIHdyb3RlOgo+IENjOiBN
+YXJrIFJ1dGxhbmQKClN1cmUsIHdpbGwgYWRkIHRoaXMgdG8gYWxsIHRoZSBwYXRjaGVzIGhlcmUu
+IEFsc28gYWRkICdTdWdnZXN0ZWQtYnknCnRhZ3Mgb24gYWxsIHRoZSBjaGFuZ2VzIHByb3Bvc2Vk
+IGJ5IE1hcmsuIFNob3VsZCBoYXZlIGFscmVhZHkgYWRkZWQKdGhhdCBpbiB0aGlzIHZlcnNpb24g
+YXMgd2VsbCwgbXkgYmFkLgoKPiAKPiBPbiAwMS8yOC8yMDIwIDEyOjM5IFBNLCBBbnNodW1hbiBL
+aGFuZHVhbCB3cm90ZToKPj4gRW5hYmxlIERJVCBhbmQgQ1NWMiBmZWF0dXJlIGJpdHMgaW4gSURf
+UEZSMCByZWdpc3RlciBhcyBwZXIgQVJNIERESSAwNDg3RS5hCj4+IHNwZWNpZmljYXRpb24uIEV4
+Y2VwdCBSQVMgYW5kIEFNVSwgYWxsIG90aGVyIGZlYXR1cmUgYml0cyBhcmUgbm93IGVuYWJsZWQu
+Cj4+Cj4+IENjOiBDYXRhbGluIE1hcmluYXMgPGNhdGFsaW4ubWFyaW5hc0Bhcm0uY29tPgo+PiBD
+YzogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4KPj4gQ2M6IFN1enVraSBLIFBvdWxvc2Ug
+PHN1enVraS5wb3Vsb3NlQGFybS5jb20+Cj4+IENjOiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwu
+b3JnCj4+IFNpZ25lZC1vZmYtYnk6IEFuc2h1bWFuIEtoYW5kdWFsIDxhbnNodW1hbi5raGFuZHVh
+bEBhcm0uY29tPgo+IAo+IFJldmlld2VkLWJ5OiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2kucG91
+bG9zZUBhcm0uY29tPgo+IAo+PiAtLS0KPj4gwqAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9zeXNy
+ZWcuaCB8IDMgKysrCj4+IMKgIGFyY2gvYXJtNjQva2VybmVsL2NwdWZlYXR1cmUuY8KgIHwgMiAr
+Kwo+PiDCoCAyIGZpbGVzIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0
+IGEvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9zeXNyZWcuaCBiL2FyY2gvYXJtNjQvaW5jbHVkZS9h
+c20vc3lzcmVnLmgKPj4gaW5kZXggMDU0YWFiN2ViZjFiLi40NjlkNjFjOGZhYmYgMTAwNjQ0Cj4+
+IC0tLSBhL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vc3lzcmVnLmgKPj4gKysrIGIvYXJjaC9hcm02
+NC9pbmNsdWRlL2FzbS9zeXNyZWcuaAo+PiBAQCAtNzE4LDYgKzcxOCw5IEBACj4+IMKgICNkZWZp
+bmUgSURfSVNBUjZfRFBfU0hJRlTCoMKgwqDCoMKgwqDCoCA0Cj4+IMKgICNkZWZpbmUgSURfSVNB
+UjZfSlNDVlRfU0hJRlTCoMKgwqDCoMKgwqDCoCAwCj4+IMKgICsjZGVmaW5lIElEX1BGUjBfRElU
+X1NISUZUwqDCoMKgwqDCoMKgwqAgMjQKPj4gKyNkZWZpbmUgSURfUEZSMF9DU1YyX1NISUZUwqDC
+oMKgwqDCoMKgwqAgMTYKPj4gKwo+PiDCoCAjZGVmaW5lIElEX1BGUjJfU1NCU19TSElGVMKgwqDC
+oMKgwqDCoMKgIDQKPj4gwqAgI2RlZmluZSBJRF9QRlIyX0NTVjNfU0hJRlTCoMKgwqDCoMKgwqDC
+oCAwCj4+IMKgIGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC9jcHVmZWF0dXJlLmMgYi9h
+cmNoL2FybTY0L2tlcm5lbC9jcHVmZWF0dXJlLmMKPj4gaW5kZXggYzFlODM3ZmM4Zjk3Li45ZTRk
+YWIxNWM2MDggMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQva2VybmVsL2NwdWZlYXR1cmUuYwo+
+PiArKysgYi9hcmNoL2FybTY0L2tlcm5lbC9jcHVmZWF0dXJlLmMKPj4gQEAgLTM0MSw2ICszNDEs
+OCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGFybTY0X2Z0cl9iaXRzIGZ0cl9pZF9pc2FyNltdID0g
+ewo+PiDCoCB9Owo+PiDCoCDCoCBzdGF0aWMgY29uc3Qgc3RydWN0IGFybTY0X2Z0cl9iaXRzIGZ0
+cl9pZF9wZnIwW10gPSB7Cj4+ICvCoMKgwqAgQVJNNjRfRlRSX0JJVFMoRlRSX0hJRERFTiwgRlRS
+X1NUUklDVCwgRlRSX0xPV0VSX1NBRkUsIElEX1BGUjBfRElUX1NISUZULCA0LCAwKSwKPj4gK8Kg
+wqDCoCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FG
+RSwgSURfUEZSMF9DU1YyX1NISUZULCA0LCAwKSwKPj4gwqDCoMKgwqDCoCBBUk02NF9GVFJfQklU
+UyhGVFJfSElEREVOLCBGVFJfU1RSSUNULCBGVFJfTE9XRVJfU0FGRSwgMTIsIDQsIDApLMKgwqDC
+oMKgwqDCoMKgIC8qIFN0YXRlMyAqLwo+PiDCoMKgwqDCoMKgIEFSTTY0X0ZUUl9CSVRTKEZUUl9I
+SURERU4sIEZUUl9TVFJJQ1QsIEZUUl9MT1dFUl9TQUZFLCA4LCA0LCAwKSzCoMKgwqDCoMKgwqDC
+oCAvKiBTdGF0ZTIgKi8KPj4gwqDCoMKgwqDCoCBBUk02NF9GVFJfQklUUyhGVFJfSElEREVOLCBG
+VFJfU1RSSUNULCBGVFJfTE9XRVJfU0FGRSwgNCwgNCwgMCkswqDCoMKgwqDCoMKgwqAgLyogU3Rh
+dGUxICovCj4+Cj4gCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
