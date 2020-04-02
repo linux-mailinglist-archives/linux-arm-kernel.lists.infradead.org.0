@@ -2,169 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 812CE19CD32
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 00:58:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BB1519CD5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 01:08:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/8JilN7VK1RDBMYUuKsSOH6Gxdhy0v1a8JS5nTBgmf4=; b=ZretDubAdryMwJ
-	Wvp5G034545xE/UxPOtJpMDDh10qfkvTkz/buG1B5GzaZndJqA0+AZAiN1Gt/5ejgbpVnLUc6xEuB
-	HfpgDZa3Y29S22JnyvpBT1UPldlKnzKLB25/5SJP4b/MGdf5oFTW+nyCCK5/Oy4rxmIL5cPujWbaY
-	vwV8f5SvZTofItr1rBtvPRLjKvUbuqyFTMO0dFXk30hyAAyjgHbIdiGhzlm3BTbrHyoe35ybzJz5Z
-	SCzUiMa5IXqqesj2751xemtoALCTnkZRAbMzGvjdlGAHBJDyfOiFKzKhdn+tCNneVZNcgX/i3Gcky
-	YcPSFDZ5E23jSJJK1meA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8DhmkVIzsn1NuOhsDu3P9SU3FT9KU52nNH+RR1w+o2I=; b=ZGzx/lY1jJeOYY1Tp0QpH9Pns
+	OFl51Vzdfgb1M9HDU+dnUkG+CR2rCSYf+V/1xDVBulMmZ10uHij6oBWlDbbvrRWSmOINCzp1UkQNX
+	abbJeY7GiRjjCkxBi/YggyRKesnM3TUAss6FMe3UwQMIn7IdaLBs+MFXXceZG0aPRmLq1NWKWjvzO
+	2sht1ZEbEbhFk6vQjkx9g9SkGAuPRY4Yro8ISVpEC2fubIoQJAKo9pcjAL745ncvUeL+PKpUnbu8P
+	6ejVHF/z+CY6r9oS77VeoIjH2Bbvva2qnDOwTlCsbuLu1OF/701q2LYmXZwYT0wG/fOk01TYzBf64
+	8AwOlz2RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK8mm-00062U-Oy; Thu, 02 Apr 2020 22:58:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jK8wm-0003Zm-9L; Thu, 02 Apr 2020 23:08:28 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK8me-00060z-4n; Thu, 02 Apr 2020 22:58:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id d77so5266574wmd.3;
- Thu, 02 Apr 2020 15:57:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=opPFBO0IU0Az+Xk9TafOk4+eNZWXcHlIkMCHTBdtIi8=;
- b=itSzzUHtAj0K0ugbSSx/NLdTyBWHe7sIpUfSEyIbhJTA02pmI//Qh3cDSk5bg5GTIK
- p7TYulVUAq2rgTKePFX3yyTLM+xai9VPMc3n/RVuacJVf0ghHRCOSfnawKvN6vheF4TJ
- VsgAoQmR4F3c9wyVyOUkBgp8fEfLcGawiZTexLWzNjR+pIKFDkfExj8AObbf+SH6lO/u
- VdXTHtdPyHswDXRQg60ngc9kg+b2EhX/Dbx6lvs+rrG9T75uoNqIS/6jgJ+bzwCb9kNm
- qHXvK3CcgtnJEE9EFsEclkWlIkzAAzUhZ7qWJZ4tfgaKQv95DprhRqSZPynZFIIp5OFW
- SBWQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=opPFBO0IU0Az+Xk9TafOk4+eNZWXcHlIkMCHTBdtIi8=;
- b=n2gw98X6yoGiLAva34+4V11xkqU6XKwb7Xa6KNgpm7B2KWtXx3xKPCZQADhimEd4/I
- QEWohbgSM34FO4Am7nQ37J3BWocskmP6EUknU7HT9JffxKd5yGRblPCePn7cDRDwnsMo
- 4sJ2pewSp6yncl8aRGwiG8Gza6pr13S3JiXeHNGW7Albj6vEVBkagTOIhLcQo3bmbYeS
- T4xnFRegDQkEfwUfEVjdQo4U34omBUXVOPzOX+XXYG2GOQfqyKKbJIaIWHitQcsTviHH
- 4wrb0z/Q5UlxkCRG8Iqtf0HTZL7GgxBPT1VJjxzwoTOBtg+w0NMFtjIli8UhEG657VEc
- oIgg==
-X-Gm-Message-State: AGi0PuYW0RTs73z3x2wPWGDhp45hL67xqy/XzPX7NHT08gLauIFi+B9/
- yeICLZwGeukfyWXq86bpUf0=
-X-Google-Smtp-Source: APiQypKPnSyqsoyfdAwXtyZpaY28hg3Mw5dUkka7ZbDaNYhub6p8mRd2eymiVO4t45bgrlYlMVJn4g==
-X-Received: by 2002:a1c:cc0a:: with SMTP id h10mr5325631wmb.127.1585868275622; 
- Thu, 02 Apr 2020 15:57:55 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id s127sm9017706wmf.28.2020.04.02.15.57.53
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 02 Apr 2020 15:57:54 -0700 (PDT)
-Subject: Re: [PATCH 1/2] thermal: mediatek: prepare to add support for other
- platforms
-To: Henry Yen <henry.yen@mediatek.com>, Zhang Rui <rui.zhang@intel.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>
-References: <1584611693-3553-1-git-send-email-henry.yen@mediatek.com>
- <1584611693-3553-2-git-send-email-henry.yen@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <f37d2559-b7ab-9f90-6908-1cd7064deadb@gmail.com>
-Date: Fri, 3 Apr 2020 00:57:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jK8wf-0003YA-Hn
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 23:08:23 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 48tdyk4kLXz9sPF;
+ Fri,  3 Apr 2020 10:08:13 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1585868897;
+ bh=xjh9AgkxUA5QJJTBCFGf5e9Ac6fS8f/uGzdRf6ffL4U=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=uW+kxEWSqf9a3f7i5pWR0QAMRc6Z4beWF7OFweWnfXUocMFNiK3XhaAi45g/Gjhev
+ fLfOkIHZ8ta9q4HT0KZvph1Cvgj1+51q/SwhlzC/YVlJ48sOKwk1lzsD6YNcKGgr+u
+ DGlEnE9+VYuqS3xCGd3rQO5L6Zyw+ahIMFgOsmRU/1SrK+W6FpKXX61WvSsMXvtKGc
+ 2KTzHzVPVi3Ra5H2dxoVQl/e5Gt4S/S6Z1qAVMawfK4BDG/GMPyJHZxawyktbSi8ZN
+ EMmaBmreJ0ghjGyksFWIi/vLxVG9qbYCNWGTsIomaC01VoVJ/2aA45r3/RiLEvejp0
+ 69Bz5AkOmcAzw==
+Date: Fri, 3 Apr 2020 10:08:10 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: Re: linux-next: manual merge of the drm tree with the omap tree
+Message-ID: <20200403100810.09e27872@canb.auug.org.au>
+In-Reply-To: <20200318135034.242d9edf@canb.auug.org.au>
+References: <20200318135034.242d9edf@canb.auug.org.au>
 MIME-Version: 1.0
-In-Reply-To: <1584611693-3553-2-git-send-email-henry.yen@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_155800_189995_6B23370D 
-X-CRM114-Status: GOOD (  24.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200402_160821_793836_D971399E 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -177,303 +74,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Steven Liu <steven.liu@mediatek.com>, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Michael Kao <michael.kao@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Dave Airlie <airlied@linux.ie>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ DRI <dri-devel@lists.freedesktop.org>, Tony Lindgren <tony@atomide.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Content-Type: multipart/mixed; boundary="===============3577714425648317539=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+--===============3577714425648317539==
+Content-Type: multipart/signed; boundary="Sig_/9XvUIyYhQ_VUv6ebWs45tsP";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
+
+--Sig_/9XvUIyYhQ_VUv6ebWs45tsP
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+Hi all,
+
+On Wed, 18 Mar 2020 13:50:34 +1100 Stephen Rothwell <sfr@canb.auug.org.au> =
+wrote:
+>
+> Today's linux-next merge of the drm tree got a conflict in:
+>=20
+>   arch/arm/configs/omap2plus_defconfig
+>=20
+> between commit:
+>=20
+>   98c2cc359f8f ("ARM: omap2plus_defconfig: Update for moved and dropped o=
+ptions")
+>=20
+> from the omap tree and commit:
+>=20
+>   e7e67d9a2f1d ("drm/omap: Switch the HDMI and VENC outputs to drm_bridge=
+")
+>=20
+> from the drm tree.
+>=20
+> I fixed it up (see below) and can carry the fix as necessary. This
+> is now fixed as far as linux-next is concerned, but any non trivial
+> conflicts should be mentioned to your upstream maintainer when your tree
+> is submitted for merging.  You may also want to consider cooperating
+> with the maintainer of the conflicting tree to minimise any particularly
+> complex conflicts.
+>=20
+> --=20
+> Cheers,
+> Stephen Rothwell
+>=20
+> diff --cc arch/arm/configs/omap2plus_defconfig
+> index eedb26ff93f9,54f1a21de7e0..000000000000
+> --- a/arch/arm/configs/omap2plus_defconfig
+> +++ b/arch/arm/configs/omap2plus_defconfig
+> @@@ -360,10 -353,10 +360,9 @@@ CONFIG_OMAP2_DSS_DSI=3D
+>   CONFIG_DRM_OMAP_PANEL_DSI_CM=3Dm
+>   CONFIG_DRM_TILCDC=3Dm
+>   CONFIG_DRM_PANEL_SIMPLE=3Dm
+> + CONFIG_DRM_DISPLAY_CONNECTOR=3Dm
+> + CONFIG_DRM_SIMPLE_BRIDGE=3Dm
+>  -CONFIG_DRM_TI_TFP410=3Dm
+> + CONFIG_DRM_TI_TPD12S015=3Dm
+>   CONFIG_DRM_PANEL_LG_LB035Q02=3Dm
+>   CONFIG_DRM_PANEL_NEC_NL8048HL11=3Dm
+>   CONFIG_DRM_PANEL_SHARP_LS037V7DW01=3Dm
+
+This is now a conflict between the arm-soc tree and Linus' tree.
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/9XvUIyYhQ_VUv6ebWs45tsP
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl6GcFoACgkQAVBC80lX
+0GyOngf/eygzgm029Brs1/8L3hVH03GHwrwtdkYN8ZyMRVN31zCLrWZCPwgG0Cb7
+hzGXZbuQe0haxrgRCMUIHX6oePqmmWe51RrCsxreyHgWKcB27MiYiqf/GQYzIRss
+hb9h2RkQEfE6ZMoGgZegiBIH7UmLNYa2MdWmeDL+k1qA4q3LY25Wbszsfa/GngKp
+AvMY3RJAIuvLv5Ztv194zAjt/3eAMY4I+Ldp73TPAaacWkkI7ln4/4DWL9c3pcag
+o+/HepxZrC3JSbdEaFj55Ey2Qy0N1VlTIEtoOpniAyCODZ1V4sQNWAjTwmu+Qhoe
+iQW1YRoRdLk15BEZWzJrposx+K5TzA==
+=dPjZ
+-----END PGP SIGNATURE-----
+
+--Sig_/9XvUIyYhQ_VUv6ebWs45tsP--
 
 
-On 19/03/2020 10:54, Henry Yen wrote:
-> It is known that Mediatek owns two thermal system, which differs
-> in the way of reading calibration data and converting temperature.
-> MT8173, MT2701, MT2712 and MT8183 belongs to version 1 thermal
-> system, and MT7622 belongs to version 2 thermal system.
-> For platform compatibility, we add two sensor ops (extract and
-> convert) to the thermal data structure. Each platform will register
-> the sensor ops to the proper function implementation according to
-> its version.
-> 
-> Signed-off-by: Henry Yen <henry.yen@mediatek.com>
-> ---
->  drivers/thermal/mtk_thermal.c | 148 +++++++++++++++++++++-------------
->  1 file changed, 93 insertions(+), 55 deletions(-)
-> 
-> diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-> index 76e30603d4d5..13e17c31ba3b 100644
-> --- a/drivers/thermal/mtk_thermal.c
-> +++ b/drivers/thermal/mtk_thermal.c
-> @@ -120,18 +120,18 @@
->   * MT2701 has 3 sensors and needs 3 VTS calibration data.
->   * MT2712 has 4 sensors and needs 4 VTS calibration data.
->   */
-> -#define CALIB_BUF0_VALID		BIT(0)
-> -#define CALIB_BUF1_ADC_GE(x)		(((x) >> 22) & 0x3ff)
-> -#define CALIB_BUF0_VTS_TS1(x)		(((x) >> 17) & 0x1ff)
-> -#define CALIB_BUF0_VTS_TS2(x)		(((x) >> 8) & 0x1ff)
-> -#define CALIB_BUF1_VTS_TS3(x)		(((x) >> 0) & 0x1ff)
-> -#define CALIB_BUF2_VTS_TS4(x)		(((x) >> 23) & 0x1ff)
-> -#define CALIB_BUF2_VTS_TS5(x)		(((x) >> 5) & 0x1ff)
-> -#define CALIB_BUF2_VTS_TSABB(x)		(((x) >> 14) & 0x1ff)
-> -#define CALIB_BUF0_DEGC_CALI(x)		(((x) >> 1) & 0x3f)
-> -#define CALIB_BUF0_O_SLOPE(x)		(((x) >> 26) & 0x3f)
-> -#define CALIB_BUF0_O_SLOPE_SIGN(x)	(((x) >> 7) & 0x1)
-> -#define CALIB_BUF1_ID(x)		(((x) >> 9) & 0x1)
-> +#define CALIB_BUF0_VALID_V1		BIT(0)
-> +#define CALIB_BUF1_ADC_GE_V1(x)		(((x) >> 22) & 0x3ff)
-> +#define CALIB_BUF0_VTS_TS1_V1(x)	(((x) >> 17) & 0x1ff)
-> +#define CALIB_BUF0_VTS_TS2_V1(x)	(((x) >> 8) & 0x1ff)
-> +#define CALIB_BUF1_VTS_TS3_V1(x)	(((x) >> 0) & 0x1ff)
-> +#define CALIB_BUF2_VTS_TS4_V1(x)	(((x) >> 23) & 0x1ff)
-> +#define CALIB_BUF2_VTS_TS5_V1(x)	(((x) >> 5) & 0x1ff)
-> +#define CALIB_BUF2_VTS_TSABB_V1(x)	(((x) >> 14) & 0x1ff)
-> +#define CALIB_BUF0_DEGC_CALI_V1(x)	(((x) >> 1) & 0x3f)
-> +#define CALIB_BUF0_O_SLOPE_V1(x)	(((x) >> 26) & 0x3f)
-> +#define CALIB_BUF0_O_SLOPE_SIGN_V1(x)	(((x) >> 7) & 0x1)
-> +#define CALIB_BUF1_ID_V1(x)		(((x) >> 9) & 0x1)
->  
->  enum {
->  	VTS1,
-> @@ -143,6 +143,11 @@ enum {
->  	MAX_NUM_VTS,
->  };
->  
-> +enum mtk_thermal_version {
-> +	MTK_THERMAL_V1 = 1,
-> +	MTK_THERMAL_V2,
-> +};
-> +
->  /* MT2701 thermal sensors */
->  #define MT2701_TS1	0
->  #define MT2701_TS2	1
-> @@ -245,6 +250,9 @@ struct mtk_thermal_data {
->  	const int *controller_offset;
->  	bool need_switch_bank;
->  	struct thermal_bank_cfg bank_data[MAX_NUM_ZONES];
-> +	enum mtk_thermal_version version;
-> +	int (*extract)(struct mtk_thermal *mt, u32 *buf);
-> +	int (*convert)(struct mtk_thermal *mt, int sensno, s32 raw);
-
-I wonder if we really
-
->  };
->  
->  struct mtk_thermal {
-> @@ -358,6 +366,9 @@ static const int mt7622_mux_values[MT7622_NUM_SENSORS] = { 0, };
->  static const int mt7622_vts_index[MT7622_NUM_SENSORS] = { VTS1 };
->  static const int mt7622_tc_offset[MT7622_NUM_CONTROLLER] = { 0x0, };
->  
-> +static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf);
-> +static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw);
-> +
->  /*
->   * The MT8173 thermal controller has four banks. Each bank can read up to
->   * four temperature sensors simultaneously. The MT8173 has a total of 5
-> @@ -398,6 +409,9 @@ static const struct mtk_thermal_data mt8173_thermal_data = {
->  	.msr = mt8173_msr,
->  	.adcpnp = mt8173_adcpnp,
->  	.sensor_mux_values = mt8173_mux_values,
-> +	.version = MTK_THERMAL_V1,
-> +	.extract = mtk_thermal_extract_efuse_v1,
-> +	.convert = raw_to_mcelsius_v1,
->  };
->  
->  /*
-> @@ -428,6 +442,9 @@ static const struct mtk_thermal_data mt2701_thermal_data = {
->  	.msr = mt2701_msr,
->  	.adcpnp = mt2701_adcpnp,
->  	.sensor_mux_values = mt2701_mux_values,
-> +	.version = MTK_THERMAL_V1,
-> +	.extract = mtk_thermal_extract_efuse_v1,
-> +	.convert = raw_to_mcelsius_v1,
->  };
->  
->  /*
-> @@ -458,6 +475,9 @@ static const struct mtk_thermal_data mt2712_thermal_data = {
->  	.msr = mt2712_msr,
->  	.adcpnp = mt2712_adcpnp,
->  	.sensor_mux_values = mt2712_mux_values,
-> +	.version = MTK_THERMAL_V1,
-> +	.extract = mtk_thermal_extract_efuse_v1,
-> +	.convert = raw_to_mcelsius_v1,
->  };
->  
->  /*
-> @@ -482,6 +502,9 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
->  	.msr = mt7622_msr,
->  	.adcpnp = mt7622_adcpnp,
->  	.sensor_mux_values = mt7622_mux_values,
-> +	.version = MTK_THERMAL_V2,
-> +	.extract = mtk_thermal_extract_efuse_v1,
-> +	.convert = raw_to_mcelsius_v1,
-
-You are just fixing half of mt7622 here.
-
-From my understanding MTK_THERMAL_V2 driver allwasy use extract and convert in
-version _v2. So we won't need to add the callbacks but could check in the code
-depending on .version which funtion to call.
-
-You patch set has some ordering issues. I think you should in a first patch
-rename function to _v1. Then in a second patch add actually add .version and _v2
-and fix mt7622. The latter should also have a Fixes tag. Not sure if both
-patches as they both together actually fix mt7622 driver.
-
-Regards,
-Matthias
-
->  };
->  
->  /*
-> @@ -514,6 +537,9 @@ static const struct mtk_thermal_data mt8183_thermal_data = {
->  	.msr = mt8183_msr,
->  	.adcpnp = mt8183_adcpnp,
->  	.sensor_mux_values = mt8183_mux_values,
-> +	.version = MTK_THERMAL_V1,
-> +	.extract = mtk_thermal_extract_efuse_v1,
-> +	.convert = raw_to_mcelsius_v1,
->  };
->  
->  /**
-> @@ -525,7 +551,7 @@ static const struct mtk_thermal_data mt8183_thermal_data = {
->   * This converts the raw ADC value to mcelsius using the SoC specific
->   * calibration constants
->   */
-> -static int raw_to_mcelsius(struct mtk_thermal *mt, int sensno, s32 raw)
-> +static int raw_to_mcelsius_v1(struct mtk_thermal *mt, int sensno, s32 raw)
->  {
->  	s32 tmp;
->  
-> @@ -594,9 +620,9 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
->  		raw = readl(mt->thermal_base +
->  			    conf->msr[conf->bank_data[bank->id].sensors[i]]);
->  
-> -		temp = raw_to_mcelsius(mt,
-> -				       conf->bank_data[bank->id].sensors[i],
-> -				       raw);
-> +		temp = conf->convert(mt,
-> +				     conf->bank_data[bank->id].sensors[i],
-> +				     raw);
->  
->  		/*
->  		 * The first read of a sensor often contains very high bogus
-> @@ -698,9 +724,11 @@ static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
->  	writel(auxadc_phys_base + AUXADC_CON1_CLR_V,
->  	       controller_base + TEMP_ADCMUXADDR);
->  
-> -	/* AHB address for pnp sensor mux selection */
-> -	writel(apmixed_phys_base + APMIXED_SYS_TS_CON1,
-> -	       controller_base + TEMP_PNPMUXADDR);
-> +	if (mt->conf->version == MTK_THERMAL_V1) {
-> +		/* AHB address for pnp sensor mux selection */
-> +		writel(apmixed_phys_base + APMIXED_SYS_TS_CON1,
-> +		       controller_base + TEMP_PNPMUXADDR);
-> +	}
->  
->  	/* AHB value for auxadc enable */
->  	writel(BIT(conf->auxadc_channel), controller_base + TEMP_ADCEN);
-> @@ -758,6 +786,51 @@ static u64 of_get_phys_base(struct device_node *np)
->  	return of_translate_address(np, regaddr_p);
->  }
->  
-> +static int mtk_thermal_extract_efuse_v1(struct mtk_thermal *mt, u32 *buf)
-> +{
-> +	int i;
-> +
-> +	if (!(buf[0] & CALIB_BUF0_VALID_V1))
-> +		return -EINVAL;
-> +
-> +	mt->adc_ge = CALIB_BUF1_ADC_GE_V1(buf[1]);
-> +
-> +	for (i = 0; i < mt->conf->num_sensors; i++) {
-> +		switch (mt->conf->vts_index[i]) {
-> +		case VTS1:
-> +			mt->vts[VTS1] = CALIB_BUF0_VTS_TS1_V1(buf[0]);
-> +			break;
-> +		case VTS2:
-> +			mt->vts[VTS2] = CALIB_BUF0_VTS_TS2_V1(buf[0]);
-> +			break;
-> +		case VTS3:
-> +			mt->vts[VTS3] = CALIB_BUF1_VTS_TS3_V1(buf[1]);
-> +			break;
-> +		case VTS4:
-> +			mt->vts[VTS4] = CALIB_BUF2_VTS_TS4_V1(buf[2]);
-> +			break;
-> +		case VTS5:
-> +			mt->vts[VTS5] = CALIB_BUF2_VTS_TS5_V1(buf[2]);
-> +			break;
-> +		case VTSABB:
-> +			mt->vts[VTSABB] =
-> +				CALIB_BUF2_VTS_TSABB_V1(buf[2]);
-> +			break;
-> +		default:
-> +			break;
-> +		}
-> +	}
-> +
-> +	mt->degc_cali = CALIB_BUF0_DEGC_CALI_V1(buf[0]);
-> +	if (CALIB_BUF1_ID_V1(buf[1]) &
-> +	    CALIB_BUF0_O_SLOPE_SIGN_V1(buf[0]))
-> +		mt->o_slope = -CALIB_BUF0_O_SLOPE_V1(buf[0]);
-> +	else
-> +		mt->o_slope = CALIB_BUF0_O_SLOPE_V1(buf[0]);
-> +
-> +	return 0;
-> +}
-> +
->  static int mtk_thermal_get_calibration_data(struct device *dev,
->  					    struct mtk_thermal *mt)
->  {
-> @@ -793,43 +866,8 @@ static int mtk_thermal_get_calibration_data(struct device *dev,
->  		goto out;
->  	}
->  
-> -	if (buf[0] & CALIB_BUF0_VALID) {
-> -		mt->adc_ge = CALIB_BUF1_ADC_GE(buf[1]);
-> -
-> -		for (i = 0; i < mt->conf->num_sensors; i++) {
-> -			switch (mt->conf->vts_index[i]) {
-> -			case VTS1:
-> -				mt->vts[VTS1] = CALIB_BUF0_VTS_TS1(buf[0]);
-> -				break;
-> -			case VTS2:
-> -				mt->vts[VTS2] = CALIB_BUF0_VTS_TS2(buf[0]);
-> -				break;
-> -			case VTS3:
-> -				mt->vts[VTS3] = CALIB_BUF1_VTS_TS3(buf[1]);
-> -				break;
-> -			case VTS4:
-> -				mt->vts[VTS4] = CALIB_BUF2_VTS_TS4(buf[2]);
-> -				break;
-> -			case VTS5:
-> -				mt->vts[VTS5] = CALIB_BUF2_VTS_TS5(buf[2]);
-> -				break;
-> -			case VTSABB:
-> -				mt->vts[VTSABB] = CALIB_BUF2_VTS_TSABB(buf[2]);
-> -				break;
-> -			default:
-> -				break;
-> -			}
-> -		}
-> -
-> -		mt->degc_cali = CALIB_BUF0_DEGC_CALI(buf[0]);
-> -		if (CALIB_BUF1_ID(buf[1]) &
-> -		    CALIB_BUF0_O_SLOPE_SIGN(buf[0]))
-> -			mt->o_slope = -CALIB_BUF0_O_SLOPE(buf[0]);
-> -		else
-> -			mt->o_slope = CALIB_BUF0_O_SLOPE(buf[0]);
-> -	} else {
-> +	if (mt->conf->extract(mt, buf))
->  		dev_info(dev, "Device not calibrated, using default calibration values\n");
-> -	}
->  
->  out:
->  	kfree(buf);
-> 
+--===============3577714425648317539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3577714425648317539==--
+
