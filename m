@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23E5219C011
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 13:21:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DE4319C01B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 Apr 2020 13:24:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LZQjQwkgqK/aCXZ+2pSix9CzJvhVF23HqZTbv/uxg50=; b=qFVR/ESnGkuQlg
-	qIK5eTQ5up+5eUu1U/VVnbCfXZ/08vsmEvQBFqi75216E8i8kRMlmp11I/Gjk94nrjQ3GV46scW0Y
-	x9MnroQCO0EuQxdDRmEUUVKshj7U5JJSTpszkkuxfQabD+Re/8PeBtSgYj1kP4UXd4KDtFBmqW7Z0
-	oTjfGpcuD66LV9uz99xX4RaPOgWsWMFEIdNqxy12s4TyFaj053ssMEDILVMOB7VtRbj0kOF0Mk1Ss
-	SXuFY4H11zEKv8xZ37ZdlYunq7C/9Jiu1/OVX2YI9p60ZRgeXwEnRgDIXAQ3ZmnkgHmMp6Svq7B3/
-	j6M6YeMKruDwSk7yCdXA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mlq3KO54DATGanJ+lhdyR+YV6e1wETIZZrWNByLyp+E=; b=EoZ07FWG2bEn3J
+	Er4K4Uw/k0Ng52PhYp6cTKRvcdO8wgynOGkTb2ccTBH7deiocnJ+itlsyRhWhils7e+2RhmvCu45l
+	fp6WPLkKmk8+oY/Cqfu2DP71MHVQ+P3irC9jiVtVNL7aByAFSb833wcRACD9ymQlN8lyN990nkjDR
+	QgSBj7fEYLPbdbMPJR6mpah1Si2GRQj4aBb35g2zWjz19TNM6dLBwZXWvo9JtIrpGvY00fhsFi9MN
+	pz1A3r/DV8IW+wUcSNHL4Rbk02ODFKT/+KeCpJWU0SYIB/Who8PQO3bsJfxRg5JLE1OYhYhQWdIUK
+	C51KA3TOLuNQ3Re1RYdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJxuD-0005Wc-EM; Thu, 02 Apr 2020 11:21:05 +0000
-Received: from cmccmta2.chinamobile.com ([221.176.66.80])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJxu4-0005V3-92
- for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 11:21:00 +0000
-Received: from spf.mail.chinamobile.com (unknown[172.16.121.17]) by
- rmmx-syy-dmz-app06-12006 (RichMail) with SMTP id 2ee65e85ca68cd6-5dc3c;
- Thu, 02 Apr 2020 19:20:08 +0800 (CST)
-X-RM-TRANSID: 2ee65e85ca68cd6-5dc3c
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from localhost.localdomain (unknown[112.25.154.146])
- by rmsmtp-syy-appsvr09-12009 (RichMail) with SMTP id 2ee95e85ca66ca8-bc65c;
- Thu, 02 Apr 2020 19:20:08 +0800 (CST)
-X-RM-TRANSID: 2ee95e85ca66ca8-bc65c
-From: Tang Bin <tangbin@cmss.chinamobile.com>
-To: perex@perex.cz,
-	tiwai@suse.com,
-	nicolas.ferre@microchip.com
-Subject: [PATCH] ALSA:atmel:Use platform_get_irq_optional()
-Date: Thu,  2 Apr 2020 19:21:35 +0800
-Message-Id: <20200402112135.18604-1-tangbin@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.20.1.windows.1
+	id 1jJxxV-0005y3-Hu; Thu, 02 Apr 2020 11:24:29 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJxxM-0005wn-Lb
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 Apr 2020 11:24:22 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 30743A876D0C1A482D0C;
+ Thu,  2 Apr 2020 19:24:13 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Thu, 2 Apr 2020
+ 19:24:06 +0800
+Subject: Re: [RFC PATCH v5 4/8] mm: tlb: Pass struct mmu_gather to
+ flush_pmd_tlb_range
+To: Peter Zijlstra <peterz@infradead.org>
+References: <20200331142927.1237-1-yezhenyu2@huawei.com>
+ <20200331142927.1237-5-yezhenyu2@huawei.com>
+ <20200331151331.GS20730@hirez.programming.kicks-ass.net>
+ <fe12101e-8efe-22ad-0258-e6aeafc798cc@huawei.com>
+ <20200401122004.GE20713@hirez.programming.kicks-ass.net>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <53675fb9-21c7-5309-07b8-1bbc1e775f9b@huawei.com>
+Date: Thu, 2 Apr 2020 19:24:04 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
+In-Reply-To: <20200401122004.GE20713@hirez.programming.kicks-ass.net>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_042058_699349_6E393E34 
-X-CRM114-Status: UNSURE (   7.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200402_042421_057833_6C86137D 
+X-CRM114-Status: GOOD (  22.91  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [221.176.66.80 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,39 +69,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Tang Bin <tangbin@cmss.chinamobile.com>,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- ludovic.desroches@microchip.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-mm@kvack.org,
+ guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
+ yuzhao@google.com, corbet@lwn.net, maz@kernel.org, steven.price@arm.com,
+ arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com,
+ npiggin@gmail.com, zhangshaokun@hisilicon.com, broonie@kernel.org,
+ rostedt@goodmis.org, prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ xiexiangyou@huawei.com, tony.luck@intel.com, vgupta@synopsys.com,
+ linux-kernel@vger.kernel.org, aneesh.kumar@linux.ibm.com,
+ akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to simply code,because platform_get_irq() already has
-dev_err() message.
+Hi Peter,
 
-Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
----
- sound/atmel/ac97c.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On 2020/4/1 20:20, Peter Zijlstra wrote:
+> On Wed, Apr 01, 2020 at 04:51:15PM +0800, Zhenyu Ye wrote:
+>> On 2020/3/31 23:13, Peter Zijlstra wrote:
+> 
+>>> Instead of trying to retro-fit flush_*tlb_range() to take an mmu_gather
+>>> parameter, please replace them out-right.
+>>>
+>>
+>> I'm sorry that I'm not sure what "replace them out-right" means.  Do you
+>> mean that I should define flush_*_tlb_range like this?
+>>
+>> #define flush_pmd_tlb_range(vma, addr, end)				\
+>> 	do {								\
+>> 		struct mmu_gather tlb;					\
+>> 		tlb_gather_mmu(&tlb, (vma)->vm_mm, addr, end);		\
+>> 		tlba.cleared_pmds = 1;					\
+>> 		flush_tlb_range(&tlb, vma, addr, end);			\
+>> 		tlb_finish_mmu(&tlb, addr, end);			\
+>> 	} while (0)
+>>
+> 
+> I was thinking to remove flush_*tlb_range() entirely (from generic
+> code).
+> 
+> And specifically to not use them like the above; instead extend the
+> mmu_gather API.
+> 
+> Specifically, if you wanted to express flush_pmd_tlb_range() in mmu
+> gather, you'd write it like:
+> 
+> static inline void flush_pmd_tlb_range(struct vm_area_struct *vma, unsigned long addr, unsigned long end)
+> {
+> 	struct mmu_gather tlb;
+> 
+> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+> 	tlb_start_vma(&tlb, vma);
+> 	tlb.cleared_pmds = 1;
+> 	__tlb_adjust_range(addr, end - addr);
+> 	tlb_end_vma(&tlb, vma);
+> 	tlb_finish_mmu(&tlb, addr, end);
+> }
+> 
+> Except of course, that the code between start_vma and end_vma is not a
+> proper mmu_gather API.
+> 
+> So maybe add:
+> 
+>   tlb_flush_{pte,pmd,pud,p4d}_range()
+> 
+> Then we can write:
+> 
+> static inline void flush_XXX_tlb_range(struct vm_area_struct *vma, unsigned long addr, unsigned long end)
+> {
+> 	struct mmu_gather tlb;
+> 
+> 	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
+> 	tlb_start_vma(&tlb, vma);
+> 	tlb_flush_XXX_range(&tlb, addr, end - addr);
+> 	tlb_end_vma(&tlb, vma);
+> 	tlb_finish_mmu(&tlb, addr, end);
+> }
+> 
+> But when I look at the output of:
+> 
+>   git grep flush_.*tlb_range -- :^arch/
+> 
+> I doubt it makes sense to provide wrappers like the above.
+> 
 
-diff --git a/sound/atmel/ac97c.c b/sound/atmel/ac97c.c
-index a1dce9725..25cfd5710 100644
---- a/sound/atmel/ac97c.c
-+++ b/sound/atmel/ac97c.c
-@@ -715,7 +715,7 @@ static int atmel_ac97c_probe(struct platform_device *pdev)
- 		return -ENXIO;
- 	}
- 
--	irq = platform_get_irq(pdev, 0);
-+	irq = platform_get_irq_optional(pdev, 0);
- 	if (irq < 0) {
- 		dev_dbg(&pdev->dev, "could not get irq: %d\n", irq);
- 		return irq;
--- 
-2.20.1.windows.1
+Thanks for your detailed explanation.  I notice that you used
+`tlb_end_vma` replace `flush_tlb_range`, which will call `tlb_flush`,
+then finally call `flush_tlb_range` in generic code.  However, some
+architectures define tlb_end_vma|tlb_flush|flush_tlb_range themselves,
+so this may cause problems.
+
+For example, in s390, it defines:
+
+#define tlb_end_vma(tlb, vma)			do { } while (0)
+
+And it doesn't define it's own flush_pmd_tlb_range().  So there will be
+a mistake if we changed flush_pmd_tlb_range() using tlb_end_vma().
+
+Is this really a problem or something I understand wrong ?
 
 
+
+If true, I think there are three ways to solve this problem:
+
+1. use `flush_tlb_range` rather than `tlb_end_vma` in flush_XXX_tlb_range;
+   In this way, we still need retro-fit `flush_tlb_range` to take an mmu_gather
+parameter.
+
+2. use `tlb_flush` rather than `tlb_end_vma`.
+   There is a constraint such like:
+
+	#ifndef tlb_flush
+	#if defined(tlb_start_vma) || defined(tlb_end_vma)
+	#error Default tlb_flush() relies on default tlb_start_vma() and tlb_end_vma()
+	#endif
+
+   So all architectures that define tlb_{start|end}_vma have defined tlb_flush.
+Also, we can add a constraint to flush_XXX_tlb_range such like:
+
+	#ifndef flush_XXX_tlb_range
+	#if defined(tlb_start_vma) || defined(tlb_end_vma)
+	#error Default flush_XXX_tlb_range() relies on default tlb_start/end_vma()
+	#endif
+
+3. Define flush_XXX_tlb_range() architecture-self, and keep original define in
+generic code, such as:
+
+In arm64:
+	#define flush_XXX_tlb_range flush_XXX_tlb_range
+
+In generic:
+	#ifndef flush_XXX_tlb_range
+	#define flush_XXX_tlb_range flush_tlb_range
+
+
+Which do you think is more appropriate?
+
+
+> ( Also, we should probably remove the (addr, end) arguments from
+> tlb_finish_mmu(), Will? )
+> 
+
+This can be changed quickly. If you want I can do this with a
+separate patch.
+
+> ---
+> diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
+> index f391f6b500b4..be5452a8efaa 100644
+> --- a/include/asm-generic/tlb.h
+> +++ b/include/asm-generic/tlb.h
+> @@ -511,6 +511,34 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+>  }
+>  #endif
+>  
+> +static inline void tlb_flush_pte_range(struct mmu_gather *tlb,
+> +				       unsigned long address, unsigned long size)
+> +{
+> +	__tlb_adjust_range(tlb, address, size);
+> +	tlb->cleared_ptes = 1;
+> +}
+> +
+> +static inline void tlb_flush_pmd_range(struct mmu_gather *tlb,
+> +				       unsigned long address, unsigned long size)
+> +{
+> +	__tlb_adjust_range(tlb, address, size);
+> +	tlb->cleared_pmds = 1;
+> +}
+> +
+> +static inline void tlb_flush_pud_range(struct mmu_gather *tlb,
+> +				       unsigned long address, unsigned long size)
+> +{
+> +	__tlb_adjust_range(tlb, address, size);
+> +	tlb->cleared_puds = 1;
+> +}
+> +
+> +static inline void tlb_flush_p4d_range(struct mmu_gather *tlb,
+> +				       unsigned long address, unsigned long size)
+> +{
+> +	__tlb_adjust_range(tlb, address, size);
+> +	tlb->cleared_p4ds = 1;
+> +}
+> +
+
+By the way, I think the name of tlb_set_XXX_range() is more suitable, because
+we don't do actual flush there.
+
+>  #ifndef __tlb_remove_tlb_entry
+>  #define __tlb_remove_tlb_entry(tlb, ptep, address) do { } while (0)
+>  #endif
+> @@ -524,8 +552,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+>   */
+>  #define tlb_remove_tlb_entry(tlb, ptep, address)		\
+>  	do {							\
+> -		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
+> -		tlb->cleared_ptes = 1;				\
+> +		tlb_flush_pte_range(tlb, address, PAGE_SIZE);	\
+>  		__tlb_remove_tlb_entry(tlb, ptep, address);	\
+>  	} while (0)
+>  
+> @@ -550,8 +577,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+>  
+>  #define tlb_remove_pmd_tlb_entry(tlb, pmdp, address)			\
+>  	do {								\
+> -		__tlb_adjust_range(tlb, address, HPAGE_PMD_SIZE);	\
+> -		tlb->cleared_pmds = 1;					\
+> +		tlb_flush_pmd_range(tlb, address, HPAGE_PMD_SIZE);	\
+>  		__tlb_remove_pmd_tlb_entry(tlb, pmdp, address);		\
+>  	} while (0)
+>  
+> @@ -565,8 +591,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+>  
+>  #define tlb_remove_pud_tlb_entry(tlb, pudp, address)			\
+>  	do {								\
+> -		__tlb_adjust_range(tlb, address, HPAGE_PUD_SIZE);	\
+> -		tlb->cleared_puds = 1;					\
+> +		tlb_flush_pud_range(tlb, address, HPAGE_PUD_SIZE);	\
+>  		__tlb_remove_pud_tlb_entry(tlb, pudp, address);		\
+>  	} while (0)
+>  
+> 
+> .
+> 
 
 
 _______________________________________________
