@@ -2,80 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7B2219D465
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:52:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F7CE19D426
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:42:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWxgV/N5iShKdc74jLcRpkmOHP9RZXQSdA0uDWT380g=; b=J/bgOTUh8nLEqH
-	yyA7hZBlJpGuUyo6OrimlYo/Ak9RS3n8tuSvTZVtB8dRlAh4zhVJsmUTtt24A9qzubYx3+s26tnry
-	2n9yB9hH1bzokBNQcruhsRngvCYATaLjdcPA+Lnr7MpXYwim347iC784omcOjEki17/Devic6DY+l
-	1QF7Cc9vqoVZHznkZvXJsxNZbfNlF+jtgvHpgi8JNs33gWVlJkUnUU9/vpmo7mN3dpKBaZgpxRkly
-	uVLVC91EbYz/Q4ZCZRFSEuoRezi5iz8/nQQNBuJFC6SJPqGgGxkgpv3NgztFLTZw5DFl0XLwFkqFO
-	k1OJkoEkMjkExFbpjhdQ==;
+	List-Owner; bh=yAWQC7tf9JFIqmc1m/AQ7AmI2AQ8cNzl+yT4TNgct4w=; b=cp20p0r5A/1I4D
+	3Nnx6/MGmHYTuf1/ZoIV1PKD30d0k2ZNsxBLY1A8EzfBJGAWVoQ6N43zHCu2/Rz65KO7wJch7Ko35
+	7R7cJ79DM/+ZTlKJjllB8laeAOFI7V8U7bnIldm9tNlBbtGnwJcCRH5VnHUEuo/fZrPild6lhUniO
+	LKX7lMxHshXzMteBvXiIDkhR79iP/52UrST+7T1JiT+jjECqTUgWGTYWaf8AUDZh1Z7SWNwi9d1L0
+	yv5HtP0lPiuZiYfbjdJaeLbLcWcOadyWwY1iOL+I/GcA8CFD+Xis6QrPBHoNJQouB3fkEeLEdMmlh
+	i+JB2pwjOVIBV30Nxf7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKJ0K-00023B-IE; Fri, 03 Apr 2020 09:52:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jKIpq-0001Z5-LW; Fri, 03 Apr 2020 09:41:58 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIyK-0000Eq-6U; Fri, 03 Apr 2020 09:50:48 +0000
-X-UUID: e95363bf782a42fc839da6a4e612753f-20200403
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=C5GZe5ZHxZEA0bVUU+2nNLCD3vP43u8gHp5y89FHgvQ=; 
- b=Qg1IQzZoCMcLAyHprVvm48ysqdVbeMNN/OEf+4GoxyYCYYJJNS21Vk9k3eqwB11d9qcdcEPetwFhuChyMovmZ7d7suj9OtfIwMc6GC0Ljo2APWu5+8uX6Qs8i7GM9Oe+zgPXT33L4SOVbuobJA2BkQ11gpyy/WOz418svHp4Jtk=;
-X-UUID: e95363bf782a42fc839da6a4e612753f-20200403
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <xia.jiang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 786733852; Fri, 03 Apr 2020 01:50:33 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Apr 2020 02:40:51 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 3 Apr 2020 17:40:48 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 3 Apr 2020 17:40:47 +0800
-From: Xia Jiang <xia.jiang@mediatek.com>
-To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
- <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
- Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v8 14/14] media: platform: Add jpeg dec/enc feature
-Date: Fri, 3 Apr 2020 17:40:33 +0800
-Message-ID: <20200403094033.8288-15-xia.jiang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200403094033.8288-1-xia.jiang@mediatek.com>
-References: <20200403094033.8288-1-xia.jiang@mediatek.com>
+ id 1jKIpS-0001O8-M0; Fri, 03 Apr 2020 09:41:41 +0000
+IronPort-SDR: 9yLSdEoecT9oTsG0htTjYHYvMJo295ZqEzRcNYgAR9vMk/0hY6dbNJCL7GCUptAa0EJuom3WcK
+ QAyJLIbYJ7iw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 Apr 2020 02:41:32 -0700
+IronPort-SDR: Yv2Qz15ejRaKLmHHHLvMZJiuCzJmU0nVGKGk0jCV4E7w6ph0Nu+J9ks6EHE//xJ9pfcReknNrX
+ H0uAroKrWmXQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,339,1580803200"; d="scan'208";a="423474353"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga005.jf.intel.com with ESMTP; 03 Apr 2020 02:41:21 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jKIpG-00FOct-9V; Fri, 03 Apr 2020 12:41:22 +0300
+Date: Fri, 3 Apr 2020 12:41:22 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Subject: Re: [PATCH v8 09/10] power: supply: Support ROHM bd99954 charger
+Message-ID: <20200403094122.GK1922688@smile.fi.intel.com>
+References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+ <10b40f9bca727e790d891f6442a879bfeca68624.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <10b40f9bca727e790d891f6442a879bfeca68624.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_025044_271503_84F858DD 
-X-CRM114-Status: GOOD (  16.34  )
-X-Spam-Score: 0.9 (/)
+X-CRM114-CacheID: sfid-20200403_024134_902164_8029B6CE 
+X-CRM114-Status: GOOD (  25.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.1 PDS_OTHER_BAD_TLD      Untrustworthy TLDs [URI: r.top (top)]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,2080 +72,2354 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maoguang.meng@mediatek.com, devicetree@vger.kernel.org,
- mojahsu@chromium.org, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- senozhatsky@chromium.org, sj.huang@mediatek.com, drinkcat@chromium.org,
- linux-mediatek@lists.infradead.org, Xia Jiang <xia.jiang@mediatek.com>,
- linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Andrei Stefanescu <andrei.stefanescu@microchip.com>,
+ Heiko Stuebner <heiko@sntech.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Andreas Kemnade <andreas@kemnade.info>,
+ "Angelo G. Del Regno" <kholk11@gmail.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ linux-samsung-soc@vger.kernel.org, linux-omap@vger.kernel.org,
+ Axel Lin <axel.lin@ingics.com>, Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Markus Reichl <m.reichl@fivetechno.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>, markus.laine@fi.rohmeurope.com,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, devicetree@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, mazziesaccount@gmail.com,
+ linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Baolin Wang <baolin.wang@linaro.org>, Sangbeom Kim <sbkim73@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
+ Randy Dunlap <rdunlap@infradead.org>, Sebastian Reichel <sre@kernel.org>,
+ linux-kernel@vger.kernel.org, mikko.mutanen@fi.rohmeurope.com,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ patches@opensource.cirrus.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add mtk jpeg encode v4l2 driver based on jpeg decode, because that jpeg
-decode and encode have great similarities with function operation.
+On Fri, Apr 03, 2020 at 11:48:05AM +0300, Matti Vaittinen wrote:
+> The ROHM BD99954 is a Battery Management LSI for 1-4 cell Lithium-Ion
+> secondary battery intended to be used in space-constraint equipment such
+> as Low profile Notebook PC, Tablets and other applications. BD99954
+> provides a Dual-source Battery Charger, two port BC1.2 detection and a
+> Battery Monitor.
+> 
+> Support ROHM BD99954 Charger IC.
+> 
 
-Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
----
-v8:jpeg encoder and decoder use separate callbacks instead of repeating
-   the if/else in every callback.
-   improve vidioc_try_fmt() implementation that can be shared by jpeg
-   encoder and decoder.
-   fix the bug of jpeg encoder s_selection implementation.
-   cancel the state of the jpeg encoder.
-   improve jpeg encoder and decoder set default params flow.
-   put the clock names and other datas in a match_data struct.
-   fix the bug of geting correctly quality value.
-   do the all the bits' settings of one register in one function.
-   move the code of mtk_jpeg_enc_reg.h to mtk_jpeg_enc_hw.h and delete
-   mtk_jpeg_enc_reg.h.
+FWIW,
+Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 
-v7: reverse spin lock and unlock operation in device run function for
-    multi-instance.
+> Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> ---
+> 
+> No changes since v7
+> 
+>  drivers/power/supply/Kconfig           |    9 +
+>  drivers/power/supply/Makefile          |    1 +
+>  drivers/power/supply/bd99954-charger.c | 1149 ++++++++++++++++++++++++
+>  include/linux/power/bd99954-charger.h  | 1075 ++++++++++++++++++++++
+>  4 files changed, 2234 insertions(+)
+>  create mode 100644 drivers/power/supply/bd99954-charger.c
+>  create mode 100644 include/linux/power/bd99954-charger.h
+> 
+> diff --git a/drivers/power/supply/Kconfig b/drivers/power/supply/Kconfig
+> index 8781c674ed07..af96d7fa56b1 100644
+> --- a/drivers/power/supply/Kconfig
+> +++ b/drivers/power/supply/Kconfig
+> @@ -702,6 +702,15 @@ config CHARGER_BD70528
+>  	 information and altering charger configurations from charger
+>  	 block of the ROHM BD70528 Power Management IC.
+>  
+> +config CHARGER_BD99954
+> +	tristate "ROHM bd99954 charger driver"
+> +	depends on I2C
+> +	select LINEAR_RANGES
+> +	help
+> +	  Say Y here to enable support for getting battery and charger
+> +	  information and altering charger configurations from the ROHM
+> +	  BD99954 charger IC.
+> +
+>  config CHARGER_WILCO
+>  	tristate "Wilco EC based charger for ChromeOS"
+>  	depends on WILCO_EC
+> diff --git a/drivers/power/supply/Makefile b/drivers/power/supply/Makefile
+> index 6c7da920ea83..eed11ca1bd7d 100644
+> --- a/drivers/power/supply/Makefile
+> +++ b/drivers/power/supply/Makefile
+> @@ -91,4 +91,5 @@ obj-$(CONFIG_CHARGER_SC2731)	+= sc2731_charger.o
+>  obj-$(CONFIG_FUEL_GAUGE_SC27XX)	+= sc27xx_fuel_gauge.o
+>  obj-$(CONFIG_CHARGER_UCS1002)	+= ucs1002_power.o
+>  obj-$(CONFIG_CHARGER_BD70528)	+= bd70528-charger.o
+> +obj-$(CONFIG_CHARGER_BD99954)	+= bd99954-charger.o
+>  obj-$(CONFIG_CHARGER_WILCO)	+= wilco-charger.o
+> diff --git a/drivers/power/supply/bd99954-charger.c b/drivers/power/supply/bd99954-charger.c
+> new file mode 100644
+> index 000000000000..b447b56b073a
+> --- /dev/null
+> +++ b/drivers/power/supply/bd99954-charger.c
+> @@ -0,0 +1,1149 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * ROHM BD99954 charger driver
+> + *
+> + * Copyright (C) 2020 Rohm Semiconductors
+> + *	Originally written by:
+> + *		Mikko Mutanen <mikko.mutanen@fi.rohmeurope.com>
+> + *		Markus Laine <markus.laine@fi.rohmeurope.com>
+> + *	Bugs added by:
+> + *		Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> + */
+> +
+> +/*
+> + *   The battery charging profile of BD99954.
+> + *
+> + *   Curve (1) represents charging current.
+> + *   Curve (2) represents battery voltage.
+> + *
+> + *   The BD99954 data sheet divides charging to three phases.
+> + *   a) Trickle-charge with constant current (8).
+> + *   b) pre-charge with constant current (6)
+> + *   c) fast-charge, first with constant current (5) phase. After
+> + *      the battery voltage has reached target level (4) we have constant
+> + *      voltage phase until charging current has dropped to termination
+> + *      level (7)
+> + *
+> + *    V ^                                                        ^ I
+> + *      .                                                        .
+> + *      .                                                        .
+> + *(4)` `.` ` ` ` ` ` ` ` ` ` ` ` ` ` ----------------------------.
+> + *      .                           :/                           .
+> + *      .                     o----+/:/ ` ` ` ` ` ` ` ` ` ` ` ` `.` ` (5)
+> + *      .                     +   ::  +                          .
+> + *      .                     +  /-   --                         .
+> + *      .                     +`/-     +                         .
+> + *      .                     o/-      -:                        .
+> + *      .                    .s.        +`                       .
+> + *      .                  .--+         `/                       .
+> + *      .               ..``  +          .:                      .
+> + *      .             -`      +           --                     .
+> + *      .    (2)  ...``       +            :-                    .
+> + *      .    ...``            +             -:                   .
+> + *(3)` `.`.""  ` ` ` `+-------- ` ` ` ` ` ` `.:` ` ` ` ` ` ` ` ` .` ` (6)
+> + *      .             +                       `:.                .
+> + *      .             +                         -:               .
+> + *      .             +                           -:.            .
+> + *      .             +                             .--.         .
+> + *      .   (1)       +                                `.+` ` ` `.` ` (7)
+> + *      -..............` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` + ` ` ` .` ` (8)
+> + *      .                                                +       -
+> + *      -------------------------------------------------+++++++++-->
+> + *      |   trickle   |  pre  |          fast            |
+> + *
+> + * Details of DT properties for different limits can be found from BD99954
+> + * device tree binding documentation.
+> + */
+> +
+> +#include <linux/delay.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/i2c.h>
+> +#include <linux/kernel.h>
+> +#include <linux/linear_range.h>
+> +#include <linux/module.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/power/bd99954-charger.h>
+> +#include <linux/power_supply.h>
+> +#include <linux/property.h>
+> +#include <linux/regmap.h>
+> +#include <linux/types.h>
+> +
+> +struct battery_data {
+> +	u16 precharge_current;	/* Trickle-charge Current */
+> +	u16 fc_reg_voltage;	/* Fast Charging Regulation Voltage */
+> +	u16 voltage_min;
+> +	u16 voltage_max;
+> +};
+> +
+> +/* Initial field values, converted to initial register values */
+> +struct bd9995x_init_data {
+> +	u16 vsysreg_set;	/* VSYS Regulation Setting */
+> +	u16 ibus_lim_set;	/* VBUS input current limitation */
+> +	u16 icc_lim_set;	/* VCC/VACP Input Current Limit Setting */
+> +	u16 itrich_set;		/* Trickle-charge Current Setting */
+> +	u16 iprech_set;		/* Pre-Charge Current Setting */
+> +	u16 ichg_set;		/* Fast-Charge constant current */
+> +	u16 vfastchg_reg_set1;	/* Fast Charging Regulation Voltage */
+> +	u16 vprechg_th_set;	/* Pre-charge Voltage Threshold Setting */
+> +	u16 vrechg_set;		/* Re-charge Battery Voltage Setting */
+> +	u16 vbatovp_set;	/* Battery Over Voltage Threshold Setting */
+> +	u16 iterm_set;		/* Charging termination current */
+> +};
+> +
+> +struct bd9995x_state {
+> +	u8 online;
+> +	u16 chgstm_status;
+> +	u16 vbat_vsys_status;
+> +	u16 vbus_vcc_status;
+> +};
+> +
+> +struct bd9995x_device {
+> +	struct i2c_client *client;
+> +	struct device *dev;
+> +	struct power_supply *charger;
+> +
+> +	struct regmap *rmap;
+> +	struct regmap_field *rmap_fields[F_MAX_FIELDS];
+> +
+> +	int chip_id;
+> +	int chip_rev;
+> +	struct bd9995x_init_data init_data;
+> +	struct bd9995x_state state;
+> +
+> +	struct mutex lock; /* Protect state data */
+> +};
+> +
+> +static const struct regmap_range bd9995x_readonly_reg_ranges[] = {
+> +	regmap_reg_range(CHGSTM_STATUS, SEL_ILIM_VAL),
+> +	regmap_reg_range(IOUT_DACIN_VAL, IOUT_DACIN_VAL),
+> +	regmap_reg_range(VCC_UCD_STATUS, VCC_IDD_STATUS),
+> +	regmap_reg_range(VBUS_UCD_STATUS, VBUS_IDD_STATUS),
+> +	regmap_reg_range(CHIP_ID, CHIP_REV),
+> +	regmap_reg_range(SYSTEM_STATUS, SYSTEM_STATUS),
+> +	regmap_reg_range(IBATP_VAL, VBAT_AVE_VAL),
+> +	regmap_reg_range(VTH_VAL, EXTIADP_AVE_VAL),
+> +};
+> +
+> +static const struct regmap_access_table bd9995x_writeable_regs = {
+> +	.no_ranges = bd9995x_readonly_reg_ranges,
+> +	.n_no_ranges = ARRAY_SIZE(bd9995x_readonly_reg_ranges),
+> +};
+> +
+> +static const struct regmap_range bd9995x_volatile_reg_ranges[] = {
+> +	regmap_reg_range(CHGSTM_STATUS, WDT_STATUS),
+> +	regmap_reg_range(VCC_UCD_STATUS, VCC_IDD_STATUS),
+> +	regmap_reg_range(VBUS_UCD_STATUS, VBUS_IDD_STATUS),
+> +	regmap_reg_range(INT0_STATUS, INT7_STATUS),
+> +	regmap_reg_range(SYSTEM_STATUS, SYSTEM_CTRL_SET),
+> +	regmap_reg_range(IBATP_VAL, EXTIADP_AVE_VAL), /* Measurement regs */
+> +};
+> +
+> +static const struct regmap_access_table bd9995x_volatile_regs = {
+> +	.yes_ranges = bd9995x_volatile_reg_ranges,
+> +	.n_yes_ranges = ARRAY_SIZE(bd9995x_volatile_reg_ranges),
+> +};
+> +
+> +static const struct regmap_range_cfg regmap_range_cfg[] = {
+> +	{
+> +	.selector_reg     = MAP_SET,
+> +	.selector_mask    = 0xFFFF,
+> +	.selector_shift   = 0,
+> +	.window_start     = 0,
+> +	.window_len       = 0x100,
+> +	.range_min        = 0 * 0x100,
+> +	.range_max        = 3 * 0x100,
+> +	},
+> +};
+> +
+> +static const struct regmap_config bd9995x_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 16,
+> +	.reg_stride = 1,
+> +
+> +	.max_register = 3 * 0x100,
+> +	.cache_type = REGCACHE_RBTREE,
+> +
+> +	.ranges = regmap_range_cfg,
+> +	.num_ranges = ARRAY_SIZE(regmap_range_cfg),
+> +	.val_format_endian = REGMAP_ENDIAN_LITTLE,
+> +	.wr_table = &bd9995x_writeable_regs,
+> +	.volatile_table = &bd9995x_volatile_regs,
+> +};
+> +
+> +enum bd9995x_chrg_fault {
+> +	CHRG_FAULT_NORMAL,
+> +	CHRG_FAULT_INPUT,
+> +	CHRG_FAULT_THERMAL_SHUTDOWN,
+> +	CHRG_FAULT_TIMER_EXPIRED,
+> +};
+> +
+> +static int bd9995x_get_prop_batt_health(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_BATTEMP], &tmp);
+> +	if (ret)
+> +		return POWER_SUPPLY_HEALTH_UNKNOWN;
+> +
+> +	/* TODO: Check these against datasheet page 34 */
+> +
+> +	switch (tmp) {
+> +	case ROOM:
+> +		return POWER_SUPPLY_HEALTH_GOOD;
+> +	case HOT1:
+> +	case HOT2:
+> +	case HOT3:
+> +		return POWER_SUPPLY_HEALTH_OVERHEAT;
+> +	case COLD1:
+> +	case COLD2:
+> +		return POWER_SUPPLY_HEALTH_COLD;
+> +	case TEMP_DIS:
+> +	case BATT_OPEN:
+> +	default:
+> +		return POWER_SUPPLY_HEALTH_UNKNOWN;
+> +	}
+> +}
+> +
+> +static int bd9995x_get_prop_charge_type(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_CHGSTM_STATE], &tmp);
+> +	if (ret)
+> +		return POWER_SUPPLY_CHARGE_TYPE_UNKNOWN;
+> +
+> +	switch (tmp) {
+> +	case CHGSTM_TRICKLE_CHARGE:
+> +	case CHGSTM_PRE_CHARGE:
+> +		return POWER_SUPPLY_CHARGE_TYPE_TRICKLE;
+> +	case CHGSTM_FAST_CHARGE:
+> +		return POWER_SUPPLY_CHARGE_TYPE_FAST;
+> +	case CHGSTM_TOP_OFF:
+> +	case CHGSTM_DONE:
+> +	case CHGSTM_SUSPEND:
+> +		return POWER_SUPPLY_CHARGE_TYPE_NONE;
+> +	default: /* Rest of the states are error related, no charging */
+> +		return POWER_SUPPLY_CHARGE_TYPE_NONE;
+> +	}
+> +}
+> +
+> +static bool bd9995x_get_prop_batt_present(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_BATTEMP], &tmp);
+> +	if (ret)
+> +		return false;
+> +
+> +	return tmp != BATT_OPEN;
+> +}
+> +
+> +static int bd9995x_get_prop_batt_voltage(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_VBAT_VAL], &tmp);
+> +	if (ret)
+> +		return 0;
+> +
+> +	tmp = min(tmp, 19200);
+> +
+> +	return tmp * 1000;
+> +}
+> +
+> +static int bd9995x_get_prop_batt_current(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_IBATP_VAL], &tmp);
+> +	if (ret)
+> +		return 0;
+> +
+> +	return tmp * 1000;
+> +}
+> +
+> +#define DEFAULT_BATTERY_TEMPERATURE 250
+> +
+> +static int bd9995x_get_prop_batt_temp(struct bd9995x_device *bd)
+> +{
+> +	int ret, tmp;
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_THERM_VAL], &tmp);
+> +	if (ret)
+> +		return DEFAULT_BATTERY_TEMPERATURE;
+> +
+> +	return (200 - tmp) * 10;
+> +}
+> +
+> +static int bd9995x_power_supply_get_property(struct power_supply *psy,
+> +					     enum power_supply_property psp,
+> +					     union power_supply_propval *val)
+> +{
+> +	int ret, tmp;
+> +	struct bd9995x_device *bd = power_supply_get_drvdata(psy);
+> +	struct bd9995x_state state;
+> +
+> +	mutex_lock(&bd->lock);
+> +	state = bd->state;
+> +	mutex_unlock(&bd->lock);
+> +
+> +	switch (psp) {
+> +	case POWER_SUPPLY_PROP_STATUS:
+> +		switch (state.chgstm_status) {
+> +		case CHGSTM_TRICKLE_CHARGE:
+> +		case CHGSTM_PRE_CHARGE:
+> +		case CHGSTM_FAST_CHARGE:
+> +		case CHGSTM_TOP_OFF:
+> +			val->intval = POWER_SUPPLY_STATUS_CHARGING;
+> +			break;
+> +
+> +		case CHGSTM_DONE:
+> +			val->intval = POWER_SUPPLY_STATUS_FULL;
+> +			break;
+> +
+> +		case CHGSTM_SUSPEND:
+> +		case CHGSTM_TEMPERATURE_ERROR_1:
+> +		case CHGSTM_TEMPERATURE_ERROR_2:
+> +		case CHGSTM_TEMPERATURE_ERROR_3:
+> +		case CHGSTM_TEMPERATURE_ERROR_4:
+> +		case CHGSTM_TEMPERATURE_ERROR_5:
+> +		case CHGSTM_TEMPERATURE_ERROR_6:
+> +		case CHGSTM_TEMPERATURE_ERROR_7:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_1:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_2:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_3:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_4:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_5:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_6:
+> +		case CHGSTM_THERMAL_SHUT_DOWN_7:
+> +		case CHGSTM_BATTERY_ERROR:
+> +			val->intval = POWER_SUPPLY_STATUS_NOT_CHARGING;
+> +			break;
+> +
+> +		default:
+> +			val->intval = POWER_SUPPLY_STATUS_UNKNOWN;
+> +			break;
+> +		}
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_MANUFACTURER:
+> +		val->strval = BD9995X_MANUFACTURER;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_ONLINE:
+> +		val->intval = state.online;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT:
+> +		ret = regmap_field_read(bd->rmap_fields[F_IBATP_VAL], &tmp);
+> +		if (ret)
+> +			return ret;
+> +		val->intval = tmp * 1000;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CHARGE_AVG:
+> +		ret = regmap_field_read(bd->rmap_fields[F_IBATP_AVE_VAL], &tmp);
+> +		if (ret)
+> +			return ret;
+> +		val->intval = tmp * 1000;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT_MAX:
+> +		/*
+> +		 * Currently the DT uses this property to give the
+> +		 * target current for fast-charging constant current phase.
+> +		 * I think it is correct in a sense.
+> +		 *
+> +		 * Yet, this prop we read and return here is the programmed
+> +		 * safety limit for combined input currents. This feels
+> +		 * also correct in a sense.
+> +		 *
+> +		 * However, this results a mismatch to DT value and value
+> +		 * read from sysfs.
+> +		 */
+> +		ret = regmap_field_read(bd->rmap_fields[F_SEL_ILIM_VAL], &tmp);
+> +		if (ret)
+> +			return ret;
+> +		val->intval = tmp * 1000;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE:
+> +		if (!state.online) {
+> +			val->intval = 0;
+> +			break;
+> +		}
+> +
+> +		ret = regmap_field_read(bd->rmap_fields[F_VFASTCHG_REG_SET1],
+> +					&tmp);
+> +		if (ret)
+> +			return ret;
+> +
+> +		/*
+> +		 * The actual range : 2560 to 19200 mV. No matter what the
+> +		 * register says
+> +		 */
+> +		val->intval = clamp_val(tmp << 4, 2560, 19200);
+> +		val->intval *= 1000;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CHARGE_TERM_CURRENT:
+> +		ret = regmap_field_read(bd->rmap_fields[F_ITERM_SET], &tmp);
+> +		if (ret)
+> +			return ret;
+> +		/* Start step is 64 mA */
+> +		val->intval = tmp << 6;
+> +		/* Maximum is 1024 mA - no matter what register says */
+> +		val->intval = min(val->intval, 1024);
+> +		val->intval *= 1000;
+> +		break;
+> +
+> +	/* Battery properties which we access through charger */
+> +	case POWER_SUPPLY_PROP_PRESENT:
+> +		val->intval = bd9995x_get_prop_batt_present(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_VOLTAGE_NOW:
+> +		val->intval = bd9995x_get_prop_batt_voltage(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CURRENT_NOW:
+> +		val->intval = bd9995x_get_prop_batt_current(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_CHARGE_TYPE:
+> +		val->intval = bd9995x_get_prop_charge_type(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_HEALTH:
+> +		val->intval = bd9995x_get_prop_batt_health(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_TEMP:
+> +		val->intval = bd9995x_get_prop_batt_temp(bd);
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_TECHNOLOGY:
+> +		val->intval = POWER_SUPPLY_TECHNOLOGY_LION;
+> +		break;
+> +
+> +	case POWER_SUPPLY_PROP_MODEL_NAME:
+> +		val->strval = "bd99954";
+> +		break;
+> +
+> +	default:
+> +		return -EINVAL;
+> +
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int bd9995x_get_chip_state(struct bd9995x_device *bd,
+> +				  struct bd9995x_state *state)
+> +{
+> +	int i, ret, tmp;
+> +	struct {
+> +		struct regmap_field *id;
+> +		u16 *data;
+> +	} state_fields[] = {
+> +		{
+> +			bd->rmap_fields[F_CHGSTM_STATE], &state->chgstm_status,
+> +		}, {
+> +			bd->rmap_fields[F_VBAT_VSYS_STATUS],
+> +			&state->vbat_vsys_status,
+> +		}, {
+> +			bd->rmap_fields[F_VBUS_VCC_STATUS],
+> +			&state->vbus_vcc_status,
+> +		},
+> +	};
+> +
+> +
+> +	for (i = 0; i < ARRAY_SIZE(state_fields); i++) {
+> +		ret = regmap_field_read(state_fields[i].id, &tmp);
+> +		if (ret)
+> +			return ret;
+> +
+> +		*state_fields[i].data = tmp;
+> +	}
+> +
+> +	if (state->vbus_vcc_status & STATUS_VCC_DET ||
+> +	    state->vbus_vcc_status & STATUS_VBUS_DET)
+> +		state->online = 1;
+> +	else
+> +		state->online = 0;
+> +
+> +	return 0;
+> +}
+> +
+> +static irqreturn_t bd9995x_irq_handler_thread(int irq, void *private)
+> +{
+> +	struct bd9995x_device *bd = private;
+> +	int ret, status, mask, i;
+> +	unsigned long tmp;
+> +	struct bd9995x_state state;
+> +
+> +	/*
+> +	 * The bd9995x does not seem to generate big amount of interrupts.
+> +	 * The logic regarding which interrupts can cause relevant
+> +	 * status changes seem to be pretty complex.
+> +	 *
+> +	 * So lets implement really simple and hopefully bullet-proof handler:
+> +	 * It does not really matter which IRQ we handle, we just go and
+> +	 * re-read all interesting statuses + give the framework a nudge.
+> +	 *
+> +	 * Other option would be building a _complex_ and error prone logic
+> +	 * trying to decide what could have been changed (resulting this IRQ
+> +	 * we are now handling). During the normal operation the BD99954 does
+> +	 * not seem to be generating much of interrupts so benefit from such
+> +	 * logic would probably be minimal.
+> +	 */
+> +
+> +	ret = regmap_read(bd->rmap, INT0_STATUS, &status);
+> +	if (ret) {
+> +		dev_err(bd->dev, "Failed to read IRQ status\n");
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_INT0_SET], &mask);
+> +	if (ret) {
+> +		dev_err(bd->dev, "Failed to read IRQ mask\n");
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	/* Handle only IRQs that are not masked */
+> +	status &= mask;
+> +	tmp = status;
+> +
+> +	/* Lowest bit does not represent any sub-registers */
+> +	tmp >>= 1;
+> +
+> +	/*
+> +	 * Mask and ack IRQs we will handle (+ the idiot bit)
+> +	 */
+> +	ret = regmap_field_write(bd->rmap_fields[F_INT0_SET], 0);
+> +	if (ret) {
+> +		dev_err(bd->dev, "Failed to mask F_INT0\n");
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	ret = regmap_write(bd->rmap, INT0_STATUS, status);
+> +	if (ret) {
+> +		dev_err(bd->dev, "Failed to ack F_INT0\n");
+> +		goto err_umask;
+> +	}
+> +
+> +	for_each_set_bit(i, &tmp, 7) {
+> +		int sub_status, sub_mask;
+> +		int sub_status_reg[] = {
+> +			INT1_STATUS, INT2_STATUS, INT3_STATUS, INT4_STATUS,
+> +			INT5_STATUS, INT6_STATUS, INT7_STATUS,
+> +		};
+> +		struct regmap_field *sub_mask_f[] = {
+> +			bd->rmap_fields[F_INT1_SET],
+> +			bd->rmap_fields[F_INT2_SET],
+> +			bd->rmap_fields[F_INT3_SET],
+> +			bd->rmap_fields[F_INT4_SET],
+> +			bd->rmap_fields[F_INT5_SET],
+> +			bd->rmap_fields[F_INT6_SET],
+> +			bd->rmap_fields[F_INT7_SET],
+> +		};
+> +
+> +		/* Clear sub IRQs */
+> +		ret = regmap_read(bd->rmap, sub_status_reg[i], &sub_status);
+> +		if (ret) {
+> +			dev_err(bd->dev, "Failed to read IRQ sub-status\n");
+> +			goto err_umask;
+> +		}
+> +
+> +		ret = regmap_field_read(sub_mask_f[i], &sub_mask);
+> +		if (ret) {
+> +			dev_err(bd->dev, "Failed to read IRQ sub-mask\n");
+> +			goto err_umask;
+> +		}
+> +
+> +		/* Ack active sub-statuses */
+> +		sub_status &= sub_mask;
+> +
+> +		ret = regmap_write(bd->rmap, sub_status_reg[i], sub_status);
+> +		if (ret) {
+> +			dev_err(bd->dev, "Failed to ack sub-IRQ\n");
+> +			goto err_umask;
+> +		}
+> +	}
+> +
+> +	ret = regmap_field_write(bd->rmap_fields[F_INT0_SET], mask);
+> +	if (ret)
+> +		/* May as well retry once */
+> +		goto err_umask;
+> +
+> +	/* Read whole chip state */
+> +	ret = bd9995x_get_chip_state(bd, &state);
+> +	if (ret < 0) {
+> +		dev_err(bd->dev, "Failed to read chip state\n");
+> +	} else {
+> +		mutex_lock(&bd->lock);
+> +		bd->state = state;
+> +		mutex_unlock(&bd->lock);
+> +
+> +		power_supply_changed(bd->charger);
+> +	}
+> +
+> +	return IRQ_HANDLED;
+> +
+> +err_umask:
+> +	ret = regmap_field_write(bd->rmap_fields[F_INT0_SET], mask);
+> +	if (ret)
+> +		dev_err(bd->dev,
+> +		"Failed to un-mask F_INT0 - IRQ permanently disabled\n");
+> +
+> +	return IRQ_NONE;
+> +}
+> +
+> +static int bd9995x_chip_reset(struct bd9995x_device *bd)
+> +{
+> +	int ret, state;
+> +	int rst_check_counter = 10;
+> +	u16 tmp = ALLRST | OTPLD;
+> +
+> +	ret = regmap_raw_write(bd->rmap, SYSTEM_CTRL_SET, &tmp, 2);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	do {
+> +		ret = regmap_field_read(bd->rmap_fields[F_OTPLD_STATE], &state);
+> +		if (ret)
+> +			return ret;
+> +
+> +		msleep(10);
+> +	} while (state == 0 && --rst_check_counter);
+> +
+> +	if (!rst_check_counter) {
+> +		dev_err(bd->dev, "chip reset not completed\n");
+> +		return -ETIMEDOUT;
+> +	}
+> +
+> +	tmp = 0;
+> +	ret = regmap_raw_write(bd->rmap, SYSTEM_CTRL_SET, &tmp, 2);
+> +
+> +	return ret;
+> +}
+> +
+> +static int bd9995x_hw_init(struct bd9995x_device *bd)
+> +{
+> +	int ret;
+> +	int i;
+> +	struct bd9995x_state state;
+> +	struct bd9995x_init_data *id = &bd->init_data;
+> +
+> +	const struct {
+> +		enum bd9995x_fields id;
+> +		u16 value;
+> +	} init_data[] = {
+> +		/* Enable the charging trigger after SDP charger attached */
+> +		{F_SDP_CHG_TRIG_EN,	1},
+> +		/* Enable charging trigger after SDP charger attached */
+> +		{F_SDP_CHG_TRIG,	1},
+> +		/* Disable charging trigger by BC1.2 detection */
+> +		{F_VBUS_BC_DISEN,	1},
+> +		/* Disable charging trigger by BC1.2 detection */
+> +		{F_VCC_BC_DISEN,	1},
+> +		/* Disable automatic limitation of the input current */
+> +		{F_ILIM_AUTO_DISEN,	1},
+> +		/* Select current limitation when SDP charger attached*/
+> +		{F_SDP_500_SEL,		1},
+> +		/* Select current limitation when DCP charger attached */
+> +		{F_DCP_2500_SEL,	1},
+> +		{F_VSYSREG_SET,		id->vsysreg_set},
+> +		/* Activate USB charging and DC/DC converter */
+> +		{F_USB_SUS,		0},
+> +		/* DCDC clock: 1200 kHz*/
+> +		{F_DCDC_CLK_SEL,	3},
+> +		/* Enable charging */
+> +		{F_CHG_EN,		1},
+> +		/* Disable Input current Limit setting voltage measurement */
+> +		{F_EXTIADPEN,		0},
+> +		/* Disable input current limiting */
+> +		{F_VSYS_PRIORITY,	1},
+> +		{F_IBUS_LIM_SET,	id->ibus_lim_set},
+> +		{F_ICC_LIM_SET,		id->icc_lim_set},
+> +		/* Charge Termination Current Setting to 0*/
+> +		{F_ITERM_SET,		id->iterm_set},
+> +		/* Trickle-charge Current Setting */
+> +		{F_ITRICH_SET,		id->itrich_set},
+> +		/* Pre-charge Current setting */
+> +		{F_IPRECH_SET,		id->iprech_set},
+> +		/* Fast Charge Current for constant current phase */
+> +		{F_ICHG_SET,		id->ichg_set},
+> +		/* Fast Charge Voltage Regulation Setting */
+> +		{F_VFASTCHG_REG_SET1,	id->vfastchg_reg_set1},
+> +		/* Set Pre-charge Voltage Threshold for trickle charging. */
+> +		{F_VPRECHG_TH_SET,	id->vprechg_th_set},
+> +		{F_VRECHG_SET,		id->vrechg_set},
+> +		{F_VBATOVP_SET,		id->vbatovp_set},
+> +		/* Reverse buck boost voltage Setting */
+> +		{F_VRBOOST_SET,		0},
+> +		/* Disable fast-charging watchdog */
+> +		{F_WDT_FST,		0},
+> +		/* Disable pre-charging watchdog */
+> +		{F_WDT_PRE,		0},
+> +		/* Power save off */
+> +		{F_POWER_SAVE_MODE,	0},
+> +		{F_INT1_SET,		INT1_ALL},
+> +		{F_INT2_SET,		INT2_ALL},
+> +		{F_INT3_SET,		INT3_ALL},
+> +		{F_INT4_SET,		INT4_ALL},
+> +		{F_INT5_SET,		INT5_ALL},
+> +		{F_INT6_SET,		INT6_ALL},
+> +		{F_INT7_SET,		INT7_ALL},
+> +	};
+> +
+> +	/*
+> +	 * Currently we initialize charger to a known state at startup.
+> +	 * If we want to allow for example the boot code to initialize
+> +	 * charger we should get rid of this.
+> +	 */
+> +	ret = bd9995x_chip_reset(bd);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* Initialize currents/voltages and other parameters */
+> +	for (i = 0; i < ARRAY_SIZE(init_data); i++) {
+> +		ret = regmap_field_write(bd->rmap_fields[init_data[i].id],
+> +					 init_data[i].value);
+> +		if (ret) {
+> +			dev_err(bd->dev, "failed to initialize charger (%d)\n",
+> +				ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	ret = bd9995x_get_chip_state(bd, &state);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	mutex_lock(&bd->lock);
+> +	bd->state = state;
+> +	mutex_unlock(&bd->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static enum power_supply_property bd9995x_power_supply_props[] = {
+> +	POWER_SUPPLY_PROP_MANUFACTURER,
+> +	POWER_SUPPLY_PROP_STATUS,
+> +	POWER_SUPPLY_PROP_ONLINE,
+> +	POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT,
+> +	POWER_SUPPLY_PROP_CHARGE_AVG,
+> +	POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT_MAX,
+> +	POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE,
+> +	POWER_SUPPLY_PROP_CHARGE_TERM_CURRENT,
+> +	/* Battery props we access through charger */
+> +	POWER_SUPPLY_PROP_PRESENT,
+> +	POWER_SUPPLY_PROP_VOLTAGE_NOW,
+> +	POWER_SUPPLY_PROP_CURRENT_NOW,
+> +	POWER_SUPPLY_PROP_CHARGE_TYPE,
+> +	POWER_SUPPLY_PROP_HEALTH,
+> +	POWER_SUPPLY_PROP_TEMP,
+> +	POWER_SUPPLY_PROP_TECHNOLOGY,
+> +	POWER_SUPPLY_PROP_MODEL_NAME,
+> +};
+> +
+> +static const struct power_supply_desc bd9995x_power_supply_desc = {
+> +	.name = "bd9995x-charger",
+> +	.type = POWER_SUPPLY_TYPE_USB,
+> +	.properties = bd9995x_power_supply_props,
+> +	.num_properties = ARRAY_SIZE(bd9995x_power_supply_props),
+> +	.get_property = bd9995x_power_supply_get_property,
+> +};
+> +
+> +/*
+> + * Limit configurations for vbus-input-current and vcc-vacp-input-current
+> + * Minimum limit is 0 uA. Max is 511 * 32000 uA = 16352000 uA. This is
+> + * configured by writing a register so that each increment in register
+> + * value equals to 32000 uA limit increment.
+> + *
+> + * Eg, value 0x0 is limit 0, value 0x1 is limit 32000, ...
+> + * Describe the setting in linear_range table.
+> + */
+> +static const struct linear_range input_current_limit_ranges[] = {
+> +	{
+> +		.min = 0,
+> +		.step = 32000,
+> +		.min_sel = 0x0,
+> +		.max_sel = 0x1ff,
+> +	},
+> +};
+> +
+> +/* Possible trickle, pre-charging and termination current values */
+> +static const struct linear_range charging_current_ranges[] = {
+> +	{
+> +		.min = 0,
+> +		.step = 64000,
+> +		.min_sel = 0x0,
+> +		.max_sel = 0x10,
+> +	}, {
+> +		.min = 1024000,
+> +		.step = 0,
+> +		.min_sel = 0x11,
+> +		.max_sel = 0x1f,
+> +	},
+> +};
+> +
+> +/*
+> + * Fast charging voltage regulation, starting re-charging limit
+> + * and battery over voltage protection have same possible values
+> + */
+> +static const struct linear_range charge_voltage_regulation_ranges[] = {
+> +	{
+> +		.min = 2560000,
+> +		.step = 0,
+> +		.min_sel = 0,
+> +		.max_sel = 0xA0,
+> +	}, {
+> +		.min = 2560000,
+> +		.step = 16000,
+> +		.min_sel = 0xA0,
+> +		.max_sel = 0x4B0,
+> +	}, {
+> +		.min = 19200000,
+> +		.step = 0,
+> +		.min_sel = 0x4B0,
+> +		.max_sel = 0x7FF,
+> +	},
+> +};
+> +
+> +/* Possible VSYS voltage regulation values */
+> +static const struct linear_range vsys_voltage_regulation_ranges[] = {
+> +	{
+> +		.min = 2560000,
+> +		.step = 0,
+> +		.min_sel = 0,
+> +		.max_sel = 0x28,
+> +	}, {
+> +		.min = 2560000,
+> +		.step = 64000,
+> +		.min_sel = 0x28,
+> +		.max_sel = 0x12C,
+> +	}, {
+> +		.min = 19200000,
+> +		.step = 0,
+> +		.min_sel = 0x12C,
+> +		.max_sel = 0x1FF,
+> +	},
+> +};
+> +
+> +/* Possible settings for switching from trickle to pre-charging limits */
+> +static const struct linear_range trickle_to_pre_threshold_ranges[] = {
+> +	{
+> +		.min = 2048000,
+> +		.step = 0,
+> +		.min_sel = 0,
+> +		.max_sel = 0x20,
+> +	}, {
+> +		.min = 2048000,
+> +		.step = 64000,
+> +		.min_sel = 0x20,
+> +		.max_sel = 0x12C,
+> +	}, {
+> +		.min = 19200000,
+> +		.step = 0,
+> +		.min_sel = 0x12C,
+> +		.max_sel = 0x1FF
+> +	}
+> +};
+> +
+> +/* Possible current values for fast-charging constant current phase */
+> +static const struct linear_range fast_charge_current_ranges[] = {
+> +	{
+> +		.min = 0,
+> +		.step = 64000,
+> +		.min_sel = 0,
+> +		.max_sel = 0xFF,
+> +	}
+> +};
+> +
+> +struct battery_init {
+> +	const char *name;
+> +	int *info_data;
+> +	const struct linear_range *range;
+> +	int ranges;
+> +	u16 *data;
+> +};
+> +
+> +struct dt_init {
+> +	char *prop;
+> +	const struct linear_range *range;
+> +	int ranges;
+> +	u16 *data;
+> +};
+> +
+> +static int bd9995x_fw_probe(struct bd9995x_device *bd)
+> +{
+> +	int ret;
+> +	struct power_supply_battery_info info;
+> +	u32 property;
+> +	int i;
+> +	int regval;
+> +	bool found;
+> +	struct bd9995x_init_data *init = &bd->init_data;
+> +	struct battery_init battery_inits[] = {
+> +		{
+> +			.name = "trickle-charging current",
+> +			.info_data = &info.tricklecharge_current_ua,
+> +			.range = &charging_current_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->itrich_set,
+> +		}, {
+> +			.name = "pre-charging current",
+> +			.info_data = &info.precharge_current_ua,
+> +			.range = &charging_current_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->iprech_set,
+> +		}, {
+> +			.name = "pre-to-trickle charge voltage threshold",
+> +			.info_data = &info.precharge_voltage_max_uv,
+> +			.range = &trickle_to_pre_threshold_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->vprechg_th_set,
+> +		}, {
+> +			.name = "charging termination current",
+> +			.info_data = &info.charge_term_current_ua,
+> +			.range = &charging_current_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->iterm_set,
+> +		}, {
+> +			.name = "charging re-start voltage",
+> +			.info_data = &info.charge_restart_voltage_uv,
+> +			.range = &charge_voltage_regulation_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->vrechg_set,
+> +		}, {
+> +			.name = "battery overvoltage limit",
+> +			.info_data = &info.overvoltage_limit_uv,
+> +			.range = &charge_voltage_regulation_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->vbatovp_set,
+> +		}, {
+> +			.name = "fast-charging max current",
+> +			.info_data = &info.constant_charge_current_max_ua,
+> +			.range = &fast_charge_current_ranges[0],
+> +			.ranges = 1,
+> +			.data = &init->ichg_set,
+> +		}, {
+> +			.name = "fast-charging voltage",
+> +			.info_data = &info.constant_charge_voltage_max_uv,
+> +			.range = &charge_voltage_regulation_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->vfastchg_reg_set1,
+> +		},
+> +	};
+> +	struct dt_init props[] = {
+> +		{
+> +			.prop = "rohm,vsys-regulation-microvolt",
+> +			.range = &vsys_voltage_regulation_ranges[0],
+> +			.ranges = 2,
+> +			.data = &init->vsysreg_set,
+> +		}, {
+> +			.prop = "rohm,vbus-input-current-limit-microamp",
+> +			.range = &input_current_limit_ranges[0],
+> +			.ranges = 1,
+> +			.data = &init->ibus_lim_set,
+> +		}, {
+> +			.prop = "rohm,vcc-input-current-limit-microamp",
+> +			.range = &input_current_limit_ranges[0],
+> +			.ranges = 1,
+> +			.data = &init->icc_lim_set,
+> +		},
+> +	};
+> +
+> +	/*
+> +	 * The power_supply_get_battery_info() does not support getting values
+> +	 * from ACPI. Let's fix it if ACPI is required here.
+> +	 */
+> +	ret = power_supply_get_battery_info(bd->charger, &info);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(battery_inits); i++) {
+> +		int val = *battery_inits[i].info_data;
+> +		const struct linear_range *range = battery_inits[i].range;
+> +		int ranges = battery_inits[i].ranges;
+> +
+> +		if (val == -EINVAL)
+> +			continue;
+> +
+> +		ret = linear_range_get_selector_low_array(range, ranges, val,
+> +							  &regval, &found);
+> +		if (ret) {
+> +			dev_err(bd->dev, "Unsupported value for %s\n",
+> +				battery_inits[i].name);
+> +
+> +			power_supply_put_battery_info(bd->charger, &info);
+> +			return -EINVAL;
+> +		}
+> +		if (!found) {
+> +			dev_warn(bd->dev,
+> +				 "Unsupported value for %s - using smaller\n",
+> +				 battery_inits[i].name);
+> +		}
+> +		*(battery_inits[i].data) = regval;
+> +	}
+> +
+> +	power_supply_put_battery_info(bd->charger, &info);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(props); i++) {
+> +		ret = device_property_read_u32(bd->dev, props[i].prop,
+> +					       &property);
+> +		if (ret < 0) {
+> +			dev_err(bd->dev, "failed to read %s", props[i].prop);
+> +
+> +			return ret;
+> +		}
+> +
+> +		ret = linear_range_get_selector_low_array(props[i].range,
+> +							  props[i].ranges,
+> +							  property, &regval,
+> +							  &found);
+> +		if (ret) {
+> +			dev_err(bd->dev, "Unsupported value for '%s'\n",
+> +				props[i].prop);
+> +
+> +			return -EINVAL;
+> +		}
+> +
+> +		if (!found) {
+> +			dev_warn(bd->dev,
+> +				 "Unsupported value for '%s' - using smaller\n",
+> +				 props[i].prop);
+> +		}
+> +
+> +		*(props[i].data) = regval;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int bd9995x_probe(struct i2c_client *client)
+> +{
+> +	struct device *dev = &client->dev;
+> +	struct bd9995x_device *bd;
+> +	struct power_supply_config psy_cfg = {};
+> +	int ret;
+> +	int i;
+> +
+> +	bd = devm_kzalloc(dev, sizeof(*bd), GFP_KERNEL);
+> +	if (!bd)
+> +		return -ENOMEM;
+> +
+> +	bd->client = client;
+> +	bd->dev = dev;
+> +	psy_cfg.drv_data = bd;
+> +	psy_cfg.of_node = dev->of_node;
+> +
+> +	mutex_init(&bd->lock);
+> +
+> +	bd->rmap = devm_regmap_init_i2c(client, &bd9995x_regmap_config);
+> +	if (IS_ERR(bd->rmap)) {
+> +		dev_err(dev, "Failed to setup register access via i2c\n");
+> +		return PTR_ERR(bd->rmap);
+> +	}
+> +
+> +	for (i = 0; i < ARRAY_SIZE(bd9995x_reg_fields); i++) {
+> +		const struct reg_field *reg_fields = bd9995x_reg_fields;
+> +
+> +		bd->rmap_fields[i] = devm_regmap_field_alloc(dev, bd->rmap,
+> +							     reg_fields[i]);
+> +		if (IS_ERR(bd->rmap_fields[i])) {
+> +			dev_err(dev, "cannot allocate regmap field\n");
+> +			return PTR_ERR(bd->rmap_fields[i]);
+> +		}
+> +	}
+> +
+> +	i2c_set_clientdata(client, bd);
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_CHIP_ID], &bd->chip_id);
+> +	if (ret) {
+> +		dev_err(dev, "Cannot read chip ID.\n");
+> +		return ret;
+> +	}
+> +
+> +	if (bd->chip_id != BD99954_ID) {
+> +		dev_err(dev, "Chip with ID=0x%x, not supported!\n",
+> +			bd->chip_id);
+> +		return -ENODEV;
+> +	}
+> +
+> +	ret = regmap_field_read(bd->rmap_fields[F_CHIP_REV], &bd->chip_rev);
+> +	if (ret) {
+> +		dev_err(dev, "Cannot read revision.\n");
+> +		return ret;
+> +	}
+> +
+> +	dev_info(bd->dev, "Found DB99954 chip rev %d\n", bd->chip_rev);
+> +
+> +	/*
+> +	 * We need to init the psy before we can call
+> +	 * power_supply_get_battery_info() for it
+> +	 */
+> +	bd->charger = devm_power_supply_register(bd->dev,
+> +						 &bd9995x_power_supply_desc,
+> +						&psy_cfg);
+> +	if (IS_ERR(bd->charger)) {
+> +		dev_err(dev, "Failed to register power supply\n");
+> +		return PTR_ERR(bd->charger);
+> +	}
+> +
+> +	ret = bd9995x_fw_probe(bd);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Cannot read device properties.\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = bd9995x_hw_init(bd);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Cannot initialize the chip.\n");
+> +		return ret;
+> +	}
+> +
+> +	return devm_request_threaded_irq(dev, client->irq, NULL,
+> +					 bd9995x_irq_handler_thread,
+> +					 IRQF_TRIGGER_LOW | IRQF_ONESHOT,
+> +					 BD9995X_IRQ_PIN, bd);
+> +}
+> +
+> +static int bd9995x_remove(struct i2c_client *client)
+> +{
+> +	int ret;
+> +	struct bd9995x_device *bd = i2c_get_clientdata(client);
+> +
+> +	disable_irq(client->irq);
+> +
+> +	/*
+> +	 * Reset all registers to default values. This should also disable
+> +	 * CHG_EN bit. If this is not required we can get rid of the remove.
+> +	 */
+> +	ret = bd9995x_chip_reset(bd);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id bd9995x_of_match[] = {
+> +	{ .compatible = "rohm,bd99954", },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, bd9995x_of_match);
+> +
+> +static struct i2c_driver bd9995x_driver = {
+> +	.driver = {
+> +		.name = "bd9995x-charger",
+> +		.of_match_table = bd9995x_of_match,
+> +	},
+> +	.probe_new = bd9995x_probe,
+> +	.remove = bd9995x_remove,
+> +};
+> +module_i2c_driver(bd9995x_driver);
+> +
+> +MODULE_AUTHOR("Laine Markus <markus.laine@fi.rohmeurope.com>");
+> +MODULE_DESCRIPTION("ROHM BD99954 charger driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/linux/power/bd99954-charger.h b/include/linux/power/bd99954-charger.h
+> new file mode 100644
+> index 000000000000..f58897925383
+> --- /dev/null
+> +++ b/include/linux/power/bd99954-charger.h
+> @@ -0,0 +1,1075 @@
+> +/* SPDX-License-Identifier: GPL-2.0-only */
+> +/* Copyright (C) 2020 ROHM Semiconductors */
+> +#ifndef BD99954_CHARGER_H
+> +#define BD99954_CHARGER_H
+> +
+> +#include <linux/regmap.h>
+> +
+> +#define BD9995X_MANUFACTURER "Rohm Semiconductor"
+> +#define BD9995X_IRQ_PIN      "bd9995x_irq"
+> +
+> +#define BD9995X_VSYS_PRECHARGE_OFFSET_MV 200
+> +
+> +#define BD99954_ID            0x346
+> +#define BD99955_ID            0x221
+> +#define BD99956_ID            0x331
+> +
+> +/* Battery Charger Commands */
+> +#define    CHARGING_CURRENT   0x14
+> +#define    CHARGING_VOLTAGE   0x15
+> +#define    PROTECT_SET        0x3E
+> +#define    MAP_SET            0x3F
+> +
+> +/* Extended commands */
+> +#define    CHGSTM_STATUS       0x100
+> +#define    VBAT_VSYS_STATUS    0x101
+> +#define    VBUS_VCC_STATUS     0x102
+> +#define    CHGOP_STATUS        0x103
+> +#define    WDT_STATUS          0x104
+> +#define    CUR_ILIM_VAL        0x105
+> +#define    SEL_ILIM_VAL        0x106
+> +#define    IBUS_LIM_SET        0x107
+> +#define    ICC_LIM_SET         0x108
+> +#define    IOTG_LIM_SET        0x109
+> +#define    VIN_CTRL_SET        0x10A
+> +#define    CHGOP_SET1          0x10B
+> +#define    CHGOP_SET2          0x10C
+> +#define    VBUSCLPS_TH_SET     0x10D
+> +#define    VCCCLPS_TH_SET      0x10E
+> +#define    CHGWDT_SET          0x10F
+> +#define    BATTWDT_SET         0x110
+> +#define    VSYSREG_SET         0x111
+> +#define    VSYSVAL_THH_SET     0x112
+> +#define    VSYSVAL_THL_SET     0x113
+> +#define    ITRICH_SET          0x114
+> +#define    IPRECH_SET          0x115
+> +#define    ICHG_SET            0x116
+> +#define    ITERM_SET           0x117
+> +#define    VPRECHG_TH_SET      0x118
+> +#define    VRBOOST_SET         0x119
+> +#define    VFASTCHG_REG_SET1   0x11A
+> +#define    VFASTCHG_REG_SET2   0x11B
+> +#define    VFASTCHG_REG_SET3   0x11C
+> +#define    VRECHG_SET          0x11D
+> +#define    VBATOVP_SET         0x11E
+> +#define    IBATSHORT_SET       0x11F
+> +#define    PROCHOT_CTRL_SET    0x120
+> +#define    PROCHOT_ICRIT_SET   0x121
+> +#define    PROCHOT_INORM_SET   0x122
+> +#define    PROCHOT_IDCHG_SET   0x123
+> +#define    PROCHOT_VSYS_SET    0x124
+> +#define    PMON_IOUT_CTRL_SET  0x125
+> +#define    PMON_DACIN_VAL      0x126
+> +#define    IOUT_DACIN_VAL      0x127
+> +#define    VCC_UCD_SET         0x128
+> +#define    VCC_UCD_STATUS      0x129
+> +#define    VCC_IDD_STATUS      0x12A
+> +#define    VCC_UCD_FCTRL_SET   0x12B
+> +#define    VCC_UCD_FCTRL_EN    0x12C
+> +#define    VBUS_UCD_SET        0x130
+> +#define    VBUS_UCD_STATUS     0x131
+> +#define    VBUS_IDD_STATUS     0x132
+> +#define    VBUS_UCD_FCTRL_SET  0x133
+> +#define    VBUS_UCD_FCTRL_EN   0x134
+> +#define    CHIP_ID             0x138
+> +#define    CHIP_REV            0x139
+> +#define    IC_SET1             0x13A
+> +#define    IC_SET2             0x13B
+> +#define    SYSTEM_STATUS       0x13C
+> +#define    SYSTEM_CTRL_SET     0x13D
+> +#define    VM_CTRL_SET         0x140
+> +#define    THERM_WINDOW_SET1   0x141
+> +#define    THERM_WINDOW_SET2   0x142
+> +#define    THERM_WINDOW_SET3   0x143
+> +#define    THERM_WINDOW_SET4   0x144
+> +#define    THERM_WINDOW_SET5   0x145
+> +#define    IBATP_TH_SET        0x146
+> +#define    IBATM_TH_SET        0x147
+> +#define    VBAT_TH_SET         0x148
+> +#define    THERM_TH_SET        0x149
+> +#define    IACP_TH_SET         0x14A
+> +#define    VACP_TH_SET         0x14B
+> +#define    VBUS_TH_SET         0x14C
+> +#define    VCC_TH_SET          0x14D
+> +#define    VSYS_TH_SET         0x14E
+> +#define    EXTIADP_TH_SET      0x14F
+> +#define    IBATP_VAL           0x150
+> +#define    IBATP_AVE_VAL       0x151
+> +#define    IBATM_VAL           0x152
+> +#define    IBATM_AVE_VAL       0x153
+> +#define    VBAT_VAL            0x154
+> +#define    VBAT_AVE_VAL        0x155
+> +#define    THERM_VAL           0x156
+> +#define    VTH_VAL             0x157
+> +#define    IACP_VAL            0x158
+> +#define    IACP_AVE_VAL        0x159
+> +#define    VACP_VAL            0x15A
+> +#define    VACP_AVE_VAL        0x15B
+> +#define    VBUS_VAL            0x15C
+> +#define    VBUS_AVE_VAL        0x15D
+> +#define    VCC_VAL             0x15E
+> +#define    VCC_AVE_VAL         0x15F
+> +#define    VSYS_VAL            0x160
+> +#define    VSYS_AVE_VAL        0x161
+> +#define    EXTIADP_VAL         0x162
+> +#define    EXTIADP_AVE_VAL     0x163
+> +#define    VACPCLPS_TH_SET     0x164
+> +#define    INT0_SET            0x168
+> +#define    INT1_SET            0x169
+> +#define    INT2_SET            0x16A
+> +#define    INT3_SET            0x16B
+> +#define    INT4_SET            0x16C
+> +#define    INT5_SET            0x16D
+> +#define    INT6_SET            0x16E
+> +#define    INT7_SET            0x16F
+> +#define    INT0_STATUS         0x170
+> +#define    INT1_STATUS         0x171
+> +#define    INT2_STATUS         0x172
+> +#define    INT3_STATUS         0x173
+> +#define    INT4_STATUS         0x174
+> +#define    INT5_STATUS         0x175
+> +#define    INT6_STATUS         0x176
+> +#define    INT7_STATUS         0x177
+> +#define    OTPREG0             0x17A
+> +#define    OTPREG1             0x17B
+> +#define    SMBREG              0x17C
+> +#define    DEBUG_MODE_SET      0x17F
+> +#define    DEBUG0x14           0x214
+> +#define    DEBUG0x1A           0x21A
+> +
+> +enum bd9995x_fields {
+> +	F_PREV_CHGSTM_STATE, F_CHGSTM_STATE,
+> +	F_VBAT_VSYS_STATUS,
+> +	F_VBUS_VCC_STATUS,
+> +	F_BATTEMP, F_VRECHG_DET, F_RBOOST_UV, F_RBOOSTS,
+> +	F_THERMWDT_VAL, F_CHGWDT_VAL,
+> +	F_CUR_ILIM_VAL,
+> +	F_SEL_ILIM_VAL,
+> +	F_IBUS_LIM_SET,
+> +	F_ICC_LIM_SET,
+> +	F_IOTG_LIM_SET,
+> +	F_OTG_BOTH_EN,
+> +	F_VRBOOST_TRIG,
+> +	F_VRBOOST_EN,
+> +	F_PP_BOTH_THRU,
+> +	F_VIN_ORD,
+> +	F_VBUS_EN,
+> +	F_VCC_EN,
+> +	F_VSYS_PRIORITY,
+> +	F_PPC_SUB_CAP,
+> +	F_PPC_CAP,
+> +	F_DCP_2500_SEL,
+> +	F_SDP_500_SEL,
+> +	F_ILIM_AUTO_DISEN,
+> +	F_VCC_BC_DISEN,
+> +	F_VBUS_BC_DISEN,
+> +	F_SDP_CHG_TRIG_EN,
+> +	F_SDP_CHG_TRIG,
+> +	F_AUTO_TOF,
+> +	F_AUTO_FST,
+> +	F_AUTO_RECH,
+> +	F_ILIM_RESET_EN,
+> +	F_DCDC_1MS_SEL,
+> +	F_SEL_ILIM_DIV,
+> +	F_BATT_LEARN,
+> +	F_CHG_EN,
+> +	F_USB_SUS,
+> +	F_CHOP_SS_INIT,
+> +	F_CHOP_ALL_INIT,
+> +	F_DCDC_CLK_SEL,
+> +	F_CHOP_SS,
+> +	F_CHOP_ALL,
+> +	F_VBUSCLPS_TH_SET,
+> +	F_VCCCLPS_TH_SET,
+> +	F_WDT_FST,
+> +	F_WDT_PRE,
+> +	F_WDT_IBAT_SHORT,
+> +	F_WDT_THERM,
+> +	F_VSYSREG_SET,
+> +	F_VSYSVAL_THH_SET,
+> +	F_VSYSVAL_THL_SET,
+> +	F_ITRICH_SET,
+> +	F_IPRECH_SET,
+> +	F_ICHG_SET,
+> +	F_ITERM_SET,
+> +	F_VPRECHG_TH_SET,
+> +	F_VRBOOST_SET,
+> +	F_VFASTCHG_REG_SET1,
+> +	F_VFASTCHG_REG_SET2,
+> +	F_VFASTCHG_REG_SET3,
+> +	F_VRECHG_SET,
+> +	F_VBATOVP_SET,
+> +	F_IBATM_SHORT_SET,
+> +	F_PROCHOT_DG_SET,
+> +	F_PROCHOT_ICRIT_DG_SET,
+> +	F_PROCHOT_IDCHG_DG_SET,
+> +	F_PROCHOT_EN,
+> +	F_PROCHOT_ICRIT_SET,
+> +	F_PROCHOT_INORM_SET,
+> +	F_PROCHOT_IDCHG_SET,
+> +	F_PROCHOT_VSYS_SET,
+> +	F_IMON_INSEL,
+> +	F_PMON_INSEL,
+> +	F_IOUT_OUT_EN,
+> +	F_IOUT_SOURCE_SEL,
+> +	F_IOUT_GAIN_SET,
+> +	F_PMON_OUT_EN,
+> +	F_PMON_GAIN_SET,
+> +	F_PMON_DACIN_VAL,
+> +	F_IOUT_DACIN_VAL,
+> +	F_VCC_BCSRETRY,
+> +	F_VCC_ADCRTRY,
+> +	F_VCC_USBDETEN,
+> +	F_VCC_IDRDETEN,
+> +	F_VCC_ENUMRDY,
+> +	F_VCC_ADCPOLEN,
+> +	F_VCC_DCDMODE,
+> +	F_VCC_USB_SW_EN,
+> +	F_VCC_USB_SW,
+> +	F_VCC_DCDFAIL,
+> +	F_VCC_CHGPORT,
+> +	F_VCC_PUPDET,
+> +	F_VCC_VBUS_VLD,
+> +	F_VCC_CHGDET,
+> +	F_VCC_OTGDET,
+> +	F_VCC_VBINOP,
+> +	F_VCC_EXTID,
+> +	F_VCC_IDRDET,
+> +	F_VCC_INDO,
+> +	F_VCC_UCDSWEN,
+> +	F_VCC_RREF_EN,
+> +	F_VCC_DPPU_EN,
+> +	F_VCC_DPREF_EN,
+> +	F_VCC_DMREF_EN,
+> +	F_VCC_DPDET_EN,
+> +	F_VCC_DMDET_EN,
+> +	F_VCC_DPSINK_EN,
+> +	F_VCC_DMSINK_EN,
+> +	F_VCC_DP_BUFF_EN,
+> +	F_VCC_DM_BUFF_EN,
+> +	F_VCC_EXTCLKENBL,
+> +	F_VCC_PLSTESTEN,
+> +	F_VCC_UCDSWEN_TSTENB,
+> +	F_VCC_RREF_EN_TSTENB,
+> +	F_VCC_DPPU_EN_TSTENB,
+> +	F_VCC_DPREF_EN_TSTENB,
+> +	F_VCC_DMREF_EN_TSTENB,
+> +	F_VCC_DPDET_EN_TSTENB,
+> +	F_VCC_DMDET_EN_TSTENB,
+> +	F_VCC_DPSINK_EN_TSTENB,
+> +	F_VCC_DMSINK_EN_TSTENB,
+> +	F_VCC_DP_BUFF_EN_TSTENB,
+> +	F_VCC_DM_BUFF_EN_TSTENB,
+> +	F_VBUS_BCSRETRY,
+> +	F_VBUS_ADCRTRY,
+> +	F_VBUS_USBDETEN,
+> +	F_VBUS_IDRDETEN,
+> +	F_VBUS_ENUMRDY,
+> +	F_VBUS_ADCPOLEN,
+> +	F_VBUS_DCDMODE,
+> +	F_VBUS_USB_SW_EN,
+> +	F_VBUS_USB_SW,
+> +	F_VBUS_DCDFAIL,
+> +	F_VBUS_CHGPORT,
+> +	F_VBUS_PUPDET,
+> +	F_VBUS_VBUS_VLD,
+> +	F_VBUS_CHGDET,
+> +	F_VBUS_OTGDET,
+> +	F_VBUS_VBINOP,
+> +	F_VBUS_EXTID,
+> +	F_VBUS_IDRDET,
+> +	F_VBUS_INDO,
+> +	F_VBUS_UCDSWEN,
+> +	F_VBUS_RREF_EN,
+> +	F_VBUS_DPPU_EN,
+> +	F_VBUS_DPREF_EN,
+> +	F_VBUS_DMREF_EN,
+> +	F_VBUS_DPDET_EN,
+> +	F_VBUS_DMDET_EN,
+> +	F_VBUS_DPSINK_EN,
+> +	F_VBUS_DMSINK_EN,
+> +	F_VBUS_DP_BUFF_EN,
+> +	F_VBUS_DM_BUFF_EN,
+> +	F_VBUS_EXTCLKENBL,
+> +	F_VBUS_PLSTESTEN,
+> +	F_VBUS_UCDSWEN_TSTENB,
+> +	F_VBUS_RREF_EN_TSTENB,
+> +	F_VBUS_DPPU_EN_TSTENB,
+> +	F_VBUS_DPREF_EN_TSTENB,
+> +	F_VBUS_DMREF_EN_TSTENB,
+> +	F_VBUS_DPDET_EN_TSTENB,
+> +	F_VBUS_DMDET_EN_TSTENB,
+> +	F_VBUS_DPSINK_EN_TSTENB,
+> +	F_VBUS_DMSINK_EN_TSTENB,
+> +	F_VBUS_DP_BUFF_EN_TSTENB,
+> +	F_VBUS_DM_BUFF_EN_TSTENB,
+> +	F_CHIP_ID,
+> +	F_CHIP_REV,
+> +	F_ONE_CELL_MODE,
+> +	F_cell,
+> +	F_VACP_AUTO_DISCHG,
+> +	F_VACP_LOAD,
+> +	F_ACOK_POL,
+> +	F_ACOK_DISEN,
+> +	F_DEBUG_SET1,
+> +	F_DEBUG_SET0,
+> +	F_MONRST_STATE,
+> +	F_ALMRST_STATE,
+> +	F_CHGRST_STATE,
+> +	F_OTPLD_STATE,
+> +	F_ALLRST_STATE,
+> +	F_PROTECT_SET,
+> +	F_MAP_SET,
+> +	F_ADCINTERVAL,
+> +	F_ADCMOD,
+> +	F_ADCTMOD,
+> +	F_EXTIADPEN,
+> +	F_VSYSENB,
+> +	F_VCCENB,
+> +	F_VBUSENB,
+> +	F_VACPENB,
+> +	F_IACPENB,
+> +	F_THERMENB,
+> +	F_VBATENB,
+> +	F_IBATMENB,
+> +	F_IBATPENB,
+> +	F_TMPTHR1B,
+> +	F_TMPTHR1A,
+> +	F_TMPTHR2B,
+> +	F_TMPTHR2A,
+> +	F_TMPTHR3B,
+> +	F_TMPTHR3A,
+> +	F_TMPTHR4B,
+> +	F_TMPTHR4A,
+> +	F_TMPTHR5B,
+> +	F_TMPTHR5A,
+> +	F_IBATP_TH_SET,
+> +	F_IBATM_TH_SET,
+> +	F_VBAT_TH_SET,
+> +	F_THERM_TH_SET,
+> +	F_IACP_TH_SET,
+> +	F_VACP_TH_SET,
+> +	F_VBUS_TH_SET,
+> +	F_VCC_TH_SET,
+> +	F_VSYS_TH_SET,
+> +	F_EXTIADP_TH_SET,
+> +	F_IBATP_VAL,
+> +	F_IBATP_AVE_VAL,
+> +	F_IBATM_VAL,
+> +	F_IBATM_AVE_VAL,
+> +	F_VBAT_VAL,
+> +	F_VBAT_AVE_VAL,
+> +	F_THERM_VAL,
+> +	F_VTH_VAL,
+> +	F_IACP_VAL,
+> +	F_IACP_AVE_VAL,
+> +	F_VACP_VAL,
+> +	F_VACP_AVE_VAL,
+> +	F_VBUS_VAL,
+> +	F_VBUS_AVE_VAL,
+> +	F_VCC_VAL,
+> +	F_VCC_AVE_VAL,
+> +	F_VSYS_VAL,
+> +	F_VSYS_AVE_VAL,
+> +	F_EXTIADP_VAL,
+> +	F_EXTIADP_AVE_VAL,
+> +	F_VACPCLPS_TH_SET,
+> +	F_INT7_SET,
+> +	F_INT6_SET,
+> +	F_INT5_SET,
+> +	F_INT4_SET,
+> +	F_INT3_SET,
+> +	F_INT2_SET,
+> +	F_INT1_SET,
+> +	F_INT0_SET,
+> +	F_VBUS_RBUV_DET,
+> +	F_VBUS_RBUV_RES,
+> +	F_VBUS_TH_DET,
+> +	F_VBUS_TH_RES,
+> +	F_VBUS_IIN_MOD,
+> +	F_VBUS_OV_DET,
+> +	F_VBUS_OV_RES,
+> +	F_VBUS_CLPS_DET,
+> +	F_VBUS_CLPS,
+> +	F_VBUS_DET,
+> +	F_VBUS_RES,
+> +	F_VCC_RBUV_DET,
+> +	F_VCC_RBUV_RES,
+> +	F_VCC_TH_DET,
+> +	F_VCC_TH_RES,
+> +	F_VCC_IIN_MOD,
+> +	F_VCC_OVP_DET,
+> +	F_VCC_OVP_RES,
+> +	F_VCC_CLPS_DET,
+> +	F_VCC_CLPS_RES,
+> +	F_VCC_DET,
+> +	F_VCC_RES,
+> +	F_TH_DET,
+> +	F_TH_RMV,
+> +	F_TMP_OUT_DET,
+> +	F_TMP_OUT_RES,
+> +	F_VBAT_TH_DET,
+> +	F_VBAT_TH_RES,
+> +	F_IBAT_SHORT_DET,
+> +	F_IBAT_SHORT_RES,
+> +	F_VBAT_OV_DET,
+> +	F_VBAT_OV_RES,
+> +	F_BAT_ASSIST_DET,
+> +	F_BAT_ASSIST_RES,
+> +	F_VSYS_TH_DET,
+> +	F_VSYS_TH_RES,
+> +	F_VSYS_OV_DET,
+> +	F_VSYS_OV_RES,
+> +	F_VSYS_SHT_DET,
+> +	F_VSYS_SHT_RES,
+> +	F_VSYS_UV_DET,
+> +	F_VSYS_UV_RES,
+> +	F_OTP_LOAD_DONE,
+> +	F_PWR_ON,
+> +	F_EXTIADP_TRNS,
+> +	F_EXTIADP_TH_DET,
+> +	F_EXIADP_TH_RES,
+> +	F_BAT_MNT_DET,
+> +	F_BAT_MNT_RES,
+> +	F_TSD_DET,
+> +	F_TSD_RES,
+> +	F_CHGWDT_EXP,
+> +	F_THERMWDT_EXP,
+> +	F_TMP_TRNS,
+> +	F_CHG_TRNS,
+> +	F_VBUS_UCD_PORT_DET,
+> +	F_VBUS_UCD_UCHG_DET,
+> +	F_VBUS_UCD_URID_RMV,
+> +	F_VBUS_UCD_OTG_DET,
+> +	F_VBUS_UCD_URID_MOD,
+> +	F_VCC_UCD_PORT_DET,
+> +	F_VCC_UCD_UCHG_DET,
+> +	F_VCC_UCD_URID_RMV,
+> +	F_VCC_UCD_OTG_DET,
+> +	F_VCC_UCD_URID_MOD,
+> +	F_PROCHOT_DET,
+> +	F_PROCHOT_RES,
+> +	F_VACP_DET,
+> +	F_VACP_RES,
+> +	F_VACP_TH_DET,
+> +	F_VACP_TH_RES,
+> +	F_IACP_TH_DET,
+> +	F_IACP_THE_RES,
+> +	F_THERM_TH_DET,
+> +	F_THERM_TH_RES,
+> +	F_IBATM_TH_DET,
+> +	F_IBATM_TH_RES,
+> +	F_IBATP_TH_DET,
+> +	F_IBATP_TH_RES,
+> +	F_INT7_STATUS,
+> +	F_INT6_STATUS,
+> +	F_INT5_STATUS,
+> +	F_INT4_STATUS,
+> +	F_INT3_STATUS,
+> +	F_INT2_STATUS,
+> +	F_INT1_STATUS,
+> +	F_INT0_STATUS,
+> +	F_ILIM_DECREASE,
+> +	F_RESERVE_OTPREG1,
+> +	F_POWER_SAVE_MODE,
+> +	F_DEBUG_MODE_SET,
+> +	F_DEBUG0x14,
+> +	F_DEBUG0x1A,
+> +	F_MAX_FIELDS
+> +};
+> +
+> +static const struct reg_field bd9995x_reg_fields[] = {
+> +	    [F_PREV_CHGSTM_STATE] = REG_FIELD(CHGSTM_STATUS, 8, 14),
+> +	    [F_CHGSTM_STATE] = REG_FIELD(CHGSTM_STATUS, 0, 6),
+> +	    [F_VBAT_VSYS_STATUS] = REG_FIELD(VBAT_VSYS_STATUS, 0, 15),
+> +	    [F_VBUS_VCC_STATUS] = REG_FIELD(VBUS_VCC_STATUS, 0, 12),
+> +	    [F_BATTEMP] = REG_FIELD(CHGOP_STATUS, 8, 10),
+> +	    [F_VRECHG_DET] = REG_FIELD(CHGOP_STATUS, 6, 6),
+> +	    [F_RBOOST_UV] = REG_FIELD(CHGOP_STATUS, 1, 1),
+> +	    [F_RBOOSTS] = REG_FIELD(CHGOP_STATUS, 0, 0),
+> +	    [F_THERMWDT_VAL] = REG_FIELD(WDT_STATUS, 8, 15),
+> +	    [F_CHGWDT_VAL] = REG_FIELD(WDT_STATUS, 0, 7),
+> +	    [F_CUR_ILIM_VAL] = REG_FIELD(CUR_ILIM_VAL, 0, 13),
+> +	    [F_SEL_ILIM_VAL] = REG_FIELD(SEL_ILIM_VAL, 0, 13),
+> +	    [F_IBUS_LIM_SET] = REG_FIELD(IBUS_LIM_SET, 5, 13),
+> +	    [F_ICC_LIM_SET] = REG_FIELD(ICC_LIM_SET, 5, 13),
+> +	    [F_IOTG_LIM_SET] = REG_FIELD(IOTG_LIM_SET, 5, 13),
+> +	    [F_OTG_BOTH_EN] = REG_FIELD(VIN_CTRL_SET, 15, 15),
+> +	    [F_VRBOOST_TRIG] = REG_FIELD(VIN_CTRL_SET, 14, 14),
+> +	    [F_VRBOOST_EN] = REG_FIELD(VIN_CTRL_SET, 12, 13),
+> +	    [F_PP_BOTH_THRU] = REG_FIELD(VIN_CTRL_SET, 11, 11),
+> +	    [F_VIN_ORD] = REG_FIELD(VIN_CTRL_SET, 7, 7),
+> +	    [F_VBUS_EN] = REG_FIELD(VIN_CTRL_SET, 6, 6),
+> +	    [F_VCC_EN] = REG_FIELD(VIN_CTRL_SET, 5, 5),
+> +	    [F_VSYS_PRIORITY] = REG_FIELD(VIN_CTRL_SET, 4, 4),
+> +	    [F_PPC_SUB_CAP] = REG_FIELD(VIN_CTRL_SET, 2, 3),
+> +	    [F_PPC_CAP] = REG_FIELD(VIN_CTRL_SET, 0, 1),
+> +	    [F_DCP_2500_SEL] = REG_FIELD(CHGOP_SET1, 15, 15),
+> +	    [F_SDP_500_SEL] = REG_FIELD(CHGOP_SET1, 14, 14),
+> +	    [F_ILIM_AUTO_DISEN] = REG_FIELD(CHGOP_SET1, 13, 13),
+> +	    [F_VCC_BC_DISEN] = REG_FIELD(CHGOP_SET1, 11, 11),
+> +	    [F_VBUS_BC_DISEN] = REG_FIELD(CHGOP_SET1, 10, 10),
+> +	    [F_SDP_CHG_TRIG_EN] = REG_FIELD(CHGOP_SET1, 9, 9),
+> +	    [F_SDP_CHG_TRIG] = REG_FIELD(CHGOP_SET1, 8, 8),
+> +	    [F_AUTO_TOF] = REG_FIELD(CHGOP_SET1, 6, 6),
+> +	    [F_AUTO_FST] = REG_FIELD(CHGOP_SET1, 5, 5),
+> +	    [F_AUTO_RECH] = REG_FIELD(CHGOP_SET1, 3, 3),
+> +	    [F_ILIM_RESET_EN] = REG_FIELD(CHGOP_SET2, 14, 14),
+> +	    [F_DCDC_1MS_SEL] = REG_FIELD(CHGOP_SET2, 12, 13),
+> +	    [F_SEL_ILIM_DIV] = REG_FIELD(CHGOP_SET2, 10, 10),
+> +	    [F_BATT_LEARN] = REG_FIELD(CHGOP_SET2, 8, 8),
+> +	    [F_CHG_EN] = REG_FIELD(CHGOP_SET2, 7, 7),
+> +	    [F_USB_SUS] = REG_FIELD(CHGOP_SET2, 6, 6),
+> +	    [F_CHOP_SS_INIT] = REG_FIELD(CHGOP_SET2, 5, 5),
+> +	    [F_CHOP_ALL_INIT] = REG_FIELD(CHGOP_SET2, 4, 4),
+> +	    [F_DCDC_CLK_SEL] = REG_FIELD(CHGOP_SET2, 2, 3),
+> +	    [F_CHOP_SS] = REG_FIELD(CHGOP_SET2, 1, 1),
+> +	    [F_CHOP_ALL] = REG_FIELD(CHGOP_SET2, 0, 0),
+> +	    [F_VBUSCLPS_TH_SET] = REG_FIELD(VBUSCLPS_TH_SET, 7, 14),
+> +	    [F_VCCCLPS_TH_SET] = REG_FIELD(VCCCLPS_TH_SET, 7, 14),
+> +	    [F_WDT_FST] = REG_FIELD(CHGWDT_SET, 8, 15),
+> +	    [F_WDT_PRE] = REG_FIELD(CHGWDT_SET, 0, 7),
+> +	    [F_WDT_IBAT_SHORT] = REG_FIELD(BATTWDT_SET, 8, 15),
+> +	    [F_WDT_THERM] = REG_FIELD(BATTWDT_SET, 0, 7),
+> +	    [F_VSYSREG_SET] = REG_FIELD(VSYSREG_SET, 6, 14),
+> +	    [F_VSYSVAL_THH_SET] = REG_FIELD(VSYSVAL_THH_SET, 6, 14),
+> +	    [F_VSYSVAL_THL_SET] = REG_FIELD(VSYSVAL_THL_SET, 6, 14),
+> +	    [F_ITRICH_SET] = REG_FIELD(ITRICH_SET, 6, 10),
+> +	    [F_IPRECH_SET] = REG_FIELD(IPRECH_SET, 6, 10),
+> +	    [F_ICHG_SET] = REG_FIELD(ICHG_SET, 6, 13),
+> +	    [F_ITERM_SET] = REG_FIELD(ITERM_SET, 6, 10),
+> +	    [F_VPRECHG_TH_SET] = REG_FIELD(VPRECHG_TH_SET, 6, 14),
+> +	    [F_VRBOOST_SET] = REG_FIELD(VRBOOST_SET, 6, 14),
+> +	    [F_VFASTCHG_REG_SET1] = REG_FIELD(VFASTCHG_REG_SET1, 4, 14),
+> +	    [F_VFASTCHG_REG_SET2] = REG_FIELD(VFASTCHG_REG_SET2, 4, 14),
+> +	    [F_VFASTCHG_REG_SET3] = REG_FIELD(VFASTCHG_REG_SET3, 4, 14),
+> +	    [F_VRECHG_SET] = REG_FIELD(VRECHG_SET, 4, 14),
+> +	    [F_VBATOVP_SET] = REG_FIELD(VBATOVP_SET, 4, 14),
+> +	    [F_IBATM_SHORT_SET] = REG_FIELD(IBATSHORT_SET, 0, 14),
+> +	    [F_PROCHOT_DG_SET] = REG_FIELD(PROCHOT_CTRL_SET, 14, 15),
+> +	    [F_PROCHOT_ICRIT_DG_SET] = REG_FIELD(PROCHOT_CTRL_SET, 10, 11),
+> +	    [F_PROCHOT_IDCHG_DG_SET] = REG_FIELD(PROCHOT_CTRL_SET, 8, 9),
+> +	    [F_PROCHOT_EN] = REG_FIELD(PROCHOT_CTRL_SET, 0, 4),
+> +	    [F_PROCHOT_ICRIT_SET] = REG_FIELD(PROCHOT_ICRIT_SET, 0, 14),
+> +	    [F_PROCHOT_INORM_SET] = REG_FIELD(PROCHOT_INORM_SET, 0, 14),
+> +	    [F_PROCHOT_IDCHG_SET] = REG_FIELD(PROCHOT_IDCHG_SET, 0, 14),
+> +	    [F_PROCHOT_VSYS_SET] = REG_FIELD(PROCHOT_VSYS_SET, 0, 14),
+> +	    [F_IMON_INSEL] = REG_FIELD(PMON_IOUT_CTRL_SET, 9, 9),
+> +	    [F_PMON_INSEL] = REG_FIELD(PMON_IOUT_CTRL_SET, 8, 8),
+> +	    [F_IOUT_OUT_EN] = REG_FIELD(PMON_IOUT_CTRL_SET, 7, 7),
+> +	    [F_IOUT_SOURCE_SEL] = REG_FIELD(PMON_IOUT_CTRL_SET, 6, 6),
+> +	    [F_IOUT_GAIN_SET] = REG_FIELD(PMON_IOUT_CTRL_SET, 4, 5),
+> +	    [F_PMON_OUT_EN] = REG_FIELD(PMON_IOUT_CTRL_SET, 3, 3),
+> +	    [F_PMON_GAIN_SET] = REG_FIELD(PMON_IOUT_CTRL_SET, 0, 2),
+> +	    [F_PMON_DACIN_VAL] = REG_FIELD(PMON_DACIN_VAL, 0, 9),
+> +	    [F_IOUT_DACIN_VAL] = REG_FIELD(IOUT_DACIN_VAL, 0, 11),
+> +	    [F_VCC_BCSRETRY] = REG_FIELD(VCC_UCD_SET, 12, 12),
+> +	    [F_VCC_ADCRTRY] = REG_FIELD(VCC_UCD_SET, 8, 8),
+> +	    [F_VCC_USBDETEN] = REG_FIELD(VCC_UCD_SET, 7, 7),
+> +	    [F_VCC_IDRDETEN] = REG_FIELD(VCC_UCD_SET, 6, 6),
+> +	    [F_VCC_ENUMRDY] = REG_FIELD(VCC_UCD_SET, 5, 5),
+> +	    [F_VCC_ADCPOLEN] = REG_FIELD(VCC_UCD_SET, 4, 4),
+> +	    [F_VCC_DCDMODE] = REG_FIELD(VCC_UCD_SET, 3, 3),
+> +	    [F_VCC_USB_SW_EN] = REG_FIELD(VCC_UCD_SET, 1, 1),
+> +	    [F_VCC_USB_SW] = REG_FIELD(VCC_UCD_SET, 0, 0),
+> +	    [F_VCC_DCDFAIL] = REG_FIELD(VCC_UCD_STATUS, 15, 15),
+> +	    [F_VCC_CHGPORT] = REG_FIELD(VCC_UCD_STATUS, 12, 13),
+> +	    [F_VCC_PUPDET] = REG_FIELD(VCC_UCD_STATUS, 11, 11),
+> +	    [F_VCC_VBUS_VLD] = REG_FIELD(VCC_UCD_STATUS, 7, 7),
+> +	    [F_VCC_CHGDET] = REG_FIELD(VCC_UCD_STATUS, 6, 6),
+> +	    [F_VCC_OTGDET] = REG_FIELD(VCC_UCD_STATUS, 3, 3),
+> +	    [F_VCC_VBINOP] = REG_FIELD(VCC_IDD_STATUS, 6, 6),
+> +	    [F_VCC_EXTID] = REG_FIELD(VCC_IDD_STATUS, 5, 5),
+> +	    [F_VCC_IDRDET] = REG_FIELD(VCC_IDD_STATUS, 4, 4),
+> +	    [F_VCC_INDO] = REG_FIELD(VCC_IDD_STATUS, 0, 3),
+> +	    [F_VCC_UCDSWEN] = REG_FIELD(VCC_UCD_FCTRL_SET, 10, 10),
+> +	    [F_VCC_RREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 9, 9),
+> +	    [F_VCC_DPPU_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 8, 8),
+> +	    [F_VCC_DPREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 7, 7),
+> +	    [F_VCC_DMREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 6, 6),
+> +	    [F_VCC_DPDET_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 5, 5),
+> +	    [F_VCC_DMDET_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 4, 4),
+> +	    [F_VCC_DPSINK_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 3, 3),
+> +	    [F_VCC_DMSINK_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 2, 2),
+> +	    [F_VCC_DP_BUFF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 1, 1),
+> +	    [F_VCC_DM_BUFF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 0, 0),
+> +	    [F_VCC_EXTCLKENBL] = REG_FIELD(VCC_UCD_FCTRL_EN, 15, 15),
+> +	    [F_VCC_PLSTESTEN] = REG_FIELD(VCC_UCD_FCTRL_EN, 14, 14),
+> +	    [F_VCC_UCDSWEN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 10, 10),
+> +	    [F_VCC_RREF_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 9, 9),
+> +	    [F_VCC_DPPU_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 8, 8),
+> +	    [F_VCC_DPREF_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 7, 7),
+> +	    [F_VCC_DMREF_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 6, 6),
+> +	    [F_VCC_DPDET_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 5, 5),
+> +	    [F_VCC_DMDET_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 4, 4),
+> +	    [F_VCC_DPSINK_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 3, 3),
+> +	    [F_VCC_DMSINK_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 2, 2),
+> +	    [F_VCC_DP_BUFF_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 1, 1),
+> +	    [F_VCC_DM_BUFF_EN_TSTENB] = REG_FIELD(VCC_UCD_FCTRL_EN, 0, 0),
+> +
+> +	    [F_VBUS_BCSRETRY] = REG_FIELD(VBUS_UCD_SET, 12, 12),
+> +	    [F_VBUS_ADCRTRY] = REG_FIELD(VBUS_UCD_SET, 8, 8),
+> +	    [F_VBUS_USBDETEN] = REG_FIELD(VBUS_UCD_SET, 7, 7),
+> +	    [F_VBUS_IDRDETEN] = REG_FIELD(VBUS_UCD_SET, 6, 6),
+> +	    [F_VBUS_ENUMRDY] = REG_FIELD(VBUS_UCD_SET, 5, 5),
+> +	    [F_VBUS_ADCPOLEN] = REG_FIELD(VBUS_UCD_SET, 4, 4),
+> +	    [F_VBUS_DCDMODE] = REG_FIELD(VBUS_UCD_SET, 3, 3),
+> +	    [F_VBUS_USB_SW_EN] = REG_FIELD(VBUS_UCD_SET, 1, 1),
+> +	    [F_VBUS_USB_SW] = REG_FIELD(VBUS_UCD_SET, 0, 0),
+> +	    [F_VBUS_DCDFAIL] = REG_FIELD(VBUS_UCD_STATUS, 15, 15),
+> +	    [F_VBUS_CHGPORT] = REG_FIELD(VBUS_UCD_STATUS, 12, 13),
+> +	    [F_VBUS_PUPDET] = REG_FIELD(VBUS_UCD_STATUS, 11, 11),
+> +	    [F_VBUS_VBUS_VLD] = REG_FIELD(VBUS_UCD_STATUS, 7, 7),
+> +	    [F_VBUS_CHGDET] = REG_FIELD(VBUS_UCD_STATUS, 6, 6),
+> +	    [F_VBUS_OTGDET] = REG_FIELD(VBUS_UCD_STATUS, 3, 3),
+> +	    [F_VBUS_VBINOP] = REG_FIELD(VBUS_IDD_STATUS, 6, 6),
+> +	    [F_VBUS_EXTID] = REG_FIELD(VBUS_IDD_STATUS, 5, 5),
+> +	    [F_VBUS_IDRDET] = REG_FIELD(VBUS_IDD_STATUS, 4, 4),
+> +	    [F_VBUS_INDO] = REG_FIELD(VBUS_IDD_STATUS, 0, 3),
+> +	    [F_VBUS_UCDSWEN] = REG_FIELD(VCC_UCD_FCTRL_SET, 10, 10),
+> +	    [F_VBUS_RREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 9, 9),
+> +	    [F_VBUS_DPPU_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 8, 8),
+> +	    [F_VBUS_DPREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 7, 7),
+> +	    [F_VBUS_DMREF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 6, 6),
+> +	    [F_VBUS_DPDET_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 5, 5),
+> +	    [F_VBUS_DMDET_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 4, 4),
+> +	    [F_VBUS_DPSINK_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 3, 3),
+> +	    [F_VBUS_DMSINK_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 2, 2),
+> +	    [F_VBUS_DP_BUFF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 1, 1),
+> +	    [F_VBUS_DM_BUFF_EN] = REG_FIELD(VCC_UCD_FCTRL_SET, 0, 0),
+> +
+> +	    [F_VBUS_EXTCLKENBL] = REG_FIELD(VBUS_UCD_FCTRL_EN, 15, 15),
+> +	    [F_VBUS_PLSTESTEN] = REG_FIELD(VBUS_UCD_FCTRL_EN, 14, 14),
+> +	    [F_VBUS_UCDSWEN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 10, 10),
+> +	    [F_VBUS_RREF_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 9, 9),
+> +	    [F_VBUS_DPPU_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 8, 8),
+> +	    [F_VBUS_DPREF_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 7, 7),
+> +	    [F_VBUS_DMREF_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 6, 6),
+> +	    [F_VBUS_DPDET_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 5, 5),
+> +	    [F_VBUS_DMDET_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 4, 4),
+> +	    [F_VBUS_DPSINK_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 3, 3),
+> +	    [F_VBUS_DMSINK_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 2, 2),
+> +	    [F_VBUS_DP_BUFF_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 1, 1),
+> +	    [F_VBUS_DM_BUFF_EN_TSTENB] = REG_FIELD(VBUS_UCD_FCTRL_EN, 0, 0),
+> +
+> +	    [F_CHIP_ID] = REG_FIELD(CHIP_ID, 0, 15),
+> +	    [F_CHIP_REV] = REG_FIELD(CHIP_REV, 0, 15),
+> +	    [F_ONE_CELL_MODE] = REG_FIELD(IC_SET1, 11, 11),
+> +	    [F_cell] = REG_FIELD(IC_SET1, 1, 1),
+> +	    [F_VACP_AUTO_DISCHG] = REG_FIELD(IC_SET1, 9, 9),
+> +	    [F_VACP_LOAD] = REG_FIELD(IC_SET1, 8, 8),
+> +	    [F_ACOK_POL] = REG_FIELD(IC_SET1, 1, 1),
+> +	    [F_ACOK_DISEN] = REG_FIELD(IC_SET1, 0, 0),
+> +	    [F_DEBUG_SET1] = REG_FIELD(IC_SET2, 4, 8),
+> +	    [F_DEBUG_SET0] = REG_FIELD(IC_SET2, 0, 0),
+> +	    [F_MONRST_STATE] = REG_FIELD(SYSTEM_STATUS, 6, 6),
+> +	    [F_ALMRST_STATE] = REG_FIELD(SYSTEM_STATUS, 5, 5),
+> +	    [F_CHGRST_STATE] = REG_FIELD(SYSTEM_STATUS, 4, 4),
+> +	    [F_OTPLD_STATE] = REG_FIELD(SYSTEM_STATUS, 1, 1),
+> +	    [F_ALLRST_STATE] = REG_FIELD(SYSTEM_STATUS, 0, 0),
+> +	    [F_PROTECT_SET] = REG_FIELD(PROTECT_SET, 0, 15),
+> +	    [F_MAP_SET] = REG_FIELD(MAP_SET, 0, 15),
+> +	    [F_ADCINTERVAL] = REG_FIELD(VM_CTRL_SET, 14, 15),
+> +	    [F_ADCMOD] = REG_FIELD(VM_CTRL_SET, 12, 13),
+> +	    [F_ADCTMOD] = REG_FIELD(VM_CTRL_SET, 10, 11),
+> +	    [F_EXTIADPEN] = REG_FIELD(VM_CTRL_SET, 9, 9),
+> +	    [F_VSYSENB] = REG_FIELD(VM_CTRL_SET, 8, 8),
+> +	    [F_VCCENB] = REG_FIELD(VM_CTRL_SET, 7, 7),
+> +	    [F_VBUSENB] = REG_FIELD(VM_CTRL_SET, 6, 6),
+> +	    [F_VACPENB] = REG_FIELD(VM_CTRL_SET, 5, 5),
+> +	    [F_IACPENB] = REG_FIELD(VM_CTRL_SET, 4, 4),
+> +	    [F_THERMENB] = REG_FIELD(VM_CTRL_SET, 3, 3),
+> +	    [F_VBATENB] = REG_FIELD(VM_CTRL_SET, 2, 2),
+> +	    [F_IBATMENB] = REG_FIELD(VM_CTRL_SET, 1, 1),
+> +	    [F_IBATPENB] = REG_FIELD(VM_CTRL_SET, 0, 0),
+> +	    [F_TMPTHR1B] = REG_FIELD(THERM_WINDOW_SET1, 8, 15),
+> +	    [F_TMPTHR1A] = REG_FIELD(THERM_WINDOW_SET1, 0, 7),
+> +	    [F_TMPTHR2B] = REG_FIELD(THERM_WINDOW_SET2, 8, 15),
+> +	    [F_TMPTHR2A] = REG_FIELD(THERM_WINDOW_SET2, 0, 7),
+> +	    [F_TMPTHR3B] = REG_FIELD(THERM_WINDOW_SET3, 8, 15),
+> +	    [F_TMPTHR3A] = REG_FIELD(THERM_WINDOW_SET3, 0, 7),
+> +	    [F_TMPTHR4B] = REG_FIELD(THERM_WINDOW_SET4, 8, 15),
+> +	    [F_TMPTHR4A] = REG_FIELD(THERM_WINDOW_SET4, 0, 7),
+> +	    [F_TMPTHR5B] = REG_FIELD(THERM_WINDOW_SET5, 8, 15),
+> +	    [F_TMPTHR5A] = REG_FIELD(THERM_WINDOW_SET5, 0, 7),
+> +	    [F_IBATP_TH_SET] = REG_FIELD(IBATP_TH_SET, 0, 14),
+> +	    [F_IBATM_TH_SET] = REG_FIELD(IBATM_TH_SET, 0, 14),
+> +	    [F_VBAT_TH_SET] = REG_FIELD(VBAT_TH_SET, 0, 14),
+> +	    [F_THERM_TH_SET] = REG_FIELD(THERM_TH_SET, 0, 7),
+> +	    [F_IACP_TH_SET] = REG_FIELD(IACP_TH_SET, 0, 14),
+> +	    [F_VACP_TH_SET] = REG_FIELD(VACP_TH_SET, 0, 14),
+> +	    [F_VBUS_TH_SET] = REG_FIELD(VBUS_TH_SET, 0, 14),
+> +	    [F_VCC_TH_SET] = REG_FIELD(VCC_TH_SET, 0, 14),
+> +	    [F_VSYS_TH_SET] = REG_FIELD(VSYS_TH_SET, 0, 14),
+> +	    [F_EXTIADP_TH_SET] = REG_FIELD(EXTIADP_TH_SET, 0, 11),
+> +	    [F_IBATP_VAL] = REG_FIELD(IBATP_VAL, 0, 14),
+> +	    [F_IBATP_AVE_VAL] = REG_FIELD(IBATP_AVE_VAL, 0, 14),
+> +	    [F_IBATM_VAL] = REG_FIELD(IBATM_VAL, 0, 14),
+> +	    [F_IBATM_AVE_VAL] = REG_FIELD(IBATM_AVE_VAL, 0, 14),
+> +	    [F_VBAT_VAL] = REG_FIELD(VBAT_VAL, 0, 14),
+> +	    [F_VBAT_AVE_VAL] = REG_FIELD(VBAT_AVE_VAL, 0, 14),
+> +	    [F_THERM_VAL] = REG_FIELD(THERM_VAL, 0, 7),
+> +	    [F_VTH_VAL] = REG_FIELD(VTH_VAL, 0, 11),
+> +	    [F_IACP_VAL] = REG_FIELD(IACP_VAL, 0, 14),
+> +	    [F_IACP_AVE_VAL] = REG_FIELD(IACP_AVE_VAL, 0, 14),
+> +	    [F_VACP_VAL] = REG_FIELD(VACP_VAL, 0, 14),
+> +	    [F_VACP_AVE_VAL] = REG_FIELD(VACP_AVE_VAL, 0, 14),
+> +	    [F_VBUS_VAL] = REG_FIELD(VBUS_VAL, 0, 14),
+> +	    [F_VBUS_AVE_VAL] = REG_FIELD(VBUS_AVE_VAL, 0, 14),
+> +	    [F_VCC_VAL] = REG_FIELD(VCC_VAL, 0, 14),
+> +	    [F_VCC_AVE_VAL] = REG_FIELD(VCC_AVE_VAL, 0, 14),
+> +	    [F_VSYS_VAL] = REG_FIELD(VSYS_VAL, 0, 14),
+> +	    [F_VSYS_AVE_VAL] = REG_FIELD(VSYS_AVE_VAL, 0, 14),
+> +	    [F_EXTIADP_VAL] = REG_FIELD(EXTIADP_VAL, 0, 11),
+> +	    [F_EXTIADP_AVE_VAL] = REG_FIELD(EXTIADP_AVE_VAL, 0, 11),
+> +	    [F_VACPCLPS_TH_SET] = REG_FIELD(VACPCLPS_TH_SET, 7, 14),
+> +	    [F_INT7_SET] = REG_FIELD(INT7_SET, 0, 15),
+> +	    [F_INT6_SET] = REG_FIELD(INT6_SET, 0, 13),
+> +	    [F_INT5_SET] = REG_FIELD(INT5_SET, 0, 13),
+> +	    [F_INT4_SET] = REG_FIELD(INT4_SET, 0, 9),
+> +	    [F_INT3_SET] = REG_FIELD(INT3_SET, 0, 15),
+> +	    [F_INT2_SET] = REG_FIELD(INT2_SET, 0, 15),
+> +	    [F_INT1_SET] = REG_FIELD(INT1_SET, 0, 15),
+> +	    [F_INT0_SET] = REG_FIELD(INT0_SET, 0, 7),
+> +	    [F_VBUS_RBUV_DET] = REG_FIELD(INT1_SET, 15, 15),
+> +	    [F_VBUS_RBUV_RES] = REG_FIELD(INT1_SET, 14, 14),
+> +	    [F_VBUS_TH_DET] = REG_FIELD(INT1_SET, 9, 9),
+> +	    [F_VBUS_TH_RES] = REG_FIELD(INT1_SET, 8, 8),
+> +	    [F_VBUS_IIN_MOD] = REG_FIELD(INT1_SET, 6, 6),
+> +	    [F_VBUS_OV_DET] = REG_FIELD(INT1_SET, 5, 5),
+> +	    [F_VBUS_OV_RES] = REG_FIELD(INT1_SET, 4, 4),
+> +	    [F_VBUS_CLPS_DET] = REG_FIELD(INT1_SET, 3, 3),
+> +	    [F_VBUS_CLPS] = REG_FIELD(INT1_SET, 2, 2),
+> +	    [F_VBUS_DET] = REG_FIELD(INT1_SET, 1, 1),
+> +	    [F_VBUS_RES] = REG_FIELD(INT1_SET, 0, 0),
+> +	    [F_VCC_RBUV_DET] = REG_FIELD(INT2_SET, 15, 15),
+> +	    [F_VCC_RBUV_RES] = REG_FIELD(INT2_SET, 14, 14),
+> +	    [F_VCC_TH_DET] = REG_FIELD(INT2_SET, 9, 9),
+> +	    [F_VCC_TH_RES] = REG_FIELD(INT2_SET, 8, 8),
+> +	    [F_VCC_IIN_MOD] = REG_FIELD(INT2_SET, 6, 6),
+> +	    [F_VCC_OVP_DET] = REG_FIELD(INT2_SET, 5, 5),
+> +	    [F_VCC_OVP_RES] = REG_FIELD(INT2_SET, 4, 4),
+> +	    [F_VCC_CLPS_DET] = REG_FIELD(INT2_SET, 3, 3),
+> +	    [F_VCC_CLPS_RES] = REG_FIELD(INT2_SET, 2, 2),
+> +	    [F_VCC_DET] = REG_FIELD(INT2_SET, 1, 1),
+> +	    [F_VCC_RES] = REG_FIELD(INT2_SET, 0, 0),
+> +	    [F_TH_DET] = REG_FIELD(INT3_SET, 15, 15),
+> +	    [F_TH_RMV] = REG_FIELD(INT3_SET, 14, 14),
+> +	    [F_TMP_OUT_DET] = REG_FIELD(INT3_SET, 11, 11),
+> +	    [F_TMP_OUT_RES] = REG_FIELD(INT3_SET, 10, 10),
+> +	    [F_VBAT_TH_DET] = REG_FIELD(INT3_SET, 9, 9),
+> +	    [F_VBAT_TH_RES] = REG_FIELD(INT3_SET, 8, 8),
+> +	    [F_IBAT_SHORT_DET] = REG_FIELD(INT3_SET, 7, 7),
+> +	    [F_IBAT_SHORT_RES] = REG_FIELD(INT3_SET, 6, 6),
+> +	    [F_VBAT_OV_DET] = REG_FIELD(INT3_SET, 5, 5),
+> +	    [F_VBAT_OV_RES] = REG_FIELD(INT3_SET, 4, 4),
+> +	    [F_BAT_ASSIST_DET] = REG_FIELD(INT3_SET, 3, 3),
+> +	    [F_BAT_ASSIST_RES] = REG_FIELD(INT3_SET, 2, 2),
+> +	    [F_VSYS_TH_DET] = REG_FIELD(INT4_SET, 9, 9),
+> +	    [F_VSYS_TH_RES] = REG_FIELD(INT4_SET, 8, 8),
+> +	    [F_VSYS_OV_DET] = REG_FIELD(INT4_SET, 5, 5),
+> +	    [F_VSYS_OV_RES] = REG_FIELD(INT4_SET, 4, 4),
+> +	    [F_VSYS_SHT_DET] = REG_FIELD(INT4_SET, 3, 3),
+> +	    [F_VSYS_SHT_RES] = REG_FIELD(INT4_SET, 2, 2),
+> +	    [F_VSYS_UV_DET] = REG_FIELD(INT4_SET, 1, 1),
+> +	    [F_VSYS_UV_RES] = REG_FIELD(INT4_SET, 0, 0),
+> +	    [F_OTP_LOAD_DONE] = REG_FIELD(INT5_SET, 13, 13),
+> +	    [F_PWR_ON] = REG_FIELD(INT5_SET, 12, 12),
+> +	    [F_EXTIADP_TRNS] = REG_FIELD(INT5_SET, 11, 11),
+> +	    [F_EXTIADP_TH_DET] = REG_FIELD(INT5_SET, 9, 9),
+> +	    [F_EXIADP_TH_RES] = REG_FIELD(INT5_SET, 8, 8),
+> +	    [F_BAT_MNT_DET] = REG_FIELD(INT5_SET, 7, 7),
+> +	    [F_BAT_MNT_RES] = REG_FIELD(INT5_SET, 6, 6),
+> +	    [F_TSD_DET] = REG_FIELD(INT5_SET, 5, 5),
+> +	    [F_TSD_RES] = REG_FIELD(INT5_SET, 4, 4),
+> +	    [F_CHGWDT_EXP] = REG_FIELD(INT5_SET, 3, 3),
+> +	    [F_THERMWDT_EXP] = REG_FIELD(INT5_SET, 2, 2),
+> +	    [F_TMP_TRNS] = REG_FIELD(INT5_SET, 1, 1),
+> +	    [F_CHG_TRNS] = REG_FIELD(INT5_SET, 0, 0),
+> +	    [F_VBUS_UCD_PORT_DET] = REG_FIELD(INT6_SET, 13, 13),
+> +	    [F_VBUS_UCD_UCHG_DET] = REG_FIELD(INT6_SET, 12, 12),
+> +	    [F_VBUS_UCD_URID_RMV] = REG_FIELD(INT6_SET, 11, 11),
+> +	    [F_VBUS_UCD_OTG_DET] = REG_FIELD(INT6_SET, 10, 10),
+> +	    [F_VBUS_UCD_URID_MOD] = REG_FIELD(INT6_SET, 8, 8),
+> +	    [F_VCC_UCD_PORT_DET] = REG_FIELD(INT6_SET, 5, 5),
+> +	    [F_VCC_UCD_UCHG_DET] = REG_FIELD(INT6_SET, 4, 4),
+> +	    [F_VCC_UCD_URID_RMV] = REG_FIELD(INT6_SET, 3, 3),
+> +	    [F_VCC_UCD_OTG_DET] = REG_FIELD(INT6_SET, 2, 2),
+> +	    [F_VCC_UCD_URID_MOD] = REG_FIELD(INT6_SET, 0, 0),
+> +	    [F_PROCHOT_DET] = REG_FIELD(INT7_SET, 15, 15),
+> +	    [F_PROCHOT_RES] = REG_FIELD(INT7_SET, 14, 14),
+> +	    [F_VACP_DET] = REG_FIELD(INT7_SET, 11, 11),
+> +	    [F_VACP_RES] = REG_FIELD(INT7_SET, 10, 10),
+> +	    [F_VACP_TH_DET] = REG_FIELD(INT7_SET, 9, 9),
+> +	    [F_VACP_TH_RES] = REG_FIELD(INT7_SET, 8, 8),
+> +	    [F_IACP_TH_DET] = REG_FIELD(INT7_SET, 7, 7),
+> +	    [F_IACP_THE_RES] = REG_FIELD(INT7_SET, 6, 6),
+> +	    [F_THERM_TH_DET] = REG_FIELD(INT7_SET, 5, 5),
+> +	    [F_THERM_TH_RES] = REG_FIELD(INT7_SET, 4, 4),
+> +	    [F_IBATM_TH_DET] = REG_FIELD(INT7_SET, 3, 3),
+> +	    [F_IBATM_TH_RES] = REG_FIELD(INT7_SET, 2, 2),
+> +	    [F_IBATP_TH_DET] = REG_FIELD(INT7_SET, 1, 1),
+> +	    [F_IBATP_TH_RES] = REG_FIELD(INT7_SET, 0, 0),
+> +	    [F_INT7_STATUS] = REG_FIELD(INT7_STATUS, 0, 15),
+> +	    [F_INT6_STATUS] = REG_FIELD(INT6_STATUS, 0, 13),
+> +	    [F_INT5_STATUS] = REG_FIELD(INT5_STATUS, 0, 13),
+> +	    [F_INT4_STATUS] = REG_FIELD(INT4_STATUS, 0, 9),
+> +	    [F_INT3_STATUS] = REG_FIELD(INT3_STATUS, 0, 15),
+> +	    [F_INT2_STATUS] = REG_FIELD(INT2_STATUS, 0, 15),
+> +	    [F_INT1_STATUS] = REG_FIELD(INT1_STATUS, 0, 15),
+> +	    [F_INT0_STATUS] = REG_FIELD(INT0_STATUS, 0, 7),
+> +	    [F_ILIM_DECREASE] = REG_FIELD(OTPREG0, 0, 15),
+> +	    [F_RESERVE_OTPREG1] = REG_FIELD(OTPREG1, 0, 15),
+> +	    [F_POWER_SAVE_MODE] = REG_FIELD(SMBREG, 0, 15),
+> +	    [F_DEBUG_MODE_SET] = REG_FIELD(DEBUG_MODE_SET, 0, 15),
+> +	    [F_DEBUG0x14] = REG_FIELD(DEBUG0x14, 0, 15),
+> +	    [F_DEBUG0x1A] = REG_FIELD(DEBUG0x1A, 0, 15),
+> +};
+> +
+> +/* CHGSTM_STATEs */
+> +#define CHGSTM_SUSPEND 0x00
+> +#define CHGSTM_TRICKLE_CHARGE 0x01
+> +#define CHGSTM_PRE_CHARGE 0x02
+> +#define CHGSTM_FAST_CHARGE 0x03
+> +#define CHGSTM_TOP_OFF 0x04
+> +#define CHGSTM_DONE 0x05
+> +#define CHGSTM_OTG 0x08
+> +#define CHGSTM_OTG_DONE 0x09
+> +#define CHGSTM_TEMPERATURE_ERROR_1 0x10
+> +#define CHGSTM_TEMPERATURE_ERROR_2 0x11
+> +#define CHGSTM_TEMPERATURE_ERROR_3 0x12
+> +#define CHGSTM_TEMPERATURE_ERROR_4 0x13
+> +#define CHGSTM_TEMPERATURE_ERROR_5 0x14
+> +#define CHGSTM_TEMPERATURE_ERROR_6 0x15
+> +#define CHGSTM_TEMPERATURE_ERROR_7 0x18
+> +#define CHGSTM_THERMAL_SHUT_DOWN_1 0x20
+> +#define CHGSTM_THERMAL_SHUT_DOWN_2 0x21
+> +#define CHGSTM_THERMAL_SHUT_DOWN_3 0x22
+> +#define CHGSTM_THERMAL_SHUT_DOWN_4 0x23
+> +#define CHGSTM_THERMAL_SHUT_DOWN_5 0x24
+> +#define CHGSTM_THERMAL_SHUT_DOWN_6 0x25
+> +#define CHGSTM_THERMAL_SHUT_DOWN_7 0x28
+> +#define CHGSTM_BATTERY_ERROR 0x40
+> +
+> +/* VBAT_VSYS_STATUS */
+> +#define STATUS_VSYS_OV BIT(15)
+> +#define STATUS_VSYS_SSD BIT(14)
+> +#define STATUS_VSYS_SCP BIT(13)
+> +#define STATUS_VSYS_UVN BIT(12)
+> +#define STATUS_IBAT_SHORT BIT(6)
+> +#define STATUS_VBAT_OV BIT(3)
+> +#define STATUS_DEAD_BAT BIT(0)
+> +
+> +/* VBUS_VCC_STATUS */
+> +#define STATUS_VACP_DET BIT(12)
+> +#define STATUS_VCC_OVP BIT(11)
+> +#define STATUS_ILIM_VCC_MOD BIT(10)
+> +#define STATUS_VCC_CLPS BIT(9)
+> +#define STATUS_VCC_DET BIT(8)
+> +#define STATUS_VBUS_OVP BIT(3)
+> +#define STATUS_ILIM_VBUS_MOD BIT(2)
+> +#define STATUS_VBUS_CLPS BIT(1)
+> +#define STATUS_VBUS_DET BIT(0)
+> +
+> +/* Interrupt set/status definitions */
+> +
+> +/* INT 0 */
+> +#define INT0_INT7_STATUS BIT(7)
+> +#define INT0_INT6_STATUS BIT(6)
+> +#define INT0_INT5_STATUS BIT(5)
+> +#define INT0_INT4_STATUS BIT(4)
+> +#define INT0_INT3_STATUS BIT(3)
+> +#define INT0_INT2_STATUS BIT(2)
+> +#define INT0_INT1_STATUS BIT(1)
+> +#define INT0_INT0_STATUS BIT(0)
+> +#define INT0_ALL 0xff
+> +
+> +/* INT 1 */
+> +#define VBUS_RBUV_DET BIT(15)
+> +#define VBUS_RBUV_RES BIT(14)
+> +#define VBUS_TH_DET BIT(9)
+> +#define VBUS_TH_RES BIT(8)
+> +#define VBUS_IIN_MOD BIT(6)
+> +#define VBUS_OV_DET BIT(5)
+> +#define VBUS_OV_RES BIT(4)
+> +#define VBUS_CLPS_DET BIT(3)
+> +#define VBUS_CLPS BIT(2)
+> +#define VBUS_DET BIT(1)
+> +#define VBUS_RES BIT(0)
+> +#define INT1_ALL (VBUS_RBUV_DET|\
+> +		 VBUS_RBUV_RES|\
+> +		 VBUS_TH_DET |\
+> +		 VBUS_TH_RES |\
+> +		 VBUS_IIN_MOD|\
+> +		 VBUS_OV_DET |\
+> +		 VBUS_OV_RES |\
+> +		 VBUS_CLPS_DET |\
+> +		 VBUS_CLPS |\
+> +		 VBUS_DET |\
+> +		 VBUS_RES)
+> +
+> +/* INT 2 */
+> +#define VCC_RBUV_DET BIT(15)
+> +#define VCC_RBUV_RES BIT(14)
+> +#define VCC_TH_DET BIT(9)
+> +#define VCC_TH_RES BIT(8)
+> +#define VCC_IIN_MOD BIT(6)
+> +#define VCC_OVP_DET BIT(5)
+> +#define VCC_OVP_RES BIT(4)
+> +#define VCC_CLPS_DET BIT(3)
+> +#define VCC_CLPS_RES BIT(2)
+> +#define VCC_DET BIT(1)
+> +#define VCC_RES BIT(0)
+> +#define INT2_ALL (VCC_RBUV_DET |\
+> +		 VCC_RBUV_RES |\
+> +		 VCC_TH_DET |\
+> +		 VCC_TH_RES |\
+> +		 VCC_IIN_MOD |\
+> +		 VCC_OVP_DET |\
+> +		 VCC_OVP_RES |\
+> +		 VCC_CLPS_DET |\
+> +		 VCC_CLPS_RES |\
+> +		 VCC_DET |\
+> +		 VCC_RES)
+> +/* INT 3 */
+> +#define TH_DET BIT(15)
+> +#define TH_RMV BIT(14)
+> +#define TMP_OUT_DET BIT(11)
+> +#define TMP_OUT_RES BIT(10)
+> +#define VBAT_TH_DET BIT(9)
+> +#define VBAT_TH_RES BIT(8)
+> +#define IBAT_SHORT_DET BIT(7)
+> +#define IBAT_SHORT_RES BIT(6)
+> +#define VBAT_OV_DET BIT(5)
+> +#define VBAT_OV_RES BIT(4)
+> +#define BAT_ASSIST_DET BIT(3)
+> +#define BAT_ASSIST_RES BIT(2)
+> +#define INT3_ALL (TH_DET |\
+> +		 TH_RMV |\
+> +		 TMP_OUT_DET |\
+> +		 TMP_OUT_RES |\
+> +		 VBAT_TH_DET |\
+> +		 VBAT_TH_RES |\
+> +		 IBAT_SHORT_DET |\
+> +		 IBAT_SHORT_RES |\
+> +		 VBAT_OV_DET |\
+> +		 VBAT_OV_RES |\
+> +		 BAT_ASSIST_DET |\
+> +		 BAT_ASSIST_RES)
+> +
+> +/* INT 4 */
+> +#define VSYS_TH_DET BIT(9)
+> +#define VSYS_TH_RES BIT(8)
+> +#define VSYS_OV_DET BIT(5)
+> +#define VSYS_OV_RES BIT(4)
+> +#define VSYS_SHT_DET BIT(3)
+> +#define VSYS_SHT_RES BIT(2)
+> +#define VSYS_UV_DET BIT(1)
+> +#define VSYS_UV_RES BIT(0)
+> +#define INT4_ALL (VSYS_TH_DET |\
+> +		 VSYS_TH_RES |\
+> +		 VSYS_OV_DET |\
+> +		 VSYS_OV_RES |\
+> +		 VSYS_SHT_DET |\
+> +		 VSYS_SHT_RES |\
+> +		 VSYS_UV_DET |\
+> +		 VSYS_UV_RES)
+> +
+> +/* INT 5*/
+> +#define OTP_LOAD_DONE BIT(13)
+> +#define PWR_ON BIT(12)
+> +#define EXTIADP_TRNS BIT(11)
+> +#define EXTIADP_TH_DET BIT(9)
+> +#define EXIADP_TH_RES BIT(8)
+> +#define BAT_MNT_DET BIT(7)
+> +#define BAT_MNT_RES BIT(6)
+> +#define TSD_DET BIT(5)
+> +#define TSD_RES BIT(4)
+> +#define CHGWDT_EXP BIT(3)
+> +#define THERMWDT_EXP BIT(2)
+> +#define TMP_TRNS BIT(1)
+> +#define CHG_TRNS BIT(0)
+> +#define INT5_ALL (OTP_LOAD_DONE |\
+> +		 PWR_ON |\
+> +		 EXTIADP_TRNS |\
+> +		 EXTIADP_TH_DET |\
+> +		 EXIADP_TH_RES |\
+> +		 BAT_MNT_DET |\
+> +		 BAT_MNT_RES |\
+> +		 TSD_DET |\
+> +		 TSD_RES |\
+> +		 CHGWDT_EXP |\
+> +		 THERMWDT_EXP |\
+> +		 TMP_TRNS |\
+> +		 CHG_TRNS)
+> +
+> +/* INT 6*/
+> +#define VBUS_UCD_PORT_DET BIT(13)
+> +#define VBUS_UCD_UCHG_DET BIT(12)
+> +#define VBUS_UCD_URID_RMV BIT(11)
+> +#define VBUS_UCD_OTG_DET BIT(10)
+> +#define VBUS_UCD_URID_MOD BIT(8)
+> +#define VCC_UCD_PORT_DET BIT(5)
+> +#define VCC_UCD_UCHG_DET BIT(4)
+> +#define VCC_UCD_URID_RMV BIT(3)
+> +#define VCC_UCD_OTG_DET BIT(2)
+> +#define VCC_UCD_URID_MOD BIT(0)
+> +#define INT6_ALL (VBUS_UCD_PORT_DET |\
+> +		 VBUS_UCD_UCHG_DET |\
+> +		 VBUS_UCD_URID_RMV |\
+> +		 VBUS_UCD_OTG_DET |\
+> +		 VBUS_UCD_URID_MOD |\
+> +		 VCC_UCD_PORT_DET |\
+> +		 VCC_UCD_UCHG_DET |\
+> +		 VCC_UCD_URID_RMV |\
+> +		 VCC_UCD_OTG_DET |\
+> +		 VCC_UCD_URID_MOD)
+> +
+> +/* INT 7 */
+> +#define PROCHOT_DET BIT(15)
+> +#define PROCHOT_RES BIT(14)
+> +#define VACP_DET BIT(11)
+> +#define VACP_RES BIT(10)
+> +#define VACP_TH_DET BIT(9)
+> +#define VACP_TH_RES BIT(8)
+> +#define IACP_TH_DET BIT(7)
+> +#define IACP_THE_RES BIT(6)
+> +#define THERM_TH_DET BIT(5)
+> +#define THERM_TH_RES BIT(4)
+> +#define IBATM_TH_DET BIT(3)
+> +#define IBATM_TH_RES BIT(2)
+> +#define IBATP_TH_DET BIT(1)
+> +#define IBATP_TH_RES BIT(0)
+> +#define INT7_ALL (PROCHOT_DET |\
+> +		 PROCHOT_RES |\
+> +		 VACP_DET |\
+> +		 VACP_RES |\
+> +		 VACP_TH_DET |\
+> +		 VACP_TH_RES |\
+> +		 IACP_TH_DET |\
+> +		 IACP_THE_RES |\
+> +		 THERM_TH_DET |\
+> +		 THERM_TH_RES |\
+> +		 IBATM_TH_DET |\
+> +		 IBATM_TH_RES |\
+> +		 IBATP_TH_DET |\
+> +		 IBATP_TH_RES)
+> +
+> +/* SYSTEM_CTRL_SET*/
+> +#define MONRST BIT(6)
+> +#define ALMRST BIT(5)
+> +#define CHGRST BIT(4)
+> +#define OTPLD  BIT(1)
+> +#define ALLRST BIT(0)
+> +
+> +/* F_BATTEMP */
+> +#define ROOM		0x0
+> +#define HOT1		0x1
+> +#define HOT2		0x2
+> +#define HOT3		0x3
+> +#define COLD1		0x4
+> +#define COLD2		0x5
+> +#define TEMP_DIS	0x6
+> +#define BATT_OPEN	0x7
+> +
+> +#endif
+> -- 
+> 2.21.0
+> 
+> 
+> -- 
+> Matti Vaittinen, Linux device drivers
+> ROHM Semiconductors, Finland SWDC
+> Kiviharjunlenkki 1E
+> 90220 OULU
+> FINLAND
+> 
+> ~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
+> Simon says - in Latin please.
+> ~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
+> Thanks to Simon Glass for the translation =] 
 
-v6: add space to arounding '+'.
-    alignment 'struct mtk_jpeg_fmt *fmt' match open parenthesis.
-    change 'mtk_jpeg_enc_set_encFormat' to 'mtk_jpeg_enc_set_enc_format'.
-    make 'mtk_jpeg_ctrls_setup' to static prototype.
-    delete unused variables 'jpeg'/'align_h'/'align_w'/'flags'.
-    initialize 'yuv_format'/'enc_quality' variables.
-    
-v5: support crop for encoder and compose for decoder in s_selection and
-    g_selection function.
-    use clamp() to replace mtk_jpeg_bound_align_image() and round_up()
-    to replace mtk_jpeg_align().
-    delete jpeg_enc_param/mtk_jpeg_enc_param structure and
-    mtk_jpeg_set_param(), program the registers directly based on
-    the original V4L2 values.
-    move macro definition about hw to mtk_jpeg_enc_reg.h.
-    delete unnecessary V4L2 logs in driver.
-    cancel spin lock and unlock operation in deviec run function.
-    change jpeg enc register offset hex numberals from upercase to lowercase.
-
-v4: split mtk_jpeg_try_fmt_mplane() to two functions, one for encoder,                                                      
-    one for decoder.                                                          
-    split mtk_jpeg_set_default_params() to two functions, one for                                                          
-    encoder, one for decoder.                                                          
-    add cropping support for encoder in g/s_selection ioctls.                                                          
-    change exif mode support by using V4L2_JPEG_ACTIVE_MARKER_APP1.                                                         
-    change MTK_JPEG_MAX_WIDTH/MTK_JPEG_MAX_HEIGH from 8192 to 65535 by                                                      
-    specification.                                                          
-    move width shifting operation behind aligning operation in                                                          
-    mtk_jpeg_try_enc_fmt_mplane() for bug fix.                                                          
-    fix user abuseing data_offset issue for DMABUF in                                                          
-    mtk_jpeg_set_enc_src().                                                          
-    fix kbuild warings: change MTK_JPEG_MIN_HEIGHT/MTK_JPEG_MAX_HEIGHT                                                      
-                        and MTK_JPEG_MIN_WIDTH/MTK_JPEG_MAX_WIDTH from                                                      
-                        'int' type to 'unsigned int' type.                                                          
-                        fix msleadingly indented of 'else'.                                                                                                              
-v3: delete Change-Id.                                                          
-    only test once handler->error after the last v4l2_ctrl_new_std().                                                       
-    seperate changes of v4l2-ctrls.c and v4l2-controls.h to new patch.                                                      
-v2: fix compliance test fail, check created buffer size in driver.
----
- drivers/media/platform/mtk-jpeg/Makefile      |    5 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 1038 +++++++++++++----
- .../media/platform/mtk-jpeg/mtk_jpeg_core.h   |   51 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h |    7 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c |  193 +++
- .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h |  123 ++
- 6 files changed, 1188 insertions(+), 229 deletions(-)
- create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
- create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-
-diff --git a/drivers/media/platform/mtk-jpeg/Makefile b/drivers/media/platform/mtk-jpeg/Makefile
-index 48516dcf96e6..76c33aad0f3f 100644
---- a/drivers/media/platform/mtk-jpeg/Makefile
-+++ b/drivers/media/platform/mtk-jpeg/Makefile
-@@ -1,3 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
--mtk_jpeg-objs := mtk_jpeg_core.o mtk_jpeg_dec_hw.o mtk_jpeg_dec_parse.o
-+mtk_jpeg-objs := mtk_jpeg_core.o \
-+		 mtk_jpeg_dec_hw.o \
-+		 mtk_jpeg_dec_parse.o \
-+		 mtk_jpeg_enc_hw.o
- obj-$(CONFIG_VIDEO_MEDIATEK_JPEG) += mtk_jpeg.o
-diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-index 77a95185584c..18a759ce2c46 100644
---- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-+++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-@@ -3,6 +3,7 @@
-  * Copyright (c) 2016 MediaTek Inc.
-  * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
-  *         Rick Chang <rick.chang@mediatek.com>
-+ *         Xia Jiang <xia.jiang@mediatek.com>
-  */
- 
- #include <linux/clk.h>
-@@ -23,11 +24,60 @@
- #include <media/videobuf2-dma-contig.h>
- #include <soc/mediatek/smi.h>
- 
-+#include "mtk_jpeg_enc_hw.h"
- #include "mtk_jpeg_dec_hw.h"
- #include "mtk_jpeg_core.h"
- #include "mtk_jpeg_dec_parse.h"
- 
--static struct mtk_jpeg_fmt mtk_jpeg_formats[] = {
-+static struct mtk_jpeg_fmt mtk_jpeg_enc_formats[] = {
-+	{
-+		.fourcc		= V4L2_PIX_FMT_JPEG,
-+		.colplanes	= 1,
-+		.flags		= MTK_JPEG_FMT_FLAG_ENC_CAPTURE,
-+	},
-+	{
-+		.fourcc		= V4L2_PIX_FMT_NV12M,
-+		.hw_format	= JPEG_ENC_YUV_FORMAT_NV12,
-+		.h_sample	= {4, 4},
-+		.v_sample	= {4, 2},
-+		.colplanes	= 2,
-+		.h_align	= 4,
-+		.v_align	= 4,
-+		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-+	},
-+	{
-+		.fourcc		= V4L2_PIX_FMT_NV21M,
-+		.hw_format	= JEPG_ENC_YUV_FORMAT_NV21,
-+		.h_sample	= {4, 4},
-+		.v_sample	= {4, 2},
-+		.colplanes	= 2,
-+		.h_align	= 4,
-+		.v_align	= 4,
-+		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-+	},
-+	{
-+		.fourcc		= V4L2_PIX_FMT_YUYV,
-+		.hw_format	= JPEG_ENC_YUV_FORMAT_YUYV,
-+		.h_sample	= {8},
-+		.v_sample	= {4},
-+		.colplanes	= 1,
-+		.h_align	= 5,
-+		.v_align	= 3,
-+		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-+	},
-+	{
-+		.fourcc		= V4L2_PIX_FMT_YVYU,
-+		.hw_format	= JPEG_ENC_YUV_FORMAT_YVYU,
-+		.h_sample	= {8},
-+		.v_sample	= {4},
-+		.colplanes	= 1,
-+		.h_align	= 5,
-+		.v_align	= 3,
-+		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-+	},
-+};
-+
-+static struct mtk_jpeg_fmt mtk_jpeg_dec_formats[] = {
- 	{
- 		.fourcc		= V4L2_PIX_FMT_JPEG,
- 		.colplanes	= 1,
-@@ -53,7 +103,8 @@ static struct mtk_jpeg_fmt mtk_jpeg_formats[] = {
- 	},
- };
- 
--#define MTK_JPEG_NUM_FORMATS ARRAY_SIZE(mtk_jpeg_formats)
-+#define MTK_JPEG_ENC_NUM_FORMATS ARRAY_SIZE(mtk_jpeg_enc_formats)
-+#define MTK_JPEG_DEC_NUM_FORMATS ARRAY_SIZE(mtk_jpeg_dec_formats)
- 
- enum {
- 	MTK_JPEG_BUF_FLAGS_INIT			= 0,
-@@ -70,6 +121,11 @@ struct mtk_jpeg_src_buf {
- static int debug;
- module_param(debug, int, 0644);
- 
-+static inline struct mtk_jpeg_ctx *ctrl_to_ctx(struct v4l2_ctrl *ctrl)
-+{
-+	return container_of(ctrl->handler, struct mtk_jpeg_ctx, ctrl_hdl);
-+}
-+
- static inline struct mtk_jpeg_ctx *mtk_jpeg_fh_to_ctx(struct v4l2_fh *fh)
- {
- 	return container_of(fh, struct mtk_jpeg_ctx, fh);
-@@ -81,12 +137,25 @@ static inline struct mtk_jpeg_src_buf *mtk_jpeg_vb2_to_srcbuf(
- 	return container_of(to_vb2_v4l2_buffer(vb), struct mtk_jpeg_src_buf, b);
- }
- 
--static int mtk_jpeg_querycap(struct file *file, void *priv,
--			     struct v4l2_capability *cap)
-+static int mtk_jpeg_enc_querycap(struct file *file, void *priv,
-+				 struct v4l2_capability *cap)
-+{
-+	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
-+
-+	strscpy(cap->driver, MTK_JPEG_NAME, sizeof(cap->driver));
-+	strscpy(cap->card, MTK_JPEG_NAME " encoder", sizeof(cap->card));
-+	snprintf(cap->bus_info, sizeof(cap->bus_info), "platform:%s",
-+		 dev_name(jpeg->dev));
-+
-+	return 0;
-+}
-+
-+static int mtk_jpeg_dec_querycap(struct file *file, void *priv,
-+				 struct v4l2_capability *cap)
- {
- 	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
- 
--	strscpy(cap->driver, MTK_JPEG_NAME " decoder", sizeof(cap->driver));
-+	strscpy(cap->driver, MTK_JPEG_NAME, sizeof(cap->driver));
- 	strscpy(cap->card, MTK_JPEG_NAME " decoder", sizeof(cap->card));
- 	snprintf(cap->bus_info, sizeof(cap->bus_info), "platform:%s",
- 		 dev_name(jpeg->dev));
-@@ -94,6 +163,54 @@ static int mtk_jpeg_querycap(struct file *file, void *priv,
- 	return 0;
- }
- 
-+static int vidioc_jpeg_enc_s_ctrl(struct v4l2_ctrl *ctrl)
-+{
-+	struct mtk_jpeg_ctx *ctx = ctrl_to_ctx(ctrl);
-+
-+	switch (ctrl->id) {
-+	case V4L2_CID_JPEG_RESTART_INTERVAL:
-+		ctx->restart_interval = ctrl->val;
-+		break;
-+	case V4L2_CID_JPEG_COMPRESSION_QUALITY:
-+		ctx->enc_quality = ctrl->val;
-+		break;
-+	case V4L2_CID_JPEG_ACTIVE_MARKER:
-+		ctx->enable_exif = ctrl->val & V4L2_JPEG_ACTIVE_MARKER_APP1 ?
-+				   true : false;
-+		break;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct v4l2_ctrl_ops mtk_jpeg_enc_ctrl_ops = {
-+	.s_ctrl = vidioc_jpeg_enc_s_ctrl,
-+};
-+
-+static int mtk_jpeg_enc_ctrls_setup(struct mtk_jpeg_ctx *ctx)
-+{
-+	const struct v4l2_ctrl_ops *ops = &mtk_jpeg_enc_ctrl_ops;
-+	struct v4l2_ctrl_handler *handler = &ctx->ctrl_hdl;
-+
-+	v4l2_ctrl_handler_init(handler, 3);
-+
-+	v4l2_ctrl_new_std(handler, ops, V4L2_CID_JPEG_RESTART_INTERVAL, 0, 100,
-+			  1, 0);
-+	v4l2_ctrl_new_std(handler, ops, V4L2_CID_JPEG_COMPRESSION_QUALITY, 48,
-+			  100, 1, 90);
-+	v4l2_ctrl_new_std(handler, ops, V4L2_CID_JPEG_ACTIVE_MARKER, 0,
-+			  V4L2_JPEG_ACTIVE_MARKER_APP1, 0, 0);
-+
-+	if (handler->error) {
-+		v4l2_ctrl_handler_free(&ctx->ctrl_hdl);
-+		return handler->error;
-+	}
-+
-+	v4l2_ctrl_handler_setup(&ctx->ctrl_hdl);
-+
-+	return 0;
-+}
-+
- static int mtk_jpeg_enum_fmt(struct mtk_jpeg_fmt *mtk_jpeg_formats, int n,
- 			     struct v4l2_fmtdesc *f, u32 type)
- {
-@@ -115,117 +232,105 @@ static int mtk_jpeg_enum_fmt(struct mtk_jpeg_fmt *mtk_jpeg_formats, int n,
- 	return 0;
- }
- 
--static int mtk_jpeg_enum_fmt_vid_cap(struct file *file, void *priv,
--				     struct v4l2_fmtdesc *f)
-+static int mtk_jpeg_enc_enum_fmt_vid_cap(struct file *file, void *priv,
-+					 struct v4l2_fmtdesc *f)
- {
--	return mtk_jpeg_enum_fmt(mtk_jpeg_formats, MTK_JPEG_NUM_FORMATS, f,
-+	return mtk_jpeg_enum_fmt(mtk_jpeg_enc_formats,
-+				 MTK_JPEG_ENC_NUM_FORMATS, f,
-+				 MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-+}
-+
-+static int mtk_jpeg_dec_enum_fmt_vid_cap(struct file *file, void *priv,
-+					 struct v4l2_fmtdesc *f)
-+{
-+	return mtk_jpeg_enum_fmt(mtk_jpeg_dec_formats,
-+				 MTK_JPEG_DEC_NUM_FORMATS, f,
- 				 MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
- }
- 
--static int mtk_jpeg_enum_fmt_vid_out(struct file *file, void *priv,
--				     struct v4l2_fmtdesc *f)
-+static int mtk_jpeg_enc_enum_fmt_vid_out(struct file *file, void *priv,
-+					 struct v4l2_fmtdesc *f)
-+{
-+	return mtk_jpeg_enum_fmt(mtk_jpeg_enc_formats,
-+				 MTK_JPEG_ENC_NUM_FORMATS, f,
-+				 MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-+}
-+
-+static int mtk_jpeg_dec_enum_fmt_vid_out(struct file *file, void *priv,
-+					 struct v4l2_fmtdesc *f)
- {
--	return mtk_jpeg_enum_fmt(mtk_jpeg_formats, MTK_JPEG_NUM_FORMATS, f,
--				 MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
-+	return mtk_jpeg_enum_fmt(mtk_jpeg_dec_formats, MTK_JPEG_DEC_NUM_FORMATS,
-+				 f, MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
- }
- 
--static struct mtk_jpeg_q_data *mtk_jpeg_get_q_data(struct mtk_jpeg_ctx *ctx,
--						   enum v4l2_buf_type type)
-+static struct mtk_jpeg_q_data *
-+mtk_jpeg_get_q_data(struct mtk_jpeg_ctx *ctx, enum v4l2_buf_type type)
- {
- 	if (V4L2_TYPE_IS_OUTPUT(type))
- 		return &ctx->out_q;
- 	return &ctx->cap_q;
- }
- 
--static struct mtk_jpeg_fmt *mtk_jpeg_find_format(struct mtk_jpeg_ctx *ctx,
--						 u32 pixelformat,
-+static struct mtk_jpeg_fmt *mtk_jpeg_find_format(u32 pixelformat,
- 						 unsigned int fmt_type)
- {
--	unsigned int k, fmt_flag;
--
--	fmt_flag = (fmt_type == MTK_JPEG_FMT_TYPE_OUTPUT) ?
--		   MTK_JPEG_FMT_FLAG_DEC_OUTPUT :
--		   MTK_JPEG_FMT_FLAG_DEC_CAPTURE;
-+	unsigned int k;
-+	struct mtk_jpeg_fmt *fmt;
- 
--	for (k = 0; k < MTK_JPEG_NUM_FORMATS; k++) {
--		struct mtk_jpeg_fmt *fmt = &mtk_jpeg_formats[k];
-+	for (k = 0; k < MTK_JPEG_ENC_NUM_FORMATS; k++) {
-+		fmt = &mtk_jpeg_enc_formats[k];
- 
--		if (fmt->fourcc == pixelformat && fmt->flags & fmt_flag)
-+		if (fmt->fourcc == pixelformat && fmt->flags & fmt_type)
- 			return fmt;
- 	}
- 
--	return NULL;
--}
-+	for (k = 0; k < MTK_JPEG_DEC_NUM_FORMATS; k++) {
-+		fmt = &mtk_jpeg_dec_formats[k];
- 
--static void mtk_jpeg_adjust_fmt_mplane(struct mtk_jpeg_ctx *ctx,
--				       struct v4l2_format *f)
--{
--	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
--	struct mtk_jpeg_q_data *q_data;
--	int i;
--
--	q_data = mtk_jpeg_get_q_data(ctx, f->type);
--
--	pix_mp->width = q_data->w;
--	pix_mp->height = q_data->h;
--	pix_mp->pixelformat = q_data->fmt->fourcc;
--	pix_mp->num_planes = q_data->fmt->colplanes;
--
--	for (i = 0; i < pix_mp->num_planes; i++) {
--		pix_mp->plane_fmt[i].bytesperline = q_data->bytesperline[i];
--		pix_mp->plane_fmt[i].sizeimage = q_data->sizeimage[i];
-+		if (fmt->fourcc == pixelformat && fmt->flags & fmt_type)
-+			return fmt;
- 	}
-+
-+	return NULL;
- }
- 
--static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
--				   struct mtk_jpeg_fmt *fmt,
--				   struct mtk_jpeg_ctx *ctx, int q_type)
-+static int vidioc_try_fmt(struct v4l2_format *f, struct mtk_jpeg_fmt *fmt)
- {
- 	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
- 	int i;
- 
--	memset(pix_mp->reserved, 0, sizeof(pix_mp->reserved));
- 	pix_mp->field = V4L2_FIELD_NONE;
--
--	if (ctx->state != MTK_JPEG_INIT) {
--		mtk_jpeg_adjust_fmt_mplane(ctx, f);
--		return 0;
--	}
--
- 	pix_mp->num_planes = fmt->colplanes;
- 	pix_mp->pixelformat = fmt->fourcc;
- 
--	if (q_type == MTK_JPEG_FMT_TYPE_OUTPUT) {
--		struct v4l2_plane_pix_format *pfmt = &pix_mp->plane_fmt[0];
--
-+	if (fmt->fourcc == V4L2_PIX_FMT_JPEG) {
- 		pix_mp->height = clamp(pix_mp->height, MTK_JPEG_MIN_HEIGHT,
- 				       MTK_JPEG_MAX_HEIGHT);
- 		pix_mp->width = clamp(pix_mp->width, MTK_JPEG_MIN_WIDTH,
- 				      MTK_JPEG_MAX_WIDTH);
--
--		memset(pfmt->reserved, 0, sizeof(pfmt->reserved));
--		pfmt->bytesperline = 0;
--		/* Source size must be aligned to 128 */
--		pfmt->sizeimage = round_up(pfmt->sizeimage, 128);
--		if (pfmt->sizeimage == 0)
--			pfmt->sizeimage = MTK_JPEG_DEFAULT_SIZEIMAGE;
--		return 0;
-+		pix_mp->plane_fmt[0].bytesperline = 0;
-+		pix_mp->plane_fmt[0].sizeimage =
-+				round_up(pix_mp->plane_fmt[0].sizeimage, 128);
-+		if (pix_mp->plane_fmt[0].sizeimage == 0)
-+			pix_mp->plane_fmt[0].sizeimage =
-+				MTK_JPEG_DEFAULT_SIZEIMAGE;
-+	} else {
-+		pix_mp->height = clamp(round_up(pix_mp->height, fmt->v_align),
-+				       MTK_JPEG_MIN_HEIGHT,
-+				       MTK_JPEG_MAX_HEIGHT);
-+		pix_mp->width = clamp(round_up(pix_mp->width, fmt->h_align),
-+				      MTK_JPEG_MIN_WIDTH, MTK_JPEG_MAX_WIDTH);
-+		for (i = 0; i < pix_mp->num_planes; i++) {
-+			struct v4l2_plane_pix_format *pfmt =
-+							&pix_mp->plane_fmt[i];
-+			u32 stride = pix_mp->width * fmt->h_sample[i] / 4;
-+			u32 h = pix_mp->height * fmt->v_sample[i] / 4;
-+
-+			pfmt->bytesperline = stride;
-+			pfmt->sizeimage = stride * h;
-+		}
- 	}
- 
--	/* type is MTK_JPEG_FMT_TYPE_CAPTURE */
--	pix_mp->height = clamp(round_up(pix_mp->height, fmt->v_align),
--			       MTK_JPEG_MIN_HEIGHT, MTK_JPEG_MAX_HEIGHT);
--	pix_mp->width = clamp(round_up(pix_mp->width, fmt->h_align),
--			      MTK_JPEG_MIN_WIDTH, MTK_JPEG_MAX_WIDTH);
--
--	for (i = 0; i < fmt->colplanes; i++) {
--		struct v4l2_plane_pix_format *pfmt = &pix_mp->plane_fmt[i];
--		u32 stride = pix_mp->width * fmt->h_sample[i] / 4;
--		u32 h = pix_mp->height * fmt->v_sample[i] / 4;
--
--		pfmt->bytesperline = stride;
--		pfmt->sizeimage = stride * h;
--	}
- 	return 0;
- }
- 
-@@ -280,14 +385,35 @@ static int mtk_jpeg_g_fmt_vid_mplane(struct file *file, void *priv,
- 	return 0;
- }
- 
--static int mtk_jpeg_try_fmt_vid_cap_mplane(struct file *file, void *priv,
--					   struct v4l2_format *f)
-+static int mtk_jpeg_enc_try_fmt_vid_cap_mplane(struct file *file, void *priv,
-+					       struct v4l2_format *f)
-+{
-+	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-+	struct mtk_jpeg_fmt *fmt;
-+
-+	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-+				   MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-+	if (!fmt)
-+		fmt = ctx->cap_q.fmt;
-+
-+	v4l2_dbg(2, debug, &ctx->jpeg->v4l2_dev, "(%d) try_fmt:%c%c%c%c\n",
-+		 f->type,
-+		 (fmt->fourcc & 0xff),
-+		 (fmt->fourcc >>  8 & 0xff),
-+		 (fmt->fourcc >> 16 & 0xff),
-+		 (fmt->fourcc >> 24 & 0xff));
-+
-+	return vidioc_try_fmt(f, fmt);
-+}
-+
-+static int mtk_jpeg_dec_try_fmt_vid_cap_mplane(struct file *file, void *priv,
-+					       struct v4l2_format *f)
- {
- 	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
- 	struct mtk_jpeg_fmt *fmt;
- 
--	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
--				   MTK_JPEG_FMT_TYPE_CAPTURE);
-+	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-+				   MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
- 	if (!fmt)
- 		fmt = ctx->cap_q.fmt;
- 
-@@ -298,17 +424,43 @@ static int mtk_jpeg_try_fmt_vid_cap_mplane(struct file *file, void *priv,
- 		 (fmt->fourcc >> 16 & 0xff),
- 		 (fmt->fourcc >> 24 & 0xff));
- 
--	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_CAPTURE);
-+	if (ctx->state != MTK_JPEG_INIT) {
-+		mtk_jpeg_g_fmt_vid_mplane(file, priv, f);
-+		return 0;
-+	}
-+
-+	return vidioc_try_fmt(f, fmt);
-+}
-+
-+static int mtk_jpeg_enc_try_fmt_vid_out_mplane(struct file *file, void *priv,
-+					       struct v4l2_format *f)
-+{
-+	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-+	struct mtk_jpeg_fmt *fmt;
-+
-+	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-+				   MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-+	if (!fmt)
-+		fmt = ctx->out_q.fmt;
-+
-+	v4l2_dbg(2, debug, &ctx->jpeg->v4l2_dev, "(%d) try_fmt:%c%c%c%c\n",
-+		 f->type,
-+		 (fmt->fourcc & 0xff),
-+		 (fmt->fourcc >>  8 & 0xff),
-+		 (fmt->fourcc >> 16 & 0xff),
-+		 (fmt->fourcc >> 24 & 0xff));
-+
-+	return vidioc_try_fmt(f, fmt);
- }
- 
--static int mtk_jpeg_try_fmt_vid_out_mplane(struct file *file, void *priv,
--					   struct v4l2_format *f)
-+static int mtk_jpeg_dec_try_fmt_vid_out_mplane(struct file *file, void *priv,
-+					       struct v4l2_format *f)
- {
- 	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
- 	struct mtk_jpeg_fmt *fmt;
- 
--	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
--				   MTK_JPEG_FMT_TYPE_OUTPUT);
-+	fmt = mtk_jpeg_find_format(f->fmt.pix_mp.pixelformat,
-+				   MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
- 	if (!fmt)
- 		fmt = ctx->out_q.fmt;
- 
-@@ -319,17 +471,21 @@ static int mtk_jpeg_try_fmt_vid_out_mplane(struct file *file, void *priv,
- 		 (fmt->fourcc >> 16 & 0xff),
- 		 (fmt->fourcc >> 24 & 0xff));
- 
--	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_OUTPUT);
-+	if (ctx->state != MTK_JPEG_INIT) {
-+		mtk_jpeg_g_fmt_vid_mplane(file, priv, f);
-+		return 0;
-+	}
-+
-+	return vidioc_try_fmt(f, fmt);
- }
- 
- static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
--				 struct v4l2_format *f)
-+				 struct v4l2_format *f, unsigned int fmt_type)
- {
- 	struct vb2_queue *vq;
- 	struct mtk_jpeg_q_data *q_data = NULL;
- 	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
- 	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
--	unsigned int f_type;
- 	int i;
- 
- 	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, f->type);
-@@ -343,10 +499,7 @@ static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
- 		return -EBUSY;
- 	}
- 
--	f_type = V4L2_TYPE_IS_OUTPUT(f->type) ?
--			 MTK_JPEG_FMT_TYPE_OUTPUT : MTK_JPEG_FMT_TYPE_CAPTURE;
--
--	q_data->fmt = mtk_jpeg_find_format(ctx, pix_mp->pixelformat, f_type);
-+	q_data->fmt = mtk_jpeg_find_format(pix_mp->pixelformat, fmt_type);
- 	q_data->w = pix_mp->width;
- 	q_data->h = pix_mp->height;
- 	ctx->colorspace = pix_mp->colorspace;
-@@ -374,28 +527,56 @@ static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
- 	return 0;
- }
- 
--static int mtk_jpeg_s_fmt_vid_out_mplane(struct file *file, void *priv,
--					 struct v4l2_format *f)
-+static int mtk_jpeg_enc_s_fmt_vid_out_mplane(struct file *file, void *priv,
-+					     struct v4l2_format *f)
-+{
-+	int ret;
-+
-+	ret = mtk_jpeg_enc_try_fmt_vid_out_mplane(file, priv, f);
-+	if (ret)
-+		return ret;
-+
-+	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-+				     MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-+}
-+
-+static int mtk_jpeg_dec_s_fmt_vid_out_mplane(struct file *file, void *priv,
-+					     struct v4l2_format *f)
- {
- 	int ret;
- 
--	ret = mtk_jpeg_try_fmt_vid_out_mplane(file, priv, f);
-+	ret = mtk_jpeg_dec_try_fmt_vid_out_mplane(file, priv, f);
- 	if (ret)
- 		return ret;
- 
--	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f);
-+	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-+				     MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
- }
- 
--static int mtk_jpeg_s_fmt_vid_cap_mplane(struct file *file, void *priv,
--					 struct v4l2_format *f)
-+static int mtk_jpeg_enc_s_fmt_vid_cap_mplane(struct file *file, void *priv,
-+					     struct v4l2_format *f)
- {
- 	int ret;
- 
--	ret = mtk_jpeg_try_fmt_vid_cap_mplane(file, priv, f);
-+	ret = mtk_jpeg_enc_try_fmt_vid_cap_mplane(file, priv, f);
- 	if (ret)
- 		return ret;
- 
--	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f);
-+	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-+				     MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-+}
-+
-+static int mtk_jpeg_dec_s_fmt_vid_cap_mplane(struct file *file, void *priv,
-+					     struct v4l2_format *f)
-+{
-+	int ret;
-+
-+	ret = mtk_jpeg_dec_try_fmt_vid_cap_mplane(file, priv, f);
-+	if (ret)
-+		return ret;
-+
-+	return mtk_jpeg_s_fmt_mplane(mtk_jpeg_fh_to_ctx(priv), f,
-+				     MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
- }
- 
- static void mtk_jpeg_queue_src_chg_event(struct mtk_jpeg_ctx *ctx)
-@@ -420,8 +601,31 @@ static int mtk_jpeg_subscribe_event(struct v4l2_fh *fh,
- 	return v4l2_ctrl_subscribe_event(fh, sub);
- }
- 
--static int mtk_jpeg_g_selection(struct file *file, void *priv,
--				struct v4l2_selection *s)
-+static int mtk_jpeg_enc_g_selection(struct file *file, void *priv,
-+				    struct v4l2_selection *s)
-+{
-+	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-+
-+	if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-+		return -EINVAL;
-+
-+	switch (s->target) {
-+	case V4L2_SEL_TGT_CROP:
-+	case V4L2_SEL_TGT_CROP_BOUNDS:
-+	case V4L2_SEL_TGT_CROP_DEFAULT:
-+		s->r.width = ctx->out_q.w;
-+		s->r.height = ctx->out_q.h;
-+		s->r.left = 0;
-+		s->r.top = 0;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+	return 0;
-+}
-+
-+static int mtk_jpeg_dec_g_selection(struct file *file, void *priv,
-+				    struct v4l2_selection *s)
- {
- 	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
- 
-@@ -446,11 +650,34 @@ static int mtk_jpeg_g_selection(struct file *file, void *priv,
- 	default:
- 		return -EINVAL;
- 	}
-+
- 	return 0;
- }
- 
--static int mtk_jpeg_s_selection(struct file *file, void *priv,
--				struct v4l2_selection *s)
-+static int mtk_jpeg_enc_s_selection(struct file *file, void *priv,
-+				    struct v4l2_selection *s)
-+{
-+	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-+
-+	if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-+		return -EINVAL;
-+
-+	switch (s->target) {
-+	case V4L2_SEL_TGT_CROP:
-+		s->r.left = 0;
-+		s->r.top = 0;
-+		ctx->out_q.w = min(s->r.width, ctx->out_q.w);
-+		ctx->out_q.h = min(s->r.height, ctx->out_q.h);
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mtk_jpeg_dec_s_selection(struct file *file, void *priv,
-+				    struct v4l2_selection *s)
- {
- 	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
- 
-@@ -467,6 +694,7 @@ static int mtk_jpeg_s_selection(struct file *file, void *priv,
- 	default:
- 		return -EINVAL;
- 	}
-+
- 	return 0;
- }
- 
-@@ -495,20 +723,47 @@ static int mtk_jpeg_qbuf(struct file *file, void *priv, struct v4l2_buffer *buf)
- 	return v4l2_m2m_qbuf(file, fh->m2m_ctx, buf);
- }
- 
--static const struct v4l2_ioctl_ops mtk_jpeg_ioctl_ops = {
--	.vidioc_querycap                = mtk_jpeg_querycap,
--	.vidioc_enum_fmt_vid_cap	= mtk_jpeg_enum_fmt_vid_cap,
--	.vidioc_enum_fmt_vid_out	= mtk_jpeg_enum_fmt_vid_out,
--	.vidioc_try_fmt_vid_cap_mplane	= mtk_jpeg_try_fmt_vid_cap_mplane,
--	.vidioc_try_fmt_vid_out_mplane	= mtk_jpeg_try_fmt_vid_out_mplane,
-+static const struct v4l2_ioctl_ops mtk_jpeg_enc_ioctl_ops = {
-+	.vidioc_querycap                = mtk_jpeg_enc_querycap,
-+	.vidioc_enum_fmt_vid_cap	= mtk_jpeg_enc_enum_fmt_vid_cap,
-+	.vidioc_enum_fmt_vid_out	= mtk_jpeg_enc_enum_fmt_vid_out,
-+	.vidioc_try_fmt_vid_cap_mplane	= mtk_jpeg_enc_try_fmt_vid_cap_mplane,
-+	.vidioc_try_fmt_vid_out_mplane	= mtk_jpeg_enc_try_fmt_vid_out_mplane,
-+	.vidioc_g_fmt_vid_cap_mplane    = mtk_jpeg_g_fmt_vid_mplane,
-+	.vidioc_g_fmt_vid_out_mplane    = mtk_jpeg_g_fmt_vid_mplane,
-+	.vidioc_s_fmt_vid_cap_mplane    = mtk_jpeg_enc_s_fmt_vid_cap_mplane,
-+	.vidioc_s_fmt_vid_out_mplane    = mtk_jpeg_enc_s_fmt_vid_out_mplane,
-+	.vidioc_qbuf                    = mtk_jpeg_qbuf,
-+	.vidioc_subscribe_event         = mtk_jpeg_subscribe_event,
-+	.vidioc_g_selection		= mtk_jpeg_enc_g_selection,
-+	.vidioc_s_selection		= mtk_jpeg_enc_s_selection,
-+
-+	.vidioc_create_bufs		= v4l2_m2m_ioctl_create_bufs,
-+	.vidioc_prepare_buf		= v4l2_m2m_ioctl_prepare_buf,
-+	.vidioc_reqbufs                 = v4l2_m2m_ioctl_reqbufs,
-+	.vidioc_querybuf                = v4l2_m2m_ioctl_querybuf,
-+	.vidioc_dqbuf                   = v4l2_m2m_ioctl_dqbuf,
-+	.vidioc_expbuf                  = v4l2_m2m_ioctl_expbuf,
-+	.vidioc_streamon                = v4l2_m2m_ioctl_streamon,
-+	.vidioc_streamoff               = v4l2_m2m_ioctl_streamoff,
-+
-+	.vidioc_unsubscribe_event	= v4l2_event_unsubscribe,
-+};
-+
-+static const struct v4l2_ioctl_ops mtk_jpeg_dec_ioctl_ops = {
-+	.vidioc_querycap                = mtk_jpeg_dec_querycap,
-+	.vidioc_enum_fmt_vid_cap	= mtk_jpeg_dec_enum_fmt_vid_cap,
-+	.vidioc_enum_fmt_vid_out	= mtk_jpeg_dec_enum_fmt_vid_out,
-+	.vidioc_try_fmt_vid_cap_mplane	= mtk_jpeg_dec_try_fmt_vid_cap_mplane,
-+	.vidioc_try_fmt_vid_out_mplane	= mtk_jpeg_dec_try_fmt_vid_out_mplane,
- 	.vidioc_g_fmt_vid_cap_mplane    = mtk_jpeg_g_fmt_vid_mplane,
- 	.vidioc_g_fmt_vid_out_mplane    = mtk_jpeg_g_fmt_vid_mplane,
--	.vidioc_s_fmt_vid_cap_mplane    = mtk_jpeg_s_fmt_vid_cap_mplane,
--	.vidioc_s_fmt_vid_out_mplane    = mtk_jpeg_s_fmt_vid_out_mplane,
-+	.vidioc_s_fmt_vid_cap_mplane    = mtk_jpeg_dec_s_fmt_vid_cap_mplane,
-+	.vidioc_s_fmt_vid_out_mplane    = mtk_jpeg_dec_s_fmt_vid_out_mplane,
- 	.vidioc_qbuf                    = mtk_jpeg_qbuf,
- 	.vidioc_subscribe_event         = mtk_jpeg_subscribe_event,
--	.vidioc_g_selection		= mtk_jpeg_g_selection,
--	.vidioc_s_selection		= mtk_jpeg_s_selection,
-+	.vidioc_g_selection		= mtk_jpeg_dec_g_selection,
-+	.vidioc_s_selection		= mtk_jpeg_dec_s_selection,
- 
- 	.vidioc_create_bufs		= v4l2_m2m_ioctl_create_bufs,
- 	.vidioc_prepare_buf		= v4l2_m2m_ioctl_prepare_buf,
-@@ -586,8 +841,9 @@ static bool mtk_jpeg_check_resolution_change(struct mtk_jpeg_ctx *ctx,
- 	}
- 
- 	q_data = &ctx->cap_q;
--	if (q_data->fmt != mtk_jpeg_find_format(ctx, param->dst_fourcc,
--						MTK_JPEG_FMT_TYPE_CAPTURE)) {
-+	if (q_data->fmt !=
-+	    mtk_jpeg_find_format(param->dst_fourcc,
-+				 MTK_JPEG_FMT_FLAG_DEC_CAPTURE)) {
- 		v4l2_dbg(1, debug, &jpeg->v4l2_dev, "format change\n");
- 		return true;
- 	}
-@@ -608,9 +864,8 @@ static void mtk_jpeg_set_queue_data(struct mtk_jpeg_ctx *ctx,
- 	q_data = &ctx->cap_q;
- 	q_data->w = param->dec_w;
- 	q_data->h = param->dec_h;
--	q_data->fmt = mtk_jpeg_find_format(ctx,
--					   param->dst_fourcc,
--					   MTK_JPEG_FMT_TYPE_CAPTURE);
-+	q_data->fmt = mtk_jpeg_find_format(param->dst_fourcc,
-+					   MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
- 
- 	for (i = 0; i < q_data->fmt->colplanes; i++) {
- 		q_data->bytesperline[i] = param->mem_stride[i];
-@@ -627,7 +882,18 @@ static void mtk_jpeg_set_queue_data(struct mtk_jpeg_ctx *ctx,
- 		 param->dec_w, param->dec_h);
- }
- 
--static void mtk_jpeg_buf_queue(struct vb2_buffer *vb)
-+static void mtk_jpeg_enc_buf_queue(struct vb2_buffer *vb)
-+{
-+	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
-+	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-+
-+	v4l2_dbg(2, debug, &jpeg->v4l2_dev, "(%d) buf_q id=%d, vb=%p\n",
-+		 vb->vb2_queue->type, vb->index, vb);
-+
-+	v4l2_m2m_buf_queue(ctx->fh.m2m_ctx, to_vb2_v4l2_buffer(vb));
-+}
-+
-+static void mtk_jpeg_dec_buf_queue(struct vb2_buffer *vb)
- {
- 	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
- 	struct mtk_jpeg_dec_param *param;
-@@ -679,7 +945,16 @@ static struct vb2_v4l2_buffer *mtk_jpeg_buf_remove(struct mtk_jpeg_ctx *ctx,
- 		return v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
- }
- 
--static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
-+static void mtk_jpeg_enc_stop_streaming(struct vb2_queue *q)
-+{
-+	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-+	struct vb2_v4l2_buffer *vb;
-+
-+	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-+		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-+}
-+
-+static void mtk_jpeg_dec_stop_streaming(struct vb2_queue *q)
- {
- 	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
- 	struct vb2_v4l2_buffer *vb;
-@@ -705,13 +980,22 @@ static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
- 		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
- }
- 
--static const struct vb2_ops mtk_jpeg_qops = {
-+static const struct vb2_ops mtk_jpeg_dec_qops = {
- 	.queue_setup        = mtk_jpeg_queue_setup,
- 	.buf_prepare        = mtk_jpeg_buf_prepare,
--	.buf_queue          = mtk_jpeg_buf_queue,
-+	.buf_queue          = mtk_jpeg_dec_buf_queue,
- 	.wait_prepare       = vb2_ops_wait_prepare,
- 	.wait_finish        = vb2_ops_wait_finish,
--	.stop_streaming     = mtk_jpeg_stop_streaming,
-+	.stop_streaming     = mtk_jpeg_dec_stop_streaming,
-+};
-+
-+static const struct vb2_ops mtk_jpeg_enc_qops = {
-+	.queue_setup        = mtk_jpeg_queue_setup,
-+	.buf_prepare        = mtk_jpeg_buf_prepare,
-+	.buf_queue          = mtk_jpeg_enc_buf_queue,
-+	.wait_prepare       = vb2_ops_wait_prepare,
-+	.wait_finish        = vb2_ops_wait_finish,
-+	.stop_streaming     = mtk_jpeg_enc_stop_streaming,
- };
- 
- static void mtk_jpeg_set_dec_src(struct mtk_jpeg_ctx *ctx,
-@@ -751,7 +1035,86 @@ static int mtk_jpeg_set_dec_dst(struct mtk_jpeg_ctx *ctx,
- 	return 0;
- }
- 
--static void mtk_jpeg_device_run(void *priv)
-+static void mtk_jpeg_set_enc_dst(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-+				 struct vb2_buffer *dst_buf,
-+				 struct mtk_jpeg_enc_bs *bs)
-+{
-+	bs->dma_addr = vb2_dma_contig_plane_dma_addr(dst_buf, 0);
-+	bs->dma_addr_offset = ctx->enable_exif ? MTK_JPEG_DEFAULT_EXIF_SIZE : 0;
-+	bs->dma_addr_offsetmask = bs->dma_addr & JPEG_ENC_DST_ADDR_OFFSET_MASK;
-+	bs->size = vb2_plane_size(dst_buf, 0);
-+
-+	mtk_jpeg_enc_set_dst_addr(base, bs->dma_addr, bs->size,
-+				  bs->dma_addr_offset,
-+				  bs->dma_addr_offsetmask);
-+}
-+
-+static void mtk_jpeg_set_enc_src(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-+				 struct vb2_buffer *src_buf)
-+{
-+	int i;
-+	dma_addr_t	dma_addr;
-+
-+	mtk_jpeg_enc_set_img_size(base, ctx->out_q.w, ctx->out_q.h);
-+	mtk_jpeg_enc_set_blk_num(base, ctx->out_q.fmt->fourcc, ctx->out_q.w,
-+				 ctx->out_q.h);
-+	mtk_jpeg_enc_set_stride(base, ctx->out_q.fmt->fourcc, ctx->out_q.w,
-+				ctx->out_q.h, ctx->out_q.bytesperline[0]);
-+
-+	for (i = 0; i < src_buf->num_planes; i++) {
-+		dma_addr = vb2_dma_contig_plane_dma_addr(src_buf, i) +
-+			   src_buf->planes[i].data_offset;
-+		mtk_jpeg_enc_set_src_addr(base, dma_addr, i);
-+	}
-+}
-+
-+static void mtk_jpeg_enc_device_run(void *priv)
-+{
-+	struct mtk_jpeg_ctx *ctx = priv;
-+	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-+	struct vb2_v4l2_buffer *src_buf, *dst_buf;
-+	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
-+	unsigned long flags;
-+	struct mtk_jpeg_src_buf *jpeg_src_buf;
-+	struct mtk_jpeg_enc_bs enc_bs;
-+	int i, ret;
-+
-+	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-+	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-+	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
-+
-+	if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
-+		for (i = 0; i < dst_buf->vb2_buf.num_planes; i++)
-+			vb2_set_plane_payload(&dst_buf->vb2_buf, i, 0);
-+		buf_state = VB2_BUF_STATE_DONE;
-+		goto enc_end;
-+	}
-+
-+	ret = pm_runtime_get_sync(jpeg->dev);
-+	if (ret < 0)
-+		goto enc_end;
-+
-+	spin_lock_irqsave(&jpeg->hw_lock, flags);
-+	mtk_jpeg_enc_reset(jpeg->reg_base);
-+
-+	mtk_jpeg_set_enc_dst(ctx, jpeg->reg_base, &dst_buf->vb2_buf, &enc_bs);
-+	mtk_jpeg_set_enc_src(ctx, jpeg->reg_base, &src_buf->vb2_buf);
-+	mtk_jpeg_enc_set_config(jpeg->reg_base, ctx->out_q.fmt->hw_format,
-+				ctx->enable_exif, ctx->enc_quality,
-+				ctx->restart_interval);
-+	mtk_jpeg_enc_start(jpeg->reg_base);
-+	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
-+	return;
-+
-+enc_end:
-+	v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-+	v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-+	v4l2_m2m_buf_done(src_buf, buf_state);
-+	v4l2_m2m_buf_done(dst_buf, buf_state);
-+	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-+}
-+
-+static void mtk_jpeg_dec_device_run(void *priv)
- {
- 	struct mtk_jpeg_ctx *ctx = priv;
- 	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-@@ -786,15 +1149,16 @@ static void mtk_jpeg_device_run(void *priv)
- 		goto dec_end;
- 
- 	mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
--	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
-+	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param,
-+				 &dst_buf->vb2_buf, &fb))
- 		goto dec_end;
- 
- 	spin_lock_irqsave(&jpeg->hw_lock, flags);
--	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
--	mtk_jpeg_dec_set_config(jpeg->dec_reg_base,
-+	mtk_jpeg_dec_reset(jpeg->reg_base);
-+	mtk_jpeg_dec_set_config(jpeg->reg_base,
- 				&jpeg_src_buf->dec_param, &bs, &fb);
- 
--	mtk_jpeg_dec_start(jpeg->dec_reg_base);
-+	mtk_jpeg_dec_start(jpeg->reg_base);
- 	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
- 	return;
- 
-@@ -806,20 +1170,30 @@ static void mtk_jpeg_device_run(void *priv)
- 	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
- }
- 
--static int mtk_jpeg_job_ready(void *priv)
-+static int mtk_jpeg_enc_job_ready(void *priv)
-+{
-+		return 1;
-+}
-+
-+static int mtk_jpeg_dec_job_ready(void *priv)
- {
- 	struct mtk_jpeg_ctx *ctx = priv;
- 
- 	return (ctx->state == MTK_JPEG_RUNNING) ? 1 : 0;
- }
- 
--static const struct v4l2_m2m_ops mtk_jpeg_m2m_ops = {
--	.device_run = mtk_jpeg_device_run,
--	.job_ready  = mtk_jpeg_job_ready,
-+static const struct v4l2_m2m_ops mtk_jpeg_enc_m2m_ops = {
-+	.device_run = mtk_jpeg_enc_device_run,
-+	.job_ready  = mtk_jpeg_enc_job_ready,
- };
- 
--static int mtk_jpeg_queue_init(void *priv, struct vb2_queue *src_vq,
--			       struct vb2_queue *dst_vq)
-+static const struct v4l2_m2m_ops mtk_jpeg_dec_m2m_ops = {
-+	.device_run = mtk_jpeg_dec_device_run,
-+	.job_ready  = mtk_jpeg_dec_job_ready,
-+};
-+
-+static int mtk_jpeg_dec_queue_init(void *priv, struct vb2_queue *src_vq,
-+				   struct vb2_queue *dst_vq)
- {
- 	struct mtk_jpeg_ctx *ctx = priv;
- 	int ret;
-@@ -828,7 +1202,7 @@ static int mtk_jpeg_queue_init(void *priv, struct vb2_queue *src_vq,
- 	src_vq->io_modes = VB2_DMABUF | VB2_MMAP;
- 	src_vq->drv_priv = ctx;
- 	src_vq->buf_struct_size = sizeof(struct mtk_jpeg_src_buf);
--	src_vq->ops = &mtk_jpeg_qops;
-+	src_vq->ops = &mtk_jpeg_dec_qops;
- 	src_vq->mem_ops = &vb2_dma_contig_memops;
- 	src_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
- 	src_vq->lock = &ctx->jpeg->lock;
-@@ -841,7 +1215,7 @@ static int mtk_jpeg_queue_init(void *priv, struct vb2_queue *src_vq,
- 	dst_vq->io_modes = VB2_DMABUF | VB2_MMAP;
- 	dst_vq->drv_priv = ctx;
- 	dst_vq->buf_struct_size = sizeof(struct v4l2_m2m_buffer);
--	dst_vq->ops = &mtk_jpeg_qops;
-+	dst_vq->ops = &mtk_jpeg_dec_qops;
- 	dst_vq->mem_ops = &vb2_dma_contig_memops;
- 	dst_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
- 	dst_vq->lock = &ctx->jpeg->lock;
-@@ -851,24 +1225,112 @@ static int mtk_jpeg_queue_init(void *priv, struct vb2_queue *src_vq,
- 	return ret;
- }
- 
--static void mtk_jpeg_clk_on(struct mtk_jpeg_dev *jpeg)
-+static int mtk_jpeg_enc_queue_init(void *priv, struct vb2_queue *src_vq,
-+				   struct vb2_queue *dst_vq)
- {
-+	struct mtk_jpeg_ctx *ctx = priv;
- 	int ret;
- 
-+	src_vq->type = V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE;
-+	src_vq->io_modes = VB2_DMABUF | VB2_MMAP;
-+	src_vq->drv_priv = ctx;
-+	src_vq->buf_struct_size = sizeof(struct mtk_jpeg_src_buf);
-+	src_vq->ops = &mtk_jpeg_enc_qops;
-+	src_vq->mem_ops = &vb2_dma_contig_memops;
-+	src_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
-+	src_vq->lock = &ctx->jpeg->lock;
-+	src_vq->dev = ctx->jpeg->dev;
-+	ret = vb2_queue_init(src_vq);
-+	if (ret)
-+		return ret;
-+
-+	dst_vq->type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
-+	dst_vq->io_modes = VB2_DMABUF | VB2_MMAP;
-+	dst_vq->drv_priv = ctx;
-+	dst_vq->buf_struct_size = sizeof(struct v4l2_m2m_buffer);
-+	dst_vq->ops = &mtk_jpeg_enc_qops;
-+	dst_vq->mem_ops = &vb2_dma_contig_memops;
-+	dst_vq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_COPY;
-+	dst_vq->lock = &ctx->jpeg->lock;
-+	dst_vq->dev = ctx->jpeg->dev;
-+	ret = vb2_queue_init(dst_vq);
-+
-+	return ret;
-+}
-+
-+static void mtk_jpeg_clk_on(struct mtk_jpeg_dev *jpeg)
-+{
-+	int ret, i;
-+
- 	ret = mtk_smi_larb_get(jpeg->larb);
- 	if (ret)
- 		dev_err(jpeg->dev, "mtk_smi_larb_get larbvdec fail %d\n", ret);
--	clk_prepare_enable(jpeg->clk_jdec_smi);
--	clk_prepare_enable(jpeg->clk_jdec);
-+
-+	for (i = 0; i < jpeg->variant->num_clocks; i++) {
-+		ret = clk_prepare_enable(jpeg->clocks[i]);
-+		if (ret) {
-+			while (--i >= 0)
-+				clk_disable_unprepare(jpeg->clocks[i]);
-+		}
-+	}
- }
- 
- static void mtk_jpeg_clk_off(struct mtk_jpeg_dev *jpeg)
- {
--	clk_disable_unprepare(jpeg->clk_jdec);
--	clk_disable_unprepare(jpeg->clk_jdec_smi);
-+	int i;
-+
-+	for (i = jpeg->variant->num_clocks - 1; i >= 0; i--)
-+		clk_disable_unprepare(jpeg->clocks[i]);
- 	mtk_smi_larb_put(jpeg->larb);
- }
- 
-+static irqreturn_t mtk_jpeg_enc_irq(int irq, void *priv)
-+{
-+	struct mtk_jpeg_dev *jpeg = priv;
-+	struct mtk_jpeg_ctx *ctx;
-+	struct vb2_v4l2_buffer *src_buf, *dst_buf;
-+	struct mtk_jpeg_src_buf *jpeg_src_buf;
-+	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
-+	u32 enc_irq_ret;
-+	u32 enc_ret, result_size;
-+
-+	spin_lock(&jpeg->hw_lock);
-+
-+	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
-+	if (!ctx) {
-+		v4l2_err(&jpeg->v4l2_dev, "Context is NULL\n");
-+		return IRQ_HANDLED;
-+	}
-+
-+	src_buf = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-+	dst_buf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-+	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
-+
-+	enc_ret = mtk_jpeg_enc_get_and_clear_int_status(jpeg->reg_base);
-+	enc_irq_ret = mtk_jpeg_enc_enum_result(jpeg->reg_base, enc_ret);
-+
-+	if (enc_irq_ret >= MTK_JPEG_ENC_RESULT_STALL)
-+		mtk_jpeg_enc_reset(jpeg->reg_base);
-+
-+	if (enc_irq_ret != MTK_JPEG_ENC_RESULT_DONE) {
-+		dev_err(jpeg->dev, "encode failed\n");
-+		goto enc_end;
-+	}
-+
-+	result_size = mtk_jpeg_enc_get_file_size(jpeg->reg_base);
-+	vb2_set_plane_payload(&dst_buf->vb2_buf, 0, result_size);
-+
-+	buf_state = VB2_BUF_STATE_DONE;
-+
-+enc_end:
-+	v4l2_m2m_buf_done(src_buf, buf_state);
-+	v4l2_m2m_buf_done(dst_buf, buf_state);
-+	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-+	spin_unlock(&jpeg->hw_lock);
-+	pm_runtime_put_sync(ctx->jpeg->dev);
-+	return IRQ_HANDLED;
-+}
-+
- static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
- {
- 	struct mtk_jpeg_dev *jpeg = priv;
-@@ -876,13 +1338,13 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
- 	struct vb2_v4l2_buffer *src_buf, *dst_buf;
- 	struct mtk_jpeg_src_buf *jpeg_src_buf;
- 	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
--	u32	dec_irq_ret;
-+	u32 dec_irq_ret;
- 	u32 dec_ret;
- 	int i;
- 
- 	spin_lock(&jpeg->hw_lock);
- 
--	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->dec_reg_base);
-+	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->reg_base);
- 	dec_irq_ret = mtk_jpeg_dec_enum_result(dec_ret);
- 	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
- 	if (!ctx) {
-@@ -895,7 +1357,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
- 	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
- 
- 	if (dec_irq_ret >= MTK_JPEG_DEC_RESULT_UNDERFLOW)
--		mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-+		mtk_jpeg_dec_reset(jpeg->reg_base);
- 
- 	if (dec_irq_ret != MTK_JPEG_DEC_RESULT_EOF_DONE) {
- 		dev_err(jpeg->dev, "decode failed\n");
-@@ -917,39 +1379,131 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
- 	return IRQ_HANDLED;
- }
- 
--static void mtk_jpeg_set_default_params(struct mtk_jpeg_ctx *ctx)
-+static void mtk_jpeg_set_enc_default_params(struct mtk_jpeg_ctx *ctx)
- {
- 	struct mtk_jpeg_q_data *q = &ctx->out_q;
--	int i;
-+	struct v4l2_pix_format_mplane *pix_mp;
-+
-+	pix_mp = kmalloc(sizeof(*pix_mp), GFP_KERNEL);
- 
-+	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
- 	ctx->colorspace = V4L2_COLORSPACE_JPEG,
- 	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
- 	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
- 	ctx->xfer_func = V4L2_XFER_FUNC_DEFAULT;
--
--	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_JPEG,
--					      MTK_JPEG_FMT_TYPE_OUTPUT);
--	q->w = MTK_JPEG_MIN_WIDTH;
--	q->h = MTK_JPEG_MIN_HEIGHT;
--	q->bytesperline[0] = 0;
--	q->sizeimage[0] = MTK_JPEG_DEFAULT_SIZEIMAGE;
-+	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-+	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-+
-+	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_YUYV,
-+				      MTK_JPEG_FMT_FLAG_ENC_OUTPUT);
-+	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-+				    fmt.pix_mp), q->fmt);
-+	q->w = pix_mp->width;
-+	q->h = pix_mp->height;
-+	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-+	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
- 
- 	q = &ctx->cap_q;
--	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_YUV420M,
--					      MTK_JPEG_FMT_TYPE_CAPTURE);
--	q->w = MTK_JPEG_MIN_WIDTH;
--	q->h = MTK_JPEG_MIN_HEIGHT;
-+	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_JPEG,
-+				      MTK_JPEG_FMT_FLAG_ENC_CAPTURE);
-+	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-+	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-+	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-+				    fmt.pix_mp), q->fmt);
-+	q->w = pix_mp->width;
-+	q->h = pix_mp->height;
-+	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-+	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
-+}
-+
-+static void mtk_jpeg_set_dec_default_params(struct mtk_jpeg_ctx *ctx)
-+{
-+	struct mtk_jpeg_q_data *q = &ctx->out_q;
-+	struct v4l2_pix_format_mplane *pix_mp;
-+	int i;
-+
-+	pix_mp = kmalloc(sizeof(*pix_mp), GFP_KERNEL);
- 
-+	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
-+	ctx->colorspace = V4L2_COLORSPACE_JPEG,
-+	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
-+	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
-+	ctx->xfer_func = V4L2_XFER_FUNC_DEFAULT;
-+	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-+	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-+
-+	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_JPEG,
-+				      MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
-+	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-+				    fmt.pix_mp), q->fmt);
-+	q->w = pix_mp->width;
-+	q->h = pix_mp->height;
-+	q->sizeimage[0] = pix_mp->plane_fmt[0].sizeimage;
-+	q->bytesperline[0] = pix_mp->plane_fmt[0].bytesperline;
-+
-+	q = &ctx->cap_q;
-+	q->fmt = mtk_jpeg_find_format(V4L2_PIX_FMT_YUV420M,
-+				      MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
-+	pix_mp->width = MTK_JPEG_MIN_WIDTH;
-+	pix_mp->height = MTK_JPEG_MIN_HEIGHT;
-+	vidioc_try_fmt(container_of(pix_mp, struct v4l2_format,
-+				    fmt.pix_mp), q->fmt);
-+	q->w = pix_mp->width;
-+	q->h = pix_mp->height;
- 	for (i = 0; i < q->fmt->colplanes; i++) {
--		u32 stride = q->w * q->fmt->h_sample[i] / 4;
--		u32 h = q->h * q->fmt->v_sample[i] / 4;
-+		q->sizeimage[i] = pix_mp->plane_fmt[i].sizeimage;
-+		q->bytesperline[i] = pix_mp->plane_fmt[i].bytesperline;
-+	}
-+}
-+
-+static int mtk_jpeg_enc_open(struct file *file)
-+{
-+	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
-+	struct video_device *vfd = video_devdata(file);
-+	struct mtk_jpeg_ctx *ctx;
-+	int ret = 0;
- 
--		q->bytesperline[i] = stride;
--		q->sizeimage[i] = stride * h;
-+	ctx = kzalloc(sizeof(*ctx), GFP_KERNEL);
-+	if (!ctx)
-+		return -ENOMEM;
-+
-+	if (mutex_lock_interruptible(&jpeg->lock)) {
-+		ret = -ERESTARTSYS;
-+		goto free;
-+	}
-+
-+	v4l2_fh_init(&ctx->fh, vfd);
-+	file->private_data = &ctx->fh;
-+	v4l2_fh_add(&ctx->fh);
-+
-+	ctx->jpeg = jpeg;
-+	ctx->fh.m2m_ctx = v4l2_m2m_ctx_init(jpeg->m2m_dev, ctx,
-+					    mtk_jpeg_enc_queue_init);
-+	if (IS_ERR(ctx->fh.m2m_ctx)) {
-+		ret = PTR_ERR(ctx->fh.m2m_ctx);
-+		goto error;
- 	}
-+
-+	ret = mtk_jpeg_enc_ctrls_setup(ctx);
-+	if (ret) {
-+		v4l2_err(&jpeg->v4l2_dev, "Failed to setup jpeg enc controls\n");
-+		goto error;
-+	}
-+	mtk_jpeg_set_enc_default_params(ctx);
-+
-+	mutex_unlock(&jpeg->lock);
-+	return 0;
-+
-+error:
-+	v4l2_fh_del(&ctx->fh);
-+	v4l2_fh_exit(&ctx->fh);
-+	mutex_unlock(&jpeg->lock);
-+free:
-+	kfree(ctx);
-+	return ret;
- }
- 
--static int mtk_jpeg_open(struct file *file)
-+static int mtk_jpeg_dec_open(struct file *file)
- {
- 	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
- 	struct video_device *vfd = video_devdata(file);
-@@ -971,13 +1525,20 @@ static int mtk_jpeg_open(struct file *file)
- 
- 	ctx->jpeg = jpeg;
- 	ctx->fh.m2m_ctx = v4l2_m2m_ctx_init(jpeg->m2m_dev, ctx,
--					    mtk_jpeg_queue_init);
-+					    mtk_jpeg_dec_queue_init);
- 	if (IS_ERR(ctx->fh.m2m_ctx)) {
- 		ret = PTR_ERR(ctx->fh.m2m_ctx);
- 		goto error;
- 	}
- 
--	mtk_jpeg_set_default_params(ctx);
-+	v4l2_ctrl_handler_init(&ctx->ctrl_hdl, 0);
-+	ret = v4l2_ctrl_handler_setup(&ctx->ctrl_hdl);
-+	if (ret) {
-+		v4l2_err(&jpeg->v4l2_dev, "Failed to setup jpeg dec controls\n");
-+		goto error;
-+	}
-+	mtk_jpeg_set_dec_default_params(ctx);
-+
- 	mutex_unlock(&jpeg->lock);
- 	return 0;
- 
-@@ -997,6 +1558,7 @@ static int mtk_jpeg_release(struct file *file)
- 
- 	mutex_lock(&jpeg->lock);
- 	v4l2_m2m_ctx_release(ctx->fh.m2m_ctx);
-+	v4l2_ctrl_handler_free(&ctx->ctrl_hdl);
- 	v4l2_fh_del(&ctx->fh);
- 	v4l2_fh_exit(&ctx->fh);
- 	kfree(ctx);
-@@ -1004,9 +1566,18 @@ static int mtk_jpeg_release(struct file *file)
- 	return 0;
- }
- 
--static const struct v4l2_file_operations mtk_jpeg_fops = {
-+static const struct v4l2_file_operations mtk_jpeg_enc_fops = {
- 	.owner          = THIS_MODULE,
--	.open           = mtk_jpeg_open,
-+	.open           = mtk_jpeg_enc_open,
-+	.release        = mtk_jpeg_release,
-+	.poll           = v4l2_m2m_fop_poll,
-+	.unlocked_ioctl = video_ioctl2,
-+	.mmap           = v4l2_m2m_fop_mmap,
-+};
-+
-+static const struct v4l2_file_operations mtk_jpeg_dec_fops = {
-+	.owner          = THIS_MODULE,
-+	.open           = mtk_jpeg_dec_open,
- 	.release        = mtk_jpeg_release,
- 	.poll           = v4l2_m2m_fop_poll,
- 	.unlocked_ioctl = video_ioctl2,
-@@ -1017,6 +1588,7 @@ static int mtk_jpeg_clk_init(struct mtk_jpeg_dev *jpeg)
- {
- 	struct device_node *node;
- 	struct platform_device *pdev;
-+	int i;
- 
- 	node = of_parse_phandle(jpeg->dev->of_node, "mediatek,larb", 0);
- 	if (!node)
-@@ -1030,19 +1602,24 @@ static int mtk_jpeg_clk_init(struct mtk_jpeg_dev *jpeg)
- 
- 	jpeg->larb = &pdev->dev;
- 
--	jpeg->clk_jdec = devm_clk_get(jpeg->dev, "jpgdec");
--	if (IS_ERR(jpeg->clk_jdec))
--		return PTR_ERR(jpeg->clk_jdec);
-+	for (i = 0; i < jpeg->variant->num_clocks; i++) {
-+		jpeg->clocks[i] = devm_clk_get(jpeg->dev,
-+					       jpeg->variant->clk_names[i]);
-+		if (IS_ERR(jpeg->clocks[i])) {
-+			dev_err(&pdev->dev, "failed to get clock: %s\n",
-+				jpeg->variant->clk_names[i]);
-+			return PTR_ERR(jpeg->clocks[i]);
-+		}
-+	}
- 
--	jpeg->clk_jdec_smi = devm_clk_get(jpeg->dev, "jpgdec-smi");
--	return PTR_ERR_OR_ZERO(jpeg->clk_jdec_smi);
-+	return 0;
- }
- 
- static int mtk_jpeg_probe(struct platform_device *pdev)
- {
- 	struct mtk_jpeg_dev *jpeg;
- 	struct resource *res;
--	int dec_irq;
-+	int jpeg_irq;
- 	int ret;
- 
- 	jpeg = devm_kzalloc(&pdev->dev, sizeof(*jpeg), GFP_KERNEL);
-@@ -1052,25 +1629,30 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
- 	mutex_init(&jpeg->lock);
- 	spin_lock_init(&jpeg->hw_lock);
- 	jpeg->dev = &pdev->dev;
-+	jpeg->variant = of_device_get_match_data(jpeg->dev);
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	jpeg->dec_reg_base = devm_ioremap_resource(&pdev->dev, res);
--	if (IS_ERR(jpeg->dec_reg_base)) {
--		ret = PTR_ERR(jpeg->dec_reg_base);
-+	jpeg->reg_base = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(jpeg->reg_base)) {
-+		ret = PTR_ERR(jpeg->reg_base);
- 		return ret;
- 	}
- 
--	dec_irq = platform_get_irq(pdev, 0);
--	if (dec_irq < 0) {
--		dev_err(&pdev->dev, "Failed to get dec_irq %d.\n", dec_irq);
--		return dec_irq;
-+	jpeg_irq = platform_get_irq(pdev, 0);
-+	if (jpeg_irq < 0) {
-+		dev_err(&pdev->dev, "Failed to get jpeg_irq %d.\n", jpeg_irq);
-+		return jpeg_irq;
- 	}
- 
--	ret = devm_request_irq(&pdev->dev, dec_irq, mtk_jpeg_dec_irq, 0,
--			       pdev->name, jpeg);
-+	if (jpeg->variant->is_encoder)
-+		ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_enc_irq,
-+				       0, pdev->name, jpeg);
-+	else
-+		ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_dec_irq,
-+				       0, pdev->name, jpeg);
- 	if (ret) {
--		dev_err(&pdev->dev, "Failed to request dec_irq %d (%d)\n",
--			dec_irq, ret);
-+		dev_err(&pdev->dev, "Failed to request jpeg_irq %d (%d)\n",
-+			jpeg_irq, ret);
- 		goto err_req_irq;
- 	}
- 
-@@ -1087,40 +1669,50 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
- 		goto err_dev_register;
- 	}
- 
--	jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_m2m_ops);
-+	if (jpeg->variant->is_encoder)
-+		jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_enc_m2m_ops);
-+	else
-+		jpeg->m2m_dev = v4l2_m2m_init(&mtk_jpeg_dec_m2m_ops);
- 	if (IS_ERR(jpeg->m2m_dev)) {
- 		v4l2_err(&jpeg->v4l2_dev, "Failed to init mem2mem device\n");
- 		ret = PTR_ERR(jpeg->m2m_dev);
- 		goto err_m2m_init;
- 	}
- 
--	jpeg->dec_vdev = video_device_alloc();
--	if (!jpeg->dec_vdev) {
-+	jpeg->vdev = video_device_alloc();
-+	if (!jpeg->vdev) {
- 		ret = -ENOMEM;
--		goto err_dec_vdev_alloc;
-+		goto err_vfd_jpeg_alloc;
- 	}
--	snprintf(jpeg->dec_vdev->name, sizeof(jpeg->dec_vdev->name),
--		 "%s-dec", MTK_JPEG_NAME);
--	jpeg->dec_vdev->fops = &mtk_jpeg_fops;
--	jpeg->dec_vdev->ioctl_ops = &mtk_jpeg_ioctl_ops;
--	jpeg->dec_vdev->minor = -1;
--	jpeg->dec_vdev->release = video_device_release;
--	jpeg->dec_vdev->lock = &jpeg->lock;
--	jpeg->dec_vdev->v4l2_dev = &jpeg->v4l2_dev;
--	jpeg->dec_vdev->vfl_dir = VFL_DIR_M2M;
--	jpeg->dec_vdev->device_caps = V4L2_CAP_STREAMING |
-+	snprintf(jpeg->vdev->name, sizeof(jpeg->vdev->name),
-+		 "%s-%s", MTK_JPEG_NAME,
-+		 jpeg->variant->is_encoder ? "enc" : "dec");
-+	if (jpeg->variant->is_encoder) {
-+		jpeg->vdev->fops = &mtk_jpeg_enc_fops;
-+		jpeg->vdev->ioctl_ops = &mtk_jpeg_enc_ioctl_ops;
-+	} else {
-+		jpeg->vdev->fops = &mtk_jpeg_dec_fops;
-+		jpeg->vdev->ioctl_ops = &mtk_jpeg_dec_ioctl_ops;
-+	}
-+	jpeg->vdev->minor = -1;
-+	jpeg->vdev->release = video_device_release;
-+	jpeg->vdev->lock = &jpeg->lock;
-+	jpeg->vdev->v4l2_dev = &jpeg->v4l2_dev;
-+	jpeg->vdev->vfl_dir = VFL_DIR_M2M;
-+	jpeg->vdev->device_caps = V4L2_CAP_STREAMING |
- 				      V4L2_CAP_VIDEO_M2M_MPLANE;
- 
--	ret = video_register_device(jpeg->dec_vdev, VFL_TYPE_GRABBER, -1);
-+	ret = video_register_device(jpeg->vdev, VFL_TYPE_GRABBER, -1);
- 	if (ret) {
- 		v4l2_err(&jpeg->v4l2_dev, "Failed to register video device\n");
--		goto err_dec_vdev_register;
-+		goto err_vfd_jpeg_register;
- 	}
- 
--	video_set_drvdata(jpeg->dec_vdev, jpeg);
-+	video_set_drvdata(jpeg->vdev, jpeg);
- 	v4l2_info(&jpeg->v4l2_dev,
--		  "decoder device registered as /dev/video%d (%d,%d)\n",
--		  jpeg->dec_vdev->num, VIDEO_MAJOR, jpeg->dec_vdev->minor);
-+		  "jpeg %s device registered as /dev/video%d (%d,%d)\n",
-+		  jpeg->variant->is_encoder ? "enc" : "dec", jpeg->vdev->num,
-+		  VIDEO_MAJOR, jpeg->vdev->minor);
- 
- 	platform_set_drvdata(pdev, jpeg);
- 
-@@ -1128,10 +1720,10 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
- 
- 	return 0;
- 
--err_dec_vdev_register:
--	video_device_release(jpeg->dec_vdev);
-+err_vfd_jpeg_register:
-+	video_device_release(jpeg->vdev);
- 
--err_dec_vdev_alloc:
-+err_vfd_jpeg_alloc:
- 	v4l2_m2m_release(jpeg->m2m_dev);
- 
- err_m2m_init:
-@@ -1151,8 +1743,8 @@ static int mtk_jpeg_remove(struct platform_device *pdev)
- 	struct mtk_jpeg_dev *jpeg = platform_get_drvdata(pdev);
- 
- 	pm_runtime_disable(&pdev->dev);
--	video_unregister_device(jpeg->dec_vdev);
--	video_device_release(jpeg->dec_vdev);
-+	video_unregister_device(jpeg->vdev);
-+	video_device_release(jpeg->vdev);
- 	v4l2_m2m_release(jpeg->m2m_dev);
- 	v4l2_device_unregister(&jpeg->v4l2_dev);
- 
-@@ -1211,14 +1803,36 @@ static const struct dev_pm_ops mtk_jpeg_pm_ops = {
- 	SET_RUNTIME_PM_OPS(mtk_jpeg_pm_suspend, mtk_jpeg_pm_resume, NULL)
- };
- 
-+static struct mtk_jpeg_variant mt8173_jpeg_drvdata = {
-+	.is_encoder	= false,
-+	.clk_names	= {"jpgdec-smi", "jpgdec"},
-+	.num_clocks	= 2,
-+};
-+
-+static struct mtk_jpeg_variant mt2701_jpeg_drvdata = {
-+	.is_encoder	= false,
-+	.clk_names	= {"jpgdec-smi", "jpgdec"},
-+	.num_clocks	= 2,
-+};
-+
-+static struct mtk_jpeg_variant mtk_jpeg_drvdata = {
-+	.is_encoder	= true,
-+	.clk_names	= {"jpgenc"},
-+	.num_clocks	= 1,
-+};
-+
- static const struct of_device_id mtk_jpeg_match[] = {
- 	{
- 		.compatible = "mediatek,mt8173-jpgdec",
--		.data       = NULL,
-+		.data = &mt8173_jpeg_drvdata,
- 	},
- 	{
- 		.compatible = "mediatek,mt2701-jpgdec",
--		.data       = NULL,
-+		.data = &mt2701_jpeg_drvdata,
-+	},
-+	{
-+		.compatible = "mediatek,mtk-jpgenc",
-+		.data = &mtk_jpeg_drvdata,
- 	},
- 	{},
- };
-diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-index 9bbd615b1067..8f80f2a69d45 100644
---- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-+++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-@@ -3,6 +3,7 @@
-  * Copyright (c) 2016 MediaTek Inc.
-  * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
-  *         Rick Chang <rick.chang@mediatek.com>
-+ *         Xia Jiang <xia.jiang@mediatek.com>
-  */
- 
- #ifndef _MTK_JPEG_CORE_H
-@@ -16,19 +17,21 @@
- #define MTK_JPEG_NAME		"mtk-jpeg"
- 
- #define MTK_JPEG_COMP_MAX		3
-+#define MTK_JPEG_MAX_CLOCKS		2
-+
- 
- #define MTK_JPEG_FMT_FLAG_DEC_OUTPUT	BIT(0)
- #define MTK_JPEG_FMT_FLAG_DEC_CAPTURE	BIT(1)
--
--#define MTK_JPEG_FMT_TYPE_OUTPUT	1
--#define MTK_JPEG_FMT_TYPE_CAPTURE	2
-+#define MTK_JPEG_FMT_FLAG_ENC_OUTPUT	BIT(2)
-+#define MTK_JPEG_FMT_FLAG_ENC_CAPTURE	BIT(3)
- 
- #define MTK_JPEG_MIN_WIDTH	32U
- #define MTK_JPEG_MIN_HEIGHT	32U
--#define MTK_JPEG_MAX_WIDTH	8192U
--#define MTK_JPEG_MAX_HEIGHT	8192U
-+#define MTK_JPEG_MAX_WIDTH	65535U
-+#define MTK_JPEG_MAX_HEIGHT	65535U
- 
- #define MTK_JPEG_DEFAULT_SIZEIMAGE	(1 * 1024 * 1024)
-+#define MTK_JPEG_DEFAULT_EXIF_SIZE	(64 * 1024)
- 
- /**
-  * enum mtk_jpeg_ctx_state - contex state of jpeg
-@@ -39,6 +42,18 @@ enum mtk_jpeg_ctx_state {
- 	MTK_JPEG_SOURCE_CHANGE,
- };
- 
-+/**
-+ * mtk_jpeg_variant - mtk jpeg driver variant
-+ * @is_encoder:		driver mode is jpeg encoder
-+ * @clk_names:		clock names
-+ * @num_clocks:		numbers of clock
-+ */
-+struct mtk_jpeg_variant {
-+	bool is_encoder;
-+	const char		*clk_names[MTK_JPEG_MAX_CLOCKS];
-+	int			num_clocks;
-+};
-+
- /**
-  * struct mt_jpeg - JPEG IP abstraction
-  * @lock:		the mutex protecting this structure
-@@ -48,11 +63,11 @@ enum mtk_jpeg_ctx_state {
-  * @v4l2_dev:		v4l2 device for mem2mem mode
-  * @m2m_dev:		v4l2 mem2mem device data
-  * @alloc_ctx:		videobuf2 memory allocator's context
-- * @dec_vdev:		video device node for decoder mem2mem mode
-- * @dec_reg_base:	JPEG registers mapping
-- * @clk_jdec:		JPEG hw working clock
-- * @clk_jdec_smi:	JPEG SMI bus clock
-+ * @vdev:		video device node for jpeg mem2mem mode
-+ * @reg_base:		JPEG registers mapping
-  * @larb:		SMI device
-+ * @clocks:		JPEG IP clock(s)
-+ * @variant:		driver variant to be used
-  */
- struct mtk_jpeg_dev {
- 	struct mutex		lock;
-@@ -62,16 +77,17 @@ struct mtk_jpeg_dev {
- 	struct v4l2_device	v4l2_dev;
- 	struct v4l2_m2m_dev	*m2m_dev;
- 	void			*alloc_ctx;
--	struct video_device	*dec_vdev;
--	void __iomem		*dec_reg_base;
--	struct clk		*clk_jdec;
--	struct clk		*clk_jdec_smi;
-+	struct video_device	*vdev;
-+	void __iomem		*reg_base;
- 	struct device		*larb;
-+	struct clk		*clocks[MTK_JPEG_MAX_CLOCKS];
-+	const struct mtk_jpeg_variant *variant;
- };
- 
- /**
-  * struct jpeg_fmt - driver's internal color format data
-  * @fourcc:	the fourcc code, 0 if not applicable
-+ * @hw_format:	hardware format value
-  * @h_sample:	horizontal sample count of plane in 4 * 4 pixel image
-  * @v_sample:	vertical sample count of plane in 4 * 4 pixel image
-  * @colplanes:	number of color planes (1 for packed formats)
-@@ -81,6 +97,7 @@ struct mtk_jpeg_dev {
-  */
- struct mtk_jpeg_fmt {
- 	u32	fourcc;
-+	u32	hw_format;
- 	int	h_sample[VIDEO_MAX_PLANES];
- 	int	v_sample[VIDEO_MAX_PLANES];
- 	int	colplanes;
-@@ -113,6 +130,10 @@ struct mtk_jpeg_q_data {
-  * @cap_q:		destination (capture) queue queue information
-  * @fh:			V4L2 file handle
-  * @state:		state of the context
-+ * @enable_exif:	enable exif mode of jpeg encoder
-+ * @enc_quality:	jpeg encoder quality
-+ * @restart_interval:	jpeg encoder restart interval
-+ * @ctrl_hdl:		controls handler
-  * @colorspace: enum v4l2_colorspace; supplemental to pixelformat
-  * @ycbcr_enc: enum v4l2_ycbcr_encoding, Y'CbCr encoding
-  * @quantization: enum v4l2_quantization, colorspace quantization
-@@ -124,6 +145,10 @@ struct mtk_jpeg_ctx {
- 	struct mtk_jpeg_q_data		cap_q;
- 	struct v4l2_fh			fh;
- 	enum mtk_jpeg_ctx_state		state;
-+	bool				enable_exif;
-+	u8				enc_quality;
-+	u8				restart_interval;
-+	struct v4l2_ctrl_handler	ctrl_hdl;
- 
- 	enum v4l2_colorspace colorspace;
- 	enum v4l2_ycbcr_encoding ycbcr_enc;
-diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-index 1cc37dbfc8e7..ce263db5f30a 100644
---- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-+++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-@@ -3,10 +3,11 @@
-  * Copyright (c) 2016 MediaTek Inc.
-  * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
-  *         Rick Chang <rick.chang@mediatek.com>
-+ *         Xia Jiang <xia.jiang@mediatek.com>
-  */
- 
--#ifndef _MTK_JPEG_HW_H
--#define _MTK_JPEG_HW_H
-+#ifndef _MTK_JPEG_DEC_HW_H
-+#define _MTK_JPEG_DEC_HW_H
- 
- #include <media/videobuf2-core.h>
- 
-@@ -75,4 +76,4 @@ void mtk_jpeg_dec_set_config(void __iomem *base,
- void mtk_jpeg_dec_reset(void __iomem *dec_reg_base);
- void mtk_jpeg_dec_start(void __iomem *dec_reg_base);
- 
--#endif /* _MTK_JPEG_HW_H */
-+#endif /* _MTK_JPEG_DEC_HW_H */
-diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-new file mode 100644
-index 000000000000..7fc1de920a75
---- /dev/null
-+++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-@@ -0,0 +1,193 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Author: Xia Jiang <xia.jiang@mediatek.com>
-+ *
-+ */
-+
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <media/videobuf2-core.h>
-+
-+#include "mtk_jpeg_enc_hw.h"
-+
-+static const struct mtk_jpeg_enc_qlt mtk_jpeg_enc_quality[] = {
-+	{.quality_param = 34, .hardware_value = JPEG_ENC_QUALITY_Q34},
-+	{.quality_param = 39, .hardware_value = JPEG_ENC_QUALITY_Q39},
-+	{.quality_param = 48, .hardware_value = JPEG_ENC_QUALITY_Q48},
-+	{.quality_param = 60, .hardware_value = JPEG_ENC_QUALITY_Q60},
-+	{.quality_param = 64, .hardware_value = JPEG_ENC_QUALITY_Q64},
-+	{.quality_param = 68, .hardware_value = JPEG_ENC_QUALITY_Q68},
-+	{.quality_param = 74, .hardware_value = JPEG_ENC_QUALITY_Q74},
-+	{.quality_param = 80, .hardware_value = JPEG_ENC_QUALITY_Q80},
-+	{.quality_param = 82, .hardware_value = JPEG_ENC_QUALITY_Q82},
-+	{.quality_param = 84, .hardware_value = JPEG_ENC_QUALITY_Q84},
-+	{.quality_param = 87, .hardware_value = JPEG_ENC_QUALITY_Q87},
-+	{.quality_param = 90, .hardware_value = JPEG_ENC_QUALITY_Q90},
-+	{.quality_param = 92, .hardware_value = JPEG_ENC_QUALITY_Q92},
-+	{.quality_param = 95, .hardware_value = JPEG_ENC_QUALITY_Q95},
-+	{.quality_param = 97, .hardware_value = JPEG_ENC_QUALITY_Q97},
-+};
-+
-+void mtk_jpeg_enc_reset(void __iomem *base)
-+{
-+	writel(0x00, base + JPEG_ENC_RSTB);
-+	writel(JPEG_ENC_RESET_BIT, base + JPEG_ENC_RSTB);
-+	writel(0x00, base + JPEG_ENC_CODEC_SEL);
-+}
-+
-+u32 mtk_jpeg_enc_get_and_clear_int_status(void __iomem *base)
-+{
-+	u32 ret;
-+
-+	ret = readl(base + JPEG_ENC_INT_STS) &
-+		    JPEG_ENC_INT_STATUS_MASK_ALLIRQ;
-+	if (ret)
-+		writel(0, base + JPEG_ENC_INT_STS);
-+
-+	return ret;
-+}
-+
-+u32 mtk_jpeg_enc_get_file_size(void __iomem *base)
-+{
-+	return readl(base + JPEG_ENC_DMA_ADDR0) -
-+	       readl(base + JPEG_ENC_DST_ADDR0);
-+}
-+
-+u32 mtk_jpeg_enc_enum_result(void __iomem *base, u32 irq_status)
-+{
-+	if (irq_status & JPEG_ENC_INT_STATUS_DONE)
-+		return MTK_JPEG_ENC_RESULT_DONE;
-+	else if (irq_status & JPEG_ENC_INT_STATUS_STALL)
-+		return MTK_JPEG_ENC_RESULT_STALL;
-+	else
-+		return MTK_JPEG_ENC_RESULT_VCODEC_IRQ;
-+}
-+
-+void mtk_jpeg_enc_set_img_size(void __iomem *base, u32 width, u32 height)
-+{
-+	u32 value;
-+
-+	value = width << 16 | height;
-+	writel(value, base + JPEG_ENC_IMG_SIZE);
-+}
-+
-+void mtk_jpeg_enc_set_blk_num(void __iomem *base, u32 enc_format, u32 width,
-+			      u32 height)
-+{
-+	u32 blk_num;
-+	u32 is_420;
-+	u32 padding_width;
-+	u32 padding_height;
-+	u32 luma_blocks;
-+	u32 chroma_blocks;
-+
-+	is_420 = (enc_format == V4L2_PIX_FMT_NV12M ||
-+		  enc_format == V4L2_PIX_FMT_NV21M) ? 1 : 0;
-+	padding_width = round_up(width, 16);
-+	padding_height = round_up(height, is_420 ? 16 : 8);
-+
-+	luma_blocks = padding_width / 8 * padding_height / 8;
-+	if (is_420)
-+		chroma_blocks = luma_blocks / 4;
-+	else
-+		chroma_blocks = luma_blocks / 2;
-+
-+	blk_num = luma_blocks + 2 * chroma_blocks - 1;
-+
-+	writel(blk_num, base + JPEG_ENC_BLK_NUM);
-+}
-+
-+void mtk_jpeg_enc_set_stride(void __iomem *base, u32 enc_format, u32 width,
-+			     u32 height, u32 bytesperline)
-+{
-+	u32 img_stride;
-+	u32 mem_stride;
-+
-+	if (enc_format == V4L2_PIX_FMT_NV12M ||
-+	    enc_format == V4L2_PIX_FMT_NV21M) {
-+		img_stride = round_up(width, 16);
-+		mem_stride = bytesperline;
-+	} else {
-+		img_stride = round_up(width * 2, 32);
-+		mem_stride = img_stride;
-+	}
-+
-+	writel(img_stride, base + JPEG_ENC_IMG_STRIDE);
-+	writel(mem_stride, base + JPEG_ENC_STRIDE);
-+}
-+
-+void mtk_jpeg_enc_set_src_addr(void __iomem *base, u32 src_addr,
-+			       u32 plane_index)
-+{
-+	if (!plane_index)
-+		writel(src_addr, base + JPEG_ENC_SRC_LUMA_ADDR);
-+	else
-+		writel(src_addr, base + JPEG_ENC_SRC_CHROMA_ADDR);
-+}
-+
-+void mtk_jpeg_enc_set_dst_addr(void __iomem *base, u32 dst_addr,
-+			       u32 stall_size, u32 init_offset,
-+			       u32 offset_mask)
-+{
-+	writel(init_offset & ~0xf, base + JPEG_ENC_OFFSET_ADDR);
-+	writel(offset_mask & 0xf, base + JPEG_ENC_BYTE_OFFSET_MASK);
-+	writel(dst_addr & ~0xf, base + JPEG_ENC_DST_ADDR0);
-+	writel((dst_addr + stall_size) & ~0xf, base + JPEG_ENC_STALL_ADDR0);
-+}
-+
-+static void mtk_jpeg_enc_set_quality(void __iomem *base, u32 quality)
-+{
-+	u32 value;
-+	u32 i, enc_quality;
-+
-+	enc_quality = mtk_jpeg_enc_quality[0].hardware_value;
-+	for (i = 0; i < ARRAY_SIZE(mtk_jpeg_enc_quality); i++) {
-+		if (quality <= mtk_jpeg_enc_quality[i].quality_param) {
-+			enc_quality = mtk_jpeg_enc_quality[i].hardware_value;
-+			break;
-+		}
-+	}
-+
-+	value = readl(base + JPEG_ENC_QUALITY);
-+	value = (value & JPEG_ENC_QUALITY_MASK) | enc_quality;
-+	writel(value, base + JPEG_ENC_QUALITY);
-+}
-+
-+static void mtk_jpeg_enc_set_ctrl(void __iomem *base, u32 enc_format,
-+				  bool exif_en, u32 restart_interval)
-+{
-+	u32 value;
-+
-+	value = readl(base + JPEG_ENC_CTRL);
-+	value &= ~JPEG_ENC_CTRL_YUV_FORMAT_MASK;
-+	value |= (enc_format & 3) << 3;
-+	if (exif_en)
-+		value |= JPEG_ENC_CTRL_FILE_FORMAT_BIT;
-+	else
-+		value &= ~JPEG_ENC_CTRL_FILE_FORMAT_BIT;
-+	if (restart_interval)
-+		value |= JPEG_ENC_CTRL_RESTART_EN_BIT;
-+	else
-+		value &= ~JPEG_ENC_CTRL_RESTART_EN_BIT;
-+	writel(value, base + JPEG_ENC_CTRL);
-+}
-+
-+void mtk_jpeg_enc_set_config(void __iomem *base, u32 enc_format, bool exif_en,
-+			     u32 quality, u32 restart_interval)
-+{
-+	mtk_jpeg_enc_set_quality(base, quality);
-+
-+	mtk_jpeg_enc_set_ctrl(base, enc_format, exif_en, restart_interval);
-+
-+	writel(restart_interval, base + JPEG_ENC_RST_MCU_NUM);
-+}
-+
-+void mtk_jpeg_enc_start(void __iomem *base)
-+{
-+	u32 value;
-+
-+	value = readl(base + JPEG_ENC_CTRL);
-+	value |= JPEG_ENC_CTRL_INT_EN_BIT | JPEG_ENC_CTRL_ENABLE_BIT;
-+	writel(value, base + JPEG_ENC_CTRL);
-+}
-diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-new file mode 100644
-index 000000000000..73faf49b667c
---- /dev/null
-+++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-@@ -0,0 +1,123 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Author: Xia Jiang <xia.jiang@mediatek.com>
-+ *
-+ */
-+
-+#ifndef _MTK_JPEG_ENC_HW_H
-+#define _MTK_JPEG_ENC_HW_H
-+
-+#include <media/videobuf2-core.h>
-+
-+#include "mtk_jpeg_core.h"
-+
-+#define JPEG_ENC_INT_STATUS_DONE	BIT(0)
-+#define JPEG_ENC_INT_STATUS_STALL	BIT(1)
-+#define JPEG_ENC_INT_STATUS_VCODEC_IRQ	BIT(4)
-+#define JPEG_ENC_INT_STATUS_MASK_ALLIRQ	0x13
-+
-+#define JPEG_ENC_DST_ADDR_OFFSET_MASK	GENMASK(3, 0)
-+#define JPEG_ENC_QUALITY_MASK		GENMASK(31, 16)
-+
-+#define JPEG_ENC_CTRL_YUV_FORMAT_MASK	0x18
-+#define JPEG_ENC_CTRL_RESTART_EN_BIT	BIT(10)
-+#define JPEG_ENC_CTRL_FILE_FORMAT_BIT	BIT(5)
-+#define JPEG_ENC_CTRL_INT_EN_BIT	BIT(2)
-+#define JPEG_ENC_CTRL_ENABLE_BIT	BIT(0)
-+#define JPEG_ENC_RESET_BIT		BIT(0)
-+
-+#define JPEG_ENC_YUV_FORMAT_YUYV	0
-+#define JPEG_ENC_YUV_FORMAT_YVYU	1
-+#define JPEG_ENC_YUV_FORMAT_NV12	2
-+#define JEPG_ENC_YUV_FORMAT_NV21	3
-+
-+#define JPEG_ENC_QUALITY_Q60		0x0
-+#define JPEG_ENC_QUALITY_Q80		0x1
-+#define JPEG_ENC_QUALITY_Q90		0x2
-+#define JPEG_ENC_QUALITY_Q95		0x3
-+#define JPEG_ENC_QUALITY_Q39		0x4
-+#define JPEG_ENC_QUALITY_Q68		0x5
-+#define JPEG_ENC_QUALITY_Q84		0x6
-+#define JPEG_ENC_QUALITY_Q92		0x7
-+#define JPEG_ENC_QUALITY_Q48		0x8
-+#define JPEG_ENC_QUALITY_Q74		0xa
-+#define JPEG_ENC_QUALITY_Q87		0xb
-+#define JPEG_ENC_QUALITY_Q34		0xc
-+#define JPEG_ENC_QUALITY_Q64		0xe
-+#define JPEG_ENC_QUALITY_Q82		0xf
-+#define JPEG_ENC_QUALITY_Q97		0x10
-+
-+#define JPEG_ENC_RSTB			0x100
-+#define JPEG_ENC_CTRL			0x104
-+#define JPEG_ENC_QUALITY		0x108
-+#define JPEG_ENC_BLK_NUM		0x10C
-+#define JPEG_ENC_BLK_CNT		0x110
-+#define JPEG_ENC_INT_STS		0x11c
-+#define JPEG_ENC_DST_ADDR0		0x120
-+#define JPEG_ENC_DMA_ADDR0		0x124
-+#define JPEG_ENC_STALL_ADDR0		0x128
-+#define JPEG_ENC_OFFSET_ADDR		0x138
-+#define JPEG_ENC_RST_MCU_NUM		0x150
-+#define JPEG_ENC_IMG_SIZE		0x154
-+#define JPEG_ENC_DEBUG_INFO0		0x160
-+#define JPEG_ENC_DEBUG_INFO1		0x164
-+#define JPEG_ENC_TOTAL_CYCLE		0x168
-+#define JPEG_ENC_BYTE_OFFSET_MASK	0x16c
-+#define JPEG_ENC_SRC_LUMA_ADDR		0x170
-+#define JPEG_ENC_SRC_CHROMA_ADDR	0x174
-+#define JPEG_ENC_STRIDE			0x178
-+#define JPEG_ENC_IMG_STRIDE		0x17c
-+#define JPEG_ENC_DCM_CTRL		0x300
-+#define JPEG_ENC_CODEC_SEL		0x314
-+#define JPEG_ENC_ULTRA_THRES		0x318
-+
-+enum {
-+	MTK_JPEG_ENC_RESULT_DONE,
-+	MTK_JPEG_ENC_RESULT_STALL,
-+	MTK_JPEG_ENC_RESULT_VCODEC_IRQ
-+};
-+
-+/**
-+ * struct mtk_jpeg_enc_qlt - JPEG encoder quality data
-+ * @quality_param:	quality value
-+ * @hardware_value:	hardware value of quality
-+ */
-+struct mtk_jpeg_enc_qlt {
-+	u8	quality_param;
-+	u8	hardware_value;
-+};
-+
-+/**
-+ * struct mt_jpeg_enc_bs - JPEG encoder bitstream  buffer
-+ * @dma_addr:			JPEG encoder destination address
-+ * @size:			JPEG encoder bistream size
-+ * @dma_addr_offset:		JPEG encoder offset address
-+ * @dma_addr_offsetmask:	JPEG encoder destination address offset mask
-+ */
-+struct mtk_jpeg_enc_bs {
-+	dma_addr_t	dma_addr;
-+	size_t		size;
-+	u32		dma_addr_offset;
-+	u32		dma_addr_offsetmask;
-+};
-+
-+void mtk_jpeg_enc_reset(void __iomem *base);
-+u32 mtk_jpeg_enc_get_and_clear_int_status(void __iomem *base);
-+u32 mtk_jpeg_enc_get_file_size(void __iomem *base);
-+u32 mtk_jpeg_enc_enum_result(void __iomem *base, u32 irq_status);
-+void mtk_jpeg_enc_set_img_size(void __iomem *base, u32 width, u32 height);
-+void mtk_jpeg_enc_set_blk_num(void __iomem *base, u32 enc_format, u32 width,
-+			      u32 height);
-+void mtk_jpeg_enc_set_stride(void __iomem *base, u32 enc_format, u32 width,
-+			     u32 height, u32 bytesperline);
-+void mtk_jpeg_enc_set_src_addr(void __iomem *base, u32 src_addr,
-+			       u32 plane_index);
-+void mtk_jpeg_enc_set_dst_addr(void __iomem *base, u32 dst_addr,
-+			       u32 stall_size, u32 init_offset,
-+			       u32 offset_mask);
-+void mtk_jpeg_enc_set_config(void __iomem *base, u32 enc_format, bool exif_en,
-+			     u32 quality, u32 restart_interval);
-+void mtk_jpeg_enc_start(void __iomem *enc_reg_base);
-+
-+#endif /* _MTK_JPEG_ENC_HW_H */
 -- 
-2.18.0
+With Best Regards,
+Andy Shevchenko
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
