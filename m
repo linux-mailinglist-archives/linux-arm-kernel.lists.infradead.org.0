@@ -2,60 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3DD719CE4C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 03:44:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E09A19CEAB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 04:26:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wSVz/DF6F6D7S2wf8nmEPaDPnOESC91bE5l4JNLuj7o=; b=I6Gu06pKqNPvYa0HSbhnladtda
-	cW0UBTQHwBc4IIOLx8HqvcZoo/zDA5nMJNeRaaWApJKkMW9CzeeAVZR7R7vPDljh15TAQQf9LvFCw
-	Cr0/dnU5REg0/AjWRu0gW3G2eB46LlylQsLcyjUJZZQUeJl9JdkckaeoCgo3ij7CUYbKtxQCq1KQz
-	VqSLEaJp4CtuZrdmawwxQniUW4PD3l5X8SUPVZQw4wbidf+aHzLVWkhosV6E9PMA5oZi9kTeyDIIP
-	lqMej0/uztISxagGpTBlPSV75oNLkasViX9sLCpk7SqXyi2JZvS70nVLtyhKc5L/LqLRuIxvuQZtX
-	qdCXuGzQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qtz8MGvyywtkQ4C51K9/nD8WzCQatHm6O+HczReoCoU=; b=udXEm9AU3wkoIP
+	4R15BrOzl/cX6tumzVQ/GP8VRIptp2efDwhBPEWbJ1yPdSiC3MR5TAKp3U9+rp9Q+2nWnPHdGE5s7
+	Gf2j27rd52vYMs9EQiGSDV5y0ZzgDIZBnBOeQWyLFkP1D7sjJ0RokDiMeNk/f29WjqMyjjmSIpI7V
+	IsyDUVAbZCEJYu4pRYA/p1Cb3T0q2IOorPJf1rv9UCf9kxlGG9mEMIljqmntPU9BNsqMG5okOKaql
+	CWHaGiMXKcH4k+3yd3NbQxRNvdtdGiXLwYLLOBJkNITPwCozv4hxzSkewI4v3qs42dV8/1rlXyZWy
+	jtgDWr4KMwTtCupebMlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKBNy-0003NH-OP; Fri, 03 Apr 2020 01:44:42 +0000
-Received: from mx.socionext.com ([202.248.49.38])
+	id 1jKC1f-0004ek-8Z; Fri, 03 Apr 2020 02:25:43 +0000
+Received: from email6.ustc.edu.cn ([2001:da8:d800::8] helo=ustc.edu.cn)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKBNA-0002hN-I3
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 01:43:53 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 03 Apr 2020 10:43:51 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 8057060066;
- Fri,  3 Apr 2020 10:43:51 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 3 Apr 2020 10:43:51 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 2804D1A01BB;
- Fri,  3 Apr 2020 10:43:51 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 5/5] arm64: dts: uniphier: Stabilize Ethernet RGMII mode of
- PXs3 ref board
-Date: Fri,  3 Apr 2020 10:43:07 +0900
-Message-Id: <1585878187-8131-6-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1585878187-8131-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1585878187-8131-1-git-send-email-hayashi.kunihiko@socionext.com>
+ id 1jKC1Z-0004by-3X
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 02:25:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mail.ustc.edu.cn; s=dkim; h=Received:Date:From:To:Cc:Subject:
+ Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ bh=5Ff+gzssjXpUxll6RYKKOboaCB53dA6nJFGdRslGlz4=; b=ApEJfMGE0z+pJ
+ RtGalc7lsNqR6sAUG6UzXeLk9sWZaSP52XjcwbvmYjbs5Uh3Go+6mP0rIECytAnJ
+ kbz5jlJO4baZd2EWNmf8dI/VGJUgHlInUsLqAM5RZm2D3NsCacZ+Wayvw79QfD1y
+ nbca9TJocdzNJukygO+FFUvXUx3FNs=
+Received: from xhacker (unknown [101.86.20.80])
+ by newmailweb.ustc.edu.cn (Coremail) with SMTP id
+ LkAmygCXwXWNnoZe2NgQAA--.14355S2; 
+ Fri, 03 Apr 2020 10:25:18 +0800 (CST)
+Date: Fri, 3 Apr 2020 10:23:29 +0800
+From: Jisheng Zhang <jszhang3@mail.ustc.edu.cn>
+To: Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre Torgue
+ <alexandre.torgue@st.com>, Jose Abreu <joabreu@synopsys.com>, "David S.
+ Miller" <davem@davemloft.net>
+Subject: [PATCH] net: stmmac: dwmac1000: fix out-of-bounds mac address reg
+ setting
+Message-ID: <20200403102329.0690d7b2@xhacker>
+MIME-Version: 1.0
+X-CM-TRANSID: LkAmygCXwXWNnoZe2NgQAA--.14355S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7Kw4fXw1xKryDGF4fKr4Durg_yoW8JFWkpF
+ 47CFy5ZrZ2gr48Wa1kXwn8XFykGayUKr4UWFWIkwna9F93J3yj9F9I9ay5twsrAr4rWFy3
+ tr4jkr9rCFn0kwUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+ 9KBjDU0xBIdaVrnRJUUUyIb7Iv0xC_tr1lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
+ 0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+ A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Ar0_tr1l84ACjcxK6xII
+ jxv20xvEc7CjxVAFwI0_Cr0_Gr1UM28EF7xvwVC2z280aVAFwI0_Cr1j6rxdM28EF7xvwV
+ C2z280aVCY1x0267AKxVWxJr0_GcWle2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xv
+ F2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r
+ 4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwCF04k20xvY0x0EwIxGrwCFx2Iq
+ xVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r
+ 106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AK
+ xVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7
+ xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVWU
+ JVW8JbIYCTnIWIevJa73UjIFyTuYvjxU2rcTDUUUU
+X-CM-SenderInfo: xmv2xttqjtqzxdloh3xvwfhvlgxou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_184352_713363_57C1B9A2 
-X-CRM114-Status: GOOD (  10.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200402_192537_522001_AFDB33FE 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ no trust [2001:da8:d800:0:0:0:0:8 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,50 +89,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Jassi Brar <jaswinder.singh@linaro.org>
-MIME-Version: 1.0
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The RGMII PHY implemented in PXs3 ref board needs to change
-drive-strength properties of the Ethernet Tx pins to stabilize the PHY.
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Commit 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address
+entries") cleared the unused mac address entries, but introduced an
+out-of bounds mac address register programming bug -- After setting
+the secondary unicast mac addresses, the "reg" value has reached
+netdev_uc_count() + 1, thus we should only clear address entries
+if (addr < perfect_addr_number)
+
+Fixes: 9463c4455900 ("net: stmmac: dwmac1000: Clear unused address entries")
+Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 ---
- arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts b/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
-index dc39a73..7c30c6b 100644
---- a/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
-+++ b/arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts
-@@ -132,3 +132,19 @@
- 		reg = <0>;
- 	};
- };
-+
-+&pinctrl_ether_rgmii {
-+	tx {
-+		pins = "RGMII0_TXCLK", "RGMII0_TXD0", "RGMII0_TXD1",
-+		       "RGMII0_TXD2", "RGMII0_TXD3", "RGMII0_TXCTL";
-+		drive-strength = <9>;
-+	};
-+};
-+
-+&pinctrl_ether1_rgmii {
-+	tx {
-+		pins = "RGMII1_TXCLK", "RGMII1_TXD0", "RGMII1_TXD1",
-+		       "RGMII1_TXD2", "RGMII1_TXD3", "RGMII1_TXCTL";
-+		drive-strength = <9>;
-+	};
-+};
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
+index 542784300620..efc6ec1b8027 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
+@@ -207,7 +207,7 @@ static void dwmac1000_set_filter(struct mac_device_info *hw,
+ 			reg++;
+ 		}
+ 
+-		while (reg <= perfect_addr_number) {
++		while (reg < perfect_addr_number) {
+ 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
+ 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
+ 			reg++;
 -- 
-2.7.4
+2.26.0
+
 
 
 _______________________________________________
