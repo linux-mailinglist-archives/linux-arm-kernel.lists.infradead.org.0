@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E56E19D46B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:53:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 821E119D46A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:53:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=77ttw4GFuLO4X0f6f+vlvMFsfJCfz4W2aAbYa4vruG4=; b=kKAqArpN0rGjvf
-	/5lWiXTtKgGIztEnImYgUIkU1jv+pAqwctvRt/8ob92YXgcgxLD5SWFJTpXLPwVXMX6HKCQsNqy4V
-	5pZFPyvvff6Ab/mMqa8N/VuJ7eBiG8SR1z454luDd4s4Zwea3AqkOir0XDwrxOmyxSvzHxelwv3Fi
-	2DTZ7t2UTepPKeTQ+KQ17YWturr/OPpHbO7wNAPvo8w5ap0+7sPPsg8Tfs+F7+DkvdVsPjFm8VAMR
-	tuDTE8ylbDwVbvy9LVoNJaCa0A36s04yiIHwDKC6G7iyZtteCqHpYFPqTJHjUtRSPxlkW0pHPh5yw
-	Uo16Ndwj+BYZYkDSeX9g==;
+	List-Owner; bh=pC4oiECX7v88DFJQ8tz+Tg0FsTJWJ4oixyRSLh6hM1Y=; b=atU0q3O3P8GaL/
+	tFuP4YyybVNhuLX3XiqGW8vwlhq2Bcj4K3jWiCsPKK+UtqOUHFuO6g946CC2bPn0/qgOp0GxkyZxy
+	1kPAAMRArzNf1Btw/MPsBzkb9+MnB8H5dE7RmGJOkipZBGyCmQ89A5m8supZRIDBIMe1a9aOKG9Be
+	pvOwmCRJ7RlAkMZyHJrY1O8DQOL+YGOePSNXP+1svXskzknftGUB0THENQONM8fgJXRPtXjuI4J7g
+	DL+YWRZVxFB+uF1yptkEYib/tu0x4zyxZ6AqbFcBZ8gJP43sPWg7nHeGXyEoQk/5NTfovtgUt+01+
+	Yz+7teK44lnYIpCOEv8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKJ1C-0002gu-K2; Fri, 03 Apr 2020 09:53:42 +0000
+	id 1jKJ0t-0002SR-7Y; Fri, 03 Apr 2020 09:53:23 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIyP-0000OY-Vk; Fri, 03 Apr 2020 09:50:51 +0000
-X-UUID: 03c1515a64804a1693cc9d166f7d5a2d-20200403
+ id 1jKIyO-0000N2-VL; Fri, 03 Apr 2020 09:50:50 +0000
+X-UUID: 311a8ff635fc49b8a44afa626ea0ec0a-20200403
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=pm/C6wkpcwoRE/CCieW0EFzNKBkWkCFOYLbu5+5Ga74=; 
- b=uKLn6eZ0SVdH/DdMHuIe1AFFhQyt1TizIDmzlv56RoMY1SpxKf2IWbDp3iylWjccuwjR8QCfC/lbjpL1lhznZYJ0BKAQtHVsQfLfJvP0sHOCFSdOEc/w0gag1DguQ5hmoPGN8U1NmJNFk/1TtA13wjE03NuFwbfqeubxzcPaLHI=;
-X-UUID: 03c1515a64804a1693cc9d166f7d5a2d-20200403
+ bh=WpMIy3AkmSG9PNgIdQtrXjvW6Cg2lVIoIoOuUGR4AuY=; 
+ b=oRb52GM2RvDVCXcSU/ETZJgS3dFPbVbiq2ylDJaqW+bhOaiouETSzrQjiVz6PhEKX9yUzCwDpAuHI2Ha2gMNlvgas3+eUeiv9p94O7uwdHjdQxTeUQpl2ULpBg3QjiJT4d0mKw9v48SMcKelP+2rp6+2CLVrxf8etytIovhtY88=;
+X-UUID: 311a8ff635fc49b8a44afa626ea0ec0a-20200403
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 55669531; Fri, 03 Apr 2020 01:50:38 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ with ESMTP id 752306757; Fri, 03 Apr 2020 01:50:38 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Apr 2020 02:40:40 -0700
+ 15.0.1395.4; Fri, 3 Apr 2020 02:40:41 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 3 Apr 2020 17:40:37 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 3 Apr 2020 17:40:38 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 3 Apr 2020 17:40:36 +0800
+ Transport; Fri, 3 Apr 2020 17:40:38 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v8 05/14] media: platform: Improve power on and power off flow
-Date: Fri, 3 Apr 2020 17:40:24 +0800
-Message-ID: <20200403094033.8288-6-xia.jiang@mediatek.com>
+Subject: [PATCH v8 06/14] media: platform: Improve the implementation of the
+ system PM ops
+Date: Fri, 3 Apr 2020 17:40:25 +0800
+Message-ID: <20200403094033.8288-7-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200403094033.8288-1-xia.jiang@mediatek.com>
 References: <20200403094033.8288-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_025050_050314_B0341744 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20200403_025049_022448_D8B66F34 
+X-CRM114-Status: GOOD (  10.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,86 +101,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Call pm_runtime_get_sync() before starting a frame and then
-pm_runtime_put() after completing it. This can save power for the time
-between processing two frames.
+Cancel reset hw operation in suspend and resume function because this
+will be done in device_run().
+Add spin_lock and unlock operation in irq and resume function to make
+sure that the current frame is processed completely before suspend.
 
 Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 ---
- .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 27 +++++--------------
- 1 file changed, 6 insertions(+), 21 deletions(-)
+ drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-index a536fa95b3d6..dd5cadd101ef 100644
+index dd5cadd101ef..2fa3711fdc9b 100644
 --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
 +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-@@ -710,23 +710,6 @@ static struct vb2_v4l2_buffer *mtk_jpeg_buf_remove(struct mtk_jpeg_ctx *ctx,
- 		return v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
- }
+@@ -911,6 +911,8 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
+ 	u32 dec_ret;
+ 	int i;
  
--static int mtk_jpeg_start_streaming(struct vb2_queue *q, unsigned int count)
--{
--	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
--	struct vb2_v4l2_buffer *vb;
--	int ret = 0;
--
--	ret = pm_runtime_get_sync(ctx->jpeg->dev);
--	if (ret < 0)
--		goto err;
--
--	return 0;
--err:
--	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
--		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_QUEUED);
--	return ret;
--}
--
- static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
- {
- 	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-@@ -751,8 +734,6 @@ static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
- 
- 	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
- 		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
--
--	pm_runtime_put_sync(ctx->jpeg->dev);
- }
- 
- static const struct vb2_ops mtk_jpeg_qops = {
-@@ -761,7 +742,6 @@ static const struct vb2_ops mtk_jpeg_qops = {
- 	.buf_queue          = mtk_jpeg_buf_queue,
- 	.wait_prepare       = vb2_ops_wait_prepare,
- 	.wait_finish        = vb2_ops_wait_finish,
--	.start_streaming    = mtk_jpeg_start_streaming,
- 	.stop_streaming     = mtk_jpeg_stop_streaming,
- };
- 
-@@ -812,7 +792,7 @@ static void mtk_jpeg_device_run(void *priv)
- 	struct mtk_jpeg_src_buf *jpeg_src_buf;
- 	struct mtk_jpeg_bs bs;
- 	struct mtk_jpeg_fb fb;
--	int i;
-+	int i, ret;
- 
- 	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
- 	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-@@ -832,6 +812,10 @@ static void mtk_jpeg_device_run(void *priv)
- 		return;
- 	}
- 
-+	ret = pm_runtime_get_sync(jpeg->dev);
-+	if (ret < 0)
-+		goto dec_end;
++	spin_lock(&jpeg->hw_lock);
 +
- 	mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
- 	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
- 		goto dec_end;
-@@ -957,6 +941,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
+ 	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->dec_reg_base);
+ 	dec_irq_ret = mtk_jpeg_dec_enum_result(dec_ret);
+ 	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
+@@ -941,6 +943,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
  	v4l2_m2m_buf_done(src_buf, buf_state);
  	v4l2_m2m_buf_done(dst_buf, buf_state);
  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-+	pm_runtime_put_sync(ctx->jpeg->dev);
++	spin_unlock(&jpeg->hw_lock);
+ 	pm_runtime_put_sync(ctx->jpeg->dev);
  	return IRQ_HANDLED;
+ }
+@@ -1191,7 +1194,6 @@ static __maybe_unused int mtk_jpeg_pm_suspend(struct device *dev)
+ {
+ 	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
+ 
+-	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
+ 	mtk_jpeg_clk_off(jpeg);
+ 
+ 	return 0;
+@@ -1202,19 +1204,24 @@ static __maybe_unused int mtk_jpeg_pm_resume(struct device *dev)
+ 	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
+ 
+ 	mtk_jpeg_clk_on(jpeg);
+-	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
+ 
+ 	return 0;
+ }
+ 
+ static __maybe_unused int mtk_jpeg_suspend(struct device *dev)
+ {
++	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
++	unsigned long flags;
+ 	int ret;
+ 
+ 	if (pm_runtime_suspended(dev))
+ 		return 0;
+ 
++	spin_lock_irqsave(&jpeg->hw_lock, flags);
++
+ 	ret = mtk_jpeg_pm_suspend(dev);
++
++	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
+ 	return ret;
  }
  
 -- 
