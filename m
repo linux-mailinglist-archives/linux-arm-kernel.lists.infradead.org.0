@@ -2,68 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C6DF19D566
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14BD919D57C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:07:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ASRe94EUcu30DKNGPzJW7Vci9AoES/3F7xGNm63A1VM=; b=JwT9RgN9S6s1Vl
-	O+v73qf2zJYX0Je7KcIh7J7SO2Gro2ap6H5wkFkMctFAe8PlT0O1MEVE1k8OJMjPbRhajpjB2+b8C
-	wsDx8YN8+qRWiLQRirwRTJcV7V0f0EIAzhRXfZMynl6X7Q2Y819aWOVWTexKcnldt0PPjZ0GR+GZl
-	nI2CW4wHXkHXe82x0Xac4kcPUdIfUZpiwkEcm09CQlCDrZYb1/JWLk5xjCmvlU6EodikaGjm6Mq5f
-	brJCRwvnsbHRlZSjyCRlYp+faLZJa1A5sngkp9cCCxh155/OpCulF45wEAvn+Ult7z/6Hku3YuCFn
-	VQ4uf+56PvBs/y5Ic9DA==;
+	List-Owner; bh=joeKtpDhRGWMjOEUB4se7gg97mwxFa5Gg8YpRRDZwAQ=; b=hdJHn+wmPZVjNU
+	aFDmxnJrMNZBzl3j9+QaeFeD6i63MV4h9h+iE7uKoNySLRaJzxki+z1s8Zj7Zx0LlUyPcZhLUaqZZ
+	JgI15tJpen/NSVPzCUtuM43spJDw9a5NOb3mrHR433qAq5slD8E/HscIw3s5hGpKvN1Yegc5EM2TL
+	mMuIF+TOwtk+/93tjKEFXAIOBhxtPxVaJQzoEFu1IYF0W+amwabQ7iM/dHIdrfXr4VjbOv/BR0jOF
+	bFcB2Owj5HlIake1QSsuOPlbJzijfIeq/8hz3/m57GEeZBbOQbQFhKSmH092WFDv04SXQh61zbpOY
+	IpAT2zgENdQ3vHEGLIUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKK5l-0006AB-Oi; Fri, 03 Apr 2020 11:02:29 +0000
-Received: from mga02.intel.com ([134.134.136.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKK5e-00068u-5r; Fri, 03 Apr 2020 11:02:23 +0000
-IronPort-SDR: OJ0hXsPasudUa58ohP1CzSjph7gqi8efePegcCmqhYKRXDJmN03sYgDSnWd9hLDaRheQVwMFOU
- 9kbyrwBlovfA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 03 Apr 2020 04:02:21 -0700
-IronPort-SDR: 5a/olc0ACQqahkFQkQxRyVBNsCA4xCic/xEhfND7MJmYVdslUpbDkdLtGefMcO/KHcxgKc3A9/
- kvDVjv3BeWPA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,339,1580803200"; d="scan'208";a="268327035"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga002.jf.intel.com with ESMTP; 03 Apr 2020 04:02:10 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jKK5S-00FPZD-Th; Fri, 03 Apr 2020 14:02:10 +0300
-Date: Fri, 3 Apr 2020 14:02:10 +0300
-From: "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>
-To: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH v8 00/10] Support ROHM BD99954 charger IC
-Message-ID: <20200403110210.GO1922688@smile.fi.intel.com>
-References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
- <50797a6ac6cda4647f9a396dab0ad08017e3138b.camel@fi.rohmeurope.com>
+	id 1jKKAU-0000vZ-Pw; Fri, 03 Apr 2020 11:07:22 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jKKAM-0000v8-Uw
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 11:07:16 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 03 Apr 2020 20:07:13 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 966C960057;
+ Fri,  3 Apr 2020 20:07:13 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Fri, 3 Apr 2020 20:07:13 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 4F8381A0E67;
+ Fri,  3 Apr 2020 20:07:13 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 2DC7112013D;
+ Fri,  3 Apr 2020 20:07:13 +0900 (JST)
+Date: Fri, 03 Apr 2020 20:07:13 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v4 0/5] Add devicetree features and fixes for UniPhier SoCs
+In-Reply-To: <1585878187-8131-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1585878187-8131-1-git-send-email-hayashi.kunihiko@socionext.com>
+Message-Id: <20200403200712.7A13.4A936039@socionext.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <50797a6ac6cda4647f9a396dab0ad08017e3138b.camel@fi.rohmeurope.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_040222_267495_E7B6A6A3 
-X-CRM114-Status: GOOD (  17.64  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200403_040715_211362_65DA492D 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,94 +69,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "andrei.stefanescu@microchip.com" <andrei.stefanescu@microchip.com>,
- "heiko@sntech.de" <heiko@sntech.de>, "rafael@kernel.org" <rafael@kernel.org>,
- "tony@atomide.com" <tony@atomide.com>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "brendanhiggins@google.com" <brendanhiggins@google.com>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "kholk11@gmail.com" <kholk11@gmail.com>,
- "hsin-hsiung.wang@mediatek.com" <hsin-hsiung.wang@mediatek.com>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "axel.lin@ingics.com" <axel.lin@ingics.com>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>, "krzk@kernel.org" <krzk@kernel.org>,
- "m.reichl@fivetechno.de" <m.reichl@fivetechno.de>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "wens@csie.org" <wens@csie.org>, "andreas@kemnade.info" <andreas@kemnade.info>,
- "agross@kernel.org" <agross@kernel.org>, "Laine,
- Markus" <Markus.Laine@fi.rohmeurope.com>,
- "Adam.Thomson.Opensource@diasemi.com" <Adam.Thomson.Opensource@diasemi.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "ckeepax@opensource.cirrus.com" <ckeepax@opensource.cirrus.com>,
- "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
- "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "rf@opensource.cirrus.com" <rf@opensource.cirrus.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "sre@kernel.org" <sre@kernel.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "support.opensource@diasemi.com" <support.opensource@diasemi.com>,
- "baolin.wang@linaro.org" <baolin.wang@linaro.org>,
- "sbkim73@samsung.com" <sbkim73@samsung.com>,
- "patches@opensource.cirrus.com" <patches@opensource.cirrus.com>,
- "rdunlap@infradead.org" <rdunlap@infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Mutanen,
- Mikko" <Mikko.Mutanen@fi.rohmeurope.com>,
- "b.zolnierkie@samsung.com" <b.zolnierkie@samsung.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>
+Cc: devicetree@vger.kernel.org, Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Jassi Brar <jaswinder.singh@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 03, 2020 at 10:07:41AM +0000, Vaittinen, Matti wrote:
-> On Fri, 2020-04-03 at 11:36 +0300, Matti Vaittinen wrote:
-> > Support ROHM BD99954 Battery Management IC
-> > 
-> > ROHM BD99954 is a Battery Management IC for 1-4 cell Lithium-Ion
-> > secondary battery. BD99954 is intended to be used in space-constraint
-> > equipment such as Low profile Notebook PC, Tablets and other
-> > applications.
-> > 
-> > Series extracts a "linear ranges" helper out of the regulator
-> > framework. Linear ranges helper is intended to help converting
-> > real-world values to register values when conversion is linear. I
-> > suspect this is useful also for power subsystem and possibly for clk.
-> 
-> I see Mark has acked/reviewed both the regulator changes and
-> linear_ranges code. Do you think Mark should take the linear_ranges and
-> regulator changes in his tree? I don't know Sebastian's schedule or
-> when the charger portion is good to go - but I know that each new
-> regulator driver which is added to regulator tree has a chance of using
-> the struct regulator_linear_range - which will break when this series
-> is applied. Or what would be the best way to avoid breaking regulators?
-> 
-> OTOH, if Mark takes linear_ranges in his tree, then this power portion
-> of the series will depend on linear_ranges stuff that is in regulator
-> tree. I guess this must be pretty standard stuff for you and you
-> probably know how to handle it but I just wanted to point out the risk
-> of breaking regulator build without visible merge conflicts.
-> 
-> Please let me know if I should split the series and rebase
-> linear_ranges / regulator stuff on top of regulator tree.
+Sorry for the mistake about the following changes because it was confused
+with the other mail. Please wait for xdmac node patches to be reviewed until
+the dt-bindings fix patch is available.
 
-From my point of view, you need to wait till rc1 is out and rebase the series.
-The cross-subsystem changes can be handled by maintainers in a form of
-immutable branches / tags. On your side you may recommend them how to proceed,
-but the final decision is by them.
+Thank you,
 
--- 
-With Best Regards,
-Andy Shevchenko
+On Fri, 3 Apr 2020 10:43:02 +0900 <hayashi.kunihiko@socionext.com> wrote:
 
+> This series adds new features that includes XDMAC for each SoC, ethernet
+> aliases to inherit MAC address from u-boot, and stabilization for ethernet
+> on PXs3 ref board.
+> 
+> Changes since v3:
+> - dt-bindings: Exclude from this series
+>   The alternative patch fixed by Yamada-san has been applied.
+> - Fix size of xdmac register region
+> 
+> Changes since v2:
+> - dt-bindings: Consolidate register description for xdmac
+> - Spread the size of xdmac register region
+> 
+> Changes since v1:
+> - dt-bindings: Remove extension register description for xdmac
+> - Remove extension register area from xdmac node
+> - Fix commit message for ethernet aliases
+> - Remove RGMII setting for LD20 global board
+> 
+> These patches in v1 have already been applied:
+>   ARM: dts: uniphier: Add USB3 controller nodes for Pro5
+>   arm64: dts: uniphier: Enable spi node for PXs3 reference board
+>   arm64: dts: uniphier: Add nodes of thermal monitor and thermal zone
+>     for PXs3
+>   ARM: dts: uniphier: Set SCSSI clock and reset IDs for each channel
+>   arm64: dts: uniphier: Set SCSSI clock and reset IDs for each channel
+> 
+> Kunihiko Hayashi (5):
+>   ARM: dts: uniphier: Add XDMAC node
+>   arm64: dts: uniphier: Add XDMAC node
+>   ARM: dts: uniphier: Add ethernet aliases
+>   arm64: dts: uniphier: Add ethernet aliases
+>   arm64: dts: uniphier: Stabilize Ethernet RGMII mode of PXs3 ref board
+> 
+>  arch/arm/boot/dts/uniphier-ld6b-ref.dts                |  1 +
+>  arch/arm/boot/dts/uniphier-pro4-ace.dts                |  1 +
+>  arch/arm/boot/dts/uniphier-pro4-ref.dts                |  1 +
+>  arch/arm/boot/dts/uniphier-pro4-sanji.dts              |  1 +
+>  arch/arm/boot/dts/uniphier-pro4.dtsi                   |  8 ++++++++
+>  arch/arm/boot/dts/uniphier-pro5.dtsi                   |  8 ++++++++
+>  arch/arm/boot/dts/uniphier-pxs2-gentil.dts             |  1 +
+>  arch/arm/boot/dts/uniphier-pxs2-vodka.dts              |  1 +
+>  arch/arm/boot/dts/uniphier-pxs2.dtsi                   |  8 ++++++++
+>  arch/arm64/boot/dts/socionext/uniphier-ld11-global.dts |  1 +
+>  arch/arm64/boot/dts/socionext/uniphier-ld11-ref.dts    |  1 +
+>  arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi       |  8 ++++++++
+>  arch/arm64/boot/dts/socionext/uniphier-ld20-global.dts |  1 +
+>  arch/arm64/boot/dts/socionext/uniphier-ld20-ref.dts    |  1 +
+>  arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi       |  8 ++++++++
+>  arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts    | 18 ++++++++++++++++++
+>  arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi       |  8 ++++++++
+>  17 files changed, 76 insertions(+)
+> 
+> -- 
+> 2.7.4
+
+---
+Best Regards,
+Kunihiko Hayashi
 
 
 _______________________________________________
