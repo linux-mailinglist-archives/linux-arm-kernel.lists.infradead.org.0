@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E5A119D2FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:02:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBD4219D30B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:02:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=abJ9dwfXtVZVAVDXuN+8z0cdeAJ6uHP0keI4wQXoGfY=; b=NIcx+hZeJ68XLi
-	ozYnNA+pyhLiXsiquIL9OzmebP6tutyx/Ug/UAPYj5Kl/YskKDXdQbhDFG3EF3B/xG8LYrUS1uI3O
-	9Hoote03t5982k7SQaK9VdW8r+Ph859aCgoCriPnQy4bvaBx+J7p9a0rIpu3Bbupw5giinQ895S5b
-	8+PQGXFpIKJzK/FBqVBZhrzQuK1TpsgH4DrkSjTUdwA2IFhs+WEPd7baVdpvpJtXERtYJRAO1+epi
-	v0jbp5CquWymvl1LiC88/CJE4EQHJfek8XdzHylT2i+5e1sPoZTokk3MFalDWNQBPzCSINVRV466X
-	e5fuyKKVJJXh7gKfSZDQ==;
+	List-Owner; bh=O+FHmyS0uRIpQRTIfR/gtopfoTwkBSGJssdSPvMSWuk=; b=O/Q5OhF1AAaLN2
+	DFHrQN7lSwgjAhtkt9t35T6OFEhE6irpaRTHfreCaNqRhY0zv+/d2dnaowejpx5NvIa1mK1sdqjrq
+	aVTdQWS7gfcTL8Gom7GL51KpkE5zq3dQ72LfgOOxghlib87v5TU6AZZ8pMMmAnluIr0IcTtVjbjMs
+	0kzgbs9TR5lQRbxFm3UzS1+BKuE0RxMFfS5gfLXPrUYh6qRdfiptpWhq61aJJ4kqp4pYcxV6oMSZQ
+	n213HpFpqNMxUfpYhh5Swzunqay3ocace9YxK3AwvoWDRmgOeJCLRhETVege7Px1KktySwL3wuJ0u
+	Fe2XvAPKTBQTUQWkpzZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIDR-0005XY-A1; Fri, 03 Apr 2020 09:02:17 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jKIE0-00065z-JC; Fri, 03 Apr 2020 09:02:52 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKICQ-0004T8-Mj
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:01:17 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id E6FA519880F97011DEC2;
- Fri,  3 Apr 2020 17:01:11 +0800 (CST)
+ id 1jKICV-0004Zi-2Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:01:20 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 06829F795AF01CEA341E;
+ Fri,  3 Apr 2020 17:01:17 +0800 (CST)
 Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
  DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
- 14.3.487.0; Fri, 3 Apr 2020 17:01:05 +0800
+ 14.3.487.0; Fri, 3 Apr 2020 17:01:06 +0800
 From: Zhenyu Ye <yezhenyu2@huawei.com>
 To: <peterz@infradead.org>, <mark.rutland@arm.com>, <will@kernel.org>,
  <catalin.marinas@arm.com>, <aneesh.kumar@linux.ibm.com>,
@@ -36,9 +36,9 @@ To: <peterz@infradead.org>, <mark.rutland@arm.com>, <will@kernel.org>,
  <rostedt@goodmis.org>, <maz@kernel.org>, <suzuki.poulose@arm.com>,
  <tglx@linutronix.de>, <yuzhao@google.com>, <Dave.Martin@arm.com>,
  <steven.price@arm.com>, <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [PATCH v1 5/6] mm: tlb: Provide flush_*_tlb_range wrappers
-Date: Fri, 3 Apr 2020 17:00:47 +0800
-Message-ID: <20200403090048.938-6-yezhenyu2@huawei.com>
+Subject: [PATCH v1 6/6] arm64: tlb: Set the TTL field in flush_tlb_range
+Date: Fri, 3 Apr 2020 17:00:48 +0800
+Message-ID: <20200403090048.938-7-yezhenyu2@huawei.com>
 X-Mailer: git-send-email 2.22.0.windows.1
 In-Reply-To: <20200403090048.938-1-yezhenyu2@huawei.com>
 References: <20200403090048.938-1-yezhenyu2@huawei.com>
@@ -46,16 +46,15 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.220.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_020114_936971_5ABE58C0 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200403_020119_279210_0E652C22 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,105 +78,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch provides flush_{pte|pmd|pud|p4d}_tlb_range() in generic
-code, which are expressed through the mmu_gather APIs.  These
-interface set tlb->cleared_* and finally call tlb_flush(), so we
-can do the tlb invalidation according to the information in
-struct mmu_gather.
+This patch uses the cleared_* in struct mmu_gather to set the
+TTL field in flush_tlb_range().
 
 Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
 ---
- include/asm-generic/pgtable.h | 12 +++++++--
- mm/pgtable-generic.c          | 50 +++++++++++++++++++++++++++++++++++
- 2 files changed, 60 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/tlb.h      | 26 +++++++++++++++++++++++++-
+ arch/arm64/include/asm/tlbflush.h | 14 ++++++++------
+ 2 files changed, 33 insertions(+), 7 deletions(-)
 
-diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
-index e2e2bef07dd2..2bedeee94131 100644
---- a/include/asm-generic/pgtable.h
-+++ b/include/asm-generic/pgtable.h
-@@ -1160,11 +1160,19 @@ static inline int pmd_free_pte_page(pmd_t *pmd, unsigned long addr)
-  * invalidate the entire TLB which is not desitable.
-  * e.g. see arch/arc: flush_pmd_tlb_range
-  */
--#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
--#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
-+extern void flush_pte_tlb_range(struct vm_area_struct *vma,
-+				unsigned long addr, unsigned long end);
-+extern void flush_pmd_tlb_range(struct vm_area_struct *vma,
-+				unsigned long addr, unsigned long end);
-+extern void flush_pud_tlb_range(struct vm_area_struct *vma,
-+				unsigned long addr, unsigned long end);
-+extern void flush_p4d_tlb_range(struct vm_area_struct *vma,
-+				unsigned long addr, unsigned long end);
- #else
-+#define flush_pte_tlb_range(vma, addr, end)	BUILD_BUG()
- #define flush_pmd_tlb_range(vma, addr, end)	BUILD_BUG()
- #define flush_pud_tlb_range(vma, addr, end)	BUILD_BUG()
-+#define flush_p4d_tlb_range(vma, addr, end)	BUILD_BUG()
- #endif
- #endif
+diff --git a/arch/arm64/include/asm/tlb.h b/arch/arm64/include/asm/tlb.h
+index b76df828e6b7..d5ab72eccff4 100644
+--- a/arch/arm64/include/asm/tlb.h
++++ b/arch/arm64/include/asm/tlb.h
+@@ -21,11 +21,34 @@ static void tlb_flush(struct mmu_gather *tlb);
  
-diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
-index 3d7c01e76efc..0f5414a4a2ec 100644
---- a/mm/pgtable-generic.c
-+++ b/mm/pgtable-generic.c
-@@ -101,6 +101,56 @@ pte_t ptep_clear_flush(struct vm_area_struct *vma, unsigned long address,
+ #include <asm-generic/tlb.h>
  
- #ifdef CONFIG_TRANSPARENT_HUGEPAGE
++/*
++ * get the tlbi levels in arm64.  Default value is 0 if more than one
++ * of cleared_* is set or neither is set.
++ * Arm64 doesn't support p4ds now.
++ */
++static inline int tlb_get_level(struct mmu_gather *tlb)
++{
++	int sum = tlb->cleared_ptes + tlb->cleared_pmds +
++		  tlb->cleared_puds + tlb->cleared_p4ds;
++
++	if (sum != 1)
++		return 0;
++	else if (tlb->cleared_ptes)
++		return 3;
++	else if (tlb->cleared_pmds)
++		return 2;
++	else if (tlb->cleared_puds)
++		return 1;
++
++	return 0;
++}
++
+ static inline void tlb_flush(struct mmu_gather *tlb)
+ {
+ 	struct vm_area_struct vma = TLB_FLUSH_VMA(tlb->mm, 0);
+ 	bool last_level = !tlb->freed_tables;
+ 	unsigned long stride = tlb_get_unmap_size(tlb);
++	int tlb_level = tlb_get_level(tlb);
  
-+#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-+void flush_pte_tlb_range(struct vm_area_struct *vma,
-+			 unsigned long addr, unsigned long end)
-+{
-+	struct mmu_gather tlb;
-+
-+	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-+	tlb_start_vma(&tlb, vma);
-+	tlb_set_pte_range(&tlb, addr, end - addr);
-+	tlb_end_vma(&tlb, vma);
-+	tlb_finish_mmu(&tlb, addr, end);
-+}
-+
-+void flush_pmd_tlb_range(struct vm_area_struct *vma,
-+			 unsigned long addr, unsigned long end)
-+{
-+	struct mmu_gather tlb;
-+
-+	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-+	tlb_start_vma(&tlb, vma);
-+	tlb_set_pmd_range(&tlb, addr, end - addr);
-+	tlb_end_vma(&tlb, vma);
-+	tlb_finish_mmu(&tlb, addr, end);
-+}
-+
-+void flush_pud_tlb_range(struct vm_area_struct *vma,
-+			 unsigned long addr, unsigned long end)
-+{
-+	struct mmu_gather tlb;
-+
-+	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-+	tlb_start_vma(&tlb, vma);
-+	tlb_set_pud_range(&tlb, addr, end - addr);
-+	tlb_end_vma(&tlb, vma);
-+	tlb_finish_mmu(&tlb, addr, end);
-+}
-+
-+void flush_p4d_tlb_range(struct vm_area_struct *vma,
-+			 unsigned long addr, unsigned long end)
-+{
-+	struct mmu_gather tlb;
-+
-+	tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);
-+	tlb_start_vma(&tlb, vma);
-+	tlb_set_p4d_range(&tlb, addr, end - addr);
-+	tlb_end_vma(&tlb, vma);
-+	tlb_finish_mmu(&tlb, addr, end);
-+}
-+#endif /* __HAVE_ARCH_FLUSH_PMD_TLB_RANGE */
-+
- #ifndef __HAVE_ARCH_PMDP_SET_ACCESS_FLAGS
- int pmdp_set_access_flags(struct vm_area_struct *vma,
- 			  unsigned long address, pmd_t *pmdp,
+ 	/*
+ 	 * If we're tearing down the address space then we only care about
+@@ -38,7 +61,8 @@ static inline void tlb_flush(struct mmu_gather *tlb)
+ 		return;
+ 	}
+ 
+-	__flush_tlb_range(&vma, tlb->start, tlb->end, stride, last_level);
++	__flush_tlb_range(&vma, tlb->start, tlb->end, stride,
++			  last_level, tlb_level);
+ }
+ 
+ static inline void __pte_free_tlb(struct mmu_gather *tlb, pgtable_t pte,
+diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+index 892f33235dc7..3cc705755a2d 100644
+--- a/arch/arm64/include/asm/tlbflush.h
++++ b/arch/arm64/include/asm/tlbflush.h
+@@ -215,7 +215,8 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
+ 
+ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 				     unsigned long start, unsigned long end,
+-				     unsigned long stride, bool last_level)
++				     unsigned long stride, bool last_level,
++				     int tlb_level)
+ {
+ 	unsigned long asid = ASID(vma->vm_mm);
+ 	unsigned long addr;
+@@ -237,11 +238,11 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 	dsb(ishst);
+ 	for (addr = start; addr < end; addr += stride) {
+ 		if (last_level) {
+-			__tlbi_level(vale1is, addr, 0);
+-			__tlbi_user_level(vale1is, addr, 0);
++			__tlbi_level(vale1is, addr, tlb_level);
++			__tlbi_user_level(vale1is, addr, tlb_level);
+ 		} else {
+-			__tlbi_level(vae1is, addr, 0);
+-			__tlbi_user_level(vae1is, addr, 0);
++			__tlbi_level(vae1is, addr, tlb_level);
++			__tlbi_user_level(vae1is, addr, tlb_level);
+ 		}
+ 	}
+ 	dsb(ish);
+@@ -253,8 +254,9 @@ static inline void flush_tlb_range(struct vm_area_struct *vma,
+ 	/*
+ 	 * We cannot use leaf-only invalidation here, since we may be invalidating
+ 	 * table entries as part of collapsing hugepages or moving page tables.
++	 * Set the tlb_level to 0 because we can not get enough information here.
+ 	 */
+-	__flush_tlb_range(vma, start, end, PAGE_SIZE, false);
++	__flush_tlb_range(vma, start, end, PAGE_SIZE, false, 0);
+ }
+ 
+ static inline void flush_tlb_kernel_range(unsigned long start, unsigned long end)
 -- 
 2.19.1
 
