@@ -2,41 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B20219E043
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 23:22:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11F8019E041
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 23:22:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Pc0rttzLS2CktdlLHOKWoI0p+p/Icj/z2fNsw68Fr2E=; b=psE
-	WQDdr8p1UeJYVMsbGXHv3d+ewfsuhcUPmi/UvVuyAAisTw2t5mvwxkF0VjFGUatssBR04MGf2yqMt
-	4kSwFGbo9osnHVVVS4luDqcguCd0PEUTLvWpflXkX17O7PiNjp4ahiQqxGWXX3gvfh98rwfITMLfp
-	Nbi5MCn+nofkT3sSMIVwfdC3PAGlAr+St5YKOaEn9fV5NvSst/T5tqqYJU/ZtLJVIaXEiZmDDHI/v
-	h3MEI7xTKvoHt1NjfObOqt/d8mkiVVqV5xyjaHVWCya2aCwfVc6UaoCQINtGprAMQDdpmFKueXr5o
-	s8pNbLiXg0c6yle2zTMkPlfEBoygsxA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jUbfIWyvs5mhFcZd6/xFPI0va/JbK+jn5RGRLJJawRQ=; b=q5QmrGRErEPSbv0stAEaVNxsL+
+	UzjgHDAwdxQdf3p8uQ/z3RPKU2ZSUeLSNICjvEcOFP982miKVvOy7gUtmHqukzbB90rDK6TiGu8vI
+	sQ6omg6DHJ3vLiBAE6/0fBEsRSrGfRIR2fSuII+LyFbN6sQX9/4XTYgxdM68EuRyyK8a155yOpPz3
+	Hg+JFWt64BSutZGu1GJstfBFi4eyM4vb1rRVy19Wgpj5d1aQrR4mmcIbK67qQRo5jcxx5flR/clD1
+	0xLoErRPbEJWoJpr3s610l7fh3Et8sYk1+oTBukcas2DYwgvuG4qmz06Q025GdxOTlKNJDm6oPBFD
+	grCbPSWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKTlW-0008Cm-8j; Fri, 03 Apr 2020 21:22:14 +0000
+	id 1jKTlI-000873-La; Fri, 03 Apr 2020 21:22:00 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKTlC-00085Q-Dd
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 21:21:56 +0000
+ id 1jKTlC-00085P-DZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 21:21:55 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 9EDBDAD41;
+ by mx2.suse.de (Postfix) with ESMTP id E75EFAD57;
  Fri,  3 Apr 2020 21:21:47 +0000 (UTC)
 From: Mian Yousaf Kaukab <ykaukab@suse.de>
 To: linux-pm@vger.kernel.org, andy.tang@nxp.com, shawnguo@kernel.org,
  leoyang.li@nxp.com
-Subject: [PATCH 1/2] cpufreq: qoriq: convert to a platform driver
-Date: Fri,  3 Apr 2020 23:21:13 +0200
-Message-Id: <20200403212114.15565-1-ykaukab@suse.de>
+Subject: [PATCH 2/2] clk: qoriq: add cpufreq platform device
+Date: Fri,  3 Apr 2020 23:21:14 +0200
+Message-Id: <20200403212114.15565-2-ykaukab@suse.de>
 X-Mailer: git-send-email 2.16.4
+In-Reply-To: <20200403212114.15565-1-ykaukab@suse.de>
+References: <20200403212114.15565-1-ykaukab@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_142154_748971_9D4973DE 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20200403_142154_608476_C0C7A3E0 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -44,10 +47,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,138 +72,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver has to be manually loaded if it is built as a module. It
-is neither exporting MODULE_DEVICE_TABLE nor MODULE_ALIAS. Moreover,
-no platform-device is created (and thus no uevent is sent) for the
-clockgen nodes it depends on.
-
-Convert the module to a platform driver with its own alias. Moreover,
-drop whitelisted SOCs. Platform device will be created only for the
-compatible platforms.
+Add a platform device for qoirq-cpufreq driver for the compatible
+clockgen blocks.
 
 Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
 ---
- drivers/cpufreq/qoriq-cpufreq.c | 76 ++++++++++++++++-------------------------
- 1 file changed, 29 insertions(+), 47 deletions(-)
+ drivers/clk/clk-qoriq.c | 30 +++++++++++++++++++++++++++---
+ 1 file changed, 27 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/cpufreq/qoriq-cpufreq.c b/drivers/cpufreq/qoriq-cpufreq.c
-index 8e436dc75c8b..6b6b20da2bcf 100644
---- a/drivers/cpufreq/qoriq-cpufreq.c
-+++ b/drivers/cpufreq/qoriq-cpufreq.c
-@@ -18,6 +18,7 @@
- #include <linux/of.h>
- #include <linux/slab.h>
- #include <linux/smp.h>
-+#include <linux/platform_device.h>
- 
- /**
-  * struct cpu_data
-@@ -29,12 +30,6 @@ struct cpu_data {
- 	struct cpufreq_frequency_table *table;
+diff --git a/drivers/clk/clk-qoriq.c b/drivers/clk/clk-qoriq.c
+index d5946f7486d6..374afcab89af 100644
+--- a/drivers/clk/clk-qoriq.c
++++ b/drivers/clk/clk-qoriq.c
+@@ -95,6 +95,7 @@ struct clockgen {
  };
  
--/*
-- * Don't use cpufreq on this SoC -- used when the SoC would have otherwise
-- * matched a more generic compatible.
-- */
--#define SOC_BLACKLIST		1
--
- /**
-  * struct soc_data - SoC specific data
-  * @flags: SOC_xxx
-@@ -264,64 +259,51 @@ static struct cpufreq_driver qoriq_cpufreq_driver = {
- 	.attr		= cpufreq_generic_attr,
- };
+ static struct clockgen clockgen;
++static bool add_cpufreq_dev __initdata;
  
--static const struct soc_data blacklist = {
--	.flags = SOC_BLACKLIST,
--};
--
--static const struct of_device_id node_matches[] __initconst = {
-+static const struct of_device_id qoriq_cpufreq_blacklist[] = {
- 	/* e6500 cannot use cpufreq due to erratum A-008083 */
--	{ .compatible = "fsl,b4420-clockgen", &blacklist },
--	{ .compatible = "fsl,b4860-clockgen", &blacklist },
--	{ .compatible = "fsl,t2080-clockgen", &blacklist },
--	{ .compatible = "fsl,t4240-clockgen", &blacklist },
--
--	{ .compatible = "fsl,ls1012a-clockgen", },
--	{ .compatible = "fsl,ls1021a-clockgen", },
--	{ .compatible = "fsl,ls1028a-clockgen", },
--	{ .compatible = "fsl,ls1043a-clockgen", },
--	{ .compatible = "fsl,ls1046a-clockgen", },
--	{ .compatible = "fsl,ls1088a-clockgen", },
--	{ .compatible = "fsl,ls2080a-clockgen", },
--	{ .compatible = "fsl,lx2160a-clockgen", },
--	{ .compatible = "fsl,p4080-clockgen", },
--	{ .compatible = "fsl,qoriq-clockgen-1.0", },
--	{ .compatible = "fsl,qoriq-clockgen-2.0", },
-+	{ .compatible = "fsl,b4420-clockgen", },
-+	{ .compatible = "fsl,b4860-clockgen", },
-+	{ .compatible = "fsl,t2080-clockgen", },
-+	{ .compatible = "fsl,t4240-clockgen", },
- 	{}
- };
- 
--static int __init qoriq_cpufreq_init(void)
-+static int qoriq_cpufreq_probe(struct platform_device *pdev)
+ static void cg_out(struct clockgen *cg, u32 val, u32 __iomem *reg)
  {
- 	int ret;
--	struct device_node  *np;
--	const struct of_device_id *match;
--	const struct soc_data *data;
--
--	np = of_find_matching_node(NULL, node_matches);
--	if (!np)
--		return -ENODEV;
--
--	match = of_match_node(node_matches, np);
--	data = match->data;
--
--	of_node_put(np);
-+	struct device_node *np;
+@@ -1019,7 +1020,7 @@ static void __init create_muxes(struct clockgen *cg)
+ 	}
+ }
  
--	if (data && data->flags & SOC_BLACKLIST)
-+	np = of_find_matching_node(NULL, qoriq_cpufreq_blacklist);
-+	if (np) {
-+		dev_info(&pdev->dev, "Disabling due to erratum A-008083");
- 		return -ENODEV;
+-static void __init clockgen_init(struct device_node *np);
++static void __init _clockgen_init(struct device_node *np, bool legacy);
+ 
+ /*
+  * Legacy nodes may get probed before the parent clockgen node.
+@@ -1030,7 +1031,7 @@ static void __init clockgen_init(struct device_node *np);
+ static void __init legacy_init_clockgen(struct device_node *np)
+ {
+ 	if (!clockgen.node)
+-		clockgen_init(of_get_parent(np));
++		_clockgen_init(of_get_parent(np), true);
+ }
+ 
+ /* Legacy node */
+@@ -1447,7 +1448,7 @@ static bool __init has_erratum_a4510(void)
+ }
+ #endif
+ 
+-static void __init clockgen_init(struct device_node *np)
++static void __init _clockgen_init(struct device_node *np, bool legacy)
+ {
+ 	int i, ret;
+ 	bool is_old_ls1021a = false;
+@@ -1516,12 +1517,35 @@ static void __init clockgen_init(struct device_node *np)
+ 		       __func__, np, ret);
+ 	}
+ 
++	/* Don't create cpufreq device for legacy clockgen blocks */
++	add_cpufreq_dev = !legacy;
++
+ 	return;
+ err:
+ 	iounmap(clockgen.regs);
+ 	clockgen.regs = NULL;
+ }
+ 
++static void __init clockgen_init(struct device_node *np)
++{
++	_clockgen_init(np, false);
++}
++
++static int __init clockgen_cpufreq_init(void)
++{
++	struct platform_device *pdev;
++
++	if (add_cpufreq_dev) {
++		pdev = platform_device_register_simple("qoriq-cpufreq", -1,
++				NULL, 0);
++		if (IS_ERR(pdev))
++			pr_err("Couldn't register qoriq-cpufreq err=%ld\n",
++				PTR_ERR(pdev));
 +	}
- 
- 	ret = cpufreq_register_driver(&qoriq_cpufreq_driver);
--	if (!ret)
--		pr_info("Freescale QorIQ CPU frequency scaling driver\n");
-+	if (ret)
-+		return ret;
- 
--	return ret;
-+	dev_info(&pdev->dev, "Freescale QorIQ CPU frequency scaling driver\n");
 +	return 0;
- }
--module_init(qoriq_cpufreq_init);
- 
--static void __exit qoriq_cpufreq_exit(void)
-+static int qoriq_cpufreq_remove(struct platform_device *pdev)
- {
- 	cpufreq_unregister_driver(&qoriq_cpufreq_driver);
++}
++device_initcall(clockgen_cpufreq_init);
 +
-+	return 0;
- }
--module_exit(qoriq_cpufreq_exit);
- 
-+static struct platform_driver qoriq_cpufreq_platform_driver = {
-+	.driver = {
-+		.name = "qoriq-cpufreq",
-+	},
-+	.probe = qoriq_cpufreq_probe,
-+	.remove = qoriq_cpufreq_remove,
-+};
-+module_platform_driver(qoriq_cpufreq_platform_driver);
-+
-+MODULE_ALIAS("platform:qoriq-cpufreq");
- MODULE_LICENSE("GPL");
- MODULE_AUTHOR("Tang Yuantian <Yuantian.Tang@freescale.com>");
- MODULE_DESCRIPTION("cpufreq driver for Freescale QorIQ series SoCs");
+ CLK_OF_DECLARE(qoriq_clockgen_1, "fsl,qoriq-clockgen-1.0", clockgen_init);
+ CLK_OF_DECLARE(qoriq_clockgen_2, "fsl,qoriq-clockgen-2.0", clockgen_init);
+ CLK_OF_DECLARE(qoriq_clockgen_b4420, "fsl,b4420-clockgen", clockgen_init);
 -- 
 2.16.4
 
