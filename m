@@ -2,132 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9078B19DBCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 18:36:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC2A19DBF5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 18:43:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C2iJJRS3nS2LrcWFWSCcjNPtZtERyYOeMkU/sMGxGL0=; b=EJ1LsDzomySOMaeKbepVjP2j9
-	82mV+h7n9yOfMZrNsogUBemw/lkH8EdPglQmTL/35cDZyaz6C8Vs/mnM7OaaFzNqRNogHx8cvTlm5
-	fuXAUymxR91KuyF3uKB+75aLsvfiQAg6gl+xTUbInLf0hjbqxDb13Q65AatbHElIJWLubqo1MRyAc
-	e8e1jgSV3L8fmVj/1hGmLVX1YEcqhNUiX6yC8oqJQvmwBuj7FxzD2Qiv6vUvwMCs/c2TG/rvGPyeL
-	J8qz7IGjOkTmmYilkJKn3tWEJKpSE0CGjjiEcl/fFBFtYCvanzMe/AuuAQeXtPlcnQQSW5e7KU9G5
-	4j3ih9SlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PazRnGDzit+nPU7fDg+jm/1BZLxIx0peUk5Hi+WrRGg=; b=SJOsuJ3We6fj6E
+	fAl2vxVs3nTFxfe4vLVq6n+IHf1TUOX3q0spjj1boYyycsjWAU1XM6JF4NAfyNP9zP1cbKXdCmV+S
+	XHlxil7YK3Oni4j0YqHtbHH5eCUMM9Op68ZN7SInQ3u/r4tkgFBzwh1IV37vto8+ZAmBL/8m3zX7S
+	qFy9+F3tMIZ+yZcqXlvlKDWZVP+Z/lQ5OqQotd70gCpW0YqMCjvJwwvoqsWPkE+pAATILwLZ6Cap/
+	Aw0P0ZM6js0OWcy78SfDlPrXx8Cl0BhfmRb9w4EJVX5RVbp3AUCGLsBTZ9or9Ime0oZ9KyOlVGKS+
+	oTacp3ZdE9JeKU9qC6Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKPIv-0003sK-U5; Fri, 03 Apr 2020 16:36:25 +0000
-Received: from mail-cys01nam02on0703.outbound.protection.outlook.com
- ([2a01:111:f400:fe45::703]
- helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1jKPPq-0007Kc-1k; Fri, 03 Apr 2020 16:43:34 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKPIo-0003qm-OF
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 16:36:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lDmRQoY7Ffcn+ImhMXC5J54MNsYqrXtEhYvPVhEHwwai/HRyaRgsMswi2Rg6jVPFQ3mLB/8w9JzdaHJxLmnuLowW+7P5Zv/RMZFis/byhFRm4hu8EsYzkAas2K7jlRm1w16SeyEhyEq5Yp4Hoa13dAV9RFvjnIl87DRKj9MKgZIJxXrugCBVJZIEQnQMEonnx4rypaij+fIkZyj31lz4atXvJyeLbdgYXwBoI8IYgo+wmHQCVMc4lUDfDBpW6ScQdmdQQgCc9Vc270h8QUNYlntb/sMLGXwCA1+nhv57jjQWliAzRgFZ5ZnnPvxid2uzrzUvR8t8zvD5XHHMgZwH0A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E762z18bWj/6MJ1IT4EVaph7wzQcsyfbx0i5KNjgbb0=;
- b=EPjzhxgaGebatfedoGkG9s5yjBf5Xq7HAr8NlyJihkTW3JlffuDkS854tow/wHzR3zQ2Or15Lcrc3ZMv1eDBVWPoY/BkSKRVf45FVofaiYaz+eYbICgzcAg4+4EpTfp73ov/YctFCY4w4FKqYY+7J+gN9PTrmEwzUsvrAT4RsRLRZ0ARQk0rcUci1FW/vY+zMffhheA+r09n2ZVH8SGGOGdeoTsG0zJXQamESXF3Sj4faKX4BSIQ+Vu556sjRXfmi18l0flXfmfZkxBKkx/Lmu0OzZ6by8KTV4vILU2vHRTB9oXjKJ1Aq8Ai9m1Qq1kIqWGoN83L70jjdaZVBzrALA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
- header.from=os.amperecomputing.com; dkim=pass
- header.d=os.amperecomputing.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=os.amperecomputing.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E762z18bWj/6MJ1IT4EVaph7wzQcsyfbx0i5KNjgbb0=;
- b=e5aLxtLGHB7rl2YszAp4J/F0eXcBWRmRX8fdqHNQU0AETfysamZErBEajR6Haa3kI9Mi/n6RE3z3FP/4GHadXZqFSP4gTt2IiLZB8knjFwbey+cISjUtAZCRAx7TUbR+aZtrTZMQqjzMsBi/dSqsUuVmVtSLL/v2uet6i2vpsyI=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=hoan@os.amperecomputing.com; 
-Received: from BYAPR01MB5494.prod.exchangelabs.com (2603:10b6:a03:127::30) by
- BYAPR01MB4231.prod.exchangelabs.com (2603:10b6:a03:55::25) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2878.15; Fri, 3 Apr 2020 16:36:13 +0000
-Received: from BYAPR01MB5494.prod.exchangelabs.com
- ([fe80::a979:b2e2:fdaf:1ccb]) by BYAPR01MB5494.prod.exchangelabs.com
- ([fe80::a979:b2e2:fdaf:1ccb%6]) with mapi id 15.20.2878.018; Fri, 3 Apr 2020
- 16:36:12 +0000
-Subject: Re: [PATCH v3 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-To: Baoquan He <bhe@redhat.com>
-References: <1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com>
- <20200330074246.GA14243@dhcp22.suse.cz>
- <20200330175100.GD30942@linux.ibm.com>
- <20200330182301.GM14243@dhcp22.suse.cz>
- <20200331081423.GE30942@linux.ibm.com>
- <20200331085513.GE30449@dhcp22.suse.cz>
- <20200331140332.GA2129@MiWiFi-R3L-srv>
- <20200331142138.GL30449@dhcp22.suse.cz>
- <20200331143140.GA2402@MiWiFi-R3L-srv>
- <cc717f09-2b18-b242-e438-3ec730c5dac0@os.amperecomputing.com>
- <20200403070904.GO2402@MiWiFi-R3L-srv>
-From: Hoan Tran <hoan@os.amperecomputing.com>
-Message-ID: <419b415c-6e34-cb87-88bc-f17f03acffcb@os.amperecomputing.com>
-Date: Fri, 3 Apr 2020 09:36:10 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
- Gecko/20100101 Thunderbird/68.6.0
-In-Reply-To: <20200403070904.GO2402@MiWiFi-R3L-srv>
-Content-Language: en-US
-X-ClientProxiedBy: BYAPR04CA0001.namprd04.prod.outlook.com
- (2603:10b6:a03:40::14) To BYAPR01MB5494.prod.exchangelabs.com
- (2603:10b6:a03:127::30)
+ id 1jKPPh-0007I8-Te
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 16:43:27 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f6so8429603wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Apr 2020 09:43:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=xplS/0Pm97Db4L27zoYW2J2jwby++5UiVbto99Aw1Co=;
+ b=vN8wvdFXOjPvofJLID6AI1kKLvatxuTqrRUMs97bQq7USRBDWZnS7emQs4TdPRwcPz
+ O4+GJzSJe0YF/6nU7Q2FX/YavkkK1ZalJ1pjMx1U9w5Qy/j0bXK8L3aPzUq7T5RMN6Gv
+ XsIaSlXjRxa1P/cwXVB2m8oyCqYzIyNgkJ6NkqzPFoOmrdDsaN27llT8Npbe6TEzkQDz
+ sunbMCGPvBFO7DtOQdcX5i2krMb85K0cjnBhV0/jX9nq92s8YV1jK9i8SiYGxha77JEs
+ yXiNfjNXFoF71m3YRtOa3//hw//PnTYOeTpVsiJ+iQqBSSdsFTsaTh9r6iIT2OIA4PJr
+ iUNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=xplS/0Pm97Db4L27zoYW2J2jwby++5UiVbto99Aw1Co=;
+ b=gxDIeAq4jVTqoRsHm1MmnVnKCetagLyXH8xySvIp531M6G5Y7nRlK0xxJTVM4NKEFF
+ 7sRHujoK44YGr+EtcJIx7SZ0aJfYIiG5Iqk6VRaZzKAqBWEmRdpBJW2MQYuLEVPj99a6
+ FmtxagCZRfDTrljUzufoV7Y7IANuMwCayL5rVD3IpNg0G1SKjbfxeia5YxFrkn9/7AGA
+ ltIAc/kMEWmAOIO1GNaYdk8cPqvsj1PopzlZhRZslF+yUUz3ovCcLFF7/oMADC48Lcvd
+ MNWHYfT9Oa8hUh2uYBNokU26hqMBPekj1KsTrQXySmCHaO5wJ+v4FYIHLcyl75KD1cNy
+ 2yXQ==
+X-Gm-Message-State: AGi0PuZ4pqwmyhn6yKiv4wBu2CQUMP3NUuoJ+gKNT8pa7OmcLJQKD6xY
+ w4/3Aa0helfG8cgi/53AZTpu/Q==
+X-Google-Smtp-Source: APiQypK4FN2vSiaRLIGOX+nqx+Ly4QUh8HpA5CMi+6tXEXvSHul3p2ldy4FOk2DMkpKSbJR4tUKIVQ==
+X-Received: by 2002:a1c:1f8a:: with SMTP id f132mr9775016wmf.127.1585932204156; 
+ Fri, 03 Apr 2020 09:43:24 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:cc78:8018:8980:25d8?
+ ([2a01:e34:ed2f:f020:cc78:8018:8980:25d8])
+ by smtp.googlemail.com with ESMTPSA id
+ z203sm12244435wmg.12.2020.04.03.09.43.21
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 03 Apr 2020 09:43:23 -0700 (PDT)
+Subject: Re: [PATCH v5 3/5] thermal: devfreq_cooling: Use PM QoS to set
+ frequency limits
+To: Lukasz Luba <lukasz.luba@arm.com>, linux-kernel@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-omap@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-imx@nxp.com
+References: <20200318114548.19916-1-lukasz.luba@arm.com>
+ <20200318114548.19916-4-lukasz.luba@arm.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <d73ce772-8d0a-e5f4-097a-d89e01ff7578@linaro.org>
+Date: Fri, 3 Apr 2020 18:43:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.138] (67.161.31.237) by
- BYAPR04CA0001.namprd04.prod.outlook.com (2603:10b6:a03:40::14) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2878.15 via Frontend Transport; Fri, 3 Apr 2020 16:36:11 +0000
-X-Originating-IP: [67.161.31.237]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 63dc8726-ac0f-442b-f262-08d7d7ed1edf
-X-MS-TrafficTypeDiagnostic: BYAPR01MB4231:|BYAPR01MB4231:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <BYAPR01MB42314678638BA502D22AA0FDF1C70@BYAPR01MB4231.prod.exchangelabs.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-Forefront-PRVS: 0362BF9FDB
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BYAPR01MB5494.prod.exchangelabs.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(4636009)(366004)(346002)(376002)(396003)(39840400004)(136003)(6916009)(16526019)(54906003)(52116002)(81166006)(4326008)(53546011)(26005)(8936002)(81156014)(186003)(8676002)(7416002)(5660300002)(31696002)(107886003)(2906002)(16576012)(2616005)(86362001)(6486002)(66946007)(66476007)(478600001)(956004)(31686004)(316002)(66556008);
- DIR:OUT; SFP:1102; 
-Received-SPF: None (protection.outlook.com: os.amperecomputing.com does not
- designate permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: vvOTIRGalFEH53aZmh0Oe1y510okj62sPWCfOBKXfLfHJA+0cG31q77K78EIQ08KphHgtvYXkP9zSRwAjFafK+XC2ZOxiaT3G/HNmWRw2d1OOLXekCRhhxfRkMpkZpnxZVkf5HWSGrWOoN5fXfT+V1s40b/1hW+s1tCXJX/33HbpWuSb0xEGyCdz1YYeEQaUo0NSPCpmTlltYD4XexhZiYX8yH7RjEJ5pR/d3nsRORnX85lo0NKF7MALU/fkmyTpYVQlmgd78ycM+5D0rOEDiPkZpHPi/0I17cxHNdLNINa6Bo3+Y+Fb9/V7MCsjJGO2aHT7oodunm8Cw0Fy+8rKjh5fN3zMzV+qxKqFVlAGEo7RO/WlqlHTTxYTJIPDtkoJI4gI5AxB1jODE1VesO9794ccr9KFHDQp9Ej05Uar5WkJ3mbOVibG4H3mH8b+I5gA
-X-MS-Exchange-AntiSpam-MessageData: LlOc5ff01UeimhMMrFDFyONPzS6uVmGMLc1Yv1f949/Gw2n3WmvKBIRzmPDD9QCj0FpHVZxbAejFZqZCwqaCGJqvN6dMK/vq7EcmCRTki/xFUCFR1L7KmiShqKtODZQGiD6U6nLZ8NBdxNip6iSisQ==
-X-OriginatorOrg: os.amperecomputing.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 63dc8726-ac0f-442b-f262-08d7d7ed1edf
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Apr 2020 16:36:12.6555 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: jspK1oPxQQsPaTtij5T2sMVImkG1jza+HvBuPQlfdHjTbgWA9UlRoQsfvrp5riIkuH0Y++tEV2sevuSik2mq5/amEu8dMSQNAnPlXpEmX2I=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB4231
+In-Reply-To: <20200318114548.19916-4-lukasz.luba@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_093618_853367_3A1BEB53 
-X-CRM114-Status: GOOD (  16.95  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200403_094325_954753_4D6E233D 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe45:0:0:0:703 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,94 +161,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mmorana@amperecomputing.com, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Vlastimil Babka <vbabka@suse.cz>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>, lho@amperecomputing.com,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, steven.price@arm.com, cw00.choi@samsung.com,
+ mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
+ alyssa.rosenzweig@collabora.com, orjan.eide@arm.com, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
+ matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
+ javi.merino@arm.com, tomeu.vizoso@collabora.com, qperret@google.com,
+ sboyd@kernel.org, mka@chromium.org, rdunlap@infradead.org, rjw@rjwysocki.net,
+ agross@kernel.org, kernel@pengutronix.de, sudeep.holla@arm.com,
+ patrick.bellasi@matbug.net, shawnguo@kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-
-On 4/3/20 12:09 AM, Baoquan He wrote:
-> On 04/02/20 at 09:46pm, Hoan Tran wrote:
->> Hi All,
->>
->> On 3/31/20 7:31 AM, Baoquan He wrote:
->>> On 03/31/20 at 04:21pm, Michal Hocko wrote:
->>>> On Tue 31-03-20 22:03:32, Baoquan He wrote:
->>>>> Hi Michal,
->>>>>
->>>>> On 03/31/20 at 10:55am, Michal Hocko wrote:
->>>>>> On Tue 31-03-20 11:14:23, Mike Rapoport wrote:
->>>>>>> Maybe I mis-read the code, but I don't see how this could happen. In the
->>>>>>> HAVE_MEMBLOCK_NODE_MAP=y case, free_area_init_node() calls
->>>>>>> calculate_node_totalpages() that ensures that node->node_zones are entirely
->>>>>>> within the node because this is checked in zone_spanned_pages_in_node().
->>>>>>
->>>>>> zone_spanned_pages_in_node does chech the zone boundaries are within the
->>>>>> node boundaries. But that doesn't really tell anything about other
->>>>>> potential zones interleaving with the physical memory range.
->>>>>> zone->spanned_pages simply gives the physical range for the zone
->>>>>> including holes. Interleaving nodes are essentially a hole
->>>>>> (__absent_pages_in_range is going to skip those).
->>>>>>
->>>>>> That means that when free_area_init_core simply goes over the whole
->>>>>> physical zone range including holes and that is why we need to check
->>>>>> both for physical and logical holes (aka other nodes).
->>>>>>
->>>>>> The life would be so much easier if the whole thing would simply iterate
->>>>>> over memblocks...
->>>>>
->>>>> The memblock iterating sounds a great idea. I tried with putting the
->>>>> memblock iterating in the upper layer, memmap_init(), which is used for
->>>>> boot mem only anyway. Do you think it's doable and OK? It yes, I can
->>>>> work out a formal patch to make this simpler as you said. The draft code
->>>>> is as below. Like this it uses the existing code and involves little change.
->>>>
->>>> Doing this would be a step in the right direction! I haven't checked the
->>>> code very closely though. The below sounds way too simple to be truth I
->>>> am afraid. First for_each_mem_pfn_range is available only for
->>>> CONFIG_HAVE_MEMBLOCK_NODE_MAP (which is one of the reasons why I keep
->>>> saying that I really hate that being conditional). Also I haven't really
->>>> checked the deferred initialization path - I have a very vague
->>>> recollection that it has been converted to the memblock api but I have
->>>> happilly dropped all that memory.
->>>
->>> Thanks for your quick response and pointing out the rest suspect aspects,
->>> I will investigate what you mentioned, see if they impact.
->>
->> I would like to check if we still move on with my patch to remove
->> CONFIG_NODES_SPAN_OTHER_NODES and have another patch on top it?
-> 
-> I think we would like to replace CONFIG_NODES_SPAN_OTHER_NODES with
-> CONFIG_NUMA, and just let UMA return 0 as node id, as Michal replied in
-> another mail. Anyway, your patch 2~5 are still needed to sit on top of
-> the change of this new plan.
-
-Got it. Thanks for quick response.
-
-Regards
-Hoan
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTgvMDMvMjAyMCAxMjo0NSwgTHVrYXN6IEx1YmEgd3JvdGU6Cj4gRnJvbTogTWF0dGhpYXMg
+S2FlaGxja2UgPG1rYUBjaHJvbWl1bS5vcmc+Cj4gCj4gTm93IHRoYXQgZGV2ZnJlcSBzdXBwb3J0
+cyBsaW1pdGluZyB0aGUgZnJlcXVlbmN5IHJhbmdlIG9mIGEgZGV2aWNlCj4gdGhyb3VnaCBQTSBR
+b1MgbWFrZSB1c2Ugb2YgaXQgaW5zdGVhZCBvZiBkaXNhYmxpbmcgT1BQcyB0aGF0IHNob3VsZAo+
+IG5vdCBiZSB1c2VkLgo+IAo+IFRoZSBzd2l0Y2ggZnJvbSBkaXNhYmxpbmcgT1BQcyB0byBQTSBR
+b1MgaW50cm9kdWNlcyBhIHN1YnRsZSBiZWhhdmlvcmFsCj4gY2hhbmdlIGluIGNhc2Ugb2YgY29u
+ZmxpY3RpbmcgcmVxdWVzdHMgKG1pbiA+IG1heCk6IFBNIFFvUyBnaXZlcwo+IHByZWNlZGVuY2Ug
+dG8gdGhlIE1JTl9GUkVRVUVOQ1kgcmVxdWVzdCwgd2hpbGUgaGlnaGVyIE9QUHMgZGlzYWJsZWQK
+PiB3aXRoIGRldl9wbV9vcHBfZGlzYWJsZSgpIHdvdWxkIG92ZXJyaWRlIE1JTl9GUkVRVUVOQ1ku
+Cj4gCj4gU2lnbmVkLW9mZi1ieTogTWF0dGhpYXMgS2FlaGxja2UgPG1rYUBjaHJvbWl1bS5vcmc+
+Cj4gUmV2aWV3ZWQtYnk6IEx1a2FzeiBMdWJhIDxsdWthc3oubHViYUBhcm0uY29tPgo+IFJldmll
+d2VkLWJ5OiBDaGFud29vIENob2kgPGN3MDAuY2hvaUBzYW1zdW5nLmNvbT4KClRoaXMgcGF0Y2gg
+aXMgc3RhbmRhbG9uZSwgcmlnaHQ/IElmIHllcywgSSB3aWxsIGFwcGx5IGl0LgoKCgotLSAKPGh0
+dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJl
+IGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9w
+YWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+
+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
