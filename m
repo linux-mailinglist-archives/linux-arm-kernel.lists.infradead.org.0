@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA28F19E055
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 23:32:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFC9419E064
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 23:35:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zmBpr76OpPYqUQqRdLYFJZ++HzMdJvgEubCgi4Zu9As=; b=UaeqPFWSJeA/Wl
-	YIeqYbPd0iChtBtd5aZxe/JWPlUOCNfvzkpd5Aipw+1rtQWf10FVYKAy0+dMJocxD3ygaCTd4J+tJ
-	cvITy9TtMtkc+ciZr/r+Xok/XiFG3SZWpoet/U0amPhpA+q3llMWETKcwOzZ9bRNahlHeQTxgf+Mx
-	YNG8fBA+DrRxxaEmh5z4b4fLULgdCQqdivdo3QP6pASUK22H2IPdc6+4RtKhYKLTGA+38x8LDwwoN
-	U8a1rxIdckYcAnhbQ5qHA5jhVfxaFAGfzbeJ91hjGdIXBsMasuCj24/TX2Plk9sXppEu7rm/exxRO
-	USXUgv/a/7qwmmg1SP4A==;
+	List-Owner; bh=yvPVjvVBJiyoUAzbTC12OXk7FioByd0RDRdQ7hMC6AA=; b=RwMnkJpccXfhqt
+	nES80pmLmbqKQojj7jIQAloIB58UP5aiPrimiZhgQXDkd1LM+OPJg59BYJwIVVuWM+KP85MkFCuXP
+	LYs1gA3ZuNOGDSGU8r6pD9yDOmrSfnP99BlRdSqTgvJeb7JdfECVDeEw5q+qdSAXDtllXJRdbfqYj
+	4lZQWYp1/rrG35iQyy4ZTLnaixiKlcK+6H/K+jn/kMVV1PLuSDKRC7IlDLYyICTWeqrdwNbpRjnNR
+	3EY4HZnYi/wT+PXY7kBu2KfeJXvRU2jUs/g5nsxFCCtyTyU1/AkrlqMGDe6MUxq97m9gmBSNKhgNr
+	35pWHX5osR+gL+R814fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKTvV-0005rW-Ka; Fri, 03 Apr 2020 21:32:33 +0000
+	id 1jKTyV-0000aX-2V; Fri, 03 Apr 2020 21:35:39 +0000
 Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKTvO-0005qy-Pw
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 21:32:29 +0000
-Received: from mail-qk1-f169.google.com ([209.85.222.169]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MlNYj-1iujPe1C6H-00lkak for <linux-arm-kernel@lists.infradead.org>; Fri,
- 03 Apr 2020 23:32:23 +0200
-Received: by mail-qk1-f169.google.com with SMTP id v7so9772506qkc.0
+ id 1jKTyK-0000Zp-La
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 21:35:30 +0000
+Received: from mail-qv1-f43.google.com ([209.85.219.43]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MoNy4-1j0WMZ05JA-00omYk for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 03 Apr 2020 23:35:27 +0200
+Received: by mail-qv1-f43.google.com with SMTP id bp12so4379423qvb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Apr 2020 14:32:23 -0700 (PDT)
-X-Gm-Message-State: AGi0PuatawIZ6oBLgRf8Tz7Qz+MdCqdGNmxLrMUl4QZG3Ju2xkI8Zia6
- 24l8E/etXkuMPVkrE+MgxqpYPI9wKyxYb7okBGM=
-X-Google-Smtp-Source: APiQypIw1+/5MZVGthm6xQ9mSafhEM5lNhCgHclDp2ph/giU4dB5oFYo0ljpHAJ8d34mUcEBfKhTqSs0V4r85UKQHic=
-X-Received: by 2002:a37:3c1:: with SMTP id 184mr9682491qkd.352.1585949542026; 
- Fri, 03 Apr 2020 14:32:22 -0700 (PDT)
+ Fri, 03 Apr 2020 14:35:26 -0700 (PDT)
+X-Gm-Message-State: AGi0PuaE6xXUmTxRe54ddYIYUixKozttHAG+7H2Q3LUNX6kczJnN0Ua+
+ 5yISpAkLvAXt9WE/0fz+j0oQQ3MJByIiXG3J6k0=
+X-Google-Smtp-Source: APiQypKuSl73lVJtADJSwHMirPnVIrpUbge7bKeeDmUqQVP2gryUkv3FPgZFAFc537SRr8QmargpKqzJp5W6h6MBOkI=
+X-Received: by 2002:a0c:9e2f:: with SMTP id p47mr9812907qve.211.1585949725814; 
+ Fri, 03 Apr 2020 14:35:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <CAK8P3a1aO+LUu6KsW+s8aZMNWt2yz7kqe=LARY=ifMKOqT9uNQ@mail.gmail.com>
 In-Reply-To: <CAK8P3a1aO+LUu6KsW+s8aZMNWt2yz7kqe=LARY=ifMKOqT9uNQ@mail.gmail.com>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 3 Apr 2020 23:32:06 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a39t9wZvLMOayx4RSGZ0N+bKjgVw=fwEB=u=UvfnnHHpQ@mail.gmail.com>
-Message-ID: <CAK8P3a39t9wZvLMOayx4RSGZ0N+bKjgVw=fwEB=u=UvfnnHHpQ@mail.gmail.com>
-Subject: [GIT PULL 1/4] ARM: SoC updates
+Date: Fri, 3 Apr 2020 23:35:09 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0Z7yj0wgMkT2YsWBU56557O66rLGLzGSJSuC+8nWx1zA@mail.gmail.com>
+Message-ID: <CAK8P3a0Z7yj0wgMkT2YsWBU56557O66rLGLzGSJSuC+8nWx1zA@mail.gmail.com>
+Subject: [GIT PULL 2/4] ARM: driver updates
 To: Linus Torvalds <torvalds@linux-foundation.org>
-X-Provags-ID: V03:K1:PpFR+yXwge68GU93EBLE2yfIfFmLgPqIK2FLr940ONatq9XEAw6
- Yi9GQJI0BpXPHUJ1p9pvDSLXFV5hZmTBZIjbUZFQqiiPHLhJItQigv2wRf7TYJzRj7+ZLlS
- SK1Uh+alZJk0zyOhkAqiBuxTVkX1W8GGvRxhJ7KM9WFhUbvxTu3HY9vsG9PZ9REb7v+yQcp
- oBSvttvRgnSb8lGPTlnkA==
+X-Provags-ID: V03:K1:R8NOxFxEVwDDqWc5mdTHyRtLXo9Fx/JtimS/FzquWsrFpgFpstr
+ fy4+fLUI7Nn8/ZAzJtbYxsPYgCO365lWpA9E6xuaQNJ9B6ho/mfe8eCVjXxF0wK95AeV8BN
+ 5LbEb1G4VCGt7MrEqU7IY1RDlFnJy5SK37nOg8xlCtGftYmWd2+FIo86OB3BFqg7wgDoH7Z
+ /lJKmNmjIMNOxk4INGVIA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bRp0RsiXMTQ=:PovhMoviVi0Qi9IIrG1WPA
- NRwTZiOW0vlCUnVpsO6ySCaT4l6dp1Le4LOu0sxcy9axZDJyXppJUNUGx0oq7wCm2d0LaB/8b
- cGYOfp6G4krh4yd9VGl7U08mLELHwt9chsMYJMucZic1oUb+NmpcVK+053NFB6B6zxaKOqCes
- 3CJLMAO8rS/E2B62dU9Hwz8Z5jAHfPGtqfk88W9VFc6Uw93FLPVNvjUrJl62NORBJ4+dv685M
- ZSfNsQJxBpjmH/qs0x4mBLLvCI0nrJ1gpx7o2pNVH5I1BmOFv7cYEnhGtD89vPIr95nUeXngl
- BMfYIN+TsCtbVG79GdRyn0+4SjM2bgOxLJ9ZRNB4yumZYCpjNlLNs23qkHAq9fKj8A5MVIwTu
- Jf9wUnOrRgg8BsexuerdDgiiXgsaQi2YOm6oRyz73Ys/vMRVw3SCsrDk4TyWDp9Xa0znMsdBJ
- h01ZKK3uKVuKFlnuGWP6pw34hqXgmIZiU8tIeFuYuEfQVVQ5TH+IwFL83GDdErkM9wSitorSg
- /I0rqSnyj2iTnlD7rCsXqz9IIyMYFglG8ghCyEgpLzpIu8Cv8XiVsVoXQxSsROHl6EZY8bbcN
- +/vMq9n0bzkgNM/pTM6YvXZYr9I7dMkr3+yW1Ev6kvNI78Ou9vUd8Fn1B4fbLD0tqK3eYwfJJ
- V0glGpX1zy5r173DojuqFn5pWbF6D2cueBhldO+djgtL4JZ3aXbEkLA9FO9nir/2O3e5EPFvl
- BfaC9cn1FrTK26X1k95kAYdrjYzL9yjhJ4zivdPFP6Pq8cO1PvtNKiyGaLB2BeRK7q0aEKa0K
- ssReTlXWEJjj8OmagDhVk+IJmz8EeIyf+bVuv9RWRupBhizZVM=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vX0XlBeRWTI=:8Y8WkuuudJYAYZPUUE9al7
+ iy1zGkD/ddxf2F9BLqHhNBVsBqprNTJghIJUVkdMgeQ4BkFYkNwhHbLiB3r9/fQe9m0uRHURY
+ EoAgjetfiAJkbV90goolEm5IqSgqZz3BSi+0XOZopZkPnodrocOKRtjlQqlBrA+N6Drlg+CLv
+ xu9LyXGSqH+EZ/Ugf9pDNt9uxZBzMUb/poB2hfGsTIlhjtAKwCeK1Wzb4+9sgFrguRtbbltxb
+ vJ1LcEmx5HOkoLvIIQxtzJfS1dA+uxSCJEJs8tGTMa/UrWjkz94DpTVR7BuTPadclRPBcDAG8
+ fGXs4DfLXB33MI9FxYe3a2dtVZjDB8Zbh1RK/rNoox1mE1vjITEOWD74RiQNngooE5GoDFaFa
+ uz7HmsIDi1b3Q37RVqIqiN7YfRvB5hVusfWfoUKKTuCi53qnNwXwzQQG6R7koox1HldPLLNRs
+ tFvQx2G8bppNUxki6z4FwGcSKIeRZZaFKxzFOp5ZY/uRwqWvnJdehSVX+Xdr4uXZ77hl6tBvv
+ LFrKMQctZzXQ8LW0uhz2eOmDA1YFjWXh2G+jm2Ovi8oK0U9wNdlJYqN79Hulq9MhVPNi9CNwY
+ RT3ldIQx9zYlGr2SnKsJzys/olkke4mQk6aRMwO5qHAbSbN05LkAlBDk7OcoRea3cgB4fuDUb
+ TWJHK+X7jQ+HKVwXTgtvntCeeF+2/QdhL2XI+bjPgvD4qo2vyekVUmsQar8Vdk2Cfg4y9W4f7
+ TO47ZA2HW/oqctni7P2F0hIc8CDbrFF2fO0HQV1VmQnCxAPHat/DcdK886ULqBiG9RT2P6for
+ /08ASObGLDXBh0xBlM/0ky7TlVhTfmLPBcNG0XcS3ERs4ppYh0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_143227_135353_965ECEE2 
-X-CRM114-Status: GOOD (  17.92  )
+X-CRM114-CacheID: sfid-20200403_143529_000760_CBC182E3 
+X-CRM114-Status: GOOD (  18.88  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -93,294 +93,277 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 98d54f81e36ba3bf92172791eba5ca5bd813989b:
+The following changes since commit cfaf6051eccc7b8b2354f68c5125d2497b046052:
 
-  Linux 5.6-rc4 (2020-03-01 16:38:46 -0600)
+  bus: ti-sysc: Fix quirk flags for lcdc on am335x (2020-03-09 09:41:14 -0700)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/arm-soc-5.7
+  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/arm-drivers-5.7
 
-for you to fetch changes up to f125e2d4339dda6937865f975470b29c84714c9b:
+for you to fetch changes up to cedb414aa8c31ce2f178ea9dc29b6c0200b9893f:
 
-  ARM: qcom: Add support for IPQ40xx (2020-03-31 21:03:27 +0200)
+  Merge tag 'scmi-updates-5.7' of
+git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux into
+arm/drivers (2020-03-27 14:26:14 +0100)
 
 ----------------------------------------------------------------
-ARM: SoC updates
+ARM: driver updates
 
-The code changes are mostly for 32-bit platforms and include:
+These are the usual updates for SoC specific device drivers and related
+subsystems that don't have their own top-level maintainers:
 
-- Lots of updates for the Nvidia Tegra platform, including
-  cpuidle, pmc, and dt-binding changes
+- ARM SCMI/SCPI updates to allow pluggable transport layers
 
-- Microchip at91 power management updates for the recently added
-  sam9x60 SoC
+- TEE subsystem cleanups
 
-- Treewide setup_irq deprecation by afzal mohammed
+- A new driver for the Amlogic secure power domain controller
 
-- STMicroelectronics stm32 gains earlycon support
+- Various driver updates for the NXP Layerscape DPAA2, NXP i.MX SCU and
+  TI OMAP2+ sysc drivers.
 
-- Renesas platforms with Cortex-A9 can now use the global timer
+- Qualcomm SoC driver updates, including a new library module for
+  "protection domain" notifications
 
-- Some TI OMAP2+ platforms gain cpuidle support
-
-- Various cleanups for the i.MX6 and Orion platforms, as well as
-  Kconfig files across all platforms
+- Lots of smaller bugfixes and cleanups in other drivers
 
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
 ----------------------------------------------------------------
-Anson Huang (6):
-      ARM: imx: Remove unused include of linux/irqchip/arm-gic.h
-      ARM: imx: Remove unused includes on mach-imx6q.c
-      ARM: imx: Remove unused include of linux/of.h on mach-imx6sl.c
-      ARM: imx: Add missing of_node_put()
-      ARM: imx: Remove unnecessary blank lines
-      ARM: imx: Drop unnecessary src_base check
+Anson Huang (1):
+      firmware: imx: add COMPILE_TEST for IMX_SCU driver
 
-Argus Lin (3):
-      dt-bindings: pwrap: mediatek: add pwrap support for MT6779
-      soc: mediatek: pwrap: add pwrap driver for MT6779 SoCs
-      soc: mediatek: pwrap: add support for MT6359 PMIC
+Ansuel Smith (1):
+      devicetree: bindings: firmware: add ipq806x to qcom_scm
 
-Arnd Bergmann (16):
-      Merge tag 'renesas-arm-soc-for-v5.7-tag1' of
-git://git.kernel.org/.../geert/renesas-devel into arm/soc
-      Merge tag 'omap-for-v5.7/soc-signed' of
-git://git.kernel.org/.../tmlind/linux-omap into arm/soc
-      Merge tag 'omap-for-v5.7/pm33xx-signed' of
-git://git.kernel.org/.../tmlind/linux-omap into arm/soc
-      Merge tag 'arm-soc/for-5.7/soc' of
-https://github.com/Broadcom/stblinux into arm/soc
-      Merge tag 'arm-soc/for-5.7/soc-arm64' of
-https://github.com/Broadcom/stblinux into arm/soc
-      Merge tag 'sunxi-core-for-5.7' of
-git://git.kernel.org/.../sunxi/linux into arm/soc
-      Merge tag 'stm32-soc-for-v5.7-1' of
-git://git.kernel.org/.../atorgue/stm32 into arm/soc
-      Merge tag 'tegra-for-5.7-soc' of
-git://git.kernel.org/.../tegra/linux into arm/soc
-      Merge tag 'tegra-for-5.7-arm-core' of
-git://git.kernel.org/.../tegra/linux into arm/soc
-      Merge tag 'mvebu-arm-5.7-1' of
-git://git.infradead.org/linux-mvebu into arm/soc
-      Merge tag 'imx-soc-5.7' of
-git://git.kernel.org/.../shawnguo/linux into arm/soc
-      Merge tag 'v5.6-next-soc' of
-git://git.kernel.org/.../matthias.bgg/linux into arm/soc
-      Merge tag 'at91-5.7-soc' of git://git.kernel.org/.../at91/linux
-into arm/soc
-      Merge tag 'zynq-soc-for-v5.7' of
-https://github.com/Xilinx/linux-xlnx into arm/soc
-      Merge tag 'zynqmp-soc-for-v5.7' of
-https://github.com/Xilinx/linux-xlnx into arm/soc
-      Merge tag 'tegra-for-5.7-cpuidle' of
-git://git.kernel.org/.../tegra/linux into arm/soc
+Arnd Bergmann (12):
+      Merge tag 'renesas-drivers-for-v5.7-tag1' of
+git://git.kernel.org/.../geert/renesas-devel into arm/drivers
+      Merge tag 'hisi-drivers-for-5.7' of
+git://github.com/hisilicon/linux-hisi into arm/drivers
+      Merge tag 'omap-for-v5.7/ti-sysc-signed' of
+git://git.kernel.org/.../tmlind/linux-omap into arm/drivers
+      Merge tag 'amlogic-drivers' of
+git://git.kernel.org/.../khilman/linux-amlogic into arm/drivers
+      Merge tag 'qcom-drivers-for-5.7' of
+git://git.kernel.org/.../qcom/linux into arm/drivers
+      Merge tag 'imx-drivers-5.7' of
+git://git.kernel.org/.../shawnguo/linux into arm/drivers
+      Merge tag 'omap-for-v5.7/ti-sysc-fix-signed' of
+git://git.kernel.org/.../tmlind/linux-omap into arm/drivers
+      Merge tag 'tegra-for-5.7-firmware' of
+git://git.kernel.org/.../tegra/linux into arm/drivers
+      Merge tag 'tegra-for-5.7-memory' of
+git://git.kernel.org/.../tegra/linux into arm/drivers
+      Merge tag 'soc-fsl-next-v5.7' of
+git://git.kernel.org/.../leo/linux into arm/drivers
+      Merge tag 'tee-cleanup-for-5.7' of
+https://git.linaro.org/people/jens.wiklander/linux-tee into
+arm/drivers
+      Merge tag 'scmi-updates-5.7' of
+git://git.kernel.org/.../sudeep.holla/linux into arm/drivers
 
-Bibby Hsieh (1):
-      soc: mediatek: knows_txdone needs to be set in Mediatek CMDQ helper
+Arun Kumar Neelakantam (2):
+      soc: qcom: aoss: Use wake_up_all() instead of wake_up_interruptible_all()
+      soc: qcom: aoss: Read back before triggering the IRQ
 
-Christian Lamparter (1):
-      ARM: qcom: Add support for IPQ40xx
+Bjorn Andersson (1):
+      soc: qcom: Fix QCOM_APR dependencies
 
-Claudiu Beznea (8):
-      ARM: at91: pm: use proper master clock register offset
-      ARM: at91: pm: revert do not disable/enable PLLA for ULP modes
-      ARM: at91: pm: add macros for plla disable/enable
-      ARM: at91: pm: add pmc_version member to at91_pm_data
-      ARM: at91: pm: s/sfr/sfrbu in pm_suspend.S
-      clk: at91: move sam9x60's PLL register offsets to PMC header
-      ARM: at91: pm: add plla disable/enable support for sam9x60
-      ARM: at91: pm: add quirk for sam9x60's ulp1
+Christophe JAILLET (1):
+      firmware: tegra: Fix a typo in Kconfig
 
-Dave Gerlach (5):
-      dt-bindings: arm: cpu: Add TI AM335x and AM437x enable method
-      ARM: OMAP2+: pm33xx-core: Add cpuidle_ops for am335x/am437x
-      ARM: OMAP2+: pm33xx-core: Extend platform_data ops for cpuidle
-      soc: ti: pm33xx: Add base cpuidle support
-      ARM: omap2plus_defconfig: Add CONFIG_ARM_CPUIDLE
+Colin Ian King (1):
+      soc: fsl: dpio: fix dereference of pointer p before null check
 
-Dmitry Osipenko (15):
-      ARM: tegra: Compile sleep-tegra20/30.S unconditionally
-      ARM: tegra: Add tegra_pm_park_secondary_cpu()
-      ARM: tegra: Remove pen-locking from cpuidle-tegra20
-      ARM: tegra: Change tegra_set_cpu_in_lp2() type to void
-      ARM: tegra: Propagate error from tegra_idle_lp2_last()
-      ARM: tegra: Expose PM functions required for new cpuidle driver
-      ARM: tegra: Rename some of the newly exposed PM functions
-      ARM: tegra: Make outer_disable() open-coded
-      ARM: tegra: cpuidle: Handle case where secondary CPU hangs on entering LP2
-      ARM: tegra: cpuidle: Make abort_flag atomic
-      ARM: tegra: cpuidle: Remove unnecessary memory barrier
-      cpuidle: Refactor and move out NVIDIA Tegra20 driver into drivers/cpuidle
-      cpuidle: tegra: Squash Tegra30 driver into the common driver
-      cpuidle: tegra: Squash Tegra114 driver into the common driver
-      cpuidle: tegra: Disable CC6 state if LP2 unavailable
+Daniel Baluta (1):
+      firmware: imx: scu-pd: Add missing audio PD ranges
 
-Erwan Le Ray (4):
-      ARM: debug: stm32: add UART early console configuration for STM32F4
-      ARM: debug: stm32: add UART early console configuration for STM32F7
-      ARM: debug: stm32: add UART early console support for STM32H7
-      ARM: debug: stm32: add UART early console support for STM32MP1
+Dmitry Osipenko (3):
+      memory: tegra: Correct debugfs clk rate-range on Tegra20
+      memory: tegra: Correct debugfs clk rate-range on Tegra30
+      memory: tegra: Correct debugfs clk rate-range on Tegra124
 
-Geert Uytterhoeven (8):
-      ARM: shmobile: Enable ARM_GLOBAL_TIMER on Cortex-A9 MPCore SoCs
-      ARM: at91: Drop unneeded select of COMMON_CLK
-      ARM: sunxi: Replace <linux/clk-provider.h> by <linux/of_clk.h>
-      ARM: zynq: Replace <linux/clk-provider.h> by <linux/of_clk.h>
-      ARM: shmobile: Replace <linux/clk-provider.h> by <linux/of_clk.h>
-      ARM: orion5x: Drop unneeded select of PCI_DOMAINS_GENERIC
-      arm64: bcm2835: Drop select of nonexistent HAVE_ARM_ARCH_TIMER
-      ARM: bcm: Drop unneeded select of PCI_DOMAINS_GENERIC, HAVE_SMP, TIMER_OF
+Geert Uytterhoeven (1):
+      soc: renesas: Remove ARCH_R8A7795
 
-JC Kuo (1):
-      dt-bindings: phy: tegra: Add Tegra194 support
+Gustavo A. R. Silva (4):
+      firmware: arm_scmi: Replace zero-length array with flexible-array member
+      firmware: arm_scmi/perf: Replace zero-length array with
+flexible-array member
+      firmware: arm_scpi: Replace zero-length array with flexible-array member
+      misc: vexpress: Replace zero-length array with flexible-array member
 
-Nagarjuna Kristam (2):
-      dt-bindings: phy: tegra-xusb: Add usb-role-switch
-      dt-bindings: usb: Add NVIDIA Tegra XUSB device mode controller binding
+Jens Wiklander (5):
+      tee: remove linked list of struct tee_shm
+      tee: remove unused tee_shm_priv_alloc()
+      tee: don't assign shm id for private shms
+      tee: remove redundant teedev in struct tee_shm
+      tee: tee_shm_op_mmap(): use TEE_SHM_USER_MAPPED
 
-Sowjanya Komatineni (6):
-      dt-bindings: clock: tegra: Add IDs for OSC clocks
-      dt-bindings: tegra: Convert Tegra PMC bindings to YAML
-      dt-bindings: soc: tegra-pmc: Add Tegra PMC clock bindings
-      dt-bindings: soc: tegra-pmc: Add ID for Tegra PMC 32 kHz blink clock
-      soc/tegra: Add Tegra PMC clocks registration into PMC driver
-      soc/tegra: Add support for 32 kHz blink clock
+Jianxin Pan (5):
+      firmware: meson_sm: Add secure power domain support
+      dt-bindings: power: add Amlogic secure power domains bindings
+      soc: amlogic: Add support for Secure power domains controller
+      soc: amlogic: fix compile failure with MESON_SECURE_PM_DOMAINS & !MESON_SM
+      dt-bindings: power: Fix dt_binding_check error
 
-Stefan Agner (1):
-      ARM: imx: limit errata selection to Cortex-A9 based designs
+Joakim Zhang (1):
+      firmware: imx: scu-pd: add power domain for I2C and INTMUX in CM40 SS
 
-Tejas Patel (2):
-      include: linux: firmware: Correct config dependency of zynqmp_eemi_ops
-      arm64: zynqmp: Make zynqmp_firmware driver optional
+John Garry (1):
+      bus: hisi_lpc: Fixup IO ports addresses to avoid use-after-free
+in host removal
 
-Thierry Reding (3):
-      Merge branch 'for-5.7/dt-bindings' into for-5.7/soc
-      soc/tegra: pmc: Cleanup whitespace usage
-      Merge branch 'for-5.7/arm/core' into for-5.7/cpuidle
+Leonard Crestez (2):
+      soc: imx: gpcv2: include linux/sizes.h
+      firmware: imx: Remove IMX_SC_RPC_SVC_ABORT
 
-Tony Lindgren (2):
-      ARM: OMAP2+: Improve handling of ti-sysc related sysc_fields
-      Merge branch 'omap-for-v5.7/omap1' into omap-for-v5.7/soc
+Li Yang (7):
+      soc: fsl: qe: fix sparse warnings for qe.c
+      soc: fsl: qe: fix sparse warning for qe_common.c
+      soc: fsl: qe: fix sparse warnings for ucc.c
+      soc: fsl: qe: fix sparse warnings for qe_ic.c
+      soc: fsl: qe: fix sparse warnings for ucc_fast.c
+      soc: fsl: qe: ucc_slow: remove 0 assignment for kzalloc'ed structure
+      soc: fsl: qe: fix sparse warnings for ucc_slow.c
 
-Venkat Reddy Talla (1):
-      soc/tegra: pmc: Add pins for Tegra194
+Lucas Stach (1):
+      soc: imx: gpc: fix power up sequencing
 
-Vincenzo Frascino (1):
-      arm: mach-dove: Mark dove_io_desc as __maybe_unused
+Manivannan Sadhasivam (1):
+      soc: qcom: Do not depend on ARCH_QCOM for QMI helpers
 
-Xu Wang (1):
-      ARM: orion5x: ts78xx: Remove unneeded variable ret
+Maulik Shah (2):
+      drivers: qcom: rpmh: fix macro to accept NULL argument
+      drivers: qcom: rpmh: remove rpmh_flush export
 
-afzal mohammed (7):
-      ARM: OMAP: replace setup_irq() by request_irq()
-      ARM: orion: replace setup_irq() by request_irq()
-      ARM: iop32x: replace setup_irq() by request_irq()
-      ARM: ep93xx: Replace setup_irq() by request_irq()
-      ARM: spear: replace setup_irq() by request_irq()
-      ARM: cns3xxx: replace setup_irq() by request_irq()
-      ARM: mmp: replace setup_irq() by request_irq()
+Nathan Chancellor (1):
+      soc: qcom: pdr: Avoid uninitialized use of found in pdr_indication_cb
 
- Documentation/devicetree/bindings/arm/cpus.yaml    |   2 +
- .../bindings/arm/tegra/nvidia,tegra20-pmc.txt      | 300 ---------
- .../bindings/arm/tegra/nvidia,tegra20-pmc.yaml     | 354 +++++++++++
- .../bindings/phy/nvidia,tegra124-xusb-padctl.txt   |  24 +
- .../devicetree/bindings/soc/mediatek/pwrap.txt     |   1 +
- .../devicetree/bindings/usb/nvidia,tegra-xudc.yaml | 190 ++++++
- arch/arm/Kconfig.debug                             |  42 +-
- arch/arm/Makefile                                  |   1 +
- arch/arm/configs/omap2plus_defconfig               |   2 +
- arch/arm/include/debug/stm32.S                     |   9 +-
- arch/arm/mach-at91/Kconfig                         |   1 -
- arch/arm/mach-at91/pm.c                            |  35 +-
- arch/arm/mach-at91/pm.h                            |   2 +
- arch/arm/mach-at91/pm_data-offsets.c               |   4 +
- arch/arm/mach-at91/pm_suspend.S                    | 189 +++++-
- arch/arm/mach-bcm/Kconfig                          |   8 -
- arch/arm/mach-cns3xxx/core.c                       |  10 +-
- arch/arm/mach-dove/common.c                        |   2 +-
- arch/arm/mach-ep93xx/timer-ep93xx.c                |  14 +-
- arch/arm/mach-imx/Kconfig                          |  10 +-
- arch/arm/mach-imx/anatop.c                         |   7 +-
- arch/arm/mach-imx/gpc.c                            |   4 +-
- arch/arm/mach-imx/mach-imx6q.c                     |  13 -
- arch/arm/mach-imx/mach-imx6sl.c                    |   1 -
- arch/arm/mach-imx/mach-imx6ul.c                    |   1 -
- arch/arm/mach-imx/platsmp.c                        |   1 +
- arch/arm/mach-imx/pm-imx6.c                        |   2 +
- arch/arm/mach-imx/pm-imx7ulp.c                     |   1 +
- arch/arm/mach-imx/src.c                            |   3 -
- arch/arm/mach-iop32x/time.c                        |  12 +-
- arch/arm/mach-mmp/time.c                           |  11 +-
- arch/arm/mach-omap1/pm.c                           |  13 +-
- arch/arm/mach-omap1/time.c                         |  10 +-
- arch/arm/mach-omap1/timer32k.c                     |  10 +-
- arch/arm/mach-omap2/omap_hwmod.c                   |  19 +-
- arch/arm/mach-omap2/pm33xx-core.c                  | 137 +++-
- arch/arm/mach-omap2/timer.c                        |  11 +-
- arch/arm/mach-orion5x/Kconfig                      |   2 -
- arch/arm/mach-orion5x/ts78xx-setup.c               |   3 +-
- arch/arm/mach-qcom/Kconfig                         |   5 +
- arch/arm/mach-shmobile/setup-r8a7779.c             |   1 -
- arch/arm/mach-shmobile/setup-rcar-gen2.c           |   2 +-
- arch/arm/mach-shmobile/setup-sh73a0.c              |   1 -
- arch/arm/mach-spear/time.c                         |   9 +-
- arch/arm/mach-sunxi/sunxi.c                        |   2 +-
- arch/arm/mach-tegra/Makefile                       |  19 +-
- arch/arm/mach-tegra/cpuidle-tegra114.c             |  89 ---
- arch/arm/mach-tegra/cpuidle-tegra20.c              | 212 -------
- arch/arm/mach-tegra/cpuidle-tegra30.c              | 132 ----
- arch/arm/mach-tegra/cpuidle.c                      |  50 --
- arch/arm/mach-tegra/cpuidle.h                      |  21 -
- arch/arm/mach-tegra/irq.c                          |   3 +-
- arch/arm/mach-tegra/pm.c                           |  54 +-
- arch/arm/mach-tegra/pm.h                           |   4 -
- arch/arm/mach-tegra/reset-handler.S                |  11 -
- arch/arm/mach-tegra/reset.h                        |   9 +-
- arch/arm/mach-tegra/sleep-tegra20.S                | 170 -----
- arch/arm/mach-tegra/sleep-tegra30.S                |   6 +-
- arch/arm/mach-tegra/sleep.h                        |  15 -
- arch/arm/mach-tegra/tegra.c                        |   7 +-
- arch/arm/mach-zynq/common.c                        |   2 +-
- arch/arm/plat-orion/time.c                         |  10 +-
- arch/arm64/Kconfig.platforms                       |   2 -
- drivers/clk/at91/clk-sam9x60-pll.c                 |  91 ++-
- drivers/cpuidle/Kconfig.arm                        |   8 +
- drivers/cpuidle/Makefile                           |   1 +
- drivers/cpuidle/cpuidle-tegra.c                    | 392 ++++++++++++
- drivers/firmware/xilinx/Kconfig                    |   2 +
- drivers/soc/mediatek/mtk-cmdq-helper.c             |   1 +
- drivers/soc/mediatek/mtk-pmic-wrap.c               | 128 ++++
- drivers/soc/renesas/Kconfig                        |   2 +
- drivers/soc/tegra/pmc.c                            | 688 ++++++++++++++++-----
- drivers/soc/ti/pm33xx.c                            |  21 +-
- include/dt-bindings/clock/tegra114-car.h           |   4 +-
- include/dt-bindings/clock/tegra124-car-common.h    |   4 +-
- include/dt-bindings/clock/tegra210-car.h           |   4 +-
- include/dt-bindings/clock/tegra30-car.h            |   4 +-
- include/dt-bindings/soc/tegra-pmc.h                |  16 +
- include/linux/clk/at91_pmc.h                       |  23 +
- include/linux/firmware/xlnx-zynqmp.h               |   2 +-
- include/linux/platform_data/pm33xx.h               |   6 +-
- include/soc/tegra/cpuidle.h                        |   2 +-
- {arch/arm/mach-tegra => include/soc/tegra}/irq.h   |   8 +-
- include/soc/tegra/pm.h                             |  31 +
- include/soc/tegra/pmc.h                            |   3 +-
- 85 files changed, 2290 insertions(+), 1448 deletions(-)
- delete mode 100644
-Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.txt
- create mode 100644
-Documentation/devicetree/bindings/arm/tegra/nvidia,tegra20-pmc.yaml
- create mode 100644 Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra114.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra20.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra30.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle.c
- delete mode 100644 arch/arm/mach-tegra/cpuidle.h
- create mode 100644 drivers/cpuidle/cpuidle-tegra.c
- create mode 100644 include/dt-bindings/soc/tegra-pmc.h
- rename {arch/arm/mach-tegra => include/soc/tegra}/irq.h (59%)
+Nishad Kamdar (1):
+      soc: renesas: rcar-sysc: Use the correct style for SPDX License Identifier
+
+Peng Fan (2):
+      soc: imx: increase build coverage for imx8m soc driver
+      soc: imx: drop COMPILE_TEST for IMX_SCU_SOC
+
+Roger Quadros (1):
+      dt-bindings: bus: ti-sysc: Add support for PRUSS SYSC type
+
+Sebastien Fagard (1):
+      firmware: imx: scu-pd: enlarge PD range for mu_b
+
+Sibi Sankar (3):
+      soc: qcom: Introduce Protection Domain Restart helpers
+      dt-bindings: soc: qcom: apr: Add protection domain bindings
+      soc: qcom: apr: Add avs/audio tracking functionality
+
+Stephen Boyd (2):
+      drivers: qcom: rpmh-rsc: Use rcuidle tracepoints for rpmh
+      soc: qcom: socinfo: Use seq_putc() if possible
+
+Suman Anna (1):
+      bus: ti-sysc: Add support for PRUSS SYSC type
+
+Tony Lindgren (13):
+      drm/omap: Prepare DSS for probing without legacy platform data
+      bus: ti-sysc: Rename clk related quirks to pre_reset and post_reset quirks
+      bus: ti-sysc: Improve reset to work with modules with no sysconfig
+      bus: ti-sysc: Consider non-existing registers too when matching quirks
+      bus: ti-sysc: Don't warn about legacy property for nested ti-sysc devices
+      bus: ti-sysc: Implement SoC revision handling
+      bus: ti-sysc: Handle module unlock quirk needed for some RTC
+      bus: ti-sysc: Detect display subsystem related devices
+      bus: ti-sysc: Implement display subsystem reset quirk
+      Merge branch 'omap-for-v5.7/dss-probe' into omap-for-v5.7/ti-sysc
+      bus: ti-sysc: Fix wrong offset for display subsystem reset quirk
+      bus: ti-sysc: Detect EDMA and set quirk flags for tptc
+      Merge branch 'fix-lcdc-quirk' into omap-for-v5.7/ti-sysc
+
+Viresh Kumar (3):
+      firmware: arm_scmi: Update doc style comments
+      firmware: arm_scmi: Move macros and helpers to common.h
+      firmware: arm_scmi: Make scmi core independent of the transport type
+
+Youri Querry (3):
+      soc: fsl: dpio: Adding QMAN multiple enqueue interface
+      soc: fsl: dpio: QMAN performance improvement with function
+pointer indirection
+      soc: fsl: dpio: Replace QMAN array mode with ring mode enqueue
+
+
+ Documentation/devicetree/bindings/bus/ti-sysc.txt  |   1 +
+ .../devicetree/bindings/firmware/qcom,scm.txt      |   1 +
+ .../bindings/power/amlogic,meson-sec-pwrc.yaml     |  40 ++
+ .../devicetree/bindings/soc/qcom/qcom,apr.txt      |  50 ++
+ arch/arm/mach-omap2/pdata-quirks.c                 |   6 +
+ drivers/bus/hisi_lpc.c                             |  27 +-
+ drivers/bus/ti-sysc.c                              | 607 +++++++++++++---
+ drivers/firmware/arm_scmi/Makefile                 |   3 +-
+ drivers/firmware/arm_scmi/common.h                 | 115 ++-
+ drivers/firmware/arm_scmi/driver.c                 | 293 +-------
+ drivers/firmware/arm_scmi/mailbox.c                | 184 +++++
+ drivers/firmware/arm_scmi/perf.c                   |   2 +-
+ drivers/firmware/arm_scmi/shmem.c                  |  83 +++
+ drivers/firmware/arm_scpi.c                        |   4 +-
+ drivers/firmware/imx/Kconfig                       |   2 +-
+ drivers/firmware/imx/scu-pd.c                      |  13 +-
+ drivers/firmware/meson/meson_sm.c                  |   2 +
+ drivers/firmware/tegra/Kconfig                     |   2 +-
+ drivers/gpu/drm/omapdrm/dss/dss.c                  |  25 +-
+ drivers/gpu/drm/omapdrm/dss/omapdss-boot-init.c    |  25 +-
+ drivers/memory/tegra/tegra124-emc.c                |   5 +
+ drivers/memory/tegra/tegra20-emc.c                 |   5 +
+ drivers/memory/tegra/tegra30-emc.c                 |   5 +
+ drivers/misc/vexpress-syscfg.c                     |   2 +-
+ drivers/soc/Makefile                               |   2 +-
+ drivers/soc/amlogic/Kconfig                        |  13 +
+ drivers/soc/amlogic/Makefile                       |   1 +
+ drivers/soc/amlogic/meson-secure-pwrc.c            | 204 ++++++
+ drivers/soc/fsl/dpio/dpio-service.c                |  69 +-
+ drivers/soc/fsl/dpio/qbman-portal.c                | 767 ++++++++++++++++++---
+ drivers/soc/fsl/dpio/qbman-portal.h                | 158 ++++-
+ drivers/soc/fsl/qe/qe.c                            |   4 +-
+ drivers/soc/fsl/qe/qe_common.c                     |   2 +-
+ drivers/soc/fsl/qe/qe_ic.c                         |   2 +-
+ drivers/soc/fsl/qe/ucc.c                           |   2 +-
+ drivers/soc/fsl/qe/ucc_slow.c                      |  33 +-
+ drivers/soc/imx/Kconfig                            |  11 +-
+ drivers/soc/imx/Makefile                           |   2 +-
+ drivers/soc/imx/gpc.c                              |  24 +-
+ drivers/soc/imx/gpcv2.c                            |   1 +
+ drivers/soc/imx/{soc-imx8.c => soc-imx8m.c}        |   0
+ drivers/soc/qcom/Kconfig                           |   7 +-
+ drivers/soc/qcom/Makefile                          |   1 +
+ drivers/soc/qcom/apr.c                             | 123 +++-
+ drivers/soc/qcom/pdr_interface.c                   | 757 ++++++++++++++++++++
+ drivers/soc/qcom/pdr_internal.h                    | 379 ++++++++++
+ drivers/soc/qcom/qcom_aoss.c                       |   6 +-
+ drivers/soc/qcom/rpmh-internal.h                   |   1 +
+ drivers/soc/qcom/rpmh-rsc.c                        |   2 +-
+ drivers/soc/qcom/rpmh.c                            |  22 +-
+ drivers/soc/qcom/socinfo.c                         |   2 +-
+ drivers/soc/renesas/Kconfig                        |  16 +-
+ drivers/soc/renesas/rcar-sysc.h                    |   4 +-
+ drivers/soc/renesas/renesas-soc.c                  |   2 +-
+ drivers/tee/tee_core.c                             |   1 -
+ drivers/tee/tee_private.h                          |   3 +-
+ drivers/tee/tee_shm.c                              |  85 +--
+ include/dt-bindings/bus/ti-sysc.h                  |   4 +
+ include/dt-bindings/power/meson-a1-power.h         |  32 +
+ include/linux/firmware/imx/ipc.h                   |   1 -
+ include/linux/firmware/meson/meson_sm.h            |   2 +
+ include/linux/platform_data/ti-sysc.h              |   5 +
+ include/linux/soc/qcom/apr.h                       |   1 +
+ include/linux/soc/qcom/pdr.h                       |  29 +
+ include/linux/soc/qcom/qmi.h                       |   1 +
+ include/linux/tee_drv.h                            |  19 +-
+ include/soc/fsl/dpaa2-io.h                         |   6 +-
+ include/soc/fsl/qe/ucc_fast.h                      |   6 +-
+ include/soc/fsl/qe/ucc_slow.h                      |  13 +-
+ include/soc/qcom/rpmh.h                            |   5 -
+ 70 files changed, 3696 insertions(+), 636 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
