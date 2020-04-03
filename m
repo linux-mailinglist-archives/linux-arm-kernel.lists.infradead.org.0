@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7A2A19E113
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 00:30:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11CD619E115
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 00:31:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
 	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6lsOhZGR4pIpT2Q6DFIH6XOrtsw7iG2r51aT14+l9E=; b=fLT0tgK408MIC1
-	u6ZVTbTQAD11ek55xPelvANQiLSwC6CXj3cl/vSkjDQu0PrftBl76whiyliFIeXdkYb4wpb8hkSbO
-	rHm8k5f4dhwQnl+Lf5HM7+yIn/e+TuLAYyEkNN6XV2hvN7sJIN2HtkX1T8DGVhs4doTO+OHdhWaEk
-	8V/6tqvzkGM+lhIYh9LErVEu/Kf9NLv8LodGfM5SZwO4h2ZsavtE2sbg+DzEuKnjDZEv4pOKkUhVy
-	VF3IdQhPv0Nfdhfs1qY91uGDoEyOQ/lXj4SavUCWYZbim4Py+o01zCZS7sL3hqXGwM5naG8JDqR+c
-	oTWypxURJITsXftDOvUw==;
+	List-Owner; bh=PA3/C4hAt5FVdZnPg7vRZzCPmfFd0Qtyk0WyegFVwQE=; b=sMg4yBRGTw+bKS
+	s5cyIBXgbCqnJ4KCLkzQ57LuVOooU6hTYVh0U0U0h3hag/hxa25DoVTGJNzDWfa3w08NCB6zKoox1
+	ipUQ7KfCqsHEfDACd5CIHMd7W1WkJ8oLLqZdFSliMEHwcrEh8wWPUaLUQ9R5nFn6OjwNa16kShzlL
+	gbkOBNtBtiYXOa7xj3Z3Ne6pRGB8mxyrE+gmODVR4c+rshO3z0uASUCRYk0DqdSemJQXJHv3mPbOr
+	xvXXTBPXXHBUIFotZXXo9Vgp0l2ZCbfJl3AsT+HviecaWqt10NPmdOA8xNQ9pTPQjwadIqRrpLSlw
+	ikvgtIlfcBVM9t6izMRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKUpu-0007uC-9e; Fri, 03 Apr 2020 22:30:50 +0000
+	id 1jKUq8-0008HR-JN; Fri, 03 Apr 2020 22:31:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKUpT-0007ik-Py
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 22:30:25 +0000
-Subject: Re: [GIT PULL 2/4] ARM: driver updates
+ id 1jKUpU-0007jC-Ud
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 22:30:26 +0000
+Subject: Re: [GIT PULL 3/4] ARM: defconfig updates
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585953023;
- bh=ysPd+VaMxeQaFNzETB5fv7/dfrvjNu7FaSZK5EKc++s=;
+ s=default; t=1585953024;
+ bh=T0FoaMSGdG7svBhvawqfMqyq3Bxd62wVVshnpXoftk0=;
  h=From:In-Reply-To:References:Date:To:List-Id:Cc:From;
- b=k0Dd4B4pV8fNvxHsj/mSQmnmvBh24MlP4W2TJvAvlzNyYhc5McfattUSVKFDMnIDm
- wOiEueeOr2tmLnNq1zhrbWPGLA03+DDQlfD1eH6DaI+vN9S7FIbmNrO2OY48lLItH2
- 4h1l8f+iQqVYEQI/e4wUa7DEbW+G7+1WHIQdFtek=
+ b=NkM0xx4FoIo9BTl8CEtk7ctwZzo+7VtodC/ARuMJzcD5N/7tTHGDVmcSwj9g119VH
+ LDFcoqphXE6VuOLEfxu6LQS390RdI7IaSOzyk11iP9aL1QIdQQmm9JHR/QAWJ7oqkZ
+ Bl8zBtpOyR3j3c2VzHscFNrIOwJsHywO8yr1hYe4=
 From: pr-tracker-bot@kernel.org
-In-Reply-To: <CAK8P3a0Z7yj0wgMkT2YsWBU56557O66rLGLzGSJSuC+8nWx1zA@mail.gmail.com>
+In-Reply-To: <CAK8P3a3OPgCzLxzd=7Ng=jregKB0HycLLrfA4xYd7-4Te-kHMA@mail.gmail.com>
 References: <CAK8P3a1aO+LUu6KsW+s8aZMNWt2yz7kqe=LARY=ifMKOqT9uNQ@mail.gmail.com>
- <CAK8P3a0Z7yj0wgMkT2YsWBU56557O66rLGLzGSJSuC+8nWx1zA@mail.gmail.com>
+ <CAK8P3a3OPgCzLxzd=7Ng=jregKB0HycLLrfA4xYd7-4Te-kHMA@mail.gmail.com>
 X-PR-Tracked-List-Id: <soc.lore.kernel.org>
-X-PR-Tracked-Message-Id: <CAK8P3a0Z7yj0wgMkT2YsWBU56557O66rLGLzGSJSuC+8nWx1zA@mail.gmail.com>
+X-PR-Tracked-Message-Id: <CAK8P3a3OPgCzLxzd=7Ng=jregKB0HycLLrfA4xYd7-4Te-kHMA@mail.gmail.com>
 X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git
- tags/arm-drivers-5.7
-X-PR-Tracked-Commit-Id: cedb414aa8c31ce2f178ea9dc29b6c0200b9893f
+ tags/arm-defconfig-5.7
+X-PR-Tracked-Commit-Id: a0705d3c042ad39fb9c5609612bb39ef4bedd284
 X-PR-Merge-Tree: torvalds/linux.git
 X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: d18292dc07dbaaacef040a23a5e5e65c6ea61803
-Message-Id: <158595302352.19263.10439446222459673652.pr-tracker-bot@kernel.org>
-Date: Fri, 03 Apr 2020 22:30:23 +0000
+X-PR-Merge-Commit-Id: 9b48c8f132e0c30220ce509f72dd90da05245524
+Message-Id: <158595302465.19263.9151621757049765186.pr-tracker-bot@kernel.org>
+Date: Fri, 03 Apr 2020 22:30:24 +0000
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_153023_864652_D3C51815 
-X-CRM114-Status: UNSURE (   2.67  )
+X-CRM114-CacheID: sfid-20200403_153025_002289_B2528D4A 
+X-CRM114-Status: UNSURE (   2.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -87,12 +87,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 3 Apr 2020 23:35:09 +0200:
+The pull request you sent on Fri, 3 Apr 2020 23:36:22 +0200:
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/arm-drivers-5.7
+> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/arm-defconfig-5.7
 
 has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/d18292dc07dbaaacef040a23a5e5e65c6ea61803
+https://git.kernel.org/torvalds/c/9b48c8f132e0c30220ce509f72dd90da05245524
 
 Thank you!
 
