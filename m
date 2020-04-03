@@ -2,118 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD9219D222
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 10:28:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0811C19D228
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 10:28:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GH+w9Akp7isVQkUgoi3NGivlOJ+Vud8csuLNMBpA3LE=; b=SuiKB07OCCT/Le
-	ik40+3b8fI4crhCCQJjUlsBQ7iN9wcNZgZ7zPgpJD01UdW/00Ec7wddXL14oycwebiJzNW4Ge4eRP
-	wACxigLBN7CUBfr5kHxzUFVR06ncZ7NSQZ5b3D+ekUPlLFi4AADYuOug3+QeWR/vXlx42+2xPtm6s
-	IgKa8/j2sdeevV6SCAXXV61mqmLjG03BrbjjgrbLjsmzqsud7pKrMzkD0M1kiO5/KmGgVcOZUicqC
-	oxP8NZJTROy8qbbmDU+cFnziCeBaYrpq6Svj7Pv1BEIBpRFLoEdokxdy59+r0X7qubWSBnz8r+xa9
-	nFbxuJnWaRlXnuZIgZjA==;
+	List-Owner; bh=0RRcDvQ+boKKUAMzRWHf+qn4Y4vgUguZB73SZFVwrKQ=; b=HN+2D0RM++Z7AV
+	KcCOyDqJ/gDXvTV0NyUPMvSJPG+4T11UslbRsXHvKMAiJ6TEWa+fXvrfUd31vSYToT1RcAzlUueDJ
+	BeXU2bY1O+ajF6nxgbtnbbIJB7mCTl+oHfg0Wb6ZmfUWeoE2AGv99nCYs3tcRFx0eMmJ9JgT7ln5Q
+	DNgfV97kQwazv5X1DkBK4a2O0hErXNsb/OKFR/RUbPMchrIxY5Itkp6JlhJQkzmVjPCjHVES9AmH1
+	cXi1xbciyW6nFDW9zD/4TiyxUY8OXS2ntFLUrsuzNhpkbJOgpBn6A45sBharZ62uyJeotr1FJcQdT
+	sx8pkqyp0sDMaKGTH6VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKHgU-0003DX-LI; Fri, 03 Apr 2020 08:28:14 +0000
-Received: from mail-eopbgr1410091.outbound.protection.outlook.com
- ([40.107.141.91] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jKHgs-0003Z9-Rg; Fri, 03 Apr 2020 08:28:38 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKHgN-0003D0-Sq; Fri, 03 Apr 2020 08:28:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hXBvs5vDsLfYe7Y+vFTcptziEE5YbKLdTU7l3xUEIY5TDkUVgUvkQOFwRRB0wOOo+adnWV5iVKpfleSOpU22RTq6klJqSsMFiaUD+GGWB3p+rlARrWDSm1RSUdRzbbWXo/gXKdQnoa5hjmhBH56yLRePN2m9uV3/Y+p4NJkSJcTa/jQjFiVNpT4To6Jw+PnwTbUm1WeQQBB+3mkA9bN4G5ORMANl0nO3ZUChqG7QZE9/j1Q69AdAicMo0VEk68eY3ZzIeTz9mfzlBZODtjn58hWOrjy4AE3fEtoSkvjFVzLCa2+FCtEgIco5mC+wCOOidNVOhD5JwL9m7QLJ5k557g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=L+kqWT7sY2OORnmbgt5Cxr5xhozwMaZLXa8dE6EXMtc=;
- b=NrenoDN6/OGKR+Xy/qA1QGLTtNqIqKXVw/EY1TYFLTg6tCzvRJcmvBBlt6uXzCZOp7xZJ2XLEOPMUyY1d8x8LthfP3M0FfpL4/4XWBAxlrHZhCJm8XZwuVEexczffpomgVHxAVdsXaRvq9DwyzVGWcvZo6SpxzaQuf5qOzQ3HxrRghcL4jIC2QGRK4ZLLZGKRNsL12Js8Ik50FeSMRH9BYvMVnaht6CS/zEYdIThbx1aVH0lRiZBV2OhfSzryg9n+FHyHWJ+24oTXvN5vWn2+TkL0rBm14nICsUh0JPj2xEY7PuUgIaVKGXlA3jWDIurj7yKhttCc9Q+xJ1dCh+3uQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=L+kqWT7sY2OORnmbgt5Cxr5xhozwMaZLXa8dE6EXMtc=;
- b=pLB+r/kD0vkBKwGZJjaTYSKTVDrV7rv+Al2BOhsgE2Y+o2nvjVkR6nPM04eYECklwMLxrKMbFriNwOlp3WIXJ9BbBkouUt/5m8HENslXlQ6r3hGlRB1DJ6k5aexrzp//CO1Wc/jqfBEG+RddybT8n/5yCDYn4Zji66iep+N7M4A=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB2816.jpnprd01.prod.outlook.com (20.177.102.150) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2856.20; Fri, 3 Apr 2020 08:28:04 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
- 08:28:04 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, Bjorn
- Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
- Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
- Pieralisi <lorenzo.pieralisi@arm.com>, Marek Vasut
- <marek.vasut+renesas@gmail.com>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>
-Subject: RE: [PATCH v6 07/11] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Topic: [PATCH v6 07/11] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Index: AQHWCSZ3yJsyf9f5C02jBKuKwy/M6ahnD+3A
-Date: Fri, 3 Apr 2020 08:28:04 +0000
-Message-ID: <TYAPR01MB4544E4658654491BECD7561AD8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1585856319-4380-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1585856319-4380-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [124.210.22.195]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d8a580e0-2783-4a0f-e89b-08d7d7a8ee1d
-x-ms-traffictypediagnostic: TYAPR01MB2816:|TYAPR01MB2816:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB2816320A1C33F13A2B36485BD8C70@TYAPR01MB2816.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2331;
-x-forefront-prvs: 0362BF9FDB
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:TYAPR01MB4544.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(4636009)(376002)(396003)(366004)(346002)(39860400002)(136003)(54906003)(52536014)(478600001)(107886003)(110136005)(186003)(55016002)(86362001)(26005)(4326008)(316002)(55236004)(6506007)(71200400001)(7696005)(966005)(76116006)(8676002)(9686003)(66476007)(81166006)(33656002)(64756008)(66556008)(81156014)(5660300002)(2906002)(8936002)(7416002)(66946007)(66446008)(921003)(1121003);
- DIR:OUT; SFP:1102; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1Z6QBiZDsHWmDDshjZOuSKXVv7RF4J6oSFOB1gLhajn8N97RQ0oWmwK7xpFQsmm9d4ZVl6loKoHdlSzU2bxdy+WLygne7jyP9FWGyCM0/4VD9SsIflnCvcI1UAYkfZbPmdZRSd/ZArORTl36FmWo/fcJVBFuwBhyLSvJcIcwZ1UadpHXemcMQxUXVtHClRonHGF60HbEt6IEbPdgXqHEz+Qig/cATiS9YWB+WNX0let+AqMLQ/ltNtIZs5sU2IedfJpKCLI/QBaP8ian77Rub+aHrfzuLUJtK+fH6PQtgmTYWr2Cx28Swc7I6veipU8lDQ/dtSTPPo5ZMT345jr+d6HUrYp3uQMdPvqiRTgyJIOVw708cPVcQz/jqmbLGJBiS15UV7ukQHaIGyCVa/nnBg/lYW/eKWWK/FmfC5iioHoSz7ikWbmbyXmukowv7bqkgSWMWKgaXwZ68yaLuhJhBDx6CDO7zbtkBOhXoHMhOdFhGUIRxlGP+G9S7UBDrZKU3cNKX/hguZHFI182GFvBBctLcx02+zgFiLYJXosuLYWMUq/fg4CHejp8rgOJe58DS3Ymeqfy8doWoCVzIBa7VA==
-x-ms-exchange-antispam-messagedata: /3BZFq29NVF8wFDQneYsxSdTsMUkO5owxNWWXjsD0PR/bjoFqg60BWton0a1nqVXqsHGPLF59qQaRzhYmkoEIlzojWvrZiE6JTnezg30dAfAoK1awFu2kapuL1MfJcQh6UtQokATL5BR1OsJkzH3PA==
+ id 1jKHgg-0003WQ-VH; Fri, 03 Apr 2020 08:28:28 +0000
+Received: by mail-oi1-f194.google.com with SMTP id k5so5394443oiw.10;
+ Fri, 03 Apr 2020 01:28:26 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Jd71ZkzudxX5g2IyvVUOYdKyHi8OFqEjn6IvsJ3wV7k=;
+ b=qykIbR6EXA76Glt6mK1SzHqnQon//rIthEJ4vYKYSTVK0BXH0wgq2rsoPOxiW60ds+
+ rZJ2TN0LsFvrBz+7uXpuRr6pqloOkivS14eWFngIR0eOitEbyOkHfvZmYMnB0i3JHvaF
+ S39ja0TLKo80qbTyPAtrJWMOyZliNo8tXr+1SMN8BsNA0mAVwNzB5t4m3XLm32l/R4QM
+ sjMqzF6lWSfNz8rUTRRd/t29iTHH+m7Xf0KItyFSiCTMebLr0Y7LXUQeTXjD6bkgyvcZ
+ VYxfKMcNxALlUUbNoGhKhVEDmQUj9Cx1kRRZ3F5UUTkoAk4J6Nr/AOPiA1lG5wr4s+nm
+ Hc1Q==
+X-Gm-Message-State: AGi0PuZp6EHklQuZJ52jbqhuxSu2H5D7nwCu7fYVv8KegevA8b0RqLTH
+ 8e+A51SozkPc7uqqr2zeq34ZxuH+e+C26KZxAos=
+X-Google-Smtp-Source: APiQypIS6fpMGxM4Q7dZQ7e1YsUy6vcUkIWwvKfW8MQ2oAPzqQO4S5tcl4AqLxJx41ERvItQuVYYFJJlh5Wv+BynmHU=
+X-Received: by 2002:aca:cdd1:: with SMTP id d200mr2041353oig.153.1585902505654; 
+ Fri, 03 Apr 2020 01:28:25 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d8a580e0-2783-4a0f-e89b-08d7d7a8ee1d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 08:28:04.2581 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Kqbwr3ti0PXE2ujCGrEVh9SpLDUdlpykgCnFq0R3O0yA0Sx0AaHGmEDwFH0tx1Z+udMZnLKx9v7jZ3nK1n+G02VcGixSF+sb7Z9Olq4lVxmUZMDAK5Hw/hPefNES342j
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2816
+References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1585856319-4380-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <TYAPR01MB454403D69A74036B74CC8220D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+In-Reply-To: <TYAPR01MB454403D69A74036B74CC8220D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 3 Apr 2020 10:28:13 +0200
+Message-ID: <CAMuHMdVWn=U82k5RJnBaRUgRHh3bRfdncOupmX67-u-nbwsG9w@mail.gmail.com>
+Subject: Re: [PATCH v6 02/11] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_012807_932036_85FF462D 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200403_012827_004134_764CE090 
+X-CRM114-Status: GOOD (  19.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.91 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,77 +81,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>, Heiko Stuebner <heiko@sntech.de>,
- Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
  Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Arnd Bergmann <arnd@arndb.de>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar-san,
+Hi Shimoda-san,
 
-Thank you for your patch!
+On Fri, Apr 3, 2020 at 10:03 AM Yoshihiro Shimoda
+<yoshihiro.shimoda.uh@renesas.com> wrote:
+> > From: Lad Prabhakar, Sent: Friday, April 3, 2020 4:39 AM
+> >
+> > config option PCIE_RCAR internally selects PCIE_RCAR_HOST which builds the
+> > same driver. So this patch renames CONFIG_PCIE_RCAR to
+> > CONFIG_PCIE_RCAR_HOST so that PCIE_RCAR can be safely dropped from Kconfig
+> > file.
+> >
+> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>
+> Thank you for the patch!
+>
+> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+>
+> But, I'm thinking this patch (and patch 03/11) should be separated
+> from this patch series for arm64 subsystem to ease maintenance.
+> My scenario is:
+>  1) patch series 1: R-Car PCIe endpoint support.
+>  -- This means: patch 1, 4 - 9, 11
+>
+>  2) After the patch series 1 is merged, submit this patch 2/11 to arm subsystem
+>    and submit the patch 10/11 to misc subsystem.
+>
+>  3) At last, submit patch 3/11 after the patch 2/11 is merged.
+>
+> Geert-san, what do you think?
 
-> From: Lad Prabhakar, Sent: Friday, April 3, 2020 4:39 AM
-<snip>
-> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> new file mode 100644
-> index 000000000000..07cd5a7325d0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> @@ -0,0 +1,76 @@
-> +# SPDX-License-Identifier: GPL-2.0
+Thanks, I agree with your summary.
 
-I'm sorry I should have mentioned in the previous review.
-This is better like the following.
+I can take patch 2/11 through renesas-devel.
+Probably it's best if I submit it to arm-soc as a fix for v5.8, after
+the driver part
+has been merged into v5.8-rc1, so 3/11 can be submitted for v5.9.
 
-# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+BTW, I'm wondering about "[PATCH v6 05/11] PCI: rcar: Fix calculating
+mask for PCIEPAMR register". Can the issue fixed by this patch happen with
+the current driver in host mode, or is that limited to ep mode?
+In case of the former, please submit it to the PCI maintainer as a separate
+fix.
 
-https://patchwork.kernel.org/patch/11459267/#23246825
+Thanks!
 
-<snip>
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
-> +    #include <dt-bindings/power/r8a774c0-sysc.h>
-> +
-> +     pcie0_ep: pcie-ep@fe000000 {
-> +            compatible = "renesas,r8a774c0-pcie-ep",
-> +                         "renesas,rcar-gen3-pcie-ep";
-> +            reg = <0 0xfe000000 0 0x80000>,
-> +                  <0x0 0xfe100000 0 0x100000>,
-> +                  <0x0 0xfe200000 0 0x200000>,
-> +                  <0x0 0x30000000 0 0x8000000>,
-> +                  <0x0 0x38000000 0 0x8000000>;
+Gr{oetje,eeting}s,
 
-Examples are built with #{address,size}-cells = <1>, so
+                        Geert
 
-            reg = <0xfe000000 0x80000>,
-                  <0xfe100000 0x100000>,
-                  <0xfe200000 0x200000>,
-                  <0x30000000 0x8000000>,
-                  <0x38000000 0x8000000>;
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-https://patchwork.kernel.org/patch/11459267/#23246825
-
-Best regards,
-Yoshihiro Shimoda
-
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
