@@ -2,61 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD4219D30B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:02:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D37B19D310
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:03:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O+FHmyS0uRIpQRTIfR/gtopfoTwkBSGJssdSPvMSWuk=; b=O/Q5OhF1AAaLN2
-	DFHrQN7lSwgjAhtkt9t35T6OFEhE6irpaRTHfreCaNqRhY0zv+/d2dnaowejpx5NvIa1mK1sdqjrq
-	aVTdQWS7gfcTL8Gom7GL51KpkE5zq3dQ72LfgOOxghlib87v5TU6AZZ8pMMmAnluIr0IcTtVjbjMs
-	0kzgbs9TR5lQRbxFm3UzS1+BKuE0RxMFfS5gfLXPrUYh6qRdfiptpWhq61aJJ4kqp4pYcxV6oMSZQ
-	n213HpFpqNMxUfpYhh5Swzunqay3ocace9YxK3AwvoWDRmgOeJCLRhETVege7Px1KktySwL3wuJ0u
-	Fe2XvAPKTBQTUQWkpzZg==;
+	List-Owner; bh=HYlv06gfrUBZWP6FE6SvEiHMRCJuYOYHLHngrGItFNo=; b=fz7o73UA8HVgJ1
+	bIS4B4J8z51Yq+9Qdpcscah5ZnRK3AFMCRtA1zwKcCUGsr7Uo8pN9O6iwJ00lrQF25q8FIg19jgGv
+	bfus6HU1P0MR+6fwAp5O19EpLDUsOtPZoUUjARsg7Gc6BCe4UbwKAujyx5dp1Sji84i8aYRKhG6TU
+	OWjjR901baEBB1LbEmx2Jd7SZz2TFlPMOxbj8nhQV2tCM5jAcRiw+zddEySj0xEvTLSTVaPYpoHo2
+	nKQENPE1kNgEzf8ir7Jvp7BODoAo+vIDRIxkeExzuT0zizuMvstFE8z3Rwgj1rfdvwyy6Mmxho3ID
+	A0sRcdRze1bvpsv3T88A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIE0-00065z-JC; Fri, 03 Apr 2020 09:02:52 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jKIEI-0006P9-0D; Fri, 03 Apr 2020 09:03:10 +0000
+Received: from mail-eopbgr1400134.outbound.protection.outlook.com
+ ([40.107.140.134] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKICV-0004Zi-2Y
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:01:20 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 06829F795AF01CEA341E;
- Fri,  3 Apr 2020 17:01:17 +0800 (CST)
-Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
- DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
- 14.3.487.0; Fri, 3 Apr 2020 17:01:06 +0800
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-To: <peterz@infradead.org>, <mark.rutland@arm.com>, <will@kernel.org>,
- <catalin.marinas@arm.com>, <aneesh.kumar@linux.ibm.com>,
- <akpm@linux-foundation.org>, <npiggin@gmail.com>, <arnd@arndb.de>,
- <rostedt@goodmis.org>, <maz@kernel.org>, <suzuki.poulose@arm.com>,
- <tglx@linutronix.de>, <yuzhao@google.com>, <Dave.Martin@arm.com>,
- <steven.price@arm.com>, <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [PATCH v1 6/6] arm64: tlb: Set the TTL field in flush_tlb_range
-Date: Fri, 3 Apr 2020 17:00:48 +0800
-Message-ID: <20200403090048.938-7-yezhenyu2@huawei.com>
-X-Mailer: git-send-email 2.22.0.windows.1
-In-Reply-To: <20200403090048.938-1-yezhenyu2@huawei.com>
-References: <20200403090048.938-1-yezhenyu2@huawei.com>
+ id 1jKIDT-0005ou-NO; Fri, 03 Apr 2020 09:02:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZIkvzmRoVYg76KZjxBZPk/8MA0hCom6ztQyktmNu/Dd1bPrPjcEdmYWnDzelVDVvRRRebxuo8/yGkXAwrEKKF+qaEGwMlZm/kGoDlEjBSOL9sge6N/sD/3RUQvxggwEmMNBPcwEnf3CK4lR3qbsQHjPM59HNmFKPtq42aoBZ2Jl3EyKMESmu/ZHVqIAyrcKVh/LTbB26yU8UARF5+nW9YzPwJxcMWEBX6C8nFdoPj8tQqoLcNw42oVLB6GaoEbDOUjVWUW+LxSHuQIbswu/jZxx06lQyPnn8Qz1u8Mc3O1KgZErOLXiqs+aT/yIMqU+3mGFi4BbTDStwtHF4CVaskA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+xeL1g8XHEQvA1pKbOgUenLOyYEqV5NbQMcDFKPplig=;
+ b=hz2h5SPTF2eogmsJFEr8Y+9X1hLSOuVok3uewoZEJSQ5HQ3ZkvhMFmCc3xUq/P9qpok/29O98nN6Urw3Nxr/HS4A3Y2jglQtX8X+5o3+vDBGZUgNlCTKNUZfDse64Itj+eIOsVFG22YtB206saiCEQkVEZwVAXyvLL0xRLoksd+BAbJ7Qgp5IjfFfq+4JDs7EewBZBO87ST7h2btvVOFSiq2k2QRx6tOGAWGTkJNZyXl0LZV4IOceTZaUXx4OTCmXX4hMgTVBxXnoOAYSx+apjL9iDokD6twBwRV75ixqKs+pXmq4V52B6+LOgjtIN2in4dZhZqy+wHPRRp7Efi7uQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+xeL1g8XHEQvA1pKbOgUenLOyYEqV5NbQMcDFKPplig=;
+ b=fbxBkcP6O4DIJ+WjXaq2i/tQLhgEJi9a9ld+EV1T1y2Bk43ro/Rmy78qNo7V75puPJSXrON/pU/LsM+HjxBVLLOVddDW46kPRjdE14obyd6j18BrBYhsiQlSKsK+Khm4KTsfrV5uMjmJ7tsMEwOMXoTvQIZ7nbgSVndKDJrfLzM=
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
+ OSBPR01MB1590.jpnprd01.prod.outlook.com (52.134.226.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.20; Fri, 3 Apr 2020 09:02:15 +0000
+Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::490:aa83:2d09:3a0b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
+ ([fe80::490:aa83:2d09:3a0b%5]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
+ 09:02:15 +0000
+From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
+ Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Marek Vasut
+ <marek.vasut+renesas@gmail.com>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>
+Subject: RE: [PATCH v6 07/11] dt-bindings: PCI: rcar: Add bindings for R-Car
+ PCIe endpoint controller
+Thread-Topic: [PATCH v6 07/11] dt-bindings: PCI: rcar: Add bindings for R-Car
+ PCIe endpoint controller
+Thread-Index: AQHWCSZ8QC2XZz1ftUWbRjkMJyLmU6hnEUkAgAAIr9A=
+Date: Fri, 3 Apr 2020 09:02:15 +0000
+Message-ID: <OSBPR01MB3590720B42CF77579621A313AAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1585856319-4380-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <TYAPR01MB4544E4658654491BECD7561AD8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+In-Reply-To: <TYAPR01MB4544E4658654491BECD7561AD8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
+x-originating-ip: [193.141.220.21]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 9a8a7ed1-5ba8-4495-0a57-08d7d7adb4a0
+x-ms-traffictypediagnostic: OSBPR01MB1590:|OSBPR01MB1590:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <OSBPR01MB15904DC72542FC904E273B02AAC70@OSBPR01MB1590.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
+x-forefront-prvs: 0362BF9FDB
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:OSBPR01MB3590.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(39860400002)(366004)(136003)(346002)(396003)(376002)(316002)(66476007)(966005)(8676002)(71200400001)(64756008)(81156014)(81166006)(66556008)(6506007)(7416002)(55016002)(110136005)(66446008)(9686003)(54906003)(478600001)(186003)(33656002)(26005)(86362001)(52536014)(53546011)(7696005)(76116006)(5660300002)(66946007)(2906002)(8936002)(4326008)(921003)(1121003);
+ DIR:OUT; SFP:1102; 
+received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: IFfC/Y1r+W2OJot1znWCEl/zP4mfb862jdvyv5BVbNTJrF7gkwFl+DMEwj5oNpGK3S4nMcW9tLBHWaOu/wWy+DaZMlNQ6SuYqr80v51WH1PWAtge1m2hxI6X9ug/XNA5xk+AMO9oedxtkAhpmJVID4B5d2J16rCEicYrlq8apOtn2dBIVr0lFCWPrqNYspx9FOuv4h70NlwPaKb73F77Gih4bcyM1lZ0c7cTvqc4Po+eFRiBt0PIeZfFSsqws/QuOEOTnx9u9L8EaseNY6Z8qv3KQOQ8hKaupYvfXuyLjgTVL/K7+6KnY9izUnxCrCLTBokluFtVjj/4h9NxVvziIjkpxHYVXqjGVI2wqEEOh6xjU0H2CT1382sPqUZxwO3qkVD+R4/b1s9vq7NAR2h2bghgYbnQ9RC93YRjoXTjt6L392SBO3JuqkkwA0l/hDpQEfZOX1uVK1au7g1CfemTP8l32ATJ/Edl57vbu1yVAUDbQK1PbkG2s/neUY2hyLEzp2okcIlqU8DPvCbaJ814LQl/HGVZzM0234mEUsF7t2CwU2+nVUO1ILOiIsSlbZv8/ia02quVSIVtlT2VWv++iQ==
+x-ms-exchange-antispam-messagedata: YWW292uulutDSErhyU1zKowPAiEtErBgJGrxST7sH/5sN267QXMBJu3JCqz+jFZkpoXTaNQsAc2H6FVWwWK+NRD4lmq/PpWCJZlxlU4UVgxMH9Z4ZS7NmpgrXzedA7ILzGFfah0ZPJB8fEXkQv1rnw==
 MIME-Version: 1.0
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9a8a7ed1-5ba8-4495-0a57-08d7d7adb4a0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 09:02:15.3597 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wXW/VJsSQMkN1CMxzjHK9qzAxzQR1NYXeS7isKGg3XGXOMia2POD9C/JtBAnkst7zJBwXYm9AdNGBZgzWMjAnyO0r1qAo/CJrv036P3UVRdQ0VZZFzrznAvIXyUh2Ojl
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB1590
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_020119_279210_0E652C22 
-X-CRM114-Status: GOOD (  13.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200403_020219_826880_780758B5 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.140.134 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,121 +126,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, yezhenyu2@huawei.com,
- linux-kernel@vger.kernel.org, xiexiangyou@huawei.com,
- zhangshaokun@hisilicon.com, linux-mm@kvack.org, arm@kernel.org,
- prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Heiko Stuebner <heiko@sntech.de>,
+ Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch uses the cleared_* in struct mmu_gather to set the
-TTL field in flush_tlb_range().
-
-Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
----
- arch/arm64/include/asm/tlb.h      | 26 +++++++++++++++++++++++++-
- arch/arm64/include/asm/tlbflush.h | 14 ++++++++------
- 2 files changed, 33 insertions(+), 7 deletions(-)
-
-diff --git a/arch/arm64/include/asm/tlb.h b/arch/arm64/include/asm/tlb.h
-index b76df828e6b7..d5ab72eccff4 100644
---- a/arch/arm64/include/asm/tlb.h
-+++ b/arch/arm64/include/asm/tlb.h
-@@ -21,11 +21,34 @@ static void tlb_flush(struct mmu_gather *tlb);
- 
- #include <asm-generic/tlb.h>
- 
-+/*
-+ * get the tlbi levels in arm64.  Default value is 0 if more than one
-+ * of cleared_* is set or neither is set.
-+ * Arm64 doesn't support p4ds now.
-+ */
-+static inline int tlb_get_level(struct mmu_gather *tlb)
-+{
-+	int sum = tlb->cleared_ptes + tlb->cleared_pmds +
-+		  tlb->cleared_puds + tlb->cleared_p4ds;
-+
-+	if (sum != 1)
-+		return 0;
-+	else if (tlb->cleared_ptes)
-+		return 3;
-+	else if (tlb->cleared_pmds)
-+		return 2;
-+	else if (tlb->cleared_puds)
-+		return 1;
-+
-+	return 0;
-+}
-+
- static inline void tlb_flush(struct mmu_gather *tlb)
- {
- 	struct vm_area_struct vma = TLB_FLUSH_VMA(tlb->mm, 0);
- 	bool last_level = !tlb->freed_tables;
- 	unsigned long stride = tlb_get_unmap_size(tlb);
-+	int tlb_level = tlb_get_level(tlb);
- 
- 	/*
- 	 * If we're tearing down the address space then we only care about
-@@ -38,7 +61,8 @@ static inline void tlb_flush(struct mmu_gather *tlb)
- 		return;
- 	}
- 
--	__flush_tlb_range(&vma, tlb->start, tlb->end, stride, last_level);
-+	__flush_tlb_range(&vma, tlb->start, tlb->end, stride,
-+			  last_level, tlb_level);
- }
- 
- static inline void __pte_free_tlb(struct mmu_gather *tlb, pgtable_t pte,
-diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-index 892f33235dc7..3cc705755a2d 100644
---- a/arch/arm64/include/asm/tlbflush.h
-+++ b/arch/arm64/include/asm/tlbflush.h
-@@ -215,7 +215,8 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
- 
- static inline void __flush_tlb_range(struct vm_area_struct *vma,
- 				     unsigned long start, unsigned long end,
--				     unsigned long stride, bool last_level)
-+				     unsigned long stride, bool last_level,
-+				     int tlb_level)
- {
- 	unsigned long asid = ASID(vma->vm_mm);
- 	unsigned long addr;
-@@ -237,11 +238,11 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
- 	dsb(ishst);
- 	for (addr = start; addr < end; addr += stride) {
- 		if (last_level) {
--			__tlbi_level(vale1is, addr, 0);
--			__tlbi_user_level(vale1is, addr, 0);
-+			__tlbi_level(vale1is, addr, tlb_level);
-+			__tlbi_user_level(vale1is, addr, tlb_level);
- 		} else {
--			__tlbi_level(vae1is, addr, 0);
--			__tlbi_user_level(vae1is, addr, 0);
-+			__tlbi_level(vae1is, addr, tlb_level);
-+			__tlbi_user_level(vae1is, addr, tlb_level);
- 		}
- 	}
- 	dsb(ish);
-@@ -253,8 +254,9 @@ static inline void flush_tlb_range(struct vm_area_struct *vma,
- 	/*
- 	 * We cannot use leaf-only invalidation here, since we may be invalidating
- 	 * table entries as part of collapsing hugepages or moving page tables.
-+	 * Set the tlb_level to 0 because we can not get enough information here.
- 	 */
--	__flush_tlb_range(vma, start, end, PAGE_SIZE, false);
-+	__flush_tlb_range(vma, start, end, PAGE_SIZE, false, 0);
- }
- 
- static inline void flush_tlb_kernel_range(unsigned long start, unsigned long end)
--- 
-2.19.1
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU2hpbW9kYS1zYW4sDQoNClRoYW5rIHlvdSBmb3IgdGhlIHJldmlldy4NCg0KPiAtLS0tLU9y
+aWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBZb3NoaWhpcm8gU2hpbW9kYSA8eW9zaGloaXJv
+LnNoaW1vZGEudWhAcmVuZXNhcy5jb20+DQo+IFNlbnQ6IDAzIEFwcmlsIDIwMjAgMDk6MjgNCj4g
+VG86IFByYWJoYWthciBNYWhhZGV2IExhZCA8cHJhYmhha2FyLm1haGFkZXYtbGFkLnJqQGJwLnJl
+bmVzYXMuY29tPjsgQmpvcm4gSGVsZ2FhcyA8YmhlbGdhYXNAZ29vZ2xlLmNvbT47IFJvYiBIZXJy
+aW5nDQo+IDxyb2JoK2R0QGtlcm5lbC5vcmc+OyBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBh
+cm0uY29tPjsgR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydCtyZW5lc2FzQGdsaWRlci5iZT47IE1h
+Z251cyBEYW1tDQo+IDxtYWdudXMuZGFtbUBnbWFpbC5jb20+OyBLaXNob24gVmlqYXkgQWJyYWhh
+bSBJIDxraXNob25AdGkuY29tPjsgTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNp
+QGFybS5jb20+OyBNYXJlayBWYXN1dA0KPiA8bWFyZWsudmFzdXQrcmVuZXNhc0BnbWFpbC5jb20+
+OyBsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnDQo+IENjOiBDYXRhbGluIE1hcmluYXMgPGNhdGFs
+aW4ubWFyaW5hc0Bhcm0uY29tPjsgV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz47IEFybmQg
+QmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+OyBHcmVnIEtyb2FoLUhhcnRtYW4NCj4gPGdyZWdraEBs
+aW51eGZvdW5kYXRpb24ub3JnPjsgQW5kcmV3IE11cnJheSA8YW5kcmV3Lm11cnJheUBhcm0uY29t
+PjsgZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5v
+cmc7DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGludXgtcmVuZXNh
+cy1zb2NAdmdlci5rZXJuZWwub3JnOyBDaHJpcyBQYXRlcnNvbiA8Q2hyaXMuUGF0ZXJzb24yQHJl
+bmVzYXMuY29tPjsgRnJhbmsgUm93YW5kDQo+IDxmcm93YW5kLmxpc3RAZ21haWwuY29tPjsgR3Vz
+dGF2byBQaW1lbnRlbCA8Z3VzdGF2by5waW1lbnRlbEBzeW5vcHN5cy5jb20+OyBKaW5nb28gSGFu
+IDxqaW5nb29oYW4xQGdtYWlsLmNvbT47IFNpbW9uIEhvcm1hbg0KPiA8aG9ybXNAdmVyZ2UubmV0
+LmF1PjsgU2hhd24gTGluIDxzaGF3bi5saW5Acm9jay1jaGlwcy5jb20+OyBUb20gSm9zZXBoIDx0
+am9zZXBoQGNhZGVuY2UuY29tPjsgSGVpa28gU3R1ZWJuZXINCj4gPGhlaWtvQHNudGVjaC5kZT47
+IGxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmc7IExhZCBQcmFiaGFrYXIgPHByYWJo
+YWthci5jc2VuZ2dAZ21haWwuY29tPjsgUHJhYmhha2FyIE1haGFkZXYgTGFkDQo+IDxwcmFiaGFr
+YXIubWFoYWRldi1sYWQucmpAYnAucmVuZXNhcy5jb20+DQo+IFN1YmplY3Q6IFJFOiBbUEFUQ0gg
+djYgMDcvMTFdIGR0LWJpbmRpbmdzOiBQQ0k6IHJjYXI6IEFkZCBiaW5kaW5ncyBmb3IgUi1DYXIg
+UENJZSBlbmRwb2ludCBjb250cm9sbGVyDQo+DQo+IEhpIFByYWJoYWthci1zYW4sDQo+DQo+IFRo
+YW5rIHlvdSBmb3IgeW91ciBwYXRjaCENCj4NCj4gPiBGcm9tOiBMYWQgUHJhYmhha2FyLCBTZW50
+OiBGcmlkYXksIEFwcmlsIDMsIDIwMjAgNDozOSBBTQ0KPiA8c25pcD4NCj4gPiBkaWZmIC0tZ2l0
+IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9yY2FyLXBjaS1lcC55YW1s
+DQo+ID4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGNpL3JjYXItcGNpLWVw
+LnlhbWwNCj4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0NA0KPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4u
+MDdjZDVhNzMyNWQwDQo+ID4gLS0tIC9kZXYvbnVsbA0KPiA+ICsrKyBiL0RvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kvcmNhci1wY2ktZXAueWFtbA0KPiA+IEBAIC0wLDAgKzEs
+NzYgQEANCj4gPiArIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMA0KPg0KPiBJJ20g
+c29ycnkgSSBzaG91bGQgaGF2ZSBtZW50aW9uZWQgaW4gdGhlIHByZXZpb3VzIHJldmlldy4NCj4g
+VGhpcyBpcyBiZXR0ZXIgbGlrZSB0aGUgZm9sbG93aW5nLg0KPg0KPiAjIFNQRFgtTGljZW5zZS1J
+ZGVudGlmaWVyOiAoR1BMLTIuMC1vbmx5IE9SIEJTRC0yLUNsYXVzZSkNCj4NCj4gaHR0cHM6Ly9w
+YXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMTQ1OTI2Ny8jMjMyNDY4MjUNCj4NCkFyZ2ggbXkg
+YmFkIEkgc2hvdWxkIGhhdmUgbm90aWNlZCB0aGlzIHRvbywgdXN1YWwgdGVuZGVuY3kgaXMgdG8g
+aWdub3JlIHRoZSBwYXRjaCB3aGVuIGl0cyBiZWluZyBBY2tlZCDwn5iDDQoNCj4gPHNuaXA+DQo+
+ID4gK2V4YW1wbGVzOg0KPiA+ICsgIC0gfA0KPiA+ICsgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdz
+L2Nsb2NrL3I4YTc3NGMwLWNwZy1tc3NyLmg+DQo+ID4gKyAgICAjaW5jbHVkZSA8ZHQtYmluZGlu
+Z3MvcG93ZXIvcjhhNzc0YzAtc3lzYy5oPg0KPiA+ICsNCj4gPiArICAgICBwY2llMF9lcDogcGNp
+ZS1lcEBmZTAwMDAwMCB7DQo+ID4gKyAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVuZXNhcyxy
+OGE3NzRjMC1wY2llLWVwIiwNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICJyZW5lc2Fz
+LHJjYXItZ2VuMy1wY2llLWVwIjsNCj4gPiArICAgICAgICAgICAgcmVnID0gPDAgMHhmZTAwMDAw
+MCAwIDB4ODAwMDA+LA0KPiA+ICsgICAgICAgICAgICAgICAgICA8MHgwIDB4ZmUxMDAwMDAgMCAw
+eDEwMDAwMD4sDQo+ID4gKyAgICAgICAgICAgICAgICAgIDwweDAgMHhmZTIwMDAwMCAwIDB4MjAw
+MDAwPiwNCj4gPiArICAgICAgICAgICAgICAgICAgPDB4MCAweDMwMDAwMDAwIDAgMHg4MDAwMDAw
+PiwNCj4gPiArICAgICAgICAgICAgICAgICAgPDB4MCAweDM4MDAwMDAwIDAgMHg4MDAwMDAwPjsN
+Cj4NCj4gRXhhbXBsZXMgYXJlIGJ1aWx0IHdpdGggI3thZGRyZXNzLHNpemV9LWNlbGxzID0gPDE+
+LCBzbw0KPg0KPiAgICAgICAgICAgICByZWcgPSA8MHhmZTAwMDAwMCAweDgwMDAwPiwNCj4gICAg
+ICAgICAgICAgICAgICAgPDB4ZmUxMDAwMDAgMHgxMDAwMDA+LA0KPiAgICAgICAgICAgICAgICAg
+ICA8MHhmZTIwMDAwMCAweDIwMDAwMD4sDQo+ICAgICAgICAgICAgICAgICAgIDwweDMwMDAwMDAw
+IDB4ODAwMDAwMD4sDQo+ICAgICAgICAgICAgICAgICAgIDwweDM4MDAwMDAwIDB4ODAwMDAwMD47
+DQo+DQo+IGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTE0NTkyNjcvIzIzMjQ2
+ODI1DQo+DQpXaWxsIGNoYW5nZSB0aGlzIGFzIGFib3ZlLg0KDQpDaGVlcnMsDQotLVByYWJoYWth
+cg0KDQo+IEJlc3QgcmVnYXJkcywNCj4gWW9zaGloaXJvIFNoaW1vZGENCg0KDQoNClJlbmVzYXMg
+RWxlY3Ryb25pY3MgRXVyb3BlIEdtYkgsIEdlc2NoYWVmdHNmdWVocmVyL1ByZXNpZGVudDogQ2Fy
+c3RlbiBKYXVjaCwgU2l0eiBkZXIgR2VzZWxsc2NoYWZ0L1JlZ2lzdGVyZWQgb2ZmaWNlOiBEdWVz
+c2VsZG9yZiwgQXJjYWRpYXN0cmFzc2UgMTAsIDQwNDcyIER1ZXNzZWxkb3JmLCBHZXJtYW55LCBI
+YW5kZWxzcmVnaXN0ZXIvQ29tbWVyY2lhbCBSZWdpc3RlcjogRHVlc3NlbGRvcmYsIEhSQiAzNzA4
+IFVTdC1JRE5yLi9UYXggaWRlbnRpZmljYXRpb24gbm8uOiBERSAxMTkzNTM0MDYgV0VFRS1SZWcu
+LU5yLi9XRUVFIHJlZy4gbm8uOiBERSAxNDk3ODY0Nw0KX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
