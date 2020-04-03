@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E271F19D38F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:26:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC5A019D390
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:26:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MA7z5Ap4J+dww8wHxgO9ZH/ygRtpSCApjBIKUHgERXM=; b=Js+FI6OfnTYNH6
-	lsnuqPiB1BzEHrB5qlXN6V4EcRsPGRkyt8rtenbCxDASxiEpKSIl0oN0ZHpKHbB3as729HK8dqr1Z
-	pYNbcqh7Oi70EmMmvNshN0F0LUMCdiamAUR9BGxsvD3NaT6oPqUG+K6mFMxy7CmsWE4Dy9Eb1UIhY
-	XmG+6tzpjXoRfV/3ca5TnFOAiy8sHkxCgpJfI4bTPecBqo8iM461ItvbNzBS/Hpp6gU6fQFLvU6Mq
-	A0orxS+oVySU+2txzI9ZVoRc+JYkDJZ0JkV8i3l4ZFnRsl/jcUmuVC7oHvI2wDLcJ1iB1sPDxiH8H
-	HvkfqT7cG9Tbv5lt+r6A==;
+	List-Owner; bh=epbH/0rzlh7NTaS7i0MENlJiF+MLDHAIeLPQhXE4iXY=; b=npHOsCqtpQQQV9
+	C+lESm+5TolZpVUefieohH5wukgZ7G3Gj51FbrB6qJ26a/uJHDK2PimX0fitnP4G8dhhqCC4aeiis
+	KyleFDr14MF7OTuc1qn++A7zPmqlEB5rG8jBc//fywOv6VwSNz8+DrutYXDbtu2pOB0X+pV7gbTBR
+	E+xf15yYp0N1MIWhn6xzSv2dgECi9ujBdvsbfAhso1toa2+mWLQ+JIC7I+ypOUxs2RU5lug6thQKb
+	QiJqNYC4vgzVVbmzHnsBoFcx7o7v++CODxrdupNbh85Ee/0cielwBVtEBQ/iWeUOElyqRFk7NSYFv
+	JjNm6AubCXCbd7tUJH2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIaG-0005RJ-7a; Fri, 03 Apr 2020 09:25:52 +0000
+	id 1jKIaU-0005fA-1k; Fri, 03 Apr 2020 09:26:06 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIZE-0002H1-3D
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:24:50 +0000
-Received: by mail-wm1-x341.google.com with SMTP id z14so1626640wmf.0
+ id 1jKIZF-0002IG-QX
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:24:51 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d202so6925518wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Apr 2020 02:24:48 -0700 (PDT)
+ Fri, 03 Apr 2020 02:24:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UaJ/lm5B5irKRGuIGTcEW0nphrhQofKG2JxuS3fPTck=;
- b=f28+6tql43/Og7YGE8QTKNY9YPKkmPSkA+oKKSYv9PYyJk6WLaNxmW+YlH3qxlDr/Y
- NwnNRpNUWshiEO1F2NA9HHwJlKRUO8nEh+aOlZmS+LrNiLbjIT7ufQZHrX4TvhpHfZkI
- eM6vAJMjRTP2Yw1s7oqpT7/+9L3SokP2UXtfrN9ctVvWISHTB8D+4nQeNDu4HxTCuetr
- t9dBAJLDPx6kxzJNAhM9musdk4HAzpV7+ks6Zk9I3tASV6va7WiUVtiVT29gQvATkI6G
- MbVaLSngt0wG/uPQh8uWWdtqvbBBp397PfEIF8+UldkSINWALAXe/VGA9pJGvL5pD4vy
- neAw==
+ bh=Z4X9CztVv9fuiwGgU0m8a6G5JZzhVQteYALGdpAp1X0=;
+ b=x21dt5c2oqbttSzIm/GZIb7/QsS3KtZXZgyAyN2Xse45a99hSr5eVgqq8spcF/SQVZ
+ qgUF+VQ2qONzOO5CUInCWe31mzt1Pv6h2KZuLurNrhWbwpy6uX01/UbRSdVBblHnX7cA
+ r/iiLD1ddJETbqB2QE056DrI7zCE/qV9RKnbcw90CmmICoXI8uvPks8pYHxIz+O0m/sX
+ OfdeiUcVZGhPXh8CuLTDR204+4VnRHn5enAMclLlGS/7udW/kt1i8VTyEDNzRi3o0e3U
+ 4aQsJIlGVSHkMH99GVa84vSMxbqoyFMOuGJWX/TsCY4AIYBhF33LEjC0DrF969HuKROL
+ JP+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=UaJ/lm5B5irKRGuIGTcEW0nphrhQofKG2JxuS3fPTck=;
- b=O3zcsq+bEhZlQcjr89EaVm9F03z6+0+4tO73OsrISEUC7XDZF0aD6HSPDVUvJQ+YyF
- N3LHhq4wbG4s7+yRR/QWMt9IpYUl34ZVP8pbtkXjH8dbOiH2nLT2ZZcxELV5FQPv/X7w
- eopAb6vt3DVHu+eNRzhjxQ0bJDA9x73bjDdQogoRQDCODQU2/DRFLkazztDQj+RVK4t6
- GDICF370yw7gZWMIVSoUk0LKIBreXXqr5Zh1XqBonTy5xhCB8lirlK7X1chBPz70aijx
- RZUm8tIfLugFzXTXBo/M6kqvBYsmavzDeOZMbRCLOtcNQs+FV3/VHMNLifzKiggRwxHy
- yRjw==
-X-Gm-Message-State: AGi0PuaHMYpFSFwTUIkVnXgC9ZoOrktBFFVGuiBmHutIDCue+//sZuel
- PoyVGdHqLvMSFYv1C2SmglYpFQ==
-X-Google-Smtp-Source: APiQypKIfR0UUqDSY/h923iNyVZubvQ21RncjnJGFJLtdFqhHyi/SNSGNn8LFm3qvKctOPC0FGERzw==
-X-Received: by 2002:a1c:c3c3:: with SMTP id t186mr8070012wmf.118.1585905886912; 
- Fri, 03 Apr 2020 02:24:46 -0700 (PDT)
+ bh=Z4X9CztVv9fuiwGgU0m8a6G5JZzhVQteYALGdpAp1X0=;
+ b=pNh+Pet6L+5956eoZmnO4h2hIhvPNdsZUZM1KMQZEz+BJW526hKy4mQVKQBaIkw3ud
+ KGfiCkZNs2eoJzpj75sm7M1maxGVscsnvLhmLeqieUzftMp4JwFCAPjcObypA0XtDQ/X
+ JjVJecaNvwRrwCybGbEhJuLm1XlSUQdeps0qKJVCDXAvF2h36jvxVyFulcXMRTbmhRCa
+ jEzIz7dvHH6EtK8oH2xsRx222i4kcRJfF/tSCmt6AhTo6OrhsIiYne+/uJv2mMEdd3Ry
+ +MndZn7SD4dTPE+a5t5xwsZmG2iXHLf/Gx/TgoOv5Ee9aUgrVkomvObyB8ay+YGYdIyZ
+ B8WQ==
+X-Gm-Message-State: AGi0PuZgl8u0om6Z2gvmcz+SIi9VsxkgUd2Hh5NzsYeZa3aKQpmgGGNj
+ RVsk6HaGVeveHbZ87bnFgYal1g==
+X-Google-Smtp-Source: APiQypLXsFB4Nhp1P6wz0oWS1uTO4dCw50x90jze73F6lCQ9haNDHgdotGFAdwgjiq807zSRUQZjiA==
+X-Received: by 2002:a7b:c452:: with SMTP id l18mr8086444wmi.140.1585905888590; 
+ Fri, 03 Apr 2020 02:24:48 -0700 (PDT)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id z3sm10332947wma.22.2020.04.03.02.24.46
+ by smtp.gmail.com with ESMTPSA id q4sm14554079wmj.1.2020.04.03.02.24.47
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 Apr 2020 02:24:46 -0700 (PDT)
+ Fri, 03 Apr 2020 02:24:48 -0700 (PDT)
 From: Michal Simek <michal.simek@xilinx.com>
 To: johan@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
  monstr@monstr.eu, michal.simek@xilinx.com, git@xilinx.com
-Subject: [PATCH 3/7] Revert "serial: uartps: Fix error path when alloc failed"
-Date: Fri,  3 Apr 2020 11:24:32 +0200
-Message-Id: <46cd7f039db847c08baa6508edd7854f7c8ff80f.1585905873.git.michal.simek@xilinx.com>
+Subject: [PATCH 4/7] Revert "serial: uartps: Do not allow use aliases >=
+ MAX_UART_INSTANCES"
+Date: Fri,  3 Apr 2020 11:24:33 +0200
+Message-Id: <dac3898e3e32d963f357fb436ac9a7ac3cbcf933.1585905873.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <cover.1585905873.git.michal.simek@xilinx.com>
 References: <cover.1585905873.git.michal.simek@xilinx.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_022448_130868_A9B82368 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20200403_022449_856320_599614B8 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -103,7 +104,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit 32cf21ac4edd6c0d5b9614368a83bcdc68acb031.
+This reverts commit 2088cfd882d0403609bdf426e9b24372fe1b8337.
 
 As Johan says, this driver needs a lot more work and these changes are
 only going in the wrong direction:
@@ -117,22 +118,29 @@ Signed-off-by: Michal Simek <michal.simek@xilinx.com>
  1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-index 4e3fefa70b56..412bfc51f546 100644
+index 412bfc51f546..9db3cd120057 100644
 --- a/drivers/tty/serial/xilinx_uartps.c
 +++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -1542,10 +1542,8 @@ static int cdns_uart_probe(struct platform_device *pdev)
- #ifdef CONFIG_SERIAL_XILINX_PS_UART_CONSOLE
- 	cdns_uart_console = devm_kzalloc(&pdev->dev, sizeof(*cdns_uart_console),
- 					 GFP_KERNEL);
--	if (!cdns_uart_console) {
--		rc = -ENOMEM;
--		goto err_out_id;
--	}
-+	if (!cdns_uart_console)
-+		return -ENOMEM;
- 
- 	strncpy(cdns_uart_console->name, CDNS_UART_TTY_NAME,
- 		sizeof(cdns_uart_console->name));
+@@ -1712,8 +1712,7 @@ static int cdns_uart_probe(struct platform_device *pdev)
+ 	uart_unregister_driver(cdns_uart_data->cdns_uart_driver);
+ err_out_id:
+ 	mutex_lock(&bitmap_lock);
+-	if (cdns_uart_data->id < MAX_UART_INSTANCES)
+-		clear_bit(cdns_uart_data->id, bitmap);
++	clear_bit(cdns_uart_data->id, bitmap);
+ 	mutex_unlock(&bitmap_lock);
+ 	return rc;
+ }
+@@ -1738,8 +1737,7 @@ static int cdns_uart_remove(struct platform_device *pdev)
+ 	rc = uart_remove_one_port(cdns_uart_data->cdns_uart_driver, port);
+ 	port->mapbase = 0;
+ 	mutex_lock(&bitmap_lock);
+-	if (cdns_uart_data->id < MAX_UART_INSTANCES)
+-		clear_bit(cdns_uart_data->id, bitmap);
++	clear_bit(cdns_uart_data->id, bitmap);
+ 	mutex_unlock(&bitmap_lock);
+ 	clk_disable_unprepare(cdns_uart_data->uartclk);
+ 	clk_disable_unprepare(cdns_uart_data->pclk);
 -- 
 2.26.0
 
