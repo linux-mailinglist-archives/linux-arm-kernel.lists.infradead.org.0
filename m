@@ -2,89 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C3D419DEAD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 21:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9007E19DED2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 21:51:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EMcY/RVLvTV29Xv6pnxRan+uw++Kl8Po/zpWnHvhwcg=; b=q/4I1SDYAliz9f868xfNKejYt
-	appWoFEiMjSNTOGF14b4s+XDUNWIWShcToMTs5XbwNaJoE8LkmNdkUcA8x+ecRqsnQZcrmTmnGbT/
-	bI7LlQ1MpVjoQ5klwLj4AUnB9BOxJlg2xpYD8cVRlmckcSNMt2bbMq1gjFTXd51InLlxcZWt4IoAW
-	x9gSU3317cQ1iFJzIdcTbExLqwNDir1xtmJR4WWlWM1krn1xT7fpkWu8wgs5Fh6XX4CDGHNyyBU88
-	YZkS7tOwh/puqRwHK+wZIjgWAixzhm5gKJYSUjenmZblb/4/zyWNuth/q7ZrHymWEdgn6idoCBeIK
-	N99O/rJqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OGISd2O0WOjo1ruYj7RnXOlCzGPGnYkZmO01Tsi8foM=; b=tqP
+	L7Vwy9mXIRGYQQgdTp7YkMsQxbtNuGNTPPSHXQGnjRzdmCW0ArOcv6FB0IaF+R31sIpIrrbSHO2bZ
+	tzgFm67MOfCfY67hyCNsZZmDU9JWoTnFTDkmokwmb+6qLzVi6SYXO5RcerPlPVKfpjlZaiKYTEKKo
+	4Re5XiK+6lhvhzoKREpHjiGPJbcoFNoqBwqKFPsBaSDqjhhc4SmuP/b4GHLKFrBPyZoGq0qoH3i32
+	J+Z+6v1oA4EUzW3oIfNVaFTZnDZFQYw72NjVx9Sd5JlTr953clDG7wEbiKyrM2uaj3r274lUmcKZJ
+	RJbsxt57fhhzc4c0N2QtBwgPvOtshuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKSEa-0000fW-Ah; Fri, 03 Apr 2020 19:44:08 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jKSLb-0006gr-OE; Fri, 03 Apr 2020 19:51:23 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKSES-0000eX-MW; Fri, 03 Apr 2020 19:44:01 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w15so3657273wrv.10;
- Fri, 03 Apr 2020 12:43:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=VhUPoyVgqk+qZ+YSwj2U46k0fdPCJ/w50hKlV2MbuGw=;
- b=hhCWiye00MTANqJ6nW6EucLK2InoA2Rw9jqmk6Eomp3msE5cBzOiPJKNPNgkakOWcO
- Z6f/R3hrlu1FnKAFAWctSyIbwGP/3UY2S49ylYYbhpawrvKdhWo7A5MKz5NSDJw7S7qx
- CvPcHUyXe5CGhNL6Klqth1Tvr/rSCXvxtdP7V8gs18cWzJUKxRqFZgsTcvUrGa101MiX
- Wh/UZWF6d/nAp2SOQSZZiXMcOVCQyJpPeDD61ciT/5NG19tOnB3ON2F9gMaPDbK2SPfj
- r06WUI39IRPKPVu8DC2ulgBfZK+ZYwNVO48k0dwWfxg30DTmdiGgO7reYnaTf/8iCo5g
- AwDw==
+ id 1jKSL2-0006Hq-Sd
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 19:50:51 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r16so8349466wmg.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Apr 2020 12:50:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=nFx9+E3/I3cB6us//mWp1dQ/lgfKdqFwPaZtN2Fz8F8=;
+ b=a9N6X3yRHB1eUo8fHlrRPYDRWb0Dmp/Y+K6uUEA2mCZqFhCsFmFkm3uh5cyg2F7cUg
+ mWw6jU1pl15z9+9j1LzeK3X/cm8T5TgS+/Uy0uKEhB9SVKJaTk2/8nztX2utpd/MHSbH
+ xq9oqXMO0zeUcFmQKD13FKOVaDL3gS1R2FnFky5Ip4MdaPw0KCjFQ2+j2JjfbCjn8OJs
+ awphxpsaIxsMAIhmFWIGknHVD4vFHqDDYXnp6WpQ18tLnXE4L/UYNGPvr6MoIdOyk+wx
+ EzF3//SnimpL96RLJ1VN+rSh77GLM7SUzBD+xTRKAp2D4M4PRFeOCKmGCfKz4Plzfq+M
+ Vt/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VhUPoyVgqk+qZ+YSwj2U46k0fdPCJ/w50hKlV2MbuGw=;
- b=M7eeEJAHLbwfhymD5PxxnVE9Cq0YobJYX9bqyVvAbpXmQCWt3qTiEGci+YEWtkY3eM
- +e2zTma9TLwM9h7kFKPkJ2VHOPVGPcugKbbHz9NX9h5h6WOXrYmurWRavBnHp2gOgPOp
- Tn2c6GZr69rCnelg/ah3nngUe/5v8zn+Qc61qunxOB6JgbqU1CbtjpFL1i+907KI4eh4
- Rz4a9/Vy9kPX4nr/G34MZwQiiDMoLtPsg71YeoL0bdDd7t6Nw1APPrNberJaWeJgfyYC
- //Wgr+5W9E8nY/XaOe+n9oAegn7RdqBGmhu7HG2pYCMp24ffVWjVPyIWzjGGf5D27jgW
- eiVw==
-X-Gm-Message-State: AGi0PuZ6kLdxfJJfcg1CrM4ZOmbB1zHYjoWPAAm/RGB8dhvYXRTjBZqI
- rKfV6iLMS7HzQJaCRyL+dj2AUZnT
-X-Google-Smtp-Source: APiQypKVRLjP5+xoPXsNXQUo2denoGstY9cptKeS0GbRKSrXlZZWW7kTNIWA3fDVCRT683g5iO2nZg==
-X-Received: by 2002:adf:fe87:: with SMTP id l7mr10231570wrr.377.1585943037972; 
- Fri, 03 Apr 2020 12:43:57 -0700 (PDT)
-Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
- by smtp.gmail.com with ESMTPSA id a13sm13077687wrh.80.2020.04.03.12.43.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Apr 2020 12:43:56 -0700 (PDT)
-Date: Fri, 3 Apr 2020 21:43:55 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH] pwm: meson: remove redundant assignment to variable
- fin_freq
-Message-ID: <20200403194355.GB201060@ulmo>
-References: <20200402110857.509844-1-colin.king@canonical.com>
-MIME-Version: 1.0
-In-Reply-To: <20200402110857.509844-1-colin.king@canonical.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=nFx9+E3/I3cB6us//mWp1dQ/lgfKdqFwPaZtN2Fz8F8=;
+ b=YPlCl/4b0BXlXuDCihVhZJC28M08QWrUFPrWR7y8VlaA71LBnmudkMuzcJOiiFAy9I
+ VRabkj5IXBbyawnac9vpZIpu2PXhP7k2OKRHVWpiSvfQ0RY5p4FyEe3BDE+HG/WY5bzW
+ Ah5Jrghwpz2PJCiL7DI7yrP8zvKTysaYRPuflgco4g7jEihvsmX6iuvmzAr0JfbXzWH6
+ Roaln+oo4o8SP4AP4dwITeKne4xkWikejCg8PVaxgefiDRPepla0WeZBi3N979B4FJbr
+ JYlr8SIe2P8sCuIyx2YyMJ8fjYzspTb4G1zfd3GIh2vMDzRhpa6oma7IcJqJqa20H1Kr
+ mlkw==
+X-Gm-Message-State: AGi0PuY8CCSFFUrEqFZVv3B0o0+1zCQKM3vcYurOKZr+bmNat0/KR0fV
+ F3kcb5+X5Isd8/HHKI5kMxhRIw==
+X-Google-Smtp-Source: APiQypIF0ut2srpAxEZKs7x+LNw+xXPDmIM+QWqFYlREFjQlIbCeKGLvmqhiFyfO/WD4LC6sVSkxig==
+X-Received: by 2002:a1c:2056:: with SMTP id g83mr10219642wmg.179.1585943447063; 
+ Fri, 03 Apr 2020 12:50:47 -0700 (PDT)
+Received: from localhost.localdomain ([51.15.160.169])
+ by smtp.googlemail.com with ESMTPSA id c17sm8102448wrp.28.2020.04.03.12.50.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 03 Apr 2020 12:50:46 -0700 (PDT)
+From: Corentin Labbe <clabbe@baylibre.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
+ wens@csie.org
+Subject: [PATCH 0/7] crypto: sun8i-ss: support PRNG and hashes
+Date: Fri,  3 Apr 2020 19:50:31 +0000
+Message-Id: <1585943438-862-1-git-send-email-clabbe@baylibre.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_124400_735389_A61EE690 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200403_125048_977538_8B3537D1 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -97,76 +89,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0832240118646298492=="
+Cc: Corentin Labbe <clabbe@baylibre.com>, linux-sunxi@googlegroups.com,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello
 
---===============0832240118646298492==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tjCHc7DPkfUGtrlw"
-Content-Disposition: inline
+The main goal of this serie is to add support for PRNG and hashes to the
+sun8i-ss.
+The whole serie is tested with CRYPTO_EXTRA_TESTS enabled and loading
+tcrypt.
+The PRNG is tested with rngtest.
 
+Regards
 
---tjCHc7DPkfUGtrlw
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Corentin Labbe (7):
+  crypto: rng - add missing __crypto_rng_cast to the rng header
+  crypto: sun8i-ss: Add SS_START define
+  crypto: sun8i-ss: Add support for the PRNG
+  crypto: sun8i-ss: support hash algorithms
+  crypto: sun8i-ss: fix a trivial typo
+  crypto: sun8i-ss: Add more comment on some structures
+  crypto: sun8i-ss: better debug printing
 
-On Thu, Apr 02, 2020 at 12:08:57PM +0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
->=20
-> The variable fin_freq is being initialized with a value that is never
-> read and it is being updated later with a new value. The initialization
-> is redundant and can be removed.
->=20
-> Addresses-Coverity: ("Unused value")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
->  drivers/pwm/pwm-meson.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/crypto/allwinner/Kconfig              |  17 +
+ drivers/crypto/allwinner/sun8i-ss/Makefile    |   2 +
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 198 +++++++-
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-hash.c | 446 ++++++++++++++++++
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-prng.c | 169 +++++++
+ drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h  |  93 +++-
+ include/crypto/rng.h                          |   5 +
+ 7 files changed, 927 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-hash.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-prng.c
 
-Applied, thanks.
+-- 
+2.24.1
 
-Thierry
-
---tjCHc7DPkfUGtrlw
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6HkfsACgkQ3SOs138+
-s6HHhg//ZVsyNF1NKEv48QDcFr5adCAieVaCKk7J+kqjK7w2X2fnDrjuWXbmtlpb
-drMho5uh8b597B5cDcFoprjQSeHl0D56JKiLgBYsBuBxeRsFcVUVS5zXxt8mlvFc
-AIGKEPSSZsg+LFqlR5Msxf58M4YGYvG3lbFFQUOEN0I5K6W3wvfRY0+xGUvL0TC+
-1kOy5HmhM8lFPv5h/zgs0biiFg32D5ghmaLduZN9VjUJLgPmnlR3nESaWbjiFdZv
-XjGDkXPwx9+tJML2TzROxMWcBFFx7zBDfxHBvRfovv272QzMtpb7eT73Fh/cZSKQ
-hMCslpZy5Vj/2HcHkRY/w1MN/NZAdX/mNhQaIw1gz2P30mJxvUUDOoOaAGk3k8p6
-K2fUxY6YMthq7T731bAhROz1gxt4Ra0IMVksfAUSjBvHduIvOjikBJqTu+5TKIe3
-FnXfzaOODWL9+DQwHZtYJIRv4z21DfPFJunzohcsHKptPf1AqMW1BJX+4XX5rIbn
-dl0WS2h5BZ3lf/OU4FqXE6c9rKEj8NIZAYoYHTX1yDdQSI2G5GtFO811eGsN7h2C
-uVtwi5Jj2Js8rSxFQDj4d/jIKpxppzOvTGEXl1/Xz5XzMwD4TBl7ILKFryCnYCN5
-L6Y59GbxDRXjBGJuVj3HhV1bFnBcVqSFz5swfsnvXCMTNKp0wlk=
-=9i9z
------END PGP SIGNATURE-----
-
---tjCHc7DPkfUGtrlw--
-
-
---===============0832240118646298492==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0832240118646298492==--
-
