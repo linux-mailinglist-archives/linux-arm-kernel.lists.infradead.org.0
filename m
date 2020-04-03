@@ -2,84 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B28A019D1B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 10:04:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38C5719D1C5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 10:06:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hvZwZ8LH49y8alZHz7TqKfMweOPwaDMKcLl5fCygL4g=; b=AIWkeytDhaiYm/
-	1dT7nJOnPghiDth7tHLfdmEtnBat/pCesO90qtc6AxwM4sHWkSbFlthcf2T0mGgFE0lgklRsZVdJ/
-	dFFvJtQVs9ZsapwvzIdQiBkWctbAn2UBRo9cyFvW8Tvpuu3V5moi98diGEZdWspwMwAyu2nh6XwDO
-	hKT5b6rvGaVOfqxJP8H39+M0BUAB6kL4P4wqZj35Vpv4Vh4fnH+jzpP5HpgIIFtkti7C91PuEurGH
-	9LfBvilC90JtOifyKf9WlIJqE0c87KnYwPQN5xwYhv1Vo+yZ1/z4hy07hUVMQFRpBw2tfNKYAZSvo
-	lLP8EZzHGpCs99PiPT3g==;
+	List-Owner; bh=MQ195WFyDvQ8TOeQ5u0zNSSwUFeXZXPsYpQU1eMqeNw=; b=rV3nHaEHdIis4D
+	DTKjfzTDOI2IA6pzho8xl5uLUCLbu6/vD2hIyrt00OseUI54Ak5aSVN1Gs/cYkh2UZPJnEVkm8o01
+	RcHxIwOYXF0unDG5z7Dkj0gCyuH/4KF9LYV8+QJULJrwX1u70sRaR89pvUlfz4YVPVnc0VbyXuGgG
+	J8TYrvEouimpy6fq+ZQoA0R6rgcmT3DN/t7JGgM+Mi6s6cNHNNwhDDy4lmKlzJsu0vidgHL87FqlR
+	F3RFRoF/hsMZ2LJIMEmbkz8EZnJQ0D3jOGu6CyoQpzYDy+LOruVQs2dXGkkeXbcjgMHf3uHxnjU/y
+	Uut2aeTpLZ/v6VkzusuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKHJm-0003xP-Kn; Fri, 03 Apr 2020 08:04:46 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jKHLa-0007AF-4F; Fri, 03 Apr 2020 08:06:38 +0000
+Received: from mail-eopbgr1400114.outbound.protection.outlook.com
+ ([40.107.140.114] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKHJB-0003cC-MD; Fri, 03 Apr 2020 08:04:11 +0000
-X-UUID: efab2031cd2b4b40af4bb46591fdf716-20200403
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=SXMSLBQsSUZgUuEZUoBkJ70NApTii4m2ZG6S3nFKqQw=; 
- b=ocEDhnna7MEmJFSM1HpX3cO5awiWG52jGjOfBbtvblABStTwQ/Z0Nfwy6vDGSG1gIZ2/AGYB/AC9Gkd0eW93mTcxGWFlA9b88jmVm7pOqatBRzz+V/eECnCXTTnp3Sa968z3EL5yT2ldkT7EGqpqqHW2+iVxMBRrT+62QuwSLbc=;
-X-UUID: efab2031cd2b4b40af4bb46591fdf716-20200403
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 63590112; Fri, 03 Apr 2020 00:04:01 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Apr 2020 01:04:01 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 3 Apr 2020 16:03:59 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
- MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Fri, 3 Apr 2020 16:03:57 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH v14 3/3] drm/mediatek: set dpi pin mode to gpio low to avoid
- leakage current
-Date: Fri, 3 Apr 2020 16:03:50 +0800
-Message-ID: <20200403080350.95826-4-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20200403080350.95826-1-jitao.shi@mediatek.com>
-References: <20200403080350.95826-1-jitao.shi@mediatek.com>
+ id 1jKHLS-00079c-K5; Fri, 03 Apr 2020 08:06:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=gTsM5q1dAGVMEJWEA7sgATm6UqWkfzsBNXPhIToTHQdmt4EnZQ/krifkS8RHOapvn156dDcoPnkKRvUTfGxe6TTKhE97nVkmknyGTvPGRA51TZ0MUFCUmCkfIH31OaNV+0vCOHTzqEMecdHr6EX9xa6IakL3VkPUUmiRMYPqwzBv7cdMhA1A2lRAp9loIBYfsq7DV0mmL6UZTdOeA3GbZwulM9lSZ7LHfSXDT3WMGyXdJCc93+GZcJEKh/cpZsSoASf6l4LlN4JsnNO65lxWEITIAA1UprMUq50dUEiwVfxeHXH+taqqKh/EEnuBQhObw5/fbEAVA7KJMKQlbVYWxw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2iHNw+p9CFliqPw4gSClcSVJhGgbxb3uy6TZhYpqEbU=;
+ b=ZMobhzB/rkPNNC9D0HmkGN3tTxMVXN2eRT3t04uDoak6tJtrFSu16SjLzB6U2puFXY+a3PaotyD2nt/UqGPiYw/vWXNwJB820z8fcY+qPauHWZ8gzk2emhoqCsXEFm519UhKGHvT9KGuE1wAUxxCox4WIja+5oFJ3LLrYkfptp/ZY4PpWD3cjOT4QSmzdo5iG8/DB+IjQxRKzrb0i1wWZ4FLYcmvrzTNMzzPJu+P8QYPTDABmew9ahPSCLm447Yc1ubhHOu4uifsVYtGQjY6ETVnanFCLswJ9vWx/nzXF5CrZM0MhfP9LGorZFjlNsq8WGXbiyvNgOalCjwz2YdFGw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2iHNw+p9CFliqPw4gSClcSVJhGgbxb3uy6TZhYpqEbU=;
+ b=m2NuhdsQC3+MuoyT0l58zu2+3vIb4gCgkbt2n2xZHvJoLi4WiR96CHZfp4w1tTPr8Z79iJmBlaa1WSwaLRPz/ixvSzOdskvM8/o7ZYeg0Ys9nBDTRwj+zCnlELCQG8DReTl97l+XZII022vmFRqhOjdvbbiuycrYWGcCeDVywvo=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB4287.jpnprd01.prod.outlook.com (20.179.173.76) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2856.20; Fri, 3 Apr 2020 08:06:26 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
+ 08:06:26 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, Bjorn
+ Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
+ Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Marek Vasut
+ <marek.vasut+renesas@gmail.com>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>
+Subject: RE: [PATCH v6 04/11] PCI: rcar: Move shareable code to a common file
+Thread-Topic: [PATCH v6 04/11] PCI: rcar: Move shareable code to a common file
+Thread-Index: AQHWCSZoqgaKoB6XHkeyCAu/SQjsSKhnCvuQ
+Date: Fri, 3 Apr 2020 08:06:26 +0000
+Message-ID: <TYAPR01MB45447612B5784FDF633FA327D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1585856319-4380-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1585856319-4380-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 50a35fff-a627-479d-1358-08d7d7a5e88f
+x-ms-traffictypediagnostic: TYAPR01MB4287:|TYAPR01MB4287:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TYAPR01MB428700CC1832571D33516B41D8C70@TYAPR01MB4287.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
+x-forefront-prvs: 0362BF9FDB
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TYAPR01MB4544.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(376002)(366004)(346002)(396003)(136003)(39860400002)(4744005)(478600001)(4326008)(55016002)(7696005)(54906003)(316002)(186003)(71200400001)(5660300002)(110136005)(8676002)(86362001)(8936002)(64756008)(66446008)(66556008)(107886003)(81156014)(66476007)(2906002)(55236004)(26005)(9686003)(76116006)(52536014)(33656002)(66946007)(81166006)(6506007)(7416002)(921003)(1121003);
+ DIR:OUT; SFP:1102; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 6PAWEiNWemXu5o4DcAwYDqdAQqTlxIrddMZlkXRZoM5nwRX04QP8zoTuOTdgyMwkDT9XFrekKm9+jnWuVqtdApKtGJMZCJcm8Yyy3DurKcEdQZNBJ/LsKk2qNIcMGJsmOZvt6XftJkdDvoGyF+ctsDS0tIfc29f5rpDLohXTH/NlckFL76aEQFPSemA1111WeVfuetIEVoSazuvPHU9SErFopbM+aiYokuYMZOyDUUXWiOghJfjQVkE6GwCsHrMgO1qYGtQR7vCyca28uoU/FfT2E0hMjeFnmdPfTwaaPucqX0bRA8IJxOiNKj6FC3B4OtlMcKct0CZlJ5jGj+eycfBF8beJ0gca8AZ47trjJoVq7IFn5n/lkFgr4UShzVPFP/nONsKd8zlzDS+9/WY0609K9s4AVRTUa5kUV9UjYQkCtv4j3ZKzKqQOQHWLkNQVj1OaVpfOOLJK4wyN45dOXW2wwdq2pylaWPeP5WNc24yJwD6N3FPELAeJWcR3f+yd
+x-ms-exchange-antispam-messagedata: jZUkQhXqDwwtIDzgUNtGMFuPUKGqhfTlWgG4kgwsV0afxkzi5FRbOZqlAiCIo6+FhPqd+5Y9ZlvvklSVrur2cZJQvDCIPUtdu9Ti9tNV6b6UA0Z2dp+9yphCMejfT5uRkW+hGClMsgqVYf6zGZrnQw==
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 1F8009A16C3C12A076DB5621D0BD997557D38E7207AD03FA9FD39F901D19D8562000:8
-X-MTK: N
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 50a35fff-a627-479d-1358-08d7d7a5e88f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 08:06:26.5641 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 6GP3nrgo0y6VMAVLZVlQ4glJBeEyjiGwA2uJvTJgVxTucqbUTKJB6V1VVFRZbG9RCom2zlMUH+Wm6pnpxnVJDtqBbfqsbzasbX20RRVAifYhBsQQF18BTKZCLRP/ES9b
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB4287
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_010409_730661_703821A4 
-X-CRM114-Status: GOOD (  10.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200403_010630_658347_CD2BF447 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [40.107.140.114 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,97 +123,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
- srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
- cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Heiko Stuebner <heiko@sntech.de>,
+ Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Config dpi pins mode to output and pull low when dpi is disabled.
-Aovid leakage current from some dpi pins (Hsync Vsync DE ... ).
+Hi Prabhakar-san,
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_dpi.c | 31 ++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+> From: Lad Prabhakar, Sent: Friday, April 3, 2020 4:39 AM
+> 
+> This patch moves sharable code to common file pcie-rcar.c and the #defines
+> to pcie-rcar.h so that the common code can be reused with endpoint driver.
+> There are no functional changes with this patch for the host controller
+> driver.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index 087f5ce732e1..1e01254788d9 100644
---- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -10,7 +10,9 @@
- #include <linux/kernel.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
-+#include <linux/of_gpio.h>
- #include <linux/of_graph.h>
-+#include <linux/pinctrl/consumer.h>
- #include <linux/platform_device.h>
- #include <linux/types.h>
- 
-@@ -74,6 +76,9 @@ struct mtk_dpi {
- 	enum mtk_dpi_out_yc_map yc_map;
- 	enum mtk_dpi_out_bit_num bit_num;
- 	enum mtk_dpi_out_channel_swap channel_swap;
-+	struct pinctrl *pinctrl;
-+	struct pinctrl_state *pins_gpio;
-+	struct pinctrl_state *pins_dpi;
- 	int refcount;
- };
- 
-@@ -379,6 +384,9 @@ static void mtk_dpi_power_off(struct mtk_dpi *dpi)
- 	if (--dpi->refcount != 0)
- 		return;
- 
-+	if (dpi->pinctrl && dpi->pins_gpio)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
- 	mtk_dpi_disable(dpi);
- 	clk_disable_unprepare(dpi->pixel_clk);
- 	clk_disable_unprepare(dpi->engine_clk);
-@@ -403,6 +411,9 @@ static int mtk_dpi_power_on(struct mtk_dpi *dpi)
- 		goto err_pixel;
- 	}
- 
-+	if (dpi->pinctrl && dpi->pins_dpi)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_dpi);
-+
- 	mtk_dpi_enable(dpi);
- 	return 0;
- 
-@@ -705,6 +716,26 @@ static int mtk_dpi_probe(struct platform_device *pdev)
- 	dpi->dev = dev;
- 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
- 
-+	dpi->pinctrl = devm_pinctrl_get(&pdev->dev);
-+	if (IS_ERR(dpi->pinctrl)) {
-+		dpi->pinctrl = NULL;
-+		dev_dbg(&pdev->dev, "Cannot find pinctrl!\n");
-+	}
-+	if (dpi->pinctrl) {
-+		dpi->pins_gpio = pinctrl_lookup_state(dpi->pinctrl, "sleep");
-+		if (IS_ERR(dpi->pins_gpio)) {
-+			dpi->pins_gpio = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl idle!\n");
-+		}
-+		if (dpi->pins_gpio)
-+			pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
-+		dpi->pins_dpi = pinctrl_lookup_state(dpi->pinctrl, "default");
-+		if (IS_ERR(dpi->pins_dpi)) {
-+			dpi->pins_dpi = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl active!\n");
-+		}
-+	}
- 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	dpi->regs = devm_ioremap_resource(dev, mem);
- 	if (IS_ERR(dpi->regs)) {
--- 
-2.21.0
+Thank you for the patch!
+
+Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+
+Best regards,
+Yoshihiro Shimoda
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
