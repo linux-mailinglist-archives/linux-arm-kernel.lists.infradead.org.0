@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C063E19D457
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:51:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6DC619D45B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:51:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a8c7JXX8jxIMTkfeOzqEQWBHQwkHhI61h7HwOoWbV04=; b=PU8W+WdSLjFBAP
-	NRjM8nA6UDoC+ggCWzm6YW+nthKOWc0Tr/ASriBFaDB9Lc6AIbCl6b2U95pkrNEd/FnWn14t9lDWa
-	RnGefgNP8jp77M6LbgeyxrcVzdd6Q4JO8J6cxahj5gv5Qa/KcftQeOdtaiQd8hsV2/YpjUPpORfQK
-	Q28+tJVBlHALpadZfzJ0zLrcGSD8yg6SL+7MUNhcoO34o3b37/IxvGfnrxXHe9/i0rvMKCrLDDAGL
-	TDdufluvw5zjJE1ukIXjSTTo8ir6foChukvIvmmmCZLiWNXdkRBlOtd+JOlqPMML5XMAOy4jc+X5W
-	yvzmsU7uMkj1on7OE06w==;
+	List-Owner; bh=IdpeDEAiPA21TeSZYbH9KKkryd9Qz6ASzYMd9sQJaQo=; b=cQSFNve95GK8Gp
+	jbYg9jsCipnhKK8iImuiFTH1qLaCoHbOCR6uSdodJdm4e2VzbqfN/sOYguBE8RgS/xeP94ZcTkcfj
+	maqy7Ct2D+4754JYaj8gBoXlTKPnTKqdCBxSPRg+EuuDhycETGNvs5zNsAHuVsEv4uncmXaIQAflv
+	n9X+LSxAMPoMf5eKpPCB3y3wdbD09xI+iUqBcbRtCLzVIQGZrLAF/MfSWRhU76Tr6bthMB/02fXqA
+	ralvbm/P5jeKdETaPOotbXi5dSHVCxajAhdSw+7RY4W3J40ufP0Ppkxmi0+F3X7gJiFYMSKQ38zJP
+	SjkIUi85cR67m/JFfZqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIyU-0000HH-FQ; Fri, 03 Apr 2020 09:50:54 +0000
+	id 1jKIz4-0000qn-V7; Fri, 03 Apr 2020 09:51:30 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIyF-0000Eq-K1; Fri, 03 Apr 2020 09:50:41 +0000
-X-UUID: d777c155b00349fb8637a277e04bd23d-20200403
+ id 1jKIyH-0000Eq-3W; Fri, 03 Apr 2020 09:50:42 +0000
+X-UUID: 72e4cbbe0f354afe967cdaae3fa9cc95-20200403
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=bUhGrLapqpGG5TNnQ19oiY23ELwVrSpG9+CqRSWV9fQ=; 
- b=QZBc9TyQ5uORex6UpOMt5GaQSwIE4keM0L2L7IFjY9GQI206qWz7S2mb00UUtKwtmvsZ+Js0CRAxsAxHysilpwGgXawpJs5JJmVtqUKTqoeyEtdalYqWdMEoKBlZEM8oUQq2mggKI1Ym94TIopx2tIVxTIFX3OeikAqd3WNIFf8=;
-X-UUID: d777c155b00349fb8637a277e04bd23d-20200403
+ bh=vO4wXhYXcSep7KxHBBCGWP+a7KpWpW4JjdTA/LnljvQ=; 
+ b=bEAaiwlp3XT7S+11IAEzsQcU8oeJ6hnACAbxfVQw/Jm78aA/sVk6qJPDavnoeVsjWsjZ1y4SmM6gG5y/MdwGwmfN3BJf8EoSI9GAQZP1PdGvhAKF2rqdXIg9YX1w0S6rbuun6yu97Ep8WBYRzGaRR0tJD/ZpsDSkuodHFRk8dNE=;
+X-UUID: 72e4cbbe0f354afe967cdaae3fa9cc95-20200403
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1932582810; Fri, 03 Apr 2020 01:50:33 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 2009886834; Fri, 03 Apr 2020 01:50:33 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 3 Apr 2020 02:40:48 -0700
+ 15.0.1395.4; Fri, 3 Apr 2020 02:40:49 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 3 Apr 2020 17:40:44 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 3 Apr 2020 17:40:46 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 3 Apr 2020 17:40:44 +0800
+ Transport; Fri, 3 Apr 2020 17:40:45 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v8 11/14] media: dt-bindings: Add jpeg enc device tree node
- document
-Date: Fri, 3 Apr 2020 17:40:30 +0800
-Message-ID: <20200403094033.8288-12-xia.jiang@mediatek.com>
+Subject: [PATCH v8 12/14] arm: dts: Add jpeg enc device tree node
+Date: Fri, 3 Apr 2020 17:40:31 +0800
+Message-ID: <20200403094033.8288-13-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200403094033.8288-1-xia.jiang@mediatek.com>
 References: <20200403094033.8288-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_025039_665191_FF47F631 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20200403_025041_147189_556C10B6 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,9 +99,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add jpeg enc device tree node document
+Add jpeg enc device tree node
 
-Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 ---
 v8: no changes
@@ -118,41 +117,17 @@ v3: change compatible to SoC specific compatible
 
 v2: no changes
 ---
- .../bindings/media/mediatek-jpeg-encoder.txt  | 37 +++++++++++++++++++
- 1 file changed, 37 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
+ arch/arm/boot/dts/mt2701.dtsi | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt b/Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
-new file mode 100644
-index 000000000000..fa8da699493b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
-@@ -0,0 +1,37 @@
-+* MediaTek JPEG Encoder
-+
-+MediaTek JPEG Encoder is the JPEG encode hardware present in MediaTek SoCs
-+
-+Required properties:
-+- compatible : should be one of:
-+               "mediatek,mt2701-jpgenc"
-+               ...
-+               followed by "mediatek,mtk-jpgenc"
-+- reg : physical base address of the JPEG encoder registers and length of
-+  memory mapped region.
-+- interrupts : interrupt number to the interrupt controller.
-+- clocks: device clocks, see
-+  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-+- clock-names: must contain "jpgenc". It is the clock of JPEG encoder.
-+- power-domains: a phandle to the power domain, see
-+  Documentation/devicetree/bindings/power/power_domain.txt for details.
-+- mediatek,larb: must contain the local arbiters in the current SoCs, see
-+  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
-+  for details.
-+- iommus: should point to the respective IOMMU block with master port as
-+  argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-+  for details.
-+
-+Example:
+diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
+index 51e1305c6471..f2f92150b3fb 100644
+--- a/arch/arm/boot/dts/mt2701.dtsi
++++ b/arch/arm/boot/dts/mt2701.dtsi
+@@ -569,6 +569,19 @@
+ 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
+ 	};
+ 
 +	jpegenc: jpegenc@1500a000 {
 +		compatible = "mediatek,mt2701-jpgenc",
 +			     "mediatek,mtk-jpgenc";
@@ -165,6 +140,10 @@ index 000000000000..fa8da699493b
 +		iommus = <&iommu MT2701_M4U_PORT_JPGENC_RDMA>,
 +			 <&iommu MT2701_M4U_PORT_JPGENC_BSDMA>;
 +	};
++
+ 	vdecsys: syscon@16000000 {
+ 		compatible = "mediatek,mt2701-vdecsys", "syscon";
+ 		reg = <0 0x16000000 0 0x1000>;
 -- 
 2.18.0
 _______________________________________________
