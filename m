@@ -2,133 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B07DF19D476
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6A7219D48E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 12:03:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rdrmJ+Ex1sUhEUR0D737FCKMO4qt1rV/rUqYmBEafUw=; b=LRm/Jzp3RVuIjH
-	xYfQQVgvL2eWDk7pSMYX7j76D5DxJdbYi216CgbEXM4aYgTzP7j3AerscR1vGPp1JgHBs3txRAG4v
-	KZcTrZ0A4psvJFryBRsciC3DcSIeCCD9F03L38ptKpqXfHan17+aLaUvefD5jEz01edhAJ14CY868
-	hNdz0wHyxMxh4KSLO1TkB6SRvyuwf5B6oZB+iRUg886jWq/LaVK58/WIJjowhuQxMZrf1Tl0t0/Y7
-	hNsHjgXmaW+QlCstq8u8g64ZccQJBGiWCFdHTrUwArOxf2WsOxpWS741pO0o0sJtDMPXrdbvSwZhb
-	G67096EpTMaFVHoCIvMQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5lfVO4rbPHv0YFhOIl0Zxh0r+P55ear9QXqyYlfUyWY=; b=QXkrBkfQ+2pBq3
+	bktUvb2FV8wGjWyPZ/+4iRJHbv+ypo4TNoJweS4vJO0dxzdLhYs78BXCYgT9v2jqjIbZpFNClBrrN
+	v3fx2hWZqioBcYmSeKv4Hl5orKsunW9BY4ZgADEQmzpdN5RvWwa+GkX92jhvDvsEdCYjiSmlXCnvY
+	4noOnQONCzeEkqqZr80EU/lLYdR/4XYHQ8z8TILwTRqBwBz9yNiB981is1x2DMG8EkDMegETimugz
+	5E8MqYxgNz+FWzcpvxkrpU745KzrMaIeppabePalR1etH/na3GQ1jXl7kyv/KWbz7YNXv2vA4Aqfm
+	JCRJgHhF9NktcHwK1mJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKJ2b-0003pO-MR; Fri, 03 Apr 2020 09:55:09 +0000
-Received: from mail-dm6nam12on2067.outbound.protection.outlook.com
- ([40.107.243.67] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jKJAx-0001PI-QI; Fri, 03 Apr 2020 10:03:47 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIzH-0001GP-Em
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 09:51:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bV5jL+Stacgv8bqHquAYmQ64fuRLz6wnQxhYy8br+j5qwxo+Lj8MY280C15sFedi/yD40GxLLMhCDfpMezuhJPQJnJ5cItTUv10PR/pW6g/moMNZ6b8MIJA1zJXaSUZ1q552aDbDYQeHdiPfJM/Epv9PmNLwbWFaLWH9KPne9vjZWpECXkR4SggYXvMGKt2h80LPCyMyLW8fw2qEMm391DhVxsMqB9E9Iu5ozTsWvzs2MWE+fTbR+DAmVZSnmshtAvuCvcIk3L1y0/H6HIucdUYFPgd7euW1cXm9FnoB7lv3Ak5ajDdFgwL0Zn46vVyzKBPcLiBSqmxc3+aVRxfROQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O8CxC9CysvUax91ITEi83DhusciphVmW+/GOmc9TvWE=;
- b=Ec7/YzrFq32f/NFB/LaOC0T+rfzfNBMgwHPSZdd0LjBuhWMIAYpp43TdJ6x+7O3EzAsaylLTDmwVYnhVLVfSywpBKOettFW4ugSXEoMfa51uUlTuu8foner8IfL02Wx4evYmDnfoSOGi2j2WPIMCCCp5pluDWEa1HFfsvHng9rjqh5rtRfV95KXYxZuZO++6FMlc1vZf7tz8mceAk6XxV+6A8G6a4GAm+JquqLv1WZu68sw1G0H93gbHQBSjOAc/Gpv7VxupMbfY5UBATxSlwUpdpppCluzjOc71/fI7Wxqf3PwssrBIihACsK/K61ENOPhOV1jnH4YVZIGi1hD9Cw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O8CxC9CysvUax91ITEi83DhusciphVmW+/GOmc9TvWE=;
- b=qaEaPaM55RixSZqMrRaU/bphfnSHi884bZxBrRX3CMUVYqFGuobGsr5QoiUS9So7UE6cAYDy8HczYDS5h1SOfonYIhAFHeNHG67hqpm07XQVL+JYAP0jIzQZS6myTGrK5XTbY+HFu7ATjP0pu3VWBquXLs1chsm5YCEwYeSRX7E=
-Received: from CY4PR15CA0020.namprd15.prod.outlook.com (2603:10b6:910:14::30)
- by BN6PR02MB2529.namprd02.prod.outlook.com (2603:10b6:404:57::14)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.15; Fri, 3 Apr
- 2020 09:51:40 +0000
-Received: from CY1NAM02FT008.eop-nam02.prod.protection.outlook.com
- (2603:10b6:910:14:cafe::9a) by CY4PR15CA0020.outlook.office365.com
- (2603:10b6:910:14::30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.15 via Frontend
- Transport; Fri, 3 Apr 2020 09:51:40 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT008.mail.protection.outlook.com (10.152.75.59) with Microsoft SMTP
- Server id 15.20.2878.15 via Frontend Transport; Fri, 3 Apr 2020 09:51:39
- +0000
-Received: from [149.199.38.66] (port=35329 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jKIz5-0005cn-FB; Fri, 03 Apr 2020 02:51:31 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jKIzD-0004DE-F1; Fri, 03 Apr 2020 02:51:39 -0700
-Received: from [172.30.17.108] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1jKIz8-000450-VY; Fri, 03 Apr 2020 02:51:35 -0700
-Subject: Re: [PATCH 0/7] serial: uartps: Revert dynamic port allocation
-To: Greg KH <gregkh@linuxfoundation.org>,
- Michal Simek <michal.simek@xilinx.com>
-References: <cover.1585905873.git.michal.simek@xilinx.com>
- <20200403093216.GA3746303@kroah.com>
- <d9598635-a8ef-eff2-22e8-4fa37f8390b3@xilinx.com>
- <20200403094427.GA3754220@kroah.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <2983dbe2-16e6-4b7b-73a6-49d8c3d70510@xilinx.com>
-Date: Fri, 3 Apr 2020 11:51:32 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jKJAr-0001Om-1U
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 10:03:42 +0000
+Received: by mail-lf1-x144.google.com with SMTP id f8so3917645lfe.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 Apr 2020 03:03:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=MPMPRE0D4kKnSECrzyOIrs5hR+bkv3Lkl4ZJOAfAG28=;
+ b=awqQvB/sPlvG7QFTXdPlCsLu1Zl8AbI8xkMZze8/fS7oyAVRG5QWwu9ETnC+AMXTgv
+ cEL1DqKzFfU1jE2k/IeenG81vn2AN+YEeqeM71l4PQXXUzQ4bjbX81Tw79rA/5zVDRWj
+ muP8rJAI5t4uMhii6A3vxatFjvVuY2rKmd8bzlTsix1HwUwgMPraXohHBiFcKQ/V625h
+ 0cXyvUr54pUpklLFUn+qQkRP0mTQL0Q0jHciG1zczzW7pHDRwOzpahzqpH5asvZFwVbt
+ ts1VhjtWNAjnQ+tv5SvIjUVKY5KaCe+C0a5Ede3aPcGsCgw/7CUEHB3Jk++JKCzhyW0t
+ SeYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=MPMPRE0D4kKnSECrzyOIrs5hR+bkv3Lkl4ZJOAfAG28=;
+ b=WLgU3/tjulS+IdMdxSsYzOzgM8pcOcXHzcSDKL+lKMkGBPqZoPmN9sh322eZnPGDsM
+ bvN2VM60Qa1Pr45u5Dx5BrzAOPC8+XwUkT4UiBh7O6LyEXPAU69m1djFr0GHdmj03vJs
+ 5taqnFDlUXMlvOnA9Ql3Nsii5+sbATLr1tCpjK025DHLoK6RNQ8AUevXG+upPY19wmww
+ aC4X2Z2oizA07bhf0z96tiwEAsuihUv0F5uiAmtrsskIo8lJgyajTGk2nVj/yNoc5Xw0
+ s9SZZOIZlyrsfV5SXFcdg2vYRcmvKXxiG4qLVRS+xi4e2rpRnmePDN3ud6wUG94K7fFO
+ CvJA==
+X-Gm-Message-State: AGi0PuYM3FJwF3RLjjsWDhVjU+ZAF/zH17PIaoV/vPno8UYIzakKuQfP
+ o4yarSR+Y+KBSOHg6pI+Monj8H73jZTnXWY9SirdexVP
+X-Google-Smtp-Source: APiQypINuW2tNRoxCjjuiH52U6H/HBo4h/qrWaO+bTMGKrZMdSvjFhKC2k5pjYY4YFVk1eLDUeADwnX6200IOwMmU8c=
+X-Received: by 2002:ac2:545b:: with SMTP id d27mr4766563lfn.187.1585908216846; 
+ Fri, 03 Apr 2020 03:03:36 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200403094427.GA3754220@kroah.com>
-Content-Language: en-US
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(136003)(376002)(396003)(346002)(39860400002)(46966005)(47076004)(44832011)(31686004)(966005)(26005)(186003)(478600001)(81156014)(8936002)(426003)(2616005)(336012)(8676002)(5660300002)(6666004)(81166006)(82740400003)(9786002)(70206006)(70586007)(316002)(110136005)(31696002)(36756003)(356004)(4326008)(2906002);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: b2505e8d-d011-4d54-2839-08d7d7b49b68
-X-MS-TrafficTypeDiagnostic: BN6PR02MB2529:
-X-LD-Processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
-X-Microsoft-Antispam-PRVS: <BN6PR02MB2529BBF402084DE7DA248B71C6C70@BN6PR02MB2529.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-Forefront-PRVS: 0362BF9FDB
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 9WlbnwymdSicHLFSRUgkXD23Y7EVSPPtzs0ok0HqXJFJPKrvXxCVQa8xoxdZF2ujwRNefBY6Zn0JAlBZEswv0OUnqomPN03paF1GdJUG+XSVEohm8ipry/E3lKVUWk54KPKcALqmhDVF0pKsF2pAS+EAXQNZgedQ92YdKZ8Fy2ROqTTEA0owGrRzW+g/DQL0+d8aOnxyFJRo1DojD/T+RxstbLpwE+lUwy9BKzrmBCJJZu/Pl7eABAF8KxK+zekSnlu6KzmfQe8hpOHuGnplAL1XD/d98FBrbkhPQUrBGk5C9GCdb1/EyLhlPb/hQPI/dg73F58W/U6hUmDsL1DlAlZ+zeKGhe6WbfAb1k2kB/p6w58r3gEJq2AxXsxMSWEEyB4PugEEvWDwA4Ff7iA6/VcBIDO2YxU+WN9pMnfD68WzQMooJPNtldI/6363x/XWgCWKisbIA5gykV79NfJggHkdH3thFeH4K3n/X4ZCLY9nLdfHC9sK8cJcN5rEsXt68A4Zo6JmAoC8/Ilr3Ud8ABTJb0HkIB+XdX5/q8LNCo6LR2xDIbkgLXOspkvPq1KPrrwa/Pd2q1jZefTB3B4Ryg==
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Apr 2020 09:51:39.7484 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: b2505e8d-d011-4d54-2839-08d7d7b49b68
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2529
+From: Amit Tomer <amittomer25@gmail.com>
+Date: Fri, 3 Apr 2020 15:32:58 +0530
+Message-ID: <CABHD4K_LPKp4LP5yH=HmjBzbTnO4ih=AwK_XHJWCy-vAv1-QNQ@mail.gmail.com>
+Subject: Actions: Question about S700 pin controller
+To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_025143_520849_E3985985 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200403_030341_108434_D90FCA4E 
+X-CRM114-Status: UNSURE (   6.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.243.67 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -141,68 +92,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: monstr@monstr.eu, johan@kernel.org, linux-kernel@vger.kernel.org,
- git@xilinx.com, linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: robh@kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03. 04. 20 11:44, Greg KH wrote:
-> On Fri, Apr 03, 2020 at 11:37:46AM +0200, Michal Simek wrote:
->> On 03. 04. 20 11:32, Greg KH wrote:
->>> On Fri, Apr 03, 2020 at 11:24:29AM +0200, Michal Simek wrote:
->>>> Hi,
->>>>
->>>> there were several changes done in past in uartps drivers which have been
->>>> also done in uartlite driver.
->>>> Here is the thread about it
->>>> https://lore.kernel.org/linux-serial/20191203152738.GF10631@localhost/
->>>>
->>>> This series reverts all patches which enabled dynamic port allocation and
->>>> returning driver to the previous state. There were added some features in
->>>> meantime which are not affected by this series.
->>>
->>> Should this go into 5.7-final as it's causing problems now, and
->>> backported as well?  Or can it wait until 5.8-rc1?
->>
->> These patches have been added to v4.20. It means all version from that
->> are affected.
->>
->> The issue I am aware of is when you setup stdout-path =
->> "serialX:115200n8" where X is not 0.
->>
->> But as was discussed the concept is based on Johan wrong that's why it
->> can be consider as bug fix.
-> 
-> Ok, I'll queue these up after 5.7-rc1 is out, for inclusion in
-> 5.7-final, and cc: for stable, as I agree, they should all be reverted.
-> Thanks for doing the work.
+While booting mainline Kernel on Cubieboard7-lite(based on S700), see
+the following logs
+that suggests S700 pin controller is not probed well.
 
-Thanks. I am definitely interested to hear more how this could be done
-differently because that hardcoded limits are painful.
-On FPGAs you can have a lot of uarts for whatever reason and users are
-using DT aliases to have consistent naming.
-Specifically on Xilinx devices we are using uartps which is ttyPS,
-uartlite which is ttyUL, ns16500 which is ttyS and also pl011 which is
-ttyAMA.
-Only ttyAMA or ttyPS on one chip are possible.
+[    0.257415] pinctrl-s700 e01b0000.pinctrl: can't request region for
+resource [mem 0xe01b0000-0xe01b0fff]
+[    0.266902] pinctrl-s700: probe of e01b0000.pinctrl failed with error -16
 
-And right now you can't have serial0 alias pointed ttyPS0 and another
-serial0 pointed to ttyUL0 or ttyS0. That's why others are shifted and we
-can reach that hardcoded NR_UART limit easily.
-And this was the reason why I have done these patches in past to remove
-any limit from these drivers and if user asks for serial100 alias you
-simply get ttyPS100 node.
+Register range defined for pin controller seems to be huge and causing
+this failure.
 
-Johan mentioned any solution use in USB stack but I haven't really had a
-time to take a look at it how feasible it is to bring back to all drivers.
+reg = <0x0 0xe01b0000 0x0 0x1000>;
 
-Thanks,
-Michal
+Complete logs are below
 
+Starting kernel ...
 
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.6.0-02330-g458ef2a-dirty
+(amit@amit-ThinkPad-X230) (gcc version 7.3.1 20180425
+[linaro-7.3-2018.05 revision d29120a424ecfbc167ef90065c0eeb7f91977701]
+(Linaro GCC 7.3-2018.05)) #12 SMP PREEMPT Fri Apr 3 14:19:08 IST 2020
+[    0.000000] Machine model: CubieBoard7
+[    0.000000] earlycon: owl0 at MMIO 0x00000000e0126000 (options '')
+[    0.000000] printk: bootconsole [owl0] enabled
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem
+0x0000000000000000-0x000000003fffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x3ddfc100-0x3ddfdfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000000000-0x000000003fffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000001effffff]
+[    0.000000]   node   0: [mem 0x0000000020000000-0x000000003fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x000000003fffffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv0.2 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] percpu: Embedded 23 pages/cpu s53272 r8192 d32744 u94208
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 253952
+[    0.000000] Policy zone: DMA
+[    0.000000] Kernel command line: console=ttyOWL,115200
+earlycon=owl,0xe0126000 root=/dev/mmcblk0p2
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8,
+1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288
+bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 951668K/1032192K available (12604K kernel code,
+1948K rwdata, 6964K rodata, 5312K init, 462K bss, 47756K reserved,
+32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.
+[    0.000000]     Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay
+is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] random: get_random_bytes called from
+start_kernel+0x2a8/0x444 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff
+max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps
+every 4398046511097ns
+[    0.008163] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps
+every 89478484971ns
+[    0.015969] clocksource: timer: mask: 0xffffffff max_cycles:
+0xffffffff, max_idle_ns: 79635851949 ns
+[    0.025300] Console: colour dummy device 80x25
+[    0.029821] Calibrating delay loop (skipped), value calculated
+using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+[    0.040069] pid_max: default: 32768 minimum: 301
+[    0.044785] LSM: Security Framework initializing
+[    0.049465] Mount-cache hash table entries: 2048 (order: 2, 16384
+bytes, linear)
+[    0.056857] Mountpoint-cache hash table entries: 2048 (order: 2,
+16384 bytes, linear)
+[    0.066496] rcu: Hierarchical SRCU implementation.
+[    0.072035] EFI services will not be available.
+[    0.076832] smp: Bringing up secondary CPUs ...
+[    0.082027] Detected VIPT I-cache on CPU1
+[    0.082093] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.082792] Detected VIPT I-cache on CPU2
+[    0.082834] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.083500] Detected VIPT I-cache on CPU3
+[    0.083540] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.083627] smp: Brought up 1 node, 4 CPUs
+[    0.119242] SMP: Total of 4 processors activated.
+[    0.123938] CPU features: detected: 32-bit EL0 Support
+[    0.129087] CPU features: detected: CRC32 instructions
+[    0.143064] CPU: All CPU(s) started at EL2
+[    0.147207] alternatives: patching kernel code
+[    0.153187] devtmpfs: initialized
+[    0.158590] KASLR disabled due to lack of seed
+[    0.163472] clocksource: jiffies: mask: 0xffffffff max_cycles:
+0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.173211] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.181589] pinctrl core: initialized pinctrl subsystem
+[    0.188064] thermal_sys: Registered thermal governor 'step_wise'
+[    0.188068] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.194183] DMI not present or invalid.
+[    0.205285] NET: Registered protocol family 16
+[    0.211593] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.217696] audit: initializing netlink subsys (disabled)
+[    0.223266] audit: type=2000 audit(0.144:1): state=initialized
+audit_enabled=0 res=1
+[    0.231024] cpuidle: using governor menu
+[    0.235203] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.242077] ASID allocator initialised with 65536 entries
+[    0.248650] Serial: AMBA PL011 UART driver
+[    0.257415] pinctrl-s700 e01b0000.pinctrl: can't request region for
+resource [mem 0xe01b0000-0xe01b0fff]
+[    0.266902] pinctrl-s700: probe of e01b0000.pinctrl failed with error -16
 
 _______________________________________________
 linux-arm-kernel mailing list
