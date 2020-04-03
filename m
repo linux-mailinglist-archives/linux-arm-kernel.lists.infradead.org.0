@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6411D19D8F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 16:22:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABABB19D8F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 16:22:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h9BS8LLnYFgLVX7VtKsKhADjLRMb3yk20KK0kQv/XeQ=; b=P87mPDP0JzHl9y
-	Ut/uKrwWkbnGISpFj8OH0Vx/yFYT/5gMVemLNzuuigtT1dROr25Qv7AltZX0RmoxP1SozezqPMp56
-	SdJxS3HD9ofCq2ggur83NCPGoNtOejxAKGuExWsR0aiMX3dU8y8zNM3NmLV+VJnYi3IFskowl0buu
-	KuSQ7fIzi+KuE7Gt8SMKXdouOKwXUOrMSSJMNJb6ABP4bKJgQhQHAH3aEwvxxGezyhcwN7vdH7mK1
-	zGWo+QT25ip6K4+V7kEY8G2F7PoOygYIsZI1ZpMuAqqP/lrDwbF8GRsRsMIqD4E5uQxK3MaLpcfEY
-	BBwxIs2v4vUq+F1xwywQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2wKoYJDkNYdpOUD0ZDQ5AOjJY7KJzfJMoZPEASJDmvY=; b=rF8dtDbGkfB1rx
+	ipeLgxiva0okT4G7aqhEl2vJjrjcKku2FQinRvwKHA+H4YfBBSLy3/Zgomv/cOCKVNnP7nviEW3cx
+	ePQ4wdmUNj6anNPBXp+2JqzD6tvXZ7IA3KMg73NjdcdGUqNAdrg4dacM4hpSCw7Cet49ZXz1sFfbA
+	qqGXrAFFBoudPaIPZNfRrmos6T2X6/ao5A6W9Zbd4KrjSRfQj2AXRL5upteTqR67TmZmGvBzft6GA
+	BUP030ajrrONdshDgEzp7fESCGmTM4ZdKGZ76Nf68v5V8ul3MP5uKS8zIdXbt5B60aoRB+1YfxmAI
+	C4S0+GhFMkxx5Sm9Ts7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKNCp-0000wm-PX; Fri, 03 Apr 2020 14:21:59 +0000
+	id 1jKND4-000156-J0; Fri, 03 Apr 2020 14:22:14 +0000
 Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKNCh-0000ul-85; Fri, 03 Apr 2020 14:21:53 +0000
+ id 1jKNCh-0000us-OF; Fri, 03 Apr 2020 14:21:53 +0000
 X-Originating-IP: 77.205.41.241
 Received: from localhost.localdomain (241.41.205.77.rev.sfr.net
  [77.205.41.241])
  (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 1D96C1BF22A;
- Fri,  3 Apr 2020 14:21:41 +0000 (UTC)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 1B7311BF221;
+ Fri,  3 Apr 2020 14:21:44 +0000 (UTC)
 From: Maxime Chevallier <maxime.chevallier@bootlin.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Subject: [PATCH 0/3] media: rockchip: Introduce driver for the camera
- interface on PX30
-Date: Fri,  3 Apr 2020 16:21:19 +0200
-Message-Id: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
+Subject: [PATCH 1/3] media: dt-bindings: media: Document Rockchip CIF bindings
+Date: Fri,  3 Apr 2020 16:21:20 +0200
+Message-Id: <20200403142122.297283-2-maxime.chevallier@bootlin.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
+References: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_072151_421917_1D8156E2 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20200403_072152_064769_6894D56F 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -73,54 +74,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello everyone,
+Add a documentation for the Rockchip Camera Interface controller
+binding.
 
-Here's a series to add very basic support for the camera interface on
-the Rockchip PX30 SoC.
+This controller can be found on platforms such as the PX30 or the
+RK3288, the PX30 being the only platform supported so far.
 
-This Camera Interface is also supported on other Rockchip SoC such as
-the RK1808, RK3128, RK3288 and RK3288, but for now I've only been able to
-test it on the PX30, using a PAL format.
-
-This driver is mostly based on the driver found in Rockchip's BSP, that
-has been trimmed down to support the set of features that I was able to test,
-that is pretty much a very basic one-frame capture and video streaming
-with GStreamer. 
-
-This first draft only supports the Parallel interface, although the
-controller has support for BT656 and CSI2.
-
-Finally, this controller has an iommu that could be used in this driver,
-but as of today I've not been able to get it to work.
-
-Any review is welcome.
-
-Thanks,
-
-Maxime
-
-Maxime Chevallier (3):
-  media: dt-bindings: media: Document Rockchip CIF bindings
-  media: rockchip: Introduce driver for Rockhip's camera interface
-  arm64: dts: rockchip: Add the camera interface description of the PX30
-
- .../bindings/media/rockchip-cif.yaml          |   98 ++
- arch/arm64/boot/dts/rockchip/px30.dtsi        |   12 +
- drivers/media/platform/Kconfig                |   13 +
- drivers/media/platform/Makefile               |    1 +
- drivers/media/platform/rockchip/cif/Makefile  |    3 +
- drivers/media/platform/rockchip/cif/capture.c | 1170 +++++++++++++++++
- drivers/media/platform/rockchip/cif/dev.c     |  407 ++++++
- drivers/media/platform/rockchip/cif/dev.h     |  208 +++
- drivers/media/platform/rockchip/cif/regs.h    |  256 ++++
- 9 files changed, 2168 insertions(+)
+Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+---
+ .../bindings/media/rockchip-cif.yaml          | 98 +++++++++++++++++++
+ 1 file changed, 98 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/media/rockchip-cif.yaml
- create mode 100644 drivers/media/platform/rockchip/cif/Makefile
- create mode 100644 drivers/media/platform/rockchip/cif/capture.c
- create mode 100644 drivers/media/platform/rockchip/cif/dev.c
- create mode 100644 drivers/media/platform/rockchip/cif/dev.h
- create mode 100644 drivers/media/platform/rockchip/cif/regs.h
 
+diff --git a/Documentation/devicetree/bindings/media/rockchip-cif.yaml b/Documentation/devicetree/bindings/media/rockchip-cif.yaml
+new file mode 100644
+index 000000000000..87fb5e136edd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/rockchip-cif.yaml
+@@ -0,0 +1,98 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/rockchip-cif.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip Camera Interface (CIF)
++
++maintainers:
++  - Maxime Chevallier <maxime.chevallier@bootlin.com>
++
++description: |-
++Camera Interface for Rockcip platforms
++
++properties:
++  compatible:
++    const: rockchip,px30-cif
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: ACLK
++      - description: HCLK
++      - description: PCLK
++      - description: CIF_OUT
++
++  clock-names:
++    items:
++      - const: aclk_cif
++      - const: hclk_cif
++      - const: pclk_cif
++      - const: cif_out
++
++  resets:
++    items:
++      - description: Reset CIF A
++      - description: Reset CIF H
++      - description: Reset CIF PCLK IN
++
++  reset-names:
++    items:
++      - const: rst_cif_a
++      - const: rst_cif_h
++      - const: rst_cif_pclkin
++
++  power-domains:
++    maxItems: 1
++    description: phandle to the associated power domain
++
++  # See ./video-interfaces.txt for details
++  port:
++    type: object
++    additionalProperties: false
++
++    properties:
++      endpoint:
++        type: object
++
++        properties:
++          remote-endpoint: true
++
++        required:
++          - remote-endpoint
++
++    required:
++      - endpoint
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++additionalProperties: false
++
++examples:
++  - |
++        cif: cif@ff490000 {
++		compatible = "rockchip,px30-cif";
++		reg = <0x0 0xff490000 0x0 0x200>;
++		interrupts = <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru ACLK_CIF>, <&cru HCLK_CIF>, <&cru PCLK_CIF>, <&cru SCLK_CIF_OUT>;
++		clock-names = "aclk_cif", "hclk_cif", "pclk_cif", "cif_out";
++		resets = <&cru SRST_CIF_A>, <&cru SRST_CIF_H>, <&cru SRST_CIF_PCLKIN>;
++		reset-names = "rst_cif_a", "rst_cif_h", "rst_cif_pclkin";
++		power-domains = <&power PX30_PD_VI>;
++                port {
++                        cif_in: endpoint {
++                                remote-endpoint = <&tw9900_out>;
++                        };
++                };
++	};
++...
 -- 
 2.24.1
 
