@@ -2,70 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C65519DE84
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 21:21:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C3D419DEAD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 21:44:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJLlckn1jkm9fKmoNCzMWWB2eV7XSyU3v2oxIxKPIAc=; b=bxDzUEWSgrAruC
-	c0DcHPwl1B0rqn2gL2qXDl5DyCLYxASZoX+l0TerY6pbGxuXjMvTBqHOtPRmYFG5BBUW2ywfc9P4s
-	v6GLiKCO5ZfH52EOFSvpkzbfnojwre+W/9w3zKbraKOZedsaV2pqdQjko4rKqU29qOn48OTdvYdVm
-	vajVtsSuPnQWsRwH+KbOiCZq1lmh6L7FIUSSsEm6eyIPnYTKHFBjqMBDjVT4sd3x3t6Yx5I/QM8cW
-	+VA/N/JmPFxvizBLOYn+So4xK8oeCAhyDU1kUXRK+TxXqLpwUQOEJE1RMudMkeLRVb1KbZPA1zD7w
-	QnNbKrNuvrfd8/saUNEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EMcY/RVLvTV29Xv6pnxRan+uw++Kl8Po/zpWnHvhwcg=; b=q/4I1SDYAliz9f868xfNKejYt
+	appWoFEiMjSNTOGF14b4s+XDUNWIWShcToMTs5XbwNaJoE8LkmNdkUcA8x+ecRqsnQZcrmTmnGbT/
+	bI7LlQ1MpVjoQ5klwLj4AUnB9BOxJlg2xpYD8cVRlmckcSNMt2bbMq1gjFTXd51InLlxcZWt4IoAW
+	x9gSU3317cQ1iFJzIdcTbExLqwNDir1xtmJR4WWlWM1krn1xT7fpkWu8wgs5Fh6XX4CDGHNyyBU88
+	YZkS7tOwh/puqRwHK+wZIjgWAixzhm5gKJYSUjenmZblb/4/zyWNuth/q7ZrHymWEdgn6idoCBeIK
+	N99O/rJqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKRsm-0005Mp-22; Fri, 03 Apr 2020 19:21:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jKSEa-0000fW-Ah; Fri, 03 Apr 2020 19:44:08 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKRsf-0005MC-QO
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 19:21:31 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jKRsO-00058t-IJ; Fri, 03 Apr 2020 21:21:12 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1jKRsJ-0007x6-Ff; Fri, 03 Apr 2020 21:21:07 +0200
-Date: Fri, 3 Apr 2020 21:21:07 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200403192107.gbzkdumoefuwtsln@pengutronix.de>
-References: <20200331133346.372517-1-robert.foss@linaro.org>
- <20200331133346.372517-2-robert.foss@linaro.org>
- <20200331151253.q6ody3erhvsabznz@pengutronix.de>
- <CAG3jFyvBmfwoSoKxZJPh2VcJe2aCYGWRRNmkuky3wU2jOsRwBQ@mail.gmail.com>
+ id 1jKSES-0000eX-MW; Fri, 03 Apr 2020 19:44:01 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w15so3657273wrv.10;
+ Fri, 03 Apr 2020 12:43:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=VhUPoyVgqk+qZ+YSwj2U46k0fdPCJ/w50hKlV2MbuGw=;
+ b=hhCWiye00MTANqJ6nW6EucLK2InoA2Rw9jqmk6Eomp3msE5cBzOiPJKNPNgkakOWcO
+ Z6f/R3hrlu1FnKAFAWctSyIbwGP/3UY2S49ylYYbhpawrvKdhWo7A5MKz5NSDJw7S7qx
+ CvPcHUyXe5CGhNL6Klqth1Tvr/rSCXvxtdP7V8gs18cWzJUKxRqFZgsTcvUrGa101MiX
+ Wh/UZWF6d/nAp2SOQSZZiXMcOVCQyJpPeDD61ciT/5NG19tOnB3ON2F9gMaPDbK2SPfj
+ r06WUI39IRPKPVu8DC2ulgBfZK+ZYwNVO48k0dwWfxg30DTmdiGgO7reYnaTf/8iCo5g
+ AwDw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=VhUPoyVgqk+qZ+YSwj2U46k0fdPCJ/w50hKlV2MbuGw=;
+ b=M7eeEJAHLbwfhymD5PxxnVE9Cq0YobJYX9bqyVvAbpXmQCWt3qTiEGci+YEWtkY3eM
+ +e2zTma9TLwM9h7kFKPkJ2VHOPVGPcugKbbHz9NX9h5h6WOXrYmurWRavBnHp2gOgPOp
+ Tn2c6GZr69rCnelg/ah3nngUe/5v8zn+Qc61qunxOB6JgbqU1CbtjpFL1i+907KI4eh4
+ Rz4a9/Vy9kPX4nr/G34MZwQiiDMoLtPsg71YeoL0bdDd7t6Nw1APPrNberJaWeJgfyYC
+ //Wgr+5W9E8nY/XaOe+n9oAegn7RdqBGmhu7HG2pYCMp24ffVWjVPyIWzjGGf5D27jgW
+ eiVw==
+X-Gm-Message-State: AGi0PuZ6kLdxfJJfcg1CrM4ZOmbB1zHYjoWPAAm/RGB8dhvYXRTjBZqI
+ rKfV6iLMS7HzQJaCRyL+dj2AUZnT
+X-Google-Smtp-Source: APiQypKVRLjP5+xoPXsNXQUo2denoGstY9cptKeS0GbRKSrXlZZWW7kTNIWA3fDVCRT683g5iO2nZg==
+X-Received: by 2002:adf:fe87:: with SMTP id l7mr10231570wrr.377.1585943037972; 
+ Fri, 03 Apr 2020 12:43:57 -0700 (PDT)
+Received: from localhost (pD9E51CDC.dip0.t-ipconnect.de. [217.229.28.220])
+ by smtp.gmail.com with ESMTPSA id a13sm13077687wrh.80.2020.04.03.12.43.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 03 Apr 2020 12:43:56 -0700 (PDT)
+Date: Fri, 3 Apr 2020 21:43:55 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Colin King <colin.king@canonical.com>
+Subject: Re: [PATCH] pwm: meson: remove redundant assignment to variable
+ fin_freq
+Message-ID: <20200403194355.GB201060@ulmo>
+References: <20200402110857.509844-1-colin.king@canonical.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAG3jFyvBmfwoSoKxZJPh2VcJe2aCYGWRRNmkuky3wU2jOsRwBQ@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 21:13:24 up 140 days, 10:31, 156 users,  load average: 0.08, 0.05,
- 0.02
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200402110857.509844-1-colin.king@canonical.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_122129_851703_3F68D556 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200403_124400_735389_A61EE690 
+X-CRM114-Status: GOOD (  11.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,151 +97,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0832240118646298492=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
 
-On 20-04-02 11:57, Robert Foss wrote:
-> 'Hey Marco,
-> 
-> On Tue, 31 Mar 2020 at 17:13, Marco Felsch <m.felsch@pengutronix.de> wrote:
+--===============0832240118646298492==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="tjCHc7DPkfUGtrlw"
+Content-Disposition: inline
 
-...
 
-> > > +  assigned-clocks:
-> > > +    description:
-> > > +      Input clock for the sensor.
-> > > +
-> > > +  assigned-clock-rates:
-> > > +    description:
-> > > +      Frequency of the xvclk clock in Hertz.
-> >
-> > Also this isn't related to the chip. You need this because you are using
-> > a qcom platform which provides the clock.
-> >
-> > IMHO you only need to specify the clock. You can get the frequency with
-> > the clk_get_rate() function.
-> 
-> The way I understood this, was that clk_get_rate() would fetch the
-> clock rate as defined by the 'assigned-clock-rates'
-> Is this not the case? And if so, what rate would cllk_get_rate()
-> actually retrieve?
-> 
+--tjCHc7DPkfUGtrlw
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-You're right clk_get_rate() should be used to get the current clk rate
-but assigned-cock-rates only applies to your setup where the host
-supplies the clk. This is not the case ff we connect a simple external
-osc which provides a static (not adjustable) ckl.
+On Thu, Apr 02, 2020 at 12:08:57PM +0100, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
+>=20
+> The variable fin_freq is being initialized with a value that is never
+> read and it is being updated later with a new value. The initialization
+> is redundant and can be removed.
+>=20
+> Addresses-Coverity: ("Unused value")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> ---
+>  drivers/pwm/pwm-meson.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
-...
+Applied, thanks.
 
-> > > +examples:
-> > > +  - |
-> > > +    #include <dt-bindings/gpio/gpio.h>
-> > > +    #include <dt-bindings/clock/qcom,camcc-sdm845.h>
-> >
-> > IMHO we should avoid examples with hardware specific includes.
-> 
-> The HW specific include is used for the clocks property.
-> clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
-> 
-> Is there a non hw specific clock that would be better to use for examples?
+Thierry
 
-Yes, just use:
+--tjCHc7DPkfUGtrlw
+Content-Type: application/pgp-signature; name="signature.asc"
 
-  clocks = <&cam_osc>;
+-----BEGIN PGP SIGNATURE-----
 
-The dt-validation provides dummy hooks for such phandles.
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl6HkfsACgkQ3SOs138+
+s6HHhg//ZVsyNF1NKEv48QDcFr5adCAieVaCKk7J+kqjK7w2X2fnDrjuWXbmtlpb
+drMho5uh8b597B5cDcFoprjQSeHl0D56JKiLgBYsBuBxeRsFcVUVS5zXxt8mlvFc
+AIGKEPSSZsg+LFqlR5Msxf58M4YGYvG3lbFFQUOEN0I5K6W3wvfRY0+xGUvL0TC+
+1kOy5HmhM8lFPv5h/zgs0biiFg32D5ghmaLduZN9VjUJLgPmnlR3nESaWbjiFdZv
+XjGDkXPwx9+tJML2TzROxMWcBFFx7zBDfxHBvRfovv272QzMtpb7eT73Fh/cZSKQ
+hMCslpZy5Vj/2HcHkRY/w1MN/NZAdX/mNhQaIw1gz2P30mJxvUUDOoOaAGk3k8p6
+K2fUxY6YMthq7T731bAhROz1gxt4Ra0IMVksfAUSjBvHduIvOjikBJqTu+5TKIe3
+FnXfzaOODWL9+DQwHZtYJIRv4z21DfPFJunzohcsHKptPf1AqMW1BJX+4XX5rIbn
+dl0WS2h5BZ3lf/OU4FqXE6c9rKEj8NIZAYoYHTX1yDdQSI2G5GtFO811eGsN7h2C
+uVtwi5Jj2Js8rSxFQDj4d/jIKpxppzOvTGEXl1/Xz5XzMwD4TBl7ILKFryCnYCN5
+L6Y59GbxDRXjBGJuVj3HhV1bFnBcVqSFz5swfsnvXCMTNKp0wlk=
+=9i9z
+-----END PGP SIGNATURE-----
 
-Regards,
-  Marco
+--tjCHc7DPkfUGtrlw--
 
-> 
-> >
-> > > +
-> > > +    i2c {
-> > > +        #address-cells = <1>;
-> > > +        #size-cells = <0>;
-> > > +
-> > > +        ov8856: camera@10 {
-> > > +            compatible = "ovti,ov8856";
-> > > +            reg = <0x10>;
-> > > +
-> > > +            reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
-> > > +            pinctrl-names = "default";
-> > > +            pinctrl-0 = <&clk_24m_cam>;
-> > > +
-> > > +            clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
-> > > +            clock-names = "xvclk";
-> > > +            clock-frequency = <19200000>;
-> > > +            assigned-clocks = <&clock_camcc CAM_CC_MCLK0_CLK>;
-> > > +            assigned-clock-rates = <19200000>;
-> > > +
-> > > +            avdd-supply = <&mt6358_vcama2_reg>;
-> > > +            dvdd-supply = <&mt6358_vcamd_reg>;
-> > > +            dovdd-supply = <&mt6358_vcamio_reg>;
-> > > +
-> > > +            port {
-> > > +                wcam_out: endpoint {
-> > > +                    remote-endpoint = <&mipi_in_wcam>;
-> > > +                    clock-lanes = <0>;
-> > > +                    data-lanes = <1 2 3 4>;
-> > > +                    link-frequencies = /bits/ 64 <360000000 180000000>;
-> >
-> > Should we add the link-frequencies as optional param?
-> >
-> > Regards,
-> >   Marco
-> >
-> > > +                };
-> > > +            };
-> > > +        };
-> > > +    };
-> > > +...
-> > > \ No newline at end of file
-> > > diff --git a/MAINTAINERS b/MAINTAINERS
-> > > index a6fbdf354d34..0f99e863978a 100644
-> > > --- a/MAINTAINERS
-> > > +++ b/MAINTAINERS
-> > > @@ -12355,6 +12355,7 @@ L:    linux-media@vger.kernel.org
-> > >  T:   git git://linuxtv.org/media_tree.git
-> > >  S:   Maintained
-> > >  F:   drivers/media/i2c/ov8856.c
-> > > +F:   Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > >
-> > >  OMNIVISION OV9650 SENSOR DRIVER
-> > >  M:   Sakari Ailus <sakari.ailus@linux.intel.com>
-> > > --
-> > > 2.25.1
-> > >
-> > >
-> >
-> > --
-> > Pengutronix e.K.                           |                             |
-> > Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-> > 31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-> > Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-> 
 
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+--===============0832240118646298492==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0832240118646298492==--
+
