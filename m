@@ -2,110 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8730319D6C6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 14:33:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84BFC19D6E4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 14:43:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KIJXquhH7qareNbZFyFZ5jW1QpZHl2K350SO19+U6nQ=; b=O4H52m9/cAC6cg
-	FW0qj0zOlyOd9S6pDBW80r84F0IAy46gxk5rYIUZiH5DmfdCTtd6OylTVPOk3s2YIF8T4uBqKyx0v
-	MP+Tx8HApQyPKmEjl965yXpD7QTI1D4u9OHg4DGkcMUqTShg29Gg6KbMZGmiPggOGfO+uLHP3vWR+
-	6hvEB9vhkxAe4J8oIPAlOHjW6mX2TgGMX7EbLg7w1nF03yeqWc+aFYTdlk6tVr1IlLF/DyPgClc2K
-	6Rv8fIEel6guAZwnp65ymfjS9ijvouk/MYeYesVJeSmP2Sbhkgx745MtNmucWekIDTmIsIM980bHu
-	8ud+fOlHe6TbOxVyPoRQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=p/UzC6tOGWajgHJ73GlJkiheeZt1O/v45Ozjao77GXA=; b=DxG
+	p/KadTNGfJmPqweWMBW08tdY12h3xgFZ6gs2SKhs10wAn9yGIbqaV7hHuNkPeJKtMCbsAatzjmPip
+	4Vfbp7XvYROLEoL0aWHgbKiIOC/9w7SXGQH8i1pXc8twlM7IgtKFaJKFncjXX1H6U8MFfhg2Wu2ye
+	VEsMhZLbtG11GrYV+PR6euFqJfqkOQmCPcaF4VFISD8VYhyL/ue44e4dsttLnIPHbnyCJdlnUe9FE
+	Dl2ACOc2mRh6aqbNsGXY4Y/085aAgLmBNsGsTsEolxFxldn1SxI6Wrkr5vFXqdx3NItCNKaySwncc
+	Y6MbQ5ccOI0KrdyKPoq0VCpAQYlOxhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKLVx-0005I0-6Q; Fri, 03 Apr 2020 12:33:37 +0000
-Received: from mail-eopbgr40069.outbound.protection.outlook.com ([40.107.4.69]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1jKLfX-0002om-Q9; Fri, 03 Apr 2020 12:43:31 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKLVp-0005HJ-AD
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 12:33:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BrrOHGNPNn+a7u8zA19QNPsprzIQL2q6RKMH0F3mBsf9BPvvc6yFV7zdRwclH54Ju3ItrW+NXTAWOynetw1RlxY/otmfpZrV5M2YGHtEfM2PYG3MyzV+cvkA1Dp33w5EiZh7IFgdDnbRiPf4/XHJ+pccAAR3WBNiw8g30AvU693v+KaBJxbJsRjDoedII8AuNevAcyAzOo0HlHPyc1vrdIQmxCZ2DfFGxZa3MPD3yb5+uv4JGwY+8c12oXzQP7zgvfwF0+n/b/Aotvor+RHMUslaNH7Yz/PVn3ikq8niEt5lFSWiSaDvOn22BG+mF+8EOfIZmVZqS3smFRcqbJi34Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DvEUeQYQMqYCiEXEi+AFQP3tXqAYTx+G4fP9FNLWc20=;
- b=KB+sgETRzq6KWNqACZQPHgAIohDCqRmvKlPUgYAS1FAOBsmqCwOR6Bj+mFfUc6mosbRhIT+nGJfmUYDlXkUqzZ+ZR9qiF3OfBzN0MZbqpj74K3xlIZGnLH684vtuYhicZOdS2M6y3iKkIfX7X6+SHsk+Ca14nj8UoPg2yHv6pGqVio9vIWsCNRs630MuJwIjsTHssYQTCPtbB38nVqBxDyAz4F265VbNWAwIQb1apdKpMSGdvGHd9X1+t3v4XIy6zp+Xe1EgRciRrxdj9tWZhfXuAsm53LPiwXCyyPuMGVkQpU7/QWaxylUYIWZwlQCj27XfxBS3QT965/wvxhuYYw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DvEUeQYQMqYCiEXEi+AFQP3tXqAYTx+G4fP9FNLWc20=;
- b=e8TLsaVw2pv3k4fC+hmosqEq2Tp9Ekk4uUX71cX55+aXR7m8+bgkS5qmUuDmcK+DgTNynFnZ5xyrAaFLgQ4rNrd/K5FI5gsDuTFstvJTw6k/4hQsNC9A50u2rqdio0WRzyoJoSQxZfsHkQ50fCgAB+V+9Z4jW/xSiE5UfzeXok8=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3689.eurprd04.prod.outlook.com (2603:10a6:8:b::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.16; Fri, 3 Apr
- 2020 12:33:26 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
- 12:33:26 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Amit Kucheria <amit.kucheria@verdurent.com>
-Subject: RE: [PATCH V3 1/3] dt-bindings: thermal: imx8mm-thermal: Add support
- for i.MX8MP
-Thread-Topic: [PATCH V3 1/3] dt-bindings: thermal: imx8mm-thermal: Add support
- for i.MX8MP
-Thread-Index: AQHWAQ+NgsYnRiisu0+CCnx8R8nFSKhnZDGAgAABh8A=
-Date: Fri, 3 Apr 2020 12:33:26 +0000
-Message-ID: <DB3PR0402MB391601BEE4897CCD674597A4F5C70@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1584966504-21719-1-git-send-email-Anson.Huang@nxp.com>
- <CAHLCerPVuZrNiSh45w4TF6jKmZ+aD5aBZCcCK87i4Txdfh_Z2g@mail.gmail.com>
-In-Reply-To: <CAHLCerPVuZrNiSh45w4TF6jKmZ+aD5aBZCcCK87i4Txdfh_Z2g@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 4d248068-0431-44ed-47bc-08d7d7cb34ee
-x-ms-traffictypediagnostic: DB3PR0402MB3689:|DB3PR0402MB3689:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB36891A11011059DBF45AE408F5C70@DB3PR0402MB3689.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0362BF9FDB
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10009020)(4636009)(39860400002)(136003)(346002)(366004)(376002)(396003)(66946007)(76116006)(64756008)(66446008)(66476007)(66556008)(33656002)(6916009)(55016002)(6506007)(5660300002)(53546011)(52536014)(9686003)(478600001)(2906002)(4326008)(86362001)(8936002)(186003)(44832011)(26005)(54906003)(8676002)(71200400001)(81156014)(7696005)(7416002)(316002)(81166006)(4744005)(32563001);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: rMp0pICX4uhd4tKc+CJnfIMzZT2ma7Fvy6+rm8XjBqSpUUjlH0wioEh9635nAxR0znEL4o/m6yRg7vTO9urfKnylX1aVNj8GpEz82YqyM7deWlDQyGOoDpGLbU+woFpV/Jf/dGXoVfPNk6SWRZ5XwOQ5dS+TDummJuOJb9DqeGfyu7C9R6ngpZgTFFJJdwhz2IK9JYHOj855coBTMnHbP0z4hQ575xDixu1zuDCfva2hKKr8D+tnc+qlPOtY8Qe7ksgYSCs6Ly9BVRLwYHbXLckMdaGgurjuOphLbTWQb39Nxel9iTTNKWKq4gqGQuI1LymnnokH4qYMiGimJmfjVaLO+nkv5vwN9Wxo+NleUa70NB+1G4UeqMYIU/kid/gVfONPDgMOv+bLlIaMV+is5v8UVJ6DwYWhqk4jBAD40vMnEXyrf0Dum0NAQdwvaKC7I+CvSxsO1SjtDZC8geO97KQwIIced/gMwmeEFl5GMaI=
-x-ms-exchange-antispam-messagedata: V9eqJCdAJcLjXsU4dJOfYlURPqyIQq1cyrXZXdW1U5WjgYT0Cp6gJfNOMy85BaapoT2lTyLLDNQEVYz5UbPb5SPv0PvdJUTNzQq8bb3xr5l0VQSN5LUJrgUsmtFruG4O18aQoosQJmxqnrDDX+0l6g==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4d248068-0431-44ed-47bc-08d7d7cb34ee
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 12:33:26.1329 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: MtAhzfrOXaZuUkm6geAhKq2Dn+BS/xRoo4noODgCz4fGqq2yGSgLLBYzT3oHUaHRevFAhh1GiIobYnKbpFJxKg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3689
+ id 1jKLfR-0002oM-I5; Fri, 03 Apr 2020 12:43:27 +0000
+Received: by mail-wr1-x444.google.com with SMTP id h9so8358011wrc.8;
+ Fri, 03 Apr 2020 05:43:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=HKSaFU1ljMFGNxPUS/qIK5WBodsEvdWVlhlU/sdRISo=;
+ b=Mz2mmnd8WwmABTgVe9q8mKJnoErjpgv8IbeGXxlmSqY0iG6TIrwohnd2JhYb8G37Yh
+ mcK2rZQkNWMfOY0hbyAERWzwhq5qHvqRPfMaSNL+q+NeJlL4xC5xJKvpIiT1+ZQbEEYv
+ UgZbbZF8KIGy3vcHR/toO0BZ8cTCVe6rQZayplH6C9PKuaQzlIrPmjXOAAE4wDduOfJq
+ 4SfEmO7ZeEvXsUkNABCFfb2wW8vSthEB2hq4+DZeCHlLUDaHCeRJfI8QK1UpcSob1Cx1
+ LhiMdXmmXIKrPbHJGw7q+DsfNyTK2oe6gR5D4Temxgwh6IIgh8XW55/7vFR8YdC6rLD3
+ 5B7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=HKSaFU1ljMFGNxPUS/qIK5WBodsEvdWVlhlU/sdRISo=;
+ b=lDnq1yQFjXcbDWPhBYk3pQp64Au1phIy2MSvF+KONkq1L0sppclPxM+MdjoS4kyBYg
+ sWwjgTUzwdKFEKy2ckAl8uvIw5/uNApm29SVucnfIUNz25bNZtV+DE4r2aXdM2MIayz9
+ dqqrLF9br4+vxAJqtv4OSO/VMnKjyqhh/RLgZKszXdGTloWgzH+0U7Owp8LJ3S2XTUQu
+ FJOSJ5/9oJru0YRCRUTB1RDA7bUxztVUKKVBRfDomKJtW1Rgik8W8Loz/Zjq6SSnSHms
+ 2iyqR0IUrxZ+iFUIxVZqyhg+D7kdY7ycA4CP7kG2vwT/pNFl9z0+ea2aATGAH3MvSH5/
+ ISdQ==
+X-Gm-Message-State: AGi0PuZURhzZ0XUovywwwziFx3xKlmgWE0AlEw+uNt0i+F+DnP/XLMnF
+ 9mq9ze6q1WJVbayDrJpaNY8=
+X-Google-Smtp-Source: APiQypLA6bS2lGCmQmJDp4DJ7Dplpig1wUUk3XE/h5DvHOMnuRPKQ/v+JzBXiURE6qmjxUW6ZblJvw==
+X-Received: by 2002:adf:a347:: with SMTP id d7mr2015540wrb.21.1585917803643;
+ Fri, 03 Apr 2020 05:43:23 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id p10sm11735307wrm.6.2020.04.03.05.43.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 Apr 2020 05:43:23 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: ezequiel@collabora.com
+Subject: [PATCH v1] dt-bindings: media: convert rockchip vpu bindings to yaml
+Date: Fri,  3 Apr 2020 14:43:16 +0200
+Message-Id: <20200403124316.5445-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_053329_505843_14C4B817 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200403_054325_622308_AC4CB421 
+X-CRM114-Status: GOOD (  15.29  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.69 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -124,42 +93,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN
- FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Horia Geanta <horia.geanta@nxp.com>,
- Linux PM list <linux-pm@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- lakml <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Amit
+Current dts files for Rockchip with 'vpu' nodes
+are manually verified. In order to automate this process
+rockchip-vpu.txt has to be converted to yaml.
 
-> Subject: Re: [PATCH V3 1/3] dt-bindings: thermal: imx8mm-thermal: Add
-> support for i.MX8MP
-> 
-> Hi Anson,
-> 
-> On Mon, Mar 23, 2020 at 6:05 PM Anson Huang <Anson.Huang@nxp.com>
-> wrote:
-> >
-> > Add thermal binding doc for Freescale's i.MX8MP Thermal Monitoring Unit.
-> >
-> 
-> I realise this got merged already, but please send a patch converting this
-> binding to yaml at some point.
+Changed:
+  Add missing reg property
 
-Got it, I will find some time to convert i.MX thermal binding doc to yaml format.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../devicetree/bindings/media/rockchip-vpu.txt     | 43 -------------
+ .../devicetree/bindings/media/rockchip-vpu.yaml    | 75 ++++++++++++++++++++++
+ MAINTAINERS                                        |  2 +-
+ 3 files changed, 76 insertions(+), 44 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.txt
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.yaml
 
-Thanks,
-Anson
+diff --git a/Documentation/devicetree/bindings/media/rockchip-vpu.txt b/Documentation/devicetree/bindings/media/rockchip-vpu.txt
+deleted file mode 100644
+index 339252d9c..000000000
+--- a/Documentation/devicetree/bindings/media/rockchip-vpu.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-device-tree bindings for rockchip VPU codec
+-
+-Rockchip (Video Processing Unit) present in various Rockchip platforms,
+-such as RK3288, RK3328 and RK3399.
+-
+-Required properties:
+-- compatible: value should be one of the following
+-		"rockchip,rk3288-vpu";
+-		"rockchip,rk3328-vpu";
+-		"rockchip,rk3399-vpu";
+-- interrupts: encoding and decoding interrupt specifiers
+-- interrupt-names: should be
+-		"vepu", "vdpu" on RK3288 and RK3399,
+-		"vdpu" on RK3328.
+-- clocks: phandle to VPU aclk, hclk clocks
+-- clock-names: should be "aclk" and "hclk"
+-- power-domains: phandle to power domain node
+-- iommus: phandle to a iommu node
+-
+-Example:
+-SoC-specific DT entry:
+-	vpu: video-codec@ff9a0000 {
+-		compatible = "rockchip,rk3288-vpu";
+-		reg = <0x0 0xff9a0000 0x0 0x800>;
+-		interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>,
+-			     <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+-		interrupt-names = "vepu", "vdpu";
+-		clocks = <&cru ACLK_VCODEC>, <&cru HCLK_VCODEC>;
+-		clock-names = "aclk", "hclk";
+-		power-domains = <&power RK3288_PD_VIDEO>;
+-		iommus = <&vpu_mmu>;
+-	};
+-
+-	vpu: video-codec@ff350000 {
+-		compatible = "rockchip,rk3328-vpu";
+-		reg = <0x0 0xff350000 0x0 0x800>;
+-		interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
+-		interrupt-names = "vdpu";
+-		clocks = <&cru ACLK_VPU>, <&cru HCLK_VPU>;
+-		clock-names = "aclk", "hclk";
+-		power-domains = <&power RK3328_PD_VPU>;
+-		iommus = <&vpu_mmu>;
+-	};
+diff --git a/Documentation/devicetree/bindings/media/rockchip-vpu.yaml b/Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+new file mode 100644
+index 000000000..c64c33923
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+@@ -0,0 +1,75 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/rockchip-vpu.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip video processing unit (VPU) codec
++
++maintainers:
++  - Ezequiel Garcia <ezequiel@collabora.com>
++
++properties:
++  compatible:
++    enum:
++      - rockchip,rk3288-vpu
++      - rockchip,rk3328-vpu
++      - rockchip,rk3399-vpu
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    minItems: 1
++    maxItems: 2
++
++  interrupt-names:
++    oneOf:
++      - const: vdpu
++      - items:
++        - const: vepu
++        - const: vdpu
++
++  clocks:
++    maxItems: 2
++
++  clock-names:
++    items:
++      - const: aclk
++      - const: hclk
++
++  iommus:
++    maxItems: 1
++
++  power-domains:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - interrupt-names
++  - clocks
++  - clock-names
++  - iommus
++  - power-domains
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/power/rk3288-power.h>
++    vpu: video-codec@ff9a0000 {
++      compatible = "rockchip,rk3288-vpu";
++      reg = <0x0 0xff9a0000 0x0 0x800>;
++      interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>,
++                   <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
++      interrupt-names = "vepu", "vdpu";
++      clocks = <&cru ACLK_VCODEC>,
++               <&cru HCLK_VCODEC>;
++      clock-names = "aclk", "hclk";
++      iommus = <&vpu_mmu>;
++      power-domains = <&power RK3288_PD_VIDEO>;
++    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index a480cec62..ce80b22cf 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -14374,7 +14374,7 @@ M:	Ezequiel Garcia <ezequiel@collabora.com>
+ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ F:	drivers/staging/media/hantro/
+-F:	Documentation/devicetree/bindings/media/rockchip-vpu.txt
++F:	Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+ 
+ ROCKER DRIVER
+ M:	Jiri Pirko <jiri@resnulli.us>
+-- 
+2.11.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
