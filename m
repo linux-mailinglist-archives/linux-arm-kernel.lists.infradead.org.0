@@ -2,76 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6741D19D5B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:20:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32B8319D5D5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cv8V8hOBoKgfbpnTiYckF7x76UOcQpY1x4+tb+Z4vdY=; b=kNQ2c0AKgLiBkc
-	Y1TuKNiO51kjh5Q2UstUVM6qGJeFG+UUGqxAWmTfyv7eUe/Qun7LUvpEinfr/lOInurLaKH7wSIV/
-	dXBK+i1SrrcHyiCIOXEt+05F1swulw4Cv8z/oaab0P9Wn9Ui2R1G24iuhM/TqtU1/OjF5JHJplQT9
-	yuAN6CXOw2OYkfRt0XmdI4oCaUCJBLj0xB94RXqPR+7XspFJmYbZkDtKsnuqpdY2bvtIoPiPLsdGo
-	Dow4wZjQjP1RVFEBj4u4LQLlgpiXTKuQq2XT47PNya6ts231cpuy5MVhr071GfmpfCKHFtgNKlZfq
-	Qv+7eZSRAp7PS4eVN8NA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9EiN5peKgsQozhlG30pMynejlCIUIaEgXKqR842OEPU=; b=R92Qj2RekoCCZc
+	xBPMrPNYK1Qhz6zbfm2Cyd6ZjJ504VVdvhhnXd0RyVLwEfCZKWJfGzROZ7zQ0R+jDa/OSC/W2EVHf
+	Y1wkgkz2+S0O5m2qnOG9mnogwdwEluQio/gp3rlYlHljTUkZXoANRaL5DoSBkSrdCZTHeSRWX81yo
+	k1rnG4ElbRFgjl/IoY3Q5Q1aZlh8ruzNDWvC1BXi91SnjLVv2L9OJJ410mliYxXeA0gWqGiTKn1aT
+	8awv9fgTyQdUyjv/blEEBiMCPeVlAOr4bm02hXvRWp+hQvjJKbJNfON5m0Qdj4U1EYiVWHql/o71F
+	zT+lk518I1e1MNnGq9vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKKNI-00029C-Ti; Fri, 03 Apr 2020 11:20:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jKKWI-00062Q-14; Fri, 03 Apr 2020 11:29:54 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKKNB-00027k-En
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 11:20:30 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A994520737;
- Fri,  3 Apr 2020 11:20:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585912828;
- bh=VkbijjM+51iknoUD0yZ0gT3cXkNqrNfBcoLbQJeIJAM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Il47vERBim2JDy7oDA2LDIWqFNH+EnkbYyI8P8YBHlsP657q8CEuD0Rb2ZRtfQ04+
- WhbBrw/kMlQnXm+0hHylvFuMd/H7bTbcOB3JpCxiw2tl/EBZw8rDUYV1wcrqV5q8+H
- MU9H1dEB+kPMAyzG6CIW/FnWNe+APKgHh6Ss7+AA=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jKKN9-000U4Y-0m; Fri, 03 Apr 2020 12:20:27 +0100
-Date: Fri, 3 Apr 2020 12:20:24 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Alexandru Elisei <alexandru.elisei@arm.com>
-Subject: Re: [PATCH 0/2] KVM: arm64: PSCI fixes
-Message-ID: <20200403122024.60dcec10@why>
-In-Reply-To: <23107386-bbad-6ee1-c1cc-03dd70868905@arm.com>
-References: <20200401165816.530281-1-maz@kernel.org>
- <23107386-bbad-6ee1-c1cc-03dd70868905@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jKKWB-00060G-16; Fri, 03 Apr 2020 11:29:48 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t4so2577890plq.12;
+ Fri, 03 Apr 2020 04:29:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8rXpdWw7x9PpBvoBR/qm/XcVJsNWHJ1tSvQ9UIVcPLA=;
+ b=iegDoB1IxCA4quOPEOuEst/h/o+3lRJuFDKhH/u9bys+FKqKdgPy8zwo7dxJoU2DwR
+ OqDJQKEkNLhlMWWPZ065eDbOe6Eo4ZD2JqnLMoX4sksEkxM3ZDYy5kzvKC2zOoRSXSix
+ t4aCJWtpQqSvrC2solgN22MI9dJUgkfeMjY9mCzCjV3+JrCclicKu8HBvSumuae23O0f
+ YKuek9MktR7z3Pa6J8hUkwLCmerbyvtBYv3ux2yPUeMxkyXQt8qVyoEDBorLtSBfEd5K
+ OyxNXrHVYivJX0Up0fRhONeNVQ+BFkAj2kkYUT2zWAdglRTaY2wwTkrVVQKGMJYZypuJ
+ v5YA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8rXpdWw7x9PpBvoBR/qm/XcVJsNWHJ1tSvQ9UIVcPLA=;
+ b=P4O/phCyGE1efGT64CFKHH4YjGsoUGXPS9xcdLIJAetCWzHM7t1TBQtdXs0h4wZwlk
+ 0ZlDn8xHSJSWUTzgyUn3jxQRzQfTy+bmlIG8bhELPX6pb89KCuPrIuf4GjtMn/yID1AJ
+ Sg5KiYNRox9/ND5YnXLJcnk6FvItl0TpSGsmrksoTheIop6Svgh3ovATSOpbrhQ+/yq2
+ yMJiK2fDcNZ2bK9kzFu5XuB0Ww80bYqEdJw/c6Vwe8o55n4sIAKyjvXcdBCHY6YWkuV/
+ iOUr7D5eko9eDguyKAuMEWPZpDAD4GjepbMJnrl85MSucsVkIlAZ2xcQYgq07pMw8BIu
+ jU7g==
+X-Gm-Message-State: AGi0PubDM4fJatKyGGS2Q+JANCSHtXvuUv003C0ReFleZ1fvbVU1HeIw
+ gVkJHRck8W5IHi4lsMxXgQwLOn/ha9Q=
+X-Google-Smtp-Source: APiQypJ73aRw0jbyNSgssLXyjPahMN2KTO/im/OozAk2AXrhtWeGe0HEMNdi7dRewEFL4MTJbkL6Mg==
+X-Received: by 2002:a17:90a:37ea:: with SMTP id
+ v97mr9591002pjb.26.1585913384901; 
+ Fri, 03 Apr 2020 04:29:44 -0700 (PDT)
+Received: from guoguo-omen.lan ([240e:379:95c:7214:abe6:11ff:840d:b9a7])
+ by smtp.gmail.com with ESMTPSA id g18sm5034114pgh.42.2020.04.03.04.29.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 03 Apr 2020 04:29:44 -0700 (PDT)
+From: Chuanhong Guo <gch981213@gmail.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH] net: dsa: mt7530: fix null pointer dereferencing in port5
+ setup
+Date: Fri,  3 Apr 2020 19:28:24 +0800
+Message-Id: <20200403112830.505720-1-gch981213@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: alexandru.elisei@arm.com,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, Christoffer.Dall@arm.com, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_042029_542795_26B54A3B 
-X-CRM114-Status: GOOD (  21.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200403_042947_076556_0BDD7D9F 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gch981213[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gch981213[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +98,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Chuanhong Guo <gch981213@gmail.com>,
+ Vivien Didelot <vivien.didelot@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alexandru,
+The 2nd gmac of mediatek soc ethernet may not be connected to a PHY
+and a phy-handle isn't always available.
+Unfortunately, mt7530 dsa driver assumes that the 2nd gmac is always
+connected to switch port 5 and setup mt7530 according to phy address
+of 2nd gmac node, causing null pointer dereferencing when phy-handle
+isn't defined in dts.
+This commit fix this setup code by checking return value of
+of_parse_phandle before using it.
 
-On Fri, 3 Apr 2020 11:35:00 +0100
-Alexandru Elisei <alexandru.elisei@arm.com> wrote:
+Fixes: 38f790a80560 ("net: dsa: mt7530: Add support for port 5")
+Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+Cc: stable@vger.kernel.org
+---
 
-> Hi,
-> 
-> On 4/1/20 5:58 PM, Marc Zyngier wrote:
-> > Christoffer recently pointed out that we don't narrow the arguments to
-> > SMC32 PSCI functions called by a 64bit guest. This could result in a
-> > guest failing to boot its secondary CPUs if it had junk in the upper
-> > 32bits. Yes, this is silly, but the guest is allowed to do that. Duh.
-> >
-> > Whist I was looking at this, it became apparent that we allow a 32bit
-> > guest to call 64bit functions, which the spec explicitly forbids. Oh
-> > well, another patch.
-> >
-> > This has been lightly tested, but I feel that we could do with a new
-> > set of PSCI corner cases in KVM-unit-tests (hint, nudge... ;-).  
-> 
-> Good idea. I was already planning to add new PSCI and timer tests, I'm waiting for
-> Paolo to merge the pull request from Drew, which contains some fixes for the
-> current tests.
-> 
-> >
-> > Marc Zyngier (2):
-> >   KVM: arm64: PSCI: Narrow input registers when using 32bit functions
-> >   KVM: arm64: PSCI: Forbid 64bit functions for 32bit guests
-> >
-> >  virt/kvm/arm/psci.c | 40 ++++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 40 insertions(+)
-> >  
-> I started reviewing the patches and I have a question. I'm probably missing
-> something, but why make the changes to the PSCI code instead of making them in the
-> kvm_hvc_call_handler function? From my understanding of the code, making the
-> changes there would benefit all firmware interface that use SMCCC as the
-> communication protocol, not just PSCI.
+mt7530 is available as a standalone chip and we should not make it
+tightly coupled with a specific type of ethernet dt binding in the
+first place.
+A proper fix is to replace this port detection logic with a dt
+property under mt7530 node, but that's too much for linux-stable.
 
-The problem is that it is not obvious whether other functions have
-similar requirements. For example, the old PSCI 0.1 functions are
-completely outside of the SMCCC scope (there is no split between 32 and
-64bit functions, for example), and there is no generic way to discover
-the number of arguments that you would want to narrow.
+ drivers/net/dsa/mt7530.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Thanks,
-
-	M.
+diff --git a/drivers/net/dsa/mt7530.c b/drivers/net/dsa/mt7530.c
+index 6e91fe2f4b9a..1d53a4ebcd5a 100644
+--- a/drivers/net/dsa/mt7530.c
++++ b/drivers/net/dsa/mt7530.c
+@@ -1414,6 +1414,9 @@ mt7530_setup(struct dsa_switch *ds)
+ 				continue;
+ 
+ 			phy_node = of_parse_phandle(mac_np, "phy-handle", 0);
++			if (!phy_node)
++				continue;
++
+ 			if (phy_node->parent == priv->dev->of_node->parent) {
+ 				ret = of_get_phy_mode(mac_np, &interface);
+ 				if (ret && ret != -ENODEV)
 -- 
-Jazz is not dead. It just smells funny...
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
