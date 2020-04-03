@@ -2,120 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1239219D3C9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:34:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F03919D3D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 11:37:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aWQbRLzpGBwg+xaySoftrKE0eUN6Z964fG7fenGAe8U=; b=k7b4xzYKeJpjjG
-	dcf+iys3Di+RKxxfYess5CsrH2rrtMlw5O/tEpBkPUYtbkUOvbyDmjbWq0ZDu+BzI/h8uEJlbJ11F
-	jwgQvtUa1drw+/cW1a3ntaqBjNI6Vt0XclUT8ogWz8s+1KhT/jcLWMpKykOTQJxeqqAb7FEl7n8f3
-	ce6F3Djc2nDaqJTxxL0AQv3rRuONeTVdytw2xvl8UZuhNtPwPr+sHaWqaPhywVmaPpwOhrRMYcMlQ
-	Ay9FEayNNcITzUNH+xlTj34WnwqJI6w8XY2UPqOwdVNumt6Zi5qFZ5BllNSkXOwfdlwJ5jm51YV4y
-	fQhuJ8z43tPzXxpnbIhg==;
+	List-Owner; bh=JxQcDbPtZC9sPyZ5dS8hpPMTWyj6KPOh/W39+qHd5MQ=; b=E6kNq4DSLGgczD
+	e6IUSUirQdCBJ1FR+g1jNEl83wwghdnZapHTsIZpUTsvTGFiQr3JULgZNduXhNxHFtKUq/FGCceu9
+	hj/3HtZcDOLDbpEp5mPt7LBO/zzqqDwhioTEkcNx6aQnZq9GHu3f1q1utSgbZVTRK5Y+YbMMmhVlk
+	Sk+k9dqEcLM8FPgbubeoKU7L7keDkMfH72+tjnH+/gp/GLvKf03ywE7ByzuGtYDZoqnjCNpLWyhMw
+	QHr3z5oDrKLg1oOshGSdS6f8awyxig8ao3kQDrgu3UtYL2AFiiwxPboclrRqQqWZnMHpgUSVONAj9
+	GEH0327HHEq9T2tKsYcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIiQ-0002J5-0W; Fri, 03 Apr 2020 09:34:18 +0000
-Received: from mail-eopbgr1400099.outbound.protection.outlook.com
- ([40.107.140.99] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1jKIlY-0005OM-83; Fri, 03 Apr 2020 09:37:32 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIiH-0002IY-Uu; Fri, 03 Apr 2020 09:34:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FkQNtG8FFJH3j6wmtXv3f76b4+Sa7DuEFw4FmAafRWBzctB/MNwmWMNQp0Ov9SH4UZC6fVY2jCu+4YEQ28AQSQSH9R+yhO3S+OlteeaPiL6c7oH2I4B6C59U1qKffzDJnMSie7pb1YaVerVJLxo9XNmVCzr/HWl1D+cKs6tsTz4ljAAc+rI4rFjCIh8pXKS2fmdlhVgY2NvHRhu/Vx53JbPG00WQPO1QNdtVfQ2pjkLtMKyH41GI02IHQv98H/YLZ1xpReR0R8cGsRPbr/CdwQ24o1JvDUehxaH6xsIXfdlHyEBegVhLeY9JzzVOPhVQjTVps4gfa/leukI0kefrCQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Q0ZZNr4DLzS67OgT1NktvakbNWvY8eyFbLlNpoRT74=;
- b=ZdeP5i87w/0NK4Ln2DuKaXyKiceOmzUROptkfBLYH4DUHqBfR17svm04ybyrNOzy4Nbcs30Y7nD366k7QNKGn0qZEJOaWSknGA044E9bBW7lLw9ugAdnURr0omO5r9IemMHnS1dW9Jur/RhSmtqUcF1qhcR8G/5v7ftEId0A43jtcj2VwVFj3s2dwaOwxNtdYq73V86tRNENZ3vuN+UEBSeR/wivFMPsQ6ufxlUsltsb4cdVkFg8f3yNqV2wL/0XcYCL74HVdIPuXe4L1ollijxOT93pl/l8BUW5+gbjeiE9jh/bgq49Jc63/FCcMl9CcYtHkiuEg9ZiMUx/0fSlyw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Q0ZZNr4DLzS67OgT1NktvakbNWvY8eyFbLlNpoRT74=;
- b=pFKc3PVL+e7U7841I8KRY4QY+kqJblygoEEIJOMTzBCW4ynoN3gn4OIZihEl8Lmi+QWnrvEJKHKmteeApQRvb/YPmCA+l57lP8n6YihO0LJObu6X+GwdTfGM4AejZm8U9LOvJ5J97RrFdCOboHTu/Ms0rnRAcK/qnDOZYtgrLEY=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB4192.jpnprd01.prod.outlook.com (20.178.136.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2878.15; Fri, 3 Apr 2020 09:34:07 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
- 09:34:07 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, Bjorn
- Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
- Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
- Pieralisi <lorenzo.pieralisi@arm.com>, Marek Vasut
- <marek.vasut+renesas@gmail.com>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>
-Subject: RE: [PATCH v6 06/11] PCI: endpoint: Add support to handle multiple
- base for mapping outbound memory
-Thread-Topic: [PATCH v6 06/11] PCI: endpoint: Add support to handle multiple
- base for mapping outbound memory
-Thread-Index: AQHWCSZxsnMUaMwx50Sb61CF2skZ+6hnC2TAgAASGQCAAABowA==
-Date: Fri, 3 Apr 2020 09:34:06 +0000
-Message-ID: <TYAPR01MB4544D205BE659CE74205737CD8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1585856319-4380-7-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB45442959B9FD7299D2CB8D73D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
- <OSBPR01MB3590260FDE8EA7D3701EAE2FAAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
-In-Reply-To: <OSBPR01MB3590260FDE8EA7D3701EAE2FAAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [124.210.22.195]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 14c564ea-5d2a-4caf-e03e-08d7d7b227fc
-x-ms-traffictypediagnostic: TYAPR01MB4192:|TYAPR01MB4192:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB419216F99C3AF786DD4C9051D8C70@TYAPR01MB4192.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0362BF9FDB
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:TYAPR01MB4544.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(10019020)(4636009)(39860400002)(376002)(136003)(396003)(366004)(346002)(55236004)(71200400001)(8676002)(316002)(33656002)(110136005)(54906003)(4326008)(6506007)(52536014)(2906002)(7416002)(478600001)(64756008)(81166006)(186003)(76116006)(66556008)(7696005)(8936002)(86362001)(81156014)(55016002)(5660300002)(66946007)(66446008)(9686003)(26005)(66476007)(921003)(1121003);
- DIR:OUT; SFP:1102; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: oABY1w/+on73vfTxhWJtSAT0zQQsC0vBaumCRukPnbzJx0YreBUFWzVIhRe3YipqGTjoSff6by6FuvHh4yJcYMyyCqjFNfOYKJ5rjWxqe7j4FT4h7d9ESefDe9Xtos/YZnjI2uf7OWWJ4dfT434AlOKGVhXS4LKbW0LKzuEnVoR5JDKxMXtxCTKoKGL21IhOxQO/l2eWInF5gwx1oSD1ssn6Rb9ACPhM/D74VQAQA1ky9qr9I+sabln9btbcn/Hw9trkihHETEpqGinxbkwwY/js2zF9uezuhQL5CJ04jrFcUjtwrOe+gJlrDU6uBu5eeaGW3I/6lTjd4kMxfcVt1HOdyDJ3U+dBHIC4MONylMckoVC0JnFDruSDdLMxsHoM1kYn1j1mBb97aRCe1/sa4wdT8LesGT8OZ3fACxlTTAGFeUyKANsBMHnSRM27cUgfEjnvUpERn6/HOTCg4xjsC0J1eJJHSnMMGXvve9pXaVEHwfPNopv3VZhg6uYviKF8
-x-ms-exchange-antispam-messagedata: EbUYOefpxeYBXHJ5qmX3DHhGrY6PNzTmYTmZRq+Ipd2d+wJicWmuIcfKherpaFg+Ts2aDjeF2kzXkJuNQhXZKJWwrIvPpfHSsaxckgL8s8b4HT7Z0DVGykmoxzyOhCI7X3ZVG+HYu+WTFeaCf2Jfkw==
+ id 1jKIlQ-0005NP-L0; Fri, 03 Apr 2020 09:37:26 +0000
+IronPort-SDR: Gsz53hmx6OmP2ZtW/ml8uKuXJK3qBwEAhbDil+tpBZpwim0SUmTB+d1GDph3xtPCjGGVsuKR1p
+ 6297m1vl8aOw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 Apr 2020 02:37:22 -0700
+IronPort-SDR: 6ctsVTIkuOJW1zsi+6r+x5UJTRL261u9mGQ5257+l2jFXHqbvL/nMwpdqWjssQBbG2Gr5Ta/+y
+ EYpqfJALPpNw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,339,1580803200"; d="scan'208";a="423470479"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga005.jf.intel.com with ESMTP; 03 Apr 2020 02:37:10 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jKIlD-00FOaL-Li; Fri, 03 Apr 2020 12:37:11 +0300
+Date: Fri, 3 Apr 2020 12:37:11 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Subject: Re: [PATCH v8 03/10] lib: add linear ranges helpers
+Message-ID: <20200403093711.GJ1922688@smile.fi.intel.com>
+References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+ <05ef7d49f1e2a895ac6688bfdd444d2cbba53e6e.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 14c564ea-5d2a-4caf-e03e-08d7d7b227fc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 09:34:06.9290 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: js1mjLIwWph3fzEtKcmfH6LyGwc/tJ20CN+iahlX+MkGZWQ51Lvj1X1Fgg/8ExsVxopTszQoTz+WP5Q8wE70ArFwjWQxsP3hZk4IX+5cCYs4rNN4aFEHh/Rw2BGaSqNR
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB4192
+Content-Disposition: inline
+In-Reply-To: <05ef7d49f1e2a895ac6688bfdd444d2cbba53e6e.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_023410_002944_91CFA687 
-X-CRM114-Status: GOOD (  29.04  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200403_023724_710813_D1CF286D 
+X-CRM114-Status: GOOD (  37.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.99 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,211 +72,433 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>, Heiko Stuebner <heiko@sntech.de>,
- Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Andrei Stefanescu <andrei.stefanescu@microchip.com>,
+ Heiko Stuebner <heiko@sntech.de>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Andreas Kemnade <andreas@kemnade.info>,
+ "Angelo G. Del Regno" <kholk11@gmail.com>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ linux-samsung-soc@vger.kernel.org, linux-omap@vger.kernel.org,
+ Axel Lin <axel.lin@ingics.com>, Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Markus Reichl <m.reichl@fivetechno.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>, markus.laine@fi.rohmeurope.com,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, devicetree@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, mazziesaccount@gmail.com,
+ linux-arm-msm@vger.kernel.org, Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Baolin Wang <baolin.wang@linaro.org>, Sangbeom Kim <sbkim73@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
+ Randy Dunlap <rdunlap@infradead.org>, Sebastian Reichel <sre@kernel.org>,
+ linux-kernel@vger.kernel.org, mikko.mutanen@fi.rohmeurope.com,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ patches@opensource.cirrus.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar-san,
-
-> From: Prabhakar Mahadev Lad, Sent: Friday, April 3, 2020 6:12 PM
-<snip>
-> > > @@ -122,31 +167,56 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
-> > >  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
-> > >  				     phys_addr_t *phys_addr, size_t size)
-> > >  {
-> > > -	int pageno;
-> > >  	void __iomem *virt_addr = NULL;
-> > > -	struct pci_epc_mem *mem = epc->mem;
-> > > -	unsigned int page_shift = ilog2(mem->page_size);
-> > > +	struct pci_epc_mem *mem;
-> > > +	unsigned int page_shift;
-> > > +	int pageno = -EINVAL;
-> > >  	int order;
-> > > +	int i;
-> > >
-> > > -	size = ALIGN(size, mem->page_size);
-> > > -	order = pci_epc_mem_get_order(mem, size);
-> > > -
-> > > -	mutex_lock(&mem->lock);
-> > > -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
-> > > -	if (pageno < 0)
-> > > -		goto ret;
-> > > +	for (i = 0; i < epc->num_windows; i++) {
-> > > +		mem = epc->windows[i];
-> > > +		mutex_lock(&mem->lock);
-> >
-> > This is my feeling though, calling mutex_lock() in the loop seems
-> > to cause overhead. And, if we call mutex_lock() at out-of the loop,
-> > I think we can write single mutex_unlock() calling.
-> >
-> But the mutex is for each window, are you suggesting to add a global mutex ?
-
-Oops, that's right. So, I'd like to recall.
-
-> > > +		size = ALIGN(size, mem->window.page_size);
-> >
-> > I'm sorry I should have realized this in the previous review,
-> > but overwriting this size is possible to cause an issue at second time or more loops.
-> > So, the first argument of ALIGN should be kept for the loop.
-> >
-> Could you please elaborate on this.
-
-My concern is the following.
-
-For example, the size of argument of pci_epc_mem_alloc_addr() is 4096.
-epc->windows[0].window.page_size = 8192
- --> then the size will be changed to 0.
-
-epc->windows[1].window.page_size = 4096
- --> since the size was changed to 0 on the first loop, the result is 0.
-     But, this should be 4096.
-
-Does such a case never happen?
-(Or, is my understanding incorrect?)
-
-Best regards,
-Yoshihiro Shimoda
-
-
-> > > +		order = pci_epc_mem_get_order(mem, size);
-> > >
-> > > -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> > > -	virt_addr = ioremap(*phys_addr, size);
-> > > -	if (!virt_addr)
-> > > -		bitmap_release_region(mem->bitmap, pageno, order);
-> > > +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> > > +						 order);
-> > > +		if (pageno >= 0) {
-> > > +			page_shift = ilog2(mem->window.page_size);
-> > > +			*phys_addr = mem->window.phys_base +
-> > > +				((phys_addr_t)pageno << page_shift);
-> > > +			virt_addr = ioremap(*phys_addr, size);
-> > > +			if (!virt_addr)
-> > > +				bitmap_release_region(mem->bitmap,
-> > > +						      pageno, order);
-> > > +			mutex_unlock(&mem->lock);
-> > > +			return virt_addr;
-> >
-> > As I mentioned above, if mutex_lock() is called at out-of-loop,
-> > we can use "goto ret;" here like the original code,
-> >
-> > > +		}
-> > > +		mutex_unlock(&mem->lock);
-> >
-> > and we can remove this.
-> >
-> > > +	}
-> > >
-> > > -ret:
-> > > -	mutex_unlock(&mem->lock);
-> > >  	return virt_addr;
-> > >  }
-> > >  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
-> > >
-> > > +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
-> > > +						phys_addr_t phys_addr)
-> > > +{
-> > > +	struct pci_epc_mem *mem;
-> > > +	int i;
-> > > +
-> > > +	for (i = 0; i < epc->num_windows; i++) {
-> > > +		mem = epc->windows[i];
-> > > +
-> > > +		if (phys_addr >= mem->window.phys_base &&
-> > > +		    phys_addr < (mem->window.phys_base + mem->window.size))
-> > > +			return mem;
-> > > +	}
-> > > +
-> > > +	return NULL;
-> > > +}
-> > > +
-> > >  /**
-> > >   * pci_epc_mem_free_addr() - free the allocated memory address
-> > >   * @epc: the EPC device on which memory was allocated
-> > > @@ -159,14 +229,23 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
-> > >  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
-> > >  			   void __iomem *virt_addr, size_t size)
-> > >  {
-> > > +	struct pci_epc_mem *mem;
-> > > +	unsigned int page_shift;
-> > > +	size_t page_size;
-> > >  	int pageno;
-> > > -	struct pci_epc_mem *mem = epc->mem;
-> > > -	unsigned int page_shift = ilog2(mem->page_size);
-> > >  	int order;
-> > >
-> > > +	mem = pci_epc_get_matching_window(epc, phys_addr);
-> > > +	if (!mem) {
-> > > +		pr_err("failed to get matching window\n");
-> > > +		return;
-> > > +	}
-> > > +
-> > > +	page_size = mem->window.page_size;
-> > > +	page_shift = ilog2(page_size);
-> > >  	iounmap(virt_addr);
-> > > -	pageno = (phys_addr - mem->phys_base) >> page_shift;
-> > > -	size = ALIGN(size, mem->page_size);
-> > > +	pageno = (phys_addr - mem->window.phys_base) >> page_shift;
-> > > +	size = ALIGN(size, page_size);
-> > >  	order = pci_epc_mem_get_order(mem, size);
-> > >  	mutex_lock(&mem->lock);
-> > >  	bitmap_release_region(mem->bitmap, pageno, order);
-> > > diff --git a/include/linux/pci-epc.h b/include/linux/pci-epc.h
-> > > index e0ed9d01f6e5..d5da11cf0f2a 100644
-> > > --- a/include/linux/pci-epc.h
-> > > +++ b/include/linux/pci-epc.h
-> > > @@ -65,20 +65,28 @@ struct pci_epc_ops {
-> > >  	struct module *owner;
-> > >  };
-> > >
-> > > +/**
-> > > + * struct pci_epc_mem_window - address window of the endpoint controller
-> > > + * @phys_base: physical base address of the PCI address window
-> > > + * @size: the size of the PCI address window
-> > > + * @page_size: size of each page
-> > > + */
-> > > +struct pci_epc_mem_window {
-> > > +	phys_addr_t	phys_base;
-> > > +	size_t		size;
-> > > +	size_t		page_size;
-> > > +};
-> > > +
-> > >  /**
-> > >   * struct pci_epc_mem - address space of the endpoint controller
-> > > - * @phys_base: physical base address of the PCI address space
-> > > - * @size: the size of the PCI address space
-> > > + * @window: address window of the endpoint controller
-> > >   * @bitmap: bitmap to manage the PCI address space
-> > > - * @pages: number of bits representing the address region
-> > > - * @page_size: size of each page
-> > >   * @lock: mutex to protect bitmap
-> > > + * @pages: number of bits representing the address region
-> >
-> > Perhaps, we should not change the "@pages" line.
-> >
-> OK will drop this change.
+On Fri, Apr 03, 2020 at 11:45:47AM +0300, Matti Vaittinen wrote:
+> Many devices have control registers which control some measurable
+> property. Often a register contains control field so that change in
+> this field causes linear change in the controlled property. It is not
+> a rare case that user wants to give 'meaningful' control values and
+> driver needs to convert them to register field values. Even more
+> often user wants to 'see' the currently set value - again in
+> meaningful units - and driver needs to convert the values it reads
+> from register to these meaningful units. Examples of this include:
 > 
-> Cheers,
-> --Prabhakar
+> - regulators, voltage/current configurations
+> - power, voltage/current configurations
+> - clk(?) NCOs
 > 
-> > Best regards,
-> > Yoshihiro Shimoda
+> and maybe others I can't think of right now.
+> 
+> Provide a linear_range helper which can do conversion from user value
+> to register value 'selector'.
+> 
+> The idea here is stolen from regulator framework and patches refactoring
+> the regulator helpers to use this are following.
+> 
+> Current implementation does not support inversely proportional ranges
+> but it might be useful if we could support also inversely proportional
+> ranges?
+> 
+
+FWIW,
+Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+
+> Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> Reviewed-by: Mark Brown <broonie@kernel.org>
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+> 
+> Changes since v7:
+>  - Cleanups suggested by Andy, no functional changes
+> 
+>  include/linux/linear_range.h |  48 +++++++
+>  lib/Kconfig                  |   3 +
+>  lib/Makefile                 |   1 +
+>  lib/linear_ranges.c          | 241 +++++++++++++++++++++++++++++++++++
+>  4 files changed, 293 insertions(+)
+>  create mode 100644 include/linux/linear_range.h
+>  create mode 100644 lib/linear_ranges.c
+> 
+> diff --git a/include/linux/linear_range.h b/include/linux/linear_range.h
+> new file mode 100644
+> index 000000000000..17b5943727d5
+> --- /dev/null
+> +++ b/include/linux/linear_range.h
+> @@ -0,0 +1,48 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/* Copyright (C) 2020 ROHM Semiconductors */
+> +
+> +#ifndef LINEAR_RANGE_H
+> +#define LINEAR_RANGE_H
+> +
+> +#include <linux/types.h>
+> +
+> +/**
+> + * struct linear_range - table of selector - value pairs
+> + *
+> + * Define a lookup-table for range of values. Intended to help when looking
+> + * for a register value matching certaing physical measure (like voltage).
+> + * Usable when increment of one in register always results a constant increment
+> + * of the physical measure (like voltage).
+> + *
+> + * @min:  Lowest value in range
+> + * @min_sel: Lowest selector for range
+> + * @max_sel: Highest selector for range
+> + * @step: Value step size
+> + */
+> +struct linear_range {
+> +	unsigned int min;
+> +	unsigned int min_sel;
+> +	unsigned int max_sel;
+> +	unsigned int step;
+> +};
+> +
+> +unsigned int linear_range_values_in_range(const struct linear_range *r);
+> +unsigned int linear_range_values_in_range_array(const struct linear_range *r,
+> +						int ranges);
+> +unsigned int linear_range_get_max_value(const struct linear_range *r);
+> +
+> +int linear_range_get_value(const struct linear_range *r, unsigned int selector,
+> +			   unsigned int *val);
+> +int linear_range_get_value_array(const struct linear_range *r, int ranges,
+> +				 unsigned int selector, unsigned int *val);
+> +int linear_range_get_selector_low(const struct linear_range *r,
+> +				  unsigned int val, unsigned int *selector,
+> +				  bool *found);
+> +int linear_range_get_selector_high(const struct linear_range *r,
+> +				   unsigned int val, unsigned int *selector,
+> +				   bool *found);
+> +int linear_range_get_selector_low_array(const struct linear_range *r,
+> +					int ranges, unsigned int val,
+> +					unsigned int *selector, bool *found);
+> +
+> +#endif
+> diff --git a/lib/Kconfig b/lib/Kconfig
+> index bc7e56370129..411ab2d2d800 100644
+> --- a/lib/Kconfig
+> +++ b/lib/Kconfig
+> @@ -19,6 +19,9 @@ config RAID6_PQ_BENCHMARK
+>  	  Benchmark all available RAID6 PQ functions on init and choose the
+>  	  fastest one.
+>  
+> +config LINEAR_RANGES
+> +	tristate
+> +
+>  config PACKING
+>  	bool "Generic bitfield packing and unpacking"
+>  	default n
+> diff --git a/lib/Makefile b/lib/Makefile
+> index 611872c06926..18c3d313872e 100644
+> --- a/lib/Makefile
+> +++ b/lib/Makefile
+> @@ -122,6 +122,7 @@ obj-$(CONFIG_DEBUG_LIST) += list_debug.o
+>  obj-$(CONFIG_DEBUG_OBJECTS) += debugobjects.o
+>  
+>  obj-$(CONFIG_BITREVERSE) += bitrev.o
+> +obj-$(CONFIG_LINEAR_RANGES) += linear_ranges.o
+>  obj-$(CONFIG_PACKING)	+= packing.o
+>  obj-$(CONFIG_CRC_CCITT)	+= crc-ccitt.o
+>  obj-$(CONFIG_CRC16)	+= crc16.o
+> diff --git a/lib/linear_ranges.c b/lib/linear_ranges.c
+> new file mode 100644
+> index 000000000000..d1336c75ccd7
+> --- /dev/null
+> +++ b/lib/linear_ranges.c
+> @@ -0,0 +1,241 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * helpers to map values in a linear range to range index
+> + *
+> + * Original idea borrowed from regulator framework
+> + *
+> + * It might be useful if we could support also inversely proportional ranges?
+> + * Copyright 2020 ROHM Semiconductors
+> + */
+> +
+> +#include <linux/errno.h>
+> +#include <linux/export.h>
+> +#include <linux/kernel.h>
+> +#include <linux/linear_range.h>
+> +
+> +/**
+> + * linear_range_values_in_range - return the amount of values in a range
+> + * @r:		pointer to linear range where values are counted
+> + *
+> + * Compute the amount of values in range pointed by @r. Note, values can
+> + * be all equal - range with selectors 0,...,2 with step 0 still contains
+> + * 3 values even though they are all equal.
+> + *
+> + * Return: the amount of values in range pointed by @r
+> + */
+> +unsigned int linear_range_values_in_range(const struct linear_range *r)
+> +{
+> +	if (!r)
+> +		return 0;
+> +	return r->max_sel - r->min_sel + 1;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_values_in_range);
+> +
+> +/**
+> + * linear_range_values_in_range_array - return the amount of values in ranges
+> + * @r:		pointer to array of linear ranges where values are counted
+> + * @ranges:	amount of ranges we include in computation.
+> + *
+> + * Compute the amount of values in ranges pointed by @r. Note, values can
+> + * be all equal - range with selectors 0,...,2 with step 0 still contains
+> + * 3 values even though they are all equal.
+> + *
+> + * Return: the amount of values in first @ranges ranges pointed by @r
+> + */
+> +unsigned int linear_range_values_in_range_array(const struct linear_range *r,
+> +						int ranges)
+> +{
+> +	int i, values_in_range = 0;
+> +
+> +	for (i = 0; i < ranges; i++) {
+> +		int values;
+> +
+> +		values = linear_range_values_in_range(&r[i]);
+> +		if (!values)
+> +			return values;
+> +
+> +		values_in_range += values;
+> +	}
+> +	return values_in_range;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_values_in_range_array);
+> +
+> +/**
+> + * linear_range_get_max_value - return the largest value in a range
+> + * @r:		pointer to linear range where value is looked from
+> + *
+> + * Return: the largest value in the given range
+> + */
+> +unsigned int linear_range_get_max_value(const struct linear_range *r)
+> +{
+> +	return r->min + (r->max_sel - r->min_sel) * r->step;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_max_value);
+> +
+> +/**
+> + * linear_range_get_value - fetch a value from given range
+> + * @r:		pointer to linear range where value is looked from
+> + * @selector:	selector for which the value is searched
+> + * @val:	address where found value is updated
+> + *
+> + * Search given ranges for value which matches given selector.
+> + *
+> + * Return: 0 on success, -EINVAL given selector is not found from any of the
+> + * ranges.
+> + */
+> +int linear_range_get_value(const struct linear_range *r, unsigned int selector,
+> +			   unsigned int *val)
+> +{
+> +	if (r->min_sel > selector || r->max_sel < selector)
+> +		return -EINVAL;
+> +
+> +	*val = r->min + (selector - r->min_sel) * r->step;
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_value);
+> +
+> +/**
+> + * linear_range_get_value_array - fetch a value from array of ranges
+> + * @r:		pointer to array of linear ranges where value is looked from
+> + * @ranges:	amount of ranges in an array
+> + * @selector:	selector for which the value is searched
+> + * @val:	address where found value is updated
+> + *
+> + * Search through an array of ranges for value which matches given selector.
+> + *
+> + * Return: 0 on success, -EINVAL given selector is not found from any of the
+> + * ranges.
+> + */
+> +int linear_range_get_value_array(const struct linear_range *r, int ranges,
+> +				 unsigned int selector, unsigned int *val)
+> +{
+> +	int i;
+> +
+> +	for (i = 0; i < ranges; i++)
+> +		if (r[i].min_sel <= selector && r[i].max_sel >= selector)
+> +			return linear_range_get_value(&r[i], selector, val);
+> +
+> +	return -EINVAL;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_value_array);
+> +
+> +/**
+> + * linear_range_get_selector_low - return linear range selector for value
+> + * @r:		pointer to linear range where selector is looked from
+> + * @val:	value for which the selector is searched
+> + * @selector:	address where found selector value is updated
+> + * @found:	flag to indicate that given value was in the range
+> + *
+> + * Return selector which which range value is closest match for given
+> + * input value. Value is matching if it is equal or smaller than given
+> + * value. If given value is in the range, then @found is set true.
+> + *
+> + * Return: 0 on success, -EINVAL if range is invalid or does not contain
+> + * value smaller or equal to given value
+> + */
+> +int linear_range_get_selector_low(const struct linear_range *r,
+> +				  unsigned int val, unsigned int *selector,
+> +				  bool *found)
+> +{
+> +	*found = false;
+> +
+> +	if (r->min > val)
+> +		return -EINVAL;
+> +
+> +	if (linear_range_get_max_value(r) < val) {
+> +		*selector = r->max_sel;
+> +		return 0;
+> +	}
+> +
+> +	*found = true;
+> +
+> +	if (r->step == 0)
+> +		*selector = r->min_sel;
+> +	else
+> +		*selector = (val - r->min) / r->step + r->min_sel;
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_selector_low);
+> +
+> +/**
+> + * linear_range_get_selector_low_array - return linear range selector for value
+> + * @r:		pointer to array of linear ranges where selector is looked from
+> + * @ranges:	amount of ranges to scan from array
+> + * @val:	value for which the selector is searched
+> + * @selector:	address where found selector value is updated
+> + * @found:	flag to indicate that given value was in the range
+> + *
+> + * Scan array of ranges for selector which which range value matches given
+> + * input value. Value is matching if it is equal or smaller than given
+> + * value. If given value is found to be in a range scanning is stopped and
+> + * @found is set true. If a range with values smaller than given value is found
+> + * but the range max is being smaller than given value, then the ranges
+> + * biggest selector is updated to @selector but scanning ranges is continued
+> + * and @found is set to false.
+> + *
+> + * Return: 0 on success, -EINVAL if range array is invalid or does not contain
+> + * range with a value smaller or equal to given value
+> + */
+> +int linear_range_get_selector_low_array(const struct linear_range *r,
+> +					int ranges, unsigned int val,
+> +					unsigned int *selector, bool *found)
+> +{
+> +	int i;
+> +	int ret = -EINVAL;
+> +
+> +	for (i = 0; i < ranges; i++) {
+> +		int tmpret;
+> +
+> +		tmpret = linear_range_get_selector_low(&r[i], val, selector,
+> +						       found);
+> +		if (!tmpret)
+> +			ret = 0;
+> +
+> +		if (*found)
+> +			break;
+> +	}
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_selector_low_array);
+> +
+> +/**
+> + * linear_range_get_selector_high - return linear range selector for value
+> + * @r:		pointer to linear range where selector is looked from
+> + * @val:	value for which the selector is searched
+> + * @selector:	address where found selector value is updated
+> + * @found:	flag to indicate that given value was in the range
+> + *
+> + * Return selector which which range value is closest match for given
+> + * input value. Value is matching if it is equal or higher than given
+> + * value. If given value is in the range, then @found is set true.
+> + *
+> + * Return: 0 on success, -EINVAL if range is invalid or does not contain
+> + * value greater or equal to given value
+> + */
+> +int linear_range_get_selector_high(const struct linear_range *r,
+> +				   unsigned int val, unsigned int *selector,
+> +				   bool *found)
+> +{
+> +	*found = false;
+> +
+> +	if (linear_range_get_max_value(r) < val)
+> +		return -EINVAL;
+> +
+> +	if (r->min > val) {
+> +		*selector = r->min_sel;
+> +		return 0;
+> +	}
+> +
+> +	*found = true;
+> +
+> +	if (r->step == 0)
+> +		*selector = r->max_sel;
+> +	else
+> +		*selector = DIV_ROUND_UP(val - r->min, r->step) + r->min_sel;
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(linear_range_get_selector_high);
+> -- 
+> 2.21.0
+> 
+> 
+> -- 
+> Matti Vaittinen, Linux device drivers
+> ROHM Semiconductors, Finland SWDC
+> Kiviharjunlenkki 1E
+> 90220 OULU
+> FINLAND
+> 
+> ~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
+> Simon says - in Latin please.
+> ~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
+> Thanks to Simon Glass for the translation =] 
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
