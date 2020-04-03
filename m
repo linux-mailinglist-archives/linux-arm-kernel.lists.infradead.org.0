@@ -2,87 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2679419D664
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 14:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 489CE19D6A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 14:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B9RA+bSJ6qeu7BwwvpyUA+8oAuLSwiduG0ihLGTFM6E=; b=PPWrGNs8FWx4VZ
-	q1aV88Y1wKeR3/2fXrQXA1BNnBz0I+Yax30AhGPaB5dWC2NiW/R1H5HF5zSog/vCAz6aFuP/k+IGY
-	qFscW2s1i/UtJJ985O+gj7ZvO3mUrPdkydg0LwhsQEij2yi8No4v/OSQZwd43c99HzZA1+K6GIeNl
-	0msJdj1sQWbIL+qyTkrSxQ4Nmkp8rTRRjl3tNND2KdlTm9/nbJoqb+JQz2spGhJOmK5DBXNv8gqI2
-	M9VQ8bdu44gcxP2fJi1cMkNc2rmC6oVSQui5GfHNonYkTJ/mD5+9tn2MG3UCK6YrgEyEYJSjaj/bX
-	Yx41g72NP3m0JvXWBqSQ==;
+	List-Owner; bh=/uvNL3q/gYWhnyPk/rf1nDDhzm4rWWtUSJO/Bzi2aHs=; b=DHCyHz3Zts7AyU
+	AvovuILc6CN8eHTdElhhQUVtHwldQn0Jwgw173NzscwIwm8KypapOyRfjDi2lepCkSm1A5LLMWlr3
+	wfThhU1VAIFRzayguKDm64Ppo1MZfU0G9T7UhMuoPocl28aIfn3cHCbWhv4f672ZRfOk255jvfwrP
+	lw7A1erRWW1Gsb3hqn8WYMEiO754W073PoSkw/gs9ziZ9zNUpOFhWmwdknLVcJx8jty7TWWIjbhld
+	76hdiNI4KpaZ6hKCWBEabzBJxhzchTKW0q7+uwr6ZJKnlQK59FHUclKx4FhW3BAG4hq+O6fYr3iTw
+	qRc4zkgA6PRdNQpfdSqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKL7s-0006Je-Uo; Fri, 03 Apr 2020 12:08:44 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1jKLMv-0006xO-1Z; Fri, 03 Apr 2020 12:24:17 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKL7m-0006J7-Sz
- for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 12:08:40 +0000
-Received: by mail-ed1-f66.google.com with SMTP id v1so8966441edq.8
+ id 1jKLMp-0006wl-1v
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 Apr 2020 12:24:12 +0000
+Received: by mail-ua1-x942.google.com with SMTP id r47so2610861uad.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 Apr 2020 05:08:38 -0700 (PDT)
+ Fri, 03 Apr 2020 05:24:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qvyI6Sc61lD8J/TKKLvSHBnJpLEYrXxRzZK/pmr8tcg=;
+ b=XsPDzoTQ41hY6HEPrchkLgIyTyUZXd/7hYRk7hgYvAQyaCqqW4xvUi9ngh25hdOXoa
+ yMhq7WafBQ0A/1ilm6nWz/kuM2yWawQ0gYIElHm8mgFSRx28aAGOOwj68xw/NpCRYwuh
+ C2nWwWuGuwH47OMW7dHh2/NH59AbGExXVtK6+90BJdmf2L2esTgbo9pHe4i4cZF4rxiz
+ fa9ejul7C23G7guipBlYt4Q7u872Vm0pgFUSHL9Z6KLTAfV3coPxeIblL3Yqk3miScsk
+ jKF8SDgAbn9TMC+nwoi7bB4bTPpa63u9nsPQ1/+BDroRI4Fms+im2b1nC4z3mMu9UKUT
+ Qd8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xTb1rr50ADmCz5IrPDEklCKRPMu9csBSo16UOelGpMs=;
- b=KvB/Ew/D5rM0BcaAO7dWgAM2XkIRt1Ra2QJ1b7DJIXC9AOTQ8gGsuWtYRDTn1JLwhP
- BuHBPf3NvJVmwQy9REdV6XBtNM0tEqkJFn9YyibqX2E8dJDp6NuJ4LcgqMLnHUqoRi1P
- NE3+smraozbXellsVUDbMK+K/M01Mx4ySbnf5B429P3kOz8lBSpYlAqBIQ+GHhVGqu6A
- FGQzq4NkGPptS4dZ/fpBNi1YTjm5UTE7g16G1oGbNzA2pNUt6CXvLfBBspQaFNxYn3Fh
- ObGvdnlsEnd7FC9ZygrAFajJYukXjlJzxwCZX4nEAwibc52Q+bviOJFj9niSx//8Stw9
- KCQQ==
-X-Gm-Message-State: AGi0PuY7YqXEQVYA/vK191EnljIc8UFNSFO11ACgIEiXgP3+ml16mrU6
- UxSIMZC72NAXi/m8xd/xq5k=
-X-Google-Smtp-Source: APiQypKSaTXk0j+WTDpvn86z+TkgbukqvVq3ZioNTe2LrhUK9WK3TUoVpoM4Oj6vjSB7L0KfO/P70w==
-X-Received: by 2002:a17:906:5e52:: with SMTP id
- b18mr8324983eju.160.1585915717334; 
- Fri, 03 Apr 2020 05:08:37 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id y3sm1608850ejo.27.2020.04.03.05.08.32
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 Apr 2020 05:08:36 -0700 (PDT)
-Date: Fri, 3 Apr 2020 14:08:28 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Greg KH <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH v4] tty: samsung_tty: 32-bit access for TX/RX hold
- registers
-Message-ID: <20200403120828.GA30617@kozik-lap>
-References: <20200401082721.19431-1-hyunki00.koo@samsung.com>
- <CGME20200403111520epcas2p42ef81138693ffaaa281499c7a24e0e48@epcas2p4.samsung.com>
- <20200403111511.10598-1-hyunki00.koo@samsung.com>
- <20200403114237.GA3797881@kroah.com>
- <20200403115313.GA29484@kozik-lap>
- <20200403115715.GA3846995@kroah.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qvyI6Sc61lD8J/TKKLvSHBnJpLEYrXxRzZK/pmr8tcg=;
+ b=iLCMmTkwlTVWgetl3zlIegVpJtV60I2PUGUEkEjK26oo7RKF437peKN5sKFA2hzOVC
+ cXjJdJTCkRSwVNIfzIy98p09cR2hH4V4uGrPZ+xby7ROEhetM0KVY48p/CrfLQlLCLOE
+ DS8lovS4cTaQWlx5dLEiVh2rcaiblH0QcSdt0SLC5/9YSh+PqsIuo1FEh/vgNfd68wvt
+ P2yRfrzgJ6majJUqgOWZ7+WeUDFlLLiAvS3KGtnIYLvPlEVJouhXx7JKovYyyLfkdaeR
+ tnI3VQTU6b5fTSJ34IGKnMJ/3vdZu4FBetgww57eP3qAlh66y4PYQqjoDqTPgFF84HTp
+ HfwA==
+X-Gm-Message-State: AGi0Pub+IUShZ7R7R6QEykawbz0YcYbxU116Ex0FTnKoo/YmUotSs4Vj
+ J9GrxH8U3FM1VtpzQ9HG3fhiVMAXXrihekq1fDG+/A==
+X-Google-Smtp-Source: APiQypI1u6fH2mX4s1RMnAvdrTdNNnWXLCWcnocYGW43VybN65NwGB9/DkXtVrPHM3u37UwkTy8EsjAY0aRPDloK43M=
+X-Received: by 2002:ab0:911:: with SMTP id w17mr6133575uag.60.1585916649174;
+ Fri, 03 Apr 2020 05:24:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200403115715.GA3846995@kroah.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1585915404-7658-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1585915404-7658-1-git-send-email-Anson.Huang@nxp.com>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Fri, 3 Apr 2020 17:53:58 +0530
+Message-ID: <CAHLCerOpgoL3_F6mg3i2d3Mnb81-4Y=+fkc_81+aWr3ut3GVEg@mail.gmail.com>
+Subject: Re: [PATCH V4] arm64: dts: imx8mp: Add thermal zones support
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_050838_936687_730CD454 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200403_052411_097371_2F5DE42F 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,31 +87,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Kukjin Kim <kgene@kernel.org>, Hyunki Koo <hyunki00.koo@samsung.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Horia Geanta <horia.geanta@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, LKML <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <Linux-imx@nxp.com>,
+ kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ lakml <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 03, 2020 at 01:57:15PM +0200, Greg KH wrote:
-> > > If the property is not there, the type will be uninitialized and no
-> > > warning will be spit out, are you sure you want to do that?
-> > 
-> > The default value from initial ourport will be used, which is UPIO_MEM.
-> > This way it is backward compatible.
-> 
-> Where is iotype set to UPIO_MEM as a default?
+On Fri, Apr 3, 2020 at 5:41 PM Anson Huang <Anson.Huang@nxp.com> wrote:
+>
+> i.MX8MP has a TMU inside which supports two thermal zones, add support
+> for them.
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Here:
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/tty/serial/samsung_tty.c?h=v5.6#n1626
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/tty/serial/samsung_tty.c?h=v5.6#n1989
 
-Best regards,
-Krzysztof
+Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
 
+> ---
+> Changes since V3:
+>         - Drop some '0x' prefix;
+>         - Add cpufreq cooling for soc thermal zone as well to fit the passive trip point.
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mp.dtsi | 74 +++++++++++++++++++++++++++++++
+>  1 file changed, 74 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+> index 9b1616e..77aff14 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+> @@ -7,6 +7,7 @@
+>  #include <dt-bindings/gpio/gpio.h>
+>  #include <dt-bindings/input/input.h>
+>  #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/thermal/thermal.h>
+>
+>  #include "imx8mp-pinfunc.h"
+>
+> @@ -43,6 +44,7 @@
+>                         clocks = <&clk IMX8MP_CLK_ARM>;
+>                         enable-method = "psci";
+>                         next-level-cache = <&A53_L2>;
+> +                       #cooling-cells = <2>;
+>                 };
+>
+>                 A53_1: cpu@1 {
+> @@ -53,6 +55,7 @@
+>                         clocks = <&clk IMX8MP_CLK_ARM>;
+>                         enable-method = "psci";
+>                         next-level-cache = <&A53_L2>;
+> +                       #cooling-cells = <2>;
+>                 };
+>
+>                 A53_2: cpu@2 {
+> @@ -63,6 +66,7 @@
+>                         clocks = <&clk IMX8MP_CLK_ARM>;
+>                         enable-method = "psci";
+>                         next-level-cache = <&A53_L2>;
+> +                       #cooling-cells = <2>;
+>                 };
+>
+>                 A53_3: cpu@3 {
+> @@ -73,6 +77,7 @@
+>                         clocks = <&clk IMX8MP_CLK_ARM>;
+>                         enable-method = "psci";
+>                         next-level-cache = <&A53_L2>;
+> +                       #cooling-cells = <2>;
+>                 };
+>
+>                 A53_L2: l2-cache0 {
+> @@ -127,6 +132,68 @@
+>                 method = "smc";
+>         };
+>
+> +       thermal-zones {
+> +               cpu-thermal {
+> +                       polling-delay-passive = <250>;
+> +                       polling-delay = <2000>;
+> +                       thermal-sensors = <&tmu 0>;
+> +                       trips {
+> +                               cpu_alert0: trip0 {
+> +                                       temperature = <85000>;
+> +                                       hysteresis = <2000>;
+> +                                       type = "passive";
+> +                               };
+> +
+> +                               cpu_crit0: trip1 {
+> +                                       temperature = <95000>;
+> +                                       hysteresis = <2000>;
+> +                                       type = "critical";
+> +                               };
+> +                       };
+> +
+> +                       cooling-maps {
+> +                               map0 {
+> +                                       trip = <&cpu_alert0>;
+> +                                       cooling-device =
+> +                                               <&A53_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+> +                               };
+> +                       };
+> +               };
+> +
+> +               soc-thermal {
+> +                       polling-delay-passive = <250>;
+> +                       polling-delay = <2000>;
+> +                       thermal-sensors = <&tmu 1>;
+> +                       trips {
+> +                               soc_alert0: trip0 {
+> +                                       temperature = <85000>;
+> +                                       hysteresis = <2000>;
+> +                                       type = "passive";
+> +                               };
+> +
+> +                               soc_crit0: trip1 {
+> +                                       temperature = <95000>;
+> +                                       hysteresis = <2000>;
+> +                                       type = "critical";
+> +                               };
+> +                       };
+> +
+> +                       cooling-maps {
+> +                               map0 {
+> +                                       trip = <&soc_alert0>;
+> +                                       cooling-device =
+> +                                               <&A53_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+> +                                               <&A53_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+> +                               };
+> +                       };
+> +               };
+> +       };
+> +
+>         timer {
+>                 compatible = "arm,armv8-timer";
+>                 interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
+> @@ -215,6 +282,13 @@
+>                                 gpio-ranges = <&iomuxc 0 114 30>;
+>                         };
+>
+> +                       tmu: tmu@30260000 {
+> +                               compatible = "fsl,imx8mp-tmu";
+> +                               reg = <0x30260000 0x10000>;
+> +                               clocks = <&clk IMX8MP_CLK_TSENSOR_ROOT>;
+> +                               #thermal-sensor-cells = <1>;
+> +                       };
+> +
+>                         wdog1: watchdog@30280000 {
+>                                 compatible = "fsl,imx8mp-wdt", "fsl,imx21-wdt";
+>                                 reg = <0x30280000 0x10000>;
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
