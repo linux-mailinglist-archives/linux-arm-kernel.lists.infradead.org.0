@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1F3519D60D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:50:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30CDF19D613
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 Apr 2020 13:51:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0TcCIbpewSNXgIRUUq4FZ4VbL/8f4giHyLD5iwR5uXI=; b=mWGwCAnr7gSZ+G
-	FbZvmpXZHtGa4Q+TRJbDZbm8rrAKU4InFPThWIuhsVleMLJUkExiAVGBl/updRwaUYOwFveu90wqG
-	Md+/6vF+x2c8B2XJl8n4NRVQ1/YutC1LI03EYKgkfqelhTeH/YQAQC1tmcDyHNpb4imVMdDbfPVpI
-	+XxqhUQ3h1cqHUKq5Ca8M+oLT3rHO4SLnYBl+j2v4VHa0KsYCvGiCIhoTHh/RU3MUViPkz4m+2yg7
-	aW9CwL/Ejpslpn1jP5Q8XozfYrsI4ZAWIMIwt1Dq8EH0V5JpmC9BKADZjC6EFD3jev8ehl4mKhJB4
-	H8hTpI2Ds8ObTOWIMO8w==;
+	List-Owner; bh=6NHw58QdJvmXSAJMSofNpaVgmu6GheVU5Urfl1Ds2bM=; b=FtF0IdJIW8ViDs
+	j12kUG6c5g4IceV4mz+ZwfV4qoFQaF9W9JYI/e2lF7AeTSCrdjMz5ykSu5Gon9Z4v6tuh9CuMpKw/
+	UGzRSCxmSc7zeFXmo9KhE5MhJ1hiTZexNHLmQjK02/8iXEWB6EuOONsL0O6RFL/sh/auYZA60Ebxm
+	591ESEQdCqQo7nxmhNiOUQyDqh5AHWUuhPJ9glZx1yfg3jrVs5v7eEldqgeIHID7VyJTyShpABV2p
+	GgAjAqc1SzQRX+Qx2pE5afya3CcSLcG8/k+RBUPDRoh7nf8XEudDU3RVkeYNM/TvY28pP5Ziw3ggY
+	kAycb2/UdkeOYfTi4H7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKKqI-0004aN-NI; Fri, 03 Apr 2020 11:50:34 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jKKrB-00053g-IB; Fri, 03 Apr 2020 11:51:29 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKKqA-0004Z5-RJ; Fri, 03 Apr 2020 11:50:28 +0000
-IronPort-SDR: 8PD3NoibRLWeA+vP2o/YFy4nYayiGxXaIPSB6AbFw38VZwCxJVRgv/O+pw6xCQzZ5wu3ll4Muf
- KB/+iGeMtaPw==
+ id 1jKKr3-00052P-HK; Fri, 03 Apr 2020 11:51:22 +0000
+IronPort-SDR: 8wz3hEErgBObpGWyXsqvSkZOChl88728Qbj+J9S9XTKznLHymadlSdNfqs/on/fkn/iMq3nEHF
+ JoADuhWIoLgA==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 03 Apr 2020 04:50:24 -0700
-IronPort-SDR: AJrYqR1DIxlh7ttJSHBKS3dnWZVMhuNVUURxvAfZkMQKKhUnLqF1WKjm8eZLVPAlPQBWG6anqj
- v4nRpxUKxgxA==
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 Apr 2020 04:51:18 -0700
+IronPort-SDR: TWrbSbCFDjIQwYAdP91BTNgBx/UU4Q79gmoYhmJ4QZRpOiv5dueLdZ7ioHSWnn57wMs5F925U7
+ rnoxQbgpkGnA==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,339,1580803200"; d="scan'208";a="273922409"
+X-IronPort-AV: E=Sophos;i="5.72,339,1580803200"; d="scan'208";a="329143239"
 Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga004.fm.intel.com with ESMTP; 03 Apr 2020 04:50:15 -0700
+ by orsmga001.jf.intel.com with ESMTP; 03 Apr 2020 04:51:07 -0700
 Received: from andy by smile with local (Exim 4.93)
  (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jKKq0-00FQB4-Ei; Fri, 03 Apr 2020 14:50:16 +0300
-Date: Fri, 3 Apr 2020 14:50:16 +0300
+ id 1jKKqp-00FQBf-N3; Fri, 03 Apr 2020 14:51:07 +0300
+Date: Fri, 3 Apr 2020 14:51:07 +0300
 From: "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>
 To: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
 Subject: Re: [PATCH v8 00/10] Support ROHM BD99954 charger IC
-Message-ID: <20200403115016.GW1922688@smile.fi.intel.com>
+Message-ID: <20200403115107.GX1922688@smile.fi.intel.com>
 References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
  <50797a6ac6cda4647f9a396dab0ad08017e3138b.camel@fi.rohmeurope.com>
  <20200403110210.GO1922688@smile.fi.intel.com>
  <8007dadb0b3a13934f2a950204506a156cb2e65e.camel@fi.rohmeurope.com>
+ <20200403115016.GW1922688@smile.fi.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8007dadb0b3a13934f2a950204506a156cb2e65e.camel@fi.rohmeurope.com>
+In-Reply-To: <20200403115016.GW1922688@smile.fi.intel.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_045026_896987_D5E1737F 
-X-CRM114-Status: GOOD (  15.60  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200403_045121_624744_2230011E 
+X-CRM114-Status: GOOD (  18.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -123,36 +124,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 03, 2020 at 11:13:54AM +0000, Vaittinen, Matti wrote:
-> On Fri, 2020-04-03 at 14:02 +0300, andriy.shevchenko@linux.intel.com
-> wrote:
-> > On Fri, Apr 03, 2020 at 10:07:41AM +0000, Vaittinen, Matti wrote:
-> > > On Fri, 2020-04-03 at 11:36 +0300, Matti Vaittinen wrote:
-
-...
-
-> > From my point of view, you need to wait till rc1 is out and rebase
-> > the series.
+On Fri, Apr 03, 2020 at 02:50:16PM +0300, andriy.shevchenko@linux.intel.com wrote:
+> On Fri, Apr 03, 2020 at 11:13:54AM +0000, Vaittinen, Matti wrote:
+> > On Fri, 2020-04-03 at 14:02 +0300, andriy.shevchenko@linux.intel.com
+> > wrote:
+> > > On Fri, Apr 03, 2020 at 10:07:41AM +0000, Vaittinen, Matti wrote:
+> > > > On Fri, 2020-04-03 at 11:36 +0300, Matti Vaittinen wrote:
 > 
-> Does this mean that there is no new regulator drivers expected to be
-> added after rc1 is out? If this is the case, the rebasing this series
-> on top of rc1 should work as then I get all new drivers (for a release)
-> converted. This is of course fine by me - but again we will risk of
-> breaking regulators if the series slips to next release. Thus I thought
-> that perhaps we should try getting the regulators stuff in Marks tree
-> so that further reguator drivers wouldn't be broken.
+> ...
+> 
+> > > From my point of view, you need to wait till rc1 is out and rebase
+> > > the series.
+> > 
+> > Does this mean that there is no new regulator drivers expected to be
+> > added after rc1 is out? If this is the case, the rebasing this series
+> > on top of rc1 should work as then I get all new drivers (for a release)
+> > converted. This is of course fine by me - but again we will risk of
+> > breaking regulators if the series slips to next release. Thus I thought
+> > that perhaps we should try getting the regulators stuff in Marks tree
+> > so that further reguator drivers wouldn't be broken.
+> 
+> We already almost in the middle of merge window. With such a change I believe
+> there is no room for testing it, so, it will be quite unlikely it makes v5.7
+> release.
+> 
+> That is, you have approximately 6 more weeks to polish this code.
 
-We already almost in the middle of merge window. With such a change I believe
-there is no room for testing it, so, it will be quite unlikely it makes v5.7
-release.
+(If you need so, of course)
 
-That is, you have approximately 6 more weeks to polish this code.
-
-> But as I said, my intention is not to claim I know how to do this. On
-> the contrary - I have _never_ participated in maintaining a tree that
-> will be merged by others. So, please just let me know what you see the
-> best. I can do splitting the series or rebasing to regulator tree or
-> rebase to rc1 when it is out if required :)
+> > But as I said, my intention is not to claim I know how to do this. On
+> > the contrary - I have _never_ participated in maintaining a tree that
+> > will be merged by others. So, please just let me know what you see the
+> > best. I can do splitting the series or rebasing to regulator tree or
+> > rebase to rc1 when it is out if required :)
 
 -- 
 With Best Regards,
