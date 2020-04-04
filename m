@@ -2,54 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49D3D19E573
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 16:16:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3A8319E580
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 16:20:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHbLcBuGpFfERkyDEuGQAV1z8HPJDL6enPttaylXrEo=; b=Rf6IYrqB7Xmpzl
-	ywoVS9Fjv/qNb/XGyRF7Ngt/SYq0oSE7j/92vcqutaChzbar9hWtm77XCL7l+MIZUneUz6dwfoAl4
-	wQ7tlVxloBWjIf0XbnyHGxyb0yVSoM6zZM2pkbqLVrhufv9a1lFYbRoVwaebAEzB4ZdhDTgSVG26n
-	lV/MZkoFCwGr92ZL+6nWyV2kH9mFhS7MjZ2Dh9Ofgf22x88lEeq5MJobJ0kuJ5j+eW+uedigBHjIV
-	YcsEOuDXspX43l6LC89jXiDcYhzoZT+kGtDSjlDmbp+fviBDVgoQ3r7CXvw5+qP5riDPUDz+5ILVn
-	7T1Jn6uuMoJ6mAAEQPfw==;
+	List-Owner; bh=6UsA1FwWvknQbyKW9uRhSimYl+LVZoSu+ssis0nvv9Q=; b=rjdXRAHjys54Vd
+	oMfVEpGWH2oJ7dIK8QTIyYDRgrzKIP4ApAE2jbcksRih2b+LRaz3Eh0HWO8gQkuAq5CJ4OfJdO60H
+	KaiR6dNAsk2g2pQoxpc1Yqhg9NLr5pznxSYgFmljqq2WXOT4RVNu/8qt8cLhXRDxl2xKS/ycBkn+v
+	bmvPLJHhuAfHa+GrkkZLofNkszjX1mbTnkjBQtVAJuRARZd6sfZ7woz++y+/j2KR/K1286Zx0gE3g
+	EDgskUc464iB7auAG95DdmS8Xx4AkDd0PR29lX6SayCTUMoN2JRmtxti0bc/LbbvBuU32G9ZczNhB
+	p6M7tJ7aTfysNhgvDiJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKjbE-0000Im-Gc; Sat, 04 Apr 2020 14:16:40 +0000
+	id 1jKjeN-0000qP-Rk; Sat, 04 Apr 2020 14:19:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKjb8-0000IQ-Ox
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Apr 2020 14:16:35 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jKjeH-0000pj-1X; Sat, 04 Apr 2020 14:19:50 +0000
+Received: from mail-ed1-f51.google.com (mail-ed1-f51.google.com
+ [209.85.208.51])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C91A0206C3;
- Sat,  4 Apr 2020 14:16:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 735C12074B;
+ Sat,  4 Apr 2020 14:19:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586009794;
- bh=jYh8ojEfBjWhcionJm7bLgdtcMaLtTKw3IPbO1FXFv4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=RqPr8qa75t3W6KS03U5hHpDlF4XP2X6lqAjJCAFU6vIZPD1LrQ++H9BcAGdjGxrPr
- DUkJVaLa15/fM9zucspy/AP1uQhw2WVq2t6qELZKy1M8Dge7qhAnEHiD845ewQntin
- poTmrHUrLuGuNa17buSgeJ0Jyk7IBoylskKvq704=
-Date: Sat, 4 Apr 2020 15:16:28 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: iio: dac: stm32-dac: convert bindings
- to json-schema
-Message-ID: <20200404151628.52576e43@archlinux>
-In-Reply-To: <20200330232040.GA16570@bogus>
-References: <1584639983-31098-1-git-send-email-fabrice.gasnier@st.com>
- <20200330232040.GA16570@bogus>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1586009988;
+ bh=1Sf4GRcpkzurYk5nWdRpUBTbjpEdNqlUaBNpb/X5+dQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=O8huTio9z+O50iibPA2HHY/QtrPqbwyWz1RKwJtA5+S2VErMFssNXpKRJJrdADcRm
+ 5+JvXRVC3t+WJybfvGrQgbbxeU2nflDlQvLq1tSR5YRFjjRTrEThBNrw9Btl8FNtVn
+ tenQzu87ozx1AV6wDwtA8GZrfHCHMpzQkS2m2zjw=
+Received: by mail-ed1-f51.google.com with SMTP id de14so12893727edb.4;
+ Sat, 04 Apr 2020 07:19:48 -0700 (PDT)
+X-Gm-Message-State: AGi0Pua9SWP9GtDFJXbF8n1+rZKM82xYdYgZxkCVnNI+3joTzcbfe+Ew
+ TMQIZaKVdGx32CAw9JSmzeA80Gv8SJCF4yn8Gw==
+X-Google-Smtp-Source: APiQypJUjRQr94z4xLuZ/juKRJi8yfwdfJgOA8X/UsmoNla4rM3c6EhUj/R+uzBope3z7L6dpYbRs0E13kmcBGuQwrQ=
+X-Received: by 2002:a05:6402:335:: with SMTP id
+ q21mr2832765edw.47.1586009986874; 
+ Sat, 04 Apr 2020 07:19:46 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200331082725.81048-1-jitao.shi@mediatek.com>
+ <20200331082725.81048-3-jitao.shi@mediatek.com>
+In-Reply-To: <20200331082725.81048-3-jitao.shi@mediatek.com>
+From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Sat, 4 Apr 2020 22:19:34 +0800
+X-Gmail-Original-Message-ID: <CAAOTY_-7xKF2tVioSU+qDU0qFs3CbUJFypB7RLakXR=PdvubFg@mail.gmail.com>
+Message-ID: <CAAOTY_-7xKF2tVioSU+qDU0qFs3CbUJFypB7RLakXR=PdvubFg@mail.gmail.com>
+Subject: Re: [PATCH v4 2/4] dt-bindings: display: mediatek: get mipitx
+ calibration data from nvmem
+To: Jitao Shi <jitao.shi@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_071634_828929_6C1ED53E 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20200404_071949_126752_6E9F9B2E 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,46 +85,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- mcoquelin.stm32@gmail.com, knaack.h@gmx.de,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
+ huijuan.xie@mediatek.com, stonea168@163.com, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>, cawa.cheng@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Mar 2020 17:20:40 -0600
-Rob Herring <robh@kernel.org> wrote:
-
-> On Thu, 19 Mar 2020 18:46:23 +0100, Fabrice Gasnier wrote:
-> > Convert the STM32 DAC binding to DT schema format using json-schema
-> > 
-> > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-> > ---
-> > Changes in v2:
-> > - Fix id relative path/filename as detected by Rob's bot
-> > ---
-> >  .../devicetree/bindings/iio/dac/st,stm32-dac.txt   |  63 ------------
-> >  .../devicetree/bindings/iio/dac/st,stm32-dac.yaml  | 110 +++++++++++++++++++++
-> >  2 files changed, 110 insertions(+), 63 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/iio/dac/st,stm32-dac.txt
-> >  create mode 100644 Documentation/devicetree/bindings/iio/dac/st,stm32-dac.yaml
-> >   
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
-Applied to the togreg branch of iio.git and pushed out as testing for the
-autobuilders to poke at it.
-
-Thanks,
-
-Jonathan
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIEppdGFvOgoKSml0YW8gU2hpIDxqaXRhby5zaGlAbWVkaWF0ZWsuY29tPiDmlrwgMjAyMOW5
+tDPmnIgzMeaXpSDpgLHkuowg5LiL5Y2INDoyOOWvq+mBk++8mgo+Cj4gQWRkIHByb3BlcnRpZXMg
+dG8gZ2V0IGdldCBtaXBpdHggY2FsaWJyYXRpb24gZGF0YS4KClJldmlld2VkLWJ5OiBDaHVuLUt1
+YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4KCj4KPiBSZXZpZXdlZC1ieTogUm9iIEhl
+cnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KPiBTaWduZWQtb2ZmLWJ5OiBKaXRhbyBTaGkgPGppdGFv
+LnNoaUBtZWRpYXRlay5jb20+Cj4gLS0tCj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3Bs
+YXkvbWVkaWF0ZWsvbWVkaWF0ZWssZHNpLnR4dCAgICB8IDUgKysrKysKPiAgMSBmaWxlIGNoYW5n
+ZWQsIDUgaW5zZXJ0aW9ucygrKQo+Cj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9kaXNwbGF5L21lZGlhdGVrL21lZGlhdGVrLGRzaS50eHQgYi9Eb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9tZWRpYXRlay9tZWRpYXRlayxkc2ku
+dHh0Cj4gaW5kZXggZDc4YjZkNmQ4ZmFiLi44ZTQ3MjlkZThjODUgMTAwNjQ0Cj4gLS0tIGEvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvbWVkaWF0ZWsvbWVkaWF0ZWss
+ZHNpLnR4dAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5
+L21lZGlhdGVrL21lZGlhdGVrLGRzaS50eHQKPiBAQCAtMzYsNiArMzYsOSBAQCBSZXF1aXJlZCBw
+cm9wZXJ0aWVzOgo+ICBPcHRpb25hbCBwcm9wZXJ0aWVzOgo+ICAtIGRyaXZlLXN0cmVuZ3RoLW1p
+Y3JvYW1wOiBhZGp1c3QgZHJpdmluZyBjdXJyZW50LCBzaG91bGQgYmUgMzAwMCB+IDYwMDAuIEFu
+ZAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRo
+ZSBzdGVwIGlzIDIwMC4KPiArLSBudm1lbS1jZWxsczogQSBwaGFuZGxlIHRvIHRoZSBjYWxpYnJh
+dGlvbiBkYXRhIHByb3ZpZGVkIGJ5IGEgbnZtZW0gZGV2aWNlLiBJZgo+ICsgICAgICAgICAgICAg
+ICB1bnNwZWNpZmllZCBkZWZhdWx0IHZhbHVlcyBzaGFsbCBiZSB1c2VkLgo+ICstIG52bWVtLWNl
+bGwtbmFtZXM6IFNob3VsZCBiZSAiY2FsaWJyYXRpb24tZGF0YSIKPgo+ICBFeGFtcGxlOgo+Cj4g
+QEAgLTQ3LDYgKzUwLDggQEAgbWlwaV90eDA6IG1pcGktZHBoeUAxMDIxNTAwMCB7Cj4gICAgICAg
+ICAjY2xvY2stY2VsbHMgPSA8MD47Cj4gICAgICAgICAjcGh5LWNlbGxzID0gPDA+Owo+ICAgICAg
+ICAgZHJpdmUtc3RyZW5ndGgtbWljcm9hbXAgPSA8NDYwMD47Cj4gKyAgICAgICBudm1lbS1jZWxs
+cz0gPCZtaXBpX3R4X2NhbGlicmF0aW9uPjsKPiArICAgICAgIG52bWVtLWNlbGwtbmFtZXMgPSAi
+Y2FsaWJyYXRpb24tZGF0YSI7Cj4gIH07Cj4KPiAgZHNpMDogZHNpQDE0MDFiMDAwIHsKPiAtLQo+
+IDIuMjEuMAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cj4gZHJpLWRldmVsIG1haWxpbmcgbGlzdAo+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5v
+cmcKPiBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2RyaS1k
+ZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
