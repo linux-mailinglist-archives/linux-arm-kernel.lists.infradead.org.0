@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56D6319E409
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 11:20:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0EBE19E40D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 11:22:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nJez+uGbsgUiIpixpO8PbkMVrXxpeBKwEHd9rsM+TcY=; b=a97vPrtpnvWJR8
-	UIWXHsBNDD2Rfsqfwc27ktLLbS4WDPpGJonJd1b57XWrBqhpT1UoEZMciRzUJ9w9t1WFpvZNTgAWk
-	GbcmIYHX0jYLdz6lPvTNIn/mwFtPilNhjWWvgOjHlrhhvifE9NcOtsLNjRNgqsb4mdrWKIE4CYuiT
-	7Hbmth42fLXJvhkEtzeBfKAOwvy0oYn4z8jTVbzpgDimBF9TW9Bq9UB7K7SdE/eQQ3jG0L57aaPh3
-	Vm52B5kR5TX8kkkiqXYISlSIa15LhKg8ESe2qrf2Ul1GLlkSp/SLMCvc9MOWHY7PlBo5FLpQPNjde
-	/q8MjzuKtmFOSaoUt6tA==;
+	List-Owner; bh=nJez+uGbsgUiIpixpO8PbkMVrXxpeBKwEHd9rsM+TcY=; b=S0gYZ1F7cPzMfx
+	kbLYFlmtdkx5jcY/1zpJfV28gq/lDpxPOnOrhyeCj9m1o3T1cOqZ7qAUvWVTlectlZkONdJdGPzq+
+	DqtOw0HftFGORKL57f1s1AYZfJQMZttWTf4vACIluPyMUBSecnzTVe3FMIPwMxzraVG6LOZvDyRMV
+	/GIhzy81LDjZvFsWLCk42raTv0fy/4q6ul3VnmK81IiHjQbaKPnD4ZkJQfqY/eqHCcgaPnhBszzgo
+	3WaKpM7pk3WwI/8pbPuajhg8IfeB9fG9nhDMQ/1DeVvDOplACIuEaNxGN4RTMVFbmyD8c5kQQjdkp
+	luawCF2cTm0qPyWxD62A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKexr-00054U-8o; Sat, 04 Apr 2020 09:19:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jKf02-0007oL-FT; Sat, 04 Apr 2020 09:21:58 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKexl-000540-Ip; Sat, 04 Apr 2020 09:19:39 +0000
-Received: by mail-pf1-x443.google.com with SMTP id r14so4873659pfl.12;
- Sat, 04 Apr 2020 02:19:35 -0700 (PDT)
+ id 1jKezv-0007na-Q2; Sat, 04 Apr 2020 09:21:53 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id k3so4163196pjj.2;
+ Sat, 04 Apr 2020 02:21:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:mime-version:content-disposition
  :user-agent; bh=NGWjop58dXG4vxvIdRNaBQN9RGU+nV2F4sGHS4krjUo=;
- b=Nprn8Ox4v6ELxRx0uvCCnpujI8wwKNUsM+6HRs7+1Lye6LpbA17bgc65vM72VA6nIY
- 2BpFPqOzXpFBEp2SUgiYnh9l4z/sERklNKhOb+sYqX30nbOkZ0sBnf7EVpFcRSUfvYq9
- iQqLEG0iI6YFiGJEBQxDMoOy0pN6VcoMPVKCU0lrhBPukCkHI+e2tDH1232xxaFNVenx
- XIRY48YU2a74hyzAGGz0lFULb8MYSfm+Df3kXdtMrd8t7LOQnYRrztDV8dZTkW/YfeRO
- G6A7SLbEJNC5lApPyQuV1RXGs80URygT0Bz3DMLbe7HEonbTpHKr97+4oEssnL2cB7Eq
- uYXA==
+ b=aoxYQ38PiYhTd+Dz1M1BjQDqvxcAfcndhj7HICuNEpV9z4uSvebaYJ5wAW/b/9YgAx
+ 49+GSxdhFfaR2oLyCt83fpzwsuZT1EPmUDLfC2LdAdAJsu0AfL/HAHH1LFdspdtJBgf6
+ O9BT9reeHvTpZDIdPF7ba08EMb8Tu+M+Cy8ZoPavS/9ghMlxCR8bhTxRdiSpbaHlNit8
+ ZUkbxO69Azcqf+y8PXIZ/SJ+u0ZgOJ0mShekcuf3hn/mb56ktAyXhZSn/uYj560rIlC8
+ R1l1tblnVxeNfGd5nYY9fk3PQwbXJiB0j5ZB2frsIa65FyUnQRBqDZHTUXL7KixjqB8Z
+ i6Ow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
  :content-disposition:user-agent;
  bh=NGWjop58dXG4vxvIdRNaBQN9RGU+nV2F4sGHS4krjUo=;
- b=tby73QObJTYGHi829z6WWoC12FwYwV71ABjhsx8MrvU637es6Rj2O/5K6cNZ/toCB8
- 9CfeLv+L5TNjBln3F3oEw9wxcmOfM3risKXLY/0w772JssnLDkkUE4X1XTo6iMpiqOh5
- arq6P9NGT2BMVC9P+xj24K8SlHsuNeUq6jCTkfdoGjLybkB0LZJBpNdgqlntT3r+rwJE
- vgFyw3pXyJA9sWOMNEHjRUx+1EnbvxTvZ/qk2OK18DfyrxiBralSXAWGbIXQk/EXBmCM
- rGFeb5DlWbvU2lYsd5JSYVM5eCQcOUh1/2Gkjp0nbO1gwdU7F9Ly26srIP8Zi+KUoDqO
- GEog==
-X-Gm-Message-State: AGi0PuaYBr6Tp2ASleys90pmS96JkEuXTbkldy7sxKOfdKoQDqMFHNId
- uO8NfLPyKVX6Ozju9vb9N10=
-X-Google-Smtp-Source: APiQypKCYCka40/AuhMUFmyg+se9cHrBZC6b2n6BbAgRxBMoLZzUIJhfIT34BWH+s+H9QjCcVF1Kxg==
-X-Received: by 2002:a63:4b53:: with SMTP id k19mr11878880pgl.91.1585991975371; 
- Sat, 04 Apr 2020 02:19:35 -0700 (PDT)
+ b=svFIhN43S0p7gaKBu3lKWLKh3Ndz5OoCjkktRow3U3tKR5G511tqPgIWF06r1urn03
+ pow0PMcP3EI3k92Ij1OU2OA7ulxT0RBaTovzsRnqr9ASakgE+KTjmZjw79lNF9fdpvuw
+ XR0xOoUfTidmgo8hiRwBsHGITulTlQlGSDqAnzzjRyIscFxH1lwvgHX8255wbZtz1K8l
+ oVzhzKp8V8ssi/U1UC0XjyB6cAJHnHGNhkTafv1OJ7CelEdXR/bltHdOBzrhoEiBezNi
+ CT0sJ94SAeo9Y3k7rZG5paj3AfWBktV9R+7acNJTgUgCsdrnWAfN631zmjUNergYj/O6
+ 0BIg==
+X-Gm-Message-State: AGi0Puaw/a6kmDWuwTKTmcmYb6Wd6BAvEGyZGtd9lVBO4NfkuJD8X3r4
+ zTwAXB0mb9NQiY84am5VDkViVJvIqiM=
+X-Google-Smtp-Source: APiQypIh6/tBvi/I+KrSy5FN/7eVkcMYHZrfKkGYY0tvSU7vJ/rf7VYnpdxdwhHlE47Fga+c5RJHsQ==
+X-Received: by 2002:a17:902:c595:: with SMTP id
+ p21mr11756123plx.17.1585992110608; 
+ Sat, 04 Apr 2020 02:21:50 -0700 (PDT)
 Received: from nishad ([106.51.232.103])
- by smtp.gmail.com with ESMTPSA id y15sm7331482pfc.206.2020.04.04.02.19.29
+ by smtp.gmail.com with ESMTPSA id a2sm7550506pja.44.2020.04.04.02.21.44
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 04 Apr 2020 02:19:34 -0700 (PDT)
-Date: Sat, 4 Apr 2020 14:49:25 +0530
+ Sat, 04 Apr 2020 02:21:50 -0700 (PDT)
+Date: Sat, 4 Apr 2020 14:51:40 +0530
 From: Nishad Kamdar <nishadkamdar@gmail.com>
 To: Alan Stern <stern@rowland.harvard.edu>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -65,12 +66,12 @@ To: Alan Stern <stern@rowland.harvard.edu>,
  Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
  Joe Perches <joe@perches.com>
 Subject: [PATCH] USB: host: Use the correct style for SPDX License Identifier
-Message-ID: <20200404091921.GA4485@nishad>
+Message-ID: <20200404092135.GA4522@nishad>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_021937_646547_82ADC8CD 
+X-CRM114-CacheID: sfid-20200404_022151_847204_7395DF72 
 X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [nishadkamdar[at]gmail.com]
@@ -102,8 +103,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, inux-usb@vger.kernel.org
+Cc: linux-usb@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
