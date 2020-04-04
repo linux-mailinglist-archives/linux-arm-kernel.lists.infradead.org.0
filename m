@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FEF219E71D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 20:39:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0950B19E725
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 20:42:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RycLs2RuSOi3JyfzVRpll2h4BHu3EgjciltAINS6G6s=; b=nahtxubjBk1s1EM8lTN6JjHoq
-	RjuZQqZUrNf0RHnv6s4RMsrxNj+3IpeH1zRpe2QlTy6avPW7BjW6Ei/vrV/2sm2pqerPajeu4l7n9
-	5CzYsgXp9/9LxMbiycz1cjBzyU9yegAmKxGXafo+tzFyREtmv+kKFXHwSLvT+zNx/fExceNOFXdX+
-	9TFCsDnooozV7P0h7mwbHLHeFzKWDoMWoPRr3roc2q8PhQL/u5XXZYNp17ECr8ct5IATJrMhVQXlD
-	1Xaeaf8IbEStFvI6Q9Steezty8J+xa+XcZsc5C813VRxga2rY6LUn2tApo9mZDO1d4Wt7jVE5eX3y
-	1i81/1nnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UbD19EjdzPGihDcCP3gvzUq+dj9PnWR6jEpBfbRYuEw=; b=avWm2yJzkwYdIa
+	Y+BlM7xubtFWnactMKCzmBGX6B3sH9+N9CERmbsoEDTyHOEkMusfH0PR99sDORi0AQnK0ORJ0Rlqq
+	R8cOIzvChFJgIpER6MVPpezmsf5jrxBuUkOUD/86y4x1At0Hrqc0t7McXFW3m2Pf9aAl84k7wLepH
+	zIsPYYOFvX0QlZZ694z11diEqnS711udNU2H9KgjUiME0NBUbv9h+1TwC98k7hMBsMP5Kkf0idfDM
+	QYpq2uydwKKmz7/90boBfaeifQiefeiJ74Pt8hdt5LVU2XK2ty3bO5lLp0Sm/0s7BZ4Bon2mqTriC
+	1ffPKPtoGB1ufABI57KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKnh8-0001pY-R0; Sat, 04 Apr 2020 18:39:02 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1jKnkH-0004Z5-32; Sat, 04 Apr 2020 18:42:17 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKnh1-0001pD-2U
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Apr 2020 18:38:57 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e88d3d80000>; Sat, 04 Apr 2020 11:37:12 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Sat, 04 Apr 2020 11:38:52 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Sat, 04 Apr 2020 11:38:52 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sat, 4 Apr
- 2020 18:38:51 +0000
-Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sat, 4 Apr 2020
- 18:38:47 +0000
-Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
-To: Viresh Kumar <viresh.kumar@linaro.org>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
- <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
-From: sumitg <sumitg@nvidia.com>
-Message-ID: <d233b26b-6b50-7d41-9f33-a5dc151e0e7d@nvidia.com>
-Date: Sun, 5 Apr 2020 00:08:44 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jKnk8-0004YS-71; Sat, 04 Apr 2020 18:42:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1586025717;
+ bh=trCALmJZseGACsClEdyAIz3NMsZceSEOXCi9yrgcNQs=;
+ h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
+ b=sTbZanwSbwh6vReBP4BkKqrp7ZOjpXmptcnFPi5ADLqpp49BkB+OLkgyHYh6kDKkj
+ xTqQQb5YLd5s8Yn6dTj2pWN97LTBTJvt31XQgvsjQheuJzokJXHWaIKjbqGXQt+M9r
+ CconQOuVhX+4G50Z/U7XfA5QgRe2zQdRiFSEYruI=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.43.108] ([89.204.138.81]) by smtp.web.de (mrweb102
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0LcgZv-1iwDsw1e0F-00k4OB; Sat, 04
+ Apr 2020 20:41:57 +0200
+To: Shawn Lin <shawn.lin@rock-chips.com>
+From: Soeren Moch <smoch@web.de>
+Subject: [BUG] PCI: rockchip: rk3399: pcie switch support
+Message-ID: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
+Date: Sat, 4 Apr 2020 20:41:28 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200326115023.xy3n5bl7uetuw7mx@vireshk-i7>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1586025432; bh=5hdYw6ObfGFLG9jd7U4HnmWEClP8GiKvWCoh8X9OSgI=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=JgMYdbwUbXedZkmtlgwLgotdD5XBTnbRfd8+VzIPxVAItPIWtZdKzjXWh8HDCiK5P
- E/Byrm5R8gc3drmATdYYHROEby12KKeMW26FfoHdvK0X9CpNxA0AFH8KVgGG5T+I4B
- n2wJ4KMU/ST+K6FKmSM/da5gCPk4ckX5MIZQ1BGRC/DoLnlEDdj8LIMZYdwBJpfZpf
- d7JeYfspqxAVJQZX0fSvtwTWJyyNoEM2Cc6HQMVYY/x7c6SMNblPXJDX06Ntpk1CH0
- Ta0w1cLh7MXX1SYYEQGydNYuaHibCJhm5kbZ3b59CfvhTpAiDQ9gAK0MiNa72o4kOb
- 3EM1a1HCBZqsg==
+Content-Language: en-GB
+X-Provags-ID: V03:K1:u8HfsDqQbXgpehXSoYFpxfi5/sgKOSigN7n7MgtbB5C25j4rBZE
+ eGE3jCmubCFLRVXY5ow9YfrzR1y4iEx3+lCqq+xLpcfF/ysc4vcQA/sp5JvR9K6Ho4Ndwdi
+ OoR9afTkZ1UrRAQEMSsLvwbxOkVMrl3dZejumepGQdhiC1BQ/bdk46ji4wAAS+iT13ga2wH
+ hefwuPZ4NAj8oKdppUY7A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Vc8nQLqxyRM=:3XRlLs7Uzjecv1ItVf27yu
+ daFevHFaCZTD6uB8dMGSlAlPpkjoegDMXZCdiCu8CnxRlJWnfm5ncblZI4aVdC8ySgKe+Yxnx
+ BAtYH8eDB6WqeHpwEUiwPxckjACEkhAk8M8NbCNPTJcEaMlVU12j3exvNV5jPkFcucugmzqE+
+ k5mlg9ro2elqx/7oo1sTsIBAkPnjURsS2vFvOBsbp11be5auGhrTl3vjC4MwjrYDAvW+Cb3e8
+ zUFUZ10/4JqZgzd69LmCTdOaczh5bDQ9ExXA5V1Vk+KYXQg3sW3QRGg2DJioP1i/rHsg45ugB
+ RFWCRmczSWC7DzHALi+3WjVZkzegMAi+RzBsKaQmNM9U0z1SC5cGkqOXuTM0U45kDF4D2QGjJ
+ eBOJDoo+x2/O+T2HPHNGAgW8egP+COEHQUJQyng4yQbbWOZIvW706vjC+iQdW4Jb3MoYS6xko
+ XGyIgLuD7k3aBgRfg4GIclWpLtczGyPtakEF0t51SYKDwxS2ciIc+AzBrqIA9NW2woP52GhPg
+ 537lZu0qDlmY/wQegcAjt5utLahU9DbcgiO3pSSzWscxAxM6rG5Vab5B+t06vTAidfnLdD35V
+ t9WtjCQJ6f8ql7TrCqGVYZXNvk1ehVdcjxd0QI7e3U13bZTXjiCMV2/A478Lv1VOyQyaU2XIS
+ 80g3O7XAPP3uSlfw4QTJnSPahRP0nsGXwjnHBX/GprDDXuUAjQVN7MyWBWsHuO9HMWBl6huAc
+ aFC+5QM4XK61vxQCsmtfuvGaiqH/OCf2yzYOo2BMPtxdgK1g8lWn8YpsnXGghMXP1u8JwL1db
+ PYvS8yalTcQkYTHF2N03SH21/G4IShUNvTVJo7PD0c9s6SbnO3VFhQxUBjO/7q13XmUGTESen
+ usOLjlc4SzFlvqcYfBO2ESMOmmsMI/3QxO++WCYXh3nMymf8hPYO9a8NogILIJ44BdsA5gEme
+ R+dE8iaUFwWNW+tcEz5zfiwRL1oXoAe/zdW//siMtKFvZOwvqrz/mAVr+oD7NwQExvQVKsnNo
+ XPMq0JbYHs9AWM0ccNQ9SrlM7qvKT5kOeg1SVmAvY/cyu1WhY8fEryNQvLSLAo6ZoPQ/JoWFU
+ xKAum9PFS/UF+nLzIGw9apo6ZctN/t0P16WWAhxUOTU9iIyK1Kv+9EAZPJnS322tcm6wsN+wv
+ +Y4801YFXKglwlBfJEXUX5Sa/gPJwb1P91tpZRhyxgF4Wa1ZlAhCqcf4Fwi8lB16POnwplm1q
+ 2iCdYJpL2qA5vGT6T
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_113855_133446_88309813 
-X-CRM114-Status: GOOD (  22.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200404_114208_594062_F798969D 
+X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.72.192.78 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [smoch[at]web.de]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -84,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,493 +99,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- sumitg@nvidia.com, mperttunen@nvidia.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 26/03/20 5:20 PM, Viresh Kumar wrote:
-> External email: Use caution opening links or attachments
-> 
-> 
-> On 03-12-19, 23:02, Sumit Gupta wrote:
->> diff --git a/drivers/cpufreq/tegra194-cpufreq.c b/drivers/cpufreq/tegra194-cpufreq.c
->> new file mode 100644
->> index 0000000..9df12f4
->> --- /dev/null
->> +++ b/drivers/cpufreq/tegra194-cpufreq.c
->> @@ -0,0 +1,423 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved
->> + */
->> +
->> +#include <linux/cpu.h>
->> +#include <linux/cpufreq.h>
->> +#include <linux/delay.h>
->> +#include <linux/dma-mapping.h>
->> +#include <linux/module.h>
->> +#include <linux/of.h>
->> +#include <linux/of_platform.h>
->> +#include <linux/platform_device.h>
->> +#include <linux/slab.h>
->> +
->> +#include <asm/smp_plat.h>
->> +
->> +#include <soc/tegra/bpmp.h>
->> +#include <soc/tegra/bpmp-abi.h>
->> +
->> +#define KHZ                     1000
->> +#define REF_CLK_MHZ             408 /* 408 MHz */
->> +#define US_DELAY                2000
->> +#define US_DELAY_MIN            2
->> +#define CPUFREQ_TBL_STEP_HZ     (50 * KHZ * KHZ)
->> +#define MAX_CNT                 ~0U
->> +
->> +/* cpufreq transisition latency */
->> +#define TEGRA_CPUFREQ_TRANSITION_LATENCY (300 * 1000) /* unit in nanoseconds */
->> +
->> +enum cluster {
->> +     CLUSTER0,
->> +     CLUSTER1,
->> +     CLUSTER2,
->> +     CLUSTER3,
-> 
-> All these have same CPUs ? Or big little kind of stuff ? How come they
-> have different frequency tables ?
-> 
-T194 SOC has homogeneous architecture where each cluster has two 
-symmetric Carmel cores and and not big little. LUT's are per cluster and 
-all LUT's have same values currently. Future SOC's may have different 
-LUT values per cluster.
-
->> +     MAX_CLUSTERS,
->> +};
->> +
->> +struct tegra194_cpufreq_data {
->> +     void __iomem *regs;
->> +     size_t num_clusters;
->> +     struct cpufreq_frequency_table **tables;
->> +};
->> +
->> +static DEFINE_MUTEX(cpufreq_lock);
->> +
->> +struct tegra_cpu_ctr {
->> +     u32 cpu;
->> +     u32 delay;
->> +     u32 coreclk_cnt, last_coreclk_cnt;
->> +     u32 refclk_cnt, last_refclk_cnt;
->> +};
->> +
->> +static struct workqueue_struct *read_counters_wq;
->> +struct read_counters_work {
->> +     struct work_struct work;
->> +     struct tegra_cpu_ctr c;
->> +};
->> +
->> +static enum cluster get_cpu_cluster(u8 cpu)
->> +{
->> +     return MPIDR_AFFINITY_LEVEL(cpu_logical_map(cpu), 1);
->> +}
->> +
->> +/*
->> + * Read per-core Read-only system register NVFREQ_FEEDBACK_EL1.
->> + * The register provides frequency feedback information to
->> + * determine the average actual frequency a core has run at over
->> + * a period of time.
->> + *   [31:0] PLLP counter: Counts at fixed frequency (408 MHz)
->> + *   [63:32] Core clock counter: counts on every core clock cycle
->> + *                   where the core is architecturally clocking
->> + */
->> +static u64 read_freq_feedback(void)
->> +{
->> +     u64 val = 0;
->> +
->> +     asm volatile("mrs %0, s3_0_c15_c0_5" : "=r" (val) : );
->> +
->> +     return val;
->> +}
->> +
->> +u16 map_freq_to_ndiv(struct mrq_cpu_ndiv_limits_response *nltbl, u32 freq)
->> +{
->> +     return DIV_ROUND_UP(freq * nltbl->pdiv * nltbl->mdiv,
->> +                         nltbl->ref_clk_hz / KHZ);
->> +}
->> +
->> +static inline u32 map_ndiv_to_freq(struct mrq_cpu_ndiv_limits_response
->> +                                *nltbl, u16 ndiv)
->> +{
->> +     return nltbl->ref_clk_hz / KHZ * ndiv / (nltbl->pdiv * nltbl->mdiv);
->> +}
->> +
->> +static void tegra_read_counters(struct work_struct *work)
->> +{
->> +     struct read_counters_work *read_counters_work;
->> +     struct tegra_cpu_ctr *c;
->> +     u64 val;
->> +
->> +     /*
->> +      * ref_clk_counter(32 bit counter) runs on constant clk,
->> +      * pll_p(408MHz).
->> +      * It will take = 2 ^ 32 / 408 MHz to overflow ref clk counter
->> +      *              = 10526880 usec = 10.527 sec to overflow
->> +      *
->> +      * Like wise core_clk_counter(32 bit counter) runs on core clock.
->> +      * It's synchronized to crab_clk (cpu_crab_clk) which runs at
->> +      * freq of cluster. Assuming max cluster clock ~2000MHz,
->> +      * It will take = 2 ^ 32 / 2000 MHz to overflow core clk counter
->> +      *              = ~2.147 sec to overflow
->> +      */
->> +     read_counters_work = container_of(work, struct read_counters_work,
->> +                                       work);
->> +     c = &read_counters_work->c;
->> +
->> +     val = read_freq_feedback();
->> +     c->last_refclk_cnt = lower_32_bits(val);
->> +     c->last_coreclk_cnt = upper_32_bits(val);
->> +     udelay(c->delay);
->> +     val = read_freq_feedback();
->> +     c->refclk_cnt = lower_32_bits(val);
->> +     c->coreclk_cnt = upper_32_bits(val);
->> +}
->> +
->> +/*
->> + * Return instantaneous cpu speed
->> + * Instantaneous freq is calculated as -
->> + * -Takes sample on every query of getting the freq.
->> + *   - Read core and ref clock counters;
->> + *   - Delay for X us
->> + *   - Read above cycle counters again
->> + *   - Calculates freq by subtracting current and previous counters
->> + *     divided by the delay time or eqv. of ref_clk_counter in delta time
->> + *   - Return Kcycles/second, freq in KHz
->> + *
->> + *   delta time period = x sec
->> + *                     = delta ref_clk_counter / (408 * 10^6) sec
->> + *   freq in Hz = cycles/sec
->> + *              = (delta cycles / x sec
->> + *              = (delta cycles * 408 * 10^6) / delta ref_clk_counter
->> + *   in KHz     = (delta cycles * 408 * 10^3) / delta ref_clk_counter
->> + *
->> + * @cpu - logical cpu whose freq to be updated
->> + * Returns freq in KHz on success, 0 if cpu is offline
->> + */
->> +static unsigned int tegra194_get_speed_common(u32 cpu, u32 delay)
->> +{
->> +     struct read_counters_work read_counters_work;
->> +     struct tegra_cpu_ctr c;
->> +     u32 delta_refcnt;
->> +     u32 delta_ccnt;
->> +     u32 rate_mhz;
->> +
->> +     read_counters_work.c.cpu = cpu;
->> +     read_counters_work.c.delay = delay;
->> +     INIT_WORK_ONSTACK(&read_counters_work.work, tegra_read_counters);
->> +     queue_work_on(cpu, read_counters_wq, &read_counters_work.work);
->> +     flush_work(&read_counters_work.work);
-> 
-> Why can't this be done in current context ?
-> 
-We used work queue instead of smp_call_function_single() to have long delay.
-
->> +     c = read_counters_work.c;
->> +
->> +     if (c.coreclk_cnt < c.last_coreclk_cnt)
->> +             delta_ccnt = c.coreclk_cnt + (MAX_CNT - c.last_coreclk_cnt);
->> +     else
->> +             delta_ccnt = c.coreclk_cnt - c.last_coreclk_cnt;
->> +     if (!delta_ccnt)
->> +             return 0;
->> +
->> +     /* ref clock is 32 bits */
->> +     if (c.refclk_cnt < c.last_refclk_cnt)
->> +             delta_refcnt = c.refclk_cnt + (MAX_CNT - c.last_refclk_cnt);
->> +     else
->> +             delta_refcnt = c.refclk_cnt - c.last_refclk_cnt;
->> +     if (!delta_refcnt) {
->> +             pr_debug("cpufreq: %d is idle, delta_refcnt: 0\n", cpu);
->> +             return 0;
->> +     }
->> +     rate_mhz = ((unsigned long)(delta_ccnt * REF_CLK_MHZ)) / delta_refcnt;
->> +
->> +     return (rate_mhz * KHZ); /* in KHz */
->> +}
->> +
->> +static unsigned int tegra194_get_speed(u32 cpu)
->> +{
->> +     return tegra194_get_speed_common(cpu, US_DELAY);
->> +}
->> +
->> +static unsigned int tegra194_fast_get_speed(u32 cpu)
->> +{
->> +     return tegra194_get_speed_common(cpu, US_DELAY_MIN);
-> 
-> Why is this required specially here ? Why can't you work with normal
-> delay ?
-> 
-Less delay value used during init to reduce cpu boot time.
-
->> +}
->> +
->> +static int tegra194_cpufreq_init(struct cpufreq_policy *policy)
->> +{
->> +     struct tegra194_cpufreq_data *data = cpufreq_get_driver_data();
->> +     int cluster = get_cpu_cluster(policy->cpu);
->> +
->> +     if (cluster >= data->num_clusters)
->> +             return -EINVAL;
->> +
->> +     policy->cur = tegra194_fast_get_speed(policy->cpu); /* boot freq */
->> +
->> +     /* set same policy for all cpus */
->> +     cpumask_copy(policy->cpus, cpu_possible_mask);
-> 
-> You are copying cpu_possible_mask mask here, and so this routine will
-> get called only once.
-> 
-> I still don't understand the logic behind clusters and frequency
-> tables.
-> 
-Currently, we use same policy for all CPU's to maximize throughput. Will 
-add separate patch later to set policy as per cluster. But we are not 
-using that in T194 due to perf reasons.
-
->> +
->> +     policy->freq_table = data->tables[cluster];
->> +     policy->cpuinfo.transition_latency = TEGRA_CPUFREQ_TRANSITION_LATENCY;
->> +
->> +     return 0;
->> +}
->> +
->> +static void set_cpu_ndiv(void *data)
->> +{
->> +     struct cpufreq_frequency_table *tbl = data;
->> +     u64 ndiv_val = (u64)tbl->driver_data;
->> +
->> +     asm volatile("msr s3_0_c15_c0_4, %0" : : "r" (ndiv_val));
->> +}
->> +
->> +static int tegra194_cpufreq_set_target(struct cpufreq_policy *policy,
->> +                                    unsigned int index)
->> +{
->> +     struct cpufreq_frequency_table *tbl = policy->freq_table + index;
->> +     static struct cpufreq_freqs freqs;
->> +
->> +     mutex_lock(&cpufreq_lock);
-> 
-> No need of lock here.
->
-Done
-
->> +     freqs.old = policy->cur;
->> +     freqs.new = tbl->frequency;
->> +
->> +     cpufreq_freq_transition_begin(policy, &freqs);
->> +     on_each_cpu_mask(policy->cpus, set_cpu_ndiv, tbl, true);
-> 
-> When CPUs share clock line, why is this required for every CPU ?
->Per core NVFREQ_REQ system register is written to make frequency 
-requests for the core. Cluster h/w then forwards the max(core0, core1) 
-request to cluster NAFLL.
-
->> +     cpufreq_freq_transition_end(policy, &freqs, 0);
->> +
->> +     mutex_unlock(&cpufreq_lock);
->> +
->> +     return 0;
->> +}
->> +
->> +static struct cpufreq_driver tegra194_cpufreq_driver = {
->> +     .name = "tegra194",
->> +     .flags = CPUFREQ_STICKY | CPUFREQ_CONST_LOOPS |
->> +             CPUFREQ_NEED_INITIAL_FREQ_CHECK | CPUFREQ_ASYNC_NOTIFICATION,
-> 
-> Why Async here ? I am really confused if I am not able to understand
-> the driver or you :)
-> 
-Have removed the flag as it was not required. Thank you for pointing.
-
->> +     .verify = cpufreq_generic_frequency_table_verify,
->> +     .target_index = tegra194_cpufreq_set_target,
->> +     .get = tegra194_get_speed,
->> +     .init = tegra194_cpufreq_init,
->> +     .attr = cpufreq_generic_attr,
->> +};
->> +
->> +static void tegra194_cpufreq_free_resources(void)
->> +{
->> +     flush_workqueue(read_counters_wq);
->> +     destroy_workqueue(read_counters_wq);
->> +}
->> +
->> +static struct cpufreq_frequency_table *init_freq_table
-> 
-> Don't break line here, rather break after above *.
-> 
-Done
-
->> +             (struct platform_device *pdev, struct tegra_bpmp *bpmp,
->> +              unsigned int cluster_id)
->> +{
->> +     struct cpufreq_frequency_table *opp_table;
-> 
-> Please name it freq_table :)
-> 
-Done
-
->> +     struct mrq_cpu_ndiv_limits_response resp;
->> +     unsigned int num_freqs, ndiv, delta_ndiv;
->> +     struct mrq_cpu_ndiv_limits_request req;
->> +     struct tegra_bpmp_message msg;
->> +     u16 freq_table_step_size;
->> +     int err, index;
->> +
->> +     memset(&req, 0, sizeof(req));
->> +     req.cluster_id = cluster_id;
->> +
->> +     memset(&msg, 0, sizeof(msg));
->> +     msg.mrq = MRQ_CPU_NDIV_LIMITS;
->> +     msg.tx.data = &req;
->> +     msg.tx.size = sizeof(req);
->> +     msg.rx.data = &resp;
->> +     msg.rx.size = sizeof(resp);
->> +
->> +     err = tegra_bpmp_transfer(bpmp, &msg);
->> +     if (err)
->> +             return ERR_PTR(err);
->> +
->> +     /*
->> +      * Make sure frequency table step is a multiple of mdiv to match
->> +      * vhint table granularity.
->> +      */
->> +     freq_table_step_size = resp.mdiv *
->> +                     DIV_ROUND_UP(CPUFREQ_TBL_STEP_HZ, resp.ref_clk_hz);
->> +
->> +     dev_dbg(&pdev->dev, "cluster %d: frequency table step size: %d\n",
->> +             cluster_id, freq_table_step_size);
->> +
->> +     delta_ndiv = resp.ndiv_max - resp.ndiv_min;
->> +
->> +     if (unlikely(delta_ndiv == 0))
->> +             num_freqs = 1;
->> +     else
->> +             /* We store both ndiv_min and ndiv_max hence the +1 */
->> +             num_freqs = delta_ndiv / freq_table_step_size + 1;
->> +
->> +     num_freqs += (delta_ndiv % freq_table_step_size) ? 1 : 0;
->> +
->> +     opp_table = devm_kcalloc(&pdev->dev, num_freqs + 1, sizeof(*opp_table),
->> +                              GFP_KERNEL);
->> +     if (!opp_table)
->> +             return ERR_PTR(-ENOMEM);
->> +
->> +     for (index = 0, ndiv = resp.ndiv_min;
->> +                     ndiv < resp.ndiv_max;
->> +                     index++, ndiv += freq_table_step_size) {
->> +             opp_table[index].driver_data = ndiv;
->> +             opp_table[index].frequency = map_ndiv_to_freq(&resp, ndiv);
->> +     }
->> +
->> +     opp_table[index].driver_data = resp.ndiv_max;
->> +     opp_table[index++].frequency = map_ndiv_to_freq(&resp, resp.ndiv_max);
->> +     opp_table[index].frequency = CPUFREQ_TABLE_END;
->> +
->> +     return opp_table;
->> +}
->> +
->> +static int tegra194_cpufreq_probe(struct platform_device *pdev)
->> +{
->> +     struct tegra194_cpufreq_data *data;
->> +     struct tegra_bpmp *bpmp;
->> +     int err, i;
->> +
->> +     data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
->> +     if (!data)
->> +             return -ENOMEM;
->> +
->> +     data->num_clusters = MAX_CLUSTERS;
->> +     data->tables = devm_kcalloc(&pdev->dev, data->num_clusters,
->> +                                 sizeof(*data->tables), GFP_KERNEL);
->> +     if (!data->tables)
->> +             return -ENOMEM;
->> +
->> +     platform_set_drvdata(pdev, data);
->> +
->> +     read_counters_wq = alloc_workqueue("read_counters_wq", __WQ_LEGACY, 1);
->> +     if (!read_counters_wq) {
->> +             dev_err(&pdev->dev, "fail to create_workqueue\n");
->> +             return -EINVAL;
->> +     }
->> +
->> +     bpmp = of_tegra_bpmp_get();
->> +     if (IS_ERR(bpmp)) {
->> +             err = PTR_ERR(bpmp);
->> +             goto err_free_res;
->> +     }
->> +
->> +     for (i = 0; i < data->num_clusters; i++) {
->> +             data->tables[i] = init_freq_table(pdev, bpmp, i);
->> +             if (IS_ERR(data->tables[i])) {
->> +                     err = PTR_ERR(data->tables[i]);
->> +                     goto put_bpmp;
->> +             }
->> +     }
->> +
->> +     tegra_bpmp_put(bpmp);
->> +
->> +     tegra194_cpufreq_driver.driver_data = data;
->> +
->> +     err = cpufreq_register_driver(&tegra194_cpufreq_driver);
->> +     if (err)
->> +             goto err_free_res;
->> +
->> +     return err;
->> +
->> +put_bpmp:
->> +     tegra_bpmp_put(bpmp);
->> +err_free_res:
->> +     tegra194_cpufreq_free_resources();
->> +     return err;
->> +}
->> +
->> +static int tegra194_cpufreq_remove(struct platform_device *pdev)
->> +{
->> +     cpufreq_unregister_driver(&tegra194_cpufreq_driver);
->> +     tegra194_cpufreq_free_resources();
->> +
->> +     return 0;
->> +}
->> +
->> +static struct platform_driver tegra194_cpufreq_platform_driver = {
->> +     .driver = {
->> +             .name = "tegra194-cpufreq",
->> +     },
->> +     .probe = tegra194_cpufreq_probe,
->> +     .remove = tegra194_cpufreq_remove,
->> +};
->> +
->> +static int __init tegra_cpufreq_init(void)
-> 
-> I seem to be forgetting this, but should we use __init with modules or
-> not ?
-> 
-Yes
-
-Thankyou for the review. I will send v2 with suggested changes.
-
-> --
-> viresh
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SSB3YW50IHRvIHVzZSBhIFBDSWUgc3dpdGNoIG9uIGEgUkszMzk5IGJhc2VkIFJvY2tQcm82NCBW
+Mi4xIGJvYXJkLgoiTm9ybWFsIiBQQ0llIGNhcmRzIHdvcmsgKG1vc3RseSkganVzdCBmaW5lIG9u
+IHRoaXMgYm9hcmQuIFRoZSBQQ0llCnN3aXRjaGVzIChJIHRyaWVkIFBlcmljb20gYW5kIEFTTWVk
+aWEgYmFzZWQgc3dpdGNoZXMpIGFsc28gd29yayBmaW5lIG9uCm90aGVyIGJvYXJkcy4gVGhlIFJL
+MzM5OSBQQ0llIGNvbnRyb2xsZXIgd2l0aCBwY2llX3JvY2tjaGlwX2hvc3QgZHJpdmVyCmFsc28g
+cmVjb2duaXNlcyB0aGUgc3dpdGNoLCBidXQgZmFpbHMgdG8gaW5pdGlhbGl6ZSB0aGUgYnVzZXMg
+YmVoaW5kIHRoZQpicmlkZ2UgcHJvcGVybHksIHNlZSBzeXNsb2cgZnJvbSBsaW51eC01LjYuMC4K
+CkFueSBpZGVhcyB3aGF0IEkgZG8gd3JvbmcsIG9yIGFueSBzdWdnZXN0aW9ucyB3aGF0IEkgY2Fu
+IHRlc3QgaGVyZT8KClRoYW5rcywKU29lcmVuCgoKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQg
+a2VybmVsOiBbwqDCoCA3NC41MDE5NTFdIHJvY2tjaGlwLXBjaWUKZjgwMDAwMDAucGNpZTogZjgw
+MDAwMDAucGNpZSBzdXBwbHkgdnBjaWUxdjggbm90IGZvdW5kLCB1c2luZyBkdW1teQpyZWd1bGF0
+b3IKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41MDI5MDZdIHJv
+Y2tjaGlwLXBjaWUKZjgwMDAwMDAucGNpZTogZjgwMDAwMDAucGNpZSBzdXBwbHkgdnBjaWUwdjkg
+bm90IGZvdW5kLCB1c2luZyBkdW1teQpyZWd1bGF0b3IKQXBywqAgNCAxOTo1MDozOCByb2NrcHJv
+NjQga2VybmVsOiBbwqDCoCA3NC41NzIwNTBdIHJvY2tjaGlwLXBjaWUKZjgwMDAwMDAucGNpZTog
+aG9zdCBicmlkZ2UgL3BjaWVAZjgwMDAwMDAgcmFuZ2VzOgpBcHLCoCA0IDE5OjUwOjM4IHJvY2tw
+cm82NCBrZXJuZWw6IFvCoMKgIDc0LjU3MzAxOF0gcm9ja2NoaXAtcGNpZQpmODAwMDAwMC5wY2ll
+OiBQYXJzaW5nIHJhbmdlcyBwcm9wZXJ0eS4uLgpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBr
+ZXJuZWw6IFvCoMKgIDc0LjU3MzA0MF0gcm9ja2NoaXAtcGNpZQpmODAwMDAwMC5wY2llOsKgwqDC
+oMKgwqAgTUVNIDB4MDBmYTAwMDAwMC4uMHgwMGZiZGZmZmZmIC0+IDB4MDBmYTAwMDAwMApBcHLC
+oCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU3NDA4MF0gcm9ja2NoaXAt
+cGNpZQpmODAwMDAwMC5wY2llOsKgwqDCoMKgwqDCoCBJTyAweDAwZmJlMDAwMDAuLjB4MDBmYmVm
+ZmZmZiAtPiAweDAwZmJlMDAwMDAKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBb
+wqDCoCA3NC41NzU0MjBdIHJvY2tjaGlwLXBjaWUKZjgwMDAwMDAucGNpZTogUENJIGhvc3QgYnJp
+ZGdlIHRvIGJ1cyAwMDAwOjAwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
+wqAgNzQuNTc2MjQ3XSBwY2lfYnVzIDAwMDA6MDA6IHJvb3QKYnVzIHJlc291cmNlIFtidXMgMDAt
+MWZdCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTc2OTMwXSBw
+Y2lfYnVzIDAwMDA6MDA6IHJvb3QKYnVzIHJlc291cmNlIFttZW0gMHhmYTAwMDAwMC0weGZiZGZm
+ZmZmXQpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU3NzczOV0g
+cGNpX2J1cyAwMDAwOjAwOiByb290CmJ1cyByZXNvdXJjZSBbaW/CoCAweDAwMDAtMHhmZmZmZl0g
+KGJ1cyBhZGRyZXNzIFsweGZiZTAwMDAwLTB4ZmJlZmZmZmZdKQpBcHLCoCA0IDE5OjUwOjM4IHJv
+Y2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU3ODg3Nl0gcGNpX2J1cyAwMDAwOjAwOgpzY2Fubmlu
+ZyBidXMKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41Nzg5MThd
+IHBjaSAwMDAwOjAwOjAwLjA6ClsxZDg3OjAxMDBdIHR5cGUgMDEgY2xhc3MgMHgwNjA0MDAKQXBy
+wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41Nzk3MzRdIHBjaSAwMDAw
+OjAwOjAwLjA6CnN1cHBvcnRzIEQxCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDog
+W8KgwqAgNzQuNTgwMjUyXSBwY2kgMDAwMDowMDowMC4wOiBQTUUjCnN1cHBvcnRlZCBmcm9tIEQw
+IEQxIEQzaG90CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTgw
+OTUyXSBwY2kgMDAwMDowMDowMC4wOiBQTUUjCmRpc2FibGVkCkFwcsKgIDQgMTk6NTA6Mzggcm9j
+a3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTg1NDc1XSBwY2lfYnVzIDAwMDA6MDA6IGZpeHVwcwpm
+b3IgYnVzCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTg1NDkx
+XSBwY2kgMDAwMDowMDowMC4wOgpzY2FubmluZyBbYnVzIDAwLTAwXSBiZWhpbmQgYnJpZGdlLCBw
+YXNzIDAKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41ODU0OTdd
+IHBjaSAwMDAwOjAwOjAwLjA6CmJyaWRnZSBjb25maWd1cmF0aW9uIGludmFsaWQgKFtidXMgMDAt
+MDBdKSwgcmVjb25maWd1cmluZwpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvC
+oMKgIDc0LjU4NjU2Ml0gcGNpIDAwMDA6MDA6MDAuMDoKc2Nhbm5pbmcgW2J1cyAwMC0wMF0gYmVo
+aW5kIGJyaWRnZSwgcGFzcyAxCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
+wqAgNzQuNTg2NzI1XSBwY2lfYnVzIDAwMDA6MDE6CnNjYW5uaW5nIGJ1cwpBcHLCoCA0IDE5OjUw
+OjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU4Njc5Ml0gcGNpIDAwMDA6MDE6MDAuMDoK
+WzFiMjE6MTE4Ml0gdHlwZSAwMSBjbGFzcyAweDA2MDQwMApBcHLCoCA0IDE5OjUwOjM4IHJvY2tw
+cm82NCBrZXJuZWw6IFvCoMKgIDc0LjU4Nzc4NV0gcGNpIDAwMDA6MDE6MDAuMDogTWF4ClBheWxv
+YWQgU2l6ZSBzZXQgdG8gMjU2ICh3YXMgMTI4LCBtYXggMjU2KQpBcHLCoCA0IDE5OjUwOjM4IHJv
+Y2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU4ODYyNV0gcGNpIDAwMDA6MDE6MDAuMDoKZW5hYmxp
+bmcgRXh0ZW5kZWQgVGFncwpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKg
+IDc0LjU4OTQ4N10gcGNpIDAwMDA6MDE6MDAuMDogUE1FIwpzdXBwb3J0ZWQgZnJvbSBEMCBEM2hv
+dCBEM2NvbGQKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTAx
+OTldIHBjaSAwMDAwOjAxOjAwLjA6IFBNRSMKZGlzYWJsZWQKQXBywqAgNCAxOTo1MDozOCByb2Nr
+cHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTAzNDRdIHBjaSAwMDAwOjAxOjAwLjA6IDIuMDAwCkdi
+L3MgYXZhaWxhYmxlIFBDSWUgYmFuZHdpZHRoLCBsaW1pdGVkIGJ5IDIuNSBHVC9zIHgxIGxpbmsg
+YXQKMDAwMDowMDowMC4wIChjYXBhYmxlIG9mIDQuMDAwIEdiL3Mgd2l0aCA1IEdUL3MgeDEgbGlu
+aykKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTgyMDZdIHBj
+aV9idXMgMDAwMDowMTogZml4dXBzCmZvciBidXMKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQg
+a2VybmVsOiBbwqDCoCA3NC41OTgyMjZdIHBjaSAwMDAwOjAxOjAwLjA6CnNjYW5uaW5nIFtidXMg
+MDAtMDBdIGJlaGluZCBicmlkZ2UsIHBhc3MgMApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBr
+ZXJuZWw6IFvCoMKgIDc0LjU5ODIzMV0gcGNpIDAwMDA6MDE6MDAuMDoKYnJpZGdlIGNvbmZpZ3Vy
+YXRpb24gaW52YWxpZCAoW2J1cyAwMC0wMF0pLCByZWNvbmZpZ3VyaW5nCkFwcsKgIDQgMTk6NTA6
+Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTk5MTYzXSBwY2kgMDAwMDowMTowMC4wOgpz
+Y2FubmluZyBbYnVzIDAwLTAwXSBiZWhpbmQgYnJpZGdlLCBwYXNzIDEKQXBywqAgNCAxOTo1MDoz
+OCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTk0NDNdIHBjaV9idXMgMDAwMDowMjoKc2Nh
+bm5pbmcgYnVzCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTk5
+NDYwXSBJbnRlcm5hbCBlcnJvcjoKc3luY2hyb25vdXMgZXh0ZXJuYWwgYWJvcnQ6IDk2MDAwMjEw
+IFsjMV0gUFJFRU1QVCBTTVAKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDC
+oCA3NC42MDAyNzFdIE1vZHVsZXMgbGlua2VkIGluOgpwY2llX3JvY2tjaGlwX2hvc3QoKykgYnJj
+bWZtYWMgYnJjbXV0aWwKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3
+NC42MDA5NzhdIENQVTogMyBQSUQ6IDU2NSBDb21tOgptb2Rwcm9iZSBOb3QgdGFpbnRlZCA1LjYu
+MCAjMQpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYwMTYwN10g
+SGFyZHdhcmUgbmFtZTogUGluZTY0ClJvY2tQcm82NCB2Mi4xIChEVCkKQXBywqAgNCAxOTo1MDoz
+OCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDIxNDddIHBzdGF0ZTogNjAwMDAwODUgKG5a
+Q3YKZGFJZiAtUEFOIC1VQU8pCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
+wqAgNzQuNjAyNjY2XSBwYyA6CnJvY2tjaGlwX3BjaWVfcmRfY29uZisweDEyMC8weDIyOCBbcGNp
+ZV9yb2NrY2hpcF9ob3N0XQpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKg
+IDc0LjYwMzM3M10gbHIgOgpyb2NrY2hpcF9wY2llX3JkX2NvbmYrMHg5NC8weDIyOCBbcGNpZV9y
+b2NrY2hpcF9ob3N0XQpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0
+LjYwNDA2NF0gc3AgOiBmZmZmZmZjMDExMDAzNTAwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0
+IGtlcm5lbDogW8KgwqAgNzQuNjA0NDE5XSB4Mjk6IGZmZmZmZmMwMTEwMDM1MDAKeDI4OiAwMDAw
+MDAwMDAwMDAwMDAwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQu
+NjA0OTg2XSB4Mjc6IDAwMDAwMDAwMDAwMDAwMDEKeDI2OiAwMDAwMDAwMDAwMDAwMDAwCkFwcsKg
+IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA1NTUyXSB4MjU6IDAwMDAw
+MDAwMDAwMDAwMDAKeDI0OiBmZmZmZmZjMDExMDAzNjQ0CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3By
+bzY0IGtlcm5lbDogW8KgwqAgNzQuNjA2MTE3XSB4MjM6IGZmZmZmZjgwZjE3OTIwMDAKeDIyOiBm
+ZmZmZmZjMDExMDAzNTg0CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAg
+NzQuNjA2NjgzXSB4MjE6IGZmZmZmZjgwZTk4MzEzYzAKeDIwOiAwMDAwMDAwMDAwMDAwMDA0CkFw
+csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA3MjQ5XSB4MTk6IGZm
+ZmZmZmMwMTIyMDAwMDAKeDE4OiAwMDAwMDAwMGZmZmZmZmYwCkFwcsKgIDQgMTk6NTA6Mzggcm9j
+a3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA3ODE1XSB4MTc6IDAwMDAwMDAwMDAwMDAwMDAKeDE2
+OiAwMDAwMDAwMDAwMDAwMDAwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
+wqAgNzQuNjA4MzgxXSB4MTU6IGZmZmZmZmMwMTBiNzdjMDAKeDE0OiBmZmZmZmZjMDEwYmUyZTI4
+CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA4OTQ3XSB4MTM6
+IDAwMDAwMDAwMDAwMDAwMDAKeDEyOiBmZmZmZmZjMDEwYmUyMDAwCkFwcsKgIDQgMTk6NTA6Mzgg
+cm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA5NTEyXSB4MTE6IGZmZmZmZmMwMTBiNzcwMDAK
+eDEwOiBmZmZmZmZjMDEwYmUyNDcwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDog
+W8KgwqAgNzQuNjEwMDc5XSB4OSA6IDAwMDAwMDAwMTE4MjFiMjEKeDggOiAwMDAwMDAwMDAwMDAw
+MDAxCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjE1NDU1XSB4
+NyA6IDAwMDAwMDAwMDAwMDAwMDAKeDYgOiAwMDAwMDAwMDAwMDAwMDAwCkFwcsKgIDQgMTk6NTA6
+Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjIxNDg3XSB4NSA6IDAwMDAwMDAwMDAyMDAw
+MDAKeDQgOiAwMDAwMDAwMDAwMDAwMDAwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5l
+bDogW8KgwqAgNzQuNjI3NTE5XSB4MyA6IDAwMDAwMDAwMDBjMDAwMDgKeDIgOiAwMDAwMDAwMDAw
+ODAwMDBiCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjMzNTUx
+XSB4MSA6IGZmZmZmZmMwMTVjMDAwMDgKeDAgOiBmZmZmZmZjMDEyMDAwMDAwCkFwcsKgIDQgMTk6
+NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjM5NTgzXSBDYWxsIHRyYWNlOgpBcHLC
+oCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjY0NTc4NV3CoApyb2NrY2hp
+cF9wY2llX3JkX2NvbmYrMHgxMjAvMHgyMjggW3BjaWVfcm9ja2NoaXBfaG9zdF0KQXBywqAgNCAx
+OTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42NTYzNTRdwqAKcGNpX2J1c19yZWFk
+X2NvbmZpZ19kd29yZCsweDgwLzB4ZDAKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVs
+OiBbwqDCoCA3NC42NjUwODNdwqAKcGNpX2J1c19nZW5lcmljX3JlYWRfZGV2X3ZlbmRvcl9pZCsw
+eDMwLzB4MWE4CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjc0
+NzIyXcKgCnBjaV9idXNfcmVhZF9kZXZfdmVuZG9yX2lkKzB4NDgvMHg2OApBcHLCoCA0IDE5OjUw
+OjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjY4MzM4Ml3CoApwY2lfc2Nhbl9zaW5nbGVf
+ZGV2aWNlKzB4N2MvMHhkOApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKg
+IDc0LjY5MTY5MF3CoCBwY2lfc2Nhbl9zbG90KzB4MzQvMHgxMTgKQXBywqAgNCAxOTo1MDozOCBy
+b2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42OTkxNTVdwqAKcGNpX3NjYW5fY2hpbGRfYnVzX2V4
+dGVuZCsweDYwLzB4MmNjCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAg
+NzQuNzA3Nzc0XcKgCnBjaV9zY2FuX2JyaWRnZV9leHRlbmQrMHgzNDAvMHg1NzgKQXBywqAgNCAx
+OTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC43MTYyMjRdwqAKcGNpX3NjYW5fY2hp
+bGRfYnVzX2V4dGVuZCsweDIwYy8weDJjYwpBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJu
+ZWw6IFvCoMKgIDc0LjcyNDk0M13CoApwY2lfc2Nhbl9icmlkZ2VfZXh0ZW5kKzB4MzQwLzB4NTc4
+CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzMzMzIwXcKgCnBj
+aV9zY2FuX2NoaWxkX2J1c19leHRlbmQrMHgyMGMvMHgyY2MKQXBywqAgNCAxOTo1MDozOCByb2Nr
+cHJvNjQga2VybmVsOiBbwqDCoCA3NC43NDE5OThdwqAKcGNpX3NjYW5fY2hpbGRfYnVzKzB4MTAv
+MHgxOApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljc0OTczOV3C
+oApwY2lfc2Nhbl9yb290X2J1c19icmlkZ2UrMHg3OC8weGQwCkFwcsKgIDQgMTk6NTA6Mzggcm9j
+a3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzU3OTg4XcKgCnJvY2tjaGlwX3BjaWVfcHJvYmUrMHg4
+MzAvMHhiOTAgW3BjaWVfcm9ja2NoaXBfaG9zdF0KQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQg
+a2VybmVsOiBbwqDCoCA3NC43NjgwNDJdwqAKcGxhdGZvcm1fZHJ2X3Byb2JlKzB4NTAvMHhhMApB
+cHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljc3NTc1OF3CoCByZWFs
+bHlfcHJvYmUrMHhkOC8weDMwMApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvC
+oMKgIDc0Ljc4MjkzOV3CoApkcml2ZXJfcHJvYmVfZGV2aWNlKzB4NTQvMHhlOApBcHLCoCA0IDE5
+OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljc5MDY2MV3CoApkZXZpY2VfZHJpdmVy
+X2F0dGFjaCsweDZjLzB4NzgKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDC
+oCA3NC43OTg0NjFdwqAgX19kcml2ZXJfYXR0YWNoKzB4NTQvMHhkMApBcHLCoCA0IDE5OjUwOjM4
+IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjgwNTc0NF3CoCBidXNfZm9yX2VhY2hfZGV2KzB4
+NzAvMHhjMApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjgxMzEx
+OV3CoCBkcml2ZXJfYXR0YWNoKzB4MjAvMHgyOApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBr
+ZXJuZWw6IFvCoMKgIDc0LjgyMDEwMV3CoCBidXNfYWRkX2RyaXZlcisweDE3OC8weDFkOApBcHLC
+oCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjgyNzI0OV3CoCBkcml2ZXJf
+cmVnaXN0ZXIrMHg2MC8weDExMApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvC
+oMKgIDc0LjgzNDMwOF3CoApfX3BsYXRmb3JtX2RyaXZlcl9yZWdpc3RlcisweDQ0LzB4NTAKQXBy
+wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44NDIyOTldwqAKcm9ja2No
+aXBfcGNpZV9kcml2ZXJfaW5pdCsweDIwLzB4MTAwMCBbcGNpZV9yb2NrY2hpcF9ob3N0XQpBcHLC
+oCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljg1MjQ0M13CoCBkb19vbmVf
+aW5pdGNhbGwrMHg3NC8weDFhOApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvC
+oMKgIDc0Ljg1OTQzMF3CoCBkb19pbml0X21vZHVsZSsweDUwLzB4MWYwCkFwcsKgIDQgMTk6NTA6
+Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuODY2Mjc2XcKgIGxvYWRfbW9kdWxlKzB4MWMw
+Yy8weDIxNTgKQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44NzMx
+MDBdwqAKX19kb19zeXNfZmluaXRfbW9kdWxlKzB4ZDAvMHhlOApBcHLCoCA0IDE5OjUwOjM4IHJv
+Y2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljg4MDQ4MF3CoApfX2FybTY0X3N5c19maW5pdF9tb2R1
+bGUrMHgxYy8weDI4CkFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQu
+ODg4MTU3XcKgCmVsMF9zdmNfY29tbW9uLmNvbnN0cHJvcC4xKzB4N2MvMHhlOApBcHLCoCA0IDE5
+OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljg5NjAwMF3CoCBkb19lbDBfc3ZjKzB4
+MTgvMHgyMApBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjkwMjI4
+NV3CoAplbDBfc3luY19oYW5kbGVyKzB4MTJjLzB4MWIwCkFwcsKgIDQgMTk6NTA6Mzggcm9ja3By
+bzY0IGtlcm5lbDogW8KgwqAgNzQuOTA5MzgwXcKgIGVsMF9zeW5jKzB4MTE0LzB4MTQwCkFwcsKg
+IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuOTE1NjkyXSBDb2RlOiBhOGMz
+N2JmZCBkNjVmMDNjMApmOTQwMDJhMCA4YjEzMDAxMyAoYjk0MDAyNzMpCkFwcsKgIDQgMTk6NTA6
+Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuOTI1MjEwXSAtLS1bIGVuZCB0cmFjZQoxODFk
+Nzk5M2Y5MmYzZjNkIF0tLS0KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
