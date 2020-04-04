@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7111919E7BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 23:37:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEE3119E7C0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 23:37:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sqmA2JJkiqQcwiccadNgETwSEPapLH99K6snHn9ik6w=; b=m3QiRsndpteTy8
-	CYIfvKcjvxagIduA3K+J1LQ5+mJYneqs0xKe+u16rFzIEqEDHqAsPFSCQQRrrX3wnRi6u7h3Kj9tv
-	/uo1PnOtQflLgq9g2Pl76WSWizVBjrMSOp4QsazRZA+Us3AJkubhE3icTv2wGpoKmGftI6ozY3DqB
-	+8ql3fl4dkQkSAr16DRk/EWJfMth/exo6XNmyZj0xXd2TxyAa8zhTspsFL561dBkZIwFqNOoQydeg
-	g2+yaL+q7mSzKySVbYrCAmFz+WUstCTF2/ALr9gyWEhz6b0BgcDuJTpmEzs7ADSSQd18v8rM65pVE
-	FvtrKdzAQAzpXT06C4fQ==;
+	List-Owner; bh=QnJOBHQY7WQLTY+s69uGv41ADGiVTKlk0eP7CIdBm2U=; b=QAOgN8orpvMhHX
+	g/95BUg+7IOc72QQaGHjvEeV6G+gHGL4m160yIvXMpoIKHGg6KlU5ab2Cz625mqrljtgiAgOqGt2u
+	0FuU1ZaKYRJkeFnxudvTgTKf2lt0Vw7taq6q5AmM0cBnXHkF0kGbPhD0kD3aU2oHIOrF/rY8u8rET
+	CWzZ7knysa7MdqomNaigJH2hsPEoU27Uwbhxh/YUHkO+9cD2I3LlffJLgq84un/nZF+ETmLc5XCK4
+	Bpd1KAAftRvTyszbNs5wRBoUyIZ2GDrOhAwjNF24qJW8bropjd0Gb0bpAogg26Sun5SoOuaFsOYFx
+	JGwwOvCtMUBO9DlisT8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKqTU-0003JZ-F6; Sat, 04 Apr 2020 21:37:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jKqTz-0003h6-Pt; Sat, 04 Apr 2020 21:37:39 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKqTN-0003Iz-R6; Sat, 04 Apr 2020 21:37:03 +0000
-Received: by mail-wm1-x342.google.com with SMTP id h2so2855283wmb.4;
- Sat, 04 Apr 2020 14:36:58 -0700 (PDT)
+ id 1jKqTq-0003gU-6V; Sat, 04 Apr 2020 21:37:32 +0000
+Received: by mail-wr1-x443.google.com with SMTP id h9so12860301wrc.8;
+ Sat, 04 Apr 2020 14:37:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=nsUmvNL8sjda7kyTK9AZ69fRxOGj+XDjFfXoJZYIvM8=;
- b=vSl82A1jjSShVEKVgcXvj1Bhq6/091gPYLcpmrDvA4LQXGtXXC913dC1wd8m4SAyMC
- nFVRljxpVzfV8eyb5Ahgz9eo6dPSR57iy8SknCeg5Sxh9Xm+r/hnA/dPPuodBrgbjf0E
- yWEaGzHpCgzx92I0Li+y4csac+sgxD8rCOcxka89p4ho+g1rjnDQxalcq7wKAg1ZWwQN
- wYS/Kmgsg6ok/QHSuiBlzhE1NIQoEMihggPBkH80ooTyBGoeUH29ibyg68USIaSlhTQY
- OdOEZ8IXIeK/UzakbZ5m6EMFXfTVAe/fpSATqScWdK/KaA0yAkbsmC9RCuOZ+8+gkdUu
- WZPA==
+ bh=sTWYnLDyyUvYklDKnfWTkeU3tZV47oZykcdBK4V2YI4=;
+ b=Vilvo8lMxm5bGinJMwlDRi1kGOzhrOoR9I8TIcXtxrVTCX0yRhA9VDRr7/5i92NURr
+ nAzVe7rfjY0QcBFHq1gjVXoEBZGFZMftPDS4llmy8sGxE/g2T4CU2p7qdWVNtBTDm1ZP
+ WauGWAmxV1ZnFGnh8o7H32Jlhrp7KbG3K8D5Id2CFJTngjNOO2dFy/4wKNkmG9INWx2a
+ aLT3bjjc6UcE3tfkR97uyCRL0l3AjLWx/NUWA+QFCHMWM8b57SWVAGnQXSkZXA5V4GLL
+ y3mI1wHmMauvVL6ELWHhY0TKtvcQYIifRQZPZMarE1d+WMxtvBk7pcsGzEqmdjOElx1J
+ BDsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=nsUmvNL8sjda7kyTK9AZ69fRxOGj+XDjFfXoJZYIvM8=;
- b=dfCmFIFawwqPHcHCNmHC6F7eODjIDoAoEdD98euhozsocM71YC2h/DHQjdQIxChirt
- qKl70npgt6Aom3OOluk35kQAK9Xw1cP8jbGXUlLy8njl1yE5598PgLvoA+LMjrlL2yzq
- OKnopMLitExdQant/FiP1inbDwazMPKDgmp6JaIj1WIagEoY3QfUHqWB0E8Lx2RbOegS
- XQb8nvbP4PkeRkpLxNIFHqSywnGXIeWmGwD/TFxzgGNWBavEyM67xBF02OX8hACd7xQi
- CpnYE9RrnJFMu8uWJK79mRqu3NunaQokynxybZnsppix+Emo9n8OIs152tefxUmE8KfT
- Ou8A==
-X-Gm-Message-State: AGi0PuYSneGrXc0B6h33xziMdfNR1QwLlvc+OAf7X0z87bdB+sdJAnox
- flCwZMSGiii0UAWb9YMj9k5aqSP3
-X-Google-Smtp-Source: APiQypI8wjblbC1p2epxBJI1h9aGQh+wwCoHzaw6KAPrVkJ40P88jx/H2TCNTOFFF0h0ccwmfToxcg==
-X-Received: by 2002:a1c:c90a:: with SMTP id f10mr14831521wmb.179.1586036216933; 
- Sat, 04 Apr 2020 14:36:56 -0700 (PDT)
+ bh=sTWYnLDyyUvYklDKnfWTkeU3tZV47oZykcdBK4V2YI4=;
+ b=JmkBepUSNf0i1ufQQFh0gJoCVYZxpAAJ/DZlmVka9yDjYrqMJ50VLYN/CIo2nzdOUJ
+ kuXcUiptfmC2fsB1IwXXiypX6syI3wQMQB5+O1zukhOn4wnDTd623q27QNHrbiSCVnPh
+ ORX0iaFsfwH3iIPeu/nXJyzwDMw5Lc+WvP6qUFwWmoZzVFOionhwg/MeBYVR9WIrCn0p
+ JkUVFGIizlSTDtXv/6OzRKcDvpwt7sloTs/LM746+XXEsmmoHlDiftrlldMtr3HXBOtc
+ r5olOW8LLhplJ6rPYki2QBKP4mEFb7kGc+/Yc57q1cbmgH445ADCjmP1NSXfF2LFTBXJ
+ tjOg==
+X-Gm-Message-State: AGi0PuakzBrBqv0PHJ/85GlMAxlEqzp/USEunlAFXzdcvMpze14lWcoK
+ Bqb60bOC2fc3zWHXGaLmgXcl9so3
+X-Google-Smtp-Source: APiQypKb9tCp1arMeO9EWwlBg8L4VU0oPxNDyxmKks8PsvTZODWjP/leGKvSOdl6lCruaEHrsgVlow==
+X-Received: by 2002:a5d:4246:: with SMTP id s6mr15799330wrr.321.1586036248473; 
+ Sat, 04 Apr 2020 14:37:28 -0700 (PDT)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- h188sm3670104wme.8.2020.04.04.14.36.54
+ t67sm17726439wmt.48.2020.04.04.14.37.26
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 04 Apr 2020 14:36:56 -0700 (PDT)
-Subject: Re: [GIT PULL 2/3] bcm2835-dt-next-2020-03-27
+ Sat, 04 Apr 2020 14:37:27 -0700 (PDT)
+Subject: Re: [GIT PULL 3/3] bcm2835-defconfig-next-2020-03-27
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>
 References: <20200327211632.32346-1-nsaenzjulienne@suse.de>
- <20200327211632.32346-2-nsaenzjulienne@suse.de>
+ <20200327211632.32346-3-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -116,26 +116,26 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <cecb31b9-beaf-860f-9c1d-a06b5fb4ac82@gmail.com>
-Date: Sat, 4 Apr 2020 14:36:53 -0700
+Message-ID: <6a10a2ae-aa1b-83ca-2347-5e445bcc55b2@gmail.com>
+Date: Sat, 4 Apr 2020 14:37:25 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200327211632.32346-2-nsaenzjulienne@suse.de>
+In-Reply-To: <20200327211632.32346-3-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_143701_881718_DE3B6108 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20200404_143730_241845_2A2D6582 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -168,34 +168,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 3/27/2020 2:16 PM, Nicolas Saenz Julienne wrote:
 > Hi Florian,
 > 
-> The following changes since commit 14e1eb5a91a96d9e1ce8051f752b7b6645bc8e10:
+> The following changes since commit 8068b7b63583764b46416a62856e42fb1f954ab6:
 > 
->   dt-bindings: arm: Document Broadcom SoCs 'secondary-boot-reg' (2020-03-10 12:43:15 -0700)
+>   Merge tag 'tags/bcm2835-defconfig-next-2020-03-09' into defconfig/next (2020-03-10 11:13:21 -0700)
 > 
 > are available in the Git repository at:
 > 
->   ssh://git@gitolite.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm2835-dt-next-2020-03-27
+>   ssh://git@gitolite.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm2835-defconfig-next-2020-03-27
 > 
-> for you to fetch changes up to 3ac395a5b3f3b678663fbb58381fdae2b1b57588:
+> for you to fetch changes up to f06f924a65fb3991614fb23a783d4fef9c8d14ea:
 > 
->   ARM: dts: bcm283x: Use firmware PM driver for V3D (2020-03-27 21:25:35 +0100)
-> 
-> ----------------------------------------------------------------
-> - First patch updates RPi4's expgpio's GPIO labels, adding the SD power rail.
-> 
-> - Second patch adds a fixed regulator that controls the SD power and
-> hooks it up with emmc2.
-> 
-> - Third patch rolls back to the firmware based power driver as the MMIO
-> version is unstable.
+>   ARM: bcm2835_defconfig: Enable fixed-regulator (2020-03-27 21:27:47 +0100)
 > 
 > ----------------------------------------------------------------
-> Nicolas Saenz Julienne (3):
->       ARM: dts: bcm2711: Update expgpio's GPIO labels
->       ARM: dts: bcm2711: Add vmmc regulator in emmc2
->       ARM: dts: bcm283x: Use firmware PM driver for V3D
+> Enables fixed regulator in bcm2835_defconfig
+> 
+> ----------------------------------------------------------------
 
-Merged into devicetree/next, thanks!
+Merged into defconfig/next, thanks!
 -- 
 Florian
 
