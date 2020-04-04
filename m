@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98F0D19E357
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 09:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0A819E34B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 Apr 2020 09:31:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3IqewOBtytcokphhTlX6NJhNU/URbvfptb6xjqNS/q4=; b=Ln3TJNBHooP+vS
-	6HHruVwsVW6/NHbc3rti1hTNmuNjVoa+szz3vUbrjTYZpSEd7e5Hhb7oyANevkXWaB8eXO9LGhRi9
-	qVgwpIyCrzEw5KWiqrvkZkvdzj4UugaCNCs8/F3sWgymtnnpnJStu6c/ZCDNSmM0aQVZhek+4oDi+
-	nCsuDO6xSi1PW7LK4wBjPjjMkcAQnt6/tXdyzie5Mz+O3AWhJXOaTBiIYrjGI8jMh+jYG07tYlrm5
-	pNZANKZpSJ5QybokaPoP3YSfSyHAX3BrSxAcz0j9CcOZBthw0m1/CETpwdwQjzzzqq8eRjzf7Vgyd
-	99fJJvm5d0DlumoUAvDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=sfMW7bR/TySkqc3pt+7XSzbsLled9hh24kpJ8IAXMZA=; b=fdB
+	yrCaz4BJYOtV/KLgQayypLRWBs787j/xSlaH/La4rI63lL66dyIX7owRG3Camwwwhgjakbc6feIOX
+	ZIYmNY56Uy84TGF5o9HUuOTUGicPQm4K9LRIXibUKg3UiJ1uvlmKurLVvmwhDnPZp9PPA9nyo65uw
+	DiV+Un5h1KPpSWpV6ulVV6EF3MwynHQGxJApiyqnqG1rTan5YPPHBjPpCevtZy1TOAYX608NW8lag
+	bNWmlqL32a2Qt67GK6ANKmU5n6EnOoKXfUQKOusXVoNEk03Gu/9hSId3c2un9nneJ4P9anyrU+OLp
+	XWhYt+vAk+s/kksHfrOVmq0ryy53Dmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKdHE-00054q-VI; Sat, 04 Apr 2020 07:31:36 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1jKdGj-0004o8-6B; Sat, 04 Apr 2020 07:31:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKdH7-00053m-K7
- for linux-arm-kernel@lists.infradead.org; Sat, 04 Apr 2020 07:31:31 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id x206so6498963vsx.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 04 Apr 2020 00:31:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PM54+TAF+g/S8Jdu48v4vdALgU1uHmqD41DlN+nN2GQ=;
- b=U/z7FaYgCxrifjRMbUMuNc48xDQkG1azVQ1qAqD5C7gQ2BC0+SFLokHqrseBZoS9BZ
- HhrCnBVjIlsNzTSk4g9jfL9JJz+m5CKI+s5CrxslyKnjLoTsEBG8QO2itdwefQVPu7Sh
- RWs2OJabHZCg++IlG5djjUt5kNFHWUOxPGGHY1AUmooXc5/Kvu95qNG/RJNI1bp408I1
- rv4YucMhPRAVJiiew6KxAcltBjYQn1wwVVPeylGsfx2YHhAuDgZgIaV+C9Eq+6VzjDvp
- i2sBU69P9pmQehnOz4LSQCQfw45G1MRqFniKV+pNE9TYCEJv2jY/nLd6aPv16oy5YDpy
- UvZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PM54+TAF+g/S8Jdu48v4vdALgU1uHmqD41DlN+nN2GQ=;
- b=iZMMB2YJEMYz65AgAW/iQZ4E4UVpC39jsdWY+UfVgazA3ugQR4oIcu52xDtJGGPF+h
- c62kX1ynFpcugQfzjTDw3KC2lgfNnThqkydOt1Keh+hfRjEzZcUuvit4kvzMgUk2Lusv
- 4vkxhGw3BFSnBg6yhQdzefo7aYXAzwCp4oo9EbyD8fnZxNrOAiHtjQsAN3MH4H86QoPB
- LTiBTCWqOoecoCg3ZaaQWcA6guzp5JUzDo8Sfco+y0nGizjm0Jnj5lJeqE+J1AjxTbua
- NkekGr13BfbUnBSAwQgxJNMto+CYDft6s82Qi8SiTm/MeW9W/y36BEhKee6WcLv9PTH1
- z0Xw==
-X-Gm-Message-State: AGi0PubEMT/inwWie0IBbdvGaYPdD5OPdg0sr4SUSwe3br3+rMPs7F1q
- 3uKlERL4xeAtlHMuTUk/SI+qlWvj4C/weoAZuTR4Mw==
-X-Google-Smtp-Source: APiQypIu/alTBXDgKITDXBctny47stbSvo55Own/Vu8y0I7bxK1KHmvt7pgNCgb+JQCSxYjPHiy+3AH9i6i2tnOhjmE=
-X-Received: by 2002:a67:69d5:: with SMTP id e204mr8446240vsc.159.1585985488361; 
- Sat, 04 Apr 2020 00:31:28 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200331075356.19171-1-j-keerthy@ti.com>
- <20200331075356.19171-2-j-keerthy@ti.com>
-In-Reply-To: <20200331075356.19171-2-j-keerthy@ti.com>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Sat, 4 Apr 2020 13:00:00 +0530
-Message-ID: <CAHLCerPrmsMU3uVwQGXfZAsWkgxiG+1M136f6uuWgwB4EF2uGg@mail.gmail.com>
-Subject: Re: [PATCH v5 1/4] dt-bindings: thermal: k3: Add VTM bindings
- documentation
-To: Keerthy <j-keerthy@ti.com>
+ id 1jKdGe-0004nn-AD
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 Apr 2020 07:31:01 +0000
+Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
+ [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B057206B8;
+ Sat,  4 Apr 2020 07:30:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585985459;
+ bh=YwNzc3LPzS5Ne5jnpGLuUWb6+rpkRhuod22y6xQH6Ns=;
+ h=From:To:Cc:Subject:Date:From;
+ b=xmkfgME2VgYzepgggNgkR3Y8/eYJTjS7NiLFZaHFKXcIMLm5H8on+jNGaX2LXCMyc
+ 7FDMPC5g2ttYbfDPLY2SMuFBunWoqpIejtXawOun6+tyAc67CEY0BHjts3JwgAxKWX
+ eT9G5pgOtBJkU/mCYBSIdIQ8D4qpycerV3gtliCM=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: iort: take _DMA methods into account for named
+ components
+Date: Sat,  4 Apr 2020 09:30:47 +0200
+Message-Id: <20200404073047.17898-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_003129_656272_B591BA3A 
-X-CRM114-Status: GOOD (  16.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200404_003100_377516_F2EB79B9 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,109 +74,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, t-kristo@ti.com,
- Rob Herring <robh+dt@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- lakml <linux-arm-kernel@lists.infradead.org>
+Cc: catalin.marinas@arm.com, lorenzo.pieralisi@arm.com, will@kernel.org,
+ robin.murphy@arm.com, Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 1:24 PM Keerthy <j-keerthy@ti.com> wrote:
->
-> Add VTM bindings documentation. In the Voltage Thermal
-> Management Module(VTM), K3 AM654 supplies a voltage
-> reference and a temperature sensor feature that are gathered in the band
-> gap voltage and temperature sensor (VBGAPTS) module. The band
-> gap provides current and voltage reference for its internal
-> circuits and other analog IP blocks. The analog-to-digital
-> converter (ADC) produces an output value that is proportional
-> to the silicon temperature.
->
-> Signed-off-by: Keerthy <j-keerthy@ti.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
->
-> Changes in v5:
->
->   * Added Reviewed-by: Rob Herring <robh@kernel.org>
->
->  .../bindings/thermal/ti,am654-thermal.yaml    | 56 +++++++++++++++++++
->  1 file changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
->
-> diff --git a/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> new file mode 100644
-> index 000000000000..d241b65d6072
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> @@ -0,0 +1,56 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/thermal/ti,am654-thermal.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Texas Instruments AM654 VTM (DTS) binding
-> +
-> +maintainers:
-> +  - Keerthy <j-keerthy@ti.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: ti,am654-vtm
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  "#thermal-sensor-cells":
-> +    const: 1
-> +
-> +required:
-> +  - "#thermal-sensor-cells"
-> +  - compatible
-> +  - reg
-> +  - power-domains
-> +
+Where IORT nodes for named components can describe simple DMA limits
+expressed as the number of address bits a device can driver, _DMA methods
+in AML can express more complex topologies, involving DMA translation in
+particular.
 
-A nit-pick: arrange the required properties in order they're listed above.
+Currently, we only take this _DMA method into account if it appears on a
+ACPI device node describing a PCIe root complex, but it is perfectly
+acceptable to attach them to named components as well, so let's ensure
+we take them into account in those cases too.
 
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
-> +    vtm: thermal@42050000 {
-> +        compatible = "ti,am654-vtm";
-> +        reg = <0x0 0x42050000 0x0 0x25c>;
-> +        power-domains = <&k3_pds 80 TI_SCI_PD_EXCLUSIVE>;
-> +        #thermal-sensor-cells = <1>;
-> +    };
-> +
-> +    mpu0_thermal: mpu0_thermal {
-> +        polling-delay-passive = <250>; /* milliseconds */
-> +        polling-delay = <500>; /* milliseconds */
-> +        thermal-sensors = <&vtm0 0>;
-> +
-> +        trips {
-> +                mpu0_crit: mpu0_crit {
-> +                        temperature = <125000>; /* milliCelsius */
-> +                        hysteresis = <2000>; /* milliCelsius */
-> +                        type = "critical";
-> +                };
-> +        };
-> +    };
-> +...
-> --
-> 2.17.1
->
+Reported-by: Andrei Warkentin <awarkentin@vmware.com>
+Fixes: 7ad4263980826e8b ("ACPI: Make acpi_dma_configure() DMA regions aware")
+Cc: <stable@vger.kernel.org> # v4.14+
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ drivers/acpi/arm64/iort.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index ed3d2d1a7ae9..07eb78baf198 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -1146,13 +1146,10 @@ void iort_dma_setup(struct device *dev, u64 *dma_addr, u64 *dma_size)
+ 	else
+ 		size = 1ULL << 32;
+ 
+-	if (dev_is_pci(dev)) {
+-		ret = acpi_dma_get_range(dev, &dmaaddr, &offset, &size);
+-		if (ret == -ENODEV)
+-			ret = rc_dma_get_range(dev, &size);
+-	} else {
+-		ret = nc_dma_get_range(dev, &size);
+-	}
++	ret = acpi_dma_get_range(dev, &dmaaddr, &offset, &size);
++	if (ret == -ENODEV)
++		ret = dev_is_pci(dev) ? rc_dma_get_range(dev, &size)
++				      : nc_dma_get_range(dev, &size);
+ 
+ 	if (!ret) {
+ 		/*
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
