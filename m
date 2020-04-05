@@ -2,56 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7318219EC24
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 16:49:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B40919EC31
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 16:53:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U/HFsXgVmHU69zbv2SQ//pXIuiDhnYJL9BPNGYgz4sY=; b=kjkPYien+im54x
-	f2SovvOw8kEHcWzteX+Vz5UpwzLYwNFH+o+7NjdhfYdkxTYY6Dk2yggQ3VrQjibLvp8oVmNVmFSLu
-	kbz4gtx6QnOe77y33Ap62YmFGPMfnfr0bVpMSYpk9kRGAZ6vZC0ShsGQfl7aXJbCVZ8Dq+LxfqqOB
-	YICCp/29IX/0wchLKhMWGGnDic6Emc7bi1ctZmmbSZ2IQnGDVDtvETp73xZP79fqC2AonVskA3f6u
-	M/r6NHL8H0qNaVsQY/G1oVVK1r+Hnjmsx8wwEFJ72r9sseXP+XRfw/e2Ayqhx2hgRe48Kq+O4ObQf
-	dkcI0agc7dhfNLI5Xmfw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PYLHLBAfSmQKypqgxgcUWu+fT7T6QV+jt6ioYz5ntw0=; b=o+OLkZZhgu1bcw
+	2ZH62eL4S73E+l8YJ9dJI/Ae65lbxnclRdef+Fb8QgjPSnNQSsl/FRXJHEWtfkzWxdTu6XAaJDApq
+	zIlQwrlJLAhE6mr6EMebj7965zozxLgT/DPDN0x/WN7KB1Qiqzvor9JM53k6tpY63UqTegZkp8r/R
+	lVIQqU9QQjyqEaoe5dbEBQVOgIsrGRzXZtkbEuHrlh6eWWefw0JdZkYOJ26WF3nfOu2k3IeqCTBX+
+	bDNZvoa0b1K+UYySsGkaapU9oVtUiBW/GyKrpPaBR13xMgGc6dGSkoTRZiPVSX95IplqBuWcsdEOK
+	fEG/Kf4iMnn7Io6kYRyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL6ag-0002LF-Kw; Sun, 05 Apr 2020 14:49:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL6aZ-0002Kg-Po; Sun, 05 Apr 2020 14:49:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6F6331B;
- Sun,  5 Apr 2020 07:49:30 -0700 (PDT)
-Received: from [10.163.1.2] (unknown [10.163.1.2])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7CCD73F52E;
- Sun,  5 Apr 2020 07:49:21 -0700 (PDT)
-Subject: Re: [mm/debug] f675f2f91d:
- WARNING:at_mm/debug_vm_pgtable.c:#debug_vm_pgtable
-To: kernel test robot <rong.a.chen@intel.com>
-References: <20200330085636.GG11705@shao2-debian>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <282deb38-8ce1-3980-2549-4413c33b6062@arm.com>
-Date: Sun, 5 Apr 2020 20:19:12 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jL6eV-0005M9-Et; Sun, 05 Apr 2020 14:53:35 +0000
+Received: from mout.web.de ([212.227.17.11])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jL6eP-0005Ld-3G; Sun, 05 Apr 2020 14:53:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1586098377;
+ bh=IWmjjEUL/Po3O0D2P7+8NcxxH3nBfKDYaqcRWyNJMrM=;
+ h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
+ b=UhA6bMM9VsnLGvDzXw1NLgZl+F/Mqy6qLaOGHYSrdDafRxgzMaB1f2oFjNg7uspat
+ yVtLguCZ2al8TR4EBBzNOunaxMaTZLaA0DC3sMG+PWF8kIqq/ONKyiErYhrjZjfYrj
+ /I9A5mb9m2/jhis+6ETSn5Gnn8L19QUiFirRnsto=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.3] ([93.131.99.70]) by smtp.web.de (mrweb103
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0MV4bp-1joQHF43Ab-00YNPH; Sun, 05
+ Apr 2020 16:52:57 +0200
+To: linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ "David S. Miller" <davem@davemloft.net>, Felix Fietkau <nbd@nbd.name>,
+ Kalle Valo <kvalo@codeaurora.org>,
+ Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Roy Luo <royluo@google.com>,
+ Ryder Lee <ryder.lee@mediatek.com>, Sean Wang <sean.wang@mediatek.com>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] mt7615: Delete an error message in mt7622_wmac_probe()
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <0b236ef3-45cb-b6bf-a3ca-fbe4fa4185da@web.de>
+Date: Sun, 5 Apr 2020 16:52:49 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200330085636.GG11705@shao2-debian>
 Content-Language: en-US
+X-Provags-ID: V03:K1:4CIYD6qtluiIAwHgLtajt+xvxrAO9x7zNuFZyEBoG683vdNnJZz
+ 7lXXfuAxfvYwp1UqMehK+qb5gpV36uRLHwGmG6SAddGn0fpO+CunIF/PaCv6KuStdaiUN/e
+ VaWbGgxngP5OH6aaZH1pr9aziNft51Nbg/SPM5ui40rJSLKfSmX+x/TnI429y+KESujfooC
+ jMw4XdUoRRyGwMthmZ0wA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qCrWWl4L1ok=:ig3rLi2RPTVORwuPEDzpMF
+ tvT/rRrmhOqo/lG7v9vjQQIXYJYMVtYkd6I43i6LOZqTuJ+3oO8EguUBJDJY8Xxjz1qKiupVg
+ QkxpIw0a2GUAtsJ7PtZWa1X6POnUGxYzJ2eXpVmqMfd7nHMl6f3FhLzwO/RQ8fczVuSjQvrOU
+ rRRVFcina73x7uUQCqImfq89OIQVjZgaACTVAw55ITVirr3F1f9aTQK9uTgRkmNJCRkLltfX/
+ piyBqKEWW47+FVz4xpmjcT0Q69d2LhziXwcaP6kZU7koJgoepF6KpxzLtS+cZXf9/x4VpOpU8
+ cYA7BjtrDSIdeSF2sUwqgMaes5FGwv0Er7rEi8J5ugaEAxRNJdyeXMX/VbIi+nqKiIWVK+mXI
+ tgH0XeysJfSz55ytuSTbBA9MsA/UW2/9YaHQiMUogPAlgfFTl5nraUdaDE/991Pyk6Xqp+fGQ
+ 7wPqQ2Z2XqHBMEQ/rqamysegpUXpQuVwhanS6Clm2NX10JSwcp5PwSEyNGl/eSD0SwPda6peM
+ rvXxN/y8ZXxg9KmhnBq0dKvr9EqCalbkVqq4h6iWXbCyEH+0hKh5rHLWggR+nGpjL4eifI1zd
+ kYZ777n70jmQWbui71zg1JrF+m0Cff54LilaN10oonVP2eW8mfH88S1YMqQOFyBlyz8eKc/kS
+ JHO2IBT+76fAvYzQwzdTBYX8TCb3309GQGpQCiu/q3ZPnPK5ajPq1jeRYnuIPYLpHqGJ1rrKy
+ HnHyiK+Rij8ruTjJuRYIgvUFX0bKYLL8EzwEVHRWJBQM6DIwlCfpvu+EjKAkWuggPpz4eCBkr
+ est+r+0Gcgv/3a4uENvlXTUnPcG+HrcYBWxKYIO+ci52o240NqMsR+vXZ2mhfBTWoI54H+52o
+ AISr4jMnTlX1ZZriGjGDj1vJa8Dgu0EpIkWYVF5Bn8a7TwffnnQE1bJQpST8Dk4U6rmlY4o1A
+ mC0xqXSuCP4Hb2FtoNsmOhM96lSLtJCUpPx4lQDpN2sowUX90KCQ3rRxg2mKVQ4jM5st66f3t
+ VVizkOTOLejgRhHXywWAanrV8Crbi7RCYMlBKzE+oi18q0qj+MjfmecHUp2H3WJOqgJhpE+UT
+ nc/UIddM31JxSgLruad+1FRi5Q/qmk0f4kMZepa5beQgAf30vDpDOE9wq5vc1g5nt5qbhut2S
+ sIrH8GA3ALge6s8BTM3VVHokVybE+26NSE43VDwdEWguquvs4X2OG9jJ8T5ea5oPKoK8A97Ns
+ TmMz3IWjzBMkW7BGv
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_074931_924943_1BAB9DB7 
-X-CRM114-Status: GOOD (  11.89  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200405_075329_477967_E40BC0B6 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.11 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [markus.elfring[at]web.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.17.11 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,104 +150,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>, lkp@lists.01.org,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Tang Bin <tangbin@cmss.chinamobile.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/30/2020 02:26 PM, kernel test robot wrote:
-> [  283.486118] WARNING: CPU: 1 PID: 1 at mm/debug_vm_pgtable.c:371 debug_vm_pgtable+0x4dc/0x7e3
-> [  283.487342] Modules linked in:
-> [  283.487752] CPU: 1 PID: 1 Comm: swapper/0 Not tainted 5.6.0-rc7-next-20200323-00001-gf675f2f91d045 #1
-> [  283.488817] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.12.0-1 04/01/2014
-> [  283.489794] RIP: 0010:debug_vm_pgtable+0x4dc/0x7e3
-> [  283.490361] Code: b5 fd 48 8b 7d d0 be 20 01 00 00 e8 3d 9f b5 fd 48 8b 75 c8 48 8b 7d d0 e8 30 9f b5 fd 48 8b 75 c8 48 8b 7d d0 e8 23 9f b5 fd <0f> 0b 48 8b 75 c8 48 8b 7d d0 e8 14 9f b5 fd 0f 0b 48 8b 75 c8 48
-> [  283.492577] RSP: 0000:ffff888236493ed8 EFLAGS: 00010202
-> [  283.493235] RAX: 00000001e1d31025 RBX: ffff88823e7f6cd8 RCX: ffffffffffffffff
-> [  283.494135] RDX: 0000000000000000 RSI: 0000000000000025 RDI: 00000001e1d31000
-> [  283.495002] RBP: ffff888236493f38 R08: 0000000000000001 R09: 0000000000000001
-> [  283.495858] R10: 0000000000000001 R11: 0000000000000000 R12: ffff88821d907000
-> [  283.496748] R13: ffff88821d8fc498 R14: ffff88821d8fda90 R15: ffff88821d8fc000
-> [  283.497614] FS:  0000000000000000(0000) GS:ffff888237800000(0000) knlGS:0000000000000000
-> [  283.498585] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-> [  283.499290] CR2: 00000000ffffffff CR3: 00000001e1222000 CR4: 00000000000406e0
-> [  283.500165] Call Trace:
-> [  283.500499]  ? rest_init+0x240/0x240
-> [  283.500985]  kernel_init+0x13/0x110
-> [  283.501433]  ret_from_fork+0x24/0x30
-> [  283.501907] irq event stamp: 4760776
-> [  283.502366] hardirqs last  enabled at (4760775): [<ffffffffb481e34d>] _raw_spin_unlock_irqrestore+0x4d/0x60
-> [  283.511686] hardirqs last disabled at (4760776): [<ffffffffb3c038d4>] trace_hardirqs_off_thunk+0x1a/0x1c
-> [  283.512914] softirqs last  enabled at (4760748): [<ffffffffb4c002cf>] __do_softirq+0x2cf/0x4ad
-> [  283.514086] softirqs last disabled at (4760741): [<ffffffffb3cf4f4d>] irq_exit+0xcd/0xe0
-> [  283.515114] ---[ end trace 7e3383c4261f8faa ]---
-
-The above failure here and the one on the other thread can be solved with
-the following change. The failure is caused by the fact that even though
-the soft dirty helpers are defined within CONFIG_HAVE_ARCH_SOFT_DIRTY, the
-required PTE bits (_PAGE_SOFT_DIRTY and _PAGE_SWP_SOFT_DIRTY) are available
-only when CONFIG_MEM_SOFT_DIRTY is enabled. Hence these tests should not
-proceed unless CONFIG_MEM_SOFT_DIRTY is enabled. Similar situation exists
-in s390 (_PAGE_SOFT_DIRTY and _SEGMENT_ENTRY_SOFT_DIRTY) and powerpc (at
-least with _PAGE_SWP_SOFT_DIRTY).
-
-diff --git a/mm/debug_vm_pgtable.c b/mm/debug_vm_pgtable.c
-index 87b4b495333b..2a75a51fed06 100644
---- a/mm/debug_vm_pgtable.c
-+++ b/mm/debug_vm_pgtable.c
-@@ -589,7 +589,7 @@ static void __init pte_soft_dirty_tests(unsigned long pfn, pgprot_t prot)
- {
-        pte_t pte = pfn_pte(pfn, prot);
- 
--       if (!IS_ENABLED(CONFIG_HAVE_ARCH_SOFT_DIRTY))
-+       if (!IS_ENABLED(CONFIG_MEM_SOFT_DIRTY))
-                return;
- 
-        WARN_ON(!pte_soft_dirty(pte_mksoft_dirty(pte)));
-@@ -600,7 +600,7 @@ static void __init pte_swap_soft_dirty_tests(unsigned long pfn, pgprot_t prot)
- {
-        pte_t pte = pfn_pte(pfn, prot);
- 
--       if (!IS_ENABLED(CONFIG_HAVE_ARCH_SOFT_DIRTY))
-+       if (!IS_ENABLED(CONFIG_MEM_SOFT_DIRTY))
-                return;
- 
-        WARN_ON(!pte_swp_soft_dirty(pte_swp_mksoft_dirty(pte)));
-@@ -612,7 +612,7 @@ static void __init pmd_soft_dirty_tests(unsigned long pfn, pgprot_t prot)
- {
-        pmd_t pmd = pfn_pmd(pfn, prot);
- 
--       if (!IS_ENABLED(CONFIG_HAVE_ARCH_SOFT_DIRTY))
-+       if (!IS_ENABLED(CONFIG_MEM_SOFT_DIRTY))
-                return;
- 
-        WARN_ON(!pmd_soft_dirty(pmd_mksoft_dirty(pmd)));
-@@ -623,7 +623,7 @@ static void __init pmd_swap_soft_dirty_tests(unsigned long pfn, pgprot_t prot)
- {
-        pmd_t pmd = pfn_pmd(pfn, prot);
- 
--       if (!IS_ENABLED(CONFIG_HAVE_ARCH_SOFT_DIRTY) ||
-+       if (!IS_ENABLED(CONFIG_MEM_SOFT_DIRTY) ||
-                !IS_ENABLED(CONFIG_ARCH_ENABLE_THP_MIGRATION))
-                return;
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2UubmV0PgpEYXRl
+OiBTdW4sIDUgQXByIDIwMjAgMTY6NDU6NDggKzAyMDAKClRoZSBmdW5jdGlvbiDigJxwbGF0Zm9y
+bV9nZXRfaXJx4oCdIGNhbiBsb2cgYW4gZXJyb3IgYWxyZWFkeS4KVGh1cyBvbWl0IGEgcmVkdW5k
+YW50IG1lc3NhZ2UgZm9yIHRoZSBleGNlcHRpb24gaGFuZGxpbmcgaW4gdGhlCmNhbGxpbmcgZnVu
+Y3Rpb24uCgpUaGlzIGlzc3VlIHdhcyBkZXRlY3RlZCBieSB1c2luZyB0aGUgQ29jY2luZWxsZSBz
+b2Z0d2FyZS4KClNpZ25lZC1vZmYtYnk6IE1hcmt1cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNv
+dXJjZWZvcmdlLm5ldD4KLS0tCiBkcml2ZXJzL25ldC93aXJlbGVzcy9tZWRpYXRlay9tdDc2L210
+NzYxNS9zb2MuYyB8IDQgKy0tLQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAzIGRl
+bGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210
+NzYvbXQ3NjE1L3NvYy5jIGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvbWVkaWF0ZWsvbXQ3Ni9tdDc2
+MTUvc29jLmMKaW5kZXggNDNhYTQ5NzA2YzY2Li45YWE1MTgzYzdhNTYgMTAwNjQ0Ci0tLSBhL2Ry
+aXZlcnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210NzYvbXQ3NjE1L3NvYy5jCisrKyBiL2RyaXZl
+cnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210NzYvbXQ3NjE1L3NvYy5jCkBAIC0zNiwxMCArMzYs
+OCBAQCBzdGF0aWMgaW50IG10NzYyMl93bWFjX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2Ug
+KnBkZXYpCiAJaW50IGlycTsKCiAJaXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCAwKTsKLQlp
+ZiAoaXJxIDwgMCkgewotCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJGYWlsZWQgdG8gZ2V0IGRldmlj
+ZSBJUlFcbiIpOworCWlmIChpcnEgPCAwKQogCQlyZXR1cm4gaXJxOwotCX0KCiAJbWVtX2Jhc2Ug
+PSBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoJnBkZXYtPmRldiwgcmVzKTsKIAlpZiAoSVNfRVJSKG1l
+bV9iYXNlKSkgewotLQoyLjI2LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
