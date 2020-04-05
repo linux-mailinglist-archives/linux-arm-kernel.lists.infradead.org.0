@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FA1E19E86C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 03:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E418119E875
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 04:02:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6v1elyesCGe82CedfEnVuJfoFT2aFXABpzHubupU4cQ=; b=cifIzpJLvmkWjv
-	ajLnMLAeZK5nYznDVWGGNinoizTrgof8oA/20ctA4lzqH6+keKUjALc8UgQu5iU6buPj/r3mQKA3W
-	dkvmy1hl+oT+H1Hk7uHsbsXHHctsd2e89Pc+3PLVrW1hN5rsP/wajYM6F7oRfTVaK7M8YxG/MgMfZ
-	wXCx6Kki30qHmtzd/TxgWUwb3FmLcVxfHl5KNLhg3MVqtYTRCFwz2FoiuLxLH/jToDlpzS+HPlVdO
-	ob4CKvlUMk3jbKd+/2XTW8/shP9KmF2cB2TPYnU3aF3ooInTOTKfB3EgEkwuXSby8DlZO3ayse1hZ
-	OhINY/TWrFp5SnUZtLGg==;
+	List-Owner; bh=Ueb/TzLyfVnJDI8mDOGTns0a+JL7tjFA20e6OM7r4Ac=; b=ILDtfrvOhZzfbl
+	JC4CWcJRogGSRO+ZgMDWjno9ekHKk+ElBNbgmRJn1bHHFsx5BTBFClPHmonvq6z5r3kdxK6j8ROPW
+	l9t/jSFYFwyyDbnFWusC69bFNPhwSFsPUWKnG7w+JmoKl5IiD5o/TmTBScr2efhtuT09X+KmD/sft
+	tPcQWTrjmOSItxiJl5IyYFzysC7bNno8M3V+N6dnKloduVW7Xur6SMPs+xNx7vmUOH7uVEF4Ns1MT
+	OB9NjJvKcRKybqlH7YFKny9dZJLg6VVXDC0xE54TVM7YnTPd2Gc0d20iCEyHZrepI79qhwrzKnQnW
+	TUzZOiIqoiXzaWpvNedg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKuUY-0006Dx-PY; Sun, 05 Apr 2020 01:54:30 +0000
+	id 1jKuc7-0003rA-7d; Sun, 05 Apr 2020 02:02:19 +0000
 Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKuUS-0006D2-2r
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 01:54:25 +0000
-Received: by mail-io1-f67.google.com with SMTP id y14so11921580iol.12
+ id 1jKubz-0003qr-Pe
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 02:02:13 +0000
+Received: by mail-io1-f67.google.com with SMTP id i3so11910748ioo.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 04 Apr 2020 18:54:18 -0700 (PDT)
+ Sat, 04 Apr 2020 19:02:11 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WGZ1QR60q1jU80/fYr0WWBey1aNSa19nwxnAnET5oVo=;
- b=S/InwKbNAANURKTVyqAVCTWSvz1pjcQuzIzc0vbPIdEXsay/BZA3iOqoUmk+dElL69
- i5NNVrgmRuDLwwoP8tsvF01Qvw5UBwT+eG/DNm1+ldLMN5dTq7UBHqfV2IqbSuMoSrBs
- RYA0zSBe8by2ZfjTVt9aSU4Bu5ih4o+RH0Af8G883EsiCEe9sN2O5ekEoxl7BzEjBOyY
- Mtg/dpflfH76Pzvu32ZBp0VfmfS4wdTngwSEIsp7TSfsbccNXVDbfl+DAkjuLr3SiQNN
- 7go5LqxkzqPisW0kkYEyMJbzGZWKjxfBNpO60Itqsxwz3Txb5tN7N2f9JL83pElCtSEk
- 2aDg==
-X-Gm-Message-State: AGi0PuY0lsjv/SSdwU/8tvRCfnjzJ50yJJ7Rsr2+3DH/CBcw1WHg97KA
- KCb3jPrV3T3+nyYJhpZQaQ==
-X-Google-Smtp-Source: APiQypImWqTBdmNG/vwTJJkqNRHISPAzw3peoR+pvIb61So8Pv/Sabd7lThe+FpmDbwepybmiIZcQA==
-X-Received: by 2002:a6b:e316:: with SMTP id u22mr13881852ioc.1.1586051658393; 
- Sat, 04 Apr 2020 18:54:18 -0700 (PDT)
+ bh=4KE1ajm7Pr9JZRShONsIYV51HCcbzA2Ep3Y98R0uXF0=;
+ b=Es0jUP7unXolOzW5iDmNxcqzKKHqx/oVV34z1QJTzrLjIbu3T3cYYAQd6rRvjnrM1C
+ 2oHHUR21Dj6XWrHC4/ItsSXHyTSdBKALuo3Ida8RDtKlh9TPV3RAtQdN0sk4pCXClo6d
+ hitvzAFARDquAu2pcz4fpvGN8eKrdEWtqrNc1ykGtZC5KrJZxavCgQWkJtkArCc+kidZ
+ aomDSy/hp657cP/CkJTB9heMr/SQggHQPvqkafFTIe15gTfzZDhv5hT6XWqWGWTjR0vs
+ uZBJsh0YvJu3/bXuP5Tf+6NeQA8XXVGUn+ZhEQGy+z+Zore/KL7SMZg1YK/4Rsq8l/s3
+ mMLQ==
+X-Gm-Message-State: AGi0PubRk1zOcY7cxXN9v+CGogy5/tPnskvukGFMfqul2hHN8BlVUDwO
+ V3uNF2NZgUAissnI1Tx+ng==
+X-Google-Smtp-Source: APiQypJBAkbiTizGN9DKt26SkLi+oMNVXz4uYVjtoFP0Ee1EplO0IkrN+ydU296Tom/Bm7vDZfPvpA==
+X-Received: by 2002:a05:6638:155:: with SMTP id
+ y21mr713152jao.79.1586052130726; 
+ Sat, 04 Apr 2020 19:02:10 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id x10sm4570896ili.88.2020.04.04.18.54.17
+ by smtp.gmail.com with ESMTPSA id r10sm3871386iom.42.2020.04.04.19.02.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 04 Apr 2020 18:54:17 -0700 (PDT)
-Received: (nullmailer pid 22378 invoked by uid 1000);
- Sun, 05 Apr 2020 01:54:16 -0000
-Date: Sat, 4 Apr 2020 19:54:16 -0600
+ Sat, 04 Apr 2020 19:02:10 -0700 (PDT)
+Received: (nullmailer pid 536 invoked by uid 1000);
+ Sun, 05 Apr 2020 02:02:08 -0000
+Date: Sat, 4 Apr 2020 20:02:08 -0600
 From: Rob Herring <robh@kernel.org>
 To: Alim Akhtar <alim.akhtar@samsung.com>
-Subject: Re: [PATCH v4 1/5] dt-bindings: phy: Document Samsung UFS PHY bindings
-Message-ID: <20200405015416.GA16616@bogus>
+Subject: Re: [PATCH v4 3/5] Documentation: devicetree: ufs: Add DT bindings
+ for exynos UFS host controller
+Message-ID: <20200405020208.GA22609@bogus>
 References: <20200327170638.17670-1-alim.akhtar@samsung.com>
- <CGME20200327171414epcas5p1460e932c0bc98f31ebdd115218b4fd49@epcas5p1.samsung.com>
- <20200327170638.17670-2-alim.akhtar@samsung.com>
+ <CGME20200327171418epcas5p4b85bea273e17c05a7edca58f528c435a@epcas5p4.samsung.com>
+ <20200327170638.17670-4-alim.akhtar@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200327170638.17670-2-alim.akhtar@samsung.com>
+In-Reply-To: <20200327170638.17670-4-alim.akhtar@samsung.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_185424_125602_C69595BB 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20200404_190211_832907_04E5D144 
+X-CRM114-Status: GOOD (  23.60  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -103,105 +105,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 10:36:34PM +0530, Alim Akhtar wrote:
-> This patch documents Samsung UFS PHY device tree bindings
+On Fri, Mar 27, 2020 at 10:36:36PM +0530, Alim Akhtar wrote:
+> This adds Exynos Universal Flash Storage (UFS) Host Controller DT bindings.
+
+Why the inconsistent subject. 'dt-bindings: ...' please.
+
 > 
+> Signed-off-by: Seungwon Jeon <essuuj@gmail.com>
 > Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
 > ---
->  .../bindings/phy/samsung,ufs-phy.yaml         | 67 +++++++++++++++++++
->  1 file changed, 67 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+>  .../devicetree/bindings/ufs/ufs-exynos.txt    | 104 ++++++++++++++++++
+>  1 file changed, 104 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/ufs/ufs-exynos.txt
+
+Use DT schema format. Not sure why you'd do that for one and not the 
+other...
+
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
+> diff --git a/Documentation/devicetree/bindings/ufs/ufs-exynos.txt b/Documentation/devicetree/bindings/ufs/ufs-exynos.txt
 > new file mode 100644
-> index 000000000000..41ba481ecc76
+> index 000000000000..08e2d1497b1b
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/samsung,ufs-phy.yaml
-> @@ -0,0 +1,67 @@
-> +# SPDX-License-Identifier: (GPL-2.0)
+> +++ b/Documentation/devicetree/bindings/ufs/ufs-exynos.txt
+> @@ -0,0 +1,104 @@
+> +* Exynos Universal Flash Storage (UFS) Host Controller
+> +
+> +UFSHC nodes are defined to describe on-chip UFS host controllers.
+> +Each UFS controller instance should have its own node.
+> +
+> +Required properties:
+> +- compatible        : compatible name, contains "samsung,exynos7-ufs"
+> +- interrupts        : <interrupt mapping for UFS host controller IRQ>
+> +- reg               : Should contain HCI, vendor specific, UNIPRO and
+> +		      UFS protector address space
+> +- reg-names	    : "hci", "vs_hci", "unipro", "ufsp";
+> +
+> +Optional properties:
+> +- vdd-hba-supply        : phandle to UFS host controller supply regulator node
+> +- vcc-supply            : phandle to VCC supply regulator node
+> +- vccq-supply           : phandle to VCCQ supply regulator node
+> +- vccq2-supply          : phandle to VCCQ2 supply regulator node
+> +- vcc-supply-1p8        : For embedded UFS devices, valid VCC range is 1.7-1.95V
+> +                          or 2.7-3.6V. This boolean property when set, specifies
+> +			  to use low voltage range of 1.7-1.95V. Note for external
+> +			  UFS cards this property is invalid and valid VCC range is
+> +			  always 2.7-3.6V.
 
-Dual license new bindings:
+The supply for vcc-supply should be restricted to the valid range and 
+this is not needed.
 
-(GPL-2.0-only OR BSD-2-Clause)
+> +- vcc-max-microamp      : specifies max. load that can be drawn from vcc supply
+> +- vccq-max-microamp     : specifies max. load that can be drawn from vccq supply
+> +- vccq2-max-microamp    : specifies max. load that can be drawn from vccq2 supply
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/samsung,ufs-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Samsung SoC series UFS PHY Device Tree Bindings
-> +
-> +maintainers:
-> +  - Alim Akhtar <alim.akhtar@samsung.com>
-> +
-> +properties:
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  compatible:
-> +    enum:
-> +      - samsung,exynos7-ufs-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +    description: PHY base register address
-> +
-> +  reg-names:
-> +    items:
-> +      - const: phy-pma
-> +
-> +  clocks:
-> +    items:
-> +      - description: PLL reference clock
-> +      - description: Referencec clock parrent
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref_clk_parent
-> +      - const: ref_clk
+How is this information useful?
 
-Doesn't match what 'clocks' says.
+> +- <name>-fixed-regulator : boolean property specifying that <name>-supply is a fixed regulator
 
-Also, why do you need the parent in DT? Just use clk_get_parent(). DT 
-should reflect actual h/w clock connections (not what the driver 
-happens to need). Also, there's the assigned-clocks binding.
+No need for this. Look up the phandle and check supply's node if you 
+want to know this.
 
 > +
-> +  samsung,pmu-syscon:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle'
-> +    description: phandle for PMU system controller interface, used to
-> +                 control pmu registers for power isolation
+> +- clocks                : List of phandle and clock specifier pairs
+> +- clock-names           : List of clock input name strings sorted in the same
+> +                          order as the clocks property.
+> +			  "core", "sclk_unipro_main", "ref" and ref_parent
+> +
+> +- freq-table-hz		: Array of <min max> operating frequencies stored in the same
+> +			  order as the clocks property. If this property is not
+> +			  defined or a value in the array is "0" then it is assumed
+> +			  that the frequency is set by the parent clock or a
+> +			  fixed rate clock source.
+> +- pclk-freq-avail-range : specifies available frequency range(min/max) for APB clock
+> +- ufs,pwr-attr-mode : specifies mode value for power mode change, possible values are
+> +			"FAST", "SLOW", "FAST_auto" and "SLOW_auto"
 
-We have a binding for power domains. Use that for power isolation.
+Anything before the ',' is considered a vendor prefix and 'ufs' is not a 
+vendor.
 
+If these are standard UFS properties, then they should be documented in 
+a common UFS binding. On the flip side, none of the other UFS bindings 
+have needed these properties, so why do you?
+
+> +- ufs,pwr-attr-lane : specifies lane count value for power mode change
+> +		      allowed values are 1 or 2
+> +- ufs,pwr-attr-gear : specifies gear count value for power mode change
+> +		      allowed values are 1 or 2
+> +- ufs,pwr-attr-hs-series : specifies HS rate series for power mode change
+> +			   can be one of "HS_rate_b" or "HS_rate_a"
+> +- ufs,pwr-local-l2-timer : specifies array of local UNIPRO L2 timer values
+> +			   3 timers supported
+> +			   <FC0ProtectionTimeOutVal,TC0ReplayTimeOutVal, AFC0ReqTimeOutVal>
+> +- ufs,pwr-remote-l2-timer : specifies array of remote UNIPRO L2 timer values
+> +			   3 timers supported
+> +			   <FC0ProtectionTimeOutVal,TC0ReplayTimeOutVal, AFC0ReqTimeOutVal>
+> +- ufs-rx-adv-fine-gran-sup_en : specifies support of fine granularity of MPHY,
+> +			      this is a boolean property.
+> +- ufs-rx-adv-fine-gran-step : specifies granularity steps of MPHY,
+> +			      allowed step size is 0 to 3
+> +- ufs-rx-adv-min-activate-time-cap : specifies rx advanced minimum activate time of MPHY
+> +				     range is 1 to 9
+> +- ufs-pa-granularity : specifies Granularity for PA_TActivate and PA_Hibern8Time
+> +- ufs-pa-tacctivate : specifies time to wake-up remote M-RX
+> +- ufs-pa-hibern8time : specifies minimum time to wait in HIBERN8 state
 > +
-> +required:
-> +  - "#phy-cells"
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - clocks
-> +  - clock-names
-> +  - samsung,pmu-syscon
+> +Note: If above properties are not defined it can be assumed that the supply
+> +regulators or clocks are always on.
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/exynos7-clk.h>
+> +Example:
+> +	ufshc@0x15570000 {
+> +		compatible = "samsung,exynos7-ufs";
+> +		reg = <0x15570000 0x100>,
+> +		      <0x15570100 0x100>,
+> +		      <0x15571000 0x200>,
+> +		      <0x15572000 0x300>;
+> +		reg-names = "hci", "vs_hci", "unipro", "ufsp";
+> +		interrupts = <0 200 0>;
 > +
-> +    ufs_phy: ufs-phy@15571800 {
-> +        compatible = "samsung,exynos7-ufs-phy";
-> +        reg = <0x15571800 0x240>;
-> +        reg-names = "phy-pma";
-> +        samsung,pmu-syscon = <&pmu_system_controller>;
-> +        #phy-cells = <0>;
-> +        clocks = <&clock_fsys1 MOUT_FSYS1_PHYCLK_SEL1>,
-> +                 <&clock_top1 CLK_SCLK_PHY_FSYS1_26M>;
-> +        clock-names = "ref_clk_parent",
-> +                      "ref_clk";
-> +    };
-> +...
-> 
-> base-commit: fb33c6510d5595144d585aa194d377cf74d31911
+> +		vdd-hba-supply = <&xxx_reg0>;
+> +		vdd-hba-fixed-regulator;
+> +		vcc-supply = <&xxx_reg1>;
+> +		vcc-supply-1p8;
+> +		vccq-supply = <&xxx_reg2>;
+> +		vccq2-supply = <&xxx_reg3>;
+> +		vcc-max-microamp = 500000;
+> +		vccq-max-microamp = 200000;
+> +		vccq2-max-microamp = 200000;
+> +
+> +		clocks = <&core 0>, <&ref 0>, <&iface 0>;
+> +		clock-names = "core", "sclk_unipro_main", "ref", "ref_parent";
+> +		freq-table-hz = <100000000 200000000>, <0 0>, <0 0>, <0 0>;
+> +
+> +		pclk-freq-avail-range = <70000000 133000000>;
+> +
+> +		ufs,pwr-attr-mode = "FAST";
+> +		ufs,pwr-attr-lane = <2>;
+> +		ufs,pwr-attr-gear = <2>;
+> +		ufs,pwr-attr-hs-series = "HS_rate_b";
+> +		ufs,pwr-local-l2-timer = <8000 28000 20000>;
+> +		ufs,pwr-remote-l2-timer = <12000 32000 16000>;
+> +		ufs-rx-adv-fine-gran-sup_en = <1>;
+> +		ufs-rx-adv-fine-gran-step = <3>;
+> +		ufs-rx-adv-min-activate-time-cap = <9>;
+> +		ufs-pa-granularity = <6>;
+> +		ufs-pa-tacctivate = <6>;
+> +		ufs-pa-hibern8time = <20>;
+> +	};
 > -- 
 > 2.17.1
 > 
