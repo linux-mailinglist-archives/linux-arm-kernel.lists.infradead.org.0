@@ -2,86 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE49D19E9A1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 08:52:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C57C919E9AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 09:00:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K5UboNnvYG5h/VTGhRQinSCdo5RlPFxvOqG8ZRCsRJI=; b=E4uXyiWZd4391r
-	pikBX8likIVQAHdUM+BIHUNedASmmIgqf9mJGLUIZRbG7YXxdzJvqQnRhXHog+CUwXb6ue1KVXWN5
-	odwDK6W1Pb2f/kHis23JH3YRsepkE4JBZr/87JOD7KEY2hKVoxtHHf65EjCuKNqqW9RCpn53i3cEs
-	YwRpeL9LtEshUezFo1OTJmDqIPL1q2c3aYP5QhAGJ2ruGtbJia7hX1GMk8OPHTxwvZkEn50BKTl6l
-	Hl1ZFSbgkaA6rd5qi0CRJZQktxRmKY2q8UNwSVyHHW8qTVNE0vLKE9OW87COzrCYyMZbZhS65jx49
-	4UYjDMeoZG0D8AUmUfSw==;
+	List-Owner; bh=/lXkz04UdbMGXmpxerineqHbfNcb7J1zvc9vOqEboy8=; b=KEt0rxAKHg8w2U
+	5bsHX1pNWcpmRcv5lw3auqt1RSdc3shMXLKuJzZLgXniVDYsDAEIWQOjO0gBb8bKBMmHSw5fmBMCc
+	6nrYBeWjTlwIRsm72HtmKIuNwxwPCh8zspkIsvhbi9CT0jowWUcUe8v5IbWOe4N843PpiWw2CQSgL
+	+AhK/pzDfdo+ijSsdbdntuAhyjzOrmQUIME9sL+QWuoJGiHuSkOwpqcni8spbjI6Zr5chQCp3+f3W
+	ZK41qDOks8vHzH3iTijcT7pxfwn0lQNdknocI0T/7XyfvrsxSoxwclTO2kh+ilV+FGD3gCXQViFDQ
+	U5iqhOPUKFIn09nvGlYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKz8N-00069u-Kd; Sun, 05 Apr 2020 06:51:55 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jKzGT-0000st-1Y; Sun, 05 Apr 2020 07:00:17 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKz8F-000695-O4
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 06:51:49 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id m15so5039359pje.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 04 Apr 2020 23:51:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=TGy9rnxZk9+7y7aCTCI01iy1QvV1657xHryoXzYxu+w=;
- b=QA76mSat7GkAycz9Ix+QUyd+J9fKzqc/h5WIAYN1rHB/m9fsk4aL0+Ls2u8RkVKaPV
- zF/dg9pfZm3Rbwe0v9hn2baF768y2hk7a69JUJqtagpLreDXirQyxZXvyBIe7bXEeDVc
- fw6yX6G2Z8fUTsCZiPTQ9kSX6pYb3FSvM9kAsEP/3P38ya/98AuRlk0l9ChaBUh/7m7j
- F6Tx8A9k9J+QnSndiXGhBw+YqNoSZOGSVzrp6N2jBz12xu4bw9YyLa3BBh+RBPPcAzog
- 77Kh2moc+T3yLKb3zXVpEBKIteYcftCn2P7wo5xtO4GH7aRmpRK2JlQivQnYDcWq+O+F
- 5e6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=TGy9rnxZk9+7y7aCTCI01iy1QvV1657xHryoXzYxu+w=;
- b=Tc5mfQCRTxTUfUDWcQxISWv77wj4avy8L7xFksHhJ6d1taKB4o90o/HLWKV07lnVSK
- gUeI8L1nXJPR8pFJazml/cnwHHaT9VW3rHIfatkC/J6CdX0Y+m6jRVZxFP+SqeMkwjal
- rtRIeYxEMNppg3kujTP43xmmKdyjsy4sbRlAjK50lgC9aso7l8smvX2FuKrvYLJwrRDH
- QbYM5Bii/I6/dVHMHQ2/r1u7OCkPLA+xjmqFw8dvqXWzFfUReI7eBjL7aUO+QC0JXwsb
- VoKi73nPSjXG9yDHjDqHE0Zfglv/HbgeDm4CIBqijcQ+cIusccrVZFbei2bJviYxQS+P
- iWtQ==
-X-Gm-Message-State: AGi0PuZIAiwO1T7dGiSyaQHb5mVs4yM7Xq9Sd/pvnaCcavKlKguTsFsM
- cfrQ5CDZ0ht7LVYluVJwyx/0
-X-Google-Smtp-Source: APiQypKhtqT6m4dUjC/jKfp/a1KE2PyeMsGxvd4RbU9eb/JrQOMjCpNyqmpFkHp9h9iWB4Q5RqSoWA==
-X-Received: by 2002:a17:902:342:: with SMTP id
- 60mr15873346pld.29.1586069505517; 
- Sat, 04 Apr 2020 23:51:45 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:6e83:b2ab:75aa:fbdc:e9da:9d96])
- by smtp.gmail.com with ESMTPSA id h198sm8842662pfe.76.2020.04.04.23.51.39
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 04 Apr 2020 23:51:44 -0700 (PDT)
-Date: Sun, 5 Apr 2020 12:21:37 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Matheus Castello <matheus@castello.eng.br>
-Subject: Re: [PATCH v3 3/3] ARM: dts: Add Caninos Loucos Labrador
-Message-ID: <20200405065137.GC8912@Mani-XPS-13-9360>
-References: <20200229104358.GB19610@mani>
- <20200320035104.26139-1-matheus@castello.eng.br>
- <20200320035104.26139-4-matheus@castello.eng.br>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200320035104.26139-4-matheus@castello.eng.br>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1jKzG9-0000r9-TW
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 06:59:59 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id AAEDE58026A;
+ Sun,  5 Apr 2020 02:59:50 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute3.internal (MEProxy); Sun, 05 Apr 2020 02:59:50 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=yWE5iV1vF2rjVGqJzP4udG6OgWvMuVf
+ D2zKlW0VL8vc=; b=goGwj/jmvd74/4dXXrkmJVPe5xI9r3yKgasZjk9WlI8sZvA
+ Hq8FllL86de3H+jkfEIilxOxo12fkh/uZUGny/AvGivr3scfemC7SN6haQ8cLUDX
+ kNhFTFxt3PvIwPTWj8+orWCj7oZPLvd5Jy1TS0VAMqEv9td8mDYMkk8gex5pvoeA
+ ucNFcYwGXilpC8XYUKedvB+1ommO41Vzbiusd1/aW5yknjdpImx7oilaa+/dl9qW
+ KE3k6T7vf1ggYLO/YNXbgb4F8FxAlcVUZ/d5VQ+sZyJEYLzQw5rkmZD96vbYLLu/
+ Vlukw8OOzCVMFp3RsorCHmsR+YcxKKESTznHguA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=yWE5iV
+ 1vF2rjVGqJzP4udG6OgWvMuVfD2zKlW0VL8vc=; b=QQpV+ip6yBO7k7deoxKGUs
+ rW3WfZZP7kKZy5IZipRQlASYytedxXztVz9s6lAsbr9r1rfrO4aaV5W/NgiNkG2E
+ dcwvdQ+XbPv7RwpPM2Ek7A+AqhaYPEQtoEg8FP2ct2LKqXsA//neIK5q0H5Kmv9p
+ ESfTAcXiw+aRhyXlvNuR5YKUOayawJtEIkwpYkOO6fSTgb142/azseN7ik/FsTbf
+ JdXgvn/gh/lkZtCk6sYTR3NB8gvhSy+5/RNDytiIgGfJH0n0RNJG5OJg8SLaezdB
+ dnVkGcD2iuBA+cRfi5P7ID9bOvcIdfhofBrMax6bBiggzvEoSgEP/OpDUMvMtw1Q
+ ==
+X-ME-Sender: <xms:5IGJXgh39OEGA02bB29v2YQALa7x8qIPFiG_n0zd-ko5F5rCutG2cA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddtgddulecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
+ hinhepkhgvrhhnvghlrdhorhhgpdguvghvihgtvghsrdhpihhnghenucevlhhushhtvghr
+ ufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiug
+ drrghu
+X-ME-Proxy: <xmx:5IGJXoUMkaRJo6jN3vOIm7edHXudlz9cSM0j6tpYFurIuA7U-IYdnQ>
+ <xmx:5IGJXvCM5nfC-tJ_HT3EdJZkXcpgb3h5JENEvcJysnffznYFloNhjw>
+ <xmx:5IGJXslnrlyKOycSkd-ZzaXEsrp6Cgglk7UNiANZGtnAa-OYfektrg>
+ <xmx:5oGJXtU6C2CZPne5rDC3sbV-JSzh2weW3z2qanuGgwholBRpBXk-Qg>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id A15A8E00B1; Sun,  5 Apr 2020 02:59:48 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-1082-g13d7805-fmstable-20200403v1
+Mime-Version: 1.0
+Message-Id: <69bfc045-2059-4d37-af7a-52f5840664cf@www.fastmail.com>
+In-Reply-To: <20200403130840.GR2910@minyard.net>
+References: <cover.fe20dfec1a7c91771c6bb574814ffb4bb49e2136.1576462051.git-series.andrew@aj.id.au>
+ <7734002a-181e-4baf-b9a3-af66894acc16@www.fastmail.com>
+ <20200403130840.GR2910@minyard.net>
+Date: Sun, 05 Apr 2020 16:30:09 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Corey Minyard" <minyard@acm.org>
+Subject: =?UTF-8?Q?Re:_[PATCH_v2_0/3]_ipmi:_kcs-bmc:_Rework_bindings_to_clean_up_?=
+ =?UTF-8?Q?DT_warnings?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_235147_851717_B2BF7BDF 
-X-CRM114-Status: GOOD (  16.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200404_235958_087005_03BCE521 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,6 +95,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,126 +110,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- edgar.righi@lsitec.org.br, robh+dt@kernel.org, igor.lima@lsitec.org.br,
- afaerber@suse.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ linux-aspeed@lists.ozlabs.org, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ openipmi-developer@lists.sourceforge.net,
+ Haiyue Wang <haiyue.wang@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 12:51:04AM -0300, Matheus Castello wrote:
-> Add Device Trees for Caninos Loucos Labrador CoM and base board.
-> Based on the work of Andreas F=E4rber on Lemaker Guitar device tree.
-> =
 
-> Signed-off-by: Matheus Castello <matheus@castello.eng.br>
 
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+On Fri, 3 Apr 2020, at 23:38, Corey Minyard wrote:
+> On Fri, Apr 03, 2020 at 02:20:21PM +1030, Andrew Jeffery wrote:
+> > 
+> > 
+> > On Mon, 16 Dec 2019, at 12:57, Andrew Jeffery wrote:
+> > > Hello,
+> > > 
+> > > This is a short series reworking the devicetree binding and driver for the
+> > > ASPEED BMC KCS devices. With the number of supported ASPEED BMC devicetrees the
+> > > changes enable removal of more than 100 lines of warning output from dtc.
+> > > 
+> > > v1 can be found here:
+> > > 
+> > > https://lore.kernel.org/lkml/cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au/
+> > > 
+> > > v2 cleans up the commit message of 2/3 and changes the name of the property
+> > > governing the LPC IO address for the KCS devices.
+> > 
+> > Ping?
+> 
+> Sorry, I've been busy.
 
-Will queue the series for v5.8 once Andreas is happy with it.
+No worries, so have I. I was surprised when I found it had been 4 months :)
 
-Nit: Please keep linux-actions@lists.infradead.org in CC for all future
-patches/replies.
+>  I've looked this over and it seems ok, and it's
+> in my next tree.
 
-Thanks,
-Mani
+Thanks.
 
-> ---
->  arch/arm/boot/dts/Makefile                  |  1 +
->  arch/arm/boot/dts/owl-s500-labrador-bb.dts  | 34 +++++++++++++++++++++
->  arch/arm/boot/dts/owl-s500-labrador-v2.dtsi | 21 +++++++++++++
->  3 files changed, 56 insertions(+)
->  create mode 100644 arch/arm/boot/dts/owl-s500-labrador-bb.dts
->  create mode 100644 arch/arm/boot/dts/owl-s500-labrador-v2.dtsi
-> =
-
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index d6546d2676b9..99f633460833 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -842,6 +842,7 @@ dtb-$(CONFIG_ARCH_ORION5X) +=3D \
->  dtb-$(CONFIG_ARCH_ACTIONS) +=3D \
->  	owl-s500-cubieboard6.dtb \
->  	owl-s500-guitar-bb-rev-b.dtb \
-> +	owl-s500-labrador-bb.dtb \
->  	owl-s500-sparky.dtb
->  dtb-$(CONFIG_ARCH_PRIMA2) +=3D \
->  	prima2-evb.dtb
-> diff --git a/arch/arm/boot/dts/owl-s500-labrador-bb.dts b/arch/arm/boot/d=
-ts/owl-s500-labrador-bb.dts
-> new file mode 100644
-> index 000000000000..91012b4a4c30
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/owl-s500-labrador-bb.dts
-> @@ -0,0 +1,34 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Caninos Labrador Base Board
-> + *
-> + * Copyright (c) 2019-2020 Matheus Castello
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "owl-s500-labrador-v2.dtsi"
-> +
-> +/ {
-> +	compatible =3D "caninos,labrador-bb", "caninos,labrador", "actions,s500=
-";
-> +	model =3D "Caninos Labrador Base Board M v1.0";
-> +
-> +	aliases {
-> +		serial3 =3D &uart3;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path =3D "serial3:115200n8";
-> +	};
-> +
-> +	uart3_clk: uart3-clk {
-> +		compatible =3D "fixed-clock";
-> +		clock-frequency =3D <921600>;
-> +		#clock-cells =3D <0>;
-> +	};
-> +};
-> +
-> +&uart3 {
-> +	status =3D "okay";
-> +	clocks =3D <&uart3_clk>;
-> +};
-> diff --git a/arch/arm/boot/dts/owl-s500-labrador-v2.dtsi b/arch/arm/boot/=
-dts/owl-s500-labrador-v2.dtsi
-> new file mode 100644
-> index 000000000000..0b54f1ef3ec0
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/owl-s500-labrador-v2.dtsi
-> @@ -0,0 +1,21 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Caninos Labrador CoM V2
-> + *
-> + * Copyright (c) 2019-2020 Matheus Castello
-> + */
-> +
-> +#include "owl-s500.dtsi"
-> +
-> +/ {
-> +	compatible =3D "caninos,labrador", "actions,s500";
-> +
-> +	memory@0 {
-> +		device_type =3D "memory";
-> +		reg =3D <0x0 0x80000000>;
-> +	};
-> +};
-> +
-> +&timer {
-> +	clocks =3D <&hosc>;
-> +};
-> --
-> 2.25.0
-> =
-
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
