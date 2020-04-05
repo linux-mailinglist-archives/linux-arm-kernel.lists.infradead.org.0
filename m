@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC0CC19E8E7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 05:35:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C511519E8ED
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 05:37:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LVdpxsvDEIKlUIbNhPESMieUvtvbTwgL0NHbrCTB3nA=; b=d+NPLxWtnmkFkVe81OpvX63th
-	R1I0hZt1ILXz+M71ztEf8pmoqbFToJNXvx4wXRFt/+a5BguJSvbpesM8SGByX4tWUmkwcY+Nrsm48
-	ULFbqaEbT7tmCO21CzlSaq1P6dR/xGQ8G3eAuK7BBgkTIkAice/Oz4dXnEoCg7e237gUbw/AVxvuA
-	ucv27o2+ovE2M+95Jt4h0ErxJEQ1ysXh+kRYbEU0s/ONrk/FV2p7XToRuggWFwgahiCwy0NL9zO51
-	8Yne53jcuKgvsMqpd9BH7KJXaH7n3SggssjPvjHOPfZi2LHBl7fO8T2bZxyV7sN/vfU/3ig9CXRR5
-	ADPUlpjSg==;
+	 bh=6883iwCVcmKmC1X2k198p+kc4bYhfqXPqpqDZspj8tI=; b=D0uYmCvxlZpZOZsbrISsalIfH
+	vH5yMp3htSHDG62xe2ejDYFrU+0IBdFAstuYwQ1W5Z5zkA8WkWBqCWVjTNa2QLOd16uRc8ECZrAxh
+	5BMRnzIfm0JagWQHERQLKeZK2P6g76SP5Ki3lnfx4r2DOS0N1WxIuWJ63PhqK6dRAaxpg+LrMyUaX
+	kl+oLu6s6xGXcp19NFwqSBv1pNJ8NS9pp66pLZUmNtbTXU7uQf8mcn8yLvwgFUdddIRp3lmqAjutD
+	akmD/jABijBSF9l13TKp/xuy6a39akiHRv4HVE+BubNaKArFPTJ4QLRkfogTf7u4FvEJ/v31RG2Qe
+	tPQ+sgxhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKw4Z-0008W6-Kx; Sun, 05 Apr 2020 03:35:47 +0000
+	id 1jKw6I-0000mX-4V; Sun, 05 Apr 2020 03:37:34 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKw4S-0008VX-PF; Sun, 05 Apr 2020 03:35:42 +0000
+ id 1jKw6A-0000lv-AY; Sun, 05 Apr 2020 03:37:28 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: sre)
- with ESMTPSA id 70591298001
+ with ESMTPSA id D83CF28DFDA
 Received: by earth.universe (Postfix, from userid 1000)
- id 8E2E43C082A; Sun,  5 Apr 2020 05:35:36 +0200 (CEST)
-Date: Sun, 5 Apr 2020 05:35:36 +0200
+ id E36E23C082A; Sun,  5 Apr 2020 05:37:22 +0200 (CEST)
+Date: Sun, 5 Apr 2020 05:37:22 +0200
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
 To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH v8 10/10] power: supply: Fix Kconfig help text indentiation
-Message-ID: <20200405033536.vp3itb3gntggxmj7@earth.universe>
+Subject: Re: [PATCH v8 07/10] power: supply: bd70528: use linear ranges
+Message-ID: <20200405033722.4co4bnrz5whykrrq@earth.universe>
 References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
- <43077ce36099b3c381817b63c20ba29eef912456.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+ <4a70a243cc169ddb2c2ea3a78a4550a51dadd8fd.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
-In-Reply-To: <43077ce36099b3c381817b63c20ba29eef912456.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+In-Reply-To: <4a70a243cc169ddb2c2ea3a78a4550a51dadd8fd.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_203541_073438_A1EDAF08 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20200404_203726_628869_9A906328 
+X-CRM114-Status: GOOD (  27.92  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -88,113 +88,304 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  linux-kernel@vger.kernel.org, mikko.mutanen@fi.rohmeurope.com,
  Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  patches@opensource.cirrus.com
-Content-Type: multipart/mixed; boundary="===============7457312065003276889=="
+Content-Type: multipart/mixed; boundary="===============8321885818066651836=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7457312065003276889==
+--===============8321885818066651836==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6ntcdkxa4od2c6fv"
+	protocol="application/pgp-signature"; boundary="4zf5onz7zh65aeis"
 Content-Disposition: inline
 
 
---6ntcdkxa4od2c6fv
+--4zf5onz7zh65aeis
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-On Fri, Apr 03, 2020 at 11:48:28AM +0300, Matti Vaittinen wrote:
-> Indent the help text as explained in
-> Documentation/process/coding-style.rst
+On Fri, Apr 03, 2020 at 11:47:21AM +0300, Matti Vaittinen wrote:
+> Change the bd70528 to use common linear_range code instead of
+> implementing a copy of it in this driver.
 >=20
 > Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 > ---
->=20
-> No changes since v7
->=20
-> I just learned the help text in Kconfigs should be indented by two
-> spaces. I fixed this for BD99954 as suggested by Randy and decided
-> that I could do this for few other entries as well while I was at
-> it anyways.
 
 Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 
 -- Sebastian
 
 >=20
->  drivers/power/supply/Kconfig | 24 ++++++++++++------------
->  1 file changed, 12 insertions(+), 12 deletions(-)
+> No changes since v7
+>=20
+>  drivers/power/supply/Kconfig           |   1 +
+>  drivers/power/supply/bd70528-charger.c | 144 ++++++++++---------------
+>  2 files changed, 56 insertions(+), 89 deletions(-)
 >=20
 > diff --git a/drivers/power/supply/Kconfig b/drivers/power/supply/Kconfig
-> index af96d7fa56b1..f606ba069e4e 100644
+> index 9a5591ab90d0..8781c674ed07 100644
 > --- a/drivers/power/supply/Kconfig
 > +++ b/drivers/power/supply/Kconfig
-> @@ -415,7 +415,7 @@ config CHARGER_PCF50633
->  	tristate "NXP PCF50633 MBC"
->  	depends on MFD_PCF50633
->  	help
-> -	 Say Y to include support for NXP PCF50633 Main Battery Charger.
-> +	  Say Y to include support for NXP PCF50633 Main Battery Charger.
-> =20
->  config BATTERY_RX51
->  	tristate "Nokia RX-51 (N900) battery driver"
-> @@ -609,15 +609,15 @@ config CHARGER_TPS65090
->  	tristate "TPS65090 battery charger driver"
->  	depends on MFD_TPS65090
->  	help
-> -	 Say Y here to enable support for battery charging with TPS65090
-> -	 PMIC chips.
-> +	  Say Y here to enable support for battery charging with TPS65090
-> +	  PMIC chips.
-> =20
->  config CHARGER_TPS65217
->  	tristate "TPS65217 battery charger driver"
->  	depends on MFD_TPS65217
->  	help
-> -	 Say Y here to enable support for battery charging with TPS65217
-> -	 PMIC chips.
-> +	  Say Y here to enable support for battery charging with TPS65217
-> +	  PMIC chips.
-> =20
->  config BATTERY_GAUGE_LTC2941
->  	tristate "LTC2941/LTC2943 Battery Gauge Driver"
-> @@ -671,16 +671,16 @@ config CHARGER_SC2731
->  	tristate "Spreadtrum SC2731 charger driver"
->  	depends on MFD_SC27XX_PMIC || COMPILE_TEST
->  	help
-> -	 Say Y here to enable support for battery charging with SC2731
-> -	 PMIC chips.
-> +	  Say Y here to enable support for battery charging with SC2731
-> +	  PMIC chips.
-> =20
->  config FUEL_GAUGE_SC27XX
->  	tristate "Spreadtrum SC27XX fuel gauge driver"
->  	depends on MFD_SC27XX_PMIC || COMPILE_TEST
->  	depends on IIO
->  	help
-> -	 Say Y here to enable support for fuel gauge with SC27XX
-> -	 PMIC chips.
-> +	  Say Y here to enable support for fuel gauge with SC27XX
-> +	  PMIC chips.
-> =20
->  config CHARGER_UCS1002
->  	tristate "Microchip UCS1002 USB Port Power Controller"
-> @@ -698,9 +698,9 @@ config CHARGER_BD70528
->  	select LINEAR_RANGES
+> @@ -695,6 +695,7 @@ config CHARGER_UCS1002
+>  config CHARGER_BD70528
+>  	tristate "ROHM bd70528 charger driver"
+>  	depends on MFD_ROHM_BD70528
+> +	select LINEAR_RANGES
 >  	default n
 >  	help
-> -	 Say Y here to enable support for getting battery status
-> -	 information and altering charger configurations from charger
-> -	 block of the ROHM BD70528 Power Management IC.
-> +	  Say Y here to enable support for getting battery status
-> +	  information and altering charger configurations from charger
-> +	  block of the ROHM BD70528 Power Management IC.
+>  	 Say Y here to enable support for getting battery status
+> diff --git a/drivers/power/supply/bd70528-charger.c b/drivers/power/suppl=
+y/bd70528-charger.c
+> index 3b820110ecfa..7a805faeee83 100644
+> --- a/drivers/power/supply/bd70528-charger.c
+> +++ b/drivers/power/supply/bd70528-charger.c
+> @@ -72,6 +72,7 @@
+>  #include <linux/module.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/power_supply.h>
+> +#include <linux/linear_range.h>
 > =20
->  config CHARGER_BD99954
->  	tristate "ROHM bd99954 charger driver"
+>  #define CHG_STAT_SUSPEND	0x0
+>  #define CHG_STAT_TRICKLE	0x1
+> @@ -335,38 +336,37 @@ static int bd70528_get_present(struct bd70528_psy *=
+bdpsy, int *val)
+>  	return 0;
+>  }
+> =20
+> -struct bd70528_linear_range {
+> -	int min;
+> -	int step;
+> -	int vals;
+> -	int low_sel;
+> -};
+> -
+> -static const struct bd70528_linear_range current_limit_ranges[] =3D {
+> +static const struct linear_range current_limit_ranges[] =3D {
+>  	{
+>  		.min =3D 5,
+>  		.step =3D 1,
+> -		.vals =3D 36,
+> -		.low_sel =3D 0,
+> +		.min_sel =3D 0,
+> +		.max_sel =3D 0x22,
+>  	},
+>  	{
+>  		.min =3D 40,
+>  		.step =3D 5,
+> -		.vals =3D 5,
+> -		.low_sel =3D 0x23,
+> +		.min_sel =3D 0x23,
+> +		.max_sel =3D 0x26,
+>  	},
+>  	{
+>  		.min =3D 60,
+>  		.step =3D 20,
+> -		.vals =3D 8,
+> -		.low_sel =3D 0x27,
+> +		.min_sel =3D 0x27,
+> +		.max_sel =3D 0x2d,
+>  	},
+>  	{
+>  		.min =3D 200,
+>  		.step =3D 50,
+> -		.vals =3D 7,
+> -		.low_sel =3D 0x2e,
+> -	}
+> +		.min_sel =3D 0x2e,
+> +		.max_sel =3D 0x34,
+> +	},
+> +	{
+> +		.min =3D 500,
+> +		.step =3D 0,
+> +		.min_sel =3D 0x35,
+> +		.max_sel =3D 0x3f,
+> +	},
+>  };
+> =20
+>  /*
+> @@ -374,18 +374,18 @@ static const struct bd70528_linear_range current_li=
+mit_ranges[] =3D {
+>   * voltage for low temperatures. The driver currently only reads
+>   * the charge current at room temperature. We do set both though.
+>   */
+> -static const struct bd70528_linear_range warm_charge_curr[] =3D {
+> +static const struct linear_range warm_charge_curr[] =3D {
+>  	{
+>  		.min =3D 10,
+>  		.step =3D 10,
+> -		.vals =3D 20,
+> -		.low_sel =3D 0,
+> +		.min_sel =3D 0,
+> +		.max_sel =3D 0x12
+>  	},
+>  	{
+>  		.min =3D 200,
+>  		.step =3D 25,
+> -		.vals =3D 13,
+> -		.low_sel =3D 0x13,
+> +		.min_sel =3D 0x13,
+> +		.max_sel =3D 0x1f
+>  	},
+>  };
+> =20
+> @@ -398,56 +398,6 @@ static const struct bd70528_linear_range warm_charge=
+_curr[] =3D {
+>  #define MAX_WARM_CHG_CURR_SEL 0x1f
+>  #define MIN_CHG_CURR_SEL 0x0
+> =20
+> -static int find_value_for_selector_low(const struct bd70528_linear_range=
+ *r,
+> -				       int selectors, unsigned int sel,
+> -				       unsigned int *val)
+> -{
+> -	int i;
+> -
+> -	for (i =3D 0; i < selectors; i++) {
+> -		if (r[i].low_sel <=3D sel && r[i].low_sel + r[i].vals >=3D sel) {
+> -			*val =3D r[i].min + (sel - r[i].low_sel) * r[i].step;
+> -			return 0;
+> -		}
+> -	}
+> -	return -EINVAL;
+> -}
+> -
+> -/*
+> - * For BD70528 voltage/current limits we happily accept any value which
+> - * belongs the range. We could check if value matching the selector is
+> - * desired by computing the range min + (sel - sel_low) * range step - b=
+ut
+> - * I guess it is enough if we use voltage/current which is closest (belo=
+w)
+> - * the requested?
+> - */
+> -static int find_selector_for_value_low(const struct bd70528_linear_range=
+ *r,
+> -				       int selectors, unsigned int val,
+> -				       unsigned int *sel, bool *found)
+> -{
+> -	int i;
+> -	int ret =3D -EINVAL;
+> -
+> -	*found =3D false;
+> -	for (i =3D 0; i < selectors; i++) {
+> -		if (r[i].min <=3D val) {
+> -			if (r[i].min + r[i].step * r[i].vals >=3D val) {
+> -				*found =3D true;
+> -				*sel =3D r[i].low_sel + (val - r[i].min) /
+> -				       r[i].step;
+> -				ret =3D 0;
+> -				break;
+> -			}
+> -			/*
+> -			 * If the range max is smaller than requested
+> -			 * we can set the max supported value from range
+> -			 */
+> -			*sel =3D r[i].low_sel + r[i].vals;
+> -			ret =3D 0;
+> -		}
+> -	}
+> -	return ret;
+> -}
+> -
+>  static int get_charge_current(struct bd70528_psy *bdpsy, int *ma)
+>  {
+>  	unsigned int sel;
+> @@ -463,9 +413,9 @@ static int get_charge_current(struct bd70528_psy *bdp=
+sy, int *ma)
+> =20
+>  	sel &=3D BD70528_MASK_CHG_CHG_CURR;
+> =20
+> -	ret =3D find_value_for_selector_low(&warm_charge_curr[0],
+> -					  ARRAY_SIZE(warm_charge_curr), sel,
+> -					  ma);
+> +	ret =3D linear_range_get_value_array(&warm_charge_curr[0],
+> +					   ARRAY_SIZE(warm_charge_curr),
+> +					   sel, ma);
+>  	if (ret) {
+>  		dev_err(bdpsy->dev,
+>  			"Unknown charge current value 0x%x\n",
+> @@ -491,10 +441,9 @@ static int get_current_limit(struct bd70528_psy *bdp=
+sy, int *ma)
+> =20
+>  	sel &=3D BD70528_MASK_CHG_DCIN_ILIM;
+> =20
+> -	ret =3D find_value_for_selector_low(&current_limit_ranges[0],
+> -					  ARRAY_SIZE(current_limit_ranges), sel,
+> -					  ma);
+> -
+> +	ret =3D linear_range_get_value_array(&current_limit_ranges[0],
+> +					   ARRAY_SIZE(current_limit_ranges),
+> +					   sel, ma);
+>  	if (ret) {
+>  		/* Unspecified values mean 500 mA */
+>  		*ma =3D 500;
+> @@ -588,15 +537,28 @@ static int set_charge_current(struct bd70528_psy *b=
+dpsy, int ma)
+>  		goto set;
+>  	}
+> =20
+> -	ret =3D find_selector_for_value_low(&warm_charge_curr[0],
+> -					  ARRAY_SIZE(warm_charge_curr), ma,
+> -					  &reg, &found);
+> +/*
+> + * For BD70528 voltage/current limits we happily accept any value which
+> + * belongs the range. We could check if value matching the selector is
+> + * desired by computing the range min + (sel - sel_low) * range step - b=
+ut
+> + * I guess it is enough if we use voltage/current which is closest (belo=
+w)
+> + * the requested?
+> + */
+> +
+> +	ret =3D linear_range_get_selector_low_array(warm_charge_curr,
+> +						  ARRAY_SIZE(warm_charge_curr),
+> +						  ma, &reg, &found);
+>  	if (ret) {
+> +		dev_err(bdpsy->dev,
+> +			 "Unsupported charge current %u mA\n", ma);
+>  		reg =3D MIN_CHG_CURR_SEL;
+>  		goto set;
+>  	}
+>  	if (!found) {
+> -		/* There was a gap in supported values and we hit it */
+> +		/*
+> +		 * There was a gap in supported values and we hit it.
+> +		 * Yet a smaller value was found so we use it.
+> +		 */
+>  		dev_warn(bdpsy->dev,
+>  			 "Unsupported charge current %u mA\n", ma);
+>  	}
+> @@ -648,17 +610,21 @@ static int set_current_limit(struct bd70528_psy *bd=
+psy, int ma)
+>  		goto set;
+>  	}
+> =20
+> -	ret =3D find_selector_for_value_low(&current_limit_ranges[0],
+> -					  ARRAY_SIZE(current_limit_ranges), ma,
+> -					  &reg, &found);
+> +	ret =3D linear_range_get_selector_low_array(current_limit_ranges,
+> +					ARRAY_SIZE(current_limit_ranges),
+> +					ma, &reg, &found);
+>  	if (ret) {
+> +		dev_err(bdpsy->dev, "Unsupported current limit %umA\n", ma);
+>  		reg =3D MIN_CURR_LIMIT_SEL;
+>  		goto set;
+>  	}
+>  	if (!found) {
+> -		/* There was a gap in supported values and we hit it ?*/
+> -		dev_warn(bdpsy->dev, "Unsupported current limit %umA\n",
+> -			 ma);
+> +		/*
+> +		 * There was a gap in supported values and we hit it.
+> +		 * We found a smaller value from ranges and use it.
+> +		 * Warn user though.
+> +		 */
+> +		dev_warn(bdpsy->dev, "Unsupported current limit %umA\n", ma);
+>  	}
+> =20
+>  set:
 > --=20
 > 2.21.0
 >=20
@@ -211,30 +402,30 @@ Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
 > Thanks to Simon Glass for the translation =3D]=20
 
---6ntcdkxa4od2c6fv
+--4zf5onz7zh65aeis
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl6JUggACgkQ2O7X88g7
-+prtNg//RiaEn7gAIEag4L7geaYConQS/mTuXF8Y3xTkSzJNmwU0UwUL3j0O7QMJ
-r8QXZaWFdRFe6b80bpnSfB2IUVUEL+lu+DRhjkinwl8gVL/Wd/uiHNm4p5jRb7VD
-DwaxeqISchaSs4oRrrZDSdYe1le6m0C3yRQy5zxbS1nY7EVeFE7VvqQMCv1Wdd8v
-UJOe6GIqpBRcnZwn8Zch5kl2e0ett+k2xqxCtVAkLQlO/5r1p5d984uB7oA3zM6U
-P61IMBKrkIk0f64Xy1hf5VK0sBRK2wrra+ztqt8ttkkOeXhjykqcCz4iY8P9qSdM
-m/9Q+l5wyXpNj0qLEDcOfRH0JmG4EVmdVuDA5YlHTlnyU4/1uSkJvY8LBJecEsVq
-hdeCek6EdtAtzQ35wTXpa26FNvKR5b8WCVr4VbsVxXmXbN+Rmk5ryUE2/3RoK59E
-V4JNFHAnZS1Flga0OhZtdB6M+2d8pOgQ6RYdng7pe1+7LevBgz+4Jw7Un/2w/vrS
-KNcX2x892lnBusNiuURG9+ryZvVBf8Cv7waxv1hjYb8z4EBBNwkTKTrzKIlOEtL0
-xCusRadLdVhkJvKYWRL1T5lspuaj/RLcirSwKojGw+sNsb3qXMZxFISysUGXYwWa
-yXnKpBMqOtPdzLs36i0O2oLvl25Xy/2nVIQVFfDu6t0ZuEsqThc=
-=TDgw
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl6JUnIACgkQ2O7X88g7
++prcERAAlURR92Ar+SO4+R/CiOU4lJpcZfw4c7v0gLYkD1GU65G+0b4vQJk9zNBX
+TfqCkGDxYVo7XCvzMW3Zt4mlv6MjYGJw5XYEywgmBpRSnl+iYHnGUNezMAkhX5ux
+wzn2JBv4Zs9xPyQYXsKenRAfFkt9lUGZYXXp+WX47v3kOrK/2kbHYa9H2z339GD8
+cpiVPVegEHIZErP1CNqlmN3xj+hdwOixfo4Fm7NSFfw+gmGSqyH14yTc5e4fwhFU
+dn+0aPVh8uUkZ2opjaer2khzy6AI2yDsAAXzZjedgMwtVPq/gJuFSwQ6wx/1ZdLe
+uvaDw+9LY1YAXGLAwsIFgwajIrW4qi3L+LH807hx0sFD/+qBRcrj+sdEpA8izM/B
+8zrgH3cpezv+8jxygSIqUvox1QztpF5LAlI7cyMtAWkVnnNyF2ca+RYZ/460IW1i
+ClG1JK6QukRdheUbIl5qpuAVoYlfjZxm0K0/2kSAkI6NLO8lOetkydyPiurKHjYr
+eUO07Gs8KkcRXtOiHW10tFyvLcn7inDITTwHBWo29GoccZfpOTH1P/VG7v91Y8aj
+Hn5vVyqm29vAu6EyaeLGltR38U2LXWcPAlexUqhTwUaxldjFImmCrbdm1e7Jk47X
+bPjjcWTODpbHOMXtt++kwABiEHTj5pjqYWMCBCmlEOVoEXZkOno=
+=iFaH
 -----END PGP SIGNATURE-----
 
---6ntcdkxa4od2c6fv--
+--4zf5onz7zh65aeis--
 
 
---===============7457312065003276889==
+--===============8321885818066651836==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -245,5 +436,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7457312065003276889==--
+--===============8321885818066651836==--
 
