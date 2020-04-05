@@ -2,144 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4026319EB2E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 14:19:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BEB319EB3A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 14:28:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MBuvSrW6kBznYqmisx3+hnzE2SSn0lXlr5EyNLur3/k=; b=MsDWwPwR792QTM
-	en6uZWhENHRuE8sJqOACozNt+oNnUMyVhpkAJ3tQmhYOCGRoTdYmxyaMcsTR3IJFY54YiP+x1DzlN
-	Ybx2rnJN0gA0tWnUJ3X0J+EtSSBlV6xhViZLR8JhvA6lgOwhi6iCJ9BWWy1v3dLB6ZaRR8FbCtgYv
-	0gEh9BKe7cgqws83OtyrdHVPb6KH1IFIODZnaqegwfFDFxZdP8BOdzMtUl2+cmonc5HBF2vznD6Y+
-	gVPVcXd4W6TCwMEGuUxau3v04JszO3XyksYc2wy3MCTpxjARtHBrfhDV2in5QVH81sWdCHhB2h+5m
-	l2Y7LO5fBvIgVsk0PRJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lKg1qXzg2RM14agodfPAjvvd49sgmn+Gawl3MJPiLJA=; b=TTvR3pfauYjltP
+	S19JjV6eJ32c0kmemkzbMgdKmtfUEwovl/7t+ph2RSjL7/KxXWIO2f5v4wkU4OEC0SB55ySO1a+TW
+	VaE6Gyf/Bghr6Kv9z5USg/quGcvXmvySl+chEveijbGoV/I/MRMSZydWHDcto1a0VsbJi2/5oow0B
+	tmWWuquQuv2Hk9W1rIidOZZ0CpiXZXN1qU6FSrBBTN9KHwDeAtl4pF8TEd92mRBc80AjmAHnM2LEo
+	rUoN5FmSXbvh3yZGKqipV+M3/cTtB3nFR7pMp/WXgKvA/lhnLOtBnI28Kk+TB7pIh/S13xloloqDV
+	pinAa5HyHKaq981ezuXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL4Eq-0007t5-3h; Sun, 05 Apr 2020 12:18:56 +0000
-Received: from mout.web.de ([212.227.17.12])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL4Ej-0007sH-L9
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 12:18:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1586089106;
- bh=Q5RSUdBxAuq3Pu0Is6KAfaOaMHcgrkIjqfGuQ0cJiDQ=;
- h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
- b=KAubVv0AbUBupdEPKPoBx5XCZ+3/7aejCVkTn72IyJfm43BmImSN6UfNHIyM48XkE
- zuEfz3eyRMcNC5XNrzIZMMj6s2sHxSftKMAHqPQvAhoO7zdvHcMQdSpQTfcrhwKCBj
- IBfgwL/EvtyFU4YqoQ4c2hzu1S+Cu6BNF6wApebI=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.3] ([93.131.99.70]) by smtp.web.de (mrweb101
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0Mcni1-1jcK8G2zkv-00Hzf2; Sun, 05
- Apr 2020 14:18:25 +0200
-To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, Inki Dae <inki.dae@samsung.com>,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: [PATCH] drm/exynos: Delete an error message in three functions
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <57b725ed-f705-b5e1-0da6-3d16801c7c85@web.de>
-Date: Sun, 5 Apr 2020 14:18:23 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jL4OL-00058q-Cu; Sun, 05 Apr 2020 12:28:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jL4OC-00058G-Qj; Sun, 05 Apr 2020 12:28:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8481F31B;
+ Sun,  5 Apr 2020 05:28:32 -0700 (PDT)
+Received: from [192.168.0.129] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD9653F68F;
+ Sun,  5 Apr 2020 05:28:22 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 0/3] mm/debug: Add more arch page table helper tests
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+References: <1585027375-9997-1-git-send-email-anshuman.khandual@arm.com>
+ <20200331143059.29fca8fa@thinkpad>
+Message-ID: <e3e35885-6852-16aa-3889-e22750a0cc87@arm.com>
+Date: Sun, 5 Apr 2020 17:58:14 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20200331143059.29fca8fa@thinkpad>
 Content-Language: en-US
-X-Provags-ID: V03:K1:yxAjxBa23Kh2Wy8xweg0fTEFSRuPTdylWTMCAmjl+mPFViWxPlf
- 8G83QYVy9DM4gpO5u+mfNtzKMsXZDCHQTLHW9ou14NopyXBpmehBoGKyZedWr+pMylO8vEI
- /ABdguiqIeJNipLfgzXBHwC42CTqihzIbdf21FdV+eZpX9ghftIj62DbUMWMSUsRxJGanCr
- XHLHXaQ06FxEPK4kMKDrA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Ss7mf0/IfsU=:WSCB+Y5HH0fDrGkZEbykLM
- QM/rKmMpUSe4F/cPiqw20uRU0YqP53IWhLXFVeHexb4P4aZK0a0eGH2izX2Di25xPYy665B5b
- ERUhYEyR+HxytGtngKILyA9OYeZVlVfFwg8QJdN9sBEpzlY5CWZuDoreZzzdFo3iiqoalpVkh
- OjHWmpf/CZvjNVe+PDiSoa+M2tVEIXnUOAb1XNOWw7qrr0lyee39kdYC5aPj+WrULIX7/wNSE
- vq6qxHqiEDhboIDlLPZYh8hZqSJJ1AXxvt/Nd2VUGZewGiIg8howyNnOJ3vl2z4QscXPy9Q/a
- RlSW2LE41fX/uq9OvxdJDPTbLWUV7H7b2FvvS7IgjpqNjDWRJLjj1X9aubmotIpqC+ON4xpIy
- KPv925EHV2+KgOeNvzYw04u3vQeX5lrMAKOXB3qfmQvMWjPpxhb7ZSGtJ3307xFipdKgS4L0z
- lDfP30r53TuPfsPLOgGO07rRzos4iQmEn4R06b15lBZDnpVaK8fOM9XxTYVhsqG25IgiNw/5d
- jLUdK0k+pshdoFLiUxhSzmXNog8vTdHHMoGvisK29K0dbKL0AVoZS2hu1TVJXMT3KrXfP96vp
- QkU4uX/CvKIdB4cNU4xTMO0r86TkCAaMM0/9DMgCsZrcKxGIAivx3Br2zyeyms/0F/eT3QacZ
- ucC+Jl3IdZYHbyy9jWX2i7lpps0t6c0+W0FUubPSB8i2OcgmmGzC4gDD0KMfML88IVllXbw4n
- 8qXx/jorJ5rjl1iO+08bdNBkwWkzSh3PLJfuU6+uqNbGhTZeQCaWvnmNMYHuc33MlZEmkaOWH
- hDStB95DQV4KWMVCiKncjSFnqtkNrh6s70w4AAWmer+jbX1LLJY8CNDMRNxzDglWhrsKyyugB
- Z3HC+YNkPftL6YnXM6rXR2ClnAN5se0uVJ7eJ4hm3dxvXYVk8X6n12BYFAi5k4lkUzFTj/bUy
- k4ipbiiMBg+OJ0NWFMYKmWwLWZ4rNipN6xsfCGJmIuGuAbtgNXuapSGWT6wt9icMBWOuI5t0y
- BfcoEGRjFLC42FAKdDaf2bNi1Ljxa6Jj7U3gVCT+y3PsQJ+bLQUd3oURXgNLlhd77fvl0bgR0
- aTnKLlWOAfxIwhLs3BF3w/tmMIFfIiRpxtNvZJkI8mkT6DFEXpEZH4Fg97FtTyeDf3Iwca8BL
- Vdt3zd0GaPOGvjADqKpkjNoeii34vCfOQ8qixZ3EXM/ogyAKG+hWo/L4yUjRKlK84tIngBlIw
- nVUJSC5igMn5IutvE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_051849_986325_4E87BDE3 
-X-CRM114-Status: GOOD (  13.94  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200405_052836_954908_A9E0BCCD 
+X-CRM114-Status: GOOD (  35.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [markus.elfring[at]web.de]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.227.17.12 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,54 +63,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- Tang Bin <tangbin@cmss.chinamobile.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ christophe.leroy@c-s.fr, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2UubmV0PgpEYXRl
-OiBTdW4sIDUgQXByIDIwMjAgMTQ6MTA6MDkgKzAyMDAKClRoZSBmdW5jdGlvbiDigJxwbGF0Zm9y
-bV9nZXRfaXJx4oCdIGNhbiBsb2cgYW4gZXJyb3IgYWxyZWFkeS4KVGh1cyBvbWl0IHJlZHVuZGFu
-dCBtZXNzYWdlcyBmb3IgdGhlIGV4Y2VwdGlvbiBoYW5kbGluZyBpbiB0aGUKY2FsbGluZyBmdW5j
-dGlvbnMuCgpUaGlzIGlzc3VlIHdhcyBkZXRlY3RlZCBieSB1c2luZyB0aGUgQ29jY2luZWxsZSBz
-b2Z0d2FyZS4KClNpZ25lZC1vZmYtYnk6IE1hcmt1cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNv
-dXJjZWZvcmdlLm5ldD4KLS0tCiBkcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fZHNp
-LmMgICAgIHwgNCArLS0tCiBkcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fcm90YXRv
-ci5jIHwgNCArLS0tCiBkcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fc2NhbGVyLmMg
-IHwgNCArLS0tCiAzIGZpbGVzIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgOSBkZWxldGlvbnMo
-LSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fZHNpLmMg
-Yi9kcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fZHNpLmMKaW5kZXggZTA4MGFhOTIz
-MzhjLi5hMDBjNmRkMTZjOGEgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9leHlub3MvZXh5
-bm9zX2RybV9kc2kuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fZHNp
-LmMKQEAgLTE4MTMsMTAgKzE4MTMsOCBAQCBzdGF0aWMgaW50IGV4eW5vc19kc2lfcHJvYmUoc3Ry
-dWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAl9CgogCWRzaS0+aXJxID0gcGxhdGZvcm1fZ2V0
-X2lycShwZGV2LCAwKTsKLQlpZiAoZHNpLT5pcnEgPCAwKSB7Ci0JCWRldl9lcnIoZGV2LCAiZmFp
-bGVkIHRvIHJlcXVlc3QgZHNpIGlycSByZXNvdXJjZVxuIik7CisJaWYgKGRzaS0+aXJxIDwgMCkK
-IAkJcmV0dXJuIGRzaS0+aXJxOwotCX0KCiAJaXJxX3NldF9zdGF0dXNfZmxhZ3MoZHNpLT5pcnEs
-IElSUV9OT0FVVE9FTik7CiAJcmV0ID0gZGV2bV9yZXF1ZXN0X3RocmVhZGVkX2lycShkZXYsIGRz
-aS0+aXJxLCBOVUxMLApkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3Nf
-ZHJtX3JvdGF0b3IuYyBiL2RyaXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9yb3RhdG9y
-LmMKaW5kZXggZGFmYTg3YjgyMDUyLi4yZDk0YWZiYTAzMWUgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMv
-Z3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9yb3RhdG9yLmMKKysrIGIvZHJpdmVycy9ncHUvZHJt
-L2V4eW5vcy9leHlub3NfZHJtX3JvdGF0b3IuYwpAQCAtMjkzLDEwICsyOTMsOCBAQCBzdGF0aWMg
-aW50IHJvdGF0b3JfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAkJcmV0dXJu
-IFBUUl9FUlIocm90LT5yZWdzKTsKCiAJaXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCAwKTsK
-LQlpZiAoaXJxIDwgMCkgewotCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBnZXQgaXJxXG4iKTsK
-KwlpZiAoaXJxIDwgMCkKIAkJcmV0dXJuIGlycTsKLQl9CgogCXJldCA9IGRldm1fcmVxdWVzdF9p
-cnEoZGV2LCBpcnEsIHJvdGF0b3JfaXJxX2hhbmRsZXIsIDAsIGRldl9uYW1lKGRldiksCiAJCQkg
-ICAgICAgcm90KTsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2Ry
-bV9zY2FsZXIuYyBiL2RyaXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9zY2FsZXIuYwpp
-bmRleCA5M2M0M2M4ZDkxNGUuLmNlMTg1NzEzOGY4OSAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUv
-ZHJtL2V4eW5vcy9leHlub3NfZHJtX3NjYWxlci5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9leHlu
-b3MvZXh5bm9zX2RybV9zY2FsZXIuYwpAQCAtNTAyLDEwICs1MDIsOCBAQCBzdGF0aWMgaW50IHNj
-YWxlcl9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCQlyZXR1cm4gUFRSX0VS
-UihzY2FsZXItPnJlZ3MpOwoKIAlpcnEgPSBwbGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDApOwotCWlm
-IChpcnEgPCAwKSB7Ci0JCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCBpcnFcbiIpOworCWlm
-IChpcnEgPCAwKQogCQlyZXR1cm4gaXJxOwotCX0KCiAJcmV0ID0gZGV2bV9yZXF1ZXN0X3RocmVh
-ZGVkX2lycShkZXYsIGlycSwgTlVMTCwJc2NhbGVyX2lycV9oYW5kbGVyLAogCQkJCQlJUlFGX09O
-RVNIT1QsICJkcm1fc2NhbGVyIiwgc2NhbGVyKTsKLS0KMi4yNi4wCgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 03/31/2020 06:00 PM, Gerald Schaefer wrote:
+> On Tue, 24 Mar 2020 10:52:52 +0530
+> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> 
+>> This series adds more arch page table helper tests. The new tests here are
+>> either related to core memory functions and advanced arch pgtable helpers.
+>> This also creates a documentation file enlisting all expected semantics as
+>> suggested by Mike Rapoport (https://lkml.org/lkml/2020/1/30/40).
+>>
+>> This series has been tested on arm64 and x86 platforms. There is just one
+>> expected failure on arm64 that will be fixed when we enable THP migration.
+>>
+>> [   21.741634] WARNING: CPU: 0 PID: 1 at mm/debug_vm_pgtable.c:782
+>>
+>> which corresponds to
+>>
+>> WARN_ON(!pmd_present(pmd_mknotpresent(pmd_mkhuge(pmd))))
+>>
+>> There are many TRANSPARENT_HUGEPAGE and ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD
+>> ifdefs scattered across the test. But consolidating all the fallback stubs
+>> is not very straight forward because ARCH_HAS_TRANSPARENT_HUGEPAGE_PUD is
+>> not explicitly dependent on ARCH_HAS_TRANSPARENT_HUGEPAGE.
+>>
+>> This series has been build tested on many platforms including the ones that
+>> subscribe the test through ARCH_HAS_DEBUG_VM_PGTABLE.
+>>
+> 
+> Hi Anshuman,
+> 
+> thanks for the update. There are a couple of issues on s390, some might
+> also affect other archs.
+
+Sure, thanks for taking a look and giving it a spin on s390.
+
+> 
+> 1) The pxd_huge_tests are using pxd_set/clear_huge, which defaults to
+> returning 0 if !CONFIG_HAVE_ARCH_HUGE_VMAP. As result, the checks for
+> !pxd_test/clear_huge in the pxd_huge_tests will always trigger the
+> warning. This should affect all archs w/o CONFIG_HAVE_ARCH_HUGE_VMAP.
+> Could be fixed like this:
+> 
+> @@ -923,8 +923,10 @@ void __init debug_vm_pgtable(void)
+>         pmd_leaf_tests(pmd_aligned, prot);
+>         pud_leaf_tests(pud_aligned, prot);
+>  
+> -       pmd_huge_tests(pmdp, pmd_aligned, prot);
+> -       pud_huge_tests(pudp, pud_aligned, prot);
+> +       if (IS_ENABLED(CONFIG_HAVE_ARCH_HUGE_VMAP)) {
+> +               pmd_huge_tests(pmdp, pmd_aligned, prot);
+> +               pud_huge_tests(pudp, pud_aligned, prot);
+> +       }
+
+That is correct. It was an omission on my part and will fix it.
+
+>  
+>         pte_savedwrite_tests(pte_aligned, prot);
+>         pmd_savedwrite_tests(pmd_aligned, prot);
+> 
+> BTW, please add some comments to the various #ifdef/#else stuff, especially
+> when the different parts are far away and/or nested.
+
+Sure, will do.
+
+> 
+> 2) The hugetlb_advanced_test will fail because it directly de-references
+> huge *ptep pointers instead of using huge_ptep_get() for this. We have
+> very different pagetable entry layout for pte and (large) pmd on s390,
+> and unfortunately the whole hugetlbfs code is using pte_t instead of pmd_t
+> like THP. For this reason, huge_ptep_get() was introduced, which will
+> return a "converted" pte, because directly reading from a *ptep (pointing
+> to a large pmd) will not return a proper pte. Only ARM has also an
+> implementation of huge_ptep_get(), so they could be affected, depending
+> on what exactly they need it for.
+
+Currently, we dont support ARM (32). But as huge_ptep_get() already got a
+fallback, its better to use that than a direct READ_ONCE().
+
+> 
+> Could be fixed like this (the first de-reference is a bit special,
+> because at that point *ptep does not really point to a large (pmd) entry
+> yet, it is initially an invalid pte entry, which breaks our huge_ptep_get()
+
+There seems to be an inconsistency on s390 platform. Even though it defines
+a huge_ptep_get() override, it does not subscribe __HAVE_ARCH_HUGE_PTEP_GET
+which should have forced it fallback on generic huge_ptep_get() but it does
+not :) Then I realized that __HAVE_ARCH_HUGE_PTEP_GET only makes sense when
+an arch uses <asm-generic/hugetlb.h>. s390 does not use that and hence gets
+away with it's own huge_ptep_get() without __HAVE_ARCH_HUGE_PTEP_GET. Sounds
+confusing ? But I might not have the entire context here.
+
+> conversion logic. I also added PMD_MASK alignment for RANDOM_ORVALUE,
+> because we do have some special bits there in our large pmds. It seems
+> to also work w/o that alignment, but it feels a bit wrong):
+
+Sure, we can accommodate that.
+
+> 
+> @@ -731,26 +731,26 @@ static void __init hugetlb_advanced_test
+>                                           unsigned long vaddr, pgprot_t prot)
+>  {
+>         struct page *page = pfn_to_page(pfn);
+> -       pte_t pte = READ_ONCE(*ptep);
+> +       pte_t pte;
+> 
+> -       pte = __pte(pte_val(pte) | RANDOM_ORVALUE);
+> +       pte = pte_mkhuge(mk_pte_phys(RANDOM_ORVALUE & PMD_MASK, prot));
+
+So that keeps the existing value in 'ptep' pointer at bay and instead
+construct a PTE from scratch. I would rather have READ_ONCE(*ptep) at
+least provide the seed that can be ORed with RANDOM_ORVALUE before
+being masked with PMD_MASK. Do you see any problem ?
+
+Some thing like this instead.
+
+pte_t pte = READ_ONCE(*ptep);
+pte = pte_mkhuge(__pte((pte_val(pte) | RANDOM_ORVALUE) & PMD_MASK));
+
+We cannot use mk_pte_phys() as it is defined only on some platforms
+without any generic fallback for others.
+
+>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>         barrier();
+>         WARN_ON(!pte_same(pte, huge_ptep_get(ptep)));
+>         huge_pte_clear(mm, vaddr, ptep, PMD_SIZE);
+> -       pte = READ_ONCE(*ptep);
+> +       pte = huge_ptep_get(ptep);
+>         WARN_ON(!huge_pte_none(pte));
+>  
+>         pte = mk_huge_pte(page, prot);
+>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>         huge_ptep_set_wrprotect(mm, vaddr, ptep);
+> -       pte = READ_ONCE(*ptep);
+> +       pte = huge_ptep_get(ptep);
+>         WARN_ON(huge_pte_write(pte));
+>  
+>         pte = mk_huge_pte(page, prot);
+>         set_huge_pte_at(mm, vaddr, ptep, pte);
+>         huge_ptep_get_and_clear(mm, vaddr, ptep);
+> -       pte = READ_ONCE(*ptep);
+> +       pte = huge_ptep_get(ptep);
+>         WARN_ON(!huge_pte_none(pte));
+>  
+>         pte = mk_huge_pte(page, prot);
+> @@ -759,7 +759,7 @@ static void __init hugetlb_advanced_test
+>         pte = huge_pte_mkwrite(pte);
+>         pte = huge_pte_mkdirty(pte);
+>         huge_ptep_set_access_flags(vma, vaddr, ptep, pte, 1);
+> -       pte = READ_ONCE(*ptep);
+> +       pte = huge_ptep_get(ptep);
+>         WARN_ON(!(huge_pte_write(pte) && huge_pte_dirty(pte)));
+>  }
+>  #else
+> 
+> 3) The pmd_protnone_tests() has an issue, because it passes a pmd to
+> pmd_protnone() which has not been marked as large. We check for large
+> pmd in the s390 implementation of pmd_protnone(), and will fail if a
+> pmd is not large. We had similar issues before, in other helpers, where
+> I changed the logic on s390 to not require the pmd large check, but I'm
+> not so sure in this case. Is there a valid use case for doing
+> pmd_protnone() on "normal" pmds? Or could this be changed like this:
+
+That is a valid question. IIUC, all existing callers for pmd_protnone()
+ensure that it is indeed a huge PMD. But even assuming otherwise should
+not the huge PMD requirement get checked in the caller itself rather than
+in the arch helper which is just supposed to check the existence of the
+dedicated PTE bit(s) for this purpose. Purely from a helper perspective
+pmd_protnone() should not really care about being large even though it
+might never get used without one.
+
+Also all platforms (except s390) derive the pmd_protnone() from their
+respective pte_protnone(). I wonder why should s390 be any different
+unless it is absolutely necessary.
+
+> 
+> @@ -537,7 +537,7 @@ static void __init pte_protnone_tests(un
+>  #ifdef CONFIG_TRANSPARENT_HUGEPAGE
+>  static void __init pmd_protnone_tests(unsigned long pfn, pgprot_t prot)
+>  {
+> -       pmd_t pmd = pfn_pmd(pfn, prot);
+> +       pmd_t pmd = mk_huge_pmd(pfn_to_page(pfn), prot);
+> 
+>         if (!IS_ENABLED(CONFIG_NUMA_BALANCING))
+>                 return;
+> 
+> Regards,
+> Gerald
+> 
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
