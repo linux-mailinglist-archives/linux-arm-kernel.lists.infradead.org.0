@@ -2,94 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C963019E82F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 03:17:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A7D919E843
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 Apr 2020 03:29:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vHXQ8AHHYFXfjG43YsNPuq/9reAFyPahc3Y5eL1Ej0w=; b=H1Fbt0LntIQpnuWlKxW+OyEMp
-	NrGz6JtAuIrpKHG2wWXanCAhGYqAvXMwLZXQuqM4TDjjNPUF62uAO4dr0BqenIPXn9e1rfaf+aJZK
-	jI1MIqMHsIVsznlRtd/gj4PnpOK0EBdYaxatZ9XjHSLOdT+pVFzZKqzXOZTzyBsYnJmzyk5RxeLpe
-	KzxAln+IZ76bz7LpETevQ1S5jeRyZ5bUW+mUgEnmzJZlwmUuv9v7ffWF22vhmc/myrxUqjyZeDQCm
-	I4i1eiiIp6TAsIHm5MBM5eJ3AEwrxLTXVoH8qRyINpKHpUto5orqg5jnAwEN9F8XoXfdDKVoZj+Uz
-	HfdnRGJIA==;
+	 bh=yIL84tkvKMIzU9O0KkNqnF9xGMkdAZVS3QyxF5C0txk=; b=VewHfi69pTKoOLkBuiquGq8Di
+	oYjRNNmXNU+oxtMtwKTdVSV5ch3p8dCLaTMilnLNxziBilZwc/Asuxq9ePIixaIzPQHTIir0b8Ouu
+	SQPXZNvHuFz7yHeUMMoD5NmzgLyHv4WkiSlWEb/Z0Inz4/6Bdoiqp1FrRfgEeXkP1d30Ggn+pr86h
+	lu+VfLqyPgzOm91NmIZ7Wa/54yzKKXYRN9Pa1dgoxSKSuZFUYFPjTkUuEQhE6qfExSNrJQ/zTrpCE
+	GTtnqpUkfgJozWKYQlcFLrcyZ5cRW9J3V5K374NzbI90+agRur/I87/ZYPzTTKRK0rJx/++OArZEd
+	d3Y86VcPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKtuM-0000sD-Qb; Sun, 05 Apr 2020 01:17:06 +0000
+	id 1jKu5j-0006Iu-ID; Sun, 05 Apr 2020 01:28:51 +0000
 Received: from wnew1-smtp.messagingengine.com ([64.147.123.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKtuF-0000rQ-D1
- for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 01:17:01 +0000
+ id 1jKu5c-0006IL-Ae
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 Apr 2020 01:28:45 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id 15D276C9;
- Sat,  4 Apr 2020 21:16:51 -0400 (EDT)
+ by mailnew.west.internal (Postfix) with ESMTP id B56BA77E;
+ Sat,  4 Apr 2020 21:28:42 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Sat, 04 Apr 2020 21:16:51 -0400
+ by compute3.internal (MEProxy); Sat, 04 Apr 2020 21:28:43 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
  h=subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm3; bh=N
- kfxaedLLWCL3Ia/QIn6Lh9/03kANmH0eC/GZ3hJQ1k=; b=jBy0NQYWm+B6ulYyG
- 8LrCjYc70G34Zo4Z48krapj+fmkLISnqvcJWUdYZQymfaQwZq9OD26SV+dObTpCd
- DgbCJYZWwueEGmg2UFf5ZqEX8o4JPx/ydxT0ltKhG15dt9fRRUA8AAl2TsVMm92r
- k31cuUM5jxTKHfL17ukyVQdN/8UY7PsDAHqArrLf7pCt/NhRcuJnRsbHosGAVQJe
- T0p/IffrTlh3w1cki9rnqQtv9Si28sFSETmASyaoSG/aXLtBtamVZMi9w0fcpbAy
- ios+Y8LV0Rj1oG6xab5mH9x9d0PFNlGlaGAkaWG9XXj6/N9bMoHW4wSc7GW84AsC
- Ks8Kg==
+ :in-reply-to:content-type:content-transfer-encoding; s=fm3; bh=n
+ 2xIAo0j6M7nb0dEky/Y1uh63ap0cnK6/HZ2kEdFDLc=; b=bjyhRyLW6TkbdYrIT
+ vUuAujP2aC+R4Ld/oiSrmwXb7zKyUU+CzVq7C9X0MnhHjNjwDermHYis9yxtLTaH
+ QqqNrpXHw4HakKxmMZTsxpKmAgDK/VnyEzzHTI0Jz0rWXba0+WSOJL4s7S7Cd9yo
+ lwjpR5AzMtaRfNuDSzmuXp6XAINPc66pllL7rc7tMuSpYXEpOPvb+4y96J+Cqz0t
+ U6bbalrnOQYrBQXrr0OnQZ+28zOo9bIf1BlkMl49+8ijYCfvjkd9HwcPxZj4cCNo
+ srvx85BpXozrHD+ySA3TQzrQGdOTv9hEsF3UPW4rw4RUELdeyPnIBmI4Pnan57j3
+ jJq1g==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:content-type
  :date:from:in-reply-to:message-id:mime-version:references
  :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=NkfxaedLLWCL3Ia/QIn6Lh9/03kANmH0eC/GZ3hJQ
- 1k=; b=VvwCdv7bESg4csbRT5bavXpJ9Eill1wTIqI/OYnN3MgcXw4rfEwuo0Uj8
- qIE9NE3q4hr5vx02rO0fo7ffMGUw36ACpKbJEjSb4LT+iiqQyTizcC+TDfg77Dev
- Faj0CEHWRwXkb/4uV7A13HA+GweKh8YIHL0e01HlQ2leQei2xoAWKH9PxaeP6HPo
- o4n124WZwwayDmRMAErQUYZIDoYJu8E6cBlj+b+Pf8nq0pwbzoXLdKaBzDK/rNXX
- Aq3cwWyU7uls0QtjixEXlCK5pYalJYWH5goJNdCftrw0brO10CMLwnSWW5AYf3II
- 0R7NIqoWy26HquJR9PSwplCl4CCcA==
-X-ME-Sender: <xms:fTGJXteEQrnd79QYNXrBF1GSWlZTdAEsHksIhVUfLD8rcKJpFbrcHg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrtdelgdeghecutefuodetggdotefrodftvf
+ :x-sasl-enc; s=fm2; bh=n2xIAo0j6M7nb0dEky/Y1uh63ap0cnK6/HZ2kEdFD
+ Lc=; b=ZsrE0sTaJdipkfWayfTn/Odu3KKEs9rJzdcqhPV9ZZI1VGLt/AF8r8CRK
+ bS1Nndrx2Ytql/AiMetktDQx+vEw9kH+E9xbZI/Of0LHWbAIfB3KtQduOGT25eQO
+ qrU6ADdLhngl9NLIFjAz+UPcIFITjIB3PkWweuJO/mEB3cpNNkWaII8QqaMbuvPp
+ iHnbW0THBzWa8LDRFW8zSW9xag2LlY6Rm5C2FAFqjyzMuNE3VV47Zqf8ZeoeJ0x9
+ bltlcT8G6MmTB7gP2W4UnCEVwC4Dsd0lLgS/VL4dQ87AzhJYcFFADRmMKtqxQO4d
+ /Ob4XmXxwBlgdJ8EvJlp2UawreuDw==
+X-ME-Sender: <xms:QDSJXjEb877FyG7AHZc1lKPIIqbFZRYz1je44IgtEdcur3NfMJxQHw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrtdelgdegjecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhepuffvfhfhkffffgggjggtgfesthejre
- dttdefjeenucfhrhhomheptehlihhsthgrihhrucfhrhgrnhgtihhsuceorghlihhsthgr
- ihhrsegrlhhishhtrghirhdvfedrmhgvqeenucffohhmrghinhepuggvvhhitggvthhrvg
- gvrdhorhhgpdhkvghrnhgvlhdrohhrghenucfkphepjeefrdelfedrkeegrddvtdeknecu
- vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghlihhsth
- grihhrsegrlhhishhtrghirhdvfedrmhgv
-X-ME-Proxy: <xmx:fTGJXhDMONLl7qBROxbhVbwEl2UjtpW6nG6NAjuPDAz0ljR1mAWcrQ>
- <xmx:fTGJXr18xc-IA9gb__BJudXTRmsBj5hppaXcWwcpFykApI1djKqurw>
- <xmx:fTGJXhQwP4yFvhggCTC4zQeJxlivbUvmVXXntILE-7uhPsviKpbLLQ>
- <xmx:gjGJXn2RSZeKTubI3frSzNzjRPeffoOzFzg8dEAbj37X5vZuNXZIZumTufo>
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpeetlhhishht
+ rghirhcuhfhrrghntghishcuoegrlhhishhtrghirhesrghlihhsthgrihhrvdefrdhmvg
+ eqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdrohhrghdpkhgvrhhnvghlrdhorhhg
+ necukfhppeejfedrleefrdekgedrvddtkeenucevlhhushhtvghrufhiiigvpedtnecurf
+ grrhgrmhepmhgrihhlfhhrohhmpegrlhhishhtrghirhesrghlihhsthgrihhrvdefrdhm
+ vg
+X-ME-Proxy: <xmx:QDSJXkThRhWHG37yvqbflKUZBbfteEWEAdDrfvj6BRPy6MlMshCkfA>
+ <xmx:QDSJXtpB_qhggbuHYvsnJo69gSrWO9Ctjpc2jlk9GQLO5QXg_aC-0A>
+ <xmx:QDSJXqr2P5Ziiou5nISNn3sil8deBdqZEa_X_AFrDgCSnAiNGHkCig>
+ <xmx:SjSJXlPdDvXlZV2ZYnnevXNXVMk282B0iJzelzATqdVRpOLBl53rcrrlZb4>
 Received: from [172.16.1.131] (c-73-93-84-208.hsd1.ca.comcast.net
  [73.93.84.208])
- by mail.messagingengine.com (Postfix) with ESMTPA id 8F20A3280060;
- Sat,  4 Apr 2020 21:16:44 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id CA5033280066;
+ Sat,  4 Apr 2020 21:28:30 -0400 (EDT)
 Subject: Re: [PATCH 1/3] dt-bindings: net: bluetooth: Add rtl8723bs-bluetooth
-To: alistair23@gmail.com
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 References: <20200404204850.405050-1-alistair@alistair23.me>
  <20200404224205.1643238-1-martin.blumenstingl@googlemail.com>
 From: Alistair Francis <alistair@alistair23.me>
-Message-ID: <d30412ef-0de3-338b-a1de-0e8b179c2aff@alistair23.me>
-Date: Sat, 4 Apr 2020 18:16:43 -0700
+Message-ID: <46b0f1dc-15df-55d5-1a9c-cb70a7d453ad@alistair23.me>
+Date: Sat, 4 Apr 2020 18:28:29 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
 In-Reply-To: <20200404224205.1643238-1-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200404_181659_569624_470C8E8D 
-X-CRM114-Status: GOOD (  17.98  )
+X-CRM114-CacheID: sfid-20200404_182844_407437_5FF4E2F3 
+X-CRM114-Status: GOOD (  18.24  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [64.147.123.26 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -111,7 +112,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, max.chou@realtek.com, johan.hedberg@gmail.com,
  hdegoede@redhat.com, netdev@vger.kernel.org, marcel@holtmann.org,
  linux-kernel@vger.kernel.org, mripard@kernel.org,
- linux-bluetooth@vger.kernel.org, wens@csie.org,
+ linux-bluetooth@vger.kernel.org, wens@csie.org, alistair23@gmail.com,
  linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
@@ -136,6 +137,11 @@ On 4/04/2020 3:42 pm, Martin Blumenstingl wrote:
 > and the description below). commit 848fc6164158d6 ("Bluetooth: hci_h5:
 > btrtl: Add support for RTL8822C") adde support for that chip but didn't
 > add the dt-binding documentation.
+
+
+Done!
+
+
 >
 > [...]
 >> +  device-wake-gpios:
@@ -154,10 +160,20 @@ On 4/04/2020 3:42 pm, Martin Blumenstingl wrote:
 > require a specific polarity there can be (for example) a transistor on
 > the board which could be used to invert the polarity (from the SoC's
 > view).
+
+
+I have removed the "(active..." part from the GPIOs.
+
+
 >
 > also "make dt_binding_check" reports:
 >    properties:host-wake-gpios: 'maxItems' is a required property
 > I assume that it'll be the same for the other properties
+
+
+Added.
+
+
 >
 >> +firmware-postfix: firmware postfix to be used for firmware config
 > there's no other dt-binding that uses "firmware-postfix" yet. However,
@@ -166,6 +182,11 @@ On 4/04/2020 3:42 pm, Martin Blumenstingl wrote:
 > property for now because there seems to be a "standard" config blob
 > (which works for "all" boards), see Hans' analysis result of the ACPI
 > config blobs for RTL8723BS: [0].
+
+
+I have removed the 'firmware-postfix" part from this series.
+
+
 > Getting that "standard" config blob into linux-firmware would be
 > awesome (I assume licensing is not an issue here, Hans can probably give
 > more details here). I'm not sure about the licenses of "board specific"
@@ -175,11 +196,21 @@ On 4/04/2020 3:42 pm, Martin Blumenstingl wrote:
 >
 >> +reset-gpios: GPIO specifier, used to reset the BT module (active high)
 > indentation seems wrong here too
+
+
+Fixed.
+
+
 >
 > also please note that there is currently no support for this property
 > inside the hci_h5 driver and you don't seem to add support for it within
 > this series either. so please double check that the reset GPIO is really
 > wired up on your sopine board.
+
+
+Removed.
+
+
 >
 >> +required:
 >> +  - compatible
@@ -191,10 +222,26 @@ On 4/04/2020 3:42 pm, Martin Blumenstingl wrote:
 >> +        pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
 >> +        status = "okay";
 > AFAIK the "status" property should be omitted from examples
->
+
+
+Removed.
+
+
+> Z
 > also please add a "uart-has-rtscts" propery, see
 > Documentation/devicetree/bindings/serial/serial.yaml
 > Also please update patch #3.
+
+
+Added.
+
+
+Thanks for the review.
+
+
+Alistair
+
+
 >
 >
 > Martin
