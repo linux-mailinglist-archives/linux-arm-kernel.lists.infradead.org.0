@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 097FB19F6C1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:21:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1E8319F6A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:17:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a/xX9xPxKakc3wQgtplZnUjI7gjjdC0ZSfy8j9Rk/Vs=; b=obABk2uKuDtlBW
-	PkPbAu19UjgGnR/fMg27WGhgAhYfOo7WCGrZU+NnzloX0lNRR6EfeyTcNkM3BUNx6HbMa8cqIsGjb
-	shXm6jN6AmEWGHKeV/3RMl2Jjd/8KiPsaZgLBPz7190wSEs3qsq+bhwxvmGg/vvUb9xxysNxozf7K
-	1j9gQCoRVHgWqsfRmQtsJaofND+9W/fQYJZIKQJ2rig5jNd6zejNKKLReZ7ZwHgxknmUVjbuUus8E
-	Ibzl/pF7qIdNbJOpaZC+ADAXh4pH1Diyb0cghguFCsscYUBOPKHk89RORSeq4mc4TY5oh21Re/K0H
-	Et0uPtiTtf9HMoL3nk+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=yctHfeBE1mXO9bJOMktfjN5s6gIHXHbTA/0EfQoZego=; b=L0kjVZleengbRevnVoPAQSImXq
+	nsZtyIeCGVnHKuRVfoL6Fb6KqnElLfs5uErw08REY7Gx+bitqBgb9UGbMeVtdXV8+2NMJT+gTthu0
+	HhMMPl5BVBba9iJSKN0zlK0wPfqC3APvT/p1z+frUkXPT0Y+fiA6BE0KfSf35p+Uja+jkzWQGJkRp
+	tewSwEcjH2c/DPLI8lDTx7iTgNEhnib1IYtLkwBDMsLswzciychzqxgbW0HkU2ooRBjXLY+QXkBT/
+	Gy+3JABiKaKCbMk+mW0dxxLEhmadtntG7naxO4xmnncpaXa2xY9Uidz6fmt8qGHZE4uV1dvAfnxH+
+	KOnp9TBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLRgP-0000gH-3h; Mon, 06 Apr 2020 13:20:57 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jLRcX-0005xb-Mz; Mon, 06 Apr 2020 13:16:57 +0000
+Received: from mail.xenproject.org ([104.130.215.37])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLRgI-0000fN-Qm
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 13:20:52 +0000
-Received: from mail-qt1-f181.google.com ([209.85.160.181]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1N0G5h-1j8kEW3CJb-00xISZ for <linux-arm-kernel@lists.infradead.org>; Mon,
- 06 Apr 2020 15:15:39 +0200
-Received: by mail-qt1-f181.google.com with SMTP id 14so12471642qtp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 06:15:39 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaiFQ8+2WOGlfDs+DEU3sz231rR3aAZolFEi1UqCKz7Nxt/Ajur
- V/kE0E77jJsnRtUFsYCCFLUSccrmRIOsZRE9b9M=
-X-Google-Smtp-Source: APiQypLa5L7CKwlGZNhn/7xAjUoLc+7MSyvfCvi3f7raJ3Pm4QCoa8xTD4iijCH0Ufx8gGRQ4K6mPgVfCzePn/2MrKM=
-X-Received: by 2002:ac8:12c2:: with SMTP id b2mr379999qtj.7.1586178935967;
- Mon, 06 Apr 2020 06:15:35 -0700 (PDT)
+ id 1jLRcP-0005wS-QO
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 13:16:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=xen.org;
+ s=20200302mail; h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:
+ Message-ID:Cc:To:Subject:From:Sender:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=9miVRYCMvr1Uvww2T7Kj3Ck9eMJTDfng4CaO3elt314=; b=53xUmM5P65NYBcJdrA40VgMU7X
+ rBRfkE16e3+PIttsoxK+Dn99gYVB2V+nCJoHEXDTxUbiOKDkTkQbTc22uf0SwxrNXhSbzsiC6BUPN
+ Wxu7L8DgZ3g18ADrVUzgAKzVXDx6IGWqtU5RMWSrU6vuUH672pf3NzA1brdaHxnvfWOI=;
+Received: from xenbits.xenproject.org ([104.239.192.120])
+ by mail.xenproject.org with esmtp (Exim 4.89)
+ (envelope-from <julien@xen.org>)
+ id 1jLRcI-00025f-2L; Mon, 06 Apr 2020 13:16:42 +0000
+Received: from 54-240-197-239.amazon.com ([54.240.197.239]
+ helo=a483e7b01a66.ant.amazon.com)
+ by xenbits.xenproject.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <julien@xen.org>)
+ id 1jLRcH-0004fB-RA; Mon, 06 Apr 2020 13:16:41 +0000
+From: Julien Grall <julien@xen.org>
+Subject: I{S,C}ACTIVER implemention question
+To: Marc Zyngier <maz@kernel.org>, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+Message-ID: <c90bdfa0-00cf-170b-4319-e270e8aaef7e@xen.org>
+Date: Mon, 6 Apr 2020 14:16:39 +0100
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
+ Gecko/20100101 Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <20200406121233.109889-1-mst@redhat.com>
- <20200406121233.109889-3-mst@redhat.com>
- <CAK8P3a1nce31itwMKbmXoNZh-Y68m3GX_WwzNiaBuk280VFh-Q@mail.gmail.com>
- <20200406085707-mutt-send-email-mst@kernel.org>
-In-Reply-To: <20200406085707-mutt-send-email-mst@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 6 Apr 2020 15:15:20 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1=-rhiMyAh6=6EwhxSmNnYaXR9NWhh+ZGh4Hh=U_gEuA@mail.gmail.com>
-Message-ID: <CAK8P3a1=-rhiMyAh6=6EwhxSmNnYaXR9NWhh+ZGh4Hh=U_gEuA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] vhost: disable for OABI
-To: "Michael S. Tsirkin" <mst@redhat.com>
-X-Provags-ID: V03:K1:C1cGFpa3axehUkzII4e0rAXJORp/8Aar5RupDyS1SJiTiSZYhui
- qsrPYd/sFBKa1Pi90tbh6mt5MdvRaZolWwxl8C4eGpRRm2haw+lUdiB1I8RfajeRxxTvkBC
- 11e6N5bYEB2Ny2muafIk8QanuT9tGxvbyKv7ja4BjNEgdevdmkSKZTGYKQP/aV7z4vY1iA6
- 9Vz6AjRES+v3iTPTaTqDw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:yqB0MPshkkA=:62mH2KgM6hebsLAgHoLGdg
- fRzEQkpFsb4G2nRsXR5FBu1E7xmHJCcKCSdOnylUzKDax4yPNTueDdgtxz2OChJgS/WGIQHZW
- kjOk/P3OQxJo8t/Lh9CTU3pyg6htRM5srTvrXY2YkXcZDdQHGLWPyytmvORqm3raNwuHhNy/a
- qd1LSQpBXjQmotM43IPAljY4oifiHc5lExxxvrseyc0aqN1pQx/xTS24M2PMqF+FaHpEbQ8Q0
- ml8UK/5PIm3bm9n1MPFomJSEZsizDSRarE1r9ZeF9PHL/JnjQYKhhHc+P29/M45XinGmRdUvc
- zY4I1oe54jvyH+B/FBvQj+XMYFfOFeCdPhZEiyZOh+S5SfNvW64dOw/CfRGPuPVLqnbpF2WZ9
- p6oXsbw+RX7oYn+dPbgaFuEC90kr9YyrJBCqV0wqyl1fhhyV7wKg2aDk+l20xIUAvDxsg2OYJ
- XjayNhJf49bUEyIOHx3vcwSDZjGDv/TXQKAmfFZZcWzE/JLaGixExvavPXBhgMm2ZFCBT0bZ1
- 6495gTNSP61NxmJiyte4I6MMo4nTMLgLvzzq11QXNykCc0tO0/+ZaQ8E46N1xFLhuURm1VBDV
- yuP65BY5VyEVQZpVcJY4NE/7DfkhEQpQQ/Id/7NFdY7SLvgAytaKQNT140IIT1dWdN3W0jFpz
- VIu3sQPNhGS0zXwqF6lhRQTQ68WuGD0Sofnwj3fLcS49QGk6iQ65Zc5Ckro/sMMcyA997M8Cp
- cgWXdOAAaPyOQJbJi6BQdu3zMpmcM/7Hnddn7IuD7bgi9lDGk1rix+YIBjrSk9SZmWELDb99w
- SwaiuCzq6YbcHO/0wOf3FJ7P1BBRxkm/QRmW45ahK7Pvfihfzg=
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_062051_159697_281B1F35 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200406_061649_915207_76F98285 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [104.130.215.37 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,59 +83,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Earnshaw <Richard.Earnshaw@arm.com>,
- "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
- kbuild test robot <lkp@intel.com>, kvm list <kvm@vger.kernel.org>,
- "christophe.lyon@st.com" <christophe.lyon@st.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jason Wang <jasowang@redhat.com>,
- "richard.henderson@linaro.org" <richard.henderson@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sudeep Dutt <sudeep.dutt@intel.com>, Ashutosh Dixit <ashutosh.dixit@intel.com>,
- "daniel.santos@pobox.com" <daniel.santos@pobox.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- "David S. Miller" <davem@davemloft.net>, Networking <netdev@vger.kernel.org>,
- virtualization@lists.linux-foundation.org, Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "George.Dunlap@eu.citrix.com" <George.Dunlap@eu.citrix.com>,
+ Stefano Stabellini <sstabellini@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org,
+ Bertrand Marquis <Bertrand.Marquis@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 6, 2020 at 3:02 PM Michael S. Tsirkin <mst@redhat.com> wrote:
->
-> On Mon, Apr 06, 2020 at 02:50:32PM +0200, Arnd Bergmann wrote:
-> > On Mon, Apr 6, 2020 at 2:12 PM Michael S. Tsirkin <mst@redhat.com> wrote:
-> >
-> > >
-> > > +config VHOST_DPN
-> > > +       bool "VHOST dependencies"
-> > > +       depends on !ARM || AEABI
-> > > +       default y
-> > > +       help
-> > > +         Anything selecting VHOST or VHOST_RING must depend on VHOST_DPN.
-> > > +         This excludes the deprecated ARM ABI since that forces a 4 byte
-> > > +         alignment on all structs - incompatible with virtio spec requirements.
-> > > +
-> >
-> > This should not be a user-visible option, so just make this 'def_bool
-> > !ARM || AEABI'
-> >
->
-> I like keeping some kind of hint around for when one tries to understand
-> why is a specific symbol visible.
+Hi,
 
-I meant you should remove the "VHOST dependencies" prompt, not the
-help text, which is certainly useful here. You can also use the three lines
+Xen community is currently reviewing a new implementation for reading 
+I{S,C}ACTIVER registers (see [1]).
 
-     bool
-     depends on !ARM || AEABI
-     default y
+The implementation is based on vgic_mmio_read_active() in KVM, i.e the 
+active state of the interrupts is based on the vGIC state stored in memory.
 
-in front of the help text, but those are equivalent to the one-line version
-I suggested.
+While reviewing the patch on xen-devel, I noticed a potential deadlock 
+at least with Xen implementation. I know that Xen vGIC and KVM vGIC are 
+quite different, so I looked at the implementation to see how this is dealt.
 
-     Arnd
+With my limited knowledge of KVM, I wasn't able to rule it out. I am 
+curious to know if I missed anything.
+
+vCPU A may read the active state of an interrupt routed to vCPU B. When 
+vCPU A is reading the state, it will read the state stored in memory.
+
+The only way the memory state can get synced with the HW state is when 
+vCPU B exit guest context.
+
+AFAICT, vCPU B will not exit when deactivating HW mapped interrupts and 
+virtual edge interrupts. So vCPU B may run for an abritrary long time 
+before been exiting and syncing the memory state with the HW state.
+
+Looking at Linux (5.4 and onwards) use of the active state, vCPU A would 
+loop until the interrupt is not active anymore. So wouldn't the task on 
+vCPU A be blocked for an arbitrary long time?
+
+Cheers,
+
+[1] 
+https://lists.xenproject.org/archives/html/xen-devel/2020-03/msg01844.html
+
+-- 
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
