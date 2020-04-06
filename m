@@ -2,54 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDAE819F873
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 17:04:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 418C119F87C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 17:06:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6zRuSlrZNRd2uCqUo2/zjktP7l6VHwIYVK8+EzjPAGE=; b=gTaE6G/LWBCDbC
-	HMLlVhL51cBhKihWFg73V9//qF+YBqnyGKNqmHnnbUIMe9SwnUFWYuM1MBdw/3HNuwo51U38k7iVj
-	IhcGFlnJF3A/cWVBisQPuwtLAvzTqqPNFGJ3Uog35NlhO13N2y1e6xqXUfs14em3I5ew+rs3NoLt2
-	qszry81PlFKv2xqfK0pfUg3JZpN6ARYBf8uzgEwp6ledfpPH2nADVe2xix1fusmek4t962hC+gQxb
-	jxgm+zejL7nI7JYtySSfoudczRy60q6faSkCfq4F/sSjbtXuuWSB7LXw8c5wl275P6/vYZRGTG+iF
-	HuHotptIz86OgzBHH2BA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvIJ6QLiI9EFowJ5mDyNxIyyGc/Gt7GUoxxzJg4Z/fY=; b=P7tqcsobNq+qTr
+	EFGPwz0kd7RXPi6eR49YQkJkP5OMNUMTuPT6pGHVcMfPRCqjmJg+MOQ3PNco7nrzErHtiD9U4yfws
+	a0ssKFleSNxD5YKLuXEmQ+8k3IBGrPjCK1S81vmndsjRMN1Ln1E+IwzRPvgXv3XprfudILuRAeIdj
+	Q46ZLEhpAin3T71vHVSJhM84Zt5HvakeWv/7OOAljTUuJzoDt68Jz5Zo4T6Fh4t8tX/QEeZMMsmnw
+	bPiWpE30mmkoAGFVGb9jpnTlY4NkfF74r8fn/aFFj0ZO0mCCi69XRyQ0YsviW1mK7+6FQMaEmg19I
+	jPgs1FVQ8SsJrl9/E4aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLTIN-000586-Ll; Mon, 06 Apr 2020 15:04:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLTIE-00057S-S4
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 15:04:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 242E11FB;
- Mon,  6 Apr 2020 08:04:03 -0700 (PDT)
-Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
- [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3758D3F73D;
- Mon,  6 Apr 2020 08:04:02 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH] KVM: arm64: arch_timer shouldn't assume the vcpu is loaded
-Date: Mon,  6 Apr 2020 16:03:55 +0100
-Message-Id: <20200406150355.4859-1-james.morse@arm.com>
-X-Mailer: git-send-email 2.19.1
+	id 1jLTKd-00086o-D8; Mon, 06 Apr 2020 15:06:35 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLTKX-00086U-2K
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 15:06:30 +0000
+IronPort-SDR: NDLFPAUr/XzIOVIvRTpNaI8vcNm+WXw3qEsjPbRFtvvbLOjZ53Ch4/r4Lz7vuCjEqcOia7SZM/
+ ClGjxtFycWyQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 06 Apr 2020 08:06:28 -0700
+IronPort-SDR: mqw7ycFAc1LmPAC67DPTqIPgVgTjHFH2j8p8RoZfwndcKlL/z+tEfGOZN1CLbTbI2F7YfryUZ/
+ sRgsmN8ohpTA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,351,1580803200"; d="scan'208";a="450862810"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga005.fm.intel.com with ESMTP; 06 Apr 2020 08:06:23 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andy.shevchenko@gmail.com>)
+ id 1jLTKU-00GCiI-8A; Mon, 06 Apr 2020 18:06:26 +0300
+Date: Mon, 6 Apr 2020 18:06:26 +0300
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [PATCH v3 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200406150626.GW3676135@smile.fi.intel.com>
+References: <20200331133346.372517-1-robert.foss@linaro.org>
+ <20200331133346.372517-3-robert.foss@linaro.org>
+ <CAHp75VfFKY6nzb8aEWmop73v2haZ0P5+aTsKDEU8M=uUPn0u3g@mail.gmail.com>
+ <CAG3jFyuH5Kad16R7Oit-c_7RasiEfPycOpA68JYLVopbyQ749w@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAG3jFyuH5Kad16R7Oit-c_7RasiEfPycOpA68JYLVopbyQ749w@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_080407_105721_B3E50026 
-X-CRM114-Status: GOOD (  17.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200406_080629_141628_F9E4C0B3 
+X-CRM114-Status: GOOD (  24.05  )
+X-Spam-Score: -1.8 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,223 +83,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-kvm_arch_timer_get_input_level() needs to get the arch_timer_context for
-a particular vcpu, and uses kvm_get_running_vcpu() to find it.
+On Mon, Apr 06, 2020 at 03:37:24PM +0200, Robert Foss wrote:
+> On Tue, 31 Mar 2020 at 16:01, Andy Shevchenko <andy.shevchenko@gmail.com> wrote:
+> > On Tue, Mar 31, 2020 at 4:36 PM Robert Foss <robert.foss@linaro.org> wrote:
 
-kvm_arch_timer_get_input_level() may be called to handle a user-space
-write to the redistributor, where the vcpu is not loaded. This causes
-kvm_get_running_vcpu() to return NULL:
-| Unable to handle kernel paging request at virtual address 0000000000001ec0
-| Mem abort info:
-|   ESR = 0x96000004
-|   EC = 0x25: DABT (current EL), IL = 32 bits
-|   SET = 0, FnV = 0
-|   EA = 0, S1PTW = 0
-| Data abort info:
-|   ISV = 0, ISS = 0x00000004
-|   CM = 0, WnR = 0
-| user pgtable: 4k pages, 48-bit VAs, pgdp=000000003cbf9000
-| [0000000000001ec0] pgd=0000000000000000
-| Internal error: Oops: 96000004 [#1] PREEMPT SMP
-| Modules linked in: r8169 realtek efivarfs ip_tables x_tables
-| CPU: 1 PID: 2615 Comm: qemu-system-aar Not tainted 5.6.0-rc7 #30
-| Hardware name: Marvell mvebu_armada-37xx/mvebu_armada-37xx, BIOS 2018.03-devel-18.12.3-gc9aa92c-armbian 02/20/2019
-| pstate: 00000085 (nzcv daIf -PAN -UAO)
-| pc : kvm_arch_timer_get_input_level+0x1c/0x68
-| lr : kvm_arch_timer_get_input_level+0x1c/0x68
+...
 
-| Call trace:
-|  kvm_arch_timer_get_input_level+0x1c/0x68
-|  vgic_get_phys_line_level+0x3c/0x90
-|  vgic_mmio_write_senable+0xe4/0x130
-|  vgic_uaccess+0xe0/0x100
-|  vgic_v3_redist_uaccess+0x5c/0x80
-|  vgic_v3_attr_regs_access+0xf0/0x200
-|  nvgic_v3_set_attr+0x234/0x250
-|  kvm_device_ioctl_attr+0xa4/0xf8
-|  kvm_device_ioctl+0x7c/0xc0
-|  ksys_ioctl+0x1fc/0xc18
-|  __arm64_sys_ioctl+0x24/0x30
-|  do_el0_svc+0x7c/0x148
-|  el0_sync_handler+0x138/0x258
-|  el0_sync+0x140/0x180
-| Code: 910003fd f9000bf3 2a0003f3 97ff650c (b95ec001)
-| ---[ end trace 81287612d93f1e70 ]---
-| note: qemu-system-aar[2615] exited with preempt_count 1
+> > > +       if (ret < 0) {
+> >
+> > Do you need all ' < 0' parts all over the series?
+> 
+> Some checks are needed due to ACPI and DT support co-existing.
+> Maybe it would be better to just split the probing into an ACPI path
+> and a DT path.
+> 
+> I'll have a look through the series for redundant retval checks.
 
-Loading the vcpu doesn't make a lot of sense for handling a device ioctl(),
-so instead pass the vcpu through to kvm_arch_timer_get_input_level(). Its
-not clear that an intid makes much sense without the paired vcpu.
+Drop where it is redundant.
 
-Suggested-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: James Morse <james.morse@arm.com>
----
- include/kvm/arm_arch_timer.h  | 2 +-
- include/kvm/arm_vgic.h        | 8 +++-----
- virt/kvm/arm/arch_timer.c     | 3 +--
- virt/kvm/arm/vgic/vgic-mmio.c | 2 +-
- virt/kvm/arm/vgic/vgic-v2.c   | 2 +-
- virt/kvm/arm/vgic/vgic-v3.c   | 2 +-
- virt/kvm/arm/vgic/vgic.c      | 8 ++++----
- virt/kvm/arm/vgic/vgic.h      | 2 +-
- 8 files changed, 13 insertions(+), 16 deletions(-)
+...
 
-diff --git a/include/kvm/arm_arch_timer.h b/include/kvm/arm_arch_timer.h
-index d120e6c..42a016a 100644
---- a/include/kvm/arm_arch_timer.h
-+++ b/include/kvm/arm_arch_timer.h
-@@ -92,7 +92,7 @@ void kvm_timer_vcpu_put(struct kvm_vcpu *vcpu);
- 
- void kvm_timer_init_vhe(void);
- 
--bool kvm_arch_timer_get_input_level(int vintid);
-+bool kvm_arch_timer_get_input_level(int vintid, struct kvm_vcpu *vcpu);
- 
- #define vcpu_timer(v)	(&(v)->arch.timer_cpu)
- #define vcpu_get_timer(v,t)	(&vcpu_timer(v)->timers[(t)])
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index 9d53f54..41e91b3 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -130,11 +130,9 @@ struct vgic_irq {
- 	 * state of the input level of mapped level-triggered IRQ faster than
- 	 * peaking into the physical GIC.
- 	 *
--	 * Always called in non-preemptible section and the functions can use
--	 * kvm_arm_get_running_vcpu() to get the vcpu pointer for private
--	 * IRQs.
-+	 * Always called in non-preemptible section.
- 	 */
--	bool (*get_input_level)(int vintid);
-+	bool (*get_input_level)(int vintid, struct kvm_vcpu *vcpu);
- 
- 	void *owner;			/* Opaque pointer to reserve an interrupt
- 					   for in-kernel devices. */
-@@ -344,7 +342,7 @@ void kvm_vgic_init_cpu_hardware(void);
- int kvm_vgic_inject_irq(struct kvm *kvm, int cpuid, unsigned int intid,
- 			bool level, void *owner);
- int kvm_vgic_map_phys_irq(struct kvm_vcpu *vcpu, unsigned int host_irq,
--			  u32 vintid, bool (*get_input_level)(int vindid));
-+			  u32 vintid, bool (*get_input_level)(int vindid, struct kvm_vcpu *vcpu));
- int kvm_vgic_unmap_phys_irq(struct kvm_vcpu *vcpu, unsigned int vintid);
- bool kvm_vgic_map_is_active(struct kvm_vcpu *vcpu, unsigned int vintid);
- 
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index 0d9438e..ca0e87b 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -1021,9 +1021,8 @@ static bool timer_irqs_are_valid(struct kvm_vcpu *vcpu)
- 	return true;
- }
- 
--bool kvm_arch_timer_get_input_level(int vintid)
-+bool kvm_arch_timer_get_input_level(int vintid, struct kvm_vcpu *vcpu)
- {
--	struct kvm_vcpu *vcpu = kvm_get_running_vcpu();
- 	struct arch_timer_context *timer;
- 
- 	if (vintid == vcpu_vtimer(vcpu)->irq.irq)
-diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-index 97fb2a4..37ee2f8 100644
---- a/virt/kvm/arm/vgic/vgic-mmio.c
-+++ b/virt/kvm/arm/vgic/vgic-mmio.c
-@@ -121,7 +121,7 @@ void vgic_mmio_write_senable(struct kvm_vcpu *vcpu,
- 			 * the guest might have changed the state of the device
- 			 * while the interrupt was disabled at the VGIC level.
- 			 */
--			irq->line_level = vgic_get_phys_line_level(irq);
-+			irq->line_level = vgic_get_phys_line_level(irq, vcpu);
- 			/*
- 			 * Deactivate the physical interrupt so the GIC will let
- 			 * us know when it is asserted again.
-diff --git a/virt/kvm/arm/vgic/vgic-v2.c b/virt/kvm/arm/vgic/vgic-v2.c
-index 621cc16..e126f25 100644
---- a/virt/kvm/arm/vgic/vgic-v2.c
-+++ b/virt/kvm/arm/vgic/vgic-v2.c
-@@ -110,7 +110,7 @@ void vgic_v2_fold_lr_state(struct kvm_vcpu *vcpu)
- 		 * told when the interrupt becomes asserted again.
- 		 */
- 		if (vgic_irq_is_mapped_level(irq) && (val & GICH_LR_PENDING_BIT)) {
--			irq->line_level = vgic_get_phys_line_level(irq);
-+			irq->line_level = vgic_get_phys_line_level(irq, vcpu);
- 
- 			if (!irq->line_level)
- 				vgic_irq_set_phys_active(irq, false);
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index f45635a..ff861fa 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -101,7 +101,7 @@ void vgic_v3_fold_lr_state(struct kvm_vcpu *vcpu)
- 		 * told when the interrupt becomes asserted again.
- 		 */
- 		if (vgic_irq_is_mapped_level(irq) && (val & ICH_LR_PENDING_BIT)) {
--			irq->line_level = vgic_get_phys_line_level(irq);
-+			irq->line_level = vgic_get_phys_line_level(irq, vcpu);
- 
- 			if (!irq->line_level)
- 				vgic_irq_set_phys_active(irq, false);
-diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-index 99b02ca..d113b5b 100644
---- a/virt/kvm/arm/vgic/vgic.c
-+++ b/virt/kvm/arm/vgic/vgic.c
-@@ -176,14 +176,14 @@ void vgic_irq_set_phys_pending(struct vgic_irq *irq, bool pending)
- 				      pending));
- }
- 
--bool vgic_get_phys_line_level(struct vgic_irq *irq)
-+bool vgic_get_phys_line_level(struct vgic_irq *irq, struct kvm_vcpu *vcpu)
- {
- 	bool line_level;
- 
- 	BUG_ON(!irq->hw);
- 
- 	if (irq->get_input_level)
--		return irq->get_input_level(irq->intid);
-+		return irq->get_input_level(irq->intid, vcpu);
- 
- 	WARN_ON(irq_get_irqchip_state(irq->host_irq,
- 				      IRQCHIP_STATE_PENDING,
-@@ -479,7 +479,7 @@ int kvm_vgic_inject_irq(struct kvm *kvm, int cpuid, unsigned int intid,
- /* @irq->irq_lock must be held */
- static int kvm_vgic_map_irq(struct kvm_vcpu *vcpu, struct vgic_irq *irq,
- 			    unsigned int host_irq,
--			    bool (*get_input_level)(int vindid))
-+			    bool (*get_input_level)(int vindid, struct kvm_vcpu *vcpu))
- {
- 	struct irq_desc *desc;
- 	struct irq_data *data;
-@@ -512,7 +512,7 @@ static inline void kvm_vgic_unmap_irq(struct vgic_irq *irq)
- }
- 
- int kvm_vgic_map_phys_irq(struct kvm_vcpu *vcpu, unsigned int host_irq,
--			  u32 vintid, bool (*get_input_level)(int vindid))
-+			  u32 vintid, bool (*get_input_level)(int vindid, struct kvm_vcpu *vcpu))
- {
- 	struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, vintid);
- 	unsigned long flags;
-diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-index c7fefd6..622865e 100644
---- a/virt/kvm/arm/vgic/vgic.h
-+++ b/virt/kvm/arm/vgic/vgic.h
-@@ -163,7 +163,7 @@ struct vgic_irq *vgic_get_irq(struct kvm *kvm, struct kvm_vcpu *vcpu,
- 			      u32 intid);
- void __vgic_put_lpi_locked(struct kvm *kvm, struct vgic_irq *irq);
- void vgic_put_irq(struct kvm *kvm, struct vgic_irq *irq);
--bool vgic_get_phys_line_level(struct vgic_irq *irq);
-+bool vgic_get_phys_line_level(struct vgic_irq *irq, struct kvm_vcpu *vcpu);
- void vgic_irq_set_phys_pending(struct vgic_irq *irq, bool pending);
- void vgic_irq_set_phys_active(struct vgic_irq *irq, bool active);
- bool vgic_queue_irq_unlock(struct kvm *kvm, struct vgic_irq *irq,
+> > > -       ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
+> > > -       if (ret)
+> > > -               return ret;
+> >
+> > Where is it gone? Why?
+> 
+> It was replaced by a clk_get_rate call, which as Sakari pointed out,
+> isn't correct.
+> I'll rework the clock handling for v4.
+
+If it was in the driver it should stay -- properties is an ABI (between firmware and kernel).
+
+> > > +       ov8856->xvclk = devm_clk_get_optional(dev, "xvclk");
+> > > +       if (IS_ERR(ov8856->xvclk)) {
+> >
+> > > +               dev_err(dev, "could not get xvclk clock (%ld)\n",
+> > > +                       PTR_ERR(ov8856->xvclk));
+> >
+> > Also you may use %pe here and in similar cases.
+> 
+> Weirdly checkpatch complains about this.
+> But it builds and runs cleanly, so I'll add it in v4.
+
+%pe requires pointer, PTR_ERR converts pointer to integer.
+
+...
+
+> > > +       ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ov8856_supply_names),
+> > > +                                     ov8856->supplies);
+> > > +       if (ret) {
+> >
+> > > +               dev_warn(dev, "failed to get regulators\n");
+> >
+> > If it's a warning, why we return from here?
+> > Same question to all other places with same issue.
+> 
+> The issue I was seeing was the driver having to return a EDEFER here,
+> so this warning sheds some light on which exact component is returning
+> an EDEFER.
+> 
+> [   15.962623] ov8856 16-0010: Dropping the link to regulator.29
+> [   15.968464] ov8856 16-0010: failed to get regulators
+> [   15.973493] ov8856 16-0010: failed to get HW configuration: -517
+> [   15.979591] ov8856 16-0010: removing from PM domain titan_top_gdsc
+> [   15.985855] ov8856 16-0010: genpd_remove_device()
+> [   15.990672] i2c 16-0010: Driver ov8856 requests probe deferral
+> 
+> Personally I found it helpful to speed up debugging, but I'll happily
+> remove it if you prefer no warning.
+
+My point is that you have it in align:
+ - if it is an error, print as an error and bail out, otherwise
+ - if it is a warning, print it and continue.
+
+> > > +               return ret;
+> > >         }
+
 -- 
-2.7.4
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
