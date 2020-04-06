@@ -2,140 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEA9219FA56
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:40:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 433ED19FA64
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:41:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iE3ZqyD7qawENISFVJaJj4zt0MJOhd2KcsbwABzi9gE=; b=rF55s1NSPQ6eHE
-	mhEYclKrz1NMoxO/Ljy9vkSmwrXGLkU4ZzbI/ZxsLhzG4NnrdCuY1mLWJSo4W5C7PeFMQNlWHa30u
-	Jmj0iFdoABfbLuAjM/YwSbeuKBA27XLNarAnkJnS7t3Hr+QbWXffo2Nb92G0aMSP999Y9qmNVL6Xs
-	rjP4nLIhqs4huDfi+kzhDshFmwSW7ksZ/99XkVx7jZ1SErUJzyf2xmchEpYNvfmaEovYnuc+W2Y8L
-	8OiBE2fYNKd+2nLnM43YuJY+O9kHWuptz4gIitvrcbAHQ4ApymVJXFBMxyI315IxHHWmrIfHT40l0
-	RlFzTbwK/pANOi0Uez7g==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t3QaZm+U7RH6PyIa9TtE/Aet2Mcvj4YKryUwHjCTWfE=; b=fULyrI5GZFo1T9
+	K1cNpaPfVyHB59udV8gQ4YzQycTdZD78e1duC22MVrVfm/pRUFSWW+GiyTYRb+0XR/+DV7B5DioZc
+	U7gDRj9SBBWbkAVCKMUFqVQjGJEbdLaKrzrDAGph0tTBim3ly2c3w9WxsYmZF4Pel2fObAlLg8ES8
+	oPkxwTiI/O9qglGaJLmlJSnJRHSzuEp1J3xwpbzJerNQR9wuycSMwNovxkw6vbS0lfUrum74zhpC5
+	e83UqTiCGfIvBiE8olXrIj6no4tXPG+DWoeOswq01sc8NQxdofNUSZ7zoa4cRDLAbV2pQm8eJZElq
+	MGT+jUW7wdYmBbJhmihg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLUnK-00011f-79; Mon, 06 Apr 2020 16:40:18 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jLUoi-0003tX-LH; Mon, 06 Apr 2020 16:41:44 +0000
+Received: from mail-qk1-x749.google.com ([2607:f8b0:4864:20::749])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLUnD-000113-6v
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 16:40:13 +0000
-Received: by mail-wr1-x441.google.com with SMTP id 31so215720wre.5
+ id 1jLUoW-0003sk-UP
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 16:41:34 +0000
+Received: by mail-qk1-x749.google.com with SMTP id c1so326337qkg.21
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 09:40:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NgLl7HHSoLMH6wWDMAS/slExign8Bsc9NbQ/c/sVCug=;
- b=aNvHE5D671GXZ8oV3SdiIYeuNCd6IxEYlIYPCTCYq0MmTbXw3gp/BQ0kbVc0zO0XEN
- 8vmpAna2SLdH/vT4Wy5P2I6YgEiZCrWhWv+QSMhsec+5krD80cqLNRHP9WoBXJVf8g3O
- sijUrTyVkAAkhX6zkx8aZJHE7XlOf+0RiNdCyRZy63a3R1kR6CHJVPdeYgBOyt+dVppm
- fGc2VExSve5vmHykEsAC6pKnoJ99IZ9pd5gwXS6IQ5lgwIPRNdjUvWNrgDenHw+JT3GA
- pd0k0LZhn1sr9iVs7S+JSuxC/25O7yPgebagu1JGTxa+eIIZaRlW0wvcNLlROKZLgnoF
- dNBg==
+ Mon, 06 Apr 2020 09:41:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=dVFwXUGExu3yMa+UTv67d2nterjPqRkmOOvIg26dlAo=;
+ b=b0BIjk7azRvv07MTUoifqmMIFXJfm2PVhLzKAFxXBN4iGo1ayrT7YNfDZRd5C2Huf8
+ jk/fDzDUVFYX9V3NcfVGt6im04bxYhSZpDcu80cuBVgwiwvmtPFBa0Rck96uf2na2VLA
+ JeSPovShITQljVBCHuEs8kHt3KW7TvIRQdl+QhB7bKc944cZETdeYnZEXvqhB1YNkWDl
+ O4vidgOSM8GQ5Vhnk8cmiZjPmGhxUfv1d1MFjhNFqie5Vso2ozFmMph7Y3XkgWsrnsRG
+ Kmf5SeuyQ0zuPuyxfnuXE91N86AE64/swhIbGS60sQwuuTe0GGgTPJj/dCtjlKDn1rpE
+ Q3qg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=NgLl7HHSoLMH6wWDMAS/slExign8Bsc9NbQ/c/sVCug=;
- b=K04ORuW96I48UOK7Bd12SD5TTm3nEGUBtXCRfUeKX7VMXBNHFKoRrqj/btMHq3Qbsw
- XlKxMKCyfmS61b/lfeN790Tjhi1ng1AgTbDvsG5VKF0NDoa+cTCh2BFgjpZckJny9mNA
- 1RX9avZZRzfl/oo2Ind9ECI2cwTyvhnAORMA2QgxSp+CgMFNZ16GdxXGMuMKrDWkV1f0
- 9tE/+w+iMK5Ry0xj1aaCvGvw0+82wqSk/qtjPY/9JD9Q3lPQjT03kcHLprB8LS0ohREQ
- hNqRK/DYaByVHYQxls8S2xyj2qmmQ0oBnSXkoPXQOoW/Hn15goQLSYqWHWeoMpAjpxcl
- XHmg==
-X-Gm-Message-State: AGi0PuaFDr0lQAgOafbffr/hcsLmioDTq+rEAWV20sod1a6qU3Zui3xe
- SiVV0ma7cXYIuLG26m0pEt3IMg==
-X-Google-Smtp-Source: APiQypLzGRhZvCUulrdZtWRMfjVXOxZf54dtj2/PsNeoJ4slTbBhRzqUC3MaFxUjEqaBkHjrXolDmQ==
-X-Received: by 2002:adf:f841:: with SMTP id d1mr22628wrq.381.1586191209261;
- Mon, 06 Apr 2020 09:40:09 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:b51c:42dc:1499:2880?
- ([2a01:e34:ed2f:f020:b51c:42dc:1499:2880])
- by smtp.googlemail.com with ESMTPSA id u22sm133042wmu.43.2020.04.06.09.40.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 06 Apr 2020 09:40:08 -0700 (PDT)
-Subject: Re: [PATCH v5 2/4] thermal: k3: Add support for bandgap sensors
-To: Keerthy <j-keerthy@ti.com>, rui.zhang@intel.com, robh+dt@kernel.org
-References: <20200331075356.19171-1-j-keerthy@ti.com>
- <20200331075356.19171-3-j-keerthy@ti.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <3dce9790-1414-0768-7e47-07cdfba52aab@linaro.org>
-Date: Mon, 6 Apr 2020 18:40:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200331075356.19171-3-j-keerthy@ti.com>
-Content-Language: en-US
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=dVFwXUGExu3yMa+UTv67d2nterjPqRkmOOvIg26dlAo=;
+ b=HmIlSIl5nyi60hoZ3v9opHjpo3AJZLRLVKZqzA8+d4vteSJH7LMNs6JKkuS8QbnST/
+ sbIfa+YeGyxuMXeYdmegVYAvHOF3mSHaogUsyCpjSducjP/divsj/sDR7R3E7oRkpQ56
+ nELfNli5dalFO45fonXzXRe8cqsA9L4VfYy3mngnvMSAl6qgABw665tnxphdwMBqxV0Q
+ vjnU7OUUAjaMwVVQXos0cEG33bpLlYCNrWd8BKTBBRLH305ToGOWcWFmxyWrhmcT3M7o
+ 2DPgyPpXQU0ZtKyjun2J92c7SDlozNF52sRt+ocllYE0bNUckd1EflkESSXqzUc4w9DS
+ e/kQ==
+X-Gm-Message-State: AGi0PuZevOGza/bpoerhavXE6ADuWesCuvH/XtjgAmgSf2xHozIE3H9w
+ DXpSlxwyONCNhgtZAARm7/OKW1rlyHQpNx60zTc=
+X-Google-Smtp-Source: APiQypJQwOMBPnu/sfmD/mR6cHayihRq6bSLriAeyW/gDO/RScVfazgEYdwyS+j0tG3oi6ceq5eBHYJ6NGasooZugxk=
+X-Received: by 2002:ac8:7351:: with SMTP id q17mr247532qtp.237.1586191290072; 
+ Mon, 06 Apr 2020 09:41:30 -0700 (PDT)
+Date: Mon,  6 Apr 2020 09:41:09 -0700
+In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
+Message-Id: <20200406164121.154322-1-samitolvanen@google.com>
+Mime-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+X-Mailer: git-send-email 2.26.0.292.g33ef6b2f38-goog
+Subject: [PATCH v10 00/12] add support for Clang's Shadow Call Stack
+From: Sami Tolvanen <samitolvanen@google.com>
+To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
+ James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, 
+ Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_094011_414797_56DABAA7 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_094133_004004_DCCE372D 
+X-CRM114-Status: GOOD (  22.49  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:749 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -144,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -155,46 +98,205 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Marc Zyngier <maz@kernel.org>,
+ kernel-hardening@lists.openwall.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Sami Tolvanen <samitolvanen@google.com>,
+ Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMzEvMDMvMjAyMCAwOTo1MywgS2VlcnRoeSB3cm90ZToKPiBUaGUgYmFuZGdhcCBwcm92aWRl
-cyBjdXJyZW50IGFuZCB2b2x0YWdlIHJlZmVyZW5jZSBmb3IgaXRzIGludGVybmFsCj4gY2lyY3Vp
-dHMgYW5kIG90aGVyIGFuYWxvZyBJUCBibG9ja3MuIFRoZSBhbmFsb2ctdG8tZGlnaXRhbAo+IGNv
-bnZlcnRlciAoQURDKSBwcm9kdWNlcyBhbiBvdXRwdXQgdmFsdWUgdGhhdCBpcyBwcm9wb3J0aW9u
-YWwKPiB0byB0aGUgc2lsaWNvbiB0ZW1wZXJhdHVyZS4KPiAKPiBDdXJyZW50bHkgcmVhZGluZyB0
-ZW1wZXJhdHVyZXMgb25seSBpcyBzdXBwb3J0ZWQuCj4gVGhlcmUgYXJlIG5vIGFjdGl2ZS9wYXNz
-aXZlIGNvb2xpbmcgYWdlbnQgc3VwcG9ydGVkLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEtlZXJ0aHkg
-PGota2VlcnRoeUB0aS5jb20+Cj4gLS0tCgpbIC4uLiBdCgo+ICtzdGF0aWMgaW50IGszX2JhbmRn
-YXBfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiArewo+ICsJaW50IHJldCA9
-IDAsIGNudCwgdmFsLCBpZCwgcmVnX2NudCA9IDA7CgpXZSBtaXNzZWQgJ3JlZ19jbnQnIHdoaWNo
-IGlzIG5vdCB1c2VkLgoKWyAuLi4gXQoKPiArCS8qIFJlZ2lzdGVyIHRoZSB0aGVybWFsIHNlbnNv
-cnMgKi8KPiArCWZvciAoaWQgPSAwOyBpZCA8IGNudDsgaWQrKykgewo+ICsJCWRhdGFbaWRdLnNl
-bnNvcl9pZCA9IGlkOwo+ICsJCWRhdGFbaWRdLmJncCA9IGJncDsKPiArCQlkYXRhW2lkXS5jdHJs
-X29mZnNldCA9IEszX1ZUTV9UTVBTRU5TMF9DVFJMX09GRlNFVCArCj4gKwkJCQkJaWQgKiBLM19W
-VE1fUkVHU19QRVJfVFM7Cj4gKwkJZGF0YVtpZF0uc3RhdF9vZmZzZXQgPSBkYXRhW2lkXS5jdHJs
-X29mZnNldCArIDB4ODsKPiArCj4gKwkJdmFsID0gcmVhZGwoZGF0YVtpZF0uYmdwLT5iYXNlICsg
-ZGF0YVtpZF0uY3RybF9vZmZzZXQpOwo+ICsJCXZhbCB8PSAoSzNfVlRNX1RNUFNFTlNfQ1RSTF9T
-T0MgfAo+ICsJCQlLM19WVE1fVE1QU0VOU19DVFJMX0NMUlogfAo+ICsJCQlLM19WVE1fVE1QU0VO
-U19DVFJMX0NMS09OX1JFUSk7Cj4gKwkJdmFsICY9IH5LM19WVE1fVE1QU0VOU19DVFJMX0NCSUFT
-U0VMOwo+ICsJCXdyaXRlbCh2YWwsIGRhdGFbaWRdLmJncC0+YmFzZSArIGRhdGFbaWRdLmN0cmxf
-b2Zmc2V0KTsKPiArCj4gKwkJZGF0YVtpZF0udGlfdGhlcm1hbCA9Cj4gKwkJZGV2bV90aGVybWFs
-X3pvbmVfb2Zfc2Vuc29yX3JlZ2lzdGVyKGRldiwgaWQsCj4gKwkJCQkJCSAgICAgJmRhdGFbaWRd
-LAo+ICsJCQkJCQkgICAgICZrM19vZl90aGVybWFsX29wcyk7Cj4gKwkJaWYgKElTX0VSUihkYXRh
-W2lkXS50aV90aGVybWFsKSkgewo+ICsJCQlkZXZfZXJyKGRldiwgInRoZXJtYWwgem9uZSBkZXZp
-Y2UgaXMgTlVMTFxuIik7Cj4gKwkJCXJldCA9IFBUUl9FUlIoZGF0YVtpZF0udGlfdGhlcm1hbCk7
-Cj4gKwkJCWdvdG8gZXJyX2FsbG9jOwo+ICsJCX0KPiArCj4gKwkJcmVnX2NudCsrOwo+ICsJfQoK
-WyAuLi4gXQoKCi0tIAo8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3Bl
-biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93
-d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3aXR0ZXIu
-Y29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcvbGluYXJv
-LWJsb2cvPiBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+This patch series adds support for Clang's Shadow Call Stack
+(SCS) mitigation, which uses a separately allocated shadow stack
+to protect against return address overwrites. More information
+can be found here:
+
+  https://clang.llvm.org/docs/ShadowCallStack.html
+
+SCS provides better protection against traditional buffer
+overflows than CONFIG_STACKPROTECTOR_*, but it should be noted
+that SCS security guarantees in the kernel differ from the ones
+documented for user space. The kernel must store addresses of
+shadow stacks used by inactive tasks and interrupt handlers in
+memory, which means an attacker capable reading and writing
+arbitrary memory may be able to locate them and hijack control
+flow by modifying shadow stacks that are not currently in use.
+
+SCS is currently supported only on arm64, where the compiler
+requires the x18 register to be reserved for holding the current
+task's shadow stack pointer.
+
+With -fsanitize=shadow-call-stack, the compiler injects
+instructions to all non-leaf C functions to store the return
+address to the shadow stack, and unconditionally load it again
+before returning. As a result, SCS is currently incompatible
+with features that rely on modifying function return addresses
+in the kernel stack to alter control flow. A copy of the return
+address is still kept in the kernel stack for compatibility with
+stack unwinding, for example.
+
+SCS has a minimal performance overhead, but allocating
+shadow stacks increases kernel memory usage. The feature is
+therefore mostly useful on hardware that lacks support for PAC
+instructions.
+
+Changes in v10:
+ - Removed an unnecessary <asm/scs.h> include from head.S.
+
+Changes in v9:
+ - Fixed grammar in the Kconfig help text.
+ - Changed Kconfig to allow SCS to be selected with the patchable-
+   function-entry graph tracer.
+ - Changed the EFI stub patch to not filter out -ffixed-x18, only
+   SCS flags.
+
+Changes in v8:
+ - Added __noscs to __hyp_text instead of filtering SCS flags from
+   the entire arch/arm64/kvm/hyp directory.
+ - Added a patch to filter out -ffixed-x18 and SCS flags from the
+   EFI stub.
+
+Changes in v7:
+ - Changed irq_stack_entry/exit to store the shadow stack pointer
+   in x24 instead of x20 as kernel_entry uses x20-x23 to store
+   data that can be used later. Updated the comment as well.
+ - Changed the Makefile in arch/arm64/kvm/hyp to also filter out
+   -ffixed-x18.
+ - Changed SHADOW_CALL_STACK to depend on !FUNCTION_GRAPH_TRACER
+   instead of not selecting HAVE_FUNCTION_GRAPH_TRACER with SCS.
+ - Removed ifdefs from the EFI wrapper and updated the comment to
+   explain why we are restoring x18.
+ - Rebased as Ard's x18 patches that were part of this series have
+   already been merged.
+
+Changes in v6:
+ - Updated comment in the EFI RT wrapper to include the
+   explanation from the commit message.
+ - Fixed the SHADOW_CALL_STACK_VMAP config option and the
+   compilation errors in scs_init_irq()
+ - Updated the comment in entry.S to Mark's suggestion
+ - Fixed the WARN_ON in scs_init() to trip only when the return
+   value for cpuhp_setup_state() is < 0.
+ - Removed ifdefs from the code in arch/arm64/kernel/scs.c and
+   added separate shadow stacks for the SDEI handler
+
+Changes in v5:
+ - Updated the comment in __scs_base() to Mark's suggestion
+ - Changed all instances of uintptr_t to unsigned long
+ - Added allocation poisoning for KASAN to catch unintentional
+   shadow stack accesses; moved set_set_magic before poisoning
+   and switched scs_used() and scs_corrupted() to access the
+   buffer using READ_ONCE_NOCHECK() instead
+ - Changed scs_free() to check for NULL instead of zero
+ - Renamed SCS_CACHE_SIZE to NR_CACHED_SCS
+ - Added a warning if cpuhp_setup_state fails in scs_init()
+ - Dropped patches disabling kretprobes after confirming there's
+   no functional conflict with SCS instrumentation
+ - Added an explanation to the commit message why function graph
+   tracing and SCS are incompatible
+ - Removed the ifdefs from arch/arm64/mm/proc.S and added
+   comments explaining why we are saving and restoring x18
+ - Updated scs_check_usage format to include process information
+
+Changes in v4:
+ - Fixed authorship for Ard's patches
+ - Added missing commit messages
+ - Commented code that clears SCS from thread_info
+ - Added a comment about SCS_END_MAGIC being non-canonical
+
+Changes in v3:
+ - Switched to filter-out for removing SCS flags in Makefiles
+ - Changed the __noscs attribute to use __no_sanitize__("...")
+   instead of no_sanitize("...")
+ - Cleaned up inline function definitions and moved task_scs()
+   into a macro
+ - Cleaned up scs_free() and scs_magic()
+ - Moved SCS initialization into dup_task_struct() and removed
+   the now unused scs_task_init()
+ - Added comments to __scs_base() and scs_task_reset() to better
+   document design choices
+ - Changed copy_page to make the offset and bias explicit
+
+Changes in v2:
+ - Changed Ard's KVM patch to use x29 instead of x18 for the
+   guest context, which makes restore_callee_saved_regs cleaner
+ - Updated help text (and commit messages) to point out
+   differences in security properties compared to user space SCS
+ - Cleaned up config options: removed the ROP protection choice,
+   replaced the CC_IS_CLANG dependency with an arch-specific
+   cc-option test, and moved disabling of incompatible config
+   options to an arch-specific Kconfig
+ - Added CC_FLAGS_SCS, which are filtered out where needed
+   instead of using DISABLE_SCS
+ - Added a __has_feature guard around __noscs for older clang
+   versions
+
+Sami Tolvanen (12):
+  add support for Clang's Shadow Call Stack (SCS)
+  scs: add accounting
+  scs: add support for stack usage debugging
+  scs: disable when function graph tracing is enabled
+  arm64: reserve x18 from general allocation with SCS
+  arm64: preserve x18 when CPU is suspended
+  arm64: efi: restore x18 if it was corrupted
+  arm64: vdso: disable Shadow Call Stack
+  arm64: disable SCS for hypervisor code
+  arm64: implement Shadow Call Stack
+  arm64: scs: add shadow stacks for SDEI
+  efi/libstub: disable SCS
+
+ Makefile                              |   6 +
+ arch/Kconfig                          |  35 ++++
+ arch/arm64/Kconfig                    |   5 +
+ arch/arm64/Makefile                   |   4 +
+ arch/arm64/include/asm/kvm_hyp.h      |   2 +-
+ arch/arm64/include/asm/scs.h          |  39 ++++
+ arch/arm64/include/asm/suspend.h      |   2 +-
+ arch/arm64/include/asm/thread_info.h  |   3 +
+ arch/arm64/kernel/Makefile            |   1 +
+ arch/arm64/kernel/asm-offsets.c       |   3 +
+ arch/arm64/kernel/efi-rt-wrapper.S    |  11 +-
+ arch/arm64/kernel/entry.S             |  47 ++++-
+ arch/arm64/kernel/head.S              |   8 +
+ arch/arm64/kernel/irq.c               |   2 +
+ arch/arm64/kernel/process.c           |   2 +
+ arch/arm64/kernel/scs.c               | 114 ++++++++++++
+ arch/arm64/kernel/sdei.c              |   7 +
+ arch/arm64/kernel/smp.c               |   4 +
+ arch/arm64/kernel/vdso/Makefile       |   2 +-
+ arch/arm64/mm/proc.S                  |  14 ++
+ drivers/base/node.c                   |   6 +
+ drivers/firmware/efi/libstub/Makefile |   3 +
+ fs/proc/meminfo.c                     |   4 +
+ include/linux/compiler-clang.h        |   6 +
+ include/linux/compiler_types.h        |   4 +
+ include/linux/mmzone.h                |   3 +
+ include/linux/scs.h                   |  57 ++++++
+ init/init_task.c                      |   8 +
+ kernel/Makefile                       |   1 +
+ kernel/fork.c                         |   9 +
+ kernel/sched/core.c                   |   2 +
+ kernel/scs.c                          | 246 ++++++++++++++++++++++++++
+ mm/page_alloc.c                       |   6 +
+ mm/vmstat.c                           |   3 +
+ 34 files changed, 662 insertions(+), 7 deletions(-)
+ create mode 100644 arch/arm64/include/asm/scs.h
+ create mode 100644 arch/arm64/kernel/scs.c
+ create mode 100644 include/linux/scs.h
+ create mode 100644 kernel/scs.c
+
+
+base-commit: a10c9c710f9ecea87b9f4bbb837467893b4bef01
+-- 
+2.26.0.292.g33ef6b2f38-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
