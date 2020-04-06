@@ -2,60 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1FD219F244
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:16:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF12819F247
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E5DVPN4KMzvQ6VvJEsS2ZNvrWFBNYRgou4+/5HMPLxA=; b=cbqfHLutmDuTCb
-	XPDsOG8VLLf3PMv2AU+2xUb4RXWkkjEUvYuCj+ynSJ+A0AvTy5RMbczfwxFcEKu6YblpY1B845n70
-	P4drdRmMGrKyisFG4F2lObytAEOH4BQoWWd2mjbnmG9iwZ2a3iG32+l9zKrZLGL+D7WBJ2kdf1lsI
-	QWSeBZlTBiWlzJXtctEMx6/ppzkkQijbeIgZ6RvM++eQvNx0S5/3wV3Tx67Ht0tuHZKJEyDxloDKs
-	YoCD1FuM9gqUVZ+E/O9pLISmcc9VS5qx7gIhvJZqq4R970IqoRV9oDU3HSnIbzh0UmVjV/4Jz3dHk
-	uBawu9DvP5/iAHmIv98g==;
+	List-Owner; bh=163zlOIU3iwJ0G35dlsvuM3KHJMtdUUpVxcicvhmYbs=; b=p0HbnI2Nr4B8V0
+	afz69ILWAYNWIwh8Rgnh5VyTdviMxzZMqqnJxQ3XFaIWtbTTwYuAMmVJUnrQElX1pEuy5/t3qT2yN
+	R8XviObuH9pEYiqM674V0uhw5j+tCmgc/5szTMCfNB1c408458lTvFhLwSbbwVP/t1wYhnMp1w9IV
+	leaX+W0PmX+mhTZN9nf+zm26GeXz6FnZtnz3/92ebencBgMLhorGJfXnX4FMirUNSv6x+twUwAK5v
+	P8BG6O8c4qM4m77egdhLktJF91FjGoTJxr2F0qXRKqBr66qQcnvirXiDY018HITjwhUJbsvJjEz2H
+	aG3sjoy5B46PZpLOWFPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLNrS-00023a-Aa; Mon, 06 Apr 2020 09:16:06 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jLNrr-0002Ow-IU; Mon, 06 Apr 2020 09:16:31 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLNrM-00023M-Hj
- for linux-arm-kernel@bombadil.infradead.org; Mon, 06 Apr 2020 09:16:00 +0000
+ id 1jLNrb-0002GO-TR; Mon, 06 Apr 2020 09:16:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
- Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
- Sender:Reply-To:Content-ID:Content-Description;
- bh=pozUv80YoSRHHvx9sVkpMZ7CBAgwyFGYde+t9E6Fl08=; b=a3AzdDdzO/gg8dpEwGMPQCN9wH
- Ud3ROlUqDiusUwrXUeDg9X7pdmbTCnVf60Dl5wrm5WfGx49mekafeM2aT33NabLWpZisI6LbXWPrv
- Vq+9tSpLzJPEE3xetdYp08N9BU0iJ0NJR8nU4Z+jDrV1tazi1RSLKTF0RogSgxD3Dbqd+hdPQ34+g
- u54c/1tSUYMg8e31V0VXkviN6ZnDJQDVLw5YzdWBOK6wbcsGyNyDGTuC1wT4A0OrX52/KG3/ZTUOr
- 8pTAMkjI4hMakJ+niz+ekYs0hoSgjCa15wq13xCI/Ufbv9u/xbiMWT5GbsCsiJis9gwUF+7rFIu5W
- 89t15qxw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLNrG-00085S-6Z; Mon, 06 Apr 2020 09:15:54 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 6F5D23011DD;
- Mon,  6 Apr 2020 11:15:51 +0200 (CEST)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 3E3382BAC6A65; Mon,  6 Apr 2020 11:15:51 +0200 (CEST)
-Date: Mon, 6 Apr 2020 11:15:51 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: "chengjian (D)" <cj.chengjian@huawei.com>
-Subject: Re: Why is text_mutex used in jump_label_transform for x86_64
-Message-ID: <20200406091551.GG20730@hirez.programming.kicks-ass.net>
-References: <f7f686f2-4f28-1763-dd19-43eff6a5a8f2@huawei.com>
- <20200320102709.GC20696@hirez.programming.kicks-ass.net>
- <28edc3d5-83a3-43cb-3e64-7d0525d430f3@huawei.com>
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=qxYNJ7LCMvpTUzf0Ee+5RLGYAIShFJ7XrqkBYcoJs0s=; b=lNFJs5P4ofOPA5mxIwg7fRuEt
+ 0EQm6naG95vkJkT7SDO5wDMVVCbrKFjuVBTGTIKejMMRX/KLGzRrFJYUao3S9YOAVTYtHhuePzlzG
+ j7QqnhGBQ3ytPAMWyzblIFCZeHOluhiqlAIIeNjfPgeULXLJ9djdXf+/RORwSowPAcl0xAG4aar5x
+ SGrip2fl8CkOsLM1pdZpSjJRCnJ/DeIpfD9xWjuBLS96NYXzo2xLIMlshqZxqaam7HYcjnBJfJ/13
+ 0EROtBjZ7pLVM7bJfU/mt1KReGCbharCmWZFWrhhUg25TJg7TdV1vd6GHEblV4ArnRfdnbdqX7Bir
+ 58ESznODw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:42204)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jLNrP-0000cL-Q8; Mon, 06 Apr 2020 10:16:04 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jLNrM-0005X5-LI; Mon, 06 Apr 2020 10:16:00 +0100
+Date: Mon, 6 Apr 2020 10:16:00 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200406091600.GF25745@shell.armlinux.org.uk>
+References: <20200406082720.GA31279@Red>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <28edc3d5-83a3-43cb-3e64-7d0525d430f3@huawei.com>
+In-Reply-To: <20200406082720.GA31279@Red>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200406_021616_098866_5ED36A7E 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,62 +86,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jakub.kicinski@netronome.com, Kees Cook <keescook@chromium.org>,
- "Xiexiuqi \(Xie XiuQi\)" <xiexiuqi@huawei.com>, Will Deacon <will@kernel.org>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- bobo.shaobowang@huawei.com, Li Bin <huawei.libin@huawei.com>,
- andrew.murray@arm.com, bristot@redhat.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBBcHIgMDYsIDIwMjAgYXQgMDQ6Mzk6MTFQTSArMDgwMCwgY2hlbmdqaWFuIChEKSB3
-cm90ZToKPiAKPiBPbiAyMDIwLzMvMjAgMTg6MjcsIFBldGVyIFppamxzdHJhIHdyb3RlOgo+ID4g
-SXQgZGVwZW5kcyBvbiB0aGUgYXJjaGl0ZWN0dXJlIGRldGFpbHMgb2YgaG93IHNlbGYtbW9kaWZ5
-aW5nIGNvZGUgd29ya3MuCj4gPiBJbiBwYXJ0aWN1bGFyLCB4ODYgaXMgYSB2YXJpYWJsZSBpbnN0
-cnVjdGlvbiBsZW5ndGggYXJjaGl0ZWN0dXJlIGFuZAo+ID4gbmVlZHMgZXh0cmVtZSBjYXJlIC0t
-IGl0J3MgaW1wbGVtZW50YXRpb24gcmVxdWlyZXMgdGhlcmUgb25seSBiZSBhCj4gPiBzaW5nbGUg
-dGV4dCBtb2RpZmllciBhdCBhbnkgb25lIHRpbWUsIGhlbmNlIHRoZSB1c2Ugb2YgdGV4dF9tdXRl
-eC4KPiA+IAo+ID4gQVJNNjQgT1RPSCBpcywgbGlrZSBtb3N0IFJJU0MgYmFzZWQgYXJjaGl0ZWN0
-dXJlcywgYSBmaXhlZCB3aWR0aAo+ID4gaW5zdHJ1Y3Rpb24gYXJjaGl0ZWN0dXJlLiBBbmQgaW4g
-cGFydGljdWxhciBpdCBjYW4gcmUtd3JpdGUgY2VydGFpbgo+ID4gKGJyYW5jaCkgaW5zdHJ1Y3Rp
-b25zIHdpdGggaW1wdW5pdHkgKHNlZSB0aGVpcgo+ID4gYWFyY2g2NF9pbnNuX3BhdGNoX3RleHRf
-bm9zeW5jKCkpLiBXaGljaCBpcyB3aHkgdGhleSBkb24ndCBuZWVkCj4gPiBhZGRpdGlvbmFsIHNl
-cmlhbGl6YXRpb24uCj4gCj4gSGksIFBldGVyCj4gCj4gVGhhbmsgeW91IHZlcnkgbXVjaCBmb3Ig
-eW91ciByZXBseS4KPiAKPiBYODYgaXMgYSB2YXJpYWJsZS1sZW5ndGggaW5zdHJ1Y3Rpb24sIG9u
-bHkgb25lIGJ5dGUgbW9kaWZpY2F0aW9uIG9mIHRoZQo+IGluc3RydWN0aW9uCj4gY2FuIGJlIHJl
-Z2FyZGVkIGFzIGF0b21pYy4gc28gd2UgbXVzdCBiZSB2ZXJ5IGNhcmVmdWwgd2hlbiBtb2RpZnlp
-bmcKPiBpbnN0cnVjdGlvbnMKPiBjb25jdXJyZW50bHkuCgpDbG9zZSBlbm91Z2guCgo+IEZvciBv
-dGhlciBhcmNoaXRlY3R1cmVzIHN1Y2ggYXMgQVJNNjQsIHRoZSBtb2RpZmljYXRpb24gb2Ygc29t
-ZSBpbnN0cnVjdGlvbnMKPiBjYW4gYmUKPiBjb25zaWRlcmVkIGF0b21pYywgKEVnLiBub3AgLT4g
-am1wL2IpLiBUaGUgc2V0IG9mIGluc3RydWN0aW9ucyB0aGF0IGNhbiBiZQo+IGV4ZWN1dGVkCj4g
-Ynkgb25lIHRocmVhZCBvZiBleGVjdXRpb24gYXMgdGhleSBhcmUgYmVpbmcgbW9kaWZpZWQgYnkg
-YW5vdGhlciB0aHJlYWQgb2YKPiBleGVjdXRpb24KPiB3aXRob3V0IHJlcXVpcmluZyBleHBsaWNp
-dCBzeW5jaHJvbml6YXRpb24uCj4gCj4gSW4gQVJNNjQgQXJjaGl0ZWN0dXJlIFJlZmVyZW5jZSBN
-YW51YWwsIEkgZmluZCB0aGF0Ogo+IMKgwqDCoCBDb25jdXJyZW50IG1vZGlmaWNhdGlvbiBhbmQg
-ZXhlY3V0aW9uIG9mIGluc3RydWN0aW9ucyBjYW4gbGVhZCB0byB0aGUKPiByZXN1bHRpbmcgaW5z
-dHJ1Y3Rpb24gcGVyZm9ybWluZyBhbnkgYmVoYXZpb3IKPiDCoMKgwqAgdGhhdCBjYW4gYmUgYWNo
-aWV2ZWQgYnkgZXhlY3V0aW5nIGFueSBzZXF1ZW5jZSBvZiBpbnN0cnVjdGlvbnMgdGhhdCBjYW4K
-PiBiZSBleGVjdXRlZCBmcm9tIHRoZSBzYW1lIEV4Y2VwdGlvbiBsZXZlbCwKPiDCoMKgwqAgZXhj
-ZXB0IHdoZXJlIGVhY2ggb2YgdGhlIGluc3RydWN0aW9uIGJlZm9yZSBtb2RpZmljYXRpb24gYW5k
-IHRoZQo+IGluc3RydWN0aW9uIGFmdGVyIG1vZGlmaWNhdGlvbiBpcyBvbmUgb2YgYSBCLCBCTCwg
-QlJLLAo+IMKgwqDCoCBIVkMsIElTQiwgTk9QLCBTTUMsIG9yIFNWQyBpbnN0cnVjdGlvbi4KPiDC
-oMKgwqAgRm9yIHRoZSBCLCBCTCwgQlJLLCBIVkMsIElTQiwgTk9QLCBTTUMsIGFuZCBTVkMgaW5z
-dHJ1Y3Rpb25zIHRoZQo+IGFyY2hpdGVjdHVyZSBndWFyYW50ZWVzIHRoYXQsIGFmdGVyIG1vZGlm
-aWNhdGlvbiBvZiB0aGUKPiDCoMKgwqAgaW5zdHJ1Y3Rpb24sIGJlaGF2aW9yIGlzIGNvbnNpc3Rl
-bnQgd2l0aCBleGVjdXRpb24gb2YgZWl0aGVyOgo+IMKgwqDCoCDigKIgVGhlIGluc3RydWN0aW9u
-IG9yaWdpbmFsbHkgZmV0Y2hlZC4KPiDCoMKgwqAg4oCiIEEgZmV0Y2ggb2YgdGhlIG1vZGlmaWVk
-IGluc3RydWN0aW9uCj4gCj4gU28gd2UgY2FuIHNhZmVseSBtb2RpZnkganVtcF9sYWJlbCBmb3Ig
-QVJNNjQoZnJvbSBOT1AgdG8gYiBvciBmb3JtIGIgdG8KPiBOT1ApLgo+IAo+IElzIG15IHVuZGVy
-c3RhbmRpbmcgY29ycmVjdD8KCkkgdGhpbmsgc287IGJ1dCBJJ20gcmVhbGx5IG5vdCBtdWNoIG9m
-IGFuIEFSTTY0IHBlcnNvbi4gRldJVyBJIHRoaW5rIEkKcmVtZW1iZXIgV2lsbCBzYXlpbmcgdGhl
-IHNhbWUgaXMgdHJ1ZSBvZiBBUk0gKDMyYml0KSBhbmQgdGhleSBjb3VsZAppbXBsZW1lbnQgdGhl
-IHNhbWUgb3B0aW1pemF0aW9uLCBidXQgc28gZmFyIG5vYm9keSBoYXMgYm90aGVyZWQgZG9pbmcK
-c28uIEJ1dCBwbGVhc2UsIGFzayBhbiBBUk02NCBtYWludGFpbmVyIGFuZCBkb24ndCB0YWtlIG15
-IHdvcmQgZm9yIHRoaXMuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> Hello
+> 
+> I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> 
+> But kexec 2.0.18 fail to work:
+> kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+
+What happens if you omit the dtb argument?
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
