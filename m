@@ -2,55 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A49A019F61F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 14:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDE5519F636
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 14:57:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=63bPJ9x3sGPcgOeX3IomKMFSgoQ03kIa4rUY4pzDqqI=; b=sImrvew4+9U0288WH3yRQCzgL
-	jh+alNJ+yqJLJUayHu2ptH+dCtgqB2XDlXk4qHB0jr+0je5/mavM15AYuk3PHXce5HFiwYUz35jIP
-	KLHx115hUJV8+Q9NRNEzxeEvfPZFY/WRNAEkvgjdz78lUDw30MlJ5BwmWJyEFE5WoqrffdUqxPfDf
-	DzZxGMLObvygJxa+CeLUak/zWNKt1qTyxxgkqsPwse/xTzEaEo0RMW0ri39C35zMNEKAbRnqD4llY
-	6h0wmk3uDNGs0cvvoKw3/wf9Fd+eukxiCi6lB0ujvEnRM94f95Was0TVrp7Mu1ErVPFZAnlDAlSQU
-	VzP60DlDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v8Sxnz4FZ9NxAEGfF+tpbCnJLErkYUa7woUiq8be6EU=; b=Dz8XtKmOtTkRFI
+	ZcuNZn7bYwGubCCDFuFnFsmNx36fWufENymO6TPAk9/HfT7VkHYKcEoksZo/rI6jFlZQes+kR0nxv
+	kjUcnAbrM9nFl2iCrY4AuN0z5S0kMS2eyuD+L1czjhBFJtiWqElJpo+sI0aEjBWPUIB5pqpXo6cIt
+	fCBnOVTJmp/EReY2icLhYW4d2mp/h11j+ZOD9kkd+TdimWFCNmdMbPDiuxPWYhnKryA9TpQXWAf9z
+	Luc2GThvJCKhsha6Yia4k5LlLdSmp0hM4Izh/88YlVDi6mYJ0R1Tmy95bQNvxiUWyWPfYZ9AN4pPr
+	WJyv5RjFPCBz7j35HleA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLRFG-0005e9-Kr; Mon, 06 Apr 2020 12:52:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLRF8-0005bk-IH; Mon, 06 Apr 2020 12:52:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E373531B;
- Mon,  6 Apr 2020 05:52:43 -0700 (PDT)
-Received: from [10.57.55.221] (unknown [10.57.55.221])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42E563F52E;
- Mon,  6 Apr 2020 05:52:42 -0700 (PDT)
-Subject: Re: [BUG] PCI: rockchip: rk3399: pcie switch support
-To: Soeren Moch <smoch@web.de>, Shawn Lin <shawn.lin@rock-chips.com>
-References: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <3e9d2c53-4f0d-0c97-fbfa-6d799e223747@arm.com>
-Date: Mon, 6 Apr 2020 13:52:36 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jLRJR-0000Hk-MW; Mon, 06 Apr 2020 12:57:13 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLRJI-0000HG-7f
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 12:57:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586177822;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=0FWGzPzG637AbR5VZeorQ2Gm882bkKl9WJboO16RPtk=;
+ b=gshAB07YOTv7oQD1huXKOCaVdevDjeXudIhrE55zRT/1fvCNFZvzAmV67Cgrg0czgjxlmx
+ yTZztjGBaoz8JdcqHR5Qp6vqQyVlCUkSsxmc92LS+rZkQHmEC/Fngk59M6JvLanvPcDwpj
+ 3pW+VjD6IDRxpK/S4jDbYhGlaHbkuNI=
+Received: from mail-wr1-f72.google.com (mail-wr1-f72.google.com
+ [209.85.221.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-510-jKKneN80PhWGpfnetu-o_A-1; Mon, 06 Apr 2020 08:57:01 -0400
+X-MC-Unique: jKKneN80PhWGpfnetu-o_A-1
+Received: by mail-wr1-f72.google.com with SMTP id m15so8359710wrb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Apr 2020 05:57:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=zA3oXFlf+tA0XqNfZvZ8NSCiPUHKJG3g0r1brnP9MhE=;
+ b=ZHmqCD48mdmUwK7G/VeAYjvy/fg+h2crBkV6GtEqeebqIamL1ITKPU+A8y8jhg+6RR
+ 9xPgmp5NAE4S3arhtQEkc/sN+uro08Q6URJo7w4F1b4cYSjfyGUEwuLkUhkz5RYdzQMy
+ /e1KFuMxNRZv6UmiUU2fhQ5JQCQF7Gb5IX6uwdIzWfLmQ9MaP7NQoVZPcJCD9WRg9PYx
+ WnaIY9jGgcoq+rpyndZF7fXlgw+1vc0BdE2Qd5g/CXIKrPFeDvoGmGJBoq0SZUlV2Yms
+ z5GIuP3D5MDDs9Pz0ZurnB8XTw4xNW6sgrO0gfKSKDJBXEH6GGbTQHTSReHudaOnRLm9
+ vMVg==
+X-Gm-Message-State: AGi0PuZNtHA0rAe+MK004EHaKAQDI1/TAsSsX9nHZUwubjb1y9WXbWAr
+ OGXXW/LUaGUUlj+oXDrdChETB8GGOWhC9pzpQGnX4+URmka6KzECibKQRB3JDy5cvZzARqe6MW3
+ ZlQD0dKf503Bagwpu8r1NY/v8IblyGzmsihk=
+X-Received: by 2002:a7b:c359:: with SMTP id l25mr22974378wmj.149.1586177820040; 
+ Mon, 06 Apr 2020 05:57:00 -0700 (PDT)
+X-Google-Smtp-Source: APiQypLkRAUfyI4Cg7RaR/a2JYi9c2Rr5Wp8n4wDNVakzk3f4Q2RbJ2sjxo/Naa7H/tihWUIO6KVSg==
+X-Received: by 2002:a7b:c359:: with SMTP id l25mr22974349wmj.149.1586177819765; 
+ Mon, 06 Apr 2020 05:56:59 -0700 (PDT)
+Received: from redhat.com (bzq-79-176-51-222.red.bezeqint.net. [79.176.51.222])
+ by smtp.gmail.com with ESMTPSA id i1sm1637648wmb.33.2020.04.06.05.56.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Apr 2020 05:56:59 -0700 (PDT)
+Date: Mon, 6 Apr 2020 08:56:56 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH v2 2/2] vhost: disable for OABI
+Message-ID: <20200406085453-mutt-send-email-mst@kernel.org>
+References: <20200406121233.109889-1-mst@redhat.com>
+ <20200406121233.109889-3-mst@redhat.com>
+ <CAMj1kXFNeuZU66swwf_Cx7PrQJV34C0VJ7Rte5aga2Jx4S-yHw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
-Content-Language: en-GB
+In-Reply-To: <CAMj1kXFNeuZU66swwf_Cx7PrQJV34C0VJ7Rte5aga2Jx4S-yHw@mail.gmail.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_055246_693738_93480194 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200406_055704_350743_3F7CA6AE 
+X-CRM114-Status: GOOD (  27.27  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,194 +108,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jason Wang <jasowang@redhat.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Sudeep Dutt <sudeep.dutt@intel.com>, Ashutosh Dixit <ashutosh.dixit@intel.com>,
+ "daniel.santos@pobox.com" <daniel.santos@pobox.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, kvm@vger.kernel.org,
+ netdev@vger.kernel.org, virtualization@lists.linux-foundation.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNC0wNCA3OjQxIHBtLCBTb2VyZW4gTW9jaCB3cm90ZToKPiBJIHdhbnQgdG8gdXNl
-IGEgUENJZSBzd2l0Y2ggb24gYSBSSzMzOTkgYmFzZWQgUm9ja1BybzY0IFYyLjEgYm9hcmQuCj4g
-Ik5vcm1hbCIgUENJZSBjYXJkcyB3b3JrIChtb3N0bHkpIGp1c3QgZmluZSBvbiB0aGlzIGJvYXJk
-LiBUaGUgUENJZQo+IHN3aXRjaGVzIChJIHRyaWVkIFBlcmljb20gYW5kIEFTTWVkaWEgYmFzZWQg
-c3dpdGNoZXMpIGFsc28gd29yayBmaW5lIG9uCj4gb3RoZXIgYm9hcmRzLiBUaGUgUkszMzk5IFBD
-SWUgY29udHJvbGxlciB3aXRoIHBjaWVfcm9ja2NoaXBfaG9zdCBkcml2ZXIKPiBhbHNvIHJlY29n
-bmlzZXMgdGhlIHN3aXRjaCwgYnV0IGZhaWxzIHRvIGluaXRpYWxpemUgdGhlIGJ1c2VzIGJlaGlu
-ZCB0aGUKPiBicmlkZ2UgcHJvcGVybHksIHNlZSBzeXNsb2cgZnJvbSBsaW51eC01LjYuMC4KPiAK
-PiBBbnkgaWRlYXMgd2hhdCBJIGRvIHdyb25nLCBvciBhbnkgc3VnZ2VzdGlvbnMgd2hhdCBJIGNh
-biB0ZXN0IGhlcmU/CgpTZWUgdGhlIHRocmVhZCBoZXJlOgoKaHR0cHM6Ly9sb3JlLmtlcm5lbC5v
-cmcvbGludXgtcGNpL0NBTWRZellvVHdqS3o0RU44UHRENXBaZnUzK1NYKzY4SkwrZGZ2bUNyU25M
-TD1LNkZld0BtYWlsLmdtYWlsLmNvbS8KClRoZSBjb25jbHVzaW9uIHRoZXJlIHNlZW1zIHRvIGJl
-IHRoYXQgdGhlIFJLMzM5OSByb290IGNvbXBsZXgganVzdCAKZG9lc24ndCBoYW5kbGUgY2VydGFp
-biB0eXBlcyBvZiByZXNwb25zZSBpbiBhIHNlbnNpYmxlIG1hbm5lciwgYW5kIAp0aGVyZSdzIG5v
-dCBtdWNoIHRoYXQgY2FuIHJlYXNvbmFibHkgYmUgZG9uZSB0byBjaGFuZ2UgdGhhdC4KClJvYmlu
-LgoKPiAKPiBUaGFua3MsCj4gU29lcmVuCj4gCj4gCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJv
-NjQga2VybmVsOiBbwqDCoCA3NC41MDE5NTFdIHJvY2tjaGlwLXBjaWUKPiBmODAwMDAwMC5wY2ll
-OiBmODAwMDAwMC5wY2llIHN1cHBseSB2cGNpZTF2OCBub3QgZm91bmQsIHVzaW5nIGR1bW15Cj4g
-cmVndWxhdG9yCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41
-MDI5MDZdIHJvY2tjaGlwLXBjaWUKPiBmODAwMDAwMC5wY2llOiBmODAwMDAwMC5wY2llIHN1cHBs
-eSB2cGNpZTB2OSBub3QgZm91bmQsIHVzaW5nIGR1bW15Cj4gcmVndWxhdG9yCj4gQXBywqAgNCAx
-OTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41NzIwNTBdIHJvY2tjaGlwLXBjaWUK
-PiBmODAwMDAwMC5wY2llOiBob3N0IGJyaWRnZSAvcGNpZUBmODAwMDAwMCByYW5nZXM6Cj4gQXBy
-wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41NzMwMThdIHJvY2tjaGlw
-LXBjaWUKPiBmODAwMDAwMC5wY2llOiBQYXJzaW5nIHJhbmdlcyBwcm9wZXJ0eS4uLgo+IEFwcsKg
-IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTczMDQwXSByb2NrY2hpcC1w
-Y2llCj4gZjgwMDAwMDAucGNpZTrCoMKgwqDCoMKgIE1FTSAweDAwZmEwMDAwMDAuLjB4MDBmYmRm
-ZmZmZiAtPiAweDAwZmEwMDAwMDAKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6
-IFvCoMKgIDc0LjU3NDA4MF0gcm9ja2NoaXAtcGNpZQo+IGY4MDAwMDAwLnBjaWU6wqDCoMKgwqDC
-oMKgIElPIDB4MDBmYmUwMDAwMC4uMHgwMGZiZWZmZmZmIC0+IDB4MDBmYmUwMDAwMAo+IEFwcsKg
-IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTc1NDIwXSByb2NrY2hpcC1w
-Y2llCj4gZjgwMDAwMDAucGNpZTogUENJIGhvc3QgYnJpZGdlIHRvIGJ1cyAwMDAwOjAwCj4gQXBy
-wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41NzYyNDddIHBjaV9idXMg
-MDAwMDowMDogcm9vdAo+IGJ1cyByZXNvdXJjZSBbYnVzIDAwLTFmXQo+IEFwcsKgIDQgMTk6NTA6
-Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTc2OTMwXSBwY2lfYnVzIDAwMDA6MDA6IHJv
-b3QKPiBidXMgcmVzb3VyY2UgW21lbSAweGZhMDAwMDAwLTB4ZmJkZmZmZmZdCj4gQXBywqAgNCAx
-OTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41Nzc3MzldIHBjaV9idXMgMDAwMDow
-MDogcm9vdAo+IGJ1cyByZXNvdXJjZSBbaW/CoCAweDAwMDAtMHhmZmZmZl0gKGJ1cyBhZGRyZXNz
-IFsweGZiZTAwMDAwLTB4ZmJlZmZmZmZdKQo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtl
-cm5lbDogW8KgwqAgNzQuNTc4ODc2XSBwY2lfYnVzIDAwMDA6MDA6Cj4gc2Nhbm5pbmcgYnVzCj4g
-QXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41Nzg5MThdIHBjaSAw
-MDAwOjAwOjAwLjA6Cj4gWzFkODc6MDEwMF0gdHlwZSAwMSBjbGFzcyAweDA2MDQwMAo+IEFwcsKg
-IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTc5NzM0XSBwY2kgMDAwMDow
-MDowMC4wOgo+IHN1cHBvcnRzIEQxCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVs
-OiBbwqDCoCA3NC41ODAyNTJdIHBjaSAwMDAwOjAwOjAwLjA6IFBNRSMKPiBzdXBwb3J0ZWQgZnJv
-bSBEMCBEMSBEM2hvdAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAg
-NzQuNTgwOTUyXSBwY2kgMDAwMDowMDowMC4wOiBQTUUjCj4gZGlzYWJsZWQKPiBBcHLCoCA0IDE5
-OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU4NTQ3NV0gcGNpX2J1cyAwMDAwOjAw
-OiBmaXh1cHMKPiBmb3IgYnVzCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBb
-wqDCoCA3NC41ODU0OTFdIHBjaSAwMDAwOjAwOjAwLjA6Cj4gc2Nhbm5pbmcgW2J1cyAwMC0wMF0g
-YmVoaW5kIGJyaWRnZSwgcGFzcyAwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVs
-OiBbwqDCoCA3NC41ODU0OTddIHBjaSAwMDAwOjAwOjAwLjA6Cj4gYnJpZGdlIGNvbmZpZ3VyYXRp
-b24gaW52YWxpZCAoW2J1cyAwMC0wMF0pLCByZWNvbmZpZ3VyaW5nCj4gQXBywqAgNCAxOTo1MDoz
-OCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41ODY1NjJdIHBjaSAwMDAwOjAwOjAwLjA6Cj4g
-c2Nhbm5pbmcgW2J1cyAwMC0wMF0gYmVoaW5kIGJyaWRnZSwgcGFzcyAxCj4gQXBywqAgNCAxOTo1
-MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41ODY3MjVdIHBjaV9idXMgMDAwMDowMToK
-PiBzY2FubmluZyBidXMKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKg
-IDc0LjU4Njc5Ml0gcGNpIDAwMDA6MDE6MDAuMDoKPiBbMWIyMToxMTgyXSB0eXBlIDAxIGNsYXNz
-IDB4MDYwNDAwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41
-ODc3ODVdIHBjaSAwMDAwOjAxOjAwLjA6IE1heAo+IFBheWxvYWQgU2l6ZSBzZXQgdG8gMjU2ICh3
-YXMgMTI4LCBtYXggMjU2KQo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
-wqAgNzQuNTg4NjI1XSBwY2kgMDAwMDowMTowMC4wOgo+IGVuYWJsaW5nIEV4dGVuZGVkIFRhZ3MK
-PiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU4OTQ4N10gcGNp
-IDAwMDA6MDE6MDAuMDogUE1FIwo+IHN1cHBvcnRlZCBmcm9tIEQwIEQzaG90IEQzY29sZAo+IEFw
-csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNTkwMTk5XSBwY2kgMDAw
-MDowMTowMC4wOiBQTUUjCj4gZGlzYWJsZWQKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBr
-ZXJuZWw6IFvCoMKgIDc0LjU5MDM0NF0gcGNpIDAwMDA6MDE6MDAuMDogMi4wMDAKPiBHYi9zIGF2
-YWlsYWJsZSBQQ0llIGJhbmR3aWR0aCwgbGltaXRlZCBieSAyLjUgR1QvcyB4MSBsaW5rIGF0Cj4g
-MDAwMDowMDowMC4wIChjYXBhYmxlIG9mIDQuMDAwIEdiL3Mgd2l0aCA1IEdUL3MgeDEgbGluaykK
-PiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjU5ODIwNl0gcGNp
-X2J1cyAwMDAwOjAxOiBmaXh1cHMKPiBmb3IgYnVzCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJv
-NjQga2VybmVsOiBbwqDCoCA3NC41OTgyMjZdIHBjaSAwMDAwOjAxOjAwLjA6Cj4gc2Nhbm5pbmcg
-W2J1cyAwMC0wMF0gYmVoaW5kIGJyaWRnZSwgcGFzcyAwCj4gQXBywqAgNCAxOTo1MDozOCByb2Nr
-cHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTgyMzFdIHBjaSAwMDAwOjAxOjAwLjA6Cj4gYnJpZGdl
-IGNvbmZpZ3VyYXRpb24gaW52YWxpZCAoW2J1cyAwMC0wMF0pLCByZWNvbmZpZ3VyaW5nCj4gQXBy
-wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTkxNjNdIHBjaSAwMDAw
-OjAxOjAwLjA6Cj4gc2Nhbm5pbmcgW2J1cyAwMC0wMF0gYmVoaW5kIGJyaWRnZSwgcGFzcyAxCj4g
-QXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC41OTk0NDNdIHBjaV9i
-dXMgMDAwMDowMjoKPiBzY2FubmluZyBidXMKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBr
-ZXJuZWw6IFvCoMKgIDc0LjU5OTQ2MF0gSW50ZXJuYWwgZXJyb3I6Cj4gc3luY2hyb25vdXMgZXh0
-ZXJuYWwgYWJvcnQ6IDk2MDAwMjEwIFsjMV0gUFJFRU1QVCBTTVAKPiBBcHLCoCA0IDE5OjUwOjM4
-IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYwMDI3MV0gTW9kdWxlcyBsaW5rZWQgaW46Cj4g
-cGNpZV9yb2NrY2hpcF9ob3N0KCspIGJyY21mbWFjIGJyY211dGlsCj4gQXBywqAgNCAxOTo1MDoz
-OCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDA5NzhdIENQVTogMyBQSUQ6IDU2NSBDb21t
-Ogo+IG1vZHByb2JlIE5vdCB0YWludGVkIDUuNi4wICMxCj4gQXBywqAgNCAxOTo1MDozOCByb2Nr
-cHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDE2MDddIEhhcmR3YXJlIG5hbWU6IFBpbmU2NAo+IFJv
-Y2tQcm82NCB2Mi4xIChEVCkKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvC
-oMKgIDc0LjYwMjE0N10gcHN0YXRlOiA2MDAwMDA4NSAoblpDdgo+IGRhSWYgLVBBTiAtVUFPKQo+
-IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjAyNjY2XSBwYyA6
-Cj4gcm9ja2NoaXBfcGNpZV9yZF9jb25mKzB4MTIwLzB4MjI4IFtwY2llX3JvY2tjaGlwX2hvc3Rd
-Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDMzNzNdIGxy
-IDoKPiByb2NrY2hpcF9wY2llX3JkX2NvbmYrMHg5NC8weDIyOCBbcGNpZV9yb2NrY2hpcF9ob3N0
-XQo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA0MDY0XSBz
-cCA6IGZmZmZmZmMwMTEwMDM1MDAKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6
-IFvCoMKgIDc0LjYwNDQxOV0geDI5OiBmZmZmZmZjMDExMDAzNTAwCj4geDI4OiAwMDAwMDAwMDAw
-MDAwMDAwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDQ5
-ODZdIHgyNzogMDAwMDAwMDAwMDAwMDAwMQo+IHgyNjogMDAwMDAwMDAwMDAwMDAwMAo+IEFwcsKg
-IDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA1NTUyXSB4MjU6IDAwMDAw
-MDAwMDAwMDAwMDAKPiB4MjQ6IGZmZmZmZmMwMTEwMDM2NDQKPiBBcHLCoCA0IDE5OjUwOjM4IHJv
-Y2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYwNjExN10geDIzOiBmZmZmZmY4MGYxNzkyMDAwCj4g
-eDIyOiBmZmZmZmZjMDExMDAzNTg0Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVs
-OiBbwqDCoCA3NC42MDY2ODNdIHgyMTogZmZmZmZmODBlOTgzMTNjMAo+IHgyMDogMDAwMDAwMDAw
-MDAwMDAwNAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjA3
-MjQ5XSB4MTk6IGZmZmZmZmMwMTIyMDAwMDAKPiB4MTg6IDAwMDAwMDAwZmZmZmZmZjAKPiBBcHLC
-oCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYwNzgxNV0geDE3OiAwMDAw
-MDAwMDAwMDAwMDAwCj4geDE2OiAwMDAwMDAwMDAwMDAwMDAwCj4gQXBywqAgNCAxOTo1MDozOCBy
-b2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MDgzODFdIHgxNTogZmZmZmZmYzAxMGI3N2MwMAo+
-IHgxNDogZmZmZmZmYzAxMGJlMmUyOAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5l
-bDogW8KgwqAgNzQuNjA4OTQ3XSB4MTM6IDAwMDAwMDAwMDAwMDAwMDAKPiB4MTI6IGZmZmZmZmMw
-MTBiZTIwMDAKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYw
-OTUxMl0geDExOiBmZmZmZmZjMDEwYjc3MDAwCj4geDEwOiBmZmZmZmZjMDEwYmUyNDcwCj4gQXBy
-wqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42MTAwNzldIHg5IDogMDAw
-MDAwMDAxMTgyMWIyMQo+IHg4IDogMDAwMDAwMDAwMDAwMDAwMQo+IEFwcsKgIDQgMTk6NTA6Mzgg
-cm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjE1NDU1XSB4NyA6IDAwMDAwMDAwMDAwMDAwMDAK
-PiB4NiA6IDAwMDAwMDAwMDAwMDAwMDAKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJu
-ZWw6IFvCoMKgIDc0LjYyMTQ4N10geDUgOiAwMDAwMDAwMDAwMjAwMDAwCj4geDQgOiAwMDAwMDAw
-MDAwMDAwMDAwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42
-Mjc1MTldIHgzIDogMDAwMDAwMDAwMGMwMDAwOAo+IHgyIDogMDAwMDAwMDAwMDgwMDAwYgo+IEFw
-csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjMzNTUxXSB4MSA6IGZm
-ZmZmZmMwMTVjMDAwMDgKPiB4MCA6IGZmZmZmZmMwMTIwMDAwMDAKPiBBcHLCoCA0IDE5OjUwOjM4
-IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjYzOTU4M10gQ2FsbCB0cmFjZToKPiBBcHLCoCA0
-IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjY0NTc4NV0KPiByb2NrY2hpcF9w
-Y2llX3JkX2NvbmYrMHgxMjAvMHgyMjggW3BjaWVfcm9ja2NoaXBfaG9zdF0KPiBBcHLCoCA0IDE5
-OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjY1NjM1NF0KPiBwY2lfYnVzX3JlYWRf
-Y29uZmlnX2R3b3JkKzB4ODAvMHhkMAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5l
-bDogW8KgwqAgNzQuNjY1MDgzXQo+IHBjaV9idXNfZ2VuZXJpY19yZWFkX2Rldl92ZW5kb3JfaWQr
-MHgzMC8weDFhOAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQu
-Njc0NzIyXQo+IHBjaV9idXNfcmVhZF9kZXZfdmVuZG9yX2lkKzB4NDgvMHg2OAo+IEFwcsKgIDQg
-MTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNjgzMzgyXQo+IHBjaV9zY2FuX3Np
-bmdsZV9kZXZpY2UrMHg3Yy8weGQ4Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVs
-OiBbwqDCoCA3NC42OTE2OTBdwqAgcGNpX3NjYW5fc2xvdCsweDM0LzB4MTE4Cj4gQXBywqAgNCAx
-OTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC42OTkxNTVdCj4gcGNpX3NjYW5fY2hp
-bGRfYnVzX2V4dGVuZCsweDYwLzB4MmNjCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2Vy
-bmVsOiBbwqDCoCA3NC43MDc3NzRdCj4gcGNpX3NjYW5fYnJpZGdlX2V4dGVuZCsweDM0MC8weDU3
-OAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzE2MjI0XQo+
-IHBjaV9zY2FuX2NoaWxkX2J1c19leHRlbmQrMHgyMGMvMHgyY2MKPiBBcHLCoCA0IDE5OjUwOjM4
-IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0LjcyNDk0M10KPiBwY2lfc2Nhbl9icmlkZ2VfZXh0
-ZW5kKzB4MzQwLzB4NTc4Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDC
-oCA3NC43MzMzMjBdCj4gcGNpX3NjYW5fY2hpbGRfYnVzX2V4dGVuZCsweDIwYy8weDJjYwo+IEFw
-csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzQxOTk4XQo+IHBjaV9z
-Y2FuX2NoaWxkX2J1cysweDEwLzB4MTgKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJu
-ZWw6IFvCoMKgIDc0Ljc0OTczOV0KPiBwY2lfc2Nhbl9yb290X2J1c19icmlkZ2UrMHg3OC8weGQw
-Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC43NTc5ODhdCj4g
-cm9ja2NoaXBfcGNpZV9wcm9iZSsweDgzMC8weGI5MCBbcGNpZV9yb2NrY2hpcF9ob3N0XQo+IEFw
-csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzY4MDQyXQo+IHBsYXRm
-b3JtX2Rydl9wcm9iZSsweDUwLzB4YTAKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJu
-ZWw6IFvCoMKgIDc0Ljc3NTc1OF3CoCByZWFsbHlfcHJvYmUrMHhkOC8weDMwMAo+IEFwcsKgIDQg
-MTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuNzgyOTM5XQo+IGRyaXZlcl9wcm9i
-ZV9kZXZpY2UrMHg1NC8weGU4Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBb
-wqDCoCA3NC43OTA2NjFdCj4gZGV2aWNlX2RyaXZlcl9hdHRhY2grMHg2Yy8weDc4Cj4gQXBywqAg
-NCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC43OTg0NjFdwqAgX19kcml2ZXJf
-YXR0YWNoKzB4NTQvMHhkMAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8Kg
-wqAgNzQuODA1NzQ0XcKgIGJ1c19mb3JfZWFjaF9kZXYrMHg3MC8weGMwCj4gQXBywqAgNCAxOTo1
-MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44MTMxMTldwqAgZHJpdmVyX2F0dGFjaCsw
-eDIwLzB4MjgKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljgy
-MDEwMV3CoCBidXNfYWRkX2RyaXZlcisweDE3OC8weDFkOAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9j
-a3BybzY0IGtlcm5lbDogW8KgwqAgNzQuODI3MjQ5XcKgIGRyaXZlcl9yZWdpc3RlcisweDYwLzB4
-MTEwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44MzQzMDhd
-Cj4gX19wbGF0Zm9ybV9kcml2ZXJfcmVnaXN0ZXIrMHg0NC8weDUwCj4gQXBywqAgNCAxOTo1MDoz
-OCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44NDIyOTldCj4gcm9ja2NoaXBfcGNpZV9kcml2
-ZXJfaW5pdCsweDIwLzB4MTAwMCBbcGNpZV9yb2NrY2hpcF9ob3N0XQo+IEFwcsKgIDQgMTk6NTA6
-Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuODUyNDQzXcKgIGRvX29uZV9pbml0Y2FsbCsw
-eDc0LzB4MWE4Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC44
-NTk0MzBdwqAgZG9faW5pdF9tb2R1bGUrMHg1MC8weDFmMAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9j
-a3BybzY0IGtlcm5lbDogW8KgwqAgNzQuODY2Mjc2XcKgIGxvYWRfbW9kdWxlKzB4MWMwYy8weDIx
-NTgKPiBBcHLCoCA0IDE5OjUwOjM4IHJvY2twcm82NCBrZXJuZWw6IFvCoMKgIDc0Ljg3MzEwMF0K
-PiBfX2RvX3N5c19maW5pdF9tb2R1bGUrMHhkMC8weGU4Cj4gQXBywqAgNCAxOTo1MDozOCByb2Nr
-cHJvNjQga2VybmVsOiBbwqDCoCA3NC44ODA0ODBdCj4gX19hcm02NF9zeXNfZmluaXRfbW9kdWxl
-KzB4MWMvMHgyOAo+IEFwcsKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQu
-ODg4MTU3XQo+IGVsMF9zdmNfY29tbW9uLmNvbnN0cHJvcC4xKzB4N2MvMHhlOAo+IEFwcsKgIDQg
-MTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuODk2MDAwXcKgIGRvX2VsMF9zdmMr
-MHgxOC8weDIwCj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC45
-MDIyODVdCj4gZWwwX3N5bmNfaGFuZGxlcisweDEyYy8weDFiMAo+IEFwcsKgIDQgMTk6NTA6Mzgg
-cm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuOTA5MzgwXcKgIGVsMF9zeW5jKzB4MTE0LzB4MTQw
-Cj4gQXBywqAgNCAxOTo1MDozOCByb2NrcHJvNjQga2VybmVsOiBbwqDCoCA3NC45MTU2OTJdIENv
-ZGU6IGE4YzM3YmZkIGQ2NWYwM2MwCj4gZjk0MDAyYTAgOGIxMzAwMTMgKGI5NDAwMjczKQo+IEFw
-csKgIDQgMTk6NTA6Mzggcm9ja3BybzY0IGtlcm5lbDogW8KgwqAgNzQuOTI1MjEwXSAtLS1bIGVu
-ZCB0cmFjZQo+IDE4MWQ3OTkzZjkyZjNmM2QgXS0tLQo+IAoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Apr 06, 2020 at 02:45:13PM +0200, Ard Biesheuvel wrote:
+> On Mon, 6 Apr 2020 at 14:12, Michael S. Tsirkin <mst@redhat.com> wrote:
+> >
+> > vhost is currently broken on the default ARM config.
+> >
+> 
+> Where did you get this idea? The report from the robot was using a
+> randconfig build, and in general, AEABI is required to run anything on
+> any modern ARM system .
+
+Oh - I forgot it's randconfig. This part is wrong, sorry.
+I decided to just force 2-byte alignment
+instead (seems more robust) but I'll take this into account
+if we do decide to add this dependency.
+
+
+> 
+> > The reason is that that uses apcs-gnu which is the ancient OABI that is been
+> > deprecated for a long time.
+> >
+> > Given that virtio support on such ancient systems is not needed in the
+> > first place, let's just add something along the lines of
+> >
+> >         depends on !ARM || AEABI
+> >
+> > to the virtio Kconfig declaration, and add a comment that it has to do
+> > with struct member alignment.
+> >
+> > Note: we can't make VHOST and VHOST_RING themselves have
+> > a dependency since these are selected. Add a new symbol for that.
+> >
+> > Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+> > Siggested-by: Richard Earnshaw <Richard.Earnshaw@arm.com>
+> 
+> typo ^^^
+
+
+Thanks!
+
+> 
+> > Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+> > ---
+> >  drivers/misc/mic/Kconfig |  2 +-
+> >  drivers/net/caif/Kconfig |  2 +-
+> >  drivers/vdpa/Kconfig     |  2 +-
+> >  drivers/vhost/Kconfig    | 17 +++++++++++++----
+> >  4 files changed, 16 insertions(+), 7 deletions(-)
+> >
+> > diff --git a/drivers/misc/mic/Kconfig b/drivers/misc/mic/Kconfig
+> > index 8f201d019f5a..3bfe72c59864 100644
+> > --- a/drivers/misc/mic/Kconfig
+> > +++ b/drivers/misc/mic/Kconfig
+> > @@ -116,7 +116,7 @@ config MIC_COSM
+> >
+> >  config VOP
+> >         tristate "VOP Driver"
+> > -       depends on VOP_BUS
+> > +       depends on VOP_BUS && VHOST_DPN
+> >         select VHOST_RING
+> >         select VIRTIO
+> >         help
+> > diff --git a/drivers/net/caif/Kconfig b/drivers/net/caif/Kconfig
+> > index 9db0570c5beb..661c25eb1c46 100644
+> > --- a/drivers/net/caif/Kconfig
+> > +++ b/drivers/net/caif/Kconfig
+> > @@ -50,7 +50,7 @@ config CAIF_HSI
+> >
+> >  config CAIF_VIRTIO
+> >         tristate "CAIF virtio transport driver"
+> > -       depends on CAIF && HAS_DMA
+> > +       depends on CAIF && HAS_DMA && VHOST_DPN
+> >         select VHOST_RING
+> >         select VIRTIO
+> >         select GENERIC_ALLOCATOR
+> > diff --git a/drivers/vdpa/Kconfig b/drivers/vdpa/Kconfig
+> > index d0cb0e583a5d..aee28def466b 100644
+> > --- a/drivers/vdpa/Kconfig
+> > +++ b/drivers/vdpa/Kconfig
+> > @@ -14,7 +14,7 @@ if VDPA_MENU
+> >
+> >  config VDPA_SIM
+> >         tristate "vDPA device simulator"
+> > -       depends on RUNTIME_TESTING_MENU && HAS_DMA
+> > +       depends on RUNTIME_TESTING_MENU && HAS_DMA && VHOST_DPN
+> >         select VDPA
+> >         select VHOST_RING
+> >         select VHOST_IOTLB
+> > diff --git a/drivers/vhost/Kconfig b/drivers/vhost/Kconfig
+> > index cb6b17323eb2..b3486e218f62 100644
+> > --- a/drivers/vhost/Kconfig
+> > +++ b/drivers/vhost/Kconfig
+> > @@ -12,6 +12,15 @@ config VHOST_RING
+> >           This option is selected by any driver which needs to access
+> >           the host side of a virtio ring.
+> >
+> > +config VHOST_DPN
+> > +       bool "VHOST dependencies"
+> > +       depends on !ARM || AEABI
+> > +       default y
+> > +       help
+> > +         Anything selecting VHOST or VHOST_RING must depend on VHOST_DPN.
+> > +         This excludes the deprecated ARM ABI since that forces a 4 byte
+> > +         alignment on all structs - incompatible with virtio spec requirements.
+> > +
+> >  config VHOST
+> >         tristate
+> >         select VHOST_IOTLB
+> > @@ -27,7 +36,7 @@ if VHOST_MENU
+> >
+> >  config VHOST_NET
+> >         tristate "Host kernel accelerator for virtio net"
+> > -       depends on NET && EVENTFD && (TUN || !TUN) && (TAP || !TAP)
+> > +       depends on NET && EVENTFD && (TUN || !TUN) && (TAP || !TAP) && VHOST_DPN
+> >         select VHOST
+> >         ---help---
+> >           This kernel module can be loaded in host kernel to accelerate
+> > @@ -39,7 +48,7 @@ config VHOST_NET
+> >
+> >  config VHOST_SCSI
+> >         tristate "VHOST_SCSI TCM fabric driver"
+> > -       depends on TARGET_CORE && EVENTFD
+> > +       depends on TARGET_CORE && EVENTFD && VHOST_DPN
+> >         select VHOST
+> >         default n
+> >         ---help---
+> > @@ -48,7 +57,7 @@ config VHOST_SCSI
+> >
+> >  config VHOST_VSOCK
+> >         tristate "vhost virtio-vsock driver"
+> > -       depends on VSOCKETS && EVENTFD
+> > +       depends on VSOCKETS && EVENTFD && VHOST_DPN
+> >         select VHOST
+> >         select VIRTIO_VSOCKETS_COMMON
+> >         default n
+> > @@ -62,7 +71,7 @@ config VHOST_VSOCK
+> >
+> >  config VHOST_VDPA
+> >         tristate "Vhost driver for vDPA-based backend"
+> > -       depends on EVENTFD
+> > +       depends on EVENTFD && VHOST_DPN
+> >         select VHOST
+> >         select VDPA
+> >         help
+> > --
+> > MST
+> >
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
