@@ -2,162 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 962C119F7F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 16:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FE8019F832
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 16:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TYMu4QtnvWVtSmQTaPglETu5TjZciVLYXeo9RnwXa5I=; b=rCJzlf3KV8fr89
-	5T8ug2S9nj/icyiKZbb1H6pFh4HQKJI6rie/+p/i/UnLAhFwMcoUmHKXLfehF6UhRiBpn7yphunG8
-	PF1pc6kH9e0Thv3KUytEbWCBSej44NFwqId9NxzJ/JlOkvcj0wWUL4geQqObLTVfqdAHQv+AwpSn1
-	tuTFmFWcPJluA/Yt6efWOLYGlQY+Sh59hQQgwC876fJv3MhWeytIwi0ya6J5J5dPZdonm9XsVxEt6
-	uXcCSQBy/ByPR+tBMREZ4KzpWPoNSGNKRC4PAelPUjduGeD3L30s+X+rn5XW15BNsQKdO/6xirtCt
-	59BUTsMpbJJrzxQs5ohw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1TCDhjgbYNDK056GrOfV8zPsrJFHb4Cb+APro6pZ87A=; b=V6sKCi0gTyzSXrz0gL7RK67mX
+	DxOZcDYLRG2gFfCMNn3Tk0TlBvXStITf5BFzaiQibs8WCEBjkSajTNiBqy3l9OvCli7qES1BBRgv5
+	dcKLRRyAEU4bOo4B7T5MCyJK7j6m/q0ESy59bnn2xIjEKak3vzQxRQMon5RfDGVo+9EymKFf9bb4V
+	Bzq9WvZbdUxnM4/eCHC48pCo9roDEd+QChqV93cqytbYHT16hmoTrGeiihOhnGFQtboMW8XIxw9C8
+	R28RAjeZ5RsLFTdXn7FK0BBTe1Wy20a9RT/ZG8eMLxbf7Augtov6jwuzvLlYHoH/6ivHMlg4QzVK3
+	XBzYphZbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLSkT-0007Up-Iw; Mon, 06 Apr 2020 14:29:13 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jLT1O-0003S5-8i; Mon, 06 Apr 2020 14:46:42 +0000
+Received: from mail-eopbgr60061.outbound.protection.outlook.com ([40.107.6.61]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLSin-0005sp-JV
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 14:27:33 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6DEAD200DA7;
- Mon,  6 Apr 2020 16:27:28 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6110F200DA6;
- Mon,  6 Apr 2020 16:27:28 +0200 (CEST)
-Received: from fsr-ub1864-111.ea.freescale.net
- (fsr-ub1864-111.ea.freescale.net [10.171.82.141])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id D6648204E6;
- Mon,  6 Apr 2020 16:27:27 +0200 (CEST)
-From: Diana Craciun <diana.craciun@oss.nxp.com>
-To: anda-alexandra.dorneanu@nxp.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ id 1jLT1H-0003RV-1y
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 14:46:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hfFph8eMlDsbyCPoO+k9zplJ/0BRgHEFm7GfboylJ/PFxXBtENwiaNdG17MzJK14ernbUJtosQytprat+9pKjZB/ALop3vdL2HDbGsjMJVEj+zM7TP5gC6ZnbHLE7rlKvuo2k2AKOlz+po0eAFU+4kh+s3jjwXyXeCZtqDa0mqQ2wjD4uiWjG0HDoYxebZ5Aa+m/Zv7gMA/RrGsDLzSSXlRtHMlJVs8ZHHZd1A7Ib2R6e02Auypla0DHzF7qn8gNXyXexng+Onnhj/OBkg7O/jSzVdsmGEgWg3KaqzFpg6ajSG/0z0NBDiW8Wh0V38Wv+Gfwid88H/a0h8bV3iaAFg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OPrVRH1FjqZpCjfC3i1Z5KjnbUr1bOagCXTgCdCFyHI=;
+ b=WuVG4yBWqZRy3IP17/57ypd18Ua80hxG/uKyt7/ZT6rc+8jx8/GFtqlt3uP865MnwbAIRAMxXQiBSkr5GFsR1M7kDySje4SEklnlvFyaBRYOWY9hbkcD1C06euOnyfEBhSG5vjdC8uAvFQfb/O8+RNRiKVKaRWTNAW2oJ9J1MJOdYE/EufWqiSEHAD8RqONJzSeOzSY+9B+d1vvG6DFXpUPS5lSVPoaPiQ0uTTvNEzRHEQ2F2gy3ZR0SGJ5DN8Z8Dz22sWf0CXzk4nYhd5sENNZ3iEvLr8Q2kmgjAG9tb1oBIk66JicB3o/3x2+Qo3Vi1aHT3yqu9LRHoJftxJD3Vw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OPrVRH1FjqZpCjfC3i1Z5KjnbUr1bOagCXTgCdCFyHI=;
+ b=ZvJQ2F3BImPs11eYTiMKZse2WSRwl69XAyUsJgpkSqqYzQoHg+0UyBBpV5kJGi0oWuMzVKYwxrySqQ2RURzxc7Hs4sFYqNrKvASTLAiK0gVPs1W4OJvAapnPgdQsYBbFqxZ0ppsBj7yZuH68GjnTMQB7Szfj/hq5wi9adJZT2jY=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=diana.craciun@oss.nxp.com; 
+Received: from VI1PR0402MB2815.eurprd04.prod.outlook.com
+ (2603:10a6:800:ae::16) by VI1PR0402MB2798.eurprd04.prod.outlook.com
+ (2603:10a6:800:ae::13) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.20; Mon, 6 Apr
+ 2020 14:46:29 +0000
+Received: from VI1PR0402MB2815.eurprd04.prod.outlook.com
+ ([fe80::24fb:6b3f:f0e6:bd9a]) by VI1PR0402MB2815.eurprd04.prod.outlook.com
+ ([fe80::24fb:6b3f:f0e6:bd9a%8]) with mapi id 15.20.2878.018; Mon, 6 Apr 2020
+ 14:46:29 +0000
+Subject: Re: [PATCH 01/10] bus/fsl-mc: Do no longer export the total number of
+ irqs outside dprc_scan_objects
+From: Diana Craciun OSS <diana.craciun@oss.nxp.com>
+To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Laurentiu Tudor <laurentiu.tudor@nxp.com>,
  "stuyoder@gmail.com" <stuyoder@gmail.com>, Leo Li <leoyang.li@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
  "bharatb.yadav@gmail.com" <bharatb.yadav@gmail.com>
-Subject: [PATCH 08/10] bus/fsl-mc: Export a cleanup function for DPRC
-Date: Mon,  6 Apr 2020 17:27:11 +0300
-Message-Id: <20200319154051.30609-9-diana.craciun@oss.nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200319154051.30609-2-diana.craciun@oss.nxp.com>
-References: <20200319154051.30609-2-diana.craciun@oss.nxp.com>
-Received: from AM6PR04MB4421.eurprd04.prod.outlook.com (2603:10a6:4:7b::20) by
- DB8PR04MB6665.eurprd04.prod.outlook.com with HTTPS via
- DB6PR0601CA0010.EURPRD06.PROD.OUTLOOK.COM; Thu, 19 Mar 2020 15:41:34 +0000
-Received: from DB6PR0802CA0039.eurprd08.prod.outlook.com (2603:10a6:4:a3::25)
- by AM6PR04MB4421.eurprd04.prod.outlook.com (2603:10a6:20b:21::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.22; Thu, 19 Mar
- 2020 15:41:33 +0000
-Received: from DB5EUR01FT038.eop-EUR01.prod.protection.outlook.com
- (2603:10a6:4:a3:cafe::e0) by DB6PR0802CA0039.outlook.office365.com
- (2603:10a6:4:a3::25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.18 via Frontend
- Transport; Thu, 19 Mar 2020 15:41:33 +0000
-Received: from vger.kernel.org (209.132.180.67) by
- DB5EUR01FT038.mail.protection.outlook.com (10.152.4.191) with Microsoft SMTP
- Server id 15.20.2814.14 via Frontend Transport; Thu, 19 Mar 2020 15:41:33
- +0000
-Received: (majordomo@vger.kernel.org) by vger.kernel.org via listexpand
- id S1728216AbgCSPlR (ORCPT <rfc822;diana.craciun@oss.nxp.com>
- + 1 other); Thu, 19 Mar 2020 11:41:17 -0400
-Received: from inva021.nxp.com ([92.121.34.21]:51880 "EHLO inva021.nxp.com"
- rhost-flags-OK-OK-OK-OK) by vger.kernel.org with ESMTP
- id S1728157AbgCSPlP (ORCPT <rfc822;linux-kernel@vger.kernel.org>);
- Thu, 19 Mar 2020 11:41:15 -0400
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8F8F02000E0;
- Thu, 19 Mar 2020 16:41:12 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8278D2000C2;
- Thu, 19 Mar 2020 16:41:12 +0100 (CET)
-Received: from fsr-ub1864-111.ea.freescale.net
- (fsr-ub1864-111.ea.freescale.net [10.171.82.141])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 3503A205C2;
- Thu, 19 Mar 2020 16:41:12 +0100 (CET)
-Thread-Topic: [PATCH 08/10] bus/fsl-mc: Export a cleanup function for DPRC
-Thread-Index: AQHV/gTesnbPL1Q71k6JzCuYF1VTvg==
-X-MS-Exchange-MessageSentRepresentingType: 2
 References: <20200319154051.30609-1-diana.craciun@oss.nxp.com>
-In-Reply-To: <20200319154051.30609-1-diana.craciun@oss.nxp.com>
+ <20200319154051.30609-2-diana.craciun@oss.nxp.com>
+Message-ID: <6fbf30f3-9c45-dcef-b143-702c6ba017a6@oss.nxp.com>
+Date: Mon, 6 Apr 2020 17:46:19 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+In-Reply-To: <20200319154051.30609-2-diana.craciun@oss.nxp.com>
 Content-Language: en-US
-X-MS-Exchange-Organization-AuthAs: Anonymous
-X-MS-Exchange-Organization-AuthSource: DB5EUR01FT038.eop-EUR01.prod.protection.outlook.com
-X-Auto-Response-Suppress: All
-X-MS-Exchange-Organization-Network-Message-Id: 469e561c-a3d4-44dd-31a2-08d7cc1c0046
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
-received-spf: None (protection.outlook.com: vger.kernel.org does not designate
- permitted sender hosts)
-x-ms-publictraffictype: Email
-authentication-results: spf=none (sender IP is 209.132.180.67)
- smtp.mailfrom=vger.kernel.org; oss.nxp.com; dkim=none (message not signed)
- header.d=none;oss.nxp.com; dmarc=fail action=none
- header.from=oss.nxp.com;compauth=fail reason=601
-x-ms-traffictypediagnostic: AM6PR04MB4421:
-X-Microsoft-Antispam-Mailbox-Delivery: ucf:0; jmr:1; auth:0; dest:J;
- ENG:(20160513016)(750127)(520011016)(944506383)(944626516); 
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?BcIeQwh/SRLgBVwA9qpbpWZGY0j3sYzyKGX/HEX5GQl6n+tWVtrdfjnPa5?=
- =?iso-8859-1?Q?LuQmS75msZhOxC20wywG2oJLH4bEN0v8clN2hgBqmUz2hAHjpMjNpoT26C?=
- =?iso-8859-1?Q?Mqrry3ihHSJzB7P2NpfLm+pQdqEbX0JXWwSeCQ+pjX2pzN4bYPjcT5DVjY?=
- =?iso-8859-1?Q?7vNDvvHAMG89VS8z6PjANi0X+PdLzAhf1dCX2ghzLracHgfuheEXg/yl3E?=
- =?iso-8859-1?Q?wfNQ+fyCLmWZZp0x4WzEI/e/cJPAtsZcgESkT8eVMmrSRk9N+ReJSiilOO?=
- =?iso-8859-1?Q?QV7gU/AuYoFhifF6HNO+W04yErtBUV5YaIIGb7SHCLmOSuCzs514xmp97b?=
- =?iso-8859-1?Q?rK1wHuywUllv3QUIAjPmlRszUPrfJVeMFlFKvaTm1m/3UKvw1JcLvuJqEn?=
- =?iso-8859-1?Q?q/HMkLraEFGp/HpQ8Kypyse26dKVP82LCDoGb1T23hsQZNkmmZm+dLZrj+?=
- =?iso-8859-1?Q?P4BJie7XEp0m9d+phUNxgva6/O1YXs3sQ9/mBbEOpC5e3qJJbasxttEtRj?=
- =?iso-8859-1?Q?KJxEXLT3VX8/TX68P6EPER7m+mnE4eDHHijg95JaIwqPfETl/6UphOhR8l?=
- =?iso-8859-1?Q?8gdHA99ijtr1DTY8TScjmjUJAUMnub/Z+6BpVdcQOXHG1PWv7ArS1WPr3H?=
- =?iso-8859-1?Q?1HHcB+5R6+J4HXzwVG1NeDLMg5dSX2rH8+mFeXGNaONQu65UPlXLkn+Zjk?=
- =?iso-8859-1?Q?LuXl4ZVmtP9BMC5
- WyLMM9OjHpiOq5mVoPHW+hmX3NWUXIgEJU1QzgfawH1?=
- =?iso-8859-1?Q?T/HlWVY+8XCHpLdn5AkScfO6vtb2AaqxO6PLDTGBJNgDP+v6Wj2deAqVwM?=
- =?iso-8859-1?Q?FNX/Rqnm155wxs1ZX+j/2obW0Dm4lGtREJx4GO3H4u/o1Sr6mDT+bQ54Gs?=
- =?iso-8859-1?Q?Cvn+L8wFPSKy8eRH0AZ0oDoJU3DWmANxDO8A+dPBVRqdP+AioM/SdMv7nP?=
- =?iso-8859-1?Q?c4RlY6SCcbD/cWoYLd+mMDqe0t6/uFq6Ja620v+eDpUvwPV00LAFBME0Zi?=
- =?iso-8859-1?Q?gyZQRSkCvr+6iMdP4wnmxAO+mWQ9hmHg0pWOdQWnCeOmpT/7DuUDciYPBK?=
- =?iso-8859-1?Q?oGaYnDs9e+6iaXE21LeM8/YMTP2/iXp89xlZlzCFLVK1j3/j+LHbElr57T?=
- =?iso-8859-1?Q?qWRVp+FOTWHZWP/MJsRjmWryfbhI6fkT/2/6FhtMoBAvi/gr2tnZXn4AYA?=
- =?iso-8859-1?Q?kjcZfurEuaB8iJAMkE5y1n8vf9KwOcPySxixm9jrTxkE5Kf0/bousG5hjE?=
- =?iso-8859-1?Q?VeAln3rlaKsAomeOgutCr3KaJsxuhRniKFBeQ/A8/WxVh2XX0GKGSm5Lza?=
- =?iso-8859-1?Q?QpWB0oxf7XNIu4+7uXNWTRKzQ7dMu5aZUG+5GoOiFQhw5lIenPAXoqlWCs?=
- =?iso-8859-1?Q?vUMmJmAAR2crBAdRbF7vJf0b0hVdgXSB3H4HEAGvKWFB2t5mDclTpO3nfn?=
- =?iso-8859-1?Q?mWr83sU+tZWWfxRKi0wbR85FsQIOQp5dI0BDlipgS0UuLkM6IromWrmKrh?=
- =?iso-8859-1?Q?PX4
- LWksOXwuwsucGUWxcHIENRSUM3JLxlWCm0RZsi67Pz0fcx4woPIR/vJ?=
- =?iso-8859-1?Q?v+yPHJ606pvL/tQdXXtMF0V9A5t582N2A5GDbX9XmindCY+f35FtBakL1x?=
- =?iso-8859-1?Q?7J8s1XLf4itCPaAt0R3C8ixBU0mO4gT1Skiq0s/DhNvMaoyQ6X1qzaM3/R?=
- =?iso-8859-1?Q?GizyZ1xsG8/YsXvI1BY+G8BCUhuyofMG/YNak8cVtzY8i8bx+FdBcq59P1?=
- =?iso-8859-1?Q?fYyjWLUeE6lgyZ63rhGMNyqQ+weTfmwg5iBL/CKYyK5r15XMLPhckGwFsa?=
- =?iso-8859-1?Q?n/xEdXdy3Q2K9Qb0audjnGEkGrqIdwXgrAtodQQfyepbM/5qu391Z+6ms7?=
- =?iso-8859-1?Q?bcCEpDoXAntSonD6MAoD/jineNPfbj+UpRiTrvRo9aa5+pYjy6MwXlxnYq?=
- =?iso-8859-1?Q?yq32+2hzM3E5RTAiaD8usKgtFMgcCZyhKJ7lzxvd4M6R6pdoaZKLBTTnDS?=
- =?iso-8859-1?Q?GY7wsBo8t/vkBBxfgLCrw+9c5HKbDDrZyfUOlDErnkau0wowDy4hpmY9Q4?=
- =?iso-8859-1?Q?p6SRMDu6c6TrRIhRg55e2dYkWIxGNUW7KJmc9vjc6U1rL3ErLapCd/uNUq?=
- =?iso-8859-1?Q?J/P4ROigeK9YuPub4Dw+k+23Bt9BZw+BsaqRNTFoDl75KI4dBZV/QPdnd6?=
- =?iso-8859-1?Q?p6l2dB5+tGWwPxYXdXgCQq9N?=
+X-ClientProxiedBy: AM6P195CA0082.EURP195.PROD.OUTLOOK.COM
+ (2603:10a6:209:86::23) To VI1PR0402MB2815.eurprd04.prod.outlook.com
+ (2603:10a6:800:ae::16)
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.1.122] (86.127.44.112) by
+ AM6P195CA0082.EURP195.PROD.OUTLOOK.COM (2603:10a6:209:86::23) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2878.15 via Frontend Transport; Mon, 6 Apr 2020 14:46:28 +0000
+X-Originating-IP: [86.127.44.112]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 4a0d37aa-5175-4bf9-2631-08d7da394a49
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB2798:|VI1PR0402MB2798:
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB2798E18BB382E9F93AB62FA4BEC20@VI1PR0402MB2798.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5797;
+X-Forefront-PRVS: 0365C0E14B
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR0402MB2815.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10009020)(4636009)(366004)(396003)(376002)(346002)(136003)(39860400002)(31686004)(2906002)(81156014)(81166006)(8936002)(478600001)(6666004)(31696002)(52116002)(53546011)(316002)(16576012)(16526019)(26005)(186003)(6486002)(86362001)(66946007)(5660300002)(110136005)(2616005)(66556008)(66476007)(956004)(8676002);
+ DIR:OUT; SFP:1101; 
+Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: KU3xwswjQRkkpDMdrU+xzny8etvYfpvC0k6aupfyGkix5Mwn716j6D/N1ZPfG9dvp7IUHFa2yS2yOTo1bCzIH9NX51ZUcbdYNA+gtlc7iqo5ODOWbFUsNwyPKaUfp/lmXyLAEBIdaFMyS8YAxYS9K9Ra3oUsQb+kF4BSox3aOwfEPzazNV1WKiVdedyL0vCAGFgeqBvLV+pCzz4myVL2YHEYudksdVm2AtjQdoZVY+7YxLVoCaBFQwfArt1vKaB1QeFNuplFwez4O4yhaW/ezAwQPKGo3qUN7svMJ1MteK/cpolleFKamRLXfU1YX+AVz7EeSq6bx3J3GABUDAtIbtm7AuQfExsDRKNfYCoKxG9f5Se0qKoqN7i9HHMk6AxLGBQ+7PbiiMi+hGif4BM8G2GMf9IFecapA0W5EuCNDQYDrTKHbY5xJozouDu0Aonq
+X-MS-Exchange-AntiSpam-MessageData: hjkrtCqCfjaaGrQzQoufzimfgzTT2rj8b3i+pb3M+oL06kXVd/oBV+wkZqSwTIwi08pwvuVlgywTZm45vNlzlBO6bHU7Zr99OT3J+zwEwruT8NyLHDClQV+1JWgj0by6lIyVznsxj3ddKYPhxwcwIA==
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4a0d37aa-5175-4bf9-2631-08d7da394a49
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Apr 2020 14:46:29.6260 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: h36jLlphRS1HvRyLgggAN1RIiMuO4dAaPQolxre/qSK9yyRI5mrl/b+uvz1CgQRjHfXZaV7w7u7lsfVLZcaFnA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB2798
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_072729_936352_F3119BD3 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200406_074635_155963_DA2E4F23 
+X-CRM114-Status: GOOD (  21.75  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 BAD_ENC_HEADER         Message has bad MIME encoding in the header
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.6.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -169,120 +131,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Create and export a cleanup function for DPRC. The function
-is used by the DPRC driver, but it will be used by the VFIO
-driver as well.
+Please ignore these patches. I have sent them again by mistake. I apologize!
 
-Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
----
- drivers/bus/fsl-mc/dprc-driver.c | 52 ++++++++++++++++++++++++--------
- include/linux/fsl/mc.h           |  2 ++
- 2 files changed, 41 insertions(+), 13 deletions(-)
+Diana
 
-diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
-index 789220f0372a..a655e3fee291 100644
---- a/drivers/bus/fsl-mc/dprc-driver.c
-+++ b/drivers/bus/fsl-mc/dprc-driver.c
-@@ -725,33 +725,25 @@ static void dprc_teardown_irq(struct fsl_mc_device *mc_dev)
- }
- 
- /**
-- * dprc_remove - callback invoked when a DPRC is being unbound from this driver
-+ * dprc_cleanup - function that cleanups a DPRC
-  *
-  * @mc_dev: Pointer to fsl-mc device representing the DPRC
-  *
-- * It removes the DPRC's child objects from Linux (not from the MC) and
-- * closes the DPRC device in the MC.
-- * It tears down the interrupts that were configured for the DPRC device.
-+ * It closes the DPRC device in the MC.
-  * It destroys the interrupt pool associated with this MC bus.
-  */
--static int dprc_remove(struct fsl_mc_device *mc_dev)
-+
-+int dprc_cleanup(struct fsl_mc_device *mc_dev)
- {
- 	int error;
- 	struct fsl_mc_bus *mc_bus = to_fsl_mc_bus(mc_dev);
- 
- 	if (!is_fsl_mc_bus_dprc(mc_dev))
- 		return -EINVAL;
--	if (!mc_dev->mc_io)
--		return -EINVAL;
- 
--	if (!mc_bus->irq_resources)
-+	if (!mc_dev->mc_io)
- 		return -EINVAL;
- 
--	if (dev_get_msi_domain(&mc_dev->dev))
--		dprc_teardown_irq(mc_dev);
--
--	device_for_each_child(&mc_dev->dev, NULL, __fsl_mc_device_remove);
--
- 	if (dev_get_msi_domain(&mc_dev->dev)) {
- 		fsl_mc_cleanup_irq_pool(mc_bus);
- 		dev_set_msi_domain(&mc_dev->dev, NULL);
-@@ -768,6 +760,40 @@ static int dprc_remove(struct fsl_mc_device *mc_dev)
- 		mc_dev->mc_io = NULL;
- 	}
- 
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(dprc_cleanup);
-+
-+/**
-+ * dprc_remove - callback invoked when a DPRC is being unbound from this driver
-+ *
-+ * @mc_dev: Pointer to fsl-mc device representing the DPRC
-+ *
-+ * It removes the DPRC's child objects from Linux (not from the MC) and
-+ * closes the DPRC device in the MC.
-+ * It tears down the interrupts that were configured for the DPRC device.
-+ * It destroys the interrupt pool associated with this MC bus.
-+ */
-+static int dprc_remove(struct fsl_mc_device *mc_dev)
-+{
-+	int error;
-+	struct fsl_mc_bus *mc_bus = to_fsl_mc_bus(mc_dev);
-+
-+	if (!is_fsl_mc_bus_dprc(mc_dev))
-+		return -EINVAL;
-+
-+	if (!mc_bus->irq_resources)
-+		return -EINVAL;
-+
-+	if (dev_get_msi_domain(&mc_dev->dev))
-+		dprc_teardown_irq(mc_dev);
-+
-+	device_for_each_child(&mc_dev->dev, NULL, __fsl_mc_device_remove);
-+
-+	error = dprc_cleanup(mc_dev);
-+	if (error < 0)
-+		dev_err(&mc_dev->dev, "dprc_close() failed: %d\n", error);
-+
- 	dev_info(&mc_dev->dev, "DPRC device unbound from driver");
- 	return 0;
- }
-diff --git a/include/linux/fsl/mc.h b/include/linux/fsl/mc.h
-index 2bdd96a482fb..e3ba273a1122 100644
---- a/include/linux/fsl/mc.h
-+++ b/include/linux/fsl/mc.h
-@@ -480,6 +480,8 @@ int dprc_scan_container(struct fsl_mc_device *mc_bus_dev,
- 		   const char *driver_override,
- 		   bool alloc_interrupts);
- 
-+int dprc_cleanup(struct fsl_mc_device *mc_dev);
-+
- /*
-  * Data Path Buffer Pool (DPBP) API
-  * Contains initialization APIs and runtime control APIs for DPBP
--- 
-2.17.1
+On 4/6/2020 5:27 PM, Diana Craciun wrote:
+> The total number of interrupts is only used for some checks
+> outside the dprc_scan_objects function. Furthermore, in some
+> situations the check is made twice. Move the bounds check inside
+> the function for all situations.
+>
+> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
+> ---
+>   drivers/bus/fsl-mc/dprc-driver.c | 30 ++++++++++--------------------
+>   1 file changed, 10 insertions(+), 20 deletions(-)
+>
+> diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
+> index c8b1c3842c1a..035b220779d0 100644
+> --- a/drivers/bus/fsl-mc/dprc-driver.c
+> +++ b/drivers/bus/fsl-mc/dprc-driver.c
+> @@ -3,6 +3,7 @@
+>    * Freescale data path resource container (DPRC) driver
+>    *
+>    * Copyright (C) 2014-2016 Freescale Semiconductor, Inc.
+> + * Copyright 2019-2020 NXP
+>    * Author: German Rivera <German.Rivera@freescale.com>
+>    *
+>    */
+> @@ -197,8 +198,6 @@ static void dprc_add_new_devices(struct fsl_mc_device *mc_bus_dev,
+>    * dprc_scan_objects - Discover objects in a DPRC
+>    *
+>    * @mc_bus_dev: pointer to the fsl-mc device that represents a DPRC object
+> - * @total_irq_count: If argument is provided the function populates the
+> - * total number of IRQs created by objects in the DPRC.
+>    *
+>    * Detects objects added and removed from a DPRC and synchronizes the
+>    * state of the Linux bus driver, MC by adding and removing
+> @@ -212,8 +211,7 @@ static void dprc_add_new_devices(struct fsl_mc_device *mc_bus_dev,
+>    * populated before they can get allocation requests from probe callbacks
+>    * of the device drivers for the non-allocatable devices.
+>    */
+> -static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev,
+> -			     unsigned int *total_irq_count)
+> +static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev)
+>   {
+>   	int num_child_objects;
+>   	int dprc_get_obj_failures;
+> @@ -294,22 +292,21 @@ static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev,
+>   	 * Allocate IRQ's before binding the scanned devices with their
+>   	 * respective drivers.
+>   	 */
+> -	if (dev_get_msi_domain(&mc_bus_dev->dev) && !mc_bus->irq_resources) {
+> +	if (dev_get_msi_domain(&mc_bus_dev->dev)) {
+>   		if (irq_count > FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS) {
+>   			dev_warn(&mc_bus_dev->dev,
+>   				 "IRQs needed (%u) exceed IRQs preallocated (%u)\n",
+>   				 irq_count, FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+>   		}
+>   
+> -		error = fsl_mc_populate_irq_pool(mc_bus,
+> +		if (!mc_bus->irq_resources) {
+> +			error = fsl_mc_populate_irq_pool(mc_bus,
+>   				FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+> -		if (error < 0)
+> -			return error;
+> +			if (error < 0)
+> +				return error;
+> +		}
+>   	}
+>   
+> -	if (total_irq_count)
+> -		*total_irq_count = irq_count;
+> -
+>   	dprc_remove_devices(mc_bus_dev, child_obj_desc_array,
+>   			    num_child_objects);
+>   
+> @@ -342,7 +339,7 @@ static int dprc_scan_container(struct fsl_mc_device *mc_bus_dev)
+>   	 * Discover objects in the DPRC:
+>   	 */
+>   	mutex_lock(&mc_bus->scan_mutex);
+> -	error = dprc_scan_objects(mc_bus_dev, NULL);
+> +	error = dprc_scan_objects(mc_bus_dev);
+>   	mutex_unlock(&mc_bus->scan_mutex);
+>   	if (error < 0) {
+>   		fsl_mc_cleanup_all_resource_pools(mc_bus_dev);
+> @@ -411,9 +408,8 @@ static irqreturn_t dprc_irq0_handler_thread(int irq_num, void *arg)
+>   		      DPRC_IRQ_EVENT_CONTAINER_DESTROYED |
+>   		      DPRC_IRQ_EVENT_OBJ_DESTROYED |
+>   		      DPRC_IRQ_EVENT_OBJ_CREATED)) {
+> -		unsigned int irq_count;
+>   
+> -		error = dprc_scan_objects(mc_dev, &irq_count);
+> +		error = dprc_scan_objects(mc_dev);
+>   		if (error < 0) {
+>   			/*
+>   			 * If the error is -ENXIO, we ignore it, as it indicates
+> @@ -428,12 +424,6 @@ static irqreturn_t dprc_irq0_handler_thread(int irq_num, void *arg)
+>   
+>   			goto out;
+>   		}
+> -
+> -		if (irq_count > FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS) {
+> -			dev_warn(dev,
+> -				 "IRQs needed (%u) exceed IRQs preallocated (%u)\n",
+> -				 irq_count, FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+> -		}
+>   	}
+>   
+>   out:
 
 
 _______________________________________________
