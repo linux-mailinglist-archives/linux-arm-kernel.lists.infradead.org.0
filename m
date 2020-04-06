@@ -2,75 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 555E819F6BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:19:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F65119F6CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Q2nI/LJhi2I/KzMHbAlskPegrnN587d9bpJa7vj+IU=; b=fRVUFVXWotwlb8
-	/Im9Yev6ZMNHq68pJ2q1OfXldE5BiezP9+wuD11IvmGQNw9tEc5wVvdw9yiE9fVYYYU+beGL8+ppQ
-	7Zw4fplpECtMUa1tY+hb3+c/PXI/awE6CVYaVZyvhSbDCIMNFRXyDR5hHE1G+5xsuTmxRXc1ZAz0/
-	N/ouWE7f/12tjXB9XExCIMQOBccrp+JAAkEUcpvHS6SPNoENkfy+ZzZAGV3rnNbaMmzXI0BddN0J3
-	6Hk18PNN7C1a40oZYob3bxjJUmrqmbbCTTEZmQQW7RThSYZYodLlyyaJ3Jm8UazqLePicRSQL7Vwq
-	k11Z3Pl/Jga7Stsi3IKA==;
+	List-Owner; bh=zaH/vxMuLjtc41AH5pRl/Bbc5CVSjvDRg0AWMmohXdI=; b=LgEiWHKQVJTS25
+	888hsl7Q72DcM+Ms7WWWrcpDxv7gA4wvEIcTn0dR0WzUXLAqrGKBXzkHCXRYBTzZS8igYTguYSCir
+	xPD+yQHLpfbaF29kBxVkQXQ9KsSIooEuTITKx2Gvm6xfwTLBdj04Ib/eXDk54jbMPIZ4Uz2Ll8vle
+	hHDMGp/uPSyE1fuBNs9vviMosJHv8hlIlVBQvY9EuZDYas4KluqasXm9Dt2C40XYl+opgvO0NPQGc
+	EIaFP7k90NhO2gV1NbmvkFiT65vZel7m/6hCa+VaKMz16IgXj0BOxr1+1Egg+5agyvoK1bpwjMv0i
+	0F4xAXLtOiNR9tjWz+TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLRfE-0006QF-HB; Mon, 06 Apr 2020 13:19:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jLRgw-0000wx-IW; Mon, 06 Apr 2020 13:21:30 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLRf5-0006PY-BZ
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 13:19:37 +0000
-Received: from mail-il1-f174.google.com (mail-il1-f174.google.com
- [209.85.166.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E03232075E
+ id 1jLRgp-0000vL-3Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 13:21:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586179279;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=8/l+u68mjtbwHXpzMEw7Dyh8XU04DyaBrG7zHozWjJA=;
+ b=MjUtKAsGw9b9HO1vsKJKXRrg4u8t40KJLkV4gI6YL9jj4SMlY8G/bcJaP/RHR+ZlzTjBZl
+ NfCm/70uUVOFj7gHRCOoNq94TFNKbGBNvGM0MMNLkpF2QKPPbIdjAJyej6Q7Idv1MqMU6n
+ ivSNgEcbas+1KTd4RbfhhH5Kifgr1oo=
+Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
+ [209.85.128.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-309-Uv9esNOyOtWagpuTAMiTow-1; Mon, 06 Apr 2020 09:21:15 -0400
+X-MC-Unique: Uv9esNOyOtWagpuTAMiTow-1
+Received: by mail-wm1-f70.google.com with SMTP id 2so4894614wmf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  6 Apr 2020 13:19:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586179175;
- bh=aQlLp2GRdhJae5APdFd2UrJ8I3luWcE/l38Qp6OtoUA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Q6YLUqFmYuqJkMm2o/9wzN7C/rV1IXagW3JUrfQPCwlropyyE/d0LLimN3pLxEtwy
- 49N1FcBtw6sd+KDTODyyK7Ke+1esLXhPbZFCNlutWT4S+m0gUv/KnoBzGerxL/r0Je
- TH1MPe8zpcVTX0uSN0hNjBrSHnzuy/w3VCzK1AsE=
-Received: by mail-il1-f174.google.com with SMTP id r5so14611668ilq.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 06:19:34 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYjXfuJcmKv5uNzv6FrO6XxkTWih48VvuG1Ifh4rOXXI51vgTBh
- rs8cfjlpsDO9recJQuECMkYkREy2jFPRRE1dS6c=
-X-Google-Smtp-Source: APiQypJwtWz3t9FRlvFCsbwtq/yJiy9UxNW0+oJpmLjT+U2hjev92ruEZHrufM6r/4PdQuIss+ZRKD3uaz25Da8QpKs=
-X-Received: by 2002:a05:6e02:4c:: with SMTP id
- i12mr21133267ilr.211.1586179174327; 
- Mon, 06 Apr 2020 06:19:34 -0700 (PDT)
+ Mon, 06 Apr 2020 06:21:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Dt00ToAjgq6odVjJUr2HynAfwKXr6ghEKV21ZUG8JdU=;
+ b=F8lstkPTt4QduOF6IwpGdbIitc3aruraaD7ARwke2bUmA9Tzdb6Z7DN8FXybXJi7iN
+ hyb8D36+eqGAmgdNYwShwkVpHoUjcDyprJw7Z+CzHNF7+TXpaiV03eErhuj+1Fs2Ef2s
+ BWrcMVfr2M2I7WSlI2nUNLFEHG/IqLrcdE9RYTWcJXEZuBmjAPDVHTeoKThgPndUCOsp
+ T7sjPfWChOKvn9ELZGXQcpvShW96jryh4JdMPEjtzjzUET0nVIQlbXQCsYaKGD2MOjSv
+ FVhaDAIsCjkLl2V1jAdEdblicQE+/L5Fv59wA9sbUdN1l8Ni9/9y4cD5jP8QuKhn1aLL
+ sCFg==
+X-Gm-Message-State: AGi0Puaghu/AndlFo4Qm8ZceoE6tfIXf5IWyB7bZMAreYrydovpIrG2L
+ HWHFiW/b2Ezk3QaD8JYNRq5B9pxd+5GRWZGo+XBy28QTk4WKfqMZB4e5iAZoD6IPnJu5EbjmjWe
+ opTCEElw1p2MJAuw6XctYFo2Dq1PzKQF/AOM=
+X-Received: by 2002:a5d:42c1:: with SMTP id t1mr11428308wrr.215.1586179274431; 
+ Mon, 06 Apr 2020 06:21:14 -0700 (PDT)
+X-Google-Smtp-Source: APiQypLTm0wN4Ob+KU8r6bjP+vUj5Sc5r+ElDJG7FGW/nVL32K8rRyDddIp810vWUMYetH05ffupWw==
+X-Received: by 2002:a5d:42c1:: with SMTP id t1mr11428298wrr.215.1586179274273; 
+ Mon, 06 Apr 2020 06:21:14 -0700 (PDT)
+Received: from redhat.com (bzq-79-176-51-222.red.bezeqint.net. [79.176.51.222])
+ by smtp.gmail.com with ESMTPSA id z11sm11162174wrv.58.2020.04.06.06.21.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Apr 2020 06:21:13 -0700 (PDT)
+Date: Mon, 6 Apr 2020 09:21:10 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 2/2] vhost: disable for OABI
+Message-ID: <20200406092056-mutt-send-email-mst@kernel.org>
+References: <20200406121233.109889-1-mst@redhat.com>
+ <20200406121233.109889-3-mst@redhat.com>
+ <CAK8P3a1nce31itwMKbmXoNZh-Y68m3GX_WwzNiaBuk280VFh-Q@mail.gmail.com>
+ <20200406085707-mutt-send-email-mst@kernel.org>
+ <CAK8P3a1=-rhiMyAh6=6EwhxSmNnYaXR9NWhh+ZGh4Hh=U_gEuA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200404073047.17898-1-ardb@kernel.org>
- <20200406110401.GA4650@red-moon.cambridge.arm.com>
- <CAMj1kXEsROAg5T_qhk4DY7B0y3nXLFzyoT08SSztGWOa+e2kmQ@mail.gmail.com>
- <20200406113235.GB4650@red-moon.cambridge.arm.com>
- <CAMj1kXHt0yhnFE=fVZm0p3iyC20s=j=8Z4Gzcmp_cqx3P3N5Dw@mail.gmail.com>
- <20200406131432.GC4650@red-moon.cambridge.arm.com>
-In-Reply-To: <20200406131432.GC4650@red-moon.cambridge.arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 6 Apr 2020 15:19:22 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXFVzeDyj=Nabq8QgcUnyiJWRSVRyHR6c+YSit_7uZUKmQ@mail.gmail.com>
-Message-ID: <CAMj1kXFVzeDyj=Nabq8QgcUnyiJWRSVRyHR6c+YSit_7uZUKmQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64: iort: take _DMA methods into account for named
- components
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+In-Reply-To: <CAK8P3a1=-rhiMyAh6=6EwhxSmNnYaXR9NWhh+ZGh4Hh=U_gEuA@mail.gmail.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_061935_441104_7A83CD9F 
-X-CRM114-Status: GOOD (  20.47  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200406_062123_225331_AA3A1B36 
+X-CRM114-Status: GOOD (  15.11  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,71 +110,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- robin.murphy@arm.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ kbuild test robot <lkp@intel.com>, kvm list <kvm@vger.kernel.org>,
+ "christophe.lyon@st.com" <christophe.lyon@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jason Wang <jasowang@redhat.com>,
+ "richard.henderson@linaro.org" <richard.henderson@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sudeep Dutt <sudeep.dutt@intel.com>, Ashutosh Dixit <ashutosh.dixit@intel.com>,
+ "daniel.santos@pobox.com" <daniel.santos@pobox.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ "David S. Miller" <davem@davemloft.net>, Networking <netdev@vger.kernel.org>,
+ virtualization@lists.linux-foundation.org, Ard Biesheuvel <ardb@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 6 Apr 2020 at 15:14, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Mon, Apr 06, 2020 at 01:59:07PM +0200, Ard Biesheuvel wrote:
-> > On Mon, 6 Apr 2020 at 13:32, Lorenzo Pieralisi
-> > <lorenzo.pieralisi@arm.com> wrote:
+On Mon, Apr 06, 2020 at 03:15:20PM +0200, Arnd Bergmann wrote:
+> On Mon, Apr 6, 2020 at 3:02 PM Michael S. Tsirkin <mst@redhat.com> wrote:
+> >
+> > On Mon, Apr 06, 2020 at 02:50:32PM +0200, Arnd Bergmann wrote:
+> > > On Mon, Apr 6, 2020 at 2:12 PM Michael S. Tsirkin <mst@redhat.com> wrote:
 > > >
-> > > On Mon, Apr 06, 2020 at 01:16:15PM +0200, Ard Biesheuvel wrote:
-> > > > On Mon, 6 Apr 2020 at 13:04, Lorenzo Pieralisi
-> > > > <lorenzo.pieralisi@arm.com> wrote:
-> > > > >
-> > > > > On Sat, Apr 04, 2020 at 09:30:47AM +0200, Ard Biesheuvel wrote:
-> > > > > > Where IORT nodes for named components can describe simple DMA limits
-> > > > > > expressed as the number of address bits a device can driver, _DMA methods
-> > > > > > in AML can express more complex topologies, involving DMA translation in
-> > > > > > particular.
-> > > > > >
-> > > > > > Currently, we only take this _DMA method into account if it appears on a
-> > > > > > ACPI device node describing a PCIe root complex, but it is perfectly
-> > > > > > acceptable to attach them to named components as well, so let's ensure
-> > > > > > we take them into account in those cases too.
-> > > > >
-> > > > > ACPI spec v6.3, 6.2.4 _DMA:
-> > > > >
-> > > > > "_DMA is only defined under devices that represent buses"
-> > > > >
 > > > >
-> > > > Sure. But ACPI0004 module devices are also bus nodes, so that
-> > > > statement does not exclude named components that are defined under
-> > > > such a module device.
+> > > > +config VHOST_DPN
+> > > > +       bool "VHOST dependencies"
+> > > > +       depends on !ARM || AEABI
+> > > > +       default y
+> > > > +       help
+> > > > +         Anything selecting VHOST or VHOST_RING must depend on VHOST_DPN.
+> > > > +         This excludes the deprecated ARM ABI since that forces a 4 byte
+> > > > +         alignment on all structs - incompatible with virtio spec requirements.
+> > > > +
 > > >
-> > > Yes. _DMA is valid only if a _CRS is present, ACPI0004 does not seem
-> > > to _require_ a _CRS to be considered valid.
+> > > This should not be a user-visible option, so just make this 'def_bool
+> > > !ARM || AEABI'
 > > >
 > >
-> > How is that relevant? Any node that has a _DMA must have a _CRS as
-> > well. Some nodes that don't have a _DMA may not have a _CRS either.
-> > But that does not disqualify a ACPI0004 that *does* have both from
-> > being considered a bus node, no? Or is that not what you are saying?
->
-> I am just trying to prevent firmware developers from adding ACPI0004
-> nodes with *just* a _DMA object (because the _CRS is optional) which
-> will become unusable in OS context (where we do check the _CRS
-> presence), that's all I am saying.
->
-> Just trying to make specs foolproof :)
->
+> > I like keeping some kind of hint around for when one tries to understand
+> > why is a specific symbol visible.
+> 
+> I meant you should remove the "VHOST dependencies" prompt, not the
+> help text, which is certainly useful here. You can also use the three lines
+> 
+>      bool
+>      depends on !ARM || AEABI
+>      default y
+> 
+> in front of the help text, but those are equivalent to the one-line version
+> I suggested.
+> 
+>      Arnd
 
-Ah ok, fair enough.
+Oh right. Good point. Thanks!
 
-Note that acpi_dma_get_range() already checks this, but on the
-firmware validation side, adding a rule like this would certainly help
-as well.
+-- 
+MST
 
-I think the window for new ACPI material is closing atm - I'll check
-internally whether we can get someone to slip this in (i.e., a
-clarification added to '9.12 Module Device' that _DMA methods are
-permitted but only if _CRS is defined as well)
 
 _______________________________________________
 linux-arm-kernel mailing list
