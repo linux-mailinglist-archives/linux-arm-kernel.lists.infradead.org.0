@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BED119F6F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:30:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC10319F707
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 15:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=otSBcCibHRuLh5Uzky25E2bk14gx6QnltJ2/eFv1sIU=; b=ldytrzBFEMVEtik117UoHc+QW
-	kHkQp0Fm/qmI2rtffATCWc9Tk3WopQTf+Wdvo3aNMoSm0o/Y+xJkch+Hbv+pbLf0oSxucQkcDdSGs
-	fLkvSRK6L2HYuXsUoSU9p1rfeJECZg/N+PuuGnWa2+JSGSsoEDuKQIExfJjmuP5F10uv5UdL7HXdc
-	JHxm4BB6DBgUEqAxK/8N2QEy2a0z5po/1SshA8perqRf0WYiUk+3wLDGuyXLe2JW2o/bccz/sEKua
-	1ToGlEqlTJJJSGl9zWnR1BewCY48+sOHUEA56O5vAaXlbUwq0dAS1BW+SckJlZng/pT57HH+i7kYG
-	CUPsJrDRg==;
+	 bh=dmRiI3PLAfxqzOr3YzHl8KaAz9uyFRXmer0g8IcnC8I=; b=AUbKTT+S6pPAc1rhazC6gPd2P
+	7/vtrcTPP1oBGj0Ikwy5Nw335YYr5aaOmyXO1ixl1EPJMjqskso1wX2LRuc3fV8vzE5nlpQFvbtSB
+	b8vbGBI8NkIxhA21Rk8HLCoJc7PA0kntvjHHqBTzUfqv00wxJc4vNoR055vWvYyljuB22mDSkRxbK
+	WimWUT0Qaao0Q6zVxLAYfRw9MG9FqH1LBjjeuVmdKbAsyqtWQJ0j0dgNqzzAu8l6Y3nxBjAHVeFHo
+	MTLH0T+f3N2Bpg73Jc+8aHXKSJKvRglzbUsGixKrdROTgOe0MNkg/RUk2YoIBCUIKKludp/4yDWui
+	0X/LbE79w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLRpT-0001FB-84; Mon, 06 Apr 2020 13:30:19 +0000
+	id 1jLRuQ-0005vL-Fo; Mon, 06 Apr 2020 13:35:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLRpL-0000TE-Vr; Mon, 06 Apr 2020 13:30:13 +0000
+ id 1jLRuI-0005ui-Qc; Mon, 06 Apr 2020 13:35:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 313E231B;
- Mon,  6 Apr 2020 06:30:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BEA2F7FA;
+ Mon,  6 Apr 2020 06:35:17 -0700 (PDT)
 Received: from [10.37.12.4] (unknown [10.37.12.4])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC4473F7D8;
- Mon,  6 Apr 2020 06:29:58 -0700 (PDT)
-Subject: Re: [PATCH v5 1/5] PM / EM: add devices to Energy Model
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8230E3F52E;
+ Mon,  6 Apr 2020 06:35:07 -0700 (PDT)
+Subject: Re: [PATCH v5 4/5] thermal: devfreq_cooling: Refactor code and switch
+ to use Energy Model
 To: Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org, 
  linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  dri-devel@lists.freedesktop.org, linux-omap@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
  linux-imx@nxp.com
 References: <20200318114548.19916-1-lukasz.luba@arm.com>
- <20200318114548.19916-2-lukasz.luba@arm.com>
- <09b680a5-a118-8c6e-0ae1-03ab5f10c573@linaro.org>
+ <20200318114548.19916-5-lukasz.luba@arm.com>
+ <f3e9f127-47b1-9f30-2148-3c95a5933a92@linaro.org>
 From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <cb7f670a-a04f-ba6f-1486-0421f3cce2e9@arm.com>
-Date: Mon, 6 Apr 2020 14:29:56 +0100
+Message-ID: <4bf6cc66-8df4-3224-418d-0549026a3672@arm.com>
+Date: Mon, 6 Apr 2020 14:35:05 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <09b680a5-a118-8c6e-0ae1-03ab5f10c573@linaro.org>
+In-Reply-To: <f3e9f127-47b1-9f30-2148-3c95a5933a92@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_063012_119729_2351BD5B 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20200406_063519_204498_C7B2173C 
+X-CRM114-Status: GOOD (  18.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -86,96 +87,58 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
 
-Thank you for the review.
 
-On 4/3/20 5:05 PM, Daniel Lezcano wrote:
-> 
-> Hi Lukasz,
-> 
-> 
+On 4/3/20 6:44 PM, Daniel Lezcano wrote:
 > On 18/03/2020 12:45, Lukasz Luba wrote:
->> Add support of other devices into the Energy Model framework not only the
->> CPUs. Change the interface to be more unified which can handle other
->> devices as well.
-> 
-> thanks for taking care of that. Overall I like the changes in this patch
-> but it hard to review in details because the patch is too big :/
-> 
-> Could you split this patch into smaller ones?
-> 
-> eg. (at your convenience)
-> 
->   - One patch renaming s/cap/perf/
-> 
->   - One patch adding a new function:
-> 
->      em_dev_register_perf_domain(struct device *dev,
-> 				unsigned int nr_states,
-> 				struct em_data_callback *cb);
-> 
->     (+ EXPORT_SYMBOL_GPL)
-> 
->      And em_register_perf_domain() using it.
-> 
->   - One converting the em_register_perf_domain() user to
-> 	em_dev_register_perf_domain
-> 
->   - One adding the different new 'em' functions
-> 
->   - And finally one removing em_register_perf_domain().
-
-I agree and will do the split. I could also break the dependencies
-for future easier merge.
-
-> 
-> 
->> Acked-by: Quentin Perret <qperret@google.com>
+>> The overhauled Energy Model (EM) framework support also devfreq devices.
+>> The unified API interface of the EM can be used in the thermal subsystem to
+>> not duplicate code. The power table now is taken from EM structure and
+>> there is no need to maintain calculation for it locally. In case when the
+>> EM is not provided by the device a simple interface for cooling device is
+>> used.
+>>
+>> There is also an improvement in code related to enabling/disabling OPPs,
+>> which prevents from race condition with devfreq governors.
+>>
+>> [lkp: Reported the build warning]
+>> Reported-by: kbuild test robot <lkp@intel.com>
+>> Reviewed-by: Steven Rostedt (VMware) <rostedt@goodmis.org> # for tracing code
 >> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+> 
+> The changes are too big, please split this patch into smaller chunks.
+
+OK, I will split it and re-base on top of thermal testing.
+
+> 
 >> ---
+>>   drivers/thermal/devfreq_cooling.c | 474 ++++++++++++++++--------------
+>>   include/linux/devfreq_cooling.h   |  39 +--
+>>   include/trace/events/thermal.h    |  19 +-
+>>   3 files changed, 277 insertions(+), 255 deletions(-)
+>>
+>> diff --git a/drivers/thermal/devfreq_cooling.c b/drivers/thermal/devfreq_cooling.c
 > 
 > [ ... ]
 > 
->>   2. Core APIs
->> @@ -70,14 +72,16 @@ CONFIG_ENERGY_MODEL must be enabled to use the EM framework.
->>   Drivers are expected to register performance domains into the EM framework by
->>   calling the following API::
->>   
->> -  int em_register_perf_domain(cpumask_t *span, unsigned int nr_states,
->> -			      struct em_data_callback *cb);
->> +  int em_register_perf_domain(struct device *dev, unsigned int nr_states,
->> +		struct em_data_callback *cb, cpumask_t *cpus);
+>>   struct devfreq_cooling_device {
+>>   	int id;
+>>   	struct thermal_cooling_device *cdev;
+>>   	struct devfreq *devfreq;
+>>   	unsigned long cooling_state;
+>> -	u32 *power_table;
+>>   	u32 *freq_table;
+>> -	size_t freq_table_size;
+>> +	size_t max_level;
 > 
-> Isn't possible to get rid of this cpumask by using
-> cpufreq_cpu_get() which returns the cpufreq's policy and from their get
-> the related cpus ?
+> Could you rename it to 'max_state' ?
 
-We had similar thoughts with Quentin and I've checked this.
-Unfortunately, if the policy is a 'new policy' [1] it gets
-allocated and passed into cpufreq driver ->init(policy) [2].
-Then that policy is set into per_cpu pointer for each related_cpu [3]:
+Yes.
 
-for_each_cpu(j, policy->related_cpus)
-	per_cpu(cpufreq_cpu_data, j) = policy;
-
-
-Thus, any calls of functions (i.e. cpufreq_cpu_get()) which try to
-take this ptr before [3] won't work.
-
-We are trying to register EM from cpufreq_driver->init(policy) and the
-per_cpu policy is likely to be not populated at that phase.
+Thank you for your comments.
 
 Regards,
 Lukasz
-
-[1] 
-https://elixir.bootlin.com/linux/latest/source/drivers/cpufreq/cpufreq.c#L1328
-[2] 
-https://elixir.bootlin.com/linux/latest/source/drivers/cpufreq/cpufreq.c#L1350
-[3] 
-https://elixir.bootlin.com/linux/latest/source/drivers/cpufreq/cpufreq.c#L1374
-
 
 
 _______________________________________________
