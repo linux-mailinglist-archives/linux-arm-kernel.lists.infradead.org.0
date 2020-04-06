@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 432A519F18B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 10:26:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9499019F194
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 10:27:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GTpbiRgCXbAgQjnKzZ8nkymOv/fEYWgrHjGv8bO23Nk=; b=ZzPiyg1wCfSoAH
-	c6LNvlkuRD+DzkKwTg1z5/NL3OsvcsXgpTgAE9DGu9itLdBL/YHopBqPkIrnr6uSh0XHta2M1r1aG
-	O5UqA8uBmwH+XpOXNoq1JXwz1yMw0UD8sCEOcRJpBrVob61m10Z6vbN9VEWqWcJ0flBHRWATijdja
-	bKRrUIxYeTeEt9uoT1+kbaa0RZfabi47kKyVMVrYyFBOTzR4JKZbnuIbG+QuyF50t8bSNpmegfhSr
-	PFP5NGh7J3u2QRJo7bsVLFf1s9hESdfXmCnr7FD32+gLM0GVy2+BPnQ2z8MVRVgysN2wse6MsLP7O
-	9BL0ZqZ6d2LoBcO6ZgjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kTrrK1gwmIxeVTmiRRCMU5bkT/+FdnZbkz+yQsIRPrg=; b=kCAsYyPp1cp2rE
+	cG5qpZ0z7rYC0EKevKqhTGld+f7aXgyfUQTQIpQP2GjcIkiAZRYzi1NvZHR6bGVmTONHrE7uejFx7
+	hpGh8z4I/DTMr/r6RbNjAILupIGFYMLYicOEiXHdCAtnrh7bFosNBZhFQegvyKdMpzGgmdnZ+LBrj
+	8xmUoQzByOojk0s3fG50Fu61bnmctkQE2ny8ydUOILF+E7xdq2jQeA4qz11mkvbianFQVsyH1kzb2
+	NlHW7IRPmBmWwD8dl+Nhl3HII4wa6SyYrv1URNfiSji+lsnjL4gV+5IcJLh0lJd/o68MIKu6e+m0e
+	dCGxOrs4qlHiwkecb3JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLN5C-0002w4-Hr; Mon, 06 Apr 2020 08:26:14 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jLN6V-0003Gq-MS; Mon, 06 Apr 2020 08:27:35 +0000
+Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLN52-0002vP-13
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 08:26:06 +0000
-Received: by mail-ot1-x343.google.com with SMTP id 22so14497760otf.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 01:26:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vOURNP/+1sHn2/oMAz9DpyrmfncIc+Lque59yZC/+5w=;
- b=LNSvxDZjUIJxP4/R0gUjwWEcoIXjaM14W0yLZVSrDlbz182T85YKg9jbdKtsDv4lSw
- CJiAmks7NsnTkIghjBXK8DlURDeKnUSzJHYlN+12DuAULHbIVlDN8ppxELEfYm4zwqBs
- aw/ZeWuSYt776wwjblNiwil1Cb3zzS0HMTuWr4qv/qliIlcRDXzDzrT9gX+SGuK3v/KQ
- SyvKYC+rBZ/4QqGchMam2id0O6G1vGyw3EkfvK4wIoXf3OQ9eMKwadXJfYRiD2FLFq/W
- QUHuyHh4ngh+RtAjWUyHyUabXwCzTo0oYRE1r8ouVeIQ7FxN8oMye+v/vqt+KJHyEl5z
- t9mA==
+ id 1jLN6K-0003FD-TC; Mon, 06 Apr 2020 08:27:26 +0000
+Received: by mail-wr1-x431.google.com with SMTP id g3so14020059wrx.2;
+ Mon, 06 Apr 2020 01:27:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=55a3ErFUzwi21OsaY2azC2jkNniTZaL9xFoaJMyXUts=;
+ b=vZnUnwZQ1qXHKPZWX9+n3t/3eu+4bLYPi6ploQCBGr2mO6XDyM+5moogDuVDP5C2E0
+ 0fWMGbfcau+ZSAOFIMEtSHXueEnHV++vJN+YCDqRJyiF2EuYCIWyOpzLYn1U4aFLSuzM
+ rOR75n4gmmGORVuj3EQgVQFfBJmtjls9BN4lixj3Pf7rzDSoQzhLh3MCdS+lQct3KzGX
+ 4dCXSxEt0ATG1uiz1vQcMavWBrh9LtDK8/VPJefOXf1COF7IuGnhHz1hy/OQ5tfbvreU
+ yQdz6C1+IeKUnmNLrxF3RwVQKZPsVW+3foLqVTM4EMnDrlzlNcOMbFlT0EFxMuhk/M/K
+ GHJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vOURNP/+1sHn2/oMAz9DpyrmfncIc+Lque59yZC/+5w=;
- b=ELZkhr51SlP3K5Z99WjzEUg/R+XWjZCr0/9xnPJl7iuklGVJmGKd0jQs4LIML1fGJc
- 462vVygR1vrFr0I1sTSbiptwUIYPyavEtM/+VapinrVrrl1LiN97JKFkTqwqVcdro47x
- /jhhCBmWOGAVVoOPtuVzKXrV5DtMwuVeg3fMkrk/5nohMP53FCZAmr/Irsl7I1bJ6g/L
- 5MfvavijcKKeL/mBVfXl/da3+qiOIF2WVSW1g0cfUADo8fjnZXCtx2nP33ygOQa+HZKi
- HyBmafms4p4LhBWFDa21CEPSWy4bzsETWgI6MavFNu9imri5xLoDzL/KY1T8Zocsfz5b
- T13g==
-X-Gm-Message-State: AGi0PualkPXBQonV8juAL37dN+2HTpQHz2fRFFokY4fYSEnghLKP/IrW
- DMSWqRO7lXJ/8PYrKGvsWG+ExVZ/USipC+9BQMPUjg==
-X-Google-Smtp-Source: APiQypIkuoFfBZNbSuH6xY0DqxdXdxWr0AqNxKMHvTzBtHBZP9ZPw+ZzMKWrTKGg9oy2VTppKuGgJcpLQV7RZVDW/2Y=
-X-Received: by 2002:a4a:e495:: with SMTP id s21mr16488515oov.79.1586161562627; 
- Mon, 06 Apr 2020 01:26:02 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=55a3ErFUzwi21OsaY2azC2jkNniTZaL9xFoaJMyXUts=;
+ b=a9idL34UCQyXZI5m7wsq/k68rHx1hTTeCBsL30Kop757bk1X+uhnv1q6uMRP/rG37x
+ IQE+PISOWwJMwxZ/HLXCftxmsK+epKwSj6nRicJ+ycPnAhWvp+ROqg6EomOtwTrIu+xS
+ FaQCS0Ybd8I+hDmq/vQQ7J1RpHYwRddLD4kiR5LCXzR/Tn/3ljEOhnHxTKLSSYR2I8/+
+ 7C5JMnh6bhyPOsRNvsvRThBykxCNms6LW7D3xBpaGDQXzXkce0WgGW3qw/ejA41k2+3Z
+ x875eMVwK0/VjlnjFd6SHGWOj0a9S1vxOtjAllMzh2+4Z9cGt5opZy9hzwqqDvgGdeoG
+ ZgXg==
+X-Gm-Message-State: AGi0PuZw2HiacYaKSZ6jQn5uB/Ach3JkIFl8IVYe+8aD2g9bSyW5cQLD
+ lYOgge+6L7/skN4VvozafhY=
+X-Google-Smtp-Source: APiQypJLN67xNTSrQ/sLaRRm40PviBXbgVl5KjikszA4PoZlueozEyPgWcG4LCvJHjec39ZOyIFK2Q==
+X-Received: by 2002:a05:6000:1205:: with SMTP id
+ e5mr24179604wrx.73.1586161642322; 
+ Mon, 06 Apr 2020 01:27:22 -0700 (PDT)
+Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id f3sm24957862wmj.24.2020.04.06.01.27.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Apr 2020 01:27:21 -0700 (PDT)
+Date: Mon, 6 Apr 2020 10:27:20 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: ebiederm@xmission.com, kexec@lists.infradead.org
+Subject: Trying to kexec on Allwinner A80
+Message-ID: <20200406082720.GA31279@Red>
 MIME-Version: 1.0
-References: <20200331133346.372517-1-robert.foss@linaro.org>
- <20200331133346.372517-2-robert.foss@linaro.org>
- <20200401080705.j4goeqcqhoswhx4u@gilmour.lan>
- <CAG3jFyvUd08U9yNVPUD9Y=nd5Xpcx34GcHJRhtvAAycoq3qimg@mail.gmail.com>
- <20200403232736.GA6127@valkosipuli.retiisi.org.uk>
- <20200404093446.vuvwrhn5436h4d3s@gilmour.lan>
-In-Reply-To: <20200404093446.vuvwrhn5436h4d3s@gilmour.lan>
-From: Robert Foss <robert.foss@linaro.org>
-Date: Mon, 6 Apr 2020 10:25:50 +0200
-Message-ID: <CAG3jFytX19r4FCateVtcd6C7mHNHUF4NA24mGTrogs6DWiE1pQ@mail.gmail.com>
-Subject: Re: [PATCH v6 1/3] media: dt-bindings: ov8856: Document YAML bindings
-To: Maxime Ripard <maxime@cerno.tech>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_012604_588641_F0FCD441 
-X-CRM114-Status: GOOD (  40.43  )
+X-CRM114-CacheID: sfid-20200406_012724_945511_DD91D3D8 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:431 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [clabbe.montjoie[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,184 +95,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
+Cc: wens@csie.org, linux-arm-kernel@lists.infradead.org, mripard@kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Maxime,
+Hello
 
-On Sat, 4 Apr 2020 at 11:34, Maxime Ripard <maxime@cerno.tech> wrote:
->
-> Hi,
->
-> On Sat, Apr 04, 2020 at 02:27:36AM +0300, Sakari Ailus wrote:
-> > Hi Robert,
-> >
-> > On Thu, Apr 02, 2020 at 12:10:00PM +0200, Robert Foss wrote:
-> > > Hey Maxime,
-> > >
-> > > On Wed, 1 Apr 2020 at 10:07, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > >
-> > > > Hi,
-> > > >
-> > > > On Tue, Mar 31, 2020 at 03:33:44PM +0200, Robert Foss wrote:
-> > > > > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > >
-> > > > > This patch adds documentation of device tree in YAML schema for the
-> > > > > OV8856 CMOS image sensor.
-> > > > >
-> > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > > > ---
-> > > > >
-> > > > > - Changes since v5:
-> > > > >   * Add assigned-clocks and assigned-clock-rates
-> > > > >   * robher: dt-schema errors
-> > > > >
-> > > > > - Changes since v4:
-> > > > >   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
-> > > > >   * Add clock-lanes property to example
-> > > > >   * robher: Fix syntax error in devicetree example
-> > > > >
-> > > > > - Changes since v3:
-> > > > >   * robher: Fix syntax error
-> > > > >   * robher: Removed maxItems
-> > > > >   * Fixes yaml 'make dt-binding-check' errors
-> > > > >
-> > > > > - Changes since v2:
-> > > > >   Fixes comments from from Andy, Tomasz, Sakari, Rob.
-> > > > >   * Convert text documentation to YAML schema.
-> > > > >
-> > > > > - Changes since v1:
-> > > > >   Fixes comments from Sakari, Tomasz
-> > > > >   * Add clock-frequency and link-frequencies in DT
-> > > > >
-> > > > >  .../devicetree/bindings/media/i2c/ov8856.yaml | 150 ++++++++++++++++++
-> > > > >  MAINTAINERS                                   |   1 +
-> > > > >  2 files changed, 151 insertions(+)
-> > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yaml b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > > > > new file mode 100644
-> > > > > index 000000000000..beeddfbb8709
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > > > > @@ -0,0 +1,150 @@
-> > > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > > +# Copyright (c) 2019 MediaTek Inc.
-> > > > > +%YAML 1.2
-> > > > > +---
-> > > > > +$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
-> > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > +
-> > > > > +title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
-> > > > > +
-> > > > > +maintainers:
-> > > > > +  - Ben Kao <ben.kao@intel.com>
-> > > > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > +
-> > > > > +description: |-
-> > > > > +  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapixel, CMOS
-> > > > > +  image sensor that delivers 3264x2448 at 30fps. It provides full-frame,
-> > > > > +  sub-sampled, and windowed 10-bit MIPI images in various formats via the
-> > > > > +  Serial Camera Control Bus (SCCB) interface. This chip is programmable
-> > > > > +  through I2C and two-wire SCCB. The sensor output is available via CSI-2
-> > > > > +  serial data output (up to 4-lane).
-> > > > > +
-> > > > > +properties:
-> > > > > +  compatible:
-> > > > > +    const: ovti,ov8856
-> > > > > +
-> > > > > +  reg:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  clocks:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  clock-names:
-> > > > > +    description:
-> > > > > +      Input clock for the sensor.
-> > > > > +    items:
-> > > > > +      - const: xvclk
-> > > > > +
-> > > > > +  clock-frequency:
-> > > > > +    description:
-> > > > > +      Frequency of the xvclk clock in Hertz.
-> > > >
-> > > > We also had that discussion recently for another omnivision sensor
-> > > > (ov5645 iirc), but what is clock-frequency useful for?
-> > > >
-> > > > It seems that the sensor is passed in clocks, so if you need to
-> > > > retrieve the clock rate you should use the clock API instead.
-> > > >
-> > > > Looking at the driver, it looks like it first retrieves the clock, set
-> > > > it to clock-frequency, and then checks that this is OV8856_XVCLK_19_2
-> > > > (19.2 MHz).
-> > >
-> > > As far as I understand it, 19.2MHz is requirement for the sensor mode
-> > > that currently defaults to. Some modes require higher clock speeds
-> > > than this however.
-> >
-> > It's very system specific. Either way, bindings should not assume a
-> > particular driver implementation.
-> >
-> > >
-> > > >
-> > > > The datasheet says that the sensor can have any frequency in the 6 -
-> > > > 27 MHz range, so this is a driver limitation and should be set in the
-> > > > driver using the clock API, and you can always bail out if it doesn't
-> > > > provide a rate that is not acceptable for the drivers assumption.
-> > > >
-> > > > In any case, you don't need clock-frequency here...
-> > >
-> > > So your suggestion is that we remove all clocks-rate properties, and
-> > > replace the clk_get_rate() calls in the driver with clk_set_rate()
-> > > calls for the desired frequencies?
-> >
-> > The driver shouldn't set the rate here unless it gets it from DT (but that
-> > was not the intention). So the driver should get the frequency instead.
->
-> I'm actually saying the opposite :)
->
-> Like you were saying, the binding (or DT, for that matter) shouldn't
-> assume a particular driver implementation.
->
-> So one corollary is that if the driver has some restrictions in Linux,
-> it shouldn't be part of the binding, right?
->
-> This binding uses multiple clock properties but as far as I can see,
-> the driver retrieves a clock using clocks and makes sure that its rate
-> match its limitation of 19.2MHz using clock-frequency (which is
-> redundant on a clk_get_rate on the clocks provided earlier).
->
-> I'm suspecting that the parent clock on multiple SoCs can be
-> configured and is not a fixed rate crystal, so assigned-clocks-rate is
-> here just to make sure we set the frequency at the one being checked
-> in the driver's probe so that it all works.
->
-> But that 19.2MHz is not a limitation of the device itself, it's a
-> limitation of our implementation, so we can instead implement
-> something equivalent in Linux using a clk_set_rate to 19.2MHz (to make
-> sure that our parent clock is configured at the right rate) and the
-> clk_get_rate and compare that to 19.2MHz (to make sure that it's not
-> been rounded too far apart from the frequency we expect).
->
-> This is doing exactly the same thing, except that we don't encode our
-> implementation limitations in the DT, but in the driver instead.
->
+I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
 
-Thanks for taking the time to explain this.
-I'll spin a new revision that moves the clock rate handling into the driver.
+But kexec 2.0.18 fail to work:
+kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+syscall kexec_file_load not available.
+Try gzip decompression.
+kernel: 0xb6535008 kernel_size: 0x853200
+MEMORY RANGES
+0000000020000000-000000009fffffff (0)
+zImage header: 0x016f2818 0x00000000 0x00853200
+zImage size 0x853200, file size 0x853200
+zImage requires 0x00864200 bytes
+  offset 0x0000bae4 tag 0x5a534c4b size 8
+Decompressed kernel sizes:
+ text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
+Resulting kernel space: 0x01def5a0
+Kernel: address=0x20008000 size=0x01def5a0
+Initrd: address=0x21df8000 size=0x0090b6fa
+DT    : address=0x22704000 size=0x00005c09
+kexec_load: entry = 0x20008000 flags = 0x280000
+nr_segments = 3
+segment[0].buf   = 0xb6535008
+segment[0].bufsz = 0x853204
+segment[0].mem   = 0x20008000
+segment[0].memsz = 0x854000
+segment[1].buf   = 0xb5c29008
+segment[1].bufsz = 0x90b6fa
+segment[1].mem   = 0x21df8000
+segment[1].memsz = 0x90c000
+segment[2].buf   = 0x4db50
+segment[2].bufsz = 0x5c09
+segm[   71.039126] kexec_core: Starting new kernel
+ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
+x22704000
+segment[2].memsz = 0x6000
+[   71.489070] Bye!
+
+
+I have tried also kexec-2.0.20
+Try gzip decompression.
+zImage header: 0x00000000 0x000019b4 0x00001000
+zImage requires 0x008641c0 bytes
+Could not find a free area of memory of 0x86c1c0 bytes...
+Cannot load /tmp/kernel
+
+What can I do for made it working ? I probably need to give it some memory address, but I am a bit loss.
+
+Thanks
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
