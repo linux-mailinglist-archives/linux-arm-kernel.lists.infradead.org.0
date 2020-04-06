@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3681119EFE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 06:32:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11A8319EFF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 06:43:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHjgApwEpHZX6hYufGTM0DlPQ9UnO8Jim9Y4nTvphps=; b=a717X+CdMS2nGV
-	pYovPVNXGSL/O9TEyMYM45St9ArI2KnOchlAIVUJ8xdsKy2a3VnjV5cBxdTOrer3GrmyKXyIFlk8T
-	D2zj12HwC4KihB8VTGh2jQX0+wXsvc6LiYGi5edVA2D9rLVFAvjGjc8iAO3E14seFT78Bu/1M4kjm
-	i/HM321mwAG/4uiuOHkTxKZ3y+cclKyF8csZ/gJPtrIBvOET3XNqaxXrBNbmBvM0XwpYZXObXwcX8
-	YUcVf4n+Z6gBQEp9ByT0f29kYQQ/idSqLHRNGlaZYqLVPPs6M2AYe2DUwhv/O0yjFxdvFh2PgV4dj
-	r0TR11RD8hu0RJMD7o1A==;
+	List-Owner; bh=jeQq3FSI8EosF72bD+PB04gLV1/Mzh6ashILWZG34W8=; b=kQPPilvTdrSvIE
+	r9Cw+dSDSTpjqCc9tVRoHePntdVIEBiH9P7GEdVIwIRMuGEsFNgytUar63XCoD03L/D9KSwhRZwZW
+	IvRVVtBcOHnMCtlRMu+YmQ/kMBOaw+DBlqTjqkRQUV7Klgv6FzNGzE8V3Fd3J8b/jB4xDdVuC/lOe
+	TGZHscqn4Lfk8kqjbDhdv6y9AUBkLyR8cgM2orbtiEJIQEoKAqzjlQYmpSq0CG8y1SSR5CrgsCg/z
+	+lo1bAE3/RXvL2C0IREwvkLkw4EC74YJCU9v1XkevjWTy4rvDQNzOcXqQOpTgWZJLPwUx+d+niran
+	RZHvNWC8lLCpYBYH6/RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLJQp-0004qr-0o; Mon, 06 Apr 2020 04:32:19 +0000
-Received: from mout02.posteo.de ([185.67.36.66])
+	id 1jLJbi-0002LX-5f; Mon, 06 Apr 2020 04:43:34 +0000
+Received: from mout01.posteo.de ([185.67.36.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLJQd-0004qU-Ef
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 04:32:12 +0000
+ id 1jLJbY-0002KG-9P
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 04:43:28 +0000
 Received: from submission (posteo.de [89.146.220.130]) 
- by mout02.posteo.de (Postfix) with ESMTPS id BB773240102
+ by mout01.posteo.de (Postfix) with ESMTPS id 4E4BB16005C
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  6 Apr 2020 06:32:05 +0200 (CEST)
+ Mon,  6 Apr 2020 06:43:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.net; s=2017;
- t=1586147525; bh=cK319W5AuajClIwEnOcTFdZH3bJKf3Pa1oL4sJ7+Mvc=;
+ t=1586148200; bh=iyRJr5c6iU8QxRoQP07c761lFX4UQ1wdAEwkcoHDnK0=;
  h=Date:From:To:Cc:Subject:From;
- b=Bk7hBlnf9wfyzmKqybBEpELFtQ1TtZ2j80u+LreOacgt9p26YBhMLGnTddlN3CWFP
- XEKiheqm0WZZlwg3RDw/xaM8hNiqWSdegdOgvF5cP1UUIFmofPF6Uch/mv/qxYOqnm
- Inw8wHS8TJOmvqPxgfyAPTvo0OBm+Y7IRvju/kRBWI72p4W8cpwy6sG+ZVSCOLWHA/
- eonCnv6L1SkutgJJnryJdWQhIPyeRBYOd3RfgzVxqeFHGoGFC74BNOYdlCmuZ91ht0
- OPR5scNLGJOjLowdO7x2/gigW3bmpN0fAB7O1Nq2oaglJCJdwxC1v9P9QIGG7pEcgW
- JsdThHsLTlWYA==
+ b=LNLJQInz4l8k1SSM4I70xt90hCLA9aBha4As1xXQwgwAvTxGiYog3czRIdBrcJaie
+ oPJLbapXC4PeIvsikziZ+nQgrSCdifZfzjQOh/kcRixFvUY5abOqubVxbQ3tnGgMB7
+ gf4e/z1apN26RrtLrx7n4NXkHjIdDv//1PUsWCz3MuhbhzaOOD1gYkX8cTTnqXxRTa
+ JsmbR14GOthnTQvwfMR8NXz8TJ1kOzlXe+H/LHCSuMYgtBZfECImclj80HcUr1SGa8
+ aeGVtlja67F27bFGX5upTbU1vAJRxPp7JcpUEOl0p2jxEg1loBP1RijQDqvKBtuNBG
+ GRiqLkD8p13EQ==
 Received: from customer (localhost [127.0.0.1])
- by submission (posteo.de) with ESMTPSA id 48wd0w3vTZz9rxL;
- Mon,  6 Apr 2020 06:32:00 +0200 (CEST)
-Date: Mon, 6 Apr 2020 00:31:57 -0400
+ by submission (posteo.de) with ESMTPSA id 48wdFr20nxz6tm8;
+ Mon,  6 Apr 2020 06:43:12 +0200 (CEST)
+Date: Mon, 6 Apr 2020 00:43:09 -0400
 From: Kevyn-Alexandre =?utf-8?B?UGFyw6k=?= <kapare@posteo.net>
 To: Alex Belits <abelits@marvell.com>
 Subject: Re: [PATCH v2 03/12] task_isolation: userspace hard isolation from
  kernel
-Message-ID: <20200406043157.x4bovr6qxcs3gw5c@x1>
+Message-ID: <20200406044309.bitqbwbk4n54wdmf@x1>
 References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
  <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
  <105f17f25e90a9a58299a7ed644bdd0f36434c87.camel@marvell.com>
@@ -52,15 +52,15 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <105f17f25e90a9a58299a7ed644bdd0f36434c87.camel@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_213208_112775_C6FD4DAA 
-X-CRM114-Status: GOOD (  39.01  )
+X-CRM114-CacheID: sfid-20200405_214324_933543_339BE0DE 
+X-CRM114-Status: GOOD (  39.13  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.67.36.66 listed in list.dnswl.org]
+ medium trust [185.67.36.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,8 +94,8 @@ Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
  "tglx@linutronix.de" <tglx@linutronix.de>, "will@kernel.org" <will@kernel.org>,
  "mingo@kernel.org" <mingo@kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
@@ -104,18 +104,21 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > that makes tradeoffs to minimize userspace interruptions while
 > still attempting to avoid overheads in the kernel entry/exit path,
 > to provide 100% kernel semantics, etc.
-> 
+> =
+
 > However, some applications require a "hard" commitment from the
 > kernel to avoid interruptions, in particular userspace device driver
 > style applications, such as high-speed networking code.
-> 
+> =
+
 > This change introduces a framework to allow applications
 > to elect to have the "hard" semantics as needed, specifying
 > prctl(PR_TASK_ISOLATION, PR_TASK_ISOLATION_ENABLE) to do so.
-> 
+> =
+
 > The kernel must be built with the new TASK_ISOLATION Kconfig flag
 > to enable this mode, and the kernel booted with an appropriate
-> "isolcpus=nohz,domain,CPULIST" boot argument to enable
+> "isolcpus=3Dnohz,domain,CPULIST" boot argument to enable
 > nohz_full and isolcpus. The "task_isolation" state is then indicated
 > by setting a new task struct field, task_isolation_flag, to the
 > value passed by prctl(), and also setting a TIF_TASK_ISOLATION
@@ -123,7 +126,8 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > userspace from the prctl() call and sees TIF_TASK_ISOLATION set,
 > it calls the new task_isolation_start() routine to arrange for
 > the task to avoid being interrupted in the future.
-> 
+> =
+
 > With interrupts disabled, task_isolation_start() ensures that kernel
 > subsystems that might cause a future interrupt are quiesced. If it
 > doesn't succeed, it adjusts the syscall return value to indicate that
@@ -133,19 +137,22 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > scheduled that could be quiesced now (e.g. the vmstat worker)
 > or a future IPI to the core to clean up some state that could be
 > cleaned up now (e.g. the mm lru per-cpu cache).
-> 
+> =
+
 > Once the task has returned to userspace after issuing the prctl(),
 > if it enters the kernel again via system call, page fault, or any
 > other exception or irq, the kernel will kill it with SIGKILL.
 > In addition to sending a signal, the code supports a kernel
 > command-line "task_isolation_debug" flag which causes a stack
 > backtrace to be generated whenever a task loses isolation.
-> 
+> =
+
 > To allow the state to be entered and exited, the syscall checking
 > test ignores the prctl(PR_TASK_ISOLATION) syscall so that we can
 > clear the bit again later, and ignores exit/exit_group to allow
 > exiting the task without a pointless signal being delivered.
-> 
+> =
+
 > The prctl() API allows for specifying a signal number to use instead
 > of the default SIGKILL, to allow for catching the notification
 > signal; for example, in a production environment, it might be
@@ -153,7 +160,8 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > before exiting. Or, the signal handler might choose to reset the
 > program counter back to the code segment intended to be run isolated
 > via prctl() to continue execution.
-> 
+> =
+
 > In a number of cases we can tell on a remote cpu that we are
 > going to be interrupting the cpu, e.g. via an IPI or a TLB flush.
 > In that case we generate the diagnostic (and optional stack dump)
@@ -162,10 +170,12 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > hypervisor interrupt) we can also request a reschedule IPI to
 > be sent to the remote core so it can be sure to generate a
 > signal to notify the process.
-> 
+> =
+
 > Separate patches that follow provide these changes for x86, arm,
 > and arm64.
-> 
+> =
+
 > Signed-off-by: Alex Belits <abelits@marvell.com>
 > ---
 >  .../admin-guide/kernel-parameters.txt         |   6 +
@@ -185,22 +195,25 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 >  14 files changed, 1111 insertions(+)
 >  create mode 100644 include/linux/isolation.h
 >  create mode 100644 kernel/isolation.c
-> 
-> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> =
+
+> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentat=
+ion/admin-guide/kernel-parameters.txt
 > index c07815d230bc..e4a2d6e37645 100644
 > --- a/Documentation/admin-guide/kernel-parameters.txt
 > +++ b/Documentation/admin-guide/kernel-parameters.txt
 > @@ -4808,6 +4808,12 @@
 >  			neutralize any effect of /proc/sys/kernel/sysrq.
 >  			Useful for debugging.
->  
+>  =
+
 > +	task_isolation_debug	[KNL]
 > +			In kernels built with CONFIG_TASK_ISOLATION, this
 > +			setting will generate console backtraces to
 > +			accompany the diagnostics generated about
 > +			interrupting tasks running with task isolation.
 > +
->  	tcpmhash_entries= [KNL,NET]
+>  	tcpmhash_entries=3D [KNL,NET]
 >  			Set the number of tcp_metrics_hash slots.
 >  			Default value is 8192 or 16384 depending on total
 > diff --git a/include/linux/hrtimer.h b/include/linux/hrtimer.h
@@ -210,7 +223,8 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > @@ -528,6 +528,10 @@ extern void __init hrtimers_init(void);
 >  /* Show pending timers: */
 >  extern void sysrq_timer_list_show(void);
->  
+>  =
+
 > +#ifdef CONFIG_TASK_ISOLATION
 > +extern void kick_hrtimer(void);
 > +#endif
@@ -246,7 +260,8 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > +
 > +#ifdef CONFIG_TASK_ISOLATION
 > +
-> +int task_isolation_message(int cpu, int level, bool supp, const char *fmt, ...);
+> +int task_isolation_message(int cpu, int level, bool supp, const char *fm=
+t, ...);
 > +
 > +#define pr_task_isol_emerg(cpu, fmt, ...)			\
 > +	task_isolation_message(cpu, LOGLEVEL_EMERG, false, fmt, ##__VA_ARGS__)
@@ -282,31 +297,6 @@ On Sun, Mar 08, 2020 at 03:47:08AM +0000, Alex Belits wrote:
 > +#define pr_task_isol_debug_supp(cpu, fmt, ...)			\
 > +	task_isolation_message(cpu, LOGLEVEL_DEBUG, true, fmt, ##__VA_ARGS__)
 > +DECLARE_PER_CPU(unsigned long, tsk_thread_flags_copy);
-
-gcc output:
-
-In file included from ./arch/x86/include/asm/apic.h:6,
-                 from arch/x86/kernel/apic/apic_noop.c:14:
-./include/linux/isolation.h:58:32: error: unknown type name 'tsk_thread_flags_copy'
- DECLARE_PER_CPU(unsigned long, tsk_thread_flags_copy);
-                                ^~~~~~~~~~~~~~~~~~~~~
-
-My fix:
-
-iff --git a/include/linux/isolation.h b/include/linux/isolation.h
-index 6bd71c67f10f..a392abed304b 100644
---- a/include/linux/isolation.h
-+++ b/include/linux/isolation.h
-@@ -55,7 +55,7 @@ int task_isolation_message(int cpu, int level, bool supp, const char *fmt, ...);
-        task_isolation_message(cpu, LOGLEVEL_INFO, true, fmt, ##__VA_ARGS__)
- #define pr_task_isol_debug_supp(cpu, fmt, ...)                 \
-        task_isolation_message(cpu, LOGLEVEL_DEBUG, true, fmt, ##__VA_ARGS__)
--DECLARE_PER_CPU(unsigned long, tsk_thread_flags_copy);
-+//DECLARE_PER_CPU(unsigned long, tsk_thread_flags_copy);
- extern cpumask_var_t task_isolation_map;
- 
- /**
-
 > +extern cpumask_var_t task_isolation_map;
 > +
 > +/**
@@ -323,21 +313,24 @@ index 6bd71c67f10f..a392abed304b 100644
 > +/**
 > + * task_isolation_start() - attempt to actually start task isolation
 > + *
-> + * This function should be invoked as the last thing prior to returning to
+> + * This function should be invoked as the last thing prior to returning =
+to
 > + * user space if TIF_TASK_ISOLATION is set in the thread_info flags.  It
 > + * will attempt to quiesce the core and enter task-isolation mode.  If it
-> + * fails, it will reset the system call return value to an error code that
+> + * fails, it will reset the system call return value to an error code th=
+at
 > + * indicates the failure mode.
 > + */
 > +extern void task_isolation_start(void);
 > +
 > +/**
-> + * is_isolation_cpu() - check if CPU is intended for running isolated tasks.
+> + * is_isolation_cpu() - check if CPU is intended for running isolated ta=
+sks.
 > + * @cpu:	CPU to check.
 > + */
 > +static inline bool is_isolation_cpu(int cpu)
 > +{
-> +	return task_isolation_map != NULL &&
+> +	return task_isolation_map !=3D NULL &&
 > +		cpumask_test_cpu(cpu, task_isolation_map);
 > +}
 > +
@@ -355,7 +348,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +extern void task_isolation_cpumask(struct cpumask *mask);
 > +
 > +/**
-> + * task_isolation_clear_cpumask() - clear CPUs currently running isolated tasks
+> + * task_isolation_clear_cpumask() - clear CPUs currently running isolate=
+d tasks
 > + * @mask:      Mask to modify.
 > + */
 > +extern void task_isolation_clear_cpumask(struct cpumask *mask);
@@ -364,7 +358,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * task_isolation_syscall() - report a syscall from an isolated task
 > + * @nr:		The syscall number.
 > + *
-> + * This routine should be invoked at syscall entry if TIF_TASK_ISOLATION is
+> + * This routine should be invoked at syscall entry if TIF_TASK_ISOLATION=
+ is
 > + * set in the thread_info flags.  It checks for valid syscalls,
 > + * specifically prctl() with PR_TASK_ISOLATION, exit(), and exit_group().
 > + * For any other syscall it will raise a signal and return failure.
@@ -379,9 +374,12 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * @...:	Format arguments, if any.
 > + *
 > + * This routine should be invoked at any exception or IRQ if
-> + * TIF_TASK_ISOLATION is set in the thread_info flags.  It is not necessary
-> + * to invoke it if the exception will generate a signal anyway (e.g. a bad
-> + * page fault), and in that case it is preferable not to invoke it but just
+> + * TIF_TASK_ISOLATION is set in the thread_info flags.  It is not necess=
+ary
+> + * to invoke it if the exception will generate a signal anyway (e.g. a b=
+ad
+> + * page fault), and in that case it is preferable not to invoke it but j=
+ust
 > + * rely on the standard Linux signal.  The macro task_isolation_syscall()
 > + * wraps the TIF_TASK_ISOLATION flag test to simplify the caller code.
 > + */
@@ -393,16 +391,20 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	} while (0)
 > +
 > +/**
-> + * task_isolation_remote() - report a remote interrupt of an isolated task
+> + * task_isolation_remote() - report a remote interrupt of an isolated ta=
+sk
 > + * @cpu:	The remote cpu that is about to be interrupted.
 > + * @fmt:	A format string describing the interrupt
 > + * @...:	Format arguments, if any.
 > + *
 > + * This routine should be invoked any time a remote IPI or other type of
-> + * interrupt is being delivered to another cpu. The function will check to
-> + * see if the target core is running a task-isolation task, and generate a
+> + * interrupt is being delivered to another cpu. The function will check =
+to
+> + * see if the target core is running a task-isolation task, and generate=
+ a
 > + * diagnostic on the console if so; in addition, we tag the task so it
-> + * doesn't generate another diagnostic when the interrupt actually arrives.
+> + * doesn't generate another diagnostic when the interrupt actually arriv=
+es.
 > + * Generating a diagnostic remotely yields a clearer indication of what
 > + * happened then just reporting only when the remote core is interrupted.
 > + *
@@ -423,15 +425,18 @@ index 6bd71c67f10f..a392abed304b 100644
 > +					  const char *fmt, ...);
 > +
 > +/**
-> + * _task_isolation_signal() - disable task isolation when signal is pending
+> + * _task_isolation_signal() - disable task isolation when signal is pend=
+ing
 > + * @task:	The task for which to disable isolation.
 > + *
 > + * This function generates a diagnostic and disables task isolation; it
-> + * should be called if TIF_TASK_ISOLATION is set when notifying a task of a
+> + * should be called if TIF_TASK_ISOLATION is set when notifying a task o=
+f a
 > + * pending signal.  The task_isolation_interrupt() function normally
 > + * generates a diagnostic for events that just interrupt a task without
 > + * generating a signal; here we need to hook the paths that correspond to
-> + * interrupts that do generate a signal.  The macro task_isolation_signal()
+> + * interrupts that do generate a signal.  The macro task_isolation_signa=
+l()
 > + * wraps the TIF_TASK_ISOLATION flag test to simplify the caller code.
 > + */
 > +extern void _task_isolation_signal(struct task_struct *task);
@@ -444,12 +449,15 @@ index 6bd71c67f10f..a392abed304b 100644
 > +/**
 > + * task_isolation_user_exit() - debug all user_exit calls
 > + *
-> + * By default, we don't generate an exception in the low-level user_exit()
+> + * By default, we don't generate an exception in the low-level user_exit=
+()
 > + * code, because programs lose the ability to disable task isolation: the
 > + * user_exit() hook will cause a signal prior to task_isolation_syscall()
 > + * disabling task isolation.  In addition, it means that we lose all the
-> + * diagnostic info otherwise available from task_isolation_interrupt() hooks
-> + * later in the interrupt-handling process.  But you may enable it here for
+> + * diagnostic info otherwise available from task_isolation_interrupt() h=
+ooks
+> + * later in the interrupt-handling process.  But you may enable it here =
+for
 > + * a special kernel build if you are having undiagnosed userspace jitter.
 > + */
 > +static inline void task_isolation_user_exit(void)
@@ -460,7 +468,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +}
 > +
 > +#else /* !CONFIG_TASK_ISOLATION */
-> +static inline int task_isolation_request(unsigned int flags) { return -EINVAL; }
+> +static inline int task_isolation_request(unsigned int flags) { return -E=
+INVAL; }
 > +static inline void task_isolation_start(void) { }
 > +static inline bool is_isolation_cpu(int cpu) { return 0; }
 > +static inline int task_isolation_on_cpu(int cpu) { return 0; }
@@ -470,8 +479,10 @@ index 6bd71c67f10f..a392abed304b 100644
 > +static inline void task_isolation_check_run_cleanup(void) { }
 > +static inline int task_isolation_syscall(int nr) { return 0; }
 > +static inline void task_isolation_interrupt(const char *fmt, ...) { }
-> +static inline void task_isolation_remote(int cpu, const char *fmt, ...) { }
-> +static inline void task_isolation_remote_cpumask(const struct cpumask *mask,
+> +static inline void task_isolation_remote(int cpu, const char *fmt, ...) =
+{ }
+> +static inline void task_isolation_remote_cpumask(const struct cpumask *m=
+ask,
 > +						 const char *fmt, ...) { }
 > +static inline void task_isolation_signal(struct task_struct *task) { }
 > +static inline void task_isolation_user_exit(void) { }
@@ -490,14 +501,16 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	unsigned short			task_isolation_flags;  /* prctl */
 > +	unsigned short			task_isolation_state;
 > +#endif
->  
+>  =
+
 >  	/*
 >  	 * New fields for task_struct should be added above here, so that
 > diff --git a/include/linux/tick.h b/include/linux/tick.h
 > index 7340613c7eff..27c7c033d5a8 100644
 > --- a/include/linux/tick.h
 > +++ b/include/linux/tick.h
-> @@ -268,6 +268,9 @@ static inline void tick_dep_clear_signal(struct signal_struct *signal,
+> @@ -268,6 +268,9 @@ static inline void tick_dep_clear_signal(struct signa=
+l_struct *signal,
 >  extern void tick_nohz_full_kick_cpu(int cpu);
 >  extern void __tick_nohz_task_switch(void);
 >  extern void __init tick_nohz_full_setup(cpumask_var_t cpumask);
@@ -514,7 +527,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > @@ -238,4 +238,10 @@ struct prctl_mm_map {
 >  #define PR_SET_IO_FLUSHER		57
 >  #define PR_GET_IO_FLUSHER		58
->  
+>  =
+
 > +/* Enable task_isolation mode for TASK_ISOLATION kernels. */
 > +#define PR_TASK_ISOLATION		48
 > +# define PR_TASK_ISOLATION_ENABLE	(1 << 0)
@@ -527,9 +541,11 @@ index 6bd71c67f10f..a392abed304b 100644
 > --- a/init/Kconfig
 > +++ b/init/Kconfig
 > @@ -576,6 +576,34 @@ config CPU_ISOLATION
->  
+>  =
+
 >  source "kernel/rcu/Kconfig"
->  
+>  =
+
 > +config HAVE_ARCH_TASK_ISOLATION
 > +	bool
 > +
@@ -565,15 +581,17 @@ index 6bd71c67f10f..a392abed304b 100644
 > index 4cb4130ced32..2f2ae91f90d5 100644
 > --- a/kernel/Makefile
 > +++ b/kernel/Makefile
-> @@ -122,6 +122,8 @@ obj-$(CONFIG_GCC_PLUGIN_STACKLEAK) += stackleak.o
->  KASAN_SANITIZE_stackleak.o := n
->  KCOV_INSTRUMENT_stackleak.o := n
->  
-> +obj-$(CONFIG_TASK_ISOLATION) += isolation.o
+> @@ -122,6 +122,8 @@ obj-$(CONFIG_GCC_PLUGIN_STACKLEAK) +=3D stackleak.o
+>  KASAN_SANITIZE_stackleak.o :=3D n
+>  KCOV_INSTRUMENT_stackleak.o :=3D n
+>  =
+
+> +obj-$(CONFIG_TASK_ISOLATION) +=3D isolation.o
 > +
 >  $(obj)/configs.o: $(obj)/config_data.gz
->  
->  targets += config_data.gz
+>  =
+
+>  targets +=3D config_data.gz
 > diff --git a/kernel/context_tracking.c b/kernel/context_tracking.c
 > index 0296b4bda8f1..e9206736f219 100644
 > --- a/kernel/context_tracking.c
@@ -583,11 +601,12 @@ index 6bd71c67f10f..a392abed304b 100644
 >  #include <linux/export.h>
 >  #include <linux/kprobes.h>
 > +#include <linux/isolation.h>
->  
+>  =
+
 >  #define CREATE_TRACE_POINTS
 >  #include <trace/events/context_tracking.h>
 > @@ -157,6 +158,7 @@ void __context_tracking_exit(enum ctx_state state)
->  			if (state == CONTEXT_USER) {
+>  			if (state =3D=3D CONTEXT_USER) {
 >  				vtime_user_exit(current);
 >  				trace_user_exit(0);
 > +				task_isolation_user_exit();
@@ -630,8 +649,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * returning from sys_prctl() to userspace.
 > + */
 > +enum {
-> +	STATE_NORMAL = 0,	/* Not isolated */
-> +	STATE_ISOLATED = 1	/* In userspace, isolated */
+> +	STATE_NORMAL =3D 0,	/* Not isolated */
+> +	STATE_ISOLATED =3D 1	/* In userspace, isolated */
 > +};
 > +
 > +/*
@@ -650,11 +669,15 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * incremented and decremented by CPU that caused isolation entering or
 > + * exit.
 > + *
-> + * This is necessary because multiple isolation-breaking events may happen
+> + * This is necessary because multiple isolation-breaking events may happ=
+en
 > + * at once (or one as the result of the other), however isolation exit
-> + * may only happen once to transition from isolated to non-isolated state.
-> + * Therefore, if decrementing this counter results in a value less than 0,
-> + * isolation exit procedure can't be started -- it already happened, or is
+> + * may only happen once to transition from isolated to non-isolated stat=
+e.
+> + * Therefore, if decrementing this counter results in a value less than =
+0,
+> + * isolation exit procedure can't be started -- it already happened, or =
+is
 > + * in progress, or isolation is not entered yet.
 > + */
 > +DEFINE_PER_CPU(atomic_t, isol_counter);
@@ -681,14 +704,17 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * cleanup) being attempted at once on a CPU. Normally incrementing of
 > + * this counter is performed from the CPU that caused isolation breaking,
 > + * however decrementing is done from the cleanup procedure, delegated to
-> + * the CPU that is exiting isolation, not from the CPU that caused isolation
+> + * the CPU that is exiting isolation, not from the CPU that caused isola=
+tion
 > + * breaking.
 > + *
 > + * If incrementing this counter while starting isolation exit procedure
 > + * results in a value greater than 0, isolation exiting is already in
 > + * progress, and cleanup did not start yet. This means, counter should be
-> + * decremented back, and isolation exit that is already in progress, should
-> + * be allowed to complete. Otherwise, a new isolation exit procedure should
+> + * decremented back, and isolation exit that is already in progress, sho=
+uld
+> + * be allowed to complete. Otherwise, a new isolation exit procedure sho=
+uld
 > + * be started.
 > + */
 > +DEFINE_PER_CPU(atomic_t, isol_exit_counter);
@@ -702,7 +728,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +cpumask_var_t task_isolation_cleanup_map;
 > +static DEFINE_SPINLOCK(task_isolation_cleanup_lock);
 > +
-> +/* We can run on cpus that are isolated from the scheduler and are nohz_full. */
+> +/* We can run on cpus that are isolated from the scheduler and are nohz_=
+full. */
 > +static int __init task_isolation_init(void)
 > +{
 > +	alloc_bootmem_cpumask_var(&task_isolation_cleanup_map);
@@ -720,7 +747,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +static bool task_isolation_debug;
 > +static int __init task_isolation_debug_func(char *str)
 > +{
-> +	task_isolation_debug = true;
+> +	task_isolation_debug =3D true;
 > +	return 1;
 > +}
 > +__setup("task_isolation_debug", task_isolation_debug_func);
@@ -732,18 +759,18 @@ index 6bd71c67f10f..a392abed304b 100644
 > +static void record_curr_isolated_task(void)
 > +{
 > +	int ind;
-> +	int cpu = smp_processor_id();
-> +	struct isol_task_desc *desc = &per_cpu(isol_task_descs, cpu);
-> +	struct task_struct *task = current;
+> +	int cpu =3D smp_processor_id();
+> +	struct isol_task_desc *desc =3D &per_cpu(isol_task_descs, cpu);
+> +	struct task_struct *task =3D current;
 > +
 > +	/* Finish everything before recording current task */
 > +	smp_mb();
-> +	ind = atomic_inc_return(&desc->curr_index_wr) & 1;
-> +	desc->comm[ind][sizeof(task->comm) - 1] = '\0';
+> +	ind =3D atomic_inc_return(&desc->curr_index_wr) & 1;
+> +	desc->comm[ind][sizeof(task->comm) - 1] =3D '\0';
 > +	memcpy(desc->comm[ind], task->comm, sizeof(task->comm) - 1);
-> +	desc->pid[ind] = task->pid;
-> +	desc->tgid[ind] = task->tgid;
-> +	desc->warned[ind] = false;
+> +	desc->pid[ind] =3D task->pid;
+> +	desc->tgid[ind] =3D task->tgid;
+> +	desc->warned[ind] =3D false;
 > +	/* Write everything, to be seen by other CPUs */
 > +	smp_mb();
 > +	atomic_inc(&desc->curr_index);
@@ -764,7 +791,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > + * target CPU number, just not the correct description of which task
 > + * ended up losing isolation.
 > + */
-> +int task_isolation_message(int cpu, int level, bool supp, const char *fmt, ...)
+> +int task_isolation_message(int cpu, int level, bool supp, const char *fm=
+t, ...)
 > +{
 > +	struct isol_task_desc *desc;
 > +	struct task_struct *task;
@@ -773,11 +801,11 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	char buf[200];
 > +	int curr_cpu, ind_counter, ind_counter_old, ind;
 > +
-> +	curr_cpu = get_cpu();
-> +	desc = &per_cpu(isol_task_descs, cpu);
-> +	ind_counter = atomic_read(&desc->curr_index);
+> +	curr_cpu =3D get_cpu();
+> +	desc =3D &per_cpu(isol_task_descs, cpu);
+> +	ind_counter =3D atomic_read(&desc->curr_index);
 > +
-> +	if (curr_cpu == cpu) {
+> +	if (curr_cpu =3D=3D cpu) {
 > +		/*
 > +		 * Message is for the current CPU so current
 > +		 * task_struct should be used instead of cached
@@ -789,7 +817,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +		 * always relevant because the message is about
 > +		 * interrupting a task.
 > +		 */
-> +		ind = ind_counter & 1;
+> +		ind =3D ind_counter & 1;
 > +		if (supp && desc->warned[ind]) {
 > +			/*
 > +			 * If supp is true, skip the message if the
@@ -807,7 +835,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +			put_cpu();
 > +			return 0;
 > +		}
-> +		task = current;
+> +		task =3D current;
 > +		snprintf(buf_prefix, sizeof(buf_prefix),
 > +			 "isolation %s/%d/%d (cpu %d)",
 > +			 task->comm, task->tgid, task->pid, cpu);
@@ -826,21 +854,21 @@ index 6bd71c67f10f..a392abed304b 100644
 > +		do {
 > +			/* Make sure we are reading up to date values */
 > +			smp_mb();
-> +			ind = ind_counter & 1;
+> +			ind =3D ind_counter & 1;
 > +			snprintf(buf_prefix, sizeof(buf_prefix),
 > +				 "isolation %s/%d/%d (cpu %d)",
 > +				 desc->comm[ind], desc->tgid[ind],
 > +				 desc->pid[ind], cpu);
-> +			desc->warned[ind] = true;
-> +			ind_counter_old = ind_counter;
+> +			desc->warned[ind] =3D true;
+> +			ind_counter_old =3D ind_counter;
 > +			/* Record the warned flag, then re-read descriptor */
 > +			smp_mb();
-> +			ind_counter = atomic_read(&desc->curr_index);
+> +			ind_counter =3D atomic_read(&desc->curr_index);
 > +			/*
 > +			 * If the counter changed, something was updated, so
 > +			 * repeat everything to get the current data
 > +			 */
-> +		} while (ind_counter != ind_counter_old);
+> +		} while (ind_counter !=3D ind_counter_old);
 > +	}
 > +
 > +	va_start(args, fmt);
@@ -897,17 +925,17 @@ index 6bd71c67f10f..a392abed304b 100644
 > + */
 > +int task_isolation_request(unsigned int flags)
 > +{
-> +	struct task_struct *task = current;
+> +	struct task_struct *task =3D current;
 > +
 > +	/*
 > +	 * The task isolation flags should always be cleared just by
 > +	 * virtue of having entered the kernel.
 > +	 */
 > +	WARN_ON_ONCE(test_tsk_thread_flag(task, TIF_TASK_ISOLATION));
-> +	WARN_ON_ONCE(task->task_isolation_flags != 0);
-> +	WARN_ON_ONCE(task->task_isolation_state != STATE_NORMAL);
+> +	WARN_ON_ONCE(task->task_isolation_flags !=3D 0);
+> +	WARN_ON_ONCE(task->task_isolation_state !=3D STATE_NORMAL);
 > +
-> +	task->task_isolation_flags = flags;
+> +	task->task_isolation_flags =3D flags;
 > +	if (!(task->task_isolation_flags & PR_TASK_ISOLATION_ENABLE))
 > +		return 0;
 > +
@@ -927,7 +955,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +}
 > +
 > +/*
-> + * Perform actions that should be done immediately on exit from isolation.
+> + * Perform actions that should be done immediately on exit from isolatio=
+n.
 > + */
 > +static void fast_task_isolation_cpu_cleanup(void *info)
 > +{
@@ -938,7 +967,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	 * This task is no longer isolated (and if by any chance this
 > +	 * is the wrong task, it's already not isolated)
 > +	 */
-> +	current->task_isolation_flags = 0;
+> +	current->task_isolation_flags =3D 0;
 > +	clear_tsk_thread_flag(current, TIF_TASK_ISOLATION);
 > +
 > +	/* Run the rest of cleanup later */
@@ -955,8 +984,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	int cpu, this_cpu;
 > +	unsigned long flags;
 > +
-> +	this_cpu = get_cpu();
-> +	cpu = task_cpu(p);
+> +	this_cpu =3D get_cpu();
+> +	cpu =3D task_cpu(p);
 > +	if (atomic_inc_return(&per_cpu(isol_exit_counter, cpu)) > 1) {
 > +		/* Already exiting isolation */
 > +		atomic_dec(&per_cpu(isol_exit_counter, cpu));
@@ -964,8 +993,8 @@ index 6bd71c67f10f..a392abed304b 100644
 > +		return;
 > +	}
 > +
-> +	if (p == current) {
-> +		p->task_isolation_state = STATE_NORMAL;
+> +	if (p =3D=3D current) {
+> +		p->task_isolation_state =3D STATE_NORMAL;
 > +		fast_task_isolation_cpu_cleanup(NULL);
 > +		task_isolation_cpu_cleanup();
 > +		if (atomic_dec_return(&per_cpu(isol_counter, cpu)) < 0) {
@@ -993,10 +1022,10 @@ index 6bd71c67f10f..a392abed304b 100644
 > +		 * isolated task is running
 > +		 * isol_exit_counter will be decremented from there as well.
 > +		 */
-> +		per_cpu(isol_break_csd, cpu).func =
+> +		per_cpu(isol_break_csd, cpu).func =3D
 > +		    fast_task_isolation_cpu_cleanup;
-> +		per_cpu(isol_break_csd, cpu).info = NULL;
-> +		per_cpu(isol_break_csd, cpu).flags = 0;
+> +		per_cpu(isol_break_csd, cpu).info =3D NULL;
+> +		per_cpu(isol_break_csd, cpu).flags =3D 0;
 > +		smp_call_function_single_async(cpu,
 > +					       &per_cpu(isol_break_csd, cpu));
 > +		put_cpu();
@@ -1027,7 +1056,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	 * isolation at this point).  We are clearly not on the path back
 > +	 * from the prctl() so we don't touch the syscall return value.
 > +	 */
-> +	if (WARN_ON_ONCE(current->task_isolation_state != STATE_NORMAL)) {
+> +	if (WARN_ON_ONCE(current->task_isolation_state !=3D STATE_NORMAL)) {
 > +		/* Increment counter, this will allow isolation breaking */
 > +		if (atomic_inc_return(&per_cpu(isol_counter,
 > +					      smp_processor_id())) > 1) {
@@ -1043,20 +1072,20 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	 * In principle this could be remotely modified between the prctl()
 > +	 * and the return to userspace, so we have to check it here.
 > +	 */
-> +	if (current->nr_cpus_allowed != 1 ||
+> +	if (current->nr_cpus_allowed !=3D 1 ||
 > +	    !is_isolation_cpu(smp_processor_id())) {
-> +		error = -EINVAL;
+> +		error =3D -EINVAL;
 > +		goto error;
 > +	}
 > +
 > +	/* If the vmstat delayed work is not canceled, we have to try again. */
 > +	if (!vmstat_idle()) {
-> +		error = -EAGAIN;
+> +		error =3D -EAGAIN;
 > +		goto error;
 > +	}
 > +
 > +	/* Try to stop the dynamic tick. */
-> +	error = try_stop_full_tick();
+> +	error =3D try_stop_full_tick();
 > +	if (error)
 > +		goto error;
 > +
@@ -1076,7 +1105,7 @@ index 6bd71c67f10f..a392abed304b 100644
 > +	this_cpu_write(tsk_thread_flags_cache,
 > +		       READ_ONCE(task_thread_info(current)->flags));
 > +
-> +	current->task_isolation_state = STATE_ISOLATED;
+> +	current->task_isolation_state =3D STATE_ISOLATED;
 > +	return;
 > +
 > +error:
@@ -1092,9 +1121,9 @@ index 6bd71c67f10f..a392abed304b 100644
 > +/* Stop task isolation on the remote task and send it a signal. */
 > +static void send_isolation_signal(struct task_struct *task)
 > +{
-> +	int flags = task->task_isolation_flags;
-> +	kernel_siginfo_t info = {
-> +		.si_signo = PR_TASK_ISOLATION_GET_SIG(flags) ?: SIGKILL,
+> +	int flags =3D task->task_isolation_flags;
+> +	kernel_siginfo_t info =3D {
+> +		.si_signo =3D PR_TASK_ISOLATION_GET_SIG(flags) ?: SIGKILL,
 > +	};
 > +
 > +	stop_isolation(task);
@@ -1105,405 +1134,68 @@ index 6bd71c67f10f..a392abed304b 100644
 > +static bool is_acceptable_syscall(int syscall)
 > +{
 > +	/* No need to incur an isolation signal if we are just exiting. */
-> +	if (syscall == __NR_exit || syscall == __NR_exit_group)
+> +	if (syscall =3D=3D __NR_exit || syscall =3D=3D __NR_exit_group)
 > +		return true;
 > +
 > +	/* Check to see if it's the prctl for isolation. */
-> +	if (syscall == __NR_prctl) {
+> +	if (syscall =3D=3D __NR_prctl) {
 > +		unsigned long arg[SYSCALL_MAX_ARGS];
-> +
-> +		syscall_get_arguments(current, current_pt_regs(), arg);
-> +		if (arg[0] == PR_TASK_ISOLATION)
-> +			return true;
-> +	}
-> +
-> +	return false;
-> +}
-> +
-> +/*
-> + * This routine is called from syscall entry, prevents most syscalls
-> + * from executing, and if needed raises a signal to notify the process.
-> + *
-> + * Note that we have to stop isolation before we even print a message
-> + * here, since otherwise we might end up reporting an interrupt due to
-> + * kicking the printk handling code, rather than reporting the true
-> + * cause of interrupt here.
-> + *
-> + * The message is not suppressed by previous remotely triggered
-> + * messages.
-> + */
-> +int task_isolation_syscall(int syscall)
-> +{
-> +	struct task_struct *task = current;
-> +
-> +	if (is_acceptable_syscall(syscall)) {
-> +		stop_isolation(task);
-> +		return 0;
-> +	}
-> +
-> +	send_isolation_signal(task);
-> +
-> +	pr_task_isol_warn(smp_processor_id(),
-> +			  "task_isolation lost due to syscall %d\n",
-> +			  syscall);
-> +	debug_dump_stack();
-> +
-> +	syscall_set_return_value(task, current_pt_regs(), -ERESTARTNOINTR, -1);
-> +	return -1;
-> +}
-> +
-> +/*
-> + * This routine is called from any exception or irq that doesn't
-> + * otherwise trigger a signal to the user process (e.g. page fault).
-> + *
-> + * Messages will be suppressed if there is already a reported remote
-> + * cause for isolation breaking, so we don't generate multiple
-> + * confusingly similar messages about the same event.
-> + */
-> +void _task_isolation_interrupt(const char *fmt, ...)
-> +{
-> +	struct task_struct *task = current;
-> +	va_list args;
-> +	char buf[100];
-> +
-> +	/* RCU should have been enabled prior to this point. */
-> +	RCU_LOCKDEP_WARN(!rcu_is_watching(), "kernel entry without RCU");
-> +
-> +	/* Are we exiting isolation already? */
-> +	if (atomic_read(&per_cpu(isol_exit_counter, smp_processor_id())) != 0) {
-> +		task->task_isolation_state = STATE_NORMAL;
-> +		return;
-> +	}
-> +	/*
-> +	 * Avoid reporting interrupts that happen after we have prctl'ed
-> +	 * to enable isolation, but before we have returned to userspace.
-> +	 */
-> +	if (task->task_isolation_state == STATE_NORMAL)
-> +		return;
-> +
-> +	va_start(args, fmt);
-> +	vsnprintf(buf, sizeof(buf), fmt, args);
-> +	va_end(args);
-> +
-> +	/* Handle NMIs minimally, since we can't send a signal. */
-> +	if (in_nmi()) {
-> +		pr_task_isol_err(smp_processor_id(),
-> +				 "isolation: in NMI; not delivering signal\n");
-> +	} else {
-> +		send_isolation_signal(task);
-> +	}
-> +
-> +	if (pr_task_isol_warn_supp(smp_processor_id(),
-> +				   "task_isolation lost due to %s\n", buf))
-> +		debug_dump_stack();
-> +}
-> +
-> +/*
-> + * Called before we wake up a task that has a signal to process.
-> + * Needs to be done to handle interrupts that trigger signals, which
-> + * we don't catch with task_isolation_interrupt() hooks.
-> + *
-> + * This message is also suppressed if there was already a remotely
-> + * caused message about the same isolation breaking event.
-> + */
-> +void _task_isolation_signal(struct task_struct *task)
-> +{
-> +	struct isol_task_desc *desc;
-> +	int ind, cpu;
-> +	bool do_warn = (task->task_isolation_state == STATE_ISOLATED);
-> +
-> +	cpu = task_cpu(task);
-> +	desc = &per_cpu(isol_task_descs, cpu);
-> +	ind = atomic_read(&desc->curr_index) & 1;
-> +	if (desc->warned[ind])
-> +		do_warn = false;
-> +
-> +	stop_isolation(task);
-> +
-> +	if (do_warn) {
-> +		pr_warn("isolation: %s/%d/%d (cpu %d): task_isolation lost due to signal\n",
-> +			task->comm, task->tgid, task->pid, cpu);
-> +		debug_dump_stack();
-> +	}
-> +}
-> +
-> +/*
-> + * Generate a stack backtrace if we are going to interrupt another task
-> + * isolation process.
-> + */
-> +void task_isolation_remote(int cpu, const char *fmt, ...)
-> +{
-> +	struct task_struct *curr_task;
-> +	va_list args;
-> +	char buf[200];
-> +
-> +	if (!is_isolation_cpu(cpu) || !task_isolation_on_cpu(cpu))
-> +		return;
-> +
-> +	curr_task = current;
-> +
-> +	va_start(args, fmt);
-> +	vsnprintf(buf, sizeof(buf), fmt, args);
-> +	va_end(args);
-> +	if (pr_task_isol_warn(cpu,
-> +			      "task_isolation lost due to %s by %s/%d/%d on cpu %d\n",
-> +			      buf,
-> +			      curr_task->comm, curr_task->tgid,
-> +			      curr_task->pid, smp_processor_id()))
-> +		debug_dump_stack();
-> +}
-> +
-> +/*
-> + * Generate a stack backtrace if any of the cpus in "mask" are running
-> + * task isolation processes.
-> + */
-> +void task_isolation_remote_cpumask(const struct cpumask *mask,
-> +				   const char *fmt, ...)
-> +{
-> +	struct task_struct *curr_task;
-> +	cpumask_var_t warn_mask;
-> +	va_list args;
-> +	char buf[200];
-> +	int cpu, first_cpu;
-> +
-> +	if (task_isolation_map == NULL ||
-> +		!zalloc_cpumask_var(&warn_mask, GFP_KERNEL))
-> +		return;
-> +
-> +	first_cpu = -1;
-> +	for_each_cpu_and(cpu, mask, task_isolation_map) {
-> +		if (task_isolation_on_cpu(cpu)) {
-> +			if (first_cpu < 0)
-> +				first_cpu = cpu;
-> +			else
-> +				cpumask_set_cpu(cpu, warn_mask);
-> +		}
-> +	}
-> +
-> +	if (first_cpu < 0)
-> +		goto done;
-> +
-> +	curr_task = current;
-> +
-> +	va_start(args, fmt);
-> +	vsnprintf(buf, sizeof(buf), fmt, args);
-> +	va_end(args);
-> +
-> +	if (cpumask_weight(warn_mask) == 0)
-> +		pr_task_isol_warn(first_cpu,
-> +				  "task_isolation lost due to %s by %s/%d/%d on cpu %d\n",
-> +				  buf, curr_task->comm, curr_task->tgid,
-> +				  curr_task->pid, smp_processor_id());
-> +	else
-> +		pr_task_isol_warn(first_cpu,
-> +				  " and cpus %*pbl: task_isolation lost due to %s by %s/%d/%d on cpu %d\n",
-> +				  cpumask_pr_args(warn_mask),
-> +				  buf, curr_task->comm, curr_task->tgid,
-> +				  curr_task->pid, smp_processor_id());
-> +	debug_dump_stack();
-> +
-> +done:
-> +	free_cpumask_var(warn_mask);
-> +}
-> +
-> +/*
-> + * Check if given CPU is running isolated task.
-> + */
-> +int task_isolation_on_cpu(int cpu)
-> +{
-> +	return test_bit(TIF_TASK_ISOLATION,
-> +			&per_cpu(tsk_thread_flags_cache, cpu));
-> +}
-> +
-> +/*
-> + * Set CPUs currently running isolated tasks in CPU mask.
-> + */
-> +void task_isolation_cpumask(struct cpumask *mask)
-> +{
-> +	int cpu;
-> +
-> +	if (task_isolation_map == NULL)
-> +		return;
-> +
-> +	for_each_cpu(cpu, task_isolation_map)
-> +		if (task_isolation_on_cpu(cpu))
-> +			cpumask_set_cpu(cpu, mask);
-> +}
-> +
-> +/*
-> + * Clear CPUs currently running isolated tasks in CPU mask.
-> + */
-> +void task_isolation_clear_cpumask(struct cpumask *mask)
-> +{
-> +	int cpu;
-> +
-> +	if (task_isolation_map == NULL)
-> +		return;
-> +
-> +	for_each_cpu(cpu, task_isolation_map)
-> +		if (task_isolation_on_cpu(cpu))
-> +			cpumask_clear_cpu(cpu, mask);
-> +}
-> +
-> +/*
-> + * Cleanup procedure. The call to this procedure may be delayed.
-> + */
-> +void task_isolation_cpu_cleanup(void)
-> +{
-> +	kick_hrtimer();
-> +}
-> +
-> +/*
-> + * Check if cleanup is scheduled on the current CPU, and if so, run it.
-> + * Intended to be called from notify_resume() or another such callback
-> + * on the target CPU.
-> + */
-> +void task_isolation_check_run_cleanup(void)
-> +{
-> +	int cpu;
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&task_isolation_cleanup_lock, flags);
-> +
-> +	cpu = smp_processor_id();
-> +
-> +	if (cpumask_test_cpu(cpu, task_isolation_cleanup_map)) {
-> +		cpumask_clear_cpu(cpu, task_isolation_cleanup_map);
-> +		spin_unlock_irqrestore(&task_isolation_cleanup_lock, flags);
-> +		task_isolation_cpu_cleanup();
-> +	} else
-> +		spin_unlock_irqrestore(&task_isolation_cleanup_lock, flags);
-> +}
-> diff --git a/kernel/signal.c b/kernel/signal.c
-> index 5b2396350dd1..1df57e38c361 100644
-> --- a/kernel/signal.c
-> +++ b/kernel/signal.c
-> @@ -46,6 +46,7 @@
->  #include <linux/livepatch.h>
->  #include <linux/cgroup.h>
->  #include <linux/audit.h>
-> +#include <linux/isolation.h>
->  
->  #define CREATE_TRACE_POINTS
->  #include <trace/events/signal.h>
-> @@ -758,6 +759,7 @@ static int dequeue_synchronous_signal(kernel_siginfo_t *info)
->   */
->  void signal_wake_up_state(struct task_struct *t, unsigned int state)
->  {
-> +	task_isolation_signal(t);
->  	set_tsk_thread_flag(t, TIF_SIGPENDING);
->  	/*
->  	 * TASK_WAKEKILL also means wake it up in the stopped/traced/killable
-> diff --git a/kernel/sys.c b/kernel/sys.c
-> index f9bc5c303e3f..0a4059a8c4f9 100644
-> --- a/kernel/sys.c
-> +++ b/kernel/sys.c
-> @@ -42,6 +42,7 @@
->  #include <linux/syscore_ops.h>
->  #include <linux/version.h>
->  #include <linux/ctype.h>
-> +#include <linux/isolation.h>
->  
->  #include <linux/compat.h>
->  #include <linux/syscalls.h>
-> @@ -2513,6 +2514,11 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
->  
->  		error = (current->flags & PR_IO_FLUSHER) == PR_IO_FLUSHER;
->  		break;
-> +	case PR_TASK_ISOLATION:
-> +		if (arg3 || arg4 || arg5)
-> +			return -EINVAL;
-> +		error = task_isolation_request(arg2);
-> +		break;
->  	default:
->  		error = -EINVAL;
->  		break;
-> diff --git a/kernel/time/hrtimer.c b/kernel/time/hrtimer.c
-> index 3a609e7344f3..5bb98f39bde6 100644
-> --- a/kernel/time/hrtimer.c
-> +++ b/kernel/time/hrtimer.c
-> @@ -30,6 +30,7 @@
->  #include <linux/syscalls.h>
->  #include <linux/interrupt.h>
->  #include <linux/tick.h>
-> +#include <linux/isolation.h>
->  #include <linux/err.h>
->  #include <linux/debugobjects.h>
->  #include <linux/sched/signal.h>
-> @@ -721,6 +722,19 @@ static void retrigger_next_event(void *arg)
->  	raw_spin_unlock(&base->lock);
->  }
->  
-> +#ifdef CONFIG_TASK_ISOLATION
-> +void kick_hrtimer(void)
-> +{
-> +	unsigned long flags;
-> +
-> +	preempt_disable();
-> +	local_irq_save(flags);
-> +	retrigger_next_event(NULL);
-> +	local_irq_restore(flags);
-> +	preempt_enable();
-> +}
-> +#endif
-> +
->  /*
->   * Switch to high resolution mode
->   */
-> @@ -868,8 +882,21 @@ static void hrtimer_reprogram(struct hrtimer *timer, bool reprogram)
->  void clock_was_set(void)
->  {
->  #ifdef CONFIG_HIGH_RES_TIMERS
-> +#ifdef CONFIG_TASK_ISOLATION
-> +	struct cpumask mask;
-> +
-> +	cpumask_clear(&mask);
-> +	task_isolation_cpumask(&mask);
-> +	cpumask_complement(&mask, &mask);
-> +	/*
-> +	 * Retrigger the CPU local events everywhere except CPUs
-> +	 * running isolated tasks.
-> +	 */
-> +	on_each_cpu_mask(&mask, retrigger_next_event, NULL, 1);
-> +#else
->  	/* Retrigger the CPU local events everywhere */
->  	on_each_cpu(retrigger_next_event, NULL, 1);
-> +#endif
->  #endif
->  	timerfd_clock_was_set();
->  }
-> diff --git a/kernel/time/tick-sched.c b/kernel/time/tick-sched.c
-> index a792d21cac64..1d4dec9d3ee7 100644
-> --- a/kernel/time/tick-sched.c
-> +++ b/kernel/time/tick-sched.c
-> @@ -882,6 +882,24 @@ static void tick_nohz_full_update_tick(struct tick_sched *ts)
->  #endif
->  }
->  
-> +#ifdef CONFIG_TASK_ISOLATION
-> +int try_stop_full_tick(void)
-> +{
-> +	int cpu = smp_processor_id();
-> +	struct tick_sched *ts = this_cpu_ptr(&tick_cpu_sched);
-> +
-> +	/* For an unstable clock, we should return a permanent error code. */
-> +	if (atomic_read(&tick_dep_mask) & TICK_DEP_MASK_CLOCK_UNSTABLE)
-> +		return -EINVAL;
-> +
-> +	if (!can_stop_full_tick(cpu, ts))
-> +		return -EAGAIN;
-> +
-> +	tick_nohz_stop_sched_tick(ts, cpu);
-> +	return 0;
-> +}
-> +#endif
-> +
->  static bool can_stop_idle_tick(int cpu, struct tick_sched *ts)
->  {
->  	/*
-> -- 
-> 2.20.1
-> 
+
+gcc output:
+
+kernel/isolation.c: In function 'is_acceptable_syscall':
+kernel/isolation.c:511:21: error: 'SYSCALL_MAX_ARGS' undeclared (first use =
+in this function); did you mean 'SYSCALL_ALIAS'?
+   unsigned long arg[SYSCALL_MAX_ARGS];
+                     ^~~~~~~~~~~~~~~~
+                     SYSCALL_ALIAS
+kernel/isolation.c:511:21: note: each undeclared identifier is reported onl=
+y once for each function it appears in
+kernel/isolation.c:511:17: warning: unused variable 'arg' [-Wunused-variabl=
+e]
+   unsigned long arg[SYSCALL_MAX_ARGS];
+                 ^~~
+make[1]: *** [scripts/Makefile.build:267: kernel/isolation.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1683: kernel] Error 2
+
+quick search: =
+
+
+grep -IHrn SYSCALL_MAX_ARGS
+arch/arm/include/asm/syscall.h:54:#define SYSCALL_MAX_ARGS 7
+arch/arm64/include/asm/syscall.h:53:#define SYSCALL_MAX_ARGS 6
+arch/xtensa/include/asm/syscall.h:57:#define SYSCALL_MAX_ARGS 6
+arch/x86/include/asm/syscall.h:91:#define SYSCALL_MAX_ARGS 6
+arch/nds32/include/asm/syscall.h:125:#define SYSCALL_MAX_ARGS 6
+kernel/isolation.c:511:         unsigned long arg[SYSCALL_MAX_ARGS];
+
+my fix:
+
+diff --git a/arch/x86/include/asm/syscall.h b/arch/x86/include/asm/syscall.h
+index 8db3fdb6102e..b9de03a24e4f 100644
+--- a/arch/x86/include/asm/syscall.h
++++ b/arch/x86/include/asm/syscall.h
+@@ -88,6 +88,8 @@ static inline void syscall_set_return_value(struct task_s=
+truct *task,
+        regs->ax =3D (long) error ?: val;
+ }
+ =
+
++#define SYSCALL_MAX_ARGS 6
++
+ #ifdef CONFIG_X86_32
+ =
+
+ static inline void syscall_get_arguments(struct task_struct *task,
+
+
+
+
+thx,
+
+-- Kevyn-Alexandre Par=E9
+
 
 _______________________________________________
 linux-arm-kernel mailing list
