@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2785119F074
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 08:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822B919F076
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 08:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xq6mXu736T6EIzlsEBNyxFh8tWHSiT+yVyXKH3DZ9xU=; b=HmEZ7aMtdnpdzI
-	qHxWPTrQFaTQ6/CoO4fbaJg7r+GTxSqeSyV+ixYtghvNtGFTvUoD0X4CV848ij0MAMSuKAoxyyujO
-	dQpv312/eT3BVX48LdDK2AXeP6ESQqpijahD/hCqbP9SX6hnoK4U4GHwaSs9U6JeDbl2Zigo5+XDt
-	cpJEnh5Db8VNKQjfCLjZjpbQGiVZVakYXzWo0ZmWewkTpZg+hBFvRMFHzB16gqQSvJGVZdljnR44C
-	5VvXWAt2COdwGobXZ2gJlnWUvPqqReBhS6fj+Xx1cBbXSqa83a6eZbMRhNP57i9a0E0VzH9FgMfZa
-	f8+ob+9MLVmehxNiOe6w==;
+	List-Owner; bh=Lqb+diL7hHT6jvhTkluhei7Ib0jYMxmLTn+VnOGYPaM=; b=kil+9Jao4qf17X
+	fW7N17GeTCBKVvcE3l8pvACGHpCVU7UVWrYIRJJKoNv5Z7b1vRMK+CwZQ2YeDvNKkaF2Cfa6c65Tm
+	gkHSjU42yFlkpGQnL96d6jxp8f03jeX90Sl75pjZ8BGSHlXH+KnRm2iq8mxQbU628Ztv3Ue0Q5nW8
+	LcpYDkIWQF42hla/c5WRNOZ3Wt68Z7wrM42HH/BV6R6V2jcOVV1mmhDxWeiw3kArjRZMyj3EP/VV0
+	iK+/37DSs+tEfWCdkiyT1RAF5lPLt0lTIJjF4WRJfAye5fVHMCKfIQmEkr50I0EaYIG9SfEEu3f5y
+	wGNSKbxin/yPdWNz/x6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLLXi-00088k-4r; Mon, 06 Apr 2020 06:47:34 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jLLaL-0001eC-33; Mon, 06 Apr 2020 06:50:17 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLLXb-00088N-Bx
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 06:47:29 +0000
-Received: by mail-pg1-x541.google.com with SMTP id o26so7071020pgc.12
+ id 1jLLa8-0000d8-Au
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 06:50:06 +0000
+Received: by mail-pg1-x543.google.com with SMTP id k5so7107743pga.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 05 Apr 2020 23:47:27 -0700 (PDT)
+ Sun, 05 Apr 2020 23:50:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=7IbKIaDYv+A6RC+8Z7mXi6t6xd0xICoZSFFChfwjGhs=;
- b=SlkYekdhHRkmDMtebWAZ4kHi24vIhUbGq/Pzcs6FC70yFE4n/BWvBsQe64NJw93klR
- 8lOYIO16Pzo8sptdCkjDKz5dzojHcmymjosQ/J4/Wa8uKNkoakjexDLenSmw4T3frbTE
- 8yKgzDq5wYXpasb4vFYoOB0uPd5Q2HmWVb3vYj4q4OTSBqt+kEn6Wu5u39OKDkwRJ2xQ
- dkW49QLFCdQYb7UJlslbKn1rfbyPqXSlrY1dump2wXolSJUdht9zjIC2FxEYePeAoLHu
- UxysWoUx+iB9S+ac2wNZ6mmzI1XUxzb470oobHkwP9BlhJFMLnwbw1MMD2eA1NgJMTId
- 78JA==
+ bh=MMPUB+HHzN7dKOqTTqqjytQFC/PcyTkIQMgPj4MylwE=;
+ b=ZnpiPztDgsYw+9vXL2teT93l9k68RjczlGHtwKTcttqmHbOujrN8ZLPXwUCacPhrQk
+ xlrdOCrV1EHZq5UWJ0gSnPq92uV9uRH8eeJ3egSo9/R19/5C8Ss/1Qpv17FrkuQpzQdJ
+ R17KaGKFx4PVHv+2HGS/AkyySzwT1+mYG2GA4S8GlM0cvqqPiDjl6Z4cYa0ciqX0ZaUW
+ kTjrUZEddF78E6elPmevDgZtQU6367DonkkPeAkPs1HcTOl2SUEjbc1MH6QQdc5rikva
+ 1ZSPii/RuYNN7sKKDM2fGOyyKumqOIbYcz6cKUFEBL5OYxvoyPREFEl1SlPoxPt+j/Es
+ FJWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7IbKIaDYv+A6RC+8Z7mXi6t6xd0xICoZSFFChfwjGhs=;
- b=VtypXsagqeamc6f42odhu+sGvesvs2swX9aVXSNN8Fa61rWDzyb0k94HZjwgbszYOa
- 3JZbOV8adK+mQvkFuNVrzKl4rtiU4iUXLUaCrpj79XDk2YCpcXiDX15Hf8vcY5bwSA9H
- hT04rkqxOCxKqJJuCjnsqod9Ykg/EFDgTQzMIhF5rTFjgWzwuYAUWwHbexgb9F8xqOPo
- NYGyin7fF+tbF69bVFSq9Q4730B801B8ggb4m40ZIohbP9HQH0mB5JxyiL0zeMn4NU3x
- 0LTqF4nwYAnjZZbWVsk3UcmKQbIjFaLUySkdcxMUhnmGTgU8SzrgKcuO45hxhBgmUYVr
- gfKA==
-X-Gm-Message-State: AGi0PuZrQ0HH4wgSLyIWjp5iQpzkhTGoNrzqtmZr1+ntWU1GoQp3sZYD
- KLABnPKIbY8Ub++aNCpRidSjfTby7EvI
-X-Google-Smtp-Source: APiQypIiPabfsmyC0r/Ej0hIZMDFRtGEXLWo0N70ElIRI0xilj6DqQDSVD766uvUgCT8ey5IO9JHIg==
-X-Received: by 2002:a63:f45:: with SMTP id 5mr19311831pgp.31.1586155646613;
- Sun, 05 Apr 2020 23:47:26 -0700 (PDT)
+ bh=MMPUB+HHzN7dKOqTTqqjytQFC/PcyTkIQMgPj4MylwE=;
+ b=qAysOuJKBW5MYzUJ4Igab/a+iMkDEFbQGtCRa0/pPu7ovZDexCkKG9p0raMRoI9YoJ
+ ruWQ6YbnPB6C24iAcgO8n8BBYfjGu2545UZMzrlIAHSbRYdMgVmCM8wFRSCdmHBpGSOx
+ F4ehJszTBbincNG6U6k/qKFXw91amjP3Pi0v+FaE+h2e9yO7Nq5NvewdXjmAuTTo/DMr
+ jE9YQk6c4nPVqn205WHTOD6ok5NhUpepoGC398HgZV0ueGM/AUWDVn336CSbO3S83krt
+ HJdlhU+A8mERWAcK1tT2TCC+xrHnhaVQ8CZVIjSp0xQS66qo7Dx9520fhmIDh7GsA4oN
+ ezoA==
+X-Gm-Message-State: AGi0PuY7Zup1qULX7ngvP5+/251lVmd+oZHwQK3ON/zvX4IEFMI1UD9n
+ X+vnryNfwRq8r+mWnGKg4Ufv
+X-Google-Smtp-Source: APiQypKPJDqADLLcdB+8wh5E+jloFCkTq+rOrF8OZA8T5WTGxGxpOi/+ptvpg/Qra9KNyK/yauiv1w==
+X-Received: by 2002:a63:1d52:: with SMTP id d18mr19243226pgm.443.1586155803350; 
+ Sun, 05 Apr 2020 23:50:03 -0700 (PDT)
 Received: from Mani-XPS-13-9360 ([2409:4072:6e80:687d:9124:eff9:55e8:1727])
- by smtp.gmail.com with ESMTPSA id w24sm11302427pjn.14.2020.04.05.23.47.21
+ by smtp.gmail.com with ESMTPSA id o5sm9894098pgm.70.2020.04.05.23.49.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 05 Apr 2020 23:47:25 -0700 (PDT)
-Date: Mon, 6 Apr 2020 12:17:18 +0530
+ Sun, 05 Apr 2020 23:50:02 -0700 (PDT)
+Date: Mon, 6 Apr 2020 12:19:54 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH V4 10/22] ARM: dts: stm32: Add eMMC attached to SDMMC2 on
- AV96
-Message-ID: <20200406064718.GD2937@Mani-XPS-13-9360>
+Subject: Re: [PATCH V4 11/22] ARM: dts: stm32: Add QSPI NOR on AV96
+Message-ID: <20200406064954.GE2937@Mani-XPS-13-9360>
 References: <20200401132237.60880-1-marex@denx.de>
- <20200401132237.60880-11-marex@denx.de>
+ <20200401132237.60880-12-marex@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200401132237.60880-11-marex@denx.de>
+In-Reply-To: <20200401132237.60880-12-marex@denx.de>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_234727_925307_3E92E8F9 
-X-CRM114-Status: GOOD (  17.52  )
+X-CRM114-CacheID: sfid-20200405_235004_956193_977F6E9B 
+X-CRM114-Status: GOOD (  17.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,9 +108,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 01, 2020 at 03:22:25PM +0200, Marek Vasut wrote:
-> Add DT node describing the eMMC attached to SDMMC2 controller
-> of the STM32MP1 on DHCOR SoM, which is the SoM soldered on AV96.
+On Wed, Apr 01, 2020 at 03:22:26PM +0200, Marek Vasut wrote:
+> The DH Electronics DHCOR SOM has QSPI NOR on the SoM itself, add it
+> into the DT.
 > 
 > Signed-off-by: Marek Vasut <marex@denx.de>
 
@@ -128,42 +127,51 @@ Mani
 > Cc: linux-stm32@st-md-mailman.stormreply.com
 > To: linux-arm-kernel@lists.infradead.org
 > ---
-> V2: No change
-> V3: Connect Vcc to the enpirion output instead of 3v3 directly
->     Note that this patch now depends on:
->       mmc: mmci: Only call .post_sig_volt_switch if voltage switch happened
+> V2: Use spi-flash in the DT node instead of explicit model name
+> V3: Reduce the SPI controller window to 2 MiB, which is the flash size
 > V4: Rebase on stm32-next
 > ---
->  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
+>  arch/arm/boot/dts/stm32mp157a-avenger96.dts | 20 ++++++++++++++++++++
+>  1 file changed, 20 insertions(+)
 > 
 > diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> index c824ff4e6127..df68768e8a12 100644
+> index df68768e8a12..5831280f78ee 100644
 > --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 > +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-> @@ -336,6 +336,22 @@ &sdmmc1 {
->  	status = "okay";
+> @@ -21,6 +21,7 @@ aliases {
+>  		mmc0 = &sdmmc1;
+>  		serial0 = &uart4;
+>  		serial1 = &uart7;
+> +		spi0 = &qspi;
+>  	};
+>  
+>  	chosen {
+> @@ -312,6 +313,25 @@ &pwr_regulators {
+>  	vdd_3v3_usbfs-supply = <&vdd_usb>;
 >  };
 >  
-> +&sdmmc2 {
-> +	pinctrl-names = "default", "opendrain", "sleep";
-> +	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_b>;
-> +	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_b>;
-> +	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_b>;
-> +	bus-width = <8>;
-> +	mmc-ddr-1_8v;
-> +	no-sd;
-> +	no-sdio;
-> +	non-removable;
-> +	st,neg-edge;
-> +	vmmc-supply = <&v3v3>;
-> +	vqmmc-supply = <&vdd_io>;
+> +&qspi {
+> +	pinctrl-names = "default", "sleep";
+> +	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a>;
+> +	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a>;
+> +	reg = <0x58003000 0x1000>, <0x70000000 0x200000>;
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
 > +	status = "okay";
+> +
+> +	flash0: spi-flash@0 {
+> +		compatible = "jedec,spi-nor";
+> +		reg = <0>;
+> +		spi-rx-bus-width = <4>;
+> +		spi-max-frequency = <108000000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +	};
 > +};
 > +
->  &uart4 {
->  	/* On Low speed expansion header */
->  	label = "LS-UART1";
+>  &rng1 {
+>  	status = "okay";
+>  };
 > -- 
 > 2.25.1
 > 
