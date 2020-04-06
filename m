@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CCB719FBB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:36:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7017B19FBBF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:37:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h3mjxEZfk711fhBe/Rh4TWL0Pmoa7K29rL5pThvsrck=; b=e/AI2XuhGGDZxN
-	rRTDscMXKZ2iEwFjIWhbKdfUmBaifALHUNYlx9XYVx9MTVmqD8iY674B/xfFfhU6RVZnkAsBv7iNC
-	0cS/o7h06ThGEHk0yMMKduYXCYNwJf9j3bSB0eKtZ6LCSEzL/+ucQtRFZ2OARGp+6DGI+GB5o4sxY
-	tOTtMaMD6DtDoPRLK0NrJNdERAsLSGlQhwY6SdV1qKj+B8Nvnw+XbuKtEdWTizq8YFko6M+c2a7j5
-	7D2Mek/zwwj2duuGdzaCkGrhg71c7kLGJ6KY7M1bbTZJoG0nJtHRlmWkZQ+39UzsYZMSNkGxGYttS
-	82gtIClTS2bUpNim2T7w==;
+	List-Owner; bh=0tw3ifpHeMh809Ze2agj3JXrCY8PEsg3ZIAI6cTC488=; b=iCbGDf6Ir0JZQl
+	FcN+r6riCZrl5fq2IUtXrVM9qtb+Qz9HAiGBXHkPYOBJRZS/28SXh6OYm8bDWCQdr2fAvT+XOHl9d
+	R9W8r3tRAO17X7HFSO5YVJC9lnWjAKHayh2HZGUQiyGetcYrktj6erk4j/B682qNa5QRiQH9e0DuF
+	QhBcgJF84zwbA7Oos+vFupt5Eo85B119G3GpOD2b3RAy71NZUstZ2MJz0Tnowy+RfyVop+cwQOg3F
+	yF2mf+fOuL7UI2b/73TRUn2sRX7Ew/S2lZmxJYJdrOUuqgpfCbfSQsNsIwWbVeDwsKhkABVJnWDIl
+	Wfg0hSsdUNJAQFJO0sYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLVfC-00053f-99; Mon, 06 Apr 2020 17:35:58 +0000
+	id 1jLVgA-0005Ox-2h; Mon, 06 Apr 2020 17:36:58 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLVeT-00045b-Rd
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:35:17 +0000
+ id 1jLVg1-0005OS-7h
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:36:51 +0000
 Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
  [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 43CE11031;
- Mon,  6 Apr 2020 19:35:12 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 597171031;
+ Mon,  6 Apr 2020 19:36:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586194512;
- bh=2GdPMyBtue+7HjxdIkmbI8MT7kHPXJlMQFDnms22Grg=;
+ s=mail; t=1586194607;
+ bh=YPNE2hB3+Kd4JYl1p59Zx6o1xWVLnWL1+Y6boeKyKUw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iRfOGyoNHLTIP8t/BMlEzG8LaBpJJdwZ0CyoIc9N2yRm852YnFtRPoSf5UP26DDbC
- 0st+N6m66yfe/0t2KgsS6J07tsRzMWM5aVHKGoPwLSOOC9P/ZRKScFg5W+5YFReJtL
- 3c6SfeuVZYw/uXUa1eAVXBH1hJ+CcW8dnauutFxo=
-Date: Mon, 6 Apr 2020 20:35:03 +0300
+ b=OQ+6N8+n1zJZ0/2gH5NJj0mdJcoSxgpgo9vwr7oiQm0EgXP/WfcG1R7OCF1Q7Q7gs
+ sgnuJLn7jlHyoU6HR+MOZFZWLVzUPGO41cT1LkEnU7D77nDcDwb/sNPR8xYKzBCcbT
+ 3DLZ9KNu12/OA/QQpUw55JkMIcnoBYMMZ4JIgb+w=
+Date: Mon, 6 Apr 2020 20:36:37 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v5 3/5] media: i2c: ov5645: Turn probe error into warning
- for xvclk frequency mismatch
-Message-ID: <20200406173503.GF16885@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v5 4/5] ARM: dts: imx6qdl-wandboard: Drop clock-frequency
+ property from ov5645 node
+Message-ID: <20200406173637.GG16885@pendragon.ideasonboard.com>
 References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1586191361-16598-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1586191361-16598-4-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1586191361-16598-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_103514_149109_9C0CE301 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20200406_103650_121030_DDFB0008 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -92,37 +92,34 @@ Hi Prabhakar,
 
 Thank you for the patch.
 
-On Mon, Apr 06, 2020 at 05:42:39PM +0100, Lad Prabhakar wrote:
-> PLL's on platforms might not be so accurate enough to generate the
-> required clock frequency, so instead of erroring out on xvlck frequency
-> mismatch just warn the user and continue ahead in probe.
+On Mon, Apr 06, 2020 at 05:42:40PM +0100, Lad Prabhakar wrote:
+> clock-frequency property has been deprecated in ov5645 binding. This patch
+> makes sure it matches the bindings by dropping clock-frequency property
+> from ov5645 node.
 > 
 > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+
+This looks good to me, but could you also address imx6qdl-pico.dtsi ?
+With that,
 
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
 > ---
->  drivers/media/i2c/ov5645.c | 7 ++-----
->  1 file changed, 2 insertions(+), 5 deletions(-)
+>  arch/arm/boot/dts/imx6qdl-wandboard.dtsi | 1 -
+>  1 file changed, 1 deletion(-)
 > 
-> diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
-> index 52848fff8a08..314760349adf 100644
-> --- a/drivers/media/i2c/ov5645.c
-> +++ b/drivers/media/i2c/ov5645.c
-> @@ -1103,11 +1103,8 @@ static int ov5645_probe(struct i2c_client *client)
->  	}
->  	/* external clock must be 24MHz, allow 1% tolerance */
->  	xclk_freq = clk_get_rate(ov5645->xclk);
-> -	if (xclk_freq < 23760000 || xclk_freq > 24240000) {
-> -		dev_err(dev, "external clock frequency %u is not supported\n",
-> -			xclk_freq);
-> -		return -EINVAL;
-> -	}
-> +	if (xclk_freq < 23760000 || xclk_freq > 24240000)
-> +		dev_warn(dev, "xvclk mismatched, modes are based on 24MHz\n");
->  
->  	for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
->  		ov5645->supplies[i].supply = ov5645_supply_name[i];
+> diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+> index c070893c509e..fa01cad65335 100644
+> --- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+> @@ -126,7 +126,6 @@
+>  		reg = <0x3c>;
+>  		clocks = <&clks IMX6QDL_CLK_CKO2>;
+>  		clock-names = "xclk";
+> -		clock-frequency = <24000000>;
+>  		vdddo-supply = <&reg_1p8v>;
+>  		vdda-supply = <&reg_2p8v>;
+>  		vddd-supply = <&reg_1p5v>;
 
 -- 
 Regards,
