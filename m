@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0553319F49A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6E9C19F49F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:33:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tun/OUdcB1nchrHvspHp29XPoAH6O9YxDj0p3XtjOq4=; b=ILvcZFzXmflMT5
-	+0YiPVceJmy95KNHDQRXSBVLuh6lEjKR/v+Bvx9uCG8jiIRUQQ//4TyZe9h+pZS9pchFpPRxn98+y
-	Ph7APwC2TRgqjDN0oT28sk2KzEnMzdDEfcB5vvSuGRR+ZGdKPgJY8ZUC4z/gVooIDeumEGXBcb0pr
-	iIgJSC8w3MHgHSw/XM4v7Tt3/01mjtl0NuOQEegInt4NF+ZiRsWVw9qGcCdNhCuADBzUW4bE+3fZ0
-	8OKToKQdYJW7TJtBZ8UkUQTOC4KAm2v+g5055Ww6sykyRXCTlKo107sj4RIVT5iQQ/fiRthd1yLcW
-	meOhPus1UyTwuxQUWCMg==;
+	List-Owner; bh=wttejSXRg9gt4jPmfzOc73qvLPxOKbZkZ3a64pxgVpw=; b=pZstdw8PM8vFRJ
+	GebdOSxEZbvEjvXgRmYhvTQkmCbMdX05wCkE9/8rFOde6QP2zbrQZ9QsSHPgp1G4M9+0R/dyTRb7q
+	FaKtgpWSrex2jZd/8XThpnKPMCQmiXYS2k+9sm0bTvnYnnbhUTdVRfZhxbsWxevURz9bwPQo18mAI
+	Udd9KZRfbvQ7U3P2QS/LTluSkbG1kDZCa91xqVo9vQdsBdbVq1cK3VfNdUbRkMMHco44kqmADWyu6
+	L4srYdIfI1vgkdZAI22IRAFSQv0zYTpDXvM/hpQ5cCbDSNxuM36sXpuEct8H8aI+bwtqZnAL60H6M
+	GrFiO4qpATeK5ixImAlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLPzT-000735-47; Mon, 06 Apr 2020 11:32:31 +0000
-Received: from forward103p.mail.yandex.net ([2a02:6b8:0:1472:2741:0:8b7:106])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1jLPzA-0006vn-Pe
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 11:32:14 +0000
-Received: from mxback8g.mail.yandex.net (mxback8g.mail.yandex.net
- [IPv6:2a02:6b8:0:1472:2741:0:8b7:169])
- by forward103p.mail.yandex.net (Yandex) with ESMTP id 76EF718C041F;
- Mon,  6 Apr 2020 14:32:10 +0300 (MSK)
+	id 1jLPzm-0007LB-Q4; Mon, 06 Apr 2020 11:32:50 +0000
+Received: from forward103j.mail.yandex.net ([5.45.198.246])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLPzF-00071f-8Y
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 11:32:19 +0000
+Received: from mxback27o.mail.yandex.net (mxback27o.mail.yandex.net
+ [IPv6:2a02:6b8:0:1a2d::78])
+ by forward103j.mail.yandex.net (Yandex) with ESMTP id 1047E67409B6;
+ Mon,  6 Apr 2020 14:32:14 +0300 (MSK)
 Received: from iva6-add863d6e49c.qloud-c.yandex.net
  (iva6-add863d6e49c.qloud-c.yandex.net [2a02:6b8:c0c:7ea0:0:640:add8:63d6])
- by mxback8g.mail.yandex.net (mxback/Yandex) with ESMTP id N5wck4Svr5-WA8eClK8; 
- Mon, 06 Apr 2020 14:32:10 +0300
+ by mxback27o.mail.yandex.net (mxback/Yandex) with ESMTP id D7Ch6kcz29-WDfWYrPo;
+ Mon, 06 Apr 2020 14:32:14 +0300
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maquefel.me; s=mail;
- t=1586172730; bh=gn4X4dwb/lGc1aff1jWlSmhgRv7I3Jq+82nqfbVnrDA=;
+ t=1586172734; bh=8uEW0zqccUGzY8Atll6dm+xMaA+rH6YNmty2LTtP4t0=;
  h=In-Reply-To:Subject:To:From:Cc:References:Date:Message-Id;
- b=qWUrR2VSCnrWGTRWQGPGQAw6W6+Aq9M0i/MerQPIsUY5nyH33Sdp+3qw7WGMpjxeU
- BYYs6faqIwlD/cdSBngdUpIMoluVQCgNF1NJC+aX/mJtY9wnan4VwMHxjuXVP7FCts
- KAHBOITctctnR3pSW3FH5BUq6moTJyxpWFGkjC7U=
-Authentication-Results: mxback8g.mail.yandex.net;
+ b=KpnFHusqtimVXVvdAOK7ru7dkQ/hdhsjfdDLbbXWn2mQNKJIej9BWZS9a8hgG4AKI
+ qMQqz//B181cIXDovpv3OxKl2XRQ9vTyTNF4zp6XOxoiRvQifCdlyeQZATMXHNEHBJ
+ DTkFS0V11ZOrunF9WxwNf305IQHJmIik/aJ0rAnU=
+Authentication-Results: mxback27o.mail.yandex.net;
  dkim=pass header.i=@maquefel.me
 Received: by iva6-add863d6e49c.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id CHTIIrjdik-W92uoY3j; Mon, 06 Apr 2020 14:32:09 +0300
+ id CHTIIrjdik-WC2ug4GN; Mon, 06 Apr 2020 14:32:12 +0300
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (Client certificate not present)
 From: nikita.shubin@maquefel.me
 To: nikita.shubin@maquefel.me
-Subject: [PATCH v2 1/3] remoteproc: imx_rproc: set pc on start
-Date: Mon,  6 Apr 2020 14:33:08 +0300
-Message-Id: <20200406113310.3041-2-nikita.shubin@maquefel.me>
+Subject: [PATCH v2 2/3] remoteproc: imx_rproc: mailbox support
+Date: Mon,  6 Apr 2020 14:33:09 +0300
+Message-Id: <20200406113310.3041-3-nikita.shubin@maquefel.me>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200406113310.3041-1-nikita.shubin@maquefel.me>
 References: <20200304142628.8471-1-NShubin@topcon.com>
  <20200406113310.3041-1-nikita.shubin@maquefel.me>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_043213_201402_258952E2 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20200406_043217_674504_3C746CDE 
+X-CRM114-Status: GOOD (  16.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a02:6b8:0:1472:2741:0:8b7:106 listed in]
- [list.dnswl.org]
+ no trust [5.45.198.246 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,89 +95,233 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case elf file interrupt vector is not supposed to be at OCRAM_S,
-it is needed to write elf entry point to OCRAM_S + 0x4, to boot M4
-firmware.
-
-Otherwise firmware located anywhere besides OCRAM_S won't boot.
-
-The firmware must set stack poiner as first instruction:
-
-Reset_Handler:
-    ldr   sp, = __stack      /* set stack pointer */
+Add support for mailboxes to imx_rproc
 
 Signed-off-by: Nikita Shubin <NShubin@topcon.com>
 ---
- drivers/remoteproc/imx_rproc.c | 16 +++++++++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
+ drivers/remoteproc/Kconfig     |   2 +
+ drivers/remoteproc/imx_rproc.c | 142 ++++++++++++++++++++++++++++++++-
+ 2 files changed, 143 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
+index 94afdde4bc9f..02d23a54c9cf 100644
+--- a/drivers/remoteproc/Kconfig
++++ b/drivers/remoteproc/Kconfig
+@@ -17,6 +17,8 @@ if REMOTEPROC
+ config IMX_REMOTEPROC
+ 	tristate "IMX6/7 remoteproc support"
+ 	depends on ARCH_MXC
++	select MAILBOX
++	select IMX_MBOX
+ 	help
+ 	  Say y here to support iMX's remote processors (Cortex M4
+ 	  on iMX7D) via the remote processor framework.
 diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-index 3e72b6f38d4b..bebc58d0f711 100644
+index bebc58d0f711..d2bede4ccb70 100644
 --- a/drivers/remoteproc/imx_rproc.c
 +++ b/drivers/remoteproc/imx_rproc.c
-@@ -45,6 +45,8 @@
+@@ -14,6 +14,9 @@
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ #include <linux/remoteproc.h>
++#include <linux/mailbox_client.h>
++
++#include "remoteproc_internal.h"
  
- #define IMX7D_RPROC_MEM_MAX		8
+ #define IMX7D_SRC_SCR			0x0C
+ #define IMX7D_ENABLE_M4			BIT(3)
+@@ -47,6 +50,12 @@
  
-+#define IMX_BOOT_PC			0x4
+ #define IMX_BOOT_PC			0x4
+ 
++#define IMX_MBOX_NB_VQ			2
++#define IMX_MBOX_NB_MBX		2
++
++#define IMX_MBX_VQ0		"vq0"
++#define IMX_MBX_VQ1		"vq1"
 +
  /**
   * struct imx_rproc_mem - slim internal memory structure
   * @cpu_addr: MPU virtual address of the memory region
-@@ -85,6 +87,7 @@ struct imx_rproc {
- 	const struct imx_rproc_dcfg	*dcfg;
+@@ -80,6 +89,14 @@ struct imx_rproc_dcfg {
+ 	size_t				att_size;
+ };
+ 
++struct imx_mbox {
++	const unsigned char name[10];
++	struct mbox_chan *chan;
++	struct mbox_client client;
++	struct work_struct vq_work;
++	int vq_id;
++};
++
+ struct imx_rproc {
+ 	struct device			*dev;
+ 	struct regmap			*regmap;
+@@ -88,6 +105,8 @@ struct imx_rproc {
  	struct imx_rproc_mem		mem[IMX7D_RPROC_MEM_MAX];
  	struct clk			*clk;
-+	void __iomem			*bootreg;
+ 	void __iomem			*bootreg;
++	struct imx_mbox mb[IMX_MBOX_NB_MBX];
++	struct workqueue_struct *workqueue;
  };
  
  static const struct imx_rproc_att imx_rproc_att_imx7d[] = {
-@@ -162,11 +165,16 @@ static int imx_rproc_start(struct rproc *rproc)
- 	struct device *dev = priv->dev;
- 	int ret;
- 
-+	/* write entry point to program counter */
-+	writel(rproc->bootaddr, priv->bootreg);
-+
- 	ret = regmap_update_bits(priv->regmap, dcfg->src_reg,
- 				 dcfg->src_mask, dcfg->src_start);
- 	if (ret)
- 		dev_err(dev, "Failed to enable M4!\n");
- 
-+	dev_info(&rproc->dev, "Started from 0x%x\n", rproc->bootaddr);
-+
- 	return ret;
+@@ -251,10 +270,118 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+ 	return va;
  }
  
-@@ -182,6 +190,9 @@ static int imx_rproc_stop(struct rproc *rproc)
- 	if (ret)
- 		dev_err(dev, "Failed to stop M4!\n");
- 
-+	/* clear entry points */
-+	writel(0, priv->bootreg);
++static void imx_rproc_mb_vq_work(struct work_struct *work)
++{
++	struct imx_mbox *mb = container_of(work, struct imx_mbox, vq_work);
++	struct rproc *rproc = dev_get_drvdata(mb->client.dev);
 +
- 	return ret;
- }
- 
-@@ -243,7 +254,8 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++	if (rproc_vq_interrupt(rproc, mb->vq_id) == IRQ_NONE)
++		dev_dbg(&rproc->dev, "no message found in vq%d\n", mb->vq_id);
++}
++
++static void imx_rproc_mb_callback(struct mbox_client *cl, void *data)
++{
++	struct rproc *rproc = dev_get_drvdata(cl->dev);
++	struct imx_mbox *mb = container_of(cl, struct imx_mbox, client);
++	struct imx_rproc *ddata = rproc->priv;
++
++	queue_work(ddata->workqueue, &mb->vq_work);
++}
++
++static const struct imx_mbox imx_rproc_mbox[IMX_MBOX_NB_MBX] = {
++	{
++		.name = IMX_MBX_VQ0,
++		.vq_id = 0,
++		.client = {
++			.rx_callback = imx_rproc_mb_callback,
++			.tx_block = false,
++		},
++	},
++	{
++		.name = IMX_MBX_VQ1,
++		.vq_id = 1,
++		.client = {
++			.rx_callback = imx_rproc_mb_callback,
++			.tx_block = false,
++		},
++	},
++};
++
++static void imx_rproc_request_mbox(struct rproc *rproc)
++{
++	struct imx_rproc *ddata = rproc->priv;
++	struct device *dev = &rproc->dev;
++	unsigned int i;
++	const unsigned char *name;
++	struct mbox_client *cl;
++
++	/* Initialise mailbox structure table */
++	memcpy(ddata->mb, imx_rproc_mbox, sizeof(imx_rproc_mbox));
++
++	for (i = 0; i < IMX_MBOX_NB_MBX; i++) {
++		name = ddata->mb[i].name;
++
++		cl = &ddata->mb[i].client;
++		cl->dev = dev->parent;
++
++		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
++
++		dev_dbg(dev, "%s: name=%s, idx=%u\n",
++			__func__, name, ddata->mb[i].vq_id);
++
++		if (IS_ERR(ddata->mb[i].chan)) {
++			dev_warn(dev, "cannot get %s mbox\n", name);
++			ddata->mb[i].chan = NULL;
++		}
++
++		if (ddata->mb[i].vq_id >= 0)
++			INIT_WORK(&ddata->mb[i].vq_work, imx_rproc_mb_vq_work);
++	}
++}
++
++static void imx_rproc_free_mbox(struct rproc *rproc)
++{
++	struct imx_rproc *ddata = rproc->priv;
++	unsigned int i;
++
++	dev_dbg(&rproc->dev, "%s: %d boxes\n",
++		__func__, ARRAY_SIZE(ddata->mb));
++
++	for (i = 0; i < ARRAY_SIZE(ddata->mb); i++) {
++		if (ddata->mb[i].chan)
++			mbox_free_channel(ddata->mb[i].chan);
++		ddata->mb[i].chan = NULL;
++	}
++}
++
++static void imx_rproc_kick(struct rproc *rproc, int vqid)
++{
++	struct imx_rproc *ddata = rproc->priv;
++	unsigned int i;
++	int err;
++
++	if (WARN_ON(vqid >= IMX_MBOX_NB_VQ))
++		return;
++
++	for (i = 0; i < IMX_MBOX_NB_MBX; i++) {
++		if (vqid != ddata->mb[i].vq_id)
++			continue;
++		if (!ddata->mb[i].chan)
++			return;
++		dev_dbg(&rproc->dev, "sending message : vqid = %d\n", vqid);
++		err = mbox_send_message(ddata->mb[i].chan, &vqid);
++		if (err < 0)
++			dev_err(&rproc->dev, "%s: failed (%s, err:%d)\n",
++					__func__, ddata->mb[i].name, err);
++			return;
++	}
++}
++
  static const struct rproc_ops imx_rproc_ops = {
  	.start		= imx_rproc_start,
  	.stop		= imx_rproc_stop,
--	.da_to_va       = imx_rproc_da_to_va,
-+	.da_to_va	= imx_rproc_da_to_va,
-+	.get_boot_addr	= rproc_elf_get_boot_addr,
+ 	.da_to_va	= imx_rproc_da_to_va,
++	.kick		= imx_rproc_kick,
+ 	.get_boot_addr	= rproc_elf_get_boot_addr,
  };
  
- static int imx_rproc_addr_init(struct imx_rproc *priv,
-@@ -360,6 +372,8 @@ static int imx_rproc_probe(struct platform_device *pdev)
+@@ -384,14 +511,26 @@ static int imx_rproc_probe(struct platform_device *pdev)
  		goto err_put_rproc;
  	}
  
-+	priv->bootreg = imx_rproc_da_to_va(rproc, IMX_BOOT_PC, sizeof(u32));
++	priv->workqueue = create_workqueue(dev_name(dev));
++	if (!priv->workqueue) {
++		dev_err(dev, "cannot create workqueue\n");
++		ret = -ENOMEM;
++		goto err_put_clk;
++	}
 +
- 	/*
- 	 * clk for M4 block including memory. Should be
- 	 * enabled before .start for FW transfer.
++	imx_rproc_request_mbox(rproc);
++
+ 	ret = rproc_add(rproc);
+ 	if (ret) {
+ 		dev_err(dev, "rproc_add failed\n");
+-		goto err_put_clk;
++		goto err_free_mb;
+ 	}
+ 
+ 	return 0;
+ 
++err_free_mb:
++	imx_rproc_free_mbox(rproc);
++	destroy_workqueue(priv->workqueue);
+ err_put_clk:
+ 	clk_disable_unprepare(priv->clk);
+ err_put_rproc:
+@@ -407,6 +546,7 @@ static int imx_rproc_remove(struct platform_device *pdev)
+ 
+ 	clk_disable_unprepare(priv->clk);
+ 	rproc_del(rproc);
++	imx_rproc_free_mbox(rproc);
+ 	rproc_free(rproc);
+ 
+ 	return 0;
 -- 
 2.25.1
 
