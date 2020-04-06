@@ -2,74 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85A6D19F8BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 17:21:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45F6B19F8C5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 17:25:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:MIME-Version:Subject:
-	References:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xXxXEGCo9xZ9uOIgajyuwrBwH4uvb8Koqim4blQerGM=; b=Ry6j7gn0HUtFK3
-	5ykKT0cm3PExEf5S0rKyADzxW0N1Abu8ePPnDE5nRS6r5/NuzQY8bedhTwzbiE96s1piXNyfCTUgB
-	hJmEnBBIefxKjSf/0JxgQeo3Qtmi8OOceMq/PwZfn10nhtf/+ZJqOUkWEtzLKSHz9lb7IOT25l/RG
-	RyuPEgrPgJzXoE3xQy/nKv+HJnLceLvmF/00PMTVsMJL7xHnReyGHtJ0LFE5onaVi72SoEvtj8jAm
-	y7hZzb60ZKUFcBBEbvIah569mS7E8vVAv0HjgfHAF84t2DZkw4NRDubNT/YI8caC/GedQ7x8rA/2e
-	Lo5s2AaQ/D0NdN1eMtzw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jqzkGz8KhKwfGdBC4D667bWtB+3HN2gFknSJNZbPQAM=; b=abChup2Mgb4/gb
+	DczAmViD76GnjPmf/c3aBAg/Yx5YBtdBdQ8N7efxuv5csEqIUoRxYof1joctPdrfqtL4F3/5/JWDF
+	v+zm60WHP1dy34Ihv2t1mMgGA9ksJINsUEiUh1h0AL2AldIMNN9bXJmxThzrYUFOPhb/muwO8X/5y
+	XXpALpsdGS/ewOy3zxDy3olF4jZXZhdszZP3D+0nd+KKx5rIrsfeZGFkHXlmHqillEqvrUDqTuRVj
+	OmMjHkFM0uPI3o8vaUKlAasZGgY83+/l+Hw1sxEeRaE80o+qK3RUJAPKSg/sWVeDdUFKI7aHagYFQ
+	WO6ER6kuA5lYgXP9lHKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLTZ6-0000pG-Sl; Mon, 06 Apr 2020 15:21:32 +0000
-Received: from forward501j.mail.yandex.net ([2a02:6b8:0:801:2::111])
+	id 1jLTci-0003h7-5A; Mon, 06 Apr 2020 15:25:16 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLTYz-0000n8-Pd; Mon, 06 Apr 2020 15:21:28 +0000
-Received: from mxback6j.mail.yandex.net (mxback6j.mail.yandex.net
- [IPv6:2a02:6b8:0:1619::10f])
- by forward501j.mail.yandex.net (Yandex) with ESMTP id DE2783380468;
- Mon,  6 Apr 2020 18:21:20 +0300 (MSK)
-Received: from localhost (localhost [::1])
- by mxback6j.mail.yandex.net (mxback/Yandex) with ESMTP id OzbyaIb4Ls-LIAivFVM; 
- Mon, 06 Apr 2020 18:21:20 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
- t=1586186480; bh=hFG2UijyKPqo20hUOizY7T4Nc94PdinHDzgqa+EFXZ0=;
- h=Message-Id:Cc:Subject:In-Reply-To:Date:References:To:From;
- b=sZxBLYbnkxaNFTnlpz5cDxZd+UT2tvNmQm4AwYNzXD2dm+Vv+SnYT9CfUjVevWPQ0
- 2TrWht3aFGnbDVNjGq+RIEsXRUl1PjxohIPS65jGI7Llcmnfu7Lpo2UsFkxIu64mUa
- j4z5TQKneCLEZdGPpXKKQe2rGcpvi/vYPA8kW69Q=
-Authentication-Results: mxback6j.mail.yandex.net; dkim=pass header.i=@yandex.ru
-Received: by myt5-5e0e3f348369.qloud-c.yandex.net with HTTP;
- Mon, 06 Apr 2020 18:21:18 +0300
-From: Alexander Lobakin <bloodyreaper@yandex.ru>
-Envelope-From: bloodyreaper@yandex.ru
-To: Andrew Lunn <andrew@lunn.ch>
-In-Reply-To: <20200406144758.GC301483@lunn.ch>
-References: <20200406105910.32339-1-79537434260@yandex.com>
- <20200406144758.GC301483@lunn.ch>
-Subject: Re: [PATCH net-next] net: dsa: add GRO support via gro_cells
+ id 1jLTcZ-0002Fl-O3; Mon, 06 Apr 2020 15:25:09 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 66E2D293F03
+Subject: Re: [PATCH] drm: mediatek: fix device passed to cmdq
+To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
+References: <20200406051131.225748-1-hsinyi@chromium.org>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <095576cb-7124-9b23-fe24-7a91cce57d99@collabora.com>
+Date: Mon, 6 Apr 2020 17:25:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-Mailer: Yamail [ http://yandex.ru ] 5.0
-Date: Mon, 06 Apr 2020 18:21:18 +0300
-Message-Id: <20241586185765@iva8-5e86d95f65ab.qloud-c.yandex.net>
+In-Reply-To: <20200406051131.225748-1-hsinyi@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_082126_328548_39B63ACC 
-X-CRM114-Status: GOOD (  11.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_082507_935911_5F0E2495 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a02:6b8:0:801:2:0:0:111 listed in] [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [bloodyreaper[at]yandex.ru]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,65 +60,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Woojung Huh <woojung.huh@microchip.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Hauke Mehrtens <hauke@hauke-m.de>, Linus Walleij <linus.walleij@linaro.org>,
- Sean Wang <sean.wang@mediatek.com>, Russell King <linux@armlinux.org.uk>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Microchip Linux Driver Support <unglinuxdriver@microchip.com>,
- Vladimir Oltean <vladimir.oltean@nxp.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
- Oleksij Rempel <linux@rempel-privat.de>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Mao Wenan <maowenan@huawei.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, CK Hu <ck.hu@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDYuMDQuMjAyMCwgMTc6NDgsICJBbmRyZXcgTHVubiIgPGFuZHJld0BsdW5uLmNoPjoKPiBPbiBN
-b24sIEFwciAwNiwgMjAyMCBhdCAwMTo1OToxMFBNICswMzAwLCBBbGV4YW5kZXIgTG9iYWtpbiB3
-cm90ZToKPj4gwqBncm9fY2VsbHMgbGliIGlzIHVzZWQgYnkgZGlmZmVyZW50IGVuY2Fwc3VsYXRp
-bmcgbmV0ZGV2aWNlcywgc3VjaCBhcwo+PiDCoGdlbmV2ZSwgbWFjc2VjLCB2eGxhbiBldGMuIHRv
-IHNwZWVkIHVwIGRlY2Fwc3VsYXRlZCB0cmFmZmljIHByb2Nlc3NpbmcuCj4+IMKgQ1BVIHRhZyBp
-cyBhIHNvcnQgb2YgImVuY2Fwc3VsYXRpb24iLCBhbmQgd2UgY2FuIHVzZSB0aGUgc2FtZSBtZWNo
-cyB0bwo+PiDCoGdyZWF0bHkgaW1wcm92ZSBvdmVyYWxsIERTQSBwZXJmb3JtYW5jZS4KPj4gwqBz
-a2JzIGFyZSBwYXNzZWQgdG8gdGhlIEdSTyBsYXllciBhZnRlciByZW1vdmluZyBDUFUgdGFncywg
-c28gd2UgZG9uJ3QKPj4gwqBuZWVkIGFueSBuZXcgcGFja2V0IG9mZmxvYWQgdHlwZXMgYXMgaXQg
-d2FzIGZpcnN0bHkgcHJvcG9zZWQgYnkgbWUgaW4KPj4gwqB0aGUgZmlyc3QgR1JPLW92ZXItRFNB
-IHZhcmlhbnQgWzFdLgo+Pgo+PiDCoFRoZSBzaXplIG9mIHN0cnVjdCBncm9fY2VsbHMgaXMgc2l6
-ZW9mKHZvaWQgKiksIHNvIGhvdCBzdHJ1Y3QKPj4gwqBkc2Ffc2xhdmVfcHJpdiBiZWNvbWVzIG9u
-bHkgNC84IGJ5dGVzIGJpZ2dlciwgYW5kIGFsbCBjcml0aWNhbCBmaWVsZHMKPj4gwqByZW1haW4g
-aW4gb25lIDMyLWJ5dGUgY2FjaGVsaW5lLgo+PiDCoFRoZSBvdGhlciBwb3NpdGl2ZSBzaWRlIGVm
-ZmVjdCBpcyB0aGF0IGRyaXZlcnMgZm9yIG5ldHdvcmsgZGV2aWNlcwo+PiDCoHRoYXQgY2FuIGJl
-IHNoaXBwZWQgYXMgQ1BVIHBvcnRzIG9mIERTQS1kcml2ZW4gc3dpdGNoZXMgY2FuIG5vdyB1c2UK
-Pj4gwqBuYXBpX2dyb19mcmFncygpIHRvIHBhc3Mgc2ticyB0byBrZXJuZWwuIFBhY2tldHMgYnVp
-bHQgdGhhdCB3YXkgYXJlCj4+IMKgY29tcGxldGVseSBub24tbGluZWFyIGFuZCBhcmUgbGlrZWx5
-IGJlaW5nIGRyb3BwZWQgd2l0aG91dCBHUk8uCj4+Cj4+IMKgVGhpcyB3YXMgdGVzdGVkIG9uIHRv
-LWJlLW1haW5saW5lZC1zb29uIEV0aGVybmV0IGRyaXZlciB0aGF0IHVzZXMKPj4gwqBuYXBpX2dy
-b19mcmFncygpLCBhbmQgdGhlIG92ZXJhbGwgcGVyZm9ybWFuY2Ugd2FzIG9uIHBhciB3aXRoIHRo
-ZQo+PiDCoHZhcmlhbnQgZnJvbSBbMV0sIHNvbWV0aW1lcyBldmVuIGJldHRlciBkdWUgdG8gbWlu
-aW1hbCBvdmVyaGVhZC4KPj4gwqBuZXQuY29yZS5ncm9fbm9ybWFsX2JhdGNoIHR1bmluZyBtYXkg
-aGVscCB0byBwdXNoIGl0IHRvIHRoZSBsaW1pdAo+PiDCoG9uIHBhcnRpY3VsYXIgc2V0dXBzIGFu
-ZCBwbGF0Zm9ybXMuCj4+Cj4+IMKgWzFdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL25ldGRldi8y
-MDE5MTIzMDE0MzAyOC4yNzMxMy0xLWFsb2Jha2luQGRsaW5rLnJ1Lwo+Cj4gSGkgQWxleGFuZGVy
-CgpIaSBBbmRyZXchCgo+IG5ldC1uZXh0IGlzIGNsb3NlZCBhdCB0aGUgbW9tZW50LiBTbyB5b3Ug
-c2hvdWxkIG9mIHBvc3RlZCB0aGlzIHdpdGggYW4KPiBSRkMgcHJlZml4LgoKSSBzYXcgdGhhdCBp
-dCdzIGNsb3NlZCwgYnV0IGRpZG4ndCBrbmV3IGFib3V0ICJSRkMiIHRhZ3MgZm9yIHRoYXQgcGVy
-aW9kLApzb3JyeS4KCj4gVGhlIGltcGxlbWVudGF0aW9uIGxvb2tzIG5pY2UgYW5kIHNpbXBsZS4g
-QnV0IGl0IHdvdWxkIGJlIG5pY2UgdG8gaGF2ZQo+IHNvbWUgcGVyZm9ybWFuY2UgZmlndXJlcy4K
-CkknbGwgZG8sIHN1cmUuIEkgdGhpbmsgSSdsbCBjb2xsZWN0IHRoZSBzdGF0cyB3aXRoIHZhcmlv
-dXMgbWFpbiByZWNlaXZpbmcKZnVuY3Rpb25zIGluIEV0aGVybmV0IGRyaXZlciAobmFwaV9ncm9f
-ZnJhZ3MoKSwgbmFwaV9ncm9fcmVjZWl2ZSgpLApuZXRpZl9yZWNlaXZlX3NrYigpLCBuZXRpZl9y
-ZWNlaXZlX3NrYl9saXN0KCkpLCBhbmQgd2l0aCBhbmQgd2l0aG91dCB0aGlzCnBhdGNoIHRvIG1h
-a2UgdGhlbSBhcyBjb21wbGV0ZSBhcyBwb3NzaWJsZS4KCj4gwqDCoMKgwqDCoEFuZHJldwoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+Hi Hsin-Yi
+
+Thanks for sending the patch upstream
+
+On 6/4/20 7:11, Hsin-Yi Wang wrote:
+> drm device is now probed from mmsys. We need to use mmsys device to get gce
+> nodes. Fix following errors:
+> 
+> [    0.740068] mediatek-drm mediatek-drm.1.auto: error -2 can't parse gce-client-reg property (0)
+> [    0.748721] mediatek-drm mediatek-drm.1.auto: error -2 can't parse gce-client-reg property (0)
+> ...
+> [    2.659645] mediatek-drm mediatek-drm.1.auto: failed to request channel
+> [    2.666270] mediatek-drm mediatek-drm.1.auto: failed to request channel
+> 
+> Fixes: 1d367541aded ("soc / drm: mediatek: Fix mediatek-drm device probing")
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+
+Right, the mmsys device is now the parent of the drm device.
+
+Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+
+Also I tested drm with the patch applied and adding the gce client register to
+my device-tree.
+
+Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+
+Thanks,
+ Enric
+
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 6 ++++--
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 3 ++-
+>  2 files changed, 6 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index 615a54e60fe2..8621f0289399 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -822,14 +822,16 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  
+>  #if IS_REACHABLE(CONFIG_MTK_CMDQ)
+>  	mtk_crtc->cmdq_client =
+> -			cmdq_mbox_create(dev, drm_crtc_index(&mtk_crtc->base),
+> +			cmdq_mbox_create(mtk_crtc->mmsys_dev,
+> +					 drm_crtc_index(&mtk_crtc->base),
+>  					 2000);
+>  	if (IS_ERR(mtk_crtc->cmdq_client)) {
+>  		dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
+>  			drm_crtc_index(&mtk_crtc->base));
+>  		mtk_crtc->cmdq_client = NULL;
+>  	}
+> -	ret = of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
+> +	ret = of_property_read_u32_index(mtk_crtc->mmsys_dev->of_node,
+> +					 "mediatek,gce-events",
+>  					 drm_crtc_index(&mtk_crtc->base),
+>  					 &mtk_crtc->cmdq_event);
+>  	if (ret)
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index e2bb0d19ef99..dc78e86bccc0 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -517,7 +517,8 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  				goto err_node;
+>  			}
+>  
+> -			ret = mtk_ddp_comp_init(dev, node, comp, comp_id, NULL);
+> +			ret = mtk_ddp_comp_init(dev->parent, node, comp,
+> +						comp_id, NULL);
+>  			if (ret) {
+>  				of_node_put(node);
+>  				goto err_node;
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
