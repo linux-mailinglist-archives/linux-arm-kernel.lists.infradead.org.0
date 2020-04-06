@@ -2,99 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE86F19F261
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90B7119F263
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:22:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yGc5dQ6I2HFNmTCuzIe96LT/kJtJOeVQy05aYnJ9hpQ=; b=N42dOQiVRyAI+EsgUj7Ki9jTa
-	QqHak3C39PP7DMRF7f7610kbNNhECUErcXJAdAcT/zpclMZWAvCYftaz8begkSmxOV+YB65F80D0W
-	ojqoJ/C92aik6Obfw5JzfGarKaVHTfx3EutZwgh4KYQ3g+Lqy9acbtyMnINSlLl+JYJT2n4Gf516c
-	2aGgPHVnKSvcWMzcloCrxJpDsGHaI7l34xNN6ct9cKJcxALLHHXQwYtqf8AZw0JF/7rdq0V0DYItE
-	P0sYNWWYGoWmxg3YY80rfb7FZQ+K6XC8FQyzUS9snkXJSnbJerh3f1GmxxS+qwHjwZOynLkWGonj5
-	2k+yDMXug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QRzIt9Y1slIeps4T4syOZL2LYH72wWpmAiQPdhix2FQ=; b=YnT3lJZXbN9mug
+	wiCo9DSyFjxc0PMJaw/So4TVlLbmbsAtIIPyNDaCeS88iC0upzCdXmHLffzrqHczb3TvFYPkOlbsC
+	bc4T+SBw+2kykT3AdyNwtp79alWrtL7wrGVKvLIxsTVcPbF/LvLNt8hr3hMWof/s5xo6i48GXxEmR
+	JQ1d6FSYOpQO0xhRwIxsiSgAoRLCuR0/iQehjtH9iV1xebSnDwXGsSPDxVfFG1AH8kY1EALuEZZJM
+	Viy7kt/S15bu7Tw2MjxLH6D0riExlwVW5IPzGnbN7WGMAYE7VEnuBJBjrTy1xp+fw2F2zx544d8OS
+	oTM5fuqhAIR27ISGES8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLNx0-0005QQ-7q; Mon, 06 Apr 2020 09:21:50 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLNws-0005Pg-OJ
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 09:21:43 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 2E3F25C018F;
- Mon,  6 Apr 2020 05:21:37 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Mon, 06 Apr 2020 05:21:37 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=oMeIIJ1mDIWN3kALdLXCgbaXtnO
- iigOn5+MO3vnZOUI=; b=kNhzk0My+PGFQesmQtfITGCTkAeUIuaxp6gv1SR4m5/
- H1dk3sWdxRwvl7KHVmHoXvAgg0Ut7ayn2alYB1MG9NLASeBGuOqcpvHj+273H+jz
- o/ve/EiunT8XbLNS/wb0JtQDO+i5WaRm/d1hCf+572uib0klzX7gphcXAMcHT1Bm
- +jTCC3C7lsCvJnZ4Nf8SF0xuOWZ/Ewv4MX8z4GlamBAZK4bk4igE536nHw41nLRR
- pFmP24HGe7TTLr7/tQrWq5Hrg5yVREHVOVku+JTT+t9DGRUyrKmFalCqkjC3hXpp
- RH5IkGnQFgMNoDUX02hGc1XOsf8QTve37DmCF7t2YBQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=oMeIIJ
- 1mDIWN3kALdLXCgbaXtnOiigOn5+MO3vnZOUI=; b=2YEk2iM0BCpDj6J2DwGxRb
- CNvPyqIgYSnkOeedlqJfT4R51xuWw3305b5b4Eoxcv6h8/Jnek6q8VDatcDuS5cO
- /YaqEcroXtKy1UGkIJX718/tp5O/8U0etMLrrqGzNkKqcWF5IRD0AODQ0PW5JLkz
- CTa4l+wc2DWHtiXbHff1a6hLOsOxk4De7aMbJP9/9Nv9y6g64RHUkYmZ1jhxCddT
- Z/QQW8DTAnIe8dOGX2aWLiGUOdW8zbe++oYSrLhZaiFZsvwXk05KJp42uW02uLu+
- QxSc2H/EYtX7+/qnoLfn48SEELr2plGm+xbFwuv72lO0GIQnLwgRYTBUsNyz9jvw
- ==
-X-ME-Sender: <xms:n_SKXov82wD0S1qvcrji2PDWNwVHREeDi65UkUo8dtE63J3pQngYpw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudefgdduiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:n_SKXjD-OFB8wBhpApb-_WEl3SFb8u7j9noWylh2j2Vj1KSnSnPvfg>
- <xmx:n_SKXsxSRR5VgKXcX_bMSuxNF_spethl7D9dYS7QdLUUNjlvtmE0sg>
- <xmx:n_SKXmFlGuzOkszQTm6wqMLvNpfr4JoNBx2tu1HuQmgJneHiK6wPrg>
- <xmx:ofSKXt4XozOGp_tz2A4geXQex8OTLlg0pelVgZrOipjfRmrbaSP6GA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 43150328005D;
- Mon,  6 Apr 2020 05:21:35 -0400 (EDT)
-Date: Mon, 6 Apr 2020 11:21:34 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH] ARM: configs: sunxi: Add sun8i analog codec
-Message-ID: <20200406092134.ugxuj46qp6tmjf75@gilmour.lan>
-References: <1585820061-24172-1-git-send-email-clabbe@baylibre.com>
+	id 1jLNxP-0005gS-M0; Mon, 06 Apr 2020 09:22:15 +0000
+Received: from mailgate1.rohmeurope.com ([87.129.152.131])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLNxF-0005eR-FL; Mon, 06 Apr 2020 09:22:06 +0000
+X-AuditID: c0a8fbf4-489ff70000004419-ce-5e8af4b822d0
+Received: from smtp.reu.rohmeu.com (will-cas001.reu.rohmeu.com
+ [192.168.251.177])
+ by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
+ 0A.0D.17433.8B4FA8E5; Mon,  6 Apr 2020 11:22:01 +0200 (CEST)
+Received: from WILL-MAIL001.REu.RohmEu.com ([fe80::2915:304f:d22c:c6ba]) by
+ WILL-CAS001.REu.RohmEu.com ([fe80::d57e:33d0:7a5d:f0a6%16]) with mapi id
+ 14.03.0487.000; Mon, 6 Apr 2020 11:21:49 +0200
+From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
+To: "sebastian.reichel@collabora.com" <sebastian.reichel@collabora.com>
+Subject: Re: [PATCH v8 05/10] power: supply: bd70528: rename linear_range to
+ avoid collision
+Thread-Topic: [PATCH v8 05/10] power: supply: bd70528: rename linear_range
+ to avoid collision
+Thread-Index: AQHWCZRhRl8G/gTlrkKi+UdcJY9RU6hpwTIAgAHzw4A=
+Date: Mon, 6 Apr 2020 09:21:48 +0000
+Message-ID: <cff0cda33a8ab5c2633b05dec7dbe3d548af0fa9.camel@fi.rohmeurope.com>
+References: <cover.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+ <7a6727838bcc93f443c993d91d21d9306dee22be.1585902279.git.matti.vaittinen@fi.rohmeurope.com>
+ <20200405033316.bhafrtorxzwev24z@earth.universe>
+In-Reply-To: <20200405033316.bhafrtorxzwev24z@earth.universe>
+Accept-Language: en-US, de-DE
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [62.78.225.252]
+Content-ID: <338742FC545A6B4AB29D6F20A7FC04D0@de.rohmeurope.com>
 MIME-Version: 1.0
-In-Reply-To: <1585820061-24172-1-git-send-email-clabbe@baylibre.com>
+X-Brightmail-Tracker: H4sIAAAAAAAAA02TbUxTVxjHc+47lLJrRTh044ONySJOmZnZnhi3uSWLdyZzLu7DYjbYBa6U
+ DAppi8pIJkProAaHDiIUyggDrawRaJcMGK6O1OBwo1bet5KMlyy8bECw4JS33UtV+HT+5/yf
+ //N7PjyHIzUzrJZLN5glo0HM0DHh1C3HUvPu1qA18WVHP4L62XoSuseWKLD9Vk/BxflaEooL
+ rhDgrVogobm8kYb5/F4SgvYuCu56ZijwD35DQtnIOAO9FheCb73dNJz9rpGBKkcurI1O01BR
+ eAZ+mm4gwOdrYmGxt5CA0uVrBLjG+mm45PmdhZ62KgZ6zvoRVNZ9TcGDYi+Cct/PBEx6/5Nn
+ GvATUHDuFaiqvyObsx4a7MEyEv4NXJHx5T4SLDe9LPgdQQKGp4/ATYufBLdLrvD0HobWwB0S
+ HnX4iIO7BWe1EwmLC5cpYXbQwgrVzjyhZbgOCU2j39OCYz5B+CNwRmi1DbNCjStHcDvihfOP
+ TgoTThcruBqKGCHQ384IM93d7NHY46oDyaL55LH0NEPCG5+q9O66V7PLI04H24NEPppTWVEY
+ h/l9eKjuBmFF4ZyG70d45ep9FLp0Ilw4Uc1YEccx/AFsHWIVGcUfwhWlglJC8tYo3DLeRyiN
+ tvKJ2P/PHKPoKD4J9y3+Qob0fuwacrOKpvgd+Nzji7Si1fwR/Phe6xPwAMKVy33rRhj/Ou5p
+ WllvhPg4XJQ/sw4g+Rjs+vshHZqax3XtPjKkt+HJsdUn79vxjw9vUMqgJL8TN7YlhKIH8XhX
+ IR3S23HphRE2NMMW/GvFOFWCom2bCLaNtG1T2rYpbduUrkF0A8KZYnpGmmiW9u4xSjl7jFn6
+ TPlIycp0odD+BlvQWse7HYjgUAeK5QjdNnXZhDVRE5mclZqrF036JGNOhmTqQJgjdVFqbXFR
+ okadKuZ+LhmznlrPc5QuRv3iyKVPNLzC+kySsiXjU/cFjtNhdfy83HSLUUqTTp9IzzBv2AQX
+ pjQP10aZJEOqZBRzzPokZT2STPJ+KFaEzK2ZkeNqU7aYKb+Gol1oF1cyaa8lOa+9vpbUUIYs
+ g6SNUS88kEt5pVSfY3gGmkIxHNJtVX+puBHyJ37WZ0pGEDKCMXylIMzihqXNR0eJQMHO27Gd
+ U0O3Pequ93orB1adk553Po6J+2J6cfnER42X37pnf63z7UM+C3Hq2L62476rFDH/YYr+gx+i
+ n3OvHd7hW3Fb80ucqpQLsZH2/bfim9uduXE1FUvRc94/zyenDSa+NPr+X3Tk3SCrsTS8KTWf
+ slzPU90v2pXHrTLaMJWOMunFvfGk0ST+DxZr4U2BBAAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_022142_857898_E1C0665E 
-X-CRM114-Status: UNSURE (   7.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200406_022205_660625_FB44EA7B 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,57 +90,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wens@csie.org, linux-sunxi@googlegroups.com, linux@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4561874349486034889=="
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "andrei.stefanescu@microchip.com" <andrei.stefanescu@microchip.com>,
+ "heiko@sntech.de" <heiko@sntech.de>, "rafael@kernel.org" <rafael@kernel.org>,
+ "tony@atomide.com" <tony@atomide.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "brendanhiggins@google.com" <brendanhiggins@google.com>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "kholk11@gmail.com" <kholk11@gmail.com>,
+ "hsin-hsiung.wang@mediatek.com" <hsin-hsiung.wang@mediatek.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "axel.lin@ingics.com" <axel.lin@ingics.com>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ "b.zolnierkie@samsung.com" <b.zolnierkie@samsung.com>,
+ "krzk@kernel.org" <krzk@kernel.org>,
+ "m.reichl@fivetechno.de" <m.reichl@fivetechno.de>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "wens@csie.org" <wens@csie.org>, "andreas@kemnade.info" <andreas@kemnade.info>,
+ "agross@kernel.org" <agross@kernel.org>, "Laine,
+ Markus" <Markus.Laine@fi.rohmeurope.com>,
+ "Adam.Thomson.Opensource@diasemi.com" <Adam.Thomson.Opensource@diasemi.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "ckeepax@opensource.cirrus.com" <ckeepax@opensource.cirrus.com>,
+ "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "rf@opensource.cirrus.com" <rf@opensource.cirrus.com>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "support.opensource@diasemi.com" <support.opensource@diasemi.com>,
+ "baolin.wang@linaro.org" <baolin.wang@linaro.org>,
+ "sbkim73@samsung.com" <sbkim73@samsung.com>,
+ "patches@opensource.cirrus.com" <patches@opensource.cirrus.com>,
+ "rdunlap@infradead.org" <rdunlap@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Mutanen,
+ Mikko" <Mikko.Mutanen@fi.rohmeurope.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Sebastian,
 
---===============4561874349486034889==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="y4kqwfcf6dwztl2s"
-Content-Disposition: inline
+Thanks for all the reviews :)
 
+On Sun, 2020-04-05 at 05:33 +0200, Sebastian Reichel wrote:
+> Hi,
+> 
+> On Fri, Apr 03, 2020 at 11:46:30AM +0300, Matti Vaittinen wrote:
+> > Follow-up patches in this series will add a generic struct
+> > linear_range. Rename bd70528 internal struct to avoid collision.
+> > 
+> > Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> > ---
+> 
+> Actually the patch is before this one. But since the include is not
+> yet used in the bd70528 charger driver, it should be ok to do it in
+> this order.
 
---y4kqwfcf6dwztl2s
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+You are correct. Just a thing to note (you suggested rebasing the
+regulator stuff and linear ranges to be first patches in the series):
+This patch still needs to be applied before
+[PATCH v8 06/10] regulator: use linear_ranges helper
 
-On Thu, Apr 02, 2020 at 09:34:21AM +0000, Corentin Labbe wrote:
-> On my orange pi PC, I got lot of "sun4i-codec 1c22c00.codec: Failed to register our card".
-> This was due to a missing compoment: the sun8i analog codec.
->
-> Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
+because the regulator header definitions get included via MFD headers:
 
-Applied, thanks
+linux/mfd/rohm-bd70528.h => linux/mfd/rohm-generic.h =>
+linux/regulator/driver.h
 
-Maxime
+And linux/regulator/driver.h will be including the linear_range
+definitions when "regulator: use linear_ranges helper" gets included.
 
---y4kqwfcf6dwztl2s
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXor0ngAKCRDj7w1vZxhR
-xX1NAQDtmDUG0N56YtytHARXBanE8n3MN0rgFqs5YzsPTH7BKgEAlr+sj0EyZc5+
-dGB6hLBjFhR/iA7JQIbMnPSJPRYKIgE=
-=Umyl
------END PGP SIGNATURE-----
-
---y4kqwfcf6dwztl2s--
-
-
---===============4561874349486034889==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Br,
+	Matti Vaittinen
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4561874349486034889==--
-
