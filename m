@@ -2,74 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 326E819F419
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:06:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1535019F411
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:04:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=j3S9SkPTgTGJ33eNbbPBNFhQ8MNEFnYhIjI3cABT82I=; b=RsrGTo9DbIRSDd
-	0GP+m++IbI8UDJybwmFBxO7awFw/iPwWtDrw1S+jneMheeRvW8de7a+NqImpvG3LLXu3quWpY3Jg/
-	Nba9OOHxEm20TdGQ72lS+teXF8L43wLlTpZBHi1SvB04FdbTSMqC+PZ3e5ZGfAFA5L+zw8aL16gVZ
-	Ih1Vx+KptazcY6PoKQZGpquzAo9d5JjknrTxscs0vSLG3G1cQyqh9CRyorxWD2w8HqAEvx2qpfObm
-	WQp1Z+gY/KhsZclRlPkPktphq7Pafy4AbQ92Sdst6G4OOki7fULY2T736Nau12tmi10ZFliVzab/V
-	7/Lef4lQBfK4Kta3Riyg==;
+	List-Owner; bh=7LWcxNFHveKu8oFHwjSFp+pEVm33U1v48G81l4lwfd0=; b=KjLiAGbNp/LGEr
+	wB7s7x+TQfHJzRiovZ+DYExi/EJW9Q6ERVTKGc0U1DVF/R0RhJ8rLKEF2dPZ+GOuIlQRVvVvYW8Yy
+	T7/LB3OoX5TYBmn1c5h49xsLTzV/VJQrTtUzISkiWqPnGhs/2AKjI9FFfMbmnCaZIRIwx1Ye23y6R
+	KIKbXEr8O0hr5aYgnhHN/3p9DPbncdzRE/Df0h1rgqS0za7XfC3JVXIgpbnyGCfM+nBnXRDQFeeaV
+	2SalkCt2pGVLkxprM0QUENpEP7edGelXd6DDVPrkVmQoLvESK3/AA9OnpHKu+Zx+Pe+DLjCxSG+19
+	ybUBsv2gyczf2LJ8wvIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLPaK-0008Hl-2c; Mon, 06 Apr 2020 11:06:32 +0000
-Received: from forward103p.mail.yandex.net ([2a02:6b8:0:1472:2741:0:8b7:106])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1jLPa9-0008HL-Uy; Mon, 06 Apr 2020 11:06:25 +0000
-Received: from forward101q.mail.yandex.net (forward101q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:4b:0:640:4012:bb98])
- by forward103p.mail.yandex.net (Yandex) with ESMTP id B662B18C1533;
- Mon,  6 Apr 2020 13:59:22 +0300 (MSK)
-Received: from mxback8q.mail.yandex.net (mxback8q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:42:0:640:b38f:32ec])
- by forward101q.mail.yandex.net (Yandex) with ESMTP id AFE19CF40010;
- Mon,  6 Apr 2020 13:59:22 +0300 (MSK)
-Received: from vla3-4c649d03f525.qloud-c.yandex.net
- (vla3-4c649d03f525.qloud-c.yandex.net [2a02:6b8:c15:2584:0:640:4c64:9d03])
- by mxback8q.mail.yandex.net (mxback/Yandex) with ESMTP id vNXYnWr9pt-xJtuNdCg; 
- Mon, 06 Apr 2020 13:59:22 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
- t=1586170762; bh=saz29ZzM0qeNyctJjTSW0ESSl5VDK20cE2c5IJADMB8=;
+	id 1jLPY6-0005HY-Fj; Mon, 06 Apr 2020 11:04:14 +0000
+Received: from forward104p.mail.yandex.net ([77.88.28.107])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLPXy-0005Ge-87; Mon, 06 Apr 2020 11:04:08 +0000
+Received: from mxback2g.mail.yandex.net (mxback2g.mail.yandex.net
+ [IPv6:2a02:6b8:0:1472:2741:0:8b7:163])
+ by forward104p.mail.yandex.net (Yandex) with ESMTP id 2D1A14B01769;
+ Mon,  6 Apr 2020 14:03:58 +0300 (MSK)
+Received: from iva6-add863d6e49c.qloud-c.yandex.net
+ (iva6-add863d6e49c.qloud-c.yandex.net [2a02:6b8:c0c:7ea0:0:640:add8:63d6])
+ by mxback2g.mail.yandex.net (mxback/Yandex) with ESMTP id 1lkKD5Qv5k-3taCEc9W; 
+ Mon, 06 Apr 2020 14:03:58 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1586171038; bh=MVbOdw9l4QGn3nnIO9erS76GIdiX/YjUcUkIYMD5UTg=;
  h=Subject:To:From:Cc:Date:Message-Id;
- b=Wa4y6BS4V6dH6GA826LlwzBp2fyTFJ79ipvrJg8KhskqfT5GkJX67pEtnmPd0k4TM
- //WASQRMkXSg2/wpb72YDjBnQtukA1cY+tu/edAhRJrAMYJsC2uRed6q6O3Y93IGkn
- F7Dtkmb+Rrmt7+MV/sLeTO5fJGyJy7djfje75Zoo=
-Authentication-Results: mxback8q.mail.yandex.net;
- dkim=pass header.i=@yandex.com
-Received: by vla3-4c649d03f525.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id xHhLUG81xr-xGWOKepN; Mon, 06 Apr 2020 13:59:18 +0300
+ b=bfzLdk4ExqJTfeP8CqC6jDSZSy5lO661rPA2yyCDjnZMShwp+rNaeaquL/r9csELL
+ 3/vZ+zcrswugGBBiwKe5pdRTro0gPsZXB/qI0dTKtOmpbsKUiL4SbE9VwRqmIC4wCe
+ InbKcGer7B9aKeu93ZNjH2gDvGbj0RNlUX1bH0nA=
+Authentication-Results: mxback2g.mail.yandex.net; dkim=pass header.i=@yandex.ru
+Received: by iva6-add863d6e49c.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
+ id 2f6WU2NpeW-3r287sqM; Mon, 06 Apr 2020 14:03:55 +0300
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (Client certificate not present)
-From: Alexander Lobakin <79537434260@yandex.com>
+From: Alexander Lobakin <bloodyreaper@yandex.ru>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next] net: dsa: add GRO support via gro_cells
-Date: Mon,  6 Apr 2020 13:59:10 +0300
-Message-Id: <20200406105910.32339-1-79537434260@yandex.com>
+Subject: [PATCH resend net-next] net: dsa: add GRO support via gro_cells
+Date: Mon,  6 Apr 2020 14:03:18 +0300
+Message-Id: <20200406110318.33738-1-bloodyreaper@yandex.ru>
 X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_040623_292531_6CBEA623 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200406_040406_785136_AA372DA7 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a02:6b8:0:1472:2741:0:8b7:106 listed in]
- [list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [79537434260[at]yandex.com]
+ no trust [77.88.28.107 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [79537434260[at]yandex.com]
+ provider [bloodyreaper[at]yandex.ru]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,11 +81,11 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Woojung Huh <woojung.huh@microchip.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexander Lobakin <bloodyreaper@yandex.ru>, Hauke Mehrtens <hauke@hauke-m.de>,
  Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@mediatek.com>,
  Russell King <linux@armlinux.org.uk>,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- Alexander Lobakin <79537434260@yandex.com>,
  Claudiu Manoil <claudiu.manoil@nxp.com>, netdev@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  Philipp Zabel <p.zabel@pengutronix.de>,
@@ -133,7 +123,7 @@ on particular setups and platforms.
 
 [1] https://lore.kernel.org/netdev/20191230143028.27313-1-alobakin@dlink.ru/
 
-Signed-off-by: Alexander Lobakin <79537434260@yandex.com>
+Signed-off-by: Alexander Lobakin <bloodyreaper@yandex.ru>
 ---
  net/dsa/Kconfig    |  1 +
  net/dsa/dsa.c      |  2 +-
