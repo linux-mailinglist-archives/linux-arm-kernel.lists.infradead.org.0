@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C59419F3CD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 12:46:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C590919F3D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 12:50:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=p2n0KfvwjyQD9qh7FiCgNlPGEQHtAzFJoUT9ejClBZA=; b=gyZ
-	NNnsY6tHWw4BJky+aIFrVIWJqA64p0mIETecZjgSs1xRnEti3s+GlsbGHp7kuTOW1X0xBidfaWglY
-	tTauzMrgWv2W0PIVmFDkwu5dhApHY5pOGI1xKC2bIt/f7JUGj1gh0zd87aiPH462moMlkKOQjZUwx
-	JD//cshkYoERtR0X73njrg5ikmDmCGeTWjJAQ03Cc8vQLZ9MuXIK5DlwODTwo3hvQRfgoNpsvxgJr
-	Fm32RoLGguEea/BuIfbhwfLO3UefpoESLTJArCmgLNKJx/DLZ+U+LWH6BkU2jrbvv40QNToE83zIG
-	DF5o5P2rMIxG9FOTeE5a9d3UrO97rMg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l5ShAuASZ55BcF5s2MS5FzQO5TpuTGdg3DouRGGErkk=; b=g4rAcb9UVBn3dJ
+	zBZlKfVtOPic4MXXFLz9OYMO3327r0y8RzLmklVIOp3cHcV1i/fn9s1hGE7T76PdYXYev8iay050Q
+	25tDmlbPYA+uT98Q4cX4WPLSaMfSz+VqiaYdRVMwJdv8UIfhaCtT+8ZBsiQdRLI1ghS3sxtDGGxNA
+	sGd0PBYAS67NA5Y1NgwR52wiUtuOVycB+kZGti0niToODXOTC58FSaOzO8S/rmpZhz7nHQ2Zc1fbW
+	CIbP1Spqgfj0rVQ8ymP4TbLgCIygYkKTdCprIq1vqsu2i3FeSX3Kifukg9ZjoV20KXiMgsr0Bs1e+
+	Q3hNF4LK/VuGS9+VBC4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLPGm-00040n-GT; Mon, 06 Apr 2020 10:46:20 +0000
+	id 1jLPKb-0006kI-7I; Mon, 06 Apr 2020 10:50:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLPGf-00040M-5U
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 10:46:14 +0000
-Received: from kozik-lap.mshome.net (unknown [194.230.155.125])
+ id 1jLPKS-0005vh-7l
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 10:50:10 +0000
+Received: from mail-io1-f46.google.com (mail-io1-f46.google.com
+ [209.85.166.46])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8A5F1206F8;
- Mon,  6 Apr 2020 10:46:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD63320781
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon,  6 Apr 2020 10:50:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586169972;
- bh=D6gBRmYTc+zgGLpuMuzRFYrYH7t/9Cv2c9BLVW0I8ow=;
- h=From:To:Cc:Subject:Date:From;
- b=Lky6uMxo8GOtvEwgYMihpkD9LH/hRP9Cu73Mr4//sukdV5kERMpAUiMBLp527kAr1
- SCVVZXY3OAMZiLKAzABBf6qHURcCRwtP+Hp/rUPfvKA85LbbzFQsS284bcJBGxtoqQ
- 5K1K9Q27SLoFXuR7eiGBrkFZpmAdG2ZLuXfFahMg=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: memory-controllers: exynos-srom: Remove unneeded
- type for reg-io-width
-Date: Mon,  6 Apr 2020 12:45:54 +0200
-Message-Id: <20200406104554.29773-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ s=default; t=1586170207;
+ bh=rctahJzuh5tLqqFGJdKaaSjh+D5yszpsiCbItgxEEu4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=NgS9JIAooPzD+r3P/UoVM65g98b6DBXSbU1rmBbd2iVKH5SCSXk99eTRfEfn7Ao7z
+ pKPjWz7bVRrI5CuPvjEQztsE3tzCs0vA7NT3sqq/n9OrtTAv9zNB4p+Bn6ul/rHh2i
+ lytFUweUA7yR2qRyZfI5K/mgOPrhCtd8jtPMBXAU=
+Received: by mail-io1-f46.google.com with SMTP id h6so5387704iok.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Apr 2020 03:50:07 -0700 (PDT)
+X-Gm-Message-State: AGi0PuaOvzNWzGHHgGKlo61gb9cvb1tMCbpvZ32cY2kul5lo8FH3TCLI
+ WHLapxf3IG/6Tm1haQVoBS0BSuRqEOqkhTUSj7M=
+X-Google-Smtp-Source: APiQypKQ0DXf6OTbbEDbWvqDr0O4fp71DBiORc2yfkqvaCwlF2Xt2D/XYKazOJuUaxas7TbROf8g1npwDi8PWxXWoTQ=
+X-Received: by 2002:a05:6638:a22:: with SMTP id
+ 2mr20500991jao.74.1586170207091; 
+ Mon, 06 Apr 2020 03:50:07 -0700 (PDT)
+MIME-Version: 1.0
+References: <202004050718.B9NaFC2U%lkp@intel.com>
+ <20200405045709-mutt-send-email-mst@kernel.org>
+ <20200405123905-mutt-send-email-mst@kernel.org>
+ <CAMj1kXGUru9K-z4JB6tBrgu9S4_5grPpkkSfe3ZfwB-SrGrPvg@mail.gmail.com>
+ <20200406061817-mutt-send-email-mst@kernel.org>
+In-Reply-To: <20200406061817-mutt-send-email-mst@kernel.org>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Mon, 6 Apr 2020 12:49:55 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXF5Tf0J9R0vhPgQJCnh0MM=OBJPK_AQCy-NSEBhpYbedg@mail.gmail.com>
+Message-ID: <CAMj1kXF5Tf0J9R0vhPgQJCnh0MM=OBJPK_AQCy-NSEBhpYbedg@mail.gmail.com>
+Subject: Re: [linux-next:master 12804/13809] include/linux/compiler.h:350:38:
+ error: call to '__compiletime_assert_1533' declared with attribute
+ error:
+ BUILD_BUG_ON failed: __alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE
+To: "Michael S. Tsirkin" <mst@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_034613_228585_EAB392B7 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200406_035008_336007_B8B183F5 
+X-CRM114-Status: GOOD (  26.13  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -76,39 +93,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hyunki Koo <hyunki00.koo@samsung.com>
-MIME-Version: 1.0
+Cc: richard.earnshaw@arm.com, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, christophe.lyon@st.com,
+ Jason Wang <jasowang@redhat.com>, richard.henderson@linaro.org,
+ daniel.santos@pobox.com, Russell King <rmk+kernel@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-'reg-io-width' property is an enum so there is no need to specify its
-type.
+On Mon, 6 Apr 2020 at 12:38, Michael S. Tsirkin <mst@redhat.com> wrote:
+>
+> On Mon, Apr 06, 2020 at 12:00:36PM +0200, Ard Biesheuvel wrote:
+> > (adding some ARM GCC folks)
+> >
+> >
+> > On Sun, 5 Apr 2020 at 18:44, Michael S. Tsirkin <mst@redhat.com> wrote:
+> > >
+> > > Hello!
+> > > I would appreciate ARM maintainers take on the following
+> > > (sorry if I forgot someone, pls feel free to add people to CC):
+> > >
+> > >
+> > > On Sun, Apr 05, 2020 at 05:01:01AM -0400, Michael S. Tsirkin wrote:
+> > > > On Sun, Apr 05, 2020 at 07:57:24AM +0800, kbuild test robot wrote:
+> > > > > tree:   https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git master
+> > > > > head:   dff79597431045a775f2e5d4d9de31bfa0d32a34
+> > > > > commit: 20c384f1ea1a0bc7320bc445c72dd02d2970d594 [12804/13809] vhost: refine vhost and vringh kconfig
+> > > > > config: arm-randconfig-a001-20200405 (attached as .config)
+> > > > > compiler: arm-linux-gnueabi-gcc (GCC) 9.3.0
+> > > > > reproduce:
+> > > > >         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+> > > > >         chmod +x ~/bin/make.cross
+> > > > >         git checkout 20c384f1ea1a0bc7320bc445c72dd02d2970d594
+> > > > >         # save the attached .config to linux build tree
+> > > > >         GCC_VERSION=9.3.0 make.cross ARCH=arm
+> > > > >
+> > > > > If you fix the issue, kindly add following tag as appropriate
+> > > > > Reported-by: kbuild test robot <lkp@intel.com>
+> > > > >
+> > > > > All error/warnings (new ones prefixed by >>):
+> > > > >
+> > > > >    In file included from include/linux/kernel.h:11,
+> > > > >                     from include/linux/list.h:9,
+> > > > >                     from include/linux/preempt.h:11,
+> > > > >                     from include/linux/spinlock.h:51,
+> > > > >                     from include/linux/seqlock.h:36,
+> > > > >                     from include/linux/time.h:6,
+> > > > >                     from include/linux/stat.h:19,
+> > > > >                     from include/linux/fcntl.h:5,
+> > > > >                     from include/linux/eventfd.h:12,
+> > > > >                     from drivers/vhost/vhost.c:13:
+> > > > >    In function 'vhost_vring_set_addr',
+> > > > >        inlined from 'vhost_vring_set_num_addr' at drivers/vhost/vhost.c:1581:7,
+> > > > >        inlined from 'vhost_vring_ioctl' at drivers/vhost/vhost.c:1614:10:
+> > > > > >> include/linux/compiler.h:350:38: error: call to '__compiletime_assert_1533' declared with attribute error: BUILD_BUG_ON failed: __alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE
+> > > > >      350 |  _compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+> > > > >          |                                      ^
+> > > > >    include/linux/compiler.h:331:4: note: in definition of macro '__compiletime_assert'
+> > > > >      331 |    prefix ## suffix();    \
+> > > > >          |    ^~~~~~
+> > > > >    include/linux/compiler.h:350:2: note: in expansion of macro '_compiletime_assert'
+> > > > >      350 |  _compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+> > > > >          |  ^~~~~~~~~~~~~~~~~~~
+> > > > >    include/linux/build_bug.h:39:37: note: in expansion of macro 'compiletime_assert'
+> > > > >       39 | #define BUILD_BUG_ON_MSG(cond, msg) compiletime_assert(!(cond), msg)
+> > > > >          |                                     ^~~~~~~~~~~~~~~~~~
+> > > > >    include/linux/build_bug.h:50:2: note: in expansion of macro 'BUILD_BUG_ON_MSG'
+> > > > >       50 |  BUILD_BUG_ON_MSG(condition, "BUILD_BUG_ON failed: " #condition)
+> > > > >          |  ^~~~~~~~~~~~~~~~
+> > > > > >> drivers/vhost/vhost.c:1533:2: note: in expansion of macro 'BUILD_BUG_ON'
+> > > > >     1533 |  BUILD_BUG_ON(__alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE);
+> > > > >          |  ^~~~~~~~~~~~
+> > > >
+> > > > This compiler seems to be broken. We have:
+> > > > #define VRING_AVAIL_ALIGN_SIZE 2
+> > > > and
+> > > >
+> > > >         struct vring_avail __user *avail;
+> > > >
+> > > > and
+> > > > struct vring_avail {
+> > > >         __virtio16 flags;
+> > > >         __virtio16 idx;
+> > > >         __virtio16 ring[];
+> > > > };
+> > > >
+> > > > A compiler that decides to require alignment of > 2 bytes on
+> > > > a struct of packed u16's is likely broken in a bunch of other
+> > > > ways that just happen not to trigger a BUILD_BUG.
+> > > >
+> > > >
+> > > > The commit referenced just enables build on more platforms ...
+> > >
+> > > OK after some research, it seems that the issue triggers with
+> > > latest gcc too.
+> > > To trigger it, supply -mabi=apcs-gnu on command line.
+> > >
+> > > Dropping  -mabi=apcs-gnu fixes the build.
+> > >
+> > > I am still researching this flag.
+> > >
+> >
+> > Is there a difference between __alignof__ *vq->avail and
+> > __alignof__(struct vring_avail) ?
+>
+> Yes, the same.
+> I found this:
+> https://stackoverflow.com/questions/43786747/struct-layout-in-apcs-gnu-abi
+>
+> Not sure how to interpret it ...
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- .../devicetree/bindings/memory-controllers/exynos-srom.yaml   | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+Ah right, I missed that apcs-gnu is the ancient OABI that is been
+deprecated for a long time.
 
-diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml b/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
-index cdfe3f7f0ea9..1250087b4ee6 100644
---- a/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
-+++ b/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
-@@ -51,9 +51,7 @@ patternProperties:
-         maxItems: 1
- 
-       reg-io-width:
--        allOf:
--          - $ref: /schemas/types.yaml#/definitions/uint32
--          - enum: [1, 2]
-+        enum: [1, 2]
-         description:
-           Data width in bytes (1 or 2). If omitted, default of 1 is used.
- 
--- 
-2.17.1
+Given that virtio support on such ancient systems is not needed in the
+first place, let's just add something along the lines of
 
+depends on !ARM || AEABI
+
+to the virtio Kconfig declaration, and add a comment that it has to do
+with struct member alignment.
 
 _______________________________________________
 linux-arm-kernel mailing list
