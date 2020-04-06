@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F165919F2B8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:38:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1B819F284
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7WfYjvtvd+ieXZVD8t2Ob0NhPvwthr61I/Nz0t7U5dk=; b=KOh+2oA41Moz2b
-	UnZgs92mw7NexY70LjHZif57DDelKgDxT38Lf8cLIyaW+iJRC7ofRUAhE3ZkKvKYHs3FVg1E59vMg
-	tlcRSkoxFuKS1JY+whdmvlAuRRs6+Br7UjizUIgloj914BsNPlD+hEbAOklulW8FqevB3MfRj9eg8
-	LJaZ9+3t9QrtROBsUseXt1ffNcWv279HzlBw6viEpaVnNbCklgX8bzv1IJGOsUK8Lu7O0ZltuvhvC
-	twSrb+kmi70pUkVCroc4EPZZ9KObB7I7ftOpXNzMvE7/wWLiXx8Wsj1BDpQZTf5kTgWfGdl8wScgM
-	uSn1K4Fu72DxQ5O+O+2Q==;
+	List-Owner; bh=GCtiETMrH6aInQdyQPPdNmsmTSScN+OvHJXrc4eWbx8=; b=roQSTNn7ARozTb
+	0h6MD+VhErfs50eCmH/1bywRp8IrpD9Q4H4VLs26BoIFK8h+7d1ou79Wo42tLDrX7fcfNE1cYENRT
+	+6e/xRiG5v4f9SnA09MRqLn7IqdW4WVMTvZbmIjOcDXBKTd/GulGbdEiyfC/NmjAxZqvqzkzC/+HS
+	x+aufKVZsWFP5keR4+JZ7hOj0HBqWwiuI5qfK/0wpNYGDvlDvus1Jm5HateDcCtXJFbDAdKbUgdep
+	0SwY0Qb05c3sJnwRckckRs73qaWSZ/ba2g6XyLV029zRDwM21Bnk9LQGT+SBYsVk9ClOqS9gMGnKd
+	mionr0FjrON3/bgLNE/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLODE-0008L8-6H; Mon, 06 Apr 2020 09:38:36 +0000
+	id 1jLO3K-0001IR-Ge; Mon, 06 Apr 2020 09:28:22 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLOCq-0008BL-Lz; Mon, 06 Apr 2020 09:38:15 +0000
-X-UUID: 1f97dbfe1f86481fb30d55b58f288500-20200406
+ id 1jLO3C-0001HP-Ei; Mon, 06 Apr 2020 09:28:15 +0000
+X-UUID: 87cf2f163bfb4ac6b9181f9c8a6214ac-20200406
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=srrLwmXWOsczNhYEI0r57sCOdKX0qiPArgR8S/J7H+U=; 
- b=W+L+/C5PkGRf7uZRsoTQC/+4qJtHYBe79MofbuvBNEqVEeYycNDvs8EIlUiareaKUvWQSdSi/fdoZuYwsZ4FWTA1fdCc4MZhVcYa7D6ogi5rN1N5tbHCpUmShOkUHkBMS3dD1vFL6nXLvPCaPxfR9opqJVwmE4vIUVnsvv0dB0k=;
-X-UUID: 1f97dbfe1f86481fb30d55b58f288500-20200406
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=MWNDe8xiBMP9rQl7Ip5z2SzbYK+nzQInXthBu/WoeY4=; 
+ b=jvL06Rv3oJhkkDpLah1/6P070nOTmTIz1xt0ziMsMUsHnN9qXusdx3Fq47VWBDmIO3rn0LcC+CEo/IDhzZl8V7nYUsTMdCk0gyjF/ppcgMuBb0qI6j1dbTjT2Fc08ULithwXBUWVtNKAQ1Dbjy1IbbeVei3S6eCssD/K9+UORCw=;
+X-UUID: 87cf2f163bfb4ac6b9181f9c8a6214ac-20200406
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <chun-hung.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 650944091; Mon, 06 Apr 2020 01:38:10 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 861558126; Mon, 06 Apr 2020 01:28:11 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Mon, 6 Apr 2020 02:28:05 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 6 Apr 2020 17:28:02 +0800
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 6 Apr 2020 17:28:03 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Mon, 6 Apr 2020 17:28:01 +0800
+ Frontend Transport; Mon, 6 Apr 2020 17:28:02 +0800
 From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 To: <mirq-linux@rere.qmqm.pl>, Jonathan Hunter <jonathanh@nvidia.com>, "Al
  Cooper" <alcooperx@gmail.com>, Adrian Hunter <adrian.hunter@intel.com>,
@@ -59,20 +59,18 @@ To: <mirq-linux@rere.qmqm.pl>, Jonathan Hunter <jonathanh@nvidia.com>, "Al
  Gleixner" <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  "Mathieu Malaterre" <malat@debian.org>, Stanley Chu
  <stanley.chu@mediatek.com>, "Kuohong Wang" <kuohong.wang@mediatek.com>
-Subject: [PATCH 1/5] [1/5] mmc: core: Extend mmc_of_parse() to parse CQE
- bindings
-Date: Mon, 6 Apr 2020 17:27:57 +0800
-Message-ID: <1586165281-11888-2-git-send-email-chun-hung.wu@mediatek.com>
+Subject: [PATCH 2/5] [2/5] mmc: host: Remove redundant host CQE bindings
+Date: Mon, 6 Apr 2020 17:27:58 +0800
+Message-ID: <1586165281-11888-3-git-send-email-chun-hung.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1586165281-11888-1-git-send-email-chun-hung.wu@mediatek.com>
 References: <1586165281-11888-1-git-send-email-chun-hung.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 31970E197ED6CDA124A0AA6672FCC67F20B8B96C7BEB98C749FB250F256067A82000:8
+X-TM-SNTS-SMTP: 3A9531E2BC7618BFEB04D1E964ADCBD4D2135A383C34C28A1E705DD966F2B10A2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_023812_719606_12E5411A 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200406_022814_498999_46181529 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,30 +112,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Parse CQE bindings "supports-cqe" and "disable-cqe-dcmd"
-in mmc_of_parse().
+CQE bindings "supports-cqe" and "disable-cqe-dcmd" is parsed
+in mmc_of_parse(). Remove vendor code which parses CQE bindings,
+and use mmc_host->caps2 to decide support CQE or not.
 
 Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 ---
- drivers/mmc/core/host.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/mmc/host/sdhci-brcmstb.c   | 11 ++++++-----
+ drivers/mmc/host/sdhci-msm.c       |  3 +--
+ drivers/mmc/host/sdhci-of-arasan.c |  3 ---
+ drivers/mmc/host/sdhci-tegra.c     |  2 +-
+ 4 files changed, 8 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/mmc/core/host.c b/drivers/mmc/core/host.c
-index c876872..47521c6 100644
---- a/drivers/mmc/core/host.c
-+++ b/drivers/mmc/core/host.c
-@@ -302,6 +302,11 @@ int mmc_of_parse(struct mmc_host *host)
- 		host->caps2 |= MMC_CAP2_NO_SD;
- 	if (device_property_read_bool(dev, "no-mmc"))
- 		host->caps2 |= MMC_CAP2_NO_MMC;
-+	if (device_property_read_bool(dev, "supports-cqe"))
-+		host->caps2 |= MMC_CAP2_CQE;
-+	if (!device_property_read_bool(dev, "disable-cqe-dcmd")) {
-+		host->caps2 |= MMC_CAP2_CQE_DCMD;
-+	}
+diff --git a/drivers/mmc/host/sdhci-brcmstb.c b/drivers/mmc/host/sdhci-brcmstb.c
+index ad01f64..07c90c6 100644
+--- a/drivers/mmc/host/sdhci-brcmstb.c
++++ b/drivers/mmc/host/sdhci-brcmstb.c
+@@ -247,10 +247,6 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
+ 		return res;
  
- 	/* Must be after "non-removable" check */
- 	if (device_property_read_u32(dev, "fixed-emmc-driver-type", &drv_type) == 0) {
+ 	memset(&brcmstb_pdata, 0, sizeof(brcmstb_pdata));
+-	if (device_property_read_bool(&pdev->dev, "supports-cqe")) {
+-		has_cqe = true;
+-		match_priv->ops->irq = sdhci_brcmstb_cqhci_irq;
+-	}
+ 	brcmstb_pdata.ops = match_priv->ops;
+ 	host = sdhci_pltfm_init(pdev, &brcmstb_pdata,
+ 				sizeof(struct sdhci_brcmstb_priv));
+@@ -261,7 +257,6 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
+ 
+ 	pltfm_host = sdhci_priv(host);
+ 	priv = sdhci_pltfm_priv(pltfm_host);
+-	priv->has_cqe = has_cqe;
+ 
+ 	/* Map in the non-standard CFG registers */
+ 	iomem = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+@@ -276,6 +271,12 @@ static int sdhci_brcmstb_probe(struct platform_device *pdev)
+ 	if (res)
+ 		goto err;
+ 
++	if (host->mmc->caps2 & MMC_CAP2_CQE) {
++		has_cqe = true;
++		match_priv->ops->irq = sdhci_brcmstb_cqhci_irq;
++	}
++	priv->has_cqe = has_cqe;
++
+ 	/*
+ 	 * If the chip has enhanced strobe and it's enabled, add
+ 	 * callback
+diff --git a/drivers/mmc/host/sdhci-msm.c b/drivers/mmc/host/sdhci-msm.c
+index c3a160c..fbb2f57 100644
+--- a/drivers/mmc/host/sdhci-msm.c
++++ b/drivers/mmc/host/sdhci-msm.c
+@@ -1880,7 +1880,6 @@ static int sdhci_msm_probe(struct platform_device *pdev)
+ 	u8 core_major;
+ 	const struct sdhci_msm_offset *msm_offset;
+ 	const struct sdhci_msm_variant_info *var_info;
+-	struct device_node *node = pdev->dev.of_node;
+ 
+ 	host = sdhci_pltfm_init(pdev, &sdhci_msm_pdata, sizeof(*msm_host));
+ 	if (IS_ERR(host))
+@@ -2076,7 +2075,7 @@ static int sdhci_msm_probe(struct platform_device *pdev)
+ 	pm_runtime_use_autosuspend(&pdev->dev);
+ 
+ 	host->mmc_host_ops.execute_tuning = sdhci_msm_execute_tuning;
+-	if (of_property_read_bool(node, "supports-cqe"))
++	if (host->mmc->caps2 & MMC_CAP2_CQE)
+ 		ret = sdhci_msm_cqe_add_host(host, pdev);
+ 	else
+ 		ret = sdhci_add_host(host);
+diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
+index e49b44b..359eff6 100644
+--- a/drivers/mmc/host/sdhci-of-arasan.c
++++ b/drivers/mmc/host/sdhci-of-arasan.c
+@@ -1281,9 +1281,6 @@ static int sdhci_arasan_probe(struct platform_device *pdev)
+ 					sdhci_arasan_voltage_switch;
+ 		sdhci_arasan->has_cqe = true;
+ 		host->mmc->caps2 |= MMC_CAP2_CQE;
+-
+-		if (!of_property_read_bool(np, "disable-cqe-dcmd"))
+-			host->mmc->caps2 |= MMC_CAP2_CQE_DCMD;
+ 	}
+ 
+ 	ret = sdhci_arasan_add_host(sdhci_arasan);
+diff --git a/drivers/mmc/host/sdhci-tegra.c b/drivers/mmc/host/sdhci-tegra.c
+index 403ac44..d09abdd 100644
+--- a/drivers/mmc/host/sdhci-tegra.c
++++ b/drivers/mmc/host/sdhci-tegra.c
+@@ -715,7 +715,7 @@ static void tegra_sdhci_parse_dt(struct sdhci_host *host)
+ 	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+ 	struct sdhci_tegra *tegra_host = sdhci_pltfm_priv(pltfm_host);
+ 
+-	if (device_property_read_bool(host->mmc->parent, "supports-cqe"))
++	if (host->mmc->caps2 & MMC_CAP2_CQE)
+ 		tegra_host->enable_hwcq = true;
+ 	else
+ 		tegra_host->enable_hwcq = false;
 -- 
 1.9.1
 _______________________________________________
