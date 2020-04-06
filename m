@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B74319FA81
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:43:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 819C619FA84
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:43:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EPYl89CZ+aLs1DpFKA2IWNz+iGZ12VthyrJIf/CBO5Q=; b=usV7v6xOZelOnI
-	5Vdr51Y9UoXRp6jQajtXc3BS4gwPXS2gtu6M8ih50+7gpdjw9JD4lvXcsXK63+AnYT9CLN9oOl4I3
-	mKPQxRZ1YNbBxKogoJHdCVOIAVApPBmolyidwS0tdAH0Qom2XQ6HtcxAdUmWjFMdYUmVXfk/veZ1P
-	BOQfXyjh9ydG2csS/teoUbs7AQQmIUU2uq9vur7IKn0QCphg4lzLFXyT4EOtRvhgfUki6235702m0
-	iGGBr4AEHkiS4g9rSS5AXdf2aThycvSnbrPVnFPFiA3RicE6KsV3oixho7kO3zgBsiBkCVzeEMCR/
-	RHIpUlofgLyjfDin0SUg==;
+	List-Owner; bh=ce6IEjEzvGlbVuM56iizHyiDRs3WJrCTuY9wIrztmBQ=; b=sdFoHSclSQKz7S
+	pIJ/DYHyzYkXDN5D9yxPaI6cBvyKAsl3hu1eTpIWZ8ZITWO7y1uoyJEIPa1UbCAt/Gdgq8DHkwrBO
+	2RPgZzGjglSBJs0VbA6HizQ/vXd1Nmd1ItIIh3h+2DlV1rHE9CZz7zc85FntaC79nwjd+w+bbuUGv
+	sAPeECX9+8eHa2LCeGs0/YztQmlME4ojpx8QbIBZwM6o5Xt774eB6P7NJoP/0lVt7hQPTXu40ekuA
+	VCV3b0qPxoorG7kV412/FObKjBON1itrBPA+l8/JeRxHPXVfSfA9B/Jf5gZ1NIvLl7OXBUctVgiW4
+	NQ3FMgBYTft9sw+acF9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLUqF-0005Fc-QW; Mon, 06 Apr 2020 16:43:19 +0000
-Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
+	id 1jLUqU-0005W5-LN; Mon, 06 Apr 2020 16:43:34 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLUol-000459-Iv
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 16:41:49 +0000
-Received: by mail-pf1-x44a.google.com with SMTP id v18so50808pfg.9
+ id 1jLUoo-000494-Kw
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 16:41:52 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id o18so3729144pgh.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 09:41:46 -0700 (PDT)
+ Mon, 06 Apr 2020 09:41:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=9B6Bbg3gx9O6jKpvJ6qFzEYX2A3WHmV1/UUBgqymv0A=;
- b=HrWDz0fZO75NK2vCDmhD/+I1qivG9oQ4qAVeDGVwVMfnHG2UMPDsy9o7I7DFuuos8b
- 1wMXq0iZh8/+0SOrfAKklcnAPfzQcpOOxTjvsBz0Vi0obIwCilmN41649T4n71L4/o4U
- LAdhGzV5hQoCG+zdFTTKQJpy0xQJRahkRKsMczLj6t4/jv9w74++Q58CRZVqcxunEXmb
- e/F51UD4+HJXaVRvm6gJ4a3RWNd/HZviv2qgqNNwJ3gi/p4aI5O/iHpykcrqnt5Z3sZ4
- klV/kXyI+4SCreOsjka0bJe/27FDR4qvujrtwmGtRqMmKebKPVVef3jTwgHg8nxIVBQP
- CMtg==
+ :cc; bh=FvIJZaGomfz5bQTqJN2U0Xo4/dMI8mtkhTC7egpm8RA=;
+ b=sZgUXhLMxuUZHoqYFcqJQyMtRrVeB4vbIJgZfI8vPE3ap9A/9BT16xYBgEZfJZwzHb
+ p/Xb5EGHwP5/CHALYTdDgmSLbcPrGZxAna83nSg6gIywsrUh7VegvbRlWKSidmTZaduL
+ JkIi3FLIB3RLFCMs8/R2AIvOjODoY4FM+pu6UiLLtsoUZ4FIpMSRZZd/sl1DrxuOHLRs
+ qsTLwGT7TZOTmsB4zwdErv1k7eKdBWOhQ0UgfSaLWeBzdHI/14RLXcoxTbmTmzGS4PJz
+ S1BSe2jfOXJpexnv2HjTJdH928LuWNUeCfCevn3GUQ3kWhph4qWJWBu706wq7G4VUNsy
+ Vq+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=9B6Bbg3gx9O6jKpvJ6qFzEYX2A3WHmV1/UUBgqymv0A=;
- b=YRp5SD7YmkkVzbJFS6sjFM1825nmDATkPvuHoFFlEl3zP2RyFT0etgKKmfrfrjMjFF
- oiVdEF+f2YTywdQtjpWtW5X0ENcqkGjKS/dzAzNDvZzDyoYtAioMw9eUxTyj4m5ebL3c
- fX0nOE1+kw938yXv3/C+ky4mK1QOubmuugbtHOuVGiAlCuPSVjC0zY0Ex8l78ID6hlOX
- 8Gi29VL1k11mhv1QegEv29MI5Xy1Mq/g5r/Y4PmBIMeGkc8jiMUlngdPpsitQz0l3Sai
- 4C3PGJIGYHwSFctAnWQ35+DlFZXgK97EzTrQTF4+3X2ZM1JPJJDUzY/alJJYc2sB8r3s
- 9Vqw==
-X-Gm-Message-State: AGi0Pub4dfayCbfwBnkyUa9p6nUZG26Sfm7pZb4PkcQq1gpu50+0TFuf
- rkOIlPXsW6H08RrwvuuRWcVCRZGmDeu4mZo2Ctk=
-X-Google-Smtp-Source: APiQypIh9gY+yUNhuam6c+bzLbAj5vxnuqxB7ZWcGUFaI6ujh55+UwXryWUkEBM6Rr0lP42Us55g5qxLwuz/E8Mta2o=
-X-Received: by 2002:a63:1662:: with SMTP id 34mr22378296pgw.117.1586191304990; 
- Mon, 06 Apr 2020 09:41:44 -0700 (PDT)
-Date: Mon,  6 Apr 2020 09:41:14 -0700
+ bh=FvIJZaGomfz5bQTqJN2U0Xo4/dMI8mtkhTC7egpm8RA=;
+ b=Pt+UUa+hJcTq6IQ6W42CEpPnO/Fm6E78T3vV1J9NtbLCSFoQJGkN8HpLTMshKYwVr7
+ dzgtra2v3qiX2nub5UPstBqLwXNKq2oETn6ZEhnFDf1oJtlmwBxNbyHJ9zyyfbSHPgn1
+ S6X1LjZF9noTsyMVjnhV36r66G6bUeTlidah0z3LyuahpWpSMVZtxkkuXSuxNl5xDprk
+ aW50ef6I9yo6YPnsavEFsflJCl+ArTK9UePAp1FvelRR2A28gQcmusp73LtvlOWmZblX
+ fxRun3cVxfDZHOU6OP16dHfl3LIWkY7mkqqc3vMZCdGNOq0t0MXu1yyAiPN0yH7Mscwd
+ Gbhg==
+X-Gm-Message-State: AGi0PuanIKUXVLXi1NNOA2mHjtmFdU1D3iFlf69ppEzWAoHnGc6OrCPi
+ Ye3ccGWuxS0/J+FcWL+SrUSNeJU1eb+v7vf220M=
+X-Google-Smtp-Source: APiQypIFwmNrjKh1lQZCso9eQPW5DK0TW2vYCZpfEPndLBGmeeUElj0RyNkfI+/Jw0+mhfmcbtmfQfN+X3LYM4MOsRg=
+X-Received: by 2002:a63:9550:: with SMTP id t16mr19437932pgn.300.1586191308872; 
+ Mon, 06 Apr 2020 09:41:48 -0700 (PDT)
+Date: Mon,  6 Apr 2020 09:41:15 -0700
 In-Reply-To: <20200406164121.154322-1-samitolvanen@google.com>
-Message-Id: <20200406164121.154322-6-samitolvanen@google.com>
+Message-Id: <20200406164121.154322-7-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200406164121.154322-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.26.0.292.g33ef6b2f38-goog
-Subject: [PATCH v10 05/12] arm64: reserve x18 from general allocation with SCS
+Subject: [PATCH v10 06/12] arm64: preserve x18 when CPU is suspended
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
@@ -66,16 +66,15 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, 
  Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_094147_725038_409F5830 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200406_094150_716222_0E280BD1 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -113,34 +112,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reserve the x18 register from general allocation when SCS is enabled,
-because the compiler uses the register to store the current task's
-shadow stack pointer. Note that all external kernel modules must also be
-compiled with -ffixed-x18 if the kernel has SCS enabled.
+Don't lose the current task's shadow stack when the CPU is suspended.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Acked-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/Makefile | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/include/asm/suspend.h |  2 +-
+ arch/arm64/mm/proc.S             | 14 ++++++++++++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index f15f92ba53e6..34277c60cdf9 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -76,6 +76,10 @@ branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
- KBUILD_CFLAGS += $(branch-prot-flags-y)
- endif
+diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
+index 8939c87c4dce..0cde2f473971 100644
+--- a/arch/arm64/include/asm/suspend.h
++++ b/arch/arm64/include/asm/suspend.h
+@@ -2,7 +2,7 @@
+ #ifndef __ASM_SUSPEND_H
+ #define __ASM_SUSPEND_H
  
-+ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
-+KBUILD_CFLAGS	+= -ffixed-x18
-+endif
-+
- ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
- KBUILD_CPPFLAGS	+= -mbig-endian
- CHECKFLAGS	+= -D__AARCH64EB__
+-#define NR_CTX_REGS 12
++#define NR_CTX_REGS 13
+ #define NR_CALLEE_SAVED_REGS 12
+ 
+ /*
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index 197a9ba2d5ea..ed15be0f8103 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -58,6 +58,8 @@
+  * cpu_do_suspend - save CPU registers context
+  *
+  * x0: virtual address of context pointer
++ *
++ * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
+  */
+ SYM_FUNC_START(cpu_do_suspend)
+ 	mrs	x2, tpidr_el0
+@@ -82,6 +84,11 @@ alternative_endif
+ 	stp	x8, x9, [x0, #48]
+ 	stp	x10, x11, [x0, #64]
+ 	stp	x12, x13, [x0, #80]
++	/*
++	 * Save x18 as it may be used as a platform register, e.g. by shadow
++	 * call stack.
++	 */
++	str	x18, [x0, #96]
+ 	ret
+ SYM_FUNC_END(cpu_do_suspend)
+ 
+@@ -98,6 +105,13 @@ SYM_FUNC_START(cpu_do_resume)
+ 	ldp	x9, x10, [x0, #48]
+ 	ldp	x11, x12, [x0, #64]
+ 	ldp	x13, x14, [x0, #80]
++	/*
++	 * Restore x18, as it may be used as a platform register, and clear
++	 * the buffer to minimize the risk of exposure when used for shadow
++	 * call stack.
++	 */
++	ldr	x18, [x0, #96]
++	str	xzr, [x0, #96]
+ 	msr	tpidr_el0, x2
+ 	msr	tpidrro_el0, x3
+ 	msr	contextidr_el1, x4
 -- 
 2.26.0.292.g33ef6b2f38-goog
 
