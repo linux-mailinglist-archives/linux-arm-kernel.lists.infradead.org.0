@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CF1819FDA8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 20:56:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D826A19FDBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 20:59:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x+TxcEW9V3zxujlCPHMnEcGdrz5w0pVlkQRdBkIxB7Q=; b=p1kE8IOGGvK/GE
-	4+4KV7Wvz2WGAAIjPRFbgQ9MZ6vUTeDJHiq6tEA0SVxavnoregY6zgThuLHzFuIUEjMNpN24q+C6j
-	GwDQo/E9JVLWZUl5SjLrF9M7kfIbzyL5AYSfmPqULFZofHcncdqu8Je/BLQmGSOtAwK6hhM+FPR5p
-	QYWR66d9eB8CHYVVncXGeZ8tQtFJGiDpW3wQ3NSy+c3VZgd7pulJR9Vb04uavBPqjDuvuAKM1uPwC
-	29uyDyGZk6rsBPgi5hs8EqTHipsau+AWzVefXy8W3YidABRhWWBFCBAHgF8IUYApZ8k5q+hualpK1
-	04MnUKRFO5xeJSMkzaeg==;
+	List-Owner; bh=SB2IdWj198irjFDqMwvWJYu4CTLy6xllEi+HrpYc/eQ=; b=tKQLxTuQ77t23F
+	nH/133Lqv8SJqoOnoMottFOfsCw7UDckZftDfD6oupcFKWRtbyp8g2VermJqs5RDlCNn7QcNh8Oi4
+	/bN+Y3HDkDSZYUSLPejB02hPOc235EAVoCSTOwcpVKjjswyP1M5nK+y5cSa079bz/u1IwQqRrnSsc
+	8DfQPGb75h6FMHMLVm3w4ZC3W2sN13D7XmlSRHEhGE51c+RP+Mc9n/T+Z4QryZuz9Qxt7iJwHZ6VI
+	kDqsNNoRJSbEJaAWYZXQ/37Otme0+Nemhz19+3z9eWVxlxJ6h1eVbYVxHlLE/xH9jw7wm/Cefup3L
+	KkgKuzfudcpa+bmhBQHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLWuv-0007mw-HV; Mon, 06 Apr 2020 18:56:17 +0000
+	id 1jLWxv-0008Id-OD; Mon, 06 Apr 2020 18:59:23 +0000
 Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLWuo-0007mV-Kh
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 18:56:12 +0000
-Received: by mail-ua1-x941.google.com with SMTP id y17so328579uap.13
+ id 1jLWxo-0008HX-BR
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 18:59:18 +0000
+Received: by mail-ua1-x941.google.com with SMTP id a6so362094uao.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 11:56:10 -0700 (PDT)
+ Mon, 06 Apr 2020 11:59:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=verdurent-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YCt9CgbBrzDRuK00OoymzXY2ko3dB7fTGcCY007YOZs=;
- b=NMJLXJuSUipFN2jWrzRqytL4ZCYTvvfT1ckaVE2gbYkuDUS71hrCmNT9M0dXLP3dO6
- 3/Ti0+LCLAwTkV0icyklghku3G5pE488aIIuAVLCu5RZeJpGxwSNrtsuDDei010eL8fx
- TBt+Wm9l6KuqIDFOXDlNDT4J9TmE+XccPop0f2xaj6ksGoijIHieXois8/S5vB7F+Wpx
- yPmhaZfrBfZ2RPHMZZ0XT2hpk7zf0fOVb05p03yIpZVLuFf0Um2k72SX51i377Rfd2kI
- YThSvxnxKUy/GZGuO34h3ewzit8uEL2Uh3CxMzvP/t4A2OeEMA37DlW3u6Boq/18p3fY
- fNVg==
+ :cc; bh=nDAcnZMYqkDveNfrgmB4yWwyjbhpJ9MHsqPOuy8eQN4=;
+ b=fWNvo64mS+jo9GGyKMhWJ/qKsB/0W46MHYCDRzdQ+Ua0jzg9JmUngUZJz71qxuGeyN
+ E9ALiHDJWbgx7X73gJObz6ghq63kKkmAN+mOFu9Ow9R4jQyhQIdhFZBXKOHcX1FJcyYW
+ Xcvnhk5HWiMTSBjSJAEVOarpWJqdJr8fS77j8+JY5JrCnNlhXQwPAtWnt+6Np0s0LtsT
+ xyhbrh3zpfpRgREdvwklDAoV6bIQXy2J9653XLvME3opQs5yynnmMhVgCjyMRdgNjXCK
+ 2SmTjWtbB25SfDV3PyAnjrhk/CKFPqQggOg90IQfiWUPVoenz2JuLxvqwoHgmufFyyOR
+ yYQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=YCt9CgbBrzDRuK00OoymzXY2ko3dB7fTGcCY007YOZs=;
- b=D2z5bfVGAEvkWwXgKuteArqyzUZND4Oxq2+npBmNYWvCZi1ED7JSAuTx21yJoZDH0Z
- P/kUrzFbs9Z6lqIRsE/gIlkP2Yyjt7jQ7LC53OD7KQ5HPcbOaksS/apXgcCNiH7pU7gK
- uRvF9OTpgRQrSTplykTLmplShGLVlkmeKLH01lG8zt07hEdP/lTjrj1BoiHkcbUx46fT
- v4n0Kcy4SyecLBUMM34WmZTtKtRSRVjcim895P/yW7LjzaRHAF8CTGerpn/RZzSrkpLQ
- 1TKoLFDYn/bd7oNrxa58vmackbCBfT6EG60nlg6GbNTgsoZsiBbpWcIP/G04Tt/HdxeU
- pCbw==
-X-Gm-Message-State: AGi0PuZL9g9igEqruoGm+0WOjMQRgvHoPC9H88uOGkD6PwU7qp3FIJF6
- B9OlXFsVszNMhKoS0eMMTO1dQBU8Y+0YbYo3oDzsZg==
-X-Google-Smtp-Source: APiQypLGBKWQKH327cHkPy1xzfBkm0CtDriYAFhKuYjgdi5YcigLSB9yGh/2OvKDRjcaN0LWJ4I9t9xAL1fCnKcmN1g=
-X-Received: by 2002:ab0:4e96:: with SMTP id l22mr884101uah.67.1586199369194;
- Mon, 06 Apr 2020 11:56:09 -0700 (PDT)
+ bh=nDAcnZMYqkDveNfrgmB4yWwyjbhpJ9MHsqPOuy8eQN4=;
+ b=S8sbFBeq18vjBBGIcYWMg7CKYdgTcXGElYuIo/Mp2baoMBB138QTHcKgINX5INa/vc
+ 08HiOmkDAofsQ9Y8FjuxIBM1zd8E63nv5CLjEGzdOZB78d8Zt9Jgopzn0C2bsPvxEgNb
+ rGk1Fhsj2TB6XtCks1eN+5Ww1hGgYQXH7BGtdOOLHCkJcP7/lGTtG95DNNO0/OBr1CgZ
+ 1bfCcJmskRqnRERn3+owaz+GsqPRhQa2EoCOGGck92M85Jp6HyMQkMAvh9lWjXPvJ+jd
+ sJ16WpgbwE9iB7EYso7dILkmG+DDDK2mvCdDvAUy60TGlw0smblNHRDG1TYndLVKAo0p
+ r5eg==
+X-Gm-Message-State: AGi0PuavFlFqBKQ2HuaopHjGE9+YEui8e3B2rR0LFD7Wh7Jkr8ir92/h
+ eKRaGOS416N8WsCz2s2zLd0lzCHRPL0x5BMlMJuFzw==
+X-Google-Smtp-Source: APiQypLeRQREH9FZt78T2gDBjLSaxjqqmMP+EJjradX50Mt/AJhDgOrs5PJLAJsgyzbmkywlhuXwDEQRrvXKzlBgu7s=
+X-Received: by 2002:ab0:608b:: with SMTP id i11mr813311ual.94.1586199555194;
+ Mon, 06 Apr 2020 11:59:15 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200331075356.19171-1-j-keerthy@ti.com>
  <20200331075356.19171-3-j-keerthy@ti.com>
 In-Reply-To: <20200331075356.19171-3-j-keerthy@ti.com>
 From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Tue, 7 Apr 2020 00:25:58 +0530
-Message-ID: <CAHLCerNvRvp7QAeODb34EV89a0g77ZDLuDioBct7kuBjPgrjwQ@mail.gmail.com>
+Date: Tue, 7 Apr 2020 00:29:04 +0530
+Message-ID: <CAHLCerN83E_JyMiU9xDajQqgjdGTxK3yXz3-Z-5i-jvrb1jAhA@mail.gmail.com>
 Subject: Re: [PATCH v5 2/4] thermal: k3: Add support for bandgap sensors
 To: Keerthy <j-keerthy@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_115610_709306_6D856978 
-X-CRM114-Status: GOOD (  28.18  )
+X-CRM114-CacheID: sfid-20200406_115916_393670_62CF16C0 
+X-CRM114-Status: GOOD (  27.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -106,6 +106,10 @@ On Tue, Mar 31, 2020 at 1:24 PM Keerthy <j-keerthy@ti.com> wrote:
 > circuits and other analog IP blocks. The analog-to-digital
 > converter (ADC) produces an output value that is proportional
 > to the silicon temperature.
+
+Your cover letter seems to have useful information that belongs in
+this commit message IMO.
+
 >
 > Currently reading temperatures only is supported.
 > There are no active/passive cooling agent supported.
@@ -182,23 +186,13 @@ On Tue, Mar 31, 2020 at 1:24 PM Keerthy <j-keerthy@ti.com> wrote:
 > +#include <linux/thermal.h>
 > +#include <linux/of.h>
 > +
-
-Sort these includes alphabetically
-
-
 > +#define K3_VTM_DEVINFO_PWR0_OFFSET             0x4
 > +#define K3_VTM_DEVINFO_PWR0_CVD_CT_MASK        0xf
-
-Not used, remove.
-
 > +#define K3_VTM_DEVINFO_PWR0_TEMPSENS_CT_MASK   0xf0
 > +#define K3_VTM_TMPSENS0_CTRL_OFFSET    0x80
 > +#define K3_VTM_REGS_PER_TS                     0x10
 > +#define K3_VTM_TS_STAT_DTEMP_MASK      0x3ff
 > +#define K3_VTM_MAX_NUM_TS              8
-
-Not used, remove
-
 > +#define K3_VTM_TMPSENS_CTRL_CBIASSEL   BIT(0)
 > +#define K3_VTM_TMPSENS_CTRL_SOC                BIT(5)
 > +#define K3_VTM_TMPSENS_CTRL_CLRZ               BIT(6)
@@ -260,9 +254,6 @@ Not used, remove
 > +/* common data structures */
 > +struct k3_thermal_data {
 > +       struct thermal_zone_device *ti_thermal;
-
-Nit: perhap use tzd/tzdev instead of ti_thermal which doesn't really say much?
-
 > +       struct k3_bandgap *bgp;
 > +       int sensor_id;
 > +       u32 ctrl_offset;
@@ -301,11 +292,6 @@ Nit: perhap use tzd/tzdev instead of ti_thermal which doesn't really say much?
 > +        * report temperatures.
 > +        *
 > +        * Errata workaround.
-
-So there is no fix in later versions of silicon? If so, shouldn't this
-errata only apply to a subset of chips after checking some IP version?
-
-
 > +        */
 > +       s0 = readl(bgp->base + devdata->stat_offset) &
 > +               K3_VTM_TS_STAT_DTEMP_MASK;
@@ -416,10 +402,6 @@ errata only apply to a subset of chips after checking some IP version?
 > +err_alloc:
 > +       pm_runtime_put_sync(&pdev->dev);
 > +       pm_runtime_disable(&pdev->dev);
-
-Just use dev?
-
-
 > +
 > +       return ret;
 > +}
