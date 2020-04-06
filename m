@@ -2,69 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFC4819F4A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:33:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20EDC19F4B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 13:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RUVBVvmA61l9J7H8xKfPtrmTBxRiW5O8iILA8PtnFSQ=; b=mps/9uozT6gYLF
-	CW+h3LTBavdCmfL8To1l4GpaCl6MaarPwNt9WcG6eI5qiuZC+PhhR1mGhXf6xzNEFlVscMVOffhG3
-	FozkauVESWIxZR9SSWvWQUxAobmViiO0EUHr/KIt0ImzSeoh0ca3EFbv1fbfMoGOZQzbZpJL6wHUt
-	9YbYGJi7ihjcoRxuX2v04/Tsw8mbyP2+yslMKLRQ/APBeaGQZNB5BIYFDrjbEc9eOIb/WGiURsOZv
-	/TIN03bAHlm5w94yJ3I9I7kv4hHP/klkiJcAVbnMCp38hpesuz76BN46GSp5sdP9wNL/35DIFqPZt
-	XJevbVF+Edvb0Ku9HUJA==;
+	List-Owner; bh=EUtZa3InK/MSDGTg7ZYhY1VBj0FX/Emy2neqMabtdnU=; b=kSDJF1H3Ja+ecE
+	GOHh22YShTB79zTsREfkZYMmHzn34W1VR1oSSqS7uNQjBvRjJi0LvWHxRjsDBZOQ47FucT5jZv0b4
+	lH00Q+2OZxnuM/1SQ3lfnxtDZ1PCiIs8jYd/Vx/DW2PMpvTKu9WBprMkvOrVqh/xFtf603jy2bdQ5
+	LqrbYwI8z9UKeJohRt7ckpOglP7dfJotHmSW37yVWvfEGmrNuXuxUeFoCibM8jR2ZtR7fe0vVDw7B
+	kGjj5He7FX949UK1MHSXmdNleTQflVTegu6uDuJTD3Utno23wOoDhvmo0Qfp8FGtzi41GeMO4CpMn
+	qoqTHXHuXDjvqU+UgxnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLQ0A-0007k1-4t; Mon, 06 Apr 2020 11:33:14 +0000
-Received: from forward100p.mail.yandex.net ([77.88.28.100])
+	id 1jLQ3Q-000307-4y; Mon, 06 Apr 2020 11:36:36 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLPzJ-00075c-Ml
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 11:32:24 +0000
-Received: from mxback18j.mail.yandex.net (mxback18j.mail.yandex.net
- [IPv6:2a02:6b8:0:1619::94])
- by forward100p.mail.yandex.net (Yandex) with ESMTP id 8EFA959802A0;
- Mon,  6 Apr 2020 14:32:17 +0300 (MSK)
-Received: from iva6-add863d6e49c.qloud-c.yandex.net
- (iva6-add863d6e49c.qloud-c.yandex.net [2a02:6b8:c0c:7ea0:0:640:add8:63d6])
- by mxback18j.mail.yandex.net (mxback/Yandex) with ESMTP id fq58GT5zVa-WGOSMI2V;
- Mon, 06 Apr 2020 14:32:17 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maquefel.me; s=mail;
- t=1586172737; bh=ucsdRRT+zZSKCrcUo+bbn9vGVT94WMNFHwYtuQ4aOdo=;
- h=In-Reply-To:Subject:To:From:Cc:References:Date:Message-Id;
- b=nkjpfeD1NrlyznWG1s4dpWYU0knd/9uazEY/jrjGtdM0jdYIc61Xhbag4hEliGnyI
- STJL8HAK46Z6jVb3nKduhgGd/FzatvD1mTX3A8e2+tatR+0SWnYswGIS+8w1dqrdOH
- TILdnV2QXTcgHDkX2GVeQnMO9sT2zcOejFbPOzVU=
-Authentication-Results: mxback18j.mail.yandex.net;
- dkim=pass header.i=@maquefel.me
-Received: by iva6-add863d6e49c.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id CHTIIrjdik-WF2uGgoU; Mon, 06 Apr 2020 14:32:15 +0300
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (Client certificate not present)
-From: nikita.shubin@maquefel.me
-To: nikita.shubin@maquefel.me
-Subject: [PATCH v2 3/3] remoteproc: imx_rproc: memory regions
-Date: Mon,  6 Apr 2020 14:33:10 +0300
-Message-Id: <20200406113310.3041-4-nikita.shubin@maquefel.me>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200406113310.3041-1-nikita.shubin@maquefel.me>
-References: <20200304142628.8471-1-NShubin@topcon.com>
- <20200406113310.3041-1-nikita.shubin@maquefel.me>
+ id 1jLQ3G-0002y6-Bk
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 11:36:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586172982;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ysSj8lp9gUfOfM0PID/c5OKA0Z0Cvm+3jdODBYvdtwQ=;
+ b=QLo1Pfgp9wj6uda4NI18oxUvTZX2KqfUMs48UhdWv+9afOMLp0PIqagPxBu4V4wCgxoTs0
+ /8OZB1+SRfKa0ePid5e8UgDZR0kftq5cqsO0Dd0Hh/e1PS8okQ8WVw8R0R+J83fIYLag+t
+ 7INRaXxCDCDnQZcWeCnOHsWwHVpS3+g=
+Received: from mail-wr1-f72.google.com (mail-wr1-f72.google.com
+ [209.85.221.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-118-JcFXb7SMNsqUeA_LzYEU5A-1; Mon, 06 Apr 2020 07:36:18 -0400
+X-MC-Unique: JcFXb7SMNsqUeA_LzYEU5A-1
+Received: by mail-wr1-f72.google.com with SMTP id e10so8224932wru.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Apr 2020 04:36:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=zGCKrVKEnD6hfJ+kJMZgBo+JqaIaLJ/86hRjV2KHNgY=;
+ b=dvBG8J2EL9lMCBNYS0wqP1HC/lZSkTfybomCRG9uzZ6hO5JH9slWgExV/95jHm5AlL
+ 31DIHKjGjBZycW4R+Wc6KrO9ArAnP43lv0P9nAWcmKmtY3dAzeP49ro7UlqssXyWUoT9
+ 5knAEPQIoujvrA26YeaSwO0Ta1gW2FM7tV+YxMr8gyk8UG1H1BDm8sLU1xF2Rqz7hqtb
+ DEzemHR3fvQfPZhPHnFWzwG/PZ8rK1vXPes4LRLaXDiQk6U9t3VQGTNAs4KkkhVRFU2D
+ uvQ64YHly7ptdJ/xDwj8+Nqz2tz94KKbXi3GVfLN7ybEnMmXN+ngu8n1U6ZC2LB+CWB2
+ 9Ucw==
+X-Gm-Message-State: AGi0PuZKfUU1gca2pt7Px66Mv3uYZBbYgT/0KPuPp2xJypz0tJdHJCbm
+ wrseJN8v0Gg4rN5lfX32fGwTldAJo8YCjf4o7D2ajRYEZa9C1o8FUEb87aQ/2YDOg3stWySl5Xv
+ CAseL9aAu3AEamNLHch1CjvGppKf57Kghgl4=
+X-Received: by 2002:a5d:42c1:: with SMTP id t1mr10985105wrr.215.1586172977577; 
+ Mon, 06 Apr 2020 04:36:17 -0700 (PDT)
+X-Google-Smtp-Source: APiQypKRPsa/OTQH8x7YY46Z+2Ffji7g1WjvH0s1FoBqJDCo7KCoIXRI+bs0vlf/YFKNEvrlKTr17g==
+X-Received: by 2002:a5d:42c1:: with SMTP id t1mr10985072wrr.215.1586172977276; 
+ Mon, 06 Apr 2020 04:36:17 -0700 (PDT)
+Received: from redhat.com (bzq-79-176-51-222.red.bezeqint.net. [79.176.51.222])
+ by smtp.gmail.com with ESMTPSA id b66sm4035145wmh.12.2020.04.06.04.36.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Apr 2020 04:36:16 -0700 (PDT)
+Date: Mon, 6 Apr 2020 07:36:13 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [linux-next:master 12804/13809] include/linux/compiler.h:350:38:
+ error: call to '__compiletime_assert_1533' declared with attribute
+ error:
+ BUILD_BUG_ON failed: __alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE
+Message-ID: <20200406073427-mutt-send-email-mst@kernel.org>
+References: <202004050718.B9NaFC2U%lkp@intel.com>
+ <20200405045709-mutt-send-email-mst@kernel.org>
+ <20200405123905-mutt-send-email-mst@kernel.org>
+ <CAMj1kXGUru9K-z4JB6tBrgu9S4_5grPpkkSfe3ZfwB-SrGrPvg@mail.gmail.com>
+ <20200406061817-mutt-send-email-mst@kernel.org>
+ <CAMj1kXF5Tf0J9R0vhPgQJCnh0MM=OBJPK_AQCy-NSEBhpYbedg@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAMj1kXF5Tf0J9R0vhPgQJCnh0MM=OBJPK_AQCy-NSEBhpYbedg@mail.gmail.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_043222_178557_BC80E9B9 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_043626_474673_0E5DE0A7 
+X-CRM114-Status: GOOD (  26.16  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [77.88.28.100 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [77.88.28.100 listed in wl.mailspike.net]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -74,6 +102,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,210 +114,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
- Nikita Shubin <NShubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: richard.earnshaw@arm.com, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, christophe.lyon@st.com,
+ Jason Wang <jasowang@redhat.com>, richard.henderson@linaro.org,
+ daniel.santos@pobox.com, Russell King <rmk+kernel@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for carveout memory regions required for vdev vring's and
-buffer.
+On Mon, Apr 06, 2020 at 12:49:55PM +0200, Ard Biesheuvel wrote:
+> On Mon, 6 Apr 2020 at 12:38, Michael S. Tsirkin <mst@redhat.com> wrote:
+> >
+> > On Mon, Apr 06, 2020 at 12:00:36PM +0200, Ard Biesheuvel wrote:
+> > > (adding some ARM GCC folks)
+> > >
+> > >
+> > > On Sun, 5 Apr 2020 at 18:44, Michael S. Tsirkin <mst@redhat.com> wrote:
+> > > >
+> > > > Hello!
+> > > > I would appreciate ARM maintainers take on the following
+> > > > (sorry if I forgot someone, pls feel free to add people to CC):
+> > > >
+> > > >
+> > > > On Sun, Apr 05, 2020 at 05:01:01AM -0400, Michael S. Tsirkin wrote:
+> > > > > On Sun, Apr 05, 2020 at 07:57:24AM +0800, kbuild test robot wrote:
+> > > > > > tree:   https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git master
+> > > > > > head:   dff79597431045a775f2e5d4d9de31bfa0d32a34
+> > > > > > commit: 20c384f1ea1a0bc7320bc445c72dd02d2970d594 [12804/13809] vhost: refine vhost and vringh kconfig
+> > > > > > config: arm-randconfig-a001-20200405 (attached as .config)
+> > > > > > compiler: arm-linux-gnueabi-gcc (GCC) 9.3.0
+> > > > > > reproduce:
+> > > > > >         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+> > > > > >         chmod +x ~/bin/make.cross
+> > > > > >         git checkout 20c384f1ea1a0bc7320bc445c72dd02d2970d594
+> > > > > >         # save the attached .config to linux build tree
+> > > > > >         GCC_VERSION=9.3.0 make.cross ARCH=arm
+> > > > > >
+> > > > > > If you fix the issue, kindly add following tag as appropriate
+> > > > > > Reported-by: kbuild test robot <lkp@intel.com>
+> > > > > >
+> > > > > > All error/warnings (new ones prefixed by >>):
+> > > > > >
+> > > > > >    In file included from include/linux/kernel.h:11,
+> > > > > >                     from include/linux/list.h:9,
+> > > > > >                     from include/linux/preempt.h:11,
+> > > > > >                     from include/linux/spinlock.h:51,
+> > > > > >                     from include/linux/seqlock.h:36,
+> > > > > >                     from include/linux/time.h:6,
+> > > > > >                     from include/linux/stat.h:19,
+> > > > > >                     from include/linux/fcntl.h:5,
+> > > > > >                     from include/linux/eventfd.h:12,
+> > > > > >                     from drivers/vhost/vhost.c:13:
+> > > > > >    In function 'vhost_vring_set_addr',
+> > > > > >        inlined from 'vhost_vring_set_num_addr' at drivers/vhost/vhost.c:1581:7,
+> > > > > >        inlined from 'vhost_vring_ioctl' at drivers/vhost/vhost.c:1614:10:
+> > > > > > >> include/linux/compiler.h:350:38: error: call to '__compiletime_assert_1533' declared with attribute error: BUILD_BUG_ON failed: __alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE
+> > > > > >      350 |  _compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+> > > > > >          |                                      ^
+> > > > > >    include/linux/compiler.h:331:4: note: in definition of macro '__compiletime_assert'
+> > > > > >      331 |    prefix ## suffix();    \
+> > > > > >          |    ^~~~~~
+> > > > > >    include/linux/compiler.h:350:2: note: in expansion of macro '_compiletime_assert'
+> > > > > >      350 |  _compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+> > > > > >          |  ^~~~~~~~~~~~~~~~~~~
+> > > > > >    include/linux/build_bug.h:39:37: note: in expansion of macro 'compiletime_assert'
+> > > > > >       39 | #define BUILD_BUG_ON_MSG(cond, msg) compiletime_assert(!(cond), msg)
+> > > > > >          |                                     ^~~~~~~~~~~~~~~~~~
+> > > > > >    include/linux/build_bug.h:50:2: note: in expansion of macro 'BUILD_BUG_ON_MSG'
+> > > > > >       50 |  BUILD_BUG_ON_MSG(condition, "BUILD_BUG_ON failed: " #condition)
+> > > > > >          |  ^~~~~~~~~~~~~~~~
+> > > > > > >> drivers/vhost/vhost.c:1533:2: note: in expansion of macro 'BUILD_BUG_ON'
+> > > > > >     1533 |  BUILD_BUG_ON(__alignof__ *vq->avail > VRING_AVAIL_ALIGN_SIZE);
+> > > > > >          |  ^~~~~~~~~~~~
+> > > > >
+> > > > > This compiler seems to be broken. We have:
+> > > > > #define VRING_AVAIL_ALIGN_SIZE 2
+> > > > > and
+> > > > >
+> > > > >         struct vring_avail __user *avail;
+> > > > >
+> > > > > and
+> > > > > struct vring_avail {
+> > > > >         __virtio16 flags;
+> > > > >         __virtio16 idx;
+> > > > >         __virtio16 ring[];
+> > > > > };
+> > > > >
+> > > > > A compiler that decides to require alignment of > 2 bytes on
+> > > > > a struct of packed u16's is likely broken in a bunch of other
+> > > > > ways that just happen not to trigger a BUILD_BUG.
+> > > > >
+> > > > >
+> > > > > The commit referenced just enables build on more platforms ...
+> > > >
+> > > > OK after some research, it seems that the issue triggers with
+> > > > latest gcc too.
+> > > > To trigger it, supply -mabi=apcs-gnu on command line.
+> > > >
+> > > > Dropping  -mabi=apcs-gnu fixes the build.
+> > > >
+> > > > I am still researching this flag.
+> > > >
+> > >
+> > > Is there a difference between __alignof__ *vq->avail and
+> > > __alignof__(struct vring_avail) ?
+> >
+> > Yes, the same.
+> > I found this:
+> > https://stackoverflow.com/questions/43786747/struct-layout-in-apcs-gnu-abi
+> >
+> > Not sure how to interpret it ...
+> 
+> Ah right, I missed that apcs-gnu is the ancient OABI that is been
+> deprecated for a long time.
+> 
+> Given that virtio support on such ancient systems is not needed in the
+> first place, let's just add something along the lines of
+> 
+> depends on !ARM || AEABI
+> 
+> to the virtio Kconfig declaration, and add a comment that it has to do
+> with struct member alignment.
 
-Search in device tree and allocate memory regions like for ocram:
+The annoying thing is that the component which has this
+alignment requirement is actually vhost which is selected,
+so we can not add dependencies to it.
 
-vdev0vring0: vdev0vring0@00920000 {
-	compatible = "shared-dma-pool";
-        reg = <0x00920000 0x2000>;
-        no-map;
-};
-
-vdev0vring1: vdev0vring1@00922000 {
-	compatible = "shared-dma-pool";
-	reg = <0x00922000 0x2000>;
-	no-map;
-};
-
-vdev0buffer: vdev0buffer@00924000 {
-	compatible = "shared-dma-pool";
-	reg = <0x00924000 0x4000>;
-	no-map;
-};
-
-imx7d-cm4 {
-	compatible = "fsl,imx7d-cm4";
-	memory-region = <&ocram>, <&vdev0vring0>, <&vdev0vring1>, \
-		<&vdev0buffer>;
-}
-
-vdev0vring0, vdev0vring1, vdev0buffer are required for virtio
-functioning.
-
-Signed-off-by: Nikita Shubin <NShubin@topcon.com>
----
- drivers/remoteproc/imx_rproc.c | 119 ++++++++++++++++++++++++++++++++-
- 1 file changed, 118 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-index d2bede4ccb70..cdcff2bd2867 100644
---- a/drivers/remoteproc/imx_rproc.c
-+++ b/drivers/remoteproc/imx_rproc.c
-@@ -11,6 +11,7 @@
- #include <linux/module.h>
- #include <linux/of_address.h>
- #include <linux/of_device.h>
-+#include <linux/of_reserved_mem.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <linux/remoteproc.h>
-@@ -238,6 +239,29 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
- 	return -ENOENT;
- }
- 
-+static int imx_rproc_sys_to_da(struct imx_rproc *priv, u64 sys,
-+				int len, u64 *da)
-+{
-+	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
-+	int i;
-+
-+	/* parse address translation table */
-+	for (i = 0; i < dcfg->att_size; i++) {
-+		const struct imx_rproc_att *att = &dcfg->att[i];
-+
-+		if (sys >= att->sa && sys + len <= att->sa + att->size) {
-+			unsigned int offset = sys - att->sa;
-+
-+			*da = att->da + offset;
-+			return 0;
-+		}
-+	}
-+
-+	dev_warn(priv->dev, "Translation failed: sys = 0x%llx len = 0x%x\n",
-+			 sys, len);
-+	return -ENOENT;
-+}
-+
- static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
- {
- 	struct imx_rproc *priv = rproc->priv;
-@@ -372,16 +396,109 @@ static void imx_rproc_kick(struct rproc *rproc, int vqid)
- 		err = mbox_send_message(ddata->mb[i].chan, &vqid);
- 		if (err < 0)
- 			dev_err(&rproc->dev, "%s: failed (%s, err:%d)\n",
--					__func__, ddata->mb[i].name, err);
-+				__func__, ddata->mb[i].name, err);
- 			return;
- 	}
- }
- 
-+static int imx_rproc_mem_alloc(struct rproc *rproc,
-+				struct rproc_mem_entry *mem)
-+{
-+	struct device *dev = rproc->dev.parent;
-+	void *va;
-+
-+	dev_dbg(dev, "map memory: %pa+%x\n", &mem->dma, mem->len);
-+	va = ioremap_wc(mem->dma, mem->len);
-+	if (IS_ERR_OR_NULL(va)) {
-+		dev_err(dev, "Unable to map memory region: %pa+%x\n",
-+				&mem->dma, mem->len);
-+		return -ENOMEM;
-+	}
-+
-+	/* Update memory entry va */
-+	mem->va = va;
-+
-+	return 0;
-+}
-+
-+static int imx_rproc_mem_release(struct rproc *rproc,
-+				struct rproc_mem_entry *mem)
-+{
-+	dev_dbg(rproc->dev.parent, "unmap memory: %pa\n", &mem->dma);
-+	iounmap(mem->va);
-+
-+	return 0;
-+}
-+
-+static int imx_rproc_parse_fw(struct rproc *rproc, const struct firmware *fw)
-+{
-+	struct imx_rproc *priv = rproc->priv;
-+	struct device *dev = rproc->dev.parent;
-+	struct device_node *np = dev->of_node;
-+	struct of_phandle_iterator it;
-+	struct rproc_mem_entry *mem = 0;
-+	struct reserved_mem *rmem;
-+	u64 da;
-+	int index = 0;
-+
-+	/* Register associated reserved memory regions */
-+	of_phandle_iterator_init(&it, np, "memory-region", NULL, 0);
-+	while (of_phandle_iterator_next(&it) == 0) {
-+		rmem = of_reserved_mem_lookup(it.node);
-+		if (!rmem) {
-+			dev_err(dev, "unable to acquire memory-region\n");
-+			return -EINVAL;
-+		}
-+
-+		/*
-+		 * Let's assume all data in device tree is from
-+		 * CPU A7 point of view then we should translate
-+		 * rmem->base into M4 da
-+		 */
-+		if (imx_rproc_sys_to_da(priv, rmem->base, rmem->size, &da)) {
-+			dev_err(dev, "memory region not valid %pa\n",
-+				&rmem->base);
-+			return -EINVAL;
-+		}
-+
-+		if (strcmp(it.node->name, "vdev0buffer")) {
-+			/* Register memory region */
-+			mem = rproc_mem_entry_init(dev, NULL,
-+						(dma_addr_t)rmem->base,
-+						rmem->size, da,
-+						imx_rproc_mem_alloc,
-+						imx_rproc_mem_release,
-+						it.node->name);
-+
-+			if (mem)
-+				rproc_coredump_add_segment(rproc, da,
-+							rmem->size);
-+		} else {
-+			mem = rproc_of_resm_mem_entry_init(dev, index,
-+							rmem->size,
-+							rmem->base,
-+							it.node->name);
-+		}
-+
-+		if (!mem)
-+			return -ENOMEM;
-+
-+		rproc_add_carveout(rproc, mem);
-+		index++;
-+	}
-+
-+	return rproc_elf_load_rsc_table(rproc, fw);
-+}
-+
- static const struct rproc_ops imx_rproc_ops = {
- 	.start		= imx_rproc_start,
- 	.stop		= imx_rproc_stop,
- 	.da_to_va	= imx_rproc_da_to_va,
- 	.kick		= imx_rproc_kick,
-+	.load		= rproc_elf_load_segments,
-+	.parse_fw	= imx_rproc_parse_fw,
-+	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
-+	.sanity_check	= rproc_elf_sanity_check,
- 	.get_boot_addr	= rproc_elf_get_boot_addr,
- };
- 
 -- 
-2.25.1
+MST
 
 
 _______________________________________________
