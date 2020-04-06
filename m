@@ -2,94 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80D0819F2A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:30:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1C3E19F2B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 11:37:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EaCaqRDeWCENjp7azgfGfez11lYv7ArDq0PqvKJER18=; b=l07Ofl5BtV3pqt
-	kx7DR4g/C5/879zZMV2X/ScF4bykXm7xj1xQZVeNQYBZAyRuVAkTGEdqC/D3QsG8I/UZQB4l9+vpg
-	EKgkEYXV/nlFVHYc5MB39Wic5dPjydtuW6fzwDXUe0tlTa6q8x99hGSqxXoYEqRFoafaWr37hK7lb
-	aRiEMQa7XgbKVHg1X5fTZdalGqHhFaVN1Ag7u6MMbhqbujTumCY0QKoFESZL52anMs5g0UIUlYqLu
-	oqEZnVD4xXHSjbJELDMeSIMXzASy7P1ZuLLj2GKnrfGodjCEzgHC2S5jZ9P899MJ6BmbNKGnrkewM
-	JANKc5UAWNwa/qAeC4fg==;
+	List-Owner; bh=RnUiBl+fLvIa8ShRN7hcvPWzbEXlZTUSzdQksndw97A=; b=PBC52tC9Wb5pNV
+	vOcTxazEhzq8Ks+HzWypo1FlrI32OSgIIV0bS1+QwpmrGfiQypIwr92irG3nNE2jebT58IrZJ4hmy
+	7h2aF6wZCCZz/Ho0H3XfTJkHKLrVTPZGUQFrRmlZaFugUnsX28wCgFzLbDYTezuVY3e7vkSNqYslS
+	rT7SI9frbFMXBCqYlC5eodyMw7x501nKdhzLYnJpP5SE4FMUfEhJuWMnFMa5Zl9l/Kwf2dXVsi2a5
+	FanizGkuhZLKeho2ab6SRXpP1KzcEEz4p6r34cH+IxhzQgeDWW7dyFTs5N1+fcTlXeWjPw+Dn0d4h
+	Hk9MQruN2E4k57oevqUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLO4r-0002GB-LJ; Mon, 06 Apr 2020 09:29:57 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jLOCO-0007sy-KP; Mon, 06 Apr 2020 09:37:44 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLO4j-0002FM-7V
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 09:29:50 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id g9so6214608pjp.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 Apr 2020 02:29:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZCzHwl/tdcpxDCvekc0v2ATl1ivxbmKIM4V06jUFE4o=;
- b=lA2dD1pU3P/Ty4DeO3ShHycc7coGr4rgguYE94pdUYB0rQeBI4R+O+XPILIDswxwUZ
- 8/0N/Nf87j7tRNEWERwPiO+a8fKnsi9Y6Ftu3dVR3xICxGhLDWb+KGsFDsQaBOcgI3tr
- jSqz9jjdv+rGEp7nNDmxgLrZQKooGMiHIMJTMjPW9qY6OwddYlWPTFKeb8bg7qZU3AwG
- qBX3zWIimob9XlsraxiQ+pWhNKsyugcy2Q068sezTmHZQY54B4p2jq0lnirIIi91YGmo
- NGF9j8S2DD7riX6aAyxCPnvM0QyW2GEyt48nwV9aXfhYqowCQbI+nfwwy4PbTMDIoY32
- YE4A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZCzHwl/tdcpxDCvekc0v2ATl1ivxbmKIM4V06jUFE4o=;
- b=NDB6gx4n2QsqQ6Hb3eRtinqnlfsFl+rHUaCZf+XX1K/S5lil1xRDSttAsOzzWoOL4J
- bsUh/Yj3I38x7xxJwnYayabBCHqbKvumBFY3/LHTf+egcTOn/widid9R3TYME5ADbmwE
- xvg2I9FfNjw4U99yZLOu1yupTXqWJ8Wh+65QD21yG/OCSoZH7KHHUTJeaEt4voNv845j
- 8q+Od2GDN2SpRwzvpDXTG2vZ1H2h+YAmm7Mt7ngCJ4ppjlkkfdN7WS7kLrhgJOEF+AN7
- +jy852RrMF3mm9RxtnDuKjcb48AFi3sWo1h+RNQ59Gzc23jwNY06YSufFunuBDLl4ZGI
- YD6g==
-X-Gm-Message-State: AGi0PuZnz1f2aonBB1EbwHQwwsz9Aq4naBCErAK/P9UGIqjrC5B72hid
- SLO7/mpTSd0H0qQtc/qr1Wasi9Mgoi8=
-X-Google-Smtp-Source: APiQypJ1tW013VPp2UhXvt/1Bxz5iwbypmAuTEFj+PUd/NiBUPS+9Nx3CgJdVnertByvQXbdXVoStw==
-X-Received: by 2002:a17:902:b593:: with SMTP id
- a19mr19581254pls.92.1586165388661; 
- Mon, 06 Apr 2020 02:29:48 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id c128sm11053782pfa.11.2020.04.06.02.29.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 Apr 2020 02:29:47 -0700 (PDT)
-Date: Mon, 6 Apr 2020 14:59:45 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: "andrew-sh.cheng" <andrew-sh.cheng@mediatek.com>
-Subject: Re: [v5, PATCH 4/5] cpufreq: mediatek: add opp notification for SVS
- support
-Message-ID: <20200406092945.d5thcd2h3bo7mn45@vireshk-i7>
-References: <1574769046-28449-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1574769046-28449-5-git-send-email-andrew-sh.cheng@mediatek.com>
- <20191127083619.etocnhpyyut3hzwq@vireshk-i7>
- <1575874588.13494.4.camel@mtksdaap41>
- <20191210064319.f4ksrxozp3gv4xry@vireshk-i7>
- <1583827865.4840.1.camel@mtksdaap41>
- <20200311060616.62nh7sfwtjwvrjfr@vireshk-i7>
- <1584084154.7753.3.camel@mtksdaap41>
- <20200313091038.q7q7exiowoah4nk4@vireshk-i7>
- <1586164366.5015.6.camel@mtksdaap41>
+ id 1jLOCG-0007rp-Mo; Mon, 06 Apr 2020 09:37:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=s01ZBQXOeBqMDgbzJyS7ataX7wGpfrmvH7IZNPXFCIo=; b=CCyxvJjRk484uOnTHwihWmCpN
+ NVQykYio8053BY17V9ZCH3WNENiAnkdLrp15Gbv4Usa5E6O92SqDcANXObd/r916hcIfQ4u9UoQAw
+ +gq9HRursH3WuV6UNDs3DW6anNDQ+bUb6R2gKLtoYsLUk1O57bnb9fp3JnnkMzRWBz2wfzLrMTBJs
+ d1JtIBPyaKjuECf8MzDu02bZ1nWIDT4pPO5iXE341zqvi+iI2BKjxOi8tz1dPt80Mcfgfux64YXMf
+ gzaf9j6UHaoBjTjfD1uIEEyQTw7lqhE2G9dpgFFhMW7mWS8rsoVQ/cxrkNg5AA8YrjlUKwRQ4CSZY
+ Ap6h4w/tw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:34692)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jLOCA-0000jb-Qm; Mon, 06 Apr 2020 10:37:30 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jLOC9-0005XI-CW; Mon, 06 Apr 2020 10:37:29 +0100
+Date: Mon, 6 Apr 2020 10:37:29 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200406093729.GG25745@shell.armlinux.org.uk>
+References: <20200406082720.GA31279@Red>
+ <20200406091600.GF25745@shell.armlinux.org.uk>
+ <20200406092540.GB31279@Red>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1586164366.5015.6.camel@mtksdaap41>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20200406092540.GB31279@Red>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_022949_277486_9EE00ED5 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20200406_023736_742704_CD2F7517 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,8 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
- everything in local email
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,32 +87,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Fan Chen =?utf-8?B?KOmZs+WHoSk=?= <fan.chen@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06-04-20, 17:12, andrew-sh.cheng wrote:
-> I will use regulator in the locked region.
-> And regulator will use mutex_lock.
+On Mon, Apr 06, 2020 at 11:25:40AM +0200, Corentin Labbe wrote:
+> On Mon, Apr 06, 2020 at 10:16:00AM +0100, Russell King - ARM Linux admin wrote:
+> > On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> > > Hello
+> > > 
+> > > I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> > > But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> > > So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> > > 
+> > > But kexec 2.0.18 fail to work:
+> > > kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+> > 
+> > What happens if you omit the dtb argument?
+> > 
+> 
+> No change without dtb
+> 
+> I have also tried to add --mem-mim and --mem-max without any change.
+> I given mem according to what I saw in /proc/iomem
+> 20000000-9fffffff : System RAM
+>   20008000-207fffff : Kernel code
+>   20900000-209a0c87 : Kernel data
+> So I gave --mem-min 0x30000000 --mem-max 0x9fffffff
+> Anyway, the result is always the same.
 
-Yeah, you can't use spinlock here, use a mutex.
+The next step is to enable the early debugging - first in the
+decompressor - add #define DEBUG to the top of
+arch/arm/boot/compressed/head.S
+
+Also enable DEBUG_LL in the kernel and use earlyprintk to see if you can
+get anything from the new kernel.
 
 -- 
-viresh
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
