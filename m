@@ -2,60 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4204219FBD9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:44:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5E1719FBFC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 19:46:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mdgzybFqShKfN3Jic7VXsB/G7U6KTTppLnwtKA6KP8Y=; b=rCRaDwWfRukp3+
-	X1RWNaA8YxWY8Fvdxu98npY+fAmOZtaTGTLcVxgjh0pRaT1JN5zqNF5mfuoxJvjy+8bZEs0NArm8y
-	RcoAfgoo3NhdQBMAl6ZKVfujweBlAZxcftO1v/kusagvHgfYBU1fBqv4dJuZGQXo/wAI03VTHSoF5
-	QXrOcnR9oDlnMyyaUUlCaT+JGKREsLB26TqJXTwvS5VQUMIw4/nAbmqCs9AjkE85ipwO0hW8fr1eG
-	IcwIR3ITthhrcX5ZBc1n2VvYJiefsd0cQ/tAit8Xc0HHLrl/X7tzJrDKihXrwo93P3e6C2jZHBBCy
-	2hUTTcI47odrJqNdH12w==;
+	List-Owner; bh=j/jViUdyD1wQPT10a+ZPR9lWVCI+stWwpglwB2g2Btk=; b=H4Ja96Ii+WKNWz
+	XLlLHbkFicptwmh+xSEPIfLsGOeOpaahCQInUvWxAB4S4kL2DV651D2SkdfZGrXZ7GdulFuTk5kLH
+	nxHnvbDn9atNL4HGquZvXbI7af+g3qZkOdHRvrLXxg44GI6DkLZA6wAlTwAZVUpzSQtG9i52elTv8
+	u8nFonk1vbuSQ5e4IKknq85MIVyNIy0/sIjRwlbmHlbc8GooHUA+7fx68OXQLjAMCUAoC9JnKH4jr
+	SqFzIxybK8ULv1E2KbrttykdRmHPdElIs+2X5ZYBa+3e+QEkjlREP04AEFTThfOH691eZjuuDp/an
+	qVXxhqhESpErYejp0h3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLVnA-0000Wn-EG; Mon, 06 Apr 2020 17:44:12 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jLVpd-0005BR-Gq; Mon, 06 Apr 2020 17:46:45 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLVmv-0000SG-6p
- for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:43:59 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7E65080E;
- Mon,  6 Apr 2020 19:43:55 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586195035;
- bh=TEs3NzWpLHrpFcMT8pI7gku05SwpaHYibdYAcct2ZAI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZelhUvmBLBDidGrdYCAu1wlCuaLmKfdT+a2Ce84aGS9JvCh3+XaAexOUsOzAdxIHE
- G8pDVnAzM3s2XOMem/bpSz1RpjcV8Y2vIwmgTpFH8y/8g+FzN3Vb2xXUDq9pyVo0bk
- Pz3dAPoG58cLAGX1ruxW7VKzbQ4ljlE0IZ/i0LvU=
-Date: Mon, 6 Apr 2020 20:43:46 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v5 5/5] media: dt-bindings: media: i2c: convert ov5645
- bindings to json-schema
-Message-ID: <20200406174346.GH16885@pendragon.ideasonboard.com>
-References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1586191361-16598-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ id 1jLVoa-0004To-HS
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 17:45:44 +0000
+Received: by mail-ed1-x543.google.com with SMTP id i7so585645edq.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 Apr 2020 10:45:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7RXoohFvXLaoEKx3R14gPI97or8iyID+gO/ke9YZLZk=;
+ b=pGJxT/+1b5N0eaXPQ8MD+apq1vM1MKAp+Icn53TKKJ0KGEnm05VOa5Y1PXrdWJnued
+ R9YUUUBFQ3SAx68o4tq3gsy3sganiQ/LSMuSCuL8zeRVyMPSVBMwijQ+zyheaSWAu3xJ
+ M+OPJMGhw6A30yvpkCR1omLvF+gJmffGC2W/3lpB316ys6wZpTVSfHDp9wusrVxG+kTJ
+ 8QhIM3+WDSWjrfsSpPJlWmuFuQJHkBccKMwVYR+437mDuaT39nIrHtpckrkXjLc15TLB
+ 3ZQ6bg5krSgAE+jYAaOpI2wf8bRjMTc6TzFNGjCyuxtK4inqkOZaPt0bxepRj/sXaXhc
+ GF5g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7RXoohFvXLaoEKx3R14gPI97or8iyID+gO/ke9YZLZk=;
+ b=rIzR++7y+cYrQIHnAlBH2WEZDk983pV8bxz/XVfWeXyUcoZ3a9C3QdsqcEIwO5d9ws
+ mg1D7ehmXUU7r0Eh1atvE9nL7mOufA5wAV/eWO5u364s3akINqk5TI9C5T7uCSiWgINn
+ 65mqUzjzZuCzQFYfCuFs6Y0E1ecTLZA+8RpGtPEcwKFdlbxTSjIdWVw6uLegUsrhP8Wy
+ oJ6vhzfA+X9VUBHLhvXQO9ws2ODVW/KvcszY7PVAlCd9w+4pQciXczl0ivr+T3hmWu/F
+ tG/yRKzfBIAlFBwbeU/qtvg5psDiH0BJudH62/DWZRCUn6A6QBg+qlrM9eTfeDR4+wli
+ /ZdA==
+X-Gm-Message-State: AGi0PuYuuoablGGAG2L0LyJ7lrTs0g7l9tKpwTqVxawjPdR/e5oFP3af
+ U7kpTJKlCpoiYaDOczVsh4r+Bm4NuPLVnz7utHI=
+X-Google-Smtp-Source: APiQypIaHtJ4hn23pa/NkZ7zj/dGv/ZlRU8kWcFi0fx8qH8eIA32EcKufiVaVgryZZ59IaKMiOdYUiH5qzK3Hj5fT5s=
+X-Received: by 2002:a50:ed93:: with SMTP id h19mr19481900edr.255.1586195137719; 
+ Mon, 06 Apr 2020 10:45:37 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1586191361-16598-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <a809feb7d7153a92e323416f744f1565e995da01.1586180592.git.angelo.ribeiro@synopsys.com>
+In-Reply-To: <a809feb7d7153a92e323416f744f1565e995da01.1586180592.git.angelo.ribeiro@synopsys.com>
+From: Adrian Pop <pop.adrian61@gmail.com>
+Date: Mon, 6 Apr 2020 20:45:26 +0300
+Message-ID: <CAP-HsdQtdSeiSe3O8P6Pe587PYAqO48pGJLwf+Tvq20sY_nh=A@mail.gmail.com>
+Subject: Re: [PATCH v2] drm/bridge: dw-mipi-dsi.c: Add VPG runtime config
+ through debugfs
+To: Angelo Ribeiro <Angelo.Ribeiro@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_104357_414092_75D6836A 
-X-CRM114-Status: GOOD (  19.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200406_104540_615174_F70B8E13 
+X-CRM114-Status: GOOD (  21.14  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [pop.adrian61[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pop.adrian61[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,256 +95,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- linux-kernel@vger.kernel.org, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Daniel Vetter <daniel@ffwll.ch>, airlied@linux.ie,
+ Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>, philippe.cornu@st.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ yannick.fertre@st.com, alexandre.torgue@st.com, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+Hello Angelo,
 
-Thank you for the patch.
+Tested OK on STM32F769i-DISCO, DSI v1.30, on next-20200406. I guess
+there is no horizontal for BER.
 
-On Mon, Apr 06, 2020 at 05:42:41PM +0100, Lad Prabhakar wrote:
-> Convert ov5645 bindings to json-schema.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  .../devicetree/bindings/media/i2c/ov5645.txt  |  52 --------
->  .../devicetree/bindings/media/i2c/ov5645.yaml | 126 ++++++++++++++++++
->  2 files changed, 126 insertions(+), 52 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.txt
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> deleted file mode 100644
-> index a55bb728ea48..000000000000
-> --- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
-> +++ /dev/null
-> @@ -1,52 +0,0 @@
-> -* Omnivision 1/4-Inch 5Mp CMOS Digital Image Sensor
-> -
-> -The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
-> -an active array size of 2592H x 1944V. It is programmable through a serial I2C
-> -interface.
-> -
-> -Required Properties:
-> -- compatible: Value should be "ovti,ov5645".
-> -- clocks: Reference to the xclk clock.
-> -- clock-names: Should be "xclk".
-> -- enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
-> -  to the hardware pin PWDNB which is physically active low.
-> -- reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
-> -  the hardware pin RESETB.
-> -- vdddo-supply: Chip digital IO regulator.
-> -- vdda-supply: Chip analog regulator.
-> -- vddd-supply: Chip digital core regulator.
-> -
-> -The device node must contain one 'port' child node for its digital output
-> -video port, in accordance with the video interface bindings defined in
-> -Documentation/devicetree/bindings/media/video-interfaces.txt.
-> -
-> -Example:
-> -
-> -	&i2c1 {
-> -		...
-> -
-> -		ov5645: ov5645@3c {
-> -			compatible = "ovti,ov5645";
-> -			reg = <0x3c>;
-> -
-> -			enable-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
-> -			reset-gpios = <&gpio5 20 GPIO_ACTIVE_LOW>;
-> -			pinctrl-names = "default";
-> -			pinctrl-0 = <&camera_rear_default>;
-> -
-> -			clocks = <&clks 200>;
-> -			clock-names = "xclk";
-> -
-> -			vdddo-supply = <&camera_dovdd_1v8>;
-> -			vdda-supply = <&camera_avdd_2v8>;
-> -			vddd-supply = <&camera_dvdd_1v2>;
-> -
-> -			port {
-> -				ov5645_ep: endpoint {
-> -					clock-lanes = <1>;
-> -					data-lanes = <0 2>;
-> -					remote-endpoint = <&csi0_ep>;
-> -				};
-> -			};
-> -		};
-> -	};
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.yaml b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> new file mode 100644
-> index 000000000000..d5cdcf9a1c76
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-> @@ -0,0 +1,126 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/i2c/ov5645.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Omnivision 1/4-Inch 5MP CMOS Digital Image Sensor
-> +
-> +maintainers:
-> +  - Sakari Ailus <sakari.ailus@linux.intel.com>
-> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> +
-> +description: |-
-> + The Omnivision OV5645 is a 1/4-Inch CMOS active pixel digital image sensor with
-> + an active array size of 2592H x 1944V. It is programmable through a serial I2C
-> + interface.
-> +
-> +properties:
-> +  compatible:
-> +    const: ovti,ov5645
-> +
-> +  reg:
-> +    description: I2C device address
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    description: External clock frequency should range between 6MHz to 27MHz.
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: xclk
-> +
-> +  enable-gpios:
-> +    description: |-
-> +      Chip enable GPIO. This corresponds to the hardware pin PWDNB which is
-> +      physically active low.
-> +
-> +  reset-gpios:
-> +    description: Chip reset GPIO. This corresponds to the hardware pin RESETB.
-> +
-> +  vdddo-supply:
-> +    description: Chip digital IO regulator.
-> +
-> +  vdda-supply:
-> +    description: Chip analog regulator.
-> +
-> +  vddd-supply:
-> +    description: Chip digital core regulator.
-> +
-> +  # See ../video-interfaces.txt for more details
-> +  port:
-> +    type: object
-> +    properties:
-> +      endpoint:
-> +        type: object
-> +
-> +        properties:
-> +          data-lanes:
-
-Don't you need
-
-		minItems: 1
-		maxItems: 2
-
-here ?
-
-> +            description: |-
-> +              The sensor supports either one-lane, or two-lane operation.
-> +              For one-lane operation the property must be set to <1> and
-> +              for two-lane operation the property must be set to <1 2>.
-> +            items:
-> +              - const: 1
-> +              - const: 2
-> +
-> +          clock-lanes:
-
-Same here,
-
-		maxItems: 1
-
-?
-
-> +            description:
-> +              should be set to <0> (clock lane on hardware lane 0).
-
-I think you can drop the description, with the items below it's clear
-that the value has to be <0>.
-
-> +            items:
-> +              - const: 0
-> +
-> +          remote-endpoint: true
-
-Should this be
-
-             remote-endpoint:
-	       $ref: /schemas/types.yaml#/definitions/phandle
-
-> +
-> +        required:
-> +          - data-lanes
-> +          - clock-lanes
-> +          - remote-endpoint
-> +
-> +        additionalProperties: false
-> +
-> +    additionalProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - enable-gpios
-> +  - reset-gpios
-> +  - vdddo-supply
-> +  - vdda-supply
-> +  - vddd-supply
-> +  - port
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    i2c {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        ov5645: sensor@3c {
-> +            compatible = "ovti,ov5645";
-> +            reg = <0x3c>;
-> +            clocks = <&ov5645_cl>;
-> +            clock-names = "xclk";
-> +            enable-gpios = <&gpio1 6 /* GPIO_ACTIVE_HIGH */>;
-> +            reset-gpios = <&gpio5 20 /* GPIO_ACTIVE_LOW */>;
-> +            vdddo-supply = <&camera_dovdd_1v8>;
-> +            vdda-supply = <&camera_avdd_2v8>;
-> +            vddd-supply = <&camera_dvdd_1v2>;
-> +
-> +            port {
-> +                ov5645_0: endpoint {
-> +                    remote-endpoint = <&csi1_ep>;
-> +                    clock-lanes = <0>;
-> +                    data-lanes = <1 2>;
-> +                };
-> +            };
-> +        };
-> +    };
-> +
-> +...
-
--- 
 Regards,
+Adrian
 
-Laurent Pinchart
+On Mon, Apr 6, 2020 at 4:49 PM Angelo Ribeiro
+<Angelo.Ribeiro@synopsys.com> wrote:
+>
+> Add support for the video pattern generator (VPG) BER pattern mode and
+> configuration in runtime.
+>
+> This enables using the debugfs interface to manipulate the VPG after
+> the pipeline is set.
+> Also, enables the usage of the VPG BER pattern.
+>
+> Changes in v2:
+>   - Added VID_MODE_VPG_MODE
+>   - Solved incompatible return type on __get and __set
+>
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
+> Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+> Cc: Joao Pinto <jpinto@synopsys.com>
+> Cc: Jose Abreu <jose.abreu@synopsys.com>
+> Signed-off-by: Angelo Ribeiro <angelo.ribeiro@synopsys.com>
+> ---
+>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 98 ++++++++++++++++++++++++---
+>  1 file changed, 90 insertions(+), 8 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> index b18351b..9de3645 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> @@ -91,6 +91,7 @@
+>  #define VID_MODE_TYPE_BURST                    0x2
+>  #define VID_MODE_TYPE_MASK                     0x3
+>  #define VID_MODE_VPG_ENABLE            BIT(16)
+> +#define VID_MODE_VPG_MODE              BIT(20)
+>  #define VID_MODE_VPG_HORIZONTAL                BIT(24)
+>
+>  #define DSI_VID_PKT_SIZE               0x3c
+> @@ -221,6 +222,21 @@
+>  #define PHY_STATUS_TIMEOUT_US          10000
+>  #define CMD_PKT_STATUS_TIMEOUT_US      20000
+>
+> +#ifdef CONFIG_DEBUG_FS
+> +#define VPG_DEFS(name, dsi) \
+> +       ((void __force *)&((*dsi).vpg_defs.name))
+> +
+> +#define REGISTER(name, mask, dsi) \
+> +       { #name, VPG_DEFS(name, dsi), mask, dsi }
+> +
+> +struct debugfs_entries {
+> +       const char                              *name;
+> +       bool                                    *reg;
+> +       u32                                     mask;
+> +       struct dw_mipi_dsi                      *dsi;
+> +};
+> +#endif /* CONFIG_DEBUG_FS */
+> +
+>  struct dw_mipi_dsi {
+>         struct drm_bridge bridge;
+>         struct mipi_dsi_host dsi_host;
+> @@ -238,9 +254,12 @@ struct dw_mipi_dsi {
+>
+>  #ifdef CONFIG_DEBUG_FS
+>         struct dentry *debugfs;
+> -
+> -       bool vpg;
+> -       bool vpg_horizontal;
+> +       struct debugfs_entries *debugfs_vpg;
+> +       struct {
+> +               bool vpg;
+> +               bool vpg_horizontal;
+> +               bool vpg_ber_pattern;
+> +       } vpg_defs;
+>  #endif /* CONFIG_DEBUG_FS */
+>
+>         struct dw_mipi_dsi *master; /* dual-dsi master ptr */
+> @@ -530,9 +549,11 @@ static void dw_mipi_dsi_video_mode_config(struct dw_mipi_dsi *dsi)
+>                 val |= VID_MODE_TYPE_NON_BURST_SYNC_EVENTS;
+>
+>  #ifdef CONFIG_DEBUG_FS
+> -       if (dsi->vpg) {
+> +       if (dsi->vpg_defs.vpg) {
+>                 val |= VID_MODE_VPG_ENABLE;
+> -               val |= dsi->vpg_horizontal ? VID_MODE_VPG_HORIZONTAL : 0;
+> +               val |= dsi->vpg_defs.vpg_horizontal ?
+> +                      VID_MODE_VPG_HORIZONTAL : 0;
+> +               val |= dsi->vpg_defs.vpg_ber_pattern ? VID_MODE_VPG_MODE : 0;
+>         }
+>  #endif /* CONFIG_DEBUG_FS */
+>
+> @@ -961,6 +982,68 @@ static const struct drm_bridge_funcs dw_mipi_dsi_bridge_funcs = {
+>
+>  #ifdef CONFIG_DEBUG_FS
+>
+> +int dw_mipi_dsi_debugfs_write(void *data, u64 val)
+> +{
+> +       struct debugfs_entries *vpg = data;
+> +       struct dw_mipi_dsi *dsi;
+> +       u32 mode_cfg;
+> +
+> +       if (!vpg)
+> +               return -ENODEV;
+> +
+> +       dsi = vpg->dsi;
+> +
+> +       *vpg->reg = (bool)val;
+> +
+> +       mode_cfg = dsi_read(dsi, DSI_VID_MODE_CFG);
+> +
+> +       if (*vpg->reg)
+> +               mode_cfg |= vpg->mask;
+> +       else
+> +               mode_cfg &= ~vpg->mask;
+> +
+> +       dsi_write(dsi, DSI_VID_MODE_CFG, mode_cfg);
+> +
+> +       return 0;
+> +}
+> +
+> +int dw_mipi_dsi_debugfs_show(void *data, u64 *val)
+> +{
+> +       struct debugfs_entries *vpg = data;
+> +
+> +       if (!vpg)
+> +               return -ENODEV;
+> +
+> +       *val = *vpg->reg;
+> +
+> +       return 0;
+> +}
+> +
+> +DEFINE_DEBUGFS_ATTRIBUTE(fops_x32, dw_mipi_dsi_debugfs_show,
+> +                        dw_mipi_dsi_debugfs_write, "%llu\n");
+> +
+> +static void debugfs_create_files(void *data)
+> +{
+> +       struct dw_mipi_dsi *dsi = data;
+> +       struct debugfs_entries debugfs[] = {
+> +               REGISTER(vpg, VID_MODE_VPG_ENABLE, dsi),
+> +               REGISTER(vpg_horizontal, VID_MODE_VPG_HORIZONTAL, dsi),
+> +               REGISTER(vpg_ber_pattern, VID_MODE_VPG_MODE, dsi),
+> +       };
+> +       int i;
+> +
+> +       dsi->debugfs_vpg = kmalloc(sizeof(debugfs), GFP_KERNEL);
+> +       if (!dsi->debugfs_vpg)
+> +               return;
+> +
+> +       memcpy(dsi->debugfs_vpg, debugfs, sizeof(debugfs));
+> +
+> +       for (i = 0; i < ARRAY_SIZE(debugfs); i++)
+> +               debugfs_create_file(dsi->debugfs_vpg[i].name, 0644,
+> +                                   dsi->debugfs, &dsi->debugfs_vpg[i],
+> +                                   &fops_x32);
+> +}
+> +
+>  static void dw_mipi_dsi_debugfs_init(struct dw_mipi_dsi *dsi)
+>  {
+>         dsi->debugfs = debugfs_create_dir(dev_name(dsi->dev), NULL);
+> @@ -969,14 +1052,13 @@ static void dw_mipi_dsi_debugfs_init(struct dw_mipi_dsi *dsi)
+>                 return;
+>         }
+>
+> -       debugfs_create_bool("vpg", 0660, dsi->debugfs, &dsi->vpg);
+> -       debugfs_create_bool("vpg_horizontal", 0660, dsi->debugfs,
+> -                           &dsi->vpg_horizontal);
+> +       debugfs_create_files(dsi);
+>  }
+>
+>  static void dw_mipi_dsi_debugfs_remove(struct dw_mipi_dsi *dsi)
+>  {
+>         debugfs_remove_recursive(dsi->debugfs);
+> +       kfree(dsi->debugfs_vpg);
+>  }
+>
+>  #else
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
