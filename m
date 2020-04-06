@@ -2,34 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08B9C19FAB8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:45:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 370BB19FABB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 Apr 2020 18:46:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ofjQON/uBrW/e6XgCeg832RdVH9JqHNSpnGhOo2AZiI=; b=X09
-	Q+yWpKA2UyOFrP2qEJDPuMyZPdauJXfsGI8ifYiL88BQIY3bU2QSOZItyJpWnOFA70GuZ9dnoWpdW
-	36h2ihysD+uKQLZT69CTmSAmfxND5cHdlnCM5Y3atpZSTkZJzaAo1u4hJEEIOpY3PcBUULQr/tZDG
-	B5IHQZA6hSOhlmQKOA4CnWNE61MVVPVJu3Ua10GowE3zCrJwuGLrGIbDgkFLXgBD/TE3Tsldk7MGz
-	Jg9tV6zhUVDMAe35mgXWDaz5dJHQm/bGQPi/tplPnR/R0mYsw37KHyOG8EzHRqc2hwtOGjD9iToJ5
-	5+gA2DARoY9oI81WoqHFnI+Qmkw/2Zw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Td7ncQboHVw5v3YD3UZCrYFtxkLtV8LXU7hr+qS2Qo8=; b=DlqvRo21DQ/oUoLtsoqoX0EaHW
+	ZZ4QEikREEA8wc74bAFNR0wMMj13A+5nFGC52Vn6RQv9tCzt6iq4seCgYuJD1ciMI9be516e5yFC0
+	F5XUO8UbLzfocakJlG07YzVJ7zKzjrD/39d0E6e90X5XBiWoG/ab/bmcVK37dprLsyYikh/IIEsi6
+	1Ixn8akOhUyIFPR+sLoEjuT0lzSCsljs/OHhjdgpZdQkRALDSC3L3JGkagI0PM2k8/4c+dBhdG9ND
+	FRfI07KuwkItHu/n8gm+k18IhGC7q2TErWgCN3SVmwlz9+CqyL/bs3m1uRmARGMz1KyzxgSmrP578
+	UnBSksOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLUsb-0001PP-09; Mon, 06 Apr 2020 16:45:45 +0000
+	id 1jLUsr-0001ej-EM; Mon, 06 Apr 2020 16:46:01 +0000
 Received: from relmlor2.renesas.com ([210.160.252.172]
  helo=relmlie6.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLUpw-0005AQ-Hr
+ id 1jLUpx-0005CR-Fr
  for linux-arm-kernel@lists.infradead.org; Mon, 06 Apr 2020 16:43:03 +0000
-X-IronPort-AV: E=Sophos;i="5.72,351,1580742000"; d="scan'208";a="43643781"
+X-IronPort-AV: E=Sophos;i="5.72,351,1580742000"; d="scan'208";a="43643794"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie6.idc.renesas.com with ESMTP; 07 Apr 2020 01:42:54 +0900
+ by relmlie6.idc.renesas.com with ESMTP; 07 Apr 2020 01:42:58 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id 9A53F4006CD9;
- Tue,  7 Apr 2020 01:42:50 +0900 (JST)
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id F374C40061B6;
+ Tue,  7 Apr 2020 01:42:54 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
@@ -39,13 +40,16 @@ To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-Subject: [PATCH v5 0/5] ov5645: Deprecate usage of the clock-frequency
-Date: Mon,  6 Apr 2020 17:42:36 +0100
-Message-Id: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v5 1/5] media: dt-bindings: media: i2c: Deprecate usage of the
+ clock-frequency property
+Date: Mon,  6 Apr 2020 17:42:37 +0100
+Message-Id: <1586191361-16598-2-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <1586191361-16598-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_094300_729038_A467F80F 
-X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-CacheID: sfid-20200406_094301_714026_E837B416 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,53 +82,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+OV5645 sensor supports input clock frequency ranging from 6MHz to 27MHz
+but the driver strictly expects this to be 24MHz (with tolerance of 1%)
+with this restrictions let the driver enforce the clock frequency
+internally to 24MHz rather then being passed as dt-property.
 
-This patch series does the following:
-1: Deprecate usage of the clock-frequency property.
-2: Converts bindings to json-schema
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+ Documentation/devicetree/bindings/media/i2c/ov5645.txt | 2 --
+ 1 file changed, 2 deletions(-)
 
-Thanks,
-Prabhakar
-
-Changes for v5:
-* Dropped assigned-clocks
-* Fixed review comments from Laurent for patch 5/5
-
-Changes for v4:
-* Addressed to comments from Laurent updated patch description for
-  patch 1/5, 4/5.
-* Included Reviewed-by tags from Laurent.
-* Increased tolerance level to 5% for external clock frequency.
-* Patch 5/5 is new patch which converts bindings to json-schema.
-
-Changed for v3:
-* Dropped reading assigned-clock-rates
-* Increased the maximum clock frequency to 24480000
-
-Changes for v2:
-* Instead of completely dropping clock-frequency property marked it as
-  deprecated.
-* Split up imx6qdl-wandboard.dtsi changes as separate patch.
-
-Lad Prabhakar (5):
-  media: dt-bindings: media: i2c: Deprecate usage of the clock-frequency
-    property
-  media: i2c: ov5645: Drop reading clock-frequency dt-property
-  media: i2c: ov5645: Turn probe error into warning for xvclk frequency
-    mismatch
-  ARM: dts: imx6qdl-wandboard: Drop clock-frequency property from ov5645
-    node
-  media: dt-bindings: media: i2c: convert ov5645 bindings to json-schema
-
- .../devicetree/bindings/media/i2c/ov5645.txt  |  54 --------
- .../devicetree/bindings/media/i2c/ov5645.yaml | 126 ++++++++++++++++++
- arch/arm/boot/dts/imx6qdl-wandboard.dtsi      |   1 -
- drivers/media/i2c/ov5645.c                    |  21 +--
- 4 files changed, 133 insertions(+), 69 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.txt
- create mode 100644 Documentation/devicetree/bindings/media/i2c/ov5645.yaml
-
+diff --git a/Documentation/devicetree/bindings/media/i2c/ov5645.txt b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+index 72ad992f77be..a55bb728ea48 100644
+--- a/Documentation/devicetree/bindings/media/i2c/ov5645.txt
++++ b/Documentation/devicetree/bindings/media/i2c/ov5645.txt
+@@ -8,7 +8,6 @@ Required Properties:
+ - compatible: Value should be "ovti,ov5645".
+ - clocks: Reference to the xclk clock.
+ - clock-names: Should be "xclk".
+-- clock-frequency: Frequency of the xclk clock.
+ - enable-gpios: Chip enable GPIO. Polarity is GPIO_ACTIVE_HIGH. This corresponds
+   to the hardware pin PWDNB which is physically active low.
+ - reset-gpios: Chip reset GPIO. Polarity is GPIO_ACTIVE_LOW. This corresponds to
+@@ -37,7 +36,6 @@ Example:
+ 
+ 			clocks = <&clks 200>;
+ 			clock-names = "xclk";
+-			clock-frequency = <24000000>;
+ 
+ 			vdddo-supply = <&camera_dovdd_1v8>;
+ 			vdda-supply = <&camera_avdd_2v8>;
 -- 
 2.20.1
 
